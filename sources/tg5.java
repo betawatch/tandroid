@@ -1,174 +1,430 @@
 // default package
 
-import java.lang.reflect.Array;
+import android.app.job.JobParameters;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.SparseArray;
+import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class tg5 extends mv6 {
-    public qj0 F;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class tg5 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    @Override // mv6
-    public final qj0 H() {
-        byte[] bArr;
-        qj0 qj0Var = this.F;
-        if (qj0Var != null) {
-            return qj0Var;
-        }
-        gg6 gg6Var = (gg6) this.b;
-        int i = gg6Var.a;
-        int i2 = gg6Var.b;
-        if (i < 40 || i2 < 40) {
-            qj0 H = super.H();
-            this.F = H;
-            return H;
-        }
-        byte[] a = gg6Var.a();
-        int i3 = i >> 3;
-        if ((i & 7) != 0) {
-            i3++;
-        }
-        int i4 = i2 >> 3;
-        if ((i2 & 7) != 0) {
-            i4++;
-        }
-        int i5 = i2 - 8;
-        int i6 = i - 8;
-        boolean z = true;
-        int i7 = 0;
-        int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, i4, i3);
-        int i8 = 0;
-        while (true) {
-            int i9 = 8;
-            if (i8 >= i4) {
-                break;
-            }
-            int i10 = i8 << 3;
-            if (i10 > i5) {
-                i10 = i5;
-            }
-            boolean z2 = z;
-            int i11 = i7;
-            while (i11 < i3) {
-                int i12 = i11 << 3;
-                if (i12 > i6) {
-                    i12 = i6;
+    public /* synthetic */ tg5(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = obj2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object obj;
+        Object obj2;
+        Object obj3;
+        bt5 bt5Var;
+        lf1 lf1Var;
+        int i;
+        int i2;
+        byte b = this.a;
+        byte b2 = 4;
+        Object obj4 = null;
+        byte b3 = 1;
+        int i3 = 0;
+        Object obj5 = this.c;
+        Object obj6 = this.b;
+        switch (b) {
+            case 0:
+                ug5 ug5Var = (ug5) obj6;
+                yve.p(ug5Var.k);
+                ug5Var.i.remove((String) obj5);
+                if (ug5Var.m != null) {
+                    ug5Var.e(-9223372036854775807L);
+                    break;
                 }
-                int i13 = (i10 * i) + i12;
-                int i14 = kk7.d4;
-                int i15 = 0;
-                int i16 = 0;
-                int i17 = 0;
-                while (true) {
-                    bArr = a;
-                    if (i15 >= i9) {
+                break;
+            case 1:
+                kj4 kj4Var = ((vh5) obj6).c;
+                Uri uri = ((vg5) obj5).y;
+                lb3 lb3Var = (lb3) ((wg5) kj4Var.b).b.d.get(uri);
+                if (lb3Var != null) {
+                    lb3Var.e(uri, true);
+                    break;
+                }
+                break;
+            case 2:
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj5;
+                try {
+                    taskCompletionSource.setResult(((gm5) obj6).a());
+                    break;
+                } catch (Exception e) {
+                    taskCompletionSource.setException(e);
+                    return;
+                }
+            case 3:
+                hl.c3(new tg5(((in5) obj6).h(), (Runnable) obj5, b2));
+                break;
+            case 4:
+                Runnable runnable = (Runnable) obj5;
+                xb4.L = (SparseArray) obj6;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 5:
+                in5 in5Var = (in5) obj6;
+                in5Var.B.add((zm5) obj5);
+                hl.c3(new sb4(in5Var, obj4, i3, b2));
+                break;
+            case 6:
+                vm5 vm5Var = (vm5) obj6;
+                wm5 wm5Var = vm5Var.a;
+                in5 in5Var2 = vm5Var.e;
+                dn5 dn5Var = new dn5(in5Var2, wm5Var, (String) obj5);
+                wm5Var.t = dn5Var;
+                in5Var2.n.add(dn5Var);
+                in5Var2.Q(false);
+                break;
+            case 7:
+                xm5 xm5Var = (xm5) obj6;
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj5;
+                in5 in5Var3 = xm5Var.e;
+                om5 om5Var = in5Var3.e;
+                wm5 wm5Var2 = xm5Var.c;
+                if (bitmapDrawable instanceof b29) {
+                    b29 b29Var = (b29) bitmapDrawable;
+                    Object obj7 = (Drawable) om5Var.f(wm5Var2.d);
+                    if (obj7 == null) {
+                        om5Var.l(wm5Var2.d, b29Var);
+                        obj3 = b29Var;
+                    } else {
+                        b29Var.x(false);
+                        obj3 = obj7;
+                    }
+                    in5Var3.D(wm5Var2.d);
+                    obj = wm5Var2.d;
+                    obj4 = obj3;
+                } else if (bitmapDrawable instanceof lm) {
+                    lm lmVar = (lm) bitmapDrawable;
+                    if (lmVar.o0) {
+                        String str = wm5Var2.d;
+                        ThreadLocal threadLocal = in5.I;
+                        Object u = in5Var3.u(str);
+                        if (u == null) {
+                            om5Var.l(wm5Var2.d, lmVar);
+                            obj2 = lmVar;
+                        } else {
+                            lmVar.u();
+                            obj2 = u;
+                        }
+                        in5Var3.D(wm5Var2.d);
+                        obj = wm5Var2.d;
+                        obj4 = obj2;
+                    }
+                    obj = obj4;
+                    obj4 = bitmapDrawable;
+                } else if (ik8.A(bitmapDrawable)) {
+                    BitmapDrawable v = in5Var3.v(wm5Var2.d);
+                    if (v != null) {
+                        hl.w2(bitmapDrawable.getBitmap());
+                        bitmapDrawable = v;
+                    } else if (wm5Var2.d.endsWith("_f")) {
+                        in5Var3.d.l(wm5Var2.d, bitmapDrawable);
+                        b3 = 0;
+                    } else if (!wm5Var2.d.endsWith("_isc") && !wm5Var2.d.endsWith("_nocache") && bitmapDrawable.getBitmap().getWidth() <= hl.p * 80.0f && bitmapDrawable.getBitmap().getHeight() <= hl.p * 80.0f) {
+                        in5Var3.b.l(wm5Var2.d, bitmapDrawable);
+                    } else if (!wm5Var2.d.endsWith("_nocache")) {
+                        in5Var3.c.l(wm5Var2.d, bitmapDrawable);
+                    }
+                    if (b3 != 0) {
+                        in5Var3.D(wm5Var2.d);
+                        obj4 = wm5Var2.d;
+                    }
+                    obj = obj4;
+                    obj4 = bitmapDrawable;
+                } else {
+                    obj = null;
+                }
+                in5Var3.s.d(new re4((Object) xm5Var, obj4, obj, (byte) 27), wm5Var2.a ? 1L : 0L);
+                break;
+            case 8:
+                ((hn5) obj6).d.v.remove((String) obj5);
+                break;
+            case 9:
+                zn5 zn5Var = (zn5) obj6;
+                Uri uri2 = (Uri) obj5;
+                zn5Var.getClass();
+                try {
+                    LaunchActivity launchActivity = (LaunchActivity) zn5Var.a.getParentActivity();
+                    if (launchActivity != null) {
+                        Bundle bundle = new Bundle();
+                        if (uri2 != null) {
+                            bundle.putParcelable("photoUri", uri2);
+                        }
+                        g88 g88Var = new g88(bundle);
+                        g88Var.e = false;
+                        g88Var.f = false;
+                        g88Var.c = zn5Var;
+                        launchActivity.t0(g88Var);
                         break;
                     }
-                    int i18 = i17;
-                    int i19 = 0;
-                    while (i19 < i9) {
-                        int i20 = i19;
-                        int i21 = bArr[i13 + i19] & 255;
-                        i16 += i21;
-                        if (i21 < i14) {
-                            i14 = i21;
-                        }
-                        if (i21 > i18) {
-                            i18 = i21;
-                        }
-                        i19 = i20 + 1;
-                        i9 = 8;
-                    }
-                    if (i18 - i14 > 24) {
-                        while (true) {
-                            i15++;
-                            i13 += i;
-                            if (i15 < 8) {
-                                int i22 = 0;
-                                for (int i23 = 8; i22 < i23; i23 = 8) {
-                                    i16 += bArr[i13 + i22] & 255;
-                                    i22++;
-                                    i14 = i14;
-                                }
-                            }
-                        }
-                    }
-                    i15++;
-                    i13 += i;
-                    i14 = i14;
-                    a = bArr;
-                    i9 = 8;
-                    i17 = i18;
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                    zn5Var.r(false, in5.G(null, uri2, 800.0f, 800.0f, true), null);
+                    return;
                 }
-                int i24 = i16 >> 6;
-                if (i17 - i14 <= 24) {
-                    i24 = i14 / 2;
-                    if (i8 > 0 && i11 > 0) {
-                        int[] iArr2 = iArr[i8 - 1];
-                        int i25 = i11 - 1;
-                        int i26 = ((iArr2[i11] + (iArr[i8][i25] << 1)) + iArr2[i25]) / 4;
-                        if (i14 < i26) {
-                            i24 = i26;
-                        }
+                break;
+            case 10:
+                bt5 bt5Var2 = (bt5) obj6;
+                TLObject tLObject = (TLObject) obj5;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    if (!vector.objects.isEmpty()) {
+                        bt5Var2.m1.put(Long.valueOf(bt5Var2.l1.admin_id), (TLRPC.User) vector.objects.get(0));
+                        bt5Var2.N1.f();
+                        break;
                     }
                 }
-                iArr[i8][i11] = i24;
-                i11++;
-                a = bArr;
-                i9 = 8;
-            }
-            i8++;
-            z = z2;
-            i7 = 0;
+                break;
+            case 11:
+                vs5 vs5Var = (vs5) obj6;
+                if (((TLRPC.TL_error) obj5) == null && (lf1Var = (bt5Var = vs5Var.a.c).d2) != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported = bt5Var.l1;
+                    wf1 wf1Var = lf1Var.a;
+                    ArrayList arrayList = wf1Var.p0;
+                    int size = arrayList.size();
+                    int i4 = wf1Var.F.h;
+                    TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
+                    TLRPC.TL_channelAdminLogEventActionExportedInviteDelete tL_channelAdminLogEventActionExportedInviteDelete = new TLRPC.TL_channelAdminLogEventActionExportedInviteDelete();
+                    tL_channelAdminLogEventActionExportedInviteDelete.invite = tL_chatInviteExported;
+                    tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteDelete;
+                    tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
+                    tL_channelAdminLogEvent.user_id = yac.h(wf1Var.getAccountInstance().a).n;
+                    i = ((e) wf1Var).currentAccount;
+                    if (new r47(i, tL_channelAdminLogEvent, wf1Var.o0, wf1Var.n0, wf1Var.f, wf1Var.U, true).U >= 0) {
+                        wf1Var.O0();
+                        int size2 = arrayList.size() - size;
+                        if (size2 > 0) {
+                            wf1Var.D0.N = true;
+                            tf1 tf1Var = wf1Var.F;
+                            tf1Var.p(tf1Var.h, size2);
+                            wf1Var.Y0();
+                        }
+                        wf1Var.z0.remove(tL_chatInviteExported.link);
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                m7 m7Var = (m7) obj5;
+                ((lt5) obj6).w0(true);
+                m7Var.requestFocus();
+                hl.c3(new ct5(m7Var, b3));
+                break;
+            case 13:
+                int i5 = JobInfoSchedulerService.a;
+                ((JobInfoSchedulerService) obj6).jobFinished((JobParameters) obj5, false);
+                break;
+            case 14:
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", ((TLRPC.ChatFull) obj6).guard_bot_id);
+                ((v92) obj5).presentFragment(new ProfileActivity(bundle2, null));
+                break;
+            case 15:
+                hl.d3(new z21((kx5) obj6, (u51) obj5, (byte) 3), 150L);
+                break;
+            case 16:
+                LanguageSelectActivity languageSelectActivity = (LanguageSelectActivity) obj6;
+                languageSelectActivity.e = (ArrayList) obj5;
+                languageSelectActivity.c.f();
+                break;
+            case 17:
+                LanguageSelectActivity languageSelectActivity2 = (LanguageSelectActivity) obj6;
+                String str2 = (String) obj5;
+                byte b4 = 16;
+                if (str2.trim().toLowerCase().length() == 0) {
+                    hl.c3(new tg5(languageSelectActivity2, new ArrayList(), b4));
+                    break;
+                } else {
+                    System.currentTimeMillis();
+                    ArrayList arrayList2 = new ArrayList();
+                    int size3 = languageSelectActivity2.h.size();
+                    for (int i6 = 0; i6 < size3; i6++) {
+                        mb6 mb6Var = (mb6) languageSelectActivity2.h.get(i6);
+                        if (mb6Var.a.toLowerCase().startsWith(str2) || mb6Var.b.toLowerCase().startsWith(str2)) {
+                            arrayList2.add(mb6Var);
+                        }
+                    }
+                    int size4 = languageSelectActivity2.f.size();
+                    while (i3 < size4) {
+                        mb6 mb6Var2 = (mb6) languageSelectActivity2.f.get(i3);
+                        if (mb6Var2.a.toLowerCase().startsWith(str2) || mb6Var2.b.toLowerCase().startsWith(str2)) {
+                            arrayList2.add(mb6Var2);
+                        }
+                        i3++;
+                    }
+                    hl.c3(new tg5(languageSelectActivity2, arrayList2, b4));
+                    break;
+                }
+                break;
+            case 18:
+                LaunchActivity launchActivity2 = (LaunchActivity) obj6;
+                TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = (TLRPC.TL_chatInviteJoinResultWebView) obj5;
+                String str3 = LaunchActivity.C1;
+                uc7.s1(launchActivity2.P).j4(tL_chatInviteJoinResultWebView.users, false);
+                bq0 b5 = bq0.b(launchActivity2.P);
+                long j = tL_chatInviteJoinResultWebView.bot_id;
+                b5.c(j, j, tL_chatInviteJoinResultWebView.query_id, false);
+                break;
+            case 19:
+                String str4 = LaunchActivity.C1;
+                jj.r0((v8) obj6, ob6.M0(2131753887, null), ob6.M0(2131751070, null) + "\n" + ((TLRPC.TL_error) obj5).text, null);
+                break;
+            case 20:
+                v21 v21Var = (v21) obj5;
+                String str5 = LaunchActivity.C1;
+                if (!((LaunchActivity) obj6).R && LaunchActivity.G1) {
+                    v21Var.j();
+                    break;
+                }
+                break;
+            case 21:
+                String str6 = LaunchActivity.C1;
+                ((LaunchActivity) obj6).k0((TL_account.Password) obj5);
+                break;
+            case 22:
+                LaunchActivity launchActivity3 = (LaunchActivity) obj6;
+                zg3 zg3Var = (zg3) obj5;
+                String str7 = LaunchActivity.C1;
+                launchActivity3.p0.getView().setVisibility(4);
+                if (hl.O1()) {
+                    ActionBarLayout actionBarLayout = launchActivity3.q0;
+                    if (actionBarLayout != null && actionBarLayout.getView() != null && launchActivity3.q0.getView().getVisibility() == 0) {
+                        launchActivity3.q0.getView().setVisibility(4);
+                    }
+                    ActionBarLayout actionBarLayout2 = launchActivity3.r0;
+                    if (actionBarLayout2 != null && actionBarLayout2.getView() != null) {
+                        launchActivity3.r0.getView().setVisibility(4);
+                    }
+                }
+                if (zg3Var != null) {
+                    zg3Var.run();
+                    break;
+                }
+                break;
+            case 23:
+                String str8 = LaunchActivity.C1;
+                ((LaunchActivity) obj6).t0((pqb) obj5);
+                break;
+            case 24:
+                LaunchActivity launchActivity4 = (LaunchActivity) obj6;
+                l01 l01Var = (l01) obj5;
+                String str9 = LaunchActivity.C1;
+                launchActivity4.P0 = null;
+                launchActivity4.Q0 = null;
+                launchActivity4.R0 = null;
+                launchActivity4.S0 = null;
+                launchActivity4.V0 = null;
+                launchActivity4.T0 = null;
+                if (l01Var != null) {
+                    l01Var.b();
+                    break;
+                }
+                break;
+            case 25:
+                l01 l01Var2 = (l01) obj6;
+                id idVar = (id) obj5;
+                String str10 = LaunchActivity.C1;
+                if (l01Var2 != null) {
+                    l01Var2.b();
+                }
+                idVar.dismiss();
+                break;
+            case 26:
+                LaunchActivity launchActivity5 = (LaunchActivity) obj6;
+                String str11 = (String) obj5;
+                String str12 = LaunchActivity.C1;
+                if (!launchActivity5.p0.getFragmentStack().isEmpty()) {
+                    launchActivity5.p0.getFragmentStack().get(0).presentFragment(new PremiumPreviewFragment(0, Uri.parse(str11).getQueryParameter("ref")));
+                    break;
+                }
+                break;
+            case 27:
+                LaunchActivity launchActivity6 = (LaunchActivity) obj6;
+                TLObject tLObject2 = (TLObject) obj5;
+                String str13 = LaunchActivity.C1;
+                if (tLObject2 instanceof TL_account.resolvedBusinessChatLinks) {
+                    TL_account.resolvedBusinessChatLinks resolvedbusinesschatlinks = (TL_account.resolvedBusinessChatLinks) tLObject2;
+                    uc7.s1(launchActivity6.P).j4(resolvedbusinesschatlinks.users, false);
+                    uc7.s1(launchActivity6.P).c4(resolvedbusinesschatlinks.chats, false);
+                    jf7.Y(launchActivity6.P).j1(resolvedbusinesschatlinks.users, resolvedbusinesschatlinks.chats, true, true);
+                    Bundle bundle3 = new Bundle();
+                    TLRPC.Peer peer = resolvedbusinesschatlinks.peer;
+                    if (peer instanceof TLRPC.TL_peerUser) {
+                        bundle3.putLong("user_id", peer.user_id);
+                    } else if ((peer instanceof TLRPC.TL_peerChat) || (peer instanceof TLRPC.TL_peerChannel)) {
+                        bundle3.putLong("chat_id", peer.channel_id);
+                    }
+                    zu1 zu1Var = new zu1(bundle3);
+                    zu1Var.Fa = resolvedbusinesschatlinks;
+                    launchActivity6.u0(zu1Var, false, true);
+                    break;
+                } else {
+                    launchActivity6.F0(jj.K(launchActivity6, ob6.M0(2131752697, null), ob6.M0(2131752693, null)));
+                    break;
+                }
+            case 28:
+                l46 l46Var = (l46) obj6;
+                TLObject tLObject3 = (TLObject) obj5;
+                ArrayList arrayList3 = l46Var.d2;
+                d79 d79Var = l46Var.n1;
+                if (tLObject3 != null) {
+                    arrayList3.clear();
+                    arrayList3.addAll(((TLRPC.TL_messages_chats) tLObject3).chats);
+                    l46Var.D2 = false;
+                    l46Var.E2.b(l46Var.i2 + 4);
+                    int i7 = 0;
+                    while (true) {
+                        if (i7 >= d79Var.getChildCount()) {
+                            i2 = 0;
+                        } else if (d79Var.getChildAt(i7) instanceof j46) {
+                            i2 = d79Var.getChildAt(i7).getTop();
+                        } else {
+                            i7++;
+                        }
+                    }
+                    l46Var.y1();
+                    if (l46Var.g2 >= 0 && i2 != 0) {
+                        ((x46) d79Var.getLayoutManager()).g1(l46Var.g2 + 1, i2);
+                    }
+                }
+                int max = Math.max(arrayList3.size(), l46Var.H2.e);
+                l46Var.s2.j(max, false);
+                l46Var.s2.setBagePosition(max / l46Var.H2.f);
+                i46 i46Var = l46Var.s2;
+                i46Var.I = true;
+                i46Var.requestLayout();
+                break;
+            default:
+                ((l46) obj6).Z0((ka6) obj5, true);
+                break;
         }
-        byte[] bArr2 = a;
-        qj0 qj0Var2 = new qj0(i, i2);
-        int i27 = 0;
-        while (i27 < i4) {
-            int i28 = i27 << 3;
-            if (i28 > i5) {
-                i28 = i5;
-            }
-            int min = i27 < 2 ? 2 : Math.min(i27, i4 - 3);
-            int i29 = 0;
-            while (i29 < i3) {
-                int i30 = i29 << 3;
-                if (i30 > i6) {
-                    i30 = i6;
-                }
-                int min2 = i29 < 2 ? 2 : Math.min(i29, i3 - 3);
-                int i31 = -2;
-                int i32 = 0;
-                for (int i33 = 2; i31 <= i33; i33 = 2) {
-                    int[] iArr3 = iArr[min + i31];
-                    i32 = iArr3[min2 - 2] + iArr3[min2 - 1] + iArr3[min2] + iArr3[min2 + 1] + iArr3[min2 + 2] + i32;
-                    i31++;
-                }
-                int i34 = i32 / 25;
-                int i35 = (i28 * i) + i30;
-                int i36 = i;
-                int i37 = 0;
-                while (true) {
-                    if (i37 < 8) {
-                        int i38 = i27;
-                        int i39 = 0;
-                        for (int i40 = 8; i39 < i40; i40 = 8) {
-                            int i41 = i39;
-                            if ((bArr2[i35 + i39] & 255) <= i34) {
-                                qj0Var2.c(i30 + i41, i28 + i37);
-                            }
-                            i39 = i41 + 1;
-                        }
-                        i37++;
-                        i35 += i36;
-                        i27 = i38;
-                    }
-                }
-                i29++;
-                i = i36;
-            }
-            i27++;
-        }
-        this.F = qj0Var2;
-        return qj0Var2;
     }
 }

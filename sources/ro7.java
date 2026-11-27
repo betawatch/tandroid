@@ -1,38 +1,121 @@
 // default package
 
-import android.window.BackEvent;
-import android.window.OnBackAnimationCallback;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ro7 implements OnBackAnimationCallback {
-    public final /* synthetic */ qp4 a;
-    public final /* synthetic */ qp4 b;
-    public final /* synthetic */ op4 c;
-    public final /* synthetic */ op4 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ro7 extends View implements snb {
+    public final Paint a;
+    public final Paint b;
+    public final mm c;
+    public final hn d;
+    public int e;
+    public float f;
+    public ValueAnimator h;
 
-    public ro7(qp4 qp4Var, qp4 qp4Var2, op4 op4Var, op4 op4Var2) {
-        this.a = qp4Var;
-        this.b = qp4Var2;
-        this.c = op4Var;
-        this.d = op4Var2;
+    public ro7(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        k43 k43Var = k43.h;
+        this.c = new mm(this, 0L, 320L, k43Var);
+        hn hnVar = new hn(false, true, true);
+        this.d = hnVar;
+        this.f = 1.0f;
+        paint.setColor(aob.w0(null, aob.Fi, false));
+        paint2.setColor(aob.w0(null, aob.h5, false));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(hl.L(4.0f));
+        hnVar.setCallback(this);
+        hnVar.n(0.35f, 200L, k43Var);
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = hnVar.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(hl.L(0.24f));
+        textPaint.setStrokeJoin(Paint.Join.ROUND);
+        hnVar.w(hl.L(13.3f));
+        hnVar.u(aob.w0(null, aob.Ji, false));
+        hnVar.N = hl.L(64.0f);
+        hnVar.b = 1;
     }
 
-    public final void onBackCancelled() {
-        this.d.invoke();
+    public final boolean a(int i) {
+        int i2 = this.e;
+        if (i2 != i) {
+            r1 = i2 < i;
+            this.e = i;
+            this.d.t(i > 0 ? String.valueOf(i) : "", true, true);
+            if (r1) {
+                ValueAnimator valueAnimator = this.h;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    this.h = null;
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.h = ofFloat;
+                ofFloat.addUpdateListener(new ch4(this, (byte) 28));
+                this.h.addListener(new ad5(this, (byte) 18));
+                c00.o(2.0f, this.h);
+                this.h.setDuration(200L);
+                this.h.start();
+            }
+        }
+        return r1;
     }
 
-    public final void onBackInvoked() {
-        this.c.invoke();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.c.e(false, this.e > 0 ? 1.0f : 0.0f);
+        canvas.save();
+        float f = this.f;
+        canvas.scale(f * e, f * e, getWidth() / 2.0f, getHeight() / 2.0f);
+        hn hnVar = this.d;
+        float N = hl.N(12.66f) + hnVar.c();
+        float N2 = hl.N(20.3f);
+        RectF rectF = hl.P;
+        rectF.set((getWidth() - N) / 2.0f, (getHeight() - N2) / 2.0f, (getWidth() + N) / 2.0f, (getHeight() + N2) / 2.0f);
+        int i = (int) (e * 255.0f);
+        Paint paint = this.b;
+        paint.setAlpha(i);
+        canvas.drawRoundRect(rectF, hl.L(30.0f), hl.L(30.0f), paint);
+        Paint paint2 = this.a;
+        paint2.setAlpha(i);
+        canvas.drawRoundRect(rectF, hl.L(30.0f), hl.L(30.0f), paint2);
+        canvas.save();
+        canvas.translate(0.0f, -hl.L(1.0f));
+        hnVar.setBounds(0, 0, getWidth(), getHeight());
+        hnVar.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    public final void onBackProgressed(BackEvent backEvent) {
-        backEvent.getClass();
-        this.b.invoke(new fd0(backEvent));
+    @Override // snb
+    public final void updateColors() {
+        try {
+            this.a.setColor(aob.w0(null, aob.Fi, false));
+            this.b.setColor(aob.w0(null, aob.h5, false));
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 
-    public final void onBackStarted(BackEvent backEvent) {
-        backEvent.getClass();
-        this.a.invoke(new fd0(backEvent));
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

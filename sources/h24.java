@@ -1,407 +1,257 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.os.Build;
-import android.os.Environment;
 import android.text.TextUtils;
-import android.util.SparseArray;
-import android.view.View;
-import android.view.Window;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import android.util.LongSparseArray;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class h24 implements sq4 {
-    public static HashMap E;
-    public static final String[] e = {"/dev/socket/genyd", "/dev/socket/baseband_genyd"};
-    public static final String[] f = {"goldfish"};
-    public static final String[] h = {"/dev/socket/qemud", "/dev/qemu_pipe"};
-    public static final String[] n = {"ueventd.android_x86.rc", "x86.prop", "ueventd.ttVM_x86.rc", "init.ttVM_x86.rc", "fstab.ttVM_x86", "fstab.vbox86", "init.vbox86.rc", "ueventd.vbox86.rc"};
-    public static final String[] r = {"fstab.andy", "ueventd.andy.rc"};
-    public static final String[] s = {"fstab.nox", "init.nox.rc", "ueventd.nox.rc", "/BigNoxGameHD", "/YSLauncher"};
-    public static final String[] w = {"/Android/data/com.bluestacks.home", "/Android/data/com.bluestacks.settings"};
-    public static final ce3[] x;
-    public static h24 y;
-    public boolean a;
-    public boolean b;
-    public Object c;
-    public Object d;
+public final /* synthetic */ class h24 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ i24 b;
 
-    static {
-        String str = null;
-        byte b = 1;
-        String str2 = "unknown";
-        String str3 = "sdk";
-        x = new ce3[]{new ce3("init.svc.qemud", str, b), new ce3("init.svc.qemu-props", str, b), new ce3("qemu.hw.mainkeys", str, b), new ce3("qemu.sf.fake_camera", str, b), new ce3("qemu.sf.lcd_density", str, b), new ce3("ro.bootloader", str2, b), new ce3("ro.bootmode", str2, b), new ce3("ro.hardware", "goldfish", b), new ce3("ro.kernel.android.qemud", str, b), new ce3("ro.kernel.qemu.gles", str, b), new ce3("ro.kernel.qemu", "1", b), new ce3("ro.product.device", "generic", b), new ce3("ro.product.model", str3, b), new ce3("ro.product.name", str3, b), new ce3("ro.serialno", null, b)};
+    public /* synthetic */ h24(i24 i24Var, byte b) {
+        this.a = b;
+        this.b = i24Var;
     }
 
-    public h24() {
-        this.c = new Path();
-        this.d = new Rect();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00d9  */
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x01bd, code lost:
+    
+        if (r7.charAt(r10) <= 57343) goto L76;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01d7, code lost:
+    
+        if (r7.charAt(r10) != 9794) goto L78;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v12, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r7v16, types: [java.lang.CharSequence] */
+    @Override // pcc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean d() {
-        boolean z;
-        boolean z2 = false;
-        if (!Build.BOARD.toLowerCase().contains("nox") && !Build.BOOTLOADER.toLowerCase().contains("nox") && !Build.FINGERPRINT.startsWith("generic")) {
-            String str = Build.MODEL;
-            if (!str.toLowerCase().contains("google_sdk") && !str.toLowerCase().contains("droid4x") && !str.toLowerCase().contains("emulator") && !str.contains("Android SDK built for x86") && !Build.MANUFACTURER.toLowerCase().contains("genymotion")) {
-                String str2 = Build.HARDWARE;
-                if (!str2.toLowerCase().contains("goldfish") && !str2.toLowerCase().contains("vbox86") && !str2.toLowerCase().contains("android_x86") && !str2.toLowerCase().contains("nox") && !str2.toLowerCase().contains("ranchu")) {
-                    String str3 = Build.PRODUCT;
-                    if (!str3.equals("sdk") && !str3.equals("google_sdk") && !str3.equals("sdk_x86") && !str3.equals("vbox86p") && !str3.toLowerCase().contains("nox") && !Build.SERIAL.toLowerCase().contains("nox")) {
-                        z = false;
-                        if (!z) {
-                            if (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) {
-                                z2 = true;
-                            }
-                            boolean z3 = z | z2;
-                            if (!z3) {
-                                return z3 | "google_sdk".equals(Build.PRODUCT);
-                            }
-                        }
-                        return true;
-                    }
-                }
-            }
-        }
-        z = true;
-        if (!z) {
-        }
-        return true;
-    }
-
-    public static h24 m(Context context) {
-        if (context == null) {
-            w26.j("Context must not be null.");
-            return null;
-        }
-        h24 h24Var = y;
-        if (h24Var != null) {
-            return h24Var;
-        }
-        Context applicationContext = context.getApplicationContext();
-        h24 h24Var2 = new h24();
-        ArrayList arrayList = new ArrayList();
-        h24Var2.d = arrayList;
-        h24Var2.c = applicationContext;
-        arrayList.add("com.google.android.launcher.layouts.genymotion");
-        arrayList.add("com.bluestacks");
-        arrayList.add("com.bignox.app");
-        arrayList.add("com.vphone.launcher");
-        y = h24Var2;
-        return h24Var2;
-    }
-
-    public final void a() {
-        if (this.a) {
-            return;
-        }
-        this.a = true;
-        i();
-    }
-
-    public final boolean b(int i) {
-        SparseArray sparseArray = (SparseArray) this.c;
-        boolean z = this.b;
-        mu1 mu1Var = (mu1) this.d;
-        ArrayList arrayList = mu1Var.M6;
-        int i2 = i - mu1Var.D0.K;
-        if (i2 < 0 || i2 >= arrayList.size()) {
-            return false;
-        }
-        k27 k27Var = (k27) arrayList.get(i2);
-        if (k27Var.U == 0) {
-            return !z ? sparseArray.get(k27Var.e1(), null) == null : sparseArray.get(k27Var.e1(), null) != null;
-        }
-        return false;
-    }
-
-    public final boolean c() {
-        String str;
-        Context context = (Context) this.c;
-        rr.b(context, "android.permission.READ_PHONE_STATE");
-        if (e(1, e) || e(2, r) || e(3, s) || e(4, w)) {
-            return true;
-        }
-        File[] fileArr = {new File("/proc/tty/drivers"), new File("/proc/cpuinfo")};
-        for (int i = 0; i < 2; i++) {
-            File file = fileArr[i];
-            if (file.exists() && file.canRead()) {
-                byte[] bArr = new byte[1024];
-                try {
-                    FileInputStream fileInputStream = new FileInputStream(file);
-                    fileInputStream.read(bArr);
-                    fileInputStream.close();
-                } catch (Exception e2) {
-                    e2.printStackTrace();
-                }
-                if (new String(bArr).contains(f[0])) {
-                    return true;
-                }
-            }
-        }
-        if (e(5, h)) {
-            return true;
-        }
-        if (rr.b(context, "android.permission.INTERNET") == 0) {
-            String[] strArr = {"/system/bin/netcfg"};
-            StringBuilder sb = new StringBuilder();
-            try {
-                ProcessBuilder processBuilder = new ProcessBuilder(strArr);
-                processBuilder.directory(new File("/system/bin/"));
-                processBuilder.redirectErrorStream(true);
-                InputStream inputStream = processBuilder.start().getInputStream();
-                byte[] bArr2 = new byte[1024];
-                while (inputStream.read(bArr2) != -1) {
-                    sb.append(new String(bArr2));
-                }
-                inputStream.close();
-            } catch (Exception unused) {
-            }
-            String sb2 = sb.toString();
-            if (!TextUtils.isEmpty(sb2)) {
-                for (String str2 : sb2.split("\n")) {
-                    if ((str2.contains("wlan0") || str2.contains("tunl0") || str2.contains("eth0")) && str2.contains("10.0.2.15")) {
-                        return true;
-                    }
-                }
-            }
-        }
-        int i2 = 0;
-        for (int i3 = 0; i3 < 15; i3++) {
-            ce3 ce3Var = x[i3];
-            String str3 = ce3Var.b;
-            try {
-                Class<?> loadClass = context.getClassLoader().loadClass("android.os.SystemProperties");
-                str = (String) loadClass.getMethod("get", String.class).invoke(loadClass, str3);
-            } catch (Exception unused2) {
-                str = null;
-            }
-            String str4 = ce3Var.c;
-            if (str4 == null && str != null) {
-                i2++;
-            }
-            if (str4 != null && str.contains(str4)) {
-                i2++;
-            }
-        }
-        return i2 >= 5 && e(6, n);
-    }
-
-    public final boolean e(int i, String[] strArr) {
-        File file;
-        for (String str : strArr) {
-            if (rr.b((Context) this.c, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
-                file = new File(str);
-            } else if ((str.contains("/") && i == 3) || i == 4) {
-                file = new File(Environment.getExternalStorageDirectory() + str);
-            } else {
-                file = new File(str);
-            }
-            if (file.exists()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void f() {
-        if (this.a) {
-            return;
-        }
-        this.a = true;
-        iu4 iu4Var = (iu4) this.c;
-        if (iu4Var != null) {
-            iu4Var.run();
-        }
-        c05 c05Var = (c05) this.d;
-        if (c05Var == null || this.b) {
-            return;
-        }
-        c05Var.run();
-    }
-
-    public final void g() {
-        if (this.a) {
-            this.a = false;
-            i();
-        }
-    }
-
-    public final boolean h() {
-        if (this.a) {
-            return this.b;
-        }
-        boolean z = true;
-        try {
-            this.a = true;
-            boolean z2 = this.b;
-            if (!z2) {
-                z2 = d();
-                this.b = z2;
-            }
-            if (!z2) {
-                z2 = c();
-                this.b = z2;
-            }
-            if (!z2) {
-                ArrayList arrayList = (ArrayList) this.d;
-                if (!arrayList.isEmpty()) {
-                    PackageManager packageManager = ((Context) this.c).getPackageManager();
-                    int size = arrayList.size();
-                    int i = 0;
-                    while (i < size) {
-                        Object obj = arrayList.get(i);
-                        i++;
-                        Intent launchIntentForPackage = packageManager.getLaunchIntentForPackage((String) obj);
-                        if (launchIntentForPackage != null && !packageManager.queryIntentActivities(launchIntentForPackage, 65536).isEmpty()) {
-                            break;
+    public final void a(Object obj) {
+        LongSparseArray longSparseArray;
+        int y1;
+        int y12;
+        byte b = this.a;
+        int i = 0;
+        i24 i24Var = this.b;
+        switch (b) {
+            case 0:
+                i24Var.a((Runnable) obj, true);
+                break;
+            case 1:
+                Runnable runnable = (Runnable) obj;
+                ArrayList arrayList = i24Var.s;
+                LongSparseArray longSparseArray2 = i24Var.w;
+                j24 j24Var = i24Var.x;
+                o24 o24Var = j24Var.R;
+                HashMap hashMap = ls6.d0(o24Var.d1).e0;
+                HashSet hashSet = new HashSet();
+                ArrayList arrayList2 = new ArrayList();
+                for (ArrayList arrayList3 : hashMap.values()) {
+                    int size = arrayList3.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        Object obj2 = arrayList3.get(i2);
+                        i2++;
+                        TLRPC.Document document = (TLRPC.Document) obj2;
+                        if (!hashSet.contains(Long.valueOf(document.id)) && r47.W3(document)) {
+                            hashSet.add(Long.valueOf(document.id));
+                            arrayList2.add(document);
+                            longSparseArray2.put(document.id, document);
                         }
                     }
                 }
-                z = false;
-                this.b = z;
-                z2 = z;
-            }
-            if (z2) {
-                return z2;
-            }
-            boolean a = t8d.a();
-            this.b = a;
-            return a;
-        } catch (Exception unused) {
-            return false;
-        }
-    }
-
-    public final void i() {
-        boolean z = this.a && ((fi4) this.d).run();
-        if (z != this.b) {
-            this.b = z;
-            int i = z ? 1 : -1;
-            Window window = (Window) this.c;
-            HashMap hashMap = E;
-            if (hashMap == null) {
-                hashMap = new HashMap();
-                E = hashMap;
-            }
-            Integer num = (Integer) hashMap.get(window);
-            int max = Math.max(0, (num == null ? 0 : num.intValue()) + i);
-            HashMap hashMap2 = E;
-            if (max <= 0) {
-                hashMap2.remove(window);
-            } else {
-                hashMap2.put(window, Integer.valueOf(max));
-            }
-            if (window != null) {
-                HashMap hashMap3 = E;
-                if (hashMap3 == null || hashMap3.get(window) == null) {
-                    window.clearFlags(TLObject.FLAG_13);
-                    gl.f2();
+                ArrayList arrayList4 = ls6.d0(o24Var.d1).t0[0];
+                int size2 = arrayList4.size();
+                int i3 = 0;
+                while (i3 < size2) {
+                    Object obj3 = arrayList4.get(i3);
+                    i3++;
+                    TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) obj3;
+                    TLRPC.Document document2 = stickerSetCovered.cover;
+                    if (document2 != null && !hashSet.contains(Long.valueOf(document2.id)) && r47.W3(stickerSetCovered.cover)) {
+                        hashSet.add(Long.valueOf(stickerSetCovered.cover.id));
+                        arrayList2.add(stickerSetCovered.cover);
+                        TLRPC.Document document3 = stickerSetCovered.cover;
+                        longSparseArray2.put(document3.id, document3);
+                    }
+                    ArrayList<TLRPC.Document> arrayList5 = stickerSetCovered.covers;
+                    if (arrayList5 != null) {
+                        int size3 = arrayList5.size();
+                        int i4 = i;
+                        while (i4 < size3) {
+                            TLRPC.Document document4 = arrayList5.get(i4);
+                            i4++;
+                            TLRPC.Document document5 = document4;
+                            LongSparseArray longSparseArray3 = longSparseArray2;
+                            if (hashSet.contains(Long.valueOf(document5.id)) || !r47.W3(document5)) {
+                                longSparseArray = longSparseArray3;
+                            } else {
+                                hashSet.add(Long.valueOf(document5.id));
+                                arrayList2.add(document5);
+                                longSparseArray = longSparseArray3;
+                                longSparseArray.put(document5.id, document5);
+                            }
+                            longSparseArray2 = longSparseArray;
+                        }
+                    }
+                    longSparseArray2 = longSparseArray2;
+                    i = 0;
+                }
+                if (!arrayList2.isEmpty()) {
+                    arrayList.addAll(arrayList2);
+                    i24Var.f.put(arrayList, j24Var.O);
+                    i24Var.h.add(arrayList);
+                }
+                runnable.run();
+                break;
+            case 2:
+                i24Var.a((Runnable) obj, false);
+                break;
+            case 3:
+                ls6.d0(i24Var.x.R.d1).a2(false, i24Var.a, new rx1(i24Var, (Runnable) obj, (byte) 20));
+                break;
+            case 4:
+                Runnable runnable2 = (Runnable) obj;
+                j24 j24Var2 = i24Var.x;
+                ArrayList arrayList6 = i24Var.s;
+                if (i24Var.a.length() <= 14) {
+                    HashMap hashMap2 = ls6.d0(j24Var2.R.d1).e0;
+                    String str = i24Var.a;
+                    int length = str.length();
+                    int i5 = 0;
+                    String str2 = str;
+                    while (i5 < length) {
+                        if (i5 < length - 1) {
+                            if (str2.charAt(i5) == 55356) {
+                                int i6 = i5 + 1;
+                                if (str2.charAt(i6) >= 57339) {
+                                    break;
+                                }
+                            }
+                            if (str2.charAt(i5) == 8205) {
+                                int i7 = i5 + 1;
+                                if (str2.charAt(i7) != 9792) {
+                                    break;
+                                }
+                                length -= 2;
+                                str2 = TextUtils.concat(str2.subSequence(0, i5), str2.subSequence(i5 + 2, str2.length()));
+                                i5--;
+                                i5++;
+                                str2 = str2;
+                            }
+                        }
+                        if (str2.charAt(i5) == 65039) {
+                            length--;
+                            str2 = TextUtils.concat(str2.subSequence(0, i5), str2.subSequence(i5 + 1, str2.length()));
+                            i5--;
+                            i5++;
+                            str2 = str2;
+                        } else {
+                            i5++;
+                            str2 = str2;
+                        }
+                    }
+                    ArrayList arrayList7 = hashMap2 != null ? (ArrayList) hashMap2.get(str2.toString()) : null;
+                    if (arrayList7 != null && !arrayList7.isEmpty()) {
+                        arrayList6.addAll(arrayList7);
+                        int size4 = arrayList7.size();
+                        while (i < size4) {
+                            TLRPC.Document document6 = (TLRPC.Document) arrayList7.get(i);
+                            i24Var.w.put(document6.id, document6);
+                            i++;
+                        }
+                        i24Var.f.put(arrayList6, j24Var2.O);
+                        i24Var.h.add(arrayList6);
+                    }
+                }
+                runnable2.run();
+                break;
+            case 5:
+                Runnable runnable3 = (Runnable) obj;
+                j24 j24Var3 = i24Var.x;
+                o24 o24Var2 = j24Var3.R;
+                int i8 = o24Var2.d1;
+                HashMap hashMap3 = ls6.d0(o24Var2.d1).e0;
+                if (hashMap3 != null && !hashMap3.isEmpty() && i24Var.a.length() > 1) {
+                    String[] F0 = hl.F0();
+                    if (!Arrays.equals(o24Var2.X0, F0)) {
+                        ls6.d0(i8).O(F0, false);
+                    }
+                    o24Var2.X0 = F0;
+                    ls6.d0(i8).W(o24Var2.X0, j24Var3.O, true, new fu2((Object) i24Var, (Object) hashMap3, (Object) runnable3, (byte) 10), false);
+                    break;
                 } else {
-                    window.addFlags(TLObject.FLAG_13);
-                    gl.f2();
+                    runnable3.run();
+                    break;
                 }
-            }
-        }
-    }
-
-    public final boolean j(Rect rect, boolean z, boolean z2) {
-        Rect rect2 = (Rect) this.d;
-        boolean z3 = (!rect2.isEmpty() && rect2.top == rect.top && rect2.bottom == rect.bottom && rect2.right == rect.right && rect2.left == rect.left && this.a == z2 && this.b == z && z2 && z) ? false : true;
-        this.a = z2;
-        this.b = z;
-        rect2.set(rect);
-        return z3;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:21:0x007b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void l(float f2, float f3, int i, boolean z) {
-        s49 K;
-        mu1 mu1Var = (mu1) this.d;
-        ArrayList arrayList = mu1Var.M6;
-        SparseArray[] sparseArrayArr = mu1Var.o6;
-        int i2 = i - mu1Var.D0.K;
-        if (this.b) {
-            z = !z;
-        }
-        if (i2 < 0 || i2 >= arrayList.size()) {
-            return;
-        }
-        k27 k27Var = (k27) arrayList.get(i2);
-        if (z) {
-            if (sparseArrayArr[0].indexOfKey(k27Var.e1()) >= 0 || sparseArrayArr[1].indexOfKey(k27Var.e1()) >= 0) {
-                return;
-            }
-        } else if (sparseArrayArr[0].indexOfKey(k27Var.e1()) < 0 && sparseArrayArr[1].indexOfKey(k27Var.e1()) < 0) {
-            return;
-        }
-        if (k27Var.U == 0) {
-            if (z) {
-                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                    this.a = true;
-                    K = mu1Var.A0.K(i);
-                    if (K != null) {
-                        View view = K.a;
-                        if (view instanceof gb2) {
-                            mu1Var.Ha(view, f2, f3, false);
-                            return;
+                break;
+            case 6:
+                Runnable runnable4 = (Runnable) obj;
+                HashMap hashMap4 = i24Var.d;
+                HashMap hashMap5 = i24Var.e;
+                ArrayList arrayList8 = i24Var.c;
+                j24 j24Var4 = i24Var.x;
+                o24 o24Var3 = j24Var4.R;
+                ArrayList t0 = ls6.d0(o24Var3.d1).t0(0);
+                int i9 = o24Var3.d1;
+                uc7.s1(i9).w0(t0);
+                int size5 = t0.size();
+                for (int i10 = 0; i10 < size5; i10++) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) t0.get(i10);
+                    int y13 = hl.y1(tL_messages_stickerSet.set.title, j24Var4.O);
+                    if (y13 < 0) {
+                        String str3 = tL_messages_stickerSet.set.short_name;
+                        if (str3 != null && (y12 = hl.y1(str3, j24Var4.O)) >= 0 && (y12 == 0 || tL_messages_stickerSet.set.short_name.charAt(y12 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet);
+                            hashMap4.put(tL_messages_stickerSet, Boolean.TRUE);
                         }
+                    } else if (y13 == 0 || tL_messages_stickerSet.set.title.charAt(y13 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet);
+                        hashMap5.put(tL_messages_stickerSet, Integer.valueOf(y13));
                     }
-                    mu1Var.y4(k27Var, false, true);
-                    mu1Var.yc();
-                    mu1Var.ud(false);
                 }
-            }
-            this.a = false;
-            K = mu1Var.A0.K(i);
-            if (K != null) {
-            }
-            mu1Var.y4(k27Var, false, true);
-            mu1Var.yc();
-            mu1Var.ud(false);
+                ArrayList t02 = ls6.d0(i9).t0(3);
+                uc7.s1(i9).w0(t02);
+                int size6 = t02.size();
+                while (i < size6) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) t02.get(i);
+                    int y14 = hl.y1(tL_messages_stickerSet2.set.title, j24Var4.O);
+                    if (y14 < 0) {
+                        String str4 = tL_messages_stickerSet2.set.short_name;
+                        if (str4 != null && (y1 = hl.y1(str4, j24Var4.O)) >= 0 && (y1 == 0 || tL_messages_stickerSet2.set.short_name.charAt(y1 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet2);
+                            hashMap4.put(tL_messages_stickerSet2, Boolean.TRUE);
+                        }
+                    } else if (y14 == 0 || tL_messages_stickerSet2.set.title.charAt(y14 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet2);
+                        hashMap5.put(tL_messages_stickerSet2, Integer.valueOf(y14));
+                    }
+                    i++;
+                }
+                runnable4.run();
+                break;
+            default:
+                Runnable runnable5 = (Runnable) obj;
+                j24 j24Var5 = i24Var.x;
+                if (pv3.d(j24Var5.O)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = i24Var.a;
+                    tL_messages_getStickers.hash = 0L;
+                    j24Var5.M = ConnectionsManager.getInstance(j24Var5.R.d1).sendRequest(tL_messages_getStickers, new fn0((Object) i24Var, (Object) tL_messages_getStickers, (Object) runnable5, (byte) 24));
+                    break;
+                } else {
+                    runnable5.run();
+                    break;
+                }
         }
-    }
-
-    @Override // sq4
-    public final void onSuccess(Object obj) {
-        tu6 tu6Var = (tu6) obj;
-        tv6 tv6Var = ((lw6) this.d).j;
-        hw6 hw6Var = new hw6(this, tu6Var, this.a, this.b, (su6) this.c, (byte) 0);
-        tv6Var.getClass();
-        hw6Var.run();
-    }
-
-    public h24(iu4 iu4Var, c05 c05Var) {
-        this.c = iu4Var;
-        this.d = c05Var;
-    }
-
-    public h24(Window window, fi4 fi4Var) {
-        this.a = false;
-        this.b = false;
-        this.c = window;
-        this.d = fi4Var;
-    }
-
-    @Override // sq4
-    public final void k(Throwable th) {
     }
 }

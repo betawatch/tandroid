@@ -1,29 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f87 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vs2 b;
-    public final /* synthetic */ int c;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ f87(vs2 vs2Var, int i, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class f87 implements icc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc7 b;
+
+    public /* synthetic */ f87(uc7 uc7Var, byte b) {
         this.a = b;
-        this.b = vs2Var;
-        this.c = i;
+        this.b = uc7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // icc
+    public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        int i = this.c;
-        vs2 vs2Var = this.b;
+        byte b2 = 1;
+        int i = 0;
+        Object[] objArr = 0;
+        uc7 uc7Var = this.b;
         switch (b) {
             case 0:
-                vs2Var.accept(Integer.valueOf(i));
+                hl.c3(new o87(uc7Var, (TL_account.TL_webBrowserSettings) obj2, b2));
+                break;
+            case 1:
+                TL_account.WebBrowserSettings webBrowserSettings = (TL_account.WebBrowserSettings) obj;
+                if (webBrowserSettings instanceof TL_account.TL_webBrowserSettings) {
+                    uc7Var.e5((TL_account.TL_webBrowserSettings) webBrowserSettings);
+                    break;
+                }
+                break;
+            case 2:
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                if (updates != null) {
+                    uc7Var.Y3(updates, false);
+                }
+                hl.c3(new pa7(uc7Var, b2));
+                break;
+            case 3:
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
+                if (updates2 != null) {
+                    uc7Var.Y3(updates2, false);
+                }
+                hl.c3(new pa7(uc7Var, objArr == true ? 1 : 0));
+                break;
+            case 4:
+                TL_account.WebBrowserSettings webBrowserSettings2 = (TL_account.WebBrowserSettings) obj;
+                if (webBrowserSettings2 instanceof TL_account.TL_webBrowserSettings) {
+                    uc7Var.e5((TL_account.TL_webBrowserSettings) webBrowserSettings2);
+                    break;
+                }
+                break;
+            case 5:
+                TLRPC.EmojiGameInfo emojiGameInfo = (TLRPC.EmojiGameInfo) obj;
+                if (emojiGameInfo != null) {
+                    uc7Var.l5 = emojiGameInfo;
+                }
+                ArrayList arrayList = uc7Var.k5;
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj3 = arrayList.get(i);
+                    i++;
+                    ((pcc) obj3).a(Boolean.valueOf(uc7Var.l5 instanceof TLRPC.TL_emojiGameDiceInfo));
+                }
+                uc7Var.k5 = null;
                 break;
             default:
-                vs2Var.accept(Integer.valueOf(i));
+                TLRPC.Updates updates3 = (TLRPC.Updates) obj;
+                if (updates3 != null) {
+                    uc7Var.Y3(updates3, false);
+                    break;
+                }
                 break;
         }
     }

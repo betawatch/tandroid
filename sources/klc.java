@@ -1,55 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class klc extends cj7 {
-    public final /* synthetic */ ViewGroup W1;
-    public final /* synthetic */ View[] X1;
-    public final /* synthetic */ Context Y1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class klc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public klc(Context context, ViewGroup viewGroup, wjb wjbVar, ViewGroup viewGroup2, View[] viewArr, Context context2) {
-        super(context, viewGroup, wjbVar);
-        this.W1 = viewGroup2;
-        this.X1 = viewArr;
-        this.Y1 = context2;
+    public /* synthetic */ klc(VoIPService voIPService, TLRPC.TL_error tL_error, byte b) {
+        this.a = b;
+        this.b = voIPService;
+        this.c = tL_error;
     }
 
-    @Override // cj7, fy0
-    public final void O0(float f) {
-        super.O0(f);
-        if (this.W1 instanceof wec) {
-            this.s0.setBounds(0, (int) f, this.b.getWidth(), this.b.getHeight());
-        }
-    }
-
-    @Override // fy0
-    public final boolean U0() {
-        return !(this.W1 instanceof wec);
-    }
-
-    @Override // cj7
-    public final int Y0() {
-        return bkb.v0(bkb.c6, this.J0);
-    }
-
-    @Override // cj7, fx0, android.app.Dialog
-    public final void show() {
-        super.show();
-        if (this.W1 instanceof wec) {
-            View[] viewArr = this.X1;
-            if (viewArr[0] == null) {
-                u0a u0aVar = new u0a(this, this.Y1);
-                viewArr[0] = u0aVar;
-                this.b.addView(u0aVar, 0, nme.e(-1, 50, 80));
-            }
-            this.b.setBackground(null);
-            this.b.setPadding(0, 0, 0, 0);
-            this.n1.setPadding(0, 0, 0, 0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLRPC.TL_error tL_error = this.c;
+        VoIPService voIPService = this.b;
+        switch (b) {
+            case 0:
+                voIPService.lambda$startGroupCall$31(tL_error);
+                break;
+            case 1:
+                voIPService.lambda$startScreenCapture$62(tL_error);
+                break;
+            default:
+                voIPService.lambda$startGroupCall$25(tL_error);
+                break;
         }
     }
 }

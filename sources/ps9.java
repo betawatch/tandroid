@@ -1,61 +1,65 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.os.Process;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ps9 extends EditTextBoldCursor {
-    public final kl M1;
-    public int N1;
-    public final gn O1;
-    public final /* synthetic */ wjb P1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ps9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final Runnable b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ps9(Context context, wjb wjbVar) {
-        super(context);
-        this.P1 = wjbVar;
-        this.M1 = new kl(this);
-        gn gnVar = new gn(false, true, true);
-        this.O1 = gnVar;
-        gnVar.n(0.2f, 160L, s33.h);
-        gnVar.w(gl.L(15.33f));
-        gnVar.setCallback(this);
-        gnVar.b = 5;
+    public /* synthetic */ ps9(Runnable runnable, byte b) {
+        this.a = b;
+        this.b = runnable;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a = this.M1.a(bkb.v0(this.N1 < 0 ? bkb.o7 : bkb.O5, this.P1), false);
-        gn gnVar = this.O1;
-        gnVar.u(a);
-        gnVar.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        gnVar.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        super.onTextChanged(charSequence, i, i2, i3);
-        gn gnVar = this.O1;
-        if (gnVar != null) {
-            this.N1 = 12 - charSequence.length();
-            gnVar.a();
-            gnVar.t(this.N1 > 4 ? "" : String.valueOf(this.N1), true, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Runnable runnable = this.b;
+        switch (b) {
+            case 0:
+                try {
+                    runnable.run();
+                    break;
+                } catch (Exception e) {
+                    pse.b("Executor", "Background execution failure.", e);
+                    return;
+                }
+            case 1:
+                runnable.run();
+                break;
+            case 2:
+                Process.setThreadPriority(0);
+                runnable.run();
+                break;
+            case 3:
+                Deque deque = (Deque) lg7.b.get();
+                xve.h(deque);
+                deque.add(runnable);
+                if (deque.size() <= 1) {
+                    do {
+                        runnable.run();
+                        deque.removeFirst();
+                        runnable = (Runnable) deque.peekFirst();
+                    } while (runnable != null);
+                }
+                break;
+            default:
+                lg7.b.set(new ArrayDeque());
+                runnable.run();
+                break;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.O1 || super.verifyDrawable(drawable);
+    public final String toString() {
+        switch (this.a) {
+            case 1:
+                return this.b.toString();
+            default:
+                return super.toString();
+        }
     }
 }

@@ -1,92 +1,364 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.Surface;
-import android.view.SurfaceHolder;
+import android.app.PendingIntent;
+import android.media.session.MediaSession;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.support.v4.media.RatingCompat;
+import android.support.v4.media.session.MediaSessionCompat$QueueItem;
+import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.support.v4.media.session.ParcelableVolumeInfo;
+import android.support.v4.media.session.PlaybackStateCompat;
+import androidx.versionedparcelable.ParcelImpl;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class mx6 implements SurfaceHolder {
-    public final Surface a;
-    public final Rect b;
-    public SurfaceHolder.Callback c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class mx6 implements Parcelable.Creator {
+    public final /* synthetic */ byte a;
 
-    public mx6(Surface surface, int i, int i2) {
-        Rect rect = new Rect();
-        this.b = rect;
-        this.a = surface;
-        rect.set(0, 0, i, i2);
+    public /* synthetic */ mx6(byte b) {
+        this.a = b;
     }
 
-    @Override // android.view.SurfaceHolder
-    public final void addCallback(SurfaceHolder.Callback callback) {
-        this.c = callback;
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final Surface getSurface() {
-        return this.a;
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final Rect getSurfaceFrame() {
-        return this.b;
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final boolean isCreating() {
-        return false;
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final Canvas lockCanvas() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final void removeCallback(SurfaceHolder.Callback callback) {
-        if (this.c == callback) {
-            this.c = null;
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        int i = 0;
+        boolean z = false;
+        int i2 = 0;
+        int i3 = 0;
+        int i4 = 0;
+        PendingIntent pendingIntent = null;
+        String str = null;
+        ArrayList arrayList = null;
+        String str2 = null;
+        ArrayList arrayList2 = null;
+        String str3 = null;
+        cl5 cl5Var = null;
+        Bundle bundle = null;
+        PendingIntent pendingIntent2 = null;
+        switch (this.a) {
+            case 0:
+                return new ox6(parcel);
+            case 1:
+                return new MediaSessionCompat$QueueItem(parcel);
+            case 2:
+                MediaSession.Token token = (MediaSession.Token) parcel.readParcelable(null);
+                token.getClass();
+                return new px6(token, null);
+            case 3:
+                return new MediaSessionCompat$Token(parcel.readParcelable(null), null);
+            case 4:
+                yk7 yk7Var = new yk7(parcel);
+                yk7Var.a = parcel.readInt();
+                return yk7Var;
+            case 5:
+                return new ParcelImpl(parcel);
+            case 6:
+                ParcelableVolumeInfo parcelableVolumeInfo = new ParcelableVolumeInfo();
+                parcelableVolumeInfo.a = parcel.readInt();
+                parcelableVolumeInfo.c = parcel.readInt();
+                parcelableVolumeInfo.d = parcel.readInt();
+                parcelableVolumeInfo.e = parcel.readInt();
+                parcelableVolumeInfo.b = parcel.readInt();
+                return parcelableVolumeInfo;
+            case 7:
+                int z2 = aye.z(parcel);
+                while (parcel.dataPosition() < z2) {
+                    int readInt = parcel.readInt();
+                    if (((char) readInt) != 1) {
+                        aye.y(parcel, readInt);
+                    } else {
+                        pendingIntent = (PendingIntent) aye.g(parcel, readInt, PendingIntent.CREATOR);
+                    }
+                }
+                aye.m(parcel, z2);
+                return new p68(pendingIntent);
+            case 8:
+                int z3 = aye.z(parcel);
+                while (parcel.dataPosition() < z3) {
+                    int readInt2 = parcel.readInt();
+                    if (((char) readInt2) != 1) {
+                        aye.y(parcel, readInt2);
+                    } else {
+                        pendingIntent2 = (PendingIntent) aye.g(parcel, readInt2, PendingIntent.CREATOR);
+                    }
+                }
+                aye.m(parcel, z3);
+                return new q68(pendingIntent2);
+            case 9:
+                return new sf8(parcel);
+            case 10:
+                return new PlaybackStateCompat(parcel);
+            case 11:
+                return new rf8(parcel);
+            case 12:
+                return new u29(parcel.readInt(), parcel.readFloat());
+            case 13:
+                return new RatingCompat(parcel.readInt(), parcel.readFloat());
+            case 14:
+                int z4 = aye.z(parcel);
+                while (parcel.dataPosition() < z4) {
+                    aye.y(parcel, parcel.readInt());
+                }
+                aye.m(parcel, z4);
+                return new v89();
+            case 15:
+                int z5 = aye.z(parcel);
+                while (parcel.dataPosition() < z5) {
+                    aye.y(parcel, parcel.readInt());
+                }
+                aye.m(parcel, z5);
+                return new w89();
+            case 16:
+                int z6 = aye.z(parcel);
+                while (parcel.dataPosition() < z6) {
+                    aye.y(parcel, parcel.readInt());
+                }
+                aye.m(parcel, z6);
+                return new h99();
+            case 17:
+                int z7 = aye.z(parcel);
+                while (parcel.dataPosition() < z7) {
+                    int readInt3 = parcel.readInt();
+                    if (((char) readInt3) != 2) {
+                        aye.y(parcel, readInt3);
+                    } else {
+                        bundle = aye.a(parcel, readInt3);
+                    }
+                }
+                aye.m(parcel, z7);
+                return new w99(bundle);
+            case 18:
+                me9 me9Var = new me9();
+                IBinder readStrongBinder = parcel.readStrongBinder();
+                int i5 = le9.b;
+                if (readStrongBinder != null) {
+                    IInterface queryLocalInterface = readStrongBinder.queryLocalInterface(cl5.h);
+                    if (queryLocalInterface == null || !(queryLocalInterface instanceof cl5)) {
+                        bl5 bl5Var = new bl5();
+                        bl5Var.a = readStrongBinder;
+                        cl5Var = bl5Var;
+                    } else {
+                        cl5Var = (cl5) queryLocalInterface;
+                    }
+                }
+                me9Var.a = cl5Var;
+                return me9Var;
+            case 19:
+                int z8 = aye.z(parcel);
+                while (parcel.dataPosition() < z8) {
+                    aye.y(parcel, parcel.readInt());
+                }
+                aye.m(parcel, z8);
+                return new dla();
+            case 20:
+                return new scb(parcel);
+            case 21:
+                int z9 = aye.z(parcel);
+                while (parcel.dataPosition() < z9) {
+                    int readInt4 = parcel.readInt();
+                    if (((char) readInt4) != 1) {
+                        aye.y(parcel, readInt4);
+                    } else {
+                        str3 = aye.h(parcel, readInt4);
+                    }
+                }
+                aye.m(parcel, z9);
+                return new o4d(str3);
+            case 22:
+                int z10 = aye.z(parcel);
+                String str4 = null;
+                int i6 = 0;
+                while (parcel.dataPosition() < z10) {
+                    int readInt5 = parcel.readInt();
+                    char c = (char) readInt5;
+                    if (c == 1) {
+                        i = aye.u(parcel, readInt5);
+                    } else if (c == 2) {
+                        str4 = aye.h(parcel, readInt5);
+                    } else if (c != 3) {
+                        aye.y(parcel, readInt5);
+                    } else {
+                        i6 = aye.u(parcel, readInt5);
+                    }
+                }
+                aye.m(parcel, z10);
+                return new s4d(i, i6, str4);
+            case 23:
+                int z11 = aye.z(parcel);
+                String str5 = null;
+                int i7 = 0;
+                while (parcel.dataPosition() < z11) {
+                    int readInt6 = parcel.readInt();
+                    char c2 = (char) readInt6;
+                    if (c2 == 1) {
+                        i4 = aye.u(parcel, readInt6);
+                    } else if (c2 == 2) {
+                        str5 = aye.h(parcel, readInt6);
+                    } else if (c2 != 3) {
+                        aye.y(parcel, readInt6);
+                    } else {
+                        i7 = aye.u(parcel, readInt6);
+                    }
+                }
+                aye.m(parcel, z11);
+                return new vdc(i4, i7, str5);
+            case 24:
+                int z12 = aye.z(parcel);
+                while (parcel.dataPosition() < z12) {
+                    int readInt7 = parcel.readInt();
+                    if (((char) readInt7) != 1) {
+                        aye.y(parcel, readInt7);
+                    } else {
+                        arrayList2 = aye.l(parcel, readInt7, s4d.CREATOR);
+                    }
+                }
+                aye.m(parcel, z12);
+                return new w4d(arrayList2);
+            case 25:
+                int z13 = aye.z(parcel);
+                while (parcel.dataPosition() < z13) {
+                    int readInt8 = parcel.readInt();
+                    if (((char) readInt8) != 1) {
+                        aye.y(parcel, readInt8);
+                    } else {
+                        str2 = aye.h(parcel, readInt8);
+                    }
+                }
+                aye.m(parcel, z13);
+                return new a5d(str2);
+            case 26:
+                int z14 = aye.z(parcel);
+                while (parcel.dataPosition() < z14) {
+                    int readInt9 = parcel.readInt();
+                    if (((char) readInt9) != 1) {
+                        aye.y(parcel, readInt9);
+                    } else {
+                        arrayList = aye.e(parcel, readInt9);
+                    }
+                }
+                aye.m(parcel, z14);
+                return new f5d(arrayList);
+            case 27:
+                int z15 = aye.z(parcel);
+                Bundle bundle2 = null;
+                int i8 = 0;
+                while (parcel.dataPosition() < z15) {
+                    int readInt10 = parcel.readInt();
+                    char c3 = (char) readInt10;
+                    if (c3 == 1) {
+                        i3 = aye.u(parcel, readInt10);
+                    } else if (c3 == 2) {
+                        i8 = aye.u(parcel, readInt10);
+                    } else if (c3 != 3) {
+                        aye.y(parcel, readInt10);
+                    } else {
+                        bundle2 = aye.a(parcel, readInt10);
+                    }
+                }
+                aye.m(parcel, z15);
+                return new e15(i3, i8, bundle2);
+            case 28:
+                int z16 = aye.z(parcel);
+                while (parcel.dataPosition() < z16) {
+                    int readInt11 = parcel.readInt();
+                    char c4 = (char) readInt11;
+                    if (c4 == 1) {
+                        i2 = aye.u(parcel, readInt11);
+                    } else if (c4 != 2) {
+                        aye.y(parcel, readInt11);
+                    } else {
+                        str = aye.h(parcel, readInt11);
+                    }
+                }
+                aye.m(parcel, z16);
+                return new fj2(i2, str);
+            default:
+                int z17 = aye.z(parcel);
+                int i9 = 0;
+                while (parcel.dataPosition() < z17) {
+                    int readInt12 = parcel.readInt();
+                    char c5 = (char) readInt12;
+                    if (c5 == 1) {
+                        z = aye.n(parcel, readInt12);
+                    } else if (c5 != 2) {
+                        aye.y(parcel, readInt12);
+                    } else {
+                        i9 = aye.u(parcel, readInt12);
+                    }
+                }
+                aye.m(parcel, z17);
+                return new vg7(i9, z);
         }
     }
 
-    @Override // android.view.SurfaceHolder
-    public final void setFixedSize(int i, int i2) {
-        this.b.set(0, 0, i, i2);
-        SurfaceHolder.Callback callback = this.c;
-        if (callback != null) {
-            callback.surfaceChanged(this, 1, i, i2);
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        switch (this.a) {
+            case 0:
+                return new ox6[i];
+            case 1:
+                return new MediaSessionCompat$QueueItem[i];
+            case 2:
+                return new px6[i];
+            case 3:
+                return new MediaSessionCompat$Token[i];
+            case 4:
+                return new yk7[i];
+            case 5:
+                return new ParcelImpl[i];
+            case 6:
+                return new ParcelableVolumeInfo[i];
+            case 7:
+                return new p68[i];
+            case 8:
+                return new q68[i];
+            case 9:
+                return new sf8[i];
+            case 10:
+                return new PlaybackStateCompat[i];
+            case 11:
+                return new rf8[i];
+            case 12:
+                return new u29[i];
+            case 13:
+                return new RatingCompat[i];
+            case 14:
+                return new v89[i];
+            case 15:
+                return new w89[i];
+            case 16:
+                return new h99[i];
+            case 17:
+                return new w99[i];
+            case 18:
+                return new me9[i];
+            case 19:
+                return new dla[i];
+            case 20:
+                return new scb[i];
+            case 21:
+                return new o4d[i];
+            case 22:
+                return new s4d[i];
+            case 23:
+                return new vdc[i];
+            case 24:
+                return new w4d[i];
+            case 25:
+                return new a5d[i];
+            case 26:
+                return new f5d[i];
+            case 27:
+                return new e15[i];
+            case 28:
+                return new fj2[i];
+            default:
+                return new vg7[i];
         }
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final Canvas lockCanvas(Rect rect) {
-        throw new UnsupportedOperationException();
-    }
-
-    public mx6(Surface surface) {
-        this.b = new Rect();
-        this.a = surface;
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final void setSizeFromLayout() {
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final void setFormat(int i) {
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final void setKeepScreenOn(boolean z) {
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final void setType(int i) {
-    }
-
-    @Override // android.view.SurfaceHolder
-    public final void unlockCanvasAndPost(Canvas canvas) {
     }
 }

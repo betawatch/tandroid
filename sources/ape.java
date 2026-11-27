@@ -1,61 +1,157 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.MappedByteBuffer;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.util.Log;
+import java.io.File;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ape {
-    public static pd7 a(MappedByteBuffer mappedByteBuffer) {
-        long j;
-        ByteBuffer duplicate = mappedByteBuffer.duplicate();
-        duplicate.order(ByteOrder.BIG_ENDIAN);
-        duplicate.position(duplicate.position() + 4);
-        int i = duplicate.getShort() & 65535;
-        if (i > 100) {
-            k93.f("Cannot read metadata.");
+public final class ape extends d05 {
+    public final ExecutorService F;
+    public final ma4 G;
+    public final ma4 H;
+    public final ma4 I;
+    public final ma4 J;
+    public final ma4 K;
+    public final ma4 L;
+    public final ma4 M;
+    public final ma4 N;
+    public final ma4 O;
+    public final ma4 P;
+    public final kqe Q;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ape(k05 k05Var, l05 l05Var, oxb oxbVar, Context context, Looper looper) {
+        super(14, k05Var, l05Var, oxbVar, context, looper);
+        ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+        kqe a = kqe.a(context);
+        this.G = new ma4((byte) 1);
+        this.H = new ma4((byte) 1);
+        this.I = new ma4((byte) 1);
+        this.J = new ma4((byte) 1);
+        this.K = new ma4((byte) 1);
+        this.L = new ma4((byte) 1);
+        this.M = new ma4((byte) 1);
+        this.N = new ma4((byte) 1);
+        this.O = new ma4((byte) 1);
+        this.P = new ma4((byte) 1);
+        xve.h(unconfigurableExecutorService);
+        this.F = unconfigurableExecutorService;
+        this.Q = a;
+        File file = new File(new File(context.getFilesDir(), "wearos_assets"), "streamtmp");
+        file.mkdirs();
+        File[] listFiles = file.listFiles();
+        if (listFiles != null) {
+            for (File file2 : listFiles) {
+                file2.delete();
+            }
+        }
+    }
+
+    @Override // hg0
+    public final void a(fg0 fg0Var) {
+        igd igdVar = this.k;
+        AtomicInteger atomicInteger = this.C;
+        Context context = this.h;
+        if (!v()) {
+            try {
+                Bundle bundle = context.getPackageManager().getApplicationInfo("com.google.android.wearable.app.cn", 128).metaData;
+                int i = bundle != null ? bundle.getInt("com.google.android.wearable.api.version", 0) : 0;
+                if (i < 8600000) {
+                    Log.w("WearableClient", "The Wear OS app is out of date. Requires API version 8600000 but found " + i);
+                    Intent intent = new Intent("com.google.android.wearable.app.cn.UPDATE_ANDROID_WEAR").setPackage("com.google.android.wearable.app.cn");
+                    if (context.getPackageManager().resolveActivity(intent, 65536) == null) {
+                        intent = new Intent("android.intent.action.VIEW", Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.wearable.app.cn").build());
+                    }
+                    PendingIntent activity = PendingIntent.getActivity(context, 0, intent, vrd.a);
+                    xve.i(fg0Var, "Connection progress callbacks cannot be null.");
+                    this.o = fg0Var;
+                    igdVar.sendMessage(igdVar.obtainMessage(3, atomicInteger.get(), 6, activity));
+                    return;
+                }
+            } catch (PackageManager.NameNotFoundException unused) {
+                xve.i(fg0Var, "Connection progress callbacks cannot be null.");
+                this.o = fg0Var;
+                igdVar.sendMessage(igdVar.obtainMessage(3, atomicInteger.get(), 16, null));
+                return;
+            }
+        }
+        super.a(fg0Var);
+    }
+
+    @Override // hg0
+    public final IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
             return null;
         }
-        duplicate.position(duplicate.position() + 6);
-        int i2 = 0;
-        while (true) {
-            if (i2 >= i) {
-                j = -1;
-                break;
-            }
-            int i3 = duplicate.getInt();
-            duplicate.position(duplicate.position() + 4);
-            j = duplicate.getInt() & 4294967295L;
-            duplicate.position(duplicate.position() + 4);
-            if (1835365473 == i3) {
-                break;
-            }
-            i2++;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
+        return queryLocalInterface instanceof b4e ? (b4e) queryLocalInterface : new b4e(iBinder, "com.google.android.gms.wearable.internal.IWearableService", (byte) 9);
+    }
+
+    @Override // hg0
+    public final a94[] f() {
+        return hjd.a;
+    }
+
+    @Override // hg0
+    public final int i() {
+        return 8600000;
+    }
+
+    @Override // hg0
+    public final String l() {
+        return "com.google.android.gms.wearable.internal.IWearableService";
+    }
+
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.wearable.BIND";
+    }
+
+    @Override // hg0
+    public final String o() {
+        return this.Q.b() ? "com.google.android.wearable.app.cn" : "com.google.android.gms";
+    }
+
+    @Override // hg0
+    public final void u(int i, IBinder iBinder, Bundle bundle, int i2) {
+        if (Log.isLoggable("WearableClient", 2)) {
+            Log.v("WearableClient", "onPostInitHandler: statusCode " + i);
         }
-        if (j != -1) {
-            duplicate.position(duplicate.position() + ((int) (j - duplicate.position())));
-            duplicate.position(duplicate.position() + 12);
-            long j2 = duplicate.getInt() & 4294967295L;
-            for (int i4 = 0; i4 < j2; i4++) {
-                int i5 = duplicate.getInt();
-                long j3 = duplicate.getInt() & 4294967295L;
-                duplicate.getInt();
-                if (1164798569 == i5 || 1701669481 == i5) {
-                    duplicate.position((int) (j3 + j));
-                    pd7 pd7Var = new pd7();
-                    duplicate.order(ByteOrder.LITTLE_ENDIAN);
-                    int position = duplicate.position() + duplicate.getInt(duplicate.position());
-                    pd7Var.b = duplicate;
-                    pd7Var.a = position;
-                    int i6 = position - duplicate.getInt(position);
-                    pd7Var.c = i6;
-                    pd7Var.d = pd7Var.b.getShort(i6);
-                    return pd7Var;
-                }
-            }
+        if (i == 0) {
+            this.G.a(iBinder);
+            this.H.a(iBinder);
+            this.I.a(iBinder);
+            this.K.a(iBinder);
+            this.L.a(iBinder);
+            this.M.a(iBinder);
+            this.N.a(iBinder);
+            this.O.a(iBinder);
+            this.P.a(iBinder);
+            this.J.a(iBinder);
+            i = 0;
         }
-        k93.f("Cannot read metadata.");
-        return null;
+        super.u(i, iBinder, bundle, i2);
+    }
+
+    @Override // hg0
+    public final boolean v() {
+        return !this.Q.b();
+    }
+
+    @Override // hg0
+    public final boolean x() {
+        return true;
     }
 }

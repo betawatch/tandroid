@@ -1,65 +1,64 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sa6 extends qj7 {
+    public final m8d l;
+    public i36 m;
+    public n31 n;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class sa6 extends ng0 {
-    public final Context x;
-    public final wjb y;
-
-    public sa6(wjb wjbVar, Context context, boolean z, boolean z2) {
-        super(z, z2);
-        this.x = context;
-        this.y = wjbVar;
-        new pi4(context, null).setIsSingleCell(true);
-    }
-
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return true;
-    }
-
-    public final TLRPC.TL_messageMediaVenue H(int i) {
-        int i2;
-        ArrayList arrayList = this.f;
-        if (arrayList.isEmpty() || i - 1 < 0 || i2 >= arrayList.size()) {
-            return null;
-        }
-        return (TLRPC.TL_messageMediaVenue) arrayList.get(i2);
-    }
-
-    @Override // w39
-    public final int b() {
-        ArrayList arrayList = this.f;
-        return arrayList.isEmpty() ? this.w ? 3 : 0 : arrayList.size() + 1;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        return (i != 0 || this.f.isEmpty()) ? 0 : 1;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        int i2 = s49Var.f;
-        View view = s49Var.a;
-        if (i2 == 0) {
-            TLRPC.TL_messageMediaVenue H = H(i);
-            ((ua6) view).a(H, H != null ? 2 : i, i != b() - 1, false);
-        } else if (i2 == 1) {
-            ((l35) view).setText(k96.M0(2131748560, null));
+    public sa6(m8d m8dVar) {
+        this.l = m8dVar;
+        if (m8dVar.a == null) {
+            m8dVar.a = this;
+        } else {
+            grb.i("There is already a listener registered");
+            throw null;
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        wjb wjbVar = this.y;
-        Context context = this.x;
-        return new y29(i == 0 ? new ua6(context, wjbVar) : new l35(context, wjbVar));
+    @Override // qj7
+    public final void e() {
+        m8d m8dVar = this.l;
+        m8dVar.b = true;
+        m8dVar.d = false;
+        m8dVar.c = false;
+        m8dVar.i.drainPermits();
+        m8dVar.c();
+    }
+
+    @Override // qj7
+    public final void f() {
+        this.l.b = false;
+    }
+
+    @Override // qj7
+    public final void h(cr7 cr7Var) {
+        super.h(cr7Var);
+        this.m = null;
+        this.n = null;
+    }
+
+    public final void j() {
+        i36 i36Var = this.m;
+        n31 n31Var = this.n;
+        if (i36Var == null || n31Var == null) {
+            return;
+        }
+        super.h(n31Var);
+        d(i36Var, n31Var);
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder(64);
+        sb.append("LoaderInfo{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(" #0 : ");
+        Class<?> cls = this.l.getClass();
+        sb.append(cls.getSimpleName());
+        sb.append("{");
+        sb.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb.append("}}");
+        return sb.toString();
     }
 }

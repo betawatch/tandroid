@@ -1,41 +1,35 @@
 // default package
 
-import android.graphics.RectF;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ul8 implements sc7, ht2 {
-    public final /* synthetic */ ProfileActivity a;
-    public final /* synthetic */ TLRPC.User b;
+public final /* synthetic */ class ul8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wl8 b;
 
-    public /* synthetic */ ul8(ProfileActivity profileActivity, TLRPC.User user) {
-        this.a = profileActivity;
-        this.b = user;
+    public /* synthetic */ ul8(wl8 wl8Var, byte b) {
+        this.a = b;
+        this.b = wl8Var;
     }
 
-    @Override // ht2
-    public final void a() {
-        RectF rectF = ProfileActivity.Z6;
-        this.a.G2(this.b);
-    }
-
-    @Override // sc7
-    public final void k(boolean z) {
-        RectF rectF = ProfileActivity.Z6;
-        ProfileActivity profileActivity = this.a;
-        if (profileActivity.getParentLayout() != null) {
-            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (d) oo1.m(2, fragmentStack)) instanceof mu1) {
-                ((ActionBarLayout) profileActivity.getParentLayout()).a0(fragmentStack.size() - 2);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        wl8 wl8Var = this.b;
+        switch (b) {
+            case 0:
+                String str = "https://t.me/giftcode/" + wl8Var.M2;
+                uj3 uj3Var = new uj3(qd4.j(3, "onlySelect", "dialogsType", true));
+                uj3Var.E2 = new m88(wl8Var, str, (byte) 9);
+                wl8Var.r1.presentFragment(uj3Var);
+                wl8Var.dismiss();
+                break;
+            default:
+                kl8 kl8Var = new kl8(wl8Var.r1, yac.t0, null, null, null, wl8Var.J0);
+                kl8Var.E2 = true;
+                kl8Var.F2 = true;
+                kl8Var.X1 = true;
+                wl8Var.r1.showDialog(kl8Var);
+                break;
         }
-        profileActivity.N1 = true;
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().k(kk7.J2, Long.valueOf(profileActivity.i1), this.b, profileActivity.F2, Boolean.valueOf(z));
     }
 }

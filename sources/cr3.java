@@ -1,204 +1,50 @@
 // default package
 
-import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.R;
 import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Region;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class cr3 extends Drawable implements Drawable.Callback {
-    public Drawable a;
-    public boolean b;
+public abstract class cr3 {
+    public static final int[] a = {R.attr.state_checked};
+    public static final int[] b = new int[0];
 
-    public final void a(Canvas canvas) {
-        this.a.draw(canvas);
-    }
-
-    public final void b(float f, float f2) {
-        this.a.setHotspot(f, f2);
-    }
-
-    public final void c(int i, int i2, int i3, int i4) {
-        this.a.setHotspotBounds(i, i2, i3, i4);
-    }
-
-    public final boolean d(boolean z, boolean z2) {
-        return super.setVisible(z, z2) || this.a.setVisible(z, z2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.b) {
-            a(canvas);
+    public static void a(Drawable drawable) {
+        String name = drawable.getClass().getName();
+        int i = Build.VERSION.SDK_INT;
+        if (i < 29 || i >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getChangingConfigurations() {
-        return this.a.getChangingConfigurations();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Drawable getCurrent() {
-        return this.a.getCurrent();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        return this.a.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        return this.a.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.a.getOpacity();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean getPadding(Rect rect) {
-        return this.a.getPadding(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int[] getState() {
-        return this.a.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Region getTransparentRegion() {
-        return this.a.getTransparentRegion();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isAutoMirrored() {
-        return this.a.isAutoMirrored();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.a.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.a.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean onLevelChange(int i) {
-        return this.a.setLevel(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        scheduleSelf(runnable, j);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.a.setAlpha(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z) {
-        this.a.setAutoMirrored(z);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setChangingConfigurations(int i) {
-        this.a.setChangingConfigurations(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setDither(boolean z) {
-        this.a.setDither(z);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z) {
-        this.a.setFilterBitmap(z);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f, float f2) {
-        if (this.b) {
-            b(f, f2);
+        int[] state = drawable.getState();
+        if (state == null || state.length == 0) {
+            drawable.setState(a);
+        } else {
+            drawable.setState(b);
         }
+        drawable.setState(state);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i, int i2, int i3, int i4) {
-        if (this.b) {
-            c(i, i2, i3, i4);
+    public static PorterDuff.Mode b(int i, PorterDuff.Mode mode) {
+        if (i == 3) {
+            return PorterDuff.Mode.SRC_OVER;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean setState(int[] iArr) {
-        if (this.b) {
-            return this.a.setState(iArr);
+        if (i == 5) {
+            return PorterDuff.Mode.SRC_IN;
         }
-        return false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setTint(int i) {
-        this.a.setTint(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setTintList(ColorStateList colorStateList) {
-        this.a.setTintList(colorStateList);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setTintMode(PorterDuff.Mode mode) {
-        this.a.setTintMode(mode);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z, boolean z2) {
-        if (this.b) {
-            return d(z, z2);
+        if (i == 9) {
+            return PorterDuff.Mode.SRC_ATOP;
         }
-        return false;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
+        switch (i) {
+            case 14:
+                return PorterDuff.Mode.MULTIPLY;
+            case 15:
+                return PorterDuff.Mode.SCREEN;
+            case 16:
+                return PorterDuff.Mode.ADD;
+            default:
+                return mode;
+        }
     }
 }

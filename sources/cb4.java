@@ -1,96 +1,66 @@
 // default package
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Map;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class cb4 extends vw5 implements qp4 {
-    public static final cb4 c;
-    public static final cb4 d;
-    public static final cb4 e;
-    public final /* synthetic */ byte b;
+public final /* synthetic */ class cb4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hb4 b;
+    public final /* synthetic */ boolean c;
 
-    static {
-        int i = 1;
-        c = new cb4(i, (byte) 0);
-        d = new cb4(i, (byte) 1);
-        e = new cb4(i, (byte) 2);
+    public /* synthetic */ cb4(hb4 hb4Var, boolean z, byte b) {
+        this.a = b;
+        this.b = hb4Var;
+        this.c = z;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cb4(int i, byte b) {
-        super(i);
-        this.b = b;
-    }
-
-    @Override // qp4
-    public final Object invoke(Object obj) {
-        String valueOf;
-        int i;
-        switch (this.b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.c;
+        hb4 hb4Var = this.b;
+        switch (b) {
             case 0:
-                File file = (File) obj;
-                file.getClass();
-                String absolutePath = file.getCanonicalFile().getAbsolutePath();
-                absolutePath.getClass();
-                return new pia(absolutePath);
+                try {
+                    hb4Var.i(0, z, false);
+                    break;
+                } catch (Exception unused) {
+                    hb4Var.h(0, false);
+                    return;
+                }
             case 1:
-                Map.Entry entry = (Map.Entry) obj;
-                entry.getClass();
-                Object value = entry.getValue();
-                if (value instanceof byte[]) {
-                    StringBuilder sb = new StringBuilder();
-                    sb.append((CharSequence) "[");
-                    int i2 = 0;
-                    for (byte b : (byte[]) value) {
-                        i2++;
-                        if (i2 > 1) {
-                            sb.append((CharSequence) ", ");
-                        }
-                        sb.append((CharSequence) String.valueOf((int) b));
-                    }
-                    sb.append((CharSequence) "]");
-                    valueOf = sb.toString();
-                } else {
-                    valueOf = String.valueOf(entry.getValue());
+                String str = hb4Var.P0;
+                if (f11.a) {
+                    cc4.b("finished downloading file to " + hb4Var.L0 + " time = " + (System.currentTimeMillis() - hb4Var.d1) + " dc = " + hb4Var.T + " size = " + hl.i0(hb4Var.b0, false, false));
                 }
-                return ls6.o(((lg8) entry.getKey()).a, " = ", valueOf, new StringBuilder("  "));
-            default:
-                ArrayList arrayList = ((f0d) obj).a;
-                ArrayList arrayList2 = new ArrayList(al2.c(arrayList, 10));
-                int size = arrayList.size();
-                int i3 = 0;
-                while (i3 < size) {
-                    Object obj2 = arrayList.get(i3);
-                    i3++;
-                    b0d b0dVar = (b0d) obj2;
-                    int i4 = b0dVar.c;
-                    if (i4 == 0) {
-                        i = 0;
-                    } else if (i4 != 1) {
-                        i = 2;
-                        if (i4 != 2) {
-                            i = 3;
-                            if (i4 != 3) {
-                                i = 4;
-                                if (i4 != 4) {
-                                    fvc.d(b0dVar.c, "Unknown capability status: ");
-                                    return null;
-                                }
-                            } else {
-                                continue;
-                            }
+                if (z) {
+                    int i = hb4Var.b1;
+                    if (i == 50331648) {
+                        a2b.c(hb4Var.R).g(a.f(), 3, 1);
+                    } else if (i == 33554432) {
+                        a2b.c(hb4Var.R).g(a.f(), 2, 1);
+                    } else if (i == 16777216) {
+                        a2b.c(hb4Var.R).g(a.f(), 4, 1);
+                    } else if (i == 67108864) {
+                        if (str == null || !(str.toLowerCase().endsWith("mp3") || str.toLowerCase().endsWith("m4a"))) {
+                            a2b.c(hb4Var.R).g(a.f(), 5, 1);
                         } else {
-                            continue;
+                            a2b.c(hb4Var.R).g(a.f(), 7, 1);
                         }
-                    } else {
-                        i = 1;
                     }
-                    arrayList2.add(new v9c(b0dVar.a, i, b0dVar.b));
                 }
-                return arrayList2;
+                hb4Var.g0.c(hb4Var, hb4Var.L0);
+                break;
+            default:
+                hb4Var.Q = 0L;
+                hb4Var.c(null, true, true);
+                hb4Var.y = z;
+                if (hb4Var.j0 != 0 && !hb4Var.e && !hb4Var.j && !hb4Var.r0) {
+                    hb4Var.r();
+                }
+                hb4Var.q(-1);
+                break;
         }
     }
 }

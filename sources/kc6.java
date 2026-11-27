@@ -1,92 +1,49 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class kc6 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mf6 b;
-    public final /* synthetic */ TLRPC.auth_SentCode c;
-    public final /* synthetic */ Bundle d;
-    public final /* synthetic */ boolean e;
+public final class kc6 extends vc6 {
+    public boolean e0;
+    public final /* synthetic */ uc6 f0;
 
-    public /* synthetic */ kc6(byte b, mf6 mf6Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, boolean z) {
-        this.a = b;
-        this.b = mf6Var;
-        this.c = auth_sentcode;
-        this.d = bundle;
-        this.e = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kc6(uc6 uc6Var, Context context, int i, long j, vnb vnbVar, boolean z, boolean z2) {
+        super(context, i, j, false, vnbVar, false, z, z2);
+        this.f0 = uc6Var;
+        this.e0 = true;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                boolean z = tLObject instanceof TLRPC.TL_boolTrue;
-                final mf6 mf6Var = this.b;
-                final TLRPC.auth_SentCode auth_sentcode = this.c;
-                final Bundle bundle = this.d;
-                if (!z) {
-                    mf6Var.getClass();
-                    fa4.b("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
-                    mf6Var.G1(bundle, auth_sentcode, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
-                    break;
-                } else {
-                    mf6Var.x1(false, true);
-                    mf6Var.r0 = false;
-                    auth_sentcode.type.verifiedFirebase = true;
-                    final byte b = 0;
-                    final boolean z2 = this.e;
-                    gl.c3(new Runnable() { // from class: lc6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (b) {
-                                case 0:
-                                    mf6Var.p1(bundle, auth_sentcode, z2);
-                                    break;
-                                default:
-                                    mf6Var.p1(bundle, auth_sentcode, z2);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
+    @Override // vc6
+    public final void J() {
+        this.f0.B0(null);
+    }
+
+    @Override // vc6
+    public final void N(ArrayList arrayList) {
+        int i;
+        uc6 uc6Var = this.f0;
+        r47 r47Var = uc6Var.J0;
+        if (r47Var != null && r47Var.C3()) {
+            if (arrayList != null) {
+                i = 0;
+                for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                    pc6 pc6Var = (pc6) arrayList.get(i2);
+                    if (pc6Var != null && !lbc.D(pc6Var.c)) {
+                        i++;
+                    }
                 }
-            default:
-                boolean z3 = tLObject instanceof TLRPC.TL_boolTrue;
-                final mf6 mf6Var2 = this.b;
-                final TLRPC.auth_SentCode auth_sentcode2 = this.c;
-                final Bundle bundle2 = this.d;
-                if (!z3) {
-                    mf6Var2.getClass();
-                    fa4.b("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
-                    mf6Var2.G1(bundle2, auth_sentcode2, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
-                    break;
-                } else {
-                    mf6Var2.x1(false, true);
-                    mf6Var2.r0 = false;
-                    auth_sentcode2.type.verifiedFirebase = true;
-                    final byte b2 = 1;
-                    final boolean z4 = this.e;
-                    gl.c3(new Runnable() { // from class: lc6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (b2) {
-                                case 0:
-                                    mf6Var2.p1(bundle2, auth_sentcode2, z4);
-                                    break;
-                                default:
-                                    mf6Var2.p1(bundle2, auth_sentcode2, z4);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
+            } else {
+                i = 0;
+            }
+            if (this.e0 && i == 1) {
+                uc6Var.q0 = ((pc6) arrayList.get(0)).a;
+            }
+            this.e0 = false;
+            uc6Var.W.setVisibility(i != 1 ? 8 : 0);
         }
+        super.N(arrayList);
     }
 }

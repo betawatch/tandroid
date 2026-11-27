@@ -1,19 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class gue implements zn7 {
-    public static final gue a = new gue();
+public enum gue {
+    b(Void.class, null),
+    c(Integer.class, 0),
+    d(Long.class, 0L),
+    e(Float.class, Float.valueOf(0.0f)),
+    f(Double.class, Double.valueOf(0.0d)),
+    h(Boolean.class, Boolean.FALSE),
+    n(String.class, ""),
+    r(jne.class, jne.c),
+    s(Integer.class, null),
+    w(Object.class, null);
 
-    static {
-        yjb.y(yjb.p(gid.class, new bgd(1)));
-    }
+    public final Class a;
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    gue(Class cls, Serializable serializable) {
+        this.a = cls;
     }
 }

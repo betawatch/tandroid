@@ -1,59 +1,75 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.webrtc.NativeLifecycleLock;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class DtmfSender {
-    private long nativeDtmfSender;
+    private final NativeLifecycleLock lifecycleLock;
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        boolean canInsertDtmf(long j);
+
+        int duration(long j);
+
+        boolean insertDtmf(long j, String str, int i, int i2);
+
+        int interToneGap(long j);
+
+        String tones(long j);
+    }
 
     public DtmfSender(long j) {
-        this.nativeDtmfSender = j;
+        this.lifecycleLock = new NativeLifecycleLock("DtmfSender", j);
     }
 
-    private void checkDtmfSenderExists() {
-        if (this.nativeDtmfSender != 0) {
-            return;
-        }
-        sc8.j("DtmfSender has been disposed.");
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$canInsertDtmf$0(long j) {
+        return Boolean.valueOf(DtmfSenderJni.get().canInsertDtmf(j));
     }
 
-    private static native boolean nativeCanInsertDtmf(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Integer lambda$duration$3(long j) {
+        return Integer.valueOf(DtmfSenderJni.get().duration(j));
+    }
 
-    private static native int nativeDuration(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$insertDtmf$1(String str, int i, int i2, long j) {
+        return Boolean.valueOf(DtmfSenderJni.get().insertDtmf(j, str, i, i2));
+    }
 
-    private static native boolean nativeInsertDtmf(long j, String str, int i, int i2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Integer lambda$interToneGap$4(long j) {
+        return Integer.valueOf(DtmfSenderJni.get().interToneGap(j));
+    }
 
-    private static native int nativeInterToneGap(long j);
-
-    private static native String nativeTones(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$tones$2(long j) {
+        return DtmfSenderJni.get().tones(j);
+    }
 
     public boolean canInsertDtmf() {
-        checkDtmfSenderExists();
-        return nativeCanInsertDtmf(this.nativeDtmfSender);
+        return ((Boolean) this.lifecycleLock.call(new da3((byte) 25))).booleanValue();
     }
 
     public void dispose() {
-        checkDtmfSenderExists();
-        JniCommon.nativeReleaseRef(this.nativeDtmfSender);
-        this.nativeDtmfSender = 0L;
+        this.lifecycleLock.dispose(new da3((byte) 28));
     }
 
     public int duration() {
-        checkDtmfSenderExists();
-        return nativeDuration(this.nativeDtmfSender);
+        return ((Integer) this.lifecycleLock.call(new da3((byte) 27))).intValue();
     }
 
     public boolean insertDtmf(String str, int i, int i2) {
-        checkDtmfSenderExists();
-        return nativeInsertDtmf(this.nativeDtmfSender, str, i, i2);
+        return ((Boolean) this.lifecycleLock.call((NativeLifecycleLock.NativePointerCallable) new wr3(i, i2, str))).booleanValue();
     }
 
     public int interToneGap() {
-        checkDtmfSenderExists();
-        return nativeInterToneGap(this.nativeDtmfSender);
+        return ((Integer) this.lifecycleLock.call(new da3((byte) 29))).intValue();
     }
 
     public String tones() {
-        checkDtmfSenderExists();
-        return nativeTones(this.nativeDtmfSender);
+        return (String) this.lifecycleLock.call(new da3((byte) 26));
     }
 }

@@ -1,164 +1,294 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.media.RingtoneManager;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLRPC;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wm7 {
-    public final int a;
+public abstract class wm7 {
+    public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', '$', '%', '*', '+', '-', '.', '/', ':'};
 
-    public wm7(int i) {
-        this.a = i;
+    public static void a(sj0 sj0Var, StringBuilder sb, int i, boolean z) {
+        while (i > 1) {
+            if (sj0Var.d() < 11) {
+                throw lo4.a();
+            }
+            int f = sj0Var.f(11);
+            sb.append(f(f / 45));
+            sb.append(f(f % 45));
+            i -= 2;
+        }
+        if (i == 1) {
+            if (sj0Var.d() < 6) {
+                throw lo4.a();
+            }
+            sb.append(f(sj0Var.f(6)));
+        }
+        if (z) {
+            for (int length = sb.length(); length < sb.length(); length++) {
+                if (sb.charAt(length) == '%') {
+                    if (length < sb.length() - 1) {
+                        int i2 = length + 1;
+                        if (sb.charAt(i2) == '%') {
+                            sb.deleteCharAt(i2);
+                        }
+                    }
+                    sb.setCharAt(length, (char) 29);
+                }
+            }
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x011b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x00d0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(TLRPC.NotificationSound notificationSound, SharedPreferences.Editor editor, long j, long j2, int i) {
-        String str;
-        String str2;
-        String str3;
-        TLRPC.NotificationSound notificationSound2;
-        String str4;
-        if (notificationSound == null) {
+    public static void b(sj0 sj0Var, StringBuilder sb, int i, jk1 jk1Var, ArrayList arrayList) {
+        Charset forName;
+        boolean z;
+        byte b;
+        if ((i << 3) > sj0Var.d()) {
+            throw lo4.a();
+        }
+        byte[] bArr = new byte[i];
+        int i2 = 0;
+        for (int i3 = 0; i3 < i; i3++) {
+            bArr[i3] = (byte) sj0Var.f(8);
+        }
+        if (jk1Var == null) {
+            Charset charset = bdb.b;
+            boolean z2 = true;
+            if (i <= 2 || !(((b = bArr[0]) == -2 && bArr[1] == -1) || (b == -1 && bArr[1] == -2))) {
+                boolean z3 = charset != null;
+                boolean z4 = i > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
+                int i4 = 0;
+                int i5 = 0;
+                int i6 = 0;
+                int i7 = 0;
+                int i8 = 0;
+                int i9 = 0;
+                int i10 = 0;
+                int i11 = 0;
+                int i12 = 0;
+                int i13 = 0;
+                int i14 = 0;
+                boolean z5 = z3;
+                boolean z6 = true;
+                while (i6 < i && (z2 || z5 || z6)) {
+                    Charset charset2 = charset;
+                    byte b2 = bArr[i6];
+                    boolean z7 = z2;
+                    int i15 = b2 & 255;
+                    if (z6) {
+                        if (i7 <= 0) {
+                            z = z6;
+                            if ((b2 & 128) != 0) {
+                                if ((b2 & 64) != 0) {
+                                    int i16 = i7 + 1;
+                                    if ((b2 & 32) == 0) {
+                                        i9++;
+                                    } else {
+                                        i16 = i7 + 2;
+                                        if ((b2 & 16) == 0) {
+                                            i10++;
+                                        } else {
+                                            i7 += 3;
+                                            if ((b2 & 8) == 0) {
+                                                i11++;
+                                            }
+                                        }
+                                    }
+                                    i7 = i16;
+                                }
+                            }
+                        } else if ((b2 & 128) != 0) {
+                            i7--;
+                            if (z7) {
+                                if (i15 > 127 && i15 < 160) {
+                                    z7 = false;
+                                } else if (i15 > 159 && (i15 < 192 || i15 == 215 || i15 == 247)) {
+                                    i12++;
+                                }
+                            }
+                            if (z5) {
+                                if (i8 > 0) {
+                                    if (i15 >= 64 && i15 != 127 && i15 <= 252) {
+                                        i8--;
+                                    }
+                                    z5 = false;
+                                } else {
+                                    if (i15 != 128 && i15 != 160 && i15 <= 239) {
+                                        if (i15 <= 160 || i15 >= 224) {
+                                            if (i15 > 127) {
+                                                i8++;
+                                                int i17 = i13 + 1;
+                                                if (i17 > i4) {
+                                                    i4 = i17;
+                                                    i13 = i4;
+                                                } else {
+                                                    i13 = i17;
+                                                }
+                                            } else {
+                                                i13 = 0;
+                                            }
+                                            i14 = 0;
+                                        } else {
+                                            i5++;
+                                            int i18 = i14 + 1;
+                                            if (i18 > i2) {
+                                                i2 = i18;
+                                                i14 = i2;
+                                            } else {
+                                                i14 = i18;
+                                            }
+                                            i13 = 0;
+                                        }
+                                    }
+                                    z5 = false;
+                                }
+                            }
+                            i6++;
+                            charset = charset2;
+                            z2 = z7;
+                        }
+                        z6 = false;
+                        if (z7) {
+                        }
+                        if (z5) {
+                        }
+                        i6++;
+                        charset = charset2;
+                        z2 = z7;
+                    } else {
+                        z = z6;
+                    }
+                    z6 = z;
+                    if (z7) {
+                    }
+                    if (z5) {
+                    }
+                    i6++;
+                    charset = charset2;
+                    z2 = z7;
+                }
+                Charset charset3 = charset;
+                boolean z8 = z2;
+                boolean z9 = z6;
+                boolean z10 = (!z9 || i7 <= 0) ? z9 : false;
+                boolean z11 = (!z5 || i8 <= 0) ? z5 : false;
+                if (!z10 || (!z4 && i9 + i10 + i11 <= 0)) {
+                    if (!z11 || (!bdb.d && i2 < 3 && i4 < 3)) {
+                        if (z8) {
+                            if (!z11) {
+                                forName = StandardCharsets.ISO_8859_1;
+                            } else if ((i2 != 2 || i5 != 2) && i12 * 10 < i) {
+                                forName = StandardCharsets.ISO_8859_1;
+                            }
+                        } else if (!z11) {
+                            forName = z10 ? StandardCharsets.UTF_8 : bdb.a;
+                        }
+                    }
+                    forName = charset3;
+                } else {
+                    forName = StandardCharsets.UTF_8;
+                }
+            } else {
+                forName = StandardCharsets.UTF_16;
+            }
+        } else {
+            forName = Charset.forName(jk1Var.name());
+        }
+        sb.append(new String(bArr, forName));
+        arrayList.add(bArr);
+    }
+
+    public static void c(sj0 sj0Var, StringBuilder sb, int i) {
+        if (bdb.c == null) {
+            throw lo4.a();
+        }
+        if (i * 13 > sj0Var.d()) {
+            throw lo4.a();
+        }
+        byte[] bArr = new byte[i << 1];
+        int i2 = 0;
+        while (i > 0) {
+            int f = sj0Var.f(13);
+            int i3 = ((f / 96) << 8) | (f % 96);
+            int i4 = i3 + (i3 < 2560 ? 41377 : 42657);
+            bArr[i2] = (byte) ((i4 >> 8) & jn7.d4);
+            bArr[i2 + 1] = (byte) (i4 & jn7.d4);
+            i2 += 2;
+            i--;
+        }
+        sb.append(new String(bArr, bdb.c));
+    }
+
+    public static void d(sj0 sj0Var, StringBuilder sb, int i) {
+        if (bdb.b == null) {
+            throw lo4.a();
+        }
+        if (i * 13 > sj0Var.d()) {
+            throw lo4.a();
+        }
+        byte[] bArr = new byte[i << 1];
+        int i2 = 0;
+        while (i > 0) {
+            int f = sj0Var.f(13);
+            int i3 = ((f / jn7.V2) << 8) | (f % jn7.V2);
+            int i4 = i3 + (i3 < 7936 ? 33088 : 49472);
+            bArr[i2] = (byte) (i4 >> 8);
+            bArr[i2 + 1] = (byte) i4;
+            i2 += 2;
+            i--;
+        }
+        sb.append(new String(bArr, bdb.b));
+    }
+
+    public static void e(sj0 sj0Var, StringBuilder sb, int i) {
+        while (i >= 3) {
+            if (sj0Var.d() < 10) {
+                throw lo4.a();
+            }
+            int f = sj0Var.f(10);
+            if (f >= 1000) {
+                throw lo4.a();
+            }
+            sb.append(f(f / 100));
+            sb.append(f((f / 10) % 10));
+            sb.append(f(f % 10));
+            i -= 3;
+        }
+        if (i == 2) {
+            if (sj0Var.d() < 7) {
+                throw lo4.a();
+            }
+            int f2 = sj0Var.f(7);
+            if (f2 >= 100) {
+                throw lo4.a();
+            }
+            sb.append(f(f2 / 10));
+            sb.append(f(f2 % 10));
             return;
         }
-        if (j != 0) {
-            String p = im7.p(j, j2, true);
-            str = b00.h("sound_", p);
-            str3 = b00.h("sound_path_", p);
-            str2 = b00.h("sound_document_id_", p);
-        } else if (i == 0) {
-            str = "GroupSound";
-            str2 = "GroupSoundDocId";
-            str3 = "GroupSoundPath";
-        } else if (i == 3) {
-            str = "StoriesSound";
-            str2 = "StoriesSoundDocId";
-            str3 = "StoriesSoundPath";
-        } else if (i == 1) {
-            str = "GlobalSound";
-            str2 = "GlobalSoundDocId";
-            str3 = "GlobalSoundPath";
-        } else if (i == 4 || i == 5) {
-            str = "ReactionSound";
-            str2 = "ReactionSoundDocId";
-            str3 = "ReactionSoundPath";
-        } else {
-            str = "ChannelSound";
-            str2 = "ChannelSoundDocId";
-            str3 = "ChannelSoundPath";
-        }
-        String str5 = str3;
-        String str6 = str;
-        String str7 = str2;
-        if (notificationSound instanceof TLRPC.TL_notificationSoundLocal) {
-            TLRPC.TL_notificationSoundLocal tL_notificationSoundLocal = (TLRPC.TL_notificationSoundLocal) notificationSound;
-            if ("Default".equalsIgnoreCase(tL_notificationSoundLocal.data)) {
-                notificationSound2 = new TLRPC.TL_notificationSoundDefault();
-            } else if ("NoSound".equalsIgnoreCase(tL_notificationSoundLocal.data)) {
-                notificationSound2 = new TLRPC.TL_notificationSoundNone();
-            } else {
-                String str8 = tL_notificationSoundLocal.title;
-                if (str8 != null) {
-                    try {
-                        RingtoneManager ringtoneManager = new RingtoneManager(a.b);
-                        ringtoneManager.setType(2);
-                        Cursor cursor = ringtoneManager.getCursor();
-                        while (cursor.moveToNext()) {
-                            String string = cursor.getString(1);
-                            str4 = cursor.getString(2) + "/" + cursor.getString(0);
-                            if (str8.equalsIgnoreCase(string)) {
-                                break;
-                            }
-                        }
-                    } catch (Throwable th) {
-                        fa4.g(th, true);
-                    }
-                }
-                str4 = null;
-                if (str4 == null) {
-                    return;
-                } else {
-                    tL_notificationSoundLocal.data = str4;
-                }
+        if (i == 1) {
+            if (sj0Var.d() < 4) {
+                throw lo4.a();
             }
-            if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
-                editor.putString(str6, "Default");
-                editor.putString(str5, "Default");
-                editor.remove(str7);
-                return;
+            int f3 = sj0Var.f(4);
+            if (f3 >= 10) {
+                throw lo4.a();
             }
-            if (notificationSound2 instanceof TLRPC.TL_notificationSoundNone) {
-                editor.putString(str6, "NoSound");
-                editor.putString(str5, "NoSound");
-                editor.remove(str7);
-                return;
-            } else {
-                if (notificationSound2 instanceof TLRPC.TL_notificationSoundLocal) {
-                    TLRPC.TL_notificationSoundLocal tL_notificationSoundLocal2 = (TLRPC.TL_notificationSoundLocal) notificationSound2;
-                    editor.putString(str6, tL_notificationSoundLocal2.title);
-                    editor.putString(str5, tL_notificationSoundLocal2.data);
-                    editor.remove(str7);
-                    return;
-                }
-                if (notificationSound2 instanceof TLRPC.TL_notificationSoundRingtone) {
-                    TLRPC.TL_notificationSoundRingtone tL_notificationSoundRingtone = (TLRPC.TL_notificationSoundRingtone) notificationSound2;
-                    editor.putLong(str7, tL_notificationSoundRingtone.id);
-                    hq6.d0(this.a).A0.g(true);
-                    hq6.d0(this.a).A0.c(tL_notificationSoundRingtone.id);
-                    return;
-                }
-                return;
-            }
-        }
-        notificationSound2 = notificationSound;
-        if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
+            sb.append(f(f3));
         }
     }
 
-    public final SharedPreferences b() {
-        return na7.q1(this.a).W3;
-    }
-
-    public final int c(int i, long j, long j2, String str) {
-        String p = im7.p(j, j2, true);
-        SharedPreferences b = b();
-        StringBuilder sb = new StringBuilder(str);
-        sb.append(p);
-        return b.contains(sb.toString()) ? ls6.g(str, p, b(), i) : ls6.g(str, im7.p(j, 0L, true), b(), i);
-    }
-
-    public final long d(long j, long j2) {
-        String p = im7.p(j, j2, true);
-        if (b().contains("sound_document_id_" + p)) {
-            return b().getLong("sound_document_id_" + p, 0L);
+    public static char f(int i) {
+        if (i < 45) {
+            return a[i];
         }
-        String p2 = im7.p(j, 0L, true);
-        return b().getLong("sound_document_id_" + p2, 0L);
-    }
-
-    public final boolean e(long j, long j2) {
-        String p = im7.p(j, j2, false);
-        if (b().contains("custom_" + p)) {
-            return b().getBoolean("custom_" + p, false);
-        }
-        String p2 = im7.p(j, 0L, false);
-        return b().getBoolean("custom_" + p2, false);
-    }
-
-    public final String f(long j, long j2) {
-        String p = im7.p(j, j2, false);
-        if (b().contains("sound_path_" + p)) {
-            return b().getString("sound_path_" + p, null);
-        }
-        String p2 = im7.p(j, 0L, false);
-        return b().getString("sound_path_" + p2, null);
+        throw lo4.a();
     }
 }

@@ -1,214 +1,409 @@
 // default package
 
-import java.util.Collections;
-import java.util.List;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vr3 implements gu3 {
-    public final /* synthetic */ byte a;
-    public boolean b;
-    public long c;
+public class vr3 extends ListView {
+    public final Rect a;
+    public int b;
+    public int c;
     public int d;
     public int e;
-    public final Object f;
-    public Object g;
+    public int f;
+    public tr3 h;
+    public boolean n;
+    public final boolean r;
+    public boolean s;
+    public w76 w;
+    public p1 x;
 
-    public vr3(List list) {
-        this.a = (byte) 0;
-        this.f = list;
-        this.g = new wxb[list.size()];
-        this.c = -9223372036854775807L;
+    public vr3(Context context, boolean z) {
+        super(context, null, R.attr.dropDownListViewStyle);
+        this.a = new Rect();
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
+        this.e = 0;
+        this.r = z;
+        setCacheColorHint(0);
     }
 
-    @Override // gu3
-    public final void b(xu7 xu7Var) {
+    public final int a(int i, int i2) {
+        int listPaddingTop = getListPaddingTop();
+        int listPaddingBottom = getListPaddingBottom();
+        int dividerHeight = getDividerHeight();
+        Drawable divider = getDivider();
+        ListAdapter adapter = getAdapter();
+        int i3 = listPaddingTop + listPaddingBottom;
+        if (adapter == null) {
+            return i3;
+        }
+        if (dividerHeight <= 0 || divider == null) {
+            dividerHeight = 0;
+        }
+        int count = adapter.getCount();
+        int i4 = 0;
+        View view = null;
+        for (int i5 = 0; i5 < count; i5++) {
+            int itemViewType = adapter.getItemViewType(i5);
+            if (itemViewType != i4) {
+                view = null;
+                i4 = itemViewType;
+            }
+            view = adapter.getView(i5, view, this);
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            if (layoutParams == null) {
+                layoutParams = generateDefaultLayoutParams();
+                view.setLayoutParams(layoutParams);
+            }
+            int i6 = layoutParams.height;
+            view.measure(i, i6 > 0 ? View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30) : 0);
+            view.forceLayout();
+            if (i5 > 0) {
+                i3 += dividerHeight;
+            }
+            i3 += view.getMeasuredHeight();
+            if (i3 >= i2) {
+                return i2;
+            }
+        }
+        return i3;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0179  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x014a A[ADDED_TO_REGION] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(int i, MotionEvent motionEvent) {
         boolean z;
         boolean z2;
-        switch (this.a) {
-            case 0:
-                if (this.b) {
-                    if (this.d == 2) {
-                        if (xu7Var.a() == 0) {
-                            z2 = false;
-                        } else {
-                            if (xu7Var.A() != 32) {
-                                this.b = false;
+        View childAt;
+        View childAt2;
+        int actionMasked = motionEvent.getActionMasked();
+        boolean z3 = true;
+        if (actionMasked == 1) {
+            z = false;
+        } else {
+            if (actionMasked != 2) {
+                if (actionMasked != 3) {
+                    z = true;
+                    z3 = false;
+                    if (z || z3) {
+                        this.s = false;
+                        setPressed(false);
+                        drawableStateChanged();
+                        childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+                        if (childAt2 != null) {
+                            childAt2.setPressed(false);
+                        }
+                    }
+                    w76 w76Var = this.w;
+                    if (!z) {
+                        if (w76Var == null) {
+                            w76Var = new w76(this);
+                            this.w = w76Var;
+                        }
+                        w76Var.F = true;
+                        w76Var.onTouch(this, motionEvent);
+                    } else if (w76Var != null) {
+                        if (w76Var.F) {
+                            w76Var.d();
+                        }
+                        w76Var.F = false;
+                    }
+                    return z;
+                }
+                z3 = false;
+                z = false;
+                if (z) {
+                }
+                this.s = false;
+                setPressed(false);
+                drawableStateChanged();
+                childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+                if (childAt2 != null) {
+                }
+                w76 w76Var2 = this.w;
+                if (!z) {
+                }
+                return z;
+            }
+            z = true;
+        }
+        int findPointerIndex = motionEvent.findPointerIndex(i);
+        if (findPointerIndex >= 0) {
+            int x = (int) motionEvent.getX(findPointerIndex);
+            int y = (int) motionEvent.getY(findPointerIndex);
+            int pointToPosition = pointToPosition(x, y);
+            if (pointToPosition != -1) {
+                View childAt3 = getChildAt(pointToPosition - getFirstVisiblePosition());
+                float f = x;
+                float f2 = y;
+                this.s = true;
+                qr3.a(this, f, f2);
+                if (!isPressed()) {
+                    setPressed(true);
+                }
+                layoutChildren();
+                int i2 = this.f;
+                if (i2 != -1 && (childAt = getChildAt(i2 - getFirstVisiblePosition())) != null && childAt != childAt3 && childAt.isPressed()) {
+                    childAt.setPressed(false);
+                }
+                this.f = pointToPosition;
+                qr3.a(childAt3, f - childAt3.getLeft(), f2 - childAt3.getTop());
+                if (!childAt3.isPressed()) {
+                    childAt3.setPressed(true);
+                }
+                Drawable selector = getSelector();
+                boolean z4 = (selector == null || pointToPosition == -1) ? false : true;
+                if (z4) {
+                    selector.setVisible(false, false);
+                }
+                int left = childAt3.getLeft();
+                int top = childAt3.getTop();
+                int right = childAt3.getRight();
+                int bottom = childAt3.getBottom();
+                Rect rect = this.a;
+                rect.set(left, top, right, bottom);
+                rect.left -= this.b;
+                rect.top -= this.c;
+                rect.right += this.d;
+                rect.bottom += this.e;
+                if (c11.a()) {
+                    z2 = sr3.a(this);
+                } else {
+                    Field field = ur3.a;
+                    if (field != null) {
+                        try {
+                            z2 = field.getBoolean(this);
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    z2 = false;
+                }
+                if (childAt3.isEnabled() != z2) {
+                    boolean z5 = !z2;
+                    if (c11.a()) {
+                        sr3.b(this, z5);
+                    } else {
+                        Field field2 = ur3.a;
+                        if (field2 != null) {
+                            try {
+                                field2.set(this, Boolean.valueOf(z5));
+                            } catch (IllegalAccessException e2) {
+                                e2.printStackTrace();
                             }
-                            this.d--;
-                            z2 = this.b;
-                        }
-                        if (!z2) {
                         }
                     }
-                    if (this.d == 1) {
-                        if (xu7Var.a() == 0) {
-                            z = false;
-                        } else {
-                            if (xu7Var.A() != 0) {
-                                this.b = false;
-                            }
-                            this.d--;
-                            z = this.b;
-                        }
-                        if (!z) {
-                        }
+                    if (pointToPosition != -1) {
+                        refreshDrawableState();
                     }
-                    int i = xu7Var.b;
-                    int a = xu7Var.a();
-                    for (wxb wxbVar : (wxb[]) this.g) {
-                        xu7Var.N(i);
-                        wxbVar.e(a, xu7Var);
-                    }
-                    this.e += a;
-                    break;
                 }
-                break;
-            default:
-                xu7 xu7Var2 = (xu7) this.f;
-                ((wxb) this.g).getClass();
-                if (this.b) {
-                    int a2 = xu7Var.a();
-                    int i2 = this.e;
-                    if (i2 < 10) {
-                        int min = Math.min(a2, 10 - i2);
-                        System.arraycopy(xu7Var.a, xu7Var.b, xu7Var2.a, this.e, min);
-                        if (this.e + min == 10) {
-                            xu7Var2.N(0);
-                            if (73 != xu7Var2.A() || 68 != xu7Var2.A() || 51 != xu7Var2.A()) {
-                                lad.f("Id3Reader", "Discarding invalid ID3 tag");
-                                this.b = false;
-                                break;
-                            } else {
-                                xu7Var2.O(3);
-                                this.d = xu7Var2.z() + 10;
-                            }
-                        }
-                    }
-                    int min2 = Math.min(a2, this.d - this.e);
-                    ((wxb) this.g).e(min2, xu7Var);
-                    this.e += min2;
-                    break;
+                if (z4) {
+                    float exactCenterX = rect.exactCenterX();
+                    float exactCenterY = rect.exactCenterY();
+                    selector.setVisible(getVisibility() == 0, false);
+                    selector.setHotspot(exactCenterX, exactCenterY);
                 }
-                break;
+                Drawable selector2 = getSelector();
+                if (selector2 != null && pointToPosition != -1) {
+                    selector2.setHotspot(f, f2);
+                }
+                tr3 tr3Var = this.h;
+                if (tr3Var != null) {
+                    tr3Var.b = false;
+                }
+                refreshDrawableState();
+                if (actionMasked == 1) {
+                    performItemClick(childAt3, pointToPosition, getItemIdAtPosition(pointToPosition));
+                }
+                z3 = false;
+                z = true;
+            }
+            if (z) {
+            }
+            this.s = false;
+            setPressed(false);
+            drawableStateChanged();
+            childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+            if (childAt2 != null) {
+            }
+            w76 w76Var22 = this.w;
+            if (!z) {
+            }
+            return z;
+        }
+        z3 = false;
+        z = false;
+        if (z) {
+        }
+        this.s = false;
+        setPressed(false);
+        drawableStateChanged();
+        childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+        if (childAt2 != null) {
+        }
+        w76 w76Var222 = this.w;
+        if (!z) {
+        }
+        return z;
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Drawable selector;
+        Rect rect = this.a;
+        if (!rect.isEmpty() && (selector = getSelector()) != null) {
+            selector.setBounds(rect);
+            selector.draw(canvas);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.widget.AbsListView, android.view.ViewGroup, android.view.View
+    public final void drawableStateChanged() {
+        if (this.x == null) {
+            super.drawableStateChanged();
+            tr3 tr3Var = this.h;
+            if (tr3Var != null) {
+                tr3Var.b = true;
+            }
+            Drawable selector = getSelector();
+            if (selector != null && this.s && isPressed()) {
+                selector.setState(getDrawableState());
+            }
         }
     }
 
-    @Override // gu3
-    public final void d() {
-        switch (this.a) {
-            case 0:
-                this.b = false;
-                this.c = -9223372036854775807L;
-                break;
-            default:
-                this.b = false;
-                this.c = -9223372036854775807L;
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean hasFocus() {
+        return this.r || super.hasFocus();
     }
 
-    @Override // gu3
-    public final void e() {
-        int i;
-        switch (this.a) {
-            case 0:
-                if (this.b) {
-                    gre.p(this.c != -9223372036854775807L);
-                    for (wxb wxbVar : (wxb[]) this.g) {
-                        wxbVar.a(this.c, 1, this.e, 0, null);
+    @Override // android.view.View
+    public final boolean hasWindowFocus() {
+        return this.r || super.hasWindowFocus();
+    }
+
+    @Override // android.view.View
+    public final boolean isFocused() {
+        return this.r || super.isFocused();
+    }
+
+    @Override // android.view.View
+    public final boolean isInTouchMode() {
+        return (this.r && this.n) || super.isInTouchMode();
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        this.x = null;
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public boolean onHoverEvent(MotionEvent motionEvent) {
+        int i = Build.VERSION.SDK_INT;
+        if (i < 26) {
+            return super.onHoverEvent(motionEvent);
+        }
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 10 && this.x == null) {
+            p1 p1Var = new p1(this, (byte) 27);
+            this.x = p1Var;
+            post(p1Var);
+        }
+        boolean onHoverEvent = super.onHoverEvent(motionEvent);
+        if (actionMasked != 9 && actionMasked != 7) {
+            setSelection(-1);
+            return onHoverEvent;
+        }
+        int pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
+        if (pointToPosition != -1 && pointToPosition != getSelectedItemPosition()) {
+            View childAt = getChildAt(pointToPosition - getFirstVisiblePosition());
+            if (childAt.isEnabled()) {
+                requestFocus();
+                if (i < 30 || !rr3.d) {
+                    setSelectionFromTop(pointToPosition, childAt.getTop() - getTop());
+                } else {
+                    try {
+                        rr3.a.invoke(this, Integer.valueOf(pointToPosition), childAt, Boolean.FALSE, -1, -1);
+                        rr3.b.invoke(this, Integer.valueOf(pointToPosition));
+                        rr3.c.invoke(this, Integer.valueOf(pointToPosition));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e2) {
+                        e2.printStackTrace();
                     }
-                    this.b = false;
-                    break;
                 }
-                break;
-            default:
-                ((wxb) this.g).getClass();
-                if (this.b && (i = this.d) != 0 && this.e == i) {
-                    gre.p(this.c != -9223372036854775807L);
-                    ((wxb) this.g).a(this.c, 1, this.d, 0, null);
-                    this.b = false;
-                    break;
-                }
-                break;
+            }
+            Drawable selector = getSelector();
+            if (selector != null && this.s && isPressed()) {
+                selector.setState(getDrawableState());
+            }
         }
+        return onHoverEvent;
     }
 
-    @Override // gu3
-    public final void f() {
-        byte b = this.a;
-    }
-
-    @Override // gu3
-    public final void g(int i, long j) {
-        int i2 = i & 4;
-        switch (this.a) {
-            case 0:
-                if (i2 != 0) {
-                    this.b = true;
-                    this.c = j;
-                    this.e = 0;
-                    this.d = 2;
-                    break;
-                }
-                break;
-            default:
-                if (i2 != 0) {
-                    this.b = true;
-                    this.c = j;
-                    this.d = 0;
-                    this.e = 0;
-                    break;
-                }
-                break;
+    @Override // android.widget.AbsListView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.f = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-    }
-
-    @Override // gu3
-    public final void h(l74 l74Var, l2c l2cVar) {
-        switch (this.a) {
-            case 0:
-                wxb[] wxbVarArr = (wxb[]) this.g;
-                for (int i = 0; i < wxbVarArr.length; i++) {
-                    k2c k2cVar = (k2c) ((List) this.f).get(i);
-                    l2cVar.a();
-                    l2cVar.b();
-                    wxb S = l74Var.S(l2cVar.d, 3);
-                    em4 em4Var = new em4();
-                    l2cVar.b();
-                    em4Var.a = l2cVar.e;
-                    em4Var.r = ud7.n("video/mp2t");
-                    em4Var.s = ud7.n("application/dvbsubs");
-                    em4Var.v = Collections.singletonList(k2cVar.b);
-                    em4Var.d = k2cVar.a;
-                    yjb.v(em4Var, S);
-                    wxbVarArr[i] = S;
-                }
-                break;
-            default:
-                l2cVar.a();
-                l2cVar.b();
-                wxb S2 = l74Var.S(l2cVar.d, 5);
-                this.g = S2;
-                em4 em4Var2 = new em4();
-                l2cVar.b();
-                em4Var2.a = l2cVar.e;
-                em4Var2.r = ud7.n("video/mp2t");
-                em4Var2.s = ud7.n("application/id3");
-                yjb.v(em4Var2, S2);
-                break;
+        p1 p1Var = this.x;
+        if (p1Var != null) {
+            vr3 vr3Var = (vr3) p1Var.b;
+            vr3Var.x = null;
+            vr3Var.removeCallbacks(p1Var);
         }
+        return super.onTouchEvent(motionEvent);
     }
 
-    private final void a() {
+    public void setListSelectionHidden(boolean z) {
+        this.n = z;
     }
 
-    private final void c() {
-    }
-
-    public vr3() {
-        this.a = (byte) 1;
-        this.f = new xu7(10);
-        this.c = -9223372036854775807L;
+    @Override // android.widget.AbsListView
+    public void setSelector(Drawable drawable) {
+        tr3 tr3Var = null;
+        if (drawable != null) {
+            tr3 tr3Var2 = new tr3();
+            Drawable drawable2 = tr3Var2.a;
+            if (drawable2 != null) {
+                drawable2.setCallback(null);
+            }
+            tr3Var2.a = drawable;
+            drawable.setCallback(tr3Var2);
+            tr3Var2.b = true;
+            tr3Var = tr3Var2;
+        }
+        this.h = tr3Var;
+        super.setSelector(tr3Var);
+        Rect rect = new Rect();
+        if (drawable != null) {
+            drawable.getPadding(rect);
+        }
+        this.b = rect.left;
+        this.c = rect.top;
+        this.d = rect.right;
+        this.e = rect.bottom;
     }
 }

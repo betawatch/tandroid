@@ -1,15 +1,10 @@
 // default package
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class h98 {
-    public String a;
-    public String b;
-    public zl6 c;
-    public lm6 d;
-    public ArrayList e;
-    public ArrayList f;
-    public long g;
+public final class h98 extends u55 {
+    @Override // u55, x46, q79
+    public final boolean x0() {
+        return false;
+    }
 }

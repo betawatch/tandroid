@@ -1,35 +1,35 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Path;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class au5 implements Runnable {
+public final /* synthetic */ class au5 implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ fu5 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ au5(fu5 fu5Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j, byte b) {
+    public /* synthetic */ au5(View view, float f, float f2, byte b) {
         this.a = b;
-        this.b = fu5Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j;
+        this.d = view;
+        this.b = f;
+        this.c = f2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // pcc
+    public final void a(Object obj) {
         byte b = this.a;
-        TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = this.c;
-        fu5 fu5Var = this.b;
+        float f = this.c;
+        float f2 = this.b;
+        View view = this.d;
         switch (b) {
             case 0:
-                na7.q1(fu5Var.a).b4(tL_chatInviteJoinResultWebView.users, false);
-                bq0.b(fu5Var.a).c(this.d, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
+                ((bu5) view).y.addPath((Path) obj, f2, f);
                 break;
             default:
-                na7.q1(fu5Var.a).b4(tL_chatInviteJoinResultWebView.users, false);
-                bq0.b(fu5Var.a).c(this.d, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
+                ((jja) view).n(f2, f);
                 break;
         }
     }

@@ -1,36 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nf implements fn7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hn7 b;
-    public final /* synthetic */ hn7 c;
-    public final /* synthetic */ hn7 d;
+import android.view.View;
+import android.widget.LinearLayout;
 
-    public /* synthetic */ nf(hn7 hn7Var, hn7 hn7Var2, hn7 hn7Var3, byte b) {
-        this.a = b;
-        this.b = hn7Var;
-        this.c = hn7Var2;
-        this.d = hn7Var3;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class nf implements View.OnClickListener {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ LinearLayout c;
+
+    public /* synthetic */ nf(LinearLayout linearLayout, int[] iArr) {
+        this.c = linearLayout;
+        this.b = iArr;
     }
 
-    @Override // fn7
-    public final void i(hn7 hn7Var, int i) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        hn7 hn7Var2 = this.d;
-        hn7 hn7Var3 = this.c;
-        hn7 hn7Var4 = this.b;
+        LinearLayout linearLayout = this.c;
+        int[] iArr = this.b;
         switch (b) {
             case 0:
-                ij.v0(hn7Var4, hn7Var3, hn7Var2);
-                break;
-            case 1:
-                ij.v0(hn7Var4, hn7Var3, hn7Var2);
+                int childCount = linearLayout.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    j29 j29Var = (j29) linearLayout.getChildAt(i);
+                    j29Var.c.a(j29Var == view, true);
+                }
+                iArr[0] = ykb.f[((Integer) view.getTag()).intValue()];
                 break;
             default:
-                ij.b(hn7Var4, hn7Var3, hn7Var2);
+                iArr[0] = ((Integer) view.getTag()).intValue();
+                int childCount2 = linearLayout.getChildCount();
+                for (int i2 = 0; i2 < childCount2; i2++) {
+                    View childAt = linearLayout.getChildAt(i2);
+                    if (childAt instanceof j29) {
+                        ((j29) childAt).c.a(childAt == view, true);
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ nf(int[] iArr, LinearLayout linearLayout) {
+        this.b = iArr;
+        this.c = linearLayout;
     }
 }

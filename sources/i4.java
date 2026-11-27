@@ -1,16 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class i4 {
-    public final char a;
-    public final int b;
-    public final int c;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public i4(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-    }
+    public boolean a;
+    public int b;
+    public int c;
+    public boolean d;
+    public int e;
+    public int f;
+    public int g;
 }

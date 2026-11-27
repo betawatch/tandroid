@@ -1,69 +1,50 @@
 // default package
 
-import android.app.ApplicationExitInfo;
-import android.system.OsConstants;
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
+import android.os.Bundle;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class sd implements Predicate {
+public final /* synthetic */ class sd implements View.OnClickListener {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ e c;
+    public final /* synthetic */ AlertDialog$Builder d;
 
-    public /* synthetic */ sd(byte b) {
+    public /* synthetic */ sd(TLRPC.User user, e eVar, AlertDialog$Builder alertDialog$Builder, byte b) {
         this.a = b;
+        this.b = user;
+        this.c = eVar;
+        this.d = alertDialog$Builder;
     }
 
-    public final /* synthetic */ Predicate and(Predicate predicate) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public final /* synthetic */ Predicate negate() {
-        byte b = this.a;
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public final /* synthetic */ Predicate or(Predicate predicate) {
-        byte b = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
+        AlertDialog$Builder alertDialog$Builder = this.d;
+        e eVar = this.c;
+        TLRPC.User user = this.b;
+        switch (b) {
             case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                if (((String) obj) != null) {
-                    break;
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", user.id);
+                if (eVar.getMessagesController().C(bundle, eVar, null, null)) {
+                    eVar.presentFragment(new ProfileActivity(bundle, null));
                 }
-                break;
-            case 3:
-                if (((Integer) obj).intValue() != 0) {
-                    break;
-                }
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                if (((ApplicationExitInfo) obj).getReason() == 6) {
-                    break;
-                }
+                alertDialog$Builder.a.M0.run();
                 break;
             default:
-                ApplicationExitInfo applicationExitInfo = (ApplicationExitInfo) obj;
-                boolean z = applicationExitInfo.getReason() == 3 && applicationExitInfo.getDescription() != null && applicationExitInfo.getDescription().contains("OOM");
-                boolean z2 = applicationExitInfo.getReason() == 2 && applicationExitInfo.getStatus() == OsConstants.SIGKILL;
-                if (z || z2) {
-                    break;
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", user.id);
+                if (eVar.getMessagesController().C(bundle2, eVar, null, null)) {
+                    eVar.presentFragment(new ProfileActivity(bundle2, null));
                 }
+                alertDialog$Builder.a.M0.run();
                 break;
         }
-        return true;
     }
 }

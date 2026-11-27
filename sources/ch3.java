@@ -1,184 +1,146 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.os.Build;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.SessionsActivity;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ch3 extends i49 {
-    public boolean a;
-    public final /* synthetic */ bj3 b;
-    public final /* synthetic */ vi3 c;
-    public final /* synthetic */ cj3 d;
+public final /* synthetic */ class ch3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uj3 b;
 
-    public ch3(cj3 cj3Var, bj3 bj3Var, vi3 vi3Var) {
-        this.d = cj3Var;
-        this.b = bj3Var;
-        this.c = vi3Var;
+    public /* synthetic */ ch3(uj3 uj3Var, byte b) {
+        this.a = b;
+        this.b = uj3Var;
     }
 
-    @Override // i49
-    public final void a(RecyclerView recyclerView, int i) {
-        cj3 cj3Var = this.d;
-        if (i == 1) {
-            this.a = true;
-            cj3Var.g3 = true;
-            kp kpVar = cj3Var.f0[0].b;
-            ValueAnimator valueAnimator = (ValueAnimator) kpVar.c;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                ((ValueAnimator) kpVar.c).cancel();
-                kpVar.c = null;
-            }
-            if (cj3Var.Y.r.getText().length() == 0 && cj3Var.Y.r.hasFocus()) {
-                gl.t1(cj3Var.Y.r);
-                cj3Var.Y.r.clearFocus();
-            }
-        } else {
-            cj3Var.g3 = false;
-        }
-        if (i == 0) {
-            this.a = false;
-            cj3Var.g2 = false;
-            boolean z = cj3Var.d1;
-            bj3 bj3Var = this.b;
-            if (z) {
-                cj3Var.d1 = false;
-                if (cj3Var.f1) {
-                    yi3 yi3Var = bj3Var.a;
-                    int i2 = yi3.C3;
-                    yi3Var.D1();
-                    cj3Var.f1 = false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        uj3 uj3Var = this.b;
+        switch (b) {
+            case 0:
+                uj3Var.fragmentView.dispatchTouchEvent(hl.R());
+                break;
+            case 1:
+                uj3Var.presentFragment(new ThemeActivity(1));
+                break;
+            case 2:
+                uj3Var.getMessagesController().W4(uj3Var.x3(), false);
+                break;
+            case 3:
+                if (LaunchActivity.Q() != null) {
+                    uj3Var.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                    break;
                 }
-                bj3Var.d.f();
-            }
-            cj3Var.H2(bj3Var);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v4, types: [boolean] */
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        cq3 cq3Var;
-        yi3 yi3Var;
-        a aVar;
-        a aVar2;
-        View childAt;
-        boolean z;
-        Object[] objArr;
-        this.c.V();
-        bj3 bj3Var = this.b;
-        yg3 yg3Var = bj3Var.y;
-        int i3 = -i2;
-        ArrayList arrayList = yg3Var.x;
-        ArrayList arrayList2 = yg3Var.o;
-        if (!arrayList2.isEmpty()) {
-            int size = arrayList2.size();
-            for (int i4 = 0; i4 < size; i4++) {
-                View view = ((s49) arrayList2.get(i4)).a;
-                view.setTranslationY(view.getTranslationY() + i3);
-            }
-        }
-        if (!arrayList.isEmpty()) {
-            int size2 = arrayList.size();
-            for (int i5 = 0; i5 < size2; i5++) {
-                View view2 = ((s49) arrayList.get(i5)).a;
-                view2.setTranslationY(view2.getTranslationY() + i3);
-            }
-        }
-        int i6 = -1;
-        int i7 = -1;
-        for (int i8 = 0; i8 < recyclerView.getChildCount(); i8++) {
-            int R = RecyclerView.R(recyclerView.getChildAt(i8));
-            if (R >= 0) {
-                if (i6 == -1 || R > i6) {
-                    i6 = R;
-                }
-                if (i7 == -1 || R < i7) {
-                    i7 = R;
-                }
-            }
-        }
-        cj3 cj3Var = this.d;
-        cj3Var.K2(bj3Var);
-        cj3Var.R = true;
-        View view3 = cj3Var.fragmentView;
-        if (view3 != null) {
-            view3.invalidate();
-        }
-        if (cj3Var.T0 != 10 && this.a && recyclerView.getChildCount() > 0 && i7 != -1) {
-            s49 K = recyclerView.K(i7);
-            if (!cj3Var.w3() || (K != null && K.b() >= 0)) {
-                int top = K != null ? K.a.getTop() : 0;
-                int i9 = cj3Var.a2;
-                if (i9 == i7) {
-                    int i10 = cj3Var.b2;
-                    int i11 = i10 - top;
-                    z = top < i10;
-                    if (Math.abs(i11) <= 1) {
-                        objArr = false;
-                        if (objArr != false && cj3Var.c2 && (z || cj3Var.g3)) {
-                            cj3Var.z3(z);
-                        }
-                        cj3Var.a2 = i7;
-                        cj3Var.b2 = top;
-                        cj3Var.c2 = true;
+                break;
+            case 4:
+                tj3[] tj3VarArr = uj3Var.f0;
+                if (tj3VarArr != null) {
+                    for (tj3 tj3Var : tj3VarArr) {
+                        tj3Var.a.requestLayout();
                     }
+                }
+                uj3Var.o5();
+                View view = uj3Var.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 5:
+                bj3 bj3Var = uj3Var.D0;
+                if (bj3Var == null || !bj3Var.B0) {
+                    uj3Var.Y.r.getText().clear();
+                    hl.t1(uj3Var.Y.r);
+                    uj3Var.Y.r.clearFocus();
+                    uj3Var.Z.b(false);
+                    break;
                 } else {
-                    z = i7 > i9;
+                    bj3Var.S(false);
+                    break;
                 }
-                objArr = true;
-                if (objArr != false) {
-                    cj3Var.z3(z);
+            case 6:
+                if (uj3Var.T0 != 10) {
+                    uj3Var.B3(false);
                 }
-                cj3Var.a2 = i7;
-                cj3Var.b2 = top;
-                cj3Var.c2 = true;
-            }
-        }
-        if (!cj3Var.L && recyclerView == cj3Var.f0[0].a && !cj3Var.l2) {
-            aVar = ((d) cj3Var).actionBar;
-            if (aVar != null) {
-                aVar2 = ((d) cj3Var).actionBar;
-                if (!aVar2.y() && !cj3Var.g2 && !cj3Var.H3.c()) {
-                    if (i2 > 0 && cj3Var.w3() && cj3Var.f0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
-                        int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
-                        if (top2 + i2 > 0) {
-                            if (top2 >= 0) {
-                                return;
-                            } else {
-                                i2 = -top2;
-                            }
-                        }
-                    }
-                    cj3Var.R = true;
-                    View view4 = cj3Var.fragmentView;
-                    if (view4 != null) {
-                        view4.invalidate();
-                    }
+                if (!uj3Var.M || !uj3Var.v3().H()) {
+                    uj3Var.R4(true, true);
+                    break;
+                } else {
+                    uj3Var.F0.h();
+                    break;
                 }
-            }
+                break;
+            case 7:
+                z92 z92Var = uj3Var.A1;
+                if (z92Var != null) {
+                    z92Var.d();
+                }
+                uj3Var.O2();
+                uj3Var.P2();
+                di3 di3Var = uj3Var.E1;
+                if (di3Var != null) {
+                    di3Var.setTranslationY(-uj3Var.w.d());
+                    break;
+                }
+                break;
+            case 8:
+                uj3Var.w4();
+                break;
+            case 9:
+                uj3Var.U3();
+                break;
+            case 10:
+                uj3Var.getNotificationCenter().k(24, new Object[0]);
+                break;
+            case 11:
+                uj3Var.i3();
+                break;
+            case 12:
+                uj3Var.q5();
+                break;
+            case 13:
+                uj3Var.Q3();
+                break;
+            case 14:
+                uj3Var.L3();
+                break;
+            case 15:
+                uj3Var.getMessagesController().v4(0L, "SETUP_LOGIN_EMAIL");
+                break;
+            case 16:
+                kg5 kg5Var = uj3Var.r0;
+                if (kg5Var != null) {
+                    kg5Var.f(true);
+                }
+                uj3Var.presentFragment(new PremiumPreviewFragment(0, "stories"));
+                break;
+            case 17:
+                uj3Var.f0[0].a.requestLayout();
+                li3 li3Var = uj3Var.H3;
+                tzb tzbVar = (li3Var == null || !(li3Var.getFragment() instanceof tzb)) ? null : (tzb) uj3Var.H3.getFragment();
+                if (tzbVar != null) {
+                    tzbVar.C0();
+                }
+                uj3Var.c3(false);
+                uj3Var.o5();
+                bj3 bj3Var2 = uj3Var.D0;
+                if (bj3Var2 != null) {
+                    bj3Var2.invalidate();
+                    break;
+                }
+                break;
+            case 18:
+                uj3Var.y5();
+                break;
+            default:
+                v21.e();
+                uj3Var.presentFragment(new SessionsActivity(0));
+                break;
         }
-        rh3 rh3Var = cj3Var.H3;
-        if (rh3Var != null && rh3Var.c() && (yi3Var = bj3Var.a) != null) {
-            yi3Var.invalidate();
-        }
-        oh3 oh3Var = cj3Var.F0;
-        if (oh3Var != null && oh3Var.getPremiumHint() != null && cj3Var.F0.getPremiumHint().W) {
-            cj3Var.F0.getPremiumHint().f(true);
-        }
-        ?? w3 = cj3Var.w3();
-        View childAt2 = bj3Var.a.getChildAt(w3 == true ? 1 : 0);
-        cj3Var.e.a(i7 > w3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - cj3Var.O) + ((float) gl.L(5.0f)) < ((float) bj3Var.a.getPaddingTop()), true);
-        if (i2 == 0 || (cq3Var = cj3Var.o4) == null || Build.VERSION.SDK_INT < 31) {
-            return;
-        }
-        cq3Var.f(i, i2);
     }
 }

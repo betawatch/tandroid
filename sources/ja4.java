@@ -1,135 +1,148 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ja4 implements Runnable {
-    public final /* synthetic */ la4 a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ boolean f;
+public final class ja4 {
+    public final ca4 a;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public int k;
+    public ha4 l;
+    public final ArrayList b = new ArrayList();
+    public final HashMap c = new HashMap();
+    public final lw3 d = new lw3((Object) this, (byte) 16);
+    public int j = 100;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ja4(la4 la4Var, long j, int i, int i2, String str, int i3) {
-        this.a = la4Var;
-        this.b = j;
-        this.c = i;
-        this.d = i2;
-        this.e = str;
-        this.f = i3;
+    public ja4(ca4 ca4Var) {
+        this.a = ca4Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0104  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0109  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLitePreparedStatement sQLitePreparedStatement;
-        SQLitePreparedStatement sQLitePreparedStatement2;
-        boolean z = this.f;
-        la4 la4Var = this.a;
-        ConcurrentHashMap concurrentHashMap = la4Var.f;
-        boolean z2 = w01.a;
-        StringBuilder sb = new StringBuilder("put file path id=");
-        long j = this.b;
-        sb.append(j);
-        sb.append(" dc=");
-        int i = this.c;
-        sb.append(i);
-        sb.append(" type=");
-        byte b = this.d;
-        sb.append((int) b);
-        sb.append(" path=");
-        String str = this.e;
-        sb.append(str);
-        fa4.b(sb.toString());
-        la4Var.c();
-        SQLiteDatabase sQLiteDatabase = la4Var.c;
-        if (sQLiteDatabase == null) {
+    public final void a(int i, int i2, ArrayList arrayList) {
+        if (i == this.k && this.f) {
+            this.f = false;
+            int size = arrayList.size();
+            HashMap hashMap = this.c;
+            ArrayList arrayList2 = this.b;
+            if (i2 == -1 || i2 == -2) {
+                arrayList2.subList(0, size).clear();
+                int size2 = arrayList.size();
+                int i3 = 0;
+                while (i3 < size2) {
+                    Object obj = arrayList.get(i3);
+                    i3++;
+                    hashMap.remove(Long.valueOf(((ha4) obj).c));
+                }
+                c();
+                this.j = 100;
+                this.i = 0;
+                if (arrayList2.isEmpty()) {
+                    return;
+                }
+                d(0L);
+                return;
+            }
+            if (i2 >= 0) {
+                d(Math.max(i2 * 1000, 2000L));
+                return;
+            }
+            if (i2 == -3) {
+                if (size > 1) {
+                    this.j = size / 2;
+                    d(0L);
+                    return;
+                }
+                ha4 ha4Var = (ha4) arrayList2.remove(0);
+                Integer num = (Integer) hashMap.remove(Long.valueOf(ha4Var.c));
+                int intValue = num == null ? 1 : num.intValue() + 1;
+                if (intValue < 3) {
+                    arrayList2.add(ha4Var);
+                    hashMap.put(Long.valueOf(ha4Var.c), Integer.valueOf(intValue));
+                }
+                c();
+                this.j = 100;
+                int size3 = arrayList2.size();
+                int i4 = 0;
+                while (i4 < size3) {
+                    Object obj2 = arrayList2.get(i4);
+                    i4++;
+                    if (!hashMap.containsKey(Long.valueOf(((ha4) obj2).c))) {
+                        d(0L);
+                        return;
+                    }
+                }
+            }
+            if (i2 != -5) {
+                this.i = Math.min(this.i + 1, 8);
+            }
+            this.h = i2 == -3;
+            d(i2 != -5 ? 2000 << (this.i - 1) : 2000L);
+        }
+    }
+
+    public final void b() {
+        ca4 ca4Var = this.a;
+        if (this.e) {
             return;
         }
-        SQLitePreparedStatement sQLitePreparedStatement3 = null;
-        r9 = null;
-        SQLitePreparedStatement sQLitePreparedStatement4 = null;
-        sQLitePreparedStatement3 = null;
-        sQLitePreparedStatement3 = null;
-        try {
-            if (str != null) {
-                SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("DELETE FROM paths WHERE path = ?");
+        this.e = true;
+        ArrayList arrayList = new ArrayList();
+        String[] split = a.b.getSharedPreferences("feed_events", 0).getString("outbox" + ca4Var.a, "").split("\n");
+        int length = split.length;
+        boolean z = false;
+        for (int i = 0; i < length; i++) {
+            String trim = split[i].trim();
+            if (!trim.isEmpty()) {
                 try {
-                    executeFast.bindString(1, str);
-                    executeFast.step();
-                    sQLitePreparedStatement4 = la4Var.c.executeFast("REPLACE INTO paths VALUES(?, ?, ?, ?, ?)");
-                    sQLitePreparedStatement4.requery();
-                    sQLitePreparedStatement4.bindLong(1, j);
-                    sQLitePreparedStatement4.bindInteger(2, i);
-                    sQLitePreparedStatement4.bindInteger(3, b);
-                    sQLitePreparedStatement4.bindString(4, str);
-                    sQLitePreparedStatement4.bindInteger(5, z ? 1 : 0);
-                    sQLitePreparedStatement4.step();
-                    sQLitePreparedStatement4.dispose();
-                    concurrentHashMap.put(j + "_" + i + "_" + ((int) b), str);
-                    sQLitePreparedStatement2 = sQLitePreparedStatement4;
-                    sQLitePreparedStatement3 = executeFast;
-                } catch (SQLiteException e) {
-                    e = e;
-                    sQLitePreparedStatement = sQLitePreparedStatement4;
-                    sQLitePreparedStatement3 = executeFast;
-                    try {
-                        fa4.g(e, true);
-                        if (sQLitePreparedStatement3 != null) {
-                            sQLitePreparedStatement3.dispose();
-                        }
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th) {
-                        th = th;
-                        if (sQLitePreparedStatement3 != null) {
-                            sQLitePreparedStatement3.dispose();
-                        }
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                        }
-                        throw th;
+                    boolean startsWith = trim.startsWith("~");
+                    if (startsWith) {
+                        trim = trim.substring(1);
                     }
-                } catch (Throwable th2) {
-                    th = th2;
-                    sQLitePreparedStatement = sQLitePreparedStatement4;
-                    sQLitePreparedStatement3 = executeFast;
-                    if (sQLitePreparedStatement3 != null) {
-                    }
-                    if (sQLitePreparedStatement != null) {
-                    }
-                    throw th;
+                    arrayList.add(ha4.a(trim));
+                    z |= startsWith;
+                } catch (RuntimeException unused) {
+                    z = true;
                 }
-            } else {
-                sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j + " AND dc_id = " + i + " AND type = " + ((int) b)).stepThis().dispose();
-                concurrentHashMap.put(j + "_" + i + "_" + ((int) b), "~null~");
-                sQLitePreparedStatement2 = null;
             }
-            if (sQLitePreparedStatement3 != null) {
-                sQLitePreparedStatement3.dispose();
-            }
-            if (sQLitePreparedStatement2 != null) {
-                sQLitePreparedStatement2.dispose();
-            }
-        } catch (SQLiteException e2) {
-            e = e2;
-            sQLitePreparedStatement = sQLitePreparedStatement3;
-        } catch (Throwable th3) {
-            th = th3;
-            sQLitePreparedStatement = sQLitePreparedStatement3;
         }
+        this.b.addAll(0, arrayList);
+        if (z) {
+            c();
+        }
+    }
+
+    public final void c() {
+        StringBuilder sb = new StringBuilder();
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            sb.append(((ha4) obj).b());
+            sb.append('\n');
+        }
+        if (this.l != null) {
+            sb.append('~');
+            sb.append(this.l.b());
+            sb.append('\n');
+        }
+        ca4 ca4Var = this.a;
+        String sb2 = sb.toString();
+        a.b.getSharedPreferences("feed_events", 0).edit().putString("outbox" + ca4Var.a, sb2).apply();
+    }
+
+    public final void d(long j) {
+        if (this.g || this.f) {
+            return;
+        }
+        this.g = true;
+        ea4.e.postRunnable(this.d, j);
     }
 }

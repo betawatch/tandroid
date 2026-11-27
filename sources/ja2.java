@@ -1,10 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ja2 extends zw8 {
-    public float e;
-    public float f;
-    public float g;
-    public float h;
+public final class ja2 extends nw5 {
+    public final /* synthetic */ TLRPC.Chat x;
+    public final /* synthetic */ ka2 y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja2(ka2 ka2Var, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
+        super(context, chat);
+        this.y = ka2Var;
+        this.x = chat2;
+    }
+
+    @Override // nw5
+    public final boolean a(boolean z, lw5 lw5Var) {
+        na2 na2Var = this.y.d;
+        if (na2Var.Q) {
+            return false;
+        }
+        na2Var.Q = true;
+        e(new ea2(this, lw5Var, (byte) 3), new lg(this, this.x, z, (Runnable) lw5Var, (byte) 11));
+        return true;
+    }
+
+    @Override // nw5
+    public final boolean b(boolean z, mw5 mw5Var) {
+        na2 na2Var = this.y.d;
+        if (na2Var.P) {
+            return false;
+        }
+        na2Var.P = true;
+        e(new ea2(this, mw5Var, (byte) 3), new lg(this, this.x, z, (Runnable) mw5Var, (byte) 10));
+        return true;
+    }
+
+    public final void e(ea2 ea2Var, Runnable runnable) {
+        na2 na2Var = this.y.d;
+        if (xc2.T(na2Var.f)) {
+            runnable.run();
+        } else {
+            na2Var.getMessagesController().R(na2Var.getParentActivity(), this.x.id, na2Var, new q72((Object) this, (Object) runnable, (byte) 4), ea2Var);
+        }
+    }
 }

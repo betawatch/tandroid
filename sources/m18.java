@@ -1,42 +1,10 @@
 // default package
 
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class m18 extends fm2 {
-    public final /* synthetic */ byte E;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m18(Drawable drawable, Drawable drawable2, int i, int i2) {
-        super(drawable, drawable2, i, i2);
-        this.E = (byte) 3;
-    }
-
-    @Override // fm2, android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        byte b = this.E;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m18(Drawable drawable, Drawable drawable2, byte b) {
-        super(drawable, drawable2);
-        this.E = b;
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
-    }
-
-    private final void e(ColorFilter colorFilter) {
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class m18 {
+    public ArrayList a;
+    public float b;
 }

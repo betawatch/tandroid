@@ -1,23 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class u5c extends vw2 {
-    public static final u5c c = new u5c();
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-    @Override // vw2
-    public final void c(sw2 sw2Var, Runnable runnable) {
-        xb3.d.c.b(runnable, true);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class u5c extends zo {
+    public final /* synthetic */ d6c c;
+
+    public u5c(d6c d6cVar) {
+        this.c = d6cVar;
     }
 
-    @Override // vw2
-    public final vw2 e(int i) {
-        rne.a(i);
-        return i >= dgb.d ? this : super.e(i);
-    }
-
-    @Override // vw2
-    public final String toString() {
-        return "Dispatchers.IO";
+    @Override // zo
+    public final int i(int i) {
+        d6c d6cVar = this.c;
+        j79 adapter = d6cVar.n.getAdapter();
+        c6c c6cVar = d6cVar.s;
+        if (adapter == c6cVar) {
+            if ((c6cVar.d.get(i) instanceof Integer) || i >= c6cVar.x) {
+                return c6cVar.w;
+            }
+            return 1;
+        }
+        z4b z4bVar = d6cVar.w;
+        SparseArray sparseArray = z4bVar.s;
+        if (i == z4bVar.E || !(sparseArray.get(i) == null || (sparseArray.get(i) instanceof TLRPC.Document))) {
+            return z4bVar.e.a();
+        }
+        return 1;
     }
 }

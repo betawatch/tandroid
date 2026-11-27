@@ -1,6 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class g6f {
+    public static String a(vhd vhdVar) {
+        String str;
+        StringBuilder sb = new StringBuilder(vhdVar.size());
+        for (int i = 0; i < vhdVar.size(); i++) {
+            int j = vhdVar.j(i);
+            if (j == 34) {
+                str = "\\\"";
+            } else if (j == 39) {
+                str = "\\'";
+            } else if (j != 92) {
+                switch (j) {
+                    case 7:
+                        str = "\\a";
+                        break;
+                    case 8:
+                        str = "\\b";
+                        break;
+                    case 9:
+                        str = "\\t";
+                        break;
+                    case 10:
+                        str = "\\n";
+                        break;
+                    case 11:
+                        str = "\\v";
+                        break;
+                    case 12:
+                        str = "\\f";
+                        break;
+                    case 13:
+                        str = "\\r";
+                        break;
+                    default:
+                        if (j < 32 || j > 126) {
+                            sb.append('\\');
+                            sb.append((char) (((j >>> 6) & 3) + 48));
+                            sb.append((char) (((j >>> 3) & 7) + 48));
+                            j = (j & 7) + 48;
+                        }
+                        sb.append((char) j);
+                        continue;
+                }
+            } else {
+                str = "\\\\";
+            }
+            sb.append(str);
+        }
+        return sb.toString();
+    }
 }

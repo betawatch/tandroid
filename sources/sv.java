@@ -1,176 +1,154 @@
 // default package
 
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.Trace;
-import android.util.SparseIntArray;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sv implements Runnable {
-    public static final /* synthetic */ sv b = new sv(14);
-    public final /* synthetic */ byte a;
+public final class sv extends View implements zlb, ew {
+    public final xi5 a;
+    public final ex b;
+    public cw c;
+    public int d;
+    public int e;
+    public TL_iv.pageBlockSubtitle f;
 
-    public sv(u39 u39Var, int i) {
-        this.a = (byte) 1;
+    public sv(Activity activity, xi5 xi5Var, ex exVar) {
+        super(activity);
+        this.a = xi5Var;
+        this.b = exVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                return;
-            case 6:
-                ArrayList arrayList = eo3.j;
-                if (arrayList == null || arrayList.isEmpty()) {
-                    eo3.j = null;
-                    return;
-                }
-                ArrayList arrayList2 = eo3.j;
-                eo3.j = null;
-                if (eo3.k == null) {
-                    int max = Math.max(1, Runtime.getRuntime().availableProcessors());
-                    eo3 eo3Var = new eo3();
-                    eo3Var.a = new ArrayList(10);
-                    eo3Var.b = new SparseIntArray();
-                    eo3Var.c = new ArrayList(10);
-                    eo3Var.i = new o1(eo3Var, (byte) 24);
-                    eo3Var.d = max;
-                    eo3Var.f = Utilities.b.nextInt();
-                    eo3.k = eo3Var;
-                }
-                Utilities.e.c(new re(arrayList2, (byte) 4));
-                return;
-            case 7:
-                try {
-                    int i = mxb.a;
-                    Trace.beginSection("EmojiCompat.EmojiCompatInitializer.run");
-                    if (lw3.j != null) {
-                        lw3.a().c();
-                    }
-                    Trace.endSection();
-                    return;
-                } catch (Throwable th) {
-                    int i2 = mxb.a;
-                    Trace.endSection();
-                    throw th;
-                }
-            case 8:
-                return;
-            case 9:
-                String[] strArr = MediaController.W1;
-                return;
-            case 10:
-                Utilities.b.nextInt();
-                kz4[] kz4VarArr = x2b.a;
-                kk7.f(y6c.t0).k(2, 0);
-                gl.d3(x2b.o, 1000L);
-                LaunchActivity.Q().getFragmentView();
-                return;
-            case 11:
-                bkb.j = false;
-                bkb.l(false);
-                return;
-            case 12:
-                bkb.k = false;
-                bkb.l(true);
-                return;
-            case 13:
-                xgc xgcVar = xgc.U;
-                if (xgcVar != null) {
-                    wgc wgcVar = xgcVar.b;
-                    int i3 = wgc.h;
-                    gl.r(wgcVar.f.O);
-                    return;
-                }
-                return;
-            case 14:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            default:
-                return;
+    @Override // ew
+    public int getBoundLeft() {
+        cw cwVar = this.c;
+        if (cwVar == null) {
+            return -1;
+        }
+        return ik8.h(this.a, 18.0f, cwVar.k() + cwVar.s);
+    }
+
+    @Override // ew
+    public int getBoundRight() {
+        cw cwVar = this.c;
+        if (cwVar == null) {
+            return -1;
+        }
+        return ik8.C(this.a, 18.0f, cwVar.l() + cwVar.s);
+    }
+
+    @Override // ew
+    public int getLastLineBoundRight() {
+        cw cwVar = this.c;
+        if (cwVar == null) {
+            return -1;
+        }
+        return ik8.C(this.a, 18.0f, cwVar.m() + cwVar.s);
+    }
+
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return ik8.a(this);
+    }
+
+    @Override // zlb
+    public final void k(ArrayList arrayList) {
+        cw cwVar = this.c;
+        if (cwVar != null) {
+            arrayList.add(cwVar);
         }
     }
 
-    public /* synthetic */ sv(x43 x43Var, String str, Bundle bundle, byte b2) {
-        this.a = b2;
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        cw cwVar = this.c;
+        if (cwVar != null) {
+            cwVar.i(this);
+        }
     }
 
-    public /* synthetic */ sv(Binder binder, Object obj, byte b2) {
-        this.a = b2;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        cw cwVar = this.c;
+        if (cwVar != null) {
+            cwVar.f(this);
+        }
     }
 
-    public /* synthetic */ sv(Object obj, byte b2) {
-        this.a = b2;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.f == null || this.c == null) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(this.d, this.e);
+        o.s(this.a, canvas, this, 0);
+        this.c.d(canvas, this);
+        canvas.restore();
     }
 
-    public /* synthetic */ sv(byte b2) {
-        this.a = b2;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        cw cwVar = this.c;
+        if (cwVar == null) {
+            return;
+        }
+        accessibilityNodeInfo.setText(o.f(2131754858, o.g(this.a, this.b, cwVar)));
     }
 
-    public sv(x43 x43Var, int i, Bundle bundle) {
-        this.a = (byte) 2;
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        sv svVar;
+        int i3;
+        int size = View.MeasureSpec.getSize(i);
+        xi5 xi5Var = this.a;
+        xi5Var.getClass();
+        this.d = hl.L(18.0f);
+        xi5Var.getClass();
+        this.e = hl.L(8.0f);
+        TL_iv.pageBlockSubtitle pageblocksubtitle = this.f;
+        if (pageblocksubtitle != null) {
+            TL_iv.RichText richText = pageblocksubtitle.text;
+            xi5 xi5Var2 = this.a;
+            int h = ik8.h(xi5Var2, 36.0f, size);
+            TL_iv.pageBlockSubtitle pageblocksubtitle2 = this.f;
+            ex exVar = this.b;
+            svVar = this;
+            cw n = o.n(xi5Var2, svVar, null, richText, h, 0, pageblocksubtitle2, (exVar == null || !exVar.H) ? Layout.Alignment.ALIGN_NORMAL : o0b.a(), 0, this.b);
+            svVar.c = n;
+            if (n != null) {
+                xi5Var.getClass();
+                i3 = svVar.c.d.getHeight() + hl.L(16.0f);
+                cw cwVar = svVar.c;
+                cwVar.s = svVar.d;
+                cwVar.w = svVar.e;
+            } else {
+                i3 = 0;
+            }
+        } else {
+            svVar = this;
+            i3 = 1;
+        }
+        svVar.setMeasuredDimension(size, i3);
     }
 
-    private final void a() {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
     }
 
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
-    }
-
-    private final void e() {
-    }
-
-    private final void f() {
-    }
-
-    private final void g() {
-    }
-
-    private final /* synthetic */ void h() {
-    }
-
-    private final void i() {
-    }
-
-    private final void j() {
-    }
-
-    private final void k() {
-    }
-
-    private final void l() {
-    }
-
-    private final void m() {
-    }
-
-    private final void n() {
-    }
-
-    private final void o() {
-    }
-
-    private final void p() {
+    public void setBlock(TL_iv.pageBlockSubtitle pageblocksubtitle) {
+        this.f = pageblocksubtitle;
+        requestLayout();
     }
 }

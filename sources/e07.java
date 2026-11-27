@@ -1,28 +1,32 @@
 // default package
 
-import android.view.CollapsibleActionView;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.util.Pair;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e07 extends FrameLayout implements sk2 {
-    public final CollapsibleActionView a;
+public final /* synthetic */ class e07 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ f07 b;
+    public final /* synthetic */ Pair c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public e07(View view) {
-        super(view.getContext());
-        this.a = (CollapsibleActionView) view;
-        addView(view);
+    public /* synthetic */ e07(f07 f07Var, Pair pair, byte b) {
+        this.a = b;
+        this.b = f07Var;
+        this.c = pair;
     }
 
-    @Override // sk2
-    public final void onActionViewCollapsed() {
-        this.a.onActionViewCollapsed();
-    }
-
-    @Override // sk2
-    public final void onActionViewExpanded() {
-        this.a.onActionViewExpanded();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Pair pair = this.c;
+        f07 f07Var = this.b;
+        switch (b) {
+            case 0:
+                f07Var.b.i.I(((Integer) pair.first).intValue(), (vz6) pair.second);
+                break;
+            default:
+                f07Var.b.i.y(((Integer) pair.first).intValue(), (vz6) pair.second);
+                break;
+        }
     }
 }

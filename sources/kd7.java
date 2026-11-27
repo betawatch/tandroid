@@ -1,115 +1,174 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.util.Log;
-import java.util.List;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kd7 {
-    public byte a;
-    public int b;
-    public String c;
-    public Object d;
-    public Object e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class kd7 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ jf7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ Object h;
 
-    public static String b(jg4 jg4Var) {
-        jg4Var.a();
-        xg4 xg4Var = jg4Var.c;
-        String str = xg4Var.e;
-        if (str != null) {
-            return str;
-        }
-        jg4Var.a();
-        String str2 = xg4Var.b;
-        if (!str2.startsWith("1:")) {
-            return str2;
-        }
-        String[] split = str2.split(":");
-        if (split.length < 2) {
-            return null;
-        }
-        String str3 = split[1];
-        if (str3.isEmpty()) {
-            return null;
-        }
-        return str3;
+    public /* synthetic */ kd7(jf7 jf7Var, long j, int i, TLRPC.InputChannel inputChannel, int i2, long j2) {
+        this.b = jf7Var;
+        this.c = j;
+        this.e = i;
+        this.h = inputChannel;
+        this.f = i2;
+        this.d = j2;
     }
 
-    public final synchronized String a() {
-        if (this.c == null) {
-            f();
-        }
-        return this.c;
-    }
-
-    public final synchronized int c() {
-        PackageInfo d;
-        if (this.b == 0 && (d = d("com.google.android.gms")) != null) {
-            this.b = d.versionCode;
-        }
-        return this.b;
-    }
-
-    public final PackageInfo d(String str) {
-        try {
-            return ((Context) this.d).getPackageManager().getPackageInfo(str, 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.w("FirebaseMessaging", "Failed to find package " + e);
-            return null;
-        }
-    }
-
-    public final boolean e() {
-        byte b;
-        synchronized (this) {
-            b = this.a;
-            if (b == 0) {
-                PackageManager packageManager = ((Context) this.d).getPackageManager();
-                if (packageManager.checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
-                    Log.e("FirebaseMessaging", "Google Play services missing or without correct permission.");
-                    b = 0;
-                } else {
-                    if (!xqe.a()) {
-                        Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
-                        intent.setPackage("com.google.android.gms");
-                        List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
-                        if (queryIntentServices != null && queryIntentServices.size() > 0) {
-                            this.a = (byte) 1;
-                            b = 1;
-                        }
-                    }
-                    Intent intent2 = new Intent("com.google.iid.TOKEN_REQUEST");
-                    intent2.setPackage("com.google.android.gms");
-                    List<ResolveInfo> queryBroadcastReceivers = packageManager.queryBroadcastReceivers(intent2, 0);
-                    if (queryBroadcastReceivers == null || queryBroadcastReceivers.size() <= 0) {
-                        Log.w("FirebaseMessaging", "Failed to resolve IID implementation package, falling back");
-                        if (xqe.a()) {
-                            this.a = (byte) 2;
-                            b = 2;
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00e8, code lost:
+    
+        if (r12 != null) goto L48;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLiteCursor sQLiteCursor;
+        ts8 ts8Var;
+        SQLiteCursor sQLiteCursor2;
+        boolean z;
+        int i;
+        boolean z2;
+        byte b = this.a;
+        Object obj = this.h;
+        switch (b) {
+            case 0:
+                this.b.getMessagesController().y3(-this.c, this.e, (TLRPC.InputChannel) obj, this.f, this.d, true);
+                return;
+            case 1:
+                this.b.X1(this.c, this.d, (Integer) obj, this.e, this.f, 0, 0);
+                return;
+            default:
+                ts8 ts8Var2 = (ts8) obj;
+                final int i2 = this.e;
+                final jf7 jf7Var = this.b;
+                final long j = this.c;
+                long j2 = this.d;
+                final ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                try {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                        if (i2 <= 0) {
+                            try {
+                                sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j));
+                                i = 1;
+                                z2 = false;
+                            } catch (Exception e) {
+                                e = e;
+                                ts8Var = ts8Var2;
+                                z = true;
+                                sQLiteCursor2 = null;
+                                cc4.g(e, z);
+                                break;
+                            } catch (Throwable th) {
+                                th = th;
+                                sQLiteCursor = null;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                throw th;
+                            }
                         } else {
-                            this.a = (byte) 1;
-                            b = 1;
+                            z2 = false;
+                            i = 1;
+                            sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j), Integer.valueOf(i2));
                         }
-                    } else {
-                        this.a = (byte) 2;
-                        b = 2;
+                        try {
+                            ArrayList arrayList4 = new ArrayList();
+                            ArrayList arrayList5 = new ArrayList();
+                            while (sQLiteCursor2.next()) {
+                                boolean z3 = z2;
+                                NativeByteBuffer byteBufferValue = sQLiteCursor2.byteBufferValue(z3 ? 1 : 0);
+                                if (byteBufferValue != null) {
+                                    ts8Var = ts8Var2;
+                                    try {
+                                        TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z3), z3);
+                                        TLdeserialize.readAttachPath(byteBufferValue, j2);
+                                        byteBufferValue.reuse();
+                                        TLdeserialize.id = sQLiteCursor2.intValue(i);
+                                        TLdeserialize.dialog_id = -j;
+                                        jf7.d(TLdeserialize, arrayList4, arrayList5, null);
+                                        arrayList.add(TLdeserialize);
+                                    } catch (Exception e2) {
+                                        e = e2;
+                                        z = true;
+                                        cc4.g(e, z);
+                                    }
+                                } else {
+                                    ts8Var = ts8Var2;
+                                }
+                                ts8Var2 = ts8Var;
+                                z2 = false;
+                                i = 1;
+                            }
+                            ts8Var = ts8Var2;
+                            sQLiteCursor2.dispose();
+                            if (!arrayList.isEmpty()) {
+                                if (!arrayList4.isEmpty()) {
+                                    jf7Var.k0(arrayList4, arrayList2, false);
+                                }
+                                if (!arrayList5.isEmpty()) {
+                                    jf7Var.P(TextUtils.join(",", arrayList5), arrayList3);
+                                }
+                            }
+                        } catch (Exception e3) {
+                            e = e3;
+                            ts8Var = ts8Var2;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
                     }
+                } catch (Exception e4) {
+                    e = e4;
+                    ts8Var = ts8Var2;
+                    sQLiteCursor2 = null;
+                } catch (Throwable th3) {
+                    th = th3;
+                    sQLiteCursor = null;
                 }
-            }
+                sQLiteCursor2.dispose();
+                final int i3 = this.f;
+                final ts8 ts8Var3 = ts8Var;
+                hl.c3(new Runnable() { // from class: ss8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ts8.this.d(i3, i2, j, jf7Var, arrayList);
+                    }
+                });
+                return;
         }
-        return b != 0;
     }
 
-    public final synchronized void f() {
-        PackageInfo d = d(((Context) this.d).getPackageName());
-        if (d != null) {
-            this.c = Integer.toString(d.versionCode);
-            this.e = d.versionName;
-        }
+    public /* synthetic */ kd7(jf7 jf7Var, long j, long j2, Integer num, int i, int i2) {
+        this.b = jf7Var;
+        this.c = j;
+        this.d = j2;
+        this.h = num;
+        this.e = i;
+        this.f = i2;
+    }
+
+    public /* synthetic */ kd7(ts8 ts8Var, int i, jf7 jf7Var, long j, long j2, int i2) {
+        this.h = ts8Var;
+        this.e = i;
+        this.b = jf7Var;
+        this.c = j;
+        this.d = j2;
+        this.f = i2;
     }
 }

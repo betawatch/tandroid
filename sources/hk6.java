@@ -1,28 +1,20 @@
 // default package
 
-import android.media.MediaCodec;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class hk6 extends x83 {
-    public final int a;
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public hk6(IllegalStateException illegalStateException, ik6 ik6Var) {
-        super(r0.toString(), illegalStateException);
-        int i;
-        StringBuilder sb = new StringBuilder("Decoder failed: ");
-        sb.append(ik6Var == null ? null : ik6Var.a);
-        if (illegalStateException instanceof MediaCodec.CodecException) {
-            MediaCodec.CodecException codecException = (MediaCodec.CodecException) illegalStateException;
-            codecException.getDiagnosticInfo();
-            i = codecException.getErrorCode();
-        } else {
-            i = 0;
+public final class hk6 {
+    public static gk6 a(Object obj, Object obj2) {
+        gk6 gk6Var = (gk6) obj;
+        gk6 gk6Var2 = (gk6) obj2;
+        if (!gk6Var2.isEmpty()) {
+            if (!gk6Var.a) {
+                gk6Var = gk6Var.c();
+            }
+            gk6Var.b();
+            if (!gk6Var2.isEmpty()) {
+                gk6Var.putAll(gk6Var2);
+            }
         }
-        this.a = i;
+        return gk6Var;
     }
 }

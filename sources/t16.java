@@ -1,45 +1,41 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class t16 implements ed, e39 {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class t16 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ h26 b;
+    public final /* synthetic */ u16 b;
+    public final /* synthetic */ k5 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ e e;
 
-    public /* synthetic */ t16(h26 h26Var, byte b) {
+    public /* synthetic */ t16(u16 u16Var, k5 k5Var, long j, e eVar, byte b) {
         this.a = b;
-        this.b = h26Var;
+        this.b = u16Var;
+        this.c = k5Var;
+        this.d = j;
+        this.e = eVar;
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        h26 h26Var = this.b;
-        h26Var.n1.getOnItemClickListener().d(i, view);
-        if (h26Var.c2 != 19) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        h26 h26Var = this.b;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                h26Var.F2.presentFragment(new PremiumPreviewFragment(0, null));
-                h26Var.dismiss();
-                hdVar.dismiss();
+                hl.c3(new t16(this.b, this.c, this.d, this.e, (byte) 1));
                 break;
             default:
-                hdVar.dismiss();
-                h26Var.Z0();
+                k5 k5Var = this.c;
+                int i = k5Var.a;
+                uc7 s1 = uc7.s1(i);
+                long j = this.d;
+                long j2 = -j;
+                vc2 g1 = s1.g1(j2, false, null);
+                TLRPC.Chat M0 = uc7.s1(i).M0(Long.valueOf(j2));
+                uc7.s1(i).j1(j);
+                xkc.l(M0, null, false, Boolean.valueOf(g1 == null || !g1.b.rtmp_stream), this.b.h, this.e, k5Var);
                 break;
         }
     }

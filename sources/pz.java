@@ -1,26 +1,198 @@
 // default package
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pz extends BroadcastReceiver {
-    public final t54 a;
-    public final cdb b;
-    public final /* synthetic */ xf4 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class pz implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public pz(xf4 xf4Var, cdb cdbVar, t54 t54Var) {
-        this.c = xf4Var;
-        this.b = cdbVar;
-        this.a = t54Var;
+    public /* synthetic */ pz(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
-            this.b.e(new oz(this, (byte) 0));
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i;
+        byte b = this.a;
+        int i2 = -1;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                qz qzVar = (qz) obj;
+                if (qzVar.c.a) {
+                    qzVar.a.a.v1(3, false);
+                    break;
+                }
+                break;
+            case 1:
+                ((vz) obj).l();
+                break;
+            case 2:
+                ((i20) obj).n.r1.setVisibility(8);
+                break;
+            case 3:
+                e86 e86Var = (e86) obj;
+                e86Var.getClass();
+                if (Thread.currentThread() == e86Var.a) {
+                    e86Var.e(-1, new xz((byte) 3));
+                    break;
+                }
+                break;
+            case 4:
+                ((a70) ((guc) obj).d).N();
+                break;
+            case 5:
+                dc0 dc0Var = (dc0) obj;
+                if (!dc0Var.x) {
+                    dc0Var.x = true;
+                    mu9.d(new c(dc0Var, (byte) 13));
+                    break;
+                }
+                break;
+            case 6:
+                dd0 dd0Var = (dd0) obj;
+                dd0Var.b.g3.O(true);
+                dd0Var.Y(true);
+                break;
+            case 7:
+                ie0 ie0Var = (ie0) obj;
+                new eza(ie0Var.getContext(), ie0Var.b).show();
+                break;
+            case 8:
+                try {
+                    ((Bitmap) obj).recycle();
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 9:
+                wk0 wk0Var = (wk0) obj;
+                wk0Var.o = true;
+                wk0Var.d.invalidate();
+                break;
+            case 10:
+                vk0 vk0Var = (vk0) obj;
+                if (!vk0Var.a) {
+                    wk0 wk0Var2 = vk0Var.d;
+                    Bitmap[] bitmapArr = wk0Var2.g;
+                    Canvas[] canvasArr = wk0Var2.h;
+                    wk0Var2.g = wk0Var2.f;
+                    wk0Var2.h = wk0Var2.i;
+                    wk0Var2.f = bitmapArr;
+                    wk0Var2.i = canvasArr;
+                    wk0Var2.k = false;
+                    a81 a81Var = wk0Var2.d;
+                    if (a81Var != null) {
+                        a81Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 11:
+                tl0 tl0Var = ((yl0) obj).t;
+                if (tl0Var != null) {
+                    tl0Var.d();
+                    break;
+                }
+                break;
+            case 12:
+                tl0 tl0Var2 = (tl0) obj;
+                tl0Var2.o = (Bitmap) tl0Var2.n.c;
+                tl0Var2.d();
+                break;
+            case 13:
+                dm0 dm0Var = (dm0) obj;
+                int i3 = 0;
+                while (true) {
+                    if (i3 < dm0Var.a.getChildCount()) {
+                        View childAt = dm0Var.a.getChildAt(i3);
+                        dm0Var.a.getClass();
+                        i2 = RecyclerView.S(childAt);
+                        if (i2 < 0) {
+                            i3++;
+                        } else {
+                            i = childAt.getTop();
+                        }
+                    } else {
+                        i = 0;
+                    }
+                }
+                dm0Var.a.g3.O(true);
+                wa waVar = dm0Var.a;
+                if (i2 < 0) {
+                    waVar.f3.g1(0, 0);
+                    break;
+                } else {
+                    waVar.f3.g1(i2, i);
+                    break;
+                }
+            case 14:
+                db dbVar = ((dm0) ((cm0) obj).c).f;
+                if (dbVar != null) {
+                    dbVar.d();
+                    break;
+                }
+                break;
+            case 15:
+                ((tn0) obj).a(null);
+                break;
+            case 16:
+                ((wn0) obj).a(null);
+                break;
+            case 17:
+                ((v35) obj).a(Collections.EMPTY_LIST);
+                break;
+            case 18:
+                ((ip0) obj).invalidateSelf();
+                break;
+            case 19:
+                ((jp0) obj).invalidateSelf();
+                break;
+            case 20:
+                ((lp0) obj).d();
+                break;
+            case 21:
+                yp0 yp0Var = (yp0) obj;
+                hl.r(yp0Var.b0);
+                yp0Var.N = false;
+                yp0Var.invalidate();
+                break;
+            case 22:
+                ((xp0) obj).invalidateSelf();
+                break;
+            case 23:
+                gr0 gr0Var = (gr0) obj;
+                bga bgaVar = gr0Var.a0;
+                o5b o5bVar = gr0Var.a;
+                bgaVar.a(o5bVar == null ? "" : o5bVar.E);
+                break;
+            case 24:
+                ((sr0) obj).e();
+                break;
+            case 25:
+            case 26:
+                ((tr0) obj).c();
+                break;
+            case 27:
+                ((ur0) obj).a();
+                break;
+            case 28:
+                ((vr0) obj).a();
+                break;
+            default:
+                zs0 zs0Var = (zs0) obj;
+                if (zs0Var.isAttachedToWindow() && !zs0Var.c.canScrollVertically(1)) {
+                    zs0Var.a();
+                    break;
+                }
+                break;
         }
     }
 }

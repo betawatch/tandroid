@@ -1,199 +1,193 @@
 // default package
 
-import android.icu.util.ULocale;
-import android.media.MediaCodec;
-import android.os.Build;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.TimeUnit;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class z2 {
-    public static /* synthetic */ ULocale a(String str) {
-        return new ULocale(str);
+public abstract class z2 implements List, Collection {
+    @Override // java.util.List
+    public final void add(int i, Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    public static /* synthetic */ MediaCodec.CryptoInfo.Pattern b() {
-        return new MediaCodec.CryptoInfo.Pattern(0, 0);
+    @Override // java.util.List
+    public final boolean addAll(int i, Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    public static void c(id3 id3Var) {
-        if ((Build.VERSION.SDK_INT <= 23 || id3Var != ForkJoinPool.commonPool()) && !id3Var.a.isTerminated()) {
-            id3Var.shutdown();
-            throw null;
+    @Override // java.util.List, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public boolean contains(Object obj) {
+        if (isEmpty()) {
+            return false;
         }
+        Iterator<E> it = iterator();
+        while (it.hasNext()) {
+            if (ur5.a(it.next(), obj)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static /* synthetic */ void d(fo3 fo3Var) {
-        boolean isTerminated;
-        if ((Build.VERSION.SDK_INT <= 23 || fo3Var != ForkJoinPool.commonPool()) && !(isTerminated = fo3Var.isTerminated())) {
-            fo3Var.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = fo3Var.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        fo3Var.shutdownNow();
-                        z = true;
-                    }
+    @Override // java.util.List, java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        collection.getClass();
+        Collection collection2 = collection;
+        if (collection2.isEmpty()) {
+            return true;
+        }
+        Iterator it = collection2.iterator();
+        while (it.hasNext()) {
+            if (!contains(it.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof List)) {
+            return false;
+        }
+        Collection collection = (Collection) obj;
+        if (size() == collection.size()) {
+            Iterator it = collection.iterator();
+            Iterator<E> it2 = iterator();
+            while (it2.hasNext()) {
+                if (!ur5.a(it2.next(), it.next())) {
                 }
             }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
+            return true;
         }
+        return false;
     }
 
-    public static /* synthetic */ void e(ce7 ce7Var) {
-        boolean isTerminated;
-        if ((Build.VERSION.SDK_INT <= 23 || ce7Var != ForkJoinPool.commonPool()) && !(isTerminated = ce7Var.isTerminated())) {
-            ce7Var.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = ce7Var.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        ce7Var.shutdownNow();
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
+    public abstract int h();
+
+    @Override // java.util.List, java.util.Collection
+    public final int hashCode() {
+        Iterator<E> it = iterator();
+        int i = 1;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i = (i * 31) + (next != null ? next.hashCode() : 0);
         }
+        return i;
     }
 
-    public static void f(re7 re7Var) {
-        boolean isTerminated;
-        ExecutorService executorService = re7Var.a;
-        if ((Build.VERSION.SDK_INT <= 23 || re7Var != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            re7Var.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        re7Var.shutdownNow();
-                        z = true;
-                    }
-                }
+    @Override // java.util.List
+    public int indexOf(Object obj) {
+        Iterator it = iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            if (ur5.a(it.next(), obj)) {
+                return i;
             }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
+            i++;
         }
+        return -1;
     }
 
-    public static void g(ue7 ue7Var) {
-        boolean isTerminated;
-        ExecutorService executorService = ue7Var.a;
-        if ((Build.VERSION.SDK_INT <= 23 || ue7Var != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            ue7Var.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        ue7Var.shutdownNow();
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-        }
+    @Override // java.util.List, java.util.Collection
+    public final boolean isEmpty() {
+        return h() == 0;
     }
 
-    public static /* synthetic */ void h(ExecutorService executorService) {
-        boolean isTerminated;
-        if ((Build.VERSION.SDK_INT <= 23 || executorService != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            executorService.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        executorService.shutdownNow();
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-        }
+    @Override // java.util.List, java.util.Collection, java.lang.Iterable
+    public Iterator iterator() {
+        return new w2(this);
     }
 
-    public static void i(ncf ncfVar) {
-        boolean isTerminated;
-        ExecutorService executorService = ncfVar.a;
-        if ((Build.VERSION.SDK_INT <= 23 || ncfVar != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            ncfVar.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        ncfVar.shutdownNow();
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
+    @Override // java.util.List
+    public int lastIndexOf(Object obj) {
+        ListIterator listIterator = listIterator(size());
+        while (listIterator.hasPrevious()) {
+            if (ur5.a(listIterator.previous(), obj)) {
+                return listIterator.nextIndex();
             }
         }
+        return -1;
     }
 
-    public static void j(adf adfVar) {
-        boolean isTerminated;
-        ExecutorService executorService = adfVar.a;
-        if ((Build.VERSION.SDK_INT <= 23 || adfVar != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            adfVar.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        adfVar.shutdownNow();
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-        }
+    @Override // java.util.List
+    public final ListIterator listIterator() {
+        return new x2(this, 0);
     }
 
-    public static /* synthetic */ void k(ExecutorService executorService) {
-        boolean isTerminated;
-        if ((Build.VERSION.SDK_INT <= 23 || executorService != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            executorService.shutdown();
-            boolean z = false;
-            while (!isTerminated) {
-                try {
-                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
-                } catch (InterruptedException unused) {
-                    if (!z) {
-                        executorService.shutdownNow();
-                        z = true;
-                    }
-                }
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-        }
+    @Override // java.util.List
+    public final Object remove(int i) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List
+    public final Object set(int i, Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final /* bridge */ int size() {
+        return h();
+    }
+
+    @Override // java.util.List
+    public List subList(int i, int i2) {
+        return new y2(this, i, i2);
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        return l93.c(this, objArr);
+    }
+
+    public final String toString() {
+        return sl2.f(this, ", ", "[", "]", new a2((Object) this, (byte) 0), 24);
+    }
+
+    @Override // java.util.List
+    public final ListIterator listIterator(int i) {
+        return new x2(this, i);
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.List, java.util.Collection
+    public Object[] toArray() {
+        return l93.b(this);
     }
 }

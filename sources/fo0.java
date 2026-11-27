@@ -5,34 +5,34 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class fo0 extends View {
     public final /* synthetic */ byte a = 0;
-    public final ih2 b;
+    public final di2 b;
 
     public fo0(Activity activity) {
         super(activity);
-        this.b = new ih2(gl.L(30.0f), gl.L(3.0f), bkb.w0(null, bkb.l5, false));
+        this.b = new di2(hl.L(30.0f), hl.L(3.0f), aob.w0(null, aob.m5, false));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         byte b = this.a;
-        ih2 ih2Var = this.b;
+        di2 di2Var = this.b;
         switch (b) {
             case 0:
-                ih2Var.setBounds(0, 0, getWidth(), getHeight());
-                ih2Var.b(bkb.w0(null, bkb.l5, false));
-                ih2Var.setAlpha(kk7.d4);
-                ih2Var.draw(canvas);
+                di2Var.setBounds(0, 0, getWidth(), getHeight());
+                di2Var.b(aob.w0(null, aob.m5, false));
+                di2Var.setAlpha(jn7.d4);
+                di2Var.draw(canvas);
                 invalidate();
                 super.onDraw(canvas);
                 break;
             default:
-                int L = gl.L(1.0f);
-                ih2Var.setBounds(L, L, (getWidth() - L) - L, (getHeight() - L) - L);
-                ih2Var.draw(canvas);
+                int L = hl.L(1.0f);
+                di2Var.setBounds(L, L, (getWidth() - L) - L, (getHeight() - L) - L);
+                di2Var.draw(canvas);
                 invalidate();
                 break;
         }
@@ -40,6 +40,6 @@ public final class fo0 extends View {
 
     public fo0(Context context) {
         super(context);
-        this.b = new ih2(gl.L(36.0f), gl.L(2.0f), -13522392);
+        this.b = new di2(hl.L(36.0f), hl.L(2.0f), -13522392);
     }
 }

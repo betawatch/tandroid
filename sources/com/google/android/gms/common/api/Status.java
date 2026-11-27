@@ -10,25 +10,25 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class Status extends b4 implements ua9, ReflectedParcelable {
+public final class Status extends c4 implements ie9, ReflectedParcelable {
     public final int a;
     public final String b;
     public final PendingIntent c;
-    public final ds2 d;
+    public final ws2 d;
     public static final Status e = new Status(0, null, null, null);
     public static final Status f = new Status(14, null, null, null);
     public static final Status h = new Status(8, null, null, null);
     public static final Status n = new Status(15, null, null, null);
     public static final Status r = new Status(16, null, null, null);
-    public static final Parcelable.Creator<Status> CREATOR = new rpd(19);
+    public static final Parcelable.Creator<Status> CREATOR = new hud(19);
 
-    public Status(int i, String str, PendingIntent pendingIntent, ds2 ds2Var) {
+    public Status(int i, String str, PendingIntent pendingIntent, ws2 ws2Var) {
         this.a = i;
         this.b = str;
         this.c = pendingIntent;
-        this.d = ds2Var;
+        this.d = ws2Var;
     }
 
     public final boolean b() {
@@ -39,7 +39,7 @@ public final class Status extends b4 implements ua9, ReflectedParcelable {
         PendingIntent pendingIntent = this.c;
         if (pendingIntent != null) {
             Bundle bundle = Build.VERSION.SDK_INT >= 34 ? ActivityOptions.makeBasic().setPendingIntentBackgroundActivityStartMode(1).toBundle() : null;
-            fre.h(pendingIntent);
+            xve.h(pendingIntent);
             activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i, null, 0, 0, 0, bundle);
         }
     }
@@ -49,7 +49,7 @@ public final class Status extends b4 implements ua9, ReflectedParcelable {
             return false;
         }
         Status status = (Status) obj;
-        return this.a == status.a && cqe.a(this.b, status.b) && cqe.a(this.c, status.c) && cqe.a(this.d, status.d);
+        return this.a == status.a && vue.a(this.b, status.b) && vue.a(this.c, status.c) && vue.a(this.d, status.d);
     }
 
     public final int hashCode() {
@@ -57,28 +57,28 @@ public final class Status extends b4 implements ua9, ReflectedParcelable {
     }
 
     public final String toString() {
-        wk4 wk4Var = new wk4(this);
+        um4 um4Var = new um4(this);
         String str = this.b;
         if (str == null) {
-            str = asd.a(this.a);
+            str = qwd.a(this.a);
         }
-        wk4Var.a(str, "statusCode");
-        wk4Var.a(this.c, "resolution");
-        return wk4Var.toString();
+        um4Var.a(str, "statusCode");
+        um4Var.a(this.c, "resolution");
+        return um4Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r2 = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
+        int r2 = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        jte.l(parcel, 2, this.b);
-        jte.k(parcel, 3, this.c, i);
-        jte.k(parcel, 4, this.d, i);
-        jte.s(parcel, r2);
+        bye.l(parcel, 2, this.b);
+        bye.k(parcel, 3, this.c, i);
+        bye.k(parcel, 4, this.d, i);
+        bye.s(parcel, r2);
     }
 
-    @Override // ua9
+    @Override // ie9
     public final Status a() {
         return this;
     }

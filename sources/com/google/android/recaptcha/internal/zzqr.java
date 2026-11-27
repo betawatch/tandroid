@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class zzqr implements zzuf {
     private final zzqq zza;
@@ -47,28 +47,28 @@ final class zzqr implements zzuf {
         if (this.zza.zzd() == i) {
             return;
         }
-        fvc.i("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+        p3d.m("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
     }
 
     private final void zzS(int i) {
         if ((this.zzb & 7) == i) {
             return;
         }
-        haf.a();
+        p3d.j();
     }
 
     private static final void zzT(int i) {
         if ((i & 3) == 0) {
             return;
         }
-        fvc.i("Failed to parse the message.");
+        p3d.m("Failed to parse the message.");
     }
 
     private static final void zzU(int i) {
         if ((i & 7) == 0) {
             return;
         }
-        fvc.i("Failed to parse the message.");
+        p3d.m("Failed to parse the message.");
     }
 
     public static zzqr zzq(zzqq zzqqVar) {
@@ -87,7 +87,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 1) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -112,7 +112,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 1) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -158,7 +158,7 @@ final class zzqr implements zzuf {
                 return;
             }
             if (i3 != 5) {
-                haf.a();
+                p3d.j();
                 return;
             }
             do {
@@ -183,7 +183,7 @@ final class zzqr implements zzuf {
                 return;
             }
             if (i4 != 5) {
-                haf.a();
+                p3d.j();
                 return;
             }
             do {
@@ -206,7 +206,7 @@ final class zzqr implements zzuf {
         int zzm;
         int i = this.zzb;
         if ((i & 7) != 3) {
-            haf.a();
+            p3d.j();
             return;
         }
         do {
@@ -235,7 +235,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -259,7 +259,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -295,7 +295,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -319,7 +319,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -349,7 +349,7 @@ final class zzqr implements zzuf {
         int zzm;
         int i = this.zzb;
         if ((i & 7) != 2) {
-            haf.a();
+            p3d.j();
             return;
         }
         do {
@@ -387,7 +387,7 @@ final class zzqr implements zzuf {
                 return;
             }
             if (i3 != 5) {
-                haf.a();
+                p3d.j();
                 return;
             }
             do {
@@ -412,7 +412,7 @@ final class zzqr implements zzuf {
                 return;
             }
             if (i4 != 5) {
-                haf.a();
+                p3d.j();
                 return;
             }
             do {
@@ -440,7 +440,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 1) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -465,7 +465,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 1) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -502,7 +502,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -526,7 +526,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -562,7 +562,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -586,7 +586,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -615,7 +615,7 @@ final class zzqr implements zzuf {
         int zzm;
         int i;
         if ((this.zzb & 7) != 2) {
-            haf.a();
+            p3d.j();
             return;
         }
         if (!(list instanceof zzte) || z) {
@@ -656,7 +656,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -680,7 +680,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -716,7 +716,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -740,7 +740,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -918,7 +918,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -942,7 +942,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -971,7 +971,7 @@ final class zzqr implements zzuf {
     public final void zzw(List list) {
         int zzm;
         if ((this.zzb & 7) != 2) {
-            haf.a();
+            p3d.j();
             return;
         }
         do {
@@ -997,7 +997,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 1) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -1022,7 +1022,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 1) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -1059,7 +1059,7 @@ final class zzqr implements zzuf {
             int i3 = i2 & 7;
             if (i3 != 0) {
                 if (i3 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar = this.zza;
@@ -1083,7 +1083,7 @@ final class zzqr implements zzuf {
             int i4 = i2 & 7;
             if (i4 != 0) {
                 if (i4 != 2) {
-                    haf.a();
+                    p3d.j();
                     return;
                 }
                 zzqq zzqqVar3 = this.zza;
@@ -1128,7 +1128,7 @@ final class zzqr implements zzuf {
                 return;
             }
             if (i3 != 5) {
-                haf.a();
+                p3d.j();
                 return;
             }
             do {
@@ -1153,7 +1153,7 @@ final class zzqr implements zzuf {
                 return;
             }
             if (i4 != 5) {
-                haf.a();
+                p3d.j();
                 return;
             }
             do {

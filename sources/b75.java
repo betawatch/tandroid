@@ -1,65 +1,24 @@
 // default package
 
-import android.content.Context;
+import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class b75 extends o75 {
-    public final /* synthetic */ byte h = 0;
-    public final /* synthetic */ n39 n;
+public final class b75 extends UndoView {
+    public final /* synthetic */ j95 k0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b75(r95 r95Var, Context context) {
-        super(context, true);
-        this.n = r95Var;
+    public b75(j95 j95Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.k0 = j95Var;
     }
 
-    @Override // o75, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        byte b = this.h;
-        n39 n39Var = this.n;
-        switch (b) {
-            case 0:
-                super.onAttachedToWindow();
-                h75 h75Var = ((c75) n39Var).N;
-                if (h75Var.J1.getVisibility() == 0 && h75Var.F4) {
-                    h75Var.E0(this, true);
-                    break;
-                }
-                break;
-            default:
-                super.onAttachedToWindow();
-                r95 r95Var = (r95) n39Var;
-                if (r95Var.r && getParticipant() != null) {
-                    r95Var.E(this, true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j, int i, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        if (this.k0.t2 != null) {
+            return;
         }
-    }
-
-    @Override // o75, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        byte b = this.h;
-        n39 n39Var = this.n;
-        switch (b) {
-            case 0:
-                super.onDetachedFromWindow();
-                h75 h75Var = ((c75) n39Var).N;
-                h75 h75Var2 = h75.s5;
-                h75Var.E0(this, false);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                ((r95) n39Var).E(this, false);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b75(c75 c75Var, LaunchActivity launchActivity) {
-        super(launchActivity, false);
-        this.n = c75Var;
+        super.k(j, i, obj, obj2, runnable, runnable2);
     }
 }

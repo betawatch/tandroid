@@ -21,7 +21,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -30,6 +30,7 @@ public class VideoCapturerDevice {
     public static EglBase eglBase;
     private static VideoCapturerDevice[] instance = new VideoCapturerDevice[2];
     public static Intent mediaProjectionPermissionResultData;
+    private CameraRotationObserver cameraRotationObserver;
     private int currentHeight;
     private int currentWidth;
     private Handler handler;
@@ -39,7 +40,7 @@ public class VideoCapturerDevice {
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -53,14 +54,47 @@ public class VideoCapturerDevice {
 
         @Override // android.media.projection.MediaProjection.Callback
         public void onStop() {
-            gl.c3(new a((byte) 0));
+            hl.c3(new a((byte) 0));
+        }
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    class 3 implements CameraVideoCapturer.CameraSwitchHandler {
+        final /* synthetic */ boolean val$frontFacing;
+
+        public 3(boolean z) {
+            this.val$frontFacing = z;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ void lambda$onCameraSwitchDone$0(boolean z) {
+            if (VoIPService.getSharedInstance() != null) {
+                VoIPService.getSharedInstance().setSwitchingCamera(false, z);
+            }
+        }
+
+        @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
+        public void onCameraSwitchDone(final boolean z) {
+            hl.c3(new Runnable() { // from class: org.telegram.messenger.voip.b
+                @Override // java.lang.Runnable
+                public final void run() {
+                    VideoCapturerDevice.3.lambda$onCameraSwitchDone$0(z);
+                }
+            });
+        }
+
+        @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
+        public void onCameraSwitchError(String str) {
+            if (VideoCapturerDevice.this.cameraRotationObserver != null) {
+                VideoCapturerDevice.this.cameraRotationObserver.setFrontFacing(!this.val$frontFacing);
+            }
         }
     }
 
     public VideoCapturerDevice(boolean z) {
         Logging.enableLogToDebugOutput(Logging.Severity.LS_VERBOSE);
         Logging.d("VideoCapturerDevice", "device model = " + Build.MANUFACTURER + Build.MODEL);
-        gl.c3(new k08((byte) 25, (Object) this, z));
+        hl.c3(new q38((byte) 25, (Object) this, z));
     }
 
     public static void checkScreenCapturerSize() {
@@ -74,7 +108,7 @@ public class VideoCapturerDevice {
             }
             videoCapturerDevice.currentWidth = i2;
             videoCapturerDevice.currentHeight = screenCaptureSize.y;
-            videoCapturerDevice.handler.post(new l3c(videoCapturerDevice, screenCaptureSize, (byte) 12));
+            videoCapturerDevice.handler.post(new g9c(videoCapturerDevice, screenCaptureSize, (byte) 9));
         }
     }
 
@@ -157,7 +191,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j, String str) {
-        gl.c3(new d2b((Object) this, j, (Object) str, (byte) 10));
+        hl.c3(new z5b((Object) this, j, (Object) str, (byte) 10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,7 +209,7 @@ public class VideoCapturerDevice {
             if (j2 != 0) {
                 this.nativeCapturerObserver = nativeGetJavaVideoCapturerObserver(j2);
                 this.videoCapturer.initialize(this.videoCapturerSurfaceTextureHelper, org.telegram.messenger.a.b, this.nativeCapturerObserver);
-                fa4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture SCREEN");
+                cc4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture SCREEN");
                 this.videoCapturer.startCapture(point.x, point.y, 30);
                 WebRtcAudioRecord webRtcAudioRecord = WebRtcAudioRecord.Instance;
                 if (webRtcAudioRecord != null) {
@@ -186,19 +220,25 @@ public class VideoCapturerDevice {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$3(long j) {
+    public /* synthetic */ void lambda$init$3(CameraEnumerator cameraEnumerator, String str, long j) {
         if (this.videoCapturerSurfaceTextureHelper == null) {
             return;
         }
-        this.nativeCapturerObserver = nativeGetJavaVideoCapturerObserver(this.nativePtr);
-        this.videoCapturer.initialize(this.videoCapturerSurfaceTextureHelper, org.telegram.messenger.a.b, this.nativeCapturerObserver);
-        fa4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture CAMERA");
+        CapturerObserver nativeGetJavaVideoCapturerObserver = nativeGetJavaVideoCapturerObserver(this.nativePtr);
+        this.nativeCapturerObserver = nativeGetJavaVideoCapturerObserver;
+        this.cameraRotationObserver = new CameraRotationObserver(nativeGetJavaVideoCapturerObserver, cameraEnumerator.isFrontFacing(str));
+        this.videoCapturer.initialize(this.videoCapturerSurfaceTextureHelper, org.telegram.messenger.a.b, this.cameraRotationObserver);
+        cc4.b("VideoCapturerDevice init(" + j + "): videoCapturer.startCapture CAMERA");
         this.videoCapturer.startCapture(CAPTURE_WIDTH, CAPTURE_HEIGHT, 30);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$4(String str) {
-        ((CameraVideoCapturer) this.videoCapturer).switchCamera(new 3(), str);
+    public /* synthetic */ void lambda$init$4(boolean z, String str) {
+        CameraRotationObserver cameraRotationObserver = this.cameraRotationObserver;
+        if (cameraRotationObserver != null) {
+            cameraRotationObserver.setFrontFacing(z);
+        }
+        ((CameraVideoCapturer) this.videoCapturer).switchCamera(new 3(z), str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -207,12 +247,12 @@ public class VideoCapturerDevice {
             this.nativePtr = j;
             if ("screen".equals(str)) {
                 if (this.videoCapturer == null) {
-                    this.videoCapturer = new ScreenCapturerAndroid(mediaProjectionPermissionResultData, new 1());
+                    this.videoCapturer = new ScreenCapturer(mediaProjectionPermissionResultData, new 1());
                     Point screenCaptureSize = getScreenCaptureSize();
                     this.currentWidth = screenCaptureSize.x;
                     this.currentHeight = screenCaptureSize.y;
                     this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                    this.handler.post(new d2b((Object) this, j, (Object) screenCaptureSize, (byte) 11));
+                    this.handler.post(new z5b((Object) this, j, (Object) screenCaptureSize, (byte) 11));
                     return;
                 }
                 return;
@@ -237,10 +277,10 @@ public class VideoCapturerDevice {
             if (this.videoCapturer == null) {
                 this.videoCapturer = camera2Enumerator.createCapturer(str2, new 2());
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("VideoCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new sma(this, j, (byte) 8));
+                this.handler.post(new y09((Object) this, (Object) camera2Enumerator, (Object) str2, j, (byte) 18));
             } else {
-                fa4.b("VideoCapturerDevice init(" + j + "): videoCapturer.switchCamera CAMERA");
-                this.handler.post(new l3c(this, str2, (byte) 13));
+                cc4.b("VideoCapturerDevice init(" + j + "): videoCapturer.switchCamera CAMERA");
+                this.handler.post(new yn6((Object) this, camera2Enumerator.isFrontFacing(str2), (Object) str2, (byte) 27));
             }
         }
     }
@@ -264,13 +304,13 @@ public class VideoCapturerDevice {
             webRtcAudioRecord.stopDeviceAudioRecord();
         }
         if (this.videoCapturer != null) {
-            fa4.b("VideoCapturerDevice onDestroy: videoCapturer.stopCapture");
+            cc4.b("VideoCapturerDevice onDestroy: videoCapturer.stopCapture");
             try {
                 this.videoCapturer.stopCapture();
                 this.videoCapturer.dispose();
                 this.videoCapturer = null;
             } catch (InterruptedException e) {
-                sdb.b(e);
+                grb.m(e);
                 return;
             }
         }
@@ -296,11 +336,11 @@ public class VideoCapturerDevice {
             }
             i++;
         }
-        this.handler.post(new hac(this, b));
+        this.handler.post(new hec(this, b));
         try {
             this.thread.quitSafely();
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
@@ -314,15 +354,15 @@ public class VideoCapturerDevice {
             sb.append(j);
             sb.append(", ");
             sb.append(i);
-            de9.s("): videoCapturer.startCapture", sb);
+            uh9.s("): videoCapturer.startCapture", sb);
             this.videoCapturer.startCapture(CAPTURE_WIDTH, CAPTURE_HEIGHT, 30);
             return;
         }
         try {
-            fa4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + "): videoCapturer.stopCapture");
+            cc4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + "): videoCapturer.stopCapture");
             this.videoCapturer.stopCapture();
         } catch (InterruptedException e) {
-            sdb.b(e);
+            grb.m(e);
         }
     }
 
@@ -331,23 +371,23 @@ public class VideoCapturerDevice {
         if (this.nativePtr != j) {
             return;
         }
-        this.handler.post(new gac(this, i, j));
+        this.handler.post(new gec(this, i, j));
     }
 
     private static native CapturerObserver nativeGetJavaVideoCapturerObserver(long j);
 
     private void onDestroy() {
-        ug8.q(this.nativePtr, new StringBuilder("VideoCapturerDevice onDestroy ptr="));
+        ik8.q(this.nativePtr, new StringBuilder("VideoCapturerDevice onDestroy ptr="));
         this.nativePtr = 0L;
-        gl.c3(new hac(this, (byte) 1));
+        hl.c3(new hec(this, (byte) 1));
     }
 
     private void onStateChanged(long j, int i) {
-        fa4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + ")");
-        gl.c3(new gac(this, j, i));
+        cc4.b("VideoCapturerDevice onStateChanged(" + j + ", " + i + ")");
+        hl.c3(new gec(this, j, i));
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -361,7 +401,7 @@ public class VideoCapturerDevice {
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
         public void onFirstFrameAvailable() {
-            gl.c3(new a((byte) 1));
+            hl.c3(new a((byte) 1));
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
@@ -382,33 +422,6 @@ public class VideoCapturerDevice {
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
         public void onCameraOpening(String str) {
-        }
-    }
-
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    class 3 implements CameraVideoCapturer.CameraSwitchHandler {
-        public 3() {
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onCameraSwitchDone$0(boolean z) {
-            if (VoIPService.getSharedInstance() != null) {
-                VoIPService.getSharedInstance().setSwitchingCamera(false, z);
-            }
-        }
-
-        @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
-        public void onCameraSwitchDone(final boolean z) {
-            gl.c3(new Runnable() { // from class: org.telegram.messenger.voip.b
-                @Override // java.lang.Runnable
-                public final void run() {
-                    VideoCapturerDevice.3.lambda$onCameraSwitchDone$0(z);
-                }
-            });
-        }
-
-        @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
-        public void onCameraSwitchError(String str) {
         }
     }
 

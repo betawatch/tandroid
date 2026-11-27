@@ -1,115 +1,54 @@
 // default package
 
-import java.io.EOFException;
+import android.app.Notification;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ko7 {
-    public short a;
-    public long b;
-    public short c;
-    public int d;
-    public int e;
-    public final int[] f = new int[kk7.d4];
-    public final xu7 g = new xu7(kk7.d4);
+    public final String a;
+    public final int b;
+    public final String c;
+    public final Notification d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v7, types: [int, short] */
-    /* JADX WARN: Type inference failed for: r2v9, types: [int, short] */
-    public final boolean a(ja3 ja3Var, boolean z) {
-        boolean z2;
-        boolean z3;
-        this.a = (short) 0;
-        this.b = 0L;
-        this.c = (short) 0;
-        this.d = 0;
-        this.e = 0;
-        xu7 xu7Var = this.g;
-        xu7Var.K(27);
-        try {
-            z2 = ja3Var.d(xu7Var.a, 0, 27, z);
-        } catch (EOFException e) {
-            if (!z) {
-                throw e;
-            }
-            z2 = false;
-        }
-        if (z2 && xu7Var.C() == 1332176723) {
-            if (xu7Var.A() == 0) {
-                this.a = xu7Var.A();
-                this.b = xu7Var.p();
-                xu7Var.r();
-                xu7Var.r();
-                xu7Var.r();
-                ?? A = xu7Var.A();
-                this.c = A;
-                this.d = A + 27;
-                xu7Var.K(A);
-                try {
-                    z3 = ja3Var.d(xu7Var.a, 0, this.c, z);
-                } catch (EOFException e2) {
-                    if (!z) {
-                        throw e2;
-                    }
-                    z3 = false;
-                }
-                if (z3) {
-                    for (int i = 0; i < this.c; i++) {
-                        int A2 = xu7Var.A();
-                        this.f[i] = A2;
-                        this.e += A2;
-                    }
-                    return true;
-                }
-            } else if (!z) {
-                throw av7.d("unsupported bit stream revision");
-            }
-        }
-        return false;
+    public ko7(String str, int i, String str2, Notification notification) {
+        this.a = str;
+        this.b = i;
+        this.c = str2;
+        this.d = notification;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0046, code lost:
-    
-        if (r10 == (-1)) goto L24;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x004c, code lost:
-    
-        if (r9.d >= r10) goto L33;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0055, code lost:
-    
-        return false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0053, code lost:
-    
-        if (r9.k(1) != (-1)) goto L35;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(ja3 ja3Var, long j) {
-        boolean z;
-        gre.f(ja3Var.d == ja3Var.f());
-        xu7 xu7Var = this.g;
-        xu7Var.K(4);
-        while (true) {
-            if (j != -1 && ja3Var.d + 4 >= j) {
-                break;
+    public final void a(zk5 zk5Var) {
+        String str = this.a;
+        int i = this.b;
+        String str2 = this.c;
+        xk5 xk5Var = (xk5) zk5Var;
+        xk5Var.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken(zk5.g);
+            obtain.writeString(str);
+            obtain.writeInt(i);
+            obtain.writeString(str2);
+            Notification notification = this.d;
+            if (notification != null) {
+                obtain.writeInt(1);
+                notification.writeToParcel(obtain, 0);
+            } else {
+                obtain.writeInt(0);
             }
-            try {
-                z = ja3Var.d(xu7Var.a, 0, 4, true);
-            } catch (EOFException unused) {
-                z = false;
-            }
-            if (!z) {
-                break;
-            }
-            xu7Var.N(0);
-            if (xu7Var.C() == 1332176723) {
-                ja3Var.f = 0;
-                return true;
-            }
-            ja3Var.l(1, false);
+            xk5Var.a.transact(1, obtain, null, 1);
+        } finally {
+            obtain.recycle();
         }
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("NotifyTask[packageName:");
+        sb.append(this.a);
+        sb.append(", id:");
+        sb.append(this.b);
+        sb.append(", tag:");
+        return c00.k(sb, this.c, "]");
     }
 }

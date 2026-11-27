@@ -1,18 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class dvd implements zn7 {
-    public static final dvd a = new dvd();
+public final class dvd extends s6e {
+    private static final dvd zzb;
+    private int zzd;
+    private String zze = "";
 
     static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)), 3)), 4)), 5)), 6)));
+        dvd dvdVar = new dvd();
+        zzb = dvdVar;
+        s6e.k(dvd.class, dvdVar);
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // s6e
+    public final Object d(int i) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new lfe(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001ဈ\u0000", new Object[]{"zzd", "zze"});
+        }
+        if (i2 == 3) {
+            return new dvd();
+        }
+        if (i2 == 4) {
+            return new utd(zzb);
+        }
+        if (i2 == 5) {
+            return zzb;
         }
         throw null;
     }

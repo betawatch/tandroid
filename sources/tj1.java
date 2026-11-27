@@ -1,49 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tj1 extends sj1 {
-    public final /* synthetic */ byte a;
-    public final char b;
+public final class tj1 implements rj1 {
+    public final long a;
+    public final long b;
+    public final boolean c;
+    public final xy5 d;
 
-    public /* synthetic */ tj1(char c, byte b) {
-        this.a = b;
-        this.b = c;
+    public tj1(long j, long j2, boolean z, xy5 xy5Var) {
+        yve.f(j == -9223372036854775807L || j2 == -9223372036854775807L || j <= j2);
+        this.a = j;
+        this.b = j2;
+        this.c = z;
+        this.d = xy5Var;
     }
 
-    @Override // wj1
-    public final boolean b(char c) {
-        switch (this.a) {
-            case 0:
-                if (c == this.b) {
-                }
-                break;
-            default:
-                if (c != this.b) {
-                }
-                break;
-        }
-        return false;
+    @Override // sf7
+    public final ko4 a() {
+        return null;
     }
 
-    @Override // sj1, wj1
-    public final wj1 c() {
-        switch (this.a) {
-            case 0:
-                return new tj1(this.b, (byte) 1);
-            default:
-                return new tj1(this.b, (byte) 0);
+    @Override // sf7
+    public final byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || tj1.class != obj.getClass()) {
+            return false;
+        }
+        tj1 tj1Var = (tj1) obj;
+        return this.a == tj1Var.a && this.b == tj1Var.b && this.c == tj1Var.c && Objects.equals(this.d, tj1Var.d);
+    }
+
+    public final int hashCode() {
+        int b = (((tse.b(this.b) + ((tse.b(this.a) + 527) * 31)) * 31) + (this.c ? 1 : 0)) * 31;
+        xy5 xy5Var = this.d;
+        return b + (xy5Var != null ? xy5Var.hashCode() : 0);
     }
 
     public final String toString() {
-        byte b = this.a;
-        char c = this.b;
-        switch (b) {
-            case 0:
-                return "CharMatcher.is('" + wj1.d(c) + "')";
-            default:
-                return "CharMatcher.isNot('" + wj1.d(c) + "')";
+        StringBuilder sb = new StringBuilder("Chapter: startTimeMs=");
+        long j = this.a;
+        sb.append(j == -9223372036854775807L ? "UNSET" : Long.valueOf(j));
+        long j2 = this.b;
+        String str = "";
+        sb.append(j2 == -9223372036854775807L ? "" : qu6.n(j2, ", endTimeMs="));
+        sb.append(this.c ? ", hidden" : "");
+        xy5 xy5Var = this.d;
+        if (xy5Var != null) {
+            str = ", title=" + xy5Var;
         }
+        sb.append(str);
+        return sb.toString();
+    }
+
+    @Override // sf7
+    public final void b(lt6 lt6Var) {
     }
 }

@@ -3,9 +3,9 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzfb extends ccb implements eq4 {
+final class zzfb extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ zzxn zzc;
@@ -13,23 +13,23 @@ final class zzfb extends ccb implements eq4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfb(zzfp zzfpVar, zzxn zzxnVar, long j, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzfb(zzfp zzfpVar, zzxn zzxnVar, long j, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzfpVar;
         this.zzc = zzxnVar;
         this.zzd = j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzfb zzfbVar = new zzfb(this.zzb, this.zzc, this.zzd, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzfb zzfbVar = new zzfb(this.zzb, this.zzc, this.zzd, zw2Var);
         zzfbVar.zze = obj;
         return zzfbVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfb) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzfb) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x004f, code lost:
@@ -44,18 +44,18 @@ final class zzfb extends ccb implements eq4 {
     
         if (r9 != r4) goto L15;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        n4a children;
+        f8a children;
         zzhk zzhkVar;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
-                qse.b(obj);
+                ixe.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzfp zzfpVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -68,31 +68,31 @@ final class zzfb extends ccb implements eq4 {
             } else {
                 if (i != 1) {
                     if (i == 2) {
-                        qse.b(obj);
-                        return g5c.a;
+                        ixe.b(obj);
+                        return f9c.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zze;
-                    qse.b(obj);
+                    ixe.b(obj);
                     throw zzcgVar;
                 }
                 zzhkVar = (zzhk) this.zze;
-                qse.b(obj);
+                ixe.b(obj);
             }
             this.zze = null;
             this.zza = 2;
         } catch (zzcg e) {
             zzfp zzfpVar2 = this.zzb;
-            bt5 bt5Var = (bt5) zzfp.zzf(zzfpVar2).zzd().c().get(pd5.c);
-            if (bt5Var != null && (children = bt5Var.getChildren()) != null) {
+            ev5 ev5Var = (ev5) zzfp.zzf(zzfpVar2).zzd().c().get(qf5.c);
+            if (ev5Var != null && (children = ev5Var.getChildren()) != null) {
                 Iterator it = children.iterator();
                 while (it.hasNext()) {
-                    ((bt5) it.next()).cancel(null);
+                    ((ev5) it.next()).cancel(null);
                 }
             }
-            List a = s4a.a(nle.b(zzfp.zzf(zzfpVar2).zzd().c()).getChildren());
+            List a = k8a.a(gqe.b(zzfp.zzf(zzfpVar2).zzd().c()).getChildren());
             this.zze = e;
             this.zza = 3;
-            if (xmd.b(a, this) != bx2Var) {
+            if (ord.b(a, this) != vx2Var) {
                 throw e;
             }
         }

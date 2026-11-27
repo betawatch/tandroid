@@ -1,69 +1,40 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.view.MotionEvent;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dr1 extends FrameLayout {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
+public final class dr1 extends ayb {
+    public final /* synthetic */ zu1 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ dr1(mu1 mu1Var, Context context, byte b) {
-        super(context);
-        this.a = b;
-        this.b = mu1Var;
+    public dr1(zu1 zu1Var, Context context, int i, vnb vnbVar) {
+        super(i, vnbVar, context);
+        this.e = zu1Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
-        switch (this.a) {
-            case 1:
-                mu1 mu1Var = this.b;
-                if (view == mu1Var.j3) {
-                    ImageView imageView = mu1Var.h3;
-                    int i5 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
-                    ImageView imageView2 = mu1Var.i3;
-                    if (imageView2 != null && imageView2.getVisibility() != 8) {
-                        i5 += 48;
-                    }
-                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = gl.L(i5);
-                }
-                super.measureChildWithMargins(view, i, i2, i3, i4);
-                break;
-            default:
-                super.measureChildWithMargins(view, i, i2, i3, i4);
-                break;
+    @Override // ayb, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        a aVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
+        zu1 zu1Var = this.e;
+        aVar = ((e) zu1Var).actionBar;
+        if (aVar.z() || zu1Var.c8()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 
     @Override // android.view.View
     public final void setTranslationY(float f) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationY(f);
-                this.b.m1.invalidate();
-                break;
-            default:
-                super.setTranslationY(f);
-                break;
+        if (getTranslationY() != f) {
+            invalidate();
         }
-    }
-
-    @Override // android.view.View
-    public final void setVisibility(int i) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i);
-                this.b.kd.s(2, i == 0, getMeasuredWidth() > 0);
-                break;
-            default:
-                super.setVisibility(i);
-                break;
-        }
+        super.setTranslationY(f);
     }
 }

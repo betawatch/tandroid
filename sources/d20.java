@@ -1,175 +1,306 @@
 // default package
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.text.TextUtils;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class d20 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public abstract class d20 extends FrameLayout {
+    public final TextView[] a;
+    public final float[] b;
+    public final int c;
+    public final Matrix d;
+    public final Paint e;
+    public final Paint f;
+    public boolean h;
+    public AnimatorSet n;
+    public LinearGradient r;
+    public int s;
+    public final RectF w;
+    public int x;
+    public boolean y;
 
-    public /* synthetic */ d20(byte b, Object obj, boolean z) {
-        this.a = b;
-        this.c = obj;
-        this.b = z;
+    public d20(Context context) {
+        super(context);
+        this.a = new TextView[2];
+        this.b = new float[]{0.0f, 0.75f};
+        this.c = hl.L(24.0f);
+        this.s = -1;
+        this.w = new RectF();
+        for (int i = 0; i < 2; i++) {
+            this.a[i] = a();
+            if (i == 1) {
+                this.a[i].setAlpha(0.0f);
+                this.a[i].setVisibility(8);
+            }
+            addView(this.a[i], tre.c(-1.0f, -2));
+        }
+        this.d = new Matrix();
+        Paint paint = new Paint(1);
+        this.e = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        Paint paint2 = new Paint(1);
+        this.f = paint2;
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ViewGroup viewGroup;
-        ou9 ou9Var;
-        byte b = this.a;
-        boolean z = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                be0 be0Var = (be0) obj;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                be0Var.setScaleX(floatValue);
-                be0Var.setScaleY(floatValue);
-                if (!z) {
-                    be0Var.setAlpha(valueAnimator.getAnimatedFraction());
-                    break;
-                }
-                break;
-            case 1:
-                mb0 mb0Var = (mb0) obj;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mb0Var.m0(false, floatValue2);
-                if (z) {
-                    db0 db0Var = mb0Var.a;
-                    db0Var.x = floatValue2;
-                    db0Var.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                gb2 gb2Var = (gb2) obj;
-                gb2Var.Eb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gb2Var.invalidate();
-                if (z && gb2Var.getParent() != null) {
-                    ((View) gb2Var.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                m43 m43Var = (m43) obj;
-                m43Var.x = null;
-                m43Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m43Var.k();
-                m43Var.l();
-                m43Var.n.setCustomEmojiEnterProgress(Utilities.i(m43Var.j, 1.0f, 0.0f));
-                m43Var.a.invalidate();
-                m43Var.m.invalidateOutline();
-                if (m43Var.w) {
-                    m43Var.j(z, m43Var.j);
-                    break;
-                }
-                break;
-            case 4:
-                pw5 pw5Var = (pw5) obj;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pw5Var.e = floatValue3;
-                if (!z) {
-                    pw5Var.c.setAlpha(1.0f - floatValue3);
-                }
-                pw5Var.b.invalidate();
-                break;
-            case 5:
-                j17 j17Var = (j17) obj;
-                j17Var.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j17Var.invalidate();
-                if (z) {
-                    j17Var.requestLayout();
-                    break;
-                }
-                break;
-            case 6:
-                j47 j47Var = (j47) obj;
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j47Var.E = floatValue4;
-                j47Var.H.setAlpha(floatValue4);
-                j47Var.K.setAlpha(j47Var.E);
-                if (!z && (viewGroup = j47Var.Z) != null) {
-                    viewGroup.setAlpha(j47Var.E);
-                }
-                j47Var.F.invalidate();
-                j47Var.G.invalidate();
-                break;
-            case 7:
-                ut7 ut7Var = (ut7) obj;
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ut7Var.e = floatValue5;
-                if (!z) {
-                    ut7Var.c.setAlpha(1.0f - floatValue5);
-                }
-                ut7Var.b.invalidate();
-                break;
-            case 8:
-                qu9 qu9Var = (qu9) obj;
-                qu9Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qu9Var.b.invalidate();
-                qu9Var.c.invalidate();
-                if (qu9Var.T) {
-                    qu9Var.O.invalidate();
-                }
-                qu9Var.e();
-                TextView textView = qu9Var.E;
-                if (textView != null) {
-                    textView.setAlpha(qu9Var.s);
-                }
-                if (!qu9Var.T && (ou9Var = qu9Var.O) != null && ou9Var.getSeekBarWaveform() != null) {
-                    dv9 seekBarWaveform = qu9Var.O.getSeekBarWaveform();
-                    seekBarWaveform.L = (z ? s33.g : s33.i).getInterpolation(Utilities.i(qu9Var.s * 1.25f, 1.0f, 0.0f));
-                    gb2 gb2Var2 = seekBarWaveform.n;
-                    if (gb2Var2 != null) {
-                        gb2Var2.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 9:
-                x3b x3bVar = (x3b) obj;
-                x3bVar.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x3bVar.invalidate();
-                if (z) {
-                    x3bVar.requestLayout();
-                    break;
-                }
-                break;
-            case 10:
-                gib gibVar = (gib) obj;
-                gibVar.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qib qibVar = gibVar.C;
-                if (qibVar != null) {
-                    qibVar.invalidate();
-                }
-                mib mibVar = gibVar.W;
-                if (mibVar != null && ((gb2) mibVar).getCurrentMessagesGroup() == null && z) {
-                    ((gb2) gibVar.W).setSelectedBackgroundProgress(1.0f - gibVar.U);
-                    break;
-                }
-                break;
-            default:
-                dic dicVar = (dic) obj;
-                TextView[] textViewArr = dicVar.h;
-                dicVar.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dicVar.invalidate();
-                if (z) {
-                    textViewArr[0].setAlpha(1.0f - dicVar.s);
-                    textViewArr[0].setScaleX(1.0f - dicVar.s);
-                    textViewArr[0].setScaleY(1.0f - dicVar.s);
-                    textViewArr[1].setAlpha(dicVar.s);
-                    textViewArr[1].setScaleX(dicVar.s);
-                    textViewArr[1].setScaleY(dicVar.s);
-                    break;
-                }
-                break;
+    public abstract TextView a();
+
+    public final void b(CharSequence charSequence, boolean z) {
+        final byte b;
+        boolean z2 = this.h;
+        TextView[] textViewArr = this.a;
+        CharSequence text = textViewArr[z2 ? 1 : 0].getText();
+        if (TextUtils.isEmpty(text) || !z) {
+            textViewArr[this.h ? 1 : 0].setText(charSequence);
+            return;
         }
+        if (TextUtils.equals(charSequence, text)) {
+            return;
+        }
+        final byte b2 = 0;
+        this.s = 0;
+        int min = Math.min(charSequence.length(), text.length());
+        int i = 0;
+        while (true) {
+            b = 1;
+            if (i >= min || charSequence.charAt(i) != text.charAt(i)) {
+                break;
+            }
+            this.s++;
+            i++;
+        }
+        byte b3 = 3;
+        if (this.s <= 3) {
+            this.s = -1;
+        }
+        boolean z3 = this.h;
+        boolean z4 = !z3;
+        this.h = z4;
+        AnimatorSet animatorSet = this.n;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.n = animatorSet2;
+        animatorSet2.addListener(new z7(this, z3 ? 1 : 0, b3));
+        textViewArr[z4 ? 1 : 0].setText(charSequence);
+        textViewArr[z4 ? 1 : 0].bringToFront();
+        textViewArr[z4 ? 1 : 0].setVisibility(0);
+        float[] fArr = this.b;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr[z3 ? 1 : 0], 0.75f);
+        ofFloat.setDuration(200L);
+        final int i2 = z3 ? 1 : 0;
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: c20
+            public final /* synthetic */ d20 b;
+
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                this.b = this;
+            }
+
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                byte b4 = b2;
+                boolean z5 = i2;
+                d20 d20Var = this.b;
+                switch (b4) {
+                    case 0:
+                        d20Var.b[z5 ? 1 : 0] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        d20Var.invalidate();
+                        break;
+                    default:
+                        d20Var.b[z5 ? 1 : 0] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        d20Var.invalidate();
+                        break;
+                }
+            }
+        });
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(fArr[z4 ? 1 : 0], 0.0f);
+        ofFloat2.setStartDelay(100L);
+        ofFloat2.setDuration(200L);
+        final int i3 = z4 ? 1 : 0;
+        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: c20
+            public final /* synthetic */ d20 b;
+
+            /* JADX WARN: Multi-variable type inference failed */
+            {
+                this.b = this;
+            }
+
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                byte b4 = b;
+                boolean z5 = i3;
+                d20 d20Var = this.b;
+                switch (b4) {
+                    case 0:
+                        d20Var.b[z5 ? 1 : 0] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        d20Var.invalidate();
+                        break;
+                    default:
+                        d20Var.b[z5 ? 1 : 0] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        d20Var.invalidate();
+                        break;
+                }
+            }
+        });
+        Property property = View.ALPHA;
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(textViewArr[z3 ? 1 : 0], (Property<TextView, Float>) property, 0.0f);
+        ofFloat3.setStartDelay(75L);
+        ofFloat3.setDuration(150L);
+        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(textViewArr[z4 ? 1 : 0], (Property<TextView, Float>) property, 1.0f);
+        ofFloat4.setStartDelay(75L);
+        ofFloat4.setDuration(150L);
+        this.n.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
+        this.n.start();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        boolean z;
+        Canvas canvas2;
+        Paint paint;
+        TextView[] textViewArr = this.a;
+        boolean z2 = true;
+        char c = view == textViewArr[0] ? (char) 0 : (char) 1;
+        if (this.y) {
+            this.s = -1;
+        }
+        if (this.s > 0) {
+            int length = textViewArr.length;
+            int i = 0;
+            while (true) {
+                if (i >= length) {
+                    break;
+                }
+                TextView textView = textViewArr[i];
+                if ((textView instanceof hl6) && ((hl6) textView).d) {
+                    this.s = -1;
+                    break;
+                }
+                i++;
+            }
+        }
+        int i2 = this.s;
+        RectF rectF = this.w;
+        if (i2 <= 0 || textViewArr[this.h ? 1 : 0].getAlpha() == 1.0f || textViewArr[this.h ? 1 : 0].getLayout() == null) {
+            z = false;
+        } else {
+            float primaryHorizontal = textViewArr[this.h ? 1 : 0].getLayout().getPrimaryHorizontal(0);
+            float primaryHorizontal2 = textViewArr[this.h ? 1 : 0].getLayout().getPrimaryHorizontal(this.s);
+            if (primaryHorizontal == primaryHorizontal2) {
+                z2 = false;
+            } else if (primaryHorizontal2 > primaryHorizontal) {
+                rectF.set(primaryHorizontal, 0.0f, primaryHorizontal2, getMeasuredHeight());
+            } else {
+                rectF.set(primaryHorizontal2, 0.0f, primaryHorizontal, getMeasuredHeight());
+            }
+            if (z2 && c == this.h) {
+                canvas.save();
+                canvas.clipRect(rectF);
+                textViewArr[0].draw(canvas);
+                canvas.restore();
+            }
+            z = z2;
+        }
+        float[] fArr = this.b;
+        if (fArr[c] <= 0.0f && !z) {
+            return super.drawChild(canvas, view, j);
+        }
+        float min = Math.min(view.getWidth(), getWidth());
+        float min2 = Math.min(view.getHeight(), getHeight());
+        int saveLayer = canvas.saveLayer(0.0f, 0.0f, min, min2, null, 31);
+        boolean drawChild = super.drawChild(canvas, view, j);
+        float f = (1.0f - fArr[c]) * min;
+        float f2 = this.c + f;
+        Matrix matrix = this.d;
+        matrix.setTranslate(f, 0.0f);
+        this.r.setLocalMatrix(matrix);
+        canvas.drawRect(f, 0.0f, f2, min2, this.e);
+        Paint paint2 = this.f;
+        if (min > f2) {
+            paint = paint2;
+            canvas.drawRect(f2, 0.0f, min, min2, paint);
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            paint = paint2;
+        }
+        if (z) {
+            canvas2.drawRect(rectF, paint);
+        }
+        canvas2.restoreToCount(saveLayer);
+        return drawChild;
+    }
+
+    public int getCustomPaddingRight() {
+        return this.x;
+    }
+
+    public TextView getNextTextView() {
+        return this.a[!this.h ? 1 : 0];
+    }
+
+    public TextView getTextView() {
+        return this.a[this.h ? 1 : 0];
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        if (!this.y) {
+            return;
+        }
+        int i5 = 0;
+        while (true) {
+            TextView[] textViewArr = this.a;
+            if (i5 >= textViewArr.length) {
+                return;
+            }
+            TextView textView = textViewArr[i5];
+            if (textView != null && textView.getMeasuredWidth() < getMeasuredWidth()) {
+                int measuredWidth = (getMeasuredWidth() - textView.getMeasuredWidth()) / 2;
+                textView.layout(measuredWidth, 0, textView.getMeasuredWidth() + measuredWidth, textView.getMeasuredHeight());
+            }
+            i5++;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        LinearGradient linearGradient = new LinearGradient(this.c, 0.0f, 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP);
+        this.r = linearGradient;
+        this.e.setShader(linearGradient);
+    }
+
+    public void setCustomPaddingRight(int i) {
+        this.x = i;
+        for (TextView textView : this.a) {
+            if (textView instanceof hl6) {
+                ((hl6) textView).setCustomPaddingRight(i);
+            }
+        }
+        invalidate();
+    }
+
+    public void setText(CharSequence charSequence) {
+        b(charSequence, true);
     }
 }

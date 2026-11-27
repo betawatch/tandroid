@@ -10,12 +10,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class LocationResult extends b4 implements ReflectedParcelable {
+public final class LocationResult extends c4 implements ReflectedParcelable {
     public final List a;
     public static final List b = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new xff((byte) 12);
+    public static final Parcelable.Creator<LocationResult> CREATOR = new nkf((byte) 12);
 
     public LocationResult(List list) {
         this.a = list;
@@ -37,7 +37,7 @@ public final class LocationResult extends b4 implements ReflectedParcelable {
         Iterator it = list.iterator();
         for (Location location : list2) {
             Location location2 = (Location) it.next();
-            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !cqe.a(location.getProvider(), location2.getProvider())) {
+            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !vue.a(location.getProvider(), location2.getProvider())) {
                 return false;
             }
         }
@@ -54,8 +54,8 @@ public final class LocationResult extends b4 implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.p(parcel, 1, this.a);
-        jte.s(parcel, r);
+        int r = bye.r(parcel, 20293);
+        bye.p(parcel, 1, this.a);
+        bye.s(parcel, r);
     }
 }

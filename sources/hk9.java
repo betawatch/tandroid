@@ -1,118 +1,201 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.util.Size;
-import java.util.concurrent.CountDownLatch;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hk9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jk9 b;
-    public final /* synthetic */ Size c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ RuntimeException[] f;
-    public final /* synthetic */ CountDownLatch h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hk9 extends dk9 {
+    public final gl9 X;
+    public final gl9 Y;
+    public final boolean Z;
+    public final kmb[] a0;
 
-    public /* synthetic */ hk9(jk9 jk9Var, Size size, int i, boolean z, RuntimeException[] runtimeExceptionArr, CountDownLatch countDownLatch, byte b) {
-        this.a = b;
-        this.b = jk9Var;
-        this.c = size;
-        this.d = i;
-        this.e = z;
-        this.f = runtimeExceptionArr;
-        this.h = countDownLatch;
+    public hk9(hl9 hl9Var, Rect rect, int i, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+        super(hl9Var, rect, i);
+        gl9 gl9Var = !TextUtils.isEmpty(spannableStringBuilder) ? new gl9(hl9Var, spannableStringBuilder, this.c) : null;
+        this.X = gl9Var;
+        gl9 gl9Var2 = TextUtils.isEmpty(spannableStringBuilder2) ? null : new gl9(hl9Var, spannableStringBuilder2, this.c);
+        this.Y = gl9Var2;
+        this.Z = hl9Var.H();
+        ArrayList arrayList = new ArrayList(2);
+        if (gl9Var != null) {
+            arrayList.add(gl9Var);
+        }
+        if (gl9Var2 != null) {
+            arrayList.add(gl9Var2);
+        }
+        this.a0 = (kmb[]) arrayList.toArray(new kmb[0]);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        CountDownLatch countDownLatch = this.h;
-        RuntimeException[] runtimeExceptionArr = this.f;
-        boolean z = this.e;
-        int i = this.d;
-        Size size = this.c;
-        jk9 jk9Var = this.b;
-        switch (b) {
-            case 0:
-                jk9Var.getClass();
-                try {
-                    try {
-                        jk9Var.c = size;
-                        jk9Var.l = i;
-                        jk9Var.o = z;
-                        SurfaceTexture surfaceTexture = jk9Var.x;
-                        if (surfaceTexture != null) {
-                            surfaceTexture.setDefaultBufferSize(size.getWidth(), size.getHeight());
-                        }
-                        int i2 = jk9Var.E;
-                        if (i2 != 0) {
-                            jk9Var.k(i2, i);
-                        }
-                        ek9 ek9Var = jk9Var.i;
-                        StringBuilder sb = new StringBuilder("GL secondary input configured: input=");
-                        sb.append(size);
-                        sb.append(", crop=");
-                        sb.append(i);
-                        sb.append(", filter=");
-                        sb.append(i == jk9Var.g ? "NEAREST" : "LINEAR");
-                        sb.append(", timestampRealtime=");
-                        sb.append(z);
-                        ek9Var.b(sb.toString());
-                    } finally {
-                    }
-                } catch (RuntimeException e) {
-                    runtimeExceptionArr[0] = e;
-                }
-                return;
-            default:
-                try {
-                    try {
-                        jk9Var.a = size;
-                        jk9Var.b = size;
-                        jk9Var.c = size;
-                        jk9Var.j = i;
-                        jk9Var.k = i;
-                        jk9Var.l = i;
-                        jk9Var.m = z;
-                        jk9Var.n = z;
-                        jk9Var.o = z;
-                        SurfaceTexture surfaceTexture2 = jk9Var.v;
-                        if (surfaceTexture2 != null) {
-                            surfaceTexture2.setDefaultBufferSize(size.getWidth(), size.getHeight());
-                        }
-                        SurfaceTexture surfaceTexture3 = jk9Var.x;
-                        if (surfaceTexture3 != null) {
-                            surfaceTexture3.setDefaultBufferSize(size.getWidth(), size.getHeight());
-                        }
-                        jk9Var.k(jk9Var.D, jk9Var.k);
-                        int i3 = jk9Var.E;
-                        if (i3 != 0) {
-                            jk9Var.k(i3, jk9Var.l);
-                        }
-                        tk9 tk9Var = jk9Var.N;
-                        if (tk9Var != null) {
-                            tk9Var.c = size;
-                            tk9Var.d = i;
-                            tk9Var.v();
-                            tk9Var.B = false;
-                            tk9Var.A = 0L;
-                        }
-                        ek9 ek9Var2 = jk9Var.i;
-                        StringBuilder sb2 = new StringBuilder("GL input updated: input=");
-                        sb2.append(size);
-                        sb2.append(", crop=");
-                        sb2.append(i);
-                        sb2.append(", filter=");
-                        sb2.append(jk9Var.j == jk9Var.g ? "NEAREST" : "LINEAR");
-                        ek9Var2.b(sb2.toString());
-                    } catch (RuntimeException e2) {
-                        runtimeExceptionArr[0] = e2;
-                    }
-                    return;
-                } finally {
-                }
+    @Override // dk9
+    public final int H() {
+        Rect rect = this.b;
+        int i = rect.top;
+        gl9 gl9Var = this.X;
+        int i0 = i0() + (gl9Var != null ? gl9Var.b.getHeight() : 0) + i;
+        gl9 gl9Var2 = this.Y;
+        return i0 + (gl9Var2 != null ? gl9Var2.b.getHeight() : 0) + rect.bottom;
+    }
+
+    @Override // dk9
+    public final int I() {
+        int i;
+        int i2;
+        Rect rect = this.b;
+        gl9 gl9Var = this.Y;
+        if (gl9Var != null) {
+            i = gl9Var.q() + rect.left;
+            i2 = rect.right;
+        } else {
+            i = rect.left;
+            gl9 gl9Var2 = this.X;
+            if (gl9Var2 != null) {
+                return gl9Var2.q() + i + rect.right;
+            }
+            i2 = rect.right;
         }
+        return i + i2;
+    }
+
+    @Override // dk9
+    public final int J() {
+        gl9 gl9Var = this.X;
+        int max = gl9Var != null ? Math.max(0, gl9Var.r()) : 0;
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            max = Math.max(max, gl9Var2.r());
+        }
+        Rect rect = this.b;
+        return rect.left + max + rect.right;
+    }
+
+    @Override // dk9
+    public final kmb[] K() {
+        return this.a0;
+    }
+
+    @Override // dk9
+    public final void S() {
+        gl9 gl9Var = this.X;
+        if (gl9Var != null) {
+            gl9Var.i(this.W);
+        }
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            gl9Var2.i(this.W);
+        }
+    }
+
+    @Override // dk9
+    public final void U() {
+        gl9 gl9Var = this.X;
+        if (gl9Var != null) {
+            gl9Var.f(this.W);
+        }
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            gl9Var2.f(this.W);
+        }
+    }
+
+    @Override // dk9
+    public final void V(Canvas canvas) {
+        gl9 gl9Var = this.X;
+        if (gl9Var != null) {
+            gl9Var.d(canvas, gl9Var.T);
+        }
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            canvas.save();
+            canvas.translate(h0(), i0() + (gl9Var != null ? gl9Var.b.getHeight() : 0));
+            gl9Var2.d(canvas, gl9Var2.T);
+            canvas.restore();
+        }
+    }
+
+    @Override // dk9
+    public final boolean X(MotionEvent motionEvent) {
+        gl9 gl9Var = this.X;
+        int height = gl9Var != null ? gl9Var.b.getHeight() : 0;
+        int i0 = i0();
+        float y = motionEvent.getY();
+        int i = this.b.top;
+        float f = y - i;
+        if (gl9Var != null && f >= 0.0f && f < height) {
+            motionEvent.offsetLocation(0.0f, -i);
+            boolean t = gl9Var.t(motionEvent);
+            motionEvent.offsetLocation(0.0f, r5.top);
+            return t;
+        }
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 == null || f < height + i0) {
+            return false;
+        }
+        int h0 = h0();
+        motionEvent.offsetLocation(-h0, -r6);
+        boolean t2 = gl9Var2.t(motionEvent);
+        motionEvent.offsetLocation(h0, i + height + i0);
+        return t2;
+    }
+
+    @Override // dk9
+    public final void Y(int i, int i2, int i3) {
+        this.T = i;
+        this.U = i2;
+        this.V = i3;
+        gl9 gl9Var = this.X;
+        if (gl9Var != null) {
+            gl9Var.c = i - gl9Var.f;
+            gl9Var.d = i2;
+            gl9Var.e = i3;
+        }
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            gl9Var2.c = (h0() + i) - gl9Var2.f;
+            gl9Var2.d = i0() + (gl9Var != null ? gl9Var.b.getHeight() : 0) + i2;
+            gl9Var2.e = i3;
+        }
+    }
+
+    public final int h0() {
+        gl9 gl9Var = this.Y;
+        if (gl9Var == null || !this.Z) {
+            return 0;
+        }
+        int i = this.a.C;
+        Rect rect = this.b;
+        return Math.max(0, ((i - rect.left) - rect.right) - gl9Var.r());
+    }
+
+    public final int i0() {
+        if (this.X == null || this.Y == null) {
+            return 0;
+        }
+        return hl.L(4.0f);
+    }
+
+    @Override // dk9
+    public final void j(SpannableStringBuilder spannableStringBuilder) {
+        StaticLayout staticLayout;
+        dk9.k(spannableStringBuilder, this.X, null);
+        gl9 gl9Var = this.Y;
+        if (gl9Var == null || (staticLayout = gl9Var.b) == null || TextUtils.isEmpty(staticLayout.getText())) {
+            return;
+        }
+        if (spannableStringBuilder.length() > 0 && spannableStringBuilder.charAt(spannableStringBuilder.length() - 1) != '\n') {
+            spannableStringBuilder.append('\n');
+        }
+        spannableStringBuilder.append(staticLayout.getText());
+    }
+
+    @Override // dk9
+    public final boolean u() {
+        return false;
     }
 }

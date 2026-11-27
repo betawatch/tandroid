@@ -1,34 +1,103 @@
 // default package
 
-import android.text.TextUtils;
-import android.view.View;
+import android.animation.AnimatorSet;
+import android.os.SystemClock;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dx1 implements c39 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final class dx1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public dx1(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ dx1(ChatActivityEnterView chatActivityEnterView, byte b) {
+        this.a = b;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // c39
-    public final void d(int i, View view) {
-        if (view instanceof cp0) {
-            String command = ((cp0) view).getCommand();
-            if (TextUtils.isEmpty(command)) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j;
+        long j2;
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (b) {
+            case 0:
+                dx1 dx1Var = chatActivityEnterView.g4;
+                if ((chatActivityEnterView.K0() && chatActivityEnterView.A()) || e.hasSheets(chatActivityEnterView.E3) || chatActivityEnterView.N2 || chatActivityEnterView.F0 == null || !chatActivityEnterView.Z3 || chatActivityEnterView.o3 || hl.D || hl.E) {
+                    return;
+                }
+                xy1 xy1Var = chatActivityEnterView.O3;
+                if (xy1Var != null) {
+                    xy1Var.X0();
+                }
+                chatActivityEnterView.F0.requestFocus();
+                hl.E3(chatActivityEnterView.F0);
+                hl.r(dx1Var);
+                hl.d3(dx1Var, 100L);
                 return;
-            }
-            ChatActivityEnterView chatActivityEnterView = this.a;
-            if (chatActivityEnterView.c()) {
-                ij.J(chatActivityEnterView.E3, chatActivityEnterView.G3, new q31(this, command, (byte) 20), chatActivityEnterView.L4);
+            case 1:
+                sn3 sn3Var = chatActivityEnterView.z6;
+                if (sn3Var == null || !sn3Var.d) {
+                    j = 0;
+                } else {
+                    long j3 = sn3Var.e;
+                    if (j3 == 0) {
+                        j2 = 0;
+                    } else {
+                        j2 = j3 + sn3Var.a + (sn3Var.C ? 180L : 0L);
+                    }
+                    j = j2 - SystemClock.uptimeMillis();
+                }
+                if (j > 0) {
+                    hl.d3(this, j + 16);
+                    return;
+                }
+                chatActivityEnterView.D6 = null;
+                chatActivityEnterView.B6 = false;
+                chatActivityEnterView.C6 = true;
+                chatActivityEnterView.E6 = SystemClock.uptimeMillis();
+                sn3 sn3Var2 = chatActivityEnterView.z6;
+                if (sn3Var2 != null) {
+                    sn3Var2.c();
+                }
+                try {
+                    chatActivityEnterView.E1();
+                    return;
+                } finally {
+                    chatActivityEnterView.C6 = false;
+                    hl.d3(new fw1(chatActivityEnterView, (byte) 26), 450L);
+                }
+            case 2:
+                bx1 bx1Var = chatActivityEnterView.K0;
+                if (chatActivityEnterView.N2 || chatActivityEnterView.u3 || chatActivityEnterView.F0 == null || bx1Var == null) {
+                    return;
+                }
+                bn3 bn3Var = chatActivityEnterView.j1;
+                if (bn3Var == null || !bn3Var.s()) {
+                    if (chatActivityEnterView.F0.length() == 0) {
+                        return;
+                    }
+                    if (bx1Var.getVisibility() == 0 && bx1Var.getAlpha() >= 0.99f && chatActivityEnterView.p2.getVisibility() == 0 && chatActivityEnterView.g3 == null) {
+                        chatActivityEnterView.k1(bx1Var);
+                        return;
+                    }
+                }
+                int i = chatActivityEnterView.Y6 + 1;
+                chatActivityEnterView.Y6 = i;
+                if (i < 40) {
+                    hl.d3(this, 50L);
+                    return;
+                }
                 return;
-            }
-            mu1 mu1Var = chatActivityEnterView.F3;
-            if (mu1Var == null || !mu1Var.k5(view)) {
-                ij.X(chatActivityEnterView.R, chatActivityEnterView.G3, 1, new x0(this, command, (byte) 29));
-            }
+            default:
+                AnimatorSet animatorSet = chatActivityEnterView.W0;
+                if (animatorSet == null || animatorSet.isRunning()) {
+                    return;
+                }
+                chatActivityEnterView.W0.start();
+                return;
         }
     }
 }

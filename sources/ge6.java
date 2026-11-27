@@ -1,28 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ge6 implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qe6 b;
+import java.util.logging.Logger;
 
-    public /* synthetic */ ge6(qe6 qe6Var, byte b) {
-        this.a = b;
-        this.b = qe6Var;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        qe6 qe6Var = this.b;
-        switch (b) {
-            case 0:
-                qe6Var.d(true);
-                qe6Var.v0.I1(0, true, null, true);
-                break;
-            default:
-                qe6Var.v0.I1(0, true, null, true);
-                break;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class ge6 {
+    public static ge6 a(Class cls) {
+        if (System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik")) {
+            String simpleName = cls.getSimpleName();
+            fk fkVar = new fk((byte) 0);
+            fkVar.b = simpleName;
+            return fkVar;
         }
+        String simpleName2 = cls.getSimpleName();
+        fk fkVar2 = new fk((byte) 1);
+        fkVar2.b = Logger.getLogger(simpleName2);
+        return fkVar2;
     }
+
+    public abstract void b(String str);
 }

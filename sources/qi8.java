@@ -1,196 +1,329 @@
 // default package
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.util.Property;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.Utilities;
+import java.util.Arrays;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.PollVotesAlert$UserCell;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class qi8 extends o39 implements gk7, qr7 {
-    public final ArrayList f3;
-    public final t26 g3;
-    public boolean h3;
-    public boolean i3;
-    public final int j3;
-    public boolean k3;
-    public boolean l3;
-    public final bg7 m3;
-    public final s33 n3;
-    public final ArrayList o3;
-    public final fx7 p3;
-    public View q3;
-    public boolean r3;
-    public int s3;
-    public int t3;
-    public boolean u3;
-    public boolean v3;
+public final class qi8 extends y69 {
+    public final Context r;
+    public final /* synthetic */ ui8 s;
 
-    public qi8(Context context, int i) {
-        super(context, null);
-        ArrayList arrayList = new ArrayList();
-        this.f3 = arrayList;
-        this.h3 = true;
-        this.i3 = true;
-        dh8 dh8Var = (dh8) this;
-        this.m3 = new bg7(dh8Var, (byte) 9);
-        this.n3 = new s33(0.0f, 0.5f, 0.5f, 1.0f);
-        this.o3 = new ArrayList();
-        byte b = 4;
-        this.p3 = new fx7(b);
-        this.t3 = -1;
-        this.j3 = i;
-        t26 t26Var = new t26();
-        this.g3 = t26Var;
-        setLayoutManager(t26Var);
-        setAdapter(new ni8(dh8Var));
-        setClipChildren(false);
-        setOnScrollListener(new n58(dh8Var, b));
-        setOnItemClickListener(new bf4(dh8Var, (byte) 23));
-        hq6.d0(i).p1();
-        arrayList.clear();
-        arrayList.addAll(hq6.d0(i).C0);
-        getAdapter().f();
-        invalidate();
+    public qi8(ui8 ui8Var, Context context) {
+        this.s = ui8Var;
+        this.r = context;
     }
 
-    public final void A1() {
-        if (this.v3) {
-            bg7 bg7Var = this.m3;
-            gl.r(bg7Var);
-            gl.d3(bg7Var, 2700L);
+    @Override // l69
+    public final String F(int i) {
+        return null;
+    }
+
+    @Override // l69
+    public final void G(d79 d79Var, float f, int[] iArr) {
+        iArr[0] = 0;
+        iArr[1] = 0;
+    }
+
+    @Override // y69
+    public final int M(int i) {
+        int i2 = 1;
+        if (i == 0) {
+            return 1;
         }
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.n5) {
-            ArrayList arrayList = this.f3;
-            arrayList.clear();
-            arrayList.addAll(hq6.d0(this.j3).C0);
-            getAdapter().f();
-            invalidate();
+        ti8 ti8Var = (ti8) this.s.w1.get(i - 1);
+        int b = ti8Var.b() + 1;
+        if (TextUtils.isEmpty(ti8Var.c) && !ti8Var.e) {
+            i2 = 0;
         }
+        return b + i2;
     }
 
-    @Override // o39, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.u3) {
-            ArrayList arrayList = this.o3;
-            arrayList.clear();
-            for (int i = 0; i < getChildCount(); i++) {
-                pi8 pi8Var = (pi8) getChildAt(i);
-                float measuredHeight = ((pi8Var.getMeasuredHeight() + pi8Var.getTop()) + (pi8Var.getMeasuredHeight() >> 1)) / (pi8Var.getMeasuredHeight() + (getMeasuredHeight() >> 1));
-                if (measuredHeight > 1.0f) {
-                    measuredHeight = 2.0f - measuredHeight;
+    @Override // y69
+    public final Object O(int i, int i2) {
+        int i3;
+        ArrayList arrayList = this.s.w1;
+        if (i == 0) {
+            return 293145;
+        }
+        int i4 = i - 1;
+        if (i2 == 0) {
+            return -928312;
+        }
+        if (i4 < 0 || i4 >= arrayList.size() || (i3 = i2 - 1) >= ((ti8) arrayList.get(i4)).b()) {
+            return -182734;
+        }
+        return Integer.valueOf(Objects.hash(Long.valueOf(wf3.n(((TLRPC.MessagePeerVote) ((ti8) arrayList.get(i4)).b.get(i3)).peer))));
+    }
+
+    @Override // y69
+    public final int P(int i, int i2) {
+        if (i == 0) {
+            return 1;
+        }
+        if (i2 == 0) {
+            return 2;
+        }
+        return i2 + (-1) < ((ti8) this.s.w1.get(i + (-1))).b() ? 0 : 3;
+    }
+
+    @Override // y69
+    public final int R() {
+        return this.s.w1.size() + 1;
+    }
+
+    @Override // y69
+    public final View T(int i, View view) {
+        ArrayList<TLRPC.MessageEntity> arrayList;
+        String str;
+        TLRPC.Message message;
+        ui8 ui8Var = this.s;
+        TLRPC.Poll poll = ui8Var.s1;
+        r47 r47Var = ui8Var.r1;
+        if (view == null) {
+            view = new pi8(this, this.r);
+        }
+        si8 si8Var = (si8) view;
+        if (i == 0) {
+            si8Var.setAlpha(0.0f);
+            return view;
+        }
+        view.setAlpha(1.0f);
+        ti8 ti8Var = (ti8) ui8Var.w1.get(i - 1);
+        int size = poll.answers.size();
+        int i2 = 0;
+        for (int i3 = 0; i3 < size; i3++) {
+            TLRPC.PollAnswer pollAnswer = poll.answers.get(i3);
+            if (Arrays.equals(pollAnswer.option, ti8Var.d) && ((ri8) ui8Var.v1.get(ti8Var)) != null) {
+                TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
+                if (r47Var != null && r47Var.L2 && (message = r47Var.k) != null && message.translatedPoll != null) {
+                    while (true) {
+                        if (i2 >= r47Var.k.translatedPoll.b.size()) {
+                            break;
+                        }
+                        TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) r47Var.k.translatedPoll.b.get(i2);
+                        if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
+                            tL_textWithEntities = pollAnswer2.text;
+                            break;
+                        }
+                        i2++;
+                    }
                 }
-                float i2 = Utilities.i(measuredHeight, 1.0f, 0.0f);
-                pi8Var.a = i2;
-                pi8Var.b.setTranslationX((1.0f - this.n3.getInterpolation(i2)) * (-getMeasuredWidth()) * 2.0f);
-                arrayList.add(pi8Var);
+                if (tL_textWithEntities == null) {
+                    str = "";
+                    arrayList = null;
+                } else {
+                    String str2 = tL_textWithEntities.text;
+                    arrayList = tL_textWithEntities.entities;
+                    str = str2;
+                }
+                si8Var.a(str, arrayList, ui8Var.F0(ti8Var.d), ti8Var.a, ti8Var.a(), false);
+                si8Var.setTag(R.id.object_tag, ti8Var);
+                return view;
             }
-            Collections.sort(arrayList, this.p3);
-            if ((this.i3 || this.r3) && arrayList.size() > 0 && !this.f3.isEmpty()) {
-                View view = (View) b00.f(1, arrayList);
-                this.q3 = view;
-                z1(view, !this.i3);
-                this.i3 = false;
-                this.r3 = false;
-            } else if (this.q3 != b00.f(1, arrayList)) {
-                this.q3 = (View) b00.f(1, arrayList);
-                if (this.l3) {
-                    try {
-                        performHapticFeedback(3);
-                    } catch (Exception unused) {
+        }
+        return view;
+    }
+
+    @Override // y69
+    public final boolean V(int i, int i2, f89 f89Var) {
+        if (i == 0 || i2 == 0) {
+            return false;
+        }
+        ArrayList arrayList = this.s.z1;
+        return arrayList == null || arrayList.isEmpty();
+    }
+
+    @Override // y69
+    public final void W(int i, int i2, f89 f89Var) {
+        ArrayList<TLRPC.MessageEntity> arrayList;
+        String str;
+        TLRPC.Message message;
+        ui8 ui8Var = this.s;
+        TLRPC.Poll poll = ui8Var.s1;
+        ArrayList arrayList2 = ui8Var.w1;
+        r47 r47Var = ui8Var.r1;
+        int i3 = f89Var.f;
+        View view = f89Var.a;
+        int i4 = 0;
+        if (i3 != 2) {
+            if (i3 == 3) {
+                ti8 ti8Var = (ti8) arrayList2.get(i - 1);
+                ((skb) view).o(R.drawable.arrow_more, ob6.G(ti8Var.a - ti8Var.b(), "ShowVotes", new Object[0]), false);
+                return;
+            }
+            return;
+        }
+        si8 si8Var = (si8) view;
+        ti8 ti8Var2 = (ti8) arrayList2.get(i - 1);
+        ArrayList arrayList3 = ti8Var2.b;
+        byte[] bArr = ti8Var2.d;
+        int size = poll.answers.size();
+        for (int i5 = 0; i5 < size; i5++) {
+            TLRPC.PollAnswer pollAnswer = poll.answers.get(i5);
+            if (Arrays.equals(pollAnswer.option, bArr) && ((ri8) ui8Var.v1.get(ti8Var2)) != null) {
+                TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
+                if (r47Var != null && r47Var.L2 && (message = r47Var.k) != null && message.translatedPoll != null) {
+                    while (true) {
+                        if (i4 >= r47Var.k.translatedPoll.b.size()) {
+                            break;
+                        }
+                        TLRPC.PollAnswer pollAnswer2 = (TLRPC.PollAnswer) r47Var.k.translatedPoll.b.get(i4);
+                        if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
+                            tL_textWithEntities = pollAnswer2.text;
+                            break;
+                        }
+                        i4++;
+                    }
+                }
+                if (tL_textWithEntities == null) {
+                    str = "";
+                    arrayList = null;
+                } else {
+                    String str2 = tL_textWithEntities.text;
+                    arrayList = tL_textWithEntities.entities;
+                    str = str2;
+                }
+                si8Var.a(str, arrayList, ui8Var.F0(bArr), ti8Var2.a, ti8Var2.a(), false);
+                si8Var.setTag(R.id.object_tag, ti8Var2);
+                return;
+            }
+        }
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View view;
+        ui8 ui8Var = this.s;
+        View view2 = ui8Var.x1;
+        Context context = this.r;
+        if (i == 0) {
+            view = new PollVotesAlert$UserCell(ui8Var, context);
+        } else if (i == 1) {
+            ViewParent parent = view2.getParent();
+            view = view2;
+            if (parent != null) {
+                ((ViewGroup) view2.getParent()).removeView(view2);
+                view = view2;
+            }
+        } else if (i != 2) {
+            skb skbVar = new skb(23, context, true);
+            skbVar.setOffsetFromImage(65);
+            yob.h(aob.h5, ui8Var.J0, skbVar);
+            skbVar.g(aob.N6, aob.q6);
+            view = skbVar;
+        } else {
+            View pi8Var = new pi8(this, context);
+            pi8Var.setTag(-33024);
+            view = pi8Var;
+        }
+        return new n69(view);
+    }
+
+    @Override // j79
+    public final void y(f89 f89Var) {
+        if (f89Var.f == 0) {
+            int b = f89Var.b();
+            int S = S(b);
+            int Q = Q(b) - 1;
+            PollVotesAlert$UserCell pollVotesAlert$UserCell = (PollVotesAlert$UserCell) f89Var.a;
+            ui8 ui8Var = this.s;
+            ti8 ti8Var = (ti8) ui8Var.w1.get(S - 1);
+            TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) ti8Var.b.get(Q);
+            TLObject b2 = uc7.s1(ui8Var.a).b2(wf3.n(messagePeerVote.peer));
+            int i = messagePeerVote.date;
+            boolean z = (Q == ti8Var.b() - 1 && TextUtils.isEmpty(ti8Var.c) && !ti8Var.e) ? false : true;
+            de0 de0Var = pollVotesAlert$UserCell.a;
+            ema emaVar = pollVotesAlert$UserCell.b;
+            if (b2 instanceof TLRPC.User) {
+                pollVotesAlert$UserCell.h = (TLRPC.User) b2;
+                pollVotesAlert$UserCell.n = null;
+            } else if (b2 instanceof TLRPC.Chat) {
+                pollVotesAlert$UserCell.n = (TLRPC.Chat) b2;
+                pollVotesAlert$UserCell.h = null;
+            } else {
+                pollVotesAlert$UserCell.h = null;
+                pollVotesAlert$UserCell.n = null;
+            }
+            long j = i;
+            pollVotesAlert$UserCell.d.setText(ob6.D0().o0().format(1000 * j));
+            pollVotesAlert$UserCell.c.setText(ob6.r(j, true));
+            pollVotesAlert$UserCell.s = z;
+            pollVotesAlert$UserCell.x = b2 == null;
+            pollVotesAlert$UserCell.w = Q;
+            if (b2 == null) {
+                emaVar.l("", false);
+                de0Var.setImageDrawable(null);
+            } else {
+                rb0 rb0Var = pollVotesAlert$UserCell.e;
+                TLRPC.User user = pollVotesAlert$UserCell.h;
+                if (user != null) {
+                    rb0Var.q(user);
+                    TLRPC.UserStatus userStatus = pollVotesAlert$UserCell.h.status;
+                } else {
+                    TLRPC.Chat chat = pollVotesAlert$UserCell.n;
+                    if (chat != null) {
+                        rb0Var.p(chat);
+                    }
+                }
+                TLRPC.User user2 = pollVotesAlert$UserCell.h;
+                if (user2 != null) {
+                    String r = lbc.r(user2);
+                    pollVotesAlert$UserCell.r = r;
+                    pollVotesAlert$UserCell.r = c00.f(emaVar, r, false, null, 0);
+                } else {
+                    TLRPC.Chat chat2 = pollVotesAlert$UserCell.n;
+                    if (chat2 != null) {
+                        String str = chat2.title;
+                        pollVotesAlert$UserCell.r = str;
+                        pollVotesAlert$UserCell.r = c00.f(emaVar, str, false, null, 0);
+                    } else {
+                        pollVotesAlert$UserCell.r = "";
+                    }
+                }
+                emaVar.l(pollVotesAlert$UserCell.r, false);
+                c2b c2bVar = pollVotesAlert$UserCell.f;
+                TLRPC.User user3 = pollVotesAlert$UserCell.h;
+                TLRPC.Chat chat3 = pollVotesAlert$UserCell.n;
+                int i2 = aob.z9;
+                ui8 ui8Var2 = pollVotesAlert$UserCell.F;
+                qm qmVar = ui8.L1;
+                emaVar.i(c2bVar.b(user3, chat3, aob.v0(i2, ui8Var2.J0), false));
+                TLRPC.Chat chat4 = pollVotesAlert$UserCell.n;
+                if (chat4 != null) {
+                    de0Var.f(chat4, rb0Var);
+                } else {
+                    TLRPC.User user4 = pollVotesAlert$UserCell.h;
+                    if (user4 != null) {
+                        de0Var.f(user4, rb0Var);
+                    } else {
+                        de0Var.setImageDrawable(rb0Var);
                     }
                 }
             }
-            for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                canvas.save();
-                canvas.translate(((pi8) arrayList.get(i3)).getX(), ((pi8) arrayList.get(i3)).getY());
-                ((pi8) arrayList.get(i3)).draw(canvas);
-                canvas.restore();
-            }
-        }
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        return true;
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        kk7.f(this.j3).b(this, kk7.n5);
-        A1();
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        kk7.f(this.j3).n(this, kk7.n5);
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (this.h3 && !this.f3.isEmpty() && getChildCount() > 0) {
-            this.h3 = false;
-            gl.c3(new w88(this, (byte) 17));
-        }
-        int i5 = this.t3;
-        if (i5 > 0) {
-            s49 K = K(i5);
-            if (K != null) {
-                z1(K.a, false);
-            }
-            this.t3 = -1;
-        }
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        if (View.MeasureSpec.getSize(i2) > View.MeasureSpec.getSize(i)) {
-            this.s3 = View.MeasureSpec.getSize(i);
-        } else {
-            this.s3 = View.MeasureSpec.getSize(i2);
-        }
-        super.onMeasure(i, i2);
-    }
-
-    public void setAutoPlayEnabled(boolean z) {
-        if (this.v3 != z) {
-            this.v3 = z;
-            if (!z) {
-                gl.r(this.m3);
-                z1(null, true);
+            ArrayList arrayList = pollVotesAlert$UserCell.E;
+            if (arrayList == null) {
+                if (pollVotesAlert$UserCell.x) {
+                    return;
+                }
+                pollVotesAlert$UserCell.y = 0.0f;
             } else {
-                A1();
-                this.r3 = true;
-                invalidate();
-            }
-        }
-    }
-
-    public void setOffset(float f) {
-        boolean z = Math.abs(f / ((float) getMeasuredWidth())) < 1.0f;
-        if (this.u3 != z) {
-            this.u3 = z;
-            invalidate();
-        }
-    }
-
-    public final void z1(View view, boolean z) {
-        this.k3 = view != null;
-        for (int i = 0; i < getChildCount(); i++) {
-            pi8 pi8Var = (pi8) getChildAt(i);
-            if (pi8Var == view) {
-                pi8Var.a(true, true, z);
-            } else {
-                pi8Var.a(!this.k3, false, z);
+                Property property = View.ALPHA;
+                arrayList.add(ObjectAnimator.ofFloat(de0Var, (Property<de0, Float>) property, 0.0f, 1.0f));
+                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(emaVar, (Property<ema, Float>) property, 0.0f, 1.0f));
+                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(pollVotesAlert$UserCell, ui8.L1, 1.0f, 0.0f));
             }
         }
     }

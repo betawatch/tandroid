@@ -1,114 +1,65 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class lya extends n39 {
-    public int c;
-    public final /* synthetic */ tya d;
+public final class lya extends LinearLayout {
+    public final Path a;
+    public final /* synthetic */ Matrix b;
+    public final /* synthetic */ RadialGradient c;
+    public final /* synthetic */ Paint d;
+    public final /* synthetic */ ul e;
 
-    public lya(tya tyaVar) {
-        this.d = tyaVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lya(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, ul ulVar) {
+        super(context);
+        this.b = matrix;
+        this.c = radialGradient;
+        this.d = paint;
+        this.e = ulVar;
+        this.a = new Path();
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f == 1;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float L = hl.L(10.0f);
+        RectF rectF = hl.P;
+        rectF.set(0.0f, hl.L(2.0f) + 1, getWidth(), getHeight() + L);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, L, L, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        Matrix matrix = this.b;
+        matrix.reset();
+        matrix.postTranslate(getWidth() / 2.0f, hl.L(100.0f));
+        this.c.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
+        canvas.save();
+        canvas.translate(getWidth() / 2.0f, hl.L(100.0f));
+        xqa.a(canvas, 0, this.e, getWidth(), hl.L(180.0f), 1.0f, 1.0f);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // w39
-    public final int b() {
-        tya tyaVar = this.d;
-        qya[] qyaVarArr = tyaVar.g3;
-        int length = (qyaVarArr == null ? 0 : qyaVarArr.length) + 1;
-        if (length != this.c) {
-            si9 si9Var = tyaVar.t3;
-            if (si9Var != null) {
-                si9Var.requestLayout();
-            }
-            this.c = length;
-        }
-        return length;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e.a();
     }
 
-    @Override // w39
-    public final int d(int i) {
-        return i == 0 ? 0 : 1;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        tya tyaVar;
-        qya[] qyaVarArr;
-        byte b = 1;
-        if (s49Var.f != 1 || (qyaVarArr = (tyaVar = this.d).g3) == null) {
-            return;
-        }
-        int i2 = i - 1;
-        qya qyaVar = qyaVarArr[i2];
-        final pya pyaVar = (pya) s49Var.a;
-        boolean z = tyaVar.u3 == i2;
-        pyaVar.getClass();
-        if (!TextUtils.isEmpty(qyaVar.d)) {
-            pyaVar.setContentDescription(qyaVar.d);
-        } else if (TextUtils.isEmpty(qyaVar.a)) {
-            pyaVar.setContentDescription(null);
-        } else {
-            pyaVar.setContentDescription(qyaVar.a);
-        }
-        ValueAnimator valueAnimator = pyaVar.H;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            pyaVar.H = null;
-        }
-        pyaVar.setImageResource(0);
-        pyaVar.a();
-        final boolean B1 = pyaVar.I.B1();
-        pyaVar.x = false;
-        pyaVar.E = 1.0f;
-        vl.g(y6c.t0).b(qyaVar.c, new sl() { // from class: nya
-            @Override // sl
-            public final void a(TLRPC.Document document) {
-                boolean z2 = !B1;
-                pya pyaVar2 = pya.this;
-                pyaVar2.setOnlyLastFrame(z2);
-                pyaVar2.g(24, 24, document);
-                pyaVar2.d();
-            }
-        });
-        gl.d3(new kya(pyaVar, b), 60L);
-        pyaVar.l(z, false);
-        pyaVar.setAlpha(tyaVar.w3);
-        pyaVar.setScaleX(tyaVar.w3);
-        pyaVar.setScaleY(tyaVar.w3);
-        pyaVar.j();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        pya pyaVar;
-        tya tyaVar = this.d;
-        if (i == 0) {
-            si9 si9Var = new si9((byte) 9, tyaVar.getContext(), this);
-            tyaVar.t3 = si9Var;
-            pyaVar = si9Var;
-        } else {
-            pyaVar = new pya(tyaVar, tyaVar.getContext());
-        }
-        return new y29(pyaVar);
-    }
-
-    @Override // w39
-    public final void y(s49 s49Var) {
-        if (s49Var.f == 1) {
-            pya pyaVar = (pya) s49Var.a;
-            pyaVar.l(this.d.u3 == s49Var.b() - 1, false);
-            pyaVar.j();
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.e.b();
     }
 }

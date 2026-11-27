@@ -1,1259 +1,442 @@
 // default package
 
-import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.SparseArray;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.Locale;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zj6 extends d implements gfa, aj4, gk7 {
-    public boolean E;
-    public boolean F;
-    public int G;
-    public a8 H;
-    public a8 I;
-    public a8 J;
-    public ch6 K;
-    public final ox4[] L;
-    public int M;
-    public FrameLayout N;
-    public u41 O;
-    public fm0 P;
-    public View Q;
-    public vj6 R;
-    public yj6 S;
-    public int T;
-    public String U;
-    public int V;
+public final class zj6 extends FrameLayout {
+    public int E;
+    public float F;
+    public float G;
+    public boolean H;
+    public boolean I;
+    public boolean J;
+    public final tsb K;
+    public final /* synthetic */ ck6 L;
     public int a;
-    public ffa b;
-    public TLRPC.ChatFull c;
-    public TLRPC.UserFull d;
-    public long e;
-    public long f;
-    public String h;
-    public String n;
+    public final LinearLayout b;
+    public final TextView c;
+    public final TextView d;
+    public final LinearLayout e;
+    public final TextView f;
+    public final TextView h;
+    public TLRPC.TL_chatInviteExported n;
     public int r;
-    public xha s;
-    public SparseArray w;
-    public a8 x;
-    public a8 y;
+    public final Paint s;
+    public final Paint w;
+    public final RectF x;
+    public final ImageView y;
 
-    public zj6(Bundle bundle, ffa ffaVar) {
-        super(bundle);
-        this.E = true;
-        this.F = true;
-        this.G = -12;
-        this.L = new ox4[2];
-        this.M = -1;
-        this.b = ffaVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zj6(ck6 ck6Var, Context context) {
+        super(context);
+        this.L = ck6Var;
+        this.s = new Paint(1);
+        Paint paint = new Paint(1);
+        this.w = paint;
+        this.x = new RectF();
+        this.F = 1.0f;
+        this.K = new tsb();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(1);
+        addView(linearLayout, tre.d(-1, -2.0f, 16, 64.0f, 0.0f, 30.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        int i = aob.G6;
+        yob.X(textView, i, null);
+        textView.setLines(1);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, tre.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        int i2 = aob.y6;
+        yob.X(textView2, i2, null);
+        linearLayout.addView(textView2, tre.k(0.0f, 4.33f, 0.0f, 0.0f, -1, -2));
+        ImageView imageView = new ImageView(context);
+        this.y = imageView;
+        imageView.setImageDrawable(context.getDrawable(R.drawable.ic_ab_other));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        yob.s(imageView, aob.Li, null, PorterDuff.Mode.SRC_ATOP);
+        imageView.setOnClickListener(new sa5(this, (byte) 25));
+        int i3 = aob.i6;
+        hf0 f0 = aob.f0(aob.w0(null, i3, false), 1, -1);
+        uob M = yob.M(i3);
+        imageView.setBackground(f0);
+        yob.j(imageView, f0, null, M, null);
+        addView(imageView, tre.d(48, 48.0f, 21, 0.0f, 0.0f, 8.0f, 0.0f));
+        yob.h(aob.d6, null, this);
+        setWillNotDraw(false);
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        this.e = linearLayout2;
+        linearLayout2.setOrientation(1);
+        TextView textView3 = new TextView(context);
+        this.f = textView3;
+        textView3.setTextSize(1, 16.0f);
+        yob.X(textView3, i, null);
+        textView3.setLines(1);
+        textView3.setEllipsize(truncateAt);
+        textView3.setTypeface(hl.o());
+        textView3.setGravity(5);
+        linearLayout2.addView(textView3, tre.r(-1, -2, 5));
+        TextView textView4 = new TextView(context);
+        this.h = textView4;
+        textView4.setTextSize(1, 13.0f);
+        yob.X(textView4, i2, null);
+        textView4.setGravity(5);
+        linearLayout2.addView(textView4, tre.t(-1, -2, 5, 0, 1, 0, 0));
+        addView(linearLayout2, tre.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+        linearLayout2.setVisibility(8);
     }
 
-    @Override // aj4
-    public final List D() {
-        Activity parentActivity = getParentActivity();
-        do3 do3Var = h9a.m;
-        return Arrays.asList(new zi4((parentActivity.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false) ? "Disable" : "Enable").concat(" shape detector learning debug"), new uj6(this, (byte) 1)));
-    }
-
-    @Override // gfa
-    public final void Q() {
-        ffa ffaVar;
-        yj6 yj6Var = this.S;
-        if (yj6Var != null && (ffaVar = this.b) != null) {
-            yj6Var.setNewMediaCounts(ffaVar.c);
+    public final int a(float f, int i) {
+        TLRPC.TL_chatInviteExported tL_chatInviteExported = this.n;
+        if (tL_chatInviteExported != null && tL_chatInviteExported.subscription_pricing != null) {
+            return aob.w0(null, aob.lk, false);
         }
-        e0();
-    }
-
-    public final void a0() {
-        if (this.S == null) {
-            return;
-        }
-        int i = 0;
-        int L = this.K != null ? gl.L(72.0f) : 0;
-        yj6 yj6Var = this.S;
-        int currentActionBarHeight = a.getCurrentActionBarHeight() + this.mSystemInsets.b;
-        int[] iArr = nfa.t2;
-        yj6Var.i1(dg0.d(currentActionBarHeight - a.getCurrentActionBarHeight()) - gl.L(6.666f), dg0.c(this.mSystemInsets.b), dg0.c(this.mSystemInsets.d + L), this.mSystemInsets.d + L);
-        if (this.Q != null) {
-            int topPanelShift = this.S.getTopPanelShift() + gl.L(44.0f) + a.getCurrentActionBarHeight() + this.mSystemInsets.b;
-            if (this.Q.getLayoutParams().height != topPanelShift) {
-                this.Q.getLayoutParams().height = topPanelShift;
-                this.Q.requestLayout();
-            }
-        }
-        View view = this.navigationBarFadeView;
-        if (view != null) {
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            int i2 = this.mSystemInsets.d;
-            layoutParams.height = i2 + L;
-            View view2 = this.navigationBarFadeView;
-            if (i2 < gl.L(40.0f) && L <= 0) {
-                i = 8;
-            }
-            view2.setVisibility(i);
-            this.navigationBarFadeView.requestLayout();
-        }
-        b0();
-    }
-
-    public final void b0() {
-        if (this.K == null) {
-            return;
-        }
-        float f = this.P.e;
-        float L = gl.L(72.0f) + this.mSystemInsets.d;
-        this.K.setTranslationY((L * f) + (-r2));
-        float f2 = 1.0f - f;
-        this.K.setAlpha(f2);
-        this.K.setVisibility(f < 1.0f ? 0 : 4);
-        this.N.setTranslationY((L * f2) + (-this.mSystemInsets.d));
-        this.N.setAlpha(f);
-        this.N.setVisibility(f > 0.0f ? 0 : 4);
-    }
-
-    public final boolean c0() {
-        int i = this.a;
-        return i == 1 || i == 2;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean canBeginSlide() {
-        if (this.S.u0()) {
-            return super.canBeginSlide();
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        dg0 dg0Var;
-        int i;
-        setHasOwnBackground(true);
-        final byte b = 0;
-        this.simpleActionBar.setBackButtonDrawable(new ed0(false));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bq5(this, (byte) 8));
-        oc6 oc6Var = new oc6((byte) 3, context, this);
-        this.fragmentView = oc6Var;
-        if (this.a == 0 && this.e == getUserConfig().e() && this.f == 0 && !getMessagesController().D1().b && getMessagesController().D1().e()) {
-            this.T = 11;
-        }
-        dg0 baseSimpleGlass = getBaseSimpleGlass();
-        yj6 yj6Var = new yj6(this, context, this.e, this.b, this.c, this.d, this.T, this, new xj6(this), getResourceProvider(), baseSimpleGlass.c);
-        this.S = yj6Var;
-        yj6Var.setOnTopPanelShiftChanged(new uj6(this, b));
-        this.S.L0.setOpen(true);
-        this.S.setPinnedToTop(true);
-        oc6Var.addView(this.S, nme.c(-1.0f, -1));
-        byte b2 = 10;
-        if (c0()) {
-            xha a = this.simpleActionBar.t().a(0, R.drawable.ic_ab_other);
-            this.s = a;
-            a.setContentDescription(k96.M0(2131754838, null));
-            this.s.Y(false, false);
-            a8 e = this.s.e(8, R.drawable.msg_zoomin, k96.M0(2131748458, null));
-            this.I = e;
-            e.setOnClickListener(new View.OnClickListener(this) { // from class: wj6
-                public final /* synthetic */ zj6 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    y1b y1bVar;
-                    y1b y1bVar2;
-                    y1b y1bVar3;
-                    y1b y1bVar4;
-                    int i2;
-                    byte b3 = b;
-                    pw0 pw0Var = pw0.E;
-                    zj6 zj6Var = this.b;
-                    byte b4 = 1;
-                    switch (b3) {
-                        case 0:
-                            Boolean O1 = zj6Var.S.O1(null, null);
-                            if (O1 != null) {
-                                zj6Var.g0(true, O1.booleanValue());
-                                break;
-                            }
-                            break;
-                        case 1:
-                            Boolean P1 = zj6Var.S.P1(null, null);
-                            if (P1 != null) {
-                                zj6Var.g0(P1.booleanValue(), true);
-                                break;
-                            }
-                            break;
-                        case 2:
-                            boolean z = zj6Var.E;
-                            if (z && !zj6Var.F) {
-                                pw0Var.a();
-                                a8 a8Var = zj6Var.x;
-                                int i3 = -zj6Var.G;
-                                zj6Var.G = i3;
-                                gl.A3(i3, a8Var, null);
-                                break;
-                            } else {
-                                a8 a8Var2 = zj6Var.x;
-                                boolean z2 = !z;
-                                zj6Var.E = z2;
-                                a8Var2.setChecked(z2);
-                                yj6 yj6Var2 = zj6Var.S;
-                                boolean z3 = zj6Var.E;
-                                boolean z4 = zj6Var.F;
-                                xda xdaVar = yj6Var2.f0;
-                                if (xdaVar != null && (y1bVar2 = xdaVar.s) != null) {
-                                    y1bVar2.n = z3;
-                                    y1bVar2.o = z4;
-                                    y1bVar2.d(true);
-                                }
-                                jca jcaVar = yj6Var2.h0;
-                                if (jcaVar != null && (y1bVar = jcaVar.s) != null) {
-                                    y1bVar.n = z3;
-                                    y1bVar.o = z4;
-                                    y1bVar.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 3:
-                            boolean z5 = zj6Var.F;
-                            if (z5 && !zj6Var.E) {
-                                pw0Var.a();
-                                a8 a8Var3 = zj6Var.y;
-                                int i4 = -zj6Var.G;
-                                zj6Var.G = i4;
-                                gl.A3(i4, a8Var3, null);
-                                break;
-                            } else {
-                                a8 a8Var4 = zj6Var.y;
-                                boolean z6 = !z5;
-                                zj6Var.F = z6;
-                                a8Var4.setChecked(z6);
-                                yj6 yj6Var3 = zj6Var.S;
-                                boolean z7 = zj6Var.E;
-                                boolean z8 = zj6Var.F;
-                                xda xdaVar2 = yj6Var3.f0;
-                                if (xdaVar2 != null && (y1bVar4 = xdaVar2.s) != null) {
-                                    y1bVar4.n = z7;
-                                    y1bVar4.o = z8;
-                                    y1bVar4.d(true);
-                                }
-                                jca jcaVar2 = yj6Var3.h0;
-                                if (jcaVar2 != null && (y1bVar3 = jcaVar2.s) != null) {
-                                    y1bVar3.n = z7;
-                                    y1bVar3.o = z8;
-                                    y1bVar3.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        default:
-                            zj6 zj6Var2 = this.b;
-                            vj6 vj6Var = zj6Var2.R;
-                            if (vj6Var != null) {
-                                vj6Var.run();
-                                zj6Var2.R = null;
-                            }
-                            m21.e();
-                            byte b5 = 0;
-                            boolean z9 = zj6Var2.S.getClosestTab() == 9;
-                            ArrayList arrayList = new ArrayList();
-                            if (zj6Var2.w != null) {
-                                i2 = 0;
-                                for (int i5 = 0; i5 < zj6Var2.w.size(); i5++) {
-                                    TL_stories.StoryItem storyItem = ((k27) zj6Var2.w.valueAt(i5)).l;
-                                    if (storyItem != null) {
-                                        arrayList.add(storyItem);
-                                        i2++;
-                                    }
-                                }
-                            } else {
-                                i2 = 0;
-                            }
-                            zj6Var2.S.E(false);
-                            if (z9) {
-                                zj6Var2.S.f1(8);
-                            }
-                            if (!arrayList.isEmpty()) {
-                                boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i6);
-                                    zArr[i6] = storyItem2.pinned;
-                                    storyItem2.pinned = z9;
-                                }
-                                zj6Var2.getMessagesController().M1().q0(zj6Var2.e, arrayList, false);
-                                boolean[] zArr2 = {false};
-                                zj6Var2.R = new vj6(zj6Var2, arrayList, z9, b5);
-                                e45 e45Var = new e45(zj6Var2, zArr2, arrayList, zArr, (byte) 22);
-                                (z9 ? u21.b0(zj6Var2).L(R.raw.contact_check, k96.G(i2, "StorySavedTitle", new Object[0]), k96.M0(2131744244, null), k96.M0(2131743648, null), e45Var).j() : u21.b0(zj6Var2).J(R.raw.chats_archived, k96.G(i2, "StoryArchived", new Object[0]), k96.M0(2131743648, null), 5000, false, e45Var).j()).v = new oh6(zj6Var2, zArr2, b4);
-                                break;
-                            }
-                            break;
-                    }
-                }
-            });
-            a8 e2 = this.s.e(9, R.drawable.msg_zoomout, k96.M0(2131748457, null));
-            this.J = e2;
-            e2.setOnClickListener(new View.OnClickListener(this) { // from class: wj6
-                public final /* synthetic */ zj6 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    y1b y1bVar;
-                    y1b y1bVar2;
-                    y1b y1bVar3;
-                    y1b y1bVar4;
-                    int i2;
-                    byte b3 = r2;
-                    pw0 pw0Var = pw0.E;
-                    zj6 zj6Var = this.b;
-                    byte b4 = 1;
-                    switch (b3) {
-                        case 0:
-                            Boolean O1 = zj6Var.S.O1(null, null);
-                            if (O1 != null) {
-                                zj6Var.g0(true, O1.booleanValue());
-                                break;
-                            }
-                            break;
-                        case 1:
-                            Boolean P1 = zj6Var.S.P1(null, null);
-                            if (P1 != null) {
-                                zj6Var.g0(P1.booleanValue(), true);
-                                break;
-                            }
-                            break;
-                        case 2:
-                            boolean z = zj6Var.E;
-                            if (z && !zj6Var.F) {
-                                pw0Var.a();
-                                a8 a8Var = zj6Var.x;
-                                int i3 = -zj6Var.G;
-                                zj6Var.G = i3;
-                                gl.A3(i3, a8Var, null);
-                                break;
-                            } else {
-                                a8 a8Var2 = zj6Var.x;
-                                boolean z2 = !z;
-                                zj6Var.E = z2;
-                                a8Var2.setChecked(z2);
-                                yj6 yj6Var2 = zj6Var.S;
-                                boolean z3 = zj6Var.E;
-                                boolean z4 = zj6Var.F;
-                                xda xdaVar = yj6Var2.f0;
-                                if (xdaVar != null && (y1bVar2 = xdaVar.s) != null) {
-                                    y1bVar2.n = z3;
-                                    y1bVar2.o = z4;
-                                    y1bVar2.d(true);
-                                }
-                                jca jcaVar = yj6Var2.h0;
-                                if (jcaVar != null && (y1bVar = jcaVar.s) != null) {
-                                    y1bVar.n = z3;
-                                    y1bVar.o = z4;
-                                    y1bVar.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 3:
-                            boolean z5 = zj6Var.F;
-                            if (z5 && !zj6Var.E) {
-                                pw0Var.a();
-                                a8 a8Var3 = zj6Var.y;
-                                int i4 = -zj6Var.G;
-                                zj6Var.G = i4;
-                                gl.A3(i4, a8Var3, null);
-                                break;
-                            } else {
-                                a8 a8Var4 = zj6Var.y;
-                                boolean z6 = !z5;
-                                zj6Var.F = z6;
-                                a8Var4.setChecked(z6);
-                                yj6 yj6Var3 = zj6Var.S;
-                                boolean z7 = zj6Var.E;
-                                boolean z8 = zj6Var.F;
-                                xda xdaVar2 = yj6Var3.f0;
-                                if (xdaVar2 != null && (y1bVar4 = xdaVar2.s) != null) {
-                                    y1bVar4.n = z7;
-                                    y1bVar4.o = z8;
-                                    y1bVar4.d(true);
-                                }
-                                jca jcaVar2 = yj6Var3.h0;
-                                if (jcaVar2 != null && (y1bVar3 = jcaVar2.s) != null) {
-                                    y1bVar3.n = z7;
-                                    y1bVar3.o = z8;
-                                    y1bVar3.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        default:
-                            zj6 zj6Var2 = this.b;
-                            vj6 vj6Var = zj6Var2.R;
-                            if (vj6Var != null) {
-                                vj6Var.run();
-                                zj6Var2.R = null;
-                            }
-                            m21.e();
-                            byte b5 = 0;
-                            boolean z9 = zj6Var2.S.getClosestTab() == 9;
-                            ArrayList arrayList = new ArrayList();
-                            if (zj6Var2.w != null) {
-                                i2 = 0;
-                                for (int i5 = 0; i5 < zj6Var2.w.size(); i5++) {
-                                    TL_stories.StoryItem storyItem = ((k27) zj6Var2.w.valueAt(i5)).l;
-                                    if (storyItem != null) {
-                                        arrayList.add(storyItem);
-                                        i2++;
-                                    }
-                                }
-                            } else {
-                                i2 = 0;
-                            }
-                            zj6Var2.S.E(false);
-                            if (z9) {
-                                zj6Var2.S.f1(8);
-                            }
-                            if (!arrayList.isEmpty()) {
-                                boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i6);
-                                    zArr[i6] = storyItem2.pinned;
-                                    storyItem2.pinned = z9;
-                                }
-                                zj6Var2.getMessagesController().M1().q0(zj6Var2.e, arrayList, false);
-                                boolean[] zArr2 = {false};
-                                zj6Var2.R = new vj6(zj6Var2, arrayList, z9, b5);
-                                e45 e45Var = new e45(zj6Var2, zArr2, arrayList, zArr, (byte) 22);
-                                (z9 ? u21.b0(zj6Var2).L(R.raw.contact_check, k96.G(i2, "StorySavedTitle", new Object[0]), k96.M0(2131744244, null), k96.M0(2131743648, null), e45Var).j() : u21.b0(zj6Var2).J(R.raw.chats_archived, k96.G(i2, "StoryArchived", new Object[0]), k96.M0(2131743648, null), 5000, false, e45Var).j()).v = new oh6(zj6Var2, zArr2, b4);
-                                break;
-                            }
-                            break;
-                    }
-                }
-            });
-            a8 e3 = this.s.e(10, R.drawable.msg_calendar2, k96.M0(2131752630, null));
-            this.H = e3;
-            e3.setEnabled(false);
-            this.H.setAlpha(0.5f);
-            this.s.a(-1);
-            xha xhaVar = this.s;
-            a8 d = xhaVar.d(6, 0, null, k96.M0(2131748461, null), true, true, xhaVar.n0);
-            this.x = d;
-            d.setChecked(this.E);
-            final byte b3 = 2;
-            this.x.setOnClickListener(new View.OnClickListener(this) { // from class: wj6
-                public final /* synthetic */ zj6 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    y1b y1bVar;
-                    y1b y1bVar2;
-                    y1b y1bVar3;
-                    y1b y1bVar4;
-                    int i2;
-                    byte b32 = b3;
-                    pw0 pw0Var = pw0.E;
-                    zj6 zj6Var = this.b;
-                    byte b4 = 1;
-                    switch (b32) {
-                        case 0:
-                            Boolean O1 = zj6Var.S.O1(null, null);
-                            if (O1 != null) {
-                                zj6Var.g0(true, O1.booleanValue());
-                                break;
-                            }
-                            break;
-                        case 1:
-                            Boolean P1 = zj6Var.S.P1(null, null);
-                            if (P1 != null) {
-                                zj6Var.g0(P1.booleanValue(), true);
-                                break;
-                            }
-                            break;
-                        case 2:
-                            boolean z = zj6Var.E;
-                            if (z && !zj6Var.F) {
-                                pw0Var.a();
-                                a8 a8Var = zj6Var.x;
-                                int i3 = -zj6Var.G;
-                                zj6Var.G = i3;
-                                gl.A3(i3, a8Var, null);
-                                break;
-                            } else {
-                                a8 a8Var2 = zj6Var.x;
-                                boolean z2 = !z;
-                                zj6Var.E = z2;
-                                a8Var2.setChecked(z2);
-                                yj6 yj6Var2 = zj6Var.S;
-                                boolean z3 = zj6Var.E;
-                                boolean z4 = zj6Var.F;
-                                xda xdaVar = yj6Var2.f0;
-                                if (xdaVar != null && (y1bVar2 = xdaVar.s) != null) {
-                                    y1bVar2.n = z3;
-                                    y1bVar2.o = z4;
-                                    y1bVar2.d(true);
-                                }
-                                jca jcaVar = yj6Var2.h0;
-                                if (jcaVar != null && (y1bVar = jcaVar.s) != null) {
-                                    y1bVar.n = z3;
-                                    y1bVar.o = z4;
-                                    y1bVar.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 3:
-                            boolean z5 = zj6Var.F;
-                            if (z5 && !zj6Var.E) {
-                                pw0Var.a();
-                                a8 a8Var3 = zj6Var.y;
-                                int i4 = -zj6Var.G;
-                                zj6Var.G = i4;
-                                gl.A3(i4, a8Var3, null);
-                                break;
-                            } else {
-                                a8 a8Var4 = zj6Var.y;
-                                boolean z6 = !z5;
-                                zj6Var.F = z6;
-                                a8Var4.setChecked(z6);
-                                yj6 yj6Var3 = zj6Var.S;
-                                boolean z7 = zj6Var.E;
-                                boolean z8 = zj6Var.F;
-                                xda xdaVar2 = yj6Var3.f0;
-                                if (xdaVar2 != null && (y1bVar4 = xdaVar2.s) != null) {
-                                    y1bVar4.n = z7;
-                                    y1bVar4.o = z8;
-                                    y1bVar4.d(true);
-                                }
-                                jca jcaVar2 = yj6Var3.h0;
-                                if (jcaVar2 != null && (y1bVar3 = jcaVar2.s) != null) {
-                                    y1bVar3.n = z7;
-                                    y1bVar3.o = z8;
-                                    y1bVar3.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        default:
-                            zj6 zj6Var2 = this.b;
-                            vj6 vj6Var = zj6Var2.R;
-                            if (vj6Var != null) {
-                                vj6Var.run();
-                                zj6Var2.R = null;
-                            }
-                            m21.e();
-                            byte b5 = 0;
-                            boolean z9 = zj6Var2.S.getClosestTab() == 9;
-                            ArrayList arrayList = new ArrayList();
-                            if (zj6Var2.w != null) {
-                                i2 = 0;
-                                for (int i5 = 0; i5 < zj6Var2.w.size(); i5++) {
-                                    TL_stories.StoryItem storyItem = ((k27) zj6Var2.w.valueAt(i5)).l;
-                                    if (storyItem != null) {
-                                        arrayList.add(storyItem);
-                                        i2++;
-                                    }
-                                }
-                            } else {
-                                i2 = 0;
-                            }
-                            zj6Var2.S.E(false);
-                            if (z9) {
-                                zj6Var2.S.f1(8);
-                            }
-                            if (!arrayList.isEmpty()) {
-                                boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i6);
-                                    zArr[i6] = storyItem2.pinned;
-                                    storyItem2.pinned = z9;
-                                }
-                                zj6Var2.getMessagesController().M1().q0(zj6Var2.e, arrayList, false);
-                                boolean[] zArr2 = {false};
-                                zj6Var2.R = new vj6(zj6Var2, arrayList, z9, b5);
-                                e45 e45Var = new e45(zj6Var2, zArr2, arrayList, zArr, (byte) 22);
-                                (z9 ? u21.b0(zj6Var2).L(R.raw.contact_check, k96.G(i2, "StorySavedTitle", new Object[0]), k96.M0(2131744244, null), k96.M0(2131743648, null), e45Var).j() : u21.b0(zj6Var2).J(R.raw.chats_archived, k96.G(i2, "StoryArchived", new Object[0]), k96.M0(2131743648, null), 5000, false, e45Var).j()).v = new oh6(zj6Var2, zArr2, b4);
-                                break;
-                            }
-                            break;
-                    }
-                }
-            });
-            xha xhaVar2 = this.s;
-            a8 d2 = xhaVar2.d(7, 0, null, k96.M0(2131748460, null), true, true, xhaVar2.n0);
-            this.y = d2;
-            d2.setChecked(this.F);
-            final byte b4 = 3;
-            this.y.setOnClickListener(new View.OnClickListener(this) { // from class: wj6
-                public final /* synthetic */ zj6 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    y1b y1bVar;
-                    y1b y1bVar2;
-                    y1b y1bVar3;
-                    y1b y1bVar4;
-                    int i2;
-                    byte b32 = b4;
-                    pw0 pw0Var = pw0.E;
-                    zj6 zj6Var = this.b;
-                    byte b42 = 1;
-                    switch (b32) {
-                        case 0:
-                            Boolean O1 = zj6Var.S.O1(null, null);
-                            if (O1 != null) {
-                                zj6Var.g0(true, O1.booleanValue());
-                                break;
-                            }
-                            break;
-                        case 1:
-                            Boolean P1 = zj6Var.S.P1(null, null);
-                            if (P1 != null) {
-                                zj6Var.g0(P1.booleanValue(), true);
-                                break;
-                            }
-                            break;
-                        case 2:
-                            boolean z = zj6Var.E;
-                            if (z && !zj6Var.F) {
-                                pw0Var.a();
-                                a8 a8Var = zj6Var.x;
-                                int i3 = -zj6Var.G;
-                                zj6Var.G = i3;
-                                gl.A3(i3, a8Var, null);
-                                break;
-                            } else {
-                                a8 a8Var2 = zj6Var.x;
-                                boolean z2 = !z;
-                                zj6Var.E = z2;
-                                a8Var2.setChecked(z2);
-                                yj6 yj6Var2 = zj6Var.S;
-                                boolean z3 = zj6Var.E;
-                                boolean z4 = zj6Var.F;
-                                xda xdaVar = yj6Var2.f0;
-                                if (xdaVar != null && (y1bVar2 = xdaVar.s) != null) {
-                                    y1bVar2.n = z3;
-                                    y1bVar2.o = z4;
-                                    y1bVar2.d(true);
-                                }
-                                jca jcaVar = yj6Var2.h0;
-                                if (jcaVar != null && (y1bVar = jcaVar.s) != null) {
-                                    y1bVar.n = z3;
-                                    y1bVar.o = z4;
-                                    y1bVar.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 3:
-                            boolean z5 = zj6Var.F;
-                            if (z5 && !zj6Var.E) {
-                                pw0Var.a();
-                                a8 a8Var3 = zj6Var.y;
-                                int i4 = -zj6Var.G;
-                                zj6Var.G = i4;
-                                gl.A3(i4, a8Var3, null);
-                                break;
-                            } else {
-                                a8 a8Var4 = zj6Var.y;
-                                boolean z6 = !z5;
-                                zj6Var.F = z6;
-                                a8Var4.setChecked(z6);
-                                yj6 yj6Var3 = zj6Var.S;
-                                boolean z7 = zj6Var.E;
-                                boolean z8 = zj6Var.F;
-                                xda xdaVar2 = yj6Var3.f0;
-                                if (xdaVar2 != null && (y1bVar4 = xdaVar2.s) != null) {
-                                    y1bVar4.n = z7;
-                                    y1bVar4.o = z8;
-                                    y1bVar4.d(true);
-                                }
-                                jca jcaVar2 = yj6Var3.h0;
-                                if (jcaVar2 != null && (y1bVar3 = jcaVar2.s) != null) {
-                                    y1bVar3.n = z7;
-                                    y1bVar3.o = z8;
-                                    y1bVar3.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        default:
-                            zj6 zj6Var2 = this.b;
-                            vj6 vj6Var = zj6Var2.R;
-                            if (vj6Var != null) {
-                                vj6Var.run();
-                                zj6Var2.R = null;
-                            }
-                            m21.e();
-                            byte b5 = 0;
-                            boolean z9 = zj6Var2.S.getClosestTab() == 9;
-                            ArrayList arrayList = new ArrayList();
-                            if (zj6Var2.w != null) {
-                                i2 = 0;
-                                for (int i5 = 0; i5 < zj6Var2.w.size(); i5++) {
-                                    TL_stories.StoryItem storyItem = ((k27) zj6Var2.w.valueAt(i5)).l;
-                                    if (storyItem != null) {
-                                        arrayList.add(storyItem);
-                                        i2++;
-                                    }
-                                }
-                            } else {
-                                i2 = 0;
-                            }
-                            zj6Var2.S.E(false);
-                            if (z9) {
-                                zj6Var2.S.f1(8);
-                            }
-                            if (!arrayList.isEmpty()) {
-                                boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i6);
-                                    zArr[i6] = storyItem2.pinned;
-                                    storyItem2.pinned = z9;
-                                }
-                                zj6Var2.getMessagesController().M1().q0(zj6Var2.e, arrayList, false);
-                                boolean[] zArr2 = {false};
-                                zj6Var2.R = new vj6(zj6Var2, arrayList, z9, b5);
-                                e45 e45Var = new e45(zj6Var2, zArr2, arrayList, zArr, (byte) 22);
-                                (z9 ? u21.b0(zj6Var2).L(R.raw.contact_check, k96.G(i2, "StorySavedTitle", new Object[0]), k96.M0(2131744244, null), k96.M0(2131743648, null), e45Var).j() : u21.b0(zj6Var2).J(R.raw.chats_archived, k96.G(i2, "StoryArchived", new Object[0]), k96.M0(2131743648, null), 5000, false, e45Var).j()).v = new oh6(zj6Var2, zArr2, b42);
-                                break;
-                            }
-                            break;
-                    }
-                }
-            });
-        }
-        int i2 = this.a;
-        ox4[] ox4VarArr = this.L;
-        if (i2 == 1) {
-            ch6 ch6Var = new ch6(context, getResourceProvider());
-            this.K = ch6Var;
-            ch6Var.setClipChildren(false);
-            this.K.setPadding(gl.L(12.0f), gl.L(12.0f), gl.L(12.0f), gl.L(12.0f));
-            ox4VarArr[0] = ox4.c(context, getResourceProvider(), nx4.R, 2131746458);
-            ox4VarArr[1] = ox4.c(context, getResourceProvider(), nx4.S, 2131746434);
-            for (int i3 = 0; i3 < ox4VarArr.length; i3++) {
-                ox4VarArr[i3].setOnClickListener(new v0(this, i3, b2));
-                this.K.addView(ox4VarArr[i3]);
-                this.K.j(ox4VarArr[i3], true, false);
-            }
-            dg0Var = baseSimpleGlass;
-            il0 c = dg0Var.c.c(this.K, nod.g(getResourceProvider()), false);
-            ug8.r(c, gl.L(28.0f), 7.666f);
-            this.K.setBackground(c);
-            oc6Var.addView(this.K, nme.e(-2, 72, 81));
-            FrameLayout frameLayout = new FrameLayout(context);
-            this.N = frameLayout;
-            frameLayout.setPadding(gl.L(16.0f), gl.L(8.0f), gl.L(16.0f), gl.L(8.0f));
-            u41 u41Var = new u41(getResourceProvider(), context, true);
-            this.O = u41Var;
-            u41Var.i(k96.M0(2131745717, null), false, true);
-            this.O.setShowZero(true);
-            this.O.c(0, false);
-            this.O.setEnabled(false);
-            final byte b5 = 4;
-            this.O.setOnClickListener(new View.OnClickListener(this) { // from class: wj6
-                public final /* synthetic */ zj6 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    y1b y1bVar;
-                    y1b y1bVar2;
-                    y1b y1bVar3;
-                    y1b y1bVar4;
-                    int i22;
-                    byte b32 = b5;
-                    pw0 pw0Var = pw0.E;
-                    zj6 zj6Var = this.b;
-                    byte b42 = 1;
-                    switch (b32) {
-                        case 0:
-                            Boolean O1 = zj6Var.S.O1(null, null);
-                            if (O1 != null) {
-                                zj6Var.g0(true, O1.booleanValue());
-                                break;
-                            }
-                            break;
-                        case 1:
-                            Boolean P1 = zj6Var.S.P1(null, null);
-                            if (P1 != null) {
-                                zj6Var.g0(P1.booleanValue(), true);
-                                break;
-                            }
-                            break;
-                        case 2:
-                            boolean z = zj6Var.E;
-                            if (z && !zj6Var.F) {
-                                pw0Var.a();
-                                a8 a8Var = zj6Var.x;
-                                int i32 = -zj6Var.G;
-                                zj6Var.G = i32;
-                                gl.A3(i32, a8Var, null);
-                                break;
-                            } else {
-                                a8 a8Var2 = zj6Var.x;
-                                boolean z2 = !z;
-                                zj6Var.E = z2;
-                                a8Var2.setChecked(z2);
-                                yj6 yj6Var2 = zj6Var.S;
-                                boolean z3 = zj6Var.E;
-                                boolean z4 = zj6Var.F;
-                                xda xdaVar = yj6Var2.f0;
-                                if (xdaVar != null && (y1bVar2 = xdaVar.s) != null) {
-                                    y1bVar2.n = z3;
-                                    y1bVar2.o = z4;
-                                    y1bVar2.d(true);
-                                }
-                                jca jcaVar = yj6Var2.h0;
-                                if (jcaVar != null && (y1bVar = jcaVar.s) != null) {
-                                    y1bVar.n = z3;
-                                    y1bVar.o = z4;
-                                    y1bVar.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 3:
-                            boolean z5 = zj6Var.F;
-                            if (z5 && !zj6Var.E) {
-                                pw0Var.a();
-                                a8 a8Var3 = zj6Var.y;
-                                int i4 = -zj6Var.G;
-                                zj6Var.G = i4;
-                                gl.A3(i4, a8Var3, null);
-                                break;
-                            } else {
-                                a8 a8Var4 = zj6Var.y;
-                                boolean z6 = !z5;
-                                zj6Var.F = z6;
-                                a8Var4.setChecked(z6);
-                                yj6 yj6Var3 = zj6Var.S;
-                                boolean z7 = zj6Var.E;
-                                boolean z8 = zj6Var.F;
-                                xda xdaVar2 = yj6Var3.f0;
-                                if (xdaVar2 != null && (y1bVar4 = xdaVar2.s) != null) {
-                                    y1bVar4.n = z7;
-                                    y1bVar4.o = z8;
-                                    y1bVar4.d(true);
-                                }
-                                jca jcaVar2 = yj6Var3.h0;
-                                if (jcaVar2 != null && (y1bVar3 = jcaVar2.s) != null) {
-                                    y1bVar3.n = z7;
-                                    y1bVar3.o = z8;
-                                    y1bVar3.d(true);
-                                    break;
-                                }
-                            }
-                            break;
-                        default:
-                            zj6 zj6Var2 = this.b;
-                            vj6 vj6Var = zj6Var2.R;
-                            if (vj6Var != null) {
-                                vj6Var.run();
-                                zj6Var2.R = null;
-                            }
-                            m21.e();
-                            byte b52 = 0;
-                            boolean z9 = zj6Var2.S.getClosestTab() == 9;
-                            ArrayList arrayList = new ArrayList();
-                            if (zj6Var2.w != null) {
-                                i22 = 0;
-                                for (int i5 = 0; i5 < zj6Var2.w.size(); i5++) {
-                                    TL_stories.StoryItem storyItem = ((k27) zj6Var2.w.valueAt(i5)).l;
-                                    if (storyItem != null) {
-                                        arrayList.add(storyItem);
-                                        i22++;
-                                    }
-                                }
-                            } else {
-                                i22 = 0;
-                            }
-                            zj6Var2.S.E(false);
-                            if (z9) {
-                                zj6Var2.S.f1(8);
-                            }
-                            if (!arrayList.isEmpty()) {
-                                boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i6);
-                                    zArr[i6] = storyItem2.pinned;
-                                    storyItem2.pinned = z9;
-                                }
-                                zj6Var2.getMessagesController().M1().q0(zj6Var2.e, arrayList, false);
-                                boolean[] zArr2 = {false};
-                                zj6Var2.R = new vj6(zj6Var2, arrayList, z9, b52);
-                                e45 e45Var = new e45(zj6Var2, zArr2, arrayList, zArr, (byte) 22);
-                                (z9 ? u21.b0(zj6Var2).L(R.raw.contact_check, k96.G(i22, "StorySavedTitle", new Object[0]), k96.M0(2131744244, null), k96.M0(2131743648, null), e45Var).j() : u21.b0(zj6Var2).J(R.raw.chats_archived, k96.G(i22, "StoryArchived", new Object[0]), k96.M0(2131743648, null), 5000, false, e45Var).j()).v = new oh6(zj6Var2, zArr2, b42);
-                                break;
-                            }
-                            break;
-                    }
-                }
-            });
-            this.N.addView(this.O, nme.c(56.0f, -1));
-            this.N.setVisibility(4);
-            oc6Var.addView(this.N, nme.e(-1, 72, 80));
-            this.P = new fm0(0, new ry4((Object) this, (byte) 28), s33.h, 320L, false);
-            setBulletinDelegate(new s10(this, (byte) 12));
-        } else {
-            dg0Var = baseSimpleGlass;
-        }
-        View view = new View(context);
-        this.Q = view;
-        this.S.e(view);
-        View view2 = this.Q;
-        view2.setBackground(dg0Var.a(view2));
-        View view3 = new View(context);
-        this.navigationBarFadeView = view3;
-        view3.setBackground(dg0Var.b(view3));
-        View view4 = this.navigationBarFadeView;
-        ch6 ch6Var2 = this.K;
-        oc6Var.addView(view4, ch6Var2 != null ? oc6Var.indexOfChild(ch6Var2) : oc6Var.getChildCount(), nme.e(-1, 0, 80));
-        pha phaVar = this.simpleActionBar;
-        wjb resourceProvider = getResourceProvider();
-        dg0Var.m = oc6Var;
-        dg0Var.n = null;
-        dg0Var.g(oc6Var, phaVar, resourceProvider);
-        dg0Var.o = new cg0(this, oc6Var, (byte) 6);
-        this.S.setPagesGlassEngine(this.glassEngine);
-        this.simpleActionBar.setBackground(null);
-        f0(false);
-        if (this.a == 3 && (i = this.r) != -1) {
-            this.simpleActionBar.setSubtitle(k96.H(' ', "FoundStories", i));
-        }
-        a0();
-        e0();
-        if (this.a == 1) {
-            r13 = this.T != 9 ? (byte) 0 : (byte) 1;
-            ch6 ch6Var3 = this.K;
-            if (ch6Var3 != null && this.M != r13) {
-                this.M = r13;
-                ch6Var3.r(ox4VarArr[r13], false);
-            }
-        }
-        return oc6Var;
-    }
-
-    public final void d0(String str) {
-        this.simpleActionBar.setSubtitleAnimated(str);
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.D0 && ((Long) objArr[0]).longValue() == this.e) {
-            TLRPC.UserFull userFull = (TLRPC.UserFull) objArr[1];
-            this.d = userFull;
-            yj6 yj6Var = this.S;
-            if (yj6Var != null) {
-                yj6Var.setUserInfo(userFull);
-            }
-        }
-    }
-
-    public final void e0() {
-        int i;
-        yj6 yj6Var = this.S;
-        if (yj6Var == null || this.simpleActionBar == null) {
-            return;
-        }
-        int closestTab = yj6Var.getClosestTab();
-        if (this.a != 3 || closestTab == 8) {
-            int[] iArr = this.b.c;
-            boolean z = k96.a0;
-            if (closestTab == 8 || closestTab == 9) {
-                a8 a8Var = this.J;
-                if (a8Var != null) {
-                    a8Var.setEnabled(this.S.t());
-                    a8 a8Var2 = this.J;
-                    a8Var2.setAlpha(a8Var2.isEnabled() ? 1.0f : 0.5f);
-                }
-                a8 a8Var3 = this.I;
-                if (a8Var3 != null) {
-                    a8Var3.setEnabled(this.S.r());
-                    a8 a8Var4 = this.I;
-                    a8Var4.setAlpha(a8Var4.isEnabled() ? 1.0f : 0.5f);
-                }
-                int W = this.S.W(closestTab);
-                if (this.a == 3) {
-                    if (W > 0) {
-                        d0(k96.H(' ', "FoundStories", W));
-                    }
-                } else if (closestTab == 8) {
-                    d0(W > 0 ? k96.G(W, "ProfileMyStoriesCount", new Object[0]) : null);
-                } else {
-                    d0(W > 0 ? k96.G(W, "ProfileStoriesArchiveCount", new Object[0]) : null);
-                }
-                f0(true);
-                xha xhaVar = this.s;
-                if (xhaVar != null) {
-                    xhaVar.Y(W > 0, true);
-                }
-                u41 u41Var = this.O;
-                if (u41Var != null) {
-                    boolean z2 = !z && this.V == closestTab;
-                    if (closestTab == 8) {
-                        SparseArray sparseArray = this.w;
-                        u41Var.i(k96.G(sparseArray == null ? 0 : sparseArray.size(), "ArchiveStories", new Object[0]), z2, true);
-                    } else {
-                        u41Var.i(k96.M0(2131745717, null), z2, true);
-                    }
-                    this.V = closestTab;
-                }
-                a8 a8Var5 = this.H;
-                if (a8Var5 != null) {
-                    boolean z3 = W > 0;
-                    a8Var5.setEnabled(z3);
-                    this.H.setAlpha(z3 ? 1.0f : 0.5f);
-                    return;
-                }
-                return;
-            }
-            if (closestTab == 11) {
-                d0(k96.G(getMessagesController().D1().c(), "SavedDialogsTabCount", new Object[0]));
-                return;
-            }
-            if (closestTab >= 0) {
-                if (closestTab >= iArr.length || iArr[closestTab] >= 0) {
-                    if (closestTab == 0) {
-                        if (this.S.getPhotosVideosTypeFilter() == 1) {
-                            d0(k96.G(iArr[6], "Photos", new Object[0]));
-                            return;
-                        } else if (this.S.getPhotosVideosTypeFilter() == 2) {
-                            d0(k96.G(iArr[7], "Videos", new Object[0]));
-                            return;
-                        } else {
-                            d0(k96.G(iArr[0], "Media", new Object[0]));
-                            return;
-                        }
-                    }
-                    if (closestTab == 1) {
-                        d0(k96.G(iArr[1], "Files", new Object[0]));
-                        return;
-                    }
-                    if (closestTab == 2) {
-                        d0(k96.G(iArr[2], "Voice", new Object[0]));
-                        return;
-                    }
-                    if (closestTab == 3) {
-                        d0(k96.G(iArr[3], "Links", new Object[0]));
-                        return;
-                    }
-                    if (closestTab == 4) {
-                        d0(k96.G(iArr[4], "MusicFiles", new Object[0]));
-                        return;
-                    }
-                    if (closestTab == 5) {
-                        d0(k96.G(iArr[5], "GIFs", new Object[0]));
-                        return;
-                    }
-                    if (closestTab == 15 && (i = iArr[8]) >= 0) {
-                        d0(k96.G(i, "ProfilePollsCount", new Object[0]));
-                    } else if (closestTab == 10) {
-                        p97 J0 = na7.q1(this.currentAccount).J0(this.e);
-                        d0(k96.G(J0 == null ? 0 : J0.b.size() + J0.c, "Channels", new Object[0]));
-                    }
-                }
-            }
-        }
-    }
-
-    public final void f0(boolean z) {
-        String str;
-        int i = this.a;
-        boolean z2 = true;
         if (i == 3) {
-            str = this.h;
-        } else {
-            if (i == 2) {
-                str = k96.M0(2131746441, null);
-            } else if (i == 1) {
-                yj6 yj6Var = this.S;
-                if (yj6Var != null && yj6Var.getClosestTab() != 9) {
-                    z2 = false;
-                }
-                str = k96.M0(z2 ? 2131746441 : 2131746462, null);
-            } else {
-                long j = (this.f == 0 || this.e != getUserConfig().e()) ? this.e : this.f;
-                if (j == 2666000) {
-                    str = k96.M0(2131754249, null);
-                } else if (this.f != 0 && j == getUserConfig().e()) {
-                    str = k96.M0(2131748111, null);
-                } else if (cf3.B(j)) {
-                    TLRPC.EncryptedChat Y0 = getMessagesController().Y0(Integer.valueOf((int) (j & 4294967295L)));
-                    TLRPC.User V1 = Y0 != null ? getMessagesController().V1(Long.valueOf(Y0.user_id)) : null;
-                    if (V1 != null) {
-                        str = qu2.m(0, V1.first_name, V1.last_name);
-                    }
-                    str = null;
-                } else if (cf3.D(j)) {
-                    TLRPC.User V12 = getMessagesController().V1(Long.valueOf(j));
-                    if (V12 != null) {
-                        str = V12.self ? k96.M0(2131745709, null) : qu2.m(0, V12.first_name, V12.last_name);
-                    }
-                    str = null;
-                } else {
-                    TLRPC.Chat K0 = getMessagesController().K0(Long.valueOf(-j));
-                    if (K0 != null) {
-                        str = K0.title;
-                    }
-                    str = null;
-                }
-                if (TextUtils.isEmpty(str)) {
-                    str = k96.M0(2131745223, null);
-                }
-            }
+            return aob.w0(null, aob.ka, false);
         }
-        String str2 = str;
-        boolean z3 = z2;
-        if (TextUtils.equals(this.U, str2)) {
+        if (i != 1) {
+            return i == 2 ? aob.w0(null, aob.oa, false) : i == 4 ? aob.w0(null, aob.V8, false) : aob.w0(null, aob.Fi, false);
+        }
+        if (f > 0.5f) {
+            return vm2.f(1.0f - ((f - 0.5f) / 0.5f), aob.w0(null, aob.na, false), aob.w0(null, aob.oa, false));
+        }
+        return vm2.f(1.0f - (f / 0.5f), aob.w0(null, aob.oa, false), aob.w0(null, aob.ka, false));
+    }
+
+    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, int i) {
+        int i2;
+        String G;
+        int i3;
+        this.J = false;
+        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = this.n;
+        if (tL_chatInviteExported2 == null || tL_chatInviteExported == null || !tL_chatInviteExported2.link.equals(tL_chatInviteExported.link)) {
+            this.a = -1;
+            this.F = 1.0f;
+        }
+        this.n = tL_chatInviteExported;
+        this.r = i;
+        if (tL_chatInviteExported == null) {
             return;
         }
-        this.U = str2;
-        pha phaVar = this.simpleActionBar;
-        if (!z) {
-            phaVar.setTitle(str2);
+        int L = hl.L(30.0f);
+        TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = tL_chatInviteExported.subscription_pricing;
+        ImageView imageView = this.y;
+        LinearLayout linearLayout = this.e;
+        if (tL_starsSubscriptionPricing != null) {
+            linearLayout.setVisibility(0);
+            imageView.setVisibility(8);
+            SpannableStringBuilder b1 = nza.b1(false, "⭐️ ".concat(ob6.E(tL_chatInviteExported.subscription_pricing.amount, ',')), 0.75f, null);
+            TextView textView = this.f;
+            textView.setText(b1);
+            int i4 = tL_chatInviteExported.subscription_pricing.period;
+            TextView textView2 = this.h;
+            if (i4 == 2592000) {
+                textView2.setText(ob6.M0(2131744713, null));
+            } else if (i4 == 300) {
+                textView2.setText("per 5 minutes");
+            } else if (i4 == 60) {
+                textView2.setText("each minute");
+            }
+            L = hl.L(28.0f) + ((int) Math.max(kg5.h(textView.getText(), textView.getPaint()), kg5.h(textView2.getText(), textView2.getPaint())));
         } else {
-            phaVar.getClass();
-            phaVar.I(str2, z3, 320L, s33.h);
+            linearLayout.setVisibility(8);
+            imageView.setVisibility(8);
         }
-    }
-
-    public final void g0(boolean z, boolean z2) {
-        this.J.setEnabled(z);
-        this.J.animate().alpha(z ? 1.0f : 0.5f).start();
-        this.I.setEnabled(z2);
-        this.I.animate().alpha(z2 ? 1.0f : 0.5f).start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final int getNavigationBarColor() {
-        int navigationBarColor = super.getNavigationBarColor();
-        return (getLastStoryViewer() == null || !getLastStoryViewer().z()) ? navigationBarColor : getLastStoryViewer().e(navigationBarColor);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.addAll(this.S.getThemeDescriptions());
-        return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        if (!this.S.u0()) {
-            return false;
-        }
-        yj6 yj6Var = this.S;
-        return yj6Var.getSelectedTab() == yj6Var.L0.getFirstTabId();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onBackPressed(boolean z) {
-        if (!hasShownSheet()) {
-            yj6 yj6Var = this.S;
-            if (!yj6Var.F1) {
-                return super.onBackPressed(z);
-            }
-            if (z) {
-                yj6Var.E(false);
-            }
-        } else if (z) {
-            closeSheet();
-            return false;
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        this.a = getArguments().getInt(TeXSymbolParser.TYPE_ATTR, 0);
-        this.e = getArguments().getLong("dialog_id");
-        this.f = getArguments().getLong("topic_id", 0L);
-        this.h = getArguments().getString("hashtag", "");
-        this.n = getArguments().getString("username", "");
-        this.r = getArguments().getInt("storiesCount", -1);
-        int i = this.a;
-        this.T = getArguments().getInt("start_from", i == 2 ? 9 : i == 1 ? 8 : 0);
-        getNotificationCenter().b(this, kk7.D0);
-        getNotificationCenter().b(this, kk7.h5);
-        getNotificationCenter().b(this, kk7.a3);
-        if (cf3.D(this.e) && this.f == 0) {
-            TLRPC.User V1 = getMessagesController().V1(Long.valueOf(this.e));
-            if (l7c.D(V1)) {
-                getMessagesController().i3(this.classGuid, V1, false);
-                this.d = getMessagesController().W1(this.e);
+        ((ViewGroup.MarginLayoutParams) this.b.getLayoutParams()).rightMargin = L;
+        boolean isEmpty = TextUtils.isEmpty(tL_chatInviteExported.title);
+        ck6 ck6Var = this.L;
+        TextView textView3 = this.c;
+        if (!isEmpty) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_chatInviteExported.title);
+            pv3.l(spannableStringBuilder, textView3.getPaint().getFontMetricsInt(), false);
+            textView3.setText(spannableStringBuilder);
+        } else if (tL_chatInviteExported.link.startsWith("https://t.me/+")) {
+            StringBuilder sb = new StringBuilder();
+            i2 = ((e) ck6Var).currentAccount;
+            sb.append(uc7.s1(i2).N2);
+            sb.append("/");
+            sb.append(tL_chatInviteExported.link.substring(14));
+            textView3.setText(sb.toString());
+        } else {
+            boolean startsWith = tL_chatInviteExported.link.startsWith("https://t.me/joinchat/");
+            String str = tL_chatInviteExported.link;
+            if (startsWith) {
+                textView3.setText(str.substring(22));
+            } else {
+                boolean startsWith2 = str.startsWith("https://");
+                String str2 = tL_chatInviteExported.link;
+                if (startsWith2) {
+                    textView3.setText(str2.substring(8));
+                } else {
+                    textView3.setText(str2);
+                }
             }
         }
-        ffa ffaVar = this.b;
-        if (ffaVar == null) {
-            ffaVar = new ffa(this);
-            this.b = ffaVar;
+        int i5 = tL_chatInviteExported.usage;
+        if (i5 == 0 && tL_chatInviteExported.usage_limit == 0 && tL_chatInviteExported.requested == 0) {
+            G = ob6.M0(tL_chatInviteExported.subscription_pricing != null ? 2131747916 : 2131747918, null);
+        } else {
+            int i6 = tL_chatInviteExported.usage_limit;
+            if (i6 > 0 && i5 == 0 && !tL_chatInviteExported.expired && !tL_chatInviteExported.revoked) {
+                G = ob6.G(i6, "CanJoin", new Object[0]);
+            } else if (i6 > 0 && tL_chatInviteExported.expired && tL_chatInviteExported.revoked) {
+                G = ob6.G(i5, "PeopleJoined", new Object[0]) + ", " + ob6.G(tL_chatInviteExported.usage_limit - tL_chatInviteExported.usage, "PeopleJoinedRemaining", new Object[0]);
+            } else {
+                G = i5 > 0 ? ob6.G(i5, "PeopleJoined", new Object[0]) : "";
+                if (tL_chatInviteExported.requested > 0) {
+                    if (tL_chatInviteExported.usage > 0) {
+                        G = G.concat(", ");
+                    }
+                    G = G.concat(ob6.G(tL_chatInviteExported.requested, "JoinRequests", new Object[0]));
+                }
+            }
         }
-        ffaVar.y.add(this);
-        return super.onFragmentCreate();
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(G);
+        if (tL_chatInviteExported.permanent && !tL_chatInviteExported.revoked) {
+            np3 np3Var = new np3();
+            np3Var.b = hl.L(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(np3Var, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            spannableStringBuilder2.append((CharSequence) ob6.M0(2131747048, null));
+        } else if (tL_chatInviteExported.expired || tL_chatInviteExported.revoked) {
+            if (tL_chatInviteExported.revoked && tL_chatInviteExported.usage == 0) {
+                String M0 = ob6.M0(tL_chatInviteExported.subscription_pricing != null ? 2131747916 : 2131747918, null);
+                spannableStringBuilder2.clear();
+                spannableStringBuilder2.append((CharSequence) M0);
+            }
+            np3 np3Var2 = new np3();
+            np3Var2.b = hl.L(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(np3Var2, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            boolean z = tL_chatInviteExported.revoked;
+            if (z || (i3 = tL_chatInviteExported.usage_limit) <= 0 || tL_chatInviteExported.usage < i3) {
+                spannableStringBuilder2.append((CharSequence) ob6.M0(z ? 2131745742 : 2131750841, null));
+            } else {
+                spannableStringBuilder2.append((CharSequence) ob6.M0(2131748654, null));
+            }
+        } else if (tL_chatInviteExported.expire_date > 0) {
+            np3 np3Var3 = new np3();
+            np3Var3.b = hl.L(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(np3Var3, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            long currentTimeMillis = (tL_chatInviteExported.expire_date * 1000) - ((ck6Var.o0 * 1000) + System.currentTimeMillis());
+            if (currentTimeMillis < 0) {
+                currentTimeMillis = 0;
+            }
+            if (currentTimeMillis > 86400000) {
+                spannableStringBuilder2.append((CharSequence) ob6.G((int) (currentTimeMillis / 86400000), "DaysLeft", new Object[0]));
+            } else {
+                long j = currentTimeMillis / 1000;
+                int i7 = (int) (j % 60);
+                long j2 = j / 60;
+                Locale locale = Locale.ENGLISH;
+                spannableStringBuilder2.append((CharSequence) String.format(locale, "%02d", Integer.valueOf((int) (j2 / 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf((int) (j2 % 60)))).append((CharSequence) String.format(locale, ":%02d", Integer.valueOf(i7)));
+                this.J = true;
+            }
+        }
+        if (tL_chatInviteExported.request_needed) {
+            np3 np3Var4 = new np3();
+            np3Var4.b = hl.L(1.5f);
+            spannableStringBuilder2.append((CharSequence) "  .  ").setSpan(np3Var4, spannableStringBuilder2.length() - 3, spannableStringBuilder2.length() - 2, 0);
+            spannableStringBuilder2.append((CharSequence) ob6.M0(2131754202, null));
+        }
+        this.d.setText(spannableStringBuilder2);
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        getNotificationCenter().n(this, kk7.D0);
-        getNotificationCenter().n(this, kk7.h5);
-        getNotificationCenter().n(this, kk7.a3);
-        vj6 vj6Var = this.R;
-        if (vj6Var != null) {
-            this.R = null;
-            gl.c3(vj6Var);
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x010b, code lost:
+    
+        if (r5.revoked == false) goto L60;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0229  */
+    /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01e0  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float f;
+        float f2;
+        int i;
+        float f3;
+        float f4;
+        float f5;
+        TLRPC.TL_chatInviteExported tL_chatInviteExported;
+        boolean z;
+        int i2;
+        Canvas canvas2 = canvas;
+        if (this.n == null) {
+            return;
+        }
+        int L = hl.L(32.0f);
+        int measuredHeight = getMeasuredHeight() / 2;
+        TLRPC.TL_chatInviteExported tL_chatInviteExported2 = this.n;
+        boolean z2 = tL_chatInviteExported2.expired;
+        ck6 ck6Var = this.L;
+        if (z2 || tL_chatInviteExported2.revoked) {
+            f = 32.0f;
+            f2 = 1.0f;
+            i = tL_chatInviteExported2.revoked ? 4 : 3;
+            f3 = 0.0f;
+            f4 = 1.0f;
+        } else {
+            if (tL_chatInviteExported2.expire_date <= 0) {
+                f = 32.0f;
+                if (tL_chatInviteExported2.usage_limit > 0) {
+                    f4 = 1.0f;
+                    f2 = 1.0f;
+                } else {
+                    i = 0;
+                    f3 = 0.0f;
+                    f4 = 1.0f;
+                    f2 = 1.0f;
+                }
+            } else {
+                long currentTimeMillis = (ck6Var.o0 * 1000) + System.currentTimeMillis();
+                TLRPC.TL_chatInviteExported tL_chatInviteExported3 = this.n;
+                f = 32.0f;
+                long j = tL_chatInviteExported3.expire_date * 1000;
+                int i3 = tL_chatInviteExported3.start_date;
+                if (i3 <= 0) {
+                    i3 = tL_chatInviteExported3.date;
+                }
+                f2 = 1.0f;
+                long j2 = i3 * 1000;
+                f4 = 1.0f - ((currentTimeMillis - j2) / (j - j2));
+                tL_chatInviteExported2 = tL_chatInviteExported3;
+            }
+            int i4 = tL_chatInviteExported2.usage_limit;
+            f3 = Math.min(f4, i4 > 0 ? (i4 - tL_chatInviteExported2.usage) / i4 : f2);
+            if (f3 <= 0.0f) {
+                this.n.expired = true;
+                hl.V3(ck6Var.b);
+                i = 3;
+            } else {
+                i = 1;
+            }
+        }
+        int i5 = this.a;
+        if (i != i5 && i5 >= 0) {
+            this.E = i5;
+            this.F = 0.0f;
+            if ((i5 != 2 && i5 != 1) || i == 2 || i == 1) {
+                this.H = false;
+            } else {
+                this.H = true;
+            }
+        }
+        this.a = i;
+        float f6 = this.F;
+        if (f6 != f2) {
+            float f7 = f6 + 0.064f;
+            this.F = f7;
+            if (f7 >= f2) {
+                f5 = f2;
+                this.F = f5;
+                this.H = false;
+            } else {
+                f5 = f2;
+                invalidate();
+            }
+        } else {
+            f5 = f2;
+        }
+        int f8 = this.F != f5 ? vm2.f(this.F, a(f3, this.E), a(f3, i)) : a(f3, i);
+        Paint paint = this.s;
+        paint.setColor(f8);
+        canvas2.drawCircle(L, measuredHeight, hl.L(f) / 2.0f, paint);
+        if (!this.H) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported4 = this.n;
+            if (!tL_chatInviteExported4.expired) {
+                if (tL_chatInviteExported4.expire_date > 0) {
+                }
+            }
+            tL_chatInviteExported = this.n;
+            if (tL_chatInviteExported.subscription_pricing == null) {
+                ck6Var.b0.setBounds(L - hl.L(12.0f), measuredHeight - hl.L(12.0f), hl.L(12.0f) + L, hl.L(12.0f) + measuredHeight);
+                ck6Var.b0.draw(canvas2);
+            } else if (tL_chatInviteExported.revoked) {
+                ck6Var.a0.setBounds(L - hl.L(12.0f), measuredHeight - hl.L(12.0f), hl.L(12.0f) + L, hl.L(12.0f) + measuredHeight);
+                ck6Var.a0.draw(canvas2);
+            } else {
+                ck6Var.Z.setBounds(L - hl.L(12.0f), measuredHeight - hl.L(12.0f), hl.L(12.0f) + L, hl.L(12.0f) + measuredHeight);
+                ck6Var.Z.draw(canvas2);
+            }
+            if (this.I) {
+                return;
+            }
+            canvas2.drawLine(hl.L(70.0f), getMeasuredHeight() - 1, hl.L(23.0f) + getMeasuredWidth(), getMeasuredHeight(), aob.j0);
+            return;
+        }
+        f4 = this.G;
+        float f9 = f4;
+        Paint paint2 = this.w;
+        paint2.setColor(f8);
+        float L2 = L - hl.L(20.0f);
+        float L3 = measuredHeight - hl.L(20.0f);
+        float L4 = hl.L(20.0f) + L;
+        float L5 = hl.L(20.0f) + measuredHeight;
+        RectF rectF = this.x;
+        rectF.set(L2, L3, L4, L5);
+        if (this.F == 1.0f || (((i2 = this.E) == 2 || i2 == 1) && !this.H)) {
+            float f10 = (-f9) * 360.0f;
+            canvas.drawArc(rectF, -90.0f, f10, false, paint2);
+            this.K.a(f10, 1.0f, canvas, paint2, rectF);
+            canvas2 = canvas;
+        } else {
+            canvas2.save();
+            boolean z3 = this.H;
+            float f11 = this.F;
+            if (z3) {
+                f11 = 1.0f - f11;
+            }
+            float f12 = (float) ((0.3f * r10) + 0.7d);
+            canvas2.scale(f12, f12, rectF.centerX(), rectF.centerY());
+            float f13 = (-f9) * 360.0f;
+            canvas2.drawArc(rectF, -90.0f, f13, false, paint2);
+            this.K.a(f13, f11, canvas, paint2, rectF);
+            canvas.restore();
+            canvas2 = canvas;
+        }
+        z = ((e) ck6Var).isPaused;
+        if (!z) {
+            invalidate();
+        }
+        this.G = f9;
+        tL_chatInviteExported = this.n;
+        if (tL_chatInviteExported.subscription_pricing == null) {
+        }
+        if (this.I) {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onInsets(int i, int i2, int i3, int i4) {
-        a0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        return true;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(60.0f), TLObject.FLAG_30));
+        this.w.setStrokeWidth(hl.L(2.0f));
     }
 }

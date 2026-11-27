@@ -1,118 +1,220 @@
 // default package
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Timer;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class bw3 extends yv3 {
-    public b09 i;
-    public b09 j;
-    public int k;
-    public final lm l;
-    public Timer m;
-    public final b6b n;
-    public final ArrayList o;
-    public final /* synthetic */ cw3 p;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class bw3 extends fr3 {
+    public int N;
+    public int O;
+    public ArrayList P;
+    public final ArrayList Q = new ArrayList();
+    public final boolean R = i86.e(8200);
+    public final /* synthetic */ dw3 S;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bw3(cw3 cw3Var) {
-        super(cw3Var);
-        ArrayList arrayList;
-        this.p = cw3Var;
-        this.i = new b09(cw3Var);
-        this.j = new b09(cw3Var);
-        this.l = new lm(cw3Var);
-        this.n = new b6b(cw3Var);
-        this.o = new ArrayList();
-        this.a = (byte) 3;
-        this.b = gl.L(44.0f);
-        this.c = gl.L(36.0f);
-        ew3 ew3Var = cw3Var.f;
-        int i = ew3.C1;
-        ArrayList arrayList2 = hq6.d0(ew3Var.a).h;
-        int i2 = 0;
-        while (true) {
-            int min = Math.min(arrayList2.size(), 8);
-            arrayList = this.o;
-            if (i2 >= min) {
-                break;
+    public bw3(dw3 dw3Var) {
+        this.S = dw3Var;
+    }
+
+    public static void m(Canvas canvas, wl wlVar, cw3 cw3Var, float f) {
+        if (wlVar != null) {
+            wlVar.setAlpha((int) (f * 255.0f));
+            wlVar.draw(canvas);
+        } else if (cw3Var.f != null) {
+            canvas.save();
+            ImageReceiver imageReceiver = cw3Var.f;
+            canvas.clipRect(imageReceiver.L0, imageReceiver.M0, imageReceiver.w(), cw3Var.f.x());
+            cw3Var.f.setAlpha(f);
+            cw3Var.f.h(canvas, null);
+            canvas.restore();
+        }
+    }
+
+    @Override // fr3
+    public final void a(Canvas canvas, long j, int i, int i2, float f) {
+        if (this.P == null) {
+            return;
+        }
+        boolean z = true;
+        boolean z2 = this.S.d0() || this.P.size() <= 4 || !this.R;
+        if (!z2) {
+            for (int i3 = 0; i3 < this.P.size(); i3++) {
+                if (((cw3) this.P.get(i3)).getScale() != 1.0f) {
+                    break;
+                }
             }
-            arrayList.add(h19.c((TLRPC.TL_availableReaction) arrayList2.get(i2)));
-            i2++;
         }
-        Collections.sort(arrayList, new mz2((byte) 15));
-        if (!this.o.isEmpty()) {
-            this.i.e((h19) this.o.get(this.k));
+        z = z2;
+        if (!z) {
+            super.a(canvas, j, i, i2, f);
+            return;
         }
-        this.l.e(true, 1.0f);
+        i(System.currentTimeMillis());
+        d(canvas, f);
+        k();
     }
 
-    @Override // yv3
-    public final void a(Canvas canvas, float f, float f2) {
-        float L = f2 - gl.L(4.0f);
-        float f3 = (int) f;
-        float f4 = (int) L;
-        float f5 = this.b;
-        float f6 = (int) (f + f5);
-        float f7 = (int) (L + f5);
-        RectF rectF = this.f;
-        rectF.set(f3, f4, f6, f7);
-        float a = this.g.a(0.05f);
-        canvas.save();
-        canvas.scale(a, a, rectF.centerX(), rectF.centerY());
-        int i = (int) rectF.left;
-        int i2 = (int) rectF.top;
-        int i3 = (int) rectF.right;
-        int i4 = (int) rectF.bottom;
-        b6b b6bVar = this.n;
-        b6bVar.setBounds(i, i2, i3, i4);
-        b6bVar.draw(canvas);
-        float L2 = gl.L(30.0f);
-        Rect rect = gl.Q;
-        float f8 = L2 / 2.0f;
-        rect.set((int) (rectF.centerX() - f8), (int) (rectF.centerY() - f8), (int) (rectF.centerX() + f8), (int) (rectF.centerY() + f8));
-        float e = this.l.e(false, 1.0f);
-        this.j.c(rect);
-        this.i.c(rect);
-        if (e == 1.0f) {
-            this.i.a(canvas);
-        } else {
-            canvas.save();
-            float f9 = 1.0f - e;
-            canvas.scale(f9, f9, rectF.centerX(), rectF.top);
-            b09 b09Var = this.j;
-            b09Var.h = f9;
-            b09Var.a(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.scale(e, e, rectF.centerX(), rectF.bottom);
-            b09 b09Var2 = this.i;
-            b09Var2.h = e;
-            b09Var2.a(canvas);
-            canvas.restore();
+    @Override // fr3
+    public final void c(Canvas canvas) {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.Q;
+            if (i >= arrayList.size()) {
+                return;
+            }
+            cw3 cw3Var = (cw3) arrayList.get(i);
+            cw3Var.getClass();
+            wl wlVar = cw3Var.d;
+            if (wlVar != null) {
+                wlVar.setColorFilter(this.S.p3);
+            }
+            cw3Var.r.h(canvas, cw3Var.n[this.L]);
+            i++;
         }
-        canvas.restore();
     }
 
-    @Override // yv3
-    public final void b(boolean z) {
-        this.i.b(z);
-        this.j.b(z);
-        Timer timer = this.m;
-        if (timer != null) {
-            timer.cancel();
-            this.m = null;
+    @Override // fr3
+    public final void d(Canvas canvas, float f) {
+        wl wlVar;
+        if (this.P != null) {
+            canvas.save();
+            canvas.translate(-this.O, 0.0f);
+            for (int i = 0; i < this.P.size(); i++) {
+                cw3 cw3Var = (cw3) this.P.get(i);
+                cw3Var.getClass();
+                float scale = cw3Var.getScale();
+                float alpha = cw3Var.getAlpha() * f;
+                Rect rect = hl.Q;
+                rect.set(cw3Var.getPaddingLeft() + ((int) cw3Var.getX()), cw3Var.getPaddingTop(), (cw3Var.getWidth() + ((int) cw3Var.getX())) - cw3Var.getPaddingRight(), cw3Var.getHeight() - cw3Var.getPaddingBottom());
+                wl wlVar2 = cw3Var.d;
+                if (wlVar2 != null) {
+                    wlVar2.setBounds(rect);
+                }
+                ImageReceiver imageReceiver = cw3Var.f;
+                if (imageReceiver != null) {
+                    imageReceiver.j0(rect);
+                }
+                PorterDuffColorFilter porterDuffColorFilter = this.S.p3;
+                if (porterDuffColorFilter != null && (wlVar = cw3Var.d) != null) {
+                    wlVar.setColorFilter(porterDuffColorFilter);
+                }
+                if (scale != 1.0f) {
+                    canvas.save();
+                    canvas.scale(scale, scale, rect.centerX(), rect.centerY());
+                    m(canvas, wlVar2, cw3Var, alpha);
+                    canvas.restore();
+                } else {
+                    m(canvas, wlVar2, cw3Var, alpha);
+                }
+            }
+            canvas.restore();
         }
-        if (z) {
-            Timer timer2 = new Timer();
-            this.m = timer2;
-            timer2.schedule(new aw3(this, (byte) 0), 2000L, 2000L);
+    }
+
+    @Override // fr3
+    public final void g() {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.Q;
+            if (i >= arrayList.size()) {
+                this.S.invalidate();
+                return;
+            }
+            ln5 ln5Var = ((cw3) arrayList.get(i)).n[this.L];
+            if (ln5Var != null) {
+                ln5Var.a();
+            }
+            i++;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00f7  */
+    @Override // fr3
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void i(long j) {
+        float intrinsicWidth;
+        float width;
+        int height;
+        float f;
+        int i;
+        ArrayList arrayList = this.Q;
+        arrayList.clear();
+        for (int i2 = 0; i2 < this.P.size(); i2++) {
+            cw3 cw3Var = (cw3) this.P.get(i2);
+            cw3Var.getClass();
+            ln5[] ln5VarArr = cw3Var.n;
+            wl wlVar = cw3Var.d;
+            ImageReceiver imageReceiver = wlVar != null ? wlVar.k : cw3Var.f;
+            if (imageReceiver != null) {
+                imageReceiver.setAlpha(cw3Var.getAlpha());
+                wl wlVar2 = cw3Var.d;
+                if (wlVar2 != null) {
+                    wlVar2.setColorFilter(this.S.p3);
+                }
+                int i3 = this.L;
+                ln5 Q = imageReceiver.Q(ln5VarArr[i3], i3);
+                ln5VarArr[i3] = Q;
+                Q.c = j;
+                cw3Var.r = imageReceiver;
+                if (imageReceiver.y() != null) {
+                    cw3Var.r.y().Q(j);
+                }
+                if (cw3Var.r.m() != null) {
+                    cw3Var.r.m().D(j);
+                }
+                Rect rect = hl.Q;
+                rect.set(cw3Var.getPaddingLeft(), cw3Var.getPaddingTop(), cw3Var.getWidth() - cw3Var.getPaddingRight(), cw3Var.getHeight() - cw3Var.getPaddingBottom());
+                b29 y = imageReceiver.y();
+                if (y == null || (i = y.c) == 0) {
+                    lm m = imageReceiver.m();
+                    if (m == null || m.getIntrinsicHeight() == 0) {
+                        Bitmap n = imageReceiver.n();
+                        if (n != null) {
+                            width = n.getWidth();
+                            height = n.getHeight();
+                        } else {
+                            Drawable drawable = imageReceiver.n0;
+                            intrinsicWidth = (drawable == null || drawable.getIntrinsicHeight() == 0) ? 1.0f : drawable.getIntrinsicWidth() / drawable.getIntrinsicHeight();
+                            if (intrinsicWidth >= 1.0f) {
+                                float height2 = (rect.height() * intrinsicWidth) / 2.0f;
+                                int centerX = (int) (rect.centerX() - height2);
+                                rect.left = centerX;
+                                rect.right = (int) (rect.centerX() + height2);
+                            } else if (intrinsicWidth > 1.0f) {
+                                float width2 = (rect.width() / intrinsicWidth) / 2.0f;
+                                int centerY = (int) (rect.centerY() - width2);
+                                rect.top = centerY;
+                                rect.bottom = (int) (rect.centerY() + width2);
+                            }
+                            rect.offset((cw3Var.getLeft() + ((int) cw3Var.getTranslationX())) - this.O, 0);
+                            ln5VarArr[i3].b(rect);
+                            arrayList.add(cw3Var);
+                        }
+                    } else {
+                        width = m.getIntrinsicWidth();
+                        height = m.getIntrinsicHeight();
+                    }
+                    f = height;
+                } else {
+                    width = y.b;
+                    f = i;
+                }
+                intrinsicWidth = width / f;
+                if (intrinsicWidth >= 1.0f) {
+                }
+                rect.offset((cw3Var.getLeft() + ((int) cw3Var.getTranslationX())) - this.O, 0);
+                ln5VarArr[i3].b(rect);
+                arrayList.add(cw3Var);
+            }
         }
     }
 }

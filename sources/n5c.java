@@ -1,182 +1,215 @@
 // default package
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.os.Bundle;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.GradientDrawable;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Wallet.c;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class n5c extends d {
-    public va a;
-    public g74 b;
-    public int c;
-    public int d;
+public final class n5c extends wma {
+    public final Paint g0;
+    public boolean h0;
+    public boolean i0;
+    public boolean j0;
+    public ValueAnimator k0;
+    public float l0;
+    public final float[] m0;
+    public boolean n0;
+    public final /* synthetic */ o5c o0;
 
-    public n5c() {
-        super(null);
-        this.c = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n5c(o5c o5cVar, Context context) {
+        super(context, null);
+        this.o0 = o5cVar;
+        this.g0 = new Paint(1);
+        this.h0 = false;
+        this.i0 = false;
+        this.j0 = false;
+        this.l0 = 0.0f;
+        this.m0 = new float[8];
+        setWillNotDraw(false);
+        int i = o5cVar.u0;
+        setPadding(i, 0, i, 0);
+        setDelegate(new m5c(this));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0076, code lost:
-    
-        if (r0.f(r10.public_key) != false) goto L26;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0024, code lost:
-    
-        if (r8.f() != false) goto L12;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x001e, code lost:
-    
-        if (r0.f(r10.public_key) == false) goto L10;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void Y(ArrayList arrayList, l5c l5cVar) {
-        List<x05> list;
-        c C = c.C(this.currentAccount);
-        TL_wallet.WalletState walletState = C.e;
-        boolean z = true;
-        if (walletState instanceof TL_wallet.TL_walletState) {
-            TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) walletState;
-            if (!tL_walletState.can_export_phrase) {
-                g15 g15Var = C.c;
-                if (g15Var != null) {
-                }
+    public final float X() {
+        o5c o5cVar = this.o0;
+        return Math.min(1.0f, Math.max(0.0f, o5cVar.o1 / (o5cVar.l1 * 2.0f)));
+    }
+
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        o5c o5cVar = this.o0;
+        d6c d6cVar = o5cVar.n1;
+        int i = o5cVar.l1;
+        GradientDrawable gradientDrawable = o5cVar.m1;
+        float X = X();
+        boolean z = X == 0.0f && !o5cVar.J;
+        if (this.j0 != z) {
+            ValueAnimator valueAnimator = this.k0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
-            arrayList.add(c4c.u(k96.M0(2131742771, null)));
-            c4c e = c4c.e(1, k96.M0(2131742773, null));
-            e.r = true;
-            arrayList.add(e);
-            arrayList.add(c4c.C(k96.M0(2131742768, null)));
-            TL_wallet.WalletState walletState2 = C.e;
-            if (!(!(walletState2 instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState2).backup_enabled)) {
-                if (walletState2 instanceof TL_wallet.TL_walletState) {
-                    TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) walletState2;
-                    if (tL_walletState2.can_enable_backup) {
-                        g15 g15Var2 = C.c;
-                        if (g15Var2 != null) {
-                        }
-                    }
-                }
-                c4c e2 = c4c.e(4, k96.M0(2131742897, null));
-                e2.s = true;
-                arrayList.add(e2);
-                list = C.K;
-                if (list.isEmpty()) {
-                    for (x05 x05Var : list) {
-                        if (x05Var.e) {
-                            boolean z2 = w01.a;
-                        } else {
-                            if (z) {
-                                arrayList.add(c4c.C(null));
-                                arrayList.add(c4c.u(k96.M0(2131742786, null)));
-                                z = false;
-                            }
-                            String str = x05Var.a;
-                            long j = x05Var.c;
-                            int i = x05Var.b;
-                            boolean z3 = x05Var.e;
-                            int i2 = roc.b;
-                            c4c K = c4c.K(roc.class);
-                            K.m = str;
-                            K.C = j;
-                            K.A = i;
-                            K.r = z3;
-                            arrayList.add(K);
-                        }
-                    }
-                    if (z) {
-                        return;
-                    }
-                    arrayList.add(c4c.C(k96.M0(2131742785, null)));
-                    return;
-                }
-                return;
-            }
-            oo1.o(2131742883, null, arrayList);
-            TL_wallet.WalletState walletState3 = C.e;
-            if (!(walletState3 instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState3).backup_enabled) {
-                c4c e3 = c4c.e(3, k96.M0(2131742892, null));
-                e3.s = true;
-                arrayList.add(e3);
-                arrayList.add(c4c.C(k96.M0(2131742944, null)));
+            this.j0 = z;
+            ValueAnimator valueAnimator2 = this.k0;
+            float f = this.l0;
+            if (valueAnimator2 == null) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f, z ? 1.0f : 0.0f);
+                this.k0 = ofFloat;
+                ofFloat.addUpdateListener(new pzb(this, (byte) 4));
+                this.k0.setDuration(200L);
             } else {
-                c4c e4 = c4c.e(2, k96.M0(2131742884, null));
-                e4.r = true;
-                arrayList.add(e4);
-                arrayList.add(c4c.C(k96.M0(2131742947, null)));
+                valueAnimator2.setFloatValues(f, z ? 1.0f : 0.0f);
             }
-            c4c e22 = c4c.e(4, k96.M0(2131742897, null));
-            e22.s = true;
-            arrayList.add(e22);
-            list = C.K;
-            if (list.isEmpty()) {
+            this.k0.start();
+        }
+        boolean z2 = this.l0 > 0.5f;
+        if (this.n0 != z2) {
+            this.n0 = z2;
+            boolean z3 = hl.B(aob.v0(aob.h5, o5cVar.J0)) > 0.721f;
+            boolean z4 = hl.B(aob.v(aob.v0(aob.s8, o5cVar.J0), 855638016)) > 0.721f;
+            if (!z2) {
+                z3 = z4;
+            }
+            hl.n3(o5cVar.getWindow(), z3);
+        }
+        if (this.l0 > 0.0f) {
+            int v0 = aob.v0(aob.h5, o5cVar.J0);
+            Paint paint = this.g0;
+            paint.setColor(v0);
+            float max = (int) Math.max(0.0f, d6cVar.getTranslationY() + (hl.m - i) + ((1.0f - X()) * i) + o5cVar.o1 + hl.L(24.0f));
+            canvas2 = canvas;
+            canvas2.drawRect(o5cVar.u0, hl.U1(this.l0, r1, -hl.m), getMeasuredWidth() - o5cVar.u0, max, paint);
+        } else {
+            canvas2 = canvas;
+        }
+        super.dispatchDraw(canvas);
+        canvas2.save();
+        canvas2.translate(0.0f, (d6cVar.getTranslationY() + hl.m) - i);
+        int L = hl.L(36.0f);
+        int L2 = hl.L(4.0f);
+        int i2 = (int) ((1.0f - X) * L2 * 2.0f);
+        gradientDrawable.setCornerRadius(hl.L(2.0f));
+        gradientDrawable.setColor(vm2.o(aob.v0(aob.zj, o5cVar.J0), (int) (Color.alpha(r5) * X)));
+        gradientDrawable.setBounds((getWidth() - L) / 2, uh9.w(10.0f, o5cVar.o1, i2), (getWidth() + L) / 2, hl.L(10.0f) + o5cVar.o1 + i2 + L2);
+        gradientDrawable.draw(canvas2);
+        canvas2.restore();
+    }
+
+    @Override // android.view.View
+    public final float getTranslationY() {
+        return this.o0.n1.getTranslationY();
+    }
+
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        hl.d3(new azb(this, (byte) 5), 200L);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        o5c o5cVar = this.o0;
+        GradientDrawable gradientDrawable = o5cVar.m1;
+        d6c d6cVar = o5cVar.n1;
+        if (d6cVar.c()) {
+            o5cVar.o1 = d6cVar.getContentTopOffset();
+            o5cVar.b.invalidate();
+        }
+        super.onDraw(canvas);
+        float X = X();
+        int i = o5cVar.l1;
+        int i2 = (int) ((1.0f - X) * i);
+        int i3 = hl.m - i;
+        canvas.save();
+        canvas.translate(0.0f, d6cVar.getTranslationY() + i3);
+        o5cVar.s0.setBounds(0, (o5cVar.o1 - o5cVar.t0) + i2, getMeasuredWidth(), getMeasuredHeight() + (i3 < 0 ? -i3 : 0));
+        o5cVar.s0.draw(canvas);
+        if (X > 0.0f && X < 1.0f) {
+            float L = hl.L(12.0f) * X;
+            gradientDrawable.setColor(aob.v0(aob.h5, o5cVar.J0));
+            float[] fArr = this.m0;
+            fArr[3] = L;
+            fArr[2] = L;
+            fArr[1] = L;
+            fArr[0] = L;
+            gradientDrawable.setCornerRadii(fArr);
+            gradientDrawable.setBounds(o5cVar.u0, o5cVar.o1 + i2, getWidth() - o5cVar.u0, hl.L(24.0f) + o5cVar.o1 + i2);
+            gradientDrawable.draw(canvas);
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            o5c o5cVar = this.o0;
+            if (o5cVar.o1 != 0 && motionEvent.getY() < o5cVar.o1) {
+                o5cVar.dismiss();
+                return true;
             }
         }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public CharSequence Z() {
-        return k96.M0(2131752713, null);
+    @Override // wma, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5 = hl.m;
+        int size = View.MeasureSpec.getSize(getMeasuredHeight()) - i5;
+        int Q = Q();
+        int i6 = (int) ((size + Q) * 0.2f);
+        this.i0 = true;
+        int L = hl.L(20.0f);
+        o5c o5cVar = this.o0;
+        d6c d6cVar = o5cVar.n1;
+        if (Q > L) {
+            d6cVar.a(true);
+            o5cVar.r0 = false;
+            this.h0 = true;
+        } else {
+            d6cVar.a(false);
+            o5cVar.r0 = true;
+            this.h0 = false;
+        }
+        d6cVar.setContentViewPaddingTop(i6);
+        if (getPaddingTop() != i5) {
+            int i7 = o5cVar.u0;
+            setPadding(i7, i5, i7, 0);
+        }
+        this.i0 = false;
+        super.onLayout(z, i, i2, i3, i4);
     }
 
-    public void a0(c4c c4cVar, View view) {
-        byte b = 1;
-        if (c4cVar.d == 1) {
-            j41 d = j41.d(this.currentAccount);
-            TL_account.createBusinessChatLink createbusinesschatlink = new TL_account.createBusinessChatLink();
-            TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
-            createbusinesschatlink.link = tL_inputBusinessChatLink;
-            tL_inputBusinessChatLink.message = "";
-            ConnectionsManager.getInstance(d.a).sendRequest(createbusinesschatlink, new h41(d, b));
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.o0.J && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.i0) {
             return;
         }
-        if (c4cVar.a == 29) {
-            Object obj = c4cVar.H;
-            if (obj instanceof e41) {
-                Bundle j = ls6.j(6, "chatMode");
-                j.putString("business_link", ((e41) obj).a.link);
-                presentFragment(new mu1(j));
-            }
-        }
+        super.requestLayout();
     }
 
-    public boolean b0(c4c c4cVar, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public View createView(Context context) {
-        kk8 kk8Var = new kk8(this, (byte) 23);
-        pha phaVar = this.simpleActionBar;
-        if (phaVar != null) {
-            phaVar.setBackButtonDrawable(new ed0(false));
-            this.simpleActionBar.setTitle(Z());
-            this.simpleActionBar.setActionBarMenuOnItemClick(kk8Var);
-        } else {
-            this.actionBar.setBackButtonDrawable(new ed0(false));
-            this.actionBar.setAllowOverlayTitle(true);
-            this.actionBar.setTitle(Z());
-            this.actionBar.setActionBarMenuOnItemClick(kk8Var);
-        }
-        this.b = new g74(context, null, (byte) 3);
-        if (!useSimpleActionBar()) {
-            zkb.h(bkb.Z6, null, this.b);
-        }
-        va vaVar = new va(this, this, new n4b(this, (byte) 9), new m5c(this), new m5c(this));
-        this.a = vaVar;
-        this.b.addView(vaVar, nme.c(-1.0f, -1));
-        g74 g74Var = this.b;
-        this.fragmentView = g74Var;
-        return g74Var;
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        this.o0.n1.setTranslationY(f);
+        invalidate();
     }
 }

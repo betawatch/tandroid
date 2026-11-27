@@ -1,26 +1,25 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class t12 extends u26 {
-    public final /* synthetic */ ar0 r;
+public final class t12 extends FragmentContextView {
+    public final /* synthetic */ FrameLayout X0;
+    public final /* synthetic */ x12 Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t12(ar0 ar0Var, Context context) {
-        super(context);
-        this.r = ar0Var;
+    public t12(x12 x12Var, Context context, e eVar, FrameLayout frameLayout, vnb vnbVar, FrameLayout frameLayout2) {
+        super(context, eVar, frameLayout, false, vnbVar);
+        this.Y0 = x12Var;
+        this.X0 = frameLayout2;
     }
 
-    @Override // u26
-    public final int k(int i, View view) {
-        return de9.f(7.0f, ((v12) this.r.R).n.getPaddingTop(), super.k(i, view));
-    }
-
-    @Override // u26
-    public final int m(int i) {
-        return super.m(i) << 1;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i) {
+        this.Y0.y.j(this.X0, i == 0, true);
     }
 }

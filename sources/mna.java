@@ -1,46 +1,46 @@
 // default package
 
-import android.view.View;
+import j$.util.Objects;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class mna implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vqa b;
-    public final /* synthetic */ int c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class mna {
+    public final long a;
+    public final long b;
+    public final int c;
 
-    public /* synthetic */ mna(vqa vqaVar, int i, byte b) {
-        this.a = b;
-        this.b = vqaVar;
+    public mna(long j, int i, long j2) {
+        yve.f(j < j2);
+        this.a = j;
+        this.b = j2;
         this.c = i;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        int i = this.c;
-        vqa vqaVar = this.b;
-        switch (b) {
-            case 0:
-                vqaVar.P2 = i;
-                fpa fpaVar = vqaVar.U1;
-                fpaVar.E(fpaVar.getCurrentPosition() + (i > vqaVar.w1() ? 1 : -1));
-                break;
-            case 1:
-                vqaVar.P2 = i;
-                fpa fpaVar2 = vqaVar.U1;
-                fpaVar2.E(fpaVar2.getCurrentPosition() + (i > vqaVar.w1() ? 1 : -1));
-                break;
-            case 2:
-                vqaVar.P2 = i;
-                fpa fpaVar3 = vqaVar.U1;
-                fpaVar3.E(fpaVar3.getCurrentPosition() + (i > vqaVar.w1() ? 1 : -1));
-                break;
-            default:
-                vqaVar.P2 = i;
-                fpa fpaVar4 = vqaVar.U1;
-                fpaVar4.E(fpaVar4.getCurrentPosition() + (i > vqaVar.w1() ? 1 : -1));
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && mna.class == obj.getClass()) {
+            mna mnaVar = (mna) obj;
+            if (this.a == mnaVar.a && this.b == mnaVar.b && this.c == mnaVar.c) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Integer.valueOf(this.c));
+    }
+
+    public final String toString() {
+        String str = gcc.a;
+        Locale locale = Locale.US;
+        StringBuilder o = ik8.o(this.a, "Segment: startTimeMs=", ", endTimeMs=");
+        o.append(this.b);
+        o.append(", speedDivisor=");
+        o.append(this.c);
+        return o.toString();
     }
 }

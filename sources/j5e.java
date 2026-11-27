@@ -1,14 +1,19 @@
 // default package
 
-import java.nio.charset.Charset;
-
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class j5e {
-    public static final Object a;
+public final class j5e implements zq7 {
+    public static final j5e a = new j5e();
 
     static {
-        Charset.forName("UTF-8");
-        Charset.forName("ISO-8859-1");
-        a = new Object();
+        xnb.y(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, new tnd(1)), 2)), 3)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

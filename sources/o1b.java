@@ -1,24 +1,38 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class o1b implements RequestDelegate {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ vx5 b;
-    public final /* synthetic */ g2b c;
+public final class o1b implements md2 {
+    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean[] c;
 
-    public o1b(g2b g2bVar, long j, vx5 vx5Var) {
-        this.c = g2bVar;
-        this.a = j;
-        this.b = vx5Var;
+    public o1b(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z, boolean[] zArr) {
+        this.a = tL_chatChannelParticipant;
+        this.b = z;
+        this.c = zArr;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        gl.c3(new mx8(this, tLObject, this.a, this.b, (byte) 11));
+    @Override // md2
+    public final void b(int i, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
+        if (i == 0) {
+            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant.admin_rights = null;
+            channelParticipant.rank = "";
+        } else {
+            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant2.admin_rights = tL_chatAdminRights;
+            channelParticipant2.rank = str;
+            if (this.b) {
+                this.c[0] = true;
+            }
+        }
+    }
+
+    @Override // md2
+    public final void a(TLRPC.User user) {
     }
 }

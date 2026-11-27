@@ -1,106 +1,94 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.SecretMediaViewer;
+import android.graphics.Bitmap;
+import android.graphics.PointF;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class r88 extends d98 {
-    public final /* synthetic */ byte p0;
-    public final /* synthetic */ gk7 q0;
+public final class r88 {
+    public final float a;
+    public final float b;
+    public final PointF c;
+    public final PointF d;
+    public final float e;
+    public final PointF f;
+    public final PointF g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r88(gk7 gk7Var, Context context, g98 g98Var, FrameLayout frameLayout, byte b) {
-        super(context, g98Var, frameLayout);
-        this.p0 = b;
-        this.q0 = gk7Var;
+    public r88(i84 i84Var, Bitmap bitmap, qma qmaVar, boolean z) {
+        PointF pointF = null;
+        PointF pointF2 = null;
+        PointF pointF3 = null;
+        PointF pointF4 = null;
+        for (bz5 bz5Var : i84Var.b) {
+            PointF pointF5 = bz5Var.a;
+            int i = bz5Var.b;
+            if (i == 4) {
+                pointF = b(pointF5, bitmap, qmaVar, z);
+            } else if (i == 5) {
+                pointF3 = b(pointF5, bitmap, qmaVar, z);
+            } else if (i == 10) {
+                pointF2 = b(pointF5, bitmap, qmaVar, z);
+            } else if (i == 11) {
+                pointF4 = b(pointF5, bitmap, qmaVar, z);
+            }
+        }
+        if (pointF != null && pointF2 != null) {
+            if (pointF.x < pointF2.x) {
+                PointF pointF6 = pointF2;
+                pointF2 = pointF;
+                pointF = pointF6;
+            }
+            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
+            this.d = pointF7;
+            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
+            this.e = hypot;
+            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
+            this.a = 2.35f * hypot;
+            float f = hypot * 0.8f;
+            double radians = (float) Math.toRadians(r0 - 90.0f);
+            this.c = new PointF((((float) Math.cos(radians)) * f) + pointF7.x, (f * ((float) Math.sin(radians))) + pointF7.y);
+        }
+        if (pointF3 == null || pointF4 == null) {
+            return;
+        }
+        if (pointF3.x < pointF4.x) {
+            PointF pointF8 = pointF4;
+            pointF4 = pointF3;
+            pointF3 = pointF8;
+        }
+        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
+        this.f = pointF9;
+        float f2 = this.e * 0.7f;
+        double radians2 = (float) Math.toRadians(this.b + 90.0f);
+        this.g = new PointF((((float) Math.cos(radians2)) * f2) + pointF9.x, (f2 * ((float) Math.sin(radians2))) + pointF9.y);
     }
 
-    @Override // d98
-    public final boolean D() {
-        switch (this.p0) {
-            case 0:
-                return !((PhotoViewer) this.q0).s;
-            default:
-                return super.D();
+    public static PointF b(PointF pointF, Bitmap bitmap, qma qmaVar, boolean z) {
+        float width;
+        int height;
+        if (z) {
+            width = bitmap.getHeight();
+            height = bitmap.getWidth();
+        } else {
+            width = bitmap.getWidth();
+            height = bitmap.getHeight();
         }
+        return new PointF((qmaVar.a * pointF.x) / width, (qmaVar.b * pointF.y) / height);
     }
 
-    @Override // d98
-    public final void E() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.K && getScrollY() <= 0) {
-                    gl.d3(secretMediaViewer.q1, 3000L);
-                    break;
-                }
-                break;
+    public final PointF a(int i) {
+        if (i == 0) {
+            return this.c;
         }
-    }
-
-    @Override // d98
-    public final void F() {
-        switch (this.p0) {
-            case 1:
-                gl.r(((SecretMediaViewer) this.q0).q1);
-                break;
+        if (i == 1) {
+            return this.d;
         }
-    }
-
-    @Override // d98
-    public final void G() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.J0 == null) {
-                    secretMediaViewer.l(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.j0, true);
-                    break;
-                }
-                break;
+        if (i == 2) {
+            return this.f;
         }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        switch (this.p0) {
-            case 0:
-                super.invalidate();
-                PhotoViewer photoViewer = (PhotoViewer) this.q0;
-                t78[] t78VarArr = photoViewer.X0;
-                ImageView[] imageViewArr = photoViewer.y3;
-                if (photoViewer.K) {
-                    int scrollY = getScrollY();
-                    float translationY = photoViewer.R1.getTranslationY();
-                    boolean z = scrollY == 0 && translationY == 0.0f;
-                    boolean z2 = scrollY == 0 && translationY == 0.0f;
-                    if (!z) {
-                        int b = t78VarArr[0].b() + t78VarArr[0].j;
-                        int top = (((photoViewer.a2.getTop() + ((int) translationY)) - scrollY) + (a.getCurrentActionBarHeight() + (D() ? gl.m : 0))) - gl.L(12.0f);
-                        boolean z3 = top > gl.L(32.0f) + ((int) imageViewArr[0].getY());
-                        z = top > b;
-                        z2 = z3;
-                    }
-                    if (photoViewer.z3) {
-                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z2) {
-                            imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new l48(this, (byte) 7)).start();
-                        } else if (imageViewArr[0].getTag() == null && !z2) {
-                            imageViewArr[0].setTag(3);
-                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
-                        }
-                    }
-                    t78VarArr[0].e(2, z ? 1.0f : 0.0f, true);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
+        if (i != 3) {
+            return null;
         }
+        return this.g;
     }
 }

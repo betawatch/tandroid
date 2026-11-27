@@ -1,130 +1,116 @@
 // default package
 
+import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.LaunchActivity;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.Window;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public abstract class rqe {
-    public static int a = 1500;
+    public static boolean a = false;
+    public static Method b = null;
+    public static boolean c = false;
+    public static Field d;
 
-    public static boolean a() {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = gl.W(a.b);
-        }
-        if (activity == null) {
-            return false;
-        }
-        return activity.shouldShowRequestPermissionRationale("android.permission.POST_NOTIFICATIONS");
-    }
-
-    public static void b(String[] strArr, String[] strArr2, p8c p8cVar) {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = gl.W(a.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        for (String str : strArr) {
-            if (activity.checkSelfPermission(str) != 0) {
-                for (String str2 : strArr) {
-                    if (activity.shouldShowRequestPermissionRationale(str2)) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, null, activity);
-                        int i = bkb.K5;
-                        alertDialog$Builder.l(R.raw.permission_request_camera, 72, bkb.w0(null, i, false), null);
-                        alertDialog$Builder.m(i, null);
-                        alertDialog$Builder.a.U = gl.S2(k96.M0(2131747116, null));
-                        alertDialog$Builder.j(k96.M0(2131747107, null), new mh(activity, (byte) 3));
-                        alertDialog$Builder.g(k96.M0(2131751760, null), null);
-                        alertDialog$Builder.a.show();
-                        p8cVar.a(Boolean.FALSE);
-                        return;
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean a(px5 px5Var, View view, Window.Callback callback, KeyEvent keyEvent) {
+        DialogInterface.OnKeyListener onKeyListener;
+        Window window;
+        boolean z = false;
+        if (px5Var != null) {
+            if (Build.VERSION.SDK_INT >= 28) {
+                return px5Var.i(keyEvent);
+            }
+            if (callback instanceof Activity) {
+                Activity activity = (Activity) callback;
+                activity.onUserInteraction();
+                Window window2 = activity.getWindow();
+                if (window2.hasFeature(8)) {
+                    ActionBar actionBar = activity.getActionBar();
+                    if (keyEvent.getKeyCode() == 82 && actionBar != null) {
+                        if (!a) {
+                            try {
+                                b = actionBar.getClass().getMethod("onMenuKeyEvent", KeyEvent.class);
+                            } catch (NoSuchMethodException unused) {
+                            }
+                            a = true;
+                        }
+                        Method method = b;
+                        if (method != null) {
+                            try {
+                                Object invoke = method.invoke(actionBar, keyEvent);
+                                if (invoke != null) {
+                                    z = ((Boolean) invoke).booleanValue();
+                                }
+                            } catch (IllegalAccessException | InvocationTargetException unused2) {
+                            }
+                        }
+                        if (z) {
+                            return true;
+                        }
                     }
                 }
-                e(strArr2, new i38(strArr2, activity, p8cVar, (byte) 1));
-                return;
+                if (window2.superDispatchKeyEvent(keyEvent)) {
+                    return true;
+                }
+                View decorView = window2.getDecorView();
+                if (ihc.c(decorView, keyEvent)) {
+                    return true;
+                }
+                return keyEvent.dispatch(activity, decorView != null ? decorView.getKeyDispatcherState() : null, activity);
+            }
+            if (callback instanceof Dialog) {
+                Dialog dialog = (Dialog) callback;
+                if (!c) {
+                    try {
+                        Field declaredField = Dialog.class.getDeclaredField("mOnKeyListener");
+                        d = declaredField;
+                        declaredField.setAccessible(true);
+                    } catch (NoSuchFieldException unused3) {
+                    }
+                    c = true;
+                }
+                Field field = d;
+                if (field != null) {
+                    try {
+                        onKeyListener = (DialogInterface.OnKeyListener) field.get(dialog);
+                    } catch (IllegalAccessException unused4) {
+                    }
+                    if (onKeyListener == null && onKeyListener.onKey(dialog, keyEvent.getKeyCode(), keyEvent)) {
+                        return true;
+                    }
+                    window = dialog.getWindow();
+                    if (!window.superDispatchKeyEvent(keyEvent)) {
+                        return true;
+                    }
+                    View decorView2 = window.getDecorView();
+                    if (ihc.c(decorView2, keyEvent)) {
+                        return true;
+                    }
+                    return keyEvent.dispatch(dialog, decorView2 != null ? decorView2.getKeyDispatcherState() : null, dialog);
+                }
+                onKeyListener = null;
+                if (onKeyListener == null) {
+                }
+                window = dialog.getWindow();
+                if (!window.superDispatchKeyEvent(keyEvent)) {
+                }
+            } else if ((view != null && ihc.c(view, keyEvent)) || px5Var.i(keyEvent)) {
+                return true;
             }
         }
-        p8cVar.a(Boolean.TRUE);
-    }
-
-    public static void c(int i, int i2, String[] strArr, String[] strArr2, p8c p8cVar) {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = gl.W(a.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        for (String str : strArr) {
-            if (activity.checkSelfPermission(str) == 0) {
-                p8cVar.a(Boolean.TRUE);
-                return;
-            }
-        }
-        for (String str2 : strArr) {
-            if (!activity.shouldShowRequestPermissionRationale(str2)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, null, activity);
-                int i3 = bkb.K5;
-                alertDialog$Builder.l(i, 72, bkb.w0(null, i3, false), null);
-                alertDialog$Builder.m(i3, null);
-                alertDialog$Builder.a.U = gl.S2(k96.M0(i2, null));
-                alertDialog$Builder.j(k96.M0(2131747107, null), new mh(activity, (byte) 2));
-                alertDialog$Builder.g(k96.M0(2131751760, null), null);
-                alertDialog$Builder.a.show();
-                p8cVar.a(Boolean.FALSE);
-                return;
-            }
-        }
-        e(strArr2, new i38(strArr2, activity, p8cVar, (byte) 0));
-    }
-
-    public static boolean d(String str) {
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = gl.W(a.b);
-        }
-        return context != null && context.checkSelfPermission(str) == 0;
-    }
-
-    public static void e(String[] strArr, p8c p8cVar) {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = gl.W(a.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        int i = a;
-        a = i + 1;
-        gk7[] gk7VarArr = new gk7[1];
-        gk7VarArr[0] = new j38(i, p8cVar, gk7VarArr);
-        kk7.e().a(gk7VarArr[0], kk7.r5);
-        activity.requestPermissions(strArr, i);
-    }
-
-    public static void f() {
-        Activity activity = LaunchActivity.H1;
-        if (activity == null) {
-            activity = gl.W(a.b);
-        }
-        if (activity == null) {
-            return;
-        }
-        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-        intent.setData(Uri.parse("package:" + a.b.getPackageName()));
-        try {
-            activity.startActivity(intent);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
+        return false;
     }
 }

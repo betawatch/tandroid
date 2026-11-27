@@ -1,107 +1,68 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.beta.R;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nu1 extends LinearLayout {
-    public final wjb a;
-    public final gl2 b;
-    public final gl2 c;
-    public float d;
+public final class nu1 extends TextView implements snb {
+    public final hf0 a;
+    public int b;
+    public boolean c;
+    public final /* synthetic */ zu1 d;
 
-    public nu1(kl0 kl0Var, wp1 wp1Var, wjb wjbVar, Context context) {
-        super(context);
-        gl2 gl2Var = new gl2(this);
-        this.b = gl2Var;
-        gl2 gl2Var2 = new gl2(this);
-        this.c = gl2Var2;
-        this.a = wjbVar;
-        ou1 c = ou1.c(kl0Var, wp1Var, wjbVar, context);
-        gl2Var.b = c;
-        byte b = 1;
-        c.setOnClickListener(new x00(b));
-        ote.b((ou1) gl2Var.b, 0.065f, 2.0f);
-        ou1 c2 = ou1.c(kl0Var, wp1Var, wjbVar, context);
-        gl2Var2.b = c2;
-        c2.setOnClickListener(new x00(b));
-        ote.b((ou1) gl2Var2.b, 0.065f, 2.0f);
-        a(gl2Var, k96.M0(2131746070, null), R.drawable.input_reply, false);
-        a(gl2Var2, k96.M0(2131750570, null), R.drawable.input_forward, true);
-        setOrientation(0);
-        setClipChildren(false);
-        addView((ou1) gl2Var.b, nme.m(1.0f, 0, 56, 1, -1, 0));
-        addView((ou1) gl2Var2.b, nme.m(1.0f, 0, 56, -1, 1, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nu1(zu1 zu1Var, Activity activity) {
+        super(activity);
+        this.d = zu1Var;
+        setSingleLine(true);
+        setLines(1);
+        setMaxLines(1);
+        setEllipsize(TextUtils.TruncateAt.END);
+        yob.X(this, aob.Ji, zu1Var.getResourceProvider());
+        int themedColor = zu1Var.getThemedColor(aob.Fi);
+        this.b = themedColor;
+        hf0 e = rnb.e(themedColor, 16.0f);
+        this.a = e;
+        setBackground(e);
+        setTextSize(1, 14.0f);
+        setTypeface(hl.o());
+        setGravity(17);
+        setPadding(hl.L(14.0f), 0, hl.L(14.0f), 0);
     }
 
-    public final void a(gl2 gl2Var, String str, int i, boolean z) {
-        Drawable drawable;
-        TextView textView = new TextView(getContext());
-        textView.setText(str);
-        textView.setGravity(16);
-        textView.setTextSize(1, 15.0f);
-        textView.setPadding(gl.L(21.0f), 0, gl.L(21.0f), 0);
-        textView.setCompoundDrawablePadding(gl.L(6.0f));
-        int i2 = bkb.Nl;
-        wjb wjbVar = this.a;
-        zkb.X(textView, i2, wjbVar);
-        textView.setTypeface(gl.o());
-        Drawable mutate = getContext().getResources().getDrawable(i).mutate();
-        zkb.x(this, mutate, bkb.Ml, wjbVar, PorterDuff.Mode.MULTIPLY);
-        if (z) {
-            drawable = mutate;
-            mutate = null;
-        } else {
-            drawable = null;
-        }
-        textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
-        gl2Var.c = textView;
-        ((ou1) gl2Var.b).addView(textView, nme.e(-2, -2, 17));
-    }
-
-    public final void b(gl2 gl2Var) {
-        float f = this.d * ((fm0) gl2Var.d).e;
-        float f2 = (1.0f - f) * (-gl.L(54.0f));
-        float interpolation = (1.0f - tn.a.getInterpolation(f)) * (getMeasuredWidth() / 2.0f);
-        if (gl2Var == this.b) {
-            interpolation *= -1.0f;
-        }
-        ((ou1) gl2Var.b).setTranslationX(interpolation);
-        ((ou1) gl2Var.b).setTranslationY(f2);
-        ((ou1) gl2Var.b).setAlpha(f);
-        ((ou1) gl2Var.b).setVisibility(f > 0.0f ? 0 : 4);
-    }
-
-    public View getForwardButton() {
-        return (ou1) this.c.b;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.widget.TextView, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        b(this.c);
-        b(this.b);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), (int) (hl.q.x * 0.45f)), TLObject.FLAG_31), i2);
     }
 
-    public void setForwardButtonOnClickListener(View.OnClickListener onClickListener) {
-        ((ou1) this.c.b).setOnClickListener(onClickListener);
-    }
-
-    public void setReplyButtonOnClickListener(View.OnClickListener onClickListener) {
-        ((ou1) this.b.b).setOnClickListener(onClickListener);
-    }
-
-    public void setTotalVisibilityFactor(float f) {
-        if (this.d != f) {
-            this.d = f;
-            b(this.c);
-            b(this.b);
+    @Override // snb
+    public final void updateColors() {
+        try {
+            int themedColor = this.d.getThemedColor(aob.Fi);
+            if (themedColor == this.b && this.c == aob.I.o()) {
+                return;
+            }
+            Drawable background = getBackground();
+            hf0 hf0Var = this.a;
+            if (background == hf0Var) {
+                this.c = aob.I.o();
+                aob.F1(hf0Var, themedColor, false);
+                aob.F1(hf0Var, rnb.b(themedColor), true);
+                this.b = themedColor;
+                invalidate();
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,151 +1,79 @@
 // default package
 
-import java.util.List;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class y07 implements k64 {
-    public final k64 a;
-    public final sxb b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class y07 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ KeyEvent.Callback g;
 
-    public y07(k64 k64Var, sxb sxbVar) {
-        this.a = k64Var;
-        this.b = sxbVar;
+    public /* synthetic */ y07(KeyEvent.Callback callback, float f, float f2, float f3, float f4, int i, byte b) {
+        this.a = b;
+        this.g = callback;
+        this.b = f;
+        this.c = f2;
+        this.d = f3;
+        this.e = f4;
+        this.f = i;
     }
 
-    @Override // k64
-    public final boolean a(int i, long j) {
-        return this.a.a(i, j);
-    }
-
-    @Override // k64
-    public final void b(long j, long j2, long j3, List list, bk6[] bk6VarArr) {
-        this.a.b(j, j2, j3, list, bk6VarArr);
-    }
-
-    @Override // k64
-    public final sxb c() {
-        return this.b;
-    }
-
-    @Override // k64
-    public final int d() {
-        return this.a.d();
-    }
-
-    @Override // k64
-    public final int e(fm4 fm4Var) {
-        return this.a.v(this.b.a(fm4Var));
-    }
-
-    public final boolean equals(Object obj) {
-        if (w(obj) && (obj instanceof y07)) {
-            return this.b.equals(((y07) obj).b);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        int i = this.f;
+        float f = this.e;
+        float f2 = this.d;
+        float f3 = this.c;
+        float f4 = this.b;
+        KeyEvent.Callback callback = this.g;
+        switch (b) {
+            case 0:
+                d17 d17Var = (d17) callback;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d17Var.y = floatValue;
+                float A = qd4.A(1.0f, f4, floatValue, f4);
+                c17 c17Var = d17Var.E;
+                c17Var.setScaleX(A);
+                c17Var.setScaleY(A);
+                c17Var.setTranslationX((1.0f - d17Var.y) * f3);
+                c17Var.setTranslationY((1.0f - d17Var.y) * f2);
+                int i2 = (int) ((1.0f - d17Var.y) * f);
+                d17Var.h.N(i2, i2);
+                float a = ete.a((d17Var.y * 2.0f) - 1.0f, 0.0f, 1.0f);
+                d17Var.c.setAlpha((int) (a * 255.0f));
+                d17Var.d.setAlpha(a);
+                d17Var.e.setAlpha(a);
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = d17Var.f;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY((1.0f - d17Var.y) * i);
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(a);
+                BitmapDrawable bitmapDrawable = d17Var.x;
+                if (bitmapDrawable != null) {
+                    bitmapDrawable.setAlpha((int) (d17Var.y * 255.0f));
+                }
+                d17Var.n.setAlpha(a);
+                break;
+            default:
+                duc ducVar = (duc) callback;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k43 k43Var = k43.h;
+                float interpolation = k43Var.getInterpolation(floatValue2);
+                float interpolation2 = k43Var.getInterpolation(Math.min(1.0f, (floatValue2 * 320.0f) / 120.0f));
+                ducVar.d.setAlpha(((f3 - f4) * interpolation2) + f4);
+                ducVar.f.setAlpha(((f - f2) * interpolation2) + f2);
+                FrameLayout frameLayout = ducVar.e;
+                frameLayout.getLayoutParams().width = Math.round(((ducVar.E - i) * interpolation) + i);
+                frameLayout.requestLayout();
+                break;
         }
-        return false;
-    }
-
-    @Override // k64
-    public final void f() {
-        this.a.f();
-    }
-
-    @Override // k64
-    public final boolean g(long j, zg2 zg2Var, List list) {
-        return this.a.g(j, zg2Var, list);
-    }
-
-    @Override // k64
-    public final void h(boolean z) {
-        this.a.h(z);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
-
-    @Override // k64
-    public final fm4 i(int i) {
-        return this.b.d[this.a.k(i)];
-    }
-
-    @Override // k64
-    public final void j() {
-        this.a.j();
-    }
-
-    @Override // k64
-    public final int k(int i) {
-        return this.a.k(i);
-    }
-
-    @Override // k64
-    public final int l(long j, List list) {
-        return this.a.l(j, list);
-    }
-
-    @Override // k64
-    public final int length() {
-        return this.a.length();
-    }
-
-    @Override // k64
-    public final void m() {
-        this.a.m();
-    }
-
-    @Override // k64
-    public final int n() {
-        return this.a.n();
-    }
-
-    @Override // k64
-    public final fm4 o() {
-        return this.b.d[this.a.n()];
-    }
-
-    @Override // k64
-    public final int p() {
-        return this.a.p();
-    }
-
-    @Override // k64
-    public final boolean q(int i, long j) {
-        return this.a.q(i, j);
-    }
-
-    @Override // k64
-    public final void r(float f) {
-        this.a.r(f);
-    }
-
-    @Override // k64
-    public final Object s() {
-        return this.a.s();
-    }
-
-    @Override // k64
-    public final void t() {
-        this.a.t();
-    }
-
-    @Override // k64
-    public final void u() {
-        this.a.u();
-    }
-
-    @Override // k64
-    public final int v(int i) {
-        return this.a.v(i);
-    }
-
-    public final boolean w(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof y07) {
-            return this.a.equals(((y07) obj).a);
-        }
-        return false;
     }
 }

@@ -1,53 +1,27 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class g4c implements ez5, dz5 {
+    public final /* synthetic */ a5c a;
+    public final /* synthetic */ r47 b;
+    public final /* synthetic */ v11 c;
+    public final /* synthetic */ zo2 d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public class g4c extends URLSpan {
-    public final boolean a;
-    public final vib b;
-    public TLObject c;
-    public String d;
-
-    public g4c(String str, vib vibVar) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = vibVar;
+    public /* synthetic */ g4c(a5c a5cVar, r47 r47Var, v11 v11Var, zo2 zo2Var) {
+        this.a = a5cVar;
+        this.b = r47Var;
+        this.c = v11Var;
+        this.d = zo2Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            d01.t(view.getContext(), url);
-        } else {
-            d01.q(view.getContext(), Uri.parse("https://t.me/".concat(url.substring(1))), true, true);
-        }
+    @Override // ez5
+    public final void a(String str) {
+        hl.c3(new uwa(this.a, this.b, str, this.c, this.d, (byte) 8));
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        vib vibVar = this.b;
-        if (vibVar != null) {
-            vibVar.a(textPaint);
-        }
-        textPaint.setUnderlineText(i == color && !this.a);
-    }
-
-    public g4c(String str, int i) {
-        this(str, (vib) null);
-        this.a = true;
-    }
-
-    public g4c(String str) {
-        this(str, (vib) null);
+    @Override // dz5
+    public final void l(Exception exc) {
+        hl.c3(new kta((Object) this.a, (Object) this.b, (Object) this.c, (Object) this.d, (byte) 16));
     }
 }

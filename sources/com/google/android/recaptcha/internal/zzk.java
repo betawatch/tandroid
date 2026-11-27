@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzk extends ccb implements eq4 {
+final class zzk extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzq zzb;
     final /* synthetic */ String zzc;
@@ -16,45 +16,45 @@ final class zzk extends ccb implements eq4 {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzk(zzq zzqVar, String str, zzgr zzgrVar, long j, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzk(zzq zzqVar, String str, zzgr zzgrVar, long j, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzqVar;
         this.zzc = str;
         this.zzd = zzgrVar;
         this.zze = j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzk zzkVar = new zzk(this.zzb, this.zzc, this.zzd, this.zze, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzk zzkVar = new zzk(this.zzb, this.zzc, this.zzd, this.zze, zw2Var);
         zzkVar.zzf = obj;
         return zzkVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzk) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzk) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        qse.b(obj);
+        ixe.b(obj);
         if (i == 0) {
-            ax2 ax2Var = (ax2) this.zzf;
+            ux2 ux2Var = (ux2) this.zzf;
             ArrayList arrayList = new ArrayList();
             for (zzg zzgVar : this.zzb.zzd()) {
                 if (zzgVar.zzi()) {
-                    arrayList.add(ppd.a(ax2Var, new zzj(this.zzd, zzgVar, this.zzc, this.zze, null)));
+                    arrayList.add(fud.a(ux2Var, new zzj(this.zzd, zzgVar, this.zzc, this.zze, null)));
                 }
             }
-            zc3[] zc3VarArr = (zc3[]) arrayList.toArray(new zc3[0]);
-            zc3[] zc3VarArr2 = (zc3[]) Arrays.copyOf(zc3VarArr, zc3VarArr.length);
+            rd3[] rd3VarArr = (rd3[]) arrayList.toArray(new rd3[0]);
+            rd3[] rd3VarArr2 = (rd3[]) Arrays.copyOf(rd3VarArr, rd3VarArr.length);
             this.zza = 1;
-            obj = xmd.a(zc3VarArr2, this);
-            bx2 bx2Var = bx2.a;
-            if (obj == bx2Var) {
-                return bx2Var;
+            obj = ord.a(rd3VarArr2, this);
+            vx2 vx2Var = vx2.a;
+            if (obj == vx2Var) {
+                return vx2Var;
             }
         }
         String str = this.zzc;
@@ -62,8 +62,8 @@ final class zzk extends ccb implements eq4 {
         zzf.zze(str);
         Iterator it = ((List) obj).iterator();
         while (it.hasNext()) {
-            Object obj2 = ((ta9) it.next()).a;
-            if (!(obj2 instanceof sa9)) {
+            Object obj2 = ((he9) it.next()).a;
+            if (!(obj2 instanceof ge9)) {
                 zzf.zzh((zzxx) obj2);
             }
         }

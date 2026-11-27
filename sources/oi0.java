@@ -1,46 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class oi0 extends wpb {
-    public final int c;
-    public final int d;
+public interface oi0 {
+    ni0 c(cb3 cb3Var, long j);
 
-    public oi0(wpb wpbVar, int i, int i2) {
-        super(wpbVar);
-        this.c = i;
-        this.d = i2;
-    }
-
-    @Override // wpb
-    public final void a(pj0 pj0Var, byte[] bArr) {
-        int i = 0;
-        while (true) {
-            int i2 = this.d;
-            if (i >= i2) {
-                return;
-            }
-            if (i == 0 || (i == 31 && i2 <= 62)) {
-                pj0Var.b(31, 5);
-                if (i2 > 62) {
-                    pj0Var.b(i2 - 31, 16);
-                } else if (i == 0) {
-                    pj0Var.b(Math.min(i2, 31), 5);
-                } else {
-                    pj0Var.b(i2 - 31, 5);
-                }
-            }
-            pj0Var.b(bArr[this.c + i], 8);
-            i++;
-        }
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("<");
-        sb.append(this.c);
-        sb.append("::");
-        sb.append((r1 + this.d) - 1);
-        sb.append('>');
-        return sb.toString();
-    }
+    void f();
 }

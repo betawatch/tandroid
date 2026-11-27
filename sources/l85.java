@@ -1,32 +1,29 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
+import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class l85 implements Runnable {
-    public final /* synthetic */ m85 a;
+public final class l85 extends kea {
+    public final /* synthetic */ j95 U2;
 
-    public l85(m85 m85Var) {
-        this.a = m85Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l85(j95 j95Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.U2 = j95Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.d.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || hc2.w(14, sharedInstance.getChat())) {
-            m85 m85Var = this.a;
-            gl.d3(m85Var.f, 90L);
-            try {
-                m85Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
+    @Override // kea
+    public final void M0(zh6 zh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        if (z) {
+            int m = zh6Var.m();
+            j95 j95Var = this.U2;
+            if (m == 1) {
+                j95Var.d1().m(((TLRPC.Dialog) zh6Var.n(0)).id, Integer.valueOf(i), 41);
+            } else {
+                j95Var.d1().k(0L, 41, Integer.valueOf(i), Integer.valueOf(zh6Var.m()), null, null);
             }
-            m85Var.c = true;
         }
     }
 }

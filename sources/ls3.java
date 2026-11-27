@@ -1,11 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class ls3 {
-    public static final s33 a = new s33(0.39d, 0.575d, 0.565d, 1.0d);
-    public static final s33 b = new s33(0.445d, 0.05d, 0.55d, 0.95d);
-    public static final s33 c = new s33(0.55d, 0.085d, 0.68d, 0.53d);
-    public static final s33 d = new s33(0.25d, 0.46d, 0.45d, 0.94d);
-    public static final s33 e = new s33(0.455d, 0.03d, 0.515d, 0.955d);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ls3 {
+    public final int a;
+    public final int b;
+
+    public ls3(int i, int i2) {
+        this.a = i;
+        this.b = i2;
+    }
 }

@@ -1,74 +1,128 @@
 // default package
 
-import java.util.ArrayList;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class g89 extends i89 implements r53 {
-    public final ov9 f;
+public final class g89 extends r4 {
+    public final /* synthetic */ byte d = 1;
+    public final Object e;
 
-    public g89(fm4 fm4Var, mm5 mm5Var, ov9 ov9Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
-        super(fm4Var, mm5Var, ov9Var, arrayList, arrayList2, arrayList3);
-        this.f = ov9Var;
+    public g89(h89 h89Var) {
+        this.e = h89Var;
     }
 
-    @Override // r53
-    public final long C(long j, long j2) {
-        return this.f.g(j, j2);
-    }
-
-    @Override // r53
-    public final boolean V() {
-        return this.f.j();
-    }
-
-    @Override // r53
-    public final long b0() {
-        return this.f.d;
-    }
-
-    @Override // r53
-    public final long e(long j) {
-        return this.f.h(j);
-    }
-
-    @Override // r53
-    public final long f0(long j) {
-        return this.f.e(j);
-    }
-
-    @Override // r53
-    public final long h0(long j, long j2) {
-        return this.f.c(j, j2);
-    }
-
-    @Override // r53
-    public final long k(long j, long j2) {
-        return this.f.f(j, j2);
-    }
-
-    @Override // r53
-    public final long r(long j, long j2) {
-        return this.f.d(j, j2);
-    }
-
-    @Override // r53
-    public final long v(long j, long j2) {
-        ov9 ov9Var = this.f;
-        if (ov9Var.f != null) {
-            return -9223372036854775807L;
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
+    
+        if (r1.b() <= 1) goto L10;
+     */
+    @Override // r4
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(View view, AccessibilityEvent accessibilityEvent) {
+        boolean z;
+        vu7 vu7Var;
+        switch (this.d) {
+            case 1:
+                fic ficVar = (fic) this.e;
+                super.b(view, accessibilityEvent);
+                accessibilityEvent.setClassName(fic.class.getName());
+                vu7 vu7Var2 = ficVar.e;
+                if (vu7Var2 != null) {
+                    z = true;
+                    break;
+                }
+                z = false;
+                accessibilityEvent.setScrollable(z);
+                if (accessibilityEvent.getEventType() == 4096 && (vu7Var = ficVar.e) != null) {
+                    accessibilityEvent.setItemCount(vu7Var.b());
+                    accessibilityEvent.setFromIndex(ficVar.f);
+                    accessibilityEvent.setToIndex(ficVar.f);
+                    break;
+                }
+                break;
+            default:
+                super.b(view, accessibilityEvent);
+                break;
         }
-        long c = ov9Var.c(j, j2) + ov9Var.d(j, j2);
-        return (ov9Var.f(c, j) + ov9Var.h(c)) - ov9Var.i;
     }
 
-    @Override // r53
-    public final az8 w(long j) {
-        return this.f.i(this, j);
+    @Override // r4
+    public final void c(View view, v4 v4Var) {
+        byte b = this.d;
+        Object obj = this.e;
+        View.AccessibilityDelegate accessibilityDelegate = this.a;
+        switch (b) {
+            case 0:
+                accessibilityDelegate.onInitializeAccessibilityNodeInfo(view, v4Var.a);
+                h89 h89Var = (h89) obj;
+                boolean e = h89Var.e();
+                RecyclerView recyclerView = h89Var.d;
+                if (!e && recyclerView.getLayoutManager() != null) {
+                    recyclerView.getLayoutManager().T(view, v4Var);
+                    break;
+                }
+                break;
+            default:
+                AccessibilityNodeInfo accessibilityNodeInfo = v4Var.a;
+                accessibilityDelegate.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                v4Var.i(fic.class.getName());
+                fic ficVar = (fic) obj;
+                vu7 vu7Var = ficVar.e;
+                accessibilityNodeInfo.setScrollable(vu7Var != null && vu7Var.b() > 1);
+                if (ficVar.canScrollHorizontally(1)) {
+                    v4Var.a(TLObject.FLAG_12);
+                }
+                if (ficVar.canScrollHorizontally(-1)) {
+                    v4Var.a(TLObject.FLAG_13);
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // i89
-    public final r53 b() {
-        return this;
+    @Override // r4
+    public final boolean d(View view, int i, Bundle bundle) {
+        byte b = this.d;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                h89 h89Var = (h89) obj;
+                if (!super.d(view, i, bundle)) {
+                    boolean e = h89Var.e();
+                    RecyclerView recyclerView = h89Var.d;
+                    if (!e && recyclerView.getLayoutManager() != null) {
+                        oh2 oh2Var = recyclerView.getLayoutManager().b.b;
+                    }
+                    break;
+                }
+                break;
+            default:
+                fic ficVar = (fic) obj;
+                if (!super.d(view, i, bundle)) {
+                    if (i == 4096) {
+                        if (ficVar.canScrollHorizontally(1)) {
+                            ficVar.setCurrentItem(ficVar.f + 1);
+                            break;
+                        }
+                    } else if (i == 8192 && ficVar.canScrollHorizontally(-1)) {
+                        ficVar.setCurrentItem(ficVar.f - 1);
+                        break;
+                    }
+                    break;
+                }
+                break;
+        }
+        return false;
+    }
+
+    public g89(fic ficVar) {
+        this.e = ficVar;
     }
 }

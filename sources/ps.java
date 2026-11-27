@@ -1,119 +1,108 @@
 // default package
 
-import j$.util.Map;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ps extends aia implements Map, j$.util.Map {
-    public ls d;
-    public ns e;
-    public js f;
+public final class ps implements Iterator, Map.Entry {
+    public int a;
+    public int b = -1;
+    public boolean c;
+    public final /* synthetic */ qs d;
 
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$compute(this, obj, biFunction);
+    public ps(qs qsVar) {
+        this.d = qsVar;
+        this.a = qsVar.c - 1;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
-        return Map.-CC.$default$computeIfAbsent(this, obj, function);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final Set entrySet() {
-        ls lsVar = this.d;
-        if (lsVar != null) {
-            return lsVar;
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (!this.c) {
+            grb.i("This container does not support retaining Map.Entry objects");
+            return false;
         }
-        ls lsVar2 = new ls(this, (byte) 0);
-        this.d = lsVar2;
-        return lsVar2;
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ void forEach(BiConsumer biConsumer) {
-        Map.-CC.$default$forEach(this, biConsumer);
-    }
-
-    public final boolean j(Collection collection) {
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            if (!super.containsKey(it.next())) {
-                return false;
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            int i = this.b;
+            qs qsVar = this.d;
+            if (ur5.a(key, qsVar.f(i)) && ur5.a(entry.getValue(), qsVar.i(this.b))) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
-    public final boolean k(Collection collection) {
-        int i = this.c;
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            super.remove(it.next());
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        if (this.c) {
+            return this.d.f(this.b);
         }
-        return i != this.c;
+        grb.i("This container does not support retaining Map.Entry objects");
+        return null;
     }
 
-    @Override // java.util.Map
-    public final Set keySet() {
-        ns nsVar = this.e;
-        if (nsVar != null) {
-            return nsVar;
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        if (this.c) {
+            return this.d.i(this.b);
         }
-        ns nsVar2 = new ns(this);
-        this.e = nsVar2;
-        return nsVar2;
+        grb.i("This container does not support retaining Map.Entry objects");
+        return null;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.b < this.a;
     }
 
-    @Override // java.util.Map
-    public final void putAll(java.util.Map map) {
-        int size = map.size() + this.c;
-        int i = this.c;
-        int[] iArr = this.a;
-        if (iArr.length < size) {
-            this.a = Arrays.copyOf(iArr, size);
-            this.b = Arrays.copyOf(this.b, size << 1);
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        if (!this.c) {
+            grb.i("This container does not support retaining Map.Entry objects");
+            return 0;
         }
-        if (this.c != i) {
-            zf.b();
+        int i = this.b;
+        qs qsVar = this.d;
+        Object f = qsVar.f(i);
+        Object i2 = qsVar.i(this.b);
+        return (f == null ? 0 : f.hashCode()) ^ (i2 != null ? i2.hashCode() : 0);
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!hasNext()) {
+            lq5.n();
+            return null;
+        }
+        this.b++;
+        this.c = true;
+        return this;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        if (!this.c) {
+            grb.g();
             return;
         }
-        for (Map.Entry entry : map.entrySet()) {
-            put(entry.getKey(), entry.getValue());
-        }
+        this.d.g(this.b);
+        this.b--;
+        this.a--;
+        this.c = false;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ void replaceAll(BiFunction biFunction) {
-        Map.-CC.$default$replaceAll(this, biFunction);
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        if (this.c) {
+            return this.d.h(this.b, obj);
+        }
+        grb.i("This container does not support retaining Map.Entry objects");
+        return null;
     }
 
-    @Override // java.util.Map
-    public final Collection values() {
-        js jsVar = this.f;
-        if (jsVar != null) {
-            return jsVar;
-        }
-        js jsVar2 = new js(this);
-        this.f = jsVar2;
-        return jsVar2;
+    public final String toString() {
+        return getKey() + "=" + getValue();
     }
 }

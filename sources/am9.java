@@ -1,189 +1,98 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class am9 extends l34 {
-    public float A0;
-    public final Path B0;
-    public boolean C0;
-    public boolean D0;
-    public final lm E0;
-    public final int s0;
-    public boolean t0;
-    public final lm u0;
-    public final via v0;
-    public final TextureView w0;
-    public final Bitmap x0;
-    public final Rect y0;
-    public final Rect z0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class am9 extends FrameLayout {
+    public final dg9 a;
+    public TL_iv.pageTableCell b;
 
-    public am9(Context context, PointF pointF, via viaVar, String str) {
-        super(context, pointF);
-        this.s0 = -1;
-        this.t0 = false;
-        Rect rect = new Rect();
-        this.y0 = rect;
-        this.z0 = new Rect();
-        this.A0 = 1.0f;
-        this.B0 = new Path();
-        this.C0 = true;
-        this.D0 = true;
-        s33 s33Var = s33.h;
-        this.E0 = new lm(this, 0L, 350L, s33Var);
-        new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        setRotation(0.0f);
-        setScale(1.0f);
-        this.v0 = viaVar;
-        Bitmap decodeFile = BitmapFactory.decodeFile(str);
-        this.x0 = decodeFile;
-        if (decodeFile != null) {
-            this.A0 = decodeFile.getWidth() / decodeFile.getHeight();
-            rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
-        }
-        TextureView textureView = new TextureView(context);
-        this.w0 = textureView;
-        addView(textureView, nme.c(-1.0f, -1));
-        this.u0 = new lm(this, 0L, 500L, s33Var);
-        k();
-        setWillNotDraw(false);
+    public am9(Context context, vnb vnbVar) {
+        super(context);
+        dg9 dg9Var = new dg9(context, vnbVar);
+        this.a = dg9Var;
+        dg9Var.setTextSize(1, Math.max(8, xea.S0 - 2));
+        dg9Var.setAllowNewlines(true);
+        setCompact(false);
+        addView(dg9Var, tre.e(-1, -2, 51));
     }
 
-    @Override // l34
-    public final k34 a() {
-        return new d09(this, getContext());
+    public final void a() {
+        dg9 dg9Var = this.a;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) dg9Var.getLayoutParams();
+        TL_iv.pageTableCell pagetablecell = this.b;
+        int i = pagetablecell.align_right ? 5 : pagetablecell.align_center ? 1 : 3;
+        layoutParams.gravity = pagetablecell.valign_middle ? i | 16 : pagetablecell.valign_bottom ? i | 80 : i | 48;
+        dg9Var.setLayoutParams(layoutParams);
+        TL_iv.pageTableCell pagetablecell2 = this.b;
+        dg9Var.setGravity(pagetablecell2.align_right ? 53 : pagetablecell2.align_center ? 49 : 51);
+        dg9Var.setTypeface(null);
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        Rect rect;
-        Bitmap bitmap;
-        Path path;
-        if (!this.C0) {
-            return false;
-        }
-        if (view != this.w0) {
-            return super.drawChild(canvas, view, j);
-        }
-        canvas.save();
-        float d = this.u0.d(this.t0);
-        canvas.scale(1.0f - (d * 2.0f), 1.0f, getMeasuredWidth() / 2.0f, 0.0f);
-        canvas.skew(0.0f, tb4.z(1.0f, d, 4.0f * d, 0.25f));
-        float d2 = this.E0.d(this.D0);
-        float width = (view.getWidth() / 2.0f) + view.getX();
-        float height = (view.getHeight() / 2.0f) + view.getY();
-        float min = Math.min(view.getWidth() / 2.0f, view.getHeight() / 2.0f);
-        Rect rect2 = this.y0;
-        Rect rect3 = this.z0;
-        Bitmap bitmap2 = this.x0;
-        Path path2 = this.B0;
-        if (d2 < 1.0f) {
-            rect = rect3;
-            bitmap = bitmap2;
-            canvas.saveLayerAlpha(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight(), 128, 31);
-            path2.rewind();
-            path = path2;
-            path.addCircle(width, height, min, Path.Direction.CW);
-            canvas.clipPath(path);
-            if (bitmap != null) {
-                rect.set(0, 0, view.getWidth(), view.getHeight());
-                canvas.drawBitmap(bitmap, rect2, rect, (Paint) null);
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x001e, code lost:
+    
+        if ((mm9.q(0, r0.length(), r0) & 1) == 0) goto L8;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(TL_iv.pageTableCell pagetablecell) {
+        boolean z;
+        this.b = pagetablecell;
+        a();
+        CharSequence h = ajb.h(pagetablecell);
+        if (pagetablecell.header) {
+            z = true;
+            if (h.length() != 0) {
             }
-            super.drawChild(canvas, view, j);
-            canvas.restore();
+            dg9 dg9Var = this.a;
+            dg9Var.setAutoBold(z);
+            dg9Var.setTextSilently(pv3.m(h, dg9Var.getPaint().getFontMetricsInt(), false, null, 0));
+            dg9Var.f();
+        }
+        z = false;
+        dg9 dg9Var2 = this.a;
+        dg9Var2.setAutoBold(z);
+        dg9Var2.setTextSilently(pv3.m(h, dg9Var2.getPaint().getFontMetricsInt(), false, null, 0));
+        dg9Var2.f();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        dg9 dg9Var = this.a;
+        if (dg9Var.getVisibility() == 0 && motionEvent.getActionMasked() != 3) {
+            float x = motionEvent.getX();
+            float y = motionEvent.getY();
+            boolean z = x >= ((float) dg9Var.getLeft()) && x < ((float) dg9Var.getRight());
+            boolean z2 = y < ((float) dg9Var.getTop()) || y >= ((float) dg9Var.getBottom());
+            if (z && z2 && dg9Var.getHeight() > 0) {
+                float max = Math.max(0.0f, Math.min(y - dg9Var.getTop(), dg9Var.getHeight() - 1));
+                MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                obtain.setLocation(x - dg9Var.getLeft(), max);
+                boolean onTouchEvent = dg9Var.onTouchEvent(obtain);
+                obtain.recycle();
+                return onTouchEvent;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public void setCompact(boolean z) {
+        dg9 dg9Var = this.a;
+        if (z) {
+            dg9Var.setPadding(hl.L(5.0f), hl.L(5.0f), hl.L(5.0f), hl.L(5.0f));
+            dg9Var.setMinHeight(hl.L(18.0f));
         } else {
-            rect = rect3;
-            bitmap = bitmap2;
-            path = path2;
-        }
-        canvas.save();
-        path.rewind();
-        path.addCircle(width, height, min * d2, Path.Direction.CW);
-        canvas.clipPath(path);
-        if (bitmap != null) {
-            rect.set(0, 0, view.getWidth(), view.getHeight());
-            canvas.drawBitmap(bitmap, rect2, rect, (Paint) null);
-        }
-        boolean drawChild = ((getParent() instanceof e34) && ((e34) getParent()).a) ? true : super.drawChild(canvas, view, j);
-        canvas.restore();
-        canvas.restore();
-        return drawChild;
-    }
-
-    public int getAnchor() {
-        return this.s0;
-    }
-
-    public via getBaseSize() {
-        return this.v0;
-    }
-
-    @Override // l34
-    public l29 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new l29();
-        }
-        float scaleX = viewGroup.getScaleX();
-        float L = (gl.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        float L2 = (gl.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float e = de9.e(L, 2.0f, getPositionX(), scaleX);
-        return new l29(e, de9.e(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + e) - e, L2 * scaleX);
-    }
-
-    @Override // l34
-    public final void k() {
-        via viaVar = this.v0;
-        float f = viaVar.a / 2.0f;
-        float f2 = viaVar.b / 2.0f;
-        setX(getPositionX() - f);
-        setY(getPositionY() - f2);
-        m();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        TextureView textureView = this.w0;
-        if (textureView != null) {
-            int measuredHeight = ((i4 - i2) - textureView.getMeasuredHeight()) / 2;
-            int measuredWidth = ((i3 - i) - textureView.getMeasuredWidth()) / 2;
-            textureView.layout(measuredWidth, measuredHeight, textureView.getMeasuredWidth() + measuredWidth, textureView.getMeasuredHeight() + measuredHeight);
+            dg9Var.setPadding(hl.L(12.0f), hl.L(8.0f), hl.L(12.0f), hl.L(9.0f));
+            dg9Var.setMinHeight(hl.L(36.0f));
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        via viaVar = this.v0;
-        int i3 = (int) viaVar.a;
-        int i4 = (int) viaVar.b;
-        TextureView textureView = this.w0;
-        if (textureView != null) {
-            float f = this.A0;
-            int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(f >= 1.0f ? (int) (f * i4) : i3, TLObject.FLAG_30);
-            float f2 = this.A0;
-            textureView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(f2 >= 1.0f ? i4 : (int) (i3 / f2), TLObject.FLAG_30));
-        }
-        setMeasuredDimension(i3, i4);
-    }
-
-    public void setDraw(boolean z) {
-        if (this.C0 != z) {
-            this.C0 = z;
-            invalidate();
-        }
+    public void setLocked(boolean z) {
+        this.a.setLocked(z);
     }
 }

@@ -1,12 +1,95 @@
 // default package
 
-import android.content.Context;
-import java.io.File;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class wbe {
-    public static final File a(Context context, String str) {
-        return new File(context.getApplicationContext().getFilesDir(), "datastore/".concat(str));
+public final class wbe extends g9e {
+    public static final Object[] F;
+    public static final wbe G;
+    public final transient int E;
+    public final transient Object[] s;
+    public final transient int w;
+    public final transient Object[] x;
+    public final transient int y;
+
+    static {
+        Object[] objArr = new Object[0];
+        F = objArr;
+        G = new wbe(0, 0, 0, objArr, objArr);
+    }
+
+    public wbe(int i, int i2, int i3, Object[] objArr, Object[] objArr2) {
+        super((byte) 5);
+        this.s = objArr;
+        this.w = i;
+        this.x = objArr2;
+        this.y = i2;
+        this.E = i3;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj != null) {
+            Object[] objArr = this.x;
+            if (objArr.length != 0) {
+                int a = o6f.a(obj.hashCode());
+                while (true) {
+                    int i = a & this.y;
+                    Object obj2 = objArr[i];
+                    if (obj2 == null) {
+                        return false;
+                    }
+                    if (obj2.equals(obj)) {
+                        return true;
+                    }
+                    a = i + 1;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // g9e, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.w;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        k8e k8eVar = this.n;
+        if (k8eVar == null) {
+            k8eVar = k8e.z(this.E, this.s);
+            this.n = k8eVar;
+        }
+        return k8eVar.listIterator(0);
+    }
+
+    @Override // b4d
+    public final int p(Object[] objArr) {
+        Object[] objArr2 = this.s;
+        int i = this.E;
+        System.arraycopy(objArr2, 0, objArr, 0, i);
+        return i;
+    }
+
+    @Override // b4d
+    public final int q() {
+        return this.E;
+    }
+
+    @Override // b4d
+    public final int s() {
+        return 0;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.E;
+    }
+
+    @Override // b4d
+    public final Object[] x() {
+        return this.s;
     }
 }

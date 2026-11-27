@@ -1,61 +1,24 @@
 // default package
 
-import android.view.View;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ne2 implements vc7, ed, d39, e39 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ kf2 b;
+public final class ne2 {
+    public final ez3 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
 
-    public /* synthetic */ ne2(kf2 kf2Var, byte b) {
-        this.a = b;
-        this.b = kf2Var;
+    public ne2(ez3 ez3Var) {
+        this.a = ez3Var;
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        kf2 kf2Var = this.b;
-        if (kf2Var.getParentActivity() != null) {
-            w39 adapter = kf2Var.c.getAdapter();
-            gf2 gf2Var = kf2Var.a;
-            if (adapter == gf2Var) {
-                return kf2Var.h0(gf2Var.E(i), false, view);
-            }
+    public final String a() {
+        ez3 ez3Var = this.a;
+        if (ez3Var == null || ez3Var.a) {
+            return null;
         }
-        return false;
-    }
-
-    @Override // d39
-    public final void e(float f, float f2, int i, View view) {
-        this.b.r0(i, view);
-    }
-
-    @Override // d39
-    public final boolean q(View view) {
-        return false;
-    }
-
-    @Override // vc7
-    public final void run(long j) {
-        this.b.s0(j);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        kf2 kf2Var = this.b;
-        switch (b) {
-            case 1:
-                kf2Var.x0();
-                break;
-            default:
-                kf2Var.finishFragment();
-                break;
-        }
-    }
-
-    @Override // d39
-    public final void l(View view, float f, float f2) {
+        return ez3Var.e;
     }
 }

@@ -1,32 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class jba implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lba b;
+import android.view.View;
+import android.widget.Toast;
 
-    public /* synthetic */ jba(lba lbaVar, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class jba implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tba b;
+
+    public /* synthetic */ jba(tba tbaVar, byte b) {
         this.a = b;
-        this.b = lbaVar;
+        this.b = tbaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        byte b2 = 1;
-        lba lbaVar = this.b;
+        tba tbaVar = this.b;
         switch (b) {
             case 0:
-                lbaVar.post(new jba(lbaVar, b2));
+                m01.u(tbaVar.getParentActivity(), tbaVar.getMessagesController().k4.w2.f);
+                tbaVar.getMessagesController().v4(0L, "PREMIUM_GRACE");
+                break;
+            case 1:
+                tbaVar.getClass();
+                tbaVar.presentFragment(new v8(3));
+                break;
+            case 2:
+                tbaVar.getMessagesController().v4(0L, "VALIDATE_PHONE_NUMBER");
+                break;
+            case 3:
+                tbaVar.getClass();
+                tbaVar.presentFragment(new o7c(8, null));
+                break;
+            case 4:
+                tbaVar.getMessagesController().v4(0L, "VALIDATE_PASSWORD");
+                break;
+            case 5:
+                tbaVar.c0();
                 break;
             default:
-                lbaVar.c0.N0 = true;
-                lbaVar.I.clear();
-                lbaVar.J.clear();
-                lbaVar.K.clear();
-                lbaVar.invalidate();
-                break;
+                int i = tbaVar.R + 1;
+                tbaVar.R = i;
+                if (i >= 2) {
+                    tbaVar.presentFragment(new k93());
+                    break;
+                } else {
+                    boolean z = f11.a;
+                    try {
+                        Toast.makeText(tbaVar.getParentActivity(), ob6.M0(2131751590, null), 0).show();
+                        break;
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                        return;
+                    }
+                }
         }
     }
 }

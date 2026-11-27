@@ -1,60 +1,47 @@
 // default package
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tr extends BroadcastReceiver {
-    public final /* synthetic */ byte a;
+public final class tr {
+    public final String a;
+    public final yj b;
 
-    public /* synthetic */ tr(byte b) {
-        this.a = b;
+    public tr(String str, yj yjVar) {
+        String str2 = Build.MODEL;
+        String str3 = Build.VERSION.RELEASE;
+        str.getClass();
+        str2.getClass();
+        str3.getClass();
+        this.a = str;
+        this.b = yjVar;
     }
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        switch (this.a) {
-            case 0:
-                try {
-                    a.c = a.e.getActiveNetworkInfo();
-                } catch (Throwable unused) {
-                }
-                boolean p = a.p();
-                for (int i = 0; i < 4; i++) {
-                    ConnectionsManager.getInstance(i).checkConnection();
-                    ba4.K.c(new x6c((byte) 17, ba4.G(i), p));
-                }
-                break;
-            case 1:
-                e66.h(intent);
-                break;
-            case 2:
-                if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
-                    MediaController.w().Q(MediaController.w().v0, true);
-                    break;
-                }
-                break;
-            default:
-                if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
-                    if (w01.a) {
-                        fa4.b("screen off");
-                    }
-                    ConnectionsManager.getInstance(y6c.t0).setAppPaused(true, true);
-                    a.w = false;
-                } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
-                    if (w01.a) {
-                        fa4.b("screen on");
-                    }
-                    ConnectionsManager.getInstance(y6c.t0).setAppPaused(false, true);
-                    a.w = true;
-                }
-                kk7.e().k(kk7.M4, new Object[0]);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof tr)) {
+            return false;
+        }
+        tr trVar = (tr) obj;
+        if (!ur5.a(this.a, trVar.a)) {
+            return false;
+        }
+        String str = Build.MODEL;
+        if (!ur5.a(str, str)) {
+            return false;
+        }
+        String str2 = Build.VERSION.RELEASE;
+        return ur5.a(str2, str2) && this.b.equals(trVar.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + ((zd6.b.hashCode() + bs2.j((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 48517567) * 31, 31, Build.VERSION.RELEASE)) * 31);
+    }
+
+    public final String toString() {
+        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=3.0.8, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + zd6.b + ", androidAppInfo=" + this.b + ')';
     }
 }

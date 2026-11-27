@@ -1,33 +1,599 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
+import java.nio.ByteOrder;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ey7 {
-    static {
-        Pattern.compile("(....|\\.\\.)(\\[(.*)\\])?");
+public final class ey7 {
+    public static final char[] d = {'\r', '\n'};
+    public static final char[] e = {'\n'};
+    public static final bp5 f = bp5.p(5, StandardCharsets.US_ASCII, StandardCharsets.UTF_8, StandardCharsets.UTF_16, StandardCharsets.UTF_16BE, StandardCharsets.UTF_16LE);
+    public static final AtomicReference g = new AtomicReference();
+    public byte[] a;
+    public int b;
+    public int c;
+
+    public ey7(int i) {
+        this.a = new byte[i];
+        this.c = i;
     }
 
-    public static String a(iy0 iy0Var, String str) {
-        wu2 parent = iy0Var.getParent();
-        ArrayList arrayList = ((yg0) parent).b;
-        int size = arrayList.size();
-        int i = 0;
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            iy0 iy0Var2 = (iy0) obj;
-            if (iy0Var2.getType().equals(iy0Var.getType())) {
-                if (iy0Var2 == iy0Var) {
-                    break;
-                }
-                i++;
+    public static int b(int i, int i2, int i3, int i4) {
+        byte b = (byte) i3;
+        return ype.c((byte) 0, a2f.a(((i & 7) << 2) | ((i2 & 48) >> 4)), a2f.a(((((byte) i2) & 15) << 4) | ((b & 60) >> 2)), a2f.a(((b & 3) << 6) | (((byte) i4) & 63)));
+    }
+
+    public static int d(Charset charset) {
+        yve.h(f.contains(charset), "Unsupported charset: %s", charset);
+        return (charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) ? 1 : 2;
+    }
+
+    public static boolean e(byte b) {
+        return (b & 192) == 128;
+    }
+
+    public final int A() {
+        f(1);
+        byte[] bArr = this.a;
+        int i = this.b;
+        this.b = i + 1;
+        return bArr[i] & 255;
+    }
+
+    public final int B() {
+        f(4);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = (bArr[i] & 255) << 8;
+        this.b = i + 2;
+        int i4 = i3 | (bArr[i2] & 255);
+        this.b = i + 4;
+        return i4;
+    }
+
+    public final long C() {
+        f(4);
+        byte[] bArr = this.a;
+        int i = this.b;
+        this.b = i + 1;
+        this.b = i + 2;
+        long j = ((bArr[i] & 255) << 24) | ((bArr[r3] & 255) << 16);
+        this.b = i + 3;
+        long j2 = j | ((bArr[r8] & 255) << 8);
+        this.b = i + 4;
+        return j2 | (bArr[r3] & 255);
+    }
+
+    public final int D() {
+        f(3);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = (bArr[i] & 255) << 16;
+        int i4 = i + 2;
+        this.b = i4;
+        int i5 = i3 | ((bArr[i2] & 255) << 8);
+        this.b = i + 3;
+        return i5 | (bArr[i4] & 255);
+    }
+
+    public final int E() {
+        int m = m();
+        if (m >= 0) {
+            return m;
+        }
+        grb.i(uh9.k(m, "Top bit not zero: "));
+        return 0;
+    }
+
+    public final int F() {
+        long j = 0;
+        for (int i = 0; i < 9; i++) {
+            if (this.b == this.c) {
+                grb.i("Attempting to read a byte over the limit.");
+                return 0;
+            }
+            long A = A();
+            j |= (127 & A) << (i * 7);
+            if ((A & 128) == 0) {
+                break;
             }
         }
-        String concat = String.format("/%s[%d]", iy0Var.getType(), Integer.valueOf(i)).concat(str);
-        return parent instanceof iy0 ? a((iy0) parent, concat) : concat;
+        return ype.b(j);
+    }
+
+    public final long G() {
+        long u = u();
+        if (u >= 0) {
+            return u;
+        }
+        grb.i(qu6.n(u, "Top bit not zero: "));
+        return 0L;
+    }
+
+    public final int H() {
+        f(2);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = (bArr[i] & 255) << 8;
+        this.b = i + 2;
+        return i3 | (bArr[i2] & 255);
+    }
+
+    public final long I() {
+        int i;
+        f(1);
+        long j = this.a[this.b];
+        int i2 = 7;
+        while (true) {
+            if (i2 < 0) {
+                break;
+            }
+            if (((1 << i2) & j) != 0) {
+                i2--;
+            } else if (i2 < 6) {
+                j &= r6 - 1;
+                i = 7 - i2;
+            } else if (i2 == 7) {
+                i = 1;
+            }
+        }
+        i = 0;
+        if (i == 0) {
+            throw new NumberFormatException(qu6.n(j, "Invalid UTF-8 sequence first byte: "));
+        }
+        f(i);
+        for (int i3 = 1; i3 < i; i3++) {
+            if ((this.a[this.b + i3] & 192) != 128) {
+                throw new NumberFormatException(qu6.n(j, "Invalid UTF-8 sequence continuation byte: "));
+            }
+            j = (j << 6) | (r4 & 63);
+        }
+        this.b += i;
+        return j;
+    }
+
+    public final Charset J() {
+        if (a() >= 3) {
+            byte[] bArr = this.a;
+            int i = this.b;
+            if (bArr[i] == -17 && bArr[i + 1] == -69 && bArr[i + 2] == -65) {
+                this.b = i + 3;
+                return StandardCharsets.UTF_8;
+            }
+        }
+        if (a() < 2) {
+            return null;
+        }
+        byte[] bArr2 = this.a;
+        int i2 = this.b;
+        byte b = bArr2[i2];
+        if (b == -2 && bArr2[i2 + 1] == -1) {
+            this.b = i2 + 2;
+            return StandardCharsets.UTF_16BE;
+        }
+        if (b != -1 || bArr2[i2 + 1] != -2) {
+            return null;
+        }
+        this.b = i2 + 2;
+        return StandardCharsets.UTF_16LE;
+    }
+
+    public final void K(int i) {
+        byte[] bArr = this.a;
+        if (bArr.length < i) {
+            bArr = new byte[i];
+        }
+        L(i, bArr);
+    }
+
+    public final void L(int i, byte[] bArr) {
+        this.a = bArr;
+        this.c = i;
+        this.b = 0;
+    }
+
+    public final void M(int i) {
+        yve.f(i >= 0 && i <= this.a.length);
+        this.c = i;
+    }
+
+    public final void N(int i) {
+        yve.f(i >= 0 && i <= this.c);
+        this.b = i;
+    }
+
+    public final void O(int i) {
+        N(this.b + i);
+    }
+
+    public final int a() {
+        return Math.max(this.c - this.b, 0);
+    }
+
+    public final void c(int i) {
+        byte[] bArr = this.a;
+        if (i > bArr.length) {
+            this.a = Arrays.copyOf(bArr, i);
+        }
+    }
+
+    public final void f(int i) {
+        Boolean bool = (Boolean) g.get();
+        if (!(bool != null ? bool.booleanValue() : dy7.a) || a() >= i) {
+            return;
+        }
+        lq5.g(a(), uh9.m(i, "bytesNeeded= ", ", bytesLeft="));
+    }
+
+    public final char g(int i, ByteOrder byteOrder) {
+        byte b;
+        byte b2;
+        f(2);
+        ByteOrder byteOrder2 = ByteOrder.BIG_ENDIAN;
+        byte[] bArr = this.a;
+        int i2 = this.b + i;
+        if (byteOrder == byteOrder2) {
+            b = bArr[i2];
+            b2 = bArr[i2 + 1];
+        } else {
+            b = bArr[i2 + 1];
+            b2 = bArr[i2];
+        }
+        return (char) ((b << 8) | (b2 & 255));
+    }
+
+    public final int h(Charset charset) {
+        int i;
+        yve.h(f.contains(charset), "Unsupported charset: %s", charset);
+        if (a() < d(charset)) {
+            xi4.m("position=", this.b, ", limit=", this.c);
+            return 0;
+        }
+        int i2 = 1;
+        if (charset.equals(StandardCharsets.US_ASCII)) {
+            byte b = this.a[this.b];
+            if ((b & 128) == 0) {
+                i = b & 255;
+                return (i << 8) | i2;
+            }
+            return 0;
+        }
+        if (charset.equals(StandardCharsets.UTF_8)) {
+            byte b2 = this.a[this.b];
+            int i3 = (b2 & 128) == 0 ? 1 : ((b2 & 224) == 192 && a() >= 2 && e(this.a[this.b + 1])) ? 2 : ((this.a[this.b] & 240) == 224 && a() >= 3 && e(this.a[this.b + 1]) && e(this.a[this.b + 2])) ? 3 : ((this.a[this.b] & 248) == 240 && a() >= 4 && e(this.a[this.b + 1]) && e(this.a[this.b + 2]) && e(this.a[this.b + 3])) ? 4 : 0;
+            if (i3 == 1) {
+                i = this.a[this.b] & 255;
+            } else if (i3 == 2) {
+                byte[] bArr = this.a;
+                int i4 = this.b;
+                i = b(0, 0, bArr[i4], bArr[i4 + 1]);
+            } else {
+                if (i3 != 3) {
+                    if (i3 == 4) {
+                        byte[] bArr2 = this.a;
+                        int i5 = this.b;
+                        i = b(bArr2[i5], bArr2[i5 + 1], bArr2[i5 + 2], bArr2[i5 + 3]);
+                    }
+                    return 0;
+                }
+                byte[] bArr3 = this.a;
+                int i6 = this.b;
+                i = b(0, bArr3[i6] & 15, bArr3[i6 + 1], bArr3[i6 + 2]);
+            }
+            i2 = i3;
+        } else {
+            ByteOrder byteOrder = charset.equals(StandardCharsets.UTF_16LE) ? ByteOrder.LITTLE_ENDIAN : ByteOrder.BIG_ENDIAN;
+            char g2 = g(0, byteOrder);
+            if (!Character.isHighSurrogate(g2) || a() < 4) {
+                i = g2;
+                i2 = 2;
+            } else {
+                i = Character.toCodePoint(g2, g(2, byteOrder));
+                i2 = 4;
+            }
+        }
+        return (i << 8) | i2;
+    }
+
+    public final int i() {
+        if (a() < 4) {
+            xi4.m("position=", this.b, ", limit=", this.c);
+            return 0;
+        }
+        int m = m();
+        this.b -= 4;
+        return m;
+    }
+
+    public final int j() {
+        f(1);
+        return this.a[this.b] & 255;
+    }
+
+    public final void k(int i, int i2, byte[] bArr) {
+        f(i2);
+        System.arraycopy(this.a, this.b, bArr, i, i2);
+        this.b += i2;
+    }
+
+    public final char l(Charset charset, char[] cArr) {
+        int h;
+        if (a() >= d(charset) && (h = h(charset)) != 0) {
+            long j = h >>> 8;
+            yve.d(j, "out of range: %s", (j >> 32) == 0);
+            int i = (int) j;
+            if (!Character.isSupplementaryCodePoint(i)) {
+                long j2 = i;
+                char c = (char) j2;
+                yve.d(j2, "Out of range: %s", ((long) c) == j2);
+                for (char c2 : cArr) {
+                    if (c2 == c) {
+                        this.b = ype.b(h & jn7.d4) + this.b;
+                        return c;
+                    }
+                }
+            }
+        }
+        return (char) 0;
+    }
+
+    public final int m() {
+        f(4);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = (bArr[i] & 255) << 24;
+        int i4 = i + 2;
+        this.b = i4;
+        int i5 = i3 | ((bArr[i2] & 255) << 16);
+        int i6 = i + 3;
+        this.b = i6;
+        int i7 = i5 | ((bArr[i4] & 255) << 8);
+        this.b = i + 4;
+        return i7 | (bArr[i6] & 255);
+    }
+
+    public final String n(Charset charset) {
+        int i;
+        yve.h(f.contains(charset), "Unsupported charset: %s", charset);
+        if (a() == 0) {
+            return null;
+        }
+        Charset charset2 = StandardCharsets.US_ASCII;
+        if (!charset.equals(charset2)) {
+            J();
+        }
+        if (charset.equals(StandardCharsets.UTF_8) || charset.equals(charset2)) {
+            i = 1;
+        } else {
+            if (!charset.equals(StandardCharsets.UTF_16) && !charset.equals(StandardCharsets.UTF_16LE) && !charset.equals(StandardCharsets.UTF_16BE)) {
+                lq5.q(charset, "Unsupported charset: ");
+                return null;
+            }
+            i = 2;
+        }
+        int i2 = this.b;
+        while (true) {
+            int i3 = this.c;
+            if (i2 >= i3 - (i - 1)) {
+                i2 = i3;
+                break;
+            }
+            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && gcc.P(this.a[i2])) {
+                break;
+            }
+            if (charset.equals(StandardCharsets.UTF_16) || charset.equals(StandardCharsets.UTF_16BE)) {
+                byte[] bArr = this.a;
+                if (bArr[i2] == 0 && gcc.P(bArr[i2 + 1])) {
+                    break;
+                }
+            }
+            if (charset.equals(StandardCharsets.UTF_16LE)) {
+                byte[] bArr2 = this.a;
+                if (bArr2[i2 + 1] == 0 && gcc.P(bArr2[i2])) {
+                    break;
+                }
+            }
+            i2 += i;
+        }
+        String y = y(i2 - this.b, charset);
+        if (this.b != this.c && l(charset, d) == '\r') {
+            l(charset, e);
+        }
+        return y;
+    }
+
+    public final int o() {
+        f(4);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = bArr[i] & 255;
+        int i4 = i + 2;
+        this.b = i4;
+        int i5 = i3 | ((bArr[i2] & 255) << 8);
+        int i6 = i + 3;
+        this.b = i6;
+        int i7 = i5 | ((bArr[i4] & 255) << 16);
+        this.b = i + 4;
+        return i7 | ((bArr[i6] & 255) << 24);
+    }
+
+    public final long p() {
+        f(8);
+        byte[] bArr = this.a;
+        int i = this.b;
+        this.b = i + 1;
+        this.b = i + 2;
+        long j = (bArr[i] & 255) | ((bArr[r3] & 255) << 8);
+        this.b = i + 3;
+        long j2 = j | ((bArr[r8] & 255) << 16);
+        this.b = i + 4;
+        long j3 = j2 | ((bArr[r3] & 255) << 24);
+        this.b = i + 5;
+        long j4 = j3 | ((bArr[r8] & 255) << 32);
+        this.b = i + 6;
+        long j5 = j4 | ((bArr[r3] & 255) << 40);
+        this.b = i + 7;
+        long j6 = j5 | ((bArr[r8] & 255) << 48);
+        this.b = i + 8;
+        return j6 | ((bArr[r3] & 255) << 56);
+    }
+
+    public final short q() {
+        f(2);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = bArr[i] & 255;
+        this.b = i + 2;
+        return (short) (i3 | ((bArr[i2] & 255) << 8));
+    }
+
+    public final long r() {
+        f(4);
+        byte[] bArr = this.a;
+        int i = this.b;
+        this.b = i + 1;
+        this.b = i + 2;
+        long j = (bArr[i] & 255) | ((bArr[r3] & 255) << 8);
+        this.b = i + 3;
+        long j2 = j | ((bArr[r8] & 255) << 16);
+        this.b = i + 4;
+        return j2 | ((bArr[r3] & 255) << 24);
+    }
+
+    public final int s() {
+        int o = o();
+        if (o >= 0) {
+            return o;
+        }
+        grb.i(uh9.k(o, "Top bit not zero: "));
+        return 0;
+    }
+
+    public final int t() {
+        f(2);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = bArr[i] & 255;
+        this.b = i + 2;
+        return i3 | ((bArr[i2] & 255) << 8);
+    }
+
+    public final long u() {
+        f(8);
+        byte[] bArr = this.a;
+        int i = this.b;
+        this.b = i + 1;
+        this.b = i + 2;
+        long j = ((bArr[i] & 255) << 56) | ((bArr[r3] & 255) << 48);
+        this.b = i + 3;
+        long j2 = j | ((bArr[r8] & 255) << 40);
+        this.b = i + 4;
+        long j3 = j2 | ((bArr[r3] & 255) << 32);
+        this.b = i + 5;
+        long j4 = j3 | ((bArr[r8] & 255) << 24);
+        this.b = i + 6;
+        long j5 = j4 | ((bArr[r3] & 255) << 16);
+        this.b = i + 7;
+        long j6 = j5 | ((bArr[r8] & 255) << 8);
+        this.b = i + 8;
+        return j6 | (bArr[r3] & 255);
+    }
+
+    public final String v() {
+        if (a() == 0) {
+            return null;
+        }
+        int i = this.b;
+        while (i < this.c && this.a[i] != 0) {
+            i++;
+        }
+        byte[] bArr = this.a;
+        int i2 = this.b;
+        String str = gcc.a;
+        String str2 = new String(bArr, i2, i - i2, StandardCharsets.UTF_8);
+        this.b = i;
+        if (i < this.c) {
+            this.b = i + 1;
+        }
+        return str2;
+    }
+
+    public final String w(int i) {
+        Boolean bool = (Boolean) g.get();
+        if ((bool != null ? bool.booleanValue() : dy7.a) && a() < i) {
+            StringBuilder m = uh9.m(i, "bytesNeeded= ", ", bytesLeft=");
+            m.append(a());
+            throw new StringIndexOutOfBoundsException(m.toString());
+        }
+        if (i == 0) {
+            return "";
+        }
+        int i2 = this.b;
+        int i3 = (i2 + i) - 1;
+        int i4 = (i3 >= this.c || this.a[i3] != 0) ? i : i - 1;
+        byte[] bArr = this.a;
+        String str = gcc.a;
+        String str2 = new String(bArr, i2, i4, StandardCharsets.UTF_8);
+        this.b += i;
+        return str2;
+    }
+
+    public final short x() {
+        f(2);
+        byte[] bArr = this.a;
+        int i = this.b;
+        int i2 = i + 1;
+        this.b = i2;
+        int i3 = (bArr[i] & 255) << 8;
+        this.b = i + 2;
+        return (short) (i3 | (bArr[i2] & 255));
+    }
+
+    public final String y(int i, Charset charset) {
+        Boolean bool = (Boolean) g.get();
+        if (!(bool != null ? bool.booleanValue() : dy7.a) || a() >= i) {
+            String str = new String(this.a, this.b, i, charset);
+            this.b += i;
+            return str;
+        }
+        StringBuilder m = uh9.m(i, "bytesNeeded= ", ", bytesLeft=");
+        m.append(a());
+        throw new StringIndexOutOfBoundsException(m.toString());
+    }
+
+    public final int z() {
+        return (A() << 21) | (A() << 14) | (A() << 7) | A();
+    }
+
+    public ey7() {
+        this.a = gcc.b;
+    }
+
+    public ey7(byte[] bArr) {
+        this.a = bArr;
+        this.c = bArr.length;
+    }
+
+    public ey7(int i, byte[] bArr) {
+        this.a = bArr;
+        this.c = i;
     }
 }

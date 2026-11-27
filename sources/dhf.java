@@ -1,6 +1,85 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.List;
+import java.util.concurrent.AbstractExecutorService;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class dhf {
+public class dhf extends AbstractExecutorService implements AutoCloseable, ExecutorService {
+    public final ExecutorService a;
+
+    public dhf(ExecutorService executorService) {
+        executorService.getClass();
+        this.a = executorService;
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean awaitTermination(long j, TimeUnit timeUnit) {
+        return this.a.awaitTermination(j, timeUnit);
+    }
+
+    @Override // java.lang.AutoCloseable
+    public /* synthetic */ void close() {
+        a3.i(this);
+    }
+
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.execute(runnable);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isShutdown() {
+        return this.a.isShutdown();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isTerminated() {
+        return this.a.isTerminated();
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService
+    public final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
+        return new uhf(Executors.callable(runnable, obj));
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final void shutdown() {
+        this.a.shutdown();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final List shutdownNow() {
+        return this.a.shutdownNow();
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Runnable runnable) {
+        return (x76) super.submit(runnable);
+    }
+
+    public final String toString() {
+        return super.toString() + "[" + String.valueOf(this.a) + "]";
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
+        return (x76) super.submit(runnable, obj);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Callable callable) {
+        return (x76) super.submit(callable);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService
+    public final RunnableFuture newTaskFor(Callable callable) {
+        return new uhf(callable);
+    }
 }

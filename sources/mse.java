@@ -1,55 +1,37 @@
 // default package
 
-import android.util.Log;
-import android.util.LongSparseArray;
-import java.lang.reflect.Field;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class mse {
-    public static Field a;
-    public static boolean b;
-    public static Class c;
-    public static boolean d;
-    public static Field e;
-    public static boolean f;
-    public static Field g;
-    public static boolean h;
+public final class mse extends s6e {
+    private static final mse zzb;
+    private int zzd;
+    private int zze;
+    private String zzf = "";
 
-    public static void a(Object obj) {
-        LongSparseArray longSparseArray;
-        if (!d) {
-            try {
-                c = Class.forName("android.content.res.ThemedResourceCache");
-            } catch (ClassNotFoundException e2) {
-                Log.e("ResourcesFlusher", "Could not find ThemedResourceCache class", e2);
-            }
-            d = true;
+    static {
+        mse mseVar = new mse();
+        zzb = mseVar;
+        s6e.k(mse.class, mseVar);
+    }
+
+    @Override // s6e
+    public final Object d(int i) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-        Class cls = c;
-        if (cls != null) {
-            if (!f) {
-                try {
-                    Field declaredField = cls.getDeclaredField("mUnthemedEntries");
-                    e = declaredField;
-                    declaredField.setAccessible(true);
-                } catch (NoSuchFieldException e3) {
-                    Log.e("ResourcesFlusher", "Could not retrieve ThemedResourceCache#mUnthemedEntries field", e3);
-                }
-                f = true;
-            }
-            Field field = e;
-            if (field != null) {
-                try {
-                    longSparseArray = (LongSparseArray) field.get(obj);
-                } catch (IllegalAccessException e4) {
-                    Log.e("ResourcesFlusher", "Could not retrieve value from ThemedResourceCache#mUnthemedEntries", e4);
-                    longSparseArray = null;
-                }
-                if (longSparseArray != null) {
-                    la9.a(longSparseArray);
-                }
-            }
+        if (i2 == 2) {
+            return new lfe(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", ovd.h, "zzf"});
         }
+        if (i2 == 3) {
+            return new mse();
+        }
+        if (i2 == 4) {
+            return new utd(zzb);
+        }
+        if (i2 == 5) {
+            return zzb;
+        }
+        throw null;
     }
 }

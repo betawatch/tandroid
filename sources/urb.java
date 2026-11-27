@@ -1,31 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum urb extends qsb {
-    public urb() {
-        super("Doctype", 50);
+public final class urb extends h2 {
+    public static final /* synthetic */ xh4 f;
+    public static final /* synthetic */ xh4 h;
+    public List e;
+
+    static {
+        u84 u84Var = new u84(urb.class, "TimeToSampleBox.java");
+        u84Var.e(u84Var.d("getEntries", "com.coremedia.iso.boxes.TimeToSampleBox", "", "", "java.util.List"));
+        f = u84Var.e(u84Var.d("setEntries", "com.coremedia.iso.boxes.TimeToSampleBox", "java.util.List", "entries", "void"));
+        h = u84Var.e(u84Var.d("toString", "com.coremedia.iso.boxes.TimeToSampleBox", "", "", "java.lang.String"));
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
-        vrb vrbVar = qsb.p0;
-        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            aqbVar.c = vrbVar;
-            return;
+    @Override // h2, z1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a = cvd.a(zpe.g(byteBuffer));
+        this.e = new ArrayList(a);
+        for (int i = 0; i < a; i++) {
+            this.e.add(new trb(zpe.g(byteBuffer), zpe.g(byteBuffer)));
         }
-        if (d != '>') {
-            if (d != 65535) {
-                aqbVar.m(this);
-                aqbVar.c = vrbVar;
-                return;
-            }
-            aqbVar.l(this);
+    }
+
+    @Override // h2, z1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.size());
+        for (trb trbVar : this.e) {
+            byteBuffer.putInt((int) trbVar.a);
+            byteBuffer.putInt((int) trbVar.b);
         }
-        aqbVar.m(this);
-        aqbVar.m.s();
-        aqbVar.j();
-        aqbVar.c = qsb.a;
+    }
+
+    @Override // z1
+    public final long getContentSize() {
+        return (this.e.size() << 3) + 8;
+    }
+
+    public final String toString() {
+        lyc b = u84.b(h, this, this);
+        zb9.a().getClass();
+        zb9.b(b);
+        return "TimeToSampleBox[entryCount=" + this.e.size() + "]";
     }
 }

@@ -1,51 +1,75 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.view.View;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u6d extends a7d {
-    public final transient int r;
-    public final transient int s;
-    public final /* synthetic */ a7d w;
+public final class u6d {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xq2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u6d(a7d a7dVar, int i, int i2) {
-        super((byte) 3);
-        this.w = a7dVar;
-        this.r = i;
-        this.s = i2;
+    public u6d(xq2 xq2Var, byte b) {
+        this.a = b;
+        switch (b) {
+            case 1:
+                Objects.requireNonNull(xq2Var);
+                this.b = xq2Var;
+                break;
+            default:
+                Objects.requireNonNull(xq2Var);
+                this.b = xq2Var;
+                break;
+        }
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        u3f.a(i, this.s);
-        return this.w.get(i + this.r);
+    public final int a() {
+        switch (this.a) {
+            case 0:
+                return 1;
+            default:
+                return 5;
+        }
     }
 
-    @Override // kzc
-    public final Object[] r() {
-        return this.w.r();
-    }
-
-    @Override // kzc
-    public final int s() {
-        return this.w.s() + this.r;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.s;
-    }
-
-    @Override // kzc
-    public final int t() {
-        return this.w.s() + this.r + this.s;
-    }
-
-    @Override // a7d, java.util.List
-    /* renamed from: z */
-    public final a7d subList(int i, int i2) {
-        u3f.b(i, i2, this.s);
-        int i3 = this.r;
-        return this.w.subList(i + i3, i2 + i3);
+    public final void b() {
+        byte b = this.a;
+        xq2 xq2Var = this.b;
+        switch (b) {
+            case 0:
+                ko9 ko9Var = (ko9) xq2Var.a;
+                tt ttVar = (tt) ko9Var.b;
+                b1f b1fVar = (b1f) ko9Var.c;
+                try {
+                    Bundle bundle = new Bundle();
+                    Parcel R = b1fVar.R();
+                    jld.b(R, bundle);
+                    b1fVar.V(R, 2);
+                    fmd.b(bundle, null);
+                    Parcel Q = b1fVar.Q(b1fVar.R(), 8);
+                    al5 T = br7.T(Q.readStrongBinder());
+                    Q.recycle();
+                    ko9Var.d = (View) br7.U(T);
+                    ttVar.removeAllViews();
+                    ttVar.addView((View) ko9Var.d);
+                    break;
+                } catch (RemoteException e) {
+                    p3d.i(e);
+                    return;
+                }
+            default:
+                ko9 ko9Var2 = (ko9) xq2Var.a;
+                ko9Var2.getClass();
+                try {
+                    b1f b1fVar2 = (b1f) ko9Var2.c;
+                    b1fVar2.V(b1fVar2.R(), 3);
+                    break;
+                } catch (RemoteException e2) {
+                    p3d.i(e2);
+                }
+        }
     }
 }

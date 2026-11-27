@@ -1,82 +1,36 @@
 // default package
 
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class f3c implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ p3c b;
+    public final /* synthetic */ icc b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ f3c(p3c p3cVar, byte b) {
+    public /* synthetic */ f3c(icc iccVar, String str, byte b) {
         this.a = b;
-        this.b = p3cVar;
+        this.b = iccVar;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        int i = 0;
-        p3c p3cVar = this.b;
+        String str = this.c;
+        icc iccVar = this.b;
         switch (b) {
             case 0:
+                iccVar.a(str, Boolean.FALSE);
                 break;
             case 1:
-                EditTextBoldCursor editTextBoldCursor = p3cVar.n;
-                if (editTextBoldCursor != null) {
-                    if (editTextBoldCursor.length() == 0) {
-                        p3cVar.J0(true);
-                        return;
-                    }
-                    p3cVar.g0[2].K(49);
-                    p3cVar.g0[2].O(false, 0.0f);
-                    p3cVar.a.d();
-                    return;
-                }
-                return;
+                iccVar.a(null, str);
+                break;
             case 2:
-                EditTextBoldCursor editTextBoldCursor2 = p3cVar.n;
-                if (editTextBoldCursor2 == null || editTextBoldCursor2.getVisibility() != 0) {
-                    return;
-                }
-                p3cVar.n.requestFocus();
-                gl.E3(p3cVar.n);
-                return;
-            case 3:
-                yc6 yc6Var = p3cVar.x;
-                if (yc6Var == null || yc6Var.getVisibility() != 0) {
-                    return;
-                }
-                p3cVar.x.f[0].requestFocus();
-                return;
-            case 4:
-                if (p3cVar.h0 != null) {
-                    p3cVar.J0(false);
-                    return;
-                }
-                return;
-            case 5:
-                p3cVar.u0();
-                return;
-            case 6:
-                gl.d3(new f3c(p3cVar, (byte) 7), 150L);
-                return;
+                iccVar.a(null, str);
+                break;
             default:
-                sj2[] sj2VarArr = p3cVar.x.f;
-                int length = sj2VarArr.length;
-                while (i < length) {
-                    sj2VarArr[i].A(0.0f);
-                    i++;
-                }
-                return;
-        }
-        while (true) {
-            sj2[] sj2VarArr2 = p3cVar.x.f;
-            if (i >= sj2VarArr2.length) {
-                return;
-            }
-            sj2VarArr2[i].A(0.0f);
-            i++;
+                iccVar.a(null, str);
+                break;
         }
     }
 }

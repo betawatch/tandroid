@@ -1,37 +1,25 @@
 // default package
 
-import android.view.KeyEvent;
+import java.util.concurrent.locks.AbstractOwnableSynchronizer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class tr5 implements k8 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cs5 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class tr5 extends AbstractOwnableSynchronizer implements Runnable {
+    public final h6c a;
 
-    public /* synthetic */ tr5(cs5 cs5Var, byte b) {
-        this.a = b;
-        this.b = cs5Var;
+    public tr5(h6c h6cVar) {
+        this.a = h6cVar;
     }
 
-    @Override // k8
-    public final void r(KeyEvent keyEvent) {
-        xr5 xr5Var;
-        xr5 xr5Var2;
-        byte b = this.a;
-        cs5 cs5Var = this.b;
-        switch (b) {
-            case 0:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (xr5Var = cs5Var.m) != null && xr5Var.isShowing()) {
-                    cs5Var.u();
-                    break;
-                }
-                break;
-            default:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (xr5Var2 = cs5Var.m) != null && xr5Var2.isShowing()) {
-                    cs5Var.u();
-                    break;
-                }
-                break;
-        }
+    public final void a(Thread thread) {
+        setExclusiveOwnerThread(thread);
+    }
+
+    public final String toString() {
+        return this.a.toString();
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
     }
 }

@@ -1,25 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+import android.graphics.PorterDuff;
+import android.view.GestureDetector;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public abstract class nle {
-    public static final void a(sw2 sw2Var) {
-        bt5 bt5Var = (bt5) sw2Var.get(pd5.c);
-        if (bt5Var != null && !bt5Var.isActive()) {
-            throw bt5Var.getCancellationException();
-        }
-    }
+    public static ll4 a;
 
-    public static final bt5 b(sw2 sw2Var) {
-        bt5 bt5Var = (bt5) sw2Var.get(pd5.c);
-        if (bt5Var != null) {
-            return bt5Var;
+    public static void a(LaunchActivity launchActivity, boolean z, boolean z2) {
+        ll4 ll4Var = a;
+        byte b = 1;
+        if (z != (ll4Var != null)) {
+            if (z) {
+                ll4 ll4Var2 = new ll4(launchActivity);
+                ll4Var2.r = new gl4(ll4Var2, (byte) 3);
+                ll4Var2.F = new ArrayList();
+                jl4 jl4Var = new jl4(ll4Var2);
+                ll4Var2.e = launchActivity.getSharedPreferences("floating_debug", 0);
+                ll4Var2.G = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
+                kj4 kj4Var = new kj4(launchActivity, jl4Var);
+                ((GestureDetector) kj4Var.b).setIsLongpressEnabled(false);
+                tt ttVar = new tt(ll4Var2, launchActivity, kj4Var, (byte) 15);
+                ll4Var2.a = ttVar;
+                ImageView imageView = new ImageView(launchActivity);
+                imageView.setImageResource(R.drawable.device_phone_android);
+                yob.s(imageView, aob.O9, null, PorterDuff.Mode.SRC_IN);
+                ttVar.addView(imageView);
+                ttVar.setVisibility(8);
+                ll4Var2.addView(ttVar, tre.c(56.0f, 56));
+                LinearLayout linearLayout = new LinearLayout(launchActivity);
+                ll4Var2.x = linearLayout;
+                linearLayout.setOrientation(1);
+                linearLayout.setVisibility(8);
+                TextView textView = new TextView(launchActivity);
+                ll4Var2.y = textView;
+                textView.setTextSize(1, 20.0f);
+                textView.setText(ob6.M0(2131751611, null));
+                textView.setTypeface(hl.o());
+                textView.setPadding(hl.L(24.0f), hl.L(19.0f), hl.L(24.0f), hl.L(19.0f));
+                linearLayout.addView(textView, tre.o(-1, -2));
+                d79 d79Var = new d79(launchActivity, null);
+                ll4Var2.E = d79Var;
+                d79Var.setLayoutManager(new x46());
+                d79Var.setAdapter(new t20(ll4Var2, launchActivity));
+                d79Var.setOnItemClickListener(new zg4(ll4Var2, b));
+                linearLayout.addView(d79Var, tre.l(1.0f, -1, 0));
+                ll4Var2.addView(linearLayout, tre.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
+                ll4Var2.d();
+                ll4Var2.setFitsSystemWindows(true);
+                ll4Var2.setWillNotDraw(false);
+                a = ll4Var2;
+                launchActivity.v0.addView(ll4Var2, new FrameLayout.LayoutParams(-1, -1));
+                ll4 ll4Var3 = a;
+                ll4Var3.a.setVisibility(0);
+                vpa vpaVar = new vpa(new xk4(0.0f));
+                vpaVar.m = bp1.j(1000.0f, 750.0f, 0.75f);
+                vpaVar.b(new i10(ll4Var3, (byte) 5));
+                vpaVar.h();
+            } else {
+                ll4Var.getClass();
+                launchActivity.v0.removeView(a);
+                a = null;
+            }
+            if (z2) {
+                xea.t1 = z;
+                xea.x();
+            }
         }
-        wn4.n(sw2Var, "Current context doesn't contain Job in it: ");
-        return null;
-    }
-
-    public static final no3 c(bt5 bt5Var, boolean z, ft5 ft5Var) {
-        return bt5Var instanceof pt5 ? ((pt5) bt5Var).z(z, ft5Var) : bt5Var.invokeOnCompletion(ft5Var.k(), z, new et5(1, ft5Var, ft5.class, "invoke", "invoke(Ljava/lang/Throwable;)V", 0));
     }
 }

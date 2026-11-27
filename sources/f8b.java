@@ -1,42 +1,37 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class f8b extends AnimatorListenerAdapter {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class f8b implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ v7b b;
+    public final /* synthetic */ k8b b;
 
-    public /* synthetic */ f8b(v7b v7bVar, byte b) {
+    public /* synthetic */ f8b(k8b k8bVar, byte b) {
         this.a = b;
-        this.b = v7bVar;
+        this.b = k8bVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        v7b v7bVar = this.b;
+        k8b k8bVar = this.b;
         switch (b) {
             case 0:
-                super.onAnimationEnd(animator);
-                m8b m8bVar = v7bVar.b;
-                k2b k2bVar = m8bVar.u1;
-                if (k2bVar != null) {
-                    k2bVar.b();
-                    m8bVar.w.removeView(m8bVar.u1);
-                }
-                m8bVar.u1 = null;
-                m8bVar.U();
+                k8bVar.b();
+                break;
+            case 1:
+                hl.c3(new f8b(k8bVar, (byte) 0));
+                break;
+            case 2:
+                k8bVar.dismiss();
                 break;
             default:
-                super.onAnimationEnd(animator);
-                k2b k2bVar2 = v7bVar.b.u1;
-                if (k2bVar2 != null) {
-                    k2bVar2.a(true);
-                    break;
+                sh9 sh9Var = k8bVar.I;
+                if (sh9Var != null) {
+                    sh9Var.a(null);
+                    k8bVar.I = null;
                 }
+                k8bVar.dismiss();
                 break;
         }
     }

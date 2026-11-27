@@ -1,33 +1,34 @@
 // default package
 
-import android.graphics.Color;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nn3 extends CharacterStyle implements UpdateAppearance {
-    public final long a;
-    public long b;
-    public final int c;
-    public final int d;
-    public boolean e;
+public final /* synthetic */ class nn3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ CountDownLatch b;
 
-    public nn3(long j, int i, int i2) {
-        this.a = j;
-        this.c = i;
-        this.d = i2;
+    public /* synthetic */ nn3(CountDownLatch countDownLatch, byte b) {
+        this.a = b;
+        this.b = countDownLatch;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        textPaint.setColor(bm2.f(qn3.b(Math.max(0.0f, Math.min(1.0f, (uptimeMillis - this.a) / 750.0f))), this.c, this.d));
-        if (this.b > 0) {
-            float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (uptimeMillis - r5) / 220.0f));
-            textPaint.setAlpha((int) (Color.alpha(r2) * oo1.v(max, max, max, 1.0f)));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        CountDownLatch countDownLatch = this.b;
+        switch (b) {
+            case 0:
+                try {
+                    countDownLatch.await(20000L, TimeUnit.MILLISECONDS);
+                    break;
+                } catch (InterruptedException unused) {
+                    return;
+                }
+            default:
+                countDownLatch.countDown();
+                break;
         }
     }
 }

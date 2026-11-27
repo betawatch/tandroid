@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zziy {
     public static final Class zza(Object obj) {
@@ -13,24 +13,24 @@ public final class zziy {
             if (cls != null) {
                 return cls;
             }
-            fvc.c(4, 6, null);
+            p3d.d(4, 6, null);
             return null;
         }
         if (!(obj instanceof String)) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return null;
         }
         try {
             String str = (String) obj;
             Class<?> cls2 = Class.forName(str);
             int i = zzby.zza;
-            if (((zziq) cne.b(zzix.zza).getValue()).zzb(str)) {
+            if (((zziq) ure.b(zzix.zza).getValue()).zzb(str)) {
                 return cls2;
             }
-            fvc.c(6, 47, null);
+            p3d.d(6, 47, null);
             return null;
         } catch (Exception e) {
-            fvc.c(6, 8, e);
+            p3d.d(6, 8, e);
             return null;
         }
     }

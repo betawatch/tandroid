@@ -1,29 +1,20 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class is0 implements i8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ss0 b;
-
-    public /* synthetic */ is0(ss0 ss0Var, byte b) {
-        this.a = b;
-        this.b = ss0Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class is0 extends wma {
+    @Override // wma
+    public final boolean O() {
+        return false;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                this.b.o0(false, 0L, (TLRPC.InputCheckPasswordSRP) obj, (TwoStepVerificationActivity) obj2);
-                break;
-            default:
-                this.b.n0((ArrayList) obj);
-                break;
-        }
+    @Override // wma
+    public final boolean P() {
+        return false;
+    }
+
+    @Override // wma
+    public final boolean W() {
+        return false;
     }
 }

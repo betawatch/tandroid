@@ -1,13 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ep9 {
-    public final fm4 a;
-    public final xq3 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public enum ep9 {
+    b(30),
+    c(60);
 
-    public ep9(fm4 fm4Var, xq3 xq3Var) {
-        this.a = fm4Var;
-        this.b = xq3Var;
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    ep9(int i) {
+        this.a = i;
     }
 }

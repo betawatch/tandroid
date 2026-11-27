@@ -4,9 +4,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class k extends s64 {
+public final class k extends m74 {
     public final /* synthetic */ l o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,51 +15,51 @@ public final class k extends s64 {
         this.o = lVar;
     }
 
-    @Override // s64
+    @Override // m74
     public final int g(float f, float f2) {
         l lVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = lVar.Q0;
-        if (chatActivityEnterView.h5 && chatActivityEnterView.D2 != null && chatActivityEnterView.H4.contains(f, f2)) {
+        ChatActivityEnterView chatActivityEnterView = lVar.U0;
+        if (chatActivityEnterView.j5 && chatActivityEnterView.C2 != null && chatActivityEnterView.G4.contains(f, f2)) {
             return 2;
         }
-        return (!chatActivityEnterView.Q || chatActivityEnterView.D2 == null || chatActivityEnterView.c5 <= 0.1f || !lVar.K.contains(f, f2)) ? -1 : 4;
+        return (!chatActivityEnterView.Q || chatActivityEnterView.C2 == null || chatActivityEnterView.b5 <= 0.1f || !lVar.K.contains(f, f2)) ? -1 : 4;
     }
 
-    @Override // s64
+    @Override // m74
     public final void h(ArrayList arrayList) {
-        ChatActivityEnterView chatActivityEnterView = this.o.Q0;
-        if (chatActivityEnterView.h5) {
+        ChatActivityEnterView chatActivityEnterView = this.o.U0;
+        if (chatActivityEnterView.j5) {
             arrayList.add(2);
         }
-        if (!chatActivityEnterView.Q || chatActivityEnterView.D2 == null || chatActivityEnterView.c5 <= 0.1f) {
+        if (!chatActivityEnterView.Q || chatActivityEnterView.C2 == null || chatActivityEnterView.b5 <= 0.1f) {
             return;
         }
         arrayList.add(4);
     }
 
-    @Override // s64
+    @Override // m74
     public final boolean k(int i, int i2) {
         return true;
     }
 
-    @Override // s64
-    public final void l(int i, u4 u4Var) {
+    @Override // m74
+    public final void l(int i, v4 v4Var) {
         l lVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = lVar.Q0;
+        ChatActivityEnterView chatActivityEnterView = lVar.U0;
         if (i == 2) {
-            Rect rect = chatActivityEnterView.J4;
-            RectF rectF = chatActivityEnterView.H4;
+            Rect rect = chatActivityEnterView.I4;
+            RectF rectF = chatActivityEnterView.G4;
             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            u4Var.h(chatActivityEnterView.J4);
-            u4Var.o(k96.M0(chatActivityEnterView.e5 > 0.5f ? 2131754927 : 2131754930, null));
+            v4Var.h(chatActivityEnterView.I4);
+            v4Var.o(ob6.M0(chatActivityEnterView.d5 > 0.5f ? 2131754923 : 2131754926, null));
             return;
         }
         if (i == 4) {
-            Rect rect2 = chatActivityEnterView.J4;
+            Rect rect2 = chatActivityEnterView.I4;
             RectF rectF2 = lVar.K;
             rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-            u4Var.h(chatActivityEnterView.J4);
-            u4Var.o(k96.M0(chatActivityEnterView.P ? 2131754934 : 2131754935, null));
+            v4Var.h(chatActivityEnterView.I4);
+            v4Var.o(ob6.M0(chatActivityEnterView.P ? 2131754930 : 2131754931, null));
         }
     }
 }

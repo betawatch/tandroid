@@ -1,63 +1,33 @@
 // default package
 
-import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class if2 implements fh6, yr9 {
-    public final /* synthetic */ jf2 a;
+public final class if2 implements md2 {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ bg2 b;
 
-    public /* synthetic */ if2(jf2 jf2Var) {
-        this.a = jf2Var;
+    public if2(bg2 bg2Var, TLObject tLObject) {
+        this.b = bg2Var;
+        this.a = tLObject;
     }
 
-    @Override // yr9
-    public final vf6 O0() {
-        return null;
+    @Override // md2
+    public final void a(TLRPC.User user) {
+        this.b.w0(user);
     }
 
-    @Override // yr9
-    public final boolean U1(int i) {
-        return true;
-    }
-
-    @Override // fh6
-    public final boolean a(gh6 gh6Var, boolean z) {
-        int intValue = ((Integer) gh6Var.getTag()).intValue();
-        jf2 jf2Var = this.a;
-        TLObject E = jf2Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
+    @Override // md2
+    public final void b(int i, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+            this.b.E0(channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
-        return jf2Var.E.h0((TLRPC.ChannelParticipant) E, !z, gh6Var);
-    }
-
-    @Override // yr9
-    public final void r(int i) {
-        jf2 jf2Var = this.a;
-        kf2 kf2Var = jf2Var.E;
-        if (jf2Var.h.e()) {
-            return;
-        }
-        int i2 = jf2Var.r;
-        jf2Var.f();
-        if (jf2Var.r > i2) {
-            kf2Var.B0(i2);
-        }
-        if (jf2Var.s || jf2Var.r != 0 || i == 0) {
-            return;
-        }
-        kf2Var.b.e(false, true);
-    }
-
-    @Override // yr9
-    public final vf6 t1() {
-        return null;
-    }
-
-    @Override // yr9
-    public final void m2(ArrayList arrayList) {
     }
 }

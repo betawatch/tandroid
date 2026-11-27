@@ -1,15 +1,11 @@
 // default package
 
-import android.text.SpannableStringBuilder;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface m6c {
+    void a(int i, ey7 ey7Var);
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class m6c extends u41 {
-    public SpannableStringBuilder m0;
+    void c(usb usbVar, g84 g84Var, l6c l6cVar);
 
-    public void setLvlRequiredState(int i) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) this.m0).append((CharSequence) k96.G(i, "ReactionLevelRequiredBtn", new Object[0]));
-        g(spannableStringBuilder, true);
-    }
+    void d();
 }

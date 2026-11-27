@@ -1,61 +1,79 @@
 // default package
 
-import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class dcd implements Iterator {
-    public final /* synthetic */ byte a;
-    public Iterator b;
+public final class dcd extends n3 {
+    public final Object b;
+    public int c;
+    public final /* synthetic */ lp2 d;
 
-    public dcd(Iterator it, byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                it.getClass();
-                this.b = it;
-                break;
-            default:
-                it.getClass();
-                this.b = it;
-                break;
-        }
+    public dcd(lp2 lp2Var, int i) {
+        super((byte) 2, false);
+        this.d = lp2Var;
+        Object[] objArr = lp2Var.d;
+        objArr.getClass();
+        this.b = objArr[i];
+        this.c = i;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-        }
-        return this.b.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-        }
-        return (String) this.b.next();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                this.b.remove();
+    public final void a() {
+        int i = this.c;
+        Object obj = this.b;
+        lp2 lp2Var = this.d;
+        if (i != -1 && i < lp2Var.size()) {
+            int i2 = this.c;
+            Object[] objArr = lp2Var.d;
+            objArr.getClass();
+            if (e6f.a(obj, objArr[i2])) {
                 return;
-            case 1:
-                this.b.remove();
-                return;
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
+            }
         }
+        Object obj2 = lp2.w;
+        this.c = lp2Var.s(obj);
     }
 
-    public dcd(ehf ehfVar) {
-        this.a = (byte) 4;
-        this.b = ehfVar.a.iterator();
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        lp2 lp2Var = this.d;
+        Map m = lp2Var.m();
+        if (m != null) {
+            return m.get(this.b);
+        }
+        a();
+        int i = this.c;
+        if (i == -1) {
+            return null;
+        }
+        Object[] objArr = lp2Var.e;
+        objArr.getClass();
+        return objArr[i];
+    }
+
+    @Override // n3, java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        lp2 lp2Var = this.d;
+        Map m = lp2Var.m();
+        Object obj2 = this.b;
+        if (m != null) {
+            return m.put(obj2, obj);
+        }
+        a();
+        int i = this.c;
+        if (i == -1) {
+            lp2Var.put(obj2, obj);
+            return null;
+        }
+        Object[] objArr = lp2Var.e;
+        objArr.getClass();
+        Object obj3 = objArr[i];
+        objArr[i] = obj;
+        return obj3;
     }
 }

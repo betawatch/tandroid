@@ -1,41 +1,35 @@
 // default package
 
-import android.view.View;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h93 implements x56, e39 {
+public final /* synthetic */ class h93 implements RequestDelegate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ k93 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ h93(tj tjVar, int i, nc8 nc8Var, nc8 nc8Var2) {
-        this.b = tjVar;
-        this.a = i;
+    public /* synthetic */ h93(k93 k93Var, byte b) {
+        this.a = b;
+        this.b = k93Var;
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        s09 s09Var;
-        t09 t09Var = (t09) this.b;
-        if (this.a == 5 || (s09Var = t09Var.h0) == null || !(view instanceof r09)) {
-            return false;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        byte b2 = 1;
+        k93 k93Var = this.b;
+        switch (b) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                k93Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new h93(k93Var, b2));
+                break;
+            default:
+                k93Var.getMessagesController().a3(true);
+                break;
         }
-        s09Var.q(t09Var, ((r09) view).e, true, false);
-        return true;
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        tj tjVar = (tj) this.b;
-        uj ujVar = (uj) obj;
-        ujVar.getClass();
-        ujVar.y(tjVar, this.a);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ h93(t09 t09Var, int i) {
-        this.b = t09Var;
-        this.a = i;
     }
 }

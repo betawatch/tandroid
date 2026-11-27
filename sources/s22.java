@@ -1,26 +1,12 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class s22 extends u26 {
-    public final /* synthetic */ z12 r;
+public interface s22 {
+    void a(ArrayList arrayList, String str, boolean z, int i, long j, boolean z2);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s22(z12 z12Var, Context context) {
-        super(context);
-        this.r = z12Var;
-    }
-
-    @Override // u26
-    public final int k(int i, View view) {
-        return de9.f(56.0f, ((d32) this.r.V).r.getPaddingTop() - gl.m, super.k(i, view));
-    }
-
-    @Override // u26
-    public final int m(int i) {
-        return super.m(i) << 1;
-    }
+    void b(TLRPC.TL_userContact_old2 tL_userContact_old2, boolean z, int i, long j);
 }

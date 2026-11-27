@@ -1,205 +1,186 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.p;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Point;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.DecelerateInterpolator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yy7 implements TextWatcher {
-    public boolean a;
-    public String b;
-    public boolean c;
-    public int d;
-    public int e;
-    public boolean f;
-    public final char[] h = {',', '.', 1643, 12289, 11841, 65040, 65041, 65104, 65105, 65292, 65380, 699};
-    public final /* synthetic */ p n;
+public final class yy7 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ tg5 c;
+    public final /* synthetic */ fz7 d;
 
-    public yy7(p pVar) {
-        this.n = pVar;
+    public yy7(fz7 fz7Var, int i, int i2, tg5 tg5Var) {
+        this.d = fz7Var;
+        this.a = i;
+        this.b = i2;
+        this.c = tg5Var;
     }
 
-    public final int a(String str) {
-        int i = 0;
-        while (true) {
-            char[] cArr = this.h;
-            if (i >= cArr.length) {
-                return -1;
-            }
-            int indexOf = str.indexOf(cArr[i]);
-            if (indexOf >= 0) {
-                return indexOf;
-            }
-            i++;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i;
-        String str;
-        String str2;
-        p pVar = this.n;
-        if (pVar.n0) {
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        float f;
+        int L;
+        b6 b6Var;
+        int[] iArr;
+        double d;
+        View view;
+        AnimatorSet animatorSet;
+        float f2;
+        float f3;
+        float f4;
+        float f5;
+        fz7 fz7Var = this.d;
+        b6 b6Var2 = fz7Var.e;
+        ArrayList arrayList = fz7Var.a0;
+        int[] iArr2 = fz7Var.i0;
+        e29 e29Var = fz7Var.N;
+        fz7Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        if (fz7Var.Q || !fz7Var.isAttachedToWindow()) {
             return;
         }
-        Long l = pVar.I0;
-        long longValue = l != null ? l.longValue() : 0L;
-        String str3 = this.b;
-        if (str3 == null) {
-            str3 = k96.n(editable.toString());
-        }
-        int a = a(str3);
-        boolean z = a >= 0;
-        String str4 = pVar.D0.invoice.currency;
-        str4.getClass();
-        i = 10;
-        switch (str4) {
-            case "BHD":
-            case "IQD":
-            case "JOD":
-            case "KWD":
-            case "LYD":
-            case "OMR":
-            case "TND":
-                i = 1000;
-                break;
-            case "BIF":
-            case "BYR":
-            case "CLP":
-            case "CVE":
-            case "DJF":
-            case "GNF":
-            case "ISK":
-            case "JPY":
-            case "KMF":
-            case "KRW":
-            case "MGA":
-            case "PYG":
-            case "RWF":
-            case "UGX":
-            case "UYI":
-            case "VND":
-            case "VUV":
-            case "XAF":
-            case "XOF":
-            case "XPF":
-                i = 1;
-                break;
-            case "CLF":
-                i = 10000;
-                break;
-            case "MRO":
-                break;
-            default:
-                i = 100;
-                break;
-        }
-        String str5 = "";
-        if (a >= 0) {
-            str = str3.substring(0, a);
-            str2 = str3.substring(a + 1);
-        } else {
-            str = str3;
-            str2 = "";
-        }
-        long longValue2 = Utilities.A(p38.h(str, false)).longValue() * i;
-        long longValue3 = Utilities.A(p38.h(str2, false)).longValue();
-        String valueOf = String.valueOf(longValue3);
-        String valueOf2 = String.valueOf(i - 1);
-        if (a > 0 && valueOf.length() > valueOf2.length()) {
-            longValue3 = Utilities.A(this.e - a < valueOf.length() ? valueOf.substring(0, valueOf2.length()) : valueOf.substring(valueOf.length() - valueOf2.length())).longValue();
-        }
-        Long valueOf3 = Long.valueOf(longValue2 + longValue3);
-        pVar.I0 = valueOf3;
-        if (pVar.D0.invoice.max_tip_amount != 0) {
-            long longValue4 = valueOf3.longValue();
-            long j = pVar.D0.invoice.max_tip_amount;
-            if (longValue4 > j) {
-                pVar.I0 = Long.valueOf(j);
-            }
-        }
-        int selectionStart = pVar.f[0].getSelectionStart();
-        pVar.n0 = true;
-        long longValue5 = pVar.I0.longValue();
-        EditTextBoldCursor[] editTextBoldCursorArr = pVar.f;
-        if (longValue5 == 0) {
-            editTextBoldCursorArr[0].setText("");
-        } else {
-            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[0];
-            str5 = k96.D0().q(pVar.I0.longValue(), false, z, true, pVar.D0.invoice.currency);
-            editTextBoldCursor.setText(str5);
-        }
-        if (longValue < pVar.I0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
-            EditTextBoldCursor editTextBoldCursor2 = pVar.f[0];
-            editTextBoldCursor2.setSelection(Math.min(selectionStart, editTextBoldCursor2.length()));
-        } else if (this.c && this.d != pVar.f[0].length()) {
-            EditTextBoldCursor editTextBoldCursor3 = pVar.f[0];
-            editTextBoldCursor3.setSelection(Math.max(0, Math.min(selectionStart, editTextBoldCursor3.length())));
-        } else if (this.f || !z || a < 0) {
-            EditTextBoldCursor editTextBoldCursor4 = pVar.f[0];
-            editTextBoldCursor4.setSelection(editTextBoldCursor4.length());
-        } else {
-            int a2 = a(str5);
-            EditTextBoldCursor[] editTextBoldCursorArr2 = pVar.f;
-            if (a2 > 0) {
-                editTextBoldCursorArr2[0].setSelection(a2 + 1);
+        fz7Var.setAlpha(1.0f);
+        byte b = 0;
+        e29Var.getAnimatedDrawable().I(0, false, false);
+        e29Var.getAnimatedDrawable().K(37);
+        e29Var.d();
+        fz7Var.o(true);
+        hl.d3(new fe7(this, (byte) 20), 350L);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        fz7Var.R = animatorSet2;
+        ArrayList arrayList2 = new ArrayList();
+        Point point = hl.q;
+        int i = point.x;
+        int i2 = point.y + hl.m;
+        int i3 = this.a;
+        int i4 = i - i3;
+        int i5 = i4 * i4;
+        int i6 = this.b;
+        int i7 = i2 - i6;
+        int i8 = i7 * i7;
+        int i9 = i3 * i3;
+        int i10 = 1;
+        int i11 = i6 * i6;
+        double max = Math.max(Math.max(Math.max(Math.sqrt(i8 + i5), Math.sqrt(i8 + i9)), Math.sqrt(i9 + i11)), Math.sqrt(i11 + i5));
+        arrayList.clear();
+        int childCount = b6Var2.getChildCount();
+        int i12 = 0;
+        while (i12 < childCount) {
+            View childAt = b6Var2.getChildAt(i12);
+            childAt.setScaleX(0.7f);
+            childAt.setScaleY(0.7f);
+            childAt.setAlpha(0.0f);
+            bz7 bz7Var = new bz7();
+            childAt.getLocationInWindow(iArr2);
+            int measuredWidth = i3 - ((childAt.getMeasuredWidth() / 2) + iArr2[0]);
+            int measuredHeight = i6 - ((childAt.getMeasuredHeight() / 2) + iArr2[i10]);
+            bz7Var.b = ((float) Math.sqrt((measuredHeight * measuredHeight) + (measuredWidth * measuredWidth))) - hl.L(40.0f);
+            if (i12 != -1) {
+                animatorSet = new AnimatorSet();
+                Property property = View.SCALE_X;
+                b6Var = b6Var2;
+                float[] fArr = new float[i10];
+                fArr[0] = 1.0f;
+                view = childAt;
+                iArr = iArr2;
+                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f));
+                d = max;
+                animatorSet.setDuration(140L);
+                animatorSet.setInterpolator(new DecelerateInterpolator());
             } else {
-                EditTextBoldCursor editTextBoldCursor5 = editTextBoldCursorArr2[0];
-                editTextBoldCursor5.setSelection(editTextBoldCursor5.length());
+                b6Var = b6Var2;
+                iArr = iArr2;
+                d = max;
+                view = childAt;
+                animatorSet = null;
             }
-        }
-        this.f = z;
-        pVar.Q0();
-        this.b = null;
-        pVar.n0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.n.n0) {
-            return;
-        }
-        this.a = !TextUtils.isEmpty(charSequence);
-        this.b = null;
-        this.d = charSequence == null ? 0 : charSequence.length();
-        this.e = i;
-        boolean z = i2 == 1 && i3 == 0;
-        this.c = z;
-        if (!z) {
-            return;
-        }
-        String n = k96.n(charSequence);
-        char charAt = n.charAt(i);
-        int a = a(n);
-        String substring = a >= 0 ? n.substring(a + 1) : "";
-        long longValue = Utilities.A(p38.h(substring, false)).longValue();
-        if ((charAt >= '0' && charAt <= '9') || (substring.length() != 0 && longValue == 0)) {
-            if (a <= 0 || i <= a || longValue != 0) {
-                return;
+            AnimatorSet animatorSet3 = new AnimatorSet();
+            bz7Var.a = animatorSet3;
+            Property property2 = View.SCALE_X;
+            if (i12 == -1) {
+                f2 = 1.0f;
+                f3 = 0.9f;
+            } else {
+                f2 = 1.04f;
+                f3 = 0.6f;
             }
-            this.b = n.substring(0, a - 1);
-            return;
-        }
-        while (true) {
-            int i4 = i - 1;
-            if (i4 < 0) {
-                return;
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, f3, f2);
+            Property property3 = View.SCALE_Y;
+            if (i12 == -1) {
+                f4 = 1.0f;
+                f5 = 0.9f;
+            } else {
+                f4 = 1.04f;
+                f5 = 0.6f;
             }
-            char charAt2 = n.charAt(i4);
-            if (charAt2 >= '0' && charAt2 <= '9') {
-                this.b = n.substring(0, i4).concat(n.substring(i));
-                return;
-            }
-            i = i4;
+            animatorSet3.playTogether(ofFloat, ObjectAnimator.ofFloat(view, (Property<View, Float>) property3, f5, f4), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f));
+            bz7Var.a.addListener(new ad5(animatorSet, (byte) 24));
+            bz7Var.a.setDuration(i12 == -1 ? 232L : 200L);
+            bz7Var.a.setInterpolator(new DecelerateInterpolator());
+            arrayList.add(bz7Var);
+            i12++;
+            b6Var2 = b6Var;
+            iArr2 = iArr;
+            max = d;
+            i10 = 1;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        final double d2 = max;
+        arrayList2.add(ObjectAnimator.ofFloat(fz7Var.w, (Property<tt, Float>) View.ALPHA, 0.0f, 1.0f));
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+        arrayList2.add(ofFloat2);
+        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: wy7
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                fz7 fz7Var2 = yy7.this.d;
+                double animatedFraction = d2 * valueAnimator.getAnimatedFraction();
+                int i13 = 0;
+                while (true) {
+                    ArrayList arrayList3 = fz7Var2.a0;
+                    if (i13 >= arrayList3.size()) {
+                        return;
+                    }
+                    bz7 bz7Var2 = (bz7) arrayList3.get(i13);
+                    if (bz7Var2.b <= animatedFraction) {
+                        bz7Var2.a.start();
+                        arrayList3.remove(i13);
+                        i13--;
+                    }
+                    i13++;
+                }
+            }
+        });
+        k43 k43Var = k43.h;
+        animatorSet2.setInterpolator(k43Var);
+        animatorSet2.setDuration(500L);
+        ValueAnimator ofFloat3 = ValueAnimator.ofFloat(fz7Var.b0, 1.0f);
+        ofFloat3.addUpdateListener(new pv7(this, (byte) 2));
+        ofFloat3.addListener(new xy7(this, b));
+        ofFloat3.setDuration(420L);
+        ofFloat3.setInterpolator(k43Var);
+        arrayList2.add(ofFloat3);
+        animatorSet2.playTogether(arrayList2);
+        animatorSet2.addListener(new xy7(this, (byte) 1));
+        animatorSet2.start();
+        AnimatorSet animatorSet4 = new AnimatorSet();
+        fz7Var.S = animatorSet4;
+        animatorSet4.setDuration(332L);
+        if (hl.O1() || fz7Var.getContext().getResources().getConfiguration().orientation != 2) {
+            f = i / 2.0f;
+            L = hl.L(29.0f);
+        } else {
+            f = (xea.q == 0 ? i / 2.0f : i) / 2.0f;
+            L = hl.L(30.0f);
+        }
+        animatorSet4.playTogether(ObjectAnimator.ofFloat(e29Var, (Property<e29, Float>) View.TRANSLATION_X, i3 - hl.L(29.0f), f - L), ObjectAnimator.ofFloat(e29Var, (Property<e29, Float>) View.TRANSLATION_Y, i6 - hl.L(29.0f), fz7Var.M), ObjectAnimator.ofFloat(e29Var, (Property<e29, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(e29Var, (Property<e29, Float>) View.SCALE_Y, 0.5f, 1.0f));
+        animatorSet4.setInterpolator(k43.g);
+        animatorSet4.start();
     }
 }

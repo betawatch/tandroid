@@ -1,36 +1,62 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class mp5 {
-    public static final Charset a;
-    public static final byte[] b;
+public final class mp5 implements ez9 {
+    public final long a;
+    public final long b;
+    public final int c;
+    public final lp5 d;
 
-    static {
-        Charset.forName("US-ASCII");
-        a = Charset.forName("UTF-8");
-        Charset.forName("ISO-8859-1");
-        byte[] bArr = new byte[0];
-        b = bArr;
-        ByteBuffer.wrap(bArr);
-        try {
-            new yj2(bArr, 0, 0, false).e(0);
-        } catch (zp5 e) {
-            throw new IllegalArgumentException(e);
-        }
+    public mp5(long j, long j2, long j3) {
+        this.d = new lp5(j, new long[]{j2}, new long[]{0});
+        this.a = j2;
+        this.b = j3;
+        this.c = cue.a(j3 - j2, j);
     }
 
-    public static void a(Object obj, String str) {
-        if (obj != null) {
-            return;
-        }
-        fvc.f(str);
+    @Override // ez9
+    public final long a() {
+        return this.b;
     }
 
-    public static int b(long j) {
-        return (int) (j ^ (j >>> 32));
+    @Override // ez9
+    public final long b() {
+        return this.a;
+    }
+
+    @Override // zy9
+    public final boolean c() {
+        return this.d.c();
+    }
+
+    @Override // zy9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // zy9
+    public final yy9 e(long j) {
+        return this.d.e(j);
+    }
+
+    @Override // ez9
+    public final long f(long j) {
+        lp5 lp5Var = this.d;
+        ed edVar = lp5Var.b;
+        if (edVar.b == 0) {
+            return -9223372036854775807L;
+        }
+        return edVar.h0(gcc.c(lp5Var.a, j));
+    }
+
+    @Override // ez9
+    public final int g() {
+        return this.c;
+    }
+
+    @Override // zy9
+    public final long h() {
+        return this.d.c;
     }
 }

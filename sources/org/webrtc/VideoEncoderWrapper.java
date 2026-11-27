@@ -1,12 +1,20 @@
 package org.webrtc;
 
+import org.webrtc.NativeLifecycleLock;
 import org.webrtc.VideoEncoder;
+import org.webrtc.VideoEncoderWrapper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 class VideoEncoderWrapper {
-    public static VideoEncoder.Callback createEncoderCallback(long j) {
-        return new f(j);
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        void onEncodedFrame(long j, EncodedImage encodedImage);
+    }
+
+    public static NativeEncoderCallback createEncoderCallback(long j) {
+        return new NativeEncoderCallback(j);
     }
 
     public static Integer getScalingSettingsHigh(VideoEncoder.ScalingSettings scalingSettings) {
@@ -21,6 +29,35 @@ class VideoEncoderWrapper {
         return scalingSettings.on;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static native void nativeOnEncodedFrame(long j, EncodedImage encodedImage);
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    static class NativeEncoderCallback implements VideoEncoder.Callback {
+        private final NativeLifecycleLock lifecycleLock;
+
+        public NativeEncoderCallback(long j) {
+            this.lifecycleLock = new NativeLifecycleLock("VideoEncoderWrapper", j);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ void lambda$onEncodedFrame$0(EncodedImage encodedImage, long j) {
+            VideoEncoderWrapperJni.get().onEncodedFrame(j, encodedImage);
+        }
+
+        public void invalidate() {
+            this.lifecycleLock.dispose(new g((byte) 1));
+        }
+
+        @Override // org.webrtc.VideoEncoder.Callback
+        public void onEncodedFrame(final EncodedImage encodedImage, VideoEncoder.CodecSpecificInfo codecSpecificInfo) {
+            this.lifecycleLock.runIfAlive(new NativeLifecycleLock.NativePointerRunnable() { // from class: org.webrtc.i
+                @Override // org.webrtc.NativeLifecycleLock.NativePointerRunnable
+                public final void run(long j) {
+                    VideoEncoderWrapper.NativeEncoderCallback.lambda$onEncodedFrame$0(EncodedImage.this, j);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ void lambda$invalidate$1(long j) {
+        }
+    }
 }

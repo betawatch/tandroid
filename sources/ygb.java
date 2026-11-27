@@ -1,37 +1,456 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.PendingIntent;
+import android.app.PictureInPictureParams;
+import android.app.PictureInPictureUiState;
+import android.app.RemoteAction;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.SurfaceTexture;
+import android.graphics.drawable.Icon;
+import android.os.Build;
+import android.provider.Settings;
+import android.util.Rational;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ygb extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ahb c;
+public final class ygb {
+    public final fc3 a;
+    public LaunchActivity b;
+    public bhb c;
+    public e26 d;
+    public me8 e;
+    public me8 f;
+    public ne8 g;
+    public View h;
+    public boolean i;
+    public boolean j;
+    public zw6 k;
+    public String n;
+    public boolean o;
+    public boolean q;
+    public String r;
+    public boolean u;
+    public final RectF l = new RectF();
+    public final int[] m = new int[2];
+    public final Rect p = new Rect();
+    public final StringBuilder s = new StringBuilder();
+    public final ArrayList t = new ArrayList();
+    public final ak v = new ak(this, 13);
 
-    public /* synthetic */ ygb(ahb ahbVar, int i, byte b) {
-        this.a = b;
-        this.c = ahbVar;
-        this.b = i;
+    public ygb(fc3 fc3Var) {
+        this.a = fc3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        int i = this.b;
-        ahb ahbVar = this.c;
-        switch (b) {
-            case 0:
-                ahbVar.r = 0;
-                ahbVar.setBackgroundColor(i);
-                ahbVar.invalidate();
-                break;
-            default:
-                ahbVar.setBackgroundColor(i);
-                ahbVar.r = 0;
-                ahbVar.invalidate();
-                break;
+    public final void a(me8 me8Var) {
+        PictureInPictureParams b = b(me8Var);
+        String str = this.r;
+        if (str == null || !str.equals(this.n)) {
+            this.n = this.r;
+            hl.q3(this.b, b);
+        }
+    }
+
+    public final PictureInPictureParams b(me8 me8Var) {
+        PictureInPictureParams.Builder c = gk.c();
+        StringBuilder sb = this.s;
+        boolean z = false;
+        sb.setLength(0);
+        int U = me8Var.a.U();
+        je8 je8Var = me8Var.a;
+        int q0 = je8Var.q0();
+        if (U > 0 && q0 > 0) {
+            float f = U / q0;
+            Rational rational = f < 0.45f ? new Rational(45, 100) : f > 2.35f ? new Rational(235, 100) : new Rational(U, q0);
+            c.setAspectRatio(rational);
+            sb.append(rational);
+        }
+        byte b = me8Var.c;
+        Rect rect = this.p;
+        if (b != 2) {
+            this.q = e(me8Var, rect);
+        }
+        if (this.q) {
+            c.setSourceRectHint(rect);
+            sb.append('|');
+            sb.append(rect.toShortString());
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = this.t;
+        arrayList2.clear();
+        je8Var.u0(this.b.getMaxNumPictureInPictureActions(), arrayList2);
+        for (int i = 0; i < arrayList2.size(); i++) {
+            ie8 ie8Var = (ie8) arrayList2.get(i);
+            Intent intent = new Intent("org.telegram.utils.pip.ACTION");
+            intent.setPackage(this.b.getPackageName());
+            intent.putExtra("action_id", (int) ie8Var.a);
+            PendingIntent broadcast = PendingIntent.getBroadcast(this.b, ie8Var.a, intent, 201326592);
+            Icon createWithResource = Icon.createWithResource(this.b, ie8Var.b);
+            String str = ie8Var.c;
+            RemoteAction remoteAction = new RemoteAction(createWithResource, str, str, broadcast);
+            remoteAction.setEnabled(ie8Var.d);
+            arrayList.add(remoteAction);
+        }
+        arrayList2.clear();
+        if (!arrayList.isEmpty() && !this.u) {
+            this.u = true;
+            IntentFilter intentFilter = new IntentFilter("org.telegram.utils.pip.ACTION");
+            int i2 = Build.VERSION.SDK_INT;
+            LaunchActivity launchActivity = this.b;
+            ak akVar = this.v;
+            if (i2 >= 33) {
+                launchActivity.registerReceiver(akVar, intentFilter, 4);
+            } else {
+                launchActivity.registerReceiver(akVar, intentFilter);
+            }
+        }
+        c.setActions(arrayList);
+        for (int i3 = 0; i3 < arrayList.size(); i3++) {
+            RemoteAction remoteAction2 = (RemoteAction) arrayList.get(i3);
+            sb.append('|');
+            sb.append(remoteAction2.getTitle());
+            sb.append(remoteAction2.isEnabled());
+        }
+        int i4 = Build.VERSION.SDK_INT;
+        if (i4 >= 31) {
+            if (i4 >= 31 && me8Var.c != 2) {
+                z = true;
+            }
+            c.setAutoEnterEnabled(z);
+            sb.append('|');
+            sb.append(z);
+        }
+        this.r = sb.toString();
+        return c.build();
+    }
+
+    public final void c() {
+        LaunchActivity launchActivity;
+        h();
+        if (this.u && (launchActivity = this.b) != null) {
+            this.u = false;
+            try {
+                launchActivity.unregisterReceiver(this.v);
+            } catch (Exception e) {
+                cc4.g(e, true);
+            }
+        }
+        bhb bhbVar = this.c;
+        if (bhbVar != null) {
+            hl.B2(bhbVar);
+            this.c = null;
+        }
+        e26 e26Var = this.d;
+        if (e26Var != null) {
+            e26Var.a();
+            this.d = null;
+        }
+        this.b = null;
+        this.e = null;
+        this.f = null;
+        this.g = null;
+        this.j = false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0044  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d() {
+        Bitmap bitmap;
+        e26 e26Var;
+        bhb bhbVar;
+        xl4 xl4Var;
+        me8 me8Var = this.f;
+        ne8 ne8Var = this.g;
+        View view = this.h;
+        fc3.e("system: exit to app");
+        if (me8Var != null && view == null && ne8Var != null && me8Var.d != 1 && ne8Var.isAvailable()) {
+            try {
+                bitmap = ne8Var.getBitmap();
+            } catch (Throwable th) {
+                cc4.g(th, true);
+            }
+            this.f = null;
+            this.g = null;
+            this.h = null;
+            this.i = false;
+            this.o = false;
+            e26Var = this.d;
+            if (e26Var != null) {
+                e26Var.b(false);
+            }
+            bhbVar = this.c;
+            if (bhbVar != null) {
+                bhbVar.a(null, null);
+            }
+            fc3 fc3Var = this.a;
+            if (me8Var != null) {
+                je8 je8Var = me8Var.a;
+                if (view != null) {
+                    me8Var.c = me8Var.d;
+                    je8Var.l(view);
+                    je8Var.L(view);
+                    fc3Var.d();
+                    return;
+                }
+                if (ne8Var != null) {
+                    if (me8Var.d != 1 || (xl4Var = me8Var.e) == null) {
+                        me8Var.c = (byte) 0;
+                        SurfaceTexture surfaceTexture = ne8Var.a;
+                        ne8Var.a = null;
+                        if (surfaceTexture == null && Build.VERSION.SDK_INT >= 26) {
+                            surfaceTexture = gk.d();
+                        }
+                        if (surfaceTexture != null) {
+                            je8Var.s(surfaceTexture, bitmap);
+                        }
+                    } else {
+                        me8Var.c = (byte) 1;
+                        xl4Var.l = ne8Var;
+                        hl.B2(ne8Var);
+                        xl4Var.k.addView(ne8Var, 0, tre.c(-1.0f, -1));
+                        xl4Var.a();
+                        xl4Var.l();
+                    }
+                    fc3Var.d();
+                    return;
+                }
+            }
+            fc3Var.d();
+        }
+        bitmap = null;
+        this.f = null;
+        this.g = null;
+        this.h = null;
+        this.i = false;
+        this.o = false;
+        e26Var = this.d;
+        if (e26Var != null) {
+        }
+        bhbVar = this.c;
+        if (bhbVar != null) {
+        }
+        fc3 fc3Var2 = this.a;
+        if (me8Var != null) {
+        }
+        fc3Var2.d();
+    }
+
+    public final boolean e(me8 me8Var, Rect rect) {
+        if (this.b != null) {
+            if (me8Var.g()) {
+                xl4 xl4Var = me8Var.e;
+                RectF rectF = this.l;
+                xl4Var.g(rectF);
+                rectF.round(rect);
+            } else {
+                me8Var.a.J(rect);
+            }
+            if (!rect.isEmpty()) {
+                View decorView = this.b.getWindow().getDecorView();
+                int[] iArr = this.m;
+                decorView.getLocationOnScreen(iArr);
+                rect.offset(-iArr[0], -iArr[1]);
+                float width = rect.width() / rect.height();
+                if (rect.intersect(0, 0, decorView.getWidth(), decorView.getHeight()) && Math.abs(((rect.width() / rect.height()) / width) - 1.0f) < 0.02f) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public final void f(Object obj) {
+        me8 me8Var;
+        if (Build.VERSION.SDK_INT >= 35 && ik8.A(obj) && ((PictureInPictureUiState) obj).isTransitioningToPip() && this.f == null && (me8Var = this.e) != null) {
+            i(me8Var);
+        }
+    }
+
+    public final void g() {
+        int i;
+        if (this.b == null || (i = Build.VERSION.SDK_INT) < 26 || i >= 31 || this.f != null) {
+            return;
+        }
+        j();
+        me8 me8Var = this.e;
+        if (me8Var != null) {
+            PictureInPictureParams b = b(me8Var);
+            i(this.e);
+            try {
+                if (this.b.enterPictureInPictureMode(b)) {
+                    return;
+                }
+                d();
+            } catch (Exception e) {
+                cc4.g(e, true);
+                d();
+            }
+        }
+    }
+
+    public final void h() {
+        zw6 zw6Var = this.k;
+        if (zw6Var != null) {
+            try {
+                synchronized (zw6.c) {
+                    zw6.d.remove(zw6Var.a.i);
+                }
+                zw6Var.a.p();
+            } catch (Exception unused) {
+            }
+            this.k = null;
+        }
+    }
+
+    public final void i(me8 me8Var) {
+        xl4 xl4Var;
+        if (this.c == null || this.b == null) {
+            return;
+        }
+        StringBuilder sb = new StringBuilder("system: start enter, from state ");
+        byte b = me8Var.c;
+        je8 je8Var = me8Var.a;
+        sb.append((int) b);
+        fc3.e(sb.toString());
+        Rect rect = new Rect();
+        if (!e(me8Var, rect)) {
+            rect.setEmpty();
+        }
+        this.f = me8Var;
+        ne8 ne8Var = null;
+        this.e = null;
+        this.o = true;
+        me8Var.d = me8Var.c;
+        View K = me8Var.e == null ? je8Var.K(this.b) : null;
+        boolean z = K != null && rect.isEmpty();
+        e26 e26Var = this.d;
+        if (e26Var != null && !z) {
+            e26Var.b(true);
+        }
+        if (K != null) {
+            if (z) {
+                K.setVisibility(4);
+            }
+            this.c.a(K, rect);
+            je8Var.o0(K);
+        } else if (me8Var.c != 1 || (xl4Var = me8Var.e) == null) {
+            ne8Var = new ne8(this.b);
+            this.c.a(ne8Var, rect);
+            je8Var.R(ne8Var);
+        } else {
+            ne8 ne8Var2 = xl4Var.l;
+            xl4Var.l = null;
+            xl4Var.d();
+            xl4Var.m();
+            if (ne8Var2 != null) {
+                hl.B2(ne8Var2);
+            }
+            this.c.a(ne8Var2, rect);
+            ne8Var = ne8Var2;
+        }
+        this.c.bringToFront();
+        this.g = ne8Var;
+        this.h = K;
+        me8Var.c = (byte) 2;
+        k(me8Var);
+    }
+
+    public final void j() {
+        me8 me8Var;
+        xl4 xl4Var;
+        LaunchActivity launchActivity = this.b;
+        if (launchActivity == null || Build.VERSION.SDK_INT < 26) {
+            return;
+        }
+        me8 me8Var2 = this.f;
+        if (me8Var2 != null) {
+            if (!this.o) {
+                a(me8Var2);
+            }
+            k(this.f);
+            return;
+        }
+        if (!ove.a(launchActivity) || Settings.canDrawOverlays(this.b)) {
+            me8Var = null;
+        } else {
+            ArrayList arrayList = (ArrayList) this.a.c;
+            int size = arrayList.size() - 1;
+            while (true) {
+                if (size >= 0) {
+                    me8Var = (me8) arrayList.get(size);
+                    boolean z = me8Var.a.S() != 1;
+                    je8 je8Var = me8Var.a;
+                    if (z && me8Var.c == 0 && je8Var.P() == null && je8Var.Q() && je8Var.X()) {
+                        break;
+                    } else {
+                        size--;
+                    }
+                } else {
+                    me8Var = null;
+                    for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
+                        me8 me8Var3 = (me8) arrayList.get(size2);
+                        boolean z2 = me8Var3.a.S() != 1;
+                        je8 je8Var2 = me8Var3.a;
+                        if (z2 && me8Var3.c == 1 && je8Var2.X() && ((xl4Var = me8Var3.e) == null ? !(!me8Var3.g || me8Var3.h) : !(xl4Var.g || xl4Var.m != null)) && (me8Var == null || je8Var2.q() > me8Var.a.q())) {
+                            me8Var = me8Var3;
+                        }
+                    }
+                    if (me8Var == null) {
+                        for (int size3 = arrayList.size() - 1; size3 >= 0; size3--) {
+                            me8 me8Var4 = (me8) arrayList.get(size3);
+                            boolean z3 = me8Var4.a.S() != 1;
+                            je8 je8Var3 = me8Var4.a;
+                            if (z3 && me8Var4.c == 0 && je8Var3.d0() && je8Var3.X() && (me8Var == null || je8Var3.q() > me8Var.a.q())) {
+                                me8Var = me8Var4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        this.e = me8Var;
+        if (me8Var != null) {
+            this.j = true;
+            a(me8Var);
+        } else if (this.j) {
+            this.j = false;
+            this.n = null;
+            hl.X2(this.b);
+        }
+        h();
+    }
+
+    public final void k(me8 me8Var) {
+        dg8 a0 = me8Var != null ? me8Var.a.a0() : null;
+        if (a0 == null) {
+            h();
+            return;
+        }
+        zw6 zw6Var = this.k;
+        if (zw6Var != null) {
+            yx6 yx6Var = zw6Var.a;
+            yx6Var.t();
+            if (yx6Var.t.a == a0) {
+                return;
+            }
+        }
+        h();
+        try {
+            tw6 tw6Var = new tw6(this.b, a0);
+            tw6Var.c = "utils-pip-media-session";
+            this.k = tw6Var.a();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 }

@@ -1,6 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.text.Collator;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface wu2 {
+public final /* synthetic */ class wu2 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Collator b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ wu2(Object obj, Collator collator, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = collator;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        byte b = this.a;
+        Collator collator = this.b;
+        Object obj3 = this.c;
+        switch (b) {
+            case 0:
+                lv2 lv2Var = (lv2) obj3;
+                return collator.compare(lbc.k(lv2Var.getMessagesController().X1(Long.valueOf(((TLRPC.TL_contact) obj).user_id)), true), lbc.k(lv2Var.getMessagesController().X1(Long.valueOf(((TLRPC.TL_contact) obj2).user_id)), true));
+            default:
+                zh6 zh6Var = (zh6) obj3;
+                return collator.compare(lbc.k((TLRPC.User) zh6Var.f(((TLRPC.TL_contact) obj).user_id), true), lbc.k((TLRPC.User) zh6Var.f(((TLRPC.TL_contact) obj2).user_id), true));
+        }
+    }
 }

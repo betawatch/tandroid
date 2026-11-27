@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class mae implements zn7 {
-    public static final mae a = new mae();
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class mae extends c4 implements ie9 {
+    public static final Parcelable.Creator<mae> CREATOR = new g3e(20);
+    public final Status a;
+
+    public mae(Status status) {
+        this.a = status;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // ie9
+    public final Status a() {
+        return this.a;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.k(parcel, 1, this.a, i);
+        bye.s(parcel, r);
     }
 }

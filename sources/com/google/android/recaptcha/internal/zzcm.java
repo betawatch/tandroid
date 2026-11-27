@@ -2,45 +2,45 @@ package com.google.android.recaptcha.internal;
 
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzcm implements zzcr {
-    private final ax2 zza;
-    private final ax2 zzb;
-    private final ax2 zzc;
-    private final ax2 zzd;
+    private final ux2 zza;
+    private final ux2 zzb;
+    private final ux2 zzc;
+    private final ux2 zzd;
 
     public zzcm() {
-        pbb pbbVar = new pbb();
-        xb3 xb3Var = ko3.a;
-        this.zza = new dw2(kud.c(pbbVar, ug6.a));
-        dw2 a = h9e.a(new t44(Executors.newSingleThreadExecutor()));
-        ppd.b(a, new zzcl(null));
+        lfb lfbVar = new lfb();
+        qc3 qc3Var = bp3.a;
+        this.zza = new xw2(azd.c(lfbVar, zi6.a));
+        xw2 a = xde.a(new p54(Executors.newSingleThreadExecutor()));
+        fud.b(a, new zzcl(null));
         this.zzb = a;
-        this.zzc = h9e.a(xa3.c);
-        dw2 a2 = h9e.a(new t44(Executors.newSingleThreadExecutor()));
-        ppd.b(a2, new zzck(null));
+        this.zzc = xde.a(qb3.c);
+        xw2 a2 = xde.a(new p54(Executors.newSingleThreadExecutor()));
+        fud.b(a2, new zzck(null));
         this.zzd = a2;
-        ppd.b(h9e.a(new t44(Executors.newSingleThreadExecutor())), new zzcj(null));
+        fud.b(xde.a(new p54(Executors.newSingleThreadExecutor())), new zzcj(null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final ax2 zza() {
+    public final ux2 zza() {
         return this.zzc;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final ax2 zzb() {
+    public final ux2 zzb() {
         return this.zza;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final ax2 zzc() {
+    public final ux2 zzc() {
         return this.zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzcr
-    public final ax2 zzd() {
+    public final ux2 zzd() {
         return this.zzb;
     }
 }

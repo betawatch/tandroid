@@ -1,15 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class mbf {
-    public final m5f a;
-    public final Long b;
-    public final ocf c;
+public final class mbf extends ljf {
+    private static final pjf zzb = new i9d();
+    private static final mbf zzd;
+    private int zze;
+    private boolean zzg;
+    private boolean zzh;
+    private yff zzi;
+    private boolean zzj;
+    private long zzl;
+    private long zzm;
+    private String zzf = "";
+    private ojf zzk = mjf.d;
 
-    public /* synthetic */ mbf(rod rodVar) {
-        this.a = (m5f) rodVar.b;
-        this.b = (Long) rodVar.c;
-        this.c = (ocf) rodVar.d;
+    static {
+        mbf mbfVar = new mbf();
+        zzd = mbfVar;
+        ljf.e(mbf.class, mbfVar);
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဉ\u0003\u0004ဇ\u0004\u0005ࠬ\u0006ဇ\u0002\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zze", "zzf", "zzg", "zzi", "zzj", "zzk", rg7.y, "zzh", "zzl", "zzm"});
+        }
+        if (i2 == 3) {
+            return new mbf();
+        }
+        if (i2 == 4) {
+            return new lde(zzd);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzd;
     }
 }

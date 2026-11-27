@@ -1,53 +1,69 @@
 // default package
 
 import android.content.Context;
-import android.widget.TextView;
+import android.text.TextUtils;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class r02 extends s02 {
-    public byte b;
-    public final /* synthetic */ x02 c;
+public final class r02 extends iu3 {
+    public final /* synthetic */ n12 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r02(x02 x02Var, Context context) {
-        super(context);
-        this.c = x02Var;
-        setWillNotDraw(false);
-        setFocusable(true);
-        int i = x02.G4;
-        wjb wjbVar = x02Var.J0;
-        ox4 ox4Var = new ox4(context);
-        ox4Var.d = wjbVar;
-        ox4Var.R = true;
-        TextView textView = ox4Var.a;
-        textView.setTextSize(1, 11.0f);
-        textView.setPadding(gl.L(8.0f), 0, gl.L(8.0f), 0);
-        ox4Var.b(false);
-        ox4Var.b.setLayoutParams(nme.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        ox4Var.x = bkb.v0(bkb.Sl, wjbVar);
-        ox4Var.s = bkb.v0(bkb.Ql, wjbVar);
-        ox4Var.w = bkb.v0(bkb.Rl, wjbVar);
-        ox4Var.a();
-        this.a = ox4Var;
-        addView(ox4Var, nme.c(-1.0f, -1));
+    public r02(n12 n12Var, Context context, a12 a12Var, vnb vnbVar) {
+        super(context, a12Var, null, 1, true, vnbVar);
+        this.W = n12Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void a(int i, String str, nx4 nx4Var) {
-        this.a.setText(str);
-        this.a.setTabAnimation(nx4Var);
-        this.b = i;
+    @Override // iu3
+    public final void f() {
+        super.f();
+        o24 emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.x0 = false;
+            emojiView.x2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(hl.n);
+        }
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+    @Override // iu3
+    public final void i(ActionMode actionMode, Menu menu) {
+        e eVar = this.W.Z1;
+        if (eVar instanceof zu1) {
+            zu1.E6(menu, ((zu1) eVar).h, true, true, true, true);
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.f(((long) this.b) == this.c.T2, false);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        n12 n12Var = this.W;
+        r02 r02Var = n12Var.M2;
+        if (!n12Var.r3) {
+            if (motionEvent.getX() <= r02Var.getEditText().getLeft() || motionEvent.getX() >= r02Var.getEditText().getRight() || motionEvent.getY() <= r02Var.getEditText().getTop() || motionEvent.getY() >= r02Var.getEditText().getBottom()) {
+                n12Var.d1(r02Var.getEditText(), false);
+            } else {
+                n12Var.d1(r02Var.getEditText(), true);
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.W.M1();
+    }
+
+    @Override // iu3
+    public final void q(int i, int i2) {
+        n12 n12Var = this.W;
+        n12Var.M1();
+        if (n12Var.W1) {
+            n12Var.x1(i2 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+        }
     }
 }

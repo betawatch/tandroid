@@ -1,17 +1,42 @@
 // default package
 
-import java.util.Arrays;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zrc implements vn {
-    public static final zrc a = new zrc();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zrc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ icc c;
+    public final /* synthetic */ TL_wallet.sendTransfer d;
+    public final /* synthetic */ String e;
 
-    public final boolean equals(Object obj) {
-        return obj instanceof zrc;
+    public /* synthetic */ zrc(WalletEngine2 walletEngine2, icc iccVar, TL_wallet.sendTransfer sendtransfer, String str, byte b) {
+        this.a = b;
+        this.b = walletEngine2;
+        this.c = iccVar;
+        this.d = sendtransfer;
+        this.e = str;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{zrc.class});
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.e;
+        TL_wallet.sendTransfer sendtransfer = this.d;
+        icc iccVar = this.c;
+        WalletEngine2 walletEngine2 = this.b;
+        switch (b) {
+            case 0:
+                walletEngine2.lambda$prepareTonConnectTransfer$4(iccVar, sendtransfer, str);
+                break;
+            case 1:
+                walletEngine2.lambda$prepareTonConnectTransferPair$7(iccVar, sendtransfer, str);
+                break;
+            default:
+                walletEngine2.lambda$prepareSendNFT$28(iccVar, sendtransfer, str);
+                break;
+        }
     }
 }

@@ -1,18 +1,39 @@
 // default package
 
-import java.lang.ref.PhantomReference;
-import java.lang.ref.ReferenceQueue;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ind extends PhantomReference {
-    public final Set a;
-    public final sv b;
+public final class ind extends c4 {
+    public static final Parcelable.Creator<ind> CREATOR = new zkd((byte) 13);
+    public final int a;
+    public final boolean b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
 
-    public /* synthetic */ ind(th2 th2Var, ReferenceQueue referenceQueue, Set set, sv svVar) {
-        super(th2Var, referenceQueue);
-        this.a = set;
-        this.b = svVar;
+    public ind(int i, boolean z, boolean z2, boolean z3, boolean z4) {
+        this.a = i;
+        this.b = z;
+        this.c = z2;
+        this.d = z3;
+        this.e = z4;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        bye.q(parcel, 3, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        bye.q(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        bye.q(parcel, 5, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

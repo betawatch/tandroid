@@ -1,30 +1,43 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class p99 {
-    public static final p99 a;
-    public static final p99 b;
-    public static final p99 c;
-    public static final /* synthetic */ p99[] d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class p99 extends zo5 {
+    public static final p99 n;
+    public final transient wq7 e;
+    public final transient int f;
+    public transient yo5 h;
 
     static {
-        p99 p99Var = new p99("BY_PRICE", 0);
-        a = p99Var;
-        p99 p99Var2 = new p99("BY_DATE", 1);
-        b = p99Var2;
-        p99 p99Var3 = new p99("BY_NUMBER", 2);
-        c = p99Var3;
-        d = new p99[]{p99Var, p99Var2, p99Var3};
+        wq7 wq7Var = new wq7();
+        wq7Var.d(3);
+        n = new p99(wq7Var);
     }
 
-    public static p99 valueOf(String str) {
-        return (p99) Enum.valueOf(p99.class, str);
+    public p99(wq7 wq7Var) {
+        this.e = wq7Var;
+        long j = 0;
+        int i = 0;
+        while (true) {
+            int i2 = wq7Var.c;
+            if (i >= i2) {
+                this.f = ype.d(j);
+                return;
+            } else {
+                yve.j(i, i2);
+                j += wq7Var.b[i];
+                i++;
+            }
+        }
     }
 
-    public static p99[] values() {
-        return (p99[]) d.clone();
+    @Override // jo5
+    public final boolean m() {
+        throw null;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final int size() {
+        return this.f;
     }
 }

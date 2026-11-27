@@ -1,22 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class og6 {
-    public short a;
+import android.content.DialogInterface;
 
-    public final void a(byte b) {
-        int i = 128;
-        do {
-            short s = this.a;
-            boolean z = (32768 & s) == 0;
-            short s2 = (short) (s << 1);
-            if (z ^ ((b & i) == 0)) {
-                this.a = (short) (s2 ^ 32773);
-            } else {
-                this.a = s2;
-            }
-            i >>>= 1;
-        } while (i != 0);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class og6 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tg6 b;
+
+    public /* synthetic */ og6(tg6 tg6Var, byte b) {
+        this.a = b;
+        this.b = tg6Var;
+    }
+
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        byte b = this.a;
+        tg6 tg6Var = this.b;
+        switch (b) {
+            case 0:
+                tg6Var.v0.finishFragment();
+                break;
+            default:
+                tg6Var.v0.finishFragment();
+                break;
+        }
     }
 }

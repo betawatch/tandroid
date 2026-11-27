@@ -1,23 +1,20 @@
 // default package
 
-import android.content.Context;
+import j$.util.function.Consumer$-CC;
+import java.util.function.Consumer;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class w16 extends ah8 {
-    public final /* synthetic */ h26 S;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w16(h26 h26Var, Context context, wjb wjbVar) {
-        super(wjbVar, context, true);
-        this.S = h26Var;
+public final class w16 implements Consumer {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ((Boolean) obj).getClass();
+        String str = LaunchActivity.C1;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.S.a2) {
-            return;
-        }
-        super.invalidate();
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

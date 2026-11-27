@@ -1,19 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ihe implements zn7 {
-    public static final ihe a = new ihe();
+public enum ihe implements sse {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(4),
+    h(5),
+    n(6),
+    r(7),
+    s(8),
+    w(9),
+    x(10),
+    y(11),
+    E(12),
+    F(13);
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    ihe(int i) {
+        this.a = i;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.lang.Enum
+    public final String toString() {
+        return "<" + ihe.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + ((int) this.a) + " name=" + name() + '>';
     }
 }

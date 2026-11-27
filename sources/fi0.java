@@ -1,24 +1,88 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fi0 {
-    public int a;
-    public int b;
-    public String c;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.text.TextUtils;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-    public static g1 a() {
-        g1 g1Var = new g1();
-        g1Var.b = 0;
-        g1Var.c = "";
-        return g1Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fi0 {
+    public Object a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
+    public Object f;
+
+    public fi0(Context context, di0 di0Var, zhc zhcVar) {
+        this.a = context;
+        this.c = di0Var;
+        this.d = zhcVar;
+        this.e = new xff(this, true);
+        this.f = new xff(this, false);
     }
 
-    public final String toString() {
-        int i = this.a;
-        int i2 = xgd.a;
-        qid qidVar = fbd.c;
-        Integer valueOf = Integer.valueOf(i);
-        return tb4.q("Response Code: ", (!qidVar.containsKey(valueOf) ? fbd.b : (fbd) qidVar.get(valueOf)).toString(), ", Debug Message: ", this.c);
+    public final void a() {
+        this.a = null;
+        if (((l5a) this.f) != null) {
+            Utilities.e.a((l5a) this.f);
+        }
+        Bitmap bitmap = (Bitmap) this.c;
+        if (bitmap != null && !bitmap.isRecycled()) {
+            ((Bitmap) this.c).recycle();
+        }
+        this.c = null;
+    }
+
+    public final Bitmap b(mn5 mn5Var) {
+        if (mn5Var == null) {
+            return null;
+        }
+        return c(mn5Var.c, mn5Var.a, mn5Var.e, 0, false);
+    }
+
+    public final Bitmap c(Bitmap bitmap, String str, int i, int i2, boolean z) {
+        if (bitmap == null || bitmap.isRecycled()) {
+            return null;
+        }
+        if (TextUtils.equals((String) this.a, str)) {
+            Bitmap bitmap2 = (Bitmap) this.c;
+            if (bitmap2 != null) {
+                return bitmap2;
+            }
+            if (((l5a) this.f) != null) {
+                return null;
+            }
+        }
+        if (((l5a) this.f) != null) {
+            Utilities.e.a((l5a) this.f);
+        }
+        this.a = str;
+        to3 to3Var = Utilities.e;
+        l5a l5aVar = new l5a(this, bitmap, i, i2, str, z);
+        this.f = l5aVar;
+        to3Var.c(l5aVar);
+        return (Bitmap) this.c;
+    }
+
+    public final Bitmap d(ImageReceiver imageReceiver) {
+        if (imageReceiver == null) {
+            return null;
+        }
+        return c(imageReceiver.n(), imageReceiver.R, imageReceiver.V, imageReceiver.W, false);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public fi0(int i, Runnable runnable) {
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.b = i;
+        this.e = runnable;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 }

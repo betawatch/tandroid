@@ -1,7 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface zyc {
-    void b(float f);
+import android.content.pm.PackageInfo;
+import android.net.Uri;
+import android.webkit.WebView;
+import java.util.Set;
+import java.util.WeakHashMap;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class zyc {
+    public static final boolean a;
+    public static final WeakHashMap b;
+
+    static {
+        Uri.parse("*");
+        Uri.parse("");
+        a = true;
+        b = new WeakHashMap();
+    }
+
+    public static void a(WebView webView, String str, Set set, yyc yycVar) {
+        if (!czc.c.b()) {
+            qyc.c("This method is not supported by the current version of the framework and the current WebView APK");
+            return;
+        }
+        ezc c = c(webView);
+        c.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new oy0(new ve9((Object) yycVar, (byte) 20)));
+    }
+
+    public static PackageInfo b() {
+        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    }
+
+    public static ezc c(WebView webView) {
+        if (!czc.e.b() || !a) {
+            return new ezc(dzc.a.createWebView(webView));
+        }
+        WeakHashMap weakHashMap = b;
+        ezc ezcVar = (ezc) weakHashMap.get(webView);
+        if (ezcVar != null) {
+            return ezcVar;
+        }
+        ezc ezcVar2 = new ezc(dzc.a.createWebView(webView));
+        weakHashMap.put(webView, ezcVar2);
+        return ezcVar2;
+    }
 }

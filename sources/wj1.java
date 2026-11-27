@@ -1,39 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class wj1 implements bg8 {
-    public static wj1 a(String str) {
+public final class wj1 {
+    public final /* synthetic */ byte a;
+    public char[] b;
+    public int c;
+
+    public final void a(int i, int i2) {
+        int i3 = i2 + i;
+        char[] cArr = this.b;
+        if (cArr.length <= i3) {
+            int i4 = i << 1;
+            if (i3 < i4) {
+                i3 = i4;
+            }
+            this.b = Arrays.copyOf(cArr, i3);
+        }
+    }
+
+    public final void b() {
+        vj1 vj1Var = vj1.c;
+        char[] cArr = this.b;
+        vj1Var.getClass();
+        cArr.getClass();
+        synchronized (vj1Var) {
+            int i = vj1Var.b;
+            if (cArr.length + i < rs.a) {
+                vj1Var.b = i + cArr.length;
+                vj1Var.a.addLast(cArr);
+            }
+        }
+    }
+
+    public final void c(String str) {
+        str.getClass();
         int length = str.length();
-        if (length != 0) {
-            return length != 1 ? length != 2 ? new rj1(str) : new uj1(str.charAt(0), str.charAt(1)) : new tj1(str.charAt(0), (byte) 0);
+        if (length == 0) {
+            return;
         }
-        return qj1.f;
+        a(this.c, length);
+        str.getChars(0, str.length(), this.b, this.c);
+        this.c += length;
     }
 
-    public static String d(char c) {
-        char[] cArr = new char[6];
-        cArr[0] = '\\';
-        cArr[1] = 'u';
-        cArr[2] = 0;
-        cArr[3] = 0;
-        cArr[4] = 0;
-        cArr[5] = 0;
-        for (int i = 0; i < 4; i++) {
-            cArr[5 - i] = "0123456789ABCDEF".charAt(c & 15);
-            c = (char) (c >> 4);
+    public final String toString() {
+        switch (this.a) {
         }
-        return String.copyValueOf(cArr);
-    }
-
-    @Override // bg8
-    public final boolean apply(Object obj) {
-        return b(((Character) obj).charValue());
-    }
-
-    public abstract boolean b(char c);
-
-    public wj1 c() {
-        return new rj1(this);
+        return new String(this.b, 0, this.c);
     }
 }

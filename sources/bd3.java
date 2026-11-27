@@ -1,108 +1,61 @@
 // default package
 
-import java.nio.ByteBuffer;
-import sun.misc.Unsafe;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class bd3 {
-    public static final lo5 a = new lo5("CLOSED");
+public final /* synthetic */ class bd3 implements pj8 {
+    public final /* synthetic */ ld3 a;
+    public final /* synthetic */ gd3 b;
 
-    public static void a(dd ddVar, dd ddVar2) {
-        boolean g0;
-        int[] iArr = {0};
-        do {
-            g0 = ddVar.g0(iArr[0]);
-            iArr[0] = iArr[0] + 1;
-            int m0 = ddVar.m0(iArr, 2);
-            if (m0 == 0) {
-                int i = ((iArr[0] + 7) & (-8)) / 8;
-                int e0 = (ddVar.e0(i) & 255) + ((ddVar.e0(i + 1) & 255) << 8);
-                int i2 = i + 4;
-                ddVar2.getClass();
-                byte[] array = ((ByteBuffer) ddVar.c).array();
-                int capacity = ((ByteBuffer) ddVar2.c).capacity();
-                int i3 = ddVar2.b + e0;
-                if (capacity < i3) {
-                    ddVar2.b0(i3 + 1024);
-                }
-                ((ByteBuffer) ddVar2.c).put(array, i2, e0);
-                ddVar2.b += e0;
-                iArr[0] = (i2 + e0) << 3;
-            } else if (m0 == 1) {
-                c(ddVar, iArr, ddVar2, xh4.e, sh4.e);
-            } else {
-                if (m0 != 2) {
-                    throw new v30(String.format("[%s] Bad compression type '11' at the bit index '%d'.", bd3.class.getSimpleName(), Integer.valueOf(iArr[0])));
-                }
-                iq[] iqVarArr = new iq[2];
-                cd3.d(ddVar, iArr, iqVarArr);
-                c(ddVar, iArr, ddVar2, iqVarArr[0], iqVarArr[1]);
-            }
-            if (ddVar.b <= iArr[0] / 8) {
-                g0 = true;
-            }
-        } while (!g0);
+    public /* synthetic */ bd3(ld3 ld3Var, gd3 gd3Var) {
+        this.a = ld3Var;
+        this.b = gd3Var;
     }
 
-    public static final Object b(nv9 nv9Var, long j, eq4 eq4Var) {
-        while (true) {
-            nv9 nv9Var2 = nv9Var;
-            while (true) {
-                if (nv9Var2.d >= j && !nv9Var2.d()) {
-                    return nv9Var2;
-                }
-                Object objectVolatile = ex.a.getObjectVolatile(nv9Var2, uq2.a);
-                lo5 lo5Var = a;
-                if (objectVolatile == lo5Var) {
-                    return lo5Var;
-                }
-                nv9Var = (nv9) ((uq2) objectVolatile);
-                if (nv9Var == null) {
-                    nv9 nv9Var3 = (nv9) eq4Var.invoke(Long.valueOf(nv9Var2.d + 1), nv9Var2);
-                    while (true) {
-                        Unsafe unsafe = ex.a;
-                        long j2 = uq2.a;
-                        if (unsafe.compareAndSwapObject(nv9Var2, j2, (Object) null, nv9Var3)) {
-                            if (nv9Var2.d()) {
-                                nv9Var2.e();
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0064, code lost:
+    
+        if (r7.b != false) goto L37;
+     */
+    @Override // pj8
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean apply(Object obj) {
+        Boolean bool;
+        moa moaVar;
+        ko4 ko4Var = (ko4) obj;
+        ld3 ld3Var = this.a;
+        ld3Var.getClass();
+        if (this.b.A0 && ((bool = ld3Var.k) == null || !bool.booleanValue())) {
+            int i = ko4Var.N;
+            if (i != -1 && i > 2) {
+                String str = ko4Var.t;
+                if (str != null) {
+                    switch (str) {
+                        case "audio/eac3-joc":
+                        case "audio/ac3":
+                        case "audio/ac4":
+                        case "audio/eac3":
+                            if (Build.VERSION.SDK_INT >= 32) {
+                                moa moaVar2 = ld3Var.i;
+                                if (moaVar2 != null) {
+                                    break;
+                                }
                             }
-                            nv9Var2 = nv9Var3;
-                        } else if (unsafe.getObjectVolatile(nv9Var2, j2) != null) {
                             break;
-                        }
+                        default:
+                            if (Build.VERSION.SDK_INT >= 32 || (moaVar = ld3Var.i) == null || !moaVar.b || !moaVar.c() || !ld3Var.i.d() || !ld3Var.i.a(ld3Var.j, ko4Var)) {
+                                return false;
+                            }
+                            break;
                     }
                 }
-            }
-        }
-    }
-
-    public static void c(dd ddVar, int[] iArr, dd ddVar2, iq iqVar, iq iqVar2) {
-        while (true) {
-            int m = iqVar.m(ddVar, iArr);
-            if (m == 256) {
-                return;
-            }
-            if (m < 0 || m > 255) {
-                int e = cd3.e(ddVar, iArr, m);
-                int c = cd3.c(ddVar, iArr, iqVar2);
-                int i = ddVar2.b;
-                byte[] bArr = new byte[e];
-                int i2 = i - c;
-                int i3 = 0;
-                int i4 = i2;
-                while (i3 < e) {
-                    if (i <= i4) {
-                        i4 = i2;
-                    }
-                    bArr[i3] = ddVar2.e0(i4);
-                    i3++;
-                    i4++;
+                if (Build.VERSION.SDK_INT >= 32) {
                 }
-                ddVar2.l0(bArr);
-            } else {
-                ddVar2.k0(m);
+                return false;
             }
         }
+        return true;
     }
 }

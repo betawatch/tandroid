@@ -1,35 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class bb0 extends c6 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mb0 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ bb0(mb0 mb0Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class bb0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ob0 b;
+
+    public /* synthetic */ bb0(ob0 ob0Var, byte b) {
         this.a = b;
-        this.b = mb0Var;
+        this.b = ob0Var;
     }
 
-    @Override // c6
-    public final void b(int i) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        mb0 mb0Var = this.b;
+        ob0 ob0Var = this.b;
         switch (b) {
             case 0:
-                if (i == -1) {
-                    mb0Var.h0();
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                ob0Var.f = false;
                 break;
             default:
-                if (i == -1) {
-                    mb0Var.h0();
-                }
-                if (i == 1) {
-                    mb0Var.j0();
-                    break;
-                }
+                ob0Var.m0(false, ob0Var.G ? 1.0f : 0.0f);
+                ob0Var.G = false;
                 break;
         }
     }

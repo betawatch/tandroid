@@ -34,10 +34,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 @Deprecated
 /* loaded from: classes2.dex */
-public class UndoView extends FrameLayout implements tjb {
+public class UndoView extends FrameLayout implements snb {
     public static final /* synthetic */ int j0 = 0;
     public final TextPaint E;
     public final Paint F;
@@ -57,10 +57,10 @@ public class UndoView extends FrameLayout implements tjb {
     public CharSequence T;
     public int U;
     public final ShapeDrawable V;
-    public final wjb W;
+    public final vnb W;
     public byte a;
     public boolean a0;
-    public final ke1 b;
+    public final te1 b;
     public final ArrayList b0;
     public final TextView c;
     public final ArrayList c0;
@@ -68,56 +68,56 @@ public class UndoView extends FrameLayout implements tjb {
     public final ArrayList d0;
     public final ImageView e;
     public int e0;
-    public final ry8 f;
+    public final e29 f;
     public StaticLayout f0;
     public StaticLayout g0;
-    public final be0 h;
+    public final de0 h;
     public float h0;
     public float i0;
     public final LinearLayout n;
     public int r;
-    public final org.telegram.ui.ActionBar.d s;
+    public final org.telegram.ui.ActionBar.e s;
     public Object w;
     public Object x;
     public final int y;
 
-    public UndoView(Context context, org.telegram.ui.ActionBar.d dVar, boolean z, wjb wjbVar) {
+    public UndoView(Context context, org.telegram.ui.ActionBar.e eVar, boolean z, vnb vnbVar) {
         super(context);
         this.a = (byte) 0;
-        this.y = y6c.t0;
+        this.y = yac.t0;
         this.L = -1;
         this.U = 1;
         this.b0 = new ArrayList();
         this.c0 = new ArrayList();
         this.d0 = new ArrayList();
-        this.e0 = gl.L(8.0f);
+        this.e0 = hl.L(8.0f);
         this.h0 = 1.0f;
-        this.W = wjbVar;
-        this.s = dVar;
+        this.W = vnbVar;
+        this.s = eVar;
         this.S = z;
-        ke1 ke1Var = new ke1(this, context, wjbVar);
-        this.b = ke1Var;
-        ke1Var.setTextSize(1, 15.0f);
-        int i = bkb.xj;
-        zkb.X(ke1Var, i, wjbVar);
-        int i2 = bkb.wj;
-        zkb.G(ke1Var, i2, wjbVar);
-        ke1Var.setMovementMethod(new d5c(this));
-        addView(ke1Var, nme.d(-2, -2.0f, 51, 45.0f, 13.0f, 0.0f, 0.0f));
+        te1 te1Var = new te1(this, context, vnbVar);
+        this.b = te1Var;
+        te1Var.setTextSize(1, 15.0f);
+        int i = aob.yj;
+        yob.X(te1Var, i, vnbVar);
+        int i2 = aob.xj;
+        yob.G(te1Var, i2, vnbVar);
+        te1Var.setMovementMethod(new c9c(this));
+        addView(te1Var, tre.d(-2, -2.0f, 51, 45.0f, 13.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 13.0f);
-        zkb.X(textView, i, wjbVar);
-        zkb.G(textView, i2, wjbVar);
+        yob.X(textView, i, vnbVar);
+        yob.G(textView, i2, vnbVar);
         textView.setHighlightColor(0);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setMovementMethod(new cl((byte) 0));
-        addView(textView, nme.d(-2, -2.0f, 51, 58.0f, 27.0f, 8.0f, 0.0f));
-        ry8 ry8Var = new ry8(context);
-        this.f = ry8Var;
-        ry8Var.setScaleType(ImageView.ScaleType.CENTER);
-        int i3 = bkb.vj;
+        textView.setMovementMethod(new dl((byte) 0));
+        addView(textView, tre.d(-2, -2.0f, 51, 58.0f, 27.0f, 8.0f, 0.0f));
+        e29 e29Var = new e29(context);
+        this.f = e29Var;
+        e29Var.setScaleType(ImageView.ScaleType.CENTER);
+        int i3 = aob.wj;
         i(i3, "info1", true);
         i(i3, "info2", true);
         i(i, "luc12", false);
@@ -133,42 +133,42 @@ public class UndoView extends FrameLayout implements tjb {
         i(i, "luc2", false);
         i(i, "luc1", false);
         i(i, "Oval", false);
-        addView(ry8Var, nme.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
-        be0 be0Var = new be0(context);
-        this.h = be0Var;
-        be0Var.setRoundRadius(gl.L(15.0f));
-        addView(be0Var, nme.d(30, 30.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
+        addView(e29Var, tre.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
+        de0 de0Var = new de0(context);
+        this.h = de0Var;
+        de0Var.setRoundRadius(hl.L(15.0f));
+        addView(de0Var, tre.d(30, 30.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.n = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(bkb.Y(bkb.v0(i2, wjbVar) & 587202559, gl.L(2.0f), gl.L(2.0f)));
-        addView(linearLayout, nme.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        linearLayout.setOnClickListener(new c5c(this, (byte) 0));
+        linearLayout.setBackground(aob.Y(aob.v0(i2, vnbVar) & 587202559, hl.L(2.0f), hl.L(2.0f)));
+        addView(linearLayout, tre.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        linearLayout.setOnClickListener(new b9c(this, (byte) 0));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.chats_undo);
-        zkb.s(imageView, i2, wjbVar, PorterDuff.Mode.MULTIPLY);
-        linearLayout.addView(imageView, nme.t(-2, -2, 19, 4, 4, 0, 4));
+        yob.s(imageView, i2, vnbVar, PorterDuff.Mode.MULTIPLY);
+        linearLayout.addView(imageView, tre.t(-2, -2, 19, 4, 4, 0, 4));
         TextView textView2 = new TextView(context);
         this.d = textView2;
-        ir2.t(textView2, 1, 14.0f);
-        ug8.x(textView2, i2, wjbVar, null, 2131743646);
-        linearLayout.addView(textView2, nme.t(-2, -2, 19, 6, 4, 8, 4));
-        this.G = new RectF(gl.L(15.0f), gl.L(15.0f), gl.L(33.0f), gl.L(33.0f));
+        bs2.t(textView2, 1, 14.0f);
+        ik8.x(textView2, i2, vnbVar, null, 2131743540);
+        linearLayout.addView(textView2, tre.t(-2, -2, 19, 6, 4, 8, 4));
+        this.G = new RectF(hl.L(15.0f), hl.L(15.0f), hl.L(33.0f), hl.L(33.0f));
         Paint paint = new Paint(1);
         this.F = paint;
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.L(2.0f));
+        paint.setStrokeWidth(hl.L(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setColor(bkb.v0(i, wjbVar));
+        paint.setColor(aob.v0(i, vnbVar));
         TextPaint textPaint = new TextPaint(1);
         this.E = textPaint;
-        textPaint.setTextSize(gl.L(12.0f));
-        textPaint.setTypeface(gl.o());
-        textPaint.setColor(bkb.v0(i, wjbVar));
+        textPaint.setTextSize(hl.L(12.0f));
+        textPaint.setTypeface(hl.o());
+        textPaint.setColor(aob.v0(i, vnbVar));
         setWillNotDraw(false);
-        this.V = bkb.b0(gl.L(10.0f), bkb.v0(i3, wjbVar));
-        setOnTouchListener(new wmb((byte) 4));
+        this.V = aob.b0(hl.L(10.0f), aob.v0(i3, vnbVar));
+        setOnTouchListener(new vqb((byte) 4));
         setVisibility(4);
     }
 
@@ -176,9 +176,9 @@ public class UndoView extends FrameLayout implements tjb {
         return true;
     }
 
-    @Override // tjb
+    @Override // snb
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.vj));
+        hashSet.add(Integer.valueOf(aob.wj));
     }
 
     public final boolean c() {
@@ -188,7 +188,7 @@ public class UndoView extends FrameLayout implements tjb {
         if (i2 == 11 || i2 == 24 || i2 == 6 || i2 == 3 || i2 == 5 || i2 == 13 || i2 == 14 || i2 == 74) {
             return true;
         }
-        if ((i2 == 7 && na7.q1(this.y).G0.isEmpty()) || (i = this.L) == 83 || i == 85) {
+        if ((i2 == 7 && uc7.s1(this.y).G0.isEmpty()) || (i = this.L) == 83 || i == 85) {
             return true;
         }
         return i == 88 && (obj = this.x) != null && ((Integer) obj).intValue() > 0;
@@ -217,22 +217,22 @@ public class UndoView extends FrameLayout implements tjb {
             if (i2 == 0 || i2 == 1 || i2 == 95 || i2 == 26 || i2 == 27) {
                 for (int i3 = 0; i3 < this.M.size(); i3++) {
                     long longValue = ((Long) this.M.get(i3)).longValue();
-                    na7 q1 = na7.q1(this.y);
+                    uc7 s1 = uc7.s1(this.y);
                     int i4 = this.L;
                     boolean z2 = i4 == 0 || i4 == 26;
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) q1.R.f(longValue);
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) s1.R.f(longValue);
                     if (dialog != null) {
                         if (z2) {
-                            q1.v0.l(longValue);
+                            s1.v0.l(longValue);
                         } else {
-                            q1.u0.l(longValue);
+                            s1.u0.l(longValue);
                             if (!z) {
-                                q1.y.add(dialog);
-                                q1.Z4(null);
+                                s1.y.add(dialog);
+                                s1.h5(null);
                             }
                         }
                         if (!z) {
-                            q1.getNotificationCenter().k(kk7.r, Boolean.TRUE);
+                            s1.getNotificationCenter().k(jn7.r, Boolean.TRUE);
                         }
                     }
                     g(this.L, longValue);
@@ -253,7 +253,7 @@ public class UndoView extends FrameLayout implements tjb {
                 animatorSet.setDuration(180L);
             }
             animatorSet.setInterpolator(new DecelerateInterpolator());
-            animatorSet.addListener(new iab(this, (byte) 12));
+            animatorSet.addListener(new omb(this, (byte) 11));
             animatorSet.start();
         }
     }
@@ -265,7 +265,7 @@ public class UndoView extends FrameLayout implements tjb {
             return;
         }
         canvas.save();
-        float measuredHeight = (getMeasuredHeight() - this.i0) + gl.L(9.0f);
+        float measuredHeight = (getMeasuredHeight() - this.i0) + hl.L(9.0f);
         if (measuredHeight > 0.0f) {
             canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), measuredHeight);
             super.dispatchDraw(canvas);
@@ -302,16 +302,16 @@ public class UndoView extends FrameLayout implements tjb {
 
     public final void h(int i, int i2) {
         this.a0 = true;
-        bkb.A1(-115203550, this.V);
-        ke1 ke1Var = this.b;
-        zkb.q(ke1Var);
-        int i3 = bkb.wj;
-        wjb wjbVar = this.W;
-        zkb.G(ke1Var, i3, wjbVar);
+        aob.A1(-115203550, this.V);
+        te1 te1Var = this.b;
+        yob.q(te1Var);
+        int i3 = aob.xj;
+        vnb vnbVar = this.W;
+        yob.G(te1Var, i3, vnbVar);
         TextView textView = this.c;
-        zkb.q(textView);
-        zkb.G(textView, i3, wjbVar);
-        ke1Var.setTextColor(-1);
+        yob.q(textView);
+        yob.G(textView, i3, vnbVar);
+        te1Var.setTextColor(-1);
         textView.setTextColor(-1);
         ArrayList arrayList = this.b0;
         int indexOf = arrayList.indexOf("info1");
@@ -328,9 +328,9 @@ public class UndoView extends FrameLayout implements tjb {
             arrayList3.remove(indexOf2);
             arrayList2.remove(indexOf2);
         }
-        ry8 ry8Var = this.f;
-        ry8Var.h(-14540254, "info1");
-        ry8Var.h(-14540254, "info2");
+        e29 e29Var = this.f;
+        e29Var.h(-14540254, "info1");
+        e29Var.h(-14540254, "info2");
     }
 
     public final void i(int i, String str, boolean z) {
@@ -346,7 +346,7 @@ public class UndoView extends FrameLayout implements tjb {
             arrayList3.add(Integer.valueOf(i));
             arrayList2.add(Boolean.valueOf(z));
         }
-        int v0 = bkb.v0(i, this.W);
+        int v0 = aob.v0(i, this.W);
         if (z) {
             v0 |= -16777216;
         }
@@ -374,30 +374,31 @@ public class UndoView extends FrameLayout implements tjb {
         k(j, i, null, null, runnable, runnable2);
     }
 
-    public final void m(Object obj, int i, long j) {
+    public final void m(long j, Object obj, int i) {
         k(j, i, obj, null, null, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0882  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x08a5  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x1736  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x1758  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x183a  */
-    /* JADX WARN: Removed duplicated region for block: B:590:0x171a  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x087e  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x08a1  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x1731  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x1753  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x1835  */
+    /* JADX WARN: Removed duplicated region for block: B:589:0x1717  */
     /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x1793  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x08dc  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x089e  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x178e  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x08d8  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x089a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void n(ArrayList arrayList, int i, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
         MovementMethod movementMethod;
-        ke1 ke1Var;
+        te1 te1Var;
         TextView textView;
+        int i2;
         boolean z;
         long j;
-        int i2;
+        byte b;
         int L;
         CharSequence S2;
         int i3;
@@ -408,7 +409,7 @@ public class UndoView extends FrameLayout implements tjb {
         int i4;
         int i5;
         int i6;
-        if (!gl.C3() && ((i6 = this.L) == 52 || i6 == 56 || i6 == 57 || i6 == 58 || i6 == 59 || i6 == 60 || i6 == 80 || i6 == 33)) {
+        if (!hl.C3() && ((i6 = this.L) == 52 || i6 == 56 || i6 == 57 || i6 == 58 || i6 == 59 || i6 == 60 || i6 == 80 || i6 == 33)) {
             return;
         }
         Runnable runnable3 = this.N;
@@ -426,590 +427,593 @@ public class UndoView extends FrameLayout implements tjb {
         this.w = obj;
         this.x = obj2;
         this.P = SystemClock.elapsedRealtime();
-        String L02 = k96.L0(2131743646);
+        String L02 = ob6.L0(2131743540);
         TextView textView2 = this.d;
         textView2.setText(L02);
         ImageView imageView = this.e;
         imageView.setVisibility(0);
-        ry8 ry8Var = this.f;
-        ry8Var.setPadding(0, 0, 0, 0);
-        ry8Var.setScaleX(1.0f);
-        ry8Var.setScaleY(1.0f);
-        ke1 ke1Var2 = this.b;
-        ke1Var2.setTextSize(1, 15.0f);
-        be0 be0Var = this.h;
-        be0Var.setVisibility(8);
-        ke1Var2.setGravity(51);
+        e29 e29Var = this.f;
+        e29Var.setPadding(0, 0, 0, 0);
+        e29Var.setScaleX(1.0f);
+        e29Var.setScaleY(1.0f);
+        te1 te1Var2 = this.b;
+        te1Var2.setTextSize(1, 15.0f);
+        de0 de0Var = this.h;
+        de0Var.setVisibility(8);
+        te1Var2.setGravity(51);
         TextView textView3 = this.c;
-        ((FrameLayout.LayoutParams) textView3.getLayoutParams()).leftMargin = gl.L(58.0f);
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ke1Var2.getLayoutParams();
+        ((FrameLayout.LayoutParams) textView3.getLayoutParams()).leftMargin = hl.L(58.0f);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) te1Var2.getLayoutParams();
         layoutParams.height = -2;
-        layoutParams.topMargin = gl.L(13.0f);
+        layoutParams.topMargin = hl.L(13.0f);
         layoutParams.bottomMargin = 0;
-        ry8Var.setScaleType(ImageView.ScaleType.CENTER);
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) ry8Var.getLayoutParams();
+        e29Var.setScaleType(ImageView.ScaleType.CENTER);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) e29Var.getLayoutParams();
         layoutParams2.gravity = 19;
         layoutParams2.bottomMargin = 0;
         layoutParams2.topMargin = 0;
-        layoutParams2.leftMargin = gl.L(3.0f);
-        layoutParams2.width = gl.L(54.0f);
+        layoutParams2.leftMargin = hl.L(3.0f);
+        layoutParams2.width = hl.L(54.0f);
         layoutParams2.height = -2;
-        ke1Var2.setMinHeight(0);
+        te1Var2.setMinHeight(0);
         if ((runnable == null && runnable2 == null) || i == 83) {
-            setOnClickListener(new c5c(this, (byte) 1));
+            setOnClickListener(new b9c(this, (byte) 1));
             movementMethod = null;
             setOnTouchListener(null);
         } else {
             setOnClickListener(null);
-            setOnTouchListener(new wmb((byte) 5));
+            setOnTouchListener(new vqb((byte) 5));
             movementMethod = null;
         }
-        ke1Var2.setMovementMethod(movementMethod);
+        te1Var2.setMovementMethod(movementMethod);
         boolean f = f();
-        int i7 = R.raw.voip_invite;
         LinearLayout linearLayout = this.n;
-        int i8 = this.y;
-        int i9 = 36;
+        int i7 = this.y;
+        int i8 = 36;
         if (f) {
             if (i == 83) {
                 textView3.setSingleLine(false);
-                S2 = k96.L0(2131745090);
-                CharSequence P2 = gl.P2(k96.L0(2131745089), runnable);
+                S2 = ob6.L0(2131745010);
+                CharSequence P2 = hl.P2(ob6.L0(2131745009), runnable);
                 this.N = null;
                 this.H = 4000L;
                 L0 = P2;
                 i3 = R.raw.sound_download;
             } else if (i == 74) {
                 textView3.setSingleLine(false);
-                S2 = k96.L0(2131746029);
-                L0 = k96.Y(2131746014, "ReportSentInfo", new Object[0]);
+                S2 = ob6.L0(2131745949);
+                L0 = ob6.Y(2131745934, "ReportSentInfo", new Object[0]);
                 this.H = 4000L;
                 i3 = R.raw.ic_admin;
             } else {
                 if (i == 34) {
                     TLRPC.User user = (TLRPC.User) obj;
-                    SpannableStringBuilder S22 = hc2.W((TLRPC.Chat) obj2) ? gl.S2(k96.Y(2131743237, "VoipChannelInvitedUser", l7c.j(user))) : gl.S2(k96.Y(2131743129, "VoipGroupInvitedUser", l7c.j(user)));
-                    pb0 pb0Var = new pb0();
-                    pb0Var.s(gl.L(12.0f));
-                    pb0Var.q(user);
-                    be0Var.f(user, pb0Var);
-                    be0Var.setVisibility(0);
+                    SpannableStringBuilder S22 = xc2.W((TLRPC.Chat) obj2) ? hl.S2(ob6.Y(2131743131, "VoipChannelInvitedUser", lbc.j(user))) : hl.S2(ob6.Y(2131743023, "VoipGroupInvitedUser", lbc.j(user)));
+                    rb0 rb0Var = new rb0();
+                    rb0Var.s(hl.L(12.0f));
+                    rb0Var.q(user);
+                    de0Var.f(user, rb0Var);
+                    de0Var.setVisibility(0);
                     this.H = 3000L;
                     S2 = S22;
                 } else if (i == 44) {
                     TLRPC.Chat chat = (TLRPC.Chat) obj2;
                     if (obj instanceof TLRPC.User) {
                         TLRPC.User user2 = (TLRPC.User) obj;
-                        S2 = hc2.W(chat) ? gl.S2(k96.Z(2131743208, l7c.j(user2))) : gl.S2(k96.Z(2131743185, l7c.j(user2)));
+                        S2 = xc2.W(chat) ? hl.S2(ob6.Z(2131743102, lbc.j(user2))) : hl.S2(ob6.Z(2131743079, lbc.j(user2)));
                     } else if (obj instanceof TLRPC.Chat) {
-                        boolean W = hc2.W(chat);
+                        boolean W = xc2.W(chat);
                         String str2 = ((TLRPC.Chat) obj).title;
-                        S2 = W ? gl.S2(k96.Z(2131743245, str2)) : gl.S2(k96.Z(2131743202, str2));
+                        S2 = W ? hl.S2(ob6.Z(2131743139, str2)) : hl.S2(ob6.Z(2131743096, str2));
                     } else {
                         S2 = "";
                     }
-                    pb0 pb0Var2 = new pb0();
-                    pb0Var2.s(gl.L(12.0f));
+                    rb0 rb0Var2 = new rb0();
+                    rb0Var2.s(hl.L(12.0f));
                     TLObject tLObject = (TLObject) obj;
-                    pb0Var2.o(tLObject);
-                    be0Var.f(tLObject, pb0Var2);
-                    be0Var.setVisibility(0);
+                    rb0Var2.o(tLObject);
+                    de0Var.f(tLObject, rb0Var2);
+                    de0Var.setVisibility(0);
                     this.H = 3000L;
                 } else if (i == 37) {
-                    pb0 pb0Var3 = new pb0();
-                    pb0Var3.s(gl.L(12.0f));
+                    rb0 rb0Var3 = new rb0();
+                    rb0Var3.s(hl.L(12.0f));
                     if (obj instanceof TLRPC.User) {
                         TLRPC.User user3 = (TLRPC.User) obj;
-                        pb0Var3.q(user3);
-                        be0Var.f(user3, pb0Var3);
-                        str = qu2.n(user3.first_name, user3.last_name);
+                        rb0Var3.q(user3);
+                        de0Var.f(user3, rb0Var3);
+                        str = lv2.n(user3.first_name, user3.last_name);
                     } else {
                         TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                        pb0Var3.p(chat2);
-                        be0Var.f(chat2, pb0Var3);
+                        rb0Var3.p(chat2);
+                        de0Var.f(chat2, rb0Var3);
                         str = chat2.title;
                     }
-                    if (hc2.W((TLRPC.Chat) obj2)) {
+                    if (xc2.W((TLRPC.Chat) obj2)) {
                         i4 = 0;
-                        S2 = gl.S2(k96.Y(2131743209, "VoipChannelUserChanged", str));
+                        S2 = hl.S2(ob6.Y(2131743103, "VoipChannelUserChanged", str));
                     } else {
                         i4 = 0;
-                        S2 = gl.S2(k96.Y(2131743070, "VoipGroupUserChanged", str));
+                        S2 = hl.S2(ob6.Y(2131742964, "VoipGroupUserChanged", str));
                     }
-                    be0Var.setVisibility(i4);
+                    de0Var.setVisibility(i4);
                     this.H = 3000L;
                 } else {
                     if (i == 33) {
-                        S2 = k96.L0(2131743147);
+                        S2 = ob6.L0(2131743041);
                         this.H = 3000L;
+                        te1Var = te1Var2;
                         i3 = R.raw.voip_invite;
-                        ke1Var = ke1Var2;
-                    } else if (i == 77) {
-                        S2 = (CharSequence) obj;
-                        this.H = 5000L;
-                        if (this.s == null || !(obj2 instanceof TLRPC.Message)) {
-                            ke1Var = ke1Var2;
-                        } else {
-                            setOnTouchListener(null);
-                            ke1Var = ke1Var2;
-                            ke1Var.setMovementMethod(null);
-                            setOnClickListener(new vzb(this, (TLRPC.Message) obj2, (byte) 4));
-                        }
-                        i3 = R.raw.payment_success;
                     } else {
-                        ke1Var = ke1Var2;
-                        if (i == 30) {
-                            S2 = gl.S2(k96.Y(2131743072, "VoipGroupUserCantNowSpeak", obj instanceof TLRPC.User ? l7c.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
-                            this.H = 3000L;
-                        } else if (i == 35) {
-                            S2 = gl.S2(k96.Y(2131743071, "VoipGroupUserCantNowSpeakForYou", obj instanceof TLRPC.User ? l7c.j((TLRPC.User) obj) : obj instanceof TLRPC.Chat ? ((TLRPC.Chat) obj).title : ""));
-                            this.H = 3000L;
-                        } else {
-                            if (i == 31) {
-                                S2 = gl.S2(k96.Y(2131743074, "VoipGroupUserCanNowSpeak", obj instanceof TLRPC.User ? l7c.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
-                                this.H = 3000L;
-                            } else if (i == 38) {
-                                S2 = obj instanceof TLRPC.Chat ? gl.S2(k96.Y(2131743062, "VoipGroupYouCanNowSpeakIn", ((TLRPC.Chat) obj).title)) : gl.S2(k96.L0(2131743063));
-                                this.H = 3000L;
-                                i3 = R.raw.voip_allow_talk;
-                            } else if (i == 42) {
-                                S2 = hc2.W((TLRPC.Chat) obj) ? gl.S2(k96.L0(2131743218)) : gl.S2(k96.L0(2131743093));
-                                this.H = 3000L;
-                                i3 = R.raw.ic_mute;
-                            } else if (i == 43) {
-                                S2 = hc2.W((TLRPC.Chat) obj) ? gl.S2(k96.L0(2131743217)) : gl.S2(k96.L0(2131743092));
-                                this.H = 3000L;
-                                i3 = R.raw.ic_unmute;
+                        byte b2 = 7;
+                        if (i == 77) {
+                            S2 = (CharSequence) obj;
+                            this.H = 5000L;
+                            if (this.s == null || !(obj2 instanceof TLRPC.Message)) {
+                                te1Var = te1Var2;
                             } else {
-                                int i10 = this.L;
-                                if (i10 == 39 || i10 == 100) {
-                                    S2 = gl.S2(k96.L0(i10 == 39 ? 2131743155 : 2131743066));
+                                setOnTouchListener(null);
+                                te1Var = te1Var2;
+                                te1Var.setMovementMethod(null);
+                                setOnClickListener(new jjb(this, (TLRPC.Message) obj2, b2));
+                            }
+                            i3 = R.raw.payment_success;
+                        } else {
+                            te1Var = te1Var2;
+                            if (i == 30) {
+                                S2 = hl.S2(ob6.Y(2131742966, "VoipGroupUserCantNowSpeak", obj instanceof TLRPC.User ? lbc.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                this.H = 3000L;
+                            } else if (i == 35) {
+                                S2 = hl.S2(ob6.Y(2131742965, "VoipGroupUserCantNowSpeakForYou", obj instanceof TLRPC.User ? lbc.j((TLRPC.User) obj) : obj instanceof TLRPC.Chat ? ((TLRPC.Chat) obj).title : ""));
+                                this.H = 3000L;
+                            } else {
+                                if (i == 31) {
+                                    S2 = hl.S2(ob6.Y(2131742968, "VoipGroupUserCanNowSpeak", obj instanceof TLRPC.User ? lbc.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
                                     this.H = 3000L;
-                                    i3 = R.raw.voip_record_start;
-                                } else if (i10 == 40 || i10 == 101) {
-                                    String L03 = k96.L0(i10 == 40 ? 2131743156 : 2131743067);
-                                    this.H = 4000L;
-                                    ke1Var.setMovementMethod(new cl((byte) 0));
-                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(L03);
-                                    int indexOf = L03.indexOf("**");
-                                    int lastIndexOf = L03.lastIndexOf("**");
-                                    if (indexOf >= 0 && lastIndexOf >= 0 && indexOf != lastIndexOf) {
-                                        spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
-                                        spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
-                                        try {
-                                            spannableStringBuilder.setSpan(new g4c("tg://openmessage?user_id=" + y6c.h(i8).e()), indexOf, lastIndexOf - 2, 33);
-                                        } catch (Exception e) {
-                                            fa4.f(e);
-                                        }
-                                    }
-                                    i3 = R.raw.voip_record_saved;
-                                    S2 = spannableStringBuilder;
-                                } else if (i == 36) {
-                                    S2 = gl.S2(k96.Y(2131743073, "VoipGroupUserCanNowSpeakForYou", obj instanceof TLRPC.User ? l7c.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                } else if (i == 38) {
+                                    S2 = obj instanceof TLRPC.Chat ? hl.S2(ob6.Y(2131742956, "VoipGroupYouCanNowSpeakIn", ((TLRPC.Chat) obj).title)) : hl.S2(ob6.L0(2131742957));
                                     this.H = 3000L;
-                                } else if (i == 32 || i == 102) {
-                                    String j2 = obj instanceof TLRPC.User ? l7c.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title;
-                                    S2 = i == 102 ? gl.S2(k96.Z(2131743182, j2)) : gl.S2(k96.Z(2131743102, j2));
+                                    i3 = R.raw.voip_allow_talk;
+                                } else if (i == 42) {
+                                    S2 = xc2.W((TLRPC.Chat) obj) ? hl.S2(ob6.L0(2131743112)) : hl.S2(ob6.L0(2131742987));
                                     this.H = 3000L;
-                                    i3 = R.raw.ic_ban;
+                                    i3 = R.raw.ic_mute;
+                                } else if (i == 43) {
+                                    S2 = xc2.W((TLRPC.Chat) obj) ? hl.S2(ob6.L0(2131743111)) : hl.S2(ob6.L0(2131742986));
+                                    this.H = 3000L;
+                                    i3 = R.raw.ic_unmute;
                                 } else {
-                                    if (i == 9 || i == 10) {
-                                        TLRPC.User user4 = (TLRPC.User) obj;
-                                        S2 = i == 9 ? gl.S2(k96.Y(2131751283, "EditAdminTransferChannelToast", l7c.j(user4))) : gl.S2(k96.Y(2131751282, "EditAdminTransferGroupToast", l7c.j(user4)));
-                                    } else if (i == 8) {
-                                        S2 = k96.Y(2131747641, "NowInContacts", l7c.j((TLRPC.User) obj));
-                                    } else if (i == 87) {
-                                        S2 = k96.Z(2131746417, new Object[0]);
-                                    } else if (i == 22) {
-                                        if (cf3.D(longValue)) {
-                                            S2 = obj == null ? k96.L0(2131748518) : k96.L0(2131748517);
-                                        } else {
-                                            TLRPC.Chat K0 = na7.q1(y6c.t0).K0(Long.valueOf(-longValue));
-                                            S2 = (!hc2.T(K0) || K0.megagroup) ? obj == null ? k96.L0(2131748520) : k96.L0(2131748519) : obj == null ? k96.L0(2131748522) : k96.L0(2131748521);
+                                    int i9 = this.L;
+                                    if (i9 == 39 || i9 == 100) {
+                                        S2 = hl.S2(ob6.L0(i9 == 39 ? 2131743049 : 2131742960));
+                                        this.H = 3000L;
+                                        i3 = R.raw.voip_record_start;
+                                    } else if (i9 == 40 || i9 == 101) {
+                                        String L03 = ob6.L0(i9 == 40 ? 2131743050 : 2131742961);
+                                        this.H = 4000L;
+                                        te1Var.setMovementMethod(new dl((byte) 0));
+                                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(L03);
+                                        int indexOf = L03.indexOf("**");
+                                        int lastIndexOf = L03.lastIndexOf("**");
+                                        if (indexOf >= 0 && lastIndexOf >= 0 && indexOf != lastIndexOf) {
+                                            spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
+                                            spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
+                                            try {
+                                                spannableStringBuilder.setSpan(new f8c("tg://openmessage?user_id=" + yac.h(i7).e()), indexOf, lastIndexOf - 2, 33);
+                                            } catch (Exception e) {
+                                                cc4.f(e);
+                                            }
                                         }
-                                    } else if (i == 23) {
-                                        S2 = k96.L0(2131752183);
+                                        i3 = R.raw.voip_record_saved;
+                                        S2 = spannableStringBuilder;
+                                    } else if (i == 36) {
+                                        S2 = hl.S2(ob6.Y(2131742967, "VoipGroupUserCanNowSpeakForYou", obj instanceof TLRPC.User ? lbc.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title));
+                                        this.H = 3000L;
+                                    } else if (i == 32 || i == 102) {
+                                        String j2 = obj instanceof TLRPC.User ? lbc.j((TLRPC.User) obj) : ((TLRPC.Chat) obj).title;
+                                        S2 = i == 102 ? hl.S2(ob6.Z(2131743076, j2)) : hl.S2(ob6.Z(2131742996, j2));
+                                        this.H = 3000L;
+                                        i3 = R.raw.ic_ban;
                                     } else {
-                                        if (i == 6) {
-                                            S2 = k96.L0(2131754166);
-                                            L0 = k96.L0(2131754165);
-                                            i3 = R.raw.chats_swipearchive;
-                                            i9 = 48;
-                                        } else {
-                                            if (i10 == 13) {
-                                                S2 = k96.L0(2131746251);
-                                                L0 = k96.L0(2131746250);
-                                                i3 = R.raw.wallet_congrats;
+                                        if (i == 9 || i == 10) {
+                                            TLRPC.User user4 = (TLRPC.User) obj;
+                                            S2 = i == 9 ? hl.S2(ob6.Y(2131751260, "EditAdminTransferChannelToast", lbc.j(user4))) : hl.S2(ob6.Y(2131751259, "EditAdminTransferGroupToast", lbc.j(user4)));
+                                        } else if (i == 8) {
+                                            S2 = ob6.Y(2131747561, "NowInContacts", lbc.j((TLRPC.User) obj));
+                                        } else if (i == 87) {
+                                            S2 = ob6.Z(2131746337, new Object[0]);
+                                        } else if (i == 22) {
+                                            if (wf3.D(longValue)) {
+                                                S2 = obj == null ? ob6.L0(2131748464) : ob6.L0(2131748463);
                                             } else {
-                                                if (i10 != 14) {
-                                                    if (i == 7) {
-                                                        S2 = k96.L0(2131754149);
-                                                        if (na7.q1(i8).G0.isEmpty()) {
-                                                            L0 = k96.L0(2131754148);
-                                                            i3 = R.raw.chats_infotip;
-                                                        }
-                                                        L0 = null;
-                                                        i3 = R.raw.chats_infotip;
-                                                    } else if (i == 20 || i == 21) {
-                                                        t97 t97Var = (t97) obj2;
-                                                        Spannable y5 = k27.y5(ke1Var.getPaint().getFontMetricsInt(), vu3.l(t97Var.b, ke1Var.getPaint().getFontMetricsInt(), false), t97Var.c);
-                                                        this.a = t97Var.n ? (byte) 26 : (byte) 0;
-                                                        if (longValue != 0) {
-                                                            if (cf3.B(longValue)) {
-                                                                longValue = na7.q1(i8).Y0(Integer.valueOf(cf3.h(longValue))).user_id;
+                                                TLRPC.Chat M0 = uc7.s1(yac.t0).M0(Long.valueOf(-longValue));
+                                                S2 = (!xc2.T(M0) || M0.megagroup) ? obj == null ? ob6.L0(2131748466) : ob6.L0(2131748465) : obj == null ? ob6.L0(2131748468) : ob6.L0(2131748467);
+                                            }
+                                        } else if (i == 23) {
+                                            S2 = ob6.L0(2131752160);
+                                        } else {
+                                            if (i == 6) {
+                                                S2 = ob6.L0(2131754162);
+                                                L0 = ob6.L0(2131754161);
+                                                i3 = R.raw.chats_swipearchive;
+                                                i8 = 48;
+                                            } else {
+                                                if (i9 == 13) {
+                                                    S2 = ob6.L0(2131746171);
+                                                    L0 = ob6.L0(2131746170);
+                                                    i3 = R.raw.wallet_congrats;
+                                                } else {
+                                                    if (i9 != 14) {
+                                                        if (i == 7) {
+                                                            S2 = ob6.L0(2131754145);
+                                                            if (uc7.s1(i7).G0.isEmpty()) {
+                                                                L0 = ob6.L0(2131754144);
+                                                                i3 = R.raw.chats_infotip;
                                                             }
-                                                            if (cf3.D(longValue)) {
-                                                                TLRPC.User V1 = na7.q1(i8).V1(Long.valueOf(longValue));
-                                                                String j3 = l7c.j(V1);
-                                                                if (l7c.D(V1)) {
-                                                                    j3 = k96.L0(2131745709);
-                                                                } else if (l7c.B(V1)) {
-                                                                    j3 = k96.L0(2131746073);
+                                                            L0 = null;
+                                                            i3 = R.raw.chats_infotip;
+                                                        } else if (i == 20 || i == 21) {
+                                                            ac7 ac7Var = (ac7) obj2;
+                                                            Spannable y5 = r47.y5(te1Var.getPaint().getFontMetricsInt(), pv3.l(ac7Var.b, te1Var.getPaint().getFontMetricsInt(), false), ac7Var.c);
+                                                            this.a = ac7Var.n ? (byte) 26 : (byte) 0;
+                                                            if (longValue != 0) {
+                                                                if (wf3.B(longValue)) {
+                                                                    longValue = uc7.s1(i7).a1(Integer.valueOf(wf3.h(longValue))).user_id;
                                                                 }
-                                                                R22 = i == 20 ? gl.R2(k96.U(2131750681, j3, y5)) : gl.R2(k96.U(2131750680, j3, y5));
+                                                                if (wf3.D(longValue)) {
+                                                                    TLRPC.User X1 = uc7.s1(i7).X1(Long.valueOf(longValue));
+                                                                    String j3 = lbc.j(X1);
+                                                                    if (lbc.D(X1)) {
+                                                                        j3 = ob6.L0(2131745629);
+                                                                    } else if (lbc.B(X1)) {
+                                                                        j3 = ob6.L0(2131745993);
+                                                                    }
+                                                                    R22 = i == 20 ? hl.R2(ob6.U(2131750658, j3, y5)) : hl.R2(ob6.U(2131750657, j3, y5));
+                                                                } else {
+                                                                    TLRPC.Chat M02 = uc7.s1(i7).M0(Long.valueOf(-longValue));
+                                                                    R22 = i == 20 ? hl.R2(ob6.U(2131750764, M02.title, y5)) : hl.R2(ob6.U(2131750763, M02.title, y5));
+                                                                }
+                                                                R2 = R22;
                                                             } else {
-                                                                TLRPC.Chat K02 = na7.q1(i8).K0(Long.valueOf(-longValue));
-                                                                R22 = i == 20 ? gl.R2(k96.U(2131750787, K02.title, y5)) : gl.R2(k96.U(2131750786, K02.title, y5));
+                                                                R2 = i == 20 ? hl.R2(ob6.U(2131750760, ob6.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), y5)) : hl.R2(ob6.U(2131750759, ob6.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), y5));
                                                             }
-                                                            R2 = R22;
+                                                            i3 = i == 20 ? R.raw.folder_in : R.raw.folder_out;
+                                                            S2 = R2;
+                                                        } else if (i == 19) {
+                                                            S2 = this.T;
+                                                            i3 = R.raw.ic_delete;
+                                                        } else if (i == 82) {
+                                                            S2 = ob6.L0(((no6) obj).b ? 2131753947 : 2131753952);
+                                                            i3 = 0;
+                                                        } else if (i == 78 || i == 79) {
+                                                            int intValue = ((Integer) obj).intValue();
+                                                            S2 = i == 78 ? ob6.G(intValue, "PinnedDialogsCount", new Object[0]) : ob6.G(intValue, "UnpinnedDialogsCount", new Object[0]);
+                                                            i3 = this.L == 78 ? R.raw.ic_pin : R.raw.ic_unpin;
+                                                            if (obj2 instanceof Integer) {
+                                                                this.H = ((Integer) obj2).intValue();
+                                                            }
                                                         } else {
-                                                            R2 = i == 20 ? gl.R2(k96.U(2131750783, k96.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), y5)) : gl.R2(k96.U(2131750782, k96.G(((Integer) obj).intValue(), "ChatsSelected", new Object[0]), y5));
-                                                        }
-                                                        i3 = i == 20 ? R.raw.folder_in : R.raw.folder_out;
-                                                        S2 = R2;
-                                                    } else if (i == 19) {
-                                                        S2 = this.T;
-                                                        i3 = R.raw.ic_delete;
-                                                    } else if (i == 82) {
-                                                        S2 = k96.L0(((jm6) obj).b ? 2131753951 : 2131753956);
-                                                        i3 = 0;
-                                                    } else if (i == 78 || i == 79) {
-                                                        int intValue = ((Integer) obj).intValue();
-                                                        S2 = i == 78 ? k96.G(intValue, "PinnedDialogsCount", new Object[0]) : k96.G(intValue, "UnpinnedDialogsCount", new Object[0]);
-                                                        i3 = this.L == 78 ? R.raw.ic_pin : R.raw.ic_unpin;
-                                                        if (obj2 instanceof Integer) {
-                                                            this.H = ((Integer) obj2).intValue();
-                                                        }
-                                                    } else {
-                                                        S2 = i == 3 ? k96.L0(2131752234) : k96.L0(2131752169);
-                                                        if (na7.q1(i8).G0.isEmpty()) {
-                                                            L0 = k96.L0(2131752233);
+                                                            S2 = i == 3 ? ob6.L0(2131752211) : ob6.L0(2131752146);
+                                                            if (uc7.s1(i7).G0.isEmpty()) {
+                                                                L0 = ob6.L0(2131752210);
+                                                                i3 = R.raw.chats_infotip;
+                                                            }
+                                                            L0 = null;
                                                             i3 = R.raw.chats_infotip;
                                                         }
-                                                        L0 = null;
-                                                        i3 = R.raw.chats_infotip;
-                                                    }
-                                                    StringBuilder sb = new StringBuilder();
-                                                    sb.append((Object) ke1Var.getText());
-                                                    sb.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
-                                                    gl.g2(sb.toString());
-                                                    if (!e()) {
-                                                        int measuredWidth = ((ViewGroup) getParent()).getMeasuredWidth();
-                                                        if (measuredWidth == 0) {
-                                                            measuredWidth = gl.q.x;
+                                                        StringBuilder sb = new StringBuilder();
+                                                        sb.append((Object) te1Var.getText());
+                                                        sb.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
+                                                        hl.g2(sb.toString());
+                                                        if (!e()) {
+                                                            int measuredWidth = ((ViewGroup) getParent()).getMeasuredWidth();
+                                                            if (measuredWidth == 0) {
+                                                                measuredWidth = hl.q.x;
+                                                            }
+                                                            measureChildWithMargins(textView3, ik8.f(16.0f, measuredWidth, TLObject.FLAG_30), 0, 0, 0);
+                                                            this.r = hl.L(37.0f) + textView3.getMeasuredHeight();
+                                                        } else if (c()) {
+                                                            this.r = hl.L(52.0f);
+                                                        } else if (getParent() instanceof ViewGroup) {
+                                                            ViewGroup viewGroup = (ViewGroup) getParent();
+                                                            int measuredWidth2 = (viewGroup.getMeasuredWidth() - viewGroup.getPaddingLeft()) - viewGroup.getPaddingRight();
+                                                            if (measuredWidth2 <= 0) {
+                                                                measuredWidth2 = hl.q.x;
+                                                            }
+                                                            View view = te1Var;
+                                                            measureChildWithMargins(view, ik8.f(16.0f, measuredWidth2, TLObject.FLAG_30), 0, 0, 0);
+                                                            int measuredHeight = view.getMeasuredHeight();
+                                                            int i10 = this.L;
+                                                            int L2 = hl.L((i10 == 16 || i10 == 17 || i10 == 18 || i10 == 84 || i10 == 86) ? 14.0f : 28.0f) + measuredHeight;
+                                                            this.r = L2;
+                                                            int i11 = this.L;
+                                                            if (i11 == 18) {
+                                                                this.r = Math.max(L2, hl.L(52.0f));
+                                                            } else if (i11 == 25) {
+                                                                this.r = Math.max(L2, hl.L(50.0f));
+                                                            } else if (z) {
+                                                                this.r = L2 - hl.L(8.0f);
+                                                            }
                                                         }
-                                                        measureChildWithMargins(textView3, ug8.f(16.0f, measuredWidth, TLObject.FLAG_30), 0, 0, 0);
-                                                        this.r = gl.L(37.0f) + textView3.getMeasuredHeight();
-                                                    } else if (c()) {
-                                                        this.r = gl.L(52.0f);
-                                                    } else if (getParent() instanceof ViewGroup) {
-                                                        ViewGroup viewGroup = (ViewGroup) getParent();
-                                                        int measuredWidth2 = (viewGroup.getMeasuredWidth() - viewGroup.getPaddingLeft()) - viewGroup.getPaddingRight();
-                                                        if (measuredWidth2 <= 0) {
-                                                            measuredWidth2 = gl.q.x;
+                                                        if (getVisibility() == 0) {
+                                                            setVisibility(0);
+                                                            setEnterOffset((this.S ? -1.0f : 1.0f) * (this.e0 + this.r));
+                                                            AnimatorSet animatorSet = new AnimatorSet();
+                                                            boolean z2 = this.S;
+                                                            animatorSet.playTogether(ObjectAnimator.ofFloat(this, "enterOffset", (z2 ? -1.0f : 1.0f) * (this.e0 + this.r), z2 ? 1.0f : -1.0f));
+                                                            animatorSet.setInterpolator(new DecelerateInterpolator());
+                                                            animatorSet.setDuration(180L);
+                                                            animatorSet.start();
+                                                            return;
                                                         }
-                                                        View view = ke1Var;
-                                                        measureChildWithMargins(view, ug8.f(16.0f, measuredWidth2, TLObject.FLAG_30), 0, 0, 0);
-                                                        int measuredHeight = view.getMeasuredHeight();
-                                                        int i11 = this.L;
-                                                        int L2 = gl.L((i11 == 16 || i11 == 17 || i11 == 18 || i11 == 84 || i11 == 86) ? 14.0f : 28.0f) + measuredHeight;
-                                                        this.r = L2;
-                                                        int i12 = this.L;
-                                                        if (i12 == 18) {
-                                                            this.r = Math.max(L2, gl.L(52.0f));
-                                                        } else if (i12 == 25) {
-                                                            this.r = Math.max(L2, gl.L(50.0f));
-                                                        } else if (z) {
-                                                            this.r = L2 - gl.L(8.0f);
-                                                        }
-                                                    }
-                                                    if (getVisibility() == 0) {
-                                                        setVisibility(0);
-                                                        setEnterOffset((this.S ? -1.0f : 1.0f) * (this.e0 + this.r));
-                                                        AnimatorSet animatorSet = new AnimatorSet();
-                                                        boolean z2 = this.S;
-                                                        animatorSet.playTogether(ObjectAnimator.ofFloat(this, "enterOffset", (z2 ? -1.0f : 1.0f) * (this.e0 + this.r), z2 ? 1.0f : -1.0f));
-                                                        animatorSet.setInterpolator(new DecelerateInterpolator());
-                                                        animatorSet.setDuration(180L);
-                                                        animatorSet.start();
                                                         return;
                                                     }
-                                                    return;
+                                                    S2 = ob6.L0(2131746169);
+                                                    L0 = ob6.L0(2131746168);
+                                                    i3 = R.raw.wallet_science;
                                                 }
-                                                S2 = k96.L0(2131746249);
-                                                L0 = k96.L0(2131746248);
-                                                i3 = R.raw.wallet_science;
+                                                i8 = 44;
                                             }
-                                            i9 = 44;
+                                            te1Var.setText(S2);
+                                            if (i3 == 0) {
+                                                e29Var.e(i3, i8, i8);
+                                                b29 animatedDrawable = e29Var.getAnimatedDrawable();
+                                                animatedDrawable.h = false;
+                                                animatedDrawable.K(animatedDrawable.n());
+                                                e29Var.setVisibility(0);
+                                                e29Var.setProgress(0.0f);
+                                                e29Var.d();
+                                            } else {
+                                                e29Var.setVisibility(8);
+                                            }
+                                            if (L0 == null) {
+                                                layoutParams.leftMargin = hl.L(58.0f);
+                                                layoutParams.topMargin = hl.L(6.0f);
+                                                layoutParams.rightMargin = hl.L(8.0f);
+                                                ((FrameLayout.LayoutParams) textView3.getLayoutParams()).rightMargin = hl.L(8.0f);
+                                                textView3.setText(L0);
+                                                textView3.setVisibility(0);
+                                                te1Var.setTextSize(1, 14.0f);
+                                                te1Var.setTypeface(hl.o());
+                                                i5 = 8;
+                                            } else {
+                                                layoutParams.leftMargin = hl.L(58.0f);
+                                                layoutParams.topMargin = hl.L(13.0f);
+                                                layoutParams.rightMargin = hl.L(8.0f);
+                                                i5 = 8;
+                                                textView3.setVisibility(8);
+                                                te1Var.setTextSize(1, 15.0f);
+                                                te1Var.setTypeface(Typeface.DEFAULT);
+                                            }
+                                            linearLayout.setVisibility(i5);
                                         }
-                                        ke1Var.setText(S2);
-                                        if (i3 == 0) {
-                                            ry8Var.e(i3, i9, i9);
-                                            oy8 animatedDrawable = ry8Var.getAnimatedDrawable();
-                                            animatedDrawable.h = false;
-                                            animatedDrawable.K(animatedDrawable.n());
-                                            ry8Var.setVisibility(0);
-                                            ry8Var.setProgress(0.0f);
-                                            ry8Var.d();
-                                        } else {
-                                            ry8Var.setVisibility(8);
-                                        }
-                                        if (L0 == null) {
-                                            layoutParams.leftMargin = gl.L(58.0f);
-                                            layoutParams.topMargin = gl.L(6.0f);
-                                            layoutParams.rightMargin = gl.L(8.0f);
-                                            ((FrameLayout.LayoutParams) textView3.getLayoutParams()).rightMargin = gl.L(8.0f);
-                                            textView3.setText(L0);
-                                            textView3.setVisibility(0);
-                                            ke1Var.setTextSize(1, 14.0f);
-                                            ke1Var.setTypeface(gl.o());
-                                            i5 = 8;
-                                        } else {
-                                            layoutParams.leftMargin = gl.L(58.0f);
-                                            layoutParams.topMargin = gl.L(13.0f);
-                                            layoutParams.rightMargin = gl.L(8.0f);
-                                            i5 = 8;
-                                            textView3.setVisibility(8);
-                                            ke1Var.setTextSize(1, 15.0f);
-                                            ke1Var.setTypeface(Typeface.DEFAULT);
-                                        }
-                                        linearLayout.setVisibility(i5);
+                                        i3 = R.raw.contact_check;
                                     }
-                                    i3 = R.raw.contact_check;
                                 }
+                                i3 = R.raw.voip_unmuted;
                             }
-                            i3 = R.raw.voip_unmuted;
+                            i3 = R.raw.voip_muted;
                         }
-                        i3 = R.raw.voip_muted;
                     }
                     L0 = null;
-                    ke1Var.setText(S2);
+                    te1Var.setText(S2);
                     if (i3 == 0) {
                     }
                     if (L0 == null) {
                     }
                     linearLayout.setVisibility(i5);
                 }
-                ke1Var = ke1Var2;
+                te1Var = te1Var2;
                 i3 = 0;
                 L0 = null;
-                ke1Var.setText(S2);
+                te1Var.setText(S2);
                 if (i3 == 0) {
                 }
                 if (L0 == null) {
                 }
                 linearLayout.setVisibility(i5);
             }
-            ke1Var = ke1Var2;
-            ke1Var.setText(S2);
+            te1Var = te1Var2;
+            te1Var.setText(S2);
             if (i3 == 0) {
             }
             if (L0 == null) {
             }
             linearLayout.setVisibility(i5);
         } else {
-            ke1Var = ke1Var2;
-            int i13 = this.L;
-            wjb wjbVar = this.W;
-            if (i13 == 45 || i13 == 46 || i13 == 47 || i13 == 52 || i13 == 53 || i13 == 54 || i13 == 55 || i13 == 56 || i13 == 57 || i13 == 58 || i13 == 59 || i13 == 60 || i13 == 71 || i13 == 70 || i13 == 75 || i13 == 76 || i13 == 41 || i13 == 78 || i13 == 79 || i13 == 61 || i13 == 80) {
+            te1Var = te1Var2;
+            int i12 = this.L;
+            vnb vnbVar = this.W;
+            if (i12 == 45 || i12 == 46 || i12 == 47 || i12 == 52 || i12 == 53 || i12 == 54 || i12 == 55 || i12 == 56 || i12 == 57 || i12 == 58 || i12 == 59 || i12 == 60 || i12 == 71 || i12 == 70 || i12 == 75 || i12 == 76 || i12 == 41 || i12 == 78 || i12 == 79 || i12 == 61 || i12 == 80) {
                 imageView.setVisibility(8);
-                ry8Var.setVisibility(0);
-                ke1Var.setTypeface(Typeface.DEFAULT);
-                int i14 = this.L;
+                e29Var.setVisibility(0);
+                te1Var.setTypeface(Typeface.DEFAULT);
+                int i13 = this.L;
                 long j4 = -1;
-                if (i14 == 76) {
-                    ke1Var.setText(k96.L0(2131752869));
-                    ry8Var.e(R.raw.gigagroup_convert, 36, 36);
-                    layoutParams.topMargin = gl.L(9.0f);
+                if (i13 == 76) {
+                    te1Var.setText(ob6.L0(2131752862));
+                    e29Var.e(R.raw.gigagroup_convert, 36, 36);
+                    layoutParams.topMargin = hl.L(9.0f);
                     z = true;
-                    ke1Var.setTextSize(1, 14.0f);
-                } else if (i14 == 75) {
-                    ke1Var.setText(k96.L0(2131749384));
-                    ry8Var.e(R.raw.chats_infotip, 36, 36);
-                    layoutParams.topMargin = gl.L(9.0f);
-                    ke1Var.setTextSize(1, 14.0f);
+                    te1Var.setTextSize(1, 14.0f);
+                } else if (i13 == 75) {
+                    te1Var.setText(ob6.L0(2131749330));
+                    e29Var.e(R.raw.chats_infotip, 36, 36);
+                    layoutParams.topMargin = hl.L(9.0f);
+                    te1Var.setTextSize(1, 14.0f);
                     z = true;
                 } else {
                     if (i == 70) {
                         int intValue2 = ((Integer) obj2).intValue();
                         textView3.setSingleLine(false);
-                        ke1Var.setText(k96.Y(2131753851, "AutoDeleteHintOnText", k96.c0(intValue2)));
-                        ry8Var.e(R.raw.fire_on, 36, 36);
-                        layoutParams.topMargin = gl.L(9.0f);
+                        te1Var.setText(ob6.Y(2131753847, "AutoDeleteHintOnText", ob6.c0(intValue2)));
+                        e29Var.e(R.raw.fire_on, 36, 36);
+                        layoutParams.topMargin = hl.L(9.0f);
                         this.H = 4000L;
-                        ry8Var.setPadding(0, 0, 0, gl.L(3.0f));
+                        e29Var.setPadding(0, 0, 0, hl.L(3.0f));
                     } else {
-                        if (i14 == 71) {
-                            ke1Var.setText(k96.L0(2131753852));
-                            ry8Var.e(R.raw.fire_off, 36, 36);
-                            ke1Var.setTextSize(1, 14.0f);
+                        if (i13 == 71) {
+                            te1Var.setText(ob6.L0(2131753848));
+                            e29Var.e(R.raw.fire_off, 36, 36);
+                            te1Var.setTextSize(1, 14.0f);
                             this.H = 3000L;
-                            ry8Var.setPadding(0, 0, 0, gl.L(4.0f));
-                        } else if (i14 == 45) {
-                            ke1Var.setText(k96.L0(2131749052));
-                            ry8Var.e(R.raw.error, 36, 36);
-                            layoutParams.topMargin = gl.L(9.0f);
-                            ke1Var.setTextSize(1, 14.0f);
+                            e29Var.setPadding(0, 0, 0, hl.L(4.0f));
+                        } else if (i13 == 45) {
+                            te1Var.setText(ob6.L0(2131748998));
+                            e29Var.e(R.raw.error, 36, 36);
+                            layoutParams.topMargin = hl.L(9.0f);
+                            te1Var.setTextSize(1, 14.0f);
                             z = true;
-                        } else if (i14 == 46) {
-                            ke1Var.setText(k96.L0(2131749051));
-                            ry8Var.e(R.raw.error, 36, 36);
-                            layoutParams.topMargin = gl.L(9.0f);
-                            ke1Var.setTextSize(1, 14.0f);
-                        } else if (i14 == 47) {
-                            ke1Var.setText(k96.L0(2131749029));
-                            ry8Var.e(R.raw.imported, 36, 36);
-                            ry8Var.setPadding(0, 0, 0, gl.L(5.0f));
-                            layoutParams.topMargin = gl.L(9.0f);
-                            ke1Var.setTextSize(1, 14.0f);
+                        } else if (i13 == 46) {
+                            te1Var.setText(ob6.L0(2131748997));
+                            e29Var.e(R.raw.error, 36, 36);
+                            layoutParams.topMargin = hl.L(9.0f);
+                            te1Var.setTextSize(1, 14.0f);
+                        } else if (i13 == 47) {
+                            te1Var.setText(ob6.L0(2131748975));
+                            e29Var.e(R.raw.imported, 36, 36);
+                            e29Var.setPadding(0, 0, 0, hl.L(5.0f));
+                            layoutParams.topMargin = hl.L(9.0f);
+                            te1Var.setTextSize(1, 14.0f);
                         } else {
-                            if (i14 == 52 || i14 == 56 || i14 == 57 || i14 == 58 || i14 == 59 || i14 == 60 || i14 == 80) {
+                            if (i13 == 52 || i13 == 56 || i13 == 57 || i13 == 58 || i13 == 59 || i13 == 60 || i13 == 80) {
                                 textView = textView2;
-                                if (!gl.C3()) {
+                                if (!hl.C3()) {
                                     return;
                                 }
-                                int i15 = this.L;
-                                if (i15 == 80) {
-                                    ke1Var.setText(k96.L0(2131751191));
-                                } else if (i15 == 60) {
-                                    ke1Var.setText(k96.L0(2131747102));
-                                } else if (i15 == 56) {
-                                    ke1Var.setText(k96.L0(2131743426));
-                                } else if (i15 == 57) {
-                                    ke1Var.setText(k96.L0(2131749170));
-                                } else if (i15 == 52) {
-                                    ke1Var.setText(k96.L0(2131748397));
-                                } else if (i15 == 59) {
-                                    ke1Var.setText(k96.L0(2131748729));
-                                    ry8Var.e(i7, 30, 30);
+                                int i14 = this.L;
+                                if (i14 == 80) {
+                                    te1Var.setText(ob6.L0(2131751168));
+                                } else if (i14 == 60) {
+                                    te1Var.setText(ob6.L0(2131747022));
+                                } else if (i14 == 56) {
+                                    te1Var.setText(ob6.L0(2131743320));
+                                } else if (i14 == 57) {
+                                    te1Var.setText(ob6.L0(2131749116));
+                                } else if (i14 == 52) {
+                                    te1Var.setText(ob6.L0(2131748343));
+                                } else if (i14 == 59) {
+                                    te1Var.setText(ob6.L0(2131748675));
+                                    i2 = R.raw.voip_invite;
+                                    e29Var.e(i2, 30, 30);
                                     this.H = 3000L;
-                                    ke1Var.setTextSize(1, 15.0f);
+                                    te1Var.setTextSize(1, 15.0f);
                                 } else {
-                                    ke1Var.setText(k96.L0(2131743953));
+                                    te1Var.setText(ob6.L0(2131743847));
                                 }
-                                i7 = R.raw.copy;
-                                ry8Var.e(i7, 30, 30);
+                                i2 = R.raw.copy;
+                                e29Var.e(i2, 30, 30);
                                 this.H = 3000L;
-                                ke1Var.setTextSize(1, 15.0f);
-                            } else if (i14 == 54) {
-                                ke1Var.setText(k96.L0(2131752326));
-                                ry8Var.e(R.raw.silent_unmute, 30, 30);
+                                te1Var.setTextSize(1, 15.0f);
+                            } else if (i13 == 54) {
+                                te1Var.setText(ob6.L0(2131752308));
+                                e29Var.e(R.raw.silent_unmute, 30, 30);
                                 this.H = 3000L;
-                                ke1Var.setTextSize(1, 15.0f);
+                                te1Var.setTextSize(1, 15.0f);
                             } else {
                                 textView = textView2;
-                                if (i14 == 55) {
-                                    ke1Var.setText(k96.L0(2131752327));
-                                    ry8Var.e(R.raw.silent_mute, 30, 30);
+                                if (i13 == 55) {
+                                    te1Var.setText(ob6.L0(2131752309));
+                                    e29Var.e(R.raw.silent_mute, 30, 30);
                                     this.H = 3000L;
-                                    ke1Var.setTextSize(1, 15.0f);
-                                } else if (i14 == 41) {
+                                    te1Var.setTextSize(1, 15.0f);
+                                } else if (i13 == 41) {
                                     if (obj2 != null) {
-                                        ke1Var.setText(gl.S2(k96.Y(2131748995, "InvLinkToChats", k96.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
-                                    } else if (longValue == y6c.h(i8).n) {
-                                        ke1Var.setText(gl.S2(k96.L0(2131748993)));
-                                    } else if (cf3.y(longValue)) {
-                                        ke1Var.setText(gl.S2(k96.Y(2131748994, "InvLinkToGroup", na7.q1(i8).K0(Long.valueOf(-longValue)).title)));
+                                        te1Var.setText(hl.S2(ob6.Y(2131748941, "InvLinkToChats", ob6.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
+                                    } else if (longValue == yac.h(i7).n) {
+                                        te1Var.setText(hl.S2(ob6.L0(2131748939)));
+                                    } else if (wf3.y(longValue)) {
+                                        te1Var.setText(hl.S2(ob6.Y(2131748940, "InvLinkToGroup", uc7.s1(i7).M0(Long.valueOf(-longValue)).title)));
                                     } else {
-                                        ke1Var.setText(gl.S2(k96.Y(2131748992, "InvLinkToUser", l7c.j(na7.q1(i8).V1(l)))));
+                                        te1Var.setText(hl.S2(ob6.Y(2131748938, "InvLinkToUser", lbc.j(uc7.s1(i7).X1(l)))));
                                     }
-                                    ry8Var.e(R.raw.contact_check, 36, 36);
+                                    e29Var.e(R.raw.contact_check, 36, 36);
                                     this.H = 3000L;
-                                } else if (i14 == 53) {
+                                } else if (i13 == 53) {
                                     Integer num = (Integer) obj;
                                     if (obj2 != null && !(obj2 instanceof TLRPC.TL_forumTopic)) {
                                         int intValue3 = ((Integer) obj2).intValue();
                                         if (num.intValue() == 1) {
-                                            ke1Var.setText(gl.S2(k96.G(intValue3, "FwdMessageToManyChats", new Object[0])));
+                                            te1Var.setText(hl.S2(ob6.G(intValue3, "FwdMessageToManyChats", new Object[0])));
                                         } else {
-                                            ke1Var.setText(gl.S2(k96.G(intValue3, "FwdMessagesToManyChats", new Object[0])));
+                                            te1Var.setText(hl.S2(ob6.G(intValue3, "FwdMessagesToManyChats", new Object[0])));
                                         }
-                                        ry8Var.e(R.raw.forward, 30, 30);
-                                    } else if (longValue == y6c.h(i8).n) {
+                                        e29Var.e(R.raw.forward, 30, 30);
+                                    } else if (longValue == yac.h(i7).n) {
                                         if (num.intValue() == 1) {
-                                            ke1Var.setText(gl.P2(k96.L0(2131750482), new jc((byte) 14)));
+                                            te1Var.setText(hl.P2(ob6.L0(2131750459), new kc((byte) 15)));
                                         } else {
-                                            ke1Var.setText(gl.P2(k96.L0(2131750475), new jc((byte) 14)));
+                                            te1Var.setText(hl.P2(ob6.L0(2131750452), new kc((byte) 15)));
                                         }
-                                        ry8Var.e(R.raw.saved_messages, 30, 30);
+                                        e29Var.e(R.raw.saved_messages, 30, 30);
                                         this.H = 3000L;
                                     } else {
-                                        if (cf3.y(longValue)) {
-                                            TLRPC.Chat K03 = na7.q1(i8).K0(Long.valueOf(-longValue));
+                                        if (wf3.y(longValue)) {
+                                            TLRPC.Chat M03 = uc7.s1(i7).M0(Long.valueOf(-longValue));
                                             TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) obj2;
-                                            String j5 = hc2.p0(K03) ? mm4.j(i8, K03, false) : null;
+                                            String j5 = xc2.p0(M03) ? ro4.j(i7, M03, false) : null;
                                             if (num.intValue() == 1) {
                                                 if (j5 == null) {
-                                                    j5 = tL_forumTopic != null ? tL_forumTopic.title : K03.title;
+                                                    j5 = tL_forumTopic != null ? tL_forumTopic.title : M03.title;
                                                 }
-                                                ke1Var.setText(gl.S2(k96.Y(2131750486, "FwdMessageToGroup", j5)));
+                                                te1Var.setText(hl.S2(ob6.Y(2131750463, "FwdMessageToGroup", j5)));
                                             } else {
                                                 if (j5 == null) {
-                                                    j5 = tL_forumTopic != null ? tL_forumTopic.title : K03.title;
+                                                    j5 = tL_forumTopic != null ? tL_forumTopic.title : M03.title;
                                                 }
-                                                ke1Var.setText(gl.S2(k96.Y(2131750479, "FwdMessagesToGroup", j5)));
+                                                te1Var.setText(hl.S2(ob6.Y(2131750456, "FwdMessagesToGroup", j5)));
                                             }
                                         } else {
-                                            TLRPC.User V12 = na7.q1(i8).V1(l);
+                                            TLRPC.User X12 = uc7.s1(i7).X1(l);
                                             if (num.intValue() == 1) {
-                                                ke1Var.setText(gl.S2(k96.Y(2131750481, "FwdMessageToUser", l7c.j(V12))));
+                                                te1Var.setText(hl.S2(ob6.Y(2131750458, "FwdMessageToUser", lbc.j(X12))));
                                             } else {
-                                                ke1Var.setText(gl.S2(k96.Y(2131750474, "FwdMessagesToUser", l7c.j(V12))));
+                                                te1Var.setText(hl.S2(ob6.Y(2131750451, "FwdMessagesToUser", lbc.j(X12))));
                                             }
                                         }
-                                        ry8Var.e(R.raw.forward, 30, 30);
+                                        e29Var.e(R.raw.forward, 30, 30);
                                     }
                                     j4 = 300;
                                     this.H = 3000L;
-                                } else if (i14 == 61) {
+                                } else if (i13 == 61) {
                                     if (obj2 != null) {
-                                        ke1Var.setText(gl.S2(k96.Y(2131753734, "BackgroundToChats", k96.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
-                                        ry8Var.e(R.raw.forward, 30, 30);
-                                    } else if (longValue == y6c.h(i8).n) {
-                                        ke1Var = ke1Var;
-                                        ke1Var.setText(gl.S2(k96.L0(2131753732)));
-                                        ry8Var.e(R.raw.saved_messages, 30, 30);
+                                        te1Var.setText(hl.S2(ob6.Y(2131753730, "BackgroundToChats", ob6.G(((Integer) obj2).intValue(), "Chats", new Object[0]))));
+                                        e29Var.e(R.raw.forward, 30, 30);
+                                    } else if (longValue == yac.h(i7).n) {
+                                        te1Var = te1Var;
+                                        te1Var.setText(hl.S2(ob6.L0(2131753728)));
+                                        e29Var.e(R.raw.saved_messages, 30, 30);
                                     } else {
-                                        ke1Var = ke1Var;
-                                        if (cf3.y(longValue)) {
-                                            ke1Var.setText(gl.S2(k96.Y(2131753733, "BackgroundToGroup", na7.q1(i8).K0(Long.valueOf(-longValue)).title)));
+                                        te1Var = te1Var;
+                                        if (wf3.y(longValue)) {
+                                            te1Var.setText(hl.S2(ob6.Y(2131753729, "BackgroundToGroup", uc7.s1(i7).M0(Long.valueOf(-longValue)).title)));
                                         } else {
-                                            ke1Var.setText(gl.S2(k96.Y(2131753731, "BackgroundToUser", l7c.j(na7.q1(i8).V1(l)))));
+                                            te1Var.setText(hl.S2(ob6.Y(2131753727, "BackgroundToUser", lbc.j(uc7.s1(i7).X1(l)))));
                                         }
-                                        ry8Var.e(R.raw.forward, 30, 30);
+                                        e29Var.e(R.raw.forward, 30, 30);
                                     }
                                     this.H = 3000L;
                                 }
                             }
                             j = j4;
-                            i2 = 8;
+                            b = 8;
                             z = false;
-                            textView3.setVisibility(i2);
-                            zkb.X(textView, bkb.wj, wjbVar);
-                            linearLayout.setVisibility(i2);
-                            layoutParams.leftMargin = gl.L(58.0f);
-                            layoutParams.rightMargin = gl.L(8.0f);
-                            ry8Var.setProgress(0.0f);
-                            ry8Var.d();
+                            textView3.setVisibility(b);
+                            yob.X(textView, aob.xj, vnbVar);
+                            linearLayout.setVisibility(b);
+                            layoutParams.leftMargin = hl.L(58.0f);
+                            layoutParams.rightMargin = hl.L(8.0f);
+                            e29Var.setProgress(0.0f);
+                            e29Var.d();
                             if (j > 0) {
-                                ry8Var.postDelayed(new cib(this, (byte) 21), j);
+                                e29Var.postDelayed(new azb(this, b), j);
                             }
                             StringBuilder sb2 = new StringBuilder();
-                            sb2.append((Object) ke1Var.getText());
+                            sb2.append((Object) te1Var.getText());
                             if (textView3.getVisibility() == 0) {
                             }
                             sb2.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
-                            gl.g2(sb2.toString());
+                            hl.g2(sb2.toString());
                             if (!e()) {
                             }
                             if (getVisibility() == 0) {
@@ -1017,23 +1021,23 @@ public class UndoView extends FrameLayout implements tjb {
                         }
                         textView = textView2;
                         j = j4;
-                        i2 = 8;
+                        b = 8;
                         z = false;
-                        textView3.setVisibility(i2);
-                        zkb.X(textView, bkb.wj, wjbVar);
-                        linearLayout.setVisibility(i2);
-                        layoutParams.leftMargin = gl.L(58.0f);
-                        layoutParams.rightMargin = gl.L(8.0f);
-                        ry8Var.setProgress(0.0f);
-                        ry8Var.d();
+                        textView3.setVisibility(b);
+                        yob.X(textView, aob.xj, vnbVar);
+                        linearLayout.setVisibility(b);
+                        layoutParams.leftMargin = hl.L(58.0f);
+                        layoutParams.rightMargin = hl.L(8.0f);
+                        e29Var.setProgress(0.0f);
+                        e29Var.d();
                         if (j > 0) {
                         }
                         StringBuilder sb22 = new StringBuilder();
-                        sb22.append((Object) ke1Var.getText());
+                        sb22.append((Object) te1Var.getText());
                         if (textView3.getVisibility() == 0) {
                         }
                         sb22.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
-                        gl.g2(sb22.toString());
+                        hl.g2(sb22.toString());
                         if (!e()) {
                         }
                         if (getVisibility() == 0) {
@@ -1041,23 +1045,23 @@ public class UndoView extends FrameLayout implements tjb {
                     }
                     textView = textView2;
                     j = -1;
-                    i2 = 8;
+                    b = 8;
                     z = true;
-                    textView3.setVisibility(i2);
-                    zkb.X(textView, bkb.wj, wjbVar);
-                    linearLayout.setVisibility(i2);
-                    layoutParams.leftMargin = gl.L(58.0f);
-                    layoutParams.rightMargin = gl.L(8.0f);
-                    ry8Var.setProgress(0.0f);
-                    ry8Var.d();
+                    textView3.setVisibility(b);
+                    yob.X(textView, aob.xj, vnbVar);
+                    linearLayout.setVisibility(b);
+                    layoutParams.leftMargin = hl.L(58.0f);
+                    layoutParams.rightMargin = hl.L(8.0f);
+                    e29Var.setProgress(0.0f);
+                    e29Var.d();
                     if (j > 0) {
                     }
                     StringBuilder sb222 = new StringBuilder();
-                    sb222.append((Object) ke1Var.getText());
+                    sb222.append((Object) te1Var.getText());
                     if (textView3.getVisibility() == 0) {
                     }
                     sb222.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
-                    gl.g2(sb222.toString());
+                    hl.g2(sb222.toString());
                     if (!e()) {
                     }
                     if (getVisibility() == 0) {
@@ -1065,105 +1069,105 @@ public class UndoView extends FrameLayout implements tjb {
                 }
                 textView = textView2;
                 j = -1;
-                i2 = 8;
-                textView3.setVisibility(i2);
-                zkb.X(textView, bkb.wj, wjbVar);
-                linearLayout.setVisibility(i2);
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.rightMargin = gl.L(8.0f);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
+                b = 8;
+                textView3.setVisibility(b);
+                yob.X(textView, aob.xj, vnbVar);
+                linearLayout.setVisibility(b);
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.rightMargin = hl.L(8.0f);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
                 if (j > 0) {
                 }
                 StringBuilder sb2222 = new StringBuilder();
-                sb2222.append((Object) ke1Var.getText());
+                sb2222.append((Object) te1Var.getText());
                 if (textView3.getVisibility() == 0) {
                 }
                 sb2222.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
-                gl.g2(sb2222.toString());
+                hl.g2(sb2222.toString());
                 if (!e()) {
                 }
                 if (getVisibility() == 0) {
                 }
-            } else if (i13 == 24 || i13 == 25) {
+            } else if (i12 == 24 || i12 == 25) {
                 int intValue4 = ((Integer) obj).intValue();
                 TLRPC.User user5 = (TLRPC.User) obj2;
                 imageView.setVisibility(8);
-                ry8Var.setVisibility(0);
+                e29Var.setVisibility(0);
                 if (intValue4 != 0) {
-                    ke1Var.setTypeface(gl.o());
-                    ke1Var.setTextSize(1, 14.0f);
-                    ry8Var.a.clear();
-                    int i16 = bkb.xj;
-                    i(i16, "BODY", false);
-                    i(i16, "Wibe Big", false);
-                    i(i16, "Wibe Big 3", false);
-                    i(i16, "Wibe Small", false);
-                    ke1Var.setText(k96.L0(2131746423));
-                    ry8Var.e(R.raw.ic_unmute, 28, 28);
+                    te1Var.setTypeface(hl.o());
+                    te1Var.setTextSize(1, 14.0f);
+                    e29Var.a.clear();
+                    int i15 = aob.yj;
+                    i(i15, "BODY", false);
+                    i(i15, "Wibe Big", false);
+                    i(i15, "Wibe Big 3", false);
+                    i(i15, "Wibe Small", false);
+                    te1Var.setText(ob6.L0(2131746343));
+                    e29Var.e(R.raw.ic_unmute, 28, 28);
                     textView3.setVisibility(0);
                     textView3.setSingleLine(false);
                     textView3.setMaxLines(3);
                     if (user5 != null) {
-                        textView3.setText(k96.Y(2131746421, "ProximityAlertSetInfoUser", l7c.j(user5), k96.y(intValue4, 2, null)));
+                        textView3.setText(ob6.Y(2131746341, "ProximityAlertSetInfoUser", lbc.j(user5), ob6.y(intValue4, 2, null)));
                     } else {
-                        textView3.setText(k96.Y(2131746422, "ProximityAlertSetInfoGroup2", k96.y(intValue4, 2, null)));
+                        textView3.setText(ob6.Y(2131746342, "ProximityAlertSetInfoGroup2", ob6.y(intValue4, 2, null)));
                     }
                     linearLayout.setVisibility(8);
-                    layoutParams.topMargin = gl.L(6.0f);
+                    layoutParams.topMargin = hl.L(6.0f);
                 } else {
-                    ke1Var.setTypeface(Typeface.DEFAULT);
-                    ke1Var.setTextSize(1, 15.0f);
-                    ry8Var.a.clear();
-                    int i17 = bkb.xj;
-                    i(i17, "Body Main", false);
-                    i(i17, "Body Top", false);
-                    i(i17, "Line", false);
-                    i(i17, "Curve Big", false);
-                    i(i17, "Curve Small", false);
-                    layoutParams.topMargin = gl.L(14.0f);
-                    ke1Var.setText(k96.L0(2131746424));
-                    ry8Var.e(R.raw.ic_mute, 28, 28);
+                    te1Var.setTypeface(Typeface.DEFAULT);
+                    te1Var.setTextSize(1, 15.0f);
+                    e29Var.a.clear();
+                    int i16 = aob.yj;
+                    i(i16, "Body Main", false);
+                    i(i16, "Body Top", false);
+                    i(i16, "Line", false);
+                    i(i16, "Curve Big", false);
+                    i(i16, "Curve Small", false);
+                    layoutParams.topMargin = hl.L(14.0f);
+                    te1Var.setText(ob6.L0(2131746344));
+                    e29Var.e(R.raw.ic_mute, 28, 28);
                     textView3.setVisibility(8);
-                    zkb.X(textView2, bkb.wj, wjbVar);
+                    yob.X(textView2, aob.xj, vnbVar);
                     linearLayout.setVisibility(0);
                 }
-                layoutParams.leftMargin = gl.L(58.0f);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
-            } else if (i13 == 11) {
-                ke1Var.setText(k96.L0(2131753883));
-                ry8Var.e(R.raw.contact_check, 36, 36);
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.topMargin = gl.L(6.0f);
+                layoutParams.leftMargin = hl.L(58.0f);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
+            } else if (i12 == 11) {
+                te1Var.setText(ob6.L0(2131753879));
+                e29Var.e(R.raw.contact_check, 36, 36);
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.topMargin = hl.L(6.0f);
                 textView3.setText(((TLRPC.TL_authorization) obj).app_name);
                 textView3.setVisibility(0);
-                ke1Var.setTextSize(1, 14.0f);
-                ke1Var.setTypeface(gl.o());
-                zkb.X(textView2, bkb.o7, wjbVar);
+                te1Var.setTextSize(1, 14.0f);
+                te1Var.setTypeface(hl.o());
+                yob.X(textView2, aob.p7, vnbVar);
                 imageView.setVisibility(8);
                 linearLayout.setVisibility(0);
-                ry8Var.setVisibility(0);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
-            } else if (i13 == 15) {
+                e29Var.setVisibility(0);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
+            } else if (i12 == 15) {
                 this.H = 10000L;
-                textView2.setText(k96.L0(2131747624));
-                ke1Var.setText(k96.L0(2131750790));
-                ry8Var.e(R.raw.filter_new, 36, 36);
-                int L3 = gl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
-                layoutParams.leftMargin = gl.L(58.0f);
+                textView2.setText(ob6.L0(2131747544));
+                te1Var.setText(ob6.L0(2131750767));
+                e29Var.e(R.raw.filter_new, 36, 36);
+                int L3 = hl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
+                layoutParams.leftMargin = hl.L(58.0f);
                 layoutParams.rightMargin = L3;
-                layoutParams.topMargin = gl.L(6.0f);
+                layoutParams.topMargin = hl.L(6.0f);
                 ((FrameLayout.LayoutParams) textView3.getLayoutParams()).rightMargin = L3;
-                String L04 = k96.L0(2131750791);
+                String L04 = ob6.L0(2131750768);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(L04);
                 int indexOf2 = L04.indexOf(42);
                 int lastIndexOf2 = L04.lastIndexOf(42);
                 if (indexOf2 >= 0 && lastIndexOf2 >= 0 && indexOf2 != lastIndexOf2) {
                     spannableStringBuilder2.replace(lastIndexOf2, lastIndexOf2 + 1, (CharSequence) "");
                     spannableStringBuilder2.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
-                    spannableStringBuilder2.setSpan(new g4c("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
+                    spannableStringBuilder2.setSpan(new f8c("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
                 }
                 textView3.setText(spannableStringBuilder2);
                 textView3.setVisibility(0);
@@ -1171,92 +1175,92 @@ public class UndoView extends FrameLayout implements tjb {
                 textView3.setMaxLines(2);
                 linearLayout.setVisibility(0);
                 imageView.setVisibility(8);
-                ry8Var.setVisibility(0);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
-            } else if (i13 == 16 || i13 == 17) {
+                e29Var.setVisibility(0);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
+            } else if (i12 == 16 || i12 == 17) {
                 this.H = 4000L;
-                ke1Var.setTextSize(1, 14.0f);
-                ke1Var.setGravity(16);
-                ke1Var.setMinHeight(gl.L(30.0f));
+                te1Var.setTextSize(1, 14.0f);
+                te1Var.setGravity(16);
+                te1Var.setMinHeight(hl.L(30.0f));
                 String str3 = (String) obj;
                 if ("🎲".equals(str3)) {
-                    ke1Var.setText(gl.S2(k96.L0(2131751438)));
-                    ry8Var.setImageResource(R.drawable.dice);
+                    te1Var.setText(hl.S2(ob6.L0(2131751415)));
+                    e29Var.setImageResource(R.drawable.dice);
                 } else {
                     if ("🎯".equals(str3)) {
-                        ke1Var.setText(gl.S2(k96.L0(2131751666)));
+                        te1Var.setText(hl.S2(ob6.L0(2131751643)));
                     } else {
-                        String K04 = k96.K0("DiceEmojiInfo_" + str3);
-                        if (TextUtils.isEmpty(K04)) {
-                            ke1Var.setText(vu3.l(k96.Y(2131751439, "DiceEmojiInfo", str3), ke1Var.getPaint().getFontMetricsInt(), false));
+                        String K0 = ob6.K0("DiceEmojiInfo_" + str3);
+                        if (TextUtils.isEmpty(K0)) {
+                            te1Var.setText(pv3.l(ob6.Y(2131751416, "DiceEmojiInfo", str3), te1Var.getPaint().getFontMetricsInt(), false));
                         } else {
-                            ke1Var.setText(vu3.l(K04, ke1Var.getPaint().getFontMetricsInt(), false));
+                            te1Var.setText(pv3.l(K0, te1Var.getPaint().getFontMetricsInt(), false));
                         }
                     }
-                    ry8Var.setImageDrawable(vu3.g(str3));
-                    ry8Var.setScaleType(ImageView.ScaleType.FIT_XY);
-                    layoutParams.topMargin = gl.L(14.0f);
-                    layoutParams.bottomMargin = gl.L(14.0f);
-                    layoutParams2.leftMargin = gl.L(14.0f);
-                    layoutParams2.width = gl.L(26.0f);
-                    layoutParams2.height = gl.L(26.0f);
+                    e29Var.setImageDrawable(pv3.g(str3));
+                    e29Var.setScaleType(ImageView.ScaleType.FIT_XY);
+                    layoutParams.topMargin = hl.L(14.0f);
+                    layoutParams.bottomMargin = hl.L(14.0f);
+                    layoutParams2.leftMargin = hl.L(14.0f);
+                    layoutParams2.width = hl.L(26.0f);
+                    layoutParams2.height = hl.L(26.0f);
                 }
-                textView2.setText(k96.L0(2131745435));
+                textView2.setText(ob6.L0(2131745355));
                 if (this.L == 16) {
-                    L = gl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
+                    L = hl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
                     textView2.setVisibility(0);
-                    zkb.X(textView2, bkb.wj, wjbVar);
+                    yob.X(textView2, aob.xj, vnbVar);
                     imageView.setVisibility(8);
                     linearLayout.setVisibility(0);
                 } else {
-                    L = gl.L(8.0f);
+                    L = hl.L(8.0f);
                     textView2.setVisibility(8);
                     linearLayout.setVisibility(8);
                 }
-                layoutParams.leftMargin = gl.L(58.0f);
+                layoutParams.leftMargin = hl.L(58.0f);
                 layoutParams.rightMargin = L;
-                layoutParams.topMargin = gl.L(6.0f);
-                layoutParams.bottomMargin = gl.L(7.0f);
+                layoutParams.topMargin = hl.L(6.0f);
+                layoutParams.bottomMargin = hl.L(7.0f);
                 layoutParams.height = -1;
                 textView3.setVisibility(8);
-                ry8Var.setVisibility(0);
-            } else if (i13 == 18) {
+                e29Var.setVisibility(0);
+            } else if (i12 == 18) {
                 this.H = Math.max(4000, Math.min((r0.length() / 50) * 1600, 10000));
-                ke1Var.setTextSize(1, 14.0f);
-                ke1Var.setGravity(16);
-                ke1Var.setText((CharSequence) obj);
+                te1Var.setTextSize(1, 14.0f);
+                te1Var.setGravity(16);
+                te1Var.setText((CharSequence) obj);
                 textView2.setVisibility(8);
                 linearLayout.setVisibility(8);
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.rightMargin = gl.L(8.0f);
-                layoutParams.topMargin = gl.L(6.0f);
-                layoutParams.bottomMargin = gl.L(7.0f);
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.rightMargin = hl.L(8.0f);
+                layoutParams.topMargin = hl.L(6.0f);
+                layoutParams.bottomMargin = hl.L(7.0f);
                 layoutParams.height = -1;
                 layoutParams2.gravity = 51;
-                int L4 = gl.L(8.0f);
+                int L4 = hl.L(8.0f);
                 layoutParams2.bottomMargin = L4;
                 layoutParams2.topMargin = L4;
-                ry8Var.setVisibility(0);
-                ry8Var.e(R.raw.chats_infotip, 36, 36);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
-                ke1Var.setMovementMethod(new cl((byte) 0));
-            } else if (i13 == 12) {
-                ke1Var.setText(k96.L0(2131751998));
-                ry8Var.setImageResource(R.drawable.toast_pallete);
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.rightMargin = gl.L(48.0f);
-                layoutParams.topMargin = gl.L(6.0f);
-                ((FrameLayout.LayoutParams) textView3.getLayoutParams()).rightMargin = gl.L(48.0f);
-                String L05 = k96.L0(2131751997);
+                e29Var.setVisibility(0);
+                e29Var.e(R.raw.chats_infotip, 36, 36);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
+                te1Var.setMovementMethod(new dl((byte) 0));
+            } else if (i12 == 12) {
+                te1Var.setText(ob6.L0(2131751975));
+                e29Var.setImageResource(R.drawable.toast_pallete);
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.rightMargin = hl.L(48.0f);
+                layoutParams.topMargin = hl.L(6.0f);
+                ((FrameLayout.LayoutParams) textView3.getLayoutParams()).rightMargin = hl.L(48.0f);
+                String L05 = ob6.L0(2131751974);
                 SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(L05);
                 int indexOf3 = L05.indexOf(42);
                 int lastIndexOf3 = L05.lastIndexOf(42);
                 if (indexOf3 >= 0 && lastIndexOf3 >= 0 && indexOf3 != lastIndexOf3) {
                     spannableStringBuilder3.replace(lastIndexOf3, lastIndexOf3 + 1, (CharSequence) "");
                     spannableStringBuilder3.replace(indexOf3, indexOf3 + 1, (CharSequence) "");
-                    spannableStringBuilder3.setSpan(new g4c("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
+                    spannableStringBuilder3.setSpan(new f8c("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
                 }
                 textView3.setText(spannableStringBuilder3);
                 textView3.setVisibility(0);
@@ -1264,204 +1268,204 @@ public class UndoView extends FrameLayout implements tjb {
                 textView3.setMaxLines(2);
                 textView2.setVisibility(8);
                 linearLayout.setVisibility(0);
-                ry8Var.setVisibility(0);
-            } else if (i13 == 84) {
-                ke1Var.setVisibility(0);
-                ke1Var.setTextSize(1, 15.0f);
-                ke1Var.setTypeface(Typeface.DEFAULT);
-                ke1Var.setText(gl.S2(k96.L0(2131743616)));
-                ry8Var.setVisibility(0);
-                ry8Var.e(R.raw.voice_to_text, 36, 36);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
-                textView2.setText(k96.L0(2131746842));
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.rightMargin = gl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
-                int L5 = gl.L(6.0f);
+                e29Var.setVisibility(0);
+            } else if (i12 == 84) {
+                te1Var.setVisibility(0);
+                te1Var.setTextSize(1, 15.0f);
+                te1Var.setTypeface(Typeface.DEFAULT);
+                te1Var.setText(hl.S2(ob6.L0(2131743510)));
+                e29Var.setVisibility(0);
+                e29Var.e(R.raw.voice_to_text, 36, 36);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
+                textView2.setText(ob6.L0(2131746762));
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.rightMargin = hl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
+                int L5 = hl.L(6.0f);
                 layoutParams.bottomMargin = L5;
                 layoutParams.topMargin = L5;
                 layoutParams.height = -2;
-                be0Var.setVisibility(8);
+                de0Var.setVisibility(8);
                 textView3.setVisibility(8);
                 textView2.setVisibility(0);
                 linearLayout.setVisibility(0);
                 imageView.setVisibility(8);
-            } else if (i13 == 85) {
-                ke1Var.setVisibility(0);
-                ke1Var.setTextSize(1, 15.0f);
-                ke1Var.setTypeface(gl.o());
-                ke1Var.setText(k96.L0(2131744065));
-                ry8Var.setVisibility(0);
-                ry8Var.e(R.raw.hint_swipe_reply, 64, 64);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
+            } else if (i12 == 85) {
+                te1Var.setVisibility(0);
+                te1Var.setTextSize(1, 15.0f);
+                te1Var.setTypeface(hl.o());
+                te1Var.setText(ob6.L0(2131743959));
+                e29Var.setVisibility(0);
+                e29Var.e(R.raw.hint_swipe_reply, 64, 64);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
                 textView3.setVisibility(0);
-                textView3.setText(k96.L0(2131744064));
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.rightMargin = gl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
-                layoutParams.topMargin = gl.L(6.0f);
+                textView3.setText(ob6.L0(2131743958));
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.rightMargin = hl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
+                layoutParams.topMargin = hl.L(6.0f);
                 layoutParams.height = -2;
-                be0Var.setVisibility(8);
+                de0Var.setVisibility(8);
                 linearLayout.setVisibility(8);
-            } else if (i13 == 90 || i13 == 91 || i13 == 92 || i13 == 93 || i13 == 94) {
-                switch (i13) {
-                    case kk7.a1 /* 90 */:
-                        ke1Var.setText(k96.G((int) on0.g(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]));
+            } else if (i12 == 90 || i12 == 91 || i12 == 92 || i12 == 93 || i12 == 94) {
+                switch (i12) {
+                    case jn7.a1 /* 90 */:
+                        te1Var.setText(ob6.G((int) on0.g(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]));
                         break;
-                    case kk7.b1 /* 91 */:
-                        ke1Var.setText(k96.L0(2131753269));
+                    case jn7.b1 /* 91 */:
+                        te1Var.setText(ob6.L0(2131753265));
                         break;
-                    case kk7.c1 /* 92 */:
-                        ke1Var.setText(k96.G((int) on0.i(), "BoostingSelectUpToWarningCountriesPlural", new Object[0]));
+                    case jn7.c1 /* 92 */:
+                        te1Var.setText(ob6.G((int) on0.i(), "BoostingSelectUpToWarningCountriesPlural", new Object[0]));
                         break;
-                    case kk7.d1 /* 93 */:
-                        ke1Var.setText(gl.S2(k96.G(on0.b(), "BoostingWaitWarningPlural", new Object[0])));
+                    case jn7.d1 /* 93 */:
+                        te1Var.setText(hl.S2(ob6.G(on0.b(), "BoostingWaitWarningPlural", new Object[0])));
                         break;
-                    case kk7.e1 /* 94 */:
-                        ke1Var.setText(k96.L0(2131753330));
+                    case jn7.e1 /* 94 */:
+                        te1Var.setText(ob6.L0(2131753326));
                         break;
                 }
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.rightMargin = gl.L(8.0f);
-                ke1Var.setTextSize(1, 15.0f);
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.rightMargin = hl.L(8.0f);
+                te1Var.setTextSize(1, 15.0f);
                 linearLayout.setVisibility(8);
-                ke1Var.setTypeface(Typeface.DEFAULT);
+                te1Var.setTypeface(Typeface.DEFAULT);
                 textView3.setVisibility(8);
-                ry8Var.setVisibility(0);
-                ry8Var.e(R.raw.chats_infotip, 36, 36);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
+                e29Var.setVisibility(0);
+                e29Var.e(R.raw.chats_infotip, 36, 36);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
             } else {
-                int i18 = 2;
-                if (i13 != 2) {
-                    if (i13 == 4) {
-                        i18 = 2;
+                int i17 = 2;
+                if (i12 != 2) {
+                    if (i12 == 4) {
+                        i17 = 2;
                     } else if (i == 82) {
-                        layoutParams.leftMargin = gl.L(58.0f);
-                        jm6 jm6Var = (jm6) obj;
-                        ke1Var.setText(k96.L0(jm6Var.b ? 2131753951 : 2131753956));
+                        layoutParams.leftMargin = hl.L(58.0f);
+                        no6 no6Var = (no6) obj;
+                        te1Var.setText(ob6.L0(no6Var.b ? 2131753947 : 2131753952));
                         linearLayout.setVisibility(0);
-                        ke1Var.setTextSize(1, 15.0f);
-                        ke1Var.setTypeface(Typeface.DEFAULT);
+                        te1Var.setTextSize(1, 15.0f);
+                        te1Var.setTypeface(Typeface.DEFAULT);
                         textView3.setVisibility(8);
-                        be0Var.setVisibility(0);
-                        be0Var.setRoundRadius(gl.L(2.0f));
-                        String str4 = jm6Var.c;
+                        de0Var.setVisibility(0);
+                        de0Var.setRoundRadius(hl.L(2.0f));
+                        String str4 = no6Var.c;
                         if (str4 != null) {
-                            be0Var.o(str4, null, bkb.Q4);
-                        } else if (jm6Var.I != null) {
-                            be0Var.r(jm6Var.J, jm6Var.K, true);
-                            boolean z3 = jm6Var.b;
-                            int i19 = jm6Var.C;
+                            de0Var.o(str4, null, aob.R4);
+                        } else if (no6Var.I != null) {
+                            de0Var.r(no6Var.J, no6Var.K, true);
+                            boolean z3 = no6Var.b;
+                            int i18 = no6Var.C;
                             if (z3) {
-                                StringBuilder m = de9.m(i19, "vthumb://", ":");
-                                m.append(jm6Var.I);
-                                be0Var.o(m.toString(), null, bkb.Q4);
+                                StringBuilder m = uh9.m(i18, "vthumb://", ":");
+                                m.append(no6Var.I);
+                                de0Var.o(m.toString(), null, aob.R4);
                             } else {
-                                StringBuilder m2 = de9.m(i19, "thumb://", ":");
-                                m2.append(jm6Var.I);
-                                be0Var.o(m2.toString(), null, bkb.Q4);
+                                StringBuilder m2 = uh9.m(i18, "thumb://", ":");
+                                m2.append(no6Var.I);
+                                de0Var.o(m2.toString(), null, aob.R4);
                             }
                         } else {
-                            be0Var.setImageDrawable(bkb.Q4);
+                            de0Var.setImageDrawable(aob.R4);
                         }
                     } else {
-                        layoutParams.leftMargin = gl.L(45.0f);
-                        layoutParams.topMargin = gl.L(13.0f);
+                        layoutParams.leftMargin = hl.L(45.0f);
+                        layoutParams.topMargin = hl.L(13.0f);
                         layoutParams.rightMargin = 0;
-                        ke1Var.setTextSize(1, 15.0f);
+                        te1Var.setTextSize(1, 15.0f);
                         linearLayout.setVisibility(0);
                         Typeface typeface = Typeface.DEFAULT;
-                        ke1Var.setTypeface(typeface);
+                        te1Var.setTypeface(typeface);
                         textView3.setVisibility(8);
-                        ry8Var.setVisibility(8);
-                        int i20 = this.L;
-                        if (i20 == 88) {
+                        e29Var.setVisibility(8);
+                        int i19 = this.L;
+                        if (i19 == 88) {
                             String str5 = (String) obj;
                             int intValue5 = ((Integer) obj2).intValue();
                             if (intValue5 > 0) {
-                                int L6 = gl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
-                                layoutParams.leftMargin = gl.L(48.0f);
+                                int L6 = hl.L(26.0f) + ((int) Math.ceil(textView2.getPaint().measureText(textView2.getText().toString())));
+                                layoutParams.leftMargin = hl.L(48.0f);
                                 layoutParams.rightMargin = L6;
-                                layoutParams.topMargin = gl.L(6.0f);
+                                layoutParams.topMargin = hl.L(6.0f);
                                 FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) textView3.getLayoutParams();
-                                layoutParams3.leftMargin = gl.L(48.0f);
+                                layoutParams3.leftMargin = hl.L(48.0f);
                                 layoutParams3.rightMargin = L6;
-                                ke1Var.setText(k96.Y(2131750646, "FolderLinkDeletedTitle", str5));
-                                ke1Var.setTypeface(gl.o());
+                                te1Var.setText(ob6.Y(2131750623, "FolderLinkDeletedTitle", str5));
+                                te1Var.setTypeface(hl.o());
                                 textView3.setVisibility(0);
-                                textView3.setText(k96.G(intValue5, "FolderLinkDeletedSubtitle", new Object[0]));
+                                textView3.setText(ob6.G(intValue5, "FolderLinkDeletedSubtitle", new Object[0]));
                             } else {
-                                ke1Var.setTypeface(typeface);
+                                te1Var.setTypeface(typeface);
                                 if (str5 == null) {
                                     str5 = "";
                                 }
-                                ke1Var.setText(gl.S2(k96.Y(2131750650, "FolderLinkDeleted", str5.replace('*', (char) 10033))));
+                                te1Var.setText(hl.S2(ob6.Y(2131750627, "FolderLinkDeleted", str5.replace('*', (char) 10033))));
                             }
-                        } else if (i20 == 81 || i20 == 0 || i20 == 26) {
-                            ke1Var.setText(k96.L0(2131749101));
-                        } else if (i20 == 27) {
-                            ke1Var.setText(k96.L0(2131752168));
-                        } else if (i20 == 95) {
-                            if (cf3.y(longValue)) {
-                                TLRPC.Chat K05 = na7.q1(i8).K0(Long.valueOf(-longValue));
-                                if (hc2.p0(K05)) {
-                                    ke1Var.setText(k96.L0(2131748157));
-                                } else if (!hc2.T(K05) || K05.megagroup) {
-                                    ke1Var.setText(k96.L0(2131749238));
+                        } else if (i19 == 81 || i19 == 0 || i19 == 26) {
+                            te1Var.setText(ob6.L0(2131749047));
+                        } else if (i19 == 27) {
+                            te1Var.setText(ob6.L0(2131752145));
+                        } else if (i19 == 95) {
+                            if (wf3.y(longValue)) {
+                                TLRPC.Chat M04 = uc7.s1(i7).M0(Long.valueOf(-longValue));
+                                if (xc2.p0(M04)) {
+                                    te1Var.setText(ob6.L0(2131748103));
+                                } else if (!xc2.T(M04) || M04.megagroup) {
+                                    te1Var.setText(ob6.L0(2131749184));
                                 } else {
-                                    ke1Var.setText(k96.L0(2131752376));
+                                    te1Var.setText(ob6.L0(2131752360));
                                 }
                             } else {
-                                ke1Var.setText(k96.L0(2131752230));
+                                te1Var.setText(ob6.L0(2131752207));
                             }
-                        } else if (cf3.y(longValue)) {
-                            TLRPC.Chat K06 = na7.q1(i8).K0(Long.valueOf(-longValue));
-                            if (hc2.p0(K06)) {
-                                ke1Var.setText(k96.L0(2131748157));
-                            } else if (!hc2.T(K06) || K06.megagroup) {
-                                ke1Var.setText(k96.L0(2131749257));
+                        } else if (wf3.y(longValue)) {
+                            TLRPC.Chat M05 = uc7.s1(i7).M0(Long.valueOf(-longValue));
+                            if (xc2.p0(M05)) {
+                                te1Var.setText(ob6.L0(2131748103));
+                            } else if (!xc2.T(M05) || M05.megagroup) {
+                                te1Var.setText(ob6.L0(2131749203));
                             } else {
-                                ke1Var.setText(k96.L0(2131752405));
+                                te1Var.setText(ob6.L0(2131752391));
                             }
                         } else {
-                            ke1Var.setText(k96.L0(2131752230));
+                            te1Var.setText(ob6.L0(2131752207));
                         }
                         if (this.L != 81) {
-                            for (int i21 = 0; i21 < arrayList.size(); i21++) {
-                                na7 q1 = na7.q1(i8);
-                                long longValue2 = ((Long) arrayList.get(i21)).longValue();
-                                int i22 = this.L;
-                                q1.a(longValue2, i22 == 0 || i22 == 26);
+                            for (int i20 = 0; i20 < arrayList.size(); i20++) {
+                                uc7 s1 = uc7.s1(i7);
+                                long longValue2 = ((Long) arrayList.get(i20)).longValue();
+                                int i21 = this.L;
+                                s1.a(longValue2, i21 == 0 || i21 == 26);
                             }
                         }
                     }
                 }
-                if (i == i18) {
-                    ke1Var.setText(k96.L0(2131752234));
+                if (i == i17) {
+                    te1Var.setText(ob6.L0(2131752211));
                 } else {
-                    ke1Var.setText(k96.L0(2131752169));
+                    te1Var.setText(ob6.L0(2131752146));
                 }
-                layoutParams.leftMargin = gl.L(58.0f);
-                layoutParams.topMargin = gl.L(13.0f);
+                layoutParams.leftMargin = hl.L(58.0f);
+                layoutParams.topMargin = hl.L(13.0f);
                 layoutParams.rightMargin = 0;
-                ke1Var.setTextSize(1, 15.0f);
+                te1Var.setTextSize(1, 15.0f);
                 linearLayout.setVisibility(0);
-                ke1Var.setTypeface(Typeface.DEFAULT);
+                te1Var.setTypeface(Typeface.DEFAULT);
                 textView3.setVisibility(8);
-                ry8Var.setVisibility(0);
-                ry8Var.e(R.raw.chats_archived, 36, 36);
-                ry8Var.setProgress(0.0f);
-                ry8Var.d();
+                e29Var.setVisibility(0);
+                e29Var.e(R.raw.chats_archived, 36, 36);
+                e29Var.setProgress(0.0f);
+                e29Var.d();
             }
         }
         z = false;
         StringBuilder sb22222 = new StringBuilder();
-        sb22222.append((Object) ke1Var.getText());
+        sb22222.append((Object) te1Var.getText());
         if (textView3.getVisibility() == 0) {
         }
         sb22222.append(textView3.getVisibility() == 0 ? ". " + ((Object) textView3.getText()) : "");
-        gl.g2(sb22222.toString());
+        hl.g2(sb22222.toString());
         if (!e()) {
         }
         if (getVisibility() == 0) {
@@ -1474,7 +1478,7 @@ public class UndoView extends FrameLayout implements tjb {
         ShapeDrawable shapeDrawable = this.V;
         if (f != 0.0f) {
             canvas.save();
-            float measuredHeight = (getMeasuredHeight() - this.i0) + this.e0 + gl.L(1.0f);
+            float measuredHeight = (getMeasuredHeight() - this.i0) + this.e0 + hl.L(1.0f);
             if (measuredHeight > 0.0f) {
                 canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), measuredHeight);
                 super.dispatchDraw(canvas);
@@ -1518,7 +1522,7 @@ public class UndoView extends FrameLayout implements tjb {
                 if (f4 < 1.0f) {
                     textPaint.setAlpha((int) ((1.0f - f4) * alpha));
                     canvas.save();
-                    canvas.translate(rectF.centerX() - (this.K / 2), (gl.L(10.0f) * this.h0) + gl.L(17.2f));
+                    canvas.translate(rectF.centerX() - (this.K / 2), (hl.L(10.0f) * this.h0) + hl.L(17.2f));
                     this.g0.draw(canvas);
                     textPaint.setAlpha(alpha);
                     canvas.restore();
@@ -1530,7 +1534,7 @@ public class UndoView extends FrameLayout implements tjb {
                     textPaint.setAlpha((int) (alpha * f5));
                 }
                 canvas.save();
-                canvas.translate(rectF.centerX() - (this.K / 2), ls6.B(1.0f, this.h0, gl.L(10.0f), gl.L(17.2f)));
+                canvas.translate(rectF.centerX() - (this.K / 2), qu6.B(1.0f, this.h0, hl.L(10.0f), hl.L(17.2f)));
                 this.f0.draw(canvas);
                 if (this.h0 != 1.0f) {
                     textPaint.setAlpha(alpha);
@@ -1560,7 +1564,7 @@ public class UndoView extends FrameLayout implements tjb {
     public void setAdditionalTranslationY(float f) {
         if (this.Q != f) {
             this.Q = f;
-            setTranslationY(((this.i0 - this.e0) + gl.L(8.0f)) - this.Q);
+            setTranslationY(((this.i0 - this.e0) + hl.L(8.0f)) - this.Q);
             invalidate();
         }
     }
@@ -1568,7 +1572,7 @@ public class UndoView extends FrameLayout implements tjb {
     public void setEnterOffset(float f) {
         if (this.i0 != f) {
             this.i0 = f;
-            setTranslationY(((f - this.e0) + gl.L(8.0f)) - this.Q);
+            setTranslationY(((f - this.e0) + hl.L(8.0f)) - this.Q);
             invalidate();
         }
     }
@@ -1585,9 +1589,9 @@ public class UndoView extends FrameLayout implements tjb {
         this.T = charSequence;
     }
 
-    @Override // tjb
+    @Override // snb
     public final void updateColors() {
-        wjb wjbVar;
+        vnb vnbVar;
         ArrayList arrayList = this.b0;
         try {
             if (this.a0) {
@@ -1596,31 +1600,31 @@ public class UndoView extends FrameLayout implements tjb {
             int i = 0;
             while (true) {
                 int size = arrayList.size();
-                wjbVar = this.W;
+                vnbVar = this.W;
                 if (i >= size) {
                     break;
                 }
-                int v0 = bkb.v0(((Integer) this.c0.get(i)).intValue(), wjbVar);
-                ry8 ry8Var = this.f;
+                int v0 = aob.v0(((Integer) this.c0.get(i)).intValue(), vnbVar);
+                e29 e29Var = this.f;
                 String str = (String) arrayList.get(i);
                 if (((Boolean) this.d0.get(i)).booleanValue()) {
                     v0 |= -16777216;
                 }
-                ry8Var.h(v0, str);
+                e29Var.h(v0, str);
                 i++;
             }
             Paint paint = this.F;
-            int i2 = bkb.xj;
-            paint.setColor(bkb.v0(i2, wjbVar));
-            this.E.setColor(bkb.v0(i2, wjbVar));
-            bkb.A1(bkb.v0(bkb.vj, wjbVar), this.V);
+            int i2 = aob.yj;
+            paint.setColor(aob.v0(i2, vnbVar));
+            this.E.setColor(aob.v0(i2, vnbVar));
+            aob.A1(aob.v0(aob.wj, vnbVar), this.V);
             invalidate();
             LinearLayout linearLayout = this.n;
             if (linearLayout != null) {
-                bkb.F1(linearLayout.getBackground(), bkb.v0(bkb.wj, wjbVar) & 587202559, true);
+                aob.F1(linearLayout.getBackground(), aob.v0(aob.xj, vnbVar) & 587202559, true);
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
@@ -1630,8 +1634,8 @@ public class UndoView extends FrameLayout implements tjb {
     public void g(int i, long j) {
     }
 
-    public UndoView(qmb qmbVar, Context context) {
-        this(context, qmbVar, false, null);
+    public UndoView(pqb pqbVar, Context context) {
+        this(context, pqbVar, false, null);
     }
 
     public UndoView(Context context) {

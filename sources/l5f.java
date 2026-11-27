@@ -1,80 +1,32 @@
 // default package
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class l5f {
-    public static xye a;
-
-    public static String a(String str, Object... objArr) {
-        int length;
-        int indexOf;
-        StringBuilder sb = new StringBuilder(str.length() + (objArr.length << 4));
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i >= length || (indexOf = str.indexOf("%s", i2)) == -1) {
-                break;
+    public static boolean a(fba fbaVar, Collection collection) {
+        collection.getClass();
+        if (collection instanceof pjd) {
+            collection = ((pjd) collection).zza();
+        }
+        boolean z = false;
+        if (!(collection instanceof Set) || collection.size() <= fbaVar.size()) {
+            Iterator it = collection.iterator();
+            while (it.hasNext()) {
+                z |= fbaVar.remove(it.next());
             }
-            sb.append((CharSequence) str, i2, indexOf);
-            sb.append(c(objArr[i]));
-            i2 = indexOf + 2;
-            i++;
+            return z;
         }
-        sb.append((CharSequence) str, i2, str.length());
-        if (i < length) {
-            String str2 = " [";
-            while (i < objArr.length) {
-                sb.append(str2);
-                sb.append(c(objArr[i]));
-                i++;
-                str2 = ", ";
+        Iterator<E> it2 = fbaVar.iterator();
+        while (it2.hasNext()) {
+            if (collection.contains(it2.next())) {
+                it2.remove();
+                z = true;
             }
-            sb.append(']');
         }
-        return sb.toString();
-    }
-
-    public static synchronized z3f b(g3f g3fVar) {
-        z3f z3fVar;
-        synchronized (l5f.class) {
-            xye xyeVar = a;
-            if (xyeVar == null) {
-                xyeVar = new xye((byte) 2);
-                a = xyeVar;
-            }
-            z3fVar = (z3f) xyeVar.c(g3fVar);
-        }
-        return z3fVar;
-    }
-
-    public static String c(Object obj) {
-        if (obj == null) {
-            return "null";
-        }
-        try {
-            return obj.toString();
-        } catch (Exception e) {
-            String name = obj.getClass().getName();
-            String hexString = Integer.toHexString(System.identityHashCode(obj));
-            String o = ls6.o(name, "@", hexString, new StringBuilder(name.length() + 1 + String.valueOf(hexString).length()));
-            Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(o), (Throwable) e);
-            String name2 = e.getClass().getName();
-            StringBuilder sb = new StringBuilder(o.length() + 8 + name2.length() + 1);
-            ls6.u(sb, "<", o, " threw ", name2);
-            sb.append(">");
-            return sb.toString();
-        }
-    }
-
-    public static synchronized z3f d() {
-        z3f b;
-        synchronized (l5f.class) {
-            b = b(new g3f());
-        }
-        return b;
+        return z;
     }
 }

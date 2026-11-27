@@ -1,42 +1,84 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class o19 implements i11 {
-    @Override // i11
-    public final boolean a() {
-        return true;
+public final class o19 extends Drawable {
+    public final View a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public boolean e;
+    public final mm f;
+
+    public o19(View view) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Path path = new Path();
+        this.c = path;
+        this.d = jn7.d4;
+        this.a = view;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(hl.L(1.0f));
+        this.f = new mm(view, 0L, 350L, k43.h);
+        float N = hl.N(4.66f);
+        float N2 = hl.N(2.16f);
+        path.rewind();
+        path.moveTo(N / 2.0f, 0.0f);
+        float f = (-N) / 2.0f;
+        path.lineTo(f, 0.0f);
+        float f2 = f + N2;
+        path.lineTo(f2, -N2);
+        path.moveTo(f, 0.0f);
+        path.lineTo(f2, N2);
     }
 
-    @Override // i11
-    public final boolean d() {
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        float d = this.f.d(this.e);
+        float N = hl.N(2.51f);
+        canvas.save();
+        canvas.translate(centerX, centerY);
+        canvas.save();
+        canvas.translate(N, N);
+        canvas.rotate(45.0f);
+        canvas.scale(hl.R1(-1.0f, 1.0f, d), 1.0f);
+        Path path = this.c;
+        Paint paint = this.b;
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.save();
+        float f = -N;
+        canvas.translate(f, f);
+        canvas.rotate(225.0f);
+        canvas.scale(hl.R1(-1.0f, 1.0f, d), 1.0f);
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // i11
-    public final int e(int i) {
-        return 0;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // i11
-    public final boolean f(int i) {
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.d = i;
+        this.b.setAlpha(i);
     }
 
-    @Override // i11
-    public final int h(int i) {
-        return gl.m;
-    }
-
-    @Override // i11
-    public final void b(float f) {
-    }
-
-    @Override // i11
-    public final void c(m21 m21Var) {
-    }
-
-    @Override // i11
-    public final void g(m21 m21Var) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

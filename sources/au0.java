@@ -1,458 +1,332 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.os.Bundle;
-import android.text.TextUtils;
+import android.app.Activity;
+import android.os.SystemClock;
 import android.util.LongSparseArray;
-import android.widget.TextView;
+import java.io.File;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.beta.R;
+import java.util.regex.Pattern;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.c;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class au0 implements p8c {
+public final /* synthetic */ class au0 implements RequestDelegate {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ au0(ChatActivityEnterView chatActivityEnterView, k27 k27Var, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, TLRPC.User user) {
-        this.a = (byte) 3;
-        this.b = chatActivityEnterView;
-        this.c = k27Var;
-        this.e = tL_buttonTypeRequestPeer;
-        this.d = user;
+    public /* synthetic */ au0(qh6 qh6Var, String str, String str2, String str3) {
+        this.a = (byte) 8;
+        this.b = qh6Var;
+        this.c = str;
+        this.d = str2;
+        this.e = str3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x0105, code lost:
-    
-        if (r6.charAt(r11) <= 57343) goto L49;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x011f, code lost:
-    
-        if (r6.charAt(r11) != 9794) goto L51;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // p8c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj) {
-        String a0;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        byte b2 = 14;
-        byte b3 = 0;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        Object obj5 = this.b;
+        TLRPC.TL_messages_exportedChatInvite tL_messages_exportedChatInvite = null;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.e;
+        Object obj4 = this.b;
         switch (b) {
             case 0:
-                hv0 hv0Var = (hv0) obj5;
-                ev0 ev0Var = (ev0) obj4;
-                String str = (String) obj3;
-                TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) obj2;
-                TLRPC.User user = (TLRPC.User) obj;
-                if (user == null) {
-                    hv0Var.u(ev0Var, "requested_chat_failed", hv0.x(str, "req_id"));
-                    break;
-                } else {
-                    TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-                    tL_messages_sendBotRequestedPeer.peer = na7.l1(hv0Var.V);
-                    tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-                    tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
-                    tL_messages_sendBotRequestedPeer.requested_peers.add(na7.l1(user));
-                    ConnectionsManager.getInstance(hv0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new hc(b3), new eu0((Object) hv0Var, (Object) ev0Var, (Object) str, (Object) user, (byte) 0));
-                    hv0Var.u(ev0Var, "requested_chat_sent", hv0.x(str, "req_id"));
-                    break;
-                }
+                hl.c3(new la7(obj4, (Object) tLObject, obj3, obj2, obj, (byte) 6));
+                break;
             case 1:
-                hv0 hv0Var2 = (hv0) obj5;
-                ev0 ev0Var2 = (ev0) obj4;
-                String str2 = (String) obj3;
-                String str3 = (String) obj2;
-                if (((Boolean) obj).booleanValue()) {
-                    hv0Var2.m0.b(str2, str3);
-                    hv0Var2.u(ev0Var2, "file_download_requested", hv0.x("downloading", "status"));
-                    break;
-                } else {
-                    hv0Var2.u(ev0Var2, "file_download_requested", hv0.x("cancelled", "status"));
-                    break;
-                }
+                rv0 rv0Var = (rv0) obj4;
+                rv0Var.getClass();
+                hl.c3(new z87((fn7) rv0Var, (Object) tLObject, obj3, (String) obj2, (TLObject) tL_error, obj, (byte) 3));
+                break;
             case 2:
-                nh1 nh1Var = (nh1) obj5;
-                nh1Var.getClass();
-                gl.c3(new b87((Object) nh1Var, obj4, obj3, obj2, obj, (byte) 15));
+                rf1 rf1Var = (rf1) obj4;
+                TLRPC.TL_chatInviteExported tL_chatInviteExported = (TLRPC.TL_chatInviteExported) obj3;
+                boolean[] zArr = (boolean[]) obj2;
+                id idVar = (id) obj;
+                wf1 wf1Var = rf1Var.a.n;
+                if (tL_error == null) {
+                    tL_messages_exportedChatInvite = (TLRPC.TL_messages_exportedChatInvite) tLObject;
+                    for (int i = 0; i < tL_messages_exportedChatInvite.users.size(); i++) {
+                        TLRPC.User user = tL_messages_exportedChatInvite.users.get(i);
+                        if (wf1Var.A0 == null) {
+                            wf1Var.A0 = new HashMap();
+                        }
+                        wf1Var.A0.put(Long.valueOf(user.id), user);
+                    }
+                }
+                hl.c3(new la7((Object) rf1Var, (Object) tL_chatInviteExported, (Object) tL_messages_exportedChatInvite, (Object) zArr, (Object) idVar, (byte) 14));
                 break;
             case 3:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj5;
-                k27 k27Var = (k27) obj4;
-                TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer2 = (TL_keyboard.TL_buttonTypeRequestPeer) obj2;
-                TLRPC.User user2 = (TLRPC.User) obj3;
-                TLRPC.User user3 = (TLRPC.User) obj;
-                int i = ChatActivityEnterView.r7;
-                if (user3 != null) {
-                    TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer2 = new TLRPC.TL_messages_sendBotRequestedPeer();
-                    tL_messages_sendBotRequestedPeer2.peer = na7.q1(chatActivityEnterView.R).k1(k27Var.k.peer_id);
-                    tL_messages_sendBotRequestedPeer2.flags |= 1;
-                    tL_messages_sendBotRequestedPeer2.msg_id = k27Var.e1();
-                    tL_messages_sendBotRequestedPeer2.button_id = tL_buttonTypeRequestPeer2.button_id;
-                    tL_messages_sendBotRequestedPeer2.requested_peers.add(na7.l1(user3));
-                    ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer2, null);
-                    long j = user2.id;
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", user3.id);
-                    vx1 vx1Var = new vx1(bundle, user3, user2, j);
-                    mu1 mu1Var = chatActivityEnterView.F3;
-                    if (mu1Var != null) {
-                        mu1Var.presentFragment(vx1Var);
-                        break;
-                    }
-                }
+                hl.c3(new ao1((na2) obj4, (id[]) obj3, (TLRPC.Chat) obj2, (xc5) obj, (byte) 8));
                 break;
             case 4:
-                ((c42) obj5).X((mu1) obj4, (TLRPC.TL_messageMediaGeo) obj3, (wjb) obj2, (Long) obj);
+                hl.c3(new la7(obj4, tL_error, obj3, obj2, obj, (byte) 23));
                 break;
             case 5:
-                ((c42) obj5).Y((mu1) obj4, (TLRPC.TL_messageMediaVenue) obj3, (wjb) obj2);
+                hl.c3(new la7(obj4, (Object) tLObject, obj3, obj2, obj, (byte) 28));
                 break;
             case 6:
-                k62 k62Var = (k62) obj5;
-                mu1 mu1Var2 = (mu1) obj4;
-                TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                Long l = (Long) obj;
-                if (mu1Var2.P7()) {
-                    ij.I(mu1Var2.getParentActivity(), mu1Var2.a(), new lt((Object) k62Var, (Object) tL_messageMediaPoll, (Object) arrayList, (Object) l, (byte) 6));
-                    break;
+                hl.c3(new z87(obj4, obj3, (Object) tLObject, obj2, obj, (Object) tL_error, (byte) 9));
+                break;
+            case 7:
+                id6 id6Var = (id6) obj4;
+                hd6 hd6Var = (hd6) obj3;
+                int[] iArr = (int[]) obj2;
+                TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
+                if (tL_error != null) {
+                    if (tL_error.text.equals("MESSAGE_ID_INVALID")) {
+                        id6Var.b.remove(hd6Var);
+                        id6Var.a.l(hd6Var.a);
+                        id6Var.l(hd6Var, 1);
+                        id6Var.G.delete(iArr[0]);
+                        hl.c3(new dd6(id6Var, hd6Var, (byte) 1));
+                        break;
+                    }
                 } else {
-                    k62Var.k0.a(tL_messageMediaPoll, k62Var.P, k62Var.n1, arrayList, true, 0, l.longValue());
-                    k62Var.b.a(true);
+                    if ((tL_messages_editMessage.flags & 8) != 0) {
+                        hd6Var.g = tL_messages_editMessage.media.proximity_notification_radius;
+                    }
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    int i2 = 0;
+                    boolean z = false;
+                    while (i2 < updates.updates.size()) {
+                        TLRPC.Update update = updates.updates.get(i2);
+                        if (update instanceof TL_update.TL_updateEditMessage) {
+                            hd6Var.h.k = ((TL_update.TL_updateEditMessage) update).message;
+                        } else if (update instanceof TL_update.TL_updateEditChannelMessage) {
+                            hd6Var.h.k = ((TL_update.TL_updateEditChannelMessage) update).message;
+                        } else {
+                            i2++;
+                            z = z;
+                        }
+                        z = true;
+                        i2++;
+                        z = z;
+                    }
+                    if (z) {
+                        id6Var.l(hd6Var, 0);
+                    }
+                    id6Var.getMessagesController().Y3(updates, false);
                     break;
                 }
-            case 7:
-                cj3 cj3Var = (cj3) obj5;
-                cj3Var.i5(cj3Var.getMessagesController().K0((Long) obj4), (Runnable) obj, new mg3(cj3Var, (yh1) obj3, (d) obj2, b3));
                 break;
             case 8:
-                t04 t04Var = (t04) obj5;
-                ArrayList arrayList2 = (ArrayList) obj4;
-                Runnable runnable = (Runnable) obj2;
-                ArrayList arrayList3 = (ArrayList) obj;
-                if (((String) obj3).equals(t04Var.w)) {
-                    vl.g(t04Var.G.d1).f(arrayList3);
-                    int size = arrayList3.size();
-                    while (b3 < size) {
-                        Object obj6 = arrayList3.get(b3);
-                        dq6 dq6Var = new dq6();
-                        dq6Var.a = "animated_" + ((TLRPC.Document) obj6).id;
-                        dq6Var.b = null;
-                        arrayList2.add(dq6Var);
-                        b3++;
-                    }
-                    runnable.run();
-                    break;
-                }
+                qh6 qh6Var = (qh6) obj4;
+                qh6Var.getClass();
+                hl.c3(new tw4((Object) qh6Var, tL_error, obj2, obj, obj3, (byte) 15));
                 break;
             case 9:
-                kt4 kt4Var = (kt4) obj5;
-                TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState = (TL_payments.TL_StarGiftAuctionState) obj4;
-                kt4Var.d(tL_StarGiftAuctionState.gift.id).c = (ArrayList) obj;
-                kt4Var.f(tL_StarGiftAuctionState.gift.id, tL_StarGiftAuctionState);
-                ((i8c) obj3).a(tL_StarGiftAuctionState, (TLRPC.TL_error) obj2);
+                hl.c3(new z87((k17) obj4, (String) obj2, tL_error, tLObject, (uc7) obj3, (jf7) obj));
                 break;
             case 10:
-                d dVar = (d) obj4;
-                String str4 = (String) obj3;
-                c01 c01Var = (c01) obj2;
-                TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = (TLRPC.TL_payments_checkedGiftCode) obj;
-                if (!((AtomicBoolean) obj5).get() && dVar.getParentActivity() != null) {
-                    if (tL_payments_checkedGiftCode.from_id == null) {
-                        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = new TLRPC.TL_premiumGiftOption();
-                        tL_premiumGiftOption.months = tL_payments_checkedGiftCode.months;
-                        TLRPC.User h = dVar instanceof mu1 ? ((mu1) dVar).h() : null;
-                        if (h == null || h.self) {
-                            h = new TLRPC.TL_user();
-                        }
-                        TLRPC.User user4 = h;
-                        boolean z = tL_payments_checkedGiftCode.used_date != 0;
-                        d Q = LaunchActivity.Q();
-                        if (Q != null && ji8.N2 == null) {
-                            ji8 ji8Var = new ji8(Q, y6c.t0, user4, new mu4(tL_premiumGiftOption), str4, z, Q.getResourceProvider());
-                            ji8Var.show();
-                            ji8.N2 = ji8Var;
-                        }
-                    } else {
-                        dVar.showDialog(new pt4(dVar, tL_payments_checkedGiftCode, str4));
-                    }
-                    if (c01Var != null) {
-                        c01Var.b();
-                        break;
+                uc7 uc7Var = (uc7) obj4;
+                unb unbVar = (unb) obj3;
+                TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) obj;
+                String str = (String) obj2;
+                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
+                File e = gvc.e(unbVar.b);
+                if (wallPaper != null) {
+                    try {
+                        xb4 fileLoader = uc7Var.getFileLoader();
+                        TLRPC.Document document = wallPaper.document;
+                        fileLoader.getClass();
+                        hl.E(e, xb4.J(document, null, true, true));
+                    } catch (Exception unused) {
                     }
                 }
+                hl.c3(new z87((Object) uc7Var, (Object) wallPaper, (Object) tL_wallPaperSettings, (Object) unbVar, (Object) e, (Object) str, (byte) 0));
                 break;
             case 11:
-                tv4 tv4Var = (tv4) obj5;
-                p8c p8cVar = (p8c) obj3;
-                hv4 hv4Var = (hv4) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                ((c01) obj4).b();
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.FALSE);
-                }
-                tv4Var.dismiss();
-                if (tL_error != null) {
-                    gl.c3(new vc4(hv4Var, tL_error, b2));
-                    break;
-                } else {
-                    tv4Var.dismiss();
+                uc7 uc7Var2 = (uc7) obj4;
+                TLRPC.Chat chat = (TLRPC.Chat) obj3;
+                TLRPC.User user2 = (TLRPC.User) obj2;
+                TLRPC.Chat chat2 = (TLRPC.Chat) obj;
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
+                    int i3 = tL_messages_affectedHistory.offset;
+                    if (i3 > 0) {
+                        uc7Var2.i0(chat, user2, chat2, i3);
+                    }
+                    uc7Var2.V3(tL_messages_affectedHistory.pts, tL_messages_affectedHistory.pts_count, chat.id);
                     break;
                 }
+                break;
             case 12:
-                c cVar = (c) obj5;
-                r05 r05Var = (r05) obj4;
-                Runnable runnable2 = (Runnable) obj2;
-                r05Var.c = (byte[]) obj;
-                if (cVar.Q.get((String) obj3) == r05Var) {
-                    cVar.v0(r05Var);
-                    cVar.S();
-                }
-                runnable2.run();
+                hl.c3(new z87((b18) obj4, tL_error, (String) obj2, (j08) obj3, tLObject, (TL_account.sendVerifyPhoneCode) obj));
                 break;
             case 13:
-                TLRPC.TL_document tL_document = (TLRPC.TL_document) obj4;
-                Long l2 = (Long) obj;
-                y28 y28Var = ((t18) obj5).a;
-                z3a.B(y28Var.s2).t0(tL_document, (String) obj3, y28Var.r1, null, null, y28Var.E1.a, null, null, true, 0, 0, false, this.e, null, l2.longValue(), y28Var.R1.getSendMonoForumPeerId(), y28Var.R1.getSendMessageSuggestionParams());
-                y28Var.R1.k(tL_document);
-                y28Var.R1.setFieldText("");
-                y28Var.a0(l2.longValue() <= 0);
+                hl.c3(new cp7(obj4, (Object) tL_error, obj3, obj2, obj, (byte) 1));
                 break;
             case 14:
-                i28 i28Var = (i28) obj5;
-                f3b f3bVar = (f3b) obj4;
-                m8b m8bVar = (m8b) obj3;
-                f53 f53Var = (f53) obj2;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-                if (storyItem != null) {
-                    d Q2 = LaunchActivity.Q();
-                    if (Q2 != null) {
-                        storyItem.dialogId = f3bVar.b.longValue();
-                        m8b createOverlayStoryViewer = Q2.createOverlayStoryViewer();
-                        createOverlayStoryViewer.J(i28Var.getContext(), storyItem, null);
-                        createOverlayStoryViewer.o1 = new g28(m8bVar, (byte) 0);
-                        m8bVar.U();
-                        break;
-                    }
-                } else {
-                    m21 Q3 = new u21(i28Var.z0.S0, f53Var).Q(R.raw.story_bomb2, 36, k96.M0(2131744366, null));
-                    Q3.a = (byte) 3;
-                    Q3.k(true);
-                    break;
-                }
+                hl.c3(new cp7(obj4, obj3, (Object) tL_error, obj2, obj, (byte) 4));
                 break;
             case 15:
-                TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj3;
-                f53 f53Var2 = (f53) obj2;
-                z1b z1bVar = (z1b) obj;
-                boolean contains = ((HashSet) obj4).contains(Integer.valueOf(z1bVar.a));
-                y28 y28Var2 = ((s28) obj5).x;
-                g2b g2bVar = y28Var2.I1;
-                if (contains) {
-                    g2bVar.b(z1bVar.a, y28Var2.r1, storyItem2);
-                    a0 = k96.a0(null, null, 2131744494, z1bVar.b);
-                } else {
-                    long j2 = y28Var2.r1;
-                    int i2 = z1bVar.a;
-                    g2bVar.getClass();
-                    ArrayList arrayList4 = new ArrayList(1);
-                    arrayList4.add(storyItem2);
-                    g2bVar.e0(i2, j2, arrayList4);
-                    a0 = k96.a0(null, null, 2131744254, z1bVar.b);
-                }
-                b00.u(a0, new u21(y28Var2.S0, f53Var2), R.raw.contact_check, 36);
-                s28 s28Var = y28Var2.j1;
-                if (s28Var != null) {
-                    s28Var.a();
-                    break;
-                }
+                hl.c3(new cp7(obj4, (Object) tL_error, obj3, obj2, obj, (byte) 8));
                 break;
             case 16:
-                Runnable[] runnableArr = (Runnable[]) obj5;
-                ValueAnimator[] valueAnimatorArr = (ValueAnimator[]) obj4;
-                TextView textView = (TextView) obj3;
-                TextView textView2 = (TextView) obj2;
-                Boolean bool = (Boolean) obj;
-                gl.r(runnableArr[0]);
-                ValueAnimator valueAnimator = valueAnimatorArr[0];
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(textView.getAlpha(), bool.booleanValue() ? 1.0f : 0.0f);
-                valueAnimatorArr[0] = ofFloat;
-                ofFloat.addUpdateListener(new pk(textView, textView2, (byte) 22));
-                valueAnimatorArr[0].setDuration(320L);
-                valueAnimatorArr[0].setInterpolator(s33.h);
-                valueAnimatorArr[0].start();
-                if (bool.booleanValue()) {
-                    gl.d3(runnableArr[0], 5320L);
-                    break;
-                }
+                hl.c3(new z87(obj4, (Object) tLObject, obj3, (Object) tL_error, obj, obj2, (byte) 21));
                 break;
             case 17:
-                u19 u19Var = (u19) obj5;
-                na7.q1(u19Var.a).E0().a(-((TLRPC.Chat) obj4).id, new au0((Object) u19Var, obj, obj3, obj2, (byte) 18));
-                break;
-            case 18:
-                ((u19) obj5).dismiss();
-                kk7.f(y6c.t0).k(kk7.V2, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
-                break;
-            case 19:
-                tx9 tx9Var = (tx9) obj5;
-                String[] strArr = (String[]) obj4;
-                String str5 = (String) obj3;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
-                Runnable runnable3 = (Runnable) obj;
-                int i3 = tx9Var.W;
-                if (ConnectionsManager.getInstance(i3).getConnectionState() != 3) {
-                    runnable3.run();
-                    break;
-                } else {
-                    hq6.d0(i3).b2(true, strArr.length != 0 ? strArr[0] : "", str5, new f28((Object) tx9Var, (Object) linkedHashSet, (Object) runnable3, (byte) 6), false);
-                    break;
-                }
-            case 20:
-                tx9 tx9Var2 = (tx9) obj5;
-                String str6 = (String) obj3;
-                ArrayList arrayList5 = (ArrayList) obj4;
-                HashMap hashMap = (HashMap) obj2;
-                Runnable runnable4 = (Runnable) obj;
-                int i4 = tx9Var2.W;
-                if (tx9Var2.a0 != 4) {
-                    runnable4.run();
-                    break;
-                } else {
-                    ArrayList arrayList6 = new ArrayList(0);
-                    LongSparseArray longSparseArray = new LongSparseArray(0);
-                    HashMap hashMap2 = hq6.d0(i4).e0;
-                    if (str6.length() <= 14) {
-                        int length = str6.length();
-                        int i5 = 0;
-                        CharSequence charSequence = str6;
-                        while (i5 < length) {
-                            if (i5 < length - 1) {
-                                if (charSequence.charAt(i5) == 55356) {
-                                    int i6 = i5 + 1;
-                                    if (charSequence.charAt(i6) >= 57339) {
-                                        break;
-                                    }
-                                }
-                                if (charSequence.charAt(i5) == 8205) {
-                                    int i7 = i5 + 1;
-                                    if (charSequence.charAt(i7) != 9792) {
-                                        break;
-                                    }
-                                    charSequence = TextUtils.concat(charSequence.subSequence(0, i5), charSequence.subSequence(i5 + 2, charSequence.length()));
-                                    length -= 2;
-                                    i5--;
-                                    i5++;
-                                }
-                            }
-                            if (charSequence.charAt(i5) == 65039) {
-                                charSequence = TextUtils.concat(charSequence.subSequence(0, i5), charSequence.subSequence(i5 + 1, charSequence.length()));
-                                length--;
-                                i5--;
-                                i5++;
-                            } else {
-                                i5++;
-                            }
-                        }
-                        ArrayList arrayList7 = hashMap2 != null ? (ArrayList) hashMap2.get(charSequence.toString()) : null;
-                        if (arrayList7 != null && !arrayList7.isEmpty()) {
-                            arrayList6.addAll(arrayList7);
-                            int size2 = arrayList7.size();
-                            for (int i8 = 0; i8 < size2; i8++) {
-                                TLRPC.Document document = (TLRPC.Document) arrayList7.get(i8);
-                                longSparseArray.put(document.id, document);
-                            }
-                            arrayList5.add(arrayList6);
-                        }
-                    }
-                    if (hashMap2 != null && !hashMap2.isEmpty() && str6.length() > 1) {
-                        hq6.d0(i4).W(tx9.c2, str6, false, new lt((Object) hashMap2, (Object) hashMap, (Object) arrayList5, (Object) runnable4, (byte) 18), false);
-                        break;
-                    }
-                }
-                break;
-            case 21:
-                ((nfa) obj5).z0((HashSet) obj4, (TL_stories.StoryItem) obj3, (cs5) obj2, (z1b) obj);
-                break;
-            case 22:
-                ((noc) obj5).a0((String) obj3, (c) obj4, (d) obj2, (String) obj);
-                break;
-            case 23:
-                c cVar2 = (c) obj4;
-                cVar2.y((String) obj3, new au0(obj5, obj, obj2, (Object) cVar2, (byte) 24));
-                break;
-            default:
-                toc tocVar = (toc) obj5;
-                p8c p8cVar2 = (p8c) obj4;
-                g15 g15Var = (g15) obj3;
-                c cVar3 = (c) obj2;
-                r05 r05Var2 = (r05) obj;
-                if (r05Var2 == null) {
-                    p8cVar2.a("ADDRESS_NO_INFO");
-                    break;
-                } else {
-                    byte[] bArr = r05Var2.c;
-                    boolean z2 = false;
-                    if (bArr == null) {
-                        byte[][] n = g15Var.n();
-                        if (n.length <= 0) {
-                            p8cVar2.a("STORAGE_NO_PUBLIC_KEY");
+                wx9 wx9Var = (wx9) obj4;
+                Activity activity = (Activity) obj3;
+                id idVar2 = (id) obj2;
+                TLRPC.User user3 = (TLRPC.User) obj;
+                if (tL_error == null) {
+                    TLRPC.messages_DhConfig messages_dhconfig = (TLRPC.messages_DhConfig) tLObject;
+                    if (tLObject instanceof TLRPC.TL_messages_dhConfig) {
+                        byte[] bArr = messages_dhconfig.p;
+                        int i4 = messages_dhconfig.g;
+                        Pattern pattern = Utilities.a;
+                        if (!ConnectionsManager.native_isGoodPrime(bArr, i4)) {
+                            hl.c3(new gb7(activity, idVar2, (byte) 1));
                             break;
                         } else {
-                            bArr = n[0];
+                            jf7 messagesStorage = wx9Var.getMessagesStorage();
+                            byte[] bArr2 = messages_dhconfig.p;
+                            messagesStorage.G();
+                            messagesStorage.y = bArr2;
+                            jf7 messagesStorage2 = wx9Var.getMessagesStorage();
+                            int i5 = messages_dhconfig.g;
+                            messagesStorage2.G();
+                            messagesStorage2.E = i5;
+                            jf7 messagesStorage3 = wx9Var.getMessagesStorage();
+                            int i6 = messages_dhconfig.version;
+                            messagesStorage3.G();
+                            messagesStorage3.x = i6;
+                            jf7 messagesStorage4 = wx9Var.getMessagesStorage();
+                            jf7 messagesStorage5 = wx9Var.getMessagesStorage();
+                            messagesStorage5.G();
+                            int i7 = messagesStorage5.x;
+                            jf7 messagesStorage6 = wx9Var.getMessagesStorage();
+                            messagesStorage6.G();
+                            int i8 = messagesStorage6.E;
+                            jf7 messagesStorage7 = wx9Var.getMessagesStorage();
+                            messagesStorage7.G();
+                            messagesStorage4.a.c(new aq1(messagesStorage4, i7, i8, messagesStorage7.y, (byte) 10));
                         }
                     }
-                    if (g15Var.f(bArr)) {
-                        g15.i.execute(new fe2(g15Var, g15Var.l(), bArr != null ? g15.p(bArr) : "", z2, new f28(tocVar, p8cVar2, cVar3, g15Var)));
-                        break;
-                    } else {
-                        p8cVar2.a("STORAGE_OLD_PUBLIC_KEY");
-                        break;
+                    byte[] bArr3 = new byte[256];
+                    for (int i9 = 0; i9 < 256; i9++) {
+                        bArr3[i9] = (byte) (((byte) (Utilities.b.nextDouble() * 256.0d)) ^ messages_dhconfig.random[i9]);
                     }
+                    wx9Var.getMessagesStorage().G();
+                    BigInteger valueOf = BigInteger.valueOf(r0.E);
+                    BigInteger bigInteger = new BigInteger(1, bArr3);
+                    jf7 messagesStorage8 = wx9Var.getMessagesStorage();
+                    messagesStorage8.G();
+                    byte[] byteArray = valueOf.modPow(bigInteger, new BigInteger(1, messagesStorage8.y)).toByteArray();
+                    if (byteArray.length > 256) {
+                        byte[] bArr4 = new byte[256];
+                        System.arraycopy(byteArray, 1, bArr4, 0, 256);
+                        byteArray = bArr4;
+                    }
+                    TLRPC.TL_messages_requestEncryption tL_messages_requestEncryption = new TLRPC.TL_messages_requestEncryption();
+                    tL_messages_requestEncryption.g_a = byteArray;
+                    tL_messages_requestEncryption.user_id = wx9Var.getMessagesController().q1(user3);
+                    tL_messages_requestEncryption.random_id = Utilities.b.nextInt();
+                    wx9Var.getConnectionsManager().sendRequest(tL_messages_requestEncryption, new in0((Object) wx9Var, (Object) activity, (Object) idVar2, (Object) bArr3, (Object) user3, (byte) 13), 2);
+                    break;
+                } else {
+                    wx9Var.f.clear();
+                    hl.c3(new sx9(wx9Var, activity, idVar2, false ? 1 : 0));
+                    break;
+                }
+            case 18:
+                r7a r7aVar = (r7a) obj4;
+                r47 r47Var = (r47) obj3;
+                String str2 = (String) obj2;
+                Runnable runnable = (Runnable) obj;
+                zh6 zh6Var = r7aVar.x;
+                if (tL_error == null) {
+                    zh6Var.k(r47Var.D1(), 0L);
+                    r7aVar.getMessagesController().Y3((TLRPC.Updates) tLObject, false);
+                    zh6Var.k(r47Var.D1(), Long.valueOf(SystemClock.elapsedRealtime()));
+                }
+                hl.c3(new jr9((Object) r7aVar, (Object) str2, (Object) runnable, (byte) 7));
+                break;
+            case 19:
+                hl.c3(new esa((wua) obj4, tLObject, (bx4[]) obj3, (Long) obj2, (jr9) obj, tL_error, (byte) 1));
+                break;
+            case 20:
+                wua wuaVar = (wua) obj4;
+                wuaVar.getClass();
+                hl.c3(new esa(wuaVar, tLObject, (CharSequence) obj3, (TL_stars.TL_starGiftUnique) obj2, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) obj, tL_error, (byte) 0));
+                break;
+            case 21:
+                hl.c3(new uwa((jxa) obj4, (id) obj3, tLObject, (TL_stars.InputSavedStarGift) obj2, (pcc) obj, (byte) 1));
+                break;
+            case 22:
+                hl.c3(new esa((jxa) obj4, tLObject, (r47) obj3, (TLRPC.TL_inputInvoiceMessage) obj2, (go1) obj, tL_error, (byte) 5));
+                break;
+            case 23:
+                zwa zwaVar = (zwa) obj4;
+                zwaVar.getClass();
+                hl.c3(new esa(zwaVar, tLObject, (TL_stars.TL_starGiftCollection) obj3, (axa) obj2, (pcc) obj, tL_error, (byte) 6));
+                break;
+            case 24:
+                fb8 fb8Var = (fb8) obj4;
+                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj2;
+                isa isaVar = (isa) obj;
+                if (tL_error != null && xc4.r(tL_error.text) && obj3 != null) {
+                    xc4.n(fb8Var.a).u(new Object[]{tL_messages_getAttachedStickers, isaVar}, obj3);
+                    break;
+                } else {
+                    isaVar.run(tLObject, tL_error);
+                    break;
+                }
+            case 25:
+                hl.c3(new uwa((y4b) obj4, (TLRPC.TL_messages_getStickers) obj3, tLObject, (ArrayList) obj2, (LongSparseArray) obj, (byte) 3));
+                break;
+            default:
+                c8b c8bVar = (c8b) obj4;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
+                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers2 = (TLRPC.TL_messages_getAttachedStickers) obj2;
+                yp9 yp9Var = (yp9) obj;
+                if (tL_error != null && xc4.r(tL_error.text) && storyItem != null) {
+                    xc4.n(c8bVar.a).u(new Object[]{tL_messages_getAttachedStickers2, yp9Var}, storyItem);
+                    break;
+                } else {
+                    yp9Var.run(tLObject, tL_error);
+                    break;
                 }
         }
-    }
-
-    public /* synthetic */ au0(Object obj, String str, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.d = str;
-        this.c = obj2;
-        this.e = obj3;
     }
 
     public /* synthetic */ au0(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
         this.a = b;
         this.b = obj;
-        this.c = obj2;
+        this.e = obj2;
+        this.c = obj3;
+        this.d = obj4;
+    }
+
+    public /* synthetic */ au0(Object obj, Object obj2, Object obj3, String str, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.e = obj2;
         this.d = obj3;
-        this.e = obj4;
+        this.c = str;
+    }
+
+    public /* synthetic */ au0(Object obj, String str, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = str;
+        this.e = obj2;
+        this.d = obj3;
     }
 }

@@ -1,27 +1,104 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class de implements dn7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int[] b;
+import android.view.View;
 
-    public /* synthetic */ de(int[] iArr, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class de implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean[] b;
+
+    public /* synthetic */ de(boolean[] zArr, byte b) {
         this.a = b;
-        this.b = iArr;
+        this.b = zArr;
     }
 
-    @Override // dn7
-    public final String c(int i) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        int[] iArr = this.b;
+        boolean[] zArr = this.b;
         switch (b) {
             case 0:
-                int i2 = iArr[i];
-                return i2 == 0 ? k96.M0(2131748115, null) : i2 < 60 ? k96.G(i2, "Minutes", new Object[0]) : i2 < 1440 ? k96.G(i2 / 60, "Hours", new Object[0]) : i2 < 10080 ? k96.G(i2 / 1440, "Days", new Object[0]) : i2 < 44640 ? k96.G(i2 / 10080, "Weeks", new Object[0]) : i2 < 525600 ? k96.G(i2 / 44640, "Months", new Object[0]) : k96.G(i2 / 525600, "Years", new Object[0]);
+                boolean z = !zArr[0];
+                zArr[0] = z;
+                ((sg2) view).c(z, true);
+                break;
+            case 1:
+                boolean z2 = !zArr[0];
+                zArr[0] = z2;
+                ((sg2) view).c(z2, true);
+                break;
+            case 2:
+                boolean z3 = !zArr[0];
+                zArr[0] = z3;
+                ((sg2) view).c(z3, true);
+                break;
+            case 3:
+                boolean z4 = !zArr[0];
+                zArr[0] = z4;
+                ((sg2) view).c(z4, true);
+                break;
+            case 4:
+                boolean z5 = !zArr[0];
+                zArr[0] = z5;
+                ((sg2) view).c(z5, true);
+                break;
+            case 5:
+                boolean z6 = !zArr[0];
+                zArr[0] = z6;
+                ((sg2) view).c(z6, true);
+                break;
+            case 6:
+                boolean z7 = !zArr[0];
+                zArr[0] = z7;
+                ((sg2) view).c(z7, true);
+                break;
+            case 7:
+                boolean z8 = !zArr[1];
+                zArr[1] = z8;
+                ((sg2) view).c(z8, true);
+                break;
+            case 8:
+                boolean z9 = !zArr[0];
+                zArr[0] = z9;
+                ((sg2) view).c(z9, true);
+                break;
+            case 9:
+                boolean z10 = !zArr[0];
+                zArr[0] = z10;
+                ((sg2) view).c(z10, true);
+                break;
+            case 10:
+                boolean z11 = !zArr[0];
+                zArr[0] = z11;
+                ((sg2) view).c(z11, true);
+                break;
+            case 11:
+                if (view.isEnabled()) {
+                    boolean z12 = !zArr[0];
+                    zArr[0] = z12;
+                    ((sg2) view).c(z12, true);
+                    break;
+                }
+                break;
+            case 12:
+                boolean z13 = !zArr[0];
+                zArr[0] = z13;
+                ((sg2) view).c(z13, true);
+                break;
+            case 13:
+                if (view.isEnabled()) {
+                    boolean z14 = !zArr[0];
+                    zArr[0] = z14;
+                    ((sg2) view).c(z14, true);
+                    break;
+                }
+                break;
             default:
-                int i3 = iArr[i];
-                return i3 == 0 ? k96.M0(2131753846, null) : i3 < 10080 ? k96.G(i3 / 1440, "Days", new Object[0]) : i3 < 44640 ? k96.G(i3 / 10080, "Weeks", new Object[0]) : i3 < 525600 ? k96.G(i3 / 44640, "Months", new Object[0]) : k96.G(i3 / 525600, "Years", new Object[0]);
+                boolean z15 = !zArr[0];
+                zArr[0] = z15;
+                ((sg2) view).c(z15, true);
+                break;
         }
     }
 }

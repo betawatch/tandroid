@@ -1,54 +1,132 @@
 // default package
 
-import java.lang.reflect.InvocationTargetException;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Trace;
+import java.util.List;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ao4 {
-    public static final aia b = new aia(0);
-    public final /* synthetic */ go4 a;
+public abstract class ao4 {
+    public static final ji6 a = new ji6(16);
+    public static final ThreadPoolExecutor b;
+    public static final Object c;
+    public static final vla d;
 
-    public ao4(go4 go4Var) {
-        this.a = go4Var;
+    static {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 10000L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new wb9());
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        b = threadPoolExecutor;
+        c = new Object();
+        d = new vla(0);
     }
 
-    public static Class b(ClassLoader classLoader, String str) {
-        aia aiaVar = b;
-        aia aiaVar2 = (aia) aiaVar.get(classLoader);
-        if (aiaVar2 == null) {
-            aiaVar2 = new aia(0);
-            aiaVar.put(classLoader, aiaVar2);
+    public static String a(int i, List list) {
+        StringBuilder sb = new StringBuilder();
+        for (int i2 = 0; i2 < list.size(); i2++) {
+            sb.append(((un4) list.get(i2)).e);
+            sb.append("-");
+            sb.append(i);
+            if (i2 < list.size() - 1) {
+                sb.append(";");
+            }
         }
-        Class cls = (Class) aiaVar2.get(str);
-        if (cls != null) {
-            return cls;
-        }
-        Class<?> cls2 = Class.forName(str, false, classLoader);
-        aiaVar2.put(str, cls2);
-        return cls2;
+        return sb.toString();
     }
 
-    public static Class c(ClassLoader classLoader, String str) {
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004a A[Catch: all -> 0x00a8, TryCatch #0 {all -> 0x00a8, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0016, B:11:0x001a, B:16:0x004a, B:17:0x0050, B:19:0x0056, B:21:0x005c, B:24:0x0069, B:26:0x008a, B:27:0x0093, B:30:0x006e, B:31:0x0071, B:32:0x0072, B:35:0x0085, B:38:0x009a, B:39:0x009d, B:41:0x0027, B:43:0x002f, B:45:0x0032, B:47:0x0036, B:49:0x0042, B:57:0x009e, B:34:0x007f, B:23:0x0063), top: B:2:0x0007, inners: #1, #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0050 A[Catch: all -> 0x00a8, TryCatch #0 {all -> 0x00a8, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0016, B:11:0x001a, B:16:0x004a, B:17:0x0050, B:19:0x0056, B:21:0x005c, B:24:0x0069, B:26:0x008a, B:27:0x0093, B:30:0x006e, B:31:0x0071, B:32:0x0072, B:35:0x0085, B:38:0x009a, B:39:0x009d, B:41:0x0027, B:43:0x002f, B:45:0x0032, B:47:0x0036, B:49:0x0042, B:57:0x009e, B:34:0x007f, B:23:0x0063), top: B:2:0x0007, inners: #1, #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x008a A[Catch: all -> 0x00a8, TryCatch #0 {all -> 0x00a8, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0016, B:11:0x001a, B:16:0x004a, B:17:0x0050, B:19:0x0056, B:21:0x005c, B:24:0x0069, B:26:0x008a, B:27:0x0093, B:30:0x006e, B:31:0x0071, B:32:0x0072, B:35:0x0085, B:38:0x009a, B:39:0x009d, B:41:0x0027, B:43:0x002f, B:45:0x0032, B:47:0x0036, B:49:0x0042, B:57:0x009e, B:34:0x007f, B:23:0x0063), top: B:2:0x0007, inners: #1, #2, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0093 A[Catch: all -> 0x00a8, TryCatch #0 {all -> 0x00a8, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0016, B:11:0x001a, B:16:0x004a, B:17:0x0050, B:19:0x0056, B:21:0x005c, B:24:0x0069, B:26:0x008a, B:27:0x0093, B:30:0x006e, B:31:0x0071, B:32:0x0072, B:35:0x0085, B:38:0x009a, B:39:0x009d, B:41:0x0027, B:43:0x002f, B:45:0x0032, B:47:0x0036, B:49:0x0042, B:57:0x009e, B:34:0x007f, B:23:0x0063), top: B:2:0x0007, inners: #1, #2, #3 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static zn4 b(String str, Context context, List list, int i) {
+        zn4 zn4Var;
+        int i2;
+        Typeface b2;
+        ji6 ji6Var = a;
+        q0f.a("getFontSync");
         try {
-            return b(classLoader, str);
-        } catch (ClassCastException e) {
-            throw new gp2(tb4.y("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e);
-        } catch (ClassNotFoundException e2) {
-            throw new gp2(tb4.y("Unable to instantiate fragment ", str, ": make sure class name exists"), e2);
-        }
-    }
-
-    public final bn4 a(String str) {
-        try {
-            return (bn4) c(this.a.w.b.getClassLoader(), str).getConstructor(null).newInstance(null);
-        } catch (IllegalAccessException e) {
-            throw new gp2(tb4.y("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e);
-        } catch (InstantiationException e2) {
-            throw new gp2(tb4.y("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e2);
-        } catch (NoSuchMethodException e3) {
-            throw new gp2(tb4.y("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e3);
-        } catch (InvocationTargetException e4) {
-            throw new gp2(tb4.y("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e4);
+            Typeface typeface = (Typeface) ji6Var.a(str);
+            if (typeface != null) {
+                zn4Var = new zn4(typeface);
+            } else {
+                try {
+                    fo4 a2 = tn4.a(context, list);
+                    List list2 = a2.b;
+                    boolean z = a2.c;
+                    if (z) {
+                        if (z) {
+                            i2 = -2;
+                            if (i2 != 0) {
+                                zn4Var = new zn4(i2);
+                            } else if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
+                                go4[] go4VarArr = (go4[]) list2.get(0);
+                                p1f p1fVar = r7c.a;
+                                q0f.a("TypefaceCompat.createFromFontInfo");
+                                try {
+                                    b2 = r7c.a.b(context, go4VarArr, i);
+                                    Trace.endSection();
+                                    if (b2 == null) {
+                                        ji6Var.b(str, b2);
+                                        zn4Var = new zn4(b2);
+                                    } else {
+                                        zn4Var = new zn4(-3);
+                                    }
+                                } finally {
+                                }
+                            } else {
+                                p1f p1fVar2 = r7c.a;
+                                q0f.a("TypefaceCompat.createFromFontInfoWithFallback");
+                                try {
+                                    b2 = r7c.a.c(context, list2, i);
+                                    Trace.endSection();
+                                    if (b2 == null) {
+                                    }
+                                } finally {
+                                }
+                            }
+                        }
+                        i2 = -3;
+                        if (i2 != 0) {
+                        }
+                    } else {
+                        go4[] go4VarArr2 = (go4[]) list2.get(0);
+                        if (go4VarArr2 == null || go4VarArr2.length == 0) {
+                            i2 = 1;
+                        } else {
+                            int length = go4VarArr2.length;
+                            int i3 = 0;
+                            while (true) {
+                                if (i3 >= length) {
+                                    i2 = 0;
+                                    break;
+                                }
+                                int i4 = go4VarArr2[i3].e;
+                                if (i4 == 0) {
+                                    i3++;
+                                } else if (i4 >= 0) {
+                                    i2 = i4;
+                                }
+                            }
+                            i2 = -3;
+                        }
+                        if (i2 != 0) {
+                        }
+                    }
+                } catch (PackageManager.NameNotFoundException unused) {
+                    zn4Var = new zn4(-1);
+                }
+            }
+            return zn4Var;
+        } catch (Throwable th) {
+            throw th;
         }
     }
 }

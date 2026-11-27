@@ -1,7 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.util.SparseArray;
+
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface aq2 {
-    Object L(gl2 gl2Var);
+public final class aq2 {
+    public static final aq2 a;
+    public static final /* synthetic */ aq2[] b;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    aq2 EF0;
+
+    static {
+        aq2 aq2Var = new aq2("NOT_SET", 0);
+        aq2 aq2Var2 = new aq2("EVENT_OVERRIDE", 1);
+        a = aq2Var2;
+        b = new aq2[]{aq2Var, aq2Var2};
+        SparseArray sparseArray = new SparseArray();
+        sparseArray.put(0, aq2Var);
+        sparseArray.put(5, aq2Var2);
+    }
+
+    public static aq2 valueOf(String str) {
+        return (aq2) Enum.valueOf(aq2.class, str);
+    }
+
+    public static aq2[] values() {
+        return (aq2[]) b.clone();
+    }
 }

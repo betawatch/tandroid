@@ -1,55 +1,23 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class p43 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ s43 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class p43 {
+    public final po5 a;
+    public final long b;
+    public final long c;
+    public final long d;
 
-    public /* synthetic */ p43(s43 s43Var, byte b) {
-        this.a = b;
-        this.b = s43Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        byte b = this.a;
-        s43 s43Var = this.b;
-        switch (b) {
-            case 0:
-                if (s43Var.b == null && (view = s43Var.d) != null) {
-                    View findFocus = view.findFocus();
-                    if (findFocus instanceof EditText) {
-                        s43Var.b = (EditText) findFocus;
-                    }
-                }
-                EditText editText = s43Var.b;
-                if (editText != null) {
-                    if (editText.length() != 0 || s43Var.e) {
-                        try {
-                            s43Var.performHapticFeedback(3, 2);
-                            s43Var.playSoundEffect(0);
-                        } catch (Exception unused) {
-                        }
-                        s43Var.b.dispatchKeyEvent(new KeyEvent(0, 67));
-                        s43Var.b.dispatchKeyEvent(new KeyEvent(1, 67));
-                        if (s43Var.f) {
-                            s43Var.postDelayed(s43Var.h, 50L);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                s43Var.n = false;
-                s43Var.f = true;
-                s43Var.h.run();
-                break;
+    public p43(long j, long j2, List list) {
+        this.a = po5.q(list);
+        this.b = j;
+        this.c = j2;
+        long j3 = -9223372036854775807L;
+        if (j != -9223372036854775807L && j2 != -9223372036854775807L) {
+            j3 = j + j2;
         }
+        this.d = j3;
     }
 }

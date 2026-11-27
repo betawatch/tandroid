@@ -1,87 +1,23 @@
 // default package
 
-import java.io.Serializable;
-import java.util.concurrent.CancellationException;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ghe {
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0030  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Serializable a(hk4 hk4Var, ik4 ik4Var, fw2 fw2Var) {
-        pk4 pk4Var;
-        int i;
-        c59 c59Var;
-        Throwable th;
-        bt5 bt5Var;
-        CancellationException cancellationException;
-        if (fw2Var instanceof pk4) {
-            pk4Var = (pk4) fw2Var;
-            int i2 = pk4Var.c;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                pk4Var.c = i2 - TLObject.FLAG_31;
-                Object obj = pk4Var.b;
-                i = pk4Var.c;
-                if (i != 0) {
-                    qse.b(obj);
-                    c59 c59Var2 = new c59();
-                    try {
-                        ik4 rk4Var = new rk4(ik4Var, c59Var2);
-                        pk4Var.a = c59Var2;
-                        pk4Var.c = 1;
-                        Object h = hk4Var.h(rk4Var, pk4Var);
-                        bx2 bx2Var = bx2.a;
-                        if (h == bx2Var) {
-                            return bx2Var;
-                        }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        c59Var = c59Var2;
-                        th = (Throwable) c59Var.a;
-                        if (th == null) {
-                        }
-                        if (th != null) {
-                        }
-                    }
-                } else {
-                    if (i != 1) {
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
-                        return null;
-                    }
-                    c59Var = pk4Var.a;
-                    try {
-                        qse.b(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
-                        th = (Throwable) c59Var.a;
-                        if ((th == null && th.equals(th)) || ((bt5Var = (bt5) pk4Var.getContext().get(pd5.c)) != null && bt5Var.isCancelled() && (cancellationException = bt5Var.getCancellationException()) != null && cancellationException.equals(th))) {
-                            throw th;
-                        }
-                        if (th != null) {
-                            return th;
-                        }
-                        if (th instanceof CancellationException) {
-                            tfe.a(th, th);
-                            throw th;
-                        }
-                        tfe.a(th, th);
-                        throw th;
-                    }
-                }
-                return null;
-            }
-        }
-        pk4Var = new pk4(fw2Var);
-        Object obj2 = pk4Var.b;
-        i = pk4Var.c;
-        if (i != 0) {
-        }
-        return null;
+public final class ghe implements zq7 {
+    public static final ghe a = new ghe();
+    public static final sa4 b = new sa4("inferenceCommonLogEvent", c00.n(xnb.q(bpd.class, new tnd(1))));
+    public static final sa4 c = new sa4("options", c00.n(xnb.q(bpd.class, new tnd(2))));
+    public static final sa4 d = new sa4("imageInfo", c00.n(xnb.q(bpd.class, new tnd(3))));
+    public static final sa4 e = new sa4("labelCount", c00.n(xnb.q(bpd.class, new tnd(4))));
+    public static final sa4 f = new sa4("highestConfidence", c00.n(xnb.q(bpd.class, new tnd(5))));
+
+    @Override // l34
+    public final void a(Object obj, Object obj2) {
+        h1f h1fVar = (h1f) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, h1fVar.a);
+        ar7Var.a(c, h1fVar.b);
+        ar7Var.a(d, h1fVar.c);
+        ar7Var.a(e, null);
+        ar7Var.a(f, null);
     }
 }

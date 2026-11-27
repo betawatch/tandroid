@@ -1,10 +1,44 @@
 // default package
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import android.graphics.Point;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-@Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes.dex */
-public @interface bec {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class bec implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ ko9 c;
+
+    public bec(ko9 ko9Var, View view) {
+        this.c = ko9Var;
+        vpa vpaVar = new vpa((Object) view, (vk4) vpa.p, 0.0f);
+        ko9Var.c = vpaVar;
+        vpaVar.m.a(1.0f);
+        ((vpa) ko9Var.c).m.b(350.0f);
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        Point point = hl.q;
+        boolean z = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z) {
+            this.a = Boolean.valueOf(z);
+            this.b = true;
+        }
+        if (i6 == 0 || i6 == i2 || this.b) {
+            this.b = false;
+            return;
+        }
+        ko9 ko9Var = this.c;
+        ((vpa) ko9Var.c).d();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
+        }
+        ((vpa) ko9Var.c).m.i = 0.0d;
+        view.setTranslationY((i6 - i2) + 0.0f);
+        ((vpa) ko9Var.c).h();
+    }
 }

@@ -1,58 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ga {
-    public byte a;
-    public int b;
-    public Object c;
-    public int d;
+public final class ga implements ss4, Serializable {
+    public final AtomicReference a;
+    public final boolean b = false;
+    public final int c = 2;
+
+    public ga(AtomicReference atomicReference) {
+        this.a = atomicReference;
+    }
 
     public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj == null || ga.class != obj.getClass()) {
-                return false;
-            }
-            ga gaVar = (ga) obj;
-            byte b = this.a;
-            if (b != gaVar.a) {
-                return false;
-            }
-            if (b != 8 || Math.abs(this.d - this.b) != 1 || this.d != gaVar.b || this.b != gaVar.d) {
-                if (this.d != gaVar.d || this.b != gaVar.b) {
-                    return false;
-                }
-                Object obj2 = this.c;
-                Object obj3 = gaVar.c;
-                if (obj2 != null) {
-                    if (!obj2.equals(obj3)) {
-                        return false;
-                    }
-                } else if (obj3 != null) {
-                    return false;
-                }
-            }
+        if (this == obj) {
+            return true;
         }
-        return true;
+        if (!(obj instanceof ga)) {
+            return false;
+        }
+        ga gaVar = (ga) obj;
+        return this.b == gaVar.b && this.c == gaVar.c && ur5.a(this.a, gaVar.a) && AtomicReference.class.equals(AtomicReference.class);
+    }
+
+    @Override // ss4
+    public final int getArity() {
+        return 2;
     }
 
     public final int hashCode() {
-        return (((this.a * 31) + this.b) * 31) + this.d;
+        return ((((((((((AtomicReference.class.hashCode() + ((this.a != null ? r0.hashCode() : 0) * 31)) * 31) + 113762) * 31) - 869290769) * 31) + (this.b ? 1231 : 1237)) * 31) + 2) * 31) + this.c;
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(Integer.toHexString(System.identityHashCode(this)));
-        sb.append("[");
-        byte b = this.a;
-        sb.append(b != 1 ? b != 2 ? b != 4 ? b != 8 ? "??" : "mv" : "up" : "rm" : "add");
-        sb.append(",s:");
-        sb.append(this.b);
-        sb.append("c:");
-        sb.append(this.d);
-        sb.append(",p:");
-        sb.append(this.c);
-        sb.append("]");
-        return sb.toString();
+        s89.a.getClass();
+        return t89.a(this);
     }
 }

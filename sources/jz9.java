@@ -1,28 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class jz9 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class jz9 extends iz9 {
+    public final ArrayList j;
 
-    static {
-        b4c.h(new jz9());
+    public jz9(n29 n29Var, long j, long j2, long j3, long j4, ArrayList arrayList, long j5, ArrayList arrayList2, long j6, long j7) {
+        super(n29Var, j, j2, j3, j4, arrayList, j5, j6, j7);
+        this.j = arrayList2;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        kz9 kz9Var = (kz9) view;
-        kz9Var.setUser((TLRPC.User) c4cVar.H);
-        kz9Var.c(c4cVar.e, false);
-        kz9Var.setDivider(z);
+    @Override // nz9
+    public final nz9 a() {
+        return new jz9(this.a, this.b, 0L, this.d, this.e, this.f, this.i, this.j, this.g, this.h);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new kz9(context, true, false, wjbVar, false);
+    @Override // iz9
+    public final long e(long j) {
+        return this.j.size();
+    }
+
+    @Override // iz9
+    public final n29 i(sb9 sb9Var, long j) {
+        return (n29) this.j.get((int) (j - this.d));
+    }
+
+    @Override // iz9
+    public final boolean j() {
+        return true;
     }
 }

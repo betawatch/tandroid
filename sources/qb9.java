@@ -1,60 +1,161 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.tgnet.tl.TL_iv;
+import android.app.Activity;
+import android.app.Application;
+import android.app.Fragment;
+import android.os.Build;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class qb9 implements pib {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ sb9 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class qb9 extends Fragment {
+    public static final /* synthetic */ int b = 0;
+    public xh4 a;
 
-    public qb9(sb9 sb9Var, Layout layout, int i, int i2) {
-        this.d = sb9Var;
-        this.a = layout;
-        this.b = i;
-        this.c = i2;
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public static final class a implements Application.ActivityLifecycleCallbacks {
+        public static final pb9 Companion = new pb9();
+
+        public static final void registerIn(Activity activity) {
+            Companion.getClass();
+            pb9.a(activity);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityCreated(Activity activity, Bundle bundle) {
+            activity.getClass();
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityDestroyed(Activity activity) {
+            activity.getClass();
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPaused(Activity activity) {
+            activity.getClass();
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPostCreated(Activity activity, Bundle bundle) {
+            activity.getClass();
+            int i = qb9.b;
+            ob9.a(activity, y26.ON_CREATE);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPostResumed(Activity activity) {
+            activity.getClass();
+            int i = qb9.b;
+            ob9.a(activity, y26.ON_RESUME);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPostStarted(Activity activity) {
+            activity.getClass();
+            int i = qb9.b;
+            ob9.a(activity, y26.ON_START);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPreDestroyed(Activity activity) {
+            activity.getClass();
+            int i = qb9.b;
+            ob9.a(activity, y26.ON_DESTROY);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPrePaused(Activity activity) {
+            activity.getClass();
+            int i = qb9.b;
+            ob9.a(activity, y26.ON_PAUSE);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityPreStopped(Activity activity) {
+            activity.getClass();
+            int i = qb9.b;
+            ob9.a(activity, y26.ON_STOP);
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityResumed(Activity activity) {
+            activity.getClass();
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+            activity.getClass();
+            bundle.getClass();
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityStarted(Activity activity) {
+            activity.getClass();
+        }
+
+        @Override // android.app.Application.ActivityLifecycleCallbacks
+        public void onActivityStopped(Activity activity) {
+            activity.getClass();
+        }
     }
 
-    @Override // pib, jg7
-    public final Layout a() {
-        return this.a;
+    public final void a(y26 y26Var) {
+        if (Build.VERSION.SDK_INT < 29) {
+            Activity activity = getActivity();
+            activity.getClass();
+            ob9.a(activity, y26Var);
+        }
     }
 
-    @Override // pib
-    public final Rect c() {
-        return null;
+    @Override // android.app.Fragment
+    public final void onActivityCreated(Bundle bundle) {
+        super.onActivityCreated(bundle);
+        a(y26.ON_CREATE);
     }
 
-    @Override // pib
-    public final CharSequence getPrefix() {
-        return null;
+    @Override // android.app.Fragment
+    public final void onDestroy() {
+        super.onDestroy();
+        a(y26.ON_DESTROY);
+        this.a = null;
     }
 
-    @Override // pib
-    public final int getRow() {
-        return 0;
+    @Override // android.app.Fragment
+    public final void onPause() {
+        super.onPause();
+        a(y26.ON_PAUSE);
     }
 
-    @Override // pib
-    public final CharSequence getText() {
-        TL_iv.PageBlock pageBlock;
-        TL_iv.PageCaption pageCaption;
-        TL_iv.RichText richText;
-        lk0 I0 = this.d.c.I0();
-        return (I0 == null || (pageBlock = I0.b) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : yi9.r(richText, null, true);
+    @Override // android.app.Fragment
+    public final void onResume() {
+        super.onResume();
+        xh4 xh4Var = this.a;
+        if (xh4Var != null) {
+            ((qo8) xh4Var.b).a();
+        }
+        a(y26.ON_RESUME);
     }
 
-    @Override // pib
-    public final int getX() {
-        return this.b;
+    @Override // android.app.Fragment
+    public final void onStart() {
+        super.onStart();
+        xh4 xh4Var = this.a;
+        if (xh4Var != null) {
+            qo8 qo8Var = (qo8) xh4Var.b;
+            int i = qo8Var.a + 1;
+            qo8Var.a = i;
+            if (i == 1 && qo8Var.d) {
+                qo8Var.f.e(y26.ON_START);
+                qo8Var.d = false;
+            }
+        }
+        a(y26.ON_START);
     }
 
-    @Override // pib
-    public final int getY() {
-        return this.c;
+    @Override // android.app.Fragment
+    public final void onStop() {
+        super.onStop();
+        a(y26.ON_STOP);
     }
 }

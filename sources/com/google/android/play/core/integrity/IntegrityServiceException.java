@@ -3,9 +3,9 @@ package com.google.android.play.core.integrity;
 import com.google.android.gms.common.api.Status;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class IntegrityServiceException extends zn {
+public class IntegrityServiceException extends ao {
     private final Throwable a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public class IntegrityServiceException extends zn {
         if (i != 0) {
             this.a = th;
         } else {
-            w26.j("ErrorCode should not be 0.");
+            lq5.j("ErrorCode should not be 0.");
             throw null;
         }
     }

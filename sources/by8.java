@@ -1,84 +1,56 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class by8 extends Drawable {
-    public final View a;
-    public final Paint b;
-    public final Path c;
-    public int d;
-    public boolean e;
-    public final lm f;
+public final class by8 extends c4 {
+    public static final Parcelable.Creator<by8> CREATOR = new ced(2);
+    public final gfe a;
+    public final String b;
+    public final String c;
+    public final String d;
 
-    public by8(View view) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Path path = new Path();
-        this.c = path;
-        this.d = kk7.d4;
-        this.a = view;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(gl.L(1.0f));
-        this.f = new lm(view, 0L, 350L, s33.h);
-        float N = gl.N(4.66f);
-        float N2 = gl.N(2.16f);
-        path.rewind();
-        path.moveTo(N / 2.0f, 0.0f);
-        float f = (-N) / 2.0f;
-        path.lineTo(f, 0.0f);
-        float f2 = f + N2;
-        path.lineTo(f2, -N2);
-        path.moveTo(f, 0.0f);
-        path.lineTo(f2, N2);
+    public by8(String str, byte[] bArr, String str2, String str3) {
+        xve.h(bArr);
+        this.a = gfe.o(bArr.length, bArr);
+        xve.h(str);
+        this.b = str;
+        this.c = str2;
+        xve.h(str3);
+        this.d = str3;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY();
-        float d = this.f.d(this.e);
-        float N = gl.N(2.51f);
-        canvas.save();
-        canvas.translate(centerX, centerY);
-        canvas.save();
-        canvas.translate(N, N);
-        canvas.rotate(45.0f);
-        canvas.scale(gl.R1(-1.0f, 1.0f, d), 1.0f);
-        Path path = this.c;
-        Paint paint = this.b;
-        canvas.drawPath(path, paint);
-        canvas.restore();
-        canvas.save();
-        float f = -N;
-        canvas.translate(f, f);
-        canvas.rotate(225.0f);
-        canvas.scale(gl.R1(-1.0f, 1.0f, d), 1.0f);
-        canvas.drawPath(path, paint);
-        canvas.restore();
-        canvas.restore();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof by8)) {
+            return false;
+        }
+        by8 by8Var = (by8) obj;
+        return vue.a(this.a, by8Var.a) && vue.a(this.b, by8Var.b) && vue.a(this.c, by8Var.c) && vue.a(this.d, by8Var.d);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d});
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.d = i;
-        this.b.setAlpha(i);
+    public final String toString() {
+        StringBuilder p = ik8.p("PublicKeyCredentialUserEntity{\n id=", lsd.b(this.a.p()), ", \n name='");
+        p.append(this.b);
+        p.append("', \n icon='");
+        p.append(this.c);
+        p.append("', \n displayName='");
+        return c00.k(p, this.d, "'}");
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.c(parcel, 2, this.a.p());
+        bye.l(parcel, 3, this.b);
+        bye.l(parcel, 4, this.c);
+        bye.l(parcel, 5, this.d);
+        bye.s(parcel, r);
     }
 }

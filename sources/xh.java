@@ -1,22 +1,38 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xh extends g4c {
-    public final /* synthetic */ AlertDialog$Builder e;
+public final class xh implements TextWatcher {
+    public final /* synthetic */ short a;
+    public final /* synthetic */ NumberTextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xh(String str, AlertDialog$Builder alertDialog$Builder) {
-        super(str, (vib) null);
-        this.e = alertDialog$Builder;
+    /* JADX WARN: Multi-variable type inference failed */
+    public xh(int i, NumberTextView numberTextView) {
+        this.a = i;
+        this.b = numberTextView;
     }
 
-    @Override // g4c, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.e.a.M0.run();
-        super.onClick(view);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int codePointCount = this.a - Character.codePointCount(editable, 0, editable.length());
+        NumberTextView numberTextView = this.b;
+        if (codePointCount >= 30) {
+            hl.R3(numberTextView, false);
+        } else {
+            numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+            hl.R3(numberTextView, true);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

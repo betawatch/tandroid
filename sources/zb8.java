@@ -1,55 +1,33 @@
 // default package
 
-import java.util.Locale;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zb8 {
-    public static final zb8 d = new zb8(1.0f);
-    public static final String e;
-    public static final String f;
-    public final float a;
-    public final float b;
-    public final int c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class zb8 extends cgc {
+    public final /* synthetic */ PhotoViewer i0;
 
-    static {
-        String str = g8c.a;
-        e = "0";
-        f = "1";
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zb8(PhotoViewer photoViewer, Context context, fa8 fa8Var) {
+        super(context, fa8Var);
+        this.i0 = photoViewer;
     }
 
-    public zb8(float f2, float f3) {
-        gre.f(f2 > 0.0f);
-        gre.f(f3 > 0.0f);
-        this.a = f2;
-        this.b = f3;
-        this.c = Math.round(f2 * 1000.0f);
+    @Override // android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        Drawable[] drawableArr = PhotoViewer.d9;
+        this.i0.R2();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.view.View
+    public final void setVisibility(int i) {
+        super.setVisibility(i);
+        if (i == 0) {
+            Drawable[] drawableArr = PhotoViewer.d9;
+            this.i0.R2();
         }
-        if (obj != null && zb8.class == obj.getClass()) {
-            zb8 zb8Var = (zb8) obj;
-            if (this.a == zb8Var.a && this.b == zb8Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Float.floatToRawIntBits(this.b) + ((Float.floatToRawIntBits(this.a) + 527) * 31);
-    }
-
-    public final String toString() {
-        Object[] objArr = {Float.valueOf(this.a), Float.valueOf(this.b)};
-        String str = g8c.a;
-        return String.format(Locale.US, "PlaybackParameters(speed=%.2f, pitch=%.2f)", objArr);
-    }
-
-    public zb8(float f2) {
-        this(f2, 1.0f);
     }
 }

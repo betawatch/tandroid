@@ -1,31 +1,42 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.Switch;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class qcb extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Switch b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class qcb extends nn5 {
+    public final ArrayList a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
 
-    public /* synthetic */ qcb(Switch r1, byte b) {
-        this.a = b;
-        this.b = r1;
+    public qcb(TL_stories.StoryItem storyItem) {
+        for (int i = 0; i < storyItem.media_areas.size(); i++) {
+            if (storyItem.media_areas.get(i) instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                if (this.a == null) {
+                    this.a = new ArrayList();
+                }
+                this.a.add(new ncb(this, (TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i)));
+            } else if (storyItem.media_areas.get(i) instanceof TL_stories.TL_mediaAreaWeather) {
+                if (this.a == null) {
+                    this.a = new ArrayList();
+                }
+                this.a.add(new pcb(this, (TL_stories.TL_mediaAreaWeather) storyItem.media_areas.get(i)));
+            }
+        }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        Switch r1 = this.b;
-        switch (b) {
-            case 0:
-                r1.d = null;
-                break;
-            default:
-                r1.e = null;
-                break;
+    @Override // nn5
+    public final void a(ImageReceiver imageReceiver) {
+        ArrayList arrayList = this.a;
+        if (arrayList != null) {
+            for (int i = 0; i < arrayList.size(); i++) {
+                ((mcb) arrayList.get(i)).c(imageReceiver.e);
+                ((mcb) arrayList.get(i)).b(true);
+            }
         }
     }
 }

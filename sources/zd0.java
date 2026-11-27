@@ -1,42 +1,38 @@
 // default package
 
-import java.util.regex.Pattern;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zd0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lo b;
+    public final /* synthetic */ Object c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zd0 extends tn5 {
-    public static final Pattern e = Pattern.compile("`+");
-    public static final Pattern f = Pattern.compile("^`+");
-
-    @Override // tn5
-    public final tg6 b() {
-        String a;
-        String a2 = a(f);
-        if (a2 == null) {
-            return null;
-        }
-        int i = this.d;
-        do {
-            a = a(e);
-            if (a == null) {
-                this.d = i;
-                return e(a2);
-            }
-        } while (!a.equals(a2));
-        cj2 cj2Var = new cj2((byte) 0);
-        String replace = this.c.substring(i, this.d - a2.length()).replace('\n', ' ');
-        if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
-            int length = replace.length();
-            if (lqe.b(' ', replace, 0, length) != length) {
-                replace = ir2.n(1, 1, replace);
-            }
-        }
-        cj2Var.h = replace;
-        return cj2Var;
+    public /* synthetic */ zd0(lo loVar, Object obj, byte b) {
+        this.a = b;
+        this.b = loVar;
+        this.c = obj;
     }
 
-    @Override // tn5
-    public final char c() {
-        return '`';
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Object obj = this.c;
+        lo loVar = this.b;
+        switch (b) {
+            case 0:
+                if (loVar.a == 0) {
+                    loVar.p(obj);
+                    break;
+                }
+                break;
+            default:
+                int i = loVar.a - 1;
+                loVar.a = i;
+                if (i == 0) {
+                    loVar.p(obj);
+                    break;
+                }
+                break;
+        }
     }
 }

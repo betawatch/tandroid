@@ -1,13 +1,55 @@
 // default package
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.database.ContentObserver;
+import android.database.Cursor;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class t43 extends GestureDetector.SimpleOnGestureListener {
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        return true;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class t43 extends ContentObserver {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ Object b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t43(gfb gfbVar) {
+        super(new Handler());
+        this.b = gfbVar;
+    }
+
+    @Override // android.database.ContentObserver
+    public final boolean deliverSelfNotifications() {
+        switch (this.a) {
+            case 0:
+                return true;
+            default:
+                return super.deliverSelfNotifications();
+        }
+    }
+
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z) {
+        Cursor cursor;
+        switch (this.a) {
+            case 0:
+                gfb gfbVar = (gfb) this.b;
+                if (!gfbVar.b || (cursor = gfbVar.c) == null || cursor.isClosed()) {
+                    return;
+                }
+                gfbVar.a = gfbVar.c.requery();
+                return;
+            default:
+                iad iadVar = (iad) this.b;
+                synchronized (iadVar.d) {
+                    iadVar.e = null;
+                }
+                ((iad) this.b).b();
+                return;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t43(iad iadVar) {
+        super(null);
+        this.b = iadVar;
     }
 }

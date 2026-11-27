@@ -1,42 +1,26 @@
 // default package
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class w0b extends n39 {
-    public final Activity c;
-    public final /* synthetic */ x0b d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class w0b extends d79 {
+    public int f3;
+    public final /* synthetic */ w1b g3;
 
-    public w0b(x0b x0bVar, Activity activity) {
-        this.d = x0bVar;
-        this.c = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w0b(w1b w1bVar, Context context) {
+        super(context, null);
+        this.g3 = w1bVar;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return false;
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.d.c.size();
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        es esVar = (es) s49Var.a;
-        ArrayList arrayList = this.d.c;
-        esVar.b((TLRPC.StickerSetCovered) arrayList.get(i), i != arrayList.size() - 1);
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        es esVar = new es(this.c, false);
-        esVar.setLayoutParams(new e49(-1, gl.L(82.0f)));
-        return new y29(esVar);
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        b1b b1bVar;
+        super.onMeasure(i, i2);
+        if (this.f3 != getMeasuredHeight() && (b1bVar = this.g3.X) != null) {
+            b1bVar.f();
+        }
+        this.f3 = getMeasuredHeight();
     }
 }

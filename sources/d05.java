@@ -1,36 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d05 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ i8c b;
-    public final /* synthetic */ Exception c;
+import android.content.Context;
+import android.os.Looper;
+import com.google.android.gms.common.api.Scope;
+import java.util.Iterator;
+import java.util.Set;
 
-    public /* synthetic */ d05(i8c i8cVar, Exception exc, byte b) {
-        this.a = b;
-        this.b = i8cVar;
-        this.c = exc;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class d05 extends hg0 {
+    public final Set E;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Exception exc = this.c;
-        i8c i8cVar = this.b;
-        switch (b) {
-            case 0:
-                i8cVar.a(null, exc.getMessage() != null ? exc.getMessage() : "NULL_ERROR");
-                break;
-            case 1:
-                i8cVar.a(null, exc.getMessage() != null ? exc.getMessage() : "NULL_ERROR");
-                break;
-            case 2:
-                i8cVar.a(null, exc.getMessage());
-                break;
-            default:
-                i8cVar.a(null, exc.getMessage());
-                break;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public d05(int i, k05 k05Var, l05 l05Var, oxb oxbVar, Context context, Looper looper) {
+        super(context, looper, r5, i, new i09((Object) k05Var, (byte) 25), new k09(l05Var, (byte) 22), (String) oxbVar.e);
+        aef aefVar;
+        synchronized (aef.g) {
+            aef aefVar2 = aef.h;
+            if (aefVar2 == null) {
+                aefVar2 = new aef(context.getApplicationContext(), context.getMainLooper());
+                aef.h = aefVar2;
+            }
+            aefVar = aefVar2;
         }
+        Object obj = i05.d;
+        xve.h(k05Var);
+        xve.h(l05Var);
+        Set set = (Set) oxbVar.b;
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            if (!set.contains((Scope) it.next())) {
+                grb.i("Expanding scopes is not permitted, use implied scopes instead");
+                throw null;
+            }
+        }
+        this.E = set;
     }
 }

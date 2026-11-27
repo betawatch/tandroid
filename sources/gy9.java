@@ -1,39 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class gy9 extends View {
-    public final Paint a;
-    public int b;
-    public LinearGradient c;
-    public final /* synthetic */ iy9 d;
+public final /* synthetic */ class gy9 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ky9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gy9(iy9 iy9Var, Context context) {
-        super(context);
-        this.d = iy9Var;
-        this.a = new Paint(1);
-        this.b = bkb.v0(bkb.g5, iy9Var.J0);
-        this.c = new LinearGradient(0.0f, 0.0f, 0.0f, gl.L(68.0f), new int[]{bkb.p1(0.0f, this.b), this.b}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
+    public /* synthetic */ gy9(ky9 ky9Var, byte b) {
+        this.a = b;
+        this.b = ky9Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int v0 = bkb.v0(bkb.g5, this.d.J0);
-        if (v0 != this.b) {
-            this.b = v0;
-            this.c = new LinearGradient(0.0f, 0.0f, 0.0f, gl.L(68.0f), new int[]{bkb.p1(0.0f, v0), v0}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        ky9 ky9Var = this.b;
+        switch (b) {
+            case 0:
+                if (ky9Var.Z == null) {
+                    ky9Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                ky9Var.dismiss();
+                break;
         }
-        LinearGradient linearGradient = this.c;
-        Paint paint = this.a;
-        paint.setShader(linearGradient);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 }

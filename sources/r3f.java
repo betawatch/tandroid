@@ -1,36 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r3f extends vef {
-    private static final r3f zzb;
-    private int zzd;
-    private int zze;
+public final class r3f implements zq7 {
+    public static final r3f a = new r3f();
 
     static {
-        r3f r3fVar = new r3f();
-        zzb = r3fVar;
-        vef.e(r3f.class, r3fVar);
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)));
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", cff.r});
-        }
-        if (i2 == 3) {
-            return new r3f();
-        }
-        if (i2 == 4) {
-            return new v8e(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        throw null;
     }
 }

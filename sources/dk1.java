@@ -1,17 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class dk1 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public int d;
-    public int e = kk7.d4;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class dk1 extends bk1 {
+    public final char a;
+    public final char b;
 
-    public dk1(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
+    public dk1(char c, char c2) {
+        this.a = c;
+        this.b = c2;
+    }
+
+    @Override // fk1
+    public final boolean b(char c) {
+        return c == this.a || c == this.b;
+    }
+
+    public final String toString() {
+        return "CharMatcher.anyOf(\"" + fk1.d(this.a) + fk1.d(this.b) + "\")";
     }
 }

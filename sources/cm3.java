@@ -1,106 +1,25 @@
 // default package
 
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.d;
+import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class cm3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jm3 b;
+public final class cm3 {
+    public final String a;
+    public final long b;
+    public final TL_aicompose.AiComposeTone c;
+    public final boolean d;
+    public String e;
+    public int f;
 
-    public /* synthetic */ cm3(jm3 jm3Var, byte b) {
-        this.a = b;
-        this.b = jm3Var;
+    public cm3(String str, long j, TL_aicompose.AiComposeTone aiComposeTone, boolean z) {
+        this.a = str;
+        this.b = j;
+        this.c = aiComposeTone;
+        this.d = z;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        mm3 mm3Var;
-        mm3 mm3Var2;
-        mm3 mm3Var3;
-        byte b = this.a;
-        byte b2 = 1;
-        jm3 jm3Var = this.b;
-        switch (b) {
-            case 0:
-                if (!jm3Var.q() && (mm3Var = jm3Var.s) != null) {
-                    mm3Var.setShown(false);
-                    break;
-                }
-                break;
-            case 1:
-                if (!jm3Var.q() && (mm3Var2 = jm3Var.s) != null) {
-                    mm3Var2.e();
-                    break;
-                }
-                break;
-            case 2:
-                ex1 ex1Var = jm3Var.f.a.F0;
-                if (ex1Var != null) {
-                    ex1Var.requestFocus();
-                    break;
-                }
-                break;
-            case 3:
-                ChatActivityEnterView chatActivityEnterView = jm3Var.f.a;
-                chatActivityEnterView.G1 = 0L;
-                chatActivityEnterView.H1 = null;
-                break;
-            case 4:
-                d dVar = jm3Var.f;
-                String z = jm3Var.z();
-                hj3 hj3Var = new hj3(jm3Var, (byte) 3);
-                dVar.getClass();
-                ChatActivityEnterView chatActivityEnterView2 = dVar.a;
-                a1 a1Var = new a1(chatActivityEnterView2.getContext(), chatActivityEnterView2.L4);
-                a1Var.o1(z);
-                a1Var.e2 = hj3Var;
-                a1Var.show();
-                break;
-            case 5:
-                ex1 ex1Var2 = jm3Var.f.a.F0;
-                if (ex1Var2 != null) {
-                    ex1Var2.requestFocus();
-                    break;
-                }
-                break;
-            case 6:
-                if (jm3Var.r == 3 && (mm3Var3 = jm3Var.s) != null) {
-                    mm3Var3.e();
-                    break;
-                }
-                break;
-            case 7:
-                byte b3 = jm3Var.r;
-                if (b3 == 3 || b3 == 4) {
-                    jm3Var.w.setIsland(true);
-                    break;
-                }
-                break;
-            case 8:
-                if (jm3Var.r == 1) {
-                    jm3Var.M(true);
-                    break;
-                }
-                break;
-            case 9:
-                if (jm3Var.r == 1) {
-                    jm3Var.M(false);
-                    break;
-                }
-                break;
-            case 10:
-                jm3Var.b(0.0f, 320L, s33.h);
-                gl.d3(new cm3(jm3Var, b2), 360L);
-                break;
-            default:
-                if (!jm3Var.q()) {
-                    jm3Var.f.a.L1(null, true);
-                    jm3Var.b(0.0f, 240L, s33.g);
-                    break;
-                }
-                break;
-        }
+    public final String a() {
+        return this.d ? ob6.M0(2131744979, null) : this.a;
     }
 }

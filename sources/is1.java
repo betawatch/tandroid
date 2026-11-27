@@ -1,66 +1,16 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class is1 extends i98 {
-    public final /* synthetic */ k27 a;
-    public final /* synthetic */ jm6 b;
-    public final /* synthetic */ mu1 c;
+public final class is1 implements df7 {
+    public final /* synthetic */ zu1 a;
 
-    public is1(mu1 mu1Var, k27 k27Var, jm6 jm6Var) {
-        this.c = mu1Var;
-        this.a = k27Var;
-        this.b = jm6Var;
+    public is1(zu1 zu1Var) {
+        this.a = zu1Var;
     }
 
-    @Override // i98, o98
-    public final void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
-        mu1 mu1Var = this.c;
-        if (mu1Var.H5 != this.a) {
-            return;
-        }
-        jm6 jm6Var = this.b;
-        if (jm6Var.w || jm6Var.v || jm6Var.u || oacVar != null) {
-            mu1Var.E(jm6Var, oacVar, z, i2, z2, 0L);
-        } else {
-            mu1Var.a0.t0();
-        }
-    }
-
-    @Override // i98, o98
-    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        return this.c.V6(this.a, null, i, z, true);
-    }
-
-    @Override // i98, o98
-    public final boolean P() {
-        mu1 mu1Var = this.c;
-        if (mu1Var.a0 == null || !mu1Var.Q7()) {
-            return false;
-        }
-        mu1Var.a0.S();
-        return true;
-    }
-
-    @Override // i98, o98
-    public final k27 V() {
-        k27 k27Var = this.c.H5;
-        k27 k27Var2 = this.a;
-        if (k27Var == k27Var2) {
-            return k27Var2;
-        }
-        return null;
-    }
-
-    @Override // i98, o98
-    public final void f(CharSequence charSequence) {
-        this.c.a0.G1(charSequence, false);
-    }
-
-    @Override // i98, o98
-    public final boolean h() {
-        return false;
+    @Override // df7
+    public final void a(int i) {
+        this.a.m8(i);
     }
 }

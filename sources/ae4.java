@@ -1,42 +1,46 @@
 // default package
 
-import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ae4 extends u26 {
-    public final /* synthetic */ xe2 r;
+public final class ae4 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
+    public final /* synthetic */ ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ae4(xe2 xe2Var, Context context) {
-        super(context);
-        this.r = xe2Var;
+    public /* synthetic */ ae4(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, byte b) {
+        this.a = b;
+        this.e = viewGroup;
+        this.c = view;
+        this.b = frameLayout;
+        this.d = onPreDrawListener;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0032, code lost:
-    
-        if ((gl.L(21.0f) + r6.getRight()) > ((he4) r5.r.J).getMeasuredWidth()) goto L12;
-     */
-    @Override // u26, o49
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, n49 n49Var) {
-        int j = j(o(), view);
-        if (j > 0 || (j == 0 && view.getLeft() - gl.L(21.0f) < 0)) {
-            j += gl.L(60.0f);
-        } else {
-            if (j >= 0) {
-                if (j == 0) {
-                }
-            }
-            j -= gl.L(60.0f);
-        }
-        int k = k(p(), view);
-        int max = Math.max(kk7.J2, m((int) Math.sqrt((k * k) + (j * j))));
-        if (max > 0) {
-            n49Var.b(-j, -k, max, this.j);
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        byte b = this.a;
+        View view = this.c;
+        ViewGroup viewGroup = this.e;
+        switch (b) {
+            case 0:
+                ((he4) viewGroup).y = null;
+                a81 a81Var = (a81) view;
+                a81Var.animate().cancel();
+                a81Var.animate().alpha(0.0f).setDuration(150L).setListener(new cn2(this, (byte) 20));
+                break;
+            default:
+                ((i56) viewGroup).s = null;
+                a81 a81Var2 = (a81) view;
+                a81Var2.animate().cancel();
+                a81Var2.animate().alpha(0.0f).setDuration(150L).setListener(new ad5(this, (byte) 10));
+                break;
         }
     }
 }

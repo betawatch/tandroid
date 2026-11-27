@@ -5,30 +5,30 @@ import android.graphics.Point;
 import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class RendererCommon {
-    private static float BALANCED_VISIBLE_FRACTION = 0.5625f;
+    private static final float BALANCED_VISIBLE_FRACTION = 0.5625f;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface GlDrawer {
-        void drawOes(int i, int i2, int i3, int i4, int i5, float[] fArr, int i6, int i7, int i8, int i9, int i10, int i11, boolean z);
+        void drawOes(int i, float[] fArr, int i2, int i3, int i4, int i5, int i6, int i7);
 
-        void drawRgb(int i, int i2, int i3, int i4, int i5, float[] fArr, int i6, int i7, int i8, int i9, int i10, int i11, boolean z);
+        void drawRgb(int i, float[] fArr, int i2, int i3, int i4, int i5, int i6, int i7);
 
-        void drawYuv(int[] iArr, int i, int i2, int i3, int i4, float[] fArr, int i5, int i6, int i7, int i8, int i9, int i10, boolean z);
+        void drawYuv(int[] iArr, float[] fArr, int i, int i2, int i3, int i4, int i5, int i6);
 
         void release();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface RendererEvents {
         void onFirstFrameRendered();
 
         void onFrameResolutionChanged(int i, int i2, int i3);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum ScalingType {
         SCALE_ASPECT_FIT,
         SCALE_ASPECT_FILL,
@@ -69,7 +69,7 @@ public class RendererCommon {
         if (ordinal == 2) {
             return BALANCED_VISIBLE_FRACTION;
         }
-        sc8.e();
+        iy8.d();
         return 0.0f;
     }
 
@@ -97,7 +97,7 @@ public class RendererCommon {
         return fArr;
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class VideoLayoutMeasure {
         private float visibleFractionMatchOrientation;
         private float visibleFractionMismatchOrientation;
@@ -108,28 +108,18 @@ public class RendererCommon {
             this.visibleFractionMismatchOrientation = RendererCommon.convertScalingTypeToVisibleFraction(scalingType);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x0050, code lost:
-        
-            if ((r11 > 1.0f) == (r12 > 1.0f)) goto L31;
-         */
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public Point measure(boolean z, int i, int i2, int i3, int i4) {
+        public Point measure(int i, int i2, int i3, int i4) {
             int defaultSize = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i);
             int defaultSize2 = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i2);
             if (i3 == 0 || i4 == 0 || defaultSize == 0 || defaultSize2 == 0) {
                 return new Point(defaultSize, defaultSize2);
             }
             float f = i3 / i4;
-            float f2 = defaultSize / defaultSize2;
-            Point displaySize = RendererCommon.getDisplaySize(((f > 1.0f ? 1 : (f == 1.0f ? 0 : -1)) > 0) == ((f2 > 1.0f ? 1 : (f2 == 1.0f ? 0 : -1)) > 0) ? this.visibleFractionMatchOrientation : this.visibleFractionMismatchOrientation, f, defaultSize, defaultSize2);
-            if (!z) {
-                if (View.MeasureSpec.getMode(i) == 1073741824) {
-                    displaySize.x = defaultSize;
-                }
-                if (View.MeasureSpec.getMode(i2) != 1073741824) {
-                }
+            Point displaySize = RendererCommon.getDisplaySize(((f > 1.0f ? 1 : (f == 1.0f ? 0 : -1)) > 0) == (((float) defaultSize) / ((float) defaultSize2) > 1.0f) ? this.visibleFractionMatchOrientation : this.visibleFractionMismatchOrientation, f, defaultSize, defaultSize2);
+            if (View.MeasureSpec.getMode(i) == 1073741824) {
+                displaySize.x = defaultSize;
+            }
+            if (View.MeasureSpec.getMode(i2) == 1073741824) {
                 displaySize.y = defaultSize2;
             }
             return displaySize;

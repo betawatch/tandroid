@@ -1,7 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface s29 {
-    void f();
+import android.os.Bundle;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class s29 {
+    public static final String a;
+
+    static {
+        String str = gcc.a;
+        a = "0";
+    }
+
+    public static s29 a(Bundle bundle) {
+        String str = a;
+        int i = bundle.getInt(str, -1);
+        if (i == 0) {
+            String str2 = vf5.d;
+            yve.f(bundle.getInt(str, -1) == 0);
+            return bundle.getBoolean(vf5.d, false) ? new vf5(bundle.getBoolean(vf5.e, false)) : new vf5();
+        }
+        if (i == 1) {
+            String str3 = u68.c;
+            yve.f(bundle.getInt(str, -1) == 1);
+            float f = bundle.getFloat(u68.c, -1.0f);
+            return f == -1.0f ? new u68() : new u68(f);
+        }
+        if (i == 2) {
+            String str4 = fva.d;
+            yve.f(bundle.getInt(str, -1) == 2);
+            int i2 = bundle.getInt(fva.d, 5);
+            float f2 = bundle.getFloat(fva.e, -1.0f);
+            return f2 == -1.0f ? new fva(i2) : new fva(i2, f2);
+        }
+        if (i != 3) {
+            lq5.j(uh9.k(i, "Unknown RatingType: "));
+            return null;
+        }
+        String str5 = krb.d;
+        yve.f(bundle.getInt(str, -1) == 3);
+        return bundle.getBoolean(krb.d, false) ? new krb(bundle.getBoolean(krb.e, false)) : new krb();
+    }
+
+    public abstract boolean b();
+
+    public abstract Bundle c();
 }

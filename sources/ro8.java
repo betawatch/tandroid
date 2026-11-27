@@ -1,130 +1,18 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.DataAutoDownloadActivity;
-import org.telegram.ui.DataSettingsActivity;
-import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProxyListActivity;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ro8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ro8 extends ax2 {
+    public ad4 a;
+    public /* synthetic */ Object b;
+    public int c;
 
-    public /* synthetic */ ro8(d dVar, byte b) {
-        this.a = b;
-        this.b = dVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        d dVar = this.b;
-        switch (b) {
-            case 0:
-                dVar.presentFragment(new r61());
-                break;
-            case 1:
-                dVar.presentFragment(new r61());
-                break;
-            case 2:
-                dVar.presentFragment(new h83());
-                break;
-            case 3:
-                dVar.presentFragment(new NotificationsCustomSettingsActivity(1, new ArrayList(), null, true));
-                break;
-            case 4:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 5:
-                dVar.presentFragment(new DataAutoDownloadActivity(0));
-                break;
-            case 6:
-                dVar.presentFragment(new DataAutoDownloadActivity(1));
-                break;
-            case 7:
-                dVar.presentFragment(new DataAutoDownloadActivity(2));
-                break;
-            case 8:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 9:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 10:
-                jh8 jh8Var = new jh8(dVar, 3, false);
-                jh8Var.F0();
-                dVar.showDialog(jh8Var);
-                break;
-            case 11:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 12:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 13:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 14:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 15:
-                dVar.presentFragment(new NotificationsCustomSettingsActivity(0, new ArrayList(), null, true));
-                break;
-            case 16:
-                dVar.presentFragment(new ProxyListActivity());
-                break;
-            case 17:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 18:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 19:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 20:
-                dVar.presentFragment(new DataSettingsActivity());
-                break;
-            case 21:
-                jh8 jh8Var2 = new jh8(dVar, 4, false);
-                jh8Var2.F0();
-                dVar.showDialog(jh8Var2);
-                break;
-            case 22:
-                dVar.presentFragment(new hmc());
-                break;
-            case 23:
-                hmc.K0(dVar.getContext(), dVar.getResourceProvider());
-                break;
-            case 24:
-                ij.q0(7, null, dVar);
-                break;
-            case 25:
-                ij.q0(8, null, dVar);
-                break;
-            case 26:
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.V0 = true;
-                dVar.presentFragment(themeActivity);
-                break;
-            case 27:
-                de9.o(1, dVar);
-                break;
-            case 28:
-                dVar.presentFragment(new PremiumPreviewFragment(0, "summarize_limit"));
-                break;
-            default:
-                if (u21.a(dVar)) {
-                    u21.b0(dVar).I(R.raw.contact_check, k96.M0(2131742907, null), k96.M0(2131742906, null)).j();
-                    break;
-                }
-                break;
-        }
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.c |= TLObject.FLAG_31;
+        return fwe.a(null, null, this);
     }
 }

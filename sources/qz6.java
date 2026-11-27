@@ -1,67 +1,92 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.Surface;
+import android.view.SurfaceHolder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class qz6 extends i98 {
-    public final /* synthetic */ uz6 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class qz6 implements SurfaceHolder {
+    public final Surface a;
+    public final Rect b;
+    public SurfaceHolder.Callback c;
 
-    public qz6(uz6 uz6Var) {
-        this.a = uz6Var;
+    public qz6(Surface surface, int i, int i2) {
+        Rect rect = new Rect();
+        this.b = rect;
+        this.a = surface;
+        rect.set(0, 0, i, i2);
     }
 
-    @Override // i98, o98
-    public final void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
-        if (i >= 0) {
-            uz6 uz6Var = this.a;
-            if (i < uz6Var.Q.size()) {
-                uz6Var.y.c((TLRPC.BotInlineResult) uz6Var.Q.get(i), z, i2);
-            }
+    @Override // android.view.SurfaceHolder
+    public final void addCallback(SurfaceHolder.Callback callback) {
+        this.c = callback;
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final Surface getSurface() {
+        return this.a;
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final Rect getSurfaceFrame() {
+        return this.b;
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final boolean isCreating() {
+        return false;
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final Canvas lockCanvas() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final void removeCallback(SurfaceHolder.Callback callback) {
+        if (this.c == callback) {
+            this.c = null;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0065 A[LOOP:0: B:6:0x001d->B:13:0x0065, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003c A[SYNTHETIC] */
-    @Override // i98, o98
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        ImageReceiver imageReceiver;
-        if (i >= 0) {
-            uz6 uz6Var = this.a;
-            if (i < uz6Var.Q.size()) {
-                int childCount = uz6Var.getListView().getChildCount();
-                Object obj = uz6Var.Q.get(i);
-                for (int i2 = 0; i2 < childCount; i2++) {
-                    View childAt = uz6Var.getListView().getChildAt(i2);
-                    if (childAt instanceof bw2) {
-                        bw2 bw2Var = (bw2) childAt;
-                        if (bw2Var.getResult() == obj) {
-                            imageReceiver = bw2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                p98 p98Var = new p98();
-                                p98Var.b = iArr[0];
-                                p98Var.c = iArr[1];
-                                p98Var.d = uz6Var.getListView();
-                                p98Var.a = imageReceiver;
-                                p98Var.e = imageReceiver.p();
-                                p98Var.h = imageReceiver.z();
-                                return p98Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
+    @Override // android.view.SurfaceHolder
+    public final void setFixedSize(int i, int i2) {
+        this.b.set(0, 0, i, i2);
+        SurfaceHolder.Callback callback = this.c;
+        if (callback != null) {
+            callback.surfaceChanged(this, 1, i, i2);
         }
-        return null;
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final Canvas lockCanvas(Rect rect) {
+        throw new UnsupportedOperationException();
+    }
+
+    public qz6(Surface surface) {
+        this.b = new Rect();
+        this.a = surface;
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final void setSizeFromLayout() {
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final void setFormat(int i) {
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final void setKeepScreenOn(boolean z) {
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final void setType(int i) {
+    }
+
+    @Override // android.view.SurfaceHolder
+    public final void unlockCanvasAndPost(Canvas canvas) {
     }
 }

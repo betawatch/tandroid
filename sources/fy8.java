@@ -1,10 +1,9 @@
 // default package
 
-import android.R;
+import java.util.List;
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class fy8 {
-    public static final int[] a = {R.attr.dither, R.attr.visible, R.attr.variablePadding, R.attr.constantSize, R.attr.enterFadeDuration, R.attr.exitFadeDuration};
-    public static final int[] b = {R.attr.id, R.attr.drawable};
-    public static final int[] c = {R.attr.drawable, R.attr.toId, R.attr.fromId, R.attr.reversible};
+public interface fy8 {
+    void a(gi0 gi0Var, List list);
 }

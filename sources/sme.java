@@ -1,46 +1,19 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class sme extends dzc {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class sme implements zq7 {
+    public static final sme a = new sme();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ sme(TaskCompletionSource taskCompletionSource, byte b) {
-        super((byte) 13);
-        this.b = b;
-        this.c = taskCompletionSource;
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)));
     }
 
-    @Override // dzc
-    public final void P(Status status, nn5 nn5Var) {
-        switch (this.b) {
-            case 0:
-                break;
-            default:
-                status.getClass();
-                dve.a(status, nn5Var, this.c);
-                break;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-    }
-
-    @Override // dzc
-    public final void f(Status status, r44 r44Var) {
-        switch (this.b) {
-            case 0:
-                status.getClass();
-                dve.a(status, r44Var, this.c);
-                break;
-        }
-    }
-
-    private final void T(Status status, r44 r44Var) {
-    }
-
-    private final void U(Status status, nn5 nn5Var) {
+        throw null;
     }
 }

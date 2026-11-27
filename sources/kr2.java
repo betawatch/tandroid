@@ -1,82 +1,50 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.function.IntSupplier;
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class kr2 extends fr2 {
-    public final IntSupplier d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public volatile boolean h;
-    public volatile int i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kr2 extends eu7 implements Serializable {
+    public final Comparator[] a;
 
-    public kr2(String str, IntSupplier intSupplier, int i, int i2, int i3) {
-        super(str);
-        this.d = intSupplier;
-        this.e = i;
-        this.f = i2;
-        this.g = i3;
+    public kr2(d51 d51Var, d51 d51Var2) {
+        this.a = new Comparator[]{d51Var, d51Var2};
     }
 
-    @Override // fr2
-    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
-            return false;
-        }
-        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
-        if (d != Math.rint(d) || d < -2.147483648E9d || d > 2.147483647E9d) {
-            return false;
-        }
-        int max = Math.max(this.e, Math.min(this.f, (int) d));
-        if (max == f()) {
-            return false;
-        }
-        this.i = max;
-        this.h = true;
-        editor.putInt(e(), max);
-        return true;
-    }
-
-    @Override // fr2
-    public final boolean c(SharedPreferences.Editor editor) {
-        if (this.g == 2 && this.h) {
-            int i = this.i;
-            this.h = false;
-            editor.remove(e());
-            if (i != f()) {
-                return true;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i = 0;
+        while (true) {
+            Comparator[] comparatorArr = this.a;
+            if (i >= comparatorArr.length) {
+                return 0;
             }
+            int compare = comparatorArr[i].compare(obj, obj2);
+            if (compare != 0) {
+                return compare;
+            }
+            i++;
+        }
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof kr2) {
+            return Arrays.equals(this.a, ((kr2) obj).a);
         }
         return false;
     }
 
-    @Override // fr2
-    public final void d(SharedPreferences sharedPreferences) {
-        try {
-            if (!sharedPreferences.contains(e())) {
-                this.h = false;
-                return;
-            }
-            this.i = Math.max(this.e, Math.min(this.f, sharedPreferences.getInt(e(), 0)));
-            this.h = true;
-        } catch (ClassCastException e) {
-            fa4.g(e, true);
-            this.h = false;
-        }
-    }
-
-    public final int f() {
-        if (this.h) {
-            return this.i;
-        }
-        return Math.max(this.e, Math.min(this.f, this.d.getAsInt()));
+    public final int hashCode() {
+        return Arrays.hashCode(this.a);
     }
 
     public final String toString() {
-        return this.a + "=" + f();
+        return c00.k(new StringBuilder("Ordering.compound("), Arrays.toString(this.a), ")");
     }
 }

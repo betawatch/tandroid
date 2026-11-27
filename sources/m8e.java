@@ -1,41 +1,19 @@
 // default package
 
-import java.util.Comparator;
-
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class m8e implements Comparator {
-    public static final m8e a;
-    public static final /* synthetic */ m8e[] b;
+public final class m8e implements zq7 {
+    public static final m8e a = new m8e();
 
     static {
-        m8e m8eVar = new m8e("INSTANCE", 0);
-        a = m8eVar;
-        b = new m8e[]{m8eVar};
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)), 3)));
     }
 
-    public static m8e[] values() {
-        return (m8e[]) b.clone();
-    }
-
-    @Override // java.util.Comparator
-    public final /* bridge */ /* synthetic */ int compare(Object obj, Object obj2) {
-        byte[] bArr = (byte[]) obj;
-        byte[] bArr2 = (byte[]) obj2;
-        int min = Math.min(bArr.length, bArr2.length);
-        for (int i = 0; i < min; i++) {
-            int i2 = (bArr[i] & 255) - (bArr2[i] & 255);
-            if (i2 != 0) {
-                return i2;
-            }
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return bArr.length - bArr2.length;
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return "UnsignedBytes.lexicographicalComparator() (pure Java version)";
+        throw null;
     }
 }

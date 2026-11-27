@@ -1,42 +1,23 @@
 // default package
 
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.ContentInfo;
+import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ghc implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ HashSet d;
-    public final /* synthetic */ AtomicInteger e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ String g;
-
-    public /* synthetic */ ghc(VoIPService voIPService, long j, HashSet hashSet, AtomicInteger atomicInteger, int i, String str, byte b) {
-        this.a = b;
-        this.b = voIPService;
-        this.c = j;
-        this.d = hashSet;
-        this.e = atomicInteger;
-        this.f = i;
-        this.g = str;
+public abstract class ghc {
+    public static String[] a(View view) {
+        return view.getReceiveContentMimeTypes();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$startConferenceGroupCall$54(this.c, this.d, this.e, this.f, this.g, tLObject, tL_error);
-                break;
-            default:
-                this.b.lambda$startConferenceGroupCall$46(this.c, this.d, this.e, this.f, this.g, tLObject, tL_error);
-                break;
+    public static bw2 b(View view, bw2 bw2Var) {
+        ContentInfo e = bw2Var.a.e();
+        Objects.requireNonNull(e);
+        ContentInfo performReceiveContent = view.performReceiveContent(e);
+        if (performReceiveContent == null) {
+            return null;
         }
+        return performReceiveContent == e ? bw2Var : new bw2(new zv2(performReceiveContent));
     }
 }

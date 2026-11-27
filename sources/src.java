@@ -1,223 +1,146 @@
 // default package
 
-import android.util.Pair;
-import java.nio.ByteOrder;
-import java.util.Arrays;
-import java.util.List;
+import android.content.Context;
+import android.graphics.Rect;
+import android.graphics.SurfaceTexture;
+import android.view.Choreographer;
+import android.view.MotionEvent;
+import android.view.Surface;
+import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class src implements j74 {
-    public l74 a;
-    public wxb b;
-    public byte c;
-    public long d;
-    public qrc e;
-    public int f;
-    public long g;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class src extends TextureView implements TextureView.SurfaceTextureListener, Choreographer.FrameCallback {
+    public static final prc[] y = new prc[3];
+    public final prc a;
+    public final Rect b;
+    public final Runnable c;
+    public final short d;
+    public rrc e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public float r;
+    public float s;
+    public boolean w;
+    public boolean x;
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01d6  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0240  */
-    @Override // j74
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int b(k74 k74Var, m11 m11Var) {
-        byte[] bArr;
-        int i;
-        int i2;
-        byte[] bArr2;
-        int F;
-        int i3;
-        this.b.getClass();
-        String str = g8c.a;
-        byte b = this.c;
-        if (b == 0) {
-            gre.p(((ja3) k74Var).d == 0);
-            int i4 = this.f;
-            if (i4 != -1) {
-                ((ja3) k74Var).l(i4, false);
-                this.c = (byte) 4;
-                return 0;
-            }
-            ja3 ja3Var = (ja3) k74Var;
-            if (!ldd.a(ja3Var)) {
-                throw av7.a("Unsupported or unrecognized wav file type.", null);
-            }
-            ja3Var.l((int) (ja3Var.f() - ja3Var.d), false);
-            this.c = (byte) 1;
-            return 0;
+    public src(Context context, Runnable runnable, int i) {
+        super(context);
+        this.b = new Rect();
+        this.h = true;
+        this.c = runnable;
+        prc[] prcVarArr = y;
+        if (prcVarArr[i] == null) {
+            prcVarArr[i] = new prc(context.getApplicationContext(), i);
         }
-        long j = -1;
-        if (b == 1) {
-            xu7 xu7Var = new xu7(8);
-            trc a = trc.a((ja3) k74Var, xu7Var);
-            if (a.a != 1685272116) {
-                ((ja3) k74Var).f = 0;
-            } else {
-                ja3 ja3Var2 = (ja3) k74Var;
-                ja3Var2.a(8, false);
-                xu7Var.N(0);
-                ja3Var2.d(xu7Var.a, 0, 8, false);
-                j = xu7Var.p();
-                ja3Var2.l(((int) a.b) + 8, false);
-            }
-            this.d = j;
-            this.c = (byte) 2;
-            return 0;
-        }
-        if (b != 2) {
-            if (b != 3) {
-                if (b != 4) {
-                    sdb.a();
-                    return 0;
-                }
-                gre.p(this.g != -1);
-                long j2 = this.g - ((ja3) k74Var).d;
-                qrc qrcVar = this.e;
-                qrcVar.getClass();
-                return qrcVar.a((ja3) k74Var, j2) ? -1 : 0;
-            }
-            ((ja3) k74Var).f = 0;
-            ja3 ja3Var3 = (ja3) k74Var;
-            trc b2 = ldd.b(1684108385, ja3Var3, new xu7(8));
-            ja3Var3.l(8, false);
-            Pair create = Pair.create(Long.valueOf(ja3Var3.d), Long.valueOf(b2.b));
-            this.f = ((Long) create.first).intValue();
-            long longValue = ((Long) create.second).longValue();
-            long j3 = this.d;
-            if (j3 != -1 && longValue == 4294967295L) {
-                longValue = j3;
-            }
-            long j4 = this.f + longValue;
-            this.g = j4;
-            long j5 = ja3Var3.c;
-            if (j5 != -1 && j4 > j5) {
-                lad.f("WavExtractor", "Data exceeds input length: " + this.g + ", " + j5);
-                this.g = j5;
-            }
-            qrc qrcVar2 = this.e;
-            qrcVar2.getClass();
-            qrcVar2.c(this.f, this.g);
-            this.c = (byte) 4;
-            return 0;
-        }
-        xu7 xu7Var2 = new xu7(16);
-        long j6 = ldd.b(1718449184, (ja3) k74Var, xu7Var2).b;
-        gre.p(j6 >= 16);
-        ja3 ja3Var4 = (ja3) k74Var;
-        ja3Var4.d(xu7Var2.a, 0, 16, false);
-        xu7Var2.N(0);
-        int t = xu7Var2.t();
-        int t2 = xu7Var2.t();
-        int s = xu7Var2.s();
-        xu7Var2.s();
-        int t3 = xu7Var2.t();
-        int t4 = xu7Var2.t();
-        int i5 = ((int) j6) - 16;
-        if (i5 > 0) {
-            bArr = new byte[i5];
-            ja3Var4.d(bArr, 0, i5, false);
-            if (t == 65534 && i5 == 24) {
-                xu7 xu7Var3 = new xu7(bArr);
-                xu7Var3.t();
-                int t5 = xu7Var3.t();
-                if (t5 != 0 && t5 != t4) {
-                    throw av7.d("validBits ( " + t5 + ")  != bitsPerSample( " + t4 + ") are not supported");
-                }
-                int s2 = xu7Var3.s();
-                if ((s2 >> 18) != 0 || (s2 != 0 && Integer.bitCount(s2) != t2)) {
-                    throw av7.d("Channel mask " + s2 + " is invalid or does not match channel count " + t2);
-                }
-                int t6 = xu7Var3.t();
-                byte[] bArr3 = new byte[14];
-                xu7Var3.k(0, 14, bArr3);
-                if (!Arrays.equals(bArr3, ldd.a) && !Arrays.equals(bArr3, ldd.b)) {
-                    throw av7.d("invalid wav format extension guid");
-                }
-                i2 = s2;
-                bArr2 = bArr;
-                i = t6;
-                ja3Var4.l((int) (ja3Var4.f() - ja3Var4.d), false);
-                sk9 sk9Var = new sk9(i, t2, s, t3, t4, i2, bArr2);
-                if (i != 17) {
-                    this.e = new prc(this.a, this.b, sk9Var);
-                } else if (i == 6) {
-                    this.e = new rrc(this.a, this.b, sk9Var, "audio/g711-alaw", -1);
-                } else if (i == 7) {
-                    this.e = new rrc(this.a, this.b, sk9Var, "audio/g711-mlaw", -1);
-                } else {
-                    if (i != 1) {
-                        if (i == 3) {
-                            F = g8c.C(t4, ByteOrder.LITTLE_ENDIAN);
-                            i3 = F;
-                            if (i3 == 0) {
-                            }
-                        } else if (i != 65534) {
-                            i3 = 0;
-                            if (i3 == 0) {
-                                throw av7.d("Unsupported WAV format type: " + i);
-                            }
-                            this.e = new rrc(this.a, this.b, sk9Var, "audio/raw", i3);
-                        }
-                    }
-                    F = g8c.F(t4, ByteOrder.LITTLE_ENDIAN);
-                    i3 = F;
-                    if (i3 == 0) {
-                    }
-                }
-                this.c = (byte) 3;
-                return 0;
-            }
-        } else {
-            bArr = g8c.b;
-        }
-        i = t;
-        i2 = 0;
-        bArr2 = bArr;
-        ja3Var4.l((int) (ja3Var4.f() - ja3Var4.d), false);
-        sk9 sk9Var2 = new sk9(i, t2, s, t3, t4, i2, bArr2);
-        if (i != 17) {
-        }
-        this.c = (byte) 3;
-        return 0;
+        prc prcVar = prcVarArr[i];
+        this.a = prcVar;
+        prcVar.getClass();
+        this.d = (short) 378;
+        setOpaque(false);
+        setSurfaceTextureListener(this);
     }
 
-    @Override // j74
-    public final boolean c(k74 k74Var) {
-        return ldd.a((ja3) k74Var);
+    public abstract void a();
+
+    @Override // android.view.Choreographer.FrameCallback
+    public final void doFrame(long j) {
+        if (!this.f || this.h) {
+            return;
+        }
+        this.c.run();
+        if (this.e != null) {
+            boolean z = isShown() && getWindowVisibility() == 0 && getGlobalVisibleRect(this.b);
+            this.e.e = z ? new qrc(this.r, this.s, this.w, this.x) : null;
+            this.a.c();
+        }
+        Choreographer.getInstance().postFrameCallback(this);
     }
 
-    @Override // j74
-    public final void d(long j, long j2) {
-        this.c = j == 0 ? (byte) 0 : (byte) 4;
-        qrc qrcVar = this.e;
-        if (qrcVar != null) {
-            qrcVar.b(j2);
+    @Override // android.view.TextureView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.f = true;
+        setPaused(this.h);
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        this.n = false;
+        this.f = false;
+        Choreographer.getInstance().removeFrameCallback(this);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+        this.n = false;
+        short s = this.d;
+        surfaceTexture.setDefaultBufferSize(s, s);
+        rrc rrcVar = new rrc(this, new Surface(surfaceTexture), this.d);
+        this.e = rrcVar;
+        prc prcVar = this.a;
+        prcVar.e.add(rrcVar);
+        prcVar.f = (rrc[]) prcVar.e.toArray(new rrc[0]);
+        prcVar.c();
+        setPaused(this.h);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        this.n = false;
+        rrc rrcVar = this.e;
+        this.e = null;
+        if (rrcVar == null) {
+            return true;
+        }
+        prc prcVar = this.a;
+        prcVar.getClass();
+        rrcVar.c = false;
+        prcVar.e.remove(rrcVar);
+        prcVar.f = (rrc[]) prcVar.e.toArray(new rrc[0]);
+        prcVar.b.post(new vlc(prcVar, rrcVar, (byte) 17));
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
+        short s = this.d;
+        surfaceTexture.setDefaultBufferSize(s, s);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        rrc rrcVar;
+        short s = this.d;
+        surfaceTexture.setDefaultBufferSize(s, s);
+        if (this.n || (rrcVar = this.e) == null || !rrcVar.d) {
+            return;
+        }
+        this.n = true;
+        if (getParent() instanceof View) {
+            ((View) getParent()).invalidate();
         }
     }
 
-    @Override // j74
-    public final List e() {
-        km5 km5Var = mm5.b;
-        return w59.e;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // j74
-    public final void f(l74 l74Var) {
-        this.a = l74Var;
-        this.b = l74Var.S(0, 1);
-        l74Var.z();
-    }
-
-    @Override // j74
-    public final j74 a() {
-        return this;
-    }
-
-    @Override // j74
-    public final void release() {
+    public void setPaused(boolean z) {
+        this.h = z;
+        Choreographer.getInstance().removeFrameCallback(this);
+        if (this.f && !z) {
+            Choreographer.getInstance().postFrameCallback(this);
+            return;
+        }
+        rrc rrcVar = this.e;
+        if (rrcVar != null) {
+            rrcVar.e = null;
+            this.a.c();
+        }
     }
 }

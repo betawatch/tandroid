@@ -1,52 +1,50 @@
 // default package
 
-import com.google.android.gms.tasks.CancellationTokenSource;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class rp5 {
-    public static final hc a = new hc(1);
+public final class rp5 extends rh2 {
+    public final o31 s;
+    public lh2 w;
+    public long x;
+    public volatile boolean y;
 
-    public static boolean a(Object obj, Object obj2) {
-        return obj == null ? obj2 == null : obj.equals(obj2);
+    public rp5(h73 h73Var, n73 n73Var, ko4 ko4Var, int i, Object obj, o31 o31Var) {
+        super(h73Var, n73Var, 2, ko4Var, i, obj, -9223372036854775807L, -9223372036854775807L, null);
+        this.s = o31Var;
     }
 
-    public static int b(int i, int i2) {
-        if (i < i2) {
-            return -1;
+    @Override // oa6
+    public final void a() {
+        if (this.x == 0) {
+            this.s.b(this.w, -9223372036854775807L, -9223372036854775807L);
         }
-        return i == i2 ? 0 : 1;
-    }
-
-    public static Task c(Task task, Task task2) {
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource(cancellationTokenSource.getToken());
-        lt2 lt2Var = new lt2((Object) taskCompletionSource, (Object) new AtomicBoolean(false), (Object) cancellationTokenSource, (byte) 1);
-        hc hcVar = a;
-        task.continueWithTask(hcVar, lt2Var);
-        task2.continueWithTask(hcVar, lt2Var);
-        return taskCompletionSource.getTask();
-    }
-
-    public static void d(RuntimeException runtimeException, String str) {
-        StackTraceElement[] stackTrace = runtimeException.getStackTrace();
-        int length = stackTrace.length;
-        int i = -1;
-        for (int i2 = 0; i2 < length; i2++) {
-            if (str.equals(stackTrace[i2].getClassName())) {
-                i = i2;
+        try {
+            n73 b = this.b.b(this.x);
+            b2b b2bVar = this.r;
+            cb3 cb3Var = new cb3(b2bVar, b.e, b2bVar.open(b));
+            while (!this.y) {
+                try {
+                    int b2 = this.s.a.b(cb3Var, o31.s);
+                    boolean z = false;
+                    yve.p(b2 != 1);
+                    if (b2 == 0) {
+                        z = true;
+                    }
+                    if (!z) {
+                        break;
+                    }
+                } finally {
+                    this.x = cb3Var.d - this.b.e;
+                    this.s.a();
+                }
             }
+        } finally {
+            lge.a(this.r);
         }
-        runtimeException.setStackTrace((StackTraceElement[]) Arrays.copyOfRange(stackTrace, i + 1, length));
     }
 
-    public static void e(String str) {
-        gp2 gp2Var = new gp2(tb4.y("lateinit property ", str, " has not been initialized"));
-        d(gp2Var, rp5.class.getName());
-        throw gp2Var;
+    @Override // oa6
+    public final void c() {
+        this.y = true;
     }
 }

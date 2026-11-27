@@ -1,10 +1,56 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class g59 {
-    public static String a(oq4 oq4Var) {
-        String obj = oq4Var.getClass().getGenericInterfaces()[0].toString();
-        return obj.startsWith("kotlin.jvm.functions.") ? obj.substring(21) : obj;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class g59 extends FrameLayout implements snb {
+    public final de0 a;
+    public final lv b;
+    public final Paint c;
+    public TLRPC.Chat d;
+    public final rb0 e;
+
+    public g59(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.e = new rb0((vnb) null);
+        de0 de0Var = new de0(getContext());
+        this.a = de0Var;
+        de0Var.setRoundRadius(hl.L(30.0f));
+        lv lvVar = new lv(context);
+        Paint paint2 = new Paint(1);
+        lvVar.b = paint2;
+        lvVar.c = lvVar.getContext().getDrawable(R.drawable.mini_boost_remove);
+        int i = aob.h5;
+        paint2.setColor(aob.w0(null, i, false));
+        this.b = lvVar;
+        lvVar.setAlpha(0.0f);
+        addView(de0Var, tre.d(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
+        addView(lvVar, tre.d(28, 28.0f, 85, 0.0f, 0.0f, 0.0f, 3.0f));
+        paint.setColor(aob.w0(null, i, false));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, (getMeasuredHeight() / 2.0f) - hl.L(2.0f), this.c);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        this.c.setColor(aob.w0(null, aob.h5, false));
+        invalidate();
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

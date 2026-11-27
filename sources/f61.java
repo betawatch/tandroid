@@ -1,295 +1,222 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.util.LongSparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class f61 extends FrameLayout implements tjb {
-    public float[] E;
-    public final /* synthetic */ r61 F;
-    public final hn a;
-    public final TextView[] b;
-    public final RectF c;
-    public final r86 d;
-    public Float e;
-    public Float f;
-    public final lm h;
-    public final lm n;
-    public final lm r;
-    public final Paint s;
-    public final Paint w;
-    public final Paint x;
-    public Path y;
+public final /* synthetic */ class f61 implements fd, lx5, ska, s69, s84 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ z61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f61(r61 r61Var, Context context) {
-        super(context);
-        this.F = r61Var;
-        this.b = new TextView[3];
-        this.c = new RectF();
-        this.d = new r86();
-        s33 s33Var = s33.h;
-        this.h = new lm(450L, this, s33Var);
-        this.n = new lm(450L, this, s33Var);
-        this.r = new lm(450L, this, s33Var);
-        this.s = new Paint(1);
-        this.w = new Paint(1);
-        this.x = new Paint(1);
-        hn hnVar = new hn(context, false, false, false);
-        this.a = hnVar;
-        hnVar.b(0.35f, 350L, s33Var);
-        hnVar.setTypeface(gl.o());
-        hnVar.setTextSize(gl.L(20.0f));
-        hnVar.setText(k96.M0(2131744579, null));
-        hnVar.setGravity(17);
-        zkb.U(hnVar, bkb.F6, null);
-        addView(hnVar, nme.e(-2, 26, 49));
-        int i = 0;
-        while (i < 3) {
-            this.b[i] = new TextView(context);
-            this.b[i].setTextSize(1, 13.0f);
-            this.b[i].setGravity(17);
-            this.b[i].setPadding(gl.L(24.0f), 0, gl.L(24.0f), 0);
-            if (i == 0) {
-                this.b[i].setText(k96.M0(2131744578, null));
-            } else if (i == 1) {
-                this.b[i].setAlpha(0.0f);
-                this.b[i].setText(k96.M0(2131744576, null));
-                this.b[i].setVisibility(4);
-            } else if (i == 2) {
-                this.b[i].setText(k96.M0(2131744584, null));
-                this.b[i].setAlpha(0.0f);
-                this.b[i].setVisibility(4);
-            }
-            zkb.X(this.b[i], bkb.A6, null);
-            addView(this.b[i], nme.d(-2, -2.0f, 17, 0.0f, i == 2 ? 12.0f : -6.0f, 0.0f, 0.0f));
-            i++;
-        }
-        this.d.f(bkb.w0(null, bkb.y8, false), bkb.p1(0.2f, bkb.w0(null, bkb.A6, false)));
-        this.d.j(4.0f);
-        this.d.setCallback(this);
+    public /* synthetic */ f61(z61 z61Var, byte b) {
+        this.a = b;
+        this.b = z61Var;
     }
 
-    public final void a(float f, float f2, Canvas canvas, Paint paint, RectF rectF) {
-        Path path = this.y;
-        if (path == null) {
-            this.y = new Path();
-        } else {
-            path.rewind();
-        }
-        float[] fArr = this.E;
-        if (fArr == null) {
-            fArr = new float[8];
-            this.E = fArr;
-        }
-        fArr[7] = f;
-        fArr[6] = f;
-        fArr[1] = f;
-        fArr[0] = f;
-        fArr[5] = f2;
-        fArr[4] = f2;
-        fArr[3] = f2;
-        fArr[2] = f2;
-        this.y.addRoundRect(rectF, fArr, Path.Direction.CW);
-        canvas.drawPath(this.y, paint);
+    @Override // s69
+    public final boolean C(View view) {
+        return false;
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.y8));
+    @Override // lx5
+    public final void a(int i) {
+        hl.V3(this.b.b);
     }
 
-    public final void b(float f, float f2, boolean z) {
-        this.a.setText(z ? k96.M0(2131744579, null) : k96.M0(2131744585, null));
-        if (z) {
-            TextView[] textViewArr = this.b;
-            if (f < 0.01f) {
-                textViewArr[1].setText(k96.a0(null, null, 2131744575, r61.k0(f)));
-            } else {
-                textViewArr[1].setText(k96.a0(null, null, 2131744576, r61.k0(f)));
-            }
-            c(1);
-        } else {
-            c(2);
-        }
-        this.e = Float.valueOf(f);
-        this.f = Float.valueOf(f2);
-        invalidate();
+    @Override // ska
+    public final int c() {
+        return this.b.S;
     }
 
-    public final void c(int i) {
-        boolean z = System.currentTimeMillis() - this.F.b0 > 40;
-        TextView[] textViewArr = this.b;
-        d(textViewArr[0], i == 0, z);
-        d(textViewArr[1], i == 1, z);
-        d(textViewArr[2], i == 2, z);
-    }
-
-    public final void d(TextView textView, boolean z, boolean z2) {
-        if (textView == null) {
+    @Override // s69
+    public final void d(float f, float f2, int i, View view) {
+        jc0 jc0Var;
+        z61 z61Var = this.b;
+        ArrayList arrayList = z61Var.g0;
+        if (z61Var.getParentActivity() == null || i < 0 || i >= arrayList.size()) {
             return;
         }
-        if (textView.getParent() == null) {
-            z2 = false;
-        }
-        textView.animate().setListener(null).cancel();
-        final byte b = 1;
-        if (!z2) {
-            textView.setVisibility(z ? (byte) 0 : (byte) 4);
-            textView.setTag(z ? 1 : null);
-            textView.setAlpha(z ? 1.0f : 0.0f);
-            textView.setTranslationY(z ? 0.0f : gl.L(8.0f));
-            invalidate();
-            return;
-        }
-        if (!z) {
-            textView.animate().alpha(0.0f).translationY(gl.L(8.0f)).setListener(new id4(textView)).setInterpolator(s33.h).setDuration(340L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: e61
-                public final /* synthetic */ f61 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    byte b2 = b;
-                    f61 f61Var = this.b;
-                    switch (b2) {
-                        case 0:
-                            f61Var.invalidate();
-                            break;
-                        default:
-                            f61Var.invalidate();
-                            break;
-                    }
-                }
-            }).start();
-            return;
-        }
-        if (textView.getVisibility() != 0) {
-            textView.setVisibility(0);
-            textView.setAlpha(0.0f);
-            textView.setTranslationY(gl.L(8.0f));
-        }
-        textView.animate().alpha(1.0f).translationY(0.0f).setInterpolator(s33.h).setDuration(340L).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: e61
-            public final /* synthetic */ f61 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                byte b2 = r2;
-                f61 f61Var = this.b;
-                switch (b2) {
-                    case 0:
-                        f61Var.invalidate();
-                        break;
-                    default:
-                        f61Var.invalidate();
-                        break;
-                }
-            }
-        }).start();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        RectF rectF;
-        int i;
-        float alpha = 1.0f - this.b[2].getAlpha();
-        float e = this.r.e(false, this.e == null ? 1.0f : 0.0f);
-        Float f = this.e;
-        float floatValue = f == null ? 0.0f : f.floatValue();
-        lm lmVar = this.h;
-        float e2 = lmVar.e(false, floatValue);
-        Float f2 = this.f;
-        float e3 = this.n.e(false, f2 == null ? 0.0f : f2.floatValue());
-        int i2 = bkb.y8;
-        int w0 = bkb.w0(null, i2, false);
-        Paint paint = this.s;
-        paint.setColor(w0);
-        paint.setAlpha((int) (paint.getAlpha() * alpha));
-        RectF rectF2 = gl.P;
-        RectF rectF3 = this.c;
-        float f3 = 1.0f - e;
-        rectF2.set(Math.max((Math.max(gl.L(4.0f), rectF3.width() * e3) * f3) + rectF3.left, (Math.max(gl.L(4.0f), rectF3.width() * e2) * f3) + rectF3.left) + gl.L(1.0f), rectF3.top, rectF3.right, rectF3.bottom);
-        if (rectF2.left >= rectF2.right || rectF2.width() <= gl.L(3.0f)) {
-            rectF = rectF3;
-        } else {
-            rectF = rectF3;
-            a(gl.L(gl.U1(e, 1, 2)), gl.L(2.0f), canvas, paint, rectF2);
-        }
-        r86 r86Var = this.d;
-        r86Var.e(rectF);
-        r86Var.setAlpha((int) (255.0f * alpha * e));
-        r86Var.draw(canvas);
-        int i3 = bkb.g7;
-        int f4 = bm2.f(0.75f, bkb.w0(null, i3, false), bkb.w0(null, i2, false));
-        Paint paint2 = this.x;
-        paint2.setColor(f4);
-        paint2.setAlpha((int) (paint2.getAlpha() * alpha));
-        rectF2.set((Math.max(gl.L(4.0f), rectF.width() * e2) * f3) + rectF.left + gl.L(1.0f), rectF.top, (Math.max(gl.L(4.0f), rectF.width() * e3) * f3) + rectF.left, rectF.bottom);
-        if (rectF2.width() > gl.L(3.0f)) {
-            i = i3;
-            a(gl.L(1.0f), gl.L(e3 > 0.97f ? 2.0f : 1.0f), canvas, paint2, rectF2);
-        } else {
-            i = i3;
-        }
-        int w02 = bkb.w0(null, i, false);
-        Paint paint3 = this.w;
-        paint3.setColor(w02);
-        paint3.setAlpha((int) (paint3.getAlpha() * alpha));
-        float f5 = rectF.left;
-        rectF2.set(f5, rectF.top, (Math.max(gl.L(4.0f), rectF.width() * e2) * f3) + f5, rectF.bottom);
-        a(gl.L(2.0f), gl.L(e2 > 0.97f ? 2.0f : 1.0f), canvas, paint3, rectF2);
-        if (e > 0.0f || lmVar.i) {
-            invalidate();
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        int min = (int) Math.min(gl.L(174.0f), size * 0.8d);
-        measureChildren(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
-        int L = gl.L(72.0f);
-        int i3 = 0;
-        int i4 = 0;
-        while (true) {
-            TextView[] textViewArr = this.b;
-            if (i3 >= textViewArr.length) {
-                setMeasuredDimension(size, L + i4);
-                this.c.set((size - min) / 2.0f, r8 - gl.L(30.0f), (size + min) / 2.0f, r8 - gl.L(26.0f));
+        v61 v61Var = (v61) arrayList.get(i);
+        int i2 = 0;
+        byte b = 1;
+        if (v61Var.a == 11 && (view instanceof sg2)) {
+            int i3 = v61Var.f;
+            if (i3 < 0) {
+                z61Var.M = !z61Var.M;
+                z61Var.A0(true);
+                z61Var.y0();
                 return;
             }
-            i4 = Math.max(i4, textViewArr[i3].getMeasuredHeight() - (i3 == 2 ? gl.L(16.0f) : 0));
-            i3++;
+            boolean[] zArr = z61Var.d;
+            if (i3 < 0) {
+                z61Var.w0(view);
+                return;
+            }
+            if (zArr[i3]) {
+                int i4 = 0;
+                for (int i5 = 0; i5 < 10; i5++) {
+                    if (zArr[i5] && z61Var.u0(i5) > 0) {
+                        i4++;
+                    }
+                }
+                if (i4 <= 1) {
+                    yw0.E.a();
+                    hl.A3(-3.0f, view, null);
+                    return;
+                }
+            }
+            int i6 = v61Var.f;
+            boolean z = !zArr[i6];
+            zArr[i6] = z;
+            ((sg2) view).c(z, true);
+            if (v61Var.i) {
+                while (true) {
+                    if (i2 >= z61Var.b.getChildCount()) {
+                        break;
+                    }
+                    View childAt = z61Var.b.getChildAt(i2);
+                    if (childAt instanceof sg2) {
+                        z61Var.b.getClass();
+                        int S = RecyclerView.S(childAt);
+                        if (S >= 0 && S < arrayList.size() && ((v61) arrayList.get(S)).f < 0) {
+                            ((sg2) childAt).c(z61Var.n0(), true);
+                            break;
+                        }
+                    }
+                    i2++;
+                }
+            }
+            z61Var.y0();
+            return;
+        }
+        if (v61Var.c >= 0) {
+            ox5 ox5Var = new ox5(z61Var, view.getContext());
+            n8 N = jj.N(z61Var, ox5Var, view, f, f2);
+            int i7 = ((v61) arrayList.get(i)).c;
+            ox5Var.d0 = i7;
+            FrameLayout frameLayout = ox5Var.i0;
+            b8 b8Var = ox5Var.W;
+            p66 p66Var = ox5Var.U;
+            nx5 nx5Var = ox5Var.c0;
+            b8 b8Var2 = ox5Var.a0;
+            if (i7 == 3) {
+                b8Var2.setVisibility(0);
+                b8Var.setVisibility(8);
+                frameLayout.setVisibility(8);
+                nx5Var.setVisibility(8);
+                p66Var.setVisibility(8);
+            } else {
+                b8Var2.setVisibility(8);
+                b8Var.setVisibility(0);
+                frameLayout.setVisibility(0);
+                nx5Var.setVisibility(0);
+                p66Var.setVisibility(0);
+            }
+            ArrayList d = ox5Var.e0.d(i7);
+            ox5Var.g0 = d;
+            boolean isEmpty = d.isEmpty();
+            e eVar = ox5Var.h0;
+            if (isEmpty) {
+                ema emaVar = nx5Var.a;
+                jc0 jc0Var2 = nx5Var.b;
+                emaVar.l(ob6.M0(2131754468, null), false);
+                nx5Var.a.setRightPadding(hl.L(8.0f));
+                jc0Var2.b(0, eVar.getCurrentAccount(), null);
+                jc0Var2.b(1, eVar.getCurrentAccount(), null);
+                jc0Var2.b(2, eVar.getCurrentAccount(), null);
+                jc0Var2.a(false);
+            } else {
+                int min = Math.min(3, ox5Var.g0.size());
+                nx5Var.a.setRightPadding(hl.L((Math.max(0, min - 1) * 12) + 64));
+                nx5Var.a.l(ob6.G(ox5Var.g0.size(), "ExceptionShort", Integer.valueOf(ox5Var.g0.size())), false);
+                int i8 = 0;
+                while (true) {
+                    jc0Var = nx5Var.b;
+                    if (i8 >= min) {
+                        break;
+                    }
+                    jc0Var.b(i8, eVar.getCurrentAccount(), eVar.getMessagesController().b2(((u51) ox5Var.g0.get(i8)).a));
+                    i8++;
+                }
+                jc0Var.a(false);
+            }
+            ox5Var.V.setVisibility(8);
+            p66Var.setVisibility(8);
+            ox5Var.g();
+            ox5Var.setParentWindow(N);
+            ox5Var.setCallback(new f61(z61Var, b));
         }
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            r86 r86Var = this.d;
-            if (r86Var != null) {
-                r86Var.f(bkb.w0(null, bkb.y8, false), bkb.p1(0.2f, bkb.w0(null, bkb.A6, false)));
-                invalidate();
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        byte b = this.a;
+        z61 z61Var = this.b;
+        switch (b) {
+            case 4:
+                z61Var.r0(f);
+                break;
+            default:
+                z61Var.z0();
+                z61Var.fragmentView.invalidate();
+                break;
         }
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
+        byte b = this.a;
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        z61 z61Var = this.b;
+        d71 d71Var = z61Var.e0;
+        LongSparseArray longSparseArray = d71Var.c;
+        t61 t61Var = new t61(0L);
+        Iterator it = d71Var.j.iterator();
+        while (it.hasNext()) {
+            c71 c71Var = (c71) it.next();
+            t61Var.a(c71Var, c71Var.d);
+            t61 t61Var2 = (t61) longSparseArray.get(c71Var.b);
+            if (t61Var2 != null) {
+                t61Var2.b(c71Var);
+                if (t61Var2.c <= 0) {
+                    longSparseArray.remove(c71Var.b);
+                    d71Var.b.remove(t61Var2);
+                }
+                ArrayList e = d71Var.e(c71Var.d);
+                if (e != null) {
+                    e.remove(c71Var);
+                }
+            }
+        }
+        if (t61Var.c > 0) {
+            z61Var.e0(t61Var, null, null);
+        }
+        z61Var.e0.d();
+        l61 l61Var = z61Var.N;
+        if (l61Var != null) {
+            l61Var.d();
+            z61Var.N.f(false);
+        }
+        z61Var.A0(true);
+        z61Var.y0();
+    }
+
+    private final void b(float f, int i) {
+    }
+
+    private final void e(float f, int i) {
+    }
+
+    @Override // s69
+    public final void u(View view, float f, float f2) {
     }
 }

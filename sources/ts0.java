@@ -1,101 +1,181 @@
 // default package
 
-import java.util.HashMap;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.PasscodeActivity;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ts0 implements RequestDelegate {
+public final /* synthetic */ class ts0 implements View.OnFocusChangeListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ct0 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ts0(ct0 ct0Var, long j, byte b) {
+    public /* synthetic */ ts0(Object obj, byte b) {
         this.a = b;
-        this.b = ct0Var;
-        this.c = j;
+        this.b = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z) {
+        float f;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
             case 0:
-                final byte b = 1;
-                final ct0 ct0Var = this.b;
-                final long j = this.c;
-                gl.c3(new Runnable() { // from class: ys0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b2 = b;
-                        long j2 = j;
-                        TLObject tLObject2 = tLObject;
-                        ct0 ct0Var2 = ct0Var;
-                        switch (b2) {
-                            case 0:
-                                boolean z = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
-                                HashMap hashMap = ct0Var2.e;
-                                if (z) {
-                                    hashMap.put(Long.valueOf(j2), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap.put(Long.valueOf(j2), null);
-                                }
-                                ct0Var2.d.put(Long.valueOf(j2), Long.valueOf(System.currentTimeMillis()));
-                                kk7.f(ct0Var2.a).k(kk7.D3, Long.valueOf(j2));
-                                break;
-                            default:
-                                boolean z2 = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
-                                HashMap hashMap2 = ct0Var2.c;
-                                if (z2) {
-                                    hashMap2.put(Long.valueOf(j2), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap2.put(Long.valueOf(j2), null);
-                                }
-                                ct0Var2.b.put(Long.valueOf(j2), Long.valueOf(System.currentTimeMillis()));
-                                kk7.f(ct0Var2.a).k(kk7.D3, Long.valueOf(j2));
-                                break;
-                        }
+                ws0 ws0Var = ((at0) obj).W;
+                f = z ? 1.0f : 0.0f;
+                ws0Var.b(f, f, true);
+                break;
+            case 1:
+                ws0 ws0Var2 = ((ij1) obj).K0;
+                f = z ? 1.0f : 0.0f;
+                ws0Var2.b(f, f, true);
+                break;
+            case 2:
+                EditTextBoldCursor editTextBoldCursor = ((qm2) obj).c;
+                if (!z && TextUtils.isEmpty(editTextBoldCursor.getText())) {
+                    editTextBoldCursor.setText("0");
+                    break;
+                }
+                break;
+            case 3:
+                EditTextBoldCursor editTextBoldCursor2 = ((rm2) obj).d;
+                if (!z && TextUtils.isEmpty(editTextBoldCursor2.getText())) {
+                    editTextBoldCursor2.setText("0");
+                    break;
+                }
+                break;
+            case 4:
+                q82 q82Var = (q82) obj;
+                if (!z) {
+                    q82Var.J();
+                    break;
+                } else {
+                    q82Var.K(true);
+                    Runnable runnable = q82Var.h2;
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
                     }
-                });
+                }
+                break;
+            case 5:
+                uj3 uj3Var = (uj3) obj;
+                if (z) {
+                    uj3Var.Z.b(true);
+                    break;
+                }
+                break;
+            case 6:
+                qh6 qh6Var = ((df6) obj).a0;
+                if (z) {
+                    qh6Var.c.setEditText((EditText) view);
+                    qh6Var.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 7:
+                lu7 lu7Var = (lu7) obj;
+                f = z ? 1.0f : 0.0f;
+                lu7Var.b(f, f, true);
+                break;
+            case 8:
+                lu7 lu7Var2 = ((lf6) obj).y;
+                f = z ? 1.0f : 0.0f;
+                lu7Var2.b(f, f, true);
+                break;
+            case 9:
+                lu7 lu7Var3 = ((sf6) obj).b;
+                f = z ? 1.0f : 0.0f;
+                lu7Var3.b(f, f, true);
+                break;
+            case 10:
+                qh6 qh6Var2 = ((vf6) obj).E;
+                if (z) {
+                    qh6Var2.c.setEditText((EditText) view);
+                    qh6Var2.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 11:
+                lu7 lu7Var4 = ((fg6) obj).a;
+                f = z ? 1.0f : 0.0f;
+                lu7Var4.b(f, f, true);
+                break;
+            case 12:
+                qh6 qh6Var3 = ((tg6) obj).v0;
+                if (z) {
+                    qh6Var3.c.setEditText((EditText) view);
+                    qh6Var3.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 13:
+                lu7 lu7Var5 = ((ph6) obj).e;
+                f = z ? 1.0f : 0.0f;
+                lu7Var5.b(f, f, true);
+                break;
+            case 14:
+                ((a77) obj).o1.c(z, !TextUtils.isEmpty(r5.p1.getText()));
+                break;
+            case 15:
+                lm7 lm7Var = (lm7) obj;
+                if (z && lm7Var.y != null) {
+                    lm7Var.K0(true);
+                    lm7Var.y.setCloseButtonVisible(true);
+                    if (!lm7Var.y.r.isFocused()) {
+                        lm7Var.y.r.requestFocus();
+                    }
+                    hl.E3(lm7Var.y.r);
+                    break;
+                }
+                break;
+            case 16:
+                lu7 lu7Var6 = ((PasscodeActivity) obj).f;
+                f = z ? 1.0f : 0.0f;
+                lu7Var6.b(f, f, true);
+                break;
+            case 17:
+                ((km9) obj).o(z);
+                break;
+            case 18:
+                ((h4a) obj).l1.c(z, !TextUtils.isEmpty(r5.m1.getText()));
+                break;
+            case 19:
+                ilb ilbVar = ((xqb) obj).d;
+                if (!z) {
+                    ilbVar.setText(hl.S2(ob6.M0(2131743838, null)));
+                    break;
+                } else {
+                    ilbVar.setText(hl.S2(ob6.M0(2131743837, null)));
+                    break;
+                }
+            case 20:
+                lu7 lu7Var7 = ((TwoStepVerificationActivity) obj).w;
+                f = z ? 1.0f : 0.0f;
+                lu7Var7.b(f, f, true);
                 break;
             default:
-                final byte b2 = 0;
-                final ct0 ct0Var2 = this.b;
-                final long j2 = this.c;
-                gl.c3(new Runnable() { // from class: ys0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b22 = b2;
-                        long j22 = j2;
-                        TLObject tLObject2 = tLObject;
-                        ct0 ct0Var22 = ct0Var2;
-                        switch (b22) {
-                            case 0:
-                                boolean z = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
-                                HashMap hashMap = ct0Var22.e;
-                                if (z) {
-                                    hashMap.put(Long.valueOf(j22), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap.put(Long.valueOf(j22), null);
-                                }
-                                ct0Var22.d.put(Long.valueOf(j22), Long.valueOf(System.currentTimeMillis()));
-                                kk7.f(ct0Var22.a).k(kk7.D3, Long.valueOf(j22));
-                                break;
-                            default:
-                                boolean z2 = tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats;
-                                HashMap hashMap2 = ct0Var22.c;
-                                if (z2) {
-                                    hashMap2.put(Long.valueOf(j22), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap2.put(Long.valueOf(j22), null);
-                                }
-                                ct0Var22.b.put(Long.valueOf(j22), Long.valueOf(System.currentTimeMillis()));
-                                kk7.f(ct0Var22.a).k(kk7.D3, Long.valueOf(j22));
-                                break;
-                        }
+                zuc zucVar = (zuc) obj;
+                if (z) {
+                    zucVar.setError(false);
+                    zucVar.e();
+                    String lowerCase = zucVar.a.getText().toString().trim().toLowerCase();
+                    if (lowerCase.isEmpty()) {
+                        zucVar.a();
+                    } else {
+                        zucVar.f(lowerCase);
                     }
-                });
+                } else {
+                    zucVar.a();
+                    if (!zucVar.w && !zucVar.b()) {
+                        zucVar.setError(true);
+                    }
+                }
+                zucVar.d();
                 break;
         }
     }

@@ -1,19 +1,73 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class th3 extends kx9 {
-    public final /* synthetic */ cj3 e;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public th3(cj3 cj3Var, sh3 sh3Var) {
-        super(sh3Var);
-        this.e = cj3Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class th3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tj3 b;
+
+    public /* synthetic */ th3(tj3 tj3Var, byte b) {
+        this.a = b;
+        this.b = tj3Var;
     }
 
-    @Override // kx9, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.N0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = 1;
+        tj3 tj3Var = this.b;
+        switch (b) {
+            case 0:
+                tj3Var.d.f();
+                break;
+            case 1:
+                uj3 uj3Var = tj3Var.L;
+                qj3 qj3Var = tj3Var.a;
+                if (qj3Var != null && qj3Var.getScrollState() == 0 && tj3Var.a.getChildCount() > 0 && tj3Var.a.getLayoutManager() != null) {
+                    boolean z = tj3Var.s == 0 && uj3Var.y3() && tj3Var.w == 2;
+                    float f = uj3Var.O;
+                    x46 x46Var = (x46) tj3Var.a.getLayoutManager();
+                    View view = null;
+                    int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    int i3 = -1;
+                    for (int i4 = 0; i4 < tj3Var.a.getChildCount(); i4++) {
+                        int S = RecyclerView.S(tj3Var.a.getChildAt(i4));
+                        View childAt = tj3Var.a.getChildAt(i4);
+                        if (S != -1 && childAt != null && childAt.getTop() < i2) {
+                            i2 = childAt.getTop();
+                            i3 = S;
+                            view = childAt;
+                        }
+                    }
+                    if (view != null) {
+                        float top = view.getTop() - tj3Var.a.getPaddingTop();
+                        if (uj3Var.L) {
+                            f = 0.0f;
+                        }
+                        if (tj3Var.a.getScrollState() != 1) {
+                            if (z && i3 == 0 && ((tj3Var.a.getPaddingTop() - view.getTop()) - view.getMeasuredHeight()) + f < 0.0f) {
+                                top = f;
+                            } else {
+                                i = i3;
+                            }
+                            x46Var.g1(i, (int) top);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                tj3Var.d.S(tj3Var.J);
+                tj3Var.L.R = true;
+                qj3 qj3Var2 = tj3Var.a;
+                qj3Var2.k3 = true;
+                tj3Var.I = false;
+                qj3Var2.invalidate();
+                break;
+        }
     }
 }

@@ -1,279 +1,445 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Color;
-import android.net.Uri;
-import android.text.TextUtils;
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Cells.f;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jh1 extends n39 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ wjb d;
-    public final /* synthetic */ lh1 e;
+public final class jh1 extends c79 {
+    public final /* synthetic */ wh1 c;
 
-    public jh1(lh1 lh1Var, int i, wjb wjbVar) {
-        this.e = lh1Var;
-        this.c = i;
-        this.d = wjbVar;
+    public jh1(wh1 wh1Var) {
+        this.c = wh1Var;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return true;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        int i = f89Var.f;
+        return i == 5 || i == 6;
     }
 
-    @Override // w39
+    @Override // j79
     public final int b() {
-        return this.e.c.size();
+        return this.c.S;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(10:(2:48|49)|(15:51|52|53|(1:57)|58|(1:62)|63|(1:67)|68|69|(1:71)|72|(1:74)|75|(1:77))|82|68|69|(0)|72|(0)|75|(0)) */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x02c8  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0166 A[Catch: Exception -> 0x0170, all -> 0x0247, TRY_LEAVE, TryCatch #0 {Exception -> 0x0170, blocks: (B:69:0x015a, B:71:0x0166), top: B:68:0x015a }] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x017c A[Catch: all -> 0x0247, TryCatch #4 {all -> 0x0247, blocks: (B:25:0x006e, B:27:0x007b, B:29:0x009e, B:31:0x00aa, B:34:0x00ae, B:36:0x00b1, B:40:0x00bd, B:38:0x00c1, B:42:0x00c6, B:49:0x00d2, B:53:0x00e2, B:55:0x00fa, B:57:0x0104, B:58:0x0113, B:60:0x011b, B:62:0x0125, B:63:0x0135, B:65:0x013d, B:67:0x0147, B:69:0x015a, B:71:0x0166, B:72:0x0170, B:74:0x017c, B:75:0x0186, B:77:0x018a, B:45:0x0223, B:47:0x022c, B:85:0x0194, B:130:0x019e, B:133:0x023a, B:87:0x01a5, B:89:0x01ae, B:91:0x01bb, B:93:0x01bf, B:95:0x01c3, B:97:0x01c7, B:99:0x01cb, B:101:0x01cf, B:103:0x01db, B:107:0x01e4, B:108:0x01fa, B:110:0x01fe, B:111:0x0201, B:113:0x0205, B:114:0x0208, B:116:0x020c, B:117:0x020f, B:119:0x0213, B:120:0x0216, B:122:0x021a, B:123:0x021d, B:125:0x0221, B:127:0x01e9, B:128:0x01f2), top: B:24:0x006e, inners: #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x018a A[Catch: all -> 0x0247, TryCatch #4 {all -> 0x0247, blocks: (B:25:0x006e, B:27:0x007b, B:29:0x009e, B:31:0x00aa, B:34:0x00ae, B:36:0x00b1, B:40:0x00bd, B:38:0x00c1, B:42:0x00c6, B:49:0x00d2, B:53:0x00e2, B:55:0x00fa, B:57:0x0104, B:58:0x0113, B:60:0x011b, B:62:0x0125, B:63:0x0135, B:65:0x013d, B:67:0x0147, B:69:0x015a, B:71:0x0166, B:72:0x0170, B:74:0x017c, B:75:0x0186, B:77:0x018a, B:45:0x0223, B:47:0x022c, B:85:0x0194, B:130:0x019e, B:133:0x023a, B:87:0x01a5, B:89:0x01ae, B:91:0x01bb, B:93:0x01bf, B:95:0x01c3, B:97:0x01c7, B:99:0x01cb, B:101:0x01cf, B:103:0x01db, B:107:0x01e4, B:108:0x01fa, B:110:0x01fe, B:111:0x0201, B:113:0x0205, B:114:0x0208, B:116:0x020c, B:117:0x020f, B:119:0x0213, B:120:0x0216, B:122:0x021a, B:123:0x021d, B:125:0x0221, B:127:0x01e9, B:128:0x01f2), top: B:24:0x006e, inners: #3 }] */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        boolean z;
-        FileInputStream fileInputStream;
-        boolean z2;
-        int d;
-        int intValue;
-        String queryParameter;
-        String queryParameter2;
-        String queryParameter3;
-        String[] split;
-        anb anbVar = (anb) s49Var.a;
-        lh1 lh1Var = this.e;
-        ArrayList arrayList = lh1Var.c;
-        akb i2 = ((wd2) arrayList.get(i)).a.i(((wd2) arrayList.get(i)).c);
-        if (i2 != null && i2.b != null && !i2.U && new File(i2.b).exists()) {
-            HashMap hashMap = lh1Var.y;
-            if (i2.b != null) {
-                try {
-                    FileInputStream fileInputStream2 = new FileInputStream(new File(i2.b));
-                    int i3 = 0;
-                    boolean z3 = false;
-                    while (true) {
-                        try {
-                            int read = fileInputStream2.read(f.q3);
-                            if (read == -1) {
-                                fileInputStream = fileInputStream2;
-                                break;
-                            }
-                            int i4 = i3;
-                            int i5 = 0;
-                            int i6 = 0;
-                            while (true) {
-                                if (i5 >= read) {
-                                    fileInputStream = fileInputStream2;
-                                    break;
-                                }
-                                byte[] bArr = f.q3;
-                                if (bArr[i5] == 10) {
-                                    int i7 = i5 - i6;
-                                    int i8 = i7 + 1;
-                                    fileInputStream = fileInputStream2;
-                                    try {
-                                        String str = new String(bArr, i6, i7, "UTF-8");
-                                        if (str.startsWith("WLS=")) {
-                                            String substring = str.substring(4);
-                                            Uri parse = Uri.parse(substring);
-                                            i2.e = parse.getQueryParameter("slug");
-                                            i2.c = sqc.d(substring).getAbsolutePath();
-                                            String queryParameter4 = parse.getQueryParameter("mode");
-                                            if (queryParameter4 != null && (split = queryParameter4.toLowerCase().split(" ")) != null && split.length > 0) {
-                                                int i9 = 0;
-                                                while (true) {
-                                                    if (i9 >= split.length) {
-                                                        break;
-                                                    }
-                                                    String[] strArr = split;
-                                                    if ("blur".equals(strArr[i9])) {
-                                                        i2.h = true;
-                                                        break;
-                                                    } else {
-                                                        i9++;
-                                                        split = strArr;
-                                                    }
-                                                }
-                                            }
-                                            if (TextUtils.isEmpty(parse.getQueryParameter("pattern"))) {
-                                                z2 = z3;
-                                            } else {
-                                                try {
-                                                    queryParameter3 = parse.getQueryParameter("bg_color");
-                                                } catch (Exception unused) {
-                                                }
-                                                if (!TextUtils.isEmpty(queryParameter3)) {
-                                                    z2 = z3;
-                                                    try {
-                                                        i2.r = Integer.parseInt(queryParameter3.substring(0, 6), 16) | (-16777216);
-                                                        if (queryParameter3.length() >= 13 && gl.Q1(queryParameter3.charAt(6))) {
-                                                            i2.s = Integer.parseInt(queryParameter3.substring(7, 13), 16) | (-16777216);
-                                                        }
-                                                        if (queryParameter3.length() >= 20 && gl.Q1(queryParameter3.charAt(13))) {
-                                                            i2.w = Integer.parseInt(queryParameter3.substring(14, 20), 16) | (-16777216);
-                                                        }
-                                                        if (queryParameter3.length() == 27 && gl.Q1(queryParameter3.charAt(20))) {
-                                                            i2.x = Integer.parseInt(queryParameter3.substring(21), 16) | (-16777216);
-                                                        }
-                                                    } catch (Exception unused2) {
-                                                    }
-                                                    queryParameter2 = parse.getQueryParameter("rotation");
-                                                    if (!TextUtils.isEmpty(queryParameter2)) {
-                                                        i2.y = Utilities.z(queryParameter2).intValue();
-                                                    }
-                                                    queryParameter = parse.getQueryParameter("intensity");
-                                                    if (!TextUtils.isEmpty(queryParameter)) {
-                                                        i2.E = Utilities.z(queryParameter).intValue();
-                                                    }
-                                                    if (i2.E == 0) {
-                                                        i2.E = 50;
-                                                    }
-                                                }
-                                                z2 = z3;
-                                                queryParameter2 = parse.getQueryParameter("rotation");
-                                                if (!TextUtils.isEmpty(queryParameter2)) {
-                                                }
-                                                queryParameter = parse.getQueryParameter("intensity");
-                                                if (!TextUtils.isEmpty(queryParameter)) {
-                                                }
-                                                if (i2.E == 0) {
-                                                }
-                                            }
-                                        } else {
-                                            z2 = z3;
-                                            if (str.startsWith("WPS")) {
-                                                i2.Q = i4 + i8;
-                                                z3 = true;
-                                                break;
-                                            }
-                                            int indexOf = str.indexOf(61);
-                                            if (indexOf != -1 && ((d = lve.d(str.substring(0, indexOf))) == bkb.qa || d == bkb.qb || d == bkb.De || d == bkb.Ee || d == bkb.Fe || d == bkb.Ge)) {
-                                                String substring2 = str.substring(indexOf + 1);
-                                                if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
-                                                    intValue = Utilities.z(substring2).intValue();
-                                                } else {
-                                                    try {
-                                                        intValue = Color.parseColor(substring2);
-                                                    } catch (Exception unused3) {
-                                                        intValue = Utilities.z(substring2).intValue();
-                                                    }
-                                                }
-                                                if (d == bkb.qa) {
-                                                    i2.R = intValue;
-                                                } else if (d == bkb.qb) {
-                                                    i2.S = intValue;
-                                                } else if (d == bkb.De) {
-                                                    i2.M = intValue;
-                                                } else if (d == bkb.Ee) {
-                                                    i2.N = intValue;
-                                                } else if (d == bkb.Fe) {
-                                                    i2.O = intValue;
-                                                } else if (d == bkb.Ge) {
-                                                    i2.P = intValue;
-                                                }
-                                            }
-                                        }
-                                        i6 += i8;
-                                        i4 += i8;
-                                    } catch (Throwable th) {
-                                        th = th;
-                                        Throwable th2 = th;
-                                        try {
-                                            fileInputStream.close();
-                                            throw th2;
-                                        } catch (Throwable th3) {
-                                            th2.addSuppressed(th3);
-                                            throw th2;
-                                        }
-                                    }
+    @Override // j79
+    public final int d(int i) {
+        wh1 wh1Var = this.c;
+        if (i == wh1Var.T) {
+            return 0;
+        }
+        if (i == wh1Var.X) {
+            return 2;
+        }
+        if (i == wh1Var.a0) {
+            return 1;
+        }
+        if (i == wh1Var.U) {
+            return 3;
+        }
+        if (i == wh1Var.c0) {
+            return 4;
+        }
+        if (i == wh1Var.V || i == wh1Var.d0 || i == wh1Var.g0 || i == wh1Var.i0 || i == wh1Var.k0) {
+            return 6;
+        }
+        return (i == wh1Var.Y || i == wh1Var.f0) ? 5 : 7;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        int i2;
+        TLRPC.StickerSet stickerSet;
+        int i3;
+        TLRPC.StickerSet stickerSet2;
+        int i4;
+        int i5;
+        int i6;
+        wh1 wh1Var = this.c;
+        long j = wh1Var.a;
+        int i7 = f89Var.f;
+        View view = f89Var.a;
+        if (i7 == 1) {
+            ph1 ph1Var = (ph1) view;
+            k38 k38Var = ph1Var.a;
+            oh1 oh1Var = ph1Var.b;
+            i2 = ((e) wh1Var).currentAccount;
+            k38Var.b(i2, wh1Var.s, false);
+            oh1Var.b(wh1Var.s, false);
+            oh1Var.d(wh1Var.x, false, false);
+            oh1Var.setForum(wh1Var.V0());
+            oh1Var.e(wf3.f(wh1Var.E), false, false);
+            oh1Var.a(wh1Var.f);
+            return;
+        }
+        if (i7 == 3) {
+            ((nh1) view).a(wh1Var.f, false);
+            return;
+        }
+        if (i7 == 4) {
+            ((d48) view).a(wh1Var.s, false);
+            return;
+        }
+        if (i7 == 5) {
+            skb skbVar = (skb) view;
+            if (i == wh1Var.f0) {
+                skbVar.k(ob6.M0(2131752294, null), false);
+                return;
+            }
+            skbVar.k(ob6.M0(wh1Var.T0(), null), false);
+            if (wh1Var.b < wh1Var.D0()) {
+                skbVar.j(wh1Var.D0());
+                return;
+            } else {
+                skbVar.j(0);
+                return;
+            }
+        }
+        if (i7 != 6) {
+            if (i7 == 7) {
+                ilb ilbVar = (ilb) view;
+                ilbVar.setFixedSize(0);
+                if (i == wh1Var.b0) {
+                    ilbVar.setFixedSize(12);
+                    ilbVar.setText("");
+                    return;
+                }
+                if (i == wh1Var.W) {
+                    ilbVar.setText(ob6.M0(2131752276, null));
+                    return;
+                }
+                if (i == wh1Var.Z) {
+                    ilbVar.setText(ob6.M0(wh1Var.R0(), null));
+                    return;
+                }
+                if (i == wh1Var.e0) {
+                    ilbVar.setText(ob6.M0(wh1Var.O0(), null));
+                    return;
+                }
+                if (i == wh1Var.h0) {
+                    ilbVar.setText(ob6.M0(wh1Var.I0(), null));
+                    return;
+                }
+                if (i == wh1Var.j0) {
+                    ilbVar.setText(ob6.M0(wh1Var.E0(), null));
+                    return;
+                }
+                if (i == wh1Var.l0) {
+                    ilbVar.setText(ob6.M0(wh1Var.P0(), null));
+                    return;
+                } else {
+                    if (i == 0) {
+                        ilbVar.setText("");
+                        ilbVar.setFixedSize(12);
+                        return;
+                    }
+                    return;
+                }
+            }
+            return;
+        }
+        kh1 kh1Var = (kh1) view;
+        kh1Var.e = false;
+        ema emaVar = kh1Var.a;
+        kh1Var.setWillNotDraw(true);
+        if (i == wh1Var.V) {
+            i6 = ((e) wh1Var).currentAccount;
+            kh1Var.a(i6, wh1Var.f, true);
+            emaVar.l(ob6.M0(2131752275, null), false);
+            if (wh1Var.b < wh1Var.getMessagesController().k4.d2.f()) {
+                kh1Var.e(wh1Var.getMessagesController().k4.d2.f());
+            } else {
+                kh1Var.e(0);
+            }
+            kh1Var.c(wh1Var.n, false, false);
+            return;
+        }
+        if (i == wh1Var.d0) {
+            i5 = ((e) wh1Var).currentAccount;
+            kh1Var.a(i5, wh1Var.s, false);
+            emaVar.l(ob6.M0(2131752289, null), false);
+            boolean z = wh1Var.f0 >= 0;
+            kh1Var.e = z;
+            kh1Var.setWillNotDraw(!z);
+            if (wh1Var.b < wh1Var.N0()) {
+                kh1Var.e(wh1Var.N0());
+            } else {
+                kh1Var.e(0);
+            }
+            kh1Var.c(wh1Var.x, false, false);
+            return;
+        }
+        if (i == wh1Var.g0) {
+            i4 = ((e) wh1Var).currentAccount;
+            kh1Var.a(i4, wh1Var.s, false);
+            emaVar.l(ob6.M0(wh1Var.K0(), null), false);
+            if (wh1Var.b < wh1Var.J0()) {
+                kh1Var.e(wh1Var.J0());
+            } else {
+                kh1Var.e(0);
+            }
+            kh1Var.c(wf3.f(wh1Var.E), wf3.A(wh1Var.E), false);
+            return;
+        }
+        if (i != wh1Var.i0) {
+            if (i == wh1Var.k0) {
+                emaVar.l(ob6.M0(wh1Var.Q0(), null), false);
+                kh1Var.e(0);
+                TLRPC.ChatFull N0 = wh1Var.getMessagesController().N0(-j);
+                if (N0 == null || (stickerSet = N0.stickerset) == null) {
+                    kh1Var.c(0L, false, false);
+                    return;
+                } else {
+                    kh1Var.d(wh1Var.G0(stickerSet));
+                    return;
+                }
+            }
+            return;
+        }
+        i3 = ((e) wh1Var).currentAccount;
+        kh1Var.a(i3, wh1Var.s, false);
+        emaVar.l(ob6.M0(wh1Var.F0(), null), false);
+        if (wh1Var.b < wh1Var.L0()) {
+            kh1Var.e(wh1Var.L0());
+        } else {
+            kh1Var.e(0);
+        }
+        TLRPC.ChatFull N02 = wh1Var.getMessagesController().N0(-j);
+        if (N02 == null || (stickerSet2 = N02.emojiset) == null) {
+            kh1Var.c(0L, false, false);
+        } else {
+            kh1Var.c(wh1Var.H0(stickerSet2), false, false);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        vnb vnbVar;
+        vnb vnbVar2;
+        vnb vnbVar3;
+        int i2;
+        vnb vnbVar4;
+        int i3;
+        vnb vnbVar5;
+        FrameLayout frameLayout;
+        vnb vnbVar6;
+        int i4;
+        vnb vnbVar7;
+        wk5 wk5Var;
+        vnb vnbVar8;
+        int i5;
+        final byte b = 1;
+        wh1 wh1Var = this.c;
+        if (i == 0) {
+            Activity parentActivity = wh1Var.getParentActivity();
+            wk5Var = ((e) wh1Var).parentLayout;
+            int M0 = wh1Var.M0();
+            long j = wh1Var.a;
+            vnbVar8 = ((e) wh1Var).resourceProvider;
+            sqb sqbVar = new sqb(parentActivity, wk5Var, M0, j, vnbVar8);
+            sqbVar.G = true;
+            sqbVar.setImportantForAccessibility(4);
+            sqbVar.x = wh1Var;
+            Drawable drawable = wh1Var.I;
+            i5 = ((e) wh1Var).currentAccount;
+            Drawable e = mm8.e(drawable, i5, wh1Var.G, wh1Var.K);
+            wh1Var.I = e;
+            sqbVar.setOverrideBackground(e);
+            frameLayout = sqbVar;
+        } else {
+            final byte b2 = 0;
+            if (i == 2) {
+                Activity parentActivity2 = wh1Var.getParentActivity();
+                i4 = ((e) wh1Var).currentAccount;
+                vnbVar7 = ((e) wh1Var).resourceProvider;
+                uh1 uh1Var = new uh1(i4, vnbVar7, parentActivity2);
+                uh1Var.setWithRemovedStub(true);
+                String h = af2.h(wh1Var.G);
+                if (h == null && wh1Var.G == null && wh1Var.H != null) {
+                    h = "❌";
+                }
+                uh1Var.a(h, false);
+                uh1Var.setGalleryWallpaper(wh1Var.H);
+                uh1Var.setOnEmoticonSelected(new pcc(this) { // from class: ih1
+                    public final /* synthetic */ jh1 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // pcc
+                    public final void a(Object obj) {
+                        byte b3 = b2;
+                        jh1 jh1Var = this.b;
+                        switch (b3) {
+                            case 0:
+                                String str = (String) obj;
+                                wh1 wh1Var2 = jh1Var.c;
+                                if (str == null) {
+                                    wh1Var2.G = wh1Var2.H;
+                                } else if (str.equals("❌")) {
+                                    wh1Var2.G = null;
                                 } else {
-                                    fileInputStream = fileInputStream2;
-                                    z2 = z3;
+                                    TLRPC.TL_wallPaperNoFile tL_wallPaperNoFile = new TLRPC.TL_wallPaperNoFile();
+                                    wh1Var2.G = tL_wallPaperNoFile;
+                                    tL_wallPaperNoFile.id = 0L;
+                                    tL_wallPaperNoFile.flags |= 4;
+                                    tL_wallPaperNoFile.settings = new TLRPC.TL_wallPaperSettings();
+                                    wh1Var2.G.settings.emoticon = str;
                                 }
-                                i5++;
-                                fileInputStream2 = fileInputStream;
-                                z3 = z2;
-                            }
-                            if (z3 || i3 == i4) {
+                                wh1Var2.e1(true);
+                                wh1Var2.h1(true);
                                 break;
-                            }
-                            fileInputStream.getChannel().position(i4);
-                            i3 = i4;
-                            fileInputStream2 = fileInputStream;
-                        } catch (Throwable th4) {
-                            th = th4;
-                            fileInputStream = fileInputStream2;
+                            default:
+                                wh1 wh1Var3 = jh1Var.c;
+                                wh1Var3.s = ((Integer) obj).intValue();
+                                if (wh1Var3.E instanceof TLRPC.TL_emojiStatusCollectible) {
+                                    wh1Var3.E = null;
+                                }
+                                wh1Var3.e1(true);
+                                wh1Var3.i1();
+                                wh1Var3.g1(true);
+                                break;
                         }
                     }
-                    fileInputStream.close();
-                } catch (Throwable th5) {
-                    fa4.g(th5, true);
-                }
-                if (i2.c == null || i2.f || new File(i2.c).exists()) {
-                    z = true;
-                    i2.U = true;
-                    wd2 wd2Var = (wd2) arrayList.get(i);
-                    anbVar.setEnabled(z);
-                    zkb.h(bkb.h5, null, anbVar);
-                    anbVar.f(wd2Var, 0L, false);
-                    anbVar.g(wd2Var.d, false);
-                    anbVar.setFallbackWallpaper(wd2Var.a.b ? null : lh1Var.w);
-                }
-                if (!hashMap.containsKey(i2)) {
-                    hashMap.put(i2, i2.e);
-                    TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
-                    TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                    tL_inputWallPaperSlug.slug = i2.e;
-                    getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                    ConnectionsManager.getInstance(i2.F).sendRequest(getwallpaper, new pl(lh1Var, i2, (byte) 11));
+                });
+                frameLayout = uh1Var;
+            } else if (i == 5) {
+                frameLayout = new skb(wh1Var.getParentActivity(), wh1Var.getResourceProvider());
+            } else {
+                byte b3 = 6;
+                if (i == 6) {
+                    Activity parentActivity3 = wh1Var.getParentActivity();
+                    vnbVar6 = ((e) wh1Var).resourceProvider;
+                    kh1 kh1Var = new kh1(parentActivity3);
+                    kh1Var.e = false;
+                    kh1Var.d = vnbVar6;
+                    ema emaVar = new ema(parentActivity3);
+                    kh1Var.a = emaVar;
+                    emaVar.setTextSize(16);
+                    yob.W(emaVar, aob.G6, vnbVar6);
+                    kh1Var.addView(emaVar, tre.d(-1, -2.0f, 23, 23.0f, 0.0f, 48.0f, 0.0f));
+                    kh1Var.c = new ul(hl.L(24.0f), 13, kh1Var, false);
+                    frameLayout = kh1Var;
+                } else if (i == 3) {
+                    Activity parentActivity4 = wh1Var.getParentActivity();
+                    i3 = ((e) wh1Var).currentAccount;
+                    vnbVar5 = ((e) wh1Var).resourceProvider;
+                    nh1 nh1Var = new nh1(i3, vnbVar5, parentActivity4);
+                    nh1Var.b.setOnItemClickListener(new l0(this, nh1Var, b3));
+                    frameLayout = nh1Var;
+                } else if (i == 4) {
+                    Activity parentActivity5 = wh1Var.getParentActivity();
+                    i2 = ((e) wh1Var).currentAccount;
+                    vnbVar4 = ((e) wh1Var).resourceProvider;
+                    d48 d48Var = new d48(0, i2, vnbVar4, parentActivity5);
+                    d48Var.setDivider(false);
+                    d48Var.setOnColorClick(new pcc(this) { // from class: ih1
+                        public final /* synthetic */ jh1 b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // pcc
+                        public final void a(Object obj) {
+                            byte b32 = b;
+                            jh1 jh1Var = this.b;
+                            switch (b32) {
+                                case 0:
+                                    String str = (String) obj;
+                                    wh1 wh1Var2 = jh1Var.c;
+                                    if (str == null) {
+                                        wh1Var2.G = wh1Var2.H;
+                                    } else if (str.equals("❌")) {
+                                        wh1Var2.G = null;
+                                    } else {
+                                        TLRPC.TL_wallPaperNoFile tL_wallPaperNoFile = new TLRPC.TL_wallPaperNoFile();
+                                        wh1Var2.G = tL_wallPaperNoFile;
+                                        tL_wallPaperNoFile.id = 0L;
+                                        tL_wallPaperNoFile.flags |= 4;
+                                        tL_wallPaperNoFile.settings = new TLRPC.TL_wallPaperSettings();
+                                        wh1Var2.G.settings.emoticon = str;
+                                    }
+                                    wh1Var2.e1(true);
+                                    wh1Var2.h1(true);
+                                    break;
+                                default:
+                                    wh1 wh1Var3 = jh1Var.c;
+                                    wh1Var3.s = ((Integer) obj).intValue();
+                                    if (wh1Var3.E instanceof TLRPC.TL_emojiStatusCollectible) {
+                                        wh1Var3.E = null;
+                                    }
+                                    wh1Var3.e1(true);
+                                    wh1Var3.i1();
+                                    wh1Var3.g1(true);
+                                    break;
+                            }
+                        }
+                    });
+                    frameLayout = d48Var;
+                } else if (i == 1) {
+                    FrameLayout ph1Var = new ph1(wh1Var, wh1Var.getParentActivity());
+                    frameLayout = ph1Var;
+                    if (wh1Var.d) {
+                        ph1Var.setTag(-33024);
+                        frameLayout = ph1Var;
+                    }
+                } else if (i == 8) {
+                    Activity parentActivity6 = wh1Var.getParentActivity();
+                    vnbVar3 = ((e) wh1Var).resourceProvider;
+                    frameLayout = new mf5(parentActivity6, vnbVar3);
+                } else if (i == 9) {
+                    Activity parentActivity7 = wh1Var.getParentActivity();
+                    vnbVar2 = ((e) wh1Var).resourceProvider;
+                    frameLayout = new m38(vnbVar2, parentActivity7, false);
+                } else if (i == 10) {
+                    Activity parentActivity8 = wh1Var.getParentActivity();
+                    vnbVar = ((e) wh1Var).resourceProvider;
+                    tk4 tk4Var = new tk4(parentActivity8, vnbVar);
+                    tk4Var.setIsSingleCell(true);
+                    tk4Var.setViewType(35);
+                    frameLayout = tk4Var;
+                } else {
+                    frameLayout = new ilb(wh1Var.getParentActivity());
                 }
             }
         }
-        z = true;
-        wd2 wd2Var2 = (wd2) arrayList.get(i);
-        anbVar.setEnabled(z);
-        zkb.h(bkb.h5, null, anbVar);
-        anbVar.f(wd2Var2, 0L, false);
-        anbVar.g(wd2Var2.d, false);
-        anbVar.setFallbackWallpaper(wd2Var2.a.b ? null : lh1Var.w);
+        return new n69(frameLayout);
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        Context context = viewGroup.getContext();
-        return new y29(new ih1(this.c, 3, this.d, context));
-    }
-
-    @Override // w39
-    public final void y(s49 s49Var) {
-        lh1 lh1Var = this.e;
-        ArrayList arrayList = lh1Var.c;
-        int b = s49Var.b();
-        View view = s49Var.a;
-        if (b < 0 || b >= arrayList.size()) {
-            return;
+    @Override // j79
+    public final void y(f89 f89Var) {
+        View view = f89Var.a;
+        boolean z = view instanceof ph1;
+        wh1 wh1Var = this.c;
+        if (!z) {
+            if (view instanceof sqb) {
+                ((sqb) view).setOverrideBackground(wh1Var.I);
+                return;
+            } else {
+                wh1.f1(view);
+                return;
+            }
         }
-        wd2 wd2Var = (wd2) arrayList.get(b);
-        anb anbVar = (anb) view;
-        anbVar.g(wd2Var.d, false);
-        anbVar.setFallbackWallpaper(wd2Var.a.b ? null : lh1Var.w);
+        oh1 oh1Var = ((ph1) view).b;
+        TLRPC.EmojiStatus emojiStatus = wh1Var.E;
+        if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
+            oh1Var.c(kc7.a(emojiStatus), false);
+            oh1Var.d(((TLRPC.TL_emojiStatusCollectible) wh1Var.E).pattern_document_id, true, false);
+        } else {
+            oh1Var.b(wh1Var.s, false);
+            oh1Var.d(wh1Var.x, false, false);
+        }
+        oh1Var.e(wf3.f(wh1Var.E), wf3.A(wh1Var.E), false);
+        oh1Var.setForum(wh1Var.V0());
+        oh1Var.a(wh1Var.f);
     }
 }

@@ -1,147 +1,94 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.animation.AccelerateInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class uya extends FrameLayout {
-    public be0 a;
-    public TLRPC.Document b;
-    public Object c;
-    public long d;
-    public boolean e;
-    public float f;
-    public boolean h;
-    public oh8 n;
-    public boolean r;
-    public boolean s;
-    public wjb w;
+public final class uya extends eva {
+    public Paint[] r;
+    public final /* synthetic */ short s;
+    public final /* synthetic */ byte w;
 
-    static {
-        new AccelerateInterpolator(0.5f);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public uya(Context context, int i, int i2) {
+        super(context);
+        this.s = i;
+        this.w = i2;
+        c();
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        boolean drawChild = super.drawChild(canvas, view, j);
-        be0 be0Var = this.a;
-        if (view == be0Var) {
-            boolean z = this.e;
-            float f = 1.0f;
-            float f2 = 0.8f;
-            if ((z && this.f != 0.8f) || (!z && this.f != 1.0f)) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j2 = currentTimeMillis - this.d;
-                this.d = currentTimeMillis;
-                if (this.e) {
-                    float f3 = this.f;
-                    if (f3 != 0.8f) {
-                        f = f3 - (j2 / 400.0f);
-                        this.f = f;
-                        if (f < 0.8f) {
-                            this.f = 0.8f;
-                            f = f2;
-                        }
-                        be0Var.setScaleX(f);
-                        be0Var.setScaleY(this.f);
-                        be0Var.invalidate();
-                        invalidate();
-                    }
-                }
-                f2 = (j2 / 400.0f) + this.f;
-                this.f = f2;
-                if (f2 > 1.0f) {
-                    this.f = 1.0f;
-                    be0Var.setScaleX(f);
-                    be0Var.setScaleY(this.f);
-                    be0Var.invalidate();
-                    invalidate();
-                }
-                f = f2;
-                be0Var.setScaleX(f);
-                be0Var.setScaleY(this.f);
-                be0Var.invalidate();
-                invalidate();
+    @Override // eva
+    public final void a() {
+        int f;
+        float f2;
+        int i;
+        int i2;
+        dva dvaVar = new dva(this.s);
+        this.a = dvaVar;
+        dvaVar.N = jn7.p1;
+        int i3 = 0;
+        dvaVar.L = false;
+        dvaVar.G = false;
+        dvaVar.J = true;
+        dvaVar.H = true;
+        dvaVar.I = false;
+        dvaVar.m = true;
+        dvaVar.h = true;
+        byte b = this.w;
+        if (b == 1) {
+            dvaVar.k = hl.L(24.0f);
+        }
+        this.r = new Paint[b == 2 ? 40 : 20];
+        while (true) {
+            Paint[] paintArr = this.r;
+            if (i3 >= paintArr.length) {
+                break;
             }
-        }
-        return drawChild;
-    }
-
-    public Object getParentObject() {
-        return this.c;
-    }
-
-    public g27 getSendAnimationData() {
-        be0 be0Var = this.a;
-        ImageReceiver imageReceiver = be0Var.getImageReceiver();
-        if (!imageReceiver.E()) {
-            return null;
-        }
-        g27 g27Var = new g27();
-        be0Var.getLocationInWindow(new int[2]);
-        g27Var.a = imageReceiver.r() + r2[0];
-        g27Var.b = imageReceiver.s() + r2[1];
-        g27Var.c = imageReceiver.N0;
-        return g27Var;
-    }
-
-    public TLRPC.Document getSticker() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.b == null) {
-            return;
-        }
-        String str = null;
-        for (int i = 0; i < this.b.attributes.size(); i++) {
-            TLRPC.DocumentAttribute documentAttribute = this.b.attributes.get(i);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
-                String str2 = documentAttribute.alt;
-                str = (str2 == null || str2.length() <= 0) ? null : documentAttribute.alt;
+            paintArr[i3] = new Paint(1);
+            if (b == 2) {
+                if (i3 >= 20) {
+                    f2 = (i3 - 20) / 19.0f;
+                    i = -1005568;
+                    i2 = -2062336;
+                } else if (i3 % 5 == 0) {
+                    f = -2340;
+                } else {
+                    f2 = i3 / 19.0f;
+                    i = -10645;
+                    i2 = -20165;
+                }
+                f = vm2.f(f2, i, i2);
+            } else {
+                f = vm2.f(i3 / (this.r.length - 1), -371690, -14281);
             }
+            this.r[i3].setColorFilter(new PorterDuffColorFilter(f, PorterDuff.Mode.SRC_IN));
+            i3++;
         }
-        if (str != null) {
-            StringBuilder k = b00.k(str, " ");
-            k.append(k96.M0(2131753933, null));
-            accessibilityNodeInfo.setText(k.toString());
-        } else {
-            accessibilityNodeInfo.setText(k96.M0(2131753933, null));
+        dva dvaVar2 = this.a;
+        dvaVar2.l = new p12(this, (byte) 9);
+        dvaVar2.r = (byte) 17;
+        dvaVar2.s = (byte) 18;
+        dvaVar2.t = (byte) 19;
+        if (b == 2) {
+            dvaVar2.M = true;
+            dvaVar2.r = (byte) 9;
+            dvaVar2.s = (byte) 11;
+            dvaVar2.t = (byte) 13;
+            dvaVar2.o = 1.6f;
+            dvaVar2.x = (short) 1400;
+            dvaVar2.y = (short) 1600;
+            dvaVar2.K = true;
         }
-        accessibilityNodeInfo.setEnabled(true);
+        dvaVar2.P = aob.G6;
+        dvaVar2.c();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + gl.L(76.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(78.0f), TLObject.FLAG_30));
-    }
-
-    public void setClearsInputField(boolean z) {
-        this.h = z;
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z) {
-        be0 be0Var = this.a;
-        if ((be0Var.getImageReceiver().f1 != 0) != z) {
-            be0Var.getImageReceiver().f1 = z ? 1 : 0;
-            be0Var.invalidate();
-        }
-        super.setPressed(z);
-    }
-
-    public void setScaled(boolean z) {
-        this.e = z;
-        this.d = System.currentTimeMillis();
-        invalidate();
+    @Override // eva
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

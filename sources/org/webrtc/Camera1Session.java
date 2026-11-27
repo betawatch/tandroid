@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 class Camera1Session implements CameraSession {
     private static final int NUMBER_OF_CAPTURE_BUFFERS = 3;
@@ -26,14 +26,13 @@ class Camera1Session implements CameraSession {
     private final CameraSession.Events events;
     private boolean firstFrameReported;
     private final Camera.CameraInfo info;
-    private OrientationHelper orientationHelper;
     private SessionState state;
     private final SurfaceTextureHelper surfaceTextureHelper;
     private static final Histogram camera1StartTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera1.StartTimeMs", 1, 10000, 50);
     private static final Histogram camera1StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera1.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera1ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera1.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     class 2 implements Camera.PreviewCallback {
         public 2() {
         }
@@ -72,7 +71,7 @@ class Camera1Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private enum SessionState {
         RUNNING,
         STOPPED
@@ -90,7 +89,6 @@ class Camera1Session implements CameraSession {
         this.info = cameraInfo;
         this.captureFormat = captureFormat;
         this.constructionTimeNs = j;
-        this.orientationHelper = new OrientationHelper();
         surfaceTextureHelper.setTextureSize(captureFormat.width, captureFormat.height);
         startCapturing();
     }
@@ -100,7 +98,7 @@ class Camera1Session implements CameraSession {
         if (Thread.currentThread() == this.cameraThreadHandler.getLooper().getThread()) {
             return;
         }
-        sc8.j("Wrong thread");
+        grb.i("Wrong thread");
     }
 
     public static void create(CameraSession.CreateSessionCallback createSessionCallback, CameraSession.Events events, boolean z, Context context, SurfaceTextureHelper surfaceTextureHelper, String str, int i, int i2, int i3) {
@@ -167,13 +165,12 @@ class Camera1Session implements CameraSession {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getFrameOrientation() {
-        int orientation = t76.N != null ? 0 : this.orientationHelper.getOrientation();
-        OrientationHelper.cameraOrientation = orientation;
-        if (this.info.facing == 1) {
-            orientation = 360 - orientation;
+        int b = c00.b(this.applicationContext);
+        Camera.CameraInfo cameraInfo = this.info;
+        if (cameraInfo.facing == 0) {
+            b = 360 - b;
         }
-        OrientationHelper.cameraRotation = orientation;
-        return (this.info.orientation + orientation) % 360;
+        return (cameraInfo.orientation + b) % 360;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,7 +184,7 @@ class Camera1Session implements CameraSession {
             camera1StartTimeMsHistogram.addSample((int) ((System.nanoTime() - this.constructionTimeNs) / 1000000));
             this.firstFrameReported = true;
         }
-        VideoFrame videoFrame2 = new VideoFrame(b00.a((TextureBufferImpl) videoFrame.getBuffer(), this.info.facing == 1, 0), getFrameOrientation(), videoFrame.getTimestampNs());
+        VideoFrame videoFrame2 = new VideoFrame(c00.a((TextureBufferImpl) videoFrame.getBuffer(), this.info.facing == 1, 0), getFrameOrientation(), videoFrame.getTimestampNs());
         this.events.onFrameCaptured(this, videoFrame2);
         videoFrame2.release();
     }
@@ -207,7 +204,7 @@ class Camera1Session implements CameraSession {
         this.camera.setErrorCallback(new Camera.ErrorCallback() { // from class: org.webrtc.Camera1Session.1
             @Override // android.hardware.Camera.ErrorCallback
             public void onError(int i, Camera camera) {
-                String k = i == 100 ? "Camera server died!" : de9.k(i, "Camera error: ");
+                String k = i == 100 ? "Camera server died!" : uh9.k(i, "Camera error: ");
                 Logging.e(Camera1Session.TAG, k);
                 Camera1Session.this.stopInternal();
                 Camera1Session camera1Session = Camera1Session.this;
@@ -246,10 +243,6 @@ class Camera1Session implements CameraSession {
         this.camera.stopPreview();
         this.camera.release();
         this.events.onCameraClosed(this);
-        OrientationHelper orientationHelper = this.orientationHelper;
-        if (orientationHelper != null) {
-            orientationHelper.stop();
-        }
         Logging.d(TAG, "Stop done");
     }
 

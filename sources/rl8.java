@@ -1,121 +1,247 @@
 // default package
 
-import android.graphics.RectF;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Path;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rl8 implements p8c {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ gk7 d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class rl8 extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public final FrameLayout c;
+    public final i94 d;
+    public final jd8 e;
+    public boolean f;
+    public boolean h;
+    public final /* synthetic */ PremiumPreviewFragment n;
 
-    public /* synthetic */ rl8(tx9 tx9Var, boolean z, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.d = tx9Var;
-        this.b = z;
-        this.e = linkedHashSet;
-        this.c = str;
-        this.f = hashMap;
-        this.g = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rl8(PremiumPreviewFragment premiumPreviewFragment, Context context) {
+        super(context);
+        this.n = premiumPreviewFragment;
+        setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        boolean z = premiumPreviewFragment.h0;
+        int i = z ? jn7.E2 : jn7.T2;
+        addView(frameLayout, tre.r(i, i, 1));
+        i94 i94Var = new i94(this, context, premiumPreviewFragment.i0 ? 1 : 0, z ? 1 : 0, context);
+        this.d = i94Var;
+        frameLayout.addView(i94Var, tre.c(-1.0f, -1));
+        frameLayout.setClipChildren(false);
+        setClipChildren(false);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 22.0f);
+        textView.setTypeface(hl.o());
+        textView.setGravity(1);
+        addView(textView, tre.q(-2, -2, 0.0f, 1, 16, z ? 8 : 20, 16, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setLineSpacing(hl.L(2.0f), 1.0f);
+        textView2.setGravity(1);
+        addView(textView2, tre.q(-1, -2, 0.0f, 1, 16, 7, 16, 0));
+        jd8 jd8Var = new jd8(this, context);
+        this.e = jd8Var;
+        jd8Var.setOverScrollMode(2);
+        jd8Var.setLayoutManager(new x46());
+        jd8Var.setAdapter(new ql8(this, context));
+        jd8Var.setOnItemClickListener(new zg4(this, (byte) 22));
+        jd8Var.setSelectorTransformer(new cv0(this, new Path(), new float[8], (byte) 2));
+        setClipChildren(false);
+        setClipToPadding(false);
+        addView(jd8Var, tre.k(12.0f, 16.0f, 12.0f, 4.0f, -1, -2));
+        a();
+        b();
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        ArrayList<TLRPC.Document> arrayList;
-        ArrayList<TLRPC.Document> arrayList2;
-        byte b = this.a;
-        Object obj2 = this.c;
-        Object obj3 = this.g;
-        Object obj4 = this.f;
-        Object obj5 = this.e;
-        gk7 gk7Var = this.d;
-        switch (b) {
-            case 0:
-                ProfileActivity profileActivity = (ProfileActivity) gk7Var;
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj5;
-                TLRPC.User user = (TLRPC.User) obj4;
-                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) obj3;
-                String str = (String) obj2;
-                Integer num = (Integer) obj;
-                RectF rectF = ProfileActivity.Z6;
-                boolean z = this.b;
-                if (channelParticipant != null) {
-                    profileActivity.d3(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z);
-                    break;
-                } else {
-                    profileActivity.d3(num.intValue(), user, chatParticipant, null, null, str, z);
-                    break;
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x00c0, code lost:
+    
+        if (j$.util.Objects.equals(r5, (r7 == null || (r7 = r7.transaction) == null) ? null : r7.replaceAll("^(.*?)(?:\\.\\.\\d*|)$", "$1")) != false) goto L46;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x00cc, code lost:
+    
+        r2.clear();
+        r1.f = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x00ca, code lost:
+    
+        if (r5.a.months == 12) goto L50;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a() {
+        long j;
+        PremiumPreviewFragment premiumPreviewFragment = this.n;
+        ArrayList arrayList = premiumPreviewFragment.d;
+        arrayList.clear();
+        premiumPreviewFragment.e = -1;
+        premiumPreviewFragment.f = null;
+        if (premiumPreviewFragment.getMediaDataController().E != null) {
+            ArrayList<TLRPC.TL_premiumSubscriptionOption> arrayList2 = premiumPreviewFragment.getMediaDataController().E.period_options;
+            int size = arrayList2.size();
+            int i = 0;
+            j = 0;
+            while (i < size) {
+                TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = arrayList2.get(i);
+                i++;
+                TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = tL_premiumSubscriptionOption;
+                if (premiumPreviewFragment.getUserConfig().p() && !tL_premiumSubscriptionOption2.can_purchase_upgrade && !tL_premiumSubscriptionOption2.current) {
                 }
-            case 1:
-                tx9 tx9Var = (tx9) gk7Var;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) obj5;
-                String str2 = (String) obj2;
-                HashMap hashMap = (HashMap) obj4;
-                ArrayList arrayList3 = (ArrayList) obj3;
-                Runnable runnable = (Runnable) obj;
-                int i = tx9Var.W;
-                if (this.b) {
-                    ArrayList t0 = hq6.d0(i).t0(5);
-                    for (int i2 = 0; i2 < t0.size(); i2++) {
-                        if (((TLRPC.TL_messages_stickerSet) t0.get(i2)).documents != null && (arrayList2 = ((TLRPC.TL_messages_stickerSet) t0.get(i2)).documents) != null) {
-                            for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                                String V = k27.V(arrayList2.get(i3), null, null);
-                                long j = arrayList2.get(i3).id;
-                                if (V != null && !linkedHashSet.contains(Long.valueOf(j)) && str2.contains(V.toLowerCase())) {
-                                    linkedHashSet.add(Long.valueOf(j));
-                                }
-                            }
-                        }
-                    }
-                    ArrayList arrayList4 = hq6.d0(i).t0[1];
-                    for (int i4 = 0; i4 < arrayList4.size(); i4++) {
-                        if ((arrayList4.get(i4) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) arrayList4.get(i4)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) arrayList4.get(i4)).documents) != null) {
-                            for (int i5 = 0; i5 < arrayList.size(); i5++) {
-                                String V2 = k27.V(arrayList.get(i5), null, null);
-                                long j2 = arrayList.get(i5).id;
-                                if (V2 != null && !linkedHashSet.contains(Long.valueOf(j2)) && str2.contains(V2)) {
-                                    linkedHashSet.add(Long.valueOf(j2));
-                                }
-                            }
-                        }
-                    }
-                    runnable.run();
-                    break;
-                } else {
-                    hq6.d0(i).X(tx9.c2, str2, false, new kh(tx9Var, linkedHashSet, hashMap, arrayList3, runnable), true, tx9Var.a0 == 3, false, false, 30);
-                    break;
+                tl8 tl8Var = new tl8(tL_premiumSubscriptionOption2);
+                arrayList.add(tl8Var);
+                if (premiumPreviewFragment.k0 && tL_premiumSubscriptionOption2.months == 12) {
+                    premiumPreviewFragment.e = arrayList.size() - 1;
                 }
-                break;
-            default:
-                ((z3a) gk7Var).O((TLObject) obj, (ArrayList) obj5, (ArrayList) obj4, (ArrayList) obj3, (k3a) obj2, this.b);
-                break;
+                if (tL_premiumSubscriptionOption2.current) {
+                    premiumPreviewFragment.f = tl8Var;
+                }
+                if (f11.b() && tl8Var.i() > j) {
+                    j = tl8Var.i();
+                }
+            }
+        } else {
+            j = 0;
         }
+        if (f11.b() && premiumPreviewFragment.getUserConfig().p()) {
+            arrayList.clear();
+            premiumPreviewFragment.f = null;
+        } else {
+            if (!f11.b() && premiumPreviewFragment.f != null) {
+                String str = di0.h().e;
+                TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption3 = premiumPreviewFragment.f.a;
+            }
+            tl8 tl8Var2 = premiumPreviewFragment.f;
+            if (tl8Var2 != null) {
+            }
+        }
+        if (f11.b()) {
+            int size2 = arrayList.size();
+            int i2 = 0;
+            while (i2 < size2) {
+                Object obj = arrayList.get(i2);
+                i2++;
+                ((tl8) obj).e = j;
+            }
+        } else if (di0.h().j() && di0.l != null) {
+            int size3 = arrayList.size();
+            boolean z = false;
+            int i3 = 0;
+            long j2 = 0;
+            while (i3 < size3) {
+                Object obj2 = arrayList.get(i3);
+                i3++;
+                tl8 tl8Var3 = (tl8) obj2;
+                tl8Var3.f = di0.l;
+                if (tl8Var3.i() > j2) {
+                    j2 = tl8Var3.i();
+                }
+                tl8Var3.a();
+                if (tl8Var3.g != null) {
+                    z = true;
+                }
+            }
+            if (z) {
+                int i4 = 0;
+                while (i4 < arrayList.size()) {
+                    tl8 tl8Var4 = (tl8) arrayList.get(i4);
+                    tl8Var4.a();
+                    if (tl8Var4.g == null) {
+                        arrayList.remove(i4);
+                        i4--;
+                    }
+                    i4++;
+                }
+            }
+            int size4 = arrayList.size();
+            int i5 = 0;
+            while (i5 < size4) {
+                Object obj3 = arrayList.get(i5);
+                i5++;
+                ((tl8) obj3).e = j2;
+            }
+        }
+        if (premiumPreviewFragment.e == -1) {
+            int i6 = 0;
+            while (true) {
+                if (i6 >= arrayList.size()) {
+                    break;
+                }
+                if (((tl8) arrayList.get(i6)).a.months == 12) {
+                    premiumPreviewFragment.e = i6;
+                    break;
+                }
+                i6++;
+            }
+            if (premiumPreviewFragment.e == -1) {
+                premiumPreviewFragment.e = 0;
+            }
+        }
+        premiumPreviewFragment.y0(false);
+        this.e.getAdapter().f();
     }
 
-    public /* synthetic */ rl8(z3a z3aVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, k3a k3aVar, boolean z) {
-        this.d = z3aVar;
-        this.e = arrayList;
-        this.f = arrayList2;
-        this.g = arrayList3;
-        this.c = k3aVar;
-        this.b = z;
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e2  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b() {
+        boolean z;
+        boolean z2;
+        jd8 jd8Var;
+        PremiumPreviewFragment premiumPreviewFragment = this.n;
+        boolean z3 = premiumPreviewFragment.h0;
+        TextView textView = this.a;
+        TextView textView2 = this.b;
+        if (!z3) {
+            textView.setText(ob6.M0(premiumPreviewFragment.q0 ? 2131743881 : 2131743884, null));
+            textView2.setText(hl.S2(ob6.M0((premiumPreviewFragment.getUserConfig().p() || premiumPreviewFragment.q0) ? 2131743882 : 2131743880, null)));
+        } else if (z3) {
+            textView.setText(ob6.M0(premiumPreviewFragment.q0 ? 2131743881 : 2131743905, null));
+            textView2.setText(hl.S2(ob6.M0((premiumPreviewFragment.getUserConfig().p() || premiumPreviewFragment.q0) ? 2131743903 : 2131743900, null)));
+        }
+        textView2.getLayoutParams().width = Math.min(hl.q.x - hl.L(42.0f), kg5.a(textView2.getText(), textView2.getPaint()));
+        if (!premiumPreviewFragment.q0) {
+            boolean z4 = f11.a;
+            if (premiumPreviewFragment.d.size() > 1) {
+                z = false;
+                z2 = this.f;
+                jd8Var = this.e;
+                if (z2 || !z) {
+                    jd8Var.setVisibility(z ? 8 : 0);
+                    this.f = true;
+                } else if (jd8Var.getVisibility() == 0 && z && this.h == z) {
+                    ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
+                    duration.addUpdateListener(new nk(this, jd8Var, duration, (byte) 5));
+                    duration.addListener(new wd8((Object) this, (Object) jd8Var, (byte) 3));
+                    duration.setInterpolator(k43.f);
+                    duration.start();
+                }
+                this.h = !z;
+            }
+        }
+        z = true;
+        z2 = this.f;
+        jd8Var = this.e;
+        if (z2) {
+        }
+        jd8Var.setVisibility(z ? 8 : 0);
+        this.f = true;
+        this.h = !z;
     }
 
-    public /* synthetic */ rl8(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z, String str) {
-        this.d = profileActivity;
-        this.e = channelParticipant;
-        this.f = user;
-        this.g = chatParticipant;
-        this.b = z;
-        this.c = str;
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
     }
 }

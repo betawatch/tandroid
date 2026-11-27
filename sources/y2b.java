@@ -1,39 +1,33 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class y2b extends y28 {
-    public final /* synthetic */ z2b V3;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class y2b extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ z2b b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y2b(z2b z2bVar, Context context, m8b m8bVar, w28 w28Var, f53 f53Var) {
-        super(context, m8bVar, w28Var, f53Var);
-        this.V3 = z2bVar;
+    public /* synthetic */ y2b(z2b z2bVar, byte b) {
+        this.a = b;
+        this.b = z2bVar;
     }
 
-    @Override // y28
-    public final boolean C0() {
-        return getParent() != null && ((Integer) ((View) getParent()).getTag()).intValue() == this.V3.f.getCurrentItem();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        if (qg5.c) {
-            qg5.b.add(this);
-        } else {
-            super.invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        if (qg5.c) {
-            qg5.b.add(this);
-        } else {
-            super.invalidate(i, i2, i3, i4);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        z2b z2bVar = this.b;
+        switch (b) {
+            case 0:
+                z2bVar.s.setVisibility(8);
+                break;
+            case 1:
+                z2bVar.s.setVisibility(8);
+                break;
+            default:
+                z2bVar.s.setVisibility(8);
+                break;
         }
     }
 }

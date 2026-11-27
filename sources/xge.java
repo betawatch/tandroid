@@ -1,19 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xge implements zn7 {
-    public static final xge a = new xge();
+import android.os.IBinder;
+import android.os.IInterface;
 
-    static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class xge implements IInterface {
+    public final IBinder a;
+
+    public xge(IBinder iBinder) {
+        this.a = iBinder;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

@@ -1,88 +1,34 @@
 // default package
 
-import android.app.Dialog;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class aw7 extends Dialog {
-    public final FrameLayout a;
-    public final zv7 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class aw7 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ dx7 b;
 
-    public aw7(LaunchActivity launchActivity) {
-        super(launchActivity, R.style.TransparentDialog);
-        gl.S(getWindow());
-        FrameLayout frameLayout = new FrameLayout(launchActivity);
-        this.a = frameLayout;
-        fi7 fi7Var = new fi7((byte) 23);
-        WeakHashMap weakHashMap = jdc.a;
-        bdc.i(frameLayout, fi7Var);
-        zv7 zv7Var = new zv7(this, launchActivity);
-        this.b = zv7Var;
-        frameLayout.addView(zv7Var, nme.e(-1, -1, kk7.D1));
+    public /* synthetic */ aw7(dx7 dx7Var, byte b) {
+        this.a = b;
+        this.b = dx7Var;
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        LaunchActivity launchActivity;
-        if (!this.b.i() || (launchActivity = LaunchActivity.H1) == null) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        dx7 dx7Var = this.b;
+        switch (b) {
+            case 0:
+                dx7Var.d2.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                dx7Var.d2.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dx7Var.L1 = floatValue;
+                dx7Var.J1.setTransitionProgress(floatValue);
+                break;
         }
-        launchActivity.moveTaskToBack(true);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        LaunchActivity launchActivity;
-        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        if (this.b.i() && (launchActivity = LaunchActivity.H1) != null) {
-            launchActivity.moveTaskToBack(true);
-        }
-        return true;
-    }
-
-    @Override // android.app.Dialog
-    public final void onBackPressed() {
-        LaunchActivity launchActivity;
-        if (!this.b.i() || (launchActivity = LaunchActivity.H1) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        FrameLayout frameLayout = this.a;
-        setContentView(frameLayout, layoutParams);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = kk7.D1;
-        attributes.dimAmount = 0.0f;
-        int i = attributes.flags & (-3);
-        attributes.flags = i;
-        attributes.softInputMode = 16;
-        boolean z = w01.a;
-        attributes.flags = i | TLObject.FLAG_13;
-        gl.f2();
-        attributes.flags |= -2013198976;
-        window.setAttributes(attributes);
-        frameLayout.setSystemUiVisibility(256);
-        gl.i3(this, false);
     }
 }

@@ -1,72 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.os.Build;
-import android.view.Surface;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.PrivacyControlActivity;
+import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zac {
-    public final Context a;
-    public boolean b;
-    public wac c;
-    public boolean d;
-    public Surface e;
-    public float f;
-    public float g;
-    public float h = 1.0f;
-    public int i = 0;
-    public long j;
-    public long k;
-    public long l;
-    public long m;
-    public long n;
-    public long o;
-    public long p;
-    public long q;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class zac implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public zac(Context context) {
-        this.a = context;
+    public /* synthetic */ zac(UserInfoActivity userInfoActivity, byte b) {
+        this.a = b;
+        this.b = userInfoActivity;
     }
 
-    public final void a() {
-        Surface surface;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.i == Integer.MIN_VALUE || this.g == 0.0f || !surface.isValid()) {
-            return;
-        }
-        this.g = 0.0f;
-        tga.w(this.e, 0.0f);
-    }
-
-    public final void b() {
-        this.o = -1L;
-        this.l = -1L;
-        this.n = -9223372036854775807L;
-        this.j = 0L;
-        this.k = 0L;
-    }
-
-    public final void c(boolean z) {
-        Surface surface;
-        float f;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.i == Integer.MIN_VALUE || !surface.isValid()) {
-            return;
-        }
-        if (this.d) {
-            float f2 = this.f;
-            if (f2 != -1.0f) {
-                f = f2 * this.h;
-                if (z && this.g == f) {
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        UserInfoActivity userInfoActivity = this.b;
+        switch (b) {
+            case 0:
+                userInfoActivity.presentFragment(new PrivacyControlActivity(9, true));
+                break;
+            case 1:
+                wa waVar = userInfoActivity.y;
+                if (waVar != null) {
+                    waVar.g3.O(true);
+                    break;
                 }
-                this.g = f;
-                tga.w(this.e, f);
-            }
+                break;
+            case 2:
+                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
+                break;
+            default:
+                userInfoActivity.presentFragment(new PremiumPreviewFragment(0, "add_account"));
+                break;
         }
-        f = 0.0f;
-        if (z) {
-        }
-        this.g = f;
-        tga.w(this.e, f);
     }
 }

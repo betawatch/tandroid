@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -51,7 +51,7 @@ public abstract class zzqv extends zzqe {
         if (zza() == 0) {
             return;
         }
-        sc8.j("Did not write as much data as expected.");
+        grb.i("Did not write as much data as expected.");
     }
 
     public final void zzD(String str, zzve zzveVar) {

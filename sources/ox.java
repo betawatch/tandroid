@@ -1,44 +1,57 @@
 // default package
 
-import android.media.MediaCodec;
-import android.os.Build;
 import android.os.Handler;
-import android.os.Message;
+import android.os.Looper;
+import android.util.Log;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ox implements MediaCodec.OnFrameRenderedListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ uk6 b;
+public final class ox implements Runnable {
+    public static Handler f;
+    public final /* synthetic */ m8d e;
+    public volatile int b = 1;
+    public final AtomicBoolean c = new AtomicBoolean();
+    public final AtomicBoolean d = new AtomicBoolean();
+    public final ug7 a = new ug7(this, new tg7(this, 0));
 
-    public /* synthetic */ ox(ek6 ek6Var, uk6 uk6Var, byte b) {
-        this.a = b;
-        this.b = uk6Var;
+    public ox(m8d m8dVar) {
+        this.e = m8dVar;
     }
 
-    @Override // android.media.MediaCodec.OnFrameRenderedListener
-    public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-        byte b = this.a;
-        uk6 uk6Var = this.b;
-        switch (b) {
-            case 0:
-                Handler handler = uk6Var.a;
-                if (Build.VERSION.SDK_INT >= 30) {
-                    uk6Var.a(j);
-                    break;
-                } else {
-                    handler.sendMessageAtFrontOfQueue(Message.obtain(handler, 0, (int) (j >> 32), (int) j));
-                    break;
-                }
-            default:
-                Handler handler2 = uk6Var.a;
-                if (Build.VERSION.SDK_INT >= 30) {
-                    uk6Var.a(j);
-                    break;
-                } else {
-                    handler2.sendMessageAtFrontOfQueue(Message.obtain(handler2, 0, (int) (j >> 32), (int) j));
-                    break;
-                }
+    public final void a() {
+        m8d m8dVar = this.e;
+        Iterator it = m8dVar.j.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            if (((m05) it.next()).a(m8dVar)) {
+                i++;
+            }
         }
+        try {
+            m8dVar.i.tryAcquire(i, 5L, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public final void b(Object obj) {
+        Handler handler;
+        synchronized (ox.class) {
+            handler = f;
+            if (handler == null) {
+                handler = new Handler(Looper.getMainLooper());
+                f = handler;
+            }
+        }
+        handler.post(new iqd((Object) this, obj, false, (byte) 7));
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.e.a();
     }
 }

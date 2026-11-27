@@ -1,41 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tef implements dgf {
-    public static final tef b = new tef(0);
-    public final /* synthetic */ byte a;
+public final class tef extends ljf {
+    private static final tef zzb;
+    private int zzd;
+    private String zze = "";
+    private tjf zzf;
+    private tjf zzg;
+    private boolean zzh;
 
-    public /* synthetic */ tef(byte b2) {
-        this.a = b2;
+    static {
+        tef tefVar = new tef();
+        zzb = tefVar;
+        ljf.e(tef.class, tefVar);
     }
 
-    @Override // dgf
-    public final sgf zzb(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!vef.class.isAssignableFrom(cls)) {
-                    w26.j("Unsupported message type: ".concat(cls.getName()));
-                    return null;
-                }
-                try {
-                    return (sgf) vef.k(cls.asSubclass(vef.class)).h(3, null);
-                } catch (Exception e) {
-                    fyb.j("Unable to get message info for ".concat(cls.getName()), e);
-                    return null;
-                }
-            default:
-                throw new IllegalStateException("This should never be called.");
-        }
+    public tef() {
+        hlf hlfVar = hlf.d;
+        this.zzf = hlfVar;
+        this.zzg = hlfVar;
     }
 
-    @Override // dgf
-    public final boolean zzc(Class cls) {
-        switch (this.a) {
-            case 0:
-                return vef.class.isAssignableFrom(cls);
-            default:
-                return false;
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဈ\u0000\u0002\u001b\u0003\u001b\u0004ဇ\u0001", new Object[]{"zzd", "zze", "zzf", vbf.class, "zzg", yaf.class, "zzh"});
+        }
+        if (i2 == 3) {
+            return new tef();
+        }
+        if (i2 == 4) {
+            return new mdf(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

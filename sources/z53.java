@@ -1,27 +1,138 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.net.Uri;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum z53 implements jn7 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    c(2),
-    d(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF43(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF51(5);
+public final class z53 implements gg4 {
+    public final long a;
+    public final long b;
+    public final long c;
+    public final boolean d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final long h;
+    public final j5 i;
+    public final zs6 j;
+    public final tv8 k;
+    public final List l;
+    public final po5 m;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    z53(int i) {
-        this.a = i;
+    public z53(long j, long j2, long j3, boolean z, long j4, long j5, long j6, long j7, tv8 tv8Var, j5 j5Var, zs6 zs6Var, ArrayList arrayList, List list) {
+        po5 q;
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
+        this.d = z;
+        this.e = j4;
+        this.f = j5;
+        this.g = j6;
+        this.h = j7;
+        this.k = tv8Var;
+        this.i = j5Var;
+        this.j = zs6Var;
+        this.l = arrayList;
+        if (list == null) {
+            no5 no5Var = po5.b;
+            q = j99.e;
+        } else {
+            q = po5.q(list);
+        }
+        this.m = q;
+        if (list == null || list.isEmpty()) {
+            return;
+        }
+        Uri uri = ((wb6) dqe.b(list)).a;
     }
 
-    @Override // jn7
-    public final int a() {
-        return this.a;
+    @Override // gg4
+    public final Object a(List list) {
+        int i;
+        long j;
+        LinkedList linkedList = new LinkedList(list);
+        Collections.sort(linkedList);
+        linkedList.add(new scb(-1, -1, -1));
+        ArrayList arrayList = new ArrayList();
+        long j2 = 0;
+        int i2 = 0;
+        while (true) {
+            if (i2 >= this.l.size()) {
+                break;
+            }
+            scb scbVar = (scb) linkedList.peek();
+            scbVar.getClass();
+            if (scbVar.a != i2) {
+                long c = c(i2);
+                if (c != -9223372036854775807L) {
+                    j2 += c;
+                }
+            } else {
+                v68 b = b(i2);
+                List list2 = b.c;
+                scb scbVar2 = (scb) linkedList.poll();
+                scbVar2.getClass();
+                int i3 = scbVar2.a;
+                ArrayList arrayList2 = new ArrayList();
+                while (true) {
+                    int i4 = scbVar2.b;
+                    fa faVar = (fa) list2.get(i4);
+                    List list3 = faVar.c;
+                    ArrayList arrayList3 = new ArrayList();
+                    while (true) {
+                        arrayList3.add((ub9) list3.get(scbVar2.c));
+                        scbVar2 = (scb) linkedList.poll();
+                        scbVar2.getClass();
+                        i = scbVar2.a;
+                        j = j2;
+                        if (i != i3 || scbVar2.b != i4) {
+                            break;
+                        }
+                        j2 = j;
+                    }
+                    arrayList2.add(new fa(faVar.a, faVar.b, arrayList3, faVar.d, faVar.e, faVar.f));
+                    if (i != i3) {
+                        break;
+                    }
+                    j2 = j;
+                }
+                linkedList.addFirst(scbVar2);
+                arrayList.add(new v68(b.a, b.b - j, arrayList2, b.d));
+                j2 = j;
+            }
+            i2++;
+        }
+        long j3 = j2;
+        long j4 = this.b;
+        return new z53(this.a, j4 != -9223372036854775807L ? j4 - j3 : -9223372036854775807L, this.c, this.d, this.e, this.f, this.g, this.h, this.k, this.i, this.j, arrayList, this.m);
+    }
+
+    public final v68 b(int i) {
+        return (v68) this.l.get(i);
+    }
+
+    public final long c(int i) {
+        long j;
+        long j2;
+        List list = this.l;
+        if (i == list.size() - 1) {
+            j = this.b;
+            if (j == -9223372036854775807L) {
+                return -9223372036854775807L;
+            }
+            j2 = ((v68) list.get(i)).b;
+        } else {
+            j = ((v68) list.get(i + 1)).b;
+            j2 = ((v68) list.get(i)).b;
+        }
+        return j - j2;
+    }
+
+    public final long d(int i) {
+        return gcc.T(c(i));
     }
 }

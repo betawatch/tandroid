@@ -3,7 +3,7 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class EncodedImage implements RefCounted {
     public final ByteBuffer buffer;
@@ -16,7 +16,7 @@ public class EncodedImage implements RefCounted {
     private final RefCountDelegate refCountDelegate;
     public final int rotation;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum FrameType {
         EmptyFrame(0),
         VideoFrameKey(3),
@@ -34,7 +34,7 @@ public class EncodedImage implements RefCounted {
                     return frameType;
                 }
             }
-            w26.j(de9.k(i, "Unknown native frame type: "));
+            lq5.j(uh9.k(i, "Unknown native frame type: "));
             return null;
         }
 
@@ -56,7 +56,7 @@ public class EncodedImage implements RefCounted {
     }
 
     public static Builder builder() {
-        return new Builder();
+        return new Builder(0);
     }
 
     private ByteBuffer getBuffer() {
@@ -97,7 +97,7 @@ public class EncodedImage implements RefCounted {
         this.refCountDelegate.retain();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class Builder {
         private ByteBuffer buffer;
         private long captureTimeNs;
@@ -108,8 +108,12 @@ public class EncodedImage implements RefCounted {
         private Runnable releaseCallback;
         private int rotation;
 
+        public /* synthetic */ Builder(int i) {
+            this();
+        }
+
         public EncodedImage createEncodedImage() {
-            return new EncodedImage(this.buffer, this.releaseCallback, this.encodedWidth, this.encodedHeight, this.captureTimeNs, this.frameType, this.rotation, this.qp);
+            return new EncodedImage(this.buffer, this.releaseCallback, this.encodedWidth, this.encodedHeight, this.captureTimeNs, this.frameType, this.rotation, this.qp, 0);
         }
 
         public Builder setBuffer(ByteBuffer byteBuffer, Runnable runnable) {
@@ -156,5 +160,9 @@ public class EncodedImage implements RefCounted {
 
         private Builder() {
         }
+    }
+
+    public /* synthetic */ EncodedImage(ByteBuffer byteBuffer, Runnable runnable, int i, int i2, long j, FrameType frameType, int i3, Integer num, int i4) {
+        this(byteBuffer, runnable, i, i2, j, frameType, i3, num);
     }
 }

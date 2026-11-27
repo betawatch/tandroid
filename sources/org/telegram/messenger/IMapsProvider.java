@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public interface IMapsProvider {
     public static final int MAP_TYPE_HYBRID = 2;
@@ -15,19 +15,19 @@ public interface IMapsProvider {
 
     void initializeMaps(Context context);
 
-    uh5 loadRawResourceStyle(Context context, int i);
+    wj5 loadRawResourceStyle(Context context, int i);
 
-    qh5 newCameraUpdateLatLng(yh5 yh5Var);
+    sj5 newCameraUpdateLatLng(ak5 ak5Var);
 
-    qh5 newCameraUpdateLatLngBounds(sh5 sh5Var, int i);
+    sj5 newCameraUpdateLatLngBounds(uj5 uj5Var, int i);
 
-    qh5 newCameraUpdateLatLngZoom(yh5 yh5Var, float f);
+    sj5 newCameraUpdateLatLngZoom(ak5 ak5Var, float f);
 
-    rh5 onCreateCircleOptions();
+    tj5 onCreateCircleOptions();
 
-    th5 onCreateLatLngBoundsBuilder();
+    vj5 onCreateLatLngBoundsBuilder();
 
-    vh5 onCreateMapView(Context context);
+    xj5 onCreateMapView(Context context);
 
-    wh5 onCreateMarkerOptions();
+    yj5 onCreateMarkerOptions();
 }

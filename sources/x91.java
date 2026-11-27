@@ -1,317 +1,163 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.camera.CameraSessionWrapper;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.ContactsActivity;
+import android.graphics.Color;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class x91 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class x91 {
+    public final float a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public final float e;
+    public final float f;
 
-    public /* synthetic */ x91(f13 f13Var, nu9 nu9Var, u41 u41Var) {
-        this.a = (byte) 21;
-        this.b = nu9Var;
+    public x91(float f, float f2, float f3, float f4, float f5, float f6) {
+        this.a = f;
+        this.b = f2;
+        this.c = f3;
+        this.d = f4;
+        this.e = f5;
+        this.f = f6;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        CameraSessionWrapper cameraSession;
-        ui5 ui5Var;
-        ui5 ui5Var2;
-        byte b = this.a;
-        byte b2 = 29;
-        byte b3 = 2;
-        final byte b4 = 0;
-        final byte b5 = 1;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                da1 da1Var = (da1) obj;
-                CameraView cameraView = da1Var.d;
-                if (cameraView != null && (cameraSession = cameraView.getCameraSession()) != null) {
-                    ShapeDrawable shapeDrawable = (ShapeDrawable) da1Var.s.getBackground();
-                    AnimatorSet animatorSet = da1Var.w;
-                    if (animatorSet != null) {
-                        animatorSet.cancel();
-                        da1Var.w = null;
-                    }
-                    da1Var.w = new AnimatorSet();
-                    ObjectAnimator ofInt = ObjectAnimator.ofInt(shapeDrawable, rn.e, da1Var.s.getTag() == null ? 68 : 34);
-                    ofInt.addUpdateListener(new w91(da1Var, b5));
-                    da1Var.w.playTogether(ofInt);
-                    da1Var.w.setDuration(200L);
-                    da1Var.w.setInterpolator(s33.f);
-                    da1Var.w.addListener(new g0(da1Var, b2));
-                    da1Var.w.start();
-                    Object tag = da1Var.s.getTag();
-                    ImageView imageView = da1Var.s;
-                    if (tag != null) {
-                        imageView.setTag(null);
-                        cameraSession.setCurrentFlashMode("off");
-                        break;
-                    } else {
-                        imageView.setTag(1);
-                        cameraSession.setCurrentFlashMode("torch");
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                ib1 ib1Var = (ib1) obj;
-                cb1 cb1Var = ib1Var.f;
-                cb1Var.d();
-                cb1Var.k(true);
-                za1 za1Var = ib1Var.d0;
-                gl.r(za1Var);
-                za1Var.run();
-                break;
-            case 2:
-                mb1 mb1Var = (mb1) obj;
-                na7.c1().edit().putInt("aihintshown", 3).apply();
-                a1 a1Var = new a1(mb1Var.getContext(), new f53());
-                a1Var.o1(mb1Var.f.getText());
-                a1Var.e2 = new be2(mb1Var, (byte) 12);
-                a1Var.m1(0L, true, new mz1(mb1Var, b3));
-                a1Var.show();
-                break;
-            case 3:
-                ((j7b) obj).B();
-                break;
-            case 4:
-                ((s67) obj).run();
-                break;
-            case 5:
-                ((nh1) obj).z0();
-                break;
-            case 6:
-                mu1 mu1Var = ((aq1) obj).b;
-                mu1Var.j0.p();
-                x31 x31Var = mu1Var.Y1;
-                if (x31Var != null) {
-                    x31Var.r1(0, null);
-                }
-                mu1Var.ca();
-                break;
-            case 7:
-                mu1 mu1Var2 = ((wt1) obj).a;
-                ui5Var = ((d) mu1Var2).parentLayout;
-                if (ui5Var != null) {
-                    ui5Var2 = ((d) mu1Var2).parentLayout;
-                    ((ActionBarLayout) ui5Var2).p();
-                    break;
-                }
-                break;
-            case 8:
-                int i = ChatActivityEnterView.r7;
-                ((ev1) obj).a(Boolean.TRUE, 0, 0);
-                break;
-            case 9:
-                ((c42) obj).r.U(null, null);
-                break;
-            case 10:
-                e72 e72Var = (e72) obj;
-                e72Var.M(true, 0, 0, 0L, false);
-                j47 j47Var = e72Var.P;
-                if (j47Var != null) {
-                    j47Var.f(true);
-                    e72Var.P = null;
-                    break;
-                }
-                break;
-            case 11:
-                i92 i92Var = (i92) obj;
-                i92Var.w.setProgress(0.0f);
-                i92Var.w.d();
-                break;
-            case 12:
-                ((yc2) obj).e.n0(true);
-                break;
-            case 13:
-                di2 di2Var = (di2) obj;
-                if (!di2Var.u1) {
-                    int i2 = di2Var.t1;
-                    if (i2 != di2Var.s1) {
-                        di2Var.u1 = true;
-                        int i3 = 70;
-                        if (i2 == 3) {
-                            b4 = 2678400;
-                        } else if (i2 == 2) {
-                            b4 = 604800;
-                        } else if (i2 == 1) {
-                            b4 = 86400;
-                        } else {
-                            i3 = 71;
-                        }
-                        int i4 = i3;
-                        nf1 nf1Var = di2Var.v1.a;
-                        na7 messagesController = nf1Var.getMessagesController();
-                        TLRPC.Chat chat = nf1Var.f;
-                        messagesController.N4(b4, -chat.id);
-                        TLRPC.ChatFull L0 = nf1Var.getMessagesController().L0(chat.id);
-                        if (L0 != null) {
-                            nf1Var.x.k(-chat.id, i4, null, Integer.valueOf(L0.ttl_period), null, null);
-                        }
-                    }
-                    if (!di2Var.u1) {
-                        di2Var.dismiss();
-                        break;
-                    } else {
-                        gl.d3(new hq1(di2Var, b2), 200L);
-                        break;
-                    }
-                }
-                break;
-            case 14:
-                ((yl2) obj).dismiss();
-                break;
-            case 15:
-                en2 en2Var = (en2) obj;
-                TLRPC.Chat chat2 = en2Var.J;
-                if (chat2 != null && !chat2.title.equals(((ps0) en2Var.r.b).getText().toString())) {
-                    en2Var.getMessagesController().y(en2Var.J.id, ((ps0) en2Var.r.b).getText().toString(), new zm2(en2Var, b5));
-                }
-                TLRPC.Chat chat3 = en2Var.J;
-                if (chat3 != null && en2Var.n != en2Var.h) {
-                    if (chat3.default_banned_rights == null) {
-                        chat3.default_banned_rights = new TLRPC.TL_chatBannedRights();
-                    }
-                    en2Var.J.default_banned_rights.manage_linked_peers = !en2Var.n;
-                    en2Var.getMessagesController().M4(en2Var.c, en2Var.J.default_banned_rights, false, en2Var);
-                }
-                en2Var.finishFragment();
-                break;
-            case 16:
-                ((fn2) obj).dismiss();
-                break;
-            case 17:
-                ((xn2) obj).n.n1.E(0);
-                break;
-            case 18:
-                eo2 eo2Var = ((yn2) obj).r;
-                if (!hc2.w(27, eo2Var.p1)) {
-                    eo2Var.dismiss();
-                    break;
-                } else {
-                    u41 u41Var = eo2Var.r1;
-                    if (!u41Var.R) {
-                        u41Var.setLoading(true);
-                        na7 q1 = na7.q1(eo2Var.a);
-                        sn2 sn2Var = new sn2(eo2Var, b3);
-                        TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
-                        tL_channels_getAdminedPublicChannels.for_community_peer = true;
-                        q1.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new hc(b4), new ae2((Object) q1, (Object) sn2Var, (byte) 28));
-                        break;
-                    }
-                }
-                break;
-            case 19:
-                ((ContactsActivity) obj).l0();
-                break;
-            case 20:
-                ((xz2) obj).run();
-                break;
-            case 21:
-                nu9 nu9Var = (nu9) obj;
-                t5b t5bVar = (t5b) nu9Var.b;
-                f13[] f13VarArr = (f13[]) nu9Var.c;
-                t5bVar.a0.A1 = true;
-                f13VarArr[0].dismiss();
-                t5bVar.h(true);
-                break;
-            case 22:
-                m43 m43Var = (m43) obj;
-                if (m43Var.k) {
-                    m43Var.d();
-                    break;
-                }
-                break;
-            case 23:
-                ((ahb[]) obj)[0].setChecked(!r0.e.h);
-                break;
-            case 24:
-                ((fx0) ((i4d) obj).a).y0.run();
-                break;
-            case 25:
-                de9.o(3, (d) obj);
-                break;
-            case 26:
-                ((sd3) obj).d1(true);
-                break;
-            case 27:
-                final je3 je3Var = (je3) obj;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(je3Var.getContext());
-                String M0 = k96.M0(2131752086, null);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.S = M0;
-                hdVar.U = k96.M0(2131752084, null);
-                alertDialog$Builder.g(k96.M0(2131752577, null), new ed() { // from class: he3
-                    @Override // ed
-                    public final void u(hd hdVar2, int i5) {
-                        byte b6 = b4;
-                        je3 je3Var2 = je3Var;
-                        switch (b6) {
-                            case 0:
-                                je3Var2.dismiss();
-                                break;
-                            default:
-                                je3Var2.dismiss();
-                                lv6 lv6Var = je3Var2.U1;
-                                ((r61) lv6Var.c).e0(je3Var2.T1, je3Var2.W1, je3Var2.b2);
-                                break;
-                        }
-                    }
-                });
-                alertDialog$Builder.j(k96.M0(2131752089, null), new ed() { // from class: he3
-                    @Override // ed
-                    public final void u(hd hdVar2, int i5) {
-                        byte b6 = b5;
-                        je3 je3Var2 = je3Var;
-                        switch (b6) {
-                            case 0:
-                                je3Var2.dismiss();
-                                break;
-                            default:
-                                je3Var2.dismiss();
-                                lv6 lv6Var = je3Var2.U1;
-                                ((r61) lv6Var.c).e0(je3Var2.T1, je3Var2.W1, je3Var2.b2);
-                                break;
-                        }
-                    }
-                });
-                hdVar.show();
-                hdVar.h();
-                break;
-            case 28:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = ((ActionBarPopupWindow$ActionBarPopupWindowLayout[]) obj)[0];
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
-                    break;
-                }
-                break;
-            default:
-                oj3 oj3Var = (oj3) obj;
-                na7.q1(oj3Var.G).s.clear();
-                na7.c1().edit().remove("installReferer").commit();
-                oj3Var.f();
-                break;
+    public static x91 a(int i) {
+        gjc gjcVar = gjc.k;
+        float b = iz2.b(Color.red(i));
+        float b2 = iz2.b(Color.green(i));
+        float b3 = iz2.b(Color.blue(i));
+        float[][] fArr = iz2.d;
+        float[] fArr2 = fArr[0];
+        float f = (fArr2[2] * b3) + (fArr2[1] * b2) + (fArr2[0] * b);
+        float[] fArr3 = fArr[1];
+        float f2 = (fArr3[2] * b3) + (fArr3[1] * b2) + (fArr3[0] * b);
+        float[] fArr4 = fArr[2];
+        float f3 = (b3 * fArr4[2]) + (b2 * fArr4[1]) + (b * fArr4[0]);
+        float[][] fArr5 = iz2.a;
+        float[] fArr6 = fArr5[0];
+        float f4 = (fArr6[2] * f3) + (fArr6[1] * f2) + (fArr6[0] * f);
+        float[] fArr7 = fArr5[1];
+        float f5 = (fArr7[2] * f3) + (fArr7[1] * f2) + (fArr7[0] * f);
+        float[] fArr8 = fArr5[2];
+        float f6 = (f3 * fArr8[2]) + (f2 * fArr8[1]) + (f * fArr8[0]);
+        float[] fArr9 = gjcVar.g;
+        float f7 = gjcVar.i;
+        float f8 = gjcVar.d;
+        float f9 = gjcVar.a;
+        float f10 = fArr9[0] * f4;
+        float f11 = fArr9[1] * f5;
+        float f12 = fArr9[2] * f6;
+        float f13 = gjcVar.h;
+        float pow = (float) Math.pow((Math.abs(f10) * f13) / 100.0d, 0.42d);
+        float pow2 = (float) Math.pow((Math.abs(f11) * f13) / 100.0d, 0.42d);
+        float pow3 = (float) Math.pow((Math.abs(f12) * f13) / 100.0d, 0.42d);
+        float signum = ((Math.signum(f10) * 400.0f) * pow) / (pow + 27.13f);
+        float signum2 = ((Math.signum(f11) * 400.0f) * pow2) / (pow2 + 27.13f);
+        float signum3 = ((Math.signum(f12) * 400.0f) * pow3) / (pow3 + 27.13f);
+        double d = signum3;
+        float f14 = ((float) (((signum2 * (-12.0d)) + (signum * 11.0d)) + d)) / 11.0f;
+        float f15 = ((float) ((signum + signum2) - (d * 2.0d))) / 9.0f;
+        float f16 = signum2 * 20.0f;
+        float z = c00.z(signum3, 21.0f, (signum * 20.0f) + f16, 20.0f);
+        float f17 = (((signum * 40.0f) + f16) + signum3) / 20.0f;
+        float atan2 = (((float) Math.atan2(f15, f14)) * 180.0f) / 3.1415927f;
+        if (atan2 < 0.0f) {
+            atan2 += 360.0f;
+        } else if (atan2 >= 360.0f) {
+            atan2 -= 360.0f;
         }
+        float f18 = (3.1415927f * atan2) / 180.0f;
+        float pow4 = ((float) Math.pow((f17 * gjcVar.b) / f9, f8 * gjcVar.j)) * 100.0f;
+        float pow5 = ((float) Math.pow(1.64d - Math.pow(0.29d, gjcVar.f), 0.73d)) * ((float) Math.pow((((((((float) (Math.cos((((((double) atan2) < 20.14d ? atan2 + 360.0f : atan2) * 3.141592653589793d) / 180.0d) + 2.0d) + 3.8d)) * 0.25f) * 3846.1538f) * gjcVar.e) * gjcVar.c) * ((float) Math.sqrt((f15 * f15) + (f14 * f14)))) / (z + 0.305f), 0.9d)) * ((float) Math.sqrt(pow4 / 100.0d));
+        float f19 = (1.7f * pow4) / ((0.007f * pow4) + 1.0f);
+        float log = ((float) Math.log((f7 * pow5 * 0.0228f) + 1.0f)) * 43.85965f;
+        double d2 = f18;
+        return new x91(atan2, pow5, pow4, f19, log * ((float) Math.cos(d2)), log * ((float) Math.sin(d2)));
     }
 
-    public /* synthetic */ x91(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public static x91 b(float f, float f2, float f3) {
+        float f4 = gjc.k.d;
+        float f5 = (1.7f * f) / ((0.007f * f) + 1.0f);
+        float log = ((float) Math.log((r0.i * f2 * 0.0228d) + 1.0d)) * 43.85965f;
+        double d = (3.1415927f * f3) / 180.0f;
+        return new x91(f3, f2, f, f5, log * ((float) Math.cos(d)), log * ((float) Math.sin(d)));
+    }
+
+    public final int c(gjc gjcVar) {
+        float f;
+        float f2 = this.b;
+        double d = f2;
+        float f3 = this.c;
+        if (d != 0.0d) {
+            double d2 = f3;
+            if (d2 != 0.0d) {
+                f = f2 / ((float) Math.sqrt(d2 / 100.0d));
+                float f4 = gjcVar.f;
+                float f5 = gjcVar.h;
+                float pow = (float) Math.pow(f / Math.pow(1.64d - Math.pow(0.29d, f4), 0.73d), 1.1111111111111112d);
+                double d3 = (this.a * 3.1415927f) / 180.0f;
+                float cos = ((float) (Math.cos(2.0d + d3) + 3.8d)) * 0.25f;
+                float pow2 = gjcVar.a * ((float) Math.pow(f3 / 100.0d, (1.0d / gjcVar.d) / gjcVar.j));
+                float f6 = cos * 3846.1538f * gjcVar.e * gjcVar.c;
+                float f7 = pow2 / gjcVar.b;
+                float sin = (float) Math.sin(d3);
+                float cos2 = (float) Math.cos(d3);
+                float x = (((0.305f + f7) * 23.0f) * pow) / (((pow * 108.0f) * sin) + c00.x(pow, 11.0f, cos2, f6 * 23.0f));
+                float f8 = cos2 * x;
+                float f9 = x * sin;
+                float f10 = f7 * 460.0f;
+                float z = c00.z(f9, 288.0f, (451.0f * f8) + f10, 1403.0f);
+                float c = c00.c(f9, 261.0f, f10 - (891.0f * f8), 1403.0f);
+                float c2 = c00.c(f9, 6300.0f, f10 - (f8 * 220.0f), 1403.0f);
+                float f11 = 100.0f / f5;
+                float signum = Math.signum(z) * f11 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(z) * 27.13d) / (400.0d - Math.abs(z))), 2.380952380952381d));
+                float signum2 = Math.signum(c) * f11 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c) * 27.13d) / (400.0d - Math.abs(c))), 2.380952380952381d));
+                float signum3 = Math.signum(c2) * f11 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c2) * 27.13d) / (400.0d - Math.abs(c2))), 2.380952380952381d));
+                float[] fArr = gjcVar.g;
+                float f12 = signum / fArr[0];
+                float f13 = signum2 / fArr[1];
+                float f14 = signum3 / fArr[2];
+                float[][] fArr2 = iz2.b;
+                float[] fArr3 = fArr2[0];
+                float f15 = (fArr3[2] * f14) + (fArr3[1] * f13) + (fArr3[0] * f12);
+                float[] fArr4 = fArr2[1];
+                float f16 = (fArr4[2] * f14) + (fArr4[1] * f13) + (fArr4[0] * f12);
+                float[] fArr5 = fArr2[2];
+                return vm2.e(f15, f16, (f14 * fArr5[2]) + (f13 * fArr5[1]) + (f12 * fArr5[0]));
+            }
+        }
+        f = 0.0f;
+        float f42 = gjcVar.f;
+        float f52 = gjcVar.h;
+        float pow3 = (float) Math.pow(f / Math.pow(1.64d - Math.pow(0.29d, f42), 0.73d), 1.1111111111111112d);
+        double d32 = (this.a * 3.1415927f) / 180.0f;
+        float cos3 = ((float) (Math.cos(2.0d + d32) + 3.8d)) * 0.25f;
+        float pow22 = gjcVar.a * ((float) Math.pow(f3 / 100.0d, (1.0d / gjcVar.d) / gjcVar.j));
+        float f62 = cos3 * 3846.1538f * gjcVar.e * gjcVar.c;
+        float f72 = pow22 / gjcVar.b;
+        float sin2 = (float) Math.sin(d32);
+        float cos22 = (float) Math.cos(d32);
+        float x2 = (((0.305f + f72) * 23.0f) * pow3) / (((pow3 * 108.0f) * sin2) + c00.x(pow3, 11.0f, cos22, f62 * 23.0f));
+        float f82 = cos22 * x2;
+        float f92 = x2 * sin2;
+        float f102 = f72 * 460.0f;
+        float z2 = c00.z(f92, 288.0f, (451.0f * f82) + f102, 1403.0f);
+        float c3 = c00.c(f92, 261.0f, f102 - (891.0f * f82), 1403.0f);
+        float c22 = c00.c(f92, 6300.0f, f102 - (f82 * 220.0f), 1403.0f);
+        float f112 = 100.0f / f52;
+        float signum4 = Math.signum(z2) * f112 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(z2) * 27.13d) / (400.0d - Math.abs(z2))), 2.380952380952381d));
+        float signum22 = Math.signum(c3) * f112 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c3) * 27.13d) / (400.0d - Math.abs(c3))), 2.380952380952381d));
+        float signum32 = Math.signum(c22) * f112 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c22) * 27.13d) / (400.0d - Math.abs(c22))), 2.380952380952381d));
+        float[] fArr6 = gjcVar.g;
+        float f122 = signum4 / fArr6[0];
+        float f132 = signum22 / fArr6[1];
+        float f142 = signum32 / fArr6[2];
+        float[][] fArr22 = iz2.b;
+        float[] fArr32 = fArr22[0];
+        float f152 = (fArr32[2] * f142) + (fArr32[1] * f132) + (fArr32[0] * f122);
+        float[] fArr42 = fArr22[1];
+        float f162 = (fArr42[2] * f142) + (fArr42[1] * f132) + (fArr42[0] * f122);
+        float[] fArr52 = fArr22[2];
+        return vm2.e(f152, f162, (f142 * fArr52[2]) + (f132 * fArr52[1]) + (f122 * fArr52[0]));
     }
 }

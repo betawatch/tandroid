@@ -2,19 +2,19 @@ package androidx.media;
 
 import android.media.AudioAttributes;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplApi21Parcelizer {
-    public static AudioAttributesImplApi21 read(y9c y9cVar) {
+    public static AudioAttributesImplApi21 read(ydc ydcVar) {
         AudioAttributesImplApi21 audioAttributesImplApi21 = new AudioAttributesImplApi21();
-        audioAttributesImplApi21.a = (AudioAttributes) y9cVar.g(audioAttributesImplApi21.a, 1);
-        audioAttributesImplApi21.b = y9cVar.f(audioAttributesImplApi21.b, 2);
+        audioAttributesImplApi21.a = (AudioAttributes) ydcVar.g(audioAttributesImplApi21.a, 1);
+        audioAttributesImplApi21.b = ydcVar.f(audioAttributesImplApi21.b, 2);
         return audioAttributesImplApi21;
     }
 
-    public static void write(AudioAttributesImplApi21 audioAttributesImplApi21, y9c y9cVar) {
-        y9cVar.getClass();
-        y9cVar.k(audioAttributesImplApi21.a, 1);
-        y9cVar.j(audioAttributesImplApi21.b, 2);
+    public static void write(AudioAttributesImplApi21 audioAttributesImplApi21, ydc ydcVar) {
+        ydcVar.getClass();
+        ydcVar.k(audioAttributesImplApi21.a, 1);
+        ydcVar.j(audioAttributesImplApi21.b, 2);
     }
 }

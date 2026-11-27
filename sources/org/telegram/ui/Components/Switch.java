@@ -19,15 +19,15 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class Switch extends View implements tjb {
+public class Switch extends View implements snb {
     public int E;
     public int F;
     public Drawable G;
     public int H;
     public boolean I;
-    public ff0 J;
+    public hf0 J;
     public final int[] K;
     public byte L;
     public boolean M;
@@ -40,7 +40,7 @@ public class Switch extends View implements tjb {
     public float T;
     public Paint U;
     public Paint V;
-    public final wjb W;
+    public final vnb W;
     public final fm0 a;
     public int a0;
     public final RectF b;
@@ -56,24 +56,24 @@ public class Switch extends View implements tjb {
     public int x;
     public int y;
 
-    public Switch(Context context, wjb wjbVar) {
+    public Switch(Context context, vnb vnbVar) {
         super(context);
-        this.a = new fm0(0, new sg0(this, (byte) 2), s33.h, 380L, true);
+        this.a = new fm0(0, new tg0(this, (byte) 2), k43.h, 380L, true);
         this.w = 1.0f;
-        this.x = bkb.q7;
-        this.y = bkb.U6;
-        int i = bkb.c6;
+        this.x = aob.r7;
+        this.y = aob.V6;
+        int i = aob.d6;
         this.E = i;
         this.F = i;
         this.K = new int[]{R.attr.state_enabled, R.attr.state_pressed};
-        this.W = wjbVar;
+        this.W = vnbVar;
         this.b = new RectF();
         this.n = new Paint(1);
         Paint paint = new Paint(1);
         this.r = paint;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(gl.L(2.0f));
+        paint.setStrokeWidth(hl.L(2.0f));
         setHapticFeedbackEnabled(true);
     }
 
@@ -84,7 +84,7 @@ public class Switch extends View implements tjb {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z ? 1.0f : 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(200L);
-                this.d.addListener(new qcb(this, (byte) 0));
+                this.d.addListener(new mgb(this, (byte) 0));
                 this.d.start();
             } else {
                 ObjectAnimator objectAnimator = this.d;
@@ -101,7 +101,7 @@ public class Switch extends View implements tjb {
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "iconProgress", i == 0 ? 1.0f : 0.0f);
                 this.e = ofFloat2;
                 ofFloat2.setDuration(200L);
-                this.e.addListener(new qcb(this, (byte) 1));
+                this.e.addListener(new mgb(this, (byte) 1));
                 this.e.start();
                 return;
             }
@@ -180,7 +180,7 @@ public class Switch extends View implements tjb {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onDraw(Canvas canvas) {
-        wjb wjbVar;
+        vnb vnbVar;
         Paint paint;
         Paint paint2;
         float f;
@@ -193,22 +193,22 @@ public class Switch extends View implements tjb {
         int i2;
         int i3;
         Paint paint5;
-        ff0 ff0Var;
+        hf0 hf0Var;
         Drawable drawable;
         if (getVisibility() == 0) {
-            int L = gl.L(31.0f);
+            int L = hl.L(31.0f);
             int i4 = 2;
             int measuredWidth = (getMeasuredWidth() - L) / 2;
             float f4 = 14.0f;
             float f5 = 2.0f;
-            float measuredHeight = (getMeasuredHeight() - gl.N(14.0f)) / 2.0f;
+            float measuredHeight = (getMeasuredHeight() - hl.N(14.0f)) / 2.0f;
             float f6 = 7.0f;
-            int L2 = gl.L(7.0f) + measuredWidth + ((int) (gl.L(17.0f) * this.c));
+            int L2 = hl.L(7.0f) + measuredWidth + ((int) (hl.L(17.0f) * this.c));
             int measuredHeight2 = getMeasuredHeight() / 2;
             int i5 = 0;
             int i6 = 0;
             while (true) {
-                wjbVar = this.W;
+                vnbVar = this.W;
                 paint = this.r;
                 float f7 = 1.0f;
                 paint2 = this.n;
@@ -241,8 +241,8 @@ public class Switch extends View implements tjb {
                         if (i7 != 2) {
                             f7 = this.c;
                         }
-                        int a = a(bkb.v0(this.x, wjbVar));
-                        int a2 = a(bkb.v0(this.y, wjbVar));
+                        int a = a(aob.v0(this.x, vnbVar));
+                        int a2 = a(aob.v0(this.y, vnbVar));
                         if (i6 == 0 && (drawable = this.G) != null) {
                             if (this.H != (this.h ? a2 : a)) {
                                 int i8 = this.h ? a2 : a;
@@ -256,16 +256,16 @@ public class Switch extends View implements tjb {
                         int green2 = Color.green(a2);
                         int blue = Color.blue(a);
                         int blue2 = Color.blue(a2);
-                        int alpha = ((((int) (((Color.alpha(a2) - r6) * f7) + Color.alpha(a))) & kk7.d4) << 24) | ((((int) (((red2 - red) * f7) + red)) & kk7.d4) << 16) | ((((int) (((green2 - green) * f7) + green)) & kk7.d4) << 8) | (((int) (((blue2 - blue) * f7) + blue)) & kk7.d4);
+                        int alpha = ((((int) (((Color.alpha(a2) - r6) * f7) + Color.alpha(a))) & jn7.d4) << 24) | ((((int) (((red2 - red) * f7) + red)) & jn7.d4) << 16) | ((((int) (((green2 - green) * f7) + green)) & jn7.d4) << 8) | (((int) (((blue2 - blue) * f7) + blue)) & jn7.d4);
                         paint5.setColor(alpha);
                         paint.setColor(alpha);
-                        float N = gl.N(f8) + measuredHeight;
+                        float N = hl.N(f8) + measuredHeight;
                         RectF rectF = this.b;
                         rectF.set(measuredWidth, measuredHeight, measuredWidth + i2, N);
-                        canvas3.drawRoundRect(rectF, gl.N(f2), gl.N(f2), paint5);
-                        canvas3.drawCircle(L2, measuredHeight2, gl.N(10.0f), paint5);
-                        if (i6 == 0 && (ff0Var = this.J) != null) {
-                            ff0Var.setBounds(L2 - gl.L(18.0f), measuredHeight2 - gl.L(18.0f), gl.L(18.0f) + L2, gl.L(18.0f) + measuredHeight2);
+                        canvas3.drawRoundRect(rectF, hl.N(f2), hl.N(f2), paint5);
+                        canvas3.drawCircle(L2, measuredHeight2, hl.N(10.0f), paint5);
+                        if (i6 == 0 && (hf0Var = this.J) != null) {
+                            hf0Var.setBounds(L2 - hl.L(18.0f), measuredHeight2 - hl.L(18.0f), hl.L(18.0f) + L2, hl.L(18.0f) + measuredHeight2);
                             this.J.draw(canvas3);
                         } else if (i6 == 1) {
                             canvas3.drawBitmap(this.P, 0.0f, 0.0f, this.V);
@@ -303,8 +303,8 @@ public class Switch extends View implements tjb {
                             f3 = this.c;
                         }
                     }
-                    int v0 = bkb.v0(this.E, wjbVar);
-                    int a3 = a(bkb.v0(this.F, wjbVar));
+                    int v0 = aob.v0(this.E, vnbVar);
+                    int a3 = a(aob.v0(this.F, vnbVar));
                     int red3 = Color.red(v0);
                     int red4 = Color.red(a3);
                     int green3 = Color.green(v0);
@@ -312,10 +312,10 @@ public class Switch extends View implements tjb {
                     int blue3 = Color.blue(v0);
                     int blue4 = Color.blue(a3);
                     float f9 = f3;
-                    paint6.setColor(((((int) (((Color.alpha(a3) - r7) * f9) + Color.alpha(v0))) & kk7.d4) << 24) | ((((int) (((red4 - red3) * f9) + red3)) & kk7.d4) << 16) | ((((int) (((green4 - green3) * f9) + green3)) & kk7.d4) << 8) | (((int) (((blue4 - blue3) * f9) + blue3)) & kk7.d4));
+                    paint6.setColor(((((int) (((Color.alpha(a3) - r7) * f9) + Color.alpha(v0))) & jn7.d4) << 24) | ((((int) (((red4 - red3) * f9) + red3)) & jn7.d4) << 16) | ((((int) (((green4 - green3) * f9) + green3)) & jn7.d4) << 8) | (((int) (((blue4 - blue3) * f9) + blue3)) & jn7.d4));
                     float f10 = L2;
                     float f11 = measuredHeight2;
-                    canvas4.drawCircle(f10, f11, gl.L(8.0f), paint6);
+                    canvas4.drawCircle(f10, f11, hl.L(8.0f), paint6);
                     if (i10 == 0) {
                         if (this.G != null) {
                             float f12 = this.a.e;
@@ -326,7 +326,7 @@ public class Switch extends View implements tjb {
                                     canvas.scale(f12, f12, f10, f11);
                                 }
                                 Drawable drawable2 = this.G;
-                                drawable2.setBounds(oo1.A(2, L2, drawable2), oo1.y(2, measuredHeight2, this.G), oo1.w(2, L2, this.G), oo1.i(2, measuredHeight2, this.G));
+                                drawable2.setBounds(bp1.A(2, L2, drawable2), bp1.y(2, measuredHeight2, this.G), bp1.w(2, L2, this.G), bp1.i(2, measuredHeight2, this.G));
                                 this.G.draw(canvas4);
                                 if (z) {
                                     canvas.restore();
@@ -335,22 +335,22 @@ public class Switch extends View implements tjb {
                         } else {
                             int i13 = this.s;
                             if (i13 == 1) {
-                                L2 = (int) (f10 - (gl.L(10.8f) - (gl.L(1.3f) * this.c)));
-                                measuredHeight2 = (int) (f11 - (gl.L(8.5f) - (gl.L(0.5f) * this.c)));
-                                int N2 = ((int) gl.N(4.6f)) + L2;
-                                int N3 = (int) (gl.N(9.5f) + measuredHeight2);
-                                int L3 = gl.L(f) + N2;
-                                int L4 = gl.L(f) + N3;
-                                int N4 = ((int) gl.N(7.5f)) + L2;
-                                int N5 = ((int) gl.N(5.4f)) + measuredHeight2;
-                                int L5 = gl.L(f2) + N4;
-                                int L6 = gl.L(f2) + N5;
+                                L2 = (int) (f10 - (hl.L(10.8f) - (hl.L(1.3f) * this.c)));
+                                measuredHeight2 = (int) (f11 - (hl.L(8.5f) - (hl.L(0.5f) * this.c)));
+                                int N2 = ((int) hl.N(4.6f)) + L2;
+                                int N3 = (int) (hl.N(9.5f) + measuredHeight2);
+                                int L3 = hl.L(f) + N2;
+                                int L4 = hl.L(f) + N3;
+                                int N4 = ((int) hl.N(7.5f)) + L2;
+                                int N5 = ((int) hl.N(5.4f)) + measuredHeight2;
+                                int L5 = hl.L(f2) + N4;
+                                int L6 = hl.L(f2) + N5;
                                 paint3 = paint6;
                                 float f13 = this.c;
                                 paint4 = paint;
                                 canvas2 = canvas4;
                                 canvas2.drawLine((int) (((N2 - N4) * f13) + N4), (int) (((N3 - N5) * f13) + N5), (int) (((L3 - L5) * f13) + L5), (int) (((L4 - L6) * f13) + L6), paint4);
-                                canvas2.drawLine(((int) gl.N(7.5f)) + L2, ((int) gl.N(12.5f)) + measuredHeight2, gl.L(f2) + r3, r4 - gl.L(f2), paint4);
+                                canvas2.drawLine(((int) hl.N(7.5f)) + L2, ((int) hl.N(12.5f)) + measuredHeight2, hl.L(f2) + r3, r4 - hl.L(f2), paint4);
                                 i = 2;
                                 if (i10 == 1) {
                                     canvas2.drawBitmap(this.P, 0.0f, 0.0f, this.V);
@@ -363,10 +363,10 @@ public class Switch extends View implements tjb {
                                 if (i13 == 2 || this.e != null) {
                                     paint7.setAlpha((int) ((1.0f - this.w) * 255.0f));
                                     paint4 = paint7;
-                                    canvas2.drawLine(f10, f11, f10, measuredHeight2 - gl.L(5.0f), paint4);
+                                    canvas2.drawLine(f10, f11, f10, measuredHeight2 - hl.L(5.0f), paint4);
                                     canvas2.save();
                                     canvas2.rotate(this.w * (-90.0f), f10, f11);
-                                    canvas2.drawLine(f10, f11, gl.L(4.0f) + L2, f11, paint4);
+                                    canvas2.drawLine(f10, f11, hl.L(4.0f) + L2, f11, paint4);
                                     canvas2.restore();
                                 } else {
                                     paint4 = paint7;
@@ -423,34 +423,34 @@ public class Switch extends View implements tjb {
         this.I = z;
         if (this.J == null) {
             new Paint(1).setColor(-1);
-            ff0 ff0Var = new ff0(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{0}), null, null);
-            this.J = ff0Var;
-            ff0Var.setRadius(gl.L(18.0f));
+            hf0 hf0Var = new hf0(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{0}), null, null);
+            this.J = hf0Var;
+            hf0Var.setRadius(hl.L(18.0f));
             this.J.setCallback(this);
         }
         boolean z2 = this.h;
         byte b = this.L;
         if (!z2) {
             if (b != 1) {
-                i = bkb.R6;
-                this.J.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{a(bkb.v0(i, this.W))}));
+                i = aob.S6;
+                this.J.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{a(aob.v0(i, this.W))}));
                 z2 = this.h;
                 this.L = z2 ? (byte) 2 : (byte) 1;
             }
             if (Build.VERSION.SDK_INT >= 28) {
-                this.J.setHotspot(!z2 ? 0.0f : gl.L(100.0f), gl.L(18.0f));
+                this.J.setHotspot(!z2 ? 0.0f : hl.L(100.0f), hl.L(18.0f));
             }
             this.J.setState(!z ? this.K : StateSet.NOTHING);
             invalidate();
         }
         if (b != 2) {
-            i = bkb.S6;
-            this.J.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{a(bkb.v0(i, this.W))}));
+            i = aob.T6;
+            this.J.setColor(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{a(aob.v0(i, this.W))}));
             z2 = this.h;
             this.L = z2 ? (byte) 2 : (byte) 1;
         }
         if (Build.VERSION.SDK_INT >= 28 && z) {
-            this.J.setHotspot(!z2 ? 0.0f : gl.L(100.0f), gl.L(18.0f));
+            this.J.setHotspot(!z2 ? 0.0f : hl.L(100.0f), hl.L(18.0f));
         }
         this.J.setState(!z ? this.K : StateSet.NOTHING);
         invalidate();
@@ -461,7 +461,7 @@ public class Switch extends View implements tjb {
             Drawable mutate = getResources().getDrawable(i).mutate();
             this.G = mutate;
             if (mutate != null) {
-                int v0 = bkb.v0(this.h ? this.y : this.x, this.W);
+                int v0 = aob.v0(this.h ? this.y : this.x, this.W);
                 this.H = v0;
                 mutate.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.MULTIPLY));
             }
@@ -520,7 +520,7 @@ public class Switch extends View implements tjb {
         invalidate();
     }
 
-    @Override // tjb
+    @Override // snb
     public final void updateColors() {
         this.L = (byte) 0;
     }
@@ -530,18 +530,18 @@ public class Switch extends View implements tjb {
         if (super.verifyDrawable(drawable)) {
             return true;
         }
-        ff0 ff0Var = this.J;
-        return ff0Var != null && drawable == ff0Var;
+        hf0 hf0Var = this.J;
+        return hf0Var != null && drawable == hf0Var;
     }
 
     public int a(int i) {
         return i;
     }
 
-    @Override // tjb
+    @Override // snb
     public final void addColorKeys(HashSet hashSet) {
     }
 
-    public void setOnCheckedChangeListener(rcb rcbVar) {
+    public void setOnCheckedChangeListener(ngb ngbVar) {
     }
 }

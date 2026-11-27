@@ -1,53 +1,79 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.media.Rating;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class u29 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final /* synthetic */ View b;
-    public final /* synthetic */ Path c;
-    public final /* synthetic */ RectF d;
-    public final /* synthetic */ o39 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class u29 implements Parcelable {
+    public static final Parcelable.Creator<u29> CREATOR = new mx6((byte) 12);
+    public final int a;
+    public final float b;
+    public Rating c;
 
-    public u29(o39 o39Var, View view, Path path, RectF rectF) {
-        this.e = o39Var;
-        this.b = view;
-        this.c = path;
-        this.d = rectF;
+    public u29(int i, float f) {
+        this.a = i;
+        this.b = f;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        View view = this.b;
-        canvas.translate(-view.getX(), -view.getY());
-        canvas.clipPath(this.c);
-        int v0 = bkb.v0(bkb.c6, this.e.o2);
-        Paint paint = this.a;
-        paint.setColor(bm2.o(v0, paint.getAlpha()));
-        canvas.drawRect(this.d, paint);
-        canvas.restore();
+    public static u29 c(float f) {
+        if (f >= 0.0f && f <= 100.0f) {
+            return new u29(6, f);
+        }
+        efd.c("Rating", "Invalid percentage-based rating value");
+        return null;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public static u29 d(float f, int i) {
+        float f2;
+        if (i == 3) {
+            f2 = 3.0f;
+        } else if (i == 4) {
+            f2 = 4.0f;
+        } else {
+            if (i != 5) {
+                efd.c("Rating", "Invalid rating style (" + i + ") for a star rating");
+                return null;
+            }
+            f2 = 5.0f;
+        }
+        if (f >= 0.0f && f <= f2) {
+            return new u29(i, f);
+        }
+        efd.c("Rating", "Trying to set out of range star-based rating");
+        return null;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.a.setAlpha(i);
+    public final float a() {
+        int i = this.a;
+        if ((i == 3 || i == 4 || i == 5) && b()) {
+            return this.b;
+        }
+        return -1.0f;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final boolean b() {
+        return this.b >= 0.0f;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return this.a;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("Rating:style=");
+        sb.append(this.a);
+        sb.append(" rating=");
+        float f = this.b;
+        sb.append(f < 0.0f ? "unrated" : String.valueOf(f));
+        return sb.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a);
+        parcel.writeFloat(this.b);
     }
 }

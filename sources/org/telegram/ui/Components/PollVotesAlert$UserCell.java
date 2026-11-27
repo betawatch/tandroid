@@ -12,17 +12,17 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class PollVotesAlert$UserCell extends LinearLayout implements tjb {
+public class PollVotesAlert$UserCell extends LinearLayout implements snb {
     public ArrayList E;
-    public final /* synthetic */ gf8 F;
-    public final be0 a;
-    public final jia b;
+    public final /* synthetic */ ui8 F;
+    public final de0 a;
+    public final ema b;
     public final TextView c;
     public final TextView d;
-    public final pb0 e;
-    public final aya f;
+    public final rb0 e;
+    public final c2b f;
     public TLRPC.User h;
     public TLRPC.Chat n;
     public CharSequence r;
@@ -32,43 +32,43 @@ public class PollVotesAlert$UserCell extends LinearLayout implements tjb {
     public float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PollVotesAlert$UserCell(gf8 gf8Var, Context context) {
+    public PollVotesAlert$UserCell(ui8 ui8Var, Context context) {
         super(context);
-        this.F = gf8Var;
+        this.F = ui8Var;
         this.y = 1.0f;
         setOrientation(0);
         setLayoutDirection(3);
         setWillNotDraw(false);
-        setPadding(gl.L(12.0f), 0, gl.L(12.0f), 0);
-        this.e = new pb0((wjb) null);
-        be0 be0Var = new be0(context);
-        this.a = be0Var;
-        be0Var.setRoundRadius(gl.L(18.0f));
-        addView(be0Var, nme.t(34, 34, 16, 0, 0, 11, 0));
-        jia jiaVar = new jia(context);
-        this.b = jiaVar;
-        int i = bkb.i5;
-        zkb.W(jiaVar, i, null);
-        jiaVar.setTypeface(gl.o());
-        jiaVar.setTextSize(16);
-        jiaVar.setGravity((k96.a0 ? 5 : 3) | 16);
-        addView(jiaVar, nme.q(0, 24, 1.0f, 16, 0, 0, 0, 0));
+        setPadding(hl.L(12.0f), 0, hl.L(12.0f), 0);
+        this.e = new rb0((vnb) null);
+        de0 de0Var = new de0(context);
+        this.a = de0Var;
+        de0Var.setRoundRadius(hl.L(18.0f));
+        addView(de0Var, tre.t(34, 34, 16, 0, 0, 11, 0));
+        ema emaVar = new ema(context);
+        this.b = emaVar;
+        int i = aob.j5;
+        yob.W(emaVar, i, null);
+        emaVar.setTypeface(hl.o());
+        emaVar.setTextSize(16);
+        emaVar.setGravity((ob6.a0 ? 5 : 3) | 16);
+        addView(emaVar, tre.q(0, 24, 1.0f, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
-        zkb.X(textView, bkb.q5, null);
+        yob.X(textView, aob.r5, null);
         textView.setTextSize(1, 13.0f);
-        addView(textView, nme.q(-2, -2, 0.0f, 21, 4, 0, 2, 0));
+        addView(textView, tre.q(-2, -2, 0.0f, 21, 4, 0, 2, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
-        zkb.X(textView2, i, null);
+        yob.X(textView2, i, null);
         textView2.setTextSize(1, 13.0f);
-        addView(textView2, nme.q(-2, -2, 0.0f, 21, 2, 0, 4, 0));
-        this.f = new aya(20, jiaVar);
+        addView(textView2, tre.q(-2, -2, 0.0f, 21, 2, 0, 4, 0));
+        this.f = new c2b(20, emaVar);
     }
 
-    @Override // tjb
+    @Override // snb
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.y9));
+        hashSet.add(Integer.valueOf(aob.z9));
     }
 
     public float getPlaceholderAlpha() {
@@ -98,46 +98,46 @@ public class PollVotesAlert$UserCell extends LinearLayout implements tjb {
         int L2;
         int L3;
         int L4;
-        gf8 gf8Var = this.F;
-        RectF rectF = gf8Var.G1;
-        Paint paint = gf8Var.A1;
+        ui8 ui8Var = this.F;
+        RectF rectF = ui8Var.G1;
+        Paint paint = ui8Var.A1;
         if (this.x || this.y != 0.0f) {
             paint.setAlpha((int) (this.y * 255.0f));
-            be0 be0Var = this.a;
-            canvas.drawCircle((be0Var.getMeasuredWidth() / 2) + be0Var.getLeft(), (be0Var.getMeasuredHeight() / 2) + be0Var.getTop(), be0Var.getMeasuredWidth() / 2, paint);
+            de0 de0Var = this.a;
+            canvas.drawCircle((de0Var.getMeasuredWidth() / 2) + de0Var.getLeft(), (de0Var.getMeasuredHeight() / 2) + de0Var.getTop(), de0Var.getMeasuredWidth() / 2, paint);
             if (this.w % 2 == 0) {
-                L = gl.L(65.0f);
-                L2 = gl.L(48.0f);
+                L = hl.L(65.0f);
+                L2 = hl.L(48.0f);
             } else {
-                L = gl.L(65.0f);
-                L2 = gl.L(60.0f);
+                L = hl.L(65.0f);
+                L2 = hl.L(60.0f);
             }
-            if (k96.a0) {
+            if (ob6.a0) {
                 L = (getMeasuredWidth() - L) - L2;
             }
-            rectF.set(L, r6 - gl.L(4.0f), L + L2, gl.L(4.0f) + r6);
-            canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), paint);
+            rectF.set(L, r6 - hl.L(4.0f), L + L2, hl.L(4.0f) + r6);
+            canvas.drawRoundRect(rectF, hl.L(4.0f), hl.L(4.0f), paint);
             if (this.w % 2 == 0) {
-                L3 = gl.L(119.0f);
-                L4 = gl.L(60.0f);
+                L3 = hl.L(119.0f);
+                L4 = hl.L(60.0f);
             } else {
-                L3 = gl.L(131.0f);
-                L4 = gl.L(80.0f);
+                L3 = hl.L(131.0f);
+                L4 = hl.L(80.0f);
             }
-            if (k96.a0) {
+            if (ob6.a0) {
                 L3 = (getMeasuredWidth() - L3) - L4;
             }
-            rectF.set(L3, r6 - gl.L(4.0f), L3 + L4, gl.L(4.0f) + r6);
-            canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), paint);
+            rectF.set(L3, r6 - hl.L(4.0f), L3 + L4, hl.L(4.0f) + r6);
+            canvas.drawRoundRect(rectF, hl.L(4.0f), hl.L(4.0f), paint);
         }
         if (this.s) {
-            canvas.drawLine(k96.a0 ? 0.0f : gl.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(64.0f) : 0), getMeasuredHeight() - 1, bkb.j0);
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(64.0f) : 0), getMeasuredHeight() - 1, aob.j0);
         }
     }
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(48.0f) + (this.s ? 1 : 0), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f) + (this.s ? 1 : 0), TLObject.FLAG_30));
     }
 
     public void setPlaceholderAlpha(float f) {
@@ -145,25 +145,25 @@ public class PollVotesAlert$UserCell extends LinearLayout implements tjb {
         invalidate();
     }
 
-    @Override // tjb
+    @Override // snb
     public final void updateColors() {
-        aya ayaVar = this.f;
-        if (ayaVar != null) {
+        c2b c2bVar = this.f;
+        if (c2bVar != null) {
             try {
-                tl tlVar = ayaVar.a;
-                if (!(tlVar != null) || tlVar.G == null) {
+                ul ulVar = c2bVar.a;
+                if (!(ulVar != null) || ulVar.G == null) {
                     return;
                 }
-                int i = bkb.y9;
-                gf8 gf8Var = this.F;
-                pm pmVar = gf8.L1;
-                tlVar.k(Integer.valueOf(bkb.v0(i, gf8Var.J0)));
-                jia jiaVar = this.b;
-                if (jiaVar != null) {
-                    jiaVar.invalidate();
+                int i = aob.z9;
+                ui8 ui8Var = this.F;
+                qm qmVar = ui8.L1;
+                ulVar.k(Integer.valueOf(aob.v0(i, ui8Var.J0)));
+                ema emaVar = this.b;
+                if (emaVar != null) {
+                    emaVar.invalidate();
                 }
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
     }

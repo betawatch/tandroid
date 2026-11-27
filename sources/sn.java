@@ -1,44 +1,26 @@
 // default package
 
-import android.animation.TypeEvaluator;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class sn implements TypeEvaluator {
-    public ky7[] a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class sn {
+    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
+    public static final qn b = new qn("alpha", (byte) 0);
+    public static final qm c;
+    public static final qn d;
+    public static final qn e;
+    public static final qm f;
+    public static final qm g;
+    public static final qm h;
 
-    @Override // android.animation.TypeEvaluator
-    public final Object evaluate(float f, Object obj, Object obj2) {
-        ky7[] ky7VarArr = (ky7[]) obj;
-        ky7[] ky7VarArr2 = (ky7[]) obj2;
-        if (!mqe.a(ky7VarArr, ky7VarArr2)) {
-            w26.j("Can't interpolate between two incompatible pathData");
-            return null;
-        }
-        if (!mqe.a(this.a, ky7VarArr)) {
-            this.a = mqe.e(ky7VarArr);
-        }
-        int i = 0;
-        while (true) {
-            int length = ky7VarArr.length;
-            ky7[] ky7VarArr3 = this.a;
-            if (i >= length) {
-                return ky7VarArr3;
-            }
-            ky7 ky7Var = ky7VarArr3[i];
-            ky7 ky7Var2 = ky7VarArr[i];
-            ky7 ky7Var3 = ky7VarArr2[i];
-            ky7Var.getClass();
-            ky7Var.a = ky7Var2.a;
-            int i2 = 0;
-            while (true) {
-                float[] fArr = ky7Var2.b;
-                if (i2 < fArr.length) {
-                    ky7Var.b[i2] = (ky7Var3.b[i2] * f) + ((1.0f - f) * fArr[i2]);
-                    i2++;
-                }
-            }
-            i++;
-        }
+    static {
+        new qn("color", (byte) 1);
+        c = new qm("currentAlpha", (byte) 1);
+        d = new qn("alpha", (byte) 2);
+        e = new qn("alpha", (byte) 3);
+        f = new qm("animationProgress", (byte) 2);
+        g = new qm("animationValue", (byte) 3);
+        h = new qm("clipProgress", (byte) 4);
     }
 }

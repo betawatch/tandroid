@@ -1,120 +1,55 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.HashMap;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.p;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.PasskeysActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class iz7 implements TextWatcher {
+public final /* synthetic */ class iz7 implements icc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ p b;
+    public final /* synthetic */ PasskeysActivity b;
 
-    public /* synthetic */ iz7(p pVar, byte b) {
+    public /* synthetic */ iz7(PasskeysActivity passkeysActivity, byte b) {
         this.a = b;
-        this.b = pVar;
+        this.b = passkeysActivity;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z;
-        String str;
-        String str2;
+    @Override // icc
+    public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        p pVar = this.b;
+        PasskeysActivity passkeysActivity = this.b;
         switch (b) {
             case 0:
-                if (pVar.d0 != 0 && editable.length() == pVar.d0) {
-                    pVar.F0(false);
-                    break;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = passkeysActivity.b;
+                passkeysActivity.addPasskeyRow = -1;
+                String M0 = ob6.M0(2131747356, null);
+                b8c b8cVar = new b8c(2);
+                b8cVar.m = M0;
+                b8cVar.k = R.raw.passkey;
+                arrayList.add(b8cVar);
+                for (int i = 0; i < arrayList2.size(); i++) {
+                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i);
+                    am7 am7Var = new am7(passkeysActivity, (byte) 7);
+                    int i2 = kz7.b;
+                    b8c K = b8c.K(kz7.class);
+                    K.H = passkey;
+                    K.E = am7Var;
+                    arrayList.add(K);
                 }
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().k4.F.f()) {
+                    passkeysActivity.addPasskeyRow = arrayList.size();
+                    b8c c = b8c.c(-1, R.drawable.menu_passkey_add, ob6.M0(2131747377, null));
+                    c.r = true;
+                    arrayList.add(c);
+                }
+                arrayList.add(b8c.C(hl.D2(hl.N2(ob6.M0(2131747362, null), -1, 0, new fe7(passkeysActivity, (byte) 21), null), true)));
                 break;
             default:
-                HashMap hashMap = pVar.c;
-                if (!pVar.n0) {
-                    pVar.n0 = true;
-                    String h = p38.h(pVar.f[8].getText().toString(), false);
-                    pVar.f[8].setText(h);
-                    fe5 fe5Var = (fe5) pVar.f[9];
-                    if (h.length() == 0) {
-                        fe5Var.setHintText((String) null);
-                        fe5Var.setHint(k96.M0(2131747179, null));
-                    } else {
-                        int i = 4;
-                        if (h.length() > 4) {
-                            while (true) {
-                                if (i >= 1) {
-                                    String substring = h.substring(0, i);
-                                    if (((String) hashMap.get(substring)) != null) {
-                                        String str3 = h.substring(i) + pVar.f[9].getText().toString();
-                                        pVar.f[8].setText(substring);
-                                        str = str3;
-                                        h = substring;
-                                        z = true;
-                                    } else {
-                                        i--;
-                                    }
-                                } else {
-                                    z = false;
-                                    str = null;
-                                }
-                            }
-                            if (!z) {
-                                str = h.substring(1) + pVar.f[9].getText().toString();
-                                EditTextBoldCursor editTextBoldCursor = pVar.f[8];
-                                h = h.substring(0, 1);
-                                editTextBoldCursor.setText(h);
-                            }
-                        } else {
-                            z = false;
-                            str = null;
-                        }
-                        String str4 = (String) hashMap.get(h);
-                        if (str4 == null || pVar.a.indexOf(str4) == -1 || (str2 = (String) pVar.d.get(h)) == null) {
-                            fe5Var.setHintText((String) null);
-                            fe5Var.setHint(k96.M0(2131747179, null));
-                        } else {
-                            fe5Var.setHintText(str2.replace('X', (char) 8211));
-                            fe5Var.setHint((CharSequence) null);
-                        }
-                        if (!z) {
-                            EditTextBoldCursor editTextBoldCursor2 = pVar.f[8];
-                            editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-                        }
-                        if (str != null) {
-                            fe5Var.requestFocus();
-                            fe5Var.setText(str);
-                            fe5Var.setSelection(fe5Var.length());
-                        }
-                    }
-                    pVar.n0 = false;
-                    break;
-                }
+                passkeysActivity.a0((TL_account.Passkey) obj, (String) obj2);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    private final void a(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void b(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void c(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void d(int i, int i2, int i3, CharSequence charSequence) {
     }
 }

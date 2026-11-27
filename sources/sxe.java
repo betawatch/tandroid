@@ -1,44 +1,31 @@
 // default package
 
-import android.content.Context;
-import com.google.android.gms.tasks.Task;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class sxe {
-    public static shf j;
-    public static final c6d k;
     public final String a;
     public final String b;
-    public final zwe c;
-    public final sfa d;
-    public final Task e;
-    public final Task f;
-    public final String g;
-    public final int h;
-    public final HashMap i = new HashMap();
+    public final String c;
+    public final String d;
+    public final imf e;
+    public final String f;
+    public final Boolean g;
+    public final Boolean h;
+    public final Boolean i;
+    public final Integer j;
+    public final Integer k;
 
-    static {
-        Object[] objArr = {"optional-module-barcode", "com.google.android.gms.vision.barcode"};
-        objArr[0].getClass();
-        objArr[1].getClass();
-        k = new c6d(objArr);
-    }
-
-    public sxe(Context context, sfa sfaVar, zwe zweVar, String str) {
-        this.a = context.getPackageName();
-        this.b = om2.a(context);
-        this.d = sfaVar;
-        this.c = zweVar;
-        ize.k();
-        this.g = str;
-        l69.x();
-        this.e = l69.I(new ke7(this, (byte) 5));
-        l69.x();
-        sfaVar.getClass();
-        this.f = l69.I(new ixe(sfaVar, (byte) 0));
-        c6d c6dVar = k;
-        this.h = c6dVar.containsKey(str) ? ds3.d(context, (String) c6dVar.get(str), false) : -1;
+    public /* synthetic */ sxe(gxe gxeVar) {
+        this.a = gxeVar.a;
+        this.b = gxeVar.b;
+        this.c = gxeVar.c;
+        this.d = gxeVar.d;
+        this.e = (imf) gxeVar.k;
+        this.f = gxeVar.e;
+        this.g = gxeVar.f;
+        this.h = gxeVar.g;
+        this.i = gxeVar.h;
+        this.j = gxeVar.i;
+        this.k = gxeVar.j;
     }
 }

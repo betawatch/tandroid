@@ -1,87 +1,91 @@
 // default package
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.view.animation.PathInterpolator;
-import android.widget.FrameLayout;
-import java.util.Iterator;
-import java.util.List;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class twc {
-    public static final RectF e = new RectF();
-    public static final Rect f = new Rect();
-    public vxc a;
-    public final FrameLayout b;
-    public int c;
-    public final e59 d = new e59(0, false);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class twc implements Runnable {
+    public final /* synthetic */ uc7 a;
+    public final /* synthetic */ TLRPC.User[] b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ ConnectionsManager f;
+    public final /* synthetic */ e52 h;
+    public final /* synthetic */ String n;
 
-    public twc(FrameLayout frameLayout) {
-        this.b = frameLayout;
-        WeakHashMap weakHashMap = jdc.a;
-        if (Build.VERSION.SDK_INT >= 30) {
-            exc.g(frameLayout, this);
-            return;
-        }
-        PathInterpolator pathInterpolator = cxc.e;
-        View.OnApplyWindowInsetsListener bxcVar = new bxc(frameLayout, this);
-        frameLayout.setTag(R.id.tag_window_insets_animation_callback, bxcVar);
-        if (frameLayout.getTag(R.id.tag_compat_insets_dispatch) == null && frameLayout.getTag(R.id.tag_on_apply_window_listener) == null) {
-            frameLayout.setOnApplyWindowInsetsListener(bxcVar);
-        }
+    public /* synthetic */ twc(uc7 uc7Var, TLRPC.User[] userArr, double d, double d2, int[] iArr, ConnectionsManager connectionsManager, e52 e52Var, String str) {
+        this.a = uc7Var;
+        this.b = userArr;
+        this.c = d;
+        this.d = d2;
+        this.e = iArr;
+        this.f = connectionsManager;
+        this.h = e52Var;
+        this.n = str;
     }
 
-    public static vxc a(vxc vxcVar, View view, View view2) {
-        if (view == null || view2 == null || vxcVar == null) {
-            return null;
-        }
-        RectF rectF = e;
-        if (!zec.c(view, view2, rectF)) {
-            return null;
-        }
-        Rect rect = f;
-        rectF.round(rect);
-        int i = rect.left;
-        int i2 = rect.top;
-        int width = view2.getWidth() - rect.right;
-        int height = view2.getHeight() - rect.bottom;
-        if (i == 0 && i2 == 0 && width == 0 && height == 0) {
-            return vxcVar;
-        }
-        return vxcVar.a.m(Math.max(0, i), Math.max(0, i2), Math.max(0, width), Math.max(0, height));
-    }
-
-    public final void b() {
-        int i = this.c - 1;
-        this.c = i;
-        if (i == 0) {
-            Iterator it = this.d.iterator();
-            while (it.hasNext()) {
-                ((swc) it.next()).P();
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
+        tL_messages_getInlineBotResults.bot = this.a.q1(this.b[0]);
+        tL_messages_getInlineBotResults.query = "";
+        tL_messages_getInlineBotResults.offset = "";
+        tL_messages_getInlineBotResults.flags |= 1;
+        TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
+        tL_messages_getInlineBotResults.geo_point = tL_inputGeoPoint;
+        final double d = this.c;
+        tL_inputGeoPoint.lat = d;
+        final double d2 = this.d;
+        tL_inputGeoPoint._long = d2;
+        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
+        final int[] iArr = this.e;
+        final e52 e52Var = this.h;
+        final String str = this.n;
+        iArr[0] = this.f.sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: swc
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+                final int[] iArr2 = iArr;
+                final e52 e52Var2 = e52Var;
+                final double d3 = d;
+                final double d4 = d2;
+                final String str2 = str;
+                hl.c3(new Runnable() { // from class: rwc
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        iArr2[0] = 0;
+                        TLObject tLObject2 = tLObject;
+                        boolean z = tLObject2 instanceof TLRPC.messages_BotResults;
+                        e52 e52Var3 = e52Var2;
+                        if (z) {
+                            TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
+                            if (!messages_botresults.results.isEmpty()) {
+                                TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(0);
+                                String str3 = botInlineResult.title;
+                                try {
+                                    float parseFloat = Float.parseFloat(botInlineResult.description);
+                                    vwc vwcVar = new vwc();
+                                    vwcVar.a = d3;
+                                    vwcVar.b = d4;
+                                    vwcVar.c = str3;
+                                    vwcVar.d = parseFloat;
+                                    wwc.a = str2;
+                                    wwc.b = vwcVar;
+                                    e52Var3.a(vwcVar);
+                                    return;
+                                } catch (Exception unused) {
+                                    e52Var3.a(null);
+                                    return;
+                                }
+                            }
+                        }
+                        e52Var3.a(null);
+                    }
+                });
             }
-        }
-    }
-
-    public final void c(vxc vxcVar, List list) {
-        Iterator it = list.iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            i |= ((gxc) it.next()).a.c();
-        }
-        if (fod.a(i, 8)) {
-            Iterator it2 = this.d.iterator();
-            while (it2.hasNext()) {
-                swc swcVar = (swc) it2.next();
-                vxc a = a(vxcVar, swcVar.R(), this.b);
-                if (a != null) {
-                    swcVar.o(a);
-                }
-            }
-        }
+        });
     }
 }

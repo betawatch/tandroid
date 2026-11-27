@@ -1,19 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lwd implements zn7 {
-    public static final lwd a = new lwd();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class lwd {
+    public static int a(int i) {
+        if (i == 0) {
+            return 0;
         }
-        throw null;
+        if (i == 90) {
+            return 1;
+        }
+        if (i == 180) {
+            return 2;
+        }
+        if (i == 270) {
+            return 3;
+        }
+        lq5.j(uh9.k(i, "Invalid rotation: "));
+        return 0;
     }
 }

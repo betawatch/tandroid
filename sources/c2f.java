@@ -1,25 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class c2f {
-    public static byte[] a(byte[]... bArr) {
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            if (i >= bArr.length) {
-                break;
-            }
-            i2 += bArr[i].length;
-            i++;
+public final class c2f implements zq7 {
+    public static final c2f a = new c2f();
+
+    static {
+        xnb.y(xnb.p(xmd.class, new skd(1)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        byte[] bArr2 = new byte[i2];
-        int i3 = 0;
-        for (byte[] bArr3 : bArr) {
-            int length = bArr3.length;
-            System.arraycopy(bArr3, 0, bArr2, i3, length);
-            i3 += length;
-        }
-        return bArr2;
+        throw null;
     }
 }

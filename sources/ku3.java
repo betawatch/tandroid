@@ -1,92 +1,62 @@
 // default package
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.ViewParent;
-import android.webkit.WebView;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ku3 extends WebView {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class ku3 extends FrameLayout {
+    public final EditTextBoldCursor a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ku3(KeyEvent.Callback callback, Context context, Context context2, byte b) {
+    public ku3(Context context) {
         super(context);
-        this.a = b;
-        this.c = callback;
-        this.b = context2;
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.a = editTextBoldCursor;
+        yob.X(editTextBoldCursor, aob.G6, null);
+        yob.D(editTextBoldCursor, aob.H6, null);
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
+        editTextBoldCursor.setGravity((ob6.a0 ? 5 : 3) | 16);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | TLObject.FLAG_14);
+        addView(editTextBoldCursor, tre.d(-1, -1.0f, (ob6.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public final void a(String str) {
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        editTextBoldCursor.setText("");
+        editTextBoldCursor.setHint(str);
+        setWillNotDraw(true);
+    }
+
+    public String getText() {
+        return this.a.getText().toString();
+    }
+
+    public EditTextBoldCursor getTextView() {
+        return this.a;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), hl.L(50.0f));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - hl.L(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    }
+
+    public void setTextColor(int i) {
+        this.a.setTextColor(i);
     }
 
     @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.draw(canvas);
-                ViewParent parent = getParent();
-                x88 x88Var = (x88) this.c;
-                if (parent != x88Var && x88Var.h.getVisibility() == 0) {
-                    canvas.drawColor(-16777216);
-                    x88Var.j(canvas, getWidth(), getHeight());
-                    break;
-                }
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        switch (this.a) {
-            case 0:
-                gl.u((Activity) this.b, true);
-                super.onAttachedToWindow();
-                break;
-            default:
-                gl.u(this.b, true);
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                gl.u((Activity) this.b, false);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                gl.u(this.b, false);
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (onTouchEvent) {
-                    int action = motionEvent.getAction();
-                    ou3 ou3Var = (ou3) this.c;
-                    if (action == 1) {
-                        ou3Var.E0 = false;
-                    } else {
-                        ou3Var.E0 = true;
-                    }
-                }
-                return onTouchEvent;
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
+    public final void onDraw(Canvas canvas) {
     }
 }

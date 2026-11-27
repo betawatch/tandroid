@@ -1,18 +1,29 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import org.telegram.messenger.voip.VideoCapturerDevice;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hec {
-    public final d a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public float f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class hec implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VideoCapturerDevice b;
 
-    public hec(d dVar) {
-        this.a = dVar;
+    public /* synthetic */ hec(VideoCapturerDevice videoCapturerDevice, byte b) {
+        this.a = b;
+        this.b = videoCapturerDevice;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        VideoCapturerDevice videoCapturerDevice = this.b;
+        switch (b) {
+            case 0:
+                videoCapturerDevice.lambda$onDestroy$8();
+                break;
+            default:
+                videoCapturerDevice.lambda$onDestroy$9();
+                break;
+        }
     }
 }

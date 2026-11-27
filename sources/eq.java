@@ -1,34 +1,18 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import android.widget.ListAdapter;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface eq {
-    boolean a();
+public final class eq extends View.BaseSavedState {
+    public static final Parcelable.Creator<eq> CREATOR = new g31((byte) 3);
+    public boolean a;
 
-    int b();
-
-    void c(int i);
-
-    CharSequence d();
-
-    void dismiss();
-
-    Drawable g();
-
-    void h(CharSequence charSequence);
-
-    void j(Drawable drawable);
-
-    void k(int i);
-
-    void l(int i);
-
-    void m(int i, int i2);
-
-    int n();
-
-    void o(ListAdapter listAdapter);
+    @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeByte(this.a ? (byte) 1 : (byte) 0);
+    }
 }

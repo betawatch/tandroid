@@ -1,216 +1,203 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public class ew3 extends fx0 implements gk7 {
-    public static int C1 = 1;
-    public q8c A1;
-    public final ArrayList B1;
-    public String l1;
-    public int m1;
-    public final bv3 n1;
-    public final cv3 o1;
-    public final vq1 p1;
-    public final dw3 q1;
-    public float r1;
-    public final boolean s1;
-    public final boolean t1;
-    public boolean u1;
-    public int v1;
-    public ur4 w1;
-    public float x1;
-    public l8c y1;
-    public r31 z1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ew3(wjb wjbVar, Context context, boolean z, boolean z2) {
-        super(1, wjbVar, context, true);
-        byte b = 1;
-        this.l1 = null;
-        this.m1 = -1;
-        this.n1 = new bv3();
-        this.o1 = new cv3();
-        this.r1 = -1.0f;
-        this.B1 = new ArrayList();
-        this.s1 = z;
-        this.t1 = z2;
-        this.G = true;
-        L(bkb.v0(bkb.g5, wjbVar));
-        this.v1 = this.H0;
-        this.x = true;
-        byte b2 = 0;
-        z0(false);
-        this.b = new ev3(this, context);
-        vq1 vq1Var = new vq1((byte) 2, context, this);
-        this.p1 = vq1Var;
-        vq1Var.b = z ? 0 : C1;
-        vq1Var.setAdapter(new dv3(this, z, context));
-        this.b.addView(vq1Var, nme.e(-1, -1, 87));
-        new mv5(this.b, false, new av3(this, b2));
-        if (!z) {
-            dw3 dw3Var = new dw3(context);
-            this.q1 = dw3Var;
-            dw3Var.H = new av3(this, b);
-            dw3Var.G = vq1Var.b;
-            dw3Var.invalidate();
-            this.b.addView(dw3Var, nme.e(-1, -2, 87));
-        }
-        kk7.f(this.a).b(this, kk7.w0);
-        kk7.f(this.a).b(this, kk7.A0);
-        boolean z3 = fa4.j;
-        if (!z) {
-            hq6.d0(this.a).D(5);
-            hq6.d0(this.a).y();
-            hq6.d0(this.a).X0(true, true, false, 0);
-        }
-        hq6.d0(this.a).D(0);
-        hq6.d0(this.a).X0(false, true, false, 0);
-        hq6.d0(this.a).X0(false, true, false, 2);
-        hq6.d0(this.a).X0(false, true, false, 7);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ew3 implements pw2 {
+    @Override // pw2
+    public final boolean A() {
+        return false;
     }
 
-    @Override // fx0
-    public final boolean D() {
-        return this.p1.getTranslationY() >= ((float) ((int) this.r1));
+    @Override // pw2
+    public final boolean C(TLRPC.Document document) {
+        return false;
     }
 
-    public boolean D0(Integer num) {
+    @Override // pw2
+    public final String E(boolean z) {
+        return null;
+    }
+
+    @Override // pw2
+    public final boolean H() {
+        return false;
+    }
+
+    @Override // pw2
+    public final fu5 J(ViewGroup viewGroup) {
+        return null;
+    }
+
+    @Override // pw2
+    public final boolean M() {
+        return false;
+    }
+
+    @Override // pw2
+    public final boolean Q(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // pw2
+    public final Boolean S(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // pw2
+    public final boolean T() {
         return true;
     }
 
-    public boolean E0(Integer num) {
-        return num.intValue() != 6;
+    @Override // pw2
+    public final long a() {
+        return 0L;
     }
 
-    public boolean F0(Runnable runnable) {
+    @Override // pw2
+    public final boolean b() {
+        return false;
+    }
+
+    @Override // pw2
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // pw2
+    public final TLRPC.TL_messageMediaPoll d() {
+        return null;
+    }
+
+    @Override // pw2
+    public final boolean e(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // pw2
+    public final boolean f() {
+        return false;
+    }
+
+    @Override // pw2
+    public final TLRPC.PollAnswer g() {
+        return null;
+    }
+
+    @Override // pw2
+    public final boolean h() {
         return true;
     }
 
-    public final void G0() {
-        xv3 xv3Var;
-        this.d = false;
-        this.c.animate().translationY(0.0f).setDuration(250L).setInterpolator(gb.w).start();
-        for (View view : this.p1.getViewPages()) {
-            if (view instanceof tv3) {
-                xv3 xv3Var2 = ((tv3) view).f;
-                if (xv3Var2 != null) {
-                    gl.t1(xv3Var2.e);
-                }
-            } else if ((view instanceof nv3) && (xv3Var = ((nv3) view).d) != null) {
-                gl.t1(xv3Var.e);
-            }
-        }
+    @Override // pw2
+    public final boolean i() {
+        return true;
     }
 
-    public final void H0(int i) {
-        if (D0(Integer.valueOf(i))) {
-            if ((i != 1 || F0(new sm3((Object) this, i, (byte) 2))) && ((Boolean) this.A1.a(Integer.valueOf(i))).booleanValue()) {
-                dismiss();
-            }
-        }
+    @Override // pw2
+    public final boolean j(int i) {
+        return false;
     }
 
-    public final void I0() {
-        ArrayList arrayList = this.B1;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            cw3 cw3Var = (cw3) obj;
-            boolean E0 = cw3Var.f.E0(6);
-            ArrayList arrayList2 = cw3Var.c;
-            int size2 = arrayList2.size();
-            int i2 = -1;
-            int i3 = 0;
-            while (true) {
-                if (i3 >= arrayList2.size()) {
-                    break;
-                }
-                byte b = ((yv3) arrayList2.get(i3)).a;
-                if (b == 6) {
-                    i2 = i3;
-                }
-                if (size2 == arrayList2.size() && (b == 1 || b == 2 || b == 3)) {
-                    size2 = i3;
-                }
-                i3++;
-            }
-            if (E0 != (i2 >= 0)) {
-                if (E0) {
-                    arrayList2.add(size2, new zv3(cw3Var, 6, R.drawable.filled_widget_captions, k96.M0(2131744203, null)));
-                } else {
-                    arrayList2.remove(i2);
-                }
-                cw3Var.requestLayout();
-                cw3Var.invalidate();
-            }
-        }
+    @Override // pw2
+    public final boolean n() {
+        return false;
     }
 
-    public final void J0(q8c q8cVar) {
-        this.A1 = q8cVar;
-        for (View view : this.p1.getViewPages()) {
-            if (view instanceof tv3) {
-                sv3 sv3Var = ((tv3) view).c;
-                if (sv3Var.I == null) {
-                    sv3Var.D(null);
-                }
-            }
-        }
+    @Override // pw2
+    public final boolean u() {
+        return true;
     }
 
-    @Override // fx0
-    public final int Q() {
-        return this.b.getMeasuredHeight() <= 0 ? gl.q.y : (int) (this.b.getMeasuredHeight() - this.p1.getY());
+    @Override // pw2
+    public final r47 x() {
+        return null;
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        int i3 = kk7.w0;
-        int i4 = kk7.A0;
-        if (i == i3 || i == i4) {
-            for (View view : this.p1.getViewPages()) {
-                if (view instanceof tv3) {
-                    tv3 tv3Var = (tv3) view;
-                    if (i == i4 || ((tv3Var.a == 0 && ((Integer) objArr[0]).intValue() == 5) || (tv3Var.a == 1 && ((Integer) objArr[0]).intValue() == 0))) {
-                        sv3 sv3Var = tv3Var.c;
-                        if (sv3Var.I == null) {
-                            sv3Var.D(null);
-                        }
-                    }
-                }
-            }
-        }
+    @Override // pw2
+    public final boolean y() {
+        return false;
     }
 
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        kk7.f(this.a).n(this, kk7.w0);
-        kk7.f(this.a).n(this, kk7.A0);
-        G0();
-        super.dismiss();
-        boolean z = fa4.j;
+    @Override // pw2
+    public final void N() {
     }
 
-    @Override // fx0
-    public final void p0() {
-        int v0;
-        super.p0();
-        try {
-            if (this.G0 >= 0 || this.H0 != this.v1 || (v0 = bkb.v0(bkb.g5, this.J0)) == this.H0) {
-                return;
-            }
-            this.H0 = v0;
-            this.v1 = v0;
-            x0(v0);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
+    @Override // pw2
+    public final void O() {
+    }
+
+    @Override // pw2
+    public final void p() {
+    }
+
+    @Override // pw2
+    public final void r() {
+    }
+
+    @Override // pw2
+    public final void D(TLRPC.Document document) {
+    }
+
+    @Override // pw2
+    public final void G(TLRPC.Document document) {
+    }
+
+    @Override // pw2
+    public final void K(k7a k7aVar) {
+    }
+
+    @Override // pw2
+    public final void R(String str) {
+    }
+
+    @Override // pw2
+    public final void l(String str) {
+    }
+
+    @Override // pw2
+    public final void m(TLRPC.Document document) {
+    }
+
+    @Override // pw2
+    public final void o(TLRPC.Document document) {
+    }
+
+    @Override // pw2
+    public final void s(TLRPC.Document document) {
+    }
+
+    @Override // pw2
+    public final void w(String str) {
+    }
+
+    @Override // pw2
+    public final void z(TLRPC.Document document) {
+    }
+
+    @Override // pw2
+    public final void L(Object obj, Object obj2) {
+    }
+
+    @Override // pw2
+    public final void P(TLRPC.InputStickerSet inputStickerSet, boolean z) {
+    }
+
+    @Override // pw2
+    public final void t(TLRPC.StickerSet stickerSet, String str) {
+    }
+
+    @Override // pw2
+    public final void F(CharSequence charSequence, String str, rx1 rx1Var) {
+    }
+
+    @Override // pw2
+    public final void v(Object obj, Object obj2, boolean z, int i, int i2) {
+    }
+
+    @Override // pw2
+    public final void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
     }
 }

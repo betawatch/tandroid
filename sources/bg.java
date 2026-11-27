@@ -1,64 +1,153 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.util.Log;
+import android.window.OnBackInvokedDispatcher;
+import com.google.android.gms.tasks.OnSuccessListener;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.ConcurrentModificationException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bg implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class bg implements dq7, fd, fq7, qd3, nu4, OnSuccessListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ bg(int i, int[] iArr, hb5 hb5Var) {
-        this.a = (byte) 1;
-        this.b = i;
-        this.c = iArr;
-        this.d = hb5Var;
+    public /* synthetic */ bg(tj tjVar) {
+        this.a = (byte) 19;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        byte b = this.a;
-        Object obj = this.d;
-        int i = this.b;
-        Object obj2 = this.c;
-        switch (b) {
-            case 0:
-                vm1 vm1Var = (vm1) obj;
-                for (int i2 : (int[]) obj2) {
-                    if (i2 != 0) {
-                        ConnectionsManager.getInstance(i).cancelRequest(i2, true);
+    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher a(Object obj) {
+        return (OnBackInvokedDispatcher) obj;
+    }
+
+    public static /* synthetic */ void b() {
+        throw new ConcurrentModificationException();
+    }
+
+    public static /* synthetic */ void e(Object obj, String str) {
+        throw new IOException(str + obj);
+    }
+
+    @Override // dq7
+    public final String c(int i) {
+        switch (this.a) {
+            case 1:
+                if (i != 0) {
+                    Calendar calendar = Calendar.getInstance();
+                    int i2 = calendar.get(1);
+                    calendar.add(6, i);
+                    long timeInMillis = calendar.getTimeInMillis();
+                    if (calendar.get(1) != i2) {
+                        break;
+                    } else {
+                        break;
                     }
+                } else {
+                    break;
                 }
-                if (vm1Var != null) {
-                    vm1Var.run();
+            case 4:
+                if (i != 0) {
+                    Calendar calendar2 = Calendar.getInstance();
+                    int i3 = calendar2.get(1);
+                    calendar2.add(6, i);
+                    long timeInMillis2 = calendar2.getTimeInMillis();
+                    if (calendar2.get(1) != i3) {
+                        break;
+                    } else if (i >= 7) {
+                        break;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            case 8:
+                if (i != 0) {
+                    if (i >= 1 && i < 16) {
+                        break;
+                    } else if (i != 16) {
+                        if (i != 17) {
+                            if (i != 18) {
+                                if (i != 19) {
+                                    if (i == 20) {
+                                        break;
+                                    }
+                                } else {
+                                    break;
+                                }
+                            } else {
+                                break;
+                            }
+                        } else {
+                            break;
+                        }
+                    } else {
+                        break;
+                    }
+                } else {
                     break;
                 }
                 break;
-            case 1:
-                hb5 hb5Var = (hb5) obj;
-                String str = LaunchActivity.C1;
-                ConnectionsManager.getInstance(i).cancelRequest(((int[]) obj2)[0], true);
-                if (hb5Var != null) {
-                    hb5Var.run();
+            case 9:
+                boolean z = ob6.c0;
+                String format = String.format("%02d", Integer.valueOf((i % 12 != 0 || z) ? i % (z ? 24 : 12) : 12));
+                if (i >= 24) {
                     break;
                 }
+                break;
+            case 12:
+                switch (i) {
+                }
+        }
+        return String.format("%02d", Integer.valueOf(i));
+    }
+
+    @Override // qd3
+    public final void f(vw8 vw8Var) {
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
+        }
+        vw8Var.get().getClass();
+        throw new ClassCastException();
+    }
+
+    @Override // nu4
+    public final Object h(Object obj) {
+        Integer num = (Integer) obj;
+        switch (this.a) {
+            case 22:
+                return "%s";
+            default:
+                return "%" + (num.intValue() + 1) + "$s";
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        boolean z = f11.a;
+        cc4.b("sms listener registered");
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        switch (this.a) {
+            case 7:
+                idVar.dismiss();
+                break;
+            case 17:
+                idVar.dismiss();
                 break;
             default:
-                ((na7) obj2).getConnectionsManager().cancelRequest(i, true);
-                ((d) obj).setVisibleDialog(null);
+                idVar.dismiss();
                 break;
         }
     }
 
-    public /* synthetic */ bg(Object obj, int i, Object obj2, byte b) {
+    public /* synthetic */ bg(byte b) {
         this.a = b;
-        this.c = obj;
-        this.b = i;
-        this.d = obj2;
+    }
+
+    @Override // fq7
+    public final void i(hq7 hq7Var, int i) {
     }
 }

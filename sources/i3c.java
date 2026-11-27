@@ -1,36 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class i3c implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p3c b;
-    public final /* synthetic */ byte[] c;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-    public /* synthetic */ i3c(p3c p3cVar, byte[] bArr, byte b) {
-        this.a = b;
-        this.b = p3cVar;
-        this.c = bArr;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class i3c extends r3c {
+    public final /* synthetic */ gn1 T1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i3c(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i, TL_iv.RichMessage richMessage, gn1 gn1Var) {
+        super(activity, str, str2, null, inputPeer, i, false, richMessage);
+        this.T1 = gn1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte[] bArr = this.c;
-        p3c p3cVar = this.b;
-        switch (b) {
-            case 0:
-                p3cVar.r0(bArr);
-                break;
-            default:
-                p3cVar.A0();
-                p3cVar.W = bArr;
-                p3cVar.getMessagesController().n4(0L, "VALIDATE_PASSWORD");
-                p3c p3cVar2 = new p3c(9, p3cVar.V);
-                p3cVar2.I = p3cVar.I;
-                p3cVar2.H = p3cVar.H;
-                p3cVar.presentFragment(p3cVar2, true);
-                break;
-        }
+    @Override // r3c, nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        super.dismiss();
+        this.T1.run();
     }
 }

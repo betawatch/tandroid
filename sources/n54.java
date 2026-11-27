@@ -1,33 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n54 implements x56, us2 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
+public final class n54 extends c4 {
+    public static final Parcelable.Creator<n54> CREATOR = new zkd((byte) 19);
+    public String a;
 
-    public /* synthetic */ n54(float f, byte b) {
-        this.a = b;
-        this.b = f;
-    }
-
-    @Override // us2
-    public final void accept(Object obj) {
-        byte b = this.a;
-        float f = this.b;
-        ad8 ad8Var = (ad8) obj;
-        switch (b) {
-            case 1:
-                ad8Var.c(f);
-                break;
-            default:
-                ad8Var.R(f);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj instanceof n54) {
+            return vue.a(this.a, ((n54) obj).a);
+        }
+        return false;
     }
 
-    @Override // x56
-    public final void invoke(Object obj) {
-        ((mc8) obj).q(this.b);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 1, this.a);
+        bye.s(parcel, r);
     }
 }

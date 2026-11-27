@@ -1,16 +1,86 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class wld {
-    public boolean a() {
-        return false;
+public final class wld extends c4 {
+    public static final Parcelable.Creator<wld> CREATOR = new zkd(24);
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final dgd e;
+    public final String f;
+    public final Bundle h;
+
+    public wld(String str, String str2, String str3, String str4, dgd dgdVar, String str5, Bundle bundle) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
+        this.e = dgdVar;
+        this.f = str5;
+        if (bundle != null) {
+            this.h = bundle;
+        } else {
+            bundle = Bundle.EMPTY;
+            this.h = bundle;
+        }
+        ClassLoader classLoader = wld.class.getClassLoader();
+        if (classLoader != null) {
+            bundle.setClassLoader(classLoader);
+        } else {
+            StringBuilder sb = new StringBuilder(29);
+            sb.append((CharSequence) "expected a non-null reference", 0, 29);
+            throw new zp2(sb.toString());
+        }
     }
 
-    public abstract void c();
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("ActionImpl { { actionType: '");
+        sb.append(this.a);
+        sb.append("' } { objectName: '");
+        sb.append(this.b);
+        sb.append("' } { objectUrl: '");
+        sb.append(this.c);
+        sb.append("' } ");
+        String str = this.d;
+        if (str != null) {
+            ik8.z("{ objectSameAs: '", str, "' } ", sb);
+        }
+        dgd dgdVar = this.e;
+        if (dgdVar != null) {
+            sb.append("{ metadata: '");
+            sb.append(dgdVar.toString());
+            sb.append("' } ");
+        }
+        String str2 = this.f;
+        if (str2 != null) {
+            ik8.z("{ actionStatus: '", str2, "' } ", sb);
+        }
+        Bundle bundle = this.h;
+        if (!bundle.isEmpty()) {
+            sb.append("{ ");
+            sb.append(bundle);
+            sb.append(" } ");
+        }
+        sb.append("}");
+        return sb.toString();
+    }
 
-    public abstract void d();
-
-    public void b() {
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 1, this.a);
+        bye.l(parcel, 2, this.b);
+        bye.l(parcel, 3, this.c);
+        bye.l(parcel, 4, this.d);
+        bye.k(parcel, 5, this.e, i);
+        bye.l(parcel, 6, this.f);
+        bye.b(parcel, 7, this.h);
+        bye.s(parcel, r);
     }
 }

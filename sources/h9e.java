@@ -1,17 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class h9e {
-    public static final dw2 a(sw2 sw2Var) {
-        if (sw2Var.get(pd5.c) == null) {
-            sw2Var = sw2Var.plus(new dt5());
-        }
-        return new dw2(sw2Var);
+public final class h9e implements zq7 {
+    public static final h9e a = new h9e();
+
+    static {
+        xnb.y(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, new ubd(1)), 2)));
     }
 
-    public static final Object b(eq4 eq4Var, fw2 fw2Var) {
-        rq9 rq9Var = new rq9(fw2Var, fw2Var.getContext());
-        return dxe.a(rq9Var, rq9Var, eq4Var);
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

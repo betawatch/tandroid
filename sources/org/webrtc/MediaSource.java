@@ -1,12 +1,17 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class MediaSource {
-    private long nativeSource;
+    final NativeLifecycleLock lifecycleLock;
     private final RefCountDelegate refCountDelegate;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        State getState(long j);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum State {
         INITIALIZING,
         LIVE,
@@ -19,28 +24,26 @@ public class MediaSource {
     }
 
     public MediaSource(long j) {
-        this.refCountDelegate = new RefCountDelegate(new px6((byte) 0, j));
-        this.nativeSource = j;
+        this.refCountDelegate = new RefCountDelegate(new tz6((byte) 0, j));
+        this.lifecycleLock = new NativeLifecycleLock("MediaSource", j);
     }
 
-    private void checkMediaSourceExists() {
-        if (this.nativeSource != 0) {
-            return;
-        }
-        sc8.j("MediaSource has been disposed.");
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$2(long j) {
+        this.refCountDelegate.release();
     }
 
-    private static native State nativeGetState(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ State lambda$state$1(long j) {
+        return MediaSourceJni.get().getState(j);
+    }
 
     public void dispose() {
-        checkMediaSourceExists();
-        this.refCountDelegate.release();
-        this.nativeSource = 0L;
+        this.lifecycleLock.dispose(new bm6(this, (byte) 9));
     }
 
     public long getNativeMediaSource() {
-        checkMediaSourceExists();
-        return this.nativeSource;
+        return this.lifecycleLock.getNativePointer();
     }
 
     public void runWithReference(Runnable runnable) {
@@ -54,7 +57,6 @@ public class MediaSource {
     }
 
     public State state() {
-        checkMediaSourceExists();
-        return nativeGetState(this.nativeSource);
+        return (State) this.lifecycleLock.call(new hz6((byte) 5));
     }
 }

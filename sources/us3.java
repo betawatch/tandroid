@@ -1,62 +1,9 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class us3 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gt3 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ ws3 d;
-
-    public us3(ws3 ws3Var, int i, gt3 gt3Var, boolean z) {
-        this.d = ws3Var;
-        this.a = i;
-        this.b = gt3Var;
-        this.c = z;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        ws3 ws3Var = this.d;
-        boolean z = ws3Var.a;
-        int i = this.a;
-        if (!z) {
-            if (i > 0 && editable != null && editable.length() > i) {
-                ws3Var.a = true;
-                CharSequence subSequence = editable.subSequence(0, i);
-                gt3 gt3Var = this.b;
-                gt3Var.setText(subSequence);
-                gt3Var.setSelection(gt3Var.length());
-                ws3Var.a = false;
-            }
-            ws3Var.b(editable);
-        }
-        if (this.c) {
-            while (true) {
-                int indexOf = editable.toString().indexOf("\n");
-                if (indexOf < 0) {
-                    break;
-                } else {
-                    editable.delete(indexOf, indexOf + 1);
-                }
-            }
-        }
-        gn gnVar = ws3Var.y;
-        if (gnVar == null || i <= 0) {
-            return;
-        }
-        gnVar.a();
-        ws3Var.c();
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface us3 {
+    rc0 a(Context context, String str, ts3 ts3Var);
 }

@@ -1,35 +1,89 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class y6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ r7 b;
-    public final /* synthetic */ int c;
+import android.view.View;
+import android.widget.PopupWindow;
+import org.telegram.ui.o;
 
-    public /* synthetic */ y6(r7 r7Var, int i, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class y6 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ y6(Object obj, byte b) {
         this.a = b;
-        this.b = r7Var;
-        this.c = i;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
         byte b = this.a;
-        int i = this.c;
-        r7 r7Var = this.b;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                if (r7Var.b.getSwipeBack() != null) {
-                    r7Var.b.getSwipeBack().e(i);
+                p7 p7Var = ((s7) obj).R;
+                if (p7Var != null) {
+                    p7Var.A();
                     break;
                 }
                 break;
-            default:
-                if (r7Var.b.getSwipeBack() != null) {
-                    r7Var.b.getSwipeBack().e(i);
+            case 1:
+                o oVar = (o) obj;
+                View view = oVar.f;
+                if (view != null) {
+                    oVar.d = null;
+                    view.invalidate();
+                    oVar.f = null;
                     break;
                 }
+                break;
+            case 2:
+                zu1 zu1Var = (zu1) obj;
+                zu1Var.g9 = null;
+                zu1Var.l9 = null;
+                zu1Var.k9 = null;
+                zu1Var.C0.R = true;
+                zu1Var.y6(false, true, 0.0f);
+                nr1 nr1Var = zu1Var.a0;
+                if (nr1Var != null && nr1Var.getEditField() != null) {
+                    zu1Var.a0.getEditField().setAllowDrawCursor(true);
+                    break;
+                }
+                break;
+            case 3:
+                pq1 pq1Var = (pq1) obj;
+                pq1Var.b = null;
+                zu1 zu1Var2 = pq1Var.x;
+                zu1Var2.g9 = null;
+                zu1Var2.l9 = null;
+                zu1Var2.k9 = null;
+                zu1Var2.C0.R = true;
+                if (zu1Var2.h9) {
+                    zu1Var2.y6(false, true, 0.0f);
+                } else {
+                    zu1Var2.h9 = true;
+                }
+                nr1 nr1Var2 = zu1Var2.a0;
+                if (nr1Var2 != null && nr1Var2.getEditField() != null) {
+                    zu1Var2.a0.getEditField().setAllowDrawCursor(true);
+                    break;
+                }
+                break;
+            case 4:
+                g9 g9Var = (g9) obj;
+                g9Var.k();
+                g9Var.a = false;
+                break;
+            case 5:
+                ((wy5) obj).C1.d();
+                break;
+            case 6:
+                ((dx7) obj).s1.d();
+                break;
+            default:
+                zuc zucVar = (zuc) obj;
+                zucVar.getViewTreeObserver().removeOnGlobalLayoutListener(zucVar.I);
+                zucVar.getViewTreeObserver().removeOnScrollChangedListener(zucVar.J);
                 break;
         }
     }

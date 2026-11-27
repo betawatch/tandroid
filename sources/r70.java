@@ -1,21 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class r70 implements zn7 {
-    public static final r70 a = new r70();
-    public static final w84 b = w84.c("processName");
-    public static final w84 c = w84.c("pid");
-    public static final w84 d = w84.c("importance");
-    public static final w84 e = w84.c("defaultProcess");
+import android.os.Build;
 
-    @Override // q24
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class r70 implements zq7 {
+    public static final r70 a = new r70();
+    public static final sa4 b = sa4.c("appId");
+    public static final sa4 c = sa4.c("deviceModel");
+    public static final sa4 d = sa4.c("sessionSdkVersion");
+    public static final sa4 e = sa4.c("osVersion");
+    public static final sa4 f = sa4.c("logEnvironment");
+    public static final sa4 g = sa4.c("androidAppInfo");
+
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        zk8 zk8Var = (zk8) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, zk8Var.a);
-        ao7Var.e(c, zk8Var.b);
-        ao7Var.e(d, zk8Var.c);
-        ao7Var.d(e, zk8Var.d);
+        tr trVar = (tr) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, trVar.a);
+        ar7Var.a(c, Build.MODEL);
+        ar7Var.a(d, "3.0.8");
+        ar7Var.a(e, Build.VERSION.RELEASE);
+        ar7Var.a(f, zd6.b);
+        ar7Var.a(g, trVar.b);
     }
 }

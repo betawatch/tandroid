@@ -1,60 +1,27 @@
 // default package
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xg7 extends q3 {
-    public final q3 e;
-    public final gi3 f;
+public final class xg7 extends c4 {
+    public static final Parcelable.Creator<xg7> CREATOR = new s5d((byte) 5);
+    public final int a;
+    public final boolean b;
 
-    public xg7(q3 q3Var, gi3 gi3Var) {
-        q3Var.getClass();
-        this.e = q3Var;
-        this.f = gi3Var;
+    public xg7(int i, boolean z) {
+        this.a = i;
+        this.b = z;
     }
 
-    @Override // q3
-    public final void b() {
-        this.e.b();
-    }
-
-    @Override // q3
-    public final Map d() {
-        return new oi6(this.e.a(), new im6(this, (byte) 10));
-    }
-
-    @Override // q3
-    public final Collection e() {
-        return new p3(this, (byte) 0);
-    }
-
-    @Override // q3
-    public final Set f() {
-        return this.e.j();
-    }
-
-    @Override // q3
-    public final Iterator h() {
-        return new ks5(this.e.g().iterator(), new li6(this.f));
-    }
-
-    @Override // q3
-    public final Collection i(Object obj) {
-        return tne.b((List) this.e.i(obj), new ji6(this.f, obj));
-    }
-
-    @Override // q3
-    public final boolean k(Object obj, Object obj2) {
-        return i(obj).remove(obj2);
-    }
-
-    @Override // q3
-    public final int l() {
-        return this.e.l();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

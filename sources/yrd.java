@@ -1,19 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class yrd implements zn7 {
-    public static final yrd a = new yrd();
+import android.os.IBinder;
+import android.os.Messenger;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yrd implements Parcelable {
+    public static final Parcelable.Creator<yrd> CREATOR = new ced(17);
+    public final Messenger a;
+
+    public yrd(IBinder iBinder) {
+        this.a = new Messenger(iBinder);
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
         }
-        throw null;
+        try {
+            return this.a.getBinder().equals(((yrd) obj).a.getBinder());
+        } catch (ClassCastException unused) {
+            return false;
+        }
+    }
+
+    public final int hashCode() {
+        return this.a.getBinder().hashCode();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeStrongBinder(this.a.getBinder());
     }
 }

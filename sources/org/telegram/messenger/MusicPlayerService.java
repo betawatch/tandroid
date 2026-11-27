@@ -29,11 +29,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class MusicPlayerService extends Service implements gk7 {
+public class MusicPlayerService extends Service implements fn7 {
     public static final boolean s;
-    public static mv6 w;
+    public static rx6 w;
     public RemoteControlClient a;
     public AudioManager b;
     public f c;
@@ -42,33 +42,33 @@ public class MusicPlayerService extends Service implements gk7 {
     public ImageReceiver f;
     public boolean h;
     public String n;
-    public final tr r = new tr(2);
+    public final ur r = new ur(2);
 
     static {
-        s = Build.VERSION.SDK_INT < 29 && !TextUtils.isEmpty(gl.j1("ro.miui.ui.version.code"));
+        s = Build.VERSION.SDK_INT < 29 && !TextUtils.isEmpty(hl.j1("ro.miui.ui.version.code"));
     }
 
     public static int b(int i) {
-        return (Build.VERSION.SDK_INT >= 31 || !nye.b()) ? i : i & (-100663297);
+        return (Build.VERSION.SDK_INT >= 31 || !f3f.b()) ? i : i & (-100663297);
     }
 
-    public static float d(k27 k27Var, boolean z) {
+    public static float d(r47 r47Var, boolean z) {
         if (!z) {
             return 0.0f;
         }
-        if (k27Var == null) {
+        if (r47Var == null) {
             return 1.0f;
         }
-        if (k27.Q4(k27Var.k) || k27Var.g4()) {
-            return MediaController.w().q0;
+        if (r47.Q4(r47Var.k) || r47Var.g4()) {
+            return MediaController.z().q0;
         }
         return 1.0f;
     }
 
     public static void g() {
         if (w != null) {
-            int i = gba.O0;
-            w.p0(i != 1 ? i != 2 ? 0 : 1 : 2);
+            int i = xea.O0;
+            w.u0(i != 1 ? i != 2 ? 0 : 1 : 2);
         }
     }
 
@@ -82,7 +82,7 @@ public class MusicPlayerService extends Service implements gk7 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(k27 k27Var, boolean z) {
+    public final void a(r47 r47Var, boolean z) {
         Bitmap bitmap;
         Bitmap bitmap2;
         Bitmap c;
@@ -92,48 +92,48 @@ public class MusicPlayerService extends Service implements gk7 {
         long j;
         String str2;
         String str3;
-        g00 g00Var;
+        h00 h00Var;
         int i;
         String str4;
         String str5;
-        mv6 mv6Var;
-        g00 g00Var2;
+        rx6 rx6Var;
+        h00 h00Var2;
         String str6;
         Bitmap bitmap3;
         int i2;
         byte b;
-        String y1 = k27Var.y1(true);
-        String w1 = k27Var.w1(true);
-        g00 g00Var3 = MediaController.w().E0;
+        String y1 = r47Var.y1(true);
+        String w1 = r47Var.w1(true);
+        h00 h00Var3 = MediaController.z().E0;
         Intent intent = new Intent(a.b, (Class<?>) LaunchActivity.class);
-        if (k27Var.I3()) {
+        if (r47Var.I3()) {
             intent.setAction("com.tmessages.openplayer");
             intent.addCategory("android.intent.category.LAUNCHER");
-        } else if (k27.Q4(k27Var.k) || k27Var.g4()) {
+        } else if (r47.Q4(r47Var.k) || r47Var.g4()) {
             intent.setAction("android.intent.action.VIEW");
-            TLRPC.Peer peer = k27Var.k.peer_id;
+            TLRPC.Peer peer = r47Var.k.peer_id;
             boolean z2 = peer instanceof TLRPC.TL_peerUser;
             long j2 = z2 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
             if (j2 != 0) {
                 if (z2) {
-                    StringBuilder o = ug8.o(j2, "tg://openmessage?user_id=", "&message_id=");
-                    o.append(k27Var.e1());
+                    StringBuilder o = ik8.o(j2, "tg://openmessage?user_id=", "&message_id=");
+                    o.append(r47Var.e1());
                     intent.setData(Uri.parse(o.toString()));
                 } else {
-                    StringBuilder o2 = ug8.o(j2, "tg://openmessage?chat_id=", "&message_id=");
-                    o2.append(k27Var.e1());
+                    StringBuilder o2 = ik8.o(j2, "tg://openmessage?chat_id=", "&message_id=");
+                    o2.append(r47Var.e1());
                     intent.setData(Uri.parse(o2.toString()));
                 }
             }
         }
         PendingIntent activity = PendingIntent.getActivity(a.b, 0, intent, b(33554432));
-        long L0 = (long) (k27Var.L0() * 1000.0d);
-        if (k27Var.I3()) {
-            String u0 = k27Var.u0(true);
-            String u02 = k27Var.u0(false);
-            if (g00Var3 != null) {
-                bitmap2 = g00Var3.p;
-                bitmap = g00Var3.o;
+        long L0 = (long) (r47Var.L0() * 1000.0d);
+        if (r47Var.I3()) {
+            String u0 = r47Var.u0(true);
+            String u02 = r47Var.u0(false);
+            if (h00Var3 != null) {
+                bitmap2 = h00Var3.p;
+                bitmap = h00Var3.o;
             } else {
                 bitmap = null;
                 bitmap2 = null;
@@ -141,8 +141,8 @@ public class MusicPlayerService extends Service implements gk7 {
             this.n = null;
             this.f.g0(null);
             if (bitmap2 != null || TextUtils.isEmpty(u0)) {
-                ba4.G(y6c.t0);
-                this.n = ba4.I(k27Var.F0()).getAbsolutePath();
+                xb4.G(yac.t0);
+                this.n = xb4.I(r47Var.F0()).getAbsolutePath();
             } else {
                 boolean z3 = !z;
                 Bitmap e = e(u02, true, z3);
@@ -154,49 +154,49 @@ public class MusicPlayerService extends Service implements gk7 {
                     bitmap = e;
                 }
             }
-        } else if (k27.Q4(k27Var.k) || k27Var.g4()) {
-            long R1 = k27Var.R1();
-            boolean p3 = k27Var.p3();
-            int i3 = y6c.t0;
+        } else if (r47.Q4(r47Var.k) || r47Var.g4()) {
+            long R1 = r47Var.R1();
+            boolean p3 = r47Var.p3();
+            int i3 = yac.t0;
             if (p3) {
-                TLRPC.User V1 = na7.q1(i3).V1(Long.valueOf(R1));
-                if (V1 != null) {
-                    y1 = l7c.r(V1);
+                TLRPC.User X1 = uc7.s1(i3).X1(Long.valueOf(R1));
+                if (X1 != null) {
+                    y1 = lbc.r(X1);
                     boolean z4 = !z;
-                    bitmap = c(V1, true, z4);
-                    c = c(V1, false, z4);
+                    bitmap = c(X1, true, z4);
+                    c = c(X1, false, z4);
                 } else {
                     c = null;
                     bitmap = null;
                 }
             } else {
-                TLRPC.Chat K0 = na7.q1(i3).K0(Long.valueOf(-R1));
-                if (K0 != null) {
-                    y1 = K0.title;
+                TLRPC.Chat M0 = uc7.s1(i3).M0(Long.valueOf(-R1));
+                if (M0 != null) {
+                    y1 = M0.title;
                     boolean z5 = !z;
-                    bitmap = c(K0, true, z5);
-                    c = c(K0, false, z5);
+                    bitmap = c(M0, true, z5);
+                    c = c(M0, false, z5);
                 } else {
                     bitmap = null;
                     bitmap2 = null;
                     if (bitmap == null && bitmap2 != null) {
                         bitmap = bitmap2;
                     }
-                    w1 = !k27.Q4(k27Var.k) ? k96.M0(2131753979, null) : k96.M0(2131753938, null);
+                    w1 = !r47.Q4(r47Var.k) ? ob6.M0(2131753975, null) : ob6.M0(2131753934, null);
                 }
             }
             bitmap2 = c;
             if (bitmap == null) {
                 bitmap = bitmap2;
             }
-            if (!k27.Q4(k27Var.k)) {
+            if (!r47.Q4(r47Var.k)) {
             }
         } else {
             bitmap = null;
             bitmap2 = bitmap;
         }
-        boolean C = MediaController.w().C();
-        boolean z6 = !C;
+        boolean G = MediaController.z().G();
+        boolean z6 = !G;
         PendingIntent broadcast = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.previous").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         Context applicationContext = getApplicationContext();
         Intent intent2 = new Intent(this, getClass());
@@ -205,13 +205,13 @@ public class MusicPlayerService extends Service implements gk7 {
         sb.append(getPackageName());
         sb.append(".STOP_PLAYER");
         PendingIntent service = PendingIntent.getService(applicationContext, 0, intent2.setAction(sb.toString()), b(301989888));
-        PendingIntent broadcast2 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(!C ? "org.telegram.android.musicplayer.pause" : "org.telegram.android.musicplayer.play").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
+        PendingIntent broadcast2 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent(!G ? "org.telegram.android.musicplayer.pause" : "org.telegram.android.musicplayer.play").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast3 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.next").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.seek").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast4 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.repeat").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
         PendingIntent broadcast5 = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("org.telegram.android.musicplayer.shuffle").setComponent(new ComponentName(this, (Class<?>) MusicPlayerReceiver.class)), b(301989888));
-        Notification.MediaStyle mediaSession = new Notification.MediaStyle().setMediaSession((MediaSession.Token) ((zu6) w.b).c.b);
-        if (k27Var.I3()) {
+        Notification.MediaStyle mediaSession = new Notification.MediaStyle().setMediaSession((MediaSession.Token) ((ex6) w.b).c.b);
+        if (r47Var.I3()) {
             pendingIntent = broadcast5;
             pendingIntent2 = broadcast3;
             str = "org.telegram.android.musicplayer.shuffle";
@@ -220,121 +220,121 @@ public class MusicPlayerService extends Service implements gk7 {
             pendingIntent = broadcast5;
             pendingIntent2 = broadcast3;
             str = "org.telegram.android.musicplayer.shuffle";
-            if (k27.Q4(k27Var.k) || k27Var.g4()) {
+            if (r47.Q4(r47Var.k) || r47Var.g4()) {
                 mediaSession.setShowActionsInCompactView(0);
             }
         }
         Notification.Builder builder = new Notification.Builder(this);
-        builder.setSmallIcon(R.drawable.player).setOngoing(z6).setContentTitle(y1).setContentText(w1).setSubText((g00Var3 == null || !k27Var.I3()) ? null : g00Var3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
+        builder.setSmallIcon(R.drawable.player).setOngoing(z6).setContentTitle(y1).setContentText(w1).setSubText((h00Var3 == null || !r47Var.I3()) ? null : h00Var3.f).setContentIntent(activity).setDeleteIntent(service).setShowWhen(false).setCategory("transport").setPriority(2).setStyle(mediaSession);
         int i4 = Build.VERSION.SDK_INT;
         if (i4 >= 26) {
-            im7.c();
-            builder.setChannelId(im7.k0);
+            ip7.c();
+            builder.setChannelId(ip7.k0);
         }
         if (bitmap2 != null) {
             builder.setLargeIcon(bitmap2);
         } else {
             builder.setLargeIcon(this.d);
         }
-        String M0 = k96.M0(2131748058, null);
-        String M02 = k96.M0(2131754799, null);
+        String M02 = ob6.M0(2131747981, null);
+        String M03 = ob6.M0(2131754795, null);
         this.c = new f();
-        if (MediaController.w().B0) {
+        if (MediaController.z().B0) {
             f fVar = this.c;
             j = 1000;
             fVar.c(6, 0L, 1.0f);
             fVar.e = 0L;
-            if (k27Var.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M02, broadcast).build());
+            if (r47Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M03, broadcast).build());
             }
-            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, k96.M0(2131748587, null), (PendingIntent) null).build());
-            if (k27Var.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M0, pendingIntent2).build());
+            builder.addAction(new Notification.Action.Builder(R.drawable.loading_animation2, ob6.M0(2131748533, null), (PendingIntent) null).build());
+            if (r47Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M02, pendingIntent2).build());
             }
             str2 = y1;
             str3 = w1;
-            g00Var = g00Var3;
+            h00Var = h00Var3;
             i = i4;
         } else {
             PendingIntent pendingIntent3 = pendingIntent2;
             j = 1000;
-            long j3 = k27Var.I3() ? 2360118L : 2360070L;
-            if (k27Var.I3()) {
-                int i5 = gba.J0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
+            long j3 = r47Var.I3() ? 2360118L : 2360070L;
+            if (r47Var.I3()) {
+                int i5 = xea.J0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
                 i = i4;
                 f fVar2 = this.c;
                 str2 = y1;
-                g00Var = g00Var3;
-                String M03 = k96.M0(2131745130, null);
-                if (TextUtils.isEmpty(M03)) {
-                    w26.j("You must specify a name to build a CustomAction");
+                h00Var = h00Var3;
+                String M04 = ob6.M0(2131745050, null);
+                if (TextUtils.isEmpty(M04)) {
+                    lq5.j("You must specify a name to build a CustomAction");
                     return;
                 } else {
                     str3 = w1;
-                    fVar2.a(new PlaybackStateCompat.CustomAction(str, M03, i5, null));
+                    fVar2.a(new PlaybackStateCompat.CustomAction(str, M04, i5, null));
                 }
             } else {
                 str2 = y1;
                 str3 = w1;
-                g00Var = g00Var3;
+                h00Var = h00Var3;
                 i = i4;
             }
             f fVar3 = this.c;
-            fVar3.c(!C ? 3 : 2, MediaController.w().v0.i0 * 1000, d(k27Var, z6));
+            fVar3.c(!G ? 3 : 2, MediaController.z().v0.i0 * 1000, d(r47Var, z6));
             fVar3.e = j3;
-            if (k27Var.I3()) {
-                int i6 = gba.O0;
+            if (r47Var.I3()) {
+                int i6 = xea.O0;
                 int i7 = i6 != 1 ? i6 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 f fVar4 = this.c;
                 str4 = null;
-                String M04 = k96.M0(2131746080, null);
-                if (TextUtils.isEmpty(M04)) {
-                    w26.j("You must specify a name to build a CustomAction");
+                String M05 = ob6.M0(2131746000, null);
+                if (TextUtils.isEmpty(M05)) {
+                    lq5.j("You must specify a name to build a CustomAction");
                     return;
                 }
-                fVar4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M04, i7, null));
+                fVar4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M05, i7, null));
             } else {
                 str4 = null;
             }
-            String M05 = k96.M0(!C ? 2131754930 : 2131754929, str4);
-            if (k27Var.I3()) {
-                builder.addAction(new Notification.Action.Builder(gba.J0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, k96.M0(2131745130, str4), pendingIntent).build());
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M02, broadcast).build());
+            String M06 = ob6.M0(!G ? 2131754926 : 2131754925, str4);
+            if (r47Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(xea.J0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off, ob6.M0(2131745050, str4), pendingIntent).build());
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, M03, broadcast).build());
             }
-            builder.addAction(new Notification.Action.Builder(!C ? R.drawable.ic_action_pause : R.drawable.ic_action_play, M05, broadcast2).build());
-            if (k27Var.I3()) {
-                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M0, pendingIntent3).build());
-                int i8 = gba.O0;
+            builder.addAction(new Notification.Action.Builder(!G ? R.drawable.ic_action_pause : R.drawable.ic_action_play, M06, broadcast2).build());
+            if (r47Var.I3()) {
+                builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_next, M02, pendingIntent3).build());
+                int i8 = xea.O0;
                 str5 = null;
-                builder.addAction(new Notification.Action.Builder(i8 != 1 ? i8 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall, k96.M0(2131746080, null), broadcast4).build());
-                w.n0(this.c.b());
+                builder.addAction(new Notification.Action.Builder(i8 != 1 ? i8 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall, ob6.M0(2131746000, null), broadcast4).build());
+                w.s0(this.c.b());
                 g();
-                mv6Var = w;
-                if (mv6Var != null) {
-                    mv6Var.q0(gba.J0 ? 1 : 0);
+                rx6Var = w;
+                if (rx6Var != null) {
+                    rx6Var.v0(xea.J0 ? 1 : 0);
                 }
-                pj4 pj4Var = new pj4((byte) 15);
+                v34 v34Var = new v34((byte) 16);
                 String str7 = str3;
-                pj4Var.Y("android.media.metadata.ALBUM_ARTIST", str7);
-                pj4Var.Y("android.media.metadata.ARTIST", str7);
-                pj4Var.X(L0);
+                v34Var.S("android.media.metadata.ALBUM_ARTIST", str7);
+                v34Var.S("android.media.metadata.ARTIST", str7);
+                v34Var.R(L0);
                 String str8 = str2;
-                pj4Var.Y("android.media.metadata.TITLE", str8);
-                if (g00Var == null && k27Var.I3()) {
-                    g00Var2 = g00Var;
-                    str6 = g00Var2.f;
+                v34Var.S("android.media.metadata.TITLE", str8);
+                if (h00Var == null && r47Var.I3()) {
+                    h00Var2 = h00Var;
+                    str6 = h00Var2.f;
                 } else {
-                    g00Var2 = g00Var;
+                    h00Var2 = h00Var;
                     str6 = str5;
                 }
-                pj4Var.Y("android.media.metadata.ALBUM", str6);
+                v34Var.S("android.media.metadata.ALBUM", str6);
                 if (bitmap4 != null || bitmap4.isRecycled()) {
                     bitmap3 = bitmap4;
                 } else {
                     bitmap3 = bitmap4;
-                    pj4Var.W("android.media.metadata.ALBUM_ART", bitmap3);
+                    v34Var.Q("android.media.metadata.ALBUM_ART", bitmap3);
                 }
-                w.m0(new MediaMetadataCompat((Bundle) pj4Var.b));
+                w.r0(new MediaMetadataCompat((Bundle) v34Var.b));
                 builder.setVisibility(1);
                 Notification build = builder.build();
                 if (i < 31) {
@@ -344,75 +344,75 @@ public class MusicPlayerService extends Service implements gk7 {
                         this.h = true;
                         startForeground(5, build);
                     }
-                } else if (C) {
+                } else if (G) {
                     stopForeground(false);
                     ((NotificationManager) getSystemService("notification")).notify(5, build);
                 } else {
                     startForeground(5, build);
                 }
                 if (this.a == null) {
-                    int e1 = MediaController.w().v0.e1();
+                    int e1 = MediaController.z().v0.e1();
                     if (this.e != e1) {
                         this.e = e1;
                         RemoteControlClient.MetadataEditor editMetadata = this.a.editMetadata(true);
                         i2 = 2;
                         editMetadata.putString(2, str7);
                         editMetadata.putString(7, str8);
-                        if (g00Var2 != null && !TextUtils.isEmpty(g00Var2.f)) {
-                            editMetadata.putString(1, g00Var2.f);
+                        if (h00Var2 != null && !TextUtils.isEmpty(h00Var2.f)) {
+                            editMetadata.putString(1, h00Var2.f);
                         }
-                        editMetadata.putLong(9, MediaController.w().v0.j0 * j);
+                        editMetadata.putLong(9, MediaController.z().v0.j0 * j);
                         if (bitmap3 != null) {
                             try {
                                 editMetadata.putBitmap(100, bitmap3);
                             } catch (Throwable th) {
                                 b = 1;
-                                fa4.g(th, true);
+                                cc4.g(th, true);
                             }
                         }
                         b = 1;
                         editMetadata.apply();
-                        gl.d3(new bg7(this, b), j);
+                        hl.d3(new ki7(this, b), j);
                     } else {
                         i2 = 2;
                     }
-                    boolean z7 = MediaController.w().B0;
+                    boolean z7 = MediaController.z().B0;
                     RemoteControlClient remoteControlClient = this.a;
                     if (z7) {
                         remoteControlClient.setPlaybackState(8);
                         return;
                     }
                     RemoteControlClient.MetadataEditor editMetadata2 = remoteControlClient.editMetadata(false);
-                    editMetadata2.putLong(9, MediaController.w().v0.j0 * 1000);
+                    editMetadata2.putLong(9, MediaController.z().v0.j0 * 1000);
                     editMetadata2.apply();
-                    this.a.setPlaybackState(MediaController.w().C() ? i2 : 3, Math.max(MediaController.w().v0.i0 * 1000, 100L), MediaController.w().C() ? 0.0f : 1.0f);
+                    this.a.setPlaybackState(MediaController.z().G() ? i2 : 3, Math.max(MediaController.z().v0.i0 * 1000, 100L), MediaController.z().G() ? 0.0f : 1.0f);
                     return;
                 }
                 return;
             }
         }
         str5 = null;
-        w.n0(this.c.b());
+        w.s0(this.c.b());
         g();
-        mv6Var = w;
-        if (mv6Var != null) {
+        rx6Var = w;
+        if (rx6Var != null) {
         }
-        pj4 pj4Var2 = new pj4((byte) 15);
+        v34 v34Var2 = new v34((byte) 16);
         String str72 = str3;
-        pj4Var2.Y("android.media.metadata.ALBUM_ARTIST", str72);
-        pj4Var2.Y("android.media.metadata.ARTIST", str72);
-        pj4Var2.X(L0);
+        v34Var2.S("android.media.metadata.ALBUM_ARTIST", str72);
+        v34Var2.S("android.media.metadata.ARTIST", str72);
+        v34Var2.R(L0);
         String str82 = str2;
-        pj4Var2.Y("android.media.metadata.TITLE", str82);
-        if (g00Var == null) {
+        v34Var2.S("android.media.metadata.TITLE", str82);
+        if (h00Var == null) {
         }
-        g00Var2 = g00Var;
+        h00Var2 = h00Var;
         str6 = str5;
-        pj4Var2.Y("android.media.metadata.ALBUM", str6);
+        v34Var2.S("android.media.metadata.ALBUM", str6);
         if (bitmap4 != null) {
         }
         bitmap3 = bitmap4;
-        w.m0(new MediaMetadataCompat((Bundle) pj4Var2.b));
+        w.r0(new MediaMetadataCompat((Bundle) v34Var2.b));
         builder.setVisibility(1);
         Notification build2 = builder.build();
         if (i < 31) {
@@ -429,16 +429,16 @@ public class MusicPlayerService extends Service implements gk7 {
                 TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
                 TLRPC.FileLocation fileLocation = z ? userProfilePhoto.photo_big : userProfilePhoto.photo_small;
                 if (fileLocation != null) {
-                    ba4.G(y6c.t0);
-                    File J = ba4.J(fileLocation, null, true, true);
+                    xb4.G(yac.t0);
+                    File J = xb4.J(fileLocation, null, true, true);
                     if (J.exists()) {
                         float f = i;
-                        return fl5.G(J.getAbsolutePath(), null, f, f, false);
+                        return in5.G(J.getAbsolutePath(), null, f, f, false);
                     }
                     if (z) {
                         if (z2) {
-                            this.n = ba4.r(null, fileLocation);
-                            this.f.d0(gl5.l(y6c.t0, 0, user), "", null, null, null, 0);
+                            this.n = xb4.r(null, fileLocation);
+                            this.f.d0(jn5.l(yac.t0, 0, user), "", null, null, null, 0);
                         } else {
                             this.n = null;
                         }
@@ -449,16 +449,16 @@ public class MusicPlayerService extends Service implements gk7 {
                 TLRPC.ChatPhoto chatPhoto = chat.photo;
                 TLRPC.FileLocation fileLocation2 = z ? chatPhoto.photo_big : chatPhoto.photo_small;
                 if (fileLocation2 != null) {
-                    ba4.G(y6c.t0);
-                    File J2 = ba4.J(fileLocation2, null, true, true);
+                    xb4.G(yac.t0);
+                    File J2 = xb4.J(fileLocation2, null, true, true);
                     if (J2.exists()) {
                         float f2 = i;
-                        return fl5.G(J2.getAbsolutePath(), null, f2, f2, false);
+                        return in5.G(J2.getAbsolutePath(), null, f2, f2, false);
                     }
                     if (z) {
                         if (z2) {
-                            this.n = ba4.r(null, fileLocation2);
-                            this.f.d0(gl5.a(0, chat), "", null, null, null, 0);
+                            this.n = xb4.r(null, fileLocation2);
+                            this.f.d0(jn5.a(0, chat), "", null, null, null, 0);
                         } else {
                             this.n = null;
                         }
@@ -466,73 +466,73 @@ public class MusicPlayerService extends Service implements gk7 {
                 }
             }
         } catch (Throwable th) {
-            fa4.g(th, true);
+            cc4.g(th, true);
         }
         if (z) {
             return null;
         }
-        bkb.S(this);
-        pb0 pb0Var = tLObject instanceof TLRPC.User ? new pb0(0, (TLRPC.User) tLObject) : new pb0((TLRPC.Chat) tLObject);
-        pb0Var.r = 1;
+        aob.S(this);
+        rb0 rb0Var = tLObject instanceof TLRPC.User ? new rb0(0, (TLRPC.User) tLObject) : new rb0((TLRPC.Chat) tLObject);
+        rb0Var.r = 1;
         float f3 = i;
-        Bitmap createBitmap = Bitmap.createBitmap(gl.L(f3), gl.L(f3), Bitmap.Config.ARGB_8888);
-        pb0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-        pb0Var.draw(new Canvas(createBitmap));
+        Bitmap createBitmap = Bitmap.createBitmap(hl.L(f3), hl.L(f3), Bitmap.Config.ARGB_8888);
+        rb0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+        rb0Var.draw(new Canvas(createBitmap));
         return createBitmap;
     }
 
-    @Override // gk7
+    @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
         String str;
         String str2;
-        if (i == kk7.f2) {
-            k27 k27Var = MediaController.w().v0;
-            if (k27Var != null) {
-                a(k27Var, false);
+        if (i == jn7.g2) {
+            r47 r47Var = MediaController.z().v0;
+            if (r47Var != null) {
+                a(r47Var, false);
                 return;
             } else {
                 stopSelf();
                 return;
             }
         }
-        if (i == kk7.h2) {
-            if (MediaController.w().v0 != null) {
+        if (i == jn7.i2) {
+            if (MediaController.z().v0 != null) {
                 long round = Math.round(((Float) objArr[1]).floatValue() * r3.j0) * 1000;
                 f(round);
                 RemoteControlClient remoteControlClient = this.a;
                 if (remoteControlClient != null) {
-                    remoteControlClient.setPlaybackState(MediaController.w().C() ? 2 : 3, round, MediaController.w().C() ? 0.0f : 1.0f);
+                    remoteControlClient.setPlaybackState(MediaController.z().G() ? 2 : 3, round, MediaController.z().G() ? 0.0f : 1.0f);
                     return;
                 }
                 return;
             }
             return;
         }
-        if (i == kk7.Q1) {
+        if (i == jn7.R1) {
             String str3 = (String) objArr[0];
-            k27 k27Var2 = MediaController.w().v0;
-            if (k27Var2 == null || (str2 = this.n) == null || !str2.equals(str3)) {
+            r47 r47Var2 = MediaController.z().v0;
+            if (r47Var2 == null || (str2 = this.n) == null || !str2.equals(str3)) {
                 return;
             }
-            a(k27Var2, false);
+            a(r47Var2, false);
             return;
         }
-        if (i == kk7.X1) {
+        if (i == jn7.Y1) {
             String str4 = (String) objArr[0];
-            k27 k27Var3 = MediaController.w().v0;
-            if (k27Var3 == null || (str = this.n) == null || !str.equals(str4)) {
+            r47 r47Var3 = MediaController.z().v0;
+            if (r47Var3 == null || (str = this.n) == null || !str.equals(str4)) {
                 return;
             }
-            a(k27Var3, false);
+            a(r47Var3, false);
         }
     }
 
     public final Bitmap e(String str, boolean z, boolean z2) {
-        File w2 = fl5.w(str);
+        File w2 = in5.w(str);
         if (w2.exists()) {
             String absolutePath = w2.getAbsolutePath();
             float f = z ? 600.0f : 100.0f;
-            return fl5.G(absolutePath, null, f, f, false);
+            return in5.G(absolutePath, null, f, f, false);
         }
         if (!z2) {
             this.n = null;
@@ -548,22 +548,22 @@ public class MusicPlayerService extends Service implements gk7 {
     public final void f(long j) {
         long j2;
         this.c = new f();
-        boolean C = MediaController.w().C();
-        boolean z = !C;
-        if (MediaController.w().B0) {
+        boolean G = MediaController.z().G();
+        boolean z = !G;
+        if (MediaController.z().B0) {
             f fVar = this.c;
             fVar.c(6, 0L, 1.0f);
             fVar.e = 0L;
         } else {
-            k27 k27Var = MediaController.w().v0;
-            if (k27Var == null || !k27Var.I3()) {
+            r47 r47Var = MediaController.z().v0;
+            if (r47Var == null || !r47Var.I3()) {
                 j2 = 2360070;
             } else {
-                int i = gba.J0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
+                int i = xea.J0 ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
                 f fVar2 = this.c;
-                String M0 = k96.M0(2131745130, null);
+                String M0 = ob6.M0(2131745050, null);
                 if (TextUtils.isEmpty(M0)) {
-                    w26.j("You must specify a name to build a CustomAction");
+                    lq5.j("You must specify a name to build a CustomAction");
                     return;
                 } else {
                     fVar2.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.shuffle", M0, i, null));
@@ -571,21 +571,21 @@ public class MusicPlayerService extends Service implements gk7 {
                 }
             }
             f fVar3 = this.c;
-            fVar3.c(!C ? 3 : 2, j, d(k27Var, z));
+            fVar3.c(!G ? 3 : 2, j, d(r47Var, z));
             fVar3.e = j2;
-            if (k27Var != null && k27Var.I3()) {
-                int i2 = gba.O0;
+            if (r47Var != null && r47Var.I3()) {
+                int i2 = xea.O0;
                 int i3 = i2 != 1 ? i2 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
                 f fVar4 = this.c;
-                String M02 = k96.M0(2131746080, null);
+                String M02 = ob6.M0(2131746000, null);
                 if (TextUtils.isEmpty(M02)) {
-                    w26.j("You must specify a name to build a CustomAction");
+                    lq5.j("You must specify a name to build a CustomAction");
                     return;
                 }
                 fVar4.a(new PlaybackStateCompat.CustomAction("org.telegram.android.musicplayer.repeat", M02, i3, null));
             }
         }
-        w.n0(this.c.b());
+        w.s0(this.c.b());
     }
 
     @Override // android.app.Service
@@ -598,28 +598,28 @@ public class MusicPlayerService extends Service implements gk7 {
         this.b = (AudioManager) getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
         byte b = 0;
         for (int i = 0; i < 4; i++) {
-            kk7.f(i).a(this, kk7.h2);
-            kk7.f(i).a(this, kk7.f2);
-            kk7.f(i).a(this, kk7.Q1);
-            kk7.f(i).a(this, kk7.X1);
+            jn7.f(i).a(this, jn7.i2);
+            jn7.f(i).a(this, jn7.g2);
+            jn7.f(i).a(this, jn7.R1);
+            jn7.f(i).a(this, jn7.Y1);
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.f = imageReceiver;
-        imageReceiver.h1 = new im6(this, (byte) 13);
+        imageReceiver.h1 = new bm6(this, (byte) 17);
         if (w == null) {
-            w = new mv6(getApplicationContext(), "telegramAudioPlayer", (ComponentName) null, (PendingIntent) null);
+            w = new rx6(getApplicationContext(), "telegramAudioPlayer", (ComponentName) null, (PendingIntent) null);
         }
         this.c = new f();
-        this.d = Bitmap.createBitmap(gl.L(102.0f), gl.L(102.0f), Bitmap.Config.ARGB_8888);
+        this.d = Bitmap.createBitmap(hl.L(102.0f), hl.L(102.0f), Bitmap.Config.ARGB_8888);
         Drawable drawable = getResources().getDrawable(R.drawable.nocover_big);
         drawable.setBounds(0, 0, this.d.getWidth(), this.d.getHeight());
         drawable.draw(new Canvas(this.d));
-        w.k0(new eh7(this, b), null);
-        w.i0(true);
+        w.p0(new nj7(this, b), null);
+        w.n0(true);
         g();
-        mv6 mv6Var = w;
-        if (mv6Var != null) {
-            mv6Var.q0(gba.J0 ? 1 : 0);
+        rx6 rx6Var = w;
+        if (rx6Var != null) {
+            rx6Var.v0(xea.J0 ? 1 : 0);
         }
         registerReceiver(this.r, new IntentFilter("android.media.AUDIO_BECOMING_NOISY"));
         super.onCreate();
@@ -637,16 +637,16 @@ public class MusicPlayerService extends Service implements gk7 {
             editMetadata.apply();
             this.b.unregisterRemoteControlClient(this.a);
         }
-        mv6 mv6Var = w;
-        if (mv6Var != null) {
-            mv6Var.k0(null, null);
-            w.i0(false);
+        rx6 rx6Var = w;
+        if (rx6Var != null) {
+            rx6Var.p0(null, null);
+            w.n0(false);
         }
         for (int i = 0; i < 4; i++) {
-            kk7.f(i).n(this, kk7.h2);
-            kk7.f(i).n(this, kk7.f2);
-            kk7.f(i).n(this, kk7.Q1);
-            kk7.f(i).n(this, kk7.X1);
+            jn7.f(i).n(this, jn7.i2);
+            jn7.f(i).n(this, jn7.g2);
+            jn7.f(i).n(this, jn7.R1);
+            jn7.f(i).n(this, jn7.Y1);
         }
     }
 
@@ -655,16 +655,16 @@ public class MusicPlayerService extends Service implements gk7 {
         if (intent != null) {
             try {
                 if ((getPackageName() + ".STOP_PLAYER").equals(intent.getAction())) {
-                    MediaController.w().l(true, true, false, false);
+                    MediaController.z().m(true, true, false, false);
                     return 2;
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        k27 k27Var = MediaController.w().v0;
-        if (k27Var == null) {
-            gl.c3(new vl6(this, (byte) 20));
+        r47 r47Var = MediaController.z().v0;
+        if (r47Var == null) {
+            hl.c3(new fe7(this, (byte) 3));
             return 1;
         }
         if (s) {
@@ -678,12 +678,12 @@ public class MusicPlayerService extends Service implements gk7 {
                     this.a = remoteControlClient;
                     this.b.registerRemoteControlClient(remoteControlClient);
                 }
-                this.a.setTransportControlFlags(kk7.S2);
+                this.a.setTransportControlFlags(jn7.S2);
             } catch (Exception e2) {
-                fa4.g(e2, true);
+                cc4.g(e2, true);
             }
         }
-        a(k27Var, false);
+        a(r47Var, false);
         return 1;
     }
 }

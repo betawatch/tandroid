@@ -1,86 +1,78 @@
 // default package
 
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fhd extends b4 {
-    public static final Parcelable.Creator<fhd> CREATOR = new igd(24);
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final kbd e;
-    public final String f;
-    public final Bundle h;
+public abstract class fhd {
+    public static final rg7 a = new rg7((byte) 25);
+    public static final sae b = new sae();
+    public static final qf5 c = new qf5(25);
 
-    public fhd(String str, String str2, String str3, String str4, kbd kbdVar, String str5, Bundle bundle) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = kbdVar;
-        this.f = str5;
-        if (bundle != null) {
-            this.h = bundle;
-        } else {
-            bundle = Bundle.EMPTY;
-            this.h = bundle;
+    public static final ot9 a(e23 e23Var) {
+        e23Var.getClass();
+        vt9 vt9Var = (vt9) e23Var.b(a);
+        if (vt9Var == null) {
+            lq5.j("CreationExtras must have a value by `SAVED_STATE_REGISTRY_OWNER_KEY`");
+            return null;
         }
-        ClassLoader classLoader = fhd.class.getClassLoader();
-        if (classLoader != null) {
-            bundle.setClassLoader(classLoader);
-        } else {
-            StringBuilder sb = new StringBuilder(29);
-            sb.append((CharSequence) "expected a non-null reference", 0, 29);
-            throw new gp2(sb.toString());
+        shc shcVar = (shc) e23Var.b(b);
+        if (shcVar == null) {
+            lq5.j("CreationExtras must have a value by `VIEW_MODEL_STORE_OWNER_KEY`");
+            return null;
+        }
+        Bundle bundle = (Bundle) e23Var.b(c);
+        String str = (String) e23Var.b(z3f.e);
+        if (str == null) {
+            lq5.j("CreationExtras must have a value by `VIEW_MODEL_KEY`");
+            return null;
+        }
+        ut9 d = vt9Var.g().d();
+        qt9 qt9Var = d instanceof qt9 ? (qt9) d : null;
+        if (qt9Var == null) {
+            grb.i("enableSavedStateHandles() wasn't called prior to createSavedStateHandle() call");
+            return null;
+        }
+        LinkedHashMap linkedHashMap = c(shcVar).b;
+        ot9 ot9Var = (ot9) linkedHashMap.get(str);
+        if (ot9Var != null) {
+            return ot9Var;
+        }
+        Class[] clsArr = ot9.f;
+        qt9Var.a();
+        Bundle bundle2 = qt9Var.c;
+        Bundle bundle3 = bundle2 != null ? bundle2.getBundle(str) : null;
+        Bundle bundle4 = qt9Var.c;
+        if (bundle4 != null) {
+            bundle4.remove(str);
+        }
+        Bundle bundle5 = qt9Var.c;
+        if (bundle5 != null && bundle5.isEmpty()) {
+            qt9Var.c = null;
+        }
+        ot9 a2 = fye.a(bundle3, bundle);
+        linkedHashMap.put(str, a2);
+        return a2;
+    }
+
+    public static final void b(vt9 vt9Var) {
+        z26 z26Var = vt9Var.m().b;
+        if (z26Var != z26.b && z26Var != z26.c) {
+            lq5.j("Failed requirement.");
+        } else if (vt9Var.g().d() == null) {
+            qt9 qt9Var = new qt9(vt9Var.g(), (shc) vt9Var);
+            vt9Var.g().f("androidx.lifecycle.internal.SavedStateHandlesProvider", qt9Var);
+            vt9Var.m().a(new z59(qt9Var, (byte) 2));
         }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("ActionImpl { { actionType: '");
-        sb.append(this.a);
-        sb.append("' } { objectName: '");
-        sb.append(this.b);
-        sb.append("' } { objectUrl: '");
-        sb.append(this.c);
-        sb.append("' } ");
-        String str = this.d;
-        if (str != null) {
-            ug8.z("{ objectSameAs: '", str, "' } ", sb);
-        }
-        kbd kbdVar = this.e;
-        if (kbdVar != null) {
-            sb.append("{ metadata: '");
-            sb.append(kbdVar.toString());
-            sb.append("' } ");
-        }
-        String str2 = this.f;
-        if (str2 != null) {
-            ug8.z("{ actionStatus: '", str2, "' } ", sb);
-        }
-        Bundle bundle = this.h;
-        if (!bundle.isEmpty()) {
-            sb.append("{ ");
-            sb.append(bundle);
-            sb.append(" } ");
-        }
-        sb.append("}");
-        return sb.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 1, this.a);
-        jte.l(parcel, 2, this.b);
-        jte.l(parcel, 3, this.c);
-        jte.l(parcel, 4, this.d);
-        jte.k(parcel, 5, this.e, i);
-        jte.l(parcel, 6, this.f);
-        jte.b(parcel, 7, this.h);
-        jte.s(parcel, r);
+    public static final rt9 c(shc shcVar) {
+        z3f z3fVar = new z3f((byte) 25);
+        rhc f = shcVar.f();
+        e23 d = shcVar instanceof pe5 ? ((pe5) shcVar).d() : c23.b;
+        f.getClass();
+        d.getClass();
+        return (rt9) new ko9(f, z3fVar, d).t(s89.a(rt9.class), "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

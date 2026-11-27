@@ -1,21 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jg8 implements v63 {
-    public final v63 a;
+public final class jg8 {
+    public static final String a;
+    public static final String b;
 
-    public jg8(v63 v63Var) {
-        this.a = v63Var;
+    static {
+        String str = gcc.a;
+        a = "0";
+        b = "1";
     }
 
-    @Override // v63
-    public final Object a(eq4 eq4Var, gw2 gw2Var) {
-        return this.a.a(new ig8(eq4Var, null, (byte) 0), gw2Var);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof jg8) {
+            throw null;
+        }
+        return false;
     }
 
-    @Override // v63
-    public final hk4 getData() {
-        return this.a.getData();
+    public final int hashCode() {
+        throw null;
     }
 }

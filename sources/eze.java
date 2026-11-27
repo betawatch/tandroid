@@ -1,31 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class eze {
-    public static xye a;
-
-    public static synchronized sxe a(hwe hweVar) {
-        sxe sxeVar;
-        synchronized (eze.class) {
-            xye xyeVar = a;
-            if (xyeVar == null) {
-                xyeVar = new xye((byte) 0);
-                a = xyeVar;
-            }
-            sxeVar = (sxe) xyeVar.c(hweVar);
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            lq5.j("Invalid input received");
+            return null;
         }
-        return sxeVar;
-    }
-
-    public static void b(int i, Object[] objArr) {
-        for (int i2 = 0; i2 < i; i2++) {
-            if (objArr[i2] == null) {
-                StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 9);
-                sb.append("at index ");
-                sb.append(i2);
-                throw new NullPointerException(sb.toString());
+        StringBuilder sb = new StringBuilder(str2.length() + str.length());
+        for (int i = 0; i < str.length(); i++) {
+            sb.append(str.charAt(i));
+            if (str2.length() > i) {
+                sb.append(str2.charAt(i));
             }
         }
+        return sb.toString();
     }
 }

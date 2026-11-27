@@ -1,44 +1,47 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class vdc implements View.OnAttachStateChangeListener {
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        udc a;
-        wdc wdcVar = (wdc) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (wdcVar == null || (a = uxe.a(view, wdcVar)) == null) {
-            return;
-        }
-        ArrayList arrayList = wdcVar.a;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            ((e59) a.a.b).add((hw4) obj);
-        }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vdc extends c4 {
+    public static final Parcelable.Creator<vdc> CREATOR = new mx6((byte) 23);
+    public final int a;
+    public final String b;
+    public final int c;
+
+    public vdc(int i, int i2, String str) {
+        str.getClass();
+        this.a = i;
+        this.b = str;
+        this.c = i2;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        udc udcVar;
-        wdc wdcVar = (wdc) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (wdcVar == null || (udcVar = wdcVar.b) == null) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        ArrayList arrayList = wdcVar.a;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            ((e59) udcVar.a.b).remove((hw4) obj);
+        if (!(obj instanceof vdc)) {
+            return false;
         }
-        wdcVar.b = null;
+        vdc vdcVar = (vdc) obj;
+        return this.a == vdcVar.a && ur5.a(this.b, vdcVar.b) && this.c == vdcVar.c;
+    }
+
+    public final int hashCode() {
+        return bs2.j(this.a * 31, 31, this.b) + this.c;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.getClass();
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.l(parcel, 2, this.b);
+        bye.q(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        bye.s(parcel, r);
     }
 }

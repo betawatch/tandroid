@@ -1,27 +1,117 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qha {
-    public static final qha a;
-    public static final qha b;
-    public static final /* synthetic */ qha[] c;
+public final class qha extends c79 {
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public int e;
+    public final /* synthetic */ eja f;
 
-    static {
-        qha qhaVar = new qha("ICON", 0);
-        a = qhaVar;
-        qha qhaVar2 = new qha("TEXT", 1);
-        b = qhaVar2;
-        c = new qha[]{qhaVar, qhaVar2};
+    public qha(eja ejaVar, Context context) {
+        this.f = ejaVar;
+        this.c = context;
+        E(false);
     }
 
-    public static qha valueOf(String str) {
-        return (qha) Enum.valueOf(qha.class, str);
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return true;
     }
 
-    public static qha[] values() {
-        return (qha[]) c.clone();
+    public final void E(boolean z) {
+        eja ejaVar = this.f;
+        long j = ejaVar.m1;
+        e eVar = ejaVar.y1;
+        if (eVar != null) {
+            if (wf3.y(j)) {
+                TLRPC.Chat M0 = uc7.s1(eVar.getCurrentAccount()).M0(Long.valueOf(-j));
+                if (M0 == null || !xc2.V(M0)) {
+                    return;
+                }
+            } else if (uc7.s1(eVar.getCurrentAccount()).X1(Long.valueOf(j)) == null) {
+                return;
+            }
+            wb7 L0 = uc7.s1(eVar.getCurrentAccount()).L0(j);
+            ArrayList arrayList = this.d;
+            arrayList.clear();
+            int i = 0;
+            if (L0 != null) {
+                ArrayList arrayList2 = L0.b;
+                for (int i2 = 0; i2 < arrayList2.size(); i2++) {
+                    TLObject tLObject = (TLObject) arrayList2.get(i2);
+                    if ((tLObject instanceof TLRPC.Chat) && xc2.r0((TLRPC.Chat) tLObject)) {
+                        arrayList.add(tLObject);
+                    } else {
+                        arrayList.add(tLObject);
+                    }
+                }
+            }
+            if (!arrayList.isEmpty() && !yac.h(eVar.getCurrentAccount()).p()) {
+                i = L0.c;
+            }
+            this.e = i;
+            if (z) {
+                f();
+            }
+        }
+    }
+
+    @Override // j79
+    public final int b() {
+        return this.d.size();
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        return (this.e <= 0 || i != this.d.size() + (-1)) ? 17 : 18;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        bv8 bv8Var;
+        int i2 = f89Var.f;
+        View view = f89Var.a;
+        if (i2 == 17) {
+            if (!(view instanceof bv8)) {
+                return;
+            } else {
+                bv8Var = (bv8) view;
+            }
+        } else if (i2 != 18) {
+            bv8Var = null;
+        } else if (!(view instanceof cia)) {
+            return;
+        } else {
+            bv8Var = ((cia) view).b;
+        }
+        bv8 bv8Var2 = bv8Var;
+        if (bv8Var2 != null) {
+            ArrayList arrayList = this.d;
+            bv8Var2.C(arrayList.get(i), null, null, null, false, false);
+            bv8Var2.N = i != arrayList.size() - 1;
+        }
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View bv8Var;
+        eja ejaVar = this.f;
+        if (i == 18) {
+            e eVar = ejaVar.y1;
+            bv8Var = new cia(eVar == null ? yac.t0 : eVar.getCurrentAccount(), this.c, ejaVar.m1 > 0, ejaVar.I1, new ux9(this, (byte) 23));
+        } else {
+            bv8Var = new bv8(this.c, ejaVar.I1);
+        }
+        bv8Var.setLayoutParams(new r79(-1, -2));
+        return new n69(bv8Var);
     }
 }

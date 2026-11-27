@@ -1,38 +1,73 @@
 // default package
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class b82 extends gm {
-    public final Bitmap a;
+public final class b82 extends de0 {
+    public final a82 H;
+    public final /* synthetic */ e I;
+    public final /* synthetic */ boolean J;
+    public final /* synthetic */ vnb K;
+    public final /* synthetic */ f82 L;
 
-    public b82(c82 c82Var) {
-        super(-1L, (Paint.FontMetricsInt) null);
-        Bitmap createBitmap = Bitmap.createBitmap(gl.L(24.0f), gl.L(24.0f), Bitmap.Config.ARGB_8888);
-        this.a = createBitmap;
-        Drawable mutate = c82Var.getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate();
-        mutate.setBounds(0, 0, gl.L(24.0f), gl.L(24.0f));
-        mutate.draw(new Canvas(createBitmap));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b82(f82 f82Var, Context context, e eVar, boolean z, vnb vnbVar) {
+        super(context);
+        this.L = f82Var;
+        this.I = eVar;
+        this.J = z;
+        this.K = vnbVar;
+        this.H = new a82(this);
     }
 
-    @Override // gm, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-        canvas.save();
-        canvas.translate(f, ((i3 + i5) / 2.0f) - gl.L(12.0f));
-        float f2 = this.extraScale;
-        canvas.scale(f2, f2, f + gl.L(12.0f), gl.L(12.0f));
-        canvas.drawBitmap(this.a, 0.0f, 0.0f, (Paint) null);
-        canvas.restore();
+    @Override // de0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        long j;
+        f82 f82Var = this.L;
+        if (!f82Var.b || this.e != null) {
+            super.onDraw(canvas);
+            return;
+        }
+        a82 a82Var = this.H;
+        a82Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        a82Var.a = true;
+        a82Var.v = true;
+        a82Var.J = this.K;
+        Integer num = f82Var.c;
+        if (num != null) {
+            a82Var.z = num.intValue();
+        }
+        zu1 zu1Var = f82Var.H;
+        if (zu1Var != null) {
+            j = zu1Var.a();
+        } else {
+            e eVar = this.I;
+            j = eVar instanceof tzb ? -((tzb) eVar).a : 0L;
+        }
+        t6b.h(j, canvas, this.a, a82Var);
     }
 
-    @Override // gm, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return gl.L(5.0f) + super.getSize(paint, charSequence, i, i2, fontMetricsInt);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!this.J || !getImageReceiver().E()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+        } else {
+            accessibilityNodeInfo.setText(ob6.M0(2131754793, null));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, ob6.M0(2131747544, null)));
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.L.b && this.H.a(this, motionEvent)) {
+            return true;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

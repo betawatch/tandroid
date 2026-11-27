@@ -1,49 +1,1090 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.Notification;
+import android.app.RemoteInput;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import android.util.Log;
+import android.util.SparseBooleanArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.core.graphics.drawable.IconCompat;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.concurrent.Executor;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.json.JSONObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.c;
+import org.telegram.ui.Dictation.DictationAsr;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lyc {
-    public static final lyc a;
-    public static final lyc b;
-    public static final lyc c;
-    public static final lyc d;
-    public static final lyc e;
-    public static final lyc f;
-    public static final lyc h;
-    public static final lyc n;
-    public static final lyc r;
-    public static final /* synthetic */ lyc[] s;
+public final class lyc implements tw8, h49, jb9, uw8 {
+    public static volatile lyc f;
+    public static final tx7 h = new tx7();
+    public final /* synthetic */ byte a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    static {
-        lyc lycVar = new lyc("INT", 0);
-        a = lycVar;
-        lyc lycVar2 = new lyc("LONG", 1);
-        b = lycVar2;
-        lyc lycVar3 = new lyc("FLOAT", 2);
-        c = lycVar3;
-        lyc lycVar4 = new lyc("DOUBLE", 3);
-        d = lycVar4;
-        lyc lycVar5 = new lyc("BOOLEAN", 4);
-        e = lycVar5;
-        lyc lycVar6 = new lyc("STRING", 5);
-        f = lycVar6;
-        f51 f51Var = f51.c;
-        lyc lycVar7 = new lyc("BYTE_STRING", 6);
-        h = lycVar7;
-        lyc lycVar8 = new lyc("ENUM", 7);
-        n = lycVar8;
-        lyc lycVar9 = new lyc("MESSAGE", 8);
-        r = lycVar9;
-        s = new lyc[]{lycVar, lycVar2, lycVar3, lycVar4, lycVar5, lycVar6, lycVar7, lycVar8, lycVar9};
+    public lyc(File file) {
+        this.a = (byte) 7;
+        HashMap hashMap = new HashMap();
+        ArrayList arrayList = new ArrayList();
+        this.c = arrayList;
+        HashMap hashMap2 = new HashMap();
+        this.d = hashMap2;
+        long[] jArr = new long[1];
+        this.e = jArr;
+        this.b = file;
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+        hashMap.putAll(K(bufferedReader));
+        oi6 oi6Var = (oi6) hashMap.get("content-type");
+        String str = oi6Var == null ? null : (String) oi6Var.b.get("boundary");
+        if (str != null) {
+            int length = str.length() + 2;
+            ni6 ni6Var = null;
+            while (true) {
+                String readLine = bufferedReader.readLine();
+                if (readLine == null) {
+                    break;
+                }
+                jArr[0] = jArr[0] + readLine.getBytes().length + 2;
+                if (readLine.length() == length && readLine.substring(2).equals(str)) {
+                    if (ni6Var != null) {
+                        ni6Var.d = (jArr[0] - length) - 2;
+                        arrayList.add(ni6Var);
+                        oi6 oi6Var2 = (oi6) ni6Var.a.get("content-location");
+                        hashMap2.put(oi6Var2 == null ? null : oi6Var2.a, ni6Var);
+                    }
+                    ni6Var = new ni6();
+                    ni6Var.b = (File) this.b;
+                    ni6Var.a.putAll(K(bufferedReader));
+                    ni6Var.c = jArr[0];
+                }
+            }
+            if (ni6Var != null && ni6Var.c != 0 && ni6Var.d != 0) {
+                arrayList.add(ni6Var);
+                oi6 oi6Var3 = (oi6) ni6Var.a.get("content-location");
+                hashMap2.put(oi6Var3 != null ? oi6Var3.a : null, ni6Var);
+            }
+        }
+        bufferedReader.close();
     }
 
-    public static lyc valueOf(String str) {
-        return (lyc) Enum.valueOf(lyc.class, str);
+    public static void b(String str, String str2, HashMap hashMap) {
+        oi6 oi6Var = new oi6();
+        String[] split = str2.split(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+        for (int i = 0; i < split.length; i++) {
+            String trim = split[i].trim();
+            if (!trim.isEmpty()) {
+                int indexOf = trim.indexOf(61);
+                if (i == 0 || indexOf < 0) {
+                    oi6Var.a = trim;
+                } else {
+                    String trim2 = trim.substring(0, indexOf).trim();
+                    String trim3 = trim.substring(indexOf + 1).trim();
+                    if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
+                        trim3 = bs2.n(1, 1, trim3);
+                    }
+                    oi6Var.b.put(trim2, trim3);
+                }
+            }
+        }
+        hashMap.put(str.trim().toLowerCase(), oi6Var);
     }
 
-    public static lyc[] values() {
-        return (lyc[]) s.clone();
+    public final void A(int i, String str, HashMap hashMap) {
+        String trim = str.trim();
+        if (TextUtils.isEmpty(trim)) {
+            return;
+        }
+        if (trim.charAt(0) == '(') {
+            Matcher matcher = hyc.A0.matcher(trim);
+            int i2 = 0;
+            while (true) {
+                if (!matcher.find()) {
+                    break;
+                }
+                if (matcher.group(0).indexOf(48) == 40) {
+                    i2++;
+                } else {
+                    i2--;
+                    if (i2 == 0) {
+                        A(i, trim.substring(1, matcher.start()), hashMap);
+                        trim = trim.substring(matcher.end()).trim();
+                        if (TextUtils.isEmpty(trim)) {
+                            return;
+                        }
+                    }
+                }
+            }
+            if (i2 != 0) {
+                throw new Exception(c00.i("Premature end of parens in ", trim));
+            }
+        }
+        int i3 = 0;
+        while (true) {
+            String[] strArr = (String[]) this.e;
+            if (i3 < strArr.length) {
+                String str2 = strArr[i3];
+                Locale locale = Locale.US;
+                Matcher matcher2 = Pattern.compile("(?x)([a-zA-Z_$][a-zA-Z_$0-9]*)(?:\\[([^\\]]+?)\\])?\\s*" + Pattern.quote(str2) + "(.*)$").matcher(trim);
+                if (matcher2.find()) {
+                    A(i - 1, matcher2.group(3), hashMap);
+                    String group = matcher2.group(2);
+                    if (TextUtils.isEmpty(group)) {
+                        hashMap.put(matcher2.group(1), "");
+                        return;
+                    } else {
+                        A(i, group, hashMap);
+                        return;
+                    }
+                }
+                i3++;
+            } else {
+                try {
+                    Integer.parseInt(trim);
+                    return;
+                } catch (Exception unused) {
+                    Locale locale2 = Locale.US;
+                    if (Pattern.compile("(?!if|return|true|false)([a-zA-Z_$][a-zA-Z_$0-9]*)$").matcher(trim).find()) {
+                        return;
+                    }
+                    if (trim.charAt(0) == '\"' && trim.charAt(trim.length() - 1) == '\"') {
+                        return;
+                    }
+                    try {
+                        new JSONObject(trim).toString();
+                        return;
+                    } catch (Exception unused2) {
+                        Locale locale3 = Locale.US;
+                        Matcher matcher3 = Pattern.compile("([a-zA-Z_$][a-zA-Z_$0-9]*)\\[(.+)\\]$").matcher(trim);
+                        if (matcher3.find()) {
+                            matcher3.group(1);
+                            A(i - 1, matcher3.group(2), hashMap);
+                            return;
+                        }
+                        Matcher matcher4 = Pattern.compile("([a-zA-Z_$][a-zA-Z_$0-9]*)(?:\\.([^(]+)|\\[([^]]+)\\])\\s*(?:\\(+([^()]*)\\))?$").matcher(trim);
+                        if (matcher4.find()) {
+                            String group2 = matcher4.group(1);
+                            String group3 = matcher4.group(2);
+                            String group4 = matcher4.group(3);
+                            if (TextUtils.isEmpty(group3)) {
+                                group3 = group4;
+                            }
+                            group3.replace("\"", "");
+                            String group5 = matcher4.group(4);
+                            if (hashMap.get(group2) == null) {
+                                ArrayList arrayList = (ArrayList) this.b;
+                                Matcher matcher5 = Pattern.compile("(?:var\\s+)?" + Pattern.quote(group2) + "\\s*=\\s*\\{\\s*(((?:[a-zA-Z$0-9]+|\"[a-zA-Z$0-9]+\"|'[a-zA-Z$0-9]+')\\s*:\\s*function\\(.*?\\)\\s*\\{.*?\\}(?:,\\s*)?)*)\\}\\s*;").matcher((String) this.c);
+                                String str3 = null;
+                                while (true) {
+                                    if (!matcher5.find()) {
+                                        break;
+                                    }
+                                    String group6 = matcher5.group();
+                                    String group7 = matcher5.group(2);
+                                    if (TextUtils.isEmpty(group7)) {
+                                        str3 = group7;
+                                    } else {
+                                        if (!arrayList.contains(group6)) {
+                                            arrayList.add(matcher5.group());
+                                        }
+                                        str3 = group7;
+                                    }
+                                }
+                                Matcher matcher6 = Pattern.compile("((?:[a-zA-Z$0-9]+|\"[a-zA-Z$0-9]+\"|'[a-zA-Z$0-9]+'))\\s*:\\s*function\\(([a-z,]+)\\)\\{([^}]+)\\}").matcher(str3);
+                                while (matcher6.find()) {
+                                    c(matcher6.group(3), matcher6.group(2).split(","));
+                                }
+                            }
+                            if (group5 != null) {
+                                if (trim.charAt(trim.length() - 1) != ')') {
+                                    throw new Exception("last char not ')'");
+                                }
+                                if (group5.length() != 0) {
+                                    for (String str4 : group5.split(",")) {
+                                        A(i, str4, hashMap);
+                                    }
+                                    return;
+                                }
+                                return;
+                            }
+                            return;
+                        }
+                        Matcher matcher7 = Pattern.compile("([a-zA-Z_$][a-zA-Z_$0-9]*)\\[(.+)\\]$").matcher(trim);
+                        if (matcher7.find()) {
+                            hashMap.get(matcher7.group(1));
+                            A(i - 1, matcher7.group(2), hashMap);
+                            return;
+                        }
+                        int i4 = 0;
+                        while (true) {
+                            String[] strArr2 = (String[]) this.d;
+                            if (i4 >= strArr2.length) {
+                                Locale locale4 = Locale.US;
+                                Matcher matcher8 = Pattern.compile("^([a-zA-Z_$][a-zA-Z_$0-9]*)\\(([a-zA-Z0-9_$,]*)\\)$").matcher(trim);
+                                if (matcher8.find()) {
+                                    r(matcher8.group(1));
+                                }
+                                throw new Exception("Unsupported JS expression ".concat(trim));
+                            }
+                            String str5 = strArr2[i4];
+                            Locale locale5 = Locale.US;
+                            Matcher matcher9 = Pattern.compile("(.+?)" + Pattern.quote(str5) + "(.+)").matcher(trim);
+                            if (matcher9.find()) {
+                                boolean[] zArr = new boolean[1];
+                                int i5 = i - 1;
+                                B(matcher9.group(1), hashMap, zArr, i5);
+                                if (zArr[0]) {
+                                    throw new Exception(qd4.q("Premature left-side return of ", str5, " in ", trim));
+                                }
+                                B(matcher9.group(2), hashMap, zArr, i5);
+                                if (zArr[0]) {
+                                    throw new Exception(qd4.q("Premature right-side return of ", str5, " in ", trim));
+                                }
+                            }
+                            i4++;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public final void B(String str, HashMap hashMap, boolean[] zArr, int i) {
+        if (i < 0) {
+            throw new Exception("recursion limit reached");
+        }
+        zArr[0] = false;
+        String trim = str.trim();
+        Matcher matcher = hyc.y0.matcher(trim);
+        if (matcher.find()) {
+            trim = trim.substring(matcher.group(0).length());
+        } else {
+            Matcher matcher2 = hyc.z0.matcher(trim);
+            if (matcher2.find()) {
+                trim = trim.substring(matcher2.group(0).length());
+                zArr[0] = true;
+            }
+        }
+        A(i, trim, hashMap);
+    }
+
+    public final boolean C() {
+        zu1 zu1Var = ((snc) this.e).b.a.E3;
+        if (zu1Var == null) {
+            return false;
+        }
+        if (zu1Var.g9 != null) {
+            return true;
+        }
+        Dialog visibleDialog = zu1Var.getVisibleDialog();
+        return visibleDialog != null && visibleDialog.isShowing();
+    }
+
+    public final boolean D() {
+        return ((ArrayList) this.d).isEmpty();
+    }
+
+    public final void G(float f2) {
+        ChatActivityEnterView chatActivityEnterView = ((snc) this.e).b.a;
+        if (Math.abs(chatActivityEnterView.d6 - f2) >= 0.002f) {
+            chatActivityEnterView.d6 = f2;
+            if (chatActivityEnterView.D2 == null || Float.isNaN(f2)) {
+                return;
+            }
+            chatActivityEnterView.D2.setAlpha(chatActivityEnterView.f6 * chatActivityEnterView.d6);
+        }
+    }
+
+    public final void H(float f2, float f3) {
+        knc kncVar;
+        int[] iArr = (int[]) this.c;
+        int[] iArr2 = (int[]) this.b;
+        snc sncVar = (snc) this.e;
+        c cVar = sncVar.b;
+        knc kncVar2 = sncVar.L;
+        boolean z = (kncVar2 == null || kncVar2.R) ? false : true;
+        if (Float.isNaN(f2) || (kncVar = sncVar.L) == null || (sncVar.c == 0 && !z)) {
+            cVar.g(Float.NaN, 0.0f);
+            return;
+        }
+        kncVar.getLocationInWindow(iArr2);
+        ((ViewGroup) this.d).getLocationInWindow(iArr);
+        cVar.g((f2 + iArr2[1]) - iArr[1], f3);
+    }
+
+    public final void I() {
+        snc sncVar = (snc) this.e;
+        String trim = sncVar.n.trim();
+        if (trim.isEmpty()) {
+            return;
+        }
+        Log.d("VoiceLive", "field: send " + trim.length() + " chars as text");
+        sncVar.n("field send");
+        ChatActivityEnterView chatActivityEnterView = sncVar.b.a;
+        int i = ChatActivityEnterView.X7;
+        chatActivityEnterView.N2(trim, new mv1(chatActivityEnterView, (byte) 21));
+    }
+
+    public final void J(float f2, float f3, float f4, float f5) {
+        snc sncVar = (snc) this.e;
+        int[] iArr = sncVar.f0;
+        int[] iArr2 = sncVar.e0;
+        m7 m7Var = sncVar.Y;
+        if (m7Var == null || sncVar.L == null) {
+            return;
+        }
+        int max = Math.max(1, Math.round(f4 - f2));
+        int max2 = Math.max(1, Math.round(f5 - f3));
+        ViewGroup.LayoutParams layoutParams = m7Var.getLayoutParams();
+        if (layoutParams != null && (layoutParams.width != max || layoutParams.height != max2)) {
+            layoutParams.width = max;
+            layoutParams.height = max2;
+            m7Var.setLayoutParams(layoutParams);
+        }
+        Rect clipBounds = m7Var.getClipBounds();
+        if (clipBounds == null || clipBounds.width() != max || clipBounds.height() != max2 || clipBounds.left != 0 || clipBounds.top != 0) {
+            m7Var.setClipBounds(new Rect(0, 0, max, max2));
+        }
+        sncVar.L.getLocationInWindow(iArr2);
+        m7Var.getLocationInWindow(iArr);
+        float translationX = iArr[0] - m7Var.getTranslationX();
+        float translationY = iArr[1] - m7Var.getTranslationY();
+        m7Var.setTranslationX((iArr2[0] + f2) - translationX);
+        m7Var.setTranslationY((iArr2[1] + f3) - translationY);
+    }
+
+    public final HashMap K(BufferedReader bufferedReader) {
+        String str;
+        StringBuilder sb;
+        HashMap hashMap = new HashMap();
+        loop0: while (true) {
+            str = null;
+            sb = null;
+            while (true) {
+                String readLine = bufferedReader.readLine();
+                if (readLine == null) {
+                    break loop0;
+                }
+                long[] jArr = (long[]) this.e;
+                jArr[0] = jArr[0] + readLine.getBytes().length + 2;
+                String trim = readLine.trim();
+                if (trim.isEmpty()) {
+                    break loop0;
+                }
+                if (str == null || sb == null) {
+                    int indexOf = trim.indexOf(58);
+                    if (indexOf >= 0) {
+                        String trim2 = trim.substring(0, indexOf).trim();
+                        String trim3 = trim.substring(indexOf + 1).trim();
+                        if (trim3.endsWith(";")) {
+                            sb = qd4.r(trim3);
+                            str = trim2;
+                        } else {
+                            b(trim2, trim3, hashMap);
+                        }
+                    }
+                } else {
+                    sb.append(trim);
+                    if (!trim.endsWith(";")) {
+                        break;
+                    }
+                }
+            }
+            b(str, sb.toString(), hashMap);
+        }
+        if (str != null && sb != null) {
+            b(str, sb.toString(), hashMap);
+        }
+        return hashMap;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v0, types: [byte] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v4 */
+    /* JADX WARN: Type inference failed for: r2v5 */
+    /* JADX WARN: Type inference failed for: r2v6 */
+    public final void L() {
+        boolean z;
+        if (((kyc) this.c) == null) {
+            kyc kycVar = (kyc) ((ArrayDeque) this.b).pollFirst();
+            this.c = kycVar;
+            if (kycVar != null) {
+                ?? r2 = 0;
+                r2 = 0;
+                r2 = 0;
+                r2 = 0;
+                iyc iycVar = new iyc(this, kycVar, r2);
+                this.d = iycVar;
+                hl.d3(iycVar, 10000L);
+                jx8 jx8Var = kycVar.b;
+                String str = jx8Var.b;
+                String str2 = jx8Var.f;
+                jyc jycVar = new jyc(this, kycVar);
+                ko9 k = pyc.k(str);
+                byte[] f2 = pyc.f(str2);
+                if (k != null && f2 != null) {
+                    byte b = 1;
+                    try {
+                        z = czc.a("WEB_MESSAGE_LISTENER");
+                    } catch (Throwable th) {
+                        cc4.g(th, true);
+                        z = false;
+                    }
+                    if (z) {
+                        synchronized (pyc.y) {
+                            pyc pycVar = pyc.A;
+                            if (pycVar != null) {
+                                pycVar.q();
+                                pyc.A = null;
+                            }
+                            try {
+                                pyc pycVar2 = new pyc(k, str2, f2);
+                                pyc.A = pycVar2;
+                                pycVar2.x = jycVar;
+                                vr vrVar = vr.f;
+                                if (vrVar != null) {
+                                    vrVar.d.add(pycVar2);
+                                }
+                                pycVar2.j.execute(new myc(pycVar2, b));
+                                hl.c3(new myc(pycVar2, (byte) 2));
+                                r2 = pyc.A.i.getLocalPort();
+                            } catch (Exception e) {
+                                cc4.g(e, true);
+                                pyc pycVar3 = pyc.A;
+                                if (pycVar3 != null) {
+                                    pycVar3.q();
+                                    pyc.A = null;
+                                }
+                            }
+                        }
+                    }
+                }
+                kycVar.d = r2;
+                if (r2 == 0) {
+                    s(kycVar);
+                }
+            }
+        }
+    }
+
+    public final void a(ln7 ln7Var) {
+        ((ArrayList) this.b).add(ln7Var);
+    }
+
+    public final void c(String str, String[] strArr) {
+        HashMap hashMap = new HashMap();
+        for (String str2 : strArr) {
+            hashMap.put(str2, "");
+        }
+        boolean[] zArr = new boolean[1];
+        for (String str3 : str.split(";")) {
+            B(str3, hashMap, zArr, 100);
+            if (zArr[0]) {
+                return;
+            }
+        }
+    }
+
+    public final Object clone() {
+        switch (this.a) {
+            case 10:
+                lyc lycVar = new lyc((byte) 10);
+                lycVar.b = new ArrayList((ArrayList) this.b);
+                lycVar.c = new ArrayList((ArrayList) this.c);
+                lycVar.d = (String) this.d;
+                lycVar.e = (String) this.e;
+                return lycVar;
+            default:
+                return super.clone();
+        }
+    }
+
+    @Override // jb9
+    public final void d() {
+        hl.d3(new eb9((zu1) this.b, (Activity) this.c, (vnb) this.d, (r47) this.e, (byte) 2), 200L);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00f2  */
+    @Override // h49
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(View view, w49 w49Var, boolean z, boolean z2) {
+        float f2;
+        float f3;
+        x49 x49Var;
+        u49 k;
+        float f4;
+        int i;
+        float f5;
+        float f6;
+        float f7;
+        x49 x49Var2;
+        u49 k2;
+        float f8;
+        int i2;
+        float f9;
+        float f10 = 0.0f;
+        switch (this.a) {
+            case 12:
+                zu1 zu1Var = (zu1) this.b;
+                jf0 L6 = zu1Var.L6(((r47) this.c).e1(), true);
+                if (L6 instanceof wb2) {
+                    x49 x49Var3 = ((wb2) L6).O;
+                    u49 k3 = x49Var3.k(w49Var);
+                    if (k3 == null) {
+                        f5 = 0.0f;
+                        f2 = f10;
+                        f3 = f5;
+                        zu1Var.wb(L6, (r47) this.c, (i49) this.d, view, f2, f3, w49Var, false, (w49Var == null && w49Var.a) ? true : z, z2, false);
+                        ((ji8) this.e).b(false);
+                        break;
+                    } else {
+                        f10 = x49Var3.b + k3.w + (k3.z / 2.0f);
+                        f4 = x49Var3.c + k3.x;
+                        i = k3.A;
+                    }
+                } else if (!(L6 instanceof dl1) || (k = (x49Var = ((dl1) L6).F0).k(w49Var)) == null) {
+                    f2 = 0.0f;
+                    f3 = 0.0f;
+                    zu1Var.wb(L6, (r47) this.c, (i49) this.d, view, f2, f3, w49Var, false, (w49Var == null && w49Var.a) ? true : z, z2, false);
+                    ((ji8) this.e).b(false);
+                } else {
+                    f10 = x49Var.b + k.w + (k.z / 2.0f);
+                    f4 = x49Var.c + k.x;
+                    i = k.A;
+                }
+                f5 = (i / 2.0f) + f4;
+                f2 = f10;
+                f3 = f5;
+                zu1Var.wb(L6, (r47) this.c, (i49) this.d, view, f2, f3, w49Var, false, (w49Var == null && w49Var.a) ? true : z, z2, false);
+                ((ji8) this.e).b(false);
+                break;
+            default:
+                zu1 zu1Var2 = (zu1) this.b;
+                jf0 L62 = zu1Var2.L6(((r47) this.c).e1(), true);
+                if (L62 instanceof wb2) {
+                    x49 x49Var4 = ((wb2) L62).O;
+                    u49 k4 = x49Var4.k(w49Var);
+                    if (k4 == null) {
+                        f9 = 0.0f;
+                        f6 = f10;
+                        f7 = f9;
+                        zu1Var2.wb(L62, (r47) this.c, (i49) this.d, view, f6, f7, w49Var, false, (w49Var == null && w49Var.a) ? true : z, z2, false);
+                        ((ktb) this.e).b(false);
+                        break;
+                    } else {
+                        f10 = x49Var4.b + k4.w + (k4.z / 2.0f);
+                        f8 = x49Var4.c + k4.x;
+                        i2 = k4.A;
+                    }
+                } else if (!(L62 instanceof dl1) || (k2 = (x49Var2 = ((dl1) L62).F0).k(w49Var)) == null) {
+                    f6 = 0.0f;
+                    f7 = 0.0f;
+                    zu1Var2.wb(L62, (r47) this.c, (i49) this.d, view, f6, f7, w49Var, false, (w49Var == null && w49Var.a) ? true : z, z2, false);
+                    ((ktb) this.e).b(false);
+                } else {
+                    f10 = x49Var2.b + k2.w + (k2.z / 2.0f);
+                    f8 = x49Var2.c + k2.x;
+                    i2 = k2.A;
+                }
+                f9 = (i2 / 2.0f) + f8;
+                f6 = f10;
+                f7 = f9;
+                zu1Var2.wb(L62, (r47) this.c, (i49) this.d, view, f6, f7, w49Var, false, (w49Var == null && w49Var.a) ? true : z, z2, false);
+                ((ktb) this.e).b(false);
+                break;
+        }
+    }
+
+    @Override // jb9
+    public final void f() {
+        hl.d3(new fm1((zu1) this.b, (r47) this.e, (byte) 8), 200L);
+    }
+
+    public final jl0 g(knc kncVar) {
+        jl0 jl0Var;
+        bl0 bl0Var;
+        ChatActivityEnterView chatActivityEnterView = ((snc) this.e).b.a;
+        int i = ChatActivityEnterView.X7;
+        z92 G0 = chatActivityEnterView.G0();
+        ll0 ll0Var = chatActivityEnterView.K1;
+        if (ll0Var == null || G0 == null || (jl0Var = G0.r) == null || (bl0Var = jl0Var.w) == null) {
+            return null;
+        }
+        return ll0Var.c(kncVar, bl0Var, false);
+    }
+
+    @Override // uw8
+    public final Object get() {
+        switch (this.a) {
+            case 5:
+                return new gj4((ji4) ((aj3) this.b).b, (bba) ((tw8) this.c).get(), (mx2) ((aj3) this.d).b, (zaa) ((tw8) this.e).get());
+            default:
+                return new u8a((Executor) ((uw8) this.b).get(), (ds9) ((uw8) this.c).get(), (pm3) ((ko9) this.d).get(), (ds9) ((uw8) this.e).get());
+        }
+    }
+
+    public final void h(Canvas canvas, int i) {
+        ArrayList arrayList = (ArrayList) this.d;
+        canvas.clipRect(0, 0, i, hl.L(14.66f));
+        RectF rectF = hl.P;
+        float f2 = i;
+        rectF.set(0.0f, 0.0f, f2, hl.L(14.66f));
+        canvas.saveLayerAlpha(rectF, jn7.d4, 31);
+        if (ob6.a0) {
+            canvas.translate(f2, 0.0f);
+        }
+        int L = i - hl.L(25.0f);
+        int i2 = 0;
+        while (i2 < arrayList.size()) {
+            pf3 pf3Var = (pf3) arrayList.get(i2);
+            L = ik8.B(4.0f, pf3Var.g, L);
+            if (L < 0) {
+                break;
+            }
+            if (ob6.a0) {
+                canvas.translate(-pf3Var.g, 0.0f);
+                pf3Var.a(canvas);
+                canvas.translate(-hl.L(4.0f), 0.0f);
+            } else {
+                pf3Var.a(canvas);
+                canvas.translate(hl.L(4.0f) + pf3Var.g, 0.0f);
+            }
+            i2++;
+        }
+        if (i2 < arrayList.size()) {
+            int size = arrayList.size() - i2;
+            pf3 pf3Var2 = (pf3) this.e;
+            if (pf3Var2 == null || pf3Var2.a != size) {
+                of3 of3Var = (of3) this.b;
+                pf3 pf3Var3 = new pf3();
+                pf3Var3.a = size;
+                pkb pkbVar = new pkb(uh9.k(size, "+"), 10.0f, hl.o());
+                pkbVar.q(of3Var);
+                pf3Var3.c = pkbVar;
+                int L2 = hl.L(9.32f);
+                pkb pkbVar2 = pf3Var3.c;
+                pf3Var3.g = L2 + ((int) pkbVar2.c);
+                pkbVar2.h();
+                int i3 = aob.n8;
+                pf3Var3.f = i3;
+                pf3Var3.e = true;
+                pf3Var3.d = aob.w0(null, i3, false);
+                this.e = pf3Var3;
+                pf3Var2 = pf3Var3;
+            }
+            if (ob6.a0) {
+                canvas.translate(-pf3Var2.g, 0.0f);
+                ((pf3) this.e).a(canvas);
+                canvas.translate(-hl.L(4.0f), 0.0f);
+            } else {
+                pf3Var2.a(canvas);
+                canvas.translate(hl.L(4.0f) + ((pf3) this.e).g, 0.0f);
+            }
+        }
+        canvas.restore();
+    }
+
+    @Override // jb9
+    public final void i() {
+        zu1 zu1Var = (zu1) this.b;
+        zu1Var.showDialog(new xk8((e) zu1Var, 3, true));
+    }
+
+    @Override // h49
+    public final boolean j() {
+        byte b = this.a;
+        return true;
+    }
+
+    @Override // h49
+    public final boolean k() {
+        byte b = this.a;
+        return false;
+    }
+
+    @Override // h49
+    public final void m(Canvas canvas, RectF rectF, float f2, float f3, float f4, int i, boolean z) {
+        byte b = this.a;
+    }
+
+    @Override // h49
+    public final void n() {
+        byte b = this.a;
+    }
+
+    @Override // h49
+    public final boolean p() {
+        byte b = this.a;
+        return false;
+    }
+
+    public final void q(wn7 wn7Var) {
+        Bundle bundle = new Bundle();
+        if (!((ArrayList) this.b).isEmpty()) {
+            ArrayList<? extends Parcelable> arrayList = new ArrayList<>(((ArrayList) this.b).size());
+            ArrayList arrayList2 = (ArrayList) this.b;
+            int size = arrayList2.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList2.get(i);
+                i++;
+                ln7 ln7Var = (ln7) obj;
+                IconCompat a = ln7Var.a();
+                boolean z = ln7Var.d;
+                Bundle bundle2 = ln7Var.a;
+                Notification.Action.Builder a2 = ho7.a(a != null ? jpe.a(a, null) : null, ln7Var.h, ln7Var.i);
+                Bundle bundle3 = new Bundle(bundle2);
+                bundle3.putBoolean("android.support.allowGeneratedReplies", z);
+                int i2 = Build.VERSION.SDK_INT;
+                if (i2 >= 24) {
+                    io7.a(a2, z);
+                }
+                if (i2 >= 31) {
+                    jo7.a(a2, false);
+                }
+                go7.a(a2, bundle3);
+                t99[] t99VarArr = ln7Var.c;
+                if (t99VarArr != null) {
+                    for (RemoteInput remoteInput : t99.a(t99VarArr)) {
+                        go7.b(a2, remoteInput);
+                    }
+                }
+                arrayList.add(go7.c(a2));
+            }
+            bundle.putParcelableArrayList("actions", arrayList);
+        }
+        if (!((ArrayList) this.c).isEmpty()) {
+            ArrayList arrayList3 = (ArrayList) this.c;
+            bundle.putParcelableArray("pages", (Parcelable[]) arrayList3.toArray(new Notification[arrayList3.size()]));
+        }
+        String str = (String) this.d;
+        if (str != null) {
+            bundle.putString("dismissalId", str);
+        }
+        String str2 = (String) this.e;
+        if (str2 != null) {
+            bundle.putString("bridgeTag", str2);
+        }
+        Bundle bundle4 = wn7Var.v;
+        if (bundle4 == null) {
+            bundle4 = new Bundle();
+            wn7Var.v = bundle4;
+        }
+        bundle4.putBundle("android.wearable.EXTENSIONS", bundle);
+    }
+
+    public final String r(String str) {
+        ArrayList arrayList = (ArrayList) this.b;
+        try {
+            String quote = Pattern.quote(str);
+            Locale locale = Locale.US;
+            Matcher matcher = Pattern.compile("(?x)(?:function\\s+" + quote + "|[{;,]\\s*" + quote + "\\s*=\\s*function|var\\s+" + quote + "\\s*=\\s*function)\\s*\\(([^)]*)\\)\\s*\\{([^}]+)\\}").matcher((String) this.c);
+            if (matcher.find()) {
+                String group = matcher.group();
+                if (!arrayList.contains(group)) {
+                    arrayList.add(group + ";");
+                }
+                c(matcher.group(2), matcher.group(1).split(","));
+            }
+        } catch (Exception e) {
+            arrayList.clear();
+            cc4.g(e, true);
+        }
+        return TextUtils.join("", arrayList);
+    }
+
+    public final void s(kyc kycVar) {
+        if (((kyc) this.c) != kycVar) {
+            return;
+        }
+        iyc iycVar = (iyc) this.d;
+        if (iycVar != null) {
+            hl.r(iycVar);
+            this.d = null;
+        }
+        iyc iycVar2 = (iyc) this.e;
+        if (iycVar2 != null) {
+            hl.r(iycVar2);
+            this.e = null;
+        }
+        synchronized (pyc.y) {
+            pyc pycVar = pyc.A;
+            if (pycVar != null) {
+                pycVar.q();
+                pyc.A = null;
+            }
+        }
+        this.c = null;
+        kycVar.c.run(-1L);
+        L();
+    }
+
+    public final float t() {
+        m7 m7Var = ((snc) this.e).Y;
+        if (m7Var == null) {
+            return -1.0f;
+        }
+        if (m7Var.getLayout() != null) {
+            return m7Var.getLayout().getHeight();
+        }
+        return 0.0f;
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 6:
+                return ((xh4) this.e).toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public final lv3 u() {
+        ChatActivityEnterView chatActivityEnterView = ((snc) this.e).b.a;
+        long j = chatActivityEnterView.o7;
+        if (j == 0) {
+            return null;
+        }
+        if (chatActivityEnterView.Q6 != j) {
+            chatActivityEnterView.Q6 = j;
+            TLRPC.TL_availableEffect Z0 = uc7.s1(chatActivityEnterView.R).Z0(chatActivityEnterView.o7);
+            chatActivityEnterView.R6 = Z0 != null ? pv3.g(Z0.emoticon) : null;
+        }
+        return chatActivityEnterView.R6;
+    }
+
+    public final boolean v(RectF rectF, boolean z) {
+        char c;
+        int[] iArr = (int[]) this.c;
+        int[] iArr2 = (int[]) this.b;
+        snc sncVar = (snc) this.e;
+        if (sncVar.L != null) {
+            ChatActivityEnterView chatActivityEnterView = sncVar.b.a;
+            wma wmaVar = chatActivityEnterView.b2;
+            RectF rectF2 = chatActivityEnterView.G4;
+            if (wmaVar != null && chatActivityEnterView.getWidth() > 0) {
+                int[] iArr3 = new int[2];
+                int[] iArr4 = new int[2];
+                chatActivityEnterView.getLocationInWindow(iArr3);
+                wmaVar.getLocationInWindow(iArr4);
+                float f2 = iArr3[0] - iArr4[0];
+                float f3 = iArr3[1] - iArr4[1];
+                if (z) {
+                    rectF.set(f2 + 0.0f, 0.0f, (f2 + chatActivityEnterView.getWidth()) - 0.0f, f3);
+                    if (rectF.width() > hl.L(80.0f)) {
+                        c = 0;
+                    }
+                } else {
+                    c = 0;
+                    float width = (chatActivityEnterView.getWidth() + f2) - hl.L(64.0f);
+                    if (chatActivityEnterView.D2 != null && !rectF2.isEmpty() && chatActivityEnterView.D2.getVisibility() == 0) {
+                        chatActivityEnterView.D2.getLocationInWindow(new int[2]);
+                        width = ((r6[0] - iArr4[0]) + rectF2.left) - hl.L(8.0f);
+                    }
+                    rectF.set(f2, 0.0f, width, f3);
+                    if (rectF.width() <= hl.L(80.0f)) {
+                        return false;
+                    }
+                }
+                sncVar.L.getLocationInWindow(iArr2);
+                ((ViewGroup) this.d).getLocationInWindow(iArr);
+                rectF.offset(iArr[c] - iArr2[c], iArr[1] - iArr2[1]);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final float w() {
+        zu1 zu1Var = ((snc) this.e).b.a.E3;
+        if (zu1Var == null) {
+            return 0.0f;
+        }
+        if (zu1Var.R8 != null) {
+            return zu1Var.b9 * 0.2f;
+        }
+        return zu1Var.X8 * (zu1Var.Z8 != null ? zu1Var.a9 : 1.0f);
+    }
+
+    public final float x() {
+        tx1 tx1Var = ((snc) this.e).b.a.F0;
+        return tx1Var != null ? tx1Var.getTextSize() : hl.L(18.0f);
+    }
+
+    public final boolean y() {
+        zu1 zu1Var = ((snc) this.e).b.a.E3;
+        return zu1Var == null || !zu1Var.y();
+    }
+
+    public final boolean z() {
+        return DictationAsr.G() && DictationAsr.I().length > 0;
+    }
+
+    private final void E() {
+    }
+
+    private final void F() {
+    }
+
+    public /* synthetic */ lyc(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+    }
+
+    public /* synthetic */ lyc(Object obj, Object obj2, Object obj3, Object obj4, boolean z, byte b) {
+        this.a = b;
+        this.e = obj;
+        this.b = obj2;
+        this.c = obj3;
+        this.d = obj4;
+    }
+
+    public lyc(ux2 ux2Var, l83 l83Var, ii1 ii1Var) {
+        this.a = (byte) 14;
+        this.b = ux2Var;
+        this.c = ii1Var;
+        this.d = mvd.a(ConnectionsManager.DEFAULT_DATACENTER_ID, null, 6);
+        this.e = new z8d((byte) 7);
+        ev5 ev5Var = (ev5) ux2Var.c().get(qf5.c);
+        if (ev5Var != null) {
+            ev5Var.invokeOnCompletion(new cj7(l83Var, this, (byte) 1));
+        }
+    }
+
+    public /* synthetic */ lyc(byte b, boolean z) {
+        this.a = b;
+    }
+
+    public lyc(of3 of3Var) {
+        this.a = (byte) 4;
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = null;
+        this.b = of3Var;
+    }
+
+    public lyc(byte b) {
+        this.a = b;
+        switch (b) {
+            case 8:
+                this.b = new ArrayList();
+                this.c = new ArrayList();
+                this.d = new ArrayList();
+                this.e = new ArrayList();
+                break;
+            case 9:
+            default:
+                this.b = new ArrayDeque();
+                break;
+            case 10:
+                this.b = new ArrayList();
+                this.c = new ArrayList();
+                break;
+        }
+    }
+
+    public lyc(Context context) {
+        this.a = (byte) 2;
+        this.b = context != null ? context.getApplicationContext() : null;
+        this.d = rg7.b;
+        if (context == null) {
+            this.e = sz.f;
+        }
+    }
+
+    public lyc(h73 h73Var, n73 n73Var, iy7 iy7Var) {
+        this.a = (byte) 11;
+        this.b = h73Var;
+        this.c = n73Var;
+        this.d = iy7Var;
+    }
+
+    public lyc(ArrayList arrayList, ArrayList arrayList2) {
+        this.a = (byte) 1;
+        this.b = arrayList;
+        this.d = new SparseBooleanArray();
+        this.c = new qs(0);
+        int size = arrayList.size();
+        int i = TLObject.FLAG_31;
+        vx7 vx7Var = null;
+        for (int i2 = 0; i2 < size; i2++) {
+            vx7 vx7Var2 = (vx7) arrayList.get(i2);
+            int i3 = vx7Var2.e;
+            if (i3 > i) {
+                vx7Var = vx7Var2;
+                i = i3;
+            }
+        }
+        this.e = vx7Var;
+    }
+
+    public lyc(String str) {
+        this.a = (byte) 18;
+        this.b = new ArrayList();
+        this.d = new String[]{"|", "^", "&", ">>", "<<", "-", "+", "%", "/", "*"};
+        this.e = new String[]{"|=", "^=", "&=", ">>=", "<<=", "-=", "+=", "%=", "/=", "*=", "="};
+        this.c = str;
+    }
+
+    public lyc(j99 j99Var, ak7 ak7Var, um4 um4Var, ak7 ak7Var2) {
+        Object obj;
+        this.a = (byte) 9;
+        if (j99Var != null) {
+            obj = po5.q(j99Var);
+        } else {
+            no5 no5Var = po5.b;
+            obj = j99.e;
+        }
+        this.b = obj;
+        this.c = ak7Var;
+        this.d = um4Var;
+        this.e = ak7Var2;
+    }
+
+    public lyc(snc sncVar, ViewGroup viewGroup) {
+        this.a = (byte) 17;
+        this.e = sncVar;
+        this.d = viewGroup;
+        this.b = new int[2];
+        this.c = new int[2];
+    }
+
+    private final void l(Canvas canvas, RectF rectF, float f2, float f3, float f4, int i, boolean z) {
+    }
+
+    private final void o(Canvas canvas, RectF rectF, float f2, float f3, float f4, int i, boolean z) {
     }
 }

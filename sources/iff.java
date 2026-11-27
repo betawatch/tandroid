@@ -1,34 +1,45 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class iff extends b4 {
-    public static final Parcelable.Creator<iff> CREATOR = new xff((byte) 5);
-    public final boolean a;
+public final class iff extends ljf {
+    private static final iff zzb;
+    private int zzd;
+    private int zze;
+    private tjf zzf;
+    private tjf zzg;
+    private int zzh;
 
-    public iff(boolean z) {
-        this.a = z;
+    static {
+        iff iffVar = new iff();
+        zzb = iffVar;
+        ljf.e(iff.class, iffVar);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public iff() {
+        hlf hlfVar = hlf.d;
+        this.zzf = hlfVar;
+        this.zzg = hlfVar;
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-        return (obj instanceof iff) && this.a == ((iff) obj).a;
-    }
-
-    public final int hashCode() {
-        return this.a ? 1 : 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.s(parcel, r);
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001᠌\u0000\u0002\u001b\u0003\u001b\u0004င\u0001", new Object[]{"zzd", "zze", uif.x, "zzf", odf.class, "zzg", odf.class, "zzh"});
+        }
+        if (i2 == 3) {
+            return new iff();
+        }
+        if (i2 == 4) {
+            return new mdf(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

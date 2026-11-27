@@ -1,109 +1,128 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
-import android.view.View;
-import java.util.HashSet;
+import org.telegram.messenger.video.OldVideoPlayerRewinder;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ob2 extends View implements tjb {
-    public final f6c a;
-    public final wjb b;
-    public int c;
-    public int d;
-    public bb2 e;
-    public float f;
-    public int h;
+public final class ob2 extends OldVideoPlayerRewinder {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public ob2(Context context, wjb wjbVar) {
-        super(context);
-        this.b = wjbVar;
-        f6c f6cVar = new f6c();
-        this.a = f6cVar;
-        f6cVar.setCallback(this);
-        f6cVar.n = k96.M0(2131743588, null);
-        f6cVar.o = k96.M0(2131743589, null);
-        f6cVar.p = k96.M0(2131743587, null);
-        f6cVar.j = new hq1(this, (byte) 21);
+    public /* synthetic */ ob2(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public final void a(Canvas canvas) {
-        wjb wjbVar = this.b;
-        if (wjbVar != null) {
-            wjbVar.b(0.0f, this.f, getMeasuredWidth(), this.h);
-        } else {
-            bkb.q(0.0f, this.f, getMeasuredWidth(), this.h);
-        }
-        float L = gl.L(18.0f);
-        float L2 = gl.L(6.0f);
-        float L3 = gl.L(18.0f) + this.c;
-        float L4 = gl.L(6.0f) + this.d;
-        float L5 = gl.L(18.0f);
-        float L6 = gl.L(18.0f);
-        Paint d = wjbVar != null ? wjbVar.d("paintChatActionBackground") : null;
-        if (d == null) {
-            d = bkb.T0("paintChatActionBackground");
-        }
-        canvas.drawRoundRect(L, L2, L3, L4, L5, L6, d);
-        if (wjbVar != null ? wjbVar.g() : bkb.b1()) {
-            canvas.drawRoundRect(gl.L(18.0f), gl.L(6.0f), gl.L(18.0f) + this.c, gl.L(6.0f) + this.d, gl.L(18.0f), gl.L(18.0f), bkb.g2);
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void onRewindCanceled() {
+        xl4 xl4Var;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                wb2 wb2Var = (wb2) obj;
+                wb2Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                wb2Var.ac.d(false);
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                Drawable[] drawableArr = PhotoViewer.d9;
+                photoViewer.h1(obtain);
+                photoViewer.A1.d(false);
+                me8 me8Var = photoViewer.U8;
+                if (me8Var != null && (xl4Var = me8Var.e) != null) {
+                    xl4Var.I.d(false);
+                    break;
+                }
+                break;
         }
     }
 
-    public final void b(float f, int i) {
-        this.f = f;
-        this.h = i;
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void onRewindStart(boolean z) {
+        xl4 xl4Var;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                wb2 wb2Var = (wb2) obj;
+                rec recVar = wb2Var.ac;
+                recVar.n = new wz4(this);
+                recVar.c(false);
+                wb2Var.ac.b(!z);
+                wb2Var.ac.d(true);
+                wb2Var.invalidate();
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                photoViewer.A1.c(false);
+                boolean z2 = !z;
+                photoViewer.A1.b(z2);
+                photoViewer.A1.d(true);
+                photoViewer.f0.invalidate();
+                me8 me8Var = photoViewer.U8;
+                if (me8Var != null && (xl4Var = me8Var.e) != null) {
+                    rec recVar2 = xl4Var.I;
+                    recVar2.c(false);
+                    recVar2.b(z2);
+                    recVar2.d(true);
+                    vl4 vl4Var = xl4Var.q;
+                    if (vl4Var != null) {
+                        vl4Var.invalidate();
+                    }
+                    pl4 pl4Var = xl4Var.o;
+                    if (pl4Var != null) {
+                        pl4Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int L = gl.L(18.0f);
-        int L2 = gl.L(6.0f);
-        int L3 = gl.L(18.0f) + this.c;
-        int L4 = gl.L(6.0f) + this.d;
-        f6c f6cVar = this.a;
-        f6cVar.setBounds(L, L2, L3, L4);
-        f6cVar.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        int L = size - gl.L(36.0f);
-        this.c = L;
-        int a = this.a.a(L);
-        this.d = a;
-        setMeasuredDimension(size, gl.L(12.0f) + a);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.i.a(this, motionEvent);
-    }
-
-    public void setDelegate(bb2 bb2Var) {
-        this.e = bb2Var;
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        this.a.b();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.a;
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void updateRewindProgressUi(long j, float f, boolean z) {
+        xl4 xl4Var;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                wb2 wb2Var = (wb2) obj;
+                wb2Var.ac.e(Math.abs(j));
+                if (z) {
+                    wb2Var.Q5.b0 = f;
+                    wb2Var.W3();
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                photoViewer.A1.e(Math.abs(j));
+                if (z) {
+                    photoViewer.q3.h(false, f);
+                    photoViewer.r3.invalidate();
+                }
+                me8 me8Var = photoViewer.U8;
+                if (me8Var != null && (xl4Var = me8Var.e) != null) {
+                    xl4Var.I.e(0L);
+                    if (z) {
+                        xl4Var.L = f;
+                        vl4 vl4Var = xl4Var.q;
+                        if (vl4Var != null) {
+                            vl4Var.invalidate();
+                        }
+                        pl4 pl4Var = xl4Var.o;
+                        if (pl4Var != null) {
+                            pl4Var.invalidate();
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

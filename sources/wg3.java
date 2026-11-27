@@ -1,83 +1,198 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
+import android.os.Bundle;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wg3 implements RequestDelegate {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ gk7 c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class wg3 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uj3 b;
 
-    public /* synthetic */ wg3(cj3 cj3Var, hd hdVar, TLRPC.User user, TLRPC.Chat chat, long j, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.c = cj3Var;
-        this.d = hdVar;
-        this.e = user;
-        this.f = chat;
-        this.b = j;
-        this.g = tL_messages_checkHistoryImportPeer;
+    public /* synthetic */ wg3(uj3 uj3Var, byte b) {
+        this.a = b;
+        this.b = uj3Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.g;
-        TLObject tLObject2 = this.f;
-        Object obj2 = this.d;
-        Object obj3 = this.e;
-        gk7 gk7Var = this.c;
-        switch (b) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ii3 ii3Var;
+        ii3 ii3Var2;
+        ArrayList arrayList;
+        int i = 0;
+        byte b = 1;
+        switch (this.a) {
             case 0:
-                gl.c3(new kg3((cj3) gk7Var, (hd) obj2, tLObject, (TLRPC.User) obj3, (TLRPC.Chat) tLObject2, this.b, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) obj));
+                uj3 uj3Var = this.b;
+                uj3Var.k5(true, false, true, false);
+                uj3Var.Z.b(true);
+                hl.d3(new rg3(uj3Var, (byte) 24), 100L);
                 break;
             case 1:
-                na7 na7Var = (na7) gk7Var;
-                Runnable runnable = (Runnable) obj2;
-                d dVar = (d) obj3;
-                TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin = (TLRPC.TL_messages_editChatAdmin) tLObject2;
-                z97 z97Var = (z97) obj;
-                if (tL_error != null) {
-                    gl.c3(new s67(na7Var, tL_error, dVar, tL_messages_editChatAdmin, (byte) 3));
-                    if (z97Var != null) {
-                        gl.c3(new e87(z97Var, tL_error, (byte) 1));
-                        break;
-                    }
+                uj3 uj3Var2 = this.b;
+                if (uj3Var2.H0 && (ii3Var = uj3Var2.F0) != null && !ii3Var.g()) {
+                    uj3Var2.R4(true, true);
+                    break;
                 } else {
-                    gl.d3(new a87(na7Var, this.b, runnable, (byte) 1), 1000L);
+                    uj3Var2.l5();
                     break;
                 }
                 break;
+            case 2:
+                uj3 uj3Var3 = this.b;
+                if (uj3Var3.H0 && (ii3Var2 = uj3Var3.F0) != null && !ii3Var2.g()) {
+                    uj3Var3.R4(true, true);
+                    break;
+                } else {
+                    uj3Var3.l5();
+                    break;
+                }
+                break;
+            case 3:
+                uj3 uj3Var4 = this.b;
+                Bundle bundle = new Bundle();
+                bundle.putLong("community_id", uj3Var4.a3);
+                uj3Var4.presentFragment(new io2(bundle));
+                break;
+            case 4:
+                uj3 uj3Var5 = this.b;
+                ArrayList arrayList2 = uj3Var5.K2;
+                if (uj3Var5.E2 != null && !arrayList2.isEmpty()) {
+                    uj3Var5.O2 = false;
+                    ArrayList arrayList3 = new ArrayList();
+                    while (i < arrayList2.size()) {
+                        arrayList3.add(if7.a(((Long) arrayList2.get(i)).longValue(), 0L));
+                        i++;
+                    }
+                    uj3Var5.E2.q(uj3Var5, arrayList3, uj3Var5.D1.getFieldText(), false, uj3Var5.L2, uj3Var5.M2, uj3Var5.N2, null);
+                    break;
+                }
+                break;
+            case 5:
+                this.b.A3(true);
+                break;
+            case 6:
+                this.b.finishPreviewFragment();
+                break;
+            case 7:
+                uj3 uj3Var6 = this.b;
+                uj3Var6.A0.setIsEditing(false);
+                uj3Var6.d5(false);
+                break;
+            case 8:
+                uj3 uj3Var7 = this.b;
+                uj3Var7.showDialog(new xk8((e) uj3Var7, 2, true));
+                break;
+            case 9:
+                uj3 uj3Var8 = this.b;
+                uj3Var8.getContactsController().B();
+                uj3Var8.f5();
+                break;
+            case 10:
+                this.b.E4(view);
+                break;
+            case 11:
+                uj3 uj3Var9 = this.b;
+                if (uj3Var9.z3() && (arrayList = uj3Var9.F2) != null && !arrayList.isEmpty() && uj3Var9.getParentActivity() != null) {
+                    no6 no6Var = (no6) uj3Var9.F2.get(0);
+                    bi3 bi3Var = uj3Var9.D1;
+                    CharSequence fieldText = bi3Var != null ? bi3Var.getFieldText() : no6Var.a;
+                    ArrayList arrayList4 = uj3Var9.F2;
+                    int size = arrayList4.size();
+                    while (i < size) {
+                        Object obj = arrayList4.get(i);
+                        i++;
+                        ((no6) obj).a = fieldText;
+                    }
+                    PhotoViewer.q0().T1(null, uj3Var9, uj3Var9.getResourceProvider());
+                    PhotoViewer.q0().u7 = true;
+                    PhotoViewer.q0().v7 = fieldText;
+                    ArrayList arrayList5 = new ArrayList(uj3Var9.F2);
+                    boolean[] zArr = new boolean[uj3Var9.F2.size()];
+                    Arrays.fill(zArr, true);
+                    PhotoViewer.q0().o1(arrayList5, 0, 0, false, new wi3(uj3Var9, zArr), null);
+                    PhotoViewer q0 = PhotoViewer.q0();
+                    q0.f4 = true;
+                    CheckBox checkBox = q0.O0;
+                    if (checkBox != null) {
+                        checkBox.setVisibility(8);
+                    }
+                    PhotoViewer.CounterView counterView = q0.P0;
+                    if (counterView != null) {
+                        counterView.setVisibility(8);
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                this.b.h4();
+                break;
+            case 13:
+                this.b.m4();
+                break;
+            case 14:
+                this.b.o4();
+                break;
+            case 15:
+                uj3 uj3Var10 = this.b;
+                uj3Var10.showDialog((nx0) jj.l(uj3Var10.getParentActivity(), ob6.M0(2131751203, null), ob6.M0(2131751208, null), null, new sg3(uj3Var10, (byte) 1), new rg3(uj3Var10, (byte) 6), false, false, uj3Var10.getResourceProvider()).b);
+                break;
+            case 16:
+                this.b.r4();
+                break;
+            case 17:
+                this.b.s4();
+                break;
+            case 18:
+                uj3 uj3Var11 = this.b;
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "dialogs_hint");
+                premiumPreviewFragment.k0 = true;
+                uj3Var11.presentFragment(premiumPreviewFragment);
+                hl.d3(new rg3(uj3Var11, (byte) 20), 250L);
+                break;
+            case 19:
+                this.b.i4();
+                break;
+            case 20:
+                this.b.G4();
+                break;
+            case 21:
+                uj3 uj3Var12 = this.b;
+                PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, "dialogs_hint");
+                premiumPreviewFragment2.k0 = true;
+                uj3Var12.presentFragment(premiumPreviewFragment2);
+                hl.d3(new rg3(uj3Var12, (byte) 3), 250L);
+                break;
+            case 22:
+                uj3 uj3Var13 = this.b;
+                uj3Var13.presentFragment(new z61());
+                hl.d3(new rg3(uj3Var13, b), 250L);
+                break;
+            case 23:
+                this.b.F4();
+                break;
+            case 24:
+                this.b.v4();
+                break;
+            case 25:
+                this.b.j4();
+                break;
+            case 26:
+                uj3 uj3Var14 = this.b;
+                m01.u(uj3Var14.getParentActivity(), uj3Var14.getMessagesController().k4.w2.f);
+                break;
+            case 27:
+                this.b.k4();
+                break;
             default:
-                vqa vqaVar = (vqa) gk7Var;
-                vqaVar.getClass();
-                gl.c3(new kg3(vqaVar, (c01) obj3, (hd) obj2, tLObject, (TL_stars.TL_starGiftUnique) tLObject2, tL_error, this.b, (CharSequence) obj));
+                this.b.P3();
                 break;
         }
-    }
-
-    public /* synthetic */ wg3(na7 na7Var, long j, Runnable runnable, d dVar, TLRPC.TL_messages_editChatAdmin tL_messages_editChatAdmin, z97 z97Var) {
-        this.c = na7Var;
-        this.b = j;
-        this.d = runnable;
-        this.e = dVar;
-        this.f = tL_messages_editChatAdmin;
-        this.g = z97Var;
-    }
-
-    public /* synthetic */ wg3(vqa vqaVar, c01 c01Var, hd hdVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, CharSequence charSequence) {
-        this.c = vqaVar;
-        this.e = c01Var;
-        this.d = hdVar;
-        this.f = tL_starGiftUnique;
-        this.b = j;
-        this.g = charSequence;
     }
 }

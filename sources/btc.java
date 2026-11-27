@@ -1,14 +1,41 @@
 // default package
 
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class btc extends TLRPC.Photo {
-    public ctc a;
-    public String b;
-    public final HashSet c = new HashSet();
-    public int d;
-    public int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class btc implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gtc b;
+
+    public /* synthetic */ btc(gtc gtcVar, byte b) {
+        this.a = b;
+        this.b = gtcVar;
+    }
+
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        gtc gtcVar = this.b;
+        switch (b) {
+            case 0:
+                gtcVar.g0((pcc) obj);
+                break;
+            case 1:
+                String str = (String) obj;
+                if (str == null) {
+                    v21 I = d31.b0(gtcVar).I(R.raw.contact_check, ob6.M0(2131742839, null), ob6.M0(2131742837, null));
+                    I.j = 5000;
+                    I.j();
+                    gtcVar.a.g3.O(true);
+                    break;
+                } else {
+                    d31.b0(gtcVar).f0(str, false);
+                    break;
+                }
+            default:
+                gtcVar.d0((Boolean) obj);
+                break;
+        }
+    }
 }

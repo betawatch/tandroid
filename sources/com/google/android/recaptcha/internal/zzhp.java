@@ -8,14 +8,14 @@ import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
-    private final d06 zza;
+    private final h26 zza;
 
     public zzhp() {
         int i = zzby.zza;
-        this.zza = cne.b(zzho.zza);
+        this.zza = ure.b(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -36,7 +36,7 @@ public final class zzhp implements zzhn {
                     if (zzhlVar == null) {
                         throw e;
                     }
-                    if (!rp5.a(e.zza(), zzcd.zzax)) {
+                    if (!ur5.a(e.zza(), zzcd.zzax)) {
                         throw e;
                     }
                     try {

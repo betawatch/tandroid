@@ -1,41 +1,30 @@
 // default package
 
-import j$.util.Objects;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class a22 {
-    public final int a;
-    public final long b;
+public final /* synthetic */ class a22 implements fd, h22, nu4 {
+    public final /* synthetic */ j22 a;
 
-    public a22(int i, long j) {
-        this.a = i;
-        this.b = j;
+    public /* synthetic */ a22(j22 j22Var) {
+        this.a = j22Var;
     }
 
-    public static a22 a(Object obj) {
-        if (obj instanceof nu2) {
-            return new a22(2, ((nu2) obj).a);
+    @Override // h22
+    public final void e(boolean z) {
+        j22 j22Var = this.a;
+        if (j22Var.O()) {
+            return;
         }
-        if (obj instanceof TLRPC.User) {
-            return new a22(1, ((TLRPC.User) obj).id);
-        }
-        return null;
+        j22Var.K.d(0.0f);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || a22.class != obj.getClass()) {
-            return false;
-        }
-        a22 a22Var = (a22) obj;
-        return this.b == a22Var.b && this.a == a22Var.a;
+    @Override // nu4
+    public final Object h(Object obj) {
+        return Boolean.valueOf(this.a.b.o3.getKeyboardHeight() >= hl.L(20.0f));
     }
 
-    public final int hashCode() {
-        return Objects.hash(ug8.b(this.a), Long.valueOf(this.b));
+    @Override // fd
+    public final void w(id idVar, int i) {
+        this.a.b.dismiss();
     }
 }

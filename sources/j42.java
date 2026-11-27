@@ -1,75 +1,81 @@
 // default package
 
-import android.os.Build;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class j42 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+public final /* synthetic */ class j42 implements n7, zj5, bk5, fd, ng0 {
+    public final /* synthetic */ s42 a;
 
-    public /* synthetic */ j42(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, byte b) {
-        this.a = b;
-        this.b = chatAttachAlertPhotoLayout;
+    public /* synthetic */ j42(s42 s42Var) {
+        this.a = s42Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        switch (b) {
-            case 0:
-                boolean z = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.b.c.removeView(chatAttachAlertPhotoLayout.Q);
-                chatAttachAlertPhotoLayout.Q = null;
-                break;
-            case 1:
-                boolean z2 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.w0(false);
-                chatAttachAlertPhotoLayout.o0 = null;
-                break;
-            case 2:
-                boolean z3 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.w0(false);
-                chatAttachAlertPhotoLayout.o0 = null;
-                break;
-            case 3:
-                boolean z4 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.x.setVisibility(8);
-                break;
-            case 4:
-                boolean z5 = ChatAttachAlertPhotoLayout.r1;
-                chatAttachAlertPhotoLayout.H.f();
-                break;
-            case 5:
-                boolean z6 = ChatAttachAlertPhotoLayout.r1;
-                x02 x02Var = chatAttachAlertPhotoLayout.b;
-                if (rr.b(x02Var.Z1.getParentActivity(), "android.permission.CAMERA") == 0) {
-                    chatAttachAlertPhotoLayout.l0();
-                    break;
-                } else {
-                    try {
-                        x02Var.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-            default:
-                boolean z7 = ChatAttachAlertPhotoLayout.r1;
-                try {
-                    int i = Build.VERSION.SDK_INT;
-                    x02 x02Var2 = chatAttachAlertPhotoLayout.b;
-                    if (i >= 33) {
-                        x02Var2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES"}, 4);
-                    } else {
-                        x02Var2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                    }
-                    break;
-                } catch (Exception unused2) {
-                    return;
-                }
+    @Override // zj5
+    public final boolean a(MotionEvent motionEvent, a15 a15Var) {
+        MotionEvent motionEvent2;
+        s42 s42Var = this.a;
+        if (s42Var.H != 0.0f) {
+            motionEvent = MotionEvent.obtain(motionEvent);
+            motionEvent.offsetLocation(0.0f, (-s42Var.H) / 2.0f);
+            motionEvent2 = motionEvent;
+        } else {
+            motionEvent2 = null;
         }
+        boolean booleanValue = a15Var.a(motionEvent).booleanValue();
+        if (motionEvent2 != null) {
+            motionEvent2.recycle();
+        }
+        return booleanValue;
+    }
+
+    @Override // ng0
+    public final void b() {
+        s42 s42Var = this.a;
+        s42Var.f0 = false;
+        s42Var.h0();
+    }
+
+    @Override // bk5
+    public final void c(int i) {
+        View childAt;
+        s42 s42Var = this.a;
+        gu guVar = s42Var.M;
+        if (i != 1 || s42Var.I || guVar.getChildCount() <= 0 || (childAt = guVar.getChildAt(0)) == null) {
+            return;
+        }
+        View G = guVar.G(childAt);
+        f89 U = G == null ? null : guVar.U(G);
+        if (U == null || U.b() != 0) {
+            return;
+        }
+        int L = s42Var.p0 == 0 ? 0 : hl.L(66.0f);
+        int top = childAt.getTop();
+        if (top < (-L)) {
+            ky5 d = s42Var.E.d();
+            s42Var.G = ((z3f) a.j()).newCameraUpdateLatLngZoom((ak5) d.b, d.c);
+            guVar.y0(0, top + L, null);
+        }
+    }
+
+    @Override // n7
+    public final void g(int i) {
+        x05 x05Var = this.a.E;
+        if (x05Var != null) {
+            if (i == 2) {
+                x05Var.j(0);
+            } else if (i == 3) {
+                x05Var.j(1);
+            } else if (i == 4) {
+                x05Var.j(2);
+            }
+        }
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        this.a.a0();
     }
 }

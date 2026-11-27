@@ -1,78 +1,64 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class by9 implements TextWatcher {
-    public final zk9 a = new zk9(this, 22);
-    public final /* synthetic */ iy9 b;
+public final class by9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lc8 b;
 
-    public by9(iy9 iy9Var) {
-        this.b = iy9Var;
+    public /* synthetic */ by9(lc8 lc8Var, byte b) {
+        this.a = b;
+        this.b = lc8Var;
     }
 
-    public final void a() {
-        boolean z;
-        boolean z2;
-        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
-        iy9 iy9Var = this.b;
-        String obj = iy9Var.X1.getText().toString();
-        tL_channelParticipantsSearch.q = obj;
-        hy9 hy9Var = iy9Var.b2;
-        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = hy9Var.c;
-        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
-            z = !TextUtils.equals(channelParticipantsFilter.q, obj);
-            z2 = false;
-        } else {
-            z = true;
-            z2 = true;
-        }
-        hy9Var.c = tL_channelParticipantsSearch;
-        if (z) {
-            if (z2) {
-                hy9Var.r = false;
-                if (hy9Var.n >= 0) {
-                    ConnectionsManager.getInstance(hy9Var.a).cancelRequest(hy9Var.n, true);
-                    hy9Var.n = -1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        lc8 lc8Var = this.b;
+        switch (b) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) lc8Var.b;
+                secretMediaViewer.Y.getNextView().setText((CharSequence) null);
+                ic8 ic8Var = secretMediaViewer.Z;
+                ic8Var.l0 = false;
+                if (ic8Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) ic8Var.o0.getLayoutParams()).topMargin = ic8Var.m0;
+                    ic8Var.m0 = -1;
+                    ic8Var.requestLayout();
+                    break;
                 }
-                hy9Var.f = false;
-                hy9Var.d.clear();
-                hy9Var.h = false;
-            } else {
-                hy9Var.r = true;
-                hy9Var.h = false;
-            }
-            hy9Var.b();
-        }
-        l5c l5cVar = iy9Var.d2;
-        if (l5cVar != null) {
-            l5cVar.O(true);
+                break;
+            default:
+                ((SecretMediaViewer) lc8Var.b).Y.setTranslationY(0.0f);
+                break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int length = editable.length();
-        zk9 zk9Var = this.a;
-        if (length <= 0) {
-            gl.r(zk9Var);
-            a();
-        } else {
-            gl.r(zk9Var);
-            gl.d3(zk9Var, 300L);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ic8 ic8Var = ((SecretMediaViewer) this.b.b).Z;
+                Method method = ic8Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(ic8Var, null);
+                        break;
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

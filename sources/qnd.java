@@ -1,69 +1,26 @@
 // default package
 
-import android.content.Context;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qnd extends xx4 {
-    public final aia F;
-    public final aia G;
-    public final aia H;
+public final class qnd extends omd {
+    public final /* synthetic */ wnd r;
 
-    public qnd(ey4 ey4Var, fy4 fy4Var, ntb ntbVar, Context context, Looper looper) {
-        super(23, ey4Var, fy4Var, ntbVar, context, looper);
-        this.F = new aia(0);
-        this.G = new aia(0);
-        this.H = new aia(0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qnd(wnd wndVar) {
+        super((byte) 4);
+        this.r = wndVar;
     }
 
-    @Override // gg0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.location.internal.IGoogleLocationManagerService");
-        return queryLocalInterface instanceof z2f ? (z2f) queryLocalInterface : new z2f(iBinder, "com.google.android.gms.location.internal.IGoogleLocationManagerService", (byte) 5);
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i) {
+        eod eodVar = this.r.s;
+        return new AbstractMap.SimpleImmutableEntry(eodVar.c.x.get(i), eodVar.d.get(i));
     }
 
-    @Override // gg0
-    public final f84[] f() {
-        return lkd.a;
-    }
-
-    @Override // gg0
-    public final int i() {
-        return 11717000;
-    }
-
-    @Override // gg0
-    public final String l() {
-        return "com.google.android.gms.location.internal.IGoogleLocationManagerService";
-    }
-
-    @Override // gg0
-    public final String n() {
-        return "com.google.android.location.internal.GoogleLocationManagerService.START";
-    }
-
-    @Override // gg0
-    public final void t(int i) {
-        super.t(i);
-        synchronized (this.F) {
-            this.F.clear();
-        }
-        synchronized (this.G) {
-            this.G.clear();
-        }
-        synchronized (this.H) {
-            this.H.clear();
-        }
-    }
-
-    @Override // gg0
-    public final boolean x() {
-        return true;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.r.s.d.size();
     }
 }

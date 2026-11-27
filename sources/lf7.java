@@ -1,48 +1,24 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lf7 extends fs5 {
-    public final long e;
-    public final ArrayList f;
-    public final ArrayList g;
+public enum lf7 implements lw8 {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    c(3);
 
-    public lf7(int i, long j) {
-        super(i, (byte) 1);
-        this.e = j;
-        this.f = new ArrayList();
-        this.g = new ArrayList();
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    lf7(int i) {
+        this.a = i;
     }
 
-    @Override // fs5
-    public final String toString() {
-        return fs5.e(this.b) + " leaves: " + Arrays.toString(this.f.toArray()) + " containers: " + Arrays.toString(this.g.toArray());
-    }
-
-    public final lf7 u(int i) {
-        ArrayList arrayList = this.g;
-        int size = arrayList.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            lf7 lf7Var = (lf7) arrayList.get(i2);
-            if (lf7Var.b == i) {
-                return lf7Var;
-            }
-        }
-        return null;
-    }
-
-    public final mf7 v(int i) {
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            mf7 mf7Var = (mf7) arrayList.get(i2);
-            if (mf7Var.b == i) {
-                return mf7Var;
-            }
-        }
-        return null;
+    @Override // lw8
+    public final int a() {
+        return this.a;
     }
 }

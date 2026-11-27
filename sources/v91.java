@@ -1,29 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class v91 implements yr3 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ da1 b;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
 
-    public /* synthetic */ v91(da1 da1Var, byte b) {
-        this.a = b;
-        this.b = da1Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class v91 implements x76 {
+    public final WeakReference a;
+    public final u91 b = new u91(this);
+
+    public v91(t91 t91Var) {
+        this.a = new WeakReference(t91Var);
     }
 
-    @Override // yr3
-    public final void a(yla ylaVar, float f, float f2) {
-        byte b = this.a;
-        da1 da1Var = this.b;
-        switch (b) {
-            case 0:
-                da1Var.F = f / 500.0f;
-                da1Var.fragmentView.invalidate();
-                break;
-            default:
-                da1Var.c0 = da1Var.O ? f / 500.0f : 1.0f - (f / 500.0f);
-                da1Var.fragmentView.invalidate();
-                break;
+    @Override // x76
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z) {
+        t91 t91Var = (t91) this.a.get();
+        boolean cancel = this.b.cancel(z);
+        if (cancel && t91Var != null) {
+            t91Var.a = null;
+            t91Var.b = null;
+            t91Var.c.k(null);
         }
+        return cancel;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.a instanceof u3;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
+    }
+
+    public final String toString() {
+        return this.b.toString();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return this.b.get(j, timeUnit);
     }
 }

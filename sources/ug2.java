@@ -1,54 +1,106 @@
 // default package
 
-import java.io.IOException;
-import java.io.InputStream;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ug2 extends InputStream {
-    public final o63 a;
-    public final byte[] b = new byte[1];
-    public long c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ug2 extends kg5 {
+    public final /* synthetic */ byte X0 = 0;
+    public final Object Y0;
+    public final Object Z0;
 
-    public ug2(o63 o63Var, u63 u63Var) {
-        this.a = o63Var;
-        try {
-            this.c = o63Var.open(u63Var);
-        } catch (IOException e) {
-            sdb.b(e);
-            throw null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ug2(Activity activity) {
+        super(activity, 3);
+        int i = 0;
+        this.Y0 = new b29[2];
+        this.Z0 = new int[2];
+        p(true);
+        this.L = Layout.Alignment.ALIGN_NORMAL;
+        this.d = 3200L;
+        this.U = true;
+        this.e = true;
+        m(8.0f, 6.0f, 10.0f, 6.0f);
+        this.v0 = 0.0f;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        while (i < 2) {
+            ((b29[]) this.Y0)[i] = new b29(i == 0 ? R.raw.ticks_single : R.raw.ticks_double, hl.L(24.0f), hl.L(24.0f));
+            ((b29[]) this.Y0)[i].setCallback(this);
+            if (i > 0) {
+                spannableStringBuilder.append((CharSequence) "\n");
+            }
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) "x");
+            spannableStringBuilder.setSpan(new tg2(((b29[]) this.Y0)[i]), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) ob6.M0(i == 0 ? 2131749052 : 2131749053, null));
+            i++;
+        }
+        t(spannableStringBuilder);
+    }
+
+    @Override // kg5
+    public final void c(Canvas canvas, float f) {
+        switch (this.X0) {
+            case 1:
+                Paint paint = (Paint) this.Y0;
+                kjc kjcVar = (kjc) this.Z0;
+                paint.setShader(kjcVar.b().getShader());
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.G.getAlpha(), kjcVar.b().getAlpha()) * f), 31);
+                Path path = this.F0;
+                canvas.drawPath(path, paint);
+                if (kjcVar.e) {
+                    paint.setShader(((Paint) kjcVar.d.a).getShader());
+                    canvas.drawPath(path, paint);
+                }
+                canvas.restore();
+                break;
+            default:
+                super.c(canvas, f);
+                break;
         }
     }
 
-    @Override // java.io.InputStream
-    public final int available() {
-        return (int) this.c;
-    }
-
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // java.io.InputStream
-    public final int read() {
-        o63 o63Var = this.a;
-        byte[] bArr = this.b;
-        int read = o63Var.read(bArr, 0, 1);
-        this.c--;
-        if (read == -1) {
-            return -1;
+    @Override // kg5, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.X0) {
+            case 1:
+                ((kjc) this.Z0).d(getX(), getY());
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        return bArr[0] & 255;
     }
 
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        if (i2 == 0) {
-            return 0;
+    @Override // kg5, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        switch (this.X0) {
+            case 0:
+                b29[] b29VarArr = (b29[]) this.Y0;
+                return (b29VarArr != null && (drawable == b29VarArr[0] || drawable == b29VarArr[1])) || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
         }
-        int read = this.a.read(bArr, i, i2);
-        this.c -= read;
-        return read;
+    }
+
+    public ug2(Activity activity, int i, kjc kjcVar, boolean z) {
+        super(activity, i);
+        Paint paint = new Paint(1);
+        this.Y0 = paint;
+        this.Z0 = kjcVar;
+        kjcVar.a(this);
+        paint.setPathEffect(new CornerPathEffect(this.w));
+        if (z) {
+            j(true);
+        }
     }
 }

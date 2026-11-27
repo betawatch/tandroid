@@ -1,66 +1,27 @@
 // default package
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cl extends LinkMovementMethod {
-    public final /* synthetic */ byte a;
+public final class cl extends CharacterStyle {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ vnb c;
 
-    public /* synthetic */ cl(byte b) {
-        this.a = b;
+    public cl(boolean z, int i, vnb vnbVar) {
+        this.a = z;
+        this.b = i;
+        this.c = vnbVar;
     }
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                try {
-                    boolean onTouchEvent = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        Selection.removeSelection(spannable);
-                    }
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return false;
-                }
-            case 1:
-                try {
-                    boolean onTouchEvent2 = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        Selection.removeSelection(spannable);
-                    }
-                    break;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return false;
-                }
-                break;
-            case 2:
-                try {
-                    break;
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
-                    return false;
-                }
-            default:
-                try {
-                    boolean onTouchEvent3 = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        Selection.removeSelection(spannable);
-                    }
-                    break;
-                } catch (Exception e4) {
-                    fa4.g(e4, true);
-                    return false;
-                }
-                break;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        if (this.a) {
+            textPaint.setTypeface(hl.o());
         }
-        return false;
+        textPaint.setColor(aob.v0(this.b, this.c));
     }
 }

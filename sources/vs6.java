@@ -1,101 +1,63 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Color;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.mediarouter.app.MediaRouteVolumeSlider;
-import androidx.mediarouter.app.OverlayListView;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vs6 extends ArrayAdapter {
-    public final float a;
-    public final /* synthetic */ ws6 b;
+public class vs6 {
+    public static final vs6 i = new vs6(new us6());
+    public static final String j = "0";
+    public static final String k = "1";
+    public static final String l = "2";
+    public static final String m = "3";
+    public static final String n = "4";
+    public static final String o = "5";
+    public static final String p = "6";
+    public static final String q = "7";
+    public final long a;
+    public final long b;
+    public final long c;
+    public final long d;
+    public final boolean e;
+    public final boolean f;
+    public final boolean g;
+    public final boolean h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vs6(ws6 ws6Var, Context context, ArrayList arrayList) {
-        super(context, 0, arrayList);
-        this.b = ws6Var;
-        this.a = voe.c(context);
+    public vs6(us6 us6Var) {
+        this.a = gcc.i0(us6Var.a);
+        this.c = gcc.i0(us6Var.b);
+        this.b = us6Var.a;
+        this.d = us6Var.b;
+        this.e = us6Var.c;
+        this.f = us6Var.d;
+        this.g = us6Var.e;
+        this.h = us6Var.f;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i, View view, ViewGroup viewGroup) {
-        ws6 ws6Var = this.b;
-        if (view == null) {
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.mr_controller_volume_item, viewGroup, false);
-        } else {
-            ws6.o(ws6Var.f0, (LinearLayout) view.findViewById(R.id.volume_item_container));
-            View findViewById = view.findViewById(R.id.mr_volume_item_icon);
-            ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
-            int i2 = ws6Var.e0;
-            layoutParams.width = i2;
-            layoutParams.height = i2;
-            findViewById.setLayoutParams(layoutParams);
-        }
-        eu6 eu6Var = (eu6) getItem(i);
-        if (eu6Var != null) {
-            boolean z = eu6Var.g;
-            TextView textView = (TextView) view.findViewById(R.id.mr_name);
-            textView.setEnabled(z);
-            textView.setText(eu6Var.d);
-            MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
-            Context context = viewGroup.getContext();
-            OverlayListView overlayListView = ws6Var.V;
-            int b = voe.b(context);
-            int alpha = Color.alpha(b);
-            int i3 = kk7.d4;
-            if (alpha != 255) {
-                b = bm2.k(b, ((Integer) overlayListView.getTag()).intValue());
-            }
-            mediaRouteVolumeSlider.a(b, b);
-            mediaRouteVolumeSlider.setTag(eu6Var);
-            ws6Var.i0.put(eu6Var, mediaRouteVolumeSlider);
-            mediaRouteVolumeSlider.b(!z);
-            mediaRouteVolumeSlider.setEnabled(z);
-            if (z) {
-                if (ws6Var.P) {
-                    if (((!eu6Var.e() || gu6.g()) ? eu6Var.o : 0) == 1) {
-                        mediaRouteVolumeSlider.setMax(eu6Var.q);
-                        mediaRouteVolumeSlider.setProgress(eu6Var.p);
-                        mediaRouteVolumeSlider.setOnSeekBarChangeListener(ws6Var.c0);
-                    }
-                }
-                mediaRouteVolumeSlider.setMax(100);
-                mediaRouteVolumeSlider.setProgress(100);
-                mediaRouteVolumeSlider.setEnabled(false);
-            }
-            ImageView imageView = (ImageView) view.findViewById(R.id.mr_volume_item_icon);
-            if (!z) {
-                i3 = (int) (this.a * 255.0f);
-            }
-            imageView.setAlpha(i3);
-            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(ws6Var.a0.contains(eu6Var) ? 4 : 0);
-            HashSet hashSet = ws6Var.Y;
-            if (hashSet != null && hashSet.contains(eu6Var)) {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
-                alphaAnimation.setDuration(0L);
-                alphaAnimation.setFillEnabled(true);
-                alphaAnimation.setFillAfter(true);
-                view.clearAnimation();
-                view.startAnimation(alphaAnimation);
-            }
-        }
-        return view;
+    public final us6 a() {
+        us6 us6Var = new us6();
+        us6Var.a = this.b;
+        us6Var.b = this.d;
+        us6Var.c = this.e;
+        us6Var.d = this.f;
+        us6Var.e = this.g;
+        us6Var.f = this.h;
+        return us6Var;
     }
 
-    @Override // android.widget.BaseAdapter, android.widget.ListAdapter
-    public final boolean isEnabled(int i) {
-        return false;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof vs6)) {
+            return false;
+        }
+        vs6 vs6Var = (vs6) obj;
+        return this.b == vs6Var.b && this.d == vs6Var.d && this.e == vs6Var.e && this.f == vs6Var.f && this.g == vs6Var.g && this.h == vs6Var.h;
+    }
+
+    public final int hashCode() {
+        long j2 = this.b;
+        int i2 = ((int) (j2 ^ (j2 >>> 32))) * 31;
+        long j3 = this.d;
+        return ((((((((i2 + ((int) (j3 ^ (j3 >>> 32)))) * 31) + (this.e ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0);
     }
 }

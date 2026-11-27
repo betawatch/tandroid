@@ -1,33 +1,34 @@
 // default package
 
-import android.os.Bundle;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bs0 extends cj3 {
-    public final /* synthetic */ p G4;
-    public final /* synthetic */ ds0 H4;
+public final /* synthetic */ class bs0 implements pcc {
+    public final /* synthetic */ id a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ TLRPC.TL_messages_preparedInlineMessage e;
+    public final /* synthetic */ vnb f;
+    public final /* synthetic */ bu0 g;
+    public final /* synthetic */ p h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bs0(ds0 ds0Var, Bundle bundle, p pVar) {
-        super(bundle);
-        this.H4 = ds0Var;
-        this.G4 = pVar;
+    public /* synthetic */ bs0(id idVar, Context context, int i, long j, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, vnb vnbVar, bu0 bu0Var, p pVar) {
+        this.a = idVar;
+        this.b = context;
+        this.c = i;
+        this.d = j;
+        this.e = tL_messages_preparedInlineMessage;
+        this.f = vnbVar;
+        this.g = bu0Var;
+        this.h = pVar;
     }
 
-    @Override // cj3
-    public final boolean c3() {
-        return true;
-    }
-
-    @Override // cj3, org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        ds0 ds0Var = this.H4;
-        if (ds0Var.X1) {
-            return;
-        }
-        ds0Var.X1 = true;
-        this.G4.a("USER_DECLINED", null);
+    @Override // pcc
+    public final void a(Object obj) {
+        this.a.dismiss();
+        new ls0(this.b, this.c, this.d, this.e, null, (TLRPC.WebPage) obj, this.f, this.g, this.h).show();
     }
 }

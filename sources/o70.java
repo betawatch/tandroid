@@ -1,27 +1,24 @@
 // default package
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class o70 implements zn7 {
+public final class o70 implements zq7 {
     public static final o70 a = new o70();
-    public static final w84 b = w84.c("packageName");
-    public static final w84 c = w84.c("versionName");
-    public static final w84 d = w84.c("appBuildVersion");
-    public static final w84 e = w84.c("deviceManufacturer");
-    public static final w84 f = w84.c("currentProcessDetails");
-    public static final w84 g = w84.c("appProcessDetails");
+    public static final sa4 b = sa4.c("rolloutId");
+    public static final sa4 c = sa4.c("parameterKey");
+    public static final sa4 d = sa4.c("parameterValue");
+    public static final sa4 e = sa4.c("variantId");
+    public static final sa4 f = sa4.c("templateVersion");
 
-    @Override // q24
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        xj xjVar = (xj) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, xjVar.a);
-        ao7Var.a(c, xjVar.b);
-        ao7Var.a(d, xjVar.c);
-        ao7Var.a(e, Build.MANUFACTURER);
-        ao7Var.a(f, xjVar.d);
-        ao7Var.a(g, xjVar.e);
+        ym9 ym9Var = (ym9) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, ((ka0) ym9Var).b);
+        ka0 ka0Var = (ka0) ym9Var;
+        ar7Var.a(c, ka0Var.c);
+        ar7Var.a(d, ka0Var.d);
+        ar7Var.a(e, ka0Var.e);
+        ar7Var.g(f, ka0Var.f);
     }
 }

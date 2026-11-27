@@ -6,14 +6,14 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
 
     @Override // android.os.ResultReceiver
     public final void onReceiveResult(int i, Bundle bundle) {
-        mi5 mi5Var;
+        ok5 ok5Var;
         a aVar = (a) this.a.get();
         if (aVar == null || bundle == null) {
             return;
@@ -23,19 +23,19 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
             IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
             int i2 = d.b;
             if (binder == null) {
-                mi5Var = null;
+                ok5Var = null;
             } else {
                 IInterface queryLocalInterface = binder.queryLocalInterface("android.support.v4.media.session.IMediaSession");
-                if (queryLocalInterface == null || !(queryLocalInterface instanceof mi5)) {
-                    ki5 ki5Var = new ki5();
-                    ki5Var.a = binder;
-                    mi5Var = ki5Var;
+                if (queryLocalInterface == null || !(queryLocalInterface instanceof ok5)) {
+                    mk5 mk5Var = new mk5();
+                    mk5Var.a = binder;
+                    ok5Var = mk5Var;
                 } else {
-                    mi5Var = (mi5) queryLocalInterface;
+                    ok5Var = (ok5) queryLocalInterface;
                 }
             }
-            mediaSessionCompat$Token.b(mi5Var);
-            aVar.e.c(vu7.b(bundle));
+            mediaSessionCompat$Token.b(ok5Var);
+            aVar.e.c(cy7.b(bundle));
             aVar.a();
         }
     }

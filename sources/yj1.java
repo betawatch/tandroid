@@ -1,53 +1,23 @@
 // default package
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class yj1 implements Iterable {
-    public final char a;
-    public final char b;
+public final class yj1 extends fk1 {
+    public final fk1 a;
+    public final fk1 b;
 
-    static {
-        new yj1((char) 1, (char) 0);
+    public yj1(fk1 fk1Var, fk1 fk1Var2) {
+        this.a = fk1Var;
+        fk1Var2.getClass();
+        this.b = fk1Var2;
     }
 
-    public yj1(char c, char c2) {
-        this.a = c;
-        this.b = (char) ore.a(c, c2, 1);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof yj1)) {
-            return false;
-        }
-        char c = this.a;
-        char c2 = this.b;
-        if (rp5.b(c, c2) > 0) {
-            yj1 yj1Var = (yj1) obj;
-            if (rp5.b(yj1Var.a, yj1Var.b) > 0) {
-                return true;
-            }
-        }
-        yj1 yj1Var2 = (yj1) obj;
-        return c == yj1Var2.a && c2 == yj1Var2.b;
-    }
-
-    public final int hashCode() {
-        char c = this.a;
-        char c2 = this.b;
-        if (rp5.b(c, c2) > 0) {
-            return -1;
-        }
-        return (c * 31) + c2;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new xj1(this.a, this.b);
+    @Override // fk1
+    public final boolean b(char c) {
+        return this.a.b(c) && this.b.b(c);
     }
 
     public final String toString() {
-        return this.a + ".." + this.b;
+        return "CharMatcher.and(" + this.a + ", " + this.b + ")";
     }
 }

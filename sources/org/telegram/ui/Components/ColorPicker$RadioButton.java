@@ -10,7 +10,7 @@ import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class ColorPicker$RadioButton extends View {
     public final Paint a;
@@ -57,25 +57,25 @@ public class ColorPicker$RadioButton extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float L = gl.L(15.0f);
+        float L = hl.L(15.0f);
         float measuredWidth = getMeasuredWidth() * 0.5f;
         float measuredHeight = getMeasuredHeight() * 0.5f;
         int i = this.e;
         Paint paint = this.a;
         paint.setColor(i);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.L(3.0f));
+        paint.setStrokeWidth(hl.L(3.0f));
         paint.setAlpha(Math.round(this.c * 255.0f));
         canvas.drawCircle(measuredWidth, measuredHeight, L - (paint.getStrokeWidth() * 0.5f), paint);
-        paint.setAlpha(kk7.d4);
+        paint.setAlpha(jn7.d4);
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(measuredWidth, measuredHeight, L - (gl.L(5.0f) * this.c), paint);
+        canvas.drawCircle(measuredWidth, measuredHeight, L - (hl.L(5.0f) * this.c), paint);
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(k96.M0(2131752003, null));
+        accessibilityNodeInfo.setText(ob6.M0(2131751980, null));
         accessibilityNodeInfo.setClassName(Button.class.getName());
         accessibilityNodeInfo.setChecked(this.d);
         accessibilityNodeInfo.setCheckable(true);
@@ -84,7 +84,7 @@ public class ColorPicker$RadioButton extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30));
     }
 
     public void setCheckedState(float f) {

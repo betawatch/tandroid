@@ -1,16 +1,15 @@
 // default package
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.regex.Pattern;
+import android.app.AlertDialog;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class v7d {
-    public static final wn a = new wn();
+public final class v7d extends p3f {
+    public final /* synthetic */ AlertDialog a;
+    public final /* synthetic */ bva b;
 
-    static {
-        Charset charset = StandardCharsets.UTF_8;
-        Pattern pattern = id1.a;
+    public v7d(bva bvaVar, AlertDialog alertDialog) {
+        this.a = alertDialog;
+        this.b = bvaVar;
     }
 }

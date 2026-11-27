@@ -14,9 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class NotificationImageProvider extends ContentProvider implements gk7 {
+public class NotificationImageProvider extends ContentProvider implements fn7 {
     public static String d;
     public static UriMatcher e;
     public final HashSet a = new HashSet();
@@ -28,9 +28,9 @@ public class NotificationImageProvider extends ContentProvider implements gk7 {
         return 0;
     }
 
-    @Override // gk7
+    @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.X1) {
+        if (i == jn7.Y1) {
             synchronized (this.b) {
                 String str = (String) objArr[0];
                 if (this.a.remove(str)) {
@@ -61,8 +61,8 @@ public class NotificationImageProvider extends ContentProvider implements gk7 {
 
     @Override // android.content.ContentProvider
     public final boolean onCreate() {
-        for (int i = 0; i < y6c.c(); i++) {
-            kk7.f(i).a(this, kk7.X1);
+        for (int i = 0; i < yac.c(); i++) {
+            jn7.f(i).a(this, jn7.Y1);
         }
         return true;
     }
@@ -93,7 +93,7 @@ public class NotificationImageProvider extends ContentProvider implements gk7 {
         String queryParameter2 = uri.getQueryParameter("fallback");
         File file = new File(queryParameter);
         a.v();
-        if (gl.G1(Uri.fromFile(file), 0)) {
+        if (hl.G1(Uri.fromFile(file), 0)) {
             throw new SecurityException("trying to read internal file");
         }
         if (!file.exists()) {
@@ -104,14 +104,14 @@ public class NotificationImageProvider extends ContentProvider implements gk7 {
             }
             while (!file.exists()) {
                 if (System.currentTimeMillis() - longValue >= 3000) {
-                    if (w01.a) {
-                        fa4.l("Waiting for " + str3 + " to download timed out");
+                    if (f11.a) {
+                        cc4.l("Waiting for " + str3 + " to download timed out");
                     }
                     if (TextUtils.isEmpty(queryParameter2)) {
                         throw new FileNotFoundException("Download timed out");
                     }
                     File file2 = new File(queryParameter2);
-                    if (gl.G1(Uri.fromFile(file2), 0)) {
+                    if (hl.G1(Uri.fromFile(file2), 0)) {
                         throw new SecurityException("trying to read internal file");
                     }
                     return ParcelFileDescriptor.open(file2, TLObject.FLAG_28);
@@ -124,7 +124,7 @@ public class NotificationImageProvider extends ContentProvider implements gk7 {
                     }
                 }
             }
-            if (gl.G1(Uri.fromFile(file), 0)) {
+            if (hl.G1(Uri.fromFile(file), 0)) {
                 throw new SecurityException("trying to read internal file");
             }
         }
@@ -138,8 +138,8 @@ public class NotificationImageProvider extends ContentProvider implements gk7 {
 
     @Override // android.content.ContentProvider
     public final void shutdown() {
-        for (int i = 0; i < y6c.c(); i++) {
-            kk7.f(i).n(this, kk7.X1);
+        for (int i = 0; i < yac.c(); i++) {
+            jn7.f(i).n(this, jn7.Y1);
         }
     }
 

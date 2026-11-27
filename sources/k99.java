@@ -1,57 +1,38 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import j$.util.Objects;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class k99 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class k99 extends po5 {
+    public final /* synthetic */ l99 c;
 
-    static {
-        b4c.h(new k99());
+    public k99(l99 l99Var) {
+        this.c = l99Var;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        l99 l99Var = (l99) view;
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) c4cVar.H;
-        int i = c4cVar.A;
-        String str = (String) c4cVar.m;
-        boolean z2 = c4cVar.e;
-        ry8 ry8Var = l99Var.c;
-        j99 j99Var = l99Var.b0;
-        if (j99Var == null || l99Var.a0 != stargiftattributemodel.document.id) {
-            l99Var.a0 = stargiftattributemodel.document.id;
-            if (j99Var != null) {
-                j99Var.o(ry8Var);
-            }
-            l99Var.b0 = new j99(3, l99Var.W, stargiftattributemodel.document);
-        }
-        if (ry8Var.isAttachedToWindow()) {
-            l99Var.b0.b(ry8Var);
-        }
-        CharSequence charSequence = stargiftattributemodel.name;
-        if (!TextUtils.isEmpty(str)) {
-            charSequence = gl.u1(charSequence, str, l99Var.P);
-        }
-        if (i > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) Integer.toString(i));
-            spannableStringBuilder.setSpan(new z3c(gl.o()), length, spannableStringBuilder.length(), 33);
-            charSequence = spannableStringBuilder;
-        }
-        l99Var.j(charSequence, 0, l99Var.b0);
-        l99Var.setChecked(z2);
+    @Override // java.util.List
+    public final Object get(int i) {
+        l99 l99Var = this.c;
+        yve.j(i, l99Var.h);
+        Object[] objArr = l99Var.e;
+        int i2 = i << 1;
+        boolean z = l99Var.f;
+        Object obj = objArr[i2 + (z ? 1 : 0)];
+        Objects.requireNonNull(obj);
+        Object obj2 = objArr[i2 + (!z ? 1 : 0)];
+        Objects.requireNonNull(obj2);
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new l99(i, wjbVar, context);
+    @Override // jo5
+    public final boolean m() {
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.h;
     }
 }

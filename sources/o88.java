@@ -1,50 +1,56 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewPropertyAnimator;
+import android.animation.AnimatorSet;
+import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.PhotoViewer;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class o88 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ PhotoViewer c;
+public final class o88 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public q88 c;
+    public AnimatorSet d;
+    public ki7 e;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ o88(PhotoViewer photoViewer, int i, byte b) {
-        this.a = b;
-        this.c = photoViewer;
-        this.b = i;
+    public final void a(String str, int i, float f) {
+        TextView textView = this.a;
+        TextView textView2 = this.b;
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
+        }
+        hl.r(this.e);
+        textView2.setTag(null);
+        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        if (f > 0.0f) {
+            textView2.setText("+" + ((int) f));
+        } else {
+            textView2.setText(String.valueOf((int) f));
+        }
+        textView2.setAlpha(0.0f);
+        textView.setAlpha(1.0f);
+        q88 q88Var = this.c;
+        q88Var.h = i;
+        q88Var.n = (byte) 100;
+        q88Var.a((int) f, false);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        byte b2 = this.b;
-        PhotoViewer photoViewer = this.c;
-        switch (b) {
-            case 0:
-                p88 p88Var = photoViewer.O1;
-                p88Var.e.setVisibility(0);
-                FrameLayout frameLayout = p88Var.r;
-                frameLayout.setVisibility(0);
-                frameLayout.setTranslationY(gl.L(18.0f));
-                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                s33 s33Var = s33.h;
-                ug8.t(translationY, s33Var, 320L);
-                p88Var.x.animate().alpha(1.0f).translationX(0.0f).setInterpolator(s33Var).setDuration(320L).start();
-                photoViewer.t4 = b2;
-                photoViewer.p6 = null;
-                photoViewer.n6 = -1;
-                break;
-            default:
-                photoViewer.t4 = b2;
-                photoViewer.p6 = null;
-                photoViewer.n6 = -1;
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(40.0f), TLObject.FLAG_30));
+    }
+
+    public void setSeekBarDelegate(p88 p88Var) {
+        this.c.setDelegate(new m88((Object) this, (Object) p88Var, (byte) 0));
+    }
+
+    @Override // android.view.View
+    public void setTag(Object obj) {
+        super.setTag(obj);
+        this.c.setTag(obj);
     }
 }

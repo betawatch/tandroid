@@ -7,22 +7,22 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class EmojiCompatInitializer implements pn5 {
-    @Override // pn5
+public class EmojiCompatInitializer implements sp5 {
+    @Override // sp5
     public final List a() {
         return Collections.singletonList(ProcessLifecycleInitializer.class);
     }
 
-    @Override // pn5
+    @Override // sp5
     public final Object b(Context context) {
-        rl4 rl4Var = new rl4(new p13(context, (byte) 2));
-        rl4Var.b = true;
-        if (lw3.j == null) {
-            synchronized (lw3.i) {
-                if (lw3.j == null) {
-                    lw3.j = new lw3(rl4Var);
+        wn4 wn4Var = new wn4(new vj0(context, (byte) 3));
+        wn4Var.b = true;
+        if (gx3.j == null) {
+            synchronized (gx3.i) {
+                if (gx3.j == null) {
+                    gx3.j = new gx3(wn4Var);
                 }
             }
         }
@@ -32,15 +32,15 @@ public class EmojiCompatInitializer implements pn5 {
 
     public final void c(Context context) {
         Object obj;
-        mv6 N = mv6.N(context);
-        N.getClass();
-        synchronized (mv6.h) {
-            obj = ((HashMap) N.b).get(ProcessLifecycleInitializer.class);
+        rx6 O = rx6.O(context);
+        O.getClass();
+        synchronized (rx6.h) {
+            obj = ((HashMap) O.b).get(ProcessLifecycleInitializer.class);
             if (obj == null) {
-                obj = N.z(ProcessLifecycleInitializer.class, new HashSet());
+                obj = O.B(ProcessLifecycleInitializer.class, new HashSet());
             }
         }
-        g16 m = ((e16) obj).m();
-        m.a(new mw3(this, m));
+        k36 m = ((i36) obj).m();
+        m.a(new hx3(this, m));
     }
 }

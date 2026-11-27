@@ -1,26 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rj9 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ g29 b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ rj9(g29 g29Var, byte b) {
-        this.a = b;
-        this.b = g29Var;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface rj9 {
+    void a();
 
-    public final void a(Exception exc) {
-        byte b = this.a;
-        g29 g29Var = this.b;
-        switch (b) {
-            case 0:
-                ((ul9) g29Var.b).i.post(new kl9(g29Var, exc, (byte) 1));
-                break;
-            default:
-                ((ul9) g29Var.b).i.post(new kl9(g29Var, exc, (byte) 0));
-                break;
-        }
-    }
+    void b(int i, int i2);
+
+    void c(TLRPC.Photo photo);
+
+    void d(TLRPC.Document document);
+
+    void e(TLRPC.Document document);
+
+    void f(TLRPC.Document document);
+
+    void g(float f);
 }

@@ -1,63 +1,100 @@
 // default package
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
+import android.os.Bundle;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class t0b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ep b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class t0b implements t69, s84 {
+    public final /* synthetic */ w1b a;
 
-    public /* synthetic */ t0b(ep epVar, int i, byte b) {
-        this.a = b;
-        this.b = epVar;
-        this.c = i;
+    public /* synthetic */ t0b(w1b w1bVar) {
+        this.a = w1bVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        int i = this.c;
-        ep epVar = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = (ArrayList) epVar.d;
-                Float f = (Float) valueAnimator.getAnimatedValue();
-                f.getClass();
-                arrayList.set(i, f);
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) epVar.e;
-                Float f2 = (Float) valueAnimator.getAnimatedValue();
-                f2.getClass();
-                arrayList2.set(i, f2);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) epVar.f;
-                Float f3 = (Float) valueAnimator.getAnimatedValue();
-                f3.getClass();
-                arrayList3.set(i, f3);
-                break;
-            case 3:
-                ArrayList arrayList4 = (ArrayList) epVar.d;
-                Float f4 = (Float) valueAnimator.getAnimatedValue();
-                f4.getClass();
-                arrayList4.set(i, f4);
-                break;
-            case 4:
-                ArrayList arrayList5 = (ArrayList) epVar.e;
-                Float f5 = (Float) valueAnimator.getAnimatedValue();
-                f5.getClass();
-                arrayList5.set(i, f5);
-                break;
-            default:
-                ArrayList arrayList6 = (ArrayList) epVar.f;
-                Float f6 = (Float) valueAnimator.getAnimatedValue();
-                f6.getClass();
-                arrayList6.set(i, f6);
-                break;
+    @Override // t69
+    public final boolean e(int i, View view) {
+        final w1b w1bVar = this.a;
+        id[] idVarArr = w1bVar.h0;
+        b1b b1bVar = w1bVar.X;
+        int i2 = b1bVar.J;
+        final byte b = 0;
+        final byte b2 = 1;
+        if (i < i2 || i > b1bVar.K) {
+            int i3 = b1bVar.V;
+            if (i >= i3 && i <= b1bVar.W) {
+                ((p1b) w1bVar.R.get(i - i3)).c(w1bVar.a, w1bVar, idVarArr, true);
+                return true;
+            }
+            int i4 = b1bVar.S;
+            if (i >= i4 && i <= b1bVar.T) {
+                ((p1b) w1bVar.P.get(i - i4)).c(w1bVar.a, w1bVar, idVarArr, true);
+                return true;
+            }
+            int i5 = b1bVar.Y;
+            if (i >= i5 && i <= b1bVar.Z) {
+                ((p1b) w1bVar.Q.get(i - i5)).c(w1bVar.a, w1bVar, idVarArr, true);
+                return true;
+            }
+        } else {
+            final r47 r47Var = ((t1b) w1bVar.z0.get(i - i2)).b;
+            if (!r47Var.w4()) {
+                fu5 I = fu5.I(w1bVar, view);
+                I.b(R.drawable.msg_stats, ob6.M0(2131743201, null), new Runnable() { // from class: s0b
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b;
+                        r47 r47Var2 = r47Var;
+                        w1b w1bVar2 = w1bVar;
+                        switch (b3) {
+                            case 0:
+                                w1bVar2.presentFragment(new z67(r47Var2));
+                                break;
+                            default:
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", w1bVar2.b);
+                                bundle.putInt("message_id", r47Var2.e1());
+                                bundle.putBoolean("need_remove_previous_same_chat_activity", false);
+                                w1bVar2.presentFragment(new zu1(bundle), false);
+                                break;
+                        }
+                    }
+                }, false);
+                I.b(R.drawable.msg_msgbubble3, ob6.M0(2131743202, null), new Runnable() { // from class: s0b
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        r47 r47Var2 = r47Var;
+                        w1b w1bVar2 = w1bVar;
+                        switch (b3) {
+                            case 0:
+                                w1bVar2.presentFragment(new z67(r47Var2));
+                                break;
+                            default:
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", w1bVar2.b);
+                                bundle.putInt("message_id", r47Var2.e1());
+                                bundle.putBoolean("need_remove_previous_same_chat_activity", false);
+                                w1bVar2.presentFragment(new zu1(bundle), false);
+                                break;
+                        }
+                    }
+                }, false);
+                I.X(w1bVar.T.W0(view, false));
+                I.a0();
+                return true;
+            }
         }
+        return false;
+    }
+
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        this.a.s0();
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
     }
 }

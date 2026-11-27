@@ -1,22 +1,38 @@
 // default package
 
-import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class cx3 extends qx3 {
-    public final /* synthetic */ qx3 Q1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class cx3 extends rje {
+    public final /* synthetic */ tj a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx3(qx3 qx3Var, d dVar, Context context, wjb wjbVar, ArrayList arrayList) {
-        super(dVar, context, wjbVar, arrayList);
-        this.Q1 = qx3Var;
+    public cx3(tj tjVar) {
+        this.a = tjVar;
     }
 
-    @Override // qx3
-    public final void G0() {
-        this.Q1.dismiss();
+    @Override // rje
+    public final void a(Throwable th) {
+        ((gx3) this.a.b).d(th);
+    }
+
+    @Override // rje
+    public final void b(u8a u8aVar) {
+        tj tjVar = this.a;
+        tjVar.c = u8aVar;
+        tjVar.a = new qx6((u8a) tjVar.c, new rj2((byte) 19), ((gx3) tjVar.b).h);
+        gx3 gx3Var = (gx3) tjVar.b;
+        ArrayList arrayList = new ArrayList();
+        gx3Var.a.writeLock().lock();
+        try {
+            gx3Var.c = (byte) 1;
+            arrayList.addAll(gx3Var.b);
+            gx3Var.b.clear();
+            gx3Var.a.writeLock().unlock();
+            gx3Var.d.post(new ex3(arrayList, gx3Var.c, null));
+        } catch (Throwable th) {
+            gx3Var.a.writeLock().unlock();
+            throw th;
+        }
     }
 }

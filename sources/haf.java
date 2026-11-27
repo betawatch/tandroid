@@ -1,31 +1,44 @@
 // default package
 
-import com.google.android.recaptcha.internal.zzsw;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class haf {
-    public static /* synthetic */ void a() {
-        throw new zzsw("Protocol message tag had invalid wire type.");
+public final class haf extends ljf {
+    private static final haf zzb;
+    private int zzd;
+    private long zzf;
+    private long zzg;
+    private int zzi;
+    private boolean zzj;
+    private long zzl;
+    private long zzm;
+    private String zze = "";
+    private tjf zzh = hlf.d;
+    private String zzk = "";
+
+    static {
+        haf hafVar = new haf();
+        zzb = hafVar;
+        ljf.e(haf.class, hafVar);
     }
 
-    public static /* synthetic */ void b(int i, int i2) {
-        throw new IllegalArgumentException("Length too large: " + i + i2);
-    }
-
-    public static /* synthetic */ void c(int i, int i2, Object obj) {
-        StringBuilder sb = new StringBuilder(i);
-        sb.append(obj);
-        sb.append(i2);
-        throw new IllegalArgumentException(sb.toString());
-    }
-
-    public static /* synthetic */ void d(long j) {
-        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + j);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ void e(int i, int i2) {
-        throw new ArrayIndexOutOfBoundsException("Failed writing " + ((char) i) + ((Object) " at index ") + i2);
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\t\u0000\u0001\u0001\t\t\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဂ\u0001\u0003ဂ\u0002\u0004\u001b\u0005င\u0003\u0006ဇ\u0004\u0007ဈ\u0005\bဂ\u0006\tဂ\u0007", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", eaf.class, "zzi", "zzj", "zzk", "zzl", "zzm"});
+        }
+        if (i2 == 3) {
+            return new haf();
+        }
+        if (i2 == 4) {
+            return new lde(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

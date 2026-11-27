@@ -1,20 +1,97 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.text.Layout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r6c extends b4 {
-    public static final Parcelable.Creator<r6c> CREATOR = new rhe((byte) 29);
+public final class r6c {
     public String a;
-    public String b;
+    public int b;
+    public boolean c;
+    public int d;
+    public boolean e;
+    public float k;
+    public String l;
+    public Layout.Alignment o;
+    public Layout.Alignment p;
+    public flb r;
+    public String t;
+    public String u;
+    public String v;
+    public int f = -1;
+    public int g = -1;
+    public int h = -1;
+    public int i = -1;
+    public int j = -1;
+    public int m = -1;
+    public int n = -1;
+    public int q = -1;
+    public float s = Float.MAX_VALUE;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
-        jte.s(parcel, r);
+    public final void a(r6c r6cVar) {
+        int i;
+        Layout.Alignment alignment;
+        Layout.Alignment alignment2;
+        String str;
+        if (r6cVar != null) {
+            if (!this.c && r6cVar.c) {
+                this.b = r6cVar.b;
+                this.c = true;
+            }
+            if (this.h == -1) {
+                this.h = r6cVar.h;
+            }
+            if (this.i == -1) {
+                this.i = r6cVar.i;
+            }
+            if (this.a == null && (str = r6cVar.a) != null) {
+                this.a = str;
+            }
+            if (this.f == -1) {
+                this.f = r6cVar.f;
+            }
+            if (this.g == -1) {
+                this.g = r6cVar.g;
+            }
+            if (this.n == -1) {
+                this.n = r6cVar.n;
+            }
+            if (this.o == null && (alignment2 = r6cVar.o) != null) {
+                this.o = alignment2;
+            }
+            if (this.p == null && (alignment = r6cVar.p) != null) {
+                this.p = alignment;
+            }
+            if (this.q == -1) {
+                this.q = r6cVar.q;
+            }
+            if (this.j == -1) {
+                this.j = r6cVar.j;
+                this.k = r6cVar.k;
+            }
+            if (this.r == null) {
+                this.r = r6cVar.r;
+            }
+            if (this.s == Float.MAX_VALUE) {
+                this.s = r6cVar.s;
+            }
+            if (this.t == null) {
+                this.t = r6cVar.t;
+            }
+            if (this.u == null) {
+                this.u = r6cVar.u;
+            }
+            if (this.v == null) {
+                this.v = r6cVar.v;
+            }
+            if (!this.e && r6cVar.e) {
+                this.d = r6cVar.d;
+                this.e = true;
+            }
+            if (this.m != -1 || (i = r6cVar.m) == -1) {
+                return;
+            }
+            this.m = i;
+        }
     }
 }

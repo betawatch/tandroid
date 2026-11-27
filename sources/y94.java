@@ -1,21 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class y94 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ ba4 d;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.text.TextUtils;
+import android.util.Pair;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.concurrent.ExecutionException;
+import org.webrtc.MediaStream;
+import org.webrtc.NativeLifecycleLock;
+import org.webrtc.PeerConnectionFactory;
 
-    public y94(ba4 ba4Var, boolean z, String str, boolean z2) {
-        this.d = ba4Var;
-        this.a = z;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y94 implements Continuation, NativeLifecycleLock.NativePointerCallable, a8b {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ String b;
+
+    public /* synthetic */ y94(am2 am2Var, String str) {
+        this.a = (byte) 2;
         this.b = str;
-        this.c = z2;
     }
 
-    public final void a() {
-        ba4.K.c(new s91(this, this.a, this.b, this.c));
+    @Override // org.webrtc.NativeLifecycleLock.NativePointerCallable
+    public final Object call(long j) {
+        MediaStream lambda$createLocalMediaStream$1;
+        lambda$createLocalMediaStream$1 = PeerConnectionFactory.lambda$createLocalMediaStream$1(this.b, j);
+        return lambda$createLocalMediaStream$1;
+    }
+
+    @Override // a8b
+    public final Bitmap i(BitmapFactory.Options options) {
+        return BitmapFactory.decodeFile(this.b, options);
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public final Object then(Task task) {
+        byte b = this.a;
+        String str = this.b;
+        switch (b) {
+            case 1:
+                if (!task.isSuccessful()) {
+                    throw new ExecutionException(task.getException());
+                }
+                String str2 = (String) task.getResult();
+                if (TextUtils.isEmpty(str2) || !str2.endsWith(str)) {
+                    throw new ExecutionException(new IllegalArgumentException("Unexpected Error: FID NOT matching!"));
+                }
+                return str;
+            default:
+                return !task.isSuccessful() ? Tasks.forException(am2.z(task)) : Tasks.forResult(new Pair((String) task.getResult(), str));
+        }
+    }
+
+    public /* synthetic */ y94(String str, byte b) {
+        this.a = b;
+        this.b = str;
     }
 }

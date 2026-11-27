@@ -1,443 +1,229 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.os.SystemClock;
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.ViewConfiguration;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class dv9 {
-    public static Paint N;
-    public static Paint O;
-    public long A;
-    public lm B;
-    public Paint C;
-    public float D;
-    public int E;
-    public int F;
-    public float[] G;
-    public float[] H;
-    public float[] I;
-    public boolean J;
-    public float K;
-    public float L;
-    public cv9 M;
-    public int a;
+    public static final float v = 0.6f;
+    public static final float[] w = new float[101];
+    public static final float x;
+    public boolean a;
     public int b;
-    public float c;
-    public float d;
-    public boolean e;
-    public boolean f;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
     public int g;
     public int h;
     public int i;
     public int j;
-    public gb2 k;
-    public byte[] l;
-    public k27 m;
-    public gb2 n;
-    public boolean o;
-    public int p;
-    public int q;
-    public int r;
-    public float s;
+    public int k;
+    public long l;
+    public int m;
+    public float n;
+    public float o;
+    public float p;
+    public final DecelerateInterpolator r;
     public float t;
-    public boolean u;
-    public lm v;
-    public float w;
-    public Path x;
-    public Path y;
-    public boolean z;
+    public final float u;
+    public boolean q = true;
+    public final boolean s = true;
 
-    public final void a(Path path, float f, float f2) {
-        float N2 = gl.N(2.0f);
-        int D = ug8.D(14.0f, this.h, 2);
-        float f3 = f2 * this.w;
-        RectF rectF = gl.P;
-        float f4 = N2 / 2.0f;
-        rectF.set((gl.N(1.0f) + f) - f4, ((-f3) - f4) + gl.L(7.0f) + D, gl.N(1.0f) + f + f4, f3 + f4 + gl.L(7.0f) + D);
-        path.addRoundRect(rectF, N2, N2, Path.Direction.CW);
-    }
-
-    public final float[] b(int i) {
-        byte[] bArr = this.l;
-        if (bArr == null || i <= 0) {
-            return null;
-        }
-        float[] fArr = new float[i];
-        int i2 = 5;
-        int length = (bArr.length << 3) / 5;
-        float f = length / i;
-        float f2 = 0.0f;
-        int i3 = 0;
-        int i4 = 0;
-        int i5 = 0;
-        loop0: while (i3 < length) {
-            if (i3 == i4) {
-                int i6 = i4;
-                int i7 = 0;
-                while (i4 == i6) {
-                    f2 += f;
-                    i6 = (int) f2;
-                    i7++;
+    static {
+        float f;
+        float f2;
+        float f3 = 0.0f;
+        for (int i = 0; i <= 100; i++) {
+            float f4 = i / 100.0f;
+            float f5 = 1.0f;
+            while (true) {
+                float z = bp1.z(f5, f3, 2.0f, f3);
+                float f6 = 1.0f - z;
+                f = 3.0f * z * f6;
+                f2 = z * z * z;
+                float z2 = xnb.z(z, v, f6 * 0.4f, f) + f2;
+                if (Math.abs(z2 - f4) < 1.0E-5d) {
+                    break;
+                } else if (z2 > f4) {
+                    f5 = z;
+                } else {
+                    f3 = z;
                 }
-                int i8 = i3 * 5;
-                int i9 = i8 / 8;
-                int i10 = i8 - (i9 << 3);
-                int i11 = 5 - (8 - i10);
-                byte min = (byte) ((this.l[i9] >> i10) & ((2 << (Math.min(i2, r15) - 1)) - 1));
-                if (i11 > 0) {
-                    int i12 = i9 + 1;
-                    byte[] bArr2 = this.l;
-                    if (i12 < bArr2.length) {
-                        min = (byte) (((byte) (min << i11)) | (bArr2[i12] & ((2 << (4 - r15)) - 1)));
-                    }
-                }
-                int i13 = 0;
-                while (i13 < i7) {
-                    if (i5 >= i) {
-                        break loop0;
-                    }
-                    fArr[i5] = Math.max(0.0f, (min * 7) / 31.0f);
-                    i13++;
-                    i5++;
-                }
-                i4 = i6;
             }
-            i3++;
-            i2 = 5;
+            w[i] = f + f2;
         }
-        return fArr;
+        w[100] = 1.0f;
+        x = 1.0f;
+        x = 1.0f / e(1.0f);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0373 A[LOOP:3: B:119:0x036d->B:121:0x0373, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0282  */
+    public dv9(Context context, DecelerateInterpolator decelerateInterpolator) {
+        this.r = decelerateInterpolator;
+        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
+    }
+
+    public static float e(float f) {
+        float f2 = f * 8.0f;
+        return (f2 < 1.0f ? f2 - (1.0f - ((float) Math.exp(-f2))) : qd4.A(1.0f, (float) Math.exp(1.0f - f2), 0.63212055f, 0.36787945f)) * x;
+    }
+
+    public final void a() {
+        this.j = this.d;
+        this.k = this.e;
+        this.q = true;
+    }
+
+    public final boolean b() {
+        if (this.q) {
+            return false;
+        }
+        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
+        int i = this.m;
+        if (currentAnimationTimeMillis >= i) {
+            this.j = this.d;
+            this.k = this.e;
+            this.q = true;
+            return true;
+        }
+        boolean z = this.a;
+        if (!z) {
+            float f = currentAnimationTimeMillis * this.n;
+            DecelerateInterpolator decelerateInterpolator = this.r;
+            float e = decelerateInterpolator == null ? e(f) : decelerateInterpolator.getInterpolation(f);
+            this.j = Math.round(this.o * e) + this.b;
+            this.k = Math.round(e * this.p) + this.c;
+            return true;
+        }
+        if (z) {
+            float f2 = currentAnimationTimeMillis / i;
+            int i2 = (int) (f2 * 100.0f);
+            float f3 = i2 / 100.0f;
+            int i3 = i2 + 1;
+            float[] fArr = w;
+            float f4 = fArr[i2];
+            float A = qd4.A(fArr[i3], f4, (f2 - f3) / ((i3 / 100.0f) - f3), f4);
+            int round = Math.round((this.d - r1) * A) + this.b;
+            this.j = round;
+            int min = Math.min(round, this.g);
+            this.j = min;
+            this.j = Math.max(min, this.f);
+            int round2 = Math.round(A * (this.e - r1)) + this.c;
+            this.k = round2;
+            int min2 = Math.min(round2, this.i);
+            this.k = min2;
+            int max = Math.max(min2, this.h);
+            this.k = max;
+            if (this.j == this.d && max == this.e) {
+                this.q = true;
+            }
+        }
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x009b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(Canvas canvas, gb2 gb2Var) {
-        int i;
+    public final void c(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        int i9;
+        float sqrt;
         float f;
         float f2;
-        float f3;
-        float f4;
-        RectF rectF;
-        cv9 cv9Var;
-        ArrayList arrayList;
-        int i2;
-        int i3;
-        float[] fArr;
-        float[] fArr2;
-        k27 k27Var;
-        if (this.l == null || (i = this.g) == 0 || this.s <= 0.0f) {
-            return;
-        }
-        float N2 = i / gl.N(3.0f);
-        if (N2 > 0.1f) {
-            float f5 = this.t;
-            if (f5 != 1.0f) {
-                float f6 = f5 + 0.10666667f;
-                this.t = f6;
-                if (f6 > 1.0f) {
-                    this.t = 1.0f;
-                } else {
-                    gb2Var.invalidate();
-                }
-            }
-            float e = this.v.e(false, 1.0f);
-            Path path = this.x;
-            if (path == null) {
-                this.x = new Path();
-            } else {
-                path.reset();
-            }
-            Path path2 = this.y;
-            if (path2 == null) {
-                this.y = new Path();
-            } else {
-                path2.reset();
-            }
-            gb2 gb2Var2 = this.k;
-            boolean z = (gb2Var2 == null || (k27Var = gb2Var2.Q5) == null || !k27Var.R4()) ? false : true;
-            float[] fArr3 = this.H;
-            if (fArr3 == null || (fArr2 = this.I) == null) {
-                f = N2;
-                f2 = 3.0f;
-                if (this.G != null) {
-                    int i4 = 0;
-                    while (true) {
-                        float f7 = i4;
-                        if (f7 >= f || i4 >= this.G.length) {
-                            break;
-                        }
-                        float N3 = gl.N(3.0f) * f7;
-                        float a = moe.a((e * f) - f7, 0.0f, 1.0f);
-                        a(this.x, N3, ls6.B(1.0f, a, gl.N(1.0f), gl.N(this.G[z ? (r3.length - 1) - i4 : i4]) * a));
-                        i4++;
-                    }
-                }
-                f3 = 0.0f;
-            } else {
-                int i5 = this.g;
-                int i6 = this.i;
-                float f8 = (i5 - i6) / (this.j - i6);
-                int max = Math.max(fArr3.length, fArr2.length);
-                int min = Math.min(this.H.length, this.I.length);
-                float[] fArr4 = this.H;
-                int length = fArr4.length;
-                float[] fArr5 = this.I;
-                f2 = 3.0f;
-                float[] fArr6 = length < fArr5.length ? fArr4 : fArr5;
-                float[] fArr7 = fArr4.length < fArr5.length ? fArr5 : fArr4;
-                if (fArr4.length >= fArr5.length) {
-                    f8 = 1.0f - f8;
-                }
-                int i7 = -1;
-                f3 = 0.0f;
-                int i8 = 0;
-                while (i8 < max) {
-                    float f9 = i8;
-                    float f10 = N2;
-                    int b = moe.b((int) Math.floor((f9 / max) * min), 0, min - 1);
-                    float f11 = b;
-                    if (i7 < b) {
-                        a(this.x, gl.N(3.0f) * gl.R1(f11, f9, f8), gl.N(gl.R1(fArr6[z ? (fArr6.length - 1) - b : b], fArr7[z ? (fArr7.length - 1) - i8 : i8], f8)));
-                        i7 = b;
+        if (this.s && !this.q) {
+            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
+            float f3 = this.d - this.b;
+            float f4 = this.e - this.c;
+            float sqrt2 = (float) Math.sqrt((f4 * f4) + (f3 * f3));
+            float f5 = (f3 / sqrt2) * currentAnimationTimeMillis;
+            float f6 = (f4 / sqrt2) * currentAnimationTimeMillis;
+            float f7 = i3;
+            if (Math.signum(f7) == Math.signum(f5)) {
+                float f8 = i4;
+                if (Math.signum(f8) == Math.signum(f6)) {
+                    i3 = (int) (f7 + f5);
+                    i9 = (int) (f8 + f6);
+                    this.a = true;
+                    this.q = false;
+                    sqrt = (float) Math.sqrt((i9 * i9) + (i3 * i3));
+                    this.t = sqrt;
+                    double log = Math.log((0.4f * sqrt) / 800.0f);
+                    this.m = (int) (Math.exp(log / 1.7304542064666748d) * 1000.0d);
+                    this.l = AnimationUtils.currentAnimationTimeMillis();
+                    this.b = i;
+                    this.c = i2;
+                    if (sqrt != 0.0f) {
+                        f2 = 1.0f;
+                        f = 1.0f;
                     } else {
-                        float N4 = gl.N(3.0f) * gl.R1(f11, f9, f8);
-                        if (z) {
-                            b = (fArr6.length - 1) - b;
-                        }
-                        a(this.y, N4, gl.N(gl.R1(fArr6[b], fArr7[z ? (fArr7.length - 1) - i8 : i8], f8)));
-                        f3 = f8;
+                        float f9 = i9 / sqrt;
+                        f = i3 / sqrt;
+                        f2 = f9;
                     }
-                    i8++;
-                    N2 = f10;
+                    int exp = (int) (Math.exp(1.5778829605909355d * log) * 800.0d);
+                    this.f = i5;
+                    this.g = i6;
+                    this.h = i7;
+                    this.i = i8;
+                    float f10 = exp;
+                    int round = Math.round(f * f10) + i;
+                    this.d = round;
+                    int min = Math.min(round, this.g);
+                    this.d = min;
+                    this.d = Math.max(min, this.f);
+                    int round2 = Math.round(f10 * f2) + i2;
+                    this.e = round2;
+                    int min2 = Math.min(round2, this.i);
+                    this.e = min2;
+                    this.e = Math.max(min2, this.h);
                 }
-                f = N2;
-            }
-            if (this.J || this.L > 0.0f) {
-                canvas.save();
-                f4 = 0.0f;
-                canvas.clipRect(0.0f, 0.0f, yjb.B(this.K, this.L, 1.0f, gl.N(f2) * f), this.h);
-            } else {
-                f4 = 0.0f;
-            }
-            if (f3 > f4) {
-                canvas.save();
-                canvas.clipPath(this.y);
-                d(canvas, f3 * this.s);
-                canvas.restore();
-            }
-            canvas.save();
-            canvas.clipPath(this.x);
-            d(canvas, this.s);
-            canvas.restore();
-            if (this.J || this.L > 0.0f) {
-                canvas.restore();
-                if (this.M == null) {
-                    this.M = new cv9(new zk9(this, (byte) 18));
-                }
-                float f12 = this.K;
-                if (f12 < 0.99f && (fArr = this.G) != null) {
-                    int i9 = (int) ((1.0f - f12) * f);
-                    if (z) {
-                        i9 = (int) ((f - 1.0f) - i9);
-                    }
-                    if (i9 >= 0 && i9 < fArr.length) {
-                        float N5 = gl.N(this.G[i9]) * moe.a((e * f) - i9, 0.0f, 1.0f);
-                        rectF = gl.P;
-                        float N6 = gl.N(f2) * (1.0f - this.K) * f;
-                        float N7 = gl.N(2.0f);
-                        int D = ug8.D(14.0f, this.h, 2);
-                        float f13 = N5 * this.w;
-                        float f14 = N7 / 2.0f;
-                        rectF.set((gl.N(1.0f) + N6) - f14, ((-f13) - f14) + gl.L(7.0f) + D, gl.N(1.0f) + N6 + f14, f13 + f14 + gl.L(7.0f) + D);
-                        cv9Var = this.M;
-                        cv9Var.d.setColor(this.q);
-                        cv9Var.e = rectF;
-                        float f15 = this.L;
-                        Paint paint = cv9Var.d;
-                        ArrayList arrayList2 = cv9Var.c;
-                        arrayList = cv9Var.b;
-                        long currentTimeMillis = System.currentTimeMillis();
-                        long min2 = Math.min(20L, currentTimeMillis - cv9Var.f);
-                        cv9Var.f = currentTimeMillis;
-                        i2 = 0;
-                        while (i2 < arrayList.size()) {
-                            bv9 bv9Var = (bv9) arrayList.get(i2);
-                            float f16 = min2;
-                            float f17 = bv9Var.f - (f16 / bv9Var.g);
-                            bv9Var.f = f17;
-                            if (f17 < 0.0f) {
-                                arrayList2.add(bv9Var);
-                                arrayList.remove(i2);
-                                i2--;
-                            } else {
-                                float f18 = bv9Var.a;
-                                float f19 = bv9Var.d;
-                                float f20 = bv9Var.c;
-                                bv9Var.a = (((f19 * f20) * f16) / 500.0f) + f18;
-                                float f21 = bv9Var.b;
-                                float f22 = bv9Var.e;
-                                bv9Var.b = (((f20 * f22) * f16) / 500.0f) + f21;
-                                bv9Var.e = f22 - ((gl.L(0.33f) * min2) / 500.0f);
-                            }
-                            i2++;
-                        }
-                        if (cv9Var.e != null) {
-                            int min3 = Math.min(4, 250 - arrayList.size());
-                            for (int i10 = 0; i10 < min3; i10++) {
-                                bv9 bv9Var2 = arrayList2.isEmpty() ? new bv9() : (bv9) arrayList2.remove(0);
-                                RectF rectF2 = cv9Var.e;
-                                float f23 = rectF2.left;
-                                float width = rectF2.width();
-                                SecureRandom secureRandom = Utilities.b;
-                                bv9Var2.a = (secureRandom.nextFloat() * width) + f23;
-                                RectF rectF3 = cv9Var.e;
-                                bv9Var2.b = (secureRandom.nextFloat() * rectF3.height()) + rectF3.top;
-                                double nextInt = (secureRandom.nextInt(kk7.d3) - 125) * 0.017453292519943295d;
-                                bv9Var2.d = ((float) (Math.cos(nextInt) - Math.sin(nextInt))) * 0.8f;
-                                bv9Var2.e = ((float) (Math.cos(nextInt) + Math.sin(nextInt))) - 0.2f;
-                                bv9Var2.f = 1.0f;
-                                bv9Var2.c = gl.L((secureRandom.nextFloat() * 7.0f) + 10.0f);
-                                bv9Var2.g = gl.U1(secureRandom.nextFloat(), 420, 550);
-                                arrayList.add(bv9Var2);
-                            }
-                        }
-                        for (i3 = 0; i3 < arrayList.size(); i3++) {
-                            bv9 bv9Var3 = (bv9) arrayList.get(i3);
-                            paint.setAlpha((int) (255.0f * f15 * bv9Var3.f));
-                            canvas.drawPoint(bv9Var3.a, bv9Var3.b, paint);
-                        }
-                        cv9Var.a.run();
-                    }
-                }
-                rectF = null;
-                cv9Var = this.M;
-                cv9Var.d.setColor(this.q);
-                cv9Var.e = rectF;
-                float f152 = this.L;
-                Paint paint2 = cv9Var.d;
-                ArrayList arrayList22 = cv9Var.c;
-                arrayList = cv9Var.b;
-                long currentTimeMillis2 = System.currentTimeMillis();
-                long min22 = Math.min(20L, currentTimeMillis2 - cv9Var.f);
-                cv9Var.f = currentTimeMillis2;
-                i2 = 0;
-                while (i2 < arrayList.size()) {
-                }
-                if (cv9Var.e != null) {
-                }
-                while (i3 < arrayList.size()) {
-                }
-                cv9Var.a.run();
             }
         }
+        i9 = i4;
+        this.a = true;
+        this.q = false;
+        sqrt = (float) Math.sqrt((i9 * i9) + (i3 * i3));
+        this.t = sqrt;
+        double log2 = Math.log((0.4f * sqrt) / 800.0f);
+        this.m = (int) (Math.exp(log2 / 1.7304542064666748d) * 1000.0d);
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = i;
+        this.c = i2;
+        if (sqrt != 0.0f) {
+        }
+        int exp2 = (int) (Math.exp(1.5778829605909355d * log2) * 800.0d);
+        this.f = i5;
+        this.g = i6;
+        this.h = i7;
+        this.i = i8;
+        float f102 = exp2;
+        int round3 = Math.round(f * f102) + i;
+        this.d = round3;
+        int min3 = Math.min(round3, this.g);
+        this.d = min3;
+        this.d = Math.max(min3, this.f);
+        int round22 = Math.round(f102 * f2) + i2;
+        this.e = round22;
+        int min22 = Math.min(round22, this.i);
+        this.e = min22;
+        this.e = Math.max(min22, this.h);
     }
 
-    public final void d(Canvas canvas, float f) {
-        lm lmVar = this.B;
-        float N2 = gl.N(2.0f);
-        k27 k27Var = this.m;
-        boolean z = k27Var != null && k27Var.k.media_unread && !k27Var.N3() && this.c <= 0.0f;
-        this.u = z;
-        N.setColor(z ? this.q : this.o ? this.r : this.p);
-        O.setColor(this.q);
-        lmVar.a = this.n;
-        float e = lmVar.e(false, (!this.z || MediaController.w().D(this.m)) ? 0.0f : 1.0f);
-        Paint paint = N;
-        paint.setColor(bm2.f(e, paint.getColor(), this.p));
-        float f2 = 1.0f - e;
-        O.setAlpha((int) (r3.getAlpha() * f2 * f));
-        N.setAlpha((int) (r3.getAlpha() * f));
-        canvas.drawRect(0.0f, 0.0f, this.g + N2, this.h, N);
-        if (e < 1.0f) {
-            canvas.drawRect(0.0f, 0.0f, (this.g + N2) * this.c * f2, this.h, O);
-        }
-        if (e > 0.0f) {
-            if (this.C == null || Math.abs(this.D - this.g) > gl.L(8.0f) || this.E != this.p || this.F != this.q) {
-                Paint paint2 = this.C;
-                if (paint2 == null) {
-                    paint2 = new Paint(1);
-                    this.C = paint2;
-                }
-                this.E = this.p;
-                this.F = this.q;
-                float f3 = this.g;
-                this.D = f3;
-                int i = this.E;
-                paint2.setShader(new LinearGradient(0.0f, 0.0f, f3, 0.0f, new int[]{i, this.F, i}, new float[]{0.0f, 0.2f, 0.4f}, Shader.TileMode.CLAMP));
-            }
-            this.C.setAlpha((int) (e * 255.0f * f));
-            canvas.save();
-            float pow = ((((float) Math.pow((SystemClock.elapsedRealtime() - this.A) / 270.0f, 0.75d)) % 1.6f) - 0.6f) * this.D;
-            canvas.translate(pow, 0.0f);
-            canvas.drawRect(-pow, 0.0f, (this.g + 5) - pow, this.h, this.C);
-            canvas.restore();
-            gb2 gb2Var = this.n;
-            if (gb2Var != null) {
-                gb2Var.invalidate();
-            }
-        }
-    }
-
-    public final void e() {
-        f(false, 0.0f);
-    }
-
-    public final void f(boolean z, float f) {
-        if (!this.k.N2()) {
-            this.c = 1.0f;
-            return;
-        }
-        boolean z2 = this.u;
-        this.c = z2 ? 1.0f : f;
-        int i = z2 ? this.g : this.a;
-        if (z && i != 0 && f == 0.0f) {
-            this.t = 0.0f;
-        } else if (!z) {
-            this.t = 1.0f;
-        }
-        int ceil = (int) Math.ceil(this.g * f);
-        this.a = ceil;
-        if (ceil < 0) {
-            this.a = 0;
-            return;
-        }
-        int i2 = this.g;
-        if (ceil > i2) {
-            this.a = i2;
-        }
-    }
-
-    public final void g(int i, int i2, int i3, int i4) {
-        this.g = i;
-        this.h = i2;
-        float[] fArr = this.G;
-        if (fArr == null || fArr.length != ((int) (i / gl.N(3.0f)))) {
-            this.G = b((int) (this.g / gl.N(3.0f)));
-        }
-        if (i3 == i4) {
-            this.I = null;
-            this.H = null;
-        } else {
-            if (this.i == i3 && this.j == i4) {
-                return;
-            }
-            this.i = i3;
-            this.j = i4;
-            this.H = b((int) (i3 / gl.N(3.0f)));
-            this.I = b((int) (this.j / gl.N(3.0f)));
-        }
+    public final void d(int i, int i2) {
+        this.a = false;
+        this.q = false;
+        this.m = i2;
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
+        this.e = i;
+        this.o = 0.0f;
+        this.p = i;
+        this.n = 1.0f / this.m;
     }
 }

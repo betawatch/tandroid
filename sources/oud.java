@@ -1,19 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class oud implements zn7 {
-    public static final oud a = new oud();
-
-    static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)), 3)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public final class oud {
+    public static bud a(Object obj, Object obj2) {
+        bud budVar = (bud) obj;
+        bud budVar2 = (bud) obj2;
+        if (!budVar2.isEmpty()) {
+            if (!budVar.a) {
+                if (budVar.isEmpty()) {
+                    budVar = new bud();
+                } else {
+                    bud budVar3 = new bud(budVar);
+                    budVar3.a = true;
+                    budVar = budVar3;
+                }
+            }
+            budVar.b();
+            if (!budVar2.isEmpty()) {
+                budVar.putAll(budVar2);
+            }
         }
-        throw null;
+        return budVar;
     }
 }

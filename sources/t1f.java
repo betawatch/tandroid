@@ -1,62 +1,19 @@
 // default package
 
-import android.content.Context;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class t1f implements o0f {
-    public final e06 a;
-    public final j0f b;
+public final class t1f implements zq7 {
+    public static final t1f a = new t1f();
 
-    public t1f(Context context, j0f j0fVar) {
-        this.b = j0fVar;
-        i51 i51Var = i51.e;
-        i1c.b(context);
-        g1c c = i1c.a().c(i51Var);
-        if (i51.d.contains(new s24("json"))) {
-            new e06(new jye(c, (byte) 2));
-        }
-        this.a = new e06(new jye(c, (byte) 3));
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)), 5)), 6)));
     }
 
-    @Override // o0f
-    public final void a(aec aecVar) {
-        y7d y7dVar;
-        zn7 zn7Var;
-        j0f j0fVar = this.b;
-        j0fVar.getClass();
-        h1c h1cVar = (h1c) this.a.get();
-        j0fVar.getClass();
-        i2f i2fVar = i2f.n;
-        rod rodVar = (rod) aecVar.b;
-        ((pse) aecVar.c).h = false;
-        pse pseVar = (pse) aecVar.c;
-        pseVar.f = Boolean.FALSE;
-        rodVar.b = new pwe(pseVar);
-        try {
-            i2f.O3();
-            fme fmeVar = new fme(rodVar);
-            aec aecVar2 = new aec((byte) 9);
-            i2fVar.i(aecVar2);
-            HashMap hashMap = new HashMap((HashMap) aecVar2.b);
-            HashMap hashMap2 = new HashMap((HashMap) aecVar2.c);
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            try {
-                y7dVar = new y7d(byteArrayOutputStream, hashMap, hashMap2);
-                zn7Var = (zn7) hashMap.get(fme.class);
-            } catch (IOException unused) {
-            }
-            if (zn7Var == null) {
-                throw new t24("No encoder for ".concat(String.valueOf(fme.class)));
-            }
-            zn7Var.a(fmeVar, y7dVar);
-            h1cVar.a(new n90(null, byteArrayOutputStream.toByteArray(), cj8.b, null), new fyb((byte) 3));
-        } catch (UnsupportedEncodingException e) {
-            throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

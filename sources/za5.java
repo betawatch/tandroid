@@ -1,692 +1,990 @@
 // default package
 
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class za5 extends FrameLayout implements tjb {
-    public int E;
-    public boolean F;
-    public final byte G;
-    public ValueAnimator H;
-    public boolean I;
-    public float J;
-    public final Paint K;
-    public final boolean L;
-    public final boolean M;
-    public final wjb N;
-    public final lm O;
-    public boolean P;
-    public long Q;
-    public TL_account.requirementToContactPremium R;
-    public boolean S;
-    public mh8 T;
-    public Drawable U;
-    public Paint V;
-    public int W;
-    public final be0 a;
-    public final df0 b;
-    public final jia c;
-    public final wf2 d;
-    public final pb0 e;
-    public Object f;
-    public CharSequence h;
-    public CharSequence n;
-    public boolean r;
-    public boolean s;
-    public final byte w;
-    public final int x;
-    public String y;
+public final class za5 extends ViewGroup {
+    public final ya5 E;
+    public float F;
+    public long G;
+    public long H;
+    public int[] I;
+    public final zz3 J;
+    public final /* synthetic */ cb5 K;
+    public final ArrayList a;
+    public final ArrayList b;
+    public final ArrayList c;
+    public final TextView d;
+    public final ImageView e;
+    public final o91 f;
+    public final int h;
+    public float n;
+    public float r;
+    public ValueAnimator s;
+    public boolean w;
+    public long x;
+    public boolean y;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public za5(int i, int i2, wjb wjbVar, Context context, boolean z, boolean z2) {
-        super(context);
-        this.x = y6c.t0;
-        this.O = new lm(this, 0L, 350L, s33.h);
-        this.N = wjbVar;
-        this.w = i;
-        this.L = z2;
-        this.F = false;
-        this.G = i2;
-        this.M = z;
-        this.e = new pb0((wjb) null);
-        be0 be0Var = new be0(context);
-        this.a = be0Var;
-        be0Var.setRoundRadius(gl.L(24.0f));
-        boolean z3 = k96.a0;
-        addView(be0Var, nme.d(46, 46.0f, (z3 ? 5 : 3) | 48, z3 ? 0.0f : i2 + 13, 6.0f, z3 ? i2 + 13 : 0.0f, 0.0f));
-        df0 df0Var = new df0(context, (byte) 2);
-        this.b = df0Var;
-        kk7.i(df0Var);
-        zkb.W(df0Var, z2 ? bkb.dh : bkb.F6, wjbVar);
-        df0Var.setTypeface(gl.o());
-        df0Var.setTextSize(16);
-        df0Var.setGravity((k96.a0 ? 5 : 3) | 48);
-        boolean z4 = k96.a0;
-        addView(df0Var, nme.d(-1, 20.0f, (z4 ? 5 : 3) | 48, (z4 ? 28 : 72) + i2, 10.0f, (z4 ? 72 : 28) + i2, 0.0f));
-        jia jiaVar = new jia(context);
-        this.c = jiaVar;
-        jiaVar.setTextSize(14);
-        jiaVar.setGravity((k96.a0 ? 5 : 3) | 48);
-        boolean z5 = k96.a0;
-        addView(jiaVar, nme.d(-1, 20.0f, (z5 ? 5 : 3) | 48, (z5 ? 28 : 72) + i2, 32.0f, (z5 ? 72 : 28) + i2, 0.0f));
-        if (i == 1) {
-            wf2 wf2Var = new wf2(21, wjbVar, context);
-            this.d = wf2Var;
-            wf2Var.b(-1, bkb.c6, bkb.j7);
-            wf2Var.setDrawUnchecked(false);
-            wf2Var.setDrawBackgroundAsArc(3);
-            boolean z6 = k96.a0;
-            addView(wf2Var, nme.d(24, 24.0f, (z6 ? 5 : 3) | 48, z6 ? 0.0f : i2 + 40, 33.0f, z6 ? i2 + 39 : 0.0f, 0.0f));
-        } else if (i == 2) {
-            Paint paint = new Paint(1);
-            this.K = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(gl.L(2.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public za5(cb5 cb5Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.K = cb5Var;
+        this.a = new ArrayList();
+        this.b = new ArrayList();
+        this.c = new ArrayList();
+        this.h = hl.L(2.0f);
+        this.r = 1.0f;
+        this.E = new ya5(this, (byte) 1);
+        this.J = new zz3(this, (byte) 12);
+        setBackgroundColor(-16777216);
+        setChildrenDrawingOrderEnabled(true);
+        this.n = cb5Var.c;
+        ImageView imageView = new ImageView(launchActivity);
+        this.e = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setColorFilter(-1);
+        imageView.setBackground(aob.K(hl.L(28.0f), 1711276032));
+        addView(imageView);
+        TextView textView = new TextView(launchActivity);
+        this.d = textView;
+        textView.setTextColor(-1275068417);
+        textView.setTextSize(1, 11.0f);
+        textView.setSingleLine();
+        textView.setGravity(1);
+        textView.setShadowLayer(hl.L(2.0f), 0.0f, 0.0f, TLObject.FLAG_31);
+        textView.setVisibility(8);
+        addView(textView);
+        o91 o91Var = new o91(launchActivity);
+        this.f = o91Var;
+        addView(o91Var);
+    }
+
+    public final void a() {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            bb5 bb5Var = (bb5) obj;
+            bb5Var.a();
+            removeView(bb5Var);
         }
-        setWillNotDraw(false);
+        arrayList.clear();
+        this.I = null;
     }
 
-    public static pb0 a(boolean z) {
-        pb0 pb0Var = new pb0((wjb) null);
-        pb0Var.f(8);
-        pb0Var.p = z ? 0.8f : 1.1f;
-        pb0Var.h(bkb.w0(null, bkb.S7, false), bkb.w0(null, bkb.Z7, false));
-        return pb0Var;
+    public final boolean b() {
+        Activity W = hl.W(getContext());
+        return W != null && hl.F1(W) && SystemClock.elapsedRealtime() - this.x > 1000;
     }
 
-    public static fm2 b(Context context, boolean z) {
-        fm2 fm2Var = new fm2(new f6(new mh8(bkb.Ck, bkb.Bk, -1, -1, null), (byte) 3), context.getResources().getDrawable(R.drawable.msg_settings_premium), 0, 0);
-        if (z) {
-            int L = gl.L(18.0f);
-            int L2 = gl.L(18.0f);
-            fm2Var.e = L;
-            fm2Var.f = L2;
+    public final void c(bb5 bb5Var, int i, int i2) {
+        float[] fArr = bb5Var.P;
+        float f = this.r;
+        for (int i3 = 0; i3 < 4; i3++) {
+            float f2 = bb5Var.N[i3];
+            fArr[i3] = qd4.A(bb5Var.O[i3], f2, f, f2);
         }
-        return fm2Var;
+        float f3 = this.h / 2.0f;
+        float f4 = fArr[0];
+        float f5 = i;
+        int round = Math.round((f4 * f5) + (f4 > 0.001f ? f3 : 0.0f));
+        float f6 = fArr[1];
+        float f7 = i2;
+        int round2 = Math.round((f6 * f7) + (f6 > 0.001f ? f3 : 0.0f));
+        float f8 = fArr[2];
+        int round3 = Math.round((f5 * f8) - (f8 < 0.999f ? f3 : 0.0f));
+        float f9 = fArr[3];
+        float f10 = f7 * f9;
+        if (f9 >= 0.999f) {
+            f3 = 0.0f;
+        }
+        int round4 = Math.round(f10 - f3);
+        int max = Math.max(1, round3 - round);
+        int max2 = Math.max(1, round4 - round2);
+        if (bb5Var.getMeasuredWidth() != max || bb5Var.getMeasuredHeight() != max2 || bb5Var.isLayoutRequested()) {
+            bb5Var.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(max2, TLObject.FLAG_30));
+        }
+        bb5Var.layout(round, round2, max + round, max2 + round2);
+        float f11 = this.r;
+        float f12 = bb5Var.Q;
+        float f13 = ((bb5Var.R - f12) * f11) + f12;
+        bb5Var.setAlpha(f13);
+        float f14 = (f13 * 0.2f) + 0.8f;
+        bb5Var.setScaleX(f14);
+        bb5Var.setScaleY(f14);
     }
 
-    public final void c(boolean z, boolean z2) {
-        wf2 wf2Var = this.d;
-        if (wf2Var != null) {
-            wf2Var.a(z, z2);
+    public final void d() {
+        int width = getWidth();
+        int height = getHeight();
+        if (width == 0 || height == 0) {
             return;
         }
-        if (this.w != 2 || this.I == z) {
-            return;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            c((bb5) obj, width, height);
         }
-        this.I = z;
-        ValueAnimator valueAnimator = this.H;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (z2) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.H = ofFloat;
-            ofFloat.addUpdateListener(new ni4(this, (byte) 8));
-            this.H.addListener(new v85(this, (byte) 1));
-            this.H.setDuration(180L);
-            this.H.setInterpolator(s33.g);
-            this.H.start();
-        } else {
-            float f = this.I ? 0.82f : 1.0f;
-            be0 be0Var = this.a;
-            be0Var.setScaleX(f);
-            be0Var.setScaleY(this.I ? 0.82f : 1.0f);
-            this.J = this.I ? 1.0f : 0.0f;
+        ArrayList arrayList2 = this.a;
+        int size2 = arrayList2.size();
+        while (i < size2) {
+            Object obj2 = arrayList2.get(i);
+            i++;
+            c((bb5) obj2, width, height);
         }
         invalidate();
     }
 
-    public final void d(Object obj, CharSequence charSequence, CharSequence charSequence2) {
-        this.f = obj;
-        this.n = charSequence2;
-        this.h = charSequence;
-        this.F = false;
-        this.r = false;
-        this.s = false;
-        f(0);
+    public final boolean e(int i, int i2) {
+        return Math.abs(Math.log((double) ((((float) i) / ((float) i2)) / this.n))) < 0.06d;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Paint paint;
-        mh8 mh8Var;
-        super.dispatchDraw(canvas);
-        float d = this.O.d(this.P);
-        if (d > 0.0f) {
-            be0 be0Var = this.a;
-            float height = (be0Var.getHeight() / 2.0f) + be0Var.getY() + gl.L(18.0f);
-            float width = (be0Var.getWidth() / 2.0f) + be0Var.getX() + gl.L(18.0f);
-            canvas.save();
-            Paint paint2 = bkb.s0;
-            int i = bkb.c6;
-            wjb wjbVar = this.N;
-            paint2.setColor(bkb.v0(i, wjbVar));
-            canvas.drawCircle(width, height, gl.L(11.33f) * d, bkb.s0);
-            if (this.R == null) {
-                mh8 mh8Var2 = this.T;
-                if (mh8Var2 == null) {
-                    mh8 mh8Var3 = new mh8(bkb.Bk, bkb.Ck, -1, -1, this.N);
-                    this.T = mh8Var3;
-                    mh8Var = mh8Var3;
-                } else {
-                    mh8Var = mh8Var2;
-                }
-                mh8Var.d((int) (width - gl.L(10.0f)), 0.0f, (int) (height - gl.L(10.0f)), (int) (gl.L(10.0f) + width), 0.0f, (int) (gl.L(10.0f) + height));
-                paint = this.T.f;
-            } else {
-                Paint paint3 = this.V;
-                if (paint3 == null) {
-                    paint3 = new Paint();
-                    this.V = paint3;
-                }
-                paint3.setColor(bkb.v0(bkb.b8, wjbVar));
-                paint = this.V;
-            }
-            canvas.drawCircle(width, height, gl.L(10.0f) * d, paint);
-            if (this.U == null) {
-                Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
-                this.U = mutate;
-                mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            }
-            this.U.setBounds((int) (width - (((r2.getIntrinsicWidth() / 2.0f) * 0.875f) * d)), (int) (height - (((this.U.getIntrinsicHeight() / 2.0f) * 0.875f) * d)), (int) (((this.U.getIntrinsicWidth() / 2.0f) * 0.875f * d) + width), (int) (((this.U.getIntrinsicHeight() / 2.0f) * 0.875f * d) + height));
-            this.U.setAlpha((int) (d * 255.0f));
-            this.U.draw(canvas);
-            canvas.restore();
+    public final void f(boolean z) {
+        boolean z2;
+        int i;
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        float[] fArr = new float[size];
+        float[] fArr2 = new float[size];
+        int[] iArr = new int[size];
+        boolean z3 = false;
+        for (int i2 = 0; i2 < size; i2++) {
+            bb5 bb5Var = (bb5) arrayList.get(i2);
+            float f = bb5Var.K;
+            fArr[i2] = f;
+            wc2 wc2Var = bb5Var.b;
+            fArr2[i2] = (wc2Var == null || !wc2Var.b) ? 1.0f : 2.0f;
+            boolean z4 = bb5Var.M;
+            iArr[i2] = z4 ? i2 : -1;
+            z3 |= z4 && bb5Var.L <= 0.0f && f > 0.0f;
         }
-    }
-
-    public final void e(TLObject tLObject, String str, String str2, boolean z) {
-        d(tLObject, str, str2);
-        this.F = z;
-    }
-
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x03fc  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void f(int i) {
-        String str;
-        TLRPC.Chat chat;
-        String str2;
-        String str3;
-        TLRPC.UserStatus userStatus;
-        CharSequence charSequence;
-        char c;
-        Object obj = this.f;
-        if (obj == null || this.r || this.s) {
-            return;
-        }
-        boolean z = obj instanceof String;
-        wjb wjbVar = this.N;
-        wf2 wf2Var = this.d;
-        boolean z2 = this.L;
-        be0 be0Var = this.a;
-        df0 df0Var = this.b;
-        pb0 pb0Var = this.e;
-        jia jiaVar = this.c;
-        if (z) {
-            ((FrameLayout.LayoutParams) df0Var.getLayoutParams()).topMargin = gl.L(15.0f);
-            ViewGroup.LayoutParams layoutParams = be0Var.getLayoutParams();
-            ViewGroup.LayoutParams layoutParams2 = be0Var.getLayoutParams();
-            int L = gl.L(38.0f);
-            layoutParams2.height = L;
-            layoutParams.width = L;
-            if (wf2Var != null) {
-                ((FrameLayout.LayoutParams) wf2Var.getLayoutParams()).topMargin = gl.L(25.0f);
-                if (k96.a0) {
-                    ((FrameLayout.LayoutParams) wf2Var.getLayoutParams()).rightMargin = gl.L(31.0f);
-                } else {
-                    ((FrameLayout.LayoutParams) wf2Var.getLayoutParams()).leftMargin = gl.L(32.0f);
-                }
-            }
-            String str4 = (String) this.f;
-            str4.getClass();
-            char c2 = 65535;
-            switch (str4.hashCode()) {
-                case -1716307998:
-                    if (str4.equals("archived")) {
-                        c2 = 0;
-                        break;
-                    }
-                    break;
-                case -1237460524:
-                    if (str4.equals("groups")) {
-                        c2 = 1;
-                        break;
-                    }
-                    break;
-                case -1197490811:
-                    if (str4.equals("non_contacts")) {
-                        c = 2;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case -567451565:
-                    if (str4.equals("contacts")) {
-                        c = 3;
-                        c2 = c;
-                        break;
-                    }
-                    break;
-                case -268161860:
-                    if (str4.equals("new_chats")) {
-                        c2 = 4;
-                        break;
-                    }
-                    break;
-                case 3029900:
-                    if (str4.equals("bots")) {
-                        c2 = 5;
-                        break;
-                    }
-                    break;
-                case 3496342:
-                    if (str4.equals("read")) {
-                        c2 = 6;
-                        break;
-                    }
-                    break;
-                case 104264043:
-                    if (str4.equals("muted")) {
-                        c2 = 7;
-                        break;
-                    }
-                    break;
-                case 151051367:
-                    if (str4.equals("existing_chats")) {
-                        c2 = '\b';
-                        break;
-                    }
-                    break;
-                case 1432626128:
-                    if (str4.equals("channels")) {
-                        c2 = '\t';
-                        break;
-                    }
-                    break;
-            }
-            switch (c2) {
-                case 0:
-                    pb0Var.f(11);
-                    break;
-                case 1:
-                    pb0Var.f(6);
-                    break;
-                case 2:
-                    pb0Var.f(5);
-                    break;
-                case 3:
-                    pb0Var.f(4);
-                    break;
-                case 4:
-                    pb0Var.f(24);
-                    break;
-                case 5:
-                    pb0Var.f(8);
-                    break;
-                case 6:
-                    pb0Var.f(10);
-                    break;
-                case 7:
-                    pb0Var.f(9);
-                    break;
-                case '\b':
-                    pb0Var.f(23);
-                    break;
-                case '\t':
-                    pb0Var.f(7);
-                    break;
-            }
-            this.y = null;
-            df0Var.l(this.h, true);
-            jiaVar.l(null, false);
-            be0Var.o(null, "50_50", pb0Var);
+        fh7 a = xte.a(fArr, fArr2, 0.45f, 2.35f, iArr, z3 ? 0.0f : this.n);
+        int width = getWidth();
+        int height = getHeight();
+        float f2 = 0.001f;
+        if (Math.abs(a.a - this.n) > 0.001f || width <= 0 || height <= 0 || e(width, height) || !b()) {
+            z2 = false;
         } else {
-            CharSequence charSequence2 = this.n;
-            if (charSequence2 == null || !TextUtils.isEmpty(charSequence2)) {
-                ((FrameLayout.LayoutParams) df0Var.getLayoutParams()).topMargin = gl.L(10.0f);
-            } else {
-                ((FrameLayout.LayoutParams) df0Var.getLayoutParams()).topMargin = gl.L(19.0f);
+            float f3 = width / height;
+            a = xte.a(fArr, fArr2, f3, f3, iArr, 0.0f);
+            z2 = true;
+        }
+        this.F = a.a;
+        if (f11.a) {
+            StringBuilder sb = new StringBuilder("group call pip: mosaic ");
+            sb.append(Arrays.toString(fArr));
+            sb.append(z2 ? " in the window" : "");
+            sb.append(" -> ");
+            sb.append(a);
+            cc4.b(sb.toString());
+        }
+        int size2 = arrayList.size();
+        int i3 = 0;
+        while (true) {
+            i = 4;
+            if (i3 >= size2) {
+                break;
             }
-            ViewGroup.LayoutParams layoutParams3 = be0Var.getLayoutParams();
-            ViewGroup.LayoutParams layoutParams4 = be0Var.getLayoutParams();
-            int L2 = gl.L(46.0f);
-            layoutParams4.height = L2;
-            layoutParams3.width = L2;
-            if (wf2Var != null) {
-                FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) wf2Var.getLayoutParams();
-                int L3 = gl.L(29.0f);
-                byte b = this.G;
-                layoutParams5.topMargin = L3 + b;
-                if (k96.a0) {
-                    ((FrameLayout.LayoutParams) wf2Var.getLayoutParams()).rightMargin = gl.L(40.0f) + b;
-                } else {
-                    ((FrameLayout.LayoutParams) wf2Var.getLayoutParams()).leftMargin = gl.L(40.0f) + b;
-                }
+            Object obj = arrayList.get(i3);
+            i3++;
+            bb5 bb5Var2 = (bb5) obj;
+            float f4 = this.r;
+            float f5 = f2;
+            float[] fArr3 = bb5Var2.N;
+            for (int i4 = 0; i4 < 4; i4++) {
+                float f6 = fArr3[i4];
+                fArr3[i4] = qd4.A(bb5Var2.O[i4], f6, f4, f6);
             }
-            Object obj2 = this.f;
-            if (!(obj2 instanceof TLRPC.User)) {
-                TLRPC.Chat chat2 = (TLRPC.Chat) obj2;
-                TLRPC.ChatPhoto chatPhoto = chat2.photo;
-                TLRPC.FileLocation fileLocation = chatPhoto != null ? chatPhoto.photo_small : null;
-                if (i != 0) {
-                    int i2 = na7.q5;
-                    boolean z3 = ((i & 2) == 0 || fileLocation == null) ? false : true;
-                    if (z3 || this.h != null || (str2 = this.y) == null || (i & 1) == 0) {
-                        str = null;
-                    } else {
-                        str = chat2.title;
-                        if (!str.equals(str2)) {
-                            z3 = true;
-                        }
-                    }
-                    if (!z3) {
-                        return;
-                    }
-                } else {
-                    str = null;
-                }
-                pb0Var.p(chat2);
-                CharSequence charSequence3 = this.h;
-                if (charSequence3 != null) {
-                    this.y = null;
-                    df0Var.l(charSequence3, true);
-                } else {
-                    if (str == null) {
-                        str = chat2.title;
-                    }
-                    this.y = str;
-                    df0Var.l(str, false);
-                }
-                if (this.n == null) {
-                    int i3 = bkb.x6;
-                    jiaVar.setTag(Integer.valueOf(i3));
-                    if (z2) {
-                        i3 = bkb.eh;
-                    }
-                    zkb.W(jiaVar, i3, null);
-                    jiaVar.setEmojiColor(jiaVar.getTextColor());
-                    if (chat2.participants_count != 0) {
-                        if (!hc2.T(chat2) || chat2.megagroup) {
-                            jiaVar.l(k96.G(chat2.participants_count, "Members", new Object[0]), false);
-                        } else {
-                            jiaVar.l(k96.G(chat2.participants_count, "Subscribers", new Object[0]), false);
-                        }
-                    } else if (chat2.has_geo) {
-                        jiaVar.l(k96.M0(2131748450, null), false);
-                    } else if (hc2.t0(chat2)) {
-                        if (!hc2.T(chat2) || chat2.megagroup) {
-                            jiaVar.l(k96.M0(2131748446, null), false);
-                        } else {
-                            jiaVar.l(k96.M0(2131752306, null), false);
-                        }
-                    } else if (!hc2.T(chat2) || chat2.megagroup) {
-                        jiaVar.l(k96.M0(2131748449, null), false);
-                    } else {
-                        jiaVar.l(k96.M0(2131752317, null), false);
-                    }
-                }
-                be0Var.f(chat2, pb0Var);
-                chat = chat2;
-                be0Var.setRoundRadius(gl.L((chat == null && chat.forum) ? 14.0f : 24.0f));
-                charSequence = this.n;
-                if (charSequence != null) {
-                    jiaVar.l(charSequence, true);
-                    int i4 = bkb.x6;
-                    jiaVar.setTag(Integer.valueOf(i4));
-                    if (z2) {
-                        i4 = bkb.eh;
-                    }
-                    zkb.W(jiaVar, i4, wjbVar);
-                    jiaVar.setEmojiColor(jiaVar.getTextColor());
-                }
+            float f7 = bb5Var2.Q;
+            bb5Var2.Q = qd4.A(bb5Var2.R, f7, f4, f7);
+            f2 = f5;
+        }
+        float f8 = f2;
+        ArrayList arrayList2 = this.b;
+        int size3 = arrayList2.size();
+        int i5 = 0;
+        while (i5 < size3) {
+            Object obj2 = arrayList2.get(i5);
+            i5++;
+            bb5 bb5Var3 = (bb5) obj2;
+            float f9 = this.r;
+            float[] fArr4 = bb5Var3.N;
+            float[] fArr5 = bb5Var3.O;
+            int i6 = 0;
+            while (i6 < i) {
+                float f10 = fArr4[i6];
+                fArr4[i6] = qd4.A(fArr5[i6], f10, f9, f10);
+                i6++;
+                i = 4;
+            }
+            float f11 = bb5Var3.Q;
+            bb5Var3.Q = qd4.A(bb5Var3.R, f11, f9, f11);
+            System.arraycopy(bb5Var3.N, 0, fArr5, 0, 4);
+            bb5Var3.R = 0.0f;
+            i = 4;
+        }
+        ArrayList arrayList3 = new ArrayList(size);
+        for (int i7 = 0; i7 < size; i7++) {
+            bb5 bb5Var4 = (bb5) arrayList.get(i7);
+            System.arraycopy(a.b, i7 << 2, bb5Var4.O, 0, 4);
+            bb5Var4.R = 1.0f;
+            bb5Var4.L = fArr[i7];
+            if (!bb5Var4.M || !z) {
+                System.arraycopy(bb5Var4.O, 0, bb5Var4.N, 0, 4);
+                bb5Var4.Q = z ? 0.0f : 1.0f;
+                bb5Var4.M = true;
+            }
+        }
+        for (int i8 : a.c) {
+            arrayList3.add((bb5) arrayList.get(i8));
+        }
+        arrayList.clear();
+        arrayList.addAll(arrayList3);
+        this.I = null;
+        boolean z5 = !z2 && Math.abs(a.a - this.n) > f8;
+        if (z5) {
+            this.n = a.a;
+            me8 me8Var = this.K.a;
+            if (me8Var != null) {
+                me8Var.e();
+            }
+        }
+        j();
+        ValueAnimator valueAnimator = this.s;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.s.cancel();
+            this.s = null;
+        }
+        this.y = false;
+        ya5 ya5Var = this.E;
+        hl.r(ya5Var);
+        if (z) {
+            this.r = 0.0f;
+            if (!z5 || getWidth() <= 0 || getHeight() <= 0 || e(getWidth(), getHeight())) {
                 g();
-            }
-            TLRPC.User user = (TLRPC.User) obj2;
-            if (this.M && l7c.D(user)) {
-                df0Var.l(k96.M0(2131745709, null), true);
-                jiaVar.l(null, false);
-                pb0Var.f(1);
-                be0Var.m(null, "50_50", pb0Var, user);
-                ((FrameLayout.LayoutParams) df0Var.getLayoutParams()).topMargin = gl.L(19.0f);
-                return;
-            }
-            TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-            TLRPC.FileLocation fileLocation2 = userProfilePhoto != null ? userProfilePhoto.photo_small : null;
-            if (i != 0) {
-                int i5 = na7.q5;
-                boolean z4 = ((i & 2) == 0 || fileLocation2 == null) ? false : true;
-                if (this.n == null && !z4 && (i & 4) != 0) {
-                    TLRPC.UserStatus userStatus2 = user.status;
-                    if ((userStatus2 != null ? userStatus2.expires : 0) != this.E) {
-                        z4 = true;
-                    }
-                }
-                if (z4 || this.h != null || this.y == null || (i & 1) == 0) {
-                    str3 = null;
-                } else {
-                    str3 = l7c.r(user);
-                    if (!str3.equals(this.y)) {
-                        z4 = true;
-                    }
-                }
-                if (!z4) {
-                    return;
-                }
             } else {
-                str3 = null;
+                this.y = true;
+                hl.d3(ya5Var, 500L);
             }
-            pb0Var.q(user);
-            TLRPC.UserStatus userStatus3 = user.status;
-            this.E = userStatus3 != null ? userStatus3.expires : 0;
-            CharSequence charSequence4 = this.h;
-            if (charSequence4 != null) {
-                this.y = null;
-                df0Var.l(charSequence4, true);
-            } else {
-                if (str3 == null) {
-                    str3 = l7c.r(user);
-                }
-                this.y = str3;
-                df0Var.l(str3, false);
-            }
-            if (this.n == null) {
-                if (user.bot) {
-                    int i6 = bkb.x6;
-                    jiaVar.setTag(Integer.valueOf(i6));
-                    if (z2) {
-                        i6 = bkb.eh;
-                    }
-                    zkb.W(jiaVar, i6, wjbVar);
-                    jiaVar.l(k96.M0(2131753153, null), false);
-                } else {
-                    long j = user.id;
-                    int i7 = this.x;
-                    if (j == y6c.h(i7).e() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(i7).getCurrentTime()) || na7.q1(i7).a0.containsKey(Long.valueOf(user.id)))) {
-                        int i8 = bkb.m6;
-                        jiaVar.setTag(Integer.valueOf(i8));
-                        if (z2) {
-                            i8 = bkb.fh;
-                        }
-                        zkb.W(jiaVar, i8, wjbVar);
-                        jiaVar.l(k96.M0(2131747633, null), false);
-                    } else {
-                        int i9 = bkb.x6;
-                        jiaVar.setTag(Integer.valueOf(i9));
-                        if (z2) {
-                            i9 = bkb.eh;
-                        }
-                        zkb.W(jiaVar, i9, wjbVar);
-                        jiaVar.l(k96.d0(i7, user, null, null), false);
-                    }
-                }
-                jiaVar.setEmojiColor(jiaVar.getTextColor());
-            }
-            be0Var.f(user, pb0Var);
+        } else {
+            this.r = 1.0f;
+            a();
         }
-        chat = null;
-        be0Var.setRoundRadius(gl.L((chat == null && chat.forum) ? 14.0f : 24.0f));
-        charSequence = this.n;
-        if (charSequence != null) {
-        }
-        g();
+        d();
     }
 
     public final void g() {
-        TL_account.RequirementToContact requirementToContact = null;
-        if (this.S) {
-            TL_account.requirementToContactPremium requirementtocontactpremium = this.R;
-            if (requirementtocontactpremium != null) {
-                requirementToContact = requirementtocontactpremium;
-            } else if (this.f instanceof TLRPC.User) {
-                requirementToContact = na7.q1(this.x).J2(((TLRPC.User) this.f).id);
+        this.y = false;
+        hl.r(this.E);
+        ValueAnimator valueAnimator = this.s;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.s.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.s = ofFloat;
+        ofFloat.setDuration(420L);
+        this.s.setInterpolator(k43.h);
+        this.s.addUpdateListener(new ch4(this, (byte) 9));
+        this.s.addListener(new cn2(this, (byte) 29));
+        this.s.start();
+    }
+
+    @Override // android.view.ViewGroup
+    public final int getChildDrawingOrder(int i, int i2) {
+        int[] iArr = this.I;
+        if (iArr == null || iArr.length != i) {
+            iArr = new int[i];
+            ArrayList arrayList = this.c;
+            int size = arrayList.size();
+            int i3 = 0;
+            int i4 = 0;
+            while (i4 < size) {
+                Object obj = arrayList.get(i4);
+                i4++;
+                int indexOfChild = indexOfChild((bb5) obj);
+                if (indexOfChild >= 0 && i3 < i) {
+                    iArr[i3] = indexOfChild;
+                    i3++;
+                }
+            }
+            ArrayList arrayList2 = this.b;
+            int size2 = arrayList2.size();
+            int i5 = 0;
+            while (i5 < size2) {
+                Object obj2 = arrayList2.get(i5);
+                i5++;
+                int indexOfChild2 = indexOfChild((bb5) obj2);
+                if (indexOfChild2 >= 0 && i3 < i) {
+                    iArr[i3] = indexOfChild2;
+                    i3++;
+                }
+            }
+            ArrayList arrayList3 = this.a;
+            int size3 = arrayList3.size();
+            int i6 = 0;
+            while (i6 < size3) {
+                Object obj3 = arrayList3.get(i6);
+                i6++;
+                int indexOfChild3 = indexOfChild((bb5) obj3);
+                if (indexOfChild3 >= 0 && i3 < i) {
+                    iArr[i3] = indexOfChild3;
+                    i3++;
+                }
+            }
+            for (int i7 = 0; i7 < i && i3 < i; i7++) {
+                if (!(getChildAt(i7) instanceof bb5)) {
+                    iArr[i3] = i7;
+                    i3++;
+                }
+            }
+            if (i3 != i) {
+                for (int i8 = 0; i8 < i; i8++) {
+                    iArr[i8] = i8;
+                }
+            }
+            this.I = iArr;
+        }
+        return iArr[i2];
+    }
+
+    public final void h() {
+        if (this.w) {
+            int i = 0;
+            this.w = false;
+            hl.r(this.J);
+            this.f.b();
+            this.y = false;
+            hl.r(this.E);
+            ValueAnimator valueAnimator = this.s;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.s.cancel();
+                this.s = null;
+            }
+            ArrayList arrayList = this.a;
+            int size = arrayList.size();
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList.get(i2);
+                i2++;
+                bb5 bb5Var = (bb5) obj;
+                bb5Var.a();
+                removeView(bb5Var);
+            }
+            ArrayList arrayList2 = this.b;
+            int size2 = arrayList2.size();
+            int i3 = 0;
+            while (i3 < size2) {
+                Object obj2 = arrayList2.get(i3);
+                i3++;
+                bb5 bb5Var2 = (bb5) obj2;
+                bb5Var2.a();
+                removeView(bb5Var2);
+            }
+            ArrayList arrayList3 = this.c;
+            int size3 = arrayList3.size();
+            while (i < size3) {
+                Object obj3 = arrayList3.get(i);
+                i++;
+                bb5 bb5Var3 = (bb5) obj3;
+                bb5Var3.a();
+                removeView(bb5Var3);
+            }
+            arrayList.clear();
+            arrayList2.clear();
+            arrayList3.clear();
+            this.r = 1.0f;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02e2  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x030a A[EDGE_INSN: B:146:0x030a->B:147:0x030a BREAK  A[LOOP:7: B:130:0x02da->B:141:0x0305], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0310  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x038a  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x03f6  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x0467  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x0477  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x04c9  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x04e9 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x0388 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x04cc  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0470  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0314  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01e6  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0217 A[EDGE_INSN: B:72:0x0217->B:73:0x0217 BREAK  A[LOOP:3: B:62:0x01dc->B:69:0x0214], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0269  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void i(boolean z) {
+        VoIPService voIPService;
+        bb5 bb5Var;
+        bb5 bb5Var2;
+        VoIPService voIPService2;
+        int i;
+        long j;
+        int size;
+        boolean z2;
+        int i2;
+        int i3;
+        long j2;
+        long j3;
+        int i4;
+        zh6 zh6Var;
+        long j4;
+        int i5;
+        int size2;
+        int i6;
+        int i7;
+        boolean z3;
+        long B1;
+        boolean z4;
+        String str;
+        TLRPC.Chat chat;
+        wc2 wc2Var;
+        long j5;
+        float f;
+        boolean z5;
+        boolean z6;
+        if (this.w) {
+            VoIPService sharedInstance = VoIPService.getSharedInstance();
+            VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+            vc2 vc2Var = sharedInstance2 != null ? sharedInstance2.groupCall : null;
+            if (sharedInstance == null || vc2Var == null) {
+                return;
+            }
+            long selfId = sharedInstance.getSelfId();
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            TextView textView = this.d;
+            this.e.setImageResource(sharedInstance.isMicMute() ? R.drawable.msg_voice_muted : R.drawable.msg_voice_unmuted);
+            this.f.c();
+            long c = k91.c();
+            if (c != this.H) {
+                this.H = c;
+                me8 me8Var = this.K.a;
+                if (me8Var != null) {
+                    me8Var.e();
+                }
+            }
+            int callState = sharedInstance.getCallState();
+            if (callState == 5) {
+                textView.setText(ob6.M0(2131742905, null));
+                textView.setVisibility(0);
+            } else if (callState != 3) {
+                textView.setText(ob6.M0(2131743071, null));
+                textView.setVisibility(0);
+            } else {
+                textView.setVisibility(8);
+            }
+            LinkedHashMap linkedHashMap = new LinkedHashMap();
+            ArrayList a = cb5.a(selfId, vc2Var);
+            int size3 = a.size();
+            int i8 = 0;
+            while (i8 < size3) {
+                Object obj = a.get(i8);
+                i8++;
+                wc2 wc2Var2 = (wc2) obj;
+                boolean z7 = wc2Var2.b;
+                TLRPC.GroupCallParticipant groupCallParticipant = wc2Var2.a;
+                linkedHashMap.put(z7 ? groupCallParticipant.presentationEndpoint : groupCallParticipant.videoEndpoint, wc2Var2);
+            }
+            boolean isEmpty = linkedHashMap.isEmpty();
+            boolean z8 = true;
+            int size4 = this.a.size() - 1;
+            boolean z9 = false;
+            while (size4 >= 0) {
+                bb5 bb5Var3 = (bb5) this.a.get(size4);
+                hmc hmcVar = bb5Var3.c;
+                if (!isEmpty ? hmcVar == null || linkedHashMap.containsKey(bb5Var3.a) : hmcVar == null) {
+                    z6 = z8;
+                } else {
+                    this.a.remove(size4);
+                    bb5Var3.getClass();
+                    VoIPService sharedInstance3 = VoIPService.getSharedInstance();
+                    TLRPC.GroupCallParticipant groupCallParticipant2 = bb5Var3.n;
+                    if (groupCallParticipant2 == null || sharedInstance3 == null) {
+                        z6 = z8;
+                    } else {
+                        z6 = z8;
+                        sharedInstance3.removeExtraRemoteSink(groupCallParticipant2, bb5Var3.r, bb5Var3.U);
+                    }
+                    bb5Var3.n = null;
+                    this.b.add(bb5Var3);
+                    z9 = z6;
+                }
+                size4--;
+                z8 = z6;
+            }
+            boolean z10 = z8;
+            for (int size5 = this.c.size() - 1; size5 >= 0; size5--) {
+                bb5 bb5Var4 = (bb5) this.c.get(size5);
+                if (!linkedHashMap.containsKey(bb5Var4.a)) {
+                    this.c.remove(size5);
+                    bb5Var4.a();
+                    removeView(bb5Var4);
+                    this.I = null;
+                }
+            }
+            if (!isEmpty) {
+                for (wc2 wc2Var3 : linkedHashMap.values()) {
+                    boolean z11 = wc2Var3.b;
+                    TLRPC.GroupCallParticipant groupCallParticipant3 = wc2Var3.a;
+                    String str2 = z11 ? groupCallParticipant3.presentationEndpoint : groupCallParticipant3.videoEndpoint;
+                    ArrayList arrayList = this.a;
+                    int size6 = arrayList.size();
+                    int i9 = 0;
+                    while (true) {
+                        if (i9 >= size6) {
+                            voIPService = sharedInstance;
+                            bb5Var = null;
+                            break;
+                        }
+                        Object obj2 = arrayList.get(i9);
+                        i9++;
+                        bb5Var = (bb5) obj2;
+                        voIPService = sharedInstance;
+                        if (TextUtils.equals(bb5Var.a, str2)) {
+                            break;
+                        } else {
+                            sharedInstance = voIPService;
+                        }
+                    }
+                    if (bb5Var == null) {
+                        ArrayList arrayList2 = this.c;
+                        int size7 = arrayList2.size();
+                        int i10 = 0;
+                        while (true) {
+                            if (i10 >= size7) {
+                                bb5Var2 = null;
+                                break;
+                            }
+                            Object obj3 = arrayList2.get(i10);
+                            i10++;
+                            bb5Var2 = (bb5) obj3;
+                            if (TextUtils.equals(bb5Var2.a, str2)) {
+                                break;
+                            }
+                        }
+                        bb5Var = bb5Var2;
+                    }
+                    if (bb5Var == null) {
+                        bb5 bb5Var5 = new bb5(this.K, getContext(), str2, wc2Var3);
+                        if (z) {
+                            this.a.add(bb5Var5);
+                            addView(bb5Var5);
+                            z9 = z10;
+                        } else {
+                            bb5Var5.y = elapsedRealtime;
+                            bb5Var5.setAlpha(0.0f);
+                            this.c.add(bb5Var5);
+                            addView(bb5Var5);
+                        }
+                    } else {
+                        bb5Var.b = wc2Var3;
+                    }
+                    sharedInstance = voIPService;
+                }
+            } else if (this.a.isEmpty()) {
+                bb5 bb5Var6 = new bb5(this.K, getContext(), "avatar", null);
+                this.a.add(bb5Var6);
+                addView(bb5Var6);
+                voIPService2 = sharedInstance;
+                z9 = z10;
+                i = 0;
+                while (true) {
+                    j = 2000;
+                    if (i < this.c.size()) {
+                        break;
+                    }
+                    bb5 bb5Var7 = (bb5) this.c.get(i);
+                    bb5Var7.c(false);
+                    if (bb5Var7.K > 0.0f || elapsedRealtime - bb5Var7.y >= 2000) {
+                        this.c.remove(i);
+                        this.a.add(bb5Var7);
+                        this.I = null;
+                        i--;
+                        z9 = z10;
+                    }
+                    i++;
+                }
+                if (!isEmpty) {
+                    ArrayList arrayList3 = this.a;
+                    int size8 = arrayList3.size();
+                    boolean z12 = false;
+                    int i11 = 0;
+                    while (i11 < size8) {
+                        Object obj4 = arrayList3.get(i11);
+                        i11++;
+                        z12 |= !(((bb5) obj4).c == null ? z10 : false);
+                    }
+                    for (int size9 = this.a.size() - 1; size9 >= 0 && z12; size9--) {
+                        bb5 bb5Var8 = (bb5) this.a.get(size9);
+                        if (bb5Var8.c == null) {
+                            this.a.remove(size9);
+                            this.b.add(bb5Var8);
+                            z9 = z10;
+                        }
+                    }
+                }
+                ArrayList arrayList4 = this.a;
+                size = arrayList4.size();
+                z2 = false;
+                boolean z13 = false;
+                i2 = 0;
+                while (i2 < size) {
+                    Object obj5 = arrayList4.get(i2);
+                    i2++;
+                    bb5 bb5Var9 = (bb5) obj5;
+                    long j6 = j;
+                    bb5Var9.c(z10);
+                    boolean z14 = bb5Var9.L > 0.0f;
+                    ArrayList arrayList5 = arrayList4;
+                    float f2 = bb5Var9.K;
+                    if (f2 > 0.0f) {
+                        f = f2;
+                        z5 = true;
+                    } else {
+                        f = f2;
+                        z5 = false;
+                    }
+                    if (z14 != z5 || (z5 && Math.abs(Math.log(f / r10)) > 0.10000000149011612d)) {
+                        z2 = true;
+                    }
+                    if (!z5 && bb5Var9.c != null && elapsedRealtime - bb5Var9.E < j6) {
+                        z13 = true;
+                    }
+                    j = j6;
+                    arrayList4 = arrayList5;
+                    z10 = true;
+                }
+                if (z2 && !z13) {
+                    z9 = true;
+                }
+                if (!z9 || z) {
+                    i3 = 1;
+                    f(!z);
+                } else {
+                    i3 = 1;
+                }
+                j2 = 0;
+                j3 = 0;
+                long j7 = 0;
+                i4 = 0;
+                while (true) {
+                    zh6Var = vc2Var.P;
+                    if (i4 < zh6Var.m()) {
+                        break;
+                    }
+                    TLRPC.GroupCallParticipant groupCallParticipant4 = (TLRPC.GroupCallParticipant) zh6Var.n(i4);
+                    long j8 = zh6Var.j(i4);
+                    if (groupCallParticipant4 == null || j8 == selfId) {
+                        j5 = j2;
+                    } else {
+                        j5 = j2;
+                        if (j3 == j2 || groupCallParticipant4.lastSpeakTime > j7) {
+                            j7 = groupCallParticipant4.lastSpeakTime;
+                            j3 = j8;
+                        }
+                    }
+                    i4++;
+                    j2 = j5;
+                }
+                j4 = j2;
+                if (j3 == j4) {
+                    this.G = j3;
+                } else if (!isEmpty && !this.a.isEmpty()) {
+                    i5 = 0;
+                    if (((bb5) this.a.get(0)).b != null) {
+                        this.G = r47.B1(((bb5) this.a.get(0)).b.a.peer);
+                    }
+                    if (j3 == j4) {
+                        long j9 = this.G;
+                        if (j9 != j4 && vc2Var.d.f(j9) != null) {
+                            j3 = this.G;
+                        } else if (voIPService2.getChat() != null) {
+                            j3 = -voIPService2.getChat().id;
+                        } else {
+                            int i12 = i5;
+                            while (true) {
+                                if (i12 >= vc2Var.e.size()) {
+                                    break;
+                                }
+                                long B12 = r47.B1(((TLRPC.GroupCallParticipant) vc2Var.e.get(i12)).peer);
+                                if (B12 != selfId) {
+                                    selfId = B12;
+                                    break;
+                                }
+                                i12++;
+                            }
+                            j3 = selfId;
+                        }
+                    }
+                    ArrayList arrayList6 = this.a;
+                    size2 = arrayList6.size();
+                    i6 = i5;
+                    while (i6 < size2) {
+                        Object obj6 = arrayList6.get(i6);
+                        i6++;
+                        bb5 bb5Var10 = (bb5) obj6;
+                        if (bb5Var10.n == null) {
+                            bb5Var10.b();
+                        }
+                        hmc hmcVar2 = bb5Var10.c;
+                        int i13 = (hmcVar2 == null || bb5Var10.n == null || !hmcVar2.d.c.P || elapsedRealtime - bb5Var10.s >= 1500) ? i5 : i3;
+                        hmc hmcVar3 = bb5Var10.c;
+                        if (hmcVar3 != null && bb5Var10.n != null && !hmcVar3.d.c.P && (wc2Var = bb5Var10.b) != null) {
+                            boolean z15 = wc2Var.b;
+                            TLRPC.GroupCallParticipant groupCallParticipant5 = wc2Var.a;
+                            TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = z15 ? groupCallParticipant5.presentation : groupCallParticipant5.video;
+                            if (tL_groupCallParticipantVideo != null && !tL_groupCallParticipantVideo.paused && elapsedRealtime - bb5Var10.E < 1200) {
+                                i7 = i3;
+                                z3 = (i13 == 0 || i7 != 0) ? i3 : i5;
+                                if (bb5Var10.F != z3) {
+                                    bb5Var10.F = z3;
+                                    bb5Var10.d.setVisibility(z3 != 0 ? 8 : i5);
+                                    if (f11.a && bb5Var10.c != null) {
+                                        long elapsedRealtime2 = bb5Var10.s == j4 ? -1L : SystemClock.elapsedRealtime() - bb5Var10.s;
+                                        StringBuilder sb = new StringBuilder("group call pip: ");
+                                        sb.append(bb5Var10.a);
+                                        sb.append(z3 != 0 ? " video" : " avatar");
+                                        sb.append(", last frame ");
+                                        sb.append(elapsedRealtime2);
+                                        sb.append(" ms ago, subscribed ");
+                                        sb.append(bb5Var10.n != null ? i3 : i5);
+                                        sb.append(", rendered ");
+                                        sb.append(bb5Var10.c.d.c.P);
+                                        cc4.b(sb.toString());
+                                    }
+                                    bb5Var10.invalidate();
+                                }
+                                wc2 wc2Var4 = bb5Var10.b;
+                                B1 = wc2Var4 == null ? r47.B1(wc2Var4.a.peer) : j3;
+                                if (B1 != bb5Var10.G) {
+                                    bb5Var10.G = B1;
+                                    uc7 s1 = uc7.s1(voIPService2.getAccount());
+                                    if (wf3.D(B1)) {
+                                        TLRPC.User X1 = s1.X1(Long.valueOf(B1));
+                                        str = lbc.r(X1);
+                                        chat = X1;
+                                    } else {
+                                        TLRPC.Chat M0 = s1.M0(Long.valueOf(-B1));
+                                        if (M0 != null) {
+                                            str = M0.title;
+                                            chat = M0;
+                                        } else {
+                                            str = "";
+                                            chat = M0;
+                                        }
+                                    }
+                                    bb5Var10.d.a(chat);
+                                    bb5Var10.e.setText(str);
+                                }
+                                TLRPC.GroupCallParticipant groupCallParticipant6 = (TLRPC.GroupCallParticipant) vc2Var.d.f(B1);
+                                z4 = (groupCallParticipant6 != null || vc2Var.P.g(B1, null) == null) ? i5 : i3;
+                                l91 l91Var = bb5Var10.d;
+                                float f3 = z4 == 0 ? groupCallParticipant6.amplitude : 0.0f;
+                                l91Var.w = z4;
+                                l91Var.r = Math.min(1.0f, Math.max(0.0f, (f3 * 15.0f) / 80.0f));
+                                l91Var.invalidate();
+                                if (bb5Var10.H == z4) {
+                                    bb5Var10.H = z4;
+                                    bb5Var10.invalidate();
+                                }
+                            }
+                        }
+                        i7 = i5;
+                        if (i13 == 0) {
+                        }
+                        if (bb5Var10.F != z3) {
+                        }
+                        wc2 wc2Var42 = bb5Var10.b;
+                        if (wc2Var42 == null) {
+                        }
+                        if (B1 != bb5Var10.G) {
+                        }
+                        TLRPC.GroupCallParticipant groupCallParticipant62 = (TLRPC.GroupCallParticipant) vc2Var.d.f(B1);
+                        if (groupCallParticipant62 != null) {
+                        }
+                        l91 l91Var2 = bb5Var10.d;
+                        if (z4 == 0) {
+                        }
+                        l91Var2.w = z4;
+                        l91Var2.r = Math.min(1.0f, Math.max(0.0f, (f3 * 15.0f) / 80.0f));
+                        l91Var2.invalidate();
+                        if (bb5Var10.H == z4) {
+                        }
+                    }
+                }
+                i5 = 0;
+                if (j3 == j4) {
+                }
+                ArrayList arrayList62 = this.a;
+                size2 = arrayList62.size();
+                i6 = i5;
+                while (i6 < size2) {
+                }
+            }
+            voIPService2 = sharedInstance;
+            i = 0;
+            while (true) {
+                j = 2000;
+                if (i < this.c.size()) {
+                }
+                i++;
+            }
+            if (!isEmpty) {
+            }
+            ArrayList arrayList42 = this.a;
+            size = arrayList42.size();
+            z2 = false;
+            boolean z132 = false;
+            i2 = 0;
+            while (i2 < size) {
+            }
+            if (z2) {
+                z9 = true;
+            }
+            if (z9) {
+            }
+            i3 = 1;
+            f(!z);
+            j2 = 0;
+            j3 = 0;
+            long j72 = 0;
+            i4 = 0;
+            while (true) {
+                zh6Var = vc2Var.P;
+                if (i4 < zh6Var.m()) {
+                }
+                i4++;
+                j2 = j5;
+            }
+            j4 = j2;
+            if (j3 == j4) {
+            }
+            i5 = 0;
+            if (j3 == j4) {
+            }
+            ArrayList arrayList622 = this.a;
+            size2 = arrayList622.size();
+            i6 = i5;
+            while (i6 < size2) {
             }
         }
-        boolean z = requirementToContact instanceof TL_account.requirementToContactPremium;
-        if (this.P == z && this.Q == cf3.j(requirementToContact)) {
+    }
+
+    public final void j() {
+        int width = getWidth();
+        int height = getHeight();
+        if (width == 0 || height == 0) {
             return;
         }
-        this.P = z;
-        this.Q = cf3.j(requirementToContact);
-        this.O.f(this.P, true);
-        invalidate();
-    }
-
-    public wf2 getCheckBox() {
-        return this.d;
-    }
-
-    public Object getObject() {
-        return this.f;
-    }
-
-    public jia getStatusTextView() {
-        return this.c;
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float d = this.O.d(this.P);
-        wjb wjbVar = this.N;
-        if (d <= 0.0f && this.w == 2 && (this.I || this.J > 0.0f)) {
-            int v0 = bkb.v0(bkb.V6, wjbVar);
-            Paint paint = this.K;
-            paint.setColor(v0);
-            be0 be0Var = this.a;
-            canvas.drawCircle((be0Var.getMeasuredWidth() / 2) + be0Var.getLeft(), (be0Var.getMeasuredHeight() / 2) + be0Var.getTop(), (gl.L(4.0f) * this.J) + gl.L(18.0f), paint);
-        }
-        if (this.F) {
-            boolean z = k96.a0;
-            byte b = this.G;
-            int L = gl.L(z ? 0.0f : b + 72);
-            int measuredWidth = getMeasuredWidth() - gl.L(k96.a0 ? b + 72 : 0.0f);
-            if (!this.L) {
-                canvas.drawRect(L, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), bkb.U0("paintDivider", wjbVar));
-            } else {
-                bkb.k0.setColor(bkb.v0(bkb.Wg, wjbVar));
-                canvas.drawRect(L, getMeasuredHeight() - 1, measuredWidth, getMeasuredHeight(), bkb.k0);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        wf2 wf2Var = this.d;
-        if (wf2Var != null ? wf2Var.a.q : this.I) {
-            accessibilityNodeInfo.setCheckable(true);
-            accessibilityNodeInfo.setChecked(true);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
-        Object obj = this.f;
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(gl.L((!(obj instanceof String) || "premium".equalsIgnoreCase((String) obj) || "miniapps".equalsIgnoreCase((String) this.f)) ? 58.0f : 50.0f), TLObject.FLAG_30));
-    }
-
-    public void setCheckBoxEnabled(boolean z) {
-        wf2 wf2Var = this.d;
-        if (wf2Var != null) {
-            wf2Var.setEnabled(z);
-        }
-    }
-
-    public void setDrawDivider(boolean z) {
-        this.F = z;
-        invalidate();
-    }
-
-    public void setForbiddenCheck(boolean z) {
-        this.d.setForbidden(z);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        int textColor;
-        jia jiaVar = this.c;
-        if (jiaVar != null) {
-            try {
-                if (this.f != null && !this.r && !this.s && (textColor = jiaVar.getTextColor()) != this.W) {
-                    this.W = textColor;
-                    jiaVar.setEmojiColor(textColor);
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            bb5 bb5Var = (bb5) obj;
+            float[] fArr = bb5Var.O;
+            int round = Math.round((fArr[2] - fArr[0]) * width);
+            float[] fArr2 = bb5Var.O;
+            int round2 = Math.round((fArr2[3] - fArr2[1]) * height);
+            int max = Math.max(1, round);
+            int max2 = Math.max(1, round2);
+            float f = bb5Var.K;
+            if (f > 0.0f) {
+                float f2 = max;
+                float f3 = max2;
+                if (f2 / f3 > f) {
+                    max2 = Math.round(f2 / f);
+                } else {
+                    max = Math.round(f3 * f);
                 }
-            } catch (Exception e) {
-                fa4.g(e, true);
-                return;
             }
-        }
-        be0 be0Var = this.a;
-        if (be0Var != null) {
-            be0Var.invalidate();
-        }
-        try {
-            if (!this.s || be0Var == null) {
-                return;
+            if (max != bb5Var.S || max2 != bb5Var.T) {
+                bb5Var.S = max;
+                bb5Var.T = max2;
+                bb5Var.requestLayout();
             }
-            Drawable t = be0Var.getImageReceiver().t();
-            if (t instanceof pb0) {
-                ((pb0) t).h(bkb.w0(null, bkb.S7, false), bkb.w0(null, bkb.Z7, false));
-                be0Var.invalidate();
-            }
-        } catch (Exception e2) {
-            fa4.g(e2, true);
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int L = hl.L(6.0f);
+        int L2 = hl.L(6.0f);
+        int L3 = hl.L(6.0f);
+        ImageView imageView = this.e;
+        imageView.layout(L, L2, imageView.getMeasuredWidth() + L3, imageView.getMeasuredHeight() + hl.L(6.0f));
+        int i5 = i3 - i;
+        TextView textView = this.d;
+        int measuredWidth = (i5 - textView.getMeasuredWidth()) / 2;
+        textView.layout(measuredWidth, hl.L(8.0f), textView.getMeasuredWidth() + measuredWidth, textView.getMeasuredHeight() + hl.L(8.0f));
+        this.f.layout(0, 0, i5, i4 - i2);
+        d();
     }
 
-    public za5(Context context, int i, int i2, boolean z) {
-        this(i, i2, null, context, z, false);
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        setMeasuredDimension(size, size2);
+        this.e.measure(View.MeasureSpec.makeMeasureSpec(hl.L(28.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(28.0f), TLObject.FLAG_30));
+        this.d.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - hl.L(64.0f)), TLObject.FLAG_30), 0);
+        this.f.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        j();
+        if (this.y && i > 0 && i2 > 0 && e(i, i2)) {
+            post(this.E);
+        } else {
+            if (this.y) {
+                return;
+            }
+            post(new ya5(this, (byte) 0));
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        this.I = null;
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewRemoved(View view) {
+        super.onViewRemoved(view);
+        this.I = null;
     }
 }

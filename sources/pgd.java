@@ -1,21 +1,15 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class pgd {
-    public static final /* synthetic */ int a = 0;
-
-    static {
-        pgd.class.getClassLoader();
-    }
-
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
+    public static Task a(BasePendingResult basePendingResult, s68 s68Var) {
+        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        basePendingResult.b(new x7d(basePendingResult, taskCompletionSource, s68Var));
+        return taskCompletionSource.getTask();
     }
 }

@@ -1,56 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.text.style.CharacterStyle;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ql1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ byte c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class ql1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zu1 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ql1(mu1 mu1Var, int i, int i2, CharacterStyle characterStyle, gb2 gb2Var) {
-        this.d = mu1Var;
-        this.b = i;
-        this.c = i2;
-        this.e = characterStyle;
-        this.f = gb2Var;
+    public /* synthetic */ ql1(zu1 zu1Var, byte b) {
+        this.a = b;
+        this.b = zu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        Object obj = this.f;
-        byte b2 = this.c;
-        int i = this.b;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
+        zu1 zu1Var = this.b;
         switch (b) {
             case 0:
-                mu1 mu1Var = (mu1) obj3;
-                mu1Var.ac = i;
-                mu1Var.bc = b2;
-                mu1Var.cc = (CharacterStyle) obj2;
-                ((gb2) obj).invalidate();
+                zu1Var.x3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zu1Var.Tc();
+                break;
+            case 1:
+                zu1Var.bb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zu1Var.O7();
+                break;
+            case 2:
+                zu1Var.bb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zu1Var.O7();
+                break;
+            case 3:
+                zu1Var.x3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zu1Var.Tc();
                 break;
             default:
-                kmc kmcVar = (kmc) obj;
-                gl.c3(new wbc((mmc) obj3, new jmc(((Context) obj2).getApplicationContext(), i, b2, kmcVar), kmcVar, (byte) 12));
+                zu1Var.a9 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nt1 nt1Var = zu1Var.m1;
+                if (nt1Var != null) {
+                    nt1Var.invalidate();
+                    zu1Var.A0.invalidate();
+                    break;
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ql1(mmc mmcVar, Context context, int i, int i2, kmc kmcVar) {
-        this.d = mmcVar;
-        this.e = context;
-        this.b = i;
-        this.c = i2;
-        this.f = kmcVar;
     }
 }

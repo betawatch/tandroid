@@ -1,41 +1,22 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class iy implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ty b;
+public final /* synthetic */ class iy implements s84, ay2 {
+    public final /* synthetic */ uy a;
 
-    public /* synthetic */ iy(ty tyVar, byte b) {
-        this.a = b;
-        this.b = tyVar;
+    @Override // ay2
+    public final void l(long j) {
+        uy uyVar = this.a;
+        uyVar.g1(j, uyVar.r2);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        ty tyVar = this.b;
-        switch (b) {
-            case 0:
-                tyVar.dismiss();
-                break;
-            case 1:
-                int value = tyVar.X1.getValue();
-                int e = (int) tyVar.g2.e();
-                if (value >= e) {
-                    tyVar.b1(value);
-                    break;
-                } else {
-                    gl.z3(tyVar.V1);
-                    b00.u(k96.G(e, "Gift2AuctionMinimumBidIncreased", new Object[0]), new u21(tyVar.c, tyVar.J0), R.raw.info, 36);
-                    break;
-                }
-            default:
-                tyVar.X1.setValueAnimated((int) tyVar.g2.e());
-                break;
-        }
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        this.a.f1();
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
     }
 }

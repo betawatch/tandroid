@@ -1,21 +1,47 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.logging.Level;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jk4 extends gw2 {
-    public ik4 a;
-    public fl8 b;
-    public p01 c;
-    public boolean d;
-    public /* synthetic */ Object e;
-    public int f;
+public final class jk4 {
+    public final ArrayList a;
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.e = obj;
-        this.f |= TLObject.FLAG_31;
-        return wge.a(null, null, false, this);
+    public jk4(byte b) {
+        switch (b) {
+            case 1:
+                File file = new File(System.getProperty("java.io.tmpdir"));
+                if (!file.exists()) {
+                    file.mkdirs();
+                }
+                this.a = new ArrayList();
+                break;
+            default:
+                this.a = new ArrayList();
+                break;
+        }
+    }
+
+    public final void a() {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            if (obj != null) {
+                grb.o();
+                return;
+            } else {
+                try {
+                    throw null;
+                } catch (Exception e) {
+                    nk7.d.log(Level.WARNING, "could not delete file ", (Throwable) e);
+                }
+            }
+        }
+        arrayList.clear();
     }
 }

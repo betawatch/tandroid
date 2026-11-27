@@ -1,121 +1,46 @@
 // default package
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_chatlists;
+import java.io.File;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ad4 extends jd4 {
-    public final /* synthetic */ bd4 F;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ad4 extends az5 implements sr4 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ad4(bd4 bd4Var, Context context, int i, int i2) {
-        super(context, null, i, i2);
-        this.F = bd4Var;
+    public /* synthetic */ ad4(Object obj, byte b) {
+        super(0);
+        this.b = b;
+        this.c = obj;
     }
 
-    @Override // jd4
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        cd4 cd4Var = this.F.d;
-        cd4Var.U1.remove(tL_exportedChatlistInvite);
-        cd4Var.b1();
-        cd4Var.c1(true);
-    }
-
-    @Override // jd4
-    public final void c() {
-        cs5 G = cs5.G(this.F.d.c, null, this);
-        final byte b = 0;
-        G.b(R.drawable.msg_copy, k96.M0(2131751750, null), new Runnable(this) { // from class: zc4
-            public final /* synthetic */ ad4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b2 = b;
-                ad4 ad4Var = this.b;
-                switch (b2) {
-                    case 0:
-                        String str = ad4Var.y;
-                        if (str != null && gl.g(str)) {
-                            new u21(ad4Var.F.d.V1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        ad4Var.d();
-                        break;
-                    default:
-                        ad4Var.a();
-                        break;
+    @Override // sr4
+    public final Object invoke() {
+        switch (this.b) {
+            case 0:
+                Object obj = bd4.e;
+                File file = (File) this.c;
+                synchronized (obj) {
+                    bd4.d.remove(file.getAbsolutePath());
                 }
-            }
-        }, false);
-        final byte b2 = 1;
-        G.b(R.drawable.msg_qrcode, k96.M0(2131750456, null), new Runnable(this) { // from class: zc4
-            public final /* synthetic */ ad4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b22 = b2;
-                ad4 ad4Var = this.b;
-                switch (b22) {
-                    case 0:
-                        String str = ad4Var.y;
-                        if (str != null && gl.g(str)) {
-                            new u21(ad4Var.F.d.V1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        ad4Var.d();
-                        break;
-                    default:
-                        ad4Var.a();
-                        break;
+                return f9c.a;
+            case 1:
+                ((ke5) this.c).dispose();
+                return f9c.a;
+            case 2:
+                File file2 = (File) ((yj8) this.c).invoke();
+                String name = file2.getName();
+                name.getClass();
+                int lastIndexOf = name.lastIndexOf(46, name.length() - 1);
+                if ((lastIndexOf != -1 ? name.substring(lastIndexOf + 1, name.length()) : "").equals("preferences_pb")) {
+                    File absoluteFile = file2.getAbsoluteFile();
+                    absoluteFile.getClass();
+                    return absoluteFile;
                 }
-            }
-        }, false);
-        final byte b3 = 2;
-        G.b(R.drawable.msg_delete, k96.M0(2131751522, null), new Runnable(this) { // from class: zc4
-            public final /* synthetic */ ad4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                byte b22 = b3;
-                ad4 ad4Var = this.b;
-                switch (b22) {
-                    case 0:
-                        String str = ad4Var.y;
-                        if (str != null && gl.g(str)) {
-                            new u21(ad4Var.F.d.V1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        ad4Var.d();
-                        break;
-                    default:
-                        ad4Var.a();
-                        break;
-                }
-            }
-        }, true);
-        if (k96.a0) {
-            G.i = (byte) 3;
+                throw new IllegalStateException(("File extension for file: " + file2 + " does not match required extension for Preferences file: preferences_pb").toString());
+            default:
+                return fhd.c((shc) this.c);
         }
-        G.a0();
     }
 }

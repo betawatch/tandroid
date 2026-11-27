@@ -1,9 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class goc {
-    public float a;
-    public float b;
-    public float c;
+import android.media.VolumeProvider;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class goc extends VolumeProvider {
+    public final /* synthetic */ oy3 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public goc(oy3 oy3Var, int i, int i2, int i3, String str) {
+        super(i, i2, i3, str);
+        this.a = oy3Var;
+    }
+
+    @Override // android.media.VolumeProvider
+    public final void onAdjustVolume(int i) {
+        oy3 oy3Var = this.a;
+        ((a05) ((pm3) oy3Var.f).d).a.post(new yz4(oy3Var, i, (byte) 1));
+    }
+
+    @Override // android.media.VolumeProvider
+    public final void onSetVolumeTo(int i) {
+        oy3 oy3Var = this.a;
+        ((a05) ((pm3) oy3Var.f).d).a.post(new yz4(oy3Var, i, (byte) 0));
+    }
 }

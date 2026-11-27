@@ -1,26 +1,64 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class uz3 extends r35 {
-    public final /* synthetic */ t14 Q;
+public final class uz3 extends FrameLayout {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ o24 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uz3(t14 t14Var) {
-        super(8);
-        this.Q = t14Var;
+    public uz3(o24 o24Var, Context context, boolean z) {
+        super(context);
+        this.b = o24Var;
+        this.a = z;
     }
 
-    @Override // d49
-    public final void u0(RecyclerView recyclerView, p49 p49Var, int i) {
-        try {
-            gv3 gv3Var = new gv3((byte) 2, recyclerView.getContext(), this);
-            gv3Var.a = i;
-            v0(gv3Var);
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        o24 o24Var = this.b;
+        b04 b04Var = o24Var.C0;
+        wz3 wz3Var = o24Var.E0;
+        a04 a04Var = o24Var.H0;
+        if (this.a || !(view == wz3Var || view == a04Var)) {
+            return super.drawChild(canvas, view, j);
+        }
+        canvas.save();
+        float y = b04Var.getY() + b04Var.getMeasuredHeight() + 1.0f;
+        if (view == wz3Var) {
+            y = Math.max(y, a04Var.getY() + a04Var.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y - (hl.L(16.0f) * o24Var.a.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        o24 o24Var = this.b;
+        o24Var.L0 = true;
+        o24Var.Y();
+        h04 h04Var = o24Var.U0;
+        if (h04Var != null) {
+            h04Var.a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        o24 o24Var = this.b;
+        o24Var.L0 = false;
+        o24Var.Y();
+        h04 h04Var = o24Var.U0;
+        if (h04Var != null) {
+            h04Var.a();
         }
     }
 }

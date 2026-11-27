@@ -1,64 +1,78 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class i3d extends xx4 {
-    public final ngb F;
+public abstract class i3d extends cr2 {
+    public final rg0 k;
 
-    public i3d(Context context, Looper looper, ntb ntbVar, ngb ngbVar, ey4 ey4Var, fy4 fy4Var) {
-        super(kk7.s4, ey4Var, fy4Var, ntbVar, context, looper);
-        this.F = ngbVar;
+    public i3d(rg0 rg0Var) {
+        this.k = rg0Var;
     }
 
-    @Override // gg0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.service.IClientTelemetryService");
-        return queryLocalInterface instanceof a3d ? (a3d) queryLocalInterface : new a3d(iBinder, "com.google.android.gms.common.internal.service.IClientTelemetryService", (byte) 1);
+    public void A(asb asbVar) {
+        n(new ci6(asbVar, (byte) 0));
     }
 
-    @Override // gg0
-    public final f84[] f() {
-        return udd.c;
+    public void B() {
+        y(null, this.k);
     }
 
-    @Override // gg0
-    public final Bundle h() {
-        ngb ngbVar = this.F;
-        ngbVar.getClass();
-        Bundle bundle = new Bundle();
-        String str = ngbVar.a;
-        if (str != null) {
-            bundle.putString("api", str);
-        }
-        return bundle;
+    @Override // rg0
+    public boolean a(ft6 ft6Var) {
+        return this.k.a(ft6Var);
     }
 
-    @Override // gg0
-    public final int i() {
-        return 203400000;
+    @Override // rg0
+    public asb h() {
+        return this.k.h();
     }
 
-    @Override // gg0
-    public final String l() {
-        return "com.google.android.gms.common.internal.service.IClientTelemetryService";
+    @Override // rg0
+    public final ft6 i() {
+        return this.k.i();
     }
 
-    @Override // gg0
-    public final String n() {
-        return "com.google.android.gms.common.telemetry.service.START";
+    @Override // rg0
+    public boolean j() {
+        return this.k.j();
     }
 
-    @Override // gg0
-    public final boolean p() {
-        return true;
+    @Override // rg0
+    public final void m(v2c v2cVar) {
+        this.j = gcc.q(null);
+        B();
+    }
+
+    @Override // rg0
+    public void t(ft6 ft6Var) {
+        this.k.t(ft6Var);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // cr2
+    public final vz6 u(Integer num, vz6 vz6Var) {
+        return z(vz6Var);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // cr2
+    public final long v(long j, Integer num) {
+        return j;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // cr2
+    public final int w(int i, Integer num) {
+        return i;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // cr2
+    public final void x(Integer num, rg0 rg0Var, asb asbVar) {
+        A(asbVar);
+    }
+
+    public vz6 z(vz6 vz6Var) {
+        return vz6Var;
     }
 }

@@ -1,6 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface zu5 {
+public final class zu5 extends yfb implements is4 {
+    public /* synthetic */ Object a;
+    public final /* synthetic */ zj8 b;
+    public final /* synthetic */ Long c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zu5(zj8 zj8Var, Long l, zw2 zw2Var) {
+        super(2, zw2Var);
+        this.b = zj8Var;
+        this.c = l;
+    }
+
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zu5 zu5Var = new zu5(this.b, this.c, zw2Var);
+        zu5Var.a = obj;
+        return zu5Var;
+    }
+
+    @Override // is4
+    public final Object invoke(Object obj, Object obj2) {
+        zu5 zu5Var = (zu5) create((rj7) obj, (zw2) obj2);
+        f9c f9cVar = f9c.a;
+        zu5Var.invokeSuspend(f9cVar);
+        return f9cVar;
+    }
+
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        ixe.b(obj);
+        rj7 rj7Var = (rj7) this.a;
+        rj7Var.getClass();
+        rj7Var.d(this.b, this.c);
+        return f9c.a;
+    }
 }

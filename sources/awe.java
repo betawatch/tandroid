@@ -1,41 +1,54 @@
 // default package
 
-import java.util.Map;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class awe {
-    public static r2c a(r2c r2cVar, String[] strArr, Map map) {
-        int i = 0;
-        if (r2cVar == null) {
-            if (strArr == null) {
-                return null;
-            }
-            if (strArr.length == 1) {
-                return (r2c) map.get(strArr[0]);
-            }
-            if (strArr.length > 1) {
-                r2c r2cVar2 = new r2c();
-                int length = strArr.length;
-                while (i < length) {
-                    r2cVar2.a((r2c) map.get(strArr[i]));
-                    i++;
+public final class awe extends qve {
+    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // qve
+    public final void a(ese eseVar, ese eseVar2, long j) {
+        ArrayList arrayList;
+        List list = (List) a5f.l(eseVar2, j);
+        int size = list.size();
+        List list2 = (List) a5f.l(eseVar, j);
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof vve ? new gve(size) : ((list2 instanceof p0f) && (list2 instanceof bue)) ? ((bue) list2).zza(size) : new ArrayList(size);
+            a5f.d(j, eseVar, list2);
+        } else {
+            if (c.isAssignableFrom(list2.getClass())) {
+                ArrayList arrayList2 = new ArrayList(list2.size() + size);
+                arrayList2.addAll(list2);
+                a5f.d(j, eseVar, arrayList2);
+                arrayList = arrayList2;
+            } else if (list2 instanceof l4f) {
+                l4f l4fVar = (l4f) list2;
+                gve gveVar = new gve(l4fVar.a.size() + size);
+                gveVar.addAll(l4fVar);
+                a5f.d(j, eseVar, gveVar);
+                arrayList = gveVar;
+            } else if ((list2 instanceof p0f) && (list2 instanceof bue)) {
+                bue bueVar = (bue) list2;
+                if (!bueVar.zza()) {
+                    list2 = bueVar.zza(list2.size() + size);
+                    a5f.d(j, eseVar, list2);
                 }
-                return r2cVar2;
             }
-        } else if (strArr != null) {
-            if (strArr.length == 1) {
-                r2cVar.a((r2c) map.get(strArr[0]));
-                return r2cVar;
-            }
-            if (strArr.length > 1) {
-                int length2 = strArr.length;
-                while (i < length2) {
-                    r2cVar.a((r2c) map.get(strArr[i]));
-                    i++;
-                }
-            }
+            list2 = arrayList;
         }
-        return r2cVar;
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
+        }
+        if (size2 > 0) {
+            list = list2;
+        }
+        a5f.d(j, eseVar, list);
     }
 }

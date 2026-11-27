@@ -1,32 +1,57 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import androidx.appcompat.widget.SearchView;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class vx1 extends mu1 {
-    public boolean wd;
-    public final /* synthetic */ TLRPC.User xd;
-    public final /* synthetic */ TLRPC.User yd;
-    public final /* synthetic */ long zd;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class vx1 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vx1(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j) {
-        super(bundle);
-        this.xd = user;
-        this.yd = user2;
-        this.zd = j;
+    public /* synthetic */ vx1(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // mu1, org.telegram.ui.ActionBar.d
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.wd) {
-            return;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                if (i == 4) {
+                    chatActivityEnterView.E1();
+                } else if (keyEvent != null && i == 0 && !keyEvent.isShiftPressed()) {
+                    if (chatActivityEnterView.q3) {
+                        if (keyEvent.isCtrlPressed()) {
+                        }
+                    } else if (!keyEvent.isCtrlPressed()) {
+                    }
+                    if (keyEvent.getAction() == 0 && chatActivityEnterView.O2 == null) {
+                        chatActivityEnterView.E1();
+                    }
+                }
+                break;
+            case 1:
+                if (i == 6) {
+                    ((zg3) obj).run();
+                    break;
+                }
+                break;
+            case 2:
+                if (i == 6) {
+                    ((Runnable) obj).run();
+                    break;
+                }
+                break;
+            default:
+                ((SearchView) obj).p();
+                break;
         }
-        this.wd = true;
-        u21.b0(this).I(R.raw.contact_check, k96.a0(null, null, 2131751727, l7c.r(this.xd)), gl.N2(k96.a0(null, null, 2131751728, l7c.r(this.yd)), -1, 0, new et(this, this.zd, (byte) 6), null)).j();
+        return true;
     }
 }

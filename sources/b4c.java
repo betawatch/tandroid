@@ -1,61 +1,151 @@
 // default package
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.HashMap;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.GradientDrawable;
+import android.text.SpannableStringBuilder;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class b4c {
-    public final int a;
+public final class b4c extends ny0 {
+    public ImageView S1;
+    public FrameLayout T1;
+    public c51 U1;
+    public CharSequence V1;
+    public boolean W1;
+    public CharSequence X1;
+    public st3 Y1;
+    public String Z1;
+    public String a2;
+    public int b2;
+    public String[] c2;
+    public String[] d2;
+    public l9c e2;
+    public boolean f2;
+    public int g2;
+    public int h2;
+    public int i2;
 
-    public b4c() {
-        int i = c4c.K;
-        c4c.K = i + 1;
-        this.a = i;
+    @Override // ny0
+    public final c79 H0(d79 d79Var) {
+        l9c l9cVar = new l9c(d79Var, getContext(), this.a, 0, true, new u3c(this, (byte) 0), this.J0);
+        this.e2 = l9cVar;
+        l9cVar.r = false;
+        return l9cVar;
     }
 
-    public static void h(b4c b4cVar) {
-        if (c4c.M == null) {
-            c4c.M = new HashMap();
+    @Override // ny0
+    public final CharSequence K0() {
+        return "Translate";
+    }
+
+    @Override // ny0
+    public final void M0(float f) {
+        ImageView imageView = this.S1;
+        float f2 = 1.0f - f;
+        imageView.setAlpha(f2);
+        imageView.setScaleX(hl.R1(0.6f, 1.0f, f2));
+        imageView.setScaleY(hl.R1(0.6f, 1.0f, f2));
+    }
+
+    public final void Z0(fu5 fu5Var, LinearLayout linearLayout, boolean z, String str, Runnable runnable) {
+        int i = aob.E8;
+        int i2 = aob.F8;
+        b8 b8Var = new b8(1, this.J0, getContext(), false, false);
+        b8Var.setPadding(hl.L(18.0f), 0, hl.L(18.0f), 0);
+        b8Var.setText(str);
+        b8Var.setChecked(z);
+        b8Var.d(aob.v0(i, this.J0), aob.v0(i2, this.J0));
+        b8Var.setSelectorColor(aob.p1(0.12f, aob.v0(i, this.J0)));
+        b8Var.setOnClickListener(new q(fu5Var, z, runnable, (byte) 1));
+        linearLayout.addView(b8Var, tre.o(-1, -2));
+    }
+
+    public final void a1() {
+        if (this.g2 >= 0) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.g2, true);
+            this.g2 = -1;
         }
-        if (c4c.L == null) {
-            c4c.L = new LongSparseArray();
+    }
+
+    public final void b1() {
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        byte b = 1;
+        byte b2 = 0;
+        CharSequence[] charSequenceArr = {this.V1};
+        tL_textWithEntities.entities = ls6.d0(this.a).Y(charSequenceArr, true, true);
+        CharSequence charSequence = charSequenceArr[0];
+        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
+        if (this.Y1 != null) {
+            this.U1.setLoading(true);
         }
-        Class<?> cls = b4cVar.getClass();
-        if (c4c.M.containsKey(cls)) {
-            return;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) ob6.M0(2131748533, null));
+        spannableStringBuilder.setSpan(new ya6(null, hl.L(120.0f), 0, null), 0, spannableStringBuilder.length(), 33);
+        this.X1 = spannableStringBuilder;
+        this.W1 = true;
+        TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
+        tL_messages_translateText.to_lang = this.a2;
+        tL_messages_translateText.flags |= 2;
+        tL_messages_translateText.text.add(tL_textWithEntities);
+        int i = this.b2;
+        if (i != 1) {
+            tL_messages_translateText.flags |= 4;
+            tL_messages_translateText.tone = this.c2[i];
         }
-        c4c.M.put(cls, b4cVar);
-        c4c.L.put(b4cVar.a, b4cVar);
+        this.g2 = ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_translateText, new ic(b2), new u3c(this, b));
+        this.e2.O(true);
     }
 
-    public boolean c(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.I(c4cVar2);
+    @Override // ny0, nx0
+    public final void e0() {
+        super.e0();
+        ValueAnimator valueAnimator = this.P0;
+        FrameLayout frameLayout = this.T1;
+        if (valueAnimator != null) {
+            frameLayout.setTranslationY(-((Float) valueAnimator.getAnimatedValue()).floatValue());
+        } else {
+            frameLayout.setTranslationY(0.0f);
+        }
     }
 
-    public View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        n5 n5Var = new n5(i, wjbVar, context);
-        n5Var.setLayoutParams(nme.c(-2.0f, -1));
-        return n5Var;
+    @Override // nx0
+    public final void p0() {
+        FrameLayout frameLayout = this.T1;
+        try {
+            super.p0();
+            int v0 = aob.v0(aob.a7, this.J0);
+            if (v0 != this.i2) {
+                this.i2 = v0;
+                s0(v0);
+            }
+            if (frameLayout == null || !(frameLayout.getBackground() instanceof GradientDrawable) || v0 == this.h2) {
+                return;
+            }
+            this.h2 = v0;
+            ((GradientDrawable) frameLayout.getBackground()).setColors(new int[]{aob.p1(0.0f, v0), v0, v0});
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 
-    public boolean e(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.J(c4cVar2);
-    }
-
-    public boolean f() {
-        return !(this instanceof hg9);
-    }
-
-    public boolean g() {
-        return this instanceof f12;
-    }
-
-    public void a(o39 o39Var, View view, c4c c4cVar) {
-    }
-
-    public void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        c51 c51Var = this.U1;
+        super.show();
+        jy0 jy0Var = this.o1;
+        if (jy0Var != null) {
+            jy0Var.setTitle("Translate");
+        }
+        this.e2.O(false);
+        b1();
+        if (this.Y1 != null) {
+            c51Var.setText("Use This Translation");
+            c51Var.setOnClickListener(new t3c(this, (byte) 3));
+        }
     }
 }

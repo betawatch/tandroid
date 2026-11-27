@@ -1,62 +1,64 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.nio.charset.Charset;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fwe {
-    public static final fwe c = new fwe();
-    public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final l69 a = new l69((byte) 2);
-
-    public final xwe a(Class cls) {
-        xwe l;
-        Class cls2;
-        Charset charset = foe.a;
-        if (cls == null) {
-            fvc.f("messageType");
-            return null;
-        }
-        ConcurrentHashMap concurrentHashMap = this.b;
-        xwe xweVar = (xwe) concurrentHashMap.get(cls);
-        if (xweVar != null) {
-            return xweVar;
-        }
-        Class cls3 = fxe.a;
-        if (!nne.class.isAssignableFrom(cls) && (cls2 = fxe.a) != null && !cls2.isAssignableFrom(cls)) {
-            w26.j("Message classes must extend GeneratedMessage or GeneratedMessageLite");
-            return null;
-        }
-        swe zzb = ((vse) this.a.b).zzb(cls);
-        if ((zzb.d & 2) == 2) {
-            if (nne.class.isAssignableFrom(cls)) {
-                l = new yue(fxe.d, fle.a, zzb.a);
-            } else {
-                mze mzeVar = fxe.b;
-                wke wkeVar = fle.b;
-                if (wkeVar == null) {
-                    sc8.j("Protobuf runtime is not correctly loaded.");
-                    return null;
+public abstract class fwe {
+    /* JADX WARN: Removed duplicated region for block: B:18:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0020  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object a(so8 so8Var, ad4 ad4Var, ax2 ax2Var) {
+        ro8 ro8Var;
+        int i;
+        try {
+            if (ax2Var instanceof ro8) {
+                ro8Var = (ro8) ax2Var;
+                int i2 = ro8Var.c;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    ro8Var.c = i2 - TLObject.FLAG_31;
+                    Object obj = ro8Var.b;
+                    i = ro8Var.c;
+                    if (i != 0) {
+                        ixe.b(obj);
+                        if (ro8Var.getContext().get(qf5.c) != so8Var) {
+                            grb.i("awaitClose() can only be invoked from the producer context");
+                            return null;
+                        }
+                        ro8Var.a = ad4Var;
+                        ro8Var.c = 1;
+                        va1 va1Var = new va1(1, xpe.a(ro8Var));
+                        va1Var.s();
+                        so8Var.S(new g23(va1Var, (byte) 1));
+                        Object q = va1Var.q();
+                        vx2 vx2Var = vx2.a;
+                        if (q == vx2Var) {
+                            return vx2Var;
+                        }
+                    } else {
+                        if (i != 1) {
+                            grb.i("call to 'resume' before 'invoke' with coroutine");
+                            return null;
+                        }
+                        ad4Var = ro8Var.a;
+                        ixe.b(obj);
+                    }
+                    ad4Var.invoke();
+                    return f9c.a;
                 }
-                l = new yue(mzeVar, wkeVar, zzb.a);
             }
-        } else if (nne.class.isAssignableFrom(cls)) {
-            l = (zzb.d & 1) == 1 ? que.l(zzb, pve.b, zqe.b, fxe.d, fle.a, ute.b) : que.l(zzb, pve.b, zqe.b, fxe.d, null, ute.b);
-        } else if ((zzb.d & 1) == 1) {
-            tve tveVar = pve.a;
-            jre jreVar = zqe.a;
-            mze mzeVar2 = fxe.b;
-            wke wkeVar2 = fle.b;
-            if (wkeVar2 == null) {
-                sc8.j("Protobuf runtime is not correctly loaded.");
-                return null;
+            if (i != 0) {
             }
-            l = que.l(zzb, tveVar, jreVar, mzeVar2, wkeVar2, ute.a);
-        } else {
-            l = que.l(zzb, pve.a, zqe.a, fxe.c, null, ute.a);
+            ad4Var.invoke();
+            return f9c.a;
+        } catch (Throwable th) {
+            ad4Var.invoke();
+            throw th;
         }
-        xwe xweVar2 = (xwe) concurrentHashMap.putIfAbsent(cls, l);
-        return xweVar2 != null ? xweVar2 : l;
+        ro8Var = new ro8(ax2Var);
+        Object obj2 = ro8Var.b;
+        i = ro8Var.c;
     }
 }

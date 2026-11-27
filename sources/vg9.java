@@ -1,47 +1,55 @@
 // default package
 
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vg9 extends mg9 {
-    public final Paint X;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class vg9 extends Drawable {
+    public boolean c;
+    public final Paint a = new Paint(1);
+    public final mm b = new mm(new v59(this, 7), 420, k43.h, 0);
+    public int d = jn7.d4;
 
-    public vg9(rh9 rh9Var, Rect rect, int i) {
-        super(rh9Var, rect, i);
-        this.X = new Paint(1);
+    public vg9(int i) {
+        a(i);
     }
 
-    @Override // mg9
-    public final int I() {
-        Rect rect = this.b;
-        return gl.L(12.0f) + rect.top + rect.bottom;
+    public final void a(int i) {
+        this.a.setColor(i);
     }
 
-    @Override // mg9
-    public final int K() {
-        return gl.L(32.0f);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float d = this.b.d(this.c);
+        if (d <= 0.0f) {
+            return;
+        }
+        Paint paint = this.a;
+        paint.setAlpha((int) (this.d * d));
+        paint.setShadowLayer(hl.L(12.0f) * d, 0.0f, hl.L(3.0f), aob.p1(d, 805306368));
+        Rect bounds = getBounds();
+        float L = hl.L(8.0f) * d;
+        float L2 = hl.L(0.0f) * d;
+        float L3 = hl.L(12.0f) * d;
+        canvas.drawRoundRect(bounds.left + L, bounds.top + L2, bounds.right - L, (hl.L(6.0f) * d) + (bounds.bottom - L2), L3, L3, paint);
     }
 
-    @Override // mg9
-    public final void W(Canvas canvas) {
-        rh9 rh9Var = this.a;
-        int i = rh9Var.C;
-        int i2 = rh9Var.S;
-        int i3 = i + i2 + rh9Var.T;
-        Rect rect = this.b;
-        int i4 = rect.left;
-        int i5 = ((i3 - i4) - rect.right) / 2;
-        float f = (((r1 - i5) / 2.0f) - i2) + i4;
-        float L = (gl.L(12.0f) - gl.L(1.0f)) / 2.0f;
-        int v0 = bkb.v0(rh9Var.D() ? bkb.ml : bkb.ll, rh9Var.D);
-        Paint paint = this.X;
-        paint.setColor(v0);
-        RectF rectF = gl.P;
-        rectF.set(f, L, i5 + f, gl.L(1.0f) + L);
-        canvas.drawRoundRect(rectF, gl.L(0.5f), gl.L(0.5f), paint);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.d = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

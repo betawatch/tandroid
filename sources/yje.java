@@ -1,19 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class yje implements zn7 {
-    public static final yje a = new yje();
+import java.util.Arrays;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yje extends jke {
+    public final String a;
+
+    public yje(String str) {
+        this.a = str;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
+        jke jkeVar = (jke) obj;
+        int zza = jkeVar.zza();
+        int c = jke.c((byte) 96);
+        if (c != zza) {
+            return c - jkeVar.zza();
         }
-        throw null;
+        String str = ((yje) jkeVar).a;
+        int length = str.length();
+        String str2 = this.a;
+        if (str2.length() == length) {
+            return str2.compareTo(str);
+        }
+        return str2.length() - str.length();
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || yje.class != obj.getClass()) {
+            return false;
+        }
+        return this.a.equals(((yje) obj).a);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(jke.c((byte) 96)), this.a});
+    }
+
+    public final String toString() {
+        return c00.k(new StringBuilder("\""), this.a, "\"");
+    }
+
+    @Override // jke
+    public final int zza() {
+        return jke.c((byte) 96);
     }
 }

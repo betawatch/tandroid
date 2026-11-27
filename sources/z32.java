@@ -1,65 +1,51 @@
 // default package
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.ActionBar.a;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class z32 extends i49 {
+public final /* synthetic */ class z32 implements icc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ c42 b;
+    public final /* synthetic */ h42 b;
 
-    public /* synthetic */ z32(c42 c42Var, byte b) {
+    public /* synthetic */ z32(h42 h42Var, byte b) {
         this.a = b;
-        this.b = c42Var;
+        this.b = h42Var;
     }
 
-    @Override // i49
-    public final void a(RecyclerView recyclerView, int i) {
-        y29 y29Var;
+    @Override // icc
+    public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        c42 c42Var = this.b;
+        h42 h42Var = this.b;
         switch (b) {
             case 0:
-                fu fuVar = c42Var.M;
-                boolean z = i != 0;
-                c42Var.I = z;
-                if (!z && c42Var.G != null) {
-                    c42Var.G = null;
-                }
-                if (i == 0) {
-                    int L = gl.L(13.0f);
-                    x02 x02Var = c42Var.b;
-                    int i2 = x02Var.t0;
-                    if (((x02Var.Y3[0] - i2) - L) + i2 < a.getCurrentActionBarHeight() && (y29Var = (y29) fuVar.K(0)) != null) {
-                        View view = y29Var.a;
-                        if (view.getTop() > 0) {
-                            fuVar.x0(0, view.getTop(), null);
-                            break;
-                        }
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                String str = (String) obj2;
+                TLRPC.User user = h42Var.r;
+                if (!h42Var.L) {
+                    h42Var.J = false;
+                    if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
+                        h42Var.K = true;
                     }
-                }
-                break;
-            default:
-                if (i == 1 && c42Var.d0 && c42Var.e0) {
-                    gl.t1(c42Var.b.getCurrentFocus());
+                    if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
+                        h42Var.H = walletuseraddress.address;
+                        h42Var.I = walletuseraddress.public_key;
+                    }
+                    h42Var.w.a(h42Var.H, user);
+                    h42Var.h0();
+                    h42Var.X();
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        switch (this.a) {
-            case 0:
-                c42 c42Var = this.b;
-                c42Var.h0();
-                if (c42Var.G != null) {
-                    c42Var.H += i2;
+            default:
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                if (!h42Var.L && wallettransaction != null) {
+                    h42Var.h0 = wallettransaction.fee;
+                    h42Var.i0();
+                    break;
                 }
-                c42Var.b.H1(c42Var, i2);
                 break;
         }
     }

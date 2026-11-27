@@ -1,79 +1,45 @@
 // default package
 
-import android.media.Rating;
-import android.os.Parcel;
-import android.os.Parcelable;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class hz8 implements Parcelable {
-    public static final Parcelable.Creator<hz8> CREATOR = new hv6((byte) 12);
-    public final int a;
-    public final float b;
-    public Rating c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class hz8 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ pcc c;
+    public final /* synthetic */ e d;
 
-    public hz8(int i, float f) {
-        this.a = i;
-        this.b = f;
+    public /* synthetic */ hz8(String str, pcc pccVar, e eVar) {
+        this.b = str;
+        this.c = pccVar;
+        this.d = eVar;
     }
 
-    public static hz8 c(float f) {
-        if (f >= 0.0f && f <= 100.0f) {
-            return new hz8(6, f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        e eVar = this.d;
+        pcc pccVar = this.c;
+        String str = this.b;
+        switch (b) {
+            case 0:
+                jz8.p(eVar, 0, new hz8(str, pccVar, eVar));
+                break;
+            default:
+                if (str == null) {
+                    d31.b0(eVar).N(ob6.M0(2131745589, null), ob6.M0(2131751070, null)).j();
+                    break;
+                } else {
+                    pccVar.a(str);
+                    break;
+                }
         }
-        lad.c("Rating", "Invalid percentage-based rating value");
-        return null;
     }
 
-    public static hz8 d(float f, int i) {
-        float f2;
-        if (i == 3) {
-            f2 = 3.0f;
-        } else if (i == 4) {
-            f2 = 4.0f;
-        } else {
-            if (i != 5) {
-                lad.c("Rating", "Invalid rating style (" + i + ") for a star rating");
-                return null;
-            }
-            f2 = 5.0f;
-        }
-        if (f >= 0.0f && f <= f2) {
-            return new hz8(i, f);
-        }
-        lad.c("Rating", "Trying to set out of range star-based rating");
-        return null;
-    }
-
-    public final float a() {
-        int i = this.a;
-        if ((i == 3 || i == 4 || i == 5) && b()) {
-            return this.b;
-        }
-        return -1.0f;
-    }
-
-    public final boolean b() {
-        return this.b >= 0.0f;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return this.a;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("Rating:style=");
-        sb.append(this.a);
-        sb.append(" rating=");
-        float f = this.b;
-        sb.append(f < 0.0f ? "unrated" : String.valueOf(f));
-        return sb.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.a);
-        parcel.writeFloat(this.b);
+    public /* synthetic */ hz8(e eVar, String str, pcc pccVar) {
+        this.d = eVar;
+        this.b = str;
+        this.c = pccVar;
     }
 }

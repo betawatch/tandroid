@@ -1,148 +1,98 @@
 // default package
 
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ResolveInfo;
-import android.content.pm.ServiceInfo;
-import android.graphics.Bitmap;
-import android.media.AudioRecord;
-import android.net.Uri;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.util.Log;
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.concurrent.Callable;
-import org.telegram.ui.Dictation.DictationLid;
-import org.webrtc.audio.WebRtcAudioRecord;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p63 implements Callable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class p63 {
+    public final SharedPreferences a;
+    public final ji4 b;
+    public final Object c;
+    public TaskCompletionSource d;
+    public boolean e;
+    public boolean f;
+    public Boolean g;
+    public final TaskCompletionSource h;
 
-    public /* synthetic */ p63(byte[] bArr, int[] iArr) {
-        this.a = (byte) 2;
-        this.c = bArr;
-        this.b = iArr;
-    }
-
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        String str;
-        ServiceInfo serviceInfo;
-        String str2;
-        String str3;
-        int i;
-        ComponentName startService;
-        String lambda$scheduleLogRecordingConfigurationsTask$0;
-        int i2 = -1;
-        int i3 = 0;
-        switch (this.a) {
-            case 0:
-                q63 q63Var = (q63) this.b;
-                byte[] bArr = (byte[]) this.c;
-                return yz.f(bArr.length, q63Var.c, bArr);
-            case 1:
-                q63 q63Var2 = (q63) this.b;
-                Uri uri = (Uri) this.c;
-                o63 createDataSource = q63Var2.b.createDataSource();
-                int i4 = q63Var2.c;
-                try {
-                    u63 u63Var = new u63(0L, uri);
-                    x93 x93Var = (x93) createDataSource;
-                    x93Var.open(u63Var);
-                    byte[] bArr2 = new byte[1024];
-                    int i5 = 0;
-                    while (i3 != -1) {
-                        if (i5 == bArr2.length) {
-                            bArr2 = Arrays.copyOf(bArr2, bArr2.length << 1);
-                        }
-                        i3 = x93Var.read(bArr2, i5, bArr2.length - i5);
-                        if (i3 != -1) {
-                            i5 += i3;
-                        }
-                    }
-                    byte[] copyOf = Arrays.copyOf(bArr2, i5);
-                    Bitmap f = yz.f(copyOf.length, i4, copyOf);
-                    x93Var.close();
-                    return f;
-                } catch (Throwable th) {
-                    ((x93) createDataSource).close();
-                    throw th;
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public p63(ji4 ji4Var) {
+        Boolean bool;
+        Boolean bool2;
+        PackageManager packageManager;
+        ApplicationInfo applicationInfo;
+        Bundle bundle;
+        Object obj = new Object();
+        this.c = obj;
+        this.d = new TaskCompletionSource();
+        this.e = false;
+        this.f = false;
+        this.h = new TaskCompletionSource();
+        ji4Var.a();
+        Context context = ji4Var.a;
+        this.b = ji4Var;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.crashlytics", 0);
+        this.a = sharedPreferences;
+        if (sharedPreferences.contains("firebase_crashlytics_collection_enabled")) {
+            this.f = false;
+            bool = Boolean.valueOf(sharedPreferences.getBoolean("firebase_crashlytics_collection_enabled", true));
+        } else {
+            bool = null;
+        }
+        if (bool == null) {
+            try {
+                packageManager = context.getPackageManager();
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e);
+            }
+            if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_crashlytics_collection_enabled")) {
+                bool2 = Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));
+                if (bool2 != null) {
+                    this.f = false;
+                    bool = null;
+                } else {
+                    this.f = true;
+                    bool = Boolean.valueOf(Boolean.TRUE.equals(bool2));
                 }
-            case 2:
-                return DictationLid.d((byte[]) this.c, (int[]) this.b);
-            case 3:
-                Context context = (Context) this.b;
-                Intent intent = (Intent) this.c;
-                c5a t = c5a.t();
-                if (Log.isLoggable("FirebaseMessaging", 3)) {
-                    Log.d("FirebaseMessaging", "Starting service");
-                }
-                ((ArrayDeque) t.e).offer(intent);
-                Intent intent2 = new Intent("com.google.firebase.MESSAGING_EVENT");
-                intent2.setPackage(context.getPackageName());
-                synchronized (t) {
-                    str = (String) t.b;
-                    if (str == null) {
-                        ResolveInfo resolveService = context.getPackageManager().resolveService(intent2, 0);
-                        str = null;
-                        if (resolveService == null || (serviceInfo = resolveService.serviceInfo) == null) {
-                            Log.e("FirebaseMessaging", "Failed to resolve target intent service, skipping classname enforcement");
-                        } else if (!context.getPackageName().equals(serviceInfo.packageName) || (str2 = serviceInfo.name) == null) {
-                            Log.e("FirebaseMessaging", "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
-                        } else {
-                            if (str2.startsWith(".")) {
-                                str3 = context.getPackageName() + serviceInfo.name;
-                                t.b = str3;
-                            } else {
-                                str3 = serviceInfo.name;
-                                t.b = str3;
-                            }
-                            str = str3;
-                        }
-                    }
-                }
-                if (str != null) {
-                    if (Log.isLoggable("FirebaseMessaging", 3)) {
-                        Log.d("FirebaseMessaging", "Restricting intent to a specific service: ".concat(str));
-                    }
-                    intent2.setClassName(context.getPackageName(), str);
-                }
-                try {
-                    if (t.z(context)) {
-                        startService = kdd.d(context, intent2);
-                    } else {
-                        startService = context.startService(intent2);
-                        Log.d("FirebaseMessaging", "Missing wake lock permission, service start may be delayed");
-                    }
-                    if (startService == null) {
-                        Log.e("FirebaseMessaging", "Error while delivering the message: ServiceIntent not found.");
-                        i2 = 404;
-                    }
-                } catch (IllegalStateException e) {
-                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e);
-                    i = 402;
-                    i2 = i;
-                    return Integer.valueOf(i2);
-                } catch (SecurityException e2) {
-                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e2);
-                    i = 401;
-                    i2 = i;
-                    return Integer.valueOf(i2);
-                }
-                return Integer.valueOf(i2);
-            default:
-                lambda$scheduleLogRecordingConfigurationsTask$0 = ((WebRtcAudioRecord) this.b).lambda$scheduleLogRecordingConfigurationsTask$0((AudioRecord) this.c);
-                return lambda$scheduleLogRecordingConfigurationsTask$0;
+            }
+            bool2 = null;
+            if (bool2 != null) {
+            }
+        }
+        this.g = bool;
+        synchronized (obj) {
+            if (a()) {
+                this.d.trySetResult(null);
+                this.e = true;
+            }
         }
     }
 
-    public /* synthetic */ p63(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
+    public final synchronized boolean a() {
+        boolean z;
+        Boolean bool = this.g;
+        if (bool != null) {
+            z = bool.booleanValue();
+        } else {
+            try {
+                z = this.b.h();
+            } catch (IllegalStateException unused) {
+                z = false;
+            }
+        }
+        String j = c00.j("Crashlytics automatic data collection ", z ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", j, null);
+        }
+        return z;
     }
 }

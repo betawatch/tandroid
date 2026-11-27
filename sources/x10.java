@@ -1,317 +1,221 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class x10 extends a {
-    public final /* synthetic */ byte G1;
-    public final /* synthetic */ Object H1;
+public final class x10 extends FrameLayout {
+    public final RectF a;
+    public boolean b;
+    public int c;
+    public int d;
+    public final /* synthetic */ j20 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x10(byte b, Context context, Object obj) {
-        super(context, null);
-        this.G1 = b;
-        this.H1 = obj;
+    public x10(j20 j20Var, Activity activity) {
+        super(activity);
+        this.e = j20Var;
+        this.a = new RectF();
+        this.b = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.a
-    public final boolean A() {
-        switch (this.G1) {
-            case 2:
-                rh3 rh3Var = ((cj3) this.H1).H3;
-                return rh3Var != null && rh3Var.c();
-            default:
-                return super.A();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setTag(R.id.bulletin_delegate_tag, new t10(this, (byte) 0));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setTag(R.id.bulletin_delegate_tag, null);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f;
+        float f2;
+        float f3;
+        float f4;
+        j20 j20Var = this.e;
+        q10 q10Var = j20Var.r1;
+        y10 y10Var = j20Var.m1;
+        boolean z = j20Var.n2;
+        if (j20Var.q2.size() <= 1) {
+            j20Var.s0.setBounds(0, (getMeasuredHeight() - j20Var.x1.getMeasuredHeight()) - j20Var.t0, getMeasuredWidth(), getMeasuredHeight());
+            j20Var.s0.draw(canvas);
+            if (z) {
+                y10Var.setVisibility(8);
+                return;
+            }
+            return;
+        }
+        if (q10Var.getVisibility() == 0) {
+            int L = hl.L(13.0f);
+            int translationY = (int) (q10Var.getTranslationY() + ((j20Var.t2 - j20Var.t0) - L));
+            if (z) {
+                translationY = (translationY - a.getCurrentActionBarHeight()) + hl.L(10.0f);
+            }
+            int L2 = hl.L(20.0f) + translationY;
+            int L3 = hl.L(15.0f) + getMeasuredHeight();
+            int i = j20Var.t0;
+            int i2 = L3 + i;
+            if (z || i + translationY >= a.getCurrentActionBarHeight()) {
+                f = 0.0f;
+                f2 = 1.0f;
+            } else {
+                float L4 = hl.L(4.0f) + L;
+                f = Math.min(1.0f, ((a.getCurrentActionBarHeight() - translationY) - j20Var.t0) / L4);
+                int currentActionBarHeight = (int) ((a.getCurrentActionBarHeight() - L4) * f);
+                translationY -= currentActionBarHeight;
+                L2 -= currentActionBarHeight;
+                i2 += currentActionBarHeight;
+                f2 = 1.0f - f;
+            }
+            int i3 = (int) ((1.0f - f) * hl.m);
+            int i4 = translationY + i3;
+            int i5 = L2 + i3;
+            j20Var.s0.setBounds(0, i4, getMeasuredWidth(), i2);
+            j20Var.s0.draw(canvas);
+            RectF rectF = this.a;
+            if (z || f2 == 1.0f) {
+                f3 = 20.0f;
+                f4 = 4.0f;
+            } else {
+                f3 = 20.0f;
+                aob.s0.setColor(aob.v0(aob.h5, j20Var.J0));
+                f4 = 4.0f;
+                rectF.set(j20Var.u0, j20Var.t0 + i4, getMeasuredWidth() - j20Var.u0, hl.L(24.0f) + j20Var.t0 + i4);
+                canvas.drawRoundRect(rectF, hl.L(12.0f) * f2, hl.L(12.0f) * f2, aob.s0);
+            }
+            if (!z && f2 != 0.0f) {
+                int L5 = hl.L(36.0f);
+                rectF.set((getMeasuredWidth() - L5) / 2, i5, (getMeasuredWidth() + L5) / 2, hl.L(f4) + i5);
+                int v0 = aob.v0(aob.zj, j20Var.J0);
+                int alpha = Color.alpha(v0);
+                aob.s0.setColor(v0);
+                aob.s0.setAlpha((int) (alpha * 1.0f * f2));
+                canvas.drawRoundRect(rectF, hl.L(2.0f), hl.L(2.0f), aob.s0);
+            }
+            if (z) {
+                y10Var.setVisibility(0);
+                float max = Math.max(0.0f, qd4.A(1.0f, j20Var.K2, hl.L(6.0f), hl.L(f3) + ((i4 - hl.m) - j20Var.t0)) - y10Var.getTop());
+                y10Var.setTranslationY(max);
+                j20Var.n1.setTranslationY(max);
+            }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a
-    public final void B(boolean z) {
-        switch (this.G1) {
-            case 2:
-                rh3 rh3Var = ((cj3) this.H1).H3;
-                if (rh3Var != null && rh3Var.c() && getBackButton() != null) {
-                    getBackButton().animate().alpha(z ? 1.0f : 0.0f).start();
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x002f, code lost:
+    
+        if (r5.getY() < (hl.L(12.0f) + r0.t2)) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0055, code lost:
+    
+        r0.dismiss();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0059, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
+    
+        if (r5.getY() < (getMeasuredHeight() - hl.L(((r0.J0() || r0.s2) ? 0 : 52) + jn7.U2))) goto L21;
+     */
+    @Override // android.view.ViewGroup
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            j20 j20Var = this.e;
+            if (j20Var.t2 != 0 && j20Var.m1.getAlpha() == 0.0f) {
+                if (j20Var.t1.b() > 0) {
                 }
-                super.B(z);
-                break;
-            default:
-                super.B(z);
-                break;
+            }
         }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.ActionBar.a
-    public final void H(int i, boolean z) {
-        ImageView imageView;
-        switch (this.G1) {
-            case 6:
-                ProfileActivity profileActivity = (ProfileActivity) this.H1;
-                super.H(i, z);
-                if (!z) {
-                    profileActivity.I5 = i;
-                    profileActivity.V3();
-                    ImageView imageView2 = profileActivity.Y0;
-                    if (imageView2 != null) {
-                        imageView2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-                    }
-                }
-                if (profileActivity.J0 && (imageView = this.e) != null) {
-                    imageView.setColorFilter(i, PorterDuff.Mode.SRC_IN);
-                    break;
-                }
-                break;
-            default:
-                super.H(i, z);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a
-    public final boolean Q(View view) {
-        switch (this.G1) {
-            case 2:
-                return super.Q(view) || view == ((cj3) this.H1).n0;
-            default:
-                return super.Q(view);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a
-    public final void R(View[] viewArr, boolean[] zArr) {
-        switch (this.G1) {
-            case 2:
-                super.R(viewArr, zArr);
-                ((cj3) this.H1).h.a(true, true);
-                break;
-            default:
-                super.R(viewArr, zArr);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.G1) {
-            case 2:
-                cj3 cj3Var = (cj3) this.H1;
-                pi3 pi3Var = cj3Var.Y;
-                if (pi3Var == null || pi3Var.getAlpha() <= 0.0f || !cj3Var.b.f) {
-                    break;
-                }
-                break;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a
-    public final void n(boolean z) {
-        switch (this.G1) {
-            case 2:
-                cj3 cj3Var = (cj3) this.H1;
-                cj3Var.Y.r.getText().clear();
-                if (z && cj3Var.Y.r.isFocused()) {
-                    gl.t1(cj3Var.Y.r);
-                }
-                cj3Var.Y.r.clearFocus();
-                cj3Var.Z.b(false);
-                break;
-            default:
-                super.n(z);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        switch (this.G1) {
-            case 6:
-                super.onLayout(z, i, i2, i3, i4);
-                ProfileActivity profileActivity = (ProfileActivity) this.H1;
-                RectF rectF = ProfileActivity.Z6;
-                profileActivity.h4(false);
-                break;
-            default:
-                super.onLayout(z, i, i2, i3, i4);
-                break;
-        }
+        super.onLayout(z, i, i2, i3, i4);
+        j20 j20Var = this.e;
+        j20Var.V0();
+        j20Var.U0();
     }
 
-    @Override // org.telegram.ui.ActionBar.a, android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int L;
+        j20 j20Var = this.e;
+        l10 l10Var = j20Var.x1;
+        l10 l10Var2 = j20Var.b2;
+        q10 q10Var = j20Var.r1;
+        int size = View.MeasureSpec.getSize(i2);
+        int size2 = View.MeasureSpec.getSize(i);
+        if (size != this.c || size2 != this.d) {
+            if (l10Var2.getTag() != null) {
+                j20Var.R0(false, false);
+            }
+            this.d = size2;
+            this.c = size;
+        }
+        this.b = true;
+        l10Var.setVisibility((j20Var.p1 || j20Var.d) ? 4 : 0);
+        j20Var.o1.setVisibility(l10Var.getVisibility());
+        int paddingTop = size - getPaddingTop();
+        ((FrameLayout.LayoutParams) q10Var.getLayoutParams()).topMargin = a.getCurrentActionBarHeight() + hl.m;
+        ((FrameLayout.LayoutParams) j20Var.n1.getLayoutParams()).topMargin = a.getCurrentActionBarHeight() + hl.m;
+        ((FrameLayout.LayoutParams) l10Var2.getLayoutParams()).topMargin = -getPaddingTop();
+        int L2 = hl.L(jn7.I2 + ((j20Var.J0() || j20Var.s2) ? 0 : 52));
+        if (j20Var.q2.size() > 1) {
+            L2 += (hl.L(56.0f) * j20Var.q2.size()) + j20Var.t0;
+        }
+        if (j20Var.q1 || j20Var.d) {
+            L = hl.L(8.0f);
+        } else {
+            if (L2 >= paddingTop) {
+                L2 = (int) ((paddingTop / 5) * 3.5f);
+            }
+            L = hl.L(8.0f) + (paddingTop - L2);
+            if (L > paddingTop - hl.L(((j20Var.J0() || j20Var.s2) ? 0 : 52) + jn7.z5)) {
+                L = paddingTop - hl.L(((j20Var.J0() || j20Var.s2) ? 0 : 52) + jn7.z5);
+            }
+            if (L < 0) {
+                L = 0;
+            }
+        }
+        if (j20Var.o2) {
+            L = 0;
+        }
+        if (q10Var.getPaddingTop() != L) {
+            q10Var.setPadding(0, L, 0, (j20Var.q1 && j20Var.d) ? 0 : q10Var.getPaddingBottom());
+        }
+        this.b = false;
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        getMeasuredHeight();
+    }
+
+    @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.G1) {
-            case 6:
-                ProfileActivity profileActivity = (ProfileActivity) this.H1;
-                oc6 oc6Var = profileActivity.Y;
-                Rect rect = profileActivity.M2;
-                oc6Var.getHitRect(rect);
-                if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+        return !this.e.J && super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        byte b = this.G1;
-        Object obj = this.H1;
-        switch (b) {
-            case 0:
-                super.setAlpha(f);
-                ((i20) obj).b.invalidate();
-                break;
-            case 1:
-                x02 x02Var = (x02) obj;
-                wz1 wz1Var = x02Var.A2;
-                TextView textView = x02Var.g3;
-                wz1 wz1Var2 = x02Var.u3;
-                float alpha = getAlpha();
-                super.setAlpha(f);
-                if (alpha != f) {
-                    if (textView != null) {
-                        float f2 = 1.0f - f;
-                        textView.setAlpha(f2);
-                        textView.setVisibility(f2 > 0.0f ? 0 : 8);
-                    }
-                    x02Var.L0();
-                    x02Var.b.invalidate();
-                    if (wz1Var != null && wz1Var2 != null) {
-                        Object tag = wz1Var.getTag();
-                        p02 p02Var = x02Var.v2;
-                        if (tag != null) {
-                            if (p02Var == null) {
-                                float f3 = f == 0.0f ? 1.0f : 0.0f;
-                                if (wz1Var2.getAlpha() != f3) {
-                                    wz1Var2.setAlpha(f3);
-                                    break;
-                                }
-                            }
-                        } else {
-                            if (p02Var == null || p02Var.N()) {
-                                wz1Var2.setAlpha(1.0f - f);
-                                wz1Var2.setTranslationY(gl.L(44.0f) * f);
-                            }
-                            wz1Var.setTranslationY(gl.L(48.0f) * f);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2:
-            case 6:
-            default:
-                super.setAlpha(f);
-                break;
-            case 3:
-                super.setAlpha(f);
-                ((PhotoViewer) obj).f0.invalidate();
-                break;
-            case 4:
-                super.setAlpha(f);
-                ((gf8) obj).b.invalidate();
-                break;
-            case 5:
-                if (getAlpha() != f) {
-                    super.setAlpha(f);
-                    ((jh8) obj).b.invalidate();
-                    break;
-                }
-                break;
-            case 7:
-                super.setAlpha(f);
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) obj;
-                secretMediaViewer.r.setAlpha(f);
-                secretMediaViewer.n.setAlpha(f);
-                break;
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.b) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTag(Object obj) {
-        switch (this.G1) {
-            case 5:
-                super.setTag(obj);
-                jh8 jh8Var = (jh8) this.H1;
-                x10 x10Var = jh8Var.H1;
-                if (x10Var != null && x10Var.getTag() != null) {
-                    gl.l3(jh8Var, bm2.h(bkb.v0(bkb.g5, jh8Var.J0)) > 0.699999988079071d);
-                    break;
-                } else {
-                    d dVar = jh8Var.l1;
-                    if (dVar != null) {
-                        gl.l3(jh8Var, dVar.isLightStatusBar());
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.setTag(obj);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a, android.view.View
-    public final void setTranslationY(float f) {
-        View view;
-        switch (this.G1) {
-            case 2:
-                if (f != getTranslationY() && (view = ((cj3) this.H1).fragmentView) != null) {
-                    view.invalidate();
-                }
-                super.setTranslationY(f);
-                break;
-            default:
-                super.setTranslationY(f);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void setVisibility(int i) {
-        switch (this.G1) {
-            case 1:
-                super.setVisibility(i);
-                ((x02) this.H1).L0();
-                break;
-            default:
-                super.setVisibility(i);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a
-    public final void x() {
-        switch (this.G1) {
-            case 2:
-                super.x();
-                ((cj3) this.H1).h.a(false, true);
-                break;
-            default:
-                super.x();
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x10(gk7 gk7Var, Context context, wjb wjbVar, byte b) {
-        super(context, wjbVar);
-        this.G1 = b;
-        this.H1 = gk7Var;
+        super.requestLayout();
     }
 }

@@ -1,39 +1,38 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ofd extends kld implements Serializable {
-    public final Comparator a;
+public abstract class ofd extends qdd implements Set {
+    public transient ted f;
 
-    public ofd(Comparator comparator) {
-        comparator.getClass();
-        this.a = comparator;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return this.a.compare(obj, obj2);
-    }
-
-    @Override // java.util.Comparator
+    @Override // java.util.Collection, java.util.Set
     public final boolean equals(Object obj) {
-        if (obj == this) {
+        if (obj == this || obj == this) {
             return true;
         }
-        if (obj instanceof ofd) {
-            return this.a.equals(((ofd) obj).a);
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
         }
         return false;
     }
 
+    @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a.toString();
+        Iterator it = iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i += next != null ? next.hashCode() : 0;
+        }
+        return i;
     }
 }

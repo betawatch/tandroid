@@ -1,55 +1,14 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class itd extends ezc {
-    public final hbd Z() {
-        hbd hbdVar;
-        Parcel Q = Q(R(), 4);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        if (readStrongBinder == null) {
-            hbdVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
-            hbdVar = queryLocalInterface instanceof hbd ? (hbd) queryLocalInterface : new hbd(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return hbdVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class itd implements ix0 {
+    @Override // ix0
+    public boolean y() {
+        return true;
     }
 
-    public final kwe a0(bo7 bo7Var) {
-        kwe kweVar;
-        Parcel R = R();
-        sgd.c(R, bo7Var);
-        R.writeInt(0);
-        Parcel Q = Q(R, 3);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        if (readStrongBinder == null) {
-            kweVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
-            kweVar = queryLocalInterface instanceof kwe ? (kwe) queryLocalInterface : new kwe(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return kweVar;
-    }
-
-    public final phe b0() {
-        phe x5eVar;
-        Parcel Q = Q(R(), 5);
-        IBinder readStrongBinder = Q.readStrongBinder();
-        int i = cce.b;
-        if (readStrongBinder == null) {
-            x5eVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
-            x5eVar = queryLocalInterface instanceof phe ? (phe) queryLocalInterface : new x5e(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", (byte) 6);
-        }
-        Q.recycle();
-        return x5eVar;
+    @Override // ix0
+    public void x() {
     }
 }

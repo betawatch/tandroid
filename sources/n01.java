@@ -1,53 +1,36 @@
 // default package
 
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class n01 {
-    private int flags;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class n01 extends TLObject {
+    public long a;
+    public long b;
+    public String c;
+    public wxc d;
 
-    public final void addFlag(int i) {
-        this.flags |= i;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
+        this.a = inputSerializedData.readInt64(z);
+        this.b = inputSerializedData.readInt64(z);
+        this.c = inputSerializedData.readString(z);
+        wxc wxcVar = new wxc();
+        this.d = wxcVar;
+        wxcVar.readParams(inputSerializedData, z);
     }
 
-    public void clear() {
-        this.flags = 0;
-    }
-
-    public final void clearFlag(int i) {
-        this.flags &= ~i;
-    }
-
-    public final boolean getFlag(int i) {
-        return (this.flags & i) == i;
-    }
-
-    public final boolean hasSupplementalData() {
-        return getFlag(TLObject.FLAG_28);
-    }
-
-    public final boolean isEndOfStream() {
-        return getFlag(4);
-    }
-
-    public final boolean isFirstSample() {
-        return getFlag(TLObject.FLAG_27);
-    }
-
-    public final boolean isKeyFrame() {
-        return getFlag(1);
-    }
-
-    public final boolean isLastSample() {
-        return getFlag(TLObject.FLAG_29);
-    }
-
-    public final boolean notDependedOn() {
-        return getFlag(67108864);
-    }
-
-    public final void setFlags(int i) {
-        this.flags = i;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt64(this.a);
+        outputSerializedData.writeInt64(this.b);
+        String str = this.c;
+        if (str == null) {
+            str = "";
+        }
+        outputSerializedData.writeString(str);
+        this.d.serializeToStream(outputSerializedData);
     }
 }

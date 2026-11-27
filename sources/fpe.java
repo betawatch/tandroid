@@ -1,19 +1,29 @@
 // default package
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class fpe extends IOException {
-    public static fpe a() {
-        return new fpe("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+public enum fpe implements pbd {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF23(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF31(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF39(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF47(5);
+
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    fpe(int i) {
+        this.a = i;
     }
 
-    public static fpe b() {
-        return new fpe("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
-    }
-
-    public static fpe c() {
-        return new fpe("Protocol message had invalid UTF-8.");
+    @Override // pbd
+    public final int zza() {
+        return this.a;
     }
 }

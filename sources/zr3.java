@@ -1,14 +1,35 @@
 // default package
 
-import dalvik.system.DelegateLastClassLoader;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class zr3 {
-    public static /* synthetic */ DelegateLastClassLoader a(ClassLoader classLoader, String str) {
-        return new DelegateLastClassLoader(str, classLoader);
+public final /* synthetic */ class zr3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ as3 b;
+
+    public /* synthetic */ zr3(as3 as3Var, byte b) {
+        this.a = b;
+        this.b = as3Var;
     }
 
-    public static /* synthetic */ void b() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        as3 as3Var = this.b;
+        switch (b) {
+            case 0:
+                if (as3Var.L > 0) {
+                    as3Var.dualToggleShape();
+                    try {
+                        as3Var.performHapticFeedback(0, 1);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                as3Var.focusToPoint((int) as3Var.J, (int) as3Var.K);
+                break;
+        }
     }
 }

@@ -1,48 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tha implements t46, m7 {
-    public final /* synthetic */ wha a;
+public interface tha {
+    void I();
 
-    public /* synthetic */ tha(wha whaVar) {
-        this.a = whaVar;
-    }
+    void V();
 
-    @Override // t46
-    public final void F() {
-        wha whaVar = this.a;
-        whaVar.d();
-        whaVar.a.invalidate();
-    }
+    boolean X();
 
-    @Override // m7
-    public final void h(int i) {
-        c6 c6Var = this.a.a.W;
-        if (c6Var != null) {
-            c6Var.b(i);
-        }
-    }
+    d79 d();
 
-    @Override // t46
-    public final boolean m() {
-        return false;
-    }
+    TLRPC.Chat e();
 
-    @Override // t46
-    public final boolean n(float f) {
-        return false;
-    }
+    boolean g(TLRPC.ChatParticipant chatParticipant, boolean z, boolean z2, View view);
 
-    @Override // t46
-    public final void c() {
-    }
-
-    @Override // t46
-    public final void p() {
-    }
-
-    @Override // t46
-    public final void k(boolean z) {
-    }
+    boolean u();
 }

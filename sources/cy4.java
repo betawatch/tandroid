@@ -1,188 +1,57 @@
 // default package
 
-import android.R;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.util.Log;
-import android.util.TypedValue;
-import com.google.android.gms.common.api.GoogleApiActivity;
+import android.graphics.Canvas;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cy4 extends dy4 {
-    public static final Object d = new Object();
-    public static final cy4 e = new cy4();
-    public u84 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class cy4 extends vac {
+    public final cy2 c0;
+    public TL_stories.PrepaidGiveaway d0;
 
-    public static AlertDialog e(Activity activity, int i, t2d t2dVar, DialogInterface.OnCancelListener onCancelListener) {
-        if (i == 0) {
-            return null;
-        }
-        TypedValue typedValue = new TypedValue();
-        activity.getTheme().resolveAttribute(R.attr.alertDialogTheme, typedValue, true);
-        AlertDialog.Builder builder = "Theme.Dialog.Alert".equals(activity.getResources().getResourceEntryName(typedValue.resourceId)) ? new AlertDialog.Builder(activity, 5) : null;
-        if (builder == null) {
-            builder = new AlertDialog.Builder(activity);
-        }
-        builder.setMessage(p2d.b(activity, i));
-        builder.setOnCancelListener(onCancelListener);
-        String c = p2d.c(activity, i);
-        if (c != null) {
-            builder.setPositiveButton(c, t2dVar);
-        }
-        String a = p2d.a(activity, i);
-        if (a != null) {
-            builder.setTitle(a);
-        }
-        Log.w("GoogleApiAvailability", de9.k(i, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
-        return builder.create();
+    public cy4(Context context) {
+        super(context, 0, 0, false);
+        this.c0 = new cy2(context);
     }
 
-    public static void h(Activity activity, AlertDialog alertDialog, String str, DialogInterface.OnCancelListener onCancelListener) {
-        try {
-            if (activity instanceof en4) {
-                ho4 u = ((en4) activity).u();
-                ubb ubbVar = new ubb();
-                fre.i(alertDialog, "Cannot display null dialog");
-                alertDialog.setOnCancelListener(null);
-                alertDialog.setOnDismissListener(null);
-                ubbVar.B0 = alertDialog;
-                ubbVar.C0 = onCancelListener;
-                ubbVar.y0 = false;
-                ubbVar.z0 = true;
-                u.getClass();
-                id0 id0Var = new id0(u);
-                id0Var.o = true;
-                id0Var.f(0, ubbVar, str);
-                id0Var.e(false, true);
-                return;
-            }
-        } catch (NoClassDefFoundError unused) {
-        }
-        FragmentManager fragmentManager = activity.getFragmentManager();
-        x34 x34Var = new x34();
-        fre.i(alertDialog, "Cannot display null dialog");
-        alertDialog.setOnCancelListener(null);
-        alertDialog.setOnDismissListener(null);
-        x34Var.a = alertDialog;
-        x34Var.b = onCancelListener;
-        x34Var.show(fragmentManager, str);
+    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
+        return this.d0;
     }
 
-    @Override // dy4
-    public final Intent a(int i, Context context, String str) {
-        return super.a(i, context, str);
+    @Override // vac, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.T) {
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(70.0f) : 0), getMeasuredHeight() - 1, aob.j0);
+        }
     }
 
-    @Override // dy4
-    public final int b(Context context) {
-        return super.c(context, dy4.a);
-    }
-
-    public final void d(GoogleApiActivity googleApiActivity, int i, GoogleApiActivity googleApiActivity2) {
-        AlertDialog e2 = e(googleApiActivity, i, new t2d(super.a(i, googleApiActivity, "d"), googleApiActivity, (byte) 0), googleApiActivity2);
-        if (e2 == null) {
-            return;
-        }
-        h(googleApiActivity, e2, "GooglePlayServicesErrorDialog", googleApiActivity2);
-    }
-
-    public final void f(Activity activity, c16 c16Var, int i, DialogInterface.OnCancelListener onCancelListener) {
-        AlertDialog e2 = e(activity, i, new t2d(super.a(i, activity, "d"), c16Var, (byte) 1), onCancelListener);
-        if (e2 == null) {
-            return;
-        }
-        h(activity, e2, "GooglePlayServicesErrorDialog", onCancelListener);
-    }
-
-    public final void g(Context context, int i, PendingIntent pendingIntent) {
-        int i2;
-        Log.w("GoogleApiAvailability", tb4.n(i, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
-        if (i == 18) {
-            new l2d(this, context).sendEmptyMessageDelayed(1, 120000L);
-            return;
-        }
-        if (pendingIntent == null) {
-            if (i == 6) {
-                Log.w("GoogleApiAvailability", "Missing resolution for ConnectionResult.RESOLUTION_REQUIRED. Call GoogleApiAvailability#showErrorNotification(Context, ConnectionResult) instead.");
-                return;
-            }
-            return;
-        }
-        String f = i == 6 ? p2d.f(context, "common_google_play_services_resolution_required_title") : p2d.a(context, i);
-        if (f == null) {
-            f = context.getResources().getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker);
-        }
-        String e2 = (i == 6 || i == 19) ? p2d.e(context, "common_google_play_services_resolution_required_text", p2d.d(context)) : p2d.b(context, i);
-        Resources resources = context.getResources();
-        Object systemService = context.getSystemService("notification");
-        fre.h(systemService);
-        NotificationManager notificationManager = (NotificationManager) systemService;
-        xk7 xk7Var = new xk7(context, null);
-        xk7Var.t = true;
-        xk7Var.f(16, true);
-        xk7Var.e = xk7.c(f);
-        sk7 sk7Var = new sk7((byte) 0);
-        sk7Var.f = xk7.c(e2);
-        xk7Var.i(sk7Var);
-        PackageManager packageManager = context.getPackageManager();
-        Boolean bool = mde.a;
-        if (bool == null) {
-            bool = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
-            mde.a = bool;
-        }
-        boolean booleanValue = bool.booleanValue();
-        int i3 = R.drawable.stat_sys_warning;
-        if (booleanValue) {
-            int i4 = context.getApplicationInfo().icon;
-            if (i4 != 0) {
-                i3 = i4;
-            }
-            xk7Var.F.icon = i3;
-            xk7Var.j = 2;
-            if (mde.a(context)) {
-                xk7Var.a(org.telegram.messenger.beta.R.drawable.common_full_open_on_phone, pendingIntent, resources.getString(org.telegram.messenger.beta.R.string.common_open_on_phone));
+    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        this.d0 = prepaidGiveaway;
+        boolean z = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
+        cy2 cy2Var = this.c0;
+        rb0 rb0Var = this.F;
+        if (z) {
+            rb0Var.f(26);
+            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
+            cy2Var.c = valueOf;
+            cy2Var.e = cy2Var.b.measureText(valueOf);
+            cy2Var.invalidateSelf();
+        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+            rb0Var.f(16);
+            int i = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
+            if (i == 12) {
+                rb0Var.h(-31392, -2796986);
+            } else if (i == 6) {
+                rb0Var.h(-10703110, -12481584);
             } else {
-                xk7Var.g = pendingIntent;
+                rb0Var.h(-6631068, -11945404);
             }
-        } else {
-            xk7Var.F.icon = R.drawable.stat_sys_warning;
-            xk7Var.k(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
-            xk7Var.F.when = System.currentTimeMillis();
-            xk7Var.g = pendingIntent;
-            xk7Var.d(e2);
+            String valueOf2 = String.valueOf(on0.h() * prepaidGiveaway.quantity);
+            cy2Var.c = valueOf2;
+            cy2Var.e = cy2Var.b.measureText(valueOf2);
+            cy2Var.invalidateSelf();
         }
-        if (xqe.a()) {
-            fre.k(xqe.a());
-            synchronized (d) {
-            }
-            NotificationChannel notificationChannel = notificationManager.getNotificationChannel("com.google.android.gms.availability");
-            String string = context.getResources().getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_channel_name);
-            if (notificationChannel == null) {
-                notificationManager.createNotificationChannel(new NotificationChannel("com.google.android.gms.availability", string, 4));
-            } else if (!string.contentEquals(notificationChannel.getName())) {
-                notificationChannel.setName(string);
-                notificationManager.createNotificationChannel(notificationChannel);
-            }
-            xk7Var.y = "com.google.android.gms.availability";
-        }
-        Notification b = xk7Var.b();
-        if (i == 1 || i == 2 || i == 3) {
-            yy4.a.set(false);
-            i2 = 10436;
-        } else {
-            i2 = 39789;
-        }
-        notificationManager.notify(i2, b);
+        this.b.i(cy2Var);
     }
 }

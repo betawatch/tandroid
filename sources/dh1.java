@@ -1,113 +1,20 @@
 // default package
 
 import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dh1 extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final Path e;
-    public final Path f;
-    public boolean h;
-    public boolean n;
-    public final n41 r;
-    public boolean s;
-    public final lm w;
-    public final /* synthetic */ eh1 x;
+public final class dh1 extends l46 {
+    public final /* synthetic */ int S2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh1(eh1 eh1Var, Activity activity) {
-        super(activity);
-        this.x = eh1Var;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.c = new Paint(1);
-        this.d = new Paint(1);
-        this.e = new Path();
-        this.f = new Path();
-        this.r = new n41(this);
-        this.w = new lm(this, 0L, 320L, s33.h);
-        paint.setStyle(Paint.Style.STROKE);
+    public dh1(wh1 wh1Var, Activity activity, int i, int i2, vnb vnbVar, int i3) {
+        super(i, i2, vnbVar, activity, wh1Var);
+        this.S2 = i3;
     }
 
-    public final void a(da7 da7Var) {
-        wjb wjbVar = this.x.a;
-        boolean a = wjbVar != null ? wjbVar.a() : bkb.I.o();
-        Paint paint = this.c;
-        Paint paint2 = this.b;
-        if (a && da7Var.g() != da7Var.f() && da7Var.i() == da7Var.f()) {
-            paint2.setColor(da7Var.e(1, wjbVar));
-            paint.setColor(da7Var.e(0, wjbVar));
-        } else {
-            paint2.setColor(da7Var.e(0, wjbVar));
-            paint.setColor(da7Var.e(1, wjbVar));
-        }
-        this.d.setColor(da7Var.e(2, wjbVar));
-        this.h = da7Var.g() != da7Var.f();
-        this.n = da7Var.i() != da7Var.f();
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        float a = this.r.a(0.05f);
-        canvas.scale(a, a, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        canvas.save();
-        canvas.clipPath(this.e);
-        canvas.drawPaint(this.b);
-        if (this.h) {
-            canvas.drawPath(this.f, this.c);
-        }
-        canvas.restore();
-        if (this.n) {
-            canvas.save();
-            RectF rectF = gl.P;
-            rectF.set((getMeasuredWidth() - gl.L(12.4f)) / 2.0f, (getMeasuredHeight() - gl.L(12.4f)) / 2.0f, (gl.L(12.4f) + getMeasuredWidth()) / 2.0f, (gl.L(12.4f) + getMeasuredHeight()) / 2.0f);
-            canvas.rotate(45.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-            canvas.drawRoundRect(rectF, gl.L(2.33f), gl.L(2.33f), this.d);
-            canvas.restore();
-        }
-        float d = this.w.d(this.s);
-        if (d > 0.0f) {
-            float N = gl.N(2.0f);
-            Paint paint = this.a;
-            paint.setStrokeWidth(N);
-            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, gl.R1((paint.getStrokeWidth() * 0.5f) + gl.L(20.0f), gl.L(20.0f) - (paint.getStrokeWidth() * 2.0f), d), paint);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(gl.L(56.0f), gl.L(56.0f));
-        Path path = this.e;
-        path.rewind();
-        path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, gl.L(20.0f), Path.Direction.CW);
-        Path path2 = this.f;
-        path2.rewind();
-        path2.moveTo(getMeasuredWidth(), 0.0f);
-        path2.lineTo(getMeasuredWidth(), getMeasuredHeight());
-        path2.lineTo(0.0f, getMeasuredHeight());
-        path2.close();
-    }
-
-    @Override // android.view.View
-    public final void setBackgroundColor(int i) {
-        this.a.setColor(i);
-    }
-
-    @Override // android.view.View
-    public final void setPressed(boolean z) {
-        super.setPressed(z);
-        this.r.c(z);
+    @Override // l46
+    public final int b1() {
+        return this.S2;
     }
 }

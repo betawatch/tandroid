@@ -1,7 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.graphics.ImageDecoder;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface zo7 {
-    void onClick();
+public final /* synthetic */ class zo7 implements ImageDecoder.OnHeaderDecodedListener {
+    @Override // android.graphics.ImageDecoder.OnHeaderDecodedListener
+    public final void onHeaderDecoded(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
+        imageDecoder.setPostProcessor(new dp7());
+    }
 }

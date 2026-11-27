@@ -1,35 +1,57 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ax9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ dx9 b;
+public final class ax9 extends z2b {
+    public final /* synthetic */ byte L;
+    public final /* synthetic */ bj3 M;
 
-    public /* synthetic */ ax9(dx9 dx9Var, byte b) {
-        this.a = b;
-        this.b = dx9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ax9(bj3 bj3Var, Activity activity, tk4 tk4Var, byte b) {
+        super(activity, tk4Var, 1, null);
+        this.L = b;
+        this.M = bj3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        dx9 dx9Var = this.b;
+    @Override // z2b, android.view.View
+    public final void setVisibility(int i) {
+        byte b = this.L;
+        bj3 bj3Var = this.M;
         switch (b) {
             case 0:
-                dx9Var.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dx9Var.W.i0.invalidate();
-                break;
+                if (bj3Var.P0.getTag() == null) {
+                    super.setVisibility(i);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
             case 1:
-                dx9Var.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dx9Var.W.i0.invalidate();
-                break;
+                if (bj3Var.P0.getTag() == null) {
+                    super.setVisibility(i);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 2:
+                if (bj3Var.P0.getTag() == null) {
+                    super.setVisibility(i);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
             default:
-                dx9Var.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dx9Var.W.i0.invalidate();
-                break;
+                if (bj3Var.P0.getTag() == null) {
+                    super.setVisibility(i);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
         }
     }
 }

@@ -1,63 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class mz3 {
-    public final int a;
-    public final long b;
-    public final long c;
-    public boolean e;
-    public final /* synthetic */ byte g;
-    public final /* synthetic */ gk7 h;
-    public boolean d = false;
-    public long f = -1;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoipAudioManager;
 
-    public mz3(gk7 gk7Var, int i, long j, long j2, byte b) {
-        this.g = b;
-        this.h = gk7Var;
-        this.a = i;
-        this.b = j;
-        this.c = j2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class mz3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ mz3(Object obj, boolean z, boolean z2, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.b = z;
+        this.c = z2;
     }
 
-    public final void a() {
-        boolean z;
-        byte b = this.g;
-        gk7 gk7Var = this.h;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.c;
+        boolean z2 = this.b;
+        Object obj = this.d;
         switch (b) {
             case 0:
-                t14 t14Var = (t14) gk7Var;
-                if (t14Var.u1 == null || t14Var.getVisibility() != 0 || !t14Var.L0) {
-                    z = false;
-                    break;
-                } else {
-                    z = true;
-                    break;
-                }
+                ((o24) obj).O(false, z2, z);
+                break;
+            case 1:
+                ((NativeInstance) obj).lambda$onNetworkStateUpdated$0(z2, z);
+                break;
+            case 2:
+                ((VideoPlayerHolderBase) obj).lambda$setAudioEnabled$8(z2, z);
+                break;
+            case 3:
+                ((VoIPService) obj).lambda$createGroupInstance$76(z2, z);
+                break;
+            case 4:
+                VoipAudioManager.lambda$isBluetoothAndSpeakerOnAsync$3((icc) obj, z2, z);
                 break;
             default:
-                z = ((kz6) gk7Var).N();
+                ((zhc) ((qoc) obj).c).d(z2, z);
                 break;
-        }
-        this.d = z;
-        if (z) {
-            return;
-        }
-        if (this.e) {
-            na7.q1(this.a).H4(2, 0, this.b, this.c, null);
-        }
-        this.f = -1L;
-    }
-
-    public final void b() {
-        if (this.d) {
-            if (this.f == -1) {
-                this.f = System.currentTimeMillis();
-            } else if (System.currentTimeMillis() - this.f > 2000) {
-                this.e = true;
-                this.f = System.currentTimeMillis();
-                na7.q1(this.a).H4(10, 0, this.b, this.c, null);
-            }
         }
     }
 }

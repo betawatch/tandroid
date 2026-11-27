@@ -1,57 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class v90 {
-    public final String a;
-    public final String b;
-    public final String c;
+public final class v90 extends d84 {
+    public final u90 a;
 
-    public v90(String str, String str2, String str3) {
-        if (str == null) {
-            fvc.f("Null crashlyticsInstallId");
-            throw null;
-        }
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+    public v90(u90 u90Var) {
+        this.a = u90Var;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof v90) {
-            v90 v90Var = (v90) obj;
-            if (this.a.equals(v90Var.a)) {
-                String str = v90Var.b;
-                String str2 = this.b;
-                if (str2 != null ? str2.equals(str) : str == null) {
-                    String str3 = v90Var.c;
-                    String str4 = this.c;
-                    if (str4 != null ? str4.equals(str3) : str3 == null) {
-                        return true;
-                    }
-                }
-            }
+        if (!(obj instanceof d84)) {
+            return false;
         }
-        return false;
+        return this.a.equals(((v90) ((d84) obj)).a);
     }
 
     public final int hashCode() {
-        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
-        String str = this.b;
-        int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
-        String str2 = this.c;
-        return hashCode2 ^ (str2 != null ? str2.hashCode() : 0);
+        return 1000003 ^ this.a.hashCode();
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("InstallIds{crashlyticsInstallId=");
-        sb.append(this.a);
-        sb.append(", firebaseInstallationId=");
-        sb.append(this.b);
-        sb.append(", firebaseAuthenticationToken=");
-        return b00.j(sb, this.c, "}");
+        return "ExternalPrivacyContext{prequest=" + this.a + "}";
     }
 }

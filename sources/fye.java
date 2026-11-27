@@ -1,41 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fye implements zn7 {
-    public static final fye a = new fye();
-    public static final w84 b = new w84("appId", b00.m(yjb.p(gid.class, new bgd(1))));
-    public static final w84 c = new w84("appVersion", b00.m(yjb.p(gid.class, new bgd(2))));
-    public static final w84 d = new w84("firebaseProjectId", b00.m(yjb.p(gid.class, new bgd(3))));
-    public static final w84 e = new w84("mlSdkVersion", b00.m(yjb.p(gid.class, new bgd(4))));
-    public static final w84 f = new w84("tfliteSchemaVersion", b00.m(yjb.p(gid.class, new bgd(5))));
-    public static final w84 g = new w84("gcmSenderId", b00.m(yjb.p(gid.class, new bgd(6))));
-    public static final w84 h = new w84("apiKey", b00.m(yjb.p(gid.class, new bgd(7))));
-    public static final w84 i = new w84("languages", b00.m(yjb.p(gid.class, new bgd(8))));
-    public static final w84 j = new w84("mlSdkInstanceId", b00.m(yjb.p(gid.class, new bgd(9))));
-    public static final w84 k = new w84("isClearcutClient", b00.m(yjb.p(gid.class, new bgd(10))));
-    public static final w84 l = new w84("isStandaloneMlkit", b00.m(yjb.p(gid.class, new bgd(11))));
-    public static final w84 m = new w84("isJsonLogging", b00.m(yjb.p(gid.class, new bgd(12))));
-    public static final w84 n = new w84("buildLevel", b00.m(yjb.p(gid.class, new bgd(13))));
-    public static final w84 o = new w84("optionalModuleVersion", b00.m(yjb.p(gid.class, new bgd(14))));
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        bdf bdfVar = (bdf) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, bdfVar.a);
-        ao7Var.a(c, bdfVar.b);
-        ao7Var.a(d, null);
-        ao7Var.a(e, bdfVar.c);
-        ao7Var.a(f, bdfVar.d);
-        ao7Var.a(g, null);
-        ao7Var.a(h, null);
-        ao7Var.a(i, bdfVar.e);
-        ao7Var.a(j, bdfVar.f);
-        ao7Var.a(k, bdfVar.g);
-        ao7Var.a(l, bdfVar.h);
-        ao7Var.a(m, bdfVar.i);
-        ao7Var.a(n, bdfVar.j);
-        ao7Var.a(o, bdfVar.k);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class fye {
+    public static ot9 a(Bundle bundle, Bundle bundle2) {
+        if (bundle == null) {
+            if (bundle2 == null) {
+                return new ot9();
+            }
+            HashMap hashMap = new HashMap();
+            for (String str : bundle2.keySet()) {
+                str.getClass();
+                hashMap.put(str, bundle2.get(str));
+            }
+            return new ot9(hashMap);
+        }
+        ClassLoader classLoader = ot9.class.getClassLoader();
+        classLoader.getClass();
+        bundle.setClassLoader(classLoader);
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList("keys");
+        ArrayList parcelableArrayList2 = bundle.getParcelableArrayList("values");
+        if (parcelableArrayList == null || parcelableArrayList2 == null || parcelableArrayList.size() != parcelableArrayList2.size()) {
+            grb.i("Invalid bundle passed as restored state");
+            return null;
+        }
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        int size = parcelableArrayList.size();
+        for (int i = 0; i < size; i++) {
+            Object obj = parcelableArrayList.get(i);
+            obj.getClass();
+            linkedHashMap.put((String) obj, parcelableArrayList2.get(i));
+        }
+        return new ot9(linkedHashMap);
     }
 }

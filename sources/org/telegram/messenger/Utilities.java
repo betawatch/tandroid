@@ -16,44 +16,44 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class Utilities {
     public static final Pattern a = Pattern.compile("[\\-0-9]+");
     public static final SecureRandom b;
-    public static final yyc c;
-    public static volatile co3 d;
-    public static volatile co3 e;
-    public static volatile co3 f;
-    public static volatile co3 g;
-    public static volatile co3 h;
-    public static volatile co3 i;
-    public static volatile co3 j;
-    public static volatile do3 k;
+    public static final o3d c;
+    public static volatile to3 d;
+    public static volatile to3 e;
+    public static volatile to3 f;
+    public static volatile to3 g;
+    public static volatile to3 h;
+    public static volatile to3 i;
+    public static volatile to3 j;
+    public static volatile uo3 k;
     public static final char[] l;
 
     static {
         SecureRandom secureRandom = new SecureRandom();
         b = secureRandom;
         long nextLong = secureRandom.nextLong();
-        yyc yycVar = new yyc(0L);
-        long a2 = mpe.a(nextLong);
-        yycVar.a = a2;
-        long a3 = mpe.a(a2);
-        yycVar.b = a3;
-        if (yycVar.a == 0 && a3 == 0) {
-            long a4 = mpe.a(3735928559L);
-            yycVar.a = a4;
-            yycVar.b = mpe.a(a4);
+        o3d o3dVar = new o3d(0L);
+        long a2 = hue.a(nextLong);
+        o3dVar.a = a2;
+        long a3 = hue.a(a2);
+        o3dVar.b = a3;
+        if (o3dVar.a == 0 && a3 == 0) {
+            long a4 = hue.a(3735928559L);
+            o3dVar.a = a4;
+            o3dVar.b = hue.a(a4);
         }
-        c = yycVar;
-        d = new co3("stageQueue");
-        e = new co3("globalQueue");
-        f = new co3("cacheClearQueue");
-        g = new co3("searchQueue");
-        h = new co3("phoneBookQueue");
-        i = new co3("themeQueue");
-        j = new co3("externalNetworkQueue");
+        c = o3dVar;
+        d = new to3("stageQueue");
+        e = new to3("globalQueue");
+        f = new to3("cacheClearQueue");
+        g = new to3("searchQueue");
+        h = new to3("phoneBookQueue");
+        i = new to3("themeQueue");
+        j = new to3("externalNetworkQueue");
         l = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         try {
             FileInputStream fileInputStream = new FileInputStream(new File("/dev/urandom"));
@@ -62,7 +62,7 @@ public class Utilities {
             fileInputStream.close();
             secureRandom.setSeed(bArr);
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
         }
     }
 
@@ -81,14 +81,14 @@ public class Utilities {
         return Long.valueOf(j2);
     }
 
-    public static void B(Runnable runnable, p8c... p8cVarArr) {
-        if (p8cVarArr.length == 0) {
+    public static void B(Runnable runnable, pcc... pccVarArr) {
+        if (pccVarArr.length == 0) {
             runnable.run();
             return;
         }
-        r1b r1bVar = new r1b(new int[]{0}, p8cVarArr, runnable, (byte) 25);
-        for (p8c p8cVar : p8cVarArr) {
-            p8cVar.a(r1bVar);
+        b6c b6cVar = new b6c(new int[]{0}, pccVarArr, runnable, (byte) 4);
+        for (pcc pccVar : pccVarArr) {
+            pccVar.a(b6cVar);
         }
     }
 
@@ -97,8 +97,8 @@ public class Utilities {
     }
 
     public static Bitmap D(Bitmap bitmap, boolean z) {
-        int L = gl.L(20.0f);
-        int L2 = (int) ((gl.L(20.0f) * bitmap.getHeight()) / bitmap.getWidth());
+        int L = hl.L(20.0f);
+        int L2 = (int) ((hl.L(20.0f) * bitmap.getHeight()) / bitmap.getWidth());
         Bitmap createBitmap = Bitmap.createBitmap(L, L2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
@@ -110,20 +110,20 @@ public class Utilities {
         }
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / kk7.f2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / jn7.f2));
         return createBitmap;
     }
 
     public static Bitmap E(float f2, Bitmap bitmap) {
-        int max = (int) Math.max(gl.L(20.0f), bitmap.getWidth() / f2);
-        int max2 = (int) Math.max((gl.L(20.0f) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f2);
+        int max = (int) Math.max(hl.L(20.0f), bitmap.getWidth() / f2);
+        int max2 = (int) Math.max((hl.L(20.0f) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f2);
         Bitmap createBitmap = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / kk7.f2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / jn7.f2));
         return createBitmap;
     }
 
@@ -132,14 +132,14 @@ public class Utilities {
             return null;
         }
         try {
-            byte[] digest = MessageDigest.getInstance("MD5").digest(gl.g1(str));
+            byte[] digest = MessageDigest.getInstance("MD5").digest(hl.g1(str));
             StringBuilder sb = new StringBuilder();
             for (byte b2 : digest) {
                 sb.append(Integer.toHexString((b2 & 255) | 256).substring(1, 3));
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
             return null;
         }
     }
@@ -275,7 +275,7 @@ public class Utilities {
             messageDigest.update(bArr, 0, length);
             return messageDigest.digest();
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
             return new byte[20];
         }
     }
@@ -290,7 +290,7 @@ public class Utilities {
             messageDigest.update(bArr, 0, (int) j2);
             return messageDigest.digest();
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
             return new byte[32];
         }
     }
@@ -307,7 +307,7 @@ public class Utilities {
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
             } catch (Exception e2) {
-                fa4.g(e2, true);
+                cc4.g(e2, true);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[32];
@@ -328,7 +328,7 @@ public class Utilities {
             }
             return messageDigest.digest();
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
             return new byte[32];
         }
     }
@@ -340,7 +340,7 @@ public class Utilities {
             messageDigest.update(bArr2, 0, bArr2.length);
             return messageDigest.digest();
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
             return new byte[64];
         }
     }
@@ -357,7 +357,7 @@ public class Utilities {
             messageDigest.update(bArr3, 0, bArr3.length);
             return messageDigest.digest();
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
             return new byte[64];
         }
     }
@@ -372,9 +372,9 @@ public class Utilities {
         return (float) Math.sqrt((f7 * f7) + (f6 * f6));
     }
 
-    public static void u(int i2, p8c... p8cVarArr) {
-        if (p8cVarArr.length > i2) {
-            p8cVarArr[i2].a(new on7(i2, (Object) p8cVarArr, (byte) 21));
+    public static void u(int i2, pcc... pccVarArr) {
+        if (pccVarArr.length > i2) {
+            pccVarArr[i2].a(new me7(i2, (Object) pccVarArr, (byte) 24));
         }
     }
 
@@ -399,7 +399,7 @@ public class Utilities {
     }
 
     public static void y(Bitmap bitmap, Bitmap bitmap2) {
-        nLibyuvARGBSaleBitmap(bitmap, bitmap2, ug8.F(4));
+        nLibyuvARGBSaleBitmap(bitmap, bitmap2, ik8.F(4));
     }
 
     public static Integer z(CharSequence charSequence) {

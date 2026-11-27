@@ -1,27 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hx9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ py b;
+public final class hx9 extends zb3 {
+    public final /* synthetic */ bj3 F;
 
-    public /* synthetic */ hx9(py pyVar, byte b) {
-        this.a = b;
-        this.b = pyVar;
+    public hx9(bj3 bj3Var) {
+        this.F = bj3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        py pyVar = this.b;
-        switch (b) {
-            case 0:
-                gl.E3(((lw9) pyVar.f2).h);
-                break;
-            default:
-                pyVar.requestFocus();
-                break;
-        }
+    @Override // zb3
+    public final void P(f89 f89Var) {
+        this.F.invalidate();
     }
 }

@@ -1,95 +1,80 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fse extends b4 {
-    public static final Parcelable.Creator<fse> CREATOR = new rhe(26);
-    public final String a;
-    public final rcf b;
-    public final int c;
-    public final byte[] d;
-
-    static {
-        ArrayList arrayList = new ArrayList();
+public abstract class fse {
+    public static void a(heb hebVar, int i, ot2 ot2Var) {
+        long i2 = hebVar.i(i);
+        List l = hebVar.l(i2);
+        if (l.isEmpty()) {
+            return;
+        }
+        if (i == hebVar.q() - 1) {
+            grb.g();
+            return;
+        }
+        long i3 = hebVar.i(i + 1) - hebVar.i(i);
+        if (i3 > 0) {
+            ot2Var.accept(new p43(i2, i3, l));
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0047  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0061 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0018  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0059 A[LOOP:0: B:14:0x0053->B:16:0x0059, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public fse(String str, rcf rcfVar, int i, byte[] bArr) {
-        String str2;
-        String str3;
-        String str4;
-        boolean z = true;
-        if (i != -1) {
-            if (i >= 0) {
-                String[] strArr = n9f.a;
-                if (i < 10) {
-                    str4 = strArr[i];
-                    if (str4 == null) {
-                        z = false;
+    public static void b(heb hebVar, qeb qebVar, ot2 ot2Var) {
+        int b;
+        boolean z;
+        int i;
+        long j = qebVar.a;
+        if (j == -9223372036854775807L) {
+            b = 0;
+        } else {
+            b = hebVar.b(j);
+            if (b == -1) {
+                b = hebVar.q();
+            }
+            if (b > 0 && hebVar.i(b - 1) == j) {
+                b--;
+            }
+        }
+        if (j != -9223372036854775807L && b < hebVar.q()) {
+            List l = hebVar.l(j);
+            long i2 = hebVar.i(b);
+            if (!l.isEmpty()) {
+                long j2 = qebVar.a;
+                if (j2 < i2) {
+                    ot2Var.accept(new p43(j2, i2 - j2, l));
+                    z = true;
+                    for (i = b; i < hebVar.q(); i++) {
+                        a(hebVar, i, ot2Var);
                     }
-                }
-            } else {
-                String[] strArr2 = n9f.a;
-            }
-            str4 = null;
-            if (str4 == null) {
-            }
-        }
-        StringBuilder sb = new StringBuilder(32);
-        sb.append("Invalid section type ");
-        sb.append(i);
-        fre.a(sb.toString(), z);
-        this.a = str;
-        this.b = rcfVar;
-        this.c = i;
-        this.d = bArr;
-        if (i != -1) {
-            if (i >= 0) {
-                String[] strArr3 = n9f.a;
-                if (i < 10) {
-                    str3 = strArr3[i];
-                    if (str3 == null) {
-                        StringBuilder sb2 = new StringBuilder(32);
-                        sb2.append("Invalid section type ");
-                        sb2.append(i);
-                        str2 = sb2.toString();
-                        if (str2 != null) {
-                            return;
-                        }
-                        w26.j(str2);
-                        throw null;
+                    if (qebVar.b) {
+                        return;
                     }
+                    if (z) {
+                        b--;
+                    }
+                    for (int i3 = 0; i3 < b; i3++) {
+                        a(hebVar, i3, ot2Var);
+                    }
+                    if (z) {
+                        ot2Var.accept(new p43(hebVar.i(b), j - hebVar.i(b), hebVar.l(j)));
+                        return;
+                    }
+                    return;
                 }
-            } else {
-                String[] strArr4 = n9f.a;
-            }
-            str3 = null;
-            if (str3 == null) {
             }
         }
-        str2 = (str == null || bArr == null) ? null : "Both content and blobContent set";
-        if (str2 != null) {
+        z = false;
+        while (i < hebVar.q()) {
         }
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 1, this.a);
-        jte.k(parcel, 3, this.b, i);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        jte.c(parcel, 5, this.d);
-        jte.s(parcel, r);
+        if (qebVar.b) {
+        }
     }
 }

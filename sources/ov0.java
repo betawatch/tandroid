@@ -1,59 +1,51 @@
 // default package
 
-import org.telegram.ui.PasscodeActivity;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ov0 implements bja {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class ov0 {
+    public final String a;
+    public final String b;
+    public final int c;
 
-    public /* synthetic */ ov0(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    @Override // bja
-    public final void L(int i, boolean z) {
-        bf6 bf6Var;
-        fv7 fv7Var;
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                fw0 fw0Var = ((ow0) obj).x;
-                if (i > gl.L(20.0f)) {
-                    fw0Var.d(fw0Var.getTopActionBarOffsetY() + (-fw0Var.getOffsetY()));
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException
+     */
+    public ov0(JSONObject jSONObject) {
+        this.c = -1;
+        this.a = jSONObject.getString("id");
+        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
+        switch (string.hashCode()) {
+            case -1829997182:
+                if (string.equals("destructive")) {
+                    this.c = aob.q7;
                     break;
                 }
                 break;
-            case 1:
-                mf6 mf6Var = (mf6) obj;
-                if (i > gl.L(20.0f) && mf6Var.r1()) {
-                    gl.t1(mf6Var.fragmentView);
-                }
-                if (i <= gl.L(20.0f) && (bf6Var = mf6Var.U) != null) {
-                    bf6Var.run();
-                    mf6Var.U = null;
-                    break;
+            case -1367724422:
+                if (string.equals("cancel")) {
+                    this.b = ob6.M0(2131752570, null);
+                    return;
                 }
                 break;
-            case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                if (i >= gl.L(20.0f) && (fv7Var = passcodeActivity.U) != null) {
-                    fv7Var.run();
-                    passcodeActivity.U = null;
-                    break;
+            case 3548:
+                if (string.equals("ok")) {
+                    this.b = ob6.M0(2131747558, null);
+                    return;
                 }
                 break;
-            default:
-                fqc fqcVar = (fqc) obj;
-                if (i <= gl.L(20.0f)) {
-                    i = 0;
+            case 94756344:
+                if (string.equals("close")) {
+                    this.b = ob6.M0(2131752006, null);
+                    return;
                 }
-                fqcVar.n = i;
-                fqcVar.onInsets(fqcVar.r, fqcVar.s, fqcVar.w, fqcVar.x);
+                break;
+            case 1544803905:
+                string.equals("default");
                 break;
         }
+        this.b = jSONObject.getString("text");
     }
 }

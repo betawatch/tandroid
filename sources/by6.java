@@ -1,133 +1,34 @@
 // default package
 
-import android.util.Pair;
-import java.io.IOException;
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class by6 implements vx6, wq3 {
-    public final dy6 a;
-    public final /* synthetic */ ey6 b;
+public final /* synthetic */ class by6 implements py6 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qy6 b;
+    public final /* synthetic */ long c;
 
-    public by6(ey6 ey6Var, dy6 dy6Var) {
-        this.b = ey6Var;
-        this.a = dy6Var;
+    public /* synthetic */ by6(qy6 qy6Var, long j, byte b) {
+        this.a = b;
+        this.b = qy6Var;
+        this.c = j;
     }
 
-    @Override // wq3
-    public final void I(int i, rx6 rx6Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new ay6(this, a, (byte) 0));
-        }
-    }
-
-    @Override // wq3
-    public final void N(int i, rx6 rx6Var, vi2 vi2Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new lo6((Object) this, (Object) a, (Object) vi2Var, (byte) 8));
-        }
-    }
-
-    @Override // vx6
-    public final void O(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var, int i2) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new i57((Object) this, (Object) a, (Object) f86Var, (Object) fr6Var, i2, (byte) 20));
-        }
-    }
-
-    public final Pair a(int i, rx6 rx6Var) {
-        rx6 rx6Var2;
-        dy6 dy6Var = this.a;
-        rx6 rx6Var3 = null;
-        if (rx6Var != null) {
-            int i2 = 0;
-            while (true) {
-                if (i2 >= dy6Var.c.size()) {
-                    rx6Var2 = null;
-                    break;
-                }
-                if (((rx6) dy6Var.c.get(i2)).d == rx6Var.d) {
-                    Object obj = rx6Var.a;
-                    Object obj2 = dy6Var.b;
-                    int i3 = dd8.n;
-                    rx6Var2 = rx6Var.a(Pair.create(obj2, obj));
-                    break;
-                }
-                i2++;
-            }
-            if (rx6Var2 == null) {
-                return null;
-            }
-            rx6Var3 = rx6Var2;
-        }
-        return Pair.create(Integer.valueOf(i + dy6Var.d), rx6Var3);
-    }
-
-    @Override // wq3
-    public final void i(int i, rx6 rx6Var, Exception exc) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new lo6((Object) this, (Object) a, (Object) exc, (byte) 9));
-        }
-    }
-
-    @Override // vx6
-    public final void j(int i, rx6 rx6Var, fr6 fr6Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new yx6(this, a, fr6Var, (byte) 1));
-        }
-    }
-
-    @Override // vx6
-    public final void k(int i, rx6 rx6Var, fr6 fr6Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new yx6(this, a, fr6Var, (byte) 0));
-        }
-    }
-
-    @Override // wq3
-    public final void n(int i, rx6 rx6Var, int i2) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new o94((Object) this, (Object) a, i2, (byte) 9));
-        }
-    }
-
-    @Override // vx6
-    public final void s(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new zx6(this, a, f86Var, fr6Var, (byte) 0));
-        }
-    }
-
-    @Override // vx6
-    public final void u(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new zx6(this, a, f86Var, fr6Var, (byte) 1));
-        }
-    }
-
-    @Override // vx6
-    public final void w(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var, IOException iOException, boolean z) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new z2a((Object) this, (Object) a, (Object) f86Var, (Object) fr6Var, (Serializable) iOException, z, (byte) 10));
-        }
-    }
-
-    @Override // wq3
-    public final void y(int i, rx6 rx6Var) {
-        Pair a = a(i, rx6Var);
-        if (a != null) {
-            this.b.j.e(new ay6(this, a, (byte) 1));
+    @Override // py6
+    public final void a(xw6 xw6Var) {
+        byte b = this.a;
+        long j = this.c;
+        qy6 qy6Var = this.b;
+        switch (b) {
+            case 0:
+                yx6 yx6Var = qy6Var.j;
+                yx6Var.t();
+                yx6Var.t.W((int) j);
+                break;
+            default:
+                yx6 yx6Var2 = qy6Var.j;
+                yx6Var2.t();
+                yx6Var2.t.g(j);
+                break;
         }
     }
 }

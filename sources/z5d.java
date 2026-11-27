@@ -1,32 +1,44 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.os.Bundle;
+import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class z5d extends b4 {
-    public static final Parcelable.Creator<z5d> CREATOR = new t4d((byte) 14);
-    public final boolean a;
+public final class z5d implements k05, l05 {
+    public final /* synthetic */ a6d a;
 
-    public z5d(boolean z) {
-        this.a = z;
+    public /* synthetic */ z5d(a6d a6dVar) {
+        this.a = a6dVar;
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof z5d) && this.a == ((z5d) obj).a;
+    @Override // k05
+    public final void onConnected(Bundle bundle) {
+        a6d a6dVar = this.a;
+        xve.h(a6dVar.I);
+        xka xkaVar = a6dVar.w;
+        xve.h(xkaVar);
+        xkaVar.B(new y5d(a6dVar));
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
+    @Override // l05
+    public final void onConnectionFailed(ws2 ws2Var) {
+        a6d a6dVar = this.a;
+        ReentrantLock reentrantLock = a6dVar.b;
+        reentrantLock.lock();
+        try {
+            if (a6dVar.x && !ws2Var.b()) {
+                a6dVar.f();
+                a6dVar.b();
+            } else {
+                a6dVar.g(ws2Var);
+            }
+        } finally {
+            reentrantLock.unlock();
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.s(parcel, r);
+    @Override // k05
+    public final void onConnectionSuspended(int i) {
     }
 }

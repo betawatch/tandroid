@@ -1,82 +1,101 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class iv5 extends FrameLayout implements tjb {
-    public final jia a;
-    public final hc0 b;
-    public boolean c;
-    public int d;
-    public final /* synthetic */ jv5 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class iv5 extends ud6 implements ep3, hp5 {
+    public sv5 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv5(jv5 jv5Var, Context context) {
-        super(context);
-        this.e = jv5Var;
-        int i = bkb.h6;
-        this.d = bkb.w0(null, i, false);
-        jia jiaVar = new jia(context);
-        this.a = jiaVar;
-        jiaVar.setTextSize(16);
-        jiaVar.setEllipsizeByGradient(true);
-        jiaVar.setRightPadding(gl.L(68.0f));
-        zkb.W(jiaVar, bkb.i5, null);
-        addView(jiaVar, nme.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
-        hc0 hc0Var = new hc0(context, false);
-        this.b = hc0Var;
-        hc0Var.a.a = true;
-        hc0Var.setStyle(11);
-        hc0Var.setAvatarsTextSize(gl.L(22.0f));
-        addView(hc0Var, nme.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
-        setBackground(bkb.Y(bkb.w0(null, i, false), 0, 4));
+    @Override // hp5
+    public final qm7 b() {
+        return null;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        View view = (View) getParent();
-        if (view != null && view.getWidth() > 0) {
-            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
-        }
-        this.c = true;
-        jia jiaVar = this.a;
-        jiaVar.setVisibility(8);
-        super.onMeasure(i, i2);
-        jiaVar.setVisibility(0);
-        jiaVar.getLayoutParams().width = getMeasuredWidth();
-        this.c = false;
-        this.e.g();
-        super.onMeasure(i, i2);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            int w0 = bkb.w0(null, bkb.h6, false);
-            if (w0 != this.d) {
-                this.d = w0;
-                bkb.F1(getBackground(), w0, true);
-                invalidate();
+    @Override // ep3
+    public final void dispose() {
+        iv5 iv5Var;
+        Unsafe unsafe;
+        long j;
+        sv5 j2 = j();
+        while (true) {
+            Object v = j2.v();
+            if (v instanceof iv5) {
+                if (v != this) {
+                    return;
+                }
+                do {
+                    unsafe = fx.a;
+                    j = sv5.b;
+                    if (unsafe.compareAndSwapObject(j2, j, v, yed.g)) {
+                        return;
+                    }
+                } while (unsafe.getObjectVolatile(j2, j) == v);
+            } else {
+                if (!(v instanceof hp5) || ((hp5) v).b() == null) {
+                    return;
+                }
+                while (true) {
+                    Object f = this.f();
+                    if (f instanceof fa9) {
+                        return;
+                    }
+                    if (f == this) {
+                        return;
+                    }
+                    f.getClass();
+                    ud6 ud6Var = (ud6) f;
+                    Unsafe unsafe2 = fx.a;
+                    long j3 = ud6.c;
+                    fa9 fa9Var = (fa9) unsafe2.getObjectVolatile(ud6Var, j3);
+                    if (fa9Var == null) {
+                        fa9Var = new fa9(ud6Var);
+                        unsafe2.putObjectVolatile(ud6Var, j3, fa9Var);
+                    }
+                    fa9 fa9Var2 = fa9Var;
+                    while (true) {
+                        Unsafe unsafe3 = fx.a;
+                        long j4 = ud6.a;
+                        iv5Var = this;
+                        if (unsafe3.compareAndSwapObject(iv5Var, j4, f, fa9Var2)) {
+                            ud6Var.d();
+                            return;
+                        } else if (unsafe3.getObjectVolatile(iv5Var, j4) != f) {
+                            break;
+                        } else {
+                            this = iv5Var;
+                        }
+                    }
+                    this = iv5Var;
+                }
             }
-        } catch (Exception e) {
-            fa4.g(e, true);
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // hp5
+    public final boolean isActive() {
+        return true;
+    }
+
+    public final sv5 j() {
+        sv5 sv5Var = this.d;
+        if (sv5Var != null) {
+            return sv5Var;
+        }
+        ur5.e("job");
+        throw null;
+    }
+
+    public boolean k() {
+        return false;
+    }
+
+    public void l(Throwable th) {
+        throw null;
+    }
+
+    @Override // ud6
+    public final String toString() {
+        return getClass().getSimpleName() + '@' + l93.a(this) + "[job@" + l93.a(j()) + ']';
     }
 }

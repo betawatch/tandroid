@@ -1,73 +1,57 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.ActionBar.d;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class k72 extends be0 {
-    public final j72 H;
-    public final /* synthetic */ d I;
-    public final /* synthetic */ boolean J;
-    public final /* synthetic */ wjb K;
-    public final /* synthetic */ o72 L;
+public final /* synthetic */ class k72 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v72 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k72(o72 o72Var, Context context, d dVar, boolean z, wjb wjbVar) {
-        super(context);
-        this.L = o72Var;
-        this.I = dVar;
-        this.J = z;
-        this.K = wjbVar;
-        this.H = new j72(this);
+    public /* synthetic */ k72(v72 v72Var, byte b) {
+        this.a = b;
+        this.b = v72Var;
     }
 
-    @Override // be0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        long j;
-        o72 o72Var = this.L;
-        if (!o72Var.b || this.e != null) {
-            super.onDraw(canvas);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        v72 v72Var = this.b;
+        switch (b) {
+            case 0:
+                v72 v72Var2 = this.b;
+                v72Var2.K(true, 2147483646, 0, 0L, false);
+                q67 q67Var = v72Var2.P;
+                if (q67Var != null) {
+                    q67Var.f(false);
+                    v72Var2.P = null;
+                    break;
+                }
+                break;
+            case 1:
+                v72 v72Var3 = this.b;
+                v72Var3.K(false, 0, 0, 0L, false);
+                q67 q67Var2 = v72Var3.P;
+                if (q67Var2 != null) {
+                    q67Var2.f(true);
+                    v72Var3.P = null;
+                    break;
+                }
+                break;
+            case 2:
+                if (!yac.h(v72Var.n).p()) {
+                    new xk8(v72Var.b.Z1, v72Var.getContext(), v72Var.n, 43, true).show();
+                    break;
+                }
+                break;
+            case 3:
+                ui9 ui9Var = v72Var.s;
+                if (ui9Var != null) {
+                    ui9Var.setSendEnabled(v72Var.r.J3());
+                    break;
+                }
+                break;
+            default:
+                v72Var.e0();
+                break;
         }
-        j72 j72Var = this.H;
-        j72Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        j72Var.a = true;
-        j72Var.v = true;
-        j72Var.J = this.K;
-        Integer num = o72Var.c;
-        if (num != null) {
-            j72Var.z = num.intValue();
-        }
-        mu1 mu1Var = o72Var.H;
-        if (mu1Var != null) {
-            j = mu1Var.a();
-        } else {
-            d dVar = this.I;
-            j = dVar instanceof qvb ? -((qvb) dVar).a : 0L;
-        }
-        x2b.h(j, canvas, this.a, j72Var);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!this.J || !getImageReceiver().E()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-        } else {
-            accessibilityNodeInfo.setText(k96.M0(2131754797, null));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, k96.M0(2131747624, null)));
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.L.b && this.H.a(this, motionEvent)) {
-            return true;
-        }
-        return super.onTouchEvent(motionEvent);
     }
 }

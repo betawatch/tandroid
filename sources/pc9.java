@@ -1,34 +1,17 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pc9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hd9 b;
-
-    public /* synthetic */ pc9(hd9 hd9Var, byte b) {
-        this.a = b;
-        this.b = hd9Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        hd9 hd9Var = this.b;
-        switch (b) {
-            case 0:
-                hd9Var.R0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hd9Var.b0();
-                break;
-            default:
-                hd9Var.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hd9Var.z0();
-                hd9Var.Q.setTranslationX(gl.U1(hd9Var.J, hd9Var.H[0] - hd9Var.I[0], 0));
-                hd9Var.Q.setTranslationY(gl.U1(hd9Var.J, hd9Var.H[1] - hd9Var.I[1], 0));
-                hd9Var.P.invalidate();
-                break;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pc9 extends b8 {
+    @Override // b8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
+            size = hl.L(250.0f);
         }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
     }
 }

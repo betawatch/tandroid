@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class nk implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
@@ -46,91 +46,91 @@ public final /* synthetic */ class nk implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                ka2 ka2Var = (ka2) obj3;
-                nb2 nb2Var = (nb2) obj2;
-                gb2 gb2Var = (gb2) obj;
+                ab2 ab2Var = (ab2) obj3;
+                dc2 dc2Var = (dc2) obj2;
+                wb2 wb2Var = (wb2) obj;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                boolean z = ka2Var.l;
-                int i2 = ka2Var.s;
+                boolean z = ab2Var.l;
+                int i2 = ab2Var.s;
                 if (z) {
-                    nb2Var.h0 = (-i2) * floatValue2;
-                    nb2Var.i0 = (-ka2Var.t) * floatValue2;
-                    nb2Var.k0 = (-ka2Var.u) * floatValue2;
-                    nb2Var.j0 = (-ka2Var.v) * floatValue2;
+                    dc2Var.h0 = (-i2) * floatValue2;
+                    dc2Var.i0 = (-ab2Var.t) * floatValue2;
+                    dc2Var.k0 = (-ab2Var.u) * floatValue2;
+                    dc2Var.j0 = (-ab2Var.v) * floatValue2;
                 } else {
-                    nb2Var.h0 = ((-i2) * floatValue2) - gb2Var.getAnimationOffsetX();
-                    nb2Var.i0 = ((-ka2Var.t) * floatValue2) - gb2Var.getAnimationOffsetX();
-                    nb2Var.k0 = ((-ka2Var.u) * floatValue2) - gb2Var.getTranslationY();
-                    nb2Var.j0 = ((-ka2Var.v) * floatValue2) - gb2Var.getTranslationY();
+                    dc2Var.h0 = ((-i2) * floatValue2) - wb2Var.getAnimationOffsetX();
+                    dc2Var.i0 = ((-ab2Var.t) * floatValue2) - wb2Var.getAnimationOffsetX();
+                    dc2Var.k0 = ((-ab2Var.u) * floatValue2) - wb2Var.getTranslationY();
+                    dc2Var.j0 = ((-ab2Var.v) * floatValue2) - wb2Var.getTranslationY();
                 }
-                gb2Var.invalidate();
+                wb2Var.invalidate();
                 break;
             case 2:
-                rw5 rw5Var = (rw5) obj3;
+                wy5 wy5Var = (wy5) obj3;
                 ViewGroup viewGroup = (ViewGroup) obj2;
                 ViewGroup viewGroup2 = (ViewGroup) obj;
-                rw5Var.Y0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rw5Var.V0.invalidate();
-                rw5Var.S0.invalidate();
-                rw5Var.T0.invalidate();
-                while (i < rw5Var.V0.getChildCount()) {
-                    rw5Var.V0.getChildAt(i).setAlpha(((i == rw5Var.X0 ? rw5Var.Y0 : i == rw5Var.W0 ? 1.0f - rw5Var.Y0 : 0.0f) * 0.4f) + 0.6f);
+                wy5Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wy5Var.P0.invalidate();
+                wy5Var.M0.invalidate();
+                wy5Var.N0.invalidate();
+                while (i < wy5Var.P0.getChildCount()) {
+                    wy5Var.P0.getChildAt(i).setAlpha(((i == wy5Var.R0 ? wy5Var.S0 : i == wy5Var.Q0 ? 1.0f - wy5Var.S0 : 0.0f) * 0.4f) + 0.6f);
                     i++;
                 }
-                float interpolation = s33.f.getInterpolation(rw5Var.Y0);
+                float interpolation = k43.f.getInterpolation(wy5Var.S0);
                 if (viewGroup != null && viewGroup2 != null) {
                     float f = 1.0f - interpolation;
                     float f2 = (f * 0.4f) + 0.6f;
                     viewGroup.setScaleX(f2);
                     viewGroup.setScaleY(f2);
-                    viewGroup.setTranslationY((Math.min(interpolation, 0.25f) * gl.L(16.0f)) / 0.25f);
+                    viewGroup.setTranslationY((Math.min(interpolation, 0.25f) * hl.L(16.0f)) / 0.25f);
                     viewGroup.setAlpha(1.0f - (Math.min(interpolation, 0.25f) / 0.25f));
                     float f3 = (interpolation * 0.4f) + 0.6f;
                     viewGroup2.setScaleX(f3);
                     viewGroup2.setScaleY(f3);
-                    viewGroup2.setTranslationY((Math.min(f, 0.25f) * (-gl.L(16.0f))) / 0.25f);
+                    viewGroup2.setTranslationY((Math.min(f, 0.25f) * (-hl.L(16.0f))) / 0.25f);
                     viewGroup2.setAlpha(1.0f - (Math.min(f, 0.25f) / 0.25f));
                     break;
                 }
                 break;
             case 3:
-                wt7 wt7Var = (wt7) obj3;
+                dx7 dx7Var = (dx7) obj3;
                 ViewGroup viewGroup3 = (ViewGroup) obj2;
                 ViewGroup viewGroup4 = (ViewGroup) obj;
-                wt7Var.Q0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wt7Var.M0.invalidate();
-                wt7Var.J0.invalidate();
-                wt7Var.K0.invalidate();
-                while (i < wt7Var.M0.getChildCount()) {
-                    wt7Var.M0.getChildAt(i).setAlpha(((i == wt7Var.P0 ? wt7Var.Q0 : i == wt7Var.O0 ? 1.0f - wt7Var.Q0 : 0.0f) * 0.4f) + 0.6f);
+                dx7Var.K0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dx7Var.G0.invalidate();
+                dx7Var.D0.invalidate();
+                dx7Var.E0.invalidate();
+                while (i < dx7Var.G0.getChildCount()) {
+                    dx7Var.G0.getChildAt(i).setAlpha(((i == dx7Var.J0 ? dx7Var.K0 : i == dx7Var.I0 ? 1.0f - dx7Var.K0 : 0.0f) * 0.4f) + 0.6f);
                     i++;
                 }
-                float interpolation2 = s33.f.getInterpolation(wt7Var.Q0);
+                float interpolation2 = k43.f.getInterpolation(dx7Var.K0);
                 if (viewGroup3 != null && viewGroup4 != null) {
                     float f4 = 1.0f - interpolation2;
                     float f5 = (f4 * 0.4f) + 0.6f;
                     viewGroup3.setScaleX(f5);
                     viewGroup3.setScaleY(f5);
-                    viewGroup3.setTranslationY((Math.min(interpolation2, 0.25f) * gl.L(16.0f)) / 0.25f);
+                    viewGroup3.setTranslationY((Math.min(interpolation2, 0.25f) * hl.L(16.0f)) / 0.25f);
                     viewGroup3.setAlpha(1.0f - (Math.min(interpolation2, 0.25f) / 0.25f));
                     float f6 = (interpolation2 * 0.4f) + 0.6f;
                     viewGroup4.setScaleX(f6);
                     viewGroup4.setScaleY(f6);
-                    viewGroup4.setTranslationY((Math.min(f4, 0.25f) * (-gl.L(16.0f))) / 0.25f);
+                    viewGroup4.setTranslationY((Math.min(f4, 0.25f) * (-hl.L(16.0f))) / 0.25f);
                     viewGroup4.setAlpha(1.0f - (Math.min(f4, 0.25f) / 0.25f));
                     break;
                 }
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) obj;
-                y28 y28Var = ((c28) obj3).a;
-                y28Var.l3 = ((Float) ((ValueAnimator) obj2).getAnimatedValue()).floatValue();
-                y28Var.invalidate();
-                if (y28Var.l3 > 0.8f && !zArr[0]) {
+                o68 o68Var = ((s58) obj3).a;
+                o68Var.f3 = ((Float) ((ValueAnimator) obj2).getAnimatedValue()).floatValue();
+                o68Var.invalidate();
+                if (o68Var.f3 > 0.8f && !zArr[0]) {
                     zArr[0] = true;
-                    y28Var.g3 = true;
+                    o68Var.a3 = true;
                     try {
-                        y28Var.performHapticFeedback(3);
+                        o68Var.performHapticFeedback(3);
                         break;
                     } catch (Exception unused) {
                         return;
@@ -138,36 +138,36 @@ public final /* synthetic */ class nk implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 5:
-                ei8 ei8Var = (ei8) obj3;
-                t98 t98Var = (t98) obj2;
-                PremiumPreviewFragment premiumPreviewFragment = ei8Var.n;
+                rl8 rl8Var = (rl8) obj3;
+                jd8 jd8Var = (jd8) obj2;
+                PremiumPreviewFragment premiumPreviewFragment = rl8Var.n;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t98Var.setAlpha(floatValue3);
-                t98Var.setScaleX(floatValue3);
-                t98Var.setScaleY(floatValue3);
+                jd8Var.setAlpha(floatValue3);
+                jd8Var.setScaleX(floatValue3);
+                jd8Var.setScaleY(floatValue3);
                 float animatedFraction = ((ValueAnimator) obj).getAnimatedFraction();
                 while (i < premiumPreviewFragment.V.getChildCount()) {
                     View childAt = premiumPreviewFragment.V.getChildAt(i);
-                    if (childAt != ei8Var.e) {
-                        childAt.setTranslationY((t98Var.getMeasuredHeight() * animatedFraction) + (childAt == ei8Var.c ? 0.0f - (gl.L(15.0f) * animatedFraction) : (gl.L(8.0f) * animatedFraction) + 0.0f));
+                    if (childAt != rl8Var.e) {
+                        childAt.setTranslationY((jd8Var.getMeasuredHeight() * animatedFraction) + (childAt == rl8Var.c ? 0.0f - (hl.L(15.0f) * animatedFraction) : (hl.L(8.0f) * animatedFraction) + 0.0f));
                     }
                     i++;
                 }
                 break;
             case 6:
-                ohb ohbVar = (ohb) obj3;
-                ohbVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ((ar1) obj2).getEditField().setAlpha(ohbVar.a);
-                ((w02) obj).invalidate();
+                klb klbVar = (klb) obj3;
+                klbVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((nr1) obj2).getEditField().setAlpha(klbVar.a);
+                ((m12) obj).invalidate();
                 break;
             default:
-                mpb mpbVar = (mpb) obj3;
+                ntb ntbVar = (ntb) obj3;
                 AtomicBoolean atomicBoolean2 = (AtomicBoolean) obj2;
-                gk2 gk2Var = (gk2) obj;
-                mpbVar.getClass();
+                bl2 bl2Var = (bl2) obj;
+                ntbVar.getClass();
                 if (((Float) valueAnimator.getAnimatedValue()).floatValue() >= 0.5f && !atomicBoolean2.get()) {
                     atomicBoolean2.set(true);
-                    mpbVar.setDrawable(gk2Var);
+                    ntbVar.setDrawable(bl2Var);
                     break;
                 }
                 break;

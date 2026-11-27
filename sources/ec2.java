@@ -1,13 +1,109 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ec2 {
-    public int a;
-    public boolean b;
-    public long c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.HashSet;
 
-    public final boolean a() {
-        return this.b && (System.currentTimeMillis() - this.c) / 1000 <= ((long) na7.q1(y6c.t0).a3);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ec2 extends View implements snb {
+    public final fac a;
+    public final vnb b;
+    public int c;
+    public int d;
+    public rb2 e;
+    public float f;
+    public int h;
+
+    public ec2(Context context, vnb vnbVar) {
+        super(context);
+        this.b = vnbVar;
+        fac facVar = new fac();
+        this.a = facVar;
+        facVar.setCallback(this);
+        facVar.n = ob6.M0(2131743482, null);
+        facVar.o = ob6.M0(2131743483, null);
+        facVar.p = ob6.M0(2131743481, null);
+        facVar.j = new go1(this, (byte) 27);
+    }
+
+    public final void a(Canvas canvas) {
+        vnb vnbVar = this.b;
+        if (vnbVar != null) {
+            vnbVar.b(0.0f, this.f, getMeasuredWidth(), this.h);
+        } else {
+            aob.q(0.0f, this.f, getMeasuredWidth(), this.h);
+        }
+        float L = hl.L(18.0f);
+        float L2 = hl.L(6.0f);
+        float L3 = hl.L(18.0f) + this.c;
+        float L4 = hl.L(6.0f) + this.d;
+        float L5 = hl.L(18.0f);
+        float L6 = hl.L(18.0f);
+        Paint d = vnbVar != null ? vnbVar.d("paintChatActionBackground") : null;
+        if (d == null) {
+            d = aob.T0("paintChatActionBackground");
+        }
+        canvas.drawRoundRect(L, L2, L3, L4, L5, L6, d);
+        if (vnbVar != null ? vnbVar.g() : aob.b1()) {
+            canvas.drawRoundRect(hl.L(18.0f), hl.L(6.0f), hl.L(18.0f) + this.c, hl.L(6.0f) + this.d, hl.L(18.0f), hl.L(18.0f), aob.h2);
+        }
+    }
+
+    public final void b(float f, int i) {
+        this.f = f;
+        this.h = i;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int L = hl.L(18.0f);
+        int L2 = hl.L(6.0f);
+        int L3 = hl.L(18.0f) + this.c;
+        int L4 = hl.L(6.0f) + this.d;
+        fac facVar = this.a;
+        facVar.setBounds(L, L2, L3, L4);
+        facVar.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int L = size - hl.L(36.0f);
+        this.c = L;
+        int a = this.a.a(L);
+        this.d = a;
+        setMeasuredDimension(size, hl.L(12.0f) + a);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.i.a(this, motionEvent);
+    }
+
+    public void setDelegate(rb2 rb2Var) {
+        this.e = rb2Var;
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        this.a.b();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || drawable == this.a;
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
     }
 }

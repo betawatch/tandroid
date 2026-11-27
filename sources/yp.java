@@ -1,124 +1,16 @@
 // default package
 
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.widget.ListAdapter;
-import androidx.appcompat.app.AlertController$RecycleListView;
+import android.content.res.Resources;
+import android.widget.ThemedSpinnerAdapter;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class yp implements eq, DialogInterface.OnClickListener {
-    public id a;
-    public zp b;
-    public CharSequence c;
-    public final /* synthetic */ fq d;
-
-    public yp(fq fqVar) {
-        this.d = fqVar;
-    }
-
-    @Override // eq
-    public final boolean a() {
-        id idVar = this.a;
-        if (idVar != null) {
-            return idVar.isShowing();
-        }
-        return false;
-    }
-
-    @Override // eq
-    public final int b() {
-        return 0;
-    }
-
-    @Override // eq
-    public final void c(int i) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final CharSequence d() {
-        return this.c;
-    }
-
-    @Override // eq
-    public final void dismiss() {
-        id idVar = this.a;
-        if (idVar != null) {
-            idVar.dismiss();
-            this.a = null;
-        }
-    }
-
-    @Override // eq
-    public final Drawable g() {
-        return null;
-    }
-
-    @Override // eq
-    public final void h(CharSequence charSequence) {
-        this.c = charSequence;
-    }
-
-    @Override // eq
-    public final void j(Drawable drawable) {
-        Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final void k(int i) {
-        Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final void l(int i) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // eq
-    public final void m(int i, int i2) {
-        if (this.b == null) {
+public abstract class yp {
+    public static void a(ThemedSpinnerAdapter themedSpinnerAdapter, Resources.Theme theme) {
+        if (Objects.equals(themedSpinnerAdapter.getDropDownViewTheme(), theme)) {
             return;
         }
-        fq fqVar = this.d;
-        dd ddVar = new dd(fqVar.getPopupContext(), (byte) 0);
-        pc pcVar = (pc) ddVar.c;
-        CharSequence charSequence = this.c;
-        if (charSequence != null) {
-            pcVar.f = charSequence;
-        }
-        zp zpVar = this.b;
-        int selectedItemPosition = fqVar.getSelectedItemPosition();
-        pcVar.l = zpVar;
-        pcVar.m = this;
-        pcVar.b = selectedItemPosition;
-        pcVar.a = true;
-        id Z = ddVar.Z();
-        this.a = Z;
-        AlertController$RecycleListView alertController$RecycleListView = Z.f.e;
-        wp.d(alertController$RecycleListView, i);
-        wp.c(alertController$RecycleListView, i2);
-        this.a.show();
-    }
-
-    @Override // eq
-    public final int n() {
-        return 0;
-    }
-
-    @Override // eq
-    public final void o(ListAdapter listAdapter) {
-        this.b = (zp) listAdapter;
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        fq fqVar = this.d;
-        fqVar.setSelection(i);
-        if (fqVar.getOnItemClickListener() != null) {
-            fqVar.performItemClick(null, i, this.b.getItemId(i));
-        }
-        dismiss();
+        themedSpinnerAdapter.setDropDownViewTheme(theme);
     }
 }

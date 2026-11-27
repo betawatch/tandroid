@@ -1,51 +1,48 @@
 // default package
 
-import android.os.Looper;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.ServiceConfigurationError;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class ug6 {
-    public static final kc5 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ug6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zg6 b;
 
-    static {
-        Object obj;
-        int i = hdb.a;
-        try {
-            System.getProperty("kotlinx.coroutines.fast.service.loader");
-        } catch (SecurityException unused) {
-        }
-        try {
-            byte b = 1;
-            Iterator it = Arrays.asList(new ck()).iterator();
-            it.getClass();
-            Iterator it2 = s4a.a(new rs2(new t4a(it, b))).iterator();
-            if (it2.hasNext()) {
-                Object next = it2.next();
-                if (it2.hasNext()) {
-                    ((ck) next).getClass();
-                    do {
-                        ((ck) it2.next()).getClass();
-                    } while (it2.hasNext());
-                }
-                obj = next;
-            } else {
-                obj = null;
-            }
-            if (((ck) obj) == null) {
-                sc8.j("Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. 'kotlinx-coroutines-android' and ensure it has the same version as 'kotlinx-coroutines-core'");
-                return;
-            }
-            Looper mainLooper = Looper.getMainLooper();
-            if (mainLooper != null) {
-                a = new kc5(lc5.a(mainLooper), false);
-            } else {
-                sc8.j("The main looper is not available");
-            }
-        } catch (Throwable th) {
-            throw new ServiceConfigurationError(th.getMessage(), th);
+    public /* synthetic */ ug6(zg6 zg6Var, byte b) {
+        this.a = b;
+        this.b = zg6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i;
+        byte b = this.a;
+        zg6 zg6Var = this.b;
+        switch (b) {
+            case 0:
+                zg6Var.o();
+                break;
+            case 1:
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
+                qh6 qh6Var = zg6Var.w;
+                i = ((e) qh6Var).currentAccount;
+                premiumPreviewFragment.setCurrentAccount(i);
+                qh6Var.presentFragment(premiumPreviewFragment);
+                break;
+            case 2:
+                qh6 qh6Var2 = zg6Var.w;
+                qh6Var2.J1(0, true, null, true);
+                qh6Var2.z1(ob6.M0(2131745798, null), ob6.M0(2131751986, null));
+                break;
+            case 3:
+                qh6 qh6Var3 = zg6Var.w;
+                qh6Var3.J1(0, true, null, true);
+                qh6Var3.z1(ob6.M0(2131745798, null), ob6.M0(2131751986, null));
+                break;
+            default:
+                zg6Var.b.setLoading(false);
+                break;
         }
     }
 }

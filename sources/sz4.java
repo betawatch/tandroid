@@ -1,73 +1,17 @@
 // default package
 
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class sz4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class sz4 implements mz4 {
+    public mz4 a;
 
-    public /* synthetic */ sz4(int i, long j, long j2, int i2, go2 go2Var) {
-        this.a = (byte) 0;
-        this.d = i;
-        this.b = j;
-        this.c = j2;
-        this.e = i2;
-        this.f = go2Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i;
-        byte b = this.a;
-        int i2 = this.e;
-        long j = this.b;
-        Object obj = this.f;
-        switch (b) {
-            case 0:
-                uz4.a(this.d, this.b, this.c, i2 + 1, (go2) obj);
-                break;
-            case 1:
-                hq6 hq6Var = (hq6) obj;
-                long j2 = this.c;
-                int i3 = this.d;
-                try {
-                    SQLitePreparedStatement executeFast = j != 0 ? hq6Var.getMessagesStorage().b.executeFast("REPLACE INTO media_counts_topics VALUES(?, ?, ?, ?, ?)") : hq6Var.getMessagesStorage().b.executeFast("REPLACE INTO media_counts_v2 VALUES(?, ?, ?, ?)");
-                    executeFast.requery();
-                    executeFast.bindLong(1, j2);
-                    if (j != 0) {
-                        executeFast.bindLong(2, j);
-                        i = 3;
-                    } else {
-                        i = 2;
-                    }
-                    executeFast.bindInteger(i, i3);
-                    executeFast.bindInteger(i + 1, i2);
-                    executeFast.bindInteger(i + 2, 0);
-                    executeFast.step();
-                    executeFast.dispose();
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            default:
-                ((ad7) obj).b2(this.d, this.e, -j, this.c);
-                break;
+    @Override // mz4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+        mz4 mz4Var = this.a;
+        if (mz4Var != null) {
+            mz4Var.e(f, f2, f3, f4, canvas);
         }
-    }
-
-    public /* synthetic */ sz4(pf0 pf0Var, long j, long j2, int i, int i2, byte b) {
-        this.a = b;
-        this.f = pf0Var;
-        this.b = j;
-        this.c = j2;
-        this.d = i;
-        this.e = i2;
     }
 }

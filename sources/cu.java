@@ -2,192 +2,486 @@
 
 import android.app.Activity;
 import android.graphics.Canvas;
-import android.text.Spannable;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
-import android.text.style.MetricAffectingSpan;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import java.util.HashSet;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cu extends View implements eib, dw {
-    public final vg5 a;
-    public final dx b;
-    public bw c;
-    public int d;
-    public final int e;
-    public TL_iv.pageBlockAuthorDate f;
+public final class cu extends View implements jq3, zlb {
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public byte I;
+    public boolean J;
+    public final int K;
+    public TL_iv.pageBlockAudio L;
+    public TLRPC.Document M;
+    public r47 N;
+    public final xi5 a;
+    public final ex b;
+    public cw c;
+    public cw d;
+    public final RadialProgress2 e;
+    public final ry9 f;
+    public boolean h;
+    public int n;
+    public final int r;
+    public int s;
+    public String w;
+    public cw x;
+    public StaticLayout y;
 
-    public cu(Activity activity, vg5 vg5Var, dx dxVar) {
+    public cu(Activity activity, xi5 xi5Var, ex exVar) {
         super(activity);
-        this.e = gl.L(8.0f);
-        this.a = vg5Var;
-        this.b = dxVar;
+        this.r = hl.L(58.0f);
+        this.a = xi5Var;
+        this.b = exVar;
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, null);
+        this.e = radialProgress2;
+        radialProgress2.setCircleRadius(hl.L(24.0f));
+        this.K = lq3.q(((o) xi5Var).Y).k();
+        ry9 ry9Var = new ry9(this);
+        this.f = ry9Var;
+        ry9Var.h = new m0(this, (byte) 19);
     }
 
-    @Override // dw
-    public int getBoundLeft() {
-        bw bwVar = this.c;
-        if (bwVar == null) {
-            return -1;
+    private int getIconForCurrentState() {
+        byte b = this.I;
+        if (b == 1) {
+            return 1;
         }
-        return ug8.h(this.a, 18.0f, bwVar.k() + bwVar.s);
-    }
-
-    @Override // dw
-    public int getBoundRight() {
-        bw bwVar = this.c;
-        if (bwVar == null) {
-            return -1;
+        if (b == 2) {
+            return 2;
         }
-        return ug8.C(this.a, 18.0f, bwVar.l() + bwVar.s);
+        return b == 3 ? 3 : 0;
     }
 
-    @Override // dw
-    public int getLastLineBoundRight() {
-        bw bwVar = this.c;
-        if (bwVar == null) {
-            return -1;
+    @Override // jq3
+    public final void B(boolean z) {
+        a(true);
+    }
+
+    @Override // jq3
+    public final void N(String str) {
+        this.e.o(true, 1.0f);
+        a(true);
+    }
+
+    public final void a(boolean z) {
+        int i = ((o) this.a).Y;
+        String r = xb4.r(null, this.M);
+        xb4.G(i);
+        boolean exists = xb4.J(this.M, null, true, true).exists();
+        boolean isEmpty = TextUtils.isEmpty(r);
+        RadialProgress2 radialProgress2 = this.e;
+        if (isEmpty) {
+            radialProgress2.setIcon(4, false, false);
+            return;
         }
-        return ug8.C(this.a, 18.0f, bwVar.m() + bwVar.s);
+        if (exists) {
+            lq3.q(i).v(this);
+            boolean H = MediaController.z().H(this.N);
+            if (!H || (H && MediaController.z().G())) {
+                this.I = (byte) 0;
+            } else {
+                this.I = (byte) 1;
+            }
+            radialProgress2.setIcon(getIconForCurrentState(), false, z);
+        } else {
+            lq3.q(i).a(r, null, this);
+            if (xb4.G(i).S(r)) {
+                this.I = (byte) 3;
+                Float s = in5.z().s(r);
+                if (s != null) {
+                    radialProgress2.o(z, s.floatValue());
+                } else {
+                    radialProgress2.o(z, 0.0f);
+                }
+                radialProgress2.setIcon(getIconForCurrentState(), true, z);
+            } else {
+                this.I = (byte) 2;
+                radialProgress2.o(z, 0.0f);
+                radialProgress2.setIcon(getIconForCurrentState(), false, z);
+            }
+        }
+        b();
     }
 
-    public /* bridge */ /* synthetic */ int getMinWidth() {
-        return ug8.a(this);
+    public final void b() {
+        r47 r47Var;
+        int i;
+        if (this.M == null || (r47Var = this.N) == null) {
+            return;
+        }
+        ry9 ry9Var = this.f;
+        if (!ry9Var.e) {
+            ry9Var.g(r47Var.b0);
+        }
+        if (!MediaController.z().H(this.N)) {
+            int i2 = 0;
+            while (true) {
+                if (i2 >= this.M.attributes.size()) {
+                    i = 0;
+                    break;
+                }
+                TLRPC.DocumentAttribute documentAttribute = this.M.attributes.get(i2);
+                if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
+                    i = (int) documentAttribute.duration;
+                    break;
+                }
+                i2++;
+            }
+        } else {
+            i = this.N.i0;
+        }
+        String g0 = hl.g0(i, false, false);
+        String str = this.w;
+        if (str == null || !str.equals(g0)) {
+            this.w = g0;
+            TextPaint textPaint = o.g1;
+            textPaint.setTextSize(hl.L(16.0f));
+            this.y = new StaticLayout(g0, textPaint, (int) Math.ceil(textPaint.measureText(g0)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        }
+        TextPaint textPaint2 = o.g1;
+        ((o) this.a).getClass();
+        textPaint2.setColor(aob.w0(null, aob.G6, false));
+        invalidate();
     }
 
-    @Override // eib
+    public r47 getMessageObject() {
+        return this.N;
+    }
+
+    @Override // jq3
+    public int getObserverTag() {
+        return this.K;
+    }
+
+    @Override // jq3
+    public final void i(long j, long j2) {
+        this.e.o(true, Math.min(1.0f, j / j2));
+        if (this.I != 3) {
+            a(true);
+        }
+    }
+
+    @Override // zlb
     public final void k(ArrayList arrayList) {
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            arrayList.add(bwVar);
+        cw cwVar = this.x;
+        if (cwVar != null) {
+            arrayList.add(cwVar);
+        }
+        cw cwVar2 = this.c;
+        if (cwVar2 != null) {
+            arrayList.add(cwVar2);
+        }
+        cw cwVar3 = this.d;
+        if (cwVar3 != null) {
+            arrayList.add(cwVar3);
         }
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            bwVar.i(this);
+        a(false);
+        cw cwVar = this.x;
+        if (cwVar != null) {
+            cwVar.i(this);
+        }
+        cw cwVar2 = this.c;
+        if (cwVar2 != null) {
+            cwVar2.i(this);
+        }
+        cw cwVar3 = this.d;
+        if (cwVar3 != null) {
+            cwVar3.i(this);
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            bwVar.f(this);
+        lq3.q(((o) this.a).Y).v(this);
+        cw cwVar = this.x;
+        if (cwVar != null) {
+            cwVar.f(this);
+        }
+        cw cwVar2 = this.c;
+        if (cwVar2 != null) {
+            cwVar2.f(this);
+        }
+        cw cwVar3 = this.d;
+        if (cwVar3 != null) {
+            cwVar3.f(this);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.f == null || this.c == null) {
+        if (this.L == null) {
             return;
         }
+        int i = aob.Ze;
+        int i2 = aob.af;
+        int i3 = aob.ld;
+        int i4 = aob.md;
+        RadialProgress2 radialProgress2 = this.e;
+        radialProgress2.g(i, i2, i3, i4);
+        int i5 = aob.se;
+        xi5 xi5Var = this.a;
+        ((o) xi5Var).getClass();
+        radialProgress2.d = aob.u0(i5);
+        radialProgress2.draw(canvas);
         canvas.save();
-        canvas.translate(this.d, this.e);
-        o.s(this.a, canvas, this, 0);
-        this.c.d(canvas, this);
+        canvas.translate(this.E, this.F);
+        int i6 = aob.le;
+        ((o) xi5Var).getClass();
+        int u0 = aob.u0(i6);
+        int i7 = aob.me;
+        ((o) xi5Var).getClass();
+        int u02 = aob.u0(i7);
+        int i8 = aob.oe;
+        ((o) xi5Var).getClass();
+        int u03 = aob.u0(i8);
+        ((o) xi5Var).getClass();
+        int u04 = aob.u0(i8);
+        int i9 = aob.ne;
+        ((o) xi5Var).getClass();
+        int u05 = aob.u0(i9);
+        ry9 ry9Var = this.f;
+        ry9Var.f(u0, u02, u03, u04, u05);
+        ry9Var.b(canvas);
         canvas.restore();
+        if (this.y != null) {
+            canvas.save();
+            canvas.translate(hl.L(54.0f) + this.G, hl.L(6.0f) + this.F);
+            this.y.draw(canvas);
+            canvas.restore();
+        }
+        int i10 = 0;
+        if (this.x != null) {
+            canvas.save();
+            this.x.s = hl.L(54.0f) + this.G;
+            this.x.w = this.F - hl.L(16.0f);
+            cw cwVar = this.x;
+            canvas.translate(cwVar.s, cwVar.w);
+            o.s(xi5Var, canvas, this, 0);
+            this.x.d(canvas, this);
+            canvas.restore();
+            i10 = 1;
+        }
+        cw cwVar2 = this.c;
+        int i11 = this.r;
+        if (cwVar2 != null) {
+            canvas.save();
+            cw cwVar3 = this.c;
+            int i12 = this.n;
+            cwVar3.s = i12;
+            cwVar3.w = i11;
+            canvas.translate(i12, i11);
+            o.s(xi5Var, canvas, this, i10);
+            this.c.d(canvas, this);
+            canvas.restore();
+            i10++;
+        }
+        if (this.d != null) {
+            canvas.save();
+            cw cwVar4 = this.d;
+            int i13 = this.n;
+            cwVar4.s = i13;
+            cwVar4.w = i11 + this.s;
+            canvas.translate(i13, i11 + r5);
+            o.s(xi5Var, canvas, this, i10);
+            this.d.d(canvas, this);
+            canvas.restore();
+        }
+        o.r(canvas, xi5Var, this.L, getMeasuredHeight());
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
         accessibilityNodeInfo.setEnabled(true);
-        bw bwVar = this.c;
-        if (bwVar == null) {
-            return;
+        StringBuilder sb = new StringBuilder(ob6.M0(2131754869, null));
+        if (this.x != null) {
+            sb.append(", ");
+            sb.append(this.x.d.getText());
         }
-        accessibilityNodeInfo.setText(o.g(this.a, this.b, bwVar));
+        if (this.c != null) {
+            sb.append(", ");
+            sb.append(this.c.d.getText());
+        }
+        if (this.d != null) {
+            sb.append(", ");
+            sb.append(this.d.d.getText());
+        }
+        accessibilityNodeInfo.setText(sb);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v10 */
-    /* JADX WARN: Type inference failed for: r4v11, types: [android.text.Spannable] */
-    /* JADX WARN: Type inference failed for: r4v12 */
-    /* JADX WARN: Type inference failed for: r4v28 */
-    /* JADX WARN: Type inference failed for: r4v29 */
-    /* JADX WARN: Type inference failed for: r4v30 */
-    /* JADX WARN: Type inference failed for: r4v9, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r5v5, types: [android.text.Spannable$Factory] */
     @Override // android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
-        Spannable spannable;
-        MetricAffectingSpan[] metricAffectingSpanArr;
-        int indexOf;
         int L;
         int size = View.MeasureSpec.getSize(i);
-        TL_iv.pageBlockAuthorDate pageblockauthordate = this.f;
-        int i4 = 1;
-        if (pageblockauthordate != null) {
-            TL_iv.RichText richText = pageblockauthordate.author;
-            HashSet hashSet = o.d1;
-            dx dxVar = this.b;
-            CharSequence z = o.z(this.a, dxVar != null ? dxVar.F : null, this, richText, richText, pageblockauthordate, size);
-            i3 = size;
-            if (z instanceof Spannable) {
-                spannable = (Spannable) z;
-                metricAffectingSpanArr = (MetricAffectingSpan[]) spannable.getSpans(0, z.length(), MetricAffectingSpan.class);
+        int L2 = hl.L(54.0f);
+        TL_iv.pageBlockAudio pageblockaudio = this.L;
+        if (pageblockaudio != null) {
+            if (pageblockaudio.level > 0) {
+                L = hl.L(18.0f) + hl.L(r0 * 14);
+                this.n = L;
             } else {
-                spannable = null;
-                metricAffectingSpanArr = null;
+                L = hl.L(18.0f);
+                this.n = L;
             }
-            CharSequence a0 = (this.f.published_date == 0 || TextUtils.isEmpty(z)) ? !TextUtils.isEmpty(z) ? k96.a0(null, null, 2131754053, z) : k96.D0().h0().format(this.f.published_date * 1000) : k96.a0(null, null, 2131754037, k96.D0().h0().format(this.f.published_date * 1000), z);
-            if (metricAffectingSpanArr != null) {
-                try {
-                    if (metricAffectingSpanArr.length > 0 && (indexOf = TextUtils.indexOf((CharSequence) a0, z)) != -1) {
-                        a0 = Spannable.Factory.getInstance().newSpannable(a0);
-                        for (int i5 = 0; i5 < metricAffectingSpanArr.length; i5++) {
-                            MetricAffectingSpan metricAffectingSpan = metricAffectingSpanArr[i5];
-                            a0.setSpan(metricAffectingSpan, spannable.getSpanStart(metricAffectingSpan) + indexOf, spannable.getSpanEnd(metricAffectingSpanArr[i5]) + indexOf, 33);
-                        }
-                    }
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                }
-            }
-            bw m = o.m(this.a, this, a0, null, i3 - gl.L(36.0f), this.e, this.f, this.b);
+            int L3 = (size - L) - hl.L(18.0f);
+            int L4 = hl.L(44.0f);
+            this.G = hl.L(16.0f);
+            int L5 = hl.L(5.0f);
+            this.H = L5;
+            int i4 = this.G;
+            this.e.p(i4, L5, i4 + L4, L5 + L4);
+            TL_iv.pageBlockAudio pageblockaudio2 = this.L;
+            cw m = o.m(this.a, this, null, pageblockaudio2.caption.text, L3, this.r, pageblockaudio2, this.b);
             this.c = m;
             if (m != null) {
-                int height = this.c.d.getHeight() + gl.L(16.0f);
-                if (dxVar == null || !dxVar.H) {
-                    L = gl.L(18.0f);
-                    this.d = L;
-                } else {
-                    L = (int) Math.floor(((i3 - this.c.d.getLineLeft(0)) - this.c.d.getLineWidth(0)) - gl.L(16.0f));
-                    this.d = L;
-                }
-                bw bwVar = this.c;
-                bwVar.s = L;
-                bwVar.w = this.e;
-                i4 = height;
-            } else {
-                i4 = 0;
+                int height = this.c.d.getHeight() + hl.L(8.0f);
+                this.s = height;
+                L2 = uh9.w(8.0f, height, L2);
             }
+            i3 = L2;
+            TL_iv.pageBlockAudio pageblockaudio3 = this.L;
+            cw n = o.n(this.a, this, null, pageblockaudio3.caption.credit, L3, this.r + this.s, pageblockaudio3, this.b.H ? o0b.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
+            this.d = n;
+            if (n != null) {
+                i3 += this.d.d.getHeight() + hl.L(4.0f);
+            }
+            if (!this.h && this.L.level <= 0) {
+                i3 += hl.L(8.0f);
+            }
+            String w1 = this.N.w1(false);
+            String y1 = this.N.y1(false);
+            int w = uh9.w(50.0f, this.G, L4);
+            this.E = w;
+            int L6 = (size - w) - hl.L(18.0f);
+            if (TextUtils.isEmpty(y1) && TextUtils.isEmpty(w1)) {
+                this.x = null;
+                this.F = ((L4 - hl.L(30.0f)) / 2) + this.H;
+            } else {
+                SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(y1) || TextUtils.isEmpty(w1)) ? !TextUtils.isEmpty(y1) ? new SpannableStringBuilder(y1) : new SpannableStringBuilder(w1) : new SpannableStringBuilder(qd4.p(w1, " - ", y1));
+                if (!TextUtils.isEmpty(w1)) {
+                    spannableStringBuilder.setSpan(new y7c(hl.o()), 0, w1.length(), 18);
+                }
+                CharSequence ellipsize = TextUtils.ellipsize(spannableStringBuilder, aob.O2, L6, TextUtils.TruncateAt.END);
+                cw cwVar = new cw(this.a);
+                this.x = cwVar;
+                cwVar.d = new StaticLayout(ellipsize, o.g1, L6, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                this.x.n = this.L;
+                this.F = hl.L(11.0f) + ((L4 - hl.L(30.0f)) / 2) + this.H;
+            }
+            this.f.h(L6, hl.L(30.0f));
         } else {
-            i3 = size;
+            i3 = 1;
         }
-        setMeasuredDimension(i3, i4);
+        setMeasuredDimension(size, i3);
+        b();
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0066, code lost:
+    
+        if (r1 <= (hl.L(48.0f) + r0)) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
+    
+        r18.J = true;
+        invalidate();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x006a, code lost:
+    
+        if (r18.I == 0) goto L23;
+     */
     @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
+        float x = motionEvent.getX();
+        float y = motionEvent.getY();
+        if (this.f.e(motionEvent.getX() - this.E, motionEvent.getY() - this.F, motionEvent.getAction())) {
+            if (motionEvent.getAction() == 0) {
+                getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            invalidate();
+            return true;
+        }
+        if (motionEvent.getAction() == 0) {
+            if (this.I != -1) {
+                if (x >= this.G && x <= hl.L(48.0f) + r2) {
+                    if (y >= this.H) {
+                    }
+                }
+            }
+        } else if (motionEvent.getAction() == 1) {
+            if (this.J) {
+                this.J = false;
+                playSoundEffect(0);
+                int i = ((o) this.a).Y;
+                byte b = this.I;
+                ex exVar = this.b;
+                RadialProgress2 radialProgress2 = this.e;
+                if (b == 0) {
+                    if (exVar != null && MediaController.z().q0(exVar.w, this.N, 0L, false, null, 0L)) {
+                        this.I = (byte) 1;
+                        radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                        invalidate();
+                    }
+                } else if (b == 1) {
+                    if (MediaController.z().U(this.N, true)) {
+                        this.I = (byte) 0;
+                        radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                        invalidate();
+                    }
+                } else if (b == 2) {
+                    radialProgress2.o(false, 0.0f);
+                    xb4.G(i).X(this.M, exVar == null ? null : exVar.F, 1, 1);
+                    this.I = (byte) 3;
+                    radialProgress2.setIcon(getIconForCurrentState(), true, true);
+                    invalidate();
+                } else if (b == 3) {
+                    xb4.G(i).f(this.M);
+                    this.I = (byte) 2;
+                    radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                    invalidate();
+                }
+                invalidate();
+            }
+        } else if (motionEvent.getAction() == 3) {
+            this.J = false;
+        }
+        if (!this.J) {
+            if (!o.i(this.a, this.b, motionEvent, this, this.c, this.n, this.r)) {
+                if (!o.i(this.a, this.b, motionEvent, this, this.d, this.n, this.r + this.s) && !super.onTouchEvent(motionEvent)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
-    public void setBlock(TL_iv.pageBlockAuthorDate pageblockauthordate) {
-        this.f = pageblockauthordate;
-        requestLayout();
+    @Override // jq3
+    public final void l(long j, long j2) {
     }
 }

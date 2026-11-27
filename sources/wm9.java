@@ -1,0 +1,182 @@
+// default package
+
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class wm9 {
+    public static volatile long g;
+    public static volatile long h;
+    public static final HashSet i = new HashSet(Arrays.asList("audio/mpeg3", "audio/mpeg", "audio/ogg", "audio/m4a"));
+    public final long a;
+    public final int c;
+    public int d;
+    public boolean f;
+    public String b = null;
+    public final ArrayList e = new ArrayList();
+
+    public wm9(int i2) {
+        this.c = i2;
+        this.a = yac.h(i2).n;
+        SharedPreferences d = d();
+        try {
+            g = d.getLong("hash", 0L);
+            h = d.getLong("lastReload", 0L);
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+        hl.c3(new um9(this, (byte) 0));
+    }
+
+    public final void a(TLRPC.Document document) {
+        if (document == null || c(document.id) != null) {
+            return;
+        }
+        vm9 vm9Var = new vm9();
+        vm9Var.a = document;
+        int i2 = this.d;
+        this.d = i2 + 1;
+        vm9Var.c = i2;
+        vm9Var.d = false;
+        this.e.add(vm9Var);
+        h();
+    }
+
+    public final void b() {
+        if (!this.f) {
+            f(true);
+            this.f = true;
+        }
+        Utilities.e.c(new z09(this, new ArrayList(this.e), (byte) 26));
+    }
+
+    public final TLRPC.Document c(long j) {
+        ArrayList arrayList = this.e;
+        if (!this.f) {
+            f(true);
+            this.f = true;
+        }
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            try {
+                if (arrayList.get(i2) != null && ((vm9) arrayList.get(i2)).a != null && ((vm9) arrayList.get(i2)).a.id == j) {
+                    return ((vm9) arrayList.get(i2)).a;
+                }
+            } catch (Exception e) {
+                cc4.g(e, true);
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public final SharedPreferences d() {
+        if (this.b == null) {
+            this.b = "ringtones_pref_" + this.a;
+        }
+        return a.b.getSharedPreferences(this.b, 0);
+    }
+
+    public final String e(long j) {
+        if (!this.f) {
+            f(true);
+            this.f = true;
+        }
+        int i2 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i2 >= arrayList.size()) {
+                return "NoSound";
+            }
+            if (((vm9) arrayList.get(i2)).a != null && ((vm9) arrayList.get(i2)).a.id == j) {
+                if (!TextUtils.isEmpty(((vm9) arrayList.get(i2)).b)) {
+                    return ((vm9) arrayList.get(i2)).b;
+                }
+                xb4.G(this.c);
+                return xb4.I(((vm9) arrayList.get(i2)).a).toString();
+            }
+            i2++;
+        }
+    }
+
+    public final void f(boolean z) {
+        SharedPreferences d = d();
+        int i2 = d.getInt("count", 0);
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        for (int i3 = 0; i3 < i2; i3++) {
+            String string = d.getString("tone_document" + i3, "");
+            String string2 = d.getString("tone_local_path" + i3, "");
+            SerializedData serializedData = new SerializedData(Utilities.v(string));
+            try {
+                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                vm9 vm9Var = new vm9();
+                vm9Var.a = TLdeserialize;
+                vm9Var.b = string2;
+                int i4 = this.d;
+                this.d = i4 + 1;
+                vm9Var.c = i4;
+                arrayList.add(vm9Var);
+            } catch (Throwable th) {
+                boolean z2 = f11.a;
+                cc4.g(th, true);
+            }
+        }
+        if (z) {
+            hl.c3(new um9(this, (byte) 1));
+        }
+    }
+
+    public final void g(boolean z) {
+        boolean z2 = z || System.currentTimeMillis() - h > 86400000;
+        TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
+        getsavedringtones.hash = g;
+        if (z2) {
+            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new w15(this, (byte) 28));
+            return;
+        }
+        if (!this.f) {
+            f(true);
+            this.f = true;
+        }
+        b();
+    }
+
+    public final void h() {
+        SharedPreferences d = d();
+        d.edit().clear().apply();
+        SharedPreferences.Editor edit = d.edit();
+        int i2 = 0;
+        int i3 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i2 >= arrayList.size()) {
+                edit.putInt("count", i3);
+                edit.apply();
+                jn7.f(this.c).k(jn7.h5, new Object[0]);
+                return;
+            }
+            if (!((vm9) arrayList.get(i2)).d) {
+                i3++;
+                TLRPC.Document document = ((vm9) arrayList.get(i2)).a;
+                String str = ((vm9) arrayList.get(i2)).b;
+                SerializedData serializedData = new SerializedData(document.getObjectSize());
+                document.serializeToStream(serializedData);
+                edit.putString("tone_document" + i2, Utilities.f(serializedData.toByteArray()));
+                if (str != null) {
+                    edit.putString("tone_local_path" + i2, str);
+                }
+            }
+            i2++;
+        }
+    }
+}

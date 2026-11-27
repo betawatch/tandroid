@@ -6,9 +6,9 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class af extends s0d {
+final class af extends j5d {
     final /* synthetic */ byte[] a;
     final /* synthetic */ Long b;
     final /* synthetic */ Parcelable c;
@@ -27,37 +27,37 @@ final class af extends s0d {
         this.f = ajVar;
     }
 
-    @Override // s0d
+    @Override // j5d
     public final void a(Exception exc) {
-        if (exc instanceof izc) {
+        if (exc instanceof z3d) {
             super.a(new IntegrityServiceException(-9, exc));
         } else {
             super.a(exc);
         }
     }
 
-    @Override // s0d
+    @Override // j5d
     public final void b() {
-        q0d q0dVar;
+        h5d h5dVar;
         try {
             aj ajVar = this.f;
-            m0d m0dVar = (m0d) ajVar.a.n;
+            d5d d5dVar = (d5d) ajVar.a.n;
             Bundle a = aj.a(ajVar, this.a, this.b, this.c);
             ai aiVar = new ai(this.f, this.d);
-            i0d i0dVar = (i0d) m0dVar;
-            i0dVar.getClass();
+            z4d z4dVar = (z4d) d5dVar;
+            z4dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(i0dVar.c);
-            int i = yzc.a;
+            obtain.writeInterfaceToken(z4dVar.c);
+            int i = p4d.a;
             obtain.writeInt(1);
             a.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(aiVar);
-            i0dVar.b(obtain, 2);
+            z4dVar.b(obtain, 2);
         } catch (RemoteException e) {
             aj ajVar2 = this.f;
             IntegrityTokenRequest integrityTokenRequest = this.e;
-            q0dVar = ajVar2.b;
-            q0dVar.a(e, "requestIntegrityToken(%s)", integrityTokenRequest);
+            h5dVar = ajVar2.b;
+            h5dVar.a(e, "requestIntegrityToken(%s)", integrityTokenRequest);
             this.d.trySetException(new IntegrityServiceException(-100, e));
         }
     }

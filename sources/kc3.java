@@ -1,31 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.math.BigInteger;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class kc3 extends qc3 implements Comparable {
-    public final int e;
-    public final int f;
+public final class kc3 implements zy9 {
+    public final /* synthetic */ lc3 a;
 
-    public kc3(int i, sxb sxbVar, int i2, nc3 nc3Var, int i3) {
-        super(i, sxbVar, i2);
-        int i4;
-        this.e = ls6.c(i3, nc3Var.B0) ? 1 : 0;
-        fm4 fm4Var = this.d;
-        int i5 = fm4Var.A;
-        int i6 = -1;
-        if (i5 != -1 && (i4 = fm4Var.B) != -1) {
-            i6 = i5 * i4;
-        }
-        this.f = i6;
+    public kc3(lc3 lc3Var) {
+        this.a = lc3Var;
     }
 
-    @Override // qc3
-    public final int a() {
-        return this.e;
+    @Override // zy9
+    public final boolean c() {
+        return true;
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Integer.compare(this.f, ((kc3) obj).f);
+    @Override // zy9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // zy9
+    public final yy9 e(long j) {
+        lc3 lc3Var = this.a;
+        long j2 = lc3Var.b;
+        BigInteger valueOf = BigInteger.valueOf((lc3Var.d.i * j) / 1000000);
+        long j3 = lc3Var.c;
+        bz9 bz9Var = new bz9(j, gcc.j((valueOf.multiply(BigInteger.valueOf(j3 - j2)).divide(BigInteger.valueOf(lc3Var.f)).longValue() + j2) - 30000, lc3Var.b, j3 - 1));
+        return new yy9(bz9Var, bz9Var);
+    }
+
+    @Override // zy9
+    public final long h() {
+        return (this.a.f * 1000000) / r5.d.i;
     }
 }

@@ -1,111 +1,66 @@
 // default package
 
 import android.content.Context;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ti3 implements ce4 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ cj3 b;
+public final class ti3 extends ScrollView {
+    public final /* synthetic */ byte a;
 
-    public ti3(cj3 cj3Var, Context context) {
-        this.b = cj3Var;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ti3(Context context, byte b) {
+        super(context);
+        this.a = b;
     }
 
-    public final int a(int i) {
-        cj3 cj3Var = this.b;
-        if (cj3Var.T0 == 3) {
-            return 0;
-        }
-        if (i == cj3Var.A0.getDefaultTabId()) {
-            return cj3Var.getMessagesStorage().L;
-        }
-        ArrayList R0 = cj3Var.getMessagesController().R0();
-        if (i < 0 || i >= R0.size()) {
-            return 0;
-        }
-        return ((t97) cj3Var.getMessagesController().R0().get(i)).d;
-    }
-
-    public final void b(float f) {
-        cj3 cj3Var = this.b;
-        if (f != 1.0f || cj3Var.f0[1].getVisibility() == 0 || cj3Var.l2) {
-            boolean z = cj3Var.k3;
-            bj3[] bj3VarArr = cj3Var.f0;
-            if (z) {
-                bj3VarArr[0].setTranslationX((-f) * r2.getMeasuredWidth());
-                cj3Var.f0[1].setTranslationX(r2[0].getMeasuredWidth() - (f * cj3Var.f0[0].getMeasuredWidth()));
-            } else {
-                bj3VarArr[0].setTranslationX(r2.getMeasuredWidth() * f);
-                cj3Var.f0[1].setTranslationX((f * r2[0].getMeasuredWidth()) - cj3Var.f0[0].getMeasuredWidth());
-            }
-            if (f == 1.0f) {
-                bj3[] bj3VarArr2 = cj3Var.f0;
-                bj3 bj3Var = bj3VarArr2[0];
-                bj3VarArr2[0] = bj3VarArr2[1];
-                bj3VarArr2[1] = bj3Var;
-                bj3Var.setVisibility(8);
-                cj3Var.f5(true);
-                cj3Var.l5(false);
-                cj3Var.B5(-1, true);
-                cj3Var.A0.P = false;
-                cj3Var.K2(cj3Var.f0[0]);
-                cj3Var.f0[0].d.getClass();
-                cj3Var.f0[1].d.getClass();
-            }
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i2), Math.min(hl.q.y * 0.35f, hl.L(400.0f))), View.MeasureSpec.getMode(i2)));
+                break;
+            case 1:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), hl.L(320.0f)), TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), hl.L(360.0f)), TLObject.FLAG_31));
+                break;
+            case 3:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(hl.L(260.0f), View.MeasureSpec.getSize(i2)), View.MeasureSpec.getMode(i2)));
+                break;
+            case 4:
+            default:
+                super.onMeasure(i, i2);
+                break;
+            case 5:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(hl.L(260.0f), View.MeasureSpec.getSize(i2)), View.MeasureSpec.getMode(i2)));
+                break;
         }
     }
 
-    public final void c(de4 de4Var, boolean z) {
-        int i;
-        int i2;
-        cj3 cj3Var = this.b;
-        int i3 = cj3Var.f0[0].h;
-        int i4 = de4Var.a;
-        if (i3 != i4) {
-            if (de4Var.f) {
-                cj3Var.A0.l(i4);
-                i2 = ((d) cj3Var).currentAccount;
-                cj3Var.showDialog(new h26(3, i2, null, this.a, cj3Var));
-                return;
-            }
-            ArrayList R0 = cj3Var.getMessagesController().R0();
-            if (de4Var.e || ((i = de4Var.a) >= 0 && i < R0.size())) {
-                bj3 bj3Var = cj3Var.f0[1];
-                bj3Var.h = de4Var.a;
-                bj3Var.setVisibility(0);
-                cj3Var.f0[1].setTranslationX(r6[0].getMeasuredWidth());
-                cj3Var.f5(false);
-                cj3Var.j5(true);
-                cj3Var.B5(de4Var.a, true);
-                cj3Var.k3 = z;
-            }
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public final boolean onRequestFocusInDescendants(int i, Rect rect) {
+        switch (this.a) {
+            case 4:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i, rect);
         }
     }
 
-    public final void d(t97 t97Var) {
-        boolean c = t97Var.c();
-        cj3 cj3Var = this.b;
-        if (c) {
-            ll4.b1(cj3Var, t97Var.a, null);
-            return;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
+        switch (this.a) {
+            case 4:
+                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                rect.top = hl.L(20.0f) + rect.top;
+                rect.bottom = hl.L(50.0f) + rect.bottom;
+                break;
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cj3Var.getParentActivity());
-        String M0 = k96.M0(2131750778, null);
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = M0;
-        hdVar.U = k96.M0(2131750777, null);
-        alertDialog$Builder.g(k96.M0(2131752577, null), null);
-        alertDialog$Builder.j(k96.M0(2131751586, null), new v82((Object) this, (Object) t97Var, (byte) 23));
-        cj3Var.showDialog(hdVar);
-        TextView textView = (TextView) hdVar.c(-1);
-        if (textView != null) {
-            zkb.X(textView, bkb.p7, cj3Var.getResourceProvider());
-        }
+        return super.requestChildRectangleOnScreen(view, rect, z);
     }
 }

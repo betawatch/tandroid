@@ -1,66 +1,72 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.ContextThemeWrapper;
+import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ei1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zi1 b;
+public final class ei1 extends RadialProgressView {
+    public final /* synthetic */ byte O;
+    public final /* synthetic */ Object P;
 
-    public /* synthetic */ ei1(zi1 zi1Var, byte b) {
-        this.a = b;
-        this.b = zi1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ei1(yn5 yn5Var, Context context, byte b) {
+        super(context, null);
+        this.O = b;
+        this.P = yn5Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Object[] objArr = 0;
-        zi1 zi1Var = this.b;
-        switch (b) {
-            case 0:
-                d01.t(zi1Var.getContext(), k96.M0(2131748212, null));
-                break;
-            case 1:
-                d01.t(zi1Var.getContext(), k96.M0(2131748178, null));
-                break;
-            case 2:
-                q5c q5cVar = zi1Var.X0;
-                if (q5cVar != null) {
-                    boolean z = zi1Var.f0;
-                    q5cVar.g3.O((zi1Var.R0 != -1) == zi1Var.a1.a());
-                    if (z && zi1Var.R0 != -1) {
-                        zi1Var.a();
-                        break;
-                    }
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.O) {
+            case 3:
+                super.invalidate();
+                ad8 ad8Var = ((PhotoViewer) this.P).f0;
+                if (ad8Var != null) {
+                    ad8Var.invalidate();
+                    break;
                 }
                 break;
-            case 3:
-                zi1Var.k1 = zi1Var.j1;
+            default:
+                super.invalidate();
                 break;
-            case 4:
-                zi1Var.J0.setLoading(false);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
+    public final void setAlpha(float f) {
+        byte b = this.O;
+        Object obj = this.P;
+        switch (b) {
+            case 0:
+                super.setAlpha(f);
+                ((gi1) obj).h.invalidate();
                 break;
-            case 5:
-                zi1Var.Y0.setVisibility(8);
+            case 1:
+                super.setAlpha(f);
+                ((xc5) obj).e.invalidate();
                 break;
-            case 6:
-                zi1Var.Y0.setVisibility(8);
+            case 2:
+                super.setAlpha(f);
+                ((cg6) obj).h.invalidate();
                 break;
             default:
-                int i = zi1Var.o0;
-                gl.r(zi1Var.s1);
-                if (zi1Var.j1 != zi1Var.k1) {
-                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
-                    tL_channels_restrictSponsoredMessages.channel = na7.q1(i).f1(-zi1Var.p0);
-                    tL_channels_restrictSponsoredMessages.restricted = zi1Var.j1;
-                    ConnectionsManager.getInstance(i).sendRequest(tL_channels_restrictSponsoredMessages, new ii1(zi1Var, objArr == true ? 1 : 0));
+                super.setAlpha(f);
+                ad8 ad8Var = ((PhotoViewer) obj).f0;
+                if (ad8Var != null) {
+                    ad8Var.invalidate();
                     break;
                 }
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ei1(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, vnb vnbVar) {
+        super(contextThemeWrapper, vnbVar);
+        this.O = (byte) 3;
+        this.P = photoViewer;
     }
 }

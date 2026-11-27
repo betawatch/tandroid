@@ -5,9 +5,9 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class FlagProviderImpl extends pnd {
+public class FlagProviderImpl extends gsd {
     public boolean a;
     public SharedPreferences b;
 
@@ -16,7 +16,7 @@ public class FlagProviderImpl extends pnd {
         this.a = false;
     }
 
-    @Override // btd
+    @Override // rxd
     public boolean getBooleanFlagValue(String str, boolean z, int i) {
         if (!this.a) {
             return z;
@@ -24,7 +24,7 @@ public class FlagProviderImpl extends pnd {
         SharedPreferences sharedPreferences = this.b;
         Boolean valueOf = Boolean.valueOf(z);
         try {
-            valueOf = (Boolean) c1f.a(new p4d(sharedPreferences, str, valueOf, (byte) 0));
+            valueOf = (Boolean) v5f.a(new h9d(sharedPreferences, str, valueOf, (byte) 0));
         } catch (Exception e) {
             String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -32,7 +32,7 @@ public class FlagProviderImpl extends pnd {
         return valueOf.booleanValue();
     }
 
-    @Override // btd
+    @Override // rxd
     public int getIntFlagValue(String str, int i, int i2) {
         if (!this.a) {
             return i;
@@ -40,7 +40,7 @@ public class FlagProviderImpl extends pnd {
         SharedPreferences sharedPreferences = this.b;
         Integer valueOf = Integer.valueOf(i);
         try {
-            valueOf = (Integer) c1f.a(new p4d(sharedPreferences, str, valueOf, (byte) 4));
+            valueOf = (Integer) v5f.a(new h9d(sharedPreferences, str, valueOf, (byte) 4));
         } catch (Exception e) {
             String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -48,7 +48,7 @@ public class FlagProviderImpl extends pnd {
         return valueOf.intValue();
     }
 
-    @Override // btd
+    @Override // rxd
     public long getLongFlagValue(String str, long j, int i) {
         if (!this.a) {
             return j;
@@ -56,7 +56,7 @@ public class FlagProviderImpl extends pnd {
         SharedPreferences sharedPreferences = this.b;
         Long valueOf = Long.valueOf(j);
         try {
-            valueOf = (Long) c1f.a(new p4d(sharedPreferences, str, valueOf, (byte) 5));
+            valueOf = (Long) v5f.a(new h9d(sharedPreferences, str, valueOf, (byte) 5));
         } catch (Exception e) {
             String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -64,13 +64,13 @@ public class FlagProviderImpl extends pnd {
         return valueOf.longValue();
     }
 
-    @Override // btd
+    @Override // rxd
     public String getStringFlagValue(String str, String str2, int i) {
         if (!this.a) {
             return str2;
         }
         try {
-            return (String) c1f.a(new p4d(this.b, str, str2, (byte) 6));
+            return (String) v5f.a(new h9d(this.b, str, str2, (byte) 6));
         } catch (Exception e) {
             String valueOf = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
@@ -78,14 +78,14 @@ public class FlagProviderImpl extends pnd {
         }
     }
 
-    @Override // btd
-    public void init(yi5 yi5Var) {
-        Context context = (Context) bo7.U(yi5Var);
+    @Override // rxd
+    public void init(al5 al5Var) {
+        Context context = (Context) br7.U(al5Var);
         if (this.a) {
             return;
         }
         try {
-            this.b = r1f.a(context.createPackageContext("com.google.android.gms", 0));
+            this.b = j6f.a(context.createPackageContext("com.google.android.gms", 0));
             this.a = true;
         } catch (PackageManager.NameNotFoundException unused) {
         } catch (Exception e) {

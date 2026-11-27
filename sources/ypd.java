@@ -1,25 +1,19 @@
 // default package
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ypd {
-    public static lpd a(Object obj, Object obj2) {
-        lpd lpdVar = (lpd) obj;
-        lpd lpdVar2 = (lpd) obj2;
-        if (!lpdVar2.isEmpty()) {
-            if (!lpdVar.a) {
-                if (lpdVar.isEmpty()) {
-                    lpdVar = new lpd();
-                } else {
-                    lpd lpdVar3 = new lpd(lpdVar);
-                    lpdVar3.a = true;
-                    lpdVar = lpdVar3;
-                }
-            }
-            lpdVar.b();
-            if (!lpdVar2.isEmpty()) {
-                lpdVar.putAll(lpdVar2);
-            }
+public final class ypd implements zq7 {
+    public static final ypd a = new ypd();
+
+    static {
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)), 3)), 4)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return lpdVar;
+        throw null;
     }
 }

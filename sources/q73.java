@@ -1,31 +1,29 @@
 // default package
 
-import java.io.Serializable;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class q73 extends gw2 {
+public final class q73 extends ax2 {
     public Object a;
     public Object b;
-    public Serializable c;
-    public c59 d;
-    public boolean e;
-    public int f;
-    public /* synthetic */ Object h;
-    public final /* synthetic */ v73 n;
-    public int r;
+    public Object c;
+    public p89 d;
+    public o83 e;
+    public /* synthetic */ Object f;
+    public final /* synthetic */ r73 h;
+    public int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q73(v73 v73Var, gw2 gw2Var) {
-        super(gw2Var);
-        this.n = v73Var;
+    public q73(r73 r73Var, ax2 ax2Var) {
+        super(ax2Var);
+        this.h = r73Var;
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
-        this.h = obj;
-        this.r |= TLObject.FLAG_31;
-        return this.n.h(false, this);
+        this.f = obj;
+        this.n |= TLObject.FLAG_31;
+        return this.h.a(null, this);
     }
 }

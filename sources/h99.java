@@ -1,41 +1,16 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class h99 extends LinearLayout {
-    public final TextView a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class h99 extends c4 {
+    public static final Parcelable.Creator<h99> CREATOR = new mx6((byte) 16);
 
-    public h99(Context context, wjb wjbVar) {
-        super(context);
-        setOrientation(1);
-        be0 be0Var = new be0(context);
-        be0Var.setImageDrawable(new oy8(R.raw.utyan_empty, gl.L(130.0f), gl.L(130.0f)));
-        addView(be0Var, nme.t(64, 64, 17, 0, 32, 0, 0));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        zkb.X(textView, bkb.z6, wjbVar);
-        textView.setTextSize(1, 14.0f);
-        textView.setGravity(17);
-        addView(textView, nme.t(-1, -2, 7, 12, 12, 12, 24));
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-            size = gl.L(250.0f);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
-    }
-
-    public void set(CharSequence charSequence) {
-        this.a.setText(charSequence);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.getClass();
+        bye.s(parcel, bye.r(parcel, 20293));
     }
 }

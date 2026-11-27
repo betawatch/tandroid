@@ -1,11 +1,230 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class aj8 extends vte {
-    public static final aj8 b = new aj8();
-    public static final aj8 c = new aj8();
-    public static final aj8 d = new aj8();
-    public static final aj8 e = new aj8();
-    public static final aj8 f = new aj8();
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.PopupNotificationActivity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class aj8 implements xy1 {
+    public final /* synthetic */ PopupNotificationActivity a;
+
+    public aj8(PopupNotificationActivity popupNotificationActivity) {
+        this.a = popupNotificationActivity;
+    }
+
+    @Override // xy1
+    public final int E0() {
+        return 0;
+    }
+
+    @Override // xy1
+    public final TL_stories.StoryItem F0() {
+        return null;
+    }
+
+    @Override // xy1
+    public final boolean H0(long j) {
+        return false;
+    }
+
+    @Override // xy1
+    public final boolean L0() {
+        return false;
+    }
+
+    @Override // xy1
+    public final ou1 R() {
+        return null;
+    }
+
+    @Override // xy1
+    public final boolean T0() {
+        return false;
+    }
+
+    @Override // xy1
+    public final boolean e0() {
+        return true;
+    }
+
+    @Override // xy1
+    public final boolean e1() {
+        return false;
+    }
+
+    @Override // xy1
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // xy1
+    public final int j() {
+        return 0;
+    }
+
+    @Override // xy1
+    public final TLRPC.Peer k() {
+        return null;
+    }
+
+    @Override // xy1
+    public final void p1() {
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        r47 r47Var = popupNotificationActivity.R;
+        if (r47Var != null) {
+            uc7.s1(r47Var.K1).P4(0, popupNotificationActivity.L, r47.B0(popupNotificationActivity.R.k), 0L, null);
+        }
+    }
+
+    @Override // xy1
+    public final void x(CharSequence charSequence, boolean z, int i, int i2, long j) {
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        ArrayList arrayList = popupNotificationActivity.b0;
+        if (popupNotificationActivity.R == null) {
+            return;
+        }
+        int i3 = popupNotificationActivity.T;
+        if (i3 >= 0 && i3 < arrayList.size()) {
+            arrayList.remove(popupNotificationActivity.T);
+        }
+        uc7.s1(popupNotificationActivity.R.K1).r3(r47.B0(popupNotificationActivity.R.k), popupNotificationActivity.R.e1(), Math.max(0, popupNotificationActivity.R.e1()), popupNotificationActivity.R.k.date, true, 0L, 0, true, 0);
+        popupNotificationActivity.R = null;
+        popupNotificationActivity.f();
+    }
+
+    @Override // xy1
+    public final TLRPC.TL_channels_sendAsPeers y() {
+        return null;
+    }
+
+    @Override // xy1
+    public final void B1() {
+    }
+
+    @Override // xy1
+    public final void C() {
+    }
+
+    @Override // xy1
+    public final void D1() {
+    }
+
+    @Override // xy1
+    public final void J() {
+    }
+
+    @Override // xy1
+    public final void O1() {
+    }
+
+    @Override // xy1
+    public final void P1() {
+    }
+
+    @Override // xy1
+    public final void S0() {
+    }
+
+    @Override // xy1
+    public final void S1() {
+    }
+
+    @Override // xy1
+    public final void V() {
+    }
+
+    @Override // xy1
+    public final void W0() {
+    }
+
+    @Override // xy1
+    public final void X0() {
+    }
+
+    @Override // xy1
+    public final void Z0() {
+    }
+
+    @Override // xy1
+    public final void a() {
+    }
+
+    @Override // xy1
+    public final void e() {
+    }
+
+    @Override // xy1
+    public final void f0() {
+    }
+
+    @Override // xy1
+    public final void g1() {
+    }
+
+    @Override // xy1
+    public final void i0() {
+    }
+
+    @Override // xy1
+    public final void n() {
+    }
+
+    @Override // xy1
+    public final void s() {
+    }
+
+    @Override // xy1
+    public final void t0() {
+    }
+
+    @Override // xy1
+    public final void w() {
+    }
+
+    @Override // xy1
+    public final void C1(int i) {
+    }
+
+    @Override // xy1
+    public final void D(boolean z) {
+    }
+
+    @Override // xy1
+    public final void E1(boolean z) {
+    }
+
+    @Override // xy1
+    public final void d1(CharSequence charSequence) {
+    }
+
+    @Override // xy1
+    public final void o(float f) {
+    }
+
+    @Override // xy1
+    public final void p(boolean z) {
+    }
+
+    @Override // xy1
+    public final void z0(int i) {
+    }
+
+    @Override // xy1
+    public final void B(float f, int i) {
+    }
+
+    @Override // xy1
+    public final void R0(CharSequence charSequence, boolean z, boolean z2) {
+    }
+
+    @Override // xy1
+    public final void b1(View view, CharSequence charSequence, boolean z) {
+    }
+
+    @Override // xy1
+    public final void H1(int i, int i2, int i3, long j, long j2, boolean z) {
+    }
 }

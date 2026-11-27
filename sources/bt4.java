@@ -1,37 +1,55 @@
 // default package
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class bt4 extends r13 {
-    public final String e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bt4 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public bt4(String str) {
-        super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", r2, r3, true, f24.a);
-        str.getClass();
-        Bundle bundle = new Bundle();
-        bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_GET_PUBLIC_KEY_CREDENTIAL_OPTION");
-        bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
-        bundle.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-        Bundle bundle2 = new Bundle();
-        bundle2.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_GET_PUBLIC_KEY_CREDENTIAL_OPTION");
-        bundle2.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
-        bundle2.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-        this.e = str;
-        if (str.length() != 0) {
-            try {
-                new JSONObject(str);
-                return;
-            } catch (Exception unused) {
-            }
+    public /* synthetic */ bt4(Object obj, float f, float f2, float f3, byte b) {
+        this.a = b;
+        this.e = obj;
+        this.b = f;
+        this.c = f2;
+        this.d = f3;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        float f = this.d;
+        float f2 = this.c;
+        float f3 = this.b;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ys4 ys4Var = ((it4) obj).b;
+                ys4Var.d = f3 * floatValue;
+                ys4Var.e = f2 * floatValue;
+                ys4Var.i = floatValue * f;
+                break;
+            case 1:
+                mb5 mb5Var = (mb5) obj;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mb5Var.z0 = qd4.A(1.0f, floatValue2, 1.0f, f3 * floatValue2);
+                mb5Var.s0 = f2 * floatValue2;
+                mb5Var.t0 = f * floatValue2;
+                mb5Var.invalidate();
+                break;
+            default:
+                mkc mkcVar = (mkc) obj;
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mkcVar.f1 = qd4.A(1.0f, floatValue3, 1.0f, f3 * floatValue3);
+                mkcVar.Y0 = f2 * floatValue3;
+                mkcVar.Z0 = f * floatValue3;
+                mkcVar.s.invalidate();
+                break;
         }
-        w26.j("requestJson must not be empty, and must be a valid JSON");
-        throw null;
     }
 }

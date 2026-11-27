@@ -1,10 +1,110 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.Button;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class si extends hn7 {
-    @Override // hn7
-    public final CharSequence d(int i) {
-        return k96.G(i + 1, "Times", new Object[0]);
+public final class si extends in {
+    public final /* synthetic */ byte s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ si(Context context, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
+        super(context, z, z2, z3, z4, z5);
+        this.s = (byte) 5;
+    }
+
+    @Override // android.view.View
+    public final CharSequence getAccessibilityClassName() {
+        switch (this.s) {
+            case 0:
+                return Button.class.getName();
+            case 1:
+            default:
+                return super.getAccessibilityClassName();
+            case 2:
+                return Button.class.getName();
+        }
+    }
+
+    @Override // android.view.View
+    public final int getBaseline() {
+        switch (this.s) {
+            case 5:
+                return Math.round((getHeight() - getDrawable().e) / 2.0f) - getPaint().getFontMetricsInt().ascent;
+            default:
+                return super.getBaseline();
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.s) {
+            case 3:
+                if (!ri5.b(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // in, android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.s) {
+            case 4:
+                canvas.save();
+                canvas.translate(hl.L(17.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // in, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.s) {
+            case 1:
+                super.onMeasure(i, i2);
+                setPivotX(getMeasuredWidth());
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(hl.q.x, TLObject.FLAG_31), i2);
+                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i), getMeasuredHeight());
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ si(Context context, boolean z, boolean z2, boolean z3, byte b) {
+        super(context, z, z2, z3);
+        this.s = b;
+    }
+
+    @Override // android.view.View
+    public final void invalidate(int i, int i2, int i3, int i4) {
+        switch (this.s) {
+            case 3:
+                if (!ri5.b(this)) {
+                    super.invalidate(i, i2, i3, i4);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i, i2, i3, i4);
+                break;
+        }
     }
 }

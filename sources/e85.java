@@ -1,28 +1,42 @@
 // default package
 
-import java.util.ArrayList;
-import org.webrtc.RendererCommon;
+import android.graphics.Canvas;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e85 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ h85 a;
+public final class e85 extends a {
+    public final /* synthetic */ hh2 G1;
+    public final /* synthetic */ j95 H1;
 
-    public e85(h85 h85Var) {
-        this.a = h85Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e85(j95 j95Var, LaunchActivity launchActivity, hh2 hh2Var) {
+        super(launchActivity, null);
+        this.H1 = j95Var;
+        this.G1 = hh2Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        ArrayList arrayList = this.a.m0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            gl.r((Runnable) arrayList.get(i));
-            ((Runnable) arrayList.get(i)).run();
+    @Override // org.telegram.ui.ActionBar.a, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
+            canvas.save();
+            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - hl.L(1.0f));
+            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
+            hh2 hh2Var = this.G1;
+            hh2Var.f = alpha;
+            hh2Var.draw(canvas);
+            canvas.restore();
+            invalidate();
         }
-        arrayList.clear();
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i, int i2, int i3) {
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        if (getAlpha() != f) {
+            super.setAlpha(f);
+            this.H1.b.invalidate();
+        }
     }
 }

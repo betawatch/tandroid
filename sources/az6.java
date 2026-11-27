@@ -1,99 +1,55 @@
 // default package
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class az6 implements RequestDelegate {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ gk7 c;
-    public final /* synthetic */ Serializable d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class az6 implements mz6, nz6 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sz6 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ az6(kz6 kz6Var, String str, boolean z, TLRPC.User user, String str2, ad7 ad7Var, String str3) {
-        this.c = kz6Var;
-        this.d = str;
-        this.b = z;
-        this.g = user;
-        this.e = str2;
-        this.h = ad7Var;
-        this.f = str3;
+    public /* synthetic */ az6(sz6 sz6Var, int i, byte b) {
+        this.a = b;
+        this.b = sz6Var;
+        this.c = i;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        boolean[] zArr;
+    @Override // nz6
+    public final void a(og8 og8Var, xw6 xw6Var, List list) {
         byte b = this.a;
-        Object obj = this.h;
-        Object obj2 = this.g;
-        Serializable serializable = this.f;
-        Object obj3 = this.e;
-        Serializable serializable2 = this.d;
-        gk7 gk7Var = this.c;
+        int i = this.c;
+        sz6 sz6Var = this.b;
         switch (b) {
-            case 0:
-                gl.c3(new oo6((kz6) gk7Var, (String) serializable2, this.b, tLObject, (TLRPC.User) obj2, (String) obj3, (ad7) obj, (String) serializable, (byte) 4));
+            case 1:
+                og8Var.Z(sz6Var.f(xw6Var, og8Var, i), list);
                 break;
-            default:
-                z3a z3aVar = (z3a) gk7Var;
-                ArrayList arrayList = (ArrayList) serializable2;
-                TLObject tLObject2 = (TLObject) obj3;
-                ArrayList arrayList2 = (ArrayList) serializable;
-                ArrayList arrayList3 = (ArrayList) obj2;
-                k3a k3aVar = (k3a) obj;
-                boolean z = this.b;
-                if (tL_error != null && ab4.r(tL_error.text)) {
-                    int c = ab4.c(tL_error.text);
-                    if (arrayList == null) {
-                        if (k3aVar != null) {
-                            if (!((c < 0 || (zArr = k3aVar.s) == null || c >= zArr.length) ? k3aVar.r : zArr[c])) {
-                                if (c < 0) {
-                                    k3aVar.r = true;
-                                } else {
-                                    boolean[] zArr2 = k3aVar.s;
-                                    if (zArr2 == null) {
-                                        zArr2 = new boolean[k3aVar.x.size()];
-                                        k3aVar.s = zArr2;
-                                    }
-                                    zArr2[c] = true;
-                                }
-                                gl.c3(new m05(z3aVar, tLObject2, c, k3aVar, arrayList2, z, (byte) 3));
-                                break;
-                            }
-                        }
-                    } else {
-                        ArrayList arrayList4 = new ArrayList(arrayList);
-                        if (c >= 0) {
-                            int i = 0;
-                            while (i < arrayList4.size()) {
-                                arrayList4.set(i, c == i ? arrayList4.get(i) : null);
-                                i++;
-                            }
-                        }
-                        z3aVar.getFileRefController().u(new Object[]{tLObject2, arrayList2, arrayList3, arrayList4, k3aVar, Boolean.valueOf(z)}, arrayList4);
-                        break;
-                    }
+            case 2:
+                if (list.size() != 1) {
+                    og8Var.r0(list, sz6Var.f(xw6Var, og8Var, i), sz6Var.f(xw6Var, og8Var, i + 1));
+                    break;
+                } else {
+                    og8Var.A0(sz6Var.f(xw6Var, og8Var, i), (ft6) list.get(0));
+                    break;
                 }
-                gl.c3(new o2a(z3aVar, tL_error, tLObject, z, arrayList2, arrayList3, tLObject2));
+            default:
+                og8Var.Z(sz6Var.f(xw6Var, og8Var, i), list);
                 break;
         }
     }
 
-    public /* synthetic */ az6(z3a z3aVar, ArrayList arrayList, TLObject tLObject, ArrayList arrayList2, ArrayList arrayList3, k3a k3aVar, boolean z) {
-        this.c = z3aVar;
-        this.d = arrayList;
-        this.e = tLObject;
-        this.f = arrayList2;
-        this.g = arrayList3;
-        this.h = k3aVar;
-        this.b = z;
+    @Override // mz6
+    public final void d(og8 og8Var, xw6 xw6Var) {
+        byte b = this.a;
+        int i = this.c;
+        sz6 sz6Var = this.b;
+        switch (b) {
+            case 0:
+                og8Var.W(sz6Var.f(xw6Var, og8Var, i));
+                break;
+            default:
+                og8Var.O(sz6Var.f(xw6Var, og8Var, i));
+                break;
+        }
     }
 }

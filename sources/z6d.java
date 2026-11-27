@@ -1,66 +1,55 @@
 // default package
 
-import android.app.PendingIntent;
-import android.content.ContentProviderClient;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.util.Log;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class z6d {
-    public static final Uri a = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").build();
+public final class z6d extends q5d implements k05, l05 {
+    public static final rr5 l = e7d.a;
+    public final Context c;
+    public final b99 d;
+    public final rr5 e;
+    public final Set f;
+    public final oxb i;
+    public xka j;
+    public n6d k;
 
-    public static Intent a(Context context, x2f x2fVar) {
-        Bundle bundle;
-        ContentProviderClient acquireUnstableContentProviderClient;
-        String str = x2fVar.a;
-        Intent intent = null;
-        if (str == null) {
-            return new Intent().setComponent(null);
-        }
-        if (x2fVar.c) {
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("serviceActionBundleKey", str);
-            try {
-                acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(a);
-            } catch (RemoteException | IllegalArgumentException e) {
-                Log.w("ServiceBindIntentUtils", "Dynamic intent resolution failed: ".concat(e.toString()));
-                bundle = null;
-            }
-            if (acquireUnstableContentProviderClient == null) {
-                throw new RemoteException("Failed to acquire ContentProviderClient");
-            }
-            try {
-                bundle = acquireUnstableContentProviderClient.call("serviceIntentCall", null, bundle2);
-                acquireUnstableContentProviderClient.release();
-                if (bundle != null) {
-                    Intent intent2 = (Intent) bundle.getParcelable("serviceResponseIntentKey");
-                    if (intent2 != null) {
-                        intent = intent2;
-                    } else {
-                        PendingIntent pendingIntent = (PendingIntent) bundle.getParcelable("serviceMissingResolutionIntentKey");
-                        if (pendingIntent != null) {
-                            StringBuilder sb = new StringBuilder(str.length() + 72);
-                            sb.append("Dynamic lookup for intent failed for action ");
-                            sb.append(str);
-                            sb.append(" but has possible resolution");
-                            Log.w("ServiceBindIntentUtils", sb.toString());
-                            throw new o6d(new ds2(25, pendingIntent, null));
-                        }
-                    }
-                }
-                if (intent == null) {
-                    Log.w("ServiceBindIntentUtils", "Dynamic lookup for intent failed for action: ".concat(str));
-                }
-            } catch (Throwable th) {
-                acquireUnstableContentProviderClient.release();
-                throw th;
+    public z6d(Context context, b99 b99Var, oxb oxbVar) {
+        super((byte) 1);
+        this.c = context;
+        this.d = b99Var;
+        this.i = oxbVar;
+        this.f = (Set) oxbVar.a;
+        this.e = l;
+    }
+
+    @Override // q5d
+    public final void U(t7d t7dVar) {
+        this.d.post(new iqd((Object) this, (Object) t7dVar, false, (byte) 13));
+    }
+
+    @Override // k05
+    public final void onConnected(Bundle bundle) {
+        this.j.B(this);
+    }
+
+    @Override // l05
+    public final void onConnectionFailed(ws2 ws2Var) {
+        this.k.b(ws2Var);
+    }
+
+    @Override // k05
+    public final void onConnectionSuspended(int i) {
+        n6d n6dVar = this.k;
+        l6d l6dVar = (l6d) n6dVar.f.s.get(n6dVar.b);
+        if (l6dVar != null) {
+            if (l6dVar.k) {
+                l6dVar.k(new ws2(17, null, null));
+            } else {
+                l6dVar.onConnectionSuspended(i);
             }
         }
-        return intent == null ? new Intent(str).setPackage(x2fVar.b) : intent;
     }
 }

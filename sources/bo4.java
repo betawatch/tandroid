@@ -1,16 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bo4 implements ko4 {
-    public final /* synthetic */ bn4 a;
-
-    public bo4(bn4 bn4Var) {
-        this.a = bn4Var;
-    }
-
-    @Override // ko4
-    public final void a() {
-        this.a.getClass();
-    }
+public interface bo4 {
 }

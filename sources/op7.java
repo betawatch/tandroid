@@ -1,38 +1,18 @@
 // default package
 
-import org.telegram.messenger.PushListenerController;
+import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class op7 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class op7 extends zb3 {
+    public final /* synthetic */ NotificationsCustomSettingsActivity F;
 
-    public /* synthetic */ op7(int i, String str) {
-        this.c = i;
-        this.b = str;
+    public op7(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
+        this.F = notificationsCustomSettingsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        String str = this.b;
-        switch (b) {
-            case 0:
-                m21 t = vp7.h().t(k96.a0(null, null, i, str), null);
-                t.t = true;
-                t.j();
-                break;
-            default:
-                PushListenerController.lambda$sendRegistrationToServer$1(str, i);
-                break;
-        }
-    }
-
-    public /* synthetic */ op7(String str, int i) {
-        this.b = str;
-        this.c = i;
+    @Override // zb3
+    public final void P(f89 f89Var) {
+        this.F.a.invalidate();
     }
 }

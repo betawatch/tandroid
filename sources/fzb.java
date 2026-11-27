@@ -1,35 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class fzb implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ i8c b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ gzb b;
 
-    public /* synthetic */ fzb(i8c i8cVar, String str, byte b) {
+    public /* synthetic */ fzb(gzb gzbVar, byte b) {
         this.a = b;
-        this.b = i8cVar;
-        this.c = str;
+        this.b = gzbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        String str = this.c;
-        i8c i8cVar = this.b;
+        gzb gzbVar = this.b;
         switch (b) {
             case 0:
-                i8cVar.a(str, Boolean.FALSE);
-                break;
-            case 1:
-                i8cVar.a(null, str);
-                break;
-            case 2:
-                i8cVar.a(null, str);
+                gzbVar.F = null;
+                if (gzbVar.G != -1) {
+                    gzbVar.H.getNotificationCenter().j(gzbVar.G);
+                    gzbVar.G = -1;
+                    break;
+                }
                 break;
             default:
-                i8cVar.a(null, str);
+                gzbVar.F = null;
+                if (gzbVar.G != -1) {
+                    gzbVar.H.getNotificationCenter().j(gzbVar.G);
+                    gzbVar.G = -1;
+                    break;
+                }
                 break;
         }
     }

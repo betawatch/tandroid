@@ -1,78 +1,49 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.regex.Pattern;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class b06 extends b4 {
-    public static final Parcelable.Creator<b06> CREATOR = new j9d((byte) 26);
-    public final boolean a;
-    public final String b;
-    public final boolean c;
-    public final n23 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class b06 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tg5 b;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public b06() {
-        this(false, r1.toString(), false, null);
-        Locale locale = Locale.getDefault();
-        Pattern pattern = id1.a;
-        StringBuilder sb = new StringBuilder(20);
-        sb.append(locale.getLanguage());
-        String country = locale.getCountry();
-        if (!TextUtils.isEmpty(country)) {
-            sb.append('-');
-            sb.append(country);
+    public /* synthetic */ b06(tg5 tg5Var, byte b) {
+        this.a = b;
+        this.b = tg5Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        tg5 tg5Var = this.b;
+        switch (b) {
+            case 0:
+                String str = LaunchActivity.C1;
+                try {
+                    tg5Var.run();
+                    break;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
+                }
+            case 1:
+                String str2 = LaunchActivity.C1;
+                try {
+                    tg5Var.run();
+                    break;
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                    return;
+                }
+            default:
+                String str3 = LaunchActivity.C1;
+                try {
+                    tg5Var.run();
+                    break;
+                } catch (Exception e3) {
+                    cc4.g(e3, true);
+                }
         }
-        String variant = locale.getVariant();
-        if (!TextUtils.isEmpty(variant)) {
-            sb.append('-');
-            sb.append(variant);
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof b06)) {
-            return false;
-        }
-        b06 b06Var = (b06) obj;
-        return this.a == b06Var.a && id1.d(this.b, b06Var.b) && this.c == b06Var.c && id1.d(this.d, b06Var.d);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, Boolean.valueOf(this.c), this.d});
-    }
-
-    public final String toString() {
-        return "LaunchOptions(relaunchIfRunning=" + this.a + ", language=" + this.b + ", androidReceiverCompatible: " + this.c + ")";
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.l(parcel, 3, this.b);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        jte.k(parcel, 5, this.d, i);
-        jte.s(parcel, r);
-    }
-
-    public b06(boolean z, String str, boolean z2, n23 n23Var) {
-        this.a = z;
-        this.b = str;
-        this.c = z2;
-        this.d = n23Var;
     }
 }

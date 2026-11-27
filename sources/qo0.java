@@ -19,9 +19,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qo0 implements k8c {
+public final /* synthetic */ class qo0 implements kcc {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -32,76 +32,75 @@ public final /* synthetic */ class qo0 implements k8c {
         this.c = obj2;
     }
 
-    @Override // k8c
+    @Override // kcc
     public final void a(Object obj, Object obj2, Object obj3) {
         String str;
         String str2;
         String str3;
         long j;
         long j2;
-        x6b x6bVar;
+        vab vabVar;
         long j3 = 0;
         str = "NULL_ERROR";
-        byte b = 3;
         String str4 = null;
-        byte b2 = 0;
+        byte b = 0;
         switch (this.a) {
             case 0:
                 uo0 uo0Var = (uo0) this.b;
-                i8c i8cVar = (i8c) this.c;
+                icc iccVar = (icc) this.c;
                 Boolean bool = (Boolean) obj;
-                fj0 fj0Var = (fj0) obj2;
-                gj0 gj0Var = (gj0) obj3;
+                gj0 gj0Var = (gj0) obj2;
+                hj0 hj0Var = (hj0) obj3;
                 uo0Var.getClass();
-                if (fj0Var != null) {
+                if (gj0Var != null) {
                     try {
                         if (Build.VERSION.SDK_INT >= 30) {
-                            gj0Var = uo0Var.g(true);
+                            hj0Var = uo0Var.g(true);
                         }
                         String str5 = uo0Var.g;
-                        if (gj0Var != null) {
-                            str4 = !TextUtils.isEmpty(str5) ? new String(gj0Var.b.doFinal(Utilities.v(uo0Var.g)), StandardCharsets.UTF_8) : uo0Var.g;
+                        if (hj0Var != null) {
+                            str4 = !TextUtils.isEmpty(str5) ? new String(hj0Var.b.doFinal(Utilities.v(uo0Var.g)), StandardCharsets.UTF_8) : uo0Var.g;
                         } else if (!TextUtils.isEmpty(str5)) {
                             throw new RuntimeException("No cryptoObject found");
                         }
                     } catch (Exception e) {
-                        fa4.g(e, true);
+                        cc4.g(e, true);
                         bool = Boolean.FALSE;
                     }
                 }
-                i8cVar.a(bool, str4);
+                iccVar.a(bool, str4);
                 return;
             case 1:
-                p82 p82Var = (p82) this.b;
+                g92 g92Var = (g92) this.b;
                 View view = (View) this.c;
-                p82Var.getClass();
-                p82Var.F0 = ((Boolean) obj).booleanValue();
-                p82Var.H0 = ((Boolean) obj2).booleanValue();
-                p82Var.I0 = ((Boolean) obj3).booleanValue();
-                kb0 kb0Var = p82Var.e;
-                int L = gl.L(p82Var.F0 ? 16.0f : 32.0f);
-                if (kb0Var.getRoundRadius()[0] != L) {
-                    ValueAnimator valueAnimator = kb0Var.y;
+                g92Var.getClass();
+                g92Var.F0 = ((Boolean) obj).booleanValue();
+                g92Var.H0 = ((Boolean) obj2).booleanValue();
+                g92Var.I0 = ((Boolean) obj3).booleanValue();
+                mb0 mb0Var = g92Var.e;
+                int L = hl.L(g92Var.F0 ? 16.0f : 32.0f);
+                if (mb0Var.getRoundRadius()[0] != L) {
+                    ValueAnimator valueAnimator = mb0Var.y;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    ValueAnimator ofInt = ValueAnimator.ofInt(kb0Var.getRoundRadius()[0], L);
-                    kb0Var.y = ofInt;
-                    ofInt.addUpdateListener(new ae0(kb0Var, (byte) 0));
-                    kb0Var.y.setDuration(200L);
-                    kb0Var.y.start();
+                    ValueAnimator ofInt = ValueAnimator.ofInt(mb0Var.getRoundRadius()[0], L);
+                    mb0Var.y = ofInt;
+                    ofInt.addUpdateListener(new ce0(mb0Var, (byte) 0));
+                    mb0Var.y.setDuration(200L);
+                    mb0Var.y.start();
                 }
-                ((wgb) view).setChecked(p82Var.F0);
-                p82Var.t0(false, true);
-                if (p82Var.O0) {
+                ((skb) view).setChecked(g92Var.F0);
+                g92Var.t0(false, true);
+                if (g92Var.O0) {
                     return;
                 }
-                TLRPC.Chat chat = p82Var.x0;
-                if (chat.forum == p82Var.F0 && chat.forum_tabs == p82Var.H0 && chat.forum_sidebar == p82Var.I0) {
+                TLRPC.Chat chat = g92Var.x0;
+                if (chat.forum == g92Var.F0 && chat.forum_tabs == g92Var.H0 && chat.forum_sidebar == g92Var.I0) {
                     return;
                 }
-                if (!hc2.T(chat) && p82Var.F0) {
-                    Context parentActivity = p82Var.getParentActivity();
+                if (!xc2.T(chat) && g92Var.F0) {
+                    Context parentActivity = g92Var.getParentActivity();
                     if (parentActivity == null) {
                         parentActivity = LaunchActivity.H1;
                     }
@@ -109,30 +108,30 @@ public final /* synthetic */ class qo0 implements k8c {
                         parentActivity = a.b;
                     }
                     if (parentActivity != null) {
-                        hd hdVar = new hd(3, null, parentActivity);
-                        p82Var.O0 = true;
-                        hdVar.q(250L);
-                        p82Var.getMessagesController().P(p82Var.getParentActivity(), p82Var.w0, p82Var, new q31((Object) p82Var, (Object) hdVar, (byte) 29), null);
+                        id idVar = new id(3, null, parentActivity);
+                        g92Var.O0 = true;
+                        idVar.q(250L);
+                        g92Var.getMessagesController().R(g92Var.getParentActivity(), g92Var.w0, g92Var, new q72(g92Var, idVar, r6), null);
                         return;
                     }
                     return;
                 }
-                TLRPC.Chat chat2 = p82Var.x0;
-                boolean z = chat2.forum_tabs != p82Var.H0;
-                boolean z2 = chat2.forum_sidebar != p82Var.I0;
-                p82Var.getMessagesController().g5(p82Var.w0, p82Var.F0, p82Var.H0, p82Var.I0);
-                TLRPC.Chat chat3 = p82Var.x0;
-                chat3.forum = p82Var.F0;
-                chat3.forum_tabs = p82Var.H0;
-                chat3.forum_sidebar = p82Var.I0;
-                if (z || z2) {
-                    p82Var.u0(z);
+                TLRPC.Chat chat2 = g92Var.x0;
+                boolean z = chat2.forum_tabs != g92Var.H0;
+                r6 = chat2.forum_sidebar == g92Var.I0 ? (byte) 0 : (byte) 1;
+                g92Var.getMessagesController().o5(g92Var.w0, g92Var.F0, g92Var.H0, g92Var.I0);
+                TLRPC.Chat chat3 = g92Var.x0;
+                chat3.forum = g92Var.F0;
+                chat3.forum_tabs = g92Var.H0;
+                chat3.forum_sidebar = g92Var.I0;
+                if (z || r6 != 0) {
+                    g92Var.u0(z);
                     return;
                 }
                 return;
             case 2:
                 final c cVar = (c) this.b;
-                i8c i8cVar2 = (i8c) this.c;
+                icc iccVar2 = (icc) this.c;
                 TL_wallet.secretPhraseParts secretphraseparts = (TL_wallet.secretPhraseParts) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (secretphraseparts == null) {
@@ -143,18 +142,18 @@ public final /* synthetic */ class qo0 implements k8c {
                     if (tL_error != null && (str3 = tL_error.text) != null) {
                         str = str3;
                     }
-                    i8cVar2.a(null, str);
+                    iccVar2.a(null, str);
                     return;
                 }
-                final f05 f05Var = new f05(i8cVar2, (byte) 0);
+                final j25 j25Var = new j25(iccVar2, (byte) 0);
                 ArrayList<Integer> arrayList = secretphraseparts.dcs;
                 if (arrayList.size() <= 0) {
                     c.m("getSecretPhrase: no secret parts, zero dcs");
-                    f05Var.a(null, "WALLET_SECRET_PARTS_EMPTY");
+                    j25Var.a(null, "WALLET_SECRET_PARTS_EMPTY");
                     return;
                 }
-                final hd hdVar2 = new hd(3, null, c.B());
-                hdVar2.q(500L);
+                final id idVar2 = new id(3, null, c.B());
+                idVar2.q(500L);
                 final long key_generate_temporary_private_key = ConferenceCall.key_generate_temporary_private_key();
                 byte[] key_to_public_key = ConferenceCall.key_to_public_key(key_generate_temporary_private_key);
                 final boolean[] zArr = new boolean[arrayList.size()];
@@ -162,12 +161,12 @@ public final /* synthetic */ class qo0 implements k8c {
                 final TLRPC.TL_error[] tL_errorArr = new TLRPC.TL_error[arrayList.size()];
                 for (final int i = 0; i < arrayList.size(); i++) {
                     final int intValue = arrayList.get(i).intValue();
-                    c.O("getSecretPhrase: requesting " + i + " part from dc" + intValue);
+                    c.P("getSecretPhrase: requesting " + i + " part from dc" + intValue);
                     TL_wallet.fetchEncryptedSecretPhrasePart fetchencryptedsecretphrasepart = new TL_wallet.fetchEncryptedSecretPhrasePart();
                     fetchencryptedsecretphrasepart.token = secretphraseparts.token;
                     fetchencryptedsecretphrasepart.public_key = key_to_public_key;
-                    ConnectionsManager.getInstance(cVar.a).sendRequestTyped(fetchencryptedsecretphrasepart, new hc(b2), new i8c() { // from class: l05
-                        @Override // i8c
+                    ConnectionsManager.getInstance(cVar.a).sendRequestTyped(fetchencryptedsecretphrasepart, new ic(b), new icc() { // from class: p25
+                        @Override // icc
                         public final void a(Object obj4, Object obj5) {
                             c cVar2 = c.this;
                             boolean[] zArr2 = zArr;
@@ -176,26 +175,26 @@ public final /* synthetic */ class qo0 implements k8c {
                             TLRPC.TL_error[] tL_errorArr2 = tL_errorArr;
                             int i3 = intValue;
                             long j4 = key_generate_temporary_private_key;
-                            f05 f05Var2 = f05Var;
-                            hd hdVar3 = hdVar2;
-                            boolean z3 = true;
+                            j25 j25Var2 = j25Var;
+                            id idVar3 = idVar2;
+                            boolean z2 = true;
                             zArr2[i2] = true;
                             encryptedsecretphrasepartArr2[i2] = (TL_wallet.encryptedSecretPhrasePart) obj4;
                             tL_errorArr2[i2] = (TLRPC.TL_error) obj5;
-                            c.O("getSecretPhrase: received " + i2 + " part from dc" + i3);
+                            c.P("getSecretPhrase: received " + i2 + " part from dc" + i3);
                             for (int i4 = 0; i4 < zArr2.length; i4++) {
                                 if (!zArr2[i4]) {
-                                    z3 = false;
+                                    z2 = false;
                                 }
                             }
-                            if (z3) {
-                                c.O("getSecretPhrase: received all parts");
-                                p pVar = new p(cVar2, hdVar3, f05Var2, (byte) 19);
+                            if (z2) {
+                                c.P("getSecretPhrase: received all parts");
+                                p pVar = new p(cVar2, idVar3, j25Var2, (byte) 19);
                                 for (int i5 = 0; i5 < encryptedsecretphrasepartArr2.length; i5++) {
                                     TL_wallet.encryptedSecretPhrasePart encryptedsecretphrasepart = encryptedsecretphrasepartArr2[i5];
                                     if (encryptedsecretphrasepart == null) {
                                         TLRPC.TL_error tL_error2 = tL_errorArr2[i5];
-                                        StringBuilder m = de9.m(i5, "getSecretPhrase: part ", ": ");
+                                        StringBuilder m = uh9.m(i5, "getSecretPhrase: part ", ": ");
                                         String str6 = tL_error2.text;
                                         if (str6 == null) {
                                             str6 = "NULL_ERROR";
@@ -207,7 +206,7 @@ public final /* synthetic */ class qo0 implements k8c {
                                         return;
                                     }
                                     if (encryptedsecretphrasepart.data.length < 33) {
-                                        StringBuilder m2 = de9.m(i5, "getSecretPhrase: part ", " length < 33 (len=");
+                                        StringBuilder m2 = uh9.m(i5, "getSecretPhrase: part ", " length < 33 (len=");
                                         m2.append(encryptedsecretphrasepartArr2[i5].data.length);
                                         m2.append(")");
                                         c.m(m2.toString());
@@ -215,7 +214,7 @@ public final /* synthetic */ class qo0 implements k8c {
                                         return;
                                     }
                                 }
-                                Utilities.d.c(new m77((Object) cVar2, (Object) encryptedsecretphrasepartArr2, j4, (Object) pVar, (byte) 8));
+                                Utilities.d.c(new ba7((Object) cVar2, (Object) encryptedsecretphrasepartArr2, j4, (Object) pVar, (byte) 8));
                             }
                         }
                     }, intValue, 0);
@@ -223,12 +222,12 @@ public final /* synthetic */ class qo0 implements k8c {
                 return;
             case 3:
                 c cVar2 = (c) this.b;
-                qoc qocVar = (qoc) this.c;
+                dtc dtcVar = (dtc) this.c;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tL_error2 == null) {
-                    cVar2.w0(walletState);
-                    qocVar.a(null);
+                    cVar2.z0(walletState);
+                    dtcVar.a(null);
                     return;
                 }
                 String str6 = tL_error2.text;
@@ -237,54 +236,54 @@ public final /* synthetic */ class qo0 implements k8c {
                 }
                 c.m("failed to disable backup: ".concat(str6));
                 String str7 = tL_error2.text;
-                qocVar.a(str7 != null ? str7 : "NULL_ERROR");
+                dtcVar.a(str7 != null ? str7 : "NULL_ERROR");
                 return;
             case 4:
                 c cVar3 = (c) this.b;
-                nu9 nu9Var = (nu9) this.c;
+                ku9 ku9Var = (ku9) this.c;
                 TL_wallet.WalletState walletState2 = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 if (tL_error3 != null) {
                     String str8 = tL_error3.text;
-                    nu9Var.a(str8 != null ? str8 : "NULL_ERROR");
+                    ku9Var.a(str8 != null ? str8 : "NULL_ERROR");
                     return;
                 } else {
-                    cVar3.w0(walletState2);
-                    cVar3.Y();
-                    nu9Var.a(null);
+                    cVar3.z0(walletState2);
+                    cVar3.Z();
+                    ku9Var.a(null);
                     return;
                 }
             case 5:
-                l18 l18Var = (l18) this.b;
-                i76 i76Var = (i76) this.c;
+                b58 b58Var = (b58) this.b;
+                m96 m96Var = (m96) this.c;
                 Boolean bool2 = (Boolean) obj;
                 Boolean bool3 = (Boolean) obj3;
-                int i2 = l18Var.O;
+                int i2 = b58Var.O;
                 if (((Boolean) obj2).booleanValue()) {
                     TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
-                    deletegroupcallparticipantmessages.call = l18Var.P;
-                    deletegroupcallparticipantmessages.participant = na7.q1(i2).h1(i76Var.c);
+                    deletegroupcallparticipantmessages.call = b58Var.P;
+                    deletegroupcallparticipantmessages.participant = uc7.s1(i2).j1(m96Var.c);
                     deletegroupcallparticipantmessages.report_spam = bool2.booleanValue();
                     ConnectionsManager.getInstance(i2).sendRequest(deletegroupcallparticipantmessages, null);
-                    long j4 = i76Var.c;
-                    ArrayList arrayList2 = l18Var.r;
-                    ArrayList arrayList3 = l18Var.s;
+                    long j4 = m96Var.c;
+                    ArrayList arrayList2 = b58Var.r;
+                    ArrayList arrayList3 = b58Var.s;
                     int i3 = 0;
-                    boolean z3 = false;
+                    boolean z2 = false;
                     while (i3 < arrayList2.size()) {
-                        if (((i76) arrayList2.get(i3)).c == j4) {
-                            i76 i76Var2 = (i76) arrayList2.get(i3);
+                        if (((m96) arrayList2.get(i3)).c == j4) {
+                            m96 m96Var2 = (m96) arrayList2.get(i3);
                             j2 = j3;
                             int i4 = 0;
                             while (true) {
                                 if (i4 < arrayList3.size()) {
-                                    if (((j76) arrayList3.get(i4)).f.contains(i76Var2)) {
-                                        ((j76) arrayList3.get(i4)).f.remove(i76Var2);
-                                        if (((j76) arrayList3.get(i4)).f.isEmpty()) {
+                                    if (((n96) arrayList3.get(i4)).f.contains(m96Var2)) {
+                                        ((n96) arrayList3.get(i4)).f.remove(m96Var2);
+                                        if (((n96) arrayList3.get(i4)).f.isEmpty()) {
                                             arrayList3.remove(i4);
-                                            z3 = true;
+                                            z2 = true;
                                         } else {
-                                            l18Var.l();
+                                            b58Var.l();
                                         }
                                     } else {
                                         i4++;
@@ -292,7 +291,7 @@ public final /* synthetic */ class qo0 implements k8c {
                                 }
                             }
                             arrayList2.remove(i3);
-                            l18Var.e.O(true);
+                            b58Var.e.O(true);
                             i3--;
                         } else {
                             j2 = j3;
@@ -301,70 +300,70 @@ public final /* synthetic */ class qo0 implements k8c {
                         j3 = j2;
                     }
                     j = j3;
-                    if (z3) {
+                    if (z2) {
                         ConnectionsManager.getInstance(i2).getCurrentTime();
-                        Collections.sort(arrayList3, new mz2(l18Var, (byte) 26));
-                        l18Var.n.O(true);
-                        l18Var.s();
+                        Collections.sort(arrayList3, new f03(b58Var, (byte) 25));
+                        b58Var.n.O(true);
+                        b58Var.s();
                     }
                 } else {
                     j = 0;
                     TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                    deletegroupcallmessages.call = l18Var.P;
-                    deletegroupcallmessages.messages.add(Integer.valueOf(i76Var.a));
+                    deletegroupcallmessages.call = b58Var.P;
+                    deletegroupcallmessages.messages.add(Integer.valueOf(m96Var.a));
                     ConnectionsManager.getInstance(i2).sendRequest(deletegroupcallmessages, null);
-                    l18Var.b(i76Var.a);
+                    b58Var.b(m96Var.a);
                 }
                 if (bool3.booleanValue()) {
-                    if (l18Var.N >= j) {
-                        na7.q1(i2).t(l18Var.N);
+                    if (b58Var.N >= j) {
+                        uc7.s1(i2).u(b58Var.N);
                         return;
                     } else {
-                        na7.q1(i2).a0(-l18Var.N, na7.q1(i2).h1(i76Var.c), true, null);
+                        uc7.s1(i2).c0(-b58Var.N, uc7.s1(i2).j1(m96Var.c), true, null);
                         return;
                     }
                 }
                 return;
             default:
-                j7b j7bVar = (j7b) this.b;
-                pb1 pb1Var = (pb1) this.c;
+                hbb hbbVar = (hbb) this.b;
+                xb1 xb1Var = (xb1) this.c;
                 File file = (File) obj;
                 String str9 = (String) obj2;
                 Long l = (Long) obj3;
-                t7b t7bVar = j7bVar.S1;
-                i7b i7bVar = t7bVar.Y0;
-                if (i7bVar != null) {
-                    i7bVar.P = false;
-                    i7bVar.b();
-                    i7b i7bVar2 = t7bVar.Y0;
-                    i7bVar2.m(0L);
-                    kob kobVar = i7bVar2.G;
-                    if (kobVar != null) {
-                        kobVar.setProgress(0L);
+                rbb rbbVar = hbbVar.S1;
+                gbb gbbVar = rbbVar.Y0;
+                if (gbbVar != null) {
+                    gbbVar.P = false;
+                    gbbVar.b();
+                    gbb gbbVar2 = rbbVar.Y0;
+                    gbbVar2.m(0L);
+                    ksb ksbVar = gbbVar2.G;
+                    if (ksbVar != null) {
+                        ksbVar.setProgress(0L);
                     }
                 }
-                f4b f4bVar = t7bVar.L1;
-                if (f4bVar != null) {
-                    f4bVar.o0 = file;
-                    f4bVar.p0 = str9;
-                    f4bVar.q0 = l.longValue();
-                    f4b f4bVar2 = t7bVar.L1;
-                    f4bVar2.s0 = 0.0f;
-                    f4bVar2.t0 = 1.0f;
-                    f4bVar2.r0 = 0L;
-                    f4bVar2.u0 = 1.0f;
-                    t7bVar.s();
-                    if (t7bVar.Y0 == null || (x6bVar = t7bVar.w1) == null) {
-                        pb1Var.a(false);
+                c8b c8bVar = rbbVar.L1;
+                if (c8bVar != null) {
+                    c8bVar.o0 = file;
+                    c8bVar.p0 = str9;
+                    c8bVar.q0 = l.longValue();
+                    c8b c8bVar2 = rbbVar.L1;
+                    c8bVar2.s0 = 0.0f;
+                    c8bVar2.t0 = 1.0f;
+                    c8bVar2.r0 = 0L;
+                    c8bVar2.u0 = 1.0f;
+                    rbbVar.s();
+                    if (rbbVar.Y0 == null || (vabVar = rbbVar.w1) == null) {
+                        xb1Var.a(false);
                         return;
                     }
-                    am9 j0 = x6bVar.j0(t7bVar.L1.p0, true);
-                    j7bVar.setHasRoundVideo(true);
-                    t7bVar.Y0.s(t7bVar.L1, j0, true);
-                    gl.r(pb1Var.h);
-                    pb1Var.a.destroy(true, null);
+                    pp9 j0 = vabVar.j0(rbbVar.L1.p0, true);
+                    hbbVar.setHasRoundVideo(true);
+                    rbbVar.Y0.s(rbbVar.L1, j0, true);
+                    hl.r(xb1Var.h);
+                    xb1Var.a.destroy(true, null);
                     j0.setDraw(false);
-                    pb1Var.post(new tj9(pb1Var, j0, b));
+                    xb1Var.post(new en9(xb1Var, j0, (byte) 2));
                     return;
                 }
                 return;

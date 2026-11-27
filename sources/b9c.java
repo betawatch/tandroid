@@ -1,42 +1,35 @@
 // default package
 
-import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class b9c {
-    public final RectF e = new RectF();
-    public final a9c a = new a9c(0.0f);
-    public final a9c b = new a9c(0.0f);
-    public final a9c c = new a9c(0.0f);
-    public final a9c d = new a9c(0.0f);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class b9c implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ UndoView b;
 
-    public final boolean a(float f) {
-        return this.d.a(f) || (this.c.a(f) || (this.b.a(f) || this.a.a(f)));
+    public /* synthetic */ b9c(UndoView undoView, byte b) {
+        this.a = b;
+        this.b = undoView;
     }
 
-    public final boolean b(float f, float f2, float f3, float f4) {
-        return this.a.b(f) || this.b.b(f2) || this.c.b(f3) || this.d.b(f4);
-    }
-
-    public final void c(boolean z) {
-        this.a.c(z);
-        this.b.c(z);
-        this.c.c(z);
-        this.d.c(z);
-    }
-
-    public final void d(float f, float f2, float f3, float f4) {
-        this.a.d(f);
-        this.b.d(f2);
-        this.c.d(f3);
-        this.d.d(f4);
-    }
-
-    public final void e(float f, float f2, float f3, float f4) {
-        this.a.c = f;
-        this.b.c = f2;
-        this.c.c = f3;
-        this.d.c = f4;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        UndoView undoView = this.b;
+        switch (b) {
+            case 0:
+                int i = UndoView.j0;
+                if (undoView.a()) {
+                    undoView.d(1, false);
+                    break;
+                }
+                break;
+            default:
+                int i2 = UndoView.j0;
+                undoView.d(1, false);
+                break;
+        }
     }
 }

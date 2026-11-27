@@ -1,69 +1,37 @@
 // default package
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.CancellationToken;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.CancellationException;
-import org.json.JSONObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.FiltersSetupActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class bh4 implements o13 {
-    public final /* synthetic */ CancellationToken a;
-    public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ kz5 c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Runnable[] e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bh4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ FiltersSetupActivity b;
 
-    public bh4(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, kz5 kz5Var, int i, Runnable[] runnableArr) {
-        this.a = cancellationToken;
-        this.b = taskCompletionSource;
-        this.c = kz5Var;
-        this.d = i;
-        this.e = runnableArr;
+    public /* synthetic */ bh4(FiltersSetupActivity filtersSetupActivity, byte b) {
+        this.a = b;
+        this.b = filtersSetupActivity;
     }
 
-    @Override // o13
-    public final void M(Object obj) {
-        us4 us4Var = (us4) obj;
-        if (this.a.isCancellationRequested()) {
-            return;
-        }
-        boolean z = us4Var instanceof pj7;
-        TaskCompletionSource taskCompletionSource = this.b;
-        if (z) {
-            taskCompletionSource.trySetException(new Exception("EMPTY"));
-        } else if ((us4Var instanceof rs4) || (us4Var instanceof vs4)) {
-            taskCompletionSource.trySetException(new CancellationException());
-        } else {
-            taskCompletionSource.trySetException(us4Var);
-        }
-    }
-
-    @Override // o13
-    public final void onResult(Object obj) {
-        xs4 xs4Var = (xs4) obj;
-        TaskCompletionSource taskCompletionSource = this.b;
-        CancellationToken cancellationToken = this.a;
-        if (cancellationToken.isCancellationRequested()) {
-            return;
-        }
-        try {
-            String string = new JSONObject(((Bundle) xs4Var.a.a).getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON")).getJSONObject("data").getJSONObject("vp_token").getJSONArray("firebase").getString(0);
-            this.c.run();
-            TLRPC.TL_auth_finishFirebasePnvLogin tL_auth_finishFirebasePnvLogin = new TLRPC.TL_auth_finishFirebasePnvLogin();
-            tL_auth_finishFirebasePnvLogin.google_token = string;
-            int i = this.d;
-            gs2 gs2Var = new gs2(i, ConnectionsManager.getInstance(i).sendRequestTyped(tL_auth_finishFirebasePnvLogin, new hc((byte) 0), new ae2(cancellationToken, taskCompletionSource, (byte) 13), 8), (byte) 3);
-            Runnable[] runnableArr = this.e;
-            runnableArr[0] = gs2Var;
-            if (cancellationToken.isCancellationRequested()) {
-                runnableArr[0].run();
-            }
-        } catch (Exception e) {
-            taskCompletionSource.trySetException(e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        FiltersSetupActivity filtersSetupActivity = this.b;
+        switch (b) {
+            case 0:
+                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 1:
+                filtersSetupActivity.a.g1(new lu3(filtersSetupActivity, (byte) 20), 700, true);
+                break;
+            case 2:
+                filtersSetupActivity.showDialog(new xk8((e) filtersSetupActivity, 9, true));
+                break;
+            default:
+                filtersSetupActivity.getMessagesController().k3(true, null);
+                break;
         }
     }
 }

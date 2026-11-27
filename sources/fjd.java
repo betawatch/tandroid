@@ -1,51 +1,60 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fjd extends mid {
-    public final /* synthetic */ njd s;
+public final class fjd extends c4 implements Parcelable {
+    public static final Parcelable.Creator<fjd> CREATOR = new ced(25);
+    public final String a;
+    public final String b;
+    public final String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fjd(njd njdVar) {
-        super((byte) 4);
-        this.s = njdVar;
+    public fjd(String str, String str2, String str3) {
+        xve.h(str);
+        this.a = str;
+        xve.h(str2);
+        this.b = str2;
+        xve.h(str3);
+        this.c = str3;
     }
 
-    @Override // mid
-    public final xhd B() {
-        return new zid(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Map.Entry)) {
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof fjd)) {
             return false;
         }
-        Map.Entry entry = (Map.Entry) obj;
-        Object obj2 = this.s.get(entry.getKey());
-        return obj2 != null && obj2.equals(entry.getValue());
+        fjd fjdVar = (fjd) obj;
+        return this.a.equals(fjdVar.a) && vue.a(fjdVar.b, this.b) && vue.a(fjdVar.c, this.c);
     }
 
-    @Override // mid, java.util.Collection, java.util.Set
     public final int hashCode() {
-        return a1f.a(this.s.entrySet());
+        return this.a.hashCode();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return A().listIterator(0);
+    public final String toString() {
+        String str = this.a;
+        int i = 0;
+        for (char c : str.toCharArray()) {
+            i += c;
+        }
+        String trim = str.trim();
+        int length = trim.length();
+        if (length > 25) {
+            trim = trim.substring(0, 10) + "..." + trim.substring(length - 10, length) + "::" + i;
+        }
+        return c00.k(xnb.l("Channel{token=", trim, ", nodeId=", this.b, ", path="), this.c, "}");
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.s.d.size();
-    }
-
-    @Override // kzc
-    public final v5c u() {
-        return A().listIterator(0);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.l(parcel, 3, this.b);
+        bye.l(parcel, 4, this.c);
+        bye.s(parcel, r);
     }
 }

@@ -3,9 +3,9 @@ package androidx.car.app.model.signin;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class InputSignInMethod implements iha {
+public final class InputSignInMethod implements bla {
     public static final int INPUT_TYPE_DEFAULT = 1;
     public static final int INPUT_TYPE_PASSWORD = 2;
     public static final int KEYBOARD_DEFAULT = 1;
@@ -15,7 +15,7 @@ public final class InputSignInMethod implements iha {
     private final CarText mDefaultValue;
     private final CarText mErrorMessage;
     private final CarText mHint;
-    private final ao5 mInputCallbackDelegate;
+    private final dq5 mInputCallbackDelegate;
     private final int mInputType;
     private final int mKeyboardType;
     private final boolean mShowKeyboardByDefault;
@@ -53,10 +53,10 @@ public final class InputSignInMethod implements iha {
         return this.mHint;
     }
 
-    public ao5 getInputCallbackDelegate() {
-        ao5 ao5Var = this.mInputCallbackDelegate;
-        Objects.requireNonNull(ao5Var);
-        return ao5Var;
+    public dq5 getInputCallbackDelegate() {
+        dq5 dq5Var = this.mInputCallbackDelegate;
+        Objects.requireNonNull(dq5Var);
+        return dq5Var;
     }
 
     public int getInputType() {
@@ -79,10 +79,10 @@ public final class InputSignInMethod implements iha {
         StringBuilder sb = new StringBuilder("[inputType:");
         sb.append(this.mInputType);
         sb.append(", keyboardType: ");
-        return de9.l(sb, this.mKeyboardType, "]");
+        return uh9.l(sb, this.mKeyboardType, "]");
     }
 
-    public InputSignInMethod(ho5 ho5Var) {
+    public InputSignInMethod(kq5 kq5Var) {
         throw null;
     }
 }

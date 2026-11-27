@@ -1,32 +1,79 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.MediaMetadataRetriever;
+import java.io.File;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hu7 extends st3 {
-    public final /* synthetic */ byte h2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hu7 extends h00 {
+    public final MediaMetadataRetriever r;
+    public final boolean s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hu7(Context context, byte b) {
-        super(context);
-        this.h2 = b;
+    public hu7(File file) {
+        long j;
+        MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
+        this.r = mediaMetadataRetriever;
+        try {
+            mediaMetadataRetriever.setDataSource(file.getAbsolutePath());
+            this.a = "OTHER";
+            try {
+                j = Long.parseLong(mediaMetadataRetriever.extractMetadata(9));
+            } catch (Exception unused) {
+                j = 0;
+            }
+            this.b = j;
+            this.c = c(7);
+            this.d = c(2);
+            this.e = c(13);
+            this.f = c(1);
+            this.g = b(8);
+            this.h = c(6);
+            this.j = b(0);
+            b(10);
+            this.k = b(14);
+            this.m = c(4);
+            byte[] embeddedPicture = this.r.getEmbeddedPicture();
+            if (embeddedPicture != null) {
+                this.o = BitmapFactory.decodeByteArray(embeddedPicture, 0, embeddedPicture.length);
+            }
+            if (this.o != null) {
+                float max = Math.max(r5.getWidth(), this.o.getHeight()) / 120.0f;
+                Bitmap bitmap = this.o;
+                if (max > 0.0f) {
+                    this.p = Bitmap.createScaledBitmap(bitmap, (int) (bitmap.getWidth() / max), (int) (this.o.getHeight() / max), true);
+                } else {
+                    this.p = bitmap;
+                }
+            }
+        } catch (Exception e) {
+            this.s = true;
+            cc4.g(e, true);
+        }
+        try {
+            MediaMetadataRetriever mediaMetadataRetriever2 = this.r;
+            if (mediaMetadataRetriever2 != null) {
+                qu6.r(mediaMetadataRetriever2);
+            }
+        } catch (Exception e2) {
+            cc4.g(e2, true);
+        }
     }
 
-    @Override // lt3, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        byte b = this.h2;
-        return false;
+    public final short b(int i) {
+        try {
+            return Short.parseShort(this.r.extractMetadata(i));
+        } catch (Exception unused) {
+            return (short) 0;
+        }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.h2) {
-            case 0:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
+    public final String c(int i) {
+        try {
+            return this.r.extractMetadata(i);
+        } catch (Exception unused) {
+            return null;
         }
     }
 }

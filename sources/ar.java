@@ -1,156 +1,242 @@
 // default package
 
-import android.R;
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.InputFilter;
-import android.util.AttributeSet;
-import android.widget.ToggleButton;
+import android.content.res.Resources;
+import android.graphics.RectF;
+import android.os.Build;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.method.TransformationMethod;
+import android.util.Log;
+import android.util.TypedValue;
+import android.widget.TextView;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ar extends ToggleButton implements zob {
-    public final ko a;
-    public final pq b;
-    public ip c;
+public final class ar {
+    public static final RectF l = new RectF();
+    public static final ConcurrentHashMap m = new ConcurrentHashMap();
+    public int a = 0;
+    public boolean b = false;
+    public float c = -1.0f;
+    public float d = -1.0f;
+    public float e = -1.0f;
+    public int[] f = new int[0];
+    public boolean g = false;
+    public TextPaint h;
+    public final TextView i;
+    public final Context j;
+    public final xq k;
 
-    public ar(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.buttonStyleToggle);
-        cnb.a(getContext(), this);
-        ko koVar = new ko(this);
-        this.a = koVar;
-        koVar.g(attributeSet, R.attr.buttonStyleToggle);
-        pq pqVar = new pq(this);
-        this.b = pqVar;
-        pqVar.f(attributeSet, R.attr.buttonStyleToggle);
-        getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyleToggle);
-    }
-
-    private ip getEmojiTextViewHelper() {
-        ip ipVar = this.c;
-        if (ipVar != null) {
-            return ipVar;
-        }
-        ip ipVar2 = new ip(this);
-        this.c = ipVar2;
-        return ipVar2;
-    }
-
-    @Override // android.widget.ToggleButton, android.widget.CompoundButton, android.widget.TextView, android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.b();
-        }
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.b();
+    public ar(TextView textView) {
+        this.i = textView;
+        this.j = textView.getContext();
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.k = new yq();
+        } else {
+            this.k = new xq();
         }
     }
 
-    public ColorStateList getSupportBackgroundTintList() {
-        ko koVar = this.a;
-        if (koVar != null) {
-            return koVar.e();
+    public static int[] b(int[] iArr) {
+        int length = iArr.length;
+        if (length != 0) {
+            Arrays.sort(iArr);
+            ArrayList arrayList = new ArrayList();
+            for (int i : iArr) {
+                if (i > 0 && Collections.binarySearch(arrayList, Integer.valueOf(i)) < 0) {
+                    arrayList.add(Integer.valueOf(i));
+                }
+            }
+            if (length != arrayList.size()) {
+                int size = arrayList.size();
+                int[] iArr2 = new int[size];
+                for (int i2 = 0; i2 < size; i2++) {
+                    iArr2[i2] = ((Integer) arrayList.get(i2)).intValue();
+                }
+                return iArr2;
+            }
         }
-        return null;
+        return iArr;
     }
 
-    public PorterDuff.Mode getSupportBackgroundTintMode() {
-        ko koVar = this.a;
-        if (koVar != null) {
-            return koVar.f();
-        }
-        return null;
-    }
-
-    public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.b.d();
-    }
-
-    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.b.e();
-    }
-
-    @Override // android.widget.TextView
-    public void setAllCaps(boolean z) {
-        super.setAllCaps(z);
-        getEmojiTextViewHelper().b(z);
-    }
-
-    @Override // android.widget.ToggleButton, android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        super.setBackgroundDrawable(drawable);
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.h();
+    public static Method d(String str) {
+        try {
+            ConcurrentHashMap concurrentHashMap = m;
+            Method method = (Method) concurrentHashMap.get(str);
+            if (method == null && (method = TextView.class.getDeclaredMethod(str, null)) != null) {
+                method.setAccessible(true);
+                concurrentHashMap.put(str, method);
+            }
+            return method;
+        } catch (Exception e) {
+            Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e);
+            return null;
         }
     }
 
-    @Override // android.view.View
-    public void setBackgroundResource(int i) {
-        super.setBackgroundResource(i);
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.i(i);
+    public static Object e(Object obj, Object obj2, String str) {
+        try {
+            return d(str).invoke(obj, null);
+        } catch (Exception e) {
+            Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#" + str + "() method", e);
+            return obj2;
         }
     }
 
-    @Override // android.widget.TextView
-    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.b();
+    public final void a() {
+        if (f()) {
+            if (this.b) {
+                if (this.i.getMeasuredHeight() <= 0 || this.i.getMeasuredWidth() <= 0) {
+                    return;
+                }
+                int measuredWidth = this.k.b(this.i) ? TLObject.FLAG_20 : (this.i.getMeasuredWidth() - this.i.getTotalPaddingLeft()) - this.i.getTotalPaddingRight();
+                int height = (this.i.getHeight() - this.i.getCompoundPaddingBottom()) - this.i.getCompoundPaddingTop();
+                if (measuredWidth <= 0 || height <= 0) {
+                    return;
+                }
+                RectF rectF = l;
+                synchronized (rectF) {
+                    rectF.setEmpty();
+                    rectF.right = measuredWidth;
+                    rectF.bottom = height;
+                    float c = c(rectF);
+                    if (c != this.i.getTextSize()) {
+                        g(c, 0);
+                    }
+                }
+            }
+            this.b = true;
         }
     }
 
-    @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.b();
+    public final int c(RectF rectF) {
+        CharSequence transformation;
+        int length = this.f.length;
+        if (length == 0) {
+            grb.i("No available text sizes to choose from.");
+            return 0;
+        }
+        int i = length - 1;
+        int i2 = 0;
+        int i3 = 1;
+        while (true) {
+            int[] iArr = this.f;
+            if (i3 > i) {
+                return iArr[i2];
+            }
+            int i4 = (i3 + i) / 2;
+            int i5 = iArr[i4];
+            TextView textView = this.i;
+            CharSequence text = textView.getText();
+            TransformationMethod transformationMethod = textView.getTransformationMethod();
+            CharSequence charSequence = (transformationMethod == null || (transformation = transformationMethod.getTransformation(text, textView)) == null) ? text : transformation;
+            int b = uq.b(textView);
+            TextPaint textPaint = this.h;
+            if (textPaint == null) {
+                this.h = new TextPaint();
+            } else {
+                textPaint.reset();
+            }
+            this.h.set(textView.getPaint());
+            this.h.setTextSize(i5);
+            StaticLayout a = wq.a(charSequence, (Layout.Alignment) e(textView, Layout.Alignment.ALIGN_NORMAL, "getLayoutAlignment"), Math.round(rectF.right), b, this.i, this.h, this.k);
+            if ((b == -1 || (a.getLineCount() <= b && a.getLineEnd(a.getLineCount() - 1) == charSequence.length())) && a.getHeight() <= rectF.bottom) {
+                int i6 = i4 + 1;
+                i2 = i3;
+                i3 = i6;
+            } else {
+                i2 = i4 - 1;
+                i = i2;
+            }
         }
     }
 
-    public void setEmojiCompatEnabled(boolean z) {
-        getEmojiTextViewHelper().c(z);
+    public final boolean f() {
+        return j() && this.a != 0;
     }
 
-    @Override // android.widget.TextView
-    public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((efe) getEmojiTextViewHelper().b.a).a(inputFilterArr));
-    }
-
-    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.m(colorStateList);
+    public final void g(float f, int i) {
+        Context context = this.j;
+        float applyDimension = TypedValue.applyDimension(i, f, (context == null ? Resources.getSystem() : context.getResources()).getDisplayMetrics());
+        TextView textView = this.i;
+        if (applyDimension != textView.getPaint().getTextSize()) {
+            textView.getPaint().setTextSize(applyDimension);
+            boolean a = vq.a(textView);
+            if (textView.getLayout() != null) {
+                this.b = false;
+                try {
+                    Method d = d("nullLayouts");
+                    if (d != null) {
+                        d.invoke(textView, null);
+                    }
+                } catch (Exception e) {
+                    Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#nullLayouts() method", e);
+                }
+                if (a) {
+                    textView.forceLayout();
+                } else {
+                    textView.requestLayout();
+                }
+                textView.invalidate();
+            }
         }
     }
 
-    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.n(mode);
+    public final boolean h() {
+        if (!j() || this.a != 1) {
+            this.b = false;
+            return false;
         }
+        if (!this.g || this.f.length == 0) {
+            int floor = ((int) Math.floor((this.e - this.d) / this.c)) + 1;
+            int[] iArr = new int[floor];
+            for (int i = 0; i < floor; i++) {
+                iArr[i] = Math.round((i * this.c) + this.d);
+            }
+            this.f = b(iArr);
+        }
+        this.b = true;
+        return true;
     }
 
-    @Override // zob
-    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        pq pqVar = this.b;
-        pqVar.l(colorStateList);
-        pqVar.b();
+    public final boolean i() {
+        boolean z = this.f.length > 0;
+        this.g = z;
+        if (z) {
+            this.a = 1;
+            this.d = r0[0];
+            this.e = r0[r1 - 1];
+            this.c = -1.0f;
+        }
+        return z;
     }
 
-    @Override // zob
-    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        pq pqVar = this.b;
-        pqVar.m(mode);
-        pqVar.b();
+    public final boolean j() {
+        return !(this.i instanceof ip);
+    }
+
+    public final void k(float f, float f2, float f3) {
+        if (f <= 0.0f) {
+            throw new IllegalArgumentException("Minimum auto-size text size (" + f + "px) is less or equal to (0px)");
+        }
+        if (f2 <= f) {
+            throw new IllegalArgumentException("Maximum auto-size text size (" + f2 + "px) is less or equal to minimum auto-size text size (" + f + "px)");
+        }
+        if (f3 <= 0.0f) {
+            throw new IllegalArgumentException("The auto-size step granularity (" + f3 + "px) is less or equal to (0px)");
+        }
+        this.a = 1;
+        this.d = f;
+        this.e = f2;
+        this.c = f3;
+        this.g = false;
     }
 }

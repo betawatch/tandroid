@@ -1,35 +1,48 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_wallet;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gpc implements p8c {
+public final /* synthetic */ class gpc implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ qpc b;
+    public final /* synthetic */ c51 b;
+    public final /* synthetic */ nx0 c;
+    public final /* synthetic */ vnb d;
 
-    public /* synthetic */ gpc(qpc qpcVar, byte b) {
+    public /* synthetic */ gpc(c51 c51Var, nx0 nx0Var, vnb vnbVar, byte b) {
         this.a = b;
-        this.b = qpcVar;
+        this.b = c51Var;
+        this.c = nx0Var;
+        this.d = vnbVar;
     }
 
-    @Override // p8c
+    @Override // pcc
     public final void a(Object obj) {
         byte b = this.a;
-        qpc qpcVar = this.b;
+        vnb vnbVar = this.d;
+        nx0 nx0Var = this.c;
+        c51 c51Var = this.b;
+        String str = (String) obj;
         switch (b) {
             case 0:
-                qpcVar.q0((String) obj);
-                break;
-            case 1:
-                qpcVar.r0 = (TL_wallet.walletTransaction) obj;
-                break;
-            case 2:
-                qpcVar.r0 = (TL_wallet.walletTransaction) obj;
-                break;
+                c51Var.setLoading(false);
+                if (!TextUtils.isEmpty(str)) {
+                    new d31(nx0Var.F, vnbVar).f0(str, false);
+                    break;
+                } else {
+                    nx0Var.dismiss();
+                    break;
+                }
             default:
-                qpcVar.r0 = (TL_wallet.walletTransaction) obj;
-                break;
+                c51Var.setLoading(false);
+                if (str == null) {
+                    nx0Var.dismiss();
+                    break;
+                } else {
+                    new d31(nx0Var.F, vnbVar).f0(str, false);
+                    break;
+                }
         }
     }
 }

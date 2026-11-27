@@ -1,126 +1,60 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.view.View;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class h91 extends FrameLayout {
-    public final aic a;
-    public final c91 b;
-    public final TextView c;
-    public final TextView d;
-    public final ImageView e;
-    public final f91 f;
-    public TLRPC.User h;
-    public boolean n;
-    public long r;
+public final class h91 extends FrameLayout implements snb {
+    public final bv8 a;
+    public final uv8 b;
+    public TLRPC.Chat c;
 
-    public h91(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.n = false;
-        this.r = SystemClock.elapsedRealtime();
-        setBackgroundColor(-14999773);
-        aic aicVar = new aic(launchActivity, false, true, false, false);
-        this.a = aicVar;
-        RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FIT;
-        zhc zhcVar = aicVar.d;
-        zhcVar.setScalingType(scalingType);
-        zhcVar.setEnableHardwareScaler(true);
-        zhcVar.setRotateTextureWithScreen(true);
-        aicVar.b0 = (byte) 1;
-        zhcVar.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
-        View view = aicVar.h;
-        if (view != null) {
-            view.setVisibility(8);
-        }
-        addView(aicVar, nme.c(-1.0f, -1));
-        c91 c91Var = new c91(launchActivity);
-        this.b = c91Var;
-        addView(c91Var, nme.c(-1.0f, -1));
-        TextView textView = new TextView(launchActivity);
-        this.c = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 13.0f);
-        textView.setSingleLine();
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(1);
-        textView.setShadowLayer(gl.L(2.0f), 0.0f, 0.0f, TLObject.FLAG_31);
-        addView(textView, nme.d(-1, -2.0f, 81, 12.0f, 0.0f, 12.0f, 8.0f));
-        TextView textView2 = new TextView(launchActivity);
-        this.d = textView2;
-        textView2.setTextColor(-1275068417);
-        textView2.setTextSize(1, 11.0f);
-        textView2.setSingleLine();
-        textView2.setGravity(1);
-        textView2.setShadowLayer(gl.L(2.0f), 0.0f, 0.0f, TLObject.FLAG_31);
-        textView2.setVisibility(8);
-        addView(textView2, nme.d(-1, -2.0f, 49, 32.0f, 8.0f, 32.0f, 0.0f));
-        f91 f91Var = new f91(launchActivity);
-        this.f = f91Var;
-        addView(f91Var, nme.c(-1.0f, -1));
-        f91Var.a();
-        ImageView imageView = new ImageView(launchActivity);
-        this.e = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(-1);
-        imageView.setBackground(bkb.K(gl.L(28.0f), 1711276032));
-        addView(imageView, nme.d(28, 28.0f, 51, 6.0f, 6.0f, 0.0f, 0.0f));
+    public h91(Context context) {
+        super(context);
+        String M0 = ob6.M0(2131743094, null);
+        uv8 uv8Var = new uv8(context);
+        this.b = uv8Var;
+        int ceil = (int) Math.ceil(uv8Var.getPaint().measureText(M0));
+        bv8 bv8Var = new bv8(context, null);
+        this.a = bv8Var;
+        bv8Var.O0 = true;
+        bv8Var.G0 = true;
+        bv8Var.setPadding(ob6.a0 ? hl.L(44.0f) + ceil : 0, 0, ob6.a0 ? 0 : hl.L(44.0f) + ceil, 0);
+        int i = -hl.L(4.0f);
+        bv8Var.c0 = 0;
+        bv8Var.d0 = i;
+        addView(bv8Var, tre.c(-1.0f, -1));
+        uv8Var.setText(M0);
+        uv8Var.setTextSize(1, 14.0f);
+        yob.X(uv8Var, aob.Ji, null);
+        uv8Var.setProgressColor(aob.w0(null, aob.Ei, false));
+        int i2 = aob.Yl;
+        int w0 = aob.w0(null, i2, false);
+        aob.w0(null, aob.Hi, false);
+        uv8Var.setBackground(rnb.e(w0, 16.0f));
+        Drawable background = uv8Var.getBackground();
+        uob M = yob.M(i2);
+        uv8Var.setBackground(background);
+        yob.j(uv8Var, background, M, null, null);
+        uv8Var.setPadding(hl.L(14.0f), 0, hl.L(14.0f), 0);
+        addView(uv8Var, tre.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
     }
 
-    public static boolean a(VoIPService voIPService) {
-        return voIPService != null && voIPService.getRemoteVideoState() == 2;
+    @Override // snb
+    public final void updateColors() {
+        try {
+            this.b.setProgressColor(aob.w0(null, aob.Ei, false));
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 
-    public final void b() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return;
-        }
-        TLRPC.User user = sharedInstance.getUser();
-        TextView textView = this.c;
-        c91 c91Var = this.b;
-        if (user != null && user != this.h) {
-            this.h = user;
-            sharedInstance.getAccount();
-            c91Var.a(user);
-            textView.setText(l7c.r(user));
-        }
-        boolean a = a(sharedInstance);
-        boolean z = true;
-        aic aicVar = this.a;
-        boolean z2 = a && !aicVar.d.isFirstFrameRendered() && SystemClock.elapsedRealtime() - this.r < 1200;
-        if (!a || (!aicVar.d.isFirstFrameRendered() && !z2)) {
-            z = false;
-        }
-        if (this.n != z) {
-            this.n = z;
-            c91Var.setVisibility(z ? 8 : 0);
-            textView.setVisibility(z ? 8 : 0);
-        }
-        this.e.setImageResource(sharedInstance.isMicMute() ? R.drawable.msg_voice_muted : R.drawable.msg_voice_unmuted);
-        this.f.c();
-        int callState = sharedInstance.getCallState();
-        TextView textView2 = this.d;
-        if (callState == 5) {
-            textView2.setText(k96.M0(2131743011, null));
-            textView2.setVisibility(0);
-        } else if (callState == 3) {
-            textView2.setVisibility(8);
-        } else {
-            textView2.setText(k96.M0(2131743177, null));
-            textView2.setVisibility(0);
-        }
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

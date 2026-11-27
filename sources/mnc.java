@@ -1,41 +1,100 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Wallet.WalletEngine2;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mnc implements Runnable {
+public final /* synthetic */ class mnc implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ i8c c;
-    public final /* synthetic */ TL_wallet.sendTransfer d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ snc b;
 
-    public /* synthetic */ mnc(WalletEngine2 walletEngine2, i8c i8cVar, TL_wallet.sendTransfer sendtransfer, String str, byte b) {
+    public /* synthetic */ mnc(snc sncVar, byte b) {
         this.a = b;
-        this.b = walletEngine2;
-        this.c = i8cVar;
-        this.d = sendtransfer;
-        this.e = str;
+        this.b = sncVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // pcc
+    public final void a(Object obj) {
+        vnc vncVar;
+        int J0;
         byte b = this.a;
-        String str = this.e;
-        TL_wallet.sendTransfer sendtransfer = this.d;
-        i8c i8cVar = this.c;
-        WalletEngine2 walletEngine2 = this.b;
+        byte b2 = 0;
+        snc sncVar = this.b;
         switch (b) {
             case 0:
-                walletEngine2.lambda$prepareTonConnectTransfer$4(i8cVar, sendtransfer, str);
-                break;
-            case 1:
-                walletEngine2.lambda$prepareTonConnectTransferPair$7(i8cVar, sendtransfer, str);
+                String str = (String) obj;
+                if (sncVar.c == 3 && (vncVar = sncVar.h) != null) {
+                    vncVar.setBusy(false);
+                    if (str != null && !str.trim().isEmpty()) {
+                        sncVar.n = str;
+                        sncVar.h.r(str);
+                        break;
+                    }
+                }
                 break;
             default:
-                walletEngine2.lambda$prepareSendNFT$28(i8cVar, sendtransfer, str);
+                if (!sncVar.n.trim().isEmpty()) {
+                    c cVar = sncVar.b;
+                    String trim = sncVar.n.trim();
+                    if (!trim.isEmpty() && sncVar.h != null) {
+                        hl.r(sncVar.m0);
+                        hl.r(sncVar.l0);
+                        Drawable drawable = null;
+                        if (r2f.a == sncVar) {
+                            r2f.a = null;
+                        }
+                        co3 co3Var = sncVar.f;
+                        if (co3Var != null) {
+                            co3Var.c();
+                            sncVar.f = null;
+                        }
+                        sm3 sm3Var = sncVar.d;
+                        if (sm3Var != null) {
+                            sm3Var.d();
+                            sncVar.d = null;
+                        }
+                        sncVar.e = null;
+                        sncVar.c = (byte) 3;
+                        Log.d("VoiceLive", "review: voice paused, restyling " + trim.length() + " chars");
+                        sncVar.h.setListening(false);
+                        cVar.e();
+                        if (sncVar.H == null) {
+                            sncVar.H = trim;
+                        }
+                        boolean z = obj instanceof cm3;
+                        sncVar.h.setStyleLabel(z ? ((cm3) obj).a() : null);
+                        vnc vncVar2 = sncVar.h;
+                        ChatActivityEnterView chatActivityEnterView = cVar.a;
+                        if (z) {
+                            cm3 cm3Var = (cm3) obj;
+                            long j = cm3Var.b;
+                            if (j != 0) {
+                                drawable = wl.m(chatActivityEnterView.R, j, null, 2);
+                            } else if (cm3Var.d) {
+                                drawable = new hc(chatActivityEnterView.getContext());
+                                if (aob.I.o()) {
+                                    J0 = -1;
+                                } else {
+                                    int i = aob.G6;
+                                    int i2 = ChatActivityEnterView.X7;
+                                    J0 = chatActivityEnterView.J0(i);
+                                }
+                                drawable.setColorFilter(new PorterDuffColorFilter(J0, PorterDuff.Mode.SRC_IN));
+                            }
+                        }
+                        vncVar2.setStyleIcon(drawable);
+                        sncVar.h.setReview(true);
+                        sncVar.h.setBusy(true);
+                        cVar.f(obj, sncVar.H, new mnc(sncVar, b2));
+                        hl.d3(sncVar.I, 400L);
+                        break;
+                    }
+                }
                 break;
         }
     }

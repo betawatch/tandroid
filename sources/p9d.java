@@ -1,154 +1,107 @@
 // default package
 
-import android.os.Bundle;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.RemoteException;
-import android.text.TextUtils;
-import android.util.Log;
-import com.google.android.gms.cast.CastDevice;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class p9d extends zt6 {
-    public static final dc6 b = new dc6("MediaRouterCallback", null);
-    public final k8d a;
-
-    public p9d(k8d k8dVar) {
-        fre.h(k8dVar);
-        this.a = k8dVar;
+public abstract class p9d extends u3d implements IInterface {
+    public p9d() {
+        super("com.google.android.gms.wearable.internal.IWearableCallbacks", (byte) 12);
     }
 
-    @Override // zt6
-    public final void d(eu6 eu6Var) {
-        try {
-            k8d k8dVar = this.a;
-            String str = eu6Var.c;
-            Bundle bundle = eu6Var.s;
-            Parcel R = k8dVar.R();
-            R.writeString(str);
-            jgd.c(R, bundle);
-            k8dVar.V(R, 1);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteAdded", k8d.class.getSimpleName());
-        }
+    public void T(vhe vheVar) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // zt6
-    public final void e(eu6 eu6Var) {
-        try {
-            k8d k8dVar = this.a;
-            String str = eu6Var.c;
-            Bundle bundle = eu6Var.s;
-            Parcel R = k8dVar.R();
-            R.writeString(str);
-            jgd.c(R, bundle);
-            k8dVar.V(R, 2);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteChanged", k8d.class.getSimpleName());
-        }
+    public void U() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // zt6
-    public final void f(eu6 eu6Var) {
-        try {
-            k8d k8dVar = this.a;
-            String str = eu6Var.c;
-            Bundle bundle = eu6Var.s;
-            Parcel R = k8dVar.R();
-            R.writeString(str);
-            jgd.c(R, bundle);
-            k8dVar.V(R, 3);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteRemoved", k8d.class.getSimpleName());
+    @Override // u3d
+    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
+        switch (i) {
+            case 2:
+                throw xnb.m(parcel);
+            case 3:
+                throw xnb.m(parcel);
+            case 4:
+                throw xnb.m(parcel);
+            case 5:
+                throw xnb.m(parcel);
+            case 6:
+                throw xnb.m(parcel);
+            case 7:
+                vhe vheVar = (vhe) sld.a(parcel, vhe.CREATOR);
+                sld.b(parcel);
+                T(vheVar);
+                break;
+            case 8:
+                throw xnb.m(parcel);
+            case 9:
+                throw xnb.m(parcel);
+            case 10:
+                throw xnb.m(parcel);
+            case 11:
+                sld.b(parcel);
+                U();
+                break;
+            case 12:
+                throw xnb.m(parcel);
+            case 13:
+                throw xnb.m(parcel);
+            case 14:
+                throw xnb.m(parcel);
+            case 15:
+                throw xnb.m(parcel);
+            case 16:
+                throw xnb.m(parcel);
+            case 17:
+                throw xnb.m(parcel);
+            case 18:
+                throw xnb.m(parcel);
+            case 19:
+                throw xnb.m(parcel);
+            case 20:
+                throw xnb.m(parcel);
+            case 21:
+            case 24:
+            case 25:
+            case 31:
+            case 32:
+            case 33:
+            default:
+                return false;
+            case 22:
+                throw xnb.m(parcel);
+            case 23:
+                throw xnb.m(parcel);
+            case 26:
+                throw xnb.m(parcel);
+            case 27:
+                throw xnb.m(parcel);
+            case 28:
+                throw xnb.m(parcel);
+            case 29:
+                throw xnb.m(parcel);
+            case jn7.S /* 30 */:
+                throw xnb.m(parcel);
+            case 34:
+                throw xnb.m(parcel);
+            case 35:
+                throw xnb.m(parcel);
+            case 36:
+                throw xnb.m(parcel);
+            case 37:
+                throw xnb.m(parcel);
+            case 38:
+                throw xnb.m(parcel);
+            case 39:
+                throw xnb.m(parcel);
+            case 40:
+                throw xnb.m(parcel);
         }
-    }
-
-    @Override // zt6
-    public final void h(gu6 gu6Var, eu6 eu6Var, int i) {
-        CastDevice b2;
-        String str;
-        CastDevice b3;
-        k8d k8dVar = this.a;
-        Integer valueOf = Integer.valueOf(i);
-        String str2 = eu6Var.c;
-        dc6 dc6Var = b;
-        Log.i(dc6Var.a, dc6Var.d("onRouteSelected with reason = %d, routeId = %s", valueOf, str2));
-        if (eu6Var.l != 1) {
-            return;
-        }
-        if (str2 != null) {
-            try {
-                if (str2.endsWith("-groupRoute") && (b2 = CastDevice.b(eu6Var.s)) != null) {
-                    String str3 = b2.a;
-                    if (str3.startsWith("__cast_nearby__")) {
-                        str3 = str3.substring(16);
-                    }
-                    gu6.b();
-                    ArrayList arrayList = gu6.c().j;
-                    int size = arrayList.size();
-                    int i2 = 0;
-                    while (i2 < size) {
-                        Object obj = arrayList.get(i2);
-                        i2++;
-                        eu6 eu6Var2 = (eu6) obj;
-                        str = eu6Var2.c;
-                        if (str != null && !str.endsWith("-groupRoute") && (b3 = CastDevice.b(eu6Var2.s)) != null) {
-                            String str4 = b3.a;
-                            if (str4.startsWith("__cast_nearby__")) {
-                                str4 = str4.substring(16);
-                            }
-                            if (TextUtils.equals(str4, str3)) {
-                                dc6Var.b("routeId is changed from %s to %s", str2, str);
-                                break;
-                            }
-                        }
-                    }
-                }
-            } catch (RemoteException e) {
-                dc6Var.a(e, "Unable to call %s on %s.", "onRouteSelected", k8d.class.getSimpleName());
-                return;
-            }
-        }
-        str = str2;
-        Parcel T = k8dVar.T(k8dVar.R(), 7);
-        int readInt = T.readInt();
-        T.recycle();
-        Bundle bundle = eu6Var.s;
-        if (readInt < 220400000) {
-            Parcel R = k8dVar.R();
-            R.writeString(str);
-            jgd.c(R, bundle);
-            k8dVar.V(R, 4);
-            return;
-        }
-        Parcel R2 = k8dVar.R();
-        R2.writeString(str);
-        R2.writeString(str2);
-        jgd.c(R2, bundle);
-        k8dVar.V(R2, 8);
-    }
-
-    @Override // zt6
-    public final void j(gu6 gu6Var, eu6 eu6Var, int i) {
-        Integer valueOf = Integer.valueOf(i);
-        String str = eu6Var.c;
-        dc6 dc6Var = b;
-        Log.i(dc6Var.a, dc6Var.d("onRouteUnselected with reason = %d, routeId = %s", valueOf, str));
-        if (eu6Var.l != 1) {
-            dc6Var.b("skip route unselection for non-cast route", new Object[0]);
-            return;
-        }
-        try {
-            k8d k8dVar = this.a;
-            Bundle bundle = eu6Var.s;
-            Parcel R = k8dVar.R();
-            R.writeString(str);
-            jgd.c(R, bundle);
-            R.writeInt(i);
-            k8dVar.V(R, 6);
-        } catch (RemoteException e) {
-            dc6Var.a(e, "Unable to call %s on %s.", "onRouteUnselected", k8d.class.getSimpleName());
-        }
+        parcel2.writeNoException();
+        return true;
     }
 }

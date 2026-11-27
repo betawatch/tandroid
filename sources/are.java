@@ -1,20 +1,26 @@
 // default package
 
-import java.util.ArrayList;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class are {
-    public static final void a(int i, int i2, w4a w4aVar) {
-        w4aVar.getClass();
-        ArrayList arrayList = new ArrayList();
-        int i3 = i2 & (~i);
-        for (int i4 = 0; i4 < 32; i4++) {
-            if ((i3 & 1) != 0) {
-                arrayList.add(w4aVar.g(i4));
-            }
-            i3 >>>= 1;
-        }
-        throw new zd7(w4aVar.a(), arrayList);
+    public static iz5 a() {
+        hz5 hz5Var = (hz5) jg7.c().a(hz5.class);
+        tae taeVar = hz5Var.b;
+        taeVar.getClass();
+        j2f j2fVar = hz5Var.a;
+        iz5 iz5Var = new iz5(taeVar, j2fVar, (Executor) hz5Var.c.a.get());
+        u8a u8aVar = new u8a();
+        u8aVar.c = iz5Var.f;
+        htd htdVar = new htd((byte) 6);
+        htdVar.c = iz5.e();
+        u8aVar.d = new yse(htdVar);
+        rx rxVar = new rx(u8aVar, 1);
+        Task task = j2fVar.e;
+        xnb.c(1, new dd1(j2fVar, rxVar, ame.c, task.isSuccessful() ? (String) task.getResult() : v26.c.a(j2fVar.g), (byte) 2));
+        ((tae) iz5Var.d.get()).b.incrementAndGet();
+        return iz5Var;
     }
 }

@@ -1,160 +1,153 @@
 // default package
 
-import android.os.Handler;
-import android.os.Message;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rx4 extends Handler {
-    public final ArrayList a = new ArrayList();
-    public final ArrayList b = new ArrayList();
-    public final /* synthetic */ ux4 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class rx4 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    public rx4(ux4 ux4Var) {
-        this.c = ux4Var;
+    static {
+        a8c.h(new rx4());
     }
 
-    public static void a(au6 au6Var, int i, Object obj, int i2) {
-        gu6 gu6Var = au6Var.a;
-        zt6 zt6Var = au6Var.b;
-        int i3 = 65280 & i;
-        if (i3 != 256) {
-            if (i3 != 512) {
-                if (i3 == 768 && i == 769) {
-                    zt6Var.l((iu6) obj);
-                }
-                return;
-            }
-            switch (i) {
-                case 513:
-                    zt6Var.a();
-                    break;
-                case 514:
-                    zt6Var.c();
-                    break;
-                case 515:
-                    zt6Var.b();
-                    break;
-            }
-        }
-        eu6 eu6Var = (i == 264 || i == 262) ? (eu6) ((lu7) obj).b : (eu6) obj;
-        eu6 eu6Var2 = (i == 264 || i == 262) ? (eu6) ((lu7) obj).a : null;
-        if (eu6Var != null) {
-            boolean z = true;
-            if ((au6Var.d & 2) == 0 && !eu6Var.h(au6Var.c)) {
-                iu6 iu6Var = gu6.c().u;
-                z = ((iu6Var == null ? false : iu6Var.d) && eu6Var.d() && i == 262 && i2 == 3 && eu6Var2 != null) ? true ^ eu6Var2.d() : false;
-            }
-            if (z) {
-                switch (i) {
-                    case kk7.f4 /* 257 */:
-                        zt6Var.d(eu6Var);
-                        break;
-                    case kk7.g4 /* 258 */:
-                        zt6Var.f(eu6Var);
-                        break;
-                    case kk7.h4 /* 259 */:
-                        zt6Var.e(eu6Var);
-                        break;
-                    case kk7.i4 /* 260 */:
-                        zt6Var.k(eu6Var);
-                        break;
-                    case kk7.j4 /* 261 */:
-                        zt6Var.getClass();
-                        break;
-                    case kk7.k4 /* 262 */:
-                        zt6Var.h(gu6Var, eu6Var, i2);
-                        break;
-                    case kk7.l4 /* 263 */:
-                        zt6Var.j(gu6Var, eu6Var, i2);
-                        break;
-                    case kk7.m4 /* 264 */:
-                        zt6Var.h(gu6Var, eu6Var, i2);
-                        break;
-                }
-            }
-        }
+    public static b8c i(int i, TL_stars.StarGift starGift, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
+        b8c K = b8c.K(rx4.class);
+        K.v = 1;
+        K.A = i;
+        K.H = starGift;
+        K.e = z;
+        K.I = Boolean.valueOf(z2);
+        K.s = z4;
+        K.r = z3;
+        K.u = z5;
+        return K;
     }
 
-    public final void b(int i, Object obj) {
-        obtainMessage(i, obj).sendToTarget();
+    @Override // a8c
+    public final void a(d79 d79Var, View view, b8c b8cVar) {
+        ((sx4) view).e(b8cVar.h, false);
     }
 
-    @Override // android.os.Handler
-    public final void handleMessage(Message message) {
-        int q;
-        ArrayList arrayList = this.a;
-        ux4 ux4Var = this.c;
-        ArrayList arrayList2 = ux4Var.i;
-        vb8 vb8Var = ux4Var.s;
-        int i = message.what;
-        Object obj = message.obj;
-        int i2 = message.arg1;
-        if (i == 259 && ux4Var.e().c.equals(((eu6) obj).c)) {
-            ux4Var.o(true);
-        }
-        int i3 = 0;
-        ArrayList arrayList3 = this.b;
-        if (i == 262) {
-            eu6 eu6Var = (eu6) ((lu7) obj).b;
-            vb8Var.x(eu6Var);
-            if (ux4Var.v != null && eu6Var.d()) {
-                int size = arrayList3.size();
-                int i4 = 0;
-                while (i4 < size) {
-                    Object obj2 = arrayList3.get(i4);
-                    i4++;
-                    vb8Var.w((eu6) obj2);
-                }
-                arrayList3.clear();
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        sx4 sx4Var = (sx4) view;
+        Object obj = b8cVar.H;
+        boolean z2 = false;
+        if (obj instanceof pw4) {
+            pw4 pw4Var = (pw4) obj;
+            zc zcVar = sx4Var.K;
+            TextView textView = sx4Var.J;
+            TextView textView2 = sx4Var.I;
+            TextView textView3 = sx4Var.N;
+            px4 px4Var = sx4Var.e;
+            de0 de0Var = sx4Var.E;
+            TextView textView4 = sx4Var.M;
+            int d = pw4Var.d();
+            if (sx4Var.k0 != pw4Var) {
+                gya g1 = nza.g1(de0Var, de0Var.getImageReceiver(), d);
+                sx4Var.O = g1;
+                g1.run();
+                sx4Var.O = null;
             }
-        } else if (i != 264) {
-            switch (i) {
-                case kk7.f4 /* 257 */:
-                    vb8Var.v((eu6) obj);
-                    break;
-                case kk7.g4 /* 258 */:
-                    vb8Var.w((eu6) obj);
-                    break;
-                case kk7.h4 /* 259 */:
-                    eu6 eu6Var2 = (eu6) obj;
-                    vb8Var.getClass();
-                    if (eu6Var2.c() != vb8Var && (q = vb8Var.q(eu6Var2)) >= 0) {
-                        vb8Var.C((ub8) vb8Var.I.get(q));
-                        break;
-                    }
-                    break;
+            px4Var.d(null);
+            px4Var.e(null);
+            px4Var.g(null);
+            textView2.setText(ob6.G(d, "Gift2Months", new Object[0]));
+            textView.setText(ob6.M0(2131743883, null));
+            textView2.setVisibility(0);
+            textView.setVisibility(0);
+            de0Var.setTranslationY(-hl.L(8.0f));
+            sx4Var.n.setVisibility(8);
+            sx4Var.G.setVisibility(8);
+            if (pw4Var.c == null && pw4Var.d == null) {
+                textView3.setVisibility(8);
+            } else {
+                textView3.setTextColor(aob.I.o() ? -1333971 : -2722014);
+                textView3.setVisibility(0);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ob6.E(pw4Var.g(), ','));
+                spannableStringBuilder.setSpan(new y7c(hl.o()), 0, spannableStringBuilder.length(), 33);
+                wm2[] wm2VarArr = new wm2[1];
+                textView3.setText(nza.b1(false, ob6.V(null, null, 2131746757, spannableStringBuilder), 0.48f, wm2VarArr));
+                wm2VarArr[0].H = 0.8f;
             }
-        } else {
-            eu6 eu6Var3 = (eu6) ((lu7) obj).b;
-            arrayList3.add(eu6Var3);
-            vb8Var.v(eu6Var3);
-            vb8Var.x(eu6Var3);
+            FrameLayout.LayoutParams layoutParams = sx4Var.F;
+            layoutParams.gravity = 49;
+            de0Var.setLayoutParams(layoutParams);
+            textView4.setPadding(hl.L(10.0f), 0, hl.L(10.0f), 0);
+            textView4.setTextSize(1, 12.0f);
+            textView4.setText(pw4Var.c());
+            sx4Var.t0 = (byte) 0;
+            sx4Var.L.setBackground(aob.b0(hl.L(13.0f), 422810068));
+            textView4.setTextColor(-13397548);
+            ((ViewGroup.MarginLayoutParams) zcVar.getLayoutParams()).topMargin = hl.L(130.0f);
+            ((FrameLayout.LayoutParams) zcVar.getLayoutParams()).gravity = 49;
+            sx4Var.k0 = pw4Var;
+            sx4Var.l0 = null;
+            sx4Var.b0 = pw4Var;
+            sx4Var.c0 = null;
+            sx4Var.e0 = false;
+            sx4Var.f0 = null;
+            sx4Var.g0 = false;
+            sx4Var.h0 = false;
+            sx4Var.i0 = false;
+            sx4Var.R = null;
+            sx4Var.S = null;
+            sx4Var.d(false, false);
+            sx4Var.l();
+        } else if (obj instanceof TL_stars.StarGift) {
+            TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
+            boolean z3 = b8cVar.e;
+            Object obj2 = b8cVar.I;
+            sx4Var.h(starGift, z3, obj2 instanceof Boolean ? ((Boolean) obj2).booleanValue() : false, b8cVar.r, b8cVar.s, b8cVar.u);
+        } else if (obj instanceof TL_stars.SavedStarGift) {
+            z2 = sx4Var.i((TL_stars.SavedStarGift) obj, b8cVar.r, b8cVar.s);
         }
-        try {
-            int size2 = arrayList2.size();
-            while (true) {
-                size2--;
-                if (size2 < 0) {
-                    int size3 = arrayList.size();
-                    while (i3 < size3) {
-                        Object obj3 = arrayList.get(i3);
-                        i3++;
-                        a((au6) obj3, i, obj, i2);
-                    }
-                    return;
-                }
-                gu6 gu6Var = (gu6) ((WeakReference) arrayList2.get(size2)).get();
-                if (gu6Var == null) {
-                    arrayList2.remove(size2);
-                } else {
-                    arrayList.addAll(gu6Var.b);
+        if (b8cVar.f) {
+            sx4Var.c(b8cVar.e, z2);
+        }
+        sx4Var.e(b8cVar.h, z2);
+        sx4Var.d.setAlpha(b8cVar.g ? 1.0f : 0.65f);
+        sx4Var.f.setAlpha(b8cVar.g ? 1.0f : 0.5f);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new sx4(i, vnbVar, context);
+    }
+
+    @Override // a8c
+    public final boolean e(b8c b8cVar, b8c b8cVar2) {
+        if (b8cVar.r != b8cVar2.r) {
+            return false;
+        }
+        Object obj = b8cVar.H;
+        if (obj != null || b8cVar2.H != null) {
+            if (obj instanceof pw4) {
+                return obj == b8cVar2.H;
+            }
+            if (obj instanceof TL_stars.StarGift) {
+                Object obj2 = b8cVar2.H;
+                if (obj2 instanceof TL_stars.StarGift) {
+                    return ((TL_stars.StarGift) obj).id == ((TL_stars.StarGift) obj2).id;
                 }
             }
-        } finally {
-            arrayList.clear();
+            if (obj instanceof TL_stars.SavedStarGift) {
+                Object obj3 = b8cVar2.H;
+                if (obj3 instanceof TL_stars.SavedStarGift) {
+                    TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+                    TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj3;
+                    return savedStarGift.gift.id == savedStarGift2.gift.id && savedStarGift.date == savedStarGift2.date && savedStarGift.saved_id == savedStarGift2.saved_id;
+                }
+            }
         }
+        return b8cVar.A == b8cVar2.A && b8cVar.e == b8cVar2.e && b8cVar.C == b8cVar2.C && TextUtils.equals(b8cVar.m, b8cVar2.m);
     }
 }

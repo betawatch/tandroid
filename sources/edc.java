@@ -1,31 +1,70 @@
 // default package
 
-import android.view.View;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class edc {
-    public static CharSequence a(View view) {
-        return view.getAccessibilityPaneTitle();
+public final class edc implements ez9 {
+    public final long[] a;
+    public final long[] b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final int f;
+
+    public edc(long[] jArr, long[] jArr2, long j, long j2, long j3) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j;
+        this.d = j2;
+        this.e = j3;
+        this.f = cue.a(j3 - j2, j);
     }
 
-    public static boolean b(View view) {
-        return view.isAccessibilityHeading();
+    @Override // ez9
+    public final long a() {
+        return this.e;
     }
 
-    public static boolean c(View view) {
-        return view.isScreenReaderFocusable();
+    @Override // ez9
+    public final long b() {
+        return this.d;
     }
 
-    public static void d(View view, boolean z) {
-        view.setAccessibilityHeading(z);
+    @Override // zy9
+    public final boolean c() {
+        return true;
     }
 
-    public static void e(View view, CharSequence charSequence) {
-        view.setAccessibilityPaneTitle(charSequence);
+    @Override // zy9
+    public final boolean d() {
+        return false;
     }
 
-    public static void f(View view, boolean z) {
-        view.setScreenReaderFocusable(z);
+    @Override // zy9
+    public final yy9 e(long j) {
+        long[] jArr = this.a;
+        int f = gcc.f(jArr, j, true);
+        long j2 = jArr[f];
+        long[] jArr2 = this.b;
+        bz9 bz9Var = new bz9(j2, jArr2[f]);
+        if (j2 >= j || f == jArr.length - 1) {
+            return new yy9(bz9Var, bz9Var);
+        }
+        int i = f + 1;
+        return new yy9(bz9Var, new bz9(jArr[i], jArr2[i]));
+    }
+
+    @Override // ez9
+    public final long f(long j) {
+        return this.a[gcc.f(this.b, j, true)];
+    }
+
+    @Override // ez9
+    public final int g() {
+        return this.f;
+    }
+
+    @Override // zy9
+    public final long h() {
+        return this.c;
     }
 }

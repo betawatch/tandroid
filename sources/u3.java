@@ -1,14 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.concurrent.CancellationException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class u3 {
-    public static final u3 b = new u3(new i2("Failure occurred while trying to finish a future.", (byte) 1));
-    public final Throwable a;
+    public static final u3 c;
+    public static final u3 d;
+    public final boolean a;
+    public final CancellationException b;
 
-    public u3(Throwable th) {
-        boolean z = a4.d;
-        th.getClass();
-        this.a = th;
+    static {
+        if (b4.d) {
+            d = null;
+            c = null;
+        } else {
+            d = new u3(false, null);
+            c = new u3(true, null);
+        }
+    }
+
+    public u3(boolean z, CancellationException cancellationException) {
+        this.a = z;
+        this.b = cancellationException;
     }
 }

@@ -1,21 +1,51 @@
 // default package
 
-import org.telegram.ui.PremiumPreviewFragment;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bi8 extends kx9 {
-    public final /* synthetic */ PremiumPreviewFragment e;
+public final /* synthetic */ class bi8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ji8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bi8(PremiumPreviewFragment premiumPreviewFragment, ai8 ai8Var) {
-        super(ai8Var);
-        this.e = premiumPreviewFragment;
+    public /* synthetic */ bi8(ji8 ji8Var, boolean z) {
+        this.a = (byte) 0;
+        this.b = ji8Var;
     }
 
-    @Override // kx9, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.v0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ji8 ji8Var = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new bi8(ji8Var, (byte) 3));
+                wb2 wb2Var = ji8Var.M;
+                if (wb2Var != null) {
+                    wb2Var.setVisibility(0);
+                    wb2 wb2Var2 = ji8Var.M;
+                    wb2Var2.d6 = null;
+                    wb2Var2.invalidate();
+                }
+                st1 st1Var = ji8Var.f0;
+                if (st1Var != null) {
+                    hl.c3(st1Var);
+                    ji8Var.f0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                ji8Var.b(false);
+                break;
+            case 2:
+                ji8Var.b(false);
+                break;
+            default:
+                ji8Var.c();
+                break;
+        }
+    }
+
+    public /* synthetic */ bi8(ji8 ji8Var, byte b) {
+        this.a = b;
+        this.b = ji8Var;
     }
 }

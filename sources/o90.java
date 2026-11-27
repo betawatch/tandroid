@@ -1,62 +1,64 @@
 // default package
 
-import java.util.HashMap;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class o90 {
-    public Object a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e = new xnb();
-    public Object f;
-    public Object g;
-    public Object h;
-    public Object i;
-    public Object j;
+public final class o90 extends a23 {
+    public final Context a;
+    public final pj2 b;
+    public final pj2 c;
+    public final String d;
 
-    public o90(y54 y54Var, t54 t54Var, adb adbVar, int i, int i2, int i3, int i4) {
-        this.a = y54Var;
-        this.c = t54Var;
-        this.d = adbVar;
-        this.f = adbVar.a(y54Var.t, new zn3(this, (byte) 2));
-        this.g = new w9b(this, i);
-        this.h = new x9b(this, i2);
-        this.i = new y9b(this, i3);
-        this.j = new z9b(this, i4);
-        b30 b30Var = new b30(this, (byte) 3);
-        this.b = b30Var;
-        y54Var.m.a(b30Var);
-    }
-
-    public final void a(String str, String str2) {
-        HashMap hashMap = (HashMap) this.h;
-        if (hashMap != null) {
-            hashMap.put(str, str2);
+    public o90(Context context, pj2 pj2Var, pj2 pj2Var2, String str) {
+        if (context == null) {
+            p3d.h("Null applicationContext");
+            throw null;
+        }
+        this.a = context;
+        if (pj2Var == null) {
+            p3d.h("Null wallClock");
+            throw null;
+        }
+        this.b = pj2Var;
+        if (pj2Var2 == null) {
+            p3d.h("Null monotonicClock");
+            throw null;
+        }
+        this.c = pj2Var2;
+        if (str != null) {
+            this.d = str;
         } else {
-            sc8.j("Property \"autoMetadata\" has not been set");
+            p3d.h("Null backendName");
+            throw null;
         }
     }
 
-    public final p90 b() {
-        String str = ((String) this.a) == null ? " transportName" : "";
-        if (((o24) this.e) == null) {
-            str = str.concat(" encodedPayload");
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        if (((Long) this.f) == null) {
-            str = str.concat(" eventMillis");
+        if (obj instanceof a23) {
+            o90 o90Var = (o90) ((a23) obj);
+            if (this.a.equals(o90Var.a) && this.b.equals(o90Var.b) && this.c.equals(o90Var.c) && this.d.equals(o90Var.d)) {
+                return true;
+            }
         }
-        if (((Long) this.g) == null) {
-            str = str.concat(" uptimeMillis");
-        }
-        if (((HashMap) this.h) == null) {
-            str = str.concat(" autoMetadata");
-        }
-        if (str.isEmpty()) {
-            return new p90((String) this.a, (Integer) this.c, (o24) this.e, ((Long) this.f).longValue(), ((Long) this.g).longValue(), (HashMap) this.h, (Integer) this.d, (String) this.b, (byte[]) this.i, (byte[]) this.j);
-        }
-        sc8.j("Missing required properties:".concat(str));
-        return null;
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode();
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("CreationContext{applicationContext=");
+        sb.append(this.a);
+        sb.append(", wallClock=");
+        sb.append(this.b);
+        sb.append(", monotonicClock=");
+        sb.append(this.c);
+        sb.append(", backendName=");
+        return c00.k(sb, this.d, "}");
     }
 }

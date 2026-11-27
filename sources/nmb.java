@@ -1,11 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class nmb {
-    public final /* synthetic */ omb a;
+import android.animation.ValueAnimator;
 
-    public nmb(omb ombVar) {
-        this.a = ombVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class nmb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pmb b;
+
+    public /* synthetic */ nmb(pmb pmbVar, byte b) {
+        this.a = b;
+        this.b = pmbVar;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        pmb pmbVar = this.b;
+        switch (b) {
+            case 0:
+                pmbVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pmbVar.invalidate();
+                break;
+            case 1:
+                pmbVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pmbVar.invalidate();
+                break;
+            case 2:
+                pmbVar.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pmbVar.invalidate();
+                break;
+            case 3:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pmbVar.s = floatValue;
+                pmbVar.x = (int) ((pmbVar.h * floatValue) + 0.0f);
+                pmbVar.invalidate();
+                break;
+            default:
+                pmbVar.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pmbVar.y = pmbVar.r + ((int) Math.ceil((pmbVar.n - r0) * r4));
+                pmbVar.invalidate();
+                break;
+        }
     }
 }

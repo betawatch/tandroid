@@ -1,26 +1,33 @@
 // default package
 
-import j$.util.function.BiFunction$-CC;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qz0 implements BiFunction {
-    public final /* synthetic */ byte a;
+public final class qz0 {
+    public final /* synthetic */ byte a = 1;
+    public int b;
+    public long c;
+    public int d;
 
-    public final /* synthetic */ BiFunction andThen(Function function) {
-        byte b = this.a;
-        return BiFunction$-CC.$default$andThen(this, function);
+    public qz0(long j, int i, int i2) {
+        this.c = j;
+        this.b = i;
+        this.d = i2;
     }
 
-    @Override // java.util.function.BiFunction
-    public final Object apply(Object obj, Object obj2) {
+    public final String toString() {
         switch (this.a) {
             case 0:
-                return Long.valueOf(Math.max(((Long) obj).longValue(), ((Long) obj2).longValue()));
+                StringBuilder sb = new StringBuilder("part{");
+                sb.append(this.c);
+                sb.append(", ch=");
+                sb.append(this.b);
+                sb.append(", q=");
+                return uh9.l(sb, this.d, "}");
             default:
-                return Integer.valueOf(((Integer) obj2).intValue() + ((Integer) obj).intValue());
+                return super.toString();
         }
+    }
+
+    public /* synthetic */ qz0() {
     }
 }

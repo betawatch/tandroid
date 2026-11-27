@@ -1,247 +1,84 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class au4 implements hy1 {
-    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
-    public final /* synthetic */ du4 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class au4 extends nx0 {
+    public final zt4 l1;
+    public ValueAnimator m1;
+    public vpa n1;
+    public Boolean o1;
+    public pcc p1;
 
-    public au4(du4 du4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        this.b = du4Var;
-        this.a = tL_starGiftUnique;
+    public au4(Context context, vnb vnbVar, String str, float f) {
+        super(1, vnbVar, context, false);
+        K(-14737633);
+        zt4 zt4Var = new zt4(yac.t0, context, new x53(), f, str);
+        this.l1 = zt4Var;
+        zt4Var.H.setVisibility(8);
+        zt4Var.setMultipleOnClick(false);
+        zt4Var.setOnBackClickListener(new xt4(this, (byte) 0));
+        zt4Var.setOnSelectListener(new yt4((Object) this, (byte) 0));
+        wma wmaVar = new wma(context, null);
+        this.b = wmaVar;
+        int i = this.u0;
+        wmaVar.setPadding(i, 0, i, 0);
+        this.b.addView(zt4Var);
     }
 
-    @Override // hy1
-    public final void C0(CharSequence charSequence, boolean z, boolean z2) {
-        b(charSequence);
+    @Override // nx0
+    public final boolean D() {
+        return !this.l1.x;
     }
 
-    @Override // hy1
-    public final bu1 D() {
-        return null;
+    public final void E0(boolean z, xt4 xt4Var) {
+        zt4 zt4Var = this.l1;
+        float translationY = zt4Var.getTranslationY();
+        float height = z ? 0.0f : (this.b.getHeight() - zt4Var.g()) + (hl.n * 2.5f);
+        this.o1 = Boolean.valueOf(z);
+        if (z) {
+            vpa vpaVar = new vpa(zt4Var, vpa.p, height);
+            this.n1 = vpaVar;
+            vpaVar.m.a(0.75f);
+            this.n1.m.b(350.0f);
+            this.n1.a(new kk(this, height, xt4Var));
+            this.n1.h();
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
+        this.m1 = ofFloat;
+        ofFloat.addUpdateListener(new ch4(this, (byte) 4));
+        this.m1.addListener(new v5(this, xt4Var, (byte) 25));
+        this.m1.setDuration(450L);
+        this.m1.setInterpolator(k43.h);
+        this.m1.start();
     }
 
-    @Override // hy1
-    public final boolean H0() {
-        return false;
+    public final /* synthetic */ void F0() {
+        super.dismiss();
     }
 
-    @Override // hy1
-    public final boolean M() {
+    @Override // nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        E0(false, new xt4(this, (byte) 1));
+        super.dismiss();
+    }
+
+    @Override // nx0, android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.l1.g()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        dismiss();
         return true;
     }
 
-    @Override // hy1
-    public final void P0(CharSequence charSequence) {
-        b(charSequence);
-    }
-
-    @Override // hy1
-    public final boolean Q0() {
-        return false;
-    }
-
-    public final void b(CharSequence charSequence) {
-        int i;
-        du4 du4Var = this.b;
-        hn hnVar = du4Var.v1;
-        du4Var.l1.a(this.a, y6c.h(du4Var.a).e(), du4Var.r1.getTextWithEntities(), k96.M0(2131749728, null), true);
-        int codePointCount = Character.codePointCount(charSequence, 0, charSequence.length());
-        du4Var.z1 = codePointCount;
-        int i2 = du4Var.y1;
-        if (i2 <= 0 || (i = i2 - codePointCount) > 15) {
-            hnVar.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new im2(this, (byte) 26));
-            return;
-        }
-        if (i < -9999) {
-            i = -9999;
-        }
-        hnVar.c(k96.E(i, ','), hnVar.getVisibility() == 0, true);
-        if (hnVar.getVisibility() != 0) {
-            hnVar.setVisibility(0);
-            hnVar.setAlpha(0.0f);
-            hnVar.setScaleX(0.5f);
-            hnVar.setScaleY(0.5f);
-        }
-        hnVar.animate().setListener(null).cancel();
-        hnVar.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-        if (i < 0) {
-            zkb.U(hnVar, bkb.o7, du4Var.J0);
-        } else {
-            zkb.U(hnVar, bkb.x6, du4Var.J0);
-        }
-    }
-
-    @Override // hy1
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // hy1
-    public final int h() {
-        return 0;
-    }
-
-    @Override // hy1
-    public final TLRPC.Peer i() {
-        return null;
-    }
-
-    @Override // hy1
-    public final int o0() {
-        return 0;
-    }
-
-    @Override // hy1
-    public final TL_stories.StoryItem t0() {
-        return null;
-    }
-
-    @Override // hy1
-    public final boolean u0(long j) {
-        return false;
-    }
-
-    @Override // hy1
-    public final TLRPC.TL_channels_sendAsPeers v() {
-        return null;
-    }
-
-    @Override // hy1
-    public final boolean y0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final void B() {
-    }
-
-    @Override // hy1
-    public final void G0() {
-    }
-
-    @Override // hy1
-    public final void H() {
-    }
-
-    @Override // hy1
-    public final void I0() {
-    }
-
-    @Override // hy1
-    public final void K0() {
-    }
-
-    @Override // hy1
-    public final void L0() {
-    }
-
-    @Override // hy1
-    public final void R0() {
-    }
-
-    @Override // hy1
-    public final void S() {
-    }
-
-    @Override // hy1
-    public final void U() {
-    }
-
-    @Override // hy1
-    public final void W0() {
-    }
-
-    @Override // hy1
-    public final void a() {
-    }
-
-    @Override // hy1
-    public final void e() {
-    }
-
-    @Override // hy1
-    public final void e1() {
-    }
-
-    @Override // hy1
-    public final void g0() {
-    }
-
-    @Override // hy1
-    public final void g1() {
-    }
-
-    @Override // hy1
-    public final void j() {
-    }
-
-    @Override // hy1
-    public final void n() {
-    }
-
-    @Override // hy1
-    public final void o1() {
-    }
-
-    @Override // hy1
-    public final void p1() {
-    }
-
-    @Override // hy1
-    public final void r() {
-    }
-
-    @Override // hy1
-    public final void s1() {
-    }
-
-    @Override // hy1
-    public final void y() {
-    }
-
-    @Override // hy1
-    public final void f1(int i) {
-    }
-
-    @Override // hy1
-    public final void j1(boolean z) {
-    }
-
-    @Override // hy1
-    public final void k(float f) {
-    }
-
-    @Override // hy1
-    public final void m(boolean z) {
-    }
-
-    @Override // hy1
-    public final void n0(int i) {
-    }
-
-    @Override // hy1
-    public final void z(boolean z) {
-    }
-
-    @Override // hy1
-    public final void w(float f, int i) {
-    }
-
-    @Override // hy1
-    public final void O0(View view, CharSequence charSequence, boolean z) {
-    }
-
-    @Override // hy1
-    public final void u(CharSequence charSequence, boolean z, int i, int i2, long j) {
-    }
-
-    @Override // hy1
-    public final void k1(int i, int i2, int i3, long j, long j2, boolean z) {
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        super.show();
+        E0(true, null);
     }
 }

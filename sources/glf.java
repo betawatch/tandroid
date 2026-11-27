@@ -1,0 +1,80 @@
+// default package
+
+import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class glf {
+    public static final glf c = new glf();
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
+    public final z8d a = new z8d((byte) 2);
+
+    public final jlf a(Class cls) {
+        jlf j;
+        Class cls2;
+        Charset charset = ujf.a;
+        if (cls == null) {
+            p3d.h("messageType");
+            return null;
+        }
+        ConcurrentHashMap concurrentHashMap = this.b;
+        jlf jlfVar = (jlf) concurrentHashMap.get(cls);
+        if (jlfVar != null) {
+            return jlfVar;
+        }
+        Class cls3 = klf.a;
+        if (!ljf.class.isAssignableFrom(cls) && (cls2 = klf.a) != null && !cls2.isAssignableFrom(cls)) {
+            lq5.j("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+            return null;
+        }
+        ilf zzb = ((qkf) this.a.b).zzb(cls);
+        if ((zzb.d & 2) == 2) {
+            if (ljf.class.isAssignableFrom(cls)) {
+                j = new clf(klf.c, fjf.a, zzb.a);
+            } else {
+                tlf tlfVar = klf.b;
+                ejf ejfVar = fjf.b;
+                if (ejfVar == null) {
+                    grb.i("Protobuf runtime is not correctly loaded.");
+                    return null;
+                }
+                j = new clf(tlfVar, ejfVar, zzb.a);
+            }
+        } else if (ljf.class.isAssignableFrom(cls)) {
+            if (zzb.a() - 1 != 1) {
+                int i = elf.a;
+                mkf mkfVar = okf.b;
+                tlf tlfVar2 = klf.c;
+                ejf ejfVar2 = fjf.a;
+                int i2 = skf.a;
+                j = blf.j(zzb, mkfVar, tlfVar2, ejfVar2);
+            } else {
+                int i3 = elf.a;
+                mkf mkfVar2 = okf.b;
+                tlf tlfVar3 = klf.c;
+                int i4 = skf.a;
+                j = blf.j(zzb, mkfVar2, tlfVar3, null);
+            }
+        } else if (zzb.a() - 1 != 1) {
+            int i5 = elf.a;
+            kkf kkfVar = okf.a;
+            tlf tlfVar4 = klf.b;
+            ejf ejfVar3 = fjf.b;
+            if (ejfVar3 == null) {
+                grb.i("Protobuf runtime is not correctly loaded.");
+                return null;
+            }
+            int i6 = skf.a;
+            j = blf.j(zzb, kkfVar, tlfVar4, ejfVar3);
+        } else {
+            int i7 = elf.a;
+            kkf kkfVar2 = okf.a;
+            tlf tlfVar5 = klf.b;
+            int i8 = skf.a;
+            j = blf.j(zzb, kkfVar2, tlfVar5, null);
+        }
+        jlf jlfVar2 = (jlf) concurrentHashMap.putIfAbsent(cls, j);
+        return jlfVar2 == null ? j : jlfVar2;
+    }
+}

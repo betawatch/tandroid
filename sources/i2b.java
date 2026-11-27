@@ -1,36 +1,35 @@
 // default package
 
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
+import j$.util.Objects;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class i2b implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ a8b b;
-    public final /* synthetic */ TextView c;
-    public final /* synthetic */ k2b d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class i2b {
+    public final String a;
+    public final to5 b;
+    public final to5 c;
+    public final to5 d;
 
-    public i2b(k2b k2bVar, TextView textView, a8b a8bVar, TextView textView2) {
-        this.d = k2bVar;
-        this.a = textView;
-        this.b = a8bVar;
-        this.c = textView2;
+    public i2b(String str, HashMap hashMap, HashMap hashMap2, HashMap hashMap3) {
+        this.a = str;
+        this.b = to5.b(hashMap);
+        this.c = to5.b(hashMap2);
+        this.d = to5.b(hashMap3);
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        int[] iArr = new int[2];
-        TextView textView = this.a;
-        textView.getLocationOnScreen(iArr);
-        int L = gl.L(24.0f) + iArr[1];
-        int measuredHeight = this.b.getMeasuredHeight();
-        k2b k2bVar = this.d;
-        if (L > measuredHeight) {
-            textView.setLayoutParams(nme.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
-            this.c.setLayoutParams(nme.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
-            k2bVar.requestLayout();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        k2bVar.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        if (!(obj instanceof i2b)) {
+            return false;
+        }
+        i2b i2bVar = (i2b) obj;
+        return Objects.equals(this.a, i2bVar.a) && this.b.equals(i2bVar.b) && this.c.equals(i2bVar.c) && this.d.equals(i2bVar.d);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c, this.d);
     }
 }

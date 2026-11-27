@@ -1,42 +1,35 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class bb4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gb4 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class bb4 {
-    public final int a;
-    public final TLRPC.Document b;
-    public final String c;
-    public final k27 d;
-    public final String e;
-    public boolean f;
-    public boolean g;
-
-    public bb4(int i, k27 k27Var, TLRPC.Document document, String str) {
-        this.a = i;
-        this.d = k27Var;
-        this.b = document;
-        this.c = str;
-        this.e = TextUtils.isEmpty(str) ? ba4.r(null, document) : str;
-        a();
+    public /* synthetic */ bb4(gb4 gb4Var, byte b) {
+        this.a = b;
+        this.b = gb4Var;
     }
 
-    public final void a() {
-        boolean z = false;
-        String str = this.c;
-        boolean t = str != null ? oo1.t(str) : false;
-        int i = this.a;
-        if (!t) {
-            ba4.G(i);
-            t = ba4.I(this.b).exists();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        gb4 gb4Var = this.b;
+        switch (b) {
+            case 0:
+                Runnable runnable = gb4Var.l;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                Runnable runnable2 = gb4Var.l;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
+                break;
         }
-        this.f = t;
-        String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && ba4.G(i).S(str2)) {
-            z = true;
-        }
-        this.g = z;
     }
 }

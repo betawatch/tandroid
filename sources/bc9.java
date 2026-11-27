@@ -1,29 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bc9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nd9 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class bc9 extends b4c {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        b4c.h(new bc9());
+    public /* synthetic */ bc9(nd9 nd9Var, byte b) {
+        this.a = b;
+        this.b = nd9Var;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        ((cc9) view).c = (lk0) c4cVar.H;
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new cc9(context, wjbVar);
-    }
-
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        nd9 nd9Var = this.b;
+        switch (b) {
+            case 0:
+                ed9 ed9Var = nd9Var.e;
+                if (ed9Var != null) {
+                    ed9Var.s(nd9Var.K);
+                    break;
+                }
+                break;
+            case 1:
+                nd9Var.e.t(dd9.a);
+                break;
+            case 2:
+                nd9Var.e.t(dd9.b);
+                break;
+            default:
+                nd9Var.e.t(dd9.c);
+                break;
+        }
     }
 }

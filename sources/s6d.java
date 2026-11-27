@@ -1,35 +1,17 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class s6d extends b4 {
-    public static final Parcelable.Creator<s6d> CREATOR = new t4d((byte) 18);
-    public final String a;
+public final class s6d {
+    public final bg7 a;
+    public final int b;
+    public final long c;
+    public final int d;
 
-    public s6d(String str) {
-        fre.h(str);
-        this.a = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof s6d) {
-            return this.a.equals(((s6d) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 1, this.a);
-        jte.s(parcel, r);
+    public s6d(bg7 bg7Var, int i, long j, int i2) {
+        this.a = bg7Var;
+        this.b = i;
+        this.c = j;
+        this.d = i2;
     }
 }

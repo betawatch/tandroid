@@ -1,59 +1,44 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.view.Surface;
-import android.view.TextureView;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.Handler;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fn9 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ on9 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fn9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ on9 b;
+    public final /* synthetic */ cp9 c;
+    public final /* synthetic */ long d;
 
-    public fn9(on9 on9Var) {
-        this.a = on9Var;
+    public /* synthetic */ fn9(on9 on9Var, cp9 cp9Var, long j, byte b) {
+        this.a = b;
+        this.b = on9Var;
+        this.c = cp9Var;
+        this.d = j;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-        Surface surface = new Surface(surfaceTexture);
-        on9 on9Var = this.a;
-        on9Var.r0 = surface;
-        on9Var.v();
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        on9 on9Var = this.a;
-        Surface surface = on9Var.r0;
-        on9Var.r0 = null;
-        y76 y76Var = new y76(surface, surfaceTexture, (byte) 3);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (!on9Var.s0 || sharedInstance == null) {
-            on9Var.s0 = false;
-            y76Var.run();
-        } else {
-            on9Var.s0 = false;
-            sharedInstance.setRtmpStreamVideoOutput(null, y76Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                on9 on9Var = this.b;
+                on9Var.c.post(new fn9(on9Var, this.c, this.d, (byte) 1));
+                break;
+            default:
+                on9 on9Var2 = this.b;
+                cp9 cp9Var = this.c;
+                long j = this.d;
+                if (on9Var2.U && on9Var2.F == cp9Var) {
+                    on9Var2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + on9.x(j));
+                    jp9 jp9Var = (jp9) on9Var2.k.b;
+                    Handler handler = jp9Var.i;
+                    kj4 kj4Var = jp9Var.d;
+                    Objects.requireNonNull(kj4Var);
+                    handler.post(new v59(kj4Var, (byte) 17));
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        on9 on9Var = this.a;
-        if (on9Var.u0) {
-            return;
-        }
-        on9Var.u0 = true;
-        gl.r(on9Var.M0);
-        on9Var.w.setVisibility(8);
-        on9Var.x.setVisibility(8);
-        on9Var.p();
-        on9Var.j();
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
     }
 }

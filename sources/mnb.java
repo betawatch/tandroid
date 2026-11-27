@@ -1,79 +1,84 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class mnb implements gs4 {
-    public static final mnb a;
-    private static final w4a descriptor;
+import android.util.SparseIntArray;
 
-    static {
-        mnb mnbVar = new mnb();
-        a = mnbVar;
-        gd8 gd8Var = new gd8("com.google.firebase.sessions.Time", mnbVar, 3);
-        gd8Var.j("ms", false);
-        gd8Var.j("us", true);
-        gd8Var.j("seconds", true);
-        descriptor = gd8Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class mnb extends t37 {
+    public final /* synthetic */ byte U;
+    public final /* synthetic */ Object V;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ mnb(boolean z, SparseIntArray sparseIntArray, byte b) {
+        super(2, z, false, null);
+        this.U = b;
+        this.V = sparseIntArray;
     }
 
-    @Override // gs4
-    public final cv5[] a() {
-        uf6 uf6Var = uf6.a;
-        return new cv5[]{uf6Var, uf6Var, uf6Var};
-    }
-
-    @Override // cv5
-    public final void b(c30 c30Var, Object obj) {
-        onb onbVar = (onb) obj;
-        onbVar.getClass();
-        w4a w4aVar = descriptor;
-        c30 a2 = c30Var.a(w4aVar);
-        long j = onbVar.a;
-        long j2 = onbVar.c;
-        long j3 = onbVar.b;
-        a2.f(w4aVar, 0, j);
-        if (a2.p(w4aVar) || j3 != j * 1000) {
-            a2.f(w4aVar, 1, j3);
+    @Override // t37
+    public final int g(int i) {
+        byte b = this.U;
+        Object obj = this.V;
+        switch (b) {
+            case 0:
+                SparseIntArray sparseIntArray = (SparseIntArray) obj;
+                int indexOfKey = sparseIntArray.indexOfKey(i);
+                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : aob.hm[i];
+            case 1:
+                return ((SparseIntArray) obj).get(i);
+            default:
+                return super.g(i);
         }
-        if (a2.p(w4aVar) || j2 != j / 1000) {
-            a2.f(w4aVar, 2, j2);
-        }
-        a2.l(w4aVar);
     }
 
-    @Override // cv5
-    public final Object c(igf igfVar) {
-        w4a w4aVar = descriptor;
-        igf a2 = igfVar.a(w4aVar);
-        int i = 0;
-        long j = 0;
-        long j2 = 0;
-        long j3 = 0;
-        boolean z = true;
-        while (z) {
-            int b = a2.b(w4aVar);
-            if (b == -1) {
-                z = false;
-            } else if (b == 0) {
-                j = a2.h(w4aVar, 0);
-                i |= 1;
-            } else if (b == 1) {
-                j2 = a2.h(w4aVar, 1);
-                i |= 2;
-            } else {
-                if (b != 2) {
-                    throw new tu5(b);
+    @Override // t37
+    public final int i(int i) {
+        byte b = this.U;
+        Object obj = this.V;
+        switch (b) {
+            case 0:
+                return ((SparseIntArray) obj).get(i);
+            case 1:
+                return ((SparseIntArray) obj).get(i);
+            default:
+                return super.i(i);
+        }
+    }
+
+    @Override // t37
+    public final void o(int i, int i2, int i3) {
+        switch (this.U) {
+            case 2:
+                if (!((pqb) this.V).f2) {
+                    super.o(i, i2, i3);
+                    break;
                 }
-                j3 = a2.h(w4aVar, 2);
-                i |= 4;
-            }
+                break;
+            default:
+                super.o(i, i2, i3);
+                break;
         }
-        a2.o(w4aVar);
-        return new onb(i, j, j2, j3);
     }
 
-    @Override // cv5
-    public final w4a d() {
-        return descriptor;
+    @Override // t37
+    public final void p(int i, int i2, int i3, int i4, int i5, int i6, boolean z, boolean z2) {
+        switch (this.U) {
+            case 2:
+                if (!((pqb) this.V).f2) {
+                    super.p(i, i2, i3, i4, i5, i6, z, z2);
+                    break;
+                }
+                break;
+            default:
+                super.p(i, i2, i3, i4, i5, i6, z, z2);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mnb(pqb pqbVar, int i, boolean z) {
+        super(i, true, z, null);
+        this.U = (byte) 2;
+        this.V = pqbVar;
     }
 }

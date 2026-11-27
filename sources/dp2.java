@@ -1,70 +1,114 @@
 // default package
 
-import java.util.concurrent.CancellationException;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dp2 {
-    public final Object a;
-    public final ja1 b;
-    public final gq4 c;
-    public final Object d;
-    public final Throwable e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class dp2 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ dp2(Object obj, ja1 ja1Var, gq4 gq4Var, CancellationException cancellationException, int i) {
-        this(obj, (i & 2) != 0 ? null : ja1Var, (i & 4) != 0 ? null : gq4Var, (Object) null, (i & 16) != 0 ? null : cancellationException);
+    public /* synthetic */ dp2(fn7 fn7Var, boolean z, long j, byte b) {
+        this.a = b;
+        this.d = fn7Var;
+        this.b = z;
+        this.c = j;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v2, types: [java.lang.Throwable] */
-    public static dp2 a(dp2 dp2Var, ja1 ja1Var, CancellationException cancellationException, int i) {
-        Object obj = dp2Var.a;
-        if ((i & 2) != 0) {
-            ja1Var = dp2Var.b;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 2;
+        byte b3 = 0;
+        boolean z = this.b;
+        long j = this.c;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                fp2 fp2Var = (fp2) obj;
+                fp2Var.i = null;
+                fp2Var.g.l(j);
+                for (int size = fp2Var.j.size() - 1; size >= 0; size--) {
+                    if (wf3.n(((TL_communities.CommunityPeerRequest) fp2Var.j.get(size)).peer) == j) {
+                        fp2Var.j.remove(size);
+                    }
+                }
+                fp2Var.a();
+                ep2 ep2Var = fp2Var.h;
+                if (ep2Var != null) {
+                    ep2Var.W();
+                }
+                uc7 s1 = uc7.s1(fp2Var.d);
+                long j2 = fp2Var.e;
+                cp2 cp2Var = new cp2(fp2Var, b2);
+                TL_communities.TL_communities_togglePeerLinkRequestApproval tL_communities_togglePeerLinkRequestApproval = new TL_communities.TL_communities_togglePeerLinkRequestApproval();
+                tL_communities_togglePeerLinkRequestApproval.community = s1.h1(j2);
+                tL_communities_togglePeerLinkRequestApproval.peer = s1.j1(j);
+                tL_communities_togglePeerLinkRequestApproval.reject = !z;
+                s1.getConnectionsManager().sendRequestTyped(tL_communities_togglePeerLinkRequestApproval, new ic(b3), new iv4((Object) s1, j2, (Object) cp2Var, (byte) 3));
+                break;
+            case 1:
+                HashSet hashSet = ((ip7) obj).y;
+                if (z) {
+                    hashSet.add(Long.valueOf(j));
+                    break;
+                } else {
+                    hashSet.remove(Long.valueOf(j));
+                    break;
+                }
+            case 2:
+                e0b e0bVar = (e0b) obj;
+                e0bVar.z1 = j;
+                e0bVar.y1 = j;
+                if (z) {
+                    m96 m96Var = e0bVar.A1;
+                    m96Var.c = j;
+                    e0bVar.B1.set(m96Var);
+                }
+                e0bVar.I0();
+                e0bVar.D1.a(true, true);
+                d0b d0bVar = e0bVar.x1;
+                if (d0bVar != null) {
+                    d0bVar.setMyPrivacy(e0bVar.y1);
+                    break;
+                }
+                break;
+            case 3:
+                r9b r9bVar = (r9b) obj;
+                w9b w9bVar = r9bVar.a0;
+                if (z) {
+                    int i = w9b.X1;
+                    uc7.s1(w9bVar.a).c3(Long.valueOf(j), new cz3(r9bVar, j, b2), jn7.d3);
+                    break;
+                } else {
+                    int i2 = w9b.X1;
+                    uc7.s1(w9bVar.a).e3(0, j, true);
+                    break;
+                }
+            default:
+                qyb qybVar = (qyb) obj;
+                qybVar.getUserConfig().j().edit().remove("topics_end_reached_" + j).apply();
+                qybVar.a.l(j);
+                qybVar.b.l(j);
+                qybVar.d.delete(j);
+                qybVar.s.l(j);
+                TLRPC.Chat M0 = qybVar.getMessagesController().M0(Long.valueOf(j));
+                if (M0 != null && (M0.forum || M0.monoforum)) {
+                    qybVar.n(0, j, z);
+                }
+                qybVar.y(j, true);
+                break;
         }
-        ja1 ja1Var2 = ja1Var;
-        gq4 gq4Var = dp2Var.c;
-        Object obj2 = dp2Var.d;
-        CancellationException cancellationException2 = cancellationException;
-        if ((i & 16) != 0) {
-            cancellationException2 = dp2Var.e;
-        }
-        return new dp2(obj, ja1Var2, gq4Var, obj2, cancellationException2);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof dp2)) {
-            return false;
-        }
-        dp2 dp2Var = (dp2) obj;
-        return rp5.a(this.a, dp2Var.a) && rp5.a(this.b, dp2Var.b) && rp5.a(this.c, dp2Var.c) && rp5.a(this.d, dp2Var.d) && rp5.a(this.e, dp2Var.e);
-    }
-
-    public final int hashCode() {
-        Object obj = this.a;
-        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
-        ja1 ja1Var = this.b;
-        int hashCode2 = (hashCode + (ja1Var == null ? 0 : ja1Var.hashCode())) * 31;
-        gq4 gq4Var = this.c;
-        int hashCode3 = (hashCode2 + (gq4Var == null ? 0 : gq4Var.hashCode())) * 31;
-        Object obj2 = this.d;
-        int hashCode4 = (hashCode3 + (obj2 == null ? 0 : obj2.hashCode())) * 31;
-        Throwable th = this.e;
-        return hashCode4 + (th != null ? th.hashCode() : 0);
-    }
-
-    public final String toString() {
-        return "CompletedContinuation(result=" + this.a + ", cancelHandler=" + this.b + ", onCancellation=" + this.c + ", idempotentResume=" + this.d + ", cancelCause=" + this.e + ')';
-    }
-
-    public dp2(Object obj, ja1 ja1Var, gq4 gq4Var, Object obj2, Throwable th) {
-        this.a = obj;
-        this.b = ja1Var;
-        this.c = gq4Var;
-        this.d = obj2;
-        this.e = th;
+    public /* synthetic */ dp2(Object obj, long j, boolean z, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.c = j;
+        this.b = z;
     }
 }

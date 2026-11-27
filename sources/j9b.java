@@ -1,6 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class j9b extends i9b {
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class j9b implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r9b b;
+
+    public /* synthetic */ j9b(r9b r9bVar, byte b) {
+        this.a = b;
+        this.b = r9bVar;
+    }
+
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        byte b2 = 1;
+        r9b r9bVar = this.b;
+        switch (b) {
+            case 0:
+                w9b w9bVar = r9bVar.a0;
+                w9bVar.m1 = (TLRPC.InputPeer) obj;
+                HashSet hashSet = w9bVar.u1;
+                hashSet.clear();
+                if (w9bVar.E1 && w9bVar.A1) {
+                    w9bVar.A1 = false;
+                }
+                pcc pccVar = w9bVar.Q1;
+                if (pccVar != null) {
+                    pccVar.a(w9bVar.m1);
+                }
+                dab dabVar = w9bVar.R1;
+                if (dabVar != null) {
+                    dabVar.a(new HashSet(hashSet));
+                }
+                r9bVar.h(true);
+                break;
+            case 1:
+                w9b w9bVar2 = r9bVar.a0;
+                int i = w9b.X1;
+                w9bVar2.H0(new u9b(5, w9bVar2.a, (ArrayList) obj), new b68(w9bVar2, b2), false);
+                break;
+            case 2:
+                w9b w9bVar3 = r9bVar.a0;
+                HashSet hashSet2 = w9bVar3.u1;
+                hashSet2.add(Integer.valueOf(((v5b) obj).a));
+                r9bVar.h(true);
+                dab dabVar2 = w9bVar3.R1;
+                if (dabVar2 != null) {
+                    dabVar2.a(new HashSet(hashSet2));
+                    break;
+                }
+                break;
+            default:
+                String str = (String) obj;
+                if (str != null && str.isEmpty()) {
+                    str = null;
+                }
+                r9bVar.J = str;
+                r9bVar.h(false);
+                break;
+        }
+    }
 }

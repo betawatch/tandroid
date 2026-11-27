@@ -1,84 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class smb extends gb2 {
-    public final GestureDetector Ld;
-    public final kl Md;
-    public final kl Nd;
-    public final /* synthetic */ int Od;
-    public final /* synthetic */ tmb Pd;
+public final class smb extends MetricAffectingSpan {
+    public final int a;
+    public final rmb b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public smb(tmb tmbVar, Context context, int i, wjb wjbVar, Context context2, int i2) {
-        super(context, i, false, null, wjbVar);
-        this.Pd = tmbVar;
-        this.Od = i2;
-        this.Ld = new GestureDetector(context2, new gl3(this, (byte) 2));
-        s33 s33Var = s33.g;
-        this.Md = new kl(this, 180L, s33Var, 0);
-        this.Nd = new kl(this, 180L, s33Var, 0);
+    public smb(rmb rmbVar, int i) {
+        this.b = rmbVar;
+        if (i > 0) {
+            this.a = i;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int v0;
-        int v02;
-        k27 messageObject = getMessageObject();
-        kl klVar = this.Nd;
-        kl klVar2 = this.Md;
-        pb0 pb0Var = this.B7;
-        if (messageObject == null || getMessageObject().e1 < 0) {
-            klVar2.a(pb0Var.b(), false);
-            boolean z = pb0Var.g;
-            int i = pb0Var.e;
-            if (z) {
-                zjb i2 = bkb.I.i(false);
-                i = bkb.B(bkb.I, i2 != null ? i2.c : 0, i);
+    public final void a(TextPaint textPaint) {
+        rmb rmbVar = this.b;
+        if (vsd.a(rmbVar.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (vsd.a(rmbVar.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (vsd.a(rmbVar.a, TLObject.FLAG_14)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
             }
-            klVar.a(i, false);
-        } else {
-            int i3 = getMessageObject().e1;
-            if (i3 >= 14) {
-                ea7 ea7Var = na7.q1(y6c.t0).E3;
-                da7 d = ea7Var != null ? ea7Var.d(i3) : null;
-                if (d != null) {
-                    int f = d.f();
-                    v0 = bkb.v0(bkb.o8[pb0.e(f)], this.cc);
-                    v02 = bkb.v0(bkb.p8[pb0.e(f)], this.cc);
-                } else {
-                    long j = i3;
-                    v0 = bkb.v0(bkb.o8[pb0.d(j)], this.cc);
-                    v02 = bkb.v0(bkb.p8[pb0.d(j)], this.cc);
-                }
-            } else {
-                long j2 = i3;
-                v0 = bkb.v0(bkb.o8[pb0.d(j2)], this.cc);
-                v02 = bkb.v0(bkb.p8[pb0.d(j2)], this.cc);
-            }
-            pb0Var.h(klVar2.a(v0, false), klVar.a(v02, false));
         }
-        if (getAvatarImage() != null && getAvatarImage().O0 != 0.0f) {
-            getAvatarImage().i0(getAvatarImage().L0, (getMeasuredHeight() - getAvatarImage().O0) - gl.L(4.0f), getAvatarImage().N0, getAvatarImage().O0);
-            getAvatarImage().q0((int) (getAvatarImage().O0 / 2.0f));
-            getAvatarImage().h(canvas, null);
-        } else if (this.Od == 2) {
-            invalidate();
-        }
-        super.dispatchDraw(canvas);
     }
 
-    @Override // gb2, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Pd.a()) {
-            return super.onTouchEvent(motionEvent);
+    public final boolean b() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i = this.a;
+        if (i != 0) {
+            textPaint.setTextSize(i);
         }
-        this.Ld.onTouchEvent(motionEvent);
-        return true;
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i = this.a;
+        if (i != 0) {
+            textPaint.setTextSize(i);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

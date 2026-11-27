@@ -1,41 +1,31 @@
 // default package
 
-import java.util.Collection;
-import java.util.Map;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class sm5 extends gm5 {
-    public final nm5 b;
+public final class sm5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ in5 b;
 
-    public sm5(nm5 nm5Var) {
-        this.b = nm5Var;
+    public sm5(in5 in5Var, int i) {
+        this.b = in5Var;
+        this.a = i;
     }
 
-    @Override // gm5, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            Collection collection = (Collection) this.b.a().get(key);
-            if (collection != null && collection.contains(value)) {
-                return true;
-            }
+    public final void a(nd4 nd4Var, final String str, final long j, final long j2, final boolean z) {
+        this.b.u.put(str, new long[]{j, j2});
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = nd4Var.S;
+        if (j3 == 0 || j3 < elapsedRealtime - 100 || j == j2) {
+            nd4Var.S = elapsedRealtime;
+            final int i = this.a;
+            hl.c3(new Runnable() { // from class: qm5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    jn7.f(i).k(jn7.W1, str, Long.valueOf(j), Long.valueOf(j2), Boolean.valueOf(z));
+                }
+            });
         }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
-    /* renamed from: n */
-    public final v5c iterator() {
-        nm5 nm5Var = this.b;
-        nm5Var.getClass();
-        return new rm5(nm5Var);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final int size() {
-        return this.b.f;
     }
 }

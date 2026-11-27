@@ -1,29 +1,88 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ts4 extends us4 {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ts4(CharSequence charSequence, byte b) {
-        super(charSequence, "androidx.credentials.TYPE_GET_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION");
-        switch (b) {
-            case 2:
-                super(charSequence, "android.credentials.GetCredentialException.TYPE_UNKNOWN");
-                break;
-            case 3:
-                super(charSequence, "androidx.credentials.TYPE_GET_CREDENTIAL_UNSUPPORTED_EXCEPTION");
-                break;
-            default:
-                break;
-        }
+public abstract class ts4 extends s91 implements ss4, fx5 {
+    private final int arity;
+    private final int flags;
+
+    public ts4(int i, Object obj, Class cls, String str, String str2, int i2) {
+        super(obj, cls, str, str2, (i2 & 1) == 1);
+        this.arity = i;
+        this.flags = 0;
     }
 
-    public ts4(CharSequence charSequence, String str) {
-        super(charSequence, str);
-        if (str.length() > 0) {
-            return;
+    @Override // s91
+    public dx5 computeReflected() {
+        s89.a.getClass();
+        return this;
+    }
+
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        w26.j("type must not be empty");
-        throw null;
+        if (obj instanceof ts4) {
+            ts4 ts4Var = (ts4) obj;
+            return getName().equals(ts4Var.getName()) && getSignature().equals(ts4Var.getSignature()) && this.flags == ts4Var.flags && this.arity == ts4Var.arity && ur5.a(getBoundReceiver(), ts4Var.getBoundReceiver()) && ur5.a(getOwner(), ts4Var.getOwner());
+        }
+        if (obj instanceof fx5) {
+            return obj.equals(compute());
+        }
+        return false;
+    }
+
+    @Override // ss4
+    public int getArity() {
+        return this.arity;
+    }
+
+    @Override // s91
+    public fx5 getReflected() {
+        dx5 compute = compute();
+        if (compute != this) {
+            return (fx5) compute;
+        }
+        throw new yx2("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
+    }
+
+    public int hashCode() {
+        return getSignature().hashCode() + ((getName().hashCode() + (getOwner() == null ? 0 : getOwner().hashCode() * 31)) * 31);
+    }
+
+    @Override // fx5
+    public boolean isExternal() {
+        return getReflected().isExternal();
+    }
+
+    @Override // fx5
+    public boolean isInfix() {
+        return getReflected().isInfix();
+    }
+
+    @Override // fx5
+    public boolean isInline() {
+        return getReflected().isInline();
+    }
+
+    @Override // fx5
+    public boolean isOperator() {
+        return getReflected().isOperator();
+    }
+
+    @Override // fx5
+    public boolean isSuspend() {
+        return getReflected().isSuspend();
+    }
+
+    public String toString() {
+        dx5 compute = compute();
+        if (compute != this) {
+            return compute.toString();
+        }
+        if ("<init>".equals(getName())) {
+            return "constructor (Kotlin reflection is not available)";
+        }
+        return "function " + getName() + " (Kotlin reflection is not available)";
     }
 }

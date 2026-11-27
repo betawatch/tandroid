@@ -1,78 +1,335 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.PopupWindow;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class n8 extends FrameLayout {
-    public final u41 a;
-    public final View b;
-    public final wjb c;
-    public final Paint d;
+public class n8 extends PopupWindow {
+    public static Method k;
+    public static final Field l;
+    public static final DecelerateInterpolator m = new DecelerateInterpolator();
+    public static final f8 n;
+    public AnimatorSet a;
+    public boolean b;
+    public short c;
+    public boolean d;
     public boolean e;
+    public long f;
+    public boolean g;
+    public ViewTreeObserver.OnScrollChangedListener h;
+    public ViewTreeObserver i;
+    public pn j;
 
-    public n8(Context context, wjb wjbVar) {
-        super(context);
-        this.d = new Paint(1);
-        this.c = wjbVar;
-        View view = new View(context);
-        this.b = view;
-        addView(view, nme.o(-1, -1));
-        u41 u41Var = new u41(wjbVar, context, true);
-        this.a = u41Var;
-        addView(u41Var, nme.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
+    static {
+        Field field = null;
+        try {
+            field = PopupWindow.class.getDeclaredField("mOnScrollChangedListener");
+            field.setAccessible(true);
+        } catch (NoSuchFieldException unused) {
+        }
+        l = field;
+        n = new f8();
     }
 
-    public final void a(int i, boolean z) {
-        this.e = true;
-        u41 u41Var = this.a;
-        u41Var.k();
-        u41Var.setShowZero(true);
-        u41Var.setEnabled(true);
-        u41Var.c(i, z);
-        u41Var.i(k96.M0(2131753190, null), z, true);
-        zkb.h(bkb.g5, this.c, this.b);
+    public n8(View view, int i, int i2) {
+        super(view, i, i2);
+        this.b = true;
+        this.c = (short) 150;
+        this.f = -1L;
+        this.j = new pn(null);
+        e();
     }
 
-    public final void b(boolean z) {
-        this.a.setLoading(z);
+    public static void i(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        actionBarPopupWindow$ActionBarPopupWindowLayout.n = true;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY(0.0f);
+        float f = 1.0f;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(1.0f);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotX(actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth());
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotY(0.0f);
+        int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
+        HashMap hashMap = actionBarPopupWindow$ActionBarPopupWindowLayout.E;
+        hashMap.clear();
+        int i = 0;
+        for (int i2 = 0; i2 < itemsCount; i2++) {
+            View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i2);
+            if (!(childAt instanceof k8)) {
+                childAt.setAlpha(0.0f);
+                if (childAt.getVisibility() == 0) {
+                    hashMap.put(childAt, Integer.valueOf(i));
+                    i++;
+                }
+            }
+        }
+        if (actionBarPopupWindow$ActionBarPopupWindowLayout.w) {
+            actionBarPopupWindow$ActionBarPopupWindowLayout.s = itemsCount - 1;
+        } else {
+            actionBarPopupWindow$ActionBarPopupWindowLayout.s = 0;
+        }
+        if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
+            actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().c(true);
+            f = actionBarPopupWindow$ActionBarPopupWindowLayout.h;
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        byte b = 3;
+        ofFloat.addUpdateListener(new g0(actionBarPopupWindow$ActionBarPopupWindowLayout, b));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a = false;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.b = true;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, jn7.d4), ofFloat);
+        animatorSet.setDuration((i << 4) + jn7.f2);
+        animatorSet.addListener(new h0(actionBarPopupWindow$ActionBarPopupWindowLayout, b));
+        animatorSet.start();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
+    public final void b() {
+        c(0.2f);
+    }
+
+    public final void c(float f) {
+        View rootView = getContentView().getRootView();
+        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
+        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
+        layoutParams.flags |= 2;
+        layoutParams.dimAmount = f;
+        windowManager.updateViewLayout(rootView, layoutParams);
+    }
+
+    public void d(boolean z) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        long j = this.f;
+        setFocusable(false);
+        View rootView = getContentView().getRootView();
+        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
+        if (rootView.getLayoutParams() != null && (rootView.getLayoutParams() instanceof WindowManager.LayoutParams)) {
+            WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
+            try {
+                int i = layoutParams.flags;
+                if ((i & 2) != 0) {
+                    layoutParams.flags = i & (-3);
+                    layoutParams.dimAmount = 0.0f;
+                    windowManager.updateViewLayout(rootView, layoutParams);
+                }
+            } catch (Exception unused) {
+            }
+        }
+        AnimatorSet animatorSet = this.a;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = null;
+        if (animatorSet != null) {
+            if (z && this.d) {
+                return;
+            }
+            animatorSet.cancel();
+            this.a = null;
+        }
+        this.d = false;
+        if (!this.b || !z) {
+            try {
+                super.dismiss();
+            } catch (Exception unused2) {
+            }
+            j();
+            return;
+        }
+        byte b = 1;
+        this.d = true;
+        ViewGroup viewGroup = (ViewGroup) getContentView();
+        for (int i2 = 0; i2 < viewGroup.getChildCount(); i2++) {
+            if (viewGroup.getChildAt(i2) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
+                actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup.getChildAt(i2);
+            }
+        }
+        if (actionBarPopupWindow$ActionBarPopupWindowLayout != null && (arrayList = actionBarPopupWindow$ActionBarPopupWindowLayout.y) != null && !arrayList.isEmpty()) {
+            int size = actionBarPopupWindow$ActionBarPopupWindowLayout.y.size();
+            int i3 = 0;
+            while (true) {
+                arrayList2 = actionBarPopupWindow$ActionBarPopupWindowLayout.y;
+                if (i3 >= size) {
+                    break;
+                }
+                AnimatorSet animatorSet2 = (AnimatorSet) arrayList2.get(i3);
+                animatorSet2.removeAllListeners();
+                animatorSet2.cancel();
+                i3++;
+            }
+            arrayList2.clear();
+        }
+        AnimatorSet animatorSet3 = new AnimatorSet();
+        this.a = animatorSet3;
+        if (j > 0) {
+            animatorSet3.playTogether(ValueAnimator.ofFloat(0.0f, 1.0f));
+            this.a.setDuration(j);
+        } else if (this.g) {
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.SCALE_Y, 0.8f), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.SCALE_X, 0.8f), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, 0.0f));
+            this.a.setDuration(this.c);
+        } else {
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.TRANSLATION_Y, viewGroup.getTranslationY() + hl.L((actionBarPopupWindow$ActionBarPopupWindowLayout == null || !actionBarPopupWindow$ActionBarPopupWindowLayout.w) ? -5.0f : 5.0f)), ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, 0.0f));
+            this.a.setDuration(this.c);
+        }
+        this.a.addListener(new h8(this, b));
         if (this.e) {
-            int v0 = bkb.v0(bkb.Z6, this.c);
-            Paint paint = this.d;
-            paint.setColor(v0);
-            paint.setAlpha(kk7.d4);
-            canvas.drawRect(0.0f, 0.0f, getWidth(), 1.0f, paint);
+            this.j.d();
+        }
+        this.a.start();
+    }
+
+    @Override // android.widget.PopupWindow
+    public void dismiss() {
+        d(true);
+    }
+
+    public final void e() {
+        View contentView = getContentView();
+        if (contentView instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) contentView;
+            if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
+                setTouchInterceptor(new g8(this, actionBarPopupWindow$ActionBarPopupWindowLayout, (byte) 0));
+            }
+        }
+        Field field = l;
+        if (field != null) {
+            try {
+                this.h = (ViewTreeObserver.OnScrollChangedListener) field.get(this);
+                field.set(this, n);
+            } catch (Exception unused) {
+                this.h = null;
+            }
         }
     }
 
-    public void setCloseStyle(boolean z) {
-        this.e = false;
-        u41 u41Var = this.a;
-        u41Var.setShowZero(false);
-        u41Var.setEnabled(true);
-        u41Var.i(k96.a0("Close", null, 2131752029, new Object[0]), false, true);
-        this.e = z;
+    public final void f(View view) {
+        if (this.h != null) {
+            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
+            ViewTreeObserver viewTreeObserver2 = this.i;
+            if (viewTreeObserver != viewTreeObserver2) {
+                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
+                    this.i.removeOnScrollChangedListener(this.h);
+                }
+                this.i = viewTreeObserver;
+                if (viewTreeObserver != null) {
+                    viewTreeObserver.addOnScrollChangedListener(this.h);
+                }
+            }
+        }
     }
 
-    public void setOkStyle(boolean z) {
-        this.e = false;
-        u41 u41Var = this.a;
-        u41Var.setShowZero(false);
-        u41Var.setEnabled(true);
-        u41Var.i(z ? k96.a0("BoostingUseLink", null, 2131753171, new Object[0]) : k96.a0("OK", null, 2131747638, new Object[0]), false, true);
+    public final void g() {
+        try {
+            if (k == null) {
+                Method declaredMethod = PopupWindow.class.getDeclaredMethod("setLayoutInScreenEnabled", Boolean.TYPE);
+                k = declaredMethod;
+                declaredMethod.setAccessible(true);
+            }
+            k.invoke(this, Boolean.TRUE);
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 
-    @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.a.setOnClickListener(onClickListener);
+    public final void h() {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
+        if (this.b && this.a == null) {
+            ViewGroup viewGroup = (ViewGroup) getContentView();
+            byte b = 0;
+            if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
+                actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.n = true;
+            } else {
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = null;
+                for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                    if (viewGroup.getChildAt(i) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
+                        actionBarPopupWindow$ActionBarPopupWindowLayout2 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup.getChildAt(i);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout2.n = true;
+                    }
+                }
+                actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout2;
+            }
+            actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY(0.0f);
+            HashMap hashMap = actionBarPopupWindow$ActionBarPopupWindowLayout.E;
+            float f = 1.0f;
+            actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(1.0f);
+            actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotX(actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth());
+            actionBarPopupWindow$ActionBarPopupWindowLayout.setPivotY(0.0f);
+            int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
+            hashMap.clear();
+            int i2 = 0;
+            for (int i3 = 0; i3 < itemsCount; i3++) {
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.M.getChildAt(i3);
+                childAt.setAlpha(0.0f);
+                if (childAt.getVisibility() == 0) {
+                    hashMap.put(childAt, Integer.valueOf(i2));
+                    i2++;
+                }
+            }
+            if (actionBarPopupWindow$ActionBarPopupWindowLayout.w) {
+                actionBarPopupWindow$ActionBarPopupWindowLayout.s = itemsCount - 1;
+            } else {
+                actionBarPopupWindow$ActionBarPopupWindowLayout.s = 0;
+            }
+            if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
+                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().c(true);
+                f = actionBarPopupWindow$ActionBarPopupWindowLayout.h;
+            }
+            AnimatorSet animatorSet = new AnimatorSet();
+            this.a = animatorSet;
+            animatorSet.playTogether(ObjectAnimator.ofFloat(actionBarPopupWindow$ActionBarPopupWindowLayout, "backScaleY", 0.0f, f), ObjectAnimator.ofInt(actionBarPopupWindow$ActionBarPopupWindowLayout, "backAlpha", 0, jn7.d4));
+            this.a.setDuration((i2 << 4) + jn7.f2);
+            this.a.addListener(new h8(this, b));
+            this.a.start();
+        }
+    }
+
+    public final void j() {
+        ViewTreeObserver viewTreeObserver;
+        if (this.h == null || (viewTreeObserver = this.i) == null) {
+            return;
+        }
+        if (viewTreeObserver.isAlive()) {
+            this.i.removeOnScrollChangedListener(this.h);
+        }
+        this.i = null;
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAsDropDown(View view, int i, int i2) {
+        try {
+            super.showAsDropDown(view, i, i2);
+            f(view);
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // android.widget.PopupWindow
+    public void showAtLocation(View view, int i, int i2, int i3) {
+        super.showAtLocation(view, i, i2, i3);
+        j();
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void update(View view, int i, int i2, int i3, int i4) {
+        super.update(view, i, i2, i3, i4);
+        f(view);
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void update(View view, int i, int i2) {
+        super.update(view, i, i2);
+        f(view);
     }
 }

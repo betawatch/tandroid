@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class NewCommandMacro {
     protected static HashMap<String, String> macrocode = new HashMap<>();
@@ -11,7 +11,7 @@ public class NewCommandMacro {
 
     public static void addNewCommand(String str, String str2, int i, String str3) {
         if (macrocode.get(str) != null) {
-            qm0.g(tb4.y("Command ", str, " already exists ! Use renewcommand instead ..."));
+            rm0.k(qd4.y("Command ", str, " already exists ! Use renewcommand instead ..."));
             return;
         }
         macrocode.put(str, str2);
@@ -21,7 +21,7 @@ public class NewCommandMacro {
 
     public static void addReNewCommand(String str, String str2, int i) {
         if (macrocode.get(str) == null) {
-            qm0.g(tb4.y("Command ", str, " is not defined ! Use newcommand instead ..."));
+            rm0.k(qd4.y("Command ", str, " is not defined ! Use newcommand instead ..."));
         } else {
             macrocode.put(str, str2);
             MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i));

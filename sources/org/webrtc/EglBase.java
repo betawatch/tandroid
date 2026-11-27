@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public interface EglBase {
     public static final int[] CONFIG_PIXEL_BUFFER;
@@ -17,7 +17,7 @@ public interface EglBase {
     public static final int EGL_RECORDABLE_ANDROID = 12610;
     public static final Object lock = new Object();
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class ConfigBuilder {
         private boolean hasAlphaChannel;
         private boolean isRecordable;
@@ -43,7 +43,7 @@ public interface EglBase {
             }
             if (this.supportsPixelBuffer) {
                 arrayList.add(12339);
-                arrayList.add(1);
+                arrayList.add(5);
             }
             if (this.isRecordable) {
                 arrayList.add(Integer.valueOf(EglBase.EGL_RECORDABLE_ANDROID));
@@ -69,7 +69,7 @@ public interface EglBase {
 
         public ConfigBuilder setOpenGlesVersion(int i) {
             if (i < 1 || i > 3) {
-                w26.j(tb4.n(i, "OpenGL ES version ", " not supported"));
+                lq5.j(qd4.n(i, "OpenGL ES version ", " not supported"));
                 return null;
             }
             this.openGlesVersion = i;
@@ -82,11 +82,15 @@ public interface EglBase {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface Context {
         public static final long NO_CONTEXT = 0;
 
         long getNativeEglContext();
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public interface EglConnection extends RefCounted {
     }
 
     static {
@@ -97,8 +101,6 @@ public interface EglBase {
         CONFIG_PIXEL_RGBA_BUFFER = new ConfigBuilder().setHasAlphaChannel(true).setSupportsPixelBuffer(true).createConfigAttributes();
         CONFIG_RECORDABLE = new ConfigBuilder().setIsRecordable(true).createConfigAttributes();
     }
-
-    void createBackgroundSurface(SurfaceTexture surfaceTexture);
 
     void createDummyPbufferSurface();
 
@@ -112,23 +114,21 @@ public interface EglBase {
 
     Context getEglBaseContext();
 
-    boolean hasBackgroundSurface();
-
     boolean hasSurface();
-
-    void makeBackgroundCurrent();
 
     void makeCurrent();
 
     void release();
 
-    void releaseSurface(boolean z);
+    void releaseSurface();
+
+    void setDetachSurfaceOnRelease(boolean z);
 
     int surfaceHeight();
 
     int surfaceWidth();
 
-    void swapBuffers(long j, boolean z);
+    void swapBuffers();
 
-    void swapBuffers(boolean z);
+    void swapBuffers(long j);
 }

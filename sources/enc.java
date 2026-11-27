@@ -1,29 +1,66 @@
 // default package
 
-import android.opengl.EGL14;
-import android.opengl.EGLSurface;
-import android.view.Surface;
+import android.graphics.Rect;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class enc {
-    public final fnc a;
-    public final Surface b;
-    public volatile boolean d;
-    public volatile dnc e;
-    public int f;
+    public boolean d;
+    public boolean e;
+    public int[] f;
     public int g;
-    public boolean i;
-    public boolean j;
-    public volatile boolean c = true;
-    public EGLSurface h = EGL14.EGL_NO_SURFACE;
+    public int h;
+    public Rect i;
+    public long b = -9223372036854775807L;
+    public long c = -9223372036854775807L;
+    public final int[] a = new int[4];
+    public int j = -1;
     public int k = -1;
-    public float l = -1.0f;
 
-    public enc(fnc fncVar, Surface surface, int i) {
-        this.a = fncVar;
-        this.b = surface;
-        this.g = i;
-        this.f = i;
+    public static int a(int[] iArr, int i) {
+        return (i < 0 || i >= iArr.length) ? iArr[0] : iArr[i];
+    }
+
+    public static int c(int i, int i2) {
+        return (i & 16777215) | ((i2 * 17) << 24);
+    }
+
+    public final void b(zd1 zd1Var, boolean z, Rect rect, int[] iArr) {
+        int i;
+        int i2;
+        int width = rect.width();
+        int height = rect.height();
+        int i3 = !z ? 1 : 0;
+        int i4 = i3 * width;
+        while (true) {
+            int i5 = 0;
+            do {
+                int i6 = 0;
+                for (int i7 = 1; i6 < i7 && i7 <= 64; i7 <<= 2) {
+                    if (zd1Var.b() < 4) {
+                        i = -1;
+                        i2 = 0;
+                        break;
+                    }
+                    i6 = (i6 << 4) | zd1Var.f(4);
+                }
+                i = i6 & 3;
+                i2 = i6 < 4 ? width : i6 >> 2;
+                int min = Math.min(i2, width - i5);
+                if (min > 0) {
+                    int i8 = i4 + min;
+                    Arrays.fill(iArr, i4, i8, this.a[i]);
+                    i5 += min;
+                    i4 = i8;
+                }
+            } while (i5 < width);
+            i3 += 2;
+            if (i3 >= height) {
+                return;
+            }
+            i4 = i3 * width;
+            zd1Var.c();
+        }
     }
 }

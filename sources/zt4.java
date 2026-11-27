@@ -1,29 +1,98 @@
 // default package
 
-import android.app.Activity;
-import android.view.Menu;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class zt4 extends ChatActivityEnterView {
-    public final /* synthetic */ du4 s7;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class zt4 extends wt4 {
+    public final /* synthetic */ byte l0 = 0;
+    public final /* synthetic */ Object m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zt4(du4 du4Var, Activity activity, yt4 yt4Var) {
-        super(activity, yt4Var, null, false, null);
-        this.s7 = du4Var;
+    public zt4(int i, Context context, x53 x53Var, float f, String str) {
+        super(i, context, x53Var, null, true, f, false, false);
+        this.m0 = str;
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void B0(Menu menu) {
-        mu1.x6(menu, null, false, false, false, false);
+    @Override // wt4
+    public final void a() {
+        switch (this.l0) {
+            case 1:
+                rbb rbbVar = (rbb) this.m0;
+                rbbVar.N0.setTranslationY(rbbVar.n.getMeasuredHeight() - rbbVar.N0.g());
+                kab kabVar = rbbVar.r2;
+                if (kabVar != null) {
+                    kabVar.run();
+                    rbbVar.r2 = null;
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void a1(float f) {
-        du4 du4Var = this.s7;
-        du4Var.p1.setInputBubbleHeight(f);
-        du4Var.D0();
+    @Override // wt4
+    public final void c(boolean z) {
+        switch (this.l0) {
+            case 1:
+                if (((rbb) this.m0).g0 == 0 && z) {
+                    hl.c3(new s8b(this, (byte) 4));
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.l0) {
+            case 1:
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= g()) {
+                    return super.dispatchTouchEvent(motionEvent);
+                }
+                rbb rbbVar = (rbb) this.m0;
+                rbbVar.M0 = true;
+                rbbVar.c(false);
+                return true;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // wt4
+    public final String getTitle() {
+        switch (this.l0) {
+            case 0:
+                return (String) this.m0;
+            default:
+                return super.getTitle();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        switch (this.l0) {
+            case 1:
+                super.setTranslationY(f);
+                rbb rbbVar = (rbb) this.m0;
+                if (rbbVar.l2) {
+                    float i = Utilities.i(1.0f - (f / (rbbVar.n.getMeasuredHeight() - rbbVar.N0.g())), 1.0f, 0.0f);
+                    rbbVar.r.b(hl.L(-32.0f) * i);
+                    rbbVar.r.setAlpha(1.0f - (0.6f * i));
+                    rbbVar.j0.setAlpha(1.0f - i);
+                    break;
+                }
+                break;
+            default:
+                super.setTranslationY(f);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zt4(rbb rbbVar, int i, Context context, x53 x53Var, do6 do6Var, boolean z, boolean z2, boolean z3) {
+        super(i, context, x53Var, do6Var, z, 1.39f, z2, z3);
+        this.m0 = rbbVar;
     }
 }

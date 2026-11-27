@@ -1,38 +1,87 @@
 // default package
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class m45 implements pcc {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ c51 b;
+    public final /* synthetic */ c51 c;
+    public final /* synthetic */ sk7 d;
+    public final /* synthetic */ vnb e;
+    public final /* synthetic */ w45 f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class m45 extends c49 {
-    public final /* synthetic */ h75 a;
-
-    public m45(h75 h75Var) {
-        this.a = h75Var;
+    public /* synthetic */ m45(c51 c51Var, c51 c51Var2, a55 a55Var, w45 w45Var, sk7 sk7Var, vnb vnbVar, re4 re4Var) {
+        this.b = c51Var;
+        this.c = c51Var2;
+        this.g = a55Var;
+        this.f = w45Var;
+        this.d = sk7Var;
+        this.e = vnbVar;
+        this.h = re4Var;
     }
 
-    @Override // c49
-    public final void e(Rect rect, View view, RecyclerView recyclerView, p49 p49Var) {
-        int R = RecyclerView.R(view);
-        if (R >= 0) {
-            rect.setEmpty();
-            c75 c75Var = this.a.I1;
-            int i = c75Var.H;
-            if (R < i || R >= c75Var.I) {
-                return;
-            }
-            int i2 = R - i;
-            int i3 = h75.u5 ? 6 : 2;
-            int i4 = i2 % i3;
-            if (i4 == 0) {
-                rect.right = gl.L(2.0f);
-            } else if (i4 == i3 - 1) {
-                rect.left = gl.L(2.0f);
-            } else {
-                rect.left = gl.L(1.0f);
-            }
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        boolean z = false;
+        Object obj2 = this.h;
+        Object obj3 = this.g;
+        switch (b) {
+            case 0:
+                a55 a55Var = (a55) obj3;
+                re4 re4Var = (re4) obj2;
+                Boolean bool = (Boolean) obj;
+                c51 c51Var = this.b;
+                c51Var.setEnabled(false);
+                c51 c51Var2 = this.c;
+                c51Var2.setEnabled(false);
+                (bool.booleanValue() ? c51Var2 : c51Var).setLoading(true);
+                boolean booleanValue = bool.booleanValue();
+                sk7 sk7Var = this.d;
+                vnb vnbVar = this.e;
+                w45 w45Var = this.f;
+                a55Var.e(w45Var, booleanValue, new o45(c51Var, c51Var2, sk7Var, vnbVar, re4Var, w45Var));
+                break;
+            default:
+                boolean[] zArr = (boolean[]) obj3;
+                boolean[] zArr2 = (boolean[]) obj2;
+                String str = (String) obj;
+                c51 c51Var3 = this.b;
+                c51Var3.setLoading(false);
+                c51 c51Var4 = this.c;
+                c51Var4.setLoading(false);
+                sk7 sk7Var2 = this.d;
+                if (str != null) {
+                    if (!zArr[0]) {
+                        d31.d0(str, sk7Var2.F, this.e);
+                        w45 w45Var2 = this.f;
+                        c51Var3.setEnabled(!w45Var2.n && zArr2[0]);
+                        if (!w45Var2.n && !w45Var2.o) {
+                            z = true;
+                        }
+                        c51Var4.setEnabled(z);
+                        break;
+                    } else {
+                        d31.c0(str);
+                        break;
+                    }
+                } else {
+                    sk7Var2.dismiss();
+                    break;
+                }
+                break;
         }
+    }
+
+    public /* synthetic */ m45(c51 c51Var, c51 c51Var2, sk7 sk7Var, boolean[] zArr, vnb vnbVar, w45 w45Var, boolean[] zArr2) {
+        this.b = c51Var;
+        this.c = c51Var2;
+        this.d = sk7Var;
+        this.g = zArr;
+        this.e = vnbVar;
+        this.f = w45Var;
+        this.h = zArr2;
     }
 }

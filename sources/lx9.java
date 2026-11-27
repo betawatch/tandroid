@@ -1,51 +1,28 @@
 // default package
 
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lx9 implements Runnable {
+public final class lx9 extends v79 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ px9 b;
-    public final /* synthetic */ Integer c;
+    public final /* synthetic */ bn0 b;
 
-    public /* synthetic */ lx9(px9 px9Var, Integer num, byte b) {
+    public /* synthetic */ lx9(bn0 bn0Var, byte b) {
         this.a = b;
-        this.b = px9Var;
-        this.c = num;
+        this.b = bn0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
         byte b = this.a;
-        px9 px9Var = this.b;
+        bn0 bn0Var = this.b;
         switch (b) {
             case 0:
-                px9Var.d(this.c);
+                ((bj3) bn0Var.c).U();
                 break;
             default:
-                Integer num = this.c;
-                if (num != null) {
-                    try {
-                        px9Var.Q.performHapticFeedback(0, 1);
-                    } catch (Exception unused) {
-                    }
-                    jw9 jw9Var = (jw9) px9Var;
-                    tx9 tx9Var = jw9Var.T.e;
-                    List list = tx9.b2;
-                    tx9Var.k();
-                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                    View view = jw9Var.R;
-                    long j = ((dx9) view).e.documentId;
-                    tL_emojiStatus.document_id = j;
-                    tx9Var.o(view, Long.valueOf(j), ((dx9) jw9Var.R).e.document, jw9Var.S, num);
-                    if (jw9Var.S == null) {
-                        hq6.d0(tx9Var.W).E1(tL_emojiStatus);
-                        break;
-                    }
-                }
+                ((bj3) bn0Var.c).U();
                 break;
         }
     }

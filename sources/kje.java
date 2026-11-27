@@ -1,20 +1,19 @@
 // default package
 
-import java.nio.ByteBuffer;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class kje {
-    public static int a(ByteBuffer byteBuffer, int i, int i2) {
-        int i3 = 0;
-        while (i < i2) {
-            int i4 = byteBuffer.get(i) & 255;
-            if (i3 >= 2 && i4 == 1) {
-                return i - 2;
-            }
-            i3 = i4 == 0 ? i3 + 1 : 0;
-            i++;
+public final class kje implements zq7 {
+    public static final kje a = new kje();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return i2;
+        throw null;
     }
 }

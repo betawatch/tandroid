@@ -1,76 +1,39 @@
 // default package
 
-import java.util.Map;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w5a {
-    public static final v5a Companion = new v5a();
-    public static final d06[] d = {null, null, cne.a(new fd8())};
-    public final a6a a;
-    public final onb b;
-    public final Map c;
+public final /* synthetic */ class w5a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r7a b;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ w5a(int i, a6a a6aVar, onb onbVar, Map map) {
-        if (1 != (i & 1)) {
-            are.a(i, 1, u5a.a.d());
-            throw null;
-        }
-        this.a = a6aVar;
-        if ((i & 2) == 0) {
-            this.b = null;
-        } else {
-            this.b = onbVar;
-        }
-        if ((i & 4) == 0) {
-            this.c = null;
-        } else {
-            this.c = map;
-        }
+    public /* synthetic */ w5a(r7a r7aVar, TLRPC.Message message, int i, byte b) {
+        this.a = b;
+        this.b = r7aVar;
+        this.c = message;
+        this.d = i;
     }
 
-    public static w5a a(w5a w5aVar, a6a a6aVar, onb onbVar, Map map, int i) {
-        if ((i & 1) != 0) {
-            a6aVar = w5aVar.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.d;
+        TLRPC.Message message = this.c;
+        r7a r7aVar = this.b;
+        switch (b) {
+            case 0:
+                message.send_state = 2;
+                r7aVar.getNotificationCenter().k(23, Integer.valueOf(message.id));
+                r7aVar.c0(message.id);
+                r7aVar.h0(message.id, i != 0);
+                break;
+            default:
+                message.send_state = 0;
+                r7aVar.getNotificationCenter().k(20, Integer.valueOf(i));
+                break;
         }
-        if ((i & 2) != 0) {
-            onbVar = w5aVar.b;
-        }
-        if ((i & 4) != 0) {
-            map = w5aVar.c;
-        }
-        w5aVar.getClass();
-        a6aVar.getClass();
-        return new w5a(a6aVar, onbVar, map);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof w5a)) {
-            return false;
-        }
-        w5a w5aVar = (w5a) obj;
-        return rp5.a(this.a, w5aVar.a) && rp5.a(this.b, w5aVar.b) && rp5.a(this.c, w5aVar.c);
-    }
-
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        onb onbVar = this.b;
-        int hashCode2 = (hashCode + (onbVar == null ? 0 : onbVar.hashCode())) * 31;
-        Map map = this.c;
-        return hashCode2 + (map != null ? map.hashCode() : 0);
-    }
-
-    public final String toString() {
-        return "SessionData(sessionDetails=" + this.a + ", backgroundTime=" + this.b + ", processDataMap=" + this.c + ')';
-    }
-
-    public w5a(a6a a6aVar, onb onbVar, Map map) {
-        a6aVar.getClass();
-        this.a = a6aVar;
-        this.b = onbVar;
-        this.c = map;
     }
 }

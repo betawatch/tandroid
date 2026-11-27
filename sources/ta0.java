@@ -1,19 +1,64 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.util.Base64;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ta0 {
+    public final String a;
+    public final byte[] b;
+    public final pm8 c;
+
+    public ta0(String str, byte[] bArr, pm8 pm8Var) {
+        this.a = str;
+        this.b = bArr;
+        this.c = pm8Var;
+    }
+
+    public static rx6 a() {
+        rx6 rx6Var = new rx6((byte) 8);
+        rx6Var.d = pm8.a;
+        return rx6Var;
+    }
+
+    public final ta0 b(pm8 pm8Var) {
+        rx6 a = a();
+        a.o0(this.a);
+        if (pm8Var == null) {
+            p3d.h("Null priority");
+            return null;
+        }
+        a.d = pm8Var;
+        a.c = this.b;
+        return a.t();
+    }
+
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (obj == null || ta0.class != obj.getClass()) {
-            return false;
+        if (obj instanceof ta0) {
+            ta0 ta0Var = (ta0) obj;
+            if (this.a.equals(ta0Var.a) && Arrays.equals(this.b, ta0Var.b) && this.c.equals(ta0Var.c)) {
+                return true;
+            }
         }
-        return true;
+        return false;
     }
 
     public final int hashCode() {
-        return 16337;
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b)) * 1000003) ^ this.c.hashCode();
+    }
+
+    public final String toString() {
+        byte[] bArr = this.b;
+        String encodeToString = bArr == null ? "" : Base64.encodeToString(bArr, 2);
+        StringBuilder sb = new StringBuilder("TransportContext(");
+        sb.append(this.a);
+        sb.append(", ");
+        sb.append(this.c);
+        sb.append(", ");
+        return c00.k(sb, encodeToString, ")");
     }
 }

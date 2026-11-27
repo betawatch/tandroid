@@ -1,38 +1,38 @@
 // default package
 
-import org.telegram.messenger.beta.R;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public enum nl8 {
-    d(R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24, "MESSAGE"),
-    e(R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24, "NOTIFICATION_MUTE"),
-    f(R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24, "NOTIFICATION_UNMUTE"),
-    h(R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24, "DISCUSS"),
-    n(R.drawable.gift, R.drawable.input_gift_s, "GIFT"),
-    r(R.drawable.action_share, R.drawable.msg_share, "SHARE"),
-    s(R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24, "CALL"),
-    w(R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24, "VIDEO"),
-    x(R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24, "JOIN"),
-    y(R.drawable.report, R.drawable.msg_report, "REPORT"),
-    E(R.drawable.leave, R.drawable.leave, "LEAVE"),
-    F(R.drawable.live_stream, R.drawable.live_stream, "VOICE_CHAT"),
-    G(R.drawable.live_stream, R.drawable.live_stream, "STREAM"),
-    H(R.drawable.filled_profile_story, R.drawable.outline_profile_story, "STORY"),
-    I(R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24, "STOP"),
-    J(R.drawable.filled_profile_photo, R.drawable.outline_profile_photo, "SET_PHOTO"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF16(R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24, "EDIT_USERNAME"),
-    K(R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24, "EDIT_INFO"),
-    L(R.drawable.filled_profile_settings, R.drawable.outline_profile_settings, "SETTINGS");
+public final class nl8 extends n1a {
+    public final /* synthetic */ ia7 f2;
+    public final /* synthetic */ d1a[] g2;
+    public final /* synthetic */ PremiumPreviewFragment h2;
 
-    public final int a;
-    public final int b;
-    public final int c;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nl8(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i, vnb vnbVar, int i2, ia7 ia7Var, d1a[] d1aVarArr) {
+        super(premiumPreviewFragment2, activity, true, num, i, true, vnbVar, i2);
+        this.h2 = premiumPreviewFragment;
+        this.f2 = ia7Var;
+        this.g2 = d1aVarArr;
+    }
 
-    nl8(int i, int i2, String str) {
-        this.a = r2;
-        this.b = i;
-        this.c = i2;
+    @Override // n1a
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // n1a
+    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.f2.a(l, num);
+        d1a d1aVar = this.g2[0];
+        if (d1aVar != null) {
+            this.h2.v0 = null;
+            d1aVar.dismiss();
+        }
     }
 }

@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.util.Date;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class DateTimeWithZone {
     private static final long MAX_ZONE_OFFSET_SECONDS = 64800;
@@ -21,18 +21,18 @@ public final class DateTimeWithZone {
 
     public static DateTimeWithZone create(long j, int i, String str) {
         if (j < 0) {
-            w26.j("Time since epoch must be greater than or equal to zero");
+            lq5.j("Time since epoch must be greater than or equal to zero");
             return null;
         }
         if (Math.abs(i) > MAX_ZONE_OFFSET_SECONDS) {
-            w26.j("Zone offset not in valid range: -18:00 to +18:00");
+            lq5.j("Zone offset not in valid range: -18:00 to +18:00");
             return null;
         }
         Objects.requireNonNull(str);
         if (!str.isEmpty()) {
             return new DateTimeWithZone(j, i, str);
         }
-        w26.j("The time zone short name can not be null or empty");
+        lq5.j("The time zone short name can not be null or empty");
         return null;
     }
 
@@ -71,7 +71,7 @@ public final class DateTimeWithZone {
         sb.append(")  zone offset (s): ");
         sb.append(this.mZoneOffsetSeconds);
         sb.append(", zone: ");
-        return b00.j(sb, this.mZoneShortName, "]");
+        return c00.k(sb, this.mZoneShortName, "]");
     }
 
     private DateTimeWithZone(long j, int i, String str) {
@@ -85,11 +85,11 @@ public final class DateTimeWithZone {
             Objects.requireNonNull(timeZone);
             return create(j, (int) (timeZone.getOffset(j) / 1000), timeZone.getDisplayName(false, 0));
         }
-        w26.j("timeSinceEpochMillis must be greater than or equal to zero");
+        lq5.j("timeSinceEpochMillis must be greater than or equal to zero");
         return null;
     }
 
     public static DateTimeWithZone create(ZonedDateTime zonedDateTime) {
-        return m83.a(zonedDateTime);
+        return f93.a(zonedDateTime);
     }
 }

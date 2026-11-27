@@ -1,29 +1,38 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class w6b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t7b b;
+public final class w6b extends FrameLayout {
+    public o68 a;
+    public long b;
+    public ArrayList c;
+    public boolean d;
+    public final /* synthetic */ acb e;
 
-    public /* synthetic */ w6b(t7b t7bVar, byte b) {
-        this.a = b;
-        this.b = t7bVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w6b(acb acbVar, Context context) {
+        super(context);
+        this.e = acbVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        t7b t7bVar = this.b;
-        switch (b) {
-            case 0:
-                t7bVar.d1.m();
-                break;
-            default:
-                t7bVar.m0();
-                break;
+    public final void a(boolean z) {
+        if (this.d != z) {
+            this.d = z;
+            invalidate();
+            this.a.setIsVisible(z);
+            this.e.A();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.d) {
+            super.dispatchDraw(canvas);
         }
     }
 }

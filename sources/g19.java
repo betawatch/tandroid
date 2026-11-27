@@ -1,53 +1,29 @@
 // default package
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class g19 extends f19 {
-    public final /* synthetic */ i19 g0;
+public final /* synthetic */ class g19 implements Interpolator {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Interpolator d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g19(i19 i19Var, f19 f19Var, TLRPC.ReactionCount reactionCount, boolean z) {
-        super(f19Var, i19Var.l, i19Var.w, reactionCount, z, i19Var.y);
-        this.g0 = i19Var;
+    public /* synthetic */ g19(boolean z, float f, float f2, Interpolator interpolator) {
+        this.a = z;
+        this.b = f;
+        this.c = f2;
+        this.d = interpolator;
     }
 
-    @Override // f19
-    public final float j() {
-        return this.g0.a;
-    }
-
-    @Override // f19
-    public final ImageReceiver k() {
-        return (ImageReceiver) this.g0.E.get(this.r);
-    }
-
-    @Override // f19
-    public final boolean l() {
-        return this.g0.x.O3();
-    }
-
-    @Override // f19
-    public final boolean m() {
-        i19 i19Var = this.g0;
-        int e1 = i19Var.x.e1();
-        long c1 = i19Var.x.c1();
-        d19 d19Var = d19.B;
-        if (d19Var == null) {
-            return false;
-        }
-        int i = d19Var.a;
-        if (i != 2 && i != 0) {
-            return false;
-        }
-        long j = d19Var.o;
-        return ((j != 0 && c1 == j) || e1 == d19Var.n) && d19Var.p.equals(this.r);
-    }
-
-    @Override // f19
-    public final void n() {
-        this.g0.E.remove(this.r);
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f) {
+        boolean z = this.a;
+        float f2 = this.b;
+        float f3 = this.c;
+        Interpolator interpolator = this.d;
+        float f4 = (f - f2) / (f3 - f2);
+        return z ? 1.0f - interpolator.getInterpolation(1.0f - ete.a(f4, 0.0f, 1.0f)) : interpolator.getInterpolation(ete.a(f4, 0.0f, 1.0f));
     }
 }

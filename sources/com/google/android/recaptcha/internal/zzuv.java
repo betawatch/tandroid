@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 abstract class zzuv {
     private static volatile int zza = 100;
@@ -46,21 +46,21 @@ abstract class zzuv {
                 if (i != 0) {
                     return false;
                 }
-                fvc.i("Protocol message end-group tag did not match expected tag.");
+                p3d.m("Protocol message end-group tag did not match expected tag.");
                 return false;
             }
             if (i3 == 5) {
                 zzd(obj, i2, zzufVar.zzf());
                 return true;
             }
-            haf.a();
+            p3d.j();
             return false;
         }
         Object zzb = zzb();
         int i4 = i2 << 3;
         int i5 = i + 1;
         if (i5 >= zza) {
-            fvc.i("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
+            p3d.m("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
             return false;
         }
         while (zzufVar.zzc() != Integer.MAX_VALUE && zzk(zzb, zzufVar, i5)) {
@@ -69,7 +69,7 @@ abstract class zzuv {
             zzf(obj, i2, zzc(zzb));
             return true;
         }
-        fvc.i("Protocol message end-group tag did not match expected tag.");
+        p3d.m("Protocol message end-group tag did not match expected tag.");
         return false;
     }
 }

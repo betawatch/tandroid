@@ -12,10 +12,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class MediaTrack extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<MediaTrack> CREATOR = new igd(17);
+public final class MediaTrack extends c4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<MediaTrack> CREATOR = new zkd(17);
     public final long a;
     public final int b;
     public final String c;
@@ -106,7 +106,7 @@ public final class MediaTrack extends b4 implements ReflectedParcelable {
         if (z != (jSONObject2 == null)) {
             return false;
         }
-        return (jSONObject == null || jSONObject2 == null || vu5.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && id1.d(this.c, mediaTrack.c) && id1.d(this.d, mediaTrack.d) && id1.d(this.e, mediaTrack.e) && id1.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && id1.d(this.n, mediaTrack.n);
+        return (jSONObject == null || jSONObject2 == null || ax5.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && qd1.d(this.c, mediaTrack.c) && qd1.d(this.d, mediaTrack.d) && qd1.d(this.e, mediaTrack.e) && qd1.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && qd1.d(this.n, mediaTrack.n);
     }
 
     public final int hashCode() {
@@ -117,19 +117,19 @@ public final class MediaTrack extends b4 implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 8);
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        jte.q(parcel, 3, 4);
+        bye.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        jte.l(parcel, 4, this.c);
-        jte.l(parcel, 5, this.d);
-        jte.l(parcel, 6, this.e);
-        jte.l(parcel, 7, this.f);
-        jte.q(parcel, 8, 4);
+        bye.l(parcel, 4, this.c);
+        bye.l(parcel, 5, this.d);
+        bye.l(parcel, 6, this.e);
+        bye.l(parcel, 7, this.f);
+        bye.q(parcel, 8, 4);
         parcel.writeInt(this.h);
-        jte.n(parcel, 9, this.n);
-        jte.l(parcel, 10, this.r);
-        jte.s(parcel, r);
+        bye.n(parcel, 9, this.n);
+        bye.l(parcel, 10, this.r);
+        bye.s(parcel, r);
     }
 }

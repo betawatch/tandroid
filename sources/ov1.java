@@ -1,58 +1,87 @@
 // default package
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ov1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ boolean c;
+public final /* synthetic */ class ov1 implements oi7, oj3 {
+    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ r47 b;
+    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
 
-    public /* synthetic */ ov1(ChatActivityEnterView chatActivityEnterView, boolean z, byte b) {
-        this.a = b;
-        this.b = chatActivityEnterView;
-        this.c = z;
+    public /* synthetic */ ov1(ChatActivityEnterView chatActivityEnterView, r47 r47Var, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer) {
+        this.a = chatActivityEnterView;
+        this.b = r47Var;
+        this.c = tL_buttonTypeRequestPeer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        j47 j47Var;
-        byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        boolean z = this.c;
-        switch (b) {
-            case 0:
-                int i = ChatActivityEnterView.r7;
-                if (!z) {
-                    chatActivityEnterView.j2.setVisibility(8);
-                    break;
-                }
-                break;
-            case 1:
-                int i2 = ChatActivityEnterView.r7;
-                if (!z) {
-                    chatActivityEnterView.k2.setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                int i3 = ChatActivityEnterView.r7;
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                uv1 uv1Var = chatActivityEnterView2.e6;
-                chatActivityEnterView2.N0 = System.currentTimeMillis();
-                boolean v1 = chatActivityEnterView2.v1(false, 0, 0, 0L, true);
-                if (!z && (j47Var = chatActivityEnterView2.M0) != null) {
-                    j47Var.f(!v1);
-                    chatActivityEnterView2.M0 = null;
-                    break;
-                } else {
-                    chatActivityEnterView2.d6 = !v1;
-                    gl.r(uv1Var);
-                    gl.d3(uv1Var, 500L);
-                    break;
-                }
-                break;
+    @Override // oj3
+    public final boolean E() {
+        return false;
+    }
+
+    @Override // oi7
+    public final void a(ArrayList arrayList) {
+        int i = ChatActivityEnterView.X7;
+        if (arrayList.isEmpty()) {
+            return;
         }
+        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        uc7 s1 = uc7.s1(chatActivityEnterView.R);
+        r47 r47Var = this.b;
+        tL_messages_sendBotRequestedPeer.peer = s1.m1(r47Var.k.peer_id);
+        tL_messages_sendBotRequestedPeer.flags |= 1;
+        tL_messages_sendBotRequestedPeer.msg_id = r47Var.e1();
+        tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            tL_messages_sendBotRequestedPeer.requested_peers.add(uc7.s1(chatActivityEnterView.R).j1(((Long) obj).longValue()));
+        }
+        ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer, null);
+    }
+
+    @Override // oj3
+    public final boolean q(uj3 uj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, tzb tzbVar) {
+        int i3 = ChatActivityEnterView.X7;
+        if (!arrayList.isEmpty()) {
+            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+            ChatActivityEnterView chatActivityEnterView = this.a;
+            uc7 s1 = uc7.s1(chatActivityEnterView.R);
+            r47 r47Var = this.b;
+            tL_messages_sendBotRequestedPeer.peer = s1.m1(r47Var.k.peer_id);
+            tL_messages_sendBotRequestedPeer.flags |= 1;
+            tL_messages_sendBotRequestedPeer.msg_id = r47Var.e1();
+            tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+            HashSet hashSet = new HashSet();
+            int size = arrayList.size();
+            int i4 = 0;
+            while (i4 < size) {
+                Object obj = arrayList.get(i4);
+                i4++;
+                hashSet.add(Long.valueOf(((if7) obj).a));
+            }
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                tL_messages_sendBotRequestedPeer.requested_peers.add(uc7.s1(chatActivityEnterView.R).j1(((Long) it.next()).longValue()));
+            }
+            ConnectionsManager.getInstance(chatActivityEnterView.R).sendRequest(tL_messages_sendBotRequestedPeer, null);
+        }
+        uj3Var.finishFragment();
+        return true;
+    }
+
+    @Override // oj3
+    public final boolean s(uj3 uj3Var) {
+        return false;
     }
 }

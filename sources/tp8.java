@@ -1,51 +1,55 @@
 // default package
 
+import android.graphics.RectF;
+import j$.util.function.Consumer$-CC;
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.HashSet;
+import java.util.List;
+import java.util.function.Consumer;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tp8 implements Runnable {
+public final /* synthetic */ class tp8 implements Consumer {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ lca b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ tp8(lca lcaVar, byte b) {
+    public /* synthetic */ tp8(Object obj, byte b) {
         this.a = b;
-        this.b = lcaVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
         byte b = this.a;
-        lca lcaVar = this.b;
+        Object obj2 = this.b;
         switch (b) {
             case 0:
-                wsa wsaVar = lcaVar.e;
-                wsaVar.getClass();
-                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
-                int i = wsaVar.a;
-                reorderstargiftcollections.peer = na7.q1(i).h1(wsaVar.b);
-                ArrayList arrayList = wsaVar.e;
-                int size = arrayList.size();
-                int i2 = 0;
-                while (i2 < size) {
-                    Object obj = arrayList.get(i2);
-                    i2++;
-                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
+                ProfileActivity profileActivity = (ProfileActivity) obj2;
+                RectF rectF = ProfileActivity.Z6;
+                HashSet hashSet = profileActivity.n5;
+                ArrayList arrayList = new ArrayList((HashSet) obj);
+                int i = 0;
+                while (i < arrayList.size()) {
+                    if (profileActivity.getMessagesController().g4.f(profileActivity.f1, ((Integer) arrayList.get(i)).intValue()) == null) {
+                        arrayList.remove(i);
+                        i--;
+                    }
+                    i++;
                 }
-                ConnectionsManager.getInstance(i).sendRequest(reorderstargiftcollections, null);
-                wsaVar.j();
-                break;
-            case 1:
-                lcaVar.setReorderingCollections(true);
-                break;
-            case 2:
-                lcaVar.a();
+                hashSet.clear();
+                hashSet.addAll(arrayList);
+                profileActivity.b4(true);
                 break;
             default:
-                lcaVar.p();
+                hl.c3(new z3b((q5b) obj2, (List) obj, (byte) 4));
                 break;
         }
+    }
+
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        byte b = this.a;
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

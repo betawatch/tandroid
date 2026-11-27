@@ -1,30 +1,27 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class whc extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ xhc b;
+public final class whc extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
 
-    public /* synthetic */ whc(xhc xhcVar, byte b) {
-        this.a = b;
-        this.b = xhcVar;
+    public whc(int i, float f) {
+        this.a = i;
+        this.b = f;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        xhc xhcVar = this.b;
-        switch (b) {
-            case 0:
-                xhcVar.b.setVisibility(8);
-                break;
-            default:
-                xhcVar.c.setVisibility(8);
-                break;
-        }
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        int width = view.getWidth();
+        int i = this.a;
+        int height = view.getHeight() - i;
+        float f = this.b;
+        int i2 = this.a;
+        outline.setRoundRect(i2, i2, width - i, height, f);
     }
 }

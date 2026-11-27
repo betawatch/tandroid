@@ -1,71 +1,17 @@
 // default package
 
-import android.util.Log;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qv5 {
-    public final HashMap a = new HashMap();
-    public final short b;
+public final /* synthetic */ class qv5 extends us4 implements ks4 {
+    public static final qv5 a = new qv5(3, sv5.class, "onAwaitInternalProcessResFunc", "onAwaitInternalProcessResFunc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", 0);
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public qv5(int i) {
-        this.b = i;
-    }
-
-    public static String b(int i, String str) {
-        if (str != null) {
-            str = str.trim();
-            if (str.length() > i) {
-                return str.substring(0, i);
-            }
+    @Override // ks4
+    public final Object a(Object obj, Object obj2, Object obj3) {
+        int i = sv5.c;
+        ((sv5) obj).getClass();
+        if (obj3 instanceof yp2) {
+            throw ((yp2) obj3).a;
         }
-        return str;
-    }
-
-    public final synchronized Map a() {
-        return DesugarCollections.unmodifiableMap(new HashMap(this.a));
-    }
-
-    public final synchronized boolean c(String str, String str2) {
-        String b = b(this.b, str);
-        if (this.a.size() >= 64 && !this.a.containsKey(b)) {
-            Log.w("FirebaseCrashlytics", "Ignored entry \"" + str + "\" when adding custom keys. Maximum allowable: 64", null);
-            return false;
-        }
-        String b2 = b(this.b, str2);
-        String str3 = (String) this.a.get(b);
-        if (str3 == null ? b2 == null : str3.equals(b2)) {
-            return false;
-        }
-        HashMap hashMap = this.a;
-        if (str2 == null) {
-            b2 = "";
-        }
-        hashMap.put(b, b2);
-        return true;
-    }
-
-    public final synchronized void d(Map map) {
-        int i = 0;
-        for (Map.Entry entry : map.entrySet()) {
-            String str = (String) entry.getKey();
-            if (str == null) {
-                throw new IllegalArgumentException("Custom attribute key must not be null.");
-            }
-            String b = b(this.b, str);
-            if (this.a.size() < 64 || this.a.containsKey(b)) {
-                String str2 = (String) entry.getValue();
-                this.a.put(b, str2 == null ? "" : b(this.b, str2));
-            } else {
-                i++;
-            }
-        }
-        if (i > 0) {
-            Log.w("FirebaseCrashlytics", "Ignored " + i + " entries when adding custom keys. Maximum allowable: 64", null);
-        }
+        return obj3;
     }
 }

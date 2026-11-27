@@ -1,38 +1,22 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.media.Spatializer;
+import android.media.Spatializer$OnSpatializerStateChangedListener;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class loa implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ q41[] c;
-    public final /* synthetic */ TL_stars.UniqueStarGiftValueInfo d;
-    public final /* synthetic */ String e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class loa implements Spatializer$OnSpatializerStateChangedListener {
+    public final /* synthetic */ Runnable a;
 
-    public /* synthetic */ loa(p pVar, q41[] q41VarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, byte b) {
-        this.a = b;
-        this.b = pVar;
-        this.c = q41VarArr;
-        this.d = uniqueStarGiftValueInfo;
-        this.e = str;
+    public loa(Runnable runnable) {
+        this.a = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        String str = this.e;
-        TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = this.d;
-        q41[] q41VarArr = this.c;
-        p pVar = this.b;
-        switch (b) {
-            case 0:
-                pVar.a(q41VarArr[0], k96.a0(null, null, 2131749404, ci0.h().e(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
-                break;
-            default:
-                pVar.a(q41VarArr[0], k96.a0(null, null, 2131749412, ci0.h().e(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
-                break;
-        }
+    public final void onSpatializerAvailableChanged(Spatializer spatializer, boolean z) {
+        this.a.run();
+    }
+
+    public final void onSpatializerEnabledChanged(Spatializer spatializer, boolean z) {
+        this.a.run();
     }
 }

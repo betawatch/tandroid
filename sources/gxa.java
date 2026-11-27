@@ -1,40 +1,29 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class gxa {
-    public boolean a;
-    public String b;
-    public long c;
-    public fk1 d;
-    public fk1 e;
-    public String f;
-    public String g;
-    public boolean h;
-    public final byte i;
-    public final String j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
+public final /* synthetic */ class gxa implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hxa b;
+    public final /* synthetic */ long c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public gxa(String str, int i) {
-        this.j = str;
-        this.i = i;
+    public /* synthetic */ gxa(hxa hxaVar, long j, byte b) {
+        this.a = b;
+        this.b = hxaVar;
+        this.c = j;
     }
 
-    public final void a(int i, int i2, int i3, h8c h8cVar) {
-        if (this.k) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        hxa hxaVar = this.b;
+        switch (b) {
+            case 0:
+                hxaVar.q.c0(hxaVar.b, hxaVar.c, this.c, true, true, hxaVar.n);
+                break;
+            default:
+                hxaVar.q.c0(hxaVar.b, hxaVar.c, this.c, true, true, hxaVar.n);
+                break;
         }
-        this.k = true;
-        TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-        tL_loadAsyncGraph.token = this.f;
-        ConnectionsManager.getInstance(i).bindRequestToGuid(ConnectionsManager.getInstance(i).sendRequest(tL_loadAsyncGraph, new apa(this, h8cVar, (byte) 3), null, null, 0, i3, 1, true), i2);
     }
 }

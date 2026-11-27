@@ -1,26 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class ead {
-    public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-    public static String a(int i, byte[] bArr) {
-        int length = bArr.length;
-        char[] cArr = new char[(length << 1) + (i > 0 ? length / i : 0)];
-        int i2 = 0;
-        for (int i3 = 0; i3 < length; i3++) {
-            if (i > 0 && i3 % i == 0 && i2 > 0) {
-                cArr[i2] = '-';
-                i2++;
-            }
-            int i4 = i2 + 1;
-            byte b = bArr[i3];
-            char[] cArr2 = a;
-            cArr[i2] = cArr2[(b & 240) >>> 4];
-            i2 += 2;
-            cArr[i4] = cArr2[b & 15];
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ead extends u3d {
+    public final /* synthetic */ byte b;
+    public final TaskCompletionSource c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ead(TaskCompletionSource taskCompletionSource, byte b) {
+        super((byte) 14);
+        this.b = b;
+        this.c = taskCompletionSource;
+    }
+
+    @Override // u3d
+    public final void Q(Status status, boolean z) {
+        switch (this.b) {
+            case 1:
+                vze.a(status, Boolean.valueOf(z), this.c);
+                break;
         }
-        return new String(cArr);
+    }
+
+    @Override // u3d
+    public final void R(Status status, u18 u18Var) {
+        switch (this.b) {
+            case 0:
+                int i = n70.b;
+                boolean b = status.b();
+                TaskCompletionSource taskCompletionSource = this.c;
+                if (!b) {
+                    taskCompletionSource.setException(sqd.a(status));
+                    break;
+                } else {
+                    taskCompletionSource.setResult(u18Var);
+                    break;
+                }
+        }
+    }
+
+    @Override // u3d
+    public final void S(int i, boolean z) {
+        switch (this.b) {
+            case 1:
+                vze.a(new Status(i, null, null, null), Boolean.valueOf(z), this.c);
+                break;
+        }
     }
 }

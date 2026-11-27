@@ -1,29 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class ps5 {
-    public static final Integer a;
+import androidx.recyclerview.widget.RecyclerView;
 
-    static {
-        Integer num;
-        Object obj;
-        Integer num2 = null;
-        try {
-            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Throwable unused) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ps5 extends v79 {
+    public final /* synthetic */ x46 a;
+    public final /* synthetic */ bt5 b;
+
+    public ps5(bt5 bt5Var, x46 x46Var) {
+        this.b = bt5Var;
+        this.a = x46Var;
+    }
+
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        bt5 bt5Var = this.b;
+        bt5Var.J0();
+        if (!bt5Var.L1 || bt5Var.K1) {
+            return;
         }
-        if (obj instanceof Integer) {
-            num = (Integer) obj;
-            if (num != null && num.intValue() > 0) {
-                num2 = num;
-            }
-            a = num2;
+        if (bt5Var.M1 - this.a.M0() < 10) {
+            bt5Var.F0();
         }
-        num = null;
-        if (num != null) {
-            num2 = num;
-        }
-        a = num2;
     }
 }

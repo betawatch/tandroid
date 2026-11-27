@@ -1,23 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class c60 implements zn7 {
+public final class c60 implements zq7 {
     public static final c60 a = new c60();
-    public static final w84 b = w84.c("baseAddress");
-    public static final w84 c = w84.c("size");
-    public static final w84 d = w84.c("name");
-    public static final w84 e = w84.c("uuid");
+    public static final sa4 b = sa4.c("generator");
+    public static final sa4 c = sa4.c("identifier");
+    public static final sa4 d = sa4.c("appQualitySessionId");
+    public static final sa4 e = sa4.c("startedAt");
+    public static final sa4 f = sa4.c("endedAt");
+    public static final sa4 g = sa4.c("crashed");
+    public static final sa4 h = sa4.c("app");
+    public static final sa4 i = sa4.c("user");
+    public static final sa4 j = sa4.c("os");
+    public static final sa4 k = sa4.c("device");
+    public static final sa4 l = sa4.c("events");
+    public static final sa4 m = sa4.c("generatorType");
 
-    @Override // q24
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        qy2 qy2Var = (qy2) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.g(b, ((v80) qy2Var).a);
-        v80 v80Var = (v80) qy2Var;
-        ao7Var.g(c, v80Var.b);
-        ao7Var.a(d, v80Var.c);
-        String str = v80Var.d;
-        ao7Var.a(e, str != null ? str.getBytes(hz2.a) : null);
+        b03 b03Var = (b03) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, ((n80) b03Var).a);
+        n80 n80Var = (n80) b03Var;
+        ar7Var.a(c, n80Var.b.getBytes(c03.a));
+        ar7Var.a(d, n80Var.c);
+        ar7Var.g(e, n80Var.d);
+        ar7Var.a(f, n80Var.e);
+        ar7Var.d(g, n80Var.f);
+        ar7Var.a(h, n80Var.g);
+        ar7Var.a(i, n80Var.h);
+        ar7Var.a(j, n80Var.i);
+        ar7Var.a(k, n80Var.j);
+        ar7Var.a(l, n80Var.k);
+        ar7Var.e(m, n80Var.l);
     }
 }

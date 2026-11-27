@@ -1,28 +1,19 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class hwc {
-    public static final ExecutorService a = Executors.newFixedThreadPool(4, new x20((byte) 12));
-    public static File b;
+public final class hwc {
+    public final int a;
+    public final long b;
 
-    public static String a(InputStream inputStream) {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        byte[] bArr = new byte[TLObject.FLAG_14];
-        while (true) {
-            int read = inputStream.read(bArr);
-            if (read == -1) {
-                return new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
-            }
-            byteArrayOutputStream.write(bArr, 0, read);
-        }
+    public hwc(int i, long j) {
+        this.a = i;
+        this.b = j;
+    }
+
+    public static hwc a(cb3 cb3Var, ey7 ey7Var) {
+        cb3Var.d(ey7Var.a, 0, 8, false);
+        ey7Var.N(0);
+        return new hwc(ey7Var.m(), ey7Var.r());
     }
 }

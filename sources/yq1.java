@@ -1,23 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yq1 implements Runnable {
-    public final /* synthetic */ mu1 a;
+public final class yq1 extends bb2 {
+    public Runnable W;
+    public final /* synthetic */ zu1 X;
 
-    public yq1(mu1 mu1Var) {
-        this.a = mu1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yq1(zu1 zu1Var, zu1 zu1Var2, wq1 wq1Var, vnb vnbVar) {
+        super(zu1Var2, wq1Var, vnbVar);
+        this.X = zu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        mu1 mu1Var = this.a;
-        k27 k27Var = mu1Var.v5;
-        if (k27Var == null || mu1Var.l9 == null) {
-            return;
+    @Override // zb3
+    public final void F() {
+        zu1 zu1Var = this.X;
+        if (zu1Var.ea == -1) {
+            zu1Var.ea = zu1Var.getNotificationCenter().p(zu1.Gd, zu1Var.ea, false);
         }
-        int max = Math.max(0, k27Var.k.ttl_period - (mu1Var.getConnectionsManager().getCurrentTime() - mu1Var.v5.k.date));
-        mu1Var.l9.setSubtext(k96.a0(null, null, 2131753850, max < 86400 ? gl.g0(max, false, true) : k96.G(Math.round(max / 86400.0f), "Days", new Object[0])));
-        gl.d3(mu1Var.m9, 1000L);
+    }
+
+    @Override // bb2, zb3
+    public final void N() {
+        super.N();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            hl.r(runnable);
+            this.W = null;
+        }
+        xq1 xq1Var = new xq1(this, (byte) 1);
+        this.W = xq1Var;
+        hl.c3(xq1Var);
+    }
+
+    @Override // bb2
+    public final void V() {
+        zu1 zu1Var = this.X;
+        zu1Var.ea = zu1Var.getNotificationCenter().p(zu1.Gd, zu1Var.ea, false);
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            hl.r(runnable);
+            this.W = null;
+        }
+        if (f11.a) {
+            cc4.b("chatItemAnimator disable notifications");
+        }
+        p1 p1Var = zu1Var.a0.getAdjustPanLayoutHelper().h;
+        hl.r(p1Var);
+        p1Var.run();
+        dx1 dx1Var = zu1Var.a0.M4;
+        hl.r(dx1Var);
+        dx1Var.run();
+    }
+
+    @Override // bb2, zb3, o79
+    public final void g() {
+        super.g();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            hl.r(runnable);
+        }
+        xq1 xq1Var = new xq1(this, (byte) 0);
+        this.W = xq1Var;
+        hl.c3(xq1Var);
     }
 }

@@ -5,12 +5,12 @@ import java.util.Iterator;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bq0 extends pf0 {
+public final class bq0 extends rf0 {
     public static volatile bq0[] b = new bq0[4];
     public final LongSparseLongArray a;
 
@@ -39,19 +39,19 @@ public final class bq0 extends pf0 {
 
     public final void a(long j, long j2, TLRPC.JoinChatBotResult joinChatBotResult) {
         this.a.get(j2, 0L);
-        getNotificationCenter().k(kk7.S5, new aq0(j, joinChatBotResult));
-        HashSet hashSet = ow0.b1;
+        getNotificationCenter().k(jn7.T5, new aq0(j, joinChatBotResult));
+        HashSet hashSet = xw0.b1;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                ow0 ow0Var = (ow0) it.next();
-                quc qucVar = ow0Var.x0;
-                if (qucVar != null && qucVar.g == 5) {
-                    long j3 = qucVar.b;
+                xw0 xw0Var = (xw0) it.next();
+                gzc gzcVar = xw0Var.x0;
+                if (gzcVar != null && gzcVar.g == 5) {
+                    long j3 = gzcVar.b;
                     if (j3 == j || j3 == 0) {
-                        TLObject tLObject = qucVar.q;
+                        TLObject tLObject = gzcVar.q;
                         if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j2) {
-                            ow0Var.m(false);
+                            xw0Var.m(false);
                             return;
                         }
                     }
@@ -61,29 +61,29 @@ public final class bq0 extends pf0 {
     }
 
     public final void c(long j, long j2, long j3, boolean z) {
-        d Q;
+        e Q;
         if (LaunchActivity.H1 == null || (Q = LaunchActivity.Q()) == null) {
             return;
         }
-        TLRPC.User V1 = getMessagesController().V1(Long.valueOf(j2));
+        TLRPC.User X1 = getMessagesController().X1(Long.valueOf(j2));
         if (!z) {
-            if (bue.b(this.currentAccount, j2) || getMessagesController().S3.contains(Long.valueOf(j2))) {
+            if (vye.b(this.currentAccount, j2) || getMessagesController().S3.contains(Long.valueOf(j2))) {
                 c(j, j2, j3, true);
                 return;
             } else {
-                ij.n(Q, V1, new zp0(this, j, j2, j3), new jc((byte) 10));
+                jj.n(Q, X1, new zp0(this, j, j2, j3), new kc((byte) 10));
                 return;
             }
         }
         this.a.put(j3, j2);
-        d Q2 = LaunchActivity.Q();
-        quc b2 = quc.b(this.currentAccount, j, j2, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
+        e Q2 = LaunchActivity.Q();
+        gzc b2 = gzc.b(this.currentAccount, j, j2, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
         b2.d = j3;
-        ow0 ow0Var = new ow0(LaunchActivity.H1, null);
-        ow0Var.B(false);
-        ow0Var.C0 = true;
-        ow0Var.m0 = LaunchActivity.H1;
-        ow0Var.x(Q2, b2);
-        ow0Var.show();
+        xw0 xw0Var = new xw0(LaunchActivity.H1, null);
+        xw0Var.B(false);
+        xw0Var.C0 = true;
+        xw0Var.m0 = LaunchActivity.H1;
+        xw0Var.x(Q2, b2);
+        xw0Var.show();
     }
 }

@@ -1,83 +1,32 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hqa implements zw2, wx2 {
+    public final zw2 a;
+    public final mx2 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hqa {
-    public final rqa a;
-    public mqa b;
-    public mqa c;
-    public mqa d;
-    public dqa h;
-    public dqa i;
-    public dqa j;
-    public dqa k;
-    public TL_stars.TL_starGiftUnique l;
-    public long m;
-    public nna r;
-    public nna s;
-    public float t;
-    public boolean u;
-    public boolean v;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public float n = 0.0f;
-    public boolean o = false;
-    public boolean p = false;
-    public boolean q = false;
-
-    public hqa(rqa rqaVar) {
-        this.a = rqaVar;
-        rqaVar.c.addOnAttachStateChangeListener(new wc(this, (byte) 19));
+    public hqa(zw2 zw2Var, mx2 mx2Var) {
+        this.a = zw2Var;
+        this.b = mx2Var;
     }
 
-    public final void a() {
-        this.o = false;
-        this.a.c.c();
-        dqa dqaVar = this.h;
-        if (dqaVar != null) {
-            dqaVar.a();
+    @Override // wx2
+    public final wx2 getCallerFrame() {
+        zw2 zw2Var = this.a;
+        if (zw2Var instanceof wx2) {
+            return (wx2) zw2Var;
         }
-        dqa dqaVar2 = this.i;
-        if (dqaVar2 != null) {
-            dqaVar2.a();
-        }
-        dqa dqaVar3 = this.j;
-        if (dqaVar3 != null) {
-            dqaVar3.a();
-        }
-        dqa dqaVar4 = this.k;
-        if (dqaVar4 != null) {
-            dqaVar4.a();
-        }
-        c();
+        return null;
     }
 
-    public final void b() {
-        if (!this.o || this.v) {
-            return;
-        }
-        this.v = true;
-        gl.c3(new bqa(this, (byte) 1));
+    @Override // zw2
+    public final mx2 getContext() {
+        return this.b;
     }
 
-    public final void c() {
-        if (this.o) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            ((fqa) obj).a();
-        }
-        arrayList.clear();
-        this.f.clear();
-        this.g.clear();
+    @Override // zw2
+    public final void resumeWith(Object obj) {
+        this.a.resumeWith(obj);
     }
 }

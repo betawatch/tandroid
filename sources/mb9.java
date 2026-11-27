@@ -1,174 +1,95 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mb9 extends View {
-    public final og9 a;
-    public final int b;
-    public boolean c;
-    public boolean d;
-    public final on7 e;
-    public final /* synthetic */ pb9 f;
+public final class mb9 extends FrameLayout implements snb {
+    public int a;
+    public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
+    public TLRPC.TL_reportResultChooseOption c;
+    public TLRPC.TL_reportResultAddComment d;
+    public final FrameLayout e;
+    public final q9c f;
+    public final jo0 h;
+    public lb9 n;
+    public FrameLayout r;
+    public c51 s;
+    public final /* synthetic */ nb9 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mb9(pb9 pb9Var, Context context, TL_keyboard.PageButton pageButton, int i) {
+    public mb9(nb9 nb9Var, Context context) {
         super(context);
-        this.f = pb9Var;
-        this.b = i;
-        int i2 = pb9Var.n;
-        int c = b00.c(32.0f, gl.q.x, gl.L(240.0f));
-        wjb wjbVar = pb9Var.r;
-        sr8 sr8Var = new sr8(this, (byte) 19);
-        rh9 rh9Var = new rh9(i2, c, wjbVar);
-        SpannableStringBuilder l = rh9Var.l(pageButton.text, rh9.Q(16, 13));
-        TL_keyboard.InlineButtonType inlineButtonType = pageButton.type;
-        og9 og9Var = new og9(rh9Var, c, l, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, sr8Var);
-        this.a = og9Var;
-        this.e = new on7(this, i, (byte) 11);
-        og9Var.e = og9Var.h();
-        setContentDescription(yi9.l(pageButton.text));
-        setClickable(true);
-        setLongClickable(true);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a.i(this);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        gl.r(this.e);
-        this.a.a.f(this);
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        int height = getHeight();
-        og9 og9Var = this.a;
-        canvas.translate(0.0f, (height - og9Var.c()) / 2.0f);
-        og9Var.a(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        og9 og9Var = this.a;
-        setMeasuredDimension(og9Var.e, gl.L(8.0f) + og9Var.c());
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00c2  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        pb9 pb9Var;
-        nb9 nb9Var;
-        lk0 lk0Var;
-        char c;
-        int actionMasked = motionEvent.getActionMasked();
-        on7 on7Var = this.e;
-        og9 og9Var = this.a;
-        if (actionMasked == 0) {
-            this.c = true;
-            this.d = false;
-            og9Var.m(true);
-            gl.d3(on7Var, ViewConfiguration.getLongPressTimeout());
-            return true;
-        }
-        if (actionMasked == 1) {
-            boolean z = this.c && !this.d;
-            this.c = false;
-            og9Var.m(false);
-            gl.r(on7Var);
-            if (z && (nb9Var = (pb9Var = this.f).F) != null && (lk0Var = pb9Var.a) != null) {
-                ye9 ye9Var = ((qe9) nb9Var).a;
-                TL_iv.PageBlock pageBlock = lk0Var.b;
-                if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
-                    TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock;
-                    int i = this.b;
-                    if (i >= 0 && i < pageblockbuttonrow.buttons.size()) {
-                        ld9 ld9Var = ye9Var.R3;
-                        if (ld9Var != null) {
-                            ld9Var.d();
-                        }
-                        TL_keyboard.PageButton pageButton = pageblockbuttonrow.buttons.get(i);
-                        if (pageButton != null) {
-                            TL_keyboard.RichButtonStyle richButtonStyle = pageButton.style;
-                            if (richButtonStyle != null) {
-                                if (richButtonStyle.bg_primary) {
-                                    c = 2;
-                                } else if (richButtonStyle.bg_danger) {
-                                    c = 3;
-                                } else if (richButtonStyle.bg_success) {
-                                    c = 0;
-                                }
-                                if (richButtonStyle == null) {
-                                    richButtonStyle = new TL_keyboard.RichButtonStyle();
-                                }
-                                richButtonStyle.flags = 0;
-                                richButtonStyle.bg_primary = c != 1;
-                                richButtonStyle.bg_danger = c != 2;
-                                richButtonStyle.bg_success = c != 3;
-                                richButtonStyle.link = false;
-                                pageButton.style = richButtonStyle;
-                            }
-                            c = 1;
-                            if (richButtonStyle == null) {
-                            }
-                            richButtonStyle.flags = 0;
-                            richButtonStyle.bg_primary = c != 1;
-                            richButtonStyle.bg_danger = c != 2;
-                            richButtonStyle.bg_success = c != 3;
-                            richButtonStyle.link = false;
-                            pageButton.style = richButtonStyle;
-                        }
-                        ye9Var.g3.O(false);
-                        ld9 ld9Var2 = ye9Var.R3;
-                        if (ld9Var2 != null) {
-                            ld9Var2.h();
-                        }
-                        ye9Var.p3.onContentChanged();
-                    }
-                }
-            }
+        this.w = nb9Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.e = frameLayout;
+        frameLayout.setPadding(0, hl.m, 0, 0);
+        frameLayout.setClipToPadding(true);
+        addView(frameLayout, tre.e(-1, -1, jn7.D1));
+        int i = nb9.v1;
+        jo0 jo0Var = new jo0(context, nb9Var.J0);
+        TextView textView = (TextView) jo0Var.b;
+        this.h = jo0Var;
+        jo0Var.e = new kb9(this, (byte) 0);
+        if (nb9Var.o1) {
+            textView.setText(ob6.M0(2131745961, null));
+        } else if (nb9Var.p1) {
+            textView.setText(ob6.M0(2131745922, null));
         } else {
-            if (actionMasked != 2) {
-                if (actionMasked != 3) {
-                    return super.onTouchEvent(motionEvent);
-                }
-                this.c = false;
-                og9Var.m(false);
-                gl.r(on7Var);
-                return true;
-            }
-            if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
-                this.c = false;
-                og9Var.m(false);
-                gl.r(on7Var);
-                return true;
-            }
+            textView.setText(ob6.M0(2131745970, null));
         }
-        return true;
+        ((gd0) jo0Var.d).a(aob.v0(aob.G6, nb9Var.J0));
+        yob.h(aob.h5, nb9Var.J0, jo0Var);
+        addView(jo0Var, tre.e(-1, -2, 55));
+        q9c q9cVar = new q9c(context, nb9Var.a, 0, true, new hj8(this, (byte) 7), new jz7(this, (byte) 29), null, nb9Var.J0);
+        this.f = q9cVar;
+        q9cVar.setClipToPadding(false);
+        q9cVar.f3.j1(true);
+        q9cVar.setOnScrollListener(new e98(this, (byte) 10));
+        frameLayout.addView(q9cVar, tre.c(-1.0f, -1));
+    }
+
+    public final void a(int i) {
+        this.a = i;
+        this.h.b(i != 0);
+        q9c q9cVar = this.f;
+        if (q9cVar != null) {
+            q9cVar.g3.O(true);
+        }
+    }
+
+    public final void b(TLRPC.TL_reportResultAddComment tL_reportResultAddComment) {
+        this.b = null;
+        this.c = null;
+        this.d = tL_reportResultAddComment;
+        this.f.g3.O(false);
+        if (this.n != null) {
+            hl.d3(new kb9(this, (byte) 1), 120L);
+        }
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        gd0 gd0Var;
+        try {
+            jo0 jo0Var = this.h;
+            if (jo0Var == null || (gd0Var = (gd0) jo0Var.d) == null) {
+                return;
+            }
+            int i = aob.G6;
+            nb9 nb9Var = this.w;
+            int i2 = nb9.v1;
+            gd0Var.a(aob.v0(i, nb9Var.J0));
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

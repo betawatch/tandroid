@@ -1,35 +1,48 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.lang.annotation.Annotation;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sa4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ab4 b;
-    public final /* synthetic */ TLRPC.TL_messages_sendMultiMedia c;
-    public final /* synthetic */ Object[] d;
+public final class sa4 {
+    public final String a;
+    public final Map b;
 
-    public /* synthetic */ sa4(ab4 ab4Var, TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr, byte b) {
-        this.a = b;
-        this.b = ab4Var;
-        this.c = tL_messages_sendMultiMedia;
-        this.d = objArr;
+    public sa4(String str, Map map) {
+        this.a = str;
+        this.b = map;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Object[] objArr = this.d;
-        ab4 ab4Var = this.b;
-        switch (b) {
-            case 0:
-                ab4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (k3a) objArr[4], ((Boolean) objArr[5]).booleanValue());
-                break;
-            default:
-                ab4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (k3a) objArr[4], ((Boolean) objArr[5]).booleanValue());
-                break;
+    public static lh2 a(String str) {
+        return new lh2(str);
+    }
+
+    public static sa4 c(String str) {
+        return new sa4(str, Collections.EMPTY_MAP);
+    }
+
+    public final Annotation b(Class cls) {
+        return (Annotation) this.b.get(cls);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof sa4)) {
+            return false;
+        }
+        sa4 sa4Var = (sa4) obj;
+        return this.a.equals(sa4Var.a) && this.b.equals(sa4Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        return "FieldDescriptor{name=" + this.a + ", properties=" + this.b.values() + "}";
     }
 }

@@ -1,68 +1,23 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.messenger.a;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraView;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class vv8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yv8 b;
+public final class vv8 {
+    public Paint a;
+    public Paint b;
+    public float c;
+    public int d;
+    public int e;
+    public float f;
 
-    public /* synthetic */ vv8(yv8 yv8Var, byte b) {
-        this.a = b;
-        this.b = yv8Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        yv8 yv8Var = this.b;
-        switch (b) {
-            case 0:
-                yv8Var.g();
-                yv8Var.a.D(yv8Var);
-                break;
-            case 1:
-                ye0 ye0Var = yv8Var.j0;
-                if (ye0Var != null) {
-                    ye0Var.d();
-                    yv8Var.j0 = null;
-                }
-                Bitmap bitmap = yv8Var.l0;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    yv8Var.l0 = null;
-                }
-                yv8Var.g0.quitSafely();
-                break;
-            case 2:
-                try {
-                    Context context = a.b;
-                    zre zreVar = new zre();
-                    zreVar.a = 256;
-                    yv8Var.j0 = new ye0(new jbd(context, zreVar));
-                } catch (Throwable th) {
-                    fa4.g(th, true);
-                }
-                yv8Var.k0 = new ln8((byte) 1);
-                break;
-            default:
-                if (!yv8Var.W && !yv8Var.V && yv8Var.b == null && CameraView.isCameraAllowed()) {
-                    CameraController.getInstance().initCamera(null);
-                    CameraView cameraView = new CameraView(yv8Var.getContext(), false);
-                    cameraView.setUseMaxPreview(true);
-                    cameraView.setOptimizeForBarcode(true);
-                    cameraView.setAlpha(0.0f);
-                    cameraView.setDelegate(new kq8(yv8Var, cameraView, (byte) 2));
-                    yv8Var.b = cameraView;
-                    yv8Var.addView(cameraView, 0, nme.c(-1.0f, -1));
-                    break;
-                }
-                break;
+    public final void a(float f) {
+        this.c = f;
+        if (f < 0.0f) {
+            this.c = 0.0f;
+        } else if (f > 1.0f) {
+            this.c = 1.0f;
         }
     }
 }

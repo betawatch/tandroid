@@ -8,41 +8,41 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
-    public final xw8 a = new xw8(md0.class, ExecutorService.class);
-    public final xw8 b = new xw8(nk0.class, ExecutorService.class);
-    public final xw8 c = new xw8(i16.class, ExecutorService.class);
+    public final h09 a = new h09(od0.class, ExecutorService.class);
+    public final h09 b = new h09(ok0.class, ExecutorService.class);
+    public final h09 c = new h09(m36.class, ExecutorService.class);
 
     static {
-        Map map = lh4.b;
-        q6a q6aVar = q6a.a;
-        if (map.containsKey(q6aVar)) {
-            Log.d("FirebaseSessions", "Dependency " + q6aVar + " already added.");
+        Map map = nj4.b;
+        iaa iaaVar = iaa.a;
+        if (map.containsKey(iaaVar)) {
+            Log.d("FirebaseSessions", "Dependency " + iaaVar + " already added.");
             return;
         }
-        map.put(q6aVar, new jh4(new CountDownLatch(1)));
+        map.put(iaaVar, new lj4(new CountDownLatch(1)));
         StringBuilder sb = new StringBuilder("Dependency to ");
-        sb.append(q6aVar);
-        ir2.x(sb, " added.", "FirebaseSessions");
+        sb.append(iaaVar);
+        bs2.x(sb, " added.", "FirebaseSessions");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        lp2 b = mp2.b(lg4.class);
+        eq2 b = fq2.b(li4.class);
         b.a = "fire-cls";
-        b.a(wd3.b(jg4.class));
-        b.a(wd3.b(rg4.class));
-        b.a(new wd3(this.a, 1, 0));
-        b.a(new wd3(this.b, 1, 0));
-        b.a(new wd3(this.c, 1, 0));
-        b.a(new wd3(0, 2, fy2.class));
-        b.a(new wd3(0, 2, qj.class));
-        b.a(new wd3(0, 2, dh4.class));
-        b.f = new vu2(this, (byte) 2);
+        b.a(qe3.b(ji4.class));
+        b.a(qe3.b(ri4.class));
+        b.a(new qe3(this.a, 1, 0));
+        b.a(new qe3(this.b, 1, 0));
+        b.a(new qe3(this.c, 1, 0));
+        b.a(new qe3(0, 2, az2.class));
+        b.a(new qe3(0, 2, rj.class));
+        b.a(new qe3(0, 2, ej4.class));
+        b.f = new ht2(this, (byte) 4);
         b.c(2);
-        return Arrays.asList(b.b(), one.a("fire-cls", "20.1.1"));
+        return Arrays.asList(b.b(), ise.a("fire-cls", "20.1.1"));
     }
 }

@@ -2,10 +2,10 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class TemplateInfo {
-    private final Class<? extends ogb> mTemplateClass;
+    private final Class<? extends kkb> mTemplateClass;
     private final String mTemplateId;
 
     private TemplateInfo() {
@@ -24,8 +24,8 @@ public final class TemplateInfo {
         return Objects.equals(this.mTemplateClass, templateInfo.mTemplateClass) && Objects.equals(this.mTemplateId, templateInfo.mTemplateId);
     }
 
-    public Class<? extends ogb> getTemplateClass() {
-        Class<? extends ogb> cls = this.mTemplateClass;
+    public Class<? extends kkb> getTemplateClass() {
+        Class<? extends kkb> cls = this.mTemplateClass;
         Objects.requireNonNull(cls);
         return cls;
     }
@@ -40,7 +40,7 @@ public final class TemplateInfo {
         return Objects.hash(this.mTemplateClass, this.mTemplateId);
     }
 
-    public TemplateInfo(Class<? extends ogb> cls, String str) {
+    public TemplateInfo(Class<? extends kkb> cls, String str) {
         this.mTemplateClass = cls;
         this.mTemplateId = str;
     }

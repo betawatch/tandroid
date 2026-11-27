@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -77,12 +77,12 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
         public CopyQuotedStrategy(String str) {
-            super();
+            super(0);
             this.formatField = str;
         }
 
@@ -102,13 +102,13 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
 
         public TextStrategy(int i, Calendar calendar, Locale locale) {
-            super();
+            super(0);
             this.field = i;
             this.keyValues = FastDateParser.getDisplayNames(i, calendar, locale);
         }
@@ -131,18 +131,18 @@ public class FastDateParser implements DateParser, Serializable {
                 calendar.set(this.field, num.intValue());
                 return;
             }
-            StringBuilder k = b00.k(str, " not in (");
+            StringBuilder l = c00.l(str, " not in (");
             Iterator<String> it = this.keyValues.keySet().iterator();
             while (it.hasNext()) {
-                k.append(it.next());
-                k.append(' ');
+                l.append(it.next());
+                l.append(' ');
             }
-            k.setCharAt(k.length() - 1, ')');
-            throw new IllegalArgumentException(k.toString());
+            l.setCharAt(l.length() - 1, ')');
+            throw new IllegalArgumentException(l.toString());
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -153,7 +153,7 @@ public class FastDateParser implements DateParser, Serializable {
         private final String validTimeZoneChars;
 
         public TimeZoneStrategy(Locale locale) {
-            super();
+            super(0);
             this.tzNames = new TreeMap(String.CASE_INSENSITIVE_ORDER);
             for (String[] strArr : DateFormatSymbols.getInstance(locale).getZoneStrings()) {
                 if (!strArr[0].startsWith("GMT")) {
@@ -174,7 +174,7 @@ public class FastDateParser implements DateParser, Serializable {
                     }
                 }
             }
-            StringBuilder r = tb4.r("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
+            StringBuilder r = qd4.r("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
             Iterator<String> it = this.tzNames.keySet().iterator();
             while (it.hasNext()) {
                 FastDateParser.escapeRegex(r, it.next(), false).append('|');
@@ -199,7 +199,7 @@ public class FastDateParser implements DateParser, Serializable {
             } else {
                 timeZone = this.tzNames.get(str);
                 if (timeZone == null) {
-                    w26.j(str.concat(" is not a supported timezone name"));
+                    lq5.j(str.concat(" is not a supported timezone name"));
                     return;
                 }
             }
@@ -325,47 +325,47 @@ public class FastDateParser implements DateParser, Serializable {
             switch (charAt) {
                 case '\'':
                     if (str.length() > 2) {
-                        return new CopyQuotedStrategy(ir2.n(1, 1, str));
+                        return new CopyQuotedStrategy(bs2.n(1, 1, str));
                     }
                     break;
-                case kk7.T0 /* 83 */:
+                case jn7.T0 /* 83 */:
                     return MILLISECOND_STRATEGY;
-                case kk7.X0 /* 87 */:
+                case jn7.X0 /* 87 */:
                     return WEEK_OF_MONTH_STRATEGY;
-                case kk7.a1 /* 90 */:
+                case jn7.a1 /* 90 */:
                     break;
-                case kk7.h1 /* 97 */:
+                case jn7.h1 /* 97 */:
                     return getLocaleSpecificStrategy(9, calendar);
-                case kk7.k1 /* 100 */:
+                case jn7.k1 /* 100 */:
                     return DAY_OF_MONTH_STRATEGY;
-                case kk7.o1 /* 104 */:
+                case jn7.o1 /* 104 */:
                     return MODULO_HOUR_STRATEGY;
-                case kk7.r1 /* 107 */:
+                case jn7.r1 /* 107 */:
                     return HOUR_OF_DAY_STRATEGY;
-                case kk7.t1 /* 109 */:
+                case jn7.t1 /* 109 */:
                     return MINUTE_STRATEGY;
-                case kk7.z1 /* 115 */:
+                case jn7.z1 /* 115 */:
                     return SECOND_STRATEGY;
-                case kk7.D1 /* 119 */:
+                case jn7.D1 /* 119 */:
                     return WEEK_OF_YEAR_STRATEGY;
                 default:
                     switch (charAt) {
-                        case kk7.E0 /* 68 */:
+                        case jn7.E0 /* 68 */:
                             return DAY_OF_YEAR_STRATEGY;
-                        case kk7.F0 /* 69 */:
+                        case jn7.F0 /* 69 */:
                             return getLocaleSpecificStrategy(7, calendar);
-                        case kk7.G0 /* 70 */:
+                        case jn7.G0 /* 70 */:
                             return DAY_OF_WEEK_IN_MONTH_STRATEGY;
-                        case kk7.H0 /* 71 */:
+                        case jn7.H0 /* 71 */:
                             return getLocaleSpecificStrategy(0, calendar);
-                        case kk7.I0 /* 72 */:
+                        case jn7.I0 /* 72 */:
                             return MODULO_HOUR_OF_DAY_STRATEGY;
                         default:
                             switch (charAt) {
-                                case kk7.L0 /* 75 */:
+                                case jn7.L0 /* 75 */:
                                     return HOUR_STRATEGY;
-                                case kk7.M0 /* 76 */:
-                                case kk7.N0 /* 77 */:
+                                case jn7.M0 /* 76 */:
+                                case jn7.N0 /* 77 */:
                                     return str.length() >= 3 ? getLocaleSpecificStrategy(2, calendar) : NUMBER_MONTH_STRATEGY;
                             }
                     }
@@ -474,7 +474,7 @@ public class FastDateParser implements DateParser, Serializable {
             return parse;
         }
         if (!this.locale.equals(JAPANESE_IMPERIAL)) {
-            StringBuilder p = ug8.p("Unparseable date: \"", str, "\" does not match ");
+            StringBuilder p = ik8.p("Unparseable date: \"", str, "\" does not match ");
             p.append(this.parsePattern.pattern());
             throw new ParseException(p.toString(), 0);
         }
@@ -497,17 +497,36 @@ public class FastDateParser implements DateParser, Serializable {
         return "FastDateParser[" + this.pattern + "," + this.locale + "," + this.timeZone.getID() + "]";
     }
 
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    private static abstract class Strategy {
+        public /* synthetic */ Strategy(int i) {
+            this();
+        }
+
+        public abstract boolean addRegex(FastDateParser fastDateParser, StringBuilder sb);
+
+        public boolean isNumber() {
+            return false;
+        }
+
+        private Strategy() {
+        }
+
+        public void setCalendar(FastDateParser fastDateParser, Calendar calendar, String str) {
+        }
+    }
+
     @Override // org.telegram.messenger.time.DateParser
     public Object parseObject(String str, ParsePosition parsePosition) {
         return parse(str, parsePosition);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class NumberStrategy extends Strategy {
         private final int field;
 
         public NumberStrategy(int i) {
-            super();
+            super(0);
             this.field = i;
         }
 
@@ -545,21 +564,6 @@ public class FastDateParser implements DateParser, Serializable {
 
     public FastDateParser(String str, TimeZone timeZone, Locale locale) {
         this(str, timeZone, locale, null);
-    }
-
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    private static abstract class Strategy {
-        private Strategy() {
-        }
-
-        public abstract boolean addRegex(FastDateParser fastDateParser, StringBuilder sb);
-
-        public boolean isNumber() {
-            return false;
-        }
-
-        public void setCalendar(FastDateParser fastDateParser, Calendar calendar, String str) {
-        }
     }
 
     @Override // org.telegram.messenger.time.DateParser

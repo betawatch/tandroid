@@ -1,14 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class fze {
-    public static void a(int i, Object[] objArr) {
-        for (int i2 = 0; i2 < i; i2++) {
-            if (objArr[i2] == null) {
-                fvc.f(de9.k(i2, "at index "));
-                return;
+    public static String a(String str, Object... objArr) {
+        int indexOf;
+        String sb;
+        String valueOf = String.valueOf(str);
+        int i = 0;
+        for (int i2 = 0; i2 < objArr.length; i2++) {
+            Object obj = objArr[i2];
+            if (obj == null) {
+                sb = "null";
+            } else {
+                try {
+                    sb = obj.toString();
+                } catch (Exception e) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").log(Level.WARNING, "Exception during lenientFormat for ".concat(str2), (Throwable) e);
+                    StringBuilder p = ik8.p("<", str2, " threw ");
+                    p.append(e.getClass().getName());
+                    p.append(">");
+                    sb = p.toString();
+                }
             }
+            objArr[i2] = sb;
         }
+        StringBuilder sb2 = new StringBuilder(valueOf.length() + (objArr.length << 4));
+        int i3 = 0;
+        while (i < objArr.length && (indexOf = valueOf.indexOf("%s", i3)) != -1) {
+            sb2.append((CharSequence) valueOf, i3, indexOf);
+            sb2.append(objArr[i]);
+            i3 = indexOf + 2;
+            i++;
+        }
+        sb2.append((CharSequence) valueOf, i3, valueOf.length());
+        if (i < objArr.length) {
+            sb2.append(" [");
+            sb2.append(objArr[i]);
+            for (int i4 = i + 1; i4 < objArr.length; i4++) {
+                sb2.append(", ");
+                sb2.append(objArr[i4]);
+            }
+            sb2.append(']');
+        }
+        return sb2.toString();
     }
 }

@@ -1,27 +1,37 @@
 // default package
 
-import android.os.Parcel;
-import android.os.ParcelFileDescriptor;
-import android.os.Parcelable;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class hwd extends b4 {
-    public static final Parcelable.Creator<hwd> CREATOR = new rpd((byte) 26);
-    public final int a;
-    public final ParcelFileDescriptor b;
+public abstract class hwd {
+    protected int zza;
 
-    public hwd(int i, ParcelFileDescriptor parcelFileDescriptor) {
-        this.a = i;
-        this.b = parcelFileDescriptor;
+    public final byte[] a() {
+        try {
+            s6e s6eVar = (s6e) this;
+            int e = s6eVar.e();
+            byte[] bArr = new byte[e];
+            s0e s0eVar = new s0e(e, bArr);
+            rfe a = zee.c.a(s6eVar.getClass());
+            oqd oqdVar = s0eVar.a;
+            if (oqdVar == null) {
+                oqdVar = new oqd();
+                Charset charset = x7e.a;
+                oqdVar.a = s0eVar;
+                s0eVar.a = oqdVar;
+            }
+            a.f(s6eVar, oqdVar);
+            if (e - s0eVar.d == 0) {
+                return bArr;
+            }
+            throw new IllegalStateException("Did not write as much data as expected.");
+        } catch (IOException e2) {
+            grb.j(qd4.y("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e2);
+            return null;
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.k(parcel, 3, this.b, i | 1);
-        jte.s(parcel, r);
-    }
+    public abstract int b(rfe rfeVar);
 }

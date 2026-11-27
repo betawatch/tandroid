@@ -1,78 +1,22 @@
 // default package
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class z1f {
-    public static xye a;
+public final /* synthetic */ class z1f implements Callable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lja b;
 
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String sb;
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i2 >= length) {
-                break;
-            }
-            Object obj = objArr[i2];
-            if (obj == null) {
-                sb = "null";
-            } else {
-                try {
-                    sb = obj.toString();
-                } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder p = ug8.p("<", str2, " threw ");
-                    p.append(e.getClass().getName());
-                    p.append(">");
-                    sb = p.toString();
-                }
-            }
-            objArr[i2] = sb;
-            i2++;
-        }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length << 4));
-        int i3 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i >= length2 || (indexOf = str.indexOf("%s", i3)) == -1) {
-                break;
-            }
-            sb2.append((CharSequence) str, i3, indexOf);
-            sb2.append(objArr[i]);
-            i++;
-            i3 = indexOf + 2;
-        }
-        sb2.append((CharSequence) str, i3, str.length());
-        if (i < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i]);
-            for (int i4 = i + 1; i4 < objArr.length; i4++) {
-                sb2.append(", ");
-                sb2.append(objArr[i4]);
-            }
-            sb2.append(']');
-        }
-        return sb2.toString();
+    public /* synthetic */ z1f(lja ljaVar, byte b) {
+        this.a = b;
+        this.b = ljaVar;
     }
 
-    public static synchronized f1f b(j0f j0fVar) {
-        f1f f1fVar;
-        synchronized (z1f.class) {
-            xye xyeVar = a;
-            if (xyeVar == null) {
-                xyeVar = new xye((byte) 1);
-                a = xyeVar;
-            }
-            f1fVar = (f1f) xyeVar.c(j0fVar);
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        switch (this.a) {
         }
-        return f1fVar;
+        return this.b.a();
     }
 }

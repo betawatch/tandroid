@@ -1,302 +1,201 @@
 // default package
 
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextUtils;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
+import android.os.SystemClock;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class h27 implements jg7 {
-    public float E;
-    public k27 F;
-    public int G;
-    public n41 H;
-    public boolean I;
-    public boolean J;
-    public boolean K;
-    public String L;
-    public tgb M;
-    public int N;
-    public boolean O;
-    public int P;
-    public Drawable Q;
-    public tgb R;
-    public int S;
-    public ff0 T;
-    public Paint U;
-    public boolean V;
-    public Paint W;
-    public boolean a;
-    public boolean b;
-    public int c;
-    public StaticLayout e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
-    public int s;
-    public int w;
-    public byte x;
-    public final AtomicReference d = new AtomicReference();
-    public final ArrayList y = new ArrayList();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public class h27 extends Drawable {
+    public final Paint a;
+    public final Paint b;
+    public boolean c;
+    public long d;
+    public float e;
+    public float f;
+    public int g;
+    public boolean h;
+    public final DecelerateInterpolator i;
+    public int j;
+    public int k;
+    public boolean l;
+    public float m;
+    public boolean n;
+    public int o;
 
-    public static String b(String str) {
-        if (str == null) {
-            return null;
+    public h27() {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        this.h = true;
+        this.i = new DecelerateInterpolator();
+        this.o = jn7.d4;
+        paint.setStrokeWidth(hl.L(2.0f));
+        paint2.setStrokeWidth(hl.p * 1.66f);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStyle(Paint.Style.STROKE);
+        this.m = 1.0f;
+    }
+
+    public final void a(boolean z, float f) {
+        this.d = 0L;
+        float f2 = this.f;
+        if (f2 == 1.0f) {
+            this.c = true;
+        } else if (f2 == 0.0f) {
+            this.c = false;
         }
-        String replaceAll = str.toLowerCase().replaceAll("\\W|lang$", "");
-        replaceAll.getClass();
-        switch (replaceAll) {
-            case "actionscript":
-                return "ActionScript";
-            case "aspnet":
-                return "ASP.NET";
-            case "bbcode":
-                return "BBCode";
-            case "csharp":
-            case "cs":
-                return "C#";
-            case "fsharp":
-                return "F#";
-            case "matlab":
-            case "r":
-            case "tl":
-            case "asm":
-            case "css":
-            case "csv":
-            case "ini":
-            case "jsx":
-            case "php":
-            case "qml":
-            case "sql":
-            case "tsx":
-            case "xml":
-            case "yml":
-            case "glsl":
-            case "hlsl":
-            case "html":
-            case "http":
-            case "json":
-            case "less":
-            case "nasm":
-            case "sass":
-            case "scss":
-            case "wasm":
-            case "yaml":
-            case "cobol":
-            case "json5":
-            case "jsonp":
-                return str.toUpperCase();
-            case "python":
-            case "py":
-                return "Python";
-            case "typescript":
-            case "ts":
-                return "TypeScript";
-            case "js":
-            case "javascript":
-                return "JavaScript";
-            case "md":
-            case "markdown":
-                return "Markdown";
-            case "rb":
-            case "ruby":
-                return "Ruby";
-            case "cpp":
-                return "C++";
-            case "tlb":
-            case "tl-b":
-                return "TL-B";
-            case "func":
-                return "FunC";
-            case "objc":
-            case "objectivec":
-                return "Objective-C";
-            case "vbnet":
-                return "VB.NET";
-            case "autohotkey":
-                return "AutoHotKey";
-            case "visual-basic":
-                return "Visual Basic";
-            case "gdscript":
-                return "GDScript";
-            default:
-                return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
+        this.d = 0L;
+        if (z) {
+            if (f2 < f) {
+                this.g = (int) (f2 * 200.0f);
+            } else {
+                this.g = (int) ((1.0f - f2) * 200.0f);
+            }
+            this.d = SystemClock.elapsedRealtime();
+            this.e = f;
+        } else {
+            this.f = f;
+            this.e = f;
         }
+        invalidateSelf();
     }
 
-    @Override // jg7
-    public final Layout a() {
-        return this.e;
-    }
-
-    public final int c() {
-        return gl.L(this.V ? 28.0f : 15.0f);
-    }
-
-    public final float d(nb2 nb2Var) {
-        boolean f;
-        if (nb2Var.f3) {
-            HashSet hashSet = nb2Var.e3;
-            f = true;
-            if (hashSet != null && hashSet.contains(Integer.valueOf(this.c))) {
-                f = false;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float abs;
+        float L;
+        float abs2;
+        float abs3;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j = this.d;
+        long j2 = elapsedRealtime - j;
+        float f = this.f;
+        float f2 = this.e;
+        if (f != f2) {
+            if (j != 0) {
+                int i = (int) (this.g + j2);
+                this.g = i;
+                if (i >= 200) {
+                    this.f = f2;
+                } else {
+                    DecelerateInterpolator decelerateInterpolator = this.i;
+                    float f3 = i / 200.0f;
+                    if (f < f2) {
+                        this.f = decelerateInterpolator.getInterpolation(f3) * this.e;
+                    } else {
+                        this.f = 1.0f - decelerateInterpolator.getInterpolation(f3);
+                    }
+                }
+            }
+            invalidateSelf();
+        }
+        float f4 = this.m;
+        if (f4 < 1.0f) {
+            float f5 = (j2 / 200.0f) + f4;
+            this.m = f5;
+            if (f5 > 1.0f) {
+                this.m = 1.0f;
+            }
+            invalidateSelf();
+        }
+        this.d = elapsedRealtime;
+        canvas.save();
+        canvas.translate(((hl.L(24.0f) / 2) - hl.L(9.0f)) - (hl.L(1.0f) * this.f), hl.L(24.0f) / 2);
+        int i2 = this.j;
+        if (i2 == 0) {
+            i2 = aob.w0(null, aob.v8, false);
+        }
+        int i3 = this.k;
+        if (i3 == 0) {
+            i3 = aob.w0(null, aob.s8, false);
+        }
+        boolean z = this.h;
+        float f6 = this.f;
+        boolean z2 = this.c;
+        Paint paint = this.a;
+        if (z) {
+            canvas.rotate(f6 * (z2 ? -180 : jn7.J2), hl.L(9.0f), 0.0f);
+            paint.setColor(i2);
+            paint.setAlpha(this.o);
+            canvas.drawLine(this.l ? qd4.A(1.0f, this.f, paint.getStrokeWidth() / 2.0f, hl.L(0.5f) * this.f) : 0.0f, 0.0f, ((hl.L(18.0f) - (hl.L(3.0f) * this.f)) - 0.0f) - (this.l ? (1.0f - this.f) * (paint.getStrokeWidth() / 2.0f) : 0.0f), 0.0f, paint);
+            abs = ((1.0f - Math.abs(this.f)) * hl.L(5.0f)) - (Math.abs(this.f) * hl.L(0.5f));
+            L = hl.L(18.0f) - (Math.abs(this.f) * hl.L(2.5f));
+            abs2 = (Math.abs(this.f) * hl.L(2.0f)) + hl.L(5.0f);
+            abs3 = Math.abs(this.f) * hl.L(7.5f);
+            if (this.l) {
+                abs3 = qd4.A(1.0f, this.f, paint.getStrokeWidth() / 2.0f, abs3);
+                float L2 = (hl.L(0.5f) * this.f) + abs;
+                L -= ((1.0f - this.f) * (paint.getStrokeWidth() / 2.0f)) + (hl.L(0.5f) * this.f);
+                abs2 -= hl.L(0.25f) * this.f;
+                abs = (hl.L(0.25f) * this.f) + L2;
             }
         } else {
-            f = f();
-        }
-        return gl.R1(f ? 1.0f : 0.0f, f() ? 1.0f : 0.0f, nb2Var.L1);
-    }
-
-    @Override // jg7
-    public final View e() {
-        return null;
-    }
-
-    public final boolean f() {
-        HashSet hashSet;
-        k27 k27Var = this.F;
-        return k27Var == null || (hashSet = k27Var.K0) == null || !hashSet.contains(Integer.valueOf(this.c));
-    }
-
-    public final int g() {
-        return gl.L(this.M != null ? 32.0f : 12.0f);
-    }
-
-    public final int h() {
-        StaticLayout staticLayout;
-        return (this.M != null || (staticLayout = this.e) == null || staticLayout.getLineCount() == 0) ? gl.L(8.0f) + (-g()) : Math.round(((this.e.getLineBottom(0) + this.e.getLineTop(0)) / 2.0f) - (gl.L(18.0f) / 2.0f));
-    }
-
-    public final void i(Canvas canvas, RectF rectF, int i, int i2, float f) {
-        if (this.O) {
-            int p1 = bkb.p1(0.1f, i);
-            if (this.S != p1) {
-                ff0 ff0Var = this.T;
-                this.S = p1;
-                bkb.F1(ff0Var, p1, true);
+            canvas.rotate(f6 * (z2 ? -225 : 135), hl.L(9.0f), 0.0f);
+            if (this.n) {
+                paint.setColor(i2);
+                paint.setAlpha(this.o);
+                canvas.drawLine((hl.L(1.0f) * this.f) + ((1.0f - Math.abs(this.f)) * hl.N(2.0f)), 0.0f, ((hl.L(17.0f) * this.f) + ((1.0f - this.f) * hl.N(16.0f))) - 0.0f, 0.0f, paint);
+                abs = ((1.0f - Math.abs(this.f)) * hl.N(5.0f)) - (Math.abs(this.f) * hl.N(0.5f));
+                L = (Math.abs(this.f) * hl.N(9.0f)) + ((1.0f - Math.abs(this.f)) * hl.N(16.0f));
+                abs2 = (Math.abs(this.f) * hl.N(3.0f)) + hl.N(5.0f);
+                abs3 = (Math.abs(this.f) * hl.N(7.0f)) + hl.N(2.0f);
+            } else {
+                int w0 = aob.w0(null, aob.y8, false);
+                hl.R0(this.f, 1.0f, i3, aob.w0(null, aob.w8, false));
+                paint.setColor(hl.R0(this.f, 1.0f, i2, w0));
+                paint.setAlpha(this.o);
+                canvas.drawLine(this.f * hl.L(1.0f), 0.0f, (hl.L(18.0f) - (hl.L(1.0f) * this.f)) - 0.0f, 0.0f, paint);
+                abs = ((1.0f - Math.abs(this.f)) * hl.L(5.0f)) - (Math.abs(this.f) * hl.L(0.5f));
+                L = hl.L(18.0f) - (Math.abs(this.f) * hl.L(9.0f));
+                abs2 = (Math.abs(this.f) * hl.L(3.0f)) + hl.L(5.0f);
+                abs3 = Math.abs(this.f) * hl.L(9.0f);
             }
-            this.T.setBounds(gl.L(3.0f) + ((int) rectF.left), (int) (rectF.bottom - gl.L(38.0f)), (int) rectF.right, (int) rectF.bottom);
-            int i3 = (int) (255.0f * f);
-            this.T.setAlpha(i3);
-            if (this.T.getCallback() != null) {
-                this.T.draw(canvas);
-            }
-            this.U.setColor(bm2.o(i2, 38));
-            canvas.drawRect(rectF.left + gl.L(10.0f), (rectF.bottom - gl.L(38.0f)) - gl.e1(), rectF.right - gl.L(6.66f), rectF.bottom - gl.L(38.0f), this.U);
-            float centerX = rectF.centerX() - (Math.min(rectF.width() - gl.L(12.0f), ((this.Q.getIntrinsicWidth() * 0.8f) + gl.L(5.0f)) + this.R.c) / 2.0f);
-            float L = rectF.bottom - (gl.L(38.0f) / 2.0f);
-            if (this.P != i) {
-                Drawable drawable = this.Q;
-                this.P = i;
-                drawable.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
-            }
-            this.Q.setAlpha(i3);
-            this.Q.setBounds((int) centerX, (int) (L - ((r1.getIntrinsicHeight() * 0.8f) / 2.0f)), (int) ((this.Q.getIntrinsicWidth() * 0.8f) + centerX), (int) ls6.d(this.Q.getIntrinsicHeight(), 0.8f, 2.0f, L));
-            this.Q.draw(canvas);
-            float intrinsicWidth = (this.Q.getIntrinsicWidth() * 0.8f) + gl.L(5.0f) + centerX;
-            tgb tgbVar = this.R;
-            tgbVar.p = gl.L(12.0f) + ((int) (r11 - ((this.Q.getIntrinsicWidth() * 0.8f) + gl.L(5.0f))));
-            tgbVar.c(intrinsicWidth, L, f, i, canvas);
+        }
+        float f7 = abs3;
+        float f8 = abs2;
+        float f9 = abs;
+        float f10 = L;
+        if (this.n) {
+            canvas.drawLine(f7, -f8, f10, -f9, paint);
+            canvas.drawLine(f7, f8, f10, f9, paint);
+        } else {
+            canvas.drawLine(f7, -f8, f10 - 0.0f, -f9, paint);
+            canvas.drawLine(f7, f8, f10, f9, paint);
+        }
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return hl.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return hl.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        if (this.o != i) {
+            this.o = i;
+            this.a.setAlpha(i);
+            this.b.setAlpha(i);
+            invalidateSelf();
         }
     }
 
-    public final int j(nb2 nb2Var) {
-        boolean z = this.K;
-        int i = this.w;
-        if (!z) {
-            return i;
-        }
-        return gl.U1(d(nb2Var), i, this.G);
-    }
-
-    public final boolean k(float f, float f2, float f3) {
-        if (!this.O || f < f3 - gl.L(38.0f) || f > f3 || f2 < (-g())) {
-            return false;
-        }
-        return f2 <= ((float) (gl.L(26.0f) + h()));
-    }
-
-    public final boolean l() {
-        byte b = this.x;
-        return (b & 1) != 0 && (b & 2) == 0;
-    }
-
-    public final void m(int i, String str, boolean z) {
-        boolean z2 = i >= 75 && !z;
-        this.O = z2;
-        if (z2) {
-            this.R = new tgb(k96.M0(2131751753, null).toUpperCase(), gba.S0 - 3, gl.o());
-            Drawable d = b00.d(a.b, R.drawable.msg_copy);
-            this.Q = d;
-            d.setColorFilter(new PorterDuffColorFilter(this.P, PorterDuff.Mode.SRC_IN));
-            this.T = bkb.a0(this.S, 0, 0, Math.min(5, gba.U0), 0);
-            this.U = new Paint(1);
-        }
-        if (TextUtils.isEmpty(str)) {
-            this.L = null;
-            this.M = null;
-            return;
-        }
-        this.L = str;
-        String b = b(str);
-        int i2 = gba.S0 - 1;
-        jj8 jj8Var = qj2.a;
-        tgb tgbVar = new tgb(b, i2 - ((i <= 120 ? i > 50 ? 3 : 2 : 5) / 2), gl.o());
-        this.M = tgbVar;
-        this.N = gl.L(4.0f) + ((int) (tgbVar.a.getTextSize() * 1.714f));
-    }
-
-    public final void n(String str, boolean z) {
-        this.V = true;
-        this.O = !z;
-        if (!z) {
-            Drawable d = b00.d(a.b, R.drawable.msg_copy);
-            this.Q = d;
-            d.setColorFilter(new PorterDuffColorFilter(this.P, PorterDuff.Mode.SRC_IN));
-            this.T = bkb.a0(this.S, 0, 0, Math.min(5, gba.U0), 0);
-        }
-        if (TextUtils.isEmpty(str)) {
-            str = null;
-        }
-        this.L = str;
-        this.M = str != null ? new tgb(str, Math.max(8, gba.S0 - 4), null) : null;
-        this.N = 0;
-    }
-
-    public final float o(ArrayList arrayList) {
-        h27 h27Var;
-        if (arrayList == null) {
-            return 0.0f;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < arrayList.size() && (h27Var = (h27) arrayList.get(i2)) != this; i2++) {
-            i += ((h27Var.K && h27Var.f()) ? h27Var.G : h27Var.w) + h27Var.f + h27Var.h;
-        }
-        return i;
-    }
-
-    public final float p(ArrayList arrayList, nb2 nb2Var) {
-        h27 h27Var;
-        if (arrayList == null) {
-            return 0.0f;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < arrayList.size() && (h27Var = (h27) arrayList.get(i2)) != this; i2++) {
-            i += h27Var.j(nb2Var) + h27Var.f + h27Var.h;
-        }
-        return i;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

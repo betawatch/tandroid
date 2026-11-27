@@ -1,68 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import androidx.core.widget.NestedScrollView;
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.Callable;
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class i6c extends NestedScrollView {
-    public boolean W;
-    public final /* synthetic */ j6c a0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class i6c extends gn4 implements RunnableFuture {
+    public volatile h6c n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i6c(j6c j6cVar, Context context) {
-        super(context);
-        this.a0 = j6cVar;
+    public i6c(Callable callable) {
+        this.n = new h6c(this, callable);
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.a0.E0();
+    @Override // u2
+    public final void d() {
+        h6c h6cVar;
+        Object obj = this.a;
+        if ((obj instanceof i2) && ((i2) obj).a && (h6cVar = this.n) != null) {
+            tv tvVar = h6c.e;
+            tv tvVar2 = h6c.d;
+            Runnable runnable = (Runnable) h6cVar.get();
+            if (runnable instanceof Thread) {
+                tr5 tr5Var = new tr5(h6cVar);
+                tr5Var.a(Thread.currentThread());
+                if (h6cVar.compareAndSet(runnable, tr5Var)) {
+                    try {
+                        ((Thread) runnable).interrupt();
+                    } finally {
+                        if (((Runnable) h6cVar.getAndSet(tvVar2)) == tvVar) {
+                            LockSupport.unpark((Thread) runnable);
+                        }
+                    }
+                }
+            }
+        }
+        this.n = null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002b, code lost:
-    
-        if (r8 < (gl.L(90.0f) + (r0 / 2))) goto L6;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i2);
-        LinearLayout linearLayout = this.a0.p1;
-        measureChildWithMargins(linearLayout, i, 0, i2, 0);
-        int measuredHeight = linearLayout.getMeasuredHeight();
-        int i3 = (size / 5) << 1;
-        if (measuredHeight - (size - i3) >= gl.L(90.0f)) {
+    @Override // u2
+    public final String j() {
+        h6c h6cVar = this.n;
+        if (h6cVar == null) {
+            return super.j();
         }
-        i3 = size - measuredHeight;
-        if (i3 < 0) {
-            i3 = 0;
-        }
-        if (getPaddingTop() != i3) {
-            this.W = true;
-            setPadding(0, i3, 0, 0);
-            this.W = false;
-        }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        return "task=[" + h6cVar + "]";
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i, int i2, int i3, int i4) {
-        super.onScrollChanged(i, i2, i3, i4);
-        this.a0.E0();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.W) {
-            return;
+    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
+    public final void run() {
+        h6c h6cVar = this.n;
+        if (h6cVar != null) {
+            h6cVar.run();
         }
-        super.requestLayout();
+        this.n = null;
     }
 }

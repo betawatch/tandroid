@@ -1,90 +1,71 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class e34 extends FrameLayout {
-    public boolean a;
-    public final d34 b;
-    public boolean c;
-    public float d;
-    public float e;
-    public boolean f;
+public final /* synthetic */ class e34 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public e34(Context context, d34 d34Var) {
-        super(context);
-        this.b = d34Var;
+    public /* synthetic */ e34(gha ghaVar, int i, jga jgaVar) {
+        this.a = (byte) 3;
+        this.c = ghaVar;
+        this.b = i;
+        this.d = jgaVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        if (this.a && (view instanceof e09)) {
-            return true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        Object obj = this.d;
+        int i = this.b;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                g34 g34Var = (g34) obj2;
+                float[] fArr = (float[]) obj;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int i2 = 0;
+                while (i2 < 3) {
+                    g34Var.f[i2] = hl.R1(fArr[i2], i2 == i ? 1.0f : 0.0f, floatValue);
+                    i2++;
+                }
+                g34Var.a();
+                break;
+            case 1:
+                wy5 wy5Var = (wy5) obj2;
+                wy5Var.u1.a = vm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), ((Integer) obj).intValue(), i);
+                ty5 ty5Var = wy5Var.M0;
+                if (ty5Var != null) {
+                    ty5Var.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                dx7 dx7Var = (dx7) obj2;
+                dx7Var.k1.a = vm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), ((Integer) obj).intValue(), i);
+                ax7 ax7Var = dx7Var.D0;
+                if (ax7Var != null) {
+                    ax7Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((gha) obj2).e.S1.put(i, (Float) valueAnimator.getAnimatedValue());
+                ((jga) obj).invalidate();
+                break;
         }
-        return super.drawChild(canvas, view, j);
     }
 
-    @Override // android.view.ViewGroup
-    public final void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
-        if (!(view instanceof vhb)) {
-            super.measureChildWithMargins(view, i, i2, i3, i4);
-            return;
-        }
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i2, marginLayoutParams.width), 0);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        d34 d34Var = this.b;
-        l34 A = d34Var.A();
-        if (A == null) {
-            return false;
-        }
-        if (motionEvent.getPointerCount() != 1) {
-            A.n = false;
-            A.r = true;
-            this.c = false;
-            this.f = true;
-            invalidate();
-            return true;
-        }
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            this.c = false;
-            A.n = false;
-            A.r = false;
-            this.d = motionEvent.getX();
-            this.e = motionEvent.getY();
-            this.f = false;
-            return true;
-        }
-        if (!this.f && actionMasked == 2) {
-            float x = motionEvent.getX();
-            float y = motionEvent.getY();
-            if (this.c || loe.a(x, y, this.d, this.e) > gl.e) {
-                this.c = true;
-                A.n = true;
-                A.e(x - this.d, y - this.e);
-                this.d = x;
-                this.e = y;
-                return true;
-            }
-        } else if (actionMasked == 1 || actionMasked == 3) {
-            A.n = false;
-            A.r = true;
-            if (!this.c) {
-                d34Var.u();
-            }
-            invalidate();
-            return false;
-        }
-        return true;
+    public /* synthetic */ e34(ViewGroup viewGroup, Serializable serializable, int i, byte b) {
+        this.a = b;
+        this.c = viewGroup;
+        this.d = serializable;
+        this.b = i;
     }
 }

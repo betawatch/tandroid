@@ -1,109 +1,108 @@
 // default package
 
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Dictation.DictationAsr;
+import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yl3 {
-    public final am3 a;
-    public final vl3 b;
-    public final String c;
-    public final yf d;
-    public volatile int[] g;
-    public int i;
-    public boolean j;
-    public volatile boolean k;
-    public volatile boolean l;
-    public volatile String n;
-    public cn3 o;
-    public final StringBuilder e = new StringBuilder();
-    public final ArrayList f = new ArrayList();
-    public String h = "";
-    public volatile int m = -1;
+public final class yl3 extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ View b;
 
-    public yl3(am3 am3Var, xl3 xl3Var, yf yfVar) {
-        this.a = am3Var;
-        this.b = (vl3) xl3Var.b;
-        this.c = (String) xl3Var.c;
-        this.d = yfVar;
+    public /* synthetic */ yl3(View view, byte b) {
+        this.a = b;
+        this.b = view;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(String str) {
-        int i;
-        if (str == null || str.length() <= 2) {
-            return;
-        }
-        int i2 = 0;
-        try {
-            JSONArray jSONArray = new JSONArray(str);
-            i = 0;
-            while (i2 < jSONArray.length()) {
-                try {
-                    JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-                    int hashCode = optString.hashCode();
-                    if (hashCode != -1613589672) {
-                        if (hashCode != -1354815177) {
-                            if (hashCode == -792934015 && optString.equals("partial")) {
-                                StringBuilder sb = new StringBuilder();
-                                this.j = DictationAsr.v(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                                DictationAsr.l(sb, jSONObject.optJSONArray("open"), null);
-                                this.i = sb.length();
-                                DictationAsr.l(sb, jSONObject.optJSONArray("tail"), null);
-                                this.h = sb.toString();
-                                i = 1;
-                            }
-                        } else if (optString.equals("commit")) {
-                            DictationAsr.l(this.e, jSONObject.optJSONArray("words"), this.f);
-                            i = 1;
-                        }
-                    } else if (optString.equals("language")) {
-                        String optString2 = jSONObject.optString("lang");
-                        Log.d("Dictation", "tinyasr: language → " + optString2);
-                        if (!TextUtils.isEmpty(optString2)) {
-                            this.n = DictationAsr.m(optString2);
-                        }
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 2:
+                rqb rqbVar = (rqb) this.b;
+                int i = rqbVar.a6;
+                boolean z = false;
+                if (rqbVar.Od == 2 && ls6.d0(i).S() != null) {
+                    boolean G5 = rqbVar.getMessageObject().G5(w49.b(ls6.d0(i).S()), false);
+                    rqbVar.z3(rqbVar.getMessageObject(), null, false, false, false, false);
+                    rqbVar.requestLayout();
+                    s49.b(false);
+                    z = true;
+                    if (G5) {
+                        sqb sqbVar = rqbVar.Pd;
+                        s49.d(sqbVar.x, null, sqbVar.n[1], null, motionEvent.getX(), motionEvent.getY(), w49.b(ls6.d0(i).S()), rqbVar.a6, 0);
+                        s49.f();
                     }
-                    i2++;
-                } catch (Exception e) {
-                    e = e;
-                    i2 = i;
-                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
-                    i = i2;
-                    if (i == 0) {
-                    }
+                    rqbVar.getViewTreeObserver().addOnPreDrawListener(new gb(this, (byte) 11));
                 }
-            }
-        } catch (Exception e2) {
-            e = e2;
-        }
-        if (i == 0) {
-            b(null);
+                return z;
+            default:
+                return super.onDoubleTap(motionEvent);
         }
     }
 
-    public final void b(Runnable runnable) {
-        String sb = this.e.toString();
-        String str = this.h;
-        boolean z = this.j;
-        int i = this.i;
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int[] iArr = new int[size];
-        for (int i2 = 0; i2 < size; i2++) {
-            iArr[i2] = ((Integer) arrayList.get(i2)).intValue();
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                zl3 zl3Var = (zl3) this.b;
+                zl3Var.n = true;
+                zl3Var.a();
+                return true;
+            case 1:
+                return true;
+            default:
+                return super.onDown(motionEvent);
         }
-        gl.c3(new ft(this, iArr, sb, str, z, i, runnable));
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        switch (this.a) {
+            case 0:
+                ys4 ys4Var = ((zl3) this.b).a;
+                ys4Var.d -= f * 0.5f;
+                ys4Var.i -= f2 * 0.05f;
+                return true;
+            default:
+                return super.onScroll(motionEvent, motionEvent2, f, f2);
+        }
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        byte b = this.a;
+        View view = this.b;
+        switch (b) {
+            case 0:
+                zl3 zl3Var = (zl3) view;
+                ys4 ys4Var = zl3Var.a;
+                if (Math.abs(ys4Var.d) <= 10.0f) {
+                    float max = Math.max(1.0f, zl3Var.getWidth() / 2.0f);
+                    float x = ((max - motionEvent.getX()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
+                    float y = ((max - motionEvent.getY()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
+                    zl3Var.a();
+                    float f = ys4Var.d;
+                    float f2 = ys4Var.i;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    zl3Var.d = ofFloat;
+                    ofFloat.setDuration(220L);
+                    zl3Var.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
+                    zl3Var.d.addUpdateListener(new am(this, f, x, f2, y, (byte) 3));
+                    zl3Var.d.addListener(new cn2(this, (byte) 11));
+                    zl3Var.d.start();
+                    break;
+                }
+                break;
+            case 1:
+                d17 d17Var = ((c17) view).e;
+                if (!d17Var.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (d17Var.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= d17Var.f.getRight() || d17Var.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= d17Var.f.getBottom())) {
+                    d17Var.e(false);
+                }
+                break;
+        }
+        return super.onSingleTapUp(motionEvent);
     }
 }

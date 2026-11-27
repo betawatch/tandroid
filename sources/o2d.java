@@ -1,66 +1,62 @@
 // default package
 
-import android.os.DeadObjectException;
-import android.os.RemoteException;
-import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import java.util.Map;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowInsetsController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class o2d extends x2d {
-    public final ig0 b;
+public class o2d extends c3f {
+    public final WindowInsetsController a;
+    public final Window b;
 
-    public o2d(int i, ig0 ig0Var) {
-        super(i);
-        this.b = ig0Var;
+    public o2d(Window window, ve9 ve9Var) {
+        this.a = window.getInsetsController();
+        this.b = window;
     }
 
-    @Override // x2d
-    public final void a(Status status) {
-        try {
-            this.b.o(status);
-        } catch (IllegalStateException e) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e);
+    @Override // c3f
+    public final void a() {
+        this.a.hide(519);
+    }
+
+    @Override // c3f
+    public final void b() {
+        g(16);
+        this.a.setSystemBarsAppearance(0, 16);
+    }
+
+    @Override // c3f
+    public final void c(boolean z) {
+        if (z) {
+            f(TLObject.FLAG_13);
+            this.a.setSystemBarsAppearance(8, 8);
+        } else {
+            g(TLObject.FLAG_13);
+            this.a.setSystemBarsAppearance(0, 8);
         }
     }
 
-    @Override // x2d
-    public final void b(RuntimeException runtimeException) {
-        String simpleName = runtimeException.getClass().getSimpleName();
-        String localizedMessage = runtimeException.getLocalizedMessage();
-        try {
-            this.b.o(new Status(10, ls6.o(simpleName, ": ", localizedMessage, new StringBuilder(simpleName.length() + 2 + String.valueOf(localizedMessage).length())), null, null));
-        } catch (IllegalStateException e) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e);
-        }
+    @Override // c3f
+    public void d() {
+        this.b.getDecorView().setTag(356039078, 2);
+        g(2048);
+        f(TLObject.FLAG_12);
     }
 
-    @Override // x2d
-    public final void c(aec aecVar, boolean z) {
-        Boolean valueOf = Boolean.valueOf(z);
-        Map map = (Map) aecVar.b;
-        ig0 ig0Var = this.b;
-        map.put(ig0Var, valueOf);
-        ig0Var.b(new m3d(aecVar, ig0Var));
+    @Override // c3f
+    public final void e() {
+        this.a.show(519);
     }
 
-    @Override // x2d
-    public final void d(u1d u1dVar) {
-        try {
-            ig0 ig0Var = this.b;
-            try {
-                try {
-                    ig0Var.n(u1dVar.b);
-                } catch (DeadObjectException e) {
-                    ig0Var.o(new Status(8, e.getLocalizedMessage(), null, null));
-                    throw e;
-                }
-            } catch (RemoteException e2) {
-                ig0Var.o(new Status(8, e2.getLocalizedMessage(), null, null));
-            }
-        } catch (RuntimeException e3) {
-            b(e3);
-        }
+    public final void f(int i) {
+        View decorView = this.b.getDecorView();
+        decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() | i);
+    }
+
+    public final void g(int i) {
+        View decorView = this.b.getDecorView();
+        decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() & (~i));
     }
 }

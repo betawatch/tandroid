@@ -1,35 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.xmlpull.v1.XmlPullParser;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class h3f {
-    public static void a(byte b, byte b2, byte b3, byte b4, char[] cArr, int i) {
-        if (!d(b2)) {
-            if ((((b2 + 112) + (b << 28)) >> 30) == 0 && !d(b3) && !d(b4)) {
-                int i2 = ((b & 7) << 18) | ((b2 & 63) << 12) | ((b3 & 63) << 6) | (b4 & 63);
-                cArr[i] = (char) ((i2 >>> 10) + 55232);
-                cArr[i + 1] = (char) ((i2 & 1023) + 56320);
-                return;
+    public static String a(XmlPullParser xmlPullParser, String str) {
+        int attributeCount = xmlPullParser.getAttributeCount();
+        for (int i = 0; i < attributeCount; i++) {
+            if (xmlPullParser.getAttributeName(i).equals(str)) {
+                return xmlPullParser.getAttributeValue(i);
             }
         }
-        throw fpe.c();
+        return null;
     }
 
-    public static void b(byte b, byte b2, byte b3, char[] cArr, int i) {
-        if (d(b2) || ((b == -32 && b2 < -96) || ((b == -19 && b2 >= -96) || d(b3)))) {
-            throw fpe.c();
-        }
-        cArr[i] = (char) (((b & 15) << 12) | ((b2 & 63) << 6) | (b3 & 63));
+    public static boolean b(XmlPullParser xmlPullParser, String str) {
+        return xmlPullParser.getEventType() == 3 && xmlPullParser.getName().equals(str);
     }
 
-    public static void c(byte b, byte b2, char[] cArr, int i) {
-        if (b < -62 || d(b2)) {
-            throw fpe.c();
-        }
-        cArr[i] = (char) (((b & 31) << 6) | (b2 & 63));
-    }
-
-    public static boolean d(byte b) {
-        return b > -65;
+    public static boolean c(XmlPullParser xmlPullParser, String str) {
+        return xmlPullParser.getEventType() == 2 && xmlPullParser.getName().equals(str);
     }
 }

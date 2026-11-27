@@ -1,363 +1,178 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.os.Build;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jx2 {
-    public float A;
-    public float B;
-    public boolean C;
-    public float D;
-    public final boolean E;
-    public boolean F;
-    public View G;
-    public final wjb I;
-    public boolean a;
-    public Paint d;
-    public boolean g;
-    public int h;
-    public String i;
-    public boolean j;
-    public ValueAnimator k;
-    public float m;
-    public StaticLayout n;
-    public StaticLayout o;
-    public StaticLayout p;
-    public StaticLayout q;
-    public int r;
-    public int s;
-    public int t;
-    public int u;
-    public int x;
-    public int y;
-    public float b = 1.0f;
-    public int c = -1;
-    public TextPaint e = new TextPaint(1);
-    public final RectF f = new RectF();
-    public float l = 1.0f;
-    public int v = bkb.ig;
-    public int w = bkb.jg;
-    public int z = 17;
-    public byte H = 0;
+public class jx2 extends Path {
+    public static ArrayList g;
+    public int e;
+    public int f;
+    public boolean b = false;
+    public boolean c = true;
+    public float d = 0.0f;
+    public final ArrayList a = new ArrayList(1);
 
-    public jx2(View view, boolean z, wjb wjbVar) {
-        this.G = view;
-        this.I = wjbVar;
-        this.E = z;
-        if (z) {
-            Paint paint = new Paint(1);
-            this.d = paint;
-            paint.setColor(-16777216);
-        }
-        this.e.setTypeface(gl.o());
-        this.e.setTextSize(gl.L(13.0f));
+    public jx2(int i) {
     }
 
-    public final void a(Canvas canvas) {
-        float f;
-        boolean z;
-        Paint paint;
-        byte b = this.H;
-        if (b != 1 && b != 2) {
-            int i = this.v;
-            wjb wjbVar = this.I;
-            int v0 = bkb.v0(i, wjbVar);
-            int v02 = bkb.v0(this.w, wjbVar);
-            if (this.u != v0) {
-                this.u = v0;
-                this.e.setColor(v0);
-            }
-            Paint paint2 = this.d;
-            if (paint2 != null && this.t != v02) {
-                this.t = v02;
-                paint2.setColor(v02);
-            }
-        }
-        float f2 = this.l;
-        if (f2 == 1.0f) {
-            b(canvas);
+    public final void a() {
+        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
             return;
         }
-        int i2 = this.c;
-        if (i2 == 0 || i2 == 1) {
-            e(this.s);
-            float f3 = (this.s / 2.0f) + this.A;
-            float f4 = this.x / 2.0f;
-            canvas.save();
-            int i3 = this.c;
-            float f5 = this.l;
-            if (i3 != 0) {
-                f5 = 1.0f - f5;
-            }
-            canvas.scale(f5, f5, f3, f4);
-            b(canvas);
-            canvas.restore();
-            return;
-        }
-        float f6 = f2 * 2.0f;
-        if (f6 > 1.0f) {
-            f6 = 1.0f;
-        }
-        float L = (this.x - gl.L(23.0f)) / 2.0f;
-        int i4 = this.s;
-        int i5 = this.r;
-        float A = i4 == i5 ? i4 : tb4.A(1.0f, f6, i5, i4 * f6);
-        e(A);
-        if (this.j) {
-            float f7 = this.l;
-            f = ((f7 <= 0.5f ? s33.g.getInterpolation(f7 * 2.0f) : s33.i.getInterpolation(1.0f - ((f7 - 0.5f) * 2.0f))) * 0.1f) + 1.0f;
-        } else {
-            f = 1.0f;
-        }
-        float f8 = this.B;
-        RectF rectF = this.f;
-        rectF.set(f8, L, A + f8 + gl.L(11.0f), gl.L(23.0f) + L);
-        canvas.save();
-        canvas.scale(f, f, rectF.centerX(), rectF.centerY());
-        if (this.b != 1.0f) {
-            canvas.save();
-            float f9 = this.b;
-            canvas.scale(f9, f9, rectF.centerX(), rectF.centerY());
-            z = true;
-        } else {
-            z = false;
-        }
-        if (this.E && (paint = this.d) != null) {
-            float f10 = gl.p * 11.5f;
-            canvas.drawRoundRect(rectF, f10, f10, paint);
-            if (this.g && bkb.b1()) {
-                float f11 = 11.5f * gl.p;
-                canvas.drawRoundRect(rectF, f11, f11, bkb.g2);
-            }
-        }
-        if (z) {
-            canvas.restore();
-        }
-        canvas.clipRect(rectF);
-        boolean z2 = this.C != this.j;
-        if (this.q != null) {
-            canvas.save();
-            float f12 = this.A;
-            float L2 = gl.L(4.0f) + L;
-            int L3 = gl.L(13.0f);
-            if (!z2) {
-                L3 = -L3;
-            }
-            canvas.translate(f12, tb4.A(1.0f, f6, L3, L2));
-            this.e.setAlpha((int) (f6 * 255.0f));
-            this.q.draw(canvas);
-            canvas.restore();
-        } else if (this.n != null) {
-            canvas.save();
-            float f13 = this.A;
-            float L4 = gl.L(4.0f) + L;
-            int L5 = gl.L(13.0f);
-            if (!z2) {
-                L5 = -L5;
-            }
-            canvas.translate(f13, tb4.A(1.0f, f6, L5, L4));
-            this.e.setAlpha((int) (f6 * 255.0f));
-            this.n.draw(canvas);
-            canvas.restore();
-        }
-        if (this.o != null) {
-            canvas.save();
-            canvas.translate(this.A, ((z2 ? -gl.L(13.0f) : gl.L(13.0f)) * f6) + gl.L(4.0f) + L);
-            this.e.setAlpha((int) ((1.0f - f6) * 255.0f));
-            this.o.draw(canvas);
-            canvas.restore();
-        }
-        if (this.p != null) {
-            canvas.save();
-            canvas.translate(this.A, L + gl.L(4.0f));
-            this.e.setAlpha(kk7.d4);
-            this.p.draw(canvas);
-            canvas.restore();
-        }
-        this.e.setAlpha(kk7.d4);
-        canvas.restore();
+        b(this.a);
+        this.b = true;
     }
 
-    public final void b(Canvas canvas) {
-        boolean z;
-        float L = (this.x - gl.L(23.0f)) / 2.0f;
-        e(this.s);
-        float f = this.B;
-        RectF rectF = this.f;
-        rectF.set(f, L, this.s + f + gl.L(11.0f), gl.L(23.0f) + L);
-        if (this.d != null && this.E) {
-            if (this.b != 1.0f) {
-                canvas.save();
-                float f2 = this.b;
-                canvas.scale(f2, f2, rectF.centerX(), rectF.centerY());
-                z = true;
+    @Override // android.graphics.Path
+    public final void addRect(RectF rectF, Path.Direction direction) {
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            float f = rectF.left;
+            int i = this.e;
+            float f2 = f - i;
+            float f3 = rectF.top;
+            int i2 = this.f;
+            super.addRect(f2, f3 - i2, rectF.right + i, rectF.bottom + i2, direction);
+            return;
+        }
+        ArrayList arrayList = this.a;
+        if (arrayList.size() <= 0 || !((RectF) c00.g(1, arrayList)).contains(rectF)) {
+            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) c00.g(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) c00.g(1, arrayList)).bottom) > this.d) {
+                ArrayList arrayList2 = g;
+                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
+                rectF2.set(rectF);
+                arrayList.add(rectF2);
             } else {
-                z = false;
+                ((RectF) c00.g(1, arrayList)).union(rectF);
             }
-            float f3 = gl.p * 11.5f;
-            canvas.drawRoundRect(rectF, f3, f3, this.d);
-            if (this.g && bkb.b1()) {
-                float f4 = 11.5f * gl.p;
-                canvas.drawRoundRect(rectF, f4, f4, bkb.g2);
-            }
-            if (z) {
-                canvas.restore();
-            }
-        }
-        if (this.n != null) {
-            canvas.save();
-            canvas.translate(this.A, L + gl.L(4.0f));
-            this.n.draw(canvas);
-            canvas.restore();
+            this.b = false;
         }
     }
 
-    public final void c(int i, boolean z) {
-        View view;
-        View view2;
-        String o0 = this.a ? gl.o0(i, 0) : String.valueOf(i);
-        if (TextUtils.equals(o0, this.i)) {
+    public final void b(List list) {
+        if (list.isEmpty()) {
             return;
         }
-        ValueAnimator valueAnimator = this.k;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (i > 0 && this.F && (view2 = this.G) != null) {
-            view2.setVisibility(0);
-        }
-        boolean z2 = Math.abs(i - this.h) > 99 ? false : z;
-        byte b = 1;
-        if (!z2) {
-            this.h = i;
-            this.i = o0;
-            if (i == 0) {
-                if (!this.F || (view = this.G) == null) {
-                    return;
-                }
-                view.setVisibility(8);
-                return;
-            }
-            this.s = Math.max(gl.L(12.0f), (int) Math.ceil(this.e.measureText(o0.toString())));
-            StaticLayout staticLayout = new StaticLayout(o0, this.e, this.s, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-            this.n = staticLayout;
-            this.m = staticLayout.getLineCount() >= 1 ? this.n.getLineWidth(0) : 0.0f;
-            View view3 = this.G;
-            if (view3 != null) {
-                view3.invalidate();
-                return;
-            }
+        boolean z = false;
+        if (list.size() == 1) {
+            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
             return;
         }
-        if (z2) {
-            ValueAnimator valueAnimator2 = this.k;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-            }
-            this.l = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.k = ofFloat;
-            ofFloat.addUpdateListener(new uz1(this, (byte) 14));
-            this.k.addListener(new im2(this, b));
-            if (this.h <= 0) {
-                this.c = 0;
-                this.k.setDuration(220L);
-                this.k.setInterpolator(new OvershootInterpolator());
-            } else if (i == 0) {
-                this.c = 1;
-                this.k.setDuration(150L);
-                this.k.setInterpolator(s33.f);
-            } else {
-                this.c = 2;
-                this.k.setDuration(430L);
-                this.k.setInterpolator(s33.f);
-            }
-            if (this.n != null) {
-                String str = this.i;
-                if (str.length() == o0.length()) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(o0);
-                    SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(o0);
-                    for (int i2 = 0; i2 < str.length(); i2++) {
-                        if (str.charAt(i2) == o0.charAt(i2)) {
-                            int i3 = i2 + 1;
-                            spannableStringBuilder.setSpan(new lx2(b), i2, i3, 0);
-                            spannableStringBuilder2.setSpan(new lx2(b), i2, i3, 0);
-                        } else {
-                            spannableStringBuilder3.setSpan(new lx2(b), i2, i2 + 1, 0);
+        RectF rectF = (RectF) list.get(0);
+        int size = list.size() - 1;
+        super.moveTo(rectF.left - this.e, rectF.top - this.f);
+        for (int i = 1; i < list.size(); i++) {
+            RectF rectF2 = (RectF) list.get(i);
+            if (rectF2.width() != 0.0f) {
+                float f = rectF.bottom;
+                int i2 = this.f;
+                float f2 = f + i2;
+                float f3 = rectF2.top;
+                if (f2 >= f3 - i2) {
+                    float f4 = rectF.left;
+                    if (f4 <= rectF2.right) {
+                        float f5 = rectF.right;
+                        float f6 = rectF2.left;
+                        if (f5 >= f6) {
+                            if (f4 != f6) {
+                                super.lineTo(f4 - this.e, f3);
+                                super.lineTo(rectF2.left - this.e, rectF2.top);
+                            }
+                            rectF = rectF2;
                         }
                     }
-                    int max = Math.max(gl.L(12.0f), (int) Math.ceil(this.e.measureText(str.toString())));
-                    TextPaint textPaint = this.e;
-                    Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-                    this.o = new StaticLayout(spannableStringBuilder, textPaint, max, alignment, 1.0f, 0.0f, false);
-                    this.p = new StaticLayout(spannableStringBuilder3, this.e, max, alignment, 1.0f, 0.0f, false);
-                    this.q = new StaticLayout(spannableStringBuilder2, this.e, max, alignment, 1.0f, 0.0f, false);
-                } else {
-                    this.o = this.n;
                 }
+                z = true;
+                size = i;
+                break;
             }
-            this.r = this.s;
-            this.j = i > this.h;
-            this.k.start();
         }
-        if (i > 0) {
-            this.s = Math.max(gl.L(12.0f), (int) Math.ceil(this.e.measureText(o0.toString())));
-            StaticLayout staticLayout2 = new StaticLayout(o0, this.e, this.s, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-            this.n = staticLayout2;
-            this.m = staticLayout2.getLineCount() >= 1 ? this.n.getLineWidth(0) : 0.0f;
+        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
+        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
+        for (int i3 = size - 1; i3 >= 0; i3--) {
+            RectF rectF3 = (RectF) list.get(i3);
+            if (rectF3.width() != 0.0f) {
+                float f7 = rectF.right;
+                if (f7 != rectF3.right) {
+                    super.lineTo(f7 + this.e, rectF.top);
+                    super.lineTo(rectF3.right + this.e, rectF.top);
+                }
+                rectF = rectF3;
+            }
         }
-        this.h = i;
-        this.i = o0;
-        View view4 = this.G;
-        if (view4 != null) {
-            view4.invalidate();
+        super.lineTo(rectF.right + this.e, rectF.top - this.f);
+        super.close();
+        if (z) {
+            b(list.subList(size, list.size()));
         }
     }
 
-    public final void d(int i, int i2) {
-        if (i != this.x) {
-            int i3 = this.h;
-            this.h = -1;
-            c(i3, this.c == 0);
-            this.x = i;
+    @Override // android.graphics.Path
+    public void reset() {
+        super.reset();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
         }
-        this.y = i2;
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            arrayList = new ArrayList(arrayList2.size());
+            g = arrayList;
+        }
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
     }
 
-    public final void e(float f) {
-        float f2;
-        float L = this.E ? gl.L(5.5f) : 0.0f;
-        int i = this.z;
-        if (i == 5) {
-            float f3 = this.y - L;
-            this.A = f3;
-            float f4 = this.D;
-            if (f4 != 0.0f) {
-                f2 = f3 - Math.max((f / 2.0f) + f4, f);
-                this.A = f2;
-            } else {
-                f2 = f3 - f;
-                this.A = f2;
-            }
-        } else if (i == 3) {
-            this.A = L;
-            f2 = L;
-        } else {
-            f2 = (int) ((this.y - f) / 2.0f);
-            this.A = f2;
+    @Override // android.graphics.Path
+    public final void rewind() {
+        super.rewind();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
         }
-        this.B = f2 - L;
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            arrayList = new ArrayList(arrayList2.size());
+            g = arrayList;
+        }
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
+    }
+
+    public jx2() {
+    }
+
+    @Override // android.graphics.Path
+    public void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
+        RectF rectF;
+        if (Build.VERSION.SDK_INT >= 34 && this.c) {
+            ArrayList arrayList = this.a;
+            if (arrayList.size() <= 0 || !((RectF) c00.g(1, arrayList)).contains(f, f2, f3, f4)) {
+                if (arrayList.size() > 0 && Math.abs(f2 - ((RectF) c00.g(1, arrayList)).top) <= this.d && Math.abs(f4 - ((RectF) c00.g(1, arrayList)).bottom) <= this.d) {
+                    ((RectF) c00.g(1, arrayList)).union(f, f2, f3, f4);
+                } else {
+                    ArrayList arrayList2 = g;
+                    if (arrayList2 != null && arrayList2.size() > 0) {
+                        rectF = (RectF) g.remove(0);
+                    } else {
+                        rectF = new RectF();
+                    }
+                    rectF.set(f, f2, f3, f4);
+                    arrayList.add(rectF);
+                }
+                this.b = false;
+                return;
+            }
+            return;
+        }
+        int i = this.e;
+        int i2 = this.f;
+        super.addRect(f - i, f2 - i2, f3 + i, f4 + i2, direction);
     }
 }

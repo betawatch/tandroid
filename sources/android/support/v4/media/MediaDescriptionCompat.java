@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class MediaDescriptionCompat implements Parcelable {
-    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new x21((byte) 27);
+    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new g31((byte) 27);
     public final String a;
     public final CharSequence b;
     public final CharSequence c;
@@ -42,22 +42,22 @@ public final class MediaDescriptionCompat implements Parcelable {
             return null;
         }
         MediaDescription mediaDescription = (MediaDescription) obj;
-        String g = iq6.g(mediaDescription);
-        CharSequence i = iq6.i(mediaDescription);
-        CharSequence h = iq6.h(mediaDescription);
-        CharSequence c = iq6.c(mediaDescription);
-        Bitmap e = iq6.e(mediaDescription);
-        Uri f = iq6.f(mediaDescription);
-        Bundle d = iq6.d(mediaDescription);
+        String g = ms6.g(mediaDescription);
+        CharSequence i = ms6.i(mediaDescription);
+        CharSequence h = ms6.h(mediaDescription);
+        CharSequence c = ms6.c(mediaDescription);
+        Bitmap e = ms6.e(mediaDescription);
+        Uri f = ms6.f(mediaDescription);
+        Bundle d = ms6.d(mediaDescription);
         if (d != null) {
-            d = mv6.v0(d);
+            d = rx6.B0(d);
         }
         Uri uri = d != null ? (Uri) d.getParcelable("android.support.v4.media.description.MEDIA_URI") : null;
         if (uri != null) {
             if (d.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") && d.size() == 2) {
                 bundle = null;
                 if (uri == null) {
-                    uri = jq6.a(mediaDescription);
+                    uri = ns6.a(mediaDescription);
                 }
                 MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g, i, h, c, e, f, bundle, uri);
                 mediaDescriptionCompat.r = mediaDescription;
@@ -79,16 +79,16 @@ public final class MediaDescriptionCompat implements Parcelable {
         if (mediaDescription != null) {
             return mediaDescription;
         }
-        MediaDescription.Builder b = iq6.b();
-        iq6.n(b, this.a);
-        iq6.p(b, this.b);
-        iq6.o(b, this.c);
-        iq6.j(b, this.d);
-        iq6.l(b, this.e);
-        iq6.m(b, this.f);
-        iq6.k(b, this.h);
-        jq6.b(b, this.n);
-        MediaDescription a = iq6.a(b);
+        MediaDescription.Builder b = ms6.b();
+        ms6.n(b, this.a);
+        ms6.p(b, this.b);
+        ms6.o(b, this.c);
+        ms6.j(b, this.d);
+        ms6.l(b, this.e);
+        ms6.m(b, this.f);
+        ms6.k(b, this.h);
+        ns6.b(b, this.n);
+        MediaDescription a = ms6.a(b);
         this.r = a;
         return a;
     }

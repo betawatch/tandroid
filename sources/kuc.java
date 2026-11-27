@@ -1,43 +1,55 @@
 // default package
 
-import android.content.pm.PackageInfo;
-import android.os.Build;
-import java.lang.reflect.InvocationTargetException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import android.content.Intent;
+import android.net.Uri;
+import java.util.ArrayList;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kuc extends co {
-    public final Pattern d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class kuc implements rl3, fd {
+    public final /* synthetic */ muc a;
 
-    public kuc() {
-        super("ALGORITHMIC_DARKENING", "ALGORITHMIC_DARKENING");
-        this.d = Pattern.compile("\\A\\d+");
+    public /* synthetic */ kuc(muc mucVar) {
+        this.a = mucVar;
     }
 
-    @Override // co
-    public final boolean b() {
-        int i;
-        PackageInfo packageInfo;
-        boolean b = super.b();
-        if (!b || (i = Build.VERSION.SDK_INT) >= 29) {
-            return b;
+    @Override // rl3
+    public final void a(zh6 zh6Var, ArrayList arrayList) {
+        muc mucVar = this.a;
+        ArrayList arrayList2 = mucVar.s;
+        if (mucVar.r) {
+            return;
         }
-        boolean z = juc.a;
-        if (i >= 26) {
-            packageInfo = no5.c();
-        } else {
-            try {
-                packageInfo = juc.b();
-            } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
-                packageInfo = null;
+        arrayList2.clear();
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            sl3 sl3Var = (sl3) obj;
+            TLObject tLObject = sl3Var.a;
+            if ((tLObject instanceof TLRPC.User) && muc.d0((TLRPC.User) tLObject)) {
+                arrayList2.add((TLRPC.User) sl3Var.a);
             }
         }
-        if (packageInfo == null) {
-            return false;
+        wa waVar = mucVar.a;
+        if (waVar != null) {
+            waVar.g3.O(true);
         }
-        Matcher matcher = this.d.matcher(packageInfo.versionName);
-        return matcher.find() && Integer.parseInt(packageInfo.versionName.substring(matcher.start(), matcher.end())) >= 105;
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        muc mucVar = this.a;
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + a.b.getPackageName()));
+            mucVar.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 }

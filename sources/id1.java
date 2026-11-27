@@ -1,66 +1,246 @@
 // default package
 
-import android.os.SystemClock;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.LinkProperties;
+import android.net.Network;
+import android.net.NetworkRequest;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
 import android.text.TextUtils;
-import java.util.AbstractCollection;
-import java.util.ArrayList;
+import android.util.Log;
+import j$.util.DesugarCollections;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Random;
-import java.util.regex.Pattern;
-import org.json.JSONObject;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.messenger.chromecast.ChromecastOptionsProvider;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class id1 {
-    public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
-    public static final Random b = new Random(SystemClock.elapsedRealtime());
+public final class id1 {
+    public static final he6 l = new he6("CastContext", null);
+    public static final Object m = new Object();
+    public static volatile id1 n;
+    public final Context a;
+    public final fcd b;
+    public final baa c;
+    public final pad d;
+    public final ld1 e;
+    public final qa4 f;
+    public final ibd g;
+    public final kfd h;
+    public final List i;
+    public final pid j;
+    public final xbd k;
 
-    public static String a(String str, JSONObject jSONObject) {
-        if (jSONObject == null || !jSONObject.has(str)) {
+    public id1(Context context, ld1 ld1Var, List list, hhd hhdVar, qa4 qa4Var) {
+        jdd jddVar;
+        gfd gfdVar;
+        LinkProperties linkProperties;
+        this.a = context;
+        this.e = ld1Var;
+        this.f = qa4Var;
+        this.i = list;
+        this.h = new kfd(context);
+        this.j = hhdVar.e;
+        if (TextUtils.isEmpty(ld1Var.a)) {
+            this.k = null;
+        } else {
+            this.k = new xbd(context, ld1Var, hhdVar);
+        }
+        HashMap hashMap = new HashMap();
+        xbd xbdVar = this.k;
+        if (xbdVar != null) {
+            hashMap.put(xbdVar.b, xbdVar.c);
+        }
+        byte b = 1;
+        if (list != null) {
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                xbd xbdVar2 = (xbd) it.next();
+                xve.i(xbdVar2, "Additional SessionProvider must not be null.");
+                String str = xbdVar2.b;
+                xve.g(str, "Category for SessionProvider must not be null or empty string.");
+                xve.a("SessionProvider for category " + str + " already added", !hashMap.containsKey(str));
+                hashMap.put(str, xbdVar2.c);
+            }
+        }
+        ld1Var.G = new f1f(1);
+        try {
+            fcd a = mbd.a(context, ld1Var, hhdVar, hashMap);
+            this.b = a;
+            try {
+                vbd vbdVar = (vbd) a;
+                Parcel T = vbdVar.T(vbdVar.R(), 6);
+                IBinder readStrongBinder = T.readStrongBinder();
+                if (readStrongBinder == null) {
+                    jddVar = null;
+                } else {
+                    IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.IDiscoveryManager");
+                    jddVar = queryLocalInterface instanceof jdd ? (jdd) queryLocalInterface : new jdd(readStrongBinder, "com.google.android.gms.cast.framework.IDiscoveryManager", (byte) 3);
+                }
+                T.recycle();
+                this.d = new pad(jddVar);
+                try {
+                    vbd vbdVar2 = (vbd) a;
+                    byte b2 = 5;
+                    Parcel T2 = vbdVar2.T(vbdVar2.R(), 5);
+                    IBinder readStrongBinder2 = T2.readStrongBinder();
+                    if (readStrongBinder2 == null) {
+                        gfdVar = null;
+                    } else {
+                        IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("com.google.android.gms.cast.framework.ISessionManager");
+                        gfdVar = queryLocalInterface2 instanceof gfd ? (gfd) queryLocalInterface2 : new gfd(readStrongBinder2, "com.google.android.gms.cast.framework.ISessionManager", (byte) 3);
+                    }
+                    T2.recycle();
+                    baa baaVar = new baa(gfdVar, context);
+                    this.c = baaVar;
+                    xve.g("PrecacheManager", "The log tag cannot be null or empty.");
+                    pid pidVar = this.j;
+                    if (pidVar != null) {
+                        pidVar.f = baaVar;
+                        pidVar.c.post(new bid(pidVar, b));
+                    }
+                    ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(3);
+                    etd etdVar = new etd(context, newFixedThreadPool instanceof dhf ? (dhf) newFixedThreadPool : newFixedThreadPool instanceof ScheduledExecutorService ? new qhf((ScheduledExecutorService) newFixedThreadPool) : new dhf(newFixedThreadPool));
+                    xve.g("BaseNetUtils", "The log tag cannot be null or empty.");
+                    ConnectivityManager connectivityManager = etdVar.c;
+                    etd.j.b("Start monitoring connectivity changes", new Object[0]);
+                    if (!etdVar.f && connectivityManager != null && sr.b(etdVar.g, "android.permission.ACCESS_NETWORK_STATE") == 0) {
+                        Network activeNetwork = connectivityManager.getActiveNetwork();
+                        if (activeNetwork != null && (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) != null) {
+                            etdVar.a(activeNetwork, linkProperties);
+                        }
+                        connectivityManager.registerNetworkCallback(new NetworkRequest.Builder().addTransportType(1).build(), etdVar.b);
+                        etdVar.f = true;
+                    }
+                    ibd ibdVar = new ibd();
+                    this.g = ibdVar;
+                    try {
+                        vbd vbdVar3 = (vbd) a;
+                        Parcel R = vbdVar3.R();
+                        ald.d(R, ibdVar);
+                        vbdVar3.V(R, 3);
+                        ibdVar.b.add(this.h.a);
+                        if (!DesugarCollections.unmodifiableList(ld1Var.x).isEmpty()) {
+                            he6 he6Var = l;
+                            Log.i(he6Var.a, he6Var.d("Setting Route Discovery for appIds: ".concat(String.valueOf(DesugarCollections.unmodifiableList(this.e.x))), new Object[0]));
+                            kfd kfdVar = this.h;
+                            List unmodifiableList = DesugarCollections.unmodifiableList(this.e.x);
+                            kfdVar.getClass();
+                            kfd.f.b(qd4.n(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
+                            Iterator it2 = unmodifiableList.iterator();
+                            while (it2.hasNext()) {
+                                linkedHashSet.add(f6f.a((String) it2.next()));
+                            }
+                            kfd.f.b("resetting routes. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(kfdVar.c.keySet())), new Object[0]);
+                            HashMap hashMap2 = new HashMap();
+                            synchronized (kfdVar.c) {
+                                for (String str2 : linkedHashSet) {
+                                    bfd bfdVar = (bfd) kfdVar.c.get(f6f.a(str2));
+                                    if (bfdVar != null) {
+                                        hashMap2.put(str2, bfdVar);
+                                    }
+                                }
+                                kfdVar.c.clear();
+                                kfdVar.c.putAll(hashMap2);
+                            }
+                            kfd.f.b("Routes reset. appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(kfdVar.c.keySet())), new Object[0]);
+                            synchronized (kfdVar.d) {
+                                kfdVar.d.clear();
+                                kfdVar.d.addAll(linkedHashSet);
+                            }
+                            kfdVar.m();
+                        }
+                        qa4Var.m(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new xae(this));
+                        wjb b3 = xjb.b();
+                        b3.a = new g9d(qa4Var, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"}, b2);
+                        b3.c = new a94[]{zid.d};
+                        b3.b = false;
+                        b3.d = (char) 8427;
+                        qa4Var.e(0, b3.a()).addOnSuccessListener(new s9d(this));
+                    } catch (RemoteException e) {
+                        su3.f("Failed to call addAppVisibilityListener", e);
+                        throw null;
+                    }
+                } catch (RemoteException e2) {
+                    su3.f("Failed to call getSessionManagerImpl", e2);
+                    throw null;
+                }
+            } catch (RemoteException e3) {
+                su3.f("Failed to call getDiscoveryManagerImpl", e3);
+                throw null;
+            }
+        } catch (RemoteException e4) {
+            su3.f("Failed to call newCastContextImpl", e4);
+            throw null;
+        }
+    }
+
+    public static id1 c(Context context) {
+        xve.e("Must be called from the main thread.");
+        if (n == null) {
+            synchronized (m) {
+                if (n == null) {
+                    Context applicationContext = context.getApplicationContext();
+                    ChromecastOptionsProvider d = d(applicationContext);
+                    ld1 castOptions = d.getCastOptions(applicationContext);
+                    qa4 qa4Var = new qa4(applicationContext, qa4.u, wn.g, g05.c);
+                    try {
+                        n = new id1(applicationContext, castOptions, d.getAdditionalSessionProviders(applicationContext), new hhd(applicationContext, lw6.d(applicationContext), castOptions, qa4Var), qa4Var);
+                    } catch (zg7 e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+        return n;
+    }
+
+    public static ChromecastOptionsProvider d(Context context) {
+        try {
+            di4 a = h3d.a(context);
+            Bundle bundle = a.a.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
+            if (bundle == null) {
+                l.c(new Object[0]);
+            }
+            String string = bundle.getString("com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME");
+            if (string != null) {
+                return (ChromecastOptionsProvider) Class.forName(string).asSubclass(ChromecastOptionsProvider.class).getDeclaredConstructor(null).newInstance(null);
+            }
+            throw new IllegalStateException("The fully qualified name of the implementation of OptionsProvider must be provided as a metadata in the AndroidManifest.xml with key com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME.");
+        } catch (PackageManager.NameNotFoundException | ClassNotFoundException | IllegalAccessException | InstantiationException | NoSuchMethodException | NullPointerException | InvocationTargetException e) {
+            su3.f("Failed to initialize CastContext.", e);
             return null;
         }
-        return jSONObject.optString(str);
     }
 
-    public static void b(String str) {
-        if (TextUtils.isEmpty(str)) {
-            w26.j("Namespace cannot be null or empty");
-            return;
-        }
-        if (str.length() > 128) {
-            w26.j("Invalid namespace length");
-        } else if (!str.startsWith("urn:x-cast:")) {
-            w26.j("Namespace must begin with the prefix \"urn:x-cast:\"");
-        } else {
-            if (str.length() != 11) {
-                return;
-            }
-            w26.j("Namespace must begin with the prefix \"urn:x-cast:\" and have non-empty suffix");
+    public final dw6 a() {
+        xve.e("Must be called from the main thread.");
+        try {
+            vbd vbdVar = (vbd) this.b;
+            Parcel T = vbdVar.T(vbdVar.R(), 1);
+            Bundle bundle = (Bundle) ald.a(T, Bundle.CREATOR);
+            T.recycle();
+            return dw6.b(bundle);
+        } catch (RemoteException e) {
+            l.a(e, "Unable to call %s on %s.", "getMergedSelectorAsBundle", fcd.class.getSimpleName());
+            return null;
         }
     }
 
-    public static ArrayList c(int[] iArr) {
-        ArrayList arrayList = new ArrayList();
-        int length = iArr.length;
-        int i = 0;
-        while (i < length) {
-            i = tb4.g(iArr[i], i, 1, arrayList);
-        }
-        return arrayList;
-    }
-
-    public static boolean d(Object obj, Object obj2) {
-        return obj == null ? obj2 == null : obj2 != null && obj.equals(obj2);
-    }
-
-    public static int[] e(AbstractCollection abstractCollection) {
-        int[] iArr = new int[abstractCollection.size()];
-        Iterator it = abstractCollection.iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            iArr[i] = ((Integer) it.next()).intValue();
-            i++;
-        }
-        return iArr;
+    public final baa b() {
+        xve.e("Must be called from the main thread.");
+        return this.c;
     }
 }

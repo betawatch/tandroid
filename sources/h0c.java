@@ -1,27 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class h0c implements zw5, yw5 {
-    public final /* synthetic */ b1c a;
-    public final /* synthetic */ k27 b;
-    public final /* synthetic */ m11 c;
-    public final /* synthetic */ go2 d;
+import android.widget.EditText;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ h0c(b1c b1cVar, k27 k27Var, m11 m11Var, go2 go2Var) {
-        this.a = b1cVar;
-        this.b = k27Var;
-        this.c = m11Var;
-        this.d = go2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class h0c extends v79 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ n0c c;
+
+    public h0c(n0c n0cVar, int i, long j) {
+        this.c = n0cVar;
+        this.a = i;
+        this.b = j;
     }
 
-    @Override // zw5
-    public final void a(String str) {
-        gl.c3(new tsa(this.a, this.b, str, this.c, this.d, (byte) 7));
+    @Override // v79
+    public final void a(RecyclerView recyclerView, int i) {
+        EditText editText = this.c.w;
+        if (i == 1 && editText.hasFocus()) {
+            hl.t1(editText);
+            editText.clearFocus();
+        }
     }
 
-    @Override // yw5
-    public final void n(Exception exc) {
-        gl.c3(new exa((Object) this.a, (Object) this.b, (Object) this.c, (Object) this.d, (byte) 15));
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        n0c n0cVar = this.c;
+        n0cVar.o();
+        x46 x46Var = (x46) recyclerView.getLayoutManager();
+        if (x46Var == null || x46Var.M0() < n0cVar.s.c.size() - 3) {
+            return;
+        }
+        if (n0cVar.i()) {
+            n0cVar.j();
+            return;
+        }
+        boolean z = n0cVar.d;
+        int i3 = this.a;
+        if (z) {
+            uc7.s1(i3).F1().g(false);
+            return;
+        }
+        qyb qybVar = uc7.s1(i3).g4;
+        long j = -this.b;
+        if (qybVar.e(j)) {
+            return;
+        }
+        qybVar.o(j);
     }
 }

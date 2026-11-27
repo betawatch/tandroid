@@ -1,167 +1,96 @@
 // default package
 
-import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vy1 extends x7c {
-    public final int N1;
-    public final my6 O1;
-    public final pi4 P1;
-    public final zya Q1;
-    public final zya R1;
-    public float S1;
-    public boolean T1;
-    public int U1;
-    public final /* synthetic */ xy1 V1;
+public final class vy1 extends yc8 {
+    public boolean a;
+    public final /* synthetic */ no6 b;
+    public final /* synthetic */ File c;
+    public final /* synthetic */ wy1 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vy1(xy1 xy1Var, d dVar, long j) {
-        super(dVar.getCurrentAccount(), dVar.getResourceProvider(), dVar.getParentActivity());
-        this.V1 = xy1Var;
-        this.N1 = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        int i = bkb.Z6;
-        s0(bkb.v0(i, this.J0));
-        this.F1 = i;
-        this.E1 = i;
-        H0(0.0f);
-        M(i);
-        this.A1 = false;
-        this.B1 = false;
-        my6 my6Var = new my6(this, dVar, this.c, j);
-        this.O1 = my6Var;
-        my6Var.B = false;
-        this.q0 = (byte) 75;
-        this.v1.K.setHint(k96.M0(2131745566, null));
-        qy6 qy6Var = my6Var.f;
-        this.p1 = qy6Var;
-        this.o1 = qy6Var;
-        this.n1.setAdapter(qy6Var);
-        this.n1.r1();
-        ns9 ns9Var = this.n1;
-        my6Var.p = ns9Var;
-        ns9Var.setOnItemClickListener(new bf4(my6Var, (byte) 10));
-        i49 onScrollListener = ns9Var.getOnScrollListener();
-        if (onScrollListener == null) {
-            ns9Var.setOnScrollListener(my6Var.D);
-        } else {
-            ns9Var.setOnScrollListener(new si1(my6Var, onScrollListener, (byte) 5));
-        }
-        int indexOfChild = ((ViewGroup) this.n1.getParent()).indexOfChild(this.n1);
-        pi4 b = my6Var.b();
-        this.P1 = b;
-        this.b.addView(b, indexOfChild, nme.c(-1.0f, -1));
-        zya a = my6Var.a();
-        this.Q1 = a;
-        this.b.addView(a, indexOfChild, nme.c(-1.0f, -1));
-        zya c = my6Var.c();
-        this.R1 = c;
-        this.b.addView(c, indexOfChild, nme.c(-1.0f, -1));
-        my6Var.e();
+    public vy1(wy1 wy1Var, no6 no6Var, File file) {
+        this.d = wy1Var;
+        this.b = no6Var;
+        this.c = file;
     }
 
-    @Override // x7c
-    public final void E0(MotionEvent motionEvent, l7 l7Var) {
-        d dVar;
-        int action = motionEvent.getAction();
-        my6 my6Var = this.O1;
-        if (action == 0) {
-            this.S1 = this.x1;
-            my6Var.i(false);
-        } else if (motionEvent.getAction() == 1 && Math.abs(this.x1 - this.S1) < this.N1 && !this.T1) {
-            Activity W = gl.W(getContext());
-            if (W instanceof LaunchActivity) {
-                LaunchActivity launchActivity = (LaunchActivity) W;
-                dVar = (d) launchActivity.N().getFragmentStack().get(launchActivity.N().getFragmentStack().size() - 1);
-            } else {
-                dVar = null;
-            }
-            if (dVar instanceof mu1) {
-                boolean U9 = ((mu1) dVar).U9();
-                this.T1 = true;
-                gl.d3(new oh6((Object) this, (Object) l7Var, (byte) 18), U9 ? 200L : 0L);
-            } else {
-                this.T1 = true;
-                v0(true);
-                l7Var.requestFocus();
-                gl.c3(new ar5(l7Var, (byte) 2));
-            }
-        }
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            my6Var.i(true);
-        }
-    }
-
-    @Override // x7c
-    public final void G0(String str) {
-        this.O1.j(str);
-    }
-
-    @Override // x7c
-    public final void I0(int i) {
-        super.I0(i);
-        this.P1.setTranslationY(this.m1.getMeasuredHeight() + i);
-        float f = i;
-        this.Q1.setTranslationY(f);
-        this.R1.setTranslationY(f);
-    }
-
-    @Override // x7c
-    public final void L0() {
-        ns9 ns9Var = this.n1;
-        if (ns9Var.getChildCount() > 0) {
-            super.L0();
+    @Override // yc8, ed8
+    public final void F() {
+        if (this.a) {
             return;
         }
-        int paddingTop = ns9Var.getVisibility() == 0 ? ns9Var.getPaddingTop() - gl.L(8.0f) : 0;
-        if (this.x1 != paddingTop) {
-            this.x1 = paddingTop;
-            I0(paddingTop);
+        try {
+            this.c.delete();
+        } catch (Throwable unused) {
         }
     }
 
-    @Override // x7c, fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        xy1 xy1Var = this.V1;
-        vy1 vy1Var = xy1Var.i;
-        if (vy1Var != null && !vy1Var.O1.b) {
-            xy1Var.i = null;
+    @Override // yc8, ed8
+    public final void L(int i, oec oecVar, boolean z, int i2, int i3, boolean z2) {
+        r47 threadMessage;
+        String str;
+        zu1 zu1Var;
+        ChatActivityEnterView chatActivityEnterView = this.d.g2;
+        ou1 ou1Var = chatActivityEnterView.K3;
+        if (ou1Var != null && (zu1Var = chatActivityEnterView.E3) != null && ou1Var.f) {
+            zu1Var.uc();
+            return;
         }
-        super.dismiss();
-    }
-
-    @Override // fx0, android.app.Dialog
-    public final void onBackPressed() {
-        wy6 wy6Var = this.O1.s;
-        if (wy6Var != null) {
-            wy6Var.e(false);
+        ArrayList arrayList = new ArrayList();
+        q7a q7aVar = new q7a();
+        no6 no6Var = this.b;
+        if (no6Var.b || (str = no6Var.h) == null) {
+            String str2 = no6Var.I;
+            if (str2 != null) {
+                q7aVar.c = str2;
+            }
         } else {
-            super.onBackPressed();
+            q7aVar.c = str;
+        }
+        q7aVar.e = no6Var.c;
+        q7aVar.p = no6Var.d();
+        q7aVar.o = no6Var.b;
+        q7aVar.q = no6Var.j();
+        q7aVar.z = no6Var.m;
+        q7aVar.A = no6Var.P;
+        CharSequence charSequence = no6Var.a;
+        q7aVar.d = charSequence != null ? charSequence.toString() : null;
+        q7aVar.i = no6Var.n;
+        q7aVar.j = no6Var.r;
+        q7aVar.h = no6Var.x;
+        q7aVar.k = oecVar;
+        q7aVar.r = true;
+        arrayList.add(q7aVar);
+        no6Var.e();
+        this.a = true;
+        boolean h = r7a.h(q7aVar.d);
+        k5 k5Var = chatActivityEnterView.S;
+        b77 b77Var = null;
+        long j = chatActivityEnterView.F3;
+        r47 r47Var = chatActivityEnterView.I3;
+        threadMessage = chatActivityEnterView.getThreadMessage();
+        ou1 ou1Var2 = chatActivityEnterView.K3;
+        r47 r47Var2 = chatActivityEnterView.O2;
+        zu1 zu1Var2 = chatActivityEnterView.E3;
+        c5a X6 = zu1Var2 != null ? zu1Var2.X6() : null;
+        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
+        zu1 zu1Var3 = chatActivityEnterView.E3;
+        if (zu1Var3 != null) {
+            b77Var = zu1Var3.y5;
+        }
+        r7a.W(k5Var, arrayList, j, r47Var, threadMessage, null, ou1Var2, false, false, r47Var2, null, z, i2, i3, h, null, X6, 0L, false, 0L, sendMonoForumPeerId, b77Var, null, false);
+        xy1 xy1Var = chatActivityEnterView.O3;
+        if (xy1Var != null) {
+            xy1Var.x(null, true, i2, i3, 0L);
         }
     }
 
-    @Override // fx0
-    public final void p0() {
-        super.p0();
-        int v0 = bkb.v0(bkb.Z6, this.J0);
-        if (v0 != this.U1) {
-            this.U1 = v0;
-            s0(v0);
-        }
-    }
-
-    @Override // fx0, android.app.Dialog
-    public final void show() {
-        my6 my6Var = this.O1;
-        if (my6Var.b && this.x1 == 0) {
-            this.x1 = gl.L(8.0f);
-        }
-        super.show();
-        my6Var.b = false;
+    @Override // yc8, ed8
+    public final boolean h() {
+        return false;
     }
 }

@@ -1,33 +1,37 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ff8 {
-    public int a;
-    public ArrayList b;
-    public String c;
-    public final byte[] d;
-    public boolean e;
-    public int f = 10;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class ff8 {
+    public static final Method a;
 
-    public ff8(TLRPC.TL_messages_votesList tL_messages_votesList, byte[] bArr) {
-        this.a = tL_messages_votesList.count;
-        this.b = tL_messages_votesList.votes;
-        this.c = tL_messages_votesList.next_offset;
-        this.d = bArr;
-    }
-
-    public final int a() {
-        if (this.b.size() <= 15) {
-            return 0;
+    static {
+        Method method;
+        Method[] methods = Throwable.class.getMethods();
+        methods.getClass();
+        int length = methods.length;
+        int i = 0;
+        while (true) {
+            method = null;
+            if (i >= length) {
+                break;
+            }
+            Method method2 = methods[i];
+            if (ur5.a(method2.getName(), "addSuppressed")) {
+                Class<?>[] parameterTypes = method2.getParameterTypes();
+                parameterTypes.getClass();
+                if (ur5.a(parameterTypes.length == 1 ? parameterTypes[0] : null, Throwable.class)) {
+                    method = method2;
+                    break;
+                }
+            }
+            i++;
         }
-        return this.e ? 1 : 2;
-    }
-
-    public final int b() {
-        return this.e ? Math.min(this.f, this.b.size()) : this.b.size();
+        a = method;
+        int length2 = methods.length;
+        for (int i2 = 0; i2 < length2 && !ur5.a(methods[i2].getName(), "getSuppressed"); i2++) {
+        }
     }
 }

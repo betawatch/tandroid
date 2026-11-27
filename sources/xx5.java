@@ -1,99 +1,63 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class xx5 implements wi3 {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ TLRPC.User c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class xx5 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wy5 b;
 
-    public /* synthetic */ xx5(LaunchActivity launchActivity, String str, int i, TLRPC.User user) {
-        this.b = launchActivity;
-        this.d = str;
-        this.e = i;
-        this.c = user;
+    public /* synthetic */ xx5(wy5 wy5Var, byte b) {
+        this.a = b;
+        this.b = wy5Var;
     }
 
-    @Override // wi3
-    public final boolean G() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        return false;
-    }
-
-    @Override // wi3
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
-        byte b = this.a;
-        int i3 = this.e;
-        String str = this.d;
-        TLRPC.User user = this.c;
-        LaunchActivity launchActivity = this.b;
+        byte b2 = 0;
+        byte b3 = 1;
+        wy5 wy5Var = this.b;
         switch (b) {
             case 0:
-                String str2 = LaunchActivity.C1;
-                long j = ((zc7) arrayList.get(0)).a;
-                TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
-                TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
-                tL_inputMediaGame.id = tL_inputGameShortName;
-                tL_inputGameShortName.short_name = str;
-                tL_inputGameShortName.bot_id = na7.q1(i3).o1(user);
-                z3a.B(i3).o0(na7.q1(i3).h1(j), tL_inputMediaGame, 0L, 0L);
-                Bundle l = ir2.l("scrollToTopOnResume", true);
-                if (cf3.B(j)) {
-                    l.putInt("enc_id", (int) (j & 4294967295L));
-                } else if (cf3.D(j)) {
-                    l.putLong("user_id", j);
+                if (!wy5Var.D0) {
+                    wy5Var.E0(0);
+                    break;
                 } else {
-                    l.putLong("chat_id", -j);
+                    wy5Var.t0(null, true);
+                    break;
                 }
-                if (na7.q1(i3).A(l, cj3Var, null, null)) {
-                    kk7.f(i3).k(4, new Object[0]);
-                    ((ActionBarLayout) launchActivity.N()).U(new mu1(l), true, false);
+            case 1:
+                int i = wy5Var.Q0;
+                wy5Var.E0(1);
+                wy5Var.postDelayed(new by5(wy5Var, b3), 350L);
+                ly5 ly5Var = new ly5(wy5Var, wy5Var.getContext(), wy5Var.A1);
+                wy5Var.K1 = ly5Var;
+                ly5Var.y1 = new ey5(wy5Var);
+                ly5Var.K0(new p12(wy5Var, (byte) 4));
+                ly5Var.setOnDismissListener(new gy5(wy5Var, ly5Var, i, b2));
+                ly5Var.show();
+                wy5Var.q0(true);
+                break;
+            case 2:
+                wy5Var.g0();
+                n8 n8Var = wy5Var.B1;
+                if (n8Var != null && n8Var.isShowing()) {
+                    wy5Var.B1.d(true);
                     break;
                 }
                 break;
+            case 3:
+                wy5Var.n0();
+                break;
             default:
-                String str3 = LaunchActivity.C1;
-                long j2 = ((zc7) arrayList.get(0)).a;
-                Bundle l2 = ir2.l("scrollToTopOnResume", true);
-                if (cf3.B(j2)) {
-                    l2.putInt("enc_id", (int) (j2 & 4294967295L));
-                } else if (cf3.D(j2)) {
-                    l2.putLong("user_id", j2);
-                } else {
-                    l2.putLong("chat_id", -j2);
-                }
-                l2.putString("attach_bot", l7c.p(user));
-                if (str != null) {
-                    l2.putString("attach_bot_start_command", str);
-                }
-                if (na7.q1(i3).A(l2, cj3Var, null, null)) {
-                    kk7.f(i3).k(4, new Object[0]);
-                    ((ActionBarLayout) launchActivity.N()).U(new mu1(l2), true, false);
+                wy5Var.E0(2);
+                if (!(wy5Var.C0 instanceof rlb)) {
+                    wy5Var.f0(true);
                     break;
                 }
                 break;
         }
-        return true;
-    }
-
-    @Override // wi3
-    public final boolean t(cj3 cj3Var) {
-        byte b = this.a;
-        return false;
-    }
-
-    public /* synthetic */ xx5(LaunchActivity launchActivity, TLRPC.User user, String str, int i) {
-        this.b = launchActivity;
-        this.c = user;
-        this.d = str;
-        this.e = i;
     }
 }

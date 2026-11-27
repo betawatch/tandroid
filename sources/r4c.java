@@ -1,138 +1,261 @@
 // default package
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class r4c implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class r4c implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ v4c b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ r4c(v4c v4cVar, byte b) {
-        this.a = b;
-        this.b = v4cVar;
+    public /* synthetic */ r4c(PhotoViewer photoViewer, String str, no6 no6Var, long j) {
+        this.a = (byte) 7;
+        this.c = photoViewer;
+        this.e = str;
+        this.d = no6Var;
+        this.b = j;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x004e, code lost:
-    
-        if (r1 != null) goto L17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x005b, code lost:
-    
-        gl.c3(new r4c(r3, 3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0064, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0058, code lost:
-    
-        r1.dispose();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0056, code lost:
-    
-        if (r1 == null) goto L18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00de, code lost:
-    
-        if (r1 == null) goto L45;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
+    @Override // pcc
+    public final void a(Object obj) {
         byte b = this.a;
-        SQLiteCursor sQLiteCursor = null;
-        r1 = null;
-        SQLitePreparedStatement sQLitePreparedStatement = null;
-        sQLiteCursor = null;
-        v4c v4cVar = this.b;
-        int i = 0;
+        long j = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
         switch (b) {
             case 0:
-                ArrayList arrayList = v4cVar.b;
-                while (i < arrayList.size()) {
-                    if (((u4c) arrayList.get(i)).a() <= 0) {
-                        arrayList.remove(i);
-                        i--;
-                    }
-                    i++;
+                a5c a5cVar = (a5c) obj4;
+                r47 r47Var = (r47) obj3;
+                String str = (String) obj2;
+                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
+                TLRPC.Message message = r47Var.k;
+                message.translatedSummaryLanguage = tL_textWithEntities != null ? str : null;
+                message.translatedSummaryText = tL_textWithEntities;
+                if (tL_textWithEntities == null) {
+                    message.summarizedOpen = false;
                 }
-                v4cVar.d();
-                return;
+                a5cVar.getMessagesStorage().U1(j, r47Var.k);
+                jn7.f(a5cVar.currentAccount).k(jn7.M1, r47Var, Boolean.TRUE);
+                break;
             case 1:
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                HashSet hashSet = new HashSet();
-                ArrayList arrayList4 = new ArrayList();
-                v4c v4cVar2 = this.b;
-                int i2 = v4cVar2.a;
-                SQLiteDatabase sQLiteDatabase = ad7.Y(i2).b;
-                try {
-                    try {
-                        Locale locale = Locale.US;
-                        sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM unconfirmed_auth", new Object[0]);
-                        while (sQLiteCursor.next()) {
-                            NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
-                            if (byteBufferValue != null) {
-                                try {
-                                    u4c u4cVar = new u4c(v4cVar2, byteBufferValue);
-                                    long j = u4cVar.c;
-                                    arrayList4.add(u4cVar);
-                                    hashSet.add(Long.valueOf(u4cVar.b));
-                                    if (u4cVar.a && !arrayList3.contains(Long.valueOf(j))) {
-                                        arrayList3.add(Long.valueOf(j));
-                                    }
-                                } catch (Exception e) {
-                                    fa4.g(e, true);
-                                }
-                            }
-                        }
-                        ad7.Y(i2).k0(arrayList3, arrayList2, false);
-                    } catch (Exception e2) {
-                        fa4.g(e2, true);
-                        break;
-                    }
-                    sQLiteCursor.dispose();
-                    gl.c3(new exa(v4cVar2, arrayList2, hashSet, arrayList4, (byte) 19));
-                    return;
-                } finally {
-                }
+                ((g92) obj4).f0((id) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (wg1) obj);
+                break;
             case 2:
-                SQLiteDatabase sQLiteDatabase2 = ad7.Y(v4cVar.a).b;
-                try {
-                    try {
-                        sQLiteDatabase2.executeFast("DELETE FROM unconfirmed_auth WHERE 1").stepThis().dispose();
-                        sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO unconfirmed_auth VALUES(?)");
-                        ArrayList arrayList5 = v4cVar.b;
-                        int size = arrayList5.size();
-                        while (i < size) {
-                            Object obj = arrayList5.get(i);
-                            i++;
-                            u4c u4cVar2 = (u4c) obj;
-                            sQLitePreparedStatement.requery();
-                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(u4cVar2.getObjectSize());
-                            u4cVar2.serializeToStream(nativeByteBuffer);
-                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                            sQLitePreparedStatement.step();
-                        }
-                        break;
-                    } finally {
+                pg3 pg3Var = (pg3) obj4;
+                og3 og3Var = (og3) obj2;
+                ((id) obj3).dismiss();
+                if (((Boolean) obj).booleanValue()) {
+                    rbb C = rbb.C(pg3Var.f0.getParentActivity(), pg3Var.f);
+                    C.O = j;
+                    hbb hbbVar = C.d1;
+                    if (hbbVar != null) {
+                        hbbVar.setDialogId(j);
                     }
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
+                    C.N = false;
+                    C.Q(mbb.c(og3Var));
+                    break;
+                }
+                break;
+            case 3:
+                e[] eVarArr = (e[]) obj2;
+                ((id) obj3).dismiss();
+                uj3 uj3Var = ((qi3) obj4).b;
+                uj3Var.getMessagesController().c3(Long.valueOf(j), null, 32);
+                oj3 oj3Var = uj3Var.E2;
+                uj3Var.removeSelfFromStack();
+                if (eVarArr[1] != null) {
+                    eVarArr[0].removeSelfFromStack();
+                    eVarArr[1].finishFragment();
+                } else {
+                    eVarArr[0].finishFragment();
+                }
+                if (oj3Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(if7.a(-j, 0L));
+                    oj3Var.q(uj3Var, arrayList, null, false, uj3Var.L2, uj3Var.M2, uj3Var.N2, null);
+                    break;
+                }
+                break;
+            case 4:
+                q84 q84Var = (q84) obj4;
+                ArrayList arrayList2 = (ArrayList) obj3;
+                HashMap hashMap = (HashMap) obj2;
+                ArrayList arrayList3 = (ArrayList) obj;
+                TLRPC.TL_getFactCheck tL_getFactCheck = new TLRPC.TL_getFactCheck();
+                int i = q84Var.a;
+                tL_getFactCheck.peer = uc7.s1(i).j1(j);
+                ArrayList arrayList4 = new ArrayList();
+                int i2 = 0;
+                for (int i3 = 0; i3 < arrayList3.size(); i3++) {
+                    p84 p84Var = (p84) arrayList2.get(i3);
+                    TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) arrayList3.get(i3);
+                    if (tL_factCheck == null) {
+                        arrayList4.add(p84Var);
+                        tL_getFactCheck.msg_id.add(Integer.valueOf(p84Var.a));
+                    } else {
+                        q84Var.d.remove(p84Var);
+                        pcc pccVar = (pcc) hashMap.get(p84Var);
+                        if (pccVar != null) {
+                            pccVar.a(tL_factCheck);
+                            i2++;
+                        }
+                    }
+                }
+                if (i2 > 0) {
+                    jn7.f(i).k(jn7.D3, new Object[0]);
+                }
+                if (!tL_getFactCheck.msg_id.isEmpty()) {
+                    ConnectionsManager.getInstance(i).sendRequest(tL_getFactCheck, new au0((Object) q84Var, (Object) tL_getFactCheck, (Object) arrayList4, (Object) hashMap, (byte) 5));
+                    break;
+                }
+                break;
+            case 5:
+                mx4 mx4Var = (mx4) obj3;
+                l01 l01Var = (l01) obj;
+                l01Var.d();
+                mx4Var.l1(j, new ku0(obj4, (Object) l01Var, obj2, (Object) mx4Var, (byte) 11));
+                break;
+            case 6:
+                uc7 uc7Var = (uc7) obj4;
+                boolean[] zArr = (boolean[]) obj3;
+                ny nyVar = (ny) obj2;
+                e S = LaunchActivity.S();
+                if (((Boolean) obj).booleanValue()) {
+                    uc7Var.K4.add(Long.valueOf(j));
+                    uc7Var.S4(true);
+                    if (S != null) {
+                        d31.b0(S).P(R.raw.chats_infotip, hl.D2(hl.N2(ob6.M0(2131745302, null), -1, 2, new yv1(S, (byte) 4), null), true)).k(true);
+                    }
+                    zArr[0] = true;
+                    nyVar.run();
+                    break;
+                } else if (S != null) {
+                    d31.b0(S).I(R.raw.error, ob6.M0(2131754304, null), ob6.M0(2131754305, null)).j();
+                    break;
+                }
+                break;
+            case 7:
+                PhotoViewer photoViewer = (PhotoViewer) obj4;
+                String str2 = (String) obj2;
+                no6 no6Var = (no6) obj3;
+                Bitmap bitmap = (Bitmap) obj;
+                Drawable[] drawableArr = PhotoViewer.d9;
+                if (bitmap == null) {
+                    hl.c3(new y98(photoViewer, (byte) 15));
+                    break;
+                } else {
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(new File(str2));
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
+                        fileOutputStream.close();
+                        Bitmap createBitmap = Bitmap.createBitmap(hl.L(26.0f), hl.L(26.0f), Bitmap.Config.ARGB_8888);
+                        Canvas canvas = new Canvas(createBitmap);
+                        Paint paint = new Paint(3);
+                        canvas.translate(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f);
+                        float max = Math.max(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
+                        canvas.scale(max, max);
+                        canvas.drawBitmap(bitmap, (-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f, paint);
+                        hl.c3(new da7((Object) photoViewer, (Object) no6Var, this.b, (Object) str2, (Object) createBitmap, (byte) 12));
+                        break;
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                        hl.c3(new y98(photoViewer, (byte) 16));
+                        return;
+                    }
+                }
+            case 8:
+                wua wuaVar = (wua) obj4;
+                wuaVar.f2.setLoading(false);
+                l46 l46Var = new l46(26, wuaVar.a, wuaVar.J0, wuaVar.getContext(), new qu0(wuaVar, (byte) 13));
+                l46Var.s1((wg1) obj);
+                l46Var.r1((TL_stories.TL_premium_boostsStatus) obj3, true);
+                l46Var.t1(j);
+                TLRPC.Chat M0 = ((uc7) obj2).M0(Long.valueOf(-j));
+                if (M0 != null) {
+                    l46Var.L2 = new sm0(wuaVar, M0);
+                }
+                l46Var.show();
+                break;
+            case 9:
+                c6b c6bVar = (c6b) obj4;
+                pcc pccVar2 = (pcc) obj3;
+                uc7 uc7Var2 = (uc7) obj2;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
+                if (tL_premium_boostsStatus == null) {
+                    pccVar2.a(Boolean.FALSE);
+                    break;
+                } else {
+                    xg1 G0 = uc7Var2.G0();
+                    long j2 = this.b;
+                    G0.b(j2, tL_premium_boostsStatus, new r4c((Object) c6bVar, (Object) pccVar2, j2, (Object) tL_premium_boostsStatus, (byte) 10));
+                    pccVar2.a(Boolean.FALSE);
                     break;
                 }
             default:
-                v4cVar.g = false;
-                return;
+                c6b c6bVar2 = (c6b) obj4;
+                pcc pccVar3 = (pcc) obj3;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj2;
+                wg1 wg1Var = (wg1) obj;
+                if (wg1Var == null) {
+                    pccVar3.a(Boolean.FALSE);
+                    break;
+                } else {
+                    e Q = LaunchActivity.Q();
+                    pqa pqaVar = c6bVar2.i(j) ? new pqa(c6bVar2, j, (byte) 3) : null;
+                    int i4 = l46.R2;
+                    if (Q != null && Q.getContext() != null) {
+                        l46 l46Var2 = new l46(18, Q.getCurrentAccount(), Q.getResourceProvider(), Q.getContext(), Q);
+                        l46Var2.s1(wg1Var);
+                        l46Var2.r1(tL_premium_boostsStatus2, true);
+                        l46Var2.t1(j);
+                        l46Var2.L2 = pqaVar;
+                        l46Var2.show();
+                    }
+                    pccVar3.a(Boolean.FALSE);
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ r4c(Object obj, Object obj2, long j, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ r4c(Object obj, Object obj2, Object obj3, long j, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j;
+    }
+
+    public /* synthetic */ r4c(Object obj, long j, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = j;
+        this.d = obj2;
+        this.e = obj3;
     }
 }

@@ -1,65 +1,33 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class r58 implements n48 {
-    public final /* synthetic */ s20 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class r58 extends v8b {
+    public final /* synthetic */ lcb I;
+    public final /* synthetic */ o68 J;
 
-    public r58(s20 s20Var) {
-        this.a = s20Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r58(o68 o68Var, Context context, t58 t58Var, x53 x53Var, lcb lcbVar) {
+        super(context, t58Var, x53Var);
+        this.J = o68Var;
+        this.I = lcbVar;
     }
 
-    public final void a() {
-        mu1 mu1Var;
-        TLRPC.Chat chat;
-        u58 u58Var = (u58) this.a.e;
-        if (!u58Var.J || (mu1Var = u58Var.V) == null || (chat = mu1Var.e) == null || hc2.N(chat) || !chat.slowmode_enabled || u58Var.X == 2) {
-            return;
-        }
-        ij.r0(u58Var, k96.M0(2131745118, null), k96.M0(2131745111, null), null);
-        if (u58Var.X == 1) {
-            u58Var.X = (byte) 2;
+    @Override // v8b
+    public final void b(boolean z) {
+        k68 k68Var = this.J.A1;
+        if (k68Var != null) {
+            lcb lcbVar = ((ccb) k68Var).d;
+            lcbVar.i1 = z;
+            lcbVar.U();
         }
     }
 
-    @Override // n48
-    public final void c(o48 o48Var) {
-        boolean z;
-        int intValue = ((Integer) o48Var.getTag()).intValue();
-        u58 u58Var = (u58) this.a.e;
-        xl6 xl6Var = u58Var.K;
-        int i = -1;
-        if (xl6Var != null) {
-            jm6 jm6Var = (jm6) xl6Var.e.get(intValue);
-            boolean containsKey = u58Var.b.containsKey(Integer.valueOf(jm6Var.C));
-            z = !containsKey;
-            if (!containsKey && u58Var.I > 0 && u58Var.b.size() >= u58Var.I) {
-                a();
-                return;
-            }
-            if (u58Var.e && !containsKey) {
-                i = u58Var.c.size();
-            }
-            o48Var.b(i, z, true);
-            u58Var.a0(intValue, jm6Var);
-        } else {
-            gl.t1(u58Var.getParentActivity().getCurrentFocus());
-            nm6 nm6Var = (nm6) u58Var.f.get(intValue);
-            boolean containsKey2 = u58Var.b.containsKey(nm6Var.B);
-            z = !containsKey2;
-            if (!containsKey2 && u58Var.I > 0 && u58Var.b.size() >= u58Var.I) {
-                a();
-                return;
-            }
-            if (u58Var.e && !containsKey2) {
-                i = u58Var.c.size();
-            }
-            o48Var.b(i, z, true);
-            u58Var.a0(intValue, nm6Var);
-        }
-        u58Var.m0(z ? 1 : 2);
-        u58Var.t0.e();
+    @Override // v8b
+    public final Bitmap getPlayingBitmap() {
+        return this.J.getPlayingBitmap();
     }
 }

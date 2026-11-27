@@ -1,38 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.SortedSet;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class qye {
-    public static void a(int i, int i2) {
-        String a;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                a = rye.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
-            } else {
-                if (i2 < 0) {
-                    w26.j(de9.k(i2, "negative size: "));
-                    return;
-                }
-                a = rye.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+    public static boolean a(Set set, Object obj) {
+        if (set == obj) {
+            return true;
+        }
+        if (!(obj instanceof Set)) {
+            return false;
+        }
+        Set set2 = (Set) obj;
+        try {
+            if (set.size() == set2.size()) {
+                return set.containsAll(set2);
             }
-            throw new IndexOutOfBoundsException(a);
+            return false;
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
         }
     }
 
-    public static void b(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? c(i, i3, "start index") : (i2 < 0 || i2 > i3) ? c(i2, i3, "end index") : rye.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+    public static dba b(Set set, pj8 pj8Var) {
+        if (set instanceof SortedSet) {
+            Set set2 = (SortedSet) set;
+            if (!(set2 instanceof dba)) {
+                return new eba(set2, pj8Var);
+            }
+            dba dbaVar = (dba) set2;
+            pj8 pj8Var2 = dbaVar.b;
+            pj8Var2.getClass();
+            return new eba((SortedSet) dbaVar.a, new qj8(Arrays.asList(pj8Var2, pj8Var)));
         }
+        if (!(set instanceof dba)) {
+            set.getClass();
+            return new dba(set, pj8Var);
+        }
+        dba dbaVar2 = (dba) set;
+        pj8 pj8Var3 = dbaVar2.b;
+        pj8Var3.getClass();
+        return new dba(dbaVar2.a, new qj8(Arrays.asList(pj8Var3, pj8Var)));
     }
 
-    public static String c(int i, int i2, String str) {
-        if (i < 0) {
-            return rye.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+    public static int c(Set set) {
+        Iterator it = set.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i = ~(~(i + (next != null ? next.hashCode() : 0)));
         }
-        if (i2 >= 0) {
-            return rye.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
-        }
-        w26.j(de9.k(i2, "negative size: "));
-        return null;
+        return i;
+    }
+
+    public static cba d(bp5 bp5Var, bp5 bp5Var2) {
+        yve.l(bp5Var, "set1");
+        yve.l(bp5Var2, "set2");
+        return new cba(bp5Var, bp5Var2);
     }
 }

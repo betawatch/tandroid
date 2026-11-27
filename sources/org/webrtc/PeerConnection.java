@@ -1,6 +1,8 @@
 package org.webrtc;
 
 import j$.util.DesugarCollections;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,18 +12,20 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
+import org.webrtc.NativeLifecycleLock;
 import org.webrtc.RtpTransceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class PeerConnection {
+    public static final int PORTALLOCATOR_ENABLE_ANY_ADDRESS_PORTS = 32768;
+    private final NativeLifecycleLock lifecycleLock;
     private final List<MediaStream> localStreams;
-    private final long nativePeerConnection;
     private List<RtpReceiver> receivers;
     private List<RtpSender> senders;
     private List<RtpTransceiver> transceivers;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum AdapterType {
         UNKNOWN(0),
         ETHERNET(1),
@@ -53,26 +57,26 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum BundlePolicy {
         BALANCED,
         MAXBUNDLE,
         MAXCOMPAT
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum CandidateNetworkPolicy {
         ALL,
         LOW_COST
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum ContinualGatheringPolicy {
         GATHER_ONCE,
         GATHER_CONTINUALLY
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum IceConnectionState {
         NEW,
         CHECKING,
@@ -87,7 +91,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum IceGatheringState {
         NEW,
         GATHERING,
@@ -98,7 +102,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum IceTransportsType {
         NONE,
         RELAY,
@@ -106,13 +110,98 @@ public class PeerConnection {
         ALL
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum KeyType {
         RSA,
         ECDSA
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        boolean addIceCandidate(PeerConnection peerConnection, String str, int i, String str2);
+
+        void addIceCandidateWithObserver(PeerConnection peerConnection, String str, int i, String str2, AddIceObserver addIceObserver);
+
+        boolean addLocalStream(PeerConnection peerConnection, long j);
+
+        RtpSender addTrack(PeerConnection peerConnection, long j, List<String> list);
+
+        RtpTransceiver addTransceiverOfType(PeerConnection peerConnection, MediaStreamTrack.MediaType mediaType, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
+
+        RtpTransceiver addTransceiverWithTrack(PeerConnection peerConnection, long j, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
+
+        void close(PeerConnection peerConnection);
+
+        PeerConnectionState connectionState(PeerConnection peerConnection);
+
+        void createAnswer(PeerConnection peerConnection, SdpObserver sdpObserver, MediaConstraints mediaConstraints);
+
+        DataChannel createDataChannel(PeerConnection peerConnection, String str, DataChannel.Init init);
+
+        void createOffer(PeerConnection peerConnection, SdpObserver sdpObserver, MediaConstraints mediaConstraints);
+
+        long createPeerConnectionObserver(Observer observer);
+
+        RtpSender createSender(PeerConnection peerConnection, String str, String str2);
+
+        void freeOwnedPeerConnection(long j);
+
+        RtcCertificatePem getCertificate(PeerConnection peerConnection);
+
+        SessionDescription getLocalDescription(PeerConnection peerConnection);
+
+        long getNativePeerConnection(PeerConnection peerConnection);
+
+        List<RtpReceiver> getReceivers(PeerConnection peerConnection);
+
+        SessionDescription getRemoteDescription(PeerConnection peerConnection);
+
+        List<RtpSender> getSenders(PeerConnection peerConnection);
+
+        List<RtpTransceiver> getTransceivers(PeerConnection peerConnection);
+
+        IceConnectionState iceConnectionState(PeerConnection peerConnection);
+
+        IceGatheringState iceGatheringState(PeerConnection peerConnection);
+
+        void newGetStats(PeerConnection peerConnection, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+
+        void newGetStatsReceiver(PeerConnection peerConnection, long j, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+
+        void newGetStatsSender(PeerConnection peerConnection, long j, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+
+        boolean oldGetStats(PeerConnection peerConnection, StatsObserver statsObserver, long j);
+
+        boolean removeIceCandidates(PeerConnection peerConnection, IceCandidate[] iceCandidateArr);
+
+        void removeLocalStream(PeerConnection peerConnection, long j);
+
+        boolean removeTrack(PeerConnection peerConnection, long j);
+
+        void restartIce(PeerConnection peerConnection);
+
+        void setAudioPlayout(PeerConnection peerConnection, boolean z);
+
+        void setAudioRecording(PeerConnection peerConnection, boolean z);
+
+        boolean setBitrate(PeerConnection peerConnection, Integer num, Integer num2, Integer num3);
+
+        boolean setConfiguration(PeerConnection peerConnection, RTCConfiguration rTCConfiguration);
+
+        void setLocalDescription(PeerConnection peerConnection, SdpObserver sdpObserver, SessionDescription sessionDescription);
+
+        void setLocalDescriptionAutomatically(PeerConnection peerConnection, SdpObserver sdpObserver);
+
+        void setRemoteDescription(PeerConnection peerConnection, SdpObserver sdpObserver, SessionDescription sessionDescription);
+
+        SignalingState signalingState(PeerConnection peerConnection);
+
+        boolean startRtcEventLog(PeerConnection peerConnection, int i, int i2);
+
+        void stopRtcEventLog(PeerConnection peerConnection);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface Observer {
         void onAddStream(MediaStream mediaStream);
 
@@ -149,7 +238,7 @@ public class PeerConnection {
         void onTrack(RtpTransceiver rtpTransceiver);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum PeerConnectionState {
         NEW,
         CONNECTING,
@@ -163,14 +252,19 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface PortAllocatorFlags {
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum PortPrunePolicy {
         NO_PRUNE,
         PRUNE_BASED_ON_PRIORITY,
         KEEP_FIRST_READY
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class RTCConfiguration {
         public RtcCertificatePem certificate;
         public List<IceServer> iceServers;
@@ -180,7 +274,7 @@ public class PeerConnection {
         public RtcpMuxPolicy rtcpMuxPolicy = RtcpMuxPolicy.REQUIRE;
         public TcpCandidatePolicy tcpCandidatePolicy = TcpCandidatePolicy.ENABLED;
         public CandidateNetworkPolicy candidateNetworkPolicy = CandidateNetworkPolicy.ALL;
-        public int audioJitterBufferMaxPackets = 50;
+        public int audioJitterBufferMaxPackets = jn7.d3;
         public boolean audioJitterBufferFastAccelerate = false;
         public int iceConnectionReceivingTimeout = -1;
         public int iceBackupCandidatePairPingInterval = -1;
@@ -208,18 +302,16 @@ public class PeerConnection {
         public Integer screencastMinBitrate = null;
         public AdapterType networkPreference = AdapterType.UNKNOWN;
         public SdpSemantics sdpSemantics = SdpSemantics.UNIFIED_PLAN;
-        public boolean activeResetSrtpParams = false;
         public CryptoOptions cryptoOptions = null;
         public String turnLoggingId = null;
         public boolean enableImplicitRollback = false;
         public boolean offerExtmapAllowMixed = true;
+        public int portAllocatorMinPort = 0;
+        public int portAllocatorMaxPort = 0;
+        public int portAllocatorFlags = 0;
 
         public RTCConfiguration(List<IceServer> list) {
             this.iceServers = list;
-        }
-
-        public boolean getActiveResetSrtpParams() {
-            return this.activeResetSrtpParams;
         }
 
         public boolean getAudioJitterBufferFastAccelerate() {
@@ -322,6 +414,18 @@ public class PeerConnection {
             return this.offerExtmapAllowMixed;
         }
 
+        public int getPortAllocatorFlags() {
+            return this.portAllocatorFlags;
+        }
+
+        public int getPortAllocatorMaxPort() {
+            return this.portAllocatorMaxPort;
+        }
+
+        public int getPortAllocatorMinPort() {
+            return this.portAllocatorMinPort;
+        }
+
         public boolean getPresumeWritableWhenFullyRelayed() {
             return this.presumeWritableWhenFullyRelayed;
         }
@@ -375,19 +479,19 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum RtcpMuxPolicy {
         NEGOTIATE,
         REQUIRE
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum SdpSemantics {
         PLAN_B,
         UNIFIED_PLAN
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum SignalingState {
         STABLE,
         HAVE_LOCAL_OFFER,
@@ -401,13 +505,13 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum TcpCandidatePolicy {
         ENABLED,
         DISABLED
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum TlsCertPolicy {
         TLS_CERT_POLICY_SECURE,
         TLS_CERT_POLICY_INSECURE_NO_CHECK
@@ -418,170 +522,374 @@ public class PeerConnection {
         this.senders = new ArrayList();
         this.receivers = new ArrayList();
         this.transceivers = new ArrayList();
-        this.nativePeerConnection = j;
+        this.lifecycleLock = new NativeLifecycleLock("PeerConnection", j);
+    }
+
+    private <T> T callWithNative(NativeLifecycleLock.NativeCallable<T> nativeCallable, T t) {
+        return (T) this.lifecycleLock.callOrDefault((NativeLifecycleLock.NativeCallable<NativeLifecycleLock.NativeCallable<T>>) nativeCallable, (NativeLifecycleLock.NativeCallable<T>) t);
     }
 
     public static long createNativePeerConnectionObserver(Observer observer) {
-        return nativeCreatePeerConnectionObserver(observer);
+        return PeerConnectionJni.get().createPeerConnectionObserver(observer);
     }
 
-    private native boolean nativeAddIceCandidate(String str, int i, String str2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$addIceCandidate$13(IceCandidate iceCandidate) {
+        return Boolean.valueOf(PeerConnectionJni.get().addIceCandidate(this, iceCandidate.sdpMid, iceCandidate.sdpMLineIndex, iceCandidate.sdp));
+    }
 
-    private native void nativeAddIceCandidateWithObserver(String str, int i, String str2, AddIceObserver addIceObserver);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$addIceCandidate$14(IceCandidate iceCandidate, AddIceObserver addIceObserver) {
+        PeerConnectionJni.get().addIceCandidateWithObserver(this, iceCandidate.sdpMid, iceCandidate.sdpMLineIndex, iceCandidate.sdp, addIceObserver);
+    }
 
-    private native boolean nativeAddLocalStream(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$addStream$16(MediaStream mediaStream, long j) {
+        if (!PeerConnectionJni.get().addLocalStream(this, j)) {
+            return Boolean.FALSE;
+        }
+        this.localStreams.add(mediaStream);
+        return Boolean.TRUE;
+    }
 
-    private native RtpSender nativeAddTrack(long j, List<String> list);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$addStream$17(MediaStream mediaStream) {
+        return (Boolean) mediaStream.lifecycleLock.callOrDefault((NativeLifecycleLock.NativePointerCallable<j48>) new j48(this, mediaStream, (byte) 1), (j48) Boolean.FALSE);
+    }
 
-    private native RtpTransceiver nativeAddTransceiverOfType(MediaStreamTrack.MediaType mediaType, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtpSender lambda$addTrack$24(List list, long j) {
+        RtpSender addTrack = PeerConnectionJni.get().addTrack(this, j, list);
+        if (addTrack != null) {
+            this.senders.add(addTrack);
+            return addTrack;
+        }
+        grb.i("C++ addTrack failed.");
+        return null;
+    }
 
-    private native RtpTransceiver nativeAddTransceiverWithTrack(long j, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtpSender lambda$addTrack$25(MediaStreamTrack mediaStreamTrack, List list) {
+        return (RtpSender) mediaStreamTrack.lifecycleLock.call((NativeLifecycleLock.NativePointerCallable) new rm6(this, list, (byte) 20));
+    }
 
-    private native void nativeClose();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtpTransceiver lambda$addTransceiver$28(RtpTransceiver.RtpTransceiverInit rtpTransceiverInit, long j) {
+        RtpTransceiver addTransceiverWithTrack = PeerConnectionJni.get().addTransceiverWithTrack(this, j, rtpTransceiverInit);
+        if (addTransceiverWithTrack != null) {
+            this.transceivers.add(addTransceiverWithTrack);
+            return addTransceiverWithTrack;
+        }
+        grb.i("C++ addTransceiver failed.");
+        return null;
+    }
 
-    private native PeerConnectionState nativeConnectionState();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtpTransceiver lambda$addTransceiver$29(MediaStreamTrack mediaStreamTrack, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit) {
+        return (RtpTransceiver) mediaStreamTrack.lifecycleLock.call((NativeLifecycleLock.NativePointerCallable) new rm6(this, rtpTransceiverInit, (byte) 23));
+    }
 
-    private native void nativeCreateAnswer(SdpObserver sdpObserver, MediaConstraints mediaConstraints);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtpTransceiver lambda$addTransceiver$30(MediaStreamTrack.MediaType mediaType, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit) {
+        RtpTransceiver addTransceiverOfType = PeerConnectionJni.get().addTransceiverOfType(this, mediaType, rtpTransceiverInit);
+        if (addTransceiverOfType != null) {
+            this.transceivers.add(addTransceiverOfType);
+            return addTransceiverOfType;
+        }
+        grb.i("C++ addTransceiver failed.");
+        return null;
+    }
 
-    private native DataChannel nativeCreateDataChannel(String str, DataChannel.Init init);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$close$45() {
+        PeerConnectionJni.get().close(this);
+    }
 
-    private native void nativeCreateOffer(SdpObserver sdpObserver, MediaConstraints mediaConstraints);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ PeerConnectionState lambda$connectionState$43() {
+        return PeerConnectionJni.get().connectionState(this);
+    }
 
-    private static native long nativeCreatePeerConnectionObserver(Observer observer);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createAnswer$5(SdpObserver sdpObserver, MediaConstraints mediaConstraints) {
+        PeerConnectionJni.get().createAnswer(this, sdpObserver, mediaConstraints);
+    }
 
-    private native RtpSender nativeCreateSender(String str, String str2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ DataChannel lambda$createDataChannel$3(String str, DataChannel.Init init) {
+        return PeerConnectionJni.get().createDataChannel(this, str, init);
+    }
 
-    private static native void nativeFreeOwnedPeerConnection(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createOffer$4(SdpObserver sdpObserver, MediaConstraints mediaConstraints) {
+        PeerConnectionJni.get().createOffer(this, sdpObserver, mediaConstraints);
+    }
 
-    private native RtcCertificatePem nativeGetCertificate();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtpSender lambda$createSender$20(String str, String str2) {
+        RtpSender createSender = PeerConnectionJni.get().createSender(this, str, str2);
+        if (createSender != null) {
+            this.senders.add(createSender);
+        }
+        return createSender;
+    }
 
-    private native SessionDescription nativeGetLocalDescription();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$46(long j) {
+        PeerConnectionJni.get().removeLocalStream(this, j);
+    }
 
-    private native long nativeGetNativePeerConnection();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$47(MediaStream mediaStream) {
+        mediaStream.lifecycleLock.runIfAlive((NativeLifecycleLock.NativePointerRunnable) new i48(this, (byte) 14));
+    }
 
-    private native List<RtpReceiver> nativeGetReceivers();
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$dispose$48(long j) {
+        PeerConnectionJni.get().freeOwnedPeerConnection(j);
+    }
 
-    private native SessionDescription nativeGetRemoteDescription();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ RtcCertificatePem lambda$getCertificate$2() {
+        return PeerConnectionJni.get().getCertificate(this);
+    }
 
-    private native List<RtpSender> nativeGetSenders();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ SessionDescription lambda$getLocalDescription$0() {
+        return PeerConnectionJni.get().getLocalDescription(this);
+    }
 
-    private native List<RtpTransceiver> nativeGetTransceivers();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Long lambda$getNativePeerConnection$49() {
+        return Long.valueOf(PeerConnectionJni.get().getNativePeerConnection(this));
+    }
 
-    private native IceConnectionState nativeIceConnectionState();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ List lambda$getReceivers$22() {
+        Iterator<RtpReceiver> it = this.receivers.iterator();
+        while (it.hasNext()) {
+            it.next().dispose();
+        }
+        List<RtpReceiver> receivers = PeerConnectionJni.get().getReceivers(this);
+        this.receivers = receivers;
+        return DesugarCollections.unmodifiableList(receivers);
+    }
 
-    private native IceGatheringState nativeIceGatheringState();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ SessionDescription lambda$getRemoteDescription$1() {
+        return PeerConnectionJni.get().getRemoteDescription(this);
+    }
 
-    private native void nativeNewGetStats(RTCStatsCollectorCallback rTCStatsCollectorCallback);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ List lambda$getSenders$21() {
+        Iterator<RtpSender> it = this.senders.iterator();
+        while (it.hasNext()) {
+            it.next().dispose();
+        }
+        List<RtpSender> senders = PeerConnectionJni.get().getSenders(this);
+        this.senders = senders;
+        return DesugarCollections.unmodifiableList(senders);
+    }
 
-    private native void nativeNewGetStatsReceiver(long j, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$getStats$31(StatsObserver statsObserver, long j) {
+        return Boolean.valueOf(PeerConnectionJni.get().oldGetStats(this, statsObserver, j));
+    }
 
-    private native void nativeNewGetStatsSender(long j, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$getStats$32(MediaStreamTrack mediaStreamTrack, StatsObserver statsObserver) {
+        return mediaStreamTrack == null ? Boolean.valueOf(PeerConnectionJni.get().oldGetStats(this, statsObserver, 0L)) : (Boolean) mediaStreamTrack.lifecycleLock.callOrDefault((NativeLifecycleLock.NativePointerCallable<rm6>) new rm6(this, statsObserver, (byte) 18), (rm6) Boolean.FALSE);
+    }
 
-    private native boolean nativeOldGetStats(StatsObserver statsObserver, long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getStats$33(RTCStatsCollectorCallback rTCStatsCollectorCallback) {
+        PeerConnectionJni.get().newGetStats(this, rTCStatsCollectorCallback);
+    }
 
-    private native boolean nativeRemoveIceCandidates(IceCandidate[] iceCandidateArr);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getStats$34(RTCStatsCollectorCallback rTCStatsCollectorCallback, long j) {
+        PeerConnectionJni.get().newGetStatsSender(this, j, rTCStatsCollectorCallback);
+    }
 
-    private native void nativeRemoveLocalStream(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getStats$35(RtpSender rtpSender, RTCStatsCollectorCallback rTCStatsCollectorCallback) {
+        rtpSender.lifecycleLock.runIfAlive((NativeLifecycleLock.NativePointerRunnable) new l48(this, rTCStatsCollectorCallback, (byte) 1));
+    }
 
-    private native boolean nativeRemoveTrack(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getStats$36(RTCStatsCollectorCallback rTCStatsCollectorCallback, long j) {
+        PeerConnectionJni.get().newGetStatsReceiver(this, j, rTCStatsCollectorCallback);
+    }
 
-    private native void nativeRestartIce();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$getStats$37(RtpReceiver rtpReceiver, RTCStatsCollectorCallback rTCStatsCollectorCallback) {
+        rtpReceiver.lifecycleLock.runIfAlive((NativeLifecycleLock.NativePointerRunnable) new l48(this, rTCStatsCollectorCallback, (byte) 0));
+    }
 
-    private native void nativeSetAudioPlayout(boolean z);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ List lambda$getTransceivers$23() {
+        Iterator<RtpTransceiver> it = this.transceivers.iterator();
+        while (it.hasNext()) {
+            it.next().dispose();
+        }
+        List<RtpTransceiver> transceivers = PeerConnectionJni.get().getTransceivers(this);
+        this.transceivers = transceivers;
+        return DesugarCollections.unmodifiableList(transceivers);
+    }
 
-    private native void nativeSetAudioRecording(boolean z);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ IceConnectionState lambda$iceConnectionState$42() {
+        return PeerConnectionJni.get().iceConnectionState(this);
+    }
 
-    private native boolean nativeSetBitrate(Integer num, Integer num2, Integer num3);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ IceGatheringState lambda$iceGatheringState$44() {
+        return PeerConnectionJni.get().iceGatheringState(this);
+    }
 
-    private native boolean nativeSetConfiguration(RTCConfiguration rTCConfiguration);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$removeIceCandidates$15(IceCandidate[] iceCandidateArr) {
+        return Boolean.valueOf(PeerConnectionJni.get().removeIceCandidates(this, iceCandidateArr));
+    }
 
-    private native void nativeSetLocalDescription(SdpObserver sdpObserver, SessionDescription sessionDescription);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$removeStream$18(long j) {
+        PeerConnectionJni.get().removeLocalStream(this, j);
+    }
 
-    private native void nativeSetLocalDescriptionAutomatically(SdpObserver sdpObserver);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$removeStream$19(MediaStream mediaStream) {
+        mediaStream.lifecycleLock.runIfAlive((NativeLifecycleLock.NativePointerRunnable) new i48(this, (byte) 16));
+        this.localStreams.remove(mediaStream);
+    }
 
-    private native void nativeSetRemoteDescription(SdpObserver sdpObserver, SessionDescription sessionDescription);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$removeTrack$26(long j) {
+        return Boolean.valueOf(PeerConnectionJni.get().removeTrack(this, j));
+    }
 
-    private native SignalingState nativeSignalingState();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$removeTrack$27(RtpSender rtpSender) {
+        return (Boolean) rtpSender.lifecycleLock.callOrDefault((NativeLifecycleLock.NativePointerCallable<i48>) new i48(this, (byte) 2), (i48) Boolean.FALSE);
+    }
 
-    private native boolean nativeStartRtcEventLog(int i, int i2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$restartIce$9() {
+        PeerConnectionJni.get().restartIce(this);
+    }
 
-    private native void nativeStopRtcEventLog();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setAudioPlayout$10(boolean z) {
+        PeerConnectionJni.get().setAudioPlayout(this, z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setAudioRecording$11(boolean z) {
+        PeerConnectionJni.get().setAudioRecording(this, z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$setBitrate$38(Integer num, Integer num2, Integer num3) {
+        return Boolean.valueOf(PeerConnectionJni.get().setBitrate(this, num, num2, num3));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$setConfiguration$12(RTCConfiguration rTCConfiguration) {
+        return Boolean.valueOf(PeerConnectionJni.get().setConfiguration(this, rTCConfiguration));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setLocalDescription$6(SdpObserver sdpObserver) {
+        PeerConnectionJni.get().setLocalDescriptionAutomatically(this, sdpObserver);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setLocalDescription$7(SdpObserver sdpObserver, SessionDescription sessionDescription) {
+        PeerConnectionJni.get().setLocalDescription(this, sdpObserver, sessionDescription);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setRemoteDescription$8(SdpObserver sdpObserver, SessionDescription sessionDescription) {
+        PeerConnectionJni.get().setRemoteDescription(this, sdpObserver, sessionDescription);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ SignalingState lambda$signalingState$41() {
+        return PeerConnectionJni.get().signalingState(this);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$startRtcEventLog$39(int i, int i2) {
+        return Boolean.valueOf(PeerConnectionJni.get().startRtcEventLog(this, i, i2));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$stopRtcEventLog$40() {
+        PeerConnectionJni.get().stopRtcEventLog(this);
+    }
+
+    private void runWithNative(NativeLifecycleLock.NativeRunnable nativeRunnable) {
+        this.lifecycleLock.runIfAlive(nativeRunnable);
+    }
 
     public boolean addIceCandidate(IceCandidate iceCandidate) {
-        return nativeAddIceCandidate(iceCandidate.sdpMid, iceCandidate.sdpMLineIndex, iceCandidate.sdp);
+        return ((Boolean) callWithNative(new rm6(this, iceCandidate, (byte) 22), Boolean.FALSE)).booleanValue();
     }
 
     public boolean addStream(MediaStream mediaStream) {
-        if (!nativeAddLocalStream(mediaStream.getNativeMediaStream())) {
-            return false;
-        }
-        this.localStreams.add(mediaStream);
-        return true;
+        return ((Boolean) callWithNative(new j48(this, mediaStream, (byte) 2), Boolean.FALSE)).booleanValue();
     }
 
     public RtpSender addTrack(MediaStreamTrack mediaStreamTrack, List<String> list) {
-        if (mediaStreamTrack == null || list == null) {
-            fvc.f("No MediaStreamTrack specified in addTrack.");
-            return null;
+        if (mediaStreamTrack != null && list != null) {
+            return (RtpSender) this.lifecycleLock.call(new fu2((Object) this, (Object) mediaStreamTrack, (Object) list, (byte) 28));
         }
-        RtpSender nativeAddTrack = nativeAddTrack(mediaStreamTrack.getNativeMediaStreamTrack(), list);
-        if (nativeAddTrack != null) {
-            this.senders.add(nativeAddTrack);
-            return nativeAddTrack;
-        }
-        sc8.j("C++ addTrack failed.");
+        p3d.h("No MediaStreamTrack specified in addTrack.");
         return null;
     }
 
     public RtpTransceiver addTransceiver(MediaStreamTrack mediaStreamTrack, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit) {
         if (mediaStreamTrack == null) {
-            fvc.f("No MediaStreamTrack specified for addTransceiver.");
+            p3d.h("No MediaStreamTrack specified for addTransceiver.");
             return null;
         }
         if (rtpTransceiverInit == null) {
             rtpTransceiverInit = new RtpTransceiver.RtpTransceiverInit();
         }
-        RtpTransceiver nativeAddTransceiverWithTrack = nativeAddTransceiverWithTrack(mediaStreamTrack.getNativeMediaStreamTrack(), rtpTransceiverInit);
-        if (nativeAddTransceiverWithTrack != null) {
-            this.transceivers.add(nativeAddTransceiverWithTrack);
-            return nativeAddTransceiverWithTrack;
-        }
-        sc8.j("C++ addTransceiver failed.");
-        return null;
+        return (RtpTransceiver) this.lifecycleLock.call(new fu2((Object) this, (Object) mediaStreamTrack, (Object) rtpTransceiverInit, (byte) 25));
     }
 
     public void close() {
-        nativeClose();
+        runWithNative(new i48(this, (byte) 6));
     }
 
     public PeerConnectionState connectionState() {
-        return nativeConnectionState();
+        return (PeerConnectionState) callWithNative(new i48(this, (byte) 0), PeerConnectionState.CLOSED);
     }
 
     public void createAnswer(SdpObserver sdpObserver, MediaConstraints mediaConstraints) {
-        nativeCreateAnswer(sdpObserver, mediaConstraints);
+        runWithNative(new m48(this, sdpObserver, mediaConstraints, (byte) 1));
     }
 
     public DataChannel createDataChannel(String str, DataChannel.Init init) {
-        return nativeCreateDataChannel(str, init);
+        return (DataChannel) callWithNative(new fu2((Object) this, (Object) str, (Object) init, (byte) 22), null);
     }
 
     public void createOffer(SdpObserver sdpObserver, MediaConstraints mediaConstraints) {
-        nativeCreateOffer(sdpObserver, mediaConstraints);
+        runWithNative(new m48(this, sdpObserver, mediaConstraints, (byte) 0));
     }
 
     public RtpSender createSender(String str, String str2) {
-        RtpSender nativeCreateSender = nativeCreateSender(str, str2);
-        if (nativeCreateSender != null) {
-            this.senders.add(nativeCreateSender);
-        }
-        return nativeCreateSender;
+        return (RtpSender) callWithNative(new o48((Object) this, (Object) str, (Object) str2, (byte) 0), null);
     }
 
     public void dispose() {
+        if (this.lifecycleLock.isDisposed()) {
+            return;
+        }
         close();
         for (MediaStream mediaStream : this.localStreams) {
-            nativeRemoveLocalStream(mediaStream.getNativeMediaStream());
+            runWithNative(new j48(this, mediaStream, (byte) 3));
             mediaStream.dispose();
         }
         this.localStreams.clear();
@@ -600,134 +908,111 @@ public class PeerConnection {
         }
         this.transceivers.clear();
         this.receivers.clear();
-        nativeFreeOwnedPeerConnection(this.nativePeerConnection);
+        this.lifecycleLock.dispose(new ku7((byte) 13));
     }
 
     public RtcCertificatePem getCertificate() {
-        return nativeGetCertificate();
+        return (RtcCertificatePem) callWithNative(new i48(this, (byte) 15), null);
     }
 
     public SessionDescription getLocalDescription() {
-        return nativeGetLocalDescription();
+        return (SessionDescription) callWithNative(new i48(this, (byte) 13), null);
     }
 
     public long getNativeOwnedPeerConnection() {
-        return this.nativePeerConnection;
+        return this.lifecycleLock.getNativePointer();
     }
 
     public long getNativePeerConnection() {
-        return nativeGetNativePeerConnection();
+        return ((Long) callWithNative(new i48(this, (byte) 5), 0L)).longValue();
     }
 
     public List<RtpReceiver> getReceivers() {
-        Iterator<RtpReceiver> it = this.receivers.iterator();
-        while (it.hasNext()) {
-            it.next().dispose();
-        }
-        List<RtpReceiver> nativeGetReceivers = nativeGetReceivers();
-        this.receivers = nativeGetReceivers;
-        return DesugarCollections.unmodifiableList(nativeGetReceivers);
+        return (List) callWithNative(new i48(this, (byte) 12), Collections.EMPTY_LIST);
     }
 
     public SessionDescription getRemoteDescription() {
-        return nativeGetRemoteDescription();
+        return (SessionDescription) callWithNative(new i48(this, (byte) 4), null);
     }
 
     public List<RtpSender> getSenders() {
-        Iterator<RtpSender> it = this.senders.iterator();
-        while (it.hasNext()) {
-            it.next().dispose();
-        }
-        List<RtpSender> nativeGetSenders = nativeGetSenders();
-        this.senders = nativeGetSenders;
-        return DesugarCollections.unmodifiableList(nativeGetSenders);
+        return (List) callWithNative(new i48(this, (byte) 8), Collections.EMPTY_LIST);
     }
 
     @Deprecated
     public boolean getStats(StatsObserver statsObserver, MediaStreamTrack mediaStreamTrack) {
-        return nativeOldGetStats(statsObserver, mediaStreamTrack == null ? 0L : mediaStreamTrack.getNativeMediaStreamTrack());
+        return ((Boolean) callWithNative(new fu2((Object) this, (Object) mediaStreamTrack, (Object) statsObserver, (byte) 26), Boolean.FALSE)).booleanValue();
     }
 
     public List<RtpTransceiver> getTransceivers() {
-        Iterator<RtpTransceiver> it = this.transceivers.iterator();
-        while (it.hasNext()) {
-            it.next().dispose();
-        }
-        List<RtpTransceiver> nativeGetTransceivers = nativeGetTransceivers();
-        this.transceivers = nativeGetTransceivers;
-        return DesugarCollections.unmodifiableList(nativeGetTransceivers);
+        return (List) callWithNative(new i48(this, (byte) 10), Collections.EMPTY_LIST);
     }
 
     public IceConnectionState iceConnectionState() {
-        return nativeIceConnectionState();
+        return (IceConnectionState) callWithNative(new i48(this, (byte) 3), IceConnectionState.CLOSED);
     }
 
     public IceGatheringState iceGatheringState() {
-        return nativeIceGatheringState();
+        return (IceGatheringState) callWithNative(new i48(this, (byte) 11), IceGatheringState.COMPLETE);
     }
 
     public boolean removeIceCandidates(IceCandidate[] iceCandidateArr) {
-        return nativeRemoveIceCandidates(iceCandidateArr);
+        return ((Boolean) callWithNative(new rm6(this, iceCandidateArr, (byte) 21), Boolean.FALSE)).booleanValue();
     }
 
     public void removeStream(MediaStream mediaStream) {
-        nativeRemoveLocalStream(mediaStream.getNativeMediaStream());
-        this.localStreams.remove(mediaStream);
+        runWithNative(new j48(this, mediaStream, (byte) 0));
     }
 
     public boolean removeTrack(RtpSender rtpSender) {
         if (rtpSender != null) {
-            return nativeRemoveTrack(rtpSender.getNativeRtpSender());
+            return ((Boolean) callWithNative(new rm6(this, rtpSender, (byte) 17), Boolean.FALSE)).booleanValue();
         }
-        fvc.f("No RtpSender specified for removeTrack.");
+        p3d.h("No RtpSender specified for removeTrack.");
         return false;
     }
 
     public void restartIce() {
-        nativeRestartIce();
+        runWithNative(new i48(this, (byte) 7));
     }
 
     public void setAudioPlayout(boolean z) {
-        nativeSetAudioPlayout(z);
+        runWithNative(new k48(this, z, (byte) 1));
     }
 
     public void setAudioRecording(boolean z) {
-        nativeSetAudioRecording(z);
+        runWithNative(new k48(this, z, (byte) 0));
     }
 
     public boolean setBitrate(Integer num, Integer num2, Integer num3) {
-        return nativeSetBitrate(num, num2, num3);
+        return ((Boolean) callWithNative(new pt((Object) this, (Object) num, (Object) num2, (Object) num3, (byte) 17), Boolean.FALSE)).booleanValue();
     }
 
     public boolean setConfiguration(RTCConfiguration rTCConfiguration) {
-        return nativeSetConfiguration(rTCConfiguration);
+        return ((Boolean) callWithNative(new rm6(this, rTCConfiguration, (byte) 19), Boolean.FALSE)).booleanValue();
     }
 
     public void setLocalDescription(SdpObserver sdpObserver) {
-        nativeSetLocalDescriptionAutomatically(sdpObserver);
+        runWithNative(new rm6(this, sdpObserver, (byte) 24));
     }
 
     public void setRemoteDescription(SdpObserver sdpObserver, SessionDescription sessionDescription) {
-        nativeSetRemoteDescription(sdpObserver, sessionDescription);
+        runWithNative(new n48(this, sdpObserver, sessionDescription, (byte) 1));
     }
 
     public SignalingState signalingState() {
-        return nativeSignalingState();
+        return (SignalingState) callWithNative(new i48(this, (byte) 9), SignalingState.CLOSED);
     }
 
     public boolean startRtcEventLog(int i, int i2) {
-        return nativeStartRtcEventLog(i, i2);
+        return ((Boolean) callWithNative(new wr3(i, i2, this), Boolean.FALSE)).booleanValue();
     }
 
     public void stopRtcEventLog() {
-        nativeStopRtcEventLog();
+        runWithNative(new i48(this, (byte) 1));
     }
 
-    public void setLocalDescription(SdpObserver sdpObserver, SessionDescription sessionDescription) {
-        nativeSetLocalDescription(sdpObserver, sessionDescription);
-    }
-
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class IceServer {
         public final String hostname;
         public final String password;
@@ -740,85 +1025,28 @@ public class PeerConnection {
         public final List<String> urls;
         public final String username;
 
-        /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-        public static class Builder {
-            private String hostname;
-            private String password;
-            private List<String> tlsAlpnProtocols;
-            private TlsCertPolicy tlsCertPolicy;
-            private List<String> tlsEllipticCurves;
-            private final List<String> urls;
-            private String username;
-
-            private Builder(List<String> list) {
-                this.username = "";
-                this.password = "";
-                this.tlsCertPolicy = TlsCertPolicy.TLS_CERT_POLICY_SECURE;
-                this.hostname = "";
-                if (list == null || list.isEmpty()) {
-                    w26.i(list, "urls == null || urls.isEmpty(): ");
-                    throw null;
-                }
-                this.urls = list;
-            }
-
-            public IceServer createIceServer() {
-                return new IceServer(this.urls.get(0), this.urls, this.username, this.password, this.tlsCertPolicy, this.hostname, this.tlsAlpnProtocols, this.tlsEllipticCurves);
-            }
-
-            public Builder setHostname(String str) {
-                this.hostname = str;
-                return this;
-            }
-
-            public Builder setPassword(String str) {
-                this.password = str;
-                return this;
-            }
-
-            public Builder setTlsAlpnProtocols(List<String> list) {
-                this.tlsAlpnProtocols = list;
-                return this;
-            }
-
-            public Builder setTlsCertPolicy(TlsCertPolicy tlsCertPolicy) {
-                this.tlsCertPolicy = tlsCertPolicy;
-                return this;
-            }
-
-            public Builder setTlsEllipticCurves(List<String> list) {
-                this.tlsEllipticCurves = list;
-                return this;
-            }
-
-            public Builder setUsername(String str) {
-                this.username = str;
-                return this;
-            }
-        }
-
         private IceServer(String str, List<String> list, String str2, String str3, TlsCertPolicy tlsCertPolicy, String str4, List<String> list2, List<String> list3) {
             if (str == null || list == null || list.isEmpty()) {
-                w26.j("uri == null || urls == null || urls.isEmpty()");
+                lq5.j("uri == null || urls == null || urls.isEmpty()");
                 throw null;
             }
             Iterator<String> it = list.iterator();
             while (it.hasNext()) {
                 if (it.next() == null) {
-                    w26.i(list, "urls element is null: ");
+                    lq5.q(list, "urls element is null: ");
                     throw null;
                 }
             }
             if (str2 == null) {
-                w26.j("username == null");
+                lq5.j("username == null");
                 throw null;
             }
             if (str3 == null) {
-                w26.j("password == null");
+                lq5.j("password == null");
                 throw null;
             }
             if (str4 == null) {
-                w26.j("hostname == null");
+                lq5.j("hostname == null");
                 throw null;
             }
             this.uri = str;
@@ -832,7 +1060,7 @@ public class PeerConnection {
         }
 
         public static Builder builder(String str) {
-            return new Builder(Collections.singletonList(str));
+            return new Builder(0, Collections.singletonList(str));
         }
 
         public boolean equals(Object obj) {
@@ -886,7 +1114,68 @@ public class PeerConnection {
         }
 
         public static Builder builder(List<String> list) {
-            return new Builder(list);
+            return new Builder(0, list);
+        }
+
+        /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+        public static class Builder {
+            private String hostname;
+            private String password;
+            private List<String> tlsAlpnProtocols;
+            private TlsCertPolicy tlsCertPolicy;
+            private List<String> tlsEllipticCurves;
+            private final List<String> urls;
+            private String username;
+
+            private Builder(List<String> list) {
+                this.username = "";
+                this.password = "";
+                this.tlsCertPolicy = TlsCertPolicy.TLS_CERT_POLICY_SECURE;
+                this.hostname = "";
+                if (list == null || list.isEmpty()) {
+                    lq5.q(list, "urls == null || urls.isEmpty(): ");
+                    throw null;
+                }
+                this.urls = list;
+            }
+
+            public IceServer createIceServer() {
+                return new IceServer(this.urls.get(0), this.urls, this.username, this.password, this.tlsCertPolicy, this.hostname, this.tlsAlpnProtocols, this.tlsEllipticCurves, 0);
+            }
+
+            public Builder setHostname(String str) {
+                this.hostname = str;
+                return this;
+            }
+
+            public Builder setPassword(String str) {
+                this.password = str;
+                return this;
+            }
+
+            public Builder setTlsAlpnProtocols(List<String> list) {
+                this.tlsAlpnProtocols = list;
+                return this;
+            }
+
+            public Builder setTlsCertPolicy(TlsCertPolicy tlsCertPolicy) {
+                this.tlsCertPolicy = tlsCertPolicy;
+                return this;
+            }
+
+            public Builder setTlsEllipticCurves(List<String> list) {
+                this.tlsEllipticCurves = list;
+                return this;
+            }
+
+            public Builder setUsername(String str) {
+                this.username = str;
+                return this;
+            }
+
+            public /* synthetic */ Builder(int i, List list) {
+                this(list);
+            }
         }
 
         @Deprecated
@@ -908,30 +1197,34 @@ public class PeerConnection {
         public IceServer(String str, String str2, String str3, TlsCertPolicy tlsCertPolicy, String str4) {
             this(str, Collections.singletonList(str), str2, str3, tlsCertPolicy, str4, null, null);
         }
+
+        public /* synthetic */ IceServer(String str, List list, String str2, String str3, TlsCertPolicy tlsCertPolicy, String str4, List list2, List list3, int i) {
+            this(str, list, str2, str3, tlsCertPolicy, str4, list2, list3);
+        }
+    }
+
+    public void setLocalDescription(SdpObserver sdpObserver, SessionDescription sessionDescription) {
+        runWithNative(new n48(this, sdpObserver, sessionDescription, (byte) 0));
     }
 
     public void addIceCandidate(IceCandidate iceCandidate, AddIceObserver addIceObserver) {
-        nativeAddIceCandidateWithObserver(iceCandidate.sdpMid, iceCandidate.sdpMLineIndex, iceCandidate.sdp, addIceObserver);
+        runWithNative(new fu2((Object) this, (Object) iceCandidate, (Object) addIceObserver, (byte) 27));
     }
 
     public void getStats(RTCStatsCollectorCallback rTCStatsCollectorCallback) {
-        nativeNewGetStats(rTCStatsCollectorCallback);
+        runWithNative(new l48(this, rTCStatsCollectorCallback, (byte) 2));
     }
 
     public void getStats(RtpSender rtpSender, RTCStatsCollectorCallback rTCStatsCollectorCallback) {
-        nativeNewGetStatsSender(rtpSender.getNativeRtpSender(), rTCStatsCollectorCallback);
+        runWithNative(new fu2((Object) this, (Object) rtpSender, (Object) rTCStatsCollectorCallback, (byte) 24));
     }
 
     public void getStats(RtpReceiver rtpReceiver, RTCStatsCollectorCallback rTCStatsCollectorCallback) {
-        nativeNewGetStatsReceiver(rtpReceiver.getNativeRtpReceiver(), rTCStatsCollectorCallback);
+        runWithNative(new fu2((Object) this, (Object) rtpReceiver, (Object) rTCStatsCollectorCallback, (byte) 23));
     }
 
     public RtpSender addTrack(MediaStreamTrack mediaStreamTrack) {
         return addTrack(mediaStreamTrack, Collections.EMPTY_LIST);
-    }
-
-    public PeerConnection(NativePeerConnectionFactory nativePeerConnectionFactory) {
-        this(nativePeerConnectionFactory.createNativePeerConnection());
     }
 
     public RtpTransceiver addTransceiver(MediaStreamTrack mediaStreamTrack) {
@@ -947,15 +1240,13 @@ public class PeerConnection {
             if (rtpTransceiverInit == null) {
                 rtpTransceiverInit = new RtpTransceiver.RtpTransceiverInit();
             }
-            RtpTransceiver nativeAddTransceiverOfType = nativeAddTransceiverOfType(mediaType, rtpTransceiverInit);
-            if (nativeAddTransceiverOfType != null) {
-                this.transceivers.add(nativeAddTransceiverOfType);
-                return nativeAddTransceiverOfType;
-            }
-            sc8.j("C++ addTransceiver failed.");
-            return null;
+            return (RtpTransceiver) this.lifecycleLock.call(new fu2((Object) this, (Object) mediaType, (Object) rtpTransceiverInit, (byte) 29));
         }
-        fvc.f("No MediaType specified for addTransceiver.");
+        p3d.h("No MediaType specified for addTransceiver.");
         return null;
+    }
+
+    public PeerConnection(NativePeerConnectionFactory nativePeerConnectionFactory) {
+        this(nativePeerConnectionFactory.createNativePeerConnection());
     }
 }

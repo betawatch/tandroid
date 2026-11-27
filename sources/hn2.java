@@ -1,104 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hn2 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final be0 b;
-    public final TextView c;
-    public final TextView d;
-    public final ImageView e;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hn2 {
+    public static final hn2 a;
+    public static final HashMap b;
+    public static final /* synthetic */ hn2[] c;
 
-    public hn2(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        be0 be0Var = new be0(context);
-        this.b = be0Var;
-        be0Var.setRoundRadius(gl.L(9.0f));
-        addView(be0Var, nme.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(16);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(gl.o());
-        textView.setTextSize(1, 16.0f);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, nme.o(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setSingleLine(true);
-        textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, nme.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, nme.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
-        ImageView imageView = new ImageView(context);
-        this.e = imageView;
-        imageView.setImageResource(R.drawable.msg_inputarrow);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, nme.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        updateColors();
+    /* JADX INFO: Fake field, exist only in values array */
+    hn2 EF0;
+
+    static {
+        hn2 hn2Var = new hn2("X86_32", 0);
+        hn2 hn2Var2 = new hn2("X86_64", 1);
+        hn2 hn2Var3 = new hn2("ARM_UNKNOWN", 2);
+        hn2 hn2Var4 = new hn2("PPC", 3);
+        hn2 hn2Var5 = new hn2("PPC64", 4);
+        hn2 hn2Var6 = new hn2("ARMV6", 5);
+        hn2 hn2Var7 = new hn2("ARMV7", 6);
+        hn2 hn2Var8 = new hn2("UNKNOWN", 7);
+        a = hn2Var8;
+        hn2 hn2Var9 = new hn2("ARMV7S", 8);
+        hn2 hn2Var10 = new hn2("ARM64", 9);
+        c = new hn2[]{hn2Var, hn2Var2, hn2Var3, hn2Var4, hn2Var5, hn2Var6, hn2Var7, hn2Var8, hn2Var9, hn2Var10};
+        HashMap hashMap = new HashMap(4);
+        b = hashMap;
+        hashMap.put("armeabi-v7a", hn2Var7);
+        hashMap.put("armeabi", hn2Var6);
+        hashMap.put("arm64-v8a", hn2Var10);
+        hashMap.put("x86", hn2Var);
     }
 
-    public final void a(int i, TLRPC.Chat chat) {
-        if (chat == null) {
-            return;
-        }
-        TLRPC.ChatFull L0 = na7.q1(i).L0(chat.id);
-        setTitle(cf3.t(chat));
-        setSubtitle(k96.G(L0 != null ? L0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
-        this.b.f(chat, new pb0(chat));
+    public static hn2 valueOf(String str) {
+        return (hn2) Enum.valueOf(hn2.class, str);
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.y6));
-        hashSet.add(Integer.valueOf(bkb.F6));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = bkb.R0;
-        be0 be0Var = this.b;
-        kq3.a(canvas, drawable, (be0Var.getWidth() / 2.0f) + be0Var.getLeft(), (be0Var.getHeight() / 2.0f) + be0Var.getTop(), be0Var.getHeight());
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(60.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        int i = bkb.y6;
-        wjb wjbVar = this.a;
-        this.e.setColorFilter(bkb.v0(i, wjbVar));
-        this.c.setTextColor(bkb.v0(bkb.F6, wjbVar));
-        this.d.setTextColor(bkb.v0(i, wjbVar));
+    public static hn2[] values() {
+        return (hn2[]) c.clone();
     }
 }

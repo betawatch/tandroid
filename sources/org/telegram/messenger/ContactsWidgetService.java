@@ -6,27 +6,27 @@ import android.content.SharedPreferences;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class ContactsWidgetService extends RemoteViewsService {
     @Override // android.widget.RemoteViewsService
     public final RemoteViewsService.RemoteViewsFactory onGetViewFactory(Intent intent) {
         Context applicationContext = getApplicationContext();
-        tu2 tu2Var = new tu2();
-        tu2Var.a = new ArrayList();
-        tu2Var.g = new vf6();
-        tu2Var.b = applicationContext;
-        bkb.S(applicationContext);
+        ov2 ov2Var = new ov2();
+        ov2Var.a = new ArrayList();
+        ov2Var.g = new zh6();
+        ov2Var.b = applicationContext;
+        aob.S(applicationContext);
         int intExtra = intent.getIntExtra("appWidgetId", 0);
-        tu2Var.c = intExtra;
+        ov2Var.c = intExtra;
         SharedPreferences sharedPreferences = applicationContext.getSharedPreferences("shortcut_widget", 0);
         int i = sharedPreferences.getInt("account" + intExtra, -1);
         if (i >= 0) {
-            tu2Var.d = j5.a(i);
+            ov2Var.d = k5.a(i);
         }
         StringBuilder sb = new StringBuilder("deleted");
         sb.append(intExtra);
-        tu2Var.h = sharedPreferences.getBoolean(sb.toString(), false) || tu2Var.d == null;
-        return tu2Var;
+        ov2Var.h = sharedPreferences.getBoolean(sb.toString(), false) || ov2Var.d == null;
+        return ov2Var;
     }
 }

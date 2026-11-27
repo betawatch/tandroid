@@ -1,83 +1,75 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.FrameLayout;
+import android.graphics.drawable.ColorDrawable;
+import android.view.ViewGroup;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class r71 extends FrameLayout {
-    public final /* synthetic */ byte a;
-    public int b;
-    public final /* synthetic */ gk7 c;
+public final class r71 extends j71 {
+    public gd4 n;
+    public final ArrayList r;
+    public zm2 s;
+    public final /* synthetic */ w71 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r71(gk7 gk7Var, Context context, byte b) {
-        super(context);
-        this.a = b;
-        this.c = gk7Var;
-        this.b = -1;
+    public r71(w71 w71Var) {
+        super(w71Var, 1);
+        this.w = w71Var;
+        this.r = new ArrayList();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        byte b = this.a;
-        gk7 gk7Var = this.c;
-        switch (b) {
-            case 0:
-                super.onLayout(z, i, i2, i3, i4);
-                int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
-                if (this.b != measuredWidth) {
-                    this.b = measuredWidth;
-                    ((b81) gk7Var).M.f();
-                    break;
-                }
-                break;
-            case 1:
-                super.onLayout(z, i, i2, i3, i4);
-                int i5 = i4 - i2;
-                int i6 = this.b;
-                if (i6 != -1 && Math.abs(i6 - i5) > gl.L(20.0f)) {
-                    ((zc2) gk7Var).b.z0(r1.W - 1);
-                }
-                this.b = i5;
-                break;
-            default:
-                super.onLayout(z, i, i2, i3, i4);
-                Point point = gl.q;
-                int i7 = point.x + point.y;
-                int i8 = this.b;
-                if (i8 > 0 && i8 != i7) {
-                    setVisibility(8);
-                    o85 o85Var = (o85) gk7Var;
-                    o85Var.y = false;
-                    o85Var.a();
-                }
-                this.b = i7;
-                break;
+    @Override // j71, i71
+    public final void F() {
+        super.F();
+        ArrayList arrayList = this.r;
+        arrayList.clear();
+        int i = 0;
+        while (true) {
+            ArrayList arrayList2 = this.e;
+            if (i >= arrayList2.size()) {
+                return;
+            }
+            arrayList.add(new no6(0, ((p71) arrayList2.get(i)).d.a.getPath(), 0, ((p71) arrayList2.get(i)).d.d == 1, 0, 0));
+            i++;
         }
     }
 
-    @Override // android.view.View
-    public final void setVisibility(int i) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i);
-                if (i == 8) {
-                    this.b = -1;
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i);
-                break;
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        if (this.s == null) {
+            zm2 zm2Var = new zm2(new ColorDrawable(aob.w0(null, aob.X9, false)), aob.R4);
+            this.s = zm2Var;
+            zm2Var.x = true;
         }
+        jja jjaVar = (jja) f89Var.a;
+        c71 c71Var = ((p71) this.e.get(i)).d;
+        Object tag = jjaVar.getTag();
+        ImageReceiver imageReceiver = jjaVar.c;
+        boolean z = c71Var == tag;
+        jjaVar.setTag(c71Var);
+        int max = (int) Math.max(100.0f, hl.b1().x / hl.p);
+        byte b = c71Var.d;
+        File file = c71Var.a;
+        if (b == 1) {
+            imageReceiver.d0(jn5.g("vthumb://0:" + file.getAbsolutePath()), qd4.m(max, max, "_"), this.s, null, null, 0);
+            jjaVar.m(hl.i0(c71Var.c, false, false), true);
+        } else {
+            imageReceiver.d0(jn5.g("thumb://0:" + file.getAbsolutePath()), qd4.m(max, max, "_"), this.s, null, null, 0);
+            jjaVar.m(hl.i0(c71Var.c, false, false), false);
+        }
+        jjaVar.i(this.w.h.j.contains(c71Var), z);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r71(b81 b81Var, Context context) {
-        super(context);
-        this.a = (byte) 0;
-        this.c = b81Var;
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        if (this.n == null) {
+            this.n = new gd4(viewGroup.getContext(), null);
+        }
+        q71 q71Var = new q71(this, viewGroup.getContext(), this.n, this.w.e.getCurrentAccount());
+        q71Var.setStyle(1);
+        return new n69(q71Var);
     }
 }

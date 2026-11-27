@@ -1,15 +1,41 @@
 // default package
 
-import android.os.CancellationSignal;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class oa1 {
-    public static void a(CancellationSignal cancellationSignal) {
-        cancellationSignal.cancel();
+public final /* synthetic */ class oa1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ CameraView.CameraGLThread b;
+
+    public /* synthetic */ oa1(CameraView.CameraGLThread cameraGLThread, byte b) {
+        this.a = b;
+        this.b = cameraGLThread;
     }
 
-    public static CancellationSignal b() {
-        return new CancellationSignal();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        CameraView.CameraGLThread cameraGLThread = this.b;
+        switch (b) {
+            case 0:
+                cameraGLThread.lambda$onDraw$4();
+                break;
+            case 1:
+                cameraGLThread.lambda$onDraw$5();
+                break;
+            case 2:
+                cameraGLThread.lambda$new$0();
+                break;
+            case 3:
+                cameraGLThread.lambda$new$1();
+                break;
+            case 4:
+                cameraGLThread.lambda$new$2();
+                break;
+            default:
+                cameraGLThread.lambda$new$3();
+                break;
+        }
     }
 }

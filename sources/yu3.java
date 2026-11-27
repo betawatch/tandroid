@@ -1,35 +1,29 @@
 // default package
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import org.webrtc.EglThread;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class yu3 {
-    public float a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public xl j;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public int p;
-    public TLRPC.Document q;
-    public final ImageReceiver r;
-    public String s;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class yu3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ EglThread b;
 
-    public yu3() {
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.r = imageReceiver;
-        imageReceiver.A1 = true;
-        imageReceiver.b = true;
+    public /* synthetic */ yu3(EglThread eglThread, byte b) {
+        this.a = b;
+        this.b = eglThread;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        EglThread eglThread = this.b;
+        switch (b) {
+            case 0:
+                eglThread.lambda$onRenderWindowOpen$2();
+                break;
+            default:
+                eglThread.lambda$onRenderWindowClose$3();
+                break;
+        }
     }
 }

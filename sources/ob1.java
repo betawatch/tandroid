@@ -1,36 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ob1 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ j7b b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ob1 extends hn {
+    public final /* synthetic */ byte e0;
+    public final /* synthetic */ pb1 f0;
 
-    public /* synthetic */ ob1(j7b j7bVar, byte b) {
-        this.a = b;
-        this.b = j7bVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ob1(pb1 pb1Var, byte b) {
+        super(true, false, false);
+        this.e0 = b;
+        this.f0 = pb1Var;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        j7b j7bVar = this.b;
-        Integer num = (Integer) obj;
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        byte b = this.e0;
+        pb1 pb1Var = this.f0;
         switch (b) {
             case 0:
-                j7bVar.setPeriod(num.intValue());
-                p8c p8cVar = j7bVar.B1;
-                if (p8cVar != null) {
-                    p8cVar.a(num);
-                    break;
-                }
+                pb1Var.invalidateSelf();
                 break;
             default:
-                p8c p8cVar2 = j7bVar.C1;
-                if (p8cVar2 != null) {
-                    p8cVar2.a(num);
-                    break;
-                }
+                pb1Var.invalidateSelf();
                 break;
         }
     }

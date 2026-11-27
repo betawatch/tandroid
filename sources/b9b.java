@@ -1,40 +1,58 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class b9b {
-    public static final String[] a;
-    public static final byte[] b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-    static {
-        String[] strArr = new String[93];
-        for (int i = 0; i < 32; i++) {
-            strArr[i] = "\\u" + a(i >> 12) + a(i >> 8) + a(i >> 4) + a(i);
-        }
-        strArr[34] = "\\\"";
-        strArr[92] = "\\\\";
-        strArr[9] = "\\t";
-        strArr[8] = "\\b";
-        strArr[10] = "\\n";
-        strArr[13] = "\\r";
-        strArr[12] = "\\f";
-        a = strArr;
-        byte[] bArr = new byte[93];
-        for (int i2 = 0; i2 < 32; i2++) {
-            bArr[i2] = 1;
-        }
-        bArr[34] = 34;
-        bArr[92] = 92;
-        bArr[9] = 116;
-        bArr[8] = 98;
-        bArr[10] = 110;
-        bArr[13] = 114;
-        bArr[12] = 102;
-        b = bArr;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class b9b extends FrameLayout {
+    public final Paint a;
+    public final mm b;
+    public final /* synthetic */ vnb c;
+    public final /* synthetic */ e9b d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b9b(e9b e9bVar, Context context, vnb vnbVar) {
+        super(context);
+        this.d = e9bVar;
+        this.c = vnbVar;
+        this.a = new Paint(1);
+        this.b = new mm(this, 0L, 350L, k43.h);
     }
 
-    public static final char a(int i) {
-        int i2 = i & 15;
-        return (char) (i2 < 10 ? i2 + 48 : i2 + 87);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int v0 = aob.v0(aob.h5, this.c);
+        Paint paint = this.a;
+        paint.setColor(v0);
+        e9b e9bVar = this.d;
+        float max = Math.max(0.0f, e9bVar.E0());
+        boolean z = max < ((float) hl.m);
+        mm mmVar = this.b;
+        float R1 = hl.R1(max, 0.0f, mmVar.d(z));
+        RectF rectF = hl.P;
+        rectF.set(e9bVar.u0, R1, getWidth() - e9bVar.u0, hl.L(14.0f) + getHeight());
+        float L = (1.0f - mmVar.c) * hl.L(14.0f);
+        canvas.drawRoundRect(rectF, L, L, paint);
+        e9bVar.q1.setTranslationY(Math.max(hl.L(8.0f) + hl.m, hl.L(14.0f) + R1));
+        canvas.save();
+        canvas.clipRect(e9bVar.u0, hl.L(14.0f) + hl.m, getWidth() - e9bVar.u0, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        float y = motionEvent.getY();
+        e9b e9bVar = this.d;
+        if (y >= e9bVar.E0()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        e9bVar.dismiss();
+        return true;
     }
 }

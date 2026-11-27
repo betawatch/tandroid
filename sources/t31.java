@@ -1,12 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class t31 extends i92 {
-    @Override // i92, android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        setPivotX(getMeasuredWidth() / 2.0f);
-        setPivotY(getMeasuredHeight());
+import android.util.Log;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class t31 implements AutoCloseable {
+    public final String[] a;
+    public final ArrayDeque b;
+
+    public t31(Object obj, String str, ArrayDeque arrayDeque) {
+        this.b = arrayDeque;
+        if (obj != null) {
+            arrayDeque.addFirst(new s31(obj, str));
+            if (Log.isLoggable("CarApp.Bun", 2)) {
+                int min = Math.min(arrayDeque.size(), 11);
+                String[] strArr = this.a;
+                if (strArr == null) {
+                    strArr = new String[12];
+                    this.a = strArr;
+                }
+                String str2 = strArr[min];
+                if (str2 == null) {
+                    char[] cArr = new char[min];
+                    Arrays.fill(cArr, ' ');
+                    String str3 = new String(cArr);
+                    str2 = min == 11 ? str3.concat("...") : str3;
+                    this.a[min] = str2;
+                }
+                Log.v("CarApp.Bun", str2.concat(v31.i(obj.getClass()) + " " + str));
+            }
+        }
+    }
+
+    public final String a() {
+        StringBuilder sb = new StringBuilder();
+        ArrayDeque arrayDeque = this.b;
+        int min = Math.min(arrayDeque.size(), 8);
+        Iterator descendingIterator = arrayDeque.descendingIterator();
+        while (descendingIterator.hasNext()) {
+            int i = min - 1;
+            if (min <= 0) {
+                break;
+            }
+            sb.append(((s31) descendingIterator.next()).a());
+            min = i;
+        }
+        if (descendingIterator.hasNext()) {
+            sb.append("[...]");
+        }
+        return sb.toString();
+    }
+
+    @Override // java.lang.AutoCloseable
+    public final void close() {
+        this.b.removeFirst();
     }
 }

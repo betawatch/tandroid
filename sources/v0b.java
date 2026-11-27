@@ -1,90 +1,63 @@
 // default package
 
-import java.io.FileNotFoundException;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_communities;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class v0b implements ed, j8c, r8c, Vector.TLDeserializer {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class v0b extends nic {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ w1b e;
 
-    public /* synthetic */ v0b(byte b) {
-        this.a = b;
+    public v0b(w1b w1bVar, boolean z, boolean z2, boolean z3, FrameLayout frameLayout) {
+        this.e = w1bVar;
+        this.a = z;
+        this.b = z2;
+        this.c = z3;
+        this.d = frameLayout;
     }
 
-    public static /* synthetic */ void a(Object obj) {
-        throw new IllegalArgumentException(obj.toString());
-    }
-
-    public static /* synthetic */ void b(Object obj, String str) {
-        throw new FileNotFoundException(str + obj);
-    }
-
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-        switch (this.a) {
-            case 7:
-                return TLRPC.AttachMenuPeerType.TLdeserialize(inputSerializedData, i, z);
-            case 8:
-                return TLRPC.TL_attachMenuBotIcon.TLdeserialize(inputSerializedData, i, z);
-            case 9:
-                return TLRPC.TL_attachMenuBotIconColor.TLdeserialize(inputSerializedData, i, z);
-            case 10:
-                return TLRPC.AttachMenuBot.TLdeserialize(inputSerializedData, i, z);
-            case 11:
-                return TLRPC.User.TLdeserialize(inputSerializedData, i, z);
-            case 12:
-                return TLRPC.RestrictionReason.TLdeserialize(inputSerializedData, i, z);
-            case 13:
-                return TLRPC.TL_username.TLdeserialize(inputSerializedData, i, z);
-            case 14:
-                return TL_bots.BotInfo.TLdeserialize(inputSerializedData, i, z);
-            case 15:
-                return TLRPC.TL_messageRange.TLdeserialize(inputSerializedData, i, z);
-            case 16:
-                return TLRPC.TL_channelAdminLogEvent.TLdeserialize(inputSerializedData, i, z);
-            case 17:
-                return TLRPC.Chat.TLdeserialize(inputSerializedData, i, z);
-            case 18:
-                return TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData, i, z);
-            case 19:
-                return TLRPC.TL_sendAsPeer.TLdeserialize(inputSerializedData, i, z);
-            case 20:
-                return TLRPC.TL_sponsoredMessageReportOption.TLdeserialize(inputSerializedData, i, z);
-            case 21:
-                return TLRPC.ChatParticipant.TLdeserialize(inputSerializedData, i, z);
-            case 22:
-                return TLRPC.Reaction.TLdeserialize(inputSerializedData, i, z);
-            case 23:
-                return TLRPC.ThemeSettings.TLdeserialize(inputSerializedData, i, z);
-            case 24:
-                return TL_communities.CommunityPeer.TLdeserialize(inputSerializedData, i, z);
-            case 25:
-                return TLRPC.TL_dcOption.TLdeserialize(inputSerializedData, i, z);
-            case 26:
-                return TLRPC.TL_peerBlocked.TLdeserialize(inputSerializedData, i, z);
-            case 27:
-                return TLRPC.TL_contact.TLdeserialize(inputSerializedData, i, z);
-            case 28:
-                return TLRPC.TL_contactStatus.TLdeserialize(inputSerializedData, i, z);
-            default:
-                return TLRPC.TL_importedContact.TLdeserialize(inputSerializedData, i, z);
+    @Override // nic
+    public final View d(int i) {
+        w1b w1bVar = this.e;
+        if (w1bVar.o0) {
+            return w1bVar.j0;
         }
+        if (this.a) {
+            if (i != 0) {
+                i--;
+            }
+            return this.d;
+        }
+        if (this.b) {
+            if (i == 0) {
+                return w1bVar.j0;
+            }
+            i--;
+        }
+        if (this.c && i == 0) {
+            return w1bVar.k0;
+        }
+        return this.d;
     }
 
-    @Override // j8c
-    public final Object g(Integer num, Object obj) {
-        Integer num2 = (Integer) obj;
-        return num.intValue() == 0 ? num2.intValue() == 0 ? k96.M0(2131748613, null) : k96.H(',', "Stars", num2.intValue()) : String.valueOf(num2);
+    @Override // nic
+    public final int e() {
+        if (this.e.o0) {
+            return 1;
+        }
+        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        hdVar.dismiss();
+    @Override // nic
+    public final int h(int i) {
+        return i;
+    }
+
+    @Override // nic
+    public final void b(View view, int i, int i2) {
     }
 }

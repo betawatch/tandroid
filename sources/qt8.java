@@ -1,13 +1,33 @@
 // default package
 
-import android.widget.Button;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qt8 extends TextView {
-    @Override // android.widget.TextView, android.view.View
-    public final CharSequence getAccessibilityClassName() {
-        return Button.class.getName();
+public final /* synthetic */ class qt8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ au8 b;
+
+    public /* synthetic */ qt8(au8 au8Var, byte b) {
+        this.a = b;
+        this.b = au8Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        au8 au8Var = this.b;
+        switch (b) {
+            case 0:
+                au8Var.b();
+                break;
+            case 1:
+                au8Var.c();
+                break;
+            case 2:
+                au8Var.f(false);
+                break;
+            default:
+                au8Var.d();
+                break;
+        }
     }
 }

@@ -1,30 +1,115 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ym2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ en2 b;
-    public final /* synthetic */ long c;
+import java.io.Serializable;
 
-    public /* synthetic */ ym2(en2 en2Var, long j, byte b) {
-        this.a = b;
-        this.b = en2Var;
-        this.c = j;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ym2 implements mx2, Serializable {
+    public final mx2 a;
+    public final kx2 b;
+
+    public ym2(kx2 kx2Var, mx2 mx2Var) {
+        mx2Var.getClass();
+        this.a = mx2Var;
+        this.b = kx2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.c;
-        en2 en2Var = this.b;
-        switch (b) {
-            case 0:
-                en2Var.Z(j);
-                break;
-            default:
-                en2Var.presentFragment(mu1.W9(j));
-                break;
+    public final boolean equals(Object obj) {
+        boolean z;
+        if (this == obj) {
+            return true;
         }
+        if (obj instanceof ym2) {
+            ym2 ym2Var = (ym2) obj;
+            int i = 2;
+            ym2 ym2Var2 = ym2Var;
+            int i2 = 2;
+            while (true) {
+                mx2 mx2Var = ym2Var2.a;
+                ym2Var2 = mx2Var instanceof ym2 ? (ym2) mx2Var : null;
+                if (ym2Var2 == null) {
+                    break;
+                }
+                i2++;
+            }
+            ym2 ym2Var3 = this;
+            while (true) {
+                mx2 mx2Var2 = ym2Var3.a;
+                ym2Var3 = mx2Var2 instanceof ym2 ? (ym2) mx2Var2 : null;
+                if (ym2Var3 == null) {
+                    break;
+                }
+                i++;
+            }
+            if (i2 == i) {
+                while (true) {
+                    kx2 kx2Var = this.b;
+                    if (!ur5.a(ym2Var.get(kx2Var.getKey()), kx2Var)) {
+                        z = false;
+                        break;
+                    }
+                    mx2 mx2Var3 = this.a;
+                    if (!(mx2Var3 instanceof ym2)) {
+                        mx2Var3.getClass();
+                        kx2 kx2Var2 = (kx2) mx2Var3;
+                        z = ur5.a(ym2Var.get(kx2Var2.getKey()), kx2Var2);
+                        break;
+                    }
+                    this = (ym2) mx2Var3;
+                }
+                if (z) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // mx2
+    public final Object fold(Object obj, is4 is4Var) {
+        return is4Var.invoke(this.a.fold(obj, is4Var), this.b);
+    }
+
+    @Override // mx2
+    public final kx2 get(lx2 lx2Var) {
+        lx2Var.getClass();
+        while (true) {
+            kx2 kx2Var = this.b.get(lx2Var);
+            if (kx2Var != null) {
+                return kx2Var;
+            }
+            mx2 mx2Var = this.a;
+            if (!(mx2Var instanceof ym2)) {
+                return mx2Var.get(lx2Var);
+            }
+            this = (ym2) mx2Var;
+        }
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + this.a.hashCode();
+    }
+
+    @Override // mx2
+    public final mx2 minusKey(lx2 lx2Var) {
+        lx2Var.getClass();
+        kx2 kx2Var = this.b;
+        kx2 kx2Var2 = kx2Var.get(lx2Var);
+        mx2 mx2Var = this.a;
+        if (kx2Var2 != null) {
+            return mx2Var;
+        }
+        mx2 minusKey = mx2Var.minusKey(lx2Var);
+        return minusKey == mx2Var ? this : minusKey == u24.a ? kx2Var : new ym2(kx2Var, minusKey);
+    }
+
+    @Override // mx2
+    public final mx2 plus(mx2 mx2Var) {
+        mx2Var.getClass();
+        return mx2Var == u24.a ? this : (mx2) mx2Var.fold(this, new xm2((byte) 1));
+    }
+
+    public final String toString() {
+        return "[" + ((String) fold("", new xm2((byte) 0))) + ']';
     }
 }

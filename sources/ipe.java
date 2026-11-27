@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Collections;
+import java.util.Map;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ipe implements zn7 {
-    public static final ipe a = new ipe();
+public final class ipe {
+    public static volatile ipe a;
+    public static volatile ipe b;
+    public static final ipe c;
 
     static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
+        ipe ipeVar = new ipe();
+        Map map = Collections.EMPTY_MAP;
+        c = ipeVar;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static void a() {
+        if (a == null) {
+            synchronized (ipe.class) {
+                if (a == null) {
+                    a = c;
+                }
+            }
         }
-        throw null;
     }
 }

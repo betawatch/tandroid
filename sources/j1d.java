@@ -1,357 +1,87 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.View;
+import android.view.animation.PathInterpolator;
+import android.widget.FrameLayout;
 import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.Future;
-import java.util.concurrent.locks.ReentrantLock;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.List;
+import java.util.WeakHashMap;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class j1d implements p1d {
-    public boolean E;
-    public ug5 F;
-    public boolean G;
-    public boolean H;
-    public final ntb I;
-    public final ps J;
-    public final op5 K;
-    public final r1d a;
-    public final ReentrantLock b;
-    public final Context c;
-    public final dy4 d;
-    public ds2 e;
-    public int f;
-    public int n;
-    public eha w;
-    public boolean x;
-    public boolean y;
-    public boolean h = false;
-    public final Bundle r = new Bundle();
-    public final HashSet s = new HashSet();
-    public final ArrayList L = new ArrayList();
+public final class j1d {
+    public static final RectF e = new RectF();
+    public static final Rect f = new Rect();
+    public l2d a;
+    public final FrameLayout b;
+    public int c;
+    public final r89 d = new r89(0, false);
 
-    public j1d(r1d r1dVar, ntb ntbVar, ps psVar, dy4 dy4Var, op5 op5Var, ReentrantLock reentrantLock, Context context) {
-        this.a = r1dVar;
-        this.I = ntbVar;
-        this.J = psVar;
-        this.d = dy4Var;
-        this.K = op5Var;
-        this.b = reentrantLock;
-        this.c = context;
+    public j1d(FrameLayout frameLayout) {
+        this.b = frameLayout;
+        WeakHashMap weakHashMap = ihc.a;
+        if (Build.VERSION.SDK_INT >= 30) {
+            u1d.g(frameLayout, this);
+            return;
+        }
+        PathInterpolator pathInterpolator = s1d.e;
+        View.OnApplyWindowInsetsListener r1dVar = new r1d(frameLayout, this);
+        frameLayout.setTag(R.id.tag_window_insets_animation_callback, r1dVar);
+        if (frameLayout.getTag(R.id.tag_compat_insets_dispatch) == null && frameLayout.getTag(R.id.tag_on_apply_window_listener) == null) {
+            frameLayout.setOnApplyWindowInsetsListener(r1dVar);
+        }
     }
 
-    @Override // p1d
-    public final boolean S0() {
-        ArrayList arrayList = this.L;
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            ((Future) arrayList.get(i)).cancel(true);
+    public static l2d a(l2d l2dVar, View view, View view2) {
+        if (view == null || view2 == null || l2dVar == null) {
+            return null;
         }
-        arrayList.clear();
-        h(true);
-        this.a.h();
-        return true;
-    }
-
-    @Override // p1d
-    public final void a1(ds2 ds2Var, yn ynVar, boolean z) {
-        if (j(1)) {
-            d(ds2Var, ynVar, z);
-            if (k()) {
-                c();
-            }
+        RectF rectF = e;
+        if (!yic.c(view, view2, rectF)) {
+            return null;
         }
+        Rect rect = f;
+        rectF.round(rect);
+        int i = rect.left;
+        int i2 = rect.top;
+        int width = view2.getWidth() - rect.right;
+        int height = view2.getHeight() - rect.bottom;
+        if (i == 0 && i2 == 0 && width == 0 && height == 0) {
+            return l2dVar;
+        }
+        return l2dVar.a.m(Math.max(0, i), Math.max(0, i2), Math.max(0, width), Math.max(0, height));
     }
 
     public final void b() {
-        if (this.n == 0) {
-            if (!this.y || this.E) {
-                ArrayList arrayList = new ArrayList();
-                this.h = true;
-                r1d r1dVar = this.a;
-                ps psVar = r1dVar.f;
-                this.n = psVar.c;
-                Iterator it = ((ns) psVar.keySet()).iterator();
-                while (it.hasNext()) {
-                    wn wnVar = (wn) it.next();
-                    if (!r1dVar.i.containsKey(wnVar)) {
-                        arrayList.add((xx4) psVar.get(wnVar));
-                    } else if (k()) {
-                        c();
-                    }
-                }
-                if (arrayList.isEmpty()) {
-                    return;
-                }
-                this.L.add(s1d.a.submit(new g1d(this, arrayList, (byte) 1)));
-            }
-        }
-    }
-
-    public final void c() {
-        r1d r1dVar = this.a;
-        r1dVar.a.lock();
-        try {
-            r1dVar.o.e();
-            r1dVar.m = new d1d(r1dVar);
-            r1dVar.m.g1();
-            r1dVar.b.signalAll();
-            r1dVar.a.unlock();
-            s1d.a.execute(new xia(this, (byte) 19));
-            eha ehaVar = this.w;
-            if (ehaVar != null) {
-                if (this.G) {
-                    ug5 ug5Var = this.F;
-                    fre.h(ug5Var);
-                    boolean z = this.H;
-                    try {
-                        r2d r2dVar = (r2d) ehaVar.k();
-                        Integer num = ehaVar.I;
-                        fre.h(num);
-                        int intValue = num.intValue();
-                        Parcel c = r2dVar.c();
-                        e2d.c(c, ug5Var);
-                        c.writeInt(intValue);
-                        c.writeInt(z ? 1 : 0);
-                        r2dVar.d(c, 9);
-                    } catch (RemoteException unused) {
-                        Log.w("SignInClientImpl", "Remote service probably died when saveDefaultAccount is called");
-                    }
-                }
-                h(false);
-            }
-            Iterator it = r1dVar.i.keySet().iterator();
+        int i = this.c - 1;
+        this.c = i;
+        if (i == 0) {
+            Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                xx4 xx4Var = (xx4) r1dVar.f.get((wn) it.next());
-                fre.h(xx4Var);
-                xx4Var.c();
+                ((i1d) it.next()).P();
             }
-            Bundle bundle = this.r;
-            if (true == bundle.isEmpty()) {
-                bundle = null;
-            }
-            r1dVar.p.R0(bundle);
-        } catch (Throwable th) {
-            r1dVar.a.unlock();
-            throw th;
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0013, code lost:
-    
-        if (r2.d.a(r3.b, null, null) != null) goto L8;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void d(ds2 ds2Var, yn ynVar, boolean z) {
-        op5 op5Var = ynVar.a;
-        if (z && !ds2Var.b()) {
-        }
-        if (this.e == null || Integer.MAX_VALUE < this.f) {
-            this.e = ds2Var;
-            this.f = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        this.a.i.put(ynVar.b, ds2Var);
-    }
-
-    @Override // p1d
-    public final ig0 e(ig0 ig0Var) {
-        throw new IllegalStateException("GoogleApiClient is not connected yet.");
-    }
-
-    public final void f() {
-        this.y = false;
-        r1d r1dVar = this.a;
-        r1dVar.o.G = Collections.EMPTY_SET;
-        Iterator it = this.s.iterator();
+    public final void c(l2d l2dVar, List list) {
+        Iterator it = list.iterator();
+        int i = 0;
         while (it.hasNext()) {
-            wn wnVar = (wn) it.next();
-            HashMap hashMap = r1dVar.i;
-            if (!hashMap.containsKey(wnVar)) {
-                hashMap.put(wnVar, new ds2(17, null, null));
-            }
+            i |= ((w1d) it.next()).a.c();
         }
-    }
-
-    public final void g(ds2 ds2Var) {
-        ArrayList arrayList = this.L;
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            ((Future) arrayList.get(i)).cancel(true);
-        }
-        arrayList.clear();
-        h(!ds2Var.b());
-        r1d r1dVar = this.a;
-        r1dVar.h();
-        r1dVar.p.o(ds2Var);
-    }
-
-    @Override // p1d
-    public final void g1() {
-        r1d r1dVar = this.a;
-        HashMap hashMap = r1dVar.i;
-        ps psVar = r1dVar.f;
-        hashMap.clear();
-        this.y = false;
-        this.e = null;
-        this.h = false;
-        this.x = true;
-        this.E = false;
-        this.G = false;
-        HashMap hashMap2 = new HashMap();
-        ps psVar2 = this.J;
-        Iterator it = ((ns) psVar2.keySet()).iterator();
-        while (it.hasNext()) {
-            yn ynVar = (yn) it.next();
-            xx4 xx4Var = (xx4) psVar.get(ynVar.b);
-            fre.h(xx4Var);
-            boolean booleanValue = ((Boolean) psVar2.get(ynVar)).booleanValue();
-            if (xx4Var.w()) {
-                this.y = true;
-                if (booleanValue) {
-                    this.s.add(ynVar.b);
-                } else {
-                    this.x = false;
+        if (vsd.a(i, 8)) {
+            Iterator it2 = this.d.iterator();
+            while (it2.hasNext()) {
+                i1d i1dVar = (i1d) it2.next();
+                l2d a = a(l2dVar, i1dVar.R(), this.b);
+                if (a != null) {
+                    i1dVar.o(a);
                 }
             }
-            hashMap2.put(xx4Var, new e1d(this, ynVar, booleanValue));
         }
-        if (this.y) {
-            ntb ntbVar = this.I;
-            fre.h(ntbVar);
-            op5 op5Var = this.K;
-            fre.h(op5Var);
-            m1d m1dVar = r1dVar.o;
-            ntbVar.h = Integer.valueOf(System.identityHashCode(m1dVar));
-            i1d i1dVar = new i1d(this);
-            this.w = (eha) op5Var.a(this.c, m1dVar.h, ntbVar, (gha) ntbVar.f, i1dVar, i1dVar);
-        }
-        this.n = psVar.c;
-        this.L.add(s1d.a.submit(new g1d(this, hashMap2, (byte) 0)));
-    }
-
-    public final void h(boolean z) {
-        eha ehaVar = this.w;
-        if (ehaVar != null) {
-            if (ehaVar.q() && z) {
-                try {
-                    r2d r2dVar = (r2d) ehaVar.k();
-                    Integer num = ehaVar.I;
-                    fre.h(num);
-                    int intValue = num.intValue();
-                    Parcel c = r2dVar.c();
-                    c.writeInt(intValue);
-                    r2dVar.d(c, 7);
-                } catch (RemoteException unused) {
-                    Log.w("SignInClientImpl", "Remote service probably died when clearAccountFromSessionStore is called");
-                }
-            }
-            ehaVar.c();
-            fre.h(this.I);
-            this.F = null;
-        }
-    }
-
-    @Override // p1d
-    public final void i(Bundle bundle) {
-        if (j(1)) {
-            if (bundle != null) {
-                this.r.putAll(bundle);
-            }
-            if (k()) {
-                c();
-            }
-        }
-    }
-
-    public final boolean j(int i) {
-        if (this.h == i) {
-            return true;
-        }
-        m1d m1dVar = this.a.o;
-        m1dVar.getClass();
-        StringWriter stringWriter = new StringWriter();
-        PrintWriter printWriter = new PrintWriter(stringWriter);
-        printWriter.append((CharSequence) "").append((CharSequence) "mContext=").println(m1dVar.f);
-        printWriter.append((CharSequence) "").append((CharSequence) "mResuming=").print(m1dVar.r);
-        printWriter.append((CharSequence) " mWorkQueue.size()=").print(m1dVar.n.size());
-        printWriter.append((CharSequence) " mUnconsumedApiCalls.size()=").println(((Set) m1dVar.N.b).size());
-        z1d z1dVar = m1dVar.d;
-        if (z1dVar != null) {
-            z1dVar.d("", null, printWriter, null);
-        }
-        Log.w("GACConnecting", stringWriter.toString());
-        Log.w("GACConnecting", "Unexpected callback in ".concat(toString()));
-        int i2 = this.n;
-        StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 22);
-        sb.append("mRemainingConnections=");
-        sb.append(i2);
-        Log.w("GACConnecting", sb.toString());
-        String str = this.h ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN";
-        String str2 = i != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN";
-        StringBuilder sb2 = new StringBuilder(str2.length() + str.length() + 70);
-        sb2.append("GoogleApiClient connecting is in step ");
-        sb2.append(str);
-        sb2.append(" but received callback for step ");
-        sb2.append(str2);
-        Log.e("GACConnecting", sb2.toString(), new Exception());
-        g(new ds2(8, null, null));
-        return false;
-    }
-
-    public final boolean k() {
-        r1d r1dVar = this.a;
-        int i = this.n - 1;
-        this.n = i;
-        if (i > 0) {
-            return false;
-        }
-        if (i >= 0) {
-            ds2 ds2Var = this.e;
-            if (ds2Var == null) {
-                return true;
-            }
-            r1dVar.n = this.f;
-            g(ds2Var);
-            return false;
-        }
-        m1d m1dVar = r1dVar.o;
-        m1dVar.getClass();
-        StringWriter stringWriter = new StringWriter();
-        PrintWriter printWriter = new PrintWriter(stringWriter);
-        printWriter.append((CharSequence) "").append((CharSequence) "mContext=").println(m1dVar.f);
-        printWriter.append((CharSequence) "").append((CharSequence) "mResuming=").print(m1dVar.r);
-        printWriter.append((CharSequence) " mWorkQueue.size()=").print(m1dVar.n.size());
-        printWriter.append((CharSequence) " mUnconsumedApiCalls.size()=").println(((Set) m1dVar.N.b).size());
-        z1d z1dVar = m1dVar.d;
-        if (z1dVar != null) {
-            z1dVar.d("", null, printWriter, null);
-        }
-        Log.w("GACConnecting", stringWriter.toString());
-        Log.wtf("GACConnecting", "GoogleApiClient received too many callbacks for the given step. Clients may be in an unexpected state; GoogleApiClient will now disconnect.", new Exception());
-        g(new ds2(8, null, null));
-        return false;
-    }
-
-    @Override // p1d
-    public final void t0(int i) {
-        g(new ds2(8, null, null));
-    }
-
-    @Override // p1d
-    public final void a() {
     }
 }

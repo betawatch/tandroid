@@ -1,19 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class y2e implements zn7 {
-    public static final y2e a = new y2e();
+public abstract class y2e {
+    public static final /* synthetic */ int a = 0;
 
     static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+        Logger.getLogger(y2e.class.getName());
     }
 }

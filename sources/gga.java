@@ -1,90 +1,61 @@
 // default package
 
-import android.location.Address;
-import android.location.Geocoder;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.messenger.a;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gga implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ double c;
-    public final /* synthetic */ double d;
+public final class gga extends zha {
+    public final /* synthetic */ eja Q;
 
-    public /* synthetic */ gga(FrameLayout frameLayout, double d, double d2, byte b) {
-        this.a = b;
-        this.b = frameLayout;
-        this.c = d;
-        this.d = d2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gga(eja ejaVar, Context context) {
+        super(context);
+        this.Q = ejaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                hga hgaVar = (hga) this.b;
-                double d = this.c;
-                double d2 = this.d;
-                try {
-                    List<Address> fromLocation = new Geocoder(a.b, k96.D0().y).getFromLocation(d, d2, 1);
-                    if (fromLocation.isEmpty()) {
-                        String c = eb6.c(d2, d);
-                        hgaVar.L = c;
-                        if (c == null) {
-                            hgaVar.L = "";
-                        } else {
-                            hgaVar.L = "🌊 " + ((Object) hgaVar.L);
-                        }
-                    } else {
-                        Address address = fromLocation.get(0);
-                        StringBuilder sb = new StringBuilder();
-                        HashSet hashSet = new HashSet();
-                        hashSet.add(address.getSubAdminArea());
-                        hashSet.add(address.getAdminArea());
-                        hashSet.add(address.getLocality());
-                        hashSet.add(address.getCountryName());
-                        Iterator it = hashSet.iterator();
-                        while (it.hasNext()) {
-                            String str = (String) it.next();
-                            if (!TextUtils.isEmpty(str)) {
-                                if (sb.length() > 0) {
-                                    sb.append(", ");
-                                }
-                                sb.append(str);
-                            }
-                        }
-                        hgaVar.L = sb.toString();
-                        String b = eb6.b(address.getCountryCode());
-                        if (b != null && vu3.g(b) != null) {
-                            hgaVar.L = b + " " + ((Object) hgaVar.L);
-                        }
-                    }
-                } catch (Exception unused) {
+    @Override // android.view.View
+    public final void setTranslationX(float f) {
+        zha zhaVar;
+        float translationX = getTranslationX();
+        super.setTranslationX(f);
+        eja ejaVar = this.Q;
+        zha[] zhaVarArr = ejaVar.n0;
+        if (zhaVarArr[0] == this) {
+            float f2 = translationX - f;
+            vy4 vy4Var = ejaVar.h2;
+            if (vy4Var != null) {
+                float f3 = ejaVar.i2 + f2;
+                ejaVar.i2 = f3;
+                int i = (int) f3;
+                if (i != 0) {
+                    ejaVar.i2 = f3 - i;
+                    vy4Var.h(i, 0);
                 }
-                gl.c3(new gga(hgaVar, d, d2, (byte) 1));
-                break;
-            case 1:
-                hga hgaVar2 = (hga) this.b;
-                double d3 = this.c;
-                double d4 = this.d;
-                hgaVar2.I = d3;
-                hgaVar2.J = d4;
-                hgaVar2.H = false;
-                CharSequence charSequence = hgaVar2.L;
-                jia jiaVar = hgaVar2.d;
-                CharSequence m = vu3.m(charSequence, jiaVar.getPaint().getFontMetricsInt(), false, null, 0);
-                hgaVar2.L = m;
-                jiaVar.l(m, false);
-                break;
-            default:
-                ((c42) this.b).g0(this.c, this.d);
-                break;
+            }
+        }
+        if (ejaVar.j1 && (zhaVar = zhaVarArr[0]) == this) {
+            float abs = Math.abs(zhaVar.getTranslationX()) / zhaVarArr[0].getMeasuredWidth();
+            ejaVar.g1(abs, zhaVarArr[1].F);
+            if (ejaVar.q()) {
+                byte b = ejaVar.A0;
+                if (b == 2) {
+                    ejaVar.r0 = 1.0f - abs;
+                } else if (b == 1) {
+                    ejaVar.r0 = abs;
+                }
+                ejaVar.K1(abs);
+                float U = ejaVar.U(abs);
+                ejaVar.s0 = U;
+                ejaVar.u0.setVisibility((U == 0.0f || !ejaVar.q() || ejaVar.k0()) ? 4 : 0);
+            } else {
+                ejaVar.r0 = 0.0f;
+            }
+            ejaVar.G1(false);
+        }
+        ejaVar.C();
+        xj3 xj3Var = ejaVar.S0;
+        if (xj3Var != null) {
+            xj3Var.setTranslationY(ejaVar.O1);
         }
     }
 }

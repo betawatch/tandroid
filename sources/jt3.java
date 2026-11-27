@@ -1,28 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jt3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lt3 b;
+public final class jt3 {
+    public static final jt3 a;
+    public static final jt3 b;
+    public static final jt3 c;
+    public static final /* synthetic */ jt3[] d;
 
-    public /* synthetic */ jt3(lt3 lt3Var, byte b) {
-        this.a = b;
-        this.b = lt3Var;
+    static {
+        jt3 jt3Var = new jt3("NONE", 0);
+        a = jt3Var;
+        jt3 jt3Var2 = new jt3("VERTICAL", 1);
+        b = jt3Var2;
+        jt3 jt3Var3 = new jt3("FULL", 2);
+        c = jt3Var3;
+        d = new jt3[]{jt3Var, jt3Var2, jt3Var3};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        lt3 lt3Var = this.b;
-        switch (b) {
-            case 0:
-                lt3Var.post(new jt3(lt3Var, (byte) 1));
-                break;
-            default:
-                lt3Var.h();
-                lt3Var.d();
-                break;
-        }
+    public static jt3 valueOf(String str) {
+        return (jt3) Enum.valueOf(jt3.class, str);
+    }
+
+    public static jt3[] values() {
+        return (jt3[]) d.clone();
     }
 }

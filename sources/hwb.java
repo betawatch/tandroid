@@ -1,28 +1,38 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hwb {
-    public TLRPC.TL_forumTopic a;
-    public up9 b;
-    public final /* synthetic */ lwb c;
-
-    public hwb(lwb lwbVar) {
-        this.c = lwbVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum hwb extends rwb {
+    public hwb() {
+        super("BeforeDoctypeSystemIdentifier", 61);
     }
 
-    public final long a() {
-        up9 up9Var = this.b;
-        if (up9Var != null) {
-            return up9Var.a;
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
+            return;
         }
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        if (tL_forumTopic == null) {
-            return 0L;
+        if (d == '\"') {
+            bubVar.c = rwb.A0;
+            return;
         }
-        int i = lwb.r0;
-        return this.c.c ? cf3.n(tL_forumTopic.from_id) : tL_forumTopic.id;
+        if (d == '\'') {
+            bubVar.c = rwb.B0;
+            return;
+        }
+        mub mubVar = rwb.a;
+        if (d == '>') {
+            bubVar.m(this);
+            bubVar.j();
+            bubVar.c = mubVar;
+        } else if (d != 65535) {
+            bubVar.m(this);
+            bubVar.c = rwb.D0;
+        } else {
+            bubVar.l(this);
+            bubVar.j();
+            bubVar.c = mubVar;
+        }
     }
 }

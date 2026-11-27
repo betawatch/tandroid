@@ -1,25 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class lr5 extends ft5 {
-    public static final /* synthetic */ long f = ex.a.objectFieldOffset(lr5.class.getDeclaredField("_invoked$volatile"));
-    private volatile /* synthetic */ int _invoked$volatile = 0;
-    public final qp4 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class lr5 {
+    public final int a;
+    public final int b;
 
-    public lr5(qp4 qp4Var) {
-        this.e = qp4Var;
+    public lr5(int i, int i2) {
+        this.a = i;
+        this.b = i2;
     }
 
-    @Override // ft5
-    public final boolean k() {
-        return true;
-    }
-
-    @Override // ft5
-    public final void l(Throwable th) {
-        if (ex.a.compareAndSwapInt(this, f, 0, 1)) {
-            this.e.invoke(th);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && lr5.class == obj.getClass()) {
+            lr5 lr5Var = (lr5) obj;
+            if (this.a == lr5Var.a && this.b == lr5Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("IntSize(");
+        sb.append(this.a);
+        sb.append(", ");
+        return uh9.l(sb, this.b, ")");
     }
 }

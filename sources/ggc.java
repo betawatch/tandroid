@@ -1,56 +1,47 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ggc {
+    public static final ggc d = new ggc(0, 0);
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final int a;
+    public final int b;
+    public final float c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ggc extends View {
-    public final Paint a;
-    public final gc0 b;
-    public tgb c;
-
-    public ggc(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-14538189);
-        gc0 gc0Var = new gc0(this, false);
-        this.b = gc0Var;
-        gc0Var.p = gl.L(100.0f);
-        gc0Var.o = gl.L(30.0f);
-        gc0Var.x = false;
-        gc0Var.s = gl.L(24.0f);
-        gc0Var.h(gl.L(18.0f));
-        gc0Var.t = 0.58f;
+    static {
+        String str = gcc.a;
+        e = "0";
+        f = "1";
+        g = "3";
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            return;
+    public ggc(float f2, int i, int i2) {
+        this.a = i;
+        this.b = i2;
+        this.c = f2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        float L = gl.L(4.0f);
-        gc0 gc0Var = this.b;
-        float c = gc0Var.c() + L + gl.L(7.0f) + this.c.c + gl.L(13.0f);
-        float L2 = gl.L(30.0f);
-        RectF rectF = gl.P;
-        rectF.set((getWidth() - c) / 2.0f, 0.0f, (getWidth() + c) / 2.0f, getHeight());
-        float f = L2 / 2.0f;
-        canvas.drawRoundRect(rectF, f, f, this.a);
-        canvas.save();
-        canvas.translate(rectF.left + gl.L(4.0f), 0.0f);
-        gc0Var.g(canvas);
-        canvas.translate(gc0Var.A + gl.L(7.0f), 0.0f);
-        this.c.c(0.0f, f, 1.0f, -1, canvas);
-        canvas.restore();
+        if (obj instanceof ggc) {
+            ggc ggcVar = (ggc) obj;
+            if (this.a == ggcVar.a && this.b == ggcVar.b && this.c == ggcVar.c) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.L(30.0f));
+    public final int hashCode() {
+        return Float.floatToRawIntBits(this.c) + ((((jn7.t3 + this.a) * 31) + this.b) * 31);
+    }
+
+    public ggc(int i, int i2) {
+        this(1.0f, i, i2);
     }
 }

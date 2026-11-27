@@ -1,57 +1,57 @@
 package androidx.mediarouter.app;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class a extends zt6 {
+public final class a extends ew6 {
     public final /* synthetic */ MediaRouteButton a;
 
     public a(MediaRouteButton mediaRouteButton) {
         this.a = mediaRouteButton;
     }
 
-    @Override // zt6
+    @Override // ew6
     public final void a() {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
+    @Override // ew6
     public final void b() {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
+    @Override // ew6
     public final void c() {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
-    public final void d(eu6 eu6Var) {
+    @Override // ew6
+    public final void d(jw6 jw6Var) {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
-    public final void e(eu6 eu6Var) {
+    @Override // ew6
+    public final void e(jw6 jw6Var) {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
-    public final void f(eu6 eu6Var) {
+    @Override // ew6
+    public final void f(jw6 jw6Var) {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
-    public final void g(eu6 eu6Var) {
+    @Override // ew6
+    public final void g(jw6 jw6Var) {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
+    @Override // ew6
     public final void i() {
         this.a.refreshRoute();
     }
 
-    @Override // zt6
-    public final void l(iu6 iu6Var) {
-        boolean z = iu6Var != null ? iu6Var.e.getBoolean("androidx.mediarouter.media.MediaRouterParams.FIXED_CAST_ICON") : false;
+    @Override // ew6
+    public final void l(nw6 nw6Var) {
+        boolean z = nw6Var != null ? nw6Var.e.getBoolean("androidx.mediarouter.media.MediaRouterParams.FIXED_CAST_ICON") : false;
         MediaRouteButton mediaRouteButton = this.a;
         if (mediaRouteButton.mIsFixedIcon != z) {
             mediaRouteButton.mIsFixedIcon = z;

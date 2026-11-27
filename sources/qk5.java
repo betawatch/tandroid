@@ -1,29 +1,21 @@
 // default package
 
-import android.graphics.Bitmap;
+import android.app.Activity;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract /* synthetic */ class qk5 {
-    public static final /* synthetic */ int[] a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qk5 extends ActionBarLayout {
+    public final /* synthetic */ m0 z1;
 
-    static {
-        Bitmap.CompressFormat compressFormat;
-        int[] iArr = new int[Bitmap.CompressFormat.values().length];
-        a = iArr;
-        try {
-            iArr[Bitmap.CompressFormat.WEBP.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            int[] iArr2 = a;
-            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
-            iArr2[compressFormat.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[Bitmap.CompressFormat.WEBP_LOSSLESS.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qk5(Activity activity, m0 m0Var) {
+        super(activity, false);
+        this.z1 = m0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.ActionBarLayout, wk5
+    public final nx0 getBottomSheet() {
+        return ((nx0[]) this.z1.b)[0];
     }
 }

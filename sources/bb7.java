@@ -1,144 +1,94 @@
 // default package
 
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.content.Context;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bb7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ad7 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
+public final /* synthetic */ class bb7 implements RequestDelegate {
+    public final /* synthetic */ byte a = 2;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ boolean g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ bb7(ad7 ad7Var, int i, long j, byte b) {
-        this.a = b;
-        this.b = ad7Var;
-        this.c = i;
-        this.d = j;
+    public /* synthetic */ bb7(uc7 uc7Var, long j, int i, int i2, long j2, boolean z, gn1 gn1Var) {
+        this.b = uc7Var;
+        this.c = j;
+        this.d = i;
+        this.e = i2;
+        this.f = j2;
+        this.g = z;
+        this.h = gn1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        SQLitePreparedStatement sQLitePreparedStatement = null;
-        long j = this.d;
-        int i = this.c;
-        ad7 ad7Var = this.b;
-        try {
-            try {
-                try {
-                    switch (b) {
-                        case 0:
-                            try {
-                                SQLiteDatabase sQLiteDatabase = ad7Var.b;
-                                Locale locale = Locale.US;
-                                sQLiteDatabase.executeFast("UPDATE dialogs SET ttl_period = " + i + " WHERE did = " + j).stepThis().dispose();
-                                return;
-                            } catch (SQLiteException e) {
-                                ad7Var.n(e, true);
-                                return;
-                            }
-                        case 1:
-                            ad7Var.x0(i, j);
-                            return;
-                        case 2:
-                            try {
-                                sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE chat_settings_v2 SET links = ? WHERE uid = ?");
-                                sQLitePreparedStatement.requery();
-                                sQLitePreparedStatement.bindInteger(1, i);
-                                sQLitePreparedStatement.bindLong(2, j);
-                                sQLitePreparedStatement.step();
-                                sQLitePreparedStatement.dispose();
-                            } catch (Exception e2) {
-                                ad7Var.n(e2, true);
-                                if (sQLitePreparedStatement != null) {
-                                    sQLitePreparedStatement.dispose();
-                                }
-                            }
-                            return;
-                        case 3:
-                            try {
-                                sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
-                                sQLitePreparedStatement.bindInteger(1, i);
-                                sQLitePreparedStatement.bindLong(2, j);
-                                sQLitePreparedStatement.step();
-                                sQLitePreparedStatement.dispose();
-                            } catch (Exception e3) {
-                                ad7Var.n(e3, true);
-                                if (sQLitePreparedStatement != null) {
-                                    sQLitePreparedStatement.dispose();
-                                }
-                            }
-                            return;
-                        case 4:
-                            ad7Var.getClass();
-                            try {
-                                SQLiteDatabase sQLiteDatabase2 = ad7Var.b;
-                                Locale locale2 = Locale.US;
-                                sQLiteDatabase2.executeFast("UPDATE messages_v2 SET mention = 1, read_state = read_state & ~2 WHERE mid = " + i + " AND uid = " + j).stepThis().dispose();
-                                return;
-                            } catch (Exception e4) {
-                                ad7Var.n(e4, true);
-                                return;
-                            }
-                        case 5:
-                            try {
-                                SQLitePreparedStatement executeFast = ad7Var.b.executeFast("UPDATE dialogs SET pts = ? WHERE did = ?");
-                                executeFast.bindInteger(1, i);
-                                executeFast.bindLong(2, -j);
-                                executeFast.step();
-                                executeFast.dispose();
-                                return;
-                            } catch (Exception e5) {
-                                ad7Var.n(e5, true);
-                                return;
-                            }
-                        case 6:
-                            try {
-                                SQLiteDatabase sQLiteDatabase3 = ad7Var.b;
-                                Locale locale3 = Locale.US;
-                                sQLiteDatabase3.executeFast("DELETE FROM download_queue WHERE uid = " + j + " AND type = " + i).stepThis().dispose();
-                                return;
-                            } catch (Exception e6) {
-                                ad7Var.n(e6, true);
-                                return;
-                            }
-                        default:
-                            try {
-                                sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE chat_settings_v2 SET online = ? WHERE uid = ?");
-                                sQLitePreparedStatement.requery();
-                                sQLitePreparedStatement.bindInteger(1, i);
-                                sQLitePreparedStatement.bindLong(2, j);
-                                sQLitePreparedStatement.step();
-                                sQLitePreparedStatement.dispose();
-                            } catch (Exception e7) {
-                                ad7Var.n(e7, true);
-                                if (sQLitePreparedStatement != null) {
-                                    sQLitePreparedStatement.dispose();
-                                }
-                            }
-                            return;
-                    }
-                } catch (Throwable th) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th;
+        Object obj = this.h;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                uc7 uc7Var = (uc7) obj2;
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
+                long j = this.c;
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
                 }
-            } catch (Throwable th2) {
-                if (sQLitePreparedStatement != null) {
-                    sQLitePreparedStatement.dispose();
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
+                    int i = tL_messages_affectedHistory.offset;
+                    long j2 = this.f;
+                    if (i > 0) {
+                        uc7Var.W(j2, 0, this.d, this.e, this.g, inputPeer, 0L);
+                    }
+                    uc7Var.W3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
+                    jf7 messagesStorage = uc7Var.getMessagesStorage();
+                    messagesStorage.a.c(new le7(messagesStorage, j2, (byte) 4));
+                    break;
                 }
-                throw th2;
-            }
-        } catch (Throwable th3) {
-            if (sQLitePreparedStatement != null) {
-                sQLitePreparedStatement.dispose();
-            }
-            throw th3;
+                break;
+            case 1:
+                uc7 uc7Var2 = (uc7) obj2;
+                gn1 gn1Var = (gn1) obj;
+                if (tL_error != null) {
+                    hl.c3(new z96(gn1Var, (byte) 28));
+                    break;
+                } else {
+                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory2 = (TLRPC.TL_messages_affectedHistory) tLObject;
+                    uc7Var2.W3(tL_messages_affectedHistory2.pts, -1, tL_messages_affectedHistory2.pts_count);
+                    uc7Var2.getMessagesStorage().a.c(new jb7(uc7Var2, this.c, this.d, this.e, this.f, tL_messages_affectedHistory2, this.g, gn1Var));
+                    break;
+                }
+            default:
+                VoIPGroupNotification.lambda$request$1(this.d, this.c, this.f, this.e, this.g, (Context) obj2, (String) obj, tLObject, tL_error);
+                break;
         }
+    }
+
+    public /* synthetic */ bb7(uc7 uc7Var, long j, long j2, int i, int i2, boolean z, TLRPC.InputPeer inputPeer) {
+        this.b = uc7Var;
+        this.c = j;
+        this.f = j2;
+        this.d = i;
+        this.e = i2;
+        this.g = z;
+        this.h = inputPeer;
+    }
+
+    public /* synthetic */ bb7(Context context, int i, long j, String str, long j2, int i2, boolean z) {
+        this.d = i;
+        this.c = j;
+        this.f = j2;
+        this.e = i2;
+        this.g = z;
+        this.b = context;
+        this.h = str;
     }
 }

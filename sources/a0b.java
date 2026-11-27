@@ -1,29 +1,34 @@
 // default package
 
-import org.telegram.ui.StickersActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class a0b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ StickersActivity b;
+public final class a0b extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ b0b e;
 
-    public /* synthetic */ a0b(StickersActivity stickersActivity, byte b) {
-        this.a = b;
-        this.b = stickersActivity;
+    public a0b(b0b b0bVar, int i, int i2, int i3, int i4) {
+        this.e = b0bVar;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        StickersActivity stickersActivity = this.b;
-        switch (b) {
-            case 0:
-                stickersActivity.o0();
-                break;
-            default:
-                stickersActivity.n--;
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int f = vm2.f(1.0f, this.a, this.b);
+        b0b b0bVar = this.e;
+        b0bVar.r = f;
+        b0bVar.s = vm2.f(1.0f, this.c, this.d);
+        b0bVar.E = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{b0bVar.r, b0bVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        b0bVar.invalidate();
     }
 }

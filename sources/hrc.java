@@ -1,193 +1,115 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.WallpapersListActivity;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.view.WindowManager;
+import java.util.Iterator;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hrc implements ed, wi3 {
-    public final /* synthetic */ irc a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class hrc implements SensorEventListener {
+    public static hrc H;
+    public float E;
+    public float F;
+    public final SensorManager a;
+    public final Sensor b;
+    public final WindowManager c;
+    public boolean r;
+    public boolean s;
+    public float w;
+    public float x;
+    public final Handler d = new Handler(Looper.getMainLooper());
+    public final WeakHashMap e = new WeakHashMap();
+    public final float[] f = new float[9];
+    public final float[] h = new float[9];
+    public final float[] n = new float[3];
+    public int y = -1;
+    public final grc G = new grc(this);
 
-    public /* synthetic */ hrc(irc ircVar) {
-        this.a = ircVar;
-    }
-
-    @Override // wi3
-    public final boolean G() {
-        return false;
-    }
-
-    @Override // wi3
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
-        pha phaVar;
-        pha phaVar2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        int i8;
-        String b;
-        WallpapersListActivity wallpapersListActivity = this.a.a;
-        LongSparseArray longSparseArray = wallpapersListActivity.f0;
-        StringBuilder sb = new StringBuilder();
-        for (int i9 = 0; i9 < longSparseArray.size(); i9++) {
-            Object valueAt = longSparseArray.valueAt(i9);
-            if (valueAt instanceof TLRPC.TL_wallPaper) {
-                Typeface typeface = gl.a;
-                TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) valueAt;
-                b = "https://" + na7.q1(y6c.t0).N2 + "/bg/" + tL_wallPaper.slug;
-                StringBuilder sb2 = new StringBuilder();
-                TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
-                if (wallPaperSettings != null) {
-                    if (wallPaperSettings.blur) {
-                        sb2.append("blur");
-                    }
-                    if (tL_wallPaper.settings.motion) {
-                        if (sb2.length() > 0) {
-                            sb2.append("+");
-                        }
-                        sb2.append("motion");
-                    }
-                }
-                if (sb2.length() > 0) {
-                    StringBuilder k = b00.k(b, "?mode=");
-                    k.append(sb2.toString());
-                    b = k.toString();
-                }
-            } else if (valueAt instanceof krc) {
-                b = ((krc) valueAt).b();
-            }
-            if (!TextUtils.isEmpty(b)) {
-                if (sb.length() > 0) {
-                    sb.append('\n');
-                }
-                sb.append(b);
-            }
+    public hrc(Context context) {
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.a = sensorManager;
+        this.c = (WindowManager) context.getSystemService("window");
+        Sensor defaultSensor = sensorManager == null ? null : sensorManager.getDefaultSensor(15);
+        if (defaultSensor == null && sensorManager != null) {
+            defaultSensor = sensorManager.getDefaultSensor(11);
         }
-        longSparseArray.clear();
-        phaVar = ((d) wallpapersListActivity).simpleActionBar;
-        phaVar.w();
-        phaVar2 = ((d) wallpapersListActivity).simpleActionBar;
-        phaVar2.n(true);
-        if (arrayList.size() <= 1) {
-            long j = ((zc7) arrayList.get(0)).a;
-            i5 = ((d) wallpapersListActivity).currentAccount;
-            if (j != y6c.h(i5).e() && charSequence == null) {
-                long j2 = ((zc7) arrayList.get(0)).a;
-                Bundle l = ir2.l("scrollToTopOnResume", true);
-                if (cf3.B(j2)) {
-                    l.putInt("enc_id", (int) (4294967295L & j2));
+        this.b = defaultSensor;
+    }
+
+    public final void a() {
+        if (this.r) {
+            this.a.unregisterListener(this);
+        }
+        this.s = false;
+        this.r = false;
+        this.d.removeCallbacks(this.G);
+        this.F = 0.0f;
+        this.E = 0.0f;
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        int i;
+        float[] fArr = sensorEvent.values;
+        float[] fArr2 = this.f;
+        SensorManager.getRotationMatrixFromVector(fArr2, fArr);
+        int rotation = this.c.getDefaultDisplay().getRotation();
+        int i2 = this.y;
+        if (i2 != rotation) {
+            this.s = false;
+            this.y = rotation;
+        } else {
+            rotation = i2;
+        }
+        int i3 = jn7.M1;
+        if (rotation == 1) {
+            i = 129;
+            i3 = 2;
+        } else {
+            i = jn7.N1;
+            if (rotation != 2) {
+                if (rotation == 3) {
+                    i3 = 130;
+                    i = 1;
                 } else {
-                    if (cf3.D(j2)) {
-                        l.putLong("user_id", j2);
-                    } else if (cf3.y(j2)) {
-                        l.putLong("chat_id", -j2);
-                    }
-                    i6 = ((d) wallpapersListActivity).currentAccount;
-                    if (!na7.q1(i6).A(l, cj3Var, null, null)) {
-                        return true;
-                    }
+                    i = 2;
+                    i3 = 1;
                 }
-                i7 = ((d) wallpapersListActivity).currentAccount;
-                kk7.f(i7).k(kk7.s, new Object[0]);
-                wallpapersListActivity.presentFragment(new mu1(l), true);
-                i8 = ((d) wallpapersListActivity).currentAccount;
-                z3a.B(i8).q0(x3a.b(sb.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
-                return true;
             }
         }
-        wallpapersListActivity.H0();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            long j3 = ((zc7) arrayList.get(i10)).a;
-            if (charSequence != null) {
-                i4 = ((d) wallpapersListActivity).currentAccount;
-                z3a.B(i4).q0(x3a.b(charSequence.toString(), j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
-            }
-            if (!TextUtils.isEmpty(sb)) {
-                i3 = ((d) wallpapersListActivity).currentAccount;
-                z3a.B(i3).q0(x3a.b(sb.toString(), j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
-            }
+        float[] fArr3 = this.h;
+        SensorManager.remapCoordinateSystem(fArr2, i3, i, fArr3);
+        float[] fArr4 = this.n;
+        SensorManager.getOrientation(fArr3, fArr4);
+        if (Float.isNaN(fArr4[1]) || Float.isNaN(fArr4[2])) {
+            return;
         }
-        cj3Var.finishFragment();
-        return true;
+        if (!this.s) {
+            this.w = fArr4[1];
+            this.x = fArr4[2];
+            this.s = true;
+        }
+        float w = qu6.w((float) Math.IEEEremainder(fArr4[2] - this.x, 6.283185307179586d), 0.45f, 1.0f, -1.0f);
+        float w2 = qu6.w((float) Math.IEEEremainder(fArr4[1] - this.w, 6.283185307179586d), 0.45f, 1.0f, -1.0f);
+        float f = this.E;
+        this.E = qd4.A(w, f, 0.12f, f);
+        float f2 = this.F;
+        this.F = qd4.A(w2, f2, 0.12f, f2);
+        Iterator it = this.e.keySet().iterator();
+        while (it.hasNext()) {
+            ((View) it.next()).invalidate();
+        }
     }
 
-    @Override // wi3
-    public final boolean t(cj3 cj3Var) {
-        return false;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        pha phaVar;
-        pha phaVar2;
-        int i2;
-        irc ircVar = this.a;
-        WallpapersListActivity wallpapersListActivity = ircVar.a;
-        Activity parentActivity = wallpapersListActivity.getParentActivity();
-        LongSparseArray longSparseArray = wallpapersListActivity.f0;
-        hd hdVar2 = new hd(3, null, parentActivity);
-        wallpapersListActivity.M = hdVar2;
-        hdVar2.j0 = false;
-        hdVar2.show();
-        int[] iArr = {0};
-        for (int i3 = 0; i3 < longSparseArray.size(); i3++) {
-            Object valueAt = longSparseArray.valueAt(i3);
-            if (valueAt instanceof krc) {
-                krc krcVar = (krc) valueAt;
-                TLRPC.WallPaper wallPaper = krcVar.k;
-                if (wallPaper == null || wallPaper.id >= 0) {
-                    valueAt = wallPaper;
-                } else {
-                    ad7 messagesStorage = wallpapersListActivity.getMessagesStorage();
-                    messagesStorage.a.c(new ua7(messagesStorage, krcVar.k.id, (byte) 1));
-                    wallpapersListActivity.c0.remove(krcVar);
-                    wallpapersListActivity.a0.remove(krcVar.a());
-                }
-            }
-            if (valueAt instanceof TLRPC.WallPaper) {
-                iArr[0] = iArr[0] + 1;
-                TLRPC.WallPaper wallPaper2 = (TLRPC.WallPaper) valueAt;
-                TL_account.saveWallPaper savewallpaper = new TL_account.saveWallPaper();
-                savewallpaper.settings = new TLRPC.TL_wallPaperSettings();
-                savewallpaper.unsave = true;
-                if (valueAt instanceof TLRPC.TL_wallPaperNoFile) {
-                    TLRPC.TL_inputWallPaperNoFile tL_inputWallPaperNoFile = new TLRPC.TL_inputWallPaperNoFile();
-                    tL_inputWallPaperNoFile.id = wallPaper2.id;
-                    savewallpaper.wallpaper = tL_inputWallPaperNoFile;
-                } else {
-                    TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
-                    tL_inputWallPaper.id = wallPaper2.id;
-                    tL_inputWallPaper.access_hash = wallPaper2.access_hash;
-                    savewallpaper.wallpaper = tL_inputWallPaper;
-                }
-                String str = wallPaper2.slug;
-                if (str != null && str.equals(wallpapersListActivity.P)) {
-                    wallpapersListActivity.P = bkb.e1() ? "t" : "d";
-                    bkb.I.v(null);
-                    bkb.s1(true);
-                }
-                i2 = ((d) wallpapersListActivity).currentAccount;
-                ConnectionsManager.getInstance(i2).sendRequest(savewallpaper, new apa(ircVar, iArr, (byte) 27));
-            }
-        }
-        if (iArr[0] == 0) {
-            wallpapersListActivity.D0(true);
-        }
-        longSparseArray.clear();
-        phaVar = ((d) wallpapersListActivity).simpleActionBar;
-        phaVar.w();
-        phaVar2 = ((d) wallpapersListActivity).simpleActionBar;
-        phaVar2.n(true);
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

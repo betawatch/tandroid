@@ -8,15 +8,15 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class EncryptedFileDataSource extends qf0 {
+public final class EncryptedFileDataSource extends sf0 {
     private int bytesRemaining;
     EncryptedFileInputStream fileInputStream;
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th) {
             super(th);
@@ -24,14 +24,14 @@ public final class EncryptedFileDataSource extends qf0 {
     }
 
     @Deprecated
-    public EncryptedFileDataSource(vyb vybVar) {
+    public EncryptedFileDataSource(v2c v2cVar) {
         this();
-        if (vybVar != null) {
-            addTransferListener(vybVar);
+        if (v2cVar != null) {
+            addTransferListener(v2cVar);
         }
     }
 
-    @Override // o63
+    @Override // h73
     public void close() {
         try {
             this.fileInputStream.close();
@@ -46,45 +46,45 @@ public final class EncryptedFileDataSource extends qf0 {
         this.uri = null;
     }
 
-    @Override // qf0, o63
+    @Override // sf0, h73
     public Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // o63
+    @Override // h73
     public Uri getUri() {
         return this.uri;
     }
 
-    @Override // o63
-    public long open(u63 u63Var) {
-        this.uri = u63Var.a;
-        File file = new File(u63Var.a.getPath());
+    @Override // h73
+    public long open(n73 n73Var) {
+        this.uri = n73Var.a;
+        File file = new File(n73Var.a.getPath());
         String name = file.getName();
-        Pattern pattern = ba4.J;
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(a.b.getCacheDir(), tb4.o(name, ".key")));
+        Pattern pattern = xb4.J;
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(a.b.getCacheDir(), qd4.o(name, ".key")));
         this.fileInputStream = encryptedFileInputStream;
-        encryptedFileInputStream.skip(u63Var.e);
+        encryptedFileInputStream.skip(n73Var.e);
         int length = (int) file.length();
-        transferInitializing(u63Var);
-        long j = u63Var.e;
+        transferInitializing(n73Var);
+        long j = n73Var.e;
         long j2 = length;
         if (j > j2) {
-            throw new r63(2008);
+            throw new k73(2008);
         }
         int i = (int) (j2 - j);
         this.bytesRemaining = i;
-        long j3 = u63Var.f;
+        long j3 = n73Var.f;
         if (j3 != -1) {
             this.bytesRemaining = (int) Math.min(i, j3);
         }
         this.opened = true;
-        transferStarted(u63Var);
-        long j4 = u63Var.f;
+        transferStarted(n73Var);
+        long j4 = n73Var.f;
         return j4 != -1 ? j4 : this.bytesRemaining;
     }
 
-    @Override // g63
+    @Override // z63
     public int read(byte[] bArr, int i, int i2) {
         if (i2 == 0) {
             return 0;

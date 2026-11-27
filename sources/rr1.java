@@ -1,39 +1,21 @@
 // default package
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rr1 implements LayoutTransition.TransitionListener {
-    public qr1 a;
-    public int b;
-    public final /* synthetic */ r6 c;
-    public final /* synthetic */ mu1 d;
+public final class rr1 extends fv1 {
+    public final /* synthetic */ zu1 N;
 
-    public rr1(mu1 mu1Var, r6 r6Var) {
-        this.d = mu1Var;
-        this.c = r6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rr1(zu1 zu1Var, Context context, vnb vnbVar, kq1 kq1Var, ll0 ll0Var) {
+        super(context, vnbVar, kq1Var, ll0Var);
+        this.N = zu1Var;
     }
 
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i) {
-        int i2 = this.b - 1;
-        this.b = i2;
-        if (i2 != 0 || this.a == null) {
-            return;
-        }
-        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
-        this.a = null;
-    }
-
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i) {
-        if (this.b == 0 && this.a == null) {
-            this.a = new qr1(this, (byte) 0);
-            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
-        }
-        this.b++;
+    @Override // fv1, android.view.View
+    public final void setVisibility(int i) {
+        super.setVisibility(i);
+        this.N.xd.s(3, i == 0, getMeasuredWidth() > 0);
     }
 }

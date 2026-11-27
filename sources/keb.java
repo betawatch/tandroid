@@ -1,48 +1,7 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.widget.TableLayout;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class keb extends TableLayout {
-    public final /* synthetic */ wjb a;
-    public final /* synthetic */ meb b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public keb(meb mebVar, Context context, wjb wjbVar) {
-        super(context);
-        this.b = mebVar;
-        this.a = wjbVar;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        meb mebVar = this.b;
-        RectF rectF = mebVar.w;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        Path path = mebVar.s;
-        path.rewind();
-        path.addRoundRect(rectF, gl.L(6.0f), gl.L(6.0f), Path.Direction.CW);
-        super.dispatchDraw(canvas);
-        Paint paint = mebVar.r;
-        paint.setColor(bm2.f(0.1f, bkb.v0(bkb.c7, this.a), -1));
-        paint.setStrokeWidth(gl.L(1.0f));
-        float height = getHeight() / (mebVar.E.getVisibility() == 0 ? 5.0f : 4.0f);
-        for (int i = 1; i <= 4; i++) {
-            float f = height * i;
-            canvas.drawLine(0.0f, f, getWidth(), f, paint);
-        }
-        boolean z = k96.a0;
-        TextView textView = mebVar.e;
-        float right = z ? textView.getRight() : textView.getLeft();
-        canvas.drawLine(right, 0.0f, right, getHeight(), paint);
-        paint.setStrokeWidth(gl.L(2.0f));
-        canvas.drawPath(path, paint);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface keb {
+    public static final ve9 A = new ve9((byte) 14);
 }

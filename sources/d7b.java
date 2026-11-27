@@ -1,62 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class d7b extends View {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Canvas b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Paint f;
-    public final /* synthetic */ Bitmap h;
-    public final /* synthetic */ Paint n;
-    public final /* synthetic */ float r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ t7b w;
+public final /* synthetic */ class d7b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e7b b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7b(t7b t7bVar, Context context, boolean z, Canvas canvas, float f, float f2, float f3, Paint paint, Bitmap bitmap, Paint paint2, float f4, float f5) {
-        super(context);
-        this.w = t7bVar;
-        this.a = z;
-        this.b = canvas;
-        this.c = f;
-        this.d = f2;
-        this.e = f3;
-        this.f = paint;
-        this.h = bitmap;
-        this.n = paint2;
-        this.r = f4;
-        this.s = f5;
+    public /* synthetic */ d7b(e7b e7bVar, byte b) {
+        this.a = b;
+        this.b = e7bVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        t7b t7bVar = this.w;
-        float f = t7bVar.E2;
-        Paint paint = this.n;
-        float f2 = this.e;
-        float f3 = this.d;
-        float f4 = this.c;
-        if (this.a) {
-            if (f > 0.0f) {
-                this.b.drawCircle(f4, f3, f2 * f, this.f);
-            }
-            canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
-        } else {
-            canvas.drawCircle(f4, f3, (1.0f - f) * f2, paint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        e7b e7bVar = this.b;
+        switch (b) {
+            case 0:
+                f7b f7bVar = e7bVar.v;
+                f7bVar.s = 0;
+                f7bVar.requestLayout();
+                g7b g7bVar = f7bVar.K;
+                g7bVar.L(g7bVar.getWidth(), g7bVar.getHeight());
+                g7bVar.requestLayout();
+                break;
+            case 1:
+                f7b f7bVar2 = e7bVar.v;
+                f7bVar2.s = 0;
+                f7bVar2.requestLayout();
+                g7b g7bVar2 = f7bVar2.K;
+                g7bVar2.L(g7bVar2.getWidth(), g7bVar2.getHeight());
+                g7bVar2.requestLayout();
+                break;
+            case 2:
+                e7bVar.v.post(new d7b(e7bVar, (byte) 3));
+                break;
+            default:
+                e7bVar.v.y = true;
+                break;
         }
-        canvas.save();
-        canvas.translate(this.r, this.s);
-        t7bVar.j1.draw(canvas);
-        canvas.restore();
     }
 }

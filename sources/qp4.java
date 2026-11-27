@@ -1,7 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface qp4 extends fq4 {
-    Object invoke(Object obj);
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.FragmentContextView;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qp4 implements Runnable {
+    public final /* synthetic */ FragmentContextView a;
+
+    public qp4(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        FragmentContextView fragmentContextView = this.a;
+        e eVar = fragmentContextView.h;
+        if (fragmentContextView.g0 == null || !(eVar instanceof zu1)) {
+            fragmentContextView.l0 = false;
+            return;
+        }
+        vc2 groupCall = fragmentContextView.n.getGroupCall();
+        if (groupCall == null || !groupCall.k()) {
+            fragmentContextView.h0 = false;
+            fragmentContextView.l0 = false;
+            return;
+        }
+        int currentTime = groupCall.b.schedule_date - eVar.getConnectionsManager().getCurrentTime();
+        String G = currentTime >= 86400 ? ob6.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : hl.j0(currentTime);
+        hn hnVar = fragmentContextView.j0;
+        if (!fragmentContextView.i0) {
+            G = ob6.M0(2131743092, null);
+        }
+        hnVar.t(G, true, true);
+        hl.d3(fragmentContextView.m0, 1000L);
+        fragmentContextView.r.invalidate();
+    }
 }

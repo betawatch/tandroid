@@ -9,7 +9,7 @@ import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -73,7 +73,8 @@ abstract class CameraCapturer implements CameraVideoCapturer {
             CameraCapturer.this.uiThreadHandler.removeCallbacks(CameraCapturer.this.openCameraTimeoutRunnable);
             synchronized (CameraCapturer.this.stateLock) {
                 CameraCapturer.this.capturerObserver.onCapturerStarted(false);
-                CameraCapturer.access$1710(CameraCapturer.this);
+                CameraCapturer cameraCapturer = CameraCapturer.this;
+                cameraCapturer.openAttemptsRemaining--;
                 if (CameraCapturer.this.openAttemptsRemaining <= 0) {
                     Logging.w(CameraCapturer.TAG, "Opening camera failed, passing: " + str);
                     CameraCapturer.this.sessionOpening = false;
@@ -88,11 +89,11 @@ abstract class CameraCapturer implements CameraVideoCapturer {
                         CameraCapturer.this.switchState = switchState2;
                     }
                     CameraSession.FailureType failureType2 = CameraSession.FailureType.DISCONNECTED;
-                    CameraCapturer cameraCapturer = CameraCapturer.this;
+                    CameraCapturer cameraCapturer2 = CameraCapturer.this;
                     if (failureType == failureType2) {
-                        cameraCapturer.eventsHandler.onCameraDisconnected();
+                        cameraCapturer2.eventsHandler.onCameraDisconnected();
                     } else {
-                        cameraCapturer.eventsHandler.onCameraError(str);
+                        cameraCapturer2.eventsHandler.onCameraError(str);
                     }
                 } else {
                     Logging.w(CameraCapturer.TAG, "Opening camera failed, retry: " + str);
@@ -178,7 +179,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     enum SwitchState {
         IDLE,
         PENDING,
@@ -216,20 +217,14 @@ abstract class CameraCapturer implements CameraVideoCapturer {
         List asList = Arrays.asList(cameraEnumerator.getDeviceNames());
         this.uiThreadHandler = new Handler(Looper.getMainLooper());
         if (asList.isEmpty()) {
-            wn4.j("No cameras attached.");
+            xi4.l("No cameras attached.");
             throw null;
         }
         if (asList.contains(this.cameraName)) {
             return;
         }
-        w26.j(b00.j(new StringBuilder("Camera name "), this.cameraName, " does not match any known camera device."));
+        lq5.j(c00.k(new StringBuilder("Camera name "), this.cameraName, " does not match any known camera device."));
         throw null;
-    }
-
-    public static /* synthetic */ int access$1710(CameraCapturer cameraCapturer) {
-        int i = cameraCapturer.openAttemptsRemaining;
-        cameraCapturer.openAttemptsRemaining = i - 1;
-        return i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -238,7 +233,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
             return;
         }
         Logging.e(TAG, "Check is on camera thread failed.");
-        wn4.j("Not on camera thread.");
+        xi4.l("Not on camera thread.");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -265,7 +260,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(b00.h("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(c00.i("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -311,7 +306,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i, int i2, int i3) {
-        StringBuilder p = ir2.p("changeCaptureFormat: ", i, "x", i2, "@");
+        StringBuilder p = bs2.p("changeCaptureFormat: ", i, "x", i2, "@");
         p.append(i3);
         Logging.d(TAG, p.toString());
         synchronized (this.stateLock) {
@@ -345,6 +340,15 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
+    public boolean isCapturing() {
+        boolean z;
+        synchronized (this.stateLock) {
+            z = this.sessionOpening || this.currentSession != null;
+        }
+        return z;
+    }
+
+    @Override // org.webrtc.VideoCapturer
     public boolean isScreencast() {
         return false;
     }
@@ -370,11 +374,11 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i, int i2, int i3) {
-        StringBuilder p = ir2.p("startCapture: ", i, "x", i2, "@");
+        StringBuilder p = bs2.p("startCapture: ", i, "x", i2, "@");
         p.append(i3);
         Logging.d(TAG, p.toString());
         if (this.applicationContext == null) {
-            wn4.j("CameraCapturer must be initialized before calling startCapture.");
+            xi4.l("CameraCapturer must be initialized before calling startCapture.");
             return;
         }
         synchronized (this.stateLock) {

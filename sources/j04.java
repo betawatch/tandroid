@@ -1,10 +1,69 @@
 // default package
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class j04 extends FrameLayout {
-    public TextView a;
+public final class j04 extends z5c {
+    public final /* synthetic */ o24 b;
+
+    public j04(o24 o24Var) {
+        this.b = o24Var;
+    }
+
+    @Override // z5c
+    public final boolean a() {
+        return this.b.u1.b();
+    }
+
+    @Override // z5c
+    public final String[] b() {
+        return this.b.X0;
+    }
+
+    @Override // z5c
+    public final boolean c() {
+        return this.b.u1.c();
+    }
+
+    @Override // z5c
+    public final boolean d(s5c s5cVar, MotionEvent motionEvent) {
+        rw2 e = rw2.e();
+        o24 o24Var = this.b;
+        o24Var.getMeasuredHeight();
+        return e.g(motionEvent, s5cVar, o24Var.h2, o24Var.a2);
+    }
+
+    @Override // z5c
+    public final boolean e(s5c s5cVar, t39 t39Var, MotionEvent motionEvent) {
+        rw2 e = rw2.e();
+        o24 o24Var = this.b;
+        o24Var.getMeasuredHeight();
+        return e.h(motionEvent, s5cVar, t39Var, o24Var.h2, o24Var.a2);
+    }
+
+    @Override // z5c
+    public final void f(int i, Object obj, TLRPC.Document document, boolean z) {
+        this.b.u1.x(null, document, null, obj, null, z, i);
+    }
+
+    @Override // z5c
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z) {
+        o24 o24Var = this.b;
+        o24Var.u1.q(stickerSetCovered);
+        if (z) {
+            o24Var.X(true);
+        }
+    }
+
+    @Override // z5c
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        this.b.u1.i(stickerSetCovered);
+    }
+
+    @Override // z5c
+    public final void i(String[] strArr) {
+        this.b.X0 = strArr;
+    }
 }

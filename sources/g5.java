@@ -1,59 +1,61 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.messenger.MediaController;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class g5 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class g5 implements View.OnClickListener {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ nx0[] b;
 
-    public /* synthetic */ g5(boolean[] zArr) {
-        this.a = (byte) 1;
+    public /* synthetic */ g5(nx0[] nx0VarArr, byte b) {
+        this.a = b;
+        this.b = nx0VarArr;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        nx0[] nx0VarArr = this.b;
+        switch (b) {
             case 0:
-                h5.a = false;
+                nx0VarArr[0].dismiss();
                 break;
             case 1:
+                nx0VarArr[0].dismiss();
+                break;
             case 2:
+                nx0VarArr[0].dismiss();
                 break;
             case 3:
-                aue.a.edit().putInt("dismissed_count", aue.a.getInt("dismissed_count", 0) + 1).apply();
+                nx0 nx0Var = nx0VarArr[0];
+                if (nx0Var != null) {
+                    nx0Var.dismiss();
+                    break;
+                }
                 break;
             case 4:
+                nx0VarArr[0].dismiss();
                 break;
             case 5:
-                MediaController.h2 = false;
+                nx0 nx0Var2 = nx0VarArr[0];
+                if (nx0Var2 != null) {
+                    nx0Var2.dismiss();
+                    break;
+                }
                 break;
             case 6:
+                nx0VarArr[0].dismiss();
+                break;
+            case 7:
+                nx0VarArr[0].dismiss();
+                break;
+            case 8:
+                nx0VarArr[0].dismiss();
                 break;
             default:
-                vvc.i = false;
+                nx0VarArr[0].dismiss();
                 break;
         }
-    }
-
-    public /* synthetic */ g5(jc jcVar, boolean[] zArr, byte b) {
-        this.a = b;
-    }
-
-    public /* synthetic */ g5(byte b) {
-        this.a = b;
-    }
-
-    private final void a(DialogInterface dialogInterface) {
-    }
-
-    private final void b(DialogInterface dialogInterface) {
-    }
-
-    private final void c(DialogInterface dialogInterface) {
-    }
-
-    private final void d(DialogInterface dialogInterface) {
     }
 }

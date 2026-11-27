@@ -1,21 +1,104 @@
 // default package
 
-import android.content.Context;
+import android.app.Activity;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import android.os.Bundle;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.lang.ref.WeakReference;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class c36 extends zu8 {
-    public final /* synthetic */ f36 t1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class c36 {
+    protected final g36 mLifecycleFragment;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c36(f36 f36Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.t1 = f36Var;
+    public c36(g36 g36Var) {
+        this.mLifecycleFragment = g36Var;
     }
 
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        this.t1.F = null;
+    public static g36 getFragment(b36 b36Var) {
+        d9d d9dVar;
+        dsd dsdVar;
+        Activity activity = b36Var.a;
+        if (!(activity instanceof jp4)) {
+            WeakHashMap weakHashMap = d9d.b;
+            WeakReference weakReference = (WeakReference) weakHashMap.get(activity);
+            if (weakReference != null && (d9dVar = (d9d) weakReference.get()) != null) {
+                return d9dVar;
+            }
+            try {
+                d9d d9dVar2 = (d9d) activity.getFragmentManager().findFragmentByTag("LifecycleFragmentImpl");
+                if (d9dVar2 == null || d9dVar2.isRemoving()) {
+                    d9dVar2 = new d9d();
+                    activity.getFragmentManager().beginTransaction().add(d9dVar2, "LifecycleFragmentImpl").commitAllowingStateLoss();
+                }
+                weakHashMap.put(activity, new WeakReference(d9dVar2));
+                return d9dVar2;
+            } catch (ClassCastException e) {
+                su3.f("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e);
+                return null;
+            }
+        }
+        jp4 jp4Var = (jp4) activity;
+        WeakHashMap weakHashMap2 = dsd.m0;
+        lq4 u = jp4Var.u();
+        WeakHashMap weakHashMap3 = dsd.m0;
+        WeakReference weakReference2 = (WeakReference) weakHashMap3.get(jp4Var);
+        if (weakReference2 != null && (dsdVar = (dsd) weakReference2.get()) != null) {
+            return dsdVar;
+        }
+        try {
+            dsd dsdVar2 = (dsd) u.D("SLifecycleFragmentImpl");
+            if (dsdVar2 == null || dsdVar2.x) {
+                dsdVar2 = new dsd();
+                kd0 kd0Var = new kd0(u);
+                kd0Var.f(0, dsdVar2, "SLifecycleFragmentImpl");
+                kd0Var.e(true, true);
+            }
+            weakHashMap3.put(jp4Var, new WeakReference(dsdVar2));
+            return dsdVar2;
+        } catch (ClassCastException e2) {
+            su3.f("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e2);
+            return null;
+        }
+    }
+
+    public Activity getActivity() {
+        Activity e = this.mLifecycleFragment.e();
+        xve.h(e);
+        return e;
+    }
+
+    public abstract void onStop();
+
+    public void onDestroy() {
+    }
+
+    public void onResume() {
+    }
+
+    public void onStart() {
+    }
+
+    public void onCreate(Bundle bundle) {
+    }
+
+    public void onSaveInstanceState(Bundle bundle) {
+    }
+
+    public void onActivityResult(int i, int i2, Intent intent) {
+    }
+
+    public static g36 getFragment(Activity activity) {
+        return getFragment(new b36(activity));
+    }
+
+    public static g36 getFragment(ContextWrapper contextWrapper) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
     }
 }

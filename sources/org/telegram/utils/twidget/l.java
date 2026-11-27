@@ -1,8 +1,8 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l implements kvc, xvc {
+public final /* synthetic */ class l implements zzc, m0d {
     public final /* synthetic */ byte a;
     public final /* synthetic */ byte[] b;
     public final /* synthetic */ Object c;
@@ -13,14 +13,14 @@ public final /* synthetic */ class l implements kvc, xvc {
         this.b = bArr;
     }
 
-    @Override // kvc
+    @Override // zzc
     public final void run() {
         byte b = this.a;
         byte[] bArr = this.b;
         Object obj = this.c;
         switch (b) {
             case 0:
-                ((lvc) obj).a(bArr);
+                ((a0d) obj).a(bArr);
                 break;
             default:
                 ((WidgetEngineBackend) obj).lambda$send$11(bArr);
@@ -28,7 +28,7 @@ public final /* synthetic */ class l implements kvc, xvc {
         }
     }
 
-    @Override // xvc
+    @Override // m0d
     public final Object run() {
         w wVar = (w) this.c;
         wVar.b.selectableText(wVar.b(this.b));

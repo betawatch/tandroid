@@ -8,14 +8,14 @@ import android.service.media.MediaBrowserService;
 import android.widget.Toast;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class MusicBrowserService extends MediaBrowserService {
     @Override // android.service.media.MediaBrowserService, android.app.Service
     public final void onCreate() {
         super.onCreate();
         a.v();
-        setSessionToken((MediaSession.Token) ((zu6) hgb.a(this).b.b).c.b);
+        setSessionToken((MediaSession.Token) ((ex6) dkb.a(this).b.b).c.b);
     }
 
     @Override // android.service.media.MediaBrowserService
@@ -24,8 +24,8 @@ public class MusicBrowserService extends MediaBrowserService {
             return null;
         }
         if (1000 != i && Process.myUid() != i) {
-            HashSet hashSet = lr7.a;
-            if (i != 1000 && i != Process.myUid() && !lr7.a.contains(str)) {
+            HashSet hashSet = ru7.a;
+            if (i != 1000 && i != Process.myUid() && !ru7.a.contains(str)) {
                 PackageManager packageManager = getPackageManager();
                 try {
                     if (packageManager.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", str) != 0) {
@@ -38,11 +38,11 @@ public class MusicBrowserService extends MediaBrowserService {
                 }
             }
         }
-        hgb.a(this).getClass();
-        if (hgb.b()) {
+        dkb.a(this).getClass();
+        if (dkb.b()) {
             return null;
         }
-        hgb.a(this).getClass();
+        dkb.a(this).getClass();
         Bundle bundle2 = new Bundle();
         bundle2.putBoolean("android.media.browse.CONTENT_STYLE_SUPPORTED", true);
         bundle2.putInt("android.media.browse.CONTENT_STYLE_BROWSABLE_HINT", 2);
@@ -52,13 +52,13 @@ public class MusicBrowserService extends MediaBrowserService {
 
     @Override // android.service.media.MediaBrowserService
     public final void onLoadChildren(String str, MediaBrowserService.Result result) {
-        hgb a = hgb.a(this);
+        dkb a = dkb.a(this);
         a.getClass();
-        if (!hgb.b()) {
+        if (!dkb.b()) {
             result.detach();
-            a.c(str, new im6(result, (byte) 12));
+            a.c(str, new bm6(result, (byte) 16));
         } else {
-            Toast.makeText(getApplicationContext(), k96.M0(2131751098, null), 1).show();
+            Toast.makeText(getApplicationContext(), ob6.M0(2131751075, null), 1).show();
             stopSelf();
             result.detach();
         }

@@ -1,25 +1,97 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import org.telegram.tgnet.SerializedData;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum vb6 implements jn7 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    b(3);
+public final class vb6 {
+    public static SparseIntArray b;
+    public static final vb6 c = new vb6();
+    public final SparseArray a;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    vb6(int i) {
-        this.a = i;
+    public vb6(ub6 ub6Var) {
+        SparseArray sparseArray = ub6Var.a;
+        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 
-    @Override // jn7
-    public final int a() {
-        return this.a;
+    public static SparseArray c(Context context, String str, SparseArray sparseArray) {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
+        try {
+            SerializedData serializedData = new SerializedData(bufferedInputStream);
+            int readInt32 = serializedData.readInt32(true);
+            int i = 0;
+            if (sparseArray == null) {
+                sparseArray = new SparseArray(readInt32);
+                while (i < readInt32) {
+                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
+                    i++;
+                }
+            } else {
+                while (i < readInt32) {
+                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
+                    i++;
+                }
+            }
+            bufferedInputStream.close();
+            return sparseArray;
+        } catch (Throwable th) {
+            try {
+                bufferedInputStream.close();
+            } catch (Throwable th2) {
+                th.addSuppressed(th2);
+            }
+            throw th;
+        }
+    }
+
+    public final String a(String str) {
+        if (str == null) {
+            return null;
+        }
+        return (String) this.a.get(str.hashCode());
+    }
+
+    public final String b(int i, Context context, String str) {
+        String a = str != null ? a(str) : null;
+        if (a != null || i == 0) {
+            return a;
+        }
+        if (context != null && i != 0) {
+            SparseIntArray sparseIntArray = b;
+            if (sparseIntArray == null) {
+                try {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+                    try {
+                        SerializedData serializedData = new SerializedData(bufferedInputStream);
+                        int readInt32 = serializedData.readInt32(true);
+                        SparseIntArray sparseIntArray2 = new SparseIntArray(readInt32);
+                        for (int i2 = 0; i2 < readInt32; i2++) {
+                            sparseIntArray2.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                        }
+                        bufferedInputStream.close();
+                        b = sparseIntArray2;
+                        sparseIntArray = sparseIntArray2;
+                    } finally {
+                    }
+                } catch (IOException e) {
+                    grb.m(e);
+                    return null;
+                }
+            }
+            int i3 = sparseIntArray.get(i);
+            if (i3 != 0) {
+                return (String) this.a.get(i3);
+            }
+        }
+        return null;
+    }
+
+    public vb6() {
+        this.a = new SparseArray();
     }
 }

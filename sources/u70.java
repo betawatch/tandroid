@@ -1,108 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u70 extends bk {
-    public final Integer a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final String f;
-    public final String g;
-    public final String h;
-    public final String i;
-    public final String j;
-    public final String k;
-    public final String l;
+public final class u70 implements zq7 {
+    public static final u70 a = new u70();
+    public static final sa4 b = sa4.c("eventType");
+    public static final sa4 c = sa4.c("sessionData");
+    public static final sa4 d = sa4.c("applicationInfo");
 
-    public u70(Integer num, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11) {
-        this.a = num;
-        this.b = str;
-        this.c = str2;
-        this.d = str3;
-        this.e = str4;
-        this.f = str5;
-        this.g = str6;
-        this.h = str7;
-        this.i = str8;
-        this.j = str9;
-        this.k = str10;
-        this.l = str11;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof bk)) {
-            return false;
-        }
-        bk bkVar = (bk) obj;
-        if (!this.a.equals(((u70) bkVar).a)) {
-            return false;
-        }
-        if (!this.b.equals(((u70) bkVar).b)) {
-            return false;
-        }
-        if (!this.c.equals(((u70) bkVar).c)) {
-            return false;
-        }
-        if (!this.d.equals(((u70) bkVar).d)) {
-            return false;
-        }
-        if (!this.e.equals(((u70) bkVar).e)) {
-            return false;
-        }
-        if (!this.f.equals(((u70) bkVar).f)) {
-            return false;
-        }
-        if (!this.g.equals(((u70) bkVar).g)) {
-            return false;
-        }
-        if (!this.h.equals(((u70) bkVar).h)) {
-            return false;
-        }
-        if (!this.i.equals(((u70) bkVar).i)) {
-            return false;
-        }
-        if (!this.j.equals(((u70) bkVar).j)) {
-            return false;
-        }
-        if (this.k.equals(((u70) bkVar).k)) {
-            return this.l.equals(((u70) bkVar).l);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((((((((((((((((((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003) ^ this.f.hashCode()) * 1000003) ^ this.g.hashCode()) * 1000003) ^ this.h.hashCode()) * 1000003) ^ this.i.hashCode()) * 1000003) ^ this.j.hashCode()) * 1000003) ^ this.k.hashCode()) * 1000003) ^ this.l.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("AndroidClientInfo{sdkVersion=");
-        sb.append(this.a);
-        sb.append(", model=");
-        sb.append(this.b);
-        sb.append(", hardware=");
-        sb.append(this.c);
-        sb.append(", device=");
-        sb.append(this.d);
-        sb.append(", product=");
-        sb.append(this.e);
-        sb.append(", osBuild=");
-        sb.append(this.f);
-        sb.append(", manufacturer=");
-        sb.append(this.g);
-        sb.append(", fingerprint=");
-        sb.append(this.h);
-        sb.append(", locale=");
-        sb.append(this.i);
-        sb.append(", country=");
-        sb.append(this.j);
-        sb.append(", mccMnc=");
-        sb.append(this.k);
-        sb.append(", applicationBuild=");
-        return b00.j(sb, this.l, "}");
+    @Override // l34
+    public final void a(Object obj, Object obj2) {
+        u9a u9aVar = (u9a) obj;
+        ar7 ar7Var = (ar7) obj2;
+        u9aVar.getClass();
+        ar7Var.a(b, j54.b);
+        ar7Var.a(c, u9aVar.a);
+        ar7Var.a(d, u9aVar.b);
     }
 }

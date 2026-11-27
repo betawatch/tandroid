@@ -1,28 +1,54 @@
 // default package
 
-import android.text.Layout;
-import android.view.View;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fh9 implements jg7 {
-    public final xeb a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fh9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ km9 b;
 
-    public fh9(xeb xebVar) {
-        this.a = xebVar;
+    public /* synthetic */ fh9(km9 km9Var, byte b) {
+        this.a = b;
+        this.b = km9Var;
     }
 
-    @Override // jg7
-    public final Layout a() {
-        web webVar = this.a.b;
-        if (webVar == null) {
-            return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.w();
+                break;
+            default:
+                km9 km9Var = this.b;
+                km9Var.H = null;
+                mk0 mk0Var = km9Var.y;
+                if (mk0Var != null) {
+                    TL_iv.PageBlock pageBlock = mk0Var.b;
+                    if ((pageBlock instanceof TL_iv.pageBlockPreformatted) && !TextUtils.isEmpty(((TL_iv.pageBlockPreformatted) pageBlock).language)) {
+                        String obj = km9Var.f.getText().toString();
+                        if (!obj.equals(km9Var.I)) {
+                            mk0 mk0Var2 = km9Var.y;
+                            String str = ((TL_iv.pageBlockPreformatted) mk0Var2.b).language;
+                            int i = km9Var.J + 1;
+                            km9Var.J = i;
+                            zo2 zo2Var = new zo2(km9Var, i, mk0Var2, obj, (byte) 6);
+                            wm8 wm8Var = mk2.a;
+                            SpannableString spannableString = new SpannableString(obj);
+                            String b = wm8.b(str);
+                            if (!b.isEmpty() && spannableString.length() != 0) {
+                                mk2.a.d(spannableString.toString(), b, new q72((Object) spannableString, (Object) zo2Var, (byte) 8));
+                                break;
+                            } else {
+                                hl.c3(new ea2(zo2Var, spannableString, (byte) 20));
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
         }
-        return webVar.a();
-    }
-
-    @Override // jg7
-    public final View e() {
-        return null;
     }
 }

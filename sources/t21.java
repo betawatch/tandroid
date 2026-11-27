@@ -1,95 +1,124 @@
 // default package
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class t21 {
-    public static final t21 E;
-    public static final t21 F;
-    public static final t21 G;
-    public static final t21 H;
-    public static final t21 I;
-    public static final t21 J;
-    public static final /* synthetic */ t21[] K;
-    public static final t21 e;
-    public static final t21 f;
-    public static final t21 h;
-    public static final t21 n;
-    public static final t21 r;
-    public static final t21 s;
-    public static final t21 w;
-    public static final t21 x;
-    public static final t21 y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final s21 d;
+public final class t21 extends p11 implements snb {
+    public final vnb a;
+    public Runnable b;
+    public Runnable c;
+    public v21 d;
+    public final TextView e;
+    public boolean f;
+    public final Drawable h;
+    public final Drawable n;
 
-    static {
-        s21 s21Var = s21.e;
-        t21 t21Var = new t21("PHOTO", 0, "PhotoSavedHint", 2131747071, s21Var);
-        e = t21Var;
-        t21 t21Var2 = new t21("PHOTOS", 1, "PhotosSavedHint", s21Var);
-        f = t21Var2;
-        t21 t21Var3 = new t21("VIDEO", 2, "VideoSavedHint", 2131743343, s21Var);
-        h = t21Var3;
-        t21 t21Var4 = new t21("VIDEOS", 3, "VideosSavedHint", s21Var);
-        n = t21Var4;
-        t21 t21Var5 = new t21("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748642, s21Var);
-        r = t21Var5;
-        t21 t21Var6 = new t21("LIVEPHOTOS", 5, "LivePhotosSavedHint", s21Var);
-        s = t21Var6;
-        t21 t21Var7 = new t21("MEDIA", 6, "MediaSavedHint", s21Var);
-        w = t21Var7;
-        s21 s21Var2 = s21.d;
-        t21 t21Var8 = new t21("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747070, s21Var2);
-        x = t21Var8;
-        t21 t21Var9 = new t21("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743342, s21Var2);
-        y = t21Var9;
-        t21 t21Var10 = new t21("GIF", 9, "GifSavedHint", 2131750454, s21.h);
-        E = t21Var10;
-        t21 t21Var11 = new t21("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750453, s21Var2);
-        F = t21Var11;
-        s21 s21Var3 = s21.f;
-        t21 t21Var12 = new t21("AUDIO", 11, "AudioSavedHint", 2131753905, s21Var3);
-        G = t21Var12;
-        t21 t21Var13 = new t21("AUDIOS", 12, "AudiosSavedHint", s21Var3);
-        H = t21Var13;
-        t21 t21Var14 = new t21("UNKNOWN", 13, "FileSavedHintLinked", 2131750816, s21Var2);
-        I = t21Var14;
-        t21 t21Var15 = new t21("UNKNOWNS", 14, "FilesSavedHintLinked", s21Var2);
-        J = t21Var15;
-        K = new t21[]{t21Var, t21Var2, t21Var3, t21Var4, t21Var5, t21Var6, t21Var7, t21Var8, t21Var9, t21Var10, t21Var11, t21Var12, t21Var13, t21Var14, t21Var15};
+    public t21(vnb vnbVar, Context context, boolean z, boolean z2) {
+        super(context);
+        float f;
+        this.a = vnbVar;
+        int i = aob.xj;
+        int h = vnbVar != null ? vnbVar.h(i) : aob.w0(null, i, false);
+        if (z) {
+            TextView textView = new TextView(context);
+            this.e = textView;
+            textView.setBackground(aob.f0((h & 16777215) | 419430400, 7, -1));
+            this.h = textView.getBackground();
+            bs2.t(textView, 1, 14.0f);
+            ik8.x(textView, i, vnbVar, null, 2131743540);
+            textView.setGravity(16);
+            float f2 = z2 ? 34.0f : 12.0f;
+            if (ob6.a0) {
+                f = 12.0f;
+            } else {
+                f = f2;
+                f2 = 12.0f;
+            }
+            l2f.a(textView, f, 8.0f, f2, 8.0f);
+            addView(textView, tre.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+        }
+        if (z2) {
+            ImageView imageView = new ImageView(getContext());
+            imageView.setImageResource(R.drawable.chats_undo);
+            yob.s(imageView, i, vnbVar, PorterDuff.Mode.MULTIPLY);
+            if (!z) {
+                imageView.setBackground(aob.f0((h & 16777215) | 419430400, 1, -1));
+                this.n = imageView.getBackground();
+            }
+            l2f.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            addView(imageView, tre.h(56.0f, 48.0f, 16));
+        }
+        setOnClickListener(new k1(this, (byte) 24));
     }
 
-    public t21(String str, int i, String str2, s21 s21Var) {
-        this.a = str2;
-        this.d = s21Var;
-        this.b = 0;
-        this.c = true;
+    @Override // u11
+    public final void c() {
+        this.d = null;
+        Runnable runnable = this.c;
+        if (runnable == null || this.f) {
+            return;
+        }
+        runnable.run();
     }
 
-    public static t21 valueOf(String str) {
-        return (t21) Enum.valueOf(t21.class, str);
+    @Override // u11
+    public final void d(v21 v21Var) {
+        this.d = v21Var;
     }
 
-    public static t21[] values() {
-        return (t21[]) K.clone();
+    public final void e(String str) {
+        TextView textView = this.e;
+        if (textView != null) {
+            textView.setText(str);
+        }
     }
 
-    public t21(String str, int i, String str2, int i2, s21 s21Var) {
-        this.a = str2;
-        this.b = i2;
-        this.d = s21Var;
-        this.c = false;
+    public final void f() {
+        if (this.d != null) {
+            this.f = true;
+            Runnable runnable = this.b;
+            if (runnable != null) {
+                runnable.run();
+            }
+            v21 v21Var = this.d;
+            if (v21Var != null) {
+                v21Var.b();
+            }
+        }
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        Drawable drawable;
+        try {
+            int i = aob.xj;
+            vnb vnbVar = this.a;
+            int h = ((vnbVar != null ? vnbVar.h(i) : aob.w0(null, i, false)) & 16777215) | 419430400;
+            TextView textView = this.e;
+            if (textView != null && (drawable = this.h) != null && textView.getBackground() == drawable) {
+                aob.F1(drawable, h, true);
+            }
+            Drawable drawable2 = this.n;
+            if (drawable2 != null) {
+                aob.F1(drawable2, h, true);
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+    }
+
+    public t21(vnb vnbVar, Context context, boolean z) {
+        this(vnbVar, context, z, !z);
     }
 }

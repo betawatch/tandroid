@@ -1,33 +1,40 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gua implements cha {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hz4 b;
+public final class gua extends dua {
+    public final boolean c;
+    public final ImageReceiver d;
 
-    public /* synthetic */ gua(hz4 hz4Var, byte b) {
-        this.a = b;
-        this.b = hz4Var;
+    public gua(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+        this.a = stargiftattributemodel.name;
+        this.b = stargiftattributemodel.getRarityPermille();
+        this.c = true;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.d = imageReceiver;
+        nza.e1(imageReceiver, stargiftattributemodel.document, jn7.p2);
     }
 
-    @Override // cha
-    public final void m(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
-        byte b = this.a;
-        hz4 hz4Var = this.b;
-        switch (b) {
-            case 0:
-                o39 o39Var = (o39) recyclerView;
-                tk0.a(o39Var, canvas, rectF, o39Var, hz4Var);
-                break;
-            default:
-                o39 o39Var2 = (o39) recyclerView;
-                tk0.a(o39Var2, canvas, rectF, o39Var2, hz4Var);
-                break;
+    @Override // dua
+    public final void a() {
+        if (this.c) {
+            this.d.K();
         }
+    }
+
+    @Override // dua
+    public final boolean b() {
+        return this.d.y() != null;
+    }
+
+    public gua(de0 de0Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+        this.a = stargiftattributemodel.name;
+        this.b = stargiftattributemodel.getRarityPermille();
+        this.c = false;
+        this.d = de0Var.getImageReceiver();
     }
 }

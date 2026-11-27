@@ -1,21 +1,13 @@
 // default package
 
-import java.util.HashMap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface at8 {
+    void a();
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class at8 {
-    public static final it8 a;
+    void b(boolean z);
 
-    static {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap.put(at8.class, h70.a);
-        hashMap2.remove(at8.class);
-        hashMap.put(fd7.class, g70.a);
-        hashMap2.remove(fd7.class);
-        hashMap.put(ed7.class, f70.a);
-        hashMap2.remove(ed7.class);
-        a = new it8(new HashMap(hashMap), new HashMap(hashMap2));
-    }
+    void c();
+
+    void d();
 }

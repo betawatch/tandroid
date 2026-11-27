@@ -1,37 +1,41 @@
 // default package
 
-import java.io.Serializable;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zo9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pq8 b;
+    public final /* synthetic */ Exception c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zo9 implements d06, Serializable {
-    public static final AtomicReferenceFieldUpdater c = AtomicReferenceFieldUpdater.newUpdater(zo9.class, Object.class, "b");
-    public volatile op4 a;
-    public volatile Object b;
-
-    @Override // d06
-    public final Object getValue() {
-        Object obj = this.b;
-        pd5 pd5Var = pd5.d;
-        if (obj != pd5Var) {
-            return obj;
-        }
-        op4 op4Var = this.a;
-        if (op4Var != null) {
-            Object invoke = op4Var.invoke();
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = c;
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, pd5Var, invoke)) {
-                if (atomicReferenceFieldUpdater.get(this) != pd5Var) {
-                }
-            }
-            this.a = null;
-            return invoke;
-        }
-        return this.b;
+    public /* synthetic */ zo9(pq8 pq8Var, Exception exc, byte b) {
+        this.a = b;
+        this.b = pq8Var;
+        this.c = exc;
     }
 
-    public final String toString() {
-        return this.b != pd5.d ? String.valueOf(getValue()) : "Lazy value not initialized yet.";
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Exception exc = this.c;
+        pq8 pq8Var = this.b;
+        switch (b) {
+            case 0:
+                ((jp9) pq8Var.b).h(exc);
+                break;
+            default:
+                jp9 jp9Var = (jp9) pq8Var.b;
+                jp9Var.m.a("recording segment interrupted in state=".concat(uh9.A(jp9Var.a0)), exc);
+                int i = jp9Var.a0;
+                if (i != 3) {
+                    if (i == 2) {
+                        jp9Var.D = true;
+                        break;
+                    }
+                } else {
+                    jp9Var.q();
+                    break;
+                }
+                break;
+        }
     }
 }

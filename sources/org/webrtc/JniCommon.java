@@ -2,14 +2,34 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class JniCommon {
-    public static native void nativeAddRef(long j);
 
-    public static native ByteBuffer nativeAllocateByteBuffer(int i);
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        void addRef(long j);
 
-    public static native void nativeFreeByteBuffer(ByteBuffer byteBuffer);
+        ByteBuffer allocateByteBuffer(int i);
 
-    public static native void nativeReleaseRef(long j);
+        void freeByteBuffer(ByteBuffer byteBuffer);
+
+        void releaseRef(long j);
+    }
+
+    public static void nativeAddRef(long j) {
+        JniCommonJni.get().addRef(j);
+    }
+
+    public static ByteBuffer nativeAllocateByteBuffer(int i) {
+        return JniCommonJni.get().allocateByteBuffer(i);
+    }
+
+    public static void nativeFreeByteBuffer(ByteBuffer byteBuffer) {
+        JniCommonJni.get().freeByteBuffer(byteBuffer);
+    }
+
+    public static void nativeReleaseRef(long j) {
+        JniCommonJni.get().releaseRef(j);
+    }
 }

@@ -1,32 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qn1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ py b;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.ui.PhotoViewer;
 
-    public /* synthetic */ qn1(py pyVar, byte b) {
-        this.a = b;
-        this.b = pyVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class qn1 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ fu5 b;
+
+    public /* synthetic */ qn1(fu5 fu5Var, kc kcVar) {
+        this.a = (byte) 1;
+        this.b = fu5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        py pyVar = this.b;
+        fu5 fu5Var = this.b;
         switch (b) {
             case 0:
-                gl.E3(pyVar);
+                fu5Var.r();
                 break;
-            default:
-                jd8 jd8Var = (jd8) pyVar.f2;
-                gb2 gb2Var = jd8Var.n;
-                if (gb2Var != null && gb2Var.getDelegate() != null) {
-                    jd8Var.n.getDelegate().C1(jd8Var.n, false);
+            case 1:
+                if (fu5Var.J) {
+                    fu5Var.u();
                     break;
                 }
                 break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                fu5Var.r();
+                break;
+            default:
+                fu5Var.r();
+                break;
         }
+    }
+
+    public /* synthetic */ qn1(fu5 fu5Var, byte b) {
+        this.a = b;
+        this.b = fu5Var;
     }
 }

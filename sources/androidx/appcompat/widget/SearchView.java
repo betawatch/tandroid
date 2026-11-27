@@ -36,10 +36,10 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class SearchView extends o26 implements sk2 {
-    public static final pe7 x0;
+public class SearchView extends s46 implements ml2 {
+    public static final yg7 x0;
     public final SearchAutoComplete G;
     public final View H;
     public final View I;
@@ -49,7 +49,7 @@ public class SearchView extends o26 implements sk2 {
     public final ImageView M;
     public final ImageView N;
     public final View O;
-    public et9 P;
+    public xw9 P;
     public final Rect Q;
     public final Rect R;
     public final int[] S;
@@ -65,7 +65,7 @@ public class SearchView extends o26 implements sk2 {
     public View.OnClickListener f0;
     public boolean g0;
     public boolean h0;
-    public d43 i0;
+    public v43 i0;
     public boolean j0;
     public CharSequence k0;
     public boolean l0;
@@ -77,39 +77,39 @@ public class SearchView extends o26 implements sk2 {
     public int r0;
     public SearchableInfo s0;
     public Bundle t0;
-    public final zs9 u0;
-    public final zs9 v0;
+    public final sw9 u0;
+    public final sw9 v0;
     public final WeakHashMap w0;
 
     static {
-        pe7 pe7Var = null;
+        yg7 yg7Var = null;
         if (Build.VERSION.SDK_INT < 29) {
-            pe7 pe7Var2 = new pe7();
-            pe7Var2.a = null;
-            pe7Var2.b = null;
-            pe7Var2.c = null;
-            pe7.a();
+            yg7 yg7Var2 = new yg7();
+            yg7Var2.a = null;
+            yg7Var2.b = null;
+            yg7Var2.c = null;
+            yg7.a();
             try {
                 Method declaredMethod = AutoCompleteTextView.class.getDeclaredMethod("doBeforeTextChanged", null);
-                pe7Var2.a = declaredMethod;
+                yg7Var2.a = declaredMethod;
                 declaredMethod.setAccessible(true);
             } catch (NoSuchMethodException unused) {
             }
             try {
                 Method declaredMethod2 = AutoCompleteTextView.class.getDeclaredMethod("doAfterTextChanged", null);
-                pe7Var2.b = declaredMethod2;
+                yg7Var2.b = declaredMethod2;
                 declaredMethod2.setAccessible(true);
             } catch (NoSuchMethodException unused2) {
             }
             try {
                 Method method = AutoCompleteTextView.class.getMethod("ensureImeVisible", Boolean.TYPE);
-                pe7Var2.c = method;
+                yg7Var2.c = method;
                 method.setAccessible(true);
             } catch (NoSuchMethodException unused3) {
             }
-            pe7Var = pe7Var2;
+            yg7Var = yg7Var2;
         }
-        x0 = pe7Var;
+        x0 = yg7Var;
     }
 
     public SearchView(Context context, AttributeSet attributeSet, int i) {
@@ -118,20 +118,20 @@ public class SearchView extends o26 implements sk2 {
         this.R = new Rect();
         this.S = new int[2];
         this.T = new int[2];
-        this.u0 = new zs9(this, (byte) 0);
+        this.u0 = new sw9(this, (byte) 0);
         byte b = 1;
-        this.v0 = new zs9(this, b);
+        this.v0 = new sw9(this, b);
         this.w0 = new WeakHashMap();
         a aVar = new a(this);
         b bVar = new b(this);
-        gx1 gx1Var = new gx1(this, (byte) 3);
-        aq aqVar = new aq(this, b);
-        j56 j56Var = new j56(this, (byte) 1);
-        jf6 jf6Var = new jf6(this, (byte) 8);
-        int[] iArr = jy8.u;
+        vx1 vx1Var = new vx1(this, (byte) 3);
+        bq bqVar = new bq(this, b);
+        n76 n76Var = new n76(this, (byte) 1);
+        nh6 nh6Var = new nh6(this, (byte) 9);
+        int[] iArr = w19.u;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, i, 0);
-        vk9 vk9Var = new vk9(context, obtainStyledAttributes);
-        jdc.j(this, context, iArr, attributeSet, obtainStyledAttributes, i);
+        ko9 ko9Var = new ko9(context, obtainStyledAttributes);
+        ihc.k(this, context, iArr, attributeSet, obtainStyledAttributes, i);
         LayoutInflater.from(context).inflate(obtainStyledAttributes.getResourceId(9, R.layout.abc_search_view), (ViewGroup) this, true);
         SearchAutoComplete searchAutoComplete = (SearchAutoComplete) findViewById(R.id.search_src_text);
         this.G = searchAutoComplete;
@@ -151,15 +151,15 @@ public class SearchView extends o26 implements sk2 {
         this.N = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.U = imageView5;
-        findViewById.setBackground(vk9Var.n(10));
-        findViewById2.setBackground(vk9Var.n(14));
-        imageView.setImageDrawable(vk9Var.n(13));
-        imageView2.setImageDrawable(vk9Var.n(7));
-        imageView3.setImageDrawable(vk9Var.n(4));
-        imageView4.setImageDrawable(vk9Var.n(16));
-        imageView5.setImageDrawable(vk9Var.n(13));
-        this.V = vk9Var.n(12);
-        uve.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
+        findViewById.setBackground(ko9Var.n(10));
+        findViewById2.setBackground(ko9Var.n(14));
+        imageView.setImageDrawable(ko9Var.n(13));
+        imageView2.setImageDrawable(ko9Var.n(7));
+        imageView3.setImageDrawable(ko9Var.n(4));
+        imageView4.setImageDrawable(ko9Var.n(16));
+        imageView5.setImageDrawable(ko9Var.n(13));
+        this.V = ko9Var.n(12);
+        m0f.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.W = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.a0 = obtainStyledAttributes.getResourceId(5, 0);
         imageView.setOnClickListener(aVar);
@@ -167,12 +167,12 @@ public class SearchView extends o26 implements sk2 {
         imageView2.setOnClickListener(aVar);
         imageView4.setOnClickListener(aVar);
         searchAutoComplete.setOnClickListener(aVar);
-        searchAutoComplete.addTextChangedListener(jf6Var);
-        searchAutoComplete.setOnEditorActionListener(gx1Var);
-        searchAutoComplete.setOnItemClickListener(aqVar);
-        searchAutoComplete.setOnItemSelectedListener(j56Var);
+        searchAutoComplete.addTextChangedListener(nh6Var);
+        searchAutoComplete.setOnEditorActionListener(vx1Var);
+        searchAutoComplete.setOnItemClickListener(bqVar);
+        searchAutoComplete.setOnItemSelectedListener(n76Var);
         searchAutoComplete.setOnKeyListener(bVar);
-        searchAutoComplete.setOnFocusChangeListener(new vs3(this, (byte) 2));
+        searchAutoComplete.setOnFocusChangeListener(new nt3(this, (byte) 2));
         setIconifiedByDefault(obtainStyledAttributes.getBoolean(8, true));
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(1, -1);
         if (dimensionPixelSize != -1) {
@@ -189,7 +189,7 @@ public class SearchView extends o26 implements sk2 {
             setInputType(i3);
         }
         setFocusable(obtainStyledAttributes.getBoolean(0, true));
-        vk9Var.y();
+        ko9Var.y();
         Intent intent = new Intent("android.speech.action.WEB_SEARCH");
         this.b0 = intent;
         intent.addFlags(TLObject.FLAG_28);
@@ -200,7 +200,7 @@ public class SearchView extends o26 implements sk2 {
         View findViewById3 = findViewById(searchAutoComplete.getDropDownAnchor());
         this.O = findViewById3;
         if (findViewById3 != null) {
-            findViewById3.addOnLayoutChangeListener(new aw0(this, (byte) 2));
+            findViewById3.addOnLayoutChangeListener(new jw0(this, (byte) 2));
         }
         v(this.g0);
         s();
@@ -263,7 +263,7 @@ public class SearchView extends o26 implements sk2 {
         return this.W;
     }
 
-    public d43 getSuggestionsAdapter() {
+    public v43 getSuggestionsAdapter() {
         return this.i0;
     }
 
@@ -321,19 +321,19 @@ public class SearchView extends o26 implements sk2 {
             c.a(searchAutoComplete);
             return;
         }
-        pe7 pe7Var = x0;
-        pe7Var.getClass();
-        pe7.a();
-        Method method = pe7Var.a;
+        yg7 yg7Var = x0;
+        yg7Var.getClass();
+        yg7.a();
+        Method method = yg7Var.a;
         if (method != null) {
             try {
                 method.invoke(searchAutoComplete, null);
             } catch (Exception unused) {
             }
         }
-        pe7Var.getClass();
-        pe7.a();
-        Method method2 = pe7Var.b;
+        yg7Var.getClass();
+        yg7.a();
+        Method method2 = yg7Var.b;
         if (method2 != null) {
             try {
                 method2.invoke(searchAutoComplete, null);
@@ -361,22 +361,22 @@ public class SearchView extends o26 implements sk2 {
         if (cursor != null && cursor.moveToPosition(i)) {
             Intent intent = null;
             try {
-                int i3 = kbb.O;
-                String g2 = kbb.g(cursor, cursor.getColumnIndex("suggest_intent_action"));
+                int i3 = gfb.O;
+                String g2 = gfb.g(cursor, cursor.getColumnIndex("suggest_intent_action"));
                 if (g2 == null) {
                     g2 = this.s0.getSuggestIntentAction();
                 }
                 if (g2 == null) {
                     g2 = "android.intent.action.SEARCH";
                 }
-                String g3 = kbb.g(cursor, cursor.getColumnIndex("suggest_intent_data"));
+                String g3 = gfb.g(cursor, cursor.getColumnIndex("suggest_intent_data"));
                 if (g3 == null) {
                     g3 = this.s0.getSuggestIntentData();
                 }
-                if (g3 != null && (g = kbb.g(cursor, cursor.getColumnIndex("suggest_intent_data_id"))) != null) {
+                if (g3 != null && (g = gfb.g(cursor, cursor.getColumnIndex("suggest_intent_data_id"))) != null) {
                     g3 = g3 + "/" + Uri.encode(g);
                 }
-                intent = i(g2, g3 == null ? null : Uri.parse(g3), kbb.g(cursor, cursor.getColumnIndex("suggest_intent_extra_data")), kbb.g(cursor, cursor.getColumnIndex("suggest_intent_query")));
+                intent = i(g2, g3 == null ? null : Uri.parse(g3), gfb.g(cursor, cursor.getColumnIndex("suggest_intent_extra_data")), gfb.g(cursor, cursor.getColumnIndex("suggest_intent_query")));
             } catch (RuntimeException e) {
                 try {
                     i2 = cursor.getPosition();
@@ -419,7 +419,7 @@ public class SearchView extends o26 implements sk2 {
         setQuery(charSequence);
     }
 
-    @Override // sk2
+    @Override // ml2
     public final void onActionViewCollapsed() {
         SearchAutoComplete searchAutoComplete = this.G;
         searchAutoComplete.setText("");
@@ -431,7 +431,7 @@ public class SearchView extends o26 implements sk2 {
         this.q0 = false;
     }
 
-    @Override // sk2
+    @Override // ml2
     public final void onActionViewExpanded() {
         if (this.q0) {
             return;
@@ -452,7 +452,7 @@ public class SearchView extends o26 implements sk2 {
         super.onDetachedFromWindow();
     }
 
-    @Override // o26, android.view.ViewGroup, android.view.View
+    @Override // s46, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (z) {
@@ -472,23 +472,23 @@ public class SearchView extends o26 implements sk2 {
             int i9 = i4 - i2;
             Rect rect2 = this.R;
             rect2.set(i7, 0, i8, i9);
-            et9 et9Var = this.P;
-            if (et9Var == null) {
-                et9 et9Var2 = new et9(rect2, rect, searchAutoComplete);
-                this.P = et9Var2;
-                setTouchDelegate(et9Var2);
+            xw9 xw9Var = this.P;
+            if (xw9Var == null) {
+                xw9 xw9Var2 = new xw9(rect2, rect, searchAutoComplete);
+                this.P = xw9Var2;
+                setTouchDelegate(xw9Var2);
             } else {
-                et9Var.b.set(rect2);
-                Rect rect3 = et9Var.d;
+                xw9Var.b.set(rect2);
+                Rect rect3 = xw9Var.d;
                 rect3.set(rect2);
-                int i10 = -et9Var.e;
+                int i10 = -xw9Var.e;
                 rect3.inset(i10, i10);
-                et9Var.c.set(rect);
+                xw9Var.c.set(rect);
             }
         }
     }
 
-    @Override // o26, android.view.View
+    @Override // s46, android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
         if (this.h0) {
@@ -520,21 +520,21 @@ public class SearchView extends o26 implements sk2 {
 
     @Override // android.view.View
     public final void onRestoreInstanceState(Parcelable parcelable) {
-        if (!(parcelable instanceof dt9)) {
+        if (!(parcelable instanceof ww9)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        dt9 dt9Var = (dt9) parcelable;
-        super.onRestoreInstanceState(dt9Var.a);
-        v(dt9Var.c);
+        ww9 ww9Var = (ww9) parcelable;
+        super.onRestoreInstanceState(ww9Var.a);
+        v(ww9Var.c);
         requestLayout();
     }
 
     @Override // android.view.View
     public final Parcelable onSaveInstanceState() {
-        dt9 dt9Var = new dt9(super.onSaveInstanceState());
-        dt9Var.c = this.h0;
-        return dt9Var;
+        ww9 ww9Var = new ww9(super.onSaveInstanceState());
+        ww9Var.c = this.h0;
+        return ww9Var;
     }
 
     @Override // android.view.View
@@ -670,9 +670,9 @@ public class SearchView extends o26 implements sk2 {
 
     public void setQueryRefinementEnabled(boolean z) {
         this.l0 = z;
-        d43 d43Var = this.i0;
-        if (d43Var instanceof kbb) {
-            ((kbb) d43Var).G = z ? (byte) 2 : (byte) 1;
+        v43 v43Var = this.i0;
+        if (v43Var instanceof gfb) {
+            ((gfb) v43Var).G = z ? (byte) 2 : (byte) 1;
         }
     }
 
@@ -699,15 +699,15 @@ public class SearchView extends o26 implements sk2 {
                 }
             }
             searchAutoComplete.setInputType(inputType);
-            d43 d43Var = this.i0;
-            if (d43Var != null) {
-                d43Var.b(null);
+            v43 v43Var = this.i0;
+            if (v43Var != null) {
+                v43Var.b(null);
             }
             if (this.s0.getSuggestAuthority() != null) {
-                kbb kbbVar = new kbb(getContext(), this, this.s0, this.w0);
-                this.i0 = kbbVar;
-                searchAutoComplete.setAdapter(kbbVar);
-                ((kbb) this.i0).G = this.l0 ? (byte) 2 : (byte) 1;
+                gfb gfbVar = new gfb(getContext(), this, this.s0, this.w0);
+                this.i0 = gfbVar;
+                searchAutoComplete.setAdapter(gfbVar);
+                ((gfb) this.i0).G = this.l0 ? (byte) 2 : (byte) 1;
             }
             s();
         }
@@ -734,9 +734,9 @@ public class SearchView extends o26 implements sk2 {
         v(this.h0);
     }
 
-    public void setSuggestionsAdapter(d43 d43Var) {
-        this.i0 = d43Var;
-        this.G.setAdapter(d43Var);
+    public void setSuggestionsAdapter(v43 v43Var) {
+        this.i0 = v43Var;
+        this.G.setAdapter(v43Var);
     }
 
     public final void t() {
@@ -767,8 +767,8 @@ public class SearchView extends o26 implements sk2 {
         t();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    public static class SearchAutoComplete extends jo {
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public static class SearchAutoComplete extends ko {
         public int e;
         public SearchView f;
         public boolean h;
@@ -785,7 +785,7 @@ public class SearchView extends o26 implements sk2 {
             int i = configuration.screenWidthDp;
             int i2 = configuration.screenHeightDp;
             if (i < 960 || i2 < 720 || configuration.orientation != 2) {
-                return i < 600 ? (i < 640 || i2 < 480) ? kk7.p2 : kk7.V2 : kk7.V2;
+                return i < 600 ? (i < 640 || i2 < 480) ? jn7.p2 : jn7.V2 : jn7.V2;
             }
             return 256;
         }
@@ -799,10 +799,10 @@ public class SearchView extends o26 implements sk2 {
                 }
                 return;
             }
-            pe7 pe7Var = SearchView.x0;
-            pe7Var.getClass();
-            pe7.a();
-            Method method = pe7Var.c;
+            yg7 yg7Var = SearchView.x0;
+            yg7Var.getClass();
+            yg7.a();
+            Method method = yg7Var.c;
             if (method != null) {
                 try {
                     method.invoke(this, Boolean.TRUE);
@@ -816,7 +816,7 @@ public class SearchView extends o26 implements sk2 {
             return this.e <= 0 || super.enoughToFilter();
         }
 
-        @Override // jo, android.widget.TextView, android.view.View
+        @Override // ko, android.widget.TextView, android.view.View
         public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
             InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
             if (this.h) {
@@ -875,7 +875,7 @@ public class SearchView extends o26 implements sk2 {
             if (z && this.f.hasFocus() && getVisibility() == 0) {
                 this.h = true;
                 Context context = getContext();
-                pe7 pe7Var = SearchView.x0;
+                yg7 yg7Var = SearchView.x0;
                 if (context.getResources().getConfiguration().orientation == 2) {
                     a();
                 }
@@ -923,13 +923,13 @@ public class SearchView extends o26 implements sk2 {
         }
     }
 
-    public void setOnCloseListener(at9 at9Var) {
+    public void setOnCloseListener(tw9 tw9Var) {
     }
 
-    public void setOnQueryTextListener(bt9 bt9Var) {
+    public void setOnQueryTextListener(uw9 uw9Var) {
     }
 
-    public void setOnSuggestionListener(ct9 ct9Var) {
+    public void setOnSuggestionListener(vw9 vw9Var) {
     }
 
     public SearchView(Context context, AttributeSet attributeSet) {

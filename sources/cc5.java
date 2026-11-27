@@ -1,22 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cc5 {
-    public boolean a;
-    public boolean b;
-    public wh7 c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
+import android.app.Activity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class cc5 extends l46 {
+    public final /* synthetic */ dc5 S2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cc5(dc5 dc5Var, dc5 dc5Var2, Activity activity, int i, int i2, vnb vnbVar) {
+        super(i, i2, vnbVar, activity, dc5Var2);
+        this.S2 = dc5Var;
+    }
+
+    @Override // nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        super.dismiss();
+        this.S2.C0 = false;
+    }
+
+    @Override // nx0
+    public final void x() {
+        this.S2.C0 = false;
+    }
 }

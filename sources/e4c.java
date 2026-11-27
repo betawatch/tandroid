@@ -1,32 +1,41 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e4c extends URLSpan {
-    public final vib a;
+public final class e4c extends ScrollView {
+    public Drawable a;
+    public mm b;
+    public boolean c;
 
-    public e4c(String str, vib vibVar) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = vibVar;
-    }
-
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        d01.q(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        vib vibVar = this.a;
-        if (vibVar != null) {
-            vibVar.a(textPaint);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float e = this.b.e(false, canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
+        if (e > 0.0f) {
+            Drawable drawable = this.a;
+            if (drawable == null) {
+                drawable = getContext().getResources().getDrawable(R.drawable.header_shadow);
+                this.a = drawable;
+            }
+            drawable.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (e * 255.0f));
+            this.a.draw(canvas);
         }
-        textPaint.setUnderlineText(true);
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i, int i2, int i3, int i4) {
+        super.onNestedScroll(view, i, i2, i3, i4);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
+        }
     }
 }

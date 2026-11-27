@@ -1,51 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class y9d extends aad {
-    public final transient int h;
-    public final transient int n;
-    public final /* synthetic */ aad r;
+public final class y9d implements IInterface {
+    public final IBinder a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y9d(aad aadVar, int i, int i2) {
-        super((byte) 0);
-        this.r = aadVar;
-        this.h = i;
-        this.n = i2;
+    public y9d(IBinder iBinder) {
+        this.a = iBinder;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        l2f.a(i, this.n);
-        return this.r.get(i + this.h);
+    public final void a(esd esdVar, gv4 gv4Var) {
+        Parcel obtain = Parcel.obtain();
+        Parcel obtain2 = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("com.google.android.gms.common.internal.IGmsServiceBroker");
+            obtain.writeStrongBinder(esdVar);
+            obtain.writeInt(1);
+            t4f.a(gv4Var, obtain, 0);
+            this.a.transact(46, obtain, obtain2, 0);
+            obtain2.readException();
+        } finally {
+            obtain2.recycle();
+            obtain.recycle();
+        }
     }
 
-    @Override // x8d
-    public final int i() {
-        return this.r.j() + this.h + this.n;
-    }
-
-    @Override // x8d
-    public final int j() {
-        return this.r.j() + this.h;
-    }
-
-    @Override // x8d
-    public final Object[] k() {
-        return this.r.k();
-    }
-
-    @Override // aad, java.util.List
-    /* renamed from: l */
-    public final aad subList(int i, int i2) {
-        l2f.b(i, i2, this.n);
-        int i3 = this.h;
-        return this.r.subList(i + i3, i2 + i3);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.n;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

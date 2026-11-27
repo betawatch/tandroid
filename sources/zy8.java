@@ -1,48 +1,44 @@
 // default package
 
-import java.io.InputStream;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zy8 extends a51 {
-    public final long d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class zy8 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final /* synthetic */ pz8 c;
 
-    public zy8(InputStream inputStream, long j, long j2) {
-        super(inputStream, j);
-        this.d = j + j2;
-    }
-
-    public final long e() {
-        return this.d - this.b;
-    }
-
-    @Override // a51, java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        long j = this.b;
-        long j2 = i2 + j;
-        long j3 = this.d;
-        if (j2 <= j3 || (i2 = (int) (j3 - j)) != 0) {
-            return super.read(bArr, i, i2);
-        }
-        return -1;
-    }
-
-    @Override // a51, java.io.FilterInputStream, java.io.InputStream
-    public final long skip(long j) {
-        long j2 = this.b;
-        long j3 = j2 + j;
-        long j4 = this.d;
-        if (j3 > j4) {
-            j = (int) (j4 - j2);
-        }
-        return super.skip(j);
-    }
-
-    @Override // a51, java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        if (this.b == this.d) {
-            return -1;
-        }
-        return super.read();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zy8(pz8 pz8Var, Context context) {
+        super(context);
+        this.c = pz8Var;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(pz8Var.y);
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(hl.o());
+        textView.setSingleLine();
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity(16);
+        addView(textView, tre.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextColor(-1);
+        textView2.setTextSize(1, 13.0f);
+        textView2.setTypeface(hl.o());
+        textView2.setGravity(17);
+        textView2.setPadding(hl.L(10.0f), 0, hl.L(10.0f), 0);
+        textView2.setText(ob6.M0(2131743531, null));
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        gradientDrawable.setColor(620756991);
+        gradientDrawable.setCornerRadius(hl.L(13.0f));
+        textView2.setBackground(gradientDrawable);
+        textView2.setOnClickListener(new jn8(this, (byte) 6));
+        addView(textView2, tre.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
     }
 }

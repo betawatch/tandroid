@@ -1,0 +1,26 @@
+// default package
+
+import android.graphics.Paint;
+import android.text.style.LineHeightSpan;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class u94 implements LineHeightSpan {
+    public final int a;
+    public final int b;
+
+    public u94(Paint.FontMetricsInt fontMetricsInt, int i) {
+        this.a = fontMetricsInt.ascent - i;
+        this.b = fontMetricsInt.top - i;
+    }
+
+    @Override // android.text.style.LineHeightSpan
+    public final void chooseHeight(CharSequence charSequence, int i, int i2, int i3, int i4, Paint.FontMetricsInt fontMetricsInt) {
+        if (i4 == i3) {
+            return;
+        }
+        int i5 = this.a;
+        fontMetricsInt.ascent = i5;
+        fontMetricsInt.top = Math.min(this.b, i5);
+    }
+}

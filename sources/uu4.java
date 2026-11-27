@@ -1,47 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class uu4 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class uu4 implements m0b {
+    public final tcc a;
+    public final TaskCompletionSource b;
 
-    static {
-        b4c.h(new uu4());
+    public uu4(tcc tccVar, TaskCompletionSource taskCompletionSource) {
+        this.a = tccVar;
+        this.b = taskCompletionSource;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        kz9 kz9Var = (kz9) view;
-        fm2 fm2Var = c4cVar.l;
-        CharSequence charSequence = c4cVar.m;
-        CharSequence charSequence2 = c4cVar.n;
-        kz9Var.x.setVisibility(8);
-        kz9Var.I = null;
-        kz9Var.J = null;
-        be0 be0Var = kz9Var.c;
-        be0Var.setRoundRadius(gl.L(20.0f));
-        be0Var.setImageDrawable(fm2Var);
-        df0 df0Var = kz9Var.d;
-        df0Var.k(charSequence);
-        boolean[] zArr = kz9Var.s;
-        zArr[0] = false;
-        kz9Var.setSubtitle(charSequence2);
-        zkb.W(kz9Var.e, zArr[0] ? bkb.m5 : bkb.q5, kz9Var.a);
-        wf2 wf2Var = kz9Var.w;
-        if (wf2Var != null) {
-            wf2Var.setAlpha(1.0f);
+    @Override // m0b
+    public final boolean a(Exception exc) {
+        this.b.trySetException(exc);
+        return true;
+    }
+
+    @Override // m0b
+    public final boolean b(ia0 ia0Var) {
+        if (ia0Var.b == 4 && !this.a.a(ia0Var)) {
+            String str = ia0Var.c;
+            if (str != null) {
+                this.b.setResult(new z90(ia0Var.e, ia0Var.f, str));
+                return true;
+            }
+            p3d.h("Null token");
         }
-        df0Var.i(null);
-        kz9Var.setDivider(z);
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        kz9 kz9Var = new kz9(context, false, false, wjbVar, false);
-        kz9Var.setCellBackgroundVisible(false);
-        return kz9Var;
+        return false;
     }
 }

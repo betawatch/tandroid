@@ -1,14 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum arb extends qsb {
-    public arb() {
-        super("ScriptDataDoubleEscapeEnd", 32);
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class arb extends FrameLayout {
+    public TextView a;
+    public ImageView b;
+    public boolean c;
+
+    public final void a(String str, boolean z, boolean z2) {
+        this.a.setText(str);
+        this.b.setVisibility(z ? 0 : 4);
+        this.c = z2;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        qsb.a(aqbVar, zj1Var, qsb.L, qsb.S);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(20.0f) : 0), getMeasuredHeight() - 1, aob.j0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setTypeChecked(boolean z) {
+        this.b.setVisibility(z ? 0 : 4);
     }
 }

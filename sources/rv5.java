@@ -1,31 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rv5 implements Comparable {
-    public static final rv5 b = new rv5();
-    public final int a = 131594;
+public final /* synthetic */ class rv5 extends us4 implements ks4 {
+    public static final rv5 a = new rv5(3, sv5.class, "registerSelectForOnJoin", "registerSelectForOnJoin(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V", 0);
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        rv5 rv5Var = (rv5) obj;
-        rv5Var.getClass();
-        return this.a - rv5Var.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // ks4
+    public final Object a(Object obj, Object obj2, Object obj3) {
+        Object v;
+        sv5 sv5Var = (sv5) obj;
+        if (obj2 != null) {
+            throw new ClassCastException();
         }
-        rv5 rv5Var = obj instanceof rv5 ? (rv5) obj : null;
-        return rv5Var != null && this.a == rv5Var.a;
-    }
-
-    public final int hashCode() {
-        return this.a;
-    }
-
-    public final String toString() {
-        return "2.2.10";
+        int i = sv5.c;
+        do {
+            v = sv5Var.v();
+            if (!(v instanceof hp5)) {
+                throw null;
+            }
+        } while (sv5Var.K(v) < 0);
+        gqe.c(sv5Var, true, new nv5());
+        throw null;
     }
 }

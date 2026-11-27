@@ -4,9 +4,9 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class MessageInfo implements mi7 {
+public final class MessageInfo implements uk7 {
     private final CarIcon mImage;
     private final CarText mText;
     private final CarText mTitle;
@@ -48,7 +48,7 @@ public final class MessageInfo implements mi7 {
         return "MessageInfo";
     }
 
-    public MessageInfo(v17 v17Var) {
+    public MessageInfo(c47 c47Var) {
         throw null;
     }
 }

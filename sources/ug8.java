@@ -1,195 +1,247 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.Random;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract /* synthetic */ class ug8 {
-    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, kk7.m1, kk7.n1, kk7.o1, kk7.p1, kk7.q1, kk7.r1, kk7.s1, kk7.t1, kk7.u1, kk7.v1, kk7.w1, kk7.x1, kk7.y1, kk7.z1, kk7.A1, kk7.B1, kk7.C1, kk7.D1, 120, kk7.E1, kk7.F1, kk7.G1, kk7.H1, kk7.I1, kk7.J1, kk7.K1, 128, kk7.M1, kk7.N1, kk7.O1, kk7.P1, 133, 134, kk7.Q1, kk7.R1, kk7.S1, kk7.T1};
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ug8 implements o8a, x71 {
+    public final String a;
+    public final ku4 b;
+    public final byte c;
+    public int d = -1;
+    public final String[] e;
+    public final List[] f;
+    public final boolean[] g;
+    public Map h;
+    public final h26 i;
+    public final h26 j;
+    public final h26 k;
 
-    public static /* synthetic */ boolean A(Object obj) {
-        return obj != null;
-    }
-
-    public static int B(float f, int i, int i2) {
-        return i2 - (gl.L(f) + i);
-    }
-
-    public static int C(vg5 vg5Var, float f, int i) {
-        vg5Var.getClass();
-        return gl.L(f) + i;
-    }
-
-    public static int D(float f, int i, int i2) {
-        return (i - gl.L(f)) / i2;
-    }
-
-    public static int E(float f, int i, int i2) {
-        return View.MeasureSpec.makeMeasureSpec(gl.L(f) + i, i2);
-    }
-
-    public static /* synthetic */ int F(int i) {
-        if (i != 0) {
-            return i - 1;
+    /* JADX WARN: Multi-variable type inference failed */
+    public ug8(String str, ku4 ku4Var, int i) {
+        this.a = str;
+        this.b = ku4Var;
+        this.c = i;
+        String[] strArr = new String[i];
+        final byte b = 0;
+        for (int i2 = 0; i2 < i; i2++) {
+            strArr[i2] = "[UNINITIALIZED]";
         }
-        throw null;
+        this.e = strArr;
+        int i3 = this.c;
+        this.f = new List[i3];
+        this.g = new boolean[i3];
+        this.h = y24.a;
+        this.i = ure.a(new sr4(this) { // from class: sg8
+            public final /* synthetic */ ug8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // sr4
+            public final Object invoke() {
+                byte b2 = b;
+                ug8 ug8Var = this.b;
+                switch (b2) {
+                    case 0:
+                        return ug8Var.b.a();
+                    default:
+                        o8a[] o8aVarArr = (o8a[]) ug8Var.j.getValue();
+                        o8aVarArr.getClass();
+                        int hashCode = (ug8Var.a().hashCode() * 31) + Arrays.hashCode(o8aVarArr);
+                        int f = ug8Var.f();
+                        int i4 = 1;
+                        while (true) {
+                            int i5 = 0;
+                            if (f > 0) {
+                                int i6 = f - 1;
+                                int i7 = i4 * 31;
+                                String a = ug8Var.i(ug8Var.f() - f).a();
+                                if (a != null) {
+                                    i5 = a.hashCode();
+                                }
+                                i4 = i7 + i5;
+                                f = i6;
+                            } else {
+                                int f2 = ug8Var.f();
+                                int i8 = 1;
+                                while (true) {
+                                    if (!(f2 > 0)) {
+                                        return Integer.valueOf((((hashCode * 31) + i4) * 31) + i8);
+                                    }
+                                    int i9 = f2 - 1;
+                                    int i10 = i8 * 31;
+                                    nye e = ug8Var.i(ug8Var.f() - f2).e();
+                                    i8 = i10 + (e != null ? e.hashCode() : 0);
+                                    f2 = i9;
+                                }
+                            }
+                        }
+                }
+            }
+        });
+        this.j = ure.a(new tg8(this));
+        final byte b2 = 1;
+        this.k = ure.a(new sr4(this) { // from class: sg8
+            public final /* synthetic */ ug8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // sr4
+            public final Object invoke() {
+                byte b22 = b2;
+                ug8 ug8Var = this.b;
+                switch (b22) {
+                    case 0:
+                        return ug8Var.b.a();
+                    default:
+                        o8a[] o8aVarArr = (o8a[]) ug8Var.j.getValue();
+                        o8aVarArr.getClass();
+                        int hashCode = (ug8Var.a().hashCode() * 31) + Arrays.hashCode(o8aVarArr);
+                        int f = ug8Var.f();
+                        int i4 = 1;
+                        while (true) {
+                            int i5 = 0;
+                            if (f > 0) {
+                                int i6 = f - 1;
+                                int i7 = i4 * 31;
+                                String a = ug8Var.i(ug8Var.f() - f).a();
+                                if (a != null) {
+                                    i5 = a.hashCode();
+                                }
+                                i4 = i7 + i5;
+                                f = i6;
+                            } else {
+                                int f2 = ug8Var.f();
+                                int i8 = 1;
+                                while (true) {
+                                    if (!(f2 > 0)) {
+                                        return Integer.valueOf((((hashCode * 31) + i4) * 31) + i8);
+                                    }
+                                    int i9 = f2 - 1;
+                                    int i10 = i8 * 31;
+                                    nye e = ug8Var.i(ug8Var.f() - f2).e();
+                                    i8 = i10 + (e != null ? e.hashCode() : 0);
+                                    f2 = i9;
+                                }
+                            }
+                        }
+                }
+            }
+        });
     }
 
-    public static /* synthetic */ int[] G(int i) {
-        int[] iArr = new int[i];
-        System.arraycopy(a, 0, iArr, 0, i);
-        return iArr;
+    @Override // o8a
+    public final String a() {
+        return this.a;
     }
 
-    public static int a(dw dwVar) {
-        int boundLeft = dwVar.getBoundLeft();
-        int boundRight = dwVar.getBoundRight();
-        if (boundLeft < 0 || boundRight < 0 || boundRight < boundLeft) {
-            return -1;
+    @Override // x71
+    public final Set b() {
+        return this.h.keySet();
+    }
+
+    @Override // o8a
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // o8a
+    public final int d(String str) {
+        str.getClass();
+        Integer num = (Integer) this.h.get(str);
+        if (num != null) {
+            return num.intValue();
         }
-        return boundRight - boundLeft;
+        return -3;
     }
 
-    public static /* synthetic */ Integer b(int i) {
-        if (i == 0) {
-            return null;
+    @Override // o8a
+    public final nye e() {
+        return tdb.b;
+    }
+
+    public final boolean equals(Object obj) {
+        int i;
+        if (this == obj) {
+            return true;
         }
-        return Integer.valueOf(i - 1);
-    }
-
-    public static /* synthetic */ boolean c(int i, int i2) {
-        if (i != 0) {
-            return i == i2;
+        if (obj instanceof ug8) {
+            o8a o8aVar = (o8a) obj;
+            if (this.a.equals(o8aVar.a()) && Arrays.equals((o8a[]) this.j.getValue(), (o8a[]) ((ug8) obj).j.getValue())) {
+                int f = o8aVar.f();
+                byte b = this.c;
+                if (b == f) {
+                    for (0; i < b; i + 1) {
+                        i = (ur5.a(i(i).a(), o8aVar.i(i).a()) && ur5.a(i(i).e(), o8aVar.i(i).e())) ? i + 1 : 0;
+                    }
+                    return true;
+                }
+            }
         }
-        throw null;
+        return false;
     }
 
-    public static double d(double d, double d2, double d3) {
-        return (Math.cos(d) * d2) + d3;
+    @Override // o8a
+    public final int f() {
+        return this.c;
     }
 
-    public static float e(Random random, float f, float f2) {
-        return (random.nextFloat() * f) + f2;
+    @Override // o8a
+    public final String g(int i) {
+        return this.e[i];
     }
 
-    public static int f(float f, int i, int i2) {
-        return View.MeasureSpec.makeMeasureSpec(i - gl.L(f), i2);
+    @Override // o8a
+    public final List getAnnotations() {
+        return x24.a;
     }
 
-    public static int g(int i, int i2, int i3, int i4) {
-        return ((i - i2) / i3) + i4;
+    @Override // o8a
+    public final List h(int i) {
+        List list = this.f[i];
+        return list == null ? x24.a : list;
     }
 
-    public static int h(vg5 vg5Var, float f, int i) {
-        vg5Var.getClass();
-        return i - gl.L(f);
+    public final int hashCode() {
+        return ((Number) this.k.getValue()).intValue();
     }
 
-    public static fx0 i(Activity activity, boolean z, int i, wjb wjbVar) {
-        fx0 fx0Var = new fx0(i, wjbVar, activity, z);
-        fx0Var.K();
-        return fx0Var;
+    @Override // o8a
+    public final o8a i(int i) {
+        return ((hx5[]) this.i.getValue())[i].d();
     }
 
-    public static kr2 j(String str, int i, int i2, int i3, qr2 qr2Var) {
-        jr2 b = ir2.b();
-        b.b = str;
-        b.v(i);
-        b.w(i2, i3);
-        return b.u(qr2Var);
+    @Override // o8a
+    public final boolean isInline() {
+        return false;
     }
 
-    public static kr2 k(String str, String str2, int i, qr2 qr2Var) {
-        jr2 b = ir2.b();
-        b.b = str;
-        b.c = str2;
-        b.v(i);
-        return b.u(qr2Var);
+    public final void j(String str, boolean z) {
+        int i = this.d + 1;
+        this.d = i;
+        String[] strArr = this.e;
+        strArr[i] = str;
+        this.g[i] = z;
+        this.f[i] = null;
+        if (i == this.c - 1) {
+            HashMap hashMap = new HashMap();
+            int length = strArr.length;
+            for (int i2 = 0; i2 < length; i2++) {
+                hashMap.put(strArr[i2], Integer.valueOf(i2));
+            }
+            this.h = hashMap;
+        }
     }
 
-    public static TextView l(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
-        frameLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static TextView m(LinearLayout linearLayout, TextView textView, LinearLayout.LayoutParams layoutParams, Context context) {
-        linearLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static String n(long j, String str, String str2) {
-        return str + j + str2;
-    }
-
-    public static StringBuilder o(long j, String str, String str2) {
-        StringBuilder sb = new StringBuilder(str);
-        sb.append(j);
-        sb.append(str2);
-        return sb;
-    }
-
-    public static StringBuilder p(String str, String str2, String str3) {
-        StringBuilder sb = new StringBuilder(str);
-        sb.append(str2);
-        sb.append(str3);
-        return sb;
-    }
-
-    public static void q(long j, StringBuilder sb) {
-        sb.append(j);
-        fa4.b(sb.toString());
-    }
-
-    public static void r(il0 il0Var, float f, float f2) {
-        il0Var.r(f);
-        il0Var.q(gl.L(f2));
-    }
-
-    public static void s(ViewPropertyAnimator viewPropertyAnimator, float f, long j) {
-        viewPropertyAnimator.alpha(f).setDuration(j).start();
-    }
-
-    public static void t(ViewPropertyAnimator viewPropertyAnimator, s33 s33Var, long j) {
-        viewPropertyAnimator.setInterpolator(s33Var).setDuration(j).start();
-    }
-
-    public static void u(FrameLayout frameLayout, wjb wjbVar, TLRPC.TL_error tL_error, boolean z) {
-        new u21(frameLayout, wjbVar).g0(tL_error, z);
-    }
-
-    public static void v(TextView textView, int i, float f) {
-        textView.setTypeface(gl.o());
-        textView.setTextSize(i, f);
-    }
-
-    public static void w(TextView textView, int i, float f, int i2, int i3) {
-        textView.setTextSize(i, f);
-        textView.setLines(i2);
-        textView.setMaxLines(i3);
-    }
-
-    public static void x(TextView textView, int i, wjb wjbVar, String str, int i2) {
-        zkb.X(textView, i, wjbVar);
-        textView.setText(k96.M0(i2, str));
-    }
-
-    public static void y(String str, int i, AlertDialog$Builder alertDialog$Builder, ed edVar) {
-        alertDialog$Builder.g(k96.M0(i, str), edVar);
-        alertDialog$Builder.o();
-    }
-
-    public static void z(String str, String str2, String str3, StringBuilder sb) {
-        sb.append(str);
-        sb.append(str2);
-        sb.append(str3);
+    public final String toString() {
+        return sl2.f(bxe.a(0, this.c), ", ", this.a.concat("("), ")", new a2((Object) this, (byte) 7), 24);
     }
 }

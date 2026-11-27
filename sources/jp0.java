@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class jp0 extends Drawable {
     public final ImageView a;
@@ -21,26 +21,26 @@ public final class jp0 extends Drawable {
     public boolean f;
     public float g;
     public boolean h;
-    public final lm i;
-    public final lm j;
-    public final lm k;
-    public oy8 l;
+    public final mm i;
+    public final mm j;
+    public final mm k;
+    public b29 l;
 
     public jp0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new RectF();
         this.h = false;
-        oz ozVar = new oz(this, (byte) 18);
-        s33 s33Var = s33.h;
-        this.i = new lm(ozVar, 320L, s33Var, 0);
-        this.j = new lm(new oz(this, (byte) 18), 320L, s33Var, 0);
-        this.k = new lm(new oz(this, (byte) 18), 320L, s33Var, 0);
+        pz pzVar = new pz(this, (byte) 19);
+        k43 k43Var = k43.h;
+        this.i = new mm(pzVar, 320L, k43Var, 0);
+        this.j = new mm(new pz(this, (byte) 19), 320L, k43Var, 0);
+        this.k = new mm(new pz(this, (byte) 19), 320L, k43Var, 0);
         this.a = imageView;
         this.d = System.currentTimeMillis();
-        this.e = b00.d(context, R.drawable.search_files_filled);
+        this.e = c00.e(context, R.drawable.search_files_filled);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.L(2.0f));
+        paint.setStrokeWidth(hl.L(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
     }
@@ -49,7 +49,7 @@ public final class jp0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f;
         float f2;
-        oy8 oy8Var;
+        b29 b29Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -65,16 +65,16 @@ public final class jp0 extends Drawable {
             float f7 = centerY;
             canvas2.scale(f5, f5, f6, f7);
             Drawable drawable = this.e;
-            drawable.setBounds(oo1.A(2, centerX, drawable), oo1.y(2, centerY, drawable), oo1.w(2, centerX, drawable), oo1.i(2, centerY, drawable));
+            drawable.setBounds(bp1.A(2, centerX, drawable), bp1.y(2, centerY, drawable), bp1.w(2, centerX, drawable), bp1.i(2, centerY, drawable));
             drawable.setAlpha((int) (f4 * 255.0f));
             drawable.draw(canvas2);
-            float L = gl.L(14.0f);
-            int p1 = bkb.p1(0.2f * f4, -1);
+            float L = hl.L(14.0f);
+            int p1 = aob.p1(0.2f * f4, -1);
             Paint paint = this.b;
             paint.setColor(p1);
             canvas2.drawCircle(f6, f7, L, paint);
             float f8 = f4 * 1.0f;
-            paint.setColor(bkb.p1(f8, -1));
+            paint.setColor(aob.p1(f8, -1));
             float f9 = f6 - L;
             f2 = 255.0f;
             float f10 = f7 - L;
@@ -83,7 +83,7 @@ public final class jp0 extends Drawable {
             RectF rectF = this.c;
             rectF.set(f9, f10, f11, f12);
             float d2 = this.i.d(this.f);
-            paint.setColor(bkb.p1((1.0f - d2) * f4 * 0.15f, -1));
+            paint.setColor(aob.p1((1.0f - d2) * f4 * 0.15f, -1));
             long currentTimeMillis = System.currentTimeMillis();
             long j = this.d;
             canvas2.drawArc(rectF, (-(((((currentTimeMillis - j) % 600) / 600.0f) - 1.0f) * 360.0f)) - 90.0f, -90.0f, false, paint);
@@ -91,16 +91,16 @@ public final class jp0 extends Drawable {
             float max = Math.max(0.0f, ((1520.0f * currentTimeMillis2) / 5400.0f) - 20.0f);
             int i = 0;
             while (i < 4) {
-                c84 c84Var = ih2.h;
+                x84 x84Var = di2.h;
                 float f13 = f3;
-                c84Var.getInterpolation((currentTimeMillis2 - (i * 1350)) / 667.0f);
-                max += c84Var.getInterpolation((currentTimeMillis2 - (r10 + 667)) / 667.0f) * 250.0f;
+                x84Var.getInterpolation((currentTimeMillis2 - (i * 1350)) / 667.0f);
+                max += x84Var.getInterpolation((currentTimeMillis2 - (r10 + 667)) / 667.0f) * 250.0f;
                 i++;
                 f3 = f13;
                 c = c;
             }
             f = f3;
-            paint.setColor(bkb.p1(f8, -1));
+            paint.setColor(aob.p1(f8, -1));
             canvas2 = canvas;
             canvas2.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, this.j.e(false, this.g)) * (-360.0f) * d2, false, paint);
             invalidateSelf();
@@ -109,24 +109,24 @@ public final class jp0 extends Drawable {
             f = 0.0f;
             f2 = 255.0f;
         }
-        if (d <= f || (oy8Var = this.l) == null) {
+        if (d <= f || (b29Var = this.l) == null) {
             return;
         }
-        int i2 = oy8Var.b / 2;
-        int i3 = oy8Var.c / 2;
-        oy8Var.setBounds(centerX - i2, centerY - i3, i2 + centerX, i3 + centerY);
+        int i2 = b29Var.b / 2;
+        int i3 = b29Var.c / 2;
+        b29Var.setBounds(centerX - i2, centerY - i3, i2 + centerX, i3 + centerY);
         this.l.setAlpha((int) (d * f2));
         this.l.draw(canvas2);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
-        return gl.L(40.0f);
+        return hl.L(40.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
-        return gl.L(40.0f);
+        return hl.L(40.0f);
     }
 
     @Override // android.graphics.drawable.Drawable

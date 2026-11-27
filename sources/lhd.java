@@ -1,19 +1,100 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class lhd implements zn7 {
-    public static final lhd a = new lhd();
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.ResolveInfo;
+import android.content.res.XmlResourceParser;
+import android.os.Bundle;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class lhd {
+    public static volatile ArrayList a;
+    public static final Object b = new Object();
+
+    public static String a(XmlResourceParser xmlResourceParser, String str) {
+        String attributeValue = xmlResourceParser.getAttributeValue("http://schemas.android.com/apk/res/android", str);
+        return attributeValue == null ? xmlResourceParser.getAttributeValue(null, str) : attributeValue;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static qea b(XmlResourceParser xmlResourceParser) {
+        String a2 = a(xmlResourceParser, "targetClass");
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        while (true) {
+            int next = xmlResourceParser.next();
+            if (next != 1) {
+                if (next != 2) {
+                    if (next == 3 && xmlResourceParser.getName().equals("share-target")) {
+                        break;
+                    }
+                } else {
+                    String name = xmlResourceParser.getName();
+                    name.getClass();
+                    if (name.equals("data")) {
+                        a(xmlResourceParser, "scheme");
+                        a(xmlResourceParser, "host");
+                        a(xmlResourceParser, "port");
+                        a(xmlResourceParser, "path");
+                        a(xmlResourceParser, "pathPattern");
+                        a(xmlResourceParser, "pathPrefix");
+                        arrayList.add(new pea(a(xmlResourceParser, "mimeType")));
+                    } else if (name.equals("category")) {
+                        arrayList2.add(a(xmlResourceParser, "name"));
+                    }
+                }
+            } else {
+                break;
+            }
         }
-        throw null;
+        if (arrayList.isEmpty() || a2 == null || arrayList2.isEmpty()) {
+            return null;
+        }
+        return new qea((pea[]) arrayList.toArray(new pea[arrayList.size()]), a2, (String[]) arrayList2.toArray(new String[arrayList2.size()]));
+    }
+
+    public static ArrayList c(Context context) {
+        qea b2;
+        ArrayList arrayList = new ArrayList();
+        Intent intent = new Intent("android.intent.action.MAIN");
+        intent.addCategory("android.intent.category.LAUNCHER");
+        intent.setPackage(context.getPackageName());
+        List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(intent, 128);
+        if (queryIntentActivities != null) {
+            Iterator<ResolveInfo> it = queryIntentActivities.iterator();
+            while (it.hasNext()) {
+                ActivityInfo activityInfo = it.next().activityInfo;
+                Bundle bundle = activityInfo.metaData;
+                if (bundle != null && bundle.containsKey("android.app.shortcuts")) {
+                    ArrayList arrayList2 = new ArrayList();
+                    XmlResourceParser loadXmlMetaData = activityInfo.loadXmlMetaData(context.getPackageManager(), "android.app.shortcuts");
+                    if (loadXmlMetaData == null) {
+                        c22.b(activityInfo.name, "Failed to open android.app.shortcuts meta-data resource of ");
+                        return null;
+                    }
+                    while (true) {
+                        try {
+                            int next = loadXmlMetaData.next();
+                            if (next == 1) {
+                                break;
+                            }
+                            if (next == 2 && loadXmlMetaData.getName().equals("share-target") && (b2 = b(loadXmlMetaData)) != null) {
+                                arrayList2.add(b2);
+                            }
+                        } catch (Exception e) {
+                            Log.e("ShareTargetXmlParser", "Failed to parse the Xml resource: ", e);
+                        }
+                    }
+                    loadXmlMetaData.close();
+                    arrayList.addAll(arrayList2);
+                }
+            }
+        }
+        return arrayList;
     }
 }

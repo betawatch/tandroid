@@ -1,14 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class s53 extends fwa {
-    public final Object b;
-    public final int c;
+public final class s53 {
+    public final h09 a;
+    public final boolean b;
 
-    public s53(int i, int i2, Object obj) {
-        super(i2);
-        this.b = obj;
-        this.c = i;
+    public s53(h09 h09Var, boolean z) {
+        this.a = h09Var;
+        this.b = z;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof s53) {
+            s53 s53Var = (s53) obj;
+            if (s53Var.a.equals(this.a) && s53Var.b == this.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.b).hashCode();
     }
 }

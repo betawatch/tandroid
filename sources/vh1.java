@@ -1,89 +1,102 @@
 // default package
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vh1 extends ry8 {
-    public final /* synthetic */ byte r;
-    public final /* synthetic */ Object s;
+public final class vh1 implements vnb {
+    public final /* synthetic */ wh1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vh1(byte b, Context context, Object obj) {
-        super(context);
-        this.r = b;
-        this.s = obj;
+    public vh1(wh1 wh1Var) {
+        this.a = wh1Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        byte b = this.r;
-        Object obj = this.s;
-        switch (b) {
-            case 0:
-                super.invalidate();
-                ((yh1) obj).h.invalidate();
-                break;
-            case 1:
-            default:
-                super.invalidate();
-                break;
-            case 2:
-                super.invalidate();
-                ((m75) obj).invalidate();
-                break;
-            case 3:
-                super.invalidate();
-                ((wa5) obj).e.invalidate();
-                break;
-            case 4:
-                super.invalidate();
-                ((ae6) obj).h.invalidate();
-                break;
-        }
+    @Override // vnb
+    public final boolean a() {
+        return this.a.K;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.r) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                if (!((xd2) this.s).G1) {
-                    accessibilityNodeInfo.setText(k96.M0(2131754749, null));
-                    break;
-                } else {
-                    accessibilityNodeInfo.setText(k96.M0(2131754750, null));
-                    break;
-                }
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
+    @Override // vnb
+    public final void b(float f, float f2, int i, int i2) {
+        aob.q(f, f2, i, i2);
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        byte b = this.r;
-        Object obj = this.s;
-        switch (b) {
-            case 0:
-                super.invalidate(i, i2, i3, i4);
-                ((yh1) obj).h.invalidate();
-                break;
-            case 1:
-            case 2:
-            default:
-                super.invalidate(i, i2, i3, i4);
-                break;
-            case 3:
-                super.invalidate(i, i2, i3, i4);
-                ((wa5) obj).e.invalidate();
-                break;
-            case 4:
-                super.invalidate(i, i2, i3, i4);
-                ((ae6) obj).h.invalidate();
-                break;
+    @Override // vnb
+    public final ColorFilter c() {
+        return aob.v3;
+    }
+
+    @Override // vnb
+    public final Paint d(String str) {
+        return str.equals("paintDivider") ? this.a.z0 : aob.T0(str);
+    }
+
+    @Override // vnb
+    public final boolean e() {
+        return xea.D0;
+    }
+
+    @Override // vnb
+    public final int f(int i) {
+        return h(i);
+    }
+
+    @Override // vnb
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // vnb
+    public final Drawable getDrawable(String str) {
+        wh1 wh1Var = this.a;
+        Drawable drawable = wh1Var.y0;
+        Drawable drawable2 = wh1Var.x0;
+        if (str.equals("drawableMsgIn")) {
+            return wh1Var.t0;
         }
+        if (str.equals("drawableMsgInSelected")) {
+            return wh1Var.u0;
+        }
+        if (str.equals("drawableMsgOut")) {
+            return wh1Var.v0;
+        }
+        if (str.equals("drawableMsgOutSelected")) {
+            return wh1Var.w0;
+        }
+        if (str.equals("drawableMsgOutCheckRead")) {
+            drawable2.setColorFilter(h(aob.Cb), PorterDuff.Mode.MULTIPLY);
+            return drawable2;
+        }
+        if (str.equals("drawableMsgOutHalfCheck")) {
+            drawable.setColorFilter(h(aob.Cb), PorterDuff.Mode.MULTIPLY);
+            return drawable;
+        }
+        vnb vnbVar = wh1Var.r0;
+        return vnbVar != null ? vnbVar.getDrawable(str) : aob.P0(str);
+    }
+
+    @Override // vnb
+    public final int h(int i) {
+        wh1 wh1Var = this.a;
+        SparseIntArray sparseIntArray = wh1Var.s0;
+        int indexOfKey = sparseIntArray.indexOfKey(i);
+        if (indexOfKey >= 0) {
+            return sparseIntArray.valueAt(indexOfKey);
+        }
+        vnb vnbVar = wh1Var.r0;
+        return vnbVar != null ? vnbVar.h(i) : aob.w0(null, i, false);
+    }
+
+    @Override // vnb
+    public final int j(int i) {
+        return h(i);
+    }
+
+    @Override // vnb
+    public final void i(int i, int i2) {
     }
 }

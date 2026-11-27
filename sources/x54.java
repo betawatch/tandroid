@@ -1,45 +1,34 @@
 // default package
 
-import android.content.Context;
-import j$.util.function.IntConsumer$-CC;
-import java.lang.ref.WeakReference;
-import java.util.function.IntConsumer;
+import java.io.InputStream;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x54 {
-    public final WeakReference a;
-    public final w54 b;
-    public final /* synthetic */ y54 c;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.function.IntConsumer, w54] */
-    public x54(y54 y54Var, Context context) {
-        this.c = y54Var;
-        this.a = new WeakReference(context);
-        ?? r0 = new IntConsumer() { // from class: w54
-            @Override // java.util.function.IntConsumer
-            public final void accept(int i) {
-                y54 y54Var2 = x54.this.c;
-                if (y54Var2.i0) {
-                    return;
-                }
-                y54Var2.m1(1, 19, Integer.valueOf(i));
-            }
-
-            public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-                return IntConsumer$-CC.$default$andThen(this, intConsumer);
-            }
-        };
-        this.b = r0;
-        context.registerDeviceIdChangeListener(new ge2(y54Var.v.a(y54Var.t, null), (byte) 1), r0);
+public final class x54 extends t54 {
+    public x54(InputStream inputStream) {
+        super(inputStream);
+        if (inputStream.markSupported()) {
+            this.a.mark(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        } else {
+            lq5.j("Cannot create SeekableByteOrderedDataInputStream with stream that does not support mark/reset");
+            throw null;
+        }
     }
 
-    public final void a() {
-        Context context = (Context) this.a.get();
-        if (context == null) {
-            return;
+    public final void b(long j) {
+        int i = this.c;
+        if (i > j) {
+            this.c = 0;
+            this.a.reset();
+        } else {
+            j -= i;
         }
-        context.unregisterDeviceIdChangeListener(this.b);
+        a((int) j);
+    }
+
+    public x54(byte[] bArr) {
+        super(bArr);
+        this.a.mark(ConnectionsManager.DEFAULT_DATACENTER_ID);
     }
 }

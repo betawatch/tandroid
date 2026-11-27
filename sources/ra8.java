@@ -1,18 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ra8 {
-    public final byte a;
-    public final int b;
-    public final String c;
-    public final boolean d;
+import android.animation.AnimatorSet;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.ui.PhotoViewer;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ra8(int i, int i2, String str, boolean z) {
-        this.a = i;
-        this.b = i2;
-        this.c = str;
-        this.d = z;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ra8 implements Runnable {
+    public final /* synthetic */ PhotoViewer a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ ub8 c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ AnimatorSet f;
+
+    public /* synthetic */ ra8(PhotoViewer photoViewer, View view, ub8 ub8Var, float f, float f2, AnimatorSet animatorSet) {
+        this.a = photoViewer;
+        this.b = view;
+        this.c = ub8Var;
+        this.d = f;
+        this.e = f2;
+        this.f = animatorSet;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        Drawable[] drawableArr = PhotoViewer.d9;
+        View view = this.b;
+        ub8 ub8Var = this.c;
+        view.setOutlineProvider(ub8Var);
+        view.setClipToOutline(true);
+        PhotoViewer photoViewer = this.a;
+        photoViewer.x3.setOutlineProvider(ub8Var);
+        photoViewer.x3.setClipToOutline(true);
+        zc8 zc8Var = photoViewer.F2;
+        if (zc8Var != null) {
+            zc8Var.setOutlineProvider(ub8Var);
+            photoViewer.F2.setClipToOutline(true);
+        }
+        photoViewer.x3.setTranslationY(this.d);
+        float f = this.e;
+        view.setTranslationY(f);
+        zc8 zc8Var2 = photoViewer.F2;
+        if (zc8Var2 != null) {
+            zc8Var2.setTranslationY(f);
+        }
+        photoViewer.X5 = 0.0f;
+        photoViewer.f0.invalidate();
+        this.f.start();
     }
 }

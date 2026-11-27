@@ -1,35 +1,70 @@
 // default package
 
-import android.view.animation.Interpolator;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wk implements Interpolator {
-    public final /* synthetic */ double a;
-    public final /* synthetic */ double b;
-    public final /* synthetic */ double c;
-    public final /* synthetic */ double d;
+public final class wk extends ClickableSpan {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Runnable b;
 
-    public wk(double d, double d2, double d3, double d4) {
-        this.a = d;
-        this.b = d2;
-        this.c = d3;
-        this.d = d4;
+    public /* synthetic */ wk(Runnable runnable, byte b) {
+        this.a = b;
+        this.b = runnable;
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f) {
-        double exp;
-        double d = this.a;
-        double d2 = this.d;
-        double d3 = this.b;
-        if (d < 1.0d) {
-            double exp2 = Math.exp((-f) * d * d3);
-            double d4 = this.c * f;
-            exp = ((Math.sin(d4) * d2) + (Math.cos(d4) * 1.0d)) * exp2;
-        } else {
-            exp = Math.exp((-f) * d3) * ((d2 * f) + 1.0d);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        byte b = this.a;
+        Runnable runnable = this.b;
+        switch (b) {
+            case 0:
+                runnable.run();
+                break;
+            case 1:
+                runnable.run();
+                break;
+            case 2:
+                runnable.run();
+                break;
+            case 3:
+                runnable.run();
+                break;
+            case 4:
+                runnable.run();
+                break;
+            default:
+                runnable.run();
+                break;
         }
-        return (float) (1.0d - exp);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(textPaint.linkColor);
+                break;
+            case 1:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 2:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 3:
+                textPaint.setUnderlineText(false);
+                break;
+            case 4:
+                textPaint.setUnderlineText(false);
+                break;
+            default:
+                textPaint.setUnderlineText(false);
+                break;
+        }
     }
 }

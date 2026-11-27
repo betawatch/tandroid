@@ -1,39 +1,14 @@
 // default package
 
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class s0d implements Runnable {
-    private final TaskCompletionSource a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public interface s0d {
+    Bitmap canvas(int i);
 
-    public s0d() {
-        this.a = null;
-    }
+    Paint deviceFont(int i);
 
-    public void a(Exception exc) {
-        TaskCompletionSource taskCompletionSource = this.a;
-        if (taskCompletionSource != null) {
-            taskCompletionSource.trySetException(exc);
-        }
-    }
-
-    public abstract void b();
-
-    public final TaskCompletionSource c() {
-        return this.a;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            b();
-        } catch (Exception e) {
-            a(e);
-        }
-    }
-
-    public s0d(TaskCompletionSource taskCompletionSource) {
-        this.a = taskCompletionSource;
-    }
+    Bitmap image(int i);
 }

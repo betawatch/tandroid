@@ -1,9 +1,16 @@
 // default package
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface zk3 {
-    void a(vf6 vf6Var, ArrayList arrayList);
+public final class zk3 {
+    public f89 a;
+    public f89 b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+
+    public final String toString() {
+        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
+    }
 }

@@ -1,19 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class i70 implements zn7 {
+public final class i70 implements zq7 {
     public static final i70 a = new i70();
+    public static final sa4 b = new sa4("messagingClientEvent", c00.n(c00.m(nw8.class, new wx(1))));
 
-    static {
-        w84.c("clientMetrics");
-    }
-
-    @Override // q24
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+        ((ar7) obj2).a(b, ((of7) obj).a);
     }
 }

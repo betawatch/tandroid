@@ -1,35 +1,83 @@
 // default package
 
+import android.app.Activity;
 import android.content.Context;
+import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bx1 extends j47 {
-    public final /* synthetic */ byte E0;
-    public final /* synthetic */ Object F0;
+public final class bx1 extends bz1 {
+    public final /* synthetic */ ChatActivityEnterView A0;
+    public final /* synthetic */ byte z0 = 0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bx1(Object obj, Context context, wjb wjbVar, byte b) {
-        super(context, wjbVar);
-        this.E0 = b;
-        this.F0 = obj;
+    public bx1(ChatActivityEnterView chatActivityEnterView, Context context, vnb vnbVar) {
+        super(R.drawable.input_done, vnbVar, context, true);
+        this.A0 = chatActivityEnterView;
     }
 
-    @Override // j47
-    public final void m(long j) {
-        byte b = this.E0;
-        Object obj = this.F0;
+    @Override // bz1
+    public final boolean b() {
+        switch (this.z0) {
+            case 0:
+                return this.A0.c();
+            default:
+                return super.b();
+        }
+    }
+
+    @Override // bz1
+    public final boolean c() {
+        byte b = this.z0;
+        ChatActivityEnterView chatActivityEnterView = this.A0;
         switch (b) {
             case 0:
-                ((ChatActivityEnterView) obj).setEffectId(j);
-                break;
+                return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
             default:
-                x02 x02Var = (x02) obj;
-                e02 e02Var = x02Var.F2;
-                x02Var.K2 = j;
-                e02Var.setEffect(j);
+                return !chatActivityEnterView.f4;
+        }
+    }
+
+    @Override // bz1
+    public final boolean d() {
+        switch (this.z0) {
+            case 0:
+                q67 q67Var = this.A0.M0;
+                if ((q67Var == null || q67Var.u0) && this.w <= 0) {
+                }
                 break;
         }
+        return true;
+    }
+
+    @Override // bz1
+    public final boolean j() {
+        switch (this.z0) {
+            case 0:
+                return this.A0.i6;
+            default:
+                return super.j();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        switch (this.z0) {
+            case 0:
+                super.setAlpha(f);
+                int i = ChatActivityEnterView.X7;
+                this.A0.r2();
+                break;
+            default:
+                super.setAlpha(f);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bx1(ChatActivityEnterView chatActivityEnterView, Activity activity, int i, vnb vnbVar) {
+        super(i, vnbVar, activity, true);
+        this.A0 = chatActivityEnterView;
     }
 }

@@ -1,38 +1,38 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class rr7 extends TextView {
-    public final /* synthetic */ sr7 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class rr7 implements OnBackAnimationCallback {
+    public final /* synthetic */ ur4 a;
+    public final /* synthetic */ ur4 b;
+    public final /* synthetic */ sr4 c;
+    public final /* synthetic */ sr4 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rr7(sr7 sr7Var, Context context, int i) {
-        super(context);
-        this.a = sr7Var;
+    public rr7(ur4 ur4Var, ur4 ur4Var2, sr4 sr4Var, sr4 sr4Var2) {
+        this.a = ur4Var;
+        this.b = ur4Var2;
+        this.c = sr4Var;
+        this.d = sr4Var2;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        sr7 sr7Var = this.a;
-        if (sr7Var.e.getAdapter() instanceof n04) {
-            ((n04) sr7Var.e.getAdapter()).getClass();
-        }
+    public final void onBackCancelled() {
+        this.d.invoke();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void setSelected(boolean z) {
-        super.setSelected(z);
-        Drawable background = getBackground();
-        sr7 sr7Var = this.a;
-        if (background != null) {
-            bkb.F1(background, sr7Var.b(z ? 0.1f : 0.05f), true);
-        }
-        setTextColor(sr7Var.b(z ? 0.8f : 0.6f));
+    public final void onBackInvoked() {
+        this.c.invoke();
+    }
+
+    public final void onBackProgressed(BackEvent backEvent) {
+        backEvent.getClass();
+        this.b.invoke(new hd0(backEvent));
+    }
+
+    public final void onBackStarted(BackEvent backEvent) {
+        backEvent.getClass();
+        this.a.invoke(new hd0(backEvent));
     }
 }

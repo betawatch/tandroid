@@ -1,48 +1,54 @@
 // default package
 
-import android.util.Log;
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class yn4 {
-    public boolean a = false;
-    public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
-    public op4 c;
-    public final /* synthetic */ go4 d;
+public final class yn4 implements pt2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public yn4(go4 go4Var) {
-        this.d = go4Var;
+    public /* synthetic */ yn4(mt2 mt2Var, nt2 nt2Var) {
+        this.a = (byte) 3;
+        this.b = nt2Var;
     }
 
-    public final void a() {
-        boolean K = go4.K(3);
-        go4 go4Var = this.d;
-        if (K) {
-            Log.d("FragmentManager", "handleOnBackCancelled. PREDICTIVE_BACK = true fragment manager " + go4Var);
+    @Override // pt2
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                zn4 zn4Var = (zn4) obj;
+                if (zn4Var == null) {
+                    zn4Var = new zn4(-3);
+                }
+                ((qx6) this.b).F(zn4Var);
+                return;
+            case 1:
+                zn4 zn4Var2 = (zn4) obj;
+                synchronized (ao4.c) {
+                    vla vlaVar = ao4.d;
+                    ArrayList arrayList = (ArrayList) vlaVar.get((String) this.b);
+                    if (arrayList == null) {
+                        return;
+                    }
+                    vlaVar.remove((String) this.b);
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        ((pt2) arrayList.get(i)).accept(zn4Var2);
+                    }
+                    return;
+                }
+            case 2:
+                ArrayList arrayList2 = new ArrayList();
+                ((ci0) ((tg0) this.b).b).c((gi0) obj, arrayList2);
+                return;
+            default:
+                ((nt2) this.b).e((gi0) obj);
+                return;
         }
-        if (go4.K(3)) {
-            Log.d("FragmentManager", "cancelBackStackTransition for transition " + go4Var.h);
-        }
-        id0 id0Var = go4Var.h;
-        if (id0Var != null) {
-            id0Var.r = false;
-            id0Var.d();
-            id0 id0Var2 = go4Var.h;
-            s54 s54Var = new s54((Object) go4Var, (byte) 24);
-            ArrayList arrayList = id0Var2.p;
-            if (arrayList == null) {
-                arrayList = new ArrayList();
-                id0Var2.p = arrayList;
-            }
-            arrayList.add(s54Var);
-            go4Var.h.e(false, true);
-            go4Var.i = true;
-            go4Var.A(true);
-            go4Var.E();
-            go4Var.i = false;
-            go4Var.h = null;
-        }
+    }
+
+    public /* synthetic */ yn4(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 }

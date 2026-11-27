@@ -1,27 +1,27 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cga {
-    public static final cga a;
-    public static final cga b;
-    public static final /* synthetic */ cga[] c;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.e;
 
-    static {
-        cga cgaVar = new cga("GENERAL", 0);
-        a = cgaVar;
-        cga cgaVar2 = new cga("FALLBACK", 1);
-        b = cgaVar2;
-        c = new cga[]{cgaVar, cgaVar2};
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class cga extends eu8 {
+    public final /* synthetic */ eja W;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cga(eja ejaVar, e eVar, Context context, int i, long j, vnb vnbVar, ll0 ll0Var) {
+        super(eVar, context, i, j, vnbVar, ll0Var);
+        this.W = ejaVar;
     }
 
-    public static cga valueOf(String str) {
-        return (cga) Enum.valueOf(cga.class, str);
-    }
-
-    public static cga[] values() {
-        return (cga[]) c.clone();
+    @Override // eu8
+    public final void q(boolean z) {
+        eja ejaVar = this.W;
+        TextView textView = ejaVar.t0;
+        textView.setVisibility(0);
+        textView.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.4f).scaleY(z ? 1.0f : 0.4f).withEndAction(new q38((byte) 13, (Object) this, z)).start();
+        ejaVar.G1(true);
+        ejaVar.Q0();
     }
 }

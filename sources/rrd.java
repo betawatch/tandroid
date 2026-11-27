@@ -1,37 +1,42 @@
 // default package
 
-import java.io.IOException;
-import java.nio.charset.Charset;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class rrd {
-    protected int zza;
-
-    public final byte[] a() {
-        try {
-            c2e c2eVar = (c2e) this;
-            int e = c2eVar.e();
-            byte[] bArr = new byte[e];
-            cwd cwdVar = new cwd(e, bArr);
-            bbe a = jae.c.a(c2eVar.getClass());
-            xdd xddVar = cwdVar.a;
-            if (xddVar == null) {
-                xddVar = new xdd();
-                Charset charset = h3e.a;
-                xddVar.a = cwdVar;
-                cwdVar.a = xddVar;
-            }
-            a.f(c2eVar, xddVar);
-            if (e - cwdVar.d == 0) {
-                return bArr;
-            }
-            throw new IllegalStateException("Did not write as much data as expected.");
-        } catch (IOException e2) {
-            fyb.j(tb4.y("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e2);
+public final class rrd extends d05 {
+    @Override // hg0
+    public final /* synthetic */ IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
             return null;
         }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cloudmessaging.internal.ICloudMessagingService");
+        return queryLocalInterface instanceof sxd ? (sxd) queryLocalInterface : new sxd(iBinder);
     }
 
-    public abstract int b(bbe bbeVar);
+    @Override // hg0
+    public final a94[] f() {
+        return fmd.b;
+    }
+
+    @Override // hg0
+    public final int i() {
+        return 261200000;
+    }
+
+    @Override // hg0
+    public final String l() {
+        return "com.google.android.gms.cloudmessaging.internal.ICloudMessagingService";
+    }
+
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.cloudmessaging.service.START";
+    }
+
+    @Override // hg0
+    public final boolean x() {
+        return true;
+    }
 }

@@ -1,57 +1,195 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pb8 extends gg6 {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.z;
 
-    public pb8(int i, int i2, int i3, int i4, int i5, int i6) {
-        super(i5, i6);
-        if (i5 + i3 > i || i6 + i4 > i2) {
-            w26.j("Crop rectangle does not fit within image data.");
-            throw null;
-        }
-        this.c = i;
-        this.d = i2;
-        this.e = i3;
-        this.f = i4;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pb8 extends ub1 {
+    public final Path t1;
+    public final /* synthetic */ PhotoViewer u1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pb8(PhotoViewer photoViewer, Context context, z zVar, wma wmaVar, FrameLayout frameLayout, vnb vnbVar, tl0 tl0Var, y98 y98Var) {
+        super(context, zVar, wmaVar, frameLayout, vnbVar, tl0Var, y98Var);
+        this.u1 = photoViewer;
+        this.t1 = new Path();
     }
 
-    @Override // gg6
-    public final byte[] a() {
-        int i = this.a;
-        int i2 = this.b;
-        int i3 = this.c;
-        if (i == i3 && i2 == this.d) {
-            return null;
-        }
-        int i4 = i * i2;
-        byte[] bArr = new byte[i4];
-        int i5 = (this.f * i3) + this.e;
-        if (i == i3) {
-            System.arraycopy(null, i5, bArr, 0, i4);
-            throw null;
-        }
-        if (i2 <= 0) {
-            return bArr;
-        }
-        System.arraycopy(null, i5, bArr, 0, i);
-        throw null;
+    @Override // ub1
+    public final void A() {
+        Drawable[] drawableArr = PhotoViewer.d9;
+        this.u1.v2();
     }
 
-    @Override // gg6
-    public final byte[] b(int i, byte[] bArr) {
-        if (i < 0 || i >= this.b) {
-            throw new IllegalArgumentException(de9.k(i, "Requested row is outside the image: "));
+    @Override // ub1
+    public final void B() {
+        z();
+        qb8 qb8Var = this.u1.W1;
+        if (qb8Var != null) {
+            qb8Var.z();
         }
-        int i2 = this.a;
-        if (bArr == null || bArr.length < i2) {
-            bArr = new byte[i2];
+    }
+
+    @Override // ub1
+    public final boolean G() {
+        ed8 ed8Var = this.u1.d;
+        return ed8Var != null && ed8Var.l();
+    }
+
+    public final void I() {
+        PhotoViewer photoViewer = this.u1;
+        ed8 ed8Var = photoViewer.d;
+        D(ed8Var != null && ed8Var.l() && (photoViewer.V1.M.c() || !(photoViewer.s1 || TextUtils.isEmpty(photoViewer.c0().getText()))), true);
+    }
+
+    @Override // qb1
+    public final boolean e() {
+        PhotoViewer photoViewer = this.u1;
+        v21 v21Var = photoViewer.s7;
+        if (v21Var == null || v21.x != v21Var) {
+            return photoViewer.c2(photoViewer.f0);
         }
-        System.arraycopy(null, ((i + this.f) * this.c) + this.e, bArr, 0, i2);
-        throw null;
+        return false;
+    }
+
+    @Override // qb1
+    public final void h(xl0 xl0Var, Canvas canvas, RectF rectF, float f, boolean z, float f2, float f3, boolean z2) {
+        canvas.save();
+        Path path = this.t1;
+        path.rewind();
+        path.addRoundRect(rectF, f, f, Path.Direction.CW);
+        canvas.clipPath(path);
+        PhotoViewer photoViewer = this.u1;
+        if (z2) {
+            canvas.translate(((-getX()) - photoViewer.Y1.getX()) + f2, ((-getY()) - photoViewer.Y1.getY()) + f3);
+        } else {
+            canvas.translate(f2, f3);
+        }
+        int p1 = aob.p1(1.0f, z ? -8882056 : -14277082);
+        int p12 = aob.p1(1.0f, z2 ? z ? 0 : 855638016 : 1140850688);
+        boolean z3 = false;
+        boolean z4 = !z;
+        if (!z && z2) {
+            z3 = true;
+        }
+        photoViewer.P(canvas, xl0Var, p1, p12, false, z4, z3);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        byte b;
+        if (xea.Z && ((b = this.u1.m4) == 1 || b == 2 || b == 3)) {
+            return;
+        }
+        super.invalidate();
+    }
+
+    @Override // qb1
+    public final boolean l(float f, float f2) {
+        return (this.p0 || this.u1.t4 == 0) ? false : true;
+    }
+
+    @Override // ub1, qb1
+    public final void setText(CharSequence charSequence) {
+        super.setText(charSequence);
+        I();
+    }
+
+    @Override // ub1, qb1
+    public final void u(float f) {
+        super.u(f);
+        PhotoViewer photoViewer = this.u1;
+        d7 d7Var = photoViewer.f1;
+        float f2 = 1.0f - f;
+        d7Var.setAlpha((d7Var.getTag() != null ? 1 : 0) * f2);
+        s96 s96Var = photoViewer.g1;
+        s96Var.setAlpha((s96Var.getTag() != null ? 1 : 0) * f2);
+        FrameLayout frameLayout = photoViewer.W7;
+        frameLayout.setAlpha(f2 * (frameLayout.getTag() != null ? 1 : 0));
+    }
+
+    @Override // qb1
+    public final void w() {
+        this.N.getAdapter().c = false;
+        this.N.getAdapter().d = false;
+        this.N.getAdapter().e = false;
+        PhotoViewer photoViewer = this.u1;
+        zu1 zu1Var = photoViewer.k4;
+        mb1 mb1Var = this.N;
+        if (zu1Var != null) {
+            mb1Var.getAdapter().n0 = false;
+            this.N.getAdapter().V(photoViewer.k4.r8);
+            this.N.getAdapter().f0 = photoViewer.k4.e != null;
+        } else {
+            mb1Var.getAdapter().n0 = true;
+            this.N.getAdapter().V(null);
+            this.N.getAdapter().f0 = false;
+        }
+        this.N.getAdapter().g0 = false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    @Override // ub1, qb1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void x(int i) {
+        float f;
+        PhotoViewer photoViewer = this.u1;
+        super.x(i - photoViewer.t2.bottom);
+        v21 v21Var = v21.x;
+        if (v21Var != null) {
+            v21Var.l();
+        }
+        I();
+        FrameLayout frameLayout = photoViewer.S0;
+        boolean z = false;
+        if (frameLayout != null) {
+            frameLayout.animate().translationY(-Math.max(0, (i - r1.bottom) - photoViewer.Q0.getHeight())).setDuration(250L).setInterpolator(hb.w).start();
+        }
+        ViewPropertyAnimator animate = photoViewer.G.animate();
+        if (photoViewer.K) {
+            ub1 c0 = photoViewer.c0();
+            qb8 qb8Var = photoViewer.W1;
+            if (c0 != qb8Var || !qb8Var.M.c()) {
+                f = 1.0f;
+                animate.alpha(f).start();
+                if (photoViewer.Q0.getVisibility() != 0) {
+                    if (photoViewer.K) {
+                        ub1 c02 = photoViewer.c0();
+                        qb8 qb8Var2 = photoViewer.W1;
+                        if (c02 != qb8Var2 || !qb8Var2.M.c()) {
+                            z = true;
+                        }
+                    }
+                    photoViewer.z2(z);
+                    return;
+                }
+                return;
+            }
+        }
+        f = 0.0f;
+        animate.alpha(f).start();
+        if (photoViewer.Q0.getVisibility() != 0) {
+        }
+    }
+
+    @Override // qb1
+    public final void y() {
+        mb1 mb1Var = this.N;
+        if (mb1Var != null) {
+            mb1Var.setTranslationY(((-getEditTextHeight()) - hl.L(14.0f)) - this.M.l);
+        }
     }
 }

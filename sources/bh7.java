@@ -1,33 +1,72 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class bh7 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class bh7 extends zme implements ScheduledFuture, x76, Future {
+    public final u2 b;
+    public final ScheduledFuture c;
 
-    static {
-        b4c.h(new bh7());
+    public bh7(u2 u2Var, ScheduledFuture scheduledFuture) {
+        this.b = u2Var;
+        this.c = scheduledFuture;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        ch7 ch7Var = (ch7) view;
-        ch7Var.a(c4cVar.d, c4cVar.A, (f4b) c4cVar.H);
-        ch7Var.b(c4cVar.e, false);
-        boolean z2 = c4cVar.f;
-        if (ch7Var.h != z2) {
-            ch7Var.h = z2;
-            ch7Var.G.a(z2);
-            ch7Var.invalidate();
+    @Override // x76
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z) {
+        boolean e = e(z);
+        if (e) {
+            this.c.cancel(z);
         }
-        ch7Var.setOnCheckboxClick(c4cVar.E);
+        return e;
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new ch7(context, wjbVar);
+    @Override // java.lang.Comparable
+    public final int compareTo(Delayed delayed) {
+        return this.c.compareTo(delayed);
+    }
+
+    @Override // zme
+    public final Object d() {
+        return this.b;
+    }
+
+    public final boolean e(boolean z) {
+        return this.b.cancel(z);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
+    }
+
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.c.getDelay(timeUnit);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.isCancelled();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return this.b.get(j, timeUnit);
     }
 }

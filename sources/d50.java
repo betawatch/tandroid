@@ -4,45 +4,22 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class d50 extends b4 {
-    public static final Parcelable.Creator<d50> CREATOR = new c0f(2);
-    public final ay a;
-    public final Boolean b;
-    public final u7c c;
-    public final ba9 d;
+public final class d50 extends e50 {
+    public static final Parcelable.Creator<d50> CREATOR = new ime((byte) 25);
+    public final q44 a;
+    public final String b;
+    public final int c;
 
-    public d50(String str, Boolean bool, String str2, String str3) {
-        ay a;
-        if (str == null) {
-            a = null;
-        } else {
-            try {
-                a = ay.a(str);
-            } catch (aa9 | ecd | zx e) {
-                throw new IllegalArgumentException(e);
-            }
+    public d50(int i, int i2, String str) {
+        try {
+            this.a = q44.a(i);
+            this.b = str;
+            this.c = i2;
+        } catch (p44 e) {
+            throw new IllegalArgumentException(e);
         }
-        this.a = a;
-        this.b = bool;
-        this.c = str2 == null ? null : u7c.a(str2);
-        this.d = str3 != null ? ba9.a(str3) : null;
-    }
-
-    public final ba9 b() {
-        ba9 ba9Var = this.d;
-        if (ba9Var == null) {
-            ba9Var = null;
-            Boolean bool = this.b;
-            if (bool != null) {
-                if (bool.booleanValue()) {
-                    return ba9.b;
-                }
-                return null;
-            }
-        }
-        return ba9Var;
     }
 
     public final boolean equals(Object obj) {
@@ -50,35 +27,37 @@ public final class d50 extends b4 {
             return false;
         }
         d50 d50Var = (d50) obj;
-        return cqe.a(this.a, d50Var.a) && cqe.a(this.b, d50Var.b) && cqe.a(this.c, d50Var.c) && cqe.a(b(), d50Var.b());
+        return vue.a(this.a, d50Var.a) && vue.a(this.b, d50Var.b) && vue.a(Integer.valueOf(this.c), Integer.valueOf(d50Var.c));
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, b()});
+        return Arrays.hashCode(new Object[]{this.a, this.b, Integer.valueOf(this.c)});
     }
 
     public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        String valueOf2 = String.valueOf(this.c);
-        String valueOf3 = String.valueOf(this.d);
-        StringBuilder p = ug8.p("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
-        p.append(this.b);
-        p.append(", \n requireUserVerification=");
-        p.append(valueOf2);
-        p.append(", \n residentKeyRequirement=");
-        return b00.j(p, valueOf3, "\n }");
+        ko9 ko9Var = new ko9(getClass().getSimpleName(), (byte) 25);
+        String valueOf = String.valueOf((int) this.a.a);
+        jhd jhdVar = new jhd((byte) 24, false);
+        ((ko9) ko9Var.d).d = jhdVar;
+        ko9Var.d = jhdVar;
+        jhdVar.c = valueOf;
+        jhdVar.b = "errorCode";
+        String str = this.b;
+        if (str != null) {
+            ko9Var.B(str, "errorMessage");
+        }
+        return ko9Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        ay ayVar = this.a;
-        jte.l(parcel, 2, ayVar == null ? null : ayVar.a);
-        jte.a(parcel, 3, this.b);
-        u7c u7cVar = this.c;
-        jte.l(parcel, 4, u7cVar == null ? null : u7cVar.a);
-        ba9 b = b();
-        jte.l(parcel, 5, b != null ? b.a : null);
-        jte.s(parcel, r);
+        int r = bye.r(parcel, 20293);
+        byte b = this.a.a;
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(b);
+        bye.l(parcel, 3, this.b);
+        bye.q(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        bye.s(parcel, r);
     }
 }

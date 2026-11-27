@@ -1,40 +1,50 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class czb extends o39 {
-    public final /* synthetic */ rzb f3;
+public final class czb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ tzb c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public czb(rzb rzbVar, Context context) {
-        super(context, null);
-        this.f3 = rzbVar;
+    public /* synthetic */ czb(tzb tzbVar, boolean z, byte b) {
+        this.a = b;
+        this.c = tzbVar;
+        this.b = z;
     }
 
-    @Override // o39, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y = motionEvent.getY();
-            rzb rzbVar = this.f3;
-            if (y < rzbVar.F0(true) - getTop()) {
-                rzbVar.dismiss();
-                return true;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i;
+        byte b = this.a;
+        tzb tzbVar = this.c;
+        boolean z = this.b;
+        switch (b) {
+            case 0:
+                super.onAnimationEnd(animator);
+                tzbVar.W0(z ? 1.0f : 0.0f);
+                if (!z) {
+                    Activity parentActivity = tzbVar.getParentActivity();
+                    i = ((e) tzbVar).classGuid;
+                    hl.g3(parentActivity, i);
+                    tzbVar.s0.setVisibility(8);
+                    tzbVar.U0(true);
+                    break;
+                } else {
+                    tzbVar.r0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!z) {
+                    tzbVar.p0.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
     }
 }

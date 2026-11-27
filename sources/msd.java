@@ -1,19 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /* loaded from: classes.dex */
-public final class msd implements zn7 {
-    public static final msd a = new msd();
+public final class msd extends krd {
+    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
-    static {
-        yjb.y(yjb.n(g7d.class, new d6d(1)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // krd
+    public final void b(mnd mndVar, mnd mndVar2, long j) {
+        ArrayList arrayList;
+        List list = (List) k4e.l(j, mndVar2);
+        int size = list.size();
+        List list2 = (List) k4e.l(j, mndVar);
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof frd ? new tqd(size) : new ArrayList(size);
+            k4e.d(j, mndVar, list2);
+        } else {
+            if (c.isAssignableFrom(list2.getClass())) {
+                ArrayList arrayList2 = new ArrayList(list2.size() + size);
+                arrayList2.addAll(list2);
+                arrayList = arrayList2;
+            } else if (list2 instanceof u3e) {
+                u3e u3eVar = (u3e) list2;
+                tqd tqdVar = new tqd(u3eVar.a.size() + size);
+                tqdVar.addAll(u3eVar);
+                arrayList = tqdVar;
+            }
+            k4e.d(j, mndVar, arrayList);
+            list2 = arrayList;
         }
-        throw null;
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
+        }
+        if (size2 > 0) {
+            list = list2;
+        }
+        k4e.d(j, mndVar, list);
     }
 }

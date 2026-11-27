@@ -1,215 +1,82 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.util.SparseArray;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class q0b extends n39 {
-    public final Context c;
-    public int d;
-    public final SparseArray e = new SparseArray();
-    public final SparseArray f = new SparseArray();
-    public int h;
-    public int n;
-    public final /* synthetic */ u0b r;
+public final /* synthetic */ class q0b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ w1b b;
+    public final /* synthetic */ ArrayList c;
 
-    public q0b(u0b u0bVar, Context context) {
-        this.r = u0bVar;
-        this.c = context;
+    public /* synthetic */ q0b(w1b w1bVar, ArrayList arrayList, byte b) {
+        this.a = b;
+        this.b = w1bVar;
+        this.c = arrayList;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return false;
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.h;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        u0b u0bVar = this.r;
-        if (u0bVar.Q1 == null) {
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
-            return (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() != i) ? 0 : 3;
-        }
-        Object obj = this.e.get(i);
-        if (obj != null) {
-            return !(obj instanceof TLRPC.Document) ? 2 : 0;
-        }
-        return 1;
-    }
-
-    @Override // w39
-    public final void f() {
-        int i;
-        int i2;
-        int i3;
-        u0b u0bVar = this.r;
-        if (u0bVar.Q1 != null) {
-            int measuredWidth = u0bVar.m1.getMeasuredWidth();
-            if (measuredWidth == 0) {
-                measuredWidth = gl.q.x;
-            }
-            int L = measuredWidth / gl.L(72.0f);
-            this.d = L;
-            u0bVar.G1.x1(L);
-            SparseArray sparseArray = this.e;
-            sparseArray.clear();
-            SparseArray sparseArray2 = this.f;
-            sparseArray2.clear();
-            this.h = 0;
-            this.n = 0;
-            for (int i4 = 0; i4 < u0bVar.Q1.size(); i4++) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) u0bVar.Q1.get(i4);
-                List list = stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered ? ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents : stickerSetCovered.covers;
-                if (list != null) {
-                    list = list.subList(0, Math.min(list.size(), this.d));
-                }
-                if (list != null && (!list.isEmpty() || stickerSetCovered.cover != null)) {
-                    this.n++;
-                    sparseArray2.put(this.h, stickerSetCovered);
-                    int i5 = this.h;
-                    this.h = i5 + 1;
-                    sparseArray.put(i5, Integer.valueOf(i4));
-                    int i6 = this.h / this.d;
-                    if (list.isEmpty()) {
-                        sparseArray.put(this.h, stickerSetCovered.cover);
-                        i = 1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z;
+        byte b = this.a;
+        int i = 0;
+        ArrayList arrayList = this.c;
+        w1b w1bVar = this.b;
+        switch (b) {
+            case 0:
+                u5b u5bVar = w1bVar.D0;
+                u5bVar.getClass();
+                int size = arrayList.size();
+                int i2 = 0;
+                while (true) {
+                    if (i2 < size) {
+                        Object obj = arrayList.get(i2);
+                        i2++;
+                        if (!u5bVar.j.containsKey((Integer) obj)) {
+                            z = true;
+                        }
                     } else {
-                        i = (int) Math.ceil(list.size() / this.d);
-                        for (int i7 = 0; i7 < list.size(); i7++) {
-                            sparseArray.put(this.h + i7, list.get(i7));
+                        z = false;
+                    }
+                }
+                if (!u5bVar.q(0, arrayList, z)) {
+                    w1bVar.l0();
+                    w1bVar.q0();
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList2 = w1bVar.w0;
+                ArrayList arrayList3 = w1bVar.v0;
+                w1bVar.A0 = false;
+                if (!arrayList.isEmpty()) {
+                    int size2 = arrayList.size();
+                    for (int i3 = 0; i3 < size2; i3++) {
+                        r47 r47Var = (r47) arrayList.get(i3);
+                        int i4 = w1bVar.t0.get(r47Var.e1(), -1);
+                        if (i4 >= 0 && ((t1b) arrayList3.get(i4)).b() == r47Var.e1()) {
+                            ((t1b) arrayList3.get(i4)).b = r47Var;
                         }
                     }
-                    int i8 = 0;
+                    arrayList2.clear();
+                    int size3 = arrayList3.size();
                     while (true) {
-                        i2 = this.d * i;
-                        i3 = this.h;
-                        if (i8 >= i2) {
-                            break;
+                        if (i < size3) {
+                            t1b t1bVar = (t1b) arrayList3.get(i);
+                            if (t1bVar.b == null) {
+                                w1bVar.s0 = t1bVar.b();
+                            } else {
+                                arrayList2.add(t1bVar);
+                                i++;
+                            }
                         }
-                        sparseArray2.put(i3 + i8, stickerSetCovered);
-                        i8++;
                     }
-                    this.h = i2 + i3;
+                    w1bVar.q0();
+                    w1bVar.T.setItemAnimator(null);
+                    w1bVar.C0.e();
+                    break;
                 }
-            }
-        } else {
-            ArrayList arrayList = u0bVar.S1;
-            if (arrayList != null) {
-                this.h = arrayList.size();
-            } else {
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
-                this.h = tL_messages_stickerSet != null ? tL_messages_stickerSet.documents.size() : 0;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = u0bVar.M1;
-                if (tL_messages_stickerSet2 != null && tL_messages_stickerSet2.set.creator && tL_messages_stickerSet2.documents.size() < 120) {
-                    TLRPC.StickerSet stickerSet = u0bVar.M1.set;
-                    if (!stickerSet.masks && !stickerSet.emojis) {
-                        this.h++;
-                    }
-                }
-            }
+                break;
         }
-        super.f();
-    }
-
-    @Override // w39
-    public final void r(int i) {
-        ArrayList arrayList = this.r.S1;
-        if (arrayList != null) {
-            this.h = arrayList.size();
-        }
-        super.r(i);
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        View view = s49Var.a;
-        u0b u0bVar = this.r;
-        ArrayList arrayList = u0bVar.Q1;
-        if (arrayList == null) {
-            if (u0bVar.R1 != null) {
-                ((xya) view).setSticker((s3a) u0bVar.S1.get(i));
-                return;
-            }
-            if (s49Var.f != 3) {
-                xya xyaVar = (xya) view;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
-                if (tL_messages_stickerSet != null) {
-                    xyaVar.d(tL_messages_stickerSet.documents.get(i), null, u0bVar.M1, null, u0bVar.b2, u0bVar.L1);
-                    xyaVar.K.setOnClickListener(new b99(this, xyaVar, (byte) 21));
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        int i2 = s49Var.f;
-        SparseArray sparseArray = this.e;
-        if (i2 == 0) {
-            ((xya) view).d((TLRPC.Document) sparseArray.get(i), null, this.f.get(i), null, false, false);
-        } else if (i2 == 1) {
-            ((y14) view).setHeight(gl.L(82.0f));
-        } else if (i2 == 2) {
-            ((m84) view).c((TLRPC.StickerSetCovered) arrayList.get(((Integer) sparseArray.get(i)).intValue()), false, false, 0, 0, false);
-        }
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        FrameLayout frameLayout;
-        u0b u0bVar = this.r;
-        Context context = this.c;
-        if (i == 0) {
-            p0b p0bVar = new p0b(this, context, u0bVar.J0);
-            p0bVar.getImageView().m0(7);
-            frameLayout = p0bVar;
-        } else if (i == 1) {
-            frameLayout = new y14(context);
-        } else if (i == 2) {
-            frameLayout = new m84(8, u0bVar.J0, this.c, true, false);
-        } else if (i != 3) {
-            frameLayout = null;
-        } else {
-            wjb wjbVar = u0bVar.J0;
-            o0b o0bVar = new o0b(context);
-            o0bVar.a = wjbVar;
-            View view = new View(context);
-            o0bVar.c = view;
-            int L = gl.L(28.0f);
-            int i2 = bkb.Df;
-            ShapeDrawable b0 = bkb.b0(L, bkb.p1(0.12f, bkb.v0(i2, wjbVar)));
-            o0bVar.b = b0;
-            Drawable d = b00.d(context, R.drawable.filled_add_sticker);
-            zkb.x(o0bVar, d, i2, wjbVar, PorterDuff.Mode.MULTIPLY);
-            fm2 fm2Var = new fm2(b0, d);
-            int L2 = gl.L(56.0f);
-            int L3 = gl.L(56.0f);
-            fm2Var.h = L2;
-            fm2Var.n = L3;
-            int L4 = gl.L(24.0f);
-            int L5 = gl.L(24.0f);
-            fm2Var.e = L4;
-            fm2Var.f = L5;
-            view.setBackground(fm2Var);
-            ote.a(view);
-            o0bVar.addView(view, nme.e(56, 56, 17));
-            frameLayout = o0bVar;
-        }
-        return new y29(frameLayout);
     }
 }

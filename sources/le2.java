@@ -1,27 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class le2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ kf2 b;
+import android.widget.Toast;
+import java.util.ArrayList;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ le2(kf2 kf2Var, byte b) {
-        this.a = b;
-        this.b = kf2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class le2 implements ResultCallback {
+    public final /* synthetic */ af2 a;
+    public final /* synthetic */ oe2 b;
+
+    public le2(oe2 oe2Var, af2 af2Var) {
+        this.b = oe2Var;
+        this.a = af2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        kf2 kf2Var = this.b;
-        switch (b) {
-            case 0:
-                kf2Var.t0();
-                break;
-            default:
-                kf2Var.getMessagesController().Y2(0, kf2Var.N, true);
-                break;
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        af2 af2Var = this.a;
+        ArrayList d = af2Var.d((af2Var.f.c ? 2 : 0) | 5);
+        oe2 oe2Var = this.b;
+        jn7.f(oe2Var.a).d(new ea2(this, d, (byte) 10));
+        oe2Var.U1 = false;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(Throwable th) {
     }
 }

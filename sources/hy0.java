@@ -1,51 +1,58 @@
 // default package
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
-import java.nio.BufferUnderflowException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class hy0 {
-    public static final byte[] a = {-75, 0, 60, 0, 1, 4};
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class hy0 extends dl7 {
+    public final /* synthetic */ boolean m0;
+    public final /* synthetic */ ny0 n0;
 
-    public static Object a(Class cls, InvocationHandler invocationHandler) {
-        if (invocationHandler == null) {
-            return null;
-        }
-        return cls.cast(Proxy.newProxyInstance(hy0.class.getClassLoader(), new Class[]{cls}, invocationHandler));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hy0(ny0 ny0Var, Context context, boolean z, boolean z2) {
+        super(context);
+        this.n0 = ny0Var;
+        this.m0 = z;
     }
 
-    public static void b(ByteBuffer byteBuffer, boolean z) {
-        ArrayList b = eqe.b(byteBuffer.asReadOnlyBuffer());
-        int size = b.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = b.get(i);
-            i++;
-            eo7 eo7Var = (eo7) obj;
-            byte b2 = eo7Var.a;
-            ByteBuffer byteBuffer2 = eo7Var.b;
-            if (b2 == 5) {
-                try {
-                    gre.f(b2 == 5);
-                    ByteBuffer asReadOnlyBuffer = byteBuffer2.asReadOnlyBuffer();
-                    if (eqe.a(asReadOnlyBuffer) == 4) {
-                        if (z && asReadOnlyBuffer.remaining() >= 6) {
-                            int position = asReadOnlyBuffer.position();
-                            for (int i2 = 0; i2 < 6; i2++) {
-                                if (asReadOnlyBuffer.get(position + i2) == a[i2]) {
-                                }
-                            }
-                        }
-                        byteBuffer.put(byteBuffer2.position(), (byte) 31);
-                        break;
-                    }
-                } catch (BufferUnderflowException unused) {
-                }
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ny0 ny0Var = this.n0;
+        ny0Var.S0(canvas, this);
+        super.dispatchDraw(canvas);
+        ny0Var.R0(canvas, this);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            float y = motionEvent.getY();
+            ny0 ny0Var = this.n0;
+            if (y < ny0Var.s0.getBounds().top) {
+                ny0Var.dismiss();
             }
         }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // dl7, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i2);
+        ny0 ny0Var = this.n0;
+        ny0Var.q1 = size;
+        ny0Var.O0(i, i2);
+        if (this.m0) {
+            i2 = View.MeasureSpec.makeMeasureSpec(ny0Var.q1, TLObject.FLAG_30);
+        }
+        super.onMeasure(i, i2);
     }
 }

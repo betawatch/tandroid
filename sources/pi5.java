@@ -1,27 +1,113 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+import android.graphics.Point;
+import j$.util.concurrent.ConcurrentHashMap;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class pi5 {
-    public static final pi5 a;
-    public static final pi5 b;
-    public static final /* synthetic */ pi5[] c;
+    public final /* synthetic */ byte a;
+    public int b;
+    public String c;
 
-    static {
-        pi5 pi5Var = new pi5("BACK", 0);
-        a = pi5Var;
-        pi5 pi5Var2 = new pi5("MENU", 1);
-        b = pi5Var2;
-        c = new pi5[]{pi5Var, pi5Var2};
+    public pi5(String str, byte b) {
+        this.a = b;
+        switch (b) {
+            case 4:
+                this.c = str;
+                this.b = 0;
+                return;
+            default:
+                String[] split = str.split(" +", 3);
+                if (split.length < 2) {
+                    iy8.d();
+                    throw null;
+                }
+                String str2 = split[0];
+                this.b = Integer.parseInt(split[1]);
+                if (split.length == 3) {
+                    String str3 = split[2];
+                }
+                this.c = str;
+                return;
+        }
     }
 
-    public static pi5 valueOf(String str) {
-        return (pi5) Enum.valueOf(pi5.class, str);
+    public static pi5 c(String str) {
+        ConcurrentHashMap concurrentHashMap = nvc.a;
+        Point point = hl.q;
+        int min = Math.min(1440, Math.min(point.x, point.y));
+        if ("fqv01SQemVIBAAAApND8LDRUhRU".equals(str)) {
+            return new pi5("r-default_pattern", min);
+        }
+        StringBuilder sb = new StringBuilder("s-");
+        StringBuilder sb2 = new StringBuilder(str.length());
+        int length = str.length();
+        for (int i = 0; i < length; i++) {
+            char charAt = str.charAt(i);
+            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt < '0' || charAt > '9') && charAt != '-' && charAt != '_'))) {
+                charAt = '.';
+            }
+            sb2.append(charAt);
+        }
+        sb.append(sb2.toString());
+        return new pi5(sb.toString(), min);
     }
 
-    public static pi5[] values() {
-        return (pi5[]) c.clone();
+    public final String a() {
+        StringBuilder sb = new StringBuilder(this.c);
+        sb.append("_w");
+        return uh9.l(sb, this.b, "_v1.pgm.gz");
+    }
+
+    public final int b() {
+        String str = this.c;
+        int i = this.b;
+        this.b = i + 1;
+        char charAt = str.charAt(i);
+        if (charAt < 55296) {
+            return charAt;
+        }
+        int i2 = charAt & 8191;
+        int i3 = 13;
+        while (true) {
+            int i4 = this.b;
+            this.b = i4 + 1;
+            char charAt2 = str.charAt(i4);
+            if (charAt2 < 55296) {
+                return i2 | (charAt2 << i3);
+            }
+            i2 |= (charAt2 & 8191) << i3;
+            i3 += 13;
+        }
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 1:
+                return this.b + ": " + this.c;
+            case 2:
+                return this.c;
+            default:
+                return super.toString();
+        }
+    }
+
+    public pi5(int i, String str, Object[] objArr) {
+        this.a = (byte) 1;
+        this.c = String.format(str, objArr);
+        this.b = i;
+    }
+
+    public pi5(int i, String str) {
+        this.a = (byte) 0;
+        this.b = i;
+        this.c = str;
+    }
+
+    public pi5(String str, int i) {
+        this.a = (byte) 3;
+        this.c = str;
+        this.b = i;
     }
 }

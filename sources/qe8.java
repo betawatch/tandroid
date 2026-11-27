@@ -1,31 +1,26 @@
 // default package
 
-import android.view.View;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class qe8 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cs5 b;
-
-    public /* synthetic */ qe8(cs5 cs5Var, byte b) {
-        this.a = b;
-        this.b = cs5Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        cs5 cs5Var = this.b;
-        switch (b) {
-            case 0:
-                m21.e();
-                cs5Var.r();
-                break;
-            default:
-                m21.e();
-                cs5Var.r();
-                break;
-        }
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qe8 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public String e;
+    public pe8[] f;
+    public pe8[] g;
+    public pe8[] h;
+    public pe8[] i;
+    public Bitmap j;
+    public Bitmap k;
+    public Bitmap l;
+    public Bitmap m;
+    public Bitmap n;
+    public Bitmap o;
+    public int p;
+    public Bitmap q;
+    public String r;
 }

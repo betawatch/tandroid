@@ -1,61 +1,60 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u5e extends q4e {
-    public final transient f7d s;
-    public final transient Object[] w;
-    public final transient int x;
+public final class u5e extends ese {
+    private static final u5e zzl;
+    private static volatile u0f zzm;
+    private int zzc;
+    private boolean zze;
+    private int zzf;
+    private long zzg;
+    private long zzh;
+    private long zzi;
+    private boolean zzk;
+    private String zzd = "";
+    private String zzj = "";
 
-    public u5e(f7d f7dVar, Object[] objArr, int i) {
-        super((byte) 5);
-        this.s = f7dVar;
-        this.w = objArr;
-        this.x = i;
+    static {
+        u5e u5eVar = new u5e();
+        zzl = u5eVar;
+        ese.g(u5e.class, u5eVar);
     }
 
-    public final u3e A() {
-        return new o5e(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.s.get(key))) {
-                return true;
-            }
+    /* JADX WARN: Type inference failed for: r2v12, types: [java.lang.Object, u0f] */
+    @Override // ese
+    public final Object d(int i) {
+        u0f u0fVar;
+        switch (b7e.a[i - 1]) {
+            case 1:
+                return new u5e();
+            case 2:
+                return new p5e(zzl);
+            case 3:
+                return new j1f(zzl, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဌ\u0002\u0004ဂ\u0003\u0005ဂ\u0004\u0006ဂ\u0005\u0007ဈ\u0006\bဇ\u0007", new Object[]{"zzc", "zzd", "zze", "zzf", r7e.b, "zzg", "zzh", "zzi", "zzj", "zzk"});
+            case 4:
+                return zzl;
+            case 5:
+                u0f u0fVar2 = zzm;
+                if (u0fVar2 != null) {
+                    return u0fVar2;
+                }
+                synchronized (u5e.class) {
+                    u0f u0fVar3 = zzm;
+                    u0fVar = u0fVar3;
+                    if (u0fVar3 == null) {
+                        ?? zreVar = new zre();
+                        zzm = zreVar;
+                        u0fVar = zreVar;
+                    }
+                }
+                return u0fVar;
+            case 6:
+                return (byte) 1;
+            default:
+                p3d.a();
+            case 7:
+                return null;
         }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        u3e u3eVar = this.n;
-        if (u3eVar == null) {
-            u3eVar = A();
-            this.n = u3eVar;
-        }
-        return u3eVar.listIterator(0);
-    }
-
-    @Override // kzc
-    public final int p(Object[] objArr) {
-        u3e u3eVar = this.n;
-        if (u3eVar == null) {
-            u3eVar = A();
-            this.n = u3eVar;
-        }
-        return u3eVar.p(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.x;
     }
 }

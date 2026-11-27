@@ -1,17 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class r01 extends qq4 implements eq4 {
-    public static final r01 a = new r01(2, s01.class, "createSegment", "createSegment(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;", 1);
+import org.telegram.messenger.beta.R;
 
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        long longValue = ((Number) obj).longValue();
-        hj1 hj1Var = (hj1) obj2;
-        hj1 hj1Var2 = s01.a;
-        q01 q01Var = hj1Var.g;
-        q01Var.getClass();
-        return new hj1(longValue, hj1Var, q01Var, 0);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class r01 extends v01 {
+    @Override // v01
+    public final float a() {
+        return 1.0f;
+    }
+
+    @Override // v01
+    public final float c() {
+        return 1.0f;
+    }
+
+    @Override // v01
+    public final int d() {
+        return R.raw.photo_eraser;
+    }
+
+    @Override // v01
+    public final float f() {
+        return 0.35f;
+    }
+
+    @Override // v01
+    public final String h(int i) {
+        if (i == 0) {
+            return "blitWithMaskEraser";
+        }
+        if (i == 1) {
+            return "compositeWithMaskEraser";
+        }
+        if (i != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

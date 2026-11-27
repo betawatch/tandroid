@@ -1,30 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class xs7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x6b b;
+import android.content.Context;
 
-    public /* synthetic */ xs7(x6b x6bVar, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class xs7 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ vnb d;
+    public final /* synthetic */ ms7 e;
+    public final /* synthetic */ Boolean f;
+
+    public /* synthetic */ xs7(Context context, int i, vnb vnbVar, ms7 ms7Var, Boolean bool, byte b) {
         this.a = b;
-        this.b = x6bVar;
+        this.b = context;
+        this.c = i;
+        this.d = vnbVar;
+        this.e = ms7Var;
+        this.f = bool;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // pcc
+    public final void a(Object obj) {
         byte b = this.a;
-        x6b x6bVar = this.b;
+        ms7 ms7Var = this.e;
         switch (b) {
             case 0:
-                mt7 mt7Var = x6bVar.e2;
-                if (mt7Var != null) {
-                    mt7Var.I0();
-                    break;
-                }
+                d31 j = ms7Var.j();
+                it7.t(this.b, this.c, this.d, j, (String) obj, this.f);
+                break;
+            case 1:
+                d31 j2 = ms7Var.j();
+                it7.t(this.b, this.c, this.d, j2, (String) obj, this.f);
+                break;
+            case 2:
+                d31 j3 = ms7Var.j();
+                it7.t(this.b, this.c, this.d, j3, (String) obj, this.f);
                 break;
             default:
-                x6bVar.u2.q1.setVisibility(8);
+                d31 j4 = ms7Var.j();
+                it7.t(this.b, this.c, this.d, j4, (String) obj, this.f);
                 break;
         }
     }

@@ -1,26 +1,48 @@
 // default package
 
-import android.animation.ValueAnimator;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class z1c implements ValueAnimator.AnimatorUpdateListener {
-    public int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ d2c c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class z1c {
+    public static final String c;
+    public static final String d;
+    public final t1c a;
+    public final po5 b;
 
-    public z1c(d2c d2cVar, int i) {
-        this.c = d2cVar;
-        this.b = i;
+    static {
+        String str = gcc.a;
+        c = "0";
+        d = "1";
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
-        d2c d2cVar = this.c;
-        d2cVar.O = true;
-        d2cVar.n.scrollBy(0, floatValue - this.a);
-        d2cVar.O = false;
-        this.a = floatValue;
+    public z1c(t1c t1cVar, List list) {
+        if (!list.isEmpty() && (((Integer) Collections.min(list)).intValue() < 0 || ((Integer) Collections.max(list)).intValue() >= t1cVar.a)) {
+            throw new IndexOutOfBoundsException();
+        }
+        this.a = t1cVar;
+        this.b = po5.q(list);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && z1c.class == obj.getClass()) {
+            z1c z1cVar = (z1c) obj;
+            if (this.a.equals(z1cVar.a) && this.b.equals(z1cVar.b)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (this.b.hashCode() * 31) + this.a.hashCode();
+    }
+
+    public z1c(t1c t1cVar, int i) {
+        this(t1cVar, po5.u(Integer.valueOf(i)));
     }
 }

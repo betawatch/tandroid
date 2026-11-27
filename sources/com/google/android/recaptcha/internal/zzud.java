@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class zzud extends zzpz implements RandomAccess {
     private static final Object[] zza;
@@ -31,12 +31,12 @@ final class zzud extends zzpz implements RandomAccess {
     }
 
     private final String zzh(int i) {
-        return b00.g(i, this.zzd, "Index:", ", Size:");
+        return c00.h(i, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzi(int i) {
         if (i < 0 || i >= this.zzd) {
-            k93.i(zzh(i));
+            su3.g(zzh(i));
         }
     }
 
@@ -45,7 +45,7 @@ final class zzud extends zzpz implements RandomAccess {
         int i2;
         zza();
         if (i < 0 || i > (i2 = this.zzd)) {
-            k93.i(zzh(i));
+            su3.g(zzh(i));
             return;
         }
         int i3 = i + 1;
@@ -105,7 +105,7 @@ final class zzud extends zzpz implements RandomAccess {
         if (i >= this.zzd) {
             return new zzud(i == 0 ? zza : Arrays.copyOf(this.zzc, i), this.zzd, true);
         }
-        sc8.e();
+        iy8.d();
         return null;
     }
 

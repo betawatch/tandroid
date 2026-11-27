@@ -1,71 +1,27 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Editable;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class c1a extends ws3 {
-    public final /* synthetic */ il0 F;
-    public final /* synthetic */ int G;
-    public final /* synthetic */ h1a H;
+public final /* synthetic */ class c1a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ d1a b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c1a(h1a h1aVar, Context context, cja cjaVar, String str, int i, wjb wjbVar, il0 il0Var, int i2) {
-        super(context, cjaVar, str, true, i, wjbVar);
-        this.H = h1aVar;
-        this.F = il0Var;
-        this.G = i2;
+    public /* synthetic */ c1a(d1a d1aVar, byte b) {
+        this.a = b;
+        this.b = d1aVar;
     }
 
-    @Override // ws3
-    public final void b(Editable editable) {
-        TLRPC.TL_textWithEntities tL_textWithEntities;
-        h1a h1aVar = this.H;
-        k27 k27Var = h1aVar.h2;
-        TLRPC.MessageAction messageAction = h1aVar.g2;
-        if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
-            tL_textWithEntities = new TLRPC.TL_textWithEntities();
-            ((TLRPC.TL_messageActionStarGift) messageAction).message = tL_textWithEntities;
-        } else if (messageAction instanceof TLRPC.TL_messageActionGiftCode) {
-            TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode = (TLRPC.TL_messageActionGiftCode) messageAction;
-            tL_messageActionGiftCode.flags |= 16;
-            tL_textWithEntities = new TLRPC.TL_textWithEntities();
-            tL_messageActionGiftCode.message = tL_textWithEntities;
-        } else {
-            if (!(messageAction instanceof TLRPC.TL_messageActionGiftPremium)) {
-                return;
-            }
-            TLRPC.TL_messageActionGiftPremium tL_messageActionGiftPremium = (TLRPC.TL_messageActionGiftPremium) messageAction;
-            tL_messageActionGiftPremium.flags |= 16;
-            tL_textWithEntities = new TLRPC.TL_textWithEntities();
-            tL_messageActionGiftPremium.message = tL_textWithEntities;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        d1a d1aVar = this.b;
+        switch (b) {
+            case 0:
+                d1aVar.dismiss();
+                break;
+            default:
+                d1aVar.b();
+                break;
         }
-        CharSequence[] charSequenceArr = {h1aVar.o2.getText()};
-        tL_textWithEntities.entities = hq6.d0(this.G).Y(charSequenceArr, true, true);
-        tL_textWithEntities.text = charSequenceArr[0].toString();
-        k27Var.K5();
-        h1aVar.f2.j0(k27Var, true);
-        h1aVar.p2.O(true);
-        h1aVar.b1(true);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int L = gl.L(10.0f);
-        int measuredWidth = getMeasuredWidth() - gl.L(10.0f);
-        int measuredHeight = getMeasuredHeight();
-        il0 il0Var = this.F;
-        il0Var.setBounds(L, 0, measuredWidth, measuredHeight);
-        il0Var.draw(canvas);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // ws3, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        setPadding(gl.L(16.0f), 0, gl.L(12.0f), 0);
-        super.onMeasure(i, i2);
     }
 }

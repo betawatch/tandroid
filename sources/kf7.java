@@ -1,40 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class kf7 implements jd7 {
-    public final int a;
+public enum kf7 implements lw8 {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF23(2);
 
-    public kf7(int i) {
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    kf7(int i) {
         this.a = i;
     }
 
-    @Override // jd7
-    public final fm4 a() {
-        return null;
-    }
-
-    @Override // jd7
-    public final byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof kf7) && this.a == ((kf7) obj).a;
-    }
-
-    public final int hashCode() {
+    @Override // lw8
+    public final int a() {
         return this.a;
-    }
-
-    public final String toString() {
-        return "Mp4AlternateGroup: " + this.a;
-    }
-
-    @Override // jd7
-    public final void b(hr6 hr6Var) {
     }
 }

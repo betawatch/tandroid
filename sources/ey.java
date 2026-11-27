@@ -1,81 +1,45 @@
 // default package
 
-import java.util.Map;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ey implements Map.Entry, Cloneable {
-    public String a;
-    public String b;
-    public fy c;
+public enum ey implements Parcelable {
+    b("none"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF19("indirect"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF29("direct");
 
-    public final Object clone() {
-        try {
-            return (ey) super.clone();
-        } catch (CloneNotSupportedException e) {
-            sdb.b(e);
-            return null;
-        }
+    public static final Parcelable.Creator<ey> CREATOR = new ced((byte) 10);
+    public final String a;
+
+    ey(String str) {
+        this.a = str;
     }
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && ey.class == obj.getClass()) {
-            ey eyVar = (ey) obj;
-            String str = this.a;
-            String str2 = eyVar.a;
-            if (str == null ? str2 != null : !str.equals(str2)) {
-                return false;
-            }
-            String str3 = this.b;
-            String str4 = eyVar.b;
-            if (str3 != null) {
-                return str3.equals(str4);
-            }
-            if (str4 == null) {
-                return true;
+    public static ey a(String str) {
+        for (ey eyVar : values()) {
+            if (str.equals(eyVar.a)) {
+                return eyVar;
             }
         }
-        return false;
+        throw new dy(qd4.y("Attestation conveyance preference ", str, " not supported"));
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
         return this.a;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = (str != null ? str.hashCode() : 0) * 31;
-        String str2 = this.b;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        String str;
-        String str2 = (String) obj;
-        fy fyVar = this.c;
-        String str3 = this.a;
-        int h = fyVar.h(str3);
-        String str4 = "";
-        if (h != -1 && (str = fyVar.c[h]) != null) {
-            str4 = str;
-        }
-        int h2 = fyVar.h(str3);
-        if (h2 != -1) {
-            fyVar.c[h2] = str2;
-        }
-        this.b = str2;
-        return str4;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.a);
     }
 }

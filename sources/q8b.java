@@ -1,80 +1,99 @@
 // default package
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.SpannableString;
 import android.view.View;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.tl.TL_stories;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class q8b extends n8b {
-    public final p8b a;
-    public final TL_stories.TL_mediaAreaWeather b;
-    public View c;
-    public final /* synthetic */ r8b d;
+public final class q8b extends FrameLayout {
+    public final Paint a;
+    public final ImageView b;
+    public final ImageView c;
+    public final in d;
+    public final in e;
+    public final ImageView f;
+    public final SpannableString h;
+    public final SpannableString n;
 
-    public q8b(r8b r8bVar, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
-        this.d = r8bVar;
-        this.b = tL_mediaAreaWeather;
-        fsc fscVar = new fsc();
-        fscVar.c = tL_mediaAreaWeather.emoji;
-        fscVar.d = (float) tL_mediaAreaWeather.temperature_c;
-        p8b p8bVar = new p8b(this, a.b, gl.p);
-        this.a = p8bVar;
-        p8bVar.setMaxWidth(gl.q.x);
-        p8bVar.setIsVideo(false);
-        p8bVar.d(y6c.t0, fscVar.c);
-        p8bVar.setText(fscVar.a());
-        p8bVar.e(3, tL_mediaAreaWeather.color);
-        p8bVar.f();
+    public q8b(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        setWillNotDraw(false);
+        paint.setColor(-16777216);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.filled_link);
+        imageView.setColorFilter(new PorterDuffColorFilter(-15033089, PorterDuff.Mode.SRC_IN));
+        addView(imageView, tre.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setBackground(new lg2(hl.L(20.0f), hl.L(2.4f), -15033089));
+        addView(imageView2, tre.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
+        in inVar = new in(context, false, false, false);
+        this.d = inVar;
+        inVar.setTextColor(-15033089);
+        inVar.setTextSize(hl.L(14.21f));
+        inVar.setTypeface(hl.o());
+        inVar.setEllipsizeByGradient(true);
+        hn drawable = inVar.getDrawable();
+        Point point = hl.q;
+        drawable.N = point.x;
+        addView(inVar, tre.d(-1, 24.0f, 55, 57.0f, 2.33f, 48.0f, 0.0f));
+        in inVar2 = new in(context, false, false, false);
+        this.e = inVar2;
+        inVar2.setTextColor(-8355712);
+        inVar2.setTextSize(hl.L(14.21f));
+        inVar2.setEllipsizeByGradient(true);
+        inVar2.getDrawable().N = point.x;
+        addView(inVar2, tre.d(-1, 24.0f, 55, 57.0f, 20.66f, 48.0f, 0.0f));
+        int textColor = inVar.getTextColor();
+        SpannableString spannableString = new SpannableString("x");
+        this.h = spannableString;
+        ya6 ya6Var = new ya6(hl.L(200.0f), inVar);
+        ya6Var.e = 0.8f;
+        ya6Var.a(aob.p1(0.4f, textColor), aob.p1(0.08f, textColor));
+        spannableString.setSpan(ya6Var, 0, spannableString.length(), 33);
+        int textColor2 = inVar2.getTextColor();
+        SpannableString spannableString2 = new SpannableString("x");
+        this.n = spannableString2;
+        ya6 ya6Var2 = new ya6(hl.L(140.0f), inVar2);
+        ya6Var2.e = 0.8f;
+        ya6Var2.a(aob.p1(0.4f, textColor2), aob.p1(0.08f, textColor2));
+        spannableString2.setSpan(ya6Var2, 0, spannableString2.length(), 33);
+        ImageView imageView3 = new ImageView(context);
+        this.f = imageView3;
+        imageView3.setColorFilter(new PorterDuffColorFilter(1694498815, PorterDuff.Mode.MULTIPLY));
+        imageView3.setImageResource(R.drawable.input_clear);
+        imageView3.setScaleType(scaleType);
+        imageView3.setBackground(aob.f0(436207615, 1, hl.L(18.0f)));
+        addView(imageView3, tre.d(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
     }
 
-    @Override // n8b
-    public final void a(Canvas canvas, float f) {
-        r8b r8bVar = this.d;
-        double d = r8bVar.b;
-        double d2 = r8bVar.d;
-        TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = this.b;
-        TL_stories.MediaAreaCoordinates mediaAreaCoordinates = tL_mediaAreaWeather.coordinates;
-        float f2 = (float) (((mediaAreaCoordinates.x * d2) / 100.0d) + d);
-        double d3 = r8bVar.c;
-        double d4 = r8bVar.e;
-        float f3 = (float) (((mediaAreaCoordinates.y * d4) / 100.0d) + d3);
-        float f4 = (float) ((d2 * mediaAreaCoordinates.w) / 100.0d);
-        float f5 = (float) ((d4 * mediaAreaCoordinates.h) / 100.0d);
-        canvas.save();
-        canvas.translate(f2, f3);
-        p8b p8bVar = this.a;
-        float min = Math.min(f4 / ((p8bVar.getWidthInternal() - p8bVar.getPaddingLeft()) - p8bVar.getPaddingRight()), f5 / ((p8bVar.getHeightInternal() - p8bVar.getPaddingTop()) - p8bVar.getPaddingBottom()));
-        canvas.scale(min, min);
-        double d5 = tL_mediaAreaWeather.coordinates.rotation;
-        if (d5 != 0.0d) {
-            canvas.rotate((float) d5);
-        }
-        canvas.translate(((-r2) / 2.0f) - p8bVar.getPaddingLeft(), ((-r3) / 2.0f) - p8bVar.getPaddingTop());
-        p8bVar.a(canvas);
-        canvas.restore();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = getWidth();
+        float e1 = hl.e1();
+        Paint paint = this.a;
+        canvas.drawRect(0.0f, 0.0f, width, e1, paint);
+        canvas.drawRect(0.0f, getHeight() - hl.e1(), getWidth(), getHeight(), paint);
     }
 
-    @Override // n8b
-    public final void b(boolean z) {
-        p8b p8bVar = this.a;
-        if (!z) {
-            p8bVar.L = false;
-            p8bVar.r.K();
-            p8bVar.s.K();
-        } else {
-            p8bVar.L = true;
-            if (p8bVar.M) {
-                p8bVar.s.I();
-            } else {
-                p8bVar.r.I();
-            }
-        }
-    }
-
-    @Override // n8b
-    public final void c(View view) {
-        this.c = view;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
     }
 }

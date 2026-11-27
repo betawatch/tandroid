@@ -1,31 +1,31 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xy implements Runnable {
+public final /* synthetic */ class xy implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ wjb c;
-    public final /* synthetic */ TL_stars.StarGift d;
+    public final /* synthetic */ ax0 b;
 
-    public /* synthetic */ xy(Context context, wjb wjbVar, TL_stars.StarGift starGift, byte b) {
+    public /* synthetic */ xy(ax0 ax0Var, byte b) {
         this.a = b;
-        this.b = context;
-        this.c = wjbVar;
-        this.d = starGift;
+        this.b = ax0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        ax0 ax0Var = this.b;
+        switch (b) {
             case 0:
-                ez.b1(this.c, this.b, this.d);
+                ax0Var.run();
                 break;
             default:
-                ez.b1(this.c, this.b, this.d);
+                RectF rectF = ProfileActivity.Z6;
+                ax0Var.run();
                 break;
         }
     }

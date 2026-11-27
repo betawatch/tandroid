@@ -1,50 +1,27 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class g0d implements m55 {
+    public final /* synthetic */ h0d a;
+    public final /* synthetic */ q0d b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ byte[] d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class g0d extends tzc {
-    @Override // tzc
-    public final boolean a(int i, Parcel parcel, Parcel parcel2, int i2) {
-        if (i == 2) {
-            Parcelable.Creator creator = Bundle.CREATOR;
-            Bundle bundle = (Bundle) yzc.a(parcel);
-            yzc.b(parcel);
-            e(bundle);
-            return true;
-        }
-        if (i == 3) {
-            Parcelable.Creator creator2 = Bundle.CREATOR;
-            Bundle bundle2 = (Bundle) yzc.a(parcel);
-            yzc.b(parcel);
-            c(bundle2);
-            return true;
-        }
-        if (i == 4) {
-            Parcelable.Creator creator3 = Bundle.CREATOR;
-            Bundle bundle3 = (Bundle) yzc.a(parcel);
-            yzc.b(parcel);
-            d(bundle3);
-            return true;
-        }
-        if (i != 5) {
-            return false;
-        }
-        Parcelable.Creator creator4 = Bundle.CREATOR;
-        Bundle bundle4 = (Bundle) yzc.a(parcel);
-        yzc.b(parcel);
-        b(bundle4);
-        return true;
+    public g0d(h0d h0dVar, q0d q0dVar, long j, byte[] bArr) {
+        this.a = h0dVar;
+        this.b = q0dVar;
+        this.c = j;
+        this.d = bArr;
     }
 
-    public abstract void b(Bundle bundle);
+    @Override // m55
+    public final void a() {
+        this.b.b(5, null, this.c);
+    }
 
-    public abstract void c(Bundle bundle);
-
-    public abstract void d(Bundle bundle);
-
-    public abstract void e(Bundle bundle);
+    @Override // m55
+    public final void b() {
+        this.b.b(3, null, this.c);
+    }
 }

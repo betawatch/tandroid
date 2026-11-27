@@ -1,266 +1,65 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class i98 implements o98 {
-    @Override // o98
-    public CharSequence B(int i) {
-        return null;
+public final class i98 implements c88 {
+    public final /* synthetic */ t20 a;
+
+    public i98(t20 t20Var) {
+        this.a = t20Var;
     }
 
-    @Override // o98
-    public int D(int i, oac oacVar) {
-        return -1;
+    public final void a() {
+        zu1 zu1Var;
+        TLRPC.Chat chat;
+        l98 l98Var = (l98) this.a.e;
+        if (!l98Var.J || (zu1Var = l98Var.V) == null || (chat = zu1Var.e) == null || xc2.N(chat) || !chat.slowmode_enabled || l98Var.X == 2) {
+            return;
+        }
+        jj.r0(l98Var, ob6.M0(2131745038, null), ob6.M0(2131745031, null), null);
+        if (l98Var.X == 1) {
+            l98Var.X = (byte) 2;
+        }
     }
 
-    @Override // o98
-    public int G() {
-        return 0;
-    }
-
-    @Override // o98
-    public boolean H() {
-        return true;
-    }
-
-    @Override // o98
-    public boolean J() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean K() {
-        return this instanceof ms1;
-    }
-
-    @Override // o98
-    public p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        return null;
-    }
-
-    @Override // o98
-    public boolean N() {
-        return true;
-    }
-
-    @Override // o98
-    public boolean O() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean P() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean Q() {
-        return this instanceof k0b;
-    }
-
-    @Override // o98
-    public int R(Object obj) {
-        return -1;
-    }
-
-    @Override // o98
-    public int S(int i) {
-        return -1;
-    }
-
-    @Override // o98
-    public boolean T() {
-        return !(this instanceof gs1);
-    }
-
-    @Override // o98
-    public final boolean U() {
-        return !(this instanceof is1);
-    }
-
-    @Override // o98
-    public k27 V() {
-        return null;
-    }
-
-    @Override // o98
-    public boolean Z() {
-        return false;
-    }
-
-    @Override // o98
-    public long a() {
-        return 0L;
-    }
-
-    @Override // o98
-    public boolean b() {
-        return false;
-    }
-
-    @Override // o98
-    public String b0() {
-        return null;
-    }
-
-    @Override // o98
-    public CharSequence c0(int i) {
-        return null;
-    }
-
-    @Override // o98
-    public ArrayList d() {
-        return null;
-    }
-
-    @Override // o98
-    public boolean h() {
-        return !(this instanceof gs1);
-    }
-
-    @Override // o98
-    public boolean i() {
-        return false;
-    }
-
-    @Override // o98
-    public jl5 k(int i) {
-        return null;
-    }
-
-    @Override // o98
-    public boolean l() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean o() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean p() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean q() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean s() {
-        return !(this instanceof m82);
-    }
-
-    @Override // o98
-    public boolean t() {
-        return !(this instanceof v42);
-    }
-
-    @Override // o98
-    public HashMap u() {
-        return null;
-    }
-
-    @Override // o98
-    public boolean v() {
-        return false;
-    }
-
-    @Override // o98
-    public boolean w(int i) {
-        return false;
-    }
-
-    @Override // o98
-    public int x() {
-        return -1;
-    }
-
-    @Override // o98
-    public boolean y() {
-        return !(this instanceof o02);
-    }
-
-    @Override // o98
-    public boolean z() {
-        return false;
-    }
-
-    @Override // o98
-    public void C() {
-    }
-
-    @Override // o98
-    public void F() {
-    }
-
-    @Override // o98
-    public void I() {
-    }
-
-    @Override // o98
-    public void W() {
-    }
-
-    @Override // o98
-    public void e() {
-    }
-
-    @Override // o98
-    public void j() {
-    }
-
-    @Override // o98
-    public void m() {
-    }
-
-    @Override // o98
-    public void n() {
-    }
-
-    @Override // o98
-    public void r() {
-    }
-
-    @Override // o98
-    public void A(int i) {
-    }
-
-    @Override // o98
-    public void E(boolean z) {
-    }
-
-    @Override // o98
-    public void X(int i) {
-    }
-
-    @Override // o98
-    public void Y(int i) {
-    }
-
-    @Override // o98
-    public void a0(int i) {
-    }
-
-    @Override // o98
-    public void c(oac oacVar) {
-    }
-
-    @Override // o98
-    public void f(CharSequence charSequence) {
-    }
-
-    @Override // o98
-    public void g(String str, String str2, boolean z) {
-    }
-
-    @Override // o98
-    public void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
+    @Override // c88
+    public final void c(d88 d88Var) {
+        boolean z;
+        int intValue = ((Integer) d88Var.getTag()).intValue();
+        l98 l98Var = (l98) this.a.e;
+        do6 do6Var = l98Var.K;
+        int i = -1;
+        if (do6Var != null) {
+            no6 no6Var = (no6) do6Var.e.get(intValue);
+            boolean containsKey = l98Var.b.containsKey(Integer.valueOf(no6Var.C));
+            z = !containsKey;
+            if (!containsKey && l98Var.I > 0 && l98Var.b.size() >= l98Var.I) {
+                a();
+                return;
+            }
+            if (l98Var.e && !containsKey) {
+                i = l98Var.c.size();
+            }
+            d88Var.b(i, z, true);
+            l98Var.a0(intValue, no6Var);
+        } else {
+            hl.t1(l98Var.getParentActivity().getCurrentFocus());
+            ro6 ro6Var = (ro6) l98Var.f.get(intValue);
+            boolean containsKey2 = l98Var.b.containsKey(ro6Var.B);
+            z = !containsKey2;
+            if (!containsKey2 && l98Var.I > 0 && l98Var.b.size() >= l98Var.I) {
+                a();
+                return;
+            }
+            if (l98Var.e && !containsKey2) {
+                i = l98Var.c.size();
+            }
+            d88Var.b(i, z, true);
+            l98Var.a0(intValue, ro6Var);
+        }
+        l98Var.m0(z ? 1 : 2);
+        l98Var.t0.h();
     }
 }

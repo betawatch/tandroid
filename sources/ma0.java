@@ -1,34 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Set;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ma0 {
-    public final na0 a;
-    public final pa0 b;
-    public final oa0 c;
+    public final long a;
+    public final long b;
+    public final Set c;
 
-    public ma0(na0 na0Var, pa0 pa0Var, oa0 oa0Var) {
-        this.a = na0Var;
-        this.b = pa0Var;
-        this.c = oa0Var;
+    public ma0(long j, long j2, Set set) {
+        this.a = j;
+        this.b = j2;
+        this.c = set;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ma0)) {
-            return false;
+        if (obj instanceof ma0) {
+            ma0 ma0Var = (ma0) obj;
+            if (this.a == ma0Var.a && this.b == ma0Var.b && this.c.equals(ma0Var.c)) {
+                return true;
+            }
         }
-        ma0 ma0Var = (ma0) obj;
-        return this.a.equals(ma0Var.a) && this.b.equals(ma0Var.b) && this.c.equals(ma0Var.c);
+        return false;
     }
 
     public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode();
+        long j = this.a;
+        int i = (((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003;
+        long j2 = this.b;
+        return ((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.c.hashCode();
     }
 
     public final String toString() {
-        return "StaticSessionData{appData=" + this.a + ", osData=" + this.b + ", deviceData=" + this.c + "}";
+        return "ConfigValue{delta=" + this.a + ", maxAllowedDelay=" + this.b + ", flags=" + this.c + "}";
     }
 }

@@ -2,11 +2,11 @@ package org.webrtc;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public interface NetworkChangeDetector {
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum ConnectionType {
         CONNECTION_UNKNOWN,
         CONNECTION_ETHERNET,
@@ -21,7 +21,7 @@ public interface NetworkChangeDetector {
         CONNECTION_NONE
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class IPAddress {
         public final byte[] address;
 
@@ -34,20 +34,22 @@ public interface NetworkChangeDetector {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class NetworkInformation {
         public final long handle;
         public final IPAddress[] ipAddresses;
         public final String name;
+        public final NetworkSlice slice;
         public final ConnectionType type;
         public final ConnectionType underlyingTypeForVpn;
 
-        public NetworkInformation(String str, ConnectionType connectionType, ConnectionType connectionType2, long j, IPAddress[] iPAddressArr) {
+        public NetworkInformation(String str, ConnectionType connectionType, ConnectionType connectionType2, long j, IPAddress[] iPAddressArr, NetworkSlice networkSlice) {
             this.name = str;
             this.type = connectionType;
             this.underlyingTypeForVpn = connectionType2;
             this.handle = j;
             this.ipAddresses = iPAddressArr;
+            this.slice = networkSlice;
         }
 
         private ConnectionType getConnectionType() {
@@ -66,20 +68,40 @@ public interface NetworkChangeDetector {
             return this.name;
         }
 
+        private int getSliceAsInt() {
+            return this.slice.code;
+        }
+
         private ConnectionType getUnderlyingConnectionTypeForVpn() {
             return this.underlyingTypeForVpn;
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    public interface Observer {
-        void onConnectionTypeChanged(ConnectionType connectionType);
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public enum NetworkSlice {
+        NO_SLICE(0),
+        UNIFIED_COMMUNICATIONS(1);
 
-        void onNetworkConnect(NetworkInformation networkInformation);
+        public final int code;
 
-        void onNetworkDisconnect(long j);
+        NetworkSlice(int i) {
+            this.code = i;
+        }
+    }
 
-        void onNetworkPreference(List<ConnectionType> list, int i);
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public static abstract class Observer {
+        public String getFieldTrialsString() {
+            return "";
+        }
+
+        public abstract void onConnectionTypeChanged(ConnectionType connectionType);
+
+        public abstract void onNetworkConnect(NetworkInformation networkInformation);
+
+        public abstract void onNetworkDisconnect(long j);
+
+        public abstract void onNetworkPreference(List<ConnectionType> list, int i);
     }
 
     void destroy();

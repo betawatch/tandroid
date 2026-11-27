@@ -1,27 +1,49 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class svb implements or8 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ tvb b;
-
-    public svb(tvb tvbVar, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = tvbVar;
-        this.a = tL_forumTopic;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum svb extends rwb {
+    public svb() {
+        super("CommentEnd", 48);
     }
 
-    @Override // or8
-    public final void n() {
-        wvb wvbVar = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        wvbVar.Y(tL_forumTopic.id);
-        gl.d3(new a5b(this, tL_forumTopic, (byte) 19), 300L);
-    }
-
-    @Override // or8
-    public final void h(vm7 vm7Var) {
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        rtb rtbVar = bubVar.n;
+        char d = ik1Var.d();
+        qvb qvbVar = rwb.k0;
+        if (d == 0) {
+            bubVar.m(this);
+            StringBuilder sb = rtbVar.e;
+            sb.append("--");
+            sb.append((char) 65533);
+            bubVar.c = qvbVar;
+            return;
+        }
+        if (d == '!') {
+            bubVar.m(this);
+            bubVar.c = rwb.n0;
+            return;
+        }
+        if (d == '-') {
+            bubVar.m(this);
+            rtbVar.e.append('-');
+            return;
+        }
+        mub mubVar = rwb.a;
+        if (d == '>') {
+            bubVar.i();
+            bubVar.c = mubVar;
+        } else if (d == 65535) {
+            bubVar.l(this);
+            bubVar.i();
+            bubVar.c = mubVar;
+        } else {
+            bubVar.m(this);
+            StringBuilder sb2 = rtbVar.e;
+            sb2.append("--");
+            sb2.append(d);
+            bubVar.c = qvbVar;
+        }
     }
 }

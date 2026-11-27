@@ -1,30 +1,63 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class p28 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ y5b b;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.p;
 
-    public /* synthetic */ p28(y5b y5bVar, byte b) {
-        this.a = b;
-        this.b = y5bVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class p28 implements y28 {
+    public final /* synthetic */ Runnable a;
+    public final /* synthetic */ p b;
+
+    public p28(p pVar, Runnable runnable) {
+        this.b = pVar;
+        this.a = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        y5b y5bVar = this.b;
-        switch (b) {
-            case 0:
-                y5bVar.dismiss();
-                break;
-            case 1:
-                y5bVar.dismiss();
-                break;
-            default:
-                y5bVar.onBackPressed();
-                break;
+    @Override // y28
+    public final boolean c(String str, String str2, boolean z, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
+        String str3;
+        p pVar = this.b;
+        pVar.z0 = tL_paymentSavedCredentialsCard;
+        pVar.x0 = str;
+        pVar.V0 = z;
+        pVar.y0 = str2;
+        pVar.K0 = tL_inputPaymentCredentialsGooglePay;
+        dlb[] dlbVarArr = pVar.Z;
+        dlb dlbVar = dlbVarArr[0];
+        if (dlbVar != null) {
+            dlbVar.setVisibility(0);
+            dlb dlbVar2 = dlbVarArr[0];
+            String str4 = pVar.y0;
+            if (str4 == null || str4.length() <= 1) {
+                str3 = pVar.y0;
+            } else {
+                str3 = pVar.y0.substring(0, 1).toUpperCase() + pVar.y0.substring(1);
+            }
+            dlbVar2.b(R.drawable.msg_payment_card, str3, ob6.M0(2131747141, null), true);
+            dlb dlbVar3 = dlbVarArr[1];
+            if (dlbVar3 != null) {
+                dlbVar3.setVisibility(0);
+            }
         }
+        Runnable runnable = this.a;
+        if (runnable != null) {
+            runnable.run();
+        }
+        return false;
+    }
+
+    @Override // y28
+    public final void b() {
+    }
+
+    @Override // y28
+    public final void a(TL_account.Password password) {
+    }
+
+    @Override // y28
+    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
     }
 }

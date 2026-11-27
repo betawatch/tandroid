@@ -1,36 +1,23 @@
 // default package
 
 import android.app.Activity;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sp1 extends FrameLayout {
-    public final /* synthetic */ mu1 a;
+public final class sp1 extends ly3 {
+    public final /* synthetic */ zu1 Q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sp1(mu1 mu1Var, Activity activity) {
-        super(activity);
-        this.a = mu1Var;
+    public sp1(zu1 zu1Var, e eVar, Activity activity, vnb vnbVar, ArrayList arrayList) {
+        super(eVar, activity, vnbVar, arrayList);
+        this.Q1 = zu1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.G5(true);
-        }
-        return super.dispatchKeyEvent(keyEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int min = Math.min(View.MeasureSpec.getSize(i2), gl.L(300.0f));
-        if (min == 0) {
-            min = gl.L(300.0f);
-        }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
+    @Override // ly3, nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        super.dismiss();
+        this.Q1.y6(false, true, 0.0f);
     }
 }

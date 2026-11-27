@@ -1,32 +1,13 @@
 // default package
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ri2 extends IOException {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ri2(long j, int i, long j2) {
-        super("Illegal clipping: ".concat(r4));
-        String str;
-        if (i != 0) {
-            if (i == 1) {
-                str = "not seekable to start";
-            } else if (i != 2) {
-                str = "unknown";
-            } else {
-                gre.p((j == -9223372036854775807L || j2 == -9223372036854775807L) ? false : true);
-                str = "start exceeds end. Start time: " + j + ", End time: " + j2;
-            }
-        } else {
-            str = "invalid period count";
-        }
+public final class ri2 extends Exception {
+    public ri2(String str, String str2) {
+        super(str2 != null ? str2.toString() : null);
     }
 
-    public ri2(int i) {
-        this(-9223372036854775807L, i, -9223372036854775807L);
+    public ri2(String str) {
+        this("android.credentials.ClearCredentialStateException.TYPE_UNKNOWN", str);
     }
 }

@@ -1,200 +1,201 @@
 // default package
 
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Parcelable;
-import android.os.PersistableBundle;
-import android.text.TextUtils;
-import androidx.core.graphics.drawable.IconCompat;
-import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import java.io.File;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rga implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ea9 c;
-    public final /* synthetic */ ShortcutInfoCompatSaverImpl d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class rga implements u69 {
+    public final /* synthetic */ gga a;
+    public final /* synthetic */ eja b;
 
-    public /* synthetic */ rga(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, ArrayList arrayList, ea9 ea9Var, byte b) {
-        this.a = b;
-        this.d = shortcutInfoCompatSaverImpl;
-        this.b = arrayList;
-        this.c = ea9Var;
+    public rga(eja ejaVar, gga ggaVar) {
+        this.b = ejaVar;
+        this.a = ggaVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0035, code lost:
-    
-        if (r9 != 5) goto L21;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0117 A[SYNTHETIC] */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Removed duplicated region for block: B:89:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0218  */
+    @Override // u69
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        String str;
-        String str2;
-        oga ogaVar;
-        l38[] l38VarArr;
-        PersistableBundle persistableBundle;
-        byte b = this.a;
-        ea9 ea9Var = this.c;
-        ArrayList arrayList = this.b;
-        ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = this.d;
-        switch (b) {
-            case 0:
-                int size = arrayList.size();
-                int i = 0;
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
-                    String str3 = (String) obj;
-                    shortcutInfoCompatSaverImpl.b.remove(str3);
-                    t56 t56Var = (t56) shortcutInfoCompatSaverImpl.c.remove(str3);
-                    if (t56Var != null) {
-                        t56Var.cancel(false);
+    public final boolean d(float f, float f2, int i, View view) {
+        boolean z;
+        int i2;
+        View view2 = view;
+        eja ejaVar = this.b;
+        rha rhaVar = ejaVar.d0;
+        int i3 = 0;
+        if (ejaVar.r1) {
+            return false;
+        }
+        gga ggaVar = this.a;
+        if (ggaVar.h.getAdapter() == ejaVar.V) {
+            return false;
+        }
+        if (!ejaVar.F1 || ggaVar.F == 11) {
+            int i4 = ggaVar.F;
+            if (i4 == 7 && (view2 instanceof vac)) {
+                if (rhaVar.e.isEmpty()) {
+                    i2 = i;
+                } else {
+                    if (i >= rhaVar.e.size()) {
+                        return false;
+                    }
+                    i2 = ((Integer) rhaVar.e.get(i)).intValue();
+                }
+                if (i2 < 0 || i2 >= rhaVar.d.participants.participants.size()) {
+                    return false;
+                }
+                TLRPC.ChatParticipant chatParticipant = rhaVar.d.participants.participants.get(i2);
+                d79 d79Var = (d79) view2.getParent();
+                while (true) {
+                    if (i3 >= d79Var.getChildCount()) {
+                        break;
+                    }
+                    View childAt = d79Var.getChildAt(i3);
+                    if (RecyclerView.S(childAt) == i) {
+                        view2 = childAt;
+                        break;
+                    }
+                    i3++;
+                }
+                return ejaVar.O0(chatParticipant, true, view2);
+            }
+            if (i4 == 1 && (view2 instanceof zea)) {
+                return ejaVar.N0(((zea) view2).getMessage(), view2, 0, true);
+            }
+            if (i4 == 3 && (view2 instanceof cfa)) {
+                return ejaVar.N0(((cfa) view2).getMessage(), view2, 0, true);
+            }
+            if ((i4 == 2 || i4 == 4) && (view2 instanceof vea)) {
+                return ejaVar.N0(((vea) view2).getMessage(), view2, 0, true);
+            }
+            if (i4 == 5 && (view2 instanceof vw2)) {
+                return ejaVar.N0((r47) ((vw2) view2).getParentObject(), view2, 0, true);
+            }
+            if ((i4 == 0 || (eja.j0(i4) && ejaVar.p())) && (view2 instanceof jja)) {
+                r47 messageObject = ((jja) view2).getMessageObject();
+                if (messageObject != null) {
+                    return ejaVar.N0(messageObject, view2, ggaVar.F, true);
+                }
+                return false;
+            }
+            int i5 = ggaVar.F;
+            if (i5 != 10) {
+                if (i5 != 11) {
+                    return false;
+                }
+                ejaVar.U.E(view2);
+                return true;
+            }
+            qha qhaVar = ejaVar.T;
+            ArrayList arrayList = qhaVar.d;
+            eja ejaVar2 = qhaVar.f;
+            if (i >= 0 && i < arrayList.size()) {
+                TLObject tLObject = (TLObject) arrayList.get(i);
+                Bundle bundle = new Bundle();
+                boolean z2 = tLObject instanceof TLRPC.Chat;
+                if (z2) {
+                    bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+                } else if (tLObject instanceof TLRPC.User) {
+                    bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+                }
+                zu1 zu1Var = new zu1(bundle);
+                e eVar = ejaVar2.y1;
+                vnb vnbVar = ejaVar2.I1;
+                if (eVar instanceof ProfileActivity) {
+                    ProfileActivity profileActivity = (ProfileActivity) eVar;
+                    if (profileActivity.U != null) {
+                        int measuredWidth = (int) (profileActivity.fragmentView.getMeasuredWidth() / 6.0f);
+                        z = true;
+                        int measuredHeight = (int) (profileActivity.fragmentView.getMeasuredHeight() / 6.0f);
+                        Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
+                        Canvas canvas = new Canvas(createBitmap);
+                        canvas.scale(0.16666667f, 0.16666667f);
+                        profileActivity.fragmentView.draw(canvas);
+                        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / jn7.J2));
+                        profileActivity.U.setBackground(new BitmapDrawable(createBitmap));
+                        profileActivity.U.setAlpha(0.0f);
+                        profileActivity.U.setVisibility(0);
+                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 2, vnbVar, ejaVar2.getContext());
+                        yob.h(aob.G8, vnbVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
+                        if (z2) {
+                            if (!(tLObject instanceof TLRPC.User)) {
+                                return z;
+                            }
+                            eVar.presentFragmentAsPreview(zu1Var);
+                            return z;
+                        }
+                        b8 b8Var = new b8(ejaVar2.getContext(), false, false);
+                        b8Var.j(ob6.M0(2131747538, null), R.drawable.msg_channel, null);
+                        b8Var.setMinimumWidth(jn7.p2);
+                        b8Var.setOnClickListener(new jn8(qhaVar, (byte) 27));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(b8Var);
+                        b8 b8Var2 = new b8(ejaVar2.getContext(), false, false);
+                        b8Var2.j(ob6.M0(2131746389, null), R.drawable.msg_addbot, null);
+                        b8Var2.setMinimumWidth(jn7.p2);
+                        b8Var2.setOnClickListener(new ae((Object) qhaVar, tLObject, i, (byte) 16));
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(b8Var2);
+                        eVar.presentFragmentAsPreviewWithMenu(zu1Var, actionBarPopupWindow$ActionBarPopupWindowLayout);
+                        return z;
                     }
                 }
-                shortcutInfoCompatSaverImpl.h(ea9Var);
-                break;
-            default:
-                int size2 = arrayList.size();
-                int i2 = 0;
-                while (i2 < size2) {
-                    Object obj2 = arrayList.get(i2);
-                    i2++;
-                    oga ogaVar2 = (oga) obj2;
-                    Set set = ogaVar2.j;
-                    if (set != null && !set.isEmpty()) {
-                        IconCompat iconCompat = ogaVar2.h;
-                        if (iconCompat != null) {
-                            int i3 = iconCompat.i();
-                            if (i3 != 1) {
-                                if (i3 == 2) {
-                                    str = shortcutInfoCompatSaverImpl.a.getResources().getResourceName(iconCompat.g());
-                                    str2 = null;
-                                    ogaVar = new oga();
-                                    ogaVar.a = ogaVar2.a;
-                                    ogaVar.b = ogaVar2.b;
-                                    Intent[] intentArr = ogaVar2.c;
-                                    ogaVar.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-                                    ogaVar.d = ogaVar2.d;
-                                    ogaVar.e = ogaVar2.e;
-                                    ogaVar.f = ogaVar2.f;
-                                    ogaVar.g = ogaVar2.g;
-                                    ogaVar.h = ogaVar2.h;
-                                    ogaVar.k = ogaVar2.k;
-                                    ogaVar.l = ogaVar2.l;
-                                    ogaVar.m = ogaVar2.m;
-                                    l38VarArr = ogaVar2.i;
-                                    if (l38VarArr != null) {
-                                        ogaVar.i = (l38[]) Arrays.copyOf(l38VarArr, l38VarArr.length);
-                                    }
-                                    if (ogaVar2.j != null) {
-                                        ogaVar.j = new HashSet(ogaVar2.j);
-                                    }
-                                    persistableBundle = ogaVar2.n;
-                                    if (persistableBundle != null) {
-                                        ogaVar.n = persistableBundle;
-                                    }
-                                    ogaVar.h = null;
-                                    if (TextUtils.isEmpty(ogaVar.e)) {
-                                        w26.j("Shortcut must have a non-empty label");
-                                        break;
-                                    } else {
-                                        Intent[] intentArr2 = ogaVar.c;
-                                        if (intentArr2 == null || intentArr2.length == 0) {
-                                            w26.j("Shortcut must have an intent");
-                                            break;
-                                        } else {
-                                            uga ugaVar = new uga(ogaVar, str, str2);
-                                            Bitmap f = str2 != null ? ogaVar2.h.f() : null;
-                                            String str4 = ogaVar2.b;
-                                            shortcutInfoCompatSaverImpl.b.put(str4, ugaVar);
-                                            if (f != null) {
-                                                rld rldVar = new rld((Object) shortcutInfoCompatSaverImpl, (Parcelable) f, (Object) str2, (byte) 11);
-                                                ea9 ea9Var2 = new ea9();
-                                                shortcutInfoCompatSaverImpl.e.submit(new tq4((Object) ea9Var2, (Object) rldVar, (byte) 14));
-                                                t56 t56Var2 = (t56) shortcutInfoCompatSaverImpl.c.put(str4, ea9Var2);
-                                                if (t56Var2 != null) {
-                                                    t56Var2.cancel(false);
-                                                }
-                                                ea9Var2.b(new ey1((Object) this, (Object) str4, (Object) ea9Var2, (byte) 3), shortcutInfoCompatSaverImpl.d);
-                                            }
-                                        }
-                                    }
-                                } else {
-                                    break;
-                                }
-                            }
-                            str2 = new File(shortcutInfoCompatSaverImpl.g, UUID.randomUUID().toString()).getAbsolutePath();
-                            str = null;
-                            ogaVar = new oga();
-                            ogaVar.a = ogaVar2.a;
-                            ogaVar.b = ogaVar2.b;
-                            Intent[] intentArr3 = ogaVar2.c;
-                            ogaVar.c = (Intent[]) Arrays.copyOf(intentArr3, intentArr3.length);
-                            ogaVar.d = ogaVar2.d;
-                            ogaVar.e = ogaVar2.e;
-                            ogaVar.f = ogaVar2.f;
-                            ogaVar.g = ogaVar2.g;
-                            ogaVar.h = ogaVar2.h;
-                            ogaVar.k = ogaVar2.k;
-                            ogaVar.l = ogaVar2.l;
-                            ogaVar.m = ogaVar2.m;
-                            l38VarArr = ogaVar2.i;
-                            if (l38VarArr != null) {
-                            }
-                            if (ogaVar2.j != null) {
-                            }
-                            persistableBundle = ogaVar2.n;
-                            if (persistableBundle != null) {
-                            }
-                            ogaVar.h = null;
-                            if (TextUtils.isEmpty(ogaVar.e)) {
-                            }
-                        }
-                        str = null;
-                        str2 = null;
-                        ogaVar = new oga();
-                        ogaVar.a = ogaVar2.a;
-                        ogaVar.b = ogaVar2.b;
-                        Intent[] intentArr32 = ogaVar2.c;
-                        ogaVar.c = (Intent[]) Arrays.copyOf(intentArr32, intentArr32.length);
-                        ogaVar.d = ogaVar2.d;
-                        ogaVar.e = ogaVar2.e;
-                        ogaVar.f = ogaVar2.f;
-                        ogaVar.g = ogaVar2.g;
-                        ogaVar.h = ogaVar2.h;
-                        ogaVar.k = ogaVar2.k;
-                        ogaVar.l = ogaVar2.l;
-                        ogaVar.m = ogaVar2.m;
-                        l38VarArr = ogaVar2.i;
-                        if (l38VarArr != null) {
-                        }
-                        if (ogaVar2.j != null) {
-                        }
-                        persistableBundle = ogaVar2.n;
-                        if (persistableBundle != null) {
-                        }
-                        ogaVar.h = null;
-                        if (TextUtils.isEmpty(ogaVar.e)) {
-                        }
-                    }
+                z = true;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 2, vnbVar, ejaVar2.getContext());
+                yob.h(aob.G8, vnbVar, actionBarPopupWindow$ActionBarPopupWindowLayout2);
+                if (z2) {
                 }
-                shortcutInfoCompatSaverImpl.h(ea9Var);
-                break;
+            }
+        } else {
+            jga jgaVar = ggaVar.h;
+            r69 r69Var = jgaVar.U0;
+            if (r69Var != null) {
+                r69Var.e(i, view2);
+                return true;
+            }
+            s69 s69Var = jgaVar.V0;
+            if (s69Var != null) {
+                s69Var.d(0.0f, 0.0f, i, view2);
+                return true;
+            }
+        }
+        return true;
+    }
+
+    @Override // u69
+    public final void f() {
+        e eVar = this.b.y1;
+        if (eVar != null) {
+            Point point = hl.q;
+            if (point.x > point.y) {
+                eVar.finishPreviewFragment();
+            }
+        }
+    }
+
+    @Override // u69
+    public final void h(float f) {
+        e eVar = this.b.y1;
+        if (eVar != null) {
+            Point point = hl.q;
+            if (point.x > point.y) {
+                eVar.movePreviewFragment(f);
+            }
         }
     }
 }

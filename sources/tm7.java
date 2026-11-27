@@ -1,33 +1,17 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.NotificationsSettingsActivity;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class tm7 extends b59 {
+    public static final tm7 c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class tm7 implements d39, ed {
-    public final /* synthetic */ NotificationsSettingsActivity a;
-
-    public /* synthetic */ tm7(NotificationsSettingsActivity notificationsSettingsActivity) {
-        this.a = notificationsSettingsActivity;
+    static {
+        tm7 tm7Var = new tm7();
+        c = tm7Var;
+        tm7Var.setStackTrace(b59.b);
     }
 
-    @Override // d39
-    public final void e(float f, float f2, int i, View view) {
-        this.a.y0(f, i, view);
-    }
-
-    @Override // d39
-    public final boolean q(View view) {
-        return false;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        this.a.A0();
-    }
-
-    @Override // d39
-    public final void l(View view, float f, float f2) {
+    public static tm7 a() {
+        return b59.a ? new tm7() : c;
     }
 }

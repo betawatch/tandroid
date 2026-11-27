@@ -1,39 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class vn6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hq6 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int[] e;
+import java.io.File;
 
-    public /* synthetic */ vn6(hq6 hq6Var, long j, long j2, int[] iArr, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vn6 extends File {
+    public final /* synthetic */ byte a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vn6(File file, String str, byte b) {
+        super(file, str);
         this.a = b;
-        this.b = hq6Var;
-        this.c = j;
-        this.d = j2;
-        this.e = iArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int[] iArr = this.e;
-        long j = this.d;
-        long j2 = this.c;
-        hq6 hq6Var = this.b;
-        switch (b) {
+    @Override // java.io.File
+    public final boolean delete() {
+        switch (this.a) {
             case 0:
-                hq6Var.getNotificationCenter().k(34, Long.valueOf(j2), Long.valueOf(j), iArr);
-                break;
-            case 1:
-                hq6Var.getNotificationCenter().k(34, Long.valueOf(j2), Long.valueOf(j), iArr);
+                if (f11.a) {
+                    cc4.d("delete voice file (trimmed)");
+                }
                 break;
             default:
-                hq6Var.getNotificationCenter().k(34, Long.valueOf(j2), Long.valueOf(j), iArr);
+                if (f11.a) {
+                    cc4.d("delete voice file (from resume)");
+                }
                 break;
         }
+        return super.delete();
     }
 }

@@ -1,53 +1,128 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gl1 implements i8c {
+public final /* synthetic */ class gl1 implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
+    public final /* synthetic */ zu1 b;
 
-    public /* synthetic */ gl1(mu1 mu1Var, byte b) {
+    public /* synthetic */ gl1(zu1 zu1Var, byte b) {
         this.a = b;
-        this.b = mu1Var;
+        this.b = zu1Var;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
+    @Override // pcc
+    public final void a(Object obj) {
         byte b = this.a;
-        mu1 mu1Var = this.b;
+        zu1 zu1Var = this.b;
         switch (b) {
             case 0:
-                mu1Var.p8((Integer) obj, (Boolean) obj2);
+                zu1Var.Wb(true, false);
+                if (((Boolean) obj).booleanValue()) {
+                    zu1Var.finishFragment();
+                    break;
+                }
                 break;
             case 1:
-                mu1Var.q8((Long) obj, (Boolean) obj2);
+                zu1Var.ta((String) obj, false);
                 break;
             case 2:
-                hx4 hx4Var = mu1Var.P8;
-                hx4Var.a((Bitmap) obj2);
-                tk0.c(hx4Var, mu1Var.fragmentView);
-                mu1Var.Q8.d();
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
+                if (tL_premium_boostsStatus != null) {
+                    zu1Var.S1 = tL_premium_boostsStatus;
+                    zu1Var.getMessagesController().G0().b(zu1Var.l6, tL_premium_boostsStatus, new gl1(zu1Var, (byte) 3));
+                    break;
+                }
+                break;
+            case 3:
+                zu1Var.T1 = (wg1) obj;
+                break;
+            case 4:
+                View view = (View) obj;
+                if (!(view instanceof wb2)) {
+                    if (!(view instanceof dl1)) {
+                        if (!(view instanceof bf2)) {
+                            if (!(view instanceof oo0)) {
+                                if (view instanceof eq0) {
+                                    view.invalidate();
+                                    break;
+                                }
+                            } else {
+                                view.invalidate();
+                                break;
+                            }
+                        } else {
+                            ((bf2) view).getTextView().setTranslationX(zu1Var.o7() / 2.0f);
+                            break;
+                        }
+                    } else {
+                        dl1 dl1Var = (dl1) view;
+                        dl1Var.f0 = zu1Var.S7();
+                        dl1Var.j0 = zu1Var.f8();
+                        zu1Var.e8();
+                        zu1Var.n7();
+                        int o7 = zu1Var.o7();
+                        if (dl1Var.k0 != o7) {
+                            dl1Var.k0 = o7;
+                            dl1Var.invalidate();
+                            break;
+                        }
+                    }
+                } else {
+                    wb2 wb2Var = (wb2) view;
+                    wb2Var.W6 = zu1Var.S7();
+                    wb2Var.X6 = zu1Var.f8();
+                    boolean e8 = zu1Var.e8();
+                    if (wb2Var.Y6 != e8) {
+                        wb2Var.Y6 = e8;
+                        zu1Var.A0.getClass();
+                        int S = RecyclerView.S(view);
+                        wb2Var.F6 = true;
+                        wb2Var.forceLayout();
+                        if (S >= 0) {
+                            zu1Var.D0.g(S);
+                        }
+                    }
+                    wb2Var.Z6 = zu1Var.n7();
+                    int o72 = zu1Var.o7();
+                    if (wb2Var.a7 != o72) {
+                        wb2Var.a7 = o72;
+                        wb2Var.d4();
+                        wb2Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                Long l = (Long) obj;
+                l1c l1cVar = zu1Var.g2;
+                if (l1cVar != null) {
+                    l1cVar.k(l.longValue(), true);
+                    break;
+                }
+                break;
+            case 6:
+                zu1Var.f0.c.add(((s7) obj).getIconView());
+                break;
+            case 7:
+                b77 b77Var = (b77) obj;
+                zu1 zu1Var2 = this.b;
+                zu1Var2.y5 = b77Var;
+                zu1Var2.H5.k.suggested_post = b77Var.c();
+                zu1Var2.ac(true, null, zu1Var2.H5, null, null, true, 0, null, false, 0L, null, true);
+                break;
+            case 8:
+            case 9:
+                zu1Var.fc((b77) obj);
                 break;
             default:
-                mu1Var.R8 = (Bitmap) obj;
-                Paint paint = new Paint(1);
-                mu1Var.T8 = paint;
-                Bitmap bitmap = mu1Var.R8;
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                mu1Var.S8 = bitmapShader;
-                paint.setShader(bitmapShader);
-                mu1Var.U8 = new Matrix();
-                hx4 hx4Var2 = mu1Var.P8;
-                hx4Var2.a((Bitmap) obj2);
-                tk0.c(hx4Var2, mu1Var.fragmentView);
-                mu1Var.Q8.d();
+                int intValue = ((Integer) obj).intValue();
+                int i = zu1.Ad;
+                zu1Var.Ua(intValue);
                 break;
         }
     }

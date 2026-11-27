@@ -1,58 +1,62 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cq1 extends o72 {
-    public final /* synthetic */ mu1 B0;
+public final class cq1 extends l01 {
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ wb2 f;
+    public final /* synthetic */ zu1 g;
+    public final /* synthetic */ Object h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cq1(mu1 mu1Var, Context context, mu1 mu1Var2, boolean z, wjb wjbVar) {
-        super(context, mu1Var2, z, wjbVar);
-        this.B0 = mu1Var;
+    public /* synthetic */ cq1(zu1 zu1Var, int i, Object obj, wb2 wb2Var, byte b) {
+        this.d = b;
+        this.g = zu1Var;
+        this.e = i;
+        this.h = obj;
+        this.f = wb2Var;
     }
 
-    @Override // o72
-    public final boolean a() {
-        boolean z;
-        mu1 mu1Var = this.B0;
-        if (mu1Var.mb || mu1Var.isInPreviewMode()) {
-            return false;
+    @Override // l01
+    public final void c(boolean z) {
+        switch (this.d) {
+            case 0:
+                if (!z) {
+                    hl.d3(new zd((Object) this, this.e, (byte) 14), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z) {
+                    hl.d3(new zd((Object) this, this.e, (byte) 17), 240L);
+                    break;
+                }
+                break;
         }
-        z = ((d) mu1Var).inBubbleMode;
-        if (z || mu1Var.k0 == null || mu1Var.H3) {
-            return false;
-        }
-        return !mu1Var.a8() || mu1Var.x4;
     }
 
-    @Override // o72
-    public final boolean d() {
-        mu1 mu1Var = this.B0;
-        TLRPC.User user = mu1Var.f;
-        if (user != null && user.linked_community_id != 0) {
-            mu1Var.showDialog(new eo2(mu1Var, mu1Var.f.linked_community_id, null, null));
-            return true;
+    @Override // l01
+    public final void d() {
+        byte b = this.d;
+        wb2 wb2Var = this.f;
+        Object obj = this.h;
+        int i = this.e;
+        zu1 zu1Var = this.g;
+        switch (b) {
+            case 0:
+                zu1Var.lc = i;
+                zu1Var.mc = 1;
+                zu1Var.nc = (CharacterStyle) obj;
+                wb2Var.invalidate();
+                break;
+            default:
+                zu1Var.lc = i;
+                zu1Var.mc = 3;
+                zu1Var.oc = (String) obj;
+                wb2Var.invalidate();
+                break;
         }
-        TLRPC.Chat chat = mu1Var.e;
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
-        }
-        mu1Var.showDialog(new eo2(mu1Var, mu1Var.e.linked_community_id, null, null));
-        return true;
-    }
-
-    @Override // o72
-    public final void f() {
-        mu1 mu1Var = this.B0;
-        mu1Var.ra(mu1Var.Z7() ? "" : null);
-    }
-
-    @Override // o72
-    public final boolean o() {
-        return this.B0.g4 == 3;
     }
 }

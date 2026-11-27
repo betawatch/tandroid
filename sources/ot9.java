@@ -1,38 +1,177 @@
 // default package
 
-import android.app.Activity;
-import android.text.TextUtils;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcelable;
+import android.util.Size;
+import android.util.SizeF;
+import android.util.SparseArray;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ot9 extends xj3 {
-    public final /* synthetic */ cj3 g0;
-    public final /* synthetic */ hi3 h0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ot9 {
+    public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
+    public final LinkedHashMap a;
+    public final LinkedHashMap b;
+    public final LinkedHashMap c;
+    public final LinkedHashMap d;
+    public final ut9 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ot9(hi3 hi3Var, o39 o39Var, Activity activity, int i, int i2, cj3 cj3Var) {
-        super(o39Var, activity, i, i2);
-        this.h0 = hi3Var;
-        this.g0 = cj3Var;
+    public ot9(HashMap hashMap) {
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        this.a = linkedHashMap;
+        this.b = new LinkedHashMap();
+        this.c = new LinkedHashMap();
+        this.d = new LinkedHashMap();
+        this.e = new hq2(this, (byte) 3);
+        linkedHashMap.putAll(hashMap);
     }
 
-    @Override // l5c
-    public final void O(boolean z) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
-        super.O(z);
-        gt9 gt9Var = this.h0.j0;
-        gt9Var.e(this.Z || this.a0 || (arrayList = this.S) == null || !arrayList.isEmpty() || (arrayList2 = this.T) == null || !arrayList2.isEmpty() || (arrayList3 = this.V) == null || !arrayList3.isEmpty() || (arrayList4 = this.U) == null || !arrayList4.isEmpty(), z);
-        if (!TextUtils.isEmpty(this.e0)) {
-            gt9Var.d.setText(k96.M0(2131747975, null));
-            gt9Var.e.setVisibility(8);
+    public static final Bundle a(ot9 ot9Var) {
+        Map map;
+        LinkedHashMap linkedHashMap = ot9Var.a;
+        LinkedHashMap linkedHashMap2 = ot9Var.b;
+        linkedHashMap2.getClass();
+        int size = linkedHashMap2.size();
+        if (size == 0) {
+            map = y24.a;
+        } else if (size != 1) {
+            map = new LinkedHashMap(linkedHashMap2);
         } else {
-            gt9Var.d.setText(k96.M0(2131748039, null));
-            gt9Var.e.setVisibility(0);
-            gt9Var.e.setText(k96.M0(2131748040, null));
+            Map.Entry entry = (Map.Entry) linkedHashMap2.entrySet().iterator().next();
+            map = Collections.singletonMap(entry.getKey(), entry.getValue());
+            map.getClass();
         }
+        Iterator it = map.entrySet().iterator();
+        while (true) {
+            int i = 0;
+            if (!it.hasNext()) {
+                Set<String> keySet = linkedHashMap.keySet();
+                ArrayList arrayList = new ArrayList(keySet.size());
+                ArrayList arrayList2 = new ArrayList(arrayList.size());
+                for (String str : keySet) {
+                    arrayList.add(str);
+                    arrayList2.add(linkedHashMap.get(str));
+                }
+                rx7[] rx7VarArr = {new rx7("keys", arrayList), new rx7("values", arrayList2)};
+                Bundle bundle = new Bundle(2);
+                while (i < 2) {
+                    rx7 rx7Var = rx7VarArr[i];
+                    String str2 = (String) rx7Var.a;
+                    Object obj = rx7Var.b;
+                    if (obj == null) {
+                        bundle.putString(str2, null);
+                    } else if (obj instanceof Boolean) {
+                        bundle.putBoolean(str2, ((Boolean) obj).booleanValue());
+                    } else if (obj instanceof Byte) {
+                        bundle.putByte(str2, ((Number) obj).byteValue());
+                    } else if (obj instanceof Character) {
+                        bundle.putChar(str2, ((Character) obj).charValue());
+                    } else if (obj instanceof Double) {
+                        bundle.putDouble(str2, ((Number) obj).doubleValue());
+                    } else if (obj instanceof Float) {
+                        bundle.putFloat(str2, ((Number) obj).floatValue());
+                    } else if (obj instanceof Integer) {
+                        bundle.putInt(str2, ((Number) obj).intValue());
+                    } else if (obj instanceof Long) {
+                        bundle.putLong(str2, ((Number) obj).longValue());
+                    } else if (obj instanceof Short) {
+                        bundle.putShort(str2, ((Number) obj).shortValue());
+                    } else if (obj instanceof Bundle) {
+                        bundle.putBundle(str2, (Bundle) obj);
+                    } else if (obj instanceof CharSequence) {
+                        bundle.putCharSequence(str2, (CharSequence) obj);
+                    } else if (obj instanceof Parcelable) {
+                        bundle.putParcelable(str2, (Parcelable) obj);
+                    } else if (obj instanceof boolean[]) {
+                        bundle.putBooleanArray(str2, (boolean[]) obj);
+                    } else if (obj instanceof byte[]) {
+                        bundle.putByteArray(str2, (byte[]) obj);
+                    } else if (obj instanceof char[]) {
+                        bundle.putCharArray(str2, (char[]) obj);
+                    } else if (obj instanceof double[]) {
+                        bundle.putDoubleArray(str2, (double[]) obj);
+                    } else if (obj instanceof float[]) {
+                        bundle.putFloatArray(str2, (float[]) obj);
+                    } else if (obj instanceof int[]) {
+                        bundle.putIntArray(str2, (int[]) obj);
+                    } else if (obj instanceof long[]) {
+                        bundle.putLongArray(str2, (long[]) obj);
+                    } else if (obj instanceof short[]) {
+                        bundle.putShortArray(str2, (short[]) obj);
+                    } else if (obj instanceof Object[]) {
+                        Class<?> componentType = obj.getClass().getComponentType();
+                        componentType.getClass();
+                        if (Parcelable.class.isAssignableFrom(componentType)) {
+                            bundle.putParcelableArray(str2, (Parcelable[]) obj);
+                        } else if (String.class.isAssignableFrom(componentType)) {
+                            bundle.putStringArray(str2, (String[]) obj);
+                        } else if (CharSequence.class.isAssignableFrom(componentType)) {
+                            bundle.putCharSequenceArray(str2, (CharSequence[]) obj);
+                        } else {
+                            if (!Serializable.class.isAssignableFrom(componentType)) {
+                                throw new IllegalArgumentException("Illegal value array type " + componentType.getCanonicalName() + " for key \"" + str2 + '\"');
+                            }
+                            bundle.putSerializable(str2, (Serializable) obj);
+                        }
+                    } else if (obj instanceof Serializable) {
+                        bundle.putSerializable(str2, (Serializable) obj);
+                    } else if (obj instanceof IBinder) {
+                        bundle.putBinder(str2, (IBinder) obj);
+                    } else if (obj instanceof Size) {
+                        bundle.putSize(str2, (Size) obj);
+                    } else {
+                        if (!(obj instanceof SizeF)) {
+                            throw new IllegalArgumentException("Illegal value type " + obj.getClass().getCanonicalName() + " for key \"" + str2 + '\"');
+                        }
+                        bundle.putSizeF(str2, (SizeF) obj);
+                    }
+                    i++;
+                }
+                return bundle;
+            }
+            Map.Entry entry2 = (Map.Entry) it.next();
+            String str3 = (String) entry2.getKey();
+            Bundle c = ((ut9) entry2.getValue()).c();
+            str3.getClass();
+            if (c != null) {
+                while (i < 29) {
+                    Class cls = f[i];
+                    cls.getClass();
+                    if (!cls.isInstance(c)) {
+                        i++;
+                    }
+                }
+                throw new IllegalArgumentException("Can't put value with type " + c.getClass() + " into saved state");
+            }
+            Object obj2 = ot9Var.c.get(str3);
+            qj7 qj7Var = obj2 instanceof qj7 ? (qj7) obj2 : null;
+            if (qj7Var != null) {
+                qj7Var.i(c);
+            } else {
+                linkedHashMap.put(str3, c);
+            }
+            k0b k0bVar = (k0b) ot9Var.d.get(str3);
+            if (k0bVar != null) {
+                k0bVar.b(c);
+            }
+        }
+    }
+
+    public ot9() {
+        this.a = new LinkedHashMap();
+        this.b = new LinkedHashMap();
+        this.c = new LinkedHashMap();
+        this.d = new LinkedHashMap();
+        this.e = new hq2(this, (byte) 3);
     }
 }

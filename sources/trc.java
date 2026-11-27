@@ -1,19 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class trc {
-    public final int a;
-    public final long b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class trc implements qs3 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yrc b;
 
-    public trc(int i, long j) {
-        this.a = i;
-        this.b = j;
+    public /* synthetic */ trc(yrc yrcVar, byte b) {
+        this.a = b;
+        this.b = yrcVar;
     }
 
-    public static trc a(ja3 ja3Var, xu7 xu7Var) {
-        ja3Var.d(xu7Var.a, 0, 8, false);
-        xu7Var.N(0);
-        return new trc(xu7Var.m(), xu7Var.r());
+    @Override // qs3
+    public final void a(vpa vpaVar, float f, float f2) {
+        byte b = this.a;
+        yrc yrcVar = this.b;
+        switch (b) {
+            case 0:
+                yrcVar.c.setScaleX(f);
+                yrcVar.c.setScaleY(f);
+                break;
+            default:
+                yrcVar.Q = f2;
+                break;
+        }
     }
 }

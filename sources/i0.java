@@ -1,73 +1,37 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.text.style.ReplacementSpan;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class i0 extends ReplacementSpan {
-    public final Paint a;
-    public final Path b;
-    public final Rect c;
-    public float d;
-    public float e;
-    public float f;
-    public float h;
-    public float n;
+public final class i0 extends wkb {
+    public boolean L;
+    public float M;
+    public float N;
+    public ValueAnimator O;
 
-    public i0() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        this.c = new Rect();
-        this.d = -1.0f;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-    }
-
-    public final void a(Paint paint) {
-        float textSize = paint.getTextSize();
-        if (textSize == this.d) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        View childAt = getChildAt(0);
+        TextView valueTextView = getValueTextView();
+        if (childAt == null || valueTextView == null) {
             return;
         }
-        this.d = textSize;
-        this.e = 0.62f * textSize;
-        this.f = 0.1f * textSize;
-        this.h = textSize * 0.3f;
-        paint.getTextBounds("x", 0, 1, this.c);
-        this.n = r3.height();
-        float f = this.e;
-        float f2 = 0.475f * f;
-        float f3 = f * 0.46f;
-        Path path = this.b;
-        path.rewind();
-        path.moveTo(0.0f, 0.0f);
-        path.lineTo(this.e, 0.0f);
-        path.moveTo(this.e - f2, -f3);
-        path.lineTo(this.e, 0.0f);
-        path.lineTo(this.e - f2, f3);
-        this.a.setStrokeWidth(this.f);
+        int measuredHeight = childAt.getMeasuredHeight();
+        int measuredHeight2 = valueTextView.getMeasuredHeight();
+        int L = hl.L(3.0f);
+        float L2 = (hl.L(60.0f) - ((measuredHeight + L) + measuredHeight2)) / 2.0f;
+        childAt.setTranslationY(hl.R1((hl.L(50.0f) - measuredHeight) / 2.0f, L2, this.M) - childAt.getTop());
+        valueTextView.setTranslationY((((1.0f - this.M) * hl.L(5.0f)) + ((L2 + measuredHeight) + L)) - valueTextView.getTop());
+        valueTextView.setAlpha(this.M);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        a(paint);
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        paint2.setColor(color);
-        canvas.save();
-        de9.n(this.n, 2.0f, i4, (this.f / 2.0f) + f, canvas);
-        canvas.drawPath(this.b, paint2);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        a(paint);
-        return (int) Math.ceil(this.f + this.e + this.h);
+    @Override // wkb, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        setMeasuredDimension(getMeasuredWidth(), Math.round(hl.U1(this.M, hl.L(50.0f), hl.L(60.0f))));
     }
 }

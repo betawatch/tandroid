@@ -1,154 +1,21 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.SurfaceTexture;
-import android.os.SystemClock;
-import android.view.Surface;
-import android.view.TextureView;
-import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class a86 extends TextureView implements zn9, TextureView.SurfaceTextureListener {
-    public final gi3 a;
-    public volatile Surface b;
-    public volatile boolean c;
-    public int d;
-    public int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class a86 {
+    public final ne5 a;
+    public volatile y76 b;
 
-    public a86(Context context, gi3 gi3Var) {
-        super(context);
-        this.a = gi3Var;
-        setOpaque(false);
-        setSurfaceTextureListener(this);
+    public a86(Looper looper, Object obj, String str) {
+        this.a = new ne5(looper);
+        xve.i(obj, "Listener must not be null");
+        xve.f(str);
+        this.b = new y76(obj, str);
     }
 
-    @Override // zn9
-    public final void a(int i, int i2) {
-        gl.c3(new bt((Object) this, i, i2, (byte) 9));
-    }
-
-    @Override // zn9
-    public final boolean b() {
-        return this.c;
-    }
-
-    public final void c() {
-        this.c = isAttachedToWindow() && getWindowVisibility() == 0 && isShown();
-    }
-
-    @Override // zn9
-    public Surface getSurface() {
-        return this.b;
-    }
-
-    public int getVideoHeight() {
-        return this.e;
-    }
-
-    public int getVideoWidth() {
-        return this.d;
-    }
-
-    @Override // android.view.TextureView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        c();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        c();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3;
-        int defaultSize = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i);
-        int defaultSize2 = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i2);
-        int i4 = this.d;
-        if (i4 <= 0 || (i3 = this.e) <= 0 || defaultSize <= 0 || defaultSize2 <= 0) {
-            setMeasuredDimension(defaultSize, defaultSize2);
-        } else {
-            float f = i4 / i3;
-            setMeasuredDimension(Math.min(defaultSize, Math.round(defaultSize2 * f)), Math.min(defaultSize2, Math.round(defaultSize / f)));
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-        this.b = new Surface(surfaceTexture);
-        um9.I(this, null);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        Surface surface = this.b;
-        this.b = null;
-        um9.I(this, new y76(surface, surfaceTexture, (byte) 2));
-        return false;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int i;
-        u76 u76Var = (u76) this.a.a;
-        if (!u76Var.y) {
-            u76Var.onFirstFrameRendered();
-        }
-        a86 a86Var = u76Var.e;
-        if (a86Var != null && a86Var.isAvailable() && e66.e(512)) {
-            int videoWidth = u76Var.e.getVideoWidth();
-            int videoHeight = u76Var.e.getVideoHeight();
-            if (videoWidth <= 0 || videoHeight <= 0) {
-                return;
-            }
-            if (u76Var.e.getMeasuredWidth() < u76Var.getMeasuredWidth() || u76Var.e.getMeasuredHeight() < u76Var.getMeasuredHeight()) {
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                if (elapsedRealtime - u76Var.n >= 100) {
-                    u76Var.n = elapsedRealtime;
-                    int i2 = 48;
-                    if (videoWidth >= videoHeight) {
-                        i = Math.max(1, Math.round((videoHeight * 48) / videoWidth));
-                    } else {
-                        i2 = Math.max(1, Math.round((videoWidth * 48) / videoHeight));
-                        i = 48;
-                    }
-                    Bitmap bitmap = u76Var.h;
-                    if (bitmap == null || bitmap.getWidth() != i2 || u76Var.h.getHeight() != i) {
-                        u76Var.h = Bitmap.createBitmap(i2, i, Bitmap.Config.ARGB_8888);
-                    }
-                    try {
-                        u76Var.e.getBitmap(u76Var.h);
-                        Utilities.stackBlurBitmap(u76Var.h, 3);
-                        s71 s71Var = u76Var.f;
-                        s71Var.c = u76Var.h;
-                        s71Var.invalidate();
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // android.view.TextureView, android.view.View
-    public final void onVisibilityChanged(View view, int i) {
-        super.onVisibilityChanged(view, i);
-        c();
-    }
-
-    @Override // android.view.View
-    public final void onWindowVisibilityChanged(int i) {
-        super.onWindowVisibilityChanged(i);
-        this.c = isAttachedToWindow() && i == 0 && isShown();
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
+    public final void a(z76 z76Var) {
+        this.a.execute(new xs4((Object) this, (Object) z76Var, (byte) 15));
     }
 }

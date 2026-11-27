@@ -1,86 +1,35 @@
 // default package
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import org.json.JSONObject;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class nr0 implements SensorEventListener {
-    public long a;
-    public float[] b;
-    public float[] c;
-    public float[] d;
-    public final /* synthetic */ or0 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nr0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rr0 b;
+    public final /* synthetic */ AnimatorSet c;
 
-    public nr0(or0 or0Var) {
-        this.e = or0Var;
+    public /* synthetic */ nr0(rr0 rr0Var, AnimatorSet animatorSet, byte b) {
+        this.a = b;
+        this.b = rr0Var;
+        this.c = animatorSet;
     }
 
-    public final void a() {
-        if (this.b != null) {
-            or0 or0Var = this.e;
-            if (or0Var.k != null) {
-                this.a = System.currentTimeMillis();
-                float[] fArr = this.c;
-                if (fArr == null) {
-                    fArr = new float[9];
-                    this.c = fArr;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        AnimatorSet animatorSet = this.c;
+        rr0 rr0Var = this.b;
+        switch (b) {
+            case 0:
+                rr0Var.c.postOnAnimation(new nr0(rr0Var, animatorSet, (byte) 1));
+                break;
+            default:
+                if (rr0Var.y == animatorSet) {
+                    animatorSet.start();
+                    break;
                 }
-                float[] fArr2 = this.d;
-                if (fArr2 == null) {
-                    fArr2 = new float[4];
-                    this.d = fArr2;
-                }
-                float[] fArr3 = this.b;
-                if (fArr3.length > 4) {
-                    System.arraycopy(fArr3, 0, fArr2, 0, 4);
-                    SensorManager.getRotationMatrixFromVector(this.c, this.d);
-                } else {
-                    SensorManager.getRotationMatrixFromVector(fArr, fArr3);
-                }
-                SensorManager.getOrientation(this.c, new float[3]);
-                try {
-                    JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("absolute", false);
-                    jSONObject.put("alpha", -r2[0]);
-                    jSONObject.put("beta", -r2[1]);
-                    jSONObject.put("gamma", r2[2]);
-                    or0Var.k.c("window.Telegram.WebView.receiveEvent('device_orientation_changed', " + jSONObject + ");");
-                } catch (Exception unused) {
-                }
-            }
+                break;
         }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        or0 or0Var = this.e;
-        oz ozVar = or0Var.s;
-        if (ozVar != null) {
-            gl.r(ozVar);
-            or0Var.s = null;
-        }
-        if (or0Var.l || or0Var.k == null) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis() - this.a;
-        long j = or0Var.j;
-        if (currentTimeMillis < j) {
-            oz ozVar2 = new oz(this, (byte) 26);
-            or0Var.s = ozVar2;
-            gl.d3(ozVar2, j - currentTimeMillis);
-        } else {
-            if (sensorEvent.sensor.getType() == 15) {
-                this.b = sensorEvent.values;
-            }
-            a();
-        }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

@@ -1,16 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class jm5 extends em5 {
-    @Override // fm5
-    public final fm5 a(Object obj) {
-        c(obj);
-        return this;
-    }
+import java.io.Closeable;
 
-    public final w59 f() {
-        this.c = true;
-        return mm5.o(this.b, this.a);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface jm5 extends Closeable, h36, yt7 {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @es7(y26.ON_DESTROY)
+    void close();
 }

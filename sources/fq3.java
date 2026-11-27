@@ -1,75 +1,162 @@
 // default package
 
+import android.app.Activity;
+import android.net.Uri;
+import android.os.Build;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import java.io.File;
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fq3 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jq3 b;
+public final class fq3 extends ImageView {
+    public int a;
+    public FrameLayout b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public di2 f;
+    public dab h;
+    public eq3 n;
+    public c8b r;
+    public cq3 s;
+    public Uri w;
+    public boolean x;
+    public boolean y;
 
-    public /* synthetic */ fq3(jq3 jq3Var, byte b) {
-        this.a = b;
-        this.b = jq3Var;
+    public final void a() {
+        dab dabVar = this.h;
+        int i = Build.VERSION.SDK_INT;
+        if ((i <= 28 || f11.b) && getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
+            Activity W = hl.W(getContext());
+            if (W != null) {
+                W.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, jn7.x1);
+                return;
+            }
+            return;
+        }
+        if (this.c || this.r == null) {
+            return;
+        }
+        if (this.w != null) {
+            if (i >= 30) {
+                getContext().getContentResolver().delete(this.w, null);
+                this.w = null;
+            } else if (i < 29) {
+                try {
+                    new File(this.w.toString()).delete();
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                }
+                this.w = null;
+            }
+        }
+        this.c = true;
+        eq3 eq3Var = this.n;
+        if (eq3Var != null) {
+            eq3Var.a();
+            this.n = null;
+        }
+        cq3 cq3Var = this.s;
+        if (cq3Var != null) {
+            cq3Var.a(true);
+            this.s = null;
+        }
+        if (dabVar != null) {
+            this.e = true;
+            dabVar.a(new zp3(this, (byte) 0));
+        }
+        d();
+        if (dabVar == null) {
+            b();
+        }
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        File file;
-        File file2;
-        byte b = this.a;
-        jq3 jq3Var = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                long currentTimeMillis = System.currentTimeMillis();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                for (int i = 0; i < arrayList.size(); i++) {
-                    f4b a = ((iq3) arrayList.get(i)).a();
-                    if ((a.v() || ((file = a.L) != null && file.exists())) && currentTimeMillis - a.d <= 604800000) {
-                        arrayList4.add(a);
-                        arrayList2.add(Long.valueOf(a.b));
-                    } else {
-                        arrayList3.add(a);
-                    }
-                }
-                jq3Var.c(arrayList3);
-                jq3Var.f = false;
-                jq3Var.e = true;
-                g2b M1 = na7.q1(jq3Var.a).M1();
-                int size = arrayList4.size();
-                int i2 = 0;
-                while (i2 < size) {
-                    Object obj2 = arrayList4.get(i2);
-                    i2++;
-                    f2b f2bVar = new f2b(M1, (f4b) obj2);
-                    M1.c(f2bVar.K, f2bVar, M1.b, false);
-                }
-                kk7.f(M1.a).k(kk7.x5, new Object[0]);
-                break;
-            default:
-                ArrayList arrayList5 = (ArrayList) obj;
-                jq3Var.getClass();
-                long currentTimeMillis2 = System.currentTimeMillis();
-                ArrayList arrayList6 = new ArrayList();
-                ArrayList arrayList7 = new ArrayList();
-                for (int i3 = 0; i3 < arrayList5.size(); i3++) {
-                    f4b a2 = ((iq3) arrayList5.get(i3)).a();
-                    if ((a2.v() || ((file2 = a2.L) != null && file2.exists())) && (!a2.g ? currentTimeMillis2 - a2.d <= 604800000 : currentTimeMillis2 <= a2.J)) {
-                        jq3Var.b.add(a2);
-                        arrayList6.add(Long.valueOf(a2.b));
-                    } else {
-                        arrayList7.add(a2);
-                    }
-                }
-                jq3Var.c(arrayList7);
-                jq3Var.d = false;
-                jq3Var.c = true;
-                kk7.f(jq3Var.a).k(kk7.A5, new Object[0]);
-                break;
+    public final void b() {
+        c8b c8bVar;
+        if (!this.e || (c8bVar = this.r) == null) {
+            return;
+        }
+        byte b = 0;
+        this.e = false;
+        byte b2 = 1;
+        if (c8bVar.D()) {
+            this.d = true;
+            eq3 eq3Var = new eq3(getContext());
+            this.n = eq3Var;
+            eq3Var.setOnCancelListener(new zp3(this, (byte) 1));
+            this.b.addView(this.n);
+            File s0 = hl.s0(false);
+            this.s = new cq3(this.a, this.r, s0, new aq3(this, s0, b), new bq3(this, (byte) 0), new zp3(this, (byte) 2));
+        } else {
+            this.d = false;
+            File q0 = hl.q0("png", false);
+            if (q0 == null) {
+                this.n.b(R.raw.error, 3500, ob6.N0("UnknownError"));
+                this.c = false;
+                d();
+                return;
+            }
+            Utilities.i.c(new aq3(this, q0, b2));
+        }
+        d();
+    }
+
+    public final void c(String str) {
+        eq3 eq3Var = this.n;
+        if (eq3Var != null) {
+            eq3Var.a();
+            this.n = null;
+        }
+        eq3 eq3Var2 = new eq3(getContext());
+        this.n = eq3Var2;
+        eq3Var2.b(R.raw.error, 3500, str);
+        this.b.addView(this.n);
+    }
+
+    public final void d() {
+        boolean z = this.x;
+        boolean z2 = this.c;
+        boolean z3 = false;
+        if (z != (z2 && !this.d)) {
+            boolean z4 = z2 && !this.d;
+            this.x = z4;
+            if (z4) {
+                hl.M3(this, this.f);
+            } else {
+                hl.L3(this, R.drawable.media_download);
+            }
+        }
+        if (this.y != (this.c && this.d)) {
+            clearAnimation();
+            ViewPropertyAnimator animate = animate();
+            if (this.c && this.d) {
+                z3 = true;
+            }
+            this.y = z3;
+            animate.alpha(z3 ? 0.4f : 1.0f).start();
+        }
+    }
+
+    public void setEntry(c8b c8bVar) {
+        this.w = null;
+        this.r = c8bVar;
+        cq3 cq3Var = this.s;
+        if (cq3Var != null) {
+            cq3Var.a(true);
+            this.s = null;
+        }
+        eq3 eq3Var = this.n;
+        if (eq3Var != null) {
+            eq3Var.a();
+            this.n = null;
+        }
+        if (c8bVar == null) {
+            this.c = false;
+            d();
         }
     }
 }

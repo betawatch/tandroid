@@ -1,22 +1,40 @@
 // default package
 
 import android.content.Context;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wab extends ld5 {
-    public final hn r;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class wab extends as3 {
+    public final /* synthetic */ rbb c0;
 
-    public wab(Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        hn hnVar = new hn(context, true, true, true);
-        this.r = hnVar;
-        hnVar.b(0.45f, 240L, s33.h);
-        hnVar.setGravity(k96.a0 ? 3 : 5);
-        hnVar.setTextSize(gl.L(15.0f));
-        hnVar.setTypeface(gl.o());
-        zkb.U(hnVar, bkb.K6, wjbVar);
-        addView(hnVar, nme.d(-2, 24.0f, (k96.a0 ? 3 : 5) | 80, 24.0f, 0.0f, 24.0f, 0.0f));
-        zkb.h(bkb.g5, wjbVar, this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wab(rbb rbbVar, Context context, boolean z) {
+        super(context, z);
+        this.c0 = rbbVar;
+    }
+
+    @Override // as3
+    public final void k0(boolean z) {
+        rbb rbbVar = this.c0;
+        rbbVar.p1.b(rbbVar.d1.getText());
+        rbbVar.p1.a(false, z, rbbVar.l0);
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void receivedAmplitude(double d) {
+        u59 u59Var = this.c0.P0;
+        if (u59Var != null) {
+            u59Var.h0 = Utilities.i((float) (d / 1800.0d), 1.0f, 0.0f);
+        }
+    }
+
+    @Override // as3, org.telegram.messenger.camera.CameraView
+    public final void toggleDual() {
+        super.toggleDual();
+        rbb rbbVar = this.c0;
+        rbbVar.G0.setValue(isDual());
+        rbbVar.G0.setContentDescription(ob6.M0(isDual() ? 2131754882 : 2131754883, null));
+        rbbVar.d0(rbbVar.A());
     }
 }

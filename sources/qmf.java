@@ -1,0 +1,43 @@
+// default package
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qmf extends ybd {
+    public final transient Object[] e;
+
+    public qmf(Object[] objArr) {
+        super((byte) 5);
+        this.e = objArr;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:7:0x001b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001c A[RETURN] */
+    @Override // ybd, java.util.Map
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object get(Object obj) {
+        Object obj2;
+        if (obj != null) {
+            Object[] objArr = this.e;
+            Object obj3 = objArr[0];
+            obj3.getClass();
+            if (obj3.equals(obj)) {
+                obj2 = objArr[1];
+                obj2.getClass();
+                if (obj2 != null) {
+                    return null;
+                }
+                return obj2;
+            }
+        }
+        obj2 = null;
+        if (obj2 != null) {
+        }
+    }
+
+    @Override // java.util.Map
+    public final int size() {
+        return 1;
+    }
+}

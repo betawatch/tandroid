@@ -1,129 +1,190 @@
 // default package
 
-import android.os.Handler;
+import android.graphics.Bitmap;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pj9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ak9 b;
+public final class pj9 {
+    public static ColorMatrixColorFilter f;
+    public final ImageReceiver a;
+    public final ImageReceiver b;
+    public Bitmap c;
+    public final RadialProgress2 d;
+    public p07 e;
 
-    public /* synthetic */ pj9(ak9 ak9Var, byte b) {
-        this.a = b;
-        this.b = ak9Var;
+    public pj9(mj9 mj9Var, vnb vnbVar) {
+        this.a = new ImageReceiver(mj9Var);
+        this.b = new ImageReceiver(mj9Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(mj9Var, vnbVar);
+        this.d = radialProgress2;
+        radialProgress2.d = -1;
+        radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
+        radialProgress2.setIcon(3, false, false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        jk9 jk9Var;
-        dk9 dk9Var;
-        boolean z;
-        byte b = this.a;
-        byte b2 = 0;
-        ak9 ak9Var = this.b;
-        switch (b) {
-            case 0:
-                ak9Var.q();
-                return;
-            case 1:
-                int w = ak9Var.w();
-                if (w == ak9Var.B0 || (jk9Var = ak9Var.v) == null) {
-                    return;
-                }
-                ak9Var.B0 = w;
-                jk9Var.s0 = w;
-                Handler handler = jk9Var.u;
-                if (jk9Var.r0 && handler != null) {
-                    handler.post(new on7((Object) jk9Var, w, (byte) 12));
-                }
-                ak9Var.j.b("display rotation applied: degrees=" + w);
-                return;
-            case 2:
-                ak9Var.a0();
-                return;
-            case 3:
-                Handler handler2 = ak9Var.n;
-                if (handler2 != null) {
-                    handler2.post(new pj9(ak9Var, (byte) 4));
-                    return;
-                }
-                return;
-            case 4:
-                if (!ak9Var.U || ak9Var.z == null || (dk9Var = ak9Var.w) == null) {
-                    return;
-                }
-                synchronized (dk9Var) {
-                    z = dk9Var.E;
-                }
-                if (z) {
-                    return;
-                }
-                try {
-                    dk9 dk9Var2 = ak9Var.w;
-                    ak9Var.x = dk9Var2;
-                    Handler handler3 = ak9Var.n;
-                    if (handler3 != null) {
-                        handler3.removeCallbacks(ak9Var.k1);
-                        handler3.postDelayed(ak9Var.k1, 3000L);
-                    }
-                    dk9Var2.t(new sj9(ak9Var, dk9Var2, b2), new sj9(ak9Var, dk9Var2, (byte) 1));
-                    ak9Var.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + ak9.x(ak9Var.C0));
-                    return;
-                } catch (RuntimeException e) {
-                    ak9Var.f();
-                    ak9Var.M(e);
-                    return;
-                }
-            case 5:
-                dk9 dk9Var3 = ak9Var.x;
-                if (!ak9Var.U || ak9Var.Y || dk9Var3 == null || ak9Var.w != dk9Var3) {
-                    return;
-                }
-                ak9Var.x = null;
-                ak9Var.M(new IllegalStateException("Timed out waiting for synchronized audio and video start"));
-                return;
-            case 6:
-                if (!ak9Var.k0 || ak9Var.M <= 0.0f) {
-                    ak9Var.a();
-                    return;
-                } else {
-                    if (!ak9Var.U || ak9Var.V || ak9Var.z == null || !ak9Var.l0) {
-                        return;
-                    }
-                    ak9Var.v("zoom requested", null, 5);
-                    return;
-                }
-            case 7:
-                ak9Var.U = false;
-                ak9Var.f();
-                dk9 dk9Var4 = ak9Var.w;
-                if (dk9Var4 != null) {
-                    long p = dk9Var4.p();
-                    jk9 jk9Var2 = ak9Var.v;
-                    if (jk9Var2 != null && p != Long.MAX_VALUE) {
-                        jk9Var2.q = Math.max(0L, p) * 1000;
-                        Handler handler4 = jk9Var2.u;
-                        if (handler4 != null) {
-                            handler4.removeCallbacks(jk9Var2.y0);
+    public final void a() {
+        String sb;
+        TLRPC.Photo photo;
+        TLRPC.Document document;
+        TLRPC.PhotoSize photoSize;
+        int abs;
+        p07 p07Var = this.e;
+        TLRPC.PhotoSize photoSize2 = null;
+        ImageReceiver imageReceiver = this.a;
+        if (p07Var == null) {
+            imageReceiver.g0(null);
+            return;
+        }
+        int i = hl.q.x;
+        String m = qd4.m(i, i, "_");
+        StringBuilder sb2 = new StringBuilder();
+        p07 p07Var2 = this.e;
+        if (p07Var2 == null) {
+            sb = "null";
+        } else {
+            String str = p07Var2.b ? "v" : p07Var2.c ? "a" : "p";
+            if (p07Var2.e != null) {
+                StringBuilder l = c00.l(str, ":local:");
+                l.append(this.e.e);
+                sb = l.toString();
+            } else {
+                long j = 0;
+                if (p07Var2.b()) {
+                    p07 p07Var3 = this.e;
+                    TLRPC.Document document2 = p07Var3.h;
+                    if (document2 != null) {
+                        j = document2.id;
+                    } else {
+                        TLRPC.Photo photo2 = p07Var3.g;
+                        if (photo2 != null) {
+                            j = photo2.id;
                         }
                     }
                 }
-                ak9Var.j();
-                dk9 dk9Var5 = ak9Var.w;
-                if (dk9Var5 != null) {
-                    dk9Var5.u();
-                    ak9Var.w = null;
-                }
-                ak9Var.Y = false;
-                ul9 ul9Var = (ul9) ak9Var.k.b;
-                ul9Var.i.post(new il9(ul9Var, (byte) 3));
-                return;
-            case 8:
-                ak9Var.G();
-                return;
-            default:
-                ak9Var.a0();
-                return;
+                StringBuilder l2 = c00.l(str, ":");
+                l2.append((int) this.e.a);
+                l2.append(":");
+                l2.append(j);
+                sb = l2.toString();
+            }
         }
+        sb2.append(sb);
+        sb2.append("@");
+        sb2.append(m);
+        if (sb2.toString().equals(null)) {
+            return;
+        }
+        this.e.getClass();
+        p07 p07Var4 = this.e;
+        boolean z = p07Var4.b;
+        String str2 = p07Var4.e;
+        if (!z) {
+            if (str2 != null) {
+                imageReceiver.o0(p07Var4.l, p07Var4.m, true);
+                imageReceiver.d0(jn5.g(this.e.e), m, null, null, null, 0);
+                return;
+            } else {
+                if (!p07Var4.b() || (photo = this.e.g) == null) {
+                    imageReceiver.g0(null);
+                    return;
+                }
+                TLRPC.PhotoSize w = xb4.w(photo.sizes, hl.Y0(false), false, null, false);
+                TLRPC.PhotoSize w2 = xb4.w(this.e.g.sizes, 100, false, null, false);
+                imageReceiver.o0(0, 0, false);
+                imageReceiver.Z(jn5.i(w, this.e.g), m, jn5.i(w2, this.e.g), m, null, 0L, null, this.e.g, 0);
+                return;
+            }
+        }
+        if (str2 != null) {
+            imageReceiver.o0(0, 0, false);
+            imageReceiver.Y(jn5.o(this.e.e), "g", null, m, null, m, null, 0L, null, null, 0);
+            return;
+        }
+        if (!p07Var4.b() || (document = this.e.h) == null) {
+            imageReceiver.g0(null);
+            return;
+        }
+        ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
+        int Y0 = hl.Y0(false);
+        if (arrayList == null) {
+            photoSize = null;
+        } else {
+            int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            photoSize = null;
+            for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                TLRPC.PhotoSize photoSize3 = arrayList.get(i3);
+                if (!(photoSize3 instanceof TLRPC.TL_photoStrippedSize) && !(photoSize3 instanceof TLRPC.TL_photoPathSize) && (abs = Math.abs(Math.max(photoSize3.w, photoSize3.h) - Y0)) < i2) {
+                    photoSize = photoSize3;
+                    i2 = abs;
+                }
+            }
+        }
+        ArrayList<TLRPC.PhotoSize> arrayList2 = this.e.h.thumbs;
+        if (arrayList2 != null) {
+            int i4 = 0;
+            while (true) {
+                if (i4 >= arrayList2.size()) {
+                    break;
+                }
+                if (arrayList2.get(i4) instanceof TLRPC.TL_photoStrippedSize) {
+                    photoSize2 = arrayList2.get(i4);
+                    break;
+                }
+                i4++;
+            }
+        }
+        imageReceiver.o0(0, 0, false);
+        imageReceiver.Y(jn5.b(this.e.h), "g", jn5.c(photoSize, this.e.h), m, jn5.c(photoSize2, this.e.h), m, null, 0L, null, this.e.h, 0);
+    }
+
+    public final boolean b() {
+        ImageReceiver imageReceiver;
+        Bitmap n;
+        if (c() && (n = (imageReceiver = this.a).n()) != null && !n.isRecycled()) {
+            ImageReceiver imageReceiver2 = this.b;
+            if ((imageReceiver2.n() == null || imageReceiver.m() == null) && (n != this.c || imageReceiver2.n() == null)) {
+                this.c = n;
+                imageReceiver2.f0(Utilities.D(n, false));
+                ColorMatrixColorFilter colorMatrixColorFilter = f;
+                if (colorMatrixColorFilter == null) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    hl.l2(colorMatrix, 0.9f);
+                    hl.i(colorMatrix, 0.6f);
+                    ColorMatrixColorFilter colorMatrixColorFilter2 = new ColorMatrixColorFilter(colorMatrix);
+                    f = colorMatrixColorFilter2;
+                    colorMatrixColorFilter = colorMatrixColorFilter2;
+                }
+                imageReceiver2.p1 = colorMatrixColorFilter;
+            }
+            if (imageReceiver2.n() != null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final boolean c() {
+        p07 p07Var = this.e;
+        if (p07Var != null) {
+            return p07Var.e != null || p07Var.b();
+        }
+        return false;
+    }
+
+    public final boolean d() {
+        p07 p07Var = this.e;
+        if (p07Var == null || p07Var.b || p07Var.b()) {
+            return false;
+        }
+        int i = this.e.l;
+        return i == 90 || i == 270;
     }
 }

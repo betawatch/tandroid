@@ -1,77 +1,39 @@
 // default package
 
-import android.os.Bundle;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class l13 {
-    public Object a;
+public final /* synthetic */ class l13 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r13 b;
 
-    public l13(byte b) {
+    public /* synthetic */ l13(r13 r13Var, byte b) {
+        this.a = b;
+        this.b = r13Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        r13 r13Var = this.b;
         switch (b) {
-            case 2:
-                this.a = new Object();
-                break;
-            case 3:
+            case 0:
+                h23 h23Var = r13Var.f;
+                if (h23Var != null) {
+                    h23Var.B(new v03("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", (byte) 2));
+                    return;
+                } else {
+                    ur5.e("callback");
+                    throw null;
+                }
             default:
-                this.a = new LinkedHashMap();
-                break;
-            case 4:
-                this.a = new HashMap();
-                break;
+                h23 h23Var2 = r13Var.f;
+                if (h23Var2 != null) {
+                    h23Var2.B(new v03("No provider data returned.", (byte) 2));
+                    return;
+                } else {
+                    ur5.e("callback");
+                    throw null;
+                }
         }
-    }
-
-    public abstract Object a(Object obj);
-
-    public Object b(k13 k13Var) {
-        return null;
-    }
-
-    public final Object c(Object obj) {
-        synchronized (((HashMap) this.a)) {
-            if (((HashMap) this.a).containsKey(obj)) {
-                return ((HashMap) this.a).get(obj);
-            }
-            Object a = a(obj);
-            ((HashMap) this.a).put(obj, a);
-            return a;
-        }
-    }
-
-    public void d() {
-        synchronized (this.a) {
-        }
-    }
-
-    public final void e() {
-        synchronized (this) {
-        }
-    }
-
-    public final void f() {
-        synchronized (this) {
-        }
-        e();
-    }
-
-    public final void g() {
-        synchronized (this) {
-        }
-    }
-
-    public /* synthetic */ l13(Object obj) {
-        this.a = obj;
-    }
-
-    public l13(String str, Bundle bundle) {
-        bundle.getClass();
-        this.a = bundle;
-    }
-
-    public l13(buc bucVar, String str, pd5 pd5Var) {
-        this.a = bucVar;
     }
 }

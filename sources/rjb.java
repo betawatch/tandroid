@@ -1,52 +1,63 @@
 // default package
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rjb extends Drawable {
-    public final RectF a = new RectF();
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ float f;
+public final class rjb extends wma {
+    public final pm3 g0;
+    public final /* synthetic */ vnb h0;
+    public final /* synthetic */ pjb i0;
 
-    public rjb(int i, int i2, int i3, int i4, float f) {
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-        this.f = f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rjb(Context context, vnb vnbVar, pjb pjbVar) {
+        super(context, null);
+        this.h0 = vnbVar;
+        this.i0 = pjbVar;
+        this.g0 = new pm3((byte) 7);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.a;
-        rectF.set(bounds);
-        rectF.left += this.b;
-        rectF.top += this.c;
-        rectF.right -= this.d;
-        rectF.bottom -= this.e;
-        float f = this.f;
-        canvas.drawRoundRect(rectF, f, f, bkb.z);
+    @Override // wma
+    public final boolean O() {
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
+    @Override // wma
+    public final boolean P() {
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        if (view != this.i0) {
+            return super.drawChild(canvas, view, j);
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), jn7.d4, 31);
+        boolean drawChild = super.drawChild(canvas, view, j);
+        canvas.save();
+        RectF rectF = hl.P;
+        rectF.set(0.0f, 0.0f, hl.L(45.0f), getHeight());
+        this.g0.r(canvas, rectF, 0, 1.0f);
+        canvas.restore();
+        canvas.restore();
+        return drawChild;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // wma
+    public final vnb getResourceProvider() {
+        return this.h0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(hl.q.x, TLObject.FLAG_30);
+        pjb pjbVar = this.i0;
+        pjbVar.measure(makeMeasureSpec, i2);
+        setMeasuredDimension(View.MeasureSpec.getSize(i), pjbVar.getMeasuredHeight() + hl.L(24.0f));
     }
 }

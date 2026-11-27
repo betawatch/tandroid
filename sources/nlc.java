@@ -1,43 +1,47 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class nlc implements TextWatcher {
-    public final /* synthetic */ String[] a;
-    public final /* synthetic */ mhc b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ ox1 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nlc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public nlc(String[] strArr, mhc mhcVar, Runnable[] runnableArr, ox1 ox1Var) {
-        this.a = strArr;
-        this.b = mhcVar;
-        this.c = runnableArr;
-        this.d = ox1Var;
+    public /* synthetic */ nlc(VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = (byte) 2;
+        this.b = voIPService;
+        this.d = tLObject;
+        this.c = tL_error;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a[0] = editable.toString();
-        this.b.run();
-        Runnable[] runnableArr = this.c;
-        Runnable runnable = runnableArr[0];
-        if (runnable != null) {
-            runnable.run();
-            runnableArr[0] = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLRPC.TL_error tL_error = this.c;
+        TLObject tLObject = this.d;
+        VoIPService voIPService = this.b;
+        switch (b) {
+            case 0:
+                voIPService.lambda$acceptIncomingCall$98(tL_error, tLObject);
+                break;
+            case 1:
+                voIPService.lambda$processAcceptedCall$22(tL_error, tLObject);
+                break;
+            default:
+                voIPService.lambda$startGroupCheckShortpoll$64(tLObject, tL_error);
+                break;
         }
-        ox1 ox1Var = this.d;
-        gl.r(ox1Var);
-        gl.d3(ox1Var, 1000L);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    public /* synthetic */ nlc(VoIPService voIPService, TLRPC.TL_error tL_error, TLObject tLObject, byte b) {
+        this.a = b;
+        this.b = voIPService;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 }

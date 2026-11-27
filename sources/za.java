@@ -1,70 +1,45 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class za extends Drawable {
-    public final /* synthetic */ byte a;
-    public final tgb b;
-    public final /* synthetic */ bb c;
+public final class za extends og2 {
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ ViewGroup e;
 
-    public za(bb bbVar, String str, byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.c = bbVar;
-                this.b = new tgb(str, 14.0f, gl.o());
-                break;
-            default:
-                this.c = bbVar;
-                this.b = new tgb(str, 14.0f, gl.o());
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public za(st4 st4Var, Context context, x53 x53Var) {
+        super(24, x53Var, context);
+        this.d = (byte) 2;
+        this.e = st4Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte b = this.a;
-        bb bbVar = this.c;
-        tgb tgbVar = this.b;
+    @Override // android.view.View
+    public final void invalidate() {
+        byte b = this.d;
+        ViewGroup viewGroup = this.e;
         switch (b) {
             case 0:
-                this.b.c(getBounds().centerX() - (tgbVar.c / 2.0f), getBounds().centerY(), 1.0f, bbVar.s, canvas);
+                super.invalidate();
+                ((cb) viewGroup).invalidate();
+                break;
+            case 1:
+                super.invalidate();
+                ((of3) viewGroup).invalidate();
                 break;
             default:
-                this.b.c(getBounds().centerX() - (tgbVar.c / 2.0f), getBounds().centerY(), 1.0f, bbVar.s, canvas);
+                super.invalidate();
+                ((st4) viewGroup).invalidate();
                 break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        byte b = this.a;
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        byte b = this.a;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        byte b = this.a;
-    }
-
-    private final void a(int i) {
-    }
-
-    private final void b(int i) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ za(ViewGroup viewGroup, Context context, vnb vnbVar, byte b) {
+        super(21, vnbVar, context);
+        this.d = b;
+        this.e = viewGroup;
     }
 }

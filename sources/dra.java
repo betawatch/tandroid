@@ -1,62 +1,84 @@
 // default package
 
-import android.os.Bundle;
-import j$.util.Objects;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dra extends fz8 {
-    public static final String d;
-    public static final String e;
-    public final int b;
-    public final float c;
-
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dra extends a8c {
     static {
-        String str = g8c.a;
-        d = "1";
-        e = "2";
+        a8c.h(new dra());
     }
 
-    public dra(int i, float f) {
-        boolean z = false;
-        gre.e("maxStars must be a positive integer", i > 0);
-        if (f >= 0.0f && f <= i) {
-            z = true;
+    public static b8c i(int i, cra craVar) {
+        b8c K = b8c.K(dra.class);
+        K.v = 1;
+        K.A = i;
+        K.H = craVar;
+        return K;
+    }
+
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        String str;
+        era eraVar = (era) view;
+        cra craVar = (cra) b8cVar.H;
+        int i = b8cVar.A;
+        Integer[] numArr = new Integer[1];
+        eraVar.s = i == 0;
+        de0 de0Var = eraVar.d;
+        TextView textView = eraVar.e;
+        px4 px4Var = eraVar.c;
+        eraVar.w = craVar;
+        if (i == 0) {
+            px4Var.d(null);
+            px4Var.e(null);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = craVar.c;
+            textView.setText(stargiftattributemodel.name);
+            eraVar.b(80, b8cVar.H, stargiftattributemodel.document, true);
+            de0Var.setColorFilter(null);
+            px4Var.y = aob.Fi;
+            str = wua.A1(stargiftattributemodel.rarity, numArr);
+        } else if (i == 1) {
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = craVar.a;
+            TL_stars.starGiftAttributePattern stargiftattributepattern = craVar.b;
+            px4Var.d(stargiftattributebackdrop);
+            px4Var.e(stargiftattributepattern);
+            px4Var.y = aob.d6;
+            textView.setText(stargiftattributebackdrop.name);
+            eraVar.b(48, b8cVar.H, stargiftattributepattern.document, false);
+            de0Var.setColorFilter(new PorterDuffColorFilter(vm2.o(stargiftattributebackdrop.pattern_color, 64), PorterDuff.Mode.SRC_IN));
+            str = wua.A1(stargiftattributebackdrop.rarity, numArr);
+        } else if (i == 2) {
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = craVar.a;
+            TL_stars.starGiftAttributePattern stargiftattributepattern2 = craVar.b;
+            px4Var.d(stargiftattributebackdrop2);
+            px4Var.e(stargiftattributepattern2);
+            px4Var.y = aob.d6;
+            textView.setText(stargiftattributepattern2.name);
+            eraVar.b(64, b8cVar.H, stargiftattributepattern2.document, false);
+            de0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            str = wua.A1(stargiftattributepattern2.rarity, numArr);
+        } else {
+            str = "";
         }
-        gre.e("starRating is out of range [0, maxStars]", z);
-        this.b = i;
-        this.c = f;
-    }
-
-    @Override // fz8
-    public final boolean b() {
-        return this.c != -1.0f;
-    }
-
-    @Override // fz8
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(fz8.a, 2);
-        bundle.putInt(d, this.b);
-        bundle.putFloat(e, this.c);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof dra)) {
-            return false;
+        if (i == 0) {
+            yob.X(textView, aob.j5, eraVar.a);
+        } else {
+            yob.q(textView);
+            textView.setTextColor(-1);
         }
-        dra draVar = (dra) obj;
-        return this.b == draVar.b && this.c == draVar.c;
+        eraVar.f.setText(str);
+        eraVar.h = numArr[0];
+        eraVar.a();
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
-    }
-
-    public dra(int i) {
-        gre.e("maxStars must be a positive integer", i > 0);
-        this.b = i;
-        this.c = -1.0f;
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new era(context, vnbVar);
     }
 }

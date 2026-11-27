@@ -1,82 +1,42 @@
 // default package
 
 import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class eh1 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final rkb b;
-    public final t26 c;
-    public final int d;
-    public int e;
+public final class eh1 extends n1a {
+    public final /* synthetic */ zg1 f2;
+    public final /* synthetic */ d1a[] g2;
+    public final /* synthetic */ wh1 h2;
 
-    public eh1(int i, wjb wjbVar, Activity activity) {
-        super(activity);
-        this.d = i;
-        this.a = wjbVar;
-        rkb rkbVar = new rkb(activity, wjbVar, (byte) 1);
-        this.b = rkbVar;
-        rkbVar.setPadding(gl.L(6.0f), gl.L(5.0f), gl.L(6.0f), 0);
-        rkbVar.setClipToPadding(false);
-        rkbVar.setAdapter(new ch1(this, activity, wjbVar, i));
-        t26 t26Var = new t26();
-        this.c = t26Var;
-        t26Var.i1(0);
-        rkbVar.setLayoutManager(t26Var);
-        addView(rkbVar, nme.c(-1.0f, -1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eh1(wh1 wh1Var, wh1 wh1Var2, Activity activity, Integer num, int i, vnb vnbVar, int i2, int i3, zg1 zg1Var, d1a[] d1aVarArr) {
+        super(wh1Var2, activity, true, num, i, true, vnbVar, i2, i3);
+        this.h2 = wh1Var;
+        this.f2 = zg1Var;
+        this.g2 = d1aVarArr;
     }
 
-    public final void a(int i, boolean z) {
-        ea7 ea7Var = na7.q1(this.d).E3;
-        int i2 = 0;
-        if (ea7Var != null) {
-            ArrayList arrayList = ea7Var.c;
-            int i3 = 0;
-            while (true) {
-                if (i3 >= arrayList.size()) {
-                    break;
-                }
-                if (((da7) arrayList.get(i3)).c == i) {
-                    i2 = i3;
-                    break;
-                }
-                i3++;
-            }
+    @Override // n1a
+    public final long getDialogId() {
+        return this.h2.a;
+    }
+
+    @Override // n1a
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // n1a
+    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.f2.a(Long.valueOf(l == null ? 0L : l.longValue()), num, tL_starGiftUnique);
+        d1a d1aVar = this.g2[0];
+        if (d1aVar != null) {
+            this.h2.R = null;
+            d1aVar.dismiss();
         }
-        if (i2 != this.e) {
-            this.e = i2;
-            if (!z) {
-                this.c.g1(i2, (gl.q.x - gl.L(56.0f)) / 2);
-            }
-            gl.d0(this.b, new ra((byte) 1, this, z));
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null) {
-            ViewParent parent = getParent();
-            boolean z = true;
-            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                z = false;
-            }
-            parent.requestDisallowInterceptTouchEvent(z);
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        gl.d0(this.b, new x0(this, na7.q1(this.d).E3, (byte) 15));
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
     }
 }

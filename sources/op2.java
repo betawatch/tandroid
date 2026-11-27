@@ -1,45 +1,38 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class op2 implements cq9 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class op2 extends pp2 {
+    public final int d;
 
-    public /* synthetic */ op2(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public op2(int i) {
+        this.d = i;
     }
 
-    @Override // cq9
-    public final Bundle c() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                Bundle bundle = new Bundle();
-                qp2 qp2Var = ((wp2) obj).x;
-                qp2Var.getClass();
-                HashMap hashMap = qp2Var.b;
-                bundle.putIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS", new ArrayList<>(hashMap.values()));
-                bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS", new ArrayList<>(hashMap.keySet()));
-                bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS", new ArrayList<>(qp2Var.d));
-                bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", (Bundle) qp2Var.g.clone());
-                return bundle;
-            case 1:
-                en4 en4Var = (en4) obj;
-                while (en4.v(en4Var.u())) {
-                }
-                en4Var.L.e(u06.ON_STOP);
-                return new Bundle();
-            case 2:
-                return ((go4) obj).Y();
-            default:
-                return wp9.a((wp9) obj);
-        }
+    @Override // pp2
+    public final int e() {
+        return this.d;
+    }
+
+    @Override // pp2
+    public final pp2 a(int i, int i2) {
+        return this;
+    }
+
+    @Override // pp2
+    public final pp2 c(boolean z, boolean z2) {
+        return this;
+    }
+
+    @Override // pp2
+    public final pp2 d(boolean z, boolean z2) {
+        return this;
+    }
+
+    @Override // pp2
+    public final pp2 b(Object obj, Object obj2, Comparator comparator) {
+        return this;
     }
 }

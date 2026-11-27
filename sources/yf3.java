@@ -1,30 +1,16 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_account;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yf3 implements p8c {
+public final /* synthetic */ class yf3 implements Interpolator {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ cj3 b;
 
-    public /* synthetic */ yf3(cj3 cj3Var, byte b) {
-        this.a = b;
-        this.b = cj3Var;
-    }
-
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f) {
         byte b = this.a;
-        cj3 cj3Var = this.b;
-        switch (b) {
-            case 0:
-                cj3Var.Q1 = (Long) obj;
-                cj3Var.m5();
-                break;
-            default:
-                cj3Var.n4((TL_account.TL_birthday) obj);
-                break;
-        }
+        float f2 = f - 1.0f;
+        return (f2 * f2 * f2 * f2 * f2) + 1.0f;
     }
 }

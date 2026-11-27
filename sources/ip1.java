@@ -1,23 +1,23 @@
 // default package
 
 import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ip1 extends uk1 {
-    public final /* synthetic */ mu1 z2;
+public final class ip1 extends ly3 {
+    public final /* synthetic */ jp1 Q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ip1(mu1 mu1Var, wjb wjbVar, Activity activity) {
-        super(wjbVar, activity, false);
-        this.z2 = mu1Var;
+    public ip1(jp1 jp1Var, e eVar, Activity activity, vnb vnbVar, ArrayList arrayList) {
+        super(eVar, activity, vnbVar, arrayList);
+        this.Q1 = jp1Var;
     }
 
-    @Override // uk1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        float y = getY();
-        mu1 mu1Var = this.z2;
-        k0(mu1Var.g1.getY() + y, mu1Var.m1.getBackgroundSizeY());
+    @Override // ly3, nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        super.dismiss();
+        this.Q1.p.y6(false, true, 0.0f);
     }
 }

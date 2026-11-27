@@ -1,17 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class qr3 {
-    public final int a;
-    public final boolean b;
-    public final byte[] c;
-    public final byte[] d;
+import android.view.View;
 
-    public qr3(int i, boolean z, byte[] bArr, byte[] bArr2) {
-        this.a = i;
-        this.b = z;
-        this.c = bArr;
-        this.d = bArr2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class qr3 {
+    public static void a(View view, float f, float f2) {
+        view.drawableHotspotChanged(f, f2);
     }
 }

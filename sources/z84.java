@@ -1,6 +1,97 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.app.Activity;
+import android.app.Application;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.ArrayDeque;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class z84 extends r63 {
+public final class z84 implements Application.ActivityLifecycleCallbacks {
+    public final ArrayDeque a = new ArrayDeque(10);
+
+    public final void a(Intent intent) {
+        ArrayDeque arrayDeque = this.a;
+        Bundle bundle = null;
+        try {
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                String string = extras.getString("google.message_id");
+                if (string == null) {
+                    string = extras.getString("message_id");
+                }
+                if (!TextUtils.isEmpty(string)) {
+                    if (arrayDeque.contains(string)) {
+                        return;
+                    } else {
+                        arrayDeque.add(string);
+                    }
+                }
+                bundle = extras.getBundle("gcm.n.analytics_data");
+            }
+        } catch (RuntimeException e) {
+            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e);
+        }
+        if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
+            if (bundle != null) {
+                if ("1".equals(bundle.getString("google.c.a.tc"))) {
+                    if (ji4.c().b(rj.class) != null) {
+                        grb.o();
+                        return;
+                    } else {
+                        if (Log.isLoggable("FirebaseMessaging", 3)) {
+                            Log.d("FirebaseMessaging", "Received event with track-conversion=true. Setting user property and reengagement event");
+                        }
+                        Log.w("FirebaseMessaging", "Unable to set user property for conversion tracking:  analytics library is missing");
+                    }
+                } else if (Log.isLoggable("FirebaseMessaging", 3)) {
+                    Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
+                }
+            }
+            rte.c("_no", bundle);
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityCreated(Activity activity, Bundle bundle) {
+        Intent intent = activity.getIntent();
+        if (intent == null) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT <= 25) {
+            new Handler(Looper.getMainLooper()).post(new vx3(this, intent, (byte) 14));
+        } else {
+            a(intent);
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityDestroyed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityPaused(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityResumed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStarted(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStopped(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    }
 }

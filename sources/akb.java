@@ -1,732 +1,199 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.util.SparseArray;
-import java.io.File;
-import java.util.ArrayList;
-import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.os.Handler;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class akb implements gk7 {
-    public int E;
-    public int F;
-    public TLRPC.TL_theme G;
-    public boolean H;
-    public String I;
-    public String J;
-    public TLRPC.InputFile K;
-    public TLRPC.InputFile L;
-    public int M;
-    public int N;
-    public int O;
-    public int P;
-    public int Q;
-    public int R;
-    public int S;
-    public boolean T;
-    public boolean U;
-    public boolean V;
-    public byte W;
-    public int X;
-    public int Y;
-    public int Z;
-    public String a;
-    public int a0;
-    public String b;
-    public SparseArray b0;
-    public String c;
-    public ArrayList c0;
-    public String d;
-    public LongSparseArray d0;
-    public String e;
-    public final LongSparseArray e0;
-    public boolean f;
-    public int f0;
-    public int g0;
-    public boolean h;
-    public String h0;
-    public String i0;
-    public vjb j0;
-    public int k0;
-    public boolean n;
-    public int r;
-    public int s;
-    public int w;
-    public int x;
-    public int y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class akb extends ef0 {
+    public final lm9 i;
 
-    public akb(akb akbVar) {
-        this.y = 45;
-        this.H = true;
-        this.V = true;
-        this.a0 = -1;
-        this.e0 = new LongSparseArray();
-        this.f0 = 0;
-        this.g0 = 100;
-        this.k0 = -1;
-        this.a = akbVar.a;
-        this.b = akbVar.b;
-        this.c = akbVar.c;
-        this.d = akbVar.d;
-        this.e = akbVar.e;
-        this.f = akbVar.f;
-        this.h = akbVar.h;
-        this.n = akbVar.n;
-        this.r = akbVar.r;
-        this.s = akbVar.s;
-        this.w = akbVar.w;
-        this.x = akbVar.x;
-        this.y = akbVar.y;
-        this.E = akbVar.E;
-        this.F = akbVar.F;
-        this.G = akbVar.G;
-        this.H = akbVar.H;
-        this.I = akbVar.I;
-        this.J = akbVar.J;
-        this.K = akbVar.K;
-        this.L = akbVar.L;
-        this.M = akbVar.M;
-        this.N = akbVar.N;
-        this.O = akbVar.O;
-        this.P = akbVar.P;
-        this.Q = akbVar.Q;
-        this.R = akbVar.R;
-        this.S = akbVar.S;
-        this.T = akbVar.T;
-        this.U = akbVar.U;
-        this.V = akbVar.V;
-        this.W = akbVar.W;
-        this.X = akbVar.X;
-        this.Y = akbVar.Y;
-        this.Z = akbVar.Z;
-        this.a0 = akbVar.a0;
-        this.b0 = akbVar.b0;
-        this.c0 = akbVar.c0;
-        this.d0 = akbVar.d0;
-        this.g0 = akbVar.g0;
-        this.h0 = akbVar.h0;
-        this.i0 = akbVar.i0;
-        this.j0 = akbVar.j0;
+    public akb(lm9 lm9Var) {
+        this.i = lm9Var;
     }
 
-    public static boolean a(zjb zjbVar, TLRPC.ThemeSettings themeSettings) {
-        boolean z;
-        boolean z2;
-        long j;
-        long j2;
-        long j3;
-        int i;
-        int i2;
-        String str;
+    @Override // q20
+    public final void d(ByteBuffer byteBuffer) {
         float f;
-        TLRPC.WallPaperSettings wallPaperSettings;
-        int intValue = themeSettings.message_colors.size() > 0 ? themeSettings.message_colors.get(0).intValue() | (-16777216) : 0;
-        int intValue2 = themeSettings.message_colors.size() > 1 ? themeSettings.message_colors.get(1).intValue() | (-16777216) : 0;
-        if (intValue == intValue2) {
-            intValue2 = 0;
-        }
-        int intValue3 = themeSettings.message_colors.size() > 2 ? themeSettings.message_colors.get(2).intValue() | (-16777216) : 0;
-        int intValue4 = themeSettings.message_colors.size() > 3 ? themeSettings.message_colors.get(3).intValue() | (-16777216) : 0;
-        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-        if (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null) {
-            z = false;
-            z2 = true;
-            j = 0;
-            j2 = 0;
-            j3 = 0;
-            i = 0;
-            i2 = 0;
-        } else {
-            i = bkb.Y0(wallPaperSettings.background_color);
-            j = themeSettings.wallpaper.settings.second_background_color == 0 ? 4294967296L : bkb.Y0(r11);
-            j2 = themeSettings.wallpaper.settings.third_background_color == 0 ? 4294967296L : bkb.Y0(r11);
-            j3 = themeSettings.wallpaper.settings.fourth_background_color != 0 ? bkb.Y0(r11) : 4294967296L;
-            i2 = gl.q1(themeSettings.wallpaper.settings.rotation, false);
-            z = false;
-            TLRPC.WallPaper wallPaper2 = themeSettings.wallpaper;
-            z2 = true;
-            if (!(wallPaper2 instanceof TLRPC.TL_wallPaperNoFile) && wallPaper2.pattern) {
-                str = wallPaper2.slug;
-                f = wallPaper2.settings.intensity / 100.0f;
-                return (themeSettings.accent_color != zjbVar.c && themeSettings.outbox_accent_color == zjbVar.d && intValue == zjbVar.e && intValue2 == zjbVar.f && intValue3 == zjbVar.g && intValue4 == zjbVar.h && themeSettings.message_colors_animated == zjbVar.i && ((long) i) == zjbVar.j && j == zjbVar.k && j2 == zjbVar.l && j3 == zjbVar.m && i2 == zjbVar.n && TextUtils.equals(str, zjbVar.o) && ((double) Math.abs(f - zjbVar.p)) < 0.001d) ? z2 : z;
-            }
-        }
-        str = null;
-        f = 0.0f;
-        if (themeSettings.accent_color != zjbVar.c) {
-        }
-    }
-
-    public static akb e(JSONObject jSONObject) {
-        if (jSONObject == null) {
-            return null;
-        }
-        try {
-            akb akbVar = new akb();
-            akbVar.a = jSONObject.getString("name");
-            akbVar.b = jSONObject.getString("path");
-            if (jSONObject.has("account")) {
-                akbVar.F = jSONObject.getInt("account");
-            }
-            if (jSONObject.has("info")) {
-                try {
-                    SerializedData serializedData = new SerializedData(Utilities.v(jSONObject.getString("info")));
-                    akbVar.G = TLRPC.Theme.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-                } catch (Throwable th) {
-                    fa4.g(th, true);
-                }
-            }
-            if (jSONObject.has("loaded")) {
-                akbVar.H = jSONObject.getBoolean("loaded");
-            }
-            return akbVar;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static akb f(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return null;
-        }
-        String[] split = str.split("\\|");
-        if (split.length != 2) {
-            return null;
-        }
-        akb akbVar = new akb();
-        akbVar.a = split[0];
-        akbVar.b = split[1];
-        return akbVar;
-    }
-
-    public static void g(zjb zjbVar, TLRPC.ThemeSettings themeSettings) {
-        TLRPC.WallPaperSettings wallPaperSettings;
-        zjbVar.c = themeSettings.accent_color;
-        zjbVar.d = themeSettings.outbox_accent_color;
-        zjbVar.e = themeSettings.message_colors.size() > 0 ? themeSettings.message_colors.get(0).intValue() | (-16777216) : 0;
-        int intValue = themeSettings.message_colors.size() > 1 ? themeSettings.message_colors.get(1).intValue() | (-16777216) : 0;
-        zjbVar.f = intValue;
-        if (zjbVar.e == intValue) {
-            zjbVar.f = 0;
-        }
-        zjbVar.g = themeSettings.message_colors.size() > 2 ? themeSettings.message_colors.get(2).intValue() | (-16777216) : 0;
-        zjbVar.h = themeSettings.message_colors.size() > 3 ? themeSettings.message_colors.get(3).intValue() | (-16777216) : 0;
-        zjbVar.i = themeSettings.message_colors_animated;
-        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-        if (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null) {
+        float f2;
+        float[] fArr;
+        int remaining = byteBuffer.remaining();
+        if (remaining == 0) {
             return;
         }
-        if (wallPaperSettings.background_color == 0) {
-            zjbVar.j = 4294967296L;
-        } else {
-            zjbVar.j = bkb.Y0(r0);
-        }
-        TLRPC.WallPaperSettings wallPaperSettings2 = themeSettings.wallpaper.settings;
-        if ((wallPaperSettings2.flags & 16) == 0 || wallPaperSettings2.second_background_color != 0) {
-            zjbVar.k = bkb.Y0(wallPaperSettings2.second_background_color);
-        } else {
-            zjbVar.k = 4294967296L;
-        }
-        TLRPC.WallPaperSettings wallPaperSettings3 = themeSettings.wallpaper.settings;
-        if ((wallPaperSettings3.flags & 32) == 0 || wallPaperSettings3.third_background_color != 0) {
-            zjbVar.l = bkb.Y0(wallPaperSettings3.third_background_color);
-        } else {
-            zjbVar.l = 4294967296L;
-        }
-        TLRPC.WallPaperSettings wallPaperSettings4 = themeSettings.wallpaper.settings;
-        if ((wallPaperSettings4.flags & 64) == 0 || wallPaperSettings4.fourth_background_color != 0) {
-            zjbVar.m = bkb.Y0(wallPaperSettings4.fourth_background_color);
-        } else {
-            zjbVar.m = 4294967296L;
-        }
-        zjbVar.n = gl.q1(themeSettings.wallpaper.settings.rotation, false);
-        TLRPC.WallPaper wallPaper2 = themeSettings.wallpaper;
-        if ((wallPaper2 instanceof TLRPC.TL_wallPaperNoFile) || !wallPaper2.pattern) {
-            return;
-        }
-        zjbVar.o = wallPaper2.slug;
-        TLRPC.WallPaperSettings wallPaperSettings5 = wallPaper2.settings;
-        zjbVar.p = wallPaperSettings5.intensity / 100.0f;
-        zjbVar.q = wallPaperSettings5.motion;
-    }
-
-    public final boolean b(File file, String str) {
-        int U0;
-        try {
-            Bitmap d1 = gl.d1(gl.L(640.0f), gl.L(360.0f), file.getAbsolutePath(), null, 0);
-            if (d1 != null && this.r != 0) {
-                Bitmap createBitmap = Bitmap.createBitmap(d1.getWidth(), d1.getHeight(), d1.getConfig());
-                Canvas canvas = new Canvas(createBitmap);
-                int i = this.w;
-                if (i != 0) {
-                    U0 = ye7.g(this.r, this.s, i, this.x);
+        String str = gcc.a;
+        ByteBuffer order = byteBuffer.asReadOnlyBuffer().order(byteBuffer.order());
+        lm9 lm9Var = this.i;
+        float[] fArr2 = (float[]) lm9Var.d;
+        cp4 cp4Var = (cp4) lm9Var.c;
+        ByteBuffer byteBuffer2 = (ByteBuffer) lm9Var.e;
+        kfc kfcVar = (kfc) lm9Var.f;
+        efc efcVar = kfcVar.L;
+        Handler handler = kfcVar.b0;
+        if (efcVar != null) {
+            if (order == q20.a || !kfcVar.J) {
+                handler.postDelayed(new azb(lm9Var, (byte) 17), 80L);
+            } else if (efcVar.k()) {
+                int limit = order.limit();
+                int i = 0;
+                if (limit > 8192) {
+                    handler.removeCallbacksAndMessages(null);
+                    kfcVar.L.t(false, null);
                 } else {
-                    int i2 = this.s;
-                    int i3 = this.r;
-                    if (i2 != 0) {
-                        U0 = gl.w0(i3, i2);
-                        GradientDrawable gradientDrawable = new GradientDrawable(wd0.c(this.y), new int[]{this.r, this.s});
-                        gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                        gradientDrawable.draw(canvas);
-                    } else {
-                        U0 = gl.U0(i3, false);
-                        canvas.drawColor(this.r);
+                    byteBuffer2.put(order);
+                    int i2 = lm9Var.a + limit;
+                    lm9Var.a = i2;
+                    if (i2 >= 1024) {
+                        byteBuffer2.position(0);
+                        for (int i3 = 0; i3 < 1024; i3++) {
+                            fArr2[i3] = byteBuffer2.getShort() / 32768.0f;
+                        }
+                        byteBuffer2.rewind();
+                        lm9Var.a = 0;
+                        float f3 = 0.0f;
+                        if (fArr2.length != 1024) {
+                            f = 0.0f;
+                            f2 = 1.0f;
+                        } else {
+                            for (int i4 = 0; i4 < 1024; i4++) {
+                                cp4Var.a[i4] = fArr2[((int[]) cp4Var.h)[i4]];
+                                ((float[]) cp4Var.c)[i4] = 0.0f;
+                            }
+                            int i5 = 1;
+                            while (i5 < cp4Var.a.length) {
+                                float f4 = ((float[]) cp4Var.g)[i5];
+                                float f5 = ((float[]) cp4Var.f)[i5];
+                                float f6 = f3;
+                                int i6 = i;
+                                float f7 = 1.0f;
+                                while (i6 < i5) {
+                                    float f8 = f3;
+                                    int i7 = i6;
+                                    while (true) {
+                                        float[] fArr3 = cp4Var.a;
+                                        if (i7 < fArr3.length) {
+                                            int i8 = i7 + i5;
+                                            float f9 = fArr3[i8];
+                                            float[] fArr4 = (float[]) cp4Var.c;
+                                            float f10 = fArr4[i8];
+                                            float f11 = (f7 * f9) - (f6 * f10);
+                                            float f12 = (f9 * f6) + (f10 * f7);
+                                            fArr3[i8] = fArr3[i7] - f11;
+                                            fArr4[i8] = fArr4[i7] - f12;
+                                            fArr3[i7] = fArr3[i7] + f11;
+                                            fArr4[i7] = fArr4[i7] + f12;
+                                            i7 += i5 << 1;
+                                        }
+                                    }
+                                    float f13 = (f7 * f4) - (f6 * f5);
+                                    f6 = (f6 * f4) + (f7 * f5);
+                                    i6++;
+                                    f7 = f13;
+                                    f3 = f8;
+                                }
+                                i5 <<= 1;
+                                i = 0;
+                            }
+                            f = f3;
+                            f2 = 1.0f;
+                            int i9 = 0;
+                            while (true) {
+                                fArr = (float[]) cp4Var.d;
+                                if (i9 >= fArr.length) {
+                                    break;
+                                }
+                                float f14 = cp4Var.a[i9];
+                                float f15 = ((float[]) cp4Var.c)[i9];
+                                fArr[i9] = (float) Math.sqrt((f15 * f15) + (f14 * f14));
+                                i9++;
+                            }
+                            if (cp4Var.b == 1) {
+                                int length = fArr.length / ((float[]) cp4Var.e).length;
+                                for (int i10 = 0; i10 < ((float[]) cp4Var.e).length; i10++) {
+                                    float f16 = f;
+                                    int i11 = 0;
+                                    while (i11 < length) {
+                                        int i12 = (i10 * length) + i11;
+                                        float[] fArr5 = (float[]) cp4Var.d;
+                                        if (i12 < fArr5.length) {
+                                            f16 += fArr5[i12];
+                                            i11++;
+                                        }
+                                    }
+                                    ((float[]) cp4Var.e)[i10] = f16 / (i11 + 1);
+                                }
+                            }
+                        }
+                        float f17 = f;
+                        for (int i13 = 0; i13 < 1024; i13++) {
+                            float f18 = cp4Var.a[i13];
+                            float f19 = ((float[]) cp4Var.c)[i13];
+                            float sqrt = ((float) Math.sqrt((f19 * f19) + (f18 * f18))) / 30.0f;
+                            if (sqrt > f2) {
+                                sqrt = f2;
+                            } else if (sqrt < f) {
+                                sqrt = f;
+                            }
+                            f17 += sqrt * sqrt;
+                        }
+                        float sqrt2 = (float) Math.sqrt(f17 / 1024.0f);
+                        float[] fArr6 = new float[7];
+                        fArr6[6] = sqrt2;
+                        int i14 = 0;
+                        if (sqrt2 < 0.4f) {
+                            while (i14 < 7) {
+                                fArr6[i14] = f;
+                                i14++;
+                            }
+                        } else {
+                            while (i14 < 6) {
+                                int i15 = jn7.z2 * i14;
+                                float f20 = cp4Var.a[i15];
+                                float f21 = ((float[]) cp4Var.c)[i15];
+                                float sqrt3 = (float) (Math.sqrt((f21 * f21) + (f20 * f20)) / 30.0d);
+                                fArr6[i14] = sqrt3;
+                                if (sqrt3 > f2) {
+                                    fArr6[i14] = f2;
+                                } else if (sqrt3 < f) {
+                                    fArr6[i14] = f;
+                                }
+                                i14++;
+                            }
+                        }
+                        if (System.currentTimeMillis() - lm9Var.b >= 64) {
+                            lm9Var.b = System.currentTimeMillis();
+                            handler.postDelayed(new g9c(lm9Var, fArr6, (byte) 13), 130L);
+                        }
                     }
                 }
-                Paint paint = new Paint(2);
-                paint.setColorFilter(new PorterDuffColorFilter(U0, PorterDuff.Mode.SRC_IN));
-                paint.setAlpha((int) ((this.E / 100.0f) * 255.0f));
-                canvas.drawBitmap(d1, 0.0f, 0.0f, paint);
-                canvas.setBitmap(null);
-                d1 = createBitmap;
             }
-            if (this.h) {
-                d1 = Utilities.e(d1);
-            }
-            return sqc.c(d1, this.w != 0 ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, new File(str));
-        } catch (Throwable th) {
-            fa4.g(th, true);
-            return false;
+        }
+        l(remaining).put(byteBuffer).flip();
+    }
+
+    @Override // ef0
+    public final void i() {
+        m();
+    }
+
+    @Override // ef0
+    public final void j() {
+        m();
+    }
+
+    @Override // ef0
+    public final void k() {
+        m();
+    }
+
+    public final void m() {
+        if (isActive()) {
+            int i = this.b.a;
         }
     }
 
-    public final zjb c(long j, TLRPC.ThemeSettings themeSettings, TLRPC.TL_theme tL_theme, int i, boolean z) {
-        if (z) {
-            LongSparseArray longSparseArray = this.e0;
-            zjb zjbVar = (zjb) longSparseArray.get(j);
-            if (zjbVar != null) {
-                return zjbVar;
-            }
-            int i2 = this.f0 + 1;
-            this.f0 = i2;
-            zjb zjbVar2 = new zjb();
-            g(zjbVar2, themeSettings);
-            zjbVar2.b = this;
-            zjbVar2.a = i2;
-            zjbVar2.r = tL_theme;
-            zjbVar2.t = i;
-            longSparseArray.put(i2, zjbVar2);
-            return zjbVar2;
-        }
-        zjb zjbVar3 = (zjb) this.d0.get(j);
-        if (zjbVar3 != null) {
-            return zjbVar3;
-        }
-        int i3 = this.g0 + 1;
-        this.g0 = i3;
-        zjb zjbVar4 = new zjb();
-        g(zjbVar4, themeSettings);
-        zjbVar4.b = this;
-        zjbVar4.a = i3;
-        zjbVar4.r = tL_theme;
-        zjbVar4.t = i;
-        this.b0.put(i3, zjbVar4);
-        this.c0.add(0, zjbVar4);
-        bkb.H1(this);
-        this.d0.put(j, zjbVar4);
-        return zjbVar4;
-    }
-
-    public final zjb d(TLRPC.TL_theme tL_theme, int i, int i2) {
-        if (tL_theme == null) {
-            return null;
-        }
-        return c(tL_theme.id, i2 < tL_theme.settings.size() ? tL_theme.settings.get(i2) : null, tL_theme, i, false);
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        int i3 = kk7.X1;
-        if (i == i3 || i == kk7.Y1) {
-            String str = (String) objArr[0];
-            TLRPC.TL_theme tL_theme = this.G;
-            if (tL_theme == null || tL_theme.document == null) {
-                return;
-            }
-            if (str.equals(this.h0)) {
-                this.h0 = null;
-                Utilities.e.c(new a5b((Object) this, objArr[1], (byte) 6));
-                return;
-            }
-            if (str.equals(ba4.r(null, this.G.document))) {
-                s();
-                if (i == i3) {
-                    File file = new File(this.b);
-                    TLRPC.TL_theme tL_theme2 = this.G;
-                    akb k0 = bkb.k0(file, tL_theme2.title, tL_theme2);
-                    if (k0 == null || k0.c == null || new File(k0.c).exists()) {
-                        r();
-                        return;
-                    }
-                    this.r = k0.r;
-                    this.s = k0.s;
-                    this.w = k0.w;
-                    this.x = k0.x;
-                    this.y = k0.y;
-                    this.h = k0.h;
-                    this.E = k0.E;
-                    this.i0 = k0.c;
-                    TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
-                    TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                    tL_inputWallPaperSlug.slug = k0.e;
-                    getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                    ConnectionsManager.getInstance(k0.F).sendRequest(getwallpaper, new apa(this, k0, (byte) 12));
-                }
-            }
-        }
-    }
-
-    public final String h(zjb zjbVar, boolean z) {
-        String l;
-        if (zjbVar == null) {
-            zjbVar = i(false);
-        }
-        if (zjbVar == null) {
-            String str = this.a;
-            return (z ? tb4.o(str, "_wp_o") : tb4.o(str, "_wp")) + Utilities.b.nextInt() + ".jpg";
-        }
-        String str2 = this.a;
-        if (z) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(str2);
-            sb.append("_");
-            l = de9.l(sb, zjbVar.a, "_wp_o");
-        } else {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(str2);
-            sb2.append("_");
-            l = de9.l(sb2, zjbVar.a, "_wp");
-        }
-        return l + Utilities.b.nextInt() + ".jpg";
-    }
-
-    public final zjb i(boolean z) {
-        zjb zjbVar;
-        if (this.c0 == null || (zjbVar = (zjb) this.b0.get(this.Z)) == null) {
-            return null;
-        }
-        if (!z) {
-            return zjbVar;
-        }
-        int i = this.g0 + 1;
-        this.g0 = i;
-        zjb zjbVar2 = new zjb();
-        zjbVar2.c = zjbVar.c;
-        zjbVar2.d = zjbVar.d;
-        zjbVar2.e = zjbVar.e;
-        zjbVar2.f = zjbVar.f;
-        zjbVar2.g = zjbVar.g;
-        zjbVar2.h = zjbVar.h;
-        zjbVar2.i = zjbVar.i;
-        zjbVar2.j = zjbVar.j;
-        zjbVar2.k = zjbVar.k;
-        zjbVar2.l = zjbVar.l;
-        zjbVar2.m = zjbVar.m;
-        zjbVar2.n = zjbVar.n;
-        zjbVar2.o = zjbVar.o;
-        zjbVar2.p = zjbVar.p;
-        zjbVar2.q = zjbVar.q;
-        zjbVar2.b = this;
-        vjb vjbVar = this.j0;
-        if (vjbVar != null) {
-            vjb vjbVar2 = new vjb();
-            vjbVar2.a = "";
-            vjbVar2.b = "";
-            vjbVar2.c = "";
-            vjbVar2.c = vjbVar.c;
-            vjbVar2.d = vjbVar.d;
-            vjbVar2.e = vjbVar.e;
-            vjbVar2.f = vjbVar.f;
-            vjbVar2.g = vjbVar.g;
-            vjbVar2.h = vjbVar.h;
-            vjbVar2.i = vjbVar.i;
-            vjbVar2.j = vjbVar.j;
-            vjbVar2.k = vjbVar.k;
-            vjbVar2.p = this;
-            vjbVar2.q = zjbVar2;
-            if (TextUtils.isEmpty(vjbVar.a)) {
-                vjbVar2.a = "";
-            } else {
-                try {
-                    File e = sqc.e(vjbVar.a);
-                    String h = vjbVar2.p.h(vjbVar2.q, false);
-                    vjbVar2.a = h;
-                    sqc.a(e, sqc.e(h));
-                } catch (Exception e2) {
-                    vjbVar2.a = "";
-                    fa4.g(e2, true);
-                }
-            }
-            if (TextUtils.isEmpty(vjbVar.b)) {
-                vjbVar2.b = "";
-            } else if (vjbVar.b.equals(vjbVar.a)) {
-                vjbVar2.b = vjbVar2.a;
-            } else {
-                try {
-                    File e3 = sqc.e(vjbVar.b);
-                    String h2 = vjbVar2.p.h(vjbVar2.q, true);
-                    vjbVar2.b = h2;
-                    sqc.a(e3, sqc.e(h2));
-                } catch (Exception e4) {
-                    vjbVar2.b = "";
-                    fa4.g(e4, true);
-                }
-            }
-            zjbVar2.y = vjbVar2;
-        }
-        this.a0 = this.Z;
-        zjbVar2.a = i;
-        this.Z = i;
-        this.j0 = zjbVar2.y;
-        this.b0.put(i, zjbVar2);
-        this.c0.add(0, zjbVar2);
-        bkb.H1(this);
-        return zjbVar2;
-    }
-
-    public final int j(int i) {
-        zjb zjbVar = (zjb) this.b0.get(i);
-        if (zjbVar != null) {
-            return zjbVar.c;
-        }
-        return 0;
-    }
-
-    public final String k() {
-        if (this.G == null) {
-            return this.a;
-        }
-        return "remote" + this.G.id;
-    }
-
-    public final String l() {
-        if ("Blue".equals(this.a)) {
-            return k96.M0(2131743945, null);
-        }
-        if ("Dark Blue".equals(this.a)) {
-            return k96.M0(2131743942, null);
-        }
-        if ("Arctic Blue".equals(this.a)) {
-            return k96.M0(2131743946, null);
-        }
-        if ("Day".equals(this.a)) {
-            return k96.M0(2131743941, null);
-        }
-        if ("Night".equals(this.a)) {
-            return k96.M0(2131743934, null);
-        }
-        TLRPC.TL_theme tL_theme = this.G;
-        return tL_theme != null ? tL_theme.title : this.a;
-    }
-
-    public final int m() {
-        if (this.T && this.Z == bkb.n) {
-            return -3155485;
-        }
-        return this.M;
-    }
-
-    public final int n() {
-        if (this.T && this.Z == bkb.n) {
-            return -983328;
-        }
-        return this.S;
-    }
-
-    public final boolean o() {
-        int i = this.k0;
-        if (i != -1) {
-            return i == 1;
-        }
-        if ("Dark Blue".equals(this.a) || "Night".equals(this.a)) {
-            this.k0 = 1;
-        } else if ("Blue".equals(this.a) || "Arctic Blue".equals(this.a) || "Day".equals(this.a)) {
-            this.k0 = 0;
-        }
-        if (this.k0 == -1) {
-            bkb.G(bkb.R0(new File(this.b), null, new String[1]), this);
-        }
-        return this.k0 == 1;
-    }
-
-    public final void p(SharedPreferences sharedPreferences, zjb zjbVar, String str) {
-        try {
-            String string = sharedPreferences.getString(str, null);
-            if (TextUtils.isEmpty(string)) {
-                return;
-            }
-            JSONObject jSONObject = new JSONObject(string);
-            vjb vjbVar = new vjb();
-            vjbVar.a = jSONObject.getString("wall");
-            vjbVar.b = jSONObject.getString("owall");
-            vjbVar.d = jSONObject.getInt("pColor");
-            vjbVar.e = jSONObject.getInt("pGrColor");
-            vjbVar.f = jSONObject.optInt("pGrColor2");
-            vjbVar.g = jSONObject.optInt("pGrColor3");
-            vjbVar.h = jSONObject.getInt("pGrAngle");
-            vjbVar.c = jSONObject.getString("wallSlug");
-            vjbVar.i = jSONObject.getBoolean("wBlur");
-            vjbVar.j = jSONObject.getBoolean("wMotion");
-            vjbVar.k = (float) jSONObject.getDouble("pIntensity");
-            vjbVar.p = this;
-            vjbVar.q = zjbVar;
-            if (zjbVar != null) {
-                zjbVar.y = vjbVar;
-            } else {
-                this.j0 = vjbVar;
-            }
-            if (jSONObject.has("wallId") && jSONObject.getLong("wallId") == 1000001) {
-                vjbVar.c = "d";
-            }
-        } catch (Throwable th) {
-            fa4.g(th, true);
-        }
-    }
-
-    public final void q(SharedPreferences sharedPreferences) {
-        ArrayList arrayList = this.c0;
-        if (arrayList == null || arrayList.isEmpty()) {
-            p(sharedPreferences, null, b00.j(new StringBuilder(), this.a, "_owp"));
-            return;
-        }
-        int size = this.c0.size();
-        for (int i = 0; i < size; i++) {
-            zjb zjbVar = (zjb) this.c0.get(i);
-            StringBuilder sb = new StringBuilder();
-            sb.append(this.a);
-            sb.append("_");
-            p(sharedPreferences, zjbVar, de9.l(sb, zjbVar.a, "_owp"));
-        }
-    }
-
-    public final void r() {
-        this.H = true;
-        this.U = false;
-        bkb.w1(true, false);
-        if (this == bkb.I && bkb.M == null) {
-            bkb.I1(this, this == bkb.J, -1, null);
-        }
-    }
-
-    public final void s() {
-        kk7.f(this.F).n(this, kk7.X1);
-        kk7.f(this.F).n(this, kk7.Y1);
-    }
-
-    public final void t(int[] iArr, int[] iArr2, int[] iArr3, int[] iArr4, int[] iArr5, int[] iArr6, int[] iArr7, int[] iArr8, String[] strArr, int[] iArr9, int[] iArr10) {
-        this.X = iArr.length;
-        this.c0 = new ArrayList();
-        this.b0 = new SparseArray();
-        this.d0 = new LongSparseArray();
-        for (int i = 0; i < iArr.length; i++) {
-            zjb zjbVar = new zjb();
-            zjbVar.a = iArr8[i];
-            if (bkb.j1(zjbVar)) {
-                zjbVar.z = true;
-            }
-            zjbVar.c = iArr[i];
-            zjbVar.b = this;
-            zjbVar.e = iArr2[i];
-            zjbVar.f = iArr3[i];
-            long j = iArr4[i];
-            zjbVar.j = j;
-            boolean z = this.T;
-            if (z && zjbVar.a == bkb.n) {
-                zjbVar.j = 4294967296L;
-            } else {
-                zjbVar.j = j;
-            }
-            if (z && zjbVar.a == bkb.n) {
-                zjbVar.k = 4294967296L;
-            } else {
-                zjbVar.k = iArr5[i];
-            }
-            if (iArr6 != null) {
-                if (z && zjbVar.a == bkb.n) {
-                    zjbVar.l = 4294967296L;
-                } else {
-                    zjbVar.l = iArr6[i];
-                }
-            }
-            if (iArr7 != null) {
-                if (z && zjbVar.a == bkb.n) {
-                    zjbVar.m = 4294967296L;
-                } else {
-                    zjbVar.m = iArr7[i];
-                }
-            }
-            zjbVar.p = iArr10[i] / 100.0f;
-            zjbVar.n = iArr9[i];
-            zjbVar.o = strArr[i];
-            if ((bkb.j1(zjbVar) && this.a.equals("Dark Blue")) || this.a.equals("Night")) {
-                zjbVar.e = -14316059;
-                zjbVar.f = -12422433;
-                zjbVar.g = -8304937;
-                zjbVar.h = -6340950;
-                if (this.a.equals("Night")) {
-                    zjbVar.p = -0.57f;
-                    zjbVar.j = -9666650L;
-                    zjbVar.k = -13749173L;
-                    zjbVar.l = -8883033L;
-                    zjbVar.m = -13421992L;
-                }
-            }
-            this.b0.put(zjbVar.a, zjbVar);
-            this.c0.add(zjbVar);
-        }
-        this.Y = ((zjb) this.b0.get(0)).c;
-    }
-
-    public final void u(int i) {
-        this.Z = i;
-        zjb i2 = i(false);
-        if (i2 != null) {
-            this.j0 = i2.y;
-        }
-    }
-
-    public final void v(vjb vjbVar) {
-        if (this.j0 != vjbVar) {
-            zjb i = i(false);
-            vjb vjbVar2 = this.j0;
-            if (vjbVar2 != null) {
-                vjbVar2.a();
-            }
-            if (vjbVar != null) {
-                vjbVar.q = i;
-                vjbVar.p = this;
-                vjbVar.c();
-            }
-            this.j0 = vjbVar;
-            if (i != null) {
-                i.y = vjbVar;
-            }
-        }
-    }
-
-    public akb() {
-        this.y = 45;
-        this.H = true;
-        this.V = true;
-        this.a0 = -1;
-        this.e0 = new LongSparseArray();
-        this.f0 = 0;
-        this.g0 = 100;
-        this.k0 = -1;
+    @Override // ef0
+    public final m20 h(m20 m20Var) {
+        return m20Var;
     }
 }

@@ -1,222 +1,49 @@
 // default package
 
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.Collection;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class x8d extends AbstractCollection implements Serializable {
-    public static final Object[] b = new Object[0];
-    public static final Object[] c = new Object[0];
-    public static final Object[] d = new Object[0];
-    public static final Object[] e = new Object[0];
-    public final /* synthetic */ byte a;
+public final class x8d extends v8d {
+    public static final x8d w = new x8d(0, new Object[0]);
+    public final transient Object[] r;
+    public final transient boolean s;
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    public x8d(int i, Object[] objArr) {
+        super((byte) 1);
+        this.r = objArr;
+        this.s = i;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
+    @Override // java.util.List
+    public final Object get(int i) {
+        q3f.a(i, this.s ? 1 : 0);
+        Object obj = this.r[i];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
+    @Override // v8d, b4d
+    public final int l(Object[] objArr) {
+        Object[] objArr2 = this.r;
+        boolean z = this.s;
+        System.arraycopy(objArr2, 0, objArr, 0, z ? 1 : 0);
+        return z ? 1 : 0;
     }
 
-    public abstract int h(Object[] objArr);
-
-    public int i() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
+    @Override // b4d
+    public final int m() {
+        return this.s ? 1 : 0;
     }
 
-    public int j() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
+    @Override // b4d
+    public final Object[] o() {
+        return this.r;
     }
 
-    public Object[] k() {
-        byte b2 = this.a;
-        return null;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                objArr.getClass();
-                int size = size();
-                int length = objArr.length;
-                if (length < size) {
-                    Object[] k = k();
-                    if (k != null) {
-                        break;
-                    } else {
-                        if (length != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
-                        }
-                        objArr = Arrays.copyOf(objArr, size);
-                    }
-                } else if (length > size) {
-                    objArr[size] = null;
-                }
-                h(objArr);
-                break;
-            case 1:
-                objArr.getClass();
-                int size2 = size();
-                int length2 = objArr.length;
-                if (length2 < size2) {
-                    Object[] k2 = k();
-                    if (k2 != null) {
-                        break;
-                    } else {
-                        objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size2);
-                    }
-                } else if (length2 > size2) {
-                    objArr[size2] = null;
-                }
-                h(objArr);
-                break;
-            case 2:
-                objArr.getClass();
-                int size3 = size();
-                int length3 = objArr.length;
-                if (length3 < size3) {
-                    Object[] k3 = k();
-                    if (k3 != null) {
-                        break;
-                    } else {
-                        objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size3);
-                    }
-                } else if (length3 > size3) {
-                    objArr[size3] = null;
-                }
-                h(objArr);
-                break;
-            default:
-                objArr.getClass();
-                int size4 = size();
-                int length4 = objArr.length;
-                if (length4 < size4) {
-                    Object[] k4 = k();
-                    if (k4 != null) {
-                        break;
-                    } else {
-                        objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size4);
-                    }
-                } else if (length4 > size4) {
-                    objArr[size4] = null;
-                }
-                h(objArr);
-                break;
-        }
-        return objArr;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        switch (this.a) {
-            case 0:
-                return toArray(b);
-            case 1:
-                return toArray(c);
-            case 2:
-                return toArray(d);
-            default:
-                return toArray(e);
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s ? 1 : 0;
     }
 }

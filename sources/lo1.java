@@ -1,0 +1,32 @@
+// default package
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class lo1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qy b;
+
+    public /* synthetic */ lo1(qy qyVar, byte b) {
+        this.a = b;
+        this.b = qyVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        qy qyVar = this.b;
+        switch (b) {
+            case 0:
+                hl.E3(qyVar);
+                break;
+            default:
+                xg8 xg8Var = (xg8) qyVar.g2;
+                wb2 wb2Var = xg8Var.n;
+                if (wb2Var != null && wb2Var.getDelegate() != null) {
+                    xg8Var.n.getDelegate().l1(xg8Var.n, false);
+                    break;
+                }
+                break;
+        }
+    }
+}

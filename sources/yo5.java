@@ -1,6 +1,87 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface yo5 {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yo5 extends bp5 {
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ zo5 e;
+
+    public /* synthetic */ yo5(zo5 zo5Var, byte b) {
+        this.d = b;
+        this.e = zo5Var;
+    }
+
+    @Override // jo5, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        byte b = this.d;
+        zo5 zo5Var = this.e;
+        switch (b) {
+            case 0:
+                if (obj instanceof vq7) {
+                    vq7 vq7Var = (vq7) obj;
+                    if (vq7Var.a() > 0) {
+                        if (((p99) zo5Var).e.b(vq7Var.a) == vq7Var.a()) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            default:
+                return ((p99) zo5Var).contains(obj);
+        }
+    }
+
+    @Override // bp5, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        switch (this.d) {
+            case 0:
+                return this.e.hashCode();
+            default:
+                return super.hashCode();
+        }
+    }
+
+    @Override // jo5
+    public final int i(int i, Object[] objArr) {
+        return h().i(i, objArr);
+    }
+
+    @Override // jo5
+    public final boolean m() {
+        switch (this.d) {
+            case 0:
+                return false;
+            default:
+                return true;
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    /* renamed from: n, reason: merged with bridge method [inline-methods] */
+    public final v9c iterator() {
+        return h().listIterator(0);
+    }
+
+    @Override // bp5
+    public final po5 r() {
+        return new np5(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        byte b = this.d;
+        zo5 zo5Var = this.e;
+        switch (b) {
+            case 0:
+                p99 p99Var = (p99) zo5Var;
+                yo5 yo5Var = p99Var.h;
+                if (yo5Var == null) {
+                    yo5Var = new yo5(p99Var, (byte) 1);
+                    p99Var.h = yo5Var;
+                }
+                return yo5Var.size();
+            default:
+                return ((p99) zo5Var).e.c;
+        }
+    }
 }

@@ -7,9 +7,9 @@ import android.os.Build;
 import java.util.Arrays;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-final class WebRtcAudioUtils {
+public final class WebRtcAudioUtils {
     private static final String TAG = "WebRtcAudioUtilsExternal";
 
     public static String audioEncodingToString(int i) {
@@ -33,7 +33,7 @@ final class WebRtcAudioUtils {
             case 9:
                 return "MP3";
             default:
-                return de9.k(i, "Invalid encoding: ");
+                return uh9.k(i, "Invalid encoding: ");
         }
     }
 
@@ -71,6 +71,8 @@ final class WebRtcAudioUtils {
 
     public static String deviceTypeToString(int i) {
         switch (i) {
+            case 0:
+                return "TYPE_UNKNOWN";
             case 1:
                 return "TYPE_BUILTIN_EARPIECE";
             case 2:
@@ -115,13 +117,31 @@ final class WebRtcAudioUtils {
                 return "TYPE_BUS";
             case 22:
                 return "TYPE_USB_HEADSET";
+            case 23:
+                return "TYPE_HEARING_AID";
+            case 24:
+                return "TYPE_BUILTIN_SPEAKER_SAFE";
+            case 25:
+                return "TYPE_REMOTE_SUBMIX";
+            case 26:
+                return "TYPE_BLE_HEADSET";
+            case 27:
+                return "TYPE_BLE_SPEAKER";
+            case 28:
             default:
-                return "TYPE_UNKNOWN";
+                return qd4.n(i, "TYPE_UNKNOWN(", ")");
+            case 29:
+                return "TYPE_HDMI_EARC";
+            case jn7.S /* 30 */:
+                return "TYPE_BLE_BROADCAST";
+            case 31:
+                return "TYPE_DOCK_ANALOG";
         }
     }
 
     public static String getThreadInfo() {
-        return "@[name=" + Thread.currentThread().getName() + ", id=" + Thread.currentThread().getId() + "]";
+        Thread currentThread = Thread.currentThread();
+        return "@[name=" + currentThread.getName() + ", id=" + currentThread.getId() + "]";
     }
 
     private static boolean hasMicrophone(Context context) {
@@ -179,24 +199,12 @@ final class WebRtcAudioUtils {
         }
         for (int i = 0; i < 6; i++) {
             int i2 = iArr[i];
-            StringBuilder sb = new StringBuilder();
-            sb.append("  " + streamTypeToString(i2) + ": ");
-            sb.append("volume=");
-            sb.append(audioManager.getStreamVolume(i2));
-            sb.append(", max=");
-            sb.append(audioManager.getStreamMaxVolume(i2));
-            logIsStreamMute(str, audioManager, i2, sb);
-            Logging.d(str, sb.toString());
+            Logging.d(str, c00.k(new StringBuilder("  "), streamTypeToString(i2), ": ") + "volume=" + audioManager.getStreamVolume(i2) + ", max=" + audioManager.getStreamMaxVolume(i2) + ", muted=" + audioManager.isStreamMute(i2));
         }
     }
 
-    public static void logDeviceInfo(String str) {
+    private static void logDeviceInfo(String str) {
         Logging.d(str, "Android SDK: " + Build.VERSION.SDK_INT + ", Release: " + Build.VERSION.RELEASE + ", Brand: " + Build.BRAND + ", Device: " + Build.DEVICE + ", Id: " + Build.ID + ", Hardware: " + Build.HARDWARE + ", Manufacturer: " + Build.MANUFACTURER + ", Model: " + Build.MODEL + ", Product: " + Build.PRODUCT);
-    }
-
-    private static void logIsStreamMute(String str, AudioManager audioManager, int i, StringBuilder sb) {
-        sb.append(", muted=");
-        sb.append(audioManager.isStreamMute(i));
     }
 
     public static String modeToString(int i) {
@@ -204,7 +212,8 @@ final class WebRtcAudioUtils {
     }
 
     public static boolean runningOnEmulator() {
-        return Build.HARDWARE.equals("goldfish") && Build.BRAND.startsWith("generic_");
+        String str = Build.HARDWARE;
+        return str.equals("goldfish") || str.equals("ranchu");
     }
 
     private static String streamTypeToString(int i) {

@@ -1,32 +1,98 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class dv1 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class dv1 extends FrameLayout implements snb {
+    public Path a;
+    public float b;
+    public int c;
+    public boolean d;
+    public int e;
+    public int f;
+    public View h;
+    public ep0 n;
 
-    public /* synthetic */ dv1(ChatActivityEnterView chatActivityEnterView, byte b) {
-        this.a = b;
-        this.b = chatActivityEnterView;
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.Uf));
+        hashSet.add(Integer.valueOf(aob.Fi));
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (b) {
-            case 0:
-                int i = ChatActivityEnterView.r7;
-                chatActivityEnterView.M0 = null;
-                break;
-            default:
-                int i2 = ChatActivityEnterView.r7;
-                chatActivityEnterView.M0 = null;
-                break;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        float height = (getHeight() - hl.L(32.0f)) / 2.0f;
+        float max = Math.max((getWidth() - this.f) - hl.L(4.0f), getHeight()) * this.b;
+        float L = hl.L(16.0f) + max;
+        RectF rectF = hl.P;
+        rectF.set(hl.L(14.0f) - max, (hl.L(4.0f) + height) - max, hl.L(6.0f) + this.f + max, (getHeight() - hl.L(12.0f)) + max);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, L, L, Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.drawColor(this.e);
+        canvas.saveLayerAlpha(rectF, (int) ((1.0f - (Math.min(0.5f, this.b) / 0.5f)) * 255.0f), 31);
+        canvas.translate(hl.L(10.0f), height);
+        ep0 ep0Var = this.n;
+        if (ep0Var != null) {
+            ep0Var.setDrawBackgroundDrawable(false);
+            this.n.draw(canvas);
+            this.n.setDrawBackgroundDrawable(true);
+        }
+        canvas.restore();
+        canvas.translate((1.0f - this.b) * (-hl.L(8.0f)), 0.0f);
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i2);
+        int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
+        if (height > 0) {
+            size = Math.min(size, height);
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.getMode(i2)));
+    }
+
+    public void setBotMenuButton(ep0 ep0Var) {
+        this.n = ep0Var;
+        invalidate();
+    }
+
+    public void setMeasuredButtonWidth(int i) {
+        this.f = i;
+        invalidate();
+    }
+
+    public void setProgress(float f) {
+        this.b = f;
+        this.e = vm2.f(f, aob.w0(null, aob.Uf, false), this.c);
+        for (int i = 0; i < getChildCount(); i++) {
+            getChildAt(i).setAlpha(f);
+        }
+        invalidate();
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            if (this.d) {
+                this.c = aob.w0(null, aob.Fi, false);
+            }
+            if (this.e != 0) {
+                this.e = vm2.f(this.b, aob.w0(null, aob.Uf, false), this.c);
+                invalidate();
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 }

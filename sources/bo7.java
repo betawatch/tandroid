@@ -1,58 +1,16 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import java.lang.reflect.Field;
+import android.app.Notification;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bo7 extends dzc implements yi5 {
-    public final Object b;
-
-    public bo7(Object obj) {
-        super("com.google.android.gms.dynamic.IObjectWrapper", (byte) 6);
-        this.b = obj;
+public abstract class bo7 {
+    public static Notification.MessagingStyle.Message a(CharSequence charSequence, long j, CharSequence charSequence2) {
+        return new Notification.MessagingStyle.Message(charSequence, j, charSequence2);
     }
 
-    public static yi5 T(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.dynamic.IObjectWrapper");
-        return queryLocalInterface instanceof yi5 ? (yi5) queryLocalInterface : new qbd(iBinder, "com.google.android.gms.dynamic.IObjectWrapper", (byte) 4);
-    }
-
-    public static Object U(yi5 yi5Var) {
-        if (yi5Var instanceof bo7) {
-            return ((bo7) yi5Var).b;
-        }
-        IBinder asBinder = yi5Var.asBinder();
-        Field[] declaredFields = asBinder.getClass().getDeclaredFields();
-        Field field = null;
-        int i = 0;
-        for (Field field2 : declaredFields) {
-            if (!field2.isSynthetic()) {
-                i++;
-                field = field2;
-            }
-        }
-        if (i != 1) {
-            int length = declaredFields.length;
-            haf.c(String.valueOf(length).length() + 53, length, "Unexpected number of IObjectWrapper declared fields: ");
-            return null;
-        }
-        fre.h(field);
-        if (field.isAccessible()) {
-            w26.j("IObjectWrapper declared field not private!");
-            return null;
-        }
-        field.setAccessible(true);
-        try {
-            return field.get(asBinder);
-        } catch (IllegalAccessException e) {
-            throw new IllegalArgumentException("Could not access the field in remoteBinder.", e);
-        } catch (NullPointerException e2) {
-            throw new IllegalArgumentException("Binder object is null.", e2);
-        }
+    public static Notification.MessagingStyle.Message b(Notification.MessagingStyle.Message message, String str, Uri uri) {
+        return message.setData(str, uri);
     }
 }

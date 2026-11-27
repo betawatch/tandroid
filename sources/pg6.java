@@ -1,79 +1,224 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pg6 {
-    public static final int[][] h = {new int[]{11025, -1, 22050, 44100}, new int[]{12000, -1, 24000, 48000}, new int[]{8000, -1, gc1.AUDIO_CONTENT_SAMPLING_RATE, 32000}, new int[]{-1, -1, -1, -1}};
-    public static final int[][] i = {new int[]{0, 0, 0, 0, 0}, new int[]{32000, 32000, 32000, 32000, 8000}, new int[]{64000, 48000, 40000, 48000, gc1.AUDIO_CONTENT_SAMPLING_RATE}, new int[]{96000, 56000, 48000, 56000, 24000}, new int[]{128000, 64000, 56000, 64000, 32000}, new int[]{160000, 80000, 64000, 80000, 40000}, new int[]{192000, 96000, 80000, 96000, 48000}, new int[]{224000, 112000, 96000, 112000, 56000}, new int[]{256000, 128000, 112000, 128000, 64000}, new int[]{288000, 160000, 128000, 144000, 80000}, new int[]{320000, 192000, 160000, 160000, 96000}, new int[]{352000, 224000, 192000, 176000, 112000}, new int[]{384000, 256000, 224000, 192000, 128000}, new int[]{416000, 320000, 256000, 224000, 144000}, new int[]{448000, 384000, 320000, 256000, 160000}, new int[]{-1, -1, -1, -1, -1}};
-    public static final int[][] j = {new int[]{-1, 4, 4, 3}, new int[]{-1, -1, -1, -1}, new int[]{-1, 4, 4, 3}, new int[]{-1, 2, 1, 0}};
-    public static final int[][] k = {new int[]{-1, 72, kk7.Z1, 12}, new int[]{-1, -1, -1, -1}, new int[]{-1, 72, kk7.Z1, 12}, new int[]{-1, kk7.Z1, kk7.Z1, 12}};
-    public static final int[] l = {-1, 1, 1, 4};
-    public static final int[][] m = {new int[]{17, -1, 17, 32}, new int[]{17, -1, 17, 32}, new int[]{17, -1, 17, 32}, new int[]{9, -1, 9, 17}};
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
+import android.graphics.drawable.Drawable;
+import android.os.Environment;
+import android.os.Looper;
+import java.io.File;
+import org.telegram.messenger.CallReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.voip.OpusDred;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-    public pg6(int i2, int i3, int i4) {
-        int i5 = (i2 >> 3) & 3;
-        this.a = i5;
-        if (i5 == 1) {
-            throw new ng6("Reserved version");
-        }
-        int i6 = (i2 >> 1) & 3;
-        this.b = i6;
-        if (i6 == 0) {
-            throw new ng6("Reserved layer");
-        }
-        int i7 = (i3 >> 4) & 15;
-        this.d = i7;
-        if (i7 == 15) {
-            throw new ng6("Reserved bitrate");
-        }
-        if (i7 == 0) {
-            throw new ng6("Free bitrate");
-        }
-        int i8 = (i3 >> 2) & 3;
-        this.c = i8;
-        if (i8 == 3) {
-            throw new ng6("Reserved frequency");
-        }
-        int i9 = (i4 >> 6) & 3;
-        this.e = i9;
-        this.f = (i3 >> 1) & 1;
-        int i10 = i2 & 1;
-        this.g = i10;
-        int i11 = i10 != 0 ? 4 : 6;
-        i11 = i6 == 1 ? i11 + m[i9][i5] : i11;
-        if (b() < i11) {
-            throw new ng6(de9.k(i11, "Frame size must be at least "));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class pg6 implements Runnable {
+    public final /* synthetic */ byte a;
+
+    public /* synthetic */ pg6(vn8 vn8Var, Long l) {
+        this.a = (byte) 15;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        d31 b0;
+        e Q;
+        switch (this.a) {
+            case 0:
+                CallReceiver.a();
+                return;
+            case 1:
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    return;
+                }
+                return;
+            case 2:
+                MediaController.Z1 = null;
+                MediaController.R(0);
+                return;
+            case 3:
+                try {
+                    mka.n(a.b);
+                    return;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
+                }
+            case 4:
+                aob.E(false);
+                return;
+            case 5:
+                jn7.e().k(jn7.m5, new Object[0]);
+                return;
+            case 6:
+                d31.Y().N(ob6.M0(2131745589, null), ob6.M0(2131751070, null)).j();
+                return;
+            case 7:
+                d31.Y().N(ob6.M0(2131745589, null), ob6.M0(2131751070, null)).j();
+                return;
+            case 8:
+                jn7.e().k(jn7.g4, new Object[0]);
+                return;
+            case 9:
+                v21 t = vs7.h().t(ob6.M0(2131749522, null), null);
+                t.u = true;
+                t.j();
+                return;
+            case 10:
+                OpusDred.downloadEnded();
+                return;
+            case 11:
+                xv7.c();
+                return;
+            case 12:
+                Looper myLooper2 = Looper.myLooper();
+                if (myLooper2 != null) {
+                    myLooper2.quit();
+                    return;
+                }
+                return;
+            case 13:
+                return;
+            case 14:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                return;
+            case 15:
+                throw null;
+            case 16:
+                throw null;
+            case 17:
+                d31.Y().N(ob6.M0(2131745589, null), ob6.M0(2131751070, null)).j();
+                return;
+            case 18:
+                bx4.g1(false, null);
+                return;
+            case 19:
+                e S = LaunchActivity.S();
+                if (S == null || (b0 = d31.b0(S)) == null) {
+                    return;
+                }
+                v21 I = b0.I(R.raw.msg_antispam, ob6.M0(2131745949, null), ob6.M0(2131745912, null));
+                I.j = 5000;
+                I.j();
+                return;
+            case 20:
+                return;
+            case 21:
+                ir9.m();
+                return;
+            case 22:
+                jn7.e().k(jn7.F2, new Object[0]);
+                return;
+            case 23:
+                return;
+            case 24:
+                e Q2 = LaunchActivity.Q();
+                if (Q2 != null) {
+                    bg0 bg0Var = new bg0();
+                    bg0Var.a = true;
+                    Q2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), bg0Var);
+                    return;
+                }
+                return;
+            case 25:
+                xea.x();
+                return;
+            case 26:
+                try {
+                    File file = new File(Environment.getExternalStorageDirectory(), "Telegram");
+                    File file2 = new File(file, "Telegram Images");
+                    file2.mkdir();
+                    File file3 = new File(file, "Telegram Video");
+                    file3.mkdir();
+                    if (f11.b) {
+                        if (file2.isDirectory()) {
+                            hl.G(new File(file2, ".nomedia"));
+                        }
+                        if (file3.isDirectory()) {
+                            hl.G(new File(file3, ".nomedia"));
+                            return;
+                        }
+                        return;
+                    }
+                    if (file2.isDirectory()) {
+                        new File(file2, ".nomedia").delete();
+                    }
+                    if (file3.isDirectory()) {
+                        new File(file3, ".nomedia").delete();
+                        return;
+                    }
+                    return;
+                } catch (Throwable th) {
+                    cc4.g(th, true);
+                    return;
+                }
+            case 27:
+                if (xea.a || (Q = LaunchActivity.Q()) == null || Q.getParentActivity() == null) {
+                    return;
+                }
+                xea.e0 = null;
+                xea.x();
+                in5.z().e(new kc((byte) 10));
+                xea.a = true;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
+                alertDialog$Builder.a.S = ob6.M0(2131745566, null);
+                alertDialog$Builder.a.T = ob6.M0(2131745565, null);
+                alertDialog$Builder.j(ob6.M0(2131751320, null), new vr9((byte) 16));
+                id idVar = alertDialog$Builder.a;
+                idVar.setCanceledOnTouchOutside(false);
+                idVar.show();
+                return;
+            case 28:
+                return;
+            default:
+                e S2 = LaunchActivity.S();
+                if (S2 != null) {
+                    uqc uqcVar = new uqc();
+                    ltc ltcVar = uqcVar.j0;
+                    if (ltcVar != null) {
+                        ltcVar.b(false);
+                    }
+                    if (uqcVar.g0) {
+                        uqcVar.I0 = false;
+                        uqcVar.f0 = 1;
+                        ir1 ir1Var = uqcVar.s0;
+                        if (ir1Var != null) {
+                            ir1Var.setPosition(1);
+                        }
+                    } else {
+                        uqcVar.I0 = true;
+                    }
+                    S2.presentFragment(uqcVar);
+                    return;
+                }
+                return;
         }
     }
 
-    public final int a() {
-        return i[this.d][j[this.a][this.b]];
+    public /* synthetic */ pg6(byte b) {
+        this.a = b;
     }
 
-    public final int b() {
-        int[][] iArr = k;
-        int i2 = this.a;
-        int[] iArr2 = iArr[i2];
-        int i3 = this.b;
-        return (((a() * iArr2[i3]) / h[this.c][i2]) + this.f) * l[i3];
+    public /* synthetic */ pg6(Object obj, byte b) {
+        this.a = b;
     }
 
-    public final long c(long j2) {
-        long j3 = (this.b == 3 ? 384 : 1152) * j2 * 1000;
-        int b = b();
-        int[] iArr = h[this.c];
-        long j4 = j3 / (iArr[r0] * b);
-        return (this.a == 3 || this.e != 3) ? j4 : j4 / 2;
+    private final void a() {
     }
 
-    public final boolean d(pg6 pg6Var) {
-        return this.b == pg6Var.b && this.a == pg6Var.a && this.c == pg6Var.c && this.e == pg6Var.e;
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

@@ -1,133 +1,77 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Map;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class nne extends qde {
-    private static Map<Object, nne> zzd = new ConcurrentHashMap();
-    protected qze zzb;
-    private int zzc;
-
-    public nne() {
-        this.zza = 0;
-        this.zzb = qze.f;
-        this.zzc = -1;
-    }
-
-    public static Object e(Method method, nne nneVar, Object... objArr) {
+public abstract class nne {
+    public static yu4 a(String str, String str2) {
+        Exception a;
         try {
-            return method.invoke(nneVar, objArr);
-        } catch (IllegalAccessException e) {
-            fyb.j("Couldn't use Java reflection to implement protocol message reflection.", e);
-            return null;
-        } catch (InvocationTargetException e2) {
-            Throwable cause = e2.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
+            ev4 ev4Var = new ev4(new i1((byte) 26), null);
+            if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_ABORT_ERROR")) {
+                a = wie.a(new i1((byte) 0), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_CONSTRAINT_ERROR")) {
+                a = wie.a(new i1((byte) 1), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_DATA_CLONE_ERROR")) {
+                a = wie.a(new i1((byte) 2), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_DATA_ERROR")) {
+                a = wie.a(new i1((byte) 3), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_ENCODING_ERROR")) {
+                a = wie.a(new i1((byte) 4), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_HIERARCHY_REQUEST_ERROR")) {
+                a = wie.a(new i1((byte) 5), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_IN_USE_ATTRIBUTE_ERROR")) {
+                a = wie.a(new i1((byte) 6), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_CHARACTER_ERROR")) {
+                a = wie.a(new i1((byte) 7), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_MODIFICATION_ERROR")) {
+                a = wie.a(new i1((byte) 8), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_NODE_TYPE_ERROR")) {
+                a = wie.a(new i1((byte) 9), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_STATE_ERROR")) {
+                a = wie.a(new i1((byte) 10), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NAMESPACE_ERROR")) {
+                a = wie.a(new i1((byte) 11), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NETWORK_ERROR")) {
+                a = wie.a(new i1((byte) 12), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NO_MODIFICATION_ALLOWED_ERROR")) {
+                a = wie.a(new i1((byte) 13), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_ALLOWED_ERROR")) {
+                a = wie.a(new i1((byte) 14), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_FOUND_ERROR")) {
+                a = wie.a(new i1((byte) 15), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_READABLE_ERROR")) {
+                a = wie.a(new i1((byte) 16), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_SUPPORTED_ERROR")) {
+                a = wie.a(new i1((byte) 17), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_OPERATION_ERROR")) {
+                a = wie.a(new i1((byte) 18), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_OPT_OUT_ERROR")) {
+                a = wie.a(new i1((byte) 19), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_QUOTA_EXCEEDED_ERROR")) {
+                a = wie.a(new i1((byte) 20), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_READ_ONLY_ERROR")) {
+                a = wie.a(new i1((byte) 21), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_SECURITY_ERROR")) {
+                a = wie.a(new i1((byte) 22), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_SYNTAX_ERROR")) {
+                a = wie.a(new i1((byte) 23), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_TIMEOUT_ERROR")) {
+                a = wie.a(new i1((byte) 24), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_TRANSACTION_INACTIVE_ERROR")) {
+                a = wie.a(new i1((byte) 25), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_UNKNOWN_ERROR")) {
+                a = wie.a(new i1((byte) 26), str2, ev4Var);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_VERSION_ERROR")) {
+                a = wie.a(new i1((byte) 27), str2, ev4Var);
+            } else {
+                if (!str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_WRONG_DOCUMENT_ERROR")) {
+                    throw new nr4();
+                }
+                a = wie.a(new i1((byte) 28), str2, ev4Var);
             }
-            if (cause instanceof Error) {
-                throw ((Error) cause);
-            }
-            fyb.j("Unexpected exception thrown by generated accessor method.", cause);
-            return null;
+            return (yu4) a;
+        } catch (nr4 unused) {
+            return new xu4(str2, str);
         }
-    }
-
-    public static nne f(Class cls) {
-        nne nneVar = zzd.get(cls);
-        if (nneVar == null) {
-            try {
-                Class.forName(cls.getName(), true, cls.getClassLoader());
-                nneVar = zzd.get(cls);
-            } catch (ClassNotFoundException e) {
-                k93.h("Class initialization cannot fail.", e);
-                return null;
-            }
-        }
-        if (nneVar != null) {
-            return nneVar;
-        }
-        try {
-            nne nneVar2 = (nne) ((nne) i0f.a.allocateInstance(cls)).d(6);
-            if (nneVar2 != null) {
-                zzd.put(cls, nneVar2);
-                return nneVar2;
-            }
-            sdb.a();
-            return null;
-        } catch (InstantiationException e2) {
-            ho9.n(e2);
-            return null;
-        }
-    }
-
-    public static void g(Class cls, nne nneVar) {
-        zzd.put(cls, nneVar);
-    }
-
-    /* JADX WARN: Type inference failed for: r0v0, types: [wne, zoe] */
-    public static zoe i() {
-        return wne.d;
-    }
-
-    @Override // qde
-    public final void b(int i) {
-        this.zzc = i;
-    }
-
-    @Override // qde
-    public final int c() {
-        return this.zzc;
-    }
-
-    public abstract Object d(int i);
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        fwe fweVar = fwe.c;
-        fweVar.getClass();
-        return fweVar.a(getClass()).f(this, (nne) obj);
-    }
-
-    public final int h() {
-        int i = this.zzc;
-        if (i != -1) {
-            return i;
-        }
-        fwe fweVar = fwe.c;
-        fweVar.getClass();
-        int zzb = fweVar.a(getClass()).zzb(this);
-        this.zzc = zzb;
-        return zzb;
-    }
-
-    public final int hashCode() {
-        int i = this.zza;
-        if (i != 0) {
-            return i;
-        }
-        fwe fweVar = fwe.c;
-        fweVar.getClass();
-        int g = fweVar.a(getClass()).g(this);
-        this.zza = g;
-        return g;
-    }
-
-    public final String toString() {
-        String obj = super.toString();
-        StringBuilder sb = new StringBuilder();
-        sb.append("# ");
-        sb.append(obj);
-        fkd.c(this, sb, 0);
-        return sb.toString();
     }
 }

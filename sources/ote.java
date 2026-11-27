@@ -1,38 +1,47 @@
 // default package
 
-import android.R;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public abstract class ote {
-    public static void a(View view) {
-        b(view, 0.1f, 1.5f);
+    public static zf8 a(zf8 zf8Var, zf8 zf8Var2) {
+        if (zf8Var != null) {
+            lk4 lk4Var = zf8Var.a;
+            if (zf8Var2 != null) {
+                yf8 yf8Var = new yf8();
+                for (int i = 0; i < lk4Var.a.size(); i++) {
+                    if (zf8Var2.a(lk4Var.a(i))) {
+                        yf8Var.a.b(lk4Var.a(i));
+                    }
+                }
+                return yf8Var.b();
+            }
+        }
+        return zf8.b;
     }
 
-    public static void b(View view, float f, float f2) {
-        if (view == null) {
-            return;
+    public static void b(dg8 dg8Var, yw6 yw6Var) {
+        int i = yw6Var.b;
+        long j = yw6Var.c;
+        po5 po5Var = yw6Var.a;
+        if (i == -1) {
+            if (dg8Var.m0(20)) {
+                dg8Var.N0(po5Var);
+                return;
+            } else {
+                if (po5Var.isEmpty()) {
+                    return;
+                }
+                dg8Var.D0((ft6) po5Var.get(0));
+                return;
+            }
         }
-        AnimatorSet animatorSet = new AnimatorSet();
-        Property property = View.SCALE_X;
-        float f3 = 1.0f - f;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, f3);
-        Property property2 = View.SCALE_Y;
-        animatorSet.playTogether(ofFloat, ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, f3));
-        animatorSet.setDuration(80L);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) property, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, 1.0f));
-        animatorSet2.setInterpolator(new OvershootInterpolator(f2));
-        animatorSet2.setDuration(350L);
-        StateListAnimator stateListAnimator = new StateListAnimator();
-        stateListAnimator.addState(new int[]{R.attr.state_pressed}, animatorSet);
-        stateListAnimator.addState(new int[0], animatorSet2);
-        view.setStateListAnimator(stateListAnimator);
+        if (dg8Var.m0(20)) {
+            dg8Var.T(po5Var, yw6Var.b, j);
+        } else {
+            if (po5Var.isEmpty()) {
+                return;
+            }
+            dg8Var.r((ft6) po5Var.get(0), j);
+        }
     }
 }

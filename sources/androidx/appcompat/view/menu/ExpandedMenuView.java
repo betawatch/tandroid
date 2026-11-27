@@ -8,16 +8,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements xz6, v07, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements e27, c37, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public yz6 a;
+    public f27 a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        vk9 v = vk9.v(context, attributeSet, b, R.attr.listViewStyle);
+        ko9 v = ko9.v(context, attributeSet, b, R.attr.listViewStyle);
         TypedArray typedArray = (TypedArray) v.c;
         if (typedArray.hasValue(0)) {
             setBackgroundDrawable(v.n(0));
@@ -28,14 +28,14 @@ public final class ExpandedMenuView extends ListView implements xz6, v07, Adapte
         v.y();
     }
 
-    @Override // xz6
-    public final boolean a(c07 c07Var) {
-        return this.a.q(c07Var, null, 0);
+    @Override // e27
+    public final boolean a(j27 j27Var) {
+        return this.a.q(j27Var, null, 0);
     }
 
-    @Override // v07
-    public final void b(yz6 yz6Var) {
-        this.a = yz6Var;
+    @Override // c37
+    public final void b(f27 f27Var) {
+        this.a = f27Var;
     }
 
     public int getWindowAnimations() {
@@ -50,6 +50,6 @@ public final class ExpandedMenuView extends ListView implements xz6, v07, Adapte
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        a((c07) getAdapter().getItem(i));
+        a((j27) getAdapter().getItem(i));
     }
 }

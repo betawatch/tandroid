@@ -1,66 +1,38 @@
 // default package
 
-import android.net.Uri;
-import android.os.Bundle;
-import j$.util.Objects;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class hr6 {
-    public CharSequence A;
-    public CharSequence B;
-    public CharSequence C;
-    public Integer D;
-    public Integer E;
-    public CharSequence F;
-    public CharSequence G;
-    public CharSequence H;
-    public Integer I;
-    public Bundle J;
-    public mm5 K;
-    public CharSequence a;
-    public CharSequence b;
-    public CharSequence c;
-    public CharSequence d;
-    public CharSequence e;
-    public CharSequence f;
-    public CharSequence g;
-    public Long h;
-    public fz8 i;
-    public fz8 j;
-    public byte[] k;
-    public c31 l;
-    public Integer m;
-    public Uri n;
-    public Integer o;
-    public Integer p;
-    public Integer q;
-    public Boolean r;
-    public Boolean s;
-    public Integer t;
-    public Integer u;
-    public Integer v;
-    public Integer w;
-    public Integer x;
-    public Integer y;
-    public CharSequence z;
+public final /* synthetic */ class hr6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ is6 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ String d;
 
-    public hr6() {
-        km5 km5Var = mm5.b;
-        this.K = w59.e;
+    public /* synthetic */ hr6(is6 is6Var, ArrayList arrayList, String str, byte b) {
+        this.a = b;
+        this.b = is6Var;
+        this.c = arrayList;
+        this.d = str;
     }
 
-    public final void a(int i, byte[] bArr) {
-        if (this.k == null || i == 3 || !Objects.equals(this.m, 3)) {
-            this.k = (byte[]) bArr.clone();
-            this.l = null;
-            this.m = Integer.valueOf(i);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.d;
+        ArrayList arrayList = this.c;
+        is6 is6Var = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new hr6(is6Var, arrayList, str, (byte) 2));
+                break;
+            case 1:
+                is6Var.b(str, arrayList);
+                break;
+            default:
+                is6Var.b(str, arrayList);
+                break;
         }
-    }
-
-    public final void b(byte[] bArr, Integer num) {
-        this.k = bArr == null ? null : (byte[]) bArr.clone();
-        this.l = null;
-        this.m = num;
     }
 }

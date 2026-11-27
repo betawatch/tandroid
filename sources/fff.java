@@ -1,39 +1,38 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fff extends b4 {
-    public static final Parcelable.Creator<fff> CREATOR = new c0f(27);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final long e;
+public final class fff extends ljf {
+    private static final fff zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private s7f zzg;
 
-    public fff(int i, int i2, int i3, long j, int i4) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        this.e = j;
+    static {
+        fff fffVar = new fff();
+        zzb = fffVar;
+        ljf.e(fff.class, fffVar);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.d);
-        jte.q(parcel, 5, 8);
-        parcel.writeLong(this.e);
-        jte.s(parcel, r);
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002ဋ\u0001\u0003ဉ\u0002", new Object[]{"zzd", "zze", uif.w, "zzf", "zzg"});
+        }
+        if (i2 == 3) {
+            return new fff();
+        }
+        if (i2 == 4) {
+            return new mdf(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

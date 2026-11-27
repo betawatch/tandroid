@@ -5,7 +5,7 @@ import j$.time.LocalDate;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes4.dex */
 public abstract class g implements o {
     public static final g DAY_OF_QUARTER;
@@ -213,7 +213,7 @@ public abstract class g implements o {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, kk7.K2, kk7.v4, 0, 91, kk7.L2, kk7.w4};
+        a = new int[]{0, 90, jn7.K2, jn7.v4, 0, 91, jn7.L2, jn7.w4};
     }
 
     public static int o(LocalDate localDate) {
@@ -226,7 +226,7 @@ public abstract class g implements o {
             i3 = i2 + 4;
         }
         if (C < i3) {
-            return (int) s.e(1L, r(q(localDate.Q(kk7.J2).N(-1L)))).d;
+            return (int) s.e(1L, r(q(localDate.Q(jn7.J2).N(-1L)))).d;
         }
         int i4 = ((C - i3) / 7) + 1;
         if (i4 != 53 || i3 == -3 || (i3 == -2 && localDate.H())) {

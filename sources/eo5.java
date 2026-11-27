@@ -1,49 +1,39 @@
 // default package
 
-import android.content.ClipDescription;
-import android.net.Uri;
-import android.view.inputmethod.InputContentInfo;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class eo5 implements fo5 {
-    public final InputContentInfo a;
-
-    public eo5(Uri uri, ClipDescription clipDescription, Uri uri2) {
-        this.a = new InputContentInfo(uri, clipDescription, uri2);
+public final class eo5 extends lp {
+    public final i99 D() {
+        if (this.b == 0) {
+            return i99.r;
+        }
+        return new i99(this.b, (Object[]) this.c);
     }
 
-    @Override // fo5
-    public final Uri f() {
-        return this.a.getContentUri();
+    public final void F(t1c t1cVar, String str) {
+        super.x(t1cVar, str);
     }
 
-    @Override // fo5
-    public final ClipDescription getDescription() {
-        return this.a.getDescription();
+    public final void G(Set set) {
+        super.y(set);
     }
 
-    @Override // fo5
-    public final void h() {
-        this.a.requestPermission();
+    @Override // lp
+    public final to5 e() {
+        throw new UnsupportedOperationException("Not supported for bimaps");
     }
 
-    @Override // fo5
-    public final Uri i() {
-        return this.a.getLinkUri();
+    @Override // lp
+    public final lp x(Object obj, Object obj2) {
+        super.x(obj, obj2);
+        return this;
     }
 
-    @Override // fo5
-    public final Object l() {
-        return this.a;
-    }
-
-    @Override // fo5
-    public final void n() {
-        this.a.releasePermission();
-    }
-
-    public eo5(Object obj) {
-        this.a = (InputContentInfo) obj;
+    @Override // lp
+    public final lp y(Set set) {
+        super.y(set);
+        return this;
     }
 }

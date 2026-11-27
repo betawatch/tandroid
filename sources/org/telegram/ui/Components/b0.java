@@ -5,18 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class b0 extends n39 {
+public final class b0 extends c79 {
     public Context c;
     public ArrayList d;
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
+    @Override // c79
+    public final boolean D(f89 f89Var) {
         return true;
     }
 
-    @Override // w39
+    @Override // j79
     public final int b() {
         ArrayList arrayList = this.d;
         if (arrayList.isEmpty()) {
@@ -25,35 +25,35 @@ public final class b0 extends n39 {
         return arrayList.size() + 1;
     }
 
-    @Override // w39
+    @Override // j79
     public final int d(int i) {
         return i == 0 ? 1 : 0;
     }
 
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        if (s49Var.f == 0) {
-            blb blbVar = (blb) ((ArrayList) this.d.get(i - 1)).get(0);
-            int c = blbVar.e == bkb.De ? 0 : blbVar.c();
-            dhb dhbVar = (dhb) s49Var.a;
-            dhbVar.a.setText(lve.c(blbVar.e));
-            dhbVar.b = c;
-            dhbVar.setWillNotDraw(c == 0);
-            dhbVar.invalidate();
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        if (f89Var.f == 0) {
+            apb apbVar = (apb) ((ArrayList) this.d.get(i - 1)).get(0);
+            int c = apbVar.e == aob.Ee ? 0 : apbVar.c();
+            zkb zkbVar = (zkb) f89Var.a;
+            zkbVar.a.setText(d0f.c(apbVar.e));
+            zkbVar.b = c;
+            zkbVar.setWillNotDraw(c == 0);
+            zkbVar.invalidate();
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View dhbVar;
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View zkbVar;
         Context context = this.c;
         if (i != 0) {
-            dhbVar = new View(context);
-            dhbVar.setLayoutParams(new e49(-1, gl.L(56.0f)));
+            zkbVar = new View(context);
+            zkbVar.setLayoutParams(new r79(-1, hl.L(56.0f)));
         } else {
-            dhbVar = new dhb(context);
-            dhbVar.setLayoutParams(new e49(-1, -2));
+            zkbVar = new zkb(context);
+            zkbVar.setLayoutParams(new r79(-1, -2));
         }
-        return new y29(dhbVar);
+        return new n69(zkbVar);
     }
 }

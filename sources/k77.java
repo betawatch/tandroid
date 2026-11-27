@@ -1,32 +1,58 @@
 // default package
 
-import android.content.DialogInterface;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k77 implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class k77 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ k77(na7 na7Var, int i, byte b) {
+    public /* synthetic */ k77(uc7 uc7Var, ArrayList arrayList, byte b) {
         this.a = b;
-        this.b = na7Var;
-        this.c = i;
+        this.b = uc7Var;
+        this.c = arrayList;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        int i = this.c;
-        na7 na7Var = this.b;
+        ArrayList arrayList = this.c;
+        uc7 uc7Var = this.b;
         switch (b) {
             case 0:
-                na7Var.getConnectionsManager().cancelRequest(i, true);
+                hl.c3(new k77(uc7Var, arrayList, (byte) 2));
+                return;
+            case 1:
+                hl.c3(new k77(uc7Var, arrayList, (byte) 3));
+                return;
+            case 2:
+                uc7Var.getNotificationsController().K(arrayList, true, false, null);
+                return;
+            case 3:
+                uc7Var.getNotificationsController().K(arrayList, true, false, null);
+                return;
+            case 4:
+                int size = arrayList.size();
+                for (int i = 0; i < size; i++) {
+                    uc7Var.getNotificationCenter().k(80, arrayList.get(i));
+                }
+                return;
+            case 5:
                 break;
+            case 6:
+                uc7Var.getNotificationsController().K(arrayList, true, false, null);
+                return;
+            case 7:
+                hl.c3(new k77(uc7Var, arrayList, (byte) 8));
+                return;
             default:
-                na7Var.getConnectionsManager().cancelRequest(i, true);
-                break;
+                uc7Var.getNotificationsController().K(arrayList, true, false, null);
+                return;
+        }
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            uc7Var.n4(uc7Var.j1(-((Long) arrayList.get(i2)).longValue()), 0L);
         }
     }
 }

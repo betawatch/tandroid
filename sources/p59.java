@@ -1,25 +1,22 @@
 // default package
 
-import android.os.Bundle;
-import android.util.Log;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class p59 {
-    public final /* synthetic */ q59 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class p59 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    public p59(q59 q59Var) {
-        this.a = q59Var;
+    static {
+        a8c.h(new p59());
     }
 
-    public static void a(String str, Bundle bundle) {
-        Log.d("MediaRouteProviderProxy", "Error: " + str + ", data: " + bundle);
-    }
-
-    public final void b(Bundle bundle) {
-        String string = bundle.getString("groupableTitle");
-        q59 q59Var = this.a;
-        q59Var.g = string;
-        q59Var.h = bundle.getString("transferableTitle");
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        tk4 tk4Var = new tk4(context, null);
+        tk4Var.setViewType(16);
+        tk4Var.setMinimumHeight(hl.L(48.0f));
+        return tk4Var;
     }
 }

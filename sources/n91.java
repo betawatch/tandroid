@@ -1,70 +1,46 @@
 // default package
 
-import java.util.ArrayList;
+import android.os.SystemClock;
+import android.view.ViewGroup;
+import org.webrtc.VideoFrame;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class n91 {
-    public String a;
-    public ArrayList b;
-    public ArrayList c;
-    public ArrayList d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class n91 implements VideoSink {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ViewGroup b;
 
-    public final String a(String str) {
-        String str2;
-        String str3;
-        String str4;
-        String str5 = null;
-        if (str.startsWith(this.a)) {
-            str4 = this.a;
-            str3 = str.substring(str4.length());
-        } else {
-            ArrayList arrayList = this.b;
-            int size = arrayList.size();
-            int i = 0;
-            while (true) {
-                if (i >= size) {
-                    str2 = null;
+    public /* synthetic */ n91(ViewGroup viewGroup, byte b) {
+        this.a = b;
+        this.b = viewGroup;
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final void onFrame(VideoFrame videoFrame) {
+        switch (this.a) {
+            case 0:
+                boolean z = SystemClock.elapsedRealtime() - ((o91) this.b).r > 1000;
+                ((o91) this.b).r = SystemClock.elapsedRealtime();
+                ((o91) this.b).s = videoFrame.getRotatedWidth();
+                ((o91) this.b).w = videoFrame.getRotatedHeight();
+                ((o91) this.b).b.d.onFrame(videoFrame);
+                if (z && !((o91) this.b).x) {
+                    ((o91) this.b).x = true;
+                    hl.c3(((o91) this.b).y);
                     break;
                 }
-                Object obj = arrayList.get(i);
-                i++;
-                str2 = (String) obj;
-                if (str.startsWith(str2)) {
+                break;
+            default:
+                ((bb5) this.b).s = SystemClock.elapsedRealtime();
+                ((bb5) this.b).w = videoFrame.getRotatedWidth();
+                ((bb5) this.b).x = videoFrame.getRotatedHeight();
+                hmc hmcVar = ((bb5) this.b).c;
+                if (hmcVar != null) {
+                    hmcVar.d.onFrame(videoFrame);
                     break;
                 }
-            }
-            if (str2 != null) {
-                str3 = str.substring(str2.length());
-                str4 = null;
-                str5 = str2;
-            } else {
-                str3 = str;
-                str4 = null;
-            }
+                break;
         }
-        ArrayList arrayList2 = this.d;
-        int size2 = arrayList2.size();
-        int i2 = 0;
-        while (i2 < size2) {
-            Object obj2 = arrayList2.get(i2);
-            i2++;
-            String a = ((do9) obj2).a(str3, str4, str5, true);
-            if (a != null) {
-                return a;
-            }
-        }
-        ArrayList arrayList3 = this.d;
-        int size3 = arrayList3.size();
-        int i3 = 0;
-        while (i3 < size3) {
-            Object obj3 = arrayList3.get(i3);
-            i3++;
-            String a2 = ((do9) obj3).a(str3, str4, str5, false);
-            if (a2 != null) {
-                return a2;
-            }
-        }
-        return (str4 == null || str3.length() == 0) ? str : tb4.y(str4, " ", str3);
     }
 }

@@ -1,49 +1,89 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lo5 implements gs3 {
-    public final /* synthetic */ byte a;
-    public String b;
+public final class lo5 implements Serializable {
+    public static final lo5 c = new lo5(new int[0], 0);
+    public final int[] a;
+    public final int b;
 
-    public lo5(String str) {
-        this.a = (byte) 2;
-        this.b = str;
+    public lo5(int[] iArr, int i) {
+        this.a = iArr;
+        this.b = i;
     }
 
-    @Override // gs3
+    public static lo5 c(int... iArr) {
+        yve.e("the total number of elements must fit in an int", iArr.length <= 2147483646);
+        int length = iArr.length + 1;
+        int[] iArr2 = new int[length];
+        iArr2[0] = 0;
+        System.arraycopy(iArr, 0, iArr2, 1, iArr.length);
+        return new lo5(iArr2, length);
+    }
+
+    public final boolean a(int i) {
+        int i2 = 0;
+        while (true) {
+            if (i2 >= this.b) {
+                i2 = -1;
+                break;
+            }
+            if (this.a[i2] == i) {
+                break;
+            }
+            i2++;
+        }
+        return i2 >= 0;
+    }
+
     public final int b(int i) {
-        return -1;
+        yve.j(i, this.b);
+        return this.a[i];
     }
 
-    @Override // gs3
-    public final boolean c(int i) {
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof lo5) {
+            lo5 lo5Var = (lo5) obj;
+            int i = lo5Var.b;
+            int i2 = this.b;
+            if (i2 == i) {
+                for (int i3 = 0; i3 < i2; i3++) {
+                    if (b(i3) == lo5Var.b(i3)) {
+                    }
+                }
+                return true;
+            }
+        }
         return false;
     }
 
-    @Override // gs3
-    public final char charAt(int i) {
-        return this.b.charAt(i);
-    }
-
-    @Override // gs3
-    public final int length() {
-        return this.b.length();
-    }
-
-    @Override // gs3
-    public final CharSequence subSequence(int i, int i2) {
-        return this.b.subSequence(i, i2);
+    public final int hashCode() {
+        int i = 1;
+        for (int i2 = 0; i2 < this.b; i2++) {
+            i = (i * 31) + this.a[i2];
+        }
+        return i;
     }
 
     public final String toString() {
-        switch (this.a) {
-            case 1:
-                return this.b;
-            case 2:
-                return "<" + this.b + '>';
-            default:
-                return super.toString();
+        int i = this.b;
+        if (i == 0) {
+            return "[]";
         }
+        StringBuilder sb = new StringBuilder(i * 5);
+        sb.append('[');
+        int[] iArr = this.a;
+        sb.append(iArr[0]);
+        for (int i2 = 1; i2 < i; i2++) {
+            sb.append(", ");
+            sb.append(iArr[i2]);
+        }
+        sb.append(']');
+        return sb.toString();
     }
 }

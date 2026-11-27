@@ -1,75 +1,71 @@
 // default package
 
 import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bi3 extends UndoView {
-    public final /* synthetic */ cj3 k0;
+public final class bi3 extends ChatActivityEnterView {
+    public final /* synthetic */ uj3 Y7;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bi3(cj3 cj3Var, Activity activity) {
-        super(activity);
-        this.k0 = cj3Var;
+    public bi3(uj3 uj3Var, Activity activity, nj3 nj3Var) {
+        super(activity, nj3Var, null, false, null);
+        this.Y7 = uj3Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final boolean a() {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int i;
+        if (motionEvent.getAction() == 0) {
+            uj3 uj3Var = this.Y7;
+            Activity parentActivity = uj3Var.getParentActivity();
+            i = ((e) uj3Var).classGuid;
+            hl.V2(parentActivity, i);
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void f1(float f) {
+        uj3 uj3Var = this.Y7;
+        uj3Var.A1.setInputBubbleHeight(f);
+        uj3Var.O2();
+        uj3Var.P2();
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final int getMessagesCount() {
+        uj3 uj3Var = this.Y7;
+        int i = uj3Var.U0;
+        bi3 bi3Var = uj3Var.D1;
+        return Math.max(1, i + (!TextUtils.isEmpty(bi3Var == null ? "" : bi3Var.getFieldText()) ? 1 : 0));
+    }
+
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final long getStarsPrice() {
+        uj3 uj3Var = this.Y7;
+        ArrayList arrayList = uj3Var.K2;
+        if (arrayList == null) {
+            return 0L;
+        }
+        int size = arrayList.size();
         int i = 0;
-        while (true) {
-            bj3[] bj3VarArr = this.k0.f0;
-            if (i >= bj3VarArr.length) {
-                return true;
-            }
-            if (bj3VarArr[i].y.k()) {
-                return false;
-            }
+        long j = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
             i++;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void g(int i, long j) {
-        if (i == 1 || i == 27) {
-            cj3 cj3Var = this.k0;
-            cj3Var.Q4(true, true);
-            if (cj3Var.T1 != null) {
-                int i2 = 0;
-                while (true) {
-                    if (i2 >= cj3Var.T1.size()) {
-                        i2 = -1;
-                        break;
-                    } else if (((TLRPC.Dialog) cj3Var.T1.get(i2)).id == j) {
-                        break;
-                    } else {
-                        i2++;
-                    }
-                }
-                if (i2 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) cj3Var.T1.remove(i2);
-                    cj3Var.f0[0].d.f();
-                    gl.c3(new va7(this, i2, dialog, (byte) 18));
-                } else {
-                    cj3Var.Q4(false, true);
-                }
+            long longValue = ((Long) obj).longValue();
+            long M1 = uj3Var.getMessagesController().M1(longValue);
+            if (M1 <= 0 && longValue > 0) {
+                M1 = wf3.j(uj3Var.getMessagesController().P2(longValue));
             }
-            cj3Var.G2();
+            j += M1;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        super.setTranslationY(f);
-        cj3 cj3Var = this.k0;
-        UndoView[] undoViewArr = cj3Var.z0;
-        if (this == undoViewArr[0]) {
-            UndoView undoView = undoViewArr[1];
-            if (undoView == null || undoView.getVisibility() != 0) {
-                cj3Var.w1 = Math.max(0.0f, (gl.L(8.0f) + getMeasuredHeight()) - f);
-                cj3Var.q5();
-            }
-        }
+        return j;
     }
 }

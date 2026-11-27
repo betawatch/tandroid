@@ -1,9 +1,38 @@
 // default package
 
-import android.graphics.Typeface;
+import org.telegram.messenger.PushListenerController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface os7 {
-    Typeface a();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class os7 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ os7(int i, String str) {
+        this.c = i;
+        this.b = str;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        String str = this.b;
+        switch (b) {
+            case 0:
+                v21 t = vs7.h().t(ob6.a0(null, null, i, str), null);
+                t.u = true;
+                t.j();
+                break;
+            default:
+                PushListenerController.lambda$sendRegistrationToServer$1(str, i);
+                break;
+        }
+    }
+
+    public /* synthetic */ os7(String str, int i) {
+        this.b = str;
+        this.c = i;
+    }
 }

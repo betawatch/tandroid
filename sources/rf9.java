@@ -1,138 +1,103 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
+import android.text.Layout;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class rf9 extends jb9 implements tjb, eib {
-    public ee9 E;
-    public boolean F;
-    public final int[] G;
-    public final wjb n;
-    public final Paint r;
-    public final HorizontalScrollView s;
-    public final ImageView w;
-    public Bitmap x;
-    public int y;
+public final class rf9 extends FrameLayout implements snb, zlb {
+    public final vnb a;
+    public final nf9 b;
+    public final AnimatedArrowDrawable c;
+    public final dg9 d;
+    public final Paint e;
+    public mk0 f;
+    public yh9 h;
+    public boolean n;
 
-    public rf9(Context context, wjb wjbVar) {
+    public rf9(Context context, vnb vnbVar) {
         super(context);
-        this.r = new Paint(1);
-        this.y = 0;
-        this.G = new int[4];
-        this.n = wjbVar;
+        this.e = new Paint();
+        this.a = vnbVar;
+        setClipToPadding(false);
         setWillNotDraw(false);
-        f(gl.L(16.0f), gl.L(6.0f), gl.L(16.0f), gl.L(6.0f));
-        ImageView imageView = new ImageView(context);
-        this.w = imageView;
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(imageView, new FrameLayout.LayoutParams(-2, -2, 17));
-        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
-        this.s = horizontalScrollView;
-        horizontalScrollView.setHorizontalScrollBarEnabled(false);
-        horizontalScrollView.setClipToPadding(false);
-        horizontalScrollView.setPadding(0, 0, 0, 0);
-        horizontalScrollView.setFillViewport(true);
-        horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
-        addView(horizontalScrollView, nme.e(-1, -2, 16));
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(aob.v0(aob.ul, vnbVar));
+        this.c = animatedArrowDrawable;
+        animatedArrowDrawable.setCallback(new jn(this, (byte) 9));
+        nf9 nf9Var = new nf9((byte) 0, context, this);
+        this.b = nf9Var;
+        nf9Var.setOnClickListener(new jn8(this, (byte) 11));
+        addView(nf9Var, tre.e(53, -1, 51));
+        dg9 dg9Var = new dg9(context, vnbVar);
+        this.d = dg9Var;
+        dg9Var.setAllowNewlines(false);
+        dg9Var.setTextSize(1, xea.S0);
+        dg9Var.setHint(ob6.M0(2131754011, null));
+        dg9Var.setPadding(0, hl.L(14.0f), 0, hl.L(12.66f));
+        dg9Var.setListener(new of9(this));
+        dg9Var.setDelegate(new ye9(this, (byte) 1));
+        addView(dg9Var, tre.d(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
         updateColors();
     }
 
-    private String getSource() {
-        lk0 lk0Var = this.a;
-        if (lk0Var == null) {
-            return null;
-        }
-        TL_iv.PageBlock pageBlock = lk0Var.b;
-        if (pageBlock instanceof TL_iv.pageBlockMath) {
-            return ((TL_iv.pageBlockMath) pageBlock).source;
-        }
-        return null;
-    }
-
-    @Override // tjb
+    @Override // snb
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.kg));
-        hashSet.add(Integer.valueOf(bkb.F6));
+        hashSet.add(Integer.valueOf(aob.ul));
+        hashSet.add(Integer.valueOf(aob.wl));
     }
 
-    public final void g(lk0 lk0Var, ee9 ee9Var) {
-        lx5 a;
-        this.a = lk0Var;
-        this.E = ee9Var;
-        c(lk0Var);
-        this.x = null;
-        this.s.scrollTo(0, 0);
-        String source = getSource();
-        if (!TextUtils.isEmpty(source) && (a = lx5.a(source, gl.L(gba.S0 + 4), false)) != null) {
-            this.x = a.a;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        yh9 yh9Var = this.h;
+        amb textSelectionHelper = yh9Var != null ? yh9Var.a.getTextSelectionHelper() : null;
+        if (textSelectionHelper != null) {
+            if (this.d.getLayout() != null) {
+                canvas.save();
+                canvas.translate(r1.getPaddingLeft() + r1.getLeft(), r1.getPaddingTop() + r1.getTop());
+                textSelectionHelper.Y(canvas, this, 0);
+                canvas.restore();
+            }
         }
-        this.w.setImageBitmap(this.x);
-        invalidate();
+        super.dispatchDraw(canvas);
     }
 
-    public lk0 getRow() {
-        return this.a;
+    public dg9 getEditText() {
+        return this.d;
     }
 
-    public final void h(int[] iArr) {
-        int paddingTop = getPaddingTop();
-        int height = getHeight() - getPaddingBottom();
-        if (this.x != null && this.w.getWidth() > this.s.getWidth()) {
-            iArr[0] = getPaddingLeft();
-            iArr[1] = paddingTop;
-            iArr[2] = getWidth() - getPaddingRight();
-            iArr[3] = height;
+    public mk0 getRow() {
+        return this.f;
+    }
+
+    @Override // zlb
+    public final void k(ArrayList arrayList) {
+        dg9 dg9Var = this.d;
+        Layout layout = dg9Var.getLayout();
+        if (layout == null) {
             return;
         }
-        Bitmap bitmap = this.x;
-        int width = bitmap != null ? bitmap.getWidth() : Math.max(1, getWidth() / 2);
-        int width2 = (getWidth() - width) / 2;
-        iArr[0] = width2 - gl.L(4.0f);
-        iArr[1] = paddingTop;
-        iArr[2] = gl.L(4.0f) + width2 + width;
-        iArr[3] = height;
-    }
-
-    @Override // eib
-    public final void k(ArrayList arrayList) {
-        int[] iArr = this.G;
-        h(iArr);
-        arrayList.add(wse.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+        arrayList.add(new pf9(this, layout, dg9Var.getPaddingLeft() + dg9Var.getLeft(), dg9Var.getPaddingTop() + dg9Var.getTop()));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        ee9 ee9Var;
-        fib textSelectionHelper;
-        if (this.y != bkb.v0(bkb.F6, this.n)) {
-            updateColors();
+        mk0 mk0Var = this.f;
+        if (mk0Var != null) {
+            TL_iv.PageBlock pageBlock = mk0Var.b;
+            if ((pageBlock instanceof TL_iv.pageBlockDetails) && ((TL_iv.pageBlockDetails) pageBlock).open) {
+                return;
+            }
         }
-        if (this.x == null || (ee9Var = this.E) == null || (textSelectionHelper = ee9Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.w() || !(getParent() instanceof RecyclerView)) {
-            return;
-        }
-        ((RecyclerView) getParent()).getClass();
-        int R = RecyclerView.R(this);
-        if (R < 0 || R < textSelectionHelper.p0 || R > textSelectionHelper.s0) {
-            return;
-        }
-        h(this.G);
-        canvas.drawRoundRect(r0[0], r0[1], r0[2], r0[3], gl.L(4.0f), gl.L(4.0f), this.r);
+        canvas.drawRect(0.0f, r0 - 1, getMeasuredWidth(), getMeasuredHeight(), this.e);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -140,17 +105,19 @@ public final class rf9 extends jb9 implements tjb, eib {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 
-    @Override // tjb
+    public void setLocked(boolean z) {
+        this.d.setLocked(z);
+    }
+
+    @Override // snb
     public final void updateColors() {
-        int i = bkb.kg;
-        wjb wjbVar = this.n;
-        this.r.setColor(bkb.v0(i, wjbVar));
-        int v0 = bkb.v0(bkb.F6, wjbVar);
-        if (!this.F || v0 != this.y) {
-            this.F = true;
-            this.y = v0;
-            this.w.setColorFilter(new PorterDuffColorFilter(this.y, PorterDuff.Mode.SRC_IN));
-        }
-        invalidate();
+        this.d.updateColors();
+        int i = aob.ul;
+        vnb vnbVar = this.a;
+        int v0 = aob.v0(i, vnbVar);
+        AnimatedArrowDrawable animatedArrowDrawable = this.c;
+        animatedArrowDrawable.a.setColor(v0);
+        animatedArrowDrawable.invalidateSelf();
+        this.e.setColor(aob.v0(aob.wl, vnbVar));
     }
 }

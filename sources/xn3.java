@@ -1,36 +1,70 @@
 // default package
 
-import java.util.concurrent.Executor;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class xn3 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ co3 b;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xn3 implements Executor {
-    public static final xn3 a;
-    public static final /* synthetic */ xn3[] b;
-
-    static {
-        xn3 xn3Var = new xn3("INSTANCE", 0);
-        a = xn3Var;
-        b = new xn3[]{xn3Var};
+    public /* synthetic */ xn3(co3 co3Var, byte b) {
+        this.a = b;
+        this.b = co3Var;
     }
 
-    public static xn3 valueOf(String str) {
-        return (xn3) Enum.valueOf(xn3.class, str);
-    }
-
-    public static xn3[] values() {
-        return (xn3[]) b.clone();
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        runnable.run();
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return "DirectExecutor";
+    public final void a(final float f) {
+        byte b = this.a;
+        final co3 co3Var = this.b;
+        switch (b) {
+            case 0:
+                final byte b2 = 0;
+                co3Var.e.post(new Runnable() { // from class: wn3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        float f2 = f;
+                        co3 co3Var2 = co3Var;
+                        switch (b3) {
+                            case 0:
+                                if (!co3Var2.h) {
+                                    co3Var2.c.e(f2);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (!co3Var2.h) {
+                                    co3Var2.c.e(f2);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b3 = 1;
+                co3Var.e.post(new Runnable() { // from class: wn3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        float f2 = f;
+                        co3 co3Var2 = co3Var;
+                        switch (b32) {
+                            case 0:
+                                if (!co3Var2.h) {
+                                    co3Var2.c.e(f2);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (!co3Var2.h) {
+                                    co3Var2.c.e(f2);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

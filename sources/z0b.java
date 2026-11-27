@@ -1,31 +1,15 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.NumberTextView;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class z0b implements TextWatcher {
-    public final /* synthetic */ NumberTextView a;
-    public final /* synthetic */ y0b b;
-
-    public z0b(NumberTextView numberTextView, y0b y0bVar) {
-        this.a = numberTextView;
-        this.b = y0bVar;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
-        this.b.setErrorText(null);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+public final class z0b extends z1b {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (getTranslationY() != 0.0f) {
+            canvas.drawColor(aob.w0(null, aob.d6, false));
+        }
+        super.onDraw(canvas);
     }
 }

@@ -1,46 +1,100 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class j19 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ d c;
+public final class j19 extends View {
+    public final HashMap a;
+    public final ArrayList b;
+    public final ArrayList c;
+    public final int d;
 
-    public /* synthetic */ j19(long j, d dVar) {
-        this.b = j;
-        this.c = dVar;
+    public j19(Activity activity) {
+        super(activity);
+        this.a = new HashMap();
+        this.b = new ArrayList();
+        this.c = new ArrayList();
+        this.d = yac.t0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        d dVar = this.c;
-        long j = this.b;
-        switch (b) {
-            case 0:
-                dVar.presentFragment(uxa.d0(dVar.getMessagesController().K0(Long.valueOf(-j)), true));
-                break;
-            default:
-                Bundle bundle = new Bundle();
-                if (j >= 0) {
-                    bundle.putLong("user_id", j);
-                } else {
-                    bundle.putLong("chat_id", -j);
-                }
-                bundle.putBoolean("my_profile", true);
-                bundle.putBoolean("open_gifts", true);
-                dVar.presentFragment(new ProfileActivity(bundle, null));
-                break;
+    public static String b(wb2 wb2Var) {
+        r47 messageObject = wb2Var.getMessageObject();
+        if (messageObject == null) {
+            return null;
+        }
+        return messageObject.x0() + "_" + messageObject.e1();
+    }
+
+    public final boolean a() {
+        Iterator it = this.a.entrySet().iterator();
+        while (it.hasNext()) {
+            if (!((i19) ((Map.Entry) it.next()).getValue()).P) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        super.invalidateDrawable(drawable);
+        if (drawable instanceof i19) {
+            invalidate();
         }
     }
 
-    public /* synthetic */ j19(d dVar, long j) {
-        this.c = dVar;
-        this.b = j;
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            ((i19) ((Map.Entry) it.next()).getValue()).d();
+        }
+        hashMap.clear();
+        this.b.clear();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            ((i19) ((Map.Entry) it.next()).getValue()).draw(canvas);
+        }
+        ArrayList arrayList = this.b;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            i19 i19Var = (i19) hashMap.remove((String) obj);
+            if (i19Var != null) {
+                i19Var.d();
+            }
+        }
+        arrayList.clear();
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        Iterator it = this.a.entrySet().iterator();
+        while (it.hasNext()) {
+            ((i19) ((Map.Entry) it.next()).getValue()).setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        }
     }
 }

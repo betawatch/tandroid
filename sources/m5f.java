@@ -1,121 +1,102 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum m5f implements thd {
-    b(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(100),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(101),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(kk7.m1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(kk7.n1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(kk7.o1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.p1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.q1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(kk7.r1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.s1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.t1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(kk7.u1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.v1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.w1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.x1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.y1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.z1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.A1),
-    c(kk7.e3),
-    d(kk7.f3),
-    e(203),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.h3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.i3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.j3),
-    f(kk7.k3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF452(kk7.X4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF465(kk7.Y4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF478(kk7.Z4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF491(kk7.a5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF504(kk7.b5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF517(400),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF530(401),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF543(402),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF556(403),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF569(404),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF582(405),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF595(406),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF608(407),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF621(500),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF634(501),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF647(600),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF660(601),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF673(602),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF686(603),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF699(9999);
+public abstract class m5f {
+    public static Context a;
+    public static yxd b;
 
-    public final short a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    m5f(int i) {
-        this.a = i;
+    public static yxd a(Context context) {
+        yxd yxdVar;
+        xve.h(context);
+        Log.d("m5f", "preferredRenderer: null");
+        yxd yxdVar2 = b;
+        if (yxdVar2 != null) {
+            return yxdVar2;
+        }
+        int i = c15.e;
+        int c = c15.c(context, 13400000);
+        if (c != 0) {
+            throw new b15(c);
+        }
+        Log.i("m5f", "Making Creator dynamically");
+        ClassLoader classLoader = b(context).getClassLoader();
+        try {
+            xve.h(classLoader);
+            Class<?> loadClass = classLoader.loadClass("com.google.android.gms.maps.internal.CreatorImpl");
+            try {
+                try {
+                    IBinder iBinder = (IBinder) loadClass.newInstance();
+                    if (iBinder == null) {
+                        yxdVar = null;
+                    } else {
+                        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICreator");
+                        yxdVar = queryLocalInterface instanceof yxd ? (yxd) queryLocalInterface : new yxd(iBinder, "com.google.android.gms.maps.internal.ICreator", (byte) 6);
+                    }
+                    b = yxdVar;
+                    try {
+                        Context b2 = b(context);
+                        b2.getClass();
+                        br7 br7Var = new br7(b2.getResources());
+                        Parcel R = yxdVar.R();
+                        jld.c(R, br7Var);
+                        R.writeInt(12451000);
+                        yxdVar.V(R, 6);
+                        return b;
+                    } catch (RemoteException e) {
+                        p3d.i(e);
+                        return null;
+                    }
+                } catch (InstantiationException unused) {
+                    throw new IllegalStateException("Unable to instantiate the dynamic class ".concat(loadClass.getName()));
+                }
+            } catch (IllegalAccessException unused2) {
+                throw new IllegalStateException("Unable to call the default constructor of ".concat(loadClass.getName()));
+            }
+        } catch (ClassNotFoundException unused3) {
+            grb.i("Unable to find dynamic class com.google.android.gms.maps.internal.CreatorImpl");
+            return null;
+        }
     }
 
-    @Override // thd
-    public final int zza() {
-        return this.a;
+    public static Context b(Context context) {
+        Context context2;
+        Context context3 = a;
+        if (context3 != null) {
+            return context3;
+        }
+        context.getApplicationContext();
+        try {
+            context2 = vs3.c(context, vs3.b, "com.google.android.gms.maps_dynamite").a;
+        } catch (Exception e) {
+            try {
+                if ("com.google.android.gms.maps_dynamite".equals("com.google.android.gms.maps_dynamite")) {
+                    Log.e("m5f", "Failed to load maps module, use pre-Chimera", e);
+                    int i = c15.e;
+                    context2 = context.createPackageContext("com.google.android.gms", 3);
+                } else {
+                    try {
+                        Log.d("m5f", "Attempting to load maps_dynamite again.");
+                        context2 = vs3.c(context, vs3.b, "com.google.android.gms.maps_dynamite").a;
+                    } catch (Exception e2) {
+                        Log.e("m5f", "Failed to load maps module, use pre-Chimera", e2);
+                        int i2 = c15.e;
+                        context2 = context.createPackageContext("com.google.android.gms", 3);
+                    }
+                }
+            } catch (PackageManager.NameNotFoundException unused) {
+                context2 = null;
+            }
+        }
+        a = context2;
+        return context2;
     }
 }

@@ -1,33 +1,40 @@
 // default package
 
-import android.os.Bundle;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class dr6 {
-    public static final String a;
-    public static final String b;
-    public static final String c;
-    public static final String d;
+public final /* synthetic */ class dr6 implements Runnable {
+    public final /* synthetic */ ls6 a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ byte c;
+    public final /* synthetic */ double d;
 
-    static {
-        String str = g8c.a;
-        a = "0";
-        b = "1";
-        c = "2";
-        d = "3";
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ dr6(ls6 ls6Var, long j, int i, double d) {
+        this.a = ls6Var;
+        this.b = j;
+        this.c = i;
+        this.d = d;
     }
 
-    public static dr6 a(Bundle bundle) {
-        Bundle o = g8c.o(bundle.getBundle(a));
-        bundle.getBoolean(b, false);
-        bundle.getBoolean(c, false);
-        bundle.getBoolean(d, false);
-        if (o == null) {
-            o = Bundle.EMPTY;
+    @Override // java.lang.Runnable
+    public final void run() {
+        ls6 ls6Var = this.a;
+        long j = this.b;
+        byte b = this.c;
+        double d = this.d;
+        try {
+            SQLitePreparedStatement executeFast = ls6Var.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
+            executeFast.requery();
+            executeFast.bindLong(1, j);
+            executeFast.bindInteger(2, b);
+            executeFast.bindDouble(3, d);
+            executeFast.bindInteger(4, ((int) System.currentTimeMillis()) / 1000);
+            executeFast.step();
+            executeFast.dispose();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        dr6 dr6Var = new dr6();
-        new Bundle(o);
-        return dr6Var;
     }
 }

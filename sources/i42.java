@@ -1,64 +1,69 @@
 // default package
 
+import android.location.Location;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class i42 implements vs2 {
+public final /* synthetic */ class i42 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ s42 b;
 
-    public /* synthetic */ i42(byte b, Object obj, boolean z) {
+    public /* synthetic */ i42(s42 s42Var, byte b) {
         this.a = b;
-        this.b = obj;
-        this.c = z;
+        this.b = s42Var;
     }
 
-    @Override // vs2
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        Location location;
         byte b = this.a;
-        boolean z = false;
-        boolean z2 = this.c;
-        Object obj2 = this.b;
+        s42 s42Var = this.b;
         switch (b) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj2;
-                View view = (View) obj;
-                boolean z3 = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof o48) {
-                    o48 o48Var = (o48) view;
-                    jm6 photoEntry = o48Var.getPhotoEntry();
-                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z2) {
-                        z = true;
-                    }
-                    o48Var.setHasSpoiler(z);
-                    break;
-                }
+            case 3:
+                s42Var.O();
                 break;
             case 1:
-                ArrayList arrayList2 = (ArrayList) obj2;
-                View view2 = (View) obj;
-                boolean z4 = ChatAttachAlertPhotoLayout.r1;
-                if (view2 instanceof o48) {
-                    o48 o48Var2 = (o48) view2;
-                    jm6 photoEntry2 = o48Var2.getPhotoEntry();
-                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z2) {
-                        z = true;
+                s42Var.b0();
+                break;
+            case 2:
+                double[] dArr = s42Var.b.x4;
+                s42Var.f0(dArr[0], dArr[1]);
+                break;
+            case 4:
+                s42Var.getClass();
+                hl.c3(new i42(s42Var, (byte) 7));
+                break;
+            case 5:
+                vc6 vc6Var = s42Var.L;
+                if (!s42Var.l0) {
+                    x05 x05Var = s42Var.E;
+                    if (x05Var != null && (location = s42Var.j0) != null) {
+                        location.setLatitude(((ak5) x05Var.d().b).a);
+                        s42Var.j0.setLongitude(((ak5) s42Var.E.d().b).b);
                     }
-                    o48Var2.setHighQuality(z);
+                    vc6Var.L(s42Var.j0);
+                    vc6Var.H();
+                    break;
+                } else {
+                    s42Var.l0 = false;
+                    break;
+                }
+            case 6:
+                View view = s42Var.J;
+                if (view.getTag() == null) {
+                    view.animate().alpha(0.0f).setDuration(180L).start();
                     break;
                 }
                 break;
+            case 7:
+                View view2 = s42Var.J;
+                view2.setTag(1);
+                view2.animate().alpha(0.0f).setDuration(180L).start();
+                break;
             default:
-                Float f = (Float) obj;
-                i11 i11Var = ((d11) obj2).b.p;
-                if (i11Var != null && !z2) {
-                    i11Var.b(r4.e.getHeight() - f.floatValue());
-                    break;
-                }
+                s42Var.f0(0.0d, 0.0d);
                 break;
         }
     }

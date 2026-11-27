@@ -1,120 +1,41 @@
 // default package
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class j41 {
-    public static volatile j41[] e = new j41[4];
-    public static final Object[] f = new Object[4];
-    public final int a;
-    public final ArrayList b = new ArrayList();
-    public boolean c = false;
-    public boolean d = false;
+public final /* synthetic */ class j41 implements DialogInterface.OnShowListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
 
-    static {
-        for (int i = 0; i < 4; i++) {
-            f[i] = new Object();
-        }
+    public /* synthetic */ j41(byte b, KeyEvent.Callback callback, Object obj) {
+        this.a = b;
+        this.b = callback;
+        this.c = obj;
     }
 
-    public j41(int i) {
-        this.a = i;
-    }
-
-    public static j41 d(int i) {
-        j41 j41Var;
-        j41 j41Var2 = e[i];
-        if (j41Var2 != null) {
-            return j41Var2;
-        }
-        synchronized (f[i]) {
-            j41Var = e[i];
-            if (j41Var == null) {
-                j41[] j41VarArr = e;
-                j41 j41Var3 = new j41(i);
-                j41VarArr[i] = j41Var3;
-                j41Var = j41Var3;
-            }
-        }
-        return j41Var;
-    }
-
-    public final void a(f41 f41Var, String str) {
-        TL_account.TL_businessChatLink c = c(str);
-        if (c != null) {
-            ArrayList arrayList = this.b;
-            int indexOf = arrayList.indexOf(c);
-            arrayList.remove(c);
-            kk7.f(this.a).k(kk7.I1, new Object[0]);
-            u21.b0(f41Var).U(k96.M0(2131752703, null), true, new va7((Object) this, indexOf, (Object) c, (byte) 8), new fv0((Object) this, (Object) str, (Object) c, (byte) 7)).j();
-        }
-    }
-
-    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, av1 av1Var) {
-        TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
-        editbusinesschatlink.slug = tL_businessChatLink.link;
-        if (!tL_inputBusinessChatLink.entities.isEmpty()) {
-            tL_inputBusinessChatLink.flags |= 1;
-        }
-        if (!TextUtils.isEmpty(tL_inputBusinessChatLink.title)) {
-            tL_inputBusinessChatLink.flags |= 2;
-        }
-        editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new en0((Object) this, (Object) tL_businessChatLink, (Object) av1Var, (byte) 9));
-    }
-
-    public final TL_account.TL_businessChatLink c(String str) {
-        TL_account.TL_businessChatLink tL_businessChatLink;
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i >= arrayList.size()) {
-                return null;
-            }
-            tL_businessChatLink = (TL_account.TL_businessChatLink) arrayList.get(i);
-            if (!TextUtils.equals(tL_businessChatLink.link, str)) {
-                if (!TextUtils.equals(tL_businessChatLink.link, "https://" + str)) {
-                    if (!TextUtils.equals(tL_businessChatLink.link, "https://t.me/m/" + str)) {
-                        if (TextUtils.equals(tL_businessChatLink.link, "tg://message?slug=" + str)) {
-                            break;
-                        }
-                        i++;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        byte b = this.a;
+        Object obj = this.c;
+        KeyEvent.Callback callback = this.b;
+        switch (b) {
+            case 0:
+                View view = (View) callback;
+                k41 k41Var = (k41) obj;
+                if (view != null) {
+                    view.clearFocus();
                 }
-            } else {
+                k41Var.requestFocus();
+                hl.E3(k41Var);
                 break;
-            }
+            default:
+                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$91((nx0) callback, (Integer) obj, dialogInterface);
+                break;
         }
-        return tL_businessChatLink;
-    }
-
-    public final void e(boolean z, boolean z2) {
-        if (this.c) {
-            return;
-        }
-        if (!this.d || (z2 && !z)) {
-            this.c = true;
-            int i = this.a;
-            if (z) {
-                ad7 Y = ad7.Y(i);
-                Y.a.c(new mn6((Object) this, (Object) Y, z2, (byte) 7));
-            } else {
-                ConnectionsManager.getInstance(i).sendRequest(new TL_account.getBusinessChatLinks(), new h41(this, (byte) 0));
-            }
-        }
-    }
-
-    public final void f() {
-        ArrayList arrayList = new ArrayList(this.b);
-        ad7 Y = ad7.Y(this.a);
-        Y.a.c(new i41(Y, arrayList, (byte) 0));
     }
 }

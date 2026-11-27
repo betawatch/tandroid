@@ -1,26 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ti5 {
-    public final akb a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
-    public boolean e;
-    public rg h;
-    public eu1 i;
-    public eu1 j;
-    public hu1 k;
-    public ku1 m;
-    public boolean f = true;
-    public boolean g = true;
-    public short l = 200;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public abstract class ti5 extends x6b {
+    @Override // android.view.View
+    public final void invalidate() {
+        if (si5.c) {
+            si5.b.add(this);
+        } else {
+            super.invalidate();
+        }
+    }
 
-    public ti5(akb akbVar, int i, boolean z, boolean z2) {
-        this.a = akbVar;
-        this.b = i;
-        this.c = z;
-        this.d = z2;
+    @Override // android.view.View
+    public final void invalidate(int i, int i2, int i3, int i4) {
+        if (si5.c) {
+            si5.b.add(this);
+        } else {
+            super.invalidate(i, i2, i3, i4);
+        }
     }
 }

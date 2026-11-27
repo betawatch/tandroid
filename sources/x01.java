@@ -1,12 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x01 extends y46 {
-    public char g;
+public final class x01 {
+    public static final x01 a;
+    public static final x01 b;
+    public static final x01 c;
+    public static final /* synthetic */ x01[] d;
 
-    @Override // y46, tg6
-    public final void a(ild ildVar) {
-        ildVar.b(this);
+    static {
+        x01 x01Var = new x01("SUSPEND", 0);
+        a = x01Var;
+        x01 x01Var2 = new x01("DROP_OLDEST", 1);
+        b = x01Var2;
+        x01 x01Var3 = new x01("DROP_LATEST", 2);
+        c = x01Var3;
+        d = new x01[]{x01Var, x01Var2, x01Var3};
+    }
+
+    public static x01 valueOf(String str) {
+        return (x01) Enum.valueOf(x01.class, str);
+    }
+
+    public static x01[] values() {
+        return (x01[]) d.clone();
     }
 }

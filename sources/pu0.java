@@ -1,39 +1,62 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pu0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qu0 b;
+import android.util.SparseIntArray;
 
-    public /* synthetic */ pu0(qu0 qu0Var, byte b) {
-        this.a = b;
-        this.b = qu0Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pu0 extends uk5 {
+    public final /* synthetic */ byte d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pu0(vnb vnbVar, byte b) {
+        super(vnbVar);
+        this.d = b;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        qu0 qu0Var = this.b;
-        switch (b) {
+    @Override // uk5
+    public final void k() {
+        switch (this.d) {
             case 0:
-                cv0 cv0Var = qu0Var.e;
-                hv0 hv0Var = cv0Var.R;
-                if (hv0Var != null) {
-                    cv0Var.h = false;
-                    hv0Var.B(false, null);
-                    break;
-                }
+                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+                sparseIntArray.append(aob.h5, -14803426);
+                sparseIntArray.append(aob.a7, -16777216);
                 break;
             case 1:
-                hv0 hv0Var2 = qu0Var.e.R;
-                if (hv0Var2 != null) {
-                    hv0Var2.G(!r2.canGoBack(), !r2.canGoForward());
-                    break;
-                }
+                SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
+                sparseIntArray2.append(aob.h5, -14803426);
+                sparseIntArray2.append(aob.a7, -16777216);
+                break;
+            case 2:
+                ((SparseIntArray) this.b).put(aob.zf, vm2.o(-1, 30));
+                break;
+            case 3:
+                SparseIntArray sparseIntArray3 = (SparseIntArray) this.b;
+                sparseIntArray3.append(aob.h5, -14737633);
+                sparseIntArray3.append(aob.a7, -13421773);
+                break;
+            case 4:
+                ((SparseIntArray) this.b).put(aob.zf, -1071635414);
+                break;
+            case 5:
+                SparseIntArray sparseIntArray4 = (SparseIntArray) this.b;
+                sparseIntArray4.put(aob.zf, vm2.f(0.2f, -16777216, -1));
+                sparseIntArray4.put(aob.Oe, vm2.f(0.5f, -16777216, -1));
+                break;
+            case 6:
+                ((SparseIntArray) this.b).put(aob.zf, vm2.o(-1, 30));
+                break;
+            case 7:
+                ((SparseIntArray) this.b).put(aob.zf, vm2.o(-1, 30));
+                break;
+            case 8:
+                SparseIntArray sparseIntArray5 = (SparseIntArray) this.b;
+                sparseIntArray5.append(aob.h5, -14737633);
+                sparseIntArray5.append(aob.a7, -13421773);
                 break;
             default:
-                d01.t(qu0Var.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                SparseIntArray sparseIntArray6 = (SparseIntArray) this.b;
+                sparseIntArray6.append(aob.h5, -14803426);
+                sparseIntArray6.append(aob.a7, -16777216);
                 break;
         }
     }

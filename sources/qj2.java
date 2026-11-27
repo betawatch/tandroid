@@ -1,167 +1,167 @@
 // default package
 
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.CharacterStyle;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public abstract class qj2 {
-    public static int c;
-    public static final jj8 a = new jj8(new k32(8), new k32(9));
-    public static final LinkedHashMap b = new LinkedHashMap(8, 0.75f, true);
-    public static final Object d = new Object();
-    public static final ArrayList e = new ArrayList();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qj2 extends wp5 {
+    public static final Pattern e = gl6.n;
 
-    public static void a(Spannable spannable, int i, f06 f06Var) {
-        Object[] spans;
-        Object[] spans2;
-        if (i != 0) {
-            boolean z = spannable instanceof kj2;
-            if (z) {
-                int i2 = kj2.b;
-                spans = ((kj2) spannable).c(jj2.class, i);
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01cf  */
+    @Override // wp5
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final yi6 b() {
+        boolean z;
+        String str;
+        String str2;
+        int i = this.d + 1;
+        this.d = i;
+        gl6 gl6Var = this.a;
+        az0 az0Var = gl6Var.i;
+        if (az0Var == null) {
+            return e("]");
+        }
+        qkb qkbVar = (qkb) az0Var.e;
+        boolean z2 = az0Var.a;
+        if (!az0Var.c) {
+            gl6Var.i = (az0) az0Var.f;
+            return e("]");
+        }
+        gl6Var.g = i;
+        if (gl6Var.d() == '(') {
+            this.d++;
+            d();
+            gl6 gl6Var2 = this.a;
+            int i2 = this.d;
+            gl6Var2.g = i2;
+            int a = kse.a(i2, gl6Var2.f);
+            if (a == -1) {
+                str = null;
             } else {
-                spans = spannable.getSpans(0, i, jj2.class);
+                char d = gl6Var2.d();
+                String str3 = gl6Var2.f;
+                int i3 = gl6Var2.g;
+                String substring = d == '<' ? str3.substring(i3 + 1, a - 1) : str3.substring(i3, a);
+                gl6Var2.g = a;
+                str = u44.a(substring);
             }
-            for (jj2 jj2Var : (jj2[]) spans) {
-                d(spannable, i, jj2Var);
-                spannable.removeSpan(jj2Var);
-            }
-            if (z) {
-                int i3 = kj2.b;
-                spans2 = ((kj2) spannable).c(oj2.class, i);
-            } else {
-                spans2 = spannable.getSpans(0, i, oj2.class);
-            }
-            for (oj2 oj2Var : (oj2[]) spans2) {
-                d(spannable, i, oj2Var);
-                spannable.removeSpan(oj2Var);
-            }
-            if (f06Var != null) {
-                int[] b2 = f06Var.b();
-                for (int i4 = 0; i4 < b2.length; i4 += 3) {
-                    int i5 = b2[i4];
-                    int i6 = b2[i4 + 1];
-                    int i7 = b2[i4 + 2];
-                    if (i5 >= 0 && i6 <= i && i5 < i6) {
-                        int i8 = i7 & kk7.d4;
-                        if (i8 != 0) {
-                            spannable.setSpan(new jj2(i8), i5, i6, 33);
+            this.d = this.a.g;
+            if (str != null) {
+                d();
+                String str4 = this.c;
+                int i4 = this.d;
+                if (e.matcher(str4.substring(i4 - 1, i4)).matches()) {
+                    gl6 gl6Var3 = this.a;
+                    int i5 = this.d;
+                    gl6Var3.g = i5;
+                    int c = kse.c(i5, gl6Var3.f);
+                    if (c == -1) {
+                        str2 = null;
+                    } else {
+                        String substring2 = gl6Var3.f.substring(gl6Var3.g + 1, c - 1);
+                        gl6Var3.g = c;
+                        str2 = u44.a(substring2);
+                    }
+                    this.d = this.a.g;
+                    d();
+                } else {
+                    str2 = null;
+                }
+                gl6 gl6Var4 = this.a;
+                gl6Var4.g = this.d;
+                if (gl6Var4.d() == ')') {
+                    this.d++;
+                    z = true;
+                } else {
+                    this.d = i;
+                    z = false;
+                }
+                if (!z) {
+                    int i6 = this.d;
+                    gl6 gl6Var5 = this.a;
+                    gl6Var5.g = i6;
+                    if (i6 < gl6Var5.f.length() && gl6Var5.f.charAt(gl6Var5.g) == '[') {
+                        int i7 = gl6Var5.g + 1;
+                        int b = kse.b(i7, gl6Var5.f);
+                        int i8 = b - i7;
+                        if (b != -1 && i8 <= 999 && b < gl6Var5.f.length() && gl6Var5.f.charAt(b) == ']') {
+                            gl6Var5.g = b + 1;
                         }
-                        if ((i7 & 768) != 0) {
-                            spannable.setSpan(new oj2(i7), i5, i6, 33);
+                    }
+                    int i9 = this.a.g;
+                    this.d = i9;
+                    int i10 = i9 - i6;
+                    String substring3 = i10 > 2 ? this.c.substring(i6, i10 + i6) : !az0Var.d ? this.c.substring(az0Var.b, i) : null;
+                    if (substring3 != null) {
+                        Pattern pattern = u44.a;
+                        String replaceAll = u44.c.matcher(substring3.substring(1, substring3.length() - 1).trim().toLowerCase(Locale.ROOT)).replaceAll(" ");
+                        gl6 gl6Var6 = this.a;
+                        gl6Var6.getClass();
+                        i66 i66Var = (i66) ((Map) gl6Var6.a.c).get(replaceAll);
+                        if (i66Var != null) {
+                            str = i66Var.h;
+                            str2 = i66Var.i;
+                            z = true;
                         }
                     }
                 }
-            }
-        }
-    }
-
-    public static SpannableString b(CharSequence charSequence, String str) {
-        if (charSequence == null) {
-            charSequence = "";
-        }
-        String b2 = jj8.b(str);
-        if (b2.isEmpty() || charSequence.length() == 0) {
-            return new SpannableString(charSequence);
-        }
-        String charSequence2 = charSequence.toString();
-        ij2 ij2Var = new ij2(b2, charSequence2);
-        boolean z = !(charSequence instanceof Spanned) && charSequence2.length() <= 65536;
-        LinkedHashMap linkedHashMap = b;
-        synchronized (linkedHashMap) {
-            if (z) {
-                SpannableString spannableString = (SpannableString) linkedHashMap.get(ij2Var);
-                if (spannableString != null) {
-                    return spannableString;
+                if (z) {
+                    this.d = i;
+                    gl6 gl6Var7 = this.a;
+                    gl6Var7.i = (az0) gl6Var7.i.f;
+                    return e("]");
                 }
-            }
-            kj2 kj2Var = new kj2(charSequence);
-            if (z) {
-                linkedHashMap.put(ij2Var, kj2Var);
-                c += charSequence2.length();
-                while (true) {
-                    LinkedHashMap linkedHashMap2 = b;
-                    if (linkedHashMap2.size() <= 8 && c <= 65536) {
-                        break;
+                em5 em5Var = z2 ? new em5(str, str2, (byte) 0) : new em5(str, str2, (byte) 1);
+                yi6 yi6Var = (yi6) qkbVar.f;
+                while (yi6Var != null) {
+                    yi6 yi6Var2 = (yi6) yi6Var.f;
+                    em5Var.b(yi6Var);
+                    yi6Var = yi6Var2;
+                }
+                oe3 oe3Var = (oe3) az0Var.g;
+                gl6 gl6Var8 = this.a;
+                gl6Var8.g = this.d;
+                gl6Var8.e(oe3Var);
+                this.d = this.a.g;
+                yi6 yi6Var3 = (yi6) em5Var.c;
+                yi6 yi6Var4 = (yi6) em5Var.d;
+                if (yi6Var3 != yi6Var4) {
+                    spe.b(yi6Var3, yi6Var4);
+                }
+                qkbVar.g();
+                gl6 gl6Var9 = this.a;
+                az0 az0Var2 = (az0) gl6Var9.i.f;
+                gl6Var9.i = az0Var2;
+                if (!z2) {
+                    while (az0Var2 != null) {
+                        if (!az0Var2.a) {
+                            az0Var2.c = false;
+                        }
+                        az0Var2 = (az0) az0Var2.f;
                     }
-                    Map.Entry entry = (Map.Entry) linkedHashMap2.entrySet().iterator().next();
-                    c -= ((ij2) entry.getKey()).b.length();
-                    linkedHashMap2.remove(entry.getKey());
                 }
+                return em5Var;
             }
-            c(kj2Var, kj2Var.length(), b2);
-            return kj2Var;
-        }
-    }
-
-    public static void c(Spannable spannable, int i, String str) {
-        pj2 pj2Var;
-        ij8 ij8Var;
-        if (spannable == null) {
-            return;
-        }
-        if (i < 0 || i > spannable.length()) {
-            throw new IndexOutOfBoundsException();
-        }
-        mj2 mj2Var = new mj2(spannable.subSequence(0, i).toString());
-        long j = i & 4294967295L;
-        synchronized (d) {
-            ArrayList arrayList = e;
-            Iterator it = arrayList.iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    pj2Var = new pj2(spannable);
-                    arrayList.add(pj2Var);
-                    break;
-                }
-                pj2Var = (pj2) it.next();
-                Spannable spannable2 = (Spannable) pj2Var.a.get();
-                if (spannable2 == null) {
-                    it.remove();
-                } else if (spannable2 == spannable) {
-                    break;
-                }
-            }
-            mj2 mj2Var2 = (mj2) pj2Var.b.put(Long.valueOf(j), mj2Var);
-            if (mj2Var2 != null && (ij8Var = mj2Var2.b) != null) {
-                ij8Var.a = null;
-            }
-        }
-        pj2 pj2Var2 = pj2Var;
-        ij8 d2 = a.d(mj2Var.a, str, new bf(pj2Var2, j, mj2Var, i, (byte) 3));
-        synchronized (d) {
-            if (pj2Var2.b.get(Long.valueOf(j)) == mj2Var) {
-                mj2Var.b = d2;
-            } else {
-                d2.a = null;
-            }
-        }
-    }
-
-    public static void d(Spannable spannable, int i, CharacterStyle characterStyle) {
-        int spanStart;
-        int spanEnd;
-        if (spannable instanceof kj2) {
-            kj2 kj2Var = (kj2) spannable;
-            int i2 = kj2.b;
-            spanStart = kj2Var.b(characterStyle);
-            spanEnd = kj2Var.a(characterStyle);
+            z = false;
         } else {
-            spanStart = spannable.getSpanStart(characterStyle);
-            spanEnd = spannable.getSpanEnd(characterStyle);
+            z = false;
+            str = null;
         }
-        if (spanStart >= 0 && spanStart < 0) {
-            spannable.setSpan(characterStyle instanceof jj2 ? new jj2(((jj2) characterStyle).a) : new oj2(((oj2) characterStyle).b), spanStart, Math.min(0, spanEnd), 33);
+        str2 = null;
+        if (!z) {
         }
-        if (spanEnd > i) {
-            spannable.setSpan(characterStyle instanceof jj2 ? new jj2(((jj2) characterStyle).a) : new oj2(((oj2) characterStyle).b), Math.max(i, spanStart), spanEnd, 33);
+        if (z) {
         }
+    }
+
+    @Override // wp5
+    public final char c() {
+        return ']';
     }
 }

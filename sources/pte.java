@@ -1,21 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pte {
-    public final d1f a;
-    public final ete b;
-    public final tse c;
-    public final bxe d;
-    public final qwe e;
-    public final opd f;
+public final class pte implements zq7 {
+    public static final pte a = new pte();
 
-    public /* synthetic */ pte(ep epVar) {
-        this.a = (d1f) epVar.a;
-        this.b = (ete) epVar.b;
-        this.c = (tse) epVar.c;
-        this.d = (bxe) epVar.d;
-        this.e = (qwe) epVar.e;
-        this.f = (opd) epVar.f;
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

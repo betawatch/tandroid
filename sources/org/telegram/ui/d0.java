@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class d0 extends n39 {
+public final class d0 extends c79 {
     public final Context c;
     public boolean d = true;
     public final /* synthetic */ ThemeActivity e;
@@ -25,18 +25,18 @@ public final class d0 extends n39 {
         this.c = context;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i = s49Var.f;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        int i = f89Var.f;
         return i == 0 || i == 1 || i == 4 || i == 7 || i == 10 || i == 11 || i == 12 || i == 14 || i == 18 || i == 20 || i == 21;
     }
 
-    @Override // w39
+    @Override // j79
     public final int b() {
         return this.e.L0;
     }
 
-    @Override // w39
+    @Override // j79
     public final int d(int i) {
         int i2;
         int i3;
@@ -151,8 +151,8 @@ public final class d0 extends n39 {
         return i == i15 ? 21 : 1;
     }
 
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
         int i2;
         int i3;
         int i4;
@@ -165,57 +165,57 @@ public final class d0 extends n39 {
         int i11;
         int i12;
         int i13;
-        int i14 = s49Var.f;
-        View view = s49Var.a;
+        int i14 = f89Var.f;
+        View view = f89Var.a;
         ThemeActivity themeActivity = this.e;
         if (i14 == 1) {
-            uib uibVar = (uib) view;
+            qmb qmbVar = (qmb) view;
             i2 = themeActivity.nightThemeRow;
             if (i == i2) {
-                if (bkb.o == 0 || bkb.J == null) {
-                    uibVar.c(k96.M0(2131753781, null), k96.M0(2131753780, null), false, false);
+                if (aob.o == 0 || aob.J == null) {
+                    qmbVar.c(ob6.M0(2131753777, null), ob6.M0(2131753776, null), false, false);
                     return;
                 } else {
-                    uibVar.c(k96.M0(2131753781, null), bkb.A0(), false, false);
+                    qmbVar.c(ob6.M0(2131753777, null), aob.A0(), false, false);
                     return;
                 }
             }
             if (i == themeActivity.b0) {
-                int i15 = bkb.r;
+                int i15 = aob.r;
                 int i16 = i15 / 60;
-                uibVar.c(k96.M0(2131753789, "AutoNightFrom"), String.format("%02d:%02d", Integer.valueOf(i16), Integer.valueOf(i15 - (i16 * 60))), false, true);
+                qmbVar.c(ob6.M0(2131753785, "AutoNightFrom"), String.format("%02d:%02d", Integer.valueOf(i16), Integer.valueOf(i15 - (i16 * 60))), false, true);
                 return;
             }
             if (i == themeActivity.c0) {
-                int i17 = bkb.s;
+                int i17 = aob.s;
                 int i18 = i17 / 60;
-                uibVar.c(k96.M0(2131753779, "AutoNightTo"), String.format("%02d:%02d", Integer.valueOf(i18), Integer.valueOf(i17 - (i18 * 60))), false, false);
+                qmbVar.c(ob6.M0(2131753775, "AutoNightTo"), String.format("%02d:%02d", Integer.valueOf(i18), Integer.valueOf(i17 - (i18 * 60))), false, false);
                 return;
             }
             if (i == themeActivity.Z) {
-                uibVar.c(k96.M0(2131753778, "AutoNightUpdateLocation"), bkb.w, false, false);
+                qmbVar.c(ob6.M0(2131753774, "AutoNightUpdateLocation"), aob.w, false, false);
                 return;
             }
             if (i == themeActivity.R) {
-                int i19 = na7.c1().getInt("sortContactsBy", 0);
-                uibVar.c(k96.M0(2131745099, "SortBy"), i19 == 0 ? k96.M0(2131751588, "Default") : i19 == 1 ? k96.M0(2131745095, "FirstName") : k96.M0(2131745094, "LastName"), false, true);
+                int i19 = uc7.e1().getInt("sortContactsBy", 0);
+                qmbVar.c(ob6.M0(2131745019, "SortBy"), i19 == 0 ? ob6.M0(2131751565, "Default") : i19 == 1 ? ob6.M0(2131745015, "FirstName") : ob6.M0(2131745014, "LastName"), false, true);
                 return;
             }
             if (i == themeActivity.Q) {
-                uibVar.b(k96.M0(2131749072, "ImportContacts"), true);
+                qmbVar.b(ob6.M0(2131749018, "ImportContacts"), true);
                 return;
             }
             if (i == themeActivity.L) {
-                int i20 = gba.o1;
-                uibVar.c(k96.M0(2131751355, "DistanceUnits"), i20 == 0 ? k96.M0(2131751354, "DistanceUnitsAutomatic") : i20 == 1 ? k96.M0(2131751353, "DistanceUnitsKilometers") : k96.M0(2131751352, "DistanceUnitsMiles"), themeActivity.Q0, themeActivity.F0 >= 0);
+                int i20 = xea.o1;
+                qmbVar.c(ob6.M0(2131751332, "DistanceUnits"), i20 == 0 ? ob6.M0(2131751331, "DistanceUnitsAutomatic") : i20 == 1 ? ob6.M0(2131751330, "DistanceUnitsKilometers") : ob6.M0(2131751329, "DistanceUnitsMiles"), themeActivity.Q0, themeActivity.F0 >= 0);
                 themeActivity.Q0 = false;
                 return;
             } else if (i == themeActivity.M) {
-                uibVar.c(k96.M0(2131745607, null), is9.a().a, themeActivity.R0, false);
+                qmbVar.c(ob6.M0(2131745527, null), bw9.a().a, themeActivity.R0, false);
                 return;
             } else {
                 if (i == themeActivity.N) {
-                    uibVar.c(k96.M0(2131748247, null), k96.M0(gba.r0 ? 2131748245 : 2131748246, null), themeActivity.P0, false);
+                    qmbVar.c(ob6.M0(2131748193, null), ob6.M0(xea.r0 ? 2131748191 : 2131748192, null), themeActivity.P0, false);
                     themeActivity.P0 = false;
                     return;
                 }
@@ -223,161 +223,161 @@ public final class d0 extends n39 {
             }
         }
         if (i14 == 2) {
-            mhb mhbVar = (mhb) view;
-            mhbVar.setFixedSize(0);
+            ilb ilbVar = (ilb) view;
+            ilbVar.setFixedSize(0);
             if (i == themeActivity.g0) {
-                mhbVar.setText(k96.a0("AutoNightBrightnessInfo", null, 2131753791, Integer.valueOf((int) (bkb.q * 100.0f))));
+                ilbVar.setText(ob6.a0("AutoNightBrightnessInfo", null, 2131753787, Integer.valueOf((int) (aob.q * 100.0f))));
                 return;
             }
             if (i == themeActivity.a0) {
-                mhbVar.setText(ThemeActivity.w0());
+                ilbVar.setText(ThemeActivity.x0());
                 return;
             }
             if (i == themeActivity.w0) {
-                mhbVar.setText(k96.M0(2131752209, "ChatListSwipeGestureInfo"));
+                ilbVar.setText(ob6.M0(2131752186, "ChatListSwipeGestureInfo"));
                 return;
             } else if (i == themeActivity.I0) {
-                mhbVar.setText(k96.M0(2131748673, "LiteModeInfo"));
+                ilbVar.setText(ob6.M0(2131748619, "LiteModeInfo"));
                 return;
             } else {
-                mhbVar.setFixedSize(12);
-                mhbVar.setText("");
+                ilbVar.setFixedSize(12);
+                ilbVar.setText("");
                 return;
             }
         }
         if (i14 == 4) {
-            bnb bnbVar = (bnb) view;
+            arb arbVar = (arb) view;
             if (i == themeActivity.S) {
-                bnbVar.a(k96.M0(2131753790, "AutoNightDisabled"), bkb.o == 0, true);
+                arbVar.a(ob6.M0(2131753786, "AutoNightDisabled"), aob.o == 0, true);
                 return;
             }
             if (i == themeActivity.T) {
-                bnbVar.a(k96.M0(2131753784, "AutoNightScheduled"), bkb.o == 1, true);
+                arbVar.a(ob6.M0(2131753780, "AutoNightScheduled"), aob.o == 1, true);
                 return;
             } else if (i == themeActivity.U) {
-                bnbVar.a(k96.M0(2131753793, "AutoNightAdaptive"), bkb.o == 2, themeActivity.V != -1);
+                arbVar.a(ob6.M0(2131753789, "AutoNightAdaptive"), aob.o == 2, themeActivity.V != -1);
                 return;
             } else {
                 if (i == themeActivity.V) {
-                    bnbVar.a(k96.M0(2131753783, "AutoNightSystemDefault"), bkb.o == 3, false);
+                    arbVar.a(ob6.M0(2131753779, "AutoNightSystemDefault"), aob.o == 3, false);
                     return;
                 }
                 return;
             }
         }
         if (i14 == 5) {
-            ld5 ld5Var = (ld5) view;
+            mf5 mf5Var = (mf5) view;
             if (i == themeActivity.X) {
-                ld5Var.setText(k96.M0(2131753785, "AutoNightSchedule"));
+                mf5Var.setText(ob6.M0(2131753781, "AutoNightSchedule"));
                 return;
             }
             if (i == themeActivity.e0) {
-                ld5Var.setText(k96.M0(2131753792, "AutoNightBrightness"));
+                mf5Var.setText(ob6.M0(2131753788, "AutoNightBrightness"));
                 return;
             }
             if (i == themeActivity.h0) {
-                ld5Var.setText(k96.M0(2131753786, "AutoNightPreferred"));
+                mf5Var.setText(ob6.M0(2131753782, "AutoNightPreferred"));
                 return;
             }
             if (i == themeActivity.y) {
-                ld5Var.setText(k96.M0(2131745791, "SETTINGS"));
+                mf5Var.setText(ob6.M0(2131745711, "SETTINGS"));
                 return;
             }
             if (i == themeActivity.j0) {
                 if (themeActivity.f == 3) {
-                    ld5Var.setText(k96.M0(2131752827, "BuildMyOwnTheme"));
+                    mf5Var.setText(ob6.M0(2131752820, "BuildMyOwnTheme"));
                     return;
                 } else {
-                    ld5Var.setText(k96.M0(2131751999, "ColorTheme"));
+                    mf5Var.setText(ob6.M0(2131751976, "ColorTheme"));
                     return;
                 }
             }
             if (i == themeActivity.x) {
-                ld5Var.setText(k96.M0(2131743950, "TextSizeHeader"));
+                mf5Var.setText(ob6.M0(2131743844, "TextSizeHeader"));
                 return;
             }
             if (i == themeActivity.m0) {
-                ld5Var.setText(k96.M0(2131752213, "ChatList"));
+                mf5Var.setText(ob6.M0(2131752190, "ChatList"));
                 return;
             }
             if (i == themeActivity.k0) {
-                ld5Var.setText(k96.M0(2131752828, "BubbleRadius"));
+                mf5Var.setText(ob6.M0(2131752821, "BubbleRadius"));
                 return;
             }
             if (i == themeActivity.u0) {
-                ld5Var.setText(k96.M0(2131752210, "ChatListSwipeGesture"));
+                mf5Var.setText(ob6.M0(2131752187, "ChatListSwipeGesture"));
                 return;
             }
             if (i == themeActivity.x0) {
-                ld5Var.setText(k96.M0(2131745459, "SelectTheme"));
+                mf5Var.setText(ob6.M0(2131745379, "SelectTheme"));
                 return;
             }
             if (i == themeActivity.J0) {
-                ld5Var.setText(k96.M0(2131754237, null));
+                mf5Var.setText(ob6.M0(2131754233, null));
                 return;
             } else if (i == themeActivity.H0) {
-                ld5Var.setText(k96.M0(2131747572, "OtherSettings"));
+                mf5Var.setText(ob6.M0(2131747492, "OtherSettings"));
                 return;
             } else {
                 if (i == themeActivity.G0) {
-                    ld5Var.setText(k96.M0(2131748468, "MediaAndSoundSettings"));
+                    mf5Var.setText(ob6.M0(2131748414, "MediaAndSoundSettings"));
                     return;
                 }
                 return;
             }
         }
         if (i14 == 6) {
-            ((uy0) view).setProgress(bkb.q);
+            ((cz0) view).setProgress(aob.q);
             return;
         }
         if (i14 == 7) {
-            ahb ahbVar = (ahb) view;
+            wkb wkbVar = (wkb) view;
             if (i == themeActivity.Y) {
-                ahbVar.f(k96.M0(2131753788, "AutoNightLocation"), bkb.p, true);
+                wkbVar.f(ob6.M0(2131753784, "AutoNightLocation"), aob.p, true);
                 return;
             }
             if (i == themeActivity.O) {
-                ahbVar.f(k96.M0(2131751145, "EnableAnimations"), na7.c1().getBoolean("view_animations", true), true);
+                wkbVar.f(ob6.M0(2131751122, "EnableAnimations"), uc7.e1().getBoolean("view_animations", true), true);
                 return;
             }
             if (i == themeActivity.H) {
-                ahbVar.f(k96.M0(2131745440, "SendByEnter"), na7.c1().getBoolean("send_by_enter", false), true);
+                wkbVar.f(ob6.M0(2131745360, "SendByEnter"), uc7.e1().getBoolean("send_by_enter", false), true);
                 return;
             }
             if (i == themeActivity.F) {
-                ahbVar.g(k96.M0(2131746232, "RaiseToSpeak"), k96.M0(2131746231, "RaiseToSpeakInfo"), gba.o0, true, true);
+                wkbVar.g(ob6.M0(2131746152, "RaiseToSpeak"), ob6.M0(2131746151, "RaiseToSpeakInfo"), xea.o0, true, true);
                 return;
             }
             i3 = themeActivity.raiseToListenRow;
             if (i == i3) {
-                ahbVar.g(k96.M0(2131746234, "RaiseToListen"), k96.M0(2131746233, "RaiseToListenInfo"), gba.p0, true, true);
+                wkbVar.g(ob6.M0(2131746154, "RaiseToListen"), ob6.M0(2131746153, "RaiseToListenInfo"), xea.p0, true, true);
                 return;
             }
             if (i == themeActivity.G) {
-                ahbVar.g(k96.M0(2131748057, "NextMediaTap"), k96.M0(2131748056, "NextMediaTapInfo"), gba.q0, true, true);
+                wkbVar.g(ob6.M0(2131747980, "NextMediaTap"), ob6.M0(2131747979, "NextMediaTapInfo"), xea.q0, true, true);
                 return;
             }
             i4 = themeActivity.pauseOnRecordRow;
             if (i == i4) {
-                ahbVar.g(k96.M0(2131747238, null), k96.M0(2131747237, "PauseMusicOnRecordInfo"), gba.B0, true, true);
+                wkbVar.g(ob6.M0(2131747158, null), ob6.M0(2131747157, "PauseMusicOnRecordInfo"), xea.B0, true, true);
                 return;
             }
             i5 = themeActivity.pauseOnMediaRow;
             if (i == i5) {
-                ahbVar.f(k96.M0(2131747239, null), gba.C0, true);
+                wkbVar.f(ob6.M0(2131747159, null), xea.C0, true);
                 return;
             }
             if (i == themeActivity.E) {
-                ahbVar.g(k96.M0(2131751426, "DirectShare"), k96.M0(2131751425, "DirectShareInfo"), gba.u0, false, true);
+                wkbVar.g(ob6.M0(2131751403, "DirectShare"), ob6.M0(2131751402, "DirectShareInfo"), xea.u0, false, true);
                 return;
             }
             i6 = themeActivity.sensitiveContentRow;
             if (i == i6) {
-                ahbVar.g(k96.M0(2131745138, null), k96.M0(2131745137, null), themeActivity.getMessagesController().Y4(), true, true);
+                wkbVar.g(ob6.M0(2131745058, null), ob6.M0(2131745057, null), themeActivity.getMessagesController().g5(), true, true);
                 return;
             } else {
                 if (i == themeActivity.t0) {
-                    ahbVar.f(k96.M0(2131753672, "BlurInChat"), gba.f(), true);
+                    wkbVar.f(ob6.M0(2131753668, "BlurInChat"), xea.f(), true);
                     return;
                 }
                 return;
@@ -385,343 +385,343 @@ public final class d0 extends n39 {
         }
         if (i14 != 14) {
             if (i14 == 17) {
-                ((hc3) view).a();
+                ((ad3) view).a();
                 return;
             }
             if (i14 == 19) {
-                uy8 uy8Var = (uy8) view;
+                h29 h29Var = (h29) view;
                 if (i == themeActivity.I) {
-                    uy8Var.b("save media only from peer chats", "", true, false);
+                    h29Var.b("save media only from peer chats", "", true, false);
                     return;
                 } else {
-                    uy8Var.b("save media from all chats", "", true, false);
+                    h29Var.b("save media from all chats", "", true, false);
                     return;
                 }
             }
             if (i14 == 21) {
-                ((d08) view).set(themeActivity.getUserConfig().f());
+                ((j38) view).set(themeActivity.getUserConfig().f());
                 return;
             }
             switch (i14) {
                 case 10:
-                    vl7 vl7Var = (vl7) view;
+                    uo7 uo7Var = (uo7) view;
                     i12 = themeActivity.nightThemeRow;
                     if (i != i12) {
                         i13 = themeActivity.browserRow;
                         if (i == i13) {
-                            vl7Var.b(k96.M0(2131749017, null), k96.M0(2131749016, null), R.drawable.msg2_language, themeActivity.getMessagesController().M2(), 0, false, true, false);
+                            uo7Var.b(ob6.M0(2131748963, null), ob6.M0(2131748962, null), R.drawable.msg2_language, themeActivity.getMessagesController().S2(), 0, false, true, false);
                             break;
                         }
                     } else {
-                        boolean z = bkb.o != 0;
-                        String A0 = z ? bkb.A0() : k96.M0(2131753780, "AutoNightThemeOff");
+                        boolean z = aob.o != 0;
+                        String A0 = z ? aob.A0() : ob6.M0(2131753776, "AutoNightThemeOff");
                         if (z) {
-                            int i21 = bkb.o;
-                            A0 = tb4.y(i21 == 1 ? k96.M0(2131753784, "AutoNightScheduled") : i21 == 3 ? k96.M0(2131753783, "AutoNightSystemDefault") : k96.M0(2131753793, "AutoNightAdaptive"), " ", A0);
+                            int i21 = aob.o;
+                            A0 = qd4.y(i21 == 1 ? ob6.M0(2131753780, "AutoNightScheduled") : i21 == 3 ? ob6.M0(2131753779, "AutoNightSystemDefault") : ob6.M0(2131753789, "AutoNightAdaptive"), " ", A0);
                         }
-                        vl7Var.b(k96.M0(2131753781, "AutoNightTheme"), A0, R.drawable.menu_night_mode_24, z, 0, false, true, false);
+                        uo7Var.b(ob6.M0(2131753777, "AutoNightTheme"), A0, R.drawable.menu_night_mode_24, z, 0, false, true, false);
                         break;
                     }
                     break;
                 case 11:
                     if (this.d) {
-                        themeActivity.c.A1(themeActivity.b.getMeasuredWidth());
+                        themeActivity.c.B1(themeActivity.b.getMeasuredWidth());
                         this.d = false;
                         break;
                     }
                     break;
                 case 12:
-                    o39 o39Var = (o39) view;
-                    e0 e0Var = (e0) o39Var.getAdapter();
+                    d79 d79Var = (d79) view;
+                    e0 e0Var = (e0) d79Var.getAdapter();
                     e0Var.f();
                     int indexOf = e0Var.e.indexOf(e0Var.d.i(false));
                     if (indexOf == -1) {
                         indexOf = e0Var.b() - 1;
                     }
                     if (indexOf != -1) {
-                        ((t26) o39Var.getLayoutManager()).g1(indexOf, (themeActivity.b.getMeasuredWidth() / 2) - gl.L(42.0f));
+                        ((x46) d79Var.getLayoutManager()).g1(indexOf, (themeActivity.b.getMeasuredWidth() / 2) - hl.L(42.0f));
                         break;
                     }
                     break;
             }
             return;
         }
-        wgb wgbVar = (wgb) view;
-        wgbVar.w = (byte) 48;
+        skb skbVar = (skb) view;
+        skbVar.w = (byte) 48;
         i7 = themeActivity.backgroundRow;
         if (i == i7) {
-            wgbVar.setSubtitle(null);
-            int i22 = bkb.p6;
-            wgbVar.g(i22, i22);
-            String M0 = k96.M0(2131752538, null);
+            skbVar.setSubtitle(null);
+            int i22 = aob.q6;
+            skbVar.g(i22, i22);
+            String M0 = ob6.M0(2131752531, null);
             i11 = themeActivity.changeUserColor;
-            wgbVar.o(R.drawable.msg_background, M0, i11 >= 0);
+            skbVar.o(R.drawable.msg_background, M0, i11 >= 0);
             return;
         }
         if (i == themeActivity.z0) {
-            wgbVar.setSubtitle(null);
-            int i23 = bkb.p6;
-            wgbVar.g(i23, i23);
-            wgbVar.o(R.drawable.msg_theme, k96.M0(2131751269, null), true);
+            skbVar.setSubtitle(null);
+            int i23 = aob.q6;
+            skbVar.g(i23, i23);
+            skbVar.o(R.drawable.msg_theme, ob6.M0(2131751246, null), true);
             return;
         }
         i8 = themeActivity.createNewThemeRow;
         if (i == i8) {
-            wgbVar.setSubtitle(null);
-            int i24 = bkb.p6;
-            wgbVar.g(i24, i24);
-            wgbVar.o(R.drawable.msg_colors, k96.M0(2131751700, null), false);
+            skbVar.setSubtitle(null);
+            int i24 = aob.q6;
+            skbVar.g(i24, i24);
+            skbVar.o(R.drawable.msg_colors, ob6.M0(2131751677, null), false);
             return;
         }
         i9 = themeActivity.liteModeRow;
         if (i == i9) {
-            wgbVar.g(bkb.I5, bkb.F6);
-            wgbVar.o(R.drawable.msg2_animations, k96.M0(2131748674, null), true);
-            wgbVar.setSubtitle(k96.M0(2131748673, null));
-            wgbVar.w = (byte) 60;
-            wgbVar.s = 64;
-            wgbVar.x = 20;
+            skbVar.g(aob.J5, aob.G6);
+            skbVar.o(R.drawable.msg2_animations, ob6.M0(2131748620, null), true);
+            skbVar.setSubtitle(ob6.M0(2131748619, null));
+            skbVar.w = (byte) 60;
+            skbVar.s = 64;
+            skbVar.x = 20;
             return;
         }
         i10 = themeActivity.stickersRow;
         if (i == i10) {
-            wgbVar.g(bkb.I5, bkb.F6);
-            wgbVar.o(R.drawable.msg2_sticker, k96.M0(2131744620, null), true);
-            wgbVar.setSubtitle(k96.M0(2131744619, null));
-            wgbVar.s = 64;
-            wgbVar.w = (byte) 60;
-            wgbVar.x = 20;
+            skbVar.g(aob.J5, aob.G6);
+            skbVar.o(R.drawable.msg2_sticker, ob6.M0(2131744514, null), true);
+            skbVar.setSubtitle(ob6.M0(2131744513, null));
+            skbVar.s = 64;
+            skbVar.w = (byte) 60;
+            skbVar.x = 20;
             return;
         }
         if (i == themeActivity.B0) {
-            wgbVar.g(bkb.I5, bkb.F6);
-            wgbVar.o(R.drawable.msg2_speech, k96.M0(2131745039, null), false);
-            wgbVar.setSubtitle(k96.M0(2131745040, null));
-            wgbVar.s = 64;
-            wgbVar.w = (byte) 60;
-            wgbVar.x = 20;
+            skbVar.g(aob.J5, aob.G6);
+            skbVar.o(R.drawable.msg2_speech, ob6.M0(2131744958, null), false);
+            skbVar.setSubtitle(ob6.M0(2131744984, null));
+            skbVar.s = 64;
+            skbVar.w = (byte) 60;
+            skbVar.x = 20;
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v1, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, bnb] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, arb] */
     /* JADX WARN: Type inference failed for: r1v2 */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, java.lang.Object, pkb] */
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        ?? bnbVar;
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, java.lang.Object, oob] */
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        ?? arbVar;
         View view;
         int i2;
-        ui5 ui5Var;
+        wk5 wk5Var;
         int i3;
         int i4;
-        wjb wjbVar = null;
+        vnb vnbVar = null;
         byte b = 0;
         ThemeActivity themeActivity = this.e;
         Context context = this.c;
         switch (i) {
             case 1:
-                view = new uib(context);
+                view = new qmb(context);
                 break;
             case 2:
-                view = new mhb(context);
+                view = new ilb(context);
                 break;
             case 3:
-                view = new b9a(context, (de9) null);
+                view = new rca(context, (uh9) null);
                 break;
             case 4:
-                bnbVar = new bnb(context);
-                bnbVar.setWillNotDraw(false);
+                arbVar = new arb(context);
+                arbVar.setWillNotDraw(false);
                 TextView textView = new TextView(context);
-                bnbVar.a = textView;
-                zkb.X(textView, bkb.F6, null);
-                ug8.w(textView, 1, 16.0f, 1, 1);
+                arbVar.a = textView;
+                yob.X(textView, aob.G6, null);
+                ik8.w(textView, 1, 16.0f, 1, 1);
                 textView.setSingleLine(true);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity((k96.a0 ? 5 : 3) | 16);
-                boolean z = k96.a0;
-                bnbVar.addView(textView, nme.d(-1, -1.0f, (z ? 5 : 3) | 48, z ? 71.0f : 21.0f, 0.0f, z ? 21.0f : 23.0f, 0.0f));
+                textView.setGravity((ob6.a0 ? 5 : 3) | 16);
+                boolean z = ob6.a0;
+                arbVar.addView(textView, tre.d(-1, -1.0f, (z ? 5 : 3) | 48, z ? 71.0f : 21.0f, 0.0f, z ? 21.0f : 23.0f, 0.0f));
                 ImageView imageView = new ImageView(context);
-                bnbVar.b = imageView;
-                zkb.s(imageView, bkb.Ci, null, PorterDuff.Mode.MULTIPLY);
+                arbVar.b = imageView;
+                yob.s(imageView, aob.Di, null, PorterDuff.Mode.MULTIPLY);
                 imageView.setImageResource(R.drawable.sticker_added);
-                bnbVar.addView(imageView, nme.d(19, 14.0f, (k96.a0 ? (byte) 3 : (byte) 5) | 16, 23.0f, 0.0f, 23.0f, 0.0f));
-                view = bnbVar;
+                arbVar.addView(imageView, tre.d(19, 14.0f, (ob6.a0 ? (byte) 3 : (byte) 5) | 16, 23.0f, 0.0f, 23.0f, 0.0f));
+                view = arbVar;
                 break;
             case 5:
-                view = new ld5(context);
+                view = new mf5(context);
                 break;
             case 6:
-                view = new okb(this, context);
+                view = new nob(this, context);
                 break;
             case 7:
-                view = new ahb(context);
+                view = new wkb(context);
                 break;
             case 8:
-                view = new skb(themeActivity, context);
+                view = new rob(themeActivity, context);
                 break;
             case 9:
-                bnbVar = new pkb(context, (byte) 0);
-                bnbVar.b = new z92[2];
-                bnbVar.setOrientation(0);
-                bnbVar.setPadding(gl.L(21.0f), gl.L(10.0f), gl.L(21.0f), 0);
+                arbVar = new oob(context, (byte) 0);
+                arbVar.b = new pa2[2];
+                arbVar.setOrientation(0);
+                arbVar.setPadding(hl.L(21.0f), hl.L(10.0f), hl.L(21.0f), 0);
                 int i5 = 0;
                 while (true) {
-                    z92[] z92VarArr = (z92[]) bnbVar.b;
-                    if (i5 >= z92VarArr.length) {
-                        view = bnbVar;
+                    pa2[] pa2VarArr = (pa2[]) arbVar.b;
+                    if (i5 >= pa2VarArr.length) {
+                        view = arbVar;
                         break;
                     } else {
                         boolean z2 = i5 == 1;
-                        z92 z92Var = new z92(context, (byte) 0);
-                        z92Var.b = new RectF();
+                        pa2 pa2Var = new pa2(context, (byte) 0);
+                        pa2Var.b = new RectF();
                         TextPaint textPaint = new TextPaint(1);
-                        z92Var.e = textPaint;
-                        z92Var.setWillNotDraw(false);
-                        z92Var.c = z2;
-                        z92Var.setContentDescription(k96.M0(z2 ? 2131752211 : 2131752212, null));
-                        textPaint.setTextSize(gl.L(13.0f));
-                        y92 y92Var = new y92(z92Var, context);
-                        z92Var.d = y92Var;
-                        y92Var.setSize(gl.L(20.0f));
-                        z92Var.addView(y92Var, nme.d(22, 22.0f, 53, 0.0f, 26.0f, 10.0f, 0.0f));
-                        boolean z3 = gba.l1;
-                        y92Var.a(!z2 ? z3 : !z3, false);
-                        z92VarArr[i5] = z92Var;
-                        bnbVar.addView(((z92[]) bnbVar.b)[i5], nme.m(0.5f, -1, -1, i5 == 1 ? 10 : 0, 0, 0));
-                        ((z92[]) bnbVar.b)[i5].setOnClickListener(new v6(r0, bnbVar, z2));
+                        pa2Var.e = textPaint;
+                        pa2Var.setWillNotDraw(false);
+                        pa2Var.c = z2;
+                        pa2Var.setContentDescription(ob6.M0(z2 ? 2131752188 : 2131752189, null));
+                        textPaint.setTextSize(hl.L(13.0f));
+                        oa2 oa2Var = new oa2(pa2Var, context);
+                        pa2Var.d = oa2Var;
+                        oa2Var.setSize(hl.L(20.0f));
+                        pa2Var.addView(oa2Var, tre.d(22, 22.0f, 53, 0.0f, 26.0f, 10.0f, 0.0f));
+                        boolean z3 = xea.l1;
+                        oa2Var.a(!z2 ? z3 : !z3, false);
+                        pa2VarArr[i5] = pa2Var;
+                        arbVar.addView(((pa2[]) arbVar.b)[i5], tre.m(0.5f, -1, -1, i5 == 1 ? 10 : 0, 0, 0));
+                        ((pa2[]) arbVar.b)[i5].setOnClickListener(new w6(r0, arbVar, z2));
                         i5++;
                     }
                 }
             case 10:
-                view = new vl7(this.c, 21, 60, true, null);
+                view = new uo7(this.c, 21, 60, true, null);
                 break;
             case 11:
                 this.d = true;
-                qkb qkbVar = new qkb(this, this.c, themeActivity, themeActivity.f, themeActivity.e, themeActivity.d);
-                themeActivity.c = qkbVar;
-                qkbVar.setDrawDivider(themeActivity.w);
+                pob pobVar = new pob(this, this.c, themeActivity, themeActivity.f, themeActivity.e, themeActivity.d);
+                themeActivity.c = pobVar;
+                pobVar.setDrawDivider(themeActivity.w);
                 themeActivity.c.setFocusable(false);
                 View view2 = themeActivity.c;
-                view2.setLayoutParams(new e49(-1, gl.L(148.0f)));
+                view2.setLayoutParams(new r79(-1, hl.L(148.0f)));
                 view = view2;
                 break;
             case 12:
-                final rkb rkbVar = new rkb(context, wjbVar, b);
-                rkbVar.setFocusable(false);
-                rkbVar.setItemAnimator(null);
-                rkbVar.setLayoutAnimation(null);
-                rkbVar.setPadding(gl.L(11.0f), 0, gl.L(11.0f), 0);
-                rkbVar.setClipToPadding(false);
-                t26 t26Var = new t26();
-                t26Var.i1(0);
-                rkbVar.setLayoutManager(t26Var);
+                final qob qobVar = new qob(context, vnbVar, b);
+                qobVar.setFocusable(false);
+                qobVar.setItemAnimator(null);
+                qobVar.setLayoutAnimation(null);
+                qobVar.setPadding(hl.L(11.0f), 0, hl.L(11.0f), 0);
+                qobVar.setClipToPadding(false);
+                x46 x46Var = new x46();
+                x46Var.i1(0);
+                qobVar.setLayoutManager(x46Var);
                 final e0 e0Var = new e0(themeActivity, context);
-                rkbVar.setAdapter(e0Var);
-                rkbVar.setOnItemClickListener(new c39() { // from class: org.telegram.ui.c0
-                    @Override // c39
-                    public final void d(int i6, View view3) {
+                qobVar.setAdapter(e0Var);
+                qobVar.setOnItemClickListener(new r69() { // from class: org.telegram.ui.c0
+                    @Override // r69
+                    public final void e(int i6, View view3) {
                         ThemeActivity themeActivity2 = d0.this.e;
                         byte b2 = themeActivity2.f;
-                        akb B0 = b2 == 1 ? bkb.J : bkb.B0();
+                        znb B0 = b2 == 1 ? aob.J : aob.B0();
                         e0 e0Var2 = e0Var;
                         if (i6 == e0Var2.b() - 1) {
-                            themeActivity2.presentFragment(new qmb(B0, false, 1, false, b2 == 1));
+                            themeActivity2.presentFragment(new pqb(B0, false, 1, false, b2 == 1));
                         } else {
-                            zjb zjbVar = (zjb) e0Var2.e.get(i6);
+                            ynb ynbVar = (ynb) e0Var2.e.get(i6);
                             int i7 = B0.Z;
-                            int i8 = zjbVar.a;
+                            int i8 = ynbVar.a;
                             if (i7 != i8) {
-                                bkb.I1(B0, b2 == 1, i8, view3);
-                                jy3.q(B0, zjbVar.a);
-                                bkb.K1(themeActivity2);
+                                aob.I1(B0, b2 == 1, i8, view3);
+                                ez3.q(B0, ynbVar.a);
+                                aob.K1(themeActivity2);
                             } else {
-                                themeActivity2.presentFragment(new qmb(B0, false, 1, i8 >= 100, b2 == 1));
+                                themeActivity2.presentFragment(new pqb(B0, false, 1, i8 >= 100, b2 == 1));
                             }
                         }
                         int left = view3.getLeft();
                         int right = view3.getRight();
-                        int L = gl.L(52.0f);
+                        int L = hl.L(52.0f);
                         int i9 = left - L;
-                        rkb rkbVar2 = rkbVar;
+                        qob qobVar2 = qobVar;
                         if (i9 < 0) {
-                            rkbVar2.x0(i9, 0, null);
+                            qobVar2.y0(i9, 0, null);
                         } else {
                             int i10 = right + L;
-                            if (i10 > rkbVar2.getMeasuredWidth()) {
-                                rkbVar2.x0(i10 - rkbVar2.getMeasuredWidth(), 0, null);
+                            if (i10 > qobVar2.getMeasuredWidth()) {
+                                qobVar2.y0(i10 - qobVar2.getMeasuredWidth(), 0, null);
                             }
                         }
-                        int childCount = rkbVar2.getChildCount();
+                        int childCount = qobVar2.getChildCount();
                         for (int i11 = 0; i11 < childCount; i11++) {
-                            View childAt = rkbVar2.getChildAt(i11);
+                            View childAt = qobVar2.getChildAt(i11);
                             if (childAt instanceof ThemeActivity.InnerAccentView) {
                                 ((ThemeActivity.InnerAccentView) childAt).a(true);
                             }
                         }
                     }
                 });
-                rkbVar.setOnItemLongClickListener(new kq8(this, e0Var, (byte) 25));
-                rkbVar.setLayoutParams(new e49(-1, gl.L(62.0f)));
-                view = rkbVar;
+                qobVar.setOnItemLongClickListener((t69) new yw9(this, e0Var, (byte) 11));
+                qobVar.setLayoutParams(new r79(-1, hl.L(62.0f)));
+                view = qobVar;
                 break;
             case 13:
-                view = new mkb(themeActivity, context);
+                view = new lob(themeActivity, context);
                 break;
             case 14:
             case 18:
             default:
-                view = new wgb(context);
+                view = new skb(context);
                 break;
             case 15:
-                i2 = ((org.telegram.ui.ActionBar.d) themeActivity).currentAccount;
-                view = new pcb(context, i2);
+                i2 = ((org.telegram.ui.ActionBar.e) themeActivity).currentAccount;
+                view = new lgb(context, i2);
                 break;
             case 16:
-                ui5Var = ((org.telegram.ui.ActionBar.d) themeActivity).parentLayout;
-                View o08Var = new o08(context, ui5Var, 0);
-                o08Var.setImportantForAccessibility(4);
-                view = o08Var;
+                wk5Var = ((org.telegram.ui.ActionBar.e) themeActivity).parentLayout;
+                View u38Var = new u38(context, wk5Var, 0);
+                u38Var.setImportantForAccessibility(4);
+                view = u38Var;
                 break;
             case 17:
-                View hc3Var = new hc3(context, themeActivity, themeActivity.f);
-                hc3Var.setFocusable(false);
-                hc3Var.setLayoutParams(new e49(-1, -2));
-                view = hc3Var;
+                View ad3Var = new ad3(context, themeActivity, themeActivity.f);
+                ad3Var.setFocusable(false);
+                ad3Var.setLayoutParams(new r79(-1, -2));
+                view = ad3Var;
                 break;
             case 19:
-                view = new uy8(context, false);
+                view = new h29(context, false);
                 break;
             case 20:
-                i3 = ((org.telegram.ui.ActionBar.d) themeActivity).currentAccount;
-                or orVar = new or(context, null);
-                orVar.f3 = new ArrayList();
-                orVar.h3 = i3;
-                orVar.setPadding(0, gl.L(12.0f), 0, gl.L(12.0f));
-                orVar.setFocusable(false);
-                orVar.setItemAnimator(null);
-                orVar.setLayoutAnimation(null);
-                t26 t26Var2 = new t26(0, false);
-                orVar.g3 = t26Var2;
-                orVar.setLayoutManager(t26Var2);
-                orVar.setAdapter(new jr(orVar, b));
-                orVar.i(new kr(orVar, b));
-                orVar.setOnItemClickListener(new ir(orVar, themeActivity, context, b));
-                orVar.z1();
-                view = orVar;
+                i3 = ((org.telegram.ui.ActionBar.e) themeActivity).currentAccount;
+                pr prVar = new pr(context, null);
+                prVar.f3 = new ArrayList();
+                prVar.h3 = i3;
+                prVar.setPadding(0, hl.L(12.0f), 0, hl.L(12.0f));
+                prVar.setFocusable(false);
+                prVar.setItemAnimator(null);
+                prVar.setLayoutAnimation(null);
+                x46 x46Var2 = new x46(0, false);
+                prVar.g3 = x46Var2;
+                prVar.setLayoutManager(x46Var2);
+                prVar.setAdapter(new kr(prVar, b));
+                prVar.i(new lr(prVar, b));
+                prVar.setOnItemClickListener(new jr(prVar, themeActivity, context, b));
+                prVar.A1();
+                view = prVar;
                 break;
             case 21:
-                i4 = ((org.telegram.ui.ActionBar.d) themeActivity).currentAccount;
-                view = new d08(i4, 0L, themeActivity.getResourceProvider(), this.c);
+                i4 = ((org.telegram.ui.ActionBar.e) themeActivity).currentAccount;
+                view = new j38(i4, 0L, themeActivity.getResourceProvider(), this.c);
                 break;
         }
-        return new y29(view);
+        return new n69(view);
     }
 
-    @Override // w39
-    public final void y(s49 s49Var) {
-        if (s49Var.f == 4) {
-            ((bnb) s49Var.a).setTypeChecked(s49Var.b() == bkb.o);
+    @Override // j79
+    public final void y(f89 f89Var) {
+        if (f89Var.f == 4) {
+            ((arb) f89Var.a).setTypeChecked(f89Var.b() == aob.o);
         }
     }
 }

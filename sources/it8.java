@@ -1,73 +1,31 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.util.HashMap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class it8 implements s84, jcc {
+    public final /* synthetic */ cga a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class it8 implements r24 {
-    public final /* synthetic */ byte a;
-    public final HashMap b;
-    public final HashMap c;
-
-    public it8(byte b) {
-        this.a = b;
-        switch (b) {
-            case 2:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                break;
-            case 3:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                break;
-            default:
-                this.b = new HashMap();
-                this.c = new HashMap();
-                break;
-        }
+    public /* synthetic */ it8(cga cgaVar) {
+        this.a = cgaVar;
     }
 
-    @Override // r24
-    public final /* bridge */ /* synthetic */ r24 a(Class cls, zn7 zn7Var) {
-        byte b = this.a;
-        HashMap hashMap = this.c;
-        HashMap hashMap2 = this.b;
-        switch (b) {
-            case 1:
-                hashMap2.put(cls, zn7Var);
-                hashMap.remove(cls);
-                break;
-            case 2:
-                hashMap2.put(cls, zn7Var);
-                hashMap.remove(cls);
-                break;
-            default:
-                hashMap2.put(cls, zn7Var);
-                hashMap.remove(cls);
-                break;
+    @Override // jcc
+    public final Object g(Integer num, Object obj) {
+        cga cgaVar = this.a;
+        cgaVar.i();
+        if (num.intValue() != -1) {
+            return Boolean.FALSE;
         }
-        return this;
+        cgaVar.h(new jt8(cgaVar, (byte) 1), null);
+        return Boolean.TRUE;
     }
 
-    public final void b(Object obj, ByteArrayOutputStream byteArrayOutputStream) {
-        HashMap hashMap = this.c;
-        HashMap hashMap2 = this.b;
-        ht8 ht8Var = new ht8(byteArrayOutputStream, hashMap2, hashMap);
-        if (obj == null) {
-            return;
-        }
-        zn7 zn7Var = (zn7) hashMap2.get(obj.getClass());
-        if (zn7Var != null) {
-            zn7Var.a(obj, ht8Var);
-            return;
-        }
-        throw new t24("No encoder for " + obj.getClass());
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        this.a.l();
     }
 
-    public it8(HashMap hashMap, HashMap hashMap2) {
-        this.a = (byte) 0;
-        this.b = hashMap;
-        this.c = hashMap2;
+    @Override // s84
+    public final void v0(float f, int i) {
     }
 }

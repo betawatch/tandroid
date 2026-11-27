@@ -1,21 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class d3f {
-    public final Long a;
-    public final Long b;
-    public final Long c;
-    public final Long d;
-    public final Long e;
-    public final Long f;
+public final class d3f implements zq7 {
+    public static final d3f a = new d3f();
 
-    public /* synthetic */ d3f(hpe hpeVar) {
-        this.a = hpeVar.a;
-        this.b = hpeVar.b;
-        this.c = hpeVar.c;
-        this.d = hpeVar.d;
-        this.e = hpeVar.e;
-        this.f = hpeVar.f;
+    static {
+        xnb.y(xnb.p(xmd.class, new skd(1)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

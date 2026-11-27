@@ -1,19 +1,17 @@
 // default package
 
-import java.io.IOException;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface vx6 {
-    void O(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var, int i2);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vx6 extends Handler {
+    public yg6 a;
+    public final /* synthetic */ yx6 b;
 
-    void j(int i, rx6 rx6Var, fr6 fr6Var);
-
-    void k(int i, rx6 rx6Var, fr6 fr6Var);
-
-    void s(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var);
-
-    void u(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var);
-
-    void w(int i, rx6 rx6Var, f86 f86Var, fr6 fr6Var, IOException iOException, boolean z);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vx6(yx6 yx6Var, Looper looper) {
+        super(looper);
+        this.b = yx6Var;
+    }
 }

@@ -1,54 +1,98 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
+import android.graphics.Canvas;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class c26 extends FrameLayout {
-    public final ImageView a;
-    public final jia b;
-    public final jo0 c;
-    public final jia d;
-    public b26 e;
-    public a26 f;
+public final class c26 extends RelativeLayout {
+    public mq5 a;
+    public boolean b;
+    public final /* synthetic */ LaunchActivity c;
 
-    public c26(h26 h26Var, Context context, wjb wjbVar) {
-        super(context);
-        int i = h26.R2;
-        int i2 = h26Var.u0;
-        setPadding(i2, 0, i2, 0);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        zkb.s(imageView, bkb.Bk, wjbVar, PorterDuff.Mode.SRC_IN);
-        addView(imageView, nme.d(24, 24.0f, (k96.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
-        jia jiaVar = new jia(context);
-        this.b = jiaVar;
-        jiaVar.setWidthWrapContent(true);
-        zkb.W(jiaVar, bkb.i5, wjbVar);
-        jiaVar.setTextSize(14);
-        boolean z = k96.a0;
-        addView(jiaVar, nme.d(-2, -2.0f, (z ? 5 : 3) | 16, z ? 30.0f : 60.0f, 0.0f, z ? 60.0f : 30.0f, 0.0f));
-        jia jiaVar2 = new jia(context);
-        this.d = jiaVar2;
-        jiaVar2.setTextColor(-1);
-        jiaVar2.setWidthWrapContent(true);
-        jiaVar2.setTypeface(gl.o());
-        jiaVar2.setTextSize(14);
-        jo0 jo0Var = new jo0(this, context, wjbVar);
-        this.c = jo0Var;
-        jo0Var.setWillNotDraw(false);
-        jo0Var.addView(jiaVar2, nme.e(-2, -2, 17));
-        addView(jo0Var, nme.c(-1.0f, -1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c26(LaunchActivity launchActivity, LaunchActivity launchActivity2) {
+        super(launchActivity2);
+        this.c = launchActivity;
+        this.a = mq5.e;
+        e05 e05Var = new e05((Object) this, (byte) 24);
+        WeakHashMap weakHashMap = ihc.a;
+        ahc.i(this, e05Var);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ActionBarLayout actionBarLayout = this.c.q0;
+        if (actionBarLayout != null) {
+            actionBarLayout.P(canvas, this);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int measuredWidth = getMeasuredWidth();
+        getMeasuredHeight();
+        LaunchActivity launchActivity = this.c;
+        if (launchActivity.N0) {
+            launchActivity.p0.getView().layout(0, 0, launchActivity.p0.getView().getMeasuredWidth(), launchActivity.p0.getView().getMeasuredHeight());
+        } else {
+            mq5 mq5Var = this.a;
+            int k1 = hl.k1(measuredWidth, mq5Var.a, mq5Var.c);
+            launchActivity.p0.getView().layout(0, 0, launchActivity.p0.getView().getMeasuredWidth(), launchActivity.p0.getView().getMeasuredHeight());
+            launchActivity.r0.getView().layout(k1, 0, launchActivity.r0.getView().getMeasuredWidth() + k1, launchActivity.r0.getView().getMeasuredHeight());
+        }
+        int measuredWidth2 = (measuredWidth - launchActivity.q0.getView().getMeasuredWidth()) / 2;
+        int L = hl.L(8.0f) + this.a.b;
+        launchActivity.q0.getView().layout(measuredWidth2, L, launchActivity.q0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.q0.getView().getMeasuredHeight() + L);
+        w81 w81Var = launchActivity.u0;
+        w81Var.layout(0, 0, w81Var.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
+        FrameLayout frameLayout = launchActivity.t0;
+        frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.t0.getMeasuredHeight());
+    }
+
+    @Override // android.widget.RelativeLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(this.f != null ? 49.0f : 36.0f), TLObject.FLAG_30));
+        this.b = true;
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        setMeasuredDimension(size, size2);
+        String str = LaunchActivity.C1;
+        boolean z = hl.E;
+        LaunchActivity launchActivity = this.c;
+        if ((!z && (!hl.N1() || launchActivity.getResources().getConfiguration().orientation == 2)) == launchActivity.N0 && !launchActivity.O0) {
+            launchActivity.O0 = true;
+            hl.c3(new ea5(this, (byte) 24));
+        }
+        if (launchActivity.N0) {
+            launchActivity.p0.getView().measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        } else {
+            mq5 mq5Var = this.a;
+            int k1 = hl.k1(size, mq5Var.a, mq5Var.c);
+            launchActivity.p0.getView().measure(View.MeasureSpec.makeMeasureSpec(k1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+            launchActivity.r0.getView().measure(View.MeasureSpec.makeMeasureSpec(size - k1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        }
+        launchActivity.u0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        launchActivity.t0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        ViewGroup view = launchActivity.q0.getView();
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.min(hl.L(500.0f), size - hl.L(16.0f)), TLObject.FLAG_30);
+        mq5 mq5Var2 = this.a;
+        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(((size2 - mq5Var2.b) - mq5Var2.d) - hl.L(16.0f), TLObject.FLAG_30));
+        this.b = false;
+    }
+
+    @Override // android.widget.RelativeLayout, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.b) {
+            return;
+        }
+        super.requestLayout();
     }
 }

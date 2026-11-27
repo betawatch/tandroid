@@ -1,24 +1,25 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mn3 extends CharacterStyle implements UpdateAppearance {
-    public long a;
+public final class mn3 {
+    public final String a;
+    public final float b;
+    public final boolean c;
 
-    public final float a(long j) {
-        if (this.a == 0) {
-            return 0.5f;
-        }
-        return (qn3.b(Math.max(0.0f, Math.min(1.0f, (j - r0) / 300.0f))) * 0.5f) + 0.5f;
+    public mn3(String str, float f, boolean z) {
+        this.a = str;
+        this.b = f;
+        this.c = z;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setAlpha((int) (a(SystemClock.uptimeMillis()) * textPaint.getAlpha()));
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.a);
+        sb.append(String.format(Locale.US, " %.2f", Float.valueOf(this.b)));
+        sb.append(this.c ? " sure" : "");
+        return sb.toString();
     }
 }

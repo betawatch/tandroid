@@ -6,17 +6,17 @@ import android.util.Pair;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class gp0 extends AsyncTask {
     public String a;
     public long b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ f d;
+    public final /* synthetic */ c d;
 
-    public gp0(String str, f fVar) {
+    public gp0(String str, c cVar) {
         this.c = str;
-        this.d = fVar;
+        this.d = cVar;
     }
 
     @Override // android.os.AsyncTask
@@ -46,7 +46,7 @@ public final class gp0 extends AsyncTask {
             httpURLConnection.getInputStream().close();
             return null;
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
             return null;
         }
     }

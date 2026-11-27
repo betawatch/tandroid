@@ -1,45 +1,36 @@
 // default package
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.Arrays;
+import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ni8 extends n39 {
-    public final /* synthetic */ dh8 c;
+public final class ni8 implements Comparator {
+    public final /* synthetic */ ui8 a;
 
-    public ni8(dh8 dh8Var) {
-        this.c = dh8Var;
+    public ni8(ui8 ui8Var) {
+        this.a = ui8Var;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return false;
-    }
-
-    @Override // w39
-    public final int b() {
-        return ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        ArrayList arrayList = this.c.f3;
-        if (arrayList.isEmpty()) {
-            return;
+    public final int a(ti8 ti8Var) {
+        TLRPC.Poll poll = this.a.s1;
+        int size = poll.answers.size();
+        for (int i = 0; i < size; i++) {
+            if (Arrays.equals(poll.answers.get(i).option, ti8Var.d)) {
+                return i;
+            }
         }
-        pi8 pi8Var = (pi8) s49Var.a;
-        pi8Var.r = (TLRPC.Document) arrayList.get(i % arrayList.size());
-        pi8Var.s = true;
-        pi8Var.a(!r2.k3, false, false);
+        return 0;
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        pi8 pi8Var = new pi8(this.c, viewGroup.getContext());
-        pi8Var.setLayoutParams(new e49(-1, -2));
-        return new y29(pi8Var);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int a = a((ti8) obj);
+        int a2 = a((ti8) obj2);
+        if (a > a2) {
+            return 1;
+        }
+        return a < a2 ? -1 : 0;
     }
 }

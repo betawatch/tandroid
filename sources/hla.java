@@ -1,26 +1,6 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class hla extends fla {
-    public final long a;
-    public final long b;
-    public final List c;
-
-    public hla(long j, long j2, List list) {
-        this.a = j;
-        this.b = j2;
-        this.c = DesugarCollections.unmodifiableList(list);
-    }
-
-    @Override // fla
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("SCTE-35 SpliceInsertCommand { programSplicePts=");
-        sb.append(this.a);
-        sb.append(", programSplicePlaybackPositionUs= ");
-        return ls6.p(sb, this.b, " }");
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface hla {
 }

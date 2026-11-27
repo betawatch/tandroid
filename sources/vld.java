@@ -1,19 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vld implements zn7 {
-    public static final vld a = new vld();
+import android.os.Looper;
+import android.util.SparseArray;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.atomic.AtomicInteger;
 
-    static {
-        yjb.y(yjb.n(g7d.class, new d6d(1)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vld implements OnCompleteListener, Runnable {
+    public static final b99 d = new b99(Looper.getMainLooper());
+    public static final SparseArray e = new SparseArray(2);
+    public static final AtomicInteger f = new AtomicInteger();
+    public int a;
+    public xrd b;
+    public Task c;
+
+    public final void a() {
+        if (this.c == null || this.b == null) {
+            return;
+        }
+        e.delete(this.a);
+        d.removeCallbacks(this);
+        xrd xrdVar = this.b;
+        if (xrdVar != null) {
+            Task task = this.c;
+            int i = xrd.d;
+            xrdVar.a(task);
+        }
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public final void onComplete(Task task) {
+        this.c = task;
+        a();
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        e.delete(this.a);
     }
 }

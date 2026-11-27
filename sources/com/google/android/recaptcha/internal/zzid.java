@@ -1,33 +1,33 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzid extends ccb implements eq4 {
+final class zzid extends yfb implements is4 {
     final /* synthetic */ zzif zza;
     final /* synthetic */ zzcy zzb;
     final /* synthetic */ zzye zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzid(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzid(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zza = zzifVar;
         this.zzb = zzcyVar;
         this.zzc = zzyeVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzid(this.zza, this.zzb, this.zzc, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        return new zzid(this.zza, this.zzb, this.zzc, zw2Var);
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzid) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzid) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
-        qse.b(obj);
+        ixe.b(obj);
         zzhl zzhlVar = null;
         try {
             try {

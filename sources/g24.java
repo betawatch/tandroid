@@ -1,158 +1,686 @@
 // default package
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.ui.Components.RadialProgressView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class g24 extends FrameLayout {
-    public final wjb a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public final ry8 d;
-    public boolean e;
-    public int f;
+public final class g24 extends c79 {
+    public final Context c;
+    public int d;
+    public final SparseArray e = new SparseArray();
+    public final HashMap f = new HashMap();
+    public final SparseArray h = new SparseArray();
+    public final SparseArray n = new SparseArray();
+    public final SparseIntArray r = new SparseIntArray();
+    public int s;
+    public final /* synthetic */ o24 w;
 
-    public g24(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, nme.c(-2.0f, -2));
-        this.c = radialProgressView;
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setPadding(gl.L(20.0f), 0, gl.L(20.0f), 0);
-        linearLayout.setGravity(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setOrientation(1);
-        ry8 ry8Var = new ry8(context);
-        this.d = ry8Var;
-        ry8Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        ry8Var.setImportantForAccessibility(2);
-        ry8Var.setVisibility(8);
-        linearLayout.addView(ry8Var, nme.t(kk7.f2, kk7.f2, 17, 0, 0, 0, 20));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        zkb.X(textView, bkb.b7, wjbVar);
-        de9.q(textView, 1, null, 2131747975);
-        linearLayout.addView(textView, nme.r(-2, -2, 17));
-        addView(linearLayout, nme.c(-2.0f, -2));
-        gl.T3(textView, false, 2.0f, true, false);
-        gl.T3(radialProgressView, false, 1.0f, true, false);
-        setOnTouchListener(new jz1((byte) 9));
+    public g24(o24 o24Var, Context context) {
+        this.w = o24Var;
+        this.c = context;
     }
 
-    public final void a(int i, int i2, int i3) {
-        int i4 = i != 0 ? 0 : 8;
-        ry8 ry8Var = this.d;
-        ry8Var.setVisibility(i4);
-        if (i != 0) {
-            ry8Var.f(i, i2, i3, null);
-            ry8Var.d();
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return f89Var.a instanceof d79;
+    }
+
+    public final int E(Object obj) {
+        Integer num = (Integer) this.f.get(obj);
+        if (num == null) {
+            return -1;
+        }
+        return num.intValue();
+    }
+
+    public final int F(int i) {
+        int indexOf;
+        int i2;
+        o24 o24Var = this.w;
+        ArrayList arrayList = o24Var.e1;
+        Object obj = this.h.get(i);
+        if ("search".equals(obj) || "trend1".equals(obj) || "trend2".equals(obj)) {
+            int i3 = o24Var.H1;
+            if (i3 >= 0) {
+                return i3;
+            }
+            int i4 = o24Var.G1;
+            if (i4 >= 0) {
+                return i4;
+            }
+            return 0;
+        }
+        if (i == 0) {
+            i = 1;
+        }
+        if (this.d == 0) {
+            int measuredWidth = o24Var.getMeasuredWidth();
+            if (measuredWidth == 0) {
+                measuredWidth = hl.q.x;
+            }
+            this.d = measuredWidth / hl.L(72.0f);
+        }
+        int i5 = this.r.get(i, TLObject.FLAG_31);
+        if (i5 == Integer.MIN_VALUE) {
+            indexOf = arrayList.size() - 1;
+            i2 = o24Var.F1;
+        } else {
+            Object obj2 = this.e.get(i5);
+            if (obj2 instanceof String) {
+                return "premium".equals(obj2) ? o24Var.J1 : "recent".equals(obj2) ? o24Var.G1 : o24Var.H1;
+            }
+            indexOf = arrayList.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+            i2 = o24Var.F1;
+        }
+        return indexOf + i2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:33:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x016b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void G() {
+        int i;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
+        ArrayList<TLRPC.Document> arrayList;
+        Object obj;
+        int i2;
+        o24 o24Var;
+        HashMap hashMap;
+        int i3;
+        o24 o24Var2 = this.w;
+        int i4 = o24Var2.d1;
+        if (o24Var2.T2) {
+            return;
+        }
+        int measuredWidth = o24Var2.getMeasuredWidth();
+        if (measuredWidth == 0) {
+            measuredWidth = hl.q.x;
+        }
+        int L = measuredWidth / hl.L(72.0f);
+        this.d = L;
+        o24Var2.F0.x1(L);
+        SparseArray sparseArray = this.e;
+        sparseArray.clear();
+        HashMap hashMap2 = this.f;
+        hashMap2.clear();
+        SparseIntArray sparseIntArray = this.r;
+        sparseIntArray.clear();
+        SparseArray sparseArray2 = this.h;
+        sparseArray2.clear();
+        int i5 = 0;
+        this.s = 0;
+        ArrayList arrayList2 = o24Var2.e1;
+        int i6 = -5;
+        int i7 = 0;
+        boolean z = false;
+        int i8 = -5;
+        while (i8 < arrayList2.size()) {
+            if (i8 == i6) {
+                int i9 = this.s;
+                this.s = i9 + 1;
+                sparseArray2.put(i9, "search");
+                i7++;
+                o24Var = o24Var2;
+                i2 = i4;
+                hashMap = hashMap2;
+                i = i8;
+            } else {
+                if (i8 == -4) {
+                    ls6 d0 = ls6.d0(i4);
+                    SharedPreferences sharedPreferences = uc7.s1(i4).Y3;
+                    ArrayList arrayList3 = d0.t0[i5];
+                    if (o24Var2.n1.isEmpty()) {
+                        i = i8;
+                    } else {
+                        int i10 = i8;
+                        if (sharedPreferences.getLong("featured_hidden", 0L) != ((TLRPC.StickerSetCovered) arrayList3.get(i5)).set.id) {
+                            int i11 = this.s;
+                            this.s = i11 + 1;
+                            sparseArray2.put(i11, "trend1");
+                            int i12 = this.s;
+                            this.s = i12 + 1;
+                            sparseArray2.put(i12, "trend2");
+                            i7 += 2;
+                            o24Var = o24Var2;
+                            i2 = i4;
+                            hashMap = hashMap2;
+                            i = i10;
+                        } else {
+                            i = i10;
+                        }
+                    }
+                    o24Var = o24Var2;
+                    i2 = i4;
+                } else {
+                    i = i8;
+                    if (i == -3) {
+                        arrayList = o24Var2.l1;
+                        hashMap2.put("fav", Integer.valueOf(this.s));
+                        obj = "fav";
+                    } else if (i == -2) {
+                        arrayList = o24Var2.k1;
+                        if (!arrayList.isEmpty() && !o24Var2.S2) {
+                            z = true;
+                        }
+                        hashMap2.put("recent", Integer.valueOf(this.s));
+                        obj = "recent";
+                    } else {
+                        if (i != -1) {
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) arrayList2.get(i);
+                            ArrayList<TLRPC.Document> arrayList4 = tL_messages_stickerSet2.documents;
+                            if (!z && !o24Var2.S2) {
+                                ArrayList<TLRPC.Document> arrayList5 = new ArrayList<>(arrayList4);
+                                arrayList5.add(0, new TLRPC.TL_documentEmpty());
+                                arrayList4 = arrayList5;
+                                z = true;
+                            }
+                            hashMap2.put(tL_messages_stickerSet2, Integer.valueOf(this.s));
+                            ArrayList<TLRPC.Document> arrayList6 = arrayList4;
+                            tL_messages_stickerSet = tL_messages_stickerSet2;
+                            arrayList = arrayList6;
+                            obj = null;
+                            i2 = i4;
+                            if (i == o24Var2.f1) {
+                                o24Var2.g1 = this.s;
+                                if (arrayList.isEmpty()) {
+                                    sparseArray.put(i7, tL_messages_stickerSet);
+                                    int i13 = i7 + 1;
+                                    sparseIntArray.put(this.s, i7);
+                                    sparseArray.put(i13, tL_messages_stickerSet);
+                                    i7 += 2;
+                                    sparseIntArray.put(this.s + 1, i13);
+                                    int i14 = this.s;
+                                    this.s = i14 + 1;
+                                    sparseArray2.put(i14, tL_messages_stickerSet);
+                                    int i15 = this.s;
+                                    this.s = i15 + 1;
+                                    sparseArray2.put(i15, "group");
+                                    o24Var = o24Var2;
+                                }
+                            }
+                            if (!arrayList.isEmpty()) {
+                                o24Var = o24Var2;
+                                int ceil = (int) Math.ceil(arrayList.size() / this.d);
+                                int i16 = this.s;
+                                if (tL_messages_stickerSet != null) {
+                                    sparseArray2.put(i16, tL_messages_stickerSet);
+                                } else {
+                                    sparseArray2.put(i16, arrayList);
+                                }
+                                sparseIntArray.put(this.s, i7);
+                                int i17 = 0;
+                                while (i17 < arrayList.size()) {
+                                    int i18 = i17 + 1;
+                                    int i19 = i18 + this.s;
+                                    HashMap hashMap3 = hashMap2;
+                                    sparseArray2.put(i19, arrayList.get(i17));
+                                    SparseArray sparseArray3 = this.n;
+                                    if (tL_messages_stickerSet != null) {
+                                        sparseArray3.put(i19, tL_messages_stickerSet);
+                                    } else {
+                                        sparseArray3.put(i19, obj);
+                                    }
+                                    sparseIntArray.put(i18 + this.s, (i17 / this.d) + i7 + 1);
+                                    i17 = i18;
+                                    hashMap2 = hashMap3;
+                                }
+                                hashMap = hashMap2;
+                                int i20 = 0;
+                                while (true) {
+                                    i3 = ceil + 1;
+                                    if (i20 >= i3) {
+                                        break;
+                                    }
+                                    if (tL_messages_stickerSet != null) {
+                                        sparseArray.put(i7 + i20, tL_messages_stickerSet);
+                                    } else if (i == -1) {
+                                        sparseArray.put(i7 + i20, "premium");
+                                    } else {
+                                        int i21 = i7 + i20;
+                                        if (i == -2) {
+                                            sparseArray.put(i21, "recent");
+                                        } else {
+                                            sparseArray.put(i21, "fav");
+                                        }
+                                    }
+                                    i20++;
+                                }
+                                this.s = (this.d * ceil) + 1 + this.s;
+                                i7 += i3;
+                            }
+                            o24Var = o24Var2;
+                        }
+                        o24Var = o24Var2;
+                        i2 = i4;
+                    }
+                    tL_messages_stickerSet = null;
+                    i2 = i4;
+                    if (i == o24Var2.f1) {
+                    }
+                    if (!arrayList.isEmpty()) {
+                    }
+                    o24Var = o24Var2;
+                }
+                hashMap = hashMap2;
+            }
+            i8 = i + 1;
+            i4 = i2;
+            o24Var2 = o24Var;
+            hashMap2 = hashMap;
+            i5 = 0;
+            i6 = -5;
         }
     }
 
-    public final void b() {
-        gl.T3(this.b, false, 0.9f, true, true);
-        gl.T3(this.c, true, 1.0f, true, true);
+    @Override // j79
+    public final int b() {
+        int i = this.s;
+        if (i != 0) {
+            return i + 1;
+        }
+        return 0;
     }
 
-    public final void c() {
-        gl.T3(this.b, true, 0.9f, true, true);
-        gl.T3(this.c, false, 1.0f, true, true);
+    @Override // j79
+    public final int d(int i) {
+        if (i == 0) {
+            return 4;
+        }
+        Object obj = this.h.get(i);
+        if (obj == null) {
+            return 1;
+        }
+        if (obj instanceof TLRPC.Document) {
+            return obj instanceof TLRPC.TL_documentEmpty ? 7 : 0;
+        }
+        if (!(obj instanceof String)) {
+            return 2;
+        }
+        if ("trend1".equals(obj)) {
+            return 5;
+        }
+        return "trend2".equals(obj) ? 6 : 3;
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+    @Override // j79
+    public final void f() {
+        G();
+        super.f();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int measuredHeight;
-        int paddingTop;
-        this.e = true;
-        int i5 = i3 - i;
-        int i6 = i4 - i2;
-        int childCount = getChildCount();
-        for (int i7 = 0; i7 < childCount; i7++) {
-            View childAt = getChildAt(i7);
-            if (childAt.getVisibility() != 8) {
-                int measuredWidth = (i5 - childAt.getMeasuredWidth()) / 2;
-                int i8 = this.f;
-                if (i8 == 2) {
-                    measuredHeight = (gl.L(100.0f) - childAt.getMeasuredHeight()) / 2;
-                    paddingTop = getPaddingTop();
-                } else if (i8 == 1) {
-                    measuredHeight = ((i6 / 2) - childAt.getMeasuredHeight()) / 2;
-                    paddingTop = getPaddingTop();
-                } else {
-                    measuredHeight = (i6 - childAt.getMeasuredHeight()) / 2;
-                    paddingTop = getPaddingTop();
-                }
-                int i9 = paddingTop + measuredHeight;
-                childAt.layout(measuredWidth, i9, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i9);
+    @Override // j79
+    public final void q(int i, int i2) {
+        G();
+        super.q(i, i2);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        o24 o24Var = this.w;
+        int i2 = o24Var.d1;
+        int i3 = f89Var.f;
+        View view = f89Var.a;
+        SparseArray sparseArray = this.h;
+        if (i3 == 0) {
+            TLRPC.Document document = (TLRPC.Document) sparseArray.get(i);
+            x2b x2bVar = (x2b) view;
+            x2bVar.d(document, null, this.n.get(i), null, false, false);
+            x2bVar.setRecent(o24Var.k1.contains(document));
+            return;
+        }
+        ArrayList<TLRPC.Document> arrayList = null;
+        if (i3 == 1) {
+            t24 t24Var = (t24) view;
+            if (i != this.s) {
+                t24Var.setHeight(hl.L(82.0f));
+                return;
+            }
+            int i4 = this.r.get(i - 1, TLObject.FLAG_31);
+            if (i4 == Integer.MIN_VALUE) {
+                t24Var.setHeight(1);
+                return;
+            }
+            Object obj = this.e.get(i4);
+            if (obj instanceof TLRPC.TL_messages_stickerSet) {
+                arrayList = ((TLRPC.TL_messages_stickerSet) obj).documents;
+            } else if (obj instanceof String) {
+                arrayList = "recent".equals(obj) ? o24Var.k1 : o24Var.l1;
+            }
+            if (arrayList == null) {
+                t24Var.setHeight(1);
+                return;
+            } else if (arrayList.isEmpty()) {
+                t24Var.setHeight(hl.L(8.0f));
+                return;
+            } else {
+                int height = o24Var.h.getHeight() - (hl.L(82.0f) * ((int) Math.ceil(arrayList.size() / this.d)));
+                t24Var.setHeight(height > 0 ? height : (byte) 1);
+                return;
             }
         }
-        this.e = false;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.e) {
+        final byte b = 0;
+        if (i3 != 2) {
+            if (i3 == 3) {
+                ((q3b) view).setIsLast(i == this.s - 1);
+                return;
+            } else {
+                if (i3 == 5) {
+                    ((t3b) view).b(ob6.M0(ls6.d0(i2).s0 ? 2131750797 : 2131750798, null), R.drawable.msg_close, ob6.M0(2131754894, null), 0, 0);
+                    return;
+                }
+                return;
+            }
+        }
+        t3b t3bVar = (t3b) view;
+        t3bVar.setHeaderOnClick(null);
+        if (i == o24Var.g1) {
+            int i5 = (o24Var.h1 && o24Var.i1 == null) ? 0 : o24Var.i1 != null ? R.drawable.msg_mini_customize : R.drawable.msg_close;
+            TLRPC.Chat M0 = o24Var.K1 != null ? uc7.s1(i2).M0(Long.valueOf(o24Var.K1.id)) : null;
+            t3bVar.a(i5, ob6.a0("CurrentGroupStickers", null, 2131751659, M0 != null ? M0.title : "Group Stickers"));
             return;
         }
-        super.requestLayout();
-    }
+        Object obj2 = sparseArray.get(i);
+        if (obj2 instanceof TLRPC.TL_messages_stickerSet) {
+            final TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
+            TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+            if (stickerSet != null) {
+                t3bVar.a(0, stickerSet.title);
+                if (tL_messages_stickerSet.set.creator && !o24Var.S2) {
+                    t3bVar.setEdit(new View.OnClickListener(this) { // from class: e24
+                        public final /* synthetic */ g24 b;
 
-    public void setProgressBarColor(int i) {
-        RadialProgressView radialProgressView = this.c;
-        if (ug8.A(radialProgressView)) {
-            radialProgressView.setProgressColor(i);
-        }
-    }
+                        {
+                            this.b = this;
+                        }
 
-    public void setShowAtCenter(boolean z) {
-        this.f = z ? 1 : 0;
-    }
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view2) {
+                            byte b2 = b;
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = tL_messages_stickerSet;
+                            g24 g24Var = this.b;
+                            switch (b2) {
+                                case 0:
+                                    g24Var.w.u1.d(tL_messages_stickerSet2.set, null, true);
+                                    break;
+                                default:
+                                    g24Var.w.u1.d(tL_messages_stickerSet2.set, null, false);
+                                    break;
+                            }
+                        }
+                    });
+                }
+                t3bVar.setHeaderOnClick(new View.OnClickListener(this) { // from class: e24
+                    public final /* synthetic */ g24 b;
 
-    public void setShowAtTop(boolean z) {
-        this.f = z ? 2 : 0;
-    }
+                    {
+                        this.b = this;
+                    }
 
-    public void setText(String str) {
-        this.b.setText(str);
-    }
-
-    public void setTextColor(int i) {
-        TextView textView = this.b;
-        zkb.q(textView);
-        textView.setTextColor(i);
-    }
-
-    public void setTextSize(int i) {
-        this.b.setTextSize(1, i);
-    }
-
-    public void setTopImage(int i) {
-        TextView textView = this.b;
-        if (i == 0) {
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view2) {
+                        byte b2 = r3;
+                        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = tL_messages_stickerSet;
+                        g24 g24Var = this.b;
+                        switch (b2) {
+                            case 0:
+                                g24Var.w.u1.d(tL_messages_stickerSet2.set, null, true);
+                                break;
+                            default:
+                                g24Var.w.u1.d(tL_messages_stickerSet2.set, null, false);
+                                break;
+                        }
+                    }
+                });
+                return;
+            }
             return;
         }
-        Drawable mutate = getContext().getResources().getDrawable(i).mutate();
-        if (mutate != null) {
-            zkb.x(this, mutate, bkb.b7, this.a, PorterDuff.Mode.MULTIPLY);
+        if (obj2 == o24Var.k1) {
+            t3bVar.b(ob6.M0(2131746091, null), R.drawable.msg_close, ob6.M0(2131752028, null), 0, 0);
+        } else if (obj2 == o24Var.l1) {
+            t3bVar.a(0, ob6.M0(2131750806, null));
+        } else if (obj2 == o24Var.m1) {
+            t3bVar.a(0, ob6.M0(2131746676, null));
         }
-        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-        textView.setCompoundDrawablePadding(gl.L(1.0f));
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        o24 o24Var = this.w;
+        vnb vnbVar = o24Var.a2;
+        final byte b = 0;
+        final byte b2 = 1;
+        boolean z = true;
+        Context context = this.c;
+        View view = null;
+        switch (i) {
+            case 0:
+                view = new f24(context, z ? 1 : 0, vnbVar, b);
+                break;
+            case 1:
+                view = new t24(context);
+                break;
+            case 2:
+                t3b t3bVar = new t3b(this.c, false, false, o24Var.a2, o24Var.j2);
+                t3bVar.setOnIconClickListener(new je3(this, t3bVar, (byte) 10));
+                view = t3bVar;
+                break;
+            case 3:
+                q3b q3bVar = new q3b(context);
+                q3bVar.setOrientation(1);
+                TextView textView = new TextView(context);
+                yob.X(textView, aob.Of, null);
+                bs2.r(14.0f, 1, 2131749150, textView, null);
+                q3bVar.addView(textView, tre.t(-1, -2, 51, 17, 4, 17, 0));
+                TextView textView2 = new TextView(context);
+                q3bVar.a = textView2;
+                textView2.setPadding(hl.L(17.0f), 0, hl.L(17.0f), 0);
+                textView2.setGravity(17);
+                qd4.w(textView2, aob.Ji, null, 1, 14.0f);
+                textView2.setBackground(rnb.f(aob.Fi, 4.0f));
+                textView2.setText(ob6.M0(2131752081, null).toUpperCase());
+                q3bVar.addView(textView2, tre.t(-2, 28, 51, 17, 10, 14, 8));
+                q3bVar.setAddOnClickListener(new View.OnClickListener(this) { // from class: d24
+                    public final /* synthetic */ g24 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view2) {
+                        byte b3 = b;
+                        g24 g24Var = this.b;
+                        switch (b3) {
+                            case 0:
+                                o24 o24Var2 = g24Var.w;
+                                p14 p14Var = o24Var2.u1;
+                                if (p14Var != null) {
+                                    p14Var.y(o24Var2.K1.id);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                o24 o24Var3 = g24Var.w;
+                                int i2 = o24Var3.d1;
+                                ArrayList arrayList = ls6.d0(i2).t0[0];
+                                if (!arrayList.isEmpty()) {
+                                    uc7.s1(i2).Y3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    g24 g24Var2 = o24Var3.z0;
+                                    if (g24Var2 != null) {
+                                        g24Var2.q(1, 2);
+                                    }
+                                    o24Var3.X(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                e eVar = g24Var.w.Z1;
+                                if (eVar instanceof zu1) {
+                                    ((zu1) eVar).oa();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                q3bVar.setLayoutParams(new r79(-1, -2));
+                view = q3bVar;
+                break;
+            case 4:
+                View view2 = new View(context);
+                view2.setLayoutParams(new r79(-1, o24Var.c1));
+                view = view2;
+                break;
+            case 5:
+                t3b t3bVar2 = new t3b(this.c, false, false, o24Var.a2, o24Var.j2);
+                t3bVar2.setOnIconClickListener(new View.OnClickListener(this) { // from class: d24
+                    public final /* synthetic */ g24 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view22) {
+                        byte b3 = b2;
+                        g24 g24Var = this.b;
+                        switch (b3) {
+                            case 0:
+                                o24 o24Var2 = g24Var.w;
+                                p14 p14Var = o24Var2.u1;
+                                if (p14Var != null) {
+                                    p14Var.y(o24Var2.K1.id);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                o24 o24Var3 = g24Var.w;
+                                int i2 = o24Var3.d1;
+                                ArrayList arrayList = ls6.d0(i2).t0[0];
+                                if (!arrayList.isEmpty()) {
+                                    uc7.s1(i2).Y3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    g24 g24Var2 = o24Var3.z0;
+                                    if (g24Var2 != null) {
+                                        g24Var2.q(1, 2);
+                                    }
+                                    o24Var3.X(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                e eVar = g24Var.w.Z1;
+                                if (eVar instanceof zu1) {
+                                    ((zu1) eVar).oa();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                view = t3bVar2;
+                break;
+            case 6:
+                m24 m24Var = new m24(o24Var, false);
+                o24Var.G0 = m24Var;
+                gu guVar = new gu(o24Var, context, m24Var);
+                guVar.setPadding(hl.L(8.0f), hl.L(4.0f), hl.L(8.0f), 0);
+                guVar.setClipToPadding(false);
+                guVar.i(new br1((byte) 3));
+                guVar.setOnItemClickListener(new u(this, (byte) 25));
+                guVar.setLayoutParams(new r79(-1, hl.L(52.0f)));
+                view = guVar;
+                break;
+            case 7:
+                FrameLayout frameLayout = new FrameLayout(context);
+                LinearLayout linearLayout = new LinearLayout(context);
+                linearLayout.setOrientation(1);
+                linearLayout.setGravity(17);
+                int L = hl.L(13.0f);
+                int i2 = aob.Ef;
+                ShapeDrawable b0 = aob.b0(L, aob.p1(0.12f, o24Var.y(i2)));
+                uob K = yob.K(0.12f, i2);
+                linearLayout.setBackground(b0);
+                yob.j(linearLayout, b0, K, null, vnbVar);
+                iye.b(linearLayout, 0.1f, 1.5f);
+                final byte b3 = 2;
+                linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: d24
+                    public final /* synthetic */ g24 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view22) {
+                        byte b32 = b3;
+                        g24 g24Var = this.b;
+                        switch (b32) {
+                            case 0:
+                                o24 o24Var2 = g24Var.w;
+                                p14 p14Var = o24Var2.u1;
+                                if (p14Var != null) {
+                                    p14Var.y(o24Var2.K1.id);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                o24 o24Var3 = g24Var.w;
+                                int i22 = o24Var3.d1;
+                                ArrayList arrayList = ls6.d0(i22).t0[0];
+                                if (!arrayList.isEmpty()) {
+                                    uc7.s1(i22).Y3.edit().putLong("featured_hidden", ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id).commit();
+                                    g24 g24Var2 = o24Var3.z0;
+                                    if (g24Var2 != null) {
+                                        g24Var2.q(1, 2);
+                                    }
+                                    o24Var3.X(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                e eVar = g24Var.w.Z1;
+                                if (eVar instanceof zu1) {
+                                    ((zu1) eVar).oa();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                ImageView imageView = new ImageView(context);
+                imageView.setImageResource(R.drawable.menu_sticker_add);
+                yob.s(imageView, i2, vnbVar, PorterDuff.Mode.SRC_IN);
+                linearLayout.addView(imageView, tre.t(24, 24, 17, 0, 0, 0, 0));
+                TextView textView3 = new TextView(context);
+                textView3.setGravity(17);
+                qd4.w(textView3, i2, vnbVar, 1, 11.0f);
+                textView3.setText(ob6.M0(2131751718, null));
+                linearLayout.addView(textView3, tre.t(-1, -2, 17, 0, 3, 0, 0));
+                frameLayout.addView(linearLayout, tre.d(-1, -1.0f, jn7.D1, 8.0f, 8.0f, 8.0f, 8.0f));
+                view = frameLayout;
+                break;
+        }
+        return new n69(view);
     }
 }

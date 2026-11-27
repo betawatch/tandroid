@@ -1,45 +1,216 @@
 // default package
 
-import java.util.concurrent.CountDownLatch;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hg1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ kg1 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class hg1 extends ClickableSpan {
+    public final /* synthetic */ byte a = 1;
+    public final int b;
+    public final Object c;
+    public final Object d;
 
-    public /* synthetic */ hg1(kg1 kg1Var, byte b) {
-        this.a = b;
-        this.b = kg1Var;
+    public hg1(ng1 ng1Var, int i, it0 it0Var) {
+        this.d = ng1Var;
+        this.b = i;
+        this.c = it0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
         byte b = this.a;
-        kg1 kg1Var = this.b;
+        Object obj = this.d;
         switch (b) {
             case 0:
-                CountDownLatch countDownLatch = new CountDownLatch(2);
-                kg1Var.a(countDownLatch, null);
-                kg1Var.b(countDownLatch, null);
-                try {
-                    countDownLatch.await();
-                } catch (InterruptedException unused) {
-                }
-                gl.c3(new hg1(kg1Var, (byte) 3));
-                break;
-            case 1:
-                kg1Var.H = false;
-                kg1Var.d(true);
-                break;
-            case 2:
-                kg1Var.H = false;
-                kg1Var.d(true);
+                final it0 it0Var = (it0) this.c;
+                fu5 I = fu5.I((ng1) obj, view);
+                final byte b2 = 0;
+                char c = 1;
+                int i = this.b;
+                I.h(new Runnable() { // from class: gg1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        it0 it0Var2 = it0Var;
+                        switch (b3) {
+                            case 0:
+                                if (it0Var2.g != 3) {
+                                    it0Var2.g = 3;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (it0Var2.g != 2) {
+                                    it0Var2.g = 2;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (it0Var2.g != 1) {
+                                    it0Var2.g = 1;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, ob6.M0(2131752453, null), i == 3);
+                final byte b3 = 2;
+                boolean z = i == 2;
+                String M0 = ob6.M0(2131752451, null);
+                final char c2 = c == true ? 1 : 0;
+                I.h(new Runnable() { // from class: gg1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = c2;
+                        it0 it0Var2 = it0Var;
+                        switch (b32) {
+                            case 0:
+                                if (it0Var2.g != 3) {
+                                    it0Var2.g = 3;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (it0Var2.g != 2) {
+                                    it0Var2.g = 2;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (it0Var2.g != 1) {
+                                    it0Var2.g = 1;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, M0, z);
+                I.h(new Runnable() { // from class: gg1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        it0 it0Var2 = it0Var;
+                        switch (b32) {
+                            case 0:
+                                if (it0Var2.g != 3) {
+                                    it0Var2.g = 3;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (it0Var2.g != 2) {
+                                    it0Var2.g = 2;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (it0Var2.g != 1) {
+                                    it0Var2.g = 1;
+                                    it0Var2.c = 0;
+                                    it0Var2.d = false;
+                                    it0Var2.i = false;
+                                    it0Var2.f = 0L;
+                                    it0Var2.j = null;
+                                    it0Var2.h = false;
+                                    it0Var2.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, ob6.M0(2131752452, null), i == 1);
+                I.W(5);
+                I.t = false;
+                I.s = (short) 0;
+                I.b0(hl.L(24.0f), -hl.L(24.0f));
+                I.a0();
                 break;
             default:
-                kg1Var.H = false;
-                kg1Var.d(true);
+                Runnable runnable = (Runnable) obj;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(textPaint.linkColor);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(aob.v0(this.b, (vnb) this.c));
+                break;
+        }
+    }
+
+    public hg1(int i, vnb vnbVar, Runnable runnable) {
+        this.b = i;
+        this.c = vnbVar;
+        this.d = runnable;
     }
 }

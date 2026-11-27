@@ -1,15 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class cn0 {
     public final /* synthetic */ ao0 a;
-    public final /* synthetic */ wjb b;
+    public final /* synthetic */ vnb b;
     public final /* synthetic */ dn0 c;
 
-    public cn0(dn0 dn0Var, ao0 ao0Var, wjb wjbVar) {
+    public cn0(dn0 dn0Var, ao0 ao0Var, vnb vnbVar) {
         this.c = dn0Var;
         this.a = ao0Var;
-        this.b = wjbVar;
+        this.b = vnbVar;
     }
 }

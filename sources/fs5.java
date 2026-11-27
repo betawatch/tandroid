@@ -1,187 +1,226 @@
 // default package
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.WeakHashMap;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class fs5 {
-    public static final oe3 c = new oe3(1);
-    public static final oe3 d = new oe3(2);
-    public final /* synthetic */ byte a;
-    public int b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fs5 extends FrameLayout {
+    public final /* synthetic */ byte a = 0;
+    public float b;
+    public final Path c;
+    public final Object d;
+    public Object e;
+    public final /* synthetic */ Object f;
 
-    public fs5() {
-        this.a = (byte) 0;
-        this.b = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fs5(hs5 hs5Var, Context context) {
+        super(context);
+        this.f = hs5Var;
+        this.c = new Path();
+        this.e = new RectF();
+        this.b = -1.0f;
+        jl0 c = hs5Var.getBaseSimpleGlass().c.c(this, null, false);
+        c.p(dtd.l(hs5Var.getResourceProvider()));
+        c.q(hl.L(6.0f));
+        this.d = c;
+        setWillNotDraw(false);
+        addView(hs5Var.e, tre.c(-1.0f, -1));
     }
 
-    public static int c(int i, int i2) {
-        int i3 = i & 789516;
-        if (i3 == 0) {
-            return i;
-        }
-        int i4 = i & (~i3);
-        if (i2 != 0) {
-            int i5 = i3 << 1;
-            i4 |= (-789517) & i5;
-            i3 = i5 & 789516;
-        }
-        return i4 | (i3 << 2);
-    }
-
-    public static String e(int i) {
-        return "" + ((char) ((i >> 24) & kk7.d4)) + ((char) ((i >> 16) & kk7.d4)) + ((char) ((i >> 8) & kk7.d4)) + ((char) (i & kk7.d4));
-    }
-
-    public static int m(int i, int i2) {
-        return i2 | i | (i2 << 8) | (i << 16);
-    }
-
-    public static void t(StringBuilder sb) {
-        sb.delete(0, sb.length());
-    }
-
-    public void a(RecyclerView recyclerView, s49 s49Var) {
-        View view = s49Var.a;
-        Object tag = view.getTag();
-        if (tag instanceof Float) {
-            float floatValue = ((Float) tag).floatValue();
-            WeakHashMap weakHashMap = jdc.a;
-            bdc.h(view, floatValue);
-        }
-        view.setTag(null);
-        view.setTranslationX(0.0f);
-        view.setTranslationY(0.0f);
-    }
-
-    public int b(int i, int i2) {
-        int i3 = i & 3158064;
-        if (i3 == 0) {
-            return i;
-        }
-        int i4 = i & (~i3);
-        if (i2 != 0) {
-            int i5 = i3 >> 1;
-            i4 |= (-3158065) & i5;
-            i3 = i5 & 3158064;
-        }
-        return i4 | (i3 >> 2);
-    }
-
-    public long d(RecyclerView recyclerView, int i, float f, float f2) {
-        b49 itemAnimator = recyclerView.getItemAnimator();
-        return itemAnimator == null ? i == 8 ? 200L : 250L : i == 8 ? itemAnimator.j() : itemAnimator.d;
-    }
-
-    public int f(RecyclerView recyclerView, s49 s49Var) {
-        return s49Var.f != 3 ? m(0, 0) : m(3, 0);
-    }
-
-    public float h() {
-        return 0.5f;
-    }
-
-    public final int j(int i, int i2, long j) {
-        int i3 = this.b;
-        if (i3 == -1) {
-            i3 = gl.L(20.0f);
-            this.b = i3;
-        }
-        int interpolation = (int) (c.getInterpolation(j <= 500 ? j / 500.0f : 1.0f) * ((int) (d.getInterpolation(Math.min(1.0f, (Math.abs(i2) * 1.0f) / i)) * ((int) Math.signum(i2)) * i3)));
-        return interpolation == 0 ? i2 > 0 ? 1 : -1 : interpolation;
-    }
-
-    public boolean k() {
-        return true;
-    }
-
-    public boolean l() {
-        return !(this instanceof xt3);
-    }
-
-    public void n(Canvas canvas, RecyclerView recyclerView, s49 s49Var, float f, float f2, int i, boolean z) {
-        View view = s49Var.a;
-        if (z && view.getTag() == null) {
-            WeakHashMap weakHashMap = jdc.a;
-            Float valueOf = Float.valueOf(bdc.e(view));
-            int childCount = recyclerView.getChildCount();
-            float f3 = 0.0f;
-            for (int i2 = 0; i2 < childCount; i2++) {
-                View childAt = recyclerView.getChildAt(i2);
-                if (childAt != view) {
-                    WeakHashMap weakHashMap2 = jdc.a;
-                    float e = bdc.e(childAt);
-                    if (e > f3) {
-                        f3 = e;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f;
+        View[] viewArr;
+        Object obj;
+        b8c G;
+        byte b = this.a;
+        Object obj2 = this.d;
+        float f2 = 0.0f;
+        Object obj3 = this.f;
+        float f3 = 1.0f;
+        Path path = this.c;
+        switch (b) {
+            case 0:
+                RectF rectF = (RectF) this.e;
+                jl0 jl0Var = (jl0) obj2;
+                float f4 = ((hs5) obj3).a.f;
+                if (f4 >= 1.0f) {
+                    float min = Math.min(1.0f, f4 / hl.L(44.0f));
+                    float L = (1.0f - min) * hl.L(24.0f);
+                    rectF.set(L, 0.0f, getWidth() - L, f4);
+                    float min2 = Math.min(f4 / 2.0f, hl.L(22.0f));
+                    if (Math.abs(min2 - this.b) > 0.5f) {
+                        this.b = min2;
+                        jl0Var.r(min2);
                     }
+                    int L2 = hl.L(6.0f);
+                    jl0Var.setBounds(((int) rectF.left) - L2, ((int) rectF.top) - L2, ((int) rectF.right) + L2, ((int) rectF.bottom) + L2);
+                    jl0Var.setAlpha((int) (min * 255.0f));
+                    jl0Var.draw(canvas);
+                    canvas.save();
+                    path.rewind();
+                    path.addRoundRect(rectF, min2, min2, Path.Direction.CW);
+                    canvas.clipPath(path);
+                    super.dispatchDraw(canvas);
+                    canvas.restore();
+                    break;
                 }
-            }
-            bdc.h(view, f3 + 1.0f);
-            view.setTag(valueOf);
+                break;
+            default:
+                nb9 nb9Var = (nb9) obj3;
+                View[] viewPages = nb9Var.l1.getViewPages();
+                this.b = 0.0f;
+                int length = viewPages.length;
+                int i = 0;
+                while (i < length) {
+                    View view = viewPages[i];
+                    if (view == null) {
+                        viewArr = viewPages;
+                        obj = obj2;
+                        f = f3;
+                    } else {
+                        mb9 mb9Var = (mb9) view;
+                        FrameLayout frameLayout = mb9Var.e;
+                        q9c q9cVar = mb9Var.f;
+                        float i2 = Utilities.i(f3 - Math.abs(mb9Var.getTranslationX() / mb9Var.getMeasuredWidth()), f3, f2);
+                        float f5 = this.b;
+                        float paddingTop = frameLayout.getPaddingTop();
+                        f = f3;
+                        int i3 = 0;
+                        while (true) {
+                            int childCount = q9cVar.getChildCount();
+                            viewArr = viewPages;
+                            l9c l9cVar = q9cVar.g3;
+                            float f6 = i2;
+                            if (i3 < childCount) {
+                                View childAt = q9cVar.getChildAt(i3);
+                                q9cVar.f3.getClass();
+                                int G2 = q79.G(childAt);
+                                Object obj4 = obj2;
+                                if (G2 >= 0 && G2 < l9cVar.E.size() && (G = l9cVar.G(G2)) != null && G.a == 28) {
+                                    paddingTop = childAt.getY() + frameLayout.getPaddingTop();
+                                }
+                                i3++;
+                                viewPages = viewArr;
+                                i2 = f6;
+                                obj2 = obj4;
+                            } else {
+                                obj = obj2;
+                                this.b = (paddingTop * f6) + f5;
+                                if (mb9Var.getVisibility() == 0) {
+                                    jo0 jo0Var = mb9Var.h;
+                                    float f7 = -jo0Var.getHeight();
+                                    int i4 = 0;
+                                    while (true) {
+                                        if (i4 < q9cVar.getChildCount()) {
+                                            View childAt2 = q9cVar.getChildAt(i4);
+                                            q9cVar.f3.getClass();
+                                            if (l9cVar.G(q79.G(childAt2)).a == 28) {
+                                                f7 = childAt2.getY() + frameLayout.getPaddingTop();
+                                            } else {
+                                                i4++;
+                                            }
+                                        }
+                                    }
+                                    jo0Var.setTranslationY(Math.max(hl.m, f7));
+                                }
+                            }
+                        }
+                    }
+                    i++;
+                    f3 = f;
+                    viewPages = viewArr;
+                    obj2 = obj;
+                    f2 = 0.0f;
+                }
+                float e = ((mm) obj2).e(false, this.b <= ((float) hl.m) ? f3 : 0.0f);
+                float f8 = hl.m;
+                float f9 = f8 * e;
+                float max = Math.max(f8, this.b) - (hl.m * e);
+                this.b = max;
+                RectF rectF2 = hl.P;
+                rectF2.set(nb9Var.u0, max, getWidth() - nb9Var.u0, hl.L(8.0f) + getHeight());
+                float U1 = hl.U1(e, hl.L(14.0f), 0);
+                canvas.drawRoundRect(rectF2, U1, U1, nb9Var.m1);
+                canvas.save();
+                path.rewind();
+                path.addRoundRect(rectF2, U1, U1, Path.Direction.CW);
+                canvas.clipPath(path);
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                boolean z = f9 > ((float) hl.m) / 2.0f;
+                Boolean bool = (Boolean) this.e;
+                if (bool == null || bool.booleanValue() != z) {
+                    boolean z2 = hl.B(aob.v0(aob.h5, nb9Var.J0)) > 0.721f;
+                    boolean z3 = hl.B(aob.v(aob.v0(aob.s8, nb9Var.J0), 855638016)) > 0.721f;
+                    this.e = Boolean.valueOf(z);
+                    if (!z) {
+                        z2 = z3;
+                    }
+                    hl.n3(nb9Var.getWindow(), z2);
+                    break;
+                }
+                break;
         }
-        view.setTranslationX(f);
-        view.setTranslationY(f2);
     }
 
-    public abstract boolean o(RecyclerView recyclerView, s49 s49Var, s49 s49Var2);
-
-    public void p(RecyclerView recyclerView, s49 s49Var, s49 s49Var2, int i, int i2, int i3) {
-        View view = s49Var2.a;
-        d49 layoutManager = recyclerView.getLayoutManager();
-        if (layoutManager instanceof t26) {
-            ((t26) layoutManager).a1(s49Var.a, view, i2, i3);
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        byte b = this.a;
+        Object obj = this.f;
+        switch (b) {
+            case 0:
+                if (motionEvent.getAction() != 0 || motionEvent.getY() <= ((hs5) obj).a.f) {
+                    break;
+                }
+                break;
+            default:
+                if (motionEvent.getAction() == 0 && motionEvent.getY() < this.b) {
+                    ((nb9) obj).dismiss();
+                    break;
+                } else {
+                    break;
+                }
+                break;
         }
-        if (layoutManager.d()) {
-            if (d49.w(view) <= recyclerView.getPaddingLeft()) {
-                recyclerView.w0(i);
-            }
-            if (d49.x(view) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
-                recyclerView.w0(i);
-            }
-        }
-        if (layoutManager.e()) {
-            if (d49.y(view) <= recyclerView.getPaddingTop()) {
-                recyclerView.w0(i);
-            }
-            if (d49.v(view) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
-                recyclerView.w0(i);
-            }
-        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public String toString() {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
         switch (this.a) {
             case 1:
-                return e(this.b);
+                return super.drawChild(canvas, view, j);
             default:
-                return super.toString();
+                return super.drawChild(canvas, view, j);
         }
     }
 
-    public /* synthetic */ fs5(int i, byte b) {
-        this.a = b;
-        this.b = i;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(((hs5) this.f).x, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
+                break;
+        }
     }
 
-    public fs5 s() {
-        return this;
-    }
-
-    public float g(float f) {
-        return f;
-    }
-
-    public float i(float f) {
-        return f;
-    }
-
-    public void r(s49 s49Var) {
-    }
-
-    public void q(s49 s49Var, int i) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fs5(nb9 nb9Var, Context context) {
+        super(context);
+        this.f = nb9Var;
+        this.d = new mm(250L, this, k43.h);
+        this.c = new Path();
     }
 }

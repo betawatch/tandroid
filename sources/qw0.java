@@ -1,78 +1,49 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qw0 extends View {
-    public final Paint a;
-    public float b;
-    public int c;
-    public int d;
-    public final RectF e;
-    public final gec f;
-    public final int h;
-    public int n;
-    public int r;
+public final /* synthetic */ class qw0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sw0 b;
 
-    public qw0(Context context, gec gecVar, int i) {
-        super(context);
-        this.a = new Paint(1);
-        this.e = new RectF();
-        this.n = -1;
-        this.r = -1;
-        this.f = gecVar;
-        this.h = i;
+    public /* synthetic */ qw0(sw0 sw0Var, byte b) {
+        this.a = b;
+        this.b = sw0Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        RectF rectF;
-        gl.L(5.0f);
-        int i = this.n;
-        Paint paint = this.a;
-        if (i >= 0) {
-            paint.setColor((bkb.w0(null, i, false) & 16777215) | (-1275068416));
-        } else {
-            paint.setColor(bkb.B0().o() ? -11184811 : -4473925);
-        }
-        this.d = this.f.getCurrentItem();
-        int i2 = 0;
-        while (true) {
-            int i3 = this.h;
-            rectF = this.e;
-            if (i2 >= i3) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        sw0 sw0Var = this.b;
+        switch (b) {
+            case 0:
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                xw0 xw0Var = sw0Var.d;
+                toggleuseremojistatuspermission.bot = uc7.s1(xw0Var.I).o1(xw0Var.J);
+                toggleuseremojistatuspermission.enabled = false;
+                ConnectionsManager.getInstance(xw0Var.I).sendRequest(toggleuseremojistatuspermission, new rw0(sw0Var, (byte) 1));
                 break;
-            }
-            if (i2 != this.d) {
-                rectF.set(gl.L(11.0f) * i2, 0.0f, gl.L(5.0f) + r5, gl.L(5.0f));
-                canvas.drawRoundRect(rectF, gl.L(2.5f), gl.L(2.5f), paint);
-            }
-            i2++;
+            case 1:
+                xw0 xw0Var2 = sw0Var.d;
+                tq0.d(xw0Var2.getContext(), xw0Var2.I, xw0Var2.J).k(false, null);
+                break;
+            default:
+                xw0 xw0Var3 = sw0Var.d;
+                e S = LaunchActivity.S();
+                if (S != null && S.getParentLayout() != null) {
+                    wk5 parentLayout = S.getParentLayout();
+                    S.presentFragment(ProfileActivity.Q2(xw0Var3.J));
+                    hl.f3(parentLayout, "botPermissionLocation");
+                    xw0Var3.m(true);
+                    break;
+                }
+                break;
         }
-        int i4 = this.r;
-        if (i4 >= 0) {
-            paint.setColor(bkb.w0(null, i4, false));
-        } else {
-            paint.setColor(-14509328);
-        }
-        int L = gl.L(11.0f) * this.d;
-        if (this.b == 0.0f) {
-            rectF.set(L, 0.0f, gl.L(5.0f) + L, gl.L(5.0f));
-        } else if (this.c >= this.d) {
-            rectF.set(L, 0.0f, (gl.L(11.0f) * this.b) + gl.L(5.0f) + L, gl.L(5.0f));
-        } else {
-            rectF.set(ls6.B(1.0f, this.b, gl.L(11.0f), L), 0.0f, gl.L(5.0f) + L, gl.L(5.0f));
-        }
-        canvas.drawRoundRect(rectF, gl.L(2.5f), gl.L(2.5f), paint);
-    }
-
-    public void setCurrentPage(int i) {
-        this.d = i;
-        invalidate();
     }
 }

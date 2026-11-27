@@ -1,82 +1,42 @@
 // default package
 
-import java.lang.ref.Reference;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.Semaphore;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class d59 implements Iterator {
-    public int a;
-    public Object b;
-    public final /* synthetic */ e59 c;
-
-    public d59(e59 e59Var) {
-        this.c = e59Var;
-        this.a = e59Var.b.size();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class d59 implements r11 {
+    @Override // r11
+    public final boolean a() {
+        return true;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        Object obj;
-        int i;
-        synchronized (this.c.b) {
-            this.b = null;
-            while (true) {
-                obj = this.b;
-                if (obj != null || (i = this.a) <= 0) {
-                    break;
-                }
-                ArrayList arrayList = this.c.b;
-                int i2 = i - 1;
-                this.a = i2;
-                Reference reference = (Reference) arrayList.get(i2);
-                Object obj2 = reference.get();
-                if (obj2 != null && !this.c.c.contains(reference)) {
-                    this.b = obj2;
-                    obj = obj2;
-                    break;
-                }
-            }
-            if (obj == null) {
-                e59 e59Var = this.c;
-                if (e59Var.a) {
-                    ArrayList arrayList2 = e59Var.b;
-                    ArrayList arrayList3 = e59Var.d;
-                    ArrayList arrayList4 = e59Var.c;
-                    if (!e59Var.e) {
-                        throw new IllegalStateException();
-                    }
-                    e59Var.e = false;
-                    if (!arrayList4.isEmpty()) {
-                        arrayList2.removeAll(arrayList4);
-                        arrayList4.clear();
-                    }
-                    if (!arrayList3.isEmpty()) {
-                        arrayList2.addAll(arrayList3);
-                        arrayList3.clear();
-                    }
-                }
-            }
-        }
-        if (this.b != null) {
-            return true;
-        }
-        Semaphore semaphore = this.c.f;
-        if (semaphore != null) {
-            semaphore.release();
-        }
+    @Override // r11
+    public final boolean d() {
+        return true;
+    }
+
+    @Override // r11
+    public final int e(int i) {
+        return 0;
+    }
+
+    @Override // r11
+    public final boolean f(int i) {
         return false;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        Object obj = this.b;
-        if (obj != null) {
-            return obj;
-        }
-        w26.g();
-        return null;
+    @Override // r11
+    public final int h(int i) {
+        return hl.m;
+    }
+
+    @Override // r11
+    public final void b(float f) {
+    }
+
+    @Override // r11
+    public final void c(v21 v21Var) {
+    }
+
+    @Override // r11
+    public final void g(v21 v21Var) {
     }
 }

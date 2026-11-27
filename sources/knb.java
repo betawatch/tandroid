@@ -1,55 +1,40 @@
 // default package
 
-import android.os.Bundle;
-import j$.util.Objects;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class knb extends fz8 {
-    public static final String d;
-    public static final String e;
-    public final boolean b;
-    public final boolean c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class knb extends Drawable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    static {
-        String str = g8c.a;
-        d = "1";
-        e = "2";
+    public knb(int i, int i2) {
+        this.a = i;
+        this.b = i2;
     }
 
-    public knb() {
-        this.b = false;
-        this.c = false;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int max = Math.max(bounds.width(), bounds.height()) / 2;
+        int i = this.a;
+        int i2 = this.b;
+        canvas.drawCircle((bounds.centerX() - i) + i2, bounds.centerY(), max + i + i2, aob.z);
     }
 
-    @Override // fz8
-    public final boolean b() {
-        return this.b;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
     }
 
-    @Override // fz8
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(fz8.a, 3);
-        bundle.putBoolean(d, this.b);
-        bundle.putBoolean(e, this.c);
-        return bundle;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof knb)) {
-            return false;
-        }
-        knb knbVar = (knb) obj;
-        return this.c == knbVar.c && this.b == knbVar.b;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.b), Boolean.valueOf(this.c));
-    }
-
-    public knb(boolean z) {
-        this.b = true;
-        this.c = z;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

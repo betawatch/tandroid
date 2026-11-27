@@ -1,65 +1,85 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Outline;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.os.Build;
-import android.os.Looper;
-import android.view.ViewOutlineProvider;
+import android.os.Parcel;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class zdc {
-    public static final xi a = new xi(21);
-    public static final xi b = new xi(22);
-    public static Path c;
-    public static Outline d;
-    public static Rect e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class zdc extends ydc {
+    public final SparseIntArray d;
+    public final Parcel e;
+    public final int f;
+    public final int g;
+    public final String h;
+    public int i;
+    public int j;
+    public int k;
 
-    public static void a(Canvas canvas, o08 o08Var, zf7 zf7Var) {
-        Path path;
-        Outline outline;
-        Rect rect;
-        ViewOutlineProvider outlineProvider = o08Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !o08Var.getClipToOutline() || outlineProvider == null) {
-            zf7Var.a(canvas);
-            return;
+    public zdc(Parcel parcel) {
+        this(parcel, parcel.dataPosition(), parcel.dataSize(), "", new qs(0), new qs(0), new qs(0));
+    }
+
+    @Override // ydc
+    public final zdc a() {
+        Parcel parcel = this.e;
+        int dataPosition = parcel.dataPosition();
+        int i = this.j;
+        if (i == this.f) {
+            i = this.g;
         }
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            if (c == null) {
-                c = new Path();
-                d = new Outline();
-                e = new Rect();
+        return new zdc(parcel, dataPosition, i, c00.k(new StringBuilder(), this.h, "  "), this.a, this.b, this.c);
+    }
+
+    @Override // ydc
+    public final boolean e(int i) {
+        while (true) {
+            int i2 = this.j;
+            int i3 = this.k;
+            if (i2 >= this.g) {
+                return i3 == i;
             }
-            path = c;
-            outline = d;
-            rect = e;
-            outline.setEmpty();
-            rect.setEmpty();
-        } else {
-            path = new Path();
-            outline = new Outline();
-            rect = new Rect();
+            if (i3 == i) {
+                return true;
+            }
+            if (String.valueOf(i3).compareTo(String.valueOf(i)) > 0) {
+                return false;
+            }
+            int i4 = this.j;
+            Parcel parcel = this.e;
+            parcel.setDataPosition(i4);
+            int readInt = parcel.readInt();
+            this.k = parcel.readInt();
+            this.j += readInt;
         }
-        Path path2 = path;
-        outlineProvider.getOutline(o08Var, outline);
-        path2.rewind();
-        if (outline.isEmpty() || !outline.getRect(rect)) {
-            zf7Var.a(canvas);
-            return;
+    }
+
+    @Override // ydc
+    public final void i(int i) {
+        int i2 = this.i;
+        SparseIntArray sparseIntArray = this.d;
+        Parcel parcel = this.e;
+        if (i2 >= 0) {
+            int i3 = sparseIntArray.get(i2);
+            int dataPosition = parcel.dataPosition();
+            parcel.setDataPosition(i3);
+            parcel.writeInt(dataPosition - i3);
+            parcel.setDataPosition(dataPosition);
         }
-        float radius = outline.getRadius();
-        float f = rect.left;
-        float f2 = rect.top;
-        if (radius > 0.0f) {
-            path2.addRoundRect(f, f2, rect.right, rect.bottom, radius, radius, Path.Direction.CW);
-        } else {
-            path2.addRect(f, f2, rect.right, rect.bottom, Path.Direction.CW);
-        }
-        int save = canvas.save();
-        canvas.clipPath(path2);
-        zf7Var.a(canvas);
-        canvas.restoreToCount(save);
+        this.i = i;
+        sparseIntArray.put(i, parcel.dataPosition());
+        parcel.writeInt(0);
+        parcel.writeInt(i);
+    }
+
+    public zdc(Parcel parcel, int i, int i2, String str, qs qsVar, qs qsVar2, qs qsVar3) {
+        super(qsVar, qsVar2, qsVar3);
+        this.d = new SparseIntArray();
+        this.i = -1;
+        this.k = -1;
+        this.e = parcel;
+        this.f = i;
+        this.g = i2;
+        this.j = i;
+        this.h = str;
     }
 }

@@ -1,26 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class jya implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cv8 b;
+import android.view.View;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ jya(cv8 cv8Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class jya implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cza b;
+
+    public /* synthetic */ jya(cza czaVar, byte b) {
         this.a = b;
-        this.b = cv8Var;
+        this.b = czaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        e Q;
+        e Q2;
         byte b = this.a;
-        cv8 cv8Var = this.b;
+        cza czaVar = this.b;
         switch (b) {
             case 0:
-                cv8Var.b();
+                if (czaVar.e > 0 && (Q = LaunchActivity.Q()) != null) {
+                    bg0 bg0Var = new bg0();
+                    bg0Var.a = true;
+                    Q.showAsSheet(new nza(), bg0Var);
+                    break;
+                }
                 break;
             default:
-                cv8Var.b();
+                if (czaVar.e > 0 && (Q2 = LaunchActivity.Q()) != null) {
+                    bg0 bg0Var2 = new bg0();
+                    bg0Var2.a = true;
+                    Q2.showAsSheet(new nza(), bg0Var2);
+                    break;
+                }
                 break;
         }
     }

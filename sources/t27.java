@@ -1,0 +1,16 @@
+// default package
+
+import android.transition.Transition;
+import android.widget.PopupWindow;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class t27 {
+    public static void a(PopupWindow popupWindow, Transition transition) {
+        popupWindow.setEnterTransition(transition);
+    }
+
+    public static void b(PopupWindow popupWindow, Transition transition) {
+        popupWindow.setExitTransition(transition);
+    }
+}

@@ -1,265 +1,551 @@
 // default package
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.Property;
+import android.view.ActionMode;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zh8 extends FrameLayout {
-    public boolean a;
-    public boolean b;
-    public final Paint c;
-    public final /* synthetic */ PremiumPreviewFragment d;
+public class zh8 extends FrameLayout implements xeb, s84 {
+    public final iz1 E;
+    public Integer F;
+    public final fm0 a;
+    public final fm0 b;
+    public final vnb c;
+    public final qy d;
+    public yg8 e;
+    public final ImageView f;
+    public final ImageView h;
+    public ema n;
+    public final og2 r;
+    public boolean s;
+    public boolean w;
+    public AnimatorSet x;
+    public boolean y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh8(PremiumPreviewFragment premiumPreviewFragment, Context context) {
+    public zh8(Context context, int i, View.OnClickListener onClickListener, vnb vnbVar) {
         super(context);
-        this.d = premiumPreviewFragment;
-        this.c = new Paint(1);
+        float f;
+        int i2;
+        k43 k43Var = k43.h;
+        this.a = new fm0(0, this, k43Var, 380L, false);
+        this.b = new fm0(1, this, k43Var, 380L, false);
+        this.c = vnbVar;
+        qy qyVar = new qy(this, context, vnbVar, (byte) 2);
+        this.d = qyVar;
+        final byte b = 1;
+        qyVar.setAllowTextEntitiesIntersection(true);
+        yob.X(qyVar, aob.G6, vnbVar);
+        yob.G(qyVar, aob.Xc, vnbVar);
+        yob.D(qyVar, aob.H6, vnbVar);
+        qyVar.setTextSize(1, 16.0f);
+        qyVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        qyVar.setBackground(null);
+        qyVar.setImeOptions(qyVar.getImeOptions() | TLObject.FLAG_28);
+        qyVar.setInputType(qyVar.getInputType() | TLObject.FLAG_14);
+        qyVar.setPadding(hl.L(4.0f), hl.L(10.0f), hl.L(4.0f), hl.L(11.0f));
+        final byte b2 = 0;
+        if (onClickListener != null) {
+            int i3 = i == 1 ? 92 : 58;
+            boolean z = ob6.a0;
+            addView(qyVar, tre.d(-1, -2.0f, (z ? 5 : 3) | 16, z ? i3 : 54.0f, 0.0f, !z ? i3 : 54.0f, 0.0f));
+            ImageView imageView = new ImageView(context);
+            this.h = imageView;
+            imageView.setFocusable(false);
+            ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+            imageView.setScaleType(scaleType);
+            imageView.setImageResource(R.drawable.menu_poll_order_24);
+            int i4 = aob.m6;
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            yob.s(imageView, i4, vnbVar, mode);
+            addView(imageView, tre.d(48, 48.0f, (ob6.a0 ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
+            ImageView imageView2 = new ImageView(context);
+            this.f = imageView2;
+            imageView2.setFocusable(false);
+            imageView2.setScaleType(scaleType);
+            int i5 = aob.Mi;
+            hf0 f0 = aob.f0(aob.v0(i5, vnbVar), 1, -1);
+            uob M = yob.M(i5);
+            imageView2.setBackground(f0);
+            yob.j(imageView2, f0, null, M, vnbVar);
+            imageView2.setImageResource(R.drawable.poll_remove);
+            imageView2.setOnClickListener(onClickListener);
+            yob.s(imageView2, i4, vnbVar, mode);
+            imageView2.setContentDescription(ob6.M0(2131751563, null));
+            boolean z2 = ob6.a0;
+            addView(imageView2, tre.d(48, 50.0f, (z2 ? 3 : 5) | 48, z2 ? 3.0f : 0.0f, 0.0f, z2 ? 0.0f : 3.0f, 0.0f));
+            ema emaVar = new ema(context);
+            this.n = emaVar;
+            emaVar.setTextSize(13);
+            this.n.setGravity((ob6.a0 ? 3 : 5) | 48);
+            View view = this.n;
+            boolean z3 = ob6.a0;
+            addView(view, tre.d(48, 24.0f, (z3 ? 3 : 5) | 48, z3 ? 20.0f : 0.0f, 43.0f, z3 ? 0.0f : 20.0f, 0.0f));
+            og2 og2Var = new og2(21, vnbVar, context);
+            this.r = og2Var;
+            og2Var.b(-1, i4, aob.k7);
+            og2Var.setContentDescription(ob6.M0(2131754791, null));
+            og2Var.setDrawUnchecked(true);
+            og2Var.a(true, false);
+            og2Var.setAlpha(0.0f);
+            og2Var.setDrawBackgroundAsArc(8);
+            addView(og2Var, tre.d(48, 48.0f, (ob6.a0 ? 5 : 3) | 48, 6.0f, 2.0f, 6.0f, 0.0f));
+            og2Var.setOnClickListener(new View.OnClickListener(this) { // from class: yh8
+                public final /* synthetic */ zh8 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    byte b3 = b2;
+                    zh8 zh8Var = this.b;
+                    switch (b3) {
+                        case 0:
+                            if (zh8Var.r.getTag() != null) {
+                                zh8Var.i(zh8Var, !r2.a.q);
+                                break;
+                            }
+                            break;
+                        default:
+                            zh8Var.k(zh8Var);
+                            break;
+                    }
+                }
+            });
+        } else {
+            int i6 = i == 1 ? 70 : 19;
+            boolean z4 = ob6.a0;
+            addView(qyVar, tre.d(-1, -2.0f, (z4 ? 5 : 3) | 16, z4 ? i6 : 19.0f, 0.0f, z4 ? 19.0f : i6, 0.0f));
+        }
+        if (i == 1) {
+            iz1 iz1Var = new iz1(context);
+            this.E = iz1Var;
+            yob.s(iz1Var, aob.m6, vnbVar, PorterDuff.Mode.SRC_IN);
+            iz1Var.j(gz1.e, false);
+            int L = hl.L(9.5f);
+            iz1Var.setPadding(L, L, L, L);
+            iz1Var.setVisibility(8);
+            int i7 = this.f == null ? 3 : 38;
+            boolean z5 = ob6.a0;
+            if (z5) {
+                f = i7;
+                i2 = 3;
+            } else {
+                f = 0.0f;
+                i2 = 5;
+            }
+            addView(iz1Var, tre.d(48, 48.0f, i2, f, 0.0f, z5 ? 0.0f : i7, 0.0f));
+            int i8 = aob.Mi;
+            hf0 f02 = aob.f0(aob.v0(i8, vnbVar), 1, -1);
+            uob M2 = yob.M(i8);
+            iz1Var.setBackground(f02);
+            yob.j(iz1Var, f02, null, M2, vnbVar);
+            iz1Var.setOnClickListener(new View.OnClickListener(this) { // from class: yh8
+                public final /* synthetic */ zh8 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    byte b3 = b;
+                    zh8 zh8Var = this.b;
+                    switch (b3) {
+                        case 0:
+                            if (zh8Var.r.getTag() != null) {
+                                zh8Var.i(zh8Var, !r2.a.q);
+                                break;
+                            }
+                            break;
+                        default:
+                            zh8Var.k(zh8Var);
+                            break;
+                    }
+                }
+            });
+            iz1Var.setContentDescription(ob6.M0(2131751161, null));
+        }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v12 */
-    /* JADX WARN: Type inference failed for: r11v13, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r11v15 */
-    /* JADX WARN: Type inference failed for: r11v16 */
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a aVar;
-        a aVar2;
-        a aVar3;
-        a aVar4;
-        ?? r11;
-        Canvas canvas2;
-        ui5 ui5Var;
-        ui5 ui5Var2;
-        a aVar5;
-        a aVar6;
-        a aVar7;
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        boolean z = premiumPreviewFragment.i0;
-        mh8 mh8Var = premiumPreviewFragment.n0;
-        if (Build.VERSION.SDK_INT >= 31 && premiumPreviewFragment.x0 != null) {
-            premiumPreviewFragment.m0();
+    @Override // xeb
+    public final boolean a() {
+        return false;
+    }
+
+    public final yg8 b() {
+        ImageView imageView = this.f;
+        if (imageView != null) {
+            imageView.setVisibility(8);
         }
-        if (!premiumPreviewFragment.a0) {
-            boolean z2 = premiumPreviewFragment.b0;
-            float f = premiumPreviewFragment.c0;
-            if (z2) {
-                float f2 = f + 0.016f;
-                premiumPreviewFragment.c0 = f2;
-                if (f2 > 3.0f) {
-                    premiumPreviewFragment.b0 = false;
-                }
-            } else {
-                float f3 = f - 0.016f;
-                premiumPreviewFragment.c0 = f3;
-                if (f3 < 1.0f) {
-                    premiumPreviewFragment.b0 = true;
-                }
+        yg8 yg8Var = new yg8(getContext(), 38);
+        this.e = yg8Var;
+        yg8Var.setFocusable(false);
+        yg8 yg8Var2 = this.e;
+        int i = aob.Mi;
+        vnb vnbVar = this.c;
+        yob.R(yg8Var2, aob.f0(aob.v0(i, vnbVar), 1, -1), null, yob.M(i), vnbVar);
+        iye.a(this.e);
+        yg8 yg8Var3 = this.e;
+        boolean z = ob6.a0;
+        addView(yg8Var3, tre.d(48, 50.0f, (z ? 3 : 5) | 48, z ? 4.0f : 0.0f, 0.0f, z ? 0.0f : 4.0f, 0.0f));
+        iz1 iz1Var = this.E;
+        if (iz1Var != null) {
+            boolean z2 = ob6.a0;
+            iz1Var.setLayoutParams(tre.d(48, 48.0f, (z2 ? 3 : 5) | 48, z2 ? 44.0f : 0.0f, 1.0f, z2 ? 0.0f : 44.0f, 0.0f));
+        }
+        qy qyVar = this.d;
+        if (qyVar != null) {
+            float f = (ob6.a0 ? ((ViewGroup.MarginLayoutParams) qyVar.getLayoutParams()).rightMargin : ((ViewGroup.MarginLayoutParams) qyVar.getLayoutParams()).leftMargin) / hl.p;
+            int i2 = (iz1Var != null ? 70 : 19) + 24;
+            boolean z3 = ob6.a0;
+            int i3 = (z3 ? 5 : 3) | 16;
+            float f2 = z3 ? i2 : f;
+            if (!z3) {
+                f = i2;
             }
+            qyVar.setLayoutParams(tre.d(-1, -2.0f, i3, f2, 0.0f, f, 0.0f));
         }
-        View m = premiumPreviewFragment.a.getLayoutManager() != null ? premiumPreviewFragment.a.getLayoutManager().m(0) : null;
-        premiumPreviewFragment.d0 = m == null ? 0 : m.getBottom();
-        aVar = ((d) premiumPreviewFragment).actionBar;
-        int L = gl.L(16.0f) + aVar.getBottom();
-        float f4 = 1.0f - ((premiumPreviewFragment.d0 - L) / (premiumPreviewFragment.Z - L));
-        premiumPreviewFragment.g0 = f4;
-        premiumPreviewFragment.g0 = Utilities.i(f4, 1.0f, 0.0f);
-        aVar2 = ((d) premiumPreviewFragment).actionBar;
-        int L2 = gl.L(16.0f) + aVar2.getBottom();
-        int i = premiumPreviewFragment.d0;
-        if (i < L2) {
-            premiumPreviewFragment.d0 = L2;
-            i = L2;
+        return this.e;
+    }
+
+    public final void c(TextWatcher textWatcher) {
+        this.d.addTextChangedListener(textWatcher);
+    }
+
+    @Override // xeb
+    public final void d(TextWatcher textWatcher) {
+        this.d.addTextChangedListener(textWatcher);
+    }
+
+    public final void e() {
+        this.y = true;
+        ema emaVar = new ema(getContext());
+        this.n = emaVar;
+        emaVar.setTextSize(13);
+        this.n.setGravity((ob6.a0 ? 3 : 5) | 48);
+        ema emaVar2 = this.n;
+        boolean z = ob6.a0;
+        addView(emaVar2, tre.d(48, 24.0f, (z ? 3 : 5) | 48, z ? 20.0f : 0.0f, 17.0f, z ? 0.0f : 20.0f, 0.0f));
+    }
+
+    public boolean f() {
+        return true;
+    }
+
+    public boolean g(zh8 zh8Var) {
+        return false;
+    }
+
+    public og2 getCheckBox() {
+        return this.r;
+    }
+
+    @Override // xeb
+    public EditTextBoldCursor getEditField() {
+        return this.d;
+    }
+
+    @Override // xeb
+    public float getEditFieldBottomOffset() {
+        return 0.0f;
+    }
+
+    @Override // xeb
+    public Editable getEditText() {
+        return this.d.getText();
+    }
+
+    public iz1 getEmojiButton() {
+        return this.E;
+    }
+
+    @Override // xeb
+    public CharSequence getFieldText() {
+        qy qyVar = this.d;
+        if (qyVar.length() > 0) {
+            return qyVar.getText();
         }
-        float f5 = premiumPreviewFragment.r0;
-        premiumPreviewFragment.r0 = 0.0f;
-        if (i < gl.L(30.0f) + L2) {
-            premiumPreviewFragment.r0 = ((gl.L(30.0f) + L2) - premiumPreviewFragment.d0) / gl.L(30.0f);
-        }
-        if (premiumPreviewFragment.X) {
-            premiumPreviewFragment.r0 = 1.0f;
-            premiumPreviewFragment.g0 = 1.0f;
-        }
-        if (f5 != premiumPreviewFragment.r0) {
-            premiumPreviewFragment.a.invalidate();
-        }
-        int i2 = premiumPreviewFragment.d0;
-        aVar3 = ((d) premiumPreviewFragment).actionBar;
-        float L3 = gl.L(24.0f) + gl.L(premiumPreviewFragment.V.e.getVisibility() == 0 ? 24.0f : 16.0f) + (i2 - ((premiumPreviewFragment.V.getMeasuredHeight() + aVar3.getMeasuredHeight()) - premiumPreviewFragment.Y));
-        aVar4 = ((d) premiumPreviewFragment).actionBar;
-        float max = Math.max((((((aVar4.getMeasuredHeight() - premiumPreviewFragment.Y) - premiumPreviewFragment.V.a.getMeasuredHeight()) / 2.0f) + premiumPreviewFragment.Y) - premiumPreviewFragment.V.getTop()) - premiumPreviewFragment.V.a.getTop(), L3);
-        float L4 = ((-max) / 4.0f) + gl.L(16.0f);
-        premiumPreviewFragment.V.setTranslationY(max);
-        premiumPreviewFragment.V.d.setTranslationY(L4 + gl.L(premiumPreviewFragment.h0 ? 9.0f : 16.0f));
-        float f6 = premiumPreviewFragment.g0;
-        float A = tb4.A(1.0f, f6, 0.4f, 0.6f);
-        float f7 = 1.0f - (f6 > 0.5f ? (f6 - 0.5f) / 0.5f : 0.0f);
-        premiumPreviewFragment.V.d.setScaleX(A);
-        premiumPreviewFragment.V.d.setScaleY(A);
-        premiumPreviewFragment.V.d.setAlpha(f7);
-        premiumPreviewFragment.V.b.setAlpha(f7);
-        premiumPreviewFragment.V.e.setAlpha(f7);
-        premiumPreviewFragment.W.setAlpha(1.0f - premiumPreviewFragment.g0);
-        premiumPreviewFragment.W.setTranslationY(premiumPreviewFragment.V.c.getY() + premiumPreviewFragment.V.getY() + ((-(r1.getMeasuredHeight() - premiumPreviewFragment.V.d.getMeasuredWidth())) / 2.0f));
-        float L5 = gl.L(72.0f) - premiumPreviewFragment.V.a.getLeft();
-        float f8 = premiumPreviewFragment.g0;
-        premiumPreviewFragment.V.a.setTranslationX((1.0f - s33.h.getInterpolation(1.0f - (f8 > 0.3f ? (f8 - 0.3f) / 0.7f : 0.0f))) * L5);
-        ei8 ei8Var = premiumPreviewFragment.V;
-        ei8Var.d.b.s = (((getMeasuredWidth() * 0.1f) * premiumPreviewFragment.c0) + (premiumPreviewFragment.V.c.getX() + ei8Var.getX())) / getMeasuredWidth();
-        ei8 ei8Var2 = premiumPreviewFragment.V;
-        ei8Var2.d.b.t = (premiumPreviewFragment.V.c.getY() + ei8Var2.getY()) / getMeasuredHeight();
-        if (!premiumPreviewFragment.a0) {
-            invalidate();
-            premiumPreviewFragment.L.invalidate();
-            premiumPreviewFragment.K.invalidate();
-        }
-        mh8Var.d(0, (-getMeasuredWidth()) * 0.1f * premiumPreviewFragment.c0, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
-        if (z) {
-            int i3 = bkb.Z6;
-            int themedColor = premiumPreviewFragment.getThemedColor(i3);
-            Paint paint = this.c;
-            paint.setColor(themedColor);
-            boolean z3 = false;
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-            if (premiumPreviewFragment.r0 > 0.0f) {
-                aVar6 = ((d) premiumPreviewFragment).actionBar;
-                if (aVar6 != null) {
-                    paint.setColor(bm2.f(premiumPreviewFragment.r0, premiumPreviewFragment.getThemedColor(i3), premiumPreviewFragment.getThemedColor(bkb.c6)));
-                    float measuredWidth = getMeasuredWidth();
-                    aVar7 = ((d) premiumPreviewFragment).actionBar;
-                    float height = aVar7.getHeight();
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, measuredWidth, height, paint);
-                    r11 = z3;
-                }
-            }
-            canvas2 = canvas;
-            r11 = z3;
-        } else {
-            r11 = 0;
-            canvas2 = canvas;
-            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), mh8Var.f);
-        }
-        super.dispatchDraw(canvas);
-        if (premiumPreviewFragment.K.getVisibility() != 0) {
-            premiumPreviewFragment.w0.b(premiumPreviewFragment.p0.d, r11);
-            premiumPreviewFragment.w0.setBounds(r11, getHeight() - premiumPreviewFragment.p0.d, getWidth(), getHeight());
-            premiumPreviewFragment.w0.draw(canvas2);
-        }
-        ui5Var = ((d) premiumPreviewFragment).parentLayout;
-        if (ui5Var == null || !z) {
+        return null;
+    }
+
+    @Override // xeb
+    public e getParentFragment() {
+        return null;
+    }
+
+    public String getText() {
+        return this.d.getText().toString();
+    }
+
+    public EditTextBoldCursor getTextView() {
+        return this.d;
+    }
+
+    public ema getTextView2() {
+        return this.n;
+    }
+
+    public void i(zh8 zh8Var, boolean z) {
+        this.r.a(z, true);
+    }
+
+    public boolean m(ArrayList arrayList) {
+        return false;
+    }
+
+    public final void n(boolean z, boolean z2) {
+        og2 og2Var = this.r;
+        if (z == (og2Var.getTag() != null)) {
             return;
         }
-        ui5Var2 = ((d) premiumPreviewFragment).parentLayout;
-        int i4 = (int) (premiumPreviewFragment.r0 * 255.0f);
-        aVar5 = ((d) premiumPreviewFragment).actionBar;
-        ((ActionBarLayout) ui5Var2).n(canvas2, i4, aVar5.getBottom());
+        AnimatorSet animatorSet = this.x;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.x = null;
+        }
+        og2Var.setTag(z ? 1 : null);
+        ImageView imageView = this.h;
+        if (!z2) {
+            og2Var.setAlpha(z ? 1.0f : 0.0f);
+            imageView.setAlpha(z ? 0.0f : 1.0f);
+            return;
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.x = animatorSet2;
+        float[] fArr = {z ? 1.0f : 0.0f};
+        Property property = View.ALPHA;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(og2Var, (Property<og2, Float>) property, fArr), ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, z ? 0.0f : 1.0f));
+        this.x.setDuration(180L);
+        this.x.start();
+    }
+
+    public final void o(CharSequence charSequence, String str, boolean z) {
+        ImageView imageView = this.f;
+        if (imageView != null) {
+            imageView.setTag(null);
+        }
+        qy qyVar = this.d;
+        qyVar.setText(charSequence);
+        if (!TextUtils.isEmpty(charSequence)) {
+            qyVar.setSelection(qyVar.length());
+        }
+        qyVar.setHint(str);
+        this.w = z;
+        setWillNotDraw(!z);
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        float x = premiumPreviewFragment.V.c.getX() + premiumPreviewFragment.V.getX();
-        float y = premiumPreviewFragment.V.c.getY() + premiumPreviewFragment.V.getY();
-        RectF rectF = gl.P;
-        rectF.set(x, y, (premiumPreviewFragment.V.d == null ? 0 : r4.getMeasuredWidth()) + x, (premiumPreviewFragment.V.d == null ? 0 : r6.getMeasuredHeight()) + y);
-        if ((rectF.contains(motionEvent.getX(), motionEvent.getY()) || this.a) && !premiumPreviewFragment.a.J1) {
-            motionEvent.offsetLocation(-x, -y);
-            if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-                this.a = true;
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.a = false;
-            }
-            premiumPreviewFragment.V.d.dispatchTouchEvent(motionEvent);
-            return true;
-        }
-        float x2 = premiumPreviewFragment.V.e.getX() + premiumPreviewFragment.V.getX();
-        float y2 = premiumPreviewFragment.V.e.getY() + premiumPreviewFragment.V.getY();
-        rectF.set(x2, y2, premiumPreviewFragment.V.e.getWidth() + x2, premiumPreviewFragment.V.e.getHeight() + y2);
-        if (premiumPreviewFragment.r0 < 1.0f && ((rectF.contains(motionEvent.getX(), motionEvent.getY()) || this.b) && !premiumPreviewFragment.a.J1)) {
-            motionEvent.offsetLocation(-x2, -y2);
-            if (motionEvent.getAction() == 0) {
-                this.b = true;
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.b = false;
-            }
-            premiumPreviewFragment.V.e.dispatchTouchEvent(motionEvent);
-            if (this.b) {
-                return true;
-            }
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        premiumPreviewFragment.V.d.b.u = r2.getMeasuredWidth() / getMeasuredWidth();
-        premiumPreviewFragment.V.d.b.v = r2.getMeasuredHeight() / getMeasuredHeight();
-        ei8 ei8Var = premiumPreviewFragment.V;
-        ei8Var.d.b.s = (premiumPreviewFragment.V.d.getX() + ei8Var.getX()) / getMeasuredWidth();
-        ei8 ei8Var2 = premiumPreviewFragment.V;
-        ei8Var2.d.b.t = (premiumPreviewFragment.V.d.getY() + ei8Var2.getY()) / getMeasuredHeight();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3 = 0;
-        boolean z = View.MeasureSpec.getSize(i) > View.MeasureSpec.getSize(i2);
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        premiumPreviewFragment.X = z;
-        premiumPreviewFragment.Y = gl.m;
-        premiumPreviewFragment.V.measure(i, 0);
-        premiumPreviewFragment.W.getLayoutParams().height = premiumPreviewFragment.V.getMeasuredHeight();
-        FrameLayout frameLayout = premiumPreviewFragment.K;
-        if (frameLayout != null && frameLayout.getVisibility() != 8) {
-            i3 = gl.L(68.0f);
-        }
-        wb4 wb4Var = premiumPreviewFragment.Q;
-        wb4Var.M = (premiumPreviewFragment.Y + i3) - gl.L(16.0f);
-        wb4Var.o1();
-        premiumPreviewFragment.Q.S = i3;
-        super.onMeasure(i, i2);
-        if (((getMeasuredWidth() + getMeasuredHeight()) << 16) != 0) {
-            premiumPreviewFragment.w0();
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        og2 og2Var = this.r;
+        if (og2Var != null) {
+            n(p(), false);
+            og2Var.a(g(this), false);
         }
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        ArrayList arrayList = premiumPreviewFragment.c;
-        ArrayList arrayList2 = premiumPreviewFragment.b;
-        int i5 = 0;
-        for (int i6 = 0; i6 < arrayList2.size(); i6++) {
-            premiumPreviewFragment.M.a((fi8) arrayList2.get(i6), false);
-            premiumPreviewFragment.M.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
-            ((fi8) arrayList2.get(i6)).e = i5;
-            i5 += premiumPreviewFragment.M.getMeasuredHeight();
+    public final void onDraw(Canvas canvas) {
+        float L;
+        int i;
+        if (this.w && f()) {
+            boolean z = ob6.a0;
+            ImageView imageView = this.h;
+            if (z) {
+                L = 0.0f;
+            } else {
+                L = hl.L(imageView != null ? 58.0f : 20.0f);
+            }
+            float f = L;
+            float measuredHeight = getMeasuredHeight() - 1;
+            int measuredWidth = getMeasuredWidth();
+            if (ob6.a0) {
+                i = hl.L(imageView != null ? 58.0f : 20.0f);
+            } else {
+                i = 0;
+            }
+            canvas.drawLine(f, measuredHeight, measuredWidth - i, getMeasuredHeight() - 1, aob.j0);
         }
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            premiumPreviewFragment.M.a((fi8) arrayList.get(i7), false);
-            premiumPreviewFragment.M.measure(View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i2, TLObject.FLAG_31));
-            ((fi8) arrayList.get(i7)).e = i5;
-            i5 += premiumPreviewFragment.M.getMeasuredHeight();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        iz1 iz1Var;
+        ImageView imageView;
+        qy qyVar;
+        int size = View.MeasureSpec.getSize(i);
+        int i3 = 0;
+        while (true) {
+            int childCount = getChildCount();
+            iz1Var = this.E;
+            imageView = this.f;
+            qyVar = this.d;
+            if (i3 >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i3);
+            if (childAt != qyVar) {
+                if (childAt == imageView) {
+                    imageView.measure(View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
+                } else if (childAt == iz1Var) {
+                    iz1Var.measure(View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
+                } else {
+                    ImageView imageView2 = this.h;
+                    if (childAt == imageView2) {
+                        imageView2.measure(View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
+                    } else {
+                        ema emaVar = this.n;
+                        if (childAt == emaVar) {
+                            emaVar.measure(View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(24.0f), TLObject.FLAG_30));
+                        } else {
+                            og2 og2Var = this.r;
+                            if (childAt == og2Var) {
+                                og2Var.measure(View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
+                            } else {
+                                ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                                if (layoutParams != null) {
+                                    childAt.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_30));
+                                } else {
+                                    childAt.measure(i, i2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            i3++;
         }
-        premiumPreviewFragment.O = i5;
+        qyVar.measure(View.MeasureSpec.makeMeasureSpec(((size - getPaddingLeft()) - getPaddingRight()) - hl.L(this.F != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : iz1Var != null ? jn7.Z1 : jn7.F1), TLObject.FLAG_30), 0);
+        int measuredHeight = qyVar.getMeasuredHeight();
+        setMeasuredDimension(size, Math.max(hl.L(50.0f), qyVar.getMeasuredHeight()) + (this.w ? 1 : 0));
+        ema emaVar2 = this.n;
+        if (emaVar2 == null || this.y) {
+            return;
+        }
+        emaVar2.setAlpha(measuredHeight >= hl.L(52.0f) ? 1.0f : 0.0f);
+    }
+
+    public boolean p() {
+        return false;
+    }
+
+    public void setEmojiButtonVisibility(boolean z) {
+        this.b.a(z, true);
+    }
+
+    @Override // xeb
+    public void setFieldText(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setIconsColor(int i) {
+        vnb vnbVar = this.c;
+        ImageView imageView = this.h;
+        if (imageView != null) {
+            yob.s(imageView, i, vnbVar, PorterDuff.Mode.MULTIPLY);
+        }
+        ImageView imageView2 = this.f;
+        if (imageView2 != null) {
+            yob.s(imageView2, i, vnbVar, PorterDuff.Mode.MULTIPLY);
+        }
+        iz1 iz1Var = this.E;
+        if (iz1Var != null) {
+            yob.s(iz1Var, i, vnbVar, PorterDuff.Mode.SRC_IN);
+        }
+    }
+
+    public void setShowNextButton(boolean z) {
+        this.s = z;
+    }
+
+    public void setText2(String str) {
+        ema emaVar = this.n;
+        if (emaVar == null) {
+            return;
+        }
+        emaVar.l(str, false);
+    }
+
+    public void setTextColor(int i) {
+        this.d.setTextColor(i);
+    }
+
+    public void setTextRight(int i) {
+        this.F = Integer.valueOf(i);
+    }
+
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        iz1 iz1Var;
+        if (i == 0) {
+            og2 og2Var = this.r;
+            if (og2Var != null) {
+                CheckBoxBase checkBoxBase = og2Var.getCheckBoxBase();
+                float f3 = this.a.e;
+                if (checkBoxBase.w != f3) {
+                    checkBoxBase.w = f3;
+                    checkBoxBase.b();
+                }
+                og2Var.invalidate();
+                return;
+            }
+            return;
+        }
+        if (i != 1 || (iz1Var = this.E) == null) {
+            return;
+        }
+        float f4 = this.b.e;
+        float f5 = 0.85f * f4;
+        iz1Var.setScaleX(f5);
+        iz1Var.setScaleY(f5);
+        iz1Var.setAlpha(f4);
+        iz1Var.setVisibility(f4 > 0.0f ? 0 : 8);
+        ema emaVar = this.n;
+        if (emaVar != null && this.f == null && emaVar.getVisibility() == 0) {
+            yg8 yg8Var = this.e;
+            ema emaVar2 = this.n;
+            if (yg8Var != null) {
+                emaVar2.setTranslationY(hl.L(36.0f));
+            } else {
+                emaVar2.setTranslationY(hl.L(26.0f) * f4);
+            }
+        }
+    }
+
+    public void j(boolean z) {
+    }
+
+    public void k(zh8 zh8Var) {
+    }
+
+    public void l(qy qyVar) {
+    }
+
+    public void h(qy qyVar, ActionMode actionMode) {
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
     }
 }

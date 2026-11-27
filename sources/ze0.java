@@ -1,41 +1,55 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.graphics.Point;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ze0 {
-    public static final ze0 a;
-    public static final ze0 b;
-    public static final ze0 c;
-    public static final ze0 d;
-    public static final /* synthetic */ ze0[] e;
+public final class ze0 extends c4 {
+    public static final Parcelable.Creator<ze0> CREATOR = new ced((byte) 14);
+    public re0 E;
+    public byte[] F;
+    public boolean G;
+    public int a;
+    public String b;
+    public String c;
+    public int d;
+    public Point[] e;
+    public se0 f;
+    public ve0 h;
+    public we0 n;
+    public ye0 r;
+    public xe0 s;
+    public te0 w;
+    public pe0 x;
+    public qe0 y;
 
-    static {
-        ze0 ze0Var = new ze0("AZTEC", 0);
-        a = ze0Var;
-        ze0 ze0Var2 = new ze0("CODABAR", 1);
-        ze0 ze0Var3 = new ze0("CODE_39", 2);
-        ze0 ze0Var4 = new ze0("CODE_93", 3);
-        ze0 ze0Var5 = new ze0("CODE_128", 4);
-        b = ze0Var5;
-        ze0 ze0Var6 = new ze0("DATA_MATRIX", 5);
-        ze0 ze0Var7 = new ze0("EAN_8", 6);
-        ze0 ze0Var8 = new ze0("EAN_13", 7);
-        ze0 ze0Var9 = new ze0("ITF", 8);
-        ze0 ze0Var10 = new ze0("MAXICODE", 9);
-        ze0 ze0Var11 = new ze0("PDF_417", 10);
-        c = ze0Var11;
-        ze0 ze0Var12 = new ze0("QR_CODE", 11);
-        d = ze0Var12;
-        e = new ze0[]{ze0Var, ze0Var2, ze0Var3, ze0Var4, ze0Var5, ze0Var6, ze0Var7, ze0Var8, ze0Var9, ze0Var10, ze0Var11, ze0Var12, new ze0("RSS_14", 12), new ze0("RSS_EXPANDED", 13), new ze0("UPC_A", 14), new ze0("UPC_E", 15), new ze0("UPC_EAN_EXTENSION", 16)};
-    }
-
-    public static ze0 valueOf(String str) {
-        return (ze0) Enum.valueOf(ze0.class, str);
-    }
-
-    public static ze0[] values() {
-        return (ze0[]) e.clone();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        int i2 = this.a;
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(i2);
+        bye.l(parcel, 3, this.b);
+        bye.l(parcel, 4, this.c);
+        int i3 = this.d;
+        bye.q(parcel, 5, 4);
+        parcel.writeInt(i3);
+        bye.o(parcel, 6, this.e, i);
+        bye.k(parcel, 7, this.f, i);
+        bye.k(parcel, 8, this.h, i);
+        bye.k(parcel, 9, this.n, i);
+        bye.k(parcel, 10, this.r, i);
+        bye.k(parcel, 11, this.s, i);
+        bye.k(parcel, 12, this.w, i);
+        bye.k(parcel, 13, this.x, i);
+        bye.k(parcel, 14, this.y, i);
+        bye.k(parcel, 15, this.E, i);
+        bye.c(parcel, 16, this.F);
+        boolean z = this.G;
+        bye.q(parcel, 17, 4);
+        parcel.writeInt(z ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

@@ -1,22 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class p60 implements zn7 {
+public final class p60 implements zq7 {
     public static final p60 a = new p60();
-    public static final w84 b = w84.c("platform");
-    public static final w84 c = w84.c("version");
-    public static final w84 d = w84.c("buildVersion");
-    public static final w84 e = w84.c("jailbroken");
+    public static final sa4 b = sa4.c("rolloutId");
+    public static final sa4 c = sa4.c("variantId");
 
-    @Override // q24
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        ez2 ez2Var = (ez2) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.e(b, ((k90) ez2Var).a);
-        k90 k90Var = (k90) ez2Var;
-        ao7Var.a(c, k90Var.b);
-        ao7Var.a(d, k90Var.c);
-        ao7Var.d(e, k90Var.d);
+        vz2 vz2Var = (vz2) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, ((j90) vz2Var).a);
+        ar7Var.a(c, ((j90) vz2Var).b);
     }
 }

@@ -1,28 +1,9 @@
 // default package
 
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class zs4 implements jwa {
-    public final TaskCompletionSource a;
-
-    public zs4(TaskCompletionSource taskCompletionSource) {
-        this.a = taskCompletionSource;
-    }
-
-    @Override // jwa
-    public final boolean a(Exception exc) {
-        return false;
-    }
-
-    @Override // jwa
-    public final boolean b(ga0 ga0Var) {
-        int i = ga0Var.b;
-        if (i != 3 && i != 4 && i != 5) {
-            return false;
-        }
-        this.a.trySetResult(ga0Var.a);
-        return true;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class zs4 extends LinearLayout {
+    public static final float a = 1.0f;
 }

@@ -1,29 +1,137 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import java.util.ArrayList;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w4f extends b4 implements ua9 {
-    public static final Parcelable.Creator<w4f> CREATOR = new c0f(12);
-    public Status a;
-    public ArrayList b;
-    public String[] c;
+public final class w4f extends cac {
+    public final /* synthetic */ byte b;
 
-    @Override // ua9
-    public final Status a() {
-        return this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w4f(Unsafe unsafe, byte b) {
+        super(unsafe);
+        this.b = b;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.k(parcel, 1, this.a, i);
-        jte.p(parcel, 2, this.b);
-        jte.m(parcel, 3, this.c);
-        jte.s(parcel, r);
+    @Override // cac
+    public final byte j(long j, Object obj) {
+        switch (this.b) {
+            case 0:
+                if (!a5f.g) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!a5f.g) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return a5f.o(j, obj);
+    }
+
+    @Override // cac
+    public final void l(long j, Object obj, byte b) {
+        switch (this.b) {
+            case 0:
+                if (!a5f.g) {
+                    a5f.j(obj, j, b);
+                    break;
+                } else {
+                    a5f.h(j, obj, b);
+                    break;
+                }
+            default:
+                if (!a5f.g) {
+                    a5f.j(obj, j, b);
+                    break;
+                } else {
+                    a5f.h(j, obj, b);
+                    break;
+                }
+        }
+    }
+
+    @Override // cac
+    public final void m(Object obj, long j, double d) {
+        switch (this.b) {
+            case 0:
+                this.a.putLong(obj, j, Double.doubleToLongBits(d));
+                break;
+            default:
+                this.a.putLong(obj, j, Double.doubleToLongBits(d));
+                break;
+        }
+    }
+
+    @Override // cac
+    public final void n(Object obj, long j, float f) {
+        switch (this.b) {
+            case 0:
+                this.a.putInt(obj, j, Float.floatToIntBits(f));
+                break;
+            default:
+                this.a.putInt(obj, j, Float.floatToIntBits(f));
+                break;
+        }
+    }
+
+    @Override // cac
+    public final void o(Object obj, long j, boolean z) {
+        switch (this.b) {
+            case 0:
+                if (!a5f.g) {
+                    a5f.j(obj, j, z ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    a5f.h(j, obj, z ? (byte) 1 : (byte) 0);
+                    break;
+                }
+            default:
+                if (!a5f.g) {
+                    a5f.j(obj, j, z ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    a5f.h(j, obj, z ? (byte) 1 : (byte) 0);
+                    break;
+                }
+        }
+    }
+
+    @Override // cac
+    public final boolean q(long j, Object obj) {
+        switch (this.b) {
+            case 0:
+                if (a5f.g) {
+                    if (a5f.n(j, obj) == 0) {
+                    }
+                } else if (a5f.o(j, obj) == 0) {
+                }
+                break;
+            default:
+                if (a5f.g) {
+                    if (a5f.n(j, obj) == 0) {
+                    }
+                } else if (a5f.o(j, obj) == 0) {
+                }
+                break;
+        }
+        return true;
+    }
+
+    @Override // cac
+    public final float r(long j, Object obj) {
+        switch (this.b) {
+        }
+        return Float.intBitsToFloat(this.a.getInt(obj, j));
+    }
+
+    @Override // cac
+    public final double t(long j, Object obj) {
+        switch (this.b) {
+        }
+        return Double.longBitsToDouble(this.a.getLong(obj, j));
     }
 }

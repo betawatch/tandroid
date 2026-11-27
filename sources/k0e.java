@@ -1,31 +1,19 @@
 // default package
 
-import java.lang.ref.WeakReference;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class k0e extends WeakReference {
-    public final int a;
+public final class k0e implements zq7 {
+    public static final k0e a = new k0e();
 
-    public k0e(Exception exc) {
-        super(exc, null);
-        this.a = System.identityHashCode(exc);
+    static {
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)), 3)));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj != null && obj.getClass() == k0e.class) {
-            if (this == obj) {
-                return true;
-            }
-            k0e k0eVar = (k0e) obj;
-            if (this.a == k0eVar.a && get() == k0eVar.get()) {
-                return true;
-            }
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a;
+        throw null;
     }
 }

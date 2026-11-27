@@ -1,60 +1,32 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeSet;
+import android.os.Build;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class eo extends b4 {
-    public static final Parcelable.Creator<eo> CREATOR = new b1d((byte) 6);
-    public final ArrayList a;
-    public final boolean b;
-    public final String c;
-    public final String d;
+public abstract class eo {
+    public static final HashSet c = new HashSet();
+    public final String a;
+    public final String b;
 
-    public eo(ArrayList arrayList, boolean z, String str, String str2) {
-        fre.h(arrayList);
-        this.a = arrayList;
-        this.b = z;
-        this.c = str;
-        this.d = str2;
+    public eo(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+        c.add(this);
     }
 
-    public static eo b(List list, boolean z) {
-        TreeSet treeSet = new TreeSet(is6.h);
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            Collections.addAll(treeSet, ((tq7) it.next()).a());
+    public boolean a() {
+        return Build.VERSION.SDK_INT >= 33;
+    }
+
+    public boolean b() {
+        HashSet hashSet = bo.a;
+        String str = this.b;
+        if (hashSet.contains(str)) {
+            return true;
         }
-        return new eo(new ArrayList(treeSet), z, null, null);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof eo)) {
-            return false;
-        }
-        eo eoVar = (eo) obj;
-        return this.b == eoVar.b && cqe.a(this.a, eoVar.a) && cqe.a(this.c, eoVar.c) && cqe.a(this.d, eoVar.d);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.b), this.a, this.c, this.d});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.p(parcel, 1, this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        jte.l(parcel, 3, this.c);
-        jte.l(parcel, 4, this.d);
-        jte.s(parcel, r);
+        String str2 = Build.TYPE;
+        return ("eng".equals(str2) || "userdebug".equals(str2)) && hashSet.contains(str.concat(":dev"));
     }
 }

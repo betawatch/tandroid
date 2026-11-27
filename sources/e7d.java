@@ -1,41 +1,19 @@
 // default package
 
-import android.content.Context;
-import j$.util.DesugarCollections;
-import java.util.List;
+import com.google.android.gms.common.api.Scope;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e7d {
-    public final Context a;
-    public final String b;
-    public final r5d c;
-    public final dd1 d;
-    public final ocd e;
+public abstract class e7d {
+    public static final rr5 a;
+    public static final zn b;
 
-    public e7d(Context context, dd1 dd1Var, ocd ocdVar) {
-        String r;
-        boolean isEmpty = DesugarCollections.unmodifiableList(dd1Var.b).isEmpty();
-        String str = dd1Var.a;
-        if (isEmpty) {
-            r = lqd.a(str);
-        } else {
-            List unmodifiableList = DesugarCollections.unmodifiableList(dd1Var.b);
-            if (str == null) {
-                w26.j("applicationId cannot be null");
-                throw null;
-            }
-            if (unmodifiableList == null) {
-                w26.j("namespaces cannot be null");
-                throw null;
-            }
-            r = v8b.r(new v8b(str, unmodifiableList));
-        }
-        this.c = new r5d(this);
-        this.a = context.getApplicationContext();
-        fre.f(r);
-        this.b = r;
-        this.d = dd1Var;
-        this.e = ocdVar;
+    static {
+        xn xnVar = new xn();
+        rr5 rr5Var = new rr5((byte) 2);
+        a = rr5Var;
+        new Scope(1, "profile");
+        new Scope(1, "email");
+        b = new zn("SignIn.API", rr5Var, xnVar);
     }
 }

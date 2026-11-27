@@ -1,162 +1,155 @@
 // default package
 
-import java.io.EOFException;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import java.io.File;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vab implements wxb {
-    public final wxb a;
-    public final sab b;
-    public uab g;
-    public fm4 h;
-    public boolean i;
-    public int d = 0;
-    public int e = 0;
-    public byte[] f = g8c.b;
-    public final xu7 c = new xu7();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class vab extends dx7 {
+    public boolean n2;
+    public final /* synthetic */ rbb o2;
 
-    public vab(wxb wxbVar, sab sabVar) {
-        this.a = wxbVar;
-        this.b = sabVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vab(rbb rbbVar, Context context, boolean z, File file, boolean z2, boolean z3, qbb qbbVar, Activity activity, int i, Bitmap bitmap, Bitmap bitmap2, int i2, ArrayList arrayList, c8b c8bVar, int i3, int i4, fo6 fo6Var, tl0 tl0Var, x53 x53Var, o00 o00Var, gbb gbbVar) {
+        super(context, z, file, z2, z3, qbbVar, activity, i, bitmap, bitmap2, i2, arrayList, c8bVar, i3, i4, fo6Var, tl0Var, x53Var, o00Var, gbbVar);
+        this.o2 = rbbVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    @Override // wxb
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(long j, int i, int i2, int i3, vxb vxbVar) {
-        vab vabVar;
-        int i4;
-        int i5;
-        int i6;
-        uab uabVar;
-        byte[] bArr;
-        tab tabVar;
-        gf gfVar;
-        if (this.g == null) {
-            this.a.a(j, i, i2, i3, vxbVar);
+    @Override // f44
+    public final void B(boolean z) {
+        rbb rbbVar = this.o2;
+        rbbVar.p1.a(true, z, rbbVar.j0);
+    }
+
+    @Override // f44
+    public final void C() {
+        rbb rbbVar = this.o2;
+        rbbVar.w1.N0(false);
+        rbbVar.d1.clearAnimation();
+        ViewPropertyAnimator duration = rbbVar.d1.animate().alpha(0.0f).setDuration(180L);
+        k43 k43Var = k43.g;
+        duration.setInterpolator(k43Var).start();
+        if (rbbVar.h0 != 2) {
+            rbbVar.Z0.clearAnimation();
+            rbbVar.Z0.animate().alpha(0.0f).setDuration(180L).setInterpolator(k43Var).start();
+        }
+        U0(o(), false);
+    }
+
+    public final void U0(boolean z, boolean z2) {
+        rbb rbbVar = this.o2;
+        j5c j5cVar = rbbVar.q1;
+        if (!z) {
+            j5cVar.a(false, z2);
+            rbbVar.q1.clearAnimation();
+            rbbVar.q1.animate().alpha(0.0f).withEndAction(new ew7(this, (byte) 1)).setDuration(180L).setInterpolator(k43.g).setStartDelay(z2 ? 500L : 0L).start();
+        } else {
+            j5cVar.setVisibility(0);
+            rbbVar.q1.setAlpha(0.0f);
+            rbbVar.q1.clearAnimation();
+            rbbVar.q1.animate().alpha(1.0f).setDuration(180L).setInterpolator(k43.g).start();
+        }
+    }
+
+    @Override // f44
+    public final void d(boolean z) {
+        rbb rbbVar = this.o2;
+        rbbVar.p1.b(rbbVar.d1.getText());
+        rbbVar.p1.a(false, z && this.n2, null);
+    }
+
+    @Override // f44
+    public final void e(boolean z) {
+        h44 h44Var;
+        if (!o()) {
+            z = false;
+        }
+        rbb rbbVar = this.o2;
+        rbbVar.d1.clearAnimation();
+        ViewPropertyAnimator duration = rbbVar.d1.animate().alpha(rbbVar.h0 == -1 ? 1.0f : 0.0f).setDuration(180L);
+        k43 k43Var = k43.g;
+        duration.setInterpolator(k43Var).start();
+        rbbVar.Z0.clearAnimation();
+        ViewPropertyAnimator animate = rbbVar.Z0.animate();
+        int i = rbbVar.h0;
+        animate.alpha((i == -1 || i == 2) ? 1.0f : 0.0f).setDuration(180L).setInterpolator(k43Var).start();
+        U0(false, z);
+        if (z && (h44Var = this.t0) != null) {
+            B0(h44Var);
+        }
+        S0();
+        this.Z1 = true;
+        this.n2 = false;
+    }
+
+    @Override // f44
+    public final void f() {
+        this.n2 = false;
+        U0(o(), false);
+        this.o2.p1.a(false, false, null);
+    }
+
+    @Override // f44
+    public final void g() {
+        this.n2 = true;
+        this.o2.w1.N0(false);
+        U0(false, false);
+    }
+
+    @Override // f44
+    public final void j(boolean z) {
+        this.o2.q1.a(z, false);
+    }
+
+    @Override // dx7
+    public final void o0() {
+        rbb rbbVar = this.o2;
+        rbbVar.d1.f.d();
+        rbbVar.k0(0, false, true);
+        h44 h44Var = this.t0;
+        if (!(h44Var instanceof rlb) || this.u0) {
             return;
         }
-        gre.e("DRM on subtitles is not supported", vxbVar == null);
-        int i7 = (this.e - i3) - i2;
-        try {
-            uabVar = this.g;
-            bArr = this.f;
-            tabVar = tab.c;
-            gfVar = new gf((Object) this, j, i, (byte) 7);
-            vabVar = this;
-            i4 = i2;
-            i5 = i7;
-        } catch (RuntimeException e) {
-            e = e;
-            vabVar = this;
-            i4 = i2;
-            i5 = i7;
-        }
-        try {
-            uabVar.l(bArr, i5, i4, tabVar, gfVar);
-        } catch (RuntimeException e2) {
-            e = e2;
-            RuntimeException runtimeException = e;
-            if (!vabVar.i) {
-                throw runtimeException;
+        rlb rlbVar = (rlb) h44Var;
+        if (rlbVar instanceof kc1) {
+            kc1 kc1Var = (kc1) rlbVar;
+            kc1Var.z();
+            if (kc1Var.E0 == null) {
+                return;
             }
-            lad.g("SubtitleTranscodingTO", "Parsing subtitles failed, ignoring sample.", runtimeException);
-            i6 = i5 + i4;
-            vabVar.d = i6;
-            if (i6 != vabVar.e) {
+        }
+        this.u0 = true;
+        rlbVar.q();
+        View focusedView = rlbVar.getFocusedView();
+        focusedView.requestFocus();
+        hl.E3(focusedView);
+    }
+
+    @Override // f44
+    public final void x() {
+        this.o2.w1.N0(false);
+    }
+
+    @Override // dx7
+    public final void y0(boolean z) {
+        rbb rbbVar = this.o2;
+        gbb gbbVar = rbbVar.Y0;
+        if (gbbVar != null) {
+            gbbVar.x(6, z);
+            a81 a81Var = rbbVar.k1;
+            if (a81Var != null) {
+                ((mf8) a81Var.c).a(rbbVar.Y0.j(), true);
             }
         }
-        i6 = i5 + i4;
-        vabVar.d = i6;
-        if (i6 != vabVar.e) {
-            vabVar.d = 0;
-            vabVar.e = 0;
+        hbb hbbVar = rbbVar.d1;
+        if (hbbVar != null) {
+            hbbVar.e0 = z;
+            hbbVar.M.b(z);
         }
-    }
-
-    @Override // wxb
-    public final void b(xu7 xu7Var, int i, int i2) {
-        if (this.g == null) {
-            this.a.b(xu7Var, i, i2);
-            return;
-        }
-        h(i);
-        xu7Var.k(this.e, i, this.f);
-        this.e += i;
-    }
-
-    @Override // wxb
-    public final int c(g63 g63Var, int i, boolean z) {
-        if (this.g == null) {
-            return this.a.c(g63Var, i, z);
-        }
-        h(i);
-        int read = g63Var.read(this.f, this.e, i);
-        if (read != -1) {
-            this.e += read;
-            return read;
-        }
-        if (z) {
-            return -1;
-        }
-        throw new EOFException();
-    }
-
-    @Override // wxb
-    public final /* synthetic */ void e(int i, xu7 xu7Var) {
-        yjb.b(this, xu7Var, i);
-    }
-
-    @Override // wxb
-    public final int f(g63 g63Var, int i, boolean z) {
-        return c(g63Var, i, z);
-    }
-
-    @Override // wxb
-    public final void g(fm4 fm4Var) {
-        fm4Var.t.getClass();
-        String str = fm4Var.t;
-        gre.f(ud7.h(str) == 3);
-        boolean equals = fm4Var.equals(this.h);
-        sab sabVar = this.b;
-        if (!equals) {
-            this.h = fm4Var;
-            this.g = sabVar.h(fm4Var) ? sabVar.r(fm4Var) : null;
-        }
-        uab uabVar = this.g;
-        wxb wxbVar = this.a;
-        if (uabVar == null) {
-            wxbVar.g(fm4Var);
-            return;
-        }
-        em4 a = fm4Var.a();
-        a.s = ud7.n("application/x-media3-cues");
-        a.k = str;
-        a.x = Long.MAX_VALUE;
-        a.T = sabVar.y(fm4Var);
-        yjb.v(a, wxbVar);
-    }
-
-    public final void h(int i) {
-        int length = this.f.length;
-        int i2 = this.e;
-        if (length - i2 >= i) {
-            return;
-        }
-        int i3 = i2 - this.d;
-        int max = Math.max(i3 << 1, i + i3);
-        byte[] bArr = this.f;
-        byte[] bArr2 = max <= bArr.length ? bArr : new byte[max];
-        System.arraycopy(bArr, this.d, bArr2, 0, i3);
-        this.d = 0;
-        this.e = i3;
-        this.f = bArr2;
-    }
-
-    @Override // wxb
-    public final void d(long j) {
     }
 }

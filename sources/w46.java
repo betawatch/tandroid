@@ -1,29 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class w46 {
-    public final t46 a;
-    public final a9c b = new a9c(0.0f);
-    public final a9c c = new a9c(0.0f);
-    public final a9c d = new a9c(0.0f);
-    public final a9c e = new a9c(0.0f);
-    public final a9c f = new a9c(0.0f);
-    public final a9c g = new a9c(0.0f);
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public w46(x46 x46Var, t46 t46Var) {
-        this.a = t46Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class w46 implements Parcelable {
+    public static final Parcelable.Creator<w46> CREATOR = new g31((byte) 24);
+    public int a;
+    public int b;
+    public boolean c;
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public final void a(int i, boolean z) {
-        a9c a9cVar = this.c;
-        a9c a9cVar2 = this.b;
-        if (z) {
-            a9cVar2.c = i;
-            a9cVar.c = i > 0 ? 1.0f : 0.0f;
-        } else {
-            a9cVar2.d(i);
-            a9cVar.d(i > 0 ? 1.0f : 0.0f);
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a);
+        parcel.writeInt(this.b);
+        parcel.writeInt(this.c ? 1 : 0);
     }
 }

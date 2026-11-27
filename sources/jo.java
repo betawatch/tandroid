@@ -1,203 +1,49 @@
 // default package
 
-import android.R;
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.method.KeyListener;
-import android.text.method.NumberKeyListener;
-import android.util.AttributeSet;
-import android.view.ActionMode;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.AutoCompleteTextView;
+import j$.util.Objects;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class jo extends AutoCompleteTextView implements zob {
-    public static final int[] d = {R.attr.popupBackground};
-    public final ko a;
-    public final pq b;
-    public final lv6 c;
+public final class jo extends wl5 {
+    public final String b;
+    public final String c;
+    public final short d;
+    public final byte[] e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jo(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        xob.a(context);
-        cnb.a(getContext(), this);
-        vk9 v = vk9.v(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        if (((TypedArray) v.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(v.n(0));
+    /* JADX WARN: Multi-variable type inference failed */
+    public jo(int i, String str, String str2, byte[] bArr) {
+        super("APIC");
+        this.b = str;
+        this.c = str2;
+        this.d = i;
+        this.e = bArr;
+    }
+
+    @Override // wl5, sf7
+    public final void b(lt6 lt6Var) {
+        lt6Var.a(this.d, this.e);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        v.y();
-        ko koVar = new ko(this);
-        this.a = koVar;
-        koVar.g(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        pq pqVar = new pq(this);
-        this.b = pqVar;
-        pqVar.f(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        pqVar.b();
-        lv6 lv6Var = new lv6(this);
-        this.c = lv6Var;
-        lv6Var.w(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        KeyListener keyListener = getKeyListener();
-        if (keyListener instanceof NumberKeyListener) {
-            return;
+        if (obj == null || jo.class != obj.getClass()) {
+            return false;
         }
-        boolean isFocusable = super.isFocusable();
-        boolean isClickable = super.isClickable();
-        boolean isLongClickable = super.isLongClickable();
-        int inputType = super.getInputType();
-        KeyListener s = lv6Var.s(keyListener);
-        if (s != keyListener) {
-            super.setKeyListener(s);
-            super.setRawInputType(inputType);
-            super.setFocusable(isFocusable);
-            super.setClickable(isClickable);
-            super.setLongClickable(isLongClickable);
-        }
+        jo joVar = (jo) obj;
+        return this.d == joVar.d && this.b.equals(joVar.b) && Objects.equals(this.c, joVar.c) && Arrays.equals(this.e, joVar.e);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.b();
-        }
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.b();
-        }
+    public final int hashCode() {
+        int j = bs2.j((527 + this.d) * 31, 31, this.b);
+        String str = this.c;
+        return Arrays.hashCode(this.e) + ((j + (str != null ? str.hashCode() : 0)) * 31);
     }
 
-    @Override // android.widget.TextView
-    public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return kve.d(super.getCustomSelectionActionModeCallback());
-    }
-
-    public ColorStateList getSupportBackgroundTintList() {
-        ko koVar = this.a;
-        if (koVar != null) {
-            return koVar.e();
-        }
-        return null;
-    }
-
-    public PorterDuff.Mode getSupportBackgroundTintMode() {
-        ko koVar = this.a;
-        if (koVar != null) {
-            return koVar.f();
-        }
-        return null;
-    }
-
-    public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.b.d();
-    }
-
-    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.b.e();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        gmd.a(editorInfo, onCreateInputConnection, this);
-        return this.c.x(onCreateInputConnection, editorInfo);
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        super.setBackgroundDrawable(drawable);
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.h();
-        }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundResource(int i) {
-        super.setBackgroundResource(i);
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.i(i);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.b();
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.b();
-        }
-    }
-
-    @Override // android.widget.TextView
-    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(kve.e(callback, this));
-    }
-
-    @Override // android.widget.AutoCompleteTextView
-    public void setDropDownBackgroundResource(int i) {
-        setDropDownBackgroundDrawable(hmd.a(getContext(), i));
-    }
-
-    public void setEmojiCompatEnabled(boolean z) {
-        this.c.I(z);
-    }
-
-    @Override // android.widget.TextView
-    public void setKeyListener(KeyListener keyListener) {
-        super.setKeyListener(this.c.s(keyListener));
-    }
-
-    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.m(colorStateList);
-        }
-    }
-
-    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.n(mode);
-        }
-    }
-
-    @Override // zob
-    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        pq pqVar = this.b;
-        pqVar.l(colorStateList);
-        pqVar.b();
-    }
-
-    @Override // zob
-    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        pq pqVar = this.b;
-        pqVar.m(mode);
-        pqVar.b();
-    }
-
-    @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i) {
-        super.setTextAppearance(context, i);
-        pq pqVar = this.b;
-        if (pqVar != null) {
-            pqVar.g(context, i);
-        }
+    @Override // wl5
+    public final String toString() {
+        return this.a + ": mimeType=" + this.b + ", description=" + this.c;
     }
 }

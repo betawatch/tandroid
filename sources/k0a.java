@@ -1,48 +1,72 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class k0a extends pr7 {
-    public final /* synthetic */ m8b c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ n0a e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class k0a extends p0a {
+    public final /* synthetic */ int n3;
+    public final /* synthetic */ n1a o3;
 
-    public k0a(n0a n0aVar, m8b m8bVar, Context context) {
-        this.e = n0aVar;
-        this.c = m8bVar;
-        this.d = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k0a(n1a n1aVar, Context context, int i) {
+        super(n1aVar, context);
+        this.o3 = n1aVar;
+        this.n3 = i;
     }
 
-    @Override // pr7
-    public final void a(gec gecVar, Object obj) {
-        gecVar.removeView((View) obj);
-        this.e.H.remove(obj);
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void m0(int i) {
+        n1a n1aVar = this.o3;
+        e0a e0aVar = n1aVar.g0;
+        if (i == 0) {
+            n1aVar.y1 = false;
+            if (n1aVar.a == -1 || e0aVar.getVisibility() != 0 || e0aVar.getTranslationY() <= (-hl.L(51.0f))) {
+                return;
+            }
+            n1aVar.u(e0aVar.getTranslationY() > ((float) (-hl.L(16.0f))) ? 0 : 1, 0);
+        }
     }
 
-    @Override // pr7
-    public final int b() {
-        return this.e.G.size();
-    }
-
-    @Override // pr7
-    public final Object e(gec gecVar, int i) {
-        n0a n0aVar = this.e;
-        j0a j0aVar = new j0a(this, this.c, this.d, n0aVar.I, new ae9(this, (byte) 5));
-        j0aVar.setTag(Integer.valueOf(i));
-        j0aVar.setShadowDrawable(n0aVar.s);
-        j0aVar.setPadding(0, gl.L(16.0f), 0, 0);
-        j0aVar.f(n0aVar.E, (m0a) n0aVar.G.get(i));
-        j0aVar.setListBottomPadding(n0aVar.d);
-        gecVar.addView(j0aVar);
-        n0aVar.H.add(j0aVar);
-        return j0aVar;
-    }
-
-    @Override // pr7
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void n0(int i) {
+        int i2;
+        n1a n1aVar = this.o3;
+        n1aVar.f();
+        if (!n1aVar.y1) {
+            int H0 = n1aVar.s0.H0();
+            ArrayList arrayList = n1aVar.E0;
+            SparseIntArray sparseIntArray = n1aVar.x0;
+            if (H0 != -1) {
+                if (H0 > ((arrayList.size() <= 40 || n1aVar.D0) ? arrayList.size() + (n1aVar.O0 ? 1 : 0) : 40) && H0 > n1aVar.J0.size()) {
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= sparseIntArray.size()) {
+                            break;
+                        }
+                        int keyAt = sparseIntArray.keyAt(i3);
+                        int valueAt = sparseIntArray.valueAt(i3);
+                        c14 c14Var = valueAt >= 0 ? (c14) n1aVar.N0.get(valueAt) : null;
+                        if (c14Var != null) {
+                            boolean z = c14Var.h;
+                            ArrayList arrayList2 = c14Var.c;
+                            int size = z ? arrayList2.size() : Math.min(24, arrayList2.size());
+                            if (H0 > keyAt && H0 <= keyAt + 1 + size) {
+                                xy3 xy3Var = n1aVar.e0;
+                                xy3Var.j(((xy3Var.E == null || !xy3Var.b0) ? 0 : 1) + (xy3Var.y != null ? 1 : 0) + valueAt, true);
+                            }
+                        }
+                        i3++;
+                    }
+                } else {
+                    n1aVar.e0.j(0, true);
+                }
+            }
+        }
+        n1aVar.C();
+        hl.T3(n1aVar.f0, n1aVar.i0.computeVerticalScrollOffset() != 0 || (i2 = this.n3) == 0 || i2 == 12 || i2 == 10 || i2 == 1 || i2 == 11 || i2 == 6, 1.0f, true, true);
+        n1aVar.l();
     }
 }

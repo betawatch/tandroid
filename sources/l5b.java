@@ -1,55 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l5b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t5b b;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ l5b(t5b t5bVar, byte b) {
-        this.a = b;
-        this.b = t5bVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class l5b implements RequestDelegate {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ wz5 b;
+    public final /* synthetic */ c6b c;
+
+    public l5b(c6b c6bVar, long j, wz5 wz5Var) {
+        this.c = c6bVar;
+        this.a = j;
+        this.b = wz5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        t5b t5bVar = this.b;
-        switch (b) {
-            case 0:
-                y5b y5bVar = t5bVar.a0;
-                m21.h(y5bVar.c);
-                super/*fx0*/.dismiss();
-                break;
-            case 1:
-                t5bVar.w.setLoading(false);
-                y5b y5bVar2 = t5bVar.a0;
-                y5bVar2.F0();
-                y5bVar2.l1.E(0);
-                break;
-            case 2:
-                t5bVar.V = false;
-                break;
-            case 3:
-                y5b y5bVar3 = t5bVar.a0;
-                y5bVar3.G1 = 6;
-                y5bVar3.l1.E(1);
-                break;
-            case 4:
-                t5bVar.n.g(2);
-                t5bVar.f.forceLayout();
-                t5bVar.k();
-                break;
-            default:
-                int i = t5bVar.a;
-                y5b y5bVar4 = t5bVar.a0;
-                if (i != 0) {
-                    y5bVar4.onBackPressed();
-                    break;
-                } else {
-                    y5bVar4.dismiss();
-                    break;
-                }
-        }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        hl.c3(new y09(this, tLObject, this.a, this.b, (byte) 11));
     }
 }

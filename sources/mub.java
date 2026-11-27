@@ -1,20 +1,53 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class mub {
-    public int a = -1;
-    public long b;
-    public long c;
-    public int d;
-    public int e;
-    public int f;
-    public TLRPC.Message g;
-    public ArrayList h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
+public enum mub extends rwb {
+    public mub() {
+        super("Data", 0);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x002f, code lost:
+    
+        r6 = ik1.c(r3, r8.h, r0, r4 - r0);
+     */
+    @Override // rwb
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char c;
+        char i = ik1Var.i();
+        if (i == 0) {
+            bubVar.m(this);
+            bubVar.f(ik1Var.d());
+            return;
+        }
+        if (i == '&') {
+            bubVar.a(rwb.b);
+            return;
+        }
+        if (i == '<') {
+            bubVar.a(rwb.h);
+            return;
+        }
+        if (i == 65535) {
+            bubVar.g(new ttb());
+            return;
+        }
+        ik1Var.b();
+        int i2 = ik1Var.e;
+        int i3 = ik1Var.c;
+        char[] cArr = ik1Var.a;
+        while (true) {
+            int i4 = ik1Var.e;
+            if (i4 >= i3 || (c = cArr[i4]) == '&' || c == '<' || c == 0) {
+                break;
+            } else {
+                ik1Var.e = i4 + 1;
+            }
+        }
+        String str = "";
+        bubVar.h(str);
+    }
 }

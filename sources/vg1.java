@@ -1,42 +1,80 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vg1 extends tx9 {
-    public final /* synthetic */ qg1 f2;
-    public final /* synthetic */ kx9[] g2;
-    public final /* synthetic */ nh1 h2;
+public final /* synthetic */ class vg1 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ pcc d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vg1(nh1 nh1Var, nh1 nh1Var2, Activity activity, Integer num, int i, wjb wjbVar, int i2, int i3, qg1 qg1Var, kx9[] kx9VarArr) {
-        super(nh1Var2, activity, true, num, i, true, wjbVar, i2, i3);
-        this.h2 = nh1Var;
-        this.f2 = qg1Var;
-        this.g2 = kx9VarArr;
+    public /* synthetic */ vg1(jxa jxaVar, TLObject tLObject, TLRPC.TL_error tL_error, pcc pccVar) {
+        this.b = tLObject;
+        this.c = tL_error;
+        this.d = pccVar;
     }
 
-    @Override // tx9
-    public final long getDialogId() {
-        return this.h2.a;
-    }
-
-    @Override // tx9
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // tx9
-    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.f2.a(Long.valueOf(l == null ? 0L : l.longValue()), num, tL_starGiftUnique);
-        kx9 kx9Var = this.g2[0];
-        if (kx9Var != null) {
-            this.h2.R = null;
-            kx9Var.dismiss();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        pcc pccVar = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        TLObject tLObject = this.b;
+        switch (b) {
+            case 0:
+                if (tLObject == null) {
+                    e Q = LaunchActivity.Q();
+                    if (tL_error == null || Q == null || !"CHANNEL_PRIVATE".equals(tL_error.text)) {
+                        d31.Y().g0(tL_error, false);
+                    } else {
+                        LaunchActivity launchActivity = LaunchActivity.H1;
+                        if (launchActivity == null || !launchActivity.isFinishing()) {
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getResourceProvider(), Q.getContext());
+                            String M0 = ob6.M0(R.string.AppName, null);
+                            id idVar = alertDialog$Builder.a;
+                            idVar.S = M0;
+                            HashMap hashMap = new HashMap();
+                            int i = aob.L5;
+                            hashMap.put("info1", Integer.valueOf(aob.w0(null, i, false)));
+                            hashMap.put("info2", Integer.valueOf(aob.w0(null, i, false)));
+                            alertDialog$Builder.l(R.raw.not_available, 52, aob.w0(null, i, false), hashMap);
+                            idVar.X = true;
+                            idVar.S = ob6.M0(2131752299, null);
+                            idVar.U = ob6.M0(2131752415, null);
+                            c00.u(null, 2131752006, alertDialog$Builder, null);
+                        }
+                    }
+                    pccVar.a(null);
+                    break;
+                } else {
+                    pccVar.a((TL_stories.TL_premium_boostsStatus) tLObject);
+                    break;
+                }
+                break;
+            default:
+                if (!(tLObject instanceof TLRPC.TL_payments_paymentFormStarGift)) {
+                    jxa.c(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
+                    pccVar.a(null);
+                    break;
+                } else {
+                    pccVar.a((TLRPC.TL_payments_paymentFormStarGift) tLObject);
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ vg1(TLObject tLObject, pcc pccVar, TLRPC.TL_error tL_error) {
+        this.b = tLObject;
+        this.d = pccVar;
+        this.c = tL_error;
     }
 }

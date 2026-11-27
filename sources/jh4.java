@@ -1,35 +1,66 @@
 // default package
 
-import java.util.concurrent.CountDownLatch;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class jh4 {
-    public final CountDownLatch a;
-    public zx2 b = null;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class jh4 extends FrameLayout implements snb {
+    public TextView a;
+    public TextView b;
+    public uv8 c;
+    public boolean d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    public jh4(CountDownLatch countDownLatch) {
-        this.a = countDownLatch;
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, aob.j0);
         }
-        if (!(obj instanceof jh4)) {
-            return false;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), hl.L(64.0f));
+        measureChildWithMargins(this.c, i, 0, i2, 0);
+        TextView textView = this.a;
+        uv8 uv8Var = this.c;
+        measureChildWithMargins(textView, i, uv8Var.getMeasuredWidth(), i2, 0);
+        measureChildWithMargins(this.b, i, uv8Var.getMeasuredWidth(), i2, 0);
+    }
+
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            this.c.setProgressColor(aob.w0(null, aob.Ei, false));
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        jh4 jh4Var = (jh4) obj;
-        return this.a.equals(jh4Var.a) && rp5.a(this.b, jh4Var.b);
     }
 
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        zx2 zx2Var = this.b;
-        return hashCode + (zx2Var == null ? 0 : zx2Var.hashCode());
-    }
-
-    public final String toString() {
-        return "Dependency(latch=" + this.a + ", subscriber=" + this.b + ')';
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

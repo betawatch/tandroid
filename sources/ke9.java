@@ -1,80 +1,35 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class ke9 {
+    public final float a;
+    public final float b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ke9 implements ag9 {
-    public final /* synthetic */ iy6 a;
-    public final /* synthetic */ lk0 b;
-    public final /* synthetic */ ye9 c;
-
-    public ke9(ye9 ye9Var, iy6 iy6Var, lk0 lk0Var) {
-        this.c = ye9Var;
-        this.a = iy6Var;
-        this.b = lk0Var;
+    public ke9(float f, float f2) {
+        this.a = f;
+        this.b = f2;
     }
 
-    @Override // ag9
-    public final void a() {
-        iy6 iy6Var = this.a;
-        iy6Var.a = (byte) 3;
-        ye9 ye9Var = this.c;
-        ye9Var.h4.remove(iy6Var);
-        ArrayList arrayList = ye9Var.t3;
-        int indexOf = arrayList.indexOf(this.b);
-        if (indexOf >= 0) {
-            arrayList.remove(indexOf);
-            ye9Var.g3.O(true);
+    public static float a(ke9 ke9Var, ke9 ke9Var2) {
+        return dte.a(ke9Var.a, ke9Var.b, ke9Var2.a, ke9Var2.b);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof ke9) {
+            ke9 ke9Var = (ke9) obj;
+            if (this.a == ke9Var.a && this.b == ke9Var.b) {
+                return true;
+            }
         }
-        ye9Var.p3.onContentChanged();
+        return false;
     }
 
-    @Override // ag9
-    public final void f(TLRPC.Document document) {
-        iy6 iy6Var = this.a;
-        iy6Var.h = document;
-        iy6Var.i = document;
-        iy6Var.a = (byte) 2;
-        TL_iv.PageBlock pageBlock = this.b.b;
-        if (pageBlock instanceof TL_iv.pageBlockAudio) {
-            ((TL_iv.pageBlockAudio) pageBlock).audio_id = document.id;
-        }
-        ye9 ye9Var = this.c;
-        ye9Var.h4.remove(iy6Var);
-        ye9Var.g3.O(false);
-        ye9Var.p3.onContentChanged();
+    public final int hashCode() {
+        return Float.floatToIntBits(this.b) + (Float.floatToIntBits(this.a) * 31);
     }
 
-    @Override // ag9
-    public final void g(float f) {
-        this.a.f = f;
-        lk0 lk0Var = this.b;
-        ye9 ye9Var = this.c;
-        View C1 = ye9Var.C1(lk0Var);
-        if (C1 instanceof ib9) {
-            ((ib9) C1).o(false);
-            C1.invalidate();
-        }
-        ye9Var.p3.onContentChanged();
-    }
-
-    @Override // ag9
-    public final void c(TLRPC.Photo photo) {
-    }
-
-    @Override // ag9
-    public final void d(TLRPC.Document document) {
-    }
-
-    @Override // ag9
-    public final void e(TLRPC.Document document) {
-    }
-
-    @Override // ag9
-    public final void b(int i, int i2) {
+    public final String toString() {
+        return "(" + this.a + ',' + this.b + ')';
     }
 }

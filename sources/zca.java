@@ -1,43 +1,62 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zca extends i49 {
-    public final /* synthetic */ pca a;
-    public final /* synthetic */ qca b;
-    public final /* synthetic */ nfa c;
+public final class zca extends bda {
+    public final /* synthetic */ byte f;
+    public final /* synthetic */ yca g;
+    public final /* synthetic */ cda h;
 
-    public zca(nfa nfaVar, pca pcaVar, qca qcaVar) {
-        this.c = nfaVar;
-        this.a = pcaVar;
-        this.b = qcaVar;
+    public /* synthetic */ zca(cda cdaVar, yca ycaVar, byte b) {
+        this.f = b;
+        this.h = cdaVar;
+        this.g = ycaVar;
     }
 
-    @Override // i49
-    public final void a(RecyclerView recyclerView, int i) {
-        this.c.e1 = i != 0;
+    @Override // bda
+    public final void a() {
+        byte b = this.f;
+        cda cdaVar = this.h;
+        switch (b) {
+            case 0:
+                tca tcaVar = cdaVar.h;
+                float f = tcaVar.i;
+                float f2 = tcaVar.j;
+                this.d = f;
+                this.e = f2;
+                break;
+            default:
+                tca tcaVar2 = cdaVar.h;
+                float f3 = tcaVar2.d;
+                float f4 = tcaVar2.e;
+                this.d = f3;
+                this.e = f4;
+                break;
+        }
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        int i3;
-        int i4;
-        nfa nfaVar = this.c;
-        cfa[] cfaVarArr = nfaVar.w1;
-        qca qcaVar = this.b;
-        pca pcaVar = this.a;
-        nfaVar.z(pcaVar, (o39) recyclerView, qcaVar);
-        if (i2 != 0 && ((i4 = nfaVar.n0[0].F) == 0 || i4 == 5)) {
-            cfaVarArr[0].a.isEmpty();
-        }
-        if (i2 != 0 && ((i3 = pcaVar.F) == 0 || nfa.j0(i3))) {
-            nfa.m1(pcaVar, cfaVarArr, true);
-        }
-        pcaVar.h.M0(true);
-        if (pcaVar.G != null) {
-            pcaVar.invalidate();
+    @Override // bda
+    public final void b(float f, float f2) {
+        byte b = this.f;
+        yca ycaVar = this.g;
+        cda cdaVar = this.h;
+        switch (b) {
+            case 0:
+                tca tcaVar = cdaVar.h;
+                tcaVar.i = f;
+                tcaVar.j = f2;
+                this.d = f;
+                this.e = f2;
+                ycaVar.a();
+                break;
+            default:
+                tca tcaVar2 = cdaVar.h;
+                tcaVar2.d = f;
+                tcaVar2.e = f2;
+                this.d = f;
+                this.e = f2;
+                ycaVar.a();
+                break;
         }
     }
 }

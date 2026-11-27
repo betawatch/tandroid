@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class bh extends bm {
     final /* synthetic */ Bundle a;
@@ -25,9 +25,9 @@ final class bh extends bm {
         this.e = bnVar;
     }
 
-    @Override // s0d
+    @Override // j5d
     public final void b() {
-        q0d q0dVar;
+        h5d h5dVar;
         at atVar;
         if (bn.l(this.e)) {
             a(new StandardIntegrityException(-2, null));
@@ -35,25 +35,25 @@ final class bh extends bm {
         }
         try {
             bn bnVar = this.e;
-            hzc hzcVar = bnVar.a;
-            e0d e0dVar = (e0d) hzcVar.n;
+            y3d y3dVar = bnVar.a;
+            v4d v4dVar = (v4d) y3dVar.n;
             Bundle bundle = this.a;
             atVar = bnVar.e;
-            as a = atVar.a(this.b, this.c, hzcVar);
-            c0d c0dVar = (c0d) e0dVar;
-            c0dVar.getClass();
+            as a = atVar.a(this.b, this.c, y3dVar);
+            t4d t4dVar = (t4d) v4dVar;
+            t4dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(c0dVar.c);
-            int i = yzc.a;
+            obtain.writeInterfaceToken(t4dVar.c);
+            int i = p4d.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a);
-            c0dVar.b(obtain, 6);
+            t4dVar.b(obtain, 6);
         } catch (RemoteException e) {
             bn bnVar2 = this.e;
             int i2 = this.d;
-            q0dVar = bnVar2.b;
-            q0dVar.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i2));
+            h5dVar = bnVar2.b;
+            h5dVar.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i2));
             this.c.trySetException(new StandardIntegrityException(-100, e));
         }
     }

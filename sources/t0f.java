@@ -1,32 +1,19 @@
 // default package
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class t0f {
-    public static boolean a(o7a o7aVar, Collection collection) {
-        collection.getClass();
-        if (collection instanceof yed) {
-            collection = ((yed) collection).zza();
+public final class t0f implements zq7 {
+    public static final t0f a = new t0f();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        boolean z = false;
-        if (!(collection instanceof Set) || collection.size() <= o7aVar.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z |= o7aVar.remove(it.next());
-            }
-            return z;
-        }
-        Iterator<E> it2 = o7aVar.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z = true;
-            }
-        }
-        return z;
+        throw null;
     }
 }

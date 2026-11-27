@@ -1,33 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class nee implements zn7 {
-    public static final nee a = new nee();
-    public static final w84 b = new w84("durationMs", b00.m(yjb.p(gid.class, new bgd(1))));
-    public static final w84 c = new w84("errorCode", b00.m(yjb.p(gid.class, new bgd(2))));
-    public static final w84 d = new w84("isColdCall", b00.m(yjb.p(gid.class, new bgd(3))));
-    public static final w84 e = new w84("autoManageModelOnBackground", b00.m(yjb.p(gid.class, new bgd(4))));
-    public static final w84 f = new w84("autoManageModelOnLowMemory", b00.m(yjb.p(gid.class, new bgd(5))));
-    public static final w84 g = new w84("isNnApiEnabled", b00.m(yjb.p(gid.class, new bgd(6))));
-    public static final w84 h = new w84("eventsCount", b00.m(yjb.p(gid.class, new bgd(7))));
-    public static final w84 i = new w84("otherErrors", b00.m(yjb.p(gid.class, new bgd(8))));
-    public static final w84 j = new w84("remoteConfigValueForAcceleration", b00.m(yjb.p(gid.class, new bgd(9))));
-    public static final w84 k = new w84("isAccelerated", b00.m(yjb.p(gid.class, new bgd(10))));
+public final class nee extends ljf {
+    private static final nee zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private int zzg;
+    private int zzh;
+    private int zzi;
+    private int zzj;
+    private int zzk;
+    private int zzl;
+    private int zzm;
+    private int zzn;
+    private int zzo;
+    private boolean zzp;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        a4f a4fVar = (a4f) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, a4fVar.a);
-        ao7Var.a(c, a4fVar.b);
-        ao7Var.a(d, a4fVar.c);
-        ao7Var.a(e, null);
-        ao7Var.a(f, null);
-        ao7Var.a(g, null);
-        ao7Var.a(h, null);
-        ao7Var.a(i, null);
-        ao7Var.a(j, null);
-        ao7Var.a(k, null);
+    static {
+        nee neeVar = new nee();
+        zzb = neeVar;
+        ljf.e(nee.class, neeVar);
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\f\u0000\u0001\u0001\f\f\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007᠌\u0006\b᠌\u0007\tင\b\nင\t\u000bင\n\fဇ\u000b", new Object[]{"zzd", "zze", "zzf", "zzg", z6f.h, "zzh", faf.h, "zzi", sae.e, "zzj", uif.f, "zzk", sjf.n, "zzl", rg7.f, "zzm", "zzn", "zzo", "zzp"});
+        }
+        if (i2 == 3) {
+            return new nee();
+        }
+        if (i2 == 4) {
+            return new lde(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

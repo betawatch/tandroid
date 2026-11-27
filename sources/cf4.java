@@ -1,233 +1,93 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.view.ViewPropertyAnimator;
 import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cf4 extends fx0 implements gk7 {
-    public static final /* synthetic */ int w1 = 0;
-    public int l1;
-    public final fu m1;
-    public final s20 n1;
-    public final TextView o1;
-    public AnimatorSet p1;
-    public final View q1;
-    public int r1;
-    public boolean s1;
-    public vu2 t1;
-    public final ArrayList u1;
-    public final ArrayList v1;
+public final class cf4 extends mf5 {
+    public final /* synthetic */ nf4 E;
+    public final TextView r;
+    public final bf4 s;
+    public int w;
+    public final ll x;
+    public boolean y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cf4(cj3 cj3Var, ArrayList arrayList) {
-        super(cj3Var.getParentActivity(), false);
-        byte b = 0;
-        K();
-        this.v1 = arrayList;
-        this.u1 = new ArrayList(cj3Var.getMessagesController().G0);
-        int i = 0;
-        while (i < this.u1.size()) {
-            if (((t97) this.u1.get(i)).d()) {
-                this.u1.remove(i);
-                i--;
-            }
-            i++;
-        }
-        Activity parentActivity = cj3Var.getParentActivity();
-        z92 z92Var = new z92(this, parentActivity);
-        this.b = z92Var;
-        z92Var.setWillNotDraw(false);
-        ViewGroup viewGroup = this.b;
-        int i2 = this.u0;
-        viewGroup.setPadding(i2, 0, i2, 0);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, gl.e1(), 51);
-        layoutParams.topMargin = gl.L(48.0f);
-        View view = new View(parentActivity);
-        this.q1 = view;
-        zkb.h(bkb.U5, null, view);
-        view.setAlpha(0.0f);
-        view.setVisibility(4);
-        view.setTag(1);
-        this.b.addView(view, layoutParams);
-        fu fuVar = new fu((byte) 20, (Context) parentActivity, (Object) this);
-        this.m1 = fuVar;
-        fuVar.setTag(14);
-        getContext();
-        fuVar.setLayoutManager(new t26(1, false));
-        s20 s20Var = new s20(this, parentActivity, (byte) 5);
-        this.n1 = s20Var;
-        fuVar.setAdapter(s20Var);
-        fuVar.setVerticalScrollBarEnabled(false);
-        fuVar.setPadding(gl.L(10.0f), 0, gl.L(10.0f), 0);
-        fuVar.setClipToPadding(false);
-        zkb.l(fuVar, 21, bkb.z5, null);
-        fuVar.setOnScrollListener(new ao2(this, (byte) 12));
-        fuVar.setOnItemClickListener(new bf4(this, b));
-        this.b.addView(fuVar, nme.d(-1, -1.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(parentActivity);
-        this.o1 = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        zkb.X(textView, bkb.i5, null);
-        textView.setTextSize(1, 20.0f);
-        zkb.G(textView, bkb.j5, null);
-        zkb.C(textView, bkb.k5, null);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setPadding(gl.L(24.0f), 0, gl.L(24.0f), 0);
-        textView.setGravity(16);
-        textView.setText(k96.M0(2131750781, null));
-        textView.setTypeface(gl.o());
-        this.b.addView(textView, nme.d(-1, 50.0f, 51, 0.0f, 0.0f, 40.0f, 0.0f));
-        kk7.e().b(this, kk7.k4);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public cf4(nf4 nf4Var, Context context) {
+        super(context, r2, 22, 15, false, r6);
+        vnb vnbVar;
+        this.E = nf4Var;
+        int i = aob.L6;
+        vnbVar = ((e) nf4Var).resourceProvider;
+        TextView textView = new TextView(getContext());
+        this.r = textView;
+        textView.setTextSize(1, 14.0f);
+        yob.X(textView, aob.z6, nf4Var.getResourceProvider());
+        textView.setText(ob6.M0(nf4Var.getUserConfig().p() ? 2131750580 : 2131750579, null));
+        textView.setGravity(5);
+        int i2 = (ob6.a0 ? 3 : 5) | 48;
+        float f = this.b;
+        addView(textView, tre.d(-1, -1.0f, i2, f, 16.66f, f, this.c));
+        textView.setAlpha(0.0f);
+        bf4 bf4Var = new bf4(this, getContext());
+        this.s = bf4Var;
+        this.x = new ll(bf4Var, 320L, k43.h, 0);
+        bf4Var.setTextSize(hl.L(10.0f));
+        bf4Var.setTypeface(hl.o());
+        bf4Var.setGravity(5);
+        bf4Var.setPadding(hl.L(4.66f), 0, hl.L(4.66f), 0);
+        int i3 = ob6.a0 ? 3 : 5;
+        float f2 = this.b;
+        addView(bf4Var, tre.d(-1, -1.0f, i3 | 48, f2, 16.66f, f2, this.c));
     }
 
-    public static ArrayList D0(d dVar, t97 t97Var, ArrayList arrayList, boolean z, boolean z2) {
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            long longValue = ((Long) arrayList.get(i)).longValue();
-            if (cf3.B(longValue)) {
-                TLRPC.EncryptedChat Y0 = dVar.getMessagesController().Y0(Integer.valueOf((int) (longValue & 4294967295L)));
-                if (Y0 != null) {
-                    longValue = Y0.user_id;
-                    if (arrayList2.contains(Long.valueOf(longValue))) {
-                        continue;
-                    }
-                } else {
-                    continue;
-                }
-            }
-            if (t97Var != null) {
-                if (z) {
-                    if (t97Var.h.contains(Long.valueOf(longValue))) {
-                        continue;
-                    }
-                } else if (t97Var.i.contains(Long.valueOf(longValue))) {
-                    continue;
-                }
-            }
-            arrayList2.add(Long.valueOf(longValue));
-            if (z2) {
-                break;
-            }
+    public final void d(int i, boolean z) {
+        nf4 nf4Var = this.E;
+        String M0 = ob6.M0(nf4Var.getUserConfig().p() ? 2131750580 : 2131750579, null);
+        TextView textView = this.r;
+        textView.setText(M0);
+        int i2 = 0;
+        boolean z2 = i < 0;
+        if (!z2) {
+            int[] iArr = aob.r8;
+            i2 = nf4Var.getThemedColor(iArr[i % iArr.length]);
         }
-        return arrayList2;
-    }
-
-    @Override // fx0
-    public final boolean D() {
-        return false;
-    }
-
-    public final void E0(boolean z) {
-        Integer num;
-        byte b = 1;
-        View view = this.q1;
-        Object tag = view.getTag();
-        if (z) {
-            if (tag == null) {
-                return;
-            } else {
-                num = null;
-            }
-        } else if (tag != null) {
-            return;
-        } else {
-            num = 1;
+        this.w = i2;
+        bf4 bf4Var = this.s;
+        if (!z2) {
+            bf4Var.setEmojiColor(i2);
         }
-        view.setTag(num);
-        if (z) {
-            view.setVisibility(0);
+        if (!z) {
+            this.x.a(this.w, true);
         }
-        AnimatorSet animatorSet = this.p1;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.p1 = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z ? 1.0f : 0.0f));
-        this.p1.setDuration(150L);
-        this.p1.addListener(new id4(b, this, z));
-        this.p1.start();
-    }
-
-    public final void F0() {
-        fu fuVar = this.m1;
-        int childCount = fuVar.getChildCount();
-        View view = this.q1;
-        TextView textView = this.o1;
-        if (childCount <= 0) {
-            int paddingTop = fuVar.getPaddingTop();
-            this.r1 = paddingTop;
-            fuVar.setTopGlowOffset(paddingTop);
-            textView.setTranslationY(this.r1);
-            view.setTranslationY(this.r1);
-            this.b.invalidate();
-            return;
-        }
-        int i = 0;
-        View childAt = fuVar.getChildAt(0);
-        y29 y29Var = (y29) fuVar.G(childAt);
-        int top = childAt.getTop();
-        if (top < 0 || y29Var == null || y29Var.b() != 0) {
-            E0(true);
-        } else {
-            E0(false);
-            i = top;
-        }
-        if (this.r1 != i) {
-            this.r1 = i;
-            fuVar.setTopGlowOffset(i);
-            textView.setTranslationY(this.r1);
-            view.setTranslationY(this.r1);
-            this.b.invalidate();
+        if (z2 != this.y) {
+            this.y = z2;
+            ViewPropertyAnimator duration = textView.animate().alpha(z2 ? 1.0f : 0.0f).setDuration(320L);
+            k43 k43Var = k43.h;
+            duration.setInterpolator(k43Var).start();
+            bf4Var.animate().alpha(z2 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(k43Var).start();
         }
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.k4) {
-            gl.d0(this.m1, new bm0((byte) 11));
+    public final void e(CharSequence charSequence, boolean z) {
+        if (charSequence == null) {
+            charSequence = "";
         }
-    }
-
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        kk7.e().n(this, kk7.k4);
-    }
-
-    @Override // fx0
-    public final void p0() {
-        super.p0();
-        fu fuVar = this.m1;
-        if (fuVar != null) {
-            try {
-                int v0 = bkb.v0(bkb.Ei, this.J0);
-                if (v0 != this.l1) {
-                    this.l1 = v0;
-                    for (int i = 0; i < fuVar.getChildCount(); i++) {
-                        View childAt = fuVar.getChildAt(i);
-                        if ((childAt instanceof zw0) && ((zw0) childAt).getTextView() != null) {
-                            ((zw0) childAt).getTextView().setEmojiColor(v0);
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                fa4.g(e, true);
-            }
+        boolean z2 = false;
+        if (charSequence.length() > 12) {
+            charSequence = charSequence.subSequence(0, 12);
         }
+        bf4 bf4Var = this.s;
+        CharSequence m = pv3.m(charSequence, bf4Var.getPaint().getFontMetricsInt(), false, null, 0);
+        if (z && !ob6.a0) {
+            z2 = true;
+        }
+        bf4Var.c(m, z2, true);
     }
 }

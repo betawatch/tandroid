@@ -1,27 +1,30 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pg7 extends gw2 {
-    public Object a;
-    public Object b;
-    public Object c;
-    public /* synthetic */ Object d;
-    public final /* synthetic */ rg7 e;
-    public int f;
+public enum pg7 {
+    c(new int[]{0, 0, 0}, 0),
+    d(new int[]{10, 12, 14}, 1),
+    e(new int[]{9, 11, 13}, 2),
+    f(new int[]{0, 0, 0}, 3),
+    h(new int[]{8, 16, 16}, 4),
+    n(new int[]{0, 0, 0}, 7),
+    r(new int[]{8, 10, 12}, 8),
+    s(new int[]{0, 0, 0}, 5),
+    w(new int[]{0, 0, 0}, 9),
+    x(new int[]{8, 10, 12}, 13);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pg7(rg7 rg7Var, fw2 fw2Var) {
-        super(fw2Var);
-        this.e = rg7Var;
+    public final int[] a;
+    public final byte b;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    pg7(int[] iArr, int i) {
+        this.a = iArr;
+        this.b = i;
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.d = obj;
-        this.f |= TLObject.FLAG_31;
-        return this.e.c(null, this);
+    public final int a(xdc xdcVar) {
+        byte b = xdcVar.a;
+        return this.a[b <= 9 ? (char) 0 : b <= 26 ? (char) 1 : (char) 2];
     }
 }

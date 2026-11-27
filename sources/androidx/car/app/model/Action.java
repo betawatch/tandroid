@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class Action {
     public static final int FLAG_DEFAULT = 4;
@@ -15,7 +15,7 @@ public final class Action {
     private final int mFlags;
     private final CarIcon mIcon;
     private final boolean mIsEnabled;
-    private final yo7 mOnClickDelegate;
+    private final yr7 mOnClickDelegate;
     private final CarText mTitle;
     private final int mType;
     public static final Action APP_ICON = new Action(65538);
@@ -28,7 +28,7 @@ public final class Action {
 
     private Action(int i) {
         if (i == 1) {
-            w26.j("Standard action constructor used with non standard type");
+            lq5.j("Standard action constructor used with non standard type");
             throw null;
         }
         this.mTitle = null;
@@ -90,7 +90,7 @@ public final class Action {
         return this.mIcon;
     }
 
-    public yo7 getOnClickDelegate() {
+    public yr7 getOnClickDelegate() {
         return this.mOnClickDelegate;
     }
 
@@ -118,7 +118,7 @@ public final class Action {
         return "[type: " + typeToString(this.mType) + ", icon: " + this.mIcon + ", bkg: " + this.mBackgroundColor + ", isEnabled: " + this.mIsEnabled + "]";
     }
 
-    public Action(p5 p5Var) {
+    public Action(q5 q5Var) {
         throw null;
     }
 

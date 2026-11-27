@@ -1,45 +1,19 @@
 // default package
 
-import android.content.Context;
-import com.google.android.gms.tasks.TaskExecutors;
-import org.telegram.messenger.a;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class cme {
-    public static void a(String str, zw5 zw5Var, yw5 yw5Var) {
-        b(str, zw5Var, yw5Var, false);
+public final class cme implements zq7 {
+    public static final cme a = new cme();
+
+    static {
+        xnb.y(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, new tnd(1)), 2)));
     }
 
-    public static void b(String str, zw5 zw5Var, yw5 yw5Var, boolean z) {
-        if (z) {
-            try {
-                Context context = a.b;
-                synchronized (ae7.b) {
-                    try {
-                        ae7.d(context, TaskExecutors.MAIN_THREAD);
-                    } finally {
-                    }
-                }
-            } catch (IllegalStateException e) {
-                if (!z) {
-                    b(str, zw5Var, yw5Var, true);
-                    return;
-                } else {
-                    yw5Var.n(e);
-                    fa4.g(e, false);
-                    return;
-                }
-            } catch (Exception e2) {
-                yw5Var.n(e2);
-                fa4.g(e2, true);
-                return;
-            } catch (Throwable th) {
-                yw5Var.n(null);
-                fa4.g(th, false);
-                return;
-            }
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        gme.a().c(str).addOnSuccessListener(new ry4((Object) zw5Var, (byte) 18)).addOnFailureListener(new ry4((Object) yw5Var, (byte) 19));
+        throw null;
     }
 }

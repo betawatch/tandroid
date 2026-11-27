@@ -1,23 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kk6 {
-    public static final kk6 i = new kk6(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0);
-    public final long a;
-    public final long b;
-    public final long c;
-    public long e;
-    public int f;
-    public boolean g;
-    public final iq d = new iq();
-    public long h = -9223372036854775807L;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public kk6(long j, long j2, long j3, long j4, int i2) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
-        this.e = j4;
-        this.f = i2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kk6 extends c4 {
+    public static final Parcelable.Creator<kk6> CREATOR = new g3e(22);
+    public final String a;
+
+    public kk6(String str) {
+        xve.i(str, "json must not be null");
+        this.a = str;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.s(parcel, r);
     }
 }

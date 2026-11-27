@@ -1,300 +1,221 @@
 // default package
 
 import android.content.Context;
-import android.hardware.display.DisplayManager;
-import android.os.Build;
-import android.os.SystemClock;
-import android.view.Choreographer;
-import android.view.Surface;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class uac {
-    public final vk6 a;
-    public final zac b;
-    public final short c;
-    public boolean d;
-    public long g;
-    public boolean i;
-    public boolean l;
-    public boolean m;
-    public int e = 0;
-    public long f = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public float j = 1.0f;
-    public adb k = adb.a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class uac extends FrameLayout implements snb {
+    public final vnb a;
+    public final de0 b;
+    public final ff0 c;
+    public final ema d;
+    public final ImageView e;
+    public final rb0 f;
+    public String h;
+    public int n;
+    public final int r;
+    public int s;
+    public int w;
+    public final boolean x;
 
-    /* JADX WARN: Type inference failed for: r2v1, types: [int, short] */
-    public uac(Context context, vk6 vk6Var, long j) {
-        this.a = vk6Var;
-        this.c = (int) j;
-        this.b = new zac(context);
+    public uac(Context context, vnb vnbVar) {
+        super(context);
+        this.r = yac.t0;
+        this.x = true;
+        this.a = vnbVar;
+        this.s = aob.v0(aob.y6, vnbVar);
+        this.w = aob.v0(aob.n6, vnbVar);
+        this.f = new rb0((vnb) null);
+        de0 de0Var = new de0(context);
+        this.b = de0Var;
+        de0Var.setRoundRadius(hl.L(24.0f));
+        boolean z = ob6.a0;
+        addView(de0Var, tre.d(48, 48.0f, (z ? 5 : 3) | 48, z ? 0.0f : 11.0f, 11.0f, z ? 11.0f : 0.0f, 0.0f));
+        ff0 ff0Var = new ff0(context, (byte) 5);
+        this.c = ff0Var;
+        jn7.i(ff0Var);
+        yob.W(ff0Var, aob.G6, vnbVar);
+        ff0Var.setTextSize(17);
+        ff0Var.setGravity((ob6.a0 ? 5 : 3) | 48);
+        boolean z2 = ob6.a0;
+        addView(ff0Var, tre.d(-1, 20.0f, (z2 ? 5 : 3) | 48, z2 ? 28.0f : 72.0f, 14.5f, z2 ? 72.0f : 28.0f, 0.0f));
+        ema emaVar = new ema(context);
+        this.d = emaVar;
+        emaVar.setTextSize(14);
+        emaVar.setGravity((ob6.a0 ? 5 : 3) | 48);
+        boolean z3 = ob6.a0;
+        addView(emaVar, tre.d(-1, 20.0f, (z3 ? 5 : 3) | 48, z3 ? 28.0f : 72.0f, 37.5f, z3 ? 72.0f : 28.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        yob.s(imageView, aob.m6, vnbVar, PorterDuff.Mode.MULTIPLY);
+        imageView.setVisibility(8);
+        boolean z4 = ob6.a0;
+        addView(imageView, tre.d(-2, -2.0f, (z4 ? 5 : 3) | 16, z4 ? 0.0f : 16.0f, 0.0f, z4 ? 16.0f : 0.0f, 0.0f));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x00ac, code lost:
-    
-        if (r18 > 100000) goto L49;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x00b7, code lost:
-    
-        if (r31 >= r35) goto L49;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int a(long j, long j2, long j3, long j4, boolean z, boolean z2, long j5, long j6, jy0 jy0Var) {
-        long j7;
-        boolean z3;
-        long j8;
-        long j9;
-        long j10;
-        long j11;
-        float f;
-        float f2;
-        jy0Var.a = -9223372036854775807L;
-        jy0Var.b = -9223372036854775807L;
-        boolean z4 = this.d;
-        if (z4 && this.f == -9223372036854775807L) {
-            this.f = j2;
+    public final void a(String str, TLObject tLObject) {
+        TLRPC.Chat chat;
+        TLRPC.User user;
+        TLRPC.UserStatus userStatus;
+        de0 de0Var = this.b;
+        ema emaVar = this.d;
+        ff0 ff0Var = this.c;
+        if (tLObject == null && str == null) {
+            this.h = null;
+            ff0Var.k("");
+            emaVar.l("", false);
+            de0Var.setImageDrawable(null);
+            return;
         }
-        long j12 = (long) ((j - j2) / this.j);
-        if (z4) {
-            this.k.getClass();
-            j12 -= g8c.T(SystemClock.elapsedRealtime()) - j3;
+        this.h = str;
+        if (tLObject instanceof TLRPC.User) {
+            user = (TLRPC.User) tLObject;
+            chat = null;
+        } else if (tLObject instanceof TLRPC.Chat) {
+            chat = (TLRPC.Chat) tLObject;
+            user = null;
+        } else {
+            chat = null;
+            user = null;
         }
-        jy0Var.a = j12;
-        if (!z || z2) {
-            if (this.l) {
-                if (this.h == -9223372036854775807L || this.i) {
-                    int i = this.e;
-                    if (i != 0) {
-                        if (i == 1) {
-                            j7 = -9223372036854775807L;
-                        } else if (i == 2) {
-                            j7 = -9223372036854775807L;
-                        } else {
-                            if (i != 3) {
-                                sdb.a();
-                                return 0;
-                            }
-                            this.k.getClass();
-                            j7 = -9223372036854775807L;
-                            long T = g8c.T(SystemClock.elapsedRealtime()) - this.g;
-                            if (this.d) {
-                                long j13 = this.f;
-                                if (j13 != -9223372036854775807L) {
-                                    if (j13 != j2) {
-                                        if (j12 < -30000) {
-                                        }
-                                    }
-                                }
-                            }
-                            z3 = false;
-                        }
-                        z3 = true;
-                    } else {
-                        j7 = -9223372036854775807L;
-                        z3 = this.d;
-                    }
+        rb0 rb0Var = this.f;
+        if (user != null) {
+            rb0Var.q(user);
+        } else if (chat != null) {
+            rb0Var.p(chat);
+        } else {
+            rb0Var.j(this.n, "#", null, null);
+        }
+        ff0Var.k(user != null ? lbc.r(user) : chat.title);
+        if (this.h != null) {
+            emaVar.setTextColor(this.s);
+            emaVar.l(this.h, false);
+            if (de0Var != null) {
+                de0Var.f(user, rb0Var);
+            }
+        } else if (user != null) {
+            if (user.bot) {
+                emaVar.setTextColor(this.s);
+                if (user.bot_chat_history) {
+                    emaVar.l(ob6.M0(2131752927, null), false);
                 } else {
-                    z3 = false;
-                    j7 = -9223372036854775807L;
+                    emaVar.l(ob6.M0(2131752928, null), false);
                 }
-                if (z3) {
-                    return 0;
+            } else {
+                long j = user.id;
+                int i = this.r;
+                if (j == yac.h(i).e() || (((userStatus = user.status) != null && userStatus.expires > ConnectionsManager.getInstance(i).getCurrentTime()) || uc7.s1(i).a0.containsKey(Long.valueOf(user.id)))) {
+                    emaVar.setTextColor(this.w);
+                    emaVar.l(ob6.M0(2131747553, null), false);
+                } else {
+                    emaVar.setTextColor(this.s);
+                    emaVar.l(ob6.d0(i, user, null, null), false);
                 }
-                if (!this.d || j2 == this.f) {
-                    return 5;
-                }
-                this.k.getClass();
-                long nanoTime = System.nanoTime();
-                zac zacVar = this.b;
-                long j14 = (jy0Var.a * 1000) + nanoTime;
-                long j15 = zacVar.n;
-                if (j != j15) {
-                    zacVar.o = zacVar.l;
-                    zacVar.p = zacVar.m;
-                    zacVar.q = j15;
-                    zacVar.j = zacVar.k;
-                }
-                long j16 = zacVar.o;
-                if (j16 != -1) {
-                    if (j5 != j7) {
-                        f = (j6 - j16) * j5;
-                        f2 = zacVar.h;
-                    } else {
-                        f = (j - zacVar.q) * 1000;
-                        f2 = zacVar.h;
-                    }
-                    long j17 = zacVar.p + ((long) (f / f2));
-                    if (Math.abs(j14 - j17) <= 20000000) {
-                        j14 = j17;
-                    } else {
-                        zacVar.b();
-                    }
-                }
-                zacVar.l = j6;
-                zacVar.m = j14;
-                zacVar.n = j;
-                wac wacVar = zacVar.c;
-                if (wacVar != null) {
-                    long j18 = wacVar.c;
-                    long j19 = zacVar.c.d;
-                    if (j18 != j7 && j19 != j7) {
-                        long j20 = (((j14 - j18) / j19) * j19) + j18;
-                        if (j14 <= j20) {
-                            j8 = j20 - j19;
-                        } else {
-                            j20 += j19;
-                            j8 = j20;
-                        }
-                        long j21 = j20 - j14;
-                        long j22 = j14 - j8;
-                        long abs = Math.abs(j21 - j22);
-                        if (abs < j19 / 2) {
-                            j10 = j19;
-                            long j23 = j10 / 4;
-                            j9 = j8;
-                            if (abs < j23) {
-                                j11 = zacVar.j;
-                                if (j11 != 0) {
-                                    zacVar.k = j11;
-                                } else {
-                                    if (j21 < j22) {
-                                        j23 = -j23;
-                                    }
-                                    zacVar.k = j23;
-                                    j11 = j23;
-                                }
-                            } else {
-                                j11 = 0;
-                                zacVar.k = 0L;
-                            }
-                        } else {
-                            j9 = j8;
-                            j10 = j19;
-                            j11 = zacVar.j;
-                            zacVar.k = j11;
-                        }
-                        if (j21 + j11 >= j22) {
-                            j20 = j9;
-                        }
-                        j14 = j20 - ((j10 * 80) / 100);
-                    }
-                }
-                jy0Var.b = j14;
-                long j24 = (j14 - nanoTime) / 1000;
-                jy0Var.a = j24;
-                boolean z5 = (this.h == j7 || this.i) ? false : true;
-                if (this.a.U0(j24, j2, z2, z5)) {
-                    return 4;
-                }
-                long j25 = jy0Var.a;
-                return (j25 >= -30000 || z2) ? j25 <= 50000 ? 1 : 5 : z5 ? 3 : 2;
             }
-            if (this.a.U0(j12, j2, z2, true)) {
-                return 4;
+            de0Var.f(user, rb0Var);
+        } else if (chat != null) {
+            emaVar.setTextColor(this.s);
+            if (!xc2.T(chat) || chat.megagroup) {
+                int i2 = chat.participants_count;
+                if (i2 != 0) {
+                    emaVar.l(ob6.G(i2, "Members", new Object[0]), false);
+                } else if (chat.has_geo) {
+                    emaVar.l(ob6.M0(2131748396, null), false);
+                } else if (xc2.t0(chat)) {
+                    emaVar.l(ob6.M0(2131748392, null), false);
+                } else {
+                    emaVar.l(ob6.M0(2131748395, null), false);
+                }
+            } else {
+                int i3 = chat.participants_count;
+                if (i3 != 0) {
+                    emaVar.l(ob6.G(i3, "Subscribers", new Object[0]), false);
+                } else if (xc2.t0(chat)) {
+                    emaVar.l(ob6.M0(2131752288, null), false);
+                } else {
+                    emaVar.l(ob6.M0(2131752299, null), false);
+                }
             }
-            if (!this.d || jy0Var.a >= 30000) {
-                this.m = true;
-                return 5;
-            }
+            de0Var.f(chat, rb0Var);
+        } else {
+            de0Var.setImageDrawable(rb0Var);
         }
-        return 3;
+        de0Var.setRoundRadius(hl.L((chat == null || !chat.forum) ? 24.0f : 14.0f));
+        ImageView imageView = this.e;
+        if (imageView.getVisibility() != 0) {
+            imageView.getVisibility();
+        } else {
+            imageView.setVisibility(8);
+            imageView.setImageResource(0);
+        }
     }
 
-    public final boolean b(boolean z) {
-        if (z && (this.e == 3 || (this.m && !this.l))) {
-            this.h = -9223372036854775807L;
-            return true;
-        }
-        if (this.h == -9223372036854775807L) {
-            return false;
-        }
-        this.k.getClass();
-        if (SystemClock.elapsedRealtime() < this.h) {
-            return true;
-        }
-        this.h = -9223372036854775807L;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
         return false;
     }
 
-    public final void c(boolean z) {
-        long j;
-        this.i = z;
-        long j2 = this.c;
-        if (j2 > 0) {
-            this.k.getClass();
-            j = SystemClock.elapsedRealtime() + j2;
-        } else {
-            j = -9223372036854775807L;
-        }
-        this.h = j;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
     }
 
-    public final void d() {
-        this.d = true;
-        this.k.getClass();
-        this.g = g8c.T(SystemClock.elapsedRealtime());
-        zac zacVar = this.b;
-        zacVar.d = true;
-        zacVar.b();
-        if (!zacVar.b) {
-            DisplayManager displayManager = (DisplayManager) zacVar.a.getSystemService("display");
-            wac wacVar = null;
-            if (displayManager != null) {
-                try {
-                    Choreographer choreographer = Choreographer.getInstance();
-                    wacVar = Build.VERSION.SDK_INT >= 33 ? new yac(choreographer, displayManager) : new xac(choreographer, displayManager);
-                } catch (RuntimeException e) {
-                    lad.g("VideoFrameReleaseHelper", "Vsync sampling disabled due to platform error", e);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(70.0f), TLObject.FLAG_30));
+    }
+
+    public void setCurrentId(int i) {
+        this.n = i;
+    }
+
+    public void setNameTypeface(Typeface typeface) {
+        this.c.setTypeface(typeface);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        int i;
+        int i2;
+        try {
+            int i3 = this.s;
+            int i4 = this.w;
+            vnb vnbVar = this.a;
+            if (this.x) {
+                this.s = aob.v0(aob.y6, vnbVar);
+                this.w = aob.v0(aob.n6, vnbVar);
+            }
+            ema emaVar = this.d;
+            if (emaVar != null) {
+                int textColor = emaVar.getTextColor();
+                if (textColor == i4 && i4 != (i2 = this.w)) {
+                    emaVar.setTextColor(i2);
+                } else {
+                    if (textColor != i3 || i3 == (i = this.s)) {
+                        return;
+                    }
+                    emaVar.setTextColor(i);
                 }
             }
-            zacVar.c = wacVar;
-            zacVar.b = true;
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        wac wacVar2 = zacVar.c;
-        if (wacVar2 != null) {
-            wacVar2.a();
-        }
-        zacVar.c(false);
     }
 
-    public final void e(int i) {
-        if (i == 0) {
-            this.e = 1;
-        } else if (i == 1) {
-            this.e = 0;
-        } else {
-            if (i != 2) {
-                sdb.a();
-                return;
-            }
-            this.e = Math.min(this.e, 2);
-        }
-        this.b.b();
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 
-    public final void f(Surface surface) {
-        this.l = surface != null;
-        this.m = false;
-        zac zacVar = this.b;
-        if (zacVar.e != surface) {
-            zacVar.a();
-            zacVar.e = surface;
-            zacVar.c(true);
-        }
-        this.e = Math.min(this.e, 1);
-    }
-
-    public final void g(float f) {
-        gre.f(f > 0.0f);
-        if (f == this.j) {
-            return;
-        }
-        this.j = f;
-        zac zacVar = this.b;
-        zacVar.h = f;
-        zacVar.c(false);
+    public void setCheckDisabled(boolean z) {
     }
 }

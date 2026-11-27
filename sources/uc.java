@@ -1,61 +1,71 @@
 // default package
 
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class uc implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ id b;
 
-    public /* synthetic */ uc(View view, byte b) {
+    public /* synthetic */ uc(id idVar, byte b) {
         this.a = b;
-        this.b = view;
+        this.b = idVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        View view = this.b;
+        id idVar = this.b;
         switch (b) {
             case 0:
-                if (view instanceof bjb) {
-                    bjb bjbVar = (bjb) view;
-                    if (!bjbVar.a) {
-                        bjbVar.a = true;
-                        bjbVar.invalidate();
+                idVar.dismiss();
+                break;
+            case 1:
+                if (!idVar.isShowing()) {
+                    try {
+                        idVar.show();
                         break;
+                    } catch (Exception unused) {
+                        return;
                     }
                 }
                 break;
-            case 1:
-                view.setBackgroundDrawable(null);
-                break;
             case 2:
-            case 4:
-                view.callOnClick();
-                break;
+                try {
+                    idVar.dismiss();
+                    break;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
+                }
             case 3:
-                view.performClick();
+                idVar.dismiss();
+                break;
+            case 4:
+                idVar.dismiss();
                 break;
             case 5:
-                view.invalidate();
-                break;
-            case 6:
-                ((InputMethodManager) view.getContext().getSystemService("input_method")).showSoftInput(view, 0);
-                break;
-            case 7:
-                gba.H(0);
-                ((uib) view).c.c(k96.M0(2131744160, null), true, true);
-                break;
-            case 8:
-                gba.H(1);
-                ((uib) view).c.c(k96.M0(2131744159, null), true, true);
-                break;
+                String[] strArr = MediaController.W1;
+                try {
+                    idVar.dismiss();
+                    break;
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                    return;
+                }
             default:
-                gba.H(2);
-                ((uib) view).c.c(k96.M0(2131744158, null), true, true);
+                idVar.dismiss();
+                e S = LaunchActivity.S();
+                if (S != null) {
+                    v21 Q = d31.b0(S).Q(R.raw.error, 36, ob6.M0(2131748306, null));
+                    Q.u = true;
+                    Q.j();
+                    break;
+                }
                 break;
         }
     }

@@ -1,37 +1,8 @@
 // default package
 
-import java.util.Iterator;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ged extends vad {
-    public final transient med h;
-    public final transient jed n;
-
-    public ged(med medVar, jed jedVar) {
-        super((byte) 0);
-        this.h = medVar;
-        this.n = jedVar;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.h.get(obj) != null;
-    }
-
-    @Override // x8d
-    public final int h(Object[] objArr) {
-        return this.n.h(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.n.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        this.h.getClass();
-        return 1;
-    }
+public interface ged extends IInterface {
 }

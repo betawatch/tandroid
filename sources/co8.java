@@ -1,54 +1,42 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_fragment;
-import org.telegram.ui.ProfileActivity;
+import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class co8 extends ClickableSpan {
-    public final /* synthetic */ TLRPC.TL_username a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ ko8 c;
+public final class co8 extends GestureDetector.SimpleOnGestureListener {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ gkc c;
 
-    public co8(ko8 ko8Var, TLRPC.TL_username tL_username, String str) {
-        this.c = ko8Var;
-        this.a = tL_username;
-        this.b = str;
+    public co8(gkc gkcVar) {
+        this.c = gkcVar;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        TLRPC.TL_username tL_username = this.a;
-        boolean z = tL_username.editable;
-        ProfileActivity profileActivity = this.c.e;
-        if (!z) {
-            if (profileActivity.o5 != this) {
-                profileActivity.v3(this);
-                TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
-                TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
-                tL_inputCollectibleUsername.username = tL_username.username;
-                tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
-                profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new hj7(this, tL_username, (byte) 14)), profileActivity.getClassGuid());
-                return;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        this.a = true;
+        return super.onDown(motionEvent);
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        float x = motionEvent.getX() - motionEvent2.getX();
+        float y = motionEvent.getY() - motionEvent2.getY();
+        if (Math.abs(x) > hl.Z0(true, 0.4f) && Math.abs(x) / 3.0f > y && this.a && !this.b) {
+            this.a = false;
+            jt jtVar = new jt(this, x, (byte) 3);
+            gkc gkcVar = this.c;
+            ValueAnimator valueAnimator = gkcVar.V;
+            if (valueAnimator != null) {
+                this.b = true;
+                hl.d3(jtVar, (valueAnimator.getDuration() - gkcVar.V.getCurrentPlayTime()) + 50);
+            } else {
+                jtVar.run();
             }
-            return;
         }
-        profileActivity.v3(null);
-        String str = profileActivity.getMessagesController().N2 + "/" + this.b;
-        TLRPC.Chat chat = profileActivity.F2;
-        if (chat == null || !chat.noforwards) {
-            gl.g(str);
-            profileActivity.M.j(56, 0L, null);
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
-        textPaint.setColor(textPaint.linkColor);
+        return super.onScroll(motionEvent, motionEvent2, f, f2);
     }
 }

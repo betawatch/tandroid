@@ -1,204 +1,146 @@
 // default package
 
+import android.graphics.Canvas;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.p;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ulb implements nl2 {
-    public final /* synthetic */ qmb a;
+public final class ulb extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public RadioButton c;
+    public boolean d;
+    public int e;
+    public float f;
+    public boolean h;
+    public byte n;
 
-    public ulb(qmb qmbVar) {
-        this.a = qmbVar;
+    static {
+        new qm("animationProgress", (byte) 18);
     }
 
-    @Override // nl2
-    public final void a(boolean z) {
-        int i;
-        int i2;
-        qmb qmbVar = this.a;
-        zjb zjbVar = qmbVar.w;
-        if (!z) {
-            ij.T(qmbVar, 1, null, null);
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setAnimationProgress(float f) {
+        this.f = f;
+        getMeasuredWidth();
+        hl.L(40.0f);
+        getMeasuredHeight();
+    }
+
+    public final void b(String str, String str2, boolean z) {
+        TextView textView = this.a;
+        textView.setText(str);
+        TextView textView2 = this.b;
+        textView2.setText(str2);
+        this.c.a(false, false);
+        this.d = z;
+        textView2.setVisibility(0);
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(TextUtils.TruncateAt.END);
+        textView2.setPadding(0, 0, 0, 0);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
+        layoutParams.height = -2;
+        layoutParams.topMargin = hl.L(10.0f);
+        textView.setLayoutParams(layoutParams);
+        setWillNotDraw(!z);
+    }
+
+    public final void c() {
+        RadioButton radioButton = this.c;
+        TextView textView = this.b;
+        TextView textView2 = this.a;
+        byte b = this.n;
+        boolean z = this.h;
+        boolean z2 = ob6.a0;
+        if (z == z2) {
             return;
         }
-        if (zjbVar.r == null) {
-            qmbVar.finishFragment();
-            i2 = ((d) qmbVar).currentAccount;
-            na7.q1(i2).B4(zjbVar.b, zjbVar);
-            kk7.e().k(kk7.u4, zjbVar.b, zjbVar);
-            return;
-        }
-        StringBuilder sb = new StringBuilder("https://");
-        i = ((d) qmbVar).currentAccount;
-        sb.append(na7.q1(i).N2);
-        sb.append("/addtheme/");
-        sb.append(zjbVar.r.slug);
-        String sb2 = sb.toString();
-        qmbVar.showDialog(new taa(qmbVar.getParentActivity(), null, sb2, false, sb2, false, null));
+        this.h = z2;
+        textView2.setGravity((z2 ? 5 : 3) | 16);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView2.getLayoutParams();
+        boolean z3 = ob6.a0;
+        layoutParams.gravity = (z3 ? 5 : 3) | 48;
+        layoutParams.leftMargin = hl.L(z3 ? b : 64.0f);
+        layoutParams.rightMargin = hl.L(ob6.a0 ? 64.0f : b);
+        textView2.setLayoutParams(layoutParams);
+        textView.setGravity(ob6.a0 ? 5 : 3);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) textView.getLayoutParams();
+        boolean z4 = ob6.a0;
+        layoutParams2.gravity = (z4 ? 5 : 3) | 48;
+        layoutParams2.leftMargin = hl.L(z4 ? b : 64.0f);
+        layoutParams2.rightMargin = hl.L(ob6.a0 ? 64.0f : b);
+        textView.setLayoutParams(layoutParams2);
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) radioButton.getLayoutParams();
+        layoutParams3.gravity = (ob6.a0 ? 5 : 3) | 16;
+        radioButton.setLayoutParams(layoutParams3);
     }
 
-    @Override // nl2
-    public final void b() {
-        qmb qmbVar = this.a;
-        if (qmbVar.getParentActivity() != null) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qmbVar.getParentActivity());
-            String M0 = k96.M0(2131751472, null);
-            hd hdVar = alertDialog$Builder.a;
-            hdVar.S = M0;
-            hdVar.U = k96.M0(2131751473, null);
-            alertDialog$Builder.j(k96.M0(2131751586, null), new hza(this, (byte) 15));
-            alertDialog$Builder.g(k96.M0(2131752577, null), null);
-            qmbVar.showDialog(hdVar);
-            TextView textView = (TextView) hdVar.c(-1);
-            if (textView != null) {
-                zkb.X(textView, bkb.p7, qmbVar.a);
-            }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(64.0f) : 0), getMeasuredHeight() - 1, aob.j0);
         }
     }
 
-    @Override // nl2
-    public final void c(int i, int i2, boolean z) {
-        qmb qmbVar = this.a;
-        if (qmbVar.b == 2) {
-            qmbVar.e1(i, i2, true);
-            return;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        TextView textView = this.b;
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setCheckable(true);
+        RadioButton radioButton = this.c;
+        accessibilityNodeInfo.setChecked(radioButton.f);
+        accessibilityNodeInfo.setContentDescription(ob6.M0(radioButton.f ? 2131747619 : 2131747621, null));
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.a.getText());
+        if (!TextUtils.isEmpty(textView.getText())) {
+            sb.append("\n");
+            sb.append(textView.getText());
         }
-        Runnable runnable = qmbVar.a0;
-        zjb zjbVar = qmbVar.w;
-        if (i2 != -1) {
-            int i3 = qmbVar.Z;
-            if (i3 != -1 && i3 != i2) {
-                runnable.run();
-            }
-            qmbVar.Y = i;
-            qmbVar.Z = i2;
-            if (z) {
-                runnable.run();
-                return;
-            } else {
-                if (qmbVar.b0) {
-                    return;
-                }
-                qmbVar.b0 = true;
-                qmbVar.fragmentView.postDelayed(runnable, 16L);
-                return;
-            }
-        }
-        int i4 = qmbVar.n;
-        if (i4 == 1 || i4 == 2) {
-            long j = qmbVar.K;
-            if (j != 0) {
-                zjbVar.j = j;
-            } else {
-                zjbVar.j = 0L;
-            }
-            long j2 = qmbVar.L;
-            if (j2 != 0) {
-                zjbVar.k = j2;
-            } else {
-                zjbVar.k = 0L;
-            }
-            long j3 = qmbVar.M;
-            if (j3 != 0) {
-                zjbVar.l = j3;
-            } else {
-                zjbVar.l = 0L;
-            }
-            long j4 = qmbVar.N;
-            if (j4 != 0) {
-                zjbVar.m = j4;
-            } else {
-                zjbVar.m = 0L;
-            }
-            zjbVar.n = qmbVar.Q;
-            if (i4 == 2) {
-                int C0 = bkb.C0(bkb.De);
-                int C02 = bkb.C0(bkb.Ee);
-                int C03 = bkb.C0(bkb.Fe);
-                int C04 = bkb.C0(bkb.Ge);
-                int i5 = (int) zjbVar.k;
-                int i6 = (int) zjbVar.l;
-                int i7 = (int) zjbVar.m;
-                int i8 = (int) zjbVar.j;
-                p pVar = qmbVar.X;
-                if (i7 != 0) {
-                    C04 = i7;
-                }
-                pVar.e(C04, 3);
-                p pVar2 = qmbVar.X;
-                if (i6 != 0) {
-                    C03 = i6;
-                }
-                pVar2.e(C03, 2);
-                p pVar3 = qmbVar.X;
-                if (i5 != 0) {
-                    C02 = i5;
-                }
-                pVar3.e(C02, 1);
-                p pVar4 = qmbVar.X;
-                if (i8 != 0) {
-                    C0 = i8;
-                }
-                pVar4.e(C0, 0);
-            }
-        }
-        int i9 = qmbVar.n;
-        if (i9 == 1 || i9 == 3) {
-            int i10 = qmbVar.F;
-            if (i10 != 0) {
-                zjbVar.e = i10;
-            } else {
-                zjbVar.e = 0;
-            }
-            int i11 = qmbVar.G;
-            if (i11 != 0) {
-                zjbVar.f = i11;
-            } else {
-                zjbVar.f = 0;
-            }
-            int i12 = qmbVar.H;
-            if (i12 != 0) {
-                zjbVar.g = i12;
-            } else {
-                zjbVar.g = 0;
-            }
-            int i13 = qmbVar.I;
-            if (i13 != 0) {
-                zjbVar.h = i13;
-            } else {
-                zjbVar.h = 0;
-                i13 = 0;
-            }
-            if (i9 == 3) {
-                qmbVar.X.e(i13, 3);
-                qmbVar.X.e(zjbVar.g, 2);
-                qmbVar.X.e(zjbVar.f, 1);
-                p pVar5 = qmbVar.X;
-                int i14 = zjbVar.e;
-                if (i14 == 0) {
-                    i14 = zjbVar.c;
-                }
-                pVar5.e(i14, 0);
-            }
-        }
-        bkb.r1(false, false);
-        qmbVar.w0.h1();
+        accessibilityNodeInfo.setContentDescription(sb);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
     }
 
-    @Override // nl2
-    public final int d(int i) {
-        zjb zjbVar;
-        qmb qmbVar = this.a;
-        if (qmbVar.n != 3) {
-            return 0;
-        }
-        akb akbVar = qmbVar.g0;
-        if (akbVar.T && i == 0 && (zjbVar = (zjb) akbVar.b0.get(bkb.n)) != null) {
-            return zjbVar.e;
-        }
-        return 0;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(this.b.getVisibility() == 0 ? 64.0f : this.e) + (this.d ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        motionEvent.getX();
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        clearAnimation();
+        super.setBackgroundColor(i);
+    }
+
+    public void setChecked(boolean z) {
+        this.c.a(z, true);
+    }
+
+    public void setHeight(int i) {
+        this.e = i;
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z) {
+        super.setPressed(z);
+    }
+
+    public void setTypeface(Typeface typeface) {
+        this.a.setTypeface(typeface);
     }
 }

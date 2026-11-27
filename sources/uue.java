@@ -1,23 +1,19 @@
 // default package
 
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class uue {
-    public static knd a(fab fabVar) {
-        ghd ghdVar = (ghd) ae7.c().a(ghd.class);
-        vme vmeVar = (vme) ghdVar.a.c(fabVar);
-        Executor executor = (Executor) ghdVar.b.a.get();
-        sef b = aff.b();
-        knd kndVar = new knd(vmeVar, executor);
-        ntb ntbVar = new ntb();
-        ntbVar.c = v4f.b;
-        v8b v8bVar = new v8b((byte) 20, false);
-        v8bVar.c = fabVar.a();
-        v8bVar.b = m5f.b;
-        ntbVar.d = new yaf(v8bVar);
-        yjb.c(1, new vc1(b, new qx(ntbVar, 1), p5f.O4, b.c(), (byte) 4));
-        return kndVar;
+public final class uue implements zq7 {
+    public static final uue a = new uue();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

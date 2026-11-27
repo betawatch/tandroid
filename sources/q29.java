@@ -1,202 +1,158 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class q29 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ w39 a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ r29 d;
-    public final /* synthetic */ cu6 e;
+public final class q29 extends FrameLayout {
+    public final e29 a;
+    public final e29 b;
+    public final hf0 c;
+    public m88 d;
+    public p29 e;
+    public int f;
 
-    public q29(cu6 cu6Var, w39 w39Var, ArrayList arrayList, boolean z, r29 r29Var) {
-        this.e = cu6Var;
-        this.a = w39Var;
-        this.b = arrayList;
-        this.c = z;
-        this.d = r29Var;
+    public q29(Activity activity) {
+        super(activity);
+        this.f = 0;
+        setWillNotDraw(false);
+        e29 e29Var = new e29(activity);
+        this.a = e29Var;
+        e29 e29Var2 = new e29(activity);
+        this.b = e29Var2;
+        e29Var.f(R.raw.star_stroke, 37, 37, null);
+        e29Var2.f(R.raw.star_fill, 37, 37, null);
+        e29Var2.setAlpha(0.0f);
+        addView(e29Var, tre.c(37.0f, 37));
+        addView(e29Var2, tre.c(37.0f, 37));
+        hf0 h0 = aob.h0(hl.L(37.0f), 0, vm2.o(-1, 76));
+        this.c = h0;
+        h0.setCallback(this);
+        setClickable(true);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        final ArrayList arrayList;
-        int height;
-        int i9;
-        long min;
-        View view2;
-        cu6 cu6Var = this.e;
-        HashMap hashMap = (HashMap) cu6Var.w;
-        o39 o39Var = (o39) cu6Var.e;
-        o39Var.removeOnLayoutChangeListener(this);
-        final ArrayList arrayList2 = new ArrayList();
-        o39Var.D0();
-        int childCount = o39Var.getChildCount();
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        boolean z = false;
-        while (true) {
-            arrayList = this.b;
-            if (i10 >= childCount) {
-                break;
-            }
-            View childAt = o39Var.getChildAt(i10);
-            arrayList2.add(childAt);
-            if (childAt.getTop() < i11) {
-                i11 = childAt.getTop();
-            }
-            if (childAt.getBottom() > i12) {
-                i12 = childAt.getBottom();
-            }
-            if (childAt instanceof ni5) {
-                ((ni5) childAt).b(true, false);
-            }
-            w39 w39Var = this.a;
-            if (w39Var != null && (w39Var.b || cu6Var.c)) {
-                o39Var.getClass();
-                long c = w39Var.c(RecyclerView.R(childAt));
-                if (hashMap.containsKey(Long.valueOf(c)) && (view2 = (View) hashMap.get(Long.valueOf(c))) != 0) {
-                    if (view2 instanceof ni5) {
-                        ((ni5) view2).b(false, false);
-                    }
-                    arrayList.remove(view2);
-                    kse kseVar = (kse) cu6Var.r;
-                    if (kseVar != null) {
-                        kseVar.d(view2);
-                    }
-                    int top = childAt.getTop() - view2.getTop();
-                    if (top != 0) {
-                        i13 = top;
-                    }
-                    z = true;
-                }
-            }
-            i10++;
-        }
-        hashMap.clear();
-        int size = arrayList.size();
-        int i14 = 0;
-        int i15 = 0;
-        int i16 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        while (i15 < size) {
-            Object obj = arrayList.get(i15);
-            i15++;
-            View view3 = (View) obj;
-            int bottom = view3.getBottom();
-            int top2 = view3.getTop();
-            if (bottom > i14) {
-                i14 = bottom;
-            }
-            if (top2 < i16) {
-                i16 = top2;
-            }
-            if (view3.getParent() == null) {
-                o39Var.addView(view3);
-                ((t26) cu6Var.f).L(view3);
-            }
-            if (view3 instanceof ni5) {
-                ((ni5) view3).b(true, true);
-            }
-        }
-        int i17 = i16 == Integer.MAX_VALUE ? 0 : i16;
-        kse kseVar2 = (kse) cu6Var.r;
-        if (kseVar2 != null) {
-            kseVar2.b();
-        }
-        if (arrayList.isEmpty()) {
-            i9 = Math.abs(i13);
-        } else {
-            if (this.c) {
-                height = -i11;
-            } else {
-                i14 = o39Var.getHeight() - i17;
-                height = i12 - o39Var.getHeight();
-            }
-            i9 = height + i14;
-        }
-        final int paddingBottom = o39Var.getPaddingBottom();
-        ValueAnimator valueAnimator = (ValueAnimator) cu6Var.h;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            ((ValueAnimator) cu6Var.h).cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        cu6Var.h = ofFloat;
-        final boolean z2 = this.c;
-        final int i18 = i9;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: p29
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                boolean z3;
-                int i19;
-                cu6 cu6Var2 = q29.this.e;
-                o39 o39Var2 = (o39) cu6Var2.e;
-                float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                ArrayList arrayList3 = arrayList;
-                int size2 = arrayList3.size();
-                int i20 = 0;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        p29 p29Var;
+        int action = motionEvent.getAction();
+        byte b = 0;
+        if (action == 0) {
+            p29 p29Var2 = this.e;
+            if (p29Var2 != null) {
+                q29[] q29VarArr = (q29[]) ((jo0) ((jz7) p29Var2).b).d;
                 while (true) {
-                    z3 = z2;
-                    i19 = i18;
-                    if (i20 >= size2) {
+                    if (b > this.f) {
                         break;
                     }
-                    View view4 = (View) arrayList3.get(i20);
-                    float y = view4.getY();
-                    if (view4.getY() + view4.getMeasuredHeight() >= 0.0f && y <= o39Var2.getMeasuredHeight()) {
-                        if (z3) {
-                            view4.setTranslationY((-i19) * floatValue);
-                        } else {
-                            view4.setTranslationY(i19 * floatValue);
-                        }
-                    }
-                    i20++;
+                    q29 q29Var = q29VarArr[b];
+                    e29 e29Var = q29Var.a;
+                    e29 e29Var2 = q29Var.b;
+                    e29Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    e29Var2.animate().alpha(1.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    b++;
                 }
-                int paddingBottom2 = paddingBottom - o39Var2.getPaddingBottom();
-                ArrayList arrayList4 = arrayList2;
-                int size3 = arrayList4.size();
-                for (int i21 = 0; i21 < size3; i21++) {
-                    View view5 = (View) arrayList4.get(i21);
-                    if (z3) {
-                        view5.setTranslationY(((1.0f - floatValue) * i19) + paddingBottom2);
-                    } else {
-                        view5.setTranslationY((1.0f - floatValue) * (-i19));
-                    }
-                }
-                o39Var2.invalidate();
-                s29 s29Var = (s29) cu6Var2.n;
-                if (s29Var != null) {
-                    s29Var.f();
+                for (int i = r7 + 1; i < q29VarArr.length; i++) {
+                    q29 q29Var2 = q29VarArr[i];
+                    e29 e29Var3 = q29Var2.a;
+                    e29 e29Var4 = q29Var2.b;
+                    e29Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    e29Var4.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
                 }
             }
-        });
-        ((ValueAnimator) cu6Var.h).addListener(new eh8(this, arrayList2, (byte) 5));
-        if (!cu6Var.d) {
-            if (z) {
-                min = 600;
-            } else {
-                long measuredHeight = (long) (((i18 / o39Var.getMeasuredHeight()) + 1.0f) * 200.0f);
-                min = Math.min(measuredHeight >= 300 ? measuredHeight : 300L, 1300L);
+        } else if (action == 1) {
+            p29 p29Var3 = this.e;
+            if (p29Var3 != null) {
+                q29[] q29VarArr2 = (q29[]) ((jo0) ((jz7) p29Var3).b).d;
+                for (int i2 = 0; i2 <= this.f; i2++) {
+                    q29 q29Var3 = q29VarArr2[i2];
+                    e29 e29Var5 = q29Var3.a;
+                    e29 e29Var6 = q29Var3.b;
+                    e29Var5.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    e29Var6.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                }
             }
-            ((ValueAnimator) cu6Var.h).setDuration(min);
-            ((ValueAnimator) cu6Var.h).setInterpolator(s33.h);
-        } else if (z) {
-            ((ValueAnimator) cu6Var.h).setDuration(150L);
-            ((ValueAnimator) cu6Var.h).setInterpolator(s33.g);
-        } else {
-            long measuredHeight2 = (long) (((i18 / o39Var.getMeasuredHeight()) + 1.0f) * 200.0f);
-            ((ValueAnimator) cu6Var.h).setDuration(Math.min(measuredHeight2 >= 300 ? measuredHeight2 : 300L, 1300L));
-            ((ValueAnimator) cu6Var.h).setInterpolator(s33.h);
+            if (this.d != null) {
+                int[] iArr = new int[2];
+                getLocationOnScreen(iArr);
+                int i3 = iArr[0];
+                int i4 = iArr[1];
+                m88 m88Var = this.d;
+                float width = (getWidth() / 2.0f) + i3;
+                float height = (getHeight() / 2.0f) + i4;
+                int i5 = this.f + 1;
+                jo0 jo0Var = (jo0) m88Var.b;
+                Activity activity = (Activity) m88Var.c;
+                if (i5 >= 4) {
+                    e29 e29Var7 = new e29(activity);
+                    int L = hl.L(133.0f);
+                    e29Var7.f(R.raw.rate, jn7.Q1, jn7.Q1, null);
+                    int[] iArr2 = new int[2];
+                    jo0Var.getLocationOnScreen(iArr2);
+                    int i6 = iArr2[0];
+                    int i7 = iArr2[1];
+                    jo0Var.addView(e29Var7, tre.c(133.0f, jn7.Q1));
+                    float f = L / 2.0f;
+                    e29Var7.setTranslationX((width - i6) - f);
+                    e29Var7.setTranslationY((height - i7) - f);
+                    e29Var7.setOnAnimationEndListener(new o29(jo0Var, e29Var7, b));
+                    e29Var7.d();
+                }
+                wjc wjcVar = (wjc) jo0Var.e;
+                if (wjcVar != null) {
+                    wjcVar.b.M = i5;
+                }
+            }
+        } else if (action == 3 && (p29Var = this.e) != null) {
+            for (q29 q29Var4 : (q29[]) ((jo0) ((jz7) p29Var).b).d) {
+                e29 e29Var8 = q29Var4.a;
+                e29 e29Var9 = q29Var4.b;
+                e29Var8.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                e29Var9.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+            }
         }
-        ((ValueAnimator) cu6Var.h).start();
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        hf0 hf0Var = this.c;
+        if (hf0Var != null) {
+            hf0Var.setState(getDrawableState());
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        hf0 hf0Var = this.c;
+        if (hf0Var != null) {
+            hf0Var.jumpToCurrentState();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int width = getWidth();
+        int height = getHeight();
+        hf0 hf0Var = this.c;
+        hf0Var.setBounds(0, 0, width, height);
+        hf0Var.draw(canvas);
+    }
+
+    public void setAllStarsProvider(p29 p29Var) {
+        this.e = p29Var;
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.c == drawable || super.verifyDrawable(drawable);
     }
 }

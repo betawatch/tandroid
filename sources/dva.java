@@ -1,371 +1,406 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.Locale;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dva extends b4c {
-    public static final /* synthetic */ int b = 0;
+public class dva {
+    public boolean B;
+    public Matrix[] C;
+    public float[][] D;
+    public int[] E;
+    public float[] F;
+    public boolean G;
+    public boolean M;
+    public vnb O;
+    public long Q;
+    public long R;
+    public boolean g;
+    public boolean h;
+    public qcc l;
+    public boolean m;
+    public final short p;
+    public boolean q;
+    public int z;
+    public final RectF a = new RectF();
+    public final RectF b = new RectF();
+    public final RectF c = new RectF();
+    public Bitmap[] d = new Bitmap[3];
+    public boolean[] e = new boolean[3];
+    public boolean[] f = new boolean[3];
+    public final Paint i = new Paint();
+    public float j = 0.0f;
+    public float k = 0.0f;
+    public final ArrayList n = new ArrayList();
+    public float o = 1.0f;
+    public byte r = 14;
+    public byte s = 12;
+    public byte t = 10;
+    public float u = 0.85f;
+    public float v = 0.85f;
+    public float w = 0.9f;
+    public short x = 2000;
+    public short y = 1000;
+    public final float A = 1000.0f / hl.r;
+    public boolean H = false;
+    public boolean I = true;
+    public boolean J = false;
+    public boolean K = false;
+    public boolean L = true;
+    public int N = -1;
+    public int P = aob.Lk;
+    public int S = 0;
 
-    static {
-        b4c.h(new dva());
+    /* JADX WARN: Multi-variable type inference failed */
+    public dva(int i) {
+        this.p = i;
+        this.B = i < 50;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x078a  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x078d  */
-    @Override // b4c
+    /* JADX WARN: Removed duplicated region for block: B:110:0x028d  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x030a  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0331 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x02e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        SpannableString spannableString;
-        int L;
-        boolean z2;
+    public final void a() {
         int i;
-        boolean z3;
-        String str;
-        int i2;
-        boolean z4;
-        gl5 gl5Var;
-        int i3;
-        String str2;
-        long j;
-        boolean z5;
-        eva evaVar = (eva) view;
-        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) c4cVar.H;
-        boolean z6 = c4cVar.r;
-        int i4 = evaVar.a;
-        SpannableString spannableString2 = evaVar.w;
-        SpannableString spannableString3 = evaVar.x;
-        be0 be0Var = evaVar.d;
-        pb0 pb0Var = evaVar.b;
-        TextView textView = evaVar.r;
-        TextView textView2 = evaVar.s;
-        be0 be0Var2 = evaVar.c;
-        TextView textView3 = evaVar.f;
-        Integer num = 0;
-        l46 l46Var = evaVar.n;
-        long n = cf3.n(starsTransaction.peer.peer);
-        boolean z7 = starsTransaction.amount instanceof TL_stars.TL_starsTonAmount;
-        int i5 = starsTransaction.flags;
-        boolean z8 = (i5 & 131072) == 0 && (i5 & 65536) != 0;
-        boolean z9 = !(n == 0 || starsTransaction.stargift_upgrade || starsTransaction.stargift_drop_original_details || starsTransaction.posts_search) || starsTransaction.subscription || starsTransaction.floodskip || !(starsTransaction.stargift == null || starsTransaction.stargift_upgrade || starsTransaction.stargift_drop_original_details) || (starsTransaction.gift && (starsTransaction.peer instanceof TL_stars.TL_starsTransactionPeerFragment));
-        evaVar.y = z9;
-        boolean z10 = z9;
-        LinearLayout.LayoutParams layoutParams = evaVar.h;
-        if (z10) {
-            spannableString = spannableString2;
-            L = 0;
-        } else {
-            spannableString = spannableString2;
-            L = gl.L(4.33f);
-        }
-        layoutParams.bottomMargin = L;
-        l46Var.setVisibility(evaVar.y ? 0 : 8);
-        textView.setTextSize(1, evaVar.y ? 13.0f : 14.0f);
-        textView.setText(k96.Q(starsTransaction.date));
-        if (starsTransaction.refund) {
-            textView.setText(TextUtils.concat(textView.getText(), " — ", k96.M0(2131744793, null)));
-        } else if (starsTransaction.failed) {
-            textView.setText(TextUtils.concat(textView.getText(), " — ", k96.M0(2131744873, null)));
-        } else if (starsTransaction.pending) {
-            textView.setText(TextUtils.concat(textView.getText(), " — ", k96.M0(2131744816, null)));
-        }
-        be0Var2.setTranslationX(0.0f);
-        be0Var2.setTranslationY(0.0f);
-        be0Var.setVisibility(8);
-        be0Var2.setRoundRadius(gl.L(46.0f));
-        if (starsTransaction.stargift_upgrade && starsTransaction.stargift != null) {
-            be0Var2.setImageDrawable(new jqa(be0Var2, starsTransaction.stargift, 46, 0.25f));
-            textView3.setText(k96.M0(2131749907, null));
-            l46Var.setVisibility(8);
-        } else if (starsTransaction.stargift_drop_original_details && starsTransaction.stargift != null) {
-            be0Var2.setImageDrawable(new jqa(be0Var2, starsTransaction.stargift, 46, 0.25f));
-            textView3.setText(k96.M0(2131749909, null));
-            l46Var.setVisibility(8);
-        } else {
-            if (!starsTransaction.posts_search) {
-                if (n != 0) {
-                    if (l7c.C(n)) {
-                        str = k96.M0(2131744688, null);
-                        be0Var2.setImageDrawable(eva.a(44, "fragment"));
-                        z3 = false;
-                    } else if (n >= 0) {
-                        TLRPC.User V1 = na7.q1(i4).V1(Long.valueOf(n));
-                        z3 = V1 == null;
-                        pb0Var.q(V1);
-                        be0Var2.f(V1, pb0Var);
-                        str = l7c.r(V1);
-                    } else {
-                        TLRPC.Chat K0 = na7.q1(i4).K0(Long.valueOf(-n));
-                        z3 = K0 == null;
-                        pb0Var.p(K0);
-                        be0Var2.f(K0, pb0Var);
-                        str = K0 == null ? "" : K0.title;
-                    }
-                    if (starsTransaction.stargift != null) {
-                        ol5 ol5Var = new ol5(16.0f, i4, l46Var);
-                        ol5Var.a(4.0f);
-                        ol5Var.f = false;
-                        SpannableString spannableString4 = new SpannableString("x");
-                        spannableString4.setSpan(ol5Var, 0, 1, 33);
-                        jva.e1(ol5Var.b, starsTransaction.stargift, 16);
-                        textView3.setText(str);
-                        if (starsTransaction.offer) {
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
-                            spannableStringBuilder.setSpan(new gm(starsTransaction.stargift.getDocument(), l46Var.getPaint().getFontMetricsInt()), 0, 1, 33);
-                            boolean negative = starsTransaction.amount.negative();
-                            boolean z11 = starsTransaction.refund;
-                            if (negative) {
-                                spannableStringBuilder.append((CharSequence) k96.M0(z11 ? 2131744976 : 2131744981, null));
-                            } else {
-                                spannableStringBuilder.append((CharSequence) k96.M0(z11 ? 2131744980 : 2131744977, null));
-                            }
-                            l46Var.setText(spannableStringBuilder);
-                        } else if (starsTransaction.stargift_resale) {
-                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x ");
-                            spannableStringBuilder2.setSpan(new gm(starsTransaction.stargift.getDocument(), l46Var.getPaint().getFontMetricsInt()), 0, 1, 33);
-                            boolean negative2 = starsTransaction.amount.negative();
-                            boolean z12 = starsTransaction.refund;
-                            if (negative2) {
-                                spannableStringBuilder2.append((CharSequence) k96.M0(z12 ? 2131744976 : 2131744979, null));
-                            } else {
-                                spannableStringBuilder2.append((CharSequence) k96.M0(z12 ? 2131744978 : 2131744977, null));
-                            }
-                            l46Var.setText(spannableStringBuilder2);
-                        } else if (starsTransaction.stargift_prepaid_upgrade) {
-                            l46Var.setText(TextUtils.concat(spannableString4, " ", k96.M0(2131749914, null)));
-                        } else {
-                            boolean z13 = starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique;
-                            boolean z14 = starsTransaction.refund;
-                            if (z13) {
-                                l46Var.setText(k96.M0(z14 ? 2131744974 : 2131744975, null));
-                            } else {
-                                boolean z15 = starsTransaction.stargift_auction_bid;
-                                if (z14) {
-                                    l46Var.setText(TextUtils.concat(spannableString4, " ", k96.M0(z15 ? 2131749913 : starsTransaction.amount.amount > 0 ? starsTransaction.stargift_upgrade ? 2131749910 : 2131749911 : 2131749912, null)));
-                                } else {
-                                    if (z15) {
-                                        i3 = 2131749916;
-                                    } else if (starsTransaction.amount.amount > 0) {
-                                        i3 = 2131749915;
-                                    } else if (starsTransaction.stargift_upgrade) {
-                                        str2 = null;
-                                        i3 = 2131749907;
-                                        l46Var.setText(TextUtils.concat(spannableString4, " ", k96.M0(i3, str2)));
-                                    } else {
-                                        i3 = 2131749908;
-                                    }
-                                    str2 = null;
-                                    l46Var.setText(TextUtils.concat(spannableString4, " ", k96.M0(i3, str2)));
-                                }
-                            }
-                        }
-                    } else if (starsTransaction.subscription) {
-                        textView3.setText(str);
-                        int i6 = starsTransaction.subscription_period;
-                        if (i6 == 2592000) {
-                            l46Var.setVisibility(0);
-                            l46Var.setText(k96.M0(2131744693, null));
-                        } else {
-                            String str3 = i6 == 300 ? "5 minutes" : "Minute";
-                            l46Var.setVisibility(0);
-                            Locale locale = Locale.US;
-                            l46Var.setText(str3.concat(" subscription fee"));
-                        }
-                    } else if (starsTransaction.phonegroup_message) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.M0(starsTransaction.reaction ? 2131744707 : 2131744708, null));
-                    } else if (starsTransaction.paid_message) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.H(',', "StarsTransactionMessageFee", starsTransaction.paid_messages));
-                    } else if (starsTransaction.premium_gift) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.M0(2131744698, null));
-                    } else if (z8) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.a0(null, null, 2131744924, bc.I0(starsTransaction.starref_commission_permille)));
-                    } else if (starsTransaction.gift) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.M0(2131744865, null));
-                    } else if ((starsTransaction.flags & TLObject.FLAG_13) != 0) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.M0(2131744856, null));
-                    } else if (starsTransaction.reaction) {
-                        textView3.setText(str);
-                        l46Var.setVisibility(z3 ? 8 : 0);
-                        l46Var.setText(k96.M0(2131744794, null));
-                    } else if (starsTransaction.extended_media.isEmpty()) {
-                        z2 = z7;
-                        if (starsTransaction.photo != null) {
-                            ol5 ol5Var2 = new ol5(14.0f, i4, l46Var);
-                            ol5Var2.a(4.0f);
-                            ol5Var2.f = false;
-                            SpannableString spannableString5 = new SpannableString("x");
-                            spannableString5.setSpan(ol5Var2, 0, 1, 33);
-                            ol5Var2.b.d0(gl5.p(usc.c(starsTransaction.photo)), "14_14", null, null, num, 0);
-                            textView3.setText(str);
-                            l46Var.setVisibility(z3 ? 8 : 0);
-                            String str4 = starsTransaction.title;
-                            l46Var.setText(vu3.m(TextUtils.concat(spannableString5, " ", str4 != null ? str4 : ""), l46Var.getPaint().getFontMetricsInt(), false, null, 0));
-                        } else {
-                            textView3.setText(str);
-                            l46Var.setVisibility(z3 ? 8 : 0);
-                            String str5 = starsTransaction.title;
-                            l46Var.setText(vu3.m(str5 != null ? str5 : "", l46Var.getPaint().getFontMetricsInt(), false, null, 0));
-                        }
-                    } else {
-                        if (z6) {
-                            textView3.setText(str);
-                            l46Var.setVisibility(0);
-                            l46Var.setText(k96.M0(2131744967, null));
-                        } else {
-                            textView3.setText(k96.M0(2131744967, null));
-                            l46Var.setVisibility(z3 ? 8 : 0);
-                            l46Var.setText(str);
-                        }
-                        evaVar.e = 0;
-                        int i7 = 0;
-                        for (int i8 = 2; i7 < Math.min(i8, starsTransaction.extended_media.size()); i8 = 2) {
-                            TLRPC.MessageMedia messageMedia = starsTransaction.extended_media.get(i7);
-                            be0 be0Var3 = i7 == 0 ? be0Var2 : be0Var;
-                            be0Var3.setRoundRadius(gl.L(12.0f));
-                            if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-                                i2 = 0;
-                                gl5 i9 = gl5.i(ba4.w(messageMedia.photo.sizes, gl.L(46.0f), true, null, false), messageMedia.photo);
-                                z4 = z7;
-                                gl5Var = i9;
-                            } else {
-                                i2 = 0;
-                                if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-                                    boolean z16 = z7;
-                                    gl5Var = gl5.c(ba4.w(messageMedia.document.thumbs, gl.L(46.0f), true, null, false), messageMedia.document);
-                                    z4 = z16;
-                                } else {
-                                    z4 = z7;
-                                    gl5Var = null;
-                                }
-                            }
-                            be0Var3.setVisibility(i2);
-                            Integer num2 = num;
-                            be0Var3.j(gl5Var, "46_46", null, null, null, num2);
-                            evaVar.e++;
-                            i7++;
-                            z7 = z4;
-                            num = num2;
-                        }
-                        z2 = z7;
-                        int i10 = 0;
-                        while (i10 < evaVar.e) {
-                            be0 be0Var4 = i10 == 0 ? be0Var2 : be0Var;
-                            float f = i10;
-                            be0Var4.setTranslationX(((f - (evaVar.e / 2.0f)) * gl.L(4.33f)) + gl.L(2.0f));
-                            be0Var4.setTranslationY((f - (evaVar.e / 2.0f)) * gl.L(4.33f));
-                            i10++;
-                        }
-                    }
-                } else {
-                    z2 = z7;
-                    if (starsTransaction.floodskip) {
-                        textView3.setText(k96.M0(2131744722, null));
-                        l46Var.setText(k96.H(',', "StarsTransactionFloodskipMessages", starsTransaction.floodskip_number));
-                        be0Var2.setImageDrawable(eva.a(44, "api"));
-                    } else {
-                        TL_stars.StarsTransactionPeer starsTransactionPeer = starsTransaction.peer;
-                        if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAppStore) {
-                            textView3.setText(k96.M0(2131744709, null));
-                            be0Var2.setImageDrawable(eva.a(44, "ios"));
-                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPlayMarket) {
-                            textView3.setText(k96.M0(2131744709, null));
-                            be0Var2.setImageDrawable(eva.a(44, "android"));
-                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerFragment) {
-                            if (starsTransaction.gift) {
-                                textView3.setText(k96.M0(2131744865, null));
-                                l46Var.setText(k96.M0(z2 ? 2131744691 : 2131744688, null));
-                                l46Var.setVisibility(0);
-                            } else {
-                                if (!z6) {
-                                    boolean z17 = starsTransaction.refund;
-                                    TL_stars.StarsAmount starsAmount = starsTransaction.amount;
-                                    if (!z17 ? !starsAmount.negative() : !starsAmount.positive()) {
-                                        i = 2131744714;
-                                        textView3.setText(k96.M0(i, null));
-                                    }
-                                }
-                                i = 2131744684;
-                                textView3.setText(k96.M0(i, null));
-                            }
-                            be0Var2.setImageDrawable(eva.a(44, "fragment"));
-                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPremiumBot) {
-                            textView3.setText(k96.M0(2131744724, null));
-                            be0Var2.setImageDrawable(eva.a(44, "premiumbot"));
-                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerUnsupported) {
-                            textView3.setText(k96.M0(2131744686, null));
-                            be0Var2.setImageDrawable(eva.a(44, "?"));
-                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAds) {
-                            textView3.setText(k96.M0(2131744725, null));
-                            be0Var2.setImageDrawable(eva.a(44, "ads"));
-                        } else {
-                            textView3.setText("");
-                            be0Var2.setImageDrawable(null);
-                        }
-                    }
-                }
-                TL_stars.StarsAmount starsAmount2 = starsTransaction.amount;
-                j = starsAmount2.amount;
-                if (j <= 0 || (j == 0 && starsAmount2.nanos > 0)) {
-                    textView2.setVisibility(0);
-                    zkb.X(textView2, bkb.kk, null);
-                    textView2.setText(TextUtils.concat("+", jva.F0(starsTransaction.amount), " ", !z2 ? spannableString3 : spannableString));
-                    z5 = z;
-                } else {
-                    if (j < 0 || (j == 0 && starsAmount2.nanos < 0)) {
-                        textView2.setVisibility(0);
-                        zkb.X(textView2, bkb.mk, null);
-                        textView2.setText(TextUtils.concat(jva.F0(starsTransaction.amount), " ", z2 ? spannableString3 : spannableString));
-                    } else {
-                        textView2.setVisibility(8);
-                    }
-                    z5 = z;
-                }
-                evaVar.E = z5;
-                evaVar.setWillNotDraw(!z5);
+        int L;
+        int i2 = 6;
+        int i3 = 3;
+        if (this.N == 43) {
+            if (this.d.length != 6) {
+                this.d = new Bitmap[6];
             }
-            be0Var2.setImageDrawable(eva.a(44, "search"));
-            textView3.setText(k96.M0(2131744699, null));
-            l46Var.setVisibility(8);
+            if (this.e.length != 6) {
+                this.e = new boolean[6];
+            }
+            if (this.f.length != 6) {
+                this.f = new boolean[6];
+            }
+            i = 6;
+        } else {
+            i = 3;
         }
-        z2 = z7;
-        TL_stars.StarsAmount starsAmount22 = starsTransaction.amount;
-        j = starsAmount22.amount;
-        if (j <= 0) {
+        int i4 = 0;
+        while (i4 < i) {
+            float f = this.u;
+            if (i4 == 0) {
+                L = hl.L(this.r);
+            } else if (i4 == 1) {
+                f = this.v;
+                L = hl.L(this.s);
+            } else {
+                f = this.w;
+                L = hl.L(this.t);
+            }
+            int i5 = this.N;
+            if (i5 == 9) {
+                this.d[i4] = hgb.d(i4 == 0 ? R.raw.premium_object_folder : i4 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                this.e[i4] = true;
+            } else {
+                int i6 = R.raw.premium_object_star2;
+                if (i5 == 27) {
+                    if (i4 == 0) {
+                        i6 = R.raw.filled_messages_paid;
+                    } else if (i4 == 1) {
+                        i6 = R.raw.filled_crown_on;
+                    }
+                    this.d[i4] = hgb.d(i6, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                    this.e[i4] = true;
+                } else {
+                    int i7 = R.raw.premium_object_like;
+                    if (i5 == 11 || i5 == 4) {
+                        if (i4 == 0) {
+                            i7 = R.raw.premium_object_smile1;
+                        } else if (i4 == 1) {
+                            i7 = R.raw.premium_object_smile2;
+                        }
+                        this.d[i4] = hgb.d(i7, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                        this.e[i4] = true;
+                    } else {
+                        int i8 = R.raw.premium_object_user;
+                        if (i5 == 22) {
+                            if (i4 != 0) {
+                                i8 = i4 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos;
+                            }
+                            this.d[i4] = hgb.d(i8, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == i3) {
+                            if (i4 == 0) {
+                                i7 = R.raw.premium_object_adsbubble;
+                            } else if (i4 != 1) {
+                                i7 = R.raw.premium_object_noads;
+                            }
+                            this.d[i4] = hgb.d(i7, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == 7) {
+                            if (i4 == 0) {
+                                i8 = R.raw.premium_object_video2;
+                            } else if (i4 == 1) {
+                                i8 = R.raw.premium_object_video;
+                            }
+                            this.d[i4] = hgb.d(i8, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == 43) {
+                            this.d[i4] = hgb.d(i4 == 0 ? R.raw.premium_object_list : i4 == 1 ? R.raw.premium_object_math : i4 == 2 ? R.raw.premium_object_table : i4 == i3 ? R.raw.premium_object_superscript : i4 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == 1001) {
+                            this.d[i4] = hgb.d(R.raw.premium_object_fire, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == 1002) {
+                            this.d[i4] = hgb.d(R.raw.premium_object_star2, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == 24) {
+                            this.d[i4] = hgb.d(i4 == 0 ? R.raw.premium_object_tag : i4 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, vm2.o(aob.v0(this.P, this.O), 30));
+                            this.e[i4] = true;
+                        } else if (i5 == 28) {
+                            if (i4 == 0) {
+                                this.d[i4] = hgb.d(R.raw.filled_premium_dollar, L, L, vm2.o(aob.v0(this.P, this.O), jn7.d4));
+                                this.f[i4] = true;
+                            }
+                            Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
+                            this.d[i4] = createBitmap;
+                            Canvas canvas = new Canvas(createBitmap);
+                            if (this.N == i2 || !(i4 == 1 || i4 == 2)) {
+                                Path path = new Path();
+                                float f2 = L >> 1;
+                                int i9 = (int) (f * f2);
+                                path.moveTo(0.0f, f2);
+                                float f3 = i9;
+                                path.lineTo(f3, f3);
+                                path.lineTo(f2, 0.0f);
+                                float f4 = L - i9;
+                                path.lineTo(f4, f3);
+                                float f5 = L;
+                                path.lineTo(f5, f2);
+                                path.lineTo(f4, f4);
+                                path.lineTo(f2, f5);
+                                path.lineTo(f3, f4);
+                                path.lineTo(0.0f, f2);
+                                path.close();
+                                Paint paint = new Paint();
+                                if (this.q) {
+                                    paint.setColor(b());
+                                    if (this.L) {
+                                        paint.setPathEffect(new CornerPathEffect(hl.N(this.r / 5.0f)));
+                                    }
+                                    canvas.drawPath(path, paint);
+                                } else {
+                                    if (L >= hl.L(10.0f)) {
+                                        bl8.d().f(L * (-2), 0.0f, L, L);
+                                    } else {
+                                        bl8.d().f(L * (-4), 0.0f, L, L);
+                                    }
+                                    Paint e = bl8.d().e();
+                                    if (this.L) {
+                                        e.setPathEffect(new CornerPathEffect(hl.N(this.r / 5.0f)));
+                                    }
+                                    if (this.K) {
+                                        e.setAlpha(jn7.d4);
+                                    } else if (this.J) {
+                                        e.setAlpha(60);
+                                    } else {
+                                        e.setAlpha(jn7.E1);
+                                    }
+                                    canvas.drawPath(path, e);
+                                    e.setPathEffect(null);
+                                    e.setAlpha(jn7.d4);
+                                }
+                                if (!this.J) {
+                                    Utilities.stackBlurBitmap(createBitmap, 2);
+                                }
+                            } else {
+                                Drawable drawable = a.b.getDrawable(R.drawable.msg_premium_liststar);
+                                drawable.setColorFilter(new PorterDuffColorFilter(aob.v0(this.P, this.O), PorterDuff.Mode.MULTIPLY));
+                                drawable.setBounds(0, 0, L, L);
+                                drawable.draw(canvas);
+                            }
+                        } else {
+                            if (i5 == 105 && i4 == 0) {
+                                this.d[i4] = hgb.d(R.raw.premium_object_star2, L, L, b());
+                            }
+                            Bitmap createBitmap2 = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
+                            this.d[i4] = createBitmap2;
+                            Canvas canvas2 = new Canvas(createBitmap2);
+                            if (this.N == i2) {
+                            }
+                            Path path2 = new Path();
+                            float f22 = L >> 1;
+                            int i92 = (int) (f * f22);
+                            path2.moveTo(0.0f, f22);
+                            float f32 = i92;
+                            path2.lineTo(f32, f32);
+                            path2.lineTo(f22, 0.0f);
+                            float f42 = L - i92;
+                            path2.lineTo(f42, f32);
+                            float f52 = L;
+                            path2.lineTo(f52, f22);
+                            path2.lineTo(f42, f42);
+                            path2.lineTo(f22, f52);
+                            path2.lineTo(f32, f42);
+                            path2.lineTo(0.0f, f22);
+                            path2.close();
+                            Paint paint2 = new Paint();
+                            if (this.q) {
+                            }
+                            if (!this.J) {
+                            }
+                        }
+                    }
+                }
+            }
+            i4++;
+            i2 = 6;
+            i3 = 3;
         }
-        textView2.setVisibility(0);
-        zkb.X(textView2, bkb.kk, null);
-        textView2.setText(TextUtils.concat("+", jva.F0(starsTransaction.amount), " ", !z2 ? spannableString3 : spannableString));
-        z5 = z;
-        evaVar.E = z5;
-        evaVar.setWillNotDraw(!z5);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new eva(i, wjbVar, context);
+    public int b() {
+        int i = this.N;
+        int i2 = this.P;
+        vnb vnbVar = this.O;
+        return i == 100 ? vm2.o(aob.v0(i2, vnbVar), jn7.d3) : aob.v0(i2, vnbVar);
+    }
+
+    public final void c() {
+        a();
+        boolean z = this.G;
+        short s = this.p;
+        if (z) {
+            int length = this.d.length;
+            this.C = new Matrix[length];
+            this.D = new float[length][];
+            this.E = new int[length];
+            this.F = new float[length];
+            for (int i = 0; i < length; i++) {
+                this.C[i] = new Matrix();
+                this.D[i] = new float[s << 1];
+            }
+        }
+        ArrayList arrayList = this.n;
+        if (arrayList.isEmpty()) {
+            for (int i2 = 0; i2 < s; i2++) {
+                arrayList.add(new cva(this));
+            }
+        }
+    }
+
+    public final void d(Canvas canvas) {
+        e(canvas, 1.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x0018, code lost:
+    
+        if (r5 > 50) goto L6;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(Canvas canvas, float f) {
+        int i;
+        long currentTimeMillis = System.currentTimeMillis();
+        long j = currentTimeMillis - this.R;
+        long j2 = j >= 4 ? 50L : 4L;
+        j = j2;
+        boolean z = this.G;
+        ArrayList arrayList = this.n;
+        if (z) {
+            RectF rectF = this.a;
+            float centerX = rectF.centerX() + 0.0f;
+            float centerY = rectF.centerY() + this.k;
+            int i2 = 0;
+            while (true) {
+                Matrix[] matrixArr = this.C;
+                if (i2 >= matrixArr.length) {
+                    break;
+                }
+                float[] fArr = this.F;
+                float f2 = ((j / ((i2 * 10000.0f) + 40000.0f)) * 360.0f) + fArr[i2];
+                fArr[i2] = f2;
+                matrixArr[i2].setRotate(f2, centerX, centerY);
+                this.E[i2] = 0;
+                i2++;
+            }
+            i = 0;
+            for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                cva cvaVar = (cva) arrayList.get(i3);
+                dva dvaVar = cvaVar.t;
+                int[] iArr = dvaVar.E;
+                int i4 = cvaVar.l;
+                int i5 = iArr[i4];
+                float[] fArr2 = dvaVar.D[i4];
+                int i6 = i5 << 1;
+                fArr2[i6] = cvaVar.d;
+                fArr2[i6 + 1] = cvaVar.e;
+                iArr[i4] = i5 + 1;
+            }
+            int i7 = 0;
+            while (true) {
+                Matrix[] matrixArr2 = this.C;
+                if (i7 >= matrixArr2.length) {
+                    break;
+                }
+                Matrix matrix = matrixArr2[i7];
+                float[] fArr3 = this.D[i7];
+                matrix.mapPoints(fArr3, 0, fArr3, 0, this.E[i7]);
+                this.E[i7] = 0;
+                i7++;
+            }
+        } else {
+            i = 0;
+        }
+        for (int i8 = i; i8 < arrayList.size(); i8++) {
+            cva cvaVar2 = (cva) arrayList.get(i8);
+            if (this.g) {
+                cvaVar2.a(canvas, this.Q, f);
+            } else {
+                cvaVar2.a(canvas, currentTimeMillis, f);
+            }
+            if (currentTimeMillis > cvaVar2.a) {
+                cvaVar2.b(currentTimeMillis);
+            }
+            if (this.H) {
+                if (!this.b.contains(cvaVar2.h, cvaVar2.i)) {
+                    cvaVar2.b(currentTimeMillis);
+                }
+            }
+        }
+        this.R = currentTimeMillis;
+    }
+
+    public final void f() {
+        long currentTimeMillis = System.currentTimeMillis();
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.n;
+            if (i >= arrayList.size()) {
+                return;
+            }
+            ((cva) arrayList.get(i)).b(currentTimeMillis);
+            i++;
+        }
+    }
+
+    public final void g() {
+        int v0 = aob.v0(this.P, this.O);
+        if (this.z != v0) {
+            this.z = v0;
+            a();
+        }
     }
 }

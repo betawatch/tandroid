@@ -1,471 +1,400 @@
 // default package
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.net.http.SslError;
-import android.os.Build;
-import android.text.TextUtils;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import org.telegram.messenger.Utilities;
+import android.content.ContextWrapper;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class qu0 extends WebViewClient {
-    public boolean a = true;
-    public final pu0 b = new pu0(this, 0);
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ cv0 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qu0 extends e {
+    public final /* synthetic */ byte a;
+    public final Object b;
 
-    public qu0(cv0 cv0Var, boolean z, Context context) {
-        this.e = cv0Var;
-        this.c = z;
-        this.d = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qu0(long j) {
+        super(null);
+        this.a = (byte) 6;
+        this.b = new t07(this, this, getLayoutContainer(), j);
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void doUpdateVisitedHistory(WebView webView, String str, boolean z) {
-        e01 e01Var;
-        boolean z2 = this.c;
-        cv0 cv0Var = this.e;
-        if (!z2 && ((e01Var = cv0Var.e) == null || !TextUtils.equals(e01Var.c, str))) {
-            e01 e01Var2 = new e01();
-            cv0Var.e = e01Var2;
-            e01Var2.a = Utilities.c.nextLong();
-            cv0Var.e.b = System.currentTimeMillis();
-            cv0Var.e.c = hv0.r(cv0Var.getUrl());
-            cv0Var.e.d = htc.a(cv0Var);
-            zod.c(cv0Var.e);
-        }
-        cv0Var.b("doUpdateVisitedHistory " + str + " " + z);
-        hv0 hv0Var = cv0Var.R;
-        if (hv0Var != null) {
-            hv0Var.G(!cv0Var.canGoBack(), !cv0Var.canGoForward());
-        }
-        super.doUpdateVisitedHistory(webView, str, z);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onPageCommitVisible(WebView webView, String str) {
-        hv0 hv0Var;
-        cv0 cv0Var = this.e;
-        cv0Var.b("onPageCommitVisible " + str);
-        boolean z = this.c;
-        if (z && !muc.a("DOCUMENT_START_SCRIPT") && (hv0Var = cv0Var.R) != null) {
-            boolean z2 = hv0.R0;
-            if (hv0Var.o()) {
-                cv0Var.c("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
-            }
-        }
-        if (z) {
-            cv0Var.O = true;
-            String v2 = gl.v2(null, R.raw.webview_app_ext);
-            boolean z3 = w01.a;
-            cv0Var.c(v2.replace("$DEBUG$", "true"));
-        } else {
-            cv0Var.O = true;
-            String v22 = gl.v2(null, R.raw.webview_ext);
-            boolean z4 = w01.a;
-            cv0Var.c(v22.replace("$DEBUG$", "true"));
-            cv0Var.c(gl.v2(null, R.raw.webview_share));
-        }
-        super.onPageCommitVisible(webView, str);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        hv0 hv0Var;
-        cv0 cv0Var = this.e;
-        cv0Var.b = true;
-        cv0Var.b("onPageFinished");
-        boolean z = this.c;
-        if (z && !muc.a("DOCUMENT_START_SCRIPT") && (hv0Var = cv0Var.R) != null) {
-            boolean z2 = hv0.R0;
-            if (hv0Var.o()) {
-                cv0Var.c("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
-            }
-        }
-        hv0 hv0Var2 = cv0Var.R;
-        if (hv0Var2 != null) {
-            hv0Var2.S(str, true);
-        } else {
-            cv0Var.b("onPageFinished: no container");
-        }
-        if (z) {
-            cv0Var.O = true;
-            String v2 = gl.v2(null, R.raw.webview_app_ext);
-            boolean z3 = w01.a;
-            cv0Var.c(v2.replace("$DEBUG$", "true"));
-        } else {
-            cv0Var.O = true;
-            String v22 = gl.v2(null, R.raw.webview_ext);
-            boolean z4 = w01.a;
-            cv0Var.c(v22.replace("$DEBUG$", "true"));
-            cv0Var.c(gl.v2(null, R.raw.webview_share));
-        }
-        cv0Var.e();
-        hv0 hv0Var3 = cv0Var.R;
-        if (hv0Var3 != null) {
-            if (!cv0Var.F) {
-                cv0Var.getUrl();
-            }
-            hv0Var3.G(!cv0Var.canGoBack(), !cv0Var.canGoForward());
+    @Override // org.telegram.ui.ActionBar.e
+    public final View createView(Context context) {
+        switch (this.a) {
+            case 6:
+                this.actionBar.setAllowOverlayTitle(true);
+                this.actionBar.setActionBarMenuOnItemClick(new zl5(this, (byte) 10));
+                this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+                a aVar = this.actionBar;
+                t07 t07Var = (t07) this.b;
+                aVar.setTitle(ob6.M0(t07Var.a ? 2131744089 : 2131748389, null));
+                s7 a = this.actionBar.u().a(0, R.drawable.outline_header_search);
+                a.N();
+                a.I = new r10(this, (byte) 16);
+                a.setSearchFieldHint(ob6.M0(2131745564, null));
+                a.setVisibility(8);
+                e eVar = t07Var.g;
+                if (t07Var.m == null) {
+                    FrameLayout frameLayout = new FrameLayout(eVar.getParentActivity());
+                    t07Var.m = frameLayout;
+                    yob.h(aob.a7, eVar.getResourceProvider(), frameLayout);
+                    tk4 b = t07Var.b();
+                    t07Var.q = b;
+                    t07Var.m.addView(b, -1, -1);
+                    z2b c = t07Var.c();
+                    t07Var.o = c;
+                    t07Var.m.addView(c, -1, -1);
+                    z2b a2 = t07Var.a();
+                    t07Var.n = a2;
+                    t07Var.m.addView(a2, tre.c(-1.0f, -1));
+                    eVar.getParentActivity();
+                    x46 x46Var = new x46();
+                    d79 d79Var = new d79(eVar.getParentActivity(), null);
+                    t07Var.p = d79Var;
+                    d79Var.setAdapter(t07Var.f);
+                    t07Var.p.s1();
+                    t07Var.p.setLayoutManager(x46Var);
+                    t07Var.p.setOnItemClickListener(new zg4(t07Var, (byte) 11));
+                    t07Var.p.setOnScrollListener(t07Var.D);
+                    yob.J(t07Var.p, aob.i6, eVar.getResourceProvider());
+                    t07Var.m.addView(t07Var.p, -1, -1);
+                    zb3 zb3Var = new zb3();
+                    zb3Var.n(350L);
+                    zb3Var.o(k43.h);
+                    zb3Var.C = false;
+                    zb3Var.m = false;
+                    t07Var.p.setItemAnimator(zb3Var);
+                }
+                FrameLayout frameLayout2 = t07Var.m;
+                a aVar2 = this.actionBar;
+                d79 d79Var2 = t07Var.p;
+                aVar2.getClass();
+                aVar2.F(d79Var2, aob.a7, aob.s8);
+                t07Var.e();
+                this.fragmentView = frameLayout2;
+                return frameLayout2;
+            case 7:
+                this.hasOwnBackground = true;
+                this.actionBar.setAddToContainer(false);
+                View view = new View(context);
+                view.setBackgroundColor(0);
+                return view;
+            default:
+                return super.createView(context);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x001a, code lost:
-    
-        if (r0.Q0 == null) goto L11;
-     */
-    @Override // android.webkit.WebViewClient
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {
-        String str2;
-        hv0 hv0Var;
-        boolean z = this.c;
-        cv0 cv0Var = this.e;
-        if (z && (hv0Var = cv0Var.R) != null) {
-            hv0Var.t0++;
-        }
-        hv0 hv0Var2 = cv0Var.R;
-        if (hv0Var2 != null) {
-            boolean z2 = hv0.R0;
-        }
-        cv0Var.getSettings().setMediaPlaybackRequiresUserGesture(true);
-        fx0 fx0Var = cv0Var.G;
-        if (fx0Var != null) {
-            fx0Var.dismiss();
-            cv0Var.G = null;
-        }
-        cv0Var.e = null;
-        cv0Var.r = null;
-        cv0Var.s = false;
-        cv0Var.w = false;
-        cv0Var.N = false;
-        cv0Var.b("onPageStarted " + str);
-        if (cv0Var.R != null && cv0Var.h && ((str2 = cv0Var.n) == null || !TextUtils.equals(str2, str))) {
-            gl.d3(this.b, 40L);
-        }
-        hv0 hv0Var3 = cv0Var.R;
-        if (hv0Var3 != null) {
-            hv0Var3.G(!cv0Var.canGoBack(), !cv0Var.canGoForward());
-        }
-        super.onPageStarted(webView, str, bitmap);
-        cv0Var.O = false;
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        String str = "onReceivedError: " + webResourceError.getErrorCode() + " " + ((Object) webResourceError.getDescription());
-        cv0 cv0Var = this.e;
-        cv0Var.b(str);
-        if (cv0Var.R != null && (webResourceRequest == null || webResourceRequest.isForMainFrame())) {
-            gl.r(this.b);
-            cv0Var.r = null;
-            cv0Var.s = false;
-            cv0Var.w = false;
-            cv0Var.N = false;
-            cv0Var.K = false;
-            cv0Var.n = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? cv0Var.getUrl() : webResourceRequest.getUrl().toString();
-            hv0 hv0Var = cv0Var.R;
-            cv0Var.L = null;
-            hv0Var.F();
-            hv0 hv0Var2 = cv0Var.R;
-            cv0Var.P = null;
-            hv0Var2.getClass();
-            hv0 hv0Var3 = cv0Var.R;
-            cv0Var.h = true;
-            webResourceError.getErrorCode();
-            hv0Var3.B(true, webResourceError.getDescription() != null ? webResourceError.getDescription().toString() : null);
-        }
-        super.onReceivedError(webView, webResourceRequest, webResourceError);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
-        super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
-        StringBuilder sb = new StringBuilder("onReceivedHttpError: statusCode=");
-        sb.append(webResourceResponse == null ? null : Integer.valueOf(webResourceResponse.getStatusCode()));
-        sb.append(" request=");
-        sb.append(webResourceRequest == null ? null : webResourceRequest.getUrl());
-        String sb2 = sb.toString();
-        cv0 cv0Var = this.e;
-        cv0Var.b(sb2);
-        if (cv0Var.R != null) {
-            if ((webResourceRequest == null || webResourceRequest.isForMainFrame()) && webResourceResponse != null && TextUtils.isEmpty(webResourceResponse.getMimeType())) {
-                gl.r(this.b);
-                cv0Var.r = null;
-                cv0Var.s = false;
-                cv0Var.w = false;
-                cv0Var.N = false;
-                cv0Var.K = false;
-                cv0Var.n = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? cv0Var.getUrl() : webResourceRequest.getUrl().toString();
-                hv0 hv0Var = cv0Var.R;
-                cv0Var.L = null;
-                hv0Var.F();
-                hv0 hv0Var2 = cv0Var.R;
-                cv0Var.P = null;
-                hv0Var2.getClass();
-                hv0 hv0Var3 = cv0Var.R;
-                cv0Var.h = true;
-                webResourceResponse.getStatusCode();
-                hv0Var3.B(true, webResourceResponse.getReasonPhrase());
-            }
+    @Override // org.telegram.ui.ActionBar.e
+    public final Context getContext() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 2:
+                return ((gu3) obj).a.getContext();
+            case 8:
+                return ((dx7) obj).getContext();
+            case 11:
+                return ((l3a) obj).b.getContext();
+            case 13:
+                return ((wua) obj).getContext();
+            default:
+                return super.getContext();
         }
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-        StringBuilder sb = new StringBuilder("onReceivedSslError: error=");
-        sb.append(sslError);
-        sb.append(" url=");
-        sb.append(sslError == null ? null : sslError.getUrl());
-        this.e.b(sb.toString());
-        sslErrorHandler.cancel();
-        super.onReceivedSslError(webView, sslErrorHandler, sslError);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        int i = Build.VERSION.SDK_INT;
-        cv0 cv0Var = this.e;
-        if (i >= 26) {
-            StringBuilder sb = new StringBuilder("onRenderProcessGone priority=");
-            sb.append(renderProcessGoneDetail == null ? null : Integer.valueOf(renderProcessGoneDetail.rendererPriorityAtExit()));
-            sb.append(" didCrash=");
-            sb.append(renderProcessGoneDetail == null ? null : Boolean.valueOf(renderProcessGoneDetail.didCrash()));
-            cv0Var.b(sb.toString());
-        } else {
-            cv0Var.b("onRenderProcessGone");
-        }
-        try {
-            if (!gl.K1(cv0Var.getContext())) {
-                return true;
-            }
-            Context context = cv0Var.getContext();
-            hv0 hv0Var = cv0Var.R;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, hv0Var == null ? null : hv0Var.e, context);
-            hd hdVar = alertDialog$Builder.a;
-            hdVar.S = k96.M0(2131752092, null);
-            hdVar.U = gl.N2(k96.M0(2131752093, null), -1, 0, new pu0(this, (byte) 2), null);
-            alertDialog$Builder.j(k96.M0(2131747638, null), null);
-            hdVar.setOnDismissListener(new n1(this, (byte) 7));
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return false;
+    @Override // org.telegram.ui.ActionBar.e
+    public final int getCurrentAccount() {
+        switch (this.a) {
+            case 2:
+                return this.currentAccount;
+            case 3:
+            case 6:
+            case 7:
+            case 9:
+            case 12:
+            default:
+                return super.getCurrentAccount();
+            case 4:
+                return this.currentAccount;
+            case 5:
+                return ((g14) this.b).H.d1;
+            case 8:
+                return this.currentAccount;
+            case 10:
+                return this.currentAccount;
+            case 11:
+                return this.currentAccount;
+            case 13:
+                return this.currentAccount;
         }
     }
 
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        HttpURLConnection httpURLConnection;
-        StringBuilder sb = new StringBuilder("shouldInterceptRequest ");
-        HttpURLConnection httpURLConnection2 = null;
-        sb.append(webResourceRequest == null ? null : webResourceRequest.getUrl());
-        String sb2 = sb.toString();
-        cv0 cv0Var = this.e;
-        cv0Var.b(sb2);
-        if (webResourceRequest != null && hv0.n(webResourceRequest.getUrl())) {
-            cv0Var.b("proxying ton");
-            this.a = false;
-            return hv0.K(webResourceRequest.getMethod(), webResourceRequest.getUrl().toString(), webResourceRequest.getRequestHeaders());
+    @Override // org.telegram.ui.ActionBar.e
+    public final View getFragmentView() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 4:
+                ly3 ly3Var = ((hy3) obj).y;
+                Pattern pattern = ly3.P1;
+                return ly3Var.b;
+            case 5:
+                return ((g14) obj).H.r;
+            case 10:
+                return ((kl8) obj).b;
+            default:
+                return super.getFragmentView();
         }
-        if (!this.c && cv0Var.f != null && this.a) {
-            byte b = 1;
-            try {
-                httpURLConnection = (HttpURLConnection) new URL(webResourceRequest.getUrl().toString()).openConnection();
-            } catch (Exception e) {
-                e = e;
-            }
-            try {
-                httpURLConnection.setRequestMethod(webResourceRequest.getMethod());
-                if (webResourceRequest.getRequestHeaders() != null) {
-                    for (Map.Entry<String, String> entry : webResourceRequest.getRequestHeaders().entrySet()) {
-                        httpURLConnection.setRequestProperty(entry.getKey(), entry.getValue());
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final FrameLayout getLayoutContainer() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 4:
+                ly3 ly3Var = ((hy3) obj).y;
+                Pattern pattern = ly3.P1;
+                return (FrameLayout) ly3Var.b;
+            case 5:
+                return ((g14) obj).H.r;
+            case 10:
+                return ((kl8) obj).H2;
+            default:
+                return super.getLayoutContainer();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final Activity getParentActivity() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                return ((rv0) obj).a0;
+            case 1:
+                return ((e) obj).getParentActivity();
+            case 2:
+                for (Context context = getContext(); context instanceof ContextWrapper; context = ((ContextWrapper) context).getBaseContext()) {
+                    if (context instanceof Activity) {
+                        return (Activity) context;
                     }
                 }
-                httpURLConnection.connect();
-                HashMap hashMap = new HashMap();
-                for (Map.Entry<String, List<String>> entry2 : httpURLConnection.getHeaderFields().entrySet()) {
-                    String key = entry2.getKey();
-                    if (key != null) {
-                        hashMap.put(key, TextUtils.join(", ", entry2.getValue()));
-                        if (!cv0Var.F && ("cross-origin-resource-policy".equals(key.toLowerCase()) || "cross-origin-embedder-policy".equals(key.toLowerCase()))) {
-                            Iterator<String> it = entry2.getValue().iterator();
-                            while (true) {
-                                if (!it.hasNext()) {
-                                    break;
-                                }
-                                String next = it.next();
-                                if (next != null && !"unsafe-none".equals(next.toLowerCase()) && !"same-site".equals(next.toLowerCase())) {
-                                    cv0Var.b("<!> dangerous header CORS policy: " + key + ": " + next + " from " + webResourceRequest.getMethod() + " " + webResourceRequest.getUrl());
-                                    cv0Var.F = true;
-                                    gl.c3(new pu0(this, b));
-                                    break;
-                                }
-                            }
-                        }
+                return null;
+            case 3:
+                return LaunchActivity.H1;
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 11:
+            default:
+                return super.getParentActivity();
+            case 8:
+                return hl.W(((dx7) obj).getContext());
+            case 9:
+                Activity W = hl.W(((o68) obj).getContext());
+                return W == null ? LaunchActivity.H1 : W;
+            case 10:
+                e eVar = ((kl8) obj).o2;
+                if (eVar != null) {
+                    return eVar.getParentActivity();
+                }
+                return null;
+            case 12:
+                a5a a5aVar = (a5a) obj;
+                Activity ownerActivity = a5aVar.getOwnerActivity();
+                if (ownerActivity == null) {
+                    ownerActivity = LaunchActivity.H1;
+                }
+                return ownerActivity == null ? hl.W(a5aVar.getContext()) : ownerActivity;
+            case 13:
+                for (Context context2 = ((wua) obj).getContext(); context2 instanceof ContextWrapper; context2 = ((ContextWrapper) context2).getBaseContext()) {
+                    if (context2 instanceof Activity) {
+                        return (Activity) context2;
                     }
                 }
-                String contentType = httpURLConnection.getContentType();
-                String contentEncoding = httpURLConnection.getContentEncoding();
-                if (contentType.indexOf("; ") >= 0) {
-                    String[] split = contentType.split("; ");
-                    if (!TextUtils.isEmpty(split[0])) {
-                        contentType = split[0];
-                    }
-                    for (int i = 1; i < split.length; i++) {
-                        if (split[i].startsWith("charset=")) {
-                            contentEncoding = split[i].substring(8);
-                        }
-                    }
-                }
-                this.a = false;
-                return new WebResourceResponse(contentType, contentEncoding, httpURLConnection.getResponseCode(), httpURLConnection.getResponseMessage(), hashMap, httpURLConnection.getInputStream());
-            } catch (Exception e2) {
-                e = e2;
-                httpURLConnection2 = httpURLConnection;
-                fa4.g(e, true);
-                if (httpURLConnection2 != null) {
-                    httpURLConnection2.disconnect();
-                }
-                this.a = false;
-                return super.shouldInterceptRequest(webView, webResourceRequest);
-            }
+                return null;
         }
-        this.a = false;
-        return super.shouldInterceptRequest(webView, webResourceRequest);
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        ku0 ku0Var;
-        if (str != null && !str.trim().startsWith("sms:")) {
-            boolean startsWith = str.trim().startsWith("tel:");
-            Context context = this.d;
-            cv0 cv0Var = this.e;
-            if (startsWith) {
-                if (cv0Var.f != null) {
-                    ku0 ku0Var2 = cv0Var.R.c;
-                    if (ku0Var2 != null) {
-                        ku0Var2.j();
-                    } else {
-                        Runnable runnable = cv0Var.V;
-                        if (runnable != null) {
-                            runnable.run();
-                            cv0Var.V = null;
-                        }
-                    }
-                }
-                d01.t(context, str);
-                return true;
-            }
-            Uri parse = Uri.parse(str);
-            boolean z = this.c;
-            if (!z) {
-                if (d01.m(context, str, true)) {
-                    cv0Var.b("shouldOverrideUrlLoading(" + str + ") = true (openInExternalBrowser)");
-                    if (!cv0Var.b && !cv0Var.canGoBack()) {
-                        ku0 ku0Var3 = cv0Var.R.c;
-                        if (ku0Var3 != null) {
-                            ku0Var3.j();
-                            return true;
-                        }
-                        Runnable runnable2 = cv0Var.V;
-                        if (runnable2 != null) {
-                            runnable2.run();
-                            cv0Var.V = null;
-                        }
-                    }
-                    return true;
-                }
-                if (str.startsWith("intent://") || (parse != null && parse.getScheme() != null && parse.getScheme().equalsIgnoreCase("intent"))) {
-                    try {
-                        String stringExtra = Intent.parseUri(parse.toString(), 1).getStringExtra("browser_fallback_url");
-                        if (!TextUtils.isEmpty(stringExtra)) {
-                            cv0Var.loadUrl(stringExtra);
-                            return true;
-                        }
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                    }
-                }
-                if (parse != null && parse.getScheme() != null && !"https".equals(parse.getScheme()) && !"http".equals(parse.getScheme()) && !"tonsite".equals(parse.getScheme())) {
-                    cv0Var.b("shouldOverrideUrlLoading(" + str + ") = true (browser open)");
-                    d01.q(cv0Var.getContext(), parse, true, true);
-                    return true;
-                }
-            }
-            if (cv0Var.R == null || !d01.g(parse, false, null)) {
-                if (parse != null) {
-                    parse.toString();
-                }
-                cv0Var.b("shouldOverrideUrlLoading(" + str + ") = false");
+    @Override // org.telegram.ui.ActionBar.e
+    public final vnb getResourceProvider() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                return new pu0(((rv0) obj).e, (byte) 0);
+            case 1:
+                return new uk5((vnb) new x53());
+            case 2:
+            case 6:
+            case 7:
+            case 10:
+            default:
+                return super.getResourceProvider();
+            case 3:
+                return new pu0(((tw7) obj).J0, (byte) 1);
+            case 4:
+                ly3 ly3Var = ((hy3) obj).y;
+                Pattern pattern = ly3.P1;
+                return ly3Var.J0;
+            case 5:
+                return ((g14) obj).H.a2;
+            case 8:
+                return ((dx7) obj).q1;
+            case 9:
+                return new pu0(((o68) obj).l0, (byte) 3);
+            case 11:
+                return ((l3a) obj).b.s;
+            case 12:
+                return ((a5a) obj).J0;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final Dialog getVisibleDialog() {
+        switch (this.a) {
+            case 2:
+                return new fu3(this, ((gu3) this.b).a.getContext());
+            default:
+                return super.getVisibleDialog();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean isLightStatusBar() {
+        switch (this.a) {
+            case 0:
+            case 1:
+            case 3:
+            case 9:
                 return false;
-            }
-            if (z || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (na7.q1(cv0Var.R.N).J3 != null && na7.q1(cv0Var.R.N).J3.contains(parse.getScheme())) {
-                    hv0 hv0Var = cv0Var.R;
-                    if (cv0Var.f != null) {
-                        ku0 ku0Var4 = hv0Var.c;
-                        if (ku0Var4 != null) {
-                            ku0Var4.j();
-                        } else {
-                            Runnable runnable3 = cv0Var.V;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                                cv0Var.V = null;
-                            }
-                        }
-                        hv0 hv0Var2 = cv0Var.f.R;
-                        if (hv0Var2 != null && (ku0Var = hv0Var2.c) != null) {
-                            ku0Var.b();
-                        }
-                    }
-                    hv0Var.E(parse, null, !hv0Var.p0, false, false);
+            default:
+                return super.isLightStatusBar();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean onBackPressed(boolean z) {
+        switch (this.a) {
+            case 6:
+                d17 d17Var = ((t07) this.b).s;
+                if (d17Var == null) {
+                    return true;
                 }
-                cv0Var.b("shouldOverrideUrlLoading(" + str + ") = true");
+                if (!z) {
+                    return false;
+                }
+                d17Var.e(false);
+                return false;
+            default:
+                return super.onBackPressed(z);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
+        switch (this.a) {
+            case 7:
+                if (z && z2) {
+                    ((mu7) this.b).dismiss();
+                    break;
+                }
+                break;
+            default:
+                super.onTransitionAnimationEnd(z, z2);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean presentFragment(e eVar) {
+        switch (this.a) {
+            case 1:
+                return false;
+            case 8:
+                e Q = LaunchActivity.Q();
+                if (Q == null) {
+                    return false;
+                }
+                bg0 bg0Var = new bg0();
+                bg0Var.a = true;
+                Q.showAsSheet(eVar, bg0Var);
                 return true;
-            }
+            case 9:
+                lcb lcbVar = ((o68) this.b).t0;
+                if (lcbVar != null) {
+                    lcbVar.L(eVar);
+                }
+                return true;
+            default:
+                return super.presentFragment(eVar);
         }
-        return false;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, int i, String str, String str2) {
-        this.e.b("onReceivedError: " + i + " " + str + " url=" + str2);
-        super.onReceivedError(webView, i, str, str2);
+    @Override // org.telegram.ui.ActionBar.e
+    public final Dialog showDialog(Dialog dialog) {
+        switch (this.a) {
+            case 0:
+                dialog.show();
+                return dialog;
+            case 3:
+                dialog.show();
+                return dialog;
+            case 9:
+                lcb lcbVar = ((o68) this.b).t0;
+                if (lcbVar != null) {
+                    lcbVar.u(dialog);
+                } else if (dialog != null) {
+                    dialog.show();
+                }
+                return dialog;
+            case 10:
+                dialog.show();
+                return dialog;
+            case 13:
+                dialog.show();
+                return dialog;
+            default:
+                return super.showDialog(dialog);
+        }
     }
 
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
-        cv0 cv0Var = this.e;
-        cv0Var.b("shouldInterceptRequest " + str);
-        boolean z = hv0.R0;
-        if (str != null && hv0.n(Uri.parse(str))) {
-            cv0Var.b("proxying ton");
-            return hv0.K("GET", str, null);
-        }
-        return super.shouldInterceptRequest(webView, str);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qu0(Object obj, byte b) {
+        super(null);
+        this.a = b;
+        this.b = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qu0(e eVar) {
+        super(null);
+        this.a = (byte) 1;
+        this.b = eVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qu0(tw7 tw7Var) {
+        super(null);
+        this.a = (byte) 3;
+        this.b = tw7Var;
+        this.currentAccount = tw7Var.a;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qu0(rv0 rv0Var) {
+        super(null);
+        this.a = (byte) 0;
+        this.b = rv0Var;
+        this.currentAccount = rv0Var.N;
     }
 }

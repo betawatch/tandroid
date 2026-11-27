@@ -1,19 +1,62 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class n71 extends FrameLayout {
-    public final o39 a;
+    public final og2 a;
+    public final FrameLayout b;
+    public final TextView c;
+    public boolean d;
+    public byte e;
+    public final /* synthetic */ byte f;
+    public final /* synthetic */ j71 h;
 
-    public n71(o39 o39Var, Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n71(j71 j71Var, Context context, byte b) {
         super(context);
-        this.a = o39Var;
-        setClipChildren(false);
-        setClipToPadding(false);
-        setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        addView(o39Var, new FrameLayout.LayoutParams(-1, -1));
+        this.f = b;
+        this.h = j71Var;
+        og2 og2Var = new og2(21, null, context);
+        this.a = og2Var;
+        og2Var.setDrawBackgroundAsArc(14);
+        og2Var.b(aob.i7, aob.g7, aob.k7);
+        View view = new View(getContext());
+        view.setOnClickListener(new k1(this, (byte) 29));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setGravity(5);
+        yob.X(textView, aob.n6, null);
+        if (ob6.a0) {
+            addView(og2Var, tre.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+            addView(view, tre.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(frameLayout, tre.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
+            addView(textView, tre.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            return;
+        }
+        addView(og2Var, tre.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
+        addView(view, tre.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, tre.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
+        addView(textView, tre.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.d) {
+            if (ob6.a0) {
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - hl.L(48.0f), getMeasuredHeight() - 1, aob.j0);
+            } else {
+                canvas.drawLine(getMeasuredWidth() - hl.L(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, aob.j0);
+            }
+        }
     }
 }

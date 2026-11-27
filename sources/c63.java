@@ -1,45 +1,28 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class c63 extends a2 {
-    public final /* synthetic */ byte f;
+public final class c63 {
+    public final int[] a;
+    public final int b;
+    public final byte c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final ko4 i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c63(String str, byte b) {
-        super(str);
-        this.f = b;
-    }
-
-    @Override // a2, iy0
-    public final void getBox(WritableByteChannel writableByteChannel) {
-        switch (this.f) {
-            case 1:
-                writableByteChannel.write(d());
-                ByteBuffer allocate = ByteBuffer.allocate(8);
-                ile.f(0, allocate);
-                ile.e(0, allocate);
-                allocate.putInt(this.b.size());
-                writableByteChannel.write((ByteBuffer) allocate.rewind());
-                c(writableByteChannel);
-                break;
-            default:
-                super.getBox(writableByteChannel);
-                break;
-        }
-    }
-
-    @Override // a2, iy0
-    public final long getSize() {
-        switch (this.f) {
-            case 1:
-                long b = b();
-                return 8 + b + (b + 16 >= 4294967296L ? 16 : 8);
-            default:
-                return super.getSize();
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    public c63(int i, int i2, int[] iArr, int i3, int i4, int i5, int i6, int i7, ko4 ko4Var) {
+        this.b = i;
+        this.a = iArr;
+        this.c = i2;
+        this.e = i3;
+        this.f = i4;
+        this.g = i5;
+        this.h = i6;
+        this.d = i7;
+        this.i = ko4Var;
     }
 }

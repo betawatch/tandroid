@@ -1,35 +1,99 @@
 // default package
 
-import android.window.OnBackInvokedCallback;
+import android.os.Bundle;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class yz5 implements OnBackInvokedCallback {
-    public final /* synthetic */ LaunchActivity a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class yz5 implements oj3 {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ int e;
 
-    public yz5(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public /* synthetic */ yz5(LaunchActivity launchActivity, String str, int i, TLRPC.User user) {
+        this.b = launchActivity;
+        this.d = str;
+        this.e = i;
+        this.c = user;
     }
 
-    public final void onBackInvoked() {
-        boolean O1 = gl.O1();
-        LaunchActivity launchActivity = this.a;
-        if (O1) {
-            launchActivity.onBackPressed();
-            return;
+    @Override // oj3
+    public final boolean E() {
+        byte b = this.a;
+        return false;
+    }
+
+    @Override // oj3
+    public final boolean q(uj3 uj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, tzb tzbVar) {
+        byte b = this.a;
+        int i3 = this.e;
+        String str = this.d;
+        TLRPC.User user = this.c;
+        LaunchActivity launchActivity = this.b;
+        switch (b) {
+            case 0:
+                String str2 = LaunchActivity.C1;
+                long j = ((if7) arrayList.get(0)).a;
+                TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
+                TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
+                tL_inputMediaGame.id = tL_inputGameShortName;
+                tL_inputGameShortName.short_name = str;
+                tL_inputGameShortName.bot_id = uc7.s1(i3).q1(user);
+                r7a.B(i3).o0(uc7.s1(i3).j1(j), tL_inputMediaGame, 0L, 0L);
+                Bundle l = bs2.l("scrollToTopOnResume", true);
+                if (wf3.B(j)) {
+                    l.putInt("enc_id", (int) (j & 4294967295L));
+                } else if (wf3.D(j)) {
+                    l.putLong("user_id", j);
+                } else {
+                    l.putLong("chat_id", -j);
+                }
+                if (uc7.s1(i3).C(l, uj3Var, null, null)) {
+                    jn7.f(i3).k(4, new Object[0]);
+                    ((ActionBarLayout) launchActivity.N()).U(new zu1(l), true, false);
+                    break;
+                }
+                break;
+            default:
+                String str3 = LaunchActivity.C1;
+                long j2 = ((if7) arrayList.get(0)).a;
+                Bundle l2 = bs2.l("scrollToTopOnResume", true);
+                if (wf3.B(j2)) {
+                    l2.putInt("enc_id", (int) (j2 & 4294967295L));
+                } else if (wf3.D(j2)) {
+                    l2.putLong("user_id", j2);
+                } else {
+                    l2.putLong("chat_id", -j2);
+                }
+                l2.putString("attach_bot", lbc.p(user));
+                if (str != null) {
+                    l2.putString("attach_bot_start_command", str);
+                }
+                if (uc7.s1(i3).C(l2, uj3Var, null, null)) {
+                    jn7.f(i3).k(4, new Object[0]);
+                    ((ActionBarLayout) launchActivity.N()).U(new zu1(l2), true, false);
+                    break;
+                }
+                break;
         }
-        if (launchActivity.d0(true)) {
-            ActionBarLayout actionBarLayout = launchActivity.p0;
-            if (actionBarLayout == null) {
-                launchActivity.onBackPressed();
-            } else if (!actionBarLayout.j1) {
-                actionBarLayout.G();
-            } else {
-                actionBarLayout.j1 = false;
-                actionBarLayout.d(false);
-            }
-        }
+        return true;
+    }
+
+    @Override // oj3
+    public final boolean s(uj3 uj3Var) {
+        byte b = this.a;
+        return false;
+    }
+
+    public /* synthetic */ yz5(LaunchActivity launchActivity, TLRPC.User user, String str, int i) {
+        this.b = launchActivity;
+        this.c = user;
+        this.d = str;
+        this.e = i;
     }
 }

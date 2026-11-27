@@ -1,13 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface i33 {
-    void K0();
+import android.content.Context;
+import android.widget.FrameLayout;
 
-    void h2(boolean z);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class i33 extends b43 {
+    public final /* synthetic */ byte Q;
+    public final /* synthetic */ FrameLayout R;
 
-    void o1(boolean z);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i33(FrameLayout frameLayout, Context context, byte b) {
+        super(context);
+        this.Q = b;
+        this.R = frameLayout;
+    }
 
-    void t2();
+    @Override // b43
+    public final int getCurrentHeight() {
+        int currentHeight;
+        int currentHeight2;
+        byte b = this.Q;
+        FrameLayout frameLayout = this.R;
+        switch (b) {
+            case 0:
+                currentHeight = ((l33) frameLayout).getCurrentHeight();
+                return currentHeight;
+            default:
+                currentHeight2 = ((q33) frameLayout).getCurrentHeight();
+                return currentHeight2;
+        }
+    }
+
+    @Override // b43
+    public final int getCurrentWidth() {
+        int currentWidth;
+        int currentWidth2;
+        byte b = this.Q;
+        FrameLayout frameLayout = this.R;
+        switch (b) {
+            case 0:
+                currentWidth = ((l33) frameLayout).getCurrentWidth();
+                return currentWidth;
+            default:
+                currentWidth2 = ((q33) frameLayout).getCurrentWidth();
+                return currentWidth2;
+        }
+    }
 }

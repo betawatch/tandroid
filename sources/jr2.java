@@ -1,41 +1,67 @@
 // default package
 
-import java.util.function.IntSupplier;
+import android.graphics.Paint;
+import android.util.Pair;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class jr2 extends cr2 {
-    public int d;
-    public IntSupplier e;
-    public int f;
-    public int g;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class jr2 {
+    public static final List a = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
+    public static final Paint b = new Paint(2);
 
-    public final kr2 u(qr2 qr2Var) {
-        IntSupplier ym9Var;
-        IntSupplier intSupplier = this.e;
-        if (intSupplier != null) {
-            ym9Var = intSupplier;
-        } else {
-            int i = this.d;
-            r(i >= this.f && i <= this.g, Integer.valueOf(i));
-            ym9Var = new ym9(this.d);
+    public static hr2 a(String str, Integer num, Integer num2) {
+        Pair c;
+        if (str == null || (c = c(str)) == null) {
+            return null;
         }
-        kr2 kr2Var = new kr2(s(), ym9Var, this.f, this.g, this.a);
-        q(qr2Var, kr2Var);
-        return kr2Var;
+        if (num == null) {
+            num = (Integer) c.first;
+        }
+        ir2 ir2Var = new ir2(num.intValue(), 0);
+        if (num2 == null) {
+            num2 = (Integer) c.second;
+        }
+        ir2 ir2Var2 = new ir2(num2.intValue(), 1);
+        hr2 hr2Var = new hr2();
+        hr2Var.c = ir2Var;
+        hr2Var.d = ir2Var2;
+        return hr2Var;
     }
 
-    public final void v(int i) {
-        this.d = i;
-        this.e = null;
+    public static int b(String str) {
+        if (str == null) {
+            return -1;
+        }
+        return a.indexOf(str.substring(str.length() - 2));
     }
 
-    public final void w(int i, int i2) {
-        if (i > i2) {
-            w26.j(b00.g(i, i2, "range ", ".."));
-        } else {
-            this.f = i;
-            this.g = i2;
+    public static Pair c(String str) {
+        int i;
+        String[] split;
+        if (str.startsWith("🤝")) {
+            if (str.length() != 2) {
+                if (str.length() == 4) {
+                    i = b(str);
+                    r3 = i >= 0 ? i : -1;
+                    split = str.split("\u200d");
+                    if (split.length == 2 || !split[0].startsWith("🫱") || !split[1].startsWith("🫲")) {
+                        return null;
+                    }
+                    if (split[0].length() != 2 && (split[0].length() != 4 || (i = b(split[0])) < 0)) {
+                        return null;
+                    }
+                    if (split[1].length() == 2 || (split[1].length() == 4 && (r3 = b(split[1])) >= 0)) {
+                        return new Pair(Integer.valueOf(i), Integer.valueOf(r3));
+                    }
+                    return null;
+                }
+            }
+            return new Pair(Integer.valueOf(r3), Integer.valueOf(r3));
         }
+        i = -1;
+        split = str.split("\u200d");
+        return split.length == 2 ? null : null;
     }
 }

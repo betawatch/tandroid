@@ -3,45 +3,45 @@ package com.google.mlkit.common.internal;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        lp2 b = mp2.b(ie7.class);
-        b.a(wd3.b(ae7.class));
-        b.f = new z4d((byte) 0);
-        mp2 b2 = b.b();
-        lp2 b3 = mp2.b(ce7.class);
-        b3.f = new lbd((byte) 0);
-        mp2 b4 = b3.b();
-        lp2 b5 = mp2.b(l69.class);
-        b5.a(new wd3(2, 0, k69.class));
-        b5.f = new z4d((byte) 1);
-        mp2 b6 = b5.b();
-        lp2 b7 = mp2.b(u44.class);
-        b7.a(new wd3(1, 1, ce7.class));
-        b7.f = new r8d();
-        mp2 b8 = b7.b();
-        lp2 b9 = mp2.b(th2.class);
-        b9.f = new lbd((byte) 1);
-        mp2 b10 = b9.b();
-        lp2 b11 = mp2.b(vi2.class);
-        b11.a(wd3.b(th2.class));
-        b11.f = new hcd();
-        mp2 b12 = b11.b();
-        lp2 b13 = mp2.b(c6e.class);
-        b13.a(wd3.b(ae7.class));
-        b13.f = new f6d((byte) 2);
-        mp2 b14 = b13.b();
-        lp2 b15 = mp2.b(k69.class);
+        eq2 b = fq2.b(rg7.class);
+        b.a(qe3.b(jg7.class));
+        b.f = new s9d((byte) 0);
+        fq2 b2 = b.b();
+        eq2 b3 = fq2.b(lg7.class);
+        b3.f = new egd((byte) 0);
+        fq2 b4 = b3.b();
+        eq2 b5 = fq2.b(y99.class);
+        b5.a(new qe3(2, 0, x99.class));
+        b5.f = new s9d((byte) 1);
+        fq2 b6 = b5.b();
+        eq2 b7 = fq2.b(q54.class);
+        b7.a(new qe3(1, 1, lg7.class));
+        b7.f = new kdd();
+        fq2 b8 = b7.b();
+        eq2 b9 = fq2.b(pi2.class);
+        b9.f = new egd((byte) 1);
+        fq2 b10 = b9.b();
+        eq2 b11 = fq2.b(rj2.class);
+        b11.a(qe3.b(pi2.class));
+        b11.f = new ahd();
+        fq2 b12 = b11.b();
+        eq2 b13 = fq2.b(sae.class);
+        b13.a(qe3.b(jg7.class));
+        b13.f = new yad((byte) 2);
+        fq2 b14 = b13.b();
+        eq2 b15 = fq2.b(x99.class);
         b15.e = true;
-        b15.a(new wd3(1, 1, c6e.class));
-        b15.f = new jdd();
-        mp2 b16 = b15.b();
-        b6d b6dVar = r6d.n;
-        Object[] objArr = {sfa.b, b2, b4, b6, b8, b10, b12, b14, b16};
-        fze.a(9, objArr);
-        return new b8d(9, objArr);
+        b15.a(new qe3(1, 1, sae.class));
+        b15.f = new i9d();
+        fq2 b16 = b15.b();
+        uad uadVar = kbd.n;
+        Object[] objArr = {lja.b, b2, b4, b6, b8, b10, b12, b14, b16};
+        x3f.a(9, objArr);
+        return new ucd(9, objArr);
     }
 }

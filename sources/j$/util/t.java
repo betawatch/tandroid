@@ -6,7 +6,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes4.dex */
 public final class t implements java.util.Map, Serializable, Map {
     private static final long serialVersionUID = -1034234728574286014L;
@@ -25,17 +25,17 @@ public final class t implements java.util.Map, Serializable, Map {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object compute(Object obj, BiFunction biFunction) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object computeIfAbsent(Object obj, Function function) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object computeIfPresent(Object obj, BiFunction biFunction) {
         throw new UnsupportedOperationException();
     }
@@ -66,7 +66,7 @@ public final class t implements java.util.Map, Serializable, Map {
         return obj == this || this.a.equals(obj);
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final void forEach(BiConsumer biConsumer) {
         Map.-EL.forEach(this.a, biConsumer);
     }
@@ -76,7 +76,7 @@ public final class t implements java.util.Map, Serializable, Map {
         return this.a.get(obj);
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object getOrDefault(Object obj, Object obj2) {
         return Map.-EL.getOrDefault(this.a, obj, obj2);
     }
@@ -102,7 +102,7 @@ public final class t implements java.util.Map, Serializable, Map {
         return unmodifiableSet;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object merge(Object obj, Object obj2, BiFunction biFunction) {
         throw new UnsupportedOperationException();
     }
@@ -117,7 +117,7 @@ public final class t implements java.util.Map, Serializable, Map {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object putIfAbsent(Object obj, Object obj2) {
         throw new UnsupportedOperationException();
     }
@@ -127,12 +127,12 @@ public final class t implements java.util.Map, Serializable, Map {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final boolean replace(Object obj, Object obj2, Object obj3) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final void replaceAll(BiFunction biFunction) {
         throw new UnsupportedOperationException();
     }
@@ -157,12 +157,12 @@ public final class t implements java.util.Map, Serializable, Map {
         return nVar2;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final boolean remove(Object obj, Object obj2) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object replace(Object obj, Object obj2) {
         throw new UnsupportedOperationException();
     }

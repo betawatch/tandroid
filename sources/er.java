@@ -1,38 +1,42 @@
 // default package
 
-import java.util.function.IntSupplier;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class er implements IntSupplier {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class er {
+    public final String a;
+    public final String b;
+    public final ArrayList c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final qx6 h;
 
-    public /* synthetic */ er(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public er(String str, String str2, ArrayList arrayList, String str3, String str4, String str5, String str6, qx6 qx6Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = arrayList;
+        this.d = str3;
+        this.e = str4;
+        this.f = str5;
+        this.g = str6;
+        this.h = qx6Var;
     }
 
-    @Override // java.util.function.IntSupplier
-    public final int getAsInt() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((gr) obj).l3.f() << 1;
-            case 1:
-                return ((gr) obj).n3.f() << 1;
-            case 2:
-                return ConnectionsManager.getInstance(((gr) obj).b).isTestBackend() ? 5 : 20;
-            case 3:
-                return ConnectionsManager.getInstance(((gr) obj).b).isTestBackend() ? 5 : 20;
-            case 4:
-                return !ConnectionsManager.getInstance(((gr) obj).b).isTestBackend() ? 100 : 5;
-            case 5:
-                return ConnectionsManager.getInstance(((gr) obj).b).isTestBackend() ? 10 : 30;
-            default:
-                return bm2.f(((on9) obj).U, -1290001879, 1375731712);
+    public static er a(Context context, yl5 yl5Var, String str, String str2, ArrayList arrayList, qx6 qx6Var) {
+        String packageName = context.getPackageName();
+        String d = yl5Var.d();
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
+        String l = Build.VERSION.SDK_INT >= 28 ? Long.toString(packageInfo.getLongVersionCode()) : Integer.toString(packageInfo.versionCode);
+        String str3 = packageInfo.versionName;
+        if (str3 == null) {
+            str3 = "0.0";
         }
+        return new er(str, str2, arrayList, d, packageName, l, str3, qx6Var);
     }
 }

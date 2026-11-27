@@ -1,32 +1,46 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oic extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qic b;
+public final /* synthetic */ class oic implements s69, t69 {
+    public final /* synthetic */ uic a;
 
-    public /* synthetic */ oic(qic qicVar, byte b) {
-        this.a = b;
-        this.b = qicVar;
+    public /* synthetic */ oic(uic uicVar) {
+        this.a = uicVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        qic qicVar = this.b;
-        switch (b) {
-            case 0:
-                qicVar.r = 0;
-                qicVar.invalidate();
-                break;
-            default:
-                qicVar.s = 0;
-                qicVar.invalidate();
-                break;
+    @Override // s69
+    public final boolean C(View view) {
+        return false;
+    }
+
+    @Override // s69
+    public final void d(float f, float f2, int i, View view) {
+        uic uicVar = this.a;
+        tic ticVar = uicVar.E;
+        if (ticVar == null || ticVar.b()) {
+            sic sicVar = (sic) view;
+            if (i != uicVar.G || uicVar.E == null) {
+                jcc jccVar = uicVar.m0;
+                if (jccVar == null || !((Boolean) jccVar.g(Integer.valueOf(sicVar.a.a), Integer.valueOf(i))).booleanValue()) {
+                    uicVar.e(sicVar.a.a, i);
+                }
+            }
         }
+    }
+
+    @Override // t69
+    public final boolean e(int i, View view) {
+        jcc jccVar = this.a.b;
+        if (jccVar == null) {
+            return false;
+        }
+        return ((Boolean) jccVar.g(Integer.valueOf(((sic) view).a.a), view)).booleanValue();
+    }
+
+    @Override // s69
+    public final void u(View view, float f, float f2) {
     }
 }

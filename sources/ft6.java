@@ -1,122 +1,378 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.io.IOException;
+import android.os.Bundle;
+import j$.util.Objects;
 import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ft6 extends w39 {
-    public final ArrayList c = new ArrayList();
-    public final LayoutInflater d;
-    public final Drawable e;
-    public final Drawable f;
-    public final Drawable h;
-    public final Drawable n;
-    public final /* synthetic */ gt6 r;
+public final class ft6 {
+    public static final ft6 g = new ts6().a();
+    public static final String h = "0";
+    public static final String i = "1";
+    public static final String j = "2";
+    public static final String k = "3";
+    public static final String l = "4";
+    public static final String m = "5";
+    public final String a;
+    public final bt6 b;
+    public final at6 c;
+    public final nt6 d;
+    public final ws6 e;
+    public final ct6 f;
 
-    public ft6(gt6 gt6Var) {
-        this.r = gt6Var;
-        Context context = gt6Var.n;
-        this.d = LayoutInflater.from(context);
-        this.e = voe.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = voe.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = voe.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = voe.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
-        D();
+    public ft6(String str, ws6 ws6Var, bt6 bt6Var, at6 at6Var, nt6 nt6Var, ct6 ct6Var) {
+        this.a = str;
+        this.b = bt6Var;
+        this.c = at6Var;
+        this.d = nt6Var;
+        this.e = ws6Var;
+        this.f = ct6Var;
     }
 
-    public final void D() {
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        gt6 gt6Var = this.r;
-        arrayList.add(new dt6(gt6Var.n.getString(R.string.mr_chooser_title)));
-        ArrayList arrayList2 = gt6Var.s;
-        int size = arrayList2.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList2.get(i);
-            i++;
-            arrayList.add(new dt6((eu6) obj));
+    public static ft6 a(int i2, Bundle bundle) {
+        at6 at6Var;
+        ws6 ws6Var;
+        ct6 ct6Var;
+        Map b;
+        ys6 ys6Var;
+        ss6 ss6Var;
+        j99 f;
+        j99 b2;
+        bt6 bt6Var;
+        String string = bundle.getString(h, "");
+        string.getClass();
+        Bundle bundle2 = bundle.getBundle(i);
+        if (bundle2 == null) {
+            at6Var = at6.f;
+        } else {
+            zs6 zs6Var = new zs6();
+            String str = at6.g;
+            at6 at6Var2 = at6.f;
+            zs6Var.a = bundle2.getLong(str, at6Var2.a);
+            zs6Var.b = bundle2.getLong(at6.h, at6Var2.b);
+            zs6Var.c = bundle2.getLong(at6.i, at6Var2.c);
+            zs6Var.d = bundle2.getFloat(at6.j, at6Var2.d);
+            zs6Var.e = bundle2.getFloat(at6.k, at6Var2.e);
+            at6Var = new at6(zs6Var);
         }
-        f();
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.c.size();
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        return ((dt6) this.c.get(i)).b;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0054, code lost:
-    
-        if (r1 != null) goto L25;
-     */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        Drawable createFromStream;
-        int d = d(i);
-        dt6 dt6Var = (dt6) this.c.get(i);
-        byte b = 1;
-        if (d == 1) {
-            ((ct6) s49Var).v.setText(dt6Var.a.toString());
-            return;
-        }
-        if (d != 2) {
-            Log.w("RecyclerAdapter", "Cannot bind item to ViewHolder because of wrong view type");
-            return;
-        }
-        et6 et6Var = (et6) s49Var;
-        eu6 eu6Var = (eu6) dt6Var.a;
-        View view = et6Var.v;
-        view.setVisibility(0);
-        et6Var.x.setVisibility(4);
-        view.setOnClickListener(new fc3(et6Var, eu6Var, b));
-        et6Var.y.setText(eu6Var.d);
-        ImageView imageView = et6Var.w;
-        ft6 ft6Var = et6Var.z;
-        Uri uri = eu6Var.f;
-        if (uri != null) {
-            try {
-                createFromStream = Drawable.createFromStream(ft6Var.r.n.getContentResolver().openInputStream(uri), null);
-            } catch (IOException e) {
-                Log.w("RecyclerAdapter", "Failed to load " + uri, e);
+        at6 at6Var3 = at6Var;
+        Bundle bundle3 = bundle.getBundle(j);
+        nt6 b3 = bundle3 == null ? nt6.M : nt6.b(i2, bundle3);
+        Bundle bundle4 = bundle.getBundle(k);
+        boolean z = false;
+        if (bundle4 == null) {
+            ws6Var = ws6.r;
+        } else {
+            us6 us6Var = new us6();
+            String str2 = vs6.j;
+            vs6 vs6Var = vs6.i;
+            long j2 = vs6Var.a;
+            long j3 = vs6Var.d;
+            long j4 = vs6Var.b;
+            long T = gcc.T(bundle4.getLong(str2, j2));
+            boolean z2 = true;
+            yve.f(T >= 0);
+            us6Var.a = T;
+            long T2 = gcc.T(bundle4.getLong(vs6.k, vs6Var.c));
+            yve.f(T2 == Long.MIN_VALUE || T2 >= 0);
+            us6Var.b = T2;
+            us6Var.c = bundle4.getBoolean(vs6.l, vs6Var.e);
+            us6Var.d = bundle4.getBoolean(vs6.m, vs6Var.f);
+            us6Var.e = bundle4.getBoolean(vs6.n, vs6Var.g);
+            us6Var.f = bundle4.getBoolean(vs6.q, vs6Var.h);
+            long j5 = bundle4.getLong(vs6.o, j4);
+            if (j5 != j4) {
+                yve.f(j5 >= 0);
+                us6Var.a = j5;
             }
+            long j6 = bundle4.getLong(vs6.p, j3);
+            if (j6 != j3) {
+                if (j6 != Long.MIN_VALUE && j6 < 0) {
+                    z2 = false;
+                }
+                yve.f(z2);
+                us6Var.b = j6;
+            }
+            ws6Var = new ws6(us6Var);
         }
-        int i2 = eu6Var.n;
-        createFromStream = i2 != 1 ? i2 != 2 ? eu6Var.e() ? ft6Var.n : ft6Var.e : ft6Var.h : ft6Var.f;
-        imageView.setImageDrawable(createFromStream);
+        ws6 ws6Var2 = ws6Var;
+        Bundle bundle5 = bundle.getBundle(l);
+        if (bundle5 == null) {
+            ct6Var = ct6.d;
+        } else {
+            pm3 pm3Var = new pm3((byte) 16, z);
+            pm3Var.b = (Uri) bundle5.getParcelable(ct6.e);
+            pm3Var.c = bundle5.getString(ct6.f);
+            pm3Var.d = gcc.o(bundle5.getBundle(ct6.g));
+            ct6Var = new ct6(pm3Var);
+        }
+        ct6 ct6Var2 = ct6Var;
+        Bundle bundle6 = bundle.getBundle(m);
+        if (bundle6 == null) {
+            bt6Var = null;
+        } else {
+            Bundle bundle7 = bundle6.getBundle(bt6.k);
+            if (bundle7 == null) {
+                ys6Var = null;
+            } else {
+                String string2 = bundle7.getString(ys6.i);
+                string2.getClass();
+                UUID fromString = UUID.fromString(string2);
+                Uri uri = (Uri) bundle7.getParcelable(ys6.j);
+                String str3 = ys6.k;
+                Bundle bundle8 = Bundle.EMPTY;
+                Bundle bundle9 = bundle7.getBundle(str3);
+                if (bundle9 == null) {
+                    bundle9 = bundle8;
+                }
+                if (bundle9 == bundle8) {
+                    b = o99.h;
+                } else {
+                    HashMap hashMap = new HashMap();
+                    if (bundle9 != bundle8) {
+                        for (String str4 : bundle9.keySet()) {
+                            String string3 = bundle9.getString(str4);
+                            if (string3 != null) {
+                                hashMap.put(str4, string3);
+                            }
+                        }
+                    }
+                    b = to5.b(hashMap);
+                }
+                boolean z3 = bundle7.getBoolean(ys6.l, false);
+                boolean z4 = bundle7.getBoolean(ys6.m, false);
+                boolean z5 = bundle7.getBoolean(ys6.n, false);
+                String str5 = ys6.o;
+                ArrayList<Integer> arrayList = new ArrayList<>();
+                ArrayList<Integer> integerArrayList = bundle7.getIntegerArrayList(str5);
+                if (integerArrayList != null) {
+                    arrayList = integerArrayList;
+                }
+                po5 q = po5.q(arrayList);
+                byte[] byteArray = bundle7.getByteArray(ys6.p);
+                xs6 xs6Var = new xs6();
+                xs6Var.a = fromString;
+                xs6Var.b = uri;
+                xs6Var.c = to5.b(b);
+                xs6Var.d = z3;
+                xs6Var.f = z5;
+                xs6Var.e = z4;
+                xs6Var.g = po5.q(q);
+                xs6Var.h = byteArray != null ? Arrays.copyOf(byteArray, byteArray.length) : null;
+                ys6Var = new ys6(xs6Var);
+            }
+            Bundle bundle10 = bundle6.getBundle(bt6.l);
+            if (bundle10 == null) {
+                ss6Var = null;
+            } else {
+                Uri uri2 = (Uri) bundle10.getParcelable(ss6.b);
+                uri2.getClass();
+                xh4 xh4Var = new xh4((byte) 14, z);
+                xh4Var.b = uri2;
+                ss6Var = new ss6(xh4Var);
+            }
+            ArrayList parcelableArrayList = bundle6.getParcelableArrayList(bt6.m);
+            if (parcelableArrayList == null) {
+                no5 no5Var = po5.b;
+                f = j99.e;
+            } else {
+                mo5 p = po5.p();
+                int i3 = 0;
+                while (i3 < parcelableArrayList.size()) {
+                    Bundle bundle11 = (Bundle) parcelableArrayList.get(i3);
+                    bundle11.getClass();
+                    p.c(new scb(bundle11.getInt(scb.d, 0), bundle11.getInt(scb.e, 0), bundle11.getInt(scb.f, 0)));
+                    i3++;
+                    parcelableArrayList = parcelableArrayList;
+                }
+                f = p.f();
+            }
+            j99 j99Var = f;
+            ArrayList parcelableArrayList2 = bundle6.getParcelableArrayList(bt6.o);
+            if (parcelableArrayList2 == null) {
+                no5 no5Var2 = po5.b;
+                b2 = j99.e;
+            } else {
+                b2 = e31.b(new p31((byte) 11), parcelableArrayList2);
+            }
+            j99 j99Var2 = b2;
+            long j7 = bundle6.getLong(bt6.p, -9223372036854775807L);
+            Uri uri3 = (Uri) bundle6.getParcelable(bt6.i);
+            uri3.getClass();
+            bt6Var = new bt6(uri3, bundle6.getString(bt6.j), ys6Var, ss6Var, j99Var, bundle6.getString(bt6.n), j99Var2, j7);
+        }
+        return new ft6(string, ws6Var2, bt6Var, at6Var3, b3, ct6Var2);
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        LayoutInflater layoutInflater = this.d;
-        if (i != 1) {
-            if (i == 2) {
-                return new et6(this, layoutInflater.inflate(R.layout.mr_picker_route_item, viewGroup, false));
-            }
-            sdb.a();
-            return null;
+    public final Bundle b(int i2, boolean z) {
+        bt6 bt6Var;
+        Bundle bundle = new Bundle();
+        String str = this.a;
+        if (!str.equals("")) {
+            bundle.putString(h, str);
         }
-        View inflate = layoutInflater.inflate(R.layout.mr_picker_header_item, viewGroup, false);
-        ct6 ct6Var = new ct6(inflate);
-        ct6Var.v = (TextView) inflate.findViewById(R.id.mr_picker_header_name);
-        return ct6Var;
+        at6 at6Var = at6.f;
+        at6 at6Var2 = this.c;
+        if (!at6Var2.equals(at6Var)) {
+            bundle.putBundle(i, at6Var2.b());
+        }
+        nt6 nt6Var = nt6.M;
+        nt6 nt6Var2 = this.d;
+        if (!nt6Var2.equals(nt6Var)) {
+            bundle.putBundle(j, nt6Var2.c(i2));
+        }
+        vs6 vs6Var = vs6.i;
+        ws6 ws6Var = this.e;
+        if (!ws6Var.equals(vs6Var)) {
+            Bundle bundle2 = new Bundle();
+            long j2 = ws6Var.a;
+            if (j2 != vs6Var.a) {
+                bundle2.putLong(vs6.j, j2);
+            }
+            long j3 = ws6Var.c;
+            if (j3 != vs6Var.c) {
+                bundle2.putLong(vs6.k, j3);
+            }
+            long j4 = ws6Var.b;
+            if (j4 != vs6Var.b) {
+                bundle2.putLong(vs6.o, j4);
+            }
+            long j5 = ws6Var.d;
+            if (j5 != vs6Var.d) {
+                bundle2.putLong(vs6.p, j5);
+            }
+            boolean z2 = ws6Var.e;
+            if (z2 != vs6Var.e) {
+                bundle2.putBoolean(vs6.l, z2);
+            }
+            boolean z3 = ws6Var.f;
+            if (z3 != vs6Var.f) {
+                bundle2.putBoolean(vs6.m, z3);
+            }
+            boolean z4 = ws6Var.g;
+            if (z4 != vs6Var.g) {
+                bundle2.putBoolean(vs6.n, z4);
+            }
+            boolean z5 = ws6Var.h;
+            if (z5 != vs6Var.h) {
+                bundle2.putBoolean(vs6.q, z5);
+            }
+            bundle.putBundle(k, bundle2);
+        }
+        ct6 ct6Var = ct6.d;
+        ct6 ct6Var2 = this.f;
+        if (!ct6Var2.equals(ct6Var)) {
+            Bundle bundle3 = new Bundle();
+            Uri uri = ct6Var2.a;
+            if (uri != null) {
+                bundle3.putParcelable(ct6.e, uri);
+            }
+            String str2 = ct6Var2.b;
+            if (str2 != null) {
+                bundle3.putString(ct6.f, str2);
+            }
+            Bundle bundle4 = ct6Var2.c;
+            if (bundle4 != null) {
+                bundle3.putBundle(ct6.g, bundle4);
+            }
+            bundle.putBundle(l, bundle3);
+        }
+        if (z && (bt6Var = this.b) != null) {
+            po5 po5Var = bt6Var.g;
+            List list = bt6Var.e;
+            Bundle bundle5 = new Bundle();
+            bundle5.putParcelable(bt6.i, bt6Var.a);
+            String str3 = bt6Var.b;
+            if (str3 != null) {
+                bundle5.putString(bt6.j, str3);
+            }
+            ys6 ys6Var = bt6Var.c;
+            if (ys6Var != null) {
+                String str4 = bt6.k;
+                po5 po5Var2 = ys6Var.g;
+                to5 to5Var = ys6Var.c;
+                Bundle bundle6 = new Bundle();
+                bundle6.putString(ys6.i, ys6Var.a.toString());
+                Uri uri2 = ys6Var.b;
+                if (uri2 != null) {
+                    bundle6.putParcelable(ys6.j, uri2);
+                }
+                if (!to5Var.isEmpty()) {
+                    String str5 = ys6.k;
+                    Bundle bundle7 = new Bundle();
+                    for (Map.Entry entry : to5Var.entrySet()) {
+                        bundle7.putString((String) entry.getKey(), (String) entry.getValue());
+                    }
+                    bundle6.putBundle(str5, bundle7);
+                }
+                boolean z6 = ys6Var.d;
+                if (z6) {
+                    bundle6.putBoolean(ys6.l, z6);
+                }
+                boolean z7 = ys6Var.e;
+                if (z7) {
+                    bundle6.putBoolean(ys6.m, z7);
+                }
+                boolean z8 = ys6Var.f;
+                if (z8) {
+                    bundle6.putBoolean(ys6.n, z8);
+                }
+                if (!po5Var2.isEmpty()) {
+                    bundle6.putIntegerArrayList(ys6.o, new ArrayList<>(po5Var2));
+                }
+                byte[] bArr = ys6Var.h;
+                if (bArr != null) {
+                    bundle6.putByteArray(ys6.p, bArr);
+                }
+                bundle5.putBundle(str4, bundle6);
+            }
+            ss6 ss6Var = bt6Var.d;
+            if (ss6Var != null) {
+                String str6 = bt6.l;
+                Bundle bundle8 = new Bundle();
+                bundle8.putParcelable(ss6.b, ss6Var.a);
+                bundle5.putBundle(str6, bundle8);
+            }
+            if (!list.isEmpty()) {
+                bundle5.putParcelableArrayList(bt6.m, e31.c(list, new p31((byte) 9)));
+            }
+            String str7 = bt6Var.f;
+            if (str7 != null) {
+                bundle5.putString(bt6.n, str7);
+            }
+            if (!po5Var.isEmpty()) {
+                bundle5.putParcelableArrayList(bt6.o, e31.c(po5Var, new p31((byte) 10)));
+            }
+            long j6 = bt6Var.h;
+            if (j6 != -9223372036854775807L) {
+                bundle5.putLong(bt6.p, j6);
+            }
+            bundle.putBundle(m, bundle5);
+        }
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof ft6)) {
+            return false;
+        }
+        ft6 ft6Var = (ft6) obj;
+        return Objects.equals(this.a, ft6Var.a) && this.e.equals(ft6Var.e) && Objects.equals(this.b, ft6Var.b) && this.c.equals(ft6Var.c) && Objects.equals(this.d, ft6Var.d) && Objects.equals(this.f, ft6Var.f);
+    }
+
+    public final int hashCode() {
+        int hashCode = this.a.hashCode() * 31;
+        bt6 bt6Var = this.b;
+        return this.f.hashCode() + ((this.d.hashCode() + ((this.e.hashCode() + ((this.c.hashCode() + ((hashCode + (bt6Var != null ? bt6Var.hashCode() : 0)) * 31)) * 31)) * 31)) * 31);
     }
 }

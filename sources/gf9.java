@@ -1,27 +1,60 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class gf9 implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ve9 b;
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.tgnet.tl.TL_iv;
 
-    public /* synthetic */ gf9(ve9 ve9Var, byte b) {
-        this.a = b;
-        this.b = ve9Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class gf9 implements kmb {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ if9 d;
+
+    public gf9(if9 if9Var, Layout layout, int i, int i2) {
+        this.d = if9Var;
+        this.a = layout;
+        this.b = i;
+        this.c = i2;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        ve9 ve9Var = this.b;
-        switch (b) {
-            case 0:
-                ve9Var.b();
-                break;
-            default:
-                ve9Var.b();
-                break;
-        }
+    @Override // kmb
+    public final Layout a() {
+        return this.a;
+    }
+
+    @Override // kmb
+    public final Rect c() {
+        return null;
+    }
+
+    @Override // kmb
+    public final CharSequence getPrefix() {
+        return null;
+    }
+
+    @Override // kmb
+    public final int getRow() {
+        return 0;
+    }
+
+    @Override // kmb
+    public final CharSequence getText() {
+        TL_iv.PageBlock pageBlock;
+        TL_iv.PageCaption pageCaption;
+        TL_iv.RichText richText;
+        mk0 X0 = this.d.c.X0();
+        return (X0 == null || (pageBlock = X0.b) == null || (pageCaption = pageBlock.caption) == null || (richText = pageCaption.text) == null) ? "" : mm9.r(richText, null, true);
+    }
+
+    @Override // kmb
+    public final int getX() {
+        return this.b;
+    }
+
+    @Override // kmb
+    public final int getY() {
+        return this.c;
     }
 }

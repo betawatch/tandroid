@@ -1,56 +1,76 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gd2 implements Runnable {
+public final /* synthetic */ class gd2 implements fd, gc7, ef7 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ xd2 b;
+    public final /* synthetic */ pd2 b;
 
-    public /* synthetic */ gd2(xd2 xd2Var, byte b) {
+    public /* synthetic */ gd2(pd2 pd2Var, byte b) {
         this.a = b;
-        this.b = xd2Var;
+        this.b = pd2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // gc7
+    public final boolean b(TLRPC.TL_error tL_error) {
         byte b = this.a;
-        xd2 xd2Var = this.b;
+        pd2 pd2Var = this.b;
+        switch (b) {
+            case 2:
+                pd2Var.p0(false);
+                return true;
+            case 3:
+                pd2Var.p0(false);
+                return true;
+            default:
+                return pd2Var.m0(tL_error);
+        }
+    }
+
+    @Override // ef7
+    public final void run(long j) {
+        this.b.l0(j);
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        byte b2 = 0;
+        pd2 pd2Var = this.b;
         switch (b) {
             case 0:
-                xd2Var.q1.f();
+                pd2Var.n0(true);
                 break;
             case 1:
-                xd2Var.E0(true);
-                break;
+                pd2 pd2Var2 = this.b;
+                pd2Var2.p0(true);
+                id2 id2Var = new id2(pd2Var2, b2);
+                if (!pd2Var2.L && !pd2Var2.M) {
+                    pd2Var2.getMessagesController().k(pd2Var2.x.id, pd2Var2.w, pd2Var2.Z0, pd2Var2, true, id2Var, new gd2(pd2Var2, (byte) 3));
+                    break;
+                } else {
+                    pd2Var2.getMessagesController().d5(pd2Var2.x.id, pd2Var2.w, pd2Var2.L ? pd2Var2.N : pd2.d0(false), pd2Var2.T, false, pd2Var2, pd2Var2.a1, pd2Var2.L, pd2Var2.Z0, id2Var, new gd2(pd2Var2, (byte) 2));
+                    break;
+                }
             case 2:
-                mu1 mu1Var = xd2Var.u1;
-                d d0 = uxa.d0(mu1Var.getMessagesController().K0(Long.valueOf(-mu1Var.a())), true);
-                ag0 ag0Var = new ag0();
-                ag0Var.a = true;
-                d0.setResourceProvider(mu1Var.getResourceProvider());
-                ag0Var.c = new jc((byte) 23);
-                ag0Var.d = new gd2(xd2Var, (byte) 3);
-                ag0Var.b = new gd2(xd2Var, (byte) 4);
-                ag0Var.e = true;
-                xd2Var.Q1 = d0;
-                mu1Var.showAsSheet(d0, ag0Var);
-                break;
             case 3:
-                xd2Var.I0();
+            default:
+                pd2Var.getClass();
+                pd2Var.presentFragment(new o7c(6, null));
                 break;
             case 4:
-                xd2Var.Q1 = null;
+                pd2Var.finishFragment();
                 break;
             case 5:
-                xd2Var.I0();
-                break;
-            case 6:
-                xd2Var.Q1 = null;
-                break;
-            default:
-                xd2Var.N1.c(xd2Var.z1);
+                pd2Var.getClass();
+                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                q72 q72Var = new q72(pd2Var, twoStepVerificationActivity, (byte) 5);
+                twoStepVerificationActivity.a0 = (byte) 0;
+                twoStepVerificationActivity.c0 = q72Var;
+                pd2Var.presentFragment(twoStepVerificationActivity);
                 break;
         }
     }

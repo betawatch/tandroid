@@ -1,66 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.util.AttributeSet;
-import android.view.ViewGroup;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public class e49 extends ViewGroup.MarginLayoutParams {
-    public s49 a;
-    public final Rect b;
-    public boolean c;
-    public boolean d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class e49 extends ImageReceiver {
+    public final /* synthetic */ byte K1;
 
-    public e49(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-        this.b = new Rect();
-        this.c = true;
-        this.d = false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e49(View view, byte b) {
+        super(view);
+        this.K1 = b;
     }
 
-    public final int a() {
-        s49 s49Var = this.a;
-        if (s49Var == null) {
-            return -1;
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean h0(Drawable drawable, String str, int i, boolean z, int i2) {
+        switch (this.K1) {
+            case 0:
+                if (drawable instanceof b29) {
+                    ((b29) drawable).I(0, false, true);
+                }
+                return super.h0(drawable, str, i, z, i2);
+            default:
+                boolean h0 = super.h0(drawable, str, i, z, i2);
+                if (h0 && (drawable instanceof b29)) {
+                    b29 b29Var = (b29) drawable;
+                    b29Var.I(0, false, true);
+                    b29Var.stop();
+                }
+                return h0;
         }
-        return s49Var.b();
-    }
-
-    public final int b() {
-        s49 s49Var = this.a;
-        if (s49Var == null) {
-            return -1;
-        }
-        return s49Var.c();
-    }
-
-    public e49(int i, int i2) {
-        super(i, i2);
-        this.b = new Rect();
-        this.c = true;
-        this.d = false;
-    }
-
-    public e49(ViewGroup.MarginLayoutParams marginLayoutParams) {
-        super(marginLayoutParams);
-        this.b = new Rect();
-        this.c = true;
-        this.d = false;
-    }
-
-    public e49(ViewGroup.LayoutParams layoutParams) {
-        super(layoutParams);
-        this.b = new Rect();
-        this.c = true;
-        this.d = false;
-    }
-
-    public e49(e49 e49Var) {
-        super((ViewGroup.LayoutParams) e49Var);
-        this.b = new Rect();
-        this.c = true;
-        this.d = false;
     }
 }

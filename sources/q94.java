@@ -1,89 +1,94 @@
 // default package
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class q94 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class q94 extends ViewGroup implements fn7 {
+    public static final /* synthetic */ int e = 0;
+    public final vnb a;
+    public final TextView b;
+    public final int c;
+    public ArrayList d;
 
-    public /* synthetic */ q94(ba4 ba4Var, boolean z, String str, long j, long j2, Float f) {
-        this.e = ba4Var;
-        this.c = z;
-        this.f = str;
-        this.b = j;
-        this.d = j2;
-        this.h = f;
+    public q94(int i, vnb vnbVar, Context context) {
+        super(context);
+        this.a = vnbVar;
+        this.c = i;
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setText(ob6.M0(2131747989, null));
+        textView.setTextSize(13.0f);
+        textView.setTypeface(hl.o());
+        textView.setIncludeFontPadding(false);
+        yob.X(textView, aob.G6, vnbVar);
+        addView(textView);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ba4 ba4Var = (ba4) this.e;
-                boolean z = this.c;
-                String str = (String) this.f;
-                long j = this.b;
-                long j2 = this.d;
-                Float f = (Float) this.h;
-                qb4 qb4Var = z ? (qb4) ba4Var.n.get(str) : (qb4) ba4Var.h.get(str);
-                if (qb4Var != null) {
-                    Utilities.d.c(new n30((Object) qb4Var, (Object) f, j2, j, (byte) 3));
-                    break;
-                } else if (j2 != 0) {
-                    ba4Var.y.put(str, Long.valueOf(j2));
-                    break;
-                }
-                break;
-            default:
-                g2b g2bVar = (g2b) this.e;
-                long j3 = this.b;
-                boolean z2 = this.c;
-                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.f;
-                long j4 = this.d;
-                TLObject tLObject = (TLObject) this.h;
-                g2bVar.D.remove(Long.valueOf(j3));
-                if (!z2) {
-                    peerStories = g2bVar.x(j4);
-                }
-                if (peerStories != null) {
-                    byte b = 0;
-                    if (tLObject instanceof TL_stories.TL_stories_stories) {
-                        TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                        for (int i = 0; i < tL_stories_stories.stories.size(); i++) {
-                            for (int i2 = 0; i2 < peerStories.stories.size(); i2++) {
-                                if (peerStories.stories.get(i2).id == tL_stories_stories.stories.get(i).id) {
-                                    peerStories.stories.set(i2, tL_stories_stories.stories.get(i));
-                                    g2bVar.Y(j4, tL_stories_stories.stories.get(i));
-                                }
-                            }
-                        }
-                        if (!z2) {
-                            s2b s2bVar = g2bVar.k;
-                            s2bVar.b.a.c(new r2b(s2bVar, peerStories, b));
-                        }
-                    }
-                    kk7.f(g2bVar.a).k(kk7.x5, new Object[0]);
-                    break;
-                }
-                break;
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        for (int i3 = 1; i3 < getChildCount(); i3++) {
+            getChildAt(i3).invalidate();
         }
     }
 
-    public /* synthetic */ q94(g2b g2bVar, long j, boolean z, TL_stories.PeerStories peerStories, long j2, TLObject tLObject) {
-        this.e = g2bVar;
-        this.b = j;
-        this.c = z;
-        this.f = peerStories;
-        this.d = j2;
-        this.h = tLObject;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        jn7.e().b(this, jn7.l4);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        jn7.e().n(this, jn7.l4);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(hl.L(14.0f), getHeight() - 1, getWidth() - hl.L(14.0f), getHeight() - 1, aob.j0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        this.b.layout(hl.L(14.0f), hl.L(10.0f), getWidth() - hl.L(14.0f), hl.L(24.0f));
+        int L = hl.L(14.0f);
+        int L2 = hl.L(32.0f);
+        for (int i5 = 1; i5 < getChildCount(); i5++) {
+            View childAt = getChildAt(i5);
+            if (L > hl.L(14.0f) && childAt.getMeasuredWidth() + L > getWidth() - hl.L(14.0f)) {
+                L = hl.L(14.0f);
+                L2 = hl.L(34.0f) + L2;
+            }
+            int width = ob6.a0 ? (getWidth() - L) - childAt.getMeasuredWidth() : L;
+            childAt.layout(width, L2, childAt.getMeasuredWidth() + width, hl.L(28.0f) + L2);
+            L = uh9.w(5.0f, childAt.getMeasuredWidth(), L);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int L = size - hl.L(28.0f);
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(14.0f), TLObject.FLAG_30));
+        int L2 = hl.L(32.0f);
+        int i3 = 0;
+        for (int i4 = 1; i4 < getChildCount(); i4++) {
+            View childAt = getChildAt(i4);
+            childAt.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(hl.L(28.0f), TLObject.FLAG_30));
+            if (i3 > 0 && childAt.getMeasuredWidth() + i3 > L) {
+                L2 = hl.L(34.0f) + L2;
+                i3 = 0;
+            }
+            i3 = uh9.w(5.0f, childAt.getMeasuredWidth(), i3);
+        }
+        setMeasuredDimension(size, hl.L(12.0f) + L2 + (getChildCount() > 1 ? hl.L(28.0f) : 0));
     }
 }

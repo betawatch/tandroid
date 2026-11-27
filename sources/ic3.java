@@ -1,61 +1,108 @@
 // default package
 
-import android.os.Build;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ic3 implements bg8 {
-    public final /* synthetic */ sc3 a;
-    public final /* synthetic */ nc3 b;
+public final class ic3 implements e84 {
+    public final /* synthetic */ byte a;
+    public final Object b;
 
-    public /* synthetic */ ic3(sc3 sc3Var, nc3 nc3Var) {
-        this.a = sc3Var;
-        this.b = nc3Var;
+    public ic3() {
+        this.a = (byte) 1;
+        this.b = new yh7(peb.B, 16);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0064, code lost:
-    
-        if (r7.b != false) goto L37;
-     */
-    @Override // bg8
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean apply(Object obj) {
-        Boolean bool;
-        ska skaVar;
-        fm4 fm4Var = (fm4) obj;
-        sc3 sc3Var = this.a;
-        sc3Var.getClass();
-        if (this.b.A0 && ((bool = sc3Var.k) == null || !bool.booleanValue())) {
-            int i = fm4Var.N;
-            if (i != -1 && i > 2) {
-                String str = fm4Var.t;
-                if (str != null) {
-                    switch (str) {
-                        case "audio/eac3-joc":
-                        case "audio/ac3":
-                        case "audio/ac4":
-                        case "audio/eac3":
-                            if (Build.VERSION.SDK_INT >= 32) {
-                                ska skaVar2 = sc3Var.i;
-                                if (skaVar2 != null) {
-                                    break;
-                                }
-                            }
-                            break;
-                        default:
-                            if (Build.VERSION.SDK_INT >= 32 || (skaVar = sc3Var.i) == null || !skaVar.b || !skaVar.c() || !sc3Var.i.d() || !sc3Var.i.a(sc3Var.j, fm4Var)) {
-                                return false;
-                            }
-                            break;
-                    }
-                }
-                if (Build.VERSION.SDK_INT >= 32) {
-                }
-                return false;
-            }
+    @Override // e84
+    public final e84 a() {
+        switch (this.a) {
+            case 0:
+                return this;
+            default:
+                return (yh7) this.b;
         }
-        return true;
+    }
+
+    @Override // e84
+    public final int b(f84 f84Var, v11 v11Var) {
+        switch (this.a) {
+            case 0:
+                return ((cb3) f84Var).k(ConnectionsManager.DEFAULT_DATACENTER_ID) != -1 ? 0 : -1;
+            default:
+                return ((yh7) this.b).b(f84Var, v11Var);
+        }
+    }
+
+    @Override // e84
+    public final boolean c(f84 f84Var) {
+        switch (this.a) {
+            case 0:
+                return true;
+            default:
+                return ((yh7) this.b).c(f84Var);
+        }
+    }
+
+    @Override // e84
+    public final void d(long j, long j2) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                ((yh7) this.b).d(j, j2);
+                break;
+        }
+    }
+
+    @Override // e84
+    public final List e() {
+        switch (this.a) {
+            case 0:
+                no5 no5Var = po5.b;
+                return j99.e;
+            default:
+                return ((yh7) this.b).m;
+        }
+    }
+
+    @Override // e84
+    public final void f(g84 g84Var) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                x1c e0 = g84Var.e0(0, 3);
+                g84Var.m0(new qc0(-9223372036854775807L));
+                g84Var.D();
+                ko4 ko4Var = (ko4) obj;
+                jo4 a = ko4Var.a();
+                a.s = dg7.n("text/x-unknown");
+                a.k = ko4Var.t;
+                xnb.v(a, e0);
+                break;
+            default:
+                ((yh7) obj).f(new i09((Object) g84Var, (byte) 8));
+                break;
+        }
+    }
+
+    @Override // e84
+    public final void release() {
+        byte b = this.a;
+    }
+
+    public ic3(ko4 ko4Var) {
+        this.a = (byte) 0;
+        this.b = ko4Var;
+    }
+
+    private final void g() {
+    }
+
+    private final void h() {
+    }
+
+    private final void i(long j, long j2) {
     }
 }

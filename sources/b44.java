@@ -1,29 +1,23 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayDeque;
-import java.util.HashMap;
-import java.util.concurrent.Executor;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class b44 implements hab, tu8 {
-    public final HashMap a = new HashMap();
-    public ArrayDeque b = new ArrayDeque();
-    public final Executor c;
+public final class b44 extends wp5 {
+    public static final Pattern e = Pattern.compile("^&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
 
-    public b44(Executor executor) {
-        this.c = executor;
+    @Override // wp5
+    public final yi6 b() {
+        String a = a(e);
+        if (a != null) {
+            return e(di5.a(a));
+        }
+        return null;
     }
 
-    public final void a(w44 w44Var) {
-        Executor executor = this.c;
-        synchronized (this) {
-            executor.getClass();
-            if (!this.a.containsKey(y53.class)) {
-                this.a.put(y53.class, new ConcurrentHashMap());
-            }
-            ((ConcurrentHashMap) this.a.get(y53.class)).put(w44Var, executor);
-        }
+    @Override // wp5
+    public final char c() {
+        return '&';
     }
 }

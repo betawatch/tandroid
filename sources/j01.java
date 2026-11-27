@@ -1,61 +1,45 @@
 // default package
 
-import org.telegram.messenger.beta.R;
+import android.content.DialogInterface;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class j01 extends m01 {
-    @Override // m01
-    public final float a() {
-        return 0.7f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j01 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+
+    public /* synthetic */ j01(int i, byte b) {
+        this.a = b;
+        this.b = i;
     }
 
-    @Override // m01
-    public final int b() {
-        return -13318311;
-    }
-
-    @Override // m01
-    public final float c() {
-        return 0.5f;
-    }
-
-    @Override // m01
-    public final int d() {
-        return R.raw.photo_neon;
-    }
-
-    @Override // m01
-    public final float f() {
-        return 0.2f;
-    }
-
-    @Override // m01
-    public final float g() {
-        return 1.45f;
-    }
-
-    @Override // m01
-    public final String h(int i) {
-        if (i == 0) {
-            return "blitWithMaskLight";
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        byte b = this.a;
+        int i = this.b;
+        switch (b) {
+            case 0:
+                ConnectionsManager.getInstance(yac.t0).cancelRequest(i, true);
+                break;
+            default:
+                ob6 D0 = ob6.D0();
+                if (i != 0) {
+                    Iterator it = D0.T.entrySet().iterator();
+                    while (it.hasNext()) {
+                        lb6 lb6Var = (lb6) ((Map.Entry) it.next()).getValue();
+                        if (lb6Var.c == i) {
+                            ConnectionsManager.getInstance(lb6Var.d).cancelRequest(i, true);
+                            it.remove();
+                            lb6Var.a();
+                            break;
+                        }
+                    }
+                    break;
+                }
+                break;
         }
-        if (i == 1) {
-            return "compositeWithMaskLight";
-        }
-        if (i != 2) {
-            return null;
-        }
-        return "brushLight";
-    }
-
-    @Override // m01
-    public final float j() {
-        return 0.07f;
-    }
-
-    @Override // m01
-    public final int k() {
-        return R.drawable.paint_neon_brush;
     }
 }

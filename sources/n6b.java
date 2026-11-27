@@ -1,33 +1,33 @@
 // default package
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class n6b implements DialogInterface.OnDismissListener {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class n6b implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ t7b b;
+    public final /* synthetic */ o6b b;
+    public final /* synthetic */ TL_stories.PeerStories c;
 
-    public /* synthetic */ n6b(t7b t7bVar, byte b) {
+    public /* synthetic */ n6b(o6b o6bVar, TL_stories.PeerStories peerStories, byte b) {
         this.a = b;
-        this.b = t7bVar;
+        this.b = o6bVar;
+        this.c = peerStories;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        t7b t7bVar = this.b;
+        TL_stories.PeerStories peerStories = this.c;
+        o6b o6bVar = this.b;
         switch (b) {
             case 0:
-                t7bVar.Y0.x(3, false);
-                t7bVar.r0 = null;
+                for (int i = 0; i < peerStories.stories.size(); i++) {
+                    o6bVar.l(wf3.n(peerStories.peer), peerStories.stories.get(i));
+                }
                 break;
             default:
-                i7b i7bVar = t7bVar.Y0;
-                if (i7bVar != null) {
-                    i7bVar.x(4, false);
-                    break;
-                }
+                o6bVar.g(wf3.n(peerStories.peer), peerStories);
                 break;
         }
     }

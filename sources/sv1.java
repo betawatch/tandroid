@@ -1,166 +1,205 @@
 // default package
 
-import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.os.StatFs;
-import java.io.File;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_account;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class sv1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Long h;
+    public final /* synthetic */ String n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object w;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ sv1(Object obj, int i, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
+    public /* synthetic */ sv1(qy1 qy1Var, Object obj, no6 no6Var, boolean z, int i, int i2, boolean z2, Long l, String str, Object obj2) {
+        this.r = qy1Var;
+        this.b = obj;
+        this.s = no6Var;
+        this.c = z;
+        this.d = i;
+        this.e = i2;
+        this.f = z2;
+        this.h = l;
+        this.n = str;
+        this.w = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0083  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        int i;
-        File z;
-        boolean z2;
-        NativeByteBuffer byteBufferValue;
+        boolean z;
+        r47 threadMessage;
+        r47 threadMessage2;
+        r47 threadMessage3;
+        r47 threadMessage4;
+        String str;
         byte b = this.a;
-        byte b2 = 2;
-        byte b3 = 1;
-        byte b4 = this.b;
-        Object obj = this.c;
+        Object obj = this.s;
+        Object obj2 = this.r;
         switch (b) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i2 = ChatActivityEnterView.r7;
-                if (b4 == 0) {
-                    chatActivityEnterView.q3 = 0;
-                }
-                chatActivityEnterView.W0 = null;
-                wx1 wx1Var = chatActivityEnterView.V0;
-                if (wx1Var != null) {
-                    if (chatActivityEnterView.d7 == null) {
-                        wx1Var.setTranslationY(0.0f);
-                    }
-                    chatActivityEnterView.V0.setVisibility(8);
-                    chatActivityEnterView.d2.removeView(chatActivityEnterView.V0);
-                    if (chatActivityEnterView.w4) {
-                        chatActivityEnterView.w4 = false;
-                        chatActivityEnterView.V0 = null;
-                    }
-                }
-                hy1 hy1Var = chatActivityEnterView.P3;
-                if (hy1Var != null) {
-                    hy1Var.k(0.0f);
-                }
-                chatActivityEnterView.requestLayout();
-                break;
-            case 1:
-                h75 h75Var = (h75) obj;
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    sharedInstance.setAudioOutput(b4);
-                    h75Var.n5 = Integer.valueOf(b4);
-                }
-                u21 u21Var = new u21(h75Var.F, new e53());
-                Resources resources = h75Var.getContext().getResources();
-                if (b4 == 2) {
-                    i = R.drawable.msg_voice_bluetooth;
-                } else if (b4 == 0) {
-                    i = R.drawable.msg_voice_speaker;
-                } else {
-                    VoIPService sharedInstance2 = VoIPService.getSharedInstance();
-                    i = (sharedInstance2 == null || !sharedInstance2.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
-                }
-                u21Var.M(resources.getDrawable(i).mutate(), h75.X0(b4)).k(h75Var.f1());
-                break;
-            case 2:
-                LaunchActivity launchActivity = (LaunchActivity) obj;
-                String str = LaunchActivity.C1;
-                if (y6c.h(launchActivity.P).o()) {
-                    try {
-                        SharedPreferences c1 = na7.c1();
-                        if ((((b4 == 2 || b4 == 1) && Math.abs(launchActivity.x1 - System.currentTimeMillis()) > 240000) || Math.abs(c1.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z = ba4.z(4)) != null) {
-                            StatFs statFs = new StatFs(z.getAbsolutePath());
-                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
-                            if (b4 > 0) {
-                                launchActivity.x1 = System.currentTimeMillis();
-                            } else if (availableBlocksLong < 52428800) {
-                            }
-                            c1.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
-                            gl.c3(new rx5(launchActivity, b2));
-                            break;
-                        }
-                    } catch (Throwable unused) {
-                        return;
-                    }
-                }
-                break;
-            case 3:
-                qa6 qa6Var = (qa6) obj;
-                qa6Var.V.g1(0, -gl.L(b4));
-                qa6Var.M0(false);
-                break;
-            case 4:
-                MediaController mediaController = (MediaController) obj;
-                String[] strArr = MediaController.W1;
-                kk7.f(mediaController.i1).k(kk7.m2, Integer.valueOf(mediaController.h1), Integer.valueOf(b4 == 2 ? 1 : 0));
+                n47 n47Var = (n47) this.w;
+                int i = ChatActivityEnterView.X7;
+                ((ChatActivityEnterView) obj2).b1((TLRPC.Document) obj, this.n, n47Var, this.c, this.d, this.e, this.b, this.h, this.f);
                 break;
             default:
-                hq6 hq6Var = (hq6) obj;
-                try {
-                    SQLiteCursor queryFinalized = hq6Var.getMessagesStorage().b.queryFinalized("SELECT data FROM emoji_statuses WHERE type = " + ((int) b4) + " LIMIT 1", new Object[0]);
-                    if (!queryFinalized.next() || queryFinalized.getColumnCount() <= 0 || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
-                        z2 = false;
-                    } else {
-                        TL_account.EmojiStatuses TLdeserialize = TL_account.EmojiStatuses.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        if (TLdeserialize instanceof TL_account.TL_emojiStatuses) {
-                            hq6Var.E0[b4] = TLdeserialize.hash;
-                            hq6Var.F0[b4] = TLdeserialize.statuses;
-                            z2 = true;
+                no6 no6Var = (no6) obj;
+                ChatActivityEnterView chatActivityEnterView = ((qy1) obj2).a;
+                boolean z2 = chatActivityEnterView.o4;
+                zu1 zu1Var = chatActivityEnterView.E3;
+                boolean z3 = false;
+                if (z2) {
+                    if (chatActivityEnterView.G2 != 0) {
+                        chatActivityEnterView.V0.z();
+                    }
+                    chatActivityEnterView.a2(false, true, false, true);
+                }
+                xy1 xy1Var = chatActivityEnterView.O3;
+                TL_stories.StoryItem F0 = xy1Var != null ? xy1Var.F0() : null;
+                Object obj3 = this.b;
+                boolean z4 = obj3 instanceof TLRPC.Document;
+                boolean z5 = this.c;
+                int i2 = this.d;
+                int i3 = this.e;
+                Long l = this.h;
+                int i4 = i2;
+                String str2 = this.n;
+                Object obj4 = this.w;
+                if (z4) {
+                    TLRPC.Document document = (TLRPC.Document) obj3;
+                    oec oecVar = no6Var != null ? no6Var.s : null;
+                    if (oecVar != null && no6Var != null) {
+                        oecVar.s = true;
+                        boolean b2 = oecVar.b();
+                        oecVar.s = false;
+                        oecVar.t = true;
+                        z3 = b2;
+                    }
+                    boolean z6 = this.f;
+                    if (z3) {
+                        ArrayList arrayList = new ArrayList();
+                        q7a q7aVar = new q7a();
+                        if (no6Var.b || (str = no6Var.h) == null) {
+                            String str3 = no6Var.I;
+                            if (str3 != null) {
+                                q7aVar.c = str3;
+                            }
                         } else {
-                            z2 = false;
-                        }
-                        try {
-                            byteBufferValue.reuse();
-                        } catch (Exception e) {
-                            e = e;
-                            fa4.g(e, true);
-                            hq6Var.H0[b4] = true;
-                            hq6Var.I0[b4] = false;
-                            if (!z2) {
+                            q7aVar.c = str;
+                            if (no6Var.c()) {
+                                q7aVar.y = no6Var.clone();
                             }
                         }
+                        q7aVar.e = no6Var.c;
+                        q7aVar.f = no6Var.g;
+                        q7aVar.g = no6Var.e;
+                        q7aVar.p = no6Var.d();
+                        q7aVar.o = no6Var.b;
+                        q7aVar.q = no6Var.j();
+                        q7aVar.z = no6Var.m;
+                        q7aVar.A = no6Var.P;
+                        CharSequence charSequence = no6Var.a;
+                        q7aVar.d = charSequence != null ? charSequence.toString() : null;
+                        q7aVar.i = no6Var.n;
+                        q7aVar.j = no6Var.r;
+                        q7aVar.h = no6Var.x;
+                        q7aVar.k = no6Var.s;
+                        q7aVar.r = no6Var.L;
+                        q7aVar.t = r7a.h(no6Var.a);
+                        q7aVar.u = no6Var.M;
+                        q7aVar.w = no6Var.N;
+                        q7aVar.x = no6Var.c();
+                        arrayList.add(q7aVar);
+                        no6Var.e();
+                        k5 a = k5.a(chatActivityEnterView.R);
+                        long j = chatActivityEnterView.F3;
+                        r47 r47Var = chatActivityEnterView.I3;
+                        threadMessage4 = chatActivityEnterView.getThreadMessage();
+                        r7a.W(a, arrayList, j, r47Var, threadMessage4, null, chatActivityEnterView.K3, false, false, chatActivityEnterView.O2, null, z5, i4, i3, false, null, zu1Var != null ? zu1Var.X6() : null, chatActivityEnterView.o7, z6, l.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), null, false);
+                        z = z5;
+                        i4 = i4;
+                    } else {
+                        r7a B = r7a.B(chatActivityEnterView.R);
+                        long j2 = chatActivityEnterView.F3;
+                        CharSequence charSequence2 = no6Var != null ? no6Var.a : null;
+                        TL_stories.StoryItem storyItem = F0;
+                        r47 r47Var2 = chatActivityEnterView.I3;
+                        threadMessage3 = chatActivityEnterView.getThreadMessage();
+                        B.u0(document, str2, j2, charSequence2, oecVar, r47Var2, threadMessage3, storyItem, chatActivityEnterView.K3, null, z5, i4, i3, false, obj4, zu1Var != null ? zu1Var.X6() : null, l.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z6);
+                        z = z5;
+                        i4 = i4;
+                        ls6.d0(chatActivityEnterView.R).c(document, (int) (System.currentTimeMillis() / 1000), true);
+                        if (wf3.B(chatActivityEnterView.F3)) {
+                            uc7.s1(chatActivityEnterView.S.a).E4(obj4, document);
+                        }
                     }
-                    queryFinalized.dispose();
-                } catch (Exception e2) {
-                    e = e2;
-                    z2 = false;
-                }
-                hq6Var.H0[b4] = true;
-                hq6Var.I0[b4] = false;
-                if (!z2) {
-                    gl.c3(new un6(hq6Var, b3));
-                    break;
                 } else {
-                    hq6Var.N(b4, false);
+                    z = z5;
+                    TL_stories.StoryItem storyItem2 = F0;
+                    if (obj3 instanceof TLRPC.BotInlineResult) {
+                        TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) obj3;
+                        if (botInlineResult.document != null) {
+                            ls6.d0(chatActivityEnterView.R).c(botInlineResult.document, (int) (System.currentTimeMillis() / 1000), false);
+                            if (wf3.B(chatActivityEnterView.F3)) {
+                                uc7.s1(chatActivityEnterView.S.a).E4(obj4, botInlineResult.document);
+                            }
+                        }
+                        HashMap hashMap = new HashMap();
+                        hashMap.put("id", botInlineResult.id);
+                        hashMap.put("query_id", String.valueOf(botInlineResult.query_id));
+                        hashMap.put("force_gif", "1");
+                        if (storyItem2 == null) {
+                            zu1 zu1Var2 = chatActivityEnterView.E3;
+                            k5 k5Var = chatActivityEnterView.S;
+                            long j3 = chatActivityEnterView.F3;
+                            r47 r47Var3 = chatActivityEnterView.I3;
+                            threadMessage2 = chatActivityEnterView.getThreadMessage();
+                            r7a.R(i4, j3, l.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), k5Var, chatActivityEnterView.K3, r47Var3, threadMessage2, zu1Var != null ? zu1Var.X6() : null, hashMap, botInlineResult, null, zu1Var2, z);
+                            i4 = i4;
+                            z = z;
+                        } else {
+                            r7a B2 = r7a.B(chatActivityEnterView.R);
+                            TLRPC.Document document2 = botInlineResult.document;
+                            long j4 = chatActivityEnterView.F3;
+                            r47 r47Var4 = chatActivityEnterView.I3;
+                            threadMessage = chatActivityEnterView.getThreadMessage();
+                            B2.t0(document2, str2, j4, r47Var4, threadMessage, storyItem2, chatActivityEnterView.K3, null, z, i4, i3, false, obj4, zu1Var != null ? zu1Var.X6() : null, l.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+                        }
+                        if (chatActivityEnterView.G2 != 0) {
+                            chatActivityEnterView.Z1(0, true);
+                            chatActivityEnterView.V0.r(true);
+                            chatActivityEnterView.V0.z();
+                        }
+                    }
+                }
+                xy1 xy1Var2 = chatActivityEnterView.O3;
+                if (xy1Var2 != null) {
+                    xy1Var2.x(null, z, i4, 0, 0L);
                     break;
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ sv1(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, n47 n47Var, boolean z, int i, int i2, Object obj, Long l, boolean z2) {
+        this.r = chatActivityEnterView;
+        this.s = document;
+        this.n = str;
+        this.w = n47Var;
+        this.c = z;
+        this.d = i;
+        this.e = i2;
+        this.b = obj;
+        this.h = l;
+        this.f = z2;
     }
 }

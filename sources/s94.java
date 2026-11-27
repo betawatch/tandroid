@@ -1,77 +1,43 @@
 // default package
 
-import java.io.File;
+import android.content.Context;
+import android.view.View;
+import j$.util.Objects;
 import java.util.ArrayList;
-import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class s94 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ArrayList c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class s94 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ s94(int i, ArrayList arrayList) {
-        this.b = i;
-        this.c = arrayList;
+    static {
+        a8c.h(new s94());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.c;
-                int i = this.b;
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    File file = (File) arrayList.get(i2);
-                    File file2 = new File(file.getAbsolutePath() + ".enc");
-                    if (file2.exists()) {
-                        try {
-                            if (!file2.delete()) {
-                                file2.deleteOnExit();
-                            }
-                        } catch (Exception e) {
-                            fa4.g(e, true);
-                        }
-                        try {
-                            File file3 = new File(a.b.getCacheDir(), file.getName() + ".enc.key");
-                            if (!file3.delete()) {
-                                file3.deleteOnExit();
-                            }
-                        } catch (Exception e2) {
-                            fa4.g(e2, true);
-                        }
-                    } else if (file.exists()) {
-                        try {
-                            if (!file.delete()) {
-                                file.deleteOnExit();
-                            }
-                        } catch (Exception e3) {
-                            fa4.g(e3, true);
-                        }
-                    }
-                    try {
-                        File file4 = new File(file.getParentFile(), "q_" + file.getName());
-                        if (file4.exists() && !file4.delete()) {
-                            file4.deleteOnExit();
-                        }
-                    } catch (Exception e4) {
-                        fa4.g(e4, true);
-                    }
-                }
-                if (i == 2) {
-                    fl5.z().f();
-                    break;
-                }
-                break;
-            default:
-                na7.q1(this.b).b4(this.c, true);
-                break;
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        v94 v94Var = (v94) view;
+        v94Var.P = z;
+        v94Var.setHost(q9cVar instanceof t94 ? (t94) q9cVar : null);
+        v94Var.o(false, 0.0f);
+        v94Var.setScrimHidden(false);
+        v94Var.m((r47) b8cVar.H, (ArrayList) b8cVar.I);
+        v94Var.invalidate();
     }
 
-    public /* synthetic */ s94(ArrayList arrayList, int i) {
-        this.c = arrayList;
-        this.b = i;
+    @Override // a8c
+    public final boolean c(b8c b8cVar, b8c b8cVar2) {
+        return b8cVar.H == b8cVar2.H && Objects.equals(b8cVar.I, b8cVar2.I) && b8cVar.j == b8cVar2.j;
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new v94(i, vnbVar, context);
+    }
+
+    @Override // a8c
+    public final boolean e(b8c b8cVar, b8c b8cVar2) {
+        return b8cVar.d == b8cVar2.d && b8cVar.C == b8cVar2.C;
     }
 }

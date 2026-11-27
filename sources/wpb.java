@@ -1,14 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class wpb {
-    public static final kia b = new kia(null, 0, 0);
-    public final wpb a;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public wpb(wpb wpbVar) {
-        this.a = wpbVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class wpb extends AnimatorListenerAdapter {
+    public final /* synthetic */ pqb a;
+
+    public wpb(pqb pqbVar) {
+        this.a = pqbVar;
     }
 
-    public abstract void a(pj0 pj0Var, byte[] bArr);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        pqb pqbVar = this.a;
+        if (pqbVar.Y0 == null) {
+            pqbVar.L0[0].setVisibility(4);
+        }
+    }
 }

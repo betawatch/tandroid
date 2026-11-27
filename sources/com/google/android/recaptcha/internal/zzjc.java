@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzjc implements zzjt {
     public static final zzjc zza = new zzjc();
@@ -14,7 +14,7 @@ public final class zzjc implements zzjt {
     public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         Object array;
         if (zzztVarArr.length != 2) {
-            fvc.c(4, 3, null);
+            p3d.d(4, 3, null);
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
@@ -22,7 +22,7 @@ public final class zzjc implements zzjt {
             zza2 = null;
         }
         if (zza2 == null) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -31,7 +31,7 @@ public final class zzjc implements zzjt {
         }
         Integer num = (Integer) zza3;
         if (num == null) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return;
         }
         int intValue = num.intValue();
@@ -39,7 +39,7 @@ public final class zzjc implements zzjt {
             array = Integer.valueOf(((Number) zza2).intValue() + intValue);
         } else {
             if (!(zza2 instanceof int[])) {
-                fvc.c(4, 5, null);
+                p3d.d(4, 5, null);
                 return;
             }
             int[] iArr = (int[]) zza2;

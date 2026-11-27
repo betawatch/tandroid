@@ -1,38 +1,15 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class i89 {
-    public final fm4 a;
-    public final mm5 b;
-    public final long c;
-    public final List d;
-    public final az8 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface i89 {
+    void n0(View view, boolean z);
 
-    public i89(fm4 fm4Var, mm5 mm5Var, tv9 tv9Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
-        gre.f(!mm5Var.isEmpty());
-        this.a = fm4Var;
-        this.b = mm5.q(mm5Var);
-        this.d = DesugarCollections.unmodifiableList(arrayList);
-        this.e = tv9Var.b(this);
-        long j = tv9Var.c;
-        long j2 = tv9Var.b;
-        String str = g8c.a;
-        this.c = g8c.b0(j, 1000000L, j2, RoundingMode.DOWN);
-    }
+    void r(boolean z);
 
-    public String a() {
-        return null;
-    }
+    boolean s0(int i);
 
-    public abstract r53 b();
-
-    public az8 c() {
-        return null;
-    }
+    boolean w(int i);
 }

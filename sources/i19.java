@@ -1,1027 +1,619 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.PointF;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class i19 {
-    public static int W;
-    public float A;
-    public boolean B;
-    public int C;
-    public boolean D;
-    public int F;
-    public int G;
-    public boolean H;
-    public boolean I;
-    public boolean J;
-    public float N;
-    public float O;
-    public f19 P;
-    public boolean Q;
-    public lw8 R;
-    public float a;
-    public int b;
-    public int c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public int k;
-    public int m;
-    public int n;
-    public int o;
-    public boolean p;
-    public final float q;
-    public int r;
-    public final hf0 w;
-    public k27 x;
-    public wjb y;
-    public Integer z;
-    public static final Paint S = new Paint(1);
-    public static final Paint T = new Paint(1);
-    public static final Paint U = new Paint(1);
-    public static final TextPaint V = new TextPaint(1);
-    public static final e19 X = new e19();
-    public static int Y = 1;
-    public static final fx7 Z = new fx7((byte) 10);
-    public final ArrayList s = new ArrayList();
-    public final ArrayList t = new ArrayList();
-    public final HashMap u = new HashMap();
-    public final HashMap v = new HashMap();
-    public final HashMap E = new HashMap();
-    public final ArrayList K = new ArrayList();
-    public final RectF L = new RectF();
-    public final Rect M = new Rect();
-    public final int l = y6c.t0;
+public final class i19 extends Drawable implements Animator.AnimatorListener {
+    public static final RectF c0 = new RectF();
+    public static final Rect d0 = new Rect();
+    public static final int[] e0 = new int[2];
+    public static final qm f0 = new qm("openFactor", (byte) 11);
+    public static final qm g0 = new qm("openFactor", (byte) 12);
+    public final wb2 E;
+    public final r47 F;
+    public float G;
+    public Bitmap J;
+    public BitmapShader K;
+    public Paint M;
+    public al0 Q;
+    public boolean T;
+    public boolean U;
+    public int V;
+    public int W;
+    public c21 X;
+    public float Y;
+    public float Z;
+    public final j19 a;
+    public final z09 b;
+    public final LinearGradient f;
+    public final f19[] x;
+    public final Drawable y;
+    public final Paint c = new Paint(1);
+    public final Matrix d = new Matrix();
+    public final Path e = new Path();
+    public final RectF h = new RectF();
+    public final RectF n = new RectF();
+    public final RectF r = new RectF();
+    public final RectF s = new RectF();
+    public final RectF w = new RectF();
+    public float H = 0.0f;
+    public float I = 0.0f;
+    public final Matrix L = new Matrix();
+    public boolean N = false;
+    public boolean O = false;
+    public boolean P = false;
+    public boolean R = true;
+    public int S = -1;
+    public final ObjectAnimator a0 = ObjectAnimator.ofFloat(this, f0, 1.0f).setDuration(560L);
+    public final ObjectAnimator b0 = ObjectAnimator.ofFloat(this, g0, 1.0f).setDuration(240L);
 
-    public i19(hf0 hf0Var) {
-        this.w = hf0Var;
-        n(this.y);
-        this.q = ViewConfiguration.get(a.b).getScaledTouchSlop();
-    }
-
-    public static boolean g(TLRPC.Reaction reaction, TLRPC.Reaction reaction2) {
-        return ((reaction instanceof TLRPC.TL_reactionEmoji) && (reaction2 instanceof TLRPC.TL_reactionEmoji)) ? TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, ((TLRPC.TL_reactionEmoji) reaction2).emoticon) : (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
-    }
-
-    public static void h(RectF rectF, RectF rectF2, Path path) {
-        path.rewind();
-        float f = rectF.left;
-        rectF2.set(f, rectF.top, gl.L(12.0f) + f, rectF.top + gl.L(12.0f));
-        path.arcTo(rectF2, -90.0f, -90.0f, false);
-        rectF2.set(rectF.left, rectF.bottom - gl.L(12.0f), rectF.left + gl.L(12.0f), rectF.bottom);
-        path.arcTo(rectF2, -180.0f, -90.0f, false);
-        float f2 = rectF.height() > ((float) gl.L(26.0f)) ? 1.4f : 0.0f;
-        float N = rectF.right - gl.N(9.09f);
-        float N2 = N - gl.N(0.056f);
-        float N3 = gl.N(1.22f) + N;
-        float N4 = gl.N(3.07f) + N;
-        float N5 = gl.N(2.406f) + N;
-        float N6 = gl.N(8.27f + f2) + N;
-        float N7 = gl.N(8.923f + f2) + N;
-        float N8 = gl.N(1.753f) + rectF.top;
-        float N9 = rectF.bottom - gl.N(1.753f);
-        float N10 = gl.N(0.663f) + rectF.top;
-        float N11 = rectF.bottom - gl.N(0.663f);
-        float f3 = 10.263f + f2;
-        float N12 = gl.N(f3) + rectF.top;
-        float N13 = rectF.bottom - gl.N(f3);
-        float f4 = f2 + 11.333f;
-        float N14 = gl.N(f4) + rectF.top;
-        float N15 = rectF.bottom - gl.N(f4);
-        path.lineTo(N2, rectF.bottom);
-        path.cubicTo(N3, rectF.bottom, N5, N11, N4, N9);
-        path.lineTo(N6, N13);
-        path.cubicTo(N7, N15, N7, N14, N6, N12);
-        path.lineTo(N4, N8);
-        float f5 = rectF.top;
-        path.cubicTo(N5, N10, N3, f5, N2, f5);
-        path.close();
-    }
-
-    public static long j(TLObject tLObject) {
-        if (tLObject instanceof TLRPC.User) {
-            return ((TLRPC.User) tLObject).id;
-        }
-        if (tLObject instanceof TLRPC.Chat) {
-            return ((TLRPC.Chat) tLObject).id;
-        }
-        return 0L;
-    }
-
-    public static void n(wjb wjbVar) {
-        S.setColor(bkb.v0(bkb.Ye, wjbVar));
-        int v0 = bkb.v0(bkb.Ii, wjbVar);
-        TextPaint textPaint = V;
-        textPaint.setColor(v0);
-        de9.p(textPaint, gl.L(12.0f));
-        U.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-    }
-
-    public final boolean a() {
-        ArrayList arrayList;
-        gc0 gc0Var;
-        int i;
-        int i2;
-        if (this.x == null) {
-            return false;
-        }
-        HashMap hashMap = this.v;
-        hashMap.clear();
-        int i3 = 0;
-        while (true) {
-            arrayList = this.t;
-            if (i3 >= arrayList.size()) {
-                break;
-            }
-            ((f19) arrayList.get(i3)).b();
-            i3++;
-        }
-        arrayList.clear();
-        hashMap.putAll(this.u);
-        int i4 = 0;
-        boolean z = false;
-        while (true) {
-            ArrayList arrayList2 = this.s;
-            if (i4 >= arrayList2.size()) {
-                break;
-            }
-            f19 f19Var = (f19) arrayList2.get(i4);
-            String str = f19Var.n;
-            jx2 jx2Var = f19Var.E;
-            f19 f19Var2 = (f19) hashMap.get(str);
-            if (f19Var2 != null) {
-                hashMap.remove(f19Var.n);
-                int i5 = f19Var.w;
-                int i6 = f19Var2.w;
-                if (i5 == i6 && f19Var.x == f19Var2.x && f19Var.z == f19Var2.z && f19Var.v == f19Var2.v && f19Var.o == f19Var2.o && f19Var.S == null && f19Var2.S == null) {
-                    f19Var.b = (byte) 0;
-                    i4++;
-                } else {
-                    f19Var.c = i6;
-                    f19Var.d = f19Var2.x;
-                    f19Var.e = f19Var2.z;
-                    f19Var.h = f19Var2.M;
-                    f19Var.f = f19Var2.N;
-                    f19Var.g = f19Var2.O;
-                    f19Var.b = (byte) 3;
-                    int i7 = f19Var.v;
-                    int i8 = f19Var2.v;
-                    if (i7 != i8 && jx2Var != null) {
-                        jx2Var.c(i8, false);
-                        jx2Var.c(f19Var.v, true);
-                    }
-                    if (f19Var.S == null) {
-                        if (f19Var2.S != null) {
-                            f19Var.o(new ArrayList());
-                        }
-                    }
-                    if (f19Var2.S == null) {
-                        f19Var2.o(new ArrayList());
-                    }
-                    ArrayList arrayList3 = f19Var2.T;
-                    ArrayList arrayList4 = f19Var.T;
-                    if (arrayList3 != null && arrayList4 != null && arrayList3.size() == arrayList4.size()) {
-                        for (0; i2 < arrayList3.size(); i2 + 1) {
-                            TLObject tLObject = (TLObject) arrayList3.get(i2);
-                            TLObject tLObject2 = (TLObject) arrayList4.get(i2);
-                            i2 = (tLObject == null || tLObject2 == null || j(tLObject) != j(tLObject2)) ? 0 : i2 + 1;
-                        }
-                    }
-                    gc0 gc0Var2 = f19Var.S;
-                    if (gc0Var2 != null && (gc0Var = f19Var2.S) != null) {
-                        ValueAnimator valueAnimator = gc0Var.f;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                            if (gc0Var2.w) {
-                                gc0Var2.w = false;
-                                gc0Var2.k();
-                            }
-                        }
-                        TLObject[] tLObjectArr = new TLObject[3];
-                        int i9 = 0;
-                        while (true) {
-                            i = this.l;
-                            if (i9 >= 3) {
-                                break;
-                            }
-                            tLObjectArr[i9] = gc0Var2.b[i9].h;
-                            gc0Var2.j(i9, i, gc0Var.b[i9].h);
-                            i9++;
-                        }
-                        gc0Var2.a(false, true);
-                        for (int i10 = 0; i10 < 3; i10++) {
-                            gc0Var2.j(i10, i, tLObjectArr[i10]);
-                        }
-                        gc0Var2.d = true;
-                        gc0Var2.a(true, false);
-                    }
-                }
-            } else {
-                f19Var.b = (byte) 1;
-            }
-            z = true;
-            i4++;
-        }
-        if (!hashMap.isEmpty()) {
-            arrayList.addAll(hashMap.values());
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                ((f19) arrayList.get(i11)).k = ((f19) arrayList.get(i11)).m;
-                ((f19) arrayList.get(i11)).a();
-            }
-            z = true;
-        }
-        if (this.h) {
-            float f = this.f;
-            if (f != this.b || this.g != this.c) {
-                this.i = true;
-                this.d = f;
-                this.e = this.g;
-                z = true;
-            }
-        }
-        if (this.C != this.o) {
-            z = true;
-        }
-        int i12 = this.F;
-        if (i12 == this.n) {
-            return z;
-        }
-        this.j = true;
-        this.G = i12;
-        return true;
-    }
-
-    public final void b(h19 h19Var) {
+    public i19(j19 j19Var, wb2 wb2Var, ArrayList arrayList, z09 z09Var) {
+        this.b = z09Var;
+        this.a = j19Var;
+        this.E = wb2Var;
+        this.F = wb2Var.getMessageObject();
+        this.x = new f19[Math.min(5, arrayList.size())];
         int i = 0;
-        if (h19Var.g == 0) {
-            HashMap hashMap = this.E;
-            if (hashMap.get(h19Var) == null) {
-                ImageReceiver imageReceiver = new ImageReceiver(null);
-                imageReceiver.p0(this.w);
-                int i2 = W;
-                W = i2 + 1;
-                imageReceiver.w1 = Integer.toString(i2);
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hq6.d0(this.l).r.get(h19Var.f);
-                if (tL_availableReaction != null) {
-                    imageReceiver.d0(gl5.b(tL_availableReaction.center_icon), "40_40_nolimit", null, "tgs", tL_availableReaction, 1);
-                }
-                imageReceiver.M(0);
-                imageReceiver.I();
-                hashMap.put(h19Var, imageReceiver);
-                return;
-            }
-        }
-        if (!this.J || h19Var.g == 0) {
-            return;
-        }
         while (true) {
-            ArrayList arrayList = this.s;
-            if (i >= arrayList.size()) {
+            f19[] f19VarArr = this.x;
+            if (i >= f19VarArr.length) {
+                this.c.setStyle(Paint.Style.FILL);
+                Drawable mutate = j19Var.getContext().getDrawable(R.drawable.reactions_bubble_shadow).mutate();
+                this.y = mutate;
+                wb2Var.setHideSideButtonByQuickShare(true);
+                j19Var.performHapticFeedback(3, 1);
+                int v0 = aob.v0(aob.G8, this.E.getResourcesProvider());
+                mutate.setColorFilter(new PorterDuffColorFilter(aob.w0(null, aob.Ke, false), PorterDuff.Mode.MULTIPLY));
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, hl.L(100.0f), new int[]{v0, 16777215 & v0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.f = linearGradient;
+                this.c.setShader(linearGradient);
+                ObjectAnimator objectAnimator = this.a0;
+                LinearInterpolator linearInterpolator = h19.b;
+                objectAnimator.setInterpolator(linearInterpolator);
+                this.a0.addListener(this);
+                this.b0.setInterpolator(linearInterpolator);
+                this.b0.addListener(this);
+                hl.j2(new ii7(this, (byte) 26), 15.0f);
                 return;
             }
-            if (h19Var.f(((f19) arrayList.get(i)).q)) {
-                ((f19) arrayList.get(i)).p();
-                return;
-            }
+            f19VarArr[i] = new f19(this, ((Long) arrayList.get(i)).longValue());
             i++;
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final boolean c(MotionEvent motionEvent) {
-        k27 k27Var;
-        TLRPC.Message message;
-        int i = 0;
-        if (this.p || (k27Var = this.x) == null || (message = k27Var.k) == null || message.reactions == null) {
-            return false;
-        }
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        hf0 hf0Var = this.w;
-        float paddingTop = y - hf0Var.getPaddingTop();
-        if (hf0Var instanceof uk1) {
-            x -= ((uk1) hf0Var).k0 / 2.0f;
-        }
-        float f = x - this.b;
-        float f2 = paddingTop - this.c;
-        if (motionEvent.getAction() == 0) {
-            ArrayList arrayList = this.s;
-            int size = arrayList.size();
-            while (true) {
-                if (i >= size) {
-                    break;
-                }
-                if (f <= ((f19) arrayList.get(i)).w || f >= ((f19) arrayList.get(i)).w + ((f19) arrayList.get(i)).z || f2 <= ((f19) arrayList.get(i)).x || f2 >= ((f19) arrayList.get(i)).x + ((f19) arrayList.get(i)).A) {
-                    i++;
-                } else {
-                    this.N = motionEvent.getX();
-                    this.O = paddingTop;
-                    this.P = (f19) arrayList.get(i);
-                    lw8 lw8Var = this.R;
-                    if (lw8Var != null) {
-                        gl.r(lw8Var);
-                        this.R = null;
-                    }
-                    this.P.X.c(true);
-                    lw8 lw8Var2 = new lw8(this, this.P, (byte) 8);
-                    this.R = lw8Var2;
-                    gl.d3(lw8Var2, ViewConfiguration.getLongPressTimeout());
-                    this.Q = true;
-                }
-            }
-        } else if (motionEvent.getAction() == 2) {
-            boolean z = this.Q;
-            float f3 = this.q;
-            if ((z && Math.abs(motionEvent.getX() - this.N) > f3) || Math.abs(paddingTop - this.O) > f3) {
-                this.Q = false;
-                f19 f19Var = this.P;
-                if (f19Var != null) {
-                    f19Var.X.c(false);
-                }
-                this.P = null;
-                lw8 lw8Var3 = this.R;
-                if (lw8Var3 != null) {
-                    gl.r(lw8Var3);
-                    this.R = null;
-                }
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            lw8 lw8Var4 = this.R;
-            if (lw8Var4 != null) {
-                gl.r(lw8Var4);
-                this.R = null;
-            }
-            if (this.Q && this.P != null && motionEvent.getAction() == 1) {
-                ((ni5) hf0Var).c(this.P.a, false, motionEvent.getX(), paddingTop);
-            }
-            this.Q = false;
-            f19 f19Var2 = this.P;
-            if (f19Var2 != null) {
-                f19Var2.X.c(false);
-            }
-            this.P = null;
-        }
-        return this.Q;
+    public static float b(float f, float f2, float f3, float f4) {
+        return (float) Math.toDegrees((float) Math.atan2(f4 - f2, f3 - f));
     }
 
-    public final void d(Canvas canvas, float f, Integer num) {
-        float f2;
-        float f3;
-        float f4;
-        Canvas canvas2 = canvas;
-        boolean z = this.p;
-        ArrayList arrayList = this.t;
-        if (z && arrayList.isEmpty()) {
+    public static PointF f(float f, float f2, float f3, float f4, float f5, float f6, boolean z) {
+        float f7 = f4 - f;
+        float f8 = f5 - f2;
+        float sqrt = (float) Math.sqrt(Math.pow(f8, 2.0d) + Math.pow(f7, 2.0d));
+        if (sqrt > f3 + f6 || sqrt < Math.abs(f3 - f6)) {
+            return null;
+        }
+        float f9 = ((sqrt * sqrt) + ((f3 * f3) - (f6 * f6))) / (2.0f * sqrt);
+        float sqrt2 = (float) Math.sqrt(r8 - (f9 * f9));
+        float d = qu6.d(f9, f7, sqrt, f);
+        float d2 = qu6.d(f9, f8, sqrt, f2);
+        float f10 = (f8 * sqrt2) / sqrt;
+        float f11 = d + f10;
+        float f12 = (sqrt2 * f7) / sqrt;
+        float f13 = d2 - f12;
+        float f14 = d - f10;
+        float f15 = d2 + f12;
+        return (f11 == f14 || f11 >= f14) ? f13 > f15 ? new PointF(f11, f13) : new PointF(f14, f15) : z ? new PointF(f11, f13) : new PointF(f14, f15);
+    }
+
+    public static float g(float f, float f2, float f3) {
+        return qd4.A(f2, f, f3, f);
+    }
+
+    public static g19 i(Interpolator interpolator, int i, int i2, int i3, boolean z) {
+        float f = i3;
+        return new g19(z, i / f, i2 / f, interpolator);
+    }
+
+    public static float j(float f) {
+        return f <= 0.0f ? f + 180.0f : f - 180.0f;
+    }
+
+    public final void a(Path path, RectF rectF, float f, float f2, boolean z, boolean z2) {
+        float f3 = f2 - f;
+        if (z) {
+            if (f3 > 0.0f) {
+                f3 -= 360.0f;
+            }
+        } else if (f3 < 0.0f) {
+            f3 += 360.0f;
+        }
+        if (Math.abs(f3) > 270.0f && z2) {
+            this.R = false;
+        }
+        path.arcTo(rectF, f, f3);
+    }
+
+    public final void c() {
+        this.b0.start();
+        this.P = true;
+        if (this.N && !this.U) {
+            al0 al0Var = new al0(new jz7((Object) this, (byte) 24));
+            this.Q = al0Var;
+            RectF rectF = this.r;
+            al0Var.b((int) rectF.width(), (int) (rectF.height() + hl.L(30.0f)), 4.0f, hl.L(10.0f));
+        }
+        invalidateSelf();
+    }
+
+    public final void d() {
+        this.E.setHideSideButtonByQuickShare(false);
+        if (this.U) {
             return;
         }
-        float f5 = this.b;
-        float f6 = this.c;
-        if (this.p) {
-            f5 = this.f;
-            f6 = this.g;
-        } else if (this.i) {
-            float f7 = 1.0f - f;
-            f5 = (f5 * f) + (this.d * f7);
-            f6 = (f6 * f) + (this.e * f7);
+        this.U = true;
+        Bitmap bitmap = this.J;
+        if (bitmap != null) {
+            bitmap.recycle();
         }
-        float f8 = f5;
-        float f9 = f6;
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.s;
-            if (i2 >= arrayList2.size()) {
-                break;
+        al0 al0Var = this.Q;
+        if (al0Var != null) {
+            al0Var.a();
+        }
+        for (f19 f19Var : this.x) {
+            al0 al0Var2 = f19Var.f;
+            if (al0Var2 != null) {
+                al0Var2.a();
             }
-            f19 f19Var = (f19) arrayList2.get(i2);
-            if (this.z == null && num == null && this.A < 0.5f) {
-                f19Var.c();
-            }
-            if (!Integer.valueOf(f19Var.q.hashCode()).equals(this.z) && (num == null || f19Var.q.hashCode() == num.intValue())) {
-                canvas2.save();
-                float f10 = f19Var.w;
-                float f11 = f19Var.x;
-                if (f != 1.0f && f19Var.b == 3) {
-                    float f12 = 1.0f - f;
-                    f10 = (f10 * f) + (f19Var.c * f12);
-                    f11 = (f11 * f) + (f19Var.d * f12);
-                }
-                if (f == 1.0f || f19Var.b != 1) {
-                    f2 = 1.0f;
-                } else {
-                    float f13 = (f * 0.5f) + 0.5f;
-                    canvas2.scale(f13, f13, (f19Var.z / 2.0f) + f8 + f10, (f19Var.A / 2.0f) + f9 + f11);
-                    f2 = f;
-                }
-                float f14 = f10 + f8;
-                float f15 = f11 + f9;
-                if (f19Var.b == 3) {
-                    f3 = f2;
-                    f4 = f;
-                } else {
-                    f3 = f2;
-                    f4 = 1.0f;
-                }
-                f19Var.d(canvas2, f14, f15, f4, f3, num != null, this.B, this.A);
-                canvas2.restore();
-            }
-            i2++;
-        }
-        while (i < arrayList.size()) {
-            f19 f19Var2 = (f19) arrayList.get(i);
-            float f16 = 1.0f - f;
-            float f17 = (f16 * 0.5f) + 0.5f;
-            canvas2.save();
-            canvas2.scale(f17, f17, (f19Var2.z / 2.0f) + f19Var2.w + f8, (f19Var2.A / 2.0f) + f19Var2.x + f9);
-            ((f19) arrayList.get(i)).d(canvas2, f19Var2.w + f8, f19Var2.x + f9, 1.0f, f16, false, this.B, this.A);
-            canvas.restore();
-            i++;
-            canvas2 = canvas;
-        }
-    }
-
-    public final void e(Canvas canvas, float f) {
-        float f2;
-        boolean z = this.p;
-        ArrayList arrayList = this.t;
-        if (z && arrayList.isEmpty()) {
-            return;
-        }
-        float f3 = this.b;
-        float f4 = this.c;
-        float f5 = 1.0f;
-        if (this.p) {
-            f3 = this.f;
-            f4 = this.g;
-        } else if (this.i) {
-            float f6 = 1.0f - f;
-            f3 = (f3 * f) + (this.d * f6);
-            f4 = (f4 * f) + (this.e * f6);
-        }
-        int i = 0;
-        boolean z2 = false;
-        while (true) {
-            ArrayList arrayList2 = this.s;
-            if (i >= arrayList2.size()) {
-                break;
-            }
-            f19 f19Var = (f19) arrayList2.get(i);
-            if (f19Var.l) {
-                canvas.save();
-                float f7 = f19Var.w;
-                float f8 = f19Var.x;
-                if (f != f5) {
-                    f2 = f5;
-                    if (f19Var.b == 3) {
-                        float f9 = f2 - f;
-                        f7 = (f7 * f) + (f19Var.c * f9);
-                        f8 = (f8 * f) + (f19Var.d * f9);
-                    }
-                } else {
-                    f2 = f5;
-                }
-                if (f != f5 && f19Var.b == 1) {
-                    float f10 = (f * 0.5f) + 0.5f;
-                    canvas.scale(f10, f10, (f19Var.z / 2.0f) + f3 + f7, (f19Var.A / 2.0f) + f4 + f8);
-                }
-                z2 = z2 || f19Var.f(canvas, f7 + f3, f8 + f4);
-                canvas.restore();
-            } else {
-                f2 = f5;
-            }
-            i++;
-            f5 = f2;
-        }
-        float f11 = f5;
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            f19 f19Var2 = (f19) arrayList.get(i2);
-            if (f19Var2.l) {
-                float f12 = ((f11 - f) * 0.5f) + 0.5f;
-                canvas.save();
-                canvas.scale(f12, f12, (f19Var2.z / 2.0f) + f19Var2.w + f3, (f19Var2.A / 2.0f) + f19Var2.x + f4);
-                boolean z3 = z2 || ((f19) arrayList.get(i2)).f(canvas, ((float) f19Var2.w) + f3, ((float) f19Var2.x) + f4);
-                canvas.restore();
-                z2 = z3;
+            al0 al0Var3 = f19Var.e;
+            if (al0Var3 != null) {
+                al0Var3.a();
             }
         }
     }
 
-    public final void f(at1 at1Var, Canvas canvas, int i, Integer num) {
-        if (this.p && this.t.isEmpty()) {
-            return;
-        }
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList = this.s;
-            if (i2 >= arrayList.size()) {
-                return;
-            }
-            f19 f19Var = (f19) arrayList.get(i2);
-            if (num != null && f19Var.q.hashCode() == num.intValue()) {
-                RectF rectF = gl.P;
-                rectF.set(f19Var.s);
-                float L = gl.L(140.0f);
-                float L2 = gl.L(14.0f);
-                float i3 = Utilities.i(rectF.left - gl.L(12.0f), ((this.w instanceof gb2 ? ((gb2) r8).getParentWidth() : gl.q.x) - L) - gl.L(24.0f), gl.L(24.0f));
-                float f = rectF.top - L2;
-                float f2 = i;
-                float f3 = f + f2;
-                RectF rectF2 = this.L;
-                rectF2.set(i3, (f - L) + f2, L + i3, f3);
-                float interpolation = s33.h.getInterpolation(this.A);
-                gl.X1(rectF, rectF2, interpolation, rectF2);
-                int i4 = f19Var.U;
-                h19 h19Var = f19Var.r;
-                View view = f19Var.V;
-                if (f19Var.e0 == null && f19Var.f0 == null) {
-                    if (view != null && (view.getParent() instanceof View)) {
-                        view = (View) view.getParent();
-                    }
-                    if (f19Var.q != null && !h19Var.a) {
-                        if (h19Var.f != null) {
-                            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hq6.d0(i4).r.get(h19Var.f);
-                            if (tL_availableReaction != null && tL_availableReaction.activate_animation != null) {
-                                kcb f4 = uo3.f(tL_availableReaction.static_icon, bkb.Z6, 1.0f, null);
-                                ImageReceiver imageReceiver = new ImageReceiver(view);
-                                f19Var.e0 = imageReceiver;
-                                imageReceiver.m0(7);
-                                f19Var.e0.I();
-                                f19Var.e0.q0(gl.L(14.0f));
-                                ImageReceiver imageReceiver2 = f19Var.e0;
-                                imageReceiver2.v0 = true;
-                                imageReceiver2.u0 = true;
-                                imageReceiver2.M(1);
-                                ImageReceiver imageReceiver3 = f19Var.e0;
-                                imageReceiver3.x0 = true;
-                                imageReceiver3.d0(gl5.b(tL_availableReaction.activate_animation), "140_140", f4, null, tL_availableReaction, 1);
-                            }
-                        } else if (h19Var.g != 0) {
-                            vl vlVar = new vl(24, i4, h19Var.g);
-                            f19Var.f0 = vlVar;
-                            vlVar.b(view);
-                        }
-                    }
-                }
-                this.M.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                if (interpolation > 0.0f) {
-                    ImageReceiver imageReceiver4 = f19Var.e0;
-                    if (imageReceiver4 != null) {
-                        imageReceiver4.k0(rectF2);
-                        f19Var.e0.setAlpha(interpolation);
-                        f19Var.e0.h(canvas, null);
-                    } else {
-                        vl vlVar2 = f19Var.f0;
-                        if (vlVar2 != null) {
-                            vlVar2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                            f19Var.f0.setAlpha((int) (interpolation * 255.0f));
-                            f19Var.f0.draw(canvas);
-                        }
-                    }
-                    at1Var.invalidate();
-                }
-            }
-            i2++;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        e(canvas, false, jn7.d4);
     }
 
-    public final float i(float f) {
-        if (!this.j) {
-            return this.n;
-        }
-        return (this.n * f) + ((1.0f - f) * this.G);
-    }
-
-    public final f19 k(h19 h19Var) {
-        String l;
-        if (h19Var.a) {
-            l = "stars";
-        } else {
-            String str = h19Var.f;
-            l = str != null ? str : Long.toString(h19Var.g);
-        }
-        return l(l);
-    }
-
-    public final f19 l(String str) {
-        return (f19) this.u.get(str);
-    }
-
-    public final boolean m() {
-        if (this.I) {
-            return !(this.p && this.t.isEmpty()) && e66.e(8200) && e66.e(131072);
-        }
-        return false;
-    }
-
-    public final void o(int i, int i2) {
-        ArrayList arrayList;
-        this.m = 0;
-        this.o = 0;
-        this.k = 0;
-        this.n = 0;
-        if (this.p) {
-            return;
-        }
-        ArrayList arrayList2 = this.K;
-        arrayList2.clear();
-        int i3 = 0;
-        int i4 = 0;
-        int i5 = 0;
-        int i6 = 0;
-        int i7 = 0;
-        while (true) {
-            arrayList = this.s;
-            if (i3 >= arrayList.size()) {
-                break;
-            }
-            f19 f19Var = (f19) arrayList.get(i3);
-            f19Var.getClass();
-            gn gnVar = f19Var.F;
-            jx2 jx2Var = f19Var.E;
-            if (f19Var.R) {
-                f19Var.z = gl.L(42.0f);
-                f19Var.A = gl.L(26.0f);
-                if (f19Var.t) {
-                    f19Var.z = (int) (gnVar.d + gl.L(8.0f) + f19Var.z);
-                } else if (jx2Var != null && f19Var.v > 1) {
-                    f19Var.z = de9.w(8.0f, (int) Math.ceil(jx2Var.m), f19Var.z);
-                }
-            } else {
-                f19Var.z = gl.L(f19Var.C != null ? 6.0f : 4.0f) + gl.L(20.0f) + gl.L(8.0f);
-                if (f19Var.S != null && f19Var.T.size() > 0) {
-                    f19Var.T.size();
-                    f19Var.z = (int) ((gl.L(20.0f) * (f19Var.T.size() > 1 ? f19Var.T.size() - 1 : 0) * 0.8f) + gl.L(20.0f) + gl.L(2.0f) + gl.L(1.0f) + f19Var.z);
-                    f19Var.S.o = gl.L(26.0f);
-                } else if (f19Var.t) {
-                    f19Var.z = (int) (gnVar.d + gl.L(8.0f) + f19Var.z);
-                } else {
-                    int ceil = (int) Math.ceil(jx2Var.m);
-                    int i8 = f19Var.z;
-                    if (ceil > 0) {
-                        f19Var.z = de9.w(8.0f, (int) Math.ceil(jx2Var.m), i8);
-                    } else {
-                        f19Var.z = i8 - gl.L(1.0f);
-                    }
-                }
-                f19Var.A = gl.L(26.0f);
-            }
-            if (f19Var.z + i4 > i) {
-                arrayList2.add(Integer.valueOf(i4));
-                i6 = de9.w(4.0f, f19Var.A, i6);
-                i7++;
-                i4 = 0;
-            }
-            f19Var.w = i4;
-            f19Var.x = i6;
-            f19Var.y = i7;
-            i4 = de9.w(4.0f, f19Var.z, i4);
-            if (i4 > i5) {
-                i5 = i4;
-            }
-            i3++;
-        }
-        arrayList2.add(Integer.valueOf(i4));
-        if (i2 == 5 && !arrayList.isEmpty()) {
-            int i9 = ((f19) arrayList.get(0)).x;
-            int i10 = 0;
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                if (((f19) arrayList.get(i11)).x != i9) {
-                    int i12 = i11 - 1;
-                    int i13 = i - (((f19) arrayList.get(i12)).w + ((f19) arrayList.get(i12)).z);
-                    while (i10 < i11) {
-                        ((f19) arrayList.get(i10)).w += i13;
-                        i10++;
-                    }
-                    i10 = i11;
-                }
-            }
-            int size = arrayList.size() - 1;
-            int i14 = i - (((f19) arrayList.get(size)).w + ((f19) arrayList.get(size)).z);
-            while (i10 <= size) {
-                ((f19) arrayList.get(i10)).w += i14;
-                i10++;
-            }
-        } else if (i2 == 1 && !arrayList.isEmpty()) {
-            for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                f19 f19Var2 = (f19) arrayList.get(i15);
-                int i16 = f19Var2.y;
-                f19Var2.w = (int) oo1.z(i, (i16 < 0 || i16 >= arrayList2.size()) ? 0.0f : ((Integer) arrayList2.get(f19Var2.y)).intValue(), 2.0f, f19Var2.w);
-            }
-        }
-        this.r = i4;
-        if (i2 == 5 || i2 == 1) {
-            this.o = i;
-        } else {
-            this.o = i5;
-        }
-        this.m = i6 + (arrayList.size() == 0 ? 0 : gl.L(26.0f));
-        this.a = 0.0f;
-    }
-
-    public final void p() {
-        int i = 0;
-        this.D = false;
-        while (true) {
-            ArrayList arrayList = this.s;
-            if (i >= arrayList.size()) {
-                break;
-            }
-            ((f19) arrayList.get(i)).b();
-            i++;
-        }
-        HashMap hashMap = this.E;
-        if (!hashMap.isEmpty()) {
-            Iterator it = hashMap.values().iterator();
-            while (it.hasNext()) {
-                ((ImageReceiver) it.next()).K();
-            }
-        }
-        hashMap.clear();
-    }
-
-    public final void q() {
-        HashMap hashMap = this.u;
-        hashMap.clear();
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.s;
-            if (i >= arrayList.size()) {
-                this.h = !this.p;
-                this.f = this.b;
-                this.g = this.c;
-                this.C = this.o;
-                this.F = this.n;
-                return;
-            }
-            hashMap.put(((f19) arrayList.get(i)).n, (f19) arrayList.get(i));
-            i++;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00d1  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0223  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0226 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v12, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v14 */
-    /* JADX WARN: Type inference failed for: r5v30 */
-    /* JADX WARN: Type inference failed for: r5v31 */
-    /* JADX WARN: Type inference failed for: r5v4 */
-    /* JADX WARN: Type inference failed for: r7v0 */
-    /* JADX WARN: Type inference failed for: r7v1, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r7v2 */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0439  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void r(k27 k27Var, boolean z, wjb wjbVar) {
-        int i;
-        ?? r7;
-        TLRPC.TL_messageReactions tL_messageReactions;
-        boolean z2;
+    public final void e(Canvas canvas, boolean z, int i) {
+        float f;
+        float f2;
+        j19 j19Var;
+        float f3;
+        float f4;
         int i2;
-        TLRPC.ReactionCount reactionCount;
-        f19 f19Var;
-        boolean z3;
+        final f19 f19Var;
+        float f5;
         int i3;
+        RectF rectF;
+        float f6;
         int i4;
-        int i5;
-        boolean z4 = z;
-        this.y = wjbVar;
-        this.J = z4;
-        this.x = k27Var;
-        ArrayList arrayList = this.s;
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        ?? r5 = 0;
-        r5 = 0;
-        r5 = 0;
-        this.H = false;
-        this.I = false;
-        arrayList.clear();
-        if (k27Var != null) {
-            long B0 = k27.B0(k27Var.k);
-            e19 e19Var = X;
-            e19Var.a = B0;
-            TLRPC.TL_messageReactions tL_messageReactions2 = k27Var.k.reactions;
-            if (tL_messageReactions2 != null && tL_messageReactions2.results != null) {
-                int i6 = 0;
-                for (int i7 = 0; i7 < k27Var.k.reactions.results.size(); i7++) {
-                    i6 += k27Var.k.reactions.results.get(i7).count;
-                }
-                int i8 = this.l;
-                TLRPC.ChatFull L0 = na7.q1(i8).L0(-k27.B0(k27Var.k));
-                if (!k27Var.k.reactions.results.isEmpty() && L0 != null && L0.paid_reactions_available) {
-                    boolean z5 = false;
-                    for (int i9 = 0; i9 < k27Var.k.reactions.results.size(); i9++) {
-                        TLRPC.Reaction reaction = k27Var.k.reactions.results.get(i9).reaction;
-                        if (reaction instanceof TLRPC.TL_reactionPaid) {
-                            z5 = true;
-                        }
-                        if (reaction instanceof TLRPC.TL_reactionEmoji) {
-                            String str = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
-                            TextUtils.equals("👍", str);
-                            TextUtils.equals("👎", str);
-                        }
-                    }
-                    if (!z5) {
-                        z2 = true;
-                        ArrayList arrayList3 = new ArrayList();
-                        if (z2) {
-                            arrayList3.add(new TLRPC.TL_reactionPaid());
-                        }
-                        i2 = -arrayList3.size();
-                        while (i2 < k27Var.k.reactions.results.size()) {
-                            if (i2 < 0) {
-                                reactionCount = new TLRPC.TL_reactionCount();
-                                reactionCount.reaction = (TLRPC.Reaction) arrayList3.get(arrayList3.size() + i2);
-                                reactionCount.chosen = r5;
-                                reactionCount.count = r5 == true ? 1 : 0;
-                            } else {
-                                reactionCount = k27Var.k.reactions.results.get(i2);
-                            }
-                            int i10 = r5 == true ? 1 : 0;
-                            while (true) {
-                                if (i10 >= arrayList2.size()) {
-                                    f19Var = null;
-                                    break;
-                                }
-                                f19Var = (f19) arrayList2.get(i10);
-                                if (f19Var.q.equals(reactionCount.reaction)) {
-                                    break;
-                                } else {
-                                    i10++;
-                                }
-                            }
-                            g19 g19Var = new g19(this, f19Var, reactionCount, z4);
-                            g19Var.Q = k27Var.z2();
-                            arrayList.add(g19Var);
-                            this.I = (this.I || g19Var.l) ? true : r5 == true ? 1 : 0;
-                            if (!z4) {
-                                TLRPC.Message message = k27Var.k;
-                                if (message.reactions.recent_reactions != null) {
-                                    long B02 = k27.B0(message);
-                                    jx2 jx2Var = g19Var.E;
-                                    if (B02 <= 0 || l7c.A(k27.B0(k27Var.k))) {
-                                        i3 = i8;
-                                        if (reactionCount.count <= 3 && i6 <= 3) {
-                                            int i11 = 0;
-                                            ArrayList arrayList4 = null;
-                                            while (i11 < k27Var.k.reactions.recent_reactions.size()) {
-                                                TLRPC.MessagePeerReaction messagePeerReaction = k27Var.k.reactions.recent_reactions.get(i11);
-                                                h19 d = h19.d(messagePeerReaction.reaction);
-                                                h19 d2 = h19.d(reactionCount.reaction);
-                                                int i12 = i11;
-                                                int i13 = i6;
-                                                int i14 = i2;
-                                                TLObject Z1 = na7.q1(i3).Z1(k27.B1(messagePeerReaction.peer_id));
-                                                if (d.equals(d2) && Z1 != null) {
-                                                    if (arrayList4 == null) {
-                                                        arrayList4 = new ArrayList();
-                                                    }
-                                                    arrayList4.add(Z1);
-                                                }
-                                                i11 = i12 + 1;
-                                                i6 = i13;
-                                                i2 = i14;
-                                            }
-                                            i4 = i6;
-                                            i5 = i2;
-                                            g19Var.o(arrayList4);
-                                            if (arrayList4 != null && !arrayList4.isEmpty()) {
-                                                z3 = false;
-                                                g19Var.v = 0;
-                                                jx2Var.c(0, false);
-                                                if (!this.D) {
-                                                    g19Var.a();
-                                                }
-                                                i2 = i5 + 1;
-                                                r5 = z3;
-                                                i8 = i3;
-                                                i6 = i4;
-                                                z4 = z;
-                                            }
-                                            z3 = false;
-                                            if (!this.D) {
-                                            }
-                                            i2 = i5 + 1;
-                                            r5 = z3;
-                                            i8 = i3;
-                                            i6 = i4;
-                                            z4 = z;
-                                        }
+        final byte b;
+        al0 al0Var;
+        i19 i19Var = this;
+        boolean z2 = i19Var.T;
+        j19 j19Var2 = i19Var.a;
+        byte b2 = 0;
+        wb2 wb2Var = i19Var.E;
+        if (!z2) {
+            int[] iArr = e0;
+            wb2Var.getLocationInWindow(iArr);
+            int i5 = iArr[0];
+            int i6 = iArr[1];
+            j19Var2.getLocationInWindow(iArr);
+            int i7 = iArr[0];
+            int i8 = iArr[1];
+            i19Var.V = i5 - i7;
+            i19Var.W = i6 - i8;
+            float L = hl.L(16.0f);
+            float sideButtonStartX = wb2Var.getSideButtonStartX() + i19Var.V + L;
+            float sideButtonStartY = wb2Var.getSideButtonStartY() + i19Var.W + L;
+            float f7 = sideButtonStartX - L;
+            float f8 = sideButtonStartY - L;
+            float f9 = sideButtonStartX + L;
+            float f10 = sideButtonStartY + L;
+            RectF rectF2 = i19Var.h;
+            rectF2.set(f7, f8, f9, f10);
+            float L2 = hl.L(16.0f);
+            if (rectF2.right + hl.L(48.0f) + L2 > j19Var2.getMeasuredWidth()) {
+                i19Var.G = Math.max(0.0f, (j19Var2.getMeasuredWidth() - L2) - rectF2.right);
+            } else if (((rectF2.right + hl.L(48.0f)) - i19Var.h()) - L2 < 0.0f) {
+                i19Var.G = Math.max(0.0f, (L2 + i19Var.h()) - rectF2.right);
+            } else {
+                i19Var.G = hl.L(48.0f);
+            }
+            i19Var.a0.start();
+            i19Var.T = true;
+        }
+        al0 al0Var2 = i19Var.Q;
+        float f11 = 53.0f;
+        f19[] f19VarArr = i19Var.x;
+        int i9 = 2;
+        RectF rectF3 = i19Var.r;
+        if (al0Var2 != null && !z) {
+            al0Var2.setBounds((int) rectF3.left, (int) (rectF3.top - hl.L(30.0f)), (int) rectF3.right, (int) rectF3.bottom);
+            i19Var.Q.i = (int) ((1.0f - h19.c.getInterpolation(i19Var.I)) * 255.0f);
+            i19Var.Q.draw(canvas);
+            if (i19Var.S != -1) {
+                float interpolation = 1.0f - h19.e.getInterpolation(i19Var.I);
+                float interpolation2 = h19.d.getInterpolation(i19Var.I);
+                float centerX = rectF3.centerX() + (hl.L(53.0f) * (i19Var.S - 2));
+                float centerY = rectF3.centerY();
+                float f12 = i19Var.Y;
+                float f13 = i19Var.Z;
+                float f14 = (centerX + f12) / 2.0f;
+                c21 c21Var = i19Var.X;
+                float min = (c21Var == null || !c21Var.top) ? Math.min(centerY, f13) - hl.L(15.0f) : Math.max(centerY, f13) + hl.L(15.0f);
+                float g = g(centerX, f12, interpolation2);
+                double d = centerX;
+                double d2 = centerY;
+                double d3 = f12;
+                double d4 = f13;
+                double d5 = f14;
+                double d6 = d3 - d;
+                double d7 = ((d3 * d) + ((d5 * d5) - (d3 * d5))) - (d5 * d);
+                double d8 = d7 == 0.0d ? 0.0d : ((min - (((d4 - d2) * (d5 - d)) / d6)) - d2) / d7;
+                double d9 = d * d;
+                double d10 = d6 != 0.0d ? ((d4 - (((d3 * d3) - d9) * d8)) - d2) / d6 : 0.0d;
+                double g2 = g(centerX, f12, interpolation2);
+                float f15 = (float) ((d10 * g2) + (d8 * g2 * g2) + ((d2 - (d9 * d8)) - (d10 * d)));
+                float g3 = g((hl.L(42.0f) / 2.0f) + hl.L(2.0f), hl.L(12.0f), interpolation2);
+                final f19 f19Var2 = f19VarArr[i19Var.S];
+                if (f19Var2.e == null) {
+                    final byte b3 = 1;
+                    al0 al0Var3 = new al0(new zk0() { // from class: e19
+                        @Override // zk0
+                        public final void n(Canvas canvas2, int i10) {
+                            switch (b3) {
+                                case 0:
+                                    f19 f19Var3 = f19Var2;
+                                    f19Var3.getClass();
+                                    canvas2.save();
+                                    canvas2.translate(-f19Var3.i, -f19Var3.j);
+                                    float f16 = f19Var3.i;
+                                    float f17 = f19Var3.j;
+                                    float f18 = i10 / 255.0f;
+                                    RectF rectF4 = hl.P;
+                                    float L3 = hl.L(21.0f) / 2.0f;
+                                    rectF4.set(f16, f17, f19Var3.h.getWidth() + f16 + (hl.L(8.0f) << 1), hl.L(21.0f) + f17);
+                                    wb2 wb2Var2 = f19Var3.b;
+                                    boolean i22 = wb2Var2.i2();
+                                    Paint paint = f19Var3.g;
+                                    if (paint != null) {
+                                        int alpha = paint.getAlpha();
+                                        paint.setAlpha((int) (255.0f * f18));
+                                        canvas2.drawRoundRect(rectF4, L3, L3, paint);
+                                        paint.setAlpha(alpha);
                                     } else {
-                                        ArrayList arrayList5 = new ArrayList();
-                                        TLRPC.User f = y6c.h(i8).f();
-                                        TLRPC.User V1 = na7.q1(i8).V1(Long.valueOf(k27.B0(k27Var.k)));
-                                        i3 = i8;
-                                        if (reactionCount.count == 2) {
-                                            if (f != null) {
-                                                arrayList5.add(f);
-                                            }
-                                            if (V1 != null) {
-                                                arrayList5.add(V1);
-                                            }
-                                        } else if (reactionCount.chosen) {
-                                            if (f != null) {
-                                                arrayList5.add(f);
-                                            }
-                                        } else if (V1 != null) {
-                                            arrayList5.add(V1);
-                                        }
-                                        g19Var.o(arrayList5);
-                                        if (!arrayList5.isEmpty()) {
-                                            g19Var.v = 0;
-                                            jx2Var.c(0, false);
-                                        }
+                                        Point point = hl.q;
+                                        wb2Var2.D(0.0f, 0.0f, point.x, point.y);
+                                        Paint c2 = wb2Var2.c2("paintChatActionBackground");
+                                        int alpha2 = c2.getAlpha();
+                                        c2.setAlpha((int) ((i22 ? alpha2 : 229.5f) * f18));
+                                        canvas2.drawRoundRect(rectF4, L3, L3, c2);
+                                        c2.setAlpha(alpha2);
                                     }
-                                    i4 = i6;
-                                    i5 = i2;
-                                    z3 = false;
-                                    if (!this.D) {
+                                    if (i22 || paint != null) {
+                                        int alpha3 = aob.h2.getAlpha();
+                                        aob.h2.setAlpha((int) (alpha3 * f18));
+                                        canvas2.drawRoundRect(rectF4, L3, L3, aob.h2);
+                                        aob.h2.setAlpha(alpha3);
                                     }
-                                    i2 = i5 + 1;
-                                    r5 = z3;
-                                    i8 = i3;
-                                    i6 = i4;
-                                    z4 = z;
-                                }
+                                    canvas2.save();
+                                    canvas2.translate(f16 + hl.L(8.0f), ((hl.L(21.0f) - f19Var3.h.getHeight()) / 2.0f) + f17);
+                                    int alpha4 = f19Var3.h.getPaint().getAlpha();
+                                    f19Var3.h.getPaint().setAlpha((int) (alpha4 * f18));
+                                    f19Var3.h.draw(canvas2);
+                                    f19Var3.h.getPaint().setAlpha(alpha4);
+                                    canvas2.restore();
+                                    canvas2.restore();
+                                    break;
+                                default:
+                                    float L4 = hl.L(21.0f);
+                                    f19Var2.a(L4, L4, L4, i10 / 255.0f, canvas2);
+                                    break;
                             }
-                            z3 = r5 == true ? 1 : 0;
-                            i3 = i8;
-                            i4 = i6;
-                            i5 = i2;
-                            if (!this.D) {
-                            }
-                            i2 = i5 + 1;
-                            r5 = z3;
-                            i8 = i3;
-                            i6 = i4;
-                            z4 = z;
                         }
-                    }
+                    });
+                    f19Var2.e = al0Var3;
+                    al0Var3.b(hl.L(42.0f), hl.L(42.0f), 4.0f, hl.L(10.0f));
                 }
-                z2 = false;
-                ArrayList arrayList32 = new ArrayList();
-                if (z2) {
-                }
-                i2 = -arrayList32.size();
-                while (i2 < k27Var.k.reactions.results.size()) {
-                }
+                canvas.save();
+                canvas.translate(g - g3, f15 - g3);
+                canvas.scale(g3 / hl.L(21.0f), g3 / hl.L(21.0f));
+                al0 al0Var4 = f19Var2.e;
+                al0Var4.i = (int) (interpolation * 255.0f);
+                al0Var4.draw(canvas);
+                canvas.restore();
+                return;
             }
-            i = r5;
-            if (!arrayList.isEmpty()) {
-                Collections.sort(arrayList, e19Var);
-                for (int i15 = i; i15 < arrayList.size(); i15++) {
-                    TLRPC.ReactionCount reactionCount2 = ((f19) arrayList.get(i15)).a;
-                    int i16 = Y;
-                    Y = i16 + 1;
-                    reactionCount2.lastDrawnPosition = i16;
-                }
-            }
-            TLRPC.Message message2 = k27Var.k;
-            if (message2 != null && (tL_messageReactions = message2.reactions) != null) {
-                for (int i17 = i; i17 < tL_messageReactions.recent_reactions.size(); i17++) {
-                    if (tL_messageReactions.recent_reactions.get(i17).unread) {
-                        r7 = 1;
-                        break;
-                    }
-                }
-            }
-            r7 = i;
-            this.H = r7;
+            return;
+        }
+        float f16 = !z ? 1.0f - i19Var.I : i / 255.0f;
+        float g4 = g(0.3f, 0.075f, h19.k.getInterpolation(i19Var.H));
+        Matrix matrix = i19Var.d;
+        matrix.reset();
+        matrix.setScale(g4, g4);
+        matrix.postTranslate(0.0f, rectF3.bottom);
+        i19Var.f.setLocalMatrix(matrix);
+        int interpolation3 = (int) (h19.j.getInterpolation(i19Var.H) * 255.0f * f16);
+        Paint paint = i19Var.c;
+        paint.setAlpha(interpolation3);
+        RectF rectF4 = c0;
+        rectF4.set(rectF3);
+        float f17 = 8.0f;
+        rectF4.inset(-hl.L(8.0f), -hl.L(8.0f));
+        Rect rect = d0;
+        rectF4.round(rect);
+        Drawable drawable = i19Var.y;
+        drawable.setAlpha((int) (f16 * 255.0f));
+        drawable.setBounds(rect);
+        drawable.draw(canvas);
+        boolean z3 = i19Var.N;
+        RectF rectF5 = i19Var.n;
+        if (z3) {
+            f = 16.0f;
         } else {
-            i = 0;
+            f = 16.0f;
+            float interpolation4 = (h19.f.getInterpolation(i19Var.H) - h19.g.getInterpolation(i19Var.H)) * (-40.0f);
+            canvas.save();
+            canvas.translate(rectF5.left, rectF5.top);
+            canvas.rotate(interpolation4, hl.L(16.0f), hl.L(16.0f));
+            canvas.translate(-wb2Var.getSideButtonStartX(), -wb2Var.getSideButtonStartY());
+            wb2Var.x1(canvas, true);
+            canvas.restore();
         }
-        for (int i18 = i; i18 < arrayList2.size(); i18++) {
-            ((f19) arrayList2.get(i18)).b();
+        if (!i19Var.R || i19Var.N) {
+            float min2 = Math.min(rectF3.width(), rectF3.height()) / 2.0f;
+            float min3 = Math.min(rectF5.width(), rectF5.height()) / 2.0f;
+            canvas.drawRoundRect(rectF3, min2, min2, paint);
+            if (!i19Var.N) {
+                canvas.drawRoundRect(rectF5, min3, min3, paint);
+            }
+        } else {
+            canvas.drawPath(i19Var.e, paint);
         }
-        this.p = arrayList.isEmpty();
+        float interpolation5 = h19.t.getInterpolation(i19Var.H) * hl.L(2.0f);
+        float interpolation6 = ((h19.q.getInterpolation(i19Var.H) * hl.L(44.0f)) / 2.0f) - interpolation5;
+        float interpolation7 = ((h19.r.getInterpolation(i19Var.H) * hl.L(44.0f)) / 2.0f) - interpolation5;
+        float interpolation8 = ((h19.s.getInterpolation(i19Var.H) * hl.L(44.0f)) / 2.0f) - interpolation5;
+        int i10 = 0;
+        while (i10 < i9) {
+            int i11 = b2;
+            while (i11 < f19VarArr.length) {
+                if (!(i10 == 0 && i11 == i19Var.S) && (i10 != 1 || i11 == i19Var.S)) {
+                    f2 = f17;
+                    float length = i11 - ((f19VarArr.length / 2.0f) - 0.5f);
+                    float f18 = i11 == i9 ? interpolation6 : (i11 == 1 || i11 == 3) ? interpolation7 : interpolation8;
+                    float L3 = (hl.L(f11) * length) + rectF3.centerX();
+                    float centerY2 = rectF3.centerY();
+                    f19 f19Var3 = f19VarArr[i11];
+                    float L4 = hl.L(f);
+                    float measuredWidth = j19Var2.getMeasuredWidth() - hl.L(f);
+                    j19Var = j19Var2;
+                    float f19 = rectF3.left;
+                    f3 = interpolation8;
+                    float f20 = rectF3.right;
+                    if (i11 == i19Var.S && i19Var.P) {
+                        f4 = L3;
+                        i2 = i11;
+                        f19Var = f19Var3;
+                        f5 = measuredWidth;
+                        i3 = 2;
+                        rectF = rectF3;
+                        f6 = f16;
+                    } else {
+                        f19Var3.getClass();
+                        float L5 = (hl.L(2.0f) * f19Var3.o) + f18;
+                        i2 = i11;
+                        f19Var = f19Var3;
+                        f5 = measuredWidth;
+                        i3 = 2;
+                        rectF = rectF3;
+                        f6 = f16;
+                        f4 = L3;
+                        f19Var.a(f4, centerY2, L5, f6, canvas);
+                    }
+                    float f21 = f19Var.o;
+                    i4 = i2;
+                    if (f21 <= 0.0f || f19Var.h == null) {
+                        b = 0;
+                    } else {
+                        float f22 = (f21 * 0.15f) + 0.85f;
+                        canvas.save();
+                        canvas.scale(f22, f22, f4, centerY2);
+                        float f23 = f19Var.o * f6;
+                        float width = f19Var.h.getWidth() + (hl.L(f2) << 1);
+                        f19Var.i = f19.b(f19.b(f4, width, f19, f20), width, L4, f5) - (width / 2.0f);
+                        f19Var.j = centerY2 - hl.L(58.0f);
+                        if (f19Var.f == null) {
+                            i19 i19Var2 = f19Var.a;
+                            if (!i19Var2.U) {
+                                f19Var.g = i19Var2.M;
+                                b = 0;
+                                al0 al0Var5 = new al0(new zk0() { // from class: e19
+                                    @Override // zk0
+                                    public final void n(Canvas canvas2, int i102) {
+                                        switch (b) {
+                                            case 0:
+                                                f19 f19Var32 = f19Var;
+                                                f19Var32.getClass();
+                                                canvas2.save();
+                                                canvas2.translate(-f19Var32.i, -f19Var32.j);
+                                                float f162 = f19Var32.i;
+                                                float f172 = f19Var32.j;
+                                                float f182 = i102 / 255.0f;
+                                                RectF rectF42 = hl.P;
+                                                float L32 = hl.L(21.0f) / 2.0f;
+                                                rectF42.set(f162, f172, f19Var32.h.getWidth() + f162 + (hl.L(8.0f) << 1), hl.L(21.0f) + f172);
+                                                wb2 wb2Var2 = f19Var32.b;
+                                                boolean i22 = wb2Var2.i2();
+                                                Paint paint2 = f19Var32.g;
+                                                if (paint2 != null) {
+                                                    int alpha = paint2.getAlpha();
+                                                    paint2.setAlpha((int) (255.0f * f182));
+                                                    canvas2.drawRoundRect(rectF42, L32, L32, paint2);
+                                                    paint2.setAlpha(alpha);
+                                                } else {
+                                                    Point point = hl.q;
+                                                    wb2Var2.D(0.0f, 0.0f, point.x, point.y);
+                                                    Paint c2 = wb2Var2.c2("paintChatActionBackground");
+                                                    int alpha2 = c2.getAlpha();
+                                                    c2.setAlpha((int) ((i22 ? alpha2 : 229.5f) * f182));
+                                                    canvas2.drawRoundRect(rectF42, L32, L32, c2);
+                                                    c2.setAlpha(alpha2);
+                                                }
+                                                if (i22 || paint2 != null) {
+                                                    int alpha3 = aob.h2.getAlpha();
+                                                    aob.h2.setAlpha((int) (alpha3 * f182));
+                                                    canvas2.drawRoundRect(rectF42, L32, L32, aob.h2);
+                                                    aob.h2.setAlpha(alpha3);
+                                                }
+                                                canvas2.save();
+                                                canvas2.translate(f162 + hl.L(8.0f), ((hl.L(21.0f) - f19Var32.h.getHeight()) / 2.0f) + f172);
+                                                int alpha4 = f19Var32.h.getPaint().getAlpha();
+                                                f19Var32.h.getPaint().setAlpha((int) (alpha4 * f182));
+                                                f19Var32.h.draw(canvas2);
+                                                f19Var32.h.getPaint().setAlpha(alpha4);
+                                                canvas2.restore();
+                                                canvas2.restore();
+                                                break;
+                                            default:
+                                                float L42 = hl.L(21.0f);
+                                                f19Var.a(L42, L42, L42, i102 / 255.0f, canvas2);
+                                                break;
+                                        }
+                                    }
+                                });
+                                f19Var.f = al0Var5;
+                                al0Var5.b((int) width, hl.L(21.0f), 3.0f, hl.L(4.0f));
+                                al0Var = f19Var.f;
+                                if (al0Var != null) {
+                                    float f24 = f19Var.i;
+                                    float f25 = f19Var.j;
+                                    al0Var.setBounds((int) f24, (int) f25, (int) (f24 + width), (int) (f25 + hl.L(21.0f)));
+                                    al0 al0Var6 = f19Var.f;
+                                    al0Var6.i = (int) (f23 * 255.0f);
+                                    al0Var6.draw(canvas);
+                                }
+                                canvas.restore();
+                            }
+                        }
+                        b = 0;
+                        al0Var = f19Var.f;
+                        if (al0Var != null) {
+                        }
+                        canvas.restore();
+                    }
+                } else {
+                    i4 = i11;
+                    i3 = i9;
+                    rectF = rectF3;
+                    j19Var = j19Var2;
+                    f3 = interpolation8;
+                    b = b2;
+                    f2 = f17;
+                    f6 = f16;
+                }
+                i11 = i4 + 1;
+                i19Var = this;
+                f17 = f2;
+                f16 = f6;
+                b2 = b;
+                rectF3 = rectF;
+                i9 = i3;
+                j19Var2 = j19Var;
+                interpolation8 = f3;
+                f11 = 53.0f;
+            }
+            i10++;
+            i19Var = this;
+            rectF3 = rectF3;
+            j19Var2 = j19Var2;
+            f11 = 53.0f;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    public final int h() {
+        return hl.L((53 * this.x.length) + 7);
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ObjectAnimator objectAnimator = this.a0;
+        z09 z09Var = this.b;
+        if (animator == objectAnimator) {
+            this.E.setHideSideButtonByQuickShare(false);
+            this.N = true;
+            invalidateSelf();
+            if (this.O) {
+                z09Var.run();
+                return;
+            }
+            return;
+        }
+        if (animator == this.b0) {
+            this.O = true;
+            invalidateSelf();
+            c21 c21Var = this.X;
+            if (c21Var != null) {
+                c21Var.a.setVisibility(0);
+            }
+            if (this.N) {
+                z09Var.run();
+            }
+        }
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationRepeat(Animator animator) {
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

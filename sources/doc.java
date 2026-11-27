@@ -1,42 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class doc extends View {
-    public final /* synthetic */ koc a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class doc implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ foc b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public doc(koc kocVar, Context context) {
-        super(context);
-        this.a = kocVar;
+    public /* synthetic */ doc(foc focVar, byte b) {
+        this.a = b;
+        this.b = focVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        koc kocVar = this.a;
-        if (kocVar.Z0 > 0.0f) {
-            boolean z = kocVar.Y0;
-            float f = kocVar.V0;
-            float B = z ? yjb.B(f, 2.0f, 3.0f, f * f) : 1.0f - ((float) Math.pow(1.0f - f, 4.0d));
-            boolean z2 = kocVar.Y0;
-            float f2 = (z2 || B >= 1.0f) ? -1.0f : kocVar.Z0 * 1.2f * B;
-            joc jocVar = kocVar.T0;
-            if (jocVar == null || B >= 1.0f) {
-                canvas2 = canvas;
-            } else {
-                float f3 = z2 ? 1.0f - B : 1.0f;
-                canvas2 = canvas;
-                kocVar.s(canvas2, jocVar, f3, f2, true);
-            }
-            joc jocVar2 = kocVar.U0;
-            if (jocVar2 != null) {
-                kocVar.s(canvas2, jocVar2, kocVar.Y0 ? B : 1.0f, f2, false);
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        byte b2 = 2;
+        foc focVar = this.b;
+        switch (b) {
+            case 0:
+                focVar.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                focVar.k.invalidate();
+                if (focVar.n > 1.0f && focVar.r == null) {
+                    ValueAnimator ofInt = ValueAnimator.ofInt(hl.L(12.0f), 0);
+                    focVar.r = ofInt;
+                    ofInt.addUpdateListener(new doc(focVar, b2));
+                    focVar.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
+                    focVar.r.start();
+                    break;
+                }
+                break;
+            case 1:
+                focVar.m = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                focVar.k.invalidate();
+                break;
+            default:
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                if (focVar.i <= focVar.o / 2) {
+                    intValue = -intValue;
+                }
+                focVar.p = intValue;
+                focVar.k.invalidate();
+                break;
         }
     }
 }

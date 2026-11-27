@@ -1,41 +1,112 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class k8f extends vef {
-    private static final k8f zzb;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private boolean zzg;
-    private boolean zzh;
-    private int zzi;
-    private int zzj;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
-    static {
-        k8f k8fVar = new k8f();
-        zzb = k8fVar;
-        vef.e(k8f.class, k8fVar);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class k8f implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ k8f(ijf ijfVar, ywd ywdVar, long j) {
+        gaf gafVar = gaf.b;
+        this.c = ijfVar;
+        this.d = ywdVar;
+        this.b = j;
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                q8f q8fVar = (q8f) obj2;
+                std stdVar = (std) obj;
+                HashMap hashMap = q8fVar.j;
+                vxe vxeVar = vxe.f;
+                if (!hashMap.containsKey(vxeVar)) {
+                    lp2 lp2Var = new lp2((byte) 2);
+                    ccd ccdVar = new ccd();
+                    if (!lp2Var.isEmpty()) {
+                        iy8.d();
+                        throw null;
+                    }
+                    ccdVar.c = lp2Var;
+                    hashMap.put(vxeVar, ccdVar);
+                }
+                ccd ccdVar2 = (ccd) hashMap.get(vxeVar);
+                Long valueOf = Long.valueOf(j);
+                lp2 lp2Var2 = ccdVar2.c;
+                Collection collection = (Collection) lp2Var2.get(stdVar);
+                if (collection == null) {
+                    ArrayList arrayList = new ArrayList(3);
+                    if (!arrayList.add(valueOf)) {
+                        hz6.e("New Collection violated the Collection spec");
+                        return;
+                    } else {
+                        ccdVar2.d++;
+                        lp2Var2.put(stdVar, arrayList);
+                    }
+                } else if (collection.add(valueOf)) {
+                    ccdVar2.d++;
+                }
+                long elapsedRealtime = SystemClock.elapsedRealtime();
+                if (q8fVar.c(vxeVar, elapsedRealtime)) {
+                    q8fVar.i.put(vxeVar, Long.valueOf(elapsedRealtime));
+                    xnb.c(1, new dhe(q8fVar, (byte) 2));
+                    return;
+                }
+                return;
+            default:
+                ijf ijfVar = (ijf) obj2;
+                gaf gafVar = gaf.O1;
+                ywd ywdVar = (ywd) obj;
+                HashMap hashMap2 = ijfVar.j;
+                if (!hashMap2.containsKey(gafVar)) {
+                    lp2 lp2Var3 = new lp2((byte) 1);
+                    lmf lmfVar = new lmf();
+                    if (!lp2Var3.isEmpty()) {
+                        iy8.d();
+                        throw null;
+                    }
+                    lmfVar.c = lp2Var3;
+                    hashMap2.put(gafVar, lmfVar);
+                }
+                lmf lmfVar2 = (lmf) hashMap2.get(gafVar);
+                Long valueOf2 = Long.valueOf(j);
+                lp2 lp2Var4 = lmfVar2.c;
+                Collection collection2 = (Collection) lp2Var4.get(ywdVar);
+                if (collection2 == null) {
+                    ArrayList arrayList2 = new ArrayList(3);
+                    if (!arrayList2.add(valueOf2)) {
+                        hz6.e("New Collection violated the Collection spec");
+                        return;
+                    }
+                    lp2Var4.put(ywdVar, arrayList2);
+                } else {
+                    collection2.add(valueOf2);
+                }
+                long elapsedRealtime2 = SystemClock.elapsedRealtime();
+                if (ijfVar.d(gafVar, elapsedRealtime2)) {
+                    ijfVar.i.put(gafVar, Long.valueOf(elapsedRealtime2));
+                    xnb.c(1, new dhe(ijfVar));
+                    return;
+                }
+                return;
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001င\u0000\u0002᠌\u0001\u0003ဇ\u0002\u0004ဇ\u0003\u0005᠌\u0004\u0006ဆ\u0005", new Object[]{"zzd", "zze", "zzf", c6e.r, "zzg", "zzh", "zzi", o5f.r, "zzj"});
-        }
-        if (i2 == 3) {
-            return new k8f();
-        }
-        if (i2 == 4) {
-            return new v8e(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+    }
+
+    public /* synthetic */ k8f(q8f q8fVar, std stdVar, long j) {
+        this.c = q8fVar;
+        this.d = stdVar;
+        this.b = j;
     }
 }

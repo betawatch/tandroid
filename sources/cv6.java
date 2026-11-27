@@ -1,29 +1,55 @@
 // default package
 
-import android.media.session.MediaSessionManager;
-import android.text.TextUtils;
+import android.app.Dialog;
+import android.content.res.Configuration;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class cv6 extends bv6 {
-    @Override // bv6
-    public final mw6 c() {
-        MediaSessionManager.RemoteUserInfo currentControllerInfo = this.a.getCurrentControllerInfo();
-        mw6 mw6Var = new mw6();
-        String packageName = currentControllerInfo.getPackageName();
-        if (packageName == null) {
-            fvc.f("package shouldn't be null");
-            return null;
+public class cv6 extends tf3 {
+    public boolean B0 = false;
+    public ep C0;
+    public dw6 D0;
+
+    public cv6() {
+        this.r0 = true;
+        Dialog dialog = this.w0;
+        if (dialog != null) {
+            dialog.setCancelable(true);
         }
-        if (TextUtils.isEmpty(packageName)) {
-            w26.j("packageName should be nonempty");
-            return null;
-        }
-        mw6Var.a = new ow6(currentControllerInfo.getPackageName(), currentControllerInfo.getPid(), currentControllerInfo.getUid());
-        return mw6Var;
     }
 
-    @Override // bv6
-    public final void d(mw6 mw6Var) {
+    @Override // tf3, gp4
+    public final void I() {
+        super.I();
+        ep epVar = this.C0;
+        if (epVar == null || this.B0) {
+            return;
+        }
+        ((bv6) epVar).i(false);
+    }
+
+    @Override // tf3
+    public final Dialog P() {
+        if (this.B0) {
+            wv6 wv6Var = new wv6(n());
+            this.C0 = wv6Var;
+            wv6Var.i(this.D0);
+        } else {
+            this.C0 = new bv6(n());
+        }
+        return this.C0;
+    }
+
+    @Override // gp4, android.content.ComponentCallbacks
+    public final void onConfigurationChanged(Configuration configuration) {
+        this.V = true;
+        ep epVar = this.C0;
+        if (epVar != null) {
+            if (this.B0) {
+                ((wv6) epVar).j();
+            } else {
+                ((bv6) epVar).s();
+            }
+        }
     }
 }

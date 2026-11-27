@@ -1,242 +1,218 @@
 // default package
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.IBinder;
+import android.webkit.JsPromptResult;
 import android.widget.EditText;
-import java.util.List;
-import org.telegram.messenger.ImageReceiver;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ExternalActionActivity;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gf implements ed, x56, ll5, ix6, lx6, yc7, us2 {
+public final /* synthetic */ class gf implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ gf(tj tjVar, int i, long j, long j2) {
-        this.a = (byte) 2;
-        this.d = tjVar;
-        this.c = i;
-        this.b = j;
+    public /* synthetic */ gf(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    @Override // ll5
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-        List list;
-        Bitmap bitmap;
-        p8c p8cVar = (p8c) this.d;
-        int i = this.c;
-        long j = this.b;
-        jl5 p = imageReceiver.p();
-        jl5 u = imageReceiver.u();
-        if (!z || p == null) {
-            return;
-        }
-        if (u != null) {
-            Drawable drawable = u.d;
-            if (drawable instanceof tqc) {
-                list = ((tqc) drawable).a;
-                bitmap = p.c;
-                if (bitmap == null) {
-                    Drawable drawable2 = p.d;
-                    if (drawable2 instanceof BitmapDrawable) {
-                        bitmap = ((BitmapDrawable) drawable2).getBitmap();
-                    }
-                }
-                p8cVar.a(new mqc(bitmap, 0, list));
-                je2.e(i);
-                je2.s.c(new zd2(j, bitmap, (byte) 0));
-            }
-        }
-        list = null;
-        bitmap = p.c;
-        if (bitmap == null) {
-        }
-        p8cVar.a(new mqc(bitmap, 0, list));
-        je2.e(i);
-        je2.s.c(new zd2(j, bitmap, (byte) 0));
-    }
-
-    @Override // yc7
-    public final void a(String str) {
-        ((nfa) this.d).F0(this.c, str, this.b);
-    }
-
-    @Override // us2
-    public final void accept(Object obj) {
-        vab vabVar = (vab) this.d;
-        x33 x33Var = (x33) obj;
-        vabVar.h.getClass();
-        byte[] l3 = i2f.l3(x33Var.a, x33Var.c);
-        xu7 xu7Var = vabVar.c;
-        xu7Var.L(l3.length, l3);
-        vabVar.a.e(l3.length, xu7Var);
-        long j = x33Var.b;
-        fm4 fm4Var = vabVar.h;
-        long j2 = this.b;
-        if (j == -9223372036854775807L) {
-            gre.p(fm4Var.y == Long.MAX_VALUE);
-        } else {
-            long j3 = fm4Var.y;
-            j2 = j3 == Long.MAX_VALUE ? j2 + j : j + j3;
-        }
-        vabVar.a.a(j2, this.c | 1, l3.length, 0, null);
-    }
-
-    @Override // ix6
-    public final void g(ad8 ad8Var, su6 su6Var) {
-        ox6 ox6Var = (ox6) this.d;
-        ad8Var.p(ox6Var.f(su6Var, ad8Var, this.c), this.b);
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        ((uj) obj).n((tj) this.d, this.c, this.b);
-    }
-
-    @Override // lx6
-    public final Object p(tv6 tv6Var, su6 su6Var, int i) {
-        long j;
-        try {
-            mm5 a = w21.a((IBinder) this.d);
-            jm5 p = mm5.p();
-            for (int i2 = 0; i2 < a.size(); i2++) {
-                Bundle bundle = (Bundle) a.get(i2);
-                bundle.getClass();
-                p.c(br6.a(su6Var.c, bundle));
-            }
-            w59 f = p.f();
-            int i3 = this.c;
-            if (i3 == -1) {
-                tv6Var.t();
-                i3 = tv6Var.t.l0();
-                tv6Var.t();
-                j = tv6Var.t.m();
-            } else {
-                j = this.b;
-            }
-            return tv6Var.o(su6Var, f, i3, j);
-        } catch (RuntimeException e) {
-            lad.g("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e);
-            return jie.b(e);
-        }
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        Runnable runnable;
+        euc eucVar;
         byte b = this.a;
-        Object obj = this.d;
-        int i2 = this.c;
-        long j = this.b;
-        byte b2 = 0;
+        Object obj = this.c;
+        Object obj2 = this.b;
         switch (b) {
             case 0:
-                EditText editText = (EditText) obj;
-                if (j > 0) {
-                    TLRPC.UserFull W1 = na7.q1(i2).W1(y6c.h(i2).e());
-                    String trim = editText.getText().toString().replace("\n", " ").replaceAll(" +", " ").trim();
-                    if (W1 != null) {
-                        String str = W1.about;
-                        if ((str != null ? str : "").equals(trim)) {
-                            gl.t1(editText);
-                            hdVar.dismiss();
-                            break;
-                        } else {
-                            W1.about = trim;
-                            kk7.f(i2).k(67, Long.valueOf(j), W1);
-                        }
-                    }
-                    TL_account.updateProfile updateprofile = new TL_account.updateProfile();
-                    updateprofile.about = trim;
-                    updateprofile.flags |= 4;
-                    kk7.e().k(kk7.R4, 2, Long.valueOf(j));
-                    ConnectionsManager.getInstance(i2).sendRequest(updateprofile, new ce2(b2), 2);
-                } else {
-                    long j2 = -j;
-                    TLRPC.ChatFull L0 = na7.q1(i2).L0(j2);
-                    String obj2 = editText.getText().toString();
-                    if (L0 != null) {
-                        String str2 = L0.about;
-                        if ((str2 != null ? str2 : "").equals(obj2)) {
-                            gl.t1(editText);
-                            hdVar.dismiss();
-                            break;
-                        } else {
-                            L0.about = obj2;
-                            kk7 f = kk7.f(i2);
-                            Boolean bool = Boolean.FALSE;
-                            f.k(30, L0, 0, bool, bool);
-                        }
-                    }
-                    kk7.e().k(kk7.R4, 2, Long.valueOf(j));
-                    na7 q1 = na7.q1(i2);
-                    TLRPC.TL_messages_editChatAbout tL_messages_editChatAbout = new TLRPC.TL_messages_editChatAbout();
-                    tL_messages_editChatAbout.peer = q1.h1(-j2);
-                    tL_messages_editChatAbout.about = obj2;
-                    q1.getConnectionsManager().sendRequest(tL_messages_editChatAbout, new k45(q1, L0, obj2, (byte) 21), 64);
+                hl.t1((EditText) obj2);
+                hl.t1((EditText) obj);
+                break;
+            case 1:
+                pt2 pt2Var = (pt2) obj;
+                if (!((AtomicBoolean) obj2).get()) {
+                    pt2Var.accept(Boolean.FALSE);
+                    break;
                 }
-                hdVar.dismiss();
+                break;
+            case 2:
+                e eVar = (e) obj2;
+                DialogInterface.OnDismissListener onDismissListener = (DialogInterface.OnDismissListener) obj;
+                if (onDismissListener != null) {
+                    onDismissListener.onDismiss(dialogInterface);
+                }
+                eVar.onDialogDismiss((Dialog) dialogInterface);
+                if (dialogInterface == eVar.visibleDialog) {
+                    eVar.visibleDialog = null;
+                    break;
+                }
+                break;
+            case 3:
+                e eVar2 = (e) obj2;
+                bg0 bg0Var = (bg0) obj;
+                eVar2.onPause();
+                eVar2.onFragmentDestroy();
+                if (bg0Var != null && (runnable = bg0Var.b) != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 4:
+                kt ktVar = (kt) obj;
+                if (!((AtomicBoolean) obj2).get()) {
+                    ktVar.run();
+                    break;
+                }
+                break;
+            case 5:
+                boolean[] zArr = (boolean[]) obj2;
+                ku0 ku0Var = (ku0) obj;
+                if (!zArr[0]) {
+                    ku0Var.a(Boolean.FALSE);
+                    zArr[0] = true;
+                    break;
+                }
+                break;
+            case 6:
+                boolean[] zArr2 = (boolean[]) obj2;
+                hu0 hu0Var = (hu0) obj;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    hu0Var.a(null);
+                    break;
+                }
+                break;
+            case 7:
+                ((Runnable) obj).run();
+                ((rv0) obj2).d0 = null;
+                break;
+            case 8:
+                boolean[] zArr3 = (boolean[]) obj2;
+                JsPromptResult jsPromptResult = (JsPromptResult) obj;
+                if (!zArr3[0]) {
+                    zArr3[0] = true;
+                    jsPromptResult.cancel();
+                    break;
+                }
+                break;
+            case 9:
+                ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj2;
+                ArrayList arrayList = ExternalActionActivity.y;
+                externalActionActivity.setResult(1, new Intent().putExtra("error", ((TLRPC.TL_error) obj).text));
+                externalActionActivity.finish();
+                break;
+            case 10:
+                LaunchActivity launchActivity = (LaunchActivity) obj2;
+                id idVar = (id) obj;
+                String str = LaunchActivity.C1;
+                if (idVar == launchActivity.G0) {
+                    ActionBarLayout actionBarLayout = launchActivity.p0;
+                    e lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
+                    try {
+                        String str2 = ob6.D0().B.c;
+                        if (lastFragment != null) {
+                            v21 Q = d31.b0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.T(2131752526, "ChangeLanguageLater", str2.equals("en") ? launchActivity.J0 : launchActivity.I0));
+                            Q.j = 5000;
+                            Q.j();
+                        } else {
+                            v21 Q2 = new d31(o11.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.T(2131752526, "ChangeLanguageLater", str2.equals("en") ? launchActivity.J0 : launchActivity.I0));
+                            Q2.j = 5000;
+                            Q2.j();
+                        }
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                    }
+                    launchActivity.G0 = null;
+                } else if (idVar == launchActivity.E0) {
+                    uc7.e1();
+                    SharedPreferences.Editor edit = uc7.e1().edit();
+                    edit.putBoolean("proxy_enabled", false);
+                    edit.commit();
+                    ConnectionsManager.setProxySettings(false, null);
+                    jn7.e().k(jn7.D4, new Object[0]);
+                    launchActivity.E0 = null;
+                }
+                launchActivity.D0.remove(idVar);
+                break;
+            case 11:
+                r17 r17Var = (r17) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    r17Var.Q();
+                    break;
+                }
+                break;
+            case 12:
+                gn1 gn1Var = (gn1) obj;
+                if (!((boolean[]) obj2)[0]) {
+                    gn1Var.run();
+                    break;
+                }
+                break;
+            case 13:
+                d38 d38Var = (d38) obj;
+                if (!((boolean[]) obj2)[0]) {
+                    d38Var.a(Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 14:
+                c0a c0aVar = (c0a) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    c0aVar.a(true);
+                }
+                c0aVar.x = null;
+                break;
+            case 15:
+                ((boolean[]) obj2)[0] = true;
+                Runnable runnable2 = ((Runnable[]) obj)[0];
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
+                break;
+            case 16:
+                p4a p4aVar = (p4a) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    p4aVar.a(Boolean.FALSE, null);
+                    break;
+                }
+                break;
+            case 17:
+                mkc mkcVar = (mkc) obj2;
+                if (!((boolean[]) obj)[0]) {
+                    mkcVar.u0.b();
+                    break;
+                }
                 break;
             default:
-                Runnable runnable = (Runnable) obj;
-                SharedPreferences.Editor edit = na7.q1(y6c.t0).W3.edit();
-                if (j != 0) {
-                    edit.putInt("color_" + j, 0);
-                } else if (i2 == 1) {
-                    edit.putInt("MessagesLed", 0);
-                } else if (i2 == 0) {
-                    edit.putInt("GroupLed", 0);
-                } else if (i2 == 3) {
-                    edit.putInt("StoriesLed", 0);
-                } else if (i2 == 5 || i2 == 4) {
-                    edit.putInt("ReactionsLed", 0);
-                } else {
-                    edit.putInt("ChannelLed", 0);
+                TLRPC.User user = (TLRPC.User) obj2;
+                TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) obj;
+                e S = LaunchActivity.S();
+                if (S != null) {
+                    if (user != null) {
+                        eucVar = new euc(user);
+                    } else {
+                        eucVar = new euc(wallettransactionpeeruser.address);
+                        eucVar.A0(wallettransactionpeeruser.domain);
+                    }
+                    S.presentFragment(eucVar);
+                    break;
                 }
-                edit.commit();
-                runnable.run();
                 break;
         }
-    }
-
-    public /* synthetic */ gf(long j, int i, Object obj, byte b) {
-        this.a = b;
-        this.b = j;
-        this.c = i;
-        this.d = obj;
-    }
-
-    public /* synthetic */ gf(Object obj, int i, long j, byte b) {
-        this.a = b;
-        this.d = obj;
-        this.c = i;
-        this.b = j;
-    }
-
-    public /* synthetic */ gf(Object obj, long j, int i, byte b) {
-        this.a = b;
-        this.d = obj;
-        this.b = j;
-        this.c = i;
-    }
-
-    @Override // ll5
-    public final void v(ImageReceiver imageReceiver) {
-    }
-
-    @Override // ll5
-    public final void E(int i, Drawable drawable) {
     }
 }

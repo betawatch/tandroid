@@ -1,65 +1,196 @@
 // default package
 
-import android.os.RemoteException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.support.v4.media.MediaDescriptionCompat;
+import android.util.Log;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nv6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tv6 b;
+public final class nv6 extends AsyncTask {
+    public final Bitmap a;
+    public final Uri b;
+    public int c;
+    public final /* synthetic */ wv6 d;
 
-    public /* synthetic */ nv6(tv6 tv6Var, byte b) {
-        this.a = b;
-        this.b = tv6Var;
+    public nv6(wv6 wv6Var) {
+        this.d = wv6Var;
+        MediaDescriptionCompat mediaDescriptionCompat = wv6Var.c0;
+        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
+        if (bitmap != null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
+            bitmap = null;
+        }
+        this.a = bitmap;
+        MediaDescriptionCompat mediaDescriptionCompat2 = wv6Var.c0;
+        this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        tv6 tv6Var = this.b;
-        switch (b) {
-            case 0:
-                tv6Var.getClass();
-                return;
-            case 1:
-                synchronized (tv6Var.a) {
-                    if (tv6Var.v) {
-                        return;
-                    }
-                    final l6a R0 = tv6Var.t.R0();
-                    if (!tv6Var.c.hasMessages(1)) {
-                        l6a l6aVar = tv6Var.s.c;
-                        nc8 nc8Var = R0.a;
-                        int i = nc8Var.b;
-                        nc8 nc8Var2 = l6aVar.a;
-                        if (i == nc8Var2.b && nc8Var.e == nc8Var2.e && nc8Var.h == nc8Var2.h && nc8Var.i == nc8Var2.i) {
-                            mv6 mv6Var = tv6Var.g.b;
-                            mm5 K = mv6Var.K();
-                            for (int i2 = 0; i2 < K.size(); i2++) {
-                                final su6 su6Var = (su6) K.get(i2);
-                                mv6Var.x0();
-                                final boolean X = mv6Var.X(su6Var, 16);
-                                final boolean X2 = mv6Var.X(su6Var, 17);
-                                tv6Var.c(su6Var, new sv6() { // from class: ov6
-                                    @Override // sv6
-                                    public final void f(ru6 ru6Var, int i3) {
-                                        ru6Var.i(i3, l6a.this, X, X2, su6Var.c);
-                                    }
-                                });
-                            }
+    public final BufferedInputStream a(Uri uri) {
+        InputStream openInputStream;
+        String lowerCase = uri.getScheme().toLowerCase();
+        if ("android.resource".equals(lowerCase) || "content".equals(lowerCase) || "file".equals(lowerCase)) {
+            openInputStream = this.d.E.getContentResolver().openInputStream(uri);
+        } else {
+            URLConnection openConnection = new URL(uri.toString()).openConnection();
+            openConnection.setConnectTimeout(30000);
+            openConnection.setReadTimeout(30000);
+            openInputStream = openConnection.getInputStream();
+        }
+        if (openInputStream == null) {
+            return null;
+        }
+        return new BufferedInputStream(openInputStream);
+    }
+
+    /* JADX WARN: Not initialized variable reg: 5, insn: 0x00ab: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:172), block:B:61:0x00ab */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00f2  */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        BufferedInputStream bufferedInputStream;
+        InputStream inputStream2 = null;
+        Bitmap bitmap = this.a;
+        if (bitmap == null) {
+            Uri uri = this.b;
+            try {
+                if (uri != null) {
+                    try {
+                        bufferedInputStream = a(uri);
+                        try {
                             try {
-                                tv6Var.h.l.i(0, R0, true, true, 0);
-                            } catch (RemoteException e) {
-                                lad.d("MediaSessionImpl", "Exception in using media1 API", e);
+                                if (bufferedInputStream == null) {
+                                    Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                    if (bufferedInputStream == null) {
+                                        return null;
+                                    }
+                                } else {
+                                    BitmapFactory.Options options = new BitmapFactory.Options();
+                                    options.inJustDecodeBounds = true;
+                                    BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                    if (options.outWidth != 0 && options.outHeight != 0) {
+                                        try {
+                                            bufferedInputStream.reset();
+                                        } catch (IOException unused) {
+                                            bufferedInputStream.close();
+                                            bufferedInputStream = a(uri);
+                                            if (bufferedInputStream == null) {
+                                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                                if (bufferedInputStream == null) {
+                                                    return null;
+                                                }
+                                            }
+                                        }
+                                        options.inJustDecodeBounds = false;
+                                        options.inSampleSize = Math.max(1, Integer.highestOneBit(options.outHeight / this.d.E.getResources().getDimensionPixelSize(R.dimen.mr_cast_meta_art_size)));
+                                        if (!isCancelled()) {
+                                            bitmap = BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                            try {
+                                                bufferedInputStream.close();
+                                            } catch (IOException unused2) {
+                                            }
+                                        }
+                                        bufferedInputStream.close();
+                                        return null;
+                                    }
+                                }
+                                bufferedInputStream.close();
+                                return null;
+                            } catch (IOException unused3) {
+                                return null;
+                            }
+                        } catch (IOException e) {
+                            e = e;
+                            Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
+                            if (bufferedInputStream != null) {
+                                try {
+                                    bufferedInputStream.close();
+                                } catch (IOException unused4) {
+                                }
+                            }
+                            bitmap = null;
+                            if (bitmap == null) {
+                            }
+                            if (bitmap != null) {
+                                ux7 ux7Var = new ux7(bitmap);
+                                ux7Var.a = (byte) 1;
+                                ArrayList arrayList = (ArrayList) ux7Var.a().b;
+                                this.c = DesugarCollections.unmodifiableList(arrayList).isEmpty() ? 0 : ((vx7) DesugarCollections.unmodifiableList(arrayList).get(0)).d;
+                            }
+                            return bitmap;
+                        }
+                    } catch (IOException e2) {
+                        e = e2;
+                        bufferedInputStream = null;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (inputStream2 != null) {
+                            try {
+                                inputStream2.close();
+                            } catch (IOException unused5) {
                             }
                         }
+                        throw th;
                     }
-                    tv6Var.r();
-                    return;
                 }
-            default:
-                tv6Var.r();
-                return;
+                bitmap = null;
+            } catch (Throwable th2) {
+                th = th2;
+                inputStream2 = inputStream;
+            }
         }
+        if (bitmap == null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't use recycled bitmap: " + bitmap);
+            return null;
+        }
+        if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
+            ux7 ux7Var2 = new ux7(bitmap);
+            ux7Var2.a = (byte) 1;
+            ArrayList arrayList2 = (ArrayList) ux7Var2.a().b;
+            this.c = DesugarCollections.unmodifiableList(arrayList2).isEmpty() ? 0 : ((vx7) DesugarCollections.unmodifiableList(arrayList2).get(0)).d;
+        }
+        return bitmap;
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        wv6 wv6Var = this.d;
+        wv6Var.d0 = null;
+        Bitmap bitmap2 = wv6Var.e0;
+        Bitmap bitmap3 = this.a;
+        boolean equals = Objects.equals(bitmap2, bitmap3);
+        Uri uri = this.b;
+        if (equals && Objects.equals(wv6Var.f0, uri)) {
+            return;
+        }
+        wv6Var.e0 = bitmap3;
+        wv6Var.h0 = bitmap;
+        wv6Var.f0 = uri;
+        wv6Var.i0 = this.c;
+        wv6Var.g0 = true;
+        wv6Var.k();
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPreExecute() {
+        wv6 wv6Var = this.d;
+        wv6Var.g0 = false;
+        wv6Var.h0 = null;
+        wv6Var.i0 = 0;
     }
 }

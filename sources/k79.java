@@ -1,24 +1,41 @@
 // default package
 
-import android.view.animation.Interpolator;
-import java.util.Collections;
-import java.util.Iterator;
+import android.database.Observable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class k79 implements Iterable {
-    public final x46 a;
-
-    public k79(j79 j79Var, Interpolator interpolator, long j) {
-        this.a = new x46(new wk4(this, j79Var, false, (byte) 23), interpolator, j);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class k79 extends Observable {
+    public final boolean a() {
+        return !((Observable) this).mObservers.isEmpty();
     }
 
-    public final void h(Object obj, boolean z) {
-        this.a.m(obj != null ? Collections.singletonList(obj) : null, z);
+    public final void b() {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((l79) ((Observable) this).mObservers.get(size)).a();
+        }
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.b.iterator();
+    public final void c(int i, int i2) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((l79) ((Observable) this).mObservers.get(size)).e(i, i2);
+        }
+    }
+
+    public final void d(int i, int i2, Object obj) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((l79) ((Observable) this).mObservers.get(size)).c(i, i2, obj);
+        }
+    }
+
+    public final void e(int i, int i2) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((l79) ((Observable) this).mObservers.get(size)).d(i, i2);
+        }
+    }
+
+    public final void f(int i, int i2) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((l79) ((Observable) this).mObservers.get(size)).f(i, i2);
+        }
     }
 }

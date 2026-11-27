@@ -1,46 +1,66 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Paint;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Build;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jv0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ow0 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+public final class jv0 extends WebViewClient {
+    public final /* synthetic */ WebView a;
+    public final /* synthetic */ kv0 b;
 
-    public /* synthetic */ jv0(ow0 ow0Var, int i, int i2, byte b) {
-        this.a = b;
-        this.b = ow0Var;
-        this.c = i;
-        this.d = i2;
+    public jv0(kv0 kv0Var, WebView webView) {
+        this.b = kv0Var;
+        this.a = webView;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        int i = this.d;
-        int i2 = this.c;
-        ow0 ow0Var = this.b;
-        switch (b) {
-            case 0:
-                Paint paint = ow0Var.R;
-                paint.setColor(bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i));
-                ow0Var.F();
-                ow0Var.f.invalidate();
-                cw cwVar = ow0Var.Z0;
-                if (cwVar != null) {
-                    cwVar.b(gl.B(paint.getColor()) <= 0.721f, false);
-                    ow0Var.Z0.setBackgroundColor(paint.getColor());
-                }
-                ow0Var.K();
-                break;
-            default:
-                ow0Var.T = bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i);
-                ow0Var.h();
-                break;
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        int i = Build.VERSION.SDK_INT;
+        nv0 nv0Var = this.b.e;
+        if (i >= 26) {
+            StringBuilder sb = new StringBuilder("newWebView.onRenderProcessGone priority=");
+            sb.append(renderProcessGoneDetail == null ? null : Integer.valueOf(renderProcessGoneDetail.rendererPriorityAtExit()));
+            sb.append(" didCrash=");
+            sb.append(renderProcessGoneDetail == null ? null : Boolean.valueOf(renderProcessGoneDetail.didCrash()));
+            nv0Var.b(sb.toString());
+        } else {
+            nv0Var.b("newWebView.onRenderProcessGone");
         }
+        try {
+            if (!hl.K1(nv0Var.getContext())) {
+                return true;
+            }
+            Context context = nv0Var.getContext();
+            rv0 rv0Var = nv0Var.R;
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, rv0Var == null ? null : rv0Var.e, context);
+            id idVar = alertDialog$Builder.a;
+            idVar.S = ob6.M0(2131752069, null);
+            idVar.U = hl.N2(ob6.M0(2131752070, null), -1, 0, new fv0(this, (byte) 1), null);
+            alertDialog$Builder.j(ob6.M0(2131747558, null), null);
+            idVar.setOnDismissListener(new o1(this, (byte) 8));
+            alertDialog$Builder.o();
+            return true;
+        } catch (Exception e) {
+            cc4.g(e, true);
+            return false;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        rv0 rv0Var = this.b.e.R;
+        if (rv0Var != null) {
+            Uri parse = Uri.parse(str);
+            boolean z = rv0.R0;
+            rv0Var.E(parse, null, !rv0Var.p0, false, false);
+            this.a.destroy();
+        }
+        return true;
     }
 }

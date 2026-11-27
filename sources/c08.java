@@ -1,43 +1,57 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class c08 extends e08 {
-    public int H;
-    public final /* synthetic */ a18 I;
+public final class c08 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ b18 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c08(a18 a18Var, Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.I = a18Var;
-        this.H = 0;
+    public c08(b18 b18Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.d = b18Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // e08
-    public final void a() {
-        a18 a18Var = this.I;
-        if (a18Var.getParentActivity() != null) {
-            gl.k3(a18Var.getParentActivity(), a18Var.isLightStatusBar());
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a) {
+            return;
         }
-        int actionBarButtonColor = getActionBarButtonColor();
-        if (this.H != actionBarButtonColor) {
-            ImageView imageView = a18Var.K;
-            if (imageView != null) {
-                this.H = actionBarButtonColor;
-                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+        boolean z = true;
+        this.a = true;
+        int i = 0;
+        while (true) {
+            if (i >= editable.length()) {
+                z = false;
+                break;
             }
-            ImageView imageView2 = a18Var.L;
-            if (imageView2 != null) {
-                this.H = actionBarButtonColor;
-                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            char charAt = editable.charAt(i);
+            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
+                break;
+            } else {
+                i++;
             }
         }
-        a18Var.J0();
-        a18Var.C0();
+        this.a = false;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        if (z) {
+            editTextBoldCursor.setErrorText(ob6.M0(2131747176, null));
+        } else {
+            this.d.P0(editTextBoldCursor, this.c, editable, false);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

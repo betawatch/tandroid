@@ -1,741 +1,803 @@
 // default package
 
-import android.graphics.Point;
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
+import android.util.SparseArray;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import android.view.View;
+import android.view.ViewConfiguration;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class f27 {
-    public long a;
-    public boolean b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class f27 implements Menu {
+    public static final int[] y = {1, 4, 5, 3, 2, 0};
+    public final Context a;
+    public final Resources b;
     public boolean c;
-    public k27 h;
-    public boolean i;
-    public boolean j;
-    public final e27 m;
-    public boolean n;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public final HashMap f = new HashMap();
-    public final vf6 g = new vf6();
-    public int k = -1;
-    public int l = 800;
+    public final boolean d;
+    public d27 e;
+    public final ArrayList f;
+    public final ArrayList g;
+    public boolean h;
+    public final ArrayList i;
+    public final ArrayList j;
+    public boolean k;
+    public CharSequence m;
+    public Drawable n;
+    public View o;
+    public j27 v;
+    public boolean x;
+    public boolean l = false;
+    public boolean p = false;
+    public boolean q = false;
+    public boolean r = false;
+    public boolean s = false;
+    public final ArrayList t = new ArrayList();
+    public final CopyOnWriteArrayList u = new CopyOnWriteArrayList();
+    public boolean w = false;
 
-    public f27() {
-        e27 e27Var = new e27();
-        e27Var.n = 1.0f;
-        this.m = e27Var;
+    public f27(Context context) {
+        boolean z;
+        boolean z2 = false;
+        this.a = context;
+        Resources resources = context.getResources();
+        this.b = resources;
+        this.f = new ArrayList();
+        this.g = new ArrayList();
+        this.h = true;
+        this.i = new ArrayList();
+        this.j = new ArrayList();
+        this.k = true;
+        if (resources.getConfiguration().keyboard != 1) {
+            ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+            Method method = jhc.a;
+            if (Build.VERSION.SDK_INT >= 28) {
+                z = go.D(viewConfiguration);
+            } else {
+                Resources resources2 = context.getResources();
+                int identifier = resources2.getIdentifier("config_showMenuShortcutsWhenKeyboardPresent", "bool", "android");
+                z = identifier != 0 && resources2.getBoolean(identifier);
+            }
+            if (z) {
+                z2 = true;
+            }
+        }
+        this.d = z2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x07bb, code lost:
-    
-        if (r15 > r13[2]) goto L237;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:387:0x07c5, code lost:
-    
-        if (r13[2] > r13[3]) goto L237;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x009f, code lost:
-    
-        if ((k27.n1(r13.k) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L39;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x07d6  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0062  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a() {
-        int i;
-        int i2;
-        int i3;
+    public final j27 a(int i, int i2, int i3, CharSequence charSequence) {
         int i4;
-        float f;
-        float f2;
-        float f3;
+        int i5 = ((-65536) & i3) >> 16;
+        if (i5 < 0 || i5 >= 6) {
+            lq5.j("order does not contain a valid category.");
+            return null;
+        }
+        int i6 = (y[i5] << 16) | (65535 & i3);
+        j27 j27Var = new j27(this, i, i2, i3, i6, charSequence, this.l ? 1 : 0);
+        ArrayList arrayList = this.f;
+        int size = arrayList.size() - 1;
+        while (true) {
+            if (size < 0) {
+                i4 = 0;
+                break;
+            }
+            if (((j27) arrayList.get(size)).d <= i6) {
+                i4 = size + 1;
+                break;
+            }
+            size--;
+        }
+        arrayList.add(i4, j27Var);
+        p(true);
+        return j27Var;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i) {
+        return a(0, 0, 0, this.b.getString(i));
+    }
+
+    @Override // android.view.Menu
+    public final int addIntentOptions(int i, int i2, int i3, ComponentName componentName, Intent[] intentArr, Intent intent, int i4, MenuItem[] menuItemArr) {
         int i5;
-        byte b;
-        boolean z;
-        k27 k27Var;
-        TLRPC.Message message;
-        float f4;
-        float f5;
-        this.e.clear();
-        this.f.clear();
-        this.g.b();
-        this.h = null;
-        this.l = 800;
-        int size = this.d.size();
-        boolean z2 = 0;
-        boolean z3 = true;
-        if (size == 1) {
-            this.h = (k27) this.d.get(0);
+        PackageManager packageManager = this.a.getPackageManager();
+        List<ResolveInfo> queryIntentActivityOptions = packageManager.queryIntentActivityOptions(componentName, intentArr, intent, 0);
+        int size = queryIntentActivityOptions != null ? queryIntentActivityOptions.size() : 0;
+        if ((i4 & 1) == 0) {
+            removeGroup(i);
+        }
+        for (int i6 = 0; i6 < size; i6++) {
+            ResolveInfo resolveInfo = queryIntentActivityOptions.get(i6);
+            int i7 = resolveInfo.specificIndex;
+            Intent intent2 = new Intent(i7 < 0 ? intent : intentArr[i7]);
+            ActivityInfo activityInfo = resolveInfo.activityInfo;
+            intent2.setComponent(new ComponentName(activityInfo.applicationInfo.packageName, activityInfo.name));
+            j27 a = a(i, i2, i3, resolveInfo.loadLabel(packageManager));
+            a.setIcon(resolveInfo.loadIcon(packageManager));
+            a.g = intent2;
+            if (menuItemArr != null && (i5 = resolveInfo.specificIndex) >= 0) {
+                menuItemArr[i5] = a;
+            }
+        }
+        return size;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i, int i2, int i3, CharSequence charSequence) {
+        j27 a = a(i, i2, i3, charSequence);
+        zdb zdbVar = new zdb(this.a, this, a);
+        a.o = zdbVar;
+        zdbVar.setHeaderTitle(a.e);
+        return zdbVar;
+    }
+
+    public final void b(z27 z27Var, Context context) {
+        this.u.add(new WeakReference(z27Var));
+        z27Var.k(context, this);
+        this.k = true;
+    }
+
+    public final void c(boolean z) {
+        if (this.s) {
             return;
         }
-        if (size >= 1) {
-            StringBuilder sb = new StringBuilder();
-            this.b = false;
-            this.c = false;
-            this.j = false;
-            int i6 = this.n ? size - 1 : 0;
-            boolean z4 = false;
-            boolean z5 = false;
-            boolean z6 = false;
-            boolean z7 = true;
-            float f6 = 1.0f;
-            while (true) {
-                if (this.n) {
-                    if (i6 < 0) {
-                        break;
-                    }
-                    k27Var = (k27) this.d.get(i6);
-                    if (i6 == (!this.n ? size - 1 : z2)) {
-                        k27Var.W2 = null;
-                        z6 = k27Var.O3();
-                        if (!z6) {
-                            TLRPC.Message message2 = k27Var.k;
-                            TLRPC.MessageFwdHeader messageFwdHeader = message2.fwd_from;
-                            if (messageFwdHeader == null || messageFwdHeader.saved_from_peer == null) {
-                                if (message2.from_id instanceof TLRPC.TL_peerUser) {
-                                    TLRPC.Peer peer = message2.peer_id;
-                                    if (peer.channel_id == 0) {
-                                        if (peer.chat_id == 0) {
-                                            if (!(k27.n1(message2) instanceof TLRPC.TL_messageMediaGame)) {
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            z4 = z3;
-                            if (!k27Var.I3() || k27Var.U2()) {
-                                this.i = z3;
-                            }
-                        }
-                        z4 = z2;
-                        if (!k27Var.I3()) {
-                        }
-                        this.i = z3;
-                    }
-                    message = k27Var.k;
-                    if (message != null && message.invert_media) {
-                        this.j = z3;
-                    }
-                    TLRPC.PhotoSize w = ba4.w(k27Var.p0, gl.Y0(z2), z2, null, z2);
-                    c27 c27Var = new c27();
-                    c27Var.h = (this.n ? i6 != size + (-1) : i6 != 0) ? z2 : z3;
-                    f4 = w != null ? 1.0f : w.w / w.h;
-                    c27Var.g = f4;
-                    if (f4 <= 1.2f) {
-                        sb.append("w");
-                    } else if (f4 < 0.8f) {
-                        sb.append("n");
-                    } else {
-                        sb.append("q");
-                    }
-                    f5 = c27Var.g;
-                    f6 += f5;
-                    if (f5 > 2.0f) {
-                        z5 = z3;
-                    }
-                    this.f.put(k27Var, c27Var);
-                    this.g.k(c27Var, k27Var.e1());
-                    this.e.add(c27Var);
-                    if (k27Var.z != null) {
-                        if (z7 && this.h == null) {
-                            this.h = k27Var;
-                            z7 = false;
-                        } else if (!this.i) {
-                            this.h = null;
-                        }
-                        this.c = true;
-                    }
-                    i6 = !this.n ? i6 - 1 : i6 + 1;
-                    z2 = 0;
-                    z3 = true;
-                } else {
-                    if (i6 >= size) {
-                        break;
-                    }
-                    k27Var = (k27) this.d.get(i6);
-                    if (i6 == (!this.n ? size - 1 : z2)) {
-                    }
-                    message = k27Var.k;
-                    if (message != null) {
-                        this.j = z3;
-                    }
-                    TLRPC.PhotoSize w2 = ba4.w(k27Var.p0, gl.Y0(z2), z2, null, z2);
-                    c27 c27Var2 = new c27();
-                    c27Var2.h = (this.n ? i6 != size + (-1) : i6 != 0) ? z2 : z3;
-                    if (w2 != null) {
-                    }
-                    c27Var2.g = f4;
-                    if (f4 <= 1.2f) {
-                    }
-                    f5 = c27Var2.g;
-                    f6 += f5;
-                    if (f5 > 2.0f) {
-                    }
-                    this.f.put(k27Var, c27Var2);
-                    this.g.k(c27Var2, k27Var.e1());
-                    this.e.add(c27Var2);
-                    if (k27Var.z != null) {
-                    }
-                    if (!this.n) {
-                    }
-                    z2 = 0;
-                    z3 = true;
-                }
-            }
-            if (this.i) {
-                for (int i7 = 0; i7 < size; i7++) {
-                    c27 c27Var3 = (c27) this.e.get(i7);
-                    c27Var3.l = 3;
-                    if (i7 == 0) {
-                        c27Var3.l = 7;
-                        b = 0;
-                        c27Var3.h = false;
-                        z = true;
-                    } else {
-                        b = 0;
-                        if (i7 == size - 1) {
-                            c27Var3.l = 11;
-                            z = true;
-                            c27Var3.h = true;
-                        } else {
-                            z = true;
-                            c27Var3.h = false;
-                        }
-                    }
-                    c27Var3.k = z;
-                    c27Var3.g = 1.0f;
-                    c27Var3.a = b;
-                    c27Var3.b = b;
-                    byte b2 = (byte) i7;
-                    c27Var3.c = b2;
-                    c27Var3.d = b2;
-                    c27Var3.i = 1000;
-                    c27Var3.e = this.l;
-                    c27Var3.f = 100.0f;
-                }
-                return;
-            }
-            if (z4) {
-                this.l -= 50;
-                i = kk7.Y3;
+        this.s = true;
+        CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+        Iterator it = copyOnWriteArrayList.iterator();
+        while (it.hasNext()) {
+            WeakReference weakReference = (WeakReference) it.next();
+            z27 z27Var = (z27) weakReference.get();
+            if (z27Var == null) {
+                copyOnWriteArrayList.remove(weakReference);
             } else {
-                i = kk7.d3;
-            }
-            int L = gl.L(120.0f);
-            float L2 = gl.L(120.0f);
-            Point point = gl.q;
-            int min = (int) (L2 / (Math.min(point.x, point.y) / this.l));
-            float L3 = gl.L(40.0f);
-            float min2 = Math.min(point.x, point.y);
-            float f7 = this.l;
-            int i8 = (int) (L3 / (min2 / f7));
-            float f8 = f7 / 814.0f;
-            float f9 = f6 / size;
-            float L4 = gl.L(100.0f) / 814.0f;
-            if (size == 1) {
-                c27 c27Var4 = (c27) this.e.get(0);
-                float f10 = this.l / c27Var4.g;
-                c27Var4.a(Math.round(Math.min(f10, Math.min(f10, 407.0f))) / 814.0f, 0, 0, 0, 0, this.l, 15);
-                i2 = i;
-                i3 = 0;
-            } else {
-                int i9 = 4;
-                if (z5 || !(size == 2 || size == 3 || size == 4)) {
-                    int i10 = 2;
-                    int size2 = this.e.size();
-                    float[] fArr = new float[size2];
-                    for (int i11 = 0; i11 < size; i11++) {
-                        ArrayList arrayList = this.e;
-                        if (f9 > 1.1f) {
-                            fArr[i11] = Math.max(1.0f, ((c27) arrayList.get(i11)).g);
-                        } else {
-                            fArr[i11] = Math.min(1.0f, ((c27) arrayList.get(i11)).g);
-                        }
-                        fArr[i11] = Math.max(0.66667f, Math.min(1.7f, fArr[i11]));
-                    }
-                    ArrayList arrayList2 = new ArrayList();
-                    int i12 = 1;
-                    while (i12 < size2) {
-                        int i13 = size2 - i12;
-                        if (i12 <= 3 && i13 <= 3) {
-                            float e = e(0, i12, fArr);
-                            float e2 = e(i12, size2, fArr);
-                            d27 d27Var = new d27();
-                            d27Var.a = new int[]{i12, i13};
-                            float[] fArr2 = new float[i10];
-                            fArr2[0] = e;
-                            fArr2[1] = e2;
-                            d27Var.b = fArr2;
-                            arrayList2.add(d27Var);
-                        }
-                        i12++;
-                        i10 = 2;
-                    }
-                    int i14 = 1;
-                    while (i14 < size2 - 1) {
-                        int i15 = 1;
-                        while (true) {
-                            int i16 = size2 - i14;
-                            if (i15 < i16) {
-                                int i17 = i16 - i15;
-                                if (i14 <= 3) {
-                                    if (i15 <= (f9 < 0.85f ? i9 : 3) && i17 <= 3) {
-                                        float e3 = e(0, i14, fArr);
-                                        int i18 = i14 + i15;
-                                        float e4 = e(i14, i18, fArr);
-                                        float e5 = e(i18, size2, fArr);
-                                        d27 d27Var2 = new d27();
-                                        d27Var2.a = new int[]{i14, i15, i17};
-                                        d27Var2.b = new float[]{e3, e4, e5};
-                                        arrayList2.add(d27Var2);
-                                    }
-                                }
-                                i15++;
-                                i9 = 4;
-                            }
-                        }
-                        i14++;
-                        i9 = 4;
-                    }
-                    for (int i19 = 1; i19 < size2 - 2; i19++) {
-                        int i20 = 1;
-                        while (true) {
-                            int i21 = size2 - i19;
-                            if (i20 < i21) {
-                                int i22 = 1;
-                                while (true) {
-                                    int i23 = i21 - i20;
-                                    if (i22 < i23) {
-                                        int i24 = i23 - i22;
-                                        if (i19 > 3 || i20 > 3 || i22 > 3 || i24 > 3) {
-                                            i5 = i;
-                                        } else {
-                                            float e6 = e(0, i19, fArr);
-                                            int i25 = i19 + i20;
-                                            float e7 = e(i19, i25, fArr);
-                                            i5 = i;
-                                            int i26 = i25 + i22;
-                                            float e8 = e(i25, i26, fArr);
-                                            float e9 = e(i26, size2, fArr);
-                                            d27 d27Var3 = new d27();
-                                            d27Var3.a = new int[]{i19, i20, i22, i24};
-                                            d27Var3.b = new float[]{e6, e7, e8, e9};
-                                            arrayList2.add(d27Var3);
-                                        }
-                                        i22++;
-                                        i = i5;
-                                    }
-                                }
-                                i20++;
-                            }
-                        }
-                    }
-                    i2 = i;
-                    float f11 = (this.l / 3) << 2;
-                    float f12 = 0.0f;
-                    int i27 = 0;
-                    d27 d27Var4 = null;
-                    while (i27 < arrayList2.size()) {
-                        d27 d27Var5 = (d27) arrayList2.get(i27);
-                        float f13 = Float.MAX_VALUE;
-                        float f14 = 0.0f;
-                        int i28 = 0;
-                        while (true) {
-                            float[] fArr3 = d27Var5.b;
-                            f = f11;
-                            if (i28 >= fArr3.length) {
-                                break;
-                            }
-                            float f15 = fArr3[i28];
-                            f14 += f15;
-                            if (f15 < f13) {
-                                f13 = f15;
-                            }
-                            i28++;
-                            f11 = f;
-                        }
-                        float abs = Math.abs(f14 - f);
-                        int[] iArr = d27Var5.a;
-                        if (iArr.length > 1) {
-                            int i29 = iArr[0];
-                            int i30 = iArr[1];
-                            if (i29 <= i30) {
-                                f2 = abs;
-                                if (iArr.length > 2) {
-                                }
-                                if (iArr.length > 3) {
-                                }
-                            } else {
-                                f2 = abs;
-                            }
-                            f3 = f2 * 1.2f;
-                            if (f13 < min) {
-                                f3 *= 1.5f;
-                            }
-                            if (d27Var4 != null || f3 < f12) {
-                                f12 = f3;
-                                d27Var4 = d27Var5;
-                            }
-                            i27++;
-                            f11 = f;
-                        } else {
-                            f2 = abs;
-                        }
-                        f3 = f2;
-                        if (f13 < min) {
-                        }
-                        if (d27Var4 != null) {
-                        }
-                        f12 = f3;
-                        d27Var4 = d27Var5;
-                        i27++;
-                        f11 = f;
-                    }
-                    if (d27Var4 == null) {
-                        return;
-                    }
-                    i3 = 0;
-                    int i31 = 0;
-                    int i32 = 0;
-                    while (true) {
-                        int[] iArr2 = d27Var4.a;
-                        if (i31 >= iArr2.length) {
-                            break;
-                        }
-                        int i33 = iArr2[i31];
-                        float f16 = d27Var4.b[i31];
-                        int i34 = this.l;
-                        int i35 = i33 - 1;
-                        int max = Math.max(i3, i35);
-                        int i36 = 0;
-                        c27 c27Var5 = null;
-                        while (i36 < i33) {
-                            int i37 = (int) (fArr[i32] * f16);
-                            i34 -= i37;
-                            int i38 = max;
-                            c27 c27Var6 = (c27) this.e.get(i32);
-                            int i39 = i31 == 0 ? 4 : 0;
-                            int i40 = i31 == d27Var4.a.length + (-1) ? i39 | 8 : i39;
-                            if (i36 == 0) {
-                                i40 |= 1;
-                                if (z6) {
-                                    c27Var5 = c27Var6;
-                                }
-                            }
-                            if (i36 == i35) {
-                                i40 |= 2;
-                                if (!z6) {
-                                    i4 = i40;
-                                    c27Var5 = c27Var6;
-                                    int i41 = i36;
-                                    c27Var6.a(Math.max(L4, f16 / 814.0f), i41, i36, i31, i31, i37, i4);
-                                    i32++;
-                                    i36 = i41 + 1;
-                                    max = i38;
-                                }
-                            }
-                            i4 = i40;
-                            int i412 = i36;
-                            c27Var6.a(Math.max(L4, f16 / 814.0f), i412, i36, i31, i31, i37, i4);
-                            i32++;
-                            i36 = i412 + 1;
-                            max = i38;
-                        }
-                        c27Var5.e += i34;
-                        c27Var5.i += i34;
-                        i31++;
-                        i3 = max;
-                    }
-                } else {
-                    ArrayList arrayList3 = this.e;
-                    if (size == 2) {
-                        c27 c27Var7 = (c27) arrayList3.get(0);
-                        c27 c27Var8 = (c27) this.e.get(1);
-                        String sb2 = sb.toString();
-                        if (sb2.equals("ww") && f9 > f8 * 1.4d) {
-                            float f17 = c27Var7.g;
-                            float f18 = c27Var8.g;
-                            if (f17 - f18 < 0.2d) {
-                                float f19 = this.l;
-                                float round = Math.round(Math.min(f19 / f17, Math.min(f19 / f18, 407.0f))) / 814.0f;
-                                c27Var7.a(round, 0, 0, 0, 0, this.l, 7);
-                                c27Var8.a(round, 0, 0, 1, 1, this.l, 11);
-                                i3 = 0;
-                                i2 = i;
-                            }
-                        }
-                        if (sb2.equals("ww") || sb2.equals("qq")) {
-                            int i42 = this.l / 2;
-                            float f20 = i42;
-                            float round2 = Math.round(Math.min(f20 / c27Var7.g, Math.min(f20 / c27Var8.g, 814.0f))) / 814.0f;
-                            c27Var7.a(round2, 0, 0, 0, 0, i42, 13);
-                            c27Var8.a(round2, 1, 1, 0, 0, i42, 14);
-                        } else {
-                            float f21 = this.l;
-                            float f22 = c27Var7.g;
-                            int max2 = (int) Math.max(f21 * 0.4f, Math.round((f21 / f22) / ((1.0f / c27Var8.g) + (1.0f / f22))));
-                            int i43 = this.l - max2;
-                            if (i43 < min) {
-                                max2 -= min - i43;
-                            } else {
-                                min = i43;
-                            }
-                            float min3 = Math.min(814.0f, Math.round(Math.min(min / c27Var7.g, max2 / c27Var8.g))) / 814.0f;
-                            c27Var7.a(min3, 0, 0, 0, 0, min, 13);
-                            c27Var8.a(min3, 1, 1, 0, 0, max2, 14);
-                        }
-                        i3 = 1;
-                        i2 = i;
-                    } else if (size == 3) {
-                        c27 c27Var9 = (c27) arrayList3.get(0);
-                        c27 c27Var10 = (c27) this.e.get(1);
-                        c27 c27Var11 = (c27) this.e.get(2);
-                        if (sb.charAt(0) == 'n') {
-                            float f23 = c27Var10.g;
-                            float min4 = Math.min(407.0f, Math.round((this.l * f23) / (c27Var11.g + f23)));
-                            int max3 = (int) Math.max(min, Math.min(this.l * 0.5f, Math.round(Math.min(c27Var11.g * min4, c27Var10.g * r14))));
-                            int round3 = Math.round(Math.min((c27Var9.g * 814.0f) + i8, this.l - max3));
-                            c27Var9.a(1.0f, 0, 0, 0, 1, round3, 13);
-                            float f24 = (814.0f - min4) / 814.0f;
-                            c27Var10.a(f24, 1, 1, 0, 0, max3, 6);
-                            float f25 = min4 / 814.0f;
-                            c27Var11.a(f25, 0, 1, 1, 1, max3, 10);
-                            int i44 = this.l;
-                            c27Var11.i = i44;
-                            c27Var9.m = new float[]{f25, f24};
-                            if (z6) {
-                                c27Var9.i = i44 - max3;
-                            } else {
-                                c27Var10.i = i44 - round3;
-                                c27Var11.j = round3;
-                            }
-                            this.b = true;
-                        } else {
-                            float round4 = Math.round(Math.min(this.l / c27Var9.g, 537.24005f)) / 814.0f;
-                            c27Var9.a(round4, 0, 1, 0, 0, this.l, 7);
-                            int i45 = this.l / 2;
-                            float f26 = i45;
-                            float min5 = Math.min(814.0f - round4, Math.round(Math.min(f26 / c27Var10.g, f26 / c27Var11.g))) / 814.0f;
-                            float f27 = min5 < L4 ? L4 : min5;
-                            c27Var10.a(f27, 0, 0, 1, 1, i45, 9);
-                            c27Var11.a(f27, 1, 1, 1, 1, i45, 10);
-                        }
-                        i2 = i;
-                        i3 = 1;
-                    } else {
-                        c27 c27Var12 = (c27) arrayList3.get(0);
-                        c27 c27Var13 = (c27) this.e.get(1);
-                        c27 c27Var14 = (c27) this.e.get(2);
-                        c27 c27Var15 = (c27) this.e.get(3);
-                        if (sb.charAt(0) == 'w') {
-                            float round5 = Math.round(Math.min(this.l / c27Var12.g, 537.24005f)) / 814.0f;
-                            c27Var12.a(round5, 0, 2, 0, 0, this.l, 7);
-                            float round6 = Math.round(this.l / ((c27Var13.g + c27Var14.g) + c27Var15.g));
-                            float f28 = min;
-                            int max4 = (int) Math.max(f28, Math.min(this.l * 0.4f, c27Var13.g * round6));
-                            int max5 = (int) Math.max(Math.max(f28, this.l * 0.33f), c27Var15.g * round6);
-                            int i46 = (this.l - max4) - max5;
-                            if (i46 < gl.L(58.0f)) {
-                                int L5 = gl.L(58.0f) - i46;
-                                i46 = gl.L(58.0f);
-                                int i47 = L5 / 2;
-                                max4 -= i47;
-                                max5 -= L5 - i47;
-                            }
-                            int i48 = max4;
-                            float min6 = Math.min(814.0f - round5, round6) / 814.0f;
-                            float f29 = min6 < L4 ? L4 : min6;
-                            c27Var13.a(f29, 0, 0, 1, 1, i48, 9);
-                            c27Var14.a(f29, 1, 1, 1, 1, i46, 8);
-                            c27Var15.a(f29, 2, 2, 1, 1, max5, 10);
-                            i3 = 2;
-                            i2 = i;
-                        } else {
-                            int max6 = Math.max(min, Math.round(814.0f / ((1.0f / c27Var15.g) + ((1.0f / c27Var14.g) + (1.0f / c27Var13.g)))));
-                            float f30 = L;
-                            float f31 = max6;
-                            float min7 = Math.min(0.33f, Math.max(f30, f31 / c27Var13.g) / 814.0f);
-                            float min8 = Math.min(0.33f, Math.max(f30, f31 / c27Var14.g) / 814.0f);
-                            float f32 = (1.0f - min7) - min8;
-                            int round7 = Math.round(Math.min((814.0f * c27Var12.g) + i8, this.l - max6));
-                            c27Var12.a(min7 + min8 + f32, 0, 0, 0, 2, round7, 13);
-                            c27Var13.a(min7, 1, 1, 0, 0, max6, 6);
-                            c27Var14.a(min8, 0, 1, 1, 1, max6, 2);
-                            c27Var14.i = this.l;
-                            c27Var15.a(f32, 0, 1, 2, 2, max6, 10);
-                            int i49 = this.l;
-                            c27Var15.i = i49;
-                            if (z6) {
-                                c27Var12.i = i49 - max6;
-                            } else {
-                                c27Var13.i = i49 - round7;
-                                c27Var14.j = round7;
-                                c27Var15.j = round7;
-                            }
-                            c27Var12.m = new float[]{min7, min8, f32};
-                            this.b = true;
-                            i3 = 1;
-                            i2 = i;
-                        }
-                    }
-                }
-            }
-            boolean z8 = (z6 || this.d.isEmpty() || !((k27) this.d.get(0)).P2()) ? false : true;
-            for (int i50 = 0; i50 < size; i50++) {
-                c27 c27Var16 = (c27) this.e.get(i50);
-                if (z6) {
-                    if (c27Var16.a == 0) {
-                        c27Var16.i += i2;
-                    }
-                    if ((c27Var16.l & 2) != 0) {
-                        c27Var16.k = true;
-                    }
-                } else {
-                    if (c27Var16.b == i3 || (c27Var16.l & 2) != 0) {
-                        c27Var16.i += i2;
-                    }
-                    if ((c27Var16.l & 1) != 0) {
-                        c27Var16.k = true;
-                    }
-                }
-                k27 k27Var2 = (k27) this.d.get(i50);
-                if (!z6 && !z8 && k27Var2.k5()) {
-                    if (c27Var16.k) {
-                        int i51 = c27Var16.i;
-                        if (i51 != 1000) {
-                            c27Var16.i = i51 + kk7.s1;
-                        }
-                        c27Var16.e += kk7.s1;
-                    } else if ((c27Var16.l & 2) != 0) {
-                        int i52 = c27Var16.i;
-                        if (i52 != 1000) {
-                            c27Var16.i = i52 - 108;
-                        } else {
-                            int i53 = c27Var16.j;
-                            if (i53 != 0) {
-                                c27Var16.j = i53 + kk7.s1;
-                            }
-                        }
-                    }
-                }
-            }
-            if (!z8 || this.b) {
-                return;
-            }
-            int i54 = gl.q.x;
-            if (!gl.E && gl.O1() && (!gl.N1() || a.b.getResources().getConfiguration().orientation == 2)) {
-                i54 -= gl.k1(i54, 0, 0);
-            }
-            float L6 = gl.L(16.0f);
-            float L7 = gl.L(3.0f);
-            float f33 = i54;
-            int i55 = 0;
-            float L8 = (f33 - (L6 * 2.0f)) - (((k27) this.d.get(0)).U2 ? gl.L(71.0f) : 0);
-            int i56 = 0;
-            while (i56 < size) {
-                c27 c27Var17 = (c27) this.e.get(i56);
-                if ((c27Var17.l & 1) != 0) {
-                    int i57 = i55;
-                    int i58 = i57;
-                    while (i57 < size) {
-                        c27 c27Var18 = (c27) this.e.get(i57);
-                        if (c27Var18.c == c27Var17.c) {
-                            i58 += c27Var18.e;
-                        }
-                        i57++;
-                    }
-                    if (i58 > 0) {
-                        float f34 = L8 / i58;
-                        ArrayList arrayList4 = new ArrayList();
-                        for (int i59 = i55; i59 < size; i59++) {
-                            c27 c27Var19 = (c27) this.e.get(i59);
-                            if (c27Var19.c == c27Var17.c) {
-                                arrayList4.add(c27Var19);
-                            }
-                        }
-                        Collections.sort(arrayList4, new el6((byte) 11));
-                        int i60 = i55;
-                        int i61 = i60;
-                        int i62 = i61;
-                        while (i60 < arrayList4.size()) {
-                            c27 c27Var20 = (c27) arrayList4.get(i60);
-                            int i63 = i60 == arrayList4.size() + (-1) ? 1 : i55;
-                            c27Var20.s = f34;
-                            c27Var20.p = (i61 * f34) + L6;
-                            int i64 = c27Var20.e;
-                            i61 += i64;
-                            c27Var20.q = (i64 * f34) - (i63 != 0 ? 0.0f : L7);
-                            int round8 = i63 != 0 ? 1000 : Math.round(((((i61 * f34) + L6) - (L7 / 2.0f)) * 1000.0f) / f33);
-                            c27Var20.i = round8 - i62;
-                            c27Var20.r = (i62 * i54) / 1000.0f;
-                            i60++;
-                            i62 = round8;
-                            i55 = 0;
-                        }
-                    }
-                }
-                i56++;
-                i55 = 0;
+                z27Var.f(this, z);
             }
         }
+        this.s = false;
     }
 
-    public final k27 b(int i) {
-        ArrayList arrayList = this.d;
-        boolean isEmpty = arrayList.isEmpty();
-        HashMap hashMap = this.f;
-        if (!isEmpty && hashMap.isEmpty()) {
-            a();
+    @Override // android.view.Menu
+    public final void clear() {
+        j27 j27Var = this.v;
+        if (j27Var != null) {
+            d(j27Var);
         }
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            k27 k27Var = (k27) arrayList.get(i2);
-            c27 c27Var = (c27) hashMap.get(k27Var);
-            if (c27Var != null && (c27Var.l & i) == i) {
-                return k27Var;
+        this.f.clear();
+        p(true);
+    }
+
+    public final void clearHeader() {
+        this.n = null;
+        this.m = null;
+        this.o = null;
+        p(false);
+    }
+
+    @Override // android.view.Menu
+    public final void close() {
+        c(true);
+    }
+
+    public boolean d(j27 j27Var) {
+        CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+        boolean z = false;
+        if (!copyOnWriteArrayList.isEmpty() && this.v == j27Var) {
+            w();
+            Iterator it = copyOnWriteArrayList.iterator();
+            while (it.hasNext()) {
+                WeakReference weakReference = (WeakReference) it.next();
+                z27 z27Var = (z27) weakReference.get();
+                if (z27Var == null) {
+                    copyOnWriteArrayList.remove(weakReference);
+                } else {
+                    z = z27Var.e(j27Var);
+                    if (z) {
+                        break;
+                    }
+                }
+            }
+            v();
+            if (z) {
+                this.v = null;
+            }
+        }
+        return z;
+    }
+
+    public boolean e(f27 f27Var, MenuItem menuItem) {
+        d27 d27Var = this.e;
+        return d27Var != null && d27Var.B(f27Var, menuItem);
+    }
+
+    public boolean f(j27 j27Var) {
+        CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+        boolean z = false;
+        if (copyOnWriteArrayList.isEmpty()) {
+            return false;
+        }
+        w();
+        Iterator it = copyOnWriteArrayList.iterator();
+        while (it.hasNext()) {
+            WeakReference weakReference = (WeakReference) it.next();
+            z27 z27Var = (z27) weakReference.get();
+            if (z27Var == null) {
+                copyOnWriteArrayList.remove(weakReference);
+            } else {
+                z = z27Var.i(j27Var);
+                if (z) {
+                    break;
+                }
+            }
+        }
+        v();
+        if (z) {
+            this.v = j27Var;
+        }
+        return z;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem findItem(int i) {
+        MenuItem findItem;
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            j27 j27Var = (j27) arrayList.get(i2);
+            if (j27Var.a == i) {
+                return j27Var;
+            }
+            if (j27Var.hasSubMenu() && (findItem = j27Var.o.findItem(i)) != null) {
+                return findItem;
             }
         }
         return null;
     }
 
-    public final k27 c() {
-        return b(this.n ? 10 : 5);
-    }
-
-    public final c27 d(k27 k27Var) {
-        if (k27Var == null) {
+    public final j27 g(int i, KeyEvent keyEvent) {
+        ArrayList arrayList = this.t;
+        arrayList.clear();
+        h(arrayList, i, keyEvent);
+        if (arrayList.isEmpty()) {
             return null;
         }
-        c27 c27Var = (c27) this.f.get(k27Var);
-        if (c27Var != null) {
-            return c27Var;
+        int metaState = keyEvent.getMetaState();
+        KeyCharacterMap.KeyData keyData = new KeyCharacterMap.KeyData();
+        keyEvent.getKeyData(keyData);
+        int size = arrayList.size();
+        if (size == 1) {
+            return (j27) arrayList.get(0);
         }
-        return (c27) this.g.f(k27Var.e1());
+        boolean n = n();
+        for (int i2 = 0; i2 < size; i2++) {
+            j27 j27Var = (j27) arrayList.get(i2);
+            char c = n ? j27Var.j : j27Var.h;
+            char[] cArr = keyData.meta;
+            if ((c == cArr[0] && (metaState & 2) == 0) || ((c == cArr[2] && (metaState & 2) != 0) || (n && c == '\b' && i == 67))) {
+                return j27Var;
+            }
+        }
+        return null;
     }
 
-    public final float e(int i, int i2, float[] fArr) {
-        float f = 0.0f;
-        while (i < i2) {
-            f += fArr[i];
-            i++;
+    @Override // android.view.Menu
+    public final MenuItem getItem(int i) {
+        return (MenuItem) this.f.get(i);
+    }
+
+    public final void h(ArrayList arrayList, int i, KeyEvent keyEvent) {
+        char c;
+        int i2;
+        boolean n = n();
+        int modifiers = keyEvent.getModifiers();
+        KeyCharacterMap.KeyData keyData = new KeyCharacterMap.KeyData();
+        if (keyEvent.getKeyData(keyData) || i == 67) {
+            ArrayList arrayList2 = this.f;
+            int size = arrayList2.size();
+            for (int i3 = 0; i3 < size; i3++) {
+                j27 j27Var = (j27) arrayList2.get(i3);
+                if (j27Var.hasSubMenu()) {
+                    j27Var.o.h(arrayList, i, keyEvent);
+                }
+                if (n) {
+                    c = j27Var.j;
+                    i2 = j27Var.k;
+                } else {
+                    c = j27Var.h;
+                    i2 = j27Var.i;
+                }
+                if ((modifiers & 69647) == (i2 & 69647) && c != 0) {
+                    char[] cArr = keyData.meta;
+                    if ((c == cArr[0] || c == cArr[2] || (n && c == '\b' && i == 67)) && j27Var.isEnabled()) {
+                        arrayList.add(j27Var);
+                    }
+                }
+            }
         }
-        return this.l / f;
+    }
+
+    @Override // android.view.Menu
+    public final boolean hasVisibleItems() {
+        if (this.x) {
+            return true;
+        }
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            if (((j27) arrayList.get(i)).isVisible()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void i() {
+        ArrayList l = l();
+        if (this.k) {
+            CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+            Iterator it = copyOnWriteArrayList.iterator();
+            boolean z = false;
+            while (it.hasNext()) {
+                WeakReference weakReference = (WeakReference) it.next();
+                z27 z27Var = (z27) weakReference.get();
+                if (z27Var == null) {
+                    copyOnWriteArrayList.remove(weakReference);
+                } else {
+                    z |= z27Var.c();
+                }
+            }
+            ArrayList arrayList = this.i;
+            ArrayList arrayList2 = this.j;
+            if (z) {
+                arrayList.clear();
+                arrayList2.clear();
+                int size = l.size();
+                for (int i = 0; i < size; i++) {
+                    j27 j27Var = (j27) l.get(i);
+                    if ((j27Var.x & 32) == 32) {
+                        arrayList.add(j27Var);
+                    } else {
+                        arrayList2.add(j27Var);
+                    }
+                }
+            } else {
+                arrayList.clear();
+                arrayList2.clear();
+                arrayList2.addAll(l());
+            }
+            this.k = false;
+        }
+    }
+
+    @Override // android.view.Menu
+    public final boolean isShortcutKey(int i, KeyEvent keyEvent) {
+        return g(i, keyEvent) != null;
+    }
+
+    public String j() {
+        return "android:menu:actionviewstates";
+    }
+
+    public final ArrayList l() {
+        boolean z = this.h;
+        ArrayList arrayList = this.g;
+        if (!z) {
+            return arrayList;
+        }
+        arrayList.clear();
+        ArrayList arrayList2 = this.f;
+        int size = arrayList2.size();
+        for (int i = 0; i < size; i++) {
+            j27 j27Var = (j27) arrayList2.get(i);
+            if (j27Var.isVisible()) {
+                arrayList.add(j27Var);
+            }
+        }
+        this.h = false;
+        this.k = true;
+        return arrayList;
+    }
+
+    public boolean m() {
+        return this.w;
+    }
+
+    public boolean n() {
+        return this.c;
+    }
+
+    public boolean o() {
+        return this.d;
+    }
+
+    public final void p(boolean z) {
+        if (this.p) {
+            this.q = true;
+            if (z) {
+                this.r = true;
+                return;
+            }
+            return;
+        }
+        if (z) {
+            this.h = true;
+            this.k = true;
+        }
+        CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+        if (copyOnWriteArrayList.isEmpty()) {
+            return;
+        }
+        w();
+        Iterator it = copyOnWriteArrayList.iterator();
+        while (it.hasNext()) {
+            WeakReference weakReference = (WeakReference) it.next();
+            z27 z27Var = (z27) weakReference.get();
+            if (z27Var == null) {
+                copyOnWriteArrayList.remove(weakReference);
+            } else {
+                z27Var.j();
+            }
+        }
+        v();
+    }
+
+    @Override // android.view.Menu
+    public final boolean performIdentifierAction(int i, int i2) {
+        return q(findItem(i), null, i2);
+    }
+
+    @Override // android.view.Menu
+    public final boolean performShortcut(int i, KeyEvent keyEvent, int i2) {
+        j27 g = g(i, keyEvent);
+        boolean q = g != null ? q(g, null, i2) : false;
+        if ((i2 & 2) != 0) {
+            c(true);
+        }
+        return q;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x005f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean q(MenuItem menuItem, z27 z27Var, int i) {
+        boolean z;
+        j27 j27Var = (j27) menuItem;
+        if (j27Var == null || !j27Var.isEnabled()) {
+            return false;
+        }
+        f27 f27Var = j27Var.n;
+        MenuItem.OnMenuItemClickListener onMenuItemClickListener = j27Var.p;
+        if ((onMenuItemClickListener == null || !onMenuItemClickListener.onMenuItemClick(j27Var)) && !f27Var.e(f27Var, j27Var)) {
+            Intent intent = j27Var.g;
+            if (intent != null) {
+                try {
+                    f27Var.a.startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e);
+                }
+            }
+            k27 k27Var = j27Var.A;
+            if (k27Var == null || !k27Var.a.onPerformDefaultAction()) {
+                z = false;
+                k27 k27Var2 = j27Var.A;
+                boolean z2 = k27Var2 == null && k27Var2.a.hasSubMenu();
+                if (!j27Var.e()) {
+                    z |= j27Var.expandActionView();
+                    if (z) {
+                        c(true);
+                    }
+                } else if (j27Var.hasSubMenu() || z2) {
+                    if ((i & 4) == 0) {
+                        c(false);
+                    }
+                    if (!j27Var.hasSubMenu()) {
+                        zdb zdbVar = new zdb(this.a, this, j27Var);
+                        j27Var.o = zdbVar;
+                        zdbVar.setHeaderTitle(j27Var.e);
+                    }
+                    zdb zdbVar2 = j27Var.o;
+                    if (z2) {
+                        k27Var2.a.onPrepareSubMenu(zdbVar2);
+                    }
+                    CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+                    if (!copyOnWriteArrayList.isEmpty()) {
+                        r0 = z27Var != null ? z27Var.b(zdbVar2) : false;
+                        Iterator it = copyOnWriteArrayList.iterator();
+                        while (it.hasNext()) {
+                            WeakReference weakReference = (WeakReference) it.next();
+                            z27 z27Var2 = (z27) weakReference.get();
+                            if (z27Var2 == null) {
+                                copyOnWriteArrayList.remove(weakReference);
+                            } else if (!r0) {
+                                r0 = z27Var2.b(zdbVar2);
+                            }
+                        }
+                    }
+                    z |= r0;
+                    if (!z) {
+                        c(true);
+                    }
+                } else if ((i & 1) == 0) {
+                    c(true);
+                }
+                return z;
+            }
+        }
+        z = true;
+        k27 k27Var22 = j27Var.A;
+        if (k27Var22 == null) {
+        }
+        if (!j27Var.e()) {
+        }
+        return z;
+    }
+
+    public final void r(z27 z27Var) {
+        CopyOnWriteArrayList copyOnWriteArrayList = this.u;
+        Iterator it = copyOnWriteArrayList.iterator();
+        while (it.hasNext()) {
+            WeakReference weakReference = (WeakReference) it.next();
+            z27 z27Var2 = (z27) weakReference.get();
+            if (z27Var2 == null || z27Var2 == z27Var) {
+                copyOnWriteArrayList.remove(weakReference);
+            }
+        }
+    }
+
+    @Override // android.view.Menu
+    public final void removeGroup(int i) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        int i2 = 0;
+        int i3 = 0;
+        while (true) {
+            if (i3 >= size) {
+                i3 = -1;
+                break;
+            } else if (((j27) arrayList.get(i3)).b == i) {
+                break;
+            } else {
+                i3++;
+            }
+        }
+        if (i3 >= 0) {
+            int size2 = arrayList.size() - i3;
+            while (true) {
+                int i4 = i2 + 1;
+                if (i2 >= size2 || ((j27) arrayList.get(i3)).b != i) {
+                    break;
+                }
+                if (i3 >= 0 && i3 < arrayList.size()) {
+                    arrayList.remove(i3);
+                }
+                i2 = i4;
+            }
+            p(true);
+        }
+    }
+
+    @Override // android.view.Menu
+    public final void removeItem(int i) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        int i2 = 0;
+        while (true) {
+            if (i2 >= size) {
+                i2 = -1;
+                break;
+            } else if (((j27) arrayList.get(i2)).a == i) {
+                break;
+            } else {
+                i2++;
+            }
+        }
+        if (i2 < 0 || i2 >= arrayList.size()) {
+            return;
+        }
+        arrayList.remove(i2);
+        p(true);
+    }
+
+    public final void s(Bundle bundle) {
+        MenuItem findItem;
+        if (bundle != null) {
+            SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray(j());
+            int size = this.f.size();
+            for (int i = 0; i < size; i++) {
+                MenuItem item = getItem(i);
+                View actionView = item.getActionView();
+                if (actionView != null && actionView.getId() != -1) {
+                    actionView.restoreHierarchyState(sparseParcelableArray);
+                }
+                if (item.hasSubMenu()) {
+                    ((zdb) item.getSubMenu()).s(bundle);
+                }
+            }
+            int i2 = bundle.getInt("android:menu:expandedactionview");
+            if (i2 <= 0 || (findItem = findItem(i2)) == null) {
+                return;
+            }
+            findItem.expandActionView();
+        }
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupCheckable(int i, boolean z, boolean z2) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            j27 j27Var = (j27) arrayList.get(i2);
+            if (j27Var.b == i) {
+                j27Var.x = (j27Var.x & (-5)) | (z2 ? 4 : 0);
+                j27Var.setCheckable(z);
+            }
+        }
+    }
+
+    @Override // android.view.Menu
+    public void setGroupDividerEnabled(boolean z) {
+        this.w = z;
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupEnabled(int i, boolean z) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            j27 j27Var = (j27) arrayList.get(i2);
+            if (j27Var.b == i) {
+                j27Var.setEnabled(z);
+            }
+        }
+    }
+
+    @Override // android.view.Menu
+    public final void setGroupVisible(int i, boolean z) {
+        ArrayList arrayList = this.f;
+        int size = arrayList.size();
+        boolean z2 = false;
+        for (int i2 = 0; i2 < size; i2++) {
+            j27 j27Var = (j27) arrayList.get(i2);
+            if (j27Var.b == i) {
+                int i3 = j27Var.x;
+                int i4 = (i3 & (-9)) | (z ? 0 : 8);
+                j27Var.x = i4;
+                if (i3 != i4) {
+                    z2 = true;
+                }
+            }
+        }
+        if (z2) {
+            p(true);
+        }
+    }
+
+    @Override // android.view.Menu
+    public void setQwertyMode(boolean z) {
+        this.c = z;
+        p(false);
+    }
+
+    @Override // android.view.Menu
+    public final int size() {
+        return this.f.size();
+    }
+
+    public final void t(Bundle bundle) {
+        int size = this.f.size();
+        SparseArray<? extends Parcelable> sparseArray = null;
+        for (int i = 0; i < size; i++) {
+            MenuItem item = getItem(i);
+            View actionView = item.getActionView();
+            if (actionView != null && actionView.getId() != -1) {
+                if (sparseArray == null) {
+                    sparseArray = new SparseArray<>();
+                }
+                actionView.saveHierarchyState(sparseArray);
+                if (item.isActionViewExpanded()) {
+                    bundle.putInt("android:menu:expandedactionview", item.getItemId());
+                }
+            }
+            if (item.hasSubMenu()) {
+                ((zdb) item.getSubMenu()).t(bundle);
+            }
+        }
+        if (sparseArray != null) {
+            bundle.putSparseParcelableArray(j(), sparseArray);
+        }
+    }
+
+    public final void u(int i, CharSequence charSequence, int i2, Drawable drawable, View view) {
+        if (view != null) {
+            this.o = view;
+            this.m = null;
+            this.n = null;
+        } else {
+            if (i > 0) {
+                this.m = this.b.getText(i);
+            } else if (charSequence != null) {
+                this.m = charSequence;
+            }
+            if (i2 > 0) {
+                this.n = this.a.getDrawable(i2);
+            } else if (drawable != null) {
+                this.n = drawable;
+            }
+            this.o = null;
+        }
+        p(false);
+    }
+
+    public final void v() {
+        this.p = false;
+        if (this.q) {
+            this.q = false;
+            p(this.r);
+        }
+    }
+
+    public final void w() {
+        if (this.p) {
+            return;
+        }
+        this.p = true;
+        this.q = false;
+        this.r = false;
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(CharSequence charSequence) {
+        return a(0, 0, 0, charSequence);
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i, int i2, int i3, CharSequence charSequence) {
+        return a(i, i2, i3, charSequence);
+    }
+
+    @Override // android.view.Menu
+    public final MenuItem add(int i, int i2, int i3, int i4) {
+        return a(i, i2, i3, this.b.getString(i4));
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i) {
+        return addSubMenu(0, 0, 0, this.b.getString(i));
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(CharSequence charSequence) {
+        return addSubMenu(0, 0, 0, charSequence);
+    }
+
+    public f27 k() {
+        return this;
+    }
+
+    @Override // android.view.Menu
+    public final SubMenu addSubMenu(int i, int i2, int i3, int i4) {
+        return addSubMenu(i, i2, i3, this.b.getString(i4));
     }
 }

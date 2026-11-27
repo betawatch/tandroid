@@ -1,29 +1,38 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class nff extends ezc implements pff {
-    public final lff Z(bo7 bo7Var, vff vffVar) {
-        lff lffVar;
-        Parcel obtain = Parcel.obtain();
-        obtain.writeInterfaceToken(this.c);
-        int i = wgd.a;
-        obtain.writeStrongBinder(bo7Var);
-        obtain.writeInt(1);
-        vffVar.writeToParcel(obtain, 0);
-        Parcel T = T(obtain, 1);
-        IBinder readStrongBinder = T.readStrongBinder();
-        if (readStrongBinder == null) {
-            lffVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenter");
-            lffVar = queryLocalInterface instanceof lff ? (lff) queryLocalInterface : new lff(readStrongBinder, "com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenter", (byte) 8);
+public final class nff extends ljf {
+    private static final nff zzb;
+    private int zzd;
+    private int zze;
+    private long zzf;
+    private long zzg;
+
+    static {
+        nff nffVar = new nff();
+        zzb = nffVar;
+        ljf.e(nff.class, nffVar);
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-        T.recycle();
-        return lffVar;
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002ဂ\u0001\u0003ဂ\u0002", new Object[]{"zzd", "zze", sae.x, "zzf", "zzg"});
+        }
+        if (i2 == 3) {
+            return new nff();
+        }
+        if (i2 == 4) {
+            return new mdf(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

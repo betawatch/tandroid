@@ -1,54 +1,57 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jx0 extends View implements tjb {
-    public final /* synthetic */ lx0 a;
+public final /* synthetic */ class jx0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lx0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx0(lx0 lx0Var, Context context) {
-        super(context);
-        this.a = lx0Var;
+    public /* synthetic */ jx0(lx0 lx0Var, byte b) {
+        this.a = b;
+        this.b = lx0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), gl.n);
-        setTranslationY(gl.n);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        lx0 lx0Var = this.a;
-        Paint paint = lx0Var.d;
-        try {
-            vx0 vx0Var = lx0Var.a;
-            if (vx0Var != null) {
-                int e = vx0Var.e(bkb.w0(null, bkb.Z6, false));
-                if (paint.getColor() != e) {
-                    paint.setColor(e);
-                    invalidate();
-                    gl.o3(lx0Var, e, true, null);
-                    gl.i3(lx0Var, gl.B(e) >= 0.721f);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        lx0 lx0Var = this.b;
+        switch (b) {
+            case 0:
+                nx0 nx0Var = lx0Var.H;
+                nx0Var.b.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                nx0Var.e0();
+                nx0Var.n0(nx0Var.b.getTranslationY());
+                lx0Var.invalidate();
+                break;
+            case 1:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lx0Var.E = floatValue;
+                nx0 nx0Var2 = lx0Var.H;
+                nx0Var2.b.setTranslationX(floatValue);
+                nx0Var2.c.invalidate();
+                break;
+            case 2:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lx0Var.E = floatValue2;
+                nx0 nx0Var3 = lx0Var.H;
+                nx0Var3.b.setTranslationX(floatValue2);
+                nx0Var3.c.invalidate();
+                break;
+            case 3:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nx0 nx0Var4 = lx0Var.H;
+                nx0Var4.Z.setAlpha(nx0Var4.p0 ? (int) (nx0Var4.q0 * floatValue3) : 0);
+                break;
+            default:
+                nx0 nx0Var5 = lx0Var.H;
+                ex0 ex0Var = nx0Var5.c;
+                if (ex0Var != null) {
+                    ex0Var.invalidate();
                 }
-            }
-        } catch (Exception e2) {
-            fa4.g(e2, true);
+                nx0Var5.e0();
+                break;
         }
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
     }
 }

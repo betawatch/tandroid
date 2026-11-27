@@ -1,116 +1,52 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.PointF;
-import android.text.TextUtils;
-import android.util.SparseArray;
-import android.view.TextureView;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class av8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ dv8 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class av8 extends skb {
+    public final yza a0;
+    public final int b0;
+    public final uk8 c0;
 
-    public /* synthetic */ av8(dv8 dv8Var, byte b) {
-        this.a = b;
-        this.b = dv8Var;
+    public av8(int i, vnb vnbVar, Context context) {
+        super(context, vnbVar);
+        this.a0 = new yza(1, 15);
+        this.c0 = new uk8(this, (byte) 14);
+        this.b0 = i == 1 ? aob.Wk : aob.Dk;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i;
-        ye0 ye0Var;
-        byte b = this.a;
-        bv8 bv8Var = null;
-        dv8 dv8Var = this.b;
-        switch (b) {
-            case 0:
-                if (dv8Var.a.get() != null && ((y6b) dv8Var.f) != null && !((AtomicBoolean) dv8Var.b).get()) {
-                    TextureView textureView = ((y6b) dv8Var.f).getTextureView();
-                    if (textureView != null) {
-                        int width = textureView.getWidth();
-                        int height = textureView.getHeight();
-                        if (width > 720 || height > 720) {
-                            float f = width;
-                            float f2 = height;
-                            float min = Math.min(720.0f / f, 720.0f / f2);
-                            width = (int) (f * min);
-                            height = (int) (f2 * min);
-                        }
-                        int max = Math.max(1, width);
-                        int max2 = Math.max(1, height);
-                        Bitmap bitmap = (Bitmap) dv8Var.g;
-                        if (bitmap == null || max != bitmap.getWidth() || max2 != ((Bitmap) dv8Var.g).getHeight()) {
-                            dv8Var.g = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
-                        }
-                        textureView.getBitmap((Bitmap) dv8Var.g);
-                        Bitmap bitmap2 = (Bitmap) dv8Var.g;
-                        String str = (String) dv8Var.e;
-                        if (bitmap2 != null && (ye0Var = (ye0) dv8Var.a.get()) != null && ye0Var.b.k()) {
-                            int width2 = bitmap2.getWidth();
-                            int height2 = bitmap2.getHeight();
-                            xl3 xl3Var = new xl3((byte) 4);
-                            int width3 = bitmap2.getWidth();
-                            int height3 = bitmap2.getHeight();
-                            xl3Var.d = bitmap2;
-                            pc0 pc0Var = (pc0) xl3Var.b;
-                            pc0Var.a = width3;
-                            pc0Var.b = height3;
-                            SparseArray h = ye0Var.h(xl3Var);
-                            for (int i2 = 0; i2 < h.size(); i2++) {
-                                xe0 xe0Var = (xe0) h.valueAt(i2);
-                                String str2 = xe0Var.b;
-                                Point[] pointArr = xe0Var.e;
-                                if (str2 != null) {
-                                    String trim = str2.trim();
-                                    if (!trim.startsWith(str)) {
-                                        if (!trim.startsWith("https://" + str)) {
-                                            if (!trim.startsWith("http://" + str)) {
-                                            }
-                                        }
-                                    }
-                                    PointF[] pointFArr = new PointF[pointArr.length];
-                                    for (int i3 = 0; i3 < pointArr.length; i3++) {
-                                        Point point = pointArr[i3];
-                                        pointFArr[i3] = new PointF(point.x / width2, point.y / height2);
-                                    }
-                                    bv8Var = new bv8(trim, pointFArr);
-                                }
-                            }
-                        }
-                        bv8 bv8Var2 = (bv8) dv8Var.d;
-                        if ((bv8Var2 != null) == (bv8Var != null)) {
-                            if (bv8Var != null && bv8Var2 != null) {
-                                PointF[] pointFArr2 = bv8Var.b;
-                                PointF[] pointFArr3 = bv8Var2.b;
-                                if (TextUtils.equals(bv8Var.a, bv8Var2.a)) {
-                                    if (pointFArr2 != pointFArr3) {
-                                        if (pointFArr2.length == pointFArr3.length) {
-                                            while (i < pointFArr2.length) {
-                                                i = (Math.abs(pointFArr2[i].x - pointFArr3[i].x) <= 0.001f && Math.abs(pointFArr2[i].y - pointFArr3[i].y) <= 0.001f) ? i + 1 : 0;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        dv8Var.d = bv8Var;
-                        gl.c3(new ll8(dv8Var, bv8Var, (byte) 21));
-                    }
-                    if (!((AtomicBoolean) dv8Var.b).get()) {
-                        Utilities.e.a((av8) dv8Var.h);
-                        Utilities.e.d((av8) dv8Var.h, dv8Var.d());
-                        break;
-                    }
-                }
-                break;
-            default:
-                ((e6b) dv8Var.c).a(null);
-                break;
+    @Override // skb, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        boolean e = i86.e(131072);
+        uk8 uk8Var = this.c0;
+        if (e) {
+            yza yzaVar = this.a0;
+            yzaVar.d();
+            yzaVar.a(canvas, aob.w0(null, this.b0, false));
+            jh2.d().a(15, uk8Var);
+        } else {
+            jh2.d().g(uk8Var);
         }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // skb, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        jh2.d().g(this.c0);
+    }
+
+    @Override // skb, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        e29 e29Var = this.e;
+        float width = (e29Var.getWidth() / 2.0f) + e29Var.getX();
+        float height = ((e29Var.getHeight() / 2.0f) + (e29Var.getY() + e29Var.getPaddingTop())) - hl.L(3.0f);
+        RectF rectF = hl.P;
+        rectF.set(width - hl.L(16.0f), height - hl.L(16.0f), width + hl.L(16.0f), height + hl.L(16.0f));
+        this.a0.g(rectF);
     }
 }

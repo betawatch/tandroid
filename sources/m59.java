@@ -1,79 +1,24 @@
 // default package
 
-import android.os.Bundle;
-import android.os.DeadObjectException;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.util.Log;
-import android.util.SparseArray;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class m59 implements IBinder.DeathRecipient {
-    public final Messenger a;
-    public final qc b;
-    public final Messenger c;
-    public int f;
-    public int h;
-    public final /* synthetic */ s59 r;
-    public int d = 1;
-    public int e = 1;
-    public final SparseArray n = new SparseArray();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class m59 extends q9c {
+    public final /* synthetic */ int n3;
 
-    public m59(s59 s59Var, Messenger messenger) {
-        this.r = s59Var;
-        this.a = messenger;
-        qc qcVar = new qc(this);
-        this.b = qcVar;
-        this.c = new Messenger(qcVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m59(e eVar, l59 l59Var, int i) {
+        super(eVar, l59Var, null, null);
+        this.n3 = i;
     }
 
-    public final void a(int i) {
-        int i2 = this.d;
-        this.d = i2 + 1;
-        b(5, i2, i, null, null);
-    }
-
-    public final boolean b(int i, int i2, int i3, Object obj, Bundle bundle) {
-        Message obtain = Message.obtain();
-        obtain.what = i;
-        obtain.arg1 = i2;
-        obtain.arg2 = i3;
-        obtain.obj = obj;
-        obtain.setData(bundle);
-        obtain.replyTo = this.c;
-        try {
-            this.a.send(obtain);
-            return true;
-        } catch (DeadObjectException unused) {
-            return false;
-        } catch (RemoteException e) {
-            if (i == 2) {
-                return false;
-            }
-            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e);
-            return false;
-        }
-    }
-
-    @Override // android.os.IBinder.DeathRecipient
-    public final void binderDied() {
-        this.r.s.post(new l59(this, (byte) 1));
-    }
-
-    public final void c(int i, int i2) {
-        Bundle j = ls6.j(i2, "volume");
-        int i3 = this.d;
-        this.d = i3 + 1;
-        b(7, i3, i, null, j);
-    }
-
-    public final void d(int i, int i2) {
-        Bundle j = ls6.j(i2, "volume");
-        int i3 = this.d;
-        this.d = i3 + 1;
-        b(8, i3, i, null, j);
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int min = Math.min(hl.L(220.0f), View.MeasureSpec.getSize(i));
+        View.MeasureSpec.getSize(i2);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(ete.b(this.n3, 1, 5) * 48), TLObject.FLAG_30));
     }
 }

@@ -1,460 +1,207 @@
 // default package
 
-import android.media.MediaCodec;
-import android.media.MediaFormat;
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import org.telegram.messenger.video.MP4Builder;
-import org.telegram.messenger.video.Mp4Movie;
-import org.webrtc.MediaStreamTrack;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class nk9 {
-    public final File a;
-    public final short b;
-    public final boolean c;
-    public final ek9 d;
-    public final kq8 e;
-    public MP4Builder i;
-    public MediaFormat j;
-    public MediaFormat k;
-    public long n;
-    public long o;
-    public long p;
-    public long r;
-    public int s;
-    public ByteBuffer t;
-    public boolean v;
-    public boolean w;
-    public boolean x;
-    public final ArrayList f = new ArrayList();
-    public final mk9 g = new mk9(33333);
-    public final mk9 h = new mk9(21333);
-    public int l = -1;
-    public int m = -1;
-    public long q = Long.MIN_VALUE;
-    public final MediaCodec.BufferInfo u = new MediaCodec.BufferInfo();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class nk9 extends dk9 {
+    public static Paint e0;
+    public final TL_iv.pageBlockMap X;
+    public final ImageReceiver Y;
+    public final int Z;
+    public final int a0;
+    public final int b0;
+    public boolean c0;
+    public Drawable d0;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public nk9(File file, int i, boolean z, ek9 ek9Var, kq8 kq8Var) {
-        this.a = file;
-        this.b = i;
-        this.c = z;
-        this.d = ek9Var;
-        this.e = kq8Var;
-    }
-
-    public static int a(ByteBuffer byteBuffer) {
-        if (byteBuffer.limit() >= 4 && byteBuffer.get(0) == 0 && byteBuffer.get(1) == 0 && byteBuffer.get(2) == 0 && byteBuffer.get(3) == 1) {
-            return 4;
+    public nk9(hl9 hl9Var, Rect rect, int i, TL_iv.pageBlockMap pageblockmap) {
+        super(hl9Var, rect, i);
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.Y = imageReceiver;
+        this.X = pageblockmap;
+        imageReceiver.A1 = true;
+        int i2 = pageblockmap.w;
+        i2 = i2 <= 0 ? 100 : i2;
+        int i3 = pageblockmap.h;
+        int i4 = i3 > 0 ? i3 : 100;
+        int i5 = this.c;
+        int max = (int) ((i5 / Math.max(1, i2)) * i4);
+        Point point = hl.q;
+        int max2 = (int) (Math.max(point.x, point.y) * 0.55f);
+        if (max > max2) {
+            i5 = (int) ((max2 / Math.max(1, i4)) * i2);
+            max = max2;
         }
-        return (byteBuffer.limit() >= 3 && byteBuffer.get(0) == 0 && byteBuffer.get(1) == 0 && byteBuffer.get(2) == 1) ? 3 : 0;
+        this.Z = i5;
+        this.a0 = max;
+        float f = i5;
+        float f2 = max;
+        imageReceiver.i0(0.0f, 0.0f, f, f2);
+        hl9 hl9Var2 = this.a;
+        if (pageblockmap.geo == null) {
+            return;
+        }
+        int i6 = hl9Var2.a;
+        int i7 = uc7.s1(i6).f3;
+        this.b0 = i7;
+        float f3 = hl.p;
+        int i8 = (int) (f / f3);
+        int i9 = (int) (f2 / f3);
+        int i10 = pageblockmap.zoom;
+        int i11 = i10 <= 0 ? 15 : i10;
+        TLRPC.GeoPoint geoPoint = pageblockmap.geo;
+        if (i7 == 2) {
+            imageReceiver.d0(jn5.p(jxc.b(geoPoint, i8, i9, i11, Math.min(2, (int) Math.ceil(f3)))), null, null, null, hl9Var2.b, 0);
+        } else {
+            imageReceiver.e0(hl.e0(i6, geoPoint.lat, geoPoint._long, i8, i9, true, i11, -1), null, null, null, 0L);
+        }
     }
 
-    public static String d(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        return "offset=" + bufferInfo.offset + ", size=" + bufferInfo.size + ", ptsUs=" + bufferInfo.presentationTimeUs + ", flags=" + bufferInfo.flags + ", position=" + byteBuffer.position() + ", limit=" + byteBuffer.limit() + ", capacity=" + byteBuffer.capacity();
+    @Override // dk9
+    public final int H() {
+        Rect rect = this.b;
+        return rect.top + this.a0 + rect.bottom;
     }
 
-    public static String e(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        int i;
-        int i2;
-        p(byteBuffer, bufferInfo);
-        int i3 = bufferInfo.offset;
-        int i4 = bufferInfo.size + i3;
-        int f = f(byteBuffer, i3, i4);
-        if (f == bufferInfo.offset) {
-            i = o(byteBuffer, f, i4);
-            i2 = 0;
-            while (f >= 0) {
-                i2++;
-                f = f(byteBuffer, o(byteBuffer, f, i4) + f, i4);
+    @Override // dk9
+    public final int I() {
+        return J();
+    }
+
+    @Override // dk9
+    public final int J() {
+        Rect rect = this.b;
+        return rect.left + this.Z + rect.right;
+    }
+
+    @Override // dk9
+    public final void S() {
+        View view = this.W;
+        ImageReceiver imageReceiver = this.Y;
+        imageReceiver.p0(view);
+        imageReceiver.I();
+    }
+
+    @Override // dk9
+    public final void U() {
+        this.Y.K();
+    }
+
+    @Override // dk9
+    public final void V(Canvas canvas) {
+        Canvas canvas2;
+        View view;
+        Paint paint = e0;
+        if (paint == null) {
+            paint = new Paint(1);
+            e0 = paint;
+        }
+        int i = aob.gf;
+        hl9 hl9Var = this.a;
+        paint.setColor(aob.v0(i, hl9Var.D));
+        boolean Q = Q();
+        boolean C = hl9Var.C();
+        int i2 = 0;
+        int i3 = (Q || C) ? 0 : hl9Var.S;
+        if (!Q && !C) {
+            i2 = hl9Var.T;
+        }
+        ImageReceiver imageReceiver = this.Y;
+        int i4 = this.a0;
+        int i5 = this.Z;
+        if (C) {
+            RectF rectF = hl.P;
+            rectF.set(0.0f, 0.0f, i5, i4);
+            canvas.drawRoundRect(rectF, hl.L(12.0f), hl.L(12.0f), e0);
+            imageReceiver.q0(hl.L(12.0f));
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawRect(-i3, 0.0f, i5 + i2, i4, e0);
+        }
+        Drawable drawable = aob.S4[hl9Var.D() ? 1 : 0];
+        if (drawable != null) {
+            int intrinsicWidth = drawable.getIntrinsicWidth();
+            int intrinsicHeight = drawable.getIntrinsicHeight();
+            int i6 = (i5 - intrinsicWidth) / 2;
+            int i7 = (i4 - intrinsicHeight) / 2;
+            drawable.setBounds(i6, i7, intrinsicWidth + i6, intrinsicHeight + i7);
+            drawable.draw(canvas2);
+        }
+        imageReceiver.i0(-i3, 0.0f, i3 + i5 + i2, i4);
+        imageReceiver.h(canvas2, null);
+        if (this.b0 == 2 && imageReceiver.E()) {
+            Drawable drawable2 = this.d0;
+            if (drawable2 == null && (view = this.W) != null) {
+                drawable2 = view.getContext().getDrawable(R.drawable.map_pin).mutate();
+                this.d0 = drawable2;
+            }
+            if (drawable2 != null) {
+                int intrinsicWidth2 = (int) (drawable2.getIntrinsicWidth() * 0.8f);
+                int intrinsicHeight2 = (int) (this.d0.getIntrinsicHeight() * 0.8f);
+                int i8 = (i5 - intrinsicWidth2) / 2;
+                int i9 = (i4 / 2) - intrinsicHeight2;
+                this.d0.setAlpha((int) (imageReceiver.i1 * 255.0f));
+                this.d0.setBounds(i8, i9, intrinsicWidth2 + i8, intrinsicHeight2 + i9);
+                this.d0.draw(canvas2);
+            }
+        }
+    }
+
+    @Override // dk9
+    public final boolean X(MotionEvent motionEvent) {
+        View view;
+        int actionMasked = motionEvent.getActionMasked();
+        float x = motionEvent.getX();
+        Rect rect = this.b;
+        float f = x - rect.left;
+        float y = motionEvent.getY() - rect.top;
+        boolean z = f >= 0.0f && f <= ((float) this.Z) && y >= 0.0f && y <= ((float) this.a0);
+        if (actionMasked == 0) {
+            if (z) {
+                this.c0 = true;
+                return true;
             }
         } else {
-            i = 0;
-            i2 = 0;
-        }
-        StringBuilder sb = new StringBuilder(d(byteBuffer, bufferInfo));
-        sb.append(", format=");
-        sb.append(i2 > 0 ? "annex-b" : "avcc");
-        sb.append(", nalCount=");
-        sb.append(i2);
-        sb.append(", firstPrefix=");
-        sb.append(i);
-        sb.append(", head=");
-        int i5 = bufferInfo.offset;
-        StringBuilder sb2 = new StringBuilder();
-        int min = Math.min(16, i4 - i5);
-        for (int i6 = 0; i6 < min; i6++) {
-            if (i6 > 0) {
-                sb2.append(' ');
+            if (actionMasked != 1) {
+                if (actionMasked == 3) {
+                    this.c0 = false;
+                }
+                return this.c0;
             }
-            int i7 = byteBuffer.get(i5 + i6) & 255;
-            if (i7 < 16) {
-                sb2.append('0');
-            }
-            sb2.append(Integer.toHexString(i7));
-        }
-        sb.append(sb2.toString());
-        return sb.toString();
-    }
-
-    public static int f(ByteBuffer byteBuffer, int i, int i2) {
-        int i3;
-        while (true) {
-            int i4 = i + 2;
-            if (i4 >= i2) {
-                return -1;
-            }
-            if (byteBuffer.get(i) != 0 || byteBuffer.get(i + 1) != 0 || (byteBuffer.get(i4) != 1 && ((i3 = i + 3) >= i2 || byteBuffer.get(i4) != 0 || byteBuffer.get(i3) != 1))) {
-                i++;
-            }
-        }
-        return i;
-    }
-
-    public static boolean m(MediaFormat mediaFormat, MediaFormat mediaFormat2, String... strArr) {
-        if (mediaFormat != null) {
-            for (String str : strArr) {
-                ByteBuffer byteBuffer = mediaFormat.getByteBuffer(str);
-                ByteBuffer byteBuffer2 = mediaFormat2.getByteBuffer(str);
-                if (byteBuffer != null && byteBuffer2 != null) {
-                    int a = a(byteBuffer);
-                    int a2 = a(byteBuffer2);
-                    int limit = byteBuffer.limit() - a;
-                    if (limit == byteBuffer2.limit() - a2) {
-                        for (int i = 0; i < limit; i++) {
-                            if (byteBuffer.get(a + i) == byteBuffer2.get(a2 + i)) {
-                            }
+            if (this.c0) {
+                this.c0 = false;
+                if (z) {
+                    TL_iv.pageBlockMap pageblockmap = this.X;
+                    if (pageblockmap.geo != null && (view = this.W) != null) {
+                        view.playSoundEffect(0);
+                        try {
+                            TLRPC.GeoPoint geoPoint = pageblockmap.geo;
+                            double d = geoPoint.lat;
+                            double d2 = geoPoint._long;
+                            this.W.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
+                            return true;
+                        } catch (Exception e) {
+                            cc4.g(e, true);
+                            return true;
                         }
                     }
-                } else if (byteBuffer == byteBuffer2) {
                 }
             }
-            return true;
         }
         return false;
-    }
-
-    public static int o(ByteBuffer byteBuffer, int i, int i2) {
-        return (i + 3 >= i2 || byteBuffer.get(i + 2) != 0) ? 3 : 4;
-    }
-
-    public static void p(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        int i = bufferInfo.offset;
-        int i2 = bufferInfo.size;
-        long j = i + i2;
-        if (i < 0 || i2 < 0 || j > byteBuffer.limit()) {
-            throw new IOException("Invalid codec buffer range: offset=" + bufferInfo.offset + ", size=" + bufferInfo.size + ", position=" + byteBuffer.position() + ", limit=" + byteBuffer.limit() + ", capacity=" + byteBuffer.capacity());
-        }
-    }
-
-    public final MediaCodec.BufferInfo b(boolean z, MediaCodec.BufferInfo bufferInfo, long j) {
-        long max;
-        mk9 mk9Var = this.h;
-        mk9 mk9Var2 = this.g;
-        mk9 mk9Var3 = z ? mk9Var2 : mk9Var;
-        if (j < 0) {
-            max = Math.max(0L, j + bufferInfo.presentationTimeUs);
-        } else {
-            if (this.q != j) {
-                this.q = j;
-                this.r = Math.max(j, Math.max(mk9Var2.a(), mk9Var.a()));
-                mk9Var2.a = Long.MIN_VALUE;
-                mk9Var2.b = Long.MIN_VALUE;
-                mk9Var.a = Long.MIN_VALUE;
-                mk9Var.b = Long.MIN_VALUE;
-            }
-            long j2 = mk9Var3.a;
-            if (j2 == Long.MIN_VALUE) {
-                j2 = bufferInfo.presentationTimeUs;
-                mk9Var3.a = j2;
-            }
-            max = Math.max(0L, bufferInfo.presentationTimeUs - j2) + this.r;
-        }
-        long j3 = bufferInfo.presentationTimeUs;
-        long j4 = mk9Var3.b;
-        if (j4 != Long.MIN_VALUE) {
-            long j5 = j3 - j4;
-            if (j5 > 0 && j5 < 1000000) {
-                mk9Var3.d = j5;
-            }
-        }
-        mk9Var3.b = j3;
-        mk9Var3.c = Math.max(mk9Var3.c, max);
-        MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
-        bufferInfo2.set(bufferInfo.offset, bufferInfo.size, max, bufferInfo.flags);
-        return bufferInfo2;
-    }
-
-    public final synchronized void c(File file) {
-        if (this.i == null) {
-            throw new IOException("MP4 tracks are not initialized");
-        }
-        long nanoTime = System.nanoTime();
-        try {
-            this.i.finishMovie(file);
-            this.d.b("MP4 preview written: file=" + file.getName() + ", size=" + file.length() + ", elapsedMs=" + ((System.nanoTime() - nanoTime) / 1000000));
-        } catch (Exception e) {
-            throw new IOException("Unable to create preview MP4", e);
-        }
-    }
-
-    public final synchronized void g() {
-        if (this.x) {
-            return;
-        }
-        if (this.i == null) {
-            throw new IOException("MP4 tracks are not initialized");
-        }
-        long nanoTime = System.nanoTime();
-        try {
-            this.i.finishMovie();
-            this.x = true;
-            l(this.a.length());
-            this.d.b("MP4 finalized: file=" + this.a.getName() + ", size=" + this.a.length() + ", videoSamples=" + this.o + ", audioSamples=" + this.p + ", elapsedMs=" + ((System.nanoTime() - nanoTime) / 1000000));
-        } catch (Exception e) {
-            throw new IOException("Unable to finish MP4", e);
-        }
-    }
-
-    public final synchronized long h() {
-        long a;
-        a = this.g.a();
-        if (this.c) {
-            a = Math.max(a, this.h.a());
-        }
-        return a / 1000;
-    }
-
-    public final synchronized int i() {
-        return this.s;
-    }
-
-    public final void j() {
-        ArrayList arrayList = this.f;
-        if (this.j != null) {
-            boolean z = this.c;
-            if (z && this.k == null) {
-                return;
-            }
-            Mp4Movie mp4Movie = new Mp4Movie();
-            File file = this.a;
-            mp4Movie.setCacheFile(file);
-            short s = this.b;
-            mp4Movie.setSize(s, s);
-            try {
-                MP4Builder createMovie = new MP4Builder().createMovie(mp4Movie, true, false);
-                this.i = createMovie;
-                this.l = createMovie.addTrack(this.j, false);
-                if (z) {
-                    this.m = this.i.addTrack(this.k, true);
-                }
-                this.d.b("MP4 initialized: file=" + file.getName() + ", output=" + ((int) s) + "x" + ((int) s) + ", includeAudio=" + z + ", pendingSamples=" + arrayList.size());
-                for (int i = 0; i < arrayList.size(); i++) {
-                    lk9 lk9Var = (lk9) arrayList.get(i);
-                    r(lk9Var.a, lk9Var.b, lk9Var.c);
-                }
-                arrayList.clear();
-            } catch (Exception e) {
-                throw new IOException("Unable to initialize MP4", e);
-            }
-        }
-    }
-
-    public final void k(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        int position;
-        int limit;
-        p(byteBuffer, bufferInfo);
-        int i = bufferInfo.offset;
-        int i2 = bufferInfo.size + i;
-        int f = f(byteBuffer, i, i2);
-        int i3 = bufferInfo.offset;
-        MediaCodec.BufferInfo bufferInfo2 = this.u;
-        if (f != i3) {
-            int i4 = bufferInfo.size;
-            ByteBuffer byteBuffer2 = this.t;
-            if (byteBuffer2 == null || byteBuffer2.capacity() < i4) {
-                this.t = ByteBuffer.allocateDirect(i4);
-            }
-            this.t.clear();
-            position = byteBuffer.position();
-            limit = byteBuffer.limit();
-            try {
-                byteBuffer.position(bufferInfo.offset);
-                byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
-                this.t.put(byteBuffer);
-                byteBuffer.limit(limit);
-                byteBuffer.position(position);
-                this.t.flip();
-                bufferInfo2.set(0, bufferInfo.size, bufferInfo.presentationTimeUs, bufferInfo.flags);
-                return;
-            } finally {
-            }
-        }
-        int i5 = 0;
-        int i6 = f;
-        int i7 = 0;
-        while (i6 >= 0) {
-            int o = o(byteBuffer, i6, i2) + i6;
-            i6 = f(byteBuffer, o, i2);
-            int i8 = i6 < 0 ? i2 : i6;
-            if (i8 > o) {
-                i5++;
-                i7 = ((i8 + 4) - o) + i7;
-            }
-        }
-        if (i5 == 0) {
-            k93.f("Annex-B video sample contains no NAL units");
-            return;
-        }
-        ByteBuffer byteBuffer3 = this.t;
-        if (byteBuffer3 == null || byteBuffer3.capacity() < i7) {
-            this.t = ByteBuffer.allocateDirect(i7);
-        }
-        this.t.clear();
-        position = byteBuffer.position();
-        limit = byteBuffer.limit();
-        while (f >= 0) {
-            try {
-                int o2 = f + o(byteBuffer, f, i2);
-                int f2 = f(byteBuffer, o2, i2);
-                int i9 = f2 < 0 ? i2 : f2;
-                if (i9 > o2) {
-                    this.t.putInt(i9 - o2);
-                    byteBuffer.position(o2);
-                    byteBuffer.limit(i9);
-                    this.t.put(byteBuffer);
-                    byteBuffer.limit(limit);
-                }
-                f = f2;
-            } finally {
-            }
-        }
-        byteBuffer.limit(limit);
-        byteBuffer.position(position);
-        this.t.flip();
-        bufferInfo2.set(0, this.t.remaining(), bufferInfo.presentationTimeUs, bufferInfo.flags);
-    }
-
-    public final void l(long j) {
-        if (j > this.n) {
-            this.n = j;
-            if (this.w) {
-                return;
-            }
-            kq8 kq8Var = this.e;
-            ul9 ul9Var = (ul9) kq8Var.b;
-            ql9 ql9Var = (ql9) kq8Var.c;
-            synchronized (ul9Var.g) {
-                long j2 = ql9Var.c;
-                long j3 = j - j2;
-                if (j3 <= 0 || ql9Var.d) {
-                    return;
-                }
-                ql9Var.c = j;
-                ul9Var.k.execute(new n30((Object) ul9Var, (Object) ql9Var, j2, j3, (byte) 13));
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0033, code lost:
-    
-        if (m(r1, r5, "csd-0") == false) goto L21;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized void n(MediaFormat mediaFormat, boolean z) {
-        if (this.x) {
-            return;
-        }
-        if (this.i == null) {
-            if (z) {
-                this.j = mediaFormat;
-            } else if (this.c) {
-                this.k = mediaFormat;
-            }
-            j();
-            return;
-        }
-        MediaFormat mediaFormat2 = z ? this.j : this.k;
-        if (!z) {
-            if (this.c) {
-            }
-        } else {
-            if (m(mediaFormat2, mediaFormat, "csd-0", "csd-1")) {
-            }
-            throw new kk9((z ? "Video" : "Audio").concat(" codec configuration changed between segments"));
-        }
-    }
-
-    public final synchronized void q(boolean z, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, long j) {
-        if (this.x || (!(z || this.c) || bufferInfo.size <= 0)) {
-            return;
-        }
-        MediaCodec.BufferInfo b = b(z, bufferInfo, j);
-        if (this.i != null) {
-            r(z, byteBuffer, b);
-            return;
-        }
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(bufferInfo.size);
-        byteBuffer.position(bufferInfo.offset);
-        byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
-        allocateDirect.put(byteBuffer).flip();
-        b.offset = 0;
-        this.f.add(new lk9(z, allocateDirect, b));
-    }
-
-    public final void r(boolean z, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        ByteBuffer byteBuffer2;
-        MediaCodec.BufferInfo bufferInfo2;
-        String d;
-        ek9 ek9Var = this.d;
-        if (z) {
-            try {
-                r2 = this.v ? null : e(byteBuffer, bufferInfo);
-                k(byteBuffer, bufferInfo);
-                byteBuffer2 = this.t;
-                bufferInfo2 = this.u;
-                if (!this.v) {
-                    this.v = true;
-                    ek9Var.b("first video sample prepared: " + r2 + ", outputSize=" + bufferInfo2.size);
-                }
-            } catch (Exception e) {
-                if (!z) {
-                    r2 = d(byteBuffer, bufferInfo);
-                } else if (r2 == null) {
-                    try {
-                        d = e(byteBuffer, bufferInfo);
-                    } catch (Exception unused) {
-                        d = d(byteBuffer, bufferInfo);
-                    }
-                    r2 = d;
-                }
-                StringBuilder sb = new StringBuilder("MP4 sample write failed: track=");
-                String str = MediaStreamTrack.AUDIO_TRACK_KIND;
-                ek9Var.a(ls6.o(z ? MediaStreamTrack.VIDEO_TRACK_KIND : MediaStreamTrack.AUDIO_TRACK_KIND, ", ", r2, sb), e);
-                StringBuilder sb2 = new StringBuilder("Unable to write ");
-                if (z) {
-                    str = MediaStreamTrack.VIDEO_TRACK_KIND;
-                }
-                throw new IOException(ls6.o(str, " MP4 sample: ", r2, sb2), e);
-            }
-        } else {
-            byteBuffer2 = byteBuffer;
-            bufferInfo2 = bufferInfo;
-        }
-        long writeSampleData = this.i.writeSampleData(z ? this.l : this.m, byteBuffer2, bufferInfo2, false);
-        if (z) {
-            this.o++;
-        } else {
-            this.p++;
-        }
-        if (writeSampleData > 0) {
-            l(writeSampleData);
-        }
     }
 }

@@ -1,39 +1,57 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.content.DialogInterface;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class kd extends AnimatorListenerAdapter {
+public final /* synthetic */ class kd implements nr7, vka {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ nd b;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ kd(nd ndVar, byte b) {
+    public /* synthetic */ kd(FrameLayout frameLayout, byte b) {
         this.a = b;
-        this.b = ndVar;
+        this.b = frameLayout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        Rect rect = new Rect();
+        int i = Build.VERSION.SDK_INT;
+        i2d i2dVar = l2dVar.a;
+        if (i >= 30) {
+            mq5 f = i2dVar.f(527);
+            rect.set(f.a, f.b, f.c, f.d);
+        } else {
+            rect.set(i2dVar.i().a, i2dVar.i().b, i2dVar.i().c, i2dVar.i().d);
+        }
+        int i2 = rect.left;
+        int i3 = rect.top;
+        int i4 = rect.right;
+        int i5 = rect.bottom + hl.n;
+        FrameLayout frameLayout = this.b;
+        frameLayout.setPadding(i2, i3, i4, i5);
+        frameLayout.requestLayout();
+        return l2dVar;
+    }
+
+    @Override // vka
+    public final void c(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
         byte b = this.a;
-        nd ndVar = this.b;
+        FrameLayout frameLayout = this.b;
         switch (b) {
-            case 0:
-                DialogInterface.OnShowListener onShowListener = ndVar.q1;
-                if (onShowListener != null) {
-                    onShowListener.onShow(ndVar);
-                    break;
-                }
+            case 1:
+                d79 d79Var = (d79) recyclerView;
+                uk0.a(d79Var, canvas, rectF, d79Var, frameLayout);
                 break;
             default:
-                ndVar.t().removeView(ndVar.n1);
-                DialogInterface.OnDismissListener onDismissListener = ndVar.r1;
-                if (onDismissListener != null) {
-                    onDismissListener.onDismiss(ndVar);
-                    break;
-                }
+                d79 d79Var2 = (d79) recyclerView;
+                uk0.a(d79Var2, canvas, rectF, d79Var2, frameLayout);
                 break;
         }
     }

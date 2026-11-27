@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzee extends ccb implements eq4 {
+final class zzee extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ long zzc;
@@ -12,8 +12,8 @@ final class zzee extends ccb implements eq4 {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzee(zzeh zzehVar, long j, zzdw zzdwVar, String str, zzhh zzhhVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzee(zzeh zzehVar, long j, zzdw zzdwVar, String str, zzhh zzhhVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzehVar;
         this.zzc = j;
         this.zzd = zzdwVar;
@@ -21,16 +21,16 @@ final class zzee extends ccb implements eq4 {
         this.zzf = zzhhVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, zw2Var);
         zzeeVar.zzg = obj;
         return zzeeVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzee) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzee) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
@@ -45,17 +45,17 @@ final class zzee extends ccb implements eq4 {
     
         if (r8 != r2) goto L13;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
-                qse.b(obj);
+                ixe.b(obj);
                 zzhkVar = (zzhk) this.zzg;
                 zzeh zzehVar = this.zzb;
                 long j = this.zzc;
@@ -66,13 +66,13 @@ final class zzee extends ccb implements eq4 {
                 obj = zzdwVar.zzb(j, this);
             } else {
                 if (i != 1) {
-                    qse.b(obj);
+                    ixe.b(obj);
                     zzeq zzeqVar = new zzeq(this.zzd, this.zze, this.zzf);
                     this.zzb.zzc = zzeqVar;
                     return zzeqVar;
                 }
                 zzhkVar = (zzhk) this.zzg;
-                qse.b(obj);
+                ixe.b(obj);
             }
             this.zzg = null;
             this.zza = 2;

@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Trace;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -31,20 +31,20 @@ public class InitializationProvider extends ContentProvider {
     public final boolean onCreate() {
         Context context = getContext();
         if (context == null) {
-            throw new gp2("Context cannot be null");
+            throw new zp2("Context cannot be null");
         }
         if (context.getApplicationContext() == null) {
             return true;
         }
-        mv6 N = mv6.N(context);
-        Context context2 = (Context) N.d;
+        rx6 O = rx6.O(context);
+        Context context2 = (Context) O.d;
         try {
             try {
-                wve.a("Startup");
-                N.y(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
+                q0f.a("Startup");
+                O.A(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
                 return true;
             } catch (PackageManager.NameNotFoundException e) {
-                throw new gp2(e);
+                throw new zp2(e);
             }
         } finally {
             Trace.endSection();

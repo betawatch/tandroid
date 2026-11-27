@@ -1,49 +1,123 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.media.MediaCodec;
+import android.media.MediaFormat;
+import android.os.Handler;
+import android.os.HandlerThread;
+import java.util.ArrayDeque;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vx implements et8 {
-    public final byte a;
+public final class vx extends MediaCodec.Callback {
+    public final HandlerThread b;
+    public Handler c;
+    public MediaFormat h;
+    public MediaFormat i;
+    public MediaCodec.CodecException j;
+    public MediaCodec.CryptoException k;
+    public long l;
+    public boolean m;
+    public IllegalStateException n;
+    public aj3 o;
+    public final Object a = new Object();
+    public final pn d = new pn();
+    public final pn e = new pn();
+    public final ArrayDeque f = new ArrayDeque();
+    public final ArrayDeque g = new ArrayDeque();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public vx(int i) {
-        this.a = i;
+    public vx(HandlerThread handlerThread) {
+        this.b = handlerThread;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return et8.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a() {
+        ArrayDeque arrayDeque = this.g;
+        if (!arrayDeque.isEmpty()) {
+            this.i = (MediaFormat) arrayDeque.getLast();
         }
-        if (!(obj instanceof et8)) {
-            return false;
+        pn pnVar = this.d;
+        pnVar.c = pnVar.b;
+        pn pnVar2 = this.e;
+        pnVar2.c = pnVar2.b;
+        this.f.clear();
+        arrayDeque.clear();
+    }
+
+    public final void b() {
+        IllegalStateException illegalStateException = this.n;
+        if (illegalStateException != null) {
+            this.n = null;
+            throw illegalStateException;
         }
-        et8 et8Var = (et8) obj;
-        return this.a == et8Var.tag() && dt8.a.equals(et8Var.intEncoding());
+        MediaCodec.CodecException codecException = this.j;
+        if (codecException != null) {
+            this.j = null;
+            throw codecException;
+        }
+        MediaCodec.CryptoException cryptoException = this.k;
+        if (cryptoException == null) {
+            return;
+        }
+        this.k = null;
+        throw cryptoException;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (dt8.a.hashCode() ^ 2041407134);
+    public final void c(IllegalStateException illegalStateException) {
+        synchronized (this.a) {
+            this.n = illegalStateException;
+        }
     }
 
-    @Override // et8
-    public final dt8 intEncoding() {
-        return dt8.a;
+    @Override // android.media.MediaCodec.Callback
+    public final void onCryptoError(MediaCodec mediaCodec, MediaCodec.CryptoException cryptoException) {
+        synchronized (this.a) {
+            this.k = cryptoException;
+        }
     }
 
-    @Override // et8
-    public final int tag() {
-        return this.a;
+    @Override // android.media.MediaCodec.Callback
+    public final void onError(MediaCodec mediaCodec, MediaCodec.CodecException codecException) {
+        synchronized (this.a) {
+            this.j = codecException;
+        }
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + dt8.a + ')';
+    @Override // android.media.MediaCodec.Callback
+    public final void onInputBufferAvailable(MediaCodec mediaCodec, int i) {
+        w64 w64Var;
+        synchronized (this.a) {
+            this.d.a(i);
+            aj3 aj3Var = this.o;
+            if (aj3Var != null && (w64Var = ((qm6) aj3Var.b).Y) != null) {
+                w64Var.a();
+            }
+        }
+    }
+
+    @Override // android.media.MediaCodec.Callback
+    public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i, MediaCodec.BufferInfo bufferInfo) {
+        w64 w64Var;
+        synchronized (this.a) {
+            MediaFormat mediaFormat = this.i;
+            if (mediaFormat != null) {
+                this.e.a(-2);
+                this.g.add(mediaFormat);
+                this.i = null;
+            }
+            this.e.a(i);
+            this.f.add(bufferInfo);
+            aj3 aj3Var = this.o;
+            if (aj3Var != null && (w64Var = ((qm6) aj3Var.b).Y) != null) {
+                w64Var.a();
+            }
+        }
+    }
+
+    @Override // android.media.MediaCodec.Callback
+    public final void onOutputFormatChanged(MediaCodec mediaCodec, MediaFormat mediaFormat) {
+        synchronized (this.a) {
+            this.e.a(-2);
+            this.g.add(mediaFormat);
+            this.i = null;
+        }
     }
 }

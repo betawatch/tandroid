@@ -1,38 +1,39 @@
 // default package
 
-import android.os.Parcel;
-import android.os.RemoteException;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class j5d {
-    public final /* synthetic */ ed1 a;
+public abstract class j5d implements Runnable {
+    private final TaskCompletionSource a;
 
-    public j5d(ed1 ed1Var) {
-        this.a = ed1Var;
+    public j5d() {
+        this.a = null;
     }
 
-    public final void a() {
-        ed1 ed1Var = this.a;
-        f8d f8dVar = ed1Var.e;
-        if (f8dVar != null) {
-            try {
-                i69 i69Var = ed1Var.j;
-                if (i69Var != null) {
-                    i69Var.u();
-                }
-                u7d u7dVar = (u7d) f8dVar;
-                Parcel R = u7dVar.R();
-                int i = jgd.a;
-                R.writeInt(0);
-                u7dVar.V(R, 1);
-            } catch (RemoteException e) {
-                ed1.m.a(e, "Unable to call %s on %s.", "onConnected", f8d.class.getSimpleName());
-            }
-            e6e e6eVar = ed1Var.l;
-            if (e6eVar != null) {
-                gl2.S((gl2) e6eVar.b, new xhf(new ab8(3)));
-            }
+    public void a(Exception exc) {
+        TaskCompletionSource taskCompletionSource = this.a;
+        if (taskCompletionSource != null) {
+            taskCompletionSource.trySetException(exc);
         }
+    }
+
+    public abstract void b();
+
+    public final TaskCompletionSource c() {
+        return this.a;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        try {
+            b();
+        } catch (Exception e) {
+            a(e);
+        }
+    }
+
+    public j5d(TaskCompletionSource taskCompletionSource) {
+        this.a = taskCompletionSource;
     }
 }

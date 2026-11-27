@@ -1,36 +1,24 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ly5 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ LaunchActivity b;
+public final class ly5 extends zw3 {
+    public final /* synthetic */ wy5 D1;
 
-    public /* synthetic */ ly5(LaunchActivity launchActivity, byte b) {
-        this.a = b;
-        this.b = launchActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ly5(wy5 wy5Var, Context context, yx5 yx5Var) {
+        super(yx5Var, context, false, false);
+        this.D1 = wy5Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (b) {
-            case 0:
-                String str = LaunchActivity.C1;
-                launchActivity.w1 = false;
-                break;
-            case 1:
-                String str2 = LaunchActivity.C1;
-                gl.d3(new rx5(launchActivity, (byte) 7), 30000L);
-                break;
-            default:
-                String str3 = LaunchActivity.C1;
-                gl.d3(new rx5(launchActivity, (byte) 10), 30000L);
-                break;
+    @Override // zw3
+    public final boolean F0(Integer num) {
+        if (num.intValue() != 6) {
+            return num.intValue() == 2;
         }
+        gc1 gc1Var = this.D1.J1;
+        return gc1Var != null && gc1Var.c();
     }
 }

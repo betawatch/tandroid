@@ -1,36 +1,59 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class l99 extends a8 {
-    public final int W;
-    public long a0;
-    public j99 b0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class l99 extends bp5 {
+    public final transient to5 d;
+    public final transient Object[] e;
+    public final transient boolean f;
+    public final transient int h;
 
-    public l99(int i, wjb wjbVar, Context context) {
-        super(0, wjbVar, context, false, false);
-        this.W = i;
-        setPadding(gl.L(18.0f), 0, gl.L(18.0f), 0);
-        c(bkb.D8, bkb.E8);
-        setIconColor(-1);
-        this.c.setTranslationX(gl.L(2.0f));
-        this.c.setScaleX(1.2f);
-        this.c.setScaleY(1.2f);
-        a(2);
-        setBackground(null);
-        this.c.addOnAttachStateChangeListener(new wc(this, (byte) 14));
+    /* JADX WARN: Multi-variable type inference failed */
+    public l99(to5 to5Var, Object[] objArr, int i, int i2) {
+        this.d = to5Var;
+        this.e = objArr;
+        this.f = i;
+        this.h = i2;
     }
 
-    @Override // a8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
-            size = gl.L(250.0f);
+    @Override // jo5, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.d.get(key))) {
+                return true;
+            }
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
+        return false;
+    }
+
+    @Override // jo5
+    public final int i(int i, Object[] objArr) {
+        return h().i(i, objArr);
+    }
+
+    @Override // jo5
+    public final boolean m() {
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    /* renamed from: n */
+    public final v9c iterator() {
+        return h().listIterator(0);
+    }
+
+    @Override // bp5
+    public final po5 r() {
+        return new k99(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.h;
     }
 }

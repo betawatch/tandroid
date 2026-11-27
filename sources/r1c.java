@@ -1,42 +1,73 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class r1c {
-    public final /* synthetic */ a2c a;
-    public final /* synthetic */ d2c b;
+    public final boolean a;
+    public final String b;
+    public final w1c c;
+    public final short d;
+    public final byte[] e;
 
-    public r1c(d2c d2cVar, a2c a2cVar) {
-        this.b = d2cVar;
-        this.a = a2cVar;
-    }
-
-    public final int a() {
-        return this.b.s.w;
-    }
-
-    public final void b(boolean z) {
-        d2c d2cVar = this.b;
-        t1c t1cVar = d2cVar.n;
-        if (z) {
-            w39 adapter = t1cVar.getAdapter();
-            c1b c1bVar = d2cVar.w;
-            if (adapter == c1bVar) {
-                return;
-            } else {
-                t1cVar.setAdapter(c1bVar);
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x004d, code lost:
+    
+        if (r6.equals("cbc1") == false) goto L25;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public r1c(boolean z, String str, int i, byte[] bArr, int i2, int i3, byte[] bArr2) {
+        char c = 0;
+        int i4 = 1;
+        yve.f((i == 0) ^ (bArr2 == null));
+        this.a = z;
+        this.b = str;
+        this.d = i;
+        this.e = bArr2;
+        if (str != null) {
+            switch (str.hashCode()) {
+                case 3046605:
+                    break;
+                case 3046671:
+                    if (str.equals("cbcs")) {
+                        c = 1;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 3049879:
+                    if (str.equals("cenc")) {
+                        c = 2;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                case 3049895:
+                    if (str.equals("cens")) {
+                        c = 3;
+                        break;
+                    }
+                    c = 65535;
+                    break;
+                default:
+                    c = 65535;
+                    break;
             }
-        } else {
-            w39 adapter2 = t1cVar.getAdapter();
-            c2c c2cVar = d2cVar.s;
-            if (adapter2 == c2cVar) {
-                return;
-            } else {
-                t1cVar.setAdapter(c2cVar);
+            switch (c) {
+                case 0:
+                case 1:
+                    i4 = 2;
+                    break;
+                case 2:
+                case 3:
+                    break;
+                default:
+                    efd.f("TrackEncryptionBox", "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
+                    break;
             }
         }
-        if (t1cVar.getAdapter().b() > 0) {
-            d2cVar.r.h1(0, gl.L(58.0f) + (-t1cVar.getPaddingTop()) + d2cVar.F, false);
-        }
+        this.c = new w1c(i4, i2, i3, bArr);
     }
 }

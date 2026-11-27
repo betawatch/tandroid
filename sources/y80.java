@@ -2,37 +2,66 @@
 
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class y80 extends uy2 {
+public final class y80 extends mz2 {
     public final String a;
-    public final int b;
+    public final String b;
     public final List c;
+    public final mz2 d;
+    public final int e;
 
-    public y80(String str, int i, List list) {
+    public y80(String str, String str2, List list, mz2 mz2Var, int i) {
         this.a = str;
-        this.b = i;
+        this.b = str2;
         this.c = list;
+        this.d = mz2Var;
+        this.e = i;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof uy2) {
-            y80 y80Var = (y80) ((uy2) obj);
-            if (this.a.equals(y80Var.a) && this.b == y80Var.b && this.c.equals(y80Var.c)) {
-                return true;
+        if (obj instanceof mz2) {
+            y80 y80Var = (y80) ((mz2) obj);
+            if (this.a.equals(y80Var.a)) {
+                String str = y80Var.b;
+                String str2 = this.b;
+                if (str2 != null ? str2.equals(str) : str == null) {
+                    if (this.c.equals(y80Var.c)) {
+                        mz2 mz2Var = y80Var.d;
+                        mz2 mz2Var2 = this.d;
+                        if (mz2Var2 != null ? mz2Var2.equals(mz2Var) : mz2Var == null) {
+                            if (this.e == y80Var.e) {
+                                return true;
+                            }
+                        }
+                    }
+                }
             }
         }
         return false;
     }
 
     public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c.hashCode();
+        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
+        String str = this.b;
+        int hashCode2 = (((hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003) ^ this.c.hashCode()) * 1000003;
+        mz2 mz2Var = this.d;
+        return ((hashCode2 ^ (mz2Var != null ? mz2Var.hashCode() : 0)) * 1000003) ^ this.e;
     }
 
     public final String toString() {
-        return "Thread{name=" + this.a + ", importance=" + this.b + ", frames=" + this.c + "}";
+        StringBuilder sb = new StringBuilder("Exception{type=");
+        sb.append(this.a);
+        sb.append(", reason=");
+        sb.append(this.b);
+        sb.append(", frames=");
+        sb.append(this.c);
+        sb.append(", causedBy=");
+        sb.append(this.d);
+        sb.append(", overflowCount=");
+        return uh9.l(sb, this.e, "}");
     }
 }

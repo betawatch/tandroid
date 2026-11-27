@@ -1,50 +1,74 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.os.Parcel;
+import android.os.ResultReceiver;
+import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class q23 extends j33 {
-    public final /* synthetic */ byte Q;
-    public final /* synthetic */ FrameLayout R;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class q23 {
+    public static final l23 a = new l23();
+    public static final Set b;
+    public static final boolean c;
+    public static final /* synthetic */ int d = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q23(FrameLayout frameLayout, Context context, byte b) {
-        super(context);
-        this.Q = b;
-        this.R = frameLayout;
+    static {
+        Set set;
+        Integer[] numArr = {7, 20};
+        int length = numArr.length;
+        if (length == 0) {
+            set = a34.a;
+        } else if (length != 1) {
+            set = new LinkedHashSet(uk6.b(numArr.length));
+            for (Integer num : numArr) {
+                set.add(num);
+            }
+        } else {
+            set = Collections.singleton(numArr[0]);
+            set.getClass();
+        }
+        b = set;
+        c = true;
     }
 
-    @Override // j33
-    public final int getCurrentHeight() {
-        int currentHeight;
-        int currentHeight2;
-        byte b = this.Q;
-        FrameLayout frameLayout = this.R;
-        switch (b) {
-            case 0:
-                currentHeight = ((t23) frameLayout).getCurrentHeight();
-                return currentHeight;
-            default:
-                currentHeight2 = ((y23) frameLayout).getCurrentHeight();
-                return currentHeight2;
-        }
+    public static void a(ResultReceiver resultReceiver, Intent intent, String str) {
+        resultReceiver.getClass();
+        intent.putExtra("TYPE", str);
+        intent.putExtra("ACTIVITY_REQUEST_CODE", c ? 1 : 0);
+        intent.putExtra("RESULT_RECEIVER", c(resultReceiver));
+        intent.setFlags(65536);
     }
 
-    @Override // j33
-    public final int getCurrentWidth() {
-        int currentWidth;
-        int currentWidth2;
-        byte b = this.Q;
-        FrameLayout frameLayout = this.R;
-        switch (b) {
-            case 0:
-                currentWidth = ((t23) frameLayout).getCurrentWidth();
-                return currentWidth;
-            default:
-                currentWidth2 = ((y23) frameLayout).getCurrentWidth();
-                return currentWidth2;
+    public static boolean b(Bundle bundle, is4 is4Var, Executor executor, h23 h23Var, CancellationSignal cancellationSignal) {
+        executor.getClass();
+        h23Var.getClass();
+        if (!bundle.getBoolean("FAILURE_RESPONSE")) {
+            return false;
         }
+        Object invoke = is4Var.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE"));
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (d33.a(cancellationSignal)) {
+            return true;
+        }
+        executor.execute(new bv2((Object) h23Var, invoke, (byte) 18));
+        return true;
+    }
+
+    public static ResultReceiver c(ResultReceiver resultReceiver) {
+        Parcel obtain = Parcel.obtain();
+        obtain.getClass();
+        resultReceiver.getClass();
+        resultReceiver.writeToParcel(obtain, 0);
+        obtain.setDataPosition(0);
+        ResultReceiver resultReceiver2 = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(obtain);
+        obtain.recycle();
+        return resultReceiver2;
     }
 }

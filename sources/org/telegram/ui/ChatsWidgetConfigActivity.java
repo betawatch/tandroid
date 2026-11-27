@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class ChatsWidgetConfigActivity extends ExternalActionActivity {
     public static final /* synthetic */ int G = 0;
@@ -20,21 +20,21 @@ public class ChatsWidgetConfigActivity extends ExternalActionActivity {
                 finish();
                 return;
             }
-            tb4.j(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
-            zt3 zt3Var = new zt3(0, this.F);
-            zt3Var.E = new rh1(this, (byte) 26);
-            if (gl.O1()) {
+            qd4.j(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            ru3 ru3Var = new ru3(0, this.F);
+            ru3Var.E = new rd1(this, (byte) 28);
+            if (hl.O1()) {
                 if (this.d.getFragmentStack().isEmpty()) {
-                    this.d.b(-1, zt3Var);
+                    this.d.b(-1, ru3Var);
                 }
             } else if (this.c.getFragmentStack().isEmpty()) {
-                this.c.b(-1, zt3Var);
+                this.c.b(-1, ru3Var);
             }
-            if (!gl.O1()) {
+            if (!hl.O1()) {
                 this.e.setVisibility(8);
             }
             this.c.e0();
-            if (gl.O1()) {
+            if (hl.O1()) {
                 this.d.e0();
             }
             intent.setAction(null);

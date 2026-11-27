@@ -1,71 +1,33 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ob implements RequestDelegate {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ob implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ bc b;
-    public final /* synthetic */ hd c;
+    public final /* synthetic */ cc b;
 
-    public /* synthetic */ ob(bc bcVar, hd hdVar, byte b) {
+    public /* synthetic */ ob(cc ccVar, byte b) {
         this.a = b;
-        this.b = bcVar;
-        this.c = hdVar;
+        this.b = ccVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        cc ccVar = this.b;
+        switch (b) {
             case 0:
-                final bc bcVar = this.b;
-                bcVar.getClass();
-                final byte b = 1;
-                final hd hdVar = this.c;
-                gl.c3(new Runnable() { // from class: qb
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b2 = b;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        TLObject tLObject2 = tLObject;
-                        hd hdVar2 = hdVar;
-                        bc bcVar2 = bcVar;
-                        switch (b2) {
-                            case 0:
-                                bcVar2.E0(hdVar2, tLObject2, tL_error2);
-                                break;
-                            default:
-                                bcVar2.H0(hdVar2, tLObject2, tL_error2);
-                                break;
-                        }
-                    }
-                });
+                hl.c3(new ve2(ccVar, (TLRPC.UserFull) obj, (byte) 22));
+                break;
+            case 1:
+                ccVar.b0.commission_permille = ((Integer) obj).intValue();
+                ccVar.L0();
                 break;
             default:
-                final byte b2 = 0;
-                final bc bcVar2 = this.b;
-                final hd hdVar2 = this.c;
-                gl.c3(new Runnable() { // from class: qb
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b22 = b2;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        TLObject tLObject2 = tLObject;
-                        hd hdVar22 = hdVar2;
-                        bc bcVar22 = bcVar2;
-                        switch (b22) {
-                            case 0:
-                                bcVar22.E0(hdVar22, tLObject2, tL_error2);
-                                break;
-                            default:
-                                bcVar22.H0(hdVar22, tLObject2, tL_error2);
-                                break;
-                        }
-                    }
-                });
+                ccVar.b0.duration_months = ((Integer) ccVar.d0.get(((Integer) obj).intValue())).intValue();
+                ccVar.L0();
                 break;
         }
     }

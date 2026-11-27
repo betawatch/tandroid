@@ -1,31 +1,15 @@
 // default package
 
-import android.util.SparseArray;
+import android.widget.AbsListView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class sr3 {
-    public final int a;
-    public final boolean b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final SparseArray j;
+public abstract class sr3 {
+    public static boolean a(AbsListView absListView) {
+        return absListView.isSelectedChildViewEnabled();
+    }
 
-    public sr3(int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, SparseArray sparseArray) {
-        this.a = i;
-        this.b = z;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-        this.f = i5;
-        this.g = i6;
-        this.h = i7;
-        this.i = i8;
-        this.j = sparseArray;
+    public static void b(AbsListView absListView, boolean z) {
+        absListView.setSelectedChildViewEnabled(z);
     }
 }

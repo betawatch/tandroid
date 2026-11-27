@@ -1,48 +1,57 @@
 // default package
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class pa0 {
-    public final boolean a;
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final byte e;
+    public final qx6 f;
 
-    public pa0(boolean z) {
-        String str = Build.VERSION.RELEASE;
-        String str2 = Build.VERSION.CODENAME;
+    /* JADX WARN: Multi-variable type inference failed */
+    public pa0(String str, String str2, String str3, String str4, int i, qx6 qx6Var) {
         if (str == null) {
-            fvc.f("Null osRelease");
+            p3d.h("Null appIdentifier");
             throw null;
         }
-        if (str2 != null) {
-            this.a = z;
-        } else {
-            fvc.f("Null osCodeName");
+        this.a = str;
+        if (str2 == null) {
+            p3d.h("Null versionCode");
             throw null;
         }
+        this.b = str2;
+        if (str3 == null) {
+            p3d.h("Null versionName");
+            throw null;
+        }
+        this.c = str3;
+        if (str4 == null) {
+            p3d.h("Null installUuid");
+            throw null;
+        }
+        this.d = str4;
+        this.e = i;
+        this.f = qx6Var;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof pa0)) {
-            return false;
+        if (obj instanceof pa0) {
+            pa0 pa0Var = (pa0) obj;
+            return this.a.equals(pa0Var.a) && this.b.equals(pa0Var.b) && this.c.equals(pa0Var.c) && this.d.equals(pa0Var.d) && this.e == pa0Var.e && this.f == pa0Var.f;
         }
-        pa0 pa0Var = (pa0) obj;
-        String str = Build.VERSION.RELEASE;
-        if (!str.equals(str)) {
-            return false;
-        }
-        String str2 = Build.VERSION.CODENAME;
-        return str2.equals(str2) && this.a == pa0Var.a;
+        return false;
     }
 
     public final int hashCode() {
-        return ((((Build.VERSION.RELEASE.hashCode() ^ 1000003) * 1000003) ^ Build.VERSION.CODENAME.hashCode()) * 1000003) ^ (this.a ? 1231 : 1237);
+        return ((((((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e) * 1000003) ^ this.f.hashCode();
     }
 
     public final String toString() {
-        return "OsData{osRelease=" + Build.VERSION.RELEASE + ", osCodeName=" + Build.VERSION.CODENAME + ", isRooted=" + this.a + "}";
+        return "AppData{appIdentifier=" + this.a + ", versionCode=" + this.b + ", versionName=" + this.c + ", installUuid=" + this.d + ", deliveryMechanism=" + ((int) this.e) + ", developmentPlatformProvider=" + this.f + "}";
     }
 }

@@ -1,75 +1,194 @@
 // default package
 
-import java.util.Map;
-import java.util.function.ToIntFunction;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class mm implements ToIntFunction {
-    public final /* synthetic */ byte a;
+public final class mm {
+    public View a;
+    public final Runnable b;
+    public float c;
+    public float d;
+    public boolean e;
+    public short f;
+    public long g;
+    public Interpolator h;
+    public boolean i;
+    public long j;
+    public float k;
 
-    public /* synthetic */ mm(byte b) {
-        this.a = b;
+    /* JADX WARN: Type inference failed for: r4v1, types: [int, short] */
+    public mm(float f, View view, long j, long j2, Interpolator interpolator) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var = k43.f;
+        this.a = view;
+        this.d = f;
+        this.c = f;
+        this.f = (int) j;
+        this.g = j2;
+        this.h = interpolator;
+        this.e = false;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((nm) obj).d;
-            case 1:
-                return ((nm) obj).e;
-            case 2:
-                return ((ck0) obj).a;
-            case 3:
-                return ((k27) obj).e1();
-            case 4:
-                return -((TLRPC.TL_forumTopic) obj).top_message;
-            case 5:
-                return ((gt4) obj).e.bid_date;
-            case 6:
-                return ((String) ((Map.Entry) obj).getKey()).hashCode();
-            case 7:
-                hg5 hg5Var = (hg5) obj;
-                return hg5Var.d - hg5Var.b;
-            case 8:
-                return Integer.parseInt((String) obj);
-            case 9:
-                return ((TLRPC.Message) obj).id;
-            case 10:
-                return ((TLRPC.Message) obj).id;
-            case 11:
-                TLRPC.MessagePeerReaction messagePeerReaction = (TLRPC.MessagePeerReaction) obj;
-                int i = messagePeerReaction.date;
-                return (i <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i;
-            case 12:
-                TLRPC.MessagePeerReaction messagePeerReaction2 = (TLRPC.MessagePeerReaction) obj;
-                int i2 = messagePeerReaction2.date;
-                return (i2 <= 0 || messagePeerReaction2.reaction != null) ? TLObject.FLAG_31 : -i2;
-            case 13:
-                return -((TL_stories.StoryView) obj).date;
-            case 14:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 15:
-                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
-            case 16:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 17:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 18:
-                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
-            case 19:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 20:
-                return ((TL_stories.StoryItem) obj).date;
-            case 21:
-                return -((TL_stories.StoryItem) b00.f(1, ((TL_stories.PeerStories) obj).stories)).date;
-            default:
-                return ((Integer) ((Object[]) obj)[1]).intValue();
+    public final void a(boolean z) {
+        e(true, z ? 1.0f : 0.0f);
+    }
+
+    public final float b() {
+        if (this.i) {
+            return ete.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
         }
+        return 0.0f;
+    }
+
+    public final float c() {
+        if (this.i) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            float a = ete.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            if (elapsedRealtime - this.j >= this.f) {
+                Interpolator interpolator = this.h;
+                float f = this.k;
+                float f2 = this.d;
+                if (interpolator == null) {
+                    this.c = hl.R1(f, f2, a);
+                } else {
+                    this.c = hl.R1(f, f2, interpolator.getInterpolation(a));
+                }
+            }
+            if (a >= 1.0f) {
+                this.i = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public final float d(boolean z) {
+        return e(false, z ? 1.0f : 0.0f);
+    }
+
+    public final float e(boolean z, float f) {
+        if (z || this.g <= 0 || this.e) {
+            this.d = f;
+            this.c = f;
+            this.i = false;
+            this.e = false;
+        } else if (Math.abs(this.d - f) > 1.0E-4f) {
+            this.i = true;
+            this.d = f;
+            this.k = this.c;
+            this.j = SystemClock.elapsedRealtime();
+        }
+        return c();
+    }
+
+    public final float f(boolean z, boolean z2) {
+        return e(z2, z ? 1.0f : 0.0f);
+    }
+
+    /* JADX WARN: Type inference failed for: r3v1, types: [int, short] */
+    public mm(long j, long j2, k43 k43Var) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var2 = k43.f;
+        this.a = null;
+        this.f = (int) j;
+        this.g = j2;
+        this.h = k43Var;
+        this.e = true;
+    }
+
+    public mm(View view) {
+        this.f = (short) 0;
+        this.g = 200L;
+        this.h = k43.f;
+        this.a = view;
+        this.e = true;
+    }
+
+    public mm(long j, View view, Interpolator interpolator) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var = k43.f;
+        this.a = view;
+        this.g = j;
+        this.h = interpolator;
+        this.e = true;
+    }
+
+    /* JADX WARN: Type inference failed for: r3v1, types: [int, short] */
+    public mm(View view, long j, long j2, Interpolator interpolator) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var = k43.f;
+        this.a = view;
+        this.f = (int) j;
+        this.g = j2;
+        this.h = interpolator;
+        this.e = true;
+    }
+
+    public mm(Runnable runnable) {
+        this.f = (short) 0;
+        this.g = 200L;
+        this.h = k43.f;
+        this.b = runnable;
+        this.e = true;
+    }
+
+    public mm(Runnable runnable, long j, k43 k43Var) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var2 = k43.f;
+        this.b = runnable;
+        this.g = j;
+        this.h = k43Var;
+        this.e = true;
+    }
+
+    public mm(Runnable runnable, long j, k43 k43Var, int i) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var2 = k43.f;
+        this.b = runnable;
+        this.f = (short) 0;
+        this.g = j;
+        this.h = k43Var;
+        this.e = true;
+    }
+
+    public mm(long j, Interpolator interpolator) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var = k43.f;
+        this.a = null;
+        this.g = j;
+        this.h = interpolator;
+        this.e = true;
+    }
+
+    /* JADX WARN: Type inference failed for: r4v1, types: [int, short] */
+    public mm(float f, Runnable runnable, long j, long j2, k43 k43Var) {
+        this.f = (short) 0;
+        this.g = 200L;
+        k43 k43Var2 = k43.f;
+        this.b = runnable;
+        this.d = f;
+        this.c = f;
+        this.f = (int) j;
+        this.g = j2;
+        this.h = k43Var;
+        this.e = false;
     }
 }

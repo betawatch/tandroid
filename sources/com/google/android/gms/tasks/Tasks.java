@@ -14,7 +14,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
@@ -22,16 +22,16 @@ public final class Tasks {
 
     public static <TResult> TResult await(Task<TResult> task, long j, TimeUnit timeUnit) {
         if (Looper.getMainLooper() == Looper.myLooper()) {
-            sc8.j("Must not be called on the main application thread");
+            grb.i("Must not be called on the main application thread");
             return null;
         }
         Looper myLooper = Looper.myLooper();
         if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
-            sc8.j("Must not be called on GoogleApiHandler thread.");
+            grb.i("Must not be called on GoogleApiHandler thread.");
             return null;
         }
-        fre.i(task, "Task must not be null");
-        fre.i(timeUnit, "TimeUnit must not be null");
+        xve.i(task, "Task must not be null");
+        xve.i(timeUnit, "TimeUnit must not be null");
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
@@ -45,8 +45,8 @@ public final class Tasks {
 
     @Deprecated
     public static <TResult> Task<TResult> call(Executor executor, Callable<TResult> callable) {
-        fre.i(executor, "Executor must not be null");
-        fre.i(callable, "Callback must not be null");
+        xve.i(executor, "Executor must not be null");
+        xve.i(callable, "Callback must not be null");
         zzw zzwVar = new zzw();
         executor.execute(new zzx(zzwVar, callable));
         return zzwVar;
@@ -77,7 +77,7 @@ public final class Tasks {
         Iterator<? extends Task<?>> it = collection.iterator();
         while (it.hasNext()) {
             if (it.next() == null) {
-                fvc.f("null tasks are not accepted");
+                p3d.h("null tasks are not accepted");
                 return null;
             }
         }
@@ -99,13 +99,13 @@ public final class Tasks {
     }
 
     public static <T> Task<T> withTimeout(Task<T> task, long j, TimeUnit timeUnit) {
-        fre.i(task, "Task must not be null");
-        fre.a("Timeout must be positive", j > 0);
-        fre.i(timeUnit, "TimeUnit must not be null");
+        xve.i(task, "Task must not be null");
+        xve.a("Timeout must be positive", j > 0);
+        xve.i(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
-        final q4d q4dVar = new q4d(Looper.getMainLooper());
-        q4dVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzad
+        final j9d j9dVar = new j9d(Looper.getMainLooper());
+        j9dVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzad
             @Override // java.lang.Runnable
             public final /* synthetic */ void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
@@ -114,7 +114,7 @@ public final class Tasks {
         task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzac
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final /* synthetic */ void onComplete(Task task2) {
-                q4d.this.removeCallbacksAndMessages(null);
+                j9d.this.removeCallbacksAndMessages(null);
                 TaskCompletionSource taskCompletionSource2 = taskCompletionSource;
                 if (task2.isSuccessful()) {
                     taskCompletionSource2.trySetResult(task2.getResult());
@@ -201,10 +201,10 @@ public final class Tasks {
         if (Looper.getMainLooper() != Looper.myLooper()) {
             Looper myLooper = Looper.myLooper();
             if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
-                sc8.j("Must not be called on GoogleApiHandler thread.");
+                grb.i("Must not be called on GoogleApiHandler thread.");
                 return null;
             }
-            fre.i(task, "Task must not be null");
+            xve.i(task, "Task must not be null");
             if (task.isComplete()) {
                 return (TResult) zza(task);
             }
@@ -213,7 +213,7 @@ public final class Tasks {
             zzaaVar.zza();
             return (TResult) zza(task);
         }
-        sc8.j("Must not be called on the main application thread");
+        grb.i("Must not be called on the main application thread");
         return null;
     }
 }

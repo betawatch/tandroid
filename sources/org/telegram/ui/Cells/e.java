@@ -11,9 +11,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e extends n39 {
+public final class e extends c79 {
     public final Context c;
     public final /* synthetic */ f d;
 
@@ -22,12 +22,12 @@ public final class e extends n39 {
         this.c = context;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
+    @Override // c79
+    public final boolean D(f89 f89Var) {
         return false;
     }
 
-    @Override // w39
+    @Override // j79
     public final int b() {
         f fVar = this.d;
         int size = fVar.l3.size() + fVar.m3.size();
@@ -35,12 +35,12 @@ public final class e extends n39 {
         return size;
     }
 
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
         int i2;
-        akb akbVar;
+        znb znbVar;
         TLRPC.TL_theme tL_theme;
-        ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) s49Var.a;
+        ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) f89Var.a;
         f fVar = this.d;
         ArrayList arrayList = fVar.m3;
         if (i < arrayList.size()) {
@@ -51,38 +51,38 @@ public final class e extends n39 {
             arrayList = arrayList2;
             i2 = size;
         }
-        akb akbVar2 = (akb) arrayList.get(i2);
+        znb znbVar2 = (znb) arrayList.get(i2);
         boolean z = i == b() - 1;
         boolean z2 = i == 0;
         HashMap hashMap = themesHorizontalListCell$InnerThemeView.b0.h3;
-        themesHorizontalListCell$InnerThemeView.b = akbVar2;
+        themesHorizontalListCell$InnerThemeView.b = znbVar2;
         themesHorizontalListCell$InnerThemeView.s = z2;
         themesHorizontalListCell$InnerThemeView.r = z;
-        themesHorizontalListCell$InnerThemeView.G = akbVar2.Z;
+        themesHorizontalListCell$InnerThemeView.G = znbVar2.Z;
         RadioButton radioButton = themesHorizontalListCell$InnerThemeView.a;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) radioButton.getLayoutParams();
-        layoutParams.leftMargin = gl.L(themesHorizontalListCell$InnerThemeView.s ? 49.0f : 27.0f);
+        layoutParams.leftMargin = hl.L(themesHorizontalListCell$InnerThemeView.s ? 49.0f : 27.0f);
         radioButton.setLayoutParams(layoutParams);
         themesHorizontalListCell$InnerThemeView.w = 0.0f;
-        akb akbVar3 = themesHorizontalListCell$InnerThemeView.b;
-        if (akbVar3.b != null && !akbVar3.U) {
-            akbVar3.R = bkb.D0(bkb.qa);
-            themesHorizontalListCell$InnerThemeView.b.S = bkb.D0(bkb.qb);
+        znb znbVar3 = themesHorizontalListCell$InnerThemeView.b;
+        if (znbVar3.b != null && !znbVar3.U) {
+            znbVar3.R = aob.D0(aob.ra);
+            themesHorizontalListCell$InnerThemeView.b.S = aob.D0(aob.rb);
             boolean exists = new File(themesHorizontalListCell$InnerThemeView.b.b).exists();
-            if ((!exists || !themesHorizontalListCell$InnerThemeView.c() || !exists) && (tL_theme = (akbVar = themesHorizontalListCell$InnerThemeView.b).G) != null) {
+            if ((!exists || !themesHorizontalListCell$InnerThemeView.c() || !exists) && (tL_theme = (znbVar = themesHorizontalListCell$InnerThemeView.b).G) != null) {
                 if (tL_theme.document != null) {
-                    akbVar.V = false;
+                    znbVar.V = false;
                     themesHorizontalListCell$InnerThemeView.w = 1.0f;
                     Drawable mutate = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.msg_theme).mutate();
                     themesHorizontalListCell$InnerThemeView.U = mutate;
-                    int w0 = bkb.w0(null, bkb.D6, false);
+                    int w0 = aob.w0(null, aob.E6, false);
                     themesHorizontalListCell$InnerThemeView.V = w0;
-                    bkb.A1(w0, mutate);
+                    aob.A1(w0, mutate);
                     if (!exists) {
-                        String r = ba4.r(null, themesHorizontalListCell$InnerThemeView.b.G.document);
+                        String r = xb4.r(null, themesHorizontalListCell$InnerThemeView.b.G.document);
                         if (!hashMap.containsKey(r)) {
                             hashMap.put(r, themesHorizontalListCell$InnerThemeView.b);
-                            ba4 G = ba4.G(themesHorizontalListCell$InnerThemeView.b.F);
+                            xb4 G = xb4.G(themesHorizontalListCell$InnerThemeView.b.F);
                             TLRPC.TL_theme tL_theme2 = themesHorizontalListCell$InnerThemeView.b.G;
                             G.X(tL_theme2.document, tL_theme2, 1, 1);
                         }
@@ -90,17 +90,17 @@ public final class e extends n39 {
                 } else {
                     Drawable mutate2 = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.preview_custom).mutate();
                     themesHorizontalListCell$InnerThemeView.U = mutate2;
-                    int w02 = bkb.w0(null, bkb.D6, false);
+                    int w02 = aob.w0(null, aob.E6, false);
                     themesHorizontalListCell$InnerThemeView.V = w02;
-                    bkb.A1(w02, mutate2);
+                    aob.A1(w02, mutate2);
                 }
             }
         }
         themesHorizontalListCell$InnerThemeView.a();
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        return new y29(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        return new n69(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
     }
 }

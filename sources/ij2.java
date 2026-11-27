@@ -1,25 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class ij2 {
-    public final String a;
-    public final String b;
+    public static final /* synthetic */ int e = 0;
+    public final vrb a;
+    public final List b;
+    public final b05 c;
+    public final String d;
 
-    public ij2(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    static {
+        DesugarCollections.unmodifiableList(new ArrayList());
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ij2)) {
-            return false;
-        }
-        ij2 ij2Var = (ij2) obj;
-        return this.a.equals(ij2Var.a) && this.b.equals(ij2Var.b);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    public ij2(vrb vrbVar, List list, b05 b05Var, String str) {
+        this.a = vrbVar;
+        this.b = list;
+        this.c = b05Var;
+        this.d = str;
     }
 }

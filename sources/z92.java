@@ -1,529 +1,604 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.util.Property;
+import android.graphics.Shader;
+import android.os.Build;
+import android.os.SystemClock;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.RoundedCorner;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import java.util.HashSet;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class z92 extends FrameLayout {
-    public final /* synthetic */ byte a;
-    public Object b;
-    public boolean c;
-    public Object d;
-    public Object e;
+public final class z92 extends FrameLayout implements snb {
+    public float E;
+    public boolean F;
+    public float G;
+    public float H;
+    public float I;
+    public int J;
+    public final Rect K;
+    public final RectF L;
+    public rl0 M;
+    public float N;
+    public float O;
+    public int P;
+    public float Q;
+    public boolean R;
+    public s2d a;
+    public final tb b;
+    public final FrameLayout c;
+    public final zc d;
+    public boolean e;
+    public um3 f;
+    public h01 h;
+    public h01 n;
+    public jl0 r;
+    public jl0 s;
+    public final Path w;
+    public int x;
+    public float y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z92(xt5 xt5Var, Context context, boolean z) {
+    public z92(Context context) {
         super(context);
-        this.a = (byte) 2;
-        this.e = xt5Var;
-        this.b = new TextView[2];
-        this.c = !z;
-        setBackground(null);
-        View view = new View(context);
-        this.d = view;
-        if (!z) {
-            view.setBackground(sjb.f(bkb.Ei, 4.0f));
-        }
-        addView(view, nme.d(-1, -1.0f, 0, 16.0f, z ? 0.0f : 16.0f, 16.0f, 16.0f));
-        for (int i = 0; i < 2; i++) {
-            ((TextView[]) this.b)[i] = new TextView(context);
-            ((TextView[]) this.b)[i].setFocusable(false);
-            ((TextView[]) this.b)[i].setLines(1);
-            ((TextView[]) this.b)[i].setSingleLine(true);
-            ((TextView[]) this.b)[i].setGravity(1);
-            ((TextView[]) this.b)[i].setEllipsize(TextUtils.TruncateAt.END);
-            ((TextView[]) this.b)[i].setGravity(17);
-            boolean z2 = this.c;
-            TextView[] textViewArr = (TextView[]) this.b;
-            if (z2) {
-                zkb.X(textViewArr[i], bkb.Ii, null);
-                ((TextView[]) this.b)[i].setTypeface(gl.o());
-            } else {
-                zkb.X(textViewArr[i], bkb.Ei, null);
-            }
-            ((TextView[]) this.b)[i].setImportantForAccessibility(2);
-            ((TextView[]) this.b)[i].setTextSize(1, 14.0f);
-            ((TextView[]) this.b)[i].setPadding(0, 0, 0, this.c ? 0 : gl.L(13.0f));
-            addView(((TextView[]) this.b)[i], nme.d(-2, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
-            if (i == 1) {
-                ((TextView[]) this.b)[i].setAlpha(0.0f);
-            }
-        }
+        this.e = true;
+        this.w = new Path();
+        this.K = new Rect();
+        this.L = new RectF();
+        this.P = jn7.d4;
+        this.Q = 1.0f;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        addView(frameLayout, tre.e(-1, -2, 80));
+        zc zcVar = new zc((byte) 13, context, (Object) this);
+        this.d = zcVar;
+        addView(zcVar, tre.e(-1, -2, 80));
+        this.b = new tb((byte) 8, context, this);
     }
 
-    public final void a(String str, boolean z) {
-        TextView[] textViewArr = (TextView[]) this.b;
-        if (!z) {
-            textViewArr[0].setText(str);
-            return;
+    public final void a(boolean z) {
+        e();
+        int round = Math.round(this.y) + hl.L(9.0f) + this.J;
+        if (this.x != round || z) {
+            this.x = round;
+            int L = hl.L(29.0f);
+            float measuredHeight = getMeasuredHeight() - this.E;
+            float measuredWidth = getMeasuredWidth();
+            float measuredHeight2 = getMeasuredHeight();
+            RectF rectF = this.L;
+            rectF.set(0.0f, measuredHeight, measuredWidth, measuredHeight2);
+            Path path = this.w;
+            path.rewind();
+            float f = L;
+            path.addRoundRect(rectF, new float[]{f, f, f, f, 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CW);
+            path.close();
+            invalidate();
         }
-        textViewArr[1].setText(str);
-        ((xt5) this.e).A1 = true;
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.setDuration(180L);
-        animatorSet.setInterpolator(s33.g);
-        Property property = View.ALPHA;
-        Property property2 = View.TRANSLATION_Y;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, 0.0f, -gl.L(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 0.0f, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, gl.L(10.0f), 0.0f));
-        animatorSet.addListener(new v85(this, (byte) 7));
-        animatorSet.start();
     }
 
     public final void b() {
-        boolean z = this.c;
-        TextView textView = (TextView) this.b;
-        ((TextView) this.e).setVisibility(8);
-        textView.setTextColor(z ? -1 : -15095832);
+        int i;
+        int measuredHeight;
+        rl0 rl0Var = this.M;
+        if (rl0Var == null || (i = rl0Var.getBounds().top) == (measuredHeight = getMeasuredHeight() - Math.round(this.N))) {
+            return;
+        }
+        this.M.setBounds(0, measuredHeight, getMeasuredWidth(), getMeasuredHeight());
+        this.b.invalidate(0, Math.max(0, Math.min(i, measuredHeight)), getMeasuredWidth(), getMeasuredHeight());
+        invalidate(0, Math.max(0, Math.min(i, measuredHeight)), getMeasuredWidth(), getMeasuredHeight());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 4:
-                mmc mmcVar = (mmc) this.e;
-                jmc jmcVar = mmcVar.b;
-                if (jmcVar != null) {
-                    float[] fArr = (float[]) mmcVar.h.b;
-                    float[] fArr2 = jmcVar.k;
-                    float[] fArr3 = jmcVar.l;
-                    Paint paint = jmcVar.b;
-                    Paint paint2 = jmcVar.d;
-                    Path path = jmcVar.p;
-                    if (jmcVar.q != 0.0f && (Math.abs(Math.sin(Math.toRadians(jmcVar.S))) >= 0.009999999776482582d || Math.abs(Math.sin(Math.toRadians(jmcVar.T))) >= 0.009999999776482582d)) {
-                        int a = znc.a(-16216082, fArr);
-                        int a2 = znc.a(-15291399, fArr);
-                        paint.setShader(null);
-                        paint.setAlpha(kk7.d4);
-                        paint.setColor(jmc.d(0.82500005f, 0.0f, 0.0f, a, a2));
-                        path.rewind();
-                        int i = 1;
-                        path.moveTo(fArr3[0], fArr3[1]);
-                        for (int i2 = 1; i2 < 76; i2++) {
-                            int i3 = i2 << 1;
-                            path.lineTo(fArr3[i3], fArr3[i3 + 1]);
-                        }
-                        path.close();
-                        canvas.drawPath(path, paint);
-                        paint2.setShader(null);
-                        paint2.setAlpha(kk7.d4);
-                        paint2.setStrokeWidth(jmcVar.q * 0.6f);
-                        int[] iArr = jmcVar.o;
-                        int length = iArr.length;
-                        int i4 = 0;
-                        while (i4 < length) {
-                            int i5 = iArr[i4];
-                            int i6 = (i5 + 1) % 76;
-                            int i7 = i5 << i;
-                            int i8 = i6 << 1;
-                            float[] fArr4 = jmcVar.j;
-                            float f = (fArr4[i7] + fArr4[i8]) * 0.5f;
-                            int i9 = i7 + 1;
-                            int i10 = i8 + 1;
-                            float f2 = (fArr4[i9] + fArr4[i10]) * 0.5f;
-                            int[] iArr2 = iArr;
-                            int i11 = length;
-                            float sqrt = 1.0f / ((float) Math.sqrt(ir2.i(f2, f2, f * f, 0.0144f)));
-                            float f3 = f * sqrt;
-                            float f4 = f2 * sqrt;
-                            float f5 = (jmcVar.r ? -0.12f : 0.12f) * sqrt;
-                            float c = jmc.c((jmcVar.Y * f5) + (jmcVar.X * f4) + (jmcVar.W * f3));
-                            float c2 = jmc.c((jmcVar.b0 * f5) + (f4 * jmcVar.a0) + (f3 * jmcVar.Z));
-                            int i12 = i4;
-                            float[] fArr5 = fArr2;
-                            float[] fArr6 = fArr3;
-                            float pow = (float) Math.pow(c2, 24.0d);
-                            float z = yjb.z(c, 0.38f, 0.36f, 1.5f);
-                            float f6 = pow * 0.1f * 1.5f;
-                            int d = jmc.d(z, 0.089999996f, f6, a, a2);
-                            paint.setColor(d);
-                            paint2.setColor(d);
-                            path.rewind();
-                            path.moveTo(fArr5[i7], fArr5[i9]);
-                            path.lineTo(fArr5[i8], fArr5[i10]);
-                            path.lineTo(fArr6[i8], fArr6[i10]);
-                            path.lineTo(fArr6[i7], fArr6[i9]);
-                            path.close();
-                            paint2.setStrokeWidth(jmcVar.q * 0.6f);
-                            canvas.drawPath(path, paint);
-                            canvas.drawPath(path, paint2);
-                            paint2.setColor(jmc.d(z * 0.75f, 0.067499995f, f6 * 0.75f, a, a2));
-                            paint2.setStrokeWidth(jmcVar.q * 0.7f);
-                            canvas.drawLine(fArr6[i7], fArr6[i9], fArr6[i8], fArr6[i10], paint2);
-                            i4 = i12 + 1;
-                            length = i11;
-                            fArr2 = fArr5;
-                            iArr = iArr2;
-                            fArr3 = fArr6;
-                            i = 1;
-                        }
-                    }
-                }
-                if (this.c) {
-                    int save = canvas.save();
-                    canvas.concat((Matrix) this.d);
-                    super.dispatchDraw(canvas);
-                    canvas.restoreToCount(save);
-                    break;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    public final void c() {
+        l2d l2dVar = ((v2d) this.a).r;
+        int i = l2dVar != null ? l2dVar.a.f(2).d : 0;
+        float c = ((v2d) this.a).c();
+        zc zcVar = this.d;
+        int childCount = zcVar.getChildCount();
+        for (int i2 = 0; i2 < childCount; i2++) {
+            KeyEvent.Callback childAt = zcVar.getChildAt(i2);
+            if (childAt instanceof fp5) {
+                fp5 fp5Var = (fp5) childAt;
+                fp5Var.a(i);
+                fp5Var.b(c);
+            }
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0118  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00df  */
-    @Override // android.view.View
+    public final void d() {
+        int i;
+        WindowInsets rootWindowInsets;
+        this.y = ((v2d) this.a).d();
+        this.E = ((v2d) this.a).c();
+        int i2 = 0;
+        this.F = ((v2d) this.a).s != 1;
+        zc zcVar = this.d;
+        boolean z = zcVar.getVisibility() == 0;
+        boolean z2 = this.F;
+        if (z != z2) {
+            zcVar.setVisibility(z2 ? 0 : 8);
+        }
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) zcVar.getLayoutParams();
+        int i3 = layoutParams.height;
+        int i4 = ((v2d) this.a).x;
+        if (i3 != i4) {
+            layoutParams.height = i4;
+            requestLayout();
+        }
+        a(false);
+        c();
+        if (this.s != null) {
+            if (Build.VERSION.SDK_INT < 31 || (rootWindowInsets = getRootWindowInsets()) == null) {
+                i = 0;
+            } else {
+                RoundedCorner roundedCorner = rootWindowInsets.getRoundedCorner(3);
+                RoundedCorner roundedCorner2 = rootWindowInsets.getRoundedCorner(2);
+                i = roundedCorner == null ? 0 : roundedCorner.getRadius();
+                if (roundedCorner2 != null) {
+                    i2 = roundedCorner2.getRadius();
+                }
+            }
+            this.s.t(hl.L(29.0f), hl.L(29.0f), i2, i, true);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:102:0x033f  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0597  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x028b  */
+    @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onDraw(Canvas canvas) {
+    public final void dispatchDraw(Canvas canvas) {
         float f;
+        float f2;
+        float f3;
+        float f4;
+        Canvas canvas2;
+        float d;
+        int[] iArr;
+        float f5;
+        int[] iArr2;
+        float f6;
+        tw1 tw1Var;
+        tx1 tx1Var;
+        int f7;
         int i;
-        boolean z;
-        Boolean bool;
-        int i2 = 2;
-        switch (this.a) {
-            case 0:
-                TextPaint textPaint = (TextPaint) this.e;
-                int w0 = bkb.w0(null, bkb.L6, false);
-                int red = Color.red(w0);
-                int green = Color.green(w0);
-                int blue = Color.blue(w0);
-                y92 y92Var = (y92) this.d;
-                y92Var.b(bkb.w0(null, bkb.f7, false), bkb.w0(null, bkb.g7, false));
-                RectF rectF = (RectF) this.b;
-                rectF.set(gl.L(1.0f), gl.L(1.0f), getMeasuredWidth() - gl.L(1.0f), gl.L(73.0f));
-                bkb.W1.setColor(Color.argb((int) (y92Var.getProgress() * 43.0f), red, green, blue));
-                canvas.drawRoundRect(rectF, gl.L(6.0f), gl.L(6.0f), bkb.W1);
-                rectF.set(0.0f, 0.0f, getMeasuredWidth(), gl.L(74.0f));
-                bkb.s0.setColor(Color.argb((int) ((1.0f - y92Var.getProgress()) * 31.0f), red, green, blue));
-                canvas.drawRoundRect(rectF, gl.L(6.0f), gl.L(6.0f), bkb.s0);
-                boolean z2 = this.c;
-                String M0 = k96.M0(z2 ? 2131752211 : 2131752212, null);
-                int ceil = (int) Math.ceil(textPaint.measureText(M0));
-                textPaint.setColor(bkb.w0(null, bkb.F6, false));
-                canvas.drawText(M0, (getMeasuredWidth() - ceil) / 2, gl.L(96.0f), textPaint);
-                int i3 = 0;
-                while (i3 < i2) {
-                    int L = gl.L(i3 == 0 ? 21.0f : 53.0f);
-                    bkb.s0.setColor(Color.argb(i3 == 0 ? 204 : 90, red, green, blue));
-                    canvas.drawCircle(gl.L(22.0f), L, gl.L(11.0f), bkb.s0);
-                    int i4 = r8;
-                    while (true) {
-                        if (i4 < (z2 ? 3 : 2)) {
-                            bkb.s0.setColor(Color.argb(i4 == 0 ? 204 : 90, red, green, blue));
-                            if (z2) {
-                                float f2 = i4 * 7;
-                                rectF.set(gl.L(41.0f), L - gl.L(8.3f - f2), getMeasuredWidth() - gl.L(i4 != 0 ? 48.0f : 72.0f), L - gl.L(5.3f - f2));
-                                canvas.drawRoundRect(rectF, gl.N(1.5f), gl.N(1.5f), bkb.s0);
-                            } else {
-                                int i5 = i4 * 10;
-                                rectF.set(gl.L(41.0f), L - gl.L(7 - i5), getMeasuredWidth() - gl.L(i4 != 0 ? 48.0f : 72.0f), L - gl.L(3 - i5));
-                                canvas.drawRoundRect(rectF, gl.L(2.0f), gl.L(2.0f), bkb.s0);
-                            }
-                            i4++;
-                        }
-                    }
-                    i3++;
-                    i2 = 2;
-                    r8 = 0;
-                }
-                break;
-            case 1:
-                RectF rectF2 = (RectF) this.b;
-                cf4 cf4Var = (cf4) this.e;
-                int L2 = (cf4Var.r1 - cf4Var.t0) - gl.L(8.0f);
-                getMeasuredHeight();
-                int i6 = cf4Var.t0;
-                int i7 = gl.m;
-                int i8 = L2 + i7;
-                if (this.c) {
-                    int i9 = i7 << 1;
-                    if (i8 + i6 < i9) {
-                        i8 -= Math.min(i7, (i9 - i8) - i6);
-                        f = 1.0f - Math.min(1.0f, (r6 << 1) / gl.m);
-                    } else {
-                        f = 1.0f;
-                    }
-                    int i10 = cf4Var.t0;
-                    int i11 = i8 + i10;
-                    int i12 = gl.m;
-                    if (i11 < i12) {
-                        i = Math.min(i12, (i12 - i8) - i10);
-                        cf4Var.s0.setBounds(0, i8, getMeasuredWidth(), getMeasuredHeight());
-                        cf4Var.s0.draw(canvas);
-                        if (f != 1.0f) {
-                            bkb.s0.setColor(bkb.w0(null, bkb.g5, false));
-                            rectF2.set(cf4Var.u0, cf4Var.t0 + i8, getMeasuredWidth() - cf4Var.u0, gl.L(24.0f) + cf4Var.t0 + i8);
-                            canvas.drawRoundRect(rectF2, gl.L(12.0f) * f, gl.L(12.0f) * f, bkb.s0);
-                        }
-                        if (i > 0) {
-                            bkb.s0.setColor(bkb.w0(null, bkb.g5, false));
-                            canvas.drawRect(cf4Var.u0, gl.m - i, getMeasuredWidth() - cf4Var.u0, gl.m, bkb.s0);
-                        }
-                        z = i <= gl.m / 2;
-                        bool = (Boolean) this.d;
-                        if (bool != null || bool.booleanValue() != z) {
-                            boolean z3 = gl.B(bkb.v0(bkb.g5, cf4Var.J0)) <= 0.721f;
-                            r8 = gl.B(bkb.v(bkb.v0(bkb.r8, cf4Var.J0), 855638016)) > 0.721f ? 1 : 0;
-                            this.d = Boolean.valueOf(z);
-                            boolean z4 = z3;
-                            if (!z) {
-                                z4 = r8;
-                            }
-                            gl.n3(cf4Var.getWindow(), z4);
-                            break;
-                        }
-                    }
+        int f8;
+        float f9;
+        int i2;
+        int f10;
+        float c;
+        this.s.setBounds(0, getMeasuredHeight() - ((int) this.E), getMeasuredWidth(), qu6.e(58.0f, getMeasuredHeight() - ((int) this.E), getMeasuredHeight()));
+        int measuredHeight = getMeasuredHeight() - this.x;
+        int round = Math.round(this.G);
+        int measuredWidth = getMeasuredWidth() - Math.round(this.H);
+        int i3 = this.J;
+        Rect rect = this.K;
+        rect.set(round, 0, measuredWidth, i3);
+        rect.inset(0, -hl.L(7.0f));
+        rect.offset(0, measuredHeight + ((int) this.O));
+        this.r.setBounds(rect);
+        if (this.e) {
+            this.r.draw(canvas);
+        }
+        um3 um3Var = this.f;
+        if (um3Var == null || !this.e) {
+            f = 0.45f;
+            f2 = 0.3f;
+            f3 = 1000.0f;
+            f4 = 22.0f;
+        } else {
+            Rect rect2 = this.r.S.m;
+            bn3 bn3Var = um3Var.b;
+            vnb vnbVar = bn3Var.n;
+            RectF rectF = bn3Var.y;
+            int[] iArr3 = bn3Var.E;
+            RectF rectF2 = bn3Var.a0;
+            f = 0.45f;
+            gn3 gn3Var = bn3Var.x;
+            f2 = 0.3f;
+            d dVar = bn3Var.f;
+            f3 = 1000.0f;
+            rn3 rn3Var = bn3Var.w;
+            f4 = 22.0f;
+            if (rn3Var != null && (rn3Var.T || rn3Var.W.c > 0.0f || rn3Var.y0 || rn3Var.C0.c > 0.0f)) {
+                rn3Var.invalidate();
+            }
+            if (bn3Var.Z != null) {
+                boolean z = bn3Var.r == 4;
+                sn3 sn3Var = bn3Var.a;
+                boolean z2 = sn3Var != null && sn3Var.d;
+                boolean z3 = SystemClock.uptimeMillis() < bn3Var.X;
+                long uptimeMillis = SystemClock.uptimeMillis();
+                boolean z4 = z;
+                long j = bn3Var.b;
+                if (j <= 0 || uptimeMillis < j || bn3Var.Y || z4) {
+                    d = bn3Var.Z.d(bn3Var.Y || z4 || z3 || z2 || j > 0);
                 } else {
-                    f = 1.0f;
+                    float min = Math.min(1.0f, (uptimeMillis - j) / 580.0f);
+                    if (min >= 1.0f) {
+                        bn3Var.b = 0L;
+                        bn3Var.Z.e(true, 0.0f);
+                        d = 0.0f;
+                    } else {
+                        bn3Var.Z.e(true, 1.0f);
+                        d = 1.0f - bn3.J0.getInterpolation(min);
+                    }
                 }
-                i = 0;
-                cf4Var.s0.setBounds(0, i8, getMeasuredWidth(), getMeasuredHeight());
-                cf4Var.s0.draw(canvas);
-                if (f != 1.0f) {
+                if (d <= 0.0f) {
+                    bn3Var.d = false;
+                    bn3Var.I(0.0f, 0.0f);
+                    dVar.c(0.0f, 0);
+                } else {
+                    long uptimeMillis2 = SystemClock.uptimeMillis();
+                    float min2 = bn3Var.S == 0 ? 0.016f : Math.min(0.05f, (uptimeMillis2 - r11) / 1000.0f);
+                    bn3Var.S = uptimeMillis2;
+                    float f11 = z4 ? 0.55f : bn3Var.Q;
+                    float f12 = bn3Var.R;
+                    float A = qd4.A(1.0f, (float) Math.exp((-min2) / (f11 > f12 ? 0.12f : 0.4f)), f11 - f12, f12);
+                    bn3Var.R = A;
+                    if (bn3Var.Y && !z4) {
+                        float f13 = bn3Var.Q;
+                        if (f13 > 0.3f && f13 > (A * 1.5f) + 0.08f && uptimeMillis2 - bn3Var.T > 1000) {
+                            bn3Var.T = uptimeMillis2;
+                            bn3Var.U = (float) (((Math.random() * 3.141592653589793d) * 2.0d) - 3.141592653589793d);
+                        }
+                    }
+                    float f14 = (uptimeMillis2 - bn3Var.T) / 1200.0f;
+                    float interpolation = (f14 < 0.0f || f14 >= 1.0f || z4) ? -1.0f : k43.g.getInterpolation(f14);
+                    float f15 = bn3Var.U;
+                    gn3Var.C = interpolation;
+                    int[] iArr4 = gn3Var.B;
+                    gn3Var.D = f15;
+                    bn3Var.c = (f14 < 0.0f || f14 >= 1.0f) ? 0.0f : (float) Math.sin(f14 * 3.141592653589793d);
+                    rectF2.set(rect2);
+                    if (z4) {
+                        ho3 ho3Var = bn3Var.F;
+                        float uptimeMillis3 = (SystemClock.uptimeMillis() - bn3Var.W) / 1000.0f;
+                        Matrix matrix = ho3Var.l;
+                        if (ho3Var.k == null) {
+                            f5 = 0.7f;
+                            iArr = iArr3;
+                        } else {
+                            f5 = 0.7f;
+                            iArr = iArr3;
+                            float sin = (((float) Math.sin((0.23f * uptimeMillis3) + 1.3f)) * 12.0f) + (((float) Math.sin(uptimeMillis3 * 0.45f)) * 28.0f);
+                            matrix.reset();
+                            matrix.setRotate(sin);
+                            matrix.postTranslate(hl.L(46.0f) * uptimeMillis3, hl.L(10.0f) * ((float) Math.sin(uptimeMillis3 * 0.7f)));
+                            ho3Var.k.setLocalMatrix(matrix);
+                        }
+                        iArr2 = iArr4;
+                    } else {
+                        iArr = iArr3;
+                        f5 = 0.7f;
+                        if (z2) {
+                            float g = bn3Var.a.g();
+                            bn3Var.d = true;
+                            iArr2 = iArr4;
+                            f6 = g;
+                        } else {
+                            iArr2 = iArr4;
+                            if (bn3Var.d) {
+                                f6 = 1.0f;
+                            }
+                        }
+                        float e = d * bn3Var.e.e(false, !bn3Var.Y ? 1.0f : (z4 || z2 || bn3Var.d) ? 0.85f : f5);
+                        int[] iArr5 = iArr;
+                        bn3Var.x.b(Math.min(hl.L(22.0f), rectF2.height() / 2.0f), e, f6, bn3Var.R, canvas, rectF2);
+                        bn3Var.I(e, bn3Var.c);
+                        tw1Var = dVar.a.R0;
+                        if (tw1Var == null && tw1Var.getVisibility() == 0 && tw1Var.getAlpha() > 0.01f && bn3Var.p(rectF)) {
+                            tw1Var.getLocationInWindow(iArr5);
+                            int a = gn3Var.a((tw1Var.getWidth() / 2.0f) + iArr5[0], (tw1Var.getHeight() / 2.0f) + iArr5[1], rectF);
+                            if (gn3.c(aob.v0(aob.d6, vnbVar))) {
+                                f10 = vm2.f(0.4f, a, -1);
+                                c = 1.0f;
+                            } else {
+                                f10 = vm2.f(0.5f, a, iArr2[4]);
+                                c = hn3.c(11);
+                            }
+                            dVar.c(e * c, f10);
+                        } else {
+                            dVar.c(0.0f, 0);
+                        }
+                        Matrix matrix2 = bn3Var.A0;
+                        tx1Var = dVar.a.F0;
+                        if (tx1Var != null) {
+                            if (bn3Var.r == 1) {
+                                boolean c2 = gn3.c(aob.v0(aob.d6, vnbVar));
+                                if (bn3Var.x0 == null || bn3Var.y0 != c2 || bn3Var.z0 != gn3.V) {
+                                    bn3Var.y0 = c2;
+                                    bn3Var.z0 = gn3.V;
+                                    int i4 = aob.Me;
+                                    int v0 = aob.v0(i4, vnbVar);
+                                    if (c2) {
+                                        v0 = gn3.d(v0);
+                                    }
+                                    int i5 = v0 | (-16777216);
+                                    if (c2) {
+                                        f7 = gn3.e(-7359233);
+                                        i2 = gn3.e(-7411982);
+                                        f8 = gn3.e(-4940545);
+                                        f9 = 0.92f;
+                                        i = -16777216;
+                                    } else {
+                                        f7 = vm2.f(0.55f, iArr2[0], iArr2[4]);
+                                        i = -16777216;
+                                        int f16 = vm2.f(0.55f, iArr2[1], iArr2[4]);
+                                        f8 = vm2.f(0.55f, iArr2[2], iArr2[4]);
+                                        f9 = 0.9f;
+                                        i2 = f16;
+                                    }
+                                    if (c2) {
+                                        bn3Var.x0 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{vm2.f(f9, i5, f7), vm2.f(f9, i5, i2), vm2.f(f9, i5, f8), vm2.f(f9, i5, f7)}, (float[]) null, Shader.TileMode.MIRROR);
+                                    } else {
+                                        int v02 = aob.v0(i4, vnbVar);
+                                        int alpha = Color.alpha(v02);
+                                        int[] iArr6 = new int[4];
+                                        iArr6[0] = f7;
+                                        iArr6[1] = i2;
+                                        iArr6[2] = f8;
+                                        iArr6[3] = f7;
+                                        for (int i6 = 0; i6 < 4; i6++) {
+                                            iArr6[i6] = vm2.o(vm2.f(0.12f, v02 | i, iArr6[i6]), alpha);
+                                        }
+                                        bn3Var.x0 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, iArr6, (float[]) null, Shader.TileMode.MIRROR);
+                                    }
+                                }
+                                float L = hl.L(160.0f);
+                                matrix2.setScale(L, 1.0f);
+                                matrix2.postTranslate(((SystemClock.uptimeMillis() % 6000) / 6000.0f) * 2.0f * L, 0.0f);
+                                bn3Var.x0.setLocalMatrix(matrix2);
+                                tx1Var.m1 = bn3Var.x0;
+                                tx1Var.invalidate();
+                            } else if (tx1Var.m1 != null) {
+                                tx1Var.m1 = null;
+                                tx1Var.invalidate();
+                            }
+                        }
+                        bn3Var.b0.postInvalidateOnAnimation();
+                    }
+                    f6 = -1.0f;
+                    float e2 = d * bn3Var.e.e(false, !bn3Var.Y ? 1.0f : (z4 || z2 || bn3Var.d) ? 0.85f : f5);
+                    int[] iArr52 = iArr;
+                    bn3Var.x.b(Math.min(hl.L(22.0f), rectF2.height() / 2.0f), e2, f6, bn3Var.R, canvas, rectF2);
+                    bn3Var.I(e2, bn3Var.c);
+                    tw1Var = dVar.a.R0;
+                    if (tw1Var == null) {
+                    }
+                    dVar.c(0.0f, 0);
+                    Matrix matrix22 = bn3Var.A0;
+                    tx1Var = dVar.a.F0;
+                    if (tx1Var != null) {
+                    }
+                    bn3Var.b0.postInvalidateOnAnimation();
                 }
-                if (i > 0) {
-                }
-                if (i <= gl.m / 2) {
-                }
-                bool = (Boolean) this.d;
-                if (bool != null) {
-                }
-                if (gl.B(bkb.v0(bkb.g5, cf4Var.J0)) <= 0.721f) {
-                }
-                if (gl.B(bkb.v(bkb.v0(bkb.r8, cf4Var.J0), 855638016)) > 0.721f) {
-                }
-                this.d = Boolean.valueOf(z);
-                boolean z42 = z3;
-                if (!z) {
-                }
-                gl.n3(cf4Var.getWindow(), z42);
-            default:
-                super.onDraw(canvas);
-                break;
+            }
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName(RadioButton.class.getName());
-                accessibilityNodeInfo.setChecked(((y92) this.d).f);
-                accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setContentDescription(k96.M0(this.c ? 2131752211 : 2131752212, null));
-                break;
-            case 1:
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-            case 2:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName("android.widget.Button");
-                accessibilityNodeInfo.setClickable(true);
-                break;
+        h01 h01Var = this.h;
+        if (h01Var != null && this.e) {
+            Rect rect3 = this.r.S.m;
+            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) h01Var.b;
+            z92 z92Var = (z92) h01Var.c;
+            RectF rectF3 = chatActivityEnterView.O6;
+            ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.C2;
+            if (recordCircle != null && chatActivityEnterView.N6 != null) {
+                long uptimeMillis4 = SystemClock.uptimeMillis();
+                if (recordCircle.e0 > 0.003f && uptimeMillis4 - recordCircle.f0 <= 100) {
+                    float f17 = recordCircle.n.t;
+                    znc zncVar = chatActivityEnterView.N6;
+                    float max = Math.max(0.0f, Math.min(1.0f, f17));
+                    float min3 = Math.min(0.1f, Math.max(0.0f, (uptimeMillis4 - zncVar.d) / f3));
+                    zncVar.d = uptimeMillis4;
+                    float f18 = zncVar.c;
+                    zncVar.c = qd4.A(1.0f, (float) Math.exp((-min3) / (max > f18 ? 0.04f : 0.18f)), max - f18, f18);
+                    rectF3.set(rect3);
+                    chatActivityEnterView.N6.a(canvas, rectF3, Math.min(hl.L(f4), rectF3.height() / 2.0f), recordCircle.e0, uptimeMillis4, chatActivityEnterView.k5);
+                    z92Var.postInvalidateOnAnimation();
+                }
+            }
         }
+        h01 h01Var2 = this.n;
+        if (h01Var2 != null && this.e) {
+            Rect rect4 = this.r.S.m;
+            ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) h01Var2.b;
+            z92 z92Var2 = (z92) h01Var2.c;
+            RectF rectF4 = chatActivityEnterView2.M6;
+            sn3 sn3Var2 = chatActivityEnterView2.z6;
+            if (sn3Var2 != null && sn3Var2.d && chatActivityEnterView2.L6 != null && gn3.c(chatActivityEnterView2.J0(aob.d6))) {
+                float g2 = sn3Var2.g();
+                if (g2 >= 0.0f) {
+                    float min4 = Math.min(1.0f, (1.0f - g2) / f2) * Math.min(1.0f, g2 / 0.15f);
+                    gn3 gn3Var2 = chatActivityEnterView2.L6;
+                    if (!gn3Var2.h) {
+                        gn3Var2.h = true;
+                    }
+                    if (min4 > 0.001f) {
+                        rectF4.set(rect4);
+                        canvas2 = canvas;
+                        chatActivityEnterView2.L6.b(Math.min(hl.L(f4), rectF4.height() / 2.0f), min4 * f, g2, 0.35f, canvas2, rectF4);
+                    } else {
+                        canvas2 = canvas;
+                    }
+                    z92Var2.postInvalidateOnAnimation();
+                    if (this.F) {
+                        this.s.draw(canvas2);
+                    }
+                    super.dispatchDraw(canvas);
+                }
+            }
+        }
+        canvas2 = canvas;
+        if (this.F) {
+        }
+        super.dispatchDraw(canvas);
     }
 
     @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                cf4 cf4Var = (cf4) this.e;
-                if (motionEvent.getAction() != 0 || cf4Var.r1 == 0 || motionEvent.getY() >= cf4Var.r1) {
-                    return super.onInterceptTouchEvent(motionEvent);
-                }
-                cf4Var.dismiss();
-                return true;
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        boolean z = view == this.d;
+        if (z) {
+            canvas.save();
+            canvas.clipPath(this.s.S.k);
         }
+        boolean drawChild = super.drawChild(canvas, view, j);
+        if (z) {
+            canvas.restore();
+        }
+        return drawChild;
+    }
+
+    public final void e() {
+        this.c.setTranslationY((-this.y) - hl.L(9.0f));
+        this.d.setTranslationY(r0.getMeasuredHeight() - this.E);
+    }
+
+    public View getFadeView() {
+        return this.b;
+    }
+
+    public FrameLayout getInAppKeyboardBubbleContainer() {
+        return this.d;
+    }
+
+    public float getInputBubbleBottom() {
+        return (getMeasuredHeight() - this.y) - hl.L(9.0f);
+    }
+
+    public float getInputBubbleHeight() {
+        return this.I;
+    }
+
+    public float getInputBubbleTop() {
+        return getInputBubbleBottom() - getInputBubbleHeight();
+    }
+
+    public FrameLayout getInputIslandBubbleContainer() {
+        return this.c;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        switch (this.a) {
-            case 1:
-                super.onLayout(z, i, i2, i3, i4);
-                ((cf4) this.e).F0();
-                break;
-            default:
-                super.onLayout(z, i, i2, i3, i4);
-                break;
-        }
+        super.onLayout(z, i, i2, i3, i4);
+        e();
+        c();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        switch (this.a) {
-            case 1:
-                int size = View.MeasureSpec.getSize(i2);
-                cf4 cf4Var = (cf4) this.e;
-                fu fuVar = cf4Var.m1;
-                cf4Var.s1 = true;
-                int i3 = cf4Var.u0;
-                setPadding(i3, gl.m, i3, 0);
-                cf4Var.s1 = false;
-                int b = (cf4Var.n1.b() * gl.L(48.0f)) + gl.L(48.0f);
-                int i4 = cf4Var.t0;
-                int i5 = b + i4 + gl.m;
-                int i6 = size / 5;
-                int i7 = ((double) i5) < ((double) i6) * 3.2d ? 0 : i6 << 1;
-                if (i7 != 0 && i5 < size) {
-                    i7 -= size - i5;
-                }
-                if (i7 != 0) {
-                    i4 = i7;
-                }
-                if (fuVar.getPaddingTop() != i4) {
-                    cf4Var.s1 = true;
-                    fuVar.setPadding(gl.L(10.0f), i4, gl.L(10.0f), 0);
-                    cf4Var.s1 = false;
-                }
-                this.c = i5 >= size;
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(i5, size), TLObject.FLAG_30));
-                break;
-            case 2:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(this.c ? 80.0f : 50.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i, i2);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        switch (this.a) {
-            case 4:
-                super.onSizeChanged(i, i2, i3, i4);
-                mmc mmcVar = (mmc) this.e;
-                mmcVar.j0 = -1;
-                mmcVar.b(mmcVar.d0, mmcVar.g0);
-                break;
-            default:
-                super.onSizeChanged(i, i2, i3, i4);
-                break;
-        }
+        super.onMeasure(i, i2);
+        a(true);
+        b();
+        e();
+        c();
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                return !((cf4) this.e).J && super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
+        jl0 jl0Var;
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            int x = (int) motionEvent.getX();
+            int y = (int) motionEvent.getY();
+            jl0 jl0Var2 = this.r;
+            this.R = (jl0Var2 != null && jl0Var2.c == 255 && jl0Var2.getBounds().contains(x, y)) || ((jl0Var = this.s) != null && jl0Var.getBounds().contains(x, y));
+        }
+        if (action == 1 || action == 3) {
+            this.R = false;
+        }
+        return this.R;
+    }
+
+    public void setBackgroundWithFadeDrawable(rl0 rl0Var) {
+        this.M = rl0Var;
+    }
+
+    public void setBlurredBottomHeight(float f) {
+        if (this.N != f) {
+            this.N = f;
+            b();
         }
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        switch (this.a) {
-            case 1:
-                if (!((cf4) this.e).s1) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.requestLayout();
-                break;
+    public void setInputBubbleAlpha(int i) {
+        this.P = i;
+        jl0 jl0Var = this.r;
+        if (jl0Var != null) {
+            jl0Var.setAlpha((int) (i * this.Q));
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z92(cf4 cf4Var, Activity activity) {
-        super(activity);
-        this.a = (byte) 1;
-        this.e = cf4Var;
-        this.b = new RectF();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z92(Context context, byte b) {
-        super(context);
-        this.a = b;
-        switch (b) {
-            case 3:
-                super(context);
-                this.c = true;
-                setBackgroundColor(-15066598);
-                TextView textView = new TextView(context);
-                this.d = textView;
-                textView.setTextSize(1, 14.0f);
-                textView.setTextColor(-1);
-                textView.setGravity(17);
-                textView.setBackground(bkb.f0(-12763843, 0, -1));
-                textView.setPadding(gl.L(20.0f), 0, gl.L(20.0f), 0);
-                textView.setText(k96.M0(2131752577, null).toUpperCase());
-                textView.setTypeface(gl.o());
-                addView(textView, nme.e(-2, -1, 51));
-                TextView textView2 = new TextView(context);
-                this.b = textView2;
-                textView2.setTextSize(1, 14.0f);
-                textView2.setTextColor(-1);
-                textView2.setGravity(17);
-                textView2.setBackgroundDrawable(bkb.f0(-12763843, 0, -1));
-                textView2.setPadding(gl.L(20.0f), 0, gl.L(20.0f), 0);
-                textView2.setText(k96.M0(2131745448, null).toUpperCase());
-                textView2.setTypeface(gl.o());
-                addView(textView2, nme.e(-2, -1, 53));
-                TextView textView3 = new TextView(context);
-                this.e = textView3;
-                textView3.setTypeface(gl.o());
-                textView3.setTextSize(1, 13.0f);
-                textView3.setTextColor(-1);
-                textView3.setGravity(17);
-                textView3.setBackgroundResource(R.drawable.photobadge);
-                textView3.setMinWidth(gl.L(23.0f));
-                textView3.setPadding(gl.L(8.0f), 0, gl.L(8.0f), gl.L(1.0f));
-                addView(textView3, nme.d(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
-                break;
-            default:
-                break;
+    public void setInputBubbleExtraAlpha(float f) {
+        if (this.Q != f) {
+            this.Q = f;
+            jl0 jl0Var = this.r;
+            if (jl0Var != null) {
+                jl0Var.setAlpha((int) (this.P * f));
+            }
+            invalidate();
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z92(mmc mmcVar, Context context) {
-        super(context);
-        this.a = (byte) 4;
-        this.e = mmcVar;
-        this.d = new Matrix();
-        this.b = new float[8];
-        setClipChildren(false);
-        setClipToPadding(false);
+    public void setInputBubbleHeight(float f) {
+        this.I = f;
+        this.J = Math.round(f);
+        a(false);
+    }
+
+    public void setInputBubbleTranslationY(float f) {
+        this.O = f;
+        invalidate();
+    }
+
+    public void setInputIslandBubbleDrawable(jl0 jl0Var) {
+        this.r = jl0Var;
+        jl0Var.q(hl.L(7.0f));
+        this.r.r(hl.L(22.0f));
+    }
+
+    public void setUnderKeyboardBackgroundDrawable(jl0 jl0Var) {
+        this.s = jl0Var;
+        jl0Var.U = true;
+        jl0Var.s(hl.L(29.0f), hl.L(29.0f), 0.0f, 0.0f);
+        this.s.u(hl.L(32.0f));
+        jl0 jl0Var2 = this.s;
+        jl0Var2.S.g = 0.4f;
+        jl0Var2.n();
+    }
+
+    public void setWindowInsetsProvider(s2d s2dVar) {
+        this.a = s2dVar;
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        jl0 jl0Var = this.r;
+        if (jl0Var != null) {
+            jl0Var.updateColors();
+        }
+        jl0 jl0Var2 = this.s;
+        if (jl0Var2 != null) {
+            jl0Var2.updateColors();
+        }
+        invalidate();
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

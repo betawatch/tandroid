@@ -1,36 +1,28 @@
 // default package
 
-import java.util.ArrayList;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public class f46 {
+    public final int a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final int e;
+    public boolean f;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f46 {
-    public StringBuilder d;
-    public String e;
-    public String f;
-    public char g;
-    public StringBuilder h;
-    public int a = 1;
-    public final StringBuilder b = new StringBuilder();
-    public final ArrayList c = new ArrayList();
-    public boolean i = false;
+    public f46(int i, int i2, int i3, String str, String str2) {
+        this.a = i;
+        this.b = i2;
+        this.c = str;
+        this.d = str2;
+        this.e = i3;
+    }
 
-    public final void a() {
-        if (this.i) {
-            String a = z34.a(this.f);
-            StringBuilder sb = this.h;
-            String a2 = sb != null ? z34.a(sb.toString()) : null;
-            String str = this.e;
-            e46 e46Var = new e46();
-            e46Var.g = str;
-            e46Var.h = a;
-            e46Var.i = a2;
-            this.c.add(e46Var);
-            this.d = null;
-            this.i = false;
-            this.e = null;
-            this.f = null;
-            this.h = null;
-        }
+    public static f46 a(int i, int i2) {
+        return new f46(i, i2, -1, null, null);
+    }
+
+    public static f46 b(int i, int i2, String str) {
+        return new f46(i, -1, i2, null, str);
     }
 }

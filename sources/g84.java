@@ -1,35 +1,13 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface g84 {
+    public static final z6f v = new z6f((byte) 19);
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class g84 extends AnimatorListenerAdapter {
-    public final /* synthetic */ i84 a;
+    void D();
 
-    public g84(i84 i84Var) {
-        this.a = i84Var;
-    }
+    x1c e0(int i, int i2);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        i84 i84Var = this.a;
-        ah8 ah8Var = i84Var.n;
-        TextView textView = i84Var.h;
-        ls8 ls8Var = i84Var.f;
-        if (i84Var.x) {
-            ls8Var.setVisibility(4);
-            textView.setVisibility(4);
-            ah8Var.setVisibility(0);
-        } else {
-            if (i84Var.w) {
-                ls8Var.setVisibility(4);
-            } else {
-                textView.setVisibility(4);
-            }
-            ah8Var.setVisibility(8);
-        }
-    }
+    void m0(zy9 zy9Var);
 }

@@ -1,45 +1,30 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.location.Location;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class i17 extends CharacterStyle {
-    public final /* synthetic */ byte a;
+public final class i17 implements n7a {
+    public final /* synthetic */ r17 a;
 
-    public i17(j17 j17Var) {
-        this.a = (byte) 0;
+    public i17(r17 r17Var) {
+        this.a = r17Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setTypeface(gl.o());
-                int alpha = textPaint.getAlpha();
-                textPaint.setColor(bkb.w0(null, bkb.m6, false));
-                textPaint.setAlpha(alpha);
-                break;
-            case 1:
-                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
-                textPaint.setColor(bkb.S2.getColor());
-                break;
-            case 2:
-                textPaint.setColor(bkb.n2.linkColor);
-                break;
-            case 3:
-                break;
-            default:
-                textPaint.setAlpha(128);
-                break;
+    @Override // n7a
+    public final void O() {
+        this.a.Q();
+    }
+
+    @Override // n7a
+    public final void T(Location location) {
+        r17 r17Var = this.a;
+        TLRPC.User user = r17Var.x0;
+        if (user == null || !user.bot_inline_geo) {
+            return;
         }
-    }
-
-    public /* synthetic */ i17(byte b) {
-        this.a = b;
-    }
-
-    private final void a(TextPaint textPaint) {
+        r17Var.A0 = location;
+        r17Var.T(true, user, r17Var.s0, "");
     }
 }

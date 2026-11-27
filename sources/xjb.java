@@ -1,53 +1,31 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class xjb extends Drawable {
-    public float[] b;
-    public Path a = new Path();
-    public boolean c = true;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class xjb {
+    public final a94[] a;
+    public final boolean b;
+    public final char c;
 
-    public xjb(float f, float f2) {
-        this.b = new float[]{r2, r2, r2, r2, r2, r2, r2, r2};
-        float L = gl.L(f);
-        float L2 = gl.L(f2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Path path = this.a;
-        if (this.c) {
-            this.c = false;
-            path.reset();
-            RectF rectF = gl.P;
-            rectF.set(getBounds());
-            path.addRoundRect(rectF, this.b, Path.Direction.CW);
+    /* JADX WARN: Multi-variable type inference failed */
+    public xjb(a94[] a94VarArr, boolean z, int i) {
+        this.a = a94VarArr;
+        boolean z2 = false;
+        if (a94VarArr != null && z) {
+            z2 = true;
         }
-        canvas.drawPath(path, bkb.z);
+        this.b = z2;
+        this.c = i;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
+    public static wjb b() {
+        wjb wjbVar = new wjb();
+        wjbVar.b = true;
+        wjbVar.d = (char) 0;
+        return wjbVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.c = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
+    public abstract void c(d05 d05Var, TaskCompletionSource taskCompletionSource);
 }

@@ -1,95 +1,96 @@
 // default package
 
+import java.util.AbstractSet;
 import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ms implements Iterator {
-    public int a;
-    public int b;
-    public boolean c;
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ Object e;
+public final class ms extends AbstractSet {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Map b;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ms(ps psVar, byte b) {
-        this(psVar.c);
-        this.d = b;
-        switch (b) {
+    public /* synthetic */ ms(Map map, byte b) {
+        this.a = b;
+        this.b = map;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean add(Object obj) {
+        switch (this.a) {
             case 1:
-                this.e = psVar;
-                this(psVar.c);
+                Map.Entry entry = (Map.Entry) obj;
+                if (contains(entry)) {
+                    return false;
+                }
+                ((ona) this.b).put((Comparable) entry.getKey(), entry.getValue());
+                return true;
+            default:
+                return super.add(obj);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        switch (this.a) {
+            case 1:
+                ((ona) this.b).clear();
                 break;
             default:
-                this.e = psVar;
+                super.clear();
                 break;
         }
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b < this.a;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        Object f;
-        if (!hasNext()) {
-            w26.g();
-            return null;
-        }
-        int i = this.b;
-        byte b = this.d;
-        Object obj = this.e;
-        switch (b) {
-            case 0:
-                f = ((ps) obj).f(i);
-                break;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        switch (this.a) {
             case 1:
-                f = ((ps) obj).i(i);
-                break;
+                Map.Entry entry = (Map.Entry) obj;
+                Object obj2 = ((ona) this.b).get(entry.getKey());
+                Object value = entry.getValue();
+                return obj2 == value || (obj2 != null && obj2.equals(value));
             default:
-                f = ((rs) obj).b[i];
-                break;
+                return super.contains(obj);
         }
-        this.b++;
-        this.c = true;
-        return f;
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        if (!this.c) {
-            sc8.j("Call next() before removing an element.");
-            return;
-        }
-        int i = this.b - 1;
-        this.b = i;
-        byte b = this.d;
-        Object obj = this.e;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        byte b = this.a;
+        Map map = this.b;
         switch (b) {
             case 0:
-                ((ps) obj).g(i);
-                break;
-            case 1:
-                ((ps) obj).g(i);
-                break;
+                return new ps((qs) map);
             default:
-                ((rs) obj).h(i);
-                break;
+                return new qna((ona) map);
         }
-        this.a--;
-        this.c = false;
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public ms(rs rsVar) {
-        this(rsVar.c);
-        this.d = (byte) 2;
-        this.e = rsVar;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        switch (this.a) {
+            case 1:
+                Map.Entry entry = (Map.Entry) obj;
+                if (!contains(entry)) {
+                    return false;
+                }
+                ((ona) this.b).remove(entry.getKey());
+                return true;
+            default:
+                return super.remove(obj);
+        }
     }
 
-    public ms(int i) {
-        this.a = i;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        byte b = this.a;
+        Map map = this.b;
+        switch (b) {
+            case 0:
+                return ((qs) map).c;
+            default:
+                return ((ona) map).size();
+        }
     }
 }

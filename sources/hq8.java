@@ -1,52 +1,35 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
+import android.graphics.Paint;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hq8 implements p8c {
+public final class hq8 extends Paint {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ pq8 b;
-    public final /* synthetic */ TL_stars.SavedStarGift c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ hq8(pq8 pq8Var, TL_stars.SavedStarGift savedStarGift, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hq8(Object obj, byte b) {
+        super(1);
         this.a = b;
-        this.b = pq8Var;
-        this.c = savedStarGift;
+        this.b = obj;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i) {
         byte b = this.a;
-        TL_stars.SavedStarGift savedStarGift = this.c;
-        pq8 pq8Var = this.b;
-        byte b2 = 1;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                pq8Var.a.e.b(new hq8(pq8Var, savedStarGift, b2), (String) obj);
+                super.setAlpha(i);
+                ((ProfileActivity) obj).fragmentView.invalidate();
                 break;
             default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                lca lcaVar = pq8Var.a;
-                wsa wsaVar = lcaVar.e;
-                int i = tL_starGiftCollection.collection_id;
-                wsaVar.getClass();
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(savedStarGift);
-                wsaVar.a(i, arrayList);
-                lcaVar.f(true);
-                vec vecVar = lcaVar.n;
-                int i2 = tL_starGiftCollection.collection_id;
-                vecVar.e(i2, lcaVar.e.f(i2) + 1);
-                d dVar = lcaVar.a;
-                if (dVar instanceof ProfileActivity) {
-                    ((ProfileActivity) dVar).j3(true);
-                }
-                lcaVar.o();
-                u21.b0(dVar).R(savedStarGift.gift.getDocument(), gl.S2(k96.a0(null, null, 2131750377, vqa.t1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                super.setAlpha(i);
+                lo9 lo9Var = (lo9) obj;
+                lo9Var.a.setAlpha(Math.round(i * 0.2f));
+                lo9Var.invalidate();
                 break;
         }
     }

@@ -1,57 +1,17 @@
 // default package
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class l70 {
-    public static final long a = SystemClock.elapsedRealtime();
-    public static final /* synthetic */ int b = 0;
+public final class l70 implements zq7 {
+    public static final l70 a = new l70();
+    public static final sa4 b = new sa4("currentCacheSizeBytes", c00.n(c00.m(nw8.class, new wx(1))));
+    public static final sa4 c = new sa4("maxCacheSizeBytes", c00.n(c00.m(nw8.class, new wx(2))));
 
-    public static void a(Task task, Activity activity) {
-        ehd ehdVar = new ehd();
-        int incrementAndGet = ehd.f.incrementAndGet();
-        ehdVar.a = incrementAndGet;
-        ehd.e.put(incrementAndGet, ehdVar);
-        ehd.d.postDelayed(ehdVar, 600000L);
-        task.addOnCompleteListener(ehdVar);
-        FragmentTransaction beginTransaction = activity.getFragmentManager().beginTransaction();
-        int i = ehdVar.a;
-        Bundle bundle = new Bundle();
-        bundle.putInt("resolveCallId", i);
-        bundle.putInt("requestCode", 991);
-        bundle.putLong("initializationElapsedRealtime", a);
-        gnd gndVar = new gnd();
-        gndVar.setArguments(bundle);
-        int i2 = ehdVar.a;
-        StringBuilder sb = new StringBuilder(58);
-        sb.append("com.google.android.gms.wallet.AutoResolveHelper");
-        sb.append(i2);
-        beginTransaction.add(gndVar, sb.toString()).commit();
-    }
-
-    public static void b(Activity activity, int i, int i2, Intent intent) {
-        PendingIntent createPendingResult = activity.createPendingResult(i, intent, TLObject.FLAG_30);
-        if (createPendingResult == null) {
-            if (Log.isLoggable("AutoResolveHelper", 5)) {
-                Log.w("AutoResolveHelper", "Null pending result returned when trying to deliver task result!");
-            }
-        } else {
-            try {
-                createPendingResult.send(i2);
-            } catch (PendingIntent.CanceledException e) {
-                if (Log.isLoggable("AutoResolveHelper", 6)) {
-                    Log.e("AutoResolveHelper", "Exception sending pending result", e);
-                }
-            }
-        }
+    @Override // l34
+    public final void a(Object obj, Object obj2) {
+        c5b c5bVar = (c5b) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.g(b, c5bVar.a);
+        ar7Var.g(c, c5bVar.b);
     }
 }

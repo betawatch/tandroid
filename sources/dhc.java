@@ -1,33 +1,31 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class dhc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ TLRPC.GroupCallParticipant c;
-
-    public /* synthetic */ dhc(VoIPService voIPService, TLRPC.GroupCallParticipant groupCallParticipant, byte b) {
-        this.a = b;
-        this.b = voIPService;
-        this.c = groupCallParticipant;
+public abstract class dhc {
+    public static CharSequence a(View view) {
+        return view.getAccessibilityPaneTitle();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.GroupCallParticipant groupCallParticipant = this.c;
-        VoIPService voIPService = this.b;
-        switch (b) {
-            case 0:
-                voIPService.lambda$startGroupCall$29(groupCallParticipant);
-                break;
-            default:
-                voIPService.lambda$startConferenceGroupCall$40(groupCallParticipant);
-                break;
-        }
+    public static boolean b(View view) {
+        return view.isAccessibilityHeading();
+    }
+
+    public static boolean c(View view) {
+        return view.isScreenReaderFocusable();
+    }
+
+    public static void d(View view, boolean z) {
+        view.setAccessibilityHeading(z);
+    }
+
+    public static void e(View view, CharSequence charSequence) {
+        view.setAccessibilityPaneTitle(charSequence);
+    }
+
+    public static void f(View view, boolean z) {
+        view.setScreenReaderFocusable(z);
     }
 }

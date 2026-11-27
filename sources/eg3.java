@@ -1,39 +1,35 @@
 // default package
 
-import android.content.DialogInterface;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class eg3 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class eg3 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ cj3 b;
+    public final /* synthetic */ pg3 b;
 
-    public /* synthetic */ eg3(cj3 cj3Var, byte b) {
+    public /* synthetic */ eg3(pg3 pg3Var, byte b) {
         this.a = b;
-        this.b = cj3Var;
+        this.b = pg3Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        cj3 cj3Var = this.b;
+        pg3 pg3Var = this.b;
         switch (b) {
             case 0:
-                if (cj3Var.W3 != null) {
-                    cj3Var.getMessagesController().n4(0L, cj3Var.W3);
-                    cj3Var.W3 = null;
-                    cj3Var.c5();
-                    break;
-                }
+                pg3Var.p(true, false);
                 break;
             case 1:
-                cj3Var.y3(true);
-                break;
-            case 2:
-                cj3Var.y3(true);
+                kg5 kg5Var = pg3Var.K;
+                if (kg5Var != null) {
+                    kg5Var.f(true);
+                }
+                pg3Var.f0.presentFragment(new PremiumPreviewFragment(0, "stories"));
                 break;
             default:
-                cj3Var.U3();
+                pg3Var.c();
                 break;
         }
     }

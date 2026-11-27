@@ -1,86 +1,77 @@
 // default package
 
-import android.util.Log;
-import java.util.HashMap;
+import android.content.Context;
+import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ol3 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ float[] b;
-    public final /* synthetic */ xl3 c;
-    public final /* synthetic */ syb d;
-    public final /* synthetic */ boolean[] e;
+public class ol3 extends c79 {
+    public final Context c;
+    public final int d;
+    public final boolean e;
+    public final boolean f;
+    public final vnb h;
 
-    public /* synthetic */ ol3(float[] fArr, xl3 xl3Var, syb sybVar, boolean[] zArr) {
-        this.b = fArr;
-        this.c = xl3Var;
-        this.d = sybVar;
-        this.e = zArr;
+    public ol3(int i, vnb vnbVar, Context context, boolean z, boolean z2) {
+        this.e = z;
+        this.c = context;
+        this.d = i;
+        this.f = z2;
+        this.h = vnbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean[] zArr = this.e;
-                xl3 xl3Var = this.c;
-                syb sybVar = this.d;
-                float[] fArr = this.b;
-                vl3[] vl3VarArr = DictationAsr.a;
-                if (!zArr[0]) {
-                    if (xl3Var != null) {
-                        DictationAsr.i0((vl3) xl3Var.b, false, new pl3(zArr, xl3Var, sybVar, fArr));
-                        break;
-                    } else {
-                        k27 k27Var = sybVar.b;
-                        Integer valueOf = Integer.valueOf(uyb.r(k27Var));
-                        int i = k27Var.K1;
-                        uyb.R.remove(valueOf);
-                        uyb.S.remove(valueOf);
-                        HashMap hashMap = uyb.P;
-                        if (hashMap != null) {
-                            hashMap.remove(valueOf);
-                        }
-                        if (w01.a) {
-                            fa4.b("local transcription of msg_id=" + k27Var.e1() + ": unknown language, no words");
-                        }
-                        TLRPC.Message message = k27Var.k;
-                        message.voiceTranscription = "";
-                        message.voiceTranscriptionWords = null;
-                        message.voiceTranscriptionLocal = true;
-                        message.voiceTranscriptionFinal = true;
-                        message.voiceTranscriptionOpen = true;
-                        message.voiceTranscriptionId = 0L;
-                        uyb.q(k27Var);
-                        kk7 f = kk7.f(i);
-                        Boolean bool = Boolean.TRUE;
-                        f.k(kk7.z1, k27Var, null, null, bool, bool);
-                        break;
-                    }
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return true;
+    }
+
+    @Override // j79
+    public final int b() {
+        return ls6.d0(this.d).j1.size();
+    }
+
+    @Override // j79
+    public void t(f89 f89Var, int i) {
+        TLRPC.Chat chat;
+        fg5 fg5Var = (fg5) f89Var.a;
+        int i2 = this.d;
+        TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) ls6.d0(i2).j1.get(i);
+        new TLRPC.TL_dialog();
+        TLRPC.Peer peer = tL_topPeer.peer;
+        long j = peer.user_id;
+        TLRPC.User user = null;
+        if (j != 0) {
+            user = uc7.s1(i2).X1(Long.valueOf(tL_topPeer.peer.user_id));
+            chat = null;
+        } else {
+            long j2 = peer.channel_id;
+            if (j2 != 0) {
+                j = -j2;
+                chat = uc7.s1(i2).M0(Long.valueOf(tL_topPeer.peer.channel_id));
+            } else {
+                long j3 = peer.chat_id;
+                if (j3 != 0) {
+                    j = -j3;
+                    chat = uc7.s1(i2).M0(Long.valueOf(tL_topPeer.peer.chat_id));
+                } else {
+                    j = 0;
+                    chat = null;
                 }
-                break;
-            default:
-                float[] fArr2 = this.b;
-                xl3 xl3Var2 = this.c;
-                syb sybVar2 = this.d;
-                boolean[] zArr2 = this.e;
-                try {
-                    DictationAsr.d0(fArr2, xl3Var2, sybVar2, zArr2);
-                    break;
-                } catch (Throwable th) {
-                    Log.e("Dictation", "tinyasr: transcription failed", th);
-                    gl.c3(new nl3(zArr2, sybVar2, (byte) 1));
-                }
+            }
         }
+        fg5Var.setTag(Long.valueOf(j));
+        fg5Var.a(j, true, user != null ? lbc.k(user, true) : chat != null ? chat.monoforum ? ro4.j(i2, chat, false) : chat.title : "");
     }
 
-    public /* synthetic */ ol3(boolean[] zArr, xl3 xl3Var, syb sybVar, float[] fArr) {
-        this.e = zArr;
-        this.c = xl3Var;
-        this.d = sybVar;
-        this.b = fArr;
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        fg5 fg5Var = new fg5(this.h, this.c, this.e);
+        if (this.f && !fg5Var.y) {
+            fg5Var.y = true;
+            jn7.f(fg5Var.h).h(fg5Var, jn7.k3, new zj3(fg5Var, (byte) 17));
+        }
+        fg5Var.setLayoutParams(new r79(hl.L(80.0f), hl.L(86.0f)));
+        return new n69(fg5Var);
     }
 }

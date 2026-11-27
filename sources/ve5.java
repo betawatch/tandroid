@@ -1,47 +1,52 @@
 // default package
 
-import j$.util.Objects;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ve5 {
-    public final String a;
-    public final byte b;
-    public final double c;
-    public final String d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ve5 implements ncc, occ {
+    public final /* synthetic */ we5 a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ve5(int i, String str, String str2) {
-        boolean z = true;
-        if (i == 1 && !str2.startsWith("0x") && !str2.startsWith("0X")) {
-            z = false;
-        }
-        gre.p(z);
-        this.a = str;
-        this.b = i;
-        this.d = str2;
-        this.c = 0.0d;
+    public /* synthetic */ ve5(we5 we5Var) {
+        this.a = we5Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // occ
+    public final Boolean e(b8c b8cVar, View view, Integer num, Float f, Float f2) {
+        int i = b8cVar.d;
+        boolean z = false;
+        if (i != 0) {
+            we5 we5Var = this.a;
+            String str = (String) we5Var.c.get(i - 1);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, we5Var.b, we5Var.getContext());
+            String M0 = ob6.M0(2131752019, null);
+            id idVar = alertDialog$Builder.a;
+            idVar.S = M0;
+            idVar.U = ob6.a0(null, null, 2131752017, str);
+            alertDialog$Builder.j(ob6.M0(2131752020, null), new u34(we5Var, str, (byte) 8));
+            alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+            idVar.show();
+            z = true;
         }
-        if (!(obj instanceof ve5)) {
-            return false;
-        }
-        ve5 ve5Var = (ve5) obj;
-        return this.b == ve5Var.b && Double.compare(this.c, ve5Var.c) == 0 && this.a.equals(ve5Var.a) && Objects.equals(this.d, ve5Var.d);
+        return Boolean.valueOf(z);
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, Integer.valueOf(this.b), Double.valueOf(this.c), this.d);
-    }
-
-    public ve5(String str, double d) {
-        this.a = str;
-        this.b = (byte) 2;
-        this.c = d;
-        this.d = null;
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        int i = ((b8c) obj).d;
+        we5 we5Var = this.a;
+        if (i == 0) {
+            df5 a = df5.a(we5Var.a);
+            a.f.clear();
+            a.d();
+            we5Var.f.O(true);
+            return;
+        }
+        pcc pccVar = we5Var.h;
+        if (pccVar != null) {
+            pccVar.a((String) we5Var.c.get(i - 1));
+        }
     }
 }

@@ -1,27 +1,65 @@
 // default package
 
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface ptc {
-    void a(boolean z, ltc ltcVar, float f, boolean z2);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ptc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ euc b;
 
-    TextureView b(View view, boolean z, float f, int i, boolean z2);
+    public /* synthetic */ ptc(euc eucVar, byte b) {
+        this.a = b;
+        this.b = eucVar;
+    }
 
-    void c();
-
-    void d(float f);
-
-    void e();
-
-    TextureView f(View view, boolean z, int i, int i2, boolean z2);
-
-    void g(stc stcVar, boolean z);
-
-    ViewGroup h();
-
-    boolean i();
+    @Override // java.lang.Runnable
+    public final void run() {
+        EditTextBoldCursor editTextBoldCursor;
+        byte b = this.a;
+        euc eucVar = this.b;
+        switch (b) {
+            case 0:
+                if (eucVar.J && (editTextBoldCursor = eucVar.I) != null && editTextBoldCursor.isAttachedToWindow() && eucVar.I.hasWindowFocus()) {
+                    eucVar.I.requestFocus();
+                    if (hl.E3(eucVar.I)) {
+                        eucVar.J = false;
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                float f = eucVar.c0;
+                if (f < 1.0f && eucVar.b0 == null) {
+                    vpa vpaVar = new vpa(new xk4(f));
+                    eucVar.b0 = vpaVar;
+                    wpa wpaVar = new wpa(1.0f);
+                    wpaVar.a(0.55f);
+                    wpaVar.b(65.0f);
+                    vpaVar.m = wpaVar;
+                    eucVar.b0.f(0.001f);
+                    eucVar.b0.b(new i10(eucVar, (byte) 21));
+                    eucVar.b0.a(new iw0(eucVar, (byte) 14));
+                    eucVar.b0.h();
+                    break;
+                }
+                break;
+            case 2:
+                eucVar.e0.setLoading(false);
+                break;
+            case 3:
+                eucVar.e0.setLoading(false);
+                break;
+            case 4:
+                eucVar.u0();
+                break;
+            case 5:
+                eucVar.presentFragment(zu1.ha(eucVar.f.id));
+                break;
+            default:
+                bs2.v(null, 2131742852, d31.b0(eucVar), R.raw.copy, 36);
+                break;
+        }
+    }
 }

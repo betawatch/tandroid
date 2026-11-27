@@ -1,23 +1,125 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cv9 {
-    public final zk9 a;
-    public final ArrayList b = new ArrayList(50);
-    public final ArrayList c = new ArrayList(50);
-    public final Paint d;
-    public RectF e;
-    public long f;
+public abstract class cv9 extends HorizontalScrollView {
+    public boolean a;
+    public LinearLayout b;
+    public ValueAnimator c;
+    public boolean d;
+    public int e;
+    public ValueAnimator f;
 
-    public cv9(zk9 zk9Var) {
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.a = zk9Var;
-        paint.setStrokeWidth(gl.L(1.33f));
+    public cv9(Context context) {
+        super(context);
+        this.e = -1;
+    }
+
+    public final void a(int i) {
+        if (this.e != i) {
+            this.e = i;
+            ValueAnimator valueAnimator = this.f;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            if (getScrollX() == i) {
+                return;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i);
+            this.f = ofFloat;
+            ofFloat.addUpdateListener(new b49(this, (byte) 12));
+            this.f.setInterpolator(k43.h);
+            this.f.setDuration(250L);
+            this.f.addListener(new po9((Object) this, (byte) 2));
+            this.f.start();
+        }
+    }
+
+    public final void b(int i, int i2) {
+        int measuredWidth;
+        if (getChildCount() > 0) {
+            int L = hl.L(50.0f);
+            if (i < getScrollX() + L) {
+                measuredWidth = i - L;
+            } else {
+                if (i2 <= (getMeasuredWidth() - L) + getScrollX()) {
+                    return;
+                } else {
+                    measuredWidth = (i2 - getMeasuredWidth()) + L;
+                }
+            }
+            a(ete.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+        }
+    }
+
+    public final void c() {
+        wl wlVar;
+        nl nlVar;
+        b29 b29Var;
+        ValueAnimator valueAnimator;
+        int childCount = this.b.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = this.b.getChildAt(i);
+            if (childAt instanceof uy3) {
+                uy3 uy3Var = (uy3) childAt;
+                boolean z = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
+                boolean z2 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
+                if (!uy3Var.E && z && (b29Var = uy3Var.e) != null && !b29Var.l0 && !z2) {
+                    uy3Var.e.O(true, 0.0f);
+                    uy3Var.e.start();
+                }
+                if (uy3Var.E != z) {
+                    uy3Var.E = z;
+                    if (z) {
+                        uy3Var.invalidate();
+                        cl8 cl8Var = uy3Var.f;
+                        if (cl8Var != null) {
+                            cl8Var.invalidate();
+                        }
+                        cl8 cl8Var2 = uy3Var.f;
+                        if (cl8Var2 != null && (wlVar = uy3Var.x) != null && (nlVar = wlVar.k) != null) {
+                            cl8Var2.setImageReceiver(nlVar);
+                        }
+                        de0 de0Var = uy3Var.d;
+                        if (de0Var != null) {
+                            de0Var.invalidate();
+                        }
+                    } else {
+                        uy3Var.b();
+                    }
+                    uy3Var.c();
+                }
+            }
+        }
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        c();
+    }
+
+    @Override // android.view.View
+    public final void onScrollChanged(int i, int i2, int i3, int i4) {
+        super.onScrollChanged(i, i2, i3, i4);
+        if ((Math.abs(i2 - i4) < 2 || i2 >= getMeasuredHeight() || i2 == 0) && !this.a) {
+            requestDisallowInterceptTouchEvent(false);
+        }
+        c();
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
+            motionEvent.getAction();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

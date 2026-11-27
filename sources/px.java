@@ -1,27 +1,44 @@
 // default package
 
-import android.os.HandlerThread;
+import android.media.MediaCodec;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class px implements qbb {
+public final /* synthetic */ class px implements MediaCodec.OnFrameRenderedListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ an6 b;
 
-    public /* synthetic */ px(int i, byte b) {
+    public /* synthetic */ px(jm6 jm6Var, an6 an6Var, byte b) {
         this.a = b;
-        this.b = i;
+        this.b = an6Var;
     }
 
-    @Override // qbb
-    public final Object get() {
+    @Override // android.media.MediaCodec.OnFrameRenderedListener
+    public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
         byte b = this.a;
-        int i = this.b;
+        an6 an6Var = this.b;
         switch (b) {
             case 0:
-                return new HandlerThread(rx.o(i, "ExoPlayer:MediaCodecAsyncAdapter:"));
+                Handler handler = an6Var.a;
+                if (Build.VERSION.SDK_INT >= 30) {
+                    an6Var.a(j);
+                    break;
+                } else {
+                    handler.sendMessageAtFrontOfQueue(Message.obtain(handler, 0, (int) (j >> 32), (int) j));
+                    break;
+                }
             default:
-                return new HandlerThread(rx.o(i, "ExoPlayer:MediaCodecQueueingThread:"));
+                Handler handler2 = an6Var.a;
+                if (Build.VERSION.SDK_INT >= 30) {
+                    an6Var.a(j);
+                    break;
+                } else {
+                    handler2.sendMessageAtFrontOfQueue(Message.obtain(handler2, 0, (int) (j >> 32), (int) j));
+                    break;
+                }
         }
     }
 }

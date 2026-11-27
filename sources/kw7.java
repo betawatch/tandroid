@@ -1,70 +1,30 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class kw7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ vx7 b;
+    public final /* synthetic */ dx7 b;
+    public final /* synthetic */ pp9 c;
 
-    public /* synthetic */ kw7(vx7 vx7Var, byte b) {
+    public /* synthetic */ kw7(dx7 dx7Var, pp9 pp9Var, byte b) {
         this.a = b;
-        this.b = vx7Var;
+        this.b = dx7Var;
+        this.c = pp9Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ViewGroup viewGroup;
         byte b = this.a;
-        int i = 0;
-        vx7 vx7Var = this.b;
+        pp9 pp9Var = this.c;
+        dx7 dx7Var = this.b;
         switch (b) {
             case 0:
-                ViewGroup[] viewGroupArr = vx7Var.a0;
-                if (viewGroupArr == null || (viewGroup = viewGroupArr[0]) == null || viewGroup.getVisibility() != 0) {
-                    return;
-                }
-                vx7Var.Z[0].requestFocus();
-                gl.E3(vx7Var.Z[0]);
-                return;
-            case 1:
-                vx7Var.presentFragment(vx7Var.i1, true);
-                vx7Var.i1 = null;
-                return;
-            case 2:
-                EditTextBoldCursor[] editTextBoldCursorArr = vx7Var.b0;
-                if (editTextBoldCursorArr != null) {
-                    vx7Var.K1(editTextBoldCursorArr[0]);
-                    return;
-                }
-                return;
-            case 3:
-                gl.E3(vx7Var.Z[2]);
-                return;
-            case 4:
-                vx7Var.z1();
-                return;
-            case 5:
+                dx7Var.C0(pp9Var, true);
                 break;
             default:
-                vx7Var.finishFragment();
-                return;
+                dx7Var.B0(pp9Var);
+                break;
         }
-        while (i < vx7Var.d0.getChildCount()) {
-            View childAt = vx7Var.d0.getChildAt(i);
-            if (childAt instanceof ux7) {
-                vx7Var.d0.removeView(childAt);
-                i--;
-            }
-            i++;
-        }
-        vx7Var.z1();
-        vx7Var.r1.clear();
-        vx7Var.q1.clear();
-        vx7Var.E.values.clear();
-        vx7Var.T1();
     }
 }

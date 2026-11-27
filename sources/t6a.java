@@ -1,67 +1,123 @@
 // default package
 
-import android.media.session.MediaSession;
-import android.os.Bundle;
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.content.Context;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class t6a {
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public final int a;
-    public final String b;
-    public final ox6 c;
-    public final Bundle d;
-    public final MediaSession.Token e;
+public final /* synthetic */ class t6a implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ r7a b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ r47 d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ d7a f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ d7a n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ HashMap s;
+    public final /* synthetic */ boolean w;
+    public final /* synthetic */ Object x;
+    public final /* synthetic */ TLObject y;
 
-    static {
-        String str = g8c.a;
-        f = "0";
-        g = "1";
-        h = "2";
-        i = "3";
-        j = "4";
-        k = "5";
-        l = "6";
-        m = "7";
-        n = "8";
-        o = "9";
+    public /* synthetic */ t6a(r7a r7aVar, TLObject tLObject, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer, TLObject tLObject2, r47 r47Var, String str, d7a d7aVar, boolean z, d7a d7aVar2, Object obj, HashMap hashMap, boolean z2) {
+        this.b = r7aVar;
+        this.c = tLObject;
+        this.y = tL_messages_addPollAnswer;
+        this.x = tLObject2;
+        this.d = r47Var;
+        this.e = str;
+        this.f = d7aVar;
+        this.h = z;
+        this.n = d7aVar2;
+        this.r = obj;
+        this.s = hashMap;
+        this.w = z2;
     }
 
-    public t6a(int i2, String str, ox6 ox6Var, Bundle bundle, MediaSession.Token token) {
-        str.getClass();
-        this.a = i2;
-        this.b = str;
-        this.c = ox6Var;
-        this.d = bundle;
-        this.e = token;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof t6a) {
-            t6a t6aVar = (t6a) obj;
-            if (this.a == t6aVar.a && TextUtils.equals(this.b, t6aVar.b) && this.c == t6aVar.c && Objects.equals(this.e, t6aVar.e)) {
-                return true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLObject tLObject = this.y;
+        Object obj = this.x;
+        switch (b) {
+            case 0:
+                TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer = (TLRPC.TL_messages_addPollAnswer) tLObject;
+                TLObject tLObject2 = (TLObject) obj;
+                TLObject tLObject3 = this.c;
+                boolean z = tLObject3 instanceof TLRPC.TL_messageMediaDocument;
+                r7a r7aVar = this.b;
+                r47 r47Var = this.d;
+                String str = this.e;
+                d7a d7aVar = this.f;
+                boolean z2 = this.h;
+                d7a d7aVar2 = this.n;
+                Object obj2 = this.r;
+                HashMap hashMap = this.s;
+                boolean z3 = this.w;
+                if (!z) {
+                    if (!(tLObject3 instanceof TLRPC.TL_messageMediaPhoto)) {
+                        if (d7aVar2 != null) {
+                            d7aVar2.c();
+                            break;
+                        }
+                    } else {
+                        TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject3).photo;
+                        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                        tL_inputPhoto.id = photo.id;
+                        tL_inputPhoto.access_hash = photo.access_hash;
+                        tL_inputPhoto.file_reference = photo.file_reference;
+                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
+                        tL_inputMediaPhoto.id = tL_inputPhoto;
+                        tL_messages_addPollAnswer.answer.input_media = tL_inputMediaPhoto;
+                        r7aVar.N(tLObject2, r47Var, str, d7aVar, z2, d7aVar2, obj2, hashMap, z3);
+                        break;
+                    }
+                } else {
+                    TLRPC.Document document = ((TLRPC.TL_messageMediaDocument) tLObject3).document;
+                    TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                    tL_inputDocument.id = document.id;
+                    tL_inputDocument.access_hash = document.access_hash;
+                    tL_inputDocument.file_reference = document.file_reference;
+                    TLRPC.TL_inputMediaDocument tL_inputMediaDocument = new TLRPC.TL_inputMediaDocument();
+                    tL_inputMediaDocument.id = tL_inputDocument;
+                    tL_messages_addPollAnswer.answer.input_media = tL_inputMediaDocument;
+                    r7aVar.N(tLObject2, r47Var, str, d7aVar, z2, d7aVar2, obj2, hashMap, z3);
+                    break;
+                }
+                break;
+            default:
+                e eVar = (e) obj;
+                Context context = eVar.getContext();
+                vnb resourceProvider = eVar.getResourceProvider();
+                oj j = oj.j(((TLRPC.TL_inputMediaStakeDice) tLObject).ton_amount, pj.b);
+                r7a r7aVar2 = this.b;
+                TLObject tLObject4 = this.c;
+                r47 r47Var2 = this.d;
+                new shb(context, resourceProvider, j, new n5a(r7aVar2, tLObject4, r47Var2, this.e, this.f, this.h, this.n, this.r, this.s, this.w, (byte) 0)).show();
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(r47Var2);
+                r7aVar2.g(arrayList);
+                break;
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), 0, 1011001300, 10, this.b, "", null, this.c, this.e, null);
-    }
-
-    public final String toString() {
-        return "SessionToken {pkg=" + this.b + " type=0 libraryVersion=1011001300 interfaceVersion=10 service= IMediaSession=" + this.c + " extras=" + this.d + "}";
+    public /* synthetic */ t6a(r7a r7aVar, e eVar, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLObject tLObject, r47 r47Var, String str, d7a d7aVar, boolean z, d7a d7aVar2, Object obj, HashMap hashMap, boolean z2) {
+        this.b = r7aVar;
+        this.x = eVar;
+        this.y = tL_inputMediaStakeDice;
+        this.c = tLObject;
+        this.d = r47Var;
+        this.e = str;
+        this.f = d7aVar;
+        this.h = z;
+        this.n = d7aVar2;
+        this.r = obj;
+        this.s = hashMap;
+        this.w = z2;
     }
 }

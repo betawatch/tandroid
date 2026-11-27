@@ -1,369 +1,362 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.util.SparseArray;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.SecretMediaViewer;
+import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wd8 extends Drawable implements sp3 {
-    public final fm0 E;
-    public final RadialProgress2 F;
-    public k27 G;
-    public final kp H;
-    public String I;
-    public final int J;
-    public boolean K;
-    public int L;
-    public int M;
-    public final gn a;
-    public final jc0 b;
-    public final ImageReceiver c;
-    public final View d;
-    public final int e;
-    public boolean f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
-    public Drawable s;
-    public boolean w;
-    public final Paint x;
-    public final Paint y;
+public final class wd8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public wd8(int i, View view) {
-        Paint paint = new Paint(1);
-        this.x = paint;
-        this.y = new Paint(1);
-        this.H = new kp((byte) 11, false);
-        this.e = i;
-        this.d = view;
-        this.E = new fm0(380L, view, s33.h);
-        gn gnVar = new gn(false, false, false);
-        this.a = gnVar;
-        gnVar.b = 21;
-        gnVar.w(gl.L(11.0f));
-        gnVar.setCallback(view);
-        this.b = new jc0(i, view, gl.L(18.0f), gl.L(8.33f), gl.N(1.0f));
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.c = imageReceiver;
-        imageReceiver.q0(gl.L(5.0f));
-        paint.setColor(TLObject.FLAG_30);
-        RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
-        this.F = radialProgress2;
-        radialProgress2.setCircleRadius(gl.L(18.0f));
-        radialProgress2.d = -1;
-        this.J = up3.q(i).k();
+    public wd8(i69 i69Var, tk4 tk4Var, q79 q79Var) {
+        this.a = (byte) 7;
+        this.c = i69Var;
+        this.b = tk4Var;
     }
 
-    public final void a(TLRPC.Photo photo, k27 k27Var) {
-        TLRPC.PhotoSize w = ba4.w(photo.sizes, 40, false, null, false);
-        TLRPC.PhotoSize w2 = ba4.w(photo.sizes, gl.L(36.0f), false, w, true);
-        this.c.Z(gl5.f(w2, photo), "36_36", gl5.f(w, photo), "36_36_b", null, w2 != null ? w2.size : 0L, null, k27Var, 1);
-    }
-
-    public final void b(boolean z) {
-        if (this.G.n4() || this.G.Y2()) {
-            return;
-        }
-        if (TextUtils.isEmpty(this.I) || !ba4.G(this.e).S(this.I)) {
-            f(this.w ? 0 : 4, z);
-        } else {
-            f(3, z);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 21:
+                ((cjc) this.b).a();
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    public final void c(Canvas canvas) {
-        int w0;
-        Rect bounds = getBounds();
-        int L = gl.L(this.f ? 56.33f : 19.0f);
-        if (this.E.e > 0.0f) {
-            w46 w46Var = this.b.c.d;
-            float f = w46Var.c.a;
-            int i = (int) w46Var.f.a;
-            int U1 = (bounds.right - L) - gl.U1(f, gl.L(2.0f), gl.L(4.0f) + i);
-            if (f > 0.0f) {
-                jc0 jc0Var = this.b;
-                jc0Var.i = (int) (this.E.e * 255.0f);
-                jc0Var.setBounds((bounds.right - L) - i, bounds.bottom - gl.L(31.33f), bounds.right - L, bounds.bottom);
-                this.b.c(canvas);
-            }
-            int L2 = bounds.bottom - gl.L(21.33f);
-            gn gnVar = this.a;
-            gnVar.C = (int) (this.E.e * 255.0f);
-            gnVar.setBounds(bounds.left, gl.L(15.0f) + L2, U1, L2 - gl.L(15.0f));
-            this.a.draw(canvas);
-        }
-        if (this.h) {
-            int L3 = gl.L(36.0f);
-            Rect rect = gl.Q;
-            rect.set(ls6.x(9.0f, bounds.right, L3), ls6.x(4.0f, bounds.bottom, L3), bounds.right - gl.L(9.0f), bounds.bottom - gl.L(4.0f));
-            RectF rectF = gl.P;
-            rectF.set(rect);
-            this.F.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
-            this.c.j0(rect);
-            if (!this.n || this.r) {
-                this.c.h(canvas, null);
-            }
-            if (this.w || this.n) {
-                if (!this.n || this.r) {
-                    canvas.drawRoundRect(rectF, gl.L(5.0f), gl.L(5.0f), this.x);
-                } else {
-                    this.y.setColor(bm2.o(bkb.w0(null, this.G.O3() ? bkb.Vc : bkb.Uc, false), 16));
-                    canvas.drawRoundRect(rectF, gl.L(5.0f), gl.L(5.0f), this.y);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        byte b2 = 1;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                ((xd8) obj).h = null;
+                ((Runnable) obj2).run();
+                break;
+            case 1:
+                ((xk8) obj).v1 = false;
+                ((lk8) obj2).setOffset(0.0f);
+                super.onAnimationEnd(animator);
+                break;
+            case 2:
+                kl8 kl8Var = (kl8) obj;
+                kl8Var.C2 = false;
+                kl8Var.B2 = 1.0f;
+                kl8Var.n2.invalidate();
+                Drawable drawable = (Drawable) obj2;
+                if (drawable != null) {
+                    ValueAnimator ofInt = ValueAnimator.ofInt(0, jn7.d4);
+                    ofInt.addUpdateListener(new lk(this, drawable, (byte) 20));
+                    ofInt.start();
                 }
-            }
-            if (this.n) {
-                Drawable drawable = this.s;
-                if (drawable == null) {
-                    drawable = b00.d(a.b, R.drawable.media_link_24);
-                    this.s = drawable;
+                super.onAnimationEnd(animator);
+                break;
+            case 3:
+                rl8 rl8Var = (rl8) obj;
+                PremiumPreviewFragment premiumPreviewFragment = rl8Var.n;
+                ((jd8) obj2).setVisibility(8);
+                for (int i = 0; i < premiumPreviewFragment.V.getChildCount(); i++) {
+                    View childAt = premiumPreviewFragment.V.getChildAt(i);
+                    if (childAt != rl8Var.e) {
+                        childAt.setTranslationY(0.0f);
+                    }
                 }
-                kp kpVar = this.H;
-                if (this.r) {
-                    w0 = -1;
-                } else {
-                    w0 = bkb.w0(null, this.G.O3() ? bkb.ic : bkb.de, false);
+                break;
+            case 4:
+                ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
+                boolean[] zArr = (boolean[]) obj2;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    int i2 = ProfileStoriesView.t0;
+                    if (xea.o() > 0) {
+                        hl.W3(profileStoriesView);
+                        hl.d3(new uk8(profileStoriesView, (byte) 17), 180L);
+                    }
                 }
-                PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                kpVar.getClass();
-                PorterDuffColorFilter porterDuffColorFilter = (PorterDuffColorFilter) kpVar.c;
-                if (porterDuffColorFilter == null || kpVar.b != w0 || ((PorterDuff.Mode) kpVar.d) != mode) {
-                    porterDuffColorFilter = new PorterDuffColorFilter(w0, mode);
-                    kpVar.c = porterDuffColorFilter;
-                    kpVar.b = w0;
-                    kpVar.d = mode;
+                profileStoriesView.a0 = 1.0f;
+                profileStoriesView.invalidate();
+                break;
+            case 5:
+                s39 s39Var = (s39) obj;
+                boolean[] zArr2 = (boolean[]) obj2;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    s39Var.t0.b(s39Var.A0, false);
                 }
-                drawable.setColorFilter(porterDuffColorFilter);
-                kq3.e(this.s, rectF.centerX(), rectF.centerY(), gl.L(24.0f), gl.L(24.0f), 17);
-                this.s.draw(canvas);
-            }
-            b(true);
-            if (this.K) {
-                this.F.draw(canvas);
-            }
-        }
-    }
-
-    public final float d(float f) {
-        jc0 jc0Var = this.b;
-        float c = this.a.c() + jc0Var.c.d.f.a;
-        float L = jc0Var.c.d.c.a * gl.L(4.0f);
-        float f2 = this.E.e;
-        return (f * f2) + (L * f2) + c;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        c(canvas);
-    }
-
-    public final float e() {
-        return this.a.d + (this.L > 0 ? gl.L((r2 * 9.34f) + 8.66f) : 0);
-    }
-
-    public final void f(int i, boolean z) {
-        if (this.M != i) {
-            this.M = i;
-            this.F.setIcon(i, true, z);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0152  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(k27 k27Var, TLRPC.MessageMedia messageMedia, k27 k27Var2, String str, boolean z) {
-        ImageReceiver imageReceiver;
-        boolean z2;
-        boolean z3;
-        TLRPC.GeoPoint geoPoint;
-        this.G = k27Var;
-        String str2 = this.I;
-        this.K = false;
-        this.I = null;
-        ImageReceiver imageReceiver2 = this.c;
-        if (messageMedia != null && !(messageMedia instanceof TLRPC.TL_messageMediaEmpty)) {
-            this.r = false;
-            this.n = false;
-            this.w = false;
-            z2 = true;
-            if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
-                TLRPC.WebPage webPage = ((TLRPC.TL_messageMediaWebPage) messageMedia).webpage;
-                this.n = true;
-                TLRPC.Photo photo = webPage.photo;
-                if (photo != null) {
-                    this.r = true;
-                    a(photo, k27Var2);
-                } else {
-                    imageReceiver2.f();
-                }
-            } else {
-                if (!(messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
-                    if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-                        TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) messageMedia;
-                        TLRPC.Document document = tL_messageMediaDocument.document;
-                        if (document != null) {
-                            this.I = !TextUtils.isEmpty(str) ? str : k27.U0(messageMedia);
-                            if (k27.J4(tL_messageMediaDocument.document)) {
-                                TLRPC.PhotoSize w = ba4.w(document.thumbs, 40, false, null, false);
-                                TLRPC.PhotoSize w2 = ba4.w(document.thumbs, gl.L(36.0f), false, w, true);
-                                this.w = true;
-                                this.K = true;
-                                gl5 f = gl5.f(w2, document);
-                                gl5 f2 = gl5.f(w, document);
-                                imageReceiver = imageReceiver2;
-                                imageReceiver.Z(f, "36_36", f2, "36_36_b", null, w2 != null ? w2.size : 0L, null, k27Var2, 1);
-                            } else {
-                                imageReceiver = imageReceiver2;
-                                boolean z4 = k27.t4(document) || k27.M4(document);
-                                boolean K2 = k27.K2(document, true);
-                                if (z4 || K2) {
-                                    imageReceiver.c0(gl5.b(document), "36_36", uo3.f(document, bkb.bd, 1.0f, null), document.size, z4 ? "webp" : null, k27Var2, 1);
-                                }
-                                z2 = false;
-                            }
+                s39Var.setRotationY(0.0f);
+                s39Var.B0 = 1.0f;
+                break;
+            case 6:
+                f69 f69Var = (f69) obj;
+                hw6 hw6Var = f69Var.e;
+                if (((ValueAnimator) hw6Var.h) != null) {
+                    ((d79) hw6Var.e).W1 = false;
+                    ArrayList arrayList = f69Var.b;
+                    int size = arrayList.size();
+                    int i3 = 0;
+                    while (i3 < size) {
+                        Object obj3 = arrayList.get(i3);
+                        i3++;
+                        View view = (View) obj3;
+                        if (view instanceof pk5) {
+                            ((pk5) view).b(false, true);
                         }
-                    } else if (((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) && (geoPoint = messageMedia.geo) != null) {
-                        int min = Math.min(2, (int) Math.ceil(gl.p));
-                        int i = usc.i;
-                        gl5 p = gl5.p(usc.a(geoPoint.lat, geoPoint._long, geoPoint.access_hash, 36, 36, 13, min));
-                        imageReceiver = imageReceiver2;
-                        imageReceiver.a0(p, null, null, null, null, k27Var2, 0);
-                    } else {
-                        imageReceiver = imageReceiver2;
-                        z2 = false;
-                    }
-                    this.h = z2;
-                    if (!z2) {
-                        imageReceiver.f();
-                    }
-                    z3 = this.w;
-                    RadialProgress2 radialProgress2 = this.F;
-                    if (z3) {
-                        radialProgress2.setColors(0, 0, bkb.w0(null, bkb.df, false), bkb.w0(null, bkb.ef, false));
-                    } else {
-                        int i2 = bkb.bf;
-                        int w0 = bkb.w0(null, i2, false);
-                        int i3 = bkb.cf;
-                        int w02 = bkb.w0(null, i3, false);
-                        int i4 = bkb.df;
-                        int w03 = bkb.w0(null, i4, false);
-                        int i5 = bkb.ef;
-                        radialProgress2.setColors(w0, w02, w03, bkb.w0(null, i5, false));
-                        radialProgress2.g(i2, i3, i4, i5);
-                    }
-                    if (!TextUtils.equals(str2, this.I)) {
-                        boolean isEmpty = TextUtils.isEmpty(str2);
-                        int i6 = this.e;
-                        if (!isEmpty) {
-                            up3.q(i6).v(this);
-                        }
-                        if (!TextUtils.isEmpty(this.I)) {
-                            up3.q(i6).a(this.I, null, this);
+                        view.setTranslationY(0.0f);
+                        ((x46) hw6Var.f).getClass();
+                        q79.w0(view);
+                        ((d79) hw6Var.e).removeView(view);
+                        cxe cxeVar = (cxe) hw6Var.r;
+                        if (cxeVar != null) {
+                            cxeVar.d(view);
                         }
                     }
-                    b(z);
+                    ((d79) hw6Var.e).setScrollEnabled(true);
+                    ((d79) hw6Var.e).setVerticalScrollBarEnabled(true);
+                    boolean z = f11.a;
+                    int childCount = ((d79) hw6Var.e).getChildCount();
+                    for (int i4 = 0; i4 < childCount; i4++) {
+                        View childAt2 = ((d79) hw6Var.e).getChildAt(i4);
+                        if (childAt2 instanceof pk5) {
+                            ((pk5) childAt2).b(false, false);
+                        }
+                        childAt2.setTranslationY(0.0f);
+                    }
+                    ArrayList arrayList2 = (ArrayList) obj2;
+                    int size2 = arrayList2.size();
+                    int i5 = 0;
+                    while (i5 < size2) {
+                        Object obj4 = arrayList2.get(i5);
+                        i5++;
+                        View view2 = (View) obj4;
+                        if (view2 instanceof pk5) {
+                            ((pk5) view2).b(false, false);
+                        }
+                        view2.setTranslationY(0.0f);
+                    }
+                    g69 g69Var = f69Var.d;
+                    if (g69Var != null) {
+                        g69Var.E();
+                    }
+                    cxe cxeVar2 = (cxe) hw6Var.r;
+                    if (cxeVar2 != null) {
+                        cxeVar2.a();
+                    }
+                    ((SparseArray) hw6Var.s).clear();
+                    hw6Var.h = null;
+                    break;
                 }
-                TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
-                this.K = true;
-                this.I = !TextUtils.isEmpty(str) ? str : k27.U0(messageMedia);
-                a(tL_messageMediaPhoto.photo, k27Var2);
-            }
-            imageReceiver = imageReceiver2;
-            this.h = z2;
-            if (!z2) {
-            }
-            z3 = this.w;
-            RadialProgress2 radialProgress22 = this.F;
-            if (z3) {
-            }
-            if (!TextUtils.equals(str2, this.I)) {
-            }
-            b(z);
+                break;
+            case 7:
+                tk4 tk4Var = (tk4) obj2;
+                tk4Var.setAlpha(1.0f);
+                q79.w0(tk4Var);
+                i69 i69Var = (i69) obj;
+                i69Var.c.remove(tk4Var);
+                i69Var.a.removeView(tk4Var);
+                break;
+            case 8:
+                super.onAnimationEnd(animator);
+                i69 i69Var2 = (i69) ((r32) obj).d;
+                i69Var2.g.remove((AnimatorSet) obj2);
+                if (i69Var2.g.isEmpty()) {
+                    i69Var2.b.clear();
+                    i69Var2.d = true;
+                    i69Var2.a.invalidate();
+                    break;
+                }
+                break;
+            case 9:
+                yg9 yg9Var = (yg9) obj;
+                yg9Var.F = false;
+                yg9Var.w.setAlpha(1.0f);
+                yg9Var.w.p2.setVisibility(0);
+                yg9Var.y.r(hl.L(22.0f));
+                yg9Var.y.setAlpha(jn7.d4);
+                z92 z92Var = yg9Var.s;
+                z92Var.e = true;
+                z92Var.invalidate();
+                ((Runnable) obj2).run();
+                break;
+            case 10:
+                dl9 dl9Var = (dl9) obj;
+                dl9Var.b = true;
+                dl9Var.f = null;
+                View view3 = (View) obj2;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
+                break;
+            case 11:
+                li3 li3Var = (li3) obj;
+                if (li3Var.h != null) {
+                    li3Var.h = null;
+                    li3Var.n.e();
+                    ((si3) obj2).onTransitionAnimationEnd(true, false);
+                    li3Var.e = 1.0f;
+                    li3Var.g();
+                    li3Var.d(false);
+                    break;
+                }
+                break;
+            case 12:
+                xb1 xb1Var = (xb1) obj;
+                ((pp9) obj2).setDraw(true);
+                if (xb1Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) xb1Var.getParent()).removeView(xb1Var);
+                    break;
+                }
+                break;
+            case 13:
+                fd8 fd8Var = (fd8) obj2;
+                if (fd8Var != null) {
+                    fd8Var.a.v0(true, true);
+                }
+                ((SecretMediaViewer) obj).s = false;
+                hl.c3(new ux9(this, b2));
+                break;
+            case 14:
+                ((c1a) obj2).run();
+                n1a n1aVar = (n1a) obj;
+                c0a c0aVar = n1aVar.Y0;
+                if (c0aVar != null) {
+                    c0aVar.dismiss();
+                    n1aVar.Y0 = null;
+                    break;
+                }
+                break;
+            case 15:
+                a3a a3aVar = (a3a) obj;
+                a3aVar.removeView((zc5) obj2);
+                a3aVar.h.clear();
+                a3aVar.b = null;
+                a3aVar.c = false;
+                ((b3a) a3aVar.n).b.setAllowDrawCursor(true);
+                break;
+            case 16:
+                b8a b8aVar = (b8a) obj;
+                try {
+                    ((WindowManager) obj2).removeViewImmediate(b8aVar.B);
+                } catch (Exception unused) {
+                }
+                en9 en9Var = b8aVar.C;
+                if (en9Var != null) {
+                    hl.r(en9Var);
+                    break;
+                }
+                break;
+            case 17:
+                u3b u3bVar = (u3b) obj;
+                u3bVar.b = 0.0f;
+                u3bVar.invalidate();
+                ((xu9) obj2).invalidate();
+                break;
+            case 18:
+                a3a a3aVar2 = (a3a) obj;
+                a3aVar2.removeView((zc5) obj2);
+                a3aVar2.h.clear();
+                a3aVar2.b = null;
+                a3aVar2.c = false;
+                t9b t9bVar = (t9b) a3aVar2.n;
+                t9bVar.b.setAllowDrawCursor(true);
+                i9b i9bVar = t9bVar.h;
+                if (i9bVar != null) {
+                    i9bVar.run();
+                }
+                if (t9bVar.M) {
+                    t9bVar.fullScroll(jn7.N1);
+                    t9bVar.M = false;
+                    break;
+                }
+                break;
+            case 19:
+                kfb kfbVar = (kfb) obj;
+                kfbVar.b.remove((jfb) obj2);
+                kfbVar.i();
+                break;
+            case 20:
+                ccc cccVar = (ccc) obj;
+                cccVar.removeView((zc5) obj2);
+                cccVar.e = null;
+                cccVar.a = null;
+                cccVar.b = false;
+                UsersSelectActivity usersSelectActivity = cccVar.f;
+                usersSelectActivity.c.setAllowDrawCursor(true);
+                if (usersSelectActivity.Q.isEmpty()) {
+                    usersSelectActivity.c.t(true, true);
+                    break;
+                }
+                break;
+            case 21:
+                ((cjc) obj2).c();
+                break;
+            case 22:
+                ((Runnable) obj2).run();
+                mkc mkcVar = (mkc) obj;
+                mkcVar.f0.setScaleX(1.15f);
+                mkcVar.f0.setScaleY(1.15f);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) mkcVar.f0.getLayoutParams();
+                marginLayoutParams.leftMargin = hl.L(10.0f);
+                marginLayoutParams.rightMargin = hl.L(10.0f);
+                mkcVar.f0.setVisibility(8);
+                break;
+            case 23:
+                TextView textView = ((dnc) obj).d;
+                textView.setText((String) obj2);
+                textView.setTranslationY(0.0f);
+                textView.setAlpha(1.0f);
+                break;
+            case 24:
+                ((dnc) obj).removeView((cnc) obj2);
+                break;
+            default:
+                ((w1d) obj2).a.d(1.0f);
+                s1d.e((View) obj);
+                break;
         }
-        imageReceiver = imageReceiver2;
-        z2 = false;
-        this.h = z2;
-        if (!z2) {
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 21:
+                ((cjc) this.b).b();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        z3 = this.w;
-        RadialProgress2 radialProgress222 = this.F;
-        if (z3) {
-        }
-        if (!TextUtils.equals(str2, this.I)) {
-        }
-        b(z);
     }
 
-    @Override // sp3
-    public final int getObserverTag() {
-        return this.J;
+    public /* synthetic */ wd8(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    public final void h(ArrayList arrayList, boolean z) {
-        this.L = arrayList != null ? arrayList.size() : 0;
-        this.b.d(arrayList, z);
-    }
-
-    @Override // sp3
-    public final void i(long j, long j2) {
-        float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
-        this.F.o(true, min);
-        f(min < 1.0f ? 3 : this.w ? 0 : 4, true);
-        this.d.invalidate();
-    }
-
-    public final void j(int i, boolean z) {
-        this.a.t(i > 0 ? k96.S(null, i) : null, z, true);
-    }
-
-    public final void k(int i) {
-        this.a.u(i);
-    }
-
-    @Override // sp3
-    public final void l(long j, long j2) {
-        float min = j2 == 0 ? 0.0f : Math.min(1.0f, j / j2);
-        this.F.o(true, min);
-        f(min < 1.0f ? 3 : this.w ? 0 : 4, true);
-        this.d.invalidate();
-    }
-
-    @Override // sp3
-    public final void B(boolean z) {
-    }
-
-    @Override // sp3
-    public final void N(String str) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public /* synthetic */ wd8(Object obj, View view, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = view;
     }
 }

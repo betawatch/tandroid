@@ -1,62 +1,36 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class jl5 {
-    public String a;
-    public final boolean b;
-    public Bitmap c;
-    public Drawable d;
-    public int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public interface jl5 extends IInterface {
+    void A(long j, boolean z);
 
-    public jl5(Bitmap bitmap, String str, int i) {
-        this.c = bitmap;
-        this.a = str;
-        this.e = i;
-        if (str != null) {
-            fl5.z().D(this.a);
-        }
-    }
+    void D(long j, float f);
 
-    public final void a() {
-        Bitmap bitmap;
-        if (this.a == null) {
-            if (this.b && (bitmap = this.c) != null) {
-                bitmap.recycle();
-            }
-            this.c = null;
-            this.d = null;
-            return;
-        }
-        boolean l = fl5.z().l(this.a);
-        if (!fl5.z().F(this.a, false) && l) {
-            Bitmap bitmap2 = this.c;
-            if (bitmap2 != null) {
-                bitmap2.recycle();
-            } else {
-                Drawable drawable = this.d;
-                if (drawable != null) {
-                    if (drawable instanceof oy8) {
-                        ((oy8) drawable).x(false);
-                    } else if (drawable instanceof km) {
-                        ((km) drawable).u();
-                    } else if (drawable instanceof BitmapDrawable) {
-                        ((BitmapDrawable) drawable).getBitmap().recycle();
-                    }
-                }
-            }
-        }
-        this.a = null;
-        this.c = null;
-        this.d = null;
-    }
+    long G(byte[] bArr, byte[] bArr2, float f, float f2, int i, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z, ll5 ll5Var);
 
-    public jl5(Bitmap bitmap) {
-        this.c = bitmap;
-        this.b = true;
-    }
+    void H(long j);
+
+    void K(long j, int i, float f, float f2, int i2);
+
+    void L();
+
+    void M(long j, byte[] bArr);
+
+    void k(long j, float f, boolean z, boolean z2, boolean z3);
+
+    void l(long j, long j2, int i, byte[] bArr);
+
+    void r(long j);
+
+    void s(long j, byte[] bArr);
+
+    void u(long j, byte[] bArr);
+
+    void v(IBinder iBinder);
+
+    void x(long j, int i, float f, float f2, int i2, boolean z, boolean z2, int i3, int i4);
 }

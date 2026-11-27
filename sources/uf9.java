@@ -2,75 +2,33 @@
 
 import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class uf9 extends b4c {
+public final class uf9 extends a8c {
     public static final /* synthetic */ int b = 0;
 
     static {
-        b4c.h(new uf9());
+        a8c.h(new uf9());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0021, code lost:
-    
-        if ((r2 instanceof org.telegram.tgnet.tl.TL_iv.pageBlockSlideshow) == false) goto L10;
-     */
-    @Override // b4c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
         vf9 vf9Var = (vf9) view;
-        lk0 lk0Var = (lk0) c4cVar.H;
-        re9 re9Var = (re9) c4cVar.I;
-        ArrayList arrayList = vf9Var.E;
-        vf9Var.a = lk0Var;
-        vf9Var.O = re9Var;
-        vf9Var.c(lk0Var);
-        if (lk0Var != null) {
-            lk0 lk0Var2 = vf9Var.a;
-            if (lk0Var2 != null) {
-                TL_iv.PageBlock pageBlock = lk0Var2.b;
-                if (!(pageBlock instanceof TL_iv.pageBlockCollage)) {
-                }
-            }
-            if (lk0Var.g == null) {
-                lk0Var.g = new iy6();
-            }
-        }
-        vf9Var.p();
-        vf9Var.w.b();
-        if (vf9Var.a0 >= arrayList.size()) {
-            vf9Var.a0 = Math.max(0, arrayList.size() - 1);
-        }
-        vf9Var.b0 = 0.0f;
-        vf9Var.V.e(true, vf9Var.n() ? 1.0f : 0.0f);
-        vf9Var.q(false);
-        vf9Var.requestLayout();
-        vf9Var.invalidate();
+        mk0 mk0Var = (mk0) b8cVar.H;
+        nh9 nh9Var = (nh9) b8cVar.I;
+        vf9Var.a = mk0Var;
+        vf9Var.w = nh9Var;
+        vf9Var.x = ob6.a0;
+        vf9Var.c(mk0Var);
     }
 
-    @Override // b4c
-    public final boolean c(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.d == c4cVar2.d;
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new vf9(context, vnbVar);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        vf9 vf9Var = new vf9(context, wjbVar);
-        vf9Var.setBackground(new ed9(bkb.v0(bkb.c6, wjbVar)));
-        return vf9Var;
-    }
-
-    @Override // b4c
-    public final boolean e(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.d == c4cVar2.d;
-    }
-
-    @Override // b4c
+    @Override // a8c
     public final boolean f() {
         return false;
     }

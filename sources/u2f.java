@@ -1,57 +1,59 @@
 // default package
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import org.telegram.messenger.WearAuthListenerService;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u2f extends Handler {
-    public boolean a;
-    public final b0f b;
-    public final /* synthetic */ WearAuthListenerService c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u2f(WearAuthListenerService wearAuthListenerService, Looper looper) {
-        super(looper);
-        this.c = wearAuthListenerService;
-        this.b = new b0f();
+public abstract class u2f {
+    public static boolean a(int i, byte[] bArr) {
+        return ((bArr[i / 8] >> (7 - (i % 8))) & 1) != 0;
     }
 
-    public final synchronized void a(String str) {
-        if (this.a) {
-            if (Log.isLoggable("WearableLS", 2)) {
-                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(this.c.a));
+    public static int b(byte[] bArr, int[] iArr) {
+        int i = 0;
+        if (a(0, bArr) && !a(1, bArr) && !a(2, bArr) && !a(3, bArr) && a(4, bArr) && !a(5, bArr) && !a(6, bArr)) {
+            int i2 = 271;
+            int i3 = 0;
+            while (i < 4) {
+                i3 = (i3 << 1) | (a(i2, bArr) ? 1 : 0);
+                i++;
+                i2++;
             }
-            try {
-                this.c.unbindService(this.b);
-            } catch (RuntimeException e) {
-                Log.e("WearableLS", "Exception when unbinding from local service", e);
-            }
-            this.a = false;
-        }
-    }
-
-    @Override // android.os.Handler
-    public final void dispatchMessage(Message message) {
-        synchronized (this) {
-            if (!this.a) {
-                if (Log.isLoggable("WearableLS", 2)) {
-                    Log.v("WearableLS", "bindService: ".concat(String.valueOf(this.c.a)));
+            int i4 = i2 + (i3 << 3);
+            int i5 = i4 + 1;
+            if (a(i4, bArr)) {
+                int i6 = i4 + 2;
+                if (a(i5, bArr)) {
+                    i5 = i6;
+                } else {
+                    int i7 = i4 + 3;
+                    if (a(i6, bArr)) {
+                        i7 = i4 + 8;
+                    }
+                    int i8 = i7 + 1;
+                    if (a(i7, bArr)) {
+                        i8 = i7 + 3;
+                    }
+                    i5 = i8 + 3;
                 }
-                WearAuthListenerService wearAuthListenerService = this.c;
-                wearAuthListenerService.bindService(wearAuthListenerService.d, this.b, 1);
-                this.a = true;
+            }
+            if (a(i5, bArr) && iArr.length > 0) {
+                return iArr[iArr.length - 1];
             }
         }
-        try {
-            super.dispatchMessage(message);
-        } finally {
-            if (!hasMessages(0)) {
-                a("dispatch");
-            }
+        return -1;
+    }
+
+    public static void c(int i, byte[] bArr) {
+        int i2 = i / 8;
+        bArr[i2] = (byte) (bArr[i2] | ((byte) (1 << (7 - (i % 8)))));
+    }
+
+    public static long d(int i, ByteBuffer byteBuffer) {
+        long j = 0;
+        for (int i2 = 0; i2 < i; i2++) {
+            j = (j << 8) | (byteBuffer.get() & 255);
         }
+        return j;
     }
 }

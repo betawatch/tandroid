@@ -1,41 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e80 extends gy2 {
-    public final String a;
-    public final String b;
-    public final String c;
+public final class e80 {
+    public int a;
+    public String b;
+    public int c;
+    public int d;
+    public long e;
+    public long f;
+    public long g;
+    public String h;
+    public List i;
+    public byte j;
 
-    public e80(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final f80 a() {
+        String str;
+        if (this.j == 63 && (str = this.b) != null) {
+            return new f80(this.a, str, this.c, this.d, this.e, this.f, this.g, this.h, this.i);
         }
-        if (obj instanceof gy2) {
-            e80 e80Var = (e80) ((gy2) obj);
-            if (this.a.equals(e80Var.a) && this.b.equals(e80Var.b) && this.c.equals(e80Var.c)) {
-                return true;
-            }
+        StringBuilder sb = new StringBuilder();
+        if ((this.j & 1) == 0) {
+            sb.append(" pid");
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("BuildIdMappingForArch{arch=");
-        sb.append(this.a);
-        sb.append(", libraryName=");
-        sb.append(this.b);
-        sb.append(", buildId=");
-        return b00.j(sb, this.c, "}");
+        if (this.b == null) {
+            sb.append(" processName");
+        }
+        if ((this.j & 2) == 0) {
+            sb.append(" reasonCode");
+        }
+        if ((this.j & 4) == 0) {
+            sb.append(" importance");
+        }
+        if ((this.j & 8) == 0) {
+            sb.append(" pss");
+        }
+        if ((this.j & 16) == 0) {
+            sb.append(" rss");
+        }
+        if ((this.j & 32) == 0) {
+            sb.append(" timestamp");
+        }
+        grb.i(bs2.o("Missing required properties:", sb));
+        return null;
     }
 }

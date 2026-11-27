@@ -4,24 +4,24 @@ import android.app.Activity;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class at {
-    private final vzc a;
-    private final vzc b;
+    private final m4d a;
+    private final m4d b;
 
-    public at(vzc vzcVar, vzc vzcVar2) {
-        this.a = vzcVar;
-        this.b = vzcVar2;
+    public at(m4d m4dVar, m4d m4dVar2) {
+        this.a = m4dVar;
+        this.b = m4dVar2;
     }
 
-    public final as a(Activity activity, TaskCompletionSource taskCompletionSource, hzc hzcVar) {
+    public final as a(Activity activity, TaskCompletionSource taskCompletionSource, y3d y3dVar) {
         Context context = (Context) this.a.a();
         context.getClass();
         k kVar = (k) this.b.a();
         kVar.getClass();
         activity.getClass();
-        hzcVar.getClass();
-        return new as(context, kVar, activity, taskCompletionSource, hzcVar);
+        y3dVar.getClass();
+        return new as(context, kVar, activity, taskCompletionSource, y3dVar);
     }
 }

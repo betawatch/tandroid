@@ -1,173 +1,66 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class x47 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ long c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class x47 extends vic {
+    public final /* synthetic */ s57 W;
 
-    public /* synthetic */ x47(na7 na7Var, long j, byte b) {
-        this.a = b;
-        this.b = na7Var;
-        this.c = j;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x47(s57 s57Var, Context context, o57 o57Var) {
+        super(context, o57Var);
+        this.W = s57Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        long j = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
-            case 0:
-                if (j == 0) {
-                    na7Var.getClass();
-                    break;
-                } else {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-            case 1:
-                gl.c3(new w67(na7Var, j, tLObject));
+    @Override // vic, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z;
+        int i = 0;
+        while (true) {
+            View[] viewArr = this.W.f.e;
+            if (i >= viewArr.length) {
+                z = false;
                 break;
-            case 2:
-                if (tLObject instanceof TLRPC.TL_channels_channelParticipants) {
-                    na7Var.L3(j, (TLRPC.TL_channels_channelParticipants) tLObject);
+            }
+            View view = viewArr[i];
+            if (view != null) {
+                m57 m57Var = (m57) view;
+                if (m57Var.a == 0) {
+                    z = m57Var.e.i;
                     break;
                 }
-                break;
-            case 3:
-                if (tL_error == null) {
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
-                }
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 4:
-                if (tL_error == null) {
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
-                }
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 5:
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
-                    na7Var.P3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
-                }
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 6:
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 7:
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages2 = (TLRPC.TL_messages_affectedMessages) tLObject;
-                    na7Var.P3(tL_messages_affectedMessages2.pts, -1, tL_messages_affectedMessages2.pts_count);
-                }
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 8:
-                na7Var.getMessagesStorage().n1(j);
-                break;
-            case 9:
-                if (tL_error == null) {
-                    gl.c3(new w67(na7Var, tLObject, j));
-                    break;
-                }
-                break;
-            case 10:
-                if (j == 0) {
-                    na7Var.getClass();
-                    break;
-                } else {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-            case 11:
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 12:
-                if (tL_error == null) {
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
-                }
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 13:
-                if (tLObject != null) {
-                    TLRPC.TL_chatOnlines tL_chatOnlines = (TLRPC.TL_chatOnlines) tLObject;
-                    na7 na7Var2 = this.b;
-                    ad7 messagesStorage = na7Var2.getMessagesStorage();
-                    int i = tL_chatOnlines.onlines;
-                    co3 co3Var = messagesStorage.a;
-                    long j2 = this.c;
-                    co3Var.c(new bb7(messagesStorage, i, j2, (byte) 7));
-                    gl.c3(new go6((Object) na7Var2, j2, (Object) tL_chatOnlines, (byte) 2));
-                    break;
-                }
-                break;
-            case 14:
-                if (tL_error == null) {
-                    na7Var.getMessagesController().R3((TLRPC.Updates) tLObject, false);
-                    gl.d3(new r57(na7Var, j, (byte) 20), 1000L);
-                    break;
-                }
-                break;
-            case 15:
-                if (tL_error != null) {
-                    na7Var.getClass();
-                    break;
-                } else {
-                    na7Var.getMessagesController().R3((TLRPC.Updates) tLObject, false);
-                    gl.d3(new r57(na7Var, j, (byte) 18), 1000L);
-                    break;
-                }
-            case 16:
-                if (j != 0) {
-                    na7Var.getMessagesStorage().n1(j);
-                }
-                if (tLObject != null) {
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
-                    break;
-                }
-                break;
-            default:
-                if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
-                    if (tL_error != null && tL_error.code == 400) {
-                        na7Var.Y2(0, -j, true);
-                        break;
-                    }
-                } else {
-                    long j3 = -j;
-                    if (na7Var.L0(j3) == null) {
-                        na7Var.Y2(0, j3, true);
-                        break;
-                    }
-                }
-                break;
+            }
+            i++;
+        }
+        if (z) {
+            return false;
+        }
+        return C(motionEvent);
+    }
+
+    @Override // vic
+    public final void v() {
+        View view = this.e[0];
+        if (view instanceof m57) {
+            ((m57) view).e.U();
+        }
+    }
+
+    @Override // vic
+    public final void x(boolean z) {
+        s57 s57Var = this.W;
+        s57Var.e.setSelectedTab(s57Var.f.getPositionAnimated());
+        View[] viewArr = this.e;
+        View view = viewArr[0];
+        if (view instanceof m57) {
+            ((m57) view).e.F();
+        }
+        View view2 = viewArr[1];
+        if (view2 instanceof m57) {
+            ((m57) view2).e.F();
         }
     }
 }

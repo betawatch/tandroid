@@ -1,14 +1,102 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fta extends f21 {
-    public int y;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
 
-    @Override // f21
-    public final void setColor(int i) {
-        super.setColor(i);
-        this.y = i;
-        invalidate();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fta extends vic {
+    public final /* synthetic */ wua W;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fta(wua wuaVar, Context context) {
+        super(context, null);
+        this.W = wuaVar;
+    }
+
+    @Override // vic
+    public final void G(View view, float f) {
+        View view2;
+        mx4 mx4Var;
+        mx4 mx4Var2;
+        hta htaVar;
+        hta htaVar2;
+        hta htaVar3;
+        if (getMeasuredWidth() <= 0) {
+            view.setTranslationX(f);
+            return;
+        }
+        float i = Utilities.i(f / getMeasuredWidth(), 1.0f, -1.0f);
+        wua wuaVar = this.W;
+        view.setTranslationX(((-i) * 2.0f * wuaVar.u0) + f);
+        view.setPivotX(i <= 0.0f ? view.getMeasuredWidth() : 0.0f);
+        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
+        view.setScaleX(1.0f - Math.abs(0.25f * i));
+        view.setRotationY(i * 10.0f);
+        if (view instanceof FrameLayout) {
+            FrameLayout frameLayout = (FrameLayout) view;
+            if (frameLayout.getChildCount() > 0) {
+                view2 = frameLayout.getChildAt(0);
+                mx4Var = wuaVar.X1;
+                if (mx4Var != null && view2 == mx4Var.T1 && (htaVar3 = mx4Var.Z1) != null) {
+                    htaVar3.invalidate();
+                }
+                if (view2 == wuaVar.T1 && (htaVar2 = wuaVar.Z1) != null) {
+                    htaVar2.invalidate();
+                }
+                mx4Var2 = wuaVar.Y1;
+                if (mx4Var2 == null && view2 == mx4Var2.T1 && (htaVar = mx4Var2.Z1) != null) {
+                    htaVar.invalidate();
+                    return;
+                }
+                return;
+            }
+        }
+        view2 = null;
+        mx4Var = wuaVar.X1;
+        if (mx4Var != null) {
+            htaVar3.invalidate();
+        }
+        if (view2 == wuaVar.T1) {
+            htaVar2.invalidate();
+        }
+        mx4Var2 = wuaVar.Y1;
+        if (mx4Var2 == null) {
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
+    @Override // vic
+    public final void H() {
+        super.H();
+        int i = this.b;
+        wua wuaVar = this.W;
+        if (i != wuaVar.C1(false)) {
+            hl.c3(new q38((byte) 19, (Object) this, this.b > wuaVar.C1(false)));
+        }
+    }
+
+    @Override // vic
+    public final boolean c(MotionEvent motionEvent) {
+        yta ytaVar = this.W.W2;
+        return ytaVar == null || ytaVar.c(0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        wua wuaVar = this.W;
+        canvas.clipRect(wuaVar.u0, -getHeight(), getWidth() - wuaVar.u0, getHeight() << 1);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // vic
+    public final float getAvailableTranslationX() {
+        return Math.max(1, getMeasuredWidth() - (this.W.u0 << 1));
     }
 }

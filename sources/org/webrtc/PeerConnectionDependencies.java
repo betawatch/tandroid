@@ -2,30 +2,11 @@ package org.webrtc;
 
 import org.webrtc.PeerConnection;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class PeerConnectionDependencies {
     private final PeerConnection.Observer observer;
     private final SSLCertificateVerifier sslCertificateVerifier;
-
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    public static class Builder {
-        private PeerConnection.Observer observer;
-        private SSLCertificateVerifier sslCertificateVerifier;
-
-        private Builder(PeerConnection.Observer observer) {
-            this.observer = observer;
-        }
-
-        public PeerConnectionDependencies createPeerConnectionDependencies() {
-            return new PeerConnectionDependencies(this.observer, this.sslCertificateVerifier);
-        }
-
-        public Builder setSSLCertificateVerifier(SSLCertificateVerifier sSLCertificateVerifier) {
-            this.sslCertificateVerifier = sSLCertificateVerifier;
-            return this;
-        }
-    }
 
     private PeerConnectionDependencies(PeerConnection.Observer observer, SSLCertificateVerifier sSLCertificateVerifier) {
         this.observer = observer;
@@ -33,7 +14,7 @@ public final class PeerConnectionDependencies {
     }
 
     public static Builder builder(PeerConnection.Observer observer) {
-        return new Builder(observer);
+        return new Builder(observer, 0);
     }
 
     public PeerConnection.Observer getObserver() {
@@ -42,5 +23,32 @@ public final class PeerConnectionDependencies {
 
     public SSLCertificateVerifier getSSLCertificateVerifier() {
         return this.sslCertificateVerifier;
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public static class Builder {
+        private final PeerConnection.Observer observer;
+        private SSLCertificateVerifier sslCertificateVerifier;
+
+        private Builder(PeerConnection.Observer observer) {
+            this.observer = observer;
+        }
+
+        public PeerConnectionDependencies createPeerConnectionDependencies() {
+            return new PeerConnectionDependencies(this.observer, this.sslCertificateVerifier, 0);
+        }
+
+        public Builder setSSLCertificateVerifier(SSLCertificateVerifier sSLCertificateVerifier) {
+            this.sslCertificateVerifier = sSLCertificateVerifier;
+            return this;
+        }
+
+        public /* synthetic */ Builder(PeerConnection.Observer observer, int i) {
+            this(observer);
+        }
+    }
+
+    public /* synthetic */ PeerConnectionDependencies(PeerConnection.Observer observer, SSLCertificateVerifier sSLCertificateVerifier, int i) {
+        this(observer, sSLCertificateVerifier);
     }
 }

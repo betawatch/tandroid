@@ -1,33 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class kva implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ bwa b;
+    public final /* synthetic */ lva b;
 
-    public /* synthetic */ kva(bwa bwaVar, byte b) {
+    public /* synthetic */ kva(lva lvaVar, byte b) {
         this.a = b;
-        this.b = bwaVar;
+        this.b = lvaVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        bwa bwaVar = this.b;
+        int i = 0;
+        lva lvaVar = this.b;
         switch (b) {
             case 0:
-                bwaVar.N1 = true;
-                bwaVar.E0(null);
-                gl.d3(new kva(bwaVar, (byte) 1), 240L);
+                lvaVar.r = false;
+                lvaVar.invalidate();
+                lvaVar.a();
+                lvaVar.c();
                 break;
             case 1:
-                bwaVar.dismiss();
+                lvaVar.invalidate();
                 break;
             default:
-                qva qvaVar = bwaVar.s1;
-                qvaVar.G = false;
-                qvaVar.invalidate();
+                lvaVar.setMessageCell(null);
+                ArrayList arrayList = lvaVar.K;
+                int size = arrayList.size();
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    ((b29) obj).x(true);
+                }
+                arrayList.clear();
                 break;
         }
     }

@@ -1,250 +1,99 @@
 // default package
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.os.IBinder;
-import com.google.android.gms.tasks.OnSuccessListener;
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l41 implements z7c, ed, gx2, o2b, x56, z97, lx6, us2, OnSuccessListener, ula {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class l41 extends FrameLayout {
+    public final ema a;
+    public final tpa b;
+    public final ema c;
+    public final vnb d;
+    public boolean e;
+    public TL_account.TL_businessChatLink f;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ l41(yb8 yb8Var, int i) {
-        this.a = (byte) 5;
-        this.c = yb8Var;
-        this.b = i;
+    public l41(Context context, vnb vnbVar) {
+        super(context);
+        this.d = vnbVar;
+        setWillNotDraw(false);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setPadding(hl.L(9.0f), hl.L(9.0f), hl.L(9.0f), hl.L(9.0f));
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        int L = hl.L(36.0f);
+        int i = aob.Fi;
+        ShapeDrawable K = aob.K(L, aob.w0(null, i, false));
+        uob M = yob.M(i);
+        imageView.setBackground(K);
+        yob.j(imageView, K, M, null, null);
+        imageView.setOnClickListener(new k1(this, (byte) 26));
+        addView(imageView, tre.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        ema emaVar = new ema(context);
+        this.a = emaVar;
+        emaVar.setTextSize(15);
+        yob.W(emaVar, aob.G6, null);
+        emaVar.setGravity(ob6.a0 ? 5 : 3);
+        addView(emaVar, tre.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        ema emaVar2 = new ema(context);
+        this.c = emaVar2;
+        emaVar2.setTextSize(14);
+        int i2 = aob.z6;
+        yob.W(emaVar2, i2, null);
+        emaVar2.setGravity(ob6.a0 ? 3 : 5);
+        addView(emaVar2, tre.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        tpa tpaVar = new tpa(context);
+        this.b = tpaVar;
+        tpaVar.setTextSize(1, 13.0f);
+        tpaVar.setMaxLines(1);
+        tpaVar.setEllipsize(TextUtils.TruncateAt.END);
+        yob.X(tpaVar, i2, vnbVar);
+        tpaVar.setGravity(ob6.a0 ? 5 : 3);
+        tpaVar.r = false;
+        tpaVar.setUseAlphaForEmoji(false);
+        jn7.i(tpaVar);
+        addView(tpaVar, tre.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
-    @Override // z7c
-    public final void a(int i, ArrayList arrayList) {
-        byte b = this.a;
-        int i2 = 0;
-        boolean z = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 0:
-                m41 m41Var = (m41) obj;
-                ArrayList arrayList2 = m41Var.k;
-                ArrayList arrayList3 = m41Var.j;
-                if (z) {
-                    m41Var.f = i;
-                    arrayList3.clear();
-                    arrayList3.addAll(arrayList);
-                    while (i2 < arrayList3.size()) {
-                        arrayList2.remove(arrayList3.get(i2));
-                        i2++;
-                    }
-                } else {
-                    m41Var.g = i;
-                    arrayList2.clear();
-                    arrayList2.addAll(arrayList);
-                    while (i2 < arrayList2.size()) {
-                        arrayList3.remove(arrayList2.get(i2));
-                        i2++;
-                    }
-                }
-                m41Var.e.run();
-                break;
-            default:
-                pd4 pd4Var = (pd4) obj;
-                LongSparseIntArray longSparseIntArray = pd4Var.I;
-                pd4Var.E = i;
-                if (z) {
-                    pd4Var.t0(pd4Var.G, arrayList, true);
-                    pd4Var.G = arrayList;
-                    for (int i3 = 0; i3 < pd4Var.G.size(); i3++) {
-                        pd4Var.H.remove(pd4Var.G.get(i3));
-                    }
-                    ArrayList arrayList4 = new ArrayList();
-                    int size = longSparseIntArray.size();
-                    for (int i4 = 0; i4 < size; i4++) {
-                        long keyAt = longSparseIntArray.keyAt(i4);
-                        Long valueOf = Long.valueOf(keyAt);
-                        if (!cf3.B(keyAt) && !pd4Var.G.contains(valueOf)) {
-                            arrayList4.add(valueOf);
-                        }
-                    }
-                    int size2 = arrayList4.size();
-                    for (int i5 = 0; i5 < size2; i5++) {
-                        longSparseIntArray.delete(((Long) arrayList4.get(i5)).longValue());
-                    }
-                } else {
-                    pd4Var.t0(pd4Var.H, arrayList, false);
-                    pd4Var.H = arrayList;
-                    for (int i6 = 0; i6 < pd4Var.H.size(); i6++) {
-                        Long l = (Long) pd4Var.H.get(i6);
-                        pd4Var.G.remove(l);
-                        longSparseIntArray.delete(l.longValue());
-                    }
-                }
-                pd4Var.l0();
-                pd4Var.k0(false);
-                pd4Var.B0();
-                break;
-        }
-    }
-
-    @Override // us2
-    public final void accept(Object obj) {
-        ((ad8) obj).i0((nz) this.c, this.b);
-    }
-
-    @Override // z97
-    public final boolean b(TLRPC.TL_error tL_error) {
-        fu5 fu5Var = (fu5) this.c;
-        byte b = 0;
-        if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            fu5Var.setOnDismissListener(new bu5(b, fu5Var, this.b));
-        }
-        fu5Var.dismiss();
-        return false;
-    }
-
-    @Override // ula
-    public final void e(qla qlaVar, float f, float f2) {
-        wla wlaVar = (wla) this.c;
-        if (wlaVar.d || wlaVar.e || wlaVar.f || !this.b) {
-            return;
-        }
-        wlaVar.c(f, f2);
-    }
-
-    @Override // o2b
-    public final void i(boolean z) {
-        vf3 vf3Var = (vf3) this.c;
-        if (this.b || !z) {
-            return;
-        }
-        boolean z2 = vf3Var.b == 1;
-        g2b g2bVar = vf3Var.s;
-        if (z2) {
-            if (!g2bVar.z) {
-                return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint U0 = aob.U0("paintDivider", this.d);
+            if (U0 == null) {
+                U0 = aob.j0;
             }
-        } else if (!g2bVar.p) {
-            return;
-        }
-        g2bVar.S(z2);
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        ((mc8) obj).D(((yb8) this.c).a, this.b ? 1 : 0);
-    }
-
-    @Override // gx2
-    public final void o(long j) {
-        gn gnVar = ((mb2) this.c).a.z3;
-        if (gnVar != null) {
-            gnVar.t(k96.M((int) j, this.b), true, true);
+            canvas.drawRect(hl.L(ob6.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - hl.L(ob6.a0 ? 64.0f : 0.0f), getMeasuredHeight(), U0);
         }
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        SharedPreferences.Editor edit = sre.a((Context) this.c).edit();
-        edit.putBoolean("proxy_retention", this.b);
-        edit.apply();
-    }
-
-    @Override // lx6
-    public final Object p(tv6 tv6Var, su6 su6Var, int i) {
-        long m;
-        int i2;
-        byte b = this.a;
-        long j = -9223372036854775807L;
-        int i3 = -1;
-        boolean z = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 9:
-                try {
-                    w59 u = mm5.u(br6.a(su6Var.c, (Bundle) obj));
-                    if (z) {
-                        m = -9223372036854775807L;
-                        i2 = -1;
-                    } else {
-                        tv6Var.t();
-                        int l0 = tv6Var.t.l0();
-                        tv6Var.t();
-                        m = tv6Var.t.m();
-                        i2 = l0;
-                    }
-                    return tv6Var.o(su6Var, u, i2, m);
-                } catch (RuntimeException e) {
-                    lad.g("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e);
-                    return jie.b(e);
-                }
-            default:
-                try {
-                    mm5 a = w21.a((IBinder) obj);
-                    jm5 p = mm5.p();
-                    for (int i4 = 0; i4 < a.size(); i4++) {
-                        Bundle bundle = (Bundle) a.get(i4);
-                        bundle.getClass();
-                        p.c(br6.a(su6Var.c, bundle));
-                    }
-                    w59 f = p.f();
-                    if (!z) {
-                        tv6Var.t();
-                        i3 = tv6Var.t.l0();
-                        tv6Var.t();
-                        j = tv6Var.t.m();
-                    }
-                    return tv6Var.o(su6Var, f, i3, j);
-                } catch (RuntimeException e2) {
-                    lad.g("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e2);
-                    return jie.b(e2);
-                }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        boolean z2 = ob6.a0;
+        ema emaVar = this.c;
+        ema emaVar2 = this.a;
+        if (z2) {
+            emaVar2.setPadding(emaVar.getTextWidth(), 0, 0, 0);
+        } else {
+            emaVar2.setPadding(0, 0, emaVar.getTextWidth(), 0);
         }
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        boolean z = this.b;
-        Object obj = this.c;
-        switch (b) {
-            case 1:
-                ((r61) obj).q0(z);
-                break;
-            case 2:
-                mu1 mu1Var = (mu1) obj;
-                ar1 ar1Var = mu1Var.a0;
-                if (ar1Var != null) {
-                    if (!z) {
-                        ar1Var.E();
-                        break;
-                    } else {
-                        mu1Var.finishFragment();
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                h75 h75Var = ((k65) obj).b;
-                h75Var.T2.C(0, null);
-                h75Var.c1().j(z ? 101 : 40, 0L, null);
-                break;
-            default:
-                on9 on9Var = (on9) obj;
-                on9Var.c.C(0, null);
-                on9Var.J.j(z ? 101 : 40, 0L, null);
-                break;
-        }
-    }
-
-    public /* synthetic */ l41(byte b, Object obj, boolean z) {
-        this.a = b;
-        this.c = obj;
-        this.b = z;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
     }
 }

@@ -1,52 +1,120 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class o08 extends tmb {
-    public final /* synthetic */ byte I = 1;
+public final /* synthetic */ class o08 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r08 b;
 
-    public /* synthetic */ o08(Context context, ui5 ui5Var, int i) {
-        super(context, ui5Var, i);
+    public /* synthetic */ o08(r08 r08Var, byte b) {
+        this.a = b;
+        this.b = r08Var;
     }
 
-    public final /* synthetic */ void b(Canvas canvas) {
-        super.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.I) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final byte b2 = 1;
+        final r08 r08Var = this.b;
+        switch (b) {
             case 0:
-                if (!canvas.isHardwareAccelerated()) {
-                    zdc.a(canvas, this, new zf7(this, (byte) 10));
-                    break;
-                } else {
-                    super.draw(canvas);
-                    break;
-                }
-            default:
-                super.draw(canvas);
+                hl.c3(new Runnable() { // from class: q08
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i;
+                        int i2;
+                        switch (b2) {
+                            case 0:
+                                r08 r08Var2 = r08Var;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
+                                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                                    i = ((e) r08Var2.e).currentAccount;
+                                    ConnectionsManager.getInstance(i).sendRequest(getpassword, new o08(r08Var2, (byte) 3), 8);
+                                    break;
+                                } else {
+                                    Utilities.e.c(new fd7((Object) r08Var2, (Object) r08Var2.b, (Object) r08Var2.d, (byte) 19));
+                                    break;
+                                }
+                                break;
+                            default:
+                                r08 r08Var3 = r08Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                b18 b18Var = r08Var3.e;
+                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
+                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
+                                    i2 = ((e) b18Var).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(getpassword2, new o08(r08Var3, (byte) 4), 8);
+                                    break;
+                                } else {
+                                    if (b18Var.E == null) {
+                                        b18Var.E = new TL_account.authorizationForm();
+                                    }
+                                    r08Var3.a();
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
-        }
-    }
-
-    @Override // tmb, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.I) {
             case 1:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
+                hl.c3(new p08(r08Var, tLObject, tL_error));
+                break;
+            case 2:
+                final byte b3 = 0;
+                hl.c3(new Runnable() { // from class: q08
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i;
+                        int i2;
+                        switch (b3) {
+                            case 0:
+                                r08 r08Var2 = r08Var;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
+                                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                                    i = ((e) r08Var2.e).currentAccount;
+                                    ConnectionsManager.getInstance(i).sendRequest(getpassword, new o08(r08Var2, (byte) 3), 8);
+                                    break;
+                                } else {
+                                    Utilities.e.c(new fd7((Object) r08Var2, (Object) r08Var2.b, (Object) r08Var2.d, (byte) 19));
+                                    break;
+                                }
+                                break;
+                            default:
+                                r08 r08Var3 = r08Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                b18 b18Var = r08Var3.e;
+                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
+                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
+                                    i2 = ((e) b18Var).currentAccount;
+                                    ConnectionsManager.getInstance(i2).sendRequest(getpassword2, new o08(r08Var3, (byte) 4), 8);
+                                    break;
+                                } else {
+                                    if (b18Var.E == null) {
+                                        b18Var.E = new TL_account.authorizationForm();
+                                    }
+                                    r08Var3.a();
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 3:
+                hl.c3(new p08(r08Var, tL_error, tLObject, b2));
+                break;
+            default:
+                hl.c3(new p08(r08Var, tL_error, tLObject, (byte) 2));
                 break;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    public /* synthetic */ o08(Context context, ui5 ui5Var, int i, long j, wjb wjbVar) {
-        super(context, ui5Var, i, j, wjbVar);
     }
 }

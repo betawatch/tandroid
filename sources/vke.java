@@ -1,42 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vke extends c2e {
-    private static final vke zzb;
-    private int zzd;
-    private int zzf;
-    private fje zzi;
-    private boolean zzj;
-    private boolean zzk;
-    private String zze = "";
-    private w2e zzg = h2e.e;
-    private a3e zzh = pae.e;
-
-    static {
-        vke vkeVar = new vke();
-        zzb = vkeVar;
-        c2e.k(vke.class, vkeVar);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class vke {
+    public static ga4 a(long j, int i, long j2, float f, float f2, float f3, float f4, fa4 fa4Var) {
+        float f5 = f4 - f3;
+        float max = Math.max(f, f3);
+        float min = Math.min(f2, f4);
+        if (f5 <= 0.0f || max >= min) {
+            return null;
+        }
+        float f6 = f2 - f;
+        if (min - max >= Math.min(f6, f5) / 2.0f) {
+            return new ga4(j, i, j2, max - f, min - f, f6, f5, fa4Var);
+        }
+        return null;
     }
 
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public static String b(String str, boolean z) {
+        if (str == null) {
+            return null;
         }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0002\u0000\u0001ဈ\u0000\u0002᠌\u0001\u0003ࠬ\u0004\u001b\u0005ဉ\u0002\u0006ဇ\u0003\u0007ဇ\u0004", new Object[]{"zzd", "zze", "zzf", yqd.f, "zzg", yqd.e, "zzh", jpe.class, "zzi", "zzj", "zzk"});
+        String lowerCase = str.indexOf(58) > 0 ? str.substring(0, str.indexOf(58)).toLowerCase() : "";
+        String lowerCase2 = str.toLowerCase();
+        if (str.startsWith("@") || lowerCase.equals("tg")) {
+            return "in_app";
         }
-        if (i2 == 3) {
-            return new vke();
+        if (!lowerCase.equals("http") && !lowerCase.equals("https") && !lowerCase.equals("tonsite")) {
+            return null;
         }
-        if (i2 == 4) {
-            return new epd(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
+        String str2 = lowerCase2.substring(lowerCase.length() + 1).replaceFirst("^//", "").split("[/?#:]", 2)[0];
+        return (str2.equals("telegra.ph") || str2.equals("te.legra.ph") || str2.equals("graph.org")) ? "iv" : (str2.equals("telegram.org") && lowerCase2.matches(".*telegram\\.org/(faq|privacy|blog).*")) ? "iv" : !z ? "external" : "in_app";
     }
 }

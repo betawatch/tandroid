@@ -4,45 +4,62 @@ import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class j3 extends e3 implements SortedSet {
-    public final /* synthetic */ wg7 d;
+public class j3 extends e3 implements SortedMap {
+    public SortedSet f;
+    public final /* synthetic */ fj7 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j3(wg7 wg7Var, SortedMap sortedMap) {
-        super(wg7Var, sortedMap);
-        this.d = wg7Var;
+    public j3(fj7 fj7Var, SortedMap sortedMap) {
+        super(fj7Var, sortedMap, (byte) 0);
+        this.h = fj7Var;
     }
 
-    @Override // java.util.SortedSet
+    public SortedSet c() {
+        return new k3(this.h, e());
+    }
+
+    @Override // java.util.SortedMap
     public final Comparator comparator() {
-        return h().comparator();
+        return e().comparator();
     }
 
-    @Override // java.util.SortedSet
-    public final Object first() {
-        return h().firstKey();
+    @Override // e3, java.util.AbstractMap, java.util.Map
+    /* renamed from: d, reason: merged with bridge method [inline-methods] */
+    public SortedSet keySet() {
+        SortedSet sortedSet = this.f;
+        if (sortedSet != null) {
+            return sortedSet;
+        }
+        SortedSet c = c();
+        this.f = c;
+        return c;
     }
 
-    public SortedMap h() {
-        return (SortedMap) this.b;
+    public SortedMap e() {
+        return (SortedMap) this.d;
     }
 
-    public SortedSet headSet(Object obj) {
-        return new j3(this.d, h().headMap(obj));
+    @Override // java.util.SortedMap
+    public final Object firstKey() {
+        return e().firstKey();
     }
 
-    @Override // java.util.SortedSet
-    public final Object last() {
-        return h().lastKey();
+    public SortedMap headMap(Object obj) {
+        return new j3(this.h, e().headMap(obj));
     }
 
-    public SortedSet subSet(Object obj, Object obj2) {
-        return new j3(this.d, h().subMap(obj, obj2));
+    @Override // java.util.SortedMap
+    public final Object lastKey() {
+        return e().lastKey();
     }
 
-    public SortedSet tailSet(Object obj) {
-        return new j3(this.d, h().tailMap(obj));
+    public SortedMap subMap(Object obj, Object obj2) {
+        return new j3(this.h, e().subMap(obj, obj2));
+    }
+
+    public SortedMap tailMap(Object obj) {
+        return new j3(this.h, e().tailMap(obj));
     }
 }

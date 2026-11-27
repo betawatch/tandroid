@@ -1,29 +1,24 @@
 // default package
 
-import android.text.Editable;
+import java.io.Serializable;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public interface lc9 {
-    boolean A(mc9 mc9Var);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class lc9 implements ita, ncc {
+    public final /* synthetic */ nd9 a;
 
-    boolean H(mc9 mc9Var);
+    public /* synthetic */ lc9(nd9 nd9Var) {
+        this.a = nd9Var;
+    }
 
-    void I();
+    @Override // ita
+    public final void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, boolean z) {
+        this.a.j0(tL_starGiftUnique, j, z);
+    }
 
-    void O(CharSequence charSequence);
-
-    void U(Editable editable);
-
-    void Y(mc9 mc9Var);
-
-    boolean c0(boolean z);
-
-    void d(mc9 mc9Var);
-
-    boolean i();
-
-    void l(int i, int i2);
-
-    void t(mc9 mc9Var, int i, int i2);
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.l0((b8c) obj);
+    }
 }

@@ -1,50 +1,38 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jw1 implements gj {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class jw1 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ jw1(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ jw1(ChatActivityEnterView chatActivityEnterView, byte b) {
+        this.a = b;
+        this.b = chatActivityEnterView;
     }
 
-    public final void a() {
-        int i = ChatActivityEnterView.r7;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        ValueAnimator valueAnimator = chatActivityEnterView.B5;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        chatActivityEnterView.D5 = 0.0f;
-        chatActivityEnterView.C5 = 0.0f;
-        ry8 ry8Var = chatActivityEnterView.h1;
-        if (ry8Var != null) {
-            ry8Var.setRotation(0.0f);
-            chatActivityEnterView.h1.setPivotX(r1.getWidth() / 2.0f);
-            chatActivityEnterView.h1.setPivotY(r1.getHeight() / 2.0f);
-            if (chatActivityEnterView.h1.getAnimatedDrawable() == chatActivityEnterView.z5) {
-                chatActivityEnterView.h1.setProgress(0.0f);
-            }
-        }
-        kx1 kx1Var = chatActivityEnterView.y5;
-        chatActivityEnterView.y5 = null;
-        if (kx1Var != null) {
-            kx1Var.run();
-        }
-    }
-
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean v1 = chatActivityEnterView.v1(z, i, i2, 0L, true);
-        j47 j47Var = chatActivityEnterView.M0;
-        if (j47Var != null) {
-            j47Var.f(!v1);
-            chatActivityEnterView.M0 = null;
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (b) {
+            case 0:
+                int i = ChatActivityEnterView.X7;
+                chatActivityEnterView.x0((Canvas) obj, false);
+                break;
+            case 1:
+                chatActivityEnterView.C1((TL_iv.RichMessage) obj);
+                break;
+            default:
+                CharSequence charSequence = (CharSequence) obj;
+                int i2 = ChatActivityEnterView.X7;
+                chatActivityEnterView.F0.setText(charSequence);
+                chatActivityEnterView.F0.setSelection(charSequence.length(), charSequence.length());
+                break;
         }
     }
 }

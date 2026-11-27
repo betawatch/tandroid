@@ -1,14 +1,24 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nzb extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min((int) (gl.q.y * 0.33f), View.MeasureSpec.getSize(i2)), TLObject.FLAG_30));
+public final class nzb extends v79 {
+    public final /* synthetic */ byte a;
+
+    public /* synthetic */ nzb(byte b) {
+        this.a = b;
+    }
+
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        byte b = this.a;
+    }
+
+    private final void c(RecyclerView recyclerView, int i, int i2) {
+    }
+
+    private final void d(RecyclerView recyclerView, int i, int i2) {
     }
 }

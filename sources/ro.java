@@ -1,76 +1,55 @@
 // default package
 
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupWindow;
 import java.util.WeakHashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ro extends efc {
+public final class ro implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ cp b;
 
-    public /* synthetic */ ro(Object obj, byte b) {
+    public /* synthetic */ ro(cp cpVar, byte b) {
         this.a = b;
-        this.b = obj;
+        this.b = cpVar;
     }
 
-    @Override // efc, dfc
-    public final void b() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
         byte b = this.a;
-        Object obj = this.b;
+        cp cpVar = this.b;
         switch (b) {
             case 0:
-                ((qo) obj).b.E.setVisibility(0);
-                break;
-            case 1:
-                bp bpVar = (bp) obj;
-                bpVar.E.setVisibility(0);
-                if (bpVar.E.getParent() instanceof View) {
-                    View view = (View) bpVar.E.getParent();
-                    WeakHashMap weakHashMap = jdc.a;
-                    zcc.c(view);
-                    break;
+                if ((cpVar.j0 & 1) != 0) {
+                    cpVar.j(0);
                 }
-                break;
-        }
-    }
-
-    @Override // dfc
-    public final void c() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bp bpVar = ((qo) obj).b;
-                bpVar.E.setAlpha(1.0f);
-                bpVar.H.d(null);
-                bpVar.H = null;
-                break;
-            case 1:
-                bp bpVar2 = (bp) obj;
-                bpVar2.E.setAlpha(1.0f);
-                bpVar2.H.d(null);
-                bpVar2.H = null;
+                if ((cpVar.j0 & TLObject.FLAG_12) != 0) {
+                    cpVar.j(jn7.s1);
+                }
+                cpVar.i0 = false;
+                cpVar.j0 = 0;
                 break;
             default:
-                bp bpVar3 = (bp) ((tg2) obj).c;
-                bpVar3.E.setVisibility(8);
-                PopupWindow popupWindow = bpVar3.F;
-                if (popupWindow != null) {
-                    popupWindow.dismiss();
-                } else if (bpVar3.E.getParent() instanceof View) {
-                    View view = (View) bpVar3.E.getParent();
-                    WeakHashMap weakHashMap = jdc.a;
-                    zcc.c(view);
+                cpVar.F.showAtLocation(cpVar.E, 55, 0, 0);
+                zic zicVar = cpVar.H;
+                if (zicVar != null) {
+                    zicVar.b();
                 }
-                bpVar3.E.e();
-                bpVar3.H.d(null);
-                bpVar3.H = null;
-                ViewGroup viewGroup = bpVar3.K;
-                WeakHashMap weakHashMap2 = jdc.a;
-                zcc.c(viewGroup);
+                if (cpVar.J && (viewGroup = cpVar.K) != null) {
+                    WeakHashMap weakHashMap = ihc.a;
+                    if (viewGroup.isLaidOut()) {
+                        cpVar.E.setAlpha(0.0f);
+                        zic a = ihc.a(cpVar.E);
+                        a.a(1.0f);
+                        cpVar.H = a;
+                        a.d(new so(this, (byte) 0));
+                        break;
+                    }
+                }
+                cpVar.E.setAlpha(1.0f);
+                cpVar.E.setVisibility(0);
                 break;
         }
     }

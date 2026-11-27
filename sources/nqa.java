@@ -1,42 +1,88 @@
 // default package
 
-import android.text.Spanned;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nqa implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rqa b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class nqa implements pe3 {
+    public final char a;
+    public int b = 0;
+    public final LinkedList c = new LinkedList();
 
-    public /* synthetic */ nqa(rqa rqaVar, byte b) {
-        this.a = b;
-        this.b = rqaVar;
+    public nqa(char c) {
+        this.a = c;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        View.OnClickListener onClickListener;
-        byte b = this.a;
-        rqa rqaVar = this.b;
-        switch (b) {
-            case 0:
-                CharSequence text = rqaVar.w.getText();
-                if (text instanceof Spanned) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
-                    if (clickableSpanArr.length > 0) {
-                        clickableSpanArr[0].onClick(view);
-                        break;
-                    }
-                }
+    @Override // pe3
+    public final void a(qkb qkbVar, qkb qkbVar2, int i) {
+        pe3 pe3Var;
+        LinkedList linkedList = this.c;
+        Iterator it = linkedList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                pe3Var = (pe3) linkedList.getFirst();
                 break;
-            default:
-                if (rqaVar.P.getVisibility() == 0 && (onClickListener = rqaVar.a0) != null) {
-                    onClickListener.onClick(view);
+            } else {
+                pe3Var = (pe3) it.next();
+                if (pe3Var.c() <= i) {
                     break;
                 }
-                break;
+            }
         }
+        pe3Var.a(qkbVar, qkbVar2, i);
+    }
+
+    @Override // pe3
+    public final char b() {
+        return this.a;
+    }
+
+    @Override // pe3
+    public final int c() {
+        return this.b;
+    }
+
+    @Override // pe3
+    public final int d(oe3 oe3Var, oe3 oe3Var2) {
+        pe3 pe3Var;
+        int i = oe3Var.g;
+        LinkedList linkedList = this.c;
+        Iterator it = linkedList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                pe3Var = (pe3) linkedList.getFirst();
+                break;
+            }
+            pe3Var = (pe3) it.next();
+            if (pe3Var.c() <= i) {
+                break;
+            }
+        }
+        return pe3Var.d(oe3Var, oe3Var2);
+    }
+
+    @Override // pe3
+    public final char e() {
+        return this.a;
+    }
+
+    public final void f(pe3 pe3Var) {
+        int c = pe3Var.c();
+        LinkedList linkedList = this.c;
+        ListIterator listIterator = linkedList.listIterator();
+        while (listIterator.hasNext()) {
+            int c2 = ((pe3) listIterator.next()).c();
+            if (c > c2) {
+                listIterator.previous();
+                listIterator.add(pe3Var);
+                return;
+            } else if (c == c2) {
+                throw new IllegalArgumentException("Cannot add two delimiter processors for char '" + this.a + "' and minimum length " + c);
+            }
+        }
+        linkedList.add(pe3Var);
+        this.b = c;
     }
 }

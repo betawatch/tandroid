@@ -1,85 +1,39 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nt7 extends mu1 {
-    public final /* synthetic */ i8c wd;
-    public final /* synthetic */ wt7 xd;
+public final class nt7 implements TextWatcher {
+    public final /* synthetic */ ot7 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt7(wt7 wt7Var, i8c i8cVar) {
-        super(null);
-        this.xd = wt7Var;
-        this.wd = i8cVar;
+    public nt7(ot7 ot7Var) {
+        this.a = ot7Var;
     }
 
-    @Override // mu1
-    public final boolean Q7() {
-        return false;
-    }
-
-    @Override // mu1, sy1
-    public final long a() {
-        return 0L;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // mu1, ma6
-    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
-        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
-        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
-            tL_mediaAreaGeoPoint2 = new TL_stories.TL_mediaAreaGeoPoint();
-            tL_mediaAreaGeoPoint2.geo = messageMedia.geo;
-        } else {
-            if (!(messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
-                return;
-            }
-            TLRPC.TL_messageMediaVenue tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) messageMedia;
-            long j2 = tL_messageMediaVenue.query_id;
-            if (j2 == -1 || j2 == -2) {
-                TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint3 = new TL_stories.TL_mediaAreaGeoPoint();
-                tL_mediaAreaGeoPoint3.geo = messageMedia.geo;
-                TL_stories.TL_geoPointAddress tL_geoPointAddress = tL_messageMediaVenue.geoAddress;
-                tL_mediaAreaGeoPoint3.address = tL_geoPointAddress;
-                if (tL_geoPointAddress != null) {
-                    tL_mediaAreaGeoPoint3.flags |= 1;
-                }
-                Utilities.e.c(new bj7(messageMedia, tL_mediaAreaGeoPoint3, (byte) 15));
-                tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
-            } else {
-                TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
-                tL_inputMediaAreaVenue.query_id = tL_messageMediaVenue.query_id;
-                tL_inputMediaAreaVenue.result_id = tL_messageMediaVenue.result_id;
-                tL_mediaAreaGeoPoint = tL_inputMediaAreaVenue;
-            }
-            tL_mediaAreaGeoPoint2 = tL_mediaAreaGeoPoint;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String obj = editable == null ? "" : editable.toString();
+        int indexOf = obj.indexOf(46);
+        if (indexOf >= 0 && (obj.length() - indexOf) - 1 > 2) {
+            editable.delete(indexOf + 3, obj.length());
+            return;
         }
-        this.wd.a(messageMedia, tL_mediaAreaGeoPoint2);
+        boolean z = obj.isEmpty() || ".".equals(obj);
+        oj i = z ? null : oj.i(obj, pj.b);
+        if (z || i != null) {
+            this.a.F0(z ? 0L : i.b);
+        } else {
+            editable.delete(obj.length() - 1, obj.length());
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final Activity getParentActivity() {
-        return gl.W(this.xd.getContext());
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 
-    @Override // mu1, org.telegram.ui.ActionBar.d
-    public final wjb getResourceProvider() {
-        return this.xd.w1;
-    }
-
-    @Override // mu1, sy1
-    public final TLRPC.User h() {
-        return y6c.h(this.currentAccount).f();
-    }
-
-    @Override // mu1, org.telegram.ui.ActionBar.d
-    public final boolean isLightStatusBar() {
-        return false;
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

@@ -1,24 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class m70 implements zn7 {
+public final class m70 implements zq7 {
     public static final m70 a = new m70();
-    public static final w84 b = w84.c("rolloutId");
-    public static final w84 c = w84.c("parameterKey");
-    public static final w84 d = w84.c("parameterValue");
-    public static final w84 e = w84.c("variantId");
-    public static final w84 f = w84.c("templateVersion");
+    public static final sa4 b = new sa4("startMs", c00.n(c00.m(nw8.class, new wx(1))));
+    public static final sa4 c = new sa4("endMs", c00.n(c00.m(nw8.class, new wx(2))));
 
-    @Override // q24
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        kj9 kj9Var = (kj9) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, ((ia0) kj9Var).b);
-        ia0 ia0Var = (ia0) kj9Var;
-        ao7Var.a(c, ia0Var.c);
-        ao7Var.a(d, ia0Var.d);
-        ao7Var.a(e, ia0Var.e);
-        ao7Var.g(f, ia0Var.f);
+        vrb vrbVar = (vrb) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.g(b, vrbVar.a);
+        ar7Var.g(c, vrbVar.b);
     }
 }

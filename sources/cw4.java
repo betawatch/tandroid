@@ -1,109 +1,63 @@
 // default package
 
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class cw4 {
-    public final RenderNode e;
-    public final RenderNode f;
-    public final RenderNode g;
-    public final RenderNode h;
-    public final RenderNode i;
-    public ColorMatrixColorFilter j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public byte o;
-    public byte p;
-    public float s;
-    public float t;
-    public int u;
-    public int v;
-    public int w;
-    public int x;
-    public final RectF a = new RectF();
-    public final Rect b = new Rect();
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-    public int q = 1;
-    public final RectF r = new RectF();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class cw4 extends wma {
+    public final /* synthetic */ hw4 g0;
 
-    public cw4(int i) {
-        mk1.p();
-        RenderNode renderNode = new RenderNode("cap-" + i);
-        this.e = renderNode;
-        renderNode.setUseCompositingLayer(true, null);
-        mk1.p();
-        RenderNode renderNode2 = new RenderNode("glass-" + i);
-        this.f = renderNode2;
-        renderNode2.setRenderEffect(yz.m());
-        mk1.p();
-        this.g = new RenderNode("glass-frosted-" + i);
-        mk1.p();
-        RenderNode renderNode3 = new RenderNode("filtered-" + i);
-        this.h = renderNode3;
-        renderNode3.setRenderEffect(RenderEffect.createColorFilterEffect(ew4.v));
-        mk1.p();
-        this.i = new RenderNode("frosted-filtered-" + i);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cw4(hw4 hw4Var, Context context) {
+        super(context, null);
+        this.g0 = hw4Var;
     }
 
-    public final RenderNode a(int i) {
-        int F = ug8.F(i);
-        if (F == 0) {
-            return this.e;
-        }
-        if (F == 1) {
-            return this.f;
-        }
-        if (F == 2) {
-            return this.g;
-        }
-        if (F == 3) {
-            return this.i;
-        }
-        w26.j("Unknown source index: ".concat(tb4.B(i)));
-        return null;
+    @Override // wma
+    public final boolean O() {
+        return false;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(int i, int i2, int i3) {
-        if (this.o != i) {
-            this.o = i;
-            float N = gl.N(7.0f);
-            float max = N <= 0.0f ? 0.0f : Math.max(0.0f, ((((N * 0.57735f) + 0.5f) / i) - 0.5f) / 0.57735f);
-            this.s = max;
-            this.e.setRenderEffect(RenderEffect.createBlurEffect(max, max, Shader.TileMode.CLAMP));
-        }
-        if (this.p != i2) {
-            this.p = i2;
-            float N2 = gl.N(36.0f);
-            float max2 = N2 > 0.0f ? Math.max(0.0f, ((((N2 * 0.57735f) + 0.5f) / i2) - 0.5f) / 0.57735f) : 0.0f;
-            this.t = max2;
-            RenderNode renderNode = this.g;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            renderNode.setRenderEffect(RenderEffect.createBlurEffect(max2, max2, tileMode));
-            RenderNode renderNode2 = this.i;
-            float f = this.t;
-            renderNode2.setRenderEffect(RenderEffect.createBlurEffect(f, f, tileMode));
-        }
-        this.q = i3;
+    @Override // wma
+    public final boolean P() {
+        return false;
     }
 
-    public final void c(ColorMatrixColorFilter colorMatrixColorFilter) {
-        if (this.j != colorMatrixColorFilter) {
-            this.j = colorMatrixColorFilter;
-            RenderNode renderNode = this.h;
-            if (colorMatrixColorFilter == null) {
-                colorMatrixColorFilter = ew4.v;
-            }
-            renderNode.setRenderEffect(RenderEffect.createColorFilterEffect(colorMatrixColorFilter));
+    @Override // wma
+    public final void T(Drawable drawable) {
+        if (drawable instanceof hh7) {
+            ((hh7) drawable).o();
         }
+        hw4 hw4Var = this.g0;
+        hw4Var.n1.a = hw4Var.m1.c(drawable);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        if (view != this.M) {
+            return super.drawChild(canvas, view, j);
+        }
+        hw4 hw4Var = this.g0;
+        mz4 mz4Var = hw4Var.n1.a;
+        if (mz4Var instanceof nz4) {
+            ((nz4) mz4Var).b(getWidth(), getHeight());
+        }
+        hw4Var.n1.e(0.0f, 0.0f, getWidth(), getHeight(), canvas);
+        return false;
+    }
+
+    @Override // wma
+    public final Drawable getNewDrawable() {
+        Drawable drawable = this.g0.x1;
+        return drawable != null ? drawable : super.getNewDrawable();
+    }
+
+    @Override // wma, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.g0.E0();
     }
 }

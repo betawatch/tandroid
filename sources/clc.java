@@ -1,218 +1,185 @@
 // default package
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.d;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import org.telegram.messenger.a;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class clc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class clc extends FrameLayout {
+    public static final /* synthetic */ int h = 0;
+    public final float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public final /* synthetic */ dlc f;
 
-    public /* synthetic */ clc(int i, String str, p8c p8cVar) {
-        this.a = (byte) 4;
-        this.b = i;
-        this.c = str;
-        this.d = p8cVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public clc(dlc dlcVar, Context context) {
+        super(context);
+        this.f = dlcVar;
+        this.a = ViewConfiguration.get(context).getScaledTouchSlop();
+        setOutlineProvider(new yi((byte) 22));
+        setClipToOutline(true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        bwc bwcVar;
-        switch (this.a) {
-            case 0:
-                Context context = (Context) this.c;
-                int i = this.b;
-                String str = ((TL_wallet.walletTransaction[]) this.d)[0].tx_hash;
-                if (!TextUtils.isEmpty(str)) {
-                    String str2 = na7.q1(i).k4.G1.f;
-                    if (TextUtils.isEmpty(str2)) {
-                        str2 = "https://tonviewer.com/";
-                    } else if (!str2.endsWith("/")) {
-                        str2 = str2.concat("/");
-                    }
-                    StringBuilder k = b00.k(str2, "transaction/");
-                    k.append(Uri.encode(str));
-                    d01.v(context, k.toString(), false);
-                    break;
-                }
-                break;
-            case 1:
-                jmc jmcVar = (jmc) this.c;
-                int i2 = this.b;
-                Bitmap[] bitmapArr = (Bitmap[]) this.d;
-                if (jmcVar.f0 == i2) {
-                    jmcVar.f(bitmapArr);
-                    jmcVar.a.run();
-                    break;
-                }
-                break;
-            case 2:
-                noc nocVar = (noc) this.c;
-                int i3 = this.b;
-                lqc lqcVar = (lqc) this.d;
-                int i4 = i3 + 1;
-                ArrayList arrayList = nocVar.w;
-                if (i4 < arrayList.size()) {
-                    ((lqc) arrayList.get(i4)).a.requestFocus();
-                    break;
-                } else {
-                    gl.t1(lqcVar);
-                    break;
-                }
-            case 3:
-                fqc fqcVar = (fqc) this.c;
-                int i5 = this.b;
-                lqc lqcVar2 = (lqc) this.d;
-                int i6 = i5 + 1;
-                ArrayList arrayList2 = fqcVar.d;
-                if (i6 < arrayList2.size()) {
-                    ((lqc) arrayList2.get(i6)).a.requestFocus();
-                    break;
-                } else {
-                    gl.t1(lqcVar2);
-                    break;
-                }
-            case 4:
-                int i7 = this.b;
-                String str3 = (String) this.c;
-                p8c p8cVar = (p8c) this.d;
-                xqc[] xqcVarArr = xqc.f;
-                xqc xqcVar = xqcVarArr[i7];
-                if (xqcVar == null) {
-                    xqcVar = new xqc(i7);
-                    xqcVarArr[i7] = xqcVar;
-                }
-                xqcVar.d(str3, true, null, null, p8cVar);
-                break;
-            case 5:
-                orc orcVar = (orc) this.c;
-                int i8 = this.b;
-                TLObject tLObject = (TLObject) this.d;
-                HashMap hashMap = orcVar.e;
-                WallpapersListActivity wallpapersListActivity = orcVar.F;
-                ArrayList arrayList3 = orcVar.d;
-                if (i8 == orcVar.w) {
-                    orcVar.s = 0;
-                    int size = arrayList3.size();
-                    if (tLObject != null) {
-                        TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                        orcVar.r = messages_botresults.next_offset;
-                        int size2 = messages_botresults.results.size();
-                        for (int i9 = 0; i9 < size2; i9++) {
-                            TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i9);
-                            if ("photo".equals(botInlineResult.type) && !hashMap.containsKey(botInlineResult.id)) {
-                                nm6 nm6Var = new nm6();
-                                TLRPC.Photo photo = botInlineResult.photo;
-                                if (photo != null) {
-                                    TLRPC.PhotoSize w = ba4.w(photo.sizes, gl.Y0(false), false, null, false);
-                                    TLRPC.PhotoSize w2 = ba4.w(botInlineResult.photo.sizes, kk7.q5, false, null, false);
-                                    if (w != null) {
-                                        nm6Var.E = w.w;
-                                        nm6Var.F = w.h;
-                                        nm6Var.L = w;
-                                        nm6Var.K = botInlineResult.photo;
-                                        nm6Var.G = w.size;
-                                        nm6Var.M = w2;
-                                        nm6Var.B = botInlineResult.id;
-                                        nm6Var.H = false;
-                                        arrayList3.add(nm6Var);
-                                        hashMap.put(nm6Var.B, nm6Var);
-                                    }
-                                } else if (botInlineResult.content != null) {
-                                    int i10 = 0;
-                                    while (true) {
-                                        if (i10 < botInlineResult.content.attributes.size()) {
-                                            TLRPC.DocumentAttribute documentAttribute = botInlineResult.content.attributes.get(i10);
-                                            if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
-                                                nm6Var.E = documentAttribute.w;
-                                                nm6Var.F = documentAttribute.h;
-                                            } else {
-                                                i10++;
-                                            }
-                                        }
-                                    }
-                                    TLRPC.WebDocument webDocument = botInlineResult.thumb;
-                                    if (webDocument != null) {
-                                        nm6Var.D = webDocument.url;
-                                    } else {
-                                        nm6Var.D = null;
-                                    }
-                                    TLRPC.WebDocument webDocument2 = botInlineResult.content;
-                                    nm6Var.C = webDocument2.url;
-                                    nm6Var.G = webDocument2.size;
-                                    nm6Var.B = botInlineResult.id;
-                                    nm6Var.H = false;
-                                    arrayList3.add(nm6Var);
-                                    hashMap.put(nm6Var.B, nm6Var);
-                                }
-                            }
-                        }
-                        orcVar.f = size == arrayList3.size() || orcVar.r == null;
-                    }
-                    if (size != arrayList3.size()) {
-                        int i11 = size % wallpapersListActivity.O;
-                        float f = size;
-                        int ceil = (int) Math.ceil(f / r15);
-                        if (i11 != 0) {
-                            orcVar.g(((int) Math.ceil(f / wallpapersListActivity.O)) - 1);
-                        }
-                        wallpapersListActivity.I.p(ceil, ((int) Math.ceil(arrayList3.size() / wallpapersListActivity.O)) - ceil);
-                    }
-                    wallpapersListActivity.L.c();
-                    break;
-                }
-                break;
-            default:
-                z zVar = (z) this.c;
-                int i12 = this.b;
-                String str4 = (String) this.d;
-                if (!zVar.A && (bwcVar = zVar.R) != null) {
-                    if (i12 != 13) {
-                        boolean equals = "1".equals(str4);
-                        if (bwcVar.z != equals) {
-                            bwcVar.z = equals;
-                            c6e c6eVar = bwcVar.d;
-                            if (c6eVar != null) {
-                                c6eVar.getClass();
-                                vvc.E();
-                                break;
-                            }
-                        }
-                    } else if (bwcVar.d != null && !TextUtils.isEmpty(str4)) {
-                        gl.g(str4);
-                        d S = gl.C3() ? LaunchActivity.S() : null;
-                        if (S != null) {
-                            if (str4.length() > 80) {
-                                str4 = str4.substring(0, 80).concat("…");
-                            }
-                            u21.b0(S).Q(R.raw.copy, 36, k96.a0(null, null, 2131742603, str4)).j();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        dlc dlcVar = this.f;
+        hmc hmcVar = dlcVar.r;
+        hmc hmcVar2 = dlcVar.s;
+        hmcVar.setPivotX(hmcVar2.getMeasuredWidth());
+        hmcVar.setPivotY(hmcVar2.getMeasuredHeight());
+        hmcVar.setTranslationX((1.0f / getScaleX()) * (-hl.L(4.0f)) * dlcVar.w);
+        hmcVar.setTranslationY((1.0f / getScaleY()) * (-hl.L(4.0f)) * dlcVar.w);
+        hmcVar.setRoundCorners((1.0f / getScaleY()) * hl.L(8.0f) * dlcVar.w);
+        hmcVar.setScaleX(((1.0f - dlcVar.w) * 0.6f) + 0.4f);
+        hmcVar.setScaleY(((1.0f - dlcVar.w) * 0.6f) + 0.4f);
+        hmcVar.setAlpha(Math.min(1.0f, 1.0f - dlcVar.w));
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        this.b = hl.L(16.0f);
+        this.c = hl.L(16.0f);
+        this.d = hl.L(60.0f);
+        this.e = hl.L(16.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
+    
+        if (r4 != 3) goto L61;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        dlc dlcVar = this.f;
+        if (dlc.T || dlc.U == null) {
+            return false;
         }
-    }
-
-    public /* synthetic */ clc(Object obj, int i, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
-        this.d = obj2;
+        hl.r(dlcVar.O);
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        ViewParent parent = getParent();
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action != 1) {
+                if (action == 2) {
+                    dlc dlcVar2 = this.f;
+                    float f = rawX - dlcVar2.J;
+                    float f2 = rawY - dlcVar2.K;
+                    if (!dlcVar2.L) {
+                        float f3 = (f2 * f2) + (f * f);
+                        float f4 = this.a;
+                        if (f3 > f4 * f4) {
+                            if (parent != null) {
+                                parent.requestDisallowInterceptTouchEvent(true);
+                            }
+                            dlcVar2 = this.f;
+                            dlcVar2.L = true;
+                            dlcVar2.J = rawX;
+                            dlcVar2.K = rawY;
+                            f = 0.0f;
+                            f2 = 0.0f;
+                        }
+                    }
+                    if (dlcVar2.L) {
+                        WindowManager.LayoutParams layoutParams = dlcVar2.d;
+                        layoutParams.x = (int) (layoutParams.x + f);
+                        layoutParams.y = (int) (layoutParams.y + f2);
+                        dlcVar2.J = rawX;
+                        dlcVar2.K = rawY;
+                        hl.N3(dlcVar2.c, dlcVar2.a, layoutParams);
+                        return true;
+                    }
+                }
+            }
+            AnimatorSet animatorSet = this.f.P;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+            }
+            if (motionEvent.getAction() == 1 && !this.f.L && System.currentTimeMillis() - this.f.M < 150) {
+                Context context = getContext();
+                if (context instanceof LaunchActivity) {
+                    if (a.x) {
+                        Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
+                        intent.setAction("voip");
+                        context.startActivity(intent);
+                    } else {
+                        mkc.n((Activity) context, this.f.N);
+                    }
+                }
+                this.f.L = false;
+                return false;
+            }
+            if (parent != null) {
+                parent.requestDisallowInterceptTouchEvent(false);
+                Point point = hl.q;
+                int i = point.x;
+                int i2 = point.y + dlc.W;
+                float f5 = this.d;
+                float f6 = this.e;
+                dlc dlcVar3 = this.f;
+                float left = dlcVar3.b.getLeft() + dlcVar3.d.x;
+                float measuredWidth = this.f.b.getMeasuredWidth() + left;
+                dlc dlcVar4 = this.f;
+                float top = dlcVar4.b.getTop() + dlcVar4.d.y;
+                float measuredHeight = this.f.b.getMeasuredHeight() + top;
+                this.f.P = new AnimatorSet();
+                float f7 = this.b;
+                if (left < f7) {
+                    dlc dlcVar5 = this.f;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(dlcVar5.d.x, f7 - dlcVar5.b.getLeft());
+                    ofFloat.addUpdateListener(this.f.Q);
+                    this.f.P.playTogether(ofFloat);
+                } else if (measuredWidth > i - this.c) {
+                    dlc dlcVar6 = this.f;
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(dlcVar6.d.x, (i - dlcVar6.b.getRight()) - this.c);
+                    ofFloat2.addUpdateListener(this.f.Q);
+                    this.f.P.playTogether(ofFloat2);
+                }
+                if (top < f5) {
+                    dlc dlcVar7 = this.f;
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(dlcVar7.d.y, f5 - dlcVar7.b.getTop());
+                    ofFloat3.addUpdateListener(this.f.R);
+                    this.f.P.playTogether(ofFloat3);
+                } else if (measuredHeight > i2 - f6) {
+                    dlc dlcVar8 = this.f;
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(dlcVar8.d.y, (i2 - dlcVar8.b.getMeasuredHeight()) - f6);
+                    ofFloat4.addUpdateListener(this.f.R);
+                    this.f.P.playTogether(ofFloat4);
+                }
+                this.f.P.setDuration(150L).setInterpolator(k43.f);
+                this.f.P.start();
+            }
+            this.f.L = false;
+            dlc.U.getClass();
+            return true;
+        }
+        dlc dlcVar9 = this.f;
+        dlcVar9.J = rawX;
+        dlcVar9.K = rawY;
+        dlcVar9.M = System.currentTimeMillis();
+        AnimatorSet animatorSet2 = this.f.P;
+        if (animatorSet2 != null) {
+            animatorSet2.cancel();
+        }
+        return true;
     }
 }

@@ -1,80 +1,126 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class d92 extends n39 {
-    public final /* synthetic */ e92 c;
+public final class d92 extends yc8 {
+    public final /* synthetic */ g92 a;
 
-    public d92(e92 e92Var) {
-        this.c = e92Var;
+    public d92(g92 g92Var) {
+        this.a = g92Var;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f == 1;
+    @Override // yc8, ed8
+    public final void F() {
+        this.a.e.getImageReceiver().v0(true, true);
     }
 
-    @Override // w39
-    public final int b() {
-        return this.c.i3.O.size() + 2;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 0;
-        }
-        return i <= this.c.i3.O.size() ? 1 : 2;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        e92 e92Var = this.c;
-        f92 f92Var = e92Var.i3;
-        int i2 = s49Var.f;
-        View view = s49Var.a;
-        if (i2 == 0) {
-            ld5 ld5Var = (ld5) view;
-            zkb.h(bkb.c6, e92Var.o2, ld5Var);
-            ld5Var.setText(k96.M0(2131743405, null));
-            return;
-        }
-        if (i2 != 1) {
-            if (i2 == 2) {
-                ((mhb) view).setText(k96.M0(2131743404, null));
-                return;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0027, code lost:
+    
+        if (r11 != null) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0040, code lost:
+    
+        if (r11 != null) goto L23;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007e  */
+    @Override // yc8, ed8
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final fd8 M(r47 r47Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
+        TLRPC.FileLocation fileLocation2;
+        g92 g92Var = this.a;
+        long j = g92Var.C0;
+        if (fileLocation != null) {
+            if (g92Var.D0 != null) {
+                TLRPC.User X1 = j == 0 ? null : g92Var.getMessagesController().X1(Long.valueOf(j));
+                if (X1 != null) {
+                    TLRPC.UserProfilePhoto userProfilePhoto = X1.photo;
+                    if (userProfilePhoto != null) {
+                        fileLocation2 = userProfilePhoto.photo_big;
+                    }
+                }
+                fileLocation2 = null;
+                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
+                    int[] iArr = new int[2];
+                    g92Var.e.getLocationInWindow(iArr);
+                    fd8 fd8Var = new fd8();
+                    fd8Var.b = iArr[0];
+                    fd8Var.c = iArr[1];
+                    mb0 mb0Var = g92Var.e;
+                    fd8Var.d = mb0Var;
+                    ImageReceiver imageReceiver = mb0Var.getImageReceiver();
+                    fd8Var.a = imageReceiver;
+                    if (j == 0) {
+                        j = -g92Var.w0;
+                    }
+                    fd8Var.f = j;
+                    fd8Var.e = imageReceiver.p();
+                    fd8Var.g = -1L;
+                    fd8Var.h = g92Var.e.getImageReceiver().z();
+                    fd8Var.k = g92Var.d.getScaleX();
+                    fd8Var.p = true;
+                    return fd8Var;
+                }
+            } else {
+                TLRPC.Chat M0 = g92Var.getMessagesController().M0(Long.valueOf(g92Var.w0));
+                if (M0 != null) {
+                    TLRPC.ChatPhoto chatPhoto = M0.photo;
+                    if (chatPhoto != null) {
+                        fileLocation2 = chatPhoto.photo_big;
+                    }
+                }
+                fileLocation2 = null;
+                if (fileLocation2 != null) {
+                    int[] iArr2 = new int[2];
+                    g92Var.e.getLocationInWindow(iArr2);
+                    fd8 fd8Var2 = new fd8();
+                    fd8Var2.b = iArr2[0];
+                    fd8Var2.c = iArr2[1];
+                    mb0 mb0Var2 = g92Var.e;
+                    fd8Var2.d = mb0Var2;
+                    ImageReceiver imageReceiver2 = mb0Var2.getImageReceiver();
+                    fd8Var2.a = imageReceiver2;
+                    if (j == 0) {
+                    }
+                    fd8Var2.f = j;
+                    fd8Var2.e = imageReceiver2.p();
+                    fd8Var2.g = -1L;
+                    fd8Var2.h = g92Var.e.getImageReceiver().z();
+                    fd8Var2.k = g92Var.d.getScaleX();
+                    fd8Var2.p = true;
+                    return fd8Var2;
+                }
             }
-            return;
         }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) f92Var.O.get(i - 1);
-        ie1 ie1Var = (ie1) view;
-        if (ie1Var.I) {
-            f92Var.P = null;
-        }
-        ie1Var.a(tL_username, i < f92Var.O.size(), false, 0L);
-        if (tL_username == null || !tL_username.editable) {
-            return;
-        }
-        f92Var.P = ie1Var;
+        return null;
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        e92 e92Var = this.c;
-        wjb wjbVar = e92Var.o2;
-        if (i == 0) {
-            return new y29(new ld5(e92Var.getContext(), wjbVar));
+    @Override // yc8, ed8
+    public final boolean N() {
+        g92 g92Var = this.a;
+        long j = g92Var.C0;
+        if (j == 0) {
+            return true;
         }
-        if (i == 1) {
-            return new y29(new ee1(this, e92Var.getContext(), wjbVar));
-        }
-        if (i != 2) {
-            return null;
-        }
-        return new y29(new mhb(12, wjbVar, e92Var.getContext()));
+        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
+        tL_photos_updateProfilePhoto.bot = g92Var.getMessagesController().o1(j);
+        tL_photos_updateProfilePhoto.flags |= 2;
+        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
+        g92Var.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new ye(this, (byte) 12));
+        return false;
+    }
+
+    @Override // yc8, ed8
+    public final void g(String str, String str2, boolean z) {
+        this.a.s.p(str, str2, z);
+    }
+
+    @Override // yc8, ed8
+    public final int x() {
+        return 1;
     }
 }

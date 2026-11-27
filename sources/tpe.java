@@ -1,21 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class tpe {
-    public final Long a;
-    public final Long b;
-    public final Long c;
-    public final Long d;
-    public final Long e;
-    public final Long f;
+import android.os.Build;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
 
-    public /* synthetic */ tpe(hpe hpeVar) {
-        this.a = hpeVar.a;
-        this.b = hpeVar.b;
-        this.c = hpeVar.c;
-        this.d = hpeVar.d;
-        this.e = hpeVar.e;
-        this.f = hpeVar.f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class tpe {
+    public static InputConnection a(InputConnection inputConnection, EditorInfo editorInfo, gq5 gq5Var) {
+        if (editorInfo != null) {
+            return Build.VERSION.SDK_INT >= 25 ? new eq5(inputConnection, gq5Var) : tu3.a(editorInfo).length == 0 ? inputConnection : new fq5(inputConnection, gq5Var);
+        }
+        p3d.h("editorInfo must be non-null");
+        return null;
     }
 }

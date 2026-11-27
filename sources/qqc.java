@@ -1,224 +1,167 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.CheckBox;
+import android.view.ViewConfiguration;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Scroller;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class qqc extends FrameLayout implements tjb {
-    public int a;
-    public boolean b;
-    public final pqc[] c;
-    public byte d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qqc extends t79 {
+    public wa a;
+    public wa c;
+    public boolean d;
     public boolean e;
     public boolean f;
-    public boolean h;
-    public final Paint n;
-    public final Paint r;
-    public final Paint s;
-    public final Drawable w;
+    public float g;
+    public float h;
+    public final /* synthetic */ uqc j;
+    public final n52 b = new n52(this);
+    public final olc i = new olc(this, (byte) 7);
 
-    public qqc(Context context, int i) {
-        super(context);
-        this.b = true;
-        this.d = (byte) 3;
-        this.c = new pqc[i];
-        final int i2 = 0;
-        while (true) {
-            pqc[] pqcVarArr = this.c;
-            if (i2 >= pqcVarArr.length) {
-                Paint paint = new Paint();
-                this.n = paint;
-                paint.setColor(855638016);
-                this.r = new Paint(1);
-                this.w = b00.d(context, R.drawable.background_selected);
-                Paint paint2 = new Paint();
-                this.s = paint2;
-                paint2.setColor(bkb.w0(null, bkb.Bi, false));
-                return;
-            }
-            final pqc pqcVar = new pqc(this, context);
-            pqcVarArr[i2] = pqcVar;
-            pqcVar.setClipToOutline(true);
-            addView(pqcVar);
-            pqcVar.setOnClickListener(new wg((Object) this, (Object) pqcVar, i2, (byte) 21));
-            pqcVar.setOnLongClickListener(new View.OnLongClickListener() { // from class: oqc
-                @Override // android.view.View.OnLongClickListener
-                public final boolean onLongClick(View view) {
-                    int i3 = i2;
-                    return qqc.this.b(pqcVar.h, i3);
-                }
-            });
-            i2++;
-        }
+    public qqc(uqc uqcVar) {
+        this.j = uqcVar;
     }
 
-    public abstract void a(int i, Object obj);
-
-    public boolean b(Object obj, int i) {
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0081  */
+    @Override // t79
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean a(int i, int i2) {
+        int minFlingVelocity;
+        int i3;
+        boolean z = this.f;
+        if (z) {
+            if (z) {
+                this.d = true;
+            }
+            q79 layoutManager = this.a.getLayoutManager();
+            if (layoutManager != null && this.a.getAdapter() != null && ((Math.abs(i2) > (minFlingVelocity = this.a.getMinFlingVelocity()) || Math.abs(i) > minFlingVelocity) && (layoutManager instanceof x46))) {
+                tna tnaVar = new tna(this, this.a.getContext());
+                if (this.c != null && this.f && Math.abs(i2) >= hl.L(600.0f)) {
+                    uqc uqcVar = this.j;
+                    if (uqcVar.s0()) {
+                        int i4 = i2 > 0 ? 1 : -1;
+                        q9c q0 = uqcVar.q0();
+                        if (this.c.canScrollVertically(i4) && (i4 >= 0 || q0 == null || !q0.canScrollVertically(-1))) {
+                            i3 = i4 > 0 ? layoutManager.A() - 1 : 0;
+                            if (i3 != -1) {
+                                tnaVar.a = i3;
+                                layoutManager.v0(tnaVar);
+                                return true;
+                            }
+                        }
+                    }
+                }
+                i3 = -1;
+                if (i3 != -1) {
+                }
+            }
+        }
         return false;
     }
 
-    public final void c(int i, boolean z, boolean z2) {
-        pqc pqcVar = this.c[i];
-        kb0 kb0Var = pqcVar.a;
-        CheckBox checkBox = pqcVar.c;
-        if (checkBox.getVisibility() != 0) {
-            checkBox.setVisibility(0);
+    public final void b(wa waVar) {
+        wa waVar2 = this.c;
+        if (waVar2 != null) {
+            waVar2.removeCallbacks(this.i);
         }
-        checkBox.b(z, z2);
-        AnimatorSet animatorSet = pqcVar.f;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            pqcVar.f = null;
-        }
-        if (z2) {
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            pqcVar.f = animatorSet2;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(kb0Var, "scaleX", z ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(kb0Var, "scaleY", z ? 0.8875f : 1.0f));
-            pqcVar.f.setDuration(200L);
-            pqcVar.f.addListener(new pu9((byte) 17, pqcVar, z));
-            pqcVar.f.start();
-        } else {
-            kb0Var.setScaleX(z ? 0.8875f : 1.0f);
-            kb0Var.setScaleY(z ? 0.8875f : 1.0f);
-        }
-        pqcVar.invalidate();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void d(int i, boolean z, boolean z2) {
-        boolean z3;
-        boolean z4;
-        this.d = i;
-        this.e = z;
-        this.f = z2;
-        int i2 = 0;
-        while (true) {
-            pqc[] pqcVarArr = this.c;
-            if (i2 >= pqcVarArr.length) {
-                return;
-            }
-            ydc ydcVar = null;
-            if ((z || z2) && (i2 == 0 || i2 == i - 1)) {
-                pqc pqcVar = pqcVarArr[i2];
-                int L = gl.L(16.0f);
-                boolean z5 = i2 == 0;
-                boolean z6 = i2 == i + (-1);
-                xi xiVar = zdc.a;
-                if ((z5 || z6) && (z || z2)) {
-                    z3 = z;
-                    z4 = z2;
-                    ydcVar = new ydc(L, z5, z3, z6, z4);
-                } else {
-                    z3 = z;
-                    z4 = z2;
+        this.c = waVar;
+        wa waVar3 = this.a;
+        if (waVar3 != waVar) {
+            n52 n52Var = this.b;
+            if (waVar3 != null) {
+                ArrayList arrayList = waVar3.x0;
+                if (arrayList != null) {
+                    arrayList.remove(n52Var);
                 }
-                pqcVar.setOutlineProvider(ydcVar);
-            } else {
-                pqcVarArr[i2].setOutlineProvider(null);
-                z3 = z;
-                z4 = z2;
+                this.a.setOnFlingListener(null);
             }
-            pqcVarArr[i2].setVisibility(i2 < i ? 0 : 8);
-            pqcVarArr[i2].clearAnimation();
-            i2++;
-            z = z3;
-            z2 = z4;
+            this.a = waVar;
+            if (waVar != null) {
+                if (waVar.getOnFlingListener() != null) {
+                    grb.i("An instance of OnFlingListener already set.");
+                    return;
+                }
+                this.a.j(n52Var);
+                this.a.setOnFlingListener(this);
+                new Scroller(this.a.getContext(), new DecelerateInterpolator());
+                f();
+            }
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void e(Object obj, int i, int i2, Object obj2) {
-        this.h = i;
-        pqc[] pqcVarArr = this.c;
-        if (obj == null) {
-            pqcVarArr[i2].setVisibility(8);
-            pqcVarArr[i2].clearAnimation();
-        } else {
-            pqcVarArr[i2].setVisibility(0);
-            pqcVarArr[i2].a(obj, obj2);
+    public final void c() {
+        this.e = false;
+        this.f = false;
+        this.d = false;
+        wa waVar = this.c;
+        if (waVar != null) {
+            waVar.removeCallbacks(this.i);
         }
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        for (int i = 0; i < this.d; i++) {
-            this.c[i].invalidate();
+    public final View d(q79 q79Var) {
+        wa waVar;
+        if (this.e || (waVar = this.c) == null || waVar.getScrollState() != 0) {
+            return null;
         }
+        uqc uqcVar = this.j;
+        q9c q0 = uqcVar.q0();
+        if ((q0 != null && q0.getScrollState() != 0) || !this.d) {
+            return null;
+        }
+        this.d = false;
+        if (!uqcVar.s0()) {
+            return null;
+        }
+        View m = q79Var.m(0);
+        View m2 = q79Var.m(q79Var.A() - 1);
+        return m == null ? m2 : (m2 == null || Math.abs(new int[]{0, q79.y(m) - q79Var.E()}[1]) < Math.abs(new int[]{0, q79.y(m2) - q79Var.E()}[1])) ? m : m2;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        if (this.d == 1) {
-            super.onLayout(z, i, i2, i3, i4);
+    public final void e(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            c();
+            this.e = true;
+            this.g = motionEvent.getX();
+            this.h = motionEvent.getY();
             return;
         }
-        int L = gl.L(12.0f);
-        int L2 = this.e ? gl.L(12.0f) : 0;
-        for (int i5 = 0; i5 < this.d; i5++) {
-            pqc[] pqcVarArr = this.c;
-            int measuredWidth = pqcVarArr[i5].getMeasuredWidth();
-            pqc pqcVar = pqcVarArr[i5];
-            pqcVar.layout(L, L2, L + measuredWidth, pqcVar.getMeasuredHeight() + L2);
-            L = de9.w(3.0f, measuredWidth, L);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3 = 0;
-        if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), ug8.E(3.0f, this.a, TLObject.FLAG_30));
-            setPadding(0, 0, 0, gl.L(3.0f));
+        if (actionMasked == 3) {
+            c();
             return;
         }
-        int size = View.MeasureSpec.getSize(i);
-        int L = size - gl.L(oo1.h(this.d, 1, 3, 24));
-        int i4 = L / this.d;
-        boolean z = this.h;
-        int L2 = (z == 0 || z == 2 || z == 3) ? gl.L(180.0f) : i4;
-        setMeasuredDimension(size, gl.L(this.f ? 12.0f : 3.0f) + (this.e ? gl.L(12.0f) : 0) + L2);
-        while (true) {
-            byte b = this.d;
-            if (i3 >= b) {
-                return;
+        if (actionMasked == 2 || actionMasked == 1) {
+            float abs = Math.abs(motionEvent.getX() - this.g);
+            float abs2 = Math.abs(motionEvent.getY() - this.h);
+            boolean z = abs2 > ((float) ViewConfiguration.get(this.c.getContext()).getScaledTouchSlop()) && abs2 > abs * 1.5f;
+            this.f = z;
+            if (!z) {
+                this.d = false;
             }
-            this.c[i3].measure(View.MeasureSpec.makeMeasureSpec(i3 == b + (-1) ? L : i4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(L2, TLObject.FLAG_30));
-            L -= i4;
-            i3++;
+            if (actionMasked == 1) {
+                this.e = false;
+            }
         }
     }
 
-    public void setSize(int i) {
-        if (this.a != i) {
-            this.a = i;
-            requestLayout();
+    public final void f() {
+        q79 layoutManager;
+        View d;
+        wa waVar = this.a;
+        if (waVar == null || (layoutManager = waVar.getLayoutManager()) == null || (d = d(layoutManager)) == null) {
+            return;
         }
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            this.s.setColor(bkb.w0(null, bkb.Bi, false));
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+        int[] iArr = {0, q79.y(d) - layoutManager.E()};
+        int i = iArr[0];
+        if (i == 0 && iArr[1] == 0) {
+            return;
         }
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+        this.a.y0(i, iArr[1], null);
     }
 }

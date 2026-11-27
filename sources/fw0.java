@@ -1,131 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.messenger.voip.OpusDred;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.messenger.voip.VoIPPreNotificationService;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class fw0 extends r12 {
-    public final /* synthetic */ byte d0;
-    public final /* synthetic */ Object e0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fw0 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fw0(byte b, Context context, Object obj) {
-        super(context);
-        this.d0 = b;
-        this.e0 = obj;
+    public /* synthetic */ fw0(int i, byte b) {
+        this.a = b;
+        this.b = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0094  */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i, int i2) {
-        int i3;
-        float f;
-        int size;
-        byte b = this.d0;
-        Object obj = this.e0;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        byte b2 = 0;
+        int i = this.b;
         switch (b) {
             case 0:
-                ow0 ow0Var = (ow0) obj;
-                kw0 kw0Var = ow0Var.n0;
-                int size2 = View.MeasureSpec.getSize(i2);
-                if (!gl.O1()) {
-                    Point point = gl.q;
-                    if (point.x > point.y) {
-                        i3 = (int) (size2 / 3.5f);
-                        if (i3 < 0) {
-                            i3 = 0;
-                        }
-                        f = i3;
-                        if (getOffsetY() != f && !ow0Var.e0 && ow0Var.V0) {
-                            ow0Var.H = true;
-                            setOffsetY(f);
-                            ow0Var.H = false;
-                            ow0Var.V0 = false;
-                        }
-                        if (!ow0Var.f0 && gl.O1() && !gl.E && !gl.N1()) {
-                            Point point2 = gl.q;
-                            i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point2.x, point2.y) * 0.8f), TLObject.FLAG_30);
-                        }
-                        size = View.MeasureSpec.getSize(i2);
-                        if (!ow0Var.f0) {
-                            size = (size - gl.m) - a.getCurrentActionBarHeight();
-                        }
-                        if (kw0Var != null && kw0Var.getTotalHeight() > 0) {
-                            size -= kw0Var.getTotalHeight();
-                        }
-                        super.onMeasure(i, ug8.E(24.0f, size, TLObject.FLAG_30));
-                        break;
-                    }
-                }
-                i3 = (size2 / 5) << 1;
-                if (i3 < 0) {
-                }
-                f = i3;
-                if (getOffsetY() != f) {
-                    ow0Var.H = true;
-                    setOffsetY(f);
-                    ow0Var.H = false;
-                    ow0Var.V0 = false;
-                }
-                if (!ow0Var.f0) {
-                    Point point22 = gl.q;
-                    i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point22.x, point22.y) * 0.8f), TLObject.FLAG_30);
-                }
-                size = View.MeasureSpec.getSize(i2);
-                if (!ow0Var.f0) {
-                }
-                if (kw0Var != null) {
-                    size -= kw0Var.getTotalHeight();
-                }
-                super.onMeasure(i, ug8.E(24.0f, size, TLObject.FLAG_30));
-            default:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i2) - a.getCurrentActionBarHeight()) - gl.L(84.0f)) + ((s12) obj).O, TLObject.FLAG_30));
+                hl.c3(new gw0(i, b2));
                 break;
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        switch (this.d0) {
-            case 0:
-                if (!((ow0) this.e0).H) {
-                    super.requestLayout();
+            case 1:
+                String str = LaunchActivity.C1;
+                hl.c3(new b16(tLObject, i, (byte) 1));
+                break;
+            case 2:
+                String str2 = LaunchActivity.C1;
+                hl.c3(new b16(tLObject, i, b2));
+                break;
+            case 3:
+                OpusDred.lambda$download$8(i, tLObject, tL_error);
+                break;
+            case 4:
+                hl.c3(new b16(i, tLObject));
+                break;
+            case 5:
+                VoIPGroupNotification.lambda$decline$3(i, tLObject, tL_error);
+                break;
+            case 6:
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    uc7.s1(i).Y3((TLRPC.TL_updates) tLObject, false);
                     break;
                 }
                 break;
             default:
-                super.requestLayout();
-                break;
-        }
-    }
-
-    @Override // r12, android.view.View
-    public final void setTranslationY(float f) {
-        switch (this.d0) {
-            case 0:
-                super.setTranslationY(f);
-                ow0 ow0Var = (ow0) this.e0;
-                yp0 yp0Var = ow0Var.o0;
-                if (yp0Var != null) {
-                    yp0Var.setTranslationY(gl.L(24.0f) + f);
-                }
-                FrameLayout frameLayout = ow0Var.r0;
-                if (frameLayout != null) {
-                    frameLayout.setTranslationY(ow0Var.x.getTranslationY() + gl.U1(ow0Var.h0, a.getCurrentActionBarHeight() - gl.L(24.0f), gl.L(70.0f) + ow0Var.n.top));
-                    break;
-                }
-                break;
-            default:
-                super.setTranslationY(f);
+                VoIPPreNotificationService.lambda$decline$4(i, tLObject, tL_error);
                 break;
         }
     }

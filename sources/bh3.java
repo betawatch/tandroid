@@ -1,59 +1,83 @@
 // default package
 
-import android.graphics.Point;
 import android.view.View;
 import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bh3 implements va5, f39 {
-    public final /* synthetic */ cj3 a;
+public final /* synthetic */ class bh3 implements View.OnLongClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uj3 b;
 
-    public /* synthetic */ bh3(cj3 cj3Var) {
-        this.a = cj3Var;
+    public /* synthetic */ bh3(uj3 uj3Var, byte b) {
+        this.a = b;
+        this.b = uj3Var;
     }
 
-    @Override // va5
-    public final void a(wa5 wa5Var, long j) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(zc7.a(-j, 0L));
-        cj3 cj3Var = this.a;
-        wi3 wi3Var = cj3Var.E2;
-        if (cj3Var.D2) {
-            cj3Var.removeSelfFromStack();
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        byte b = this.a;
+        uj3 uj3Var = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = uj3Var.K2;
+                if (uj3Var.getParentActivity() == null) {
+                    break;
+                } else {
+                    boolean z = !arrayList.isEmpty();
+                    boolean z2 = true;
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        long longValue = ((Long) arrayList.get(i)).longValue();
+                        if (z && longValue != uj3Var.getUserConfig().e()) {
+                            z = false;
+                        }
+                        if (wf3.B(longValue)) {
+                            z2 = false;
+                        }
+                        TLRPC.Chat M0 = uj3Var.getMessagesController().M0(Long.valueOf(-longValue));
+                        if (M0 != null && !xc2.B(M0)) {
+                            z2 = false;
+                        }
+                    }
+                    boolean z3 = uj3Var.z3() && uj3Var.G2();
+                    if (z3) {
+                        ArrayList arrayList2 = uj3Var.F2;
+                        int size = arrayList2.size();
+                        int i2 = 0;
+                        while (true) {
+                            if (i2 < size) {
+                                Object obj = arrayList2.get(i2);
+                                i2++;
+                                if (((no6) obj).b()) {
+                                    z3 = false;
+                                }
+                            }
+                        }
+                    }
+                    ArrayList arrayList3 = uj3Var.F2;
+                    boolean z4 = arrayList3 != null && arrayList3.size() > 1;
+                    fu5 I = fu5.I(uj3Var, view);
+                    I.k(R.drawable.msg_sendfile, ob6.M0(z4 ? 2131745363 : 2131745364, null), new rg3(uj3Var, (byte) 22), z3);
+                    I.b(R.drawable.input_notify_off, ob6.M0(2131745311, null), new rg3(uj3Var, (byte) 23), false);
+                    I.k(R.drawable.msg_calendar2, ob6.M0(z ? 2131745242 : 2131745587, null), new xac((byte) 15, uj3Var, z), z2);
+                    I.a0();
+                    break;
+                }
+                break;
+            case 1:
+                uj3 uj3Var2 = this.b;
+                uj3Var2.K4(uj3Var2.K2, jn7.o1, true, true, null);
+                break;
+            case 2:
+                uj3Var.E4(view);
+                break;
+            default:
+                uj3Var.getContactsController().B();
+                uj3Var.f5();
+                break;
         }
-        wi3Var.r(cj3Var, arrayList, null, true, cj3Var.L2, cj3Var.M2, cj3Var.N2, null);
-    }
-
-    @Override // f39
-    public final boolean e(float f, float f2, int i, View view) {
-        boolean z = view instanceof rr8;
-        cj3 cj3Var = this.a;
-        if (z) {
-            rr8 rr8Var = (rr8) view;
-            if (rr8Var.o0) {
-                cj3Var.e5(rr8Var.getDialogId(), view);
-                return true;
-            }
-        }
-        hi3 hi3Var = cj3Var.D0;
-        ns9 ns9Var = hi3Var.b0;
-        return cj3Var.z4(view, i, f, hi3Var.e0);
-    }
-
-    @Override // f39
-    public final void f() {
-        Point point = gl.q;
-        if (point.x > point.y) {
-            this.a.finishPreviewFragment();
-        }
-    }
-
-    @Override // f39
-    public final void g(float f) {
-        Point point = gl.q;
-        if (point.x > point.y) {
-            this.a.movePreviewFragment(f);
-        }
+        return true;
     }
 }

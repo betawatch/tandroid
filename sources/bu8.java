@@ -1,30 +1,41 @@
 // default package
 
-import android.content.ClipboardManager;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bu8 implements ClipboardManager.OnPrimaryClipChangedListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d b;
+public final class bu8 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ bu8(d dVar, byte b) {
-        this.a = b;
-        this.b = dVar;
+    static {
+        a8c.h(new bu8());
     }
 
-    @Override // android.content.ClipboardManager.OnPrimaryClipChangedListener
-    public final void onPrimaryClipChanged() {
-        byte b = this.a;
-        d dVar = this.b;
-        switch (b) {
-            case 0:
-                ((fu8) dVar).b0();
-                break;
-            default:
-                ((ypc) dVar).j0(true);
-                break;
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        p66 p66Var = (p66) view;
+        p66Var.setGravity(b8cVar.A);
+        Object obj = b8cVar.I;
+        if (obj instanceof Integer) {
+            int intValue = ((Integer) obj).intValue();
+            Object obj2 = b8cVar.H;
+            yob.X(p66Var, intValue, obj2 instanceof vnb ? (vnb) obj2 : null);
+        } else {
+            xob xobVar = yob.a;
+            p66Var.setTag(R.id.theme_bind, null);
+            p66Var.setTextColor((int) b8cVar.C);
         }
+        p66Var.setTextSize(1, b8cVar.B);
+        p66Var.setTypeface(b8cVar.r ? hl.o() : null);
+        int i = b8cVar.i;
+        p66Var.setPadding(i, 0, i, b8cVar.k);
+        p66Var.setText(b8cVar.m);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new b21(context, null, (byte) 8);
     }
 }

@@ -1,23 +1,59 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class cid extends b4 {
-    public static final Parcelable.Creator<cid> CREATOR = new igd((byte) 10);
-    public final int a;
+public abstract class cid {
+    public static final Object a = new Object();
+    public static poc b;
 
-    public cid(int i) {
-        this.a = i;
+    public static void a(Context context) {
+        if (b == null) {
+            poc pocVar = new poc(context);
+            b = pocVar;
+            synchronized (pocVar.a) {
+                pocVar.g = true;
+            }
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.s(parcel, r);
+    public static void b(Intent intent) {
+        synchronized (a) {
+            if (b != null && intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false)) {
+                intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+                b.c();
+            }
+        }
+    }
+
+    public static void c(Context context, e3d e3dVar, Intent intent) {
+        synchronized (a) {
+            a(context);
+            boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+            intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
+            if (!booleanExtra) {
+                b.a();
+            }
+            e3dVar.b(intent).addOnCompleteListener(new ftb(intent, (byte) 14));
+        }
+    }
+
+    public static ComponentName d(Context context, Intent intent) {
+        synchronized (a) {
+            a(context);
+            boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
+            intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
+            ComponentName startService = context.startService(intent);
+            if (startService == null) {
+                return null;
+            }
+            if (!booleanExtra) {
+                b.a();
+            }
+            return startService;
+        }
     }
 }

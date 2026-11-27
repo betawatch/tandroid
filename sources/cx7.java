@@ -1,74 +1,48 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cx7 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ vx7 c;
+public final class cx7 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public float U;
+    public float V;
+    public final v41 W;
+    public boolean a0;
 
-    public /* synthetic */ cx7(vx7 vx7Var, boolean z, byte b) {
-        this.a = b;
-        this.c = vx7Var;
-        this.b = z;
+    public cx7(dx7 dx7Var, Context context) {
+        super(context, dx7Var.q1);
+        this.W = new v41(this);
+        this.a0 = true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        byte b = this.a;
-        vx7 vx7Var = this.c;
-        switch (b) {
-            case 0:
-                AnimatorSet animatorSet = vx7Var.N;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    vx7Var.N = null;
-                    break;
-                }
-                break;
-            default:
-                AnimatorSet animatorSet2 = vx7Var.N;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    vx7Var.N = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float a = this.W.a(0.05f);
+        if (a < 1.0f) {
+            canvas.save();
+            canvas.scale(a, a, this.U, this.V);
+        }
+        super.dispatchDraw(canvas);
+        if (a < 1.0f) {
+            canvas.restore();
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        boolean z = this.b;
-        vx7 vx7Var = this.c;
-        switch (b) {
-            case 0:
-                AnimatorSet animatorSet = vx7Var.N;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!z) {
-                        vx7Var.O.setVisibility(4);
-                        break;
-                    } else {
-                        vx7Var.M.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                AnimatorSet animatorSet2 = vx7Var.N;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!z) {
-                        vx7Var.Q.setVisibility(4);
-                        break;
-                    } else {
-                        vx7Var.P.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        v41 v41Var = this.W;
+        if (action == 0) {
+            this.U = motionEvent.getX();
+            this.V = motionEvent.getY();
+            v41Var.c(this.a0);
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            v41Var.c(false);
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

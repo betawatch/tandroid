@@ -23,11 +23,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.utils.twidget.WidgetEngineService;
 import org.telegram.utils.twidget.x;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class x extends b {
     public static final x v = new x();
-    public static final hc w = new hc(1);
+    public static final ic w = new ic(1);
     public static volatile int x = -1;
     public static volatile boolean y = true;
     public int e;
@@ -41,8 +41,8 @@ public final class x extends b {
     public boolean q;
     public Boolean r;
     public volatile boolean s;
-    public final wvc t;
-    public final wvc u;
+    public final l0d t;
+    public final l0d u;
     public final Object a = new Object();
     public final Handler b = new Handler(Looper.getMainLooper());
     public final ArrayList c = new ArrayList();
@@ -52,12 +52,12 @@ public final class x extends b {
     public final Semaphore i = new Semaphore(12);
     public boolean l = true;
 
-    /* JADX WARN: Type inference failed for: r0v10, types: [wvc] */
-    /* JADX WARN: Type inference failed for: r0v9, types: [wvc] */
+    /* JADX WARN: Type inference failed for: r0v10, types: [l0d] */
+    /* JADX WARN: Type inference failed for: r0v9, types: [l0d] */
     public x() {
         this.q = Build.VERSION.SDK_INT >= 29;
         final byte b = 0;
-        this.t = new Runnable(this) { // from class: wvc
+        this.t = new Runnable(this) { // from class: l0d
             public final /* synthetic */ x b;
 
             {
@@ -70,7 +70,7 @@ public final class x extends b {
                     int i = SystemClock.elapsedRealtime() < xVar.f ? xVar.e : 1;
                     while (xVar.d.size() > i) {
                         ArrayList arrayList = xVar.d;
-                        xVar.o((yvc) arrayList.get(arrayList.size() - 1));
+                        xVar.o((n0d) arrayList.get(arrayList.size() - 1));
                     }
                     xVar.u();
                 }
@@ -94,9 +94,9 @@ public final class x extends b {
                             while (i < size) {
                                 Object obj = arrayList.get(i);
                                 i++;
-                                yvc yvcVar = (yvc) obj;
-                                if (yvcVar.e == 0) {
-                                    xVar.o(yvcVar);
+                                n0d n0dVar = (n0d) obj;
+                                if (n0dVar.e == 0) {
+                                    xVar.o(n0dVar);
                                 }
                             }
                             return;
@@ -105,7 +105,7 @@ public final class x extends b {
             }
         };
         final byte b2 = 1;
-        this.u = new Runnable(this) { // from class: wvc
+        this.u = new Runnable(this) { // from class: l0d
             public final /* synthetic */ x b;
 
             {
@@ -118,7 +118,7 @@ public final class x extends b {
                     int i = SystemClock.elapsedRealtime() < xVar.f ? xVar.e : 1;
                     while (xVar.d.size() > i) {
                         ArrayList arrayList = xVar.d;
-                        xVar.o((yvc) arrayList.get(arrayList.size() - 1));
+                        xVar.o((n0d) arrayList.get(arrayList.size() - 1));
                     }
                     xVar.u();
                 }
@@ -142,9 +142,9 @@ public final class x extends b {
                             while (i < size) {
                                 Object obj = arrayList.get(i);
                                 i++;
-                                yvc yvcVar = (yvc) obj;
-                                if (yvcVar.e == 0) {
-                                    xVar.o(yvcVar);
+                                n0d n0dVar = (n0d) obj;
+                                if (n0dVar.e == 0) {
+                                    xVar.o(n0dVar);
                                 }
                             }
                             return;
@@ -157,10 +157,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void a(long j, long j2, int i, byte[] bArr) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.l(wVar.c, j2, i, bArr);
+                jl5Var.l(wVar.c, j2, i, bArr);
             } catch (RemoteException unused) {
             }
         }
@@ -248,11 +248,11 @@ public final class x extends b {
     */
     public final long b(Context context, String str, String str2, float f, float f2, int i, String str3, String str4, String str5, String str6, boolean z, WidgetSandboxBackend widgetSandboxBackend) {
         Object obj;
-        yvc yvcVar;
+        n0d n0dVar;
         boolean z2;
         long j = 0;
         if (this.s) {
-            sc8.j("Widget engine: no seccomp filter on this device");
+            grb.i("Widget engine: no seccomp filter on this device");
             return 0L;
         }
         long uptimeMillis = SystemClock.uptimeMillis();
@@ -266,14 +266,14 @@ public final class x extends b {
                     if (this.j == null) {
                         this.j = context.getApplicationContext();
                     }
-                    hj5 hj5Var = null;
-                    yvc yvcVar2 = null;
+                    jl5 jl5Var = null;
+                    n0d n0dVar2 = null;
                     int i3 = 0;
                     boolean z3 = false;
-                    while (i3 < 2 && hj5Var == null) {
+                    while (i3 < 2 && jl5Var == null) {
                         long elapsedRealtime = SystemClock.elapsedRealtime() + 10000;
                         while (true) {
-                            yvc n = n(arrayList, j2);
+                            n0d n = n(arrayList, j2);
                             if (n != null) {
                                 break;
                             }
@@ -295,7 +295,7 @@ public final class x extends b {
                     }
                     Object obj3 = obj2;
                     boolean z4 = true;
-                    if (hj5Var == null) {
+                    if (jl5Var == null) {
                         throw new IllegalStateException("Widget engine did not start");
                     }
                     int size = arrayList.size();
@@ -309,12 +309,12 @@ public final class x extends b {
                     long uptimeMillis2 = SystemClock.uptimeMillis() - uptimeMillis;
                     this.b.removeCallbacks(this.t);
                     this.b.postDelayed(this.t, 250L);
-                    w wVar = new w(this, yvcVar2, widgetSandboxBackend);
-                    isc iscVar = new isc((Object) this, (Object) yvcVar2, (byte) 14);
-                    this.b.postDelayed(iscVar, 15000L);
+                    w wVar = new w(this, n0dVar2, widgetSandboxBackend);
+                    cxc cxcVar = new cxc((Object) this, (Object) n0dVar2, (byte) 14);
+                    this.b.postDelayed(cxcVar, 15000L);
                     try {
                         try {
-                            boolean z5 = w01.a;
+                            boolean z5 = f11.a;
                             Charset charset = StandardCharsets.UTF_8;
                             byte[] bytes = str.getBytes(charset);
                             byte[] bytes2 = str2.getBytes(charset);
@@ -322,24 +322,24 @@ public final class x extends b {
                             byte[] bytes4 = str4.getBytes(charset);
                             byte[] bytes5 = str5.getBytes(charset);
                             byte[] bytes6 = str6.getBytes(charset);
-                            yvcVar = yvcVar2;
+                            n0dVar = n0dVar2;
                             try {
-                                long G = hj5Var.G(bytes, bytes2, f, f2, i, bytes3, bytes4, bytes5, bytes6, z, wVar);
-                                this.b.removeCallbacks(iscVar);
+                                long G = jl5Var.G(bytes, bytes2, f, f2, i, bytes3, bytes4, bytes5, bytes6, z, wVar);
+                                this.b.removeCallbacks(cxcVar);
                                 wVar.c = G;
-                                if (w01.a) {
+                                if (f11.a) {
                                     StringBuilder sb = new StringBuilder("create ");
                                     sb.append(SystemClock.uptimeMillis() - uptimeMillis);
                                     sb.append(" ms in process ");
-                                    sb.append(yvcVar.a);
-                                    ir2.x(sb, z3 ? ug8.n(uptimeMillis2, " (", " ms to its start)") : "", "WidgetEngine");
+                                    sb.append(n0dVar.a);
+                                    bs2.x(sb, z3 ? ik8.n(uptimeMillis2, " (", " ms to its start)") : "", "WidgetEngine");
                                 }
                                 long incrementAndGet = this.h.incrementAndGet();
                                 this.g.put(Long.valueOf(incrementAndGet), wVar);
                                 synchronized (this.a) {
-                                    yvcVar.f--;
+                                    n0dVar.f--;
                                     this.n = 0;
-                                    z2 = yvcVar.n && this.g.remove(Long.valueOf(incrementAndGet)) != null;
+                                    z2 = n0dVar.n && this.g.remove(Long.valueOf(incrementAndGet)) != null;
                                 }
                                 if (z2) {
                                     widgetSandboxBackend.session().b(false);
@@ -349,19 +349,19 @@ public final class x extends b {
                                 e = e;
                                 boolean z6 = (e instanceof IllegalStateException) && "Widget engine: no seccomp filter on this device".equals(e.getMessage());
                                 synchronized (this.a) {
-                                    yvcVar.f--;
-                                    s(yvcVar);
+                                    n0dVar.f--;
+                                    s(n0dVar);
                                     if (z6 && !this.s) {
                                         this.s = true;
-                                        fa4.d("widgets are off: the kernel has no seccomp filter for the engine's process");
+                                        cc4.d("widgets are off: the kernel has no seccomp filter for the engine's process");
                                         ArrayList arrayList2 = new ArrayList(this.c);
                                         int size2 = arrayList2.size();
                                         while (i2 < size2) {
                                             Object obj5 = arrayList2.get(i2);
                                             i2++;
-                                            yvc yvcVar3 = (yvc) obj5;
-                                            if (yvcVar3.e == 0) {
-                                                o(yvcVar3);
+                                            n0d n0dVar3 = (n0d) obj5;
+                                            if (n0dVar3.e == 0) {
+                                                o(n0dVar3);
                                             }
                                         }
                                     }
@@ -369,12 +369,12 @@ public final class x extends b {
                                 throw e;
                             }
                         } catch (Throwable th2) {
-                            this.b.removeCallbacks(iscVar);
+                            this.b.removeCallbacks(cxcVar);
                             throw th2;
                         }
                     } catch (Exception e2) {
                         e = e2;
-                        yvcVar = yvcVar2;
+                        n0dVar = n0dVar2;
                     }
                 } catch (Throwable th3) {
                     th = th3;
@@ -395,10 +395,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void c(long j, byte[] bArr) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.s(wVar.c, bArr);
+                jl5Var.s(wVar.c, bArr);
             } catch (RemoteException unused) {
             }
         }
@@ -408,10 +408,10 @@ public final class x extends b {
     public final void d(long j) {
         w wVar = (w) this.g.remove(Long.valueOf(j));
         if (wVar != null) {
-            hj5 hj5Var = wVar.a.d;
-            if (hj5Var != null) {
+            jl5 jl5Var = wVar.a.d;
+            if (jl5Var != null) {
                 try {
-                    hj5Var.r(wVar.c);
+                    jl5Var.r(wVar.c);
                 } catch (RemoteException unused) {
                 }
             }
@@ -424,10 +424,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void e(long j, int i, float f, float f2, int i2) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.K(wVar.c, i, f, f2, i2);
+                jl5Var.K(wVar.c, i, f, f2, i2);
             } catch (RemoteException unused) {
             }
         }
@@ -444,10 +444,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void g(long j) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.H(wVar.c);
+                jl5Var.H(wVar.c);
             } catch (RemoteException unused) {
             }
         }
@@ -456,10 +456,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void h(long j, byte[] bArr) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.M(wVar.c, bArr);
+                jl5Var.M(wVar.c, bArr);
             } catch (RemoteException unused) {
             }
         }
@@ -468,10 +468,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void i(long j, byte[] bArr) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.u(wVar.c, bArr);
+                jl5Var.u(wVar.c, bArr);
             } catch (RemoteException unused) {
             }
         }
@@ -480,10 +480,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void j(long j, float f, boolean z, boolean z2, boolean z3) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.k(wVar.c, f, z, z2, z3);
+                jl5Var.k(wVar.c, f, z, z2, z3);
             } catch (RemoteException unused) {
             }
         }
@@ -492,10 +492,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void k(long j, int i, float f, float f2, int i2, boolean z, boolean z2, int i3, int i4) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.x(wVar.c, i, f, f2, i2, z, z2, i3, i4);
+                jl5Var.x(wVar.c, i, f, f2, i2, z, z2, i3, i4);
             } catch (RemoteException unused) {
             }
         }
@@ -504,10 +504,10 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void l(long j, boolean z) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.A(wVar.c, z);
+                jl5Var.A(wVar.c, z);
             } catch (RemoteException unused) {
             }
         }
@@ -516,18 +516,18 @@ public final class x extends b {
     @Override // org.telegram.utils.twidget.b
     public final void m(long j, float f) {
         w wVar = (w) this.g.get(Long.valueOf(j));
-        hj5 hj5Var = wVar == null ? null : wVar.a.d;
-        if (hj5Var != null) {
+        jl5 jl5Var = wVar == null ? null : wVar.a.d;
+        if (jl5Var != null) {
             try {
-                hj5Var.D(wVar.c, f);
+                jl5Var.D(wVar.c, f);
             } catch (RemoteException unused) {
             }
         }
     }
 
-    public final yvc n(ArrayList arrayList, long j) {
+    public final n0d n(ArrayList arrayList, long j) {
         long j2;
-        yvc yvcVar;
+        n0d n0dVar;
         long j3;
         int i;
         long j4;
@@ -545,10 +545,10 @@ public final class x extends b {
                 while (i6 < size) {
                     Object obj = arrayList2.get(i6);
                     i6++;
-                    yvcVar = (yvc) obj;
-                    if (yvcVar.e == 0 && yvcVar.h) {
+                    n0dVar = (n0d) obj;
+                    if (n0dVar.e == 0 && n0dVar.h) {
                         j3 = j5;
-                        if (yvcVar.s == j && yvcVar.d != null) {
+                        if (n0dVar.s == j && n0dVar.d != null) {
                             break;
                         }
                     } else {
@@ -558,28 +558,28 @@ public final class x extends b {
                 }
             }
             j3 = j5;
-            yvcVar = null;
-            if (yvcVar == null && !this.d.isEmpty()) {
-                yvc yvcVar2 = (yvc) this.d.get(0);
+            n0dVar = null;
+            if (n0dVar == null && !this.d.isEmpty()) {
+                n0d n0dVar2 = (n0d) this.d.get(0);
                 ArrayList arrayList3 = this.d;
                 int size2 = arrayList3.size();
                 int i7 = 0;
                 while (true) {
                     if (i7 >= size2) {
-                        yvcVar = yvcVar2;
+                        n0dVar = n0dVar2;
                         break;
                     }
                     Object obj2 = arrayList3.get(i7);
                     i7++;
-                    yvc yvcVar3 = (yvc) obj2;
-                    if (yvcVar3.d != null) {
-                        yvcVar = yvcVar3;
+                    n0d n0dVar3 = (n0d) obj2;
+                    if (n0dVar3.d != null) {
+                        n0dVar = n0dVar3;
                         break;
                     }
                 }
-                this.d.remove(yvcVar);
+                this.d.remove(n0dVar);
             }
-            if (yvcVar == null) {
+            if (n0dVar == null) {
                 if (this.c.size() >= r) {
                     ArrayList arrayList4 = this.c;
                     int size3 = arrayList4.size();
@@ -590,51 +590,51 @@ public final class x extends b {
                         }
                         Object obj3 = arrayList4.get(i8);
                         i8++;
-                        yvc yvcVar4 = (yvc) obj3;
-                        if (yvcVar4.e == 0 && yvcVar4.h) {
-                            o(yvcVar4);
+                        n0d n0dVar4 = (n0d) obj3;
+                        if (n0dVar4.e == 0 && n0dVar4.h) {
+                            o(n0dVar4);
                             break;
                         }
                     }
                 }
                 if (this.c.size() < r) {
-                    yvcVar = t(false);
+                    n0dVar = t(false);
                 }
             }
-            if (yvcVar == null && j != 0) {
+            if (n0dVar == null && j != 0) {
                 ArrayList arrayList5 = this.c;
                 int size4 = arrayList5.size();
                 int i9 = 0;
                 while (i9 < size4) {
                     Object obj4 = arrayList5.get(i9);
                     i9++;
-                    yvc yvcVar5 = (yvc) obj4;
-                    if (yvcVar5.h && yvcVar5.s == j && (yvcVar5.c || yvcVar5.e < 4)) {
-                        if (yvcVar == null || yvcVar5.e < yvcVar.e) {
-                            yvcVar = yvcVar5;
+                    n0d n0dVar5 = (n0d) obj4;
+                    if (n0dVar5.h && n0dVar5.s == j && (n0dVar5.c || n0dVar5.e < 4)) {
+                        if (n0dVar == null || n0dVar5.e < n0dVar.e) {
+                            n0dVar = n0dVar5;
                         }
                     }
                 }
             }
-            if (yvcVar == null) {
+            if (n0dVar == null) {
                 ArrayList arrayList6 = this.c;
                 int size5 = arrayList6.size();
                 int i10 = 0;
-                yvc yvcVar6 = null;
-                yvc yvcVar7 = null;
+                n0d n0dVar6 = null;
+                n0d n0dVar7 = null;
                 while (i10 < size5) {
                     Object obj5 = arrayList6.get(i10);
                     int i11 = i10 + 1;
-                    yvc yvcVar8 = (yvc) obj5;
-                    if (yvcVar8.h && yvcVar8.e != 0 && yvcVar8.f <= 0) {
+                    n0d n0dVar8 = (n0d) obj5;
+                    if (n0dVar8.h && n0dVar8.e != 0 && n0dVar8.f <= 0) {
                         Iterator it = this.g.values().iterator();
                         while (true) {
                             if (it.hasNext()) {
                                 w wVar = (w) it.next();
-                                if (wVar.a == yvcVar8) {
+                                if (wVar.a == n0dVar8) {
                                     z session = wVar.b.session();
                                     if (session.L && !session.A) {
-                                        if (yvcVar8.s != j3) {
+                                        if (n0dVar8.s != j3) {
                                             ArrayList arrayList7 = this.c;
                                             int size6 = arrayList7.size();
                                             int i12 = i4;
@@ -643,12 +643,12 @@ public final class x extends b {
                                                 Object obj6 = arrayList7.get(i12);
                                                 int i14 = i12 + 1;
                                                 long j6 = j3;
-                                                yvc yvcVar9 = (yvc) obj6;
-                                                if (yvcVar9.h) {
+                                                n0d n0dVar9 = (n0d) obj6;
+                                                if (n0dVar9.h) {
                                                     i3 = i11;
-                                                    long j7 = yvcVar9.s;
+                                                    long j7 = n0dVar9.s;
                                                     i2 = i14;
-                                                    if (j7 == yvcVar8.s) {
+                                                    if (j7 == n0dVar8.s) {
                                                         i13++;
                                                     }
                                                 } else {
@@ -662,8 +662,8 @@ public final class x extends b {
                                             }
                                             i = i11;
                                             j4 = j3;
-                                            if (i13 > i5 && (yvcVar7 == null || yvcVar8.e < yvcVar7.e)) {
-                                                yvcVar7 = yvcVar8;
+                                            if (i13 > i5 && (n0dVar7 == null || n0dVar8.e < n0dVar7.e)) {
+                                                n0dVar7 = n0dVar8;
                                             }
                                         }
                                     }
@@ -675,8 +675,8 @@ public final class x extends b {
                             } else {
                                 i = i11;
                                 j4 = j3;
-                                if (yvcVar6 == null || yvcVar8.e < yvcVar6.e) {
-                                    yvcVar6 = yvcVar8;
+                                if (n0dVar6 == null || n0dVar8.e < n0dVar6.e) {
+                                    n0dVar6 = n0dVar8;
                                 }
                             }
                         }
@@ -693,25 +693,25 @@ public final class x extends b {
                     i5 = 1;
                 }
                 j2 = j3;
-                if (yvcVar6 == null) {
-                    yvcVar6 = yvcVar7;
+                if (n0dVar6 == null) {
+                    n0dVar6 = n0dVar7;
                 }
-                if (yvcVar6 == null) {
+                if (n0dVar6 == null) {
                     return null;
                 }
                 Iterator it2 = this.g.entrySet().iterator();
                 while (it2.hasNext()) {
                     w wVar2 = (w) ((Map.Entry) it2.next()).getValue();
-                    if (wVar2.a == yvcVar6) {
+                    if (wVar2.a == n0dVar6) {
                         arrayList.add(wVar2);
                         it2.remove();
                     }
                 }
-                if (w01.a) {
-                    Log.d("WidgetEngine", "process " + yvcVar6.a + " with " + yvcVar6.e + " sessions makes room for another bot");
+                if (f11.a) {
+                    Log.d("WidgetEngine", "process " + n0dVar6.a + " with " + n0dVar6.e + " sessions makes room for another bot");
                 }
-                o(yvcVar6);
-                yvcVar = t(false);
+                o(n0dVar6);
+                n0dVar = t(false);
             } else {
                 j2 = j3;
             }
@@ -723,14 +723,14 @@ public final class x extends b {
             while (i15 < size7) {
                 Object obj7 = arrayList8.get(i15);
                 i15++;
-                yvc yvcVar10 = (yvc) obj7;
-                if (yvcVar10.c || yvcVar10.e < 4) {
-                    yvcVar = yvcVar10;
+                n0d n0dVar10 = (n0d) obj7;
+                if (n0dVar10.c || n0dVar10.e < 4) {
+                    n0dVar = n0dVar10;
                     break;
                 }
             }
-            yvcVar = null;
-            if (yvcVar == null) {
+            n0dVar = null;
+            if (n0dVar == null) {
                 while (Build.VERSION.SDK_INT < 29) {
                     long elapsedRealtime = this.p - SystemClock.elapsedRealtime();
                     if (elapsedRealtime <= 0) {
@@ -742,77 +742,77 @@ public final class x extends b {
                             return n(arrayList, j);
                         }
                     } catch (InterruptedException unused) {
-                        sc8.j("Widget engine did not start");
+                        grb.i("Widget engine did not start");
                         return null;
                     }
                 }
-                yvcVar = t(false);
+                n0dVar = t(false);
             }
         }
-        this.b.removeCallbacks(yvcVar.y);
-        if (!yvcVar.h) {
-            yvcVar.s = j;
-        } else if (yvcVar.s != j) {
-            yvcVar.s = j2;
+        this.b.removeCallbacks(n0dVar.y);
+        if (!n0dVar.h) {
+            n0dVar.s = j;
+        } else if (n0dVar.s != j) {
+            n0dVar.s = j2;
         }
-        yvcVar.h = true;
-        yvcVar.e++;
-        yvcVar.f++;
-        return yvcVar;
+        n0dVar.h = true;
+        n0dVar.e++;
+        n0dVar.f++;
+        return n0dVar;
     }
 
-    public final void o(yvc yvcVar) {
-        if (yvcVar.n) {
+    public final void o(n0d n0dVar) {
+        if (n0dVar.n) {
             return;
         }
-        yvcVar.n = true;
-        if (yvcVar.d != null && yvcVar.d.asBinder().isBinderAlive()) {
+        n0dVar.n = true;
+        if (n0dVar.d != null && n0dVar.d.asBinder().isBinderAlive()) {
             this.p = SystemClock.elapsedRealtime() + 1000;
         }
-        yvcVar.d = null;
-        this.c.remove(yvcVar);
-        this.d.remove(yvcVar);
-        this.b.removeCallbacks(yvcVar.y);
+        n0dVar.d = null;
+        this.c.remove(n0dVar);
+        this.d.remove(n0dVar);
+        this.b.removeCallbacks(n0dVar.y);
         try {
-            this.j.unbindService(yvcVar);
+            this.j.unbindService(n0dVar);
         } catch (RuntimeException unused) {
         }
         this.a.notifyAll();
     }
 
-    public final /* synthetic */ void p(yvc yvcVar, String str) {
+    public final /* synthetic */ void p(n0d n0dVar, String str) {
         String str2 = "";
         try {
-            List<ApplicationExitInfo> historicalProcessExitReasons = ((ActivityManager) this.j.getSystemService("activity")).getHistoricalProcessExitReasons(this.j.getPackageName(), yvcVar.w, 1);
+            List<ApplicationExitInfo> historicalProcessExitReasons = ((ActivityManager) this.j.getSystemService("activity")).getHistoricalProcessExitReasons(this.j.getPackageName(), n0dVar.w, 1);
             if (!historicalProcessExitReasons.isEmpty()) {
-                ApplicationExitInfo a = ho9.a(historicalProcessExitReasons.get(0));
+                ApplicationExitInfo a = vr9.a(historicalProcessExitReasons.get(0));
                 str2 = ": exit reason " + a.getReason() + ", status " + a.getStatus() + ", " + a.getDescription() + ", rss " + (a.getRss() >> 10) + " MB";
             }
         } catch (Exception unused) {
         }
-        Log.w("WidgetEngine", "process " + yvcVar.a + str2);
-        fa4.b(str.concat(str2));
+        Log.w("WidgetEngine", "process " + n0dVar.a + str2);
+        cc4.b(str.concat(str2));
     }
 
-    public final void q(yvc yvcVar, String str) {
+    public final void q(n0d n0dVar, String str) {
         ArrayList arrayList = new ArrayList();
         synchronized (this.a) {
-            if (yvcVar.n) {
+            if (n0dVar.n) {
                 return;
             }
             Iterator it = this.g.entrySet().iterator();
             while (it.hasNext()) {
                 w wVar = (w) ((Map.Entry) it.next()).getValue();
-                if (wVar.a == yvcVar) {
+                if (wVar.a == n0dVar) {
                     arrayList.add(wVar);
                     it.remove();
                 }
             }
             if (str != null) {
-                if (yvcVar.d == null && yvcVar.b) {
+                if (n0dVar.d == null && n0dVar.b) {
                     this.q = false;
                 }
-                if (!yvcVar.h) {
+                if (!n0dVar.h) {
                     int i = this.n + 1;
                     this.n = i;
                     if (i >= 3) {
@@ -820,15 +820,15 @@ public final class x extends b {
                     }
                 }
             }
-            o(yvcVar);
+            o(n0dVar);
             u();
             if (str != null) {
-                String str2 = "widget engine process " + yvcVar.a + " " + str + " with " + arrayList.size() + " sessions";
+                String str2 = "widget engine process " + n0dVar.a + " " + str + " with " + arrayList.size() + " sessions";
                 Log.w("WidgetEngine", str2);
-                if (Build.VERSION.SDK_INT < 30 || yvcVar.w == 0 || this.j == null) {
-                    fa4.b(str2);
+                if (Build.VERSION.SDK_INT < 30 || n0dVar.w == 0 || this.j == null) {
+                    cc4.b(str2);
                 } else {
-                    Utilities.e.d(new wbc(this, yvcVar, str2, (byte) 23), 700L);
+                    Utilities.e.d(new jwc(this, n0dVar, str2), 700L);
                 }
             }
             int size = arrayList.size();
@@ -857,7 +857,7 @@ public final class x extends b {
             }
             if (bool == null || !bool.booleanValue()) {
                 try {
-                    i = na7.q1(y6c.t0).k4.t0.f();
+                    i = uc7.s1(yac.t0).k4.B0.f();
                 } catch (Exception unused) {
                     i = 6;
                 }
@@ -867,70 +867,70 @@ public final class x extends b {
         return 1;
     }
 
-    public final void s(yvc yvcVar) {
-        boolean z = yvcVar.n;
-        frc frcVar = yvcVar.y;
+    public final void s(n0d n0dVar) {
+        boolean z = n0dVar.n;
+        olc olcVar = n0dVar.y;
         if (z) {
             return;
         }
-        int i = yvcVar.e - 1;
-        yvcVar.e = i;
+        int i = n0dVar.e - 1;
+        n0dVar.e = i;
         if (i <= 0) {
             this.a.notifyAll();
             Handler handler = this.b;
-            handler.removeCallbacks(frcVar);
+            handler.removeCallbacks(olcVar);
             if (r() <= 1) {
                 if (this.k && this.l) {
                     return;
                 }
-                handler.postDelayed(frcVar, 30000L);
+                handler.postDelayed(olcVar, 30000L);
                 return;
             }
-            if (yvcVar.s != 0) {
-                handler.postDelayed(frcVar, 5000L);
+            if (n0dVar.s != 0) {
+                handler.postDelayed(olcVar, 5000L);
             } else {
-                o(yvcVar);
+                o(n0dVar);
                 u();
             }
         }
     }
 
-    public final yvc t(boolean z) {
+    public final n0d t(boolean z) {
         boolean z2;
         boolean z3 = this.q && y;
         boolean z4 = r() <= 1;
         int i = this.m + 1;
         this.m = i;
-        yvc yvcVar = new yvc(this, i, z3, z4);
-        yvcVar.r = z;
+        n0d n0dVar = new n0d(this, i, z3, z4);
+        n0dVar.r = z;
         Intent intent = new Intent(this.j, (Class<?>) (z3 ? WidgetEngineService.Forked.class : WidgetEngineService.class));
         intent.putExtra("shared", z4);
-        boolean z5 = w01.a;
+        boolean z5 = f11.a;
         try {
             int i2 = Build.VERSION.SDK_INT;
             Context context = this.j;
             if (i2 >= 29) {
-                z2 = context.bindIsolatedService(intent, 65, "w" + yvcVar.a, w, yvcVar);
+                z2 = context.bindIsolatedService(intent, 65, "w" + n0dVar.a, w, n0dVar);
             } else {
-                z2 = context.bindService(intent, yvcVar, 65);
+                z2 = context.bindService(intent, n0dVar, 65);
             }
         } catch (RuntimeException e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
             z2 = false;
         }
         if (z2) {
-            this.c.add(yvcVar);
-            return yvcVar;
+            this.c.add(n0dVar);
+            return n0dVar;
         }
         try {
-            this.j.unbindService(yvcVar);
+            this.j.unbindService(n0dVar);
         } catch (RuntimeException unused) {
         }
         if (z3) {
             this.q = false;
             return t(z);
         }
-        sc8.j("Widget engine service is unavailable");
+        grb.i("Widget engine service is unavailable");
         return null;
     }
 
@@ -962,7 +962,7 @@ public final class x extends b {
                 }
             }
         } catch (RuntimeException e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 }

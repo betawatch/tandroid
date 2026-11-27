@@ -1,48 +1,126 @@
 // default package
 
-import android.content.Context;
 import android.view.View;
+import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class zh9 extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final class zh9 implements hm9 {
+    public final /* synthetic */ pi9 a;
 
-    static {
-        b4c.h(new zh9());
+    public zh9(pi9 pi9Var) {
+        this.a = pi9Var;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        TL_iv.RichText richText;
-        ai9 ai9Var = (ai9) view;
-        lk0 lk0Var = (lk0) c4cVar.H;
-        yh9 yh9Var = (yh9) c4cVar.I;
-        mc9 mc9Var = ai9Var.r;
-        ai9Var.a = lk0Var;
-        ai9Var.s = yh9Var;
-        ai9Var.f(gl.L(16.0f), gl.L(1.0f), gl.L(16.0f), gl.L(8.0f));
-        ai9Var.c(lk0Var);
-        if (yh9Var != null) {
-            richText = (TL_iv.RichText) ((fe9) yh9Var).a.u3.get(Long.valueOf(lk0Var.t));
-        } else {
-            richText = null;
+    public final int a(mk0 mk0Var) {
+        int i;
+        ArrayList arrayList = this.a.t3;
+        int indexOf = arrayList.indexOf(mk0Var);
+        return hl.L((indexOf < 0 || (i = indexOf + 1) >= arrayList.size() || ((mk0) arrayList.get(i)).c <= 0) ? 11.0f : 5.0f);
+    }
+
+    public final int b(mk0 mk0Var) {
+        ArrayList arrayList = this.a.t3;
+        int indexOf = arrayList.indexOf(mk0Var);
+        return hl.L((indexOf <= 0 || ((mk0) arrayList.get(indexOf + (-1))).c <= 0) ? 8.0f : 2.0f);
+    }
+
+    public final void c(mk0 mk0Var, int i) {
+        pi9 pi9Var = this.a;
+        ni9 ni9Var = pi9Var.p3;
+        if (i == 7) {
+            pi9Var.V4(mk0Var, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
         }
-        if (String.valueOf(mc9Var.getText()).equals(yi9.l(richText))) {
+        pi9Var.j4 = null;
+        pi9Var.k4 = mk0Var;
+        ch9 ch9Var = pi9Var.R3;
+        if (ch9Var != null) {
+            ch9Var.d();
+        }
+        if (mk0Var != null) {
+            km9.c(mk0Var.b, "");
+            View D1 = pi9Var.D1(mk0Var);
+            if (D1 instanceof km9) {
+                ((km9) D1).getEditText().setTextSilently("");
+            }
+        }
+        ch9 ch9Var2 = pi9Var.R3;
+        if (ch9Var2 != null) {
+            ch9Var2.h();
+        }
+        switch (i) {
+            case 1:
+                ni9Var.d(3);
+                break;
+            case 2:
+                ni9Var.d(6);
+                break;
+            case 3:
+                v72.W(pi9Var.getContext(), "", new sh9(pi9Var, (byte) 0), pi9Var.o3);
+                break;
+            case 4:
+            case 5:
+                ni9Var.d(1);
+                break;
+            case 6:
+                pi9Var.q3();
+                break;
+        }
+    }
+
+    public final void d(mk0 mk0Var, TL_iv.PageBlock pageBlock, int i, int i2, boolean z, boolean z2) {
+        boolean z3 = pageBlock instanceof TL_iv.pageBlockBlockquote;
+        pi9 pi9Var = this.a;
+        if (!z3) {
+            pi9Var.V4(mk0Var, pageBlock, i, i2, z, z2);
             return;
         }
-        mc9Var.setTextSilently(vu3.m(yi9.r(richText, null, true), mc9Var.getPaint().getFontMetricsInt(), false, null, 0));
-        mc9Var.f();
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new ai9(context, wjbVar);
-    }
-
-    @Override // b4c
-    public final boolean f() {
-        return false;
+        if (mk0Var == null) {
+            mk0Var = pi9Var.b5();
+        }
+        if (mk0Var != null) {
+            ArrayList arrayList = mk0Var.k;
+            if (pi9Var.t3.indexOf(mk0Var) < 0 || pi9.u3(mk0Var) || mk0Var.i) {
+                return;
+            }
+            ch9 ch9Var = pi9Var.R3;
+            if (ch9Var != null) {
+                ch9Var.d();
+            }
+            boolean z4 = arrayList.isEmpty() && !km9.n(mk0Var.b);
+            if (z4) {
+                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                pageblockblockquote.caption = new TL_iv.textEmpty();
+                mk0Var.b = pageblockblockquote;
+            } else {
+                if (km9.n(mk0Var.b)) {
+                    long a = mf9.a();
+                    TL_iv.RichText h = km9.h(mk0Var.b);
+                    if (h != null && !(h instanceof TL_iv.textEmpty)) {
+                        pi9Var.u3.put(Long.valueOf(a), h);
+                    }
+                    arrayList.add(Long.valueOf(a));
+                }
+                mk0Var.b = new TL_iv.pageBlockParagraph();
+                arrayList.add(Long.valueOf(mf9.a()));
+            }
+            pi9Var.u4();
+            if (z4 && (pi9Var.findFocus() instanceof dg9)) {
+                pi9Var.U1();
+                ch9 ch9Var2 = pi9Var.R3;
+                if (ch9Var2 != null) {
+                    ch9Var2.h();
+                }
+                pi9Var.a3(mk0Var);
+                return;
+            }
+            pi9Var.g3.O(false);
+            ch9 ch9Var3 = pi9Var.R3;
+            if (ch9Var3 != null) {
+                ch9Var3.h();
+            }
+            pi9Var.post(new th9(pi9Var, mk0Var, (byte) 5));
+        }
     }
 }

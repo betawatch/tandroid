@@ -1,20 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class di6 {
-    public static ci6 a(Object obj, Object obj2) {
-        ci6 ci6Var = (ci6) obj;
-        ci6 ci6Var2 = (ci6) obj2;
-        if (!ci6Var2.isEmpty()) {
-            if (!ci6Var.a) {
-                ci6Var = ci6Var.c();
-            }
-            ci6Var.b();
-            if (!ci6Var2.isEmpty()) {
-                ci6Var.putAll(ci6Var2);
-            }
+public final class di6 extends i3d {
+    public final HashMap l;
+    public final HashMap m;
+
+    public di6(rg0 rg0Var) {
+        super(new ml6(rg0Var, false));
+        this.l = new HashMap();
+        this.m = new HashMap();
+    }
+
+    @Override // rg0
+    public final xt6 c(vz6 vz6Var, rx6 rx6Var, long j) {
+        return this.k.c(vz6Var, rx6Var, j);
+    }
+
+    @Override // i3d, rg0
+    public final asb h() {
+        return new ci6(((ml6) this.k).o, (byte) 0);
+    }
+
+    @Override // i3d, rg0
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // rg0
+    public final void o(xt6 xt6Var) {
+        this.k.o(xt6Var);
+        vz6 vz6Var = (vz6) this.m.remove(xt6Var);
+        if (vz6Var != null) {
+            this.l.remove(vz6Var);
         }
-        return ci6Var;
+    }
+
+    @Override // i3d
+    public final vz6 z(vz6 vz6Var) {
+        return vz6Var;
     }
 }

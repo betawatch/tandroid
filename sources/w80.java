@@ -2,66 +2,81 @@
 
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w80 extends ry2 {
-    public final String a;
-    public final String b;
-    public final List c;
-    public final ry2 d;
-    public final int e;
+public final class w80 extends qz2 {
+    public final List a;
+    public final y80 b;
+    public final cz2 c;
+    public final hz2 d;
+    public final z80 e;
+    public final List f;
 
-    public w80(String str, String str2, List list, ry2 ry2Var, int i) {
-        this.a = str;
-        this.b = str2;
-        this.c = list;
-        this.d = ry2Var;
-        this.e = i;
+    public w80(List list, y80 y80Var, cz2 cz2Var, hz2 hz2Var, z80 z80Var, List list2) {
+        this.a = list;
+        this.b = y80Var;
+        this.c = cz2Var;
+        this.d = hz2Var;
+        this.e = z80Var;
+        this.f = list2;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ry2) {
-            w80 w80Var = (w80) ((ry2) obj);
-            if (this.a.equals(w80Var.a)) {
-                String str = w80Var.b;
-                String str2 = this.b;
-                if (str2 != null ? str2.equals(str) : str == null) {
-                    if (this.c.equals(w80Var.c)) {
-                        ry2 ry2Var = w80Var.d;
-                        ry2 ry2Var2 = this.d;
-                        if (ry2Var2 != null ? ry2Var2.equals(ry2Var) : ry2Var == null) {
-                            if (this.e == w80Var.e) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
+        if (!(obj instanceof qz2)) {
+            return false;
         }
-        return false;
+        qz2 qz2Var = (qz2) obj;
+        List list = this.a;
+        if (list == null) {
+            if (((w80) qz2Var).a != null) {
+                return false;
+            }
+        } else if (!list.equals(((w80) qz2Var).a)) {
+            return false;
+        }
+        y80 y80Var = this.b;
+        if (y80Var == null) {
+            if (((w80) qz2Var).b != null) {
+                return false;
+            }
+        } else if (!y80Var.equals(((w80) qz2Var).b)) {
+            return false;
+        }
+        cz2 cz2Var = this.c;
+        if (cz2Var == null) {
+            if (((w80) qz2Var).c != null) {
+                return false;
+            }
+        } else if (!cz2Var.equals(((w80) qz2Var).c)) {
+            return false;
+        }
+        hz2 hz2Var = this.d;
+        if (hz2Var == null) {
+            if (((w80) qz2Var).d != null) {
+                return false;
+            }
+        } else if (!hz2Var.equals(((w80) qz2Var).d)) {
+            return false;
+        }
+        w80 w80Var = (w80) qz2Var;
+        return this.e.equals(w80Var.e) && this.f.equals(w80Var.f);
     }
 
     public final int hashCode() {
-        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
-        String str = this.b;
-        int hashCode2 = (((hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003) ^ this.c.hashCode()) * 1000003;
-        ry2 ry2Var = this.d;
-        return ((hashCode2 ^ (ry2Var != null ? ry2Var.hashCode() : 0)) * 1000003) ^ this.e;
+        List list = this.a;
+        int hashCode = ((list == null ? 0 : list.hashCode()) ^ 1000003) * 1000003;
+        y80 y80Var = this.b;
+        int hashCode2 = (hashCode ^ (y80Var == null ? 0 : y80Var.hashCode())) * 1000003;
+        cz2 cz2Var = this.c;
+        int hashCode3 = (hashCode2 ^ (cz2Var == null ? 0 : cz2Var.hashCode())) * 1000003;
+        hz2 hz2Var = this.d;
+        return ((((hashCode3 ^ (hz2Var != null ? hz2Var.hashCode() : 0)) * 1000003) ^ this.e.hashCode()) * 1000003) ^ this.f.hashCode();
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("Exception{type=");
-        sb.append(this.a);
-        sb.append(", reason=");
-        sb.append(this.b);
-        sb.append(", frames=");
-        sb.append(this.c);
-        sb.append(", causedBy=");
-        sb.append(this.d);
-        sb.append(", overflowCount=");
-        return de9.l(sb, this.e, "}");
+        return "Execution{threads=" + this.a + ", exception=" + this.b + ", appExitInfo=" + this.c + ", profilingManagerInfo=" + this.d + ", signal=" + this.e + ", binaries=" + this.f + "}";
     }
 }

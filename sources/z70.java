@@ -1,46 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class z70 {
-    public String a;
-    public String b;
-    public int c;
-    public String d;
-    public String e;
-    public String f;
-    public String g;
-    public String h;
-    public String i;
-    public l80 j;
-    public g80 k;
-    public d80 l;
-    public byte m;
+public final class z70 extends hj2 {
+    public final w70 a;
 
-    public final a80 a() {
-        if (this.m == 1 && this.a != null && this.b != null && this.d != null && this.h != null && this.i != null) {
-            return new a80(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l);
+    public z70(w70 w70Var) {
+        this.a = w70Var;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb = new StringBuilder();
-        if (this.a == null) {
-            sb.append(" sdkVersion");
+        if (!(obj instanceof hj2)) {
+            return false;
         }
-        if (this.b == null) {
-            sb.append(" gmpAppId");
+        hj2 hj2Var = (hj2) obj;
+        Object obj2 = gj2.a;
+        if (obj2.equals(obj2)) {
+            return this.a.equals(((z70) hj2Var).a);
         }
-        if ((this.m & 1) == 0) {
-            sb.append(" platform");
-        }
-        if (this.d == null) {
-            sb.append(" installationUuid");
-        }
-        if (this.h == null) {
-            sb.append(" buildVersion");
-        }
-        if (this.i == null) {
-            sb.append(" displayVersion");
-        }
-        sc8.j(ir2.o("Missing required properties:", sb));
-        return null;
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((gj2.a.hashCode() ^ 1000003) * 1000003) ^ this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "ClientInfo{clientType=" + gj2.a + ", androidClientInfo=" + this.a + "}";
     }
 }

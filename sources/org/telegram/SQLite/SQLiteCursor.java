@@ -4,7 +4,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
@@ -109,13 +109,13 @@ public class SQLiteCursor {
                     break;
                 }
                 try {
-                    if (w01.a) {
-                        fa4.b("sqlite busy, waiting...");
+                    if (f11.a) {
+                        cc4.b("sqlite busy, waiting...");
                     }
                     Thread.sleep(500L);
                     step = this.preparedStatement.step();
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    cc4.g(e, true);
                 }
                 if (step == 0) {
                     break;

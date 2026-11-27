@@ -1,25 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class jv9 extends oc0 implements kv9 {
-    @Override // kv9
-    public final long a() {
-        return -1L;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class jv9 implements rv9 {
+    public final /* synthetic */ hu2 a;
+
+    public jv9(hu2 hu2Var) {
+        this.a = hu2Var;
     }
 
-    @Override // kv9
-    public final long b() {
-        return 0L;
+    @Override // rv9
+    public final boolean C1(int i) {
+        return true;
     }
 
-    @Override // kv9
-    public final long e(long j) {
-        return 0L;
+    @Override // rv9
+    public final zh6 D0() {
+        return null;
     }
 
-    @Override // kv9
-    public final int g() {
-        return -2147483647;
+    @Override // rv9
+    public final zh6 Z0() {
+        return null;
+    }
+
+    @Override // rv9
+    public final void p(int i) {
+        hu2 hu2Var = this.a;
+        hu2Var.f();
+        if (i != 0) {
+            hu2Var.F();
+        }
+    }
+
+    @Override // rv9
+    public final void X1(ArrayList arrayList) {
     }
 }

@@ -1,29 +1,29 @@
 // default package
 
-import android.content.DialogInterface;
-import android.widget.EditText;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ve implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ EditText b;
+    public final /* synthetic */ pcc b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ ve(EditText editText, byte b) {
+    public /* synthetic */ ve(pcc pccVar, long j, byte b) {
         this.a = b;
-        this.b = editText;
+        this.b = pccVar;
+        this.c = j;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        EditText editText = this.b;
+        long j = this.c;
+        pcc pccVar = this.b;
         switch (b) {
             case 0:
-                gl.t1(editText);
+                pccVar.a(Long.valueOf(j));
                 break;
             default:
-                gl.t1(editText);
+                pccVar.a(Long.valueOf(j));
                 break;
         }
     }

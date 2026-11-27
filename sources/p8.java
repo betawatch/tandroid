@@ -1,54 +1,40 @@
 // default package
 
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class p8 implements View.OnTouchListener {
+public final /* synthetic */ class p8 implements fd {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ v8 b;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 28:
-                int i = ChatActivityEnterView.r7;
+    public /* synthetic */ p8(v8 v8Var, byte b) {
+        this.a = b;
+        this.b = v8Var;
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        v8 v8Var = this.b;
+        switch (b) {
             case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 13:
-            case 14:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-            case 26:
-            case 27:
-                return true;
-            default:
-                if (motionEvent.getActionMasked() != 0 || view.getParent() == null) {
-                    return false;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + a.b.getPackageName()));
+                    v8Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
                 }
-                view.getParent().requestDisallowInterceptTouchEvent(true);
-                return false;
+            default:
+                qh6 qh6Var = new qh6();
+                qh6Var.G = (byte) 2;
+                v8Var.presentFragment(qh6Var, true);
+                break;
         }
     }
 }

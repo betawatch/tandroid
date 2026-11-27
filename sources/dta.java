@@ -1,29 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class dta implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eta b;
-    public final /* synthetic */ long c;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-    public /* synthetic */ dta(eta etaVar, long j, byte b) {
-        this.a = b;
-        this.b = etaVar;
-        this.c = j;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dta extends ClickableSpan {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ wua b;
+
+    public dta(wua wuaVar, long j) {
+        this.b = wuaVar;
+        this.a = j;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        eta etaVar = this.b;
-        switch (b) {
-            case 0:
-                etaVar.q.b0(etaVar.b, etaVar.c, this.c, true, true, etaVar.n);
-                break;
-            default:
-                etaVar.q.b0(etaVar.b, etaVar.c, this.c, true, true, etaVar.n);
-                break;
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.b.Z1(this.a);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(textPaint.linkColor);
     }
 }

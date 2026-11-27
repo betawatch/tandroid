@@ -2,222 +2,109 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class zn2 extends FrameLayout {
-    public final /* synthetic */ byte a = 0;
-    public final lm b;
-    public float c;
-    public final Path d;
-    public final /* synthetic */ fx0 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class zn2 extends FrameLayout implements snb {
+    public final vnb a;
+    public final de0 b;
+    public final TextView c;
+    public final TextView d;
+    public final ImageView e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zn2(eo2 eo2Var, Context context) {
+    public zn2(Context context, vnb vnbVar) {
         super(context);
-        this.e = eo2Var;
-        this.b = new lm(250L, this, s33.h);
-        this.d = new Path();
+        this.a = vnbVar;
+        de0 de0Var = new de0(context);
+        this.b = de0Var;
+        de0Var.setRoundRadius(hl.L(7.3125f));
+        addView(de0Var, tre.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(16);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, tre.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, tre.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, tre.d(-1, -2.0f, 19, 58.0f, 0.0f, 48.0f, 1.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.msg_inputarrow);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, tre.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        updateColors();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00fe A[SYNTHETIC] */
+    public final void a(int i, TLRPC.Chat chat) {
+        if (chat == null) {
+            return;
+        }
+        TLRPC.ChatFull N0 = uc7.s1(i).N0(chat.id);
+        setTitle(wf3.t(chat));
+        setSubtitle(ob6.G(N0 != null ? N0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
+        this.b.f(chat, new rb0(chat));
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.z6));
+        hashSet.add(Integer.valueOf(aob.G6));
+    }
+
     @Override // android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void dispatchDraw(Canvas canvas) {
-        float f;
-        float f2;
-        View[] viewArr;
-        FrameLayout frameLayout;
-        float f3;
-        float f4;
-        byte b = this.a;
-        lm lmVar = this.b;
-        float f5 = 0.0f;
-        fx0 fx0Var = this.e;
-        float f6 = 1.0f;
-        Path path = this.d;
-        switch (b) {
-            case 0:
-                float f7 = 1.0f;
-                eo2 eo2Var = (eo2) fx0Var;
-                View[] viewPages = eo2Var.n1.getViewPages();
-                this.c = 0.0f;
-                int i = 0;
-                while (i < viewPages.length) {
-                    View view = viewPages[i];
-                    if (view == null) {
-                        f = f7;
-                    } else {
-                        co2 co2Var = (co2) view;
-                        f = f7;
-                        this.c = (co2Var.b() * Utilities.i(f7 - Math.abs(co2Var.getTranslationX() / co2Var.getMeasuredWidth()), f, 0.0f)) + this.c;
-                        if (co2Var.getVisibility() == 0) {
-                            co2Var.c();
-                        }
-                    }
-                    i++;
-                    f7 = f;
-                }
-                float f8 = f7;
-                if (this.c > gl.m) {
-                    f8 = 0.0f;
-                }
-                float e = lmVar.e(false, f8);
-                float max = (Math.max(gl.m, this.c) - (gl.m * e)) - (gl.L(10.0f) * Math.max(eo2Var.l1.e, eo2Var.m1.e));
-                this.c = max;
-                RectF rectF = gl.P;
-                rectF.set(eo2Var.u0, max, getWidth() - eo2Var.u0, gl.L(8.0f) + getHeight());
-                float U1 = gl.U1(e, gl.L(14.0f), 0);
-                canvas.drawRoundRect(rectF, U1, U1, eo2Var.J1);
-                canvas.save();
-                path.rewind();
-                path.addRoundRect(rectF, U1, U1, Path.Direction.CW);
-                canvas.clipPath(path);
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                y5b y5bVar = (y5b) fx0Var;
-                View[] viewPages2 = y5bVar.l1.getViewPages();
-                this.c = 0.0f;
-                int i2 = 0;
-                while (i2 < viewPages2.length) {
-                    View view2 = viewPages2[i2];
-                    if (view2 == null) {
-                        viewArr = viewPages2;
-                        f2 = f6;
-                    } else {
-                        t5b t5bVar = (t5b) view2;
-                        float i3 = Utilities.i(f6 - Math.abs(t5bVar.getTranslationX() / t5bVar.getMeasuredWidth()), f6, f5);
-                        float f9 = this.c;
-                        o39 o39Var = t5bVar.f;
-                        FrameLayout frameLayout2 = t5bVar.e;
-                        t26 t26Var = t5bVar.h;
-                        f2 = f6;
-                        float f10 = (t26Var.t || t5bVar.a == 0) ? gl.q.y : f5;
-                        int i4 = 0;
-                        while (i4 < o39Var.getChildCount()) {
-                            View childAt = o39Var.getChildAt(i4);
-                            viewArr = viewPages2;
-                            if (t26Var.t) {
-                                float y = childAt.getY() + frameLayout2.getPaddingTop();
-                                float alpha = childAt.getAlpha();
-                                if (y < f10) {
-                                    f10 = gl.R1(f10, y, alpha);
-                                }
-                            } else if (t5bVar.a != 0) {
-                                if (childAt.getTag() instanceof Integer) {
-                                    frameLayout = frameLayout2;
-                                    if (((Integer) childAt.getTag()).intValue() == 33) {
-                                        f4 = childAt.getBottom() + frameLayout.getPaddingTop();
-                                        f3 = childAt.getTranslationY();
-                                        f10 = f3 + f4;
-                                        this.c = (f10 * i3) + f9;
-                                        if (t5bVar.getVisibility() == 0) {
-                                            t5bVar.k();
-                                        }
-                                    }
-                                } else {
-                                    frameLayout = frameLayout2;
-                                }
-                                if ((childAt.getTag() instanceof Integer) && ((Integer) childAt.getTag()).intValue() == 35) {
-                                    f4 = frameLayout.getPaddingTop();
-                                    f3 = childAt.getY();
-                                    f10 = f3 + f4;
-                                    this.c = (f10 * i3) + f9;
-                                    if (t5bVar.getVisibility() == 0) {
-                                    }
-                                }
-                                i4++;
-                                viewPages2 = viewArr;
-                                frameLayout2 = frameLayout;
-                            } else if (!(childAt instanceof s5b)) {
-                                f10 = Math.min(childAt.getY() + frameLayout2.getPaddingTop(), f10);
-                            }
-                            frameLayout = frameLayout2;
-                            i4++;
-                            viewPages2 = viewArr;
-                            frameLayout2 = frameLayout;
-                        }
-                        viewArr = viewPages2;
-                        this.c = (f10 * i3) + f9;
-                        if (t5bVar.getVisibility() == 0) {
-                        }
-                    }
-                    i2++;
-                    f6 = f2;
-                    viewPages2 = viewArr;
-                    f5 = 0.0f;
-                }
-                float e2 = lmVar.e(false, this.c <= ((float) gl.m) ? f6 : 0.0f);
-                float max2 = Math.max(gl.m, this.c) - (gl.m * e2);
-                this.c = max2;
-                RectF rectF2 = gl.P;
-                rectF2.set(y5bVar.u0, max2, getWidth() - y5bVar.u0, gl.L(8.0f) + getHeight());
-                float U12 = gl.U1(e2, gl.L(14.0f), 0);
-                canvas.drawRoundRect(rectF2, U12, U12, y5bVar.L1);
-                canvas.save();
-                path.rewind();
-                path.addRoundRect(rectF2, U12, U12, Path.Direction.CW);
-                canvas.clipPath(path);
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
+        Drawable drawable = aob.R0;
+        de0 de0Var = this.b;
+        br3.a(canvas, drawable, (de0Var.getWidth() / 2.0f) + de0Var.getLeft(), (de0Var.getHeight() / 2.0f) + de0Var.getTop(), de0Var.getHeight());
+        super.dispatchDraw(canvas);
+        vnb vnbVar = this.a;
+        Paint d = vnbVar != null ? vnbVar.d("paintDivider") : null;
+        if (d == null) {
+            d = aob.j0;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        byte b = this.a;
-        fx0 fx0Var = this.e;
-        switch (b) {
-            case 0:
-                if (motionEvent.getAction() == 0 && motionEvent.getY() < this.c) {
-                    ((eo2) fx0Var).dismiss();
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                if (motionEvent.getAction() == 0 && motionEvent.getY() < this.c) {
-                    ((y5b) fx0Var).dismiss();
-                    break;
-                } else {
-                    break;
-                }
-                break;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+        canvas.drawLine(hl.L(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, d);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
-                break;
-        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(56.0f), TLObject.FLAG_30));
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zn2(y5b y5bVar, Context context) {
-        super(context);
-        this.e = y5bVar;
-        this.b = new lm(250L, this, s33.h);
-        this.d = new Path();
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        int i = aob.z6;
+        vnb vnbVar = this.a;
+        this.e.setColorFilter(aob.v0(i, vnbVar));
+        this.c.setTextColor(aob.v0(aob.G6, vnbVar));
+        this.d.setTextColor(aob.v0(i, vnbVar));
     }
 }

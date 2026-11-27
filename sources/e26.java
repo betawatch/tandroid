@@ -1,24 +1,82 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
+import android.view.Window;
+import java.lang.ref.WeakReference;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e26 extends LimitPreviewView {
-    public final /* synthetic */ f26 q0;
+public final class e26 {
+    public final /* synthetic */ byte a = 1;
+    public boolean b;
+    public boolean c;
+    public final Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e26(f26 f26Var, Context context, int i, int i2, int i3, float f, wjb wjbVar) {
-        super(context, i, i2, i3, f, wjbVar);
-        this.q0 = f26Var;
+    public e26(LaunchActivity launchActivity, boolean z) {
+        this.d = new WeakReference(launchActivity);
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.q0.e.a2) {
-            return;
+    public final void a() {
+        switch (this.a) {
+            case 0:
+                b(false);
+                this.c = true;
+                break;
+            default:
+                b(false);
+                this.c = true;
+                break;
         }
-        super.invalidate();
+    }
+
+    public final void b(boolean z) {
+        int i;
+        byte b = this.a;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                if (this.b != z && !this.c) {
+                    this.b = z;
+                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) obj).get();
+                    if (launchActivity != null) {
+                        String str = LaunchActivity.C1;
+                        int i2 = launchActivity.B1 + (z ? 1 : -1);
+                        launchActivity.B1 = i2;
+                        d26 d26Var = launchActivity.v0;
+                        if (d26Var != null) {
+                            d26Var.setVisibility(i2 <= 0 ? 0 : 8);
+                        }
+                        launchActivity.getWindow();
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (this.b != z && !this.c) {
+                    this.b = z;
+                    cdc cdcVar = (cdc) obj;
+                    if (z) {
+                        i = cdcVar.b + 1;
+                        cdcVar.b = i;
+                    } else {
+                        i = cdcVar.b - 1;
+                        cdcVar.b = i;
+                    }
+                    boolean z2 = i > 0;
+                    if (cdcVar.a != z2) {
+                        cdcVar.a = z2;
+                        Window window = (Window) ((WeakReference) ((ftb) cdcVar.c).b).get();
+                        if (window != null) {
+                            window.getDecorView().setVisibility(z2 ? 8 : 0);
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    public e26(cdc cdcVar) {
+        this.d = cdcVar;
     }
 }

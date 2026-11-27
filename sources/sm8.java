@@ -1,23 +1,21 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class sm8 {
+    public final um4 a;
+    public final long b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class sm8 extends taa {
-    public final /* synthetic */ tm8 U2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sm8(tm8 tm8Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.U2 = tm8Var;
-    }
-
-    @Override // taa
-    public final void L0(vf6 vf6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
-        if (z) {
-            gl.d3(new ll8(this, vf6Var, i, (byte) 10), 250L);
+    public sm8(um8 um8Var, um4 um4Var) {
+        long length;
+        this.a = um4Var;
+        long length2 = ((um8Var.b.length() + um8Var.a.length()) << 1) + 128;
+        j26 j26Var = (j26) um4Var.b;
+        if (j26Var == null) {
+            length = 1024;
+        } else {
+            length = (((int[]) j26Var.c) == null ? 0L : ((int[]) j26Var.c).length << 2) + (((int[]) j26Var.b).length << 2) + 64;
         }
+        this.b = length2 + length;
     }
 }

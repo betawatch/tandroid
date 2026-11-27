@@ -1,47 +1,49 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.Wallet.c;
+import android.location.Location;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class q05 implements Runnable {
-    public volatile boolean a;
-    public Runnable b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TL_wallet.nftItem d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ i8c f;
-    public final /* synthetic */ c h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class q05 implements OnCompleteListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pt2 b;
 
-    public q05(c cVar, String str, TL_wallet.nftItem nftitem, String str2, i8c i8cVar) {
-        this.h = cVar;
-        this.c = str;
-        this.d = nftitem;
-        this.e = str2;
-        this.f = i8cVar;
+    public /* synthetic */ q05(pt2 pt2Var, byte b) {
+        this.a = b;
+        this.b = pt2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final synchronized void run() {
-        try {
-            try {
-                if (this.a) {
-                    return;
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public final void onComplete(Task task) {
+        byte b = this.a;
+        pt2 pt2Var = this.b;
+        switch (b) {
+            case 0:
+                if (task.getException() == null) {
+                    pt2Var.accept((Location) task.getResult());
+                    break;
                 }
-                WalletEngine2 walletEngine2 = this.h.b;
-                String str = this.c;
-                TL_wallet.nftItem nftitem = this.d;
-                String str2 = nftitem.address;
-                String str3 = this.e;
-                this.b = walletEngine2.emulateSendNFT(str, str2, str3, new eu0((Object) this, (Object) nftitem, (Object) str3, (Object) this.f, (byte) 6));
-            } catch (Throwable th) {
-                th = th;
-                throw th;
-            }
-        } catch (Throwable th2) {
-            th = th2;
+                break;
+            default:
+                try {
+                    task.getResult(ao.class);
+                    pt2Var.accept(0);
+                    break;
+                } catch (ao e) {
+                    int statusCode = e.getStatusCode();
+                    if (statusCode == 6) {
+                        pt2Var.accept(1);
+                        return;
+                    } else {
+                        if (statusCode == 8502) {
+                            pt2Var.accept(2);
+                            return;
+                        }
+                        return;
+                    }
+                }
         }
     }
 }

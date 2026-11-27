@@ -1,109 +1,297 @@
 // default package
 
-import android.text.Editable;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.text.TextUtils;
 import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lh implements View.OnClickListener {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int[] b;
+public final /* synthetic */ class lh implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ KeyEvent.Callback e;
-    public final /* synthetic */ ViewGroup f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ lh(FrameLayout frameLayout, wjb wjbVar, fx0 fx0Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, s67 s67Var) {
-        this.c = frameLayout;
-        this.d = wjbVar;
-        this.e = fx0Var;
-        this.f = frameLayout2;
-        this.b = iArr;
-        this.h = strArr;
-        this.n = iArr2;
-        this.r = s67Var;
+    public /* synthetic */ lh(int i, yv1 yv1Var, e eVar, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+        this.a = (byte) 7;
+        this.b = i;
+        this.c = yv1Var;
+        this.e = eVar;
+        this.d = tL_payments_assignPlayMarketTransaction;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x011f, code lost:
+    
+        if (r2.restricted == false) goto L63;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x015d, code lost:
+    
+        r0 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0156, code lost:
+    
+        if (r2.restricted == false) goto L63;
+     */
+    @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        String str;
+        long j;
+        boolean z;
+        long j2;
+        long j3;
+        String str2;
+        String str3;
         byte b = this.a;
-        Object obj = this.r;
-        Object obj2 = this.n;
-        Object obj3 = this.h;
-        int[] iArr = this.b;
-        ViewGroup viewGroup = this.f;
-        KeyEvent.Callback callback = this.e;
-        Object obj4 = this.d;
-        Object obj5 = this.c;
+        int i = this.b;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
         switch (b) {
             case 0:
-                bt3 bt3Var = (bt3) obj2;
-                i4d i4dVar = (i4d) obj;
-                ((boolean[]) obj5)[0] = false;
-                int c = (int) (ij.c(null, (hn7) obj4, (hn7) callback, (hn7) viewGroup, (hn7) obj3) / 1000);
-                int i = iArr[0];
-                gt3 gt3Var = (gt3) bt3Var.c;
-                int i2 = bt3Var.a;
-                int i3 = bt3Var.b;
-                Editable text = gt3Var.getText();
-                vib vibVar = new vib();
-                vibVar.a |= 128;
-                vibVar.b = i2;
-                vibVar.c = i3;
-                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
-                tL_messageEntityFormattedDate.date = c;
-                tL_messageEntityFormattedDate.flags = i;
-                tL_messageEntityFormattedDate.applyFlags();
-                try {
-                    text.setSpan(new im4(text.subSequence(i2, i3).toString(), vibVar, tL_messageEntityFormattedDate), i2, i3, 33);
-                } catch (Exception unused) {
-                }
-                et3 et3Var = gt3Var.T1;
-                if (et3Var != null) {
-                    et3Var.m();
-                }
-                ((fx0) i4dVar.a).y0.run();
-                break;
-            default:
-                FrameLayout frameLayout = (FrameLayout) obj5;
-                wjb wjbVar = (wjb) obj4;
-                fx0 fx0Var = (fx0) callback;
-                FrameLayout frameLayout2 = (FrameLayout) viewGroup;
-                String[] strArr = (String[]) obj3;
-                int[] iArr2 = (int[]) obj2;
-                s67 s67Var = (s67) obj;
-                byte b2 = 2;
-                if (y6c.h(y6c.t0).p()) {
-                    cs5 G = cs5.G(fx0Var.c, wjbVar, frameLayout2);
-                    for (int i4 = 0; i4 < iArr.length; i4++) {
-                        G.b(0, strArr[i4], new va7(iArr2, iArr[i4], s67Var, b2), false);
-                    }
-                    G.i = (byte) 1;
-                    G.a0();
+                SharedPreferences sharedPreferences = (SharedPreferences) obj3;
+                id idVar = (id) obj2;
+                e eVar = (e) obj;
+                if (tL_error != null) {
+                    hl.c3(new uc(idVar, (byte) 2));
                     break;
                 } else {
-                    new u21(frameLayout, wjbVar).Q(R.raw.star_premium_2, 36, gl.N2(k96.M0(2131748305, null), -1, 2, new jc((byte) 1), null)).j();
+                    hl.c3(new l77((Object) sharedPreferences, tLObject, (Object) idVar, this.b, (Object) eVar, (byte) 2));
+                    break;
+                }
+            case 1:
+                hl.c3(new te(obj3, obj2, (Object) tL_error, (Object) tLObject, this.b, obj, (byte) 1));
+                break;
+            case 2:
+                hl.c3(new te((KeyEvent.Callback) obj3, (Object) tLObject, this.b, obj2, obj, (TLObject) tL_error, (byte) 3));
+                break;
+            case 3:
+                hl.c3(new l77(obj3, (Object) tLObject, obj2, this.b, obj, (byte) 11));
+                break;
+            case 4:
+                String str4 = LaunchActivity.C1;
+                hl.d3(new l77(obj3, (Object) tLObject, obj, this.b, obj2, (byte) 16), 2L);
+                break;
+            case 5:
+                ls6 ls6Var = (ls6) obj3;
+                String str5 = (String) obj2;
+                String str6 = (String) obj;
+                if (tLObject == null) {
+                    hl.c3(new aq6(ls6Var, str6, (byte) 2));
+                    break;
+                } else {
+                    TLRPC.TL_emojiKeywordsDifference tL_emojiKeywordsDifference = (TLRPC.TL_emojiKeywordsDifference) tLObject;
+                    if (i != -1 && !tL_emojiKeywordsDifference.lang_code.equals(str5)) {
+                        ls6Var.getMessagesStorage().a.c(new aq6(ls6Var, str6, (byte) 1));
+                        break;
+                    } else {
+                        ls6Var.getMessagesStorage().a.c(new yg6(ls6Var, tL_emojiKeywordsDifference, str6, (byte) 8));
+                        hl.c3(new ip6(ls6Var, (byte) 10));
+                        break;
+                    }
+                }
+            case 6:
+                uc7 uc7Var = (uc7) obj3;
+                String str7 = (String) obj2;
+                String str8 = (String) obj;
+                int i2 = uc7Var.p2;
+                int i3 = this.b;
+                if (i3 == i2) {
+                    String str9 = "proxy_dialog";
+                    if (tLObject instanceof TLRPC.TL_help_promoDataEmpty) {
+                        uc7Var.m2 = ((TLRPC.TL_help_promoDataEmpty) tLObject).expires;
+                        hl.c3(new l87(uc7Var, (byte) 20));
+                        z = true;
+                        str = "proxy_dialog";
+                        j = 0;
+                    } else if (tLObject instanceof TLRPC.TL_help_promoData) {
+                        TLRPC.TL_help_promoData tL_help_promoData = (TLRPC.TL_help_promoData) tLObject;
+                        TLRPC.Peer peer = tL_help_promoData.peer;
+                        if (peer == null) {
+                            str2 = "proxy_dialog";
+                            z = false;
+                            str3 = str8;
+                            j3 = 0;
+                            j2 = 0;
+                        } else {
+                            j2 = 0;
+                            j3 = peer.user_id;
+                            if (j3 != 0) {
+                                str2 = "proxy_dialog";
+                                z = false;
+                                str3 = str8;
+                            } else {
+                                long j4 = peer.chat_id;
+                                if (j4 != 0) {
+                                    j3 = -j4;
+                                    int i4 = 0;
+                                    while (true) {
+                                        if (i4 >= tL_help_promoData.chats.size()) {
+                                            str2 = str9;
+                                            str3 = str8;
+                                            break;
+                                        } else {
+                                            TLRPC.Chat chat = tL_help_promoData.chats.get(i4);
+                                            str3 = str8;
+                                            str2 = str9;
+                                            if (chat.id != tL_help_promoData.peer.chat_id) {
+                                                i4++;
+                                                str9 = str2;
+                                                str8 = str3;
+                                            } else if (!chat.kicked) {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    z = true;
+                                } else {
+                                    str2 = "proxy_dialog";
+                                    str3 = str8;
+                                    j3 = -peer.channel_id;
+                                    int i5 = 0;
+                                    while (true) {
+                                        if (i5 >= tL_help_promoData.chats.size()) {
+                                            break;
+                                        } else {
+                                            TLRPC.Chat chat2 = tL_help_promoData.chats.get(i5);
+                                            if (chat2.id != tL_help_promoData.peer.channel_id) {
+                                                i5++;
+                                            } else if (!chat2.kicked) {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    z = true;
+                                }
+                            }
+                        }
+                        uc7Var.s2 = j3;
+                        if (tL_help_promoData.proxy) {
+                            uc7Var.t2 = 0;
+                        } else if (TextUtils.isEmpty(tL_help_promoData.psa_type)) {
+                            uc7Var.t2 = 2;
+                        } else {
+                            uc7Var.t2 = 1;
+                            uc7Var.v2 = tL_help_promoData.psa_type;
+                        }
+                        uc7Var.w2 = qd4.o(str7, str3);
+                        uc7Var.u2 = tL_help_promoData.psa_message;
+                        uc7Var.m2 = tL_help_promoData.expires;
+                        SharedPreferences.Editor edit = uc7.e1().edit();
+                        str = str2;
+                        edit.putLong(str, uc7Var.s2);
+                        edit.putString("proxyDialogAddress", uc7Var.w2);
+                        edit.putInt("promo_dialog_type", uc7Var.t2);
+                        String str10 = uc7Var.u2;
+                        if (str10 != null) {
+                            edit.putString("promo_psa_message", str10);
+                        } else {
+                            edit.remove("promo_psa_message");
+                        }
+                        String str11 = uc7Var.v2;
+                        if (str11 != null) {
+                            edit.putString("promo_psa_type", str11);
+                        } else {
+                            edit.remove("promo_psa_type");
+                        }
+                        edit.putInt("nextPromoInfoCheckTime", uc7Var.m2);
+                        edit.commit();
+                        hl.c3(new t87(uc7Var, tL_help_promoData, (byte) 2));
+                        if (z) {
+                            j = j2;
+                        } else {
+                            j = j2;
+                            hl.c3(new r77((Object) uc7Var, j3, (Object) tL_help_promoData, i3, (byte) 9));
+                        }
+                    } else {
+                        str = "proxy_dialog";
+                        j = 0;
+                        uc7Var.m2 = uc7Var.getConnectionsManager().getCurrentTime() + 3600;
+                        z = true;
+                    }
+                    if (z) {
+                        uc7Var.s2 = j;
+                        uc7.e1().edit().putLong(str, uc7Var.s2).remove("proxyDialogAddress").putInt("nextPromoInfoCheckTime", uc7Var.m2).commit();
+                        uc7Var.o2 = 0;
+                        uc7Var.n2 = false;
+                        hl.c3(new pa7(uc7Var, (byte) 16));
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                yv1 yv1Var = (yv1) obj3;
+                e eVar2 = (e) obj;
+                TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj2;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    if (tL_error != null) {
+                        hl.c3(new y36(i, tL_error, eVar2, tL_payments_assignPlayMarketTransaction));
+                        break;
+                    }
+                } else {
+                    uc7.s1(i).Y3((TLRPC.Updates) tLObject, false);
+                    hl.c3(yv1Var);
+                    break;
+                }
+                break;
+            case 8:
+                hl.c3(new l77((Object) tLObject, obj3, obj2, this.b, obj, (byte) 24));
+                break;
+            case 9:
+                eja ejaVar = (eja) obj3;
+                TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
+                hl.c3(new xh0((id[]) obj2, (byte) 9));
+                int i6 = this.b;
+                if (tL_error != null) {
+                    hl.c3(new efa((Object) ejaVar, i6, (Object) tL_error, (Object) tL_messages_editMessage, (byte) 0));
+                    break;
+                } else {
+                    uc7.s1(i6).Y3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+            default:
+                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj2;
+                eu0 eu0Var = (eu0) obj;
+                if (tL_error != null && xc4.r(tL_error.text) && obj3 != null) {
+                    xc4.n(i).u(new Object[]{tL_messages_getAttachedStickers, eu0Var}, obj3);
+                    break;
+                } else {
+                    eu0Var.run(tLObject, tL_error);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ lh(boolean[] zArr, hn7 hn7Var, hn7 hn7Var2, hn7 hn7Var3, hn7 hn7Var4, bt3 bt3Var, int[] iArr, i4d i4dVar) {
-        this.c = zArr;
-        this.d = hn7Var;
-        this.e = hn7Var2;
-        this.f = hn7Var3;
-        this.h = hn7Var4;
-        this.n = bt3Var;
-        this.b = iArr;
-        this.r = i4dVar;
+    public /* synthetic */ lh(Object obj, int i, Object obj2, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ lh(Object obj, Object obj2, int i, Object obj3, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = i;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ lh(LaunchActivity launchActivity, Uri uri, int i, id idVar) {
+        this.a = (byte) 4;
+        this.c = launchActivity;
+        this.e = uri;
+        this.b = i;
+        this.d = idVar;
     }
 }

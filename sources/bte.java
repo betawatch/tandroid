@@ -1,31 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bte {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final shf e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
-
-    public /* synthetic */ bte(pse pseVar) {
-        this.a = pseVar.a;
-        this.b = pseVar.b;
-        this.c = pseVar.c;
-        this.d = pseVar.d;
-        this.e = (shf) pseVar.k;
-        this.f = pseVar.e;
-        this.g = pseVar.f;
-        this.h = pseVar.g;
-        this.i = pseVar.h;
-        this.j = pseVar.i;
-        this.k = pseVar.j;
+public final class bte extends u4e {
+    public final void c(cqe cqeVar) {
+        b();
+        kte.q((kte) this.b, cqeVar);
     }
 }

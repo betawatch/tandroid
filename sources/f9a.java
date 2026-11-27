@@ -1,17 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class f9a {
-    public double a;
-    public double b;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.SessionsActivity;
 
-    public f9a(double d, double d2) {
-        this.a = d;
-        this.b = d2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class f9a extends nx0 {
+    public TLRPC.TL_authorization l1;
+    public SessionsActivity m1;
+    public e29 n1;
+
+    public final void E0(String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
+        alertDialog$Builder.e(new CharSequence[]{ob6.M0(2131751732, null)}, new oh((Object) this, (Object) str, (byte) 11));
+        alertDialog$Builder.o();
     }
 
-    public final double a(double d, double d2) {
-        return Math.sqrt(Math.pow(d2 - this.b, 2.0d) + Math.pow(d - this.a, 2.0d));
+    public final void F0() {
+        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
+        TLRPC.TL_authorization tL_authorization = this.l1;
+        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
+        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
+        changeauthorizationsettings.flags = 3;
+        changeauthorizationsettings.hash = tL_authorization.hash;
+        ConnectionsManager.getInstance(this.a).sendRequest(changeauthorizationsettings, new xe2((byte) 0));
+    }
+
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        super.show();
+        this.n1.d();
     }
 }

@@ -1,37 +1,60 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class c90 {
-    public Double a;
-    public int b;
-    public boolean c;
-    public int d;
-    public long e;
-    public long f;
-    public byte g;
+public final class c90 extends oz2 {
+    public final long a;
+    public final String b;
+    public final String c;
+    public final long d;
+    public final int e;
 
-    public final d90 a() {
-        if (this.g == 31) {
-            return new d90(this.a, this.b, this.c, this.d, this.e, this.f);
+    public c90(String str, int i, String str2, long j, long j2) {
+        this.a = j;
+        this.b = str;
+        this.c = str2;
+        this.d = j2;
+        this.e = i;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb = new StringBuilder();
-        if ((this.g & 1) == 0) {
-            sb.append(" batteryVelocity");
+        if (obj instanceof oz2) {
+            c90 c90Var = (c90) ((oz2) obj);
+            if (this.a == c90Var.a && this.b.equals(c90Var.b)) {
+                String str = c90Var.c;
+                String str2 = this.c;
+                if (str2 != null ? str2.equals(str) : str == null) {
+                    if (this.d == c90Var.d && this.e == c90Var.e) {
+                        return true;
+                    }
+                }
+            }
         }
-        if ((this.g & 2) == 0) {
-            sb.append(" proximityOn");
-        }
-        if ((this.g & 4) == 0) {
-            sb.append(" orientation");
-        }
-        if ((this.g & 8) == 0) {
-            sb.append(" ramUsed");
-        }
-        if ((this.g & 16) == 0) {
-            sb.append(" diskUsed");
-        }
-        sc8.j(ir2.o("Missing required properties:", sb));
-        return null;
+        return false;
+    }
+
+    public final int hashCode() {
+        long j = this.a;
+        int hashCode = (((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003;
+        String str = this.c;
+        int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
+        long j2 = this.d;
+        return ((hashCode2 ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.e;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("Frame{pc=");
+        sb.append(this.a);
+        sb.append(", symbol=");
+        sb.append(this.b);
+        sb.append(", file=");
+        sb.append(this.c);
+        sb.append(", offset=");
+        sb.append(this.d);
+        sb.append(", importance=");
+        return uh9.l(sb, this.e, "}");
     }
 }

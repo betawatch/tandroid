@@ -1,153 +1,325 @@
 // default package
 
+import android.util.Pair;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zd5 {
-    public final List a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public final int k;
-    public final float l;
-    public final int m;
-    public final String n;
-    public final c5a o;
+public final class zd5 implements av3 {
+    public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
+    public String a;
+    public x1c b;
+    public final oz9 c;
+    public final String d;
+    public final ey7 e;
+    public final xj7 f;
+    public final boolean[] g = new boolean[4];
+    public final yd5 h;
+    public long i;
+    public boolean j;
+    public boolean k;
+    public long l;
+    public long m;
+    public long n;
+    public long o;
+    public boolean p;
+    public boolean q;
 
-    public zd5(List list, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, float f, int i11, String str, c5a c5aVar) {
-        this.a = list;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-        this.f = i5;
-        this.g = i6;
-        this.h = i7;
-        this.i = i8;
-        this.j = i9;
-        this.k = i10;
-        this.l = f;
-        this.m = i11;
-        this.n = str;
-        this.o = c5aVar;
+    public zd5(oz9 oz9Var, String str) {
+        this.c = oz9Var;
+        this.d = str;
+        yd5 yd5Var = new yd5();
+        yd5Var.a = new byte[128];
+        this.h = yd5Var;
+        if (oz9Var != null) {
+            this.f = new xj7(jn7.H2);
+            this.e = new ey7();
+        } else {
+            this.f = null;
+            this.e = null;
+        }
+        this.m = -9223372036854775807L;
+        this.o = -9223372036854775807L;
     }
 
-    public static zd5 a(xu7 xu7Var, boolean z, c5a c5aVar) {
-        boolean z2;
-        g30 h;
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01cb  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x01fa  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01de  */
+    @Override // av3
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(ey7 ey7Var) {
+        yd5 yd5Var;
+        xj7 xj7Var;
         int i;
-        int i2 = 4;
-        try {
-            if (z) {
-                xu7Var.O(4);
+        boolean z;
+        long j;
+        long j2;
+        boolean z2;
+        boolean z3;
+        long j3;
+        int i2;
+        float f;
+        int i3;
+        float f2;
+        int i4;
+        long j4;
+        this.b.getClass();
+        int i5 = ey7Var.b;
+        int i6 = ey7Var.c;
+        byte[] bArr = ey7Var.a;
+        this.i += ey7Var.a();
+        this.b.e(ey7Var.a(), ey7Var);
+        while (true) {
+            int b = rfd.b(bArr, i5, i6, this.g);
+            yd5Var = this.h;
+            xj7Var = this.f;
+            if (b == i6) {
+                break;
+            }
+            int i7 = b + 3;
+            int i8 = ey7Var.a[i7] & 255;
+            int i9 = b - i5;
+            if (this.k) {
+                i = i6;
             } else {
-                xu7Var.O(21);
-            }
-            int A = xu7Var.A() & 3;
-            int A2 = xu7Var.A();
-            int i3 = xu7Var.b;
-            int i4 = 0;
-            int i5 = 0;
-            int i6 = 0;
-            while (true) {
-                z2 = true;
-                if (i5 >= A2) {
-                    break;
+                if (i9 > 0) {
+                    yd5Var.a(i5, b, bArr);
                 }
-                xu7Var.O(1);
-                int H = xu7Var.H();
-                for (int i7 = 0; i7 < H; i7++) {
-                    int H2 = xu7Var.H();
-                    i6 += H2 + 4;
-                    xu7Var.O(H2);
-                }
-                i5++;
-            }
-            xu7Var.N(i3);
-            byte[] bArr = new byte[i6];
-            c5a c5aVar2 = c5aVar;
-            int i8 = -1;
-            int i9 = -1;
-            int i10 = -1;
-            int i11 = -1;
-            int i12 = -1;
-            int i13 = -1;
-            int i14 = -1;
-            int i15 = -1;
-            int i16 = -1;
-            int i17 = -1;
-            float f = 1.0f;
-            String str = null;
-            int i18 = 0;
-            int i19 = 0;
-            while (i18 < A2) {
-                int A3 = xu7Var.A() & 63;
-                int H3 = xu7Var.H();
-                int i20 = i4;
-                c5a c5aVar3 = c5aVar2;
-                while (i20 < H3) {
-                    boolean z3 = z2;
-                    int H4 = xu7Var.H();
-                    int i21 = A;
-                    System.arraycopy(yad.a, i4, bArr, i19, i2);
-                    int i22 = i19 + 4;
-                    System.arraycopy(xu7Var.a, xu7Var.b, bArr, i22, H4);
-                    if (A3 == 32 && i20 == 0) {
-                        c5aVar3 = yad.j(i22, i22 + H4, bArr);
+                int i10 = i9 < 0 ? -i9 : 0;
+                if (yd5Var.d) {
+                    int i11 = yd5Var.b - i10;
+                    yd5Var.b = i11;
+                    if (yd5Var.c == 0 && i8 == 181) {
+                        yd5Var.c = i11;
+                        i = i6;
                     } else {
-                        if (A3 == 33 && i20 == 0) {
-                            th7 i23 = yad.i(bArr, i22, i22 + H4, c5aVar3);
-                            i8 = i23.a + 1;
-                            i9 = i23.g;
-                            int i24 = i23.h;
-                            i11 = i23.c + 8;
-                            i12 = i23.d + 8;
-                            int i25 = i23.k;
-                            i10 = i24;
-                            int i26 = i23.l;
-                            int i27 = i23.m;
-                            float f2 = i23.i;
-                            int i28 = i23.j;
-                            qh7 qh7Var = i23.b;
-                            if (qh7Var != null) {
-                                i = i28;
-                                str = wj2.a(qh7Var.a, qh7Var.c, qh7Var.d, qh7Var.f, qh7Var.b, qh7Var.e);
+                        yd5Var.d = false;
+                        String str = this.a;
+                        str.getClass();
+                        byte[] copyOf = Arrays.copyOf(yd5Var.a, yd5Var.b);
+                        int i12 = copyOf[4] & 255;
+                        byte b2 = copyOf[5];
+                        i = i6;
+                        int i13 = (i12 << 4) | ((b2 & 255) >> 4);
+                        int i14 = ((b2 & 15) << 8) | (copyOf[6] & 255);
+                        int i15 = (copyOf[7] & 240) >> 4;
+                        if (i15 == 2) {
+                            f = i14 << 2;
+                            i3 = i13 * 3;
+                        } else if (i15 == 3) {
+                            f = i14 << 4;
+                            i3 = i13 * 9;
+                        } else if (i15 != 4) {
+                            f2 = 1.0f;
+                            jo4 jo4Var = new jo4();
+                            jo4Var.a = str;
+                            jo4Var.r = dg7.n(this.d);
+                            jo4Var.s = dg7.n("video/mpeg2");
+                            jo4Var.z = i13;
+                            jo4Var.A = i14;
+                            jo4Var.H = f2;
+                            jo4Var.v = Collections.singletonList(copyOf);
+                            ko4 ko4Var = new ko4(jo4Var);
+                            i4 = (copyOf[7] & 15) - 1;
+                            if (i4 >= 0 || i4 >= 8) {
+                                j4 = 0;
                             } else {
-                                i = i28;
+                                double d = r[i4];
+                                byte b3 = copyOf[yd5Var.c + 9];
+                                int i16 = (b3 & 96) >> 5;
+                                if (i16 != (b3 & 31)) {
+                                    d = ((i16 + 1.0d) / (r6 + 1)) * d;
+                                }
+                                j4 = (long) (1000000.0d / d);
                             }
-                            i17 = i;
-                            f = f2;
-                            i15 = i27;
-                            i14 = i26;
-                            i13 = i25;
-                        } else if (A3 == 39 && i20 == 0 && (h = yad.h(i22, i22 + H4, bArr)) != null && c5aVar3 != null) {
-                            i4 = 0;
-                            i16 = h.a == ((ph7) ((mm5) c5aVar3.b).get(0)).b ? 4 : 5;
+                            Pair create = Pair.create(ko4Var, Long.valueOf(j4));
+                            this.b.g((ko4) create.first);
+                            this.l = ((Long) create.second).longValue();
+                            this.k = true;
+                        } else {
+                            f = i14 * 121;
+                            i3 = i13 * 100;
                         }
-                        i4 = 0;
+                        f2 = f / i3;
+                        jo4 jo4Var2 = new jo4();
+                        jo4Var2.a = str;
+                        jo4Var2.r = dg7.n(this.d);
+                        jo4Var2.s = dg7.n("video/mpeg2");
+                        jo4Var2.z = i13;
+                        jo4Var2.A = i14;
+                        jo4Var2.H = f2;
+                        jo4Var2.v = Collections.singletonList(copyOf);
+                        ko4 ko4Var2 = new ko4(jo4Var2);
+                        i4 = (copyOf[7] & 15) - 1;
+                        if (i4 >= 0) {
+                        }
+                        j4 = 0;
+                        Pair create2 = Pair.create(ko4Var2, Long.valueOf(j4));
+                        this.b.g((ko4) create2.first);
+                        this.l = ((Long) create2.second).longValue();
+                        this.k = true;
                     }
-                    i19 = i22 + H4;
-                    xu7Var.O(H4);
-                    i20++;
-                    z2 = z3;
-                    A = i21;
-                    i2 = 4;
+                } else {
+                    i = i6;
+                    if (i8 == 179) {
+                        yd5Var.d = true;
+                    }
                 }
-                i18++;
-                c5aVar2 = c5aVar3;
-                i2 = 4;
+                yd5Var.a(0, 3, yd5.e);
             }
-            return new zd5(i6 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), A + 1, i8, i9, i10, i11, i12, i13, i14, i15, i16, f, i17, str, c5aVar2);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw av7.a("Error parsing".concat(z ? "L-HEVC config" : "HEVC config"), e);
+            if (xj7Var != null) {
+                if (i9 > 0) {
+                    xj7Var.a(i5, b, bArr);
+                    i2 = 0;
+                } else {
+                    i2 = -i9;
+                }
+                if (xj7Var.b(i2)) {
+                    int m = rfd.m(xj7Var.e, xj7Var.d);
+                    String str2 = gcc.a;
+                    byte[] bArr2 = xj7Var.d;
+                    ey7 ey7Var2 = this.e;
+                    ey7Var2.L(m, bArr2);
+                    this.c.a(this.o, ey7Var2);
+                }
+                if (i8 == 178) {
+                    z = true;
+                    if (ey7Var.a[b + 2] == 1) {
+                        xj7Var.d(i8);
+                    }
+                    if (i8 != 0 || i8 == 179) {
+                        int i17 = i - b;
+                        if (this.q && this.k) {
+                            j3 = this.o;
+                            if (j3 != -9223372036854775807L) {
+                                j = -9223372036854775807L;
+                                this.b.a(j3, this.p ? 1 : 0, ((int) (this.i - this.n)) - i17, i17, null);
+                                if (this.j || this.q) {
+                                    this.n = this.i - i17;
+                                    j2 = this.m;
+                                    if (j2 == j) {
+                                        long j5 = this.o;
+                                        j2 = j5 != j ? j5 + this.l : j;
+                                    }
+                                    this.o = j2;
+                                    z2 = false;
+                                    this.p = false;
+                                    this.m = j;
+                                    z3 = true;
+                                    this.j = true;
+                                } else {
+                                    z3 = true;
+                                    z2 = false;
+                                }
+                                this.q = i8 == 0 ? z3 : z2;
+                            }
+                        }
+                        j = -9223372036854775807L;
+                        if (this.j) {
+                        }
+                        this.n = this.i - i17;
+                        j2 = this.m;
+                        if (j2 == j) {
+                        }
+                        this.o = j2;
+                        z2 = false;
+                        this.p = false;
+                        this.m = j;
+                        z3 = true;
+                        this.j = true;
+                        this.q = i8 == 0 ? z3 : z2;
+                    } else if (i8 == 184) {
+                        this.p = z;
+                    }
+                    i5 = i7;
+                    i6 = i;
+                }
+            }
+            z = true;
+            if (i8 != 0) {
+            }
+            int i172 = i - b;
+            if (this.q) {
+                j3 = this.o;
+                if (j3 != -9223372036854775807L) {
+                }
+            }
+            j = -9223372036854775807L;
+            if (this.j) {
+            }
+            this.n = this.i - i172;
+            j2 = this.m;
+            if (j2 == j) {
+            }
+            this.o = j2;
+            z2 = false;
+            this.p = false;
+            this.m = j;
+            z3 = true;
+            this.j = true;
+            this.q = i8 == 0 ? z3 : z2;
+            i5 = i7;
+            i6 = i;
         }
+        if (!this.k) {
+            yd5Var.a(i5, i6, bArr);
+        }
+        if (xj7Var != null) {
+            xj7Var.a(i5, i6, bArr);
+        }
+    }
+
+    @Override // av3
+    public final void d() {
+        rfd.a(this.g);
+        yd5 yd5Var = this.h;
+        yd5Var.d = false;
+        yd5Var.b = 0;
+        yd5Var.c = 0;
+        xj7 xj7Var = this.f;
+        if (xj7Var != null) {
+            xj7Var.c();
+        }
+        this.i = 0L;
+        this.j = false;
+        this.m = -9223372036854775807L;
+        this.o = -9223372036854775807L;
+    }
+
+    @Override // av3
+    public final void f() {
+        this.b.getClass();
+        long j = this.o;
+        if (j != -9223372036854775807L) {
+            boolean z = this.p;
+            this.b.a(j, z ? 1 : 0, (int) (this.i - this.n), 0, null);
+        }
+    }
+
+    @Override // av3
+    public final void g(int i, long j) {
+        this.m = j;
+    }
+
+    @Override // av3
+    public final void h(g84 g84Var, l6c l6cVar) {
+        l6cVar.a();
+        l6cVar.b();
+        this.a = l6cVar.e;
+        l6cVar.b();
+        this.b = g84Var.e0(l6cVar.d, 2);
+        oz9 oz9Var = this.c;
+        if (oz9Var != null) {
+            oz9Var.b(g84Var, l6cVar);
+        }
+    }
+
+    @Override // av3
+    public final void e() {
     }
 }

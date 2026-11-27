@@ -4,12 +4,12 @@ import com.google.android.recaptcha.RecaptchaAction;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
-    private bp2 zzb = hsd.a();
-    private final d06 zzc;
+    private up2 zzb = xwd.a();
+    private final h26 zzc;
     private zzcg zzd;
     private zzxn zze;
     private zzdv zzf;
@@ -18,7 +18,7 @@ public final class zzgb implements zzdw {
         zzdu zzduVar;
         this.zza = zzfpVar;
         int i = zzby.zza;
-        this.zzc = cne.b(zzfv.zza);
+        this.zzc = ure.b(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -32,7 +32,7 @@ public final class zzgb implements zzdw {
             return true;
         }
         zzcg zzcgVar = (zzcg) exc;
-        return (rp5.a(zzcgVar.zzb(), zzce.zzd) || rp5.a(zzcgVar.zzb(), zzce.zze) || rp5.a(zzcgVar.zzb(), zzce.zzf)) ? false : true;
+        return (ur5.a(zzcgVar.zzb(), zzce.zzd) || ur5.a(zzcgVar.zzb(), zzce.zze) || ur5.a(zzcgVar.zzb(), zzce.zzf)) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -41,41 +41,41 @@ public final class zzgb implements zzdw {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzp(qp4 qp4Var, fw2 fw2Var) {
+    public final Object zzp(ur4 ur4Var, zw2 zw2Var) {
         zzfr zzfrVar;
         int i;
         zzcs zzcsVar;
-        if (fw2Var instanceof zzfr) {
-            zzfrVar = (zzfr) fw2Var;
+        if (zw2Var instanceof zzfr) {
+            zzfrVar = (zzfr) zw2Var;
             int i2 = zzfrVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzfrVar.zzc = i2 - TLObject.FLAG_31;
                 Object obj = zzfrVar.zza;
                 i = zzfrVar.zzc;
                 if (i != 0) {
-                    qse.b(obj);
+                    ixe.b(obj);
                     zzcs zzcsVar2 = new zzcs();
                     zzfrVar.zzd = zzcsVar2;
                     zzfrVar.zzc = 1;
-                    Object invoke = qp4Var.invoke(zzfrVar);
-                    Object obj2 = bx2.a;
+                    Object invoke = ur4Var.invoke(zzfrVar);
+                    Object obj2 = vx2.a;
                     if (invoke == obj2) {
                         return obj2;
                     }
                     zzcsVar = zzcsVar2;
                 } else {
                     if (i != 1) {
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
+                        grb.i("call to 'resume' before 'invoke' with coroutine");
                         return null;
                     }
                     zzcsVar = zzfrVar.zzd;
-                    qse.b(obj);
+                    ixe.b(obj);
                 }
                 zzcsVar.zzc();
                 return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));
             }
         }
-        zzfrVar = new zzfr(this, fw2Var);
+        zzfrVar = new zzfr(this, zw2Var);
         Object obj3 = zzfrVar.zza;
         i = zzfrVar.zzc;
         if (i != 0) {
@@ -85,18 +85,18 @@ public final class zzgb implements zzdw {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzq(long j, fw2 fw2Var) {
+    public final Object zzq(long j, zw2 zw2Var) {
         return new zzhg(new zzga(this, j, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zza(String str, RecaptchaAction recaptchaAction, long j, fw2 fw2Var) {
+    public final Object zza(String str, RecaptchaAction recaptchaAction, long j, zw2 zw2Var) {
         return new zzhg(new zzfq(this, j, str, recaptchaAction, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zzb(long j, fw2 fw2Var) {
-        return zzq(j, fw2Var);
+    public final Object zzb(long j, zw2 zw2Var) {
+        return zzq(j, zw2Var);
     }
 
     public final zzdv zze() {

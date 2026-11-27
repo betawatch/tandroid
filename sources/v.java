@@ -3,24 +3,24 @@
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class v implements TextWatcher {
-    public final /* synthetic */ a1 a;
+    public final /* synthetic */ b1 a;
 
-    public v(a1 a1Var) {
-        this.a = a1Var;
+    public v(b1 b1Var) {
+        this.a = b1Var;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        z0 z0Var;
-        a1 a1Var = this.a;
-        z0 z0Var2 = a1Var.t2;
-        if ((z0Var2 != null ? z0Var2.getSelectedTab() : 0) == 1 && (z0Var = a1Var.u2) != null && (z0Var.getSelectedTone() instanceof t0)) {
-            a1Var.a1();
-            a1Var.t1();
-            a1Var.s1(true);
+        a1 a1Var;
+        b1 b1Var = this.a;
+        a1 a1Var2 = b1Var.t2;
+        if ((a1Var2 != null ? a1Var2.getSelectedTab() : 0) == 1 && (a1Var = b1Var.u2) != null && (a1Var.getSelectedTone() instanceof u0)) {
+            b1Var.b1();
+            b1Var.v1();
+            b1Var.u1(true);
         }
     }
 

@@ -9,11 +9,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class TL_stories {
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class Albums extends TLObject {
         public ArrayList<TL_storyAlbum> albums;
         public long hash;
@@ -23,7 +23,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class Boost extends TLObject {
         public static final long NO_USER_ID = -1;
         public int date;
@@ -44,7 +44,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class MediaArea extends TLObject {
         public MediaAreaCoordinates coordinates;
         public boolean dark;
@@ -99,7 +99,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class MediaAreaCoordinates extends TLObject {
         public int flags;
         public double h;
@@ -114,7 +114,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static abstract class PeerStories extends TLObject {
         public boolean checkedExpired;
         public int flags;
@@ -127,7 +127,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class PrepaidGiveaway extends TLObject {
         public int boosts;
         public int date;
@@ -139,7 +139,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class StoryFwdHeader extends TLObject {
         public int flags;
         public TLRPC.Peer from;
@@ -152,7 +152,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static abstract class StoryItem extends TLObject {
         public ArrayList<Integer> albums;
         public String attachPath;
@@ -180,7 +180,7 @@ public class TL_stories {
         public TLRPC.Document music;
         public boolean noforwards;
         public boolean out;
-        public w5b parsedPrivacy;
+        public u9b parsedPrivacy;
         public boolean pinned;
         public boolean selected_contacts;
         public TLRPC.Reaction sent_reaction;
@@ -227,7 +227,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class StoryReaction extends TLObject {
         public TLRPC.Message message;
         public TLRPC.Peer peer_id;
@@ -238,7 +238,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class StoryView extends TLObject {
         public boolean blocked;
         public boolean blocked_my_stories_from;
@@ -255,7 +255,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static abstract class StoryViews extends TLObject {
         public int flags;
         public int forwards_count;
@@ -270,7 +270,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class StoryViewsList extends TLObject {
         public int count;
         public int flags;
@@ -287,14 +287,14 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_albums extends Albums {
         public static final int constructor = -1013417414;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.hash = inputSerializedData.readInt64(z);
-            this.albums = Vector.deserialize(inputSerializedData, new rdb((byte) 29), z);
+            this.albums = Vector.deserialize(inputSerializedData, new nhb((byte) 4), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -305,7 +305,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_boost extends Boost {
         public static final int constructor = 1262359766;
 
@@ -367,7 +367,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_boost_layer186 extends TL_boost {
         public static final int constructor = 706514033;
 
@@ -423,7 +423,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_exportedStoryLink extends TLObject {
         public static final int constructor = 1070138683;
         public String link;
@@ -444,7 +444,8 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    /* loaded from: classes3.dex */
     public static class TL_foundStories extends TLObject {
         public static final int constructor = -488736969;
         public int count;
@@ -462,12 +463,12 @@ public class TL_stories {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.flags = inputSerializedData.readInt32(z);
             this.count = inputSerializedData.readInt32(z);
-            this.stories = Vector.deserialize(inputSerializedData, new sdb((byte) 0), z);
+            this.stories = Vector.deserialize(inputSerializedData, new nhb((byte) 5), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -484,7 +485,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_foundStory extends TLObject {
         public static final int constructor = -394605632;
         public TLRPC.Peer peer;
@@ -508,7 +509,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_geoPointAddress extends TLObject {
         public static final int constructor = -565420653;
         public String city;
@@ -557,16 +558,16 @@ public class TL_stories {
             sb.append(this.country_iso2);
             sb.append(", ");
             String str = "";
-            sb.append(this.state != null ? b00.j(new StringBuilder("state="), this.state, ", ") : "");
-            sb.append(this.city != null ? b00.j(new StringBuilder("city="), this.city, ", ") : "");
+            sb.append(this.state != null ? c00.k(new StringBuilder("state="), this.state, ", ") : "");
+            sb.append(this.city != null ? c00.k(new StringBuilder("city="), this.city, ", ") : "");
             if (this.street != null) {
                 str = "street=" + this.street;
             }
-            return b00.j(sb, str, "}");
+            return c00.k(sb, str, "}");
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_getStoryReactionsList extends TLObject {
         public static final int constructor = -1179482081;
@@ -601,7 +602,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_inputMediaAreaChannelPost extends MediaArea {
         public static final int constructor = 577893055;
         public TLRPC.InputChannel channel;
@@ -623,7 +624,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_inputMediaAreaVenue extends MediaArea {
         public static final int constructor = -1300094593;
         public long query_id;
@@ -645,7 +646,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaChannelPost extends MediaArea {
         public static final int constructor = 1996756655;
         public long channel_id;
@@ -667,7 +668,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaCoordinates extends MediaAreaCoordinates {
         public static final int constructor = -808853502;
 
@@ -699,7 +700,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaCoordinates_layer181 extends MediaAreaCoordinates {
         public static final int constructor = 64088654;
 
@@ -723,7 +724,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaGeoPoint extends MediaArea {
         public static final int constructor = -891992787;
         public TL_geoPointAddress address;
@@ -751,7 +752,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaGeoPoint_layer181 extends TL_mediaAreaGeoPoint {
         public static final int constructor = -544523486;
 
@@ -769,7 +770,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaStarGift extends MediaArea {
         public static final int constructor = 1468491885;
         public String slug;
@@ -788,7 +789,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaSuggestedReaction extends MediaArea {
         public static final int constructor = 340088945;
 
@@ -815,7 +816,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaUrl extends MediaArea {
         public static final int constructor = 926421125;
         public String url;
@@ -834,7 +835,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaVenue extends MediaArea {
         public static final int constructor = -1098720356;
         public String address;
@@ -868,7 +869,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaWeather extends MediaArea {
         public static final int constructor = 1235637404;
         public int color;
@@ -893,7 +894,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaWeather2 extends MediaArea {
         public static final int constructor = -2057362882;
         public String emoji;
@@ -921,7 +922,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_mediaAreaWeatherOld extends MediaArea {
         public static final int constructor = 1132918857;
         public String emoji;
@@ -949,7 +950,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_myBoost extends TLObject {
         public static int constructor = -1001897636;
         public int cooldown_until_date;
@@ -993,7 +994,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_peerStories extends PeerStories {
         public static final int constructor = -1707742823;
 
@@ -1001,11 +1002,10 @@ public class TL_stories {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.flags = inputSerializedData.readInt32(z);
             this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            byte b = 1;
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.max_read_id = inputSerializedData.readInt32(z);
             }
-            this.stories = Vector.deserialize(inputSerializedData, new sdb(b), z);
+            this.stories = Vector.deserialize(inputSerializedData, new nhb((byte) 6), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1020,7 +1020,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_peerStories_layer162 extends TL_peerStories {
         public static final int constructor = -2045664768;
 
@@ -1031,11 +1031,10 @@ public class TL_stories {
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             this.peer = tL_peerUser;
             tL_peerUser.user_id = readInt64;
-            byte b = 1;
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.max_read_id = inputSerializedData.readInt32(z);
             }
-            this.stories = Vector.deserialize(inputSerializedData, new sdb(b), z);
+            this.stories = Vector.deserialize(inputSerializedData, new nhb((byte) 6), z);
         }
 
         @Override // org.telegram.tgnet.tl.TL_stories.TL_peerStories, org.telegram.tgnet.TLObject
@@ -1050,7 +1049,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_applyBoost extends TLObject {
         public static int constructor = 1803396934;
         public int flags;
@@ -1073,7 +1072,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_boostsList extends TLObject {
         public static int constructor = -2030542532;
         public int count;
@@ -1090,11 +1089,11 @@ public class TL_stories {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.flags = inputSerializedData.readInt32(z);
             this.count = inputSerializedData.readInt32(z);
-            this.boosts = Vector.deserialize(inputSerializedData, new sdb((byte) 2), z);
+            this.boosts = Vector.deserialize(inputSerializedData, new nhb((byte) 7), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1110,7 +1109,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_boostsStatus extends TLObject {
         public static int constructor = 1230586490;
         public String boost_url;
@@ -1147,8 +1146,9 @@ public class TL_stories {
                 this.premium_audience = TL_stats.TL_statsPercentValue.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             this.boost_url = inputSerializedData.readString(z);
+            byte b = 8;
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.prepaid_giveaways = Vector.deserialize(inputSerializedData, new sdb((byte) 3), z);
+                this.prepaid_giveaways = Vector.deserialize(inputSerializedData, new nhb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.my_boost_slots = Vector.deserializeInt(inputSerializedData, z);
@@ -1183,7 +1183,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_getBoostsList extends TLObject {
         public static int constructor = 1626764896;
         public int flags;
@@ -1209,7 +1209,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_getBoostsStatus extends TLObject {
         public static int constructor = 70197089;
         public TLRPC.InputPeer peer;
@@ -1226,7 +1226,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_getMyBoosts extends TLObject {
         public static int constructor = 199719754;
 
@@ -1241,7 +1241,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_premium_myBoosts extends TLObject {
         public static int constructor = -1696454430;
         public ArrayList<TL_myBoost> my_boosts = new ArrayList<>();
@@ -1254,9 +1254,9 @@ public class TL_stories {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.my_boosts = Vector.deserialize(inputSerializedData, new sdb((byte) 4), z);
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.my_boosts = Vector.deserialize(inputSerializedData, new nhb((byte) 9), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1268,7 +1268,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_prepaidGiveaway extends PrepaidGiveaway {
         public static final int constructor = -1303143084;
         public int months;
@@ -1291,7 +1291,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_prepaidStarsGiveaway extends PrepaidGiveaway {
         public static final int constructor = -1700956192;
         public long stars;
@@ -1316,7 +1316,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_publicForwardStory extends TL_stats.PublicForward {
         public static final int constructor = -302797360;
         public TLRPC.Peer peer;
@@ -1336,7 +1336,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stats_getStoryStats extends TLObject {
         public static final int constructor = 927985472;
         public boolean dark;
@@ -1362,7 +1362,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stats_storyStats extends TLObject {
         public static final int constructor = 1355613820;
         public TL_stats.StatsGraph reactions_by_emotion_graph;
@@ -1386,7 +1386,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storiesStealthMode extends TLObject {
         public static final int constructor = 1898850301;
         public int active_until_date;
@@ -1422,7 +1422,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_activateStealthMode extends TLObject {
         public static final int constructor = 1471926630;
         public int flags;
@@ -1445,7 +1445,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_allStories extends stories_AllStories {
         public static final int constructor = 1862033025;
         public int count;
@@ -1464,9 +1464,9 @@ public class TL_stories {
             this.has_more = TLObject.hasFlag(readInt32, 1);
             this.count = inputSerializedData.readInt32(z);
             this.state = inputSerializedData.readString(z);
-            this.peer_stories = Vector.deserialize(inputSerializedData, new sdb((byte) 5), z);
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.peer_stories = Vector.deserialize(inputSerializedData, new nhb((byte) 10), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
             this.stealth_mode = TL_storiesStealthMode.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
         }
 
@@ -1485,7 +1485,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_allStoriesNotModified extends stories_AllStories {
         public static final int constructor = 291044926;
         public int flags;
@@ -1508,7 +1508,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_canSendStory extends TLObject {
         public static final int constructor = 820732912;
         public TLRPC.InputPeer peer;
@@ -1525,7 +1525,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_deleteStories extends TLObject {
         public static final int constructor = -1369842849;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -1544,7 +1544,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_stories_editStory extends TLObject {
         public static final int constructor = 744728363;
@@ -1590,7 +1590,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_exportStoryLink extends TLObject {
         public static final int constructor = 2072899360;
         public int id;
@@ -1609,7 +1609,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getAllReadPeerStories extends TLObject {
         public static final int constructor = -1688541191;
 
@@ -1624,7 +1624,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getAllStories extends TLObject {
         public static final int constructor = -290400731;
         public int flags;
@@ -1651,7 +1651,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getChatsToSend extends TLObject {
         public static final int constructor = -1519744160;
 
@@ -1666,14 +1666,14 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getPeerMaxIDs extends TLMethod<Vector<TLRPC.TL_recentStory>> {
         public static final int constructor = 2018087280;
         public ArrayList<TLRPC.InputPeer> id = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLMethod
         public Vector<TLRPC.TL_recentStory> deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new sdb((byte) 6));
+            return Vector.TLDeserialize(inputSerializedData, i, z, new nhb((byte) 11));
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1683,7 +1683,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getPeerStories extends TLObject {
         public static final int constructor = 743103056;
         public TLRPC.InputPeer peer;
@@ -1700,7 +1700,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getPinnedStories extends TLObject {
         public static final int constructor = 1478600156;
         public int limit;
@@ -1721,7 +1721,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getStoriesArchive extends TLObject {
         public static final int constructor = -1271586794;
         public int limit;
@@ -1742,7 +1742,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getStoriesByID extends TLObject {
         public static final int constructor = 1467271796;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -1761,8 +1761,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    /* loaded from: classes3.dex */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getStoriesViews extends TLObject {
         public static final int constructor = 685862088;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -1781,7 +1780,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_stories_getStoryViewsList extends TLObject {
         public static final int constructor = 2127707223;
@@ -1820,7 +1819,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_incrementStoryViews extends TLObject {
         public static final int constructor = -1308456197;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -1839,7 +1838,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_peerStories extends TLObject {
         public static final int constructor = -890861720;
         public PeerStories stories;
@@ -1853,8 +1852,8 @@ public class TL_stories {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.stories = PeerStories.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1866,7 +1865,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_readStories extends TLObject {
         public static final int constructor = -1521034552;
         public int max_id;
@@ -1885,7 +1884,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_stories_searchPosts extends TLObject {
         public static final int constructor = -780072697;
@@ -1919,7 +1918,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_sendReaction extends TLObject {
         public static final int constructor = 2144810674;
         public boolean add_to_recent;
@@ -1945,7 +1944,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_stories_sendStory extends TLObject {
         public static final int constructor = -1885443944;
@@ -2014,7 +2013,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_stories extends TLObject {
         public static final int constructor = 1673780490;
         public int count;
@@ -2032,12 +2031,12 @@ public class TL_stories {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.flags = inputSerializedData.readInt32(z);
             this.count = inputSerializedData.readInt32(z);
-            this.stories = Vector.deserialize(inputSerializedData, new sdb((byte) 1), z);
+            this.stories = Vector.deserialize(inputSerializedData, new nhb((byte) 6), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.pinned_to_top = Vector.deserializeInt(inputSerializedData, z);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2054,8 +2053,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    /* loaded from: classes3.dex */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_storyViews extends TLObject {
         public static final int constructor = -560009955;
         public ArrayList<StoryViews> views = new ArrayList<>();
@@ -2067,8 +2065,8 @@ public class TL_stories {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.views = Vector.deserialize(inputSerializedData, new sdb((byte) 7), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.views = Vector.deserialize(inputSerializedData, new nhb((byte) 12), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2079,7 +2077,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_stories_togglePeerStoriesHidden extends TLObject {
         public static final int constructor = -1123805756;
@@ -2099,7 +2097,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyAlbum extends TLObject {
         public static final int constructor = -1826262950;
         public int album_id;
@@ -2140,7 +2138,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyFwdHeader extends StoryFwdHeader {
         public static final int constructor = -1205411504;
 
@@ -2178,7 +2176,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItem extends StoryItem {
         public static final int constructor = 379894076;
 
@@ -2207,16 +2205,16 @@ public class TL_stories {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.caption = inputSerializedData.readString(z);
             }
+            byte b = 13;
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
+                this.entities = Vector.deserialize(inputSerializedData, new hz6(b), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            byte b = 8;
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_14)) {
-                this.media_areas = Vector.deserialize(inputSerializedData, new sdb(b), z);
+                this.media_areas = Vector.deserialize(inputSerializedData, new nhb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.privacy = Vector.deserialize(inputSerializedData, new qdb((byte) 11), z);
+                this.privacy = Vector.deserialize(inputSerializedData, new lhb((byte) 14), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = StoryViews.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -2293,7 +2291,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItemDeleted extends StoryItem {
         public static final int constructor = 1374088783;
 
@@ -2309,7 +2307,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItemSkipped extends StoryItem {
         public static final int constructor = -5388013;
         public boolean live;
@@ -2339,7 +2337,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItem_layer160 extends TL_storyItem {
         public static final int constructor = 1445635639;
 
@@ -2362,11 +2360,11 @@ public class TL_stories {
                 this.caption = inputSerializedData.readString(z);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
+                this.entities = Vector.deserialize(inputSerializedData, new hz6((byte) 13), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.privacy = Vector.deserialize(inputSerializedData, new qdb((byte) 11), z);
+                this.privacy = Vector.deserialize(inputSerializedData, new lhb((byte) 14), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = StoryViews.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -2412,7 +2410,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItem_layer166 extends TL_storyItem {
         public static final int constructor = 1153718222;
 
@@ -2435,16 +2433,16 @@ public class TL_stories {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.caption = inputSerializedData.readString(z);
             }
+            byte b = 13;
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
+                this.entities = Vector.deserialize(inputSerializedData, new hz6(b), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            byte b = 8;
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_14)) {
-                this.media_areas = Vector.deserialize(inputSerializedData, new sdb(b), z);
+                this.media_areas = Vector.deserialize(inputSerializedData, new nhb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.privacy = Vector.deserialize(inputSerializedData, new qdb((byte) 11), z);
+                this.privacy = Vector.deserialize(inputSerializedData, new lhb((byte) 14), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = StoryViews.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -2501,7 +2499,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItem_layer174 extends TL_storyItem {
         public static final int constructor = -1352440415;
 
@@ -2527,16 +2525,16 @@ public class TL_stories {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.caption = inputSerializedData.readString(z);
             }
+            byte b = 13;
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
+                this.entities = Vector.deserialize(inputSerializedData, new hz6(b), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            byte b = 8;
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_14)) {
-                this.media_areas = Vector.deserialize(inputSerializedData, new sdb(b), z);
+                this.media_areas = Vector.deserialize(inputSerializedData, new nhb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.privacy = Vector.deserialize(inputSerializedData, new qdb((byte) 11), z);
+                this.privacy = Vector.deserialize(inputSerializedData, new lhb((byte) 14), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = StoryViews.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -2596,7 +2594,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItem_layer210 extends TL_storyItem {
         public static final int constructor = 2041735716;
 
@@ -2625,16 +2623,16 @@ public class TL_stories {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.caption = inputSerializedData.readString(z);
             }
+            byte b = 13;
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
+                this.entities = Vector.deserialize(inputSerializedData, new hz6(b), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            byte b = 8;
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_14)) {
-                this.media_areas = Vector.deserialize(inputSerializedData, new sdb(b), z);
+                this.media_areas = Vector.deserialize(inputSerializedData, new nhb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.privacy = Vector.deserialize(inputSerializedData, new qdb((byte) 11), z);
+                this.privacy = Vector.deserialize(inputSerializedData, new lhb((byte) 14), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = StoryViews.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -2697,7 +2695,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyItem_layer223 extends TL_storyItem {
         public static final int constructor = -302947087;
 
@@ -2726,16 +2724,16 @@ public class TL_stories {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.caption = inputSerializedData.readString(z);
             }
+            byte b = 13;
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.entities = Vector.deserialize(inputSerializedData, new yw6((byte) 25), z);
+                this.entities = Vector.deserialize(inputSerializedData, new hz6(b), z);
             }
             this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-            byte b = 8;
             if (TLObject.hasFlag(this.flags, TLObject.FLAG_14)) {
-                this.media_areas = Vector.deserialize(inputSerializedData, new sdb(b), z);
+                this.media_areas = Vector.deserialize(inputSerializedData, new nhb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.privacy = Vector.deserialize(inputSerializedData, new qdb((byte) 11), z);
+                this.privacy = Vector.deserialize(inputSerializedData, new lhb((byte) 14), z);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = StoryViews.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
@@ -2806,7 +2804,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyReaction extends StoryReaction {
         public static final int constructor = 1620104917;
         public int date;
@@ -2828,7 +2826,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyReactionPublicForward extends StoryReaction {
         public static final int constructor = -1146411453;
 
@@ -2844,7 +2842,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyReactionPublicRepost extends StoryReaction {
         public static final int constructor = -808644845;
 
@@ -2854,7 +2852,7 @@ public class TL_stories {
             StoryItem TLdeserialize = StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.story = TLdeserialize;
             if (TLdeserialize != null) {
-                TLdeserialize.dialogId = cf3.n(this.peer_id);
+                TLdeserialize.dialogId = wf3.n(this.peer_id);
             }
         }
 
@@ -2866,7 +2864,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_storyReactionsList extends TLObject {
         public static final int constructor = -1436583780;
@@ -2885,9 +2883,9 @@ public class TL_stories {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             this.flags = inputSerializedData.readInt32(z);
             this.count = inputSerializedData.readInt32(z);
-            this.reactions = Vector.deserialize(inputSerializedData, new sdb((byte) 9), z);
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.reactions = Vector.deserialize(inputSerializedData, new nhb((byte) 14), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
@@ -2907,7 +2905,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyView extends StoryView {
         public static final int constructor = -1329730875;
 
@@ -2940,7 +2938,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViewPublicForward extends StoryView {
         public static final int constructor = -1870436597;
 
@@ -2965,7 +2963,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViewPublicRepost extends StoryView {
         public static final int constructor = -1116418231;
 
@@ -2992,7 +2990,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViews extends StoryViews {
         public static final int constructor = -1923523370;
 
@@ -3005,8 +3003,9 @@ public class TL_stories {
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.forwards_count = inputSerializedData.readInt32(z);
             }
+            byte b = 1;
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.reactions = Vector.deserialize(inputSerializedData, new kdb((byte) 29), z);
+                this.reactions = Vector.deserialize(inputSerializedData, new ihb(b), z);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
                 this.reactions_count = inputSerializedData.readInt32(z);
@@ -3040,7 +3039,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViewsList extends StoryViewsList {
         public static final int constructor = 1507299269;
 
@@ -3051,9 +3050,9 @@ public class TL_stories {
             this.views_count = inputSerializedData.readInt32(z);
             this.forwards_count = inputSerializedData.readInt32(z);
             this.reactions_count = inputSerializedData.readInt32(z);
-            this.views = Vector.deserialize(inputSerializedData, new sdb((byte) 10), z);
-            this.chats = Vector.deserialize(inputSerializedData, new v0b((byte) 17), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.views = Vector.deserialize(inputSerializedData, new nhb((byte) 15), z);
+            this.chats = Vector.deserialize(inputSerializedData, new bya((byte) 19), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
@@ -3076,7 +3075,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViewsList_layer167 extends StoryViewsList {
         public static final int constructor = 1189722604;
 
@@ -3085,8 +3084,8 @@ public class TL_stories {
             this.flags = inputSerializedData.readInt32(z);
             this.count = inputSerializedData.readInt32(z);
             this.reactions_count = inputSerializedData.readInt32(z);
-            this.views = Vector.deserialize(inputSerializedData, new sdb((byte) 10), z);
-            this.users = Vector.deserialize(inputSerializedData, new v0b((byte) 11), z);
+            this.views = Vector.deserialize(inputSerializedData, new nhb((byte) 15), z);
+            this.users = Vector.deserialize(inputSerializedData, new bya((byte) 13), z);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z);
             }
@@ -3106,7 +3105,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViews_layer160 extends StoryViews {
         public static final int constructor = -748199729;
 
@@ -3130,7 +3129,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_storyViews_layer161 extends StoryViews {
         public static final int constructor = -968094825;
 
@@ -3156,7 +3155,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_togglePinnedToTop extends TLObject {
         public static final int constructor = 187268763;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -3175,7 +3174,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_updateReadStories extends TLRPC.Update {
         public static final int constructor = -145845461;
         public int max_id;
@@ -3195,7 +3194,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_updateStoriesStealthMode extends TLRPC.Update {
         public static final int constructor = 738741697;
         public TL_storiesStealthMode stealth_mode;
@@ -3212,7 +3211,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_updateStory extends TLRPC.Update {
         public static final int constructor = 1974712216;
         public TLRPC.Peer peer;
@@ -3232,7 +3231,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class canSendStoryCount extends TLObject {
         public static final int constructor = -1014513586;
         public int count_remains;
@@ -3253,14 +3252,14 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static abstract class stories_AllStories extends TLObject {
         public static stories_AllStories TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
             return (stories_AllStories) TLObject.TLdeserialize(stories_AllStories.class, i != 291044926 ? i != 1862033025 ? null : new TL_stories_allStories() : new TL_stories_allStoriesNotModified(), inputSerializedData, i, z);
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class togglePinned extends TLObject {
         public static final int constructor = -1703566865;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -3281,7 +3280,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_createAlbum extends TLMethod<TL_storyAlbum> {
         public static final int constructor = -1553754395;
         public TLRPC.InputPeer peer;
@@ -3302,7 +3301,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_deleteAlbum extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1925949744;
         public int album_id;
@@ -3321,7 +3320,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_getAlbums extends TLMethod<Albums> {
         public static final int constructor = 632548039;
         public long hash;
@@ -3340,7 +3339,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_reorderAlbums extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -2060059687;
         public ArrayList<Integer> order = new ArrayList<>();
@@ -3359,7 +3358,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class TL_startLive extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -798372642;
@@ -3414,7 +3413,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_getAlbumStories extends TLMethod<TL_stories_stories> {
         public static final int constructor = -1400869535;
         public int album_id;
@@ -3437,7 +3436,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_stories_report extends TLMethod<TLRPC.ReportResult> {
         public static final int constructor = 433646405;
         public ArrayList<Integer> id = new ArrayList<>();
@@ -3449,7 +3448,7 @@ public class TL_stories {
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
             this.peer.serializeToStream(outputSerializedData);
-            Vector.serialize(outputSerializedData, new g9c(outputSerializedData, (byte) 1), this.id);
+            Vector.serialize(outputSerializedData, new gdc(outputSerializedData, (byte) 1), this.id);
             outputSerializedData.writeByteArray(this.option);
             outputSerializedData.writeString(this.message);
         }
@@ -3460,7 +3459,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_updateAlbum extends TLMethod<TL_storyAlbum> {
         public static final int constructor = 1582455222;
         public ArrayList<Integer> add_stories;
@@ -3497,7 +3496,7 @@ public class TL_stories {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class TL_albumsNotModified extends Albums {
         public static final int constructor = 1448008427;
 

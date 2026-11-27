@@ -1,65 +1,78 @@
 // default package
 
-import android.database.Cursor;
-import android.util.Log;
-import android.widget.Filter;
-import androidx.appcompat.widget.SearchView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class e43 extends Filter {
-    public d43 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class e43 extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public float c;
+    public float d = 255.0f;
 
-    @Override // android.widget.Filter
-    public final CharSequence convertResultToString(Object obj) {
-        return this.a.c((Cursor) obj);
+    public e43(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
+        if (drawable != null) {
+            drawable.setCallback(new d43(this, (byte) 0));
+        }
+        if (drawable2 != null) {
+            drawable2.setCallback(new d43(this, (byte) 1));
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0041  */
-    @Override // android.widget.Filter
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Filter.FilterResults performFiltering(CharSequence charSequence) {
-        Cursor cursor;
-        kbb kbbVar = (kbb) this.a;
-        SearchView searchView = kbbVar.w;
-        String charSequence2 = charSequence == null ? "" : charSequence.toString();
-        if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
-            try {
-                cursor = kbbVar.f(kbbVar.x, charSequence2);
-            } catch (RuntimeException e) {
-                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e);
-            }
-            if (cursor != null) {
-                cursor.getCount();
-                Filter.FilterResults filterResults = new Filter.FilterResults();
-                if (cursor == null) {
-                    filterResults.count = cursor.getCount();
-                    filterResults.values = cursor;
-                } else {
-                    filterResults.count = 0;
-                    filterResults.values = null;
-                }
-                return filterResults;
-            }
-        }
-        cursor = null;
-        Filter.FilterResults filterResults2 = new Filter.FilterResults();
-        if (cursor == null) {
-        }
-        return filterResults2;
+    public final void a(float f) {
+        this.c = f;
+        invalidateSelf();
     }
 
-    @Override // android.widget.Filter
-    public final void publishResults(CharSequence charSequence, Filter.FilterResults filterResults) {
-        d43 d43Var = this.a;
-        Cursor cursor = d43Var.c;
-        Object obj = filterResults.values;
-        if (obj == null || obj == cursor) {
-            return;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i = (int) ((1.0f - this.c) * this.d);
+        Drawable drawable = this.a;
+        drawable.setAlpha(i);
+        int i2 = (int) (this.d * this.c);
+        Drawable drawable2 = this.b;
+        drawable2.setAlpha(i2);
+        if (i > 0) {
+            drawable.draw(canvas);
         }
-        d43Var.b((Cursor) obj);
+        if (i2 > 0) {
+            drawable2.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.d = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

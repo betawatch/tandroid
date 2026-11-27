@@ -1,39 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class b23 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d23 b;
+import android.content.Context;
 
-    public /* synthetic */ b23(d23 d23Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class b23 implements uw8 {
+    public final /* synthetic */ byte a;
+    public final pq5 b;
+
+    public /* synthetic */ b23(pq5 pq5Var, byte b) {
         this.a = b;
-        this.b = d23Var;
+        this.b = pq5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // uw8
+    public final Object get() {
         byte b = this.a;
-        d23 d23Var = this.b;
+        pq5 pq5Var = this.b;
         switch (b) {
             case 0:
-                o13 o13Var = d23Var.f;
-                if (o13Var != null) {
-                    o13Var.M(new c03("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", (byte) 2));
-                    return;
-                } else {
-                    rp5.e("callback");
-                    throw null;
-                }
+                return new rx6((Context) pq5Var.a, new sae(), new z6f((byte) 28), false, (byte) 26);
             default:
-                o13 o13Var2 = d23Var.f;
-                if (o13Var2 != null) {
-                    o13Var2.M(new z03(new h1((byte) 26), "Upon handling create public key credential response, fido module giving null bytes indicating internal error"));
-                    return;
-                } else {
-                    rp5.e("callback");
-                    throw null;
+                String packageName = ((Context) pq5Var.a).getPackageName();
+                if (packageName != null) {
+                    return packageName;
                 }
+                p3d.h("Cannot return null from a non-@Nullable @Provides method");
+                return null;
         }
     }
 }

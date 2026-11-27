@@ -1,53 +1,36 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ehf extends AbstractList implements RandomAccess, sff {
-    public final qff a;
+public final class ehf {
+    public final Boolean a;
+    public final Boolean b;
+    public final Boolean c;
+    public final Boolean d;
+    public final Boolean e;
 
-    public ehf(qff qffVar) {
-        this.a = qffVar;
+    public /* synthetic */ ehf(am2 am2Var) {
+        this.a = (Boolean) am2Var.b;
+        this.b = (Boolean) am2Var.c;
+        this.c = (Boolean) am2Var.d;
+        this.d = (Boolean) am2Var.e;
+        this.e = (Boolean) am2Var.f;
     }
 
-    @Override // sff
-    public final Object b(int i) {
-        return this.a.b.get(i);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof ehf)) {
+            return false;
+        }
+        ehf ehfVar = (ehf) obj;
+        return vue.a(this.a, ehfVar.a) && vue.a(this.b, ehfVar.b) && vue.a(this.c, ehfVar.c) && vue.a(this.d, ehfVar.d) && vue.a(this.e, ehfVar.e);
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i) {
-        return this.a.get(i);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return new dcd(this);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i) {
-        return new fzd(this, i);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.b.size();
-    }
-
-    @Override // sff
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.a.b);
-    }
-
-    @Override // sff
-    public final sff zzd() {
-        return this;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e});
     }
 }

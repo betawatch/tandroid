@@ -13,26 +13,26 @@ import android.view.View;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends sq implements u07, View.OnClickListener, c9 {
+public class ActionMenuItemView extends tq implements b37, View.OnClickListener, d9 {
     public boolean E;
     public boolean F;
     public final int G;
     public int H;
     public final int I;
-    public c07 n;
+    public j27 n;
     public CharSequence r;
     public Drawable s;
-    public xz6 w;
-    public w8 x;
-    public x8 y;
+    public e27 w;
+    public x8 x;
+    public y8 y;
 
     public ActionMenuItemView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
         Resources resources = context.getResources();
         this.E = f();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, jy8.c, 0, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, w19.c, 0, 0);
         this.G = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         obtainStyledAttributes.recycle();
         this.I = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);
@@ -41,25 +41,25 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
         setSaveEnabled(false);
     }
 
-    @Override // u07
-    public final void a(c07 c07Var) {
-        this.n = c07Var;
-        setIcon(c07Var.getIcon());
-        setTitle(c07Var.getTitleCondensed());
-        setId(c07Var.a);
-        setVisibility(c07Var.isVisible() ? 0 : 8);
-        setEnabled(c07Var.isEnabled());
-        if (c07Var.hasSubMenu() && this.x == null) {
-            this.x = new w8(this);
+    @Override // b37
+    public final void a(j27 j27Var) {
+        this.n = j27Var;
+        setIcon(j27Var.getIcon());
+        setTitle(j27Var.getTitleCondensed());
+        setId(j27Var.a);
+        setVisibility(j27Var.isVisible() ? 0 : 8);
+        setEnabled(j27Var.isEnabled());
+        if (j27Var.hasSubMenu() && this.x == null) {
+            this.x = new x8(this);
         }
     }
 
-    @Override // c9
+    @Override // d9
     public final boolean b() {
         return !TextUtils.isEmpty(getText());
     }
 
-    @Override // c9
+    @Override // d9
     public final boolean c() {
         return !TextUtils.isEmpty(getText()) && this.n.getIcon() == null;
     }
@@ -90,9 +90,9 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            uve.a(this, z3 ? null : this.n.e);
+            m0f.a(this, z3 ? null : this.n.e);
         } else {
-            uve.a(this, charSequence2);
+            m0f.a(this, charSequence2);
         }
     }
 
@@ -101,16 +101,16 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
         return Button.class.getName();
     }
 
-    @Override // u07
-    public c07 getItemData() {
+    @Override // b37
+    public j27 getItemData() {
         return this.n;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        xz6 xz6Var = this.w;
-        if (xz6Var != null) {
-            xz6Var.a(this.n);
+        e27 e27Var = this.w;
+        if (e27Var != null) {
+            e27Var.a(this.n);
         }
     }
 
@@ -121,7 +121,7 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
         g();
     }
 
-    @Override // sq, android.widget.TextView, android.view.View
+    @Override // tq, android.widget.TextView, android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
         boolean isEmpty = TextUtils.isEmpty(getText());
@@ -150,8 +150,8 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
 
     @Override // android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        w8 w8Var;
-        if (this.n.hasSubMenu() && (w8Var = this.x) != null && w8Var.onTouch(this, motionEvent)) {
+        x8 x8Var;
+        if (this.n.hasSubMenu() && (x8Var = this.x) != null && x8Var.onTouch(this, motionEvent)) {
             return true;
         }
         return super.onTouchEvent(motionEvent);
@@ -160,11 +160,11 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
     public void setExpandedFormat(boolean z) {
         if (this.F != z) {
             this.F = z;
-            c07 c07Var = this.n;
-            if (c07Var != null) {
-                yz6 yz6Var = c07Var.n;
-                yz6Var.k = true;
-                yz6Var.p(true);
+            j27 j27Var = this.n;
+            if (j27Var != null) {
+                f27 f27Var = j27Var.n;
+                f27Var.k = true;
+                f27Var.p(true);
             }
         }
     }
@@ -190,8 +190,8 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
         g();
     }
 
-    public void setItemInvoker(xz6 xz6Var) {
-        this.w = xz6Var;
+    public void setItemInvoker(e27 e27Var) {
+        this.w = e27Var;
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -200,8 +200,8 @@ public class ActionMenuItemView extends sq implements u07, View.OnClickListener,
         super.setPadding(i, i2, i3, i4);
     }
 
-    public void setPopupCallback(x8 x8Var) {
-        this.y = x8Var;
+    public void setPopupCallback(y8 y8Var) {
+        this.y = y8Var;
     }
 
     public void setTitle(CharSequence charSequence) {

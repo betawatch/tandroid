@@ -1,46 +1,32 @@
 // default package
 
-import android.app.Activity;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ti1 extends FrameLayout {
-    public final q5c a;
-    public final wjb b;
-    public final int c;
-    public final int d;
-    public final eg e;
-    public final /* synthetic */ vi1 f;
+public final /* synthetic */ class ti1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ TLRPC.TL_error b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ti1(vi1 vi1Var, Activity activity, int i, int i2, int i3, eg egVar, wjb wjbVar) {
-        super(activity);
-        this.f = vi1Var;
-        this.d = i;
-        this.c = i2;
-        this.b = wjbVar;
-        this.e = egVar;
-        q5c q5cVar = new q5c(activity, i2, i3, true, new f(this, (byte) 25), new rh1((Object) this, (byte) 1), null, wjbVar);
-        this.a = q5cVar;
-        setClipChildren(false);
-        setClipToPadding(false);
-        q5cVar.setClipToPadding(false);
-        q5cVar.s1(gl.L(12.0f), gl.L(16.0f), false);
-        q5cVar.g3.r = false;
-        q5cVar.setCaptureSectionsDecoratorAllowed(true);
-        q5cVar.setOverScrollMode(0);
-        addView(q5cVar, nme.c(-1.0f, -1));
-        q5cVar.setOnScrollListener(new si1(this, egVar, (byte) 0));
-        qw4 qw4Var = vi1Var.x.d1;
-        if (qw4Var != null) {
-            qw4Var.b(q5cVar);
-        }
+    public /* synthetic */ ti1(TLRPC.TL_error tL_error, byte b) {
+        this.a = b;
+        this.b = tL_error;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.g3.O(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLRPC.TL_error tL_error = this.b;
+        switch (b) {
+            case 0:
+                d31.e0(tL_error);
+                break;
+            default:
+                if (tL_error != null) {
+                    d31.e0(tL_error);
+                    break;
+                }
+                break;
+        }
     }
 }

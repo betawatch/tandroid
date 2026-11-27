@@ -1,41 +1,21 @@
 // default package
 
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.UserInfoActivity;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class z6c implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ UserInfoActivity b;
+public final class z6c extends o7c {
+    public final /* synthetic */ TwoStepVerificationActivity l0;
 
-    public /* synthetic */ z6c(UserInfoActivity userInfoActivity, byte b) {
-        this.a = b;
-        this.b = userInfoActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z6c(TwoStepVerificationActivity twoStepVerificationActivity, int i, TL_account.Password password) {
+        super(i, 4, password);
+        this.l0 = twoStepVerificationActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        UserInfoActivity userInfoActivity = this.b;
-        switch (b) {
-            case 0:
-                userInfoActivity.presentFragment(new PrivacyControlActivity(9, true));
-                break;
-            case 1:
-                va vaVar = userInfoActivity.y;
-                if (vaVar != null) {
-                    vaVar.g3.O(true);
-                    break;
-                }
-                break;
-            case 2:
-                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
-                break;
-            default:
-                userInfoActivity.presentFragment(new PremiumPreviewFragment(0, "add_account"));
-                break;
-        }
+    @Override // o7c
+    public final void G0() {
+        this.l0.O = true;
     }
 }

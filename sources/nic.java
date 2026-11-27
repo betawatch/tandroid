@@ -1,39 +1,37 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nic implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qic b;
-
-    public /* synthetic */ nic(qic qicVar, byte b) {
-        this.a = b;
-        this.b = qicVar;
+public abstract class nic {
+    public void b(View view, int i, int i2) {
+        m57 m57Var = (m57) view;
+        m57Var.i();
+        m57Var.l(false);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        qic qicVar = this.b;
-        switch (b) {
-            case 0:
-                qicVar.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qicVar.invalidate();
-                break;
-            case 1:
-                qicVar.x = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                qicVar.invalidate();
-                break;
-            case 2:
-                qicVar.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                qicVar.invalidate();
-                break;
-            default:
-                qicVar.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                qicVar.invalidate();
-                break;
-        }
+    public boolean c(int i) {
+        return false;
+    }
+
+    public abstract View d(int i);
+
+    public abstract int e();
+
+    public CharSequence g(int i) {
+        return "";
+    }
+
+    public int h(int i) {
+        return 0;
+    }
+
+    public void a(ArrayList arrayList) {
+    }
+
+    public int f(int i) {
+        return i;
     }
 }

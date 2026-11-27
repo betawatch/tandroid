@@ -1,22 +1,22 @@
 // default package
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface z1d {
-    void a();
+public class z1d extends y1d {
+    public z1d() {
+    }
 
-    boolean b(v3d v3dVar);
+    @Override // b2d
+    public void c(int i, mq5 mq5Var) {
+        this.c.setInsets(j2d.a(i), mq5Var.d());
+    }
 
-    void c();
+    @Override // b2d
+    public void i(int i, boolean z) {
+        this.c.setVisible(j2d.a(i), z);
+    }
 
-    void d(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
-
-    ig0 e(ig0 ig0Var);
-
-    void f();
-
-    boolean g();
+    public z1d(l2d l2dVar) {
+        super(l2dVar);
+    }
 }

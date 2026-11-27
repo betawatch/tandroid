@@ -1,42 +1,131 @@
 // default package
 
-import org.telegram.ui.PremiumPreviewFragment;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class wa0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mb0 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wa0 {
+    public final byte a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final String e;
 
-    public /* synthetic */ wa0(mb0 mb0Var, byte b) {
-        this.a = b;
-        this.b = mb0Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public wa0(int i, int i2, int i3, int i4, String str) {
+        this.a = i;
+        this.e = str;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        mb0 mb0Var = this.b;
-        switch (b) {
-            case 0:
-                if (!mb0Var.V) {
-                    if (mb0Var.O <= 0.0f) {
-                        mb0Var.k0(!mb0Var.a.w, true, false);
-                        break;
-                    } else {
-                        if (mb0Var.N != null) {
-                            mb0Var.F = 1.0f;
-                            mb0Var.G = true;
-                        }
-                        gl.t1(mb0Var.fragmentView);
-                        break;
-                    }
+    public static String a(int i, int i2, int i3, boolean z) {
+        StringBuilder m = uh9.m(i, "av01.", ".");
+        Object[] objArr = {Integer.valueOf(i2)};
+        String str = gcc.a;
+        Locale locale = Locale.US;
+        m.append(String.format(locale, "%02d", objArr));
+        m.append(z ? "H" : "M");
+        m.append(".");
+        m.append(String.format(locale, "%02d", Integer.valueOf(i3)));
+        return m.toString();
+    }
+
+    public static wa0 b(byte[] bArr) {
+        try {
+            zd1 zd1Var = new zd1(bArr.length, bArr);
+            zd1Var.m();
+            int f = zd1Var.f(7);
+            if (f != 1) {
+                efd.f("Av1Config", "Unsupported av1C version: " + f);
+                return null;
+            }
+            int f2 = zd1Var.f(3);
+            int f3 = zd1Var.f(5);
+            boolean e = zd1Var.e();
+            int i = zd1Var.e() ? zd1Var.e() ? 12 : 10 : 8;
+            zd1Var.n(13);
+            String a = a(f2, f3, i, e);
+            if (zd1Var.b() <= 0) {
+                return new wa0(i, a);
+            }
+            zd1Var.m();
+            int f4 = zd1Var.f(4);
+            if (f4 != 1) {
+                efd.e("Av1Config", "Unsupported obu_type: " + f4);
+                return new wa0(i, a);
+            }
+            if (zd1Var.e()) {
+                efd.e("Av1Config", "Unsupported obu_extension_flag");
+                return new wa0(i, a);
+            }
+            boolean e2 = zd1Var.e();
+            zd1Var.m();
+            if (e2 && zd1Var.f(8) > 127) {
+                efd.e("Av1Config", "Excessive obu_size");
+                return new wa0(i, a);
+            }
+            int f5 = zd1Var.f(3);
+            zd1Var.m();
+            if (zd1Var.e()) {
+                efd.e("Av1Config", "Unsupported reduced_still_picture_header");
+                return new wa0(i, a);
+            }
+            if (zd1Var.e()) {
+                efd.e("Av1Config", "Unsupported timing_info_present_flag");
+                return new wa0(i, a);
+            }
+            if (zd1Var.e()) {
+                efd.e("Av1Config", "Unsupported initial_display_delay_present_flag");
+                return new wa0(i, a);
+            }
+            int f6 = zd1Var.f(5);
+            boolean z = false;
+            for (int i2 = 0; i2 <= f6; i2++) {
+                zd1Var.n(12);
+                if (zd1Var.f(5) > 7) {
+                    zd1Var.m();
                 }
-                break;
-            default:
-                mb0Var.getClass();
-                mb0Var.presentFragment(new PremiumPreviewFragment(0, "avatar"));
-                break;
+            }
+            int f7 = zd1Var.f(4);
+            int f8 = zd1Var.f(4);
+            zd1Var.n(f7 + 1);
+            zd1Var.n(f8 + 1);
+            if (zd1Var.e()) {
+                zd1Var.n(7);
+            }
+            zd1Var.n(7);
+            boolean e3 = zd1Var.e();
+            if (e3) {
+                zd1Var.n(2);
+            }
+            if ((zd1Var.e() ? 2 : zd1Var.f(1)) > 0 && !zd1Var.e()) {
+                zd1Var.n(1);
+            }
+            if (e3) {
+                zd1Var.n(3);
+            }
+            zd1Var.n(3);
+            boolean e4 = zd1Var.e();
+            if (f5 == 2 && e4) {
+                zd1Var.m();
+            }
+            if (f5 != 1 && zd1Var.e()) {
+                z = true;
+            }
+            if (!zd1Var.e()) {
+                return new wa0(i, a);
+            }
+            int f9 = zd1Var.f(8);
+            int f10 = zd1Var.f(8);
+            return new wa0(i, bm2.f(f9), ((z || f9 != 1 || f10 != 13 || zd1Var.f(8) != 0) ? zd1Var.f(1) : 1) == 1 ? 1 : 2, bm2.g(f10), a);
+        } catch (RuntimeException e5) {
+            throw hy7.a("Error parsing AV1 config", e5);
         }
+    }
+
+    public wa0(int i, String str) {
+        this(i, -1, -1, -1, str);
     }
 }

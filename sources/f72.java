@@ -1,132 +1,245 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class f72 extends p02 {
-    public final g24 n;
-    public final o39 r;
-    public final byte s;
-    public final jr w;
-    public int x;
+public final class f72 extends f12 implements snb, fn7, s84 {
+    public final d72 E;
+    public final b34 F;
+    public final j12 G;
+    public final fm0 n;
+    public final FrameLayout r;
+    public final gu s;
+    public final q22 w;
+    public final HashSet x;
+    public final c72 y;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public f72(int i, x02 x02Var, wjb wjbVar, Context context) {
-        super(x02Var, wjbVar, context);
-        this.s = i;
-        g24 g24Var = new g24(context, wjbVar);
-        this.n = g24Var;
-        g24Var.setText(k96.M0(2131747988, null));
-        g24Var.setOnTouchListener(null);
-        g24Var.setTextSize(16);
-        addView(g24Var, nme.c(-2.0f, -1));
-        g24Var.a(R.raw.media_forbidden, kk7.f2, kk7.f2);
-        TLRPC.Chat S0 = this.b.S0();
-        byte b = 4;
-        if (i == 1) {
-            g24Var.setText(hc2.L(7, S0));
-        } else if (i == 3) {
-            g24Var.setText(hc2.L(18, S0));
-        } else if (i == 4) {
-            g24Var.setText(hc2.L(19, S0));
-        } else {
-            g24Var.setText(hc2.L(22, S0));
-        }
-        g24Var.c();
-        o39 o39Var = new o39(context, wjbVar);
-        this.r = o39Var;
-        o39Var.setSectionsType(2);
-        o39Var.setVerticalScrollBarEnabled(false);
-        o39Var.setLayoutManager(new t26());
-        o39Var.setClipToPadding(false);
-        jr jrVar = new jr(this, b);
-        this.w = jrVar;
-        o39Var.setAdapter(jrVar);
-        o39Var.setPadding(0, 0, 0, gl.L(48.0f));
-        o39Var.setOnScrollListener(new y(this, (byte) 23));
-        addView(o39Var, nme.c(-1.0f, -1));
+    public f72(n12 n12Var, vnb vnbVar, Context context) {
+        super(n12Var, vnbVar, context);
+        this.n = new fm0(0, this, k43.h, 380L, false);
+        this.x = new HashSet();
+        this.E = new d72(this, context);
+        m12 m12Var = new m12(aob.d6, vnbVar, context);
+        m12Var.setVisibility(4);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.r = frameLayout;
+        j12 j12Var = new j12(this.b, vnbVar, context);
+        this.G = j12Var;
+        j12Var.setPadding(hl.L(4.0f), hl.L(4.0f), hl.L(4.0f), hl.L(4.0f));
+        byte b = 9;
+        c7 c7Var = new c7(this, b);
+        m7 m7Var = j12Var.r;
+        m7Var.addTextChangedListener(c7Var);
+        m7Var.setHint(ob6.M0(2131752637, null));
+        frameLayout.addView(m12Var, tre.g());
+        FrameLayout.LayoutParams d = tre.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
+        ((ViewGroup.MarginLayoutParams) d).topMargin += hl.m;
+        frameLayout.addView(j12Var, d);
+        b34 b34Var = new b34(context, vnbVar);
+        this.F = b34Var;
+        b34Var.c();
+        addView(b34Var, tre.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        gu guVar = new gu(this, context, vnbVar, (byte) 11);
+        this.s = guVar;
+        guVar.s1();
+        setBlur3Capture(guVar);
+        this.d = guVar;
+        this.h = true;
+        this.f = true;
+        jn7.e().h(guVar, jn7.l4, new te2(this, (byte) 19));
+        guVar.setClipToPadding(false);
+        getContext();
+        q22 q22Var = new q22(this, hl.L(9.0f), guVar, (byte) 4);
+        this.w = q22Var;
+        guVar.setLayoutManager(q22Var);
+        q22Var.P = false;
+        guVar.setHorizontalScrollBarEnabled(false);
+        guVar.setVerticalScrollBarEnabled(false);
+        guVar.setClipToPadding(false);
+        addView(guVar, tre.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        c72 c72Var = new c72(this, context);
+        this.y = c72Var;
+        guVar.setAdapter(c72Var);
+        yob.l(guVar, 21, aob.A5, vnbVar);
+        guVar.setOnItemClickListener(new u(this, b));
+        guVar.setOnScrollListener(new y(this, (byte) 22));
+        FrameLayout.LayoutParams e = tre.e(-1, 60, 51);
+        ((ViewGroup.MarginLayoutParams) e).height += hl.m;
+        addView(frameLayout, e);
+        P();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // p02
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void C(int i, int i2) {
-        int i3;
-        int i4;
-        o39 o39Var;
-        int max = Math.max(0, i2 - a.getCurrentActionBarHeight());
-        if (this.x != max) {
-            this.x = max;
-            this.w.f();
-        }
-        if (!gl.O1()) {
-            Point point = gl.q;
-            if (point.x > point.y) {
-                i3 = (int) (i2 / 3.5f);
-                int L = i3 - gl.L(52.0f);
-                i4 = L >= 0 ? L : 0;
-                o39Var = this.r;
-                if (o39Var.getPaddingTop() == i4) {
-                    o39Var.setPadding(gl.L(6.0f), i4, gl.L(6.0f), gl.L(48.0f));
-                    return;
-                }
-                return;
-            }
-        }
-        i3 = (i2 / 5) << 1;
-        int L2 = i3 - gl.L(52.0f);
-        if (L2 >= 0) {
-        }
-        o39Var = this.r;
-        if (o39Var.getPaddingTop() == i4) {
-        }
-    }
-
-    @Override // p02
-    public int getCurrentItemTop() {
-        o39 o39Var = this.r;
-        if (o39Var.getChildCount() <= 0) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getCurrentTop() {
+        gu guVar = this.s;
+        if (guVar.getChildCount() == 0) {
+            return -1000;
         }
         int i = 0;
-        View childAt = o39Var.getChildAt(0);
-        y29 y29Var = (y29) o39Var.G(childAt);
-        int top = childAt.getTop() - gl.L(8.0f);
-        if (top > 0 && y29Var != null && y29Var.b() == 0) {
-            i = top;
+        View childAt = guVar.getChildAt(0);
+        n69 n69Var = (n69) guVar.H(childAt);
+        if (n69Var == null) {
+            return -1000;
         }
-        if (top < 0 || y29Var == null || y29Var.b() != 0) {
+        int paddingTop = guVar.getPaddingTop();
+        if (n69Var.b() == 0 && childAt.getTop() >= 0) {
+            i = childAt.getTop();
+        }
+        return paddingTop - i;
+    }
+
+    @Override // f12
+    public final void C(int i, int i2) {
+        int i3;
+        n12 n12Var = this.b;
+        if (n12Var.o3.Q() > hl.L(20.0f)) {
+            i3 = hl.L(8.0f);
+            n12Var.r0 = false;
+        } else {
+            if (!hl.O1()) {
+                Point point = hl.q;
+                if (point.x > point.y) {
+                    i3 = (int) (i2 / 3.5f);
+                    n12Var.r0 = true;
+                }
+            }
+            i3 = (i2 / 5) << 1;
+            n12Var.r0 = true;
+        }
+        this.s.r1(0, i3 + hl.m, 0, this.e);
+    }
+
+    @Override // f12
+    public final void H(f12 f12Var) {
+        this.w.g1(0, 0);
+    }
+
+    @Override // f12
+    public final void J() {
+        this.s.A0(0);
+    }
+
+    public final void P() {
+        this.F.setVisibility(this.s.getAdapter().b() == 2 ? 0 : 8);
+        Q();
+    }
+
+    public final void Q() {
+        View childAt;
+        b34 b34Var = this.F;
+        if (b34Var.getVisibility() != 0 || (childAt = this.s.getChildAt(0)) == null) {
+            return;
+        }
+        b34Var.setTranslationY((childAt.getTop() + (b34Var.getMeasuredHeight() - getMeasuredHeight())) / 2);
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.U7));
+        hashSet.add(Integer.valueOf(aob.T7));
+        hashSet.add(Integer.valueOf(aob.S7));
+        hashSet.add(Integer.valueOf(aob.R7));
+        hashSet.add(Integer.valueOf(aob.Q7));
+        hashSet.add(Integer.valueOf(aob.P7));
+        hashSet.add(Integer.valueOf(aob.O7));
+        hashSet.add(Integer.valueOf(aob.J7));
+        hashSet.add(Integer.valueOf(aob.q5));
+        hashSet.add(Integer.valueOf(aob.d7));
+        hashSet.add(Integer.valueOf(aob.i6));
+    }
+
+    @Override // f12
+    public int getCurrentItemTop() {
+        gu guVar = this.s;
+        if (guVar.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = guVar.getChildAt(0);
+        n69 n69Var = (n69) guVar.H(childAt);
+        int top = (childAt.getTop() - hl.m) - hl.L(8.0f);
+        int i = (top <= 0 || n69Var == null || n69Var.b() != 0) ? 0 : top;
+        fm0 fm0Var = this.n;
+        if (top < 0 || n69Var == null || n69Var.b() != 0) {
+            fm0Var.a(true, true);
             top = i;
+        } else {
+            fm0Var.a(false, true);
         }
-        int measuredHeight = (getMeasuredHeight() - top) - gl.L(50.0f);
-        this.n.setTranslationY(((measuredHeight - r4.getMeasuredHeight()) / 2) + top);
-        return gl.L(12.0f) + top;
+        this.r.setTranslationY(top);
+        return hl.L(12.0f) + top;
     }
 
-    @Override // p02
+    @Override // f12
     public int getFirstOffset() {
-        return gl.L(4.0f) + getListTopPadding();
+        return hl.L(4.0f) + getListTopPadding();
     }
 
-    @Override // p02
+    @Override // f12
     public int getListTopPadding() {
-        return this.r.getPaddingTop();
+        return this.s.getPaddingTop();
+    }
+
+    @Override // f12
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    @Override // f12
+    public ArrayList<apb> getThemeDescriptions() {
+        ArrayList<apb> arrayList = new ArrayList<>();
+        arrayList.add(new apb(this.F, 4, (Class[]) null, (Paint) null, (Drawable[]) null, (zob) null, aob.c7));
+        arrayList.add(new apb(this.F, 2048, (Class[]) null, (Paint) null, (Drawable[]) null, (zob) null, aob.h6));
+        int i = aob.q5;
+        arrayList.add(new apb(this.s, 0, new Class[]{e72.class}, new String[]{"nameTextView"}, (Drawable[]) null, (zob) null, i));
+        return arrayList;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        Q();
     }
 
     @Override // android.view.View
     public void setTranslationY(float f) {
         super.setTranslationY(f);
         this.b.b.invalidate();
+    }
+
+    public void setupBlurredSearchField(ll0 ll0Var) {
+        j12 j12Var = this.G;
+        if (j12Var != null) {
+            j12Var.setupBlurredBackground(ll0Var.c(j12Var, dtd.a(this.a), false));
+        }
+    }
+
+    @Override // f12
+    public final void p() {
+    }
+
+    @Override // snb
+    public final void updateColors() {
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+    }
+
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
     }
 }

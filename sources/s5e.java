@@ -1,19 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class s5e implements zn7 {
-    public static final s5e a = new s5e();
+public final class s5e extends ese {
+    private static final s5e zzd;
+    private static volatile u0f zze;
+    private bue zzc = l1f.d;
 
     static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
+        s5e s5eVar = new s5e();
+        zzd = s5eVar;
+        ese.g(s5e.class, s5eVar);
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    /* JADX WARN: Type inference failed for: r2v12, types: [java.lang.Object, u0f] */
+    @Override // ese
+    public final Object d(int i) {
+        u0f u0fVar;
+        switch (b7e.a[i - 1]) {
+            case 1:
+                return new s5e();
+            case 2:
+                return new p5e(zzd);
+            case 3:
+                return new j1f(zzd, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzc", k6e.class});
+            case 4:
+                return zzd;
+            case 5:
+                u0f u0fVar2 = zze;
+                if (u0fVar2 != null) {
+                    return u0fVar2;
+                }
+                synchronized (s5e.class) {
+                    u0f u0fVar3 = zze;
+                    u0fVar = u0fVar3;
+                    if (u0fVar3 == null) {
+                        ?? zreVar = new zre();
+                        zze = zreVar;
+                        u0fVar = zreVar;
+                    }
+                }
+                return u0fVar;
+            case 6:
+                return (byte) 1;
+            default:
+                p3d.a();
+            case 7:
+                return null;
         }
-        throw null;
     }
 }

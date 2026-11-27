@@ -1,12 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class hmd {
-    public static Drawable a(Context context, int i) {
-        return ha9.d().g(context, i);
+public final class hmd extends omd {
+    public final transient int r;
+    public final transient int s;
+    public final /* synthetic */ omd w;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hmd(omd omdVar, int i, int i2) {
+        super((byte) 4);
+        this.w = omdVar;
+        this.r = i;
+        this.s = i2;
+    }
+
+    @Override // java.util.List
+    public final Object get(int i) {
+        c5f.a(i, this.s);
+        return this.w.get(i + this.r);
+    }
+
+    @Override // b4d
+    public final int q() {
+        return this.w.s() + this.r + this.s;
+    }
+
+    @Override // b4d
+    public final int s() {
+        return this.w.s() + this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.s;
+    }
+
+    @Override // b4d
+    public final Object[] v() {
+        return this.w.v();
+    }
+
+    @Override // omd, java.util.List
+    /* renamed from: z */
+    public final omd subList(int i, int i2) {
+        c5f.b(i, i2, this.s);
+        int i3 = this.r;
+        return this.w.subList(i + i3, i2 + i3);
     }
 }

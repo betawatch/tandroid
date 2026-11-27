@@ -1,38 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class k90 extends ez2 {
-    public final int a;
-    public final String b;
-    public final String c;
-    public final boolean d;
+import java.util.List;
 
-    public k90(int i, String str, String str2, boolean z) {
-        this.a = i;
-        this.b = str;
-        this.c = str2;
-        this.d = z;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class k90 extends xz2 {
+    public final List a;
+
+    public k90(List list) {
+        this.a = list;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ez2) {
-            k90 k90Var = (k90) ((ez2) obj);
-            if (this.a == k90Var.a && this.b.equals(k90Var.b) && this.c.equals(k90Var.c) && this.d == k90Var.d) {
-                return true;
-            }
+        if (!(obj instanceof xz2)) {
+            return false;
         }
-        return false;
+        return this.a.equals(((k90) ((xz2) obj)).a);
     }
 
     public final int hashCode() {
-        return ((((((this.a ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ (this.d ? 1231 : 1237);
+        return 1000003 ^ this.a.hashCode();
     }
 
     public final String toString() {
-        return "OperatingSystem{platform=" + this.a + ", version=" + this.b + ", buildVersion=" + this.c + ", jailbroken=" + this.d + "}";
+        return "RolloutsState{rolloutAssignments=" + this.a + "}";
     }
 }

@@ -1,6 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface iha {
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class iha implements bfa {
+    public final /* synthetic */ eja a;
+
+    public iha(eja ejaVar) {
+        this.a = ejaVar;
+    }
+
+    @Override // bfa
+    public final void a(TLRPC.WebPage webPage, r47 r47Var) {
+        eja ejaVar = this.a;
+        iv3.J0(ejaVar.y1, r47Var, ejaVar.u1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // bfa
+    public final boolean b() {
+        return !this.a.F1;
+    }
+
+    @Override // bfa
+    public final void c(String str, boolean z) {
+        eja ejaVar = this.a;
+        e eVar = ejaVar.y1;
+        if (!z) {
+            ejaVar.Y0(str);
+            return;
+        }
+        nx0 i = ik8.i(eVar.getParentActivity(), false, 1, null);
+        i.P = str;
+        i.Q = false;
+        CharSequence[] charSequenceArr = {ob6.M0(2131747544, "Open"), ob6.M0(2131751732, "Copy")};
+        oh ohVar = new oh((Object) this, (Object) str, (byte) 13);
+        i.M = charSequenceArr;
+        i.L = ohVar;
+        eVar.showDialog(i);
+    }
 }

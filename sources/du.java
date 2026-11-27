@@ -2,281 +2,192 @@
 
 import android.app.Activity;
 import android.graphics.Canvas;
-import android.text.SpannableStringBuilder;
+import android.text.Spannable;
+import android.text.TextUtils;
+import android.text.style.MetricAffectingSpan;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class du extends View implements eib, dw {
-    public final vg5 a;
-    public final dx b;
-    public bw c;
-    public bw d;
-    public int e;
-    public int f;
-    public int h;
-    public TL_iv.pageBlockBlockquote n;
+public final class du extends View implements zlb, ew {
+    public final xi5 a;
+    public final ex b;
+    public cw c;
+    public int d;
+    public final int e;
+    public TL_iv.pageBlockAuthorDate f;
 
-    public du(Activity activity, vg5 vg5Var, dx dxVar) {
+    public du(Activity activity, xi5 xi5Var, ex exVar) {
         super(activity);
-        this.a = vg5Var;
-        this.b = dxVar;
+        this.e = hl.L(8.0f);
+        this.a = xi5Var;
+        this.b = exVar;
     }
 
-    @Override // dw
+    @Override // ew
     public int getBoundLeft() {
-        int i;
-        vg5 vg5Var = this.a;
-        vg5Var.getClass();
-        int L = gl.L(18.0f);
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            i = Math.min(ConnectionsManager.DEFAULT_DATACENTER_ID, (bwVar.k() + bwVar.s) - L);
-        } else {
-            i = Integer.MAX_VALUE;
-        }
-        bw bwVar2 = this.d;
-        if (bwVar2 != null) {
-            i = Math.min(i, (bwVar2.k() + bwVar2.s) - L);
-        }
-        if (i == Integer.MAX_VALUE) {
+        cw cwVar = this.c;
+        if (cwVar == null) {
             return -1;
         }
-        return ug8.h(vg5Var, 18.0f, i);
+        return ik8.h(this.a, 18.0f, cwVar.k() + cwVar.s);
     }
 
-    @Override // dw
+    @Override // ew
     public int getBoundRight() {
-        int i;
-        vg5 vg5Var = this.a;
-        vg5Var.getClass();
-        int L = gl.L(18.0f);
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            i = Math.max(TLObject.FLAG_31, bwVar.l() + bwVar.s + L);
-        } else {
-            i = Integer.MIN_VALUE;
-        }
-        bw bwVar2 = this.d;
-        if (bwVar2 != null) {
-            i = Math.max(i, bwVar2.l() + bwVar2.s + L);
-        }
-        if (i == Integer.MIN_VALUE) {
+        cw cwVar = this.c;
+        if (cwVar == null) {
             return -1;
         }
-        return ug8.C(vg5Var, 18.0f, i);
+        return ik8.C(this.a, 18.0f, cwVar.l() + cwVar.s);
     }
 
-    @Override // dw
+    @Override // ew
     public int getLastLineBoundRight() {
-        bw bwVar = this.d;
-        vg5 vg5Var = this.a;
-        if (bwVar != null) {
-            int m = bwVar.m() + bwVar.s;
-            vg5Var.getClass();
-            return gl.L(18.0f) + m;
-        }
-        bw bwVar2 = this.c;
-        if (bwVar2 == null) {
+        cw cwVar = this.c;
+        if (cwVar == null) {
             return -1;
         }
-        int m2 = bwVar2.m() + bwVar2.s;
-        vg5Var.getClass();
-        return gl.L(18.0f) + m2;
+        return ik8.C(this.a, 18.0f, cwVar.m() + cwVar.s);
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return ug8.a(this);
+        return ik8.a(this);
     }
 
-    @Override // eib
+    @Override // zlb
     public final void k(ArrayList arrayList) {
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            arrayList.add(bwVar);
-        }
-        bw bwVar2 = this.d;
-        if (bwVar2 != null) {
-            arrayList.add(bwVar2);
+        cw cwVar = this.c;
+        if (cwVar != null) {
+            arrayList.add(cwVar);
         }
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            bwVar.i(this);
-        }
-        bw bwVar2 = this.d;
-        if (bwVar2 != null) {
-            bwVar2.i(this);
+        cw cwVar = this.c;
+        if (cwVar != null) {
+            cwVar.i(this);
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        bw bwVar = this.c;
-        if (bwVar != null) {
-            bwVar.f(this);
-        }
-        bw bwVar2 = this.d;
-        if (bwVar2 != null) {
-            bwVar2.f(this);
+        cw cwVar = this.c;
+        if (cwVar != null) {
+            cwVar.f(this);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.n == null) {
+        if (this.f == null || this.c == null) {
             return;
         }
-        bw bwVar = this.c;
-        vg5 vg5Var = this.a;
-        int i = 0;
-        if (bwVar != null) {
-            canvas.save();
-            canvas.translate(this.f, this.h);
-            o.s(vg5Var, canvas, this, 0);
-            this.c.d(canvas, this);
-            canvas.restore();
-            i = 1;
-        }
-        if (this.d != null) {
-            canvas.save();
-            canvas.translate(this.f, this.e);
-            o.s(vg5Var, canvas, this, i);
-            this.d.d(canvas, this);
-            canvas.restore();
-        }
-        dx dxVar = this.b;
-        if (dxVar == null || !dxVar.H) {
-            vg5Var.getClass();
-            float L = gl.L((this.n.level * 14) + 18);
-            float L2 = gl.L(6.0f);
-            vg5Var.getClass();
-            canvas.drawRect(L, L2, gl.L((this.n.level * 14) + 20), getMeasuredHeight() - gl.L(6.0f), o.s1);
-        } else {
-            canvas.drawRect(getMeasuredWidth() - gl.L(20.0f), gl.L(6.0f), gl.L(2.0f) + r3, getMeasuredHeight() - gl.L(6.0f), o.s1);
-        }
-        o.r(canvas, vg5Var, this.n, getMeasuredHeight());
+        canvas.save();
+        canvas.translate(this.d, this.e);
+        o.s(this.a, canvas, this, 0);
+        this.c.d(canvas, this);
+        canvas.restore();
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        CharSequence g;
-        CharSequence g2;
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName("android.widget.TextView");
         accessibilityNodeInfo.setEnabled(true);
-        accessibilityNodeInfo.setClickable(false);
-        accessibilityNodeInfo.setLongClickable(false);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        bw bwVar = this.c;
-        dx dxVar = this.b;
-        vg5 vg5Var = this.a;
-        if (bwVar != null && (g2 = o.g(vg5Var, dxVar, bwVar)) != null) {
-            spannableStringBuilder.append(g2);
-        }
-        bw bwVar2 = this.d;
-        if (bwVar2 != null && (g = o.g(vg5Var, dxVar, bwVar2)) != null) {
-            if (spannableStringBuilder.length() > 0) {
-                spannableStringBuilder.append((CharSequence) ", ");
-            }
-            spannableStringBuilder.append(g);
-        }
-        if (spannableStringBuilder.length() == 0) {
+        cw cwVar = this.c;
+        if (cwVar == null) {
             return;
         }
-        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) k96.M0(2131754872, null));
-        accessibilityNodeInfo.setText(spannableStringBuilder);
+        accessibilityNodeInfo.setText(o.g(this.a, this.b, cwVar));
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v10 */
+    /* JADX WARN: Type inference failed for: r4v11, types: [android.text.Spannable] */
+    /* JADX WARN: Type inference failed for: r4v12 */
+    /* JADX WARN: Type inference failed for: r4v28 */
+    /* JADX WARN: Type inference failed for: r4v29 */
+    /* JADX WARN: Type inference failed for: r4v30 */
+    /* JADX WARN: Type inference failed for: r4v9, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r5v5, types: [android.text.Spannable$Factory] */
     @Override // android.view.View
     public final void onMeasure(int i, int i2) {
-        du duVar;
         int i3;
+        Spannable spannable;
+        MetricAffectingSpan[] metricAffectingSpanArr;
+        int indexOf;
+        int L;
         int size = View.MeasureSpec.getSize(i);
-        vg5 vg5Var = this.a;
-        vg5Var.getClass();
-        this.h = gl.L(8.0f);
-        if (this.n != null) {
-            int h = ug8.h(vg5Var, 50.0f, size);
-            if (this.n.level > 0) {
-                h -= gl.L(r2 * 14);
-            }
-            int i4 = h;
-            TL_iv.pageBlockBlockquote pageblockblockquote = this.n;
-            duVar = this;
-            bw m = o.m(this.a, duVar, null, pageblockblockquote.text, i4, this.h, pageblockblockquote, this.b);
-            duVar.c = m;
-            if (m != null) {
-                vg5Var.getClass();
-                i3 = duVar.c.d.getHeight() + gl.L(8.0f);
+        TL_iv.pageBlockAuthorDate pageblockauthordate = this.f;
+        int i4 = 1;
+        if (pageblockauthordate != null) {
+            TL_iv.RichText richText = pageblockauthordate.author;
+            HashSet hashSet = o.d1;
+            ex exVar = this.b;
+            CharSequence z = o.z(this.a, exVar != null ? exVar.F : null, this, richText, richText, pageblockauthordate, size);
+            i3 = size;
+            if (z instanceof Spannable) {
+                spannable = (Spannable) z;
+                metricAffectingSpanArr = (MetricAffectingSpan[]) spannable.getSpans(0, z.length(), MetricAffectingSpan.class);
             } else {
-                i3 = 0;
+                spannable = null;
+                metricAffectingSpanArr = null;
             }
-            int i5 = duVar.n.level;
-            dx dxVar = duVar.b;
-            if (i5 > 0) {
-                if (dxVar == null || !dxVar.H) {
-                    duVar.f = ug8.C(vg5Var, 32.0f, gl.L(i5 * 14));
-                } else {
-                    duVar.f = gl.L((i5 * 14) + 14);
+            CharSequence a0 = (this.f.published_date == 0 || TextUtils.isEmpty(z)) ? !TextUtils.isEmpty(z) ? ob6.a0(null, null, 2131754049, z) : ob6.D0().h0().format(this.f.published_date * 1000) : ob6.a0(null, null, 2131754033, ob6.D0().h0().format(this.f.published_date * 1000), z);
+            if (metricAffectingSpanArr != null) {
+                try {
+                    if (metricAffectingSpanArr.length > 0 && (indexOf = TextUtils.indexOf((CharSequence) a0, z)) != -1) {
+                        a0 = Spannable.Factory.getInstance().newSpannable(a0);
+                        for (int i5 = 0; i5 < metricAffectingSpanArr.length; i5++) {
+                            MetricAffectingSpan metricAffectingSpan = metricAffectingSpanArr[i5];
+                            a0.setSpan(metricAffectingSpan, spannable.getSpanStart(metricAffectingSpan) + indexOf, spannable.getSpanEnd(metricAffectingSpanArr[i5]) + indexOf, 33);
+                        }
+                    }
+                } catch (Exception e) {
+                    cc4.g(e, true);
                 }
-            } else if (dxVar == null || !dxVar.H) {
-                vg5Var.getClass();
-                duVar.f = gl.L(32.0f);
+            }
+            cw m = o.m(this.a, this, a0, null, i3 - hl.L(36.0f), this.e, this.f, this.b);
+            this.c = m;
+            if (m != null) {
+                int height = this.c.d.getHeight() + hl.L(16.0f);
+                if (exVar == null || !exVar.H) {
+                    L = hl.L(18.0f);
+                    this.d = L;
+                } else {
+                    L = (int) Math.floor(((i3 - this.c.d.getLineLeft(0)) - this.c.d.getLineWidth(0)) - hl.L(16.0f));
+                    this.d = L;
+                }
+                cw cwVar = this.c;
+                cwVar.s = L;
+                cwVar.w = this.e;
+                i4 = height;
             } else {
-                duVar.f = gl.L(14.0f);
-            }
-            int C = ug8.C(vg5Var, 8.0f, i3);
-            duVar.e = C;
-            TL_iv.pageBlockBlockquote pageblockblockquote2 = duVar.n;
-            bw m2 = o.m(duVar.a, duVar, null, pageblockblockquote2.caption, i4, C, pageblockblockquote2, duVar.b);
-            duVar.d = m2;
-            if (m2 != null) {
-                vg5Var.getClass();
-                i3 += duVar.d.d.getHeight() + gl.L(8.0f);
-            }
-            if (i3 != 0) {
-                i3 = ug8.C(vg5Var, 8.0f, i3);
-            }
-            bw bwVar = duVar.c;
-            if (bwVar != null) {
-                bwVar.s = duVar.f;
-                bwVar.w = duVar.h;
-            }
-            bw bwVar2 = duVar.d;
-            if (bwVar2 != null) {
-                bwVar2.s = duVar.f;
-                bwVar2.w = duVar.e;
+                i4 = 0;
             }
         } else {
-            duVar = this;
-            i3 = 1;
+            i3 = size;
         }
-        duVar.setMeasuredDimension(size, i3);
+        setMeasuredDimension(i3, i4);
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (o.i(this.a, this.b, motionEvent, this, this.c, this.f, this.h)) {
-            return true;
-        }
-        return o.i(this.a, this.b, motionEvent, this, this.d, this.f, this.e) || super.onTouchEvent(motionEvent);
+        return o.i(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
     }
 
-    public void setBlock(TL_iv.pageBlockBlockquote pageblockblockquote) {
-        this.n = pageblockblockquote;
+    public void setBlock(TL_iv.pageBlockAuthorDate pageblockauthordate) {
+        this.f = pageblockauthordate;
         requestLayout();
     }
 }

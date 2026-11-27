@@ -1,19 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.IBinder;
+import android.os.IInterface;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class gsd implements zn7 {
-    public static final gsd a = new gsd();
-
-    static {
-        yjb.y(yjb.n(g7d.class, new d6d(1)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class gsd extends wfd implements rxd {
+    public static rxd asInterface(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        throw null;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.flags.IFlagProvider");
+        return queryLocalInterface instanceof rxd ? (rxd) queryLocalInterface : new zld(iBinder);
     }
 }

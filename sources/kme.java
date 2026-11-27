@@ -1,19 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kme implements zn7 {
-    public static final kme a = new kme();
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kme extends c4 {
+    public static final Parcelable.Creator<kme> CREATOR = new ime((byte) 11);
+    public final byte a;
+    public final byte b;
+    public final String c;
+
+    public kme(byte b, byte b2, String str) {
+        this.a = b;
+        this.b = b2;
+        this.c = str;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        throw null;
+        if (obj == null || kme.class != obj.getClass()) {
+            return false;
+        }
+        kme kmeVar = (kme) obj;
+        return this.a == kmeVar.a && this.b == kmeVar.b && this.c.equals(kmeVar.c);
+    }
+
+    public final int hashCode() {
+        return this.c.hashCode() + ((((this.a + 31) * 31) + this.b) * 31);
+    }
+
+    public final String toString() {
+        return c00.k(bs2.p("AmsEntityUpdateParcelable{, mEntityId=", this.a, ", mAttributeId=", this.b, ", mValue='"), this.c, "'}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        bye.l(parcel, 4, this.c);
+        bye.s(parcel, r);
     }
 }

@@ -1,40 +1,28 @@
 // default package
 
-import android.app.Activity;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Region;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rh extends FrameLayout {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ag2[] b;
+public final class rh extends de0 {
+    public final Path H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ rh(Activity activity, ag2[] ag2VarArr, byte b) {
-        super(activity);
-        this.a = b;
-        this.b = ag2VarArr;
+    public rh(Context context) {
+        super(context);
+        this.H = new Path();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        byte b = this.a;
-        ag2[] ag2VarArr = this.b;
-        switch (b) {
-            case 0:
-                super.onMeasure(i, i2);
-                if (ag2VarArr[0] != null) {
-                    setMeasuredDimension(getMeasuredWidth(), gl.L(7.0f) + ag2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-                    break;
-                }
-                break;
-            default:
-                super.onMeasure(i, i2);
-                if (ag2VarArr[0] != null) {
-                    setMeasuredDimension(getMeasuredWidth(), gl.L(7.0f) + ag2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-                    break;
-                }
-                break;
-        }
+    @Override // de0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.H;
+        path.rewind();
+        path.addCircle(hl.L(54.0f), hl.L(53.0f), hl.L(14.0f), Path.Direction.CW);
+        canvas.clipPath(path, Region.Op.DIFFERENCE);
+        super.onDraw(canvas);
+        canvas.restore();
     }
 }

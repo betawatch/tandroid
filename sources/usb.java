@@ -1,73 +1,107 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class usb extends n7 {
-    public boolean a = false;
-    public final /* synthetic */ zsb b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class usb {
+    public long a;
+    public long b;
+    public long c;
+    public final ThreadLocal d = new ThreadLocal();
 
-    public usb(zsb zsbVar) {
-        this.b = zsbVar;
+    public usb(long j) {
+        g(j);
     }
 
-    @Override // n7
-    public final void h() {
-        zsb zsbVar = this.b;
-        byte b = 0;
-        if (zsbVar.a.getVisibility() != 0) {
-            zsbVar.a.setVisibility(0);
-            zsbVar.a.setAlpha(0.0f);
+    public final synchronized long a(long j) {
+        if (j == -9223372036854775807L) {
+            return -9223372036854775807L;
         }
-        zsbVar.r.setVisibility(8);
-        zsbVar.d.f();
-        zsbVar.a.animate().alpha(1.0f).setDuration(150L).setListener(null).start();
-        zsbVar.s.animate().alpha(0.0f).setDuration(150L).setListener(new tsb(this, b)).start();
-        this.a = false;
-    }
-
-    @Override // n7
-    public final void l(EditTextBoldCursor editTextBoldCursor) {
-        String obj = editTextBoldCursor.getText().toString();
-        ysb ysbVar = this.b.e;
-        if (ysbVar.e != null) {
-            Utilities.g.a(ysbVar.e);
-            ysbVar.e = null;
-        }
-        byte b = 0;
-        byte b2 = 1;
-        if (TextUtils.isEmpty(obj)) {
-            ysbVar.c.clear();
-            ysbVar.d.clear();
-            ysbVar.f();
-            ysbVar.h.r.setVisibility(8);
-        } else {
-            int i = ysbVar.f + 1;
-            ysbVar.f = i;
-            co3 co3Var = Utilities.g;
-            xsb xsbVar = new xsb(ysbVar, obj, i, b);
-            ysbVar.e = xsbVar;
-            co3Var.d(xsbVar, 300L);
-        }
-        if (this.a || TextUtils.isEmpty(obj)) {
-            if (this.a && TextUtils.isEmpty(obj)) {
-                h();
-                return;
+        if (!f()) {
+            long j2 = this.a;
+            if (j2 == 9223372036854775806L) {
+                Long l = (Long) this.d.get();
+                l.getClass();
+                j2 = l.longValue();
             }
+            this.b = j2 - j;
+            notifyAll();
+        }
+        this.c = j;
+        return j + this.b;
+    }
+
+    public final synchronized long b(long j) {
+        if (j == -9223372036854775807L) {
+            return -9223372036854775807L;
+        }
+        long j2 = this.c;
+        if (j2 != -9223372036854775807L) {
+            String str = gcc.a;
+            long b0 = gcc.b0(j2, 90000L, 1000000L, RoundingMode.DOWN);
+            long j3 = (4294967296L + b0) / 8589934592L;
+            long j4 = ((j3 - 1) * 8589934592L) + j;
+            long j5 = (j3 * 8589934592L) + j;
+            j = Math.abs(j4 - b0) < Math.abs(j5 - b0) ? j4 : j5;
+        }
+        long j6 = j;
+        String str2 = gcc.a;
+        return a(gcc.b0(j6, 1000000L, 90000L, RoundingMode.DOWN));
+    }
+
+    public final synchronized long c(long j) {
+        if (j == -9223372036854775807L) {
+            return -9223372036854775807L;
+        }
+        long j2 = this.c;
+        if (j2 != -9223372036854775807L) {
+            String str = gcc.a;
+            long b0 = gcc.b0(j2, 90000L, 1000000L, RoundingMode.DOWN);
+            long j3 = b0 / 8589934592L;
+            Long.signum(j3);
+            long j4 = (j3 * 8589934592L) + j;
+            j = j4 >= b0 ? j4 : ((j3 + 1) * 8589934592L) + j;
+        }
+        long j5 = j;
+        String str2 = gcc.a;
+        return a(gcc.b0(j5, 1000000L, 90000L, RoundingMode.DOWN));
+    }
+
+    public final synchronized long d() {
+        long j;
+        j = this.a;
+        if (j == Long.MAX_VALUE || j == 9223372036854775806L) {
+            j = -9223372036854775807L;
+        }
+        return j;
+    }
+
+    public final synchronized long e() {
+        return this.b;
+    }
+
+    public final synchronized boolean f() {
+        return this.b != -9223372036854775807L;
+    }
+
+    public final synchronized void g(long j) {
+        this.a = j;
+        this.b = j == Long.MAX_VALUE ? 0L : -9223372036854775807L;
+        this.c = -9223372036854775807L;
+    }
+
+    public final synchronized void h(long j, boolean z) {
+        yve.p(this.a == 9223372036854775806L);
+        if (f()) {
             return;
         }
-        if (this.b.s.getVisibility() != 0) {
-            this.b.s.setVisibility(0);
-            this.b.s.setAlpha(0.0f);
+        if (z) {
+            this.d.set(Long.valueOf(j));
+        } else {
+            while (!f()) {
+                wait();
+            }
         }
-        this.b.a.animate().alpha(0.0f).setDuration(150L).setListener(new tsb(this, b2)).start();
-        this.b.e.d.clear();
-        this.b.e.c.clear();
-        this.b.e.f();
-        this.b.s.animate().setListener(null).alpha(1.0f).setDuration(150L).start();
-        this.a = true;
     }
 }

@@ -1,48 +1,6 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class b88 extends taa {
-    public final /* synthetic */ FrameLayout U2;
-    public final /* synthetic */ boolean V2;
-    public final /* synthetic */ PhotoViewer W2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b88(PhotoViewer photoViewer, Context context, mu1 mu1Var, ArrayList arrayList, String str, Integer num, FrameLayout frameLayout, boolean z) {
-        super(context, mu1Var, arrayList, null, null, false, str, null, false, true, false, num, null);
-        this.W2 = photoViewer;
-        this.U2 = frameLayout;
-        this.V2 = z;
-    }
-
-    @Override // taa, fx0
-    public final void I() {
-        super.I();
-        if (this.V2) {
-            gl.d3(new oq7(this, (byte) 27), 50L);
-        }
-        Drawable[] drawableArr = PhotoViewer.d9;
-        PhotoViewer photoViewer = this.W2;
-        photoViewer.e0.softInputMode = kk7.u4;
-        try {
-            ((WindowManager) photoViewer.E.getSystemService("window")).updateViewLayout(photoViewer.h0, photoViewer.e0);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // taa
-    public final void L0(vf6 vf6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
-        if (z) {
-            gl.d3(new q76((Object) this, (Object) this.U2, (Object) vf6Var, i, (byte) 18), 250L);
-        }
-    }
+public interface b88 {
 }

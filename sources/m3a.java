@@ -1,22 +1,42 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class m3a implements RequestDelegate {
-    public final /* synthetic */ TLRPC.TL_messages_initHistoryImport a;
-    public final /* synthetic */ p3a b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class m3a extends cw9 {
+    public en9 f;
+    public final /* synthetic */ z3a h;
 
-    public m3a(p3a p3aVar, TLRPC.TL_messages_initHistoryImport tL_messages_initHistoryImport) {
-        this.b = p3aVar;
-        this.a = tL_messages_initHistoryImport;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m3a(z3a z3aVar, Context context, x53 x53Var) {
+        super(context, 13.0f, x53Var);
+        this.h = z3aVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        gl.c3(new bm8((Object) this, (Object) tLObject, (Object) this.a, (Object) tL_error, (byte) 16));
+    @Override // cw9
+    public final void a(String str) {
+        en9 en9Var = this.f;
+        if (en9Var != null) {
+            hl.r(en9Var);
+        }
+        this.f = new en9(this, str, (byte) 21);
+        boolean isEmpty = TextUtils.isEmpty(str);
+        en9 en9Var2 = this.f;
+        if (isEmpty) {
+            en9Var2.run();
+        } else {
+            hl.d3(en9Var2, 300L);
+        }
+        if (this.f != null) {
+            z3a z3aVar = this.h;
+            if (z3aVar.R) {
+                return;
+            }
+            z3aVar.R = true;
+            z3aVar.x.E();
+            z3aVar.y.g1(0, -z3aVar.r.getPaddingTop());
+        }
     }
 }

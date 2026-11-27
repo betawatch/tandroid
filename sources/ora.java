@@ -1,67 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ora implements p8c {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ gta b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ p8c d;
-    public final /* synthetic */ boolean[] e;
-    public final /* synthetic */ p8c f;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
 
-    public /* synthetic */ ora(gta gtaVar, int i, p8c p8cVar, boolean[] zArr, p8c p8cVar2) {
-        this.b = gtaVar;
-        this.c = i;
-        this.d = p8cVar;
-        this.e = zArr;
-        this.f = p8cVar2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ora implements kcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wua b;
+
+    public /* synthetic */ ora(wua wuaVar, byte b) {
+        this.a = b;
+        this.b = wuaVar;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        p8c p8cVar = this.f;
-        boolean[] zArr = this.e;
-        p8c p8cVar2 = this.d;
-        int i = this.c;
-        gta gtaVar = this.b;
-        Boolean bool = (Boolean) obj;
-        switch (b) {
+    @Override // kcc
+    public final void a(Object obj, Object obj2, Object obj3) {
+        switch (this.a) {
             case 0:
-                zArr[0] = true;
-                if (i > 0) {
-                    gtaVar.O();
-                }
-                if (p8cVar2 != null) {
-                    p8cVar2.a(bool.booleanValue() ? "paid" : "failed");
-                }
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.TRUE);
-                    break;
-                }
+                boolean booleanValue = ((Boolean) obj3).booleanValue();
+                this.b.v2((View) obj2, (CharSequence) obj, booleanValue);
                 break;
             default:
-                if (i > 0) {
-                    gtaVar.O();
+                ArrayList arrayList = (ArrayList) obj;
+                icc iccVar = (icc) obj2;
+                Runnable runnable = (Runnable) obj3;
+                wua wuaVar = this.b;
+                ld9 ld9Var = wuaVar.R2;
+                if (ld9Var != null) {
+                    ld9Var.b();
+                    wuaVar.R2 = null;
                 }
-                if (p8cVar2 != null) {
-                    p8cVar2.a(Boolean.TRUE);
+                TL_stars.craftStarGift craftstargift = new TL_stars.craftStarGift();
+                int size = arrayList.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj4 = arrayList.get(i);
+                    i++;
+                    TL_stars.TL_inputSavedStarGiftSlug tL_inputSavedStarGiftSlug = new TL_stars.TL_inputSavedStarGiftSlug();
+                    tL_inputSavedStarGiftSlug.slug = ((TL_stars.StarGift) obj4).slug;
+                    craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
                 }
-                zArr[0] = true;
-                if (p8cVar != null) {
-                    p8cVar.a(bool.booleanValue() ? "paid" : "failed");
-                    break;
-                }
+                ConnectionsManager.getInstance(wuaVar.a).sendRequestTyped(craftstargift, new ic((byte) 0), new nu0((Object) wuaVar, (Object) iccVar, (Object) arrayList, (Object) runnable, (byte) 14));
                 break;
         }
-    }
-
-    public /* synthetic */ ora(gta gtaVar, boolean[] zArr, int i, p8c p8cVar, p8c p8cVar2) {
-        this.b = gtaVar;
-        this.e = zArr;
-        this.c = i;
-        this.d = p8cVar;
-        this.f = p8cVar2;
     }
 }

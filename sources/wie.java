@@ -1,28 +1,15 @@
 // default package
 
-import android.opengl.EGL14;
-import android.opengl.EGLDisplay;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class wie {
-    public static void a(String str, boolean z) {
-        if (z) {
-            return;
+    public static Exception a(i1 i1Var, String str, Exception exc) {
+        if (exc instanceof s13) {
+            return new s13(i1Var, str);
         }
-        km5 km5Var = mm5.b;
-        throw new bw4(str, w59.e);
-    }
-
-    public static boolean b(String str) {
-        EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
-        a("No EGL display.", !eglGetDisplay.equals(EGL14.EGL_NO_DISPLAY));
-        a("Error in eglInitialize.", EGL14.eglInitialize(eglGetDisplay, new int[1], 0, new int[1], 0));
-        int eglGetError = EGL14.eglGetError();
-        if (eglGetError == 12288) {
-            String eglQueryString = EGL14.eglQueryString(eglGetDisplay, 12373);
-            return eglQueryString != null && eglQueryString.contains(str);
+        if (exc instanceof ev4) {
+            return new ev4(i1Var, str);
         }
-        throw new bw4("Error in getDefaultEglDisplay, error code: 0x" + Integer.toHexString(eglGetError), mm5.u(Integer.valueOf(eglGetError)));
+        throw new nr4();
     }
 }

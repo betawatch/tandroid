@@ -1,103 +1,92 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Point;
-import android.graphics.drawable.Drawable;
+import android.graphics.Rect;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import android.view.WindowManager;
+import java.util.WeakHashMap;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class s27 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final gn b;
-    public final gn c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class s27 {
+    public final Context a;
+    public final f27 b;
+    public final boolean c;
+    public final int d;
+    public View e;
+    public boolean g;
+    public y27 h;
+    public p27 i;
+    public q27 j;
+    public int f = 8388611;
+    public final q27 k = new q27(this);
 
-    public s27(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        gn gnVar = new gn(true, true, true);
-        this.b = gnVar;
-        s33 s33Var = s33.h;
-        gnVar.n(0.3f, 430L, s33Var);
-        gnVar.x(gl.o());
-        gnVar.u(bkb.v0(bkb.z8, wjbVar));
-        gnVar.w(gl.L(18.0f));
-        gnVar.q(!k96.a0);
-        gnVar.setCallback(this);
-        Point point = gl.q;
-        gnVar.N = point.x;
-        gn gnVar2 = new gn(true, true, true);
-        this.c = gnVar2;
-        gnVar2.n(0.3f, 430L, s33Var);
-        gnVar2.u(bkb.v0(bkb.A8, wjbVar));
-        gnVar2.w(gl.L(14.0f));
-        gnVar2.q(!k96.a0);
-        gnVar2.setCallback(this);
-        gnVar2.N = point.x;
+    public s27(Context context, f27 f27Var, View view, boolean z, int i, int i2) {
+        this.a = context;
+        this.b = f27Var;
+        this.e = view;
+        this.c = z;
+        this.d = i;
     }
 
-    public final void a(CharSequence charSequence, boolean z) {
-        this.c.t(charSequence, z && !k96.a0, true);
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.z8));
-        hashSet.add(Integer.valueOf(bkb.A8));
-    }
-
-    public final void b(CharSequence charSequence, boolean z) {
-        this.b.t(charSequence, z && !k96.a0, true);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int L = gl.L(29.0f);
-        int L2 = gl.L(18.83f);
-        gn gnVar = this.c;
-        float U1 = gl.U1(gnVar.i(), L, L2);
-        int paddingLeft = getPaddingLeft();
-        int i = (int) U1;
-        int L3 = i - gl.L(32.0f);
-        int measuredWidth = getMeasuredWidth() - getPaddingRight();
-        int L4 = gl.L(32.0f) + i;
-        gn gnVar2 = this.b;
-        gnVar2.setBounds(paddingLeft, L3, measuredWidth, L4);
-        gnVar2.draw(canvas);
-        gnVar.setBounds(getPaddingLeft(), r0 - gl.L(32.0f), getMeasuredWidth() - getPaddingRight(), gl.L(32.0f) + r0);
-        gnVar.draw(canvas);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(56.0f), TLObject.FLAG_30));
-        setPadding(gl.L(18.0f), 0, gl.L(18.0f), 0);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            gn gnVar = this.b;
-            wjb wjbVar = this.a;
-            if (gnVar != null) {
-                gnVar.u(bkb.v0(bkb.z8, wjbVar));
+    public final p27 a() {
+        p27 p27Var = this.i;
+        if (p27Var == null) {
+            Context context = this.a;
+            Display defaultDisplay = ((WindowManager) context.getSystemService("window")).getDefaultDisplay();
+            Point point = new Point();
+            r27.a(defaultDisplay, point);
+            int min = Math.min(point.x, point.y);
+            int dimensionPixelSize = context.getResources().getDimensionPixelSize(R.dimen.abc_cascading_menus_min_smallest_width);
+            Context context2 = this.a;
+            if (min >= dimensionPixelSize) {
+                p27Var = new fd1(context2, this.e, this.d, this.c);
+            } else {
+                p27Var = new vqa(context2, this.b, this.e, this.d, this.c);
             }
-            gn gnVar2 = this.c;
-            if (gnVar2 != null) {
-                gnVar2.u(bkb.v0(bkb.A8, wjbVar));
-            }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+            p27Var.l(this.b);
+            p27Var.r(this.k);
+            p27Var.n(this.e);
+            p27Var.h(this.h);
+            p27Var.o(this.g);
+            p27Var.p(this.f);
+            this.i = p27Var;
+        }
+        return p27Var;
+    }
+
+    public final boolean b() {
+        p27 p27Var = this.i;
+        return p27Var != null && p27Var.a();
+    }
+
+    public void c() {
+        this.i = null;
+        q27 q27Var = this.j;
+        if (q27Var != null) {
+            q27Var.onDismiss();
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.b == drawable || this.c == drawable || super.verifyDrawable(drawable);
+    public final void d(int i, int i2, boolean z, boolean z2) {
+        p27 a = a();
+        a.s(z2);
+        if (z) {
+            int i3 = this.f;
+            View view = this.e;
+            WeakHashMap weakHashMap = ihc.a;
+            if ((Gravity.getAbsoluteGravity(i3, view.getLayoutDirection()) & 7) == 5) {
+                i -= this.e.getWidth();
+            }
+            a.q(i);
+            a.t(i2);
+            int i4 = (int) ((this.a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
+            a.a = new Rect(i - i4, i2 - i4, i + i4, i2 + i4);
+        }
+        a.g();
     }
 }

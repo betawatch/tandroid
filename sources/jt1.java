@@ -1,35 +1,11 @@
 // default package
 
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jt1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gb2 b;
-    public final /* synthetic */ RectF c;
+public interface jt1 {
+    void F(boolean z, boolean z2);
 
-    public /* synthetic */ jt1(gb2 gb2Var, RectF rectF, byte b) {
-        this.a = b;
-        this.b = gb2Var;
-        this.c = rectF;
-    }
+    void O(String str);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        RectF rectF = this.c;
-        gb2 gb2Var = this.b;
-        switch (b) {
-            case 0:
-                gl.d3(new jt1(gb2Var, rectF, (byte) 1), 400L);
-                break;
-            default:
-                if (gb2Var.getScrimBlockBounds() == rectF) {
-                    gb2Var.setScrimBlockBounds(null);
-                    break;
-                }
-                break;
-        }
-    }
+    void c0(int i);
 }

@@ -1,95 +1,188 @@
 // default package
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.media.AudioManager;
-import android.os.Handler;
-import android.os.Looper;
+import android.graphics.Matrix;
+import android.graphics.drawable.Drawable;
+import android.opengl.GLUtils;
+import android.view.WindowManager;
+import android.view.animation.OvershootInterpolator;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import javax.microedition.khronos.egl.EGL10;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.webrtc.TextureBufferImpl;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class c00 {
-    public final qbb a;
-    public final Handler b;
-    public i64 c;
-    public nz d;
-    public byte f;
-    public f00 h;
-    public float g = 1.0f;
-    public byte e = 0;
-
-    public c00(Context context, Looper looper, i64 i64Var) {
-        this.a = vue.a(new a00(context, (byte) 0));
-        this.c = i64Var;
-        this.b = new Handler(looper);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public abstract /* synthetic */ class c00 {
+    public static int A(float f, int i, int i2) {
+        return (i - hl.L(f)) + i2;
     }
 
-    public final void a() {
-        byte b = this.e;
-        if (b == 1 || b == 0 || this.h == null) {
-            return;
-        }
-        i00.a((AudioManager) this.a.get(), this.h);
+    public static float B(float f, float f2, float f3, float f4) {
+        return ((f / f2) * f3) + f4;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(int i) {
-        if (this.e != i) {
-            this.e = i;
-            float f = i == 4 ? 0.2f : 1.0f;
-            if (this.g != f) {
-                this.g = f;
-                i64 i64Var = this.c;
-                if (i64Var != null) {
-                    i64Var.h.h(34);
-                }
-            }
+    public static /* synthetic */ String C(int i) {
+        switch (i) {
+            case 1:
+                return "IDLE";
+            case 2:
+                return "STARTING";
+            case 3:
+                return "RECORDING";
+            case 4:
+                return "PAUSING";
+            case 5:
+                return "PREVIEWING";
+            case 6:
+                return "RESUMING";
+            case 7:
+                return "FINISHING";
+            case 8:
+                return "COMPLETED";
+            case 9:
+                return "ERROR";
+            case 10:
+                return "RELEASED";
+            default:
+                return "null";
         }
     }
 
-    public final int c(int i, boolean z) {
-        byte b;
-        d00 d00Var;
-        byte b2 = 0;
-        if (i == 1 || (b = this.f) != 1) {
-            a();
-            b(0);
-            return 1;
-        }
-        byte b3 = this.e;
+    public static TextureBufferImpl a(TextureBufferImpl textureBufferImpl, boolean z, int i) {
+        Matrix matrix = new Matrix();
+        matrix.preTranslate(0.5f, 0.5f);
         if (z) {
-            if (b3 != 2) {
-                f00 f00Var = this.h;
-                if (f00Var == null) {
-                    if (f00Var == null) {
-                        d00Var = new d00();
-                        nz nzVar = nz.i;
-                        d00Var.a = b;
-                    } else {
-                        d00 d00Var2 = new d00();
-                        d00Var2.a = f00Var.a;
-                        d00Var = d00Var2;
-                    }
-                    nz nzVar2 = this.d;
-                    boolean z2 = nzVar2 != null && nzVar2.a == 1;
-                    nzVar2.getClass();
-                    this.h = new f00(d00Var.a, new zz(this, b2), this.b, nzVar2, z2, true);
-                }
-                int i2 = i00.i((AudioManager) this.a.get(), this.h);
-                if (i2 == 1 || i2 == 2) {
-                    b(2);
-                    return 1;
-                }
-                b(1);
-                return -1;
-            }
-        } else {
-            if (b3 == 1) {
-                return -1;
-            }
-            if (b3 == 3) {
-                return 0;
-            }
+            matrix.preScale(-1.0f, 1.0f);
         }
-        return 1;
+        matrix.preRotate(i);
+        matrix.preTranslate(-0.5f, -0.5f);
+        return textureBufferImpl.applyTransformMatrix(matrix, textureBufferImpl.getWidth(), textureBufferImpl.getHeight());
+    }
+
+    public static int b(Context context) {
+        int rotation = ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRotation();
+        if (rotation == 1) {
+            return 90;
+        }
+        if (rotation == 2) {
+            return jn7.J2;
+        }
+        if (rotation != 3) {
+            return 0;
+        }
+        return jn7.s4;
+    }
+
+    public static float c(float f, float f2, float f3, float f4) {
+        return (f3 - (f * f2)) / f4;
+    }
+
+    public static int d(float f, int i, int i2) {
+        return Math.max(i2, i - hl.L(f));
+    }
+
+    public static Drawable e(Context context, int i) {
+        return context.getResources().getDrawable(i).mutate();
+    }
+
+    public static CharSequence f(ema emaVar, String str, boolean z, int[] iArr, int i) {
+        return pv3.m(str, emaVar.getPaint().getFontMetricsInt(), z, iArr, i);
+    }
+
+    public static Object g(int i, ArrayList arrayList) {
+        return arrayList.get(arrayList.size() - i);
+    }
+
+    public static String h(int i, int i2, String str, String str2) {
+        return str + i + str2 + i2;
+    }
+
+    public static String i(String str, String str2) {
+        return str + str2;
+    }
+
+    public static String j(String str, String str2, String str3, String str4, String str5) {
+        return str + str2 + str3 + str4 + str5;
+    }
+
+    public static String k(StringBuilder sb, String str, String str2) {
+        sb.append(str);
+        sb.append(str2);
+        return sb.toString();
+    }
+
+    public static StringBuilder l(String str, String str2) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.append(str2);
+        return sb;
+    }
+
+    public static HashMap m(Class cls, wx wxVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, wxVar);
+        return hashMap;
+    }
+
+    public static Map n(HashMap hashMap) {
+        return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+    }
+
+    public static void o(float f, ValueAnimator valueAnimator) {
+        valueAnimator.setInterpolator(new OvershootInterpolator(f));
+    }
+
+    public static void p(int i, String str, String str2) {
+        efd.f(str2, str + i);
+    }
+
+    public static void q(int i, StringBuilder sb) {
+        sb.append(i);
+        cc4.b(sb.toString());
+    }
+
+    public static void r(int i, HashMap hashMap, String str, int i2, String str2) {
+        hashMap.put(Integer.valueOf(i), str);
+        hashMap.put(Integer.valueOf(i2), str2);
+    }
+
+    public static void s(String str, int i, ArrayList arrayList, int i2, ArrayList arrayList2) {
+        arrayList.add(ob6.M0(i, str));
+        arrayList2.add(Integer.valueOf(i2));
+    }
+
+    public static void t(String str, int i, ArrayList arrayList, ArrayList arrayList2, Integer num) {
+        arrayList.add(ob6.M0(i, str));
+        arrayList2.add(num);
+    }
+
+    public static void u(String str, int i, AlertDialog$Builder alertDialog$Builder, fd fdVar) {
+        alertDialog$Builder.j(ob6.M0(i, str), fdVar);
+        alertDialog$Builder.o();
+    }
+
+    public static void v(String str, d31 d31Var, int i, int i2) {
+        d31Var.Q(i, i2, hl.S2(str)).j();
+    }
+
+    public static void w(EGL10 egl10, StringBuilder sb) {
+        sb.append(GLUtils.getEGLErrorString(egl10.eglGetError()));
+        cc4.d(sb.toString());
+    }
+
+    public static float x(float f, float f2, float f3, float f4) {
+        return (f * f2 * f3) + f4;
+    }
+
+    public static int y(float f, int i, int i2) {
+        return Math.min(i2, i - hl.L(f));
+    }
+
+    public static float z(float f, float f2, float f3, float f4) {
+        return ((f * f2) + f3) / f4;
     }
 }

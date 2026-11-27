@@ -1,32 +1,53 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class po4 extends AnimatorListenerAdapter {
+public final /* synthetic */ class po4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ qo4 b;
+    public final /* synthetic */ tzb b;
 
-    public /* synthetic */ po4(qo4 qo4Var, byte b) {
+    public /* synthetic */ po4(tzb tzbVar, byte b) {
         this.a = b;
-        this.b = qo4Var;
+        this.b = tzbVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        qo4 qo4Var = this.b;
+        tzb tzbVar = this.b;
         switch (b) {
             case 0:
-                kk7.f(qo4Var.r.a).j(qo4Var.f);
-                qo4Var.requestLayout();
+                if (tzbVar.getParentLayout() != null) {
+                    tzbVar.I = true;
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", tzbVar.a);
+                    zu1 zu1Var = new zu1(bundle);
+                    zu1Var.Ga = true;
+                    tzbVar.presentFragment(zu1Var);
+                    break;
+                }
+                break;
+            case 1:
+                tzbVar.y0();
+                tzbVar.C0();
+                break;
+            case 2:
+                tzbVar.y0();
+                break;
+            case 3:
+                tzbVar.S0(true);
+                break;
+            case 4:
+                tzbVar.B0 = null;
+                tzbVar.Z0(true, false);
+                break;
+            case 5:
+                tzbVar.finishPreviewFragment();
                 break;
             default:
-                qo4Var.d = null;
-                qo4Var.a = null;
-                qo4Var.b = false;
+                tzbVar.O.postOnAnimation(new po4(tzbVar, (byte) 2));
                 break;
         }
     }

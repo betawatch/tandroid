@@ -1,97 +1,38 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class et4 implements i8c {
+public final class et4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ it4 b;
 
-    public /* synthetic */ et4(Object obj, long j, Object obj2, byte b) {
+    public /* synthetic */ et4(it4 it4Var, byte b) {
         this.a = b;
-        this.c = obj;
-        this.b = j;
-        this.d = obj2;
+        this.b = it4Var;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ValueAnimator valueAnimator;
         byte b = this.a;
-        TLRPC.Updates updates = null;
-        long j = this.b;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
+        it4 it4Var = this.b;
         switch (b) {
             case 0:
-                ((yg) obj3).a(((kt4) obj4).b(j), (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                fu5 fu5Var = (fu5) obj4;
-                TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) obj3;
-                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    updates = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    na7.q1(fu5Var.a).R3(updates, false);
-                } else if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                    gl.c3(new au5(fu5Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, this.b, (byte) 1));
-                }
-                gl.c3(new e45(fu5Var, tL_error, updates, tL_messages_importChatInvite, (byte) 8));
-                break;
-            case 2:
-                na7 na7Var = (na7) obj4;
-                jo2 jo2Var = (jo2) obj3;
-                TLRPC.Bool bool = (TLRPC.Bool) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (bool != null) {
-                    na7Var.Y2(0, j, true);
-                }
-                jo2Var.a(bool, tL_error2);
-                break;
-            case 3:
-                na7 na7Var2 = (na7) obj4;
-                jo2 jo2Var2 = (jo2) obj3;
-                TLRPC.Bool bool2 = (TLRPC.Bool) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                if (bool2 != null) {
-                    na7Var2.Y2(0, j, true);
-                }
-                jo2Var2.a(bool2, tL_error3);
-                break;
-            case 4:
-                ef6 ef6Var = (ef6) obj3;
-                TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
-                ((hd) obj4).dismiss();
-                if (tL_error4 == null) {
-                    ef6Var.a(Long.valueOf(j), auth_authorization, null);
+                AnimatorSet animatorSet = it4Var.e0;
+                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = it4Var.d0) != null && valueAnimator.isRunning())) {
+                    it4Var.j(it4Var.M);
                     break;
                 } else {
-                    ef6Var.a(Long.valueOf(j), null, tL_error4.text);
+                    it4Var.n();
                     break;
                 }
-            case 5:
-                y99 y99Var = (y99) obj4;
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
-                ypa ypaVar = (ypa) obj;
-                c01 c01Var = (c01) obj2;
-                c01Var.d();
-                gta.u(y99Var.a, ypaVar.a).f(ypaVar.b, tL_starGiftUnique, this.b, null, true, new p((Object) y99Var, (Object) c01Var, (Object) tL_starGiftUnique, (byte) 24));
                 break;
             default:
-                ((vua) obj4).Y0((c4c) obj3, this.b, (Boolean) obj, (String) obj2);
+                it4Var.l();
                 break;
         }
-    }
-
-    public /* synthetic */ et4(Object obj, Object obj2, long j, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j;
     }
 }

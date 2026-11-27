@@ -1,365 +1,966 @@
 // default package
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
+import android.graphics.RectF;
 import android.os.SystemClock;
-import android.text.TextPaint;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wka extends View {
-    public long E;
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final TextPaint e;
-    public final Drawable f;
-    public final int h;
-    public LinearGradient n;
-    public LinearGradient r;
-    public int s;
-    public final String w;
-    public final fk0 x;
-    public final fk0 y;
+public class wka extends FrameLayout implements bl7 {
+    public final g79 E;
+    public d79 F;
+    public RecyclerView G;
+    public RecyclerView H;
+    public vic I;
+    public View J;
+    public View K;
+    public View L;
+    public View M;
+    public tka N;
+    public ska O;
+    public uka P;
+    public View Q;
+    public int R;
+    public int S;
+    public int T;
+    public int U;
+    public float V;
+    public float W;
+    public boolean a;
+    public float a0;
+    public int b;
+    public float b0;
+    public int c;
+    public float c0;
+    public long d;
+    public boolean d0;
+    public long e;
+    public boolean e0;
+    public long f;
+    public boolean f0;
+    public boolean g0;
+    public long h;
+    public boolean h0;
+    public boolean i0;
+    public final i09 j0;
+    public final e98 k0;
+    public final es1 l0;
+    public int n;
+    public int r;
+    public final RectF s;
+    public final d26 w;
+    public final l09 x;
+    public final int[] y;
 
-    public wka(Activity activity, wjb wjbVar) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        Paint paint3 = new Paint(1);
-        this.b = paint3;
-        Paint paint4 = new Paint(1);
-        this.c = paint4;
-        this.d = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.e = textPaint;
-        this.w = k96.M0(2131745049, null).concat(" · ");
-        this.x = new fk0(12);
-        this.y = new fk0(11);
-        int v0 = bkb.v0(bkb.Ei, wjbVar);
-        this.h = v0;
-        bkb.v0(bkb.i5, wjbVar);
-        paint.setColor(v0);
-        paint2.setStyle(Paint.Style.STROKE);
-        paint2.setStrokeWidth(gl.N(1.6f));
-        paint3.setColor(v0);
-        paint3.setStrokeCap(Paint.Cap.ROUND);
-        paint3.setStrokeWidth(gl.N(3.0f));
-        textPaint.setTextSize(gl.L(17.0f));
-        Drawable mutate = activity.getResources().getDrawable(R.drawable.input_mic_pressed).mutate();
-        this.f = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        paint4.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+    public wka(Context context) {
+        super(context);
+        this.s = new RectF();
+        this.x = new l09((byte) 3);
+        this.y = new int[2];
+        this.E = new g79();
+        this.j0 = new i09((Object) this, (byte) 13);
+        this.k0 = new e98(this, (byte) 22);
+        this.l0 = new es1(this, (byte) 5);
+        setClipChildren(false);
+        setClipToPadding(false);
+        d26 d26Var = new d26(this, context);
+        this.w = d26Var;
+        addView(d26Var, new FrameLayout.LayoutParams(-1, -1));
     }
 
-    public static float a(float f) {
-        return oo1.g((((float) Math.sin((f * 0.113f) + 0.4f)) * 0.5f) + 0.5f, 0.2f, (((((float) Math.sin((0.053f * f) + 1.7f)) * 0.5f) + 0.5f) * 0.35f) + (((((float) Math.sin(0.021f * f)) * 0.5f) + 0.5f) * 0.45f), 0.82f, 0.18f);
+    public static String h(View view) {
+        if (view == null) {
+            return "null";
+        }
+        String str = view.getClass().getSimpleName() + "@" + Integer.toHexString(System.identityHashCode(view)) + "(x=" + view.getTranslationX() + ",y=" + view.getTranslationY() + ",w=" + view.getWidth() + ",visibility=" + view.getVisibility() + ",attached=" + view.isAttachedToWindow() + ",top=" + view.getTop() + ",height=" + view.getHeight() + ",layoutRequested=" + view.isLayoutRequested();
+        if (view instanceof RecyclerView) {
+            RecyclerView recyclerView = (RecyclerView) view;
+            StringBuilder l = c00.l(str, ",scrollState=");
+            l.append(recyclerView.getScrollState());
+            l.append(",up=");
+            l.append(recyclerView.canScrollVertically(-1));
+            l.append(",down=");
+            l.append(recyclerView.canScrollVertically(1));
+            l.append(",layout=");
+            l.append(recyclerView.e0());
+            l.append(",pendingUpdates=");
+            l.append(recyclerView.b0());
+            l.append(",animating=");
+            l.append(recyclerView.d0());
+            l.append(",paddingTop=");
+            l.append(recyclerView.getPaddingTop());
+            l.append(",count=");
+            l.append(recyclerView.getAdapter() == null ? 0 : recyclerView.getAdapter().b());
+            str = l.toString();
+        }
+        return str.concat(")");
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f;
-        float f2;
-        float f3;
-        int i;
-        float f4;
-        float f5;
-        float f6;
-        float f7;
-        float f8;
-        long min;
-        float f9;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        float f14;
-        float f15;
-        float f16;
-        float f17;
-        int i2;
-        float f18;
-        float f19;
-        float f20;
-        float f21;
-        float f22;
-        float e;
-        float f23;
-        float f24;
-        int width = getWidth();
-        int height = getHeight();
-        if (width <= 0) {
+    public static float j(RecyclerView recyclerView) {
+        q79 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
+            return 0.0f;
+        }
+        if (layoutManager.m(0) == null) {
+            return Float.POSITIVE_INFINITY;
+        }
+        return Math.max(0.0f, (recyclerView.getPaddingTop() - q79.y(r0)) + ((ViewGroup.MarginLayoutParams) ((r79) r0.getLayoutParams())).topMargin);
+    }
+
+    private void setBleed(RecyclerView recyclerView) {
+        ViewGroup.LayoutParams layoutParams = recyclerView.getLayoutParams();
+        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
+            int i = marginLayoutParams.topMargin;
+            int i2 = this.T;
+            if (i == (-i2) && marginLayoutParams.bottomMargin == (-this.U)) {
+                return;
+            }
+            marginLayoutParams.topMargin = -i2;
+            marginLayoutParams.bottomMargin = -this.U;
+            recyclerView.setLayoutParams(marginLayoutParams);
+        }
+    }
+
+    private void setTabsPinned(boolean z) {
+        if (this.f0 == z) {
             return;
         }
-        float uptimeMillis = (SystemClock.uptimeMillis() % 1000000) / 1000.0f;
-        float f25 = width;
-        float f26 = f25 / 2.0f;
-        float f27 = height;
-        float f28 = f27 / 2.0f;
-        float L = gl.L(36.0f);
-        float L2 = uptimeMillis * gl.L(33.0f);
-        float L3 = (f26 - L) - gl.L(6.0f);
-        float L4 = f26 + L + gl.L(10.0f);
-        int saveLayer = canvas.saveLayer(0.0f, 0.0f, f25, f27, null);
-        float L5 = gl.L(6.0f);
-        float f29 = L3 - (L2 % L5);
-        while (true) {
-            f = f26;
-            float f30 = 1.0f;
-            if (f29 <= (-L5)) {
-                break;
+        this.f0 = z;
+        f(z ? "TABS_PINNED" : "TABS_UNPINNED", this.F, 0, 0, true);
+        this.N.t(z);
+    }
+
+    public static void w(RecyclerView recyclerView, int i, int i2) {
+        int i3;
+        if (recyclerView.getPaddingTop() == i && recyclerView.getPaddingBottom() == i2) {
+            return;
+        }
+        q79 layoutManager = recyclerView.getLayoutManager();
+        int i4 = 0;
+        View q = (layoutManager == null || layoutManager.r() == 0) ? null : layoutManager.q(0);
+        if (q == null) {
+            i3 = -1;
+        } else {
+            layoutManager.getClass();
+            int b = ((r79) q.getLayoutParams()).b();
+            int y = (q79.y(q) - recyclerView.getPaddingTop()) - ((ViewGroup.MarginLayoutParams) ((r79) q.getLayoutParams())).topMargin;
+            i3 = b;
+            i4 = y;
+        }
+        recyclerView.setPadding(recyclerView.getPaddingLeft(), i, recyclerView.getPaddingRight(), i2);
+        if (i3 == -1 || !(layoutManager instanceof x46)) {
+            return;
+        }
+        ((x46) layoutManager).g1(i3, i4);
+    }
+
+    public final void A(int i, int i2) {
+        this.T = Math.max(0, i);
+        this.U = Math.max(0, i2);
+        requestLayout();
+        C();
+    }
+
+    public final void B() {
+        f("STOP_SCROLLING", null, 0, 0, true);
+        d79 d79Var = this.F;
+        if (d79Var != null) {
+            d79Var.E0();
+        }
+        vic vicVar = this.I;
+        if (vicVar == null || this.P == null) {
+            return;
+        }
+        for (View view : vicVar.getViewPages()) {
+            if (view != null) {
+                this.P.h(view).E0();
             }
-            float f31 = 0.7f;
-            float w = ls6.w(L3 - f29, gl.L(34.0f), 1.0f, 0.0f);
-            float f32 = 0.8f * w;
-            float z = yjb.z(f32, w, 0.2f, (a(f29 - L2) * gl.L(30.0f)) + gl.L(6.0f));
-            Paint paint = this.b;
-            paint.setAlpha((int) ((f32 + 0.2f) * 255.0f));
-            float f33 = 1.0f - w;
-            float L6 = f33 * f33 * gl.L(7.0f);
-            if (w > 0.75f) {
-                float f34 = f29 - L6;
-                float f35 = z / 2.0f;
-                float f36 = f28 - f35;
-                float f37 = (L6 * 0.35f) + f29;
-                float f38 = f28;
-                f23 = L5;
-                canvas.drawLine(f34, f36, f37, f38, paint);
-                canvas.drawLine(f37, f38, f34, f38 + f35, paint);
-                f24 = f38;
-            } else {
-                float f39 = f28;
-                f23 = L5;
-                float f40 = 1.0f - (w / 0.75f);
-                float f41 = z / 3.0f;
-                int i3 = 0;
-                while (i3 < 3) {
-                    float f42 = z / 2.0f;
-                    float f43 = (i3 * f41) + (f39 - f42);
-                    float f44 = ((f43 + f41) + f43) / 2.0f;
-                    float f45 = f44 - f39;
-                    float f46 = ((f30 - (f40 * f31)) * f41) / 2.0f;
-                    float abs = f29 - ((Math.abs(f45) * L6) / Math.max(f30, f42));
-                    float f47 = f44 + (f45 * 0.6f * f40);
-                    canvas.drawLine(abs, f47 - f46, abs, f47 + f46, paint);
-                    i3++;
-                    f39 = f39;
-                    f30 = f30;
-                    f31 = 0.7f;
+        }
+    }
+
+    public final void C() {
+        g79 g79Var = this.E;
+        if (this.d0 || this.N == null) {
+            return;
+        }
+        this.d0 = true;
+        try {
+            float f = this.b0;
+            D();
+            d79 d79Var = this.F;
+            if (d79Var != null && !this.i0) {
+                setBleed(d79Var);
+                d79 d79Var2 = this.F;
+                int i = this.T;
+                this.N.getClass();
+                w(d79Var2, i, this.U);
+            }
+            vic vicVar = this.I;
+            if (vicVar != null && this.P != null && this.K != null) {
+                for (View view : vicVar.getViewPages()) {
+                    if (view != null && view.getParent() == this.I) {
+                        b(this.P.h(view));
+                    }
                 }
-                f24 = f39;
+                t();
+                float p = p();
+                boolean isInfinite = Float.isInfinite(p);
+                d26 d26Var = this.w;
+                if (isInfinite) {
+                    this.b0 = Float.POSITIVE_INFINITY;
+                    this.J.setVisibility(4);
+                    this.K.setVisibility(4);
+                    d79 d79Var3 = this.F;
+                    if (d79Var3 != null) {
+                        d79Var3.setTranslationY(0.0f);
+                    }
+                    setTabsPinned(false);
+                    if (f != this.b0) {
+                        d26Var.invalidate();
+                    }
+                } else {
+                    float f2 = this.V;
+                    if (p > f2 + 0.5f) {
+                        f2 = p;
+                    }
+                    this.a0 = f2;
+                    this.J.setVisibility(0);
+                    this.K.setVisibility(0);
+                    if (this.e0) {
+                        this.b0 = g79Var.b();
+                        this.c0 = Math.max(g79Var.d, g79Var.b());
+                        x(this.L, Math.max(0.0f, g79Var.a - g79Var.d) + (g79Var.f ? 0.0f : g79Var.b() - g79Var.b));
+                        x(this.M, Math.max(g79Var.d, g79Var.b()) - g79Var.d);
+                    } else {
+                        RecyclerView recyclerView = this.G;
+                        float max = this.a0 - Math.max(0.0f, Math.min(recyclerView == null ? 0.0f : this.P.b(recyclerView), Math.max(0.0f, this.V - this.W)));
+                        this.b0 = max;
+                        this.c0 = Math.max(this.V, max);
+                        x(this.I.getCurrentView(), Math.max(0.0f, this.a0 - this.V));
+                    }
+                    this.F.setTranslationY(this.b0 - p);
+                    this.K.setTranslationY(this.c0 - r0.getTop());
+                    setTabsPinned(this.c0 <= this.V + 0.5f);
+                    this.N.getClass();
+                    if (f != this.b0) {
+                        d26Var.invalidate();
+                    }
+                }
             }
-            f29 -= f23;
-            L5 = f23;
-            f28 = f24;
-            f26 = f;
+        } finally {
+            this.d0 = false;
         }
-        Canvas canvas2 = canvas;
-        float f48 = 1.0f;
-        float f49 = f28;
-        LinearGradient linearGradient = this.r;
-        Paint paint2 = this.e;
-        int i4 = this.h;
-        if (linearGradient == null || this.s != width) {
-            LinearGradient linearGradient2 = new LinearGradient(L4, 0.0f, L4 + 1.0f, 0.0f, bm2.f(0.22f, i4, -1), bm2.f(0.22f, i4, -1), Shader.TileMode.CLAMP);
-            f2 = L4;
-            this.r = linearGradient2;
-            paint2.setShader(linearGradient2);
+    }
+
+    public final void D() {
+        tka tkaVar = this.N;
+        if (tkaVar == null) {
+            return;
+        }
+        float e0 = tkaVar.e0();
+        this.N.getClass();
+        if (Float.isNaN(e0) || Float.isInfinite(e0) || e0 < 0.0f) {
+            lq5.j("Require finite 0 <= commonHiddenTop <= tabsPinnedTop");
+            return;
+        }
+        if (this.g0 && (e0 != this.V || 0.0f != this.W)) {
+            float p = p();
+            if (!Float.isInfinite(p)) {
+                float f = this.V;
+                boolean z = p <= 0.5f + f || p < e0;
+                if (z && e0 != f) {
+                    this.h0 = true;
+                }
+                if (this.e0) {
+                    g79 g79Var = this.E;
+                    float f2 = g79Var.e;
+                    if (z) {
+                        p = e0;
+                    }
+                    uka ukaVar = this.P;
+                    g79Var.a(p, ukaVar.b(ukaVar.h(this.L)), e0, 0.0f);
+                    g79Var.e = Math.max(0.0f, Math.min(1.0f, f2));
+                    this.w.invalidate();
+                }
+            }
+        }
+        this.V = e0;
+        this.W = 0.0f;
+        this.g0 = true;
+    }
+
+    public final void a() {
+        ska skaVar;
+        f("ALIGN_BOUNDARY", this.F, 0, 0, true);
+        if (this.F == null || (skaVar = this.O) == null || this.N == null) {
+            return;
+        }
+        int c = skaVar.c();
+        q79 layoutManager = this.F.getLayoutManager();
+        if (c == -1 || !(layoutManager instanceof x46)) {
+            return;
+        }
+        D();
+        ((x46) layoutManager).g1(c, (Math.round(this.V) - this.F.getTop()) - this.F.getPaddingTop());
+        this.h0 = true;
+        requestLayout();
+    }
+
+    public final void b(RecyclerView recyclerView) {
+        int height;
+        if (this.N == null || recyclerView == null) {
+            return;
+        }
+        D();
+        View view = this.K;
+        if (view == null) {
+            height = 0;
         } else {
-            f2 = L4;
+            int height2 = view.getHeight();
+            View view2 = this.K;
+            height = height2 > 0 ? view2.getHeight() : view2.getLayoutParams().height;
         }
-        canvas2.save();
-        canvas2.clipRect(f2, 0.0f, f25, f27);
-        String str = this.w;
-        float measureText = paint2.measureText(str);
-        float descent = f49 - ((paint2.descent() + paint2.ascent()) / 2.0f);
-        for (float L7 = (gl.L(4.0f) + f2) - (measureText - ((gl.L(55.0f) * uptimeMillis) % measureText)); L7 < f25; L7 += measureText) {
-            canvas2.drawText(str, L7, descent, paint2);
+        setBleed(recyclerView);
+        w(recyclerView, Math.max(0, height) + Math.round(this.V) + this.T, this.N.j0() + this.U);
+        if (recyclerView.isNestedScrollingEnabled()) {
+            return;
         }
-        canvas2.restore();
-        if (this.n == null || this.s != width) {
-            this.s = width;
-            f3 = f2;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            i = saveLayer;
-            f4 = f27;
-            f5 = f49;
-            f6 = L2;
-            f7 = L;
-            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, f25, 0.0f, new int[]{0, -16777216, -16777216, 0}, new float[]{0.0f, 0.22f, 0.78f, 1.0f}, tileMode);
-            this.n = linearGradient3;
-            this.c.setShader(linearGradient3);
-            LinearGradient linearGradient4 = new LinearGradient(f3, 0.0f, f3 + 1.0f, 0.0f, bm2.f(0.22f, i4, -1), bm2.f(0.22f, i4, -1), tileMode);
-            this.r = linearGradient4;
-            paint2.setShader(linearGradient4);
-        } else {
-            f3 = f2;
-            f5 = f49;
-            f6 = L2;
-            i = saveLayer;
-            f4 = f27;
-            f7 = L;
+        recyclerView.setNestedScrollingEnabled(true);
+    }
+
+    public final boolean c() {
+        vic vicVar = this.I;
+        return (vicVar == null || vicVar.getCurrentView() == null || Float.isInfinite(p()) || this.c0 >= ((float) getHeight())) ? false : true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0059, code lost:
+    
+        if (r5.E.f == false) goto L29;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d(Canvas canvas, RectF rectF, vka vkaVar) {
+        if (this.I != null && this.P != null && this.J.getVisibility() == 0 && this.I.getVisibility() == 0) {
+            for (View view : this.I.getViewPages()) {
+                if (view != null && view.getParent() == this.I && view.getVisibility() == 0) {
+                    vkaVar.c(canvas, rectF, this.P.h(view));
+                }
+            }
         }
-        int i5 = i4;
-        float f50 = 3.0f;
-        float f51 = descent;
-        float f52 = f5;
-        canvas2.drawRect(0.0f, 0.0f, f25, f4, this.c);
-        canvas2.restoreToCount(i);
-        long uptimeMillis2 = SystemClock.uptimeMillis();
-        long j = this.E;
-        if (j == 0) {
-            min = 16;
-            f8 = f;
-        } else {
-            f8 = f;
-            min = Math.min(64L, uptimeMillis2 - j);
+        d79 d79Var = this.F;
+        if (d79Var == null || d79Var.getVisibility() != 0) {
+            return;
         }
-        this.E = uptimeMillis2;
-        fk0 fk0Var = this.x;
-        float f53 = fk0Var.a;
-        fk0 fk0Var2 = this.y;
-        if (f53 == 0.0f) {
-            fk0Var2.a = gl.L(1.0f) + f7;
-            f9 = 0.6f;
-            fk0Var2.b = (gl.L(12.0f) * 0.6f) + gl.L(1.0f) + f7;
-            fk0Var.a = gl.L(3.0f) + f7;
-            fk0Var.b = (gl.L(10.0f) * 0.6f) + gl.L(3.0f) + f7;
-            fk0Var2.b();
-            fk0Var.b();
-            fk0Var.d.setColor(bm2.o(i5, 48));
-            fk0Var2.d.setColor(bm2.o(i5, 72));
-        } else {
-            f9 = 0.6f;
+        float x = this.e0 ? this.M.getX() : 0.0f;
+        if (x == 0.0f) {
+            vkaVar.c(canvas, rectF, this.F);
+            return;
         }
-        float a = (a(-f6) * f9) + 0.25f;
-        fk0Var.d(true, a);
-        fk0Var2.d(false, a);
-        fk0Var.f(min);
-        fk0Var2.f(min);
-        fk0Var.e(fk0Var.t, 1.01f);
-        fk0Var2.e(fk0Var2.t, 1.02f);
-        canvas2.save();
-        float f54 = (fk0Var.t * 0.5f) + 0.878f;
-        float f55 = f8;
-        canvas2.scale(f54, f54, f55, f52);
-        fk0Var.a(f55, f52, canvas2, fk0Var.d);
-        canvas2.restore();
-        canvas2.save();
-        float f56 = (fk0Var2.t * 0.5f) + 0.926f;
-        canvas2.scale(f56, f56, f55, f52);
-        fk0Var2.a(f55, f52, canvas2, fk0Var2.d);
-        canvas2.restore();
-        int i6 = 0;
-        while (i6 < 96) {
-            double d = i6;
-            int i7 = i5;
-            float abs2 = (float) (Math.abs(Math.sin(78.233d * d) * 43758.5453d) % 1.0d);
-            float abs3 = (float) (Math.abs(Math.sin((d * 12.9898d) + 4.1d) * 43758.5453d) % 1.0d);
-            float f57 = (((abs3 * 7.0f) + uptimeMillis) / ((1.6f * abs2) + 2.4f)) % f48;
-            float f58 = abs3 > 0.5f ? f48 : -1.0f;
-            if (f57 < 0.55f) {
-                float f59 = f57 / 0.55f;
-                float f60 = f50;
-                float f61 = f59 * f59;
-                f10 = f55;
-                float g = oo1.g(abs2, 0.4f, f9, ((1.25f * f61) + 0.15f) * f58 * 3.1415927f, 3.1415927f);
-                f12 = 0.4f;
-                f13 = f9;
-                float A = tb4.A(f48, f61, (gl.L(18.0f) * abs2) + gl.L(34.0f), gl.L(4.0f) + f7);
-                double d2 = g;
-                f11 = uptimeMillis;
-                float cos = (((float) Math.cos(d2)) * A) + f10;
-                float sin = f52 - (((abs2 * 0.2f) + 0.62f) * (((float) Math.sin(d2)) * A));
-                float L8 = (L3 - gl.L(6.0f)) - (gl.L(26.0f) * abs2);
-                float g2 = oo1.g(gl.L(13.0f), abs3, gl.L(f60), f58, f52);
-                float min2 = Math.min(1.0f, f59 / 0.35f);
-                f14 = f51;
-                f48 = 1.0f;
-                float B = yjb.B(min2, 2.0f, f60, min2 * min2);
-                float A2 = tb4.A(cos, L8, B, L8);
-                f17 = tb4.A(sin, g2, B, g2);
-                f16 = A2;
-                f15 = abs2;
+        RectF rectF2 = this.s;
+        rectF2.set(rectF);
+        rectF2.offset(-x, 0.0f);
+        int save = canvas.save();
+        try {
+            canvas.translate(x, 0.0f);
+            vkaVar.c(canvas, rectF2, this.F);
+        } finally {
+            canvas.restoreToCount(save);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        wka wkaVar;
+        if (motionEvent.getActionMasked() == 0) {
+            if (this.a) {
+                this.n++;
+                this.e = 0L;
+                wkaVar = this;
+                wkaVar.f("TOUCH_DOWN", null, 0, 0, true);
             } else {
-                f10 = f55;
-                f11 = uptimeMillis;
-                f12 = 0.4f;
-                f13 = f9;
-                f14 = f51;
-                float f62 = (f57 - 0.55f) / 0.45f;
-                float f63 = f48 - f62;
-                float f64 = f48 - (f63 * f63);
-                float L9 = (gl.L(16.0f) * f64) + gl.L(3.0f) + f7;
-                double d3 = (f48 - f64) * f58 * 0.55f * 3.1415927f;
-                f15 = abs2;
-                float cos2 = (((float) Math.cos(d3)) * L9) + f10;
-                float v = oo1.v((float) Math.sin(d3), L9, 0.7f, f52);
-                float f65 = f62 * f62;
-                float L10 = cos2 + ((((gl.L(26.0f) * f15) + (f3 + gl.L(8.0f))) - cos2) * f65);
-                float L11 = (((((abs3 - 0.5f) * gl.L(4.0f)) + (f14 - gl.L(6.0f))) - v) * f65) + v;
-                f16 = L10;
-                f17 = L11;
+                wkaVar = this;
             }
-            float sin2 = (float) Math.sin(f57 * 3.141592653589793d);
-            i5 = i7;
-            int f66 = bm2.f((abs3 * 0.25f) + 0.12f, i5, -1);
-            Paint paint3 = this.d;
-            paint3.setColor(f66);
-            if (f15 > 0.87f) {
-                e = gl.N(1.1f);
-                float sin3 = (((float) Math.sin((f11 * 6.0f) + i6)) * f12) + f13;
-                paint3.setAlpha((int) (70.0f * sin2 * sin3));
-                canvas2.drawCircle(f16, f17, 3.2f * e, paint3);
-                paint3.setAlpha((int) (sin2 * 255.0f * sin3));
-                paint3.setStrokeWidth(gl.N(f13));
-                f20 = 3.0f;
-                float f67 = e * 3.0f * sin3;
-                i2 = i6;
-                float f68 = f17;
-                f19 = f10;
-                canvas2.drawLine(f16 - f67, f68, f16 + f67, f17, paint3);
-                float f69 = f16;
-                f18 = f16;
-                f21 = f68;
-                canvas2 = canvas;
-                canvas2.drawLine(f18, f68 - f67, f69, f68 + f67, paint3);
-                f22 = f13;
-            } else {
-                i2 = i6;
-                f18 = f16;
-                f19 = f10;
-                f20 = 3.0f;
-                f21 = f17;
-                f22 = f13;
-                e = oo1.e(f22, f15, gl.N(0.5f));
+            wkaVar.B();
+        } else {
+            wkaVar = this;
+            if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
+                wkaVar.f(motionEvent.getActionMasked() == 1 ? "TOUCH_UP" : "TOUCH_CANCEL", null, 0, 0, true);
             }
-            paint3.setAlpha((int) yjb.z(f15, 0.55f, 0.45f, sin2 * 255.0f));
-            canvas2.drawCircle(f18, f21, e, paint3);
-            i6 = i2 + 1;
-            f9 = f22;
-            f55 = f19;
-            f51 = f14;
-            f50 = f20;
-            uptimeMillis = f11;
         }
-        float f70 = f55;
-        canvas2.drawCircle(f70, f52, f7, this.a);
-        float L12 = gl.L(30.0f) / 2.0f;
-        Drawable drawable = this.f;
-        drawable.setBounds((int) (f70 - L12), (int) (f52 - L12), (int) (f70 + L12), (int) (f52 + L12));
-        drawable.draw(canvas2);
-        invalidate();
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final void e(String str, View view, int i, int i2) {
+        if (this.a) {
+            long uptimeMillis = SystemClock.uptimeMillis();
+            if (uptimeMillis - this.e < 250) {
+                return;
+            }
+            this.e = uptimeMillis;
+            f(str.concat(i2 == 0 ? "_TOUCH" : "_NON_TOUCH"), view, i, i, true);
+        }
+    }
+
+    public final void f(String str, View view, int i, int i2, boolean z) {
+        uka ukaVar;
+        if (this.a) {
+            long uptimeMillis = SystemClock.uptimeMillis();
+            if (!z) {
+                if (uptimeMillis - this.d < 250) {
+                    return;
+                } else {
+                    this.d = uptimeMillis;
+                }
+            }
+            vic vicVar = this.I;
+            int i3 = 0;
+            View view2 = null;
+            View view3 = vicVar == null ? null : vicVar.getViewPages()[0];
+            vic vicVar2 = this.I;
+            View view4 = vicVar2 == null ? null : vicVar2.getViewPages()[1];
+            StringBuilder sb = new StringBuilder("root=");
+            sb.append(Integer.toHexString(System.identityHashCode(this)));
+            sb.append(" gesture=");
+            sb.append(this.n);
+            sb.append(" transition=");
+            sb.append(this.r);
+            sb.append(" event=");
+            sb.append(str);
+            sb.append(" target=");
+            sb.append(h(view));
+            sb.append(" dy=");
+            sb.append(i);
+            sb.append(" used=");
+            sb.append(i2);
+            sb.append(" transitioning=");
+            sb.append(this.e0);
+            sb.append(" progress=");
+            sb.append(this.E.e);
+            sb.append(" ageMs=");
+            sb.append(this.e0 ? uptimeMillis - this.f : 0L);
+            sb.append(" unchangedMs=");
+            sb.append(this.e0 ? uptimeMillis - this.h : 0L);
+            sb.append(" depth=");
+            sb.append(this.R);
+            sb.append(" updating=");
+            sb.append(this.d0);
+            sb.append(" callback=");
+            sb.append(h(this.Q));
+            sb.append(" common=");
+            sb.append(h(this.F));
+            sb.append(" active=");
+            sb.append(h(this.G));
+            sb.append(" current=");
+            sb.append(h(view3));
+            sb.append(" other=");
+            sb.append(h(view4));
+            sb.append(" source=");
+            sb.append(h(this.L));
+            sb.append(" incoming=");
+            sb.append(h(this.M));
+            sb.append(" boundary=");
+            sb.append(p());
+            sb.append(" pin=");
+            sb.append(this.V);
+            sb.append(" tail=");
+            sb.append(this.b0);
+            sb.append(" alignPending=");
+            sb.append(this.h0);
+            ska skaVar = this.O;
+            int i4 = -1;
+            int c = skaVar == null ? -1 : skaVar.c();
+            d79 d79Var = this.F;
+            q79 layoutManager = d79Var == null ? null : d79Var.getLayoutManager();
+            if (layoutManager != null && c != -1) {
+                view2 = layoutManager.m(c);
+            }
+            StringBuilder m = uh9.m(c, " row=", " anchor=");
+            m.append(h(view2));
+            m.append(" anchorTop=");
+            m.append(view2 == null ? 0 : view2.getTop());
+            m.append(" anchorHeight=");
+            m.append(view2 == null ? 0 : view2.getHeight());
+            m.append(" decoratedTop=");
+            if (view2 != null) {
+                layoutManager.getClass();
+                i3 = q79.y(view2);
+            }
+            m.append(i3);
+            m.append(" adapterPosition=");
+            if (view2 != null) {
+                this.F.getClass();
+                i4 = RecyclerView.S(view2);
+            }
+            m.append(i4);
+            m.append(" pageOffset=");
+            RecyclerView recyclerView = this.G;
+            m.append((recyclerView == null || (ukaVar = this.P) == null) ? 0.0f : ukaVar.b(recyclerView));
+            m.append(" tabsTop=");
+            m.append(this.c0);
+            m.append(" draw=");
+            m.append(this.c);
+            sb.append(m.toString());
+            Log.d("SiblingScroll", sb.toString());
+        }
+    }
+
+    public final void g(String str) {
+        f(str, this.I, 0, 0, true);
+    }
+
+    public int getBottomBleed() {
+        return this.U;
+    }
+
+    @Override // android.view.ViewGroup
+    public int getNestedScrollAxes() {
+        return this.x.b();
+    }
+
+    public float getTabsTop() {
+        return this.c0;
+    }
+
+    public int getTopBleed() {
+        return this.T;
+    }
+
+    public final void i(String str) {
+        wka wkaVar;
+        if (this.a) {
+            wkaVar = this;
+            wkaVar.f("TRANSITION_END_".concat(str), null, 0, 0, true);
+        } else {
+            wkaVar = this;
+        }
+        wkaVar.e0 = false;
+        wkaVar.M = null;
+        wkaVar.L = null;
+        wkaVar.w.invalidate();
+    }
+
+    @Override // al7
+    public final void k(int i, View view) {
+        f(i == 0 ? "NESTED_STOP_TOUCH" : "NESTED_STOP_NON_TOUCH", view, 0, 0, true);
+        l09 l09Var = this.x;
+        if (i == 1) {
+            l09Var.c = 0;
+        } else {
+            l09Var.b = 0;
+        }
+    }
+
+    @Override // bl7
+    public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
+        d79 d79Var;
+        if (this.R != 0 || (view != (d79Var = this.F) && view != this.G)) {
+            f("POST_IGNORED", view, i4, 0, false);
+            return;
+        }
+        if (this.e0) {
+            e("POST_BLOCKED", view, i4, i5);
+            iArr[1] = iArr[1] + i4;
+            return;
+        }
+        this.Q = view;
+        try {
+            i09 i09Var = this.j0;
+            int i6 = 0;
+            boolean z = view == d79Var;
+            if (z && i2 > 0 && i4 > 0) {
+                wka wkaVar = (wka) i09Var.b;
+                ska skaVar = wkaVar.O;
+                if (skaVar != null && skaVar.c() != -1) {
+                    i6 = wkaVar.u(wkaVar.G, i4);
+                }
+            } else if (!z && i4 < 0) {
+                wka wkaVar2 = (wka) i09Var.b;
+                i6 = wkaVar2.u(wkaVar2.F, i4);
+            }
+            iArr[1] = iArr[1] + i6;
+            f("POST", view, i4, i6, false);
+        } finally {
+            this.Q = null;
+            C();
+        }
+    }
+
+    @Override // al7
+    public final void m(View view, int i, int i2, int i3, int i4, int i5) {
+        int[] iArr = this.y;
+        iArr[1] = 0;
+        iArr[0] = 0;
+        l(view, i, i2, i3, i4, i5, iArr);
+    }
+
+    @Override // al7
+    public final boolean n(View view, View view2, int i, int i2) {
+        boolean z = false;
+        boolean z2 = (i & 2) != 0;
+        if (this.R == 0 && z2 && (view2 == this.F || view2 == this.G)) {
+            z = true;
+        }
+        if (this.a) {
+            f((z ? "NESTED_START" : "NESTED_REJECT") + "_axes=" + i + "_type=" + i2, view2, 0, 0, true);
+        }
+        return z;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x000f, code lost:
+    
+        if (r3.E.f == false) goto L6;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean o(float f, float f2) {
+        float f3;
+        if (this.e0) {
+            f3 = this.M.getX();
+        }
+        f3 = 0.0f;
+        return f2 >= 0.0f && f2 < this.b0 && f >= Math.max(0.0f, f3) && f < Math.min((float) getWidth(), f3 + ((float) getWidth()));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.l0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        B();
+        getViewTreeObserver().removeOnPreDrawListener(this.l0);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onNestedFling(View view, float f, float f2, boolean z) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onNestedPreFling(View view, float f, float f2) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedPreScroll(View view, int i, int i2, int[] iArr) {
+        r(view, i, i2, iArr, 0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i, int i2, int i3, int i4) {
+        m(view, i, i2, i3, i4, 0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScrollAccepted(View view, View view2, int i) {
+        q(view, view2, i, 0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onStartNestedScroll(View view, View view2, int i) {
+        return n(view, view2, i, 0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+        k(0, view);
+    }
+
+    public final float p() {
+        View m;
+        d79 d79Var = this.F;
+        if (d79Var == null || this.O == null || d79Var.getLayoutManager() == null) {
+            return Float.POSITIVE_INFINITY;
+        }
+        q79 layoutManager = this.F.getLayoutManager();
+        int c = this.O.c();
+        if (c == -1 || (m = layoutManager.m(c)) == null) {
+            return Float.POSITIVE_INFINITY;
+        }
+        return (q79.y(m) + this.F.getTop()) - ((ViewGroup.MarginLayoutParams) ((r79) m.getLayoutParams())).topMargin;
+    }
+
+    @Override // al7
+    public final void q(View view, View view2, int i, int i2) {
+        l09 l09Var = this.x;
+        if (i2 == 1) {
+            l09Var.c = i;
+        } else {
+            l09Var.b = i;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0042, code lost:
+    
+        if (r9 <= 0.5f) goto L21;
+     */
+    @Override // al7
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void r(View view, int i, int i2, int[] iArr, int i3) {
+        d79 d79Var;
+        if (this.R != 0 || (view != (d79Var = this.F) && view != this.G)) {
+            f("PRE_IGNORED", view, i2, 0, false);
+            return;
+        }
+        if (this.e0) {
+            e("PRE_BLOCKED", view, i2, i3);
+            iArr[1] = iArr[1] + i2;
+            return;
+        }
+        this.Q = view;
+        try {
+            i09 i09Var = this.j0;
+            int i4 = 0;
+            if (view == d79Var) {
+                if (i2 >= 0) {
+                    wka wkaVar = (wka) i09Var.b;
+                    float p = wkaVar.p();
+                    if (!Float.isInfinite(p)) {
+                        p = Math.max(0.0f, p - wkaVar.V);
+                    }
+                }
+                wka wkaVar2 = (wka) i09Var.b;
+                ska skaVar = wkaVar2.O;
+                if (skaVar != null && skaVar.c() != -1) {
+                    i4 = wkaVar2.u(wkaVar2.G, i2);
+                }
+            } else if (i2 > 0) {
+                wka wkaVar3 = (wka) i09Var.b;
+                float p2 = wkaVar3.p();
+                if (!Float.isInfinite(p2)) {
+                    p2 = Math.max(0.0f, p2 - wkaVar3.V);
+                }
+                int min = Float.isInfinite(p2) ? i2 : Math.min(i2, Math.max(0, Math.round(p2)));
+                wka wkaVar4 = (wka) i09Var.b;
+                i4 = wkaVar4.u(wkaVar4.F, min);
+            }
+            iArr[1] = iArr[1] + i4;
+            f("PRE", view, i2, i4, false);
+        } finally {
+            this.Q = null;
+            C();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00e2  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void s() {
+        vic vicVar;
+        wka wkaVar;
+        View view;
+        if (this.d0 || (vicVar = this.I) == null || this.P == null || this.N == null) {
+            return;
+        }
+        View[] viewPages = vicVar.getViewPages();
+        boolean z = false;
+        View view2 = viewPages[0];
+        View view3 = viewPages[1];
+        vic vicVar2 = this.I;
+        if (vicVar2 instanceof h79) {
+            h79 h79Var = (h79) vicVar2;
+            if (view2 != null && view3 != null && view2 == h79Var.b0 && view3 == h79Var.c0 && !h79Var.I && view2.getTranslationX() == 0.0f && view2.getMeasuredWidth() > 0 && Math.abs(view3.getTranslationX()) >= view2.getMeasuredWidth()) {
+                z = true;
+            }
+        }
+        if (this.e0 && z) {
+            i("drag_aborted");
+        }
+        if (this.e0 && (view3 == null || ((view2 != (view = this.L) && view2 != this.M) || (view3 != view && view3 != this.M)))) {
+            i("page_slots_changed");
+        }
+        t();
+        boolean z2 = this.e0;
+        d26 d26Var = this.w;
+        g79 g79Var = this.E;
+        if (!z2 && !z && view2 != null && view3 != null) {
+            float p = p();
+            if (!Float.isInfinite(p)) {
+                D();
+                B();
+                this.L = view2;
+                this.M = view3;
+                float f = this.V;
+                if (p <= 0.5f + f) {
+                    p = f;
+                }
+                uka ukaVar = this.P;
+                g79Var.a(p, ukaVar.b(ukaVar.h(view2)), this.V, this.W);
+                this.e0 = true;
+                if (this.a) {
+                    this.r++;
+                    long uptimeMillis = SystemClock.uptimeMillis();
+                    this.f = uptimeMillis;
+                    this.h = uptimeMillis;
+                    this.e = 0L;
+                    wkaVar = this;
+                    wkaVar.f("TRANSITION_BEGIN", view2, 0, 0, true);
+                } else {
+                    wkaVar = this;
+                }
+                d26Var.invalidate();
+                if (wkaVar.e0) {
+                    float max = Math.max(1, wkaVar.L.getWidth());
+                    float f2 = g79Var.e;
+                    float max2 = Math.max(0.0f, Math.min(1.0f, Math.abs(wkaVar.L.getTranslationX()) / max));
+                    g79Var.e = max2;
+                    if (f2 != max2) {
+                        d26Var.invalidate();
+                        if (wkaVar.a) {
+                            wkaVar.h = SystemClock.uptimeMillis();
+                        }
+                    }
+                }
+                wkaVar.C();
+            }
+        }
+        wkaVar = this;
+        if (wkaVar.e0) {
+        }
+        wkaVar.C();
+    }
+
+    public void setCommonInsetsManagedExternally(boolean z) {
+        if (this.i0 == z) {
+            return;
+        }
+        this.i0 = z;
+        C();
+        requestLayout();
+    }
+
+    public void setDebugLoggingEnabled(boolean z) {
+        this.a = z;
+        if (z) {
+            this.d = 0L;
+            this.e = 0L;
+            long uptimeMillis = SystemClock.uptimeMillis();
+            this.f = uptimeMillis;
+            this.h = uptimeMillis;
+            f("DEBUG_ENABLED", null, 0, 0, true);
+        }
+    }
+
+    public void setGeometry(tka tkaVar) {
+        this.N = tkaVar;
+        requestLayout();
+        C();
+    }
+
+    public final void t() {
+        vic vicVar = this.I;
+        RecyclerView h = (vicVar == null || this.P == null || vicVar.getCurrentView() == null) ? null : this.P.h(this.I.getCurrentView());
+        if (h != this.G) {
+            f("ACTIVE_CHANGE", h, 0, 0, true);
+            RecyclerView recyclerView = this.G;
+            e98 e98Var = this.k0;
+            if (recyclerView != null) {
+                recyclerView.E0();
+                ArrayList arrayList = this.G.x0;
+                if (arrayList != null) {
+                    arrayList.remove(e98Var);
+                }
+            }
+            this.G = h;
+            if (h != null) {
+                h.j(e98Var);
+            }
+        }
+    }
+
+    public final int u(RecyclerView recyclerView, int i) {
+        if (recyclerView == null || i == 0) {
+            if (i != 0) {
+                f("TRANSFER_NO_TARGET", recyclerView, i, 0, false);
+            }
+            return 0;
+        }
+        if (recyclerView == this.Q) {
+            f("TRANSFER_REENTRY", recyclerView, i, 0, true);
+            grb.i("Reentrant scrollBy on nested source");
+            return 0;
+        }
+        RecyclerView recyclerView2 = this.H;
+        int i2 = this.S;
+        this.H = recyclerView;
+        this.S = 0;
+        this.R++;
+        try {
+            recyclerView.scrollBy(0, i);
+            int i3 = this.S;
+            int max = i > 0 ? Math.max(0, Math.min(i, i3)) : Math.min(0, Math.max(i, i3));
+            f(i3 == 0 ? "TRANSFER_ZERO" : "TRANSFER", recyclerView, i, max, false);
+            return max;
+        } finally {
+            this.R--;
+            this.H = recyclerView2;
+            this.S = i2;
+        }
+    }
+
+    public final void v(d79 d79Var, ska skaVar) {
+        d79 d79Var2 = this.F;
+        d26 d26Var = this.w;
+        e98 e98Var = this.k0;
+        if (d79Var2 != null) {
+            d79Var2.E0();
+            ArrayList arrayList = this.F.x0;
+            if (arrayList != null) {
+                arrayList.remove(e98Var);
+            }
+            d26Var.removeView(this.F);
+        }
+        this.F = d79Var;
+        this.O = skaVar;
+        d26Var.addView(d79Var, new FrameLayout.LayoutParams(-1, -1));
+        d79Var.j(e98Var);
+        d79Var.setNestedScrollingEnabled(true);
+        C();
+    }
+
+    public final void x(View view, float f) {
+        if (view == null) {
+            return;
+        }
+        this.P.h(view).setTranslationY((f + this.V) - Math.round(r1));
+    }
+
+    public final void y(View view, vic vicVar, uka ukaVar) {
+        View view2 = this.J;
+        if (view2 != null) {
+            removeView(view2);
+        }
+        this.J = view;
+        this.I = vicVar;
+        this.P = ukaVar;
+        addView(view, 0, new FrameLayout.LayoutParams(-1, -1));
+        C();
+    }
+
+    public final void z(View view) {
+        View view2 = this.K;
+        if (view2 != null) {
+            removeView(view2);
+        }
+        this.K = view;
+        addView(view, new FrameLayout.LayoutParams(-1, -2, 48));
+        C();
     }
 }

@@ -14,7 +14,7 @@ import java.util.Set;
 import org.json.JSONObject;
 import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class mp0 {
     public static final HashMap g = new HashMap();
@@ -42,7 +42,7 @@ public final class mp0 {
                         this.e.add(lp0Var);
                     }
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    cc4.g(e, true);
                 }
             }
         }
@@ -103,7 +103,7 @@ public final class mp0 {
     }
 
     public final void e() {
-        kk7.f(this.b).k(kk7.L3, new Object[0]);
+        jn7.f(this.b).k(jn7.M3, new Object[0]);
     }
 
     public final void f() {
@@ -128,7 +128,7 @@ public final class mp0 {
                 jSONObject.put("done", lp0Var.h);
                 jSONObject.put("mime", lp0Var.e);
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
             hashSet.add(jSONObject.toString());
         }

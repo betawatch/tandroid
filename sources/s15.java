@@ -1,30 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class s15 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x15 b;
-    public final /* synthetic */ String c;
+import java.util.HashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-    public /* synthetic */ s15(x15 x15Var, String str, byte b) {
-        this.a = b;
-        this.b = x15Var;
-        this.c = str;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class s15 implements RequestDelegate {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ fn7 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+
+    public /* synthetic */ s15(uc7 uc7Var, HashMap hashMap, String str, zh6 zh6Var, long j, int i) {
+        this.d = uc7Var;
+        this.e = hashMap;
+        this.f = str;
+        this.g = zh6Var;
+        this.b = j;
+        this.c = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        String str = this.c;
-        x15 x15Var = this.b;
+        Object obj = this.g;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        fn7 fn7Var = this.d;
         switch (b) {
             case 0:
-                x15Var.a(str);
+                hl.c3(new as0(tL_error, tLObject, (TwoStepVerificationActivity) fn7Var, (e) obj3, this.b, (qs0) obj2, (wy) obj, this.c));
                 break;
             default:
-                x15Var.a(str);
+                hl.c3(new qe((uc7) fn7Var, (HashMap) obj3, (String) obj2, tLObject, (zh6) obj, this.b, this.c));
                 break;
         }
+    }
+
+    public /* synthetic */ s15(TwoStepVerificationActivity twoStepVerificationActivity, e eVar, long j, qs0 qs0Var, wy wyVar, int i) {
+        this.d = twoStepVerificationActivity;
+        this.e = eVar;
+        this.b = j;
+        this.f = qs0Var;
+        this.g = wyVar;
+        this.c = i;
     }
 }

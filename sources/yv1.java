@@ -1,75 +1,136 @@
 // default package
 
-import android.graphics.RectF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.DataSettingsActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.NotificationsCustomSettingsActivity;
+import org.telegram.ui.NotificationsSettingsActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.StickersActivity;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yv1 implements gj, zw5, b3c {
-    public final /* synthetic */ Object a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ gk7 c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class yv1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e b;
 
-    public /* synthetic */ yv1(mu1 mu1Var, k27 k27Var, z3a z3aVar, TL_keyboard.KeyboardButtonProto keyboardButtonProto, TwoStepVerificationActivity twoStepVerificationActivity, boolean z) {
-        this.c = z3aVar;
-        this.b = z;
-        this.d = k27Var;
-        this.a = keyboardButtonProto;
-        this.e = twoStepVerificationActivity;
-        this.f = mu1Var;
+    public /* synthetic */ yv1(e eVar, byte b) {
+        this.a = b;
+        this.b = eVar;
     }
 
-    @Override // zw5
-    public final void a(String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
-        String[] strArr = (String[]) this.d;
-        boolean[] zArr = (boolean[]) this.e;
-        String str2 = (String) this.a;
-        qt qtVar = (qt) this.f;
-        RectF rectF = ProfileActivity.Z6;
-        strArr[0] = str;
-        zArr[0] = str != null && (!str.equals(str2) || str.equals("und")) && ((this.b && !qa9.b0().contains(str)) || ((chat = profileActivity.F2) != null && ((chat.has_link || hc2.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
-        qtVar.run();
-    }
-
-    @Override // b3c
-    public final void g(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((z3a) this.c).m0(this.b, (k27) this.d, (TL_keyboard.KeyboardButtonProto) this.a, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.e, (mu1) this.f);
-    }
-
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        TLRPC.Document document = (TLRPC.Document) this.d;
-        String str = (String) this.a;
-        g27 g27Var = (g27) this.f;
-        int i3 = ChatActivityEnterView.r7;
-        chatActivityEnterView.e(document, str, this.e, g27Var, this.b, z, i, i2);
-    }
-
-    public /* synthetic */ yv1(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, g27 g27Var, boolean z) {
-        this.c = chatActivityEnterView;
-        this.d = document;
-        this.a = str;
-        this.e = obj;
-        this.f = g27Var;
-        this.b = z;
-    }
-
-    public /* synthetic */ yv1(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z, qt qtVar) {
-        this.c = profileActivity;
-        this.d = strArr;
-        this.e = zArr;
-        this.a = str;
-        this.b = z;
-        this.f = qtVar;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        e eVar = this.b;
+        switch (b) {
+            case 0:
+                int i = ChatActivityEnterView.X7;
+                if (eVar == null) {
+                    if (eVar.getContext() instanceof LaunchActivity) {
+                        ((LaunchActivity) eVar.getContext()).t0(new PremiumPreviewFragment(0, null));
+                        break;
+                    }
+                } else {
+                    new xk8(eVar, 11, false).show();
+                    break;
+                }
+                break;
+            case 1:
+                eVar.presentFragment(new StickersActivity(0, null));
+                break;
+            case 2:
+                eVar.presentFragment(new uqc());
+                break;
+            case 3:
+                bg0 bg0Var = new bg0();
+                bg0Var.a = true;
+                eVar.showAsSheet(new PremiumPreviewFragment(0, "effect"), bg0Var);
+                break;
+            case 4:
+                ThemeActivity themeActivity = new ThemeActivity(0);
+                themeActivity.V0 = true;
+                eVar.presentFragment(themeActivity);
+                break;
+            case 5:
+                if (eVar instanceof PremiumPreviewFragment) {
+                    PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) eVar;
+                    premiumPreviewFragment.q0 = true;
+                    premiumPreviewFragment.getMediaDataController().T0(false);
+                    premiumPreviewFragment.a.A0(0);
+                } else {
+                    PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, null);
+                    premiumPreviewFragment2.q0 = true;
+                    if (eVar != null) {
+                        eVar.presentFragment(premiumPreviewFragment2);
+                    } else {
+                        e S = LaunchActivity.S();
+                        if (S != null) {
+                            S.presentFragment(premiumPreviewFragment2);
+                        }
+                    }
+                }
+                if (eVar != null && (eVar.getParentActivity() instanceof LaunchActivity)) {
+                    try {
+                        eVar.getFragmentView().performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    ((LaunchActivity) eVar.getParentActivity()).w0.c(false);
+                    break;
+                }
+                break;
+            case 6:
+                eVar.presentFragment(new DataSettingsActivity());
+                break;
+            case 7:
+            case 8:
+            case 13:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+            case 22:
+            case 24:
+            case 25:
+            case 26:
+            case 28:
+            default:
+                uh9.o(0, eVar);
+                break;
+            case 9:
+                eVar.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 10:
+                eVar.presentFragment(new WallpapersListActivity(1));
+                break;
+            case 11:
+                eVar.presentFragment(new NotificationsCustomSettingsActivity(2, new ArrayList(), null, true));
+                break;
+            case 12:
+                eVar.presentFragment(new WallpapersListActivity(0));
+                break;
+            case 14:
+            case 15:
+                uh9.o(3, eVar);
+                break;
+            case 16:
+                xk8 xk8Var = new xk8(eVar, 5, false);
+                xk8Var.G0();
+                eVar.showDialog(xk8Var);
+                break;
+            case 21:
+                uh9.o(1, eVar);
+                break;
+            case 23:
+                eVar.presentFragment(new NotificationsSettingsActivity());
+                break;
+            case 27:
+                eVar.presentFragment(new NotificationsSettingsActivity());
+                break;
+        }
     }
 }

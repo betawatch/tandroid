@@ -1,46 +1,13 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class i4a extends us4 implements is4 {
+    public static final i4a a = new i4a(2, l4a.class, "createSegment", "createSegment(JLkotlinx/coroutines/sync/SemaphoreSegment;)Lkotlinx/coroutines/sync/SemaphoreSegment;", 1);
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class i4a extends LinearLayout {
-    public final bia a;
-    public final TextView b;
-    public final TextView c;
-
-    public i4a(Context context, wjb wjbVar) {
-        super(context);
-        setLayoutParams(new e49(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int L = gl.L(14.0f);
-        int i = L / 2;
-        setPadding(L, i, L, i);
-        bia biaVar = new bia(context);
-        this.a = biaVar;
-        addView(biaVar, nme.c(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, nme.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i2 = bkb.D8;
-        zkb.X(textView, i2, wjbVar);
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        zkb.Y(textView2, zkb.g(i2, kk7.m1), wjbVar);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    @Override // is4
+    public final Object invoke(Object obj, Object obj2) {
+        int i = l4a.a;
+        return new m4a(((Number) obj).longValue(), (m4a) obj2, 0);
     }
 }

@@ -1,35 +1,104 @@
 // default package
 
-import j$.util.Objects;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class nf5 {
-    public final fm4 a;
-    public final String b;
-    public final String c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class nf5 extends n9c {
+    public boolean e;
 
-    public nf5(fm4 fm4Var, String str, String str2) {
-        em4 a = fm4Var.a();
-        a.a = null;
-        a.l = null;
-        this.a = new fm4(a);
-        this.b = str;
-        this.c = str2;
+    @Override // n9c
+    public final void Y(ArrayList arrayList, l9c l9cVar) {
+        mla mlaVar = (mla) phd.j.a();
+        lla llaVar = (lla) phd.k.a();
+        arrayList.add(b8c.u(ob6.M0(2131749094, null)));
+        b8c x = b8c.x(11, ob6.M0(2131749093, null));
+        x.L(mlaVar == mla.b);
+        arrayList.add(x);
+        b8c x2 = b8c.x(10, ob6.M0(2131749092, null));
+        x2.L(mlaVar == mla.a);
+        arrayList.add(x2);
+        arrayList.add(b8c.C(ob6.M0(2131749091, null)));
+        arrayList.add(b8c.u(ob6.M0(2131749087, null)));
+        b8c x3 = b8c.x(20, ob6.M0(2131749086, null));
+        x3.L(llaVar == lla.a);
+        arrayList.add(x3);
+        b8c x4 = b8c.x(21, ob6.M0(2131749085, null));
+        x4.L(llaVar == lla.b);
+        arrayList.add(x4);
+        arrayList.add(b8c.C(null));
+        arrayList.add(b8c.u(ob6.M0(2131749090, null)));
+        b8c i = b8c.i(30, ob6.M0(2131749089, null));
+        i.L(this.e);
+        arrayList.add(i);
+        arrayList.add(b8c.C(ob6.M0(2131749088, null)));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof nf5)) {
-            return false;
-        }
-        nf5 nf5Var = (nf5) obj;
-        return this.a.equals(nf5Var.a) && Objects.equals(this.b, nf5Var.b) && Objects.equals(this.c, nf5Var.c);
+    @Override // n9c
+    public final CharSequence Z() {
+        return ob6.M0(2131749084, null);
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c);
+    @Override // n9c
+    public final void a0(b8c b8cVar, View view) {
+        int i = b8cVar.d;
+        if (i == 10 || i == 11) {
+            phd.j.b(i == 10 ? mla.a : mla.b);
+            c0();
+        } else if (i == 20 || i == 21) {
+            phd.k.b(i == 21 ? lla.b : lla.a);
+            c0();
+        } else {
+            if (i != 30) {
+                return;
+            }
+            this.e = !this.e;
+            this.simpleActionBar.getDoneButton().a(this.e, true);
+        }
+        this.a.g3.O(true);
+    }
+
+    @Override // n9c
+    public final boolean b0(b8c b8cVar, View view) {
+        return false;
+    }
+
+    public final void c0() {
+        jla jlaVar = this.simpleActionBar;
+        nla nlaVar = jlaVar.n;
+        if (nlaVar != null) {
+            jlaVar.removeView(nlaVar);
+            jlaVar.n = null;
+            jlaVar.l();
+            jlaVar.requestLayout();
+        }
+        this.simpleActionBar.u(ob6.M0(2131745674, null)).a(this.e, false);
+    }
+
+    @Override // n9c, org.telegram.ui.ActionBar.e
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.fragmentView = super.createView(context);
+        this.a.s1();
+        this.a.setSectionsDrawBackground(true);
+        c0();
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final d79 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

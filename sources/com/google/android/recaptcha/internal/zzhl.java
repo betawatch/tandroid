@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.UnknownServiceException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzhl {
     private final HttpURLConnection zza;
@@ -55,7 +55,7 @@ public final class zzhl {
                 }
                 throw new zzcg(zzce.zzi, zzcd.zzJ, null, null, 12, null);
             }
-            byte[] b = cqd.b(zzf());
+            byte[] b = sud.b(zzf());
             if (b.length == 0) {
                 throw new zzcg(zzce.zzc, zzcd.zzaw, null, null, 12, null);
             }

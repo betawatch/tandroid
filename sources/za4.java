@@ -1,13 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class za4 {
-    public final String a;
-    public final String b;
+public final /* synthetic */ class za4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hb4 b;
+    public final /* synthetic */ int c;
 
-    public za4(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public /* synthetic */ za4(hb4 hb4Var, int i, byte b) {
+        this.a = b;
+        this.b = hb4Var;
+        this.c = i;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        hb4 hb4Var = this.b;
+        switch (b) {
+            case 0:
+                vb4 vb4Var = hb4Var.g0;
+                if (vb4Var != null) {
+                    vb4Var.b(hb4Var, i);
+                }
+                hb4Var.g();
+                break;
+            case 1:
+                hb4Var.F0.add(Integer.valueOf(i));
+                break;
+            case 2:
+                hb4Var.F0.remove(Integer.valueOf(i));
+                break;
+            default:
+                hb4Var.F0.remove(Integer.valueOf(i));
+                break;
+        }
     }
 }

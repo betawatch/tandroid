@@ -1,34 +1,10 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum osb extends qsb {
-    public osb() {
-        super("TagOpen", 7);
-    }
-
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char i = zj1Var.i();
-        if (i == '!') {
-            aqbVar.a(qsb.h0);
-            return;
-        }
-        if (i == '/') {
-            aqbVar.a(qsb.n);
-            return;
-        }
-        if (i == '?') {
-            aqbVar.a(qsb.g0);
-            return;
-        }
-        if (zj1Var.o()) {
-            aqbVar.d(true);
-            aqbVar.c = qsb.r;
-        } else {
-            aqbVar.m(this);
-            aqbVar.f('<');
-            aqbVar.c = qsb.a;
-        }
+public final class osb extends psb {
+    @Override // psb
+    public final String toString() {
+        return this.c;
     }
 }

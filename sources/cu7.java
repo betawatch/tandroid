@@ -1,79 +1,76 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.RectF;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class cu7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gu7 b;
-    public final /* synthetic */ d9a c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class cu7 extends ucb {
+    public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
+    public static final byte[] p = {79, 112, 117, 115, 84, 97, 103, 115};
+    public boolean n;
 
-    public /* synthetic */ cu7(gu7 gu7Var, d9a d9aVar, byte b) {
-        this.a = b;
-        this.b = gu7Var;
-        this.c = d9aVar;
+    public static boolean e(ey7 ey7Var, byte[] bArr) {
+        if (ey7Var.a() < bArr.length) {
+            return false;
+        }
+        int i = ey7Var.b;
+        byte[] bArr2 = new byte[bArr.length];
+        ey7Var.k(0, bArr.length, bArr2);
+        ey7Var.N(i);
+        return Arrays.equals(bArr2, bArr);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        d9a d9aVar = this.c;
-        gu7 gu7Var = this.b;
-        switch (b) {
-            case 0:
-                gu7Var.c = d9aVar;
-                RectF rectF = gu7Var.h;
-                if (rectF == null) {
-                    rectF = new RectF();
-                    gu7Var.h = rectF;
+    @Override // ucb
+    public final long b(ey7 ey7Var) {
+        byte[] bArr = ey7Var.a;
+        return (this.i * zue.b(bArr[0], bArr.length > 1 ? bArr[1] : (byte) 0)) / 1000000;
+    }
+
+    @Override // ucb
+    public final boolean c(ey7 ey7Var, long j, k7b k7bVar) {
+        if (e(ey7Var, o)) {
+            byte[] copyOf = Arrays.copyOf(ey7Var.a, ey7Var.c);
+            int i = copyOf[9] & 255;
+            ArrayList a = zue.a(copyOf);
+            if (((ko4) k7bVar.b) == null) {
+                jo4 jo4Var = new jo4();
+                jo4Var.r = dg7.n("audio/ogg");
+                jo4Var.s = dg7.n("audio/opus");
+                jo4Var.M = i;
+                jo4Var.O = 48000;
+                jo4Var.v = a;
+                k7bVar.b = new ko4(jo4Var);
+                return true;
+            }
+        } else {
+            boolean e = e(ey7Var, p);
+            ko4 ko4Var = (ko4) k7bVar.b;
+            if (!e) {
+                ko4Var.getClass();
+                return false;
+            }
+            ko4Var.getClass();
+            if (!this.n) {
+                this.n = true;
+                ey7Var.O(8);
+                uf7 a2 = moc.a(po5.r((String[]) s2f.b(ey7Var, false, false).b));
+                if (a2 != null) {
+                    jo4 a3 = ((ko4) k7bVar.b).a();
+                    a3.l = a2.b(((ko4) k7bVar.b).m);
+                    k7bVar.b = new ko4(a3);
+                    return true;
                 }
-                gu7Var.c.a(rectF);
-                u39 u39Var = gu7Var.a;
-                if (u39Var != null) {
-                    u39Var.i0();
-                    break;
-                }
-                break;
-            default:
-                if (d9aVar != null && gu7Var.q == 0) {
-                    gu7Var.q = cjb.b(gu7Var.g);
-                }
-                byte b2 = 0;
-                if (gu7Var.H == (d9aVar != null)) {
-                    if (d9aVar != gu7Var.d) {
-                        gu7Var.d = d9aVar;
-                        u39 u39Var2 = gu7Var.a;
-                        if (u39Var2 != null) {
-                            u39Var2.i0();
-                            break;
-                        }
-                    }
-                } else {
-                    gu7Var.H = d9aVar != null;
-                    ValueAnimator valueAnimator = gu7Var.K;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                        gu7Var.K = null;
-                    }
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(gu7Var.I, gu7Var.H ? 1.0f : 0.0f);
-                    gu7Var.K = ofFloat;
-                    ofFloat.addUpdateListener(new bu7(gu7Var, b2));
-                    gu7Var.K.addListener(new fu7(gu7Var, b2));
-                    gu7Var.K.setInterpolator(s33.h);
-                    gu7Var.K.start();
-                    gu7Var.d = d9aVar;
-                    u39 u39Var3 = gu7Var.a;
-                    if (u39Var3 != null) {
-                        u39Var3.i0();
-                    }
-                    if (gu7Var.H) {
-                        pw0.y.a();
-                        break;
-                    }
-                }
-                break;
+            }
+        }
+        return true;
+    }
+
+    @Override // ucb
+    public final void d(boolean z) {
+        super.d(z);
+        if (z) {
+            this.n = false;
         }
     }
 }

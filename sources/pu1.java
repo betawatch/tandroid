@@ -1,61 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class pu1 extends FrameLayout {
-    public final wjb a;
-    public ou1 b;
-    public kx2 c;
-    public boolean d;
+public final /* synthetic */ class pu1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qu1 b;
 
-    public pu1(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
+    public /* synthetic */ pu1(qu1 qu1Var, byte b) {
+        this.a = b;
+        this.b = qu1Var;
     }
 
-    public final void a(int i, boolean z) {
-        if (this.c == null) {
-            kx2 kx2Var = new kx2(getContext(), this.a);
-            this.c = kx2Var;
-            kx2Var.setReverse(this.d);
-            addView(this.c, nme.e(-1, 28, 48));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        qu1 qu1Var = this.b;
+        switch (b) {
+            case 0:
+                qu1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = qu1Var.b.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                qu1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view2 = qu1Var.b.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
+                break;
+            default:
+                qu1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view3 = qu1Var.b.fragmentView;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
+                break;
         }
-        this.c.a.c(i, z);
-    }
-
-    public final void b(boolean z, boolean z2) {
-        super.setEnabled(z);
-        this.b.e(z, z2);
-    }
-
-    public final void c(boolean z, boolean z2) {
-        ou1 ou1Var = this.b;
-        if (ou1Var.d == null) {
-            if (!z) {
-                return;
-            }
-            ih2 ih2Var = new ih2(gl.L(18.0f), gl.L(1.7f), -9079435);
-            ou1Var.e = ih2Var;
-            ih2Var.f = 90.0f;
-            ImageView imageView = new ImageView(ou1Var.getContext());
-            ou1Var.d = imageView;
-            imageView.setBackground(ou1Var.e);
-            ou1Var.d.setVisibility(8);
-            ou1Var.addView(ou1Var.d, nme.e(46, 46, 17));
-        }
-        fm0 fm0Var = ou1Var.a;
-        if (!fm0Var.f && fm0Var.e == 0.0f) {
-            ou1Var.e.c = -1L;
-        }
-        fm0Var.a(z, z2);
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z) {
-        b(z, false);
     }
 }

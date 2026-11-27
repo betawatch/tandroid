@@ -1,48 +1,27 @@
 // default package
 
-import android.util.SparseIntArray;
-import org.telegram.ui.ActionBar.d;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class eu1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ku1 b;
+public final class eu1 implements jc7 {
+    public final /* synthetic */ dq1 a;
+    public final /* synthetic */ zu1 b;
+    public final /* synthetic */ ju1 c;
 
-    public /* synthetic */ eu1(ku1 ku1Var, byte b) {
-        this.a = b;
-        this.b = ku1Var;
+    public eu1(ju1 ju1Var, dq1 dq1Var, zu1 zu1Var) {
+        this.c = ju1Var;
+        this.a = dq1Var;
+        this.b = zu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ui5 ui5Var;
-        ui5 ui5Var2;
-        byte b = this.a;
-        ku1 ku1Var = this.b;
-        switch (b) {
-            case 0:
-                ku1Var.e = new SparseIntArray();
-                mu1 mu1Var = ku1Var.G;
-                m17 m17Var = (m17) mu1Var.getThemedDrawable("drawableMsgOut");
-                ku1Var.t = m17Var;
-                ui5Var = ((d) mu1Var).parentLayout;
-                m17Var.J = ui5Var.getMessageDrawableOutStart();
-                m17 m17Var2 = (m17) mu1Var.getThemedDrawable("drawableMsgOutMedia");
-                ku1Var.u = m17Var2;
-                ui5Var2 = ((d) mu1Var).parentLayout;
-                m17Var2.J = ui5Var2.getMessageDrawableOutMediaStart();
-                ku1Var.t.K = 0.0f;
-                ku1Var.u.K = 0.0f;
-                mu1Var.Qc();
-                ku1Var.t(0.0f);
-                break;
-            default:
-                ku1Var.t.J = null;
-                ku1Var.u.J = null;
-                ku1Var.e = null;
-                ku1Var.t(1.0f);
-                break;
-        }
+    @Override // jc7
+    public final void a() {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
+    }
+
+    @Override // jc7
+    public final void l(boolean z) {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 }

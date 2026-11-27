@@ -1,34 +1,60 @@
 // default package
 
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hh1 implements p8c {
+public final class hh1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ lh1 b;
+    public boolean b = false;
+    public final /* synthetic */ fn7 c;
 
-    public /* synthetic */ hh1(lh1 lh1Var, byte b) {
+    public /* synthetic */ hh1(fn7 fn7Var, byte b) {
         this.a = b;
-        this.b = lh1Var;
+        this.c = fn7Var;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        lh1 lh1Var = this.b;
-        View view = (View) obj;
+        fn7 fn7Var = this.c;
         switch (b) {
             case 0:
-                if (view instanceof anb) {
-                    view.setBackgroundColor(bkb.v0(bkb.h5, lh1Var.b));
+                wh1 wh1Var = (wh1) fn7Var;
+                wh1Var.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wh1Var.n0.invalidate();
+                if (!this.b && wh1Var.o0 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 1:
+                h48 h48Var = (h48) fn7Var;
+                h48Var.Z = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h48Var.Y.invalidate();
+                if (!this.b && h48Var.Z > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 2:
+                rbb rbbVar = (rbb) fn7Var;
+                rbbVar.E2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bbb bbbVar = rbbVar.D2;
+                if (bbbVar != null) {
+                    bbbVar.invalidate();
+                }
+                if (!this.b && rbbVar.E2 > 0.5f) {
+                    this.b = true;
                     break;
                 }
                 break;
             default:
-                if (view instanceof anb) {
-                    anb anbVar = (anb) view;
-                    anbVar.setFallbackWallpaper(anbVar.H.a.b ? null : lh1Var.w);
+                pqb pqbVar = (pqb) fn7Var;
+                pqbVar.k2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pqbVar.j2.invalidate();
+                if (!this.b && pqbVar.k2 > 0.5f) {
+                    this.b = true;
                     break;
                 }
                 break;

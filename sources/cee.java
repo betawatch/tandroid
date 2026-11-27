@@ -1,44 +1,26 @@
 // default package
 
-import java.util.Arrays;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class cee extends sfe {
-    public final boolean a;
+public final class cee extends c4 {
+    public static final Parcelable.Creator<cee> CREATOR = new g3e((byte) 14);
+    public final int a;
+    public final fjd b;
 
-    public cee(boolean z) {
-        this.a = z;
+    public cee(int i, fjd fjdVar) {
+        this.a = i;
+        this.b = fjdVar;
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        sfe sfeVar = (sfe) obj;
-        int zza = sfeVar.zza();
-        int c = sfe.c((byte) -32);
-        if (c != zza) {
-            return c - sfeVar.zza();
-        }
-        return (true != this.a ? 20 : 21) - (true != ((cee) sfeVar).a ? 20 : 21);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return obj != null && cee.class == obj.getClass() && this.a == ((cee) obj).a;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(sfe.c((byte) -32)), Boolean.valueOf(this.a)});
-    }
-
-    public final String toString() {
-        return Boolean.toString(this.a);
-    }
-
-    @Override // sfe
-    public final int zza() {
-        return sfe.c((byte) -32);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        bye.k(parcel, 3, this.b, i);
+        bye.s(parcel, r);
     }
 }

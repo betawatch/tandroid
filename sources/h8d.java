@@ -1,34 +1,41 @@
 // default package
 
-import j$.util.Objects;
-import java.util.AbstractMap;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h8d extends r6d {
-    public final /* synthetic */ l8d r;
+public final class h8d extends h05 {
+    public static final zn m = new zn("Auth.Api.Identity.SignIn.API", new rr5(8), new xn());
+    public final String l;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h8d(l8d l8dVar) {
-        super((byte) 2);
-        this.r = l8dVar;
+    public h8d(Context context, b9d b9dVar) {
+        super(context, m, b9dVar, g05.c);
+        this.l = j8d.a();
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i) {
-        l8d l8dVar = this.r;
-        k4f.a(i, l8dVar.w);
-        Object[] objArr = l8dVar.s;
-        int i2 = i << 1;
-        Object obj = objArr[i2];
-        Objects.requireNonNull(obj);
-        Object obj2 = objArr[i2 + 1];
-        Objects.requireNonNull(obj2);
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.r.w;
+    public static yka f(Intent intent) {
+        Status status = Status.h;
+        if (intent == null) {
+            throw new ao(status);
+        }
+        Parcelable.Creator<Status> creator = Status.CREATOR;
+        byte[] byteArrayExtra = intent.getByteArrayExtra("status");
+        Status status2 = (Status) (byteArrayExtra == null ? null : dye.a(byteArrayExtra, creator));
+        if (status2 == null) {
+            throw new ao(Status.r);
+        }
+        if (!status2.b()) {
+            throw new ao(status2);
+        }
+        Parcelable.Creator<yka> creator2 = yka.CREATOR;
+        byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
+        yka ykaVar = (yka) (byteArrayExtra2 != null ? dye.a(byteArrayExtra2, creator2) : null);
+        if (ykaVar != null) {
+            return ykaVar;
+        }
+        throw new ao(status);
     }
 }

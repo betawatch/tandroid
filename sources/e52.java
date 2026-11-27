@@ -1,409 +1,351 @@
 // default package
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.os.Build;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.view.Choreographer;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.a;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e52 extends w29 {
-    public final Context c;
-    public final boolean d;
-    public boolean e;
-    public boolean f;
-    public final ArrayList h = new ArrayList(8);
-    public int n;
-    public int r;
-    public boolean s;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout w;
+public final /* synthetic */ class e52 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public e52(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z) {
-        this.w = chatAttachAlertPhotoLayout;
-        this.c = context;
-        this.d = z;
+    public /* synthetic */ e52(Object obj, Object obj2, boolean z, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return false;
-    }
-
-    @Override // w29
-    public final boolean E(o39 o39Var) {
-        xl6 xl6Var;
-        boolean isEmpty = ChatAttachAlertPhotoLayout.s1.isEmpty();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        return !(isEmpty && ((xl6Var = chatAttachAlertPhotoLayout.U0) == null || xl6Var.e.isEmpty())) && chatAttachAlertPhotoLayout.b.L1 && b() > 30;
-    }
-
-    @Override // w29
-    public final String F(int i) {
-        jm6 M = M(i);
-        if (M == null) {
-            int i2 = this.r;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-            if (i <= i2) {
-                ArrayList arrayList = ChatAttachAlertPhotoLayout.s1;
-                if (arrayList.isEmpty()) {
-                    xl6 xl6Var = chatAttachAlertPhotoLayout.U0;
-                    if (xl6Var != null) {
-                        M = (jm6) xl6Var.e.get(0);
-                    }
-                } else {
-                    M = (jm6) arrayList.get(0);
-                }
-            } else if (!chatAttachAlertPhotoLayout.U0.e.isEmpty()) {
-                M = (jm6) b00.f(1, chatAttachAlertPhotoLayout.U0.e);
-            }
-        }
-        if (M == null) {
-            return "";
-        }
-        long j = M.D;
-        if (Build.VERSION.SDK_INT <= 28) {
-            j /= 1000;
-        }
-        return k96.e0(j, true);
-    }
-
-    @Override // w29
-    public final void G(o39 o39Var, float f, int[] iArr) {
-        int currentActionBarHeight = a.getCurrentActionBarHeight();
-        int measuredHeight = o39Var.getChildAt(0).getMeasuredHeight();
-        float b = b();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        float ceil = (((int) (Math.ceil(b / chatAttachAlertPhotoLayout.N0) * measuredHeight)) - (o39Var.getMeasuredHeight() - currentActionBarHeight)) * f;
-        float f2 = measuredHeight;
-        iArr[0] = ((int) (ceil / f2)) * chatAttachAlertPhotoLayout.N0;
-        int paddingTop = o39Var.getPaddingTop() + ((int) (ceil % f2)) + ((int) ((1.0f - f) * currentActionBarHeight));
-        iArr[1] = paddingTop;
-        if (iArr[0] != 0 || paddingTop >= chatAttachAlertPhotoLayout.getListTopPadding()) {
-            return;
-        }
-        iArr[1] = chatAttachAlertPhotoLayout.getListTopPadding() + currentActionBarHeight;
-    }
-
-    @Override // w29
-    public final float H(o39 o39Var) {
-        byte b = this.w.N0;
-        int ceil = (int) Math.ceil(this.n / b);
-        if (o39Var.getChildCount() != 0) {
-            int measuredHeight = o39Var.getChildAt(0).getMeasuredHeight();
-            if (RecyclerView.R(o39Var.getChildAt(0)) >= 0) {
-                return Utilities.i((((r4 / b) * measuredHeight) - r1.getTop()) / ((ceil * measuredHeight) - (o39Var.getMeasuredHeight() - a.getCurrentActionBarHeight())), 1.0f, 0.0f);
-            }
-        }
-        return 0.0f;
-    }
-
-    @Override // w29
-    public final void J(o39 o39Var) {
-        this.s = false;
-        int childCount = o39Var.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            o39Var.getChildAt(i).invalidate();
-        }
-    }
-
-    @Override // w29
-    public final void K() {
-        this.s = true;
-    }
-
-    public final y29 L() {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        o48 o48Var = new o48(this.c, chatAttachAlertPhotoLayout.a);
-        if (this == chatAttachAlertPhotoLayout.H) {
-            o48Var.setOutlineProvider(new cl0(this, (byte) 4));
-            o48Var.setClipToOutline(true);
-        }
-        o48Var.setFastScrollDelegate(new rh1(this, (byte) 16));
-        o48Var.setDelegate(new q31(this, o48Var, (byte) 24));
-        return new y29(o48Var);
-    }
-
-    public final jm6 M(int i) {
-        boolean z = this.f;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        if (z && i > chatAttachAlertPhotoLayout.N0) {
-            i--;
-        }
-        if (this.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
-            i--;
-        }
-        boolean z2 = ChatAttachAlertPhotoLayout.r1;
-        return chatAttachAlertPhotoLayout.d0(i);
-    }
-
-    @Override // w39
-    public final int b() {
-        int i = 0;
-        this.e = false;
-        this.f = false;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        e52 e52Var = chatAttachAlertPhotoLayout.H;
-        if (!chatAttachAlertPhotoLayout.w0) {
-            return 1;
-        }
-        boolean z = chatAttachAlertPhotoLayout.Q0;
-        if (z && this == e52Var) {
-            return 2;
-        }
-        if (this.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
-            this.e = true;
-            i = 1;
-        }
-        if (chatAttachAlertPhotoLayout.h1) {
-            i++;
-        }
-        if (z && this == e52Var) {
-            i++;
-        }
-        this.r = i;
-        if (!z) {
-            i += ChatAttachAlertPhotoLayout.s1.size();
-            xl6 xl6Var = chatAttachAlertPhotoLayout.U0;
-            if (xl6Var != null) {
-                i += xl6Var.e.size();
-            }
-        }
-        if (this.e && i > chatAttachAlertPhotoLayout.N0 && !chatAttachAlertPhotoLayout.P0) {
-            this.f = true;
-            i++;
-        }
-        if (this == e52Var) {
-            i++;
-        }
-        this.n = i;
-        return i;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x004e A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0050 A[RETURN] */
-    @Override // w39
+    /* JADX WARN: Removed duplicated region for block: B:148:0x048e  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0490  */
+    @Override // pcc
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int d(int i) {
+    public final void a(Object obj) {
+        int i;
         int i2;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        e52 e52Var = chatAttachAlertPhotoLayout.H;
-        if (!chatAttachAlertPhotoLayout.w0) {
-            return 2;
-        }
-        boolean z = chatAttachAlertPhotoLayout.Q0;
-        if (z && this == e52Var) {
-            return i == 0 ? 7 : 2;
-        }
-        boolean z2 = this.d;
-        if (z2 && i == 0 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
-            return chatAttachAlertPhotoLayout.P0 ? 8 : 1;
-        }
-        if (this.f) {
-            byte b = chatAttachAlertPhotoLayout.N0;
-            if (i == b) {
-                return 5;
-            }
-            if (i > b) {
-                i2 = i - 1;
-                if (z2) {
-                    i2--;
+        h3b[] h3bVarArr;
+        float f;
+        Bitmap bitmap;
+        byte b;
+        float f2;
+        float f3;
+        float f4;
+        float f5;
+        byte b2 = 0;
+        switch (this.a) {
+            case 0:
+                g52 g52Var = (g52) this.c;
+                File file = (File) this.d;
+                boolean z = this.b;
+                Integer num = (Integer) obj;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = g52Var.e;
+                chatAttachAlertPhotoLayout.t0 = false;
+                if (file != null && !chatAttachAlertPhotoLayout.b.P1) {
+                    ChatAttachAlertPhotoLayout.r1 = false;
+                    try {
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inJustDecodeBounds = true;
+                        BitmapFactory.decodeFile(new File(file.getAbsolutePath()).getAbsolutePath(), options);
+                        i = options.outWidth;
+                        try {
+                            i2 = options.outHeight;
+                        } catch (Exception unused) {
+                            i2 = 0;
+                            int i3 = i;
+                            int i4 = ChatAttachAlertPhotoLayout.v1;
+                            ChatAttachAlertPhotoLayout.v1 = i4 - 1;
+                            no6 no6Var = new no6(i4, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i3, i2);
+                            no6Var.L = true;
+                            chatAttachAlertPhotoLayout.l0(no6Var, z, false);
+                            return;
+                        }
+                    } catch (Exception unused2) {
+                        i = 0;
+                    }
+                    int i32 = i;
+                    int i42 = ChatAttachAlertPhotoLayout.v1;
+                    ChatAttachAlertPhotoLayout.v1 = i42 - 1;
+                    no6 no6Var2 = new no6(i42, file.getAbsolutePath(), num.intValue() != -1 ? 0 : num.intValue(), false, i32, i2);
+                    no6Var2.L = true;
+                    chatAttachAlertPhotoLayout.l0(no6Var2, z, false);
                 }
-                if (!chatAttachAlertPhotoLayout.h1 && i2 == 0) {
-                    return 4;
+                break;
+            case 1:
+                i24 i24Var = (i24) this.c;
+                boolean z2 = this.b;
+                Runnable runnable = (Runnable) this.d;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = i24Var.r;
+                j24 j24Var = i24Var.x;
+                if (j24Var.N == i24Var.b) {
+                    if (z2) {
+                        int size = arrayList2.size();
+                        arrayList2.clear();
+                        j24Var.E = size == arrayList.size();
+                    }
+                    arrayList2.addAll(arrayList);
+                    int size2 = arrayList.size();
+                    int i5 = 0;
+                    while (i5 < size2) {
+                        Object obj2 = arrayList.get(i5);
+                        i5++;
+                        TLRPC.Document document = (TLRPC.Document) obj2;
+                        i24Var.w.put(document.id, document);
+                    }
+                    i24Var.f.put(arrayList2, j24Var.O);
+                    runnable.run();
+                    break;
                 }
-                if (this == e52Var || i != this.n - 1) {
-                    return !z ? 3 : 0;
+                break;
+            case 2:
+                c cVar = (c) this.c;
+                icc iccVar = (icc) this.d;
+                boolean z3 = this.b;
+                c35 c35Var = (c35) obj;
+                if (c35Var == null) {
+                    Exception exc = cVar.c.f;
+                    String message = exc != null ? exc.getMessage() : null;
+                    if (!"AUTH_CANCELED".equals(message)) {
+                        c.m("getSecretPhrase: local phrase unavailable: " + message);
+                        iccVar.a(null, (message == null || !message.startsWith("AUTH_")) ? "LOCAL_STORAGE_ERROR" : "WALLET_UNLOCK_FAILED");
+                        break;
+                    } else {
+                        c.P("getSecretPhrase: unlock canceled");
+                        if (z3) {
+                            iccVar.a(null, "WALLET_SEND_CANCELLED");
+                            break;
+                        }
+                    }
+                } else {
+                    iccVar.a(c35Var, null);
+                    break;
                 }
-                return 2;
-            }
-        }
-        i2 = i;
-        if (z2) {
-        }
-        if (!chatAttachAlertPhotoLayout.h1) {
-        }
-        if (this == e52Var) {
-        }
-        if (!z) {
+                break;
+            case 3:
+                PhotoViewer photoViewer = (PhotoViewer) this.c;
+                boolean z4 = this.b;
+                go6 go6Var = (go6) this.d;
+                h3b h3bVar = (h3b) obj;
+                Drawable[] drawableArr = PhotoViewer.d9;
+                k3b k3bVar = photoViewer.o5;
+                if (!k3bVar.E || (h3bVarArr = k3bVar.I) == null || h3bVarArr.length <= 0) {
+                    photoViewer.s5.setCutOutState(true);
+                    photoViewer.g2(false, true);
+                } else {
+                    hnb thanosEffect = photoViewer.o5.getThanosEffect();
+                    k3b k3bVar2 = photoViewer.o5;
+                    k3bVar2.M = true;
+                    k3bVar2.F = h3bVar;
+                    Bitmap n = photoViewer.B4.n();
+                    int i6 = photoViewer.B4.V;
+                    h3b h3bVar2 = k3bVar2.F;
+                    Bitmap b3 = h3bVar2 == null ? k3bVar2.J : (!z4 || n == null) ? h3bVar2.b() : k3bVar2.e(n);
+                    no6 no6Var3 = (no6) photoViewer.f7.get(photoViewer.O4);
+                    if (thanosEffect == null) {
+                        Utilities.i.c(new ka8(photoViewer, b3, b2));
+                        photoViewer.o5.f();
+                        photoViewer.f0.invalidate();
+                        break;
+                    } else {
+                        k3b k3bVar3 = photoViewer.o5;
+                        int i7 = photoViewer.B4.V;
+                        k3bVar3.getClass();
+                        String str = no6Var3.i;
+                        Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : k3bVar3.getSourceBitmap();
+                        Bitmap decodeFile2 = BitmapFactory.decodeFile(no6Var3.j);
+                        int width = decodeFile.getWidth();
+                        int height = decodeFile.getHeight();
+                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
+                        Bitmap createBitmap = Bitmap.createBitmap(width, height, config);
+                        Canvas canvas = new Canvas(createBitmap);
+                        Paint paint = new Paint(3);
+                        Paint paint2 = new Paint(3);
+                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+                        canvas.drawBitmap(decodeFile, 0.0f, 0.0f, paint2);
+                        Rect rect = new Rect();
+                        rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
+                        h3b h3bVar3 = k3bVar3.F;
+                        if (h3bVar3 == null) {
+                            h3b[] h3bVarArr2 = k3bVar3.I;
+                            if (h3bVarArr2.length > 0) {
+                                h3bVar3 = h3bVarArr2[0];
+                            }
+                        }
+                        if (h3bVar3 == null) {
+                            createBitmap = null;
+                            f = 2.0f;
+                            b = 2;
+                        } else {
+                            f = 2.0f;
+                            if (h3bVar3.c == 0 || !no6Var3.u) {
+                                bitmap = decodeFile;
+                                b = 2;
+                                canvas.drawBitmap(h3bVar3.a(), (Rect) null, rect, paint);
+                            } else {
+                                Matrix matrix = new Matrix();
+                                b = 2;
+                                bitmap = decodeFile;
+                                matrix.postRotate(h3bVar3.c, h3bVar3.a().getWidth() / 2.0f, h3bVar3.a().getHeight() / 2.0f);
+                                if ((h3bVar3.c / 90) % 2 != 0) {
+                                    float height2 = (h3bVar3.a().getHeight() - h3bVar3.a().getWidth()) / 2.0f;
+                                    matrix.postTranslate(height2, -height2);
+                                }
+                                matrix.postScale(bitmap.getWidth() / h3bVar3.a().getHeight(), bitmap.getHeight() / h3bVar3.a().getWidth());
+                                canvas.drawBitmap(h3bVar3.a(), matrix, paint);
+                            }
+                            if (decodeFile2 != null) {
+                                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                                if (h3bVar3.c == 0 || no6Var3.u) {
+                                    canvas.drawBitmap(decodeFile2, (Rect) null, rect, paint);
+                                } else {
+                                    Matrix matrix2 = new Matrix();
+                                    matrix2.postRotate(-h3bVar3.c, decodeFile2.getWidth() / 2.0f, decodeFile2.getHeight() / 2.0f);
+                                    if ((h3bVar3.c / 90) % 2 != 0) {
+                                        float height3 = (decodeFile2.getHeight() - decodeFile2.getWidth()) / 2.0f;
+                                        matrix2.postTranslate(height3, -height3);
+                                    }
+                                    matrix2.postScale(bitmap.getWidth() / decodeFile2.getHeight(), bitmap.getHeight() / decodeFile2.getWidth());
+                                    canvas.drawBitmap(decodeFile2, matrix2, paint);
+                                }
+                            }
+                        }
+                        if (createBitmap == null) {
+                            Utilities.i.c(new ka8(photoViewer, b3, (byte) 1));
+                            photoViewer.o5.f();
+                            photoViewer.f0.invalidate();
+                            break;
+                        } else {
+                            fo6 fo6Var = go6Var.A;
+                            if (fo6Var != null) {
+                                ImageReceiver imageReceiver = photoViewer.B4;
+                                createBitmap = PhotoViewer.D(createBitmap, fo6Var, new int[]{imageReceiver.V, imageReceiver.W}, true);
+                            }
+                            if (createBitmap == null) {
+                                Utilities.i.c(new ka8(photoViewer, b3, b));
+                                photoViewer.o5.f();
+                                photoViewer.f0.invalidate();
+                                break;
+                            } else {
+                                Matrix matrix3 = new Matrix();
+                                int width2 = createBitmap.getWidth();
+                                int height4 = createBitmap.getHeight();
+                                if (!no6Var3.w && (photoViewer.B4.V / 90) % 2 != 0) {
+                                    width2 = createBitmap.getHeight();
+                                    height4 = createBitmap.getWidth();
+                                }
+                                float f6 = width2;
+                                float f7 = height4;
+                                float min = Math.min(photoViewer.h0(photoViewer.t4) / f6, photoViewer.f0() / f7);
+                                float f8 = f6 * min;
+                                float f9 = f7 * min;
+                                if ((photoViewer.B4.V == 0 || no6Var3.w) && photoViewer.a6 == 0.0f) {
+                                    f2 = 0.0f;
+                                    f3 = 0.0f;
+                                    f4 = f8;
+                                    f5 = f9;
+                                } else {
+                                    float width3 = createBitmap.getWidth();
+                                    float height5 = createBitmap.getHeight();
+                                    float f10 = width3 / f;
+                                    float f11 = height5 / f;
+                                    float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
+                                    float f12 = sqrt * f;
+                                    int i8 = (int) f12;
+                                    Bitmap createBitmap2 = Bitmap.createBitmap(i8, i8, config);
+                                    Canvas canvas2 = new Canvas(createBitmap2);
+                                    canvas2.save();
+                                    canvas2.rotate((no6Var3.w ? 0 : photoViewer.B4.V) + photoViewer.a6, sqrt, sqrt);
+                                    canvas2.drawBitmap(createBitmap, (f12 - width3) / f, (f12 - height5) / f, (Paint) null);
+                                    createBitmap.recycle();
+                                    float f13 = f8 / f;
+                                    float f14 = f9 / f;
+                                    f4 = ((float) Math.sqrt((f14 * f14) + (f13 * f13))) * f;
+                                    f2 = (-(f4 - f8)) / f;
+                                    f3 = (-(f4 - f9)) / f;
+                                    f5 = f4;
+                                    createBitmap = createBitmap2;
+                                }
+                                matrix3.postScale(f4, f5);
+                                float f15 = photoViewer.Z5;
+                                matrix3.postScale(f15, f15, f4 / f, f5 / f);
+                                matrix3.postTranslate(photoViewer.W5 + f2 + Math.max(0, (int) ((photoViewer.h0(photoViewer.t4) - f8) / f)), photoViewer.X5 + f3 + Math.max(0, (int) ((photoViewer.f0() - f9) / f)));
+                                photoViewer.o5.W = true;
+                                Utilities.i.c(new ka8(photoViewer, b3, (byte) 3));
+                                y98 y98Var = new y98(photoViewer, (byte) 9);
+                                fd7 fd7Var = new fd7((Object) photoViewer, (Object) b3, (Object) y98Var, (byte) 28);
+                                pg6 pg6Var = new pg6((byte) 14);
+                                fnb fnbVar = thanosEffect.a;
+                                if (fnbVar != null) {
+                                    fnbVar.c(matrix3, createBitmap, fd7Var, pg6Var);
+                                    Choreographer.getInstance().postFrameCallback(thanosEffect.b);
+                                } else {
+                                    thanosEffect.c.add(new gnb(matrix3, createBitmap, fd7Var, pg6Var));
+                                }
+                                hl.d3(y98Var, 1200L);
+                            }
+                        }
+                    }
+                }
+                photoViewer.o5.f();
+                photoViewer.f0.invalidate();
+                break;
+            case 4:
+                boolean z5 = this.b;
+                String str2 = (String) this.c;
+                LinkedHashSet linkedHashSet = (LinkedHashSet) this.d;
+                Runnable runnable2 = (Runnable) obj;
+                if (!z5) {
+                    runnable2.run();
+                    break;
+                } else {
+                    t2b.G3.c(yac.t0, str2, new xz9(linkedHashSet, runnable2, (byte) 1));
+                    break;
+                }
+            default:
+                boolean z6 = this.b;
+                id idVar = (id) this.c;
+                pcc pccVar = (pcc) this.d;
+                vwc vwcVar = (vwc) obj;
+                if (z6) {
+                    idVar.b(350L);
+                }
+                pccVar.a(vwcVar);
+                break;
         }
     }
 
-    @Override // w39
-    public final void f() {
-        super.f();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        if (this == chatAttachAlertPhotoLayout.H) {
-            chatAttachAlertPhotoLayout.I.setVisibility((!(b() == 1 && !chatAttachAlertPhotoLayout.Q0 && chatAttachAlertPhotoLayout.U0 == null) && chatAttachAlertPhotoLayout.w0) ? 4 : 0);
-        }
+    public /* synthetic */ e52(Object obj, boolean z, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = z;
+        this.d = obj2;
     }
 
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        x02 x02Var = chatAttachAlertPhotoLayout.b;
-        int i2 = s49Var.f;
-        View view = s49Var.a;
-        boolean z = this.d;
-        if (i2 != 0) {
-            if (i2 == 1) {
-                ((h48) view).setItemSize(chatAttachAlertPhotoLayout.L0);
-                return;
-            }
-            if (i2 != 3) {
-                if (i2 == 7) {
-                    ((fr4) view).setUseAnEmojiVisible(chatAttachAlertPhotoLayout.h1);
-                    return;
-                }
-                return;
-            } else {
-                i48 i48Var = (i48) view;
-                i48Var.setItemSize(chatAttachAlertPhotoLayout.L0);
-                i48Var.setType((z && chatAttachAlertPhotoLayout.P0 && i == 0) ? 0 : 1);
-                return;
-            }
-        }
-        if (this.f && i > chatAttachAlertPhotoLayout.N0) {
-            i--;
-        }
-        if (z && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
-            i--;
-        }
-        if (chatAttachAlertPhotoLayout.h1) {
-            i--;
-        }
-        o48 o48Var = (o48) view;
-        if (this == chatAttachAlertPhotoLayout.H) {
-            o48Var.setItemSize(chatAttachAlertPhotoLayout.L0);
-        } else {
-            o48Var.setIsVertical(chatAttachAlertPhotoLayout.s.o);
-        }
-        if (x02Var.N2 != 0 || x02Var.Q2 || x02Var.B1) {
-            o48Var.getCheckBox().setVisibility(8);
-        } else {
-            o48Var.getCheckBox().setVisibility(0);
-        }
-        jm6 d0 = chatAttachAlertPhotoLayout.d0(i);
-        if (d0 == null) {
-            return;
-        }
-        int i3 = d0.C;
-        HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
-        o48Var.d(d0, hashMap.size() > 1, z && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0, i == b() - 1, x02Var != null && x02Var.c2);
-        if ((x02Var.Z1 instanceof mu1) && x02Var.Q3) {
-            o48Var.b(ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(i3)), hashMap.containsKey(Integer.valueOf(i3)), false);
-        } else {
-            o48Var.b(-1, hashMap.containsKey(Integer.valueOf(i3)), false);
-        }
-        if (!chatAttachAlertPhotoLayout.x0 && d0.b) {
-            o48Var.setAlpha(0.3f);
-        } else if (chatAttachAlertPhotoLayout.y0 || d0.b) {
-            o48Var.setAlpha(1.0f);
-        } else {
-            o48Var.setAlpha(0.3f);
-        }
-        o48Var.getImageView().setTag(Integer.valueOf(i));
-        o48Var.setTag(Integer.valueOf(i));
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.w;
-        x02 x02Var = chatAttachAlertPhotoLayout.b;
-        wjb wjbVar = chatAttachAlertPhotoLayout.a;
-        if (i == 0) {
-            ArrayList arrayList = this.h;
-            if (arrayList.isEmpty()) {
-                return L();
-            }
-            y29 y29Var = (y29) arrayList.get(0);
-            arrayList.remove(0);
-            return y29Var;
-        }
-        Context context = this.c;
-        if (i == 1) {
-            h48 h48Var = new h48(context);
-            h48Var.setFocusable(true);
-            h48Var.a = gl.L(0.0f);
-            return new y29(h48Var);
-        }
-        if (i == 2) {
-            return new y29(new sb((byte) 4, context, this));
-        }
-        if (i == 4) {
-            x02Var.getClass();
-            return new y29(new d52(this, context));
-        }
-        byte b = 5;
-        if (i == 5) {
-            return new y29(new View(context));
-        }
-        if (i == 7) {
-            fr4 fr4Var = new fr4(context, x02Var.G3);
-            fr4Var.setLayoutParams(new e49(-1, gl.L(400.0f)));
-            fr4Var.setGravity(17);
-            fr4Var.isClickable();
-            fr4Var.b.setOnClickListener(new yj3(new j42(chatAttachAlertPhotoLayout, b), (byte) 19));
-            fr4Var.a.setOnClickListener(new yj3(new j42(chatAttachAlertPhotoLayout, (byte) 6), (byte) 20));
-            fr4Var.c.setOnClickListener(new xf3((Object) fr4Var, (Object) new be2(this, (byte) 18), (byte) 14));
-            return new y29(fr4Var);
-        }
-        if (i == 8) {
-            FrameLayout frameLayout = new FrameLayout(context);
-            frameLayout.setLayoutParams(new e49(-1, gl.L(56.0f)));
-            u41 u41Var = new u41(wjbVar, context, true);
-            u41Var.setUseWrapContent(true);
-            u41Var.f();
-            u41Var.setPadding(gl.L(28.0f), 0, gl.L(28.0f), 0);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
-            spannableStringBuilder.setSpan(new cm2(R.drawable.camera, 0), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) k96.M0(2131750465, null));
-            u41Var.i(spannableStringBuilder, false, true);
-            frameLayout.addView(u41Var, nme.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
-            return new y29(frameLayout);
-        }
-        i48 i48Var = new i48(context);
-        ImageView imageView = new ImageView(context);
-        i48Var.a = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        int i2 = bkb.Z9;
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        zkb.s(imageView, i2, wjbVar, mode);
-        i48Var.addView(imageView, nme.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
-        ImageView imageView2 = new ImageView(context);
-        i48Var.b = imageView2;
-        imageView2.setScaleType(scaleType);
-        zkb.s(imageView2, bkb.aa, wjbVar, mode);
-        i48Var.addView(imageView2, nme.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
-        TextView textView = new TextView(context);
-        i48Var.c = textView;
-        zkb.X(textView, bkb.ba, wjbVar);
-        textView.setTextSize(1, 12.0f);
-        textView.setGravity(17);
-        i48Var.addView(textView, nme.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
-        i48Var.d = gl.L(80.0f);
-        return new y29(i48Var);
-    }
-
-    @Override // w39
-    public final void y(s49 s49Var) {
-        if (s49Var.a instanceof h48) {
-            this.w.R.i();
-        }
+    public /* synthetic */ e52(boolean z, Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = z;
+        this.c = obj;
+        this.d = obj2;
     }
 }

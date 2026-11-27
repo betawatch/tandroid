@@ -1,129 +1,149 @@
 // default package
 
+import android.util.LongSparseArray;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.List;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class x07 implements w33 {
-    public static final rq2 b = new rq2(new v41(new g31((byte) 14), hi7.b), new v41(new g31((byte) 15), hi7.c));
-    public final ArrayList a = new ArrayList();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class x07 extends c79 {
+    public final /* synthetic */ e17 c;
 
-    @Override // w33
-    public final long a(long j) {
+    public x07(e17 e17Var) {
+        this.c = e17Var;
+    }
+
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return f89Var.f == 0;
+    }
+
+    public final void E(List list) {
+        e17 e17Var = this.c;
+        ArrayList arrayList = e17Var.c;
+        boolean isEmpty = arrayList.isEmpty();
         int i = 0;
-        long j2 = -9223372036854775807L;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i >= arrayList.size()) {
-                break;
-            }
-            long j3 = ((x33) arrayList.get(i)).b;
-            long j4 = ((x33) arrayList.get(i)).d;
-            if (j < j3) {
-                j2 = j2 == -9223372036854775807L ? j3 : Math.min(j2, j3);
-            } else {
-                if (j < j4) {
-                    j2 = j2 == -9223372036854775807L ? j4 : Math.min(j2, j4);
-                }
-                i++;
-            }
-        }
-        if (j2 != -9223372036854775807L) {
-            return j2;
-        }
-        return Long.MIN_VALUE;
-    }
-
-    @Override // w33
-    public final boolean b(x33 x33Var, long j) {
-        long j2 = x33Var.b;
-        gre.f(j2 != -9223372036854775807L);
-        gre.f(x33Var.c != -9223372036854775807L);
-        boolean z = j2 <= j && j < x33Var.d;
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (j2 >= ((x33) arrayList.get(size)).b) {
-                arrayList.add(size + 1, x33Var);
-                return z;
-            }
-        }
-        arrayList.add(0, x33Var);
-        return z;
-    }
-
-    @Override // w33
-    public final mm5 c(long j) {
-        ArrayList arrayList = this.a;
-        if (!arrayList.isEmpty()) {
-            if (j >= ((x33) arrayList.get(0)).b) {
-                ArrayList arrayList2 = new ArrayList();
-                for (int i = 0; i < arrayList.size(); i++) {
-                    x33 x33Var = (x33) arrayList.get(i);
-                    if (j >= x33Var.b && j < x33Var.d) {
-                        arrayList2.add(x33Var);
-                    }
-                    if (j < x33Var.b) {
-                        break;
-                    }
-                }
-                w59 w = mm5.w(b, arrayList2);
-                jm5 p = mm5.p();
-                for (int i2 = 0; i2 < w.d; i2++) {
-                    p.d(((x33) w.get(i2)).a);
-                }
-                return p.f();
-            }
-        }
-        km5 km5Var = mm5.b;
-        return w59.e;
-    }
-
-    @Override // w33
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // w33
-    public final long d(long j) {
-        ArrayList arrayList = this.a;
-        if (arrayList.isEmpty()) {
-            return -9223372036854775807L;
-        }
-        if (j < ((x33) arrayList.get(0)).b) {
-            return -9223372036854775807L;
-        }
-        long j2 = ((x33) arrayList.get(0)).b;
-        for (int i = 0; i < arrayList.size(); i++) {
-            long j3 = ((x33) arrayList.get(i)).b;
-            long j4 = ((x33) arrayList.get(i)).d;
-            if (j4 > j) {
-                if (j3 > j) {
+        while (i < list.size()) {
+            long j = ((TLRPC.TL_chatInviteImporter) list.get(i)).user_id;
+            int i2 = i + 1;
+            while (true) {
+                if (i2 >= list.size()) {
                     break;
                 }
-                j2 = Math.max(j2, j3);
-            } else {
-                j2 = Math.max(j2, j4);
-            }
-        }
-        return j2;
-    }
-
-    @Override // w33
-    public final void e(long j) {
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i >= arrayList.size()) {
-                return;
-            }
-            long j2 = ((x33) arrayList.get(i)).b;
-            if (j > j2 && j > ((x33) arrayList.get(i)).d) {
-                arrayList.remove(i);
-                i--;
-            } else if (j < j2) {
-                return;
+                if (((TLRPC.TL_chatInviteImporter) list.get(i2)).user_id == j) {
+                    list.remove(i);
+                    i--;
+                    break;
+                }
+                i2++;
             }
             i++;
         }
+        arrayList.clear();
+        arrayList.addAll(list);
+        if (isEmpty) {
+            p(!e17Var.B ? 1 : 0, arrayList.size());
+        } else {
+            f();
+        }
+    }
+
+    @Override // j79
+    public final int b() {
+        e17 e17Var = this.c;
+        return ((e17Var.c.isEmpty() || !e17Var.x) ? 0 : 1) + e17Var.c.size() + (!e17Var.B ? 1 : 0);
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        e17 e17Var = this.c;
+        if (i != 0 || e17Var.B) {
+            return (i == b() + (-1) && !e17Var.c.isEmpty() && e17Var.x) ? 4 : 0;
+        }
+        return 2;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        e17 e17Var = this.c;
+        ArrayList arrayList = e17Var.c;
+        int i2 = f89Var.f;
+        View view = f89Var.a;
+        if (i2 != 0) {
+            if (i2 == 2) {
+                view.requestLayout();
+                return;
+            }
+            return;
+        }
+        s07 s07Var = (s07) view;
+        int i3 = i - (!e17Var.B ? 1 : 0);
+        LongSparseArray longSparseArray = e17Var.d;
+        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i3);
+        boolean z = i3 != arrayList.size() - 1 || e17Var.x;
+        ema emaVar = s07Var.d;
+        s07Var.e = tL_chatInviteImporter;
+        s07Var.f = z;
+        s07Var.setWillNotDraw(!z);
+        TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
+        rb0 rb0Var = s07Var.a;
+        rb0Var.q(user);
+        s07Var.b.f(user, rb0Var);
+        s07Var.c.l(lbc.r(user), false);
+        String s = ob6.s(tL_chatInviteImporter.date, false);
+        if (tL_chatInviteImporter.via_chatlist) {
+            emaVar.l(ob6.M0(2131748823, null), false);
+            return;
+        }
+        long j = tL_chatInviteImporter.approved_by;
+        if (j == 0) {
+            emaVar.l(ob6.a0("RequestedToJoinAt", null, 2131745887, s), false);
+            return;
+        }
+        TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j);
+        if (user2 != null) {
+            emaVar.l(ob6.a0("AddedBy", null, 2131754354, lbc.k(user2, true), s), false);
+        } else {
+            emaVar.l("", false);
+        }
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View view;
+        e17 e17Var = this.c;
+        boolean z = e17Var.a;
+        if (i != 1) {
+            byte b = 2;
+            if (i == 2) {
+                t62 t62Var = new t62(viewGroup.getContext(), (byte) 12);
+                t62Var.setTag(-33024);
+                view = t62Var;
+            } else if (i == 3) {
+                view = new View(viewGroup.getContext());
+            } else if (i != 4) {
+                view = new s07(viewGroup.getContext(), e17Var, z);
+            } else {
+                e eVar = e17Var.g;
+                rl2 rl2Var = new rl2(eVar.getParentActivity(), eVar.getResourceProvider(), b);
+                if (e17Var.B) {
+                    yob.h(aob.d6, eVar.getResourceProvider(), rl2Var);
+                }
+                rl2Var.e(aob.d6, aob.a7, -1);
+                rl2Var.setViewType(15);
+                rl2Var.setMemberRequestButton(z);
+                rl2Var.setIsSingleCell(true);
+                rl2Var.setItemsCount(1);
+                rl2Var.setTag(-33024);
+                view = rl2Var;
+            }
+        } else {
+            view = new View(viewGroup.getContext());
+        }
+        return new n69(view);
     }
 }

@@ -1,73 +1,80 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import java.util.AbstractSet;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class cba extends FrameLayout {
-    public final be0 a;
-    public final uaa b;
-    public final TextView c;
-    public long d;
-    public long e;
-    public final int f;
-    public final wjb h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class cba extends AbstractSet {
+    public final /* synthetic */ bp5 a;
+    public final /* synthetic */ bp5 b;
 
-    public cba(Context context, wjb wjbVar) {
-        super(context);
-        this.f = y6c.t0;
-        this.h = wjbVar;
-        setWillNotDraw(false);
-        be0 be0Var = new be0(context);
-        this.a = be0Var;
-        be0Var.setRoundRadius(gl.L(28.0f));
-        addView(be0Var, nme.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        zkb.X(textView, bkb.i5, wjbVar);
-        textView.setTextSize(1, 12.0f);
-        textView.setMaxLines(2);
-        textView.setGravity(49);
-        textView.setLines(2);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, nme.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
-        this.b = new uaa(this, wjbVar, (byte) 1);
-        int i = bkb.h6;
-        Drawable Y = bkb.Y(bkb.w0(null, i, false), gl.L(2.0f), gl.L(2.0f));
-        vkb M = zkb.M(i);
-        setBackground(Y);
-        zkb.j(this, Y, null, M, null);
+    public cba(bp5 bp5Var, bp5 bp5Var2) {
+        this.a = bp5Var;
+        this.b = bp5Var2;
     }
 
-    public long getCurrentDialog() {
-        return this.d;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public long getCurrentTopic() {
-        return this.e;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(103.0f), TLObject.FLAG_30));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        throw new UnsupportedOperationException();
     }
 
-    public void setAsNewBotForumTopic(boolean z) {
-        this.c.setText(k96.M0(z ? 2131745243 : 2131745242, null));
-        be0 be0Var = this.a;
-        be0Var.setAnimatedEmojiDrawable(null);
-        jm4 jm4Var = new jm4(jm4.k[0]);
-        o06 o06Var = new o06(1, null);
-        o06Var.a("");
-        o06Var.i = 1.8f;
-        fm2 fm2Var = new fm2(jm4Var, o06Var, 0, 0);
-        fm2Var.x = true;
-        be0Var.setImageDrawable(fm2Var);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.a.contains(obj) && this.b.contains(obj);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean containsAll(Collection collection) {
+        return this.a.containsAll(collection) && this.b.containsAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean isEmpty() {
+        return Collections.disjoint(this.b, this.a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new mu5(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        Iterator it = this.a.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            if (this.b.contains(it.next())) {
+                i++;
+            }
+        }
+        return i;
     }
 }

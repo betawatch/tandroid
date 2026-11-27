@@ -1,55 +1,53 @@
 // default package
 
-import android.os.Bundle;
-import j$.util.Objects;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ud5 extends fz8 {
-    public static final String d;
-    public static final String e;
-    public final boolean b;
-    public final boolean c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ud5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wd5 b;
 
-    static {
-        String str = g8c.a;
-        d = "1";
-        e = "2";
+    public /* synthetic */ ud5(wd5 wd5Var, byte b) {
+        this.a = b;
+        this.b = wd5Var;
     }
 
-    public ud5() {
-        this.b = false;
-        this.c = false;
-    }
-
-    @Override // fz8
-    public final boolean b() {
-        return this.b;
-    }
-
-    @Override // fz8
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(fz8.a, 0);
-        bundle.putBoolean(d, this.b);
-        bundle.putBoolean(e, this.c);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ud5)) {
-            return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        wd5 wd5Var = this.b;
+        switch (b) {
+            case 0:
+                if (wd5Var.c0 == animator) {
+                    wd5Var.c0 = null;
+                    wd5Var.b();
+                    break;
+                }
+                break;
+            default:
+                if (wd5Var.b0 == animator) {
+                    wd5Var.b0 = null;
+                    break;
+                }
+                break;
         }
-        ud5 ud5Var = (ud5) obj;
-        return this.c == ud5Var.c && this.b == ud5Var.b;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.b), Boolean.valueOf(this.c));
-    }
-
-    public ud5(boolean z) {
-        this.b = true;
-        this.c = z;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                vd5 vd5Var = this.b.a0;
+                if (vd5Var != null) {
+                    ((jb8) vd5Var).a.f0.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

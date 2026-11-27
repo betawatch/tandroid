@@ -1,91 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.KeyEvent;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import com.google.android.gms.tasks.OnFailureListener;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class eb1 extends uz6 {
-    public final /* synthetic */ byte V;
-    public final /* synthetic */ KeyEvent.Callback W;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class eb1 implements OnFailureListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gb1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ eb1(KeyEvent.Callback callback, Context context, long j, d dVar, wjb wjbVar, byte b) {
-        super(context, j, 0L, dVar, wjbVar);
-        this.V = b;
-        this.W = callback;
+    public /* synthetic */ eb1(gb1 gb1Var, byte b) {
+        this.a = b;
+        this.b = gb1Var;
     }
 
-    @Override // uz6
-    public final void f(Canvas canvas, Rect rect, float f) {
-        switch (this.V) {
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        byte b = this.a;
+        String str = "MSG_NULL";
+        gb1 gb1Var = this.b;
+        switch (b) {
             case 0:
-                ib1 ib1Var = (ib1) this.W;
-                Paint paint = ib1Var.e;
-                RectF rectF = ib1Var.z0;
-                rectF.set(rect);
-                boolean g = ib1Var.g();
-                wl0 wl0Var = ib1Var.U;
-                if (!g) {
-                    Paint c = wl0Var.c(1.0f);
-                    if (c != null) {
-                        canvas.drawRoundRect(rectF, f, f, c);
-                        paint.setAlpha(80);
-                        canvas.drawRoundRect(rectF, f, f, paint);
-                        break;
-                    } else {
-                        paint.setAlpha(128);
-                        canvas.drawRoundRect(rectF, f, f, paint);
-                        break;
-                    }
-                } else {
-                    ib1Var.h(wl0Var, canvas, ib1Var.z0, f, false, -ib1Var.N.getX(), -ib1Var.N.getY(), false);
-                    break;
+                cc4.e("CaptchaController: getTasksClient failure", exc);
+                StringBuilder sb = new StringBuilder("RECAPTCHA_FAILED_GETCLIENT_EXCEPTION_");
+                if (exc == null) {
+                    str = "NULL";
+                } else if (exc.getMessage() != null) {
+                    str = exc.getMessage().replaceAll(" ", "_").toUpperCase();
                 }
-            default:
-                super.f(canvas, rect, f);
+                sb.append(str);
+                gb1Var.a(sb.toString());
                 break;
-        }
-    }
-
-    @Override // uz6
-    public final boolean h() {
-        switch (this.V) {
-            case 0:
-                return true;
             default:
-                return super.h();
-        }
-    }
-
-    @Override // uz6
-    public final void i() {
-        switch (this.V) {
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((x02) this.W).d2;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.W();
-                    break;
+                cc4.e("CaptchaController: executeTask failure", exc);
+                StringBuilder sb2 = new StringBuilder("RECAPTCHA_FAILED_TASK_EXCEPTION_");
+                if (exc == null) {
+                    str = "NULL";
+                } else if (exc.getMessage() != null) {
+                    str = exc.getMessage().replaceAll(" ", "_").toUpperCase();
                 }
-                break;
-        }
-    }
-
-    @Override // uz6
-    public final void n(boolean z) {
-        switch (this.V) {
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((x02) this.W).d2;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.W();
-                    break;
-                }
+                sb2.append(str);
+                gb1Var.a(sb2.toString());
                 break;
         }
     }

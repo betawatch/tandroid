@@ -1,53 +1,39 @@
 // default package
 
-import android.widget.EditText;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fwb extends i49 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ lwb c;
-
-    public fwb(lwb lwbVar, int i, long j) {
-        this.c = lwbVar;
-        this.a = i;
-        this.b = j;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum fwb extends rwb {
+    public fwb() {
+        super("BetweenDoctypePublicAndSystemIdentifiers", 59);
     }
 
-    @Override // i49
-    public final void a(RecyclerView recyclerView, int i) {
-        EditText editText = this.c.w;
-        if (i == 1 && editText.hasFocus()) {
-            gl.t1(editText);
-            editText.clearFocus();
-        }
-    }
-
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        lwb lwbVar = this.c;
-        lwbVar.o();
-        t26 t26Var = (t26) recyclerView.getLayoutManager();
-        if (t26Var == null || t26Var.M0() < lwbVar.s.c.size() - 3) {
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
             return;
         }
-        if (lwbVar.i()) {
-            lwbVar.j();
+        if (d == '\"') {
+            bubVar.m(this);
+            bubVar.c = rwb.A0;
             return;
         }
-        boolean z = lwbVar.d;
-        int i3 = this.a;
-        if (z) {
-            na7.q1(i3).D1().g(false);
+        if (d == '\'') {
+            bubVar.m(this);
+            bubVar.c = rwb.B0;
             return;
         }
-        pub pubVar = na7.q1(i3).g4;
-        long j = -this.b;
-        if (pubVar.e(j)) {
-            return;
+        mub mubVar = rwb.a;
+        if (d == '>') {
+            bubVar.j();
+            bubVar.c = mubVar;
+        } else if (d != 65535) {
+            bubVar.m(this);
+            bubVar.c = rwb.D0;
+        } else {
+            bubVar.l(this);
+            bubVar.j();
+            bubVar.c = mubVar;
         }
-        pubVar.o(j);
     }
 }

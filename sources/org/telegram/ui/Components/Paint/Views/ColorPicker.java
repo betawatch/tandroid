@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
@@ -52,7 +52,7 @@ public class ColorPicker extends FrameLayout {
         int green2 = Color.green(i4);
         int blue = Color.blue(i3);
         int blue2 = Color.blue(i4);
-        return Color.argb(kk7.d4, Math.min(kk7.d4, (int) (((red2 - red) * min) + red)), Math.min(kk7.d4, (int) (((green2 - green) * min) + green)), Math.min(kk7.d4, (int) (((blue2 - blue) * min) + blue)));
+        return Color.argb(jn7.d4, Math.min(jn7.d4, (int) (((red2 - red) * min) + red)), Math.min(jn7.d4, (int) (((green2 - green) * min) + green)), Math.min(jn7.d4, (int) (((blue2 - blue) * min) + blue)));
     }
 
     private void setDraggingFactor(float f) {
@@ -68,19 +68,19 @@ public class ColorPicker extends FrameLayout {
         return null;
     }
 
-    public mcb getSwatch() {
-        return new mcb(this.a, this.b, a(this.a));
+    public igb getSwatch() {
+        return new igb(this.a, this.b, a(this.a));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawRoundRect(null, gl.L(6.0f), gl.L(6.0f), null);
+        canvas.drawRoundRect(null, hl.L(6.0f), hl.L(6.0f), null);
         throw null;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        new LinearGradient(gl.L(56.0f), 0.0f, (i3 - i) - gl.L(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
+        new LinearGradient(hl.L(56.0f), 0.0f, (i3 - i) - hl.L(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
         throw null;
     }
 
@@ -103,9 +103,9 @@ public class ColorPicker extends FrameLayout {
         throw null;
     }
 
-    public void setSwatch(mcb mcbVar) {
-        setLocation(mcbVar.b);
-        setWeight(mcbVar.c);
+    public void setSwatch(igb igbVar) {
+        setLocation(igbVar.b);
+        setWeight(igbVar.c);
     }
 
     public void setUndoEnabled(boolean z) {
@@ -117,6 +117,6 @@ public class ColorPicker extends FrameLayout {
         invalidate();
     }
 
-    public void setDelegate(ml2 ml2Var) {
+    public void setDelegate(gm2 gm2Var) {
     }
 }

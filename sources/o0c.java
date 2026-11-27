@@ -1,27 +1,43 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o0c implements zw5, yw5 {
-    public final /* synthetic */ b1c a;
-    public final /* synthetic */ TL_stories.StoryItem b;
-    public final /* synthetic */ z0c c;
+public final class o0c {
+    public static WeakReference d;
+    public final SharedPreferences a;
+    public ko9 b;
+    public final ScheduledThreadPoolExecutor c;
 
-    public /* synthetic */ o0c(b1c b1cVar, TL_stories.StoryItem storyItem, z0c z0cVar) {
-        this.a = b1cVar;
-        this.b = storyItem;
-        this.c = z0cVar;
+    public o0c(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+        this.c = scheduledThreadPoolExecutor;
+        this.a = sharedPreferences;
     }
 
-    @Override // zw5
-    public final void a(String str) {
-        gl.c3(new exa((Object) this.a, (Object) this.b, (Object) str, (Object) this.c, (byte) 16));
+    public final synchronized yxb a() {
+        yxb yxbVar;
+        String w = this.b.w();
+        Pattern pattern = yxb.d;
+        yxbVar = null;
+        if (!TextUtils.isEmpty(w)) {
+            String[] split = w.split("!", -1);
+            if (split.length == 2) {
+                yxbVar = new yxb(split[0], split[1]);
+            }
+        }
+        return yxbVar;
     }
 
-    @Override // yw5
-    public final void n(Exception exc) {
-        gl.c3(new r1b(this.a, this.b, this.c, (byte) 20));
+    public final synchronized void b() {
+        this.b = ko9.j(this.a, this.c);
+    }
+
+    public final synchronized void c(yxb yxbVar) {
+        this.b.z(yxbVar.c);
     }
 }

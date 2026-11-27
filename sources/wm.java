@@ -1,35 +1,63 @@
 // default package
 
-import android.animation.TimeInterpolator;
+import android.animation.ObjectAnimator;
+import android.graphics.drawable.AnimationDrawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wm implements TimeInterpolator {
-    public int[] a;
-    public int b;
-    public int c;
+public final class wm extends mqd {
+    public final ObjectAnimator a;
+    public final boolean b;
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f) {
-        float f2;
-        int i = (int) ((f * this.c) + 0.5f);
-        int i2 = this.b;
-        int[] iArr = this.a;
-        int i3 = 0;
-        while (true) {
-            if (i3 < i2) {
-                int i4 = iArr[i3];
-                if (i < i4) {
-                    f2 = i / this.c;
-                    break;
-                }
-                i -= i4;
-                i3++;
-            } else {
-                f2 = 0.0f;
-                break;
-            }
+    public wm(AnimationDrawable animationDrawable, boolean z, boolean z2) {
+        int i;
+        int numberOfFrames = animationDrawable.getNumberOfFrames() - 1;
+        if (z) {
+            i = numberOfFrames;
+            numberOfFrames = 0;
+        } else {
+            i = 0;
         }
-        return (i3 / i2) + f2;
+        xm xmVar = new xm();
+        int numberOfFrames2 = animationDrawable.getNumberOfFrames();
+        xmVar.b = numberOfFrames2;
+        int[] iArr = xmVar.a;
+        if (iArr == null || iArr.length < numberOfFrames2) {
+            iArr = new int[numberOfFrames2];
+            xmVar.a = iArr;
+        }
+        int i2 = 0;
+        for (int i3 = 0; i3 < numberOfFrames2; i3++) {
+            int duration = animationDrawable.getDuration(z ? (numberOfFrames2 - i3) - 1 : i3);
+            iArr[i3] = duration;
+            i2 += duration;
+        }
+        xmVar.c = i2;
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(animationDrawable, "currentIndex", i, numberOfFrames);
+        sp2.a(ofInt, true);
+        ofInt.setDuration(xmVar.c);
+        ofInt.setInterpolator(xmVar);
+        this.b = z2;
+        this.a = ofInt;
+    }
+
+    @Override // mqd
+    public final boolean a() {
+        return this.b;
+    }
+
+    @Override // mqd
+    public final void b() {
+        this.a.reverse();
+    }
+
+    @Override // mqd
+    public final void c() {
+        this.a.start();
+    }
+
+    @Override // mqd
+    public final void d() {
+        this.a.cancel();
     }
 }

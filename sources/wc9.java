@@ -1,42 +1,102 @@
 // default package
 
-import android.text.Editable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class wc9 implements b42, e12 {
-    public final /* synthetic */ hd9 a;
-    public final /* synthetic */ x02 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class wc9 extends TextView {
+    public final wm2 a;
+    public final int b;
+    public final boolean c;
 
-    public /* synthetic */ wc9(hd9 hd9Var, x02 x02Var) {
-        this.a = hd9Var;
-        this.b = x02Var;
+    public wc9(vnb vnbVar, Context context, boolean z) {
+        super(context);
+        this.c = z;
+        if (z) {
+            yob.X(this, aob.G6, vnbVar);
+            setPadding(hl.L(14.0f), 0, hl.L(14.0f), 0);
+            setTextSize(1, 15.0f);
+            this.b = hl.L(40.0f);
+        } else {
+            int i = aob.y8;
+            int v0 = aob.v0(i, vnbVar);
+            yob.X(this, i, vnbVar);
+            hf0 Z = aob.Z(aob.p1(0.08f, v0), aob.p1(0.15f, v0), hl.L(13.0f), hl.L(13.0f));
+            uob K = yob.K(0.08f, i);
+            uob K2 = yob.K(0.15f, i);
+            setBackground(Z);
+            yob.j(this, Z, K, K2, vnbVar);
+            setPadding(hl.L(11.0f), 0, hl.L(11.0f), 0);
+            this.b = hl.L(26.0f);
+        }
+        setGravity(17);
+        setTypeface(hl.o());
+        if (!z) {
+            iye.a(this);
+        }
+        wm2 wm2Var = new wm2(R.drawable.arrows_select, 0);
+        this.a = wm2Var;
+        wm2Var.H = 0.8f;
+        float L = hl.L(1.0f);
+        wm2Var.r = 0.0f;
+        wm2Var.s = L;
     }
 
-    @Override // b42
-    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-        x02 x02Var = this.b;
-        if (messageMedia == null || messageMedia.geo == null) {
-            x02Var.a(true);
-            return;
-        }
-        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
-        pageblockmap.geo = messageMedia.geo;
-        pageblockmap.zoom = 15;
-        pageblockmap.w = 600;
-        pageblockmap.h = 400;
-        this.a.Q.N1(pageblockmap);
-        x02Var.a(true);
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30));
     }
 
-    @Override // e12
-    public final void g(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2) {
-        if (!arrayList.isEmpty()) {
-            this.a.Q.W1((k27) arrayList.get(0));
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.c && super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:6:0x005d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void setSorting(dd9 dd9Var) {
+        wm2 wm2Var;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v ");
+        wm2 wm2Var2 = null;
+        if (dd9Var == dd9.b) {
+            wm2Var = new wm2(R.drawable.mini_gift_sorting_date, 0);
+            spannableStringBuilder.setSpan(wm2Var, 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) ob6.M0(2131745869, null));
+        } else {
+            if (dd9Var != dd9.a) {
+                if (dd9Var == dd9.c) {
+                    wm2Var = new wm2(R.drawable.mini_gift_sorting_num, 0);
+                    spannableStringBuilder.setSpan(wm2Var, 0, 1, 33);
+                    spannableStringBuilder.append((CharSequence) ob6.M0(2131745867, null));
+                }
+                if (wm2Var2 != null) {
+                    float L = hl.L(1.0f);
+                    wm2Var2.r = 0.0f;
+                    wm2Var2.s = L;
+                }
+                setText(spannableStringBuilder);
+            }
+            wm2Var = new wm2(R.drawable.mini_gift_sorting_price, 0);
+            spannableStringBuilder.setSpan(wm2Var, 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) ob6.M0(2131745865, null));
         }
-        this.b.a(true);
+        wm2Var2 = wm2Var;
+        if (wm2Var2 != null) {
+        }
+        setText(spannableStringBuilder);
+    }
+
+    public void setValue(CharSequence charSequence) {
+        SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) " v");
+        append.setSpan(this.a, append.length() - 1, append.length(), 33);
+        setText(append);
     }
 }

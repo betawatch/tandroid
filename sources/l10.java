@@ -1,84 +1,69 @@
 // default package
 
-import org.telegram.messenger.MediaController;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class l10 implements Runnable {
+public final class l10 extends FrameLayout {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ m10 b;
+    public final /* synthetic */ j20 b;
 
-    public /* synthetic */ l10(m10 m10Var, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l10(j20 j20Var, Activity activity, byte b) {
+        super(activity);
         this.a = b;
-        this.b = m10Var;
+        this.b = j20Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        TextView textView;
         byte b = this.a;
-        m10 m10Var = this.b;
+        j20 j20Var = this.b;
         switch (b) {
             case 0:
-                int i = m10Var.w + 1;
-                m10Var.w = i;
-                if (i != 1) {
-                    if (i == 2) {
-                        gl.d3(this, 2000L);
-                        break;
-                    }
-                } else {
-                    i20 i20Var = m10Var.I;
-                    i20Var.A2 = -1;
-                    i20Var.B2 = MediaController.w().v0.b0;
-                    m10Var.x = System.currentTimeMillis();
-                    gl.d3(this, 2000L);
-                    gl.c3(m10Var.F);
-                    break;
+                View[] viewArr = j20Var.g2;
+                int D = ik8.D(248.0f, i3 - i, 4);
+                for (int i5 = 0; i5 < 5; i5++) {
+                    int L = (D * i5) + hl.L((i5 * 48) + 4);
+                    int L2 = hl.L(9.0f);
+                    View view = viewArr[i5];
+                    view.layout(L, L2, view.getMeasuredWidth() + L, viewArr[i5].getMeasuredHeight() + L2);
                 }
                 break;
+            case 1:
             default:
-                i20 i20Var2 = m10Var.I;
-                lbc lbcVar = MediaController.w().j0;
-                long U = lbcVar == null ? 0L : lbcVar.U();
-                if (U != 0 && U != -9223372036854775807L) {
-                    float f = i20Var2.B2;
-                    long currentTimeMillis = System.currentTimeMillis();
-                    long j = currentTimeMillis - m10Var.x;
-                    m10Var.x = currentTimeMillis;
-                    long j2 = currentTimeMillis - m10Var.y;
-                    int i2 = m10Var.w;
-                    float f2 = ((long) ((f * r2) - (j * (i2 == 1 ? 3L : i2 == 2 ? 6L : 12L)))) / U;
-                    if (f2 < 0.0f) {
-                        f2 = 0.0f;
-                    }
-                    i20Var2.B2 = f2;
-                    k27 k27Var = MediaController.w().v0;
-                    if (k27Var != null && k27Var.I3()) {
-                        i20Var2.W0(k27Var, false);
-                    }
-                    if (i20Var2.A2 == -1 && m10Var.w > 0) {
-                        if (j2 > 200 || i20Var2.B2 == 0.0f) {
-                            m10Var.y = currentTimeMillis;
-                            if (i20Var2.B2 == 0.0f) {
-                                MediaController.w().h0(MediaController.w().v0, 0.0f);
-                                lbc lbcVar2 = MediaController.w().j0;
-                                if (lbcVar2 != null) {
-                                    lbcVar2.f0();
-                                }
-                            } else {
-                                MediaController.w().h0(MediaController.w().v0, f2);
-                            }
-                        }
-                        if (m10Var.w > 0 && i20Var2.B2 > 0.0f) {
-                            gl.d3(m10Var.F, 16L);
-                            break;
-                        }
-                    }
-                } else {
-                    m10Var.x = System.currentTimeMillis();
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+            case 2:
+                super.onLayout(z, i, i2, i3, i4);
+                s7 s7Var = j20Var.O1;
+                if (s7Var != null && (textView = j20Var.T1) != null) {
+                    int left = (textView.getLeft() - hl.L(4.0f)) - s7Var.getMeasuredWidth();
+                    s7Var.layout(left, s7Var.getTop(), s7Var.getMeasuredWidth() + left, s7Var.getBottom());
                     break;
                 }
                 break;
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                j20 j20Var = this.b;
+                if (j20Var.b2.getTag() != null) {
+                    j20Var.R0(false, true);
+                }
+                return true;
+            case 2:
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
     }
 }

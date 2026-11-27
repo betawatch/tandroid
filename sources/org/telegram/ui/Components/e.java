@@ -1,40 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.util.Property;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e extends AnimatorListenerAdapter {
-    public final /* synthetic */ ChatActivityEnterView a;
-
-    public e(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+public final class e extends Property {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((ChatActivityEnterView.RecordCircle) obj).getControlsScale());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        i29 i29Var = chatActivityEnterView.i1;
-        if (i29Var != null && i29Var.T0 != null) {
-            chatActivityEnterView.y5 = new kx1(this, animator, (byte) 2);
-            return;
-        }
-        scc sccVar = chatActivityEnterView.g1;
-        if (sccVar != null) {
-            sccVar.setVisibility(8);
-        }
-        i29 i29Var2 = chatActivityEnterView.i1;
-        if (i29Var2 != null) {
-            i29Var2.setVisibility(8);
-        }
-        chatActivityEnterView.e5 = 0.0f;
-        chatActivityEnterView.U0();
-        chatActivityEnterView.M0();
-        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.D2;
-        if (recordCircle != null) {
-            recordCircle.g();
-        }
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        ((ChatActivityEnterView.RecordCircle) obj).setControlsScale(((Float) obj2).floatValue());
     }
 }

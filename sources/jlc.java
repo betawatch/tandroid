@@ -1,58 +1,33 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class jlc extends oec {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ wjb c;
-    public final /* synthetic */ Rect d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ cj7[] f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class jlc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLRPC.GroupCallParticipant c;
 
-    public jlc(ArrayList arrayList, Context context, wjb wjbVar, Rect rect, int i, cj7[] cj7VarArr) {
-        this.a = arrayList;
-        this.b = context;
-        this.c = wjbVar;
-        this.d = rect;
-        this.e = i;
-        this.f = cj7VarArr;
+    public /* synthetic */ jlc(VoIPService voIPService, TLRPC.GroupCallParticipant groupCallParticipant, byte b) {
+        this.a = b;
+        this.b = voIPService;
+        this.c = groupCallParticipant;
     }
 
-    @Override // oec
-    public final void b(View view, int i, int i2) {
-        FrameLayout frameLayout = (FrameLayout) view;
-        frameLayout.removeAllViews();
-        frameLayout.addView(hmc.j0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i), null, null, null, null, this.c, this.f, true), nme.c(-2.0f, -1));
-    }
-
-    @Override // oec
-    public final View d(int i) {
-        FrameLayout frameLayout = new FrameLayout(this.b);
-        int L = gl.L(20.0f);
-        int i2 = bkb.c6;
-        wjb wjbVar = this.c;
-        ShapeDrawable c0 = bkb.c0(L, 0, bkb.v0(i2, wjbVar));
-        Rect rect = this.d;
-        InsetDrawable insetDrawable = new InsetDrawable((Drawable) c0, rect.left, 0, rect.right, 0);
-        vkb M = zkb.M(i2);
-        frameLayout.setBackground(insetDrawable);
-        zkb.j(frameLayout, insetDrawable, M, null, wjbVar);
-        return frameLayout;
-    }
-
-    @Override // oec
-    public final int e() {
-        return this.a.size();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLRPC.GroupCallParticipant groupCallParticipant = this.c;
+        VoIPService voIPService = this.b;
+        switch (b) {
+            case 0:
+                voIPService.lambda$startGroupCall$29(groupCallParticipant);
+                break;
+            default:
+                voIPService.lambda$startConferenceGroupCall$40(groupCallParticipant);
+                break;
+        }
     }
 }

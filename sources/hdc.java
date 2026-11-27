@@ -1,23 +1,20 @@
 // default package
 
-import android.view.ContentInfo;
-import android.view.View;
-import j$.util.Objects;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class hdc {
-    public static String[] a(View view) {
-        return view.getReceiveContentMimeTypes();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class hdc extends ImageReceiver {
+    public final /* synthetic */ idc K1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hdc(idc idcVar) {
+        super(null);
+        this.K1 = idcVar;
     }
 
-    public static hv2 b(View view, hv2 hv2Var) {
-        ContentInfo e = hv2Var.a.e();
-        Objects.requireNonNull(e);
-        ContentInfo performReceiveContent = view.performReceiveContent(e);
-        if (performReceiveContent == null) {
-            return null;
-        }
-        return performReceiveContent == e ? hv2Var : new hv2(new fv2(performReceiveContent));
+    @Override // org.telegram.messenger.ImageReceiver, em
+    public final void invalidate() {
+        this.K1.invalidate();
     }
 }

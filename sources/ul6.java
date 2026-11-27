@@ -1,29 +1,72 @@
 // default package
 
-import org.telegram.messenger.a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ul6 {
+    public int A;
+    public int B;
+    public int C;
+    public int D;
+    public int E;
+    public float F;
+    public float G;
+    public float H;
+    public float I;
+    public float J;
+    public float K;
+    public float L;
+    public float M;
+    public float N;
+    public float O;
+    public byte[] P;
+    public int Q;
+    public int R;
+    public int S;
+    public int T;
+    public long U;
+    public long V;
+    public g6c W;
+    public boolean X;
+    public boolean Y;
+    public boolean Z;
+    public boolean a;
+    public boolean a0;
+    public String b;
+    public boolean b0;
+    public String c;
+    public String c0;
+    public int d;
+    public x1c d0;
+    public long e;
+    public ko4 e0;
+    public int f;
+    public int f0;
+    public int g;
+    public int h;
+    public int i;
+    public boolean j;
+    public byte[] k;
+    public w1c l;
+    public byte[] m;
+    public hr3 n;
+    public int o;
+    public int p;
+    public int q;
+    public int r;
+    public int s;
+    public int t;
+    public int u;
+    public float v;
+    public float w;
+    public float x;
+    public byte[] y;
+    public int z;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ul6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ float c;
-
-    public /* synthetic */ ul6(String str, float f, byte b) {
-        this.a = b;
-        this.b = str;
-        this.c = f;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                a.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
-                break;
-            default:
-                a.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
-                break;
+    public final byte[] a(String str) {
+        byte[] bArr = this.m;
+        if (bArr != null) {
+            return bArr;
         }
+        throw hy7.a("Missing CodecPrivate for codec " + str, null);
     }
 }

@@ -1,67 +1,49 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wx implements aka {
-    public final /* synthetic */ byte a = 2;
-    public final long b;
-    public final int c;
-    public final byte d;
+public final class wx implements nw8 {
+    public final byte a;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public wx(int i, long j, int i2) {
-        this.c = i;
-        this.b = j;
-        this.d = i2;
+    public wx(int i) {
+        this.a = i;
     }
 
-    public final boolean a(int i, int i2) {
-        byte b = this.d;
-        if (b != 1) {
-            if ((b == 2 || b == 3) && ConnectionsManager.getInstance(i).getCurrentTime() >= this.b) {
-                return false;
-            }
-        } else if (this.c >= i2) {
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return nw8.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof nw8)) {
             return false;
         }
-        return true;
+        nw8 nw8Var = (nw8) obj;
+        return this.a == nw8Var.tag() && mw8.a.equals(nw8Var.intEncoding());
     }
 
-    public final int b() {
-        byte b = this.d;
-        if (b != 2) {
-            return b != 3 ? 14 : 16;
-        }
-        return 15;
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (mw8.a.hashCode() ^ 2041407134);
     }
 
+    @Override // nw8
+    public final mw8 intEncoding() {
+        return mw8.a;
+    }
+
+    @Override // nw8
+    public final int tag() {
+        return this.a;
+    }
+
+    @Override // java.lang.annotation.Annotation
     public final String toString() {
-        switch (this.a) {
-            case 0:
-                StringBuilder sb = new StringBuilder("AtomSizeTooSmall{type=");
-                sb.append(g8c.f0(this.c));
-                sb.append(", size=");
-                sb.append(this.b);
-                sb.append(", minHeaderSize=");
-                return de9.l(sb, this.d, "}");
-            default:
-                return super.toString();
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public wx(long j, int i, int i2) {
-        this.b = j;
-        this.c = i;
-        this.d = i2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public wx(int i, int i2, long j) {
-        this.d = i;
-        this.b = j;
-        this.c = i2;
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + mw8.a + ')';
     }
 }

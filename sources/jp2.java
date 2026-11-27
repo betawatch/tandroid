@@ -1,69 +1,183 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import java.util.AbstractMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jp2 extends b4 {
-    public static final Parcelable.Creator<jp2> CREATOR = new igd(6);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final boolean d;
+public abstract class jp2 implements Iterator {
+    public final /* synthetic */ byte a = 0;
+    public int b;
+    public int c;
+    public int d;
+    public final /* synthetic */ AbstractMap e;
 
-    public jp2(int i, int i2, int i3, boolean z) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = z;
+    public jp2(lp2 lp2Var, byte b) {
+        this.e = lp2Var;
+        this.b = lp2Var.f;
+        this.c = lp2Var.isEmpty() ? -1 : 0;
+        this.d = -1;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof jp2)) {
-            return false;
+    public abstract Object a(int i);
+
+    public abstract Object b(int i);
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
+            case 0:
+                if (this.c >= 0) {
+                }
+                break;
+            case 1:
+                if (this.c >= 0) {
+                }
+                break;
+            default:
+                if (this.c >= 0) {
+                }
+                break;
         }
-        jp2 jp2Var = (jp2) obj;
-        return this.a == jp2Var.a && this.b == jp2Var.b && this.c == jp2Var.c && this.d == jp2Var.d;
+        return false;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c), Boolean.valueOf(this.d)});
+    @Override // java.util.Iterator
+    public final Object next() {
+        byte b = this.a;
+        AbstractMap abstractMap = this.e;
+        Object obj = null;
+        switch (b) {
+            case 0:
+                lp2 lp2Var = (lp2) abstractMap;
+                if (lp2Var.f != this.b) {
+                    bg.b();
+                    break;
+                } else if (!hasNext()) {
+                    lq5.n();
+                    break;
+                } else {
+                    int i = this.c;
+                    this.d = i;
+                    obj = a(i);
+                    int i2 = this.c + 1;
+                    this.c = i2 < lp2Var.h ? i2 : -1;
+                    break;
+                }
+            case 1:
+                lp2 lp2Var2 = (lp2) abstractMap;
+                if (lp2Var2.f != this.b) {
+                    bg.b();
+                    break;
+                } else if (!hasNext()) {
+                    lq5.n();
+                    break;
+                } else {
+                    int i3 = this.c;
+                    this.d = i3;
+                    obj = b(i3);
+                    int i4 = this.c + 1;
+                    this.c = i4 < lp2Var2.h ? i4 : -1;
+                    break;
+                }
+            default:
+                lp2 lp2Var3 = (lp2) abstractMap;
+                if (lp2Var3.f != this.b) {
+                    bg.b();
+                    break;
+                } else if (!hasNext()) {
+                    lq5.n();
+                    break;
+                } else {
+                    int i5 = this.c;
+                    this.d = i5;
+                    obj = b(i5);
+                    int i6 = this.c + 1;
+                    this.c = i6 < lp2Var3.h ? i6 : -1;
+                    break;
+                }
+        }
+        return obj;
     }
 
-    public final String toString() {
-        int i = this.a;
-        int length = String.valueOf(i).length();
-        int i2 = this.b;
-        int length2 = String.valueOf(i2).length();
-        int i3 = this.c;
-        int length3 = String.valueOf(i3).length();
-        boolean z = this.d;
-        StringBuilder sb = new StringBuilder(length + 55 + length2 + 19 + length3 + 13 + String.valueOf(z).length() + 1);
-        sb.append("ComplianceOptions{callerProductId=");
-        sb.append(i);
-        sb.append(", dataOwnerProductId=");
-        sb.append(i2);
-        sb.append(", processingReason=");
-        sb.append(i3);
-        sb.append(", isUserData=");
-        sb.append(z);
-        sb.append("}");
-        return sb.toString();
+    @Override // java.util.Iterator
+    public final void remove() {
+        byte b = this.a;
+        AbstractMap abstractMap = this.e;
+        switch (b) {
+            case 0:
+                lp2 lp2Var = (lp2) abstractMap;
+                if (lp2Var.f != this.b) {
+                    bg.b();
+                    break;
+                } else {
+                    yve.o("no calls to next() since the last call to remove()", this.d >= 0);
+                    this.b += 32;
+                    int i = this.d;
+                    Object obj = lp2.w;
+                    lp2Var.remove(lp2Var.g(i));
+                    this.c--;
+                    this.d = -1;
+                    break;
+                }
+            case 1:
+                lp2 lp2Var2 = (lp2) abstractMap;
+                int i2 = lp2Var2.f;
+                int i3 = this.b;
+                if (i2 != i3) {
+                    bg.b();
+                    break;
+                } else {
+                    int i4 = this.d;
+                    if (!(i4 >= 0)) {
+                        grb.i("no calls to next() since the last call to remove()");
+                        break;
+                    } else {
+                        this.b = i3 + 32;
+                        Object[] objArr = lp2Var2.d;
+                        objArr.getClass();
+                        lp2Var2.remove(objArr[i4]);
+                        this.c--;
+                        this.d = -1;
+                        break;
+                    }
+                }
+            default:
+                lp2 lp2Var3 = (lp2) abstractMap;
+                int i5 = lp2Var3.f;
+                int i6 = this.b;
+                if (i5 != i6) {
+                    bg.b();
+                    break;
+                } else {
+                    int i7 = this.d;
+                    if (!(i7 >= 0)) {
+                        grb.i("no calls to next() since the last call to remove()");
+                        break;
+                    } else {
+                        this.b = i6 + 32;
+                        Object[] objArr2 = lp2Var3.d;
+                        objArr2.getClass();
+                        lp2Var3.remove(objArr2[i7]);
+                        this.c--;
+                        this.d = -1;
+                        break;
+                    }
+                }
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        jte.s(parcel, r);
+    public jp2(lp2 lp2Var, char c) {
+        this.e = lp2Var;
+        this.b = lp2Var.f;
+        this.c = lp2Var.isEmpty() ? -1 : 0;
+        this.d = -1;
+    }
+
+    public jp2(lp2 lp2Var) {
+        this.e = lp2Var;
+        this.b = lp2Var.f;
+        this.c = lp2Var.isEmpty() ? -1 : 0;
+        this.d = -1;
     }
 }

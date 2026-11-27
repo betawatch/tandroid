@@ -1,69 +1,22 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ThemeActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ft1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wt1 b;
+public final class ft1 extends oo0 {
+    public final /* synthetic */ it1 f;
 
-    public /* synthetic */ ft1(wt1 wt1Var, byte b) {
-        this.a = b;
-        this.b = wt1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ft1(it1 it1Var, Context context, int i, vnb vnbVar) {
+        super(i, vnbVar, context);
+        this.f = it1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        wt1 wt1Var = this.b;
-        switch (b) {
-            case 0:
-                mu1 mu1Var = wt1Var.a;
-                mu1Var.v5 = null;
-                mu1Var.w5 = null;
-                break;
-            case 1:
-                mu1 mu1Var2 = wt1Var.a;
-                new jh8((d) mu1Var2, 8, true).show();
-                mu1Var2.getMessagesController().H3();
-                break;
-            case 2:
-                mu1 mu1Var3 = wt1Var.a;
-                new jh8((d) mu1Var3, 8, true).show();
-                mu1Var3.getMessagesController().H3();
-                break;
-            case 3:
-                mu1 mu1Var4 = wt1Var.a;
-                new jh8((d) mu1Var4, 8, true).show();
-                mu1Var4.getMessagesController().H3();
-                break;
-            case 4:
-                wt1Var.a.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
-                break;
-            case 5:
-                mu1 mu1Var5 = wt1Var.a;
-                mu1Var5.v5 = null;
-                mu1Var5.w5 = null;
-                break;
-            case 6:
-                wt1Var.a.a0.h1();
-                break;
-            case 7:
-                wt1Var.a.a0.h1();
-                break;
-            case 8:
-                mu1 mu1Var6 = wt1Var.a;
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.V0 = true;
-                mu1Var6.presentFragment(themeActivity);
-                break;
-            default:
-                mu1 mu1Var7 = wt1Var.a;
-                mu1Var7.showDialog(new jh8((d) mu1Var7, 39, false));
-                break;
-        }
+    @Override // oo0
+    public final int getSideMenuWidth() {
+        zu1 zu1Var = this.f.R;
+        int i = zu1.Ad;
+        return zu1Var.o7();
     }
 }

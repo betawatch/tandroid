@@ -1,89 +1,85 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class w67 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ long d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class w67 extends g1b {
+    public final /* synthetic */ x67 w;
 
-    public /* synthetic */ w67(na7 na7Var, long j, TLObject tLObject) {
-        this.b = na7Var;
-        this.d = j;
-        this.c = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w67(x67 x67Var, Context context, int i, of0 of0Var, vnb vnbVar) {
+        super(context, i, of0Var, vnbVar);
+        this.w = x67Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        TLObject tLObject = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
-            case 0:
-                na7Var.k0.l(j);
-                if (tLObject != null) {
-                    TLRPC.TL_messages_peerSettings tL_messages_peerSettings = (TLRPC.TL_messages_peerSettings) tLObject;
-                    TLRPC.PeerSettings peerSettings = tL_messages_peerSettings.settings;
-                    na7Var.b4(tL_messages_peerSettings.users, false);
-                    na7Var.V3(tL_messages_peerSettings.chats, false);
-                    na7Var.x4(j, peerSettings);
-                    break;
+    @Override // g1b
+    public final void c() {
+        int i;
+        int i2;
+        int i3;
+        z67 z67Var = this.w.d;
+        if (this.r.c <= 0) {
+            performClick();
+            pf0 pf0Var = this.b;
+            if (pf0Var.u0.H) {
+                long selectedDate = pf0Var.getSelectedDate();
+                i1b i1bVar = this.r;
+                if (this.s == 4) {
+                    i1bVar.e = new iqa(i1bVar.d, selectedDate);
+                    g(false);
+                    return;
                 }
-                break;
-            default:
-                TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
-                TLRPC.User V1 = na7Var.V1(Long.valueOf(na7Var.getUserConfig().e()));
-                if (V1 == null) {
-                    V1 = na7Var.getUserConfig().f();
-                    na7Var.a4(V1, false, false);
-                } else {
-                    na7Var.getUserConfig().v(V1);
+                if (i1bVar.g == null) {
+                    return;
                 }
-                if (V1 != null) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(V1);
-                    na7Var.getMessagesStorage().j1(arrayList, null, false, true);
-                    if (tL_photos_photo.photo instanceof TLRPC.TL_photo) {
-                        TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
-                        V1.photo = tL_userProfilePhoto;
-                        tL_userProfilePhoto.has_video = !tL_photos_photo.photo.video_sizes.isEmpty();
-                        TLRPC.UserProfilePhoto userProfilePhoto = V1.photo;
-                        TLRPC.Photo photo = tL_photos_photo.photo;
-                        userProfilePhoto.photo_id = photo.id;
-                        userProfilePhoto.photo_small = ba4.w(photo.sizes, kk7.f2, false, null, false).location;
-                        V1.photo.photo_big = ba4.w(tL_photos_photo.photo.sizes, 800, false, null, false).location;
-                        V1.photo.dc_id = tL_photos_photo.photo.dc_id;
-                    } else {
-                        V1.photo = new TLRPC.TL_userProfilePhotoEmpty();
-                    }
-                    TLRPC.UserFull W1 = na7Var.W1(j);
-                    if (W1 != null) {
-                        W1.profile_photo = tL_photos_photo.photo;
-                        na7Var.getMessagesStorage().g2(W1, false);
-                    }
-                    na7Var.getUserConfig().f().photo = V1.photo;
-                    na7Var.a4(V1, false, false);
-                    na7Var.getNotificationCenter().k(46, new Object[0]);
-                    kk7 notificationCenter = na7Var.getNotificationCenter();
-                    int i = na7.q5;
-                    notificationCenter.k(2, Integer.valueOf(na7.q5));
-                    na7Var.getNotificationCenter().k(2, 2);
-                    na7Var.getUserConfig().u(true);
-                    break;
+                f();
+                String str = this.r.g + "_" + selectedDate;
+                ok1 ok1Var = (ok1) z67Var.w.f(str);
+                if (ok1Var != null) {
+                    this.r.e = ok1Var;
+                    g(false);
+                    return;
                 }
-                break;
+                TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+                tL_loadAsyncGraph.token = this.r.g;
+                if (selectedDate != 0) {
+                    tL_loadAsyncGraph.x = selectedDate;
+                    tL_loadAsyncGraph.flags |= 1;
+                }
+                v1b v1bVar = new v1b();
+                z67Var.x = v1bVar;
+                z67Var.f.getClass();
+                v1bVar.a = RecyclerView.S(this);
+                pf0Var.u0.d(true, false);
+                i = ((e) z67Var).currentAccount;
+                int sendRequest = ConnectionsManager.getInstance(i).sendRequest(tL_loadAsyncGraph, new m65(this, str, v1bVar, (byte) 15), null, null, 0, z67Var.a.stats_dc, 1, true);
+                i2 = ((e) z67Var).currentAccount;
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i2);
+                i3 = ((e) z67Var).classGuid;
+                connectionsManager.bindRequestToGuid(sendRequest, i3);
+            }
         }
     }
 
-    public /* synthetic */ w67(na7 na7Var, TLObject tLObject, long j) {
-        this.b = na7Var;
-        this.c = tLObject;
-        this.d = j;
+    @Override // g1b
+    public final void f() {
+        z67 z67Var = this.w.d;
+        v1b v1bVar = z67Var.x;
+        if (v1bVar != null) {
+            v1bVar.b = true;
+        }
+        int childCount = z67Var.f.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = z67Var.f.getChildAt(i);
+            if (childAt instanceof g1b) {
+                ((g1b) childAt).b.u0.d(false, true);
+            }
+        }
     }
 }

@@ -1,334 +1,222 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.util.SparseArray;
-import android.widget.ImageView;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
+import android.text.TextUtils;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class oh8 extends ImageView {
-    public static final /* synthetic */ int M = 0;
-    public Paint E;
-    public ImageReceiver F;
-    public vl G;
-    public float H;
-    public boolean I;
-    public boolean J;
-    public wd1 K;
-    public Integer L;
-    public final byte a;
-    public final float[] b;
-    public final bra c;
-    public final wjb d;
-    public boolean e;
-    public final float f;
-    public boolean h;
-    public int n;
-    public int r;
-    public int s;
-    public LinearGradient w;
-    public final Path x;
-    public Paint y;
+public final class oh8 extends d6 {
+    public final /* synthetic */ wh8 a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public oh8(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.b = new float[3];
-        this.f = 1.0f;
-        this.h = false;
-        this.n = -1;
-        this.w = null;
-        this.x = new Path();
-        this.y = new Paint(1);
-        this.H = 1.0f;
-        this.a = i;
-        this.d = wjbVar;
-        setImageResource(i == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
-        if (i == 0) {
-            bra braVar = new bra(5);
-            this.c = braVar;
-            braVar.g();
-            braVar.L = false;
-            braVar.s = (byte) 4;
-            braVar.t = (byte) 4;
-            braVar.r = (byte) 2;
-            braVar.o = 0.1f;
-            braVar.c();
+    public oh8(wh8 wh8Var) {
+        this.a = wh8Var;
+    }
+
+    @Override // d6
+    public final void b(int i) {
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        wh8 wh8Var = this.a;
+        boolean[] zArr = wh8Var.x;
+        CharSequence[] charSequenceArr = wh8Var.w;
+        zu1 zu1Var = wh8Var.f;
+        if (i == -1) {
+            if (wh8Var.i0(true)) {
+                wh8Var.finishFragment();
+                return;
+            }
             return;
         }
-        if (i == 2) {
-            this.f = 0.8f;
-            this.y.setColor(bkb.w0(null, bkb.Z6, false));
-        } else if (i == 3) {
-            setScaleType(ImageView.ScaleType.CENTER);
-            setImageResource(R.drawable.msg_archive_hide);
-        } else if (i == 4) {
-            setScaleType(ImageView.ScaleType.CENTER);
-            setImageResource(R.drawable.msg_limit_pin);
-        }
-    }
-
-    public final void a() {
-        if (!this.e || getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
-            return;
-        }
-        int i = this.n;
-        float[] fArr = this.b;
-        Color.colorToHSV(i, fArr);
-        fArr[1] = fArr[1] * 1.0f;
-        if (fArr[2] > 0.7f) {
-            fArr[2] = 0.7f;
-        }
-        int HSVToColor = Color.HSVToColor(fArr);
-        int i2 = bkb.c6;
-        wjb wjbVar = this.d;
-        int f = bm2.f(0.5f, HSVToColor, bkb.v0(i2, wjbVar));
-        int f2 = bm2.f(0.4f, HSVToColor, bkb.v0(i2, wjbVar));
-        if (this.w != null && this.r == f2 && this.s == f) {
-            return;
-        }
-        if (this.J) {
-            Paint paint = this.y;
-            this.E = paint;
-            paint.setAlpha(kk7.d4);
-            this.H = 0.0f;
-        }
-        this.y = new Paint(1);
-        float measuredHeight = getMeasuredHeight();
-        this.r = f2;
-        this.s = f;
-        LinearGradient linearGradient = new LinearGradient(0.0f, measuredHeight, 0.0f, 0.0f, new int[]{f2, f}, (float[]) null, Shader.TileMode.CLAMP);
-        this.w = linearGradient;
-        this.y.setShader(linearGradient);
-        invalidate();
-    }
-
-    public ImageReceiver getImageReceiver() {
-        return this.F;
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = true;
-        if (this.a != 0) {
-            a();
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.e = false;
-        Paint paint = this.y;
-        if (paint != null && this.a != 2) {
-            paint.setShader(null);
-            this.y = null;
-        }
-        this.w = null;
-        this.J = false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0078  */
-    @Override // android.widget.ImageView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        int i;
-        ml mlVar;
-        if (this.I) {
-            ImageReceiver imageReceiver = this.F;
-            if (imageReceiver == null || imageReceiver.n() == null) {
-                vl vlVar = this.G;
-                if (vlVar != null) {
-                    SparseArray sparseArray = vl.r;
-                    long h = vlVar.h();
-                    if (h != 0) {
-                        HashMap hashMap = vl.x;
-                        if (hashMap == null) {
-                            hashMap = new HashMap();
-                            vl.x = hashMap;
+        if (i == 1) {
+            int i9 = 0;
+            if (wh8Var.e0) {
+                CharSequence[] charSequenceArr2 = {a72.X(wh8Var.F)};
+                i6 = ((e) wh8Var).currentAccount;
+                ArrayList<TLRPC.MessageEntity> Y = ls6.d0(i6).Y(charSequenceArr2, true, true);
+                CharSequence charSequence = charSequenceArr2[0];
+                int size = Y.size();
+                for (int i10 = 0; i10 < size; i10++) {
+                    TLRPC.MessageEntity messageEntity = Y.get(i10);
+                    if (messageEntity.offset + messageEntity.length > charSequence.length()) {
+                        messageEntity.length = charSequence.length() - messageEntity.offset;
+                    }
+                }
+                TLRPC.TL_messageMediaToDo tL_messageMediaToDo = new TLRPC.TL_messageMediaToDo();
+                TLRPC.TodoList todoList = new TLRPC.TodoList();
+                tL_messageMediaToDo.todo = todoList;
+                todoList.others_can_append = wh8Var.I;
+                todoList.others_can_complete = wh8Var.K;
+                todoList.title = new TLRPC.TL_textWithEntities();
+                tL_messageMediaToDo.todo.title.text = charSequence.toString();
+                tL_messageMediaToDo.todo.title.entities = Y;
+                if (wh8Var.r != null) {
+                    int i11 = 0;
+                    i7 = 0;
+                    while (true) {
+                        int[] iArr = wh8Var.r;
+                        if (i11 >= iArr.length) {
+                            break;
                         }
-                        Integer num = (Integer) hashMap.get(Long.valueOf(h));
-                        if (num == null && (mlVar = vlVar.k) != null && mlVar.n() != null) {
-                            HashMap hashMap2 = vl.x;
-                            Long valueOf = Long.valueOf(h);
-                            Integer valueOf2 = Integer.valueOf(gl.I0(vlVar.k.n()));
-                            hashMap2.put(valueOf, valueOf2);
-                            num = valueOf2;
+                        i7 = Math.max(i7, iArr[i11]);
+                        i11++;
+                    }
+                } else {
+                    i7 = 0;
+                }
+                for (int i12 = 0; i12 < charSequenceArr.length; i12++) {
+                    if (!TextUtils.isEmpty(a72.X(charSequenceArr[i12]))) {
+                        CharSequence[] charSequenceArr3 = {a72.X(charSequenceArr[i12])};
+                        i8 = ((e) wh8Var).currentAccount;
+                        ArrayList<TLRPC.MessageEntity> Y2 = ls6.d0(i8).Y(charSequenceArr3, true, true);
+                        CharSequence charSequence2 = charSequenceArr3[0];
+                        int size2 = Y2.size();
+                        for (int i13 = 0; i13 < size2; i13++) {
+                            TLRPC.MessageEntity messageEntity2 = Y2.get(i13);
+                            if (messageEntity2.offset + messageEntity2.length > charSequence2.length()) {
+                                messageEntity2.length = charSequence2.length() - messageEntity2.offset;
+                            }
                         }
-                        if (num != null) {
-                            i = num.intValue();
-                            if (i == 0) {
-                                this.I = false;
-                                setColor(i);
+                        TLRPC.TodoItem todoItem = new TLRPC.TodoItem();
+                        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+                        todoItem.title = tL_textWithEntities;
+                        tL_textWithEntities.text = charSequence2.toString();
+                        todoItem.title.entities = Y2;
+                        int[] iArr2 = wh8Var.r;
+                        if (iArr2 == null || i12 >= iArr2.length) {
+                            i7++;
+                            todoItem.id = i7;
+                        } else {
+                            todoItem.id = iArr2[i12];
+                        }
+                        tL_messageMediaToDo.todo.list.add(todoItem);
+                    }
+                }
+                if (zu1Var.X7()) {
+                    jj.I(zu1Var.getParentActivity(), zu1Var.a(), new m88(this, tL_messageMediaToDo, (byte) 6));
+                    return;
+                } else {
+                    wh8Var.f0.a(tL_messageMediaToDo);
+                    wh8Var.finishFragment();
+                    return;
+                }
+            }
+            if (wh8Var.M && wh8Var.a.getAlpha() != 1.0f) {
+                int i14 = 0;
+                while (i9 < zArr.length) {
+                    if (!TextUtils.isEmpty(a72.X(charSequenceArr[i9])) && zArr[i9]) {
+                        i14++;
+                    }
+                    i9++;
+                }
+                if (i14 <= 0) {
+                    for (int i15 = wh8Var.o0; i15 < wh8Var.o0 + wh8Var.E; i15++) {
+                        f89 L = wh8Var.c.L(i15);
+                        if (L != null) {
+                            View view = L.a;
+                            if (view instanceof zh8) {
+                                zh8 zh8Var = (zh8) view;
+                                if (zh8Var.getTop() > hl.L(40.0f)) {
+                                    wh8Var.h.c(zh8Var.getCheckBox());
+                                    return;
+                                }
                             } else {
-                                invalidate();
+                                continue;
                             }
                         }
                     }
-                    i = 0;
-                    if (i == 0) {
+                    return;
+                }
+                return;
+            }
+            CharSequence[] charSequenceArr4 = {a72.X(wh8Var.F)};
+            i2 = ((e) wh8Var).currentAccount;
+            ArrayList<TLRPC.MessageEntity> Y3 = ls6.d0(i2).Y(charSequenceArr4, true, true);
+            CharSequence charSequence3 = charSequenceArr4[0];
+            int size3 = Y3.size();
+            for (int i16 = 0; i16 < size3; i16++) {
+                TLRPC.MessageEntity messageEntity3 = Y3.get(i16);
+                if (messageEntity3.offset + messageEntity3.length > charSequence3.length()) {
+                    messageEntity3.length = charSequence3.length() - messageEntity3.offset;
+                }
+            }
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = new TLRPC.TL_messageMediaPoll();
+            TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
+            tL_messageMediaPoll.poll = tL_poll;
+            tL_poll.multiple_choice = wh8Var.L;
+            tL_poll.quiz = wh8Var.M;
+            tL_poll.public_voters = !wh8Var.H;
+            tL_poll.question = new TLRPC.TL_textWithEntities();
+            tL_messageMediaPoll.poll.question.text = charSequence3.toString();
+            tL_messageMediaPoll.poll.question.entities = Y3;
+            ArrayList arrayList = new ArrayList(wh8Var.n);
+            int i17 = 0;
+            while (i17 < charSequenceArr.length) {
+                if (TextUtils.isEmpty(a72.X(charSequenceArr[i17]))) {
+                    i5 = i9;
+                } else {
+                    CharSequence[] charSequenceArr5 = new CharSequence[1];
+                    charSequenceArr5[i9] = a72.X(charSequenceArr[i17]);
+                    i4 = ((e) wh8Var).currentAccount;
+                    ArrayList<TLRPC.MessageEntity> Y4 = ls6.d0(i4).Y(charSequenceArr5, true, true);
+                    CharSequence charSequence4 = charSequenceArr5[i9];
+                    int size4 = Y4.size();
+                    int i18 = i9;
+                    while (i18 < size4) {
+                        TLRPC.MessageEntity messageEntity4 = Y4.get(i18);
+                        int i19 = i9;
+                        if (messageEntity4.offset + messageEntity4.length > charSequence4.length()) {
+                            messageEntity4.length = charSequence4.length() - messageEntity4.offset;
+                        }
+                        i18++;
+                        i9 = i19;
                     }
-                } else {
-                    invalidate();
-                }
-            } else {
-                this.I = false;
-                setColor(gl.I0(this.F.n()));
-            }
-        }
-        Paint paint = this.y;
-        if (paint != null) {
-            byte b = this.a;
-            if (b == 2) {
-                float measuredWidth = getMeasuredWidth() / 2.0f;
-                canvas.drawCircle(measuredWidth, getMeasuredHeight() / 2.0f, measuredWidth, this.y);
-            } else if (b == 0) {
-                int i2 = this.n;
-                Path path = this.x;
-                if (i2 != 0) {
-                    canvas.drawPath(path, paint);
-                } else {
-                    nh8.d().f(-gl.L(24.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                    canvas.drawPath(path, nh8.d().e());
-                }
-                wd1 wd1Var = this.K;
-                if (wd1Var == null) {
-                    wd1Var = new wd1();
-                    this.K = wd1Var;
-                }
-                wd1Var.f = getMeasuredWidth() / 2;
-                wd1 wd1Var2 = this.K;
-                wd1Var2.k = false;
-                wd1Var2.c(this);
-                canvas.drawPath(path, wd1Var2.a);
-                if (wd1Var2.k) {
-                    canvas.drawPath(path, wd1Var2.c);
-                }
-                canvas.save();
-                canvas.clipPath(path);
-                this.c.d(canvas);
-                canvas.restore();
-                invalidate();
-            } else {
-                float measuredWidth2 = getMeasuredWidth() / 2.0f;
-                float measuredHeight = getMeasuredHeight() / 2.0f;
-                if (this.E == null) {
-                    this.H = 1.0f;
-                }
-                float f = this.H;
-                Paint paint2 = this.y;
-                if (f != 1.0f) {
-                    paint2.setAlpha((int) (f * 255.0f));
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.E);
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.y);
-                    float f2 = this.H + 0.10666667f;
-                    this.H = f2;
-                    if (f2 > 1.0f) {
-                        this.H = 1.0f;
-                        this.E = null;
+                    i5 = i9;
+                    TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
+                    TLRPC.TL_textWithEntities tL_textWithEntities2 = new TLRPC.TL_textWithEntities();
+                    tL_pollAnswer.text = tL_textWithEntities2;
+                    tL_textWithEntities2.text = charSequence4.toString();
+                    tL_pollAnswer.text.entities = Y4;
+                    byte[] bArr = new byte[1];
+                    tL_pollAnswer.option = bArr;
+                    bArr[i5] = (byte) (tL_messageMediaPoll.poll.answers.size() + 48);
+                    if ((wh8Var.L || wh8Var.M) && zArr[i17]) {
+                        arrayList.add(Integer.valueOf(tL_messageMediaPoll.poll.answers.size()));
                     }
-                    invalidate();
-                    this.y.setAlpha(kk7.d4);
-                } else {
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, paint2);
+                    tL_messageMediaPoll.poll.answers.add(tL_pollAnswer);
+                }
+                i17++;
+                i9 = i5;
+            }
+            int i20 = i9;
+            tL_messageMediaPoll.results = new TLRPC.TL_pollResults();
+            CharSequence X = a72.X(wh8Var.G);
+            if (X != null) {
+                tL_messageMediaPoll.results.solution = X.toString();
+                CharSequence[] charSequenceArr6 = new CharSequence[1];
+                charSequenceArr6[i20] = X;
+                i3 = ((e) wh8Var).currentAccount;
+                ArrayList<TLRPC.MessageEntity> Y5 = ls6.d0(i3).Y(charSequenceArr6, true, true);
+                if (Y5 != null && !Y5.isEmpty()) {
+                    tL_messageMediaPoll.results.solution_entities = Y5;
+                }
+                if (!TextUtils.isEmpty(tL_messageMediaPoll.results.solution)) {
+                    tL_messageMediaPoll.results.flags |= 16;
                 }
             }
-        }
-        float f3 = this.f;
-        boolean z = f3 != 1.0f;
-        if (z) {
-            canvas.save();
-            canvas.scale(f3, f3, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        }
-        super.onDraw(canvas);
-        if (z) {
-            canvas.restore();
-        }
-        this.J = true;
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        if (this.a != 0) {
-            a();
-            return;
-        }
-        Path path = this.x;
-        path.rewind();
-        RectF rectF = gl.P;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        float width = rectF.width() / 2.0f;
-        float centerY = rectF.centerY();
-        float width2 = rectF.width() / 2.0f;
-        Path.Direction direction = Path.Direction.CW;
-        path.addCircle(width, centerY, width2, direction);
-        rectF.set((getMeasuredWidth() / 2.0f) + gl.L(2.5f), gl.N(5.7f) + (getMeasuredHeight() / 2.0f), getMeasuredWidth() - gl.N(0.2f), getMeasuredHeight());
-        path.addRoundRect(rectF, gl.L(2.0f), gl.L(2.0f), direction);
-        path.close();
-        bra braVar = this.c;
-        braVar.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        braVar.a.inset(gl.L(6.0f), gl.L(6.0f));
-    }
-
-    public void setAnimatedEmojiDrawable(vl vlVar) {
-        this.G = vlVar;
-        if (vlVar != null) {
-            this.I = true;
-            invalidate();
-        }
-    }
-
-    public void setBlendWithColor(Integer num) {
-        this.L = num;
-    }
-
-    public void setColor(int i) {
-        this.h = true;
-        Integer num = this.L;
-        if (num != null) {
-            i = bkb.v(i, num.intValue());
-        }
-        if (this.n != i) {
-            this.n = i;
-            byte b = this.a;
-            if (b == 0 || b == 2) {
-                Paint paint = this.y;
-                if (paint != null) {
-                    paint.setColor(i);
-                }
+            if (zu1Var.X7()) {
+                jj.I(zu1Var.getParentActivity(), zu1Var.a(), new m88(this, tL_messageMediaPoll, arrayList));
             } else {
-                a();
+                wh8Var.f0.a(tL_messageMediaPoll);
+                wh8Var.finishFragment();
             }
-            invalidate();
-        }
-    }
-
-    public void setImageReceiver(ImageReceiver imageReceiver) {
-        this.F = imageReceiver;
-        if (imageReceiver != null) {
-            this.I = true;
-            invalidate();
-        }
-    }
-
-    public void setLocked(boolean z) {
-        if (this.a != 0) {
-            setImageResource(z ? R.drawable.msg_mini_premiumlock : R.drawable.msg_mini_stickerstar);
         }
     }
 }

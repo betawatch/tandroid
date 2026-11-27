@@ -8,7 +8,7 @@ import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes4.dex */
 public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.chrono.b, Serializable {
     public static final LocalDate d = of(-999999999, 1, 1);
@@ -46,9 +46,9 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
             j6 = j3 - ((j5 / 400) + (((j5 / 4) + (365 * j5)) - (j5 / 100)));
         }
         int i = (int) j6;
-        int i2 = ((i * 5) + 2) / kk7.i2;
+        int i2 = ((i * 5) + 2) / jn7.i2;
         int i3 = ((i2 + 2) % 12) + 1;
-        int i4 = (i - (((i2 * kk7.c5) + 5) / 10)) + 1;
+        int i4 = (i - (((i2 * jn7.c5) + 5) / 10)) + 1;
         long j7 = j5 + j2 + (i2 / 10);
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
         return new LocalDate(aVar.b.a(j7, aVar), i3, i4);

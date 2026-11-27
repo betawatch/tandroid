@@ -1,90 +1,125 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.Timer;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class es5 implements Animator.AnimatorListener {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ s49 F;
-    public final /* synthetic */ is5 G;
-    public final float a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final s49 e;
-    public final byte f;
-    public final ValueAnimator h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w = false;
-    public boolean x = false;
-    public float y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class es5 extends c79 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public Timer f;
+    public boolean h;
+    public final /* synthetic */ hs5 n;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public es5(is5 is5Var, s49 s49Var, int i, float f, float f2, float f3, float f4, int i2, s49 s49Var2) {
-        this.G = is5Var;
-        this.E = i2;
-        this.F = s49Var2;
-        this.f = i;
-        this.e = s49Var;
-        this.a = f;
-        this.b = f2;
-        this.c = f3;
-        this.d = f4;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new ae0(this, (byte) 7));
-        ofFloat.setTarget(s49Var.a);
-        ofFloat.addListener(this);
-        this.y = 0.0f;
+    public es5(hs5 hs5Var, Context context) {
+        this.n = hs5Var;
+        this.c = context;
     }
 
-    public final void a(Animator animator) {
-        if (!this.x) {
-            this.e.q(true);
+    @Override // j79
+    public final void A(f89 f89Var) {
+        View view = f89Var.a;
+        if (view instanceof mt5) {
+            ((mt5) view).a.getImageReceiver().c();
         }
-        this.x = true;
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.y = 1.0f;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return f89Var.f != 2;
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        a(animator);
-        if (this.w) {
+    public final void E(String str) {
+        byte b = 1;
+        try {
+            Timer timer = this.f;
+            if (timer != null) {
+                timer.cancel();
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+        if (str == null) {
+            this.d.clear();
+            this.e.clear();
+            f();
+        } else {
+            Timer timer2 = new Timer();
+            this.f = timer2;
+            timer2.schedule(new iy2(this, str, b), 200L, 300L);
+        }
+    }
+
+    @Override // j79
+    public final int b() {
+        return this.h ? this.d.size() : this.n.w.size() + 2;
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        if (this.h) {
+            return 0;
+        }
+        if (i == 0) {
+            return 1;
+        }
+        return i == 1 ? 2 : 0;
+    }
+
+    @Override // j79
+    public final void f() {
+        super.f();
+        hs5 hs5Var = this.n;
+        es5 es5Var = hs5Var.s;
+        if (es5Var == null || hs5Var.y) {
             return;
         }
-        int i = this.E;
-        s49 s49Var = this.F;
-        is5 is5Var = this.G;
-        if (i <= 0) {
-            is5Var.y.a(is5Var.I, s49Var);
-        } else {
-            is5Var.a.add(s49Var.a);
-            this.n = true;
-            if (i > 0) {
-                is5Var.I.post(new tq4(is5Var, this, i));
+        hs5Var.r.setVisibility(es5Var.b() == 2 ? 0 : 4);
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        iv2 iv2Var;
+        CharSequence charSequence;
+        if (f89Var.f == 0) {
+            mt5 mt5Var = (mt5) f89Var.a;
+            boolean z = this.h;
+            hs5 hs5Var = this.n;
+            if (z) {
+                iv2Var = (iv2) this.d.get(i);
+                charSequence = (CharSequence) this.e.get(i);
+            } else {
+                iv2Var = (iv2) hs5Var.w.get(i - 2);
+                charSequence = null;
+            }
+            mt5Var.a(iv2Var, charSequence);
+            boolean containsKey = hs5Var.E.containsKey(iv2Var.b);
+            og2 og2Var = mt5Var.e;
+            if (og2Var != null) {
+                og2Var.a(containsKey, false);
             }
         }
-        View view = is5Var.N;
-        View view2 = s49Var.a;
-        if (view == view2 && view2 == view) {
-            is5Var.N = null;
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View view;
+        Context context = this.c;
+        if (i == 1) {
+            skb skbVar = new skb(context);
+            int i2 = aob.G6;
+            skbVar.g(i2, i2);
+            skbVar.u(ob6.M0(2131745155, null), "", false, R.drawable.msg_shareout, false);
+            view = skbVar;
+        } else {
+            view = i == 2 ? new rca(context, (uh9) null) : new mt5(context, true);
         }
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationRepeat(Animator animator) {
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
+        return new n69(view);
     }
 }

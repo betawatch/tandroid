@@ -1,55 +1,42 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import java.io.IOException;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f6d implements Continuation, v56, aq2, ohe {
-    public static final /* synthetic */ f6d b = new f6d(0);
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ f6d(byte b2) {
-        this.a = b2;
-    }
-
-    @Override // v56
-    public final void H(Object obj) {
-        ((ly4) obj).getClass();
-    }
-
-    @Override // aq2
-    public final Object L(gl2 gl2Var) {
-        switch (this.a) {
-            case 2:
-                synchronized (zdf.class) {
-                    zdf.a(new kcf());
-                }
-                return new c6e();
-            default:
-                return new sfa((Context) gl2Var.a(Context.class));
+public final class f6d extends d05 {
+    @Override // hg0
+    public final IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.service.IClientNotificationTelemetryService");
+        return queryLocalInterface instanceof p7d ? (p7d) queryLocalInterface : new p7d(iBinder, "com.google.android.gms.common.internal.service.IClientNotificationTelemetryService", (byte) 1);
     }
 
-    @Override // ohe
-    public final byte[] a(int i, int i2, byte[] bArr) {
-        byte[] bArr2 = new byte[i2];
-        System.arraycopy(bArr, i, bArr2, 0, i2);
-        return bArr2;
+    @Override // hg0
+    public final a94[] f() {
+        return mid.c;
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public final /* synthetic */ Object then(Task task) {
-        if (task.isSuccessful()) {
-            return (Bundle) task.getResult();
-        }
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
-        }
-        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+    @Override // hg0
+    public final int i() {
+        return 253600000;
+    }
+
+    @Override // hg0
+    public final String l() {
+        return "com.google.android.gms.common.internal.service.IClientNotificationTelemetryService";
+    }
+
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.common.telemetry.notification.service.START";
+    }
+
+    @Override // hg0
+    public final boolean p() {
+        return true;
     }
 }

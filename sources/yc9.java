@@ -1,55 +1,57 @@
 // default package
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class yc9 implements t22 {
-    public final /* synthetic */ x02 a;
-    public final /* synthetic */ hd9 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class yc9 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    public yc9(hd9 hd9Var, x02 x02Var) {
-        this.b = hd9Var;
-        this.a = x02Var;
+    static {
+        a8c.h(new yc9());
     }
 
-    @Override // t22
-    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2) {
-        boolean isEmpty = arrayList.isEmpty();
-        hd9 hd9Var = this.b;
-        if (!isEmpty) {
-            hd9Var.Q.X1((String) arrayList.get(0));
-        } else if (!arrayList3.isEmpty()) {
-            ye9 ye9Var = hd9Var.Q;
-            k27 k27Var = (k27) arrayList3.get(0);
-            ye9Var.getClass();
-            if (k27Var != null && k27Var.F0() != null) {
-                TLRPC.Document F0 = k27Var.F0();
-                TLRPC.Message message = k27Var.k;
-                ye9Var.Y1(F0, message != null ? message.attachPath : null);
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        zc9 zc9Var = (zc9) view;
+        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) b8cVar.H;
+        int i = b8cVar.A;
+        String str = (String) b8cVar.m;
+        boolean z2 = b8cVar.e;
+        e29 e29Var = zc9Var.c;
+        xc9 xc9Var = zc9Var.b0;
+        if (xc9Var == null || zc9Var.a0 != stargiftattributemodel.document.id) {
+            zc9Var.a0 = stargiftattributemodel.document.id;
+            if (xc9Var != null) {
+                xc9Var.o(e29Var);
             }
+            zc9Var.b0 = new xc9(3, zc9Var.W, stargiftattributemodel.document);
         }
-        this.a.a(true);
-    }
-
-    @Override // t22
-    public final void z() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.b.startActivityForResult(intent, 21);
-        } catch (Exception e) {
-            fa4.g(e, true);
+        if (e29Var.isAttachedToWindow()) {
+            zc9Var.b0.b(e29Var);
         }
+        CharSequence charSequence = stargiftattributemodel.name;
+        if (!TextUtils.isEmpty(str)) {
+            charSequence = hl.u1(charSequence, str, zc9Var.P);
+        }
+        if (i > 0) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+            spannableStringBuilder.append((CharSequence) "  ");
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) Integer.toString(i));
+            spannableStringBuilder.setSpan(new y7c(hl.o()), length, spannableStringBuilder.length(), 33);
+            charSequence = spannableStringBuilder;
+        }
+        zc9Var.j(charSequence, 0, zc9Var.b0);
+        zc9Var.setChecked(z2);
     }
 
-    @Override // t22
-    public final void S() {
-    }
-
-    @Override // t22
-    public final void m(ArrayList arrayList, boolean z, int i, long j) {
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new zc9(i, vnbVar, context);
     }
 }

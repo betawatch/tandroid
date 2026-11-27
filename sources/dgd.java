@@ -1,80 +1,80 @@
 // default package
 
-import java.util.ListIterator;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class dgd extends v5c implements ListIterator {
-    public final int b;
-    public int c;
-    public final xhd d;
+public final class dgd extends c4 {
+    public static final Parcelable.Creator<dgd> CREATOR = new nkf(13);
+    public int a;
+    public final boolean b;
+    public final String c;
+    public final String d;
+    public final byte[] e;
+    public final boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dgd(xhd xhdVar, int i) {
-        super((byte) 10);
-        int size = xhdVar.size();
-        if (i < 0 || i > size) {
-            k93.i(k0f.c(i, size, "index"));
-            throw null;
+    public dgd() {
+        this.a = 0;
+        this.b = true;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = false;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("MetadataImpl { { eventStatus: '");
+        sb.append(this.a);
+        sb.append("' } { uploadable: '");
+        sb.append(this.b);
+        sb.append("' } ");
+        String str = this.c;
+        if (str != null) {
+            ik8.z("{ completionToken: '", str, "' } ", sb);
         }
-        this.b = size;
-        this.c = i;
-        this.d = xhdVar;
-    }
-
-    public final Object a(int i) {
-        return this.d.get(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            w26.g();
-            return null;
+        String str2 = this.d;
+        if (str2 != null) {
+            ik8.z("{ accountName: '", str2, "' } ", sb);
         }
-        int i = this.c;
-        this.c = i + 1;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            w26.g();
-            return null;
+        byte[] bArr = this.e;
+        if (bArr != null) {
+            sb.append("{ ssbContext: [ ");
+            for (byte b : bArr) {
+                sb.append("0x");
+                sb.append(Integer.toHexString(b));
+                sb.append(" ");
+            }
+            sb.append("] } ");
         }
-        int i = this.c - 1;
-        this.c = i;
-        return a(i);
+        sb.append("{ contextOnly: '");
+        sb.append(this.f);
+        sb.append("' } }");
+        return sb.toString();
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        int i2 = this.a;
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(i2);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        bye.l(parcel, 3, this.c);
+        bye.l(parcel, 4, this.d);
+        bye.c(parcel, 5, this.e);
+        bye.q(parcel, 6, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        bye.s(parcel, r);
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public dgd(int i, boolean z, String str, String str2, byte[] bArr, boolean z2) {
+        this.a = i;
+        this.b = z;
+        this.c = str;
+        this.d = str2;
+        this.e = bArr;
+        this.f = z2;
     }
 }

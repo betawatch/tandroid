@@ -1,51 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Iterator;
+import java.util.Set;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class kcd extends ncd {
-    public final transient int h;
-    public final transient int n;
-    public final /* synthetic */ ncd r;
+public abstract class kcd extends b4d implements Set, j$.util.Set {
+    public transient kbd n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kcd(ncd ncdVar, int i, int i2) {
-        super((byte) 1);
-        this.r = ncdVar;
-        this.h = i;
-        this.n = i2;
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this || obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        i4f.a(i, this.n);
-        return this.r.get(i + this.h);
-    }
-
-    @Override // x8d
-    public final int i() {
-        return this.r.j() + this.h + this.n;
-    }
-
-    @Override // x8d
-    public final int j() {
-        return this.r.j() + this.h;
-    }
-
-    @Override // x8d
-    public final Object[] k() {
-        return this.r.k();
-    }
-
-    @Override // ncd, java.util.List
-    /* renamed from: l */
-    public final ncd subList(int i, int i2) {
-        i4f.b(i, i2, this.n);
-        int i3 = this.h;
-        return this.r.subList(i + i3, i2 + i3);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.n;
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        Iterator it = iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i += next != null ? next.hashCode() : 0;
+        }
+        return i;
     }
 }

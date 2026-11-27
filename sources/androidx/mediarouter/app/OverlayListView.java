@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -28,40 +28,40 @@ public final class OverlayListView extends ListView {
         if (arrayList.size() > 0) {
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                hr7 hr7Var = (hr7) it.next();
-                BitmapDrawable bitmapDrawable = hr7Var.a;
+                nu7 nu7Var = (nu7) it.next();
+                BitmapDrawable bitmapDrawable = nu7Var.a;
                 if (bitmapDrawable != null) {
                     bitmapDrawable.draw(canvas);
                 }
                 long drawingTime = getDrawingTime();
-                BitmapDrawable bitmapDrawable2 = hr7Var.a;
-                Rect rect = hr7Var.c;
-                if (hr7Var.k) {
+                BitmapDrawable bitmapDrawable2 = nu7Var.a;
+                Rect rect = nu7Var.c;
+                if (nu7Var.k) {
                     z = false;
                 } else {
-                    float w = hr7Var.j ? ls6.w(drawingTime - hr7Var.i, hr7Var.e, 1.0f, 0.0f) : 0.0f;
-                    Interpolator interpolator = hr7Var.d;
+                    float w = nu7Var.j ? qu6.w(drawingTime - nu7Var.i, nu7Var.e, 1.0f, 0.0f) : 0.0f;
+                    Interpolator interpolator = nu7Var.d;
                     float interpolation = interpolator == null ? w : interpolator.getInterpolation(w);
-                    int i = (int) (hr7Var.g * interpolation);
-                    Rect rect2 = hr7Var.f;
+                    int i = (int) (nu7Var.g * interpolation);
+                    Rect rect2 = nu7Var.f;
                     rect.top = rect2.top + i;
                     rect.bottom = rect2.bottom + i;
-                    float A = tb4.A(hr7Var.h, 1.0f, interpolation, 1.0f);
-                    hr7Var.b = A;
+                    float A = qd4.A(nu7Var.h, 1.0f, interpolation, 1.0f);
+                    nu7Var.b = A;
                     if (bitmapDrawable2 != null) {
                         bitmapDrawable2.setAlpha((int) (A * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
-                    if (hr7Var.j && w >= 1.0f) {
-                        hr7Var.k = true;
-                        wk4 wk4Var = hr7Var.l;
-                        if (wk4Var != null) {
-                            ws6 ws6Var = (ws6) wk4Var.c;
-                            ws6Var.a0.remove((eu6) wk4Var.b);
-                            ws6Var.W.notifyDataSetChanged();
+                    if (nu7Var.j && w >= 1.0f) {
+                        nu7Var.k = true;
+                        um4 um4Var = nu7Var.l;
+                        if (um4Var != null) {
+                            bv6 bv6Var = (bv6) um4Var.c;
+                            bv6Var.a0.remove((jw6) um4Var.b);
+                            bv6Var.W.notifyDataSetChanged();
                         }
                     }
-                    z = !hr7Var.k;
+                    z = !nu7Var.k;
                 }
                 if (!z) {
                     it.remove();

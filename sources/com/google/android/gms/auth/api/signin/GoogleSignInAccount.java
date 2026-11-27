@@ -11,11 +11,11 @@ import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 @Deprecated
 /* loaded from: classes.dex */
-public class GoogleSignInAccount extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new b1d((byte) 3);
+public class GoogleSignInAccount extends c4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new s5d((byte) 3);
     public final String a;
     public final String b;
     public final String c;
@@ -64,7 +64,7 @@ public class GoogleSignInAccount extends b4 implements ReflectedParcelable {
         String optString6 = jSONObject.has("givenName") ? jSONObject.optString("givenName") : null;
         String optString7 = jSONObject.has("familyName") ? jSONObject.optString("familyName") : null;
         String string = jSONObject.getString("obfuscatedIdentifier");
-        fre.f(string);
+        xve.f(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(optString2, optString3, optString4, optString5, parse, null, parseLong, string, new ArrayList(hashSet), optString6, optString7);
         googleSignInAccount.f = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
@@ -100,19 +100,19 @@ public class GoogleSignInAccount extends b4 implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
-        jte.l(parcel, 4, this.c);
-        jte.l(parcel, 5, this.d);
-        jte.k(parcel, 6, this.e, i);
-        jte.l(parcel, 7, this.f);
-        jte.q(parcel, 8, 8);
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.l(parcel, 3, this.b);
+        bye.l(parcel, 4, this.c);
+        bye.l(parcel, 5, this.d);
+        bye.k(parcel, 6, this.e, i);
+        bye.l(parcel, 7, this.f);
+        bye.q(parcel, 8, 8);
         parcel.writeLong(this.h);
-        jte.l(parcel, 9, this.n);
-        jte.p(parcel, 10, this.r);
-        jte.l(parcel, 11, this.s);
-        jte.l(parcel, 12, this.w);
-        jte.s(parcel, r);
+        bye.l(parcel, 9, this.n);
+        bye.p(parcel, 10, this.r);
+        bye.l(parcel, 11, this.s);
+        bye.l(parcel, 12, this.w);
+        bye.s(parcel, r);
     }
 }

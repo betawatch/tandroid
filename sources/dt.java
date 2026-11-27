@@ -3,17 +3,17 @@
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class dt implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ float b;
-    public final /* synthetic */ gk7 c;
+    public final /* synthetic */ fn7 c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ dt(gk7 gk7Var, Object obj, float f, byte b) {
+    public /* synthetic */ dt(fn7 fn7Var, Object obj, float f, byte b) {
         this.a = b;
-        this.c = gk7Var;
+        this.c = fn7Var;
         this.d = obj;
         this.b = f;
     }
@@ -23,22 +23,22 @@ public final /* synthetic */ class dt implements Runnable {
         byte b = this.a;
         float f = this.b;
         Object obj = this.d;
-        gk7 gk7Var = this.c;
+        fn7 fn7Var = this.c;
         switch (b) {
             case 0:
-                o oVar = (o) gk7Var;
-                cs5 cs5Var = (cs5) obj;
+                o oVar = (o) fn7Var;
+                fu5 fu5Var = (fu5) obj;
                 oVar.i0.N.c(true, 0.0f);
-                cs5Var.p = new kt(oVar, f, (byte) 0);
-                cs5Var.a0();
+                fu5Var.p = new jt(oVar, f, (byte) 0);
+                fu5Var.a0();
                 break;
             default:
-                MediaController mediaController = (MediaController) gk7Var;
-                k27 k27Var = (k27) obj;
+                MediaController mediaController = (MediaController) fn7Var;
+                r47 r47Var = (r47) obj;
                 String[] strArr = MediaController.W1;
                 if (mediaController.j0 != null && mediaController.v0 != null && !mediaController.h0) {
-                    if (mediaController.G(k27Var)) {
-                        mediaController.h0(mediaController.v0, f);
+                    if (mediaController.K(r47Var)) {
+                        mediaController.k0(mediaController.v0, f);
                     }
                     mediaController.j0.g0();
                     break;

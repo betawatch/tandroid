@@ -1,133 +1,184 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.locks.ReentrantLock;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class g1d implements Runnable {
-    public final /* synthetic */ j1d a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ j1d c;
-    public final Object d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class g1d extends Layout {
+    public final f1d a;
 
-    public /* synthetic */ g1d(j1d j1dVar, Object obj, byte b) {
-        this.b = b;
-        this.c = j1dVar;
-        this.a = j1dVar;
-        this.d = obj;
+    public g1d(f1d f1dVar) {
+        super(f1dVar.a, h1d.b, Math.max(1, f1dVar.d), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f);
+        this.a = f1dVar;
     }
 
-    public final void a() {
-        eha ehaVar;
-        Set set;
-        byte b = this.b;
-        int i = 0;
-        Object obj = this.d;
-        j1d j1dVar = this.c;
-        switch (b) {
-            case 0:
-                dy4 dy4Var = j1dVar.d;
-                k1d k1dVar = j1dVar.a.e;
-                Context context = j1dVar.c;
-                aec aecVar = new aec(dy4Var);
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                HashMap hashMap = (HashMap) obj;
-                for (xx4 xx4Var : hashMap.keySet()) {
-                    if (!xx4Var.v() || ((e1d) hashMap.get(xx4Var)).c) {
-                        arrayList2.add(xx4Var);
-                    } else {
-                        arrayList.add(xx4Var);
-                    }
-                }
-                int i2 = -1;
-                if (arrayList.isEmpty()) {
-                    int size = arrayList2.size();
-                    while (i < size) {
-                        i2 = aecVar.e(context, (xx4) arrayList2.get(i));
-                        i++;
-                        if (i2 == 0) {
-                        }
-                    }
-                } else {
-                    int size2 = arrayList.size();
-                    while (i < size2) {
-                        i2 = aecVar.e(context, (xx4) arrayList.get(i));
-                        i++;
-                        if (i2 != 0) {
-                        }
-                    }
-                }
-                if (i2 != 0) {
-                    k1dVar.sendMessage(k1dVar.obtainMessage(1, new f1d(this, j1dVar, new ds2(i2, null, null))));
-                    break;
-                } else {
-                    if (j1dVar.y && (ehaVar = j1dVar.w) != null) {
-                        ehaVar.a(new fg0(ehaVar));
-                    }
-                    for (xx4 xx4Var2 : hashMap.keySet()) {
-                        eg0 eg0Var = (eg0) hashMap.get(xx4Var2);
-                        if (!xx4Var2.v() || aecVar.e(context, xx4Var2) == 0) {
-                            xx4Var2.a(eg0Var);
-                        } else {
-                            k1dVar.sendMessage(k1dVar.obtainMessage(1, new c1d(this, j1dVar, eg0Var)));
-                        }
-                    }
-                    break;
-                }
-                break;
-            default:
-                r1d r1dVar = j1dVar.a;
-                m1d m1dVar = r1dVar.o;
-                ntb ntbVar = j1dVar.I;
-                if (ntbVar == null) {
-                    set = Collections.EMPTY_SET;
-                } else {
-                    HashSet hashSet = new HashSet((Set) ntbVar.a);
-                    Map map = (Map) ntbVar.c;
-                    for (yn ynVar : map.keySet()) {
-                        if (!r1dVar.i.containsKey(ynVar.b)) {
-                            map.get(ynVar).getClass();
-                            fyb.g();
-                            break;
-                        }
-                    }
-                    set = hashSet;
-                }
-                m1dVar.G = set;
-                ArrayList arrayList3 = (ArrayList) obj;
-                int size3 = arrayList3.size();
-                while (i < size3) {
-                    ((xx4) arrayList3.get(i)).j(j1dVar.F, r1dVar.o.G);
-                    i++;
-                }
-                break;
-        }
+    @Override // android.text.Layout
+    public final int getBottomPadding() {
+        return 0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        j1d j1dVar = this.a;
-        ReentrantLock reentrantLock = j1dVar.b;
-        reentrantLock.lock();
-        try {
-            try {
-                if (!Thread.interrupted()) {
-                    a();
-                }
-            } catch (RuntimeException e) {
-                k1d k1dVar = j1dVar.a.e;
-                k1dVar.sendMessage(k1dVar.obtainMessage(2, e));
+    @Override // android.text.Layout
+    public final int getEllipsisCount(int i) {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final int getEllipsisStart(int i) {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final boolean getLineContainsTab(int i) {
+        return false;
+    }
+
+    @Override // android.text.Layout
+    public final int getLineCount() {
+        return this.a.g.length;
+    }
+
+    @Override // android.text.Layout
+    public final int getLineDescent(int i) {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final Layout.Directions getLineDirections(int i) {
+        return null;
+    }
+
+    @Override // android.text.Layout
+    public final int getLineForOffset(int i) {
+        int i2 = 0;
+        while (true) {
+            f1d f1dVar = this.a;
+            if (i2 >= f1dVar.g.length) {
+                return r2.length - 1;
             }
-        } finally {
-            reentrantLock.unlock();
+            int i3 = i2 + 1;
+            if (i < f1dVar.e[i3]) {
+                return i2;
+            }
+            i2 = i3;
         }
+    }
+
+    @Override // android.text.Layout
+    public final float getLineLeft(int i) {
+        return this.a.g[Math.max(0, Math.min(i, r1.length - 1))][0];
+    }
+
+    @Override // android.text.Layout
+    public final float getLineMax(int i) {
+        return getLineRight(i);
+    }
+
+    @Override // android.text.Layout
+    public final float getLineRight(int i) {
+        return this.a.g[Math.max(0, Math.min(i, r1.length - 1))][r1.length - 1];
+    }
+
+    @Override // android.text.Layout
+    public final int getLineStart(int i) {
+        f1d f1dVar = this.a;
+        return f1dVar.e[Math.max(0, Math.min(i, f1dVar.g.length))];
+    }
+
+    @Override // android.text.Layout
+    public final int getLineTop(int i) {
+        f1d f1dVar = this.a;
+        return f1dVar.f[Math.max(0, Math.min(i, f1dVar.g.length))];
+    }
+
+    @Override // android.text.Layout
+    public final float getLineWidth(int i) {
+        return getLineRight(i) - getLineLeft(i);
+    }
+
+    @Override // android.text.Layout
+    public final int getOffsetForHorizontal(int i, float f) {
+        f1d f1dVar = this.a;
+        int max = Math.max(0, Math.min(i, f1dVar.g.length - 1));
+        float[] fArr = f1dVar.g[max];
+        int[] iArr = f1dVar.e;
+        int i2 = iArr[max + 1] - iArr[max];
+        int i3 = 0;
+        for (int i4 = 0; i4 <= i2 && i4 < fArr.length; i4++) {
+            if (i4 < i2) {
+                int i5 = i4 + 1;
+                if (f >= (fArr[i4] + fArr[i5]) / 2.0f) {
+                    i3 = i5;
+                }
+            }
+        }
+        if (i3 == i2 && i2 > 0 && max < r1.length - 1 && Character.isWhitespace(f1dVar.a.charAt((iArr[max] + i2) - 1))) {
+            i3--;
+        }
+        return iArr[max] + i3;
+    }
+
+    @Override // android.text.Layout
+    public final int getParagraphDirection(int i) {
+        return 1;
+    }
+
+    @Override // android.text.Layout
+    public final float getPrimaryHorizontal(int i) {
+        int lineForOffset = getLineForOffset(i);
+        f1d f1dVar = this.a;
+        return f1dVar.g[lineForOffset][Math.max(0, Math.min(i - f1dVar.e[lineForOffset], r1.length - 1))];
+    }
+
+    @Override // android.text.Layout
+    public final float getSecondaryHorizontal(int i) {
+        return getPrimaryHorizontal(i);
+    }
+
+    @Override // android.text.Layout
+    public final void getSelectionPath(int i, int i2, Path path) {
+        Path path2;
+        path.reset();
+        if (i != i2) {
+            if (i2 < i) {
+                i2 = i;
+                i = i2;
+            }
+            int lineForOffset = getLineForOffset(i);
+            int lineForOffset2 = getLineForOffset(i2);
+            int i3 = lineForOffset;
+            while (i3 <= lineForOffset2) {
+                float primaryHorizontal = i3 == lineForOffset ? getPrimaryHorizontal(i) : getLineLeft(i3);
+                float primaryHorizontal2 = i3 == lineForOffset2 ? getPrimaryHorizontal(i2) : getLineRight(i3);
+                if (primaryHorizontal2 > primaryHorizontal) {
+                    path2 = path;
+                    path2.addRect(primaryHorizontal, getLineTop(i3), primaryHorizontal2, getLineTop(i3 + 1), Path.Direction.CW);
+                } else {
+                    path2 = path;
+                }
+                i3++;
+                path = path2;
+            }
+        }
+    }
+
+    @Override // android.text.Layout
+    public final int getTopPadding() {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final boolean isRtlCharAt(int i) {
+        return false;
+    }
+
+    @Override // android.text.Layout
+    public final void draw(Canvas canvas, Path path, Paint paint, int i) {
+    }
+
+    @Override // android.text.Layout
+    public final void draw(Canvas canvas) {
     }
 }

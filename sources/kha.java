@@ -1,16 +1,22 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kha extends b4 {
-    public static final Parcelable.Creator<kha> CREATOR = new hv6((byte) 19);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class kha extends kea {
+    public final /* synthetic */ e U2;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        jte.s(parcel, jte.r(parcel, 20293));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kha(Context context, String str, String str2, vnb vnbVar, e eVar) {
+        super(context, null, str, false, str2, false, vnbVar);
+        this.U2 = eVar;
+    }
+
+    @Override // kea
+    public final void M0(zh6 zh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        hl.d3(new a39(this.U2, zh6Var, i, (byte) 8), 100L);
     }
 }

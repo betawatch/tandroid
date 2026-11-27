@@ -1,89 +1,58 @@
 // default package
 
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.view.LayoutInflater;
-import org.telegram.messenger.beta.R;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ew2 extends ContextWrapper {
-    public int a;
-    public Resources.Theme b;
-    public LayoutInflater c;
-    public Resources d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ew2 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rw2 b;
 
-    public ew2(Context context, int i) {
-        super(context);
-        this.a = i;
+    public /* synthetic */ ew2(rw2 rw2Var, byte b) {
+        this.a = b;
+        this.b = rw2Var;
     }
 
-    public final void a() {
-        if (this.b == null) {
-            this.b = getResources().newTheme();
-            Resources.Theme theme = getBaseContext().getTheme();
-            if (theme != null) {
-                this.b.setTo(theme);
-            }
-        }
-        this.b.applyStyle(this.a, true);
-    }
-
-    @Override // android.content.ContextWrapper
-    public final void attachBaseContext(Context context) {
-        super.attachBaseContext(context);
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final AssetManager getAssets() {
-        return getResources().getAssets();
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final Resources getResources() {
-        Resources resources = this.d;
-        if (resources != null) {
-            return resources;
-        }
-        Resources resources2 = super.getResources();
-        this.d = resources2;
-        return resources2;
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final Object getSystemService(String str) {
-        if (!"layout_inflater".equals(str)) {
-            return getBaseContext().getSystemService(str);
-        }
-        LayoutInflater layoutInflater = this.c;
-        if (layoutInflater != null) {
-            return layoutInflater;
-        }
-        LayoutInflater cloneInContext = LayoutInflater.from(getBaseContext()).cloneInContext(this);
-        this.c = cloneInContext;
-        return cloneInContext;
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final Resources.Theme getTheme() {
-        Resources.Theme theme = this.b;
-        if (theme != null) {
-            return theme;
-        }
-        if (this.a == 0) {
-            this.a = R.style.Theme_AppCompat_Light;
-        }
-        a();
-        return this.b;
-    }
-
-    @Override // android.content.ContextWrapper, android.content.Context
-    public final void setTheme(int i) {
-        if (this.a != i) {
-            this.a = i;
-            a();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        rw2 rw2Var = this.b;
+        switch (b) {
+            case 0:
+                rw2Var.K = false;
+                rw2Var.z.invalidate();
+                rw2Var.b();
+                break;
+            case 1:
+                Activity activity = rw2Var.w;
+                if (activity instanceof LaunchActivity) {
+                    LaunchActivity launchActivity = (LaunchActivity) activity;
+                    if (launchActivity.N() != null && launchActivity.N().getLastFragment() != null) {
+                        launchActivity.N().getLastFragment().dismissCurrentDialog();
+                    }
+                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.o0(5)));
+                }
+                rw2Var.K = false;
+                rw2Var.z.invalidate();
+                rw2Var.b();
+                break;
+            case 2:
+                pw2 pw2Var = rw2Var.l;
+                if (pw2Var != null) {
+                    pw2Var.N();
+                }
+                rw2Var.d();
+                break;
+            default:
+                pw2 pw2Var2 = rw2Var.l;
+                if (pw2Var2 != null) {
+                    pw2Var2.p();
+                }
+                rw2Var.d();
+                break;
         }
     }
 }

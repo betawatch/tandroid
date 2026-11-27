@@ -1,47 +1,43 @@
 // default package
 
 import android.os.Bundle;
-import org.json.JSONObject;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class a13 extends i03 {
+public final class a13 extends c4 {
+    public static final Parcelable.Creator<a13> CREATOR = new g31((byte) 11);
+    public final String a;
+    public final Bundle b;
+    public final Bundle c;
     public final String d;
+    public final String e;
+    public final ResultReceiver f;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a13(String str) {
-        super(r0, r7, r2);
+    public a13(String str, Bundle bundle, Bundle bundle2, String str2, String str3, ResultReceiver resultReceiver) {
         str.getClass();
-        try {
-            JSONObject jSONObject = new JSONObject(str).getJSONObject("user");
-            String string = jSONObject.getString("name");
-            String string2 = jSONObject.isNull("displayName") ? null : jSONObject.getString("displayName");
-            string.getClass();
-            i5 i5Var = new i5(string, string2, (byte) 1);
-            Bundle bundle = new Bundle();
-            bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
-            bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
-            bundle.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
-            bundle2.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", str);
-            bundle2.putByteArray("androidx.credentials.BUNDLE_KEY_CLIENT_DATA_HASH", null);
-            this.d = str;
-            if (str.length() != 0) {
-                try {
-                    new JSONObject(str);
-                    return;
-                } catch (Exception unused) {
-                }
-            }
-            w26.j("requestJson must not be empty, and must be a valid JSON");
-            throw null;
-        } catch (Exception unused2) {
-            w26.j("user.name must be defined in requestJson");
-            throw null;
-        }
+        bundle.getClass();
+        bundle2.getClass();
+        this.a = str;
+        this.b = bundle;
+        this.c = bundle2;
+        this.d = str2;
+        this.e = str3;
+        this.f = resultReceiver;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.getClass();
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 1, this.a);
+        bye.b(parcel, 2, this.b);
+        bye.b(parcel, 3, this.c);
+        bye.l(parcel, 4, this.d);
+        bye.l(parcel, 5, this.e);
+        bye.k(parcel, 6, this.f, i);
+        bye.s(parcel, r);
     }
 }

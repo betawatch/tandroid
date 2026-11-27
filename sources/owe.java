@@ -1,23 +1,28 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class owe extends b4 {
-    public static final Parcelable.Creator<owe> CREATOR = new c0f((byte) 3);
-    public final int a;
-
-    public owe(int i) {
-        this.a = i;
+public final class owe extends qve {
+    @Override // qve
+    public final void a(ese eseVar, ese eseVar2, long j) {
+        bue bueVar = (bue) a5f.l(eseVar, j);
+        bue bueVar2 = (bue) a5f.l(eseVar2, j);
+        int size = bueVar.size();
+        int size2 = bueVar2.size();
+        if (size > 0 && size2 > 0) {
+            if (!bueVar.zza()) {
+                bueVar = bueVar.zza(size2 + size);
+            }
+            bueVar.addAll(bueVar2);
+        }
+        if (size > 0) {
+            bueVar2 = bueVar;
+        }
+        a5f.d(j, eseVar, bueVar2);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.s(parcel, r);
+    @Override // qve
+    public final void b(long j, Object obj) {
+        ((bue) a5f.l(obj, j)).zzb();
     }
 }

@@ -1,46 +1,13 @@
 // default package
 
-import j$.util.Objects;
+import android.media.MediaCodec;
+import android.media.MediaFormat;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class op9 extends ja {
-    public final qp9 c;
-    public final String d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public interface op9 {
+    void k(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo);
 
-    public op9(int i, String str) {
-        super(i, false);
-        this.d = str;
-        this.c = null;
-    }
-
-    public final boolean equals(Object obj) {
-        qp9 qp9Var;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || op9.class != obj.getClass()) {
-            return false;
-        }
-        op9 op9Var = (op9) obj;
-        if (this.a != op9Var.a) {
-            return false;
-        }
-        String str = this.d;
-        if (str != null) {
-            return Objects.equals(str, op9Var.d);
-        }
-        qp9 qp9Var2 = this.c;
-        return qp9Var2 == null || (qp9Var = op9Var.c) == null || qp9Var2.d == qp9Var.d;
-    }
-
-    public op9(qp9 qp9Var) {
-        super(2, false);
-        this.c = qp9Var;
-    }
-
-    public op9(int i) {
-        super(i, false);
-        this.c = null;
-    }
+    void o(MediaFormat mediaFormat);
 }

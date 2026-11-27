@@ -1,48 +1,44 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.content.Context;
+import android.text.Editable;
+import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class bbc extends b4 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public static final dc6 d = new dc6("VideoInfo", null);
-    public static final Parcelable.Creator<bbc> CREATOR = new rpd((byte) 9);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class bbc extends zt3 {
+    public final /* synthetic */ byte F;
+    public final /* synthetic */ UserInfoActivity G;
 
-    public bbc(int i, int i2, int i3) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bbc(UserInfoActivity userInfoActivity, Context context, String str, int i, vnb vnbVar) {
+        super(context, str, true, false, i, vnbVar);
+        this.F = (byte) 2;
+        this.G = userInfoActivity;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // zt3
+    public final void b(Editable editable) {
+        byte b = this.F;
+        UserInfoActivity userInfoActivity = this.G;
+        switch (b) {
+            case 0:
+                userInfoActivity.e0(true);
+                break;
+            case 1:
+                userInfoActivity.e0(true);
+                break;
+            default:
+                userInfoActivity.e0(true);
+                userInfoActivity.i0();
+                break;
         }
-        if (!(obj instanceof bbc)) {
-            return false;
-        }
-        bbc bbcVar = (bbc) obj;
-        return this.b == bbcVar.b && this.a == bbcVar.a && this.c == bbcVar.c;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.a), Integer.valueOf(this.c)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        jte.s(parcel, r);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ bbc(UserInfoActivity userInfoActivity, Context context, String str, vnb vnbVar, byte b) {
+        super(context, str, false, false, -1, vnbVar);
+        this.F = b;
+        this.G = userInfoActivity;
     }
 }

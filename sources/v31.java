@@ -1,112 +1,496 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import android.widget.ToggleButton;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcelable;
+import android.util.ArrayMap;
+import android.util.Log;
+import androidx.core.graphics.drawable.IconCompat;
+import j$.util.Objects;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.AbstractCollection;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class v31 extends ImageView {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class v31 {
+    public static final ArrayMap a;
+    public static final ArrayMap b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v31(rt3 rt3Var, Context context) {
-        super(context);
-        this.a = (byte) 1;
+    static {
+        ArrayMap arrayMap = new ArrayMap();
+        arrayMap.put(Boolean.class, "bool");
+        arrayMap.put(Byte.class, "byte");
+        arrayMap.put(Short.class, "short");
+        arrayMap.put(Integer.class, "int");
+        arrayMap.put(Long.class, "long");
+        arrayMap.put(Double.class, "double");
+        arrayMap.put(Float.class, "float");
+        arrayMap.put(String.class, "string");
+        arrayMap.put(Parcelable.class, "parcelable");
+        arrayMap.put(Map.class, "map");
+        arrayMap.put(List.class, "list");
+        arrayMap.put(IconCompat.class, "image");
+        a = arrayMap;
+        ArrayMap arrayMap2 = new ArrayMap();
+        arrayMap2.put(0, "primitive");
+        arrayMap2.put(1, "iInterface");
+        arrayMap2.put(9, "iBinder");
+        arrayMap2.put(2, "map");
+        arrayMap2.put(3, "set");
+        arrayMap2.put(4, "list");
+        arrayMap2.put(5, "object");
+        arrayMap2.put(6, "image");
+        b = arrayMap2;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    public static void a(Bundle bundle, AbstractCollection abstractCollection, t31 t31Var) {
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList("tag_value");
+        if (parcelableArrayList == null) {
+            throw new u31("Bundle is missing the collection", t31Var);
+        }
+        int size = parcelableArrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = parcelableArrayList.get(i);
+            i++;
+            abstractCollection.add(f((Bundle) ((Parcelable) obj), t31Var));
         }
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 3:
-                super.onDraw(canvas);
-                invalidate();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    public static Object b(Bundle bundle, t31 t31Var) {
+        String string = bundle.getString("tag_value");
+        if (string == null) {
+            throw new u31(qd4.y("Missing enum name [", string, "]"), t31Var);
+        }
+        String string2 = bundle.getString("tag_class_name");
+        if (string2 == null) {
+            throw new u31(qd4.y("Missing enum className [", string2, "]"), t31Var);
+        }
+        try {
+            return g(Class.forName(string2), "valueOf", t31Var).invoke(null, string);
+        } catch (ClassNotFoundException e) {
+            throw new u31(qd4.y("Enum class [", string2, "] not found"), t31Var, e);
+        } catch (IllegalArgumentException e2) {
+            throw new u31(c00.j("Enum value [", string, "] does not exist in enum class [", string2, "]"), t31Var, e2);
+        } catch (ReflectiveOperationException e3) {
+            throw new u31(qd4.y("Enum of class [", string2, "] missing valueOf method"), t31Var, e3);
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 5:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
-                accessibilityNodeInfo.setCheckable(true);
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    accessibilityNodeInfo.setChecked(sharedInstance.isSpeakerphoneOn());
-                    break;
+    public static Object c(Bundle bundle, t31 t31Var) {
+        IBinder binder = bundle.getBinder("tag_value");
+        if (binder == null) {
+            throw new u31("Bundle is missing the binder", t31Var);
+        }
+        String string = bundle.getString("tag_class_name");
+        if (string == null) {
+            throw new u31("Bundle is missing IInterface class name", t31Var);
+        }
+        try {
+            Object invoke = g(Class.forName(string), "asInterface", t31Var).invoke(null, binder);
+            if (invoke != null) {
+                return invoke;
+            }
+            throw new u31("Failed to get interface from binder", t31Var);
+        } catch (ClassNotFoundException e) {
+            throw new u31("Binder for unknown IInterface: ".concat(string), t31Var, e);
+        } catch (ReflectiveOperationException e2) {
+            throw new u31("Method to create IInterface from a Binder is not accessible for interface: ".concat(string), t31Var, e2);
+        }
+    }
+
+    public static HashMap d(Bundle bundle, t31 t31Var) {
+        ArrayList parcelableArrayList = bundle.getParcelableArrayList("tag_value");
+        if (parcelableArrayList == null) {
+            throw new u31("Bundle is missing the map", t31Var);
+        }
+        HashMap hashMap = new HashMap();
+        int size = parcelableArrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = parcelableArrayList.get(i);
+            i++;
+            Bundle bundle2 = (Bundle) ((Parcelable) obj);
+            Bundle bundle3 = bundle2.getBundle("tag_1");
+            Bundle bundle4 = bundle2.getBundle("tag_2");
+            if (bundle3 == null) {
+                throw new u31("Bundle is missing key", t31Var);
+            }
+            hashMap.put(f(bundle3, t31Var), bundle4 == null ? null : f(bundle4, t31Var));
+        }
+        return hashMap;
+    }
+
+    public static Object e(Bundle bundle, t31 t31Var) {
+        String string = bundle.getString("tag_class_name");
+        if (string == null) {
+            throw new u31("Bundle is missing the class name", t31Var);
+        }
+        try {
+            Class<?> cls = Class.forName(string);
+            Constructor<?> declaredConstructor = cls.getDeclaredConstructor(null);
+            declaredConstructor.setAccessible(true);
+            Object newInstance = declaredConstructor.newInstance(null);
+            ArrayList h = h(cls);
+            int size = h.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = h.get(i);
+                i++;
+                Field field = (Field) obj;
+                field.setAccessible(true);
+                String str = field.getDeclaringClass().getName() + field.getName();
+                Object obj2 = bundle.get(str);
+                if (obj2 == null) {
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
                 }
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
+                if (obj2 instanceof Bundle) {
+                    field.set(newInstance, f((Bundle) obj2, t31Var));
+                } else if (obj2 == null && Log.isLoggable("CarApp.Bun", 3)) {
+                    Log.d("CarApp.Bun", "Value is null for field: " + field);
+                }
+            }
+            return newInstance;
+        } catch (ClassNotFoundException e) {
+            throw new u31("Object for unknown class: ".concat(string), t31Var, e);
+        } catch (IllegalArgumentException e2) {
+            throw new u31("Failed to deserialize class: ".concat(string), t31Var, e2);
+        } catch (NoSuchMethodException e3) {
+            throw new u31("Object missing no args constructor: ".concat(string), t31Var, e3);
+        } catch (ReflectiveOperationException e4) {
+            throw new u31("Constructor or field is not accessible: ".concat(string), t31Var, e4);
         }
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        float f;
-        float f2;
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i, i2);
-                Matrix imageMatrix = getImageMatrix();
-                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
-                int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
-                int intrinsicWidth = getDrawable().getIntrinsicWidth();
-                int intrinsicHeight = getDrawable().getIntrinsicHeight();
-                if (intrinsicWidth * measuredHeight > intrinsicHeight * measuredWidth) {
-                    f = measuredHeight;
-                    f2 = intrinsicHeight;
+    public static Object f(Bundle bundle, t31 t31Var) {
+        Object obj;
+        AbstractCollection hashSet;
+        ClassLoader classLoader = v31.class.getClassLoader();
+        Objects.requireNonNull(classLoader);
+        bundle.setClassLoader(classLoader);
+        int i = bundle.getInt("tag_class_type");
+        String str = (String) b.get(Integer.valueOf(bundle.getInt("tag_class_type")));
+        if (str == null) {
+            str = "unknown";
+        }
+        t31 t31Var2 = new t31(bundle, str, t31Var.b);
+        try {
+            switch (i) {
+                case 0:
+                    obj = bundle.get("tag_value");
+                    if (obj == null) {
+                        throw new u31("Bundle is missing the primitive value", t31Var2);
+                    }
+                    t31Var2.close();
+                    return obj;
+                case 1:
+                    obj = c(bundle, t31Var2);
+                    t31Var2.close();
+                    return obj;
+                case 2:
+                    obj = d(bundle, t31Var2);
+                    t31Var2.close();
+                    return obj;
+                case 3:
+                    hashSet = new HashSet();
+                    a(bundle, hashSet, t31Var2);
+                    t31Var2.close();
+                    return hashSet;
+                case 4:
+                    hashSet = new ArrayList();
+                    a(bundle, hashSet, t31Var2);
+                    t31Var2.close();
+                    return hashSet;
+                case 5:
+                    obj = e(bundle, t31Var2);
+                    t31Var2.close();
+                    return obj;
+                case 6:
+                    Bundle bundle2 = bundle.getBundle("tag_value");
+                    if (bundle2 == null) {
+                        throw new u31("IconCompat bundle is null", t31Var2);
+                    }
+                    obj = IconCompat.a(bundle2);
+                    if (obj == null) {
+                        throw new u31("Failed to create IconCompat from bundle", t31Var2);
+                    }
+                    t31Var2.close();
+                    return obj;
+                case 7:
+                    obj = b(bundle, t31Var2);
+                    t31Var2.close();
+                    return obj;
+                case 8:
+                    String string = bundle.getString("tag_value");
+                    if (string == null) {
+                        throw new u31("Class is missing the class name", t31Var2);
+                    }
+                    try {
+                        obj = Class.forName(string);
+                        t31Var2.close();
+                        return obj;
+                    } catch (ClassNotFoundException e) {
+                        throw new u31("Class name is unknown: ".concat(string), t31Var2, e);
+                    }
+                case 9:
+                    obj = bundle.getBinder("tag_value");
+                    if (obj == null) {
+                        throw new u31("Bundle is missing the binder", t31Var2);
+                    }
+                    t31Var2.close();
+                    return obj;
+                case 10:
+                    obj = b78.a(bundle);
+                    t31Var2.close();
+                    return obj;
+                default:
+                    throw new u31("Unsupported class type in bundle: " + i, t31Var2);
+            }
+        } catch (Throwable th) {
+            try {
+                t31Var2.close();
+            } catch (Throwable th2) {
+                th.addSuppressed(th2);
+            }
+            throw th;
+        }
+    }
+
+    public static Method g(Class cls, String str, t31 t31Var) {
+        if (cls == null || cls == Object.class) {
+            throw new u31("No method " + str + " in class " + cls, t31Var);
+        }
+        for (Method method : cls.getDeclaredMethods()) {
+            if (method.getName().equals(str)) {
+                method.setAccessible(true);
+                return method;
+            }
+        }
+        return g(cls.getSuperclass(), str, t31Var);
+    }
+
+    public static ArrayList h(Class cls) {
+        ArrayList arrayList = new ArrayList();
+        if (cls != null && cls != Object.class) {
+            for (Field field : cls.getDeclaredFields()) {
+                if (!Modifier.isStatic(field.getModifiers())) {
+                    arrayList.add(field);
+                }
+            }
+            arrayList.addAll(h(cls.getSuperclass()));
+        }
+        return arrayList;
+    }
+
+    public static String i(Class cls) {
+        String str = (String) a.get(cls);
+        return str == null ? List.class.isAssignableFrom(cls) ? "<List>" : Map.class.isAssignableFrom(cls) ? "<Map>" : Set.class.isAssignableFrom(cls) ? "<Set>" : cls.getSimpleName() : str;
+    }
+
+    public static Bundle j(Collection collection, t31 t31Var) {
+        Bundle bundle = new Bundle(2);
+        ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
+        Iterator it = collection.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            arrayList.add(o(it.next(), "<item " + i + ">", t31Var));
+            i++;
+        }
+        bundle.putParcelableArrayList("tag_value", arrayList);
+        return bundle;
+    }
+
+    public static Bundle k(Object obj, t31 t31Var) {
+        Bundle bundle = new Bundle(3);
+        bundle.putInt("tag_class_type", 7);
+        try {
+            bundle.putString("tag_value", (String) g(obj.getClass(), "name", t31Var).invoke(obj, null));
+            bundle.putString("tag_class_name", obj.getClass().getName());
+            return bundle;
+        } catch (ReflectiveOperationException e) {
+            throw new u31("Enum missing name method", t31Var, e);
+        }
+    }
+
+    public static Bundle l(Map map, t31 t31Var) {
+        Bundle bundle = new Bundle(2);
+        ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
+        int i = 0;
+        for (Map.Entry entry : map.entrySet()) {
+            Bundle bundle2 = new Bundle(2);
+            bundle2.putBundle("tag_1", o(entry.getKey(), "<key " + i + ">", t31Var));
+            if (entry.getValue() != null) {
+                bundle2.putBundle("tag_2", o(entry.getValue(), "<value " + i + ">", t31Var));
+            }
+            i++;
+            arrayList.add(bundle2);
+        }
+        bundle.putInt("tag_class_type", 2);
+        bundle.putParcelableArrayList("tag_value", arrayList);
+        return bundle;
+    }
+
+    public static Bundle m(Object obj, t31 t31Var) {
+        String name = obj.getClass().getName();
+        try {
+            obj.getClass().getDeclaredConstructor(null);
+            ArrayList h = h(obj.getClass());
+            Bundle bundle = new Bundle(h.size() + 2);
+            bundle.putInt("tag_class_type", 5);
+            bundle.putString("tag_class_name", name);
+            int size = h.size();
+            int i = 0;
+            while (i < size) {
+                Object obj2 = h.get(i);
+                i++;
+                Field field = (Field) obj2;
+                field.setAccessible(true);
+                String i2 = c00.i(field.getDeclaringClass().getName(), field.getName());
+                try {
+                    Object obj3 = field.get(obj);
+                    if (obj3 != null) {
+                        bundle.putParcelable(i2, o(obj3, field.getName(), t31Var));
+                    }
+                } catch (IllegalAccessException e) {
+                    throw new u31("Field is not accessible: ".concat(i2), t31Var, e);
+                }
+            }
+            return bundle;
+        } catch (NoSuchMethodException e2) {
+            throw new u31("Class to deserialize is missing a no args constructor: ".concat(name), t31Var, e2);
+        }
+    }
+
+    public static Bundle n(Object obj, t31 t31Var) {
+        Bundle bundle = new Bundle(2);
+        bundle.putInt("tag_class_type", 0);
+        if (obj instanceof Boolean) {
+            bundle.putBoolean("tag_value", ((Boolean) obj).booleanValue());
+            return bundle;
+        }
+        if (obj instanceof Byte) {
+            bundle.putByte("tag_value", ((Byte) obj).byteValue());
+            return bundle;
+        }
+        if (obj instanceof Character) {
+            bundle.putChar("tag_value", ((Character) obj).charValue());
+            return bundle;
+        }
+        if (obj instanceof Short) {
+            bundle.putShort("tag_value", ((Short) obj).shortValue());
+            return bundle;
+        }
+        if (obj instanceof Integer) {
+            bundle.putInt("tag_value", ((Integer) obj).intValue());
+            return bundle;
+        }
+        if (obj instanceof Long) {
+            bundle.putLong("tag_value", ((Long) obj).longValue());
+            return bundle;
+        }
+        if (obj instanceof Double) {
+            bundle.putDouble("tag_value", ((Double) obj).doubleValue());
+            return bundle;
+        }
+        if (obj instanceof Float) {
+            bundle.putFloat("tag_value", ((Float) obj).floatValue());
+            return bundle;
+        }
+        if (obj instanceof String) {
+            bundle.putString("tag_value", (String) obj);
+            return bundle;
+        }
+        if (!(obj instanceof Parcelable)) {
+            throw new u31("Unsupported primitive type: ".concat(obj.getClass().getName()), t31Var);
+        }
+        bundle.putParcelable("tag_value", (Parcelable) obj);
+        return bundle;
+    }
+
+    public static Bundle o(Object obj, String str, t31 t31Var) {
+        Bundle n;
+        Bundle bundle;
+        ArrayDeque arrayDeque = t31Var.b;
+        if (obj != null) {
+            Iterator it = arrayDeque.iterator();
+            while (it.hasNext()) {
+                if (((s31) it.next()).a == obj) {
+                    throw new r31("Found cycle while bundling type ".concat(obj.getClass().getSimpleName()), t31Var);
+                }
+            }
+        }
+        t31 t31Var2 = new t31(obj, str, arrayDeque);
+        try {
+            if (obj == null) {
+                throw new u31("Bundling of null object is not supported", t31Var2);
+            }
+            if (!(obj instanceof IconCompat)) {
+                if ((obj instanceof Boolean) || (obj instanceof Byte) || (obj instanceof Character) || (obj instanceof Short) || (obj instanceof Integer) || (obj instanceof Long) || (obj instanceof Double) || (obj instanceof Float) || (obj instanceof String) || (obj instanceof Parcelable)) {
+                    n = n(obj, t31Var2);
+                } else if (obj instanceof IInterface) {
+                    IInterface iInterface = (IInterface) obj;
+                    bundle = new Bundle(3);
+                    String name = iInterface.getClass().getName();
+                    bundle.putInt("tag_class_type", 1);
+                    bundle.putBinder("tag_value", iInterface.asBinder());
+                    bundle.putString("tag_class_name", name);
+                } else if (obj instanceof IBinder) {
+                    bundle = new Bundle(2);
+                    bundle.putInt("tag_class_type", 9);
+                    bundle.putBinder("tag_value", (IBinder) obj);
+                } else if (obj instanceof Map) {
+                    n = l((Map) obj, t31Var2);
+                } else if (obj instanceof List) {
+                    n = j((List) obj, t31Var2);
+                    n.putInt("tag_class_type", 4);
+                } else if (obj instanceof Set) {
+                    n = j((Set) obj, t31Var2);
+                    n.putInt("tag_class_type", 3);
+                } else if (obj.getClass().isEnum()) {
+                    n = k(obj, t31Var2);
+                } else if (obj instanceof Class) {
+                    bundle = new Bundle(2);
+                    bundle.putInt("tag_class_type", 8);
+                    bundle.putString("tag_value", ((Class) obj).getName());
                 } else {
-                    f = measuredWidth;
-                    f2 = intrinsicWidth;
+                    if (obj.getClass().isArray()) {
+                        throw new u31("Object serializing contains an array, use a list or a set instead", t31Var2);
+                    }
+                    if (obj instanceof b78) {
+                        n = ((b78) obj).b();
+                        n.putInt("tag_class_type", 10);
+                    } else {
+                        n = m(obj, t31Var2);
+                    }
                 }
-                float f3 = f / f2;
-                imageMatrix.setScale(f3, f3);
-                setImageMatrix(imageMatrix);
-                break;
-            case 1:
-            case 3:
-            default:
-                super.onMeasure(i, i2);
-                break;
-            case 2:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(a.getCurrentActionBarHeight(), TLObject.FLAG_30));
-                break;
-            case 4:
-                int size = View.MeasureSpec.getSize(i);
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-                break;
+                t31Var2.close();
+                return n;
+            }
+            bundle = new Bundle(2);
+            bundle.putInt("tag_class_type", 6);
+            bundle.putBundle("tag_value", ((IconCompat) obj).l());
+            t31Var2.close();
+            return bundle;
+        } catch (Throwable th) {
+            try {
+                t31Var2.close();
+            } catch (Throwable th2) {
+                th.addSuppressed(th2);
+            }
+            throw th;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v31(Context context, byte b) {
-        super(context);
-        this.a = b;
     }
 }

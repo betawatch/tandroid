@@ -15,7 +15,7 @@ import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class FastDatePrinter implements DatePrinter, Serializable {
     public static final int FULL = 0;
@@ -30,7 +30,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     private transient Rule[] mRules;
     private final TimeZone mTimeZone;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class CharacterLiteral implements Rule {
         private final char mValue;
 
@@ -49,19 +49,19 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private interface NumberRule extends Rule {
         void appendTo(StringBuffer stringBuffer, int i);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private interface Rule {
         void appendTo(StringBuffer stringBuffer, Calendar calendar);
 
         int estimateLength();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class StringLiteral implements Rule {
         private final String mValue;
 
@@ -80,7 +80,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TextField implements Rule {
         private final int mField;
         private final String[] mValues;
@@ -112,7 +112,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TimeZoneDisplayKey {
         private final Locale mLocale;
         private final int mStyle;
@@ -146,7 +146,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TimeZoneNameRule implements Rule {
         private final String mDaylight;
         private final Locale mLocale;
@@ -176,7 +176,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TimeZoneNumberRule implements Rule {
         static final TimeZoneNumberRule INSTANCE_COLON = new TimeZoneNumberRule(true);
         static final TimeZoneNumberRule INSTANCE_NO_COLON = new TimeZoneNumberRule(false);
@@ -361,64 +361,64 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.T0 /* 83 */:
+                    case jn7.T0 /* 83 */:
                         i3 = 1;
                         timeZoneNameRule = selectNumberRule(14, length2);
                         selectNumberRule = timeZoneNameRule;
                         i2 = i3;
                         i = 0;
                         break;
-                    case kk7.X0 /* 87 */:
+                    case jn7.X0 /* 87 */:
                         i3 = 1;
                         timeZoneNameRule = selectNumberRule(4, length2);
                         selectNumberRule = timeZoneNameRule;
                         i2 = i3;
                         i = 0;
                         break;
-                    case kk7.a1 /* 90 */:
+                    case jn7.a1 /* 90 */:
                         i3 = 1;
                         timeZoneNameRule = length2 == 1 ? TimeZoneNumberRule.INSTANCE_NO_COLON : TimeZoneNumberRule.INSTANCE_COLON;
                         selectNumberRule = timeZoneNameRule;
                         i2 = i3;
                         i = 0;
                         break;
-                    case kk7.h1 /* 97 */:
+                    case jn7.h1 /* 97 */:
                         textField = new TextField(9, amPmStrings);
                         selectNumberRule = textField;
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.k1 /* 100 */:
+                    case jn7.k1 /* 100 */:
                         textField = selectNumberRule(5, length2);
                         selectNumberRule = textField;
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.o1 /* 104 */:
+                    case jn7.o1 /* 104 */:
                         textField = new TwelveHourField(selectNumberRule(10, length2));
                         selectNumberRule = textField;
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.r1 /* 107 */:
+                    case jn7.r1 /* 107 */:
                         textField = new TwentyFourHourField(selectNumberRule(11, length2));
                         selectNumberRule = textField;
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.t1 /* 109 */:
+                    case jn7.t1 /* 109 */:
                         textField = selectNumberRule(12, length2);
                         selectNumberRule = textField;
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.z1 /* 115 */:
+                    case jn7.z1 /* 115 */:
                         textField = selectNumberRule(13, length2);
                         selectNumberRule = textField;
                         i2 = 1;
                         i = 0;
                         break;
-                    case kk7.D1 /* 119 */:
+                    case jn7.D1 /* 119 */:
                         textField = selectNumberRule(3, length2);
                         selectNumberRule = textField;
                         i2 = 1;
@@ -426,30 +426,30 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                         break;
                     default:
                         switch (charAt) {
-                            case kk7.E0 /* 68 */:
+                            case jn7.E0 /* 68 */:
                                 textField = selectNumberRule(6, length2);
                                 selectNumberRule = textField;
                                 i2 = 1;
                                 i = 0;
                                 break;
-                            case kk7.F0 /* 69 */:
+                            case jn7.F0 /* 69 */:
                                 selectNumberRule = new TextField(7, length2 < 4 ? shortWeekdays : weekdays);
                                 i2 = 1;
                                 i = 0;
                                 break;
-                            case kk7.G0 /* 70 */:
+                            case jn7.G0 /* 70 */:
                                 textField = selectNumberRule(8, length2);
                                 selectNumberRule = textField;
                                 i2 = 1;
                                 i = 0;
                                 break;
-                            case kk7.H0 /* 71 */:
+                            case jn7.H0 /* 71 */:
                                 rule = new TextField(0, eras);
                                 i = 0;
                                 selectNumberRule = rule;
                                 i2 = 1;
                                 break;
-                            case kk7.I0 /* 72 */:
+                            case jn7.I0 /* 72 */:
                                 textField = selectNumberRule(11, length2);
                                 selectNumberRule = textField;
                                 i2 = 1;
@@ -457,10 +457,10 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                                 break;
                             default:
                                 switch (charAt) {
-                                    case kk7.L0 /* 75 */:
+                                    case jn7.L0 /* 75 */:
                                         textField = selectNumberRule(10, length2);
                                         break;
-                                    case kk7.M0 /* 76 */:
+                                    case jn7.M0 /* 76 */:
                                         if (length2 < 4) {
                                             if (length2 != 3) {
                                                 if (length2 != 2) {
@@ -478,7 +478,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                                             textField = new TextField(2, months);
                                             break;
                                         }
-                                    case kk7.N0 /* 77 */:
+                                    case jn7.N0 /* 77 */:
                                         if (length2 < 4) {
                                             if (length2 != 3) {
                                                 if (length2 != 2) {
@@ -497,7 +497,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
                                             break;
                                         }
                                     default:
-                                        w26.j("Illegal pattern component: ".concat(parseToken));
+                                        lq5.j("Illegal pattern component: ".concat(parseToken));
                                         return null;
                                 }
                                 selectNumberRule = textField;
@@ -578,7 +578,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         return "FastDatePrinter[" + this.mPattern + "," + this.mLocale + "," + this.mTimeZone.getID() + "]";
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TwoDigitMonthField implements NumberRule {
         static final TwoDigitMonthField INSTANCE = new TwoDigitMonthField();
 
@@ -599,7 +599,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TwoDigitYearField implements NumberRule {
         static final TwoDigitYearField INSTANCE = new TwoDigitYearField();
 
@@ -620,7 +620,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TwelveHourField implements NumberRule {
         private final NumberRule mRule;
 
@@ -648,7 +648,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TwentyFourHourField implements NumberRule {
         private final NumberRule mRule;
 
@@ -676,7 +676,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class UnpaddedMonthField implements NumberRule {
         static final UnpaddedMonthField INSTANCE = new UnpaddedMonthField();
 
@@ -701,7 +701,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class TwoDigitNumberField implements NumberRule {
         private final int mField;
 
@@ -730,7 +730,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class UnpaddedNumberField implements NumberRule {
         private final int mField;
 
@@ -768,14 +768,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         return applyRulesToString(newCalendar);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class PaddedNumberField implements NumberRule {
         private final int mField;
         private final int mSize;
 
         public PaddedNumberField(int i, int i2) {
             if (i2 < 3) {
-                sc8.e();
+                iy8.d();
                 throw null;
             }
             this.mField = i;

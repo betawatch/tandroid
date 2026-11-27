@@ -1,41 +1,61 @@
 // default package
 
-import java.util.Set;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ka0 {
-    public final long a;
-    public final long b;
-    public final Set c;
+public final class ka0 extends ym9 {
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final long f;
 
-    public ka0(long j, long j2, Set set) {
-        this.a = j;
-        this.b = j2;
-        this.c = set;
+    public ka0(String str, String str2, String str3, String str4, long j) {
+        if (str == null) {
+            p3d.h("Null rolloutId");
+            throw null;
+        }
+        this.b = str;
+        if (str2 == null) {
+            p3d.h("Null parameterKey");
+            throw null;
+        }
+        this.c = str2;
+        this.d = str3;
+        if (str4 == null) {
+            p3d.h("Null variantId");
+            throw null;
+        }
+        this.e = str4;
+        this.f = j;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ka0) {
-            ka0 ka0Var = (ka0) obj;
-            if (this.a == ka0Var.a && this.b == ka0Var.b && this.c.equals(ka0Var.c)) {
-                return true;
-            }
+        if (!(obj instanceof ym9)) {
+            return false;
         }
-        return false;
+        ka0 ka0Var = (ka0) ((ym9) obj);
+        return this.b.equals(ka0Var.b) && this.c.equals(ka0Var.c) && this.d.equals(ka0Var.d) && this.e.equals(ka0Var.e) && this.f == ka0Var.f;
     }
 
     public final int hashCode() {
-        long j = this.a;
-        int i = (((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003;
-        long j2 = this.b;
-        return ((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.c.hashCode();
+        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003;
+        long j = this.f;
+        return hashCode ^ ((int) ((j >>> 32) ^ j));
     }
 
     public final String toString() {
-        return "ConfigValue{delta=" + this.a + ", maxAllowedDelay=" + this.b + ", flags=" + this.c + "}";
+        StringBuilder sb = new StringBuilder("RolloutAssignment{rolloutId=");
+        sb.append(this.b);
+        sb.append(", parameterKey=");
+        sb.append(this.c);
+        sb.append(", parameterValue=");
+        sb.append(this.d);
+        sb.append(", variantId=");
+        sb.append(this.e);
+        sb.append(", templateVersion=");
+        return qu6.p(sb, this.f, "}");
     }
 }

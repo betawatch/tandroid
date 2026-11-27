@@ -1,19 +1,10 @@
 // default package
 
-import com.google.android.gms.common.api.Scope;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class n2d {
-    public static final op5 a;
-    public static final yn b;
-
-    static {
-        wn wnVar = new wn();
-        op5 op5Var = new op5((byte) 2);
-        a = op5Var;
-        new Scope(1, "profile");
-        new Scope(1, "email");
-        b = new yn("SignIn.API", op5Var, wnVar);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class n2d extends m2d {
+    @Override // c3f
+    public final void b() {
+        g(16);
     }
 }

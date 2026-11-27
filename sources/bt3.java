@@ -1,36 +1,40 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.d;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class bt3 implements ed {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class bt3 extends f2 {
+    public static final /* synthetic */ xh4 n;
+    public static final /* synthetic */ xh4 r;
 
-    public /* synthetic */ bt3(int i, int i2, d dVar) {
-        this.a = i;
-        this.b = i2;
-        this.c = dVar;
+    static {
+        u84 u84Var = new u84(bt3.class, "ESDescriptorBox.java");
+        u84Var.e(u84Var.d("getEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor"));
+        u84Var.e(u84Var.d("setEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor", "esDescriptor", "void"));
+        n = u84Var.e(u84Var.d("equals", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "java.lang.Object", "o", "boolean"));
+        r = u84Var.e(u84Var.d("hashCode", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "int"));
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        d dVar = (d) this.c;
-        c01 g = hdVar.g(-1, true, true);
-        g.d();
-        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-        tL_resolveStarGiftOffer.offer_msg_id = this.a;
-        int i2 = this.b;
-        ConnectionsManager.getInstance(i2).sendRequestTyped(tL_resolveStarGiftOffer, new e(i2, dVar, g, hdVar));
+    public final boolean equals(Object obj) {
+        bp1.r(u84.c(n, this, this, obj));
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || bt3.class != obj.getClass()) {
+            return false;
+        }
+        ByteBuffer byteBuffer = this.e;
+        ByteBuffer byteBuffer2 = ((bt3) obj).e;
+        return byteBuffer != null ? byteBuffer.equals(byteBuffer2) : byteBuffer2 == null;
     }
 
-    public /* synthetic */ bt3(gt3 gt3Var, int i, int i2) {
-        this.c = gt3Var;
-        this.a = i;
-        this.b = i2;
+    public final int hashCode() {
+        bp1.r(u84.b(r, this, this));
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            return byteBuffer.hashCode();
+        }
+        return 0;
     }
 }

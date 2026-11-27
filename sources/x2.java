@@ -1,41 +1,57 @@
 // default package
 
-import java.util.List;
-import java.util.RandomAccess;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x2 extends y2 implements RandomAccess {
-    public final y2 a;
-    public final int b;
-    public final int c;
+public final class x2 extends w2 implements ListIterator {
+    public final /* synthetic */ z2 d;
 
-    public x2(y2 y2Var, int i, int i2) {
-        this.a = y2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x2(z2 z2Var, int i) {
+        super(z2Var);
+        this.d = z2Var;
+        int h = z2Var.h();
+        if (i < 0 || i > h) {
+            su3.g(c00.h(i, h, "index: ", ", size: "));
+            throw null;
+        }
         this.b = i;
-        zkd.a(i, i2, y2Var.h());
-        this.c = i2 - i;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        int i2 = this.c;
-        if (i < 0 || i >= i2) {
-            k93.i(b00.g(i, i2, "index: ", ", size: "));
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.b > 0;
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            lq5.n();
             return null;
         }
-        return this.a.get(this.b + i);
+        int i = this.b - 1;
+        this.b = i;
+        return this.d.get(i);
     }
 
-    @Override // y2
-    public final int h() {
-        return this.c;
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.b - 1;
     }
 
-    @Override // y2, java.util.List
-    public final List subList(int i, int i2) {
-        zkd.a(i, i2, this.c);
-        int i3 = this.b;
-        return new x2(this.a, i + i3, i3 + i2);
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

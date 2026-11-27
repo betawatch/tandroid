@@ -1,46 +1,30 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class me0 extends b4 {
-    public static final Parcelable.Creator<me0> CREATOR = new igd(20);
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public boolean h;
-    public String n;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class me0 extends o46 {
+    public final vnb q;
+    public final Paint r;
+    public int s;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        int i2 = this.a;
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(i2);
-        int i3 = this.b;
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(i3);
-        int i4 = this.c;
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(i4);
-        int i5 = this.d;
-        jte.q(parcel, 5, 4);
-        parcel.writeInt(i5);
-        int i6 = this.e;
-        jte.q(parcel, 6, 4);
-        parcel.writeInt(i6);
-        int i7 = this.f;
-        jte.q(parcel, 7, 4);
-        parcel.writeInt(i7);
-        boolean z = this.h;
-        jte.q(parcel, 8, 4);
-        parcel.writeInt(z ? 1 : 0);
-        jte.l(parcel, 9, this.n);
-        jte.s(parcel, r);
+    public me0(nk1 nk1Var, vnb vnbVar) {
+        super(nk1Var, false, null);
+        Paint paint = new Paint();
+        this.r = paint;
+        this.s = 0;
+        this.q = vnbVar;
+        Paint paint2 = this.c;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint.setStyle(style);
+        this.c.setAntiAlias(false);
+    }
+
+    @Override // o46
+    public final void a() {
+        super.a();
+        this.s = vm2.f(0.3f, aob.v0(aob.d6, this.q), this.m);
     }
 }

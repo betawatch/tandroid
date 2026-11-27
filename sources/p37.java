@@ -1,61 +1,45 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ImageSpan;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class p37 {
-    public SpannableStringBuilder a;
-    public int b;
-    public Drawable c;
-    public float d;
-    public final int e;
-    public final int f;
-    public int g = -1;
-    public int h = -1;
-    public float i = 4.66f;
+public final class p37 extends CharacterStyle {
+    public final /* synthetic */ byte a;
 
-    public p37(int i, int i2) {
-        this.e = i;
-        this.f = i2;
+    public p37(q37 q37Var) {
+        this.a = (byte) 0;
     }
 
-    public final CharSequence a(Context context, wjb wjbVar) {
-        SpannableStringBuilder spannableStringBuilder = this.a;
-        int i = this.f;
-        if (spannableStringBuilder != null && this.c != null && gl.p == this.d) {
-            if (this.b != bkb.v0(i, wjbVar)) {
-                Drawable drawable = this.c;
-                int v0 = bkb.v0(i, wjbVar);
-                this.b = v0;
-                drawable.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.SRC_IN));
-            }
-            return this.a;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setTypeface(hl.o());
+                int alpha = textPaint.getAlpha();
+                textPaint.setColor(aob.w0(null, aob.n6, false));
+                textPaint.setAlpha(alpha);
+                break;
+            case 1:
+                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
+                textPaint.setColor(aob.T2.getColor());
+                break;
+            case 2:
+                textPaint.setColor(aob.o2.linkColor);
+                break;
+            case 3:
+                break;
+            default:
+                textPaint.setAlpha(128);
+                break;
         }
-        if (context == null) {
-            return null;
-        }
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("v ");
-        this.d = gl.p;
-        Drawable mutate = context.getResources().getDrawable(this.e).mutate();
-        this.c = mutate;
-        int v02 = bkb.v0(i, wjbVar);
-        this.b = v02;
-        mutate.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
-        int i2 = this.g;
-        int intrinsicWidth = i2 <= 0 ? this.c.getIntrinsicWidth() : gl.L(i2);
-        int i3 = this.h;
-        int intrinsicHeight = i3 <= 0 ? this.c.getIntrinsicHeight() : gl.L(i3);
-        int L = gl.L(this.i);
-        this.c.setBounds(0, L, intrinsicWidth, intrinsicHeight + L);
-        spannableStringBuilder2.setSpan(new ImageSpan(this.c, 2), 0, 1, 33);
-        spannableStringBuilder2.setSpan(new se3(gl.L(2.0f)), 1, 2, 33);
-        this.a = spannableStringBuilder2;
-        return spannableStringBuilder2;
+    }
+
+    public /* synthetic */ p37(byte b) {
+        this.a = b;
+    }
+
+    private final void a(TextPaint textPaint) {
     }
 }

@@ -1,106 +1,163 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.PhotoViewer;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class f68 implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class f68 implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ j68 b;
+    public final /* synthetic */ x53 c;
+    public final /* synthetic */ lcb d;
 
-    public /* synthetic */ f68(PhotoViewer photoViewer, byte b) {
-        this.a = b;
-        this.b = photoViewer;
+    public /* synthetic */ f68(j68 j68Var, lcb lcbVar, x53 x53Var) {
+        this.a = (byte) 2;
+        this.b = j68Var;
+        this.d = lcbVar;
+        this.c = x53Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x011a  */
+    @Override // android.view.View.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onClick(View view) {
+        boolean z;
+        View view2;
+        View view3;
         byte b = this.a;
-        PhotoViewer photoViewer = this.b;
+        x53 x53Var = this.c;
+        lcb lcbVar = this.d;
+        j68 j68Var = this.b;
         switch (b) {
             case 0:
-                Drawable[] drawableArr = PhotoViewer.d9;
-                photoViewer.i3.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+                o68 o68Var = j68Var.x;
+                j68 j68Var2 = o68Var.d1;
+                n68 n68Var = o68Var.y1;
+                if (j68Var2 != null) {
+                    j68Var2.a();
+                }
+                w9b w9bVar = new w9b(o68Var.getContext(), 86400, x53Var);
+                w9bVar.Q0();
+                w9bVar.R0(uc7.s1(o68Var.m2).j1(o68Var.l1));
+                w9bVar.F1 = true;
+                View[] viewPages = w9bVar.l1.getViewPages();
+                View view4 = viewPages[0];
+                if (view4 instanceof r9b) {
+                    r9b r9bVar = (r9b) view4;
+                    r9bVar.b(r9bVar.a);
+                }
+                View view5 = viewPages[1];
+                if (view5 instanceof r9b) {
+                    r9b r9bVar2 = (r9b) view5;
+                    r9bVar2.b(r9bVar2.a);
+                }
+                w9bVar.F0(false);
+                w9bVar.O0(1);
+                w9bVar.M0(false);
+                w96 w96Var = lcbVar.B0;
+                if (w96Var != null) {
+                    TLRPC.GroupCall groupCall = w96Var.s;
+                    if (groupCall == null ? true : groupCall.messages_enabled) {
+                        z = true;
+                        boolean a = n68Var.a();
+                        TL_stories.StoryItem storyItem = n68Var.a;
+                        boolean z2 = storyItem == null && storyItem.pinned;
+                        w96 w96Var2 = lcbVar.B0;
+                        int m = w96Var2 != null ? 0 : (int) w96Var2.m();
+                        w9bVar.v1 = z;
+                        w9bVar.w1 = a;
+                        w9bVar.x1 = z2;
+                        w9bVar.B1 = m;
+                        View[] viewPages2 = w9bVar.l1.getViewPages();
+                        view2 = viewPages2[0];
+                        if (view2 instanceof r9b) {
+                            r9b r9bVar3 = (r9b) view2;
+                            r9bVar3.b(r9bVar3.a);
+                        }
+                        view3 = viewPages2[1];
+                        if (view3 instanceof r9b) {
+                            r9b r9bVar4 = (r9b) view3;
+                            r9bVar4.b(r9bVar4.a);
+                        }
+                        w9bVar.N1 = new rm6(j68Var, w9bVar, (byte) 28);
+                        w9bVar.show();
+                        break;
+                    }
+                }
+                z = false;
+                boolean a2 = n68Var.a();
+                TL_stories.StoryItem storyItem2 = n68Var.a;
+                if (storyItem2 == null) {
+                }
+                w96 w96Var22 = lcbVar.B0;
+                if (w96Var22 != null) {
+                }
+                w9bVar.v1 = z;
+                w9bVar.w1 = a2;
+                w9bVar.x1 = z2;
+                w9bVar.B1 = m;
+                View[] viewPages22 = w9bVar.l1.getViewPages();
+                view2 = viewPages22[0];
+                if (view2 instanceof r9b) {
+                }
+                view3 = viewPages22[1];
+                if (view3 instanceof r9b) {
+                }
+                w9bVar.N1 = new rm6(j68Var, w9bVar, (byte) 28);
+                w9bVar.show();
             case 1:
-                Drawable[] drawableArr2 = PhotoViewer.d9;
-                photoViewer.l6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o68 o68Var2 = j68Var.x;
+                j68 j68Var3 = o68Var2.d1;
+                if (j68Var3 != null) {
+                    j68Var3.a();
+                }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, x53Var, o68Var2.getContext());
+                String M0 = ob6.M0(2131748571, null);
+                id idVar = alertDialog$Builder.a;
+                idVar.S = M0;
+                idVar.U = ob6.M0(2131748572, null);
+                alertDialog$Builder.j(ob6.M0(2131748573, null), new rm6(j68Var, lcbVar, (byte) 29));
+                alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+                alertDialog$Builder.c(-1);
+                alertDialog$Builder.o();
                 break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.d9;
-                CropAreaView cropAreaView = photoViewer.D1.b.a;
-                float R1 = gl.R1(photoViewer.Z5, photoViewer.d6, photoViewer.k6);
-                float R12 = gl.R1(photoViewer.W5, photoViewer.b6, photoViewer.k6);
-                float R13 = gl.R1(photoViewer.X5, photoViewer.c6, photoViewer.k6);
-                cropAreaView.o0 = 0.0f;
-                cropAreaView.p0 = R1;
-                cropAreaView.q0 = R12;
-                cropAreaView.r0 = R13;
-                cropAreaView.invalidate();
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.d9;
-                photoViewer.M1.v0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 4:
-                Drawable[] drawableArr5 = PhotoViewer.d9;
-                photoViewer.M1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 5:
-                Drawable[] drawableArr6 = PhotoViewer.d9;
-                photoViewer.l6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 6:
-                Drawable[] drawableArr7 = PhotoViewer.d9;
-                photoViewer.D2();
-                break;
-            case 7:
-                Drawable[] drawableArr8 = PhotoViewer.d9;
-                photoViewer.M1.v0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 8:
-                Drawable[] drawableArr9 = PhotoViewer.d9;
-                photoViewer.M1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 9:
-                Drawable[] drawableArr10 = PhotoViewer.d9;
-                q88 q88Var = photoViewer.M1;
-                if (q88Var != null) {
-                    q88Var.T0.invalidate();
+            default:
+                o68 o68Var3 = j68Var.x;
+                lcbVar.k1 = true;
+                lcbVar.U();
+                int i = o68Var3.m2;
+                Context context = o68Var3.getContext();
+                TL_stories.StoryItem storyItem3 = o68Var3.y1.a;
+                t58 t58Var = o68Var3.M0;
+                x53 x53Var2 = this.c;
+                d31 d31Var = new d31(t58Var, x53Var2);
+                ii7 ii7Var = new ii7(lcbVar, (byte) 13);
+                int i2 = nb9.v1;
+                nb9.E0(i, context, storyItem3.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem3.id))), d31Var, x53Var2, new byte[0], null, ii7Var);
+                j68 j68Var4 = o68Var3.d1;
+                if (j68Var4 != null) {
+                    j68Var4.a();
                     break;
                 }
                 break;
-            case 10:
-                Drawable[] drawableArr11 = PhotoViewer.d9;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.Y5 = floatValue;
-                q88 q88Var2 = photoViewer.M1;
-                if (q88Var2 != null && Math.abs(floatValue - q88Var2.N1) > 0.1f) {
-                    q88Var2.N1 = floatValue;
-                    q88Var2.x0(q88Var2.y0, q88Var2.z0, q88Var2.A0, q88Var2.D0, q88Var2.E0);
-                }
-                photoViewer.f0.invalidate();
-                break;
-            case 11:
-                Drawable[] drawableArr12 = PhotoViewer.d9;
-                photoViewer.l6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.H0();
-                break;
-            case 12:
-                Drawable[] drawableArr13 = PhotoViewer.d9;
-                photoViewer.l6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 13:
-                Drawable[] drawableArr14 = PhotoViewer.d9;
-                photoViewer.l6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            default:
-                Drawable[] drawableArr15 = PhotoViewer.d9;
-                photoViewer.X0[0].e(1, ((Float) valueAnimator.getAnimatedValue()).floatValue(), false);
-                break;
         }
+    }
+
+    public /* synthetic */ f68(j68 j68Var, x53 x53Var, lcb lcbVar, byte b) {
+        this.a = b;
+        this.b = j68Var;
+        this.c = x53Var;
+        this.d = lcbVar;
     }
 }

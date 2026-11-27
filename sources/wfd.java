@@ -1,37 +1,57 @@
 // default package
 
-import java.util.Iterator;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wfd extends add {
-    public final transient ggd h;
-    public final transient agd n;
-
-    public wfd(ggd ggdVar, agd agdVar) {
-        super((byte) 1);
-        this.h = ggdVar;
-        this.n = agdVar;
+public abstract class wfd extends Binder implements IInterface {
+    @Override // android.os.Binder
+    public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i, parcel, parcel2, i2)) {
+            return true;
+        }
+        gsd gsdVar = (gsd) this;
+        if (i == 1) {
+            gsdVar.init(br7.T(parcel.readStrongBinder()));
+            parcel2.writeNoException();
+            return true;
+        }
+        if (i == 2) {
+            String readString = parcel.readString();
+            int i3 = fld.a;
+            boolean booleanFlagValue = gsdVar.getBooleanFlagValue(readString, parcel.readInt() != 0, parcel.readInt());
+            parcel2.writeNoException();
+            parcel2.writeInt(booleanFlagValue ? 1 : 0);
+            return true;
+        }
+        if (i == 3) {
+            int intFlagValue = gsdVar.getIntFlagValue(parcel.readString(), parcel.readInt(), parcel.readInt());
+            parcel2.writeNoException();
+            parcel2.writeInt(intFlagValue);
+            return true;
+        }
+        if (i == 4) {
+            long longFlagValue = gsdVar.getLongFlagValue(parcel.readString(), parcel.readLong(), parcel.readInt());
+            parcel2.writeNoException();
+            parcel2.writeLong(longFlagValue);
+            return true;
+        }
+        if (i != 5) {
+            return false;
+        }
+        String stringFlagValue = gsdVar.getStringFlagValue(parcel.readString(), parcel.readString(), parcel.readInt());
+        parcel2.writeNoException();
+        parcel2.writeString(stringFlagValue);
+        return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.h.get(obj) != null;
-    }
-
-    @Override // x8d
-    public final int h(Object[] objArr) {
-        return this.n.h(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.n.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        this.h.getClass();
-        return 1;
+    @Override // android.os.IInterface
+    public IBinder asBinder() {
+        return this;
     }
 }

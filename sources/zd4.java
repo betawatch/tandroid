@@ -1,335 +1,201 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.R;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.RippleDrawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.tl.TL_chatlists;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zd4 extends gb3 {
-    public final /* synthetic */ he4 F;
+public final /* synthetic */ class zd4 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ he4 b;
 
-    public zd4(he4 he4Var) {
-        this.F = he4Var;
+    public /* synthetic */ zd4(he4 he4Var, byte b) {
+        this.a = b;
+        this.b = he4Var;
     }
 
-    @Override // gb3
-    public final void C(s49 s49Var, fb3 fb3Var) {
-        super.C(s49Var, fb3Var);
-        View view = s49Var.a;
-        if (view instanceof fe4) {
-            fe4 fe4Var = (fe4) view;
-            if (fe4Var.x) {
-                ValueAnimator valueAnimator = fe4Var.a;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    fe4Var.a.removeAllUpdateListeners();
-                    fe4Var.a.cancel();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        byte b2 = 6;
+        he4 he4Var = this.b;
+        byte b3 = 0;
+        byte b4 = 1;
+        switch (b) {
+            case 0:
+                String str = he4Var.s;
+                if (str != null) {
+                    hl.g(str);
+                    d31.b0(he4Var.r).i(ob6.M0(2131748675, null)).j();
+                    break;
                 }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new yd4(fe4Var, (byte) 0));
-                ofFloat.addListener(new im2(fe4Var, (byte) 21));
-                fe4Var.a = ofFloat;
-                ofFloat.setDuration(this.e);
-                ofFloat.start();
-            }
-        }
-    }
-
-    @Override // gb3, b49
-    public final void f(s49 s49Var) {
-        super.f(s49Var);
-        View view = s49Var.a;
-        view.setTranslationX(0.0f);
-        if (view instanceof fe4) {
-            ((fe4) view).a();
-        }
-    }
-
-    @Override // gb3, b49
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.1f);
-            ofFloat.addUpdateListener(new uz1(this, (byte) 27));
-            ofFloat.setDuration(this.e);
-            ofFloat.start();
-        }
-        super.m();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0326, code lost:
-    
-        if (r1.getMeasuredWidth() != r1.k0) goto L100;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v1 */
-    /* JADX WARN: Type inference failed for: r2v18 */
-    /* JADX WARN: Type inference failed for: r4v3 */
-    /* JADX WARN: Type inference failed for: r4v35 */
-    /* JADX WARN: Type inference failed for: r4v4, types: [boolean, int] */
-    @Override // gb3, hia
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean r(s49 s49Var, zw8 zw8Var, int i, int i2, int i3, int i4) {
-        int i5;
-        int i6;
-        int i7;
-        int i8;
-        ?? r4;
-        boolean z;
-        int i9;
-        String str;
-        int i10;
-        boolean z2;
-        boolean z3;
-        boolean z4;
-        boolean z5;
-        CharSequence charSequence;
-        CharSequence charSequence2;
-        boolean z6;
-        boolean z7;
-        boolean z8;
-        int i11;
-        int i12;
-        View view = s49Var.a;
-        if (!(view instanceof fe4)) {
-            return super.r(s49Var, zw8Var, i, i2, i3, i4);
-        }
-        int translationX = i + ((int) view.getTranslationX());
-        int translationY = i2 + ((int) view.getTranslationY());
-        R(s49Var);
-        int i13 = i3 - translationX;
-        int i14 = i4 - translationY;
-        if (i13 != 0) {
-            view.setTranslationX(-i13);
-        }
-        if (i14 != 0) {
-            view.setTranslationY(-i14);
-        }
-        fe4 fe4Var = (fe4) view;
-        he4 he4Var = fe4Var.n0;
-        TextPaint textPaint = he4Var.b;
-        TextPaint textPaint2 = he4Var.c;
-        int i15 = fe4Var.b.d;
-        int i16 = fe4Var.J;
-        if (i15 != i16) {
-            fe4Var.I = true;
-            fe4Var.K = i16;
-            fe4Var.g0 = fe4Var.e0;
-            fe4Var.h0 = fe4Var.f0;
-            if (i16 <= 0 || i15 <= 0) {
-                i5 = translationX;
-                i6 = translationY;
-                i7 = i13;
-                z7 = true;
-                z8 = false;
-            } else {
-                String valueOf = String.valueOf(i16);
-                String valueOf2 = String.valueOf(fe4Var.b.d);
-                if (valueOf.length() == valueOf2.length()) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(valueOf);
-                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(valueOf2);
-                    SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(valueOf2);
-                    int i17 = 0;
-                    while (i17 < valueOf.length()) {
-                        int i18 = translationX;
-                        if (valueOf.charAt(i17) == valueOf2.charAt(i17)) {
-                            int i19 = i17 + 1;
-                            i11 = translationY;
-                            spannableStringBuilder.setSpan(new lx2((byte) 1), i17, i19, 0);
-                            i12 = i13;
-                            spannableStringBuilder2.setSpan(new lx2((byte) 1), i17, i19, 0);
-                        } else {
-                            i11 = translationY;
-                            i12 = i13;
-                            spannableStringBuilder3.setSpan(new lx2((byte) 1), i17, i17 + 1, 0);
+                break;
+            case 1:
+                he4 he4Var2 = this.b;
+                FrameLayout frameLayout = he4Var2.a;
+                if (frameLayout.getBackground() instanceof RippleDrawable) {
+                    frameLayout.getBackground().setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+                    he4Var2.postDelayed(new lw3(he4Var2, (byte) 22), 180L);
+                }
+                float[] fArr = he4Var2.E;
+                if (he4Var2.y == null && he4Var2.s != null) {
+                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(he4Var2.getContext(), null);
+                    b8 b8Var = new b8(he4Var2.getContext(), true, false);
+                    b8Var.j(ob6.M0(2131751229, null), org.telegram.messenger.beta.R.drawable.msg_edit, null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(b8Var, tre.o(-1, 48));
+                    b8Var.setOnClickListener(new zd4(he4Var2, (byte) 4));
+                    b8 b8Var2 = new b8(he4Var2.getContext(), false, false);
+                    b8Var2.j(ob6.M0(2131750433, null), org.telegram.messenger.beta.R.drawable.msg_qrcode, null);
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(b8Var2, tre.o(-1, 48));
+                    b8Var2.setOnClickListener(new zd4(he4Var2, (byte) 5));
+                    b8 b8Var3 = new b8(he4Var2.getContext(), false, true);
+                    b8Var3.j(ob6.M0(2131751499, null), org.telegram.messenger.beta.R.drawable.msg_delete, null);
+                    int i = aob.p7;
+                    b8Var3.c(i, i);
+                    b8Var3.h(0.12f, i);
+                    b8Var3.setOnClickListener(new zd4(he4Var2, b2));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(b8Var3, tre.o(-1, 48));
+                    FrameLayout overlayContainerView = he4Var2.r.getParentLayout().getOverlayContainerView();
+                    if (overlayContainerView != null) {
+                        ce4.a(frameLayout, overlayContainerView, fArr);
+                        float f = fArr[1];
+                        a81 a81Var = new a81(he4Var2, he4Var2.getContext(), overlayContainerView, (byte) 7);
+                        gb gbVar = new gb(a81Var, (byte) 3);
+                        overlayContainerView.getViewTreeObserver().addOnPreDrawListener(gbVar);
+                        overlayContainerView.addView(a81Var, tre.c(-1.0f, -1));
+                        float f2 = 0.0f;
+                        a81Var.setAlpha(0.0f);
+                        a81Var.animate().alpha(1.0f).setDuration(150L);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredWidth(), 0), View.MeasureSpec.makeMeasureSpec(overlayContainerView.getMeasuredHeight(), 0));
+                        n8 n8Var = new n8(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+                        he4Var2.y = n8Var;
+                        n8Var.setOnDismissListener(new ae4(he4Var2, a81Var, overlayContainerView, gbVar, (byte) 0));
+                        he4Var2.y.setOutsideTouchable(true);
+                        he4Var2.y.setFocusable(true);
+                        he4Var2.y.setBackgroundDrawable(new ColorDrawable(0));
+                        he4Var2.y.setAnimationStyle(org.telegram.messenger.beta.R.style.PopupContextAnimation);
+                        he4Var2.y.setInputMethodMode(2);
+                        he4Var2.y.setSoftInputMode(0);
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new lu3(he4Var2, (byte) 19));
+                        if (hl.O1()) {
+                            f += overlayContainerView.getPaddingTop();
+                            f2 = 0.0f - overlayContainerView.getPaddingLeft();
                         }
-                        i17++;
-                        i13 = i12;
-                        translationY = i11;
-                        translationX = i18;
+                        he4Var2.y.showAtLocation(overlayContainerView, 0, (int) (overlayContainerView.getX() + ((overlayContainerView.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) - hl.L(16.0f)) + f2), (int) (overlayContainerView.getY() + f + frameLayout.getMeasuredHeight()));
+                        break;
                     }
-                    i5 = translationX;
-                    i6 = translationY;
-                    i7 = i13;
-                    z8 = false;
-                    int ceil = (int) Math.ceil(bkb.K0.measureText(valueOf));
-                    Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-                    z7 = true;
-                    fe4Var.M = new StaticLayout(spannableStringBuilder, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
-                    fe4Var.N = new StaticLayout(spannableStringBuilder3, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
-                    fe4Var.L = new StaticLayout(spannableStringBuilder2, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
-                } else {
-                    i5 = translationX;
-                    i6 = translationY;
-                    i7 = i13;
-                    z7 = true;
-                    z8 = false;
-                    int ceil2 = (int) Math.ceil(bkb.K0.measureText(valueOf));
-                    Layout.Alignment alignment2 = Layout.Alignment.ALIGN_CENTER;
-                    fe4Var.M = new StaticLayout(valueOf, textPaint2, ceil2, alignment2, 1.0f, 0.0f, false);
-                    fe4Var.L = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(bkb.K0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
                 }
-            }
-            z = z7;
-            i8 = z7;
-            r4 = z8;
-        } else {
-            i5 = translationX;
-            i6 = translationY;
-            i7 = i13;
-            i8 = 1;
-            r4 = 0;
-            z = false;
-        }
-        int i20 = fe4Var.b.d;
-        if (i20 > 0) {
-            Object[] objArr = new Object[i8];
-            objArr[r4] = Integer.valueOf(i20);
-            str = String.format("%d", objArr);
-            i9 = Math.max(gl.L(7.333f), (int) Math.ceil(textPaint2.measureText(str))) + gl.L(10.0f);
-        } else {
-            i9 = r4;
-            str = null;
-        }
-        int i21 = fe4Var.b.c;
-        if (i9 != 0) {
-            i10 = gl.L((str != null ? 1.0f : he4Var.x) * 6.0f) + i9;
-        } else {
-            i10 = r4;
-        }
-        int i22 = i10 + i21;
-        float measuredWidth = (fe4Var.getMeasuredWidth() - i22) / 2;
-        float f = fe4Var.F;
-        if (measuredWidth != f) {
-            fe4Var.H = i8;
-            fe4Var.G = f;
-            z2 = i8;
-        } else {
-            z2 = z;
-        }
-        CharSequence charSequence3 = fe4Var.O;
-        if (charSequence3 == null || fe4Var.b.b.equals(charSequence3)) {
-            z3 = r4;
-            z4 = z2;
-        } else {
-            if (fe4Var.O.length() > fe4Var.b.b.length()) {
-                charSequence = fe4Var.O;
-                charSequence2 = fe4Var.b.b;
-                z6 = i8;
-            } else {
-                charSequence = fe4Var.b.b;
-                charSequence2 = fe4Var.O;
-                z6 = r4;
-            }
-            int t = gl.t(charSequence, charSequence2);
-            if (t >= 0) {
-                CharSequence m = vu3.m(charSequence, textPaint.getFontMetricsInt(), r4, null, r4);
-                CharSequence charSequence4 = charSequence2;
-                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(m);
-                SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(m);
-                if (t != 0) {
-                    spannableStringBuilder5.setSpan(new lx2(i8), r4, t, r4);
+                break;
+            case 2:
+                String str2 = he4Var.s;
+                if (str2 != null) {
+                    hl.g(str2);
+                    d31.b0(he4Var.r).i(ob6.M0(2131748675, null)).j();
+                    break;
                 }
-                if (charSequence4.length() + t != charSequence.length()) {
-                    spannableStringBuilder5.setSpan(new lx2(i8), charSequence4.length() + t, charSequence.length(), r4);
+                break;
+            case 3:
+                if (he4Var.s != null) {
+                    try {
+                        Intent intent = new Intent("android.intent.action.SEND");
+                        intent.setType("text/plain");
+                        intent.putExtra("android.intent.extra.TEXT", he4Var.s);
+                        he4Var.r.startActivityForResult(Intent.createChooser(intent, ob6.M0(2131748864, null)), 500);
+                        break;
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                        return;
+                    }
                 }
-                spannableStringBuilder4.setSpan(new lx2(i8), t, charSequence4.length() + t, r4);
-                boolean z9 = z6;
-                int L = gl.L(400.0f);
-                Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
-                z3 = r4;
-                StaticLayout staticLayout = new StaticLayout(spannableStringBuilder4, textPaint, L, alignment3, 1.0f, 0.0f, false);
-                fe4Var.Q = staticLayout;
-                if (fe4Var.m0) {
-                    int i23 = fe4Var.b.g ? 26 : z3 ? 1 : 0;
-                    cm cmVar = fe4Var.P;
-                    Layout[] layoutArr = new Layout[i8];
-                    layoutArr[z3 ? 1 : 0] = staticLayout;
-                    fe4Var.P = gm.update(i23, fe4Var, cmVar, layoutArr);
+                break;
+            case 4:
+                he4 he4Var3 = this.b;
+                n8 n8Var2 = he4Var3.y;
+                if (n8Var2 != null) {
+                    n8Var2.d(true);
                 }
-                StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder5, textPaint, gl.L(400.0f), alignment3, 1.0f, 0.0f, false);
-                fe4Var.U = staticLayout2;
-                if (fe4Var.m0) {
-                    int i24 = fe4Var.b.g ? 26 : z3 ? 1 : 0;
-                    cm cmVar2 = fe4Var.T;
-                    Layout[] layoutArr2 = new Layout[i8];
-                    layoutArr2[z3 ? 1 : 0] = staticLayout2;
-                    fe4Var.T = gm.update(i24, fe4Var, cmVar2, layoutArr2);
+                je4 je4Var = he4Var3.F.c;
+                TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = je4Var.d;
+                if (tL_exportedChatlistInvite != null && tL_exportedChatlistInvite.url != null) {
+                    EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(he4Var3.getContext());
+                    editTextBoldCursor.setBackgroundDrawable(aob.T(he4Var3.getContext()));
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(he4Var3.getContext());
+                    int i2 = aob.H5;
+                    id idVar = alertDialog$Builder.a;
+                    idVar.J = i2;
+                    idVar.S = ob6.M0(2131750729, null);
+                    alertDialog$Builder.g(ob6.M0(2131752570, null), new bu3(editTextBoldCursor, b4));
+                    LinearLayout linearLayout = new LinearLayout(he4Var3.getContext());
+                    linearLayout.setOrientation(1);
+                    alertDialog$Builder.n(linearLayout);
+                    editTextBoldCursor.setTextSize(1, 16.0f);
+                    int i3 = aob.j5;
+                    yob.X(editTextBoldCursor, i3, null);
+                    editTextBoldCursor.setMaxLines(1);
+                    editTextBoldCursor.setLines(1);
+                    editTextBoldCursor.setInputType(16385);
+                    editTextBoldCursor.setGravity(51);
+                    editTextBoldCursor.setSingleLine(true);
+                    editTextBoldCursor.setImeOptions(6);
+                    editTextBoldCursor.setHint(je4Var.c.b);
+                    yob.D(editTextBoldCursor, aob.t5, null);
+                    yob.l(editTextBoldCursor, 30, i3, null);
+                    editTextBoldCursor.setCursorSize(hl.L(20.0f));
+                    editTextBoldCursor.setCursorWidth(1.5f);
+                    editTextBoldCursor.setPadding(0, hl.L(4.0f), 0, 0);
+                    linearLayout.addView(editTextBoldCursor, tre.t(-1, 36, 51, 24, 6, 24, 0));
+                    editTextBoldCursor.setOnEditorActionListener(new de4(alertDialog$Builder, b3));
+                    editTextBoldCursor.addTextChangedListener(new ge4(editTextBoldCursor, b3));
+                    if (!TextUtils.isEmpty(tL_exportedChatlistInvite.title)) {
+                        editTextBoldCursor.setText(tL_exportedChatlistInvite.title);
+                        editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    }
+                    alertDialog$Builder.j(ob6.M0(2131745674, null), new fu2(he4Var3, editTextBoldCursor, alertDialog$Builder, false, (byte) 11));
+                    idVar.setOnShowListener(new ee4(editTextBoldCursor, b3));
+                    idVar.setOnDismissListener(new fe4(editTextBoldCursor, b3));
+                    idVar.show();
+                    idVar.o(aob.w0(null, i3, false));
+                    editTextBoldCursor.requestFocus();
+                    break;
                 }
-                fe4Var.V = i8;
-                fe4Var.W = z9;
-                fe4Var.b0 = t == 0 ? 0.0f : -fe4Var.U.getPrimaryHorizontal(t);
-                fe4Var.d0 = fe4Var.c0;
-                fe4Var.S = null;
-                gm.release(fe4Var, fe4Var.R);
-            } else {
-                z3 = r4;
-                CharSequence charSequence5 = fe4Var.b.b;
-                int L2 = gl.L(400.0f);
-                Layout.Alignment alignment4 = Layout.Alignment.ALIGN_NORMAL;
-                StaticLayout staticLayout3 = new StaticLayout(charSequence5, textPaint, L2, alignment4, 1.0f, 0.0f, false);
-                fe4Var.Q = staticLayout3;
-                if (fe4Var.m0) {
-                    int i25 = fe4Var.b.g ? 26 : z3 ? 1 : 0;
-                    cm cmVar3 = fe4Var.P;
-                    Layout[] layoutArr3 = new Layout[i8];
-                    layoutArr3[z3 ? 1 : 0] = staticLayout3;
-                    fe4Var.P = gm.update(i25, fe4Var, cmVar3, layoutArr3);
+                break;
+            case 5:
+                n8 n8Var3 = he4Var.y;
+                if (n8Var3 != null) {
+                    n8Var3.d(true);
                 }
-                StaticLayout staticLayout4 = new StaticLayout(fe4Var.O, textPaint, gl.L(400.0f), alignment4, 1.0f, 0.0f, false);
-                fe4Var.S = staticLayout4;
-                if (fe4Var.m0) {
-                    int i26 = fe4Var.b.g ? 26 : z3 ? 1 : 0;
-                    cm cmVar4 = fe4Var.R;
-                    Layout[] layoutArr4 = new Layout[i8];
-                    layoutArr4[z3 ? 1 : 0] = staticLayout4;
-                    fe4Var.R = gm.update(i26, fe4Var, cmVar4, layoutArr4);
+                if (he4Var.s != null) {
+                    ky8 ky8Var = new ky8(he4Var.getContext(), ob6.M0(2131748924, null), he4Var.s, ob6.M0(2131746233, null), false);
+                    ky8Var.E0();
+                    ky8Var.show();
+                    break;
                 }
-                fe4Var.U = null;
-                gm.release(fe4Var, fe4Var.T);
-                fe4Var.V = i8;
-                fe4Var.b0 = 0.0f;
-                fe4Var.d0 = fe4Var.c0;
-            }
-            z4 = i8;
-        }
-        if (i22 == fe4Var.i0) {
-            z5 = z4;
-        }
-        fe4Var.a0 = i8;
-        fe4Var.j0 = fe4Var.i0;
-        z5 = i8;
-        if (z5) {
-            fe4Var.y = 0.0f;
-            fe4Var.x = i8;
-            he4 he4Var2 = this.F;
-            he4Var2.G.invalidate();
-            he4Var2.invalidate();
-        }
-        if (i7 == 0 && i14 == 0 && !z5) {
-            v(s49Var);
-            return z3;
-        }
-        boolean z10 = i8;
-        this.r.add(new fb3(s49Var, i5, i6, i3, i4));
-        return z10;
-    }
-
-    @Override // hia
-    public final void x(s49 s49Var) {
-        s49Var.a.setTranslationX(0.0f);
-        View view = s49Var.a;
-        if (view instanceof fe4) {
-            ((fe4) view).a();
+                break;
+            default:
+                n8 n8Var4 = he4Var.y;
+                if (n8Var4 != null) {
+                    n8Var4.d(true);
+                }
+                TL_chatlists.TL_chatlists_deleteExportedInvite tL_chatlists_deleteExportedInvite = new TL_chatlists.TL_chatlists_deleteExportedInvite();
+                TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
+                tL_chatlists_deleteExportedInvite.chatlist = tL_inputChatlistDialogFilter;
+                je4 je4Var2 = he4Var.F.c;
+                tL_inputChatlistDialogFilter.filter_id = je4Var2.c.a;
+                tL_chatlists_deleteExportedInvite.slug = je4Var2.d0();
+                id idVar2 = new id(3, null, he4Var.getContext());
+                idVar2.q(180L);
+                je4Var2.getConnectionsManager().sendRequest(tL_chatlists_deleteExportedInvite, new mw3(he4Var, idVar2, b4));
+                break;
         }
     }
 }

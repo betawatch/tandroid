@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tn0 implements p8c {
+public final /* synthetic */ class tn0 implements pcc {
     public final /* synthetic */ byte a;
     public final /* synthetic */ ao0 b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class tn0 implements p8c {
         this.b = ao0Var;
     }
 
-    @Override // p8c
+    @Override // pcc
     public final void a(Object obj) {
         byte b = this.a;
         byte b2 = 1;
@@ -23,7 +23,7 @@ public final /* synthetic */ class tn0 implements p8c {
         switch (b) {
             case 0:
                 ao0Var.dismiss();
-                gl.d3(new rn0(ao0Var, (byte) 2), 220L);
+                hl.d3(new rn0(ao0Var, (byte) 2), 220L);
                 break;
             case 1:
                 ao0Var.l2.b(false);
@@ -31,12 +31,12 @@ public final /* synthetic */ class tn0 implements p8c {
                 break;
             case 2:
                 ao0Var.i2 = ao0Var.T1.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
-                ao0Var.f1(true, true);
-                ao0Var.e1(true);
+                ao0Var.g1(true, true);
+                ao0Var.f1(true);
                 break;
             case 3:
                 ao0Var.dismiss();
-                gl.d3(new rn0(ao0Var, b2), 220L);
+                hl.d3(new rn0(ao0Var, b2), 220L);
                 break;
             case 4:
                 ao0Var.l2.b(false);
@@ -46,7 +46,7 @@ public final /* synthetic */ class tn0 implements p8c {
                 ArrayList arrayList = ao0Var.a2;
                 arrayList.clear();
                 arrayList.addAll((List) obj);
-                ao0Var.f1(true, true);
+                ao0Var.g1(true, true);
                 break;
             default:
                 ao0Var.l2.b(false);

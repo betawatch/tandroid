@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
@@ -15,7 +15,7 @@ public class SQLitePreparedStatement {
 
     public SQLitePreparedStatement(SQLiteDatabase sQLiteDatabase, String str) {
         this.sqliteStatementHandle = prepare(sQLiteDatabase.getSQLiteHandle(), str);
-        if (w01.a) {
+        if (f11.a) {
             this.query = str;
             this.startTime = SystemClock.elapsedRealtime();
         }
@@ -83,22 +83,22 @@ public class SQLitePreparedStatement {
         if (this.isFinalized) {
             return;
         }
-        if (w01.a) {
+        if (f11.a) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.startTime;
             if (elapsedRealtime > 500) {
                 StringBuilder sb = new StringBuilder("sqlite query ");
                 sb.append(this.query);
                 sb.append(" took ");
                 sb.append(elapsedRealtime);
-                de9.s("ms", sb);
+                uh9.s("ms", sb);
             }
         }
         try {
             this.isFinalized = true;
             finalize(this.sqliteStatementHandle);
         } catch (SQLiteException e) {
-            if (w01.a) {
-                fa4.e(e.getMessage(), e);
+            if (f11.a) {
+                cc4.e(e.getMessage(), e);
             }
         }
     }
@@ -112,7 +112,7 @@ public class SQLitePreparedStatement {
     public SQLiteCursor query(Object[] objArr) {
         SQLitePreparedStatement sQLitePreparedStatement;
         if (objArr == null) {
-            sc8.e();
+            iy8.d();
             return null;
         }
         checkFinalized();
@@ -135,7 +135,7 @@ public class SQLitePreparedStatement {
                         sQLitePreparedStatement.bindString(sQLitePreparedStatement.sqliteStatementHandle, i2, (String) obj);
                     } else {
                         if (!(obj instanceof Long)) {
-                            sc8.e();
+                            iy8.d();
                             return null;
                         }
                         sQLitePreparedStatement.bindLong(sQLitePreparedStatement.sqliteStatementHandle, i2, ((Long) obj).longValue());

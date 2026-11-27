@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzcu extends gw2 {
+final class zzcu extends ax2 {
     long zza;
     double zzb;
     Object zzc;
@@ -13,15 +13,15 @@ final class zzcu extends gw2 {
     /* synthetic */ Object zzf;
     final /* synthetic */ zzcx zzg;
     int zzh;
-    b59 zzi;
+    o89 zzi;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzcu(zzcx zzcxVar, fw2 fw2Var) {
-        super(fw2Var);
+    public zzcu(zzcx zzcxVar, zw2 zw2Var) {
+        super(zw2Var);
         this.zzg = zzcxVar;
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
         this.zzf = obj;
         this.zzh |= TLObject.FLAG_31;

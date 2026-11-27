@@ -1,168 +1,75 @@
 // default package
 
-import java.lang.ref.Reference;
-import java.lang.ref.WeakReference;
+import android.os.CountDownTimer;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.concurrent.Semaphore;
+import java.util.Date;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class e59 implements Iterable {
-    public final boolean a;
-    public final ArrayList b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public boolean e;
-    public final Semaphore f;
-    public e59 h;
-    public d59 n;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class e59 extends CountDownTimer {
+    public final /* synthetic */ j59 a;
 
-    public e59(int i, boolean z) {
-        this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.f = z ? new Semaphore(1) : null;
-        this.a = true;
-        this.b = new ArrayList();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e59(j59 j59Var) {
+        super(Long.MAX_VALUE, 1000L);
+        this.a = j59Var;
     }
 
-    public final boolean add(Object obj) {
-        synchronized (this.b) {
-            boolean z = false;
-            if (indexOf(obj) != -1) {
-                return false;
+    @Override // android.os.CountDownTimer
+    public final void onTick(long j) {
+        j59 j59Var = this.a;
+        d79 d79Var = j59Var.n1;
+        ArrayList arrayList = j59Var.T1;
+        ArrayList arrayList2 = new ArrayList(arrayList.size());
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
+            if (tL_myBoost.cooldown_until_date > 0) {
+                arrayList2.add(tL_myBoost);
             }
-            if (!this.e) {
-                this.b.add(new WeakReference(obj));
-                return true;
-            }
-            ArrayList arrayList = this.d;
-            boolean z2 = false;
-            for (int size = arrayList.size() - 1; size >= 0; size--) {
-                Reference reference = (Reference) arrayList.get(size);
-                Object obj2 = reference != null ? reference.get() : null;
-                if (obj2 == null) {
-                    arrayList.remove(size);
-                } else if (obj2 == obj) {
-                    z2 = true;
-                }
-            }
-            if (!z2) {
-                arrayList.add(new WeakReference(obj));
-                z = true;
-            }
-            lse.a(this.c, obj);
-            return z;
-        }
-    }
-
-    public final void clear() {
-        synchronized (this.b) {
-            boolean z = this.e;
-            ArrayList arrayList = this.b;
-            if (z) {
-                int size = arrayList.size();
-                int i = 0;
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
-                    Reference reference = (Reference) obj;
-                    if (!this.c.contains(reference)) {
-                        this.c.add(reference);
-                    }
-                    lse.a(this.d, reference.get());
-                }
-            } else {
-                arrayList.clear();
+            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
+                tL_myBoost.cooldown_until_date = 0;
             }
         }
-    }
-
-    public final int indexOf(Object obj) {
-        if (obj == null) {
-            return -1;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-        ArrayList arrayList = this.b;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (((Reference) arrayList.get(size)).get() == obj) {
-                return size;
-            }
-        }
-        return -1;
-    }
-
-    public final boolean isEmpty() {
-        synchronized (this.b) {
-            boolean z = this.e;
-            ArrayList arrayList = this.b;
-            if (z) {
-                return arrayList.isEmpty() && this.d.isEmpty();
-            }
-            if (arrayList != null) {
-                for (int size = arrayList.size() - 2; size >= 0; size--) {
-                    if (((Reference) arrayList.get(size)).get() == null) {
-                        arrayList.remove(size);
+        for (int i2 = 0; i2 < d79Var.getChildCount(); i2++) {
+            View childAt = d79Var.getChildAt(i2);
+            if (childAt instanceof e3a) {
+                e3a e3aVar = (e3a) childAt;
+                if (arrayList2.contains(e3aVar.getBoost())) {
+                    ema emaVar = e3aVar.e;
+                    ff0 ff0Var = e3aVar.d;
+                    int i3 = e3aVar.K.cooldown_until_date;
+                    if (i3 > 0) {
+                        e3aVar.setSubtitle(ob6.a0(null, null, 2131753587, e3a.f((i3 * 1000) - System.currentTimeMillis())));
+                        ff0Var.setAlpha(0.65f);
+                        emaVar.setAlpha(0.65f);
+                        e3aVar.i(false, 0.3f);
+                    } else {
+                        e3aVar.setSubtitle(ob6.a0(null, null, 2131753654, ob6.D0().n0().format(new Date(e3aVar.K.expires * 1000))));
+                        if (ff0Var.getAlpha() < 1.0f) {
+                            ff0Var.animate().alpha(1.0f).start();
+                            emaVar.animate().alpha(1.0f).start();
+                            e3aVar.i(true, 1.0f);
+                        } else {
+                            ff0Var.setAlpha(1.0f);
+                            emaVar.setAlpha(1.0f);
+                            e3aVar.i(false, 1.0f);
+                        }
                     }
                 }
             }
-            return this.b.isEmpty();
         }
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        d59 d59Var;
-        Semaphore semaphore = this.f;
-        if (semaphore != null) {
-            semaphore.acquireUninterruptibly();
-        }
-        synchronized (this.b) {
-            if (!this.a) {
-                if (this.b.isEmpty()) {
-                    return Collections.emptyIterator();
-                }
-                return new d59(this);
-            }
-            if (this.e) {
-                throw new IllegalStateException();
-            }
-            this.e = true;
-            d59 d59Var2 = this.n;
-            if (d59Var2 == null) {
-                d59Var = new d59(this);
-                this.n = d59Var;
-            } else {
-                d59Var2.a = this.b.size();
-                d59Var = this.n;
-                d59Var.b = null;
-            }
-            return d59Var;
-        }
-    }
-
-    public final boolean remove(Object obj) {
-        synchronized (this.b) {
-            int indexOf = indexOf(obj);
-            if (indexOf == -1) {
-                return false;
-            }
-            boolean z = this.e;
-            ArrayList arrayList = this.b;
-            if (z) {
-                Reference reference = (Reference) arrayList.get(indexOf);
-                if (!this.c.contains(reference)) {
-                    this.c.add(reference);
-                }
-                lse.a(this.d, reference.get());
-            } else {
-                arrayList.remove(indexOf);
-            }
-            return true;
-        }
-    }
-
-    public e59() {
-        this(0, false);
+    @Override // android.os.CountDownTimer
+    public final void onFinish() {
     }
 }

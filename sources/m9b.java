@@ -1,52 +1,53 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class m9b extends zb3 {
+    public final /* synthetic */ r9b F;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class m9b extends l9b {
-    public static Integer b(String str) {
-        boolean z;
-        int i;
-        int i2;
-        str.getClass();
-        int length = str.length();
-        if (length == 0) {
-            return null;
-        }
-        int i3 = 0;
-        char charAt = str.charAt(0);
-        int i4 = -2147483647;
-        if (rp5.b(charAt, 48) < 0) {
-            i = 1;
-            if (length == 1) {
-                return null;
-            }
-            if (charAt == '+') {
-                z = false;
-            } else {
-                if (charAt != '-') {
-                    return null;
-                }
-                i4 = TLObject.FLAG_31;
-                z = true;
-            }
-        } else {
-            z = false;
-            i = 0;
-        }
-        int i5 = -59652323;
-        while (i < length) {
-            int digit = Character.digit((int) str.charAt(i), 10);
-            if (digit < 0) {
-                return null;
-            }
-            if ((i3 < i5 && (i5 != -59652323 || i3 < (i5 = i4 / 10))) || (i2 = i3 * 10) < i4 + digit) {
-                return null;
-            }
-            i3 = i2 - digit;
-            i++;
-        }
-        return z ? Integer.valueOf(i3) : Integer.valueOf(-i3);
+    public m9b(r9b r9bVar) {
+        this.F = r9bVar;
+    }
+
+    @Override // zb3
+    public final void M() {
+        r9b r9bVar = this.F;
+        w9b w9bVar = r9bVar.a0;
+        int i = w9b.X1;
+        w9bVar.b.invalidate();
+        r9bVar.e.invalidate();
+    }
+
+    @Override // zb3
+    public final void O() {
+        r9b r9bVar = this.F;
+        w9b w9bVar = r9bVar.a0;
+        int i = w9b.X1;
+        w9bVar.b.invalidate();
+        r9bVar.e.invalidate();
+    }
+
+    @Override // zb3
+    public final void P(f89 f89Var) {
+        r9b r9bVar = this.F;
+        w9b w9bVar = r9bVar.a0;
+        int i = w9b.X1;
+        w9bVar.b.invalidate();
+        r9bVar.e.invalidate();
+        r9bVar.f.invalidate();
+    }
+
+    @Override // zb3
+    public final void Q() {
+        r9b r9bVar = this.F;
+        w9b w9bVar = r9bVar.a0;
+        int i = w9b.X1;
+        w9bVar.b.invalidate();
+        r9bVar.e.invalidate();
+    }
+
+    @Override // cma
+    public final boolean t(f89 f89Var) {
+        return true;
     }
 }

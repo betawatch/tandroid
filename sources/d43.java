@@ -1,139 +1,75 @@
 // default package
 
-import android.database.Cursor;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class d43 extends BaseAdapter implements Filterable {
-    public boolean a;
-    public boolean b;
-    public Cursor c;
-    public int d;
-    public b43 e;
-    public c43 f;
-    public e43 h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class d43 implements Drawable.Callback {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e43 b;
 
-    public abstract void a(View view, Cursor cursor);
+    public /* synthetic */ d43(e43 e43Var, byte b) {
+        this.a = b;
+        this.b = e43Var;
+    }
 
-    public void b(Cursor cursor) {
-        Cursor cursor2 = this.c;
-        if (cursor == cursor2) {
-            cursor2 = null;
-        } else {
-            if (cursor2 != null) {
-                b43 b43Var = this.e;
-                if (b43Var != null) {
-                    cursor2.unregisterContentObserver(b43Var);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        byte b = this.a;
+        e43 e43Var = this.b;
+        switch (b) {
+            case 0:
+                if (e43Var.c < 1.0f) {
+                    e43Var.invalidateSelf();
+                    break;
                 }
-                c43 c43Var = this.f;
-                if (c43Var != null) {
-                    cursor2.unregisterDataSetObserver(c43Var);
+                break;
+            default:
+                if (e43Var.c > 0.0f) {
+                    e43Var.invalidateSelf();
+                    break;
                 }
-            }
-            this.c = cursor;
-            if (cursor != null) {
-                b43 b43Var2 = this.e;
-                if (b43Var2 != null) {
-                    cursor.registerContentObserver(b43Var2);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+        byte b = this.a;
+        e43 e43Var = this.b;
+        switch (b) {
+            case 0:
+                if (e43Var.c < 1.0f) {
+                    e43Var.scheduleSelf(runnable, j);
+                    break;
                 }
-                c43 c43Var2 = this.f;
-                if (c43Var2 != null) {
-                    cursor.registerDataSetObserver(c43Var2);
+                break;
+            default:
+                if (e43Var.c > 0.0f) {
+                    e43Var.scheduleSelf(runnable, j);
+                    break;
                 }
-                this.d = cursor.getColumnIndexOrThrow("_id");
-                this.a = true;
-                notifyDataSetChanged();
-            } else {
-                this.d = -1;
-                this.a = false;
-                notifyDataSetInvalidated();
-            }
-        }
-        if (cursor2 != null) {
-            cursor2.close();
+                break;
         }
     }
 
-    public abstract String c(Cursor cursor);
-
-    @Override // android.widget.Adapter
-    public final int getCount() {
-        Cursor cursor;
-        if (!this.a || (cursor = this.c) == null) {
-            return 0;
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        byte b = this.a;
+        e43 e43Var = this.b;
+        switch (b) {
+            case 0:
+                if (e43Var.c < 1.0f) {
+                    e43Var.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+            default:
+                if (e43Var.c > 0.0f) {
+                    e43Var.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
         }
-        return cursor.getCount();
-    }
-
-    @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
-    public View getDropDownView(int i, View view, ViewGroup viewGroup) {
-        if (!this.a) {
-            return null;
-        }
-        this.c.moveToPosition(i);
-        if (view == null) {
-            kbb kbbVar = (kbb) this;
-            view = kbbVar.s.inflate(kbbVar.r, viewGroup, false);
-        }
-        a(view, this.c);
-        return view;
-    }
-
-    @Override // android.widget.Filterable
-    public final Filter getFilter() {
-        e43 e43Var = this.h;
-        if (e43Var != null) {
-            return e43Var;
-        }
-        e43 e43Var2 = new e43();
-        e43Var2.a = this;
-        this.h = e43Var2;
-        return e43Var2;
-    }
-
-    @Override // android.widget.Adapter
-    public final Object getItem(int i) {
-        Cursor cursor;
-        if (!this.a || (cursor = this.c) == null) {
-            return null;
-        }
-        cursor.moveToPosition(i);
-        return this.c;
-    }
-
-    @Override // android.widget.Adapter
-    public final long getItemId(int i) {
-        Cursor cursor;
-        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i)) {
-            return this.c.getLong(this.d);
-        }
-        return 0L;
-    }
-
-    @Override // android.widget.Adapter
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        if (!this.a) {
-            sc8.j("this should only be called when the cursor is valid");
-            return null;
-        }
-        if (!this.c.moveToPosition(i)) {
-            sc8.j(de9.k(i, "couldn't move cursor to position "));
-            return null;
-        }
-        if (view == null) {
-            kbb kbbVar = (kbb) this;
-            view = kbbVar.s.inflate(kbbVar.n, viewGroup, false);
-            view.setTag(new jbb(view));
-            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(kbbVar.F);
-        }
-        a(view, this.c);
-        return view;
     }
 }

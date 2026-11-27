@@ -1,78 +1,101 @@
 // default package
 
 import android.os.Bundle;
-import java.util.LinkedHashMap;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class mcd {
-    public static final ie7 a = new ie7((byte) 25);
-    public static final c6e b = new c6e();
-    public static final pd5 c = new pd5(25);
-
-    public static final wp9 a(l13 l13Var) {
-        l13Var.getClass();
-        dq9 dq9Var = (dq9) l13Var.b(a);
-        if (dq9Var == null) {
-            w26.j("CreationExtras must have a value by `SAVED_STATE_REGISTRY_OWNER_KEY`");
-            return null;
-        }
-        tdc tdcVar = (tdc) l13Var.b(b);
-        if (tdcVar == null) {
-            w26.j("CreationExtras must have a value by `VIEW_MODEL_STORE_OWNER_KEY`");
-            return null;
-        }
-        Bundle bundle = (Bundle) l13Var.b(c);
-        String str = (String) l13Var.b(ize.e);
-        if (str == null) {
-            w26.j("CreationExtras must have a value by `VIEW_MODEL_KEY`");
-            return null;
-        }
-        cq9 d = dq9Var.g().d();
-        yp9 yp9Var = d instanceof yp9 ? (yp9) d : null;
-        if (yp9Var == null) {
-            sc8.j("enableSavedStateHandles() wasn't called prior to createSavedStateHandle() call");
-            return null;
-        }
-        LinkedHashMap linkedHashMap = c(tdcVar).b;
-        wp9 wp9Var = (wp9) linkedHashMap.get(str);
-        if (wp9Var != null) {
-            return wp9Var;
-        }
-        Class[] clsArr = wp9.f;
-        yp9Var.a();
-        Bundle bundle2 = yp9Var.c;
-        Bundle bundle3 = bundle2 != null ? bundle2.getBundle(str) : null;
-        Bundle bundle4 = yp9Var.c;
-        if (bundle4 != null) {
-            bundle4.remove(str);
-        }
-        Bundle bundle5 = yp9Var.c;
-        if (bundle5 != null && bundle5.isEmpty()) {
-            yp9Var.c = null;
-        }
-        wp9 a2 = nte.a(bundle3, bundle);
-        linkedHashMap.put(str, a2);
-        return a2;
+public final class mcd extends v3d implements xcd {
+    public final Bundle Z(String str, String str2, Bundle bundle) {
+        Parcel X = X();
+        X.writeInt(9);
+        X.writeString(str);
+        X.writeString(str2);
+        int i = udd.a;
+        X.writeInt(1);
+        bundle.writeToParcel(X, 0);
+        Parcel Y = Y(X, 12);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle2 = (Bundle) udd.a(Y);
+        Y.recycle();
+        return bundle2;
     }
 
-    public static final void b(dq9 dq9Var) {
-        v06 v06Var = dq9Var.m().b;
-        if (v06Var != v06.b && v06Var != v06.c) {
-            w26.j("Failed requirement.");
-        } else if (dq9Var.g().d() == null) {
-            yp9 yp9Var = new yp9(dq9Var.g(), (tdc) dq9Var);
-            dq9Var.g().f("androidx.lifecycle.internal.SavedStateHandlesProvider", yp9Var);
-            dq9Var.m().a(new k29(yp9Var, (byte) 2));
-        }
+    public final Bundle a0(String str, String str2, String str3) {
+        Parcel X = X();
+        X.writeInt(3);
+        X.writeString(str);
+        X.writeString(str2);
+        X.writeString(str3);
+        X.writeString(null);
+        Parcel Y = Y(X, 3);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle = (Bundle) udd.a(Y);
+        Y.recycle();
+        return bundle;
     }
 
-    public static final zp9 c(tdc tdcVar) {
-        ize izeVar = new ize((byte) 25);
-        sdc f = tdcVar.f();
-        l13 d = tdcVar instanceof oc5 ? ((oc5) tdcVar).d() : j13.b;
-        f.getClass();
-        d.getClass();
-        return (zp9) new vk9(f, izeVar, d).s(f59.a(zp9.class), "androidx.lifecycle.internal.SavedStateHandlesVM");
+    public final Bundle b0(int i, String str, String str2, String str3, Bundle bundle) {
+        Parcel X = X();
+        X.writeInt(i);
+        X.writeString(str);
+        X.writeString(str2);
+        X.writeString(str3);
+        X.writeString(null);
+        int i2 = udd.a;
+        X.writeInt(1);
+        bundle.writeToParcel(X, 0);
+        Parcel Y = Y(X, 8);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle2 = (Bundle) udd.a(Y);
+        Y.recycle();
+        return bundle2;
+    }
+
+    public final Bundle c0(String str, String str2, String str3) {
+        Parcel X = X();
+        X.writeInt(3);
+        X.writeString(str);
+        X.writeString(str2);
+        X.writeString(str3);
+        Parcel Y = Y(X, 4);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle = (Bundle) udd.a(Y);
+        Y.recycle();
+        return bundle;
+    }
+
+    public final Bundle d0(int i, String str, String str2, String str3, Bundle bundle) {
+        Parcel X = X();
+        X.writeInt(i);
+        X.writeString(str);
+        X.writeString(str2);
+        X.writeString(str3);
+        int i2 = udd.a;
+        X.writeInt(1);
+        bundle.writeToParcel(X, 0);
+        Parcel Y = Y(X, 11);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle2 = (Bundle) udd.a(Y);
+        Y.recycle();
+        return bundle2;
+    }
+
+    public final Bundle e0(int i, String str, String str2, Bundle bundle, Bundle bundle2) {
+        Parcel X = X();
+        X.writeInt(i);
+        X.writeString(str);
+        X.writeString(str2);
+        int i2 = udd.a;
+        X.writeInt(1);
+        bundle.writeToParcel(X, 0);
+        X.writeInt(1);
+        bundle2.writeToParcel(X, 0);
+        Parcel Y = Y(X, 901);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle3 = (Bundle) udd.a(Y);
+        Y.recycle();
+        return bundle3;
     }
 }

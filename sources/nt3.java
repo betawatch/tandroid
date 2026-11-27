@@ -1,50 +1,62 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.ui.ActionBar.d;
+import android.view.KeyEvent;
+import android.view.View;
+import androidx.appcompat.widget.SearchView;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nt3 extends t14 {
-    public int V2;
-    public boolean W2;
-    public boolean X2;
-    public final /* synthetic */ rt3 Y2;
+public final class nt3 implements View.OnFocusChangeListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt3(rt3 rt3Var, d dVar, boolean z, Context context, boolean z2, boolean z3, wjb wjbVar, boolean z4) {
-        super(dVar, z, false, false, context, z2, null, null, z3, wjbVar, false, z4);
-        this.Y2 = rt3Var;
+    public /* synthetic */ nt3(KeyEvent.Callback callback, byte b) {
+        this.a = b;
+        this.b = callback;
     }
 
-    @Override // t14, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        rt3 rt3Var = this.Y2;
-        int i = rt3Var.M;
-        if (i == 2 || i == 3) {
-            rt3Var.g(canvas, this);
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // t14, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int i5;
-        super.onLayout(z, i, i2, i3, i4);
-        rt3 rt3Var = this.Y2;
-        if (rt3Var.b()) {
-            int i6 = i4 - i2;
-            if (!this.W2 && rt3Var.y) {
-                this.X2 = true;
-            }
-            if (this.X2 && (i5 = this.V2) > 0 && i6 > 0 && i6 != i5) {
-                setTranslationY(i6 - i5);
-                ug8.t(animate().translationY(0.0f), gb.w, 250L);
-                this.X2 = false;
-            }
-            this.W2 = rt3Var.y;
-            this.V2 = i6;
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z) {
+        byte b = this.a;
+        KeyEvent.Callback callback = this.b;
+        switch (b) {
+            case 0:
+                ot3 ot3Var = (ot3) callback;
+                ot3Var.n = z;
+                if (ot3Var.h) {
+                    ot3Var.c();
+                    break;
+                }
+                break;
+            case 1:
+                zt3 zt3Var = (zt3) callback;
+                zt3Var.s = z;
+                if (zt3Var.n) {
+                    zt3Var.c();
+                }
+                zt3Var.a(z);
+                break;
+            case 2:
+                SearchView searchView = (SearchView) callback;
+                View.OnFocusChangeListener onFocusChangeListener = searchView.e0;
+                if (onFocusChangeListener != null) {
+                    onFocusChangeListener.onFocusChange(searchView, z);
+                    break;
+                }
+                break;
+            default:
+                if (z) {
+                    r1a r1aVar = (r1a) callback;
+                    r1aVar.d2 = true;
+                    x46 x46Var = (x46) r1aVar.n1.getLayoutManager();
+                    z46 z46Var = new z46(r1aVar.getContext(), 2);
+                    z46Var.a = 1;
+                    z46Var.p = (a.getCurrentActionBarHeight() + hl.m) - hl.L(1.0f);
+                    x46Var.v0(z46Var);
+                    break;
+                }
+                break;
         }
     }
 }

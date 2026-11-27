@@ -1,28 +1,6 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w5e extends b4 implements ua9 {
-    public static final Parcelable.Creator<w5e> CREATOR = new qyd(20);
-    public final Status a;
-
-    public w5e(Status status) {
-        this.a = status;
-    }
-
-    @Override // ua9
-    public final Status a() {
-        return this.a;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.k(parcel, 1, this.a, i);
-        jte.s(parcel, r);
-    }
+public final class w5e extends ase {
 }

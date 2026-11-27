@@ -1,14 +1,70 @@
 // default package
 
-import java.util.Locale;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class l96 {
-    public static final /* synthetic */ int a = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class l96 extends FrameLayout {
+    public final i96 a;
+    public final de0 b;
+    public final rb0 c;
+    public final ImageView d;
+    public final j96 e;
+    public n96 f;
 
-    static {
-        new Locale("en", "XA");
-        new Locale("ar", "XB");
+    public l96(Context context) {
+        super(context);
+        iye.a(this);
+        i96 i96Var = new i96(this, context);
+        this.a = i96Var;
+        i96Var.setOrientation(0);
+        addView(i96Var, tre.d(-2, -2.0f, jn7.D1, 0.0f, 0.0f, 6.0f, 0.0f));
+        this.c = new rb0((vnb) null);
+        de0 de0Var = new de0(context);
+        this.b = de0Var;
+        de0Var.setRoundRadius(hl.L(11.0f));
+        i96Var.addView(de0Var, tre.q(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setVisibility(8);
+        i96Var.addView(imageView, tre.t(18, 18, 19, 0, 0, 3, 0));
+        j96 j96Var = new j96(context);
+        this.e = j96Var;
+        j96Var.setLines(1);
+        j96Var.setSingleLine();
+        j96Var.setTextColor(-1);
+        j96Var.setTextSize(1, 14.0f);
+        j96Var.setTypeface(hl.o());
+        i96Var.addView(j96Var, tre.t(-2, -2, 16, 0, 0, 7, 0));
+    }
+
+    public void set(n96 n96Var) {
+        this.f = n96Var;
+        long j = n96Var.b;
+        int i = yac.t0;
+        de0 de0Var = this.b;
+        rb0 rb0Var = this.c;
+        if (j >= 0) {
+            TLRPC.User X1 = uc7.s1(i).X1(Long.valueOf(n96Var.b));
+            rb0Var.q(X1);
+            de0Var.f(X1, rb0Var);
+        } else {
+            TLRPC.Chat M0 = uc7.s1(i).M0(Long.valueOf(-n96Var.b));
+            rb0Var.p(M0);
+            de0Var.f(M0, rb0Var);
+        }
+        int i2 = n96Var.e;
+        ImageView imageView = this.d;
+        if (i2 > 0) {
+            imageView.setImageDrawable(new ee1(getContext(), n96Var.e));
+            imageView.setVisibility(0);
+        } else {
+            imageView.setVisibility(8);
+        }
+        this.e.setText(wf3.k(yac.t0, n96Var.b));
+        this.a.invalidate();
     }
 }

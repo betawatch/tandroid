@@ -1,46 +1,45 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum xpb implements Parcelable {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7("present"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF17("supported"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF27("not-supported");
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class xpb extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ pqb e;
 
-    public static final Parcelable.Creator<xpb> CREATOR = new j9d((byte) 8);
-    public final String a;
-
-    xpb(String str) {
-        this.a = str;
+    /* JADX WARN: Multi-variable type inference failed */
+    public xpb(pqb pqbVar, boolean z, int i, int i2, boolean z2) {
+        this.e = pqbVar;
+        this.a = z;
+        this.b = i;
+        this.c = i2;
+        this.d = z2;
     }
 
-    public static xpb a(String str) {
-        for (xpb xpbVar : values()) {
-            if (str.equals(xpbVar.a)) {
-                return xpbVar;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        pqb pqbVar = this.e;
+        pqbVar.t1 = null;
+        FrameLayout[] frameLayoutArr = pqbVar.N0;
+        int i = this.c;
+        boolean z = this.b;
+        if (!this.a) {
+            frameLayoutArr[i].setVisibility(4);
+        } else if (frameLayoutArr[z ? 1 : 0].getVisibility() == 0) {
+            frameLayoutArr[z ? 1 : 0].setAlpha(1.0f);
+            frameLayoutArr[z ? 1 : 0].setVisibility(4);
         }
-        throw new ypb(tb4.y("TokenBindingStatus ", str, " not supported"));
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return this.a;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.a);
+        byte b = pqbVar.b;
+        if (b == 1 || b == 2) {
+            pqbVar.L0[this.d ? (char) 0 : (char) 2].setVisibility(4);
+        } else if (i == 1) {
+            frameLayoutArr[z ? 1 : 0].setAlpha(0.0f);
+        }
     }
 }

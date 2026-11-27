@@ -1,45 +1,142 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ejd {
-    public static final Charset a = Charset.forName("UTF-8");
-    public static final byte[] b;
+public abstract class ejd extends AbstractCollection implements Serializable, Collection {
+    public static final Object[] a = new Object[0];
 
-    static {
-        Charset.forName("ISO-8859-1");
-        byte[] bArr = new byte[0];
-        b = bArr;
-        ByteBuffer.wrap(bArr);
-        int length = bArr.length;
-        try {
-            if (length < 0) {
-                throw new vkd("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
-            }
-            if ((0 - 0) + length > Integer.MAX_VALUE) {
-                throw vkd.a();
-            }
-        } catch (vkd e) {
-            throw new IllegalArgumentException(e);
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public static vid a(Object obj, Object obj2) {
-        vid vidVar = (vid) ((g9d) obj);
-        tid tidVar = (tid) vidVar.a(5);
-        tidVar.a(vidVar);
-        g9d g9dVar = (g9d) obj2;
-        if (tidVar.a.getClass().isInstance(g9dVar)) {
-            tidVar.a((vid) g9dVar);
-            return tidVar.c();
-        }
-        w26.j("mergeFrom(MessageLite) can only merge messages of the same type.");
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    public abstract int h(Object[] objArr);
+
+    public int i() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int j() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract vjd k();
+
+    public abstract boolean l();
+
+    public Object[] m() {
         return null;
     }
 
-    public static int b(long j) {
-        return (int) (j ^ (j >>> 32));
+    @Override // java.util.Collection
+    public final /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection
+    public final /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] m = m();
+            if (m != null) {
+                return Arrays.copyOfRange(m, j(), i(), objArr.getClass());
+            }
+            if (length != 0) {
+                objArr = Arrays.copyOf(objArr, 0);
+            }
+            objArr = Arrays.copyOf(objArr, size);
+        } else if (length > size) {
+            objArr[size] = null;
+        }
+        h(objArr);
+        return objArr;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
     }
 }

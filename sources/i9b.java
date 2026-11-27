@@ -1,6 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class i9b extends h9b {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i9b implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r9b b;
+
+    public /* synthetic */ i9b(r9b r9bVar, byte b) {
+        this.a = b;
+        this.b = r9bVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        r9b r9bVar = this.b;
+        switch (b) {
+            case 0:
+                r9bVar.V = false;
+                break;
+            case 1:
+                w9b w9bVar = r9bVar.a0;
+                v21.h(w9bVar.c);
+                super/*nx0*/.dismiss();
+                break;
+            case 2:
+                r9bVar.w.setLoading(false);
+                w9b w9bVar2 = r9bVar.a0;
+                w9bVar2.G0();
+                w9bVar2.l1.F(0);
+                break;
+            case 3:
+                w9b w9bVar3 = r9bVar.a0;
+                w9bVar3.G1 = 6;
+                w9bVar3.l1.F(1);
+                break;
+            case 4:
+                r9bVar.n.g(2);
+                r9bVar.f.forceLayout();
+                r9bVar.k();
+                break;
+            default:
+                int i = r9bVar.a;
+                w9b w9bVar4 = r9bVar.a0;
+                if (i != 0) {
+                    w9bVar4.onBackPressed();
+                    break;
+                } else {
+                    w9bVar4.dismiss();
+                    break;
+                }
+        }
+    }
 }

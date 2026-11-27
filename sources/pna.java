@@ -1,71 +1,71 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class pna implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vqa b;
-    public final /* synthetic */ long c;
+import java.util.Map;
 
-    public /* synthetic */ pna(vqa vqaVar, long j, byte b) {
-        this.a = b;
-        this.b = vqaVar;
-        this.c = j;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class pna implements Map.Entry, Comparable {
+    public final Comparable a;
+    public Object b;
+    public final /* synthetic */ ona c;
+
+    public pna(ona onaVar, Comparable comparable, Object obj) {
+        this.c = onaVar;
+        this.a = comparable;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.c;
-        vqa vqaVar = this.b;
-        switch (b) {
-            case 0:
-                vqaVar.Y1(j);
-                break;
-            case 1:
-                vqaVar.Y1(j);
-                break;
-            case 2:
-                nna nnaVar = vqaVar.s3;
-                vqaVar.z2(1, true, null);
-                if (j > 0) {
-                    gl.r(nnaVar);
-                    gl.c3(nnaVar);
-                    break;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return this.a.compareTo(((pna) obj).a);
+    }
+
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (obj != this) {
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = entry.getKey();
+                Comparable comparable = this.a;
+                if (comparable == null ? key == null : comparable.equals(key)) {
+                    Object obj2 = this.b;
+                    Object value = entry.getValue();
+                    if (obj2 == null ? value == null : obj2.equals(value)) {
+                    }
                 }
-                break;
-            case 3:
-                vqaVar.Y1(j);
-                break;
-            case 4:
-                vqaVar.Y1(j);
-                break;
-            case 5:
-                vqaVar.U1(j);
-                break;
-            case 6:
-                zua zuaVar = new zua(vqaVar.getContext(), vqaVar.J0, this.c, 10, null, new t7a(vqaVar, new boolean[]{false}, (byte) 19), 0L);
-                zuaVar.setOnDismissListener(new qoa(vqaVar, (byte) 0));
-                zuaVar.show();
-                break;
-            case 7:
-                vqaVar.Y1(j);
-                break;
-            case 8:
-                vqaVar.U1(j);
-                break;
-            case 9:
-                vqaVar.Y1(j);
-                break;
-            case 10:
-                vqaVar.U1(j);
-                break;
-            case 11:
-                vqaVar.Y1(j);
-                break;
-            default:
-                vqaVar.U1(j);
-                break;
+            }
+            return false;
         }
+        return true;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.a;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        Comparable comparable = this.a;
+        int hashCode = comparable == null ? 0 : comparable.hashCode();
+        Object obj = this.b;
+        return hashCode ^ (obj != null ? obj.hashCode() : 0);
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        this.c.c();
+        Object obj2 = this.b;
+        this.b = obj;
+        return obj2;
+    }
+
+    public final String toString() {
+        return this.a + "=" + this.b;
     }
 }

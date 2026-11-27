@@ -1,28 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class u56 {
-    public final Object a;
-    public final String b;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public u56(Object obj, String str) {
-        this.a = obj;
-        this.b = str;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface u56 {
+    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof u56)) {
-            return false;
-        }
-        u56 u56Var = (u56) obj;
-        return this.a == u56Var.a && this.b.equals(u56Var.b);
-    }
+    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
 
-    public final int hashCode() {
-        return this.b.hashCode() + (System.identityHashCode(this.a) * 31);
-    }
+    void c(TLObject tLObject);
 }

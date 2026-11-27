@@ -1,33 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xb3 extends s44 {
-    public static final xb3 d;
-    public zw2 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class xb3 {
+    public f89 a;
+    public f89 b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    static {
-        int i = dgb.c;
-        int i2 = dgb.d;
-        long j = dgb.e;
-        String str = dgb.a;
-        xb3 xb3Var = new xb3();
-        xb3Var.c = new zw2(i, j, str, i2);
-        d = xb3Var;
+    public xb3(f89 f89Var, f89 f89Var2, int i, int i2, int i3, int i4) {
+        this.a = f89Var;
+        this.b = f89Var2;
+        this.c = i;
+        this.d = i2;
+        this.e = i3;
+        this.f = i4;
     }
 
-    @Override // vw2
-    public final void c(sw2 sw2Var, Runnable runnable) {
-        this.c.b(runnable, false);
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        throw new UnsupportedOperationException("Dispatchers.Default cannot be closed");
-    }
-
-    @Override // vw2
     public final String toString() {
-        return "Dispatchers.Default";
+        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
     }
 }

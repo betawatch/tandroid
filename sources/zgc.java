@@ -1,13 +1,40 @@
 // default package
 
-import android.media.MediaPlayer;
-import org.telegram.messenger.voip.VoIPPreNotificationService;
+import android.os.Build;
+import android.view.View;
+import android.view.WindowInsets;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zgc implements MediaPlayer.OnPreparedListener {
-    @Override // android.media.MediaPlayer.OnPreparedListener
-    public final void onPrepared(MediaPlayer mediaPlayer) {
-        VoIPPreNotificationService.lambda$startRinging$0(mediaPlayer);
+public final class zgc implements View.OnApplyWindowInsetsListener {
+    public l2d a = null;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ nr7 c;
+
+    public zgc(View view, nr7 nr7Var) {
+        this.b = view;
+        this.c = nr7Var;
+    }
+
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        l2d h = l2d.h(view, windowInsets);
+        int i = Build.VERSION.SDK_INT;
+        nr7 nr7Var = this.c;
+        if (i < 30) {
+            ahc.a(windowInsets, this.b);
+            if (h.equals(this.a)) {
+                return nr7Var.S(view, h).g();
+            }
+        }
+        this.a = h;
+        l2d S = nr7Var.S(view, h);
+        if (i >= 30) {
+            return S.g();
+        }
+        WeakHashMap weakHashMap = ihc.a;
+        ygc.c(view);
+        return S.g();
     }
 }

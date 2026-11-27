@@ -1,42 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class g43 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ m43 b;
+import android.media.MediaCodec;
+import android.os.Build;
 
-    public /* synthetic */ g43(m43 m43Var, byte b) {
-        this.a = b;
-        this.b = m43Var;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class g43 {
+    public byte[] a;
+    public byte[] b;
+    public byte c;
+    public int[] d;
+    public int[] e;
+    public int f;
+    public int g;
+    public int h;
+    public final MediaCodec.CryptoInfo i;
+    public final f43 j;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        m43 m43Var = this.b;
-        switch (b) {
-            case 0:
-                m43Var.a.invalidate();
-                break;
-            default:
-                st stVar = m43Var.c;
-                if (stVar.getParent() != null) {
-                    if (m43Var.d) {
-                        gl.B2(stVar);
-                    } else {
-                        try {
-                            m43Var.b.removeView(stVar);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    sr8 sr8Var = m43Var.p;
-                    if (sr8Var != null) {
-                        sr8Var.run();
-                        break;
-                    }
-                }
-                break;
-        }
+    public g43() {
+        MediaCodec.CryptoInfo cryptoInfo = new MediaCodec.CryptoInfo();
+        this.i = cryptoInfo;
+        this.j = Build.VERSION.SDK_INT >= 24 ? new f43(cryptoInfo) : null;
     }
 }

@@ -1,42 +1,28 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class aje {
-    public static u84 a(Context context, GoogleSignInOptions googleSignInOptions) {
-        fre.h(googleSignInOptions);
-        return new u84(context, o40.a, googleSignInOptions, new ay4(new eef((byte) 13), Looper.getMainLooper()));
+    public static final Class a;
+    public static final boolean b;
+
+    static {
+        Class<?> cls;
+        Class<?> cls2 = null;
+        try {
+            cls = Class.forName("libcore.io.Memory");
+        } catch (Throwable unused) {
+            cls = null;
+        }
+        a = cls;
+        try {
+            cls2 = Class.forName("org.robolectric.Robolectric");
+        } catch (Throwable unused2) {
+        }
+        b = cls2 != null;
     }
 
-    public static Task b(Intent intent) {
-        bz4 bz4Var;
-        GoogleSignInAccount googleSignInAccount;
-        lh0 lh0Var = h4d.a;
-        Status status = Status.h;
-        if (intent == null) {
-            bz4Var = new bz4(null, status);
-        } else {
-            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
-            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
-            if (googleSignInAccount2 == null) {
-                if (status2 != null) {
-                    status = status2;
-                }
-                bz4Var = new bz4(null, status);
-            } else {
-                bz4Var = new bz4(googleSignInAccount2, Status.e);
-            }
-        }
-        Status status3 = bz4Var.a;
-        return (!status3.b() || (googleSignInAccount = bz4Var.b) == null) ? Tasks.forException(bmd.a(status3)) : Tasks.forResult(googleSignInAccount);
+    public static boolean a() {
+        return (a == null || b) ? false : true;
     }
 }

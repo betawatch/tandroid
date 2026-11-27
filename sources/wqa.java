@@ -1,19 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wqa {
-    public final float a;
-    public final tgb b;
-    public final tgb c;
+import android.content.Context;
 
-    public wqa(float f, String str, CharSequence charSequence) {
-        this.b = new tgb(str, 12.0f, null);
-        this.c = new tgb(charSequence, 12.0f, gl.o());
-        this.a = (a() / 2.0f) + f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class wqa extends ny0 {
+    public nk3 S1;
+
+    public wqa(Context context) {
+        super(context, null, true, false, null);
+        J();
+        this.y1 = true;
+        this.x1 = true;
+        U0();
+        d79 d79Var = this.n1;
+        int i = this.u0;
+        d79Var.setPadding(i, 0, i, 0);
+        this.n1.j(new e98(this, (byte) 23));
+        this.n1.setOnItemClickListener(new t39(this, (byte) 10));
     }
 
-    public final float a() {
-        return Math.max(this.b.h(), this.c.h());
+    @Override // ny0
+    public final c79 H0(d79 d79Var) {
+        nk3 nk3Var = new nk3(d79Var, getContext(), this.a, 0, true, this.J0);
+        this.S1 = nk3Var;
+        nk3Var.r = false;
+        return nk3Var;
+    }
+
+    @Override // ny0
+    public final CharSequence K0() {
+        return ob6.M0(2131745549, null);
     }
 }

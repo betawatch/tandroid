@@ -1,21 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class tv9 {
-    public final az8 a;
-    public final long b;
-    public final long c;
-
-    public tv9(az8 az8Var, long j, long j2) {
-        this.a = az8Var;
-        this.b = j;
-        this.c = j2;
-    }
-
-    public abstract tv9 a();
-
-    public az8 b(i89 i89Var) {
-        return this.a;
-    }
+public interface tv9 {
 }

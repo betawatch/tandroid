@@ -1,43 +1,45 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ira implements Runnable {
+public final /* synthetic */ class ira implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ jra b;
+    public final /* synthetic */ wua b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ira(jra jraVar, byte b) {
+    public /* synthetic */ ira(wua wuaVar, int i, byte b) {
         this.a = b;
-        this.b = jraVar;
+        this.b = wuaVar;
+        this.c = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         byte b = this.a;
-        int i = 0;
-        jra jraVar = this.b;
+        int i = this.c;
+        wua wuaVar = this.b;
         switch (b) {
             case 0:
-                jraVar.r = false;
-                jraVar.invalidate();
-                jraVar.a();
-                jraVar.c();
+                wuaVar.P2 = i;
+                fta ftaVar = wuaVar.U1;
+                ftaVar.F(ftaVar.getCurrentPosition() + (i > wuaVar.x1() ? 1 : -1));
                 break;
             case 1:
-                jraVar.invalidate();
+                wuaVar.P2 = i;
+                fta ftaVar2 = wuaVar.U1;
+                ftaVar2.F(ftaVar2.getCurrentPosition() + (i > wuaVar.x1() ? 1 : -1));
+                break;
+            case 2:
+                wuaVar.P2 = i;
+                fta ftaVar3 = wuaVar.U1;
+                ftaVar3.F(ftaVar3.getCurrentPosition() + (i > wuaVar.x1() ? 1 : -1));
                 break;
             default:
-                jraVar.setMessageCell(null);
-                ArrayList arrayList = jraVar.K;
-                int size = arrayList.size();
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
-                    ((oy8) obj).x(true);
-                }
-                arrayList.clear();
+                wuaVar.P2 = i;
+                fta ftaVar4 = wuaVar.U1;
+                ftaVar4.F(ftaVar4.getCurrentPosition() + (i > wuaVar.x1() ? 1 : -1));
                 break;
         }
     }

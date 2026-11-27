@@ -1,49 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vq7 implements mt8 {
-    public static final fi7 c;
-    public static final cq2 d;
-    public yc3 a;
-    public volatile mt8 b;
+public final class vq7 {
+    public final Object a;
+    public int b;
+    public final /* synthetic */ wq7 c;
 
-    static {
-        byte b = 6;
-        c = new fi7(b);
-        d = new cq2(b);
+    public vq7(wq7 wq7Var, int i) {
+        this.c = wq7Var;
+        this.a = wq7Var.a[i];
+        this.b = i;
     }
 
-    public vq7(fi7 fi7Var, mt8 mt8Var) {
-        this.a = fi7Var;
-        this.b = mt8Var;
-    }
-
-    public final void a(yc3 yc3Var) {
-        mt8 mt8Var;
-        mt8 mt8Var2;
-        mt8 mt8Var3 = this.b;
-        cq2 cq2Var = d;
-        if (mt8Var3 != cq2Var) {
-            yc3Var.h(mt8Var3);
-            return;
+    public final int a() {
+        int i = this.b;
+        Object obj = this.a;
+        wq7 wq7Var = this.c;
+        if (i == -1 || i >= wq7Var.c || !tue.a(obj, wq7Var.a[i])) {
+            this.b = wq7Var.c(obj);
         }
-        synchronized (this) {
-            mt8Var = this.b;
-            if (mt8Var != cq2Var) {
-                mt8Var2 = mt8Var;
-            } else {
-                this.a = new dx6((Object) this.a, (Object) yc3Var, (byte) 6);
-                mt8Var2 = null;
+        int i2 = this.b;
+        if (i2 == -1) {
+            return 0;
+        }
+        return wq7Var.b[i2];
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof vq7) {
+            vq7 vq7Var = (vq7) obj;
+            if (a() == vq7Var.a() && tue.a(this.a, vq7Var.a)) {
+                return true;
             }
         }
-        if (mt8Var2 != null) {
-            yc3Var.h(mt8Var);
-        }
+        return false;
     }
 
-    @Override // mt8
-    public final Object get() {
-        return this.b.get();
+    public final int hashCode() {
+        Object obj = this.a;
+        return (obj == null ? 0 : obj.hashCode()) ^ a();
+    }
+
+    public final String toString() {
+        String valueOf = String.valueOf(this.a);
+        int a = a();
+        if (a == 1) {
+            return valueOf;
+        }
+        return valueOf + " x " + a;
     }
 }

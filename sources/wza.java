@@ -1,37 +1,70 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wza implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
+public final class wza extends AnimatorListenerAdapter {
+    public final /* synthetic */ u49 a;
     public final /* synthetic */ View b;
-    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ h96[] c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ RectF e;
+    public final /* synthetic */ fxa f;
+    public final /* synthetic */ e0b h;
 
-    public /* synthetic */ wza(FrameLayout frameLayout, View view, byte b) {
-        this.a = b;
-        this.c = frameLayout;
+    public wza(e0b e0bVar, u49 u49Var, View view, h96[] h96VarArr, boolean[] zArr, RectF rectF, fxa fxaVar) {
+        this.h = e0bVar;
+        this.a = u49Var;
         this.b = view;
+        this.c = h96VarArr;
+        this.d = zArr;
+        this.e = rectF;
+        this.f = fxaVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        View view = this.b;
-        FrameLayout frameLayout = this.c;
-        switch (b) {
-            case 0:
-                xza xzaVar = (xza) frameLayout;
-                xzaVar.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xzaVar.invalidate();
-                ((er9) view).invalidate();
-                break;
-            default:
-                ((wec) frameLayout).F(view, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        y16 y16Var;
+        e0b e0bVar = this.h;
+        i94 i94Var = e0bVar.E1;
+        i94Var.setVisibility(4);
+        i94Var.setPaused(true);
+        u49 u49Var = this.a;
+        if (u49Var != null) {
+            u49Var.k = true;
         }
+        View view = this.b;
+        if (view != null) {
+            view.invalidate();
+        }
+        h96 h96Var = this.c[0];
+        if (h96Var != null) {
+            h96Var.setDrawStar(true);
+        }
+        super/*nx0*/.H();
+        boolean[] zArr = this.d;
+        if (!zArr[0]) {
+            zArr[0] = true;
+            RectF rectF = this.e;
+            LaunchActivity.a0(rectF.centerX(), rectF.centerY(), 1.5f);
+            try {
+                e0bVar.c.performHapticFeedback(0, 1);
+            } catch (Exception unused) {
+            }
+            fxa fxaVar = this.f;
+            if (fxaVar != null) {
+                fxaVar.run();
+            }
+        }
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null || (y16Var = launchActivity.w0) == null) {
+            return;
+        }
+        y16Var.c(true);
     }
 }

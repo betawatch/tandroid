@@ -1,19 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
+import java.util.Set;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zrd implements zn7 {
-    public static final zrd a = new zrd();
+public final class zrd extends PhantomReference {
+    public final Set a;
+    public final tv b;
 
-    static {
-        yjb.y(yjb.n(g7d.class, new d6d(1)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public /* synthetic */ zrd(pi2 pi2Var, ReferenceQueue referenceQueue, Set set, tv tvVar) {
+        super(pi2Var, referenceQueue);
+        this.a = set;
+        this.b = tvVar;
     }
 }

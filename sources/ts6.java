@@ -1,109 +1,50 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Message;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.PlaybackStateCompat;
+import android.net.Uri;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ts6 implements IBinder.DeathRecipient {
-    public final rm6 a = new rm6(this);
-    public y93 b;
-    public sm6 c;
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ dp e;
+public final class ts6 {
+    public String a;
+    public Uri b;
+    public final us6 c = new us6();
+    public final xs6 d = new xs6();
+    public final List e = Collections.EMPTY_LIST;
+    public final po5 f;
+    public final long g;
+    public final zs6 h;
+    public ct6 i;
 
-    public ts6(dp dpVar, byte b) {
-        this.d = b;
-        this.e = dpVar;
+    public ts6() {
+        no5 no5Var = po5.b;
+        this.f = j99.e;
+        this.h = new zs6();
+        this.i = ct6.d;
+        this.g = -9223372036854775807L;
     }
 
-    public final void a(MediaMetadataCompat mediaMetadataCompat) {
-        byte b = this.d;
-        dp dpVar = this.e;
-        switch (b) {
-            case 0:
-                ws6 ws6Var = (ws6) dpVar;
-                ws6Var.m0 = mediaMetadataCompat != null ? mediaMetadataCompat.a() : null;
-                ws6Var.r();
-                ws6Var.q(false);
-                break;
-            default:
-                rt6 rt6Var = (rt6) dpVar;
-                rt6Var.c0 = mediaMetadataCompat != null ? mediaMetadataCompat.a() : null;
-                rt6Var.f();
-                rt6Var.k();
-                break;
-        }
-    }
-
-    public final void b(PlaybackStateCompat playbackStateCompat) {
-        switch (this.d) {
-            case 0:
-                ws6 ws6Var = (ws6) this.e;
-                ws6Var.l0 = playbackStateCompat;
-                ws6Var.q(false);
-                break;
-        }
-    }
-
-    @Override // android.os.IBinder.DeathRecipient
-    public final void binderDied() {
-        e(8, null, null);
-    }
-
-    public final void d() {
-        byte b = this.d;
-        dp dpVar = this.e;
-        switch (b) {
-            case 0:
-                ws6 ws6Var = (ws6) dpVar;
-                wk4 wk4Var = ws6Var.j0;
-                if (wk4Var != null) {
-                    wk4Var.h0(ws6Var.k0);
-                    ws6Var.j0 = null;
-                    break;
-                }
-                break;
-            default:
-                rt6 rt6Var = (rt6) dpVar;
-                wk4 wk4Var2 = rt6Var.a0;
-                if (wk4Var2 != null) {
-                    wk4Var2.h0(rt6Var.b0);
-                    rt6Var.a0 = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    public final void e(int i, Object obj, Bundle bundle) {
-        y93 y93Var = this.b;
-        if (y93Var != null) {
-            Message obtainMessage = y93Var.obtainMessage(i, obj);
-            obtainMessage.setData(bundle);
-            obtainMessage.sendToTarget();
-        }
-    }
-
-    public final void f(Handler handler) {
-        if (handler != null) {
-            y93 y93Var = new y93(this, handler.getLooper());
-            this.b = y93Var;
-            y93Var.b = true;
+    public final ft6 a() {
+        bt6 bt6Var;
+        xs6 xs6Var = this.d;
+        yve.p(xs6Var.b == null || xs6Var.a != null);
+        Uri uri = this.b;
+        if (uri != null) {
+            bt6Var = new bt6(uri, null, xs6Var.a != null ? new ys6(xs6Var) : null, null, this.e, null, this.f, this.g);
         } else {
-            y93 y93Var2 = this.b;
-            if (y93Var2 != null) {
-                y93Var2.b = false;
-                y93Var2.removeCallbacksAndMessages(null);
-                this.b = null;
-            }
+            bt6Var = null;
         }
-    }
-
-    public final void c(PlaybackStateCompat playbackStateCompat) {
+        String str = this.a;
+        if (str == null) {
+            str = "";
+        }
+        String str2 = str;
+        us6 us6Var = this.c;
+        us6Var.getClass();
+        ws6 ws6Var = new ws6(us6Var);
+        zs6 zs6Var = this.h;
+        zs6Var.getClass();
+        return new ft6(str2, ws6Var, bt6Var, new at6(zs6Var), nt6.M, this.i);
     }
 }

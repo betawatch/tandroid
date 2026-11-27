@@ -1,84 +1,118 @@
 // default package
 
-import android.app.Dialog;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class k3c implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p3c b;
-    public final /* synthetic */ TLRPC.TL_error c;
+public final class k3c extends FrameLayout implements snb {
+    public final Path a;
+    public final Paint b;
+    public Boolean c;
+    public final /* synthetic */ r3c d;
 
-    public /* synthetic */ k3c(p3c p3cVar, TLRPC.TL_error tL_error, byte b) {
-        this.a = b;
-        this.b = p3cVar;
-        this.c = tL_error;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k3c(r3c r3cVar, Context context) {
+        super(context);
+        this.d = r3cVar;
+        this.a = new Path();
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(aob.v0(aob.h5, r3cVar.J0));
+        aob.m(paint);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.TL_error tL_error = this.c;
-        p3c p3cVar = this.b;
-        switch (b) {
-            case 0:
-                p3cVar.A0();
-                if (tL_error != null) {
-                    if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                        p3cVar.K0(k96.M0(2131743692, null), tL_error.text);
-                        break;
-                    } else {
-                        int intValue = Utilities.z(tL_error.text).intValue();
-                        p3cVar.K0(k96.M0(2131743692, null), k96.a0("FloodWaitTime", null, 2131750669, intValue < 60 ? k96.G(intValue, "Seconds", new Object[0]) : k96.G(intValue / 60, "Minutes", new Object[0])));
-                        break;
-                    }
-                } else {
-                    p3cVar.getMessagesController().n4(0L, "VALIDATE_PASSWORD");
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(p3cVar.getParentActivity());
-                    alertDialog$Builder.j(k96.M0(2131747638, null), new g3c(p3cVar, (byte) 3));
-                    String M0 = k96.M0(2131747243, null);
-                    hd hdVar = alertDialog$Builder.a;
-                    hdVar.U = M0;
-                    hdVar.S = k96.M0(2131743692, null);
-                    Dialog showDialog = p3cVar.showDialog(hdVar);
-                    if (showDialog != null) {
-                        showDialog.setCanceledOnTouchOutside(false);
-                        showDialog.setCancelable(false);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                p3cVar.A0();
-                if (tL_error != null) {
-                    if (!tL_error.text.startsWith("CODE_INVALID")) {
-                        if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                            p3cVar.K0(k96.M0(R.string.AppName, null), tL_error.text);
-                            break;
-                        } else {
-                            int intValue2 = Utilities.z(tL_error.text).intValue();
-                            p3cVar.K0(k96.M0(R.string.AppName, null), k96.a0("FloodWaitTime", null, 2131750669, intValue2 < 60 ? k96.G(intValue2, "Seconds", new Object[0]) : k96.G(intValue2 / 60, "Minutes", new Object[0])));
-                            break;
-                        }
-                    } else {
-                        p3cVar.C0();
-                        break;
-                    }
-                } else if (p3cVar.getParentActivity() != null) {
-                    p3cVar.k0(new f3c(p3cVar, (byte) 5));
-                    break;
-                }
-                break;
-            case 2:
-                p3cVar.v0(tL_error);
-                break;
-            default:
-                p3cVar.q0(tL_error);
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        r3c r3cVar = this.d;
+        float G0 = r3cVar.G0(true);
+        float U1 = hl.U1(ete.a(G0 / hl.N(24.0f), 0.0f, 1.0f), 0, hl.L(12.0f));
+        r3cVar.w1.setTranslationY(Math.max(hl.m, G0));
+        boolean z = G0 <= ((float) hl.m) / 2.0f;
+        Boolean bool = this.c;
+        if (bool == null || bool.booleanValue() != z) {
+            this.c = Boolean.valueOf(z);
+            hl.n3(r3cVar.getWindow(), hl.B(z ? aob.v0(aob.h5, r3cVar.J0) : aob.v(aob.v0(aob.s8, r3cVar.J0), 855638016)) > 0.721f);
         }
+        r3cVar.F.setTranslationY(Math.max(r3cVar.F.getHeight() + hl.L(56.0f) + hl.m, G0) + getTranslationY() + ((-r1.getTop()) - r3cVar.F.getHeight()));
+        Path path = this.a;
+        path.rewind();
+        RectF rectF = hl.P;
+        rectF.set(0.0f, G0, getWidth(), getHeight() + U1);
+        path.addRoundRect(rectF, U1, U1, Path.Direction.CW);
+        canvas.drawPath(path, this.b);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        r3c r3cVar = this.d;
+        lmb lmbVar = r3cVar.J1;
+        amb ambVar = r3cVar.I1;
+        if (ambVar != null && lmbVar != null) {
+            if (motionEvent.getAction() == 0 || motionEvent.getAction() == 1) {
+                Log.d("TA2", "container dispatch act=" + motionEvent.getAction() + " inSel=" + ambVar.w());
+            }
+            if (ambVar.w() && lmbVar.onTouchEvent(motionEvent)) {
+                Log.d("TA2", "overlay consumed (handle)");
+                return true;
+            }
+            boolean b = lmbVar.b(motionEvent);
+            if (motionEvent.getAction() == 1) {
+                Log.d("TA2", "checkOnTap=" + b);
+            }
+            if (b) {
+                motionEvent.setAction(3);
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setTag(R.id.bulletin_delegate_tag, new py((byte) 16));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setTag(R.id.bulletin_delegate_tag, null);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        super.setTranslationY(f);
+        r3c r3cVar = this.d;
+        r3cVar.F.setTranslationY(Math.max(r3cVar.F.getHeight() + hl.L(56.0f) + hl.m, r3cVar.G0(true)) + ((-r0.getTop()) - r3cVar.F.getHeight()) + f);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            this.b.setColor(aob.v0(aob.h5, this.d.J0));
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,152 +1,200 @@
 // default package
 
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Trace;
+import android.util.Log;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class r7c implements d39, f39 {
-    public final /* synthetic */ s7c a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class r7c {
+    public static final p1f a;
+    public static final ji6 b;
 
-    public /* synthetic */ r7c(s7c s7cVar) {
-        this.a = s7cVar;
-    }
-
-    @Override // d39
-    public final void e(float f, float f2, int i, View view) {
-        long j;
-        s7c s7cVar = this.a;
-        dr0 dr0Var = s7cVar.Y1;
-        dg7 dg7Var = s7cVar.U1;
-        HashSet hashSet = s7cVar.b2;
-        if (view instanceof wgb) {
-            w35 w35Var = s7cVar.r2;
-            if (w35Var != null) {
-                w35Var.run();
-                s7cVar.dismiss();
-                return;
-            }
-            return;
-        }
-        if (view instanceof kz9) {
-            kz9 kz9Var = (kz9) view;
-            TLRPC.User user = kz9Var.getUser();
-            TLRPC.Chat chat = kz9Var.getChat();
-            if (user != null) {
-                j = user.id;
-            } else if (chat == null) {
-                return;
-            } else {
-                j = -chat.id;
-            }
-            boolean z = false;
-            byte b = 1;
-            if (hashSet.isEmpty()) {
-                hashSet.add(Long.valueOf(j));
-                i8c i8cVar = s7cVar.t2;
-                if (i8cVar != null) {
-                    wf2 wf2Var = s7cVar.X1;
-                    if (wf2Var != null && wf2Var.a.q) {
-                        z = true;
-                    }
-                    i8cVar.a(Boolean.valueOf(z), hashSet);
-                    s7cVar.t2 = null;
-                }
-                s7cVar.dismiss();
-                return;
-            }
-            boolean z2 = !hashSet.isEmpty();
-            if (hashSet.contains(Long.valueOf(j))) {
-                hashSet.remove(Long.valueOf(j));
-            } else {
-                hashSet.add(Long.valueOf(j));
-                s7cVar.h2.put(Long.valueOf(j), user);
-            }
-            if (hashSet.size() == s7cVar.b1() + 1) {
-                hashSet.remove(Long.valueOf(j));
-                s7cVar.d1();
-                return;
-            }
-            boolean isEmpty = hashSet.isEmpty();
-            boolean z3 = !isEmpty;
-            if (z2 != z3) {
-                dr0Var.setVisibility(0);
-                dr0Var.animate().alpha(!isEmpty ? 1.0f : 0.0f).translationY(isEmpty ? gl.L(12.0f) : 0.0f).setInterpolator(s33.h).setDuration(320L).withEndAction(isEmpty ? new m7c(s7cVar, b) : null).start();
-                ty9 ty9Var = s7cVar.j2;
-                boolean z4 = !z3;
-                if (ty9Var.E != z4) {
-                    ty9Var.E = z4;
-                    gl.d0(ty9Var.f, new ry9(z4));
-                }
-            }
-            s7cVar.Y0();
-            dg7Var.b(true, hashSet, new m7c(s7cVar, (byte) 2), null);
-            s7cVar.g1(true, true);
-            s7cVar.Z0();
-        }
-    }
-
-    @Override // d39
-    public final boolean q(View view) {
-        return false;
-    }
-
-    public /* synthetic */ r7c(s7c s7cVar, e53 e53Var, int i) {
-        this.a = s7cVar;
-    }
-
-    @Override // f39
-    public final void f() {
-    }
-
-    @Override // f39
-    public final void g(float f) {
-    }
-
-    @Override // d39
-    public final void l(View view, float f, float f2) {
-    }
-
-    @Override // f39
-    public final boolean e(float f, float f2, int i, View view) {
-        s7c s7cVar = this.a;
-        dr0 dr0Var = s7cVar.Y1;
-        HashSet hashSet = s7cVar.b2;
-        if (!(view instanceof kz9)) {
-            return false;
-        }
-        kz9 kz9Var = (kz9) view;
-        TLRPC.User user = kz9Var.getUser();
-        long j = user != null ? user.id : -kz9Var.getChat().id;
-        boolean z = !hashSet.isEmpty();
-        if (hashSet.contains(Long.valueOf(j))) {
-            hashSet.remove(Long.valueOf(j));
+    static {
+        q0f.a("TypefaceCompat static init");
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 29) {
+            a = new w7c();
+        } else if (i >= 28) {
+            a = new v7c();
+        } else if (i >= 26) {
+            a = new u7c();
         } else {
-            hashSet.add(Long.valueOf(j));
-            s7cVar.h2.put(Long.valueOf(j), user);
+            if (i >= 24) {
+                if (t7c.c == null) {
+                    Log.w("TypefaceCompatApi24Impl", "Unable to collect necessary private methods.Fallback to legacy implementation.");
+                } else {
+                    a = new t7c();
+                }
+            }
+            a = new s7c();
         }
-        if (hashSet.size() == s7cVar.b1() + 1) {
-            hashSet.remove(Long.valueOf(j));
-            s7cVar.d1();
-            return true;
-        }
-        boolean isEmpty = hashSet.isEmpty();
-        boolean z2 = !isEmpty;
-        if (z != z2) {
-            dr0Var.setVisibility(0);
-            dr0Var.animate().alpha(!isEmpty ? 1.0f : 0.0f).translationY(isEmpty ? gl.L(12.0f) : 0.0f).setInterpolator(s33.h).setDuration(320L).withEndAction(isEmpty ? new m7c(s7cVar, (byte) 7) : null).start();
-            ty9 ty9Var = s7cVar.j2;
-            boolean z3 = !z2;
-            if (ty9Var.E != z3) {
-                ty9Var.E = z3;
-                gl.d0(ty9Var.f, new ry9(z3));
+        b = new ji6(16);
+        Trace.endSection();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0028, code lost:
+    
+        if (r1.equals(r5) == false) goto L13;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Typeface a(Context context, bo4 bo4Var, Resources resources, int i, String str, int i2, int i3, jq jqVar) {
+        Typeface a2;
+        Typeface typeface;
+        List unmodifiableList;
+        Typeface typeface2;
+        byte b2 = 15;
+        if (bo4Var instanceof eo4) {
+            eo4 eo4Var = (eo4) bo4Var;
+            String str2 = eo4Var.e;
+            a2 = null;
+            boolean z = false;
+            Object[] objArr = 0;
+            if (str2 != null && !str2.isEmpty()) {
+                typeface = Typeface.create(str2, 0);
+                Typeface create = Typeface.create(Typeface.DEFAULT, 0);
+                if (typeface != null) {
+                }
+            }
+            typeface = null;
+            if (typeface != null) {
+                new Handler(Looper.getMainLooper()).post(new z09(jqVar, typeface, b2));
+                return typeface;
+            }
+            byte b3 = 1;
+            Object[] objArr2 = eo4Var.d == 0;
+            int i4 = eo4Var.c;
+            Handler handler = new Handler(Looper.getMainLooper());
+            ve9 ve9Var = new ve9((byte) 18);
+            ve9Var.b = jqVar;
+            un4 un4Var = eo4Var.b;
+            un4 un4Var2 = eo4Var.a;
+            if (un4Var != null) {
+                Object[] objArr3 = {un4Var2, un4Var};
+                ArrayList arrayList = new ArrayList(2);
+                for (int i5 = 0; i5 < 2; i5++) {
+                    Object obj = objArr3[i5];
+                    Objects.requireNonNull(obj);
+                    arrayList.add(obj);
+                }
+                unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
+            } else {
+                Object[] objArr4 = {un4Var2};
+                ArrayList arrayList2 = new ArrayList(1);
+                Object obj2 = objArr4[0];
+                Objects.requireNonNull(obj2);
+                arrayList2.add(obj2);
+                unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
+            }
+            byte b4 = 3;
+            zi0 zi0Var = new zi0(handler, (byte) 3);
+            qx6 qx6Var = new qx6(ve9Var, zi0Var, z, (byte) 12);
+            if (objArr2 != true) {
+                String a3 = ao4.a(i3, unmodifiableList);
+                typeface2 = (Typeface) ao4.a.a(a3);
+                if (typeface2 != null) {
+                    zi0Var.execute(new iqd(ve9Var, typeface2, b4));
+                } else {
+                    yn4 yn4Var = new yn4((Object) qx6Var, (byte) (objArr == true ? 1 : 0));
+                    synchronized (ao4.c) {
+                        vla vlaVar = ao4.d;
+                        ArrayList arrayList3 = (ArrayList) vlaVar.get(a3);
+                        if (arrayList3 != null) {
+                            arrayList3.add(yn4Var);
+                        } else {
+                            ArrayList arrayList4 = new ArrayList();
+                            arrayList4.add(yn4Var);
+                            vlaVar.put(a3, arrayList4);
+                            xn4 xn4Var = new xn4(a3, context, unmodifiableList, i3, (byte) 1);
+                            ThreadPoolExecutor threadPoolExecutor = ao4.b;
+                            yn4 yn4Var2 = new yn4(a3, b3);
+                            Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
+                            uy1 uy1Var = new uy1();
+                            uy1Var.b = xn4Var;
+                            uy1Var.c = yn4Var2;
+                            uy1Var.d = handler2;
+                            threadPoolExecutor.execute(uy1Var);
+                        }
+                    }
+                }
+            } else {
+                if (unmodifiableList.size() > 1) {
+                    lq5.j("Fallbacks with blocking fetches are not supported for performance reasons");
+                    return null;
+                }
+                un4 un4Var3 = (un4) unmodifiableList.get(0);
+                ji6 ji6Var = ao4.a;
+                ArrayList arrayList5 = new ArrayList(1);
+                Object obj3 = new Object[]{un4Var3}[0];
+                Objects.requireNonNull(obj3);
+                arrayList5.add(obj3);
+                String a4 = ao4.a(i3, DesugarCollections.unmodifiableList(arrayList5));
+                typeface2 = (Typeface) ao4.a.a(a4);
+                if (typeface2 != null) {
+                    zi0Var.execute(new iqd(ve9Var, typeface2, b4));
+                } else if (i4 == -1) {
+                    Object[] objArr5 = {un4Var3};
+                    ArrayList arrayList6 = new ArrayList(1);
+                    Object obj4 = objArr5[0];
+                    Objects.requireNonNull(obj4);
+                    arrayList6.add(obj4);
+                    zn4 b5 = ao4.b(a4, context, DesugarCollections.unmodifiableList(arrayList6), i3);
+                    qx6Var.F(b5);
+                    a2 = b5.a;
+                } else {
+                    try {
+                        try {
+                            try {
+                                try {
+                                    zn4 zn4Var = (zn4) ao4.b.submit(new xn4(a4, context, un4Var3, i3, (byte) 0)).get(i4, TimeUnit.MILLISECONDS);
+                                    qx6Var.F(zn4Var);
+                                    a2 = zn4Var.a;
+                                } catch (ExecutionException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            } catch (TimeoutException unused) {
+                                throw new InterruptedException("timeout");
+                            }
+                        } catch (InterruptedException e2) {
+                            throw e2;
+                        }
+                    } catch (InterruptedException unused2) {
+                        ((zi0) qx6Var.c).execute(new tv((ve9) qx6Var.b, -3));
+                    }
+                }
+            }
+            a2 = typeface2;
+        } else {
+            a2 = a.a(context, (co4) bo4Var, resources, i3);
+            if (a2 != null) {
+                new Handler(Looper.getMainLooper()).post(new z09(jqVar, a2, b2));
+            } else {
+                jqVar.b();
             }
         }
-        s7cVar.Y0();
-        s7cVar.U1.b(true, hashSet, new m7c(s7cVar, (byte) 8), null);
-        s7cVar.g1(true, true);
-        s7cVar.Z0();
-        return true;
+        if (a2 != null) {
+            b.b(b(resources, i, str, i2, i3), a2);
+        }
+        return a2;
+    }
+
+    public static String b(Resources resources, int i, String str, int i2, int i3) {
+        return resources.getResourcePackageName(i) + '-' + str + '-' + i2 + '-' + i + '-' + i3;
     }
 }

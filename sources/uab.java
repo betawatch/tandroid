@@ -1,13 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface uab {
-    kab f(int i, int i2, byte[] bArr);
+import android.animation.ValueAnimator;
 
-    void l(byte[] bArr, int i, int i2, tab tabVar, us2 us2Var);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class uab implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rbb b;
 
-    int o();
+    public /* synthetic */ uab(rbb rbbVar, byte b) {
+        this.a = b;
+        this.b = rbbVar;
+    }
 
-    void reset();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        rbb rbbVar = this.b;
+        switch (b) {
+            case 0:
+                rbbVar.d1.m();
+                break;
+            default:
+                rbbVar.m0();
+                break;
+        }
+    }
 }

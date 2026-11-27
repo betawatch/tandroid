@@ -1,74 +1,55 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.media.MediaDescription;
-import android.net.Uri;
-import android.os.Bundle;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class iq6 {
-    public static MediaDescription a(MediaDescription.Builder builder) {
-        return builder.build();
+public final /* synthetic */ class iq6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ls6 b;
+    public final /* synthetic */ TLRPC.messages_Messages c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int w;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ iq6(ls6 ls6Var, TLRPC.messages_Messages messages_messages, int i, long j, ArrayList arrayList, int i2, int i3, boolean z, int i4, int i5, byte b) {
+        this.a = b;
+        this.b = ls6Var;
+        this.c = messages_messages;
+        this.d = i;
+        this.e = j;
+        this.f = arrayList;
+        this.h = i2;
+        this.n = i3;
+        this.r = z;
+        this.s = i4;
+        this.w = i5;
     }
 
-    public static MediaDescription.Builder b() {
-        return new MediaDescription.Builder();
-    }
-
-    public static CharSequence c(MediaDescription mediaDescription) {
-        return mediaDescription.getDescription();
-    }
-
-    public static Bundle d(MediaDescription mediaDescription) {
-        return mediaDescription.getExtras();
-    }
-
-    public static Bitmap e(MediaDescription mediaDescription) {
-        return mediaDescription.getIconBitmap();
-    }
-
-    public static Uri f(MediaDescription mediaDescription) {
-        return mediaDescription.getIconUri();
-    }
-
-    public static String g(MediaDescription mediaDescription) {
-        return mediaDescription.getMediaId();
-    }
-
-    public static CharSequence h(MediaDescription mediaDescription) {
-        return mediaDescription.getSubtitle();
-    }
-
-    public static CharSequence i(MediaDescription mediaDescription) {
-        return mediaDescription.getTitle();
-    }
-
-    public static void j(MediaDescription.Builder builder, CharSequence charSequence) {
-        builder.setDescription(charSequence);
-    }
-
-    public static void k(MediaDescription.Builder builder, Bundle bundle) {
-        builder.setExtras(bundle);
-    }
-
-    public static void l(MediaDescription.Builder builder, Bitmap bitmap) {
-        builder.setIconBitmap(bitmap);
-    }
-
-    public static void m(MediaDescription.Builder builder, Uri uri) {
-        builder.setIconUri(uri);
-    }
-
-    public static void n(MediaDescription.Builder builder, String str) {
-        builder.setMediaId(str);
-    }
-
-    public static void o(MediaDescription.Builder builder, CharSequence charSequence) {
-        builder.setSubtitle(charSequence);
-    }
-
-    public static void p(MediaDescription.Builder builder, CharSequence charSequence) {
-        builder.setTitle(charSequence);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                hl.c3(new iq6(this.b, this.c, this.d ? 1 : 0, this.e, this.f, this.h, this.n, this.r, this.s, this.w, (byte) 1));
+                break;
+            default:
+                TLRPC.messages_Messages messages_messages = this.c;
+                int i = messages_messages.count;
+                ls6 ls6Var = this.b;
+                uc7 messagesController = ls6Var.getMessagesController();
+                ArrayList<TLRPC.User> arrayList = messages_messages.users;
+                boolean z = this.d;
+                messagesController.j4(arrayList, z);
+                ls6Var.getMessagesController().c4(messages_messages.chats, z);
+                ls6Var.getNotificationCenter().k(33, Long.valueOf(this.e), Integer.valueOf(i), this.f, Integer.valueOf(this.h), Integer.valueOf(this.n), Boolean.valueOf(this.r), Boolean.valueOf(this.s != 0), Integer.valueOf(this.w));
+                break;
+        }
     }
 }

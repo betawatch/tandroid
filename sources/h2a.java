@@ -1,380 +1,188 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
+import android.app.Activity;
+import android.content.Context;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class h2a implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z3a b;
-    public final /* synthetic */ TLRPC.InputMedia c;
-    public final /* synthetic */ k3a d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class h2a extends ny0 implements fn7 {
+    public final int S1;
+    public final axa T1;
+    public final HashSet U1;
+    public final q74 V1;
+    public final FrameLayout W1;
+    public final c51 X1;
+    public fu5 Y1;
+    public final oz4 Z1;
+    public final oz4 a2;
+    public l9c b2;
+    public mq5 c2;
+    public boolean d2;
+    public int e2;
 
-    public /* synthetic */ h2a(z3a z3aVar, TLRPC.InputMedia inputMedia, k3a k3aVar, byte b) {
-        this.a = b;
-        this.b = z3aVar;
-        this.c = inputMedia;
-        this.d = k3aVar;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public h2a(e eVar, long j, int i, i61 i61Var) {
+        super(r3, eVar, new my0(r4));
+        Activity parentActivity = eVar.getParentActivity();
+        my0 my0Var = new my0();
+        my0Var.f = 2;
+        my0Var.b = 3;
+        my0Var.g = eVar.getResourceProvider();
+        this.U1 = new HashSet();
+        this.c2 = mq5.e;
+        Context context = getContext();
+        oz4 oz4Var = new oz4();
+        this.Z1 = oz4Var;
+        oz4Var.a(aob.v0(aob.d6, this.J0));
+        ll0 ll0Var = new ll0(oz4Var, oz4Var, oz4Var);
+        oz4 oz4Var2 = new oz4();
+        this.a2 = oz4Var2;
+        int i2 = aob.a7;
+        oz4Var2.a(aob.v0(i2, this.J0));
+        ll0 ll0Var2 = new ll0(oz4Var2, oz4Var2, oz4Var2);
+        this.F1 = false;
+        this.E1 = hl.L(12.0f);
+        s0(aob.v0(i2, this.J0));
+        U0();
+        this.S1 = i;
+        this.T1 = new axa(this.a, j, true);
+        this.o1.setActionBarMenuOnItemClick(new g2a(this, this.o1.u().a(1, R.drawable.ic_ab_other), j));
+        c51 c51Var = new c51(this.J0, getContext(), true);
+        this.X1 = c51Var;
+        c51Var.i(ob6.M0(2131750209, null), false, true);
+        c51Var.setEnabled(false);
+        c51Var.setStateListAnimator(null);
+        c51Var.f();
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.W1 = frameLayout;
+        int i3 = this.u0;
+        frameLayout.setPadding(i3, 0, i3, 0);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        frameLayout2.setPadding(hl.L(8.0f), hl.L(8.0f), hl.L(8.0f), hl.L(8.0f));
+        frameLayout2.addView(c51Var, tre.c(-1.0f, -1));
+        frameLayout2.setOnClickListener(new jy8(this, i61Var, (byte) 7));
+        jl0 c = ll0Var.c(frameLayout2, null, false);
+        c.p(dtd.j(this.J0));
+        c.r(hl.L(28.0f));
+        c.q(hl.L(5.0f));
+        frameLayout2.setBackground(c);
+        iye.b(frameLayout2, 0.02f, 1.5f);
+        frameLayout.addView(frameLayout2, tre.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
+        rl0 rl0Var = new rl0(ll0Var2.c(frameLayout, null, false));
+        rl0Var.b(hl.L(40.0f), true);
+        rl0Var.H = jn7.w3;
+        frameLayout.setBackground(rl0Var);
+        this.b.addView(frameLayout, tre.e(-1, -2, 80));
+        getContext();
+        q74 q74Var = new q74(3, false);
+        this.V1 = q74Var;
+        q74Var.O = new ar1(this, (byte) 15);
+        this.n1.setPadding(hl.L(9.0f) + this.u0, 0, hl.L(9.0f) + this.u0, 0);
+        this.n1.setClipToPadding(false);
+        this.n1.setSelectorType(9);
+        this.n1.setSelectorDrawableColor(0);
+        this.n1.setLayoutManager(q74Var);
+        this.n1.setOnItemClickListener(new t39(this, (byte) 5));
+        this.n1.j(new e98(this, (byte) 16));
+        zb3 zb3Var = new zb3();
+        zb3Var.m = false;
+        zb3Var.C = false;
+        zb3Var.o(k43.h);
+        zb3Var.n(350L);
+        this.n1.setItemAnimator(zb3Var);
+        this.b2.O(true);
+        jn7.f(this.a).b(this, jn7.I3);
+        Z0();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final byte b = 0;
-                final z3a z3aVar = this.b;
-                final TLRPC.InputMedia inputMedia = this.c;
-                final k3a k3aVar = this.d;
-                gl.c3(new Runnable() { // from class: p2a
-                    /* JADX WARN: Multi-variable type inference failed */
-                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
-                    /* JADX WARN: Removed duplicated region for block: B:66:0x0145  */
-                    @Override // java.lang.Runnable
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void run() {
-                        TLRPC.PhotoSize photoSize;
-                        k27 k27Var;
-                        oac oacVar;
-                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
-                        TLRPC.InputDocument inputDocument;
-                        byte b2 = b;
-                        TLRPC.InputMedia inputMedia2 = inputMedia;
-                        TLObject tLObject2 = tLObject;
-                        switch (b2) {
-                            case 0:
-                                boolean z = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
-                                k3a k3aVar2 = k3aVar;
-                                if (!z) {
-                                    k3aVar2.c();
-                                    break;
-                                } else {
-                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
-                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                                    tL_inputPhoto.id = photo.id;
-                                    tL_inputPhoto.access_hash = photo.access_hash;
-                                    tL_inputPhoto.file_reference = photo.file_reference;
-                                    if (inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia2.flags |= 64;
-                                        inputMedia2.video_cover = tL_inputPhoto;
-                                    } else if (inputMedia2 instanceof TLRPC.TL_inputMediaDocument) {
-                                        inputMedia2.flags |= 8;
-                                        inputMedia2.video_cover = tL_inputPhoto;
-                                    }
-                                    TLRPC.InputMedia inputMedia3 = k3aVar2.t;
-                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia3.flags |= 64;
-                                        inputMedia3.video_cover = tL_inputPhoto;
-                                    }
-                                    boolean z2 = k3aVar2.p;
-                                    z3a z3aVar2 = z3aVar;
-                                    if (!z2 || inputMedia2.thumb != null || (photoSize = k3aVar2.g) == null || photoSize.location == null || ((k27Var = k3aVar2.m) != null && (oacVar = k27Var.r0) != null && oacVar.N)) {
-                                        z3aVar2.M(k3aVar2.c, k3aVar2.m, k3aVar2.f, k3aVar2, k3aVar2.K, null, k3aVar2.H);
-                                        break;
-                                    } else {
-                                        z3aVar2.L(k3aVar2, -1);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (tLObject2 != null) {
-                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
-                                    if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
-                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia2;
-                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
-                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
-                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
-                                        TLRPC.Photo photo2 = messageMedia.photo;
-                                        tL_inputPhoto2.id = photo2.id;
-                                        tL_inputPhoto2.access_hash = photo2.access_hash;
-                                        tL_inputPhoto2.file_reference = photo2.file_reference;
-                                        tL_inputMediaPhoto.spoiler = inputMedia2.spoiler;
-                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
-                                            tL_inputMediaPhoto.live_photo = true;
-                                            tL_inputMediaPhoto.video = inputDocument;
-                                        }
-                                        boolean z3 = w01.a;
-                                        fa4.b("set uploaded photo");
-                                        tL_inputMediaDocument = tL_inputMediaPhoto;
-                                    } else if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
-                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
-                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                                        tL_inputMediaDocument2.id = tL_inputDocument;
-                                        TLRPC.Document document = messageMedia.document;
-                                        tL_inputDocument.id = document.id;
-                                        tL_inputDocument.access_hash = document.access_hash;
-                                        tL_inputDocument.file_reference = document.file_reference;
-                                        tL_inputMediaDocument2.spoiler = inputMedia2.spoiler;
-                                        TLRPC.Photo photo3 = messageMedia.video_cover;
-                                        if (photo3 != null) {
-                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
-                                            tL_inputPhoto3.id = photo3.id;
-                                            tL_inputPhoto3.access_hash = photo3.access_hash;
-                                            tL_inputPhoto3.file_reference = photo3.file_reference;
-                                            tL_inputMediaDocument2.flags |= 8;
-                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
-                                        }
-                                        boolean z4 = w01.a;
-                                        fa4.b("set uploaded document");
-                                        tL_inputMediaDocument = tL_inputMediaDocument2;
-                                    }
-                                    k3a k3aVar3 = k3aVar;
-                                    if (tL_inputMediaDocument != null) {
-                                        k3aVar3.c();
-                                        break;
-                                    } else {
-                                        int i = inputMedia2.ttl_seconds;
-                                        if (i != 0) {
-                                            tL_inputMediaDocument.ttl_seconds = i;
-                                            tL_inputMediaDocument.flags |= 1;
-                                        }
-                                        TLObject tLObject3 = k3aVar3.c;
-                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
-                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
-                                            int i2 = 0;
-                                            while (true) {
-                                                if (i2 < tL_messages_sendMultiMedia.multi_media.size()) {
-                                                    if (tL_messages_sendMultiMedia.multi_media.get(i2).media == inputMedia2) {
-                                                        tL_messages_sendMultiMedia.multi_media.get(i2).media = tL_inputMediaDocument;
-                                                    } else {
-                                                        i2++;
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            if (tLObject3 instanceof TLRPC.TL_messages_sendMedia) {
-                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
-                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
-                                                    int i3 = 0;
-                                                    while (true) {
-                                                        if (i3 < tL_inputMediaPaidMedia.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia.extended_media.get(i3) == inputMedia2) {
-                                                                tL_inputMediaPaidMedia.extended_media.set(i3, tL_inputMediaDocument);
-                                                            } else {
-                                                                i3++;
-                                                            }
-                                                        }
-                                                    }
-                                                } else if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia4;
-                                                    ud8.k(tL_inputMediaPoll, ud8.a(tL_inputMediaPoll, inputMedia2), tL_inputMediaDocument);
-                                                }
-                                            }
-                                            if (tLObject3 instanceof TL_ephemeral.TL_sendMessage) {
-                                                TLRPC.InputMedia inputMedia5 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
-                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia5;
-                                                    int i4 = 0;
-                                                    while (true) {
-                                                        if (i4 < tL_inputMediaPaidMedia2.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i4) == inputMedia2) {
-                                                                tL_inputMediaPaidMedia2.extended_media.set(i4, tL_inputMediaDocument);
-                                                            } else {
-                                                                i4++;
-                                                            }
-                                                        }
-                                                    }
-                                                } else if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia5;
-                                                    ud8.k(tL_inputMediaPoll2, ud8.a(tL_inputMediaPoll2, inputMedia2), tL_inputMediaDocument);
-                                                }
-                                            }
-                                        }
-                                        z3aVar.s0(k3aVar3, false);
-                                        break;
-                                    }
-                                }
-                                tL_inputMediaDocument = null;
-                                k3a k3aVar32 = k3aVar;
-                                if (tL_inputMediaDocument != null) {
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final byte b2 = 1;
-                final z3a z3aVar2 = this.b;
-                final TLRPC.InputMedia inputMedia2 = this.c;
-                final k3a k3aVar2 = this.d;
-                gl.c3(new Runnable() { // from class: p2a
-                    /* JADX WARN: Multi-variable type inference failed */
-                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
-                    /* JADX WARN: Removed duplicated region for block: B:66:0x0145  */
-                    @Override // java.lang.Runnable
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void run() {
-                        TLRPC.PhotoSize photoSize;
-                        k27 k27Var;
-                        oac oacVar;
-                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
-                        TLRPC.InputDocument inputDocument;
-                        byte b22 = b2;
-                        TLRPC.InputMedia inputMedia22 = inputMedia2;
-                        TLObject tLObject2 = tLObject;
-                        switch (b22) {
-                            case 0:
-                                boolean z = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
-                                k3a k3aVar22 = k3aVar2;
-                                if (!z) {
-                                    k3aVar22.c();
-                                    break;
-                                } else {
-                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
-                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                                    tL_inputPhoto.id = photo.id;
-                                    tL_inputPhoto.access_hash = photo.access_hash;
-                                    tL_inputPhoto.file_reference = photo.file_reference;
-                                    if (inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia22.flags |= 64;
-                                        inputMedia22.video_cover = tL_inputPhoto;
-                                    } else if (inputMedia22 instanceof TLRPC.TL_inputMediaDocument) {
-                                        inputMedia22.flags |= 8;
-                                        inputMedia22.video_cover = tL_inputPhoto;
-                                    }
-                                    TLRPC.InputMedia inputMedia3 = k3aVar22.t;
-                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia3.flags |= 64;
-                                        inputMedia3.video_cover = tL_inputPhoto;
-                                    }
-                                    boolean z2 = k3aVar22.p;
-                                    z3a z3aVar22 = z3aVar2;
-                                    if (!z2 || inputMedia22.thumb != null || (photoSize = k3aVar22.g) == null || photoSize.location == null || ((k27Var = k3aVar22.m) != null && (oacVar = k27Var.r0) != null && oacVar.N)) {
-                                        z3aVar22.M(k3aVar22.c, k3aVar22.m, k3aVar22.f, k3aVar22, k3aVar22.K, null, k3aVar22.H);
-                                        break;
-                                    } else {
-                                        z3aVar22.L(k3aVar22, -1);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (tLObject2 != null) {
-                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
-                                    if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
-                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia22;
-                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
-                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
-                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
-                                        TLRPC.Photo photo2 = messageMedia.photo;
-                                        tL_inputPhoto2.id = photo2.id;
-                                        tL_inputPhoto2.access_hash = photo2.access_hash;
-                                        tL_inputPhoto2.file_reference = photo2.file_reference;
-                                        tL_inputMediaPhoto.spoiler = inputMedia22.spoiler;
-                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
-                                            tL_inputMediaPhoto.live_photo = true;
-                                            tL_inputMediaPhoto.video = inputDocument;
-                                        }
-                                        boolean z3 = w01.a;
-                                        fa4.b("set uploaded photo");
-                                        tL_inputMediaDocument = tL_inputMediaPhoto;
-                                    } else if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
-                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
-                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                                        tL_inputMediaDocument2.id = tL_inputDocument;
-                                        TLRPC.Document document = messageMedia.document;
-                                        tL_inputDocument.id = document.id;
-                                        tL_inputDocument.access_hash = document.access_hash;
-                                        tL_inputDocument.file_reference = document.file_reference;
-                                        tL_inputMediaDocument2.spoiler = inputMedia22.spoiler;
-                                        TLRPC.Photo photo3 = messageMedia.video_cover;
-                                        if (photo3 != null) {
-                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
-                                            tL_inputPhoto3.id = photo3.id;
-                                            tL_inputPhoto3.access_hash = photo3.access_hash;
-                                            tL_inputPhoto3.file_reference = photo3.file_reference;
-                                            tL_inputMediaDocument2.flags |= 8;
-                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
-                                        }
-                                        boolean z4 = w01.a;
-                                        fa4.b("set uploaded document");
-                                        tL_inputMediaDocument = tL_inputMediaDocument2;
-                                    }
-                                    k3a k3aVar32 = k3aVar2;
-                                    if (tL_inputMediaDocument != null) {
-                                        k3aVar32.c();
-                                        break;
-                                    } else {
-                                        int i = inputMedia22.ttl_seconds;
-                                        if (i != 0) {
-                                            tL_inputMediaDocument.ttl_seconds = i;
-                                            tL_inputMediaDocument.flags |= 1;
-                                        }
-                                        TLObject tLObject3 = k3aVar32.c;
-                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
-                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
-                                            int i2 = 0;
-                                            while (true) {
-                                                if (i2 < tL_messages_sendMultiMedia.multi_media.size()) {
-                                                    if (tL_messages_sendMultiMedia.multi_media.get(i2).media == inputMedia22) {
-                                                        tL_messages_sendMultiMedia.multi_media.get(i2).media = tL_inputMediaDocument;
-                                                    } else {
-                                                        i2++;
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            if (tLObject3 instanceof TLRPC.TL_messages_sendMedia) {
-                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
-                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
-                                                    int i3 = 0;
-                                                    while (true) {
-                                                        if (i3 < tL_inputMediaPaidMedia.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia.extended_media.get(i3) == inputMedia22) {
-                                                                tL_inputMediaPaidMedia.extended_media.set(i3, tL_inputMediaDocument);
-                                                            } else {
-                                                                i3++;
-                                                            }
-                                                        }
-                                                    }
-                                                } else if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia4;
-                                                    ud8.k(tL_inputMediaPoll, ud8.a(tL_inputMediaPoll, inputMedia22), tL_inputMediaDocument);
-                                                }
-                                            }
-                                            if (tLObject3 instanceof TL_ephemeral.TL_sendMessage) {
-                                                TLRPC.InputMedia inputMedia5 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
-                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia5;
-                                                    int i4 = 0;
-                                                    while (true) {
-                                                        if (i4 < tL_inputMediaPaidMedia2.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i4) == inputMedia22) {
-                                                                tL_inputMediaPaidMedia2.extended_media.set(i4, tL_inputMediaDocument);
-                                                            } else {
-                                                                i4++;
-                                                            }
-                                                        }
-                                                    }
-                                                } else if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia5;
-                                                    ud8.k(tL_inputMediaPoll2, ud8.a(tL_inputMediaPoll2, inputMedia22), tL_inputMediaDocument);
-                                                }
-                                            }
-                                        }
-                                        z3aVar2.s0(k3aVar32, false);
-                                        break;
-                                    }
-                                }
-                                tL_inputMediaDocument = null;
-                                k3a k3aVar322 = k3aVar2;
-                                if (tL_inputMediaDocument != null) {
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // ny0
+    public final c79 H0(d79 d79Var) {
+        l9c l9cVar = new l9c(d79Var, getContext(), this.a, 0, false, new hj8(this, (byte) 18), this.J0);
+        this.b2 = l9cVar;
+        l9cVar.r = false;
+        return l9cVar;
+    }
+
+    @Override // ny0
+    public final CharSequence K0() {
+        return ob6.M0(2131750208, null);
+    }
+
+    @Override // nx0
+    public final l2d Y(l2d l2dVar) {
+        this.c2 = hl.H0(l2dVar, false);
+        Z0();
+        return l2d.b;
+    }
+
+    public final void Z0() {
+        this.n1.setPadding(hl.L(9.0f) + this.c2.a + this.u0, 0, hl.L(9.0f) + this.c2.c + this.u0, this.c2.d);
+        mq5 mq5Var = this.c2;
+        int i = mq5Var.a;
+        int i2 = this.u0;
+        int i3 = mq5Var.c + i2;
+        int i4 = mq5Var.d;
+        this.W1.setPadding(i + i2, 0, i3, i4);
+    }
+
+    public final boolean a1() {
+        d79 d79Var = this.n1;
+        if (d79Var != null && d79Var.H) {
+            for (int i = 0; i < d79Var.getChildCount(); i++) {
+                if (d79Var.getChildAt(i) instanceof tk4) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        l9c l9cVar;
+        if (i != jn7.I3 || (l9cVar = this.b2) == null) {
+            return;
+        }
+        l9cVar.O(true);
+        if (a1()) {
+            this.T1.a();
+        }
+    }
+
+    @Override // nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        jn7.f(this.a).n(this, jn7.I3);
+        super.dismiss();
+    }
+
+    @Override // nx0
+    public final void p0() {
+        super.p0();
+        try {
+            oz4 oz4Var = this.Z1;
+            if (oz4Var != null) {
+                oz4Var.a(aob.v0(aob.d6, this.J0));
+            }
+            oz4 oz4Var2 = this.a2;
+            if (oz4Var2 != null) {
+                oz4Var2.a(aob.v0(aob.a7, this.J0));
+            }
+            int v0 = aob.v0(aob.a7, this.J0);
+            if (this.d2 && v0 == this.e2) {
+                return;
+            }
+            this.d2 = true;
+            this.e2 = v0;
+            s0(v0);
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 }

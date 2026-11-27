@@ -1,147 +1,195 @@
 // default package
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
+import j$.util.Objects;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public class s39 extends wec {
-    public final dha W;
-    public boolean a0;
-    public View b0;
-    public View c0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class s39 extends h44 {
+    public boolean A0;
+    public float B0;
+    public qma s0;
+    public z9b t0;
+    public z9b u0;
+    public p39 v0;
+    public p39 w0;
+    public w49 x0;
+    public mm y0;
+    public mm z0;
 
-    public s39(Context context, wjb wjbVar, dha dhaVar) {
-        super(context, wjbVar);
-        this.W = dhaVar;
-        setClipChildren(false);
-        setClipToPadding(false);
+    @Override // h44, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        qma qmaVar = this.s0;
+        int padding = getPadding();
+        float e = this.z0.e(false, 1.0f);
+        if (e == 1.0f) {
+            this.u0 = null;
+        }
+        canvas.save();
+        float f = this.B0;
+        canvas.scale(f, f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        z9b z9bVar = this.u0;
+        if (z9bVar != null) {
+            z9bVar.e = (int) ((1.0f - e) * 255.0f);
+            z9bVar.setBounds(padding, padding, ((int) qmaVar.a) - padding, ((int) qmaVar.b) - padding);
+            this.u0.draw(canvas);
+        }
+        z9b z9bVar2 = this.t0;
+        z9bVar2.e = (int) (e * 255.0f);
+        z9bVar2.setBounds(padding, padding, ((int) qmaVar.a) - padding, ((int) qmaVar.b) - padding);
+        this.t0.draw(canvas);
+        Rect rect = hl.Q;
+        float width = (this.t0.getBounds().width() * 0.61f) / 2.0f;
+        rect.set((int) (this.t0.getBounds().centerX() - width), (int) (this.t0.getBounds().centerY() - width), (int) (this.t0.getBounds().centerX() + width), (int) (this.t0.getBounds().centerY() + width));
+        float e2 = this.y0.e(false, 1.0f);
+        this.v0.c(rect);
+        this.w0.c(rect);
+        this.v0.d(this.t0.a == 1 ? -1 : -16777216);
+        if (e2 == 1.0f) {
+            this.v0.a(canvas);
+        } else {
+            canvas.save();
+            float f2 = 1.0f - e2;
+            canvas.scale(f2, f2, rect.centerX(), rect.top);
+            p39 p39Var = this.w0;
+            p39Var.h = f2;
+            p39Var.a(canvas);
+            canvas.restore();
+            canvas.save();
+            canvas.scale(e2, e2, rect.centerX(), rect.bottom);
+            p39 p39Var2 = this.v0;
+            p39Var2.h = e2;
+            p39Var2.a(canvas);
+            canvas.restore();
+        }
+        canvas.restore();
     }
 
-    @Override // wec
-    public final void A(int i) {
-        dha dhaVar = this.W;
-        dhaVar.g("PAGER_TAB_END");
-        dhaVar.s();
+    public w49 getCurrentReaction() {
+        return this.x0;
     }
 
-    @Override // wec
-    public final boolean B(MotionEvent motionEvent) {
-        boolean z = this.I;
-        boolean B = super.B(motionEvent);
-        if (z && !this.I && motionEvent != null && motionEvent.getActionMasked() == 2) {
-            View[] viewPages = getViewPages();
-            View view = viewPages[0];
-            View view2 = viewPages[1];
-            if (view != null && view2 != null && view.getTranslationX() == 0.0f && view.getMeasuredWidth() > 0 && Math.abs(view2.getTranslationX()) >= view.getMeasuredWidth()) {
-                this.b0 = view;
-                this.c0 = view2;
-                dha dhaVar = this.W;
-                dhaVar.g("PAGER_DRAG_ABORTED");
-                dhaVar.s();
+    @Override // h44
+    public float getMaxScale() {
+        return 1.8f;
+    }
+
+    @Override // h44
+    public float getMinScale() {
+        return 0.5f;
+    }
+
+    public int getPadding() {
+        return (int) ((this.s0.b - hl.L(84.0f)) / 2.0f);
+    }
+
+    @Override // h44
+    public a69 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new a69();
+        }
+        float scaleX = viewGroup.getScaleX();
+        float scale = (getScale() + 0.4f) * getMeasuredWidth();
+        float f = scale / 2.0f;
+        float f2 = scale * scaleX;
+        return new a69((getPositionX() - f) * scaleX, (getPositionY() - f) * scaleX, f2, f2);
+    }
+
+    @Override // h44
+    public final void k() {
+        qma qmaVar = this.s0;
+        float f = qmaVar.a / 2.0f;
+        float f2 = qmaVar.b / 2.0f;
+        setX(getPositionX() - f);
+        setY(getPositionY() - f2);
+        m();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.v0.b(true);
+        this.w0.b(true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.v0.b(false);
+        this.w0.b(false);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        qma qmaVar = this.s0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) qmaVar.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) qmaVar.b, TLObject.FLAG_30));
+    }
+
+    public final void q(boolean z) {
+        z9b z9bVar = this.t0;
+        if (z) {
+            this.u0 = z9bVar;
+            z9b z9bVar2 = new z9b(this);
+            this.t0 = z9bVar2;
+            if (this.u0.a != 1) {
+                z9bVar2.a();
             }
+            this.t0.b(this.A0, false);
+            this.t0.c(getScaleX());
+            this.z0.e(true, 0.0f);
+        } else {
+            z9bVar.a();
         }
-        return B;
-    }
-
-    @Override // wec
-    public final void F(View view, float f) {
-        if (view.getTranslationX() == f) {
-            return;
-        }
-        super.F(view, f);
         invalidate();
     }
 
-    public final void L(View view) {
-        this.b0 = null;
-        this.c0 = null;
-        dha dhaVar = this.W;
-        dhaVar.f("PAGE_BOUND", view, 0, 0, true);
-        if (dhaVar.P == null) {
+    public final void r(boolean z) {
+        boolean z2 = !this.A0;
+        this.A0 = z2;
+        if (!z) {
+            this.t0.b(z2, z);
             return;
         }
-        if (dhaVar.e0) {
-            dhaVar.i("page_bound");
-        }
-        RecyclerView h = dhaVar.P.h(view);
-        dhaVar.b(h);
-        dhaVar.P.t(h);
-        dhaVar.s();
+        boolean[] zArr = {false};
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new lk(this, zArr, (byte) 23));
+        ofFloat.addListener(new wd8((Object) this, (Object) zArr, (byte) 5));
+        ofFloat.setInterpolator(k43.g);
+        ofFloat.setDuration(350L);
+        ofFloat.start();
     }
 
-    public final void M(MotionEvent motionEvent) {
-        if (motionEvent == null || motionEvent.getActionMasked() != 0) {
+    public final void s(w49 w49Var, boolean z) {
+        if (Objects.equals(this.x0, w49Var)) {
             return;
         }
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        dha dhaVar = this.W;
-        boolean o = dhaVar.o(x, y);
-        this.a0 = o;
-        dhaVar.g(o ? "PAGER_DOWN_COMMON" : "PAGER_DOWN_PAGE");
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        int save = canvas.save();
-        float x = view.getX();
-        dha dhaVar = this.W;
-        canvas.clipRect(x, -dhaVar.getTopBleed(), view.getX() + view.getWidth(), dhaVar.getBottomBleed() + getHeight());
-        boolean drawChild = super.drawChild(canvas, view, j);
-        canvas.restoreToCount(save);
-        return drawChild;
-    }
-
-    @Override // wec
-    public final boolean g(MotionEvent motionEvent) {
-        return !this.a0 && this.W.c();
-    }
-
-    @Override // wec
-    public float getAvailableTranslationX() {
-        return Math.max(1, getMeasuredWidth());
-    }
-
-    @Override // wec, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        M(motionEvent);
-        return !this.a0 && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // wec, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        dha dhaVar = this.W;
-        if (motionEvent == null) {
-            dhaVar.g("PAGER_CANCEL_NULL");
-            this.a0 = false;
-            return B(null);
+        if (!z) {
+            this.x0 = w49Var;
+            this.v0.e(w49Var);
+            invalidate();
+            return;
         }
-        M(motionEvent);
-        if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            dhaVar.g(motionEvent.getActionMasked() == 1 ? "PAGER_UP" : "PAGER_CANCEL");
+        this.x0 = w49Var;
+        this.w0.e(w49Var);
+        p39 p39Var = this.v0;
+        this.v0 = this.w0;
+        this.w0 = p39Var;
+        this.y0.e(true, 0.0f);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setScaleX(float f) {
+        if (getScaleX() != f) {
+            super.setScaleX(f);
+            this.t0.c(f);
+            invalidate();
         }
-        return !this.a0 && B(motionEvent);
-    }
-
-    @Override // wec
-    public final void u() {
-        dha dhaVar = this.W;
-        dhaVar.g("PAGER_SCROLL_END");
-        dhaVar.s();
-    }
-
-    @Override // wec
-    public final void v() {
-        this.b0 = null;
-        this.c0 = null;
-    }
-
-    @Override // wec
-    public final void w(boolean z) {
-        this.W.s();
     }
 }

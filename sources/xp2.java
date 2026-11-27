@@ -1,19 +1,45 @@
 // default package
 
-import java.util.Set;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface xp2 {
-    Object a(Class cls);
+public final class xp2 implements zw2 {
+    public static final xp2 b = new xp2(0);
+    public static final xp2 c = new xp2(1);
+    public final /* synthetic */ byte a;
 
-    Set c(xw8 xw8Var);
+    public /* synthetic */ xp2(byte b2) {
+        this.a = b2;
+    }
 
-    mt8 d(Class cls);
+    @Override // zw2
+    public final mx2 getContext() {
+        switch (this.a) {
+            case 0:
+                throw new IllegalStateException("This continuation is already complete");
+            default:
+                return u24.a;
+        }
+    }
 
-    vq7 e(xw8 xw8Var);
+    @Override // zw2
+    public final void resumeWith(Object obj) {
+        switch (this.a) {
+            case 0:
+                throw new IllegalStateException("This continuation is already complete");
+            default:
+                return;
+        }
+    }
 
-    mt8 g(xw8 xw8Var);
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                return "This continuation is already complete";
+            default:
+                return super.toString();
+        }
+    }
 
-    Object i(xw8 xw8Var);
+    private final void a(Object obj) {
+    }
 }

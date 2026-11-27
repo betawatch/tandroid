@@ -1,138 +1,62 @@
 // default package
 
 import android.content.Context;
-import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.graphics.Path;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
+import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oc2 extends d implements gk7 {
-    public vy8 E;
-    public final ArrayList F;
-    public TLRPC.Chat a;
-    public TLRPC.ChatFull b;
-    public final long c;
-    public ArrayList d;
-    public FrameLayout e;
-    public o39 f;
-    public nc2 h;
-    public final ArrayList n;
-    public LinearLayout r;
-    public int s;
-    public byte w;
-    public vy8 x;
-    public vy8 y;
+public final class oc2 {
+    public final b8 a;
+    public final b8 b;
+    public final b8 c;
+    public final b8 d;
+    public final b8 e;
+    public final mc2 f;
+    public final int g;
+    public n8 h;
+    public final nc2 i;
+    public long j;
+    public int k;
+    public int l;
+    public final FrameLayout m;
+    public final TextView n;
+    public boolean o;
 
-    public oc2(Bundle bundle) {
-        super(bundle);
-        this.d = new ArrayList();
-        this.n = new ArrayList();
-        this.s = -1;
-        this.F = new ArrayList();
-        this.c = bundle.getLong("chat_id", 0L);
-    }
-
-    public final void Z(int i, boolean z) {
-        if (this.s != i) {
-            this.s = i;
-            int i2 = 0;
-            while (true) {
-                ArrayList arrayList = this.F;
-                boolean z2 = true;
-                if (i2 >= arrayList.size()) {
-                    break;
-                }
-                vy8 vy8Var = (vy8) arrayList.get(i2);
-                if (i != i2) {
-                    z2 = false;
-                }
-                vy8Var.a(z2, z);
-                i2++;
-            }
-            ArrayList arrayList2 = this.n;
-            if (i == 1) {
-                if (z) {
-                    this.d.clear();
-                    int size = arrayList2.size();
-                    int i3 = 0;
-                    while (i3 < size) {
-                        Object obj = arrayList2.get(i3);
-                        i3++;
-                        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) obj;
-                        if (tL_availableReaction.reaction.equals("👍") || tL_availableReaction.reaction.equals("👎")) {
-                            this.d.add(tL_availableReaction.reaction);
-                        }
-                    }
-                    if (this.d.isEmpty() && arrayList2.size() >= 2) {
-                        this.d.add(((TLRPC.TL_availableReaction) arrayList2.get(0)).reaction);
-                        this.d.add(((TLRPC.TL_availableReaction) arrayList2.get(1)).reaction);
-                    }
-                }
-                nc2 nc2Var = this.h;
-                if (nc2Var != null && z) {
-                    nc2Var.p(2, arrayList2.size() + 1);
-                }
-            } else if (!this.d.isEmpty()) {
-                this.d.clear();
-                nc2 nc2Var2 = this.h;
-                if (nc2Var2 != null && z) {
-                    nc2Var2.q(2, arrayList2.size() + 1);
-                }
-            }
-            nc2 nc2Var3 = this.h;
-            if (nc2Var3 != null && z) {
-                nc2Var3.g(1);
-            }
-            nc2 nc2Var4 = this.h;
-            if (nc2Var4 == null || z) {
-                return;
-            }
-            nc2Var4.f();
+    public oc2(Context context, int i, fj8 fj8Var, boolean z, final nc2 nc2Var, vnb vnbVar) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
+        final byte b;
+        Integer num;
+        this.g = i;
+        this.i = nc2Var;
+        mc2 mc2Var = new mc2(context, z ? R.drawable.popup_fixed_alert : 0, vnbVar, 0, (byte) 0);
+        mc2Var.V = new Path();
+        this.f = mc2Var;
+        mc2Var.setFitItems(true);
+        if (fj8Var != null) {
+            num = 1;
+            actionBarPopupWindow$ActionBarPopupWindowLayout = mc2Var;
+            b = 1;
+            b8 c = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, ob6.M0(2131753749, null), false, vnbVar);
+            this.a = c;
+            c.setOnClickListener(new y60(fj8Var, (byte) 1));
+        } else {
+            actionBarPopupWindow$ActionBarPopupWindowLayout = mc2Var;
+            b = 1;
+            num = 1;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        final byte b = 1;
-        setHasOwnBackground(true);
-        this.simpleActionBar.setTitle(k96.M0(2131746194, null));
-        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setActionBarMenuOnItemClick(new r8(this, (byte) 26));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.n.addAll(getMediaDataController().n);
-        ld5 ld5Var = new ld5(context);
-        ld5Var.setText(k96.M0(2131753756, null));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.r = linearLayout;
-        linearLayout.setOrientation(1);
-        this.r.setClickable(true);
-        vy8 vy8Var = new vy8(context, null);
-        this.x = vy8Var;
+        b8 c2 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_tone_on, ob6.M0(2131745003, null), false, vnbVar);
+        this.b = c2;
         final byte b2 = 0;
-        vy8Var.c(k96.M0(2131754288, null), false, true);
-        vy8 vy8Var2 = new vy8(context, null);
-        this.y = vy8Var2;
-        vy8Var2.c(k96.M0(2131745100, null), false, true);
-        vy8 vy8Var3 = new vy8(context, null);
-        this.E = vy8Var3;
-        vy8Var3.c(k96.M0(2131747983, null), false, false);
-        this.r.addView(ld5Var, nme.o(-1, -2));
-        this.r.addView(this.x, nme.o(-1, -2));
-        this.r.addView(this.y, nme.o(-1, -2));
-        this.r.addView(this.E, nme.o(-1, -2));
-        ArrayList arrayList = this.F;
-        arrayList.clear();
-        arrayList.add(this.x);
-        arrayList.add(this.y);
-        arrayList.add(this.E);
-        this.x.setOnClickListener(new View.OnClickListener(this) { // from class: lc2
+        c2.setOnClickListener(new View.OnClickListener(this) { // from class: kc2
             public final /* synthetic */ oc2 b;
 
             {
@@ -142,75 +66,39 @@ public final class oc2 extends d implements gk7 {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 byte b3 = b2;
-                final oc2 oc2Var = this.b;
+                nc2 nc2Var2 = nc2Var;
+                oc2 oc2Var = this.b;
                 switch (b3) {
                     case 0:
-                        final byte b4 = 2;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b5 = b4;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b5) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        oc2Var.a();
+                        nc2Var2.p();
                         break;
                     case 1:
-                        final byte b5 = 1;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b5;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.l);
+                        break;
+                    case 2:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.k);
+                        break;
+                    case 3:
+                        oc2Var.a();
+                        nc2Var2.m();
+                        break;
+                    case 4:
+                        oc2Var.a();
+                        hl.c3(new go1(nc2Var2, (byte) 28));
                         break;
                     default:
-                        final byte b6 = 0;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b6;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        nc2Var2.i();
+                        oc2Var.a();
                         break;
                 }
             }
         });
-        this.y.setOnClickListener(new View.OnClickListener(this) { // from class: lc2
+        b8 c3 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, ob6.M0(2131748065, null), false, vnbVar);
+        this.d = c3;
+        c3.setOnClickListener(new View.OnClickListener(this) { // from class: kc2
             public final /* synthetic */ oc2 b;
 
             {
@@ -220,76 +108,40 @@ public final class oc2 extends d implements gk7 {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 byte b3 = b;
-                final oc2 oc2Var = this.b;
+                nc2 nc2Var2 = nc2Var;
+                oc2 oc2Var = this.b;
                 switch (b3) {
                     case 0:
-                        final byte b4 = 2;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b4;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        oc2Var.a();
+                        nc2Var2.p();
                         break;
                     case 1:
-                        final byte b5 = 1;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b5;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.l);
+                        break;
+                    case 2:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.k);
+                        break;
+                    case 3:
+                        oc2Var.a();
+                        nc2Var2.m();
+                        break;
+                    case 4:
+                        oc2Var.a();
+                        hl.c3(new go1(nc2Var2, (byte) 28));
                         break;
                     default:
-                        final byte b6 = 0;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b6;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        nc2Var2.i();
+                        oc2Var.a();
                         break;
                 }
             }
         });
+        b8 c4 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_1h, ob6.M0(2131748065, null), false, vnbVar);
+        this.e = c4;
         final byte b3 = 2;
-        this.E.setOnClickListener(new View.OnClickListener(this) { // from class: lc2
+        c4.setOnClickListener(new View.OnClickListener(this) { // from class: kc2
             public final /* synthetic */ oc2 b;
 
             {
@@ -299,191 +151,332 @@ public final class oc2 extends d implements gk7 {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 byte b32 = b3;
-                final oc2 oc2Var = this.b;
+                nc2 nc2Var2 = nc2Var;
+                oc2 oc2Var = this.b;
                 switch (b32) {
                     case 0:
-                        final byte b4 = 2;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b4;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        oc2Var.a();
+                        nc2Var2.p();
                         break;
                     case 1:
-                        final byte b5 = 1;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b5;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.l);
+                        break;
+                    case 2:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.k);
+                        break;
+                    case 3:
+                        oc2Var.a();
+                        nc2Var2.m();
+                        break;
+                    case 4:
+                        oc2Var.a();
+                        hl.c3(new go1(nc2Var2, (byte) 28));
                         break;
                     default:
-                        final byte b6 = 0;
-                        gl.c3(new Runnable() { // from class: mc2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b52 = b6;
-                                oc2 oc2Var2 = oc2Var;
-                                switch (b52) {
-                                    case 0:
-                                        oc2Var2.Z(2, true);
-                                        break;
-                                    case 1:
-                                        oc2Var2.Z(1, true);
-                                        break;
-                                    default:
-                                        oc2Var2.Z(0, true);
-                                        break;
-                                }
-                            }
-                        });
+                        nc2Var2.i();
+                        oc2Var.a();
                         break;
                 }
             }
         });
-        vy8 vy8Var4 = this.x;
-        int i = bkb.c6;
-        int w0 = bkb.w0(null, i, false);
-        int i2 = bkb.h6;
-        zkb.R(vy8Var4, bkb.g0(w0, bkb.w0(null, i2, false)), zkb.M(i), zkb.M(i2), null);
-        zkb.R(this.y, bkb.g0(bkb.w0(null, i, false), bkb.w0(null, i2, false)), zkb.M(i), zkb.M(i2), null);
-        zkb.R(this.E, bkb.g0(bkb.w0(null, i, false), bkb.w0(null, i2, false)), zkb.M(i), zkb.M(i2), null);
-        Z(this.w, false);
-        o39 o39Var = new o39(context, null);
-        this.f = o39Var;
-        o39Var.setLayoutManager(new t26());
-        o39 o39Var2 = this.f;
-        nc2 nc2Var = new nc2(this, context);
-        this.h = nc2Var;
-        o39Var2.setAdapter(nc2Var);
-        this.f.setOnItemClickListener(new u(this, (byte) 11));
-        frameLayout.addView(this.f, nme.g());
-        this.f.r1();
-        this.f.setSectionsDrawBackground(true);
-        this.e = frameLayout;
-        this.fragmentView = frameLayout;
-        this.h.f();
-        return this.e;
-    }
+        Integer num2 = num;
+        byte b4 = b;
+        s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute_period, ob6.M0(2131748062, null), false, vnbVar).setOnClickListener(new lc2(this, context, vnbVar, i, nc2Var, (byte) 0));
+        final byte b5 = 3;
+        s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, ob6.M0(2131747644, null), false, vnbVar).setOnClickListener(new View.OnClickListener(this) { // from class: kc2
+            public final /* synthetic */ oc2 b;
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i2 == this.currentAccount) {
-            if (i == kk7.X4) {
-                ArrayList arrayList = this.n;
-                arrayList.clear();
-                arrayList.addAll(getMediaDataController().n);
-                this.h.f();
-                return;
+            {
+                this.b = this;
             }
-            if (i == kk7.x1 && ((Long) objArr[0]).longValue() == (-this.c)) {
-                ui5 ui5Var = this.parentLayout;
-                if (ui5Var == null || ui5Var.getLastFragment() != this) {
-                    removeSelfFromStack();
-                } else {
-                    finishFragment();
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b32 = b5;
+                nc2 nc2Var2 = nc2Var;
+                oc2 oc2Var = this.b;
+                switch (b32) {
+                    case 0:
+                        oc2Var.a();
+                        nc2Var2.p();
+                        break;
+                    case 1:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.l);
+                        break;
+                    case 2:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.k);
+                        break;
+                    case 3:
+                        oc2Var.a();
+                        nc2Var2.m();
+                        break;
+                    case 4:
+                        oc2Var.a();
+                        hl.c3(new go1(nc2Var2, (byte) 28));
+                        break;
+                    default:
+                        nc2Var2.i();
+                        oc2Var.a();
+                        break;
                 }
             }
+        });
+        b8 c5 = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, "", false, vnbVar);
+        this.c = c5;
+        final byte b6 = 4;
+        c5.setOnClickListener(new View.OnClickListener(this) { // from class: kc2
+            public final /* synthetic */ oc2 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b32 = b6;
+                nc2 nc2Var2 = nc2Var;
+                oc2 oc2Var = this.b;
+                switch (b32) {
+                    case 0:
+                        oc2Var.a();
+                        nc2Var2.p();
+                        break;
+                    case 1:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.l);
+                        break;
+                    case 2:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.k);
+                        break;
+                    case 3:
+                        oc2Var.a();
+                        nc2Var2.m();
+                        break;
+                    case 4:
+                        oc2Var.a();
+                        hl.c3(new go1(nc2Var2, (byte) 28));
+                        break;
+                    default:
+                        nc2Var2.i();
+                        oc2Var.a();
+                        break;
+                }
+            }
+        });
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.m = frameLayout;
+        yob.h(aob.H8, vnbVar, frameLayout);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout, tre.o(-1, 8));
+        TextView textView = new TextView(context);
+        this.n = textView;
+        textView.setPadding(hl.L(13.0f), hl.L(8.0f), hl.L(13.0f), hl.L(8.0f));
+        textView.setTextSize(b4, 13.0f);
+        yob.X(textView, aob.E8, vnbVar);
+        frameLayout.setTag(R.id.fit_width_tag, num2);
+        textView.setTag(R.id.fit_width_tag, num2);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, tre.o(-2, -2));
+        int i2 = aob.I5;
+        hf0 Y = aob.Y(aob.v0(i2, vnbVar), 0, 6);
+        uob M = yob.M(i2);
+        textView.setBackground(Y);
+        yob.j(textView, Y, null, M, vnbVar);
+        final byte b7 = 5;
+        textView.setOnClickListener(new View.OnClickListener(this) { // from class: kc2
+            public final /* synthetic */ oc2 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b32 = b7;
+                nc2 nc2Var2 = nc2Var;
+                oc2 oc2Var = this.b;
+                switch (b32) {
+                    case 0:
+                        oc2Var.a();
+                        nc2Var2.p();
+                        break;
+                    case 1:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.l);
+                        break;
+                    case 2:
+                        oc2Var.a();
+                        nc2Var2.q(oc2Var.k);
+                        break;
+                    case 3:
+                        oc2Var.a();
+                        nc2Var2.m();
+                        break;
+                    case 4:
+                        oc2Var.a();
+                        hl.c3(new go1(nc2Var2, (byte) 28));
+                        break;
+                    default:
+                        nc2Var2.i();
+                        oc2Var.a();
+                        break;
+                }
+            }
+        });
+    }
+
+    public static String b(int i) {
+        StringBuilder sb = new StringBuilder();
+        int i2 = i / 86400;
+        int i3 = i - (86400 * i2);
+        int i4 = i3 / 3600;
+        int i5 = (i3 - (i4 * 3600)) / 60;
+        if (i2 != 0) {
+            sb.append(i2);
+            sb.append(ob6.M0(2131745420, null));
+        }
+        if (i4 != 0) {
+            if (sb.length() > 0) {
+                sb.append(" ");
+            }
+            sb.append(i4);
+            sb.append(ob6.M0(2131745419, null));
+        }
+        if (i5 != 0) {
+            if (sb.length() > 0) {
+                sb.append(" ");
+            }
+            sb.append(i5);
+            sb.append(ob6.M0(2131745418, null));
+        }
+        return ob6.a0("MuteForButton", null, 2131748063, sb.toString());
+    }
+
+    public static void c(b8 b8Var, int i) {
+        int w0 = aob.w0(null, i, false);
+        b8Var.c(i, i);
+        b8Var.h(0.1f, i);
+        if (b8Var.getTextView() == null || b8Var.getTextView().getCurrentTextColor() != w0) {
+            b8Var.d(w0, w0);
+            b8Var.setSelectorColor(aob.p1(0.1f, w0));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
-        return this.f;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final ArrayList getThemeDescriptions() {
-        return hue.a(new t00(this, (byte) 4), bkb.c6, bkb.F6, bkb.y6, bkb.h6, bkb.Z6, bkb.A6, bkb.o7, bkb.e6, bkb.f6, bkb.N6, bkb.O6, bkb.P6, bkb.Q6);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        na7 messagesController = getMessagesController();
-        long j = this.c;
-        TLRPC.Chat K0 = messagesController.K0(Long.valueOf(j));
-        this.a = K0;
-        if (K0 == null) {
-            TLRPC.Chat O = ad7.Y(this.currentAccount).O(j);
-            this.a = O;
-            if (O == null) {
-                return false;
-            }
-            getMessagesController().T3(this.a, true);
-            if (this.b == null) {
-                TLRPC.ChatFull C0 = ad7.Y(this.currentAccount).C0(this.c, hc2.T(this.a), new CountDownLatch(1), false, false, 0);
-                this.b = C0;
-                if (C0 == null) {
-                    return false;
-                }
-            }
+    public final void a() {
+        n8 n8Var = this.h;
+        if (n8Var != null) {
+            n8Var.d(true);
+            this.h.d(true);
         }
-        getNotificationCenter().b(this, kk7.X4);
-        getNotificationCenter().b(this, kk7.x1);
-        return super.onFragmentCreate();
+        this.i.dismiss();
+        this.j = System.currentTimeMillis();
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        na7 messagesController = getMessagesController();
-        int i = this.s;
-        ArrayList arrayList = this.d;
-        messagesController.getClass();
-        TLRPC.TL_messages_setChatAvailableReactions tL_messages_setChatAvailableReactions = new TLRPC.TL_messages_setChatAvailableReactions();
-        long j = this.c;
-        tL_messages_setChatAvailableReactions.peer = messagesController.h1(-j);
-        if (i == 2) {
-            tL_messages_setChatAvailableReactions.available_reactions = new TLRPC.TL_chatReactionsNone();
-        } else if (i == 0) {
-            tL_messages_setChatAvailableReactions.available_reactions = new TLRPC.TL_chatReactionsAll();
+    public final void d(e eVar, View view, float f, float f2, boolean z) {
+        float measuredWidth;
+        float measuredHeight;
+        if (eVar.getFragmentView() != null) {
+            mc2 mc2Var = this.f;
+            n8 n8Var = new n8(mc2Var, -2, -2);
+            this.h = n8Var;
+            n8Var.e = true;
+            n8Var.c = (short) 220;
+            n8Var.setOutsideTouchable(true);
+            this.h.setClippingEnabled(true);
+            this.h.setAnimationStyle(R.style.PopupContextAnimation);
+            this.h.setFocusable(true);
+            mc2Var.measure(View.MeasureSpec.makeMeasureSpec(hl.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(hl.L(1000.0f), TLObject.FLAG_31));
+            this.h.setInputMethodMode(2);
+            this.h.getContentView().setFocusableInTouchMode(true);
+            while (view != eVar.getFragmentView()) {
+                if (view.getParent() == null) {
+                    return;
+                }
+                f += view.getX();
+                f2 += view.getY();
+                view = (View) view.getParent();
+            }
+            if (z) {
+                measuredWidth = f - hl.N(8.0f);
+                measuredHeight = hl.N(16.0f);
+            } else {
+                measuredWidth = f - (mc2Var.getMeasuredWidth() / 2.0f);
+                measuredHeight = mc2Var.getMeasuredHeight() / 2.0f;
+            }
+            this.h.showAtLocation(eVar.getFragmentView(), 0, (int) measuredWidth, (int) (f2 - measuredHeight));
+            this.h.b();
+        }
+    }
+
+    public final void e(long j, long j2, HashSet hashSet) {
+        int i;
+        int i2;
+        int i3;
+        if (System.currentTimeMillis() - this.j < 200) {
+            hl.c3(new o30((Object) this, j, j2, (Object) hashSet, (byte) 1));
+            return;
+        }
+        int i4 = this.g;
+        boolean p2 = uc7.s1(i4).p2(j, j2, null);
+        b8 b8Var = this.c;
+        b8 b8Var2 = this.b;
+        if (p2) {
+            b8Var.j(ob6.M0(2131743503, null), R.drawable.msg_unmute, null);
+            i = aob.x6;
+            b8Var2.setVisibility(8);
         } else {
-            TLRPC.TL_chatReactionsSome tL_chatReactionsSome = new TLRPC.TL_chatReactionsSome();
-            tL_messages_setChatAvailableReactions.available_reactions = tL_chatReactionsSome;
-            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
-                tL_reactionEmoji.emoticon = (String) arrayList.get(i2);
-                tL_chatReactionsSome.reactions.add(tL_reactionEmoji);
+            b8Var.j(ob6.M0(2131748060, null), R.drawable.msg_mute, null);
+            int i5 = aob.q7;
+            b8Var2.setVisibility(0);
+            if (uc7.s1(i4).q2(j, j2)) {
+                b8Var2.j(ob6.M0(2131745005, null), R.drawable.msg_tone_off, null);
+            } else {
+                b8Var2.j(ob6.M0(2131745003, null), R.drawable.msg_tone_on, null);
             }
+            i = i5;
         }
-        messagesController.getConnectionsManager().sendRequest(tL_messages_setChatAvailableReactions, new w47(messagesController, j, tL_messages_setChatAvailableReactions, (byte) 6));
-        getNotificationCenter().n(this, kk7.X4);
-        getNotificationCenter().n(this, kk7.x1);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        return true;
+        if (this.o) {
+            this.a.setVisibility(8);
+        }
+        if (p2 || this.o) {
+            i2 = 0;
+            i3 = 0;
+        } else {
+            SharedPreferences sharedPreferences = uc7.s1(i4).W3;
+            i3 = sharedPreferences.getInt("last_selected_mute_until_time", 0);
+            i2 = sharedPreferences.getInt("last_selected_mute_until_time2", 0);
+        }
+        b8 b8Var3 = this.d;
+        if (i3 != 0) {
+            this.l = i3;
+            b8Var3.setVisibility(0);
+            b8Var3.getImageView().setImageDrawable(rsb.a(i3));
+            b8Var3.setText(b(i3));
+        } else {
+            b8Var3.setVisibility(8);
+        }
+        b8 b8Var4 = this.e;
+        if (i2 != 0) {
+            this.k = i2;
+            b8Var4.setVisibility(0);
+            b8Var4.getImageView().setImageDrawable(rsb.a(i2));
+            b8Var4.setText(b(i2));
+        } else {
+            b8Var4.setVisibility(8);
+        }
+        c(b8Var, i);
+        FrameLayout frameLayout = this.m;
+        TextView textView = this.n;
+        if (hashSet == null || hashSet.isEmpty()) {
+            frameLayout.setVisibility(8);
+            textView.setVisibility(8);
+        } else {
+            frameLayout.setVisibility(0);
+            textView.setVisibility(0);
+            textView.setText(hl.N2(ob6.G(hashSet.size(), "TopicNotificationsExceptions", new Object[0]), aob.n6, 1, null, null));
+        }
     }
 }

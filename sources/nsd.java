@@ -1,19 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class nsd implements zn7 {
-    public static final nsd a = new nsd();
-
-    static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+public final class nsd extends krd {
+    @Override // krd
+    public final void a(long j, Object obj) {
+        ((wed) ((dpd) k4e.l(j, obj))).a = false;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // krd
+    public final void b(mnd mndVar, mnd mndVar2, long j) {
+        dpd dpdVar = (dpd) k4e.l(j, mndVar);
+        dpd dpdVar2 = (dpd) k4e.l(j, mndVar2);
+        int size = dpdVar.size();
+        int size2 = dpdVar2.size();
+        if (size > 0 && size2 > 0) {
+            if (!((wed) dpdVar).a) {
+                dpdVar = dpdVar.f(size2 + size);
+            }
+            dpdVar.addAll(dpdVar2);
         }
-        throw null;
+        if (size > 0) {
+            dpdVar2 = dpdVar;
+        }
+        k4e.d(j, mndVar, dpdVar2);
     }
 }

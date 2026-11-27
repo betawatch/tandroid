@@ -1,38 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class b90 extends wy2 {
-    public final String a;
-    public final int b;
-    public final int c;
-    public final boolean d;
+public final class b90 {
+    public long a;
+    public String b;
+    public String c;
+    public long d;
+    public int e;
+    public byte f;
 
-    public b90(int i, int i2, String str, boolean z) {
-        this.a = str;
-        this.b = i;
-        this.c = i2;
-        this.d = z;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final c90 a() {
+        String str;
+        if (this.f == 7 && (str = this.b) != null) {
+            return new c90(str, this.e, this.c, this.a, this.d);
         }
-        if (obj instanceof wy2) {
-            b90 b90Var = (b90) ((wy2) obj);
-            if (this.a.equals(b90Var.a) && this.b == b90Var.b && this.c == b90Var.c && this.d == b90Var.d) {
-                return true;
-            }
+        StringBuilder sb = new StringBuilder();
+        if ((this.f & 1) == 0) {
+            sb.append(" pc");
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003) ^ (this.d ? 1231 : 1237);
-    }
-
-    public final String toString() {
-        return "ProcessDetails{processName=" + this.a + ", pid=" + this.b + ", importance=" + this.c + ", defaultProcess=" + this.d + "}";
+        if (this.b == null) {
+            sb.append(" symbol");
+        }
+        if ((this.f & 2) == 0) {
+            sb.append(" offset");
+        }
+        if ((this.f & 4) == 0) {
+            sb.append(" importance");
+        }
+        grb.i(bs2.o("Missing required properties:", sb));
+        return null;
     }
 }

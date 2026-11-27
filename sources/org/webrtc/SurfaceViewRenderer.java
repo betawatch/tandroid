@@ -11,7 +11,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -89,7 +89,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb.append(", frame size: ");
         sb.append(this.rotatedFrameWidth);
         sb.append("x");
-        ir2.w(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        bs2.w(sb, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb.append(min2);
         sb.append(", old surface size: ");
         sb.append(this.surfaceWidth);
@@ -147,7 +147,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         if (i3 == 0 || i3 == 180) {
             i = i2;
         }
-        postOrRun(new bt((Object) this, i4, i, (byte) 16));
+        postOrRun(new bt((Object) this, i4, i, (byte) 15));
     }
 
     @Override // android.view.View
@@ -160,7 +160,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
     @Override // android.view.SurfaceView, android.view.View
     public void onMeasure(int i, int i2) {
         ThreadUtils.checkIsOnMainThread();
-        Point measure = this.videoLayoutMeasure.measure(true, i, i2, this.rotatedFrameWidth, this.rotatedFrameHeight);
+        Point measure = this.videoLayoutMeasure.measure(i, i2, this.rotatedFrameWidth, this.rotatedFrameHeight);
         setMeasuredDimension(measure.x, measure.y);
         logD("onMeasure(). New size: " + measure.x + "x" + measure.y);
     }
@@ -228,10 +228,6 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         this.eglRenderer = surfaceEglRenderer;
         getHolder().addCallback(this);
         getHolder().addCallback(surfaceEglRenderer);
-    }
-
-    @Override // org.webrtc.VideoSink
-    public final void setParentSink(VideoSink videoSink) {
     }
 
     @Override // android.view.SurfaceHolder.Callback

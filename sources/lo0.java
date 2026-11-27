@@ -15,18 +15,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class lo0 extends iz4 implements gk7 {
+public final class lo0 extends m15 implements fn7 {
     public final long S;
     public final int T;
     public TL_stories.TL_premium_boostsStatus U;
-    public ng1 V;
+    public wg1 V;
     public ScrollSlidingTextTabStrip W;
     public final ArrayList X;
     public final ArrayList Y;
@@ -49,7 +49,7 @@ public final class lo0 extends iz4 implements gk7 {
     public int p0;
 
     public lo0(long j) {
-        int i = y6c.t0;
+        int i = yac.t0;
         this.T = i;
         this.X = new ArrayList();
         this.Y = new ArrayList();
@@ -61,13 +61,13 @@ public final class lo0 extends iz4 implements gk7 {
         this.m0 = (byte) 5;
         this.n0 = (byte) 5;
         this.S = j;
-        this.j0 = na7.q1(i).K0(Long.valueOf(-j));
+        this.j0 = uc7.s1(i).M0(Long.valueOf(-j));
     }
 
-    public final void D0(Context context, View view, int i) {
-        if (view instanceof uv4) {
-            uv4 uv4Var = (uv4) view;
-            TL_stories.Boost boost = uv4Var.getBoost();
+    public final void E0(Context context, View view, int i) {
+        if (view instanceof zx4) {
+            zx4 zx4Var = (zx4) view;
+            TL_stories.Boost boost = zx4Var.getBoost();
             boolean z = boost.giveaway;
             if (!z || boost.stars <= 0) {
                 boolean z2 = boost.gift;
@@ -75,7 +75,7 @@ public final class lo0 extends iz4 implements gk7 {
                     TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
                     tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
                     tL_payments_checkedGiftCode.to_id = boost.user_id;
-                    tL_payments_checkedGiftCode.from_id = na7.q1(y6c.t0).w1(-this.j0.id);
+                    tL_payments_checkedGiftCode.from_id = uc7.s1(yac.t0).y1(-this.j0.id);
                     int i2 = boost.date;
                     tL_payments_checkedGiftCode.date = i2;
                     tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
@@ -88,54 +88,54 @@ public final class lo0 extends iz4 implements gk7 {
                     } else {
                         tL_payments_checkedGiftCode.boost = boost;
                     }
-                    new pt4(this, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                    new tv4(this, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                 } else if (z && boost.user_id == -1) {
-                    t11 t11Var = new t11(getParentActivity(), getResourceProvider());
-                    t11Var.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                    t11Var.b.setText(k96.M0(2131753300, null));
-                    t11Var.b.setSingleLine(false);
-                    t11Var.b.setMaxLines(2);
-                    m21.g(this, t11Var, 2750).j();
+                    c21 c21Var = new c21(getParentActivity(), getResourceProvider());
+                    c21Var.g(R.raw.chats_infotip, 36, 36, new String[0]);
+                    c21Var.b.setText(ob6.M0(2131753296, null));
+                    c21Var.b.setSingleLine(false);
+                    c21Var.b.setMaxLines(2);
+                    v21.g(this, c21Var, 2750).j();
                 } else if (!z2 && !z) {
-                    presentFragment(ProfileActivity.P2(uv4Var.getDialogId()));
+                    presentFragment(ProfileActivity.Q2(zx4Var.getDialogId()));
                 }
             } else {
-                jva.h1(context, this.T, this.S, boost, getResourceProvider());
+                nza.i1(context, this.T, this.S, boost, getResourceProvider());
             }
         }
-        boolean z3 = view instanceof wgb;
+        boolean z3 = view instanceof skb;
         long j = this.S;
         if (z3) {
-            dn0.D0(this, this.resourceProvider, j, null);
+            dn0.E0(this, this.resourceProvider, j, null);
         }
-        if (view instanceof xv4) {
-            dn0.D0(this, this.resourceProvider, j, ((xv4) view).getPrepaidGiveaway());
+        if (view instanceof cy4) {
+            dn0.E0(this, this.resourceProvider, j, ((cy4) view).getPrepaidGiveaway());
         }
         if (((ko0) this.d0.get(i)).a == 9) {
-            G0(Boolean.valueOf(this.e0 == 1));
+            H0(Boolean.valueOf(this.e0 == 1));
         }
     }
 
-    public final void E0(CountDownLatch countDownLatch, bo0 bo0Var) {
+    public final void F0(CountDownLatch countDownLatch, bo0 bo0Var) {
         TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
         tL_premium_getBoostsList.limit = this.n0;
         tL_premium_getBoostsList.offset = this.k0;
         int i = this.T;
-        tL_premium_getBoostsList.peer = na7.q1(i).h1(this.S);
-        ConnectionsManager.getInstance(i).sendRequest(tL_premium_getBoostsList, new en0((Object) this, (Object) countDownLatch, (Object) bo0Var, (byte) 4), 2);
+        tL_premium_getBoostsList.peer = uc7.s1(i).j1(this.S);
+        ConnectionsManager.getInstance(i).sendRequest(tL_premium_getBoostsList, new fn0((Object) this, (Object) countDownLatch, (Object) bo0Var, (byte) 4), 2);
     }
 
-    public final void F0(CountDownLatch countDownLatch, bo0 bo0Var) {
+    public final void G0(CountDownLatch countDownLatch, bo0 bo0Var) {
         TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
         tL_premium_getBoostsList.limit = this.m0;
         tL_premium_getBoostsList.gifts = true;
         tL_premium_getBoostsList.offset = this.l0;
         int i = this.T;
-        tL_premium_getBoostsList.peer = na7.q1(i).h1(this.S);
-        ConnectionsManager.getInstance(i).sendRequest(tL_premium_getBoostsList, new en0((Object) this, (Object) countDownLatch, (Object) bo0Var, (byte) 5), 2);
+        tL_premium_getBoostsList.peer = uc7.s1(i).j1(this.S);
+        ConnectionsManager.getInstance(i).sendRequest(tL_premium_getBoostsList, new fn0((Object) this, (Object) countDownLatch, (Object) bo0Var, (byte) 5), 2);
     }
 
-    public final void G0(Boolean bool) {
+    public final void H0(Boolean bool) {
         if (this.h0) {
             return;
         }
@@ -144,13 +144,13 @@ public final class lo0 extends iz4 implements gk7 {
         if (bool == null) {
             Utilities.e.c(new bo0(this, b));
         } else if (bool.booleanValue()) {
-            F0(null, new bo0(this, (byte) 2));
+            G0(null, new bo0(this, (byte) 2));
         } else {
-            E0(null, new bo0(this, (byte) 3));
+            F0(null, new bo0(this, (byte) 3));
         }
     }
 
-    public final void H0(boolean z) {
+    public final void I0(boolean z) {
         if (getParentActivity() == null) {
             return;
         }
@@ -158,7 +158,7 @@ public final class lo0 extends iz4 implements gk7 {
             LimitPreviewView limitPreviewView = new LimitPreviewView(getParentActivity(), R.drawable.filled_limit_boost, 0, 0, this.resourceProvider);
             this.f0 = limitPreviewView;
             limitPreviewView.d0 = true;
-            limitPreviewView.setDarkGradientProvider(new sg0(this, (byte) 7));
+            limitPreviewView.setDarkGradientProvider(new tg0(this, (byte) 7));
         }
         if (this.f0.getParent() != null) {
             ((ViewGroup) this.f0.getParent()).removeView(this.f0);
@@ -172,23 +172,23 @@ public final class lo0 extends iz4 implements gk7 {
             }
         }
         TLRPC.Chat chat = this.j0;
-        String M0 = k96.M0(hc2.V(chat) ? 2131753586 : 2131753584, null);
-        SpannableStringBuilder S2 = gl.S2(k96.M0(hc2.V(chat) ? 2131753585 : 2131753583, null));
+        String M0 = ob6.M0(xc2.V(chat) ? 2131753582 : 2131753580, null);
+        SpannableStringBuilder S2 = hl.S2(ob6.M0(xc2.V(chat) ? 2131753581 : 2131753579, null));
         go0 go0Var = new go0(getParentActivity());
-        go0Var.addView(this.U != null ? this.f0 : new View(go0Var.getContext()), nme.d(-1, this.U != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
+        go0Var.addView(this.U != null ? this.f0 : new View(go0Var.getContext()), tre.d(-1, this.U != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
         i0(M0, S2, go0Var, new io0(this, getParentActivity()));
     }
 
-    public final void I0(boolean z) {
+    public final void J0(boolean z) {
         ArrayList arrayList = new ArrayList(this.d0);
         this.d0.clear();
         this.d0.add(new ko0(14, false));
         if (this.U != null) {
-            this.d0.add(new ko0(16, k96.M0(2131744658, null)));
+            this.d0.add(new ko0(16, ob6.M0(2131744552, null)));
             this.d0.add(new ko0(0, false));
             this.d0.add(new ko0(2, false));
             if (this.U.prepaid_giveaways.size() > 0) {
-                this.d0.add(new ko0(12, k96.M0(2131753321, null)));
+                this.d0.add(new ko0(12, ob6.M0(2131753317, null)));
                 int i = 0;
                 while (i < this.U.prepaid_giveaways.size()) {
                     TL_stories.PrepaidGiveaway prepaidGiveaway = this.U.prepaid_giveaways.get(i);
@@ -200,9 +200,9 @@ public final class lo0 extends iz4 implements gk7 {
                     arrayList2.add(ko0Var);
                     i++;
                 }
-                this.d0.add(new ko0(6, k96.M0(2131753283, null)));
+                this.d0.add(new ko0(6, ob6.M0(2131753279, null)));
             }
-            this.d0.add(new ko0(13, k96.M0(2131753603, null)));
+            this.d0.add(new ko0(13, ob6.M0(2131753599, null)));
             if (this.e0 == 0) {
                 if (this.X.isEmpty()) {
                     this.d0.add(new ko0(8, false));
@@ -220,7 +220,7 @@ public final class lo0 extends iz4 implements gk7 {
                     } else {
                         arrayList3.add(new ko0(7, false));
                     }
-                    this.d0.add(new ko0(6, k96.M0(hc2.V(this.j0) ? 2131753602 : 2131753601, null)));
+                    this.d0.add(new ko0(6, ob6.M0(xc2.V(this.j0) ? 2131753598 : 2131753597, null)));
                 }
             } else if (this.Y.isEmpty()) {
                 this.d0.add(new ko0(8, false));
@@ -238,14 +238,14 @@ public final class lo0 extends iz4 implements gk7 {
                 } else {
                     arrayList4.add(new ko0(7, false));
                 }
-                this.d0.add(new ko0(6, k96.M0(hc2.V(this.j0) ? 2131753602 : 2131753601, null)));
+                this.d0.add(new ko0(6, ob6.M0(xc2.V(this.j0) ? 2131753598 : 2131753597, null)));
             }
-            this.d0.add(new ko0(1, k96.M0(2131748722, null)));
+            this.d0.add(new ko0(1, ob6.M0(2131748668, null)));
             this.d0.add(new ko0(3, this.U.boost_url));
-            if (na7.q1(this.T).k4.O1.f && hc2.N(this.j0)) {
-                this.d0.add(new ko0(6, k96.M0(hc2.V(this.j0) ? 2131753266 : 2131753265, null)));
+            if (uc7.s1(this.T).k4.W1.f && xc2.N(this.j0)) {
+                this.d0.add(new ko0(6, ob6.M0(xc2.V(this.j0) ? 2131753262 : 2131753261, null)));
                 this.d0.add(new ko0(10, true));
-                this.d0.add(new ko0(6, k96.M0(hc2.V(this.j0) ? 2131753500 : 2131753499, null)));
+                this.d0.add(new ko0(6, ob6.M0(xc2.V(this.j0) ? 2131753496 : 2131753495, null)));
             } else {
                 this.d0.add(new ko0(6, ""));
             }
@@ -259,43 +259,43 @@ public final class lo0 extends iz4 implements gk7 {
         }
     }
 
-    @Override // iz4, org.telegram.ui.ActionBar.d
+    @Override // m15, org.telegram.ui.ActionBar.e
     public final View createView(Context context) {
         View createView = super.createView(context);
-        H0(false);
-        gb3 gb3Var = new gb3();
-        gb3Var.m = false;
-        gb3Var.C = false;
-        this.c.setItemAnimator(gb3Var);
-        this.c.setOnItemClickListener(new k0(this, context, (byte) 2));
+        I0(false);
+        zb3 zb3Var = new zb3();
+        zb3Var.m = false;
+        zb3Var.C = false;
+        this.c.setItemAnimator(zb3Var);
+        this.c.setOnItemClickListener(new l0(this, context, (byte) 2));
         Activity parentActivity = getParentActivity();
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.i0 = linearLayout;
         byte b = 1;
         linearLayout.setOrientation(1);
-        this.i0.addView(new fo0(parentActivity), nme.t(100, 100, 17, 0, 120, 0, 0));
-        ((ViewGroup) this.fragmentView).addView(this.i0, nme.e(-1, -2, 17));
+        this.i0.addView(new fo0(parentActivity), tre.t(100, 100, 17, 0, jn7.E1, 0, 0));
+        ((ViewGroup) this.fragmentView).addView(this.i0, tre.e(-1, -2, 17));
         this.i0.setAlpha(0.0f);
         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.U;
         LinearLayout linearLayout2 = this.i0;
         if (tL_premium_boostsStatus == null) {
             linearLayout2.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
-            getMessagesController().E0().a(this.S, new co0(this, b));
+            getMessagesController().G0().a(this.S, new co0(this, b));
         } else {
             linearLayout2.setVisibility(8);
-            G0(null);
+            H0(null);
         }
-        I0(false);
+        J0(false);
         return createView;
     }
 
-    @Override // gk7
+    @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i != kk7.W2) {
-            if (i == kk7.q3) {
+        if (i != jn7.X2) {
+            if (i == jn7.r3) {
                 if (this.S == ((Long) objArr[2]).longValue()) {
                     this.U = (TL_stories.TL_premium_boostsStatus) objArr[0];
-                    this.V = (ng1) objArr[1];
+                    this.V = (wg1) objArr[1];
                     return;
                 }
                 return;
@@ -305,49 +305,49 @@ public final class lo0 extends iz4 implements gk7 {
         TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
-        d dVar = fragmentStack.size() >= 2 ? (d) oo1.m(2, fragmentStack) : null;
-        if (dVar instanceof p82) {
-            ((ActionBarLayout) getParentLayout()).c0(dVar, false);
+        e eVar = fragmentStack.size() >= 2 ? (e) bp1.m(2, fragmentStack) : null;
+        if (eVar instanceof g92) {
+            ((ActionBarLayout) getParentLayout()).c0(eVar, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
-        d dVar2 = fragmentStack2.size() >= 2 ? (d) oo1.m(2, fragmentStack2) : null;
+        e eVar2 = fragmentStack2.size() >= 2 ? (e) bp1.m(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
-            if ((dVar2 instanceof ProfileActivity) || (dVar2 instanceof mu1)) {
-                ym0.f(dVar2, chat, false);
+            if ((eVar2 instanceof ProfileActivity) || (eVar2 instanceof zu1)) {
+                ym0.f(eVar2, chat, false);
                 return;
             }
             return;
         }
-        d dVar3 = fragmentStack2.size() >= 3 ? (d) oo1.m(3, fragmentStack2) : null;
-        if (dVar2 instanceof ProfileActivity) {
-            ((ActionBarLayout) getParentLayout()).c0(dVar2, false);
+        e eVar3 = fragmentStack2.size() >= 3 ? (e) bp1.m(3, fragmentStack2) : null;
+        if (eVar2 instanceof ProfileActivity) {
+            ((ActionBarLayout) getParentLayout()).c0(eVar2, false);
         }
         finishFragment();
-        if (dVar3 instanceof mu1) {
-            ym0.f(dVar3, chat, true);
+        if (eVar3 instanceof zu1) {
+            ym0.f(eVar3, chat, true);
         }
-        if (dVar2 instanceof mu1) {
-            ym0.f(dVar2, chat, true);
+        if (eVar2 instanceof zu1) {
+            ym0.f(eVar2, chat, true);
         }
     }
 
-    @Override // iz4
-    public final w39 j0() {
+    @Override // m15
+    public final j79 j0() {
         return this.g0;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final boolean onFragmentCreate() {
-        getNotificationCenter().b(this, kk7.W2);
-        getNotificationCenter().b(this, kk7.q3);
+        getNotificationCenter().b(this, jn7.X2);
+        getNotificationCenter().b(this, jn7.r3);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, kk7.W2);
-        getNotificationCenter().n(this, kk7.q3);
+        getNotificationCenter().n(this, jn7.X2);
+        getNotificationCenter().n(this, jn7.r3);
         super.onFragmentDestroy();
     }
 }

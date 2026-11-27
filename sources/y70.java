@@ -1,34 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class y70 extends ip2 {
-    public final t90 a;
+import java.util.ArrayList;
 
-    public y70(t90 t90Var) {
-        hp2 hp2Var = hp2.a;
-        this.a = t90Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class y70 extends bh0 {
+    public final ArrayList a;
+
+    public y70(ArrayList arrayList) {
+        this.a = arrayList;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ip2)) {
+        if (!(obj instanceof bh0)) {
             return false;
         }
-        if (!this.a.equals(((y70) ((ip2) obj)).a)) {
-            return false;
-        }
-        Object obj2 = hp2.a;
-        return obj2.equals(obj2);
+        return this.a.equals(((y70) ((bh0) obj)).a);
     }
 
     public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ hp2.a.hashCode();
+        return 1000003 ^ this.a.hashCode();
     }
 
     public final String toString() {
-        return "ComplianceData{privacyContext=" + this.a + ", productIdOrigin=" + hp2.a + "}";
+        return "BatchedLogRequest{logRequests=" + this.a + "}";
     }
 }

@@ -1,13 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class v9 {
-    public final r9 a;
-    public final s9 b;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ t9 c;
+    public final /* synthetic */ jq2 d;
 
-    public v9(r9 r9Var, s9 s9Var) {
-        this.a = r9Var;
-        this.b = s9Var;
+    public /* synthetic */ v9(jq2 jq2Var, String str, t9 t9Var, byte b) {
+        this.a = b;
+        this.d = jq2Var;
+        this.b = str;
+        this.c = t9Var;
+    }
+
+    public final void a(Object obj) {
+        byte b = this.a;
+        String str = this.b;
+        jq2 jq2Var = this.d;
+        t9 t9Var = this.c;
+        switch (b) {
+            case 0:
+                Integer num = (Integer) jq2Var.b.get(str);
+                if (num == null) {
+                    xi4.n("Attempting to launch an unregistered ActivityResultLauncher with contract ", t9Var, " and input ", obj, ". You must ensure the ActivityResultLauncher is registered before calling launch().");
+                    return;
+                }
+                jq2Var.d.add(str);
+                try {
+                    jq2Var.b(num.intValue(), t9Var, obj);
+                    return;
+                } catch (Exception e) {
+                    jq2Var.d.remove(str);
+                    throw e;
+                }
+            default:
+                Integer num2 = (Integer) jq2Var.b.get(str);
+                if (num2 == null) {
+                    xi4.n("Attempting to launch an unregistered ActivityResultLauncher with contract ", t9Var, " and input ", obj, ". You must ensure the ActivityResultLauncher is registered before calling launch().");
+                    return;
+                }
+                jq2Var.d.add(str);
+                try {
+                    jq2Var.b(num2.intValue(), t9Var, obj);
+                    return;
+                } catch (Exception e2) {
+                    jq2Var.d.remove(str);
+                    throw e2;
+                }
+        }
     }
 }

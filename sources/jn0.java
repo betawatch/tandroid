@@ -1,30 +1,120 @@
 // default package
 
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import java.io.File;
+import org.telegram.messenger.ShortcutResultReceiver;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jn0 implements Comparator {
+public final /* synthetic */ class jn0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Comparator b;
+    public final /* synthetic */ pcc b;
 
-    public /* synthetic */ jn0(Comparator comparator, byte b) {
+    public /* synthetic */ jn0(pcc pccVar, byte b) {
         this.a = b;
-        this.b = comparator;
+        this.b = pccVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        Comparator comparator = this.b;
+        byte b2 = 1;
+        pcc pccVar = this.b;
         switch (b) {
             case 0:
-                return comparator.compare(((TLRPC.TL_help_country) obj).default_name, ((TLRPC.TL_help_country) obj2).default_name);
+                pccVar.a(null);
+                break;
             case 1:
-                return comparator.compare(((TLRPC.TL_help_country) obj).default_name, ((TLRPC.TL_help_country) obj2).default_name);
+                pccVar.a(null);
+                break;
+            case 2:
+                hl.c3(new jn0(pccVar, b2));
+                break;
+            case 3:
+                z61.i0 = false;
+                long m0 = z61.m0(xb4.j(4), 5);
+                long m02 = z61.m0(xb4.j(4), 4);
+                long m03 = z61.m0(xb4.j(100), 0) + z61.m0(xb4.j(0), 0);
+                long m04 = z61.m0(xb4.j(101), 0) + z61.m0(xb4.j(2), 0);
+                long m05 = z61.m0(xb4.j(5), 1) + z61.m0(xb4.j(3), 1);
+                long m06 = z61.m0(xb4.j(5), 2) + z61.m0(xb4.j(3), 2);
+                long m07 = z61.m0(xb4.j(4), 3) + z61.m0(new File(xb4.j(4), "acache"), 0);
+                long m08 = z61.m0(xb4.j(1), 0);
+                long m09 = z61.m0(xb4.j(6), 0);
+                long m010 = z61.m0(hl.O0(), 1);
+                boolean z = f11.a;
+                long j = m0 + m02 + m04 + m08 + m03 + m05 + m06 + m07 + m09 + m010;
+                z61.k0 = Long.valueOf(j);
+                z61.j0 = System.currentTimeMillis();
+                if (!z61.i0) {
+                    hl.c3(new ve(pccVar, j, (byte) 1));
+                    break;
+                }
+                break;
+            case 4:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 5:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 6:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 7:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 8:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 9:
+                pccVar.a(null);
+                break;
+            case 10:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 11:
+                if (pccVar != null) {
+                    pccVar.a(null);
+                    break;
+                }
+                break;
+            case 12:
+                pccVar.a(new nza());
+                break;
+            case 13:
+                int i = ShortcutResultReceiver.a;
+                pccVar.a(Boolean.TRUE);
+                break;
+            case 14:
+                pccVar.a(LaunchActivity.S());
+                break;
+            case 15:
+                pccVar.a("Wallet engine is closed");
+                break;
+            case 16:
+                pccVar.a(null);
+                break;
             default:
-                return comparator.compare(((mx2) obj).a, ((mx2) obj2).a);
+                pccVar.a(null);
+                break;
         }
     }
 }

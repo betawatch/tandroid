@@ -1,53 +1,52 @@
 // default package
 
-import android.app.Activity;
+import android.view.ContextThemeWrapper;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class p10 extends o39 {
-    public boolean f3;
-    public final /* synthetic */ i20 g3;
+public final class p10 extends kd1 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ fn7 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p10(i20 i20Var, Activity activity) {
-        super(activity, null);
-        this.g3 = i20Var;
+    public /* synthetic */ p10(fn7 fn7Var, ContextThemeWrapper contextThemeWrapper, byte b) {
+        super(contextThemeWrapper);
+        this.b = b;
+        this.c = fn7Var;
     }
 
-    @Override // o39
-    public final boolean F0(float f) {
-        i20 i20Var = this.g3;
-        return f < i20Var.x1.getY() - ((float) i20Var.r1.getTop());
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        i20 i20Var = this.g3;
-        int i5 = i20Var.l2;
-        if (i5 != -1 && !i20Var.m1.o0) {
-            this.f3 = true;
-            i20Var.s1.g1(i5, i20Var.m2 - i20Var.r1.getPaddingTop());
-            super.onLayout(false, i, i2, i3, i4);
-            this.f3 = false;
-            i20Var.l2 = -1;
-            return;
+    @Override // kd1
+    public final void c(boolean z) {
+        byte b = this.b;
+        fn7 fn7Var = this.c;
+        switch (b) {
+            case 0:
+                j20 j20Var = (j20) fn7Var;
+                j20Var.updateColors();
+                eh2 eh2Var = j20Var.H1;
+                if (eh2Var != null) {
+                    eh2Var.a(go.w());
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) fn7Var;
+                b8 b8Var = photoViewer.G0;
+                if (b8Var != null) {
+                    b8Var.f(z);
+                    photoViewer.G0.setSelectorColor(z ? 259241196 : 268435455);
+                }
+                kfc kfcVar = photoViewer.G2;
+                if (kfcVar != null) {
+                    kfcVar.s0(go.w() || photoViewer.r);
+                }
+                eh2 eh2Var2 = photoViewer.x0;
+                if (eh2Var2 != null) {
+                    eh2Var2.a(go.w());
+                    break;
+                }
+                break;
         }
-        if (i20Var.k2) {
-            i20Var.k2 = false;
-            this.f3 = true;
-            if (i20Var.M0(true)) {
-                super.onLayout(false, i, i2, i3, i4);
-            }
-            this.f3 = false;
-        }
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.f3) {
-            return;
-        }
-        super.requestLayout();
     }
 }

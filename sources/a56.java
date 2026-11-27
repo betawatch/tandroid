@@ -1,45 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class a56 extends x1 {
-    public final y46 a;
-    public boolean b;
-    public int c;
+import java.util.Iterator;
 
-    public a56(y46 y46Var) {
-        this.a = y46Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class a56 implements Iterator {
+    public final CharSequence a;
+    public byte b;
+    public int c;
+    public int d;
+    public int e;
+
+    public a56(CharSequence charSequence) {
+        this.a = charSequence;
     }
 
-    @Override // x1
-    public final boolean b(gk0 gk0Var) {
-        if (!(gk0Var instanceof f56)) {
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i;
+        int i2;
+        byte b = this.b;
+        if (b != 0) {
+            return b == 1;
+        }
+        if (this.e < 0) {
+            this.b = (byte) 2;
             return false;
         }
-        if (this.b && this.c == 1) {
-            this.b = false;
+        CharSequence charSequence = this.a;
+        int length = charSequence.length();
+        int length2 = charSequence.length();
+        for (int i3 = this.c; i3 < length2; i3++) {
+            char charAt = charSequence.charAt(i3);
+            if (charAt == '\n' || charAt == '\r') {
+                i = (charAt == '\r' && (i2 = i3 + 1) < charSequence.length() && charSequence.charAt(i2) == '\n') ? 2 : 1;
+                length = i3;
+                this.b = (byte) 1;
+                this.e = i;
+                this.d = length;
+                return true;
+            }
         }
+        i = -1;
+        this.b = (byte) 1;
+        this.e = i;
+        this.d = length;
         return true;
     }
 
-    @Override // x1
-    public final gk0 e() {
-        return this.a;
-    }
-
-    @Override // x1
-    public final boolean f() {
-        return true;
-    }
-
-    @Override // x1
-    public final vj2 h(vo3 vo3Var) {
-        if (vo3Var.h) {
-            this.b = true;
-            this.c = 0;
-        } else if (this.b) {
-            this.c++;
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!hasNext()) {
+            lq5.n();
+            return null;
         }
-        return vj2.a(vo3Var.b);
+        this.b = (byte) 0;
+        int i = this.d;
+        int i2 = this.c;
+        this.c = this.e + i;
+        return this.a.subSequence(i2, i).toString();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

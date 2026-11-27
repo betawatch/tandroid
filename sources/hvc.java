@@ -1,14 +1,23 @@
 // default package
 
 import android.graphics.Bitmap;
-import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public interface hvc {
-    Bitmap canvasBitmap(int i);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hvc extends BitmapDrawable {
+    public final List a;
 
-    Paint font(int i);
+    public hvc(Bitmap bitmap, List list) {
+        super(bitmap);
+        this.a = list;
+    }
 
-    Bitmap image(int i);
+    public static BitmapDrawable a(Bitmap bitmap, List list) {
+        if (bitmap == null) {
+            return null;
+        }
+        return (list == null || list.isEmpty()) ? new BitmapDrawable(bitmap) : new hvc(bitmap, list);
+    }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class AppInfo {
     public static final String MIN_API_LEVEL_METADATA_KEY = "androidx.car.app.minCarApiLevel";
@@ -22,11 +22,11 @@ public final class AppInfo {
 
     public static AppInfo create(Context context) {
         int retrieveMinCarAppApiLevel = retrieveMinCarAppApiLevel(context);
-        if (retrieveMinCarAppApiLevel >= 1 && retrieveMinCarAppApiLevel <= dc1.b()) {
-            return new AppInfo(retrieveMinCarAppApiLevel, dc1.b(), context.getResources().getString(R.string.car_app_library_version));
+        if (retrieveMinCarAppApiLevel >= 1 && retrieveMinCarAppApiLevel <= lc1.b()) {
+            return new AppInfo(retrieveMinCarAppApiLevel, lc1.b(), context.getResources().getString(R.string.car_app_library_version));
         }
-        StringBuilder m = de9.m(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
-        m.append(dc1.b());
+        StringBuilder m = uh9.m(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
+        m.append(lc1.b());
         m.append(")");
         throw new IllegalArgumentException(m.toString());
     }
@@ -40,7 +40,7 @@ public final class AppInfo {
             }
             throw new IllegalArgumentException("Min API level not declared in manifest (androidx.car.app.minCarApiLevel)");
         } catch (PackageManager.NameNotFoundException unused) {
-            w26.j("Unable to read min API level from manifest");
+            lq5.j("Unable to read min API level from manifest");
             return 0;
         }
     }

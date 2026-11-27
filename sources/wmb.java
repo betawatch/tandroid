@@ -1,25 +1,45 @@
 // default package
 
-import android.view.MotionEvent;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.ui.Components.UndoView;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wmb implements View.OnTouchListener {
-    public final /* synthetic */ byte a;
-
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 4:
-            default:
-                int i = UndoView.j0;
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                return true;
+public class wmb extends ViewSwitcher {
+    public final void a(CharSequence charSequence, boolean z, boolean z2) {
+        if (z2 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z) {
+                getCurrentView().setText(charSequence);
+            } else {
+                getNextView().setText(charSequence);
+                showNext();
+            }
         }
+    }
+
+    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
+    public final void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
+        if (view instanceof TextView) {
+            super.addView(view, i, layoutParams);
+        } else {
+            iy8.d();
+        }
+    }
+
+    @Override // android.widget.ViewAnimator
+    public TextView getCurrentView() {
+        return (TextView) super.getCurrentView();
+    }
+
+    @Override // android.widget.ViewSwitcher
+    public TextView getNextView() {
+        return (TextView) super.getNextView();
+    }
+
+    public void setText(CharSequence charSequence) {
+        a(charSequence, true, false);
     }
 }

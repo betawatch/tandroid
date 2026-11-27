@@ -1,317 +1,112 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wo8 extends FrameLayout {
-    public static final /* synthetic */ int R = 0;
-    public RadialGradient E;
-    public final Matrix F;
-    public final Paint G;
-    public int H;
-    public int I;
-    public final tl J;
-    public final lm K;
-    public boolean L;
-    public boolean M;
-    public final Paint N;
-    public final RectF O;
-    public boolean P;
-    public final /* synthetic */ ProfileActivity Q;
-    public int a;
-    public final Paint b;
-    public boolean c;
-    public final lm d;
-    public int e;
-    public int f;
-    public final kl h;
-    public final kl n;
-    public int r;
-    public int s;
-    public int w;
-    public float x;
-    public float y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wo8 {
+    public final String a;
+    public final JSONObject b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final ArrayList h;
+    public final ArrayList i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wo8(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.Q = profileActivity;
-        this.b = new Paint();
-        s33 s33Var = s33.h;
-        this.d = new lm(350L, this, s33Var);
-        this.h = new kl(this, 350L, s33Var);
-        this.n = new kl(this, 350L, s33Var);
-        this.F = new Matrix();
-        this.G = new Paint(1);
-        this.J = new tl(gl.L(20.0f), 13, this, false);
-        this.K = new lm(this, 0L, 440L, s33Var);
-        new lm(this, 0L, 440L, s33Var);
-        this.N = new Paint();
-        this.O = new RectF();
-        setWillNotDraw(false);
-    }
-
-    public final void a(da7 da7Var, boolean z) {
-        ProfileActivity profileActivity = this.Q;
-        if (da7Var != null) {
-            this.c = true;
-            this.e = da7Var.c(bkb.I.o());
-            int d = da7Var.d(bkb.I.o());
-            this.f = d;
-            profileActivity.c1 = bm2.f(0.25f, this.e, d);
-            int i = da7Var.a;
-            if (i != 0) {
-                this.H = i;
-                this.I = bkb.p1(0.45f, i);
-            } else {
-                this.H = a18.y0(this.e);
-                this.I = bkb.p1(0.15f, a18.y0(this.e));
+    public wo8(String str) {
+        this.a = str;
+        JSONObject jSONObject = new JSONObject(str);
+        this.b = jSONObject;
+        String optString = jSONObject.optString("productId");
+        this.c = optString;
+        String optString2 = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
+        this.d = optString2;
+        if (TextUtils.isEmpty(optString)) {
+            lq5.j("Product id cannot be empty.");
+            throw null;
+        }
+        if (TextUtils.isEmpty(optString2)) {
+            lq5.j("Product type cannot be empty.");
+            throw null;
+        }
+        this.e = jSONObject.optString("title");
+        jSONObject.optString("name");
+        jSONObject.optString("description");
+        jSONObject.optString("packageDisplayName");
+        jSONObject.optString("iconUrl");
+        this.f = jSONObject.optString("skuDetailsToken");
+        this.g = jSONObject.optString("serializedDocid");
+        JSONArray optJSONArray = jSONObject.optJSONArray("subscriptionOfferDetails");
+        if (optJSONArray != null) {
+            ArrayList arrayList = new ArrayList();
+            for (int i = 0; i < optJSONArray.length(); i++) {
+                arrayList.add(new vo8(optJSONArray.getJSONObject(i)));
             }
+            this.h = arrayList;
         } else {
-            profileActivity.c1 = this.a;
-            this.c = false;
-            int i2 = bkb.r8;
-            if (gl.B(bkb.v0(i2, profileActivity.A0)) > 0.8f) {
-                this.H = -1;
-                this.I = -1;
-            } else {
-                float B = gl.B(bkb.v0(i2, profileActivity.A0));
-                wjb wjbVar = profileActivity.A0;
-                if (B < 0.2f) {
-                    this.H = bkb.p1(0.5f, bkb.a(0.02f, 0.25f, bkb.v0(i2, wjbVar)));
-                    this.I = bkb.p1(0.35f, bkb.a(0.02f, 0.25f, bkb.v0(i2, profileActivity.A0)));
-                } else {
-                    this.H = a18.y0(bkb.v0(i2, wjbVar));
-                    this.I = bkb.p1(0.15f, a18.y0(bkb.v0(i2, profileActivity.A0)));
-                }
-            }
+            this.h = (optString2.equals("subs") || optString2.equals("play_pass_subs")) ? new ArrayList() : null;
         }
-        if (!z) {
-            this.h.a(this.e, true);
-            this.n.a(this.f, true);
+        JSONObject optJSONObject = this.b.optJSONObject("oneTimePurchaseOfferDetails");
+        JSONArray optJSONArray2 = this.b.optJSONArray("oneTimePurchaseOfferDetailsList");
+        ArrayList arrayList2 = new ArrayList();
+        if (optJSONArray2 != null) {
+            for (int i2 = 0; i2 < optJSONArray2.length(); i2++) {
+                arrayList2.add(new to8(optJSONArray2.getJSONObject(i2)));
+            }
+            this.i = arrayList2;
+            return;
         }
-        invalidate();
-    }
-
-    public final void b(long j, boolean z) {
-        tl tlVar = this.J;
-        boolean z2 = true;
-        tlVar.j(j, true);
-        tlVar.k(Integer.valueOf(this.H));
-        if (!this.L && (j == 0 || j == -1)) {
-            z2 = false;
-        }
-        this.L = z2;
-        invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.J.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.J.b();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        a aVar;
-        Canvas canvas2;
-        float f;
-        vn8 vn8Var;
-        float f2;
-        a aVar2;
-        a aVar3;
-        float f3;
-        float f4;
-        float f5;
-        a aVar4;
-        a aVar5;
-        ml mlVar;
-        qw4 qw4Var;
-        boolean z = this.P;
-        ProfileActivity profileActivity = this.Q;
-        if (!z) {
-            qw4Var = ((d) profileActivity).glassEngine;
-            qw4Var.g();
-        }
-        int currentActionBarHeight = a.getCurrentActionBarHeight();
-        aVar = ((d) profileActivity).actionBar;
-        float f6 = currentActionBarHeight + (aVar.getOccupyStatusBar() ? gl.m : 0) + profileActivity.Q1 + profileActivity.U1;
-        int i = (int) ((1.0f - profileActivity.W5) * f6);
-        boolean z2 = true;
-        boolean z3 = profileActivity.G5 > 0.0f && i != 0;
-        if (z3) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), i, (int) ((1.0f - profileActivity.G5) * 255.0f));
-        }
-        if (i != 0) {
-            int i2 = this.a;
-            Paint paint = this.b;
-            paint.setColor(i2);
-            int a = this.h.a(this.e, false);
-            int a2 = this.n.a(this.f, false);
-            pl8 pl8Var = profileActivity.a0;
-            if (pl8Var != null) {
-                int i3 = this.I;
-                boolean z4 = this.c;
-                f2 = 1.0f;
-                if (pl8Var.Q == null || pl8Var.O != i3 || pl8Var.P != z4) {
-                    pl8Var.O = i3;
-                    pl8Var.P = z4;
-                    pl8Var.g();
-                }
-            } else {
-                f2 = 1.0f;
-            }
-            jr8 jr8Var = profileActivity.c0;
-            if (jr8Var != null) {
-                jr8Var.d(this.I, this.c);
-            }
-            ep8 ep8Var = profileActivity.O5;
-            if (ep8Var != null) {
-                int i4 = this.I;
-                boolean z5 = this.c;
-                if (ep8Var.i != i4 || ep8Var.j != z5) {
-                    ep8Var.i = i4;
-                    ep8Var.j = z5;
-                    ep8Var.a();
-                }
-            }
-            int width = getWidth() / 2;
-            RadialGradient radialGradient = this.E;
-            f = 0.0f;
-            Paint paint2 = this.G;
-            if (radialGradient != null && this.r == a && this.s == a2 && this.w == width) {
-                f3 = 2.0f;
-            } else {
-                this.x = gl.L(96.0f) << 1;
-                aVar2 = ((d) profileActivity).actionBar;
-                float currentActionBarHeight2 = (a.getCurrentActionBarHeight() + (aVar2.getOccupyStatusBar() ? gl.m : 0)) - (gl.p * 21.0f);
-                aVar3 = ((d) profileActivity).actionBar;
-                this.y = aVar3.getTranslationY() + currentActionBarHeight2;
-                this.w = width;
-                float f7 = this.y;
-                f3 = 2.0f;
-                float f8 = this.x;
-                this.s = a2;
-                this.r = a;
-                RadialGradient radialGradient2 = new RadialGradient(width, (f8 / 2.0f) + f7, f8, new int[]{a2, a}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                this.E = radialGradient2;
-                radialGradient2.setLocalMatrix(this.F);
-                paint2.setShader(this.E);
-            }
-            float d = this.d.d(this.c) * (profileActivity.J1 == 0 ? f2 : profileActivity.T1);
-            if (d < f2) {
-                f4 = 255.0f;
-                f5 = f3;
-                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), i, paint);
-            } else {
-                f4 = 255.0f;
-                f5 = f3;
-            }
-            if (d > 0.0f) {
-                paint2.setAlpha((int) (d * f4));
-                canvas2 = canvas;
-                canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), i, paint2);
-            } else {
-                canvas2 = canvas;
-            }
-            if (this.L && !this.P) {
-                boolean z6 = this.M;
-                tl tlVar = this.J;
-                if (!z6) {
-                    if (tlVar != null) {
-                        Drawable drawable = tlVar.f[0];
-                        if ((drawable instanceof vl) && (mlVar = ((vl) drawable).k) != null && mlVar.C()) {
-                            this.M = true;
-                        }
-                    }
-                    z2 = false;
-                }
-                float d2 = this.K.d(z2);
-                if ((!profileActivity.G1 || profileActivity.J1 != 2) && d2 > 0.0f && profileActivity.Y != null) {
-                    canvas2.save();
-                    canvas2.clipRect(0, 0, getMeasuredWidth(), i);
-                    aVar4 = ((d) profileActivity).actionBar;
-                    float f9 = aVar4.getOccupyStatusBar() ? gl.m : 0.0f;
-                    aVar5 = ((d) profileActivity).actionBar;
-                    float z7 = oo1.z(aVar5.getHeight(), f9, f5, profileActivity.d2() + f9);
-                    int measuredWidth = getMeasuredWidth();
-                    float C1 = profileActivity.C1();
-                    oc6 oc6Var = profileActivity.Y;
-                    float[][] fArr = ana.a;
-                    RectF rectF = gl.P;
-                    rectF.set(oc6Var.getX(), oc6Var.getY(), (oc6Var.getScaleX() * oc6Var.getWidth()) + oc6Var.getX(), (oc6Var.getScaleY() * oc6Var.getHeight()) + oc6Var.getY());
-                    canvas2 = canvas;
-                    ana.c(canvas2, tlVar, measuredWidth, z7, C1, rectF, 1.0f);
-                    canvas2.restore();
-                }
-            }
-            Object obj = profileActivity.m5;
-            if (obj != null) {
-                a actionBar = ((d) obj).getActionBar();
-                r6 r6Var = actionBar.F;
-                View view = (View) actionBar.getParent();
-                if (r6Var != null && view != null) {
-                    RectF rectF2 = this.O;
-                    if (zec.c(r6Var, view, rectF2)) {
-                        int save = canvas2.save();
-                        canvas2.translate(rectF2.left, rectF2.top);
-                        canvas2.saveLayerAlpha(0.0f, 0.0f, r6Var.getMeasuredWidth(), r6Var.getMeasuredHeight(), (int) ((f2 - profileActivity.T1) * f4), 31);
-                        r6Var.draw(canvas2);
-                        canvas2.restoreToCount(save);
-                    }
-                }
-            }
+        if (optJSONObject == null) {
+            this.i = null;
         } else {
-            canvas2 = canvas;
-            f = 0.0f;
-        }
-        if (z3) {
-            canvas2.restore();
-        }
-        if (profileActivity.W5 > f) {
-            float f10 = i;
-            if (f10 >= f6 || (vn8Var = profileActivity.O) == null || !vn8Var.isAttachedToWindow()) {
-                return;
-            }
-            float y = (profileActivity.O.getY() + profileActivity.a.getY()) - profileActivity.a6;
-            if (y > f10) {
-                int v0 = bkb.v0(bkb.Z6, profileActivity.A0);
-                Paint paint3 = this.N;
-                paint3.setColor(v0);
-                canvas.drawRect(0.0f, f10, getMeasuredWidth(), Math.min(f6, y), paint3);
-            }
+            arrayList2.add(new to8(optJSONObject));
+            this.i = arrayList2;
         }
     }
 
-    @Override // android.view.View
-    public final void setBackgroundColor(int i) {
-        if (i != this.a) {
-            this.a = i;
-            this.b.setColor(i);
-            invalidate();
-            if (this.c) {
-                return;
-            }
-            this.Q.c1 = this.a;
+    public final to8 a() {
+        ArrayList arrayList = this.i;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return null;
         }
+        return (to8) arrayList.get(0);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof wo8) {
+            return TextUtils.equals(this.a, ((wo8) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        String obj = this.b.toString();
+        String valueOf = String.valueOf(this.h);
+        StringBuilder sb = new StringBuilder("ProductDetails{jsonString='");
+        qu6.u(sb, this.a, "', parsedJson=", obj, ", productId='");
+        sb.append(this.c);
+        sb.append("', productType='");
+        sb.append(this.d);
+        sb.append("', title='");
+        sb.append(this.e);
+        sb.append("', productDetailsToken='");
+        sb.append(this.f);
+        sb.append("', subscriptionOfferDetails=");
+        sb.append(valueOf);
+        sb.append("}");
+        return sb.toString();
     }
 }

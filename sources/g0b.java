@@ -1,86 +1,13 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class g0b implements m7, yc7 {
-    public final /* synthetic */ u0b a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class g0b {
+    public static final HashSet a = new HashSet();
 
-    public /* synthetic */ g0b(u0b u0bVar) {
-        this.a = u0bVar;
-    }
-
-    @Override // yc7
-    public final void a(String str) {
-        u0b u0bVar = this.a;
-        new bn5(u0bVar.getContext(), u0bVar.i2, null, u0bVar.J0).show();
-    }
-
-    @Override // m7
-    public final void h(int i) {
-        String str;
-        u0b u0bVar = this.a;
-        d dVar = u0bVar.F1;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = u0bVar.M1;
-        if (tL_messages_stickerSet != null) {
-            TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-            if (stickerSet == null || !stickerSet.emojis) {
-                str = "https://" + na7.q1(u0bVar.a).N2 + "/addstickers/" + u0bVar.M1.set.short_name;
-            } else {
-                str = "https://" + na7.q1(u0bVar.a).N2 + "/addemoji/" + u0bVar.M1.set.short_name;
-            }
-            String str2 = str;
-            if (i == 1) {
-                Context context = u0bVar.H1;
-                if (context == null && dVar != null) {
-                    context = dVar.getParentActivity();
-                }
-                if (context == null) {
-                    context = u0bVar.getContext();
-                }
-                i0b i0bVar = new i0b(u0bVar, context, str2, str2, u0bVar.J0);
-                if (dVar == null) {
-                    i0bVar.show();
-                    return;
-                }
-                dVar.showDialog(i0bVar);
-                if (dVar instanceof mu1) {
-                    boolean Q7 = ((mu1) dVar).Q7();
-                    i0bVar.i0 = Q7;
-                    i0bVar.n = Q7;
-                    return;
-                }
-                return;
-            }
-            byte b = 2;
-            if (i == 2) {
-                try {
-                    gl.g(str2);
-                    new u21((FrameLayout) u0bVar.b, u0bVar.J0).k(false).j();
-                    return;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            }
-            if (i == 3) {
-                if (u0bVar.L1) {
-                    u0bVar.F0();
-                    return;
-                } else {
-                    u0bVar.H0();
-                    return;
-                }
-            }
-            if (i == 4) {
-                a1b.c(u0bVar.M1.set, u0bVar.J0, u0bVar.getContext(), new tf8(u0bVar, (byte) 29));
-            } else if (i == 5) {
-                a1b.b(u0bVar.M1.set, u0bVar.J0, u0bVar.getContext(), new h0b(u0bVar, b));
-            }
-        }
+    public g0b() {
+        a.add(this);
     }
 }

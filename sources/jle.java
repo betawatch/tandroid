@@ -1,42 +1,19 @@
 // default package
 
-import java.util.AbstractCollection;
-import java.util.Iterator;
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class jle {
-    public static Object a(AbstractCollection abstractCollection, String str) {
-        Iterator it = abstractCollection.iterator();
-        return it.hasNext() ? it.next() : str;
+public final class jle implements zq7 {
+    public static final jle a = new jle();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)), 5)), 6)), 7)));
     }
 
-    public static Object b(Iterable iterable) {
-        Object next;
-        if (!(iterable instanceof List)) {
-            Iterator it = iterable.iterator();
-            do {
-                next = it.next();
-            } while (it.hasNext());
-            return next;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        List list = (List) iterable;
-        if (!list.isEmpty()) {
-            return oo1.m(1, list);
-        }
-        w26.g();
-        return null;
-    }
-
-    public static void c(List list, bg8 bg8Var, int i, int i2) {
-        for (int size = list.size() - 1; size > i2; size--) {
-            if (bg8Var.apply(list.get(size))) {
-                list.remove(size);
-            }
-        }
-        for (int i3 = i2 - 1; i3 >= i; i3--) {
-            list.remove(i3);
-        }
+        throw null;
     }
 }

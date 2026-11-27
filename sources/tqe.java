@@ -1,30 +1,23 @@
 // default package
 
-import java.util.Arrays;
+import android.util.Log;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tqe {
-    public final jqe a;
-    public final Integer b;
-
-    public /* synthetic */ tqe(v8b v8bVar) {
-        this.a = (jqe) v8bVar.b;
-        this.b = (Integer) v8bVar.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+public abstract class tqe {
+    public static void a(Exception exc, String str, Object... objArr) {
+        if (Log.isLoggable("Vision", 6)) {
+            if (Log.isLoggable("Vision", 3)) {
+                Log.e("Vision", String.format(str, objArr), exc);
+                return;
+            }
+            String format = String.format(str, objArr);
+            String valueOf = String.valueOf(exc);
+            StringBuilder sb = new StringBuilder(valueOf.length() + format.length() + 2);
+            sb.append(format);
+            sb.append(": ");
+            sb.append(valueOf);
+            Log.e("Vision", sb.toString());
         }
-        if (!(obj instanceof tqe)) {
-            return false;
-        }
-        tqe tqeVar = (tqe) obj;
-        return cqe.a(this.a, tqeVar.a) && cqe.a(this.b, tqeVar.b) && cqe.a(null, null) && cqe.a(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
     }
 }

@@ -1,15 +1,61 @@
 // default package
 
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f79 implements Comparable {
-    public long b = -9223372036854775807L;
-    public final ArrayList a = new ArrayList();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class f79 extends d79 {
+    public boolean f3;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.b, ((f79) obj).b);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // d79
+    public final void L0(Canvas canvas, RectF rectF, long j) {
+        super.L0(canvas, rectF, j);
+        int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = getChildAt(i);
+            if (childAt instanceof e79) {
+                float x = childAt.getX();
+                float y = childAt.getY();
+                if (rectF.intersects(x, y, childAt.getWidth() + x, childAt.getHeight() + y)) {
+                    canvas.save();
+                    canvas.translate(x, y);
+                    x2b x2bVar = (x2b) ((e79) childAt);
+                    if (x2bVar.M) {
+                        x2bVar.b(canvas, this);
+                    }
+                    canvas.restore();
+                }
+            }
+        }
+    }
+
+    @Override // d79, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        this.f3 = false;
+        for (int i = 0; i < getChildCount(); i++) {
+            if (getChildAt(i) instanceof e79) {
+                e79 e79Var = (e79) getChildAt(i);
+                canvas.save();
+                canvas.translate(e79Var.getX(), e79Var.getY());
+                x2b x2bVar = (x2b) e79Var;
+                if (x2bVar.M) {
+                    x2bVar.b(canvas, this);
+                }
+                canvas.restore();
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.f3) {
+            return;
+        }
+        super.invalidate();
+        this.f3 = true;
     }
 }

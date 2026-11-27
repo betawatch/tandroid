@@ -1,19 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ayd implements zn7 {
-    public static final ayd a = new ayd();
+import android.content.Context;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ayd extends e23 {
+    public final jg7 b;
+
+    public ayd(jg7 jg7Var) {
+        super((byte) 4);
+        this.b = jg7Var;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // e23
+    public final Object a(Object obj) {
+        lm5 lm5Var = (lm5) obj;
+        Context b = this.b.b();
+        j05.b.getClass();
+        return new ahe(lm5Var, c15.a(b) >= 204700000 ? new qoc(b, lm5Var) : new q31(b, lm5Var), caf.c());
     }
 }

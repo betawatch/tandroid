@@ -1,14 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w3f extends uef {
-    public final l3f d() {
-        return ((y3f) this.b).l();
-    }
-
-    public final void e(l3f l3fVar) {
-        c();
-        y3f.p((y3f) this.b, l3fVar);
+public abstract class w3f {
+    public static void a(int i, Object[] objArr) {
+        for (int i2 = 0; i2 < i; i2++) {
+            if (objArr[i2] == null) {
+                StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 9);
+                sb.append("at index ");
+                sb.append(i2);
+                throw new NullPointerException(sb.toString());
+            }
+        }
     }
 }

@@ -5,16 +5,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzip implements zzik {
-    private final ax2 zza;
+    private final ux2 zza;
     private final zzjb zzb;
     private final zzkt zzc;
     private final Map zzd;
 
-    public zzip(ax2 ax2Var, zzjb zzjbVar, zzkt zzktVar, Map map) {
-        this.zza = ax2Var;
+    public zzip(ux2 ux2Var, zzjb zzjbVar, zzkt zzktVar, Map map) {
+        this.zza = ux2Var;
         this.zzb = zzjbVar;
         this.zzc = zzktVar;
         this.zzd = map;
@@ -25,7 +25,7 @@ public final class zzip implements zzik {
         int zza = zzizVar.zza();
         zzjt zzjtVar = (zzjt) zzipVar.zzd.get(Integer.valueOf(zzzuVar.zzf()));
         if (zzjtVar == null) {
-            fvc.c(5, 2, null);
+            p3d.d(5, 2, null);
             return;
         }
         int zzg = zzzuVar.zzg();
@@ -41,24 +41,24 @@ public final class zzip implements zzik {
         if (zzk != 1) {
             zzco.zza(zzk - 2, zza2);
         } else {
-            w26.j("Can't get the number of an unknown enum value.");
+            lq5.j("Can't get the number of an unknown enum value.");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzg(List list, zziz zzizVar, fw2 fw2Var) {
-        Object b = h9e.b(new zzim(zzizVar, list, this, null), fw2Var);
-        return b == bx2.a ? b : g5c.a;
+    public final Object zzg(List list, zziz zzizVar, zw2 zw2Var) {
+        Object b = xde.b(new zzim(zzizVar, list, this, null), zw2Var);
+        return b == vx2.a ? b : f9c.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzh(Exception exc, zziz zzizVar, fw2 fw2Var) {
-        Object b = h9e.b(new zzin(exc, zzizVar, this, null), fw2Var);
-        return b == bx2.a ? b : g5c.a;
+    public final Object zzh(Exception exc, zziz zzizVar, zw2 zw2Var) {
+        Object b = xde.b(new zzin(exc, zzizVar, this, null), zw2Var);
+        return b == vx2.a ? b : f9c.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzik
     public final void zza(String str) {
-        ppd.b(this.zza, new zzio(new zziz(this.zzb), this, str, null));
+        fud.b(this.zza, new zzio(new zziz(this.zzb), this, str, null));
     }
 }

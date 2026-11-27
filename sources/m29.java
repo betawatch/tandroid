@@ -1,71 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.ui.Components.CheckBoxSquare;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class m29 extends FrameLayout {
-    public final i46 a;
-    public final l46 b;
-    public final CheckBoxSquare c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class m29 extends i51 {
+    public final long d;
 
-    public m29(Context context, wjb wjbVar) {
-        super(context);
-        CheckBoxSquare checkBoxSquare = new CheckBoxSquare(null, context, false);
-        this.c = checkBoxSquare;
-        checkBoxSquare.setDuplicateParentStateEnabled(false);
-        checkBoxSquare.setFocusable(false);
-        checkBoxSquare.setFocusableInTouchMode(false);
-        checkBoxSquare.setClickable(false);
-        addView(checkBoxSquare, nme.d(18, 18.0f, (k96.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
-        i46 i46Var = new i46(this);
-        this.a = i46Var;
-        l46 l46Var = new l46(context, i46Var, wjbVar);
-        this.b = l46Var;
-        zkb.X(l46Var, bkb.F6, wjbVar);
-        zkb.G(l46Var, bkb.I6, wjbVar);
-        l46Var.setTextSize(1, 15.0f);
-        l46Var.setMaxLines(2);
-        l46Var.setGravity((k96.a0 ? 5 : 3) | 16);
-        l46Var.setEllipsize(TextUtils.TruncateAt.END);
-        boolean z = k96.a0;
-        addView(l46Var, nme.d(-1, -1.0f, (z ? 5 : 3) | 48, z ? 16.0f : 58.0f, 21.0f, z ? 58.0f : 16.0f, 21.0f));
-        setWillNotDraw(false);
+    public m29(InputStream inputStream, long j, long j2) {
+        super(inputStream, j);
+        this.d = j + j2;
     }
 
-    public CheckBoxSquare getCheckBox() {
-        return this.c;
+    public final long e() {
+        return this.d - this.b;
     }
 
-    public TextView getTextView() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        i46 i46Var = this.a;
-        if (i46Var != null) {
-            canvas.save();
-            l46 l46Var = this.b;
-            canvas.translate(l46Var.getLeft(), l46Var.getTop());
-            if (i46Var.g(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
+    @Override // i51, java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i, int i2) {
+        long j = this.b;
+        long j2 = i2 + j;
+        long j3 = this.d;
+        if (j2 <= j3 || (i2 = (int) (j3 - j)) != 0) {
+            return super.read(bArr, i, i2);
         }
+        return -1;
     }
 
-    public void setChecked(boolean z) {
-        this.c.a(z, true);
+    @Override // i51, java.io.FilterInputStream, java.io.InputStream
+    public final long skip(long j) {
+        long j2 = this.b;
+        long j3 = j2 + j;
+        long j4 = this.d;
+        if (j3 > j4) {
+            j = (int) (j4 - j2);
+        }
+        return super.skip(j);
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // i51, java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        if (this.b == this.d) {
+            return -1;
+        }
+        return super.read();
     }
 }

@@ -1,50 +1,45 @@
 // default package
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class tv8 implements gk7 {
-    public final int a;
-    public final TLRPC.Document b;
-    public final int c;
-    public final x15 d;
-    public boolean e;
-    public boolean f;
-    public boolean h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class tv8 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
 
-    public tv8(int i, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i2, x15 x15Var) {
-        this.a = i;
-        this.b = document;
-        this.c = i2;
-        this.d = x15Var;
-        kk7.f(i).a(this, kk7.X1);
-        ba4.G(i);
-        if (!ba4.J(document, null, true, true).exists()) {
-            ba4.G(i).X(document, tL_starGiftUnique, 3, 1);
-        }
-        a();
+    public tv8(String str, String str2, String str3, String str4, String str5) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
+        this.e = str5;
     }
 
-    public final void a() {
-        if (this.e || this.f) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        ba4.G(this.a);
-        if (ba4.J(this.b, null, true, true).exists()) {
-            this.f = true;
-            kk7.f(this.a).n(this, kk7.X1);
-            ba4.G(this.a);
-            Utilities.e.c(new ll8(this, ba4.J(this.b, null, true, true), (byte) 22));
+        if (!(obj instanceof tv8)) {
+            return false;
         }
+        tv8 tv8Var = (tv8) obj;
+        return Objects.equals(this.a, tv8Var.a) && Objects.equals(this.b, tv8Var.b) && Objects.equals(this.c, tv8Var.c) && Objects.equals(this.d, tv8Var.d) && Objects.equals(this.e, tv8Var.e);
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.X1) {
-            a();
-        }
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.b;
+        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+        String str3 = this.c;
+        int hashCode3 = (hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31;
+        String str4 = this.d;
+        int hashCode4 = (hashCode3 + (str4 != null ? str4.hashCode() : 0)) * 31;
+        String str5 = this.e;
+        return hashCode4 + (str5 != null ? str5.hashCode() : 0);
     }
 }

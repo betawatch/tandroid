@@ -1,36 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class mic implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ric b;
-    public final /* synthetic */ int c;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-    public /* synthetic */ mic(ric ricVar, int i, byte b) {
-        this.a = b;
-        this.b = ricVar;
-        this.c = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class mic extends AnimatorListenerAdapter {
+    public boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ vic d;
+
+    public mic(vic vicVar, View view, float f) {
+        this.d = vicVar;
+        this.b = view;
+        this.c = f;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        ric ricVar = this.b;
-        switch (b) {
-            case 0:
-                gl.c3(new mic(ricVar, i, (byte) 2));
-                break;
-            case 1:
-                gl.c3(new mic(ricVar, i, (byte) 3));
-                break;
-            case 2:
-                ricVar.c(i);
-                break;
-            default:
-                ricVar.a(i);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        super.onAnimationCancel(animator);
+        this.a = true;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
         }
+        this.d.G(this.b, this.c);
     }
 }

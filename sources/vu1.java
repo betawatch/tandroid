@@ -1,34 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class vu1 {
-    public jq1 a;
-    public int b;
-    public long c;
-    public int d;
-    public boolean e;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public final boolean a(k27 k27Var) {
-        if (k27Var == null) {
-            return false;
-        }
-        if (k27Var.e1() != this.b) {
-            return this.c != 0 && k27Var.c1() == this.c;
-        }
-        return true;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class vu1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ hh7 a;
+
+    public vu1(hh7 hh7Var) {
+        this.a = hh7Var;
     }
 
-    public final boolean b(int i, long j) {
-        if (this.b == i && this.c == j) {
-            return false;
-        }
-        this.b = i;
-        this.c = j;
-        if (i != 0) {
-            return true;
-        }
-        this.e = false;
-        return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.q(1.0f);
     }
 }

@@ -1,131 +1,49 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
+import android.content.SharedPreferences;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class j75 extends ViewGroup {
-    public int a;
-    public int b;
-    public final LinkedHashMap c;
+public final class j75 implements ix0 {
+    public final /* synthetic */ j95 a;
 
-    public j75(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.c = new LinkedHashMap(16);
+    public j75(j95 j95Var) {
+        this.a = j95Var;
     }
 
-    public final void a(dic dicVar) {
-        addView(dicVar);
-        this.c.put(dicVar, new i75(dicVar, new iu4(this, (byte) 14)));
-    }
-
-    public final void b(boolean z, boolean z2) {
-        int min;
-        int i;
-        y74 y74Var;
-        int measuredWidth;
-        int i2;
-        int measuredWidth2 = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        boolean z3 = measuredWidth2 <= measuredHeight;
-        if (measuredWidth2 <= 0 || measuredHeight <= 0) {
-            return;
+    @Override // ix0
+    public final void x() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
         }
-        LinkedHashMap linkedHashMap = this.c;
-        Iterator it = linkedHashMap.values().iterator();
-        int i3 = 0;
-        while (it.hasNext()) {
-            if (((i75) it.next()).h) {
-                i3++;
+        j95 j95Var = this.a;
+        if (j95Var.z3 == 6) {
+            SharedPreferences e1 = uc7.e1();
+            if (e1.getBoolean("reminderhint", false)) {
+                return;
             }
-        }
-        if (i3 == 0) {
-            i3 = 1;
-        }
-        if (z3) {
-            min = Math.min(gl.L(50.0f) + Math.max((int) ((measuredHeight - (gl.L(50.0f) * i3)) / (i3 + 0.333f)), 0), measuredHeight / i3);
-            i = (measuredHeight - (i3 * min)) / 2;
-        } else {
-            int min2 = Math.min(gl.L(50.0f) + Math.max((int) ((measuredWidth2 - (gl.L(50.0f) * i3)) / (i3 + 0.333f)), 0), measuredWidth2 / i3);
-            min = gl.L(76.0f);
-            i = (measuredWidth2 - (i3 * min2)) / 2;
-            measuredWidth2 = min2;
-        }
-        Iterator it2 = linkedHashMap.entrySet().iterator();
-        int i4 = 0;
-        while (it2.hasNext()) {
-            i75 i75Var = (i75) ((Map.Entry) it2.next()).getValue();
-            boolean z4 = i75Var.h;
-            dic dicVar = i75Var.e;
-            y74 y74Var2 = i75Var.b;
-            fm0 fm0Var = i75Var.c;
-            y74 y74Var3 = i75Var.a;
-            if (z4) {
-                if (z3) {
-                    measuredWidth = ((measuredWidth2 - dicVar.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
-                    i2 = (min * i4) + i;
-                } else {
-                    measuredWidth = ((measuredWidth2 - dicVar.getMeasuredWidth()) / 2) + (measuredWidth2 * i4) + i;
-                    i2 = getMeasuredHeight() - gl.L(76.0f);
-                }
-                if (z2 || !((z || y74Var3.h) && fm0Var.f)) {
-                    y74Var3.c(measuredWidth);
-                } else {
-                    y74Var3.a(measuredWidth);
-                }
-                if (z2 || !((z || y74Var2.h) && fm0Var.f)) {
-                    y74Var2.c(i2);
-                } else {
-                    y74Var2.a(i2);
-                }
-                i4++;
+            e1.edit().putBoolean("reminderhint", true).commit();
+            if (j95Var.g2 == null) {
+                lg5 lg5Var = new lg5(j95Var.getContext(), 8);
+                j95Var.g2 = lg5Var;
+                lg5Var.setAlpha(0.0f);
+                j95Var.g2.setVisibility(4);
+                j95Var.g2.setShowingDuration(4000L);
+                j95Var.b.addView(j95Var.g2, tre.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                j95Var.g2.setText(ob6.M0(2131743090, null));
+                j95Var.g2.b();
             }
-            fm0Var.a(i75Var.h, !z2 && (z || ((y74Var = fm0Var.h) != null && y74Var.h)));
-        }
-        invalidate();
-    }
-
-    public final void c(dic dicVar, boolean z, boolean z2) {
-        i75 i75Var = (i75) this.c.get(dicVar);
-        if (i75Var == null || i75Var.h == z) {
-            return;
-        }
-        i75Var.h = z;
-        b(z2, false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int childCount = getChildCount();
-        for (int i5 = 0; i5 < childCount; i5++) {
-            View childAt = getChildAt(i5);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+            j95Var.g2.setExtraTranslationY(-hl.m);
+            j95Var.g2.c(j95Var.v1);
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        int size2 = View.MeasureSpec.getSize(i2);
-        setMeasuredDimension(size, size2);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(gl.L(76.0f), TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(gl.L(76.0f), TLObject.FLAG_30);
-        int childCount = getChildCount();
-        for (int i3 = 0; i3 < childCount; i3++) {
-            getChildAt(i3).measure(makeMeasureSpec, makeMeasureSpec2);
-        }
-        if (this.a == size && this.b == size2) {
-            b(true, false);
-            return;
-        }
-        b(false, true);
-        this.a = size;
-        this.b = size2;
+    @Override // ix0
+    public final boolean y() {
+        return true;
     }
 }

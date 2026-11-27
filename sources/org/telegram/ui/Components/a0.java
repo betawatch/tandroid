@@ -26,7 +26,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class a0 extends FrameLayout {
     public LinearGradient E;
@@ -53,7 +53,7 @@ public final class a0 extends FrameLayout {
     public a0(ThemeEditorView.EditorAlert editorAlert, Context context) {
         super(context);
         this.J = editorAlert;
-        this.b = gl.L(20.0f);
+        this.b = hl.L(20.0f);
         this.n = new EditTextBoldCursor[4];
         this.s = new float[]{0.0f, 0.0f, 1.0f};
         this.w = 1.0f;
@@ -61,7 +61,7 @@ public final class a0 extends FrameLayout {
         this.I = new DecelerateInterpolator();
         setWillNotDraw(false);
         this.e = new Paint(1);
-        this.f = b00.d(context, R.drawable.knob_shadow);
+        this.f = c00.e(context, R.drawable.knob_shadow);
         Paint paint = new Paint();
         this.c = paint;
         paint.setAntiAlias(true);
@@ -73,18 +73,18 @@ public final class a0 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, nme.e(-2, -2, 49));
+        addView(linearLayout, tre.e(-2, -2, 49));
         int i = 0;
         while (i < 4) {
             this.n[i] = new EditTextBoldCursor(context);
             this.n[i].setInputType(2);
             this.n[i].setTextColor(-14606047);
             this.n[i].setCursorColor(-14606047);
-            this.n[i].setCursorSize(gl.L(20.0f));
+            this.n[i].setCursorSize(hl.L(20.0f));
             this.n[i].setCursorWidth(1.5f);
             this.n[i].setTextSize(1, 18.0f);
             this.n[i].setBackground(null);
-            zkb.F(this.n[i], bkb.t5, bkb.u5, bkb.p7, null);
+            yob.F(this.n[i], aob.u5, aob.v5, aob.q7, null);
             this.n[i].setMaxLines(1);
             this.n[i].setTag(Integer.valueOf(i));
             this.n[i].setGravity(17);
@@ -100,15 +100,15 @@ public final class a0 extends FrameLayout {
             byte b = 5;
             this.n[i].setImeOptions((i == 3 ? 6 : 5) | TLObject.FLAG_28);
             this.n[i].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
-            this.a.addView(this.n[i], nme.k(0.0f, 0.0f, i != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
+            this.a.addView(this.n[i], tre.k(0.0f, 0.0f, i != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
             this.n[i].addTextChangedListener(new z(this, i));
-            this.n[i].setOnEditorActionListener(new ng(b));
+            this.n[i].setOnEditorActionListener(new mh(b));
             i++;
         }
     }
 
     public final void a(Canvas canvas, int i, int i2, int i3) {
-        int L = gl.L(13.0f);
+        int L = hl.L(13.0f);
         Drawable drawable = this.f;
         drawable.setBounds(i - L, i2 - L, i + L, L + i2);
         drawable.draw(canvas);
@@ -116,9 +116,9 @@ public final class a0 extends FrameLayout {
         paint.setColor(-1);
         float f = i;
         float f2 = i2;
-        canvas.drawCircle(f, f2, gl.L(11.0f), paint);
+        canvas.drawCircle(f, f2, hl.L(11.0f), paint);
         paint.setColor(i3);
-        canvas.drawCircle(f, f2, gl.L(9.0f), paint);
+        canvas.drawCircle(f, f2, hl.L(9.0f), paint);
     }
 
     public final int b() {
@@ -163,7 +163,7 @@ public final class a0 extends FrameLayout {
         editorAlert.D1 = z;
         AnimatorSet animatorSet2 = new AnimatorSet();
         editorAlert.C1 = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofInt(editorAlert.Z, rn.d, z ? 0 : 51), ObjectAnimator.ofFloat(editorAlert.b, (Property<ViewGroup, Float>) View.ALPHA, z ? 0.2f : 1.0f));
+        animatorSet2.playTogether(ObjectAnimator.ofInt(editorAlert.Z, sn.d, z ? 0 : 51), ObjectAnimator.ofFloat(editorAlert.b, (Property<ViewGroup, Float>) View.ALPHA, z ? 0.2f : 1.0f));
         editorAlert.C1.setDuration(150L);
         editorAlert.C1.setInterpolator(this.I);
         editorAlert.C1.start();
@@ -175,7 +175,7 @@ public final class a0 extends FrameLayout {
         int width = getWidth() / 2;
         int i = this.b;
         int i2 = width - (i << 1);
-        int height = (getHeight() / 2) - gl.L(8.0f);
+        int height = (getHeight() / 2) - hl.L(8.0f);
         Bitmap bitmap = this.h;
         int i3 = this.r;
         canvas.drawBitmap(bitmap, i2 - i3, height - i3, (Paint) null);
@@ -193,7 +193,7 @@ public final class a0 extends FrameLayout {
         int i5 = this.r;
         int i6 = i2 + i5 + i;
         int i7 = height - i5;
-        int L = gl.L(9.0f);
+        int L = hl.L(9.0f);
         int i8 = this.r << 1;
         LinearGradient linearGradient = this.y;
         if (linearGradient == null) {
@@ -220,7 +220,7 @@ public final class a0 extends FrameLayout {
         }
         paint.setShader(linearGradient2);
         canvas.drawRect(i10, f3, L + i10, f4, paint);
-        a(canvas, i10 + i9, (int) tb4.A(1.0f, this.w, f5, f3), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.w * 255.0f)) << 24));
+        a(canvas, i10 + i9, (int) qd4.A(1.0f, this.w, f5, f3), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.w * 255.0f)) << 24));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -232,15 +232,15 @@ public final class a0 extends FrameLayout {
 
     @Override // android.view.View
     public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        int c = b00.c(20.0f, (i / 2) - (this.b << 1), 1);
-        this.r = c;
-        int i5 = c << 1;
-        int i6 = c << 1;
+        int d = c00.d(20.0f, (i / 2) - (this.b << 1), 1);
+        this.r = d;
+        int i5 = d << 1;
+        int i6 = d << 1;
         Bitmap createBitmap = Bitmap.createBitmap(i5, i6, Bitmap.Config.ARGB_8888);
         int[] iArr = new int[13];
         float[] fArr = {0.0f, 1.0f, 1.0f};
         for (int i7 = 0; i7 < 13; i7++) {
-            fArr[0] = ((i7 * 30) + kk7.J2) % 360;
+            fArr[0] = ((i7 * 30) + jn7.J2) % 360;
             iArr[i7] = Color.HSVToColor(fArr);
         }
         iArr[12] = iArr[0];
@@ -313,7 +313,7 @@ public final class a0 extends FrameLayout {
         int i4 = this.b;
         int i5 = i4 << 1;
         int i6 = width - i5;
-        int height = (getHeight() / 2) - gl.L(8.0f);
+        int height = (getHeight() / 2) - hl.L(8.0f);
         int i7 = x - i6;
         int i8 = y - height;
         double sqrt = Math.sqrt((i8 * i8) + (i7 * i7));
@@ -356,11 +356,11 @@ public final class a0 extends FrameLayout {
                             int b = b();
                             i3 = 0;
                             while (i3 < themeEditorView.e.size()) {
-                                int i13 = ((blb) themeEditorView.e.get(i3)).e;
-                                if ((i3 == 0 && i13 == bkb.De) || i13 == bkb.Ee || i13 == bkb.Fe || i13 == bkb.Ge || i13 == bkb.c6 || i13 == bkb.Z6) {
+                                int i13 = ((apb) themeEditorView.e.get(i3)).e;
+                                if ((i3 == 0 && i13 == aob.Ee) || i13 == aob.Fe || i13 == aob.Ge || i13 == aob.He || i13 == aob.d6 || i13 == aob.a7) {
                                     b |= -16777216;
                                 }
-                                ((blb) themeEditorView.e.get(i3)).e(b, z6, true);
+                                ((apb) themeEditorView.e.get(i3)).e(b, z6, true);
                                 i3++;
                                 z6 = false;
                             }

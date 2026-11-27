@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bxd implements zn7 {
+public final class bxd implements zq7 {
     public static final bxd a = new bxd();
+    public static final sa4 b = new sa4("durationMs", c00.n(xnb.o(bdd.class, new ubd(1))));
+    public static final sa4 c = new sa4("errorCode", c00.n(xnb.o(bdd.class, new ubd(2))));
+    public static final sa4 d = new sa4("isColdCall", c00.n(xnb.o(bdd.class, new ubd(3))));
+    public static final sa4 e = new sa4("autoManageModelOnBackground", c00.n(xnb.o(bdd.class, new ubd(4))));
+    public static final sa4 f = new sa4("autoManageModelOnLowMemory", c00.n(xnb.o(bdd.class, new ubd(5))));
+    public static final sa4 g = new sa4("isNnApiEnabled", c00.n(xnb.o(bdd.class, new ubd(6))));
+    public static final sa4 h = new sa4("eventsCount", c00.n(xnb.o(bdd.class, new ubd(7))));
+    public static final sa4 i = new sa4("otherErrors", c00.n(xnb.o(bdd.class, new ubd(8))));
+    public static final sa4 j = new sa4("remoteConfigValueForAcceleration", c00.n(xnb.o(bdd.class, new ubd(9))));
+    public static final sa4 k = new sa4("isAccelerated", c00.n(xnb.o(bdd.class, new ubd(10))));
 
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // l34
+    public final void a(Object obj, Object obj2) {
+        ake akeVar = (ake) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, akeVar.a);
+        ar7Var.a(c, akeVar.b);
+        ar7Var.a(d, akeVar.c);
+        ar7Var.a(e, null);
+        ar7Var.a(f, null);
+        ar7Var.a(g, null);
+        ar7Var.a(h, null);
+        ar7Var.a(i, null);
+        ar7Var.a(j, null);
+        ar7Var.a(k, null);
     }
 }

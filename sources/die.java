@@ -1,19 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class die implements zn7 {
-    public static final die a = new die();
+public abstract class die {
+    public static Boolean a;
+    public static Boolean b;
+    public static Boolean c;
+    public static Boolean d;
 
-    static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)), 3)), 4)), 5)), 6)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static boolean a(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        Boolean bool = a;
+        if (bool == null) {
+            bool = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
+            a = bool;
         }
-        throw null;
+        if (bool.booleanValue() && Build.VERSION.SDK_INT < 24) {
+            return true;
+        }
+        Boolean bool2 = b;
+        if (bool2 == null) {
+            bool2 = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
+            b = bool2;
+        }
+        if (bool2.booleanValue()) {
+            return !rve.a() || Build.VERSION.SDK_INT >= 30;
+        }
+        return false;
     }
 }

@@ -1,55 +1,57 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import java.util.HashMap;
+import android.view.View;
+import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class syb implements ul3 {
-    public final /* synthetic */ Integer a;
-    public final /* synthetic */ k27 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+public final /* synthetic */ class syb implements oz1, gc7, nr7, u69 {
+    public final /* synthetic */ tzb a;
 
-    public syb(Integer num, k27 k27Var, int i, long j, long j2) {
-        this.a = num;
-        this.b = k27Var;
-        this.c = i;
-        this.d = j;
-        this.e = j2;
+    public /* synthetic */ syb(tzb tzbVar) {
+        this.a = tzbVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ul3
-    public final void a(String str, int[] iArr, boolean z) {
-        if (z) {
-            HashMap hashMap = uyb.S;
-            Integer num = this.a;
-            hashMap.remove(num);
-            uyb.R.remove(num);
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        int i = l2dVar.a.f(519).d;
+        tzb tzbVar = this.a;
+        tzbVar.h1 = i;
+        ozb ozbVar = tzbVar.s0;
+        if (ozbVar != null) {
+            ozbVar.setPadding(0, 0, 0, i);
         }
-        k27 k27Var = this.b;
-        if (str == null) {
-            uyb.n(k27Var);
-            return;
+        uxb uxbVar = tzbVar.n;
+        if (uxbVar != null) {
+            ((TextView) uxbVar.d).setTranslationY((-tzbVar.h1) - tzbVar.g1);
         }
-        TLRPC.Message message = k27Var.k;
-        if (z) {
-            gl.d3(new ue(k27Var, message, str, iArr, this.c, this.d, (byte) 6), Math.max(0L, 350 - (SystemClock.elapsedRealtime() - this.e)));
-            return;
-        }
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        message.voiceTranscription = str;
-        message.voiceTranscriptionWords = iArr;
-        message.voiceTranscriptionLocal = true;
-        message.voiceTranscriptionFinal = false;
-        message.voiceTranscriptionOpen = true;
-        uyb.q(k27Var);
-        kk7.f(this.c).k(kk7.z1, k27Var, null, null, Boolean.TRUE, Boolean.FALSE);
+        tzbVar.h.setTranslationY(((-tzbVar.Y0) - tzbVar.h1) - tzbVar.g1);
+        tzbVar.C0();
+        return l2d.b;
+    }
+
+    @Override // gc7
+    public final boolean b(TLRPC.TL_error tL_error) {
+        return this.a.K0(tL_error);
+    }
+
+    @Override // u69
+    public final boolean d(float f, float f2, int i, View view) {
+        return this.a.J0(view, f);
+    }
+
+    @Override // oz1
+    public final void g(boolean z, boolean z2) {
+        tzb tzbVar = this.a;
+        tzbVar.V0.j(tzbVar.S0.b(), z, z2);
+    }
+
+    @Override // u69
+    public final void f() {
+    }
+
+    @Override // u69
+    public final void h(float f) {
     }
 }

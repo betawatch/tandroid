@@ -4,12 +4,12 @@ import android.graphics.Point;
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.voip.Instance;
+import org.telegram.messenger.voip.OpusDred;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
-import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class NativeInstance {
     private static volatile boolean ownAudioCapture;
@@ -34,28 +34,28 @@ public class NativeInstance {
     private final HashMap<String, VideoSink> incomingSinks = new HashMap<>();
     private final HashMap<Long, String> incomingSinkEndpoints = new HashMap<>();
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface AudioLevelsCallback {
         void run(int[] iArr, float[] fArr, boolean[] zArr);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface BroadcastStateCallback {
         void onBroadcastStateChanged(boolean z, boolean z2);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface PayloadCallback {
         void run(int i, String str);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class SsrcGroup {
         public String semantics;
         public int[] ssrcs;
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface VideoSourcesCallback {
         void run(long j, int[] iArr);
     }
@@ -95,32 +95,38 @@ public class NativeInstance {
         this.unknownParticipantsCallback.run(j, iArr);
     }
 
-    public static NativeInstance make(String str, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, AudioLevelsCallback audioLevelsCallback) {
-        if (w01.a) {
-            fa4.b("create new tgvoip instance, version " + str);
+    public static NativeInstance make(String str, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, AudioLevelsCallback audioLevelsCallback, int i2, String str3) {
+        String str4;
+        if (f11.a) {
+            StringBuilder sb = new StringBuilder("create new tgvoip instance, version ");
+            str4 = str;
+            sb.append(str4);
+            cc4.b(sb.toString());
+        } else {
+            str4 = str;
         }
         NativeInstance nativeInstance = new NativeInstance();
         nativeInstance.persistentStateFilePath = str2;
         nativeInstance.audioLevelsCallback = audioLevelsCallback;
-        Point point = gl.q;
-        nativeInstance.nativePtr = makeNativeInstance(str, nativeInstance, config, str2, endpointArr, proxy, i, encryptionKey, videoSink, j, Math.min(point.x, point.y) / Math.max(point.x, point.y));
+        Point point = hl.q;
+        nativeInstance.nativePtr = makeNativeInstance(str4, nativeInstance, config, str2, endpointArr, proxy, i, encryptionKey, videoSink, j, Math.min(point.x, point.y) / Math.max(point.x, point.y), i2, str3);
         return nativeInstance;
     }
 
-    public static NativeInstance makeGroup(String str, long j, boolean z, boolean z2, PayloadCallback payloadCallback, AudioLevelsCallback audioLevelsCallback, VideoSourcesCallback videoSourcesCallback, boolean z3) {
+    public static NativeInstance makeGroup(String str, long j, boolean z, boolean z2, PayloadCallback payloadCallback, AudioLevelsCallback audioLevelsCallback, VideoSourcesCallback videoSourcesCallback, boolean z3, int i, boolean z4, OpusDred.GroupSettings groupSettings) {
         ContextUtils.initialize(org.telegram.messenger.a.b);
         NativeInstance nativeInstance = new NativeInstance();
         nativeInstance.payloadCallback = payloadCallback;
         nativeInstance.audioLevelsCallback = audioLevelsCallback;
         nativeInstance.unknownParticipantsCallback = videoSourcesCallback;
         nativeInstance.isGroup = true;
-        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, gba.U, j, z, z2, z3);
+        nativeInstance.nativePtr = makeGroupNativeInstance(nativeInstance, str, xea.U, j, z, z2, z3, i, z4, groupSettings.weightsPath, groupSettings.fixedPacketLossPercent, groupSettings.receiveEnabled);
         return nativeInstance;
     }
 
-    private static native long makeGroupNativeInstance(NativeInstance nativeInstance, String str, boolean z, long j, boolean z2, boolean z3, boolean z4);
+    private static native long makeGroupNativeInstance(NativeInstance nativeInstance, String str, boolean z, long j, boolean z2, boolean z3, boolean z4, int i, boolean z5, String str2, int i2, boolean z6);
 
-    private static native long makeNativeInstance(String str, NativeInstance nativeInstance, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, float f);
+    private static native long makeNativeInstance(String str, NativeInstance nativeInstance, Instance.Config config, String str2, Instance.Endpoint[] endpointArr, Instance.Proxy proxy, int i, Instance.EncryptionKey encryptionKey, VideoSink videoSink, long j, float f, int i2, String str3);
 
     private static void measureOwnLevel(byte[] bArr, int i) {
         int i2 = i << 1;
@@ -152,7 +158,7 @@ public class NativeInstance {
         if (this.isGroup && iArr != null && iArr.length == 0) {
             return;
         }
-        gl.c3(new jw6(this, iArr, fArr, zArr, (byte) 12));
+        hl.c3(new oy6(this, iArr, fArr, zArr, (byte) 12));
     }
 
     private void onBroadcastStateChanged(boolean z, boolean z2) {
@@ -164,15 +170,15 @@ public class NativeInstance {
 
     private void onEmitJoinPayload(String str, int i) {
         try {
-            gl.c3(new j45((Object) this, i, (Object) str, (byte) 15));
+            hl.c3(new l65((Object) this, i, (Object) str, (byte) 15));
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
     private void onNetworkStateUpdated(boolean z, boolean z2) {
         if (this.onStateUpdatedListener != null) {
-            gl.c3(new sy3(this, z, z2, (byte) 1));
+            hl.c3(new mz3(this, z, z2, (byte) 1));
         }
     }
 
@@ -180,16 +186,16 @@ public class NativeInstance {
         if (this.unknownParticipantsCallback == null) {
             return;
         }
-        gl.c3(new go6((Object) this, j, (Object) iArr, (byte) 20));
+        hl.c3(new cq6((Object) this, j, (Object) iArr, (byte) 20));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void onRecordedSamples(WebRtcAudioRecord.AudioSamples audioSamples) {
-        if (ownAudioLevelMeter && audioSamples.getAudioFormat() == 2) {
-            measureOwnLevel(audioSamples.getData(), Math.max(1, audioSamples.getChannelCount()));
+    public static void onRecordedSamples(byte[] bArr, int i, int i2) {
+        if (ownAudioLevelMeter) {
+            measureOwnLevel(bArr, Math.max(1, i2));
         }
         if (ownAudioCapture) {
-            pushOwnAudio(audioSamples.getData(), audioSamples.getSampleRate(), audioSamples.getChannelCount());
+            pushOwnAudio(bArr, i, i2);
         }
     }
 
@@ -263,7 +269,7 @@ public class NativeInstance {
 
     private static synchronized void updateRecordedSamplesCallback() {
         synchronized (NativeInstance.class) {
-            WebRtcAudioRecord.setOnAudioSamplesReady((ownAudioCapture || ownAudioLevelMeter) ? new fi7((byte) 0) : null);
+            CallAudioDevice.setOnRecordedSamples((ownAudioCapture || ownAudioLevelMeter) ? new hz6((byte) 18) : null);
         }
     }
 
@@ -393,7 +399,7 @@ public class NativeInstance {
         try {
             this.stopBarrier.await();
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
         return this.finalState;
     }

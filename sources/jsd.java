@@ -1,27 +1,19 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jsd extends b4 {
-    public static final Parcelable.Creator<jsd> CREATOR = new rpd((byte) 10);
-    public final int a;
-    public final boolean b;
+public final class jsd implements zq7 {
+    public static final jsd a = new jsd();
 
-    public jsd(int i, boolean z) {
-        this.a = i;
-        this.b = z;
+    static {
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)), 3)));
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        jte.s(parcel, r);
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

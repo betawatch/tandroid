@@ -1,110 +1,93 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ni2 extends Drawable {
-    public final Drawable a;
-    public Path b;
-    public final RectF c;
-    public final RectF d;
-    public boolean e;
-    public final float[] f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ni2 {
+    public static final ni2 c = new ni2();
+    public final HashMap a = new HashMap();
+    public final HashMap b = new HashMap();
 
-    public ni2(Drawable drawable) {
-        in inVar = new in(this, (byte) 3);
-        this.c = new RectF();
-        this.d = new RectF();
-        this.e = false;
-        this.f = new float[8];
-        Drawable drawable2 = this.a;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
+    public static void b(HashMap hashMap, mi2 mi2Var, y26 y26Var, Class cls) {
+        y26 y26Var2 = (y26) hashMap.get(mi2Var);
+        if (y26Var2 == null) {
+            hashMap.put(mi2Var, y26Var);
+            return;
         }
-        this.a = drawable;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            this.a.setCallback(inVar);
+        if (y26Var == y26Var2) {
+            return;
         }
+        throw new IllegalArgumentException("Method " + mi2Var.b.getName() + " in " + cls.getName() + " already declared with different @OnLifecycleEvent value: previous value " + y26Var2 + ", new value " + y26Var);
     }
 
-    public final void a() {
-        if (this.e) {
-            Path path = this.b;
-            if (path == null) {
-                this.b = new Path();
-            } else {
-                path.rewind();
+    public final li2 a(Class cls, Method[] methodArr) {
+        int i;
+        Class superclass = cls.getSuperclass();
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = this.a;
+        if (superclass != null) {
+            li2 li2Var = (li2) hashMap2.get(superclass);
+            if (li2Var == null) {
+                li2Var = a(superclass, null);
             }
-            Rect bounds = getBounds();
-            RectF rectF = this.c;
-            rectF.set(bounds);
-            float f = rectF.left;
-            RectF rectF2 = this.d;
-            rectF.left = f + rectF2.left;
-            rectF.top += rectF2.top;
-            rectF.right -= rectF2.right;
-            rectF.bottom -= rectF2.bottom;
-            this.b.addRoundRect(rectF, this.f, Path.Direction.CW);
+            hashMap.putAll(li2Var.b);
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            if (!this.e) {
-                canvas.save();
-                canvas.clipRect(getBounds());
-                drawable.draw(canvas);
-                canvas.restore();
-                return;
+        for (Class<?> cls2 : cls.getInterfaces()) {
+            li2 li2Var2 = (li2) hashMap2.get(cls2);
+            if (li2Var2 == null) {
+                li2Var2 = a(cls2, null);
             }
-            canvas.save();
-            a();
-            canvas.clipPath(this.b);
-            drawable.draw(canvas);
-            canvas.restore();
+            for (Map.Entry entry : li2Var2.b.entrySet()) {
+                b(hashMap, (mi2) entry.getKey(), (y26) entry.getValue(), cls);
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        Drawable drawable = this.a;
-        return drawable != null ? drawable.getIntrinsicHeight() : super.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        Drawable drawable = this.a;
-        return drawable != null ? drawable.getIntrinsicWidth() : super.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setAlpha(i);
+        if (methodArr == null) {
+            try {
+                methodArr = cls.getDeclaredMethods();
+            } catch (NoClassDefFoundError e) {
+                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e);
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setColorFilter(colorFilter);
+        boolean z = false;
+        for (Method method : methodArr) {
+            es7 es7Var = (es7) method.getAnnotation(es7.class);
+            if (es7Var != null) {
+                Class<?>[] parameterTypes = method.getParameterTypes();
+                if (parameterTypes.length <= 0) {
+                    i = 0;
+                } else {
+                    if (!i36.class.isAssignableFrom(parameterTypes[0])) {
+                        lq5.j("invalid parameter type. Must be one and instanceof LifecycleOwner");
+                        return null;
+                    }
+                    i = 1;
+                }
+                y26 value = es7Var.value();
+                if (parameterTypes.length > 1) {
+                    if (!y26.class.isAssignableFrom(parameterTypes[1])) {
+                        lq5.j("invalid parameter type. second arg must be an event");
+                        return null;
+                    }
+                    if (value != y26.ON_ANY) {
+                        lq5.j("Second arg is supported only for ON_ANY value");
+                        return null;
+                    }
+                    i = 2;
+                }
+                if (parameterTypes.length > 2) {
+                    lq5.j("cannot have more than 2 params");
+                    return null;
+                }
+                b(hashMap, new mi2(i, method), value, cls);
+                z = true;
+            }
         }
+        li2 li2Var3 = new li2(hashMap);
+        hashMap2.put(cls, li2Var3);
+        this.b.put(cls, Boolean.valueOf(z));
+        return li2Var3;
     }
 }

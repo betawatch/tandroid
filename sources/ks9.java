@@ -1,310 +1,71 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ks9 extends Drawable {
-    public final Paint b;
-    public boolean f;
-    public byte j;
-    public boolean m;
-    public sp6 o;
-    public float p;
-    public float q;
-    public float r;
-    public int a = kk7.d4;
-    public final Path c = new Path();
-    public final RectF d = new RectF();
-    public long e = -1;
-    public float g = 0.0f;
-    public float h = 0.0f;
-    public final float[] i = new float[2];
-    public byte k = 0;
-    public boolean l = false;
-    public final lm n = new lm(1.0f, new zk9(this, 11), 0, 350, s33.h);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ks9 extends ns9 implements Iterator {
+    public ls9 a;
+    public ls9 b;
+    public final /* synthetic */ byte c;
 
-    public ks9() {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(gl.L(1.333f));
+    public ks9(ls9 ls9Var, ls9 ls9Var2, byte b) {
+        this.c = b;
+        this.a = ls9Var2;
+        this.b = ls9Var;
     }
 
-    public final void a(int i) {
-        Paint paint = this.b;
-        paint.setColor(i);
-        this.a = paint.getAlpha();
-        paint.setAlpha(kk7.d4);
-    }
-
-    public final void b(int i) {
-        c(i, true, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void c(int i, boolean z, boolean z2) {
-        if (this.k == i) {
-            if (i != 2) {
-                gl.r(this.o);
-                this.o = null;
-                return;
+    @Override // ns9
+    public final void a(ls9 ls9Var) {
+        ls9 ls9Var2;
+        ls9 ls9Var3 = this.a;
+        ls9 ls9Var4 = null;
+        if (ls9Var3 == ls9Var && ls9Var == this.b) {
+            this.b = null;
+            this.a = null;
+            ls9Var3 = null;
+        }
+        ls9 ls9Var5 = ls9Var3;
+        if (ls9Var3 == ls9Var) {
+            switch (this.c) {
+                case 0:
+                    ls9Var2 = ls9Var3.d;
+                    break;
+                default:
+                    ls9Var2 = ls9Var3.c;
+                    break;
             }
-            return;
+            ls9Var5 = ls9Var2;
+            this.a = ls9Var5;
         }
-        if (!z2 && i == 2) {
-            if (this.o == null) {
-                sp6 sp6Var = new sp6(this, i, z);
-                this.o = sp6Var;
-                gl.d3(sp6Var, 65L);
-                return;
+        ls9 ls9Var6 = this.b;
+        if (ls9Var6 == ls9Var) {
+            if (ls9Var6 != ls9Var5 && ls9Var5 != null) {
+                ls9Var4 = b(ls9Var6);
             }
-            return;
-        }
-        sp6 sp6Var2 = this.o;
-        if (sp6Var2 != null) {
-            gl.r(sp6Var2);
-        }
-        lm lmVar = this.n;
-        boolean z3 = false;
-        if (lmVar.c < 1.0f && z) {
-            c(this.k, false, false);
-        }
-        if (i == 2) {
-            this.g = 180.0f;
-            this.e = -1L;
-        } else if (this.k == 2) {
-            if (i == 0) {
-                this.h = -45.0f;
-            } else {
-                this.h = 0.0f;
-            }
-        }
-        if (z) {
-            byte b = this.k;
-            this.j = b;
-            this.k = i;
-            if (b == 2 && i != 2) {
-                z3 = true;
-            }
-            this.l = z3;
-            lmVar.e(true, 0.0f);
-        } else {
-            this.k = i;
-            this.j = i;
-            this.l = false;
-            lmVar.e(true, 1.0f);
-        }
-        invalidateSelf();
-    }
-
-    public final float d(float f) {
-        return ls6.B(0.5f, f, this.p, this.q);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r19v0 */
-    /* JADX WARN: Type inference failed for: r19v1 */
-    /* JADX WARN: Type inference failed for: r19v3 */
-    /* JADX WARN: Type inference failed for: r19v4 */
-    /* JADX WARN: Type inference failed for: r23v0 */
-    /* JADX WARN: Type inference failed for: r23v1 */
-    /* JADX WARN: Type inference failed for: r23v2 */
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        ?? r19;
-        float f;
-        ?? r23;
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        boolean z;
-        Rect bounds = getBounds();
-        this.p = Math.min(bounds.width(), bounds.height());
-        this.q = bounds.centerX();
-        this.r = bounds.centerY();
-        int i = this.a;
-        if (i < 255) {
-            float f6 = bounds.left;
-            float f7 = bounds.top;
-            float f8 = bounds.right;
-            float f9 = bounds.bottom;
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(f6, f7, f8, f9, i, 31);
-        } else {
-            canvas2 = canvas;
-        }
-        float e = this.n.e(false, this.l ? 0.0f : 1.0f);
-        byte b = this.k;
-        byte b2 = this.j;
-        float f10 = b == 0 ? b2 == 0 ? 1.0f : e : b2 == 0 ? 1.0f - e : 0.0f;
-        float f11 = b == 1 ? b2 == 1 ? 1.0f : e : b2 == 1 ? 1.0f - e : 0.0f;
-        float f12 = b == 2 ? b2 == 2 ? 1.0f : e : b2 == 2 ? 1.0f - e : 0.0f;
-        Paint paint = this.b;
-        if (f10 > 0.0f) {
-            boolean z2 = true;
-            float R1 = gl.R1(d(0.25f), d(0.444f), f10);
-            float R12 = gl.R1(e(0.5f), e(0.444f), f10);
-            float R13 = gl.R1(0.0f, this.p * 0.208f, f10);
-            r19 = z2;
-            if (R13 >= this.p * 0.075f) {
-                canvas2.drawCircle(R1, R12, R13, paint);
-                r19 = z2;
-            }
-        } else {
-            r19 = 1;
-        }
-        if (f10 > 0.0f || f11 > 0.0f) {
-            canvas2.save();
-            f = 45.0f;
-            canvas2.rotate(f10 * 45.0f, this.q, this.r);
-            float d = ((this.j == 2 ? d(0.75f) : d(0.2409f)) * f12) + (d(0.7638f) * f11) + (d(0.914f) * f10);
-            float e2 = e(0.5f);
-            r23 = 0;
-            float d2 = ((this.j == 2 ? d(0.75f) : d(0.2409f)) * f12) + (d(0.2409f) * f11) + (d(0.658f) * f10);
-            float e3 = e(0.5f);
-            if (loe.a(d, e2, d2, e3) <= this.p * 0.075f) {
-                f2 = f12;
-                f3 = 0.0f;
-                f4 = 0.5f;
-                f5 = 0.25f;
-            } else {
-                f2 = f12;
-                f3 = 0.0f;
-                f4 = 0.5f;
-                f5 = 0.25f;
-                canvas2.drawLine(d, e2, d2, e3, paint);
-            }
-            canvas2.restore();
-        } else {
-            f = 45.0f;
-            f3 = 0.0f;
-            r23 = 0;
-            f5 = 0.25f;
-            f2 = f12;
-            f4 = 0.5f;
-        }
-        if (f11 > f3) {
-            float R14 = this.j == 2 ? gl.R1(d(0.75f), d(0.2409f), f11) : d(0.2409f);
-            canvas2.save();
-            canvas2.rotate(f10 * f, this.q, this.r);
-            float d3 = (d(0.2452f) * f11) + R14;
-            float R15 = gl.R1(e(f4), e(f5), f11);
-            float e4 = e(f4);
-            float d4 = (d(0.2452f) * f11) + R14;
-            float R16 = gl.R1(e(f4), e(0.75f), f11);
-            if (Math.max(loe.a(d3, R15, R14, e4), loe.a(d4, R16, R14, e4)) > this.p * 0.075f) {
-                Path path = this.c;
-                path.rewind();
-                path.moveTo(d3, R15);
-                path.lineTo(R14, e4);
-                path.lineTo(d4, R16);
-                canvas2.drawPath(path, paint);
-            }
-            canvas2.restore();
-        }
-        if (f2 > f3) {
-            long j = this.e;
-            if (j < 0 && f2 > 0.8f) {
-                j = System.currentTimeMillis();
-                this.e = j;
-                this.m = this.l;
-            }
-            if (j > 0) {
-                float[] fArr = this.i;
-                ih2.a((System.currentTimeMillis() - this.e) % 5400.0f, fArr);
-                float f13 = fArr[r23];
-                float f14 = fArr[r19];
-                if (this.k != 2 && !this.l) {
-                    float max = Math.max(f3, (((float) Math.floor((f13 - 180.0f) / 360.0f)) * 360.0f) + 180.0f);
-                    f14 = Math.min(f14, this.h + max);
-                    f13 = gl.R1(f14, Math.min(f13, max + this.h), f2);
-                }
-                float f15 = this.h;
-                float f16 = this.g;
-                float f17 = f16 + f13;
-                float f18 = f16 + f14;
-                float f19 = f17 % 360.0f;
-                if (f19 < 0.0f) {
-                    f19 += 360.0f;
-                }
-                float f20 = f18 % 360.0f;
-                if (f20 < 0.0f) {
-                    f20 += 360.0f;
-                }
-                boolean z3 = (f19 <= f20 ? f15 < f19 || f15 > f20 : f15 < f19 && f15 > f20) ? r23 : r19;
-                boolean z4 = this.l;
-                if (z4 && !this.m) {
-                    this.m = z4;
-                    this.f = z3;
-                }
-                boolean z5 = this.f;
-                if (!z5 || z3) {
-                    z = r23;
-                } else {
-                    z = r23;
-                    this.f = z;
-                    z5 = z;
-                }
-                if (z4 && z3 && !z5) {
-                    this.l = z;
-                }
-                float d5 = d(f5);
-                float e5 = e(f5);
-                float d6 = d(0.75f);
-                float e6 = e(0.75f);
-                float f21 = f13;
-                RectF rectF = this.d;
-                rectF.set(d5, e5, d6, e6);
-                canvas2.drawArc(rectF, this.g + f21, f14 - f21, false, paint);
-                invalidateSelf();
-            }
-        }
-        if (this.a < 255) {
-            canvas.restore();
-        }
-        if (e < 1.0f) {
-            invalidateSelf();
+            this.b = ls9Var4;
         }
     }
 
-    public final float e(float f) {
-        return ls6.B(0.5f, f, this.p, this.r);
+    public final ls9 b(ls9 ls9Var) {
+        switch (this.c) {
+            case 0:
+                return ls9Var.c;
+            default:
+                return ls9Var.d;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(24.0f);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.b != null;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.a = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
+    @Override // java.util.Iterator
+    public final Object next() {
+        ls9 ls9Var = this.b;
+        ls9 ls9Var2 = this.a;
+        this.b = (ls9Var == ls9Var2 || ls9Var2 == null) ? null : b(ls9Var);
+        return ls9Var;
     }
 }

@@ -1,26 +1,38 @@
 // default package
 
-import android.content.Context;
+import android.app.Activity;
+import android.text.TextUtils;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ix9 extends tya {
-    public final /* synthetic */ lw9 H3;
+public final class ix9 extends pk3 {
+    public final /* synthetic */ uj3 g0;
+    public final /* synthetic */ bj3 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ix9(lw9 lw9Var, Context context, int i, wjb wjbVar) {
-        super(i, wjbVar, context);
-        this.H3 = lw9Var;
+    public ix9(bj3 bj3Var, d79 d79Var, Activity activity, int i, int i2, uj3 uj3Var) {
+        super(d79Var, activity, i, i2);
+        this.h0 = bj3Var;
+        this.g0 = uj3Var;
     }
 
-    @Override // tya
-    public final boolean B1() {
-        return e66.e(16388) || this.H3.G.a0 == 4;
-    }
-
-    @Override // tya
-    public final void H1(int i) {
-        super.H1(i);
-        this.H3.d(false);
+    @Override // l9c
+    public final void O(boolean z) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        super.O(z);
+        ax9 ax9Var = this.h0.j0;
+        ax9Var.e(this.Z || this.a0 || (arrayList = this.S) == null || !arrayList.isEmpty() || (arrayList2 = this.T) == null || !arrayList2.isEmpty() || (arrayList3 = this.V) == null || !arrayList3.isEmpty() || (arrayList4 = this.U) == null || !arrayList4.isEmpty(), z);
+        if (!TextUtils.isEmpty(this.e0)) {
+            ax9Var.d.setText(ob6.M0(2131747898, null));
+            ax9Var.e.setVisibility(8);
+        } else {
+            ax9Var.d.setText(ob6.M0(2131747962, null));
+            ax9Var.e.setVisibility(0);
+            ax9Var.e.setText(ob6.M0(2131747963, null));
+        }
     }
 }

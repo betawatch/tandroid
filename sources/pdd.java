@@ -1,46 +1,99 @@
 // default package
 
-import java.io.ByteArrayOutputStream;
-import java.util.zip.CRC32;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public abstract class pdd {
-    public static final byte[] a = {-119, 80, 78, 71, 13, 10, 26, 10};
+    public static final int[] a = {4, 6, 6, 8, 8, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12};
 
-    public static long a(int i, byte[] bArr) {
-        return ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8) | (bArr[i + 3] & 255);
-    }
-
-    public static void b(long j, byte[] bArr, int i) {
-        bArr[i] = (byte) (j >>> 24);
-        bArr[i + 1] = (byte) (j >>> 16);
-        bArr[i + 2] = (byte) (j >>> 8);
-        bArr[i + 3] = (byte) j;
-    }
-
-    public static boolean c(int i, String str, byte[] bArr) {
-        for (int i2 = 0; i2 < 4; i2++) {
-            if (bArr[i + i2] != str.charAt(i2)) {
-                return false;
+    public static void a(rj0 rj0Var, int i, int i2) {
+        for (int i3 = 0; i3 < i2; i3 += 2) {
+            int i4 = i - i3;
+            int i5 = i4;
+            while (true) {
+                int i6 = i + i3;
+                if (i5 <= i6) {
+                    rj0Var.c(i5, i4);
+                    rj0Var.c(i5, i6);
+                    rj0Var.c(i4, i5);
+                    rj0Var.c(i6, i5);
+                    i5++;
+                }
             }
         }
-        return true;
+        int i7 = i - i2;
+        rj0Var.c(i7, i7);
+        int i8 = i7 + 1;
+        rj0Var.c(i8, i7);
+        rj0Var.c(i7, i8);
+        int i9 = i + i2;
+        rj0Var.c(i9, i7);
+        rj0Var.c(i9, i8);
+        rj0Var.c(i9, i9 - 1);
     }
 
-    public static void d(ByteArrayOutputStream byteArrayOutputStream, String str, byte[] bArr, CRC32 crc32) {
-        byte[] bArr2 = new byte[8];
-        b(bArr.length, bArr2, 0);
-        for (int i = 0; i < 4; i++) {
-            bArr2[i + 4] = (byte) str.charAt(i);
+    public static qj0 b(qj0 qj0Var, int i, int i2) {
+        lu4 lu4Var;
+        int i3 = qj0Var.b / i2;
+        if (i2 == 4) {
+            lu4Var = lu4.k;
+        } else if (i2 == 6) {
+            lu4Var = lu4.j;
+        } else if (i2 == 8) {
+            lu4Var = lu4.m;
+        } else if (i2 == 10) {
+            lu4Var = lu4.i;
+        } else {
+            if (i2 != 12) {
+                lq5.j(uh9.k(i2, "Unsupported word size "));
+                return null;
+            }
+            lu4Var = lu4.h;
         }
-        byteArrayOutputStream.write(bArr2, 0, 8);
-        byteArrayOutputStream.write(bArr, 0, bArr.length);
-        crc32.reset();
-        crc32.update(bArr2, 4, 4);
-        crc32.update(bArr, 0, bArr.length);
-        byte[] bArr3 = new byte[4];
-        b(crc32.getValue(), bArr3, 0);
-        byteArrayOutputStream.write(bArr3, 0, 4);
+        um4 um4Var = new um4(lu4Var);
+        int i4 = i / i2;
+        int[] iArr = new int[i4];
+        int i5 = qj0Var.b / i2;
+        for (int i6 = 0; i6 < i5; i6++) {
+            int i7 = 0;
+            for (int i8 = 0; i8 < i2; i8++) {
+                i7 |= qj0Var.d((i6 * i2) + i8) ? 1 << ((i2 - i8) - 1) : 0;
+            }
+            iArr[i6] = i7;
+        }
+        um4Var.P(iArr, i4 - i3);
+        qj0 qj0Var2 = new qj0();
+        qj0Var2.b(0, i % i2);
+        for (int i9 = 0; i9 < i4; i9++) {
+            qj0Var2.b(iArr[i9], i2);
+        }
+        return qj0Var2;
+    }
+
+    public static qj0 c(qj0 qj0Var, int i) {
+        qj0 qj0Var2 = new qj0();
+        int i2 = qj0Var.b;
+        int i3 = (1 << i) - 2;
+        int i4 = 0;
+        while (i4 < i2) {
+            int i5 = 0;
+            for (int i6 = 0; i6 < i; i6++) {
+                int i7 = i4 + i6;
+                if (i7 >= i2 || qj0Var.d(i7)) {
+                    i5 |= 1 << ((i - 1) - i6);
+                }
+            }
+            int i8 = i5 & i3;
+            if (i8 == i3) {
+                qj0Var2.b(i8, i);
+            } else if (i8 == 0) {
+                qj0Var2.b(i5 | 1, i);
+            } else {
+                qj0Var2.b(i5, i);
+                i4 += i;
+            }
+            i4--;
+            i4 += i;
+        }
+        return qj0Var2;
     }
 }

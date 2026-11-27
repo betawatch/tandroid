@@ -1,59 +1,40 @@
 // default package
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class nmd implements ymd {
-    public static final f06 b = new f06(nmd.class, (byte) 3);
-    public final Object a;
+public abstract /* synthetic */ class nmd {
+    public static final /* synthetic */ int[] a;
+    public static final /* synthetic */ int[] b;
 
-    public nmd(Object obj) {
-        this.a = obj;
-    }
-
-    @Override // ymd
-    public final void c(Runnable runnable, Executor executor) {
-        if (executor == null) {
-            fvc.f("Executor was null.");
-            return;
+    static {
+        int[] iArr = new int[xpd.values().length];
+        b = iArr;
+        try {
+            iArr[xpd.r.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
         try {
-            executor.execute(runnable);
-        } catch (Exception e) {
-            b.c().logp(Level.SEVERE, "com.google.common.util.concurrent.ImmediateFuture", "addListener", tb4.q("RuntimeException while executing runnable ", runnable.toString(), " with executor ", String.valueOf(executor)), (Throwable) e);
+            b[xpd.w.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z) {
-        return false;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        timeUnit.getClass();
-        return this.a;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return false;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return true;
-    }
-
-    public final String toString() {
-        return super.toString() + "[status=SUCCESS, result=[" + this.a.toString() + "]]";
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.a;
+        try {
+            int[] iArr2 = b;
+            xpd xpdVar = xpd.b;
+            iArr2[6] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        int[] iArr3 = new int[ik8.G(4).length];
+        a = iArr3;
+        try {
+            iArr3[3] = 1;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            a[1] = 2;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            a[0] = 3;
+        } catch (NoSuchFieldError unused6) {
+        }
     }
 }

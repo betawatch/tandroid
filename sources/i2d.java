@@ -1,55 +1,115 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import java.util.Set;
+import android.os.Build;
+import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class i2d extends z0d implements ey4, fy4 {
-    public static final op5 l = n2d.a;
-    public final Context c;
-    public final o59 d;
-    public final op5 e;
-    public final Set f;
-    public final ntb i;
-    public eha j;
-    public w1d k;
+public class i2d {
+    public static final l2d b;
+    public final l2d a;
 
-    public i2d(Context context, o59 o59Var, ntb ntbVar) {
-        super((byte) 1);
-        this.c = context;
-        this.d = o59Var;
-        this.i = ntbVar;
-        this.f = (Set) ntbVar.a;
-        this.e = l;
+    static {
+        int i = Build.VERSION.SDK_INT;
+        b = (i >= 34 ? new a2d() : i >= 30 ? new z1d() : i >= 29 ? new y1d() : new x1d()).b().a.a().a.b().a.c();
     }
 
-    @Override // z0d
-    public final void U(c3d c3dVar) {
-        this.d.post(new rld((Object) this, (Object) c3dVar, false, (byte) 13));
+    public i2d(l2d l2dVar) {
+        this.a = l2dVar;
     }
 
-    @Override // ey4
-    public final void onConnected(Bundle bundle) {
-        this.j.B(this);
+    public l2d a() {
+        return this.a;
     }
 
-    @Override // fy4
-    public final void onConnectionFailed(ds2 ds2Var) {
-        this.k.b(ds2Var);
+    public l2d b() {
+        return this.a;
     }
 
-    @Override // ey4
-    public final void onConnectionSuspended(int i) {
-        w1d w1dVar = this.k;
-        u1d u1dVar = (u1d) w1dVar.f.s.get(w1dVar.b);
-        if (u1dVar != null) {
-            if (u1dVar.k) {
-                u1dVar.k(new ds2(17, null, null));
-            } else {
-                u1dVar.onConnectionSuspended(i);
-            }
+    public l2d c() {
+        return this.a;
+    }
+
+    public cp3 e() {
+        return null;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof i2d)) {
+            return false;
+        }
+        i2d i2dVar = (i2d) obj;
+        return o() == i2dVar.o() && n() == i2dVar.n() && Objects.equals(k(), i2dVar.k()) && Objects.equals(i(), i2dVar.i()) && Objects.equals(e(), i2dVar.e());
+    }
+
+    public mq5 f(int i) {
+        return mq5.e;
+    }
+
+    public mq5 g(int i) {
+        if ((i & 8) == 0) {
+            return mq5.e;
+        }
+        lq5.j("Unable to query the maximum insets for IME");
+        return null;
+    }
+
+    public mq5 h() {
+        return k();
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(o()), Boolean.valueOf(n()), k(), i(), e());
+    }
+
+    public mq5 i() {
+        return mq5.e;
+    }
+
+    public mq5 j() {
+        return k();
+    }
+
+    public mq5 k() {
+        return mq5.e;
+    }
+
+    public mq5 l() {
+        return k();
+    }
+
+    public l2d m(int i, int i2, int i3, int i4) {
+        return b;
+    }
+
+    public boolean n() {
+        return false;
+    }
+
+    public boolean o() {
+        return false;
+    }
+
+    public boolean p(int i) {
+        return true;
+    }
+
+    public void d(View view) {
+    }
+
+    public void q(mq5[] mq5VarArr) {
+    }
+
+    public void r(l2d l2dVar) {
+    }
+
+    public void s(mq5 mq5Var) {
+    }
+
+    public void t(int i) {
     }
 }

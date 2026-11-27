@@ -1,39 +1,31 @@
 // default package
 
-import android.content.DialogInterface;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class p83 {
+    public static final e03 b = new e03();
+    public static final String c = a("hts/cahyiseot-agolai.o/1frlglgc/aclg", "tp:/rsltcrprsp.ogepscmv/ieo/eaybtho");
+    public static final String d = a("AzSBpY4F0rHiHFdinTvM", "IayrSTFL9eJ69YeSUO2");
+    public static final uy2 e = new uy2((byte) 14);
+    public final rb9 a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class p83 implements DialogInterface.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-
-    public /* synthetic */ p83(int i, byte b) {
-        this.a = b;
-        this.b = i;
+    public p83(rb9 rb9Var) {
+        this.a = rb9Var;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        switch (this.a) {
-            case 0:
-                int i2 = 2 - i;
-                if (i2 != this.b) {
-                    gba.v(i2);
-                    break;
-                } else {
-                    gba.v(-1);
-                    break;
-                }
-            default:
-                int i3 = 2 - i;
-                if (i3 != this.b) {
-                    gba.v(i3);
-                    break;
-                } else {
-                    gba.v(-1);
-                    break;
-                }
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            lq5.j("Invalid input received");
+            return null;
         }
+        StringBuilder sb = new StringBuilder(str2.length() + str.length());
+        for (int i = 0; i < str.length(); i++) {
+            sb.append(str.charAt(i));
+            if (str2.length() > i) {
+                sb.append(str2.charAt(i));
+            }
+        }
+        return sb.toString();
     }
 }

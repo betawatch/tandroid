@@ -2,9 +2,9 @@
 
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class co0 implements p8c {
+public final /* synthetic */ class co0 implements pcc {
     public final /* synthetic */ byte a;
     public final /* synthetic */ lo0 b;
 
@@ -13,16 +13,16 @@ public final /* synthetic */ class co0 implements p8c {
         this.b = lo0Var;
     }
 
-    @Override // p8c
+    @Override // pcc
     public final void a(Object obj) {
         byte b = this.a;
         lo0 lo0Var = this.b;
         switch (b) {
             case 0:
-                lo0Var.V = (ng1) obj;
+                lo0Var.V = (wg1) obj;
                 break;
             default:
-                gl.c3(new z20(lo0Var, (TL_stories.TL_premium_boostsStatus) obj, (byte) 14));
+                hl.c3(new a30(lo0Var, (TL_stories.TL_premium_boostsStatus) obj, (byte) 14));
                 break;
         }
     }

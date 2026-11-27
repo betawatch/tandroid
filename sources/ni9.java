@@ -1,82 +1,37 @@
 // default package
 
-import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Set;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ni9 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wi9 b;
+public interface ni9 {
+    void E(int i);
 
-    public /* synthetic */ ni9(wi9 wi9Var, byte b) {
-        this.a = b;
-        this.b = wi9Var;
-    }
+    void K(oi9 oi9Var, View view);
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        Set set;
-        byte b = this.a;
-        wi9 wi9Var = this.b;
-        switch (b) {
-            case 0:
-                lk0 lk0Var = wi9Var.y;
-                if (lk0Var != null && lk0Var.e) {
-                    boolean z = !lk0Var.f;
-                    lk0Var.f = z;
-                    ((CheckBoxBase) wi9Var.e.b).f(-1, z, true);
-                    ti9 ti9Var = wi9Var.E;
-                    if (ti9Var != null) {
-                        lk0 lk0Var2 = wi9Var.y;
-                        boolean z2 = lk0Var2.f;
-                        ye9 ye9Var = ((ie9) ti9Var).a;
-                        lk0Var2.f = z2;
-                        ld9 ld9Var = ye9Var.R3;
-                        if (ld9Var != null) {
-                            ld9Var.d();
-                            ye9Var.R3.h();
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                ti9 ti9Var2 = wi9Var.E;
-                if (ti9Var2 != null) {
-                    lk0 lk0Var3 = wi9Var.y;
-                    ye9 ye9Var2 = ((ie9) ti9Var2).a;
-                    if (lk0Var3 != null && (lk0Var3.b instanceof TL_iv.pageBlockPreformatted) && (set = qj2.a.r) != null) {
-                        ArrayList arrayList = new ArrayList(set);
-                        Collections.sort(arrayList);
-                        TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) lk0Var3.b;
-                        cs5 J = ye9Var2.p3.J(view);
-                        J.X(bkb.b0(gl.L(3.0f), bkb.v0(bkb.c6, ye9Var2.o3)));
-                        J.c0 = true;
-                        J.a0 = gl.L(350.0f);
-                        J.h(new sd9(ye9Var2, lk0Var3, (byte) 25), k96.M0(2131753996, null), TextUtils.isEmpty(pageblockpreformatted.language));
-                        if (!TextUtils.isEmpty(pageblockpreformatted.language)) {
-                            J.h(null, h27.b(pageblockpreformatted.language), true);
-                        }
-                        J.j();
-                        int size = arrayList.size();
-                        int i = 0;
-                        while (i < size) {
-                            Object obj = arrayList.get(i);
-                            i++;
-                            String str = (String) obj;
-                            J.h(new gm8(ye9Var2, lk0Var3, str, (byte) 13), h27.b(str), TextUtils.equals(str, pageblockpreformatted.language));
-                        }
-                        J.a0();
-                        break;
-                    }
-                }
-                break;
-        }
-    }
+    void L();
+
+    fu5 O(View view);
+
+    void R();
+
+    void S(mi9 mi9Var, View view);
+
+    boolean a(float f);
+
+    void b(km9 km9Var, String str);
+
+    void d(int i);
+
+    void f();
+
+    void h();
+
+    void j(dg9 dg9Var, boolean z);
+
+    void onContentChanged();
+
+    void u();
+
+    void y(mk0 mk0Var);
 }

@@ -1,99 +1,284 @@
 // default package
 
-import android.os.AsyncTask;
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import java.util.Set;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Semaphore;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class v3d {
-    public o86 a;
-    public boolean b = false;
-    public boolean c = false;
-    public boolean d = true;
-    public boolean e = false;
-    public Executor f;
-    public volatile nx g;
-    public volatile nx h;
-    public final Semaphore i;
-    public final Set j;
+public abstract class v3d implements IInterface {
+    public final /* synthetic */ byte a;
+    public final IBinder b;
+    public final String c;
 
-    public v3d(SignInHubActivity signInHubActivity, Set set) {
-        signInHubActivity.getApplicationContext();
-        this.i = new Semaphore(0);
-        this.j = set;
+    public /* synthetic */ v3d(IBinder iBinder, String str, byte b) {
+        this.a = b;
+        this.b = iBinder;
+        this.c = str;
     }
 
-    public final void a() {
-        if (this.h != null || this.g == null) {
-            return;
-        }
-        this.g.getClass();
-        if (this.f == null) {
-            this.f = AsyncTask.THREAD_POOL_EXECUTOR;
-        }
-        nx nxVar = this.g;
-        Executor executor = this.f;
-        if (nxVar.b == 1) {
-            nxVar.b = 2;
-            executor.execute(nxVar.a);
-            return;
-        }
-        int F = ug8.F(nxVar.b);
-        if (F == 1) {
-            sc8.j("Cannot execute task: the task is already running.");
-        } else if (F != 2) {
-            sc8.j("We should never reach this state");
-        } else {
-            sc8.j("Cannot execute task: the task has already been executed (a task can be executed only once)");
-        }
-    }
-
-    public final boolean b() {
-        if (this.g == null) {
-            return false;
-        }
-        boolean z = this.b;
-        if (!z) {
-            if (z) {
-                c();
-            } else {
-                this.e = true;
+    public final Parcel P(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e) {
+                obtain.recycle();
+                throw e;
             }
+        } finally {
+            parcel.recycle();
         }
-        nx nxVar = this.h;
-        nx nxVar2 = this.g;
-        if (nxVar != null) {
-            nxVar2.getClass();
-            this.g = null;
-            return false;
-        }
-        nxVar2.getClass();
-        nx nxVar3 = this.g;
-        nxVar3.c.set(true);
-        boolean cancel = nxVar3.a.cancel(false);
-        if (cancel) {
-            this.h = this.g;
-        }
-        this.g = null;
-        return cancel;
     }
 
-    public final void c() {
-        b();
-        this.g = new nx(this);
-        a();
+    public final Parcel Q(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e) {
+                obtain.recycle();
+                throw e;
+            }
+        } finally {
+            parcel.recycle();
+        }
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder(64);
-        Class<?> cls = getClass();
-        sb.append(cls.getSimpleName());
-        sb.append("{");
-        sb.append(Integer.toHexString(System.identityHashCode(cls)));
-        sb.append(" id=0}");
-        return sb.toString();
+    public final Parcel R() {
+        byte b = this.a;
+        String str = this.c;
+        switch (b) {
+            case 3:
+                Parcel obtain = Parcel.obtain();
+                obtain.writeInterfaceToken(str);
+                return obtain;
+            case 4:
+                Parcel obtain2 = Parcel.obtain();
+                obtain2.writeInterfaceToken(str);
+                return obtain2;
+            case 5:
+                Parcel obtain3 = Parcel.obtain();
+                obtain3.writeInterfaceToken(str);
+                return obtain3;
+            case 6:
+                Parcel obtain4 = Parcel.obtain();
+                obtain4.writeInterfaceToken(str);
+                return obtain4;
+            default:
+                Parcel obtain5 = Parcel.obtain();
+                obtain5.writeInterfaceToken(str);
+                return obtain5;
+        }
+    }
+
+    public final Parcel S(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e) {
+                obtain.recycle();
+                throw e;
+            }
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public final Parcel T(Parcel parcel, int i) {
+        byte b = this.a;
+        IBinder iBinder = this.b;
+        switch (b) {
+            case 3:
+                Parcel obtain = Parcel.obtain();
+                try {
+                    try {
+                        iBinder.transact(i, parcel, obtain, 0);
+                        obtain.readException();
+                        return obtain;
+                    } catch (RuntimeException e) {
+                        obtain.recycle();
+                        throw e;
+                    }
+                } finally {
+                }
+            case 7:
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    try {
+                        iBinder.transact(i, parcel, obtain2, 0);
+                        obtain2.readException();
+                        return obtain2;
+                    } catch (RuntimeException e2) {
+                        obtain2.recycle();
+                        throw e2;
+                    }
+                } finally {
+                }
+            default:
+                Parcel obtain3 = Parcel.obtain();
+                try {
+                    try {
+                        iBinder.transact(i, parcel, obtain3, 0);
+                        obtain3.readException();
+                        return obtain3;
+                    } catch (RuntimeException e3) {
+                        obtain3.recycle();
+                        throw e3;
+                    }
+                } finally {
+                }
+        }
+    }
+
+    public final void U(Parcel parcel) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(3, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
+        }
+    }
+
+    public final void V(Parcel parcel, int i) {
+        Parcel obtain;
+        byte b = this.a;
+        IBinder iBinder = this.b;
+        switch (b) {
+            case 3:
+                obtain = Parcel.obtain();
+                try {
+                    iBinder.transact(i, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 4:
+            default:
+                obtain = Parcel.obtain();
+                try {
+                    iBinder.transact(i, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 5:
+                obtain = Parcel.obtain();
+                try {
+                    iBinder.transact(i, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 6:
+                obtain = Parcel.obtain();
+                try {
+                    iBinder.transact(i, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 7:
+                obtain = Parcel.obtain();
+                try {
+                    iBinder.transact(i, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+        }
+    }
+
+    public final void W(Parcel parcel, int i) {
+        try {
+            this.b.transact(i, parcel, null, 1);
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public final Parcel X() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public final Parcel Y(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e) {
+                obtain.recycle();
+                throw e;
+            }
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public final Parcel a() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        byte b = this.a;
+        return this.b;
+    }
+
+    public final void b(Parcel parcel, int i) {
+        try {
+            this.b.transact(i, parcel, null, 1);
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public final Parcel c() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public final void d(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(i, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
+        }
+    }
+
+    public final Parcel e() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public final void f(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(i, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
+        }
     }
 }

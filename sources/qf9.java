@@ -1,28 +1,51 @@
 // default package
 
 import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.view.View;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class qf9 extends b4c {
+public final class qf9 extends a8c {
     public static final /* synthetic */ int b = 0;
 
     static {
-        b4c.h(new qf9());
+        a8c.h(new qf9());
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        ((rf9) view).g((lk0) c4cVar.H, (ee9) c4cVar.I);
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        rf9 rf9Var = (rf9) view;
+        mk0 mk0Var = (mk0) b8cVar.H;
+        yh9 yh9Var = (yh9) b8cVar.I;
+        dg9 dg9Var = rf9Var.d;
+        boolean z2 = rf9Var.f != mk0Var;
+        rf9Var.f = mk0Var;
+        rf9Var.h = yh9Var;
+        TL_iv.PageBlock pageBlock = mk0Var.b;
+        if (pageBlock instanceof TL_iv.pageBlockDetails) {
+            TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
+            rf9Var.c.a(pageblockdetails.open ? 0.0f : 1.0f);
+            SpannableStringBuilder r = mm9.r(pageblockdetails.title, null, true);
+            if (!mk0Var.s) {
+                mk0Var.s = true;
+                mk0Var.r = r.length() == 0 || (mm9.q(0, r.length(), r) & 1) != 0;
+            }
+            dg9Var.setAutoBold(mk0Var.r);
+            if (z2 || !String.valueOf(dg9Var.getText()).equals(mm9.l(pageblockdetails.title))) {
+                dg9Var.setTextSilently(r);
+                dg9Var.f();
+            }
+        }
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new rf9(context, wjbVar);
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new rf9(context, vnbVar);
     }
 
-    @Override // b4c
+    @Override // a8c
     public final boolean f() {
         return false;
     }

@@ -1,19 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.concurrent.CancellationException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xxd implements zn7 {
-    public static final xxd a = new xxd();
+public final class xxd {
+    public static final xxd b;
+    public static final xxd c;
+    public final CancellationException a;
 
     static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
+        if (p9f.d) {
+            c = null;
+            b = null;
+        } else {
+            c = new xxd(null);
+            b = new xxd(null);
+        }
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public xxd(CancellationException cancellationException) {
+        this.a = cancellationException;
     }
 }

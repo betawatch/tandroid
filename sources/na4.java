@@ -1,27 +1,74 @@
 // default package
 
-import java.io.FileInputStream;
-import org.telegram.tgnet.TLObject;
+import android.os.SystemClock;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class na4 extends gw2 {
-    public Object a;
-    public FileInputStream b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ oa4 d;
-    public int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class na4 {
+    public final y94 a;
+    public ha4 b;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public e g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public na4(oa4 oa4Var, gw2 gw2Var) {
-        super(gw2Var);
-        this.d = oa4Var;
+    public na4(su3 su3Var, y94 y94Var) {
+        this.a = y94Var;
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return oa4.a(this.d, this);
+    public final void a(ha4 ha4Var, boolean z, boolean z2) {
+        b();
+        this.b = ha4Var;
+        this.c = SystemClock.uptimeMillis();
+        this.d = z;
+        this.e = z && z2;
+        this.g = null;
+        this.f = true;
+    }
+
+    public final void b() {
+        ha4 ha4Var = this.b;
+        if (ha4Var != null) {
+            this.b = null;
+            Integer valueOf = this.e ? Integer.valueOf((int) (SystemClock.uptimeMillis() - this.c)) : null;
+            String str = this.a.b;
+            if (ha4Var == ea4.h) {
+                ea4.h = null;
+            }
+            ha4Var.i = valueOf;
+            if (str != null) {
+                ea4.e.postRunnable(new x94(str, ha4Var, (byte) 0));
+            }
+        }
+    }
+
+    public final void c(boolean z, boolean z2, boolean z3, e eVar) {
+        boolean z4 = false;
+        boolean z5 = this.b != null && SystemClock.uptimeMillis() - this.c >= 3600000;
+        ha4 ha4Var = this.b;
+        if (ha4Var != null && (!z || z5)) {
+            this.e = true;
+        }
+        if (ha4Var != null && !z && this.g == null) {
+            this.g = eVar;
+        }
+        e eVar2 = this.g;
+        if (eVar2 != null && eVar != eVar2) {
+            z4 = true;
+        }
+        if (ha4Var != null && this.e && (z5 || (!this.d ? !((!z2 || this.f) && !z4) : !z3))) {
+            b();
+        }
+        this.f = z2;
+    }
+
+    public final void d(long j) {
+        if (this.b != null) {
+            if (!(this.d && this.e) && j >= this.c + 1000) {
+                b();
+            }
+        }
     }
 }

@@ -1,14 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class vdd {
-    public static final f84 a;
-    public static final f84[] b;
-
-    static {
-        f84 f84Var = new f84("moduleinstall", 7L);
-        a = f84Var;
-        b = new f84[]{f84Var};
-    }
+public final class vdd extends v3d implements ged {
 }

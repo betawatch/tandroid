@@ -1,337 +1,44 @@
 // default package
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class xv3 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final FrameLayout b;
-    public final ImageView c;
-    public final ks9 d;
-    public final l7 e;
-    public final int f;
-    public wv3 h;
-    public boolean n;
-    public final ImageView r;
-    public boolean s;
-    public boolean w;
-    public i8c x;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class xv3 extends nic {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ zw3 c;
 
-    public xv3(Context context, wjb wjbVar) {
-        super(context);
-        this.f = -1;
-        this.a = wjbVar;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        int L = gl.L(18.0f);
-        int i = bkb.zf;
-        Drawable b0 = bkb.b0(L, bkb.v0(i, wjbVar));
-        vkb M = zkb.M(i);
-        frameLayout.setBackground(b0);
-        zkb.j(frameLayout, b0, M, null, wjbVar);
-        final byte b = 1;
-        frameLayout.setClipToOutline(true);
-        frameLayout.setOutlineProvider(new xi((byte) 3));
-        addView(frameLayout, nme.d(-1, 36.0f, kk7.D1, 10.0f, 6.0f, 10.0f, 8.0f));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        frameLayout.addView(frameLayout2, nme.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        ks9 ks9Var = new ks9();
-        this.d = ks9Var;
-        final byte b2 = 0;
-        ks9Var.c(0, false, false);
-        int i2 = bkb.Af;
-        ks9Var.a(bkb.v0(i2, wjbVar));
-        imageView.setImageDrawable(ks9Var);
-        frameLayout.addView(imageView, nme.e(36, 36, 51));
-        l7 l7Var = new l7((byte) 2, context, this);
-        this.e = l7Var;
-        l7Var.setTextSize(1, 16.0f);
-        zkb.D(l7Var, i2, wjbVar);
-        zkb.X(l7Var, bkb.F6, wjbVar);
-        l7Var.setBackgroundDrawable(null);
-        l7Var.setPadding(0, 0, 0, 0);
-        l7Var.setMaxLines(1);
-        l7Var.setLines(1);
-        l7Var.setSingleLine(true);
-        l7Var.setImeOptions(268435459);
-        l7Var.setHint(k96.M0(2131745644, null));
-        int i3 = bkb.Ci;
-        zkb.l(l7Var, 30, i3, wjbVar);
-        zkb.l(l7Var, 36, i3, wjbVar);
-        l7Var.setCursorSize(gl.L(20.0f));
-        l7Var.setCursorWidth(1.5f);
-        l7Var.setTranslationY(gl.L(-2.0f));
-        frameLayout2.addView(l7Var, nme.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
-        l7Var.addTextChangedListener(new b7(this, (byte) 20));
-        ImageView imageView2 = new ImageView(context);
-        this.r = imageView2;
-        imageView2.setScaleType(scaleType);
-        imageView2.setImageDrawable(new d7(wjbVar));
-        int i4 = bkb.h6;
-        ff0 f0 = bkb.f0(bkb.v0(i4, wjbVar), 1, gl.L(15.0f));
-        vkb M2 = zkb.M(i4);
-        imageView2.setBackground(f0);
-        zkb.j(imageView2, f0, null, M2, wjbVar);
-        imageView2.setAlpha(0.0f);
-        imageView2.setScaleX(0.7f);
-        imageView2.setScaleY(0.7f);
-        imageView2.setVisibility(8);
-        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: uv3
-            public final /* synthetic */ xv3 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b3 = b2;
-                xv3 xv3Var = this.b;
-                switch (b3) {
-                    case 0:
-                        xv3Var.b();
-                        break;
-                    default:
-                        byte b4 = xv3Var.d.k;
-                        if (b4 != 1) {
-                            if (b4 == 0) {
-                                xv3Var.e.requestFocus();
-                                break;
-                            }
-                        } else {
-                            xv3Var.b();
-                            wv3 wv3Var = xv3Var.h;
-                            if (wv3Var != null) {
-                                wv3Var.G1();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        frameLayout.addView(imageView2, nme.e(36, 36, 53));
-        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: uv3
-            public final /* synthetic */ xv3 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                byte b3 = b;
-                xv3 xv3Var = this.b;
-                switch (b3) {
-                    case 0:
-                        xv3Var.b();
-                        break;
-                    default:
-                        byte b4 = xv3Var.d.k;
-                        if (b4 != 1) {
-                            if (b4 == 0) {
-                                xv3Var.e.requestFocus();
-                                break;
-                            }
-                        } else {
-                            xv3Var.b();
-                            wv3 wv3Var = xv3Var.h;
-                            if (wv3Var != null) {
-                                wv3Var.G1();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        });
+    public xv3(zw3 zw3Var, boolean z, Context context) {
+        this.c = zw3Var;
+        this.a = z;
+        this.b = context;
     }
 
-    public final void a(int i, boolean z) {
-        if (this.f != i || this.h == null) {
-            wv3 wv3Var = this.h;
-            FrameLayout frameLayout = this.b;
-            if (wv3Var != null) {
-                frameLayout.removeView(wv3Var);
-            }
-            final byte b = 0;
-            final byte b2 = 1;
-            wv3 wv3Var2 = new wv3(this, getContext(), i == 1 ? 3 : 0, this.a, z);
-            this.h = wv3Var2;
-            l7 l7Var = this.e;
-            wv3Var2.setDontOccupyWidth(gl.L(16.0f) + ((int) l7Var.getPaint().measureText(((Object) l7Var.getHint()) + "")));
-            this.h.setOnScrollIntoOccupiedWidth(new p8c(this) { // from class: vv3
-                public final /* synthetic */ xv3 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // p8c
-                public final void a(Object obj) {
-                    byte b3 = b;
-                    xv3 xv3Var = this.b;
-                    switch (b3) {
-                        case 0:
-                            l7 l7Var2 = xv3Var.e;
-                            l7Var2.animate().cancel();
-                            l7Var2.setTranslationX(-Math.max(0, ((Integer) obj).intValue()));
-                            xv3Var.d(false);
-                            break;
-                        default:
-                            qya qyaVar = (qya) obj;
-                            wv3 wv3Var3 = xv3Var.h;
-                            if (wv3Var3 != null) {
-                                qya selectedCategory = wv3Var3.getSelectedCategory();
-                                wv3 wv3Var4 = xv3Var.h;
-                                if (selectedCategory != qyaVar) {
-                                    wv3Var4.I1(qyaVar);
-                                    String str = qyaVar.a;
-                                    int categoryIndex = xv3Var.h.getCategoryIndex();
-                                    i8c i8cVar = xv3Var.x;
-                                    if (i8cVar != null) {
-                                        i8cVar.a(str, Integer.valueOf(categoryIndex));
-                                        break;
-                                    }
-                                } else {
-                                    wv3Var4.I1(null);
-                                    i8c i8cVar2 = xv3Var.x;
-                                    if (i8cVar2 != null) {
-                                        i8cVar2.a(null, -1);
-                                        break;
-                                    }
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-            this.h.setOnCategoryClick(new p8c(this) { // from class: vv3
-                public final /* synthetic */ xv3 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // p8c
-                public final void a(Object obj) {
-                    byte b3 = b2;
-                    xv3 xv3Var = this.b;
-                    switch (b3) {
-                        case 0:
-                            l7 l7Var2 = xv3Var.e;
-                            l7Var2.animate().cancel();
-                            l7Var2.setTranslationX(-Math.max(0, ((Integer) obj).intValue()));
-                            xv3Var.d(false);
-                            break;
-                        default:
-                            qya qyaVar = (qya) obj;
-                            wv3 wv3Var3 = xv3Var.h;
-                            if (wv3Var3 != null) {
-                                qya selectedCategory = wv3Var3.getSelectedCategory();
-                                wv3 wv3Var4 = xv3Var.h;
-                                if (selectedCategory != qyaVar) {
-                                    wv3Var4.I1(qyaVar);
-                                    String str = qyaVar.a;
-                                    int categoryIndex = xv3Var.h.getCategoryIndex();
-                                    i8c i8cVar = xv3Var.x;
-                                    if (i8cVar != null) {
-                                        i8cVar.a(str, Integer.valueOf(categoryIndex));
-                                        break;
-                                    }
-                                } else {
-                                    wv3Var4.I1(null);
-                                    i8c i8cVar2 = xv3Var.x;
-                                    if (i8cVar2 != null) {
-                                        i8cVar2.a(null, -1);
-                                        break;
-                                    }
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-            frameLayout.addView(this.h, Math.max(0, frameLayout.getChildCount() - 1), nme.d(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
+    @Override // nic
+    public final void b(View view, int i, int i2) {
+        iw3 iw3Var = (iw3) view;
+        if (this.a) {
+            i = 1;
         }
+        iw3Var.a(i);
     }
 
-    public final void b() {
-        this.e.setText("");
-        i8c i8cVar = this.x;
-        if (i8cVar != null) {
-            i8cVar.a(null, -1);
-        }
-        wv3 wv3Var = this.h;
-        if (wv3Var != null) {
-            wv3Var.I1(null);
-        }
+    @Override // nic
+    public final View d(int i) {
+        Context context = this.b;
+        zw3 zw3Var = this.c;
+        return i == 1 ? new hw3(zw3Var, context) : new ow3(zw3Var, context);
     }
 
-    public final void c(boolean z) {
-        this.w = z;
-        if (z) {
-            this.d.b(2);
-        } else {
-            d(true);
-        }
+    @Override // nic
+    public final int e() {
+        return this.a ? 1 : 3;
     }
 
-    public final void d(boolean z) {
-        wv3 wv3Var;
-        wv3 wv3Var2;
-        boolean z2 = this.w;
-        l7 l7Var = this.e;
-        if (!z2 || ((l7Var.length() == 0 && ((wv3Var2 = this.h) == null || wv3Var2.getSelectedCategory() == null)) || z)) {
-            this.d.b((l7Var.length() > 0 || ((wv3Var = this.h) != null && wv3Var.w3 > 0.5f && ((wv3Var != null && wv3Var.r3) || wv3Var.getSelectedCategory() != null))) ? 1 : 0);
-            this.w = false;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(50.0f), TLObject.FLAG_30));
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            ks9 ks9Var = this.d;
-            wjb wjbVar = this.a;
-            if (ks9Var != null) {
-                ks9Var.a(bkb.v0(bkb.Af, wjbVar));
-            }
-            ImageView imageView = this.c;
-            if (imageView != null) {
-                imageView.invalidate();
-            }
-            l7 l7Var = this.e;
-            if (l7Var != null) {
-                int i = bkb.Ci;
-                l7Var.setCursorColor(bkb.v0(i, wjbVar));
-                l7Var.setHandlesColor(bkb.v0(i, wjbVar));
-            }
-            ImageView imageView2 = this.r;
-            if (imageView2 != null) {
-                imageView2.invalidate();
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // nic
+    public final int h(int i) {
+        return (i == 0 || i == 1) ? 0 : 1;
     }
 }

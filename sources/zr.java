@@ -1,95 +1,134 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zr extends t26 {
-    public final /* synthetic */ byte I;
+public final class zr extends FrameLayout implements fn7 {
+    public final int a;
+    public final p66 b;
+    public final Runnable c;
 
-    public zr(nf1 nf1Var) {
-        this.I = (byte) 2;
-    }
-
-    @Override // t26
-    public final int V0(p49 p49Var) {
-        switch (this.I) {
-            case 4:
-                return 5000;
-            case 12:
-                return gl.L(4000.0f);
-            default:
-                return super.V0(p49Var);
+    public zr(Context context, int i, vnb vnbVar, Runnable runnable, zg3 zg3Var) {
+        super(context);
+        this.a = i;
+        this.c = runnable;
+        lv2.r(i).B();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, tre.e(-1, -2, 17));
+        ImageView imageView = new ImageView(context);
+        int L = hl.L(80.0f);
+        int i2 = aob.K7;
+        ShapeDrawable K = aob.K(L, aob.v0(i2, vnbVar));
+        uob M = yob.M(i2);
+        imageView.setBackground(K);
+        yob.j(imageView, K, M, null, vnbVar);
+        imageView.setImageResource(R.drawable.large_archive);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        linearLayout.addView(imageView, tre.t(80, 80, 49, 0, zg3Var != null ? 14 : 0, 0, 14));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 20.0f);
+        yob.X(textView, aob.j5, vnbVar);
+        textView.setTypeface(hl.o());
+        textView.setGravity(1);
+        textView.setText(ob6.M0(2131754160, null));
+        linearLayout.addView(textView, tre.t(-1, -2, 1, 32, 0, 32, 9));
+        p66 p66Var = new p66(context, null);
+        this.b = p66Var;
+        p66Var.setTextSize(1, 14.0f);
+        yob.X(p66Var, aob.z6, vnbVar);
+        p66Var.setGravity(1);
+        b();
+        linearLayout.addView(p66Var, tre.t(-1, -2, 1, 32, 0, 32, 25));
+        linearLayout.addView(a(R.drawable.msg_archive_archive, ob6.N0("ArchiveHintSection1"), ob6.N0("ArchiveHintSection1Info"), vnbVar), tre.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(a(R.drawable.msg_archive_hide, ob6.N0("ArchiveHintSection2"), ob6.N0("ArchiveHintSection2Info"), vnbVar), tre.t(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(a(R.drawable.msg_archive_stories, ob6.N0("ArchiveHintSection3"), ob6.N0("ArchiveHintSection3Info"), vnbVar), tre.t(-1, -2, 7, 32, 0, 32, 16));
+        if (zg3Var != null) {
+            c51 i3 = xnb.i(24, vnbVar, context, true);
+            i3.i(ob6.N0("GotIt"), false, true);
+            i3.setOnClickListener(new k1(zg3Var, (byte) 9));
+            linearLayout.addView(i3, tre.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
         }
     }
 
-    @Override // t26, d49
-    public final boolean e() {
-        switch (this.I) {
-            case 7:
-                return false;
-            default:
-                return super.e();
+    public final FrameLayout a(int i, String str, String str2, vnb vnbVar) {
+        FrameLayout frameLayout = new FrameLayout(getContext());
+        ImageView imageView = new ImageView(getContext());
+        int i2 = aob.j5;
+        yob.s(imageView, i2, vnbVar, PorterDuff.Mode.SRC_ATOP);
+        imageView.setImageResource(i);
+        frameLayout.addView(imageView, tre.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(1);
+        TextView textView = new TextView(getContext());
+        yob.X(textView, i2, vnbVar);
+        textView.setTypeface(hl.o());
+        textView.setTextSize(0, hl.L(14.0f));
+        textView.setText(str);
+        linearLayout.addView(textView, tre.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
+        TextView textView2 = new TextView(getContext());
+        yob.X(textView2, aob.z6, vnbVar);
+        textView2.setTextSize(0, hl.L(14.0f));
+        textView2.setText(str2);
+        linearLayout.addView(textView2, tre.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
+        frameLayout.addView(linearLayout, tre.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
+        return frameLayout;
+    }
+
+    public final void b() {
+        TLRPC.GlobalPrivacySettings globalPrivacySettings = lv2.r(this.a).Y;
+        String N0 = ob6.N0(globalPrivacySettings != null ? globalPrivacySettings.keep_archived_unmuted : true ? "ArchiveHintSubtitle" : "ArchiveHintSubtitleUnmutedMove");
+        int i = aob.Xc;
+        SpannableStringBuilder N2 = hl.N2(N0, i, 0, this.c, null);
+        SpannableString spannableString = new SpannableString(">");
+        Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
+        wm2 wm2Var = new wm2(0, mutate);
+        wm2Var.a(i);
+        wm2Var.c(hl.L(18.0f));
+        wm2Var.F = hl.L(11.0f);
+        wm2Var.r = -hl.L(5.0f);
+        spannableString.setSpan(wm2Var, 0, spannableString.length(), 33);
+        this.b.setText(hl.G2(N2, spannableString, ">"));
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == jn7.k0) {
+            b();
         }
     }
 
-    @Override // d49
-    public final void u0(RecyclerView recyclerView, p49 p49Var, int i) {
-        switch (this.I) {
-            case 2:
-                v26 v26Var = new v26(recyclerView.getContext(), 0);
-                v26Var.a = i;
-                v0(v26Var);
-                break;
-            case 11:
-                z78 z78Var = new z78(recyclerView.getContext());
-                z78Var.a = i;
-                v0(z78Var);
-                break;
-            default:
-                super.u0(recyclerView, p49Var, i);
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        jn7.f(this.a).b(this, jn7.k0);
+        b();
     }
 
-    @Override // t26, d49
-    public final boolean x0() {
-        switch (this.I) {
-            case 0:
-            case 3:
-            case 5:
-            case 6:
-            case 8:
-            case 9:
-            case 10:
-            case 13:
-            case 14:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-                return false;
-            case 1:
-            case 4:
-            case 7:
-            case 11:
-            case 12:
-            default:
-                return super.x0();
-            case 2:
-            case 15:
-            case 16:
-                return true;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        jn7.f(this.a).n(this, jn7.k0);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zr(byte b, int i, boolean z) {
-        super(i, z);
-        this.I = b;
-    }
-
-    public /* synthetic */ zr(byte b) {
-        this.I = b;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(hl.L(400.0f), View.MeasureSpec.getSize(i)), TLObject.FLAG_30), i2);
     }
 }

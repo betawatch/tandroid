@@ -1,19 +1,49 @@
 // default package
 
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class d55 extends c49 {
-    @Override // c49
-    public final void e(Rect rect, View view, RecyclerView recyclerView, p49 p49Var) {
-        RecyclerView.R(view);
-        if (h75.u5) {
-            rect.set(0, gl.L(4.0f), 0, gl.L(4.0f));
-        } else {
-            rect.set(gl.L(4.0f), 0, gl.L(4.0f), 0);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class d55 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ n55 b;
+
+    public /* synthetic */ d55(n55 n55Var, byte b) {
+        this.a = b;
+        this.b = n55Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        n55 n55Var = this.b;
+        switch (b) {
+            case 0:
+                if (!n55Var.a() && !n55Var.d) {
+                    n55Var.d = false;
+                    if (!n55Var.f) {
+                        n55Var.f = true;
+                        n55Var.b.c();
+                    }
+                    if (!n55Var.e) {
+                        n55Var.a.dismiss();
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (!n55Var.a() && !n55Var.d) {
+                    n55Var.d = false;
+                    if (!n55Var.f) {
+                        n55Var.f = true;
+                        n55Var.b.c();
+                    }
+                    if (!n55Var.e) {
+                        n55Var.a.dismiss();
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

@@ -1,91 +1,72 @@
 // default package
 
-import j$.util.Objects;
-import java.util.Arrays;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class j44 implements jd7 {
-    public static final fm4 g;
-    public static final fm4 h;
-    public final String a;
-    public final String b;
-    public final long c;
-    public final long d;
-    public final byte[] e;
-    public int f;
+public final class j44 extends z2 implements i44, Serializable {
+    public final Enum[] a;
 
-    static {
-        em4 em4Var = new em4();
-        em4Var.s = ud7.n("application/id3");
-        g = new fm4(em4Var);
-        em4 em4Var2 = new em4();
-        em4Var2.s = ud7.n("application/x-scte35");
-        h = new fm4(em4Var2);
+    public j44(Enum[] enumArr) {
+        enumArr.getClass();
+        this.a = enumArr;
     }
 
-    public j44(String str, String str2, long j, long j2, byte[] bArr) {
-        this.a = str;
-        this.b = str2;
-        this.c = j;
-        this.d = j2;
-        this.e = bArr;
-    }
-
-    @Override // jd7
-    public final fm4 a() {
-        String str = this.a;
-        str.getClass();
-        switch (str) {
-            case "urn:scte:scte35:2014:bin":
-                return h;
-            case "https://aomedia.org/emsg/ID3":
-            case "https://developer.apple.com/streaming/emsg-id3":
-                return g;
-            default:
-                return null;
+    @Override // z2, java.util.List, java.util.Collection
+    public final boolean contains(Object obj) {
+        if (!(obj instanceof Enum)) {
+            return false;
         }
+        Enum r3 = (Enum) obj;
+        int ordinal = r3.ordinal();
+        Enum[] enumArr = this.a;
+        enumArr.getClass();
+        return ((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r3;
     }
 
-    @Override // jd7
-    public final byte[] c() {
-        if (a() != null) {
-            return this.e;
+    @Override // java.util.List
+    public final Object get(int i) {
+        Enum[] enumArr = this.a;
+        int length = enumArr.length;
+        if (i >= 0 && i < length) {
+            return enumArr[i];
         }
+        su3.g(c00.h(i, length, "index: ", ", size: "));
         return null;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || j44.class != obj.getClass()) {
-            return false;
-        }
-        j44 j44Var = (j44) obj;
-        return this.c == j44Var.c && this.d == j44Var.d && Objects.equals(this.a, j44Var.a) && this.b.equals(j44Var.b) && Arrays.equals(this.e, j44Var.e);
+    @Override // z2
+    public final int h() {
+        return this.a.length;
     }
 
-    public final int hashCode() {
-        int i = this.f;
-        if (i != 0) {
-            return i;
+    @Override // z2, java.util.List
+    public final int indexOf(Object obj) {
+        if (!(obj instanceof Enum)) {
+            return -1;
         }
-        String str = this.a;
-        int j = ir2.j((527 + (str != null ? str.hashCode() : 0)) * 31, 31, this.b);
-        long j2 = this.c;
-        int i2 = (j + ((int) (j2 ^ (j2 >>> 32)))) * 31;
-        long j3 = this.d;
-        int hashCode = Arrays.hashCode(this.e) + ((i2 + ((int) (j3 ^ (j3 >>> 32)))) * 31);
-        this.f = hashCode;
-        return hashCode;
+        Enum r4 = (Enum) obj;
+        int ordinal = r4.ordinal();
+        Enum[] enumArr = this.a;
+        enumArr.getClass();
+        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r4) {
+            return ordinal;
+        }
+        return -1;
     }
 
-    public final String toString() {
-        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
-    }
-
-    @Override // jd7
-    public final void b(hr6 hr6Var) {
+    @Override // z2, java.util.List
+    public final int lastIndexOf(Object obj) {
+        if (!(obj instanceof Enum)) {
+            return -1;
+        }
+        Enum r4 = (Enum) obj;
+        int ordinal = r4.ordinal();
+        Enum[] enumArr = this.a;
+        enumArr.getClass();
+        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r4) {
+            return ordinal;
+        }
+        return -1;
     }
 }

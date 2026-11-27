@@ -1,34 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pr implements jd7 {
-    public final int a;
-    public final String b;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-    public pr(int i, String str) {
-        this.a = i;
-        this.b = str;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pr extends d79 implements fn7 {
+    public ArrayList f3;
+    public x46 g3;
+    public int h3;
+
+    public final void A1() {
+        ArrayList arrayList = this.f3;
+        arrayList.clear();
+        arrayList.addAll(Arrays.asList(g26.values()));
+        if (uc7.s1(this.h3).M3()) {
+            int i = 0;
+            while (i < arrayList.size()) {
+                if (((g26) arrayList.get(i)).e) {
+                    arrayList.remove(i);
+                    i--;
+                }
+                i++;
+            }
+        }
+        getAdapter().f();
+        c0();
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            if (ere.a((g26) arrayList.get(i2))) {
+                this.g3.g1(i2, hl.L(16.0f));
+                return;
+            }
+        }
     }
 
-    @Override // jd7
-    public final fm4 a() {
-        return null;
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == jn7.k5) {
+            A1();
+        }
     }
 
-    @Override // jd7
-    public final byte[] c() {
-        return null;
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        jn7.e().b(this, jn7.k5);
     }
 
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("Ait(controlCode=");
-        sb.append(this.a);
-        sb.append(",url=");
-        return b00.j(sb, this.b, ")");
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        jn7.e().n(this, jn7.k5);
     }
 
-    @Override // jd7
-    public final void b(hr6 hr6Var) {
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        c0();
     }
 }

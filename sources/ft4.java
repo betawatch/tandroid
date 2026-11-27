@@ -1,43 +1,48 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ft4 implements i8c {
+public final class ft4 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ p8c b;
+    public final /* synthetic */ it4 b;
 
-    public /* synthetic */ ft4(p8c p8cVar, byte b) {
+    public /* synthetic */ ft4(it4 it4Var, byte b) {
         this.a = b;
-        this.b = p8cVar;
+        this.b = it4Var;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        p8c p8cVar = this.b;
+        it4 it4Var = this.b;
         switch (b) {
             case 0:
-                TL_stars.starGiftUpgradeAttributes stargiftupgradeattributes = (TL_stars.starGiftUpgradeAttributes) obj;
-                if (stargiftupgradeattributes == null) {
-                    p8cVar.a(null);
-                    break;
-                } else {
-                    p8cVar.a(stargiftupgradeattributes.attributes);
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                it4Var.b.d = 0.0f;
+                it4Var.e0 = null;
+                it4Var.j(it4Var.M);
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                it4Var.b.d = 0.0f;
+                it4Var.e0 = null;
+                it4Var.j(it4Var.M);
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                it4Var.b.d = 0.0f;
+                it4Var.e0 = null;
+                it4Var.j(it4Var.M);
+                break;
             default:
-                TLRPC.messages_FoundStickerSets messages_foundstickersets = (TLRPC.messages_FoundStickerSets) obj;
-                if (!(messages_foundstickersets instanceof TLRPC.TL_messages_foundStickerSets)) {
-                    p8cVar.a(new ArrayList());
-                    break;
-                } else {
-                    p8cVar.a(((TLRPC.TL_messages_foundStickerSets) messages_foundstickersets).sets);
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                it4Var.b.d = 0.0f;
+                it4Var.e0 = null;
+                it4Var.j(it4Var.M);
+                break;
         }
     }
 }

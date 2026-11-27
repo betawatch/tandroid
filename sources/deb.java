@@ -1,6 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface deb {
+public final class deb {
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+
+    public /* synthetic */ deb(k00 k00Var) {
+        this.a = k00Var.a;
+        this.b = k00Var.b;
+        this.c = k00Var.c;
+    }
+
+    public final ehf a() {
+        am2 am2Var = new am2((byte) 24, false);
+        Boolean bool = Boolean.FALSE;
+        am2Var.b = bool;
+        am2Var.c = Boolean.valueOf(this.a);
+        am2Var.d = Boolean.valueOf(this.b);
+        am2Var.e = bool;
+        am2Var.f = Boolean.valueOf(this.c);
+        return new ehf(am2Var);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof deb)) {
+            return false;
+        }
+        deb debVar = (deb) obj;
+        return this.a == debVar.a && this.b == debVar.b && this.c == debVar.c && vue.a(null, null);
+    }
+
+    public final int hashCode() {
+        Boolean valueOf = Boolean.valueOf(this.a);
+        Boolean valueOf2 = Boolean.valueOf(this.b);
+        Boolean valueOf3 = Boolean.valueOf(this.c);
+        Boolean bool = Boolean.FALSE;
+        return Arrays.hashCode(new Object[]{bool, valueOf, valueOf2, bool, valueOf3, null});
+    }
 }

@@ -1,32 +1,42 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import java.util.ArrayList;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class u2d extends b4 implements ua9 {
-    public static final Parcelable.Creator<u2d> CREATOR = new b1d((byte) 10);
-    public final ArrayList a;
-    public final String b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class u2d implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ v2d b;
 
-    public u2d(String str, ArrayList arrayList) {
-        this.a = arrayList;
-        this.b = str;
+    public /* synthetic */ u2d(v2d v2dVar, byte b) {
+        this.a = b;
+        this.b = v2dVar;
     }
 
-    @Override // ua9
-    public final Status a() {
-        return this.b != null ? Status.e : Status.r;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.n(parcel, 1, this.a);
-        jte.l(parcel, 2, this.b);
-        jte.s(parcel, r);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        v2d v2dVar = this.b;
+        switch (b) {
+            case 0:
+                if (v2dVar.w != 0) {
+                    v2dVar.i(false);
+                    break;
+                }
+                break;
+            default:
+                int i = v2dVar.H - 1;
+                v2dVar.H = i;
+                if (i == 0) {
+                    View view = v2dVar.F;
+                    RectF rectF = j1d.e;
+                    WeakHashMap weakHashMap = ihc.a;
+                    v2dVar.k(j1d.a(bhc.a(view), view, view.getRootView()), false);
+                    break;
+                }
+                break;
+        }
     }
 }

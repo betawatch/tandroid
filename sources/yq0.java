@@ -3,9 +3,9 @@
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yq0 extends dfa {
+public final class yq0 extends uia {
     public final /* synthetic */ gr0 v3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,12 +14,12 @@ public final class yq0 extends dfa {
         this.v3 = gr0Var;
     }
 
-    @Override // dfa
-    public final boolean A1() {
+    @Override // uia
+    public final boolean B1() {
         return this.v3.b;
     }
 
-    @Override // dfa, o39, android.view.ViewGroup, android.view.View
+    @Override // uia, d79, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         int i = 0;
@@ -33,37 +33,37 @@ public final class yq0 extends dfa {
         gr0 gr0Var = this.v3;
         dr0 dr0Var = gr0Var.K;
         if (gr0Var.b) {
-            hea heaVar = gr0Var.r;
+            yha yhaVar = gr0Var.r;
             int i3 = 0;
-            for (int i4 = 0; i4 < heaVar.getChildCount(); i4++) {
-                int bottom2 = heaVar.getChildAt(i4).getBottom() - heaVar.getPaddingTop();
+            for (int i4 = 0; i4 < yhaVar.getChildCount(); i4++) {
+                int bottom2 = yhaVar.getChildAt(i4).getBottom() - yhaVar.getPaddingTop();
                 if (bottom2 > i3) {
                     i3 = bottom2;
                 }
             }
-            f = gl.R1(f, i3, gr0Var.c);
+            f = hl.R1(f, i3, gr0Var.c);
         }
         dr0Var.setVisibility(gr0Var.w.b() <= 0 ? 8 : 0);
         dr0Var.setTranslationY(f);
     }
 
-    @Override // dfa
+    @Override // uia
     public final int getAnimateToColumnsCount() {
         return this.v3.e;
     }
 
-    @Override // dfa
+    @Override // uia
     public final float getChangeColumnsProgress() {
         return this.v3.c;
     }
 
-    @Override // dfa
+    @Override // uia
     public final int getColumnsCount() {
         return this.v3.d;
     }
 
-    @Override // dfa
-    public final w29 getMovingAdapter() {
+    @Override // uia
+    public final l69 getMovingAdapter() {
         gr0 gr0Var = this.v3;
         if (gr0Var.H.E != 0 || gr0Var.a0.H.F1) {
             return null;
@@ -71,13 +71,13 @@ public final class yq0 extends dfa {
         return gr0Var.w;
     }
 
-    @Override // dfa
-    public final w29 getSupportingAdapter() {
+    @Override // uia
+    public final l69 getSupportingAdapter() {
         return this.v3.x;
     }
 
-    @Override // dfa
-    public final hea getSupportingListView() {
+    @Override // uia
+    public final yha getSupportingListView() {
         return this.v3.r;
     }
 }

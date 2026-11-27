@@ -1,70 +1,103 @@
 // default package
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class gma extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class gma extends asb {
+    public static final Object r = new Object();
+    public final long e;
+    public final long f;
+    public final long g = -9223372036854775807L;
+    public final long h;
+    public final long i;
+    public final long j;
+    public final long k;
+    public final boolean l;
+    public final boolean m;
+    public final boolean n;
+    public final z6f o;
+    public final ft6 p;
+    public final at6 q;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    static {
+        ts6 ts6Var = new ts6();
+        ts6Var.a = "SinglePeriodTimeline";
+        ts6Var.b = Uri.EMPTY;
+        ts6Var.a();
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
+    public gma(long j, long j2, long j3, long j4, long j5, long j6, boolean z, boolean z2, boolean z3, z6f z6fVar, ft6 ft6Var, at6 at6Var) {
+        this.e = j;
+        this.f = j2;
+        this.h = j3;
+        this.i = j4;
+        this.j = j5;
+        this.k = j6;
+        this.l = z;
+        this.m = z2;
+        this.n = z3;
+        this.o = z6fVar;
+        ft6Var.getClass();
+        this.p = ft6Var;
+        this.q = at6Var;
     }
 
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
+    @Override // asb
+    public final int b(Object obj) {
+        return r != obj ? -1 : 0;
     }
 
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
+    @Override // asb
+    public final xrb f(int i, xrb xrbVar, boolean z) {
+        yve.j(i, 1);
+        Object obj = z ? r : null;
+        long j = -this.j;
+        ea eaVar = ea.c;
+        xrbVar.h(null, obj, 0, this.h, j, false);
+        return xrbVar;
     }
 
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: fma
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j, long j2) {
-                int i;
-                gma gmaVar = gma.this;
-                int i2 = gmaVar.a;
-                if (i2 <= 0 || (i = gmaVar.b) <= 0) {
-                    gmaVar.end();
-                    return;
-                }
-                int i3 = i2 - 1;
-                gmaVar.a = i3;
-                if (gmaVar.c != null) {
-                    float[] fArr = gmaVar.e;
-                    if (fArr == null || fArr.length != 2) {
-                        gmaVar.end();
-                        return;
-                    }
-                    float interpolation = gmaVar.getInterpolator().getInterpolation(1.0f - (i3 / i));
-                    float[] fArr2 = gmaVar.e;
-                    float f = fArr2[0];
-                    gmaVar.d = Float.valueOf(((fArr2[1] - f) * interpolation) + f);
-                    gmaVar.c.onAnimationUpdate(gmaVar);
-                }
+    @Override // asb
+    public final int h() {
+        return 1;
+    }
+
+    @Override // asb
+    public final Object l(int i) {
+        yve.j(i, 1);
+        return r;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0027, code lost:
+    
+        if (r1 > r3) goto L12;
+     */
+    @Override // asb
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final zrb m(int i, zrb zrbVar, long j) {
+        long j2;
+        yve.j(i, 1);
+        long j3 = this.k;
+        boolean z = this.m;
+        if (z && !this.n && j != 0) {
+            long j4 = this.i;
+            if (j4 != -9223372036854775807L) {
+                j3 += j;
             }
-        });
-        int duration = (int) (getDuration() / gl.t);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+            j2 = -9223372036854775807L;
+            zrbVar.b(zrb.p, this.p, this.o, this.e, this.f, this.g, this.l, z, this.q, j2, this.i, 0, 0, this.j);
+            return zrbVar;
+        }
+        j2 = j3;
+        zrbVar.b(zrb.p, this.p, this.o, this.e, this.f, this.g, this.l, z, this.q, j2, this.i, 0, 0, this.j);
+        return zrbVar;
+    }
+
+    @Override // asb
+    public final int o() {
+        return 1;
     }
 }

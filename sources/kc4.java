@@ -1,128 +1,27 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
+import java.io.FileInputStream;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class kc4 extends fc4 {
-    public final /* synthetic */ lc4 F;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kc4 extends ax2 {
+    public Object a;
+    public FileInputStream b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ lc4 d;
+    public int e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kc4(lc4 lc4Var, Activity activity, d dVar) {
-        super(activity);
-        this.F = lc4Var;
-        this.E = new float[2];
-        this.r = dVar;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.a = frameLayout;
-        int L = gl.L(8.0f);
-        int i = bkb.d7;
-        int w0 = bkb.w0(null, i, false);
-        int w02 = bkb.w0(null, i, false);
-        int i2 = bkb.h6;
-        int v = bkb.v(w02, bkb.w0(null, i2, false));
-        Drawable i0 = bkb.i0(L, L, L, L, w0, v, v);
-        vkb M = zkb.M(i);
-        vkb p = zkb.p(i, i2);
-        frameLayout.setBackground(i0);
-        zkb.j(frameLayout, i0, M, p, null);
-        frameLayout.setOnClickListener(new cc4(this, (byte) 0));
-        addView(frameLayout, nme.d(-1, 48.0f, 55, 22.0f, 9.0f, 22.0f, 0.0f));
-        jia jiaVar = new jia(activity);
-        this.b = jiaVar;
-        jiaVar.setTextSize(16);
-        int i3 = bkb.F6;
-        zkb.W(jiaVar, i3, null);
-        SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
-        vib vibVar = new vib();
-        vibVar.a |= 256;
-        spannableString.setSpan(new wib(vibVar, 0), 0, spannableString.length(), 33);
-        jiaVar.l(spannableString, false);
-        jiaVar.setAlpha(1.0f);
-        frameLayout.addView(jiaVar, nme.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));
-        jia jiaVar2 = new jia(activity);
-        this.c = jiaVar2;
-        jiaVar2.setTextSize(16);
-        zkb.W(jiaVar2, i3, null);
-        jiaVar2.l(spannableString, false);
-        jiaVar2.setAlpha(0.0f);
-        frameLayout.addView(jiaVar2, nme.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));
-        ImageView imageView = new ImageView(activity);
-        this.d = imageView;
-        imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        zkb.s(imageView, bkb.q5, null, PorterDuff.Mode.SRC_IN);
-        imageView.setAlpha(0.0f);
-        imageView.setVisibility(8);
-        imageView.setContentDescription(k96.M0(2131754838, null));
-        imageView.setOnClickListener(new cc4(this, (byte) 1));
-        frameLayout.addView(imageView, nme.d(40, 40.0f, 21, 4.0f, 4.0f, 4.0f, 4.0f));
-        ec4 ec4Var = new ec4(activity);
-        Paint paint = new Paint();
-        ec4Var.a = paint;
-        ec4Var.b = new float[8];
-        ec4Var.c = new Path();
-        ec4Var.setWillNotDraw(false);
-        paint.setColor(bkb.w0(null, bkb.Ei, false));
-        this.e = ec4Var;
-        addView(ec4Var, nme.d(-1, 42.0f, 55, 22.0f, 69.0f, 22.0f, 0.0f));
-        wb wbVar = new wb(activity, (byte) 19);
-        this.f = wbVar;
-        wbVar.setGravity(17);
-        int i4 = bkb.Ii;
-        zkb.X(wbVar, i4, null);
-        wbVar.setBackground(bkb.Y(822083583, 8, 8));
-        wbVar.setTypeface(gl.o());
-        wbVar.setTextSize(14.0f);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "..").setSpan(new cm2(0, activity.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
-        spannableStringBuilder.setSpan(new se3(gl.L(8.0f)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) k96.M0(2131748734, null));
-        spannableStringBuilder.append((CharSequence) ".").setSpan(new se3(gl.L(5.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-        wbVar.setText(spannableStringBuilder);
-        wbVar.setOnClickListener(new cc4(this, (byte) 2));
-        wbVar.setAlpha(0.0f);
-        wbVar.setVisibility(8);
-        ec4Var.addView(wbVar, nme.e(-1, -1, 3));
-        wb wbVar2 = new wb(activity, (byte) 20);
-        this.h = wbVar2;
-        wbVar2.setGravity(17);
-        zkb.X(wbVar2, i4, null);
-        wbVar2.setBackground(bkb.Y(822083583, 8, 8));
-        wbVar2.setTypeface(gl.o());
-        wbVar2.setTextSize(14.0f);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) "..").setSpan(new cm2(0, activity.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
-        spannableStringBuilder2.setSpan(new se3(gl.L(8.0f)), 1, 2, 0);
-        spannableStringBuilder2.append((CharSequence) k96.M0(2131748733, null));
-        spannableStringBuilder2.append((CharSequence) ".").setSpan(new se3(gl.L(5.0f)), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 0);
-        wbVar2.setText(spannableStringBuilder2);
-        wbVar2.setOnClickListener(new cc4(this, (byte) 3));
-        wbVar2.setAlpha(0.0f);
-        wbVar2.setVisibility(8);
-        ec4Var.addView(wbVar2, nme.e(-1, -1, 5));
-        TextView textView = new TextView(activity);
-        this.n = textView;
-        textView.setGravity(17);
-        zkb.X(textView, i4, null);
-        textView.setBackground(bkb.Y(822083583, 8, 8));
-        textView.setTypeface(gl.o());
-        textView.setTextSize(14.0f);
-        textView.setText("Generate Invite Link");
-        textView.setOnClickListener(new x00(this, (byte) 6));
-        textView.setAlpha(1.0f);
-        textView.setVisibility(0);
-        ec4Var.addView(textView, nme.c(-1.0f, -1));
+    public kc4(lc4 lc4Var, ax2 ax2Var) {
+        super(ax2Var);
+        this.d = lc4Var;
+    }
+
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return lc4.a(this.d, this);
     }
 }

@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dkd implements zn7 {
-    public static final dkd a = new dkd();
+import java.util.AbstractMap;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class dkd extends ghd {
+    public final /* synthetic */ ikd h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dkd(ikd ikdVar) {
+        super((byte) 1);
+        this.h = ikdVar;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i) {
+        ikd ikdVar = this.h;
+        b9f.a(i, ikdVar.r ? 1 : 0);
+        int i2 = i << 1;
+        Object[] objArr = ikdVar.n;
+        Object obj = objArr[i2];
+        obj.getClass();
+        Object obj2 = objArr[i2 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.h.r ? 1 : 0;
     }
 }

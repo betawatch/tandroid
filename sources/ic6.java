@@ -1,45 +1,48 @@
 // default package
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ic6 implements OnSuccessListener {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ mf6 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final class ic6 extends d6 {
+    public final /* synthetic */ uc6 a;
 
-    public /* synthetic */ ic6(mf6 mf6Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z) {
-        this.b = mf6Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z;
+    public ic6(uc6 uc6Var) {
+        this.a = uc6Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.s1(this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
-                break;
-            default:
-                this.b.t1(this.c, this.d, this.e, this.f, (bp9) obj);
-                break;
+    @Override // d6
+    public final void b(int i) {
+        uc6 uc6Var = this.a;
+        if (i == -1) {
+            uc6Var.finishFragment();
+            return;
         }
-    }
-
-    public /* synthetic */ ic6(mf6 mf6Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z) {
-        this.b = mf6Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z;
+        if (i != 1) {
+            if (i == 5) {
+                uc6Var.C0(false);
+                return;
+            }
+            if (i == 6) {
+                uc6Var.B0(null);
+                return;
+            }
+            if ((i == 2 || i == 3 || i == 4) && uc6Var.F != null) {
+                uc6Var.D0();
+                uc6Var.F.j(i != 3 ? i == 4 ? 2 : 0 : 1);
+                return;
+            }
+            return;
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = uc6Var.J0.k.media.geo;
+            double d = geoPoint.lat;
+            double d2 = geoPoint._long;
+            uc6Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 }

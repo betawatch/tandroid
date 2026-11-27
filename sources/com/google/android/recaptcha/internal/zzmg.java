@@ -3,55 +3,55 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String i;
+        String j;
+        int i = 0;
         int i2 = 0;
-        int i3 = 0;
         while (true) {
             length = objArr.length;
-            if (i3 >= length) {
+            if (i2 >= length) {
                 break;
             }
-            Object obj = objArr[i3];
+            Object obj = objArr[i2];
             if (obj == null) {
-                i = "null";
+                j = "null";
             } else {
                 try {
-                    i = obj.toString();
+                    j = obj.toString();
                 } catch (Exception e) {
-                    String y = tb4.y(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    String y = qd4.y(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(y), (Throwable) e);
-                    i = b00.i("<", y, " threw ", e.getClass().getName(), ">");
+                    j = c00.j("<", y, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i3] = i;
-            i3++;
+            objArr[i2] = j;
+            i2++;
         }
         StringBuilder sb = new StringBuilder(str.length() + (length << 4));
-        int i4 = 0;
+        int i3 = 0;
         while (true) {
             length2 = objArr.length;
-            if (i2 >= length2 || (indexOf = str.indexOf("%s", i4)) == -1) {
+            if (i >= length2 || (indexOf = str.indexOf("%s", i3)) == -1) {
                 break;
             }
-            sb.append((CharSequence) str, i4, indexOf);
-            sb.append(objArr[i2]);
-            i2++;
-            i4 = indexOf + 2;
+            sb.append((CharSequence) str, i3, indexOf);
+            sb.append(objArr[i]);
+            i++;
+            i3 = indexOf + 2;
         }
-        sb.append((CharSequence) str, i4, str.length());
-        if (i2 < length2) {
+        sb.append((CharSequence) str, i3, str.length());
+        if (i < length2) {
             sb.append(" [");
-            sb.append(objArr[i2]);
-            for (int i5 = i2 + 1; i5 < objArr.length; i5++) {
+            sb.append(objArr[i]);
+            for (int i4 = i + 1; i4 < objArr.length; i4++) {
                 sb.append(", ");
-                sb.append(objArr[i5]);
+                sb.append(objArr[i4]);
             }
             sb.append(']');
         }

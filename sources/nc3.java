@@ -1,192 +1,237 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.SparseArray;
-import android.util.SparseBooleanArray;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Random;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class nc3 extends byb {
-    public static final nc3 F0 = new nc3(new mc3());
-    public static final String G0;
-    public static final String H0;
-    public static final String I0;
-    public static final String J0;
-    public static final String K0;
-    public static final String L0;
-    public static final String M0;
-    public static final String N0;
-    public static final String O0;
-    public static final String P0;
-    public static final String Q0;
-    public static final String R0;
-    public static final String S0;
-    public static final String T0;
-    public static final String U0;
-    public static final String V0;
-    public static final String W0;
-    public static final String X0;
-    public static final String Y0;
-    public final boolean A0;
-    public final boolean B0;
-    public final boolean C0;
-    public final SparseArray D0;
-    public final SparseBooleanArray E0;
-    public final boolean w0;
-    public final boolean x0;
-    public final boolean y0;
-    public final boolean z0;
+public final class nc3 {
+    public static final m40 h = new m40((byte) 2);
+    public static final Random i = new Random();
+    public vt6 d;
+    public String f;
+    public final zrb a = new zrb();
+    public final xrb b = new xrb();
+    public final HashMap c = new HashMap();
+    public asb e = asb.a;
+    public long g = -1;
 
-    static {
-        String str = g8c.a;
-        G0 = "rs";
-        H0 = "rt";
-        I0 = "ru";
-        J0 = "rv";
-        K0 = "rw";
-        L0 = "rx";
-        M0 = "ry";
-        N0 = "rz";
-        O0 = "s0";
-        P0 = "s1";
-        Q0 = "s2";
-        R0 = "s3";
-        S0 = "s4";
-        T0 = "s5";
-        U0 = "s6";
-        V0 = "s7";
-        W0 = "s8";
-        X0 = "s9";
-        Y0 = "sa";
+    public final void a(mc3 mc3Var) {
+        long j = mc3Var.c;
+        if (j != -1 && mc3Var.e) {
+            this.g = j;
+        }
+        this.f = null;
     }
 
-    public nc3(mc3 mc3Var) {
-        super(mc3Var);
-        this.w0 = mc3Var.J;
-        this.x0 = mc3Var.K;
-        this.y0 = mc3Var.L;
-        this.z0 = mc3Var.M;
-        this.A0 = mc3Var.N;
-        this.B0 = mc3Var.O;
-        this.C0 = mc3Var.P;
-        this.D0 = mc3Var.Q;
-        this.E0 = mc3Var.R;
-    }
-
-    @Override // byb
-    public final ayb a() {
-        return new mc3(this);
-    }
-
-    @Override // byb
-    public final Bundle c() {
-        Bundle c = super.c();
-        c.putBoolean(G0, this.w0);
-        c.putBoolean(H0, false);
-        c.putBoolean(I0, this.x0);
-        c.putBoolean(U0, false);
-        c.putBoolean(J0, this.y0);
-        c.putBoolean(K0, false);
-        c.putBoolean(L0, false);
-        c.putBoolean(M0, false);
-        c.putBoolean(V0, false);
-        c.putBoolean(Y0, this.z0);
-        c.putBoolean(W0, this.A0);
-        c.putBoolean(N0, this.B0);
-        c.putBoolean(O0, false);
-        c.putBoolean(P0, this.C0);
-        c.putBoolean(X0, false);
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        SparseArray sparseArray = new SparseArray();
-        int i = 0;
-        while (true) {
-            SparseArray sparseArray2 = this.D0;
-            if (i >= sparseArray2.size()) {
-                SparseBooleanArray sparseBooleanArray = this.E0;
-                int[] iArr = new int[sparseBooleanArray.size()];
-                for (int i2 = 0; i2 < sparseBooleanArray.size(); i2++) {
-                    iArr[i2] = sparseBooleanArray.keyAt(i2);
-                }
-                c.putIntArray(T0, iArr);
-                return c;
+    public final synchronized void b(uj ujVar) {
+        vt6 vt6Var;
+        String str = this.f;
+        if (str != null) {
+            mc3 mc3Var = (mc3) this.c.get(str);
+            mc3Var.getClass();
+            a(mc3Var);
+        }
+        Iterator it = this.c.values().iterator();
+        while (it.hasNext()) {
+            mc3 mc3Var2 = (mc3) it.next();
+            it.remove();
+            if (mc3Var2.e && (vt6Var = this.d) != null) {
+                vt6Var.p(ujVar, mc3Var2.a);
             }
-            int keyAt = sparseArray2.keyAt(i);
-            for (Map.Entry entry : ((Map) sparseArray2.valueAt(i)).entrySet()) {
-                if (entry.getValue() != null) {
-                    fyb.g();
-                    return null;
-                }
-                arrayList2.add((txb) entry.getKey());
-                arrayList.add(Integer.valueOf(keyAt));
-            }
-            c.putIntArray(Q0, gle.e(arrayList));
-            c.putParcelableArrayList(R0, v21.c(arrayList2, new g31((byte) 5)));
-            SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
-            if (sparseArray.size() > 0) {
-                sparseArray.keyAt(0);
-                ir2.u(sparseArray.valueAt(0));
-                throw null;
-            }
-            c.putSparseParcelableArray(S0, sparseArray3);
-            i++;
         }
     }
 
-    @Override // byb
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && nc3.class == obj.getClass()) {
-            nc3 nc3Var = (nc3) obj;
-            if (super.equals(nc3Var) && this.w0 == nc3Var.w0 && this.x0 == nc3Var.x0 && this.y0 == nc3Var.y0 && this.z0 == nc3Var.z0 && this.A0 == nc3Var.A0 && this.B0 == nc3Var.B0 && this.C0 == nc3Var.C0) {
-                SparseBooleanArray sparseBooleanArray = nc3Var.E0;
-                SparseBooleanArray sparseBooleanArray2 = this.E0;
-                int size = sparseBooleanArray2.size();
-                if (sparseBooleanArray.size() == size) {
-                    int i = 0;
-                    while (true) {
-                        if (i >= size) {
-                            SparseArray sparseArray = nc3Var.D0;
-                            SparseArray sparseArray2 = this.D0;
-                            int size2 = sparseArray2.size();
-                            if (sparseArray.size() == size2) {
-                                for (int i2 = 0; i2 < size2; i2++) {
-                                    int indexOfKey = sparseArray.indexOfKey(sparseArray2.keyAt(i2));
-                                    if (indexOfKey >= 0) {
-                                        Map map = (Map) sparseArray2.valueAt(i2);
-                                        Map map2 = (Map) sparseArray.valueAt(indexOfKey);
-                                        if (map2.size() == map.size()) {
-                                            for (Map.Entry entry : map.entrySet()) {
-                                                txb txbVar = (txb) entry.getKey();
-                                                if (map2.containsKey(txbVar) && Objects.equals(entry.getValue(), map2.get(txbVar))) {
-                                                }
-                                            }
-                                        }
-                                    }
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0048, code lost:
+    
+        if (r12 == (-1)) goto L14;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x009d A[ADDED_TO_REGION, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final mc3 c(int i2, vz6 vz6Var) {
+        long j;
+        long j2;
+        long j3;
+        HashMap hashMap = this.c;
+        mc3 mc3Var = null;
+        long j4 = Long.MAX_VALUE;
+        for (mc3 mc3Var2 : hashMap.values()) {
+            long j5 = mc3Var2.c;
+            vz6 vz6Var2 = mc3Var2.d;
+            if (j5 == -1 && i2 == mc3Var2.b && vz6Var != null) {
+                long j6 = vz6Var.d;
+                nc3 nc3Var = mc3Var2.g;
+                j = -1;
+                mc3 mc3Var3 = (mc3) nc3Var.c.get(nc3Var.f);
+                if (mc3Var3 != null) {
+                    j3 = mc3Var3.c;
+                }
+                j3 = nc3Var.g + 1;
+                if (j6 >= j3) {
+                    mc3Var2.c = j6;
+                }
+            } else {
+                j = -1;
+            }
+            if (vz6Var != null) {
+                long j7 = vz6Var.d;
+                if (j7 != j) {
+                    if (vz6Var2 == null) {
+                        if (!vz6Var.c() && j7 == mc3Var2.c) {
+                            j2 = mc3Var2.c;
+                            if (j2 == j || j2 < j4) {
+                                mc3Var = mc3Var2;
+                                j4 = j2;
+                            } else if (j2 == j4) {
+                                String str = gcc.a;
+                                if (mc3Var.d != null && vz6Var2 != null) {
+                                    mc3Var = mc3Var2;
                                 }
-                                return true;
                             }
-                        } else {
-                            if (sparseBooleanArray.indexOfKey(sparseBooleanArray2.keyAt(i)) < 0) {
-                                break;
-                            }
-                            i++;
                         }
+                    } else if (j7 == vz6Var2.d && vz6Var.b == vz6Var2.b && vz6Var.c == vz6Var2.c) {
+                        j2 = mc3Var2.c;
+                        if (j2 == j) {
+                        }
+                        mc3Var = mc3Var2;
+                        j4 = j2;
                     }
                 }
             }
+            if (i2 == mc3Var2.b) {
+                j2 = mc3Var2.c;
+                if (j2 == j) {
+                }
+                mc3Var = mc3Var2;
+                j4 = j2;
+            }
         }
-        return false;
+        if (mc3Var != null) {
+            return mc3Var;
+        }
+        String str2 = (String) h.get();
+        mc3 mc3Var4 = new mc3(this, str2, i2, vz6Var);
+        hashMap.put(str2, mc3Var4);
+        return mc3Var4;
     }
 
-    @Override // byb
-    public final int hashCode() {
-        return (((((((((((((((super.hashCode() + 31) * 31) + (this.w0 ? 1 : 0)) * 961) + (this.x0 ? 1 : 0)) * 961) + (this.y0 ? 1 : 0)) * 28629151) + (this.z0 ? 1 : 0)) * 31) + (this.A0 ? 1 : 0)) * 31) + (this.B0 ? 1 : 0)) * 961) + (this.C0 ? 1 : 0)) * 31;
+    public final synchronized String d(asb asbVar, vz6 vz6Var) {
+        return c(asbVar.g(vz6Var.a, this.b).c, vz6Var).a;
+    }
+
+    public final void e(uj ujVar) {
+        vz6 vz6Var;
+        asb asbVar = ujVar.b;
+        int i2 = ujVar.c;
+        vz6 vz6Var2 = ujVar.d;
+        boolean p = asbVar.p();
+        String str = this.f;
+        HashMap hashMap = this.c;
+        if (p) {
+            if (str != null) {
+                mc3 mc3Var = (mc3) hashMap.get(str);
+                mc3Var.getClass();
+                a(mc3Var);
+                return;
+            }
+            return;
+        }
+        mc3 mc3Var2 = (mc3) hashMap.get(str);
+        this.f = c(i2, vz6Var2).a;
+        f(ujVar);
+        if (vz6Var2 != null) {
+            long j = vz6Var2.d;
+            if (vz6Var2.c()) {
+                if (mc3Var2 != null && mc3Var2.c == j && (vz6Var = mc3Var2.d) != null && vz6Var.b == vz6Var2.b && vz6Var.c == vz6Var2.c) {
+                    return;
+                }
+                c(i2, new vz6(j, vz6Var2.a));
+                this.d.getClass();
+            }
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x002c, code lost:
+    
+        if (r4 == (-1)) goto L15;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final synchronized void f(uj ujVar) {
+        long j;
+        this.d.getClass();
+        if (ujVar.b.p()) {
+            return;
+        }
+        vz6 vz6Var = ujVar.d;
+        if (vz6Var != null) {
+            long j2 = vz6Var.d;
+            if (j2 != -1) {
+                mc3 mc3Var = (mc3) this.c.get(this.f);
+                if (mc3Var != null) {
+                    j = mc3Var.c;
+                }
+                j = this.g + 1;
+                if (j2 < j) {
+                    return;
+                }
+            }
+            mc3 mc3Var2 = (mc3) this.c.get(this.f);
+            if (mc3Var2 != null && mc3Var2.c == -1 && mc3Var2.b != ujVar.c) {
+                return;
+            }
+        }
+        mc3 c = c(ujVar.c, ujVar.d);
+        if (this.f == null) {
+            this.f = c.a;
+        }
+        vz6 vz6Var2 = ujVar.d;
+        if (vz6Var2 != null && vz6Var2.c()) {
+            vz6 vz6Var3 = ujVar.d;
+            mc3 c2 = c(ujVar.c, new vz6(vz6Var3.a, vz6Var3.d, vz6Var3.b));
+            if (!c2.e) {
+                c2.e = true;
+                ujVar.b.g(ujVar.d.a, this.b);
+                this.b.d(ujVar.d.b);
+                String str = gcc.a;
+                this.d.getClass();
+            }
+        }
+        if (!c.e) {
+            c.e = true;
+            this.d.getClass();
+        }
+        if (c.a.equals(this.f) && !c.f) {
+            c.f = true;
+            this.d.o(ujVar, c.a);
+        }
+    }
+
+    public final synchronized void g(uj ujVar, int i2) {
+        this.d.getClass();
+        boolean z = i2 == 0;
+        Iterator it = this.c.values().iterator();
+        while (it.hasNext()) {
+            mc3 mc3Var = (mc3) it.next();
+            if (mc3Var.a(ujVar)) {
+                it.remove();
+                boolean equals = mc3Var.a.equals(this.f);
+                if (equals) {
+                    a(mc3Var);
+                }
+                if (mc3Var.e) {
+                    if (z && equals) {
+                        boolean z2 = mc3Var.f;
+                    }
+                    this.d.p(ujVar, mc3Var.a);
+                }
+            }
+        }
+        e(ujVar);
     }
 }

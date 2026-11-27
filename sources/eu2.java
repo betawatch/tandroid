@@ -1,97 +1,49 @@
 // default package
 
+import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ContactsActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class eu2 implements RequestDelegate {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class eu2 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ContactsActivity b;
 
-    public /* synthetic */ eu2(Object obj, long j, byte b) {
+    public /* synthetic */ eu2(ContactsActivity contactsActivity, byte b) {
         this.a = b;
-        this.c = obj;
-        this.b = j;
+        this.b = contactsActivity;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        long j = this.b;
-        Object obj = this.c;
+        ContactsActivity contactsActivity = this.b;
         switch (b) {
             case 0:
-                qu2 qu2Var = (qu2) obj;
-                ArrayList arrayList = qu2Var.x;
-                if (tL_error == null) {
-                    TLRPC.contacts_Contacts contacts_contacts = (TLRPC.contacts_Contacts) tLObject;
-                    int i = 0;
-                    if (j != 0 && (contacts_contacts instanceof TLRPC.TL_contacts_contactsNotModified)) {
-                        qu2Var.h = true;
-                        if (!arrayList.isEmpty() && qu2Var.r) {
-                            qu2Var.c(arrayList, null, null, null);
-                            arrayList.clear();
-                        }
-                        qu2Var.getUserConfig().r = (int) (System.currentTimeMillis() / 1000);
-                        qu2Var.getUserConfig().u(false);
-                        gl.c3(new wt2(qu2Var, (byte) 6));
-                        if (w01.a) {
-                            fa4.b("load contacts don't change");
-                            break;
-                        }
-                    } else {
-                        qu2Var.getUserConfig().h = contacts_contacts.saved_count;
-                        qu2Var.getUserConfig().u(false);
-                        gl.c3(new hu2(qu2Var, contacts_contacts.users, i, contacts_contacts.contacts, (byte) 0));
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                qa6 qa6Var = (qa6) obj;
-                if (tLObject != null) {
-                    gl.c3(new de2(qa6Var, tLObject, this.b, (byte) 28));
-                    break;
-                }
-                break;
-            case 2:
-                eb6 eb6Var = (eb6) obj;
-                if (tL_error == null) {
-                    gl.c3(new de2(eb6Var, this.b, tLObject, (byte) 1));
-                    break;
-                }
-                break;
-            case 3:
-                gl.c3(new go6(obj, (Object) tLObject, this.b, (byte) 23));
-                break;
-            case 4:
-                bu9 bu9Var = (bu9) obj;
-                if (j != 0) {
-                    bu9Var.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 5:
-                z3a z3aVar = (z3a) obj;
-                if (tL_error == null) {
-                    z3aVar.getMessagesController().R3((TLRPC.Updates) tLObject, false);
-                }
-                if (j != 0) {
-                    z3aVar.getMessagesStorage().n1(j);
-                    break;
-                }
-                break;
-            case 6:
-                gl.c3(new go6(obj, this.b, (Object) tLObject, (byte) 29));
+                contactsActivity.f0 = null;
                 break;
             default:
-                pub pubVar = (pub) obj;
-                pubVar.getClass();
-                gl.c3(new d2b(pubVar, this.b, tLObject, (byte) 6));
+                t84 t84Var = contactsActivity.a;
+                t84Var.c(contactsActivity.r ? 0.0f : 1.0f);
+                iu2 iu2Var = contactsActivity.b;
+                float f = t84Var.f;
+                ArrayList arrayList = iu2Var.O;
+                iu2Var.M = f;
+                byte b2 = 0;
+                for (int i = 0; i < arrayList.size(); i++) {
+                    ((t26) arrayList.get(i)).setLetterProgress(f);
+                }
+                contactsActivity.b.Y(contactsActivity.r ? 1 : 2, false);
+                contactsActivity.d.x0(0);
+                ViewPropertyAnimator withEndAction = contactsActivity.d.animate().alpha(1.0f).setDuration(220L).setInterpolator(k43.h).withEndAction(new eu2(contactsActivity, b2));
+                contactsActivity.f0 = withEndAction;
+                withEndAction.start();
+                if (contactsActivity.r) {
+                    t84Var.e = (byte) 80;
+                    t84Var.a(1.0f);
+                    break;
+                }
                 break;
         }
     }

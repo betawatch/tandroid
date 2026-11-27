@@ -1,23 +1,72 @@
 // default package
 
-import java.util.ArrayList;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class sm9 implements un9 {
-    public final /* synthetic */ um9 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sm9 implements Iterator {
+    public byte a;
+    public Object b;
+    public int c;
+    public int d;
+    public final /* synthetic */ tm9 e;
 
-    public sm9(um9 um9Var) {
-        this.a = um9Var;
+    public sm9(tm9 tm9Var) {
+        this.e = tm9Var;
+        this.c = tm9Var.d;
+        this.d = tm9Var.c;
     }
 
-    @Override // un9
-    public final void onRejoinRequested() {
-        gl.c3(new zk9(this, (byte) 4));
+    public final boolean a() {
+        this.a = (byte) 3;
+        int i = this.c;
+        if (i == 0) {
+            this.a = (byte) 2;
+            return false;
+        }
+        tm9 tm9Var = this.e;
+        Object[] objArr = tm9Var.a;
+        int i2 = this.d;
+        this.b = objArr[i2];
+        this.a = (byte) 1;
+        this.d = (i2 + 1) % tm9Var.b;
+        this.c = i - 1;
+        return true;
     }
 
-    @Override // un9
-    public final void onStreamChannels(ArrayList arrayList) {
-        gl.c3(new tj9(this, arrayList, (byte) 9));
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        byte b = this.a;
+        if (b == 0) {
+            return a();
+        }
+        if (b == 1) {
+            return true;
+        }
+        if (b == 2) {
+            return false;
+        }
+        lq5.j("hasNext called when the iterator is in the FAILED state.");
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        byte b = this.a;
+        if (b == 1) {
+            this.a = (byte) 0;
+            return this.b;
+        }
+        if (b == 2 || !a()) {
+            lq5.n();
+            return null;
+        }
+        this.a = (byte) 0;
+        return this.b;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

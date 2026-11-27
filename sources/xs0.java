@@ -1,62 +1,94 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xs0 implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class xs0 extends EditTextBoldCursor {
+    public final /* synthetic */ byte N1;
 
-    public /* synthetic */ xs0(Object obj, int i, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xs0(cw9 cw9Var, Context context) {
+        super(context);
+        this.N1 = (byte) 5;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        byte b = this.a;
-        int i = this.b;
-        Object obj = this.c;
-        switch (b) {
+    @Override // cu3, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.N1) {
+            case 4:
+                return false;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, cu3, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.N1) {
             case 0:
-                ConnectionsManager.getInstance(((ct0) obj).a).cancelRequest(i, true);
+                super.onDetachedFromWindow();
+                hl.t1(this);
                 break;
             case 1:
-                ((me1) obj).g0(i);
-                break;
-            case 2:
-                ((wt1) obj).a.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 3:
-                int i2 = ChatActivityEnterView.r7;
-                ((ChatActivityEnterView) obj).F3.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 4:
-                p82 p82Var = (p82) obj;
-                p82Var.O0 = false;
-                p82Var.b = null;
-                p82Var.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 5:
-                ConnectionsManager.getInstance(((t04) ((q04) obj).c.b).G.d1).cancelRequest(i, true);
-                break;
-            case 6:
-                ConnectionsManager.getInstance(((h75) obj).n1.a).cancelRequest(i, true);
-                break;
-            case 7:
-                ((qa6) obj).getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 8:
-                ((bu9) obj).getConnectionsManager().cancelRequest(i, true);
+                super.onDetachedFromWindow();
+                hl.t1(this);
                 break;
             default:
-                ((ymb) obj).c0(i);
+                super.onDetachedFromWindow();
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.N1) {
+            case 3:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(64.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.N1) {
+            case 2:
+                if (isEnabled()) {
+                    break;
+                }
+                break;
+            case 5:
+                if (isEnabled()) {
+                    motionEvent.getAction();
+                    break;
+                }
+                break;
+            case 6:
+                if (motionEvent.getAction() == 0 && !hl.E3(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 7:
+                if (motionEvent.getAction() == 0 && !hl.E3(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xs0(Context context, byte b) {
+        super(context);
+        this.N1 = b;
     }
 }

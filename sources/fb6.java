@@ -1,70 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fb6 extends FrameLayout implements tjb {
-    public final wjb a;
-    public final FrameLayout b;
-    public int c;
-    public boolean d;
+public final /* synthetic */ class fb6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ob6 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ jz5 d;
 
-    public fb6(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        frameLayout.setBackground(sjb.e(bkb.v0(bkb.Ei, wjbVar), 8.0f));
-        addView(frameLayout, nme.d(-1, 48.0f, 51, 16.0f, 10.0f, 16.0f, 0.0f));
-        jia jiaVar = new jia(context);
-        jiaVar.setPadding(gl.L(34.0f), 0, gl.L(34.0f), 0);
-        jiaVar.setGravity(17);
-        jiaVar.setDrawablePadding(gl.L(8.0f));
-        zkb.W(jiaVar, bkb.Ii, wjbVar);
-        jiaVar.setTextSize(14);
-        jiaVar.l(k96.M0(2131751424, null), false);
-        jiaVar.setLeftDrawable(R.drawable.filled_directions);
-        jiaVar.setTypeface(gl.o());
-        frameLayout.addView(jiaVar, nme.c(-1.0f, -1));
-        frameLayout.setOutlineProvider(zdc.b);
-        frameLayout.setClipToOutline(true);
-        ote.b(frameLayout, 0.02f, 1.2f);
+    public /* synthetic */ fb6(ob6 ob6Var, String str, jz5 jz5Var, byte b) {
+        this.a = b;
+        this.b = ob6Var;
+        this.c = str;
+        this.d = jz5Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(73.0f), TLObject.FLAG_30));
-    }
-
-    public void setOnButtonClick(View.OnClickListener onClickListener) {
-        this.b.setOnClickListener(onClickListener);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            int v0 = bkb.v0(bkb.Ei, this.a);
-            FrameLayout frameLayout = this.b;
-            if (frameLayout != null && (v0 != this.c || this.d != bkb.I.o())) {
-                this.d = bkb.I.o();
-                this.c = v0;
-                bkb.F1(frameLayout.getBackground(), v0, false);
-                bkb.F1(frameLayout.getBackground(), sjb.b(v0), true);
-                frameLayout.invalidate();
-            }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 1;
+        jz5 jz5Var = this.d;
+        String str = this.c;
+        ob6 ob6Var = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new fb6(ob6Var, str, jz5Var, b2));
+                break;
+            default:
+                uc7.e1().edit().putBoolean("langpack_patched" + str, true).apply();
+                jz5Var.run();
+                ob6Var.Q = false;
+                break;
         }
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
     }
 }

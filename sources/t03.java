@@ -1,168 +1,255 @@
 // default package
 
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
-import android.os.CancellationSignal;
-import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Map;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Locale;
 import java.util.Set;
-import java.util.concurrent.Executor;
+import java.util.TreeSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class t03 implements qp4 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ t03(Object obj, Object obj2, Object obj3, Object obj4, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.e = obj2;
-        this.c = obj3;
-        this.d = obj4;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class t03 {
+    public static boolean a(String str, String str2) {
+        return str.length() >= str2.length() && str.regionMatches(true, str.length() - str2.length(), str2, 0, str2.length());
     }
 
-    @Override // qp4
-    public final Object invoke(Object obj) {
-        Object obj2;
-        byte b = this.a;
-        g5c g5cVar = g5c.a;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        Object obj5 = this.e;
-        Object obj6 = this.b;
-        switch (b) {
-            case 0:
-                CancellationSignal cancellationSignal = (CancellationSignal) obj6;
-                y03 y03Var = (y03) obj5;
-                Context context = y03Var.e;
-                Executor executor = (Executor) obj4;
-                o13 o13Var = (o13) obj3;
-                e03 e03Var = (e03) obj;
-                PendingIntent pendingIntent = e03Var.a;
-                j03 j03Var = e03Var.b;
-                if (pendingIntent != null) {
-                    Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
-                    y13.a(y03Var.i, intent, "CREATE_PUBLIC_KEY_CREDENTIAL");
-                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", pendingIntent);
-                    try {
-                        context.startActivity(intent);
-                    } catch (Exception unused) {
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!l23.a(cancellationSignal)) {
-                            Executor executor2 = y03Var.g;
-                            if (executor2 == null) {
-                                rp5.e("executor");
-                                throw null;
-                            }
-                            executor2.execute(new s03(y03Var, (byte) 0));
-                        }
-                    }
-                } else if (j03Var == null) {
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (!l23.a(cancellationSignal)) {
-                        executor.execute(new r03(o13Var, (byte) 1));
-                    }
-                    return g5cVar;
-                }
-                if (j03Var != null) {
-                    k03 a = s9e.a(j03Var.a, j03Var.b);
-                    if (a instanceof b13) {
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!l23.a(cancellationSignal)) {
-                            executor.execute(new gu2((Object) o13Var, a, (byte) 12));
-                        }
-                        return g5cVar;
-                    }
-                }
-                if (pendingIntent == null) {
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (!l23.a(cancellationSignal)) {
-                        executor.execute(new r03(o13Var, (byte) 0));
-                    }
-                }
-                return g5cVar;
-            case 1:
-                CancellationSignal cancellationSignal2 = (CancellationSignal) obj6;
-                ss4 ss4Var = (ss4) obj5;
-                Context context2 = ss4Var.e;
-                Executor executor3 = (Executor) obj4;
-                o13 o13Var2 = (o13) obj3;
-                z28 z28Var = (z28) obj;
-                CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!l23.a(cancellationSignal2)) {
-                    Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
-                    y13.a(ss4Var.i, intent2, "BEGIN_SIGN_IN");
-                    intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", z28Var.a);
-                    try {
-                        context2.startActivity(intent2);
-                    } catch (Exception unused2) {
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!l23.a(cancellationSignal2)) {
-                            executor3.execute(new r03(o13Var2, (byte) 9));
-                        }
-                    }
-                }
-                return g5cVar;
-            default:
-                String str = (String) obj5;
-                String str2 = (String) obj4;
-                lg8 lg8Var = (lg8) obj3;
-                ih7 ih7Var = (ih7) obj;
-                ((td5) obj6).getClass();
-                lg8 lg8Var2 = td5.c;
-                lg8 lg8Var3 = td5.d;
-                String str3 = "";
-                if (((String) mle.a(ih7Var, lg8Var3, "")).equals(str)) {
-                    lg8 d = td5.d(ih7Var, str);
-                    if (d != null && !d.a.equals(str2)) {
-                        td5.f(ih7Var, str);
-                        HashSet hashSet = new HashSet((Collection) mle.a(ih7Var, lg8Var, new HashSet()));
-                        hashSet.add(str);
-                        ih7Var.d(lg8Var, hashSet);
-                    }
-                    return null;
-                }
-                long longValue = ((Long) mle.a(ih7Var, lg8Var2, 0L)).longValue();
-                if (longValue + 1 == 30) {
-                    long longValue2 = ((Long) mle.a(ih7Var, lg8Var2, 0L)).longValue();
-                    Set hashSet2 = new HashSet();
-                    String str4 = null;
-                    for (Map.Entry entry : ih7Var.a().entrySet()) {
-                        if (entry.getValue() instanceof Set) {
-                            Set<String> set = (Set) entry.getValue();
-                            for (String str5 : set) {
-                                if (str4 == null || str4.compareTo(str5) > 0) {
-                                    str3 = ((lg8) entry.getKey()).a;
-                                    str4 = str5;
-                                    hashSet2 = set;
-                                }
-                            }
-                        }
-                    }
-                    obj2 = null;
-                    HashSet hashSet3 = new HashSet(hashSet2);
-                    hashSet3.remove(str4);
-                    str3.getClass();
-                    ih7Var.d(new lg8(str3), hashSet3);
-                    longValue = longValue2 - 1;
-                    ih7Var.d(lg8Var2, Long.valueOf(longValue));
-                } else {
-                    obj2 = null;
-                }
-                HashSet hashSet4 = new HashSet((Collection) mle.a(ih7Var, lg8Var, new HashSet()));
-                hashSet4.add(str);
-                ih7Var.d(lg8Var, hashSet4);
-                ih7Var.d(lg8Var2, Long.valueOf(longValue + 1));
-                ih7Var.d(lg8Var3, str);
-                return obj2;
+    public static String b(TreeSet treeSet) {
+        ArrayList arrayList = new ArrayList(treeSet.size());
+        Iterator it = treeSet.iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (!"gay".equalsIgnoreCase(str)) {
+                arrayList.add(str);
+            }
         }
+        Collections.sort(arrayList);
+        String str2 = "";
+        int i = 0;
+        while (i < arrayList.size()) {
+            String k = c00.k(new StringBuilder("'"), (String) arrayList.get(i), "'");
+            str2 = i == 0 ? k : i == arrayList.size() - 1 ? ob6.a0(null, null, 2131751684, str2, k) : ob6.a0(null, null, 2131751686, str2, k);
+            i++;
+        }
+        return str2;
+    }
+
+    public static String c(String str, TreeSet treeSet) {
+        String str2 = null;
+        if (a(str, "bot")) {
+            return null;
+        }
+        Iterator it = treeSet.iterator();
+        while (it.hasNext()) {
+            String str3 = (String) it.next();
+            if (!TextUtils.isEmpty(str3) && a(str, str3) && (str2 == null || str3.length() > str2.length())) {
+                str2 = str3;
+            }
+        }
+        return str2;
+    }
+
+    public static CharSequence d(int i, String str, TreeSet treeSet, String str2, zd zdVar, vnb vnbVar) {
+        if (str2 != null) {
+            String upperCase = str2.toUpperCase(Locale.US);
+            upperCase.getClass();
+            switch (upperCase) {
+                case "OWNER_USERNAMES_LIMIT_EXCEEDED":
+                    return ob6.a0(null, null, 2131751690, Integer.valueOf(uc7.s1(i).k4.Y.f()), b(treeSet));
+                case "PREMIUM_ACCOUNT_REQUIRED":
+                    String c = c(str, treeSet);
+                    return hl.M2(c == null ? ob6.M0(2131751688, null) : ob6.a0(null, null, 2131751689, c), aob.Xc, vnbVar, zdVar, false);
+                case "ADDITIONAL_USERNAME_SUFFIX_MISSING":
+                    return ob6.a0(null, null, 2131751687, b(treeSet));
+                case "USERNAME_INVALID":
+                    return ob6.M0(2131743311, null);
+                case "USERNAME_PURCHASE_AVAILABLE":
+                case "USERNAME_OCCUPIED":
+                    return ob6.M0(2131743313, null);
+                case "BOT_USERNAMES_LIMIT_EXCEEDED":
+                    return ob6.M0(2131751693, null);
+            }
+        }
+        return null;
+    }
+
+    public static void e(Context context, int i, TLRPC.User user, TLRPC.TL_requestPeerTypeCreateBot tL_requestPeerTypeCreateBot, boolean z, pcc pccVar, vnb vnbVar, d31 d31Var) {
+        String str;
+        int[] iArr;
+        zt3 zt3Var;
+        Object M2;
+        d31 d31Var2;
+        if (!user.bot_can_manage_bots) {
+            if (d31Var == null) {
+                e S = LaunchActivity.S();
+                if (S == null) {
+                    pccVar.a(null);
+                    return;
+                }
+                d31Var2 = d31.b0(S);
+            } else {
+                d31Var2 = d31Var;
+            }
+            d31Var2.Q(R.raw.error, 36, hl.L2(aob.v0(aob.xj, vnbVar), ob6.a0(null, null, 2131751695, TextUtils.isEmpty(lbc.p(user)) ? lbc.r(user) : "@" + lbc.p(user)))).j();
+            pccVar.a(null);
+            return;
+        }
+        TreeSet treeSet = new TreeSet();
+        Set<String> set = uc7.s1(i).k4.u0.f;
+        if (set != null) {
+            for (String str2 : set) {
+                if (!TextUtils.isEmpty(str2)) {
+                    treeSet.add(str2.toLowerCase(Locale.US));
+                }
+            }
+        }
+        treeSet.remove("bot");
+        nx0 h = uh9.h(1, vnbVar, context, true);
+        s03 s03Var = new s03(context);
+        s03Var.setClipChildren(false);
+        s03Var.setClipToPadding(false);
+        s03Var.setOrientation(1);
+        h.O = s03Var;
+        de0 de0Var = new de0(context);
+        rb0 rb0Var = new rb0((vnb) null);
+        rb0Var.q(user);
+        de0Var.f(user, rb0Var);
+        de0Var.setRoundRadius(hl.L(40.0f));
+        s03Var.addView(de0Var, tre.t(80, 80, 49, 0, 22, 0, 16));
+        TextView textView = new TextView(context);
+        textView.setTypeface(hl.o());
+        int i2 = aob.G6;
+        yob.X(textView, i2, vnbVar);
+        bs2.r(20.0f, 1, 2131751696, textView, null);
+        textView.setGravity(17);
+        s03Var.addView(textView, tre.t(-1, -2, 55, 16, 0, 16, 5));
+        TextView textView2 = new TextView(context);
+        yob.X(textView2, i2, vnbVar);
+        textView2.setTextSize(1, 14.0f);
+        String a0 = ob6.a0(null, null, 2131751697, lbc.r(user));
+        int i3 = aob.Xc;
+        textView2.setText(hl.M2(a0, i3, vnbVar, null, true));
+        textView2.setGravity(17);
+        s03Var.addView(textView2, tre.t(-1, -2, 55, 16, 0, 16, 22));
+        zt3 zt3Var2 = new zt3(context, ob6.M0(2131751699, null), false, false, -1, vnbVar);
+        zt3Var2.d.setImeOptions(5);
+        int L = hl.L(16.0f);
+        int i4 = aob.d6;
+        ShapeDrawable b0 = aob.b0(L, aob.v0(i4, vnbVar));
+        uob M = yob.M(i4);
+        zt3Var2.setBackground(b0);
+        yob.j(zt3Var2, b0, M, null, vnbVar);
+        zt3Var2.setText(tL_requestPeerTypeCreateBot.suggested_name);
+        s03Var.addView(zt3Var2, tre.t(-1, -2, 55, 12, 0, 12, 0));
+        ilb ilbVar = new ilb(context, vnbVar);
+        ilbVar.setText(ob6.M0(2131751698, null));
+        s03Var.addView(ilbVar, tre.t(-1, -2, 55, 9, 0, 9, 0));
+        zt3 zt3Var3 = new zt3(context, ob6.M0(2131751694, null), false, false, 32, vnbVar);
+        LinearLayout j = uh9.j(context, 0);
+        zt3Var3.removeView(zt3Var3.d);
+        yob.A(zt3Var3.d, aob.H6, vnbVar);
+        zt3Var3.d.setPadding(0, hl.L(15.0f), hl.L(63.0f), hl.L(15.0f));
+        TextView textView3 = new TextView(context);
+        textView3.setTextSize(1, 17.0f);
+        textView3.setText("@");
+        yob.X(textView3, i2, vnbVar);
+        textView3.setGravity(17);
+        textView3.setPadding(0, hl.L(15.0f), 0, hl.L(15.0f));
+        j.addView(textView3, tre.k(21.0f, -1.0f, 0.0f, 0.0f, -2, -1));
+        j.addView(zt3Var3.d, tre.q(0, -1, 119.0f, 1, 0, 0, 0, 0));
+        zt3Var3.addView(j, tre.c(-1.0f, -1));
+        Drawable b02 = aob.b0(hl.L(16.0f), aob.v0(i4, vnbVar));
+        uob M3 = yob.M(i4);
+        zt3Var3.setBackground(b02);
+        yob.j(zt3Var3, b02, M3, null, vnbVar);
+        zt3Var3.d.setImeOptions(6);
+        zt3Var3.d.setInputType(jn7.a2);
+        zt3Var3.d.setSingleLine(true);
+        String str3 = tL_requestPeerTypeCreateBot.suggested_username;
+        if (str3 != null) {
+            str3 = str3.trim();
+        }
+        zt3Var3.setText(str3);
+        s03Var.addView(zt3Var3, tre.t(-1, -2, 55, 12, 0, 12, 0));
+        zt3Var2.d.setOnEditorActionListener(new j(zt3Var3, (byte) 10));
+        ilb ilbVar2 = new ilb(context, vnbVar);
+        s03Var.addView(ilbVar2, tre.t(-1, -2, 55, 9, 0, 9, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        String str4 = str3;
+        linearLayout.setPadding(hl.L(12.0f), hl.L(12.0f), hl.L(12.0f), hl.L(12.0f));
+        linearLayout.setClipToPadding(false);
+        s03Var.addView(linearLayout, tre.o(-1, -2));
+        c51 c51Var = new c51(vnbVar, context, true);
+        c51Var.setRoundRadius(24);
+        c51Var.e();
+        c51Var.setColor(aob.p1(0.1f, aob.v0(i2, vnbVar)));
+        if (c51Var.getBackground() != null) {
+            Drawable background = c51Var.getBackground();
+            uob K = yob.K(0.1f, i2);
+            c51Var.setBackground(background);
+            str = null;
+            yob.j(c51Var, background, K, null, vnbVar);
+        } else {
+            str = null;
+        }
+        c51Var.setText(ob6.M0(2131752570, str));
+        linearLayout.addView(c51Var, tre.q(0, 48, 119.0f, 1, 0, 0, 5, 0));
+        c51 i5 = xnb.i(24, vnbVar, context, true);
+        i5.setText(ob6.M0(2131751706, null));
+        linearLayout.addView(i5, tre.q(0, 48, 119.0f, 1, 5, 0, 0, 0));
+        h.T0 = false;
+        h.Q0 = true;
+        h.r = true;
+        h.t0(aob.a7);
+        h.J();
+        new WeakReference(h);
+        boolean[] zArr = new boolean[1];
+        boolean[] zArr2 = new boolean[1];
+        String[] strArr = new String[1];
+        int[] iArr2 = {-1};
+        int[] iArr3 = {-1};
+        int[] iArr4 = new int[1];
+        Runnable[] runnableArr = new Runnable[1];
+        int[] iArr5 = {4};
+        zd zdVar = new zd(h, i, (byte) 29);
+        String b = b(treeSet);
+        if (TextUtils.isEmpty(b)) {
+            M2 = ob6.M0(2131751691, null);
+            iArr = iArr5;
+            zt3Var = zt3Var2;
+        } else {
+            iArr = iArr5;
+            zt3Var = zt3Var2;
+            M2 = hl.M2(ob6.a0(null, null, 2131751685, b), i3, vnbVar, zdVar, false);
+        }
+        cv2 cv2Var = new cv2(ilbVar2, M2, vnbVar, (byte) 3);
+        gp6 gp6Var = new gp6(iArr4, runnableArr, iArr3, i, (byte) 19);
+        bv2 bv2Var = new bv2(zt3Var3, treeSet, (byte) 9);
+        p03 p03Var = new p03(zArr2, iArr2, gp6Var, strArr, i5, zt3Var3, treeSet, cv2Var, ilbVar2, vnbVar, iArr4, runnableArr, iArr3, i, zdVar, h);
+        cv2Var.run();
+        q03 q03Var = new q03(zArr2, iArr2, zt3Var3, treeSet, strArr, p03Var, zt3Var, iArr, gp6Var, i5, z, i, user, zArr, pccVar, h, zdVar, vnbVar, ilbVar2, context);
+        zt3Var3.d.addTextChangedListener(new r03(bv2Var, p03Var));
+        bv2Var.run();
+        if (!TextUtils.isEmpty(str4)) {
+            p03Var.run();
+        }
+        zt3Var3.d.setOnEditorActionListener(new j(q03Var, (byte) 11));
+        c51Var.setOnClickListener(new rg(h, (byte) 5));
+        i5.setEnabled(false);
+        i5.setOnClickListener(new r81(q03Var, (byte) 22));
+        h.setOnDismissListener(new o03(zArr2, gp6Var, zArr, pccVar, iArr2, i));
+        h.show();
     }
 }

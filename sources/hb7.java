@@ -1,174 +1,167 @@
 // default package
 
-import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
+import java.util.HashMap;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hb7 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ ad7 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hb7 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ hb7(ad7 ad7Var, long j, int i, TLRPC.InputChannel inputChannel, int i2, long j2) {
-        this.b = ad7Var;
-        this.c = j;
-        this.e = i;
-        this.h = inputChannel;
-        this.f = i2;
-        this.d = j2;
+    public /* synthetic */ hb7(int i, Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = i;
+        this.c = obj;
+        this.d = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x00e8, code lost:
-    
-        if (r12 != null) goto L48;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        hp8 hp8Var;
-        SQLiteCursor sQLiteCursor2;
-        boolean z;
-        int i;
-        boolean z2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        Object obj = this.h;
+        int i = 0;
+        int i2 = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
         switch (b) {
             case 0:
-                this.b.getMessagesController().s3(-this.c, this.e, (TLRPC.InputChannel) obj, this.f, this.d, true);
-                return;
-            case 1:
-                this.b.X1(this.c, this.d, (Integer) obj, this.e, this.f, 0, 0);
-                return;
-            default:
-                hp8 hp8Var2 = (hp8) obj;
-                final int i2 = this.e;
-                final ad7 ad7Var = this.b;
-                final long j = this.c;
-                long j2 = this.d;
-                final ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = ad7Var.b;
-                        if (i2 <= 0) {
-                            try {
-                                sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j));
-                                i = 1;
-                                z2 = false;
-                            } catch (Exception e) {
-                                e = e;
-                                hp8Var = hp8Var2;
-                                z = true;
-                                sQLiteCursor2 = null;
-                                fa4.g(e, z);
-                                break;
-                            } catch (Throwable th) {
-                                th = th;
-                                sQLiteCursor = null;
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                throw th;
-                            }
-                        } else {
-                            z2 = false;
-                            i = 1;
-                            sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j), Integer.valueOf(i2));
-                        }
-                        try {
-                            ArrayList arrayList4 = new ArrayList();
-                            ArrayList arrayList5 = new ArrayList();
-                            while (sQLiteCursor2.next()) {
-                                boolean z3 = z2;
-                                NativeByteBuffer byteBufferValue = sQLiteCursor2.byteBufferValue(z3 ? 1 : 0);
-                                if (byteBufferValue != null) {
-                                    hp8Var = hp8Var2;
-                                    try {
-                                        TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z3), z3);
-                                        TLdeserialize.readAttachPath(byteBufferValue, j2);
-                                        byteBufferValue.reuse();
-                                        TLdeserialize.id = sQLiteCursor2.intValue(i);
-                                        TLdeserialize.dialog_id = -j;
-                                        ad7.d(TLdeserialize, arrayList4, arrayList5, null);
-                                        arrayList.add(TLdeserialize);
-                                    } catch (Exception e2) {
-                                        e = e2;
-                                        z = true;
-                                        fa4.g(e, z);
-                                    }
-                                } else {
-                                    hp8Var = hp8Var2;
-                                }
-                                hp8Var2 = hp8Var;
-                                z2 = false;
-                                i = 1;
-                            }
-                            hp8Var = hp8Var2;
-                            sQLiteCursor2.dispose();
-                            if (!arrayList.isEmpty()) {
-                                if (!arrayList4.isEmpty()) {
-                                    ad7Var.k0(arrayList4, arrayList2, false);
-                                }
-                                if (!arrayList5.isEmpty()) {
-                                    ad7Var.P(TextUtils.join(",", arrayList5), arrayList3);
-                                }
-                            }
-                        } catch (Exception e3) {
-                            e = e3;
-                            hp8Var = hp8Var2;
-                        }
-                    } catch (Throwable th2) {
-                        th = th2;
+                uc7 uc7Var = (uc7) obj2;
+                String str = (String) obj;
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    if (f11.a) {
+                        cc4.b("account " + uc7Var.currentAccount + " registered for push, push type: " + i2);
                     }
-                } catch (Exception e4) {
-                    e = e4;
-                    hp8Var = hp8Var2;
-                    sQLiteCursor2 = null;
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLiteCursor = null;
+                    uc7Var.getUserConfig().d = true;
+                    xea.f = str;
+                    xea.e = i2;
+                    uc7Var.getUserConfig().u(false);
                 }
-                sQLiteCursor2.dispose();
-                final int i3 = this.f;
-                final hp8 hp8Var3 = hp8Var;
-                gl.c3(new Runnable() { // from class: gp8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        hp8.this.d(i3, i2, j, ad7Var, arrayList);
+                hl.c3(new pa7(uc7Var, (byte) 18));
+                break;
+            case 1:
+                TLRPC.Chat chat = (TLRPC.Chat) obj2;
+                pcc pccVar = (pcc) obj;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    ArrayList arrayList = new ArrayList();
+                    ArrayList arrayList2 = new ArrayList();
+                    while (i < vector.objects.size()) {
+                        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) vector.objects.get(i);
+                        arrayList.add(tL_premiumGiftCodeOption);
+                        String str2 = tL_premiumGiftCodeOption.store_product;
+                        if (str2 != null) {
+                            we3 we3Var = new we3();
+                            we3Var.b = "inapp";
+                            we3Var.a = str2;
+                            arrayList2.add(we3Var.a());
+                        }
+                        i++;
                     }
-                });
-                return;
+                    boolean isEmpty = arrayList2.isEmpty();
+                    int i3 = this.b;
+                    if (!isEmpty && on0.j()) {
+                        di0.h().o(arrayList2, new an(arrayList, chat, i3, pccVar));
+                        break;
+                    } else {
+                        hl.c3(new gn0(chat, i3, arrayList, pccVar, (byte) 1));
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                hl.c3(new gp6((e) obj2, tLObject, this.b, obj, (byte) 9));
+                break;
+            case 3:
+                hl.c3(new l77((Object) tLObject, this.b, obj2, (Object) tL_error, obj, (byte) 6));
+                break;
+            case 4:
+                gx9 gx9Var = (gx9) obj2;
+                gx9Var.getClass();
+                hl.c3(new gp6((c79) gx9Var, this.b, tLObject, (String) obj, (byte) 21));
+                break;
+            case 5:
+                hl.c3(new z94((int[]) obj2, i2));
+                ((RequestDelegate) obj).run(tLObject, tL_error);
+                break;
+            case 6:
+                hb4 hb4Var = (hb4) obj2;
+                gb4 gb4Var = (gb4) obj;
+                hb4Var.z0 = false;
+                if (!(tLObject instanceof Vector)) {
+                    if (tL_error != null) {
+                        if (!tL_error.text.equals("FILE_TOKEN_INVALID") && !tL_error.text.equals("REQUEST_TOKEN_INVALID")) {
+                            hb4Var.h(0, false);
+                            break;
+                        } else {
+                            hb4Var.u0 = false;
+                            hb4Var.c(gb4Var, false, false);
+                            hb4Var.q(i2);
+                            break;
+                        }
+                    }
+                } else {
+                    Vector vector2 = (Vector) tLObject;
+                    if (!vector2.objects.isEmpty()) {
+                        if (hb4Var.q0 == null) {
+                            hb4Var.q0 = new HashMap();
+                        }
+                        while (i < vector2.objects.size()) {
+                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector2.objects.get(i);
+                            hb4Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
+                            i++;
+                        }
+                    }
+                    hb4Var.q(i2);
+                    break;
+                }
+                break;
+            case 7:
+                hl.c3(new gp6((e) obj2, tLObject, this.b, obj, (byte) 24));
+                break;
+            case 8:
+                hl.c3(new gp6((c79) obj2, this.b, tLObject, (String) obj, (byte) 28));
+                break;
+            case 9:
+                ls6 ls6Var = (ls6) obj2;
+                pcc pccVar2 = (pcc) obj;
+                boolean z = tLObject instanceof TLRPC.TL_messages_stickerSet;
+                int i4 = this.b;
+                if (!z) {
+                    ls6Var.A1(i4, null, false, (int) (System.currentTimeMillis() / 1000), 0L, new jn0(pccVar2, (byte) 8));
+                    break;
+                } else {
+                    ArrayList arrayList3 = new ArrayList();
+                    arrayList3.add((TLRPC.TL_messages_stickerSet) tLObject);
+                    ls6Var.A1(i4, arrayList3, false, (int) (System.currentTimeMillis() / 1000), ls6.s(arrayList3), new jn0(pccVar2, (byte) 7));
+                    break;
+                }
+            case 10:
+                hl.c3(new y36(obj2, (Object) tLObject, this.b, obj, (byte) 11));
+                break;
+            case 11:
+                hl.c3(new y36(obj2, this.b, (Object) tLObject, obj, (byte) 29));
+                break;
+            case 12:
+                ((VoIPService) obj2).lambda$startConferenceGroupCall$37(i2, (String) obj, tLObject, tL_error);
+                break;
+            default:
+                ((VoIPService) obj2).lambda$editCallMember$87(i2, (Runnable) obj, tLObject, tL_error);
+                break;
         }
     }
 
-    public /* synthetic */ hb7(ad7 ad7Var, long j, long j2, Integer num, int i, int i2) {
-        this.b = ad7Var;
-        this.c = j;
-        this.d = j2;
-        this.h = num;
-        this.e = i;
-        this.f = i2;
-    }
-
-    public /* synthetic */ hb7(hp8 hp8Var, int i, ad7 ad7Var, long j, long j2, int i2) {
-        this.h = hp8Var;
-        this.e = i;
-        this.b = ad7Var;
-        this.c = j;
-        this.d = j2;
-        this.f = i2;
+    public /* synthetic */ hb7(Object obj, int i, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
     }
 }

@@ -1,92 +1,19 @@
 // default package
 
-import java.util.ListIterator;
-
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fzd implements ListIterator {
-    public final /* synthetic */ byte a;
-    public ListIterator b;
+public final class fzd implements zq7 {
+    public static final fzd a = new fzd();
 
-    public fzd(ehf ehfVar, int i) {
-        this.a = (byte) 2;
-        this.b = ehfVar.a.listIterator(i);
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)), 5)), 6)), 7)));
     }
 
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void add(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-        }
-        return this.b.hasNext();
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        switch (this.a) {
-        }
-        return this.b.hasPrevious();
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final /* synthetic */ Object next() {
-        switch (this.a) {
-        }
-        return (String) this.b.next();
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        switch (this.a) {
-        }
-        return this.b.nextIndex();
-    }
-
-    @Override // java.util.ListIterator
-    public final /* synthetic */ Object previous() {
-        switch (this.a) {
-        }
-        return (String) this.b.previous();
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        switch (this.a) {
-        }
-        return this.b.previousIndex();
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.ListIterator
-    public final /* synthetic */ void set(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
+        throw null;
     }
 }

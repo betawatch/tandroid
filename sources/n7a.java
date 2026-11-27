@@ -1,57 +1,11 @@
 // default package
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.SortedSet;
+import android.location.Location;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class n7a extends m7a implements SortedSet {
-    @Override // java.util.SortedSet
-    public final Comparator comparator() {
-        return ((SortedSet) this.a).comparator();
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface n7a {
+    void O();
 
-    @Override // java.util.SortedSet
-    public final Object first() {
-        Iterator it = this.a.iterator();
-        it.getClass();
-        bg8 bg8Var = this.b;
-        bg8Var.getClass();
-        while (it.hasNext()) {
-            Object next = it.next();
-            if (bg8Var.apply(next)) {
-                return next;
-            }
-        }
-        w26.g();
-        return null;
-    }
-
-    @Override // java.util.SortedSet
-    public final SortedSet headSet(Object obj) {
-        return new n7a(((SortedSet) this.a).headSet(obj), this.b);
-    }
-
-    @Override // java.util.SortedSet
-    public final Object last() {
-        SortedSet sortedSet = (SortedSet) this.a;
-        while (true) {
-            Object last = sortedSet.last();
-            if (this.b.apply(last)) {
-                return last;
-            }
-            sortedSet = sortedSet.headSet(last);
-        }
-    }
-
-    @Override // java.util.SortedSet
-    public final SortedSet subSet(Object obj, Object obj2) {
-        return new n7a(((SortedSet) this.a).subSet(obj, obj2), this.b);
-    }
-
-    @Override // java.util.SortedSet
-    public final SortedSet tailSet(Object obj) {
-        return new n7a(((SortedSet) this.a).tailSet(obj), this.b);
-    }
+    void T(Location location);
 }

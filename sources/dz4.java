@@ -1,32 +1,70 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dz4 extends b4 {
-    public static final Parcelable.Creator<dz4> CREATOR = new t4d((byte) 16);
-    public final boolean a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class dz4 {
+    public static final Paint a;
+    public static final LinearGradient b;
+    public static final Matrix c;
+    public static final RectF d;
+    public static int e;
+    public static int f;
+    public static final ColorFilter[][] g;
 
-    public dz4(boolean z) {
-        this.a = z;
+    static {
+        Paint paint = new Paint(1);
+        a = paint;
+        Paint paint2 = new Paint(1);
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, 16777215, -1, tileMode);
+        b = linearGradient;
+        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{-637534209, 872415231, 234881023, 654311423}, new float[]{0.0f, 0.4f, 0.75f, 1.0f}, tileMode);
+        c = new Matrix();
+        d = new RectF();
+        paint.setShader(linearGradient);
+        paint2.setShader(linearGradient2);
+        paint2.setStyle(Paint.Style.STROKE);
+        e = -16733772;
+        f = -14774554;
+        g = (ColorFilter[][]) Array.newInstance((Class<?>) ColorFilter.class, 2, 49);
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof dz4) && this.a == ((dz4) obj).a;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        jte.s(parcel, r);
+    public static void a(Canvas canvas, float f2, float f3, float f4, float f5, float f6, boolean z, float f7, float f8) {
+        if (f7 <= 0.01f) {
+            return;
+        }
+        int round = Math.round(((((float) Math.sin(((SystemClock.uptimeMillis() / 1000.0d) * 0.9d) + 1.3d)) * 0.5f) + 0.5f) * 48.0f);
+        ColorFilter[][] colorFilterArr = g;
+        ColorFilter colorFilter = colorFilterArr[z ? 1 : 0][round];
+        if (colorFilter == null) {
+            float f9 = round / 48.0f;
+            int e2 = z ? gn3.e(vm2.f(f9, -14717953, -7447553)) : vm2.f(f9, e, f);
+            ColorFilter[] colorFilterArr2 = colorFilterArr[z ? 1 : 0];
+            colorFilter = new PorterDuffColorFilter(e2, PorterDuff.Mode.SRC_IN);
+            colorFilterArr2[round] = colorFilter;
+        }
+        Paint paint = a;
+        paint.setColorFilter(colorFilter);
+        float f10 = f5 - f3;
+        Matrix matrix = c;
+        matrix.setScale(1.0f, 0.65f * f10);
+        matrix.postTranslate(0.0f, (f10 * 0.35f) + f3);
+        b.setLocalMatrix(matrix);
+        paint.setAlpha((int) (Math.min(1.0f, (f8 * 0.11f) + (z ? 0.26f : 0.2f)) * f7 * 255.0f));
+        RectF rectF = d;
+        rectF.set(f2, f3, f4, f5);
+        canvas.drawRoundRect(rectF, f6, f6, paint);
     }
 }

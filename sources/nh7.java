@@ -1,107 +1,54 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class nh7 extends r0a implements lh7 {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(nh7.class, Object.class, "owner$volatile");
-    public static final /* synthetic */ long i = ex.a.objectFieldOffset(nh7.class.getDeclaredField("owner$volatile"));
-    private volatile /* synthetic */ Object owner$volatile = wad.a;
+public final class nh7 implements sf7 {
+    public final long a;
+    public final long b;
+    public final long c;
+    public final long d;
+    public final long e;
 
-    public final boolean c() {
-        return Math.max(ex.a.getIntVolatile(this, r0a.e), 0) == 0;
+    public nh7(long j, long j2, long j3, long j4, long j5) {
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
+        this.d = j4;
+        this.e = j5;
     }
 
-    public final Object d(fw2 fw2Var) {
-        boolean e = e();
-        g5c g5cVar = g5c.a;
-        if (!e) {
-            na1 a = iqd.a(dle.a(fw2Var));
-            try {
-                a(new mh7(this, a));
-                Object q = a.q();
-                bx2 bx2Var = bx2.a;
-                if (q != bx2Var) {
-                    q = g5cVar;
-                }
-                if (q == bx2Var) {
-                    return q;
-                }
-            } catch (Throwable th) {
-                a.z();
-                throw th;
-            }
-        }
-        return g5cVar;
+    @Override // sf7
+    public final ko4 a() {
+        return null;
     }
 
-    public final boolean e() {
-        nh7 nh7Var;
-        while (true) {
-            Unsafe unsafe = ex.a;
-            long j = r0a.e;
-            int intVolatile = unsafe.getIntVolatile(this, j);
-            if (intVolatile > 1) {
-                while (true) {
-                    Unsafe unsafe2 = ex.a;
-                    long j2 = r0a.e;
-                    int intVolatile2 = unsafe2.getIntVolatile(this, j2);
-                    if (intVolatile2 <= 1) {
-                        nh7Var = this;
-                        break;
-                    }
-                    nh7 nh7Var2 = this;
-                    nh7Var = nh7Var2;
-                    if (!unsafe2.compareAndSwapInt(nh7Var2, j2, intVolatile2, 1)) {
-                        this = nh7Var;
-                    }
-                }
-            } else {
-                nh7Var = this;
-                if (intVolatile <= 0) {
-                    return false;
-                }
-                if (unsafe.compareAndSwapInt(nh7Var, j, intVolatile, intVolatile - 1)) {
-                    unsafe.putObjectVolatile(nh7Var, i, (Object) null);
-                    return true;
-                }
-            }
-            this = nh7Var;
-        }
+    @Override // sf7
+    public final byte[] c() {
+        return null;
     }
 
-    public final void f(Object obj) {
-        while (this.c()) {
-            Unsafe unsafe = ex.a;
-            long j = i;
-            Object objectVolatile = unsafe.getObjectVolatile(this, j);
-            lo5 lo5Var = wad.a;
-            if (objectVolatile != lo5Var) {
-                if (objectVolatile != obj && obj != null) {
-                    throw new IllegalStateException(("This mutex is locked by " + objectVolatile + ", but " + obj + " is expected").toString());
-                }
-                while (true) {
-                    Unsafe unsafe2 = ex.a;
-                    nh7 nh7Var = this;
-                    if (unsafe2.compareAndSwapObject(nh7Var, i, objectVolatile, lo5Var)) {
-                        nh7Var.b();
-                        return;
-                    } else {
-                        if (unsafe2.getObjectVolatile(nh7Var, j) != objectVolatile) {
-                            this = nh7Var;
-                            break;
-                        }
-                        this = nh7Var;
-                    }
-                }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && nh7.class == obj.getClass()) {
+            nh7 nh7Var = (nh7) obj;
+            if (this.a == nh7Var.a && this.b == nh7Var.b && this.c == nh7Var.c && this.d == nh7Var.d && this.e == nh7Var.e) {
+                return true;
             }
         }
-        sc8.j("This mutex is not locked");
+        return false;
+    }
+
+    public final int hashCode() {
+        return tse.b(this.e) + ((tse.b(this.d) + ((tse.b(this.c) + ((tse.b(this.b) + ((tse.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "Mutex@" + s83.a(this) + "[isLocked=" + c() + ",owner=" + ex.a.getObjectVolatile(this, i) + ']';
+        return "Motion photo metadata: photoStartPosition=" + this.a + ", photoSize=" + this.b + ", photoPresentationTimestampUs=" + this.c + ", videoStartPosition=" + this.d + ", videoSize=" + this.e;
+    }
+
+    @Override // sf7
+    public final void b(lt6 lt6Var) {
     }
 }

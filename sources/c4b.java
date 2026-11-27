@@ -1,47 +1,31 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c4b implements d4b, yqc {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ File b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class c4b extends z5c {
+    public final /* synthetic */ StickersActivity b;
 
-    public /* synthetic */ c4b(File file, byte b) {
-        this.a = b;
-        this.b = file;
+    public c4b(StickersActivity stickersActivity) {
+        this.b = stickersActivity;
     }
 
-    @Override // yqc
-    public final InputStream b() {
-        byte b = this.a;
-        File file = this.b;
-        switch (b) {
-            case 3:
-                if (file.exists()) {
-                    break;
-                }
-                break;
-            case 4:
-                if (file.exists()) {
-                    break;
-                }
-                break;
-        }
-        return new FileInputStream(file);
+    @Override // z5c
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z) {
+        int i;
+        StickersActivity stickersActivity = this.b;
+        i = ((e) stickersActivity).currentAccount;
+        ls6.d0(i).h2(stickersActivity.getParentActivity(), stickerSetCovered, 2, this.b, false, false);
     }
 
-    @Override // d4b
-    public final Bitmap l(BitmapFactory.Options options) {
-        byte b = this.a;
-        File file = this.b;
-        switch (b) {
-        }
-        return BitmapFactory.decodeFile(file.getPath(), options);
+    @Override // z5c
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        int i;
+        StickersActivity stickersActivity = this.b;
+        i = ((e) stickersActivity).currentAccount;
+        ls6.d0(i).h2(stickersActivity.getParentActivity(), stickerSetCovered, 0, this.b, false, false);
     }
 }

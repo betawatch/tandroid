@@ -1,158 +1,62 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import java.io.File;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e32 extends p02 {
-    public final t14 n;
-    public final o39 r;
-    public final t26 s;
-    public final HorizontalScrollView w;
-    public final boolean x;
+public final /* synthetic */ class e32 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ u32 b;
 
-    public e32(x02 x02Var, Context context, wjb wjbVar, boolean z) {
-        super(x02Var, wjbVar, context);
-        this.x = z;
-        this.f = true;
-        d dVar = x02Var.Z1;
-        boolean z2 = !z;
-        t14 t14Var = new t14(dVar, z2, z, false, getContext(), true, null, null, false, wjbVar, false, true);
-        this.n = t14Var;
-        t14Var.x0 = false;
-        t14Var.I(z2, z, false, false);
-        t14Var.o2 = true;
-        jz3 jz3Var = t14Var.y;
-        if (jz3Var != null) {
-            jz3Var.setVisibility(8);
-        }
-        t14Var.p2 = true;
-        ImageView imageView = t14Var.E;
-        if (imageView != null) {
-            imageView.setVisibility(8);
-        }
-        t14Var.S2 = true;
-        addView(t14Var, nme.c(-1.0f, -1));
-        HorizontalScrollView x = t14Var.x(z2 ? 1 : 0);
-        this.w = x;
-        o39 w = t14Var.w(z2 ? 1 : 0);
-        this.r = w;
-        w.j(new y(this, (byte) 20));
-        this.s = (t26) w.getLayoutManager();
-        x.setTranslationY(Math.max(0, getCurrentItemTop()));
+    public /* synthetic */ e32(u32 u32Var, byte b) {
+        this.a = b;
+        this.b = u32Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002d  */
-    @Override // p02
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void C(int i, int i2) {
-        int i3;
-        int L;
-        int L2;
-        o39 o39Var;
-        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = a.getCurrentActionBarHeight();
-        if (!gl.O1()) {
-            Point point = gl.q;
-            if (point.x > point.y) {
-                i3 = (int) (i2 / 3.5f);
-                L = i3 - gl.L(52.0f);
-                if (L < 0) {
-                    L = 0;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        byte b = this.a;
+        u32 u32Var = this.b;
+        n32 n32Var = (n32) obj;
+        n32 n32Var2 = (n32) obj2;
+        switch (b) {
+            case 0:
+                File file = n32Var.f;
+                if (file != null) {
+                    if (n32Var2.f == null) {
+                        return 1;
+                    }
+                    boolean isDirectory = file.isDirectory();
+                    if (isDirectory != n32Var2.f.isDirectory()) {
+                        if (!isDirectory) {
+                            return 1;
+                        }
+                    } else {
+                        if (isDirectory || u32Var.d0) {
+                            return n32Var.f.getName().compareToIgnoreCase(n32Var2.f.getName());
+                        }
+                        long lastModified = n32Var.f.lastModified();
+                        long lastModified2 = n32Var2.f.lastModified();
+                        if (lastModified == lastModified2) {
+                            return 0;
+                        }
+                        if (lastModified <= lastModified2) {
+                            return 1;
+                        }
+                    }
                 }
-                L2 = gl.L(36.0f) + L;
-                o39Var = this.r;
-                if (o39Var.getPaddingTop() == L2) {
-                    o39Var.setPadding(gl.L(6.0f), L2, gl.L(6.0f), gl.L(48.0f));
-                    return;
+                return -1;
+            default:
+                if (u32Var.d0) {
+                    return n32Var.f.getName().compareToIgnoreCase(n32Var2.f.getName());
                 }
-                return;
-            }
+                long lastModified3 = n32Var.f.lastModified();
+                long lastModified4 = n32Var2.f.lastModified();
+                if (lastModified3 == lastModified4) {
+                    return 0;
+                }
+                return lastModified3 > lastModified4 ? -1 : 1;
         }
-        i3 = (i2 / 5) << 1;
-        L = i3 - gl.L(52.0f);
-        if (L < 0) {
-        }
-        L2 = gl.L(36.0f) + L;
-        o39Var = this.r;
-        if (o39Var.getPaddingTop() == L2) {
-        }
-    }
-
-    @Override // p02
-    public final void I(p02 p02Var) {
-        x02 x02Var = this.b;
-        try {
-            x02Var.U2.getTitleTextView().setBuildFullLayout(true);
-        } catch (Exception unused) {
-        }
-        x02Var.U2.setTitle(k96.M0(this.x ? 2131745460 : 2131745466, null));
-        this.s.g1(0, 0);
-    }
-
-    @Override // p02
-    public final void K() {
-        this.r.z0(0);
-    }
-
-    @Override // p02
-    public int getCurrentItemTop() {
-        o39 o39Var = this.r;
-        if (o39Var.getChildCount() <= 0) {
-            o39Var.setTopGlowOffset(o39Var.getPaddingTop());
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = o39Var.getChildAt(0);
-        y29 y29Var = (y29) o39Var.G(childAt);
-        int top = childAt.getTop() - gl.L(36.0f);
-        int L = gl.L(7.0f);
-        if (top < gl.L(7.0f) || y29Var == null || y29Var.b() != 0) {
-            top = L;
-        }
-        o39Var.setTopGlowOffset(top);
-        return top;
-    }
-
-    @Override // p02
-    public int getFirstOffset() {
-        return gl.L(56.0f) + getListTopPadding();
-    }
-
-    @Override // p02
-    public int getListTopPadding() {
-        return this.r.getPaddingTop();
-    }
-
-    @Override // p02
-    public final int j() {
-        return 1;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.w.setTranslationY(Math.max(0, getCurrentItemTop()));
-    }
-
-    public void setDelegate(u04 u04Var) {
-        this.n.setDelegate(u04Var);
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f) {
-        super.setTranslationY(f);
-        this.b.b.invalidate();
-        invalidate();
     }
 }

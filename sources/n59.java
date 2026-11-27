@@ -1,11 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface n59 {
-    int a();
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-    void b(m59 m59Var);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class n59 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    void c();
+    static {
+        a8c.h(new n59());
+    }
+
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        z57 z57Var = (z57) view;
+        z57Var.a((TLObject) b8cVar.H, b8cVar.A, true);
+        z57Var.setOnClickListener(b8cVar.E);
+    }
+
+    @Override // a8c
+    public final boolean c(b8c b8cVar, b8c b8cVar2) {
+        return b8cVar.C == b8cVar2.C;
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        z57 z57Var = new z57(context);
+        z57Var.setBackground(aob.L0(false));
+        return z57Var;
+    }
+
+    @Override // a8c
+    public final boolean e(b8c b8cVar, b8c b8cVar2) {
+        return b8cVar.C == b8cVar2.C;
+    }
 }

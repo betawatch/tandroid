@@ -1,127 +1,60 @@
 // default package
 
-import android.graphics.RectF;
-import android.net.Uri;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.view.View;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import java.util.Map;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ProfileActivity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class sc8 implements j8c, ed, eja, OnCompleteListener, yc3, o8c, js4, Vector.TLDeserializer, NativeInstance.AudioLevelsCallback, m74 {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class sc8 extends v2b {
+    public final Path t0;
+    public boolean u0;
+    public final mm v0;
+    public final /* synthetic */ PhotoViewer w0;
 
-    public /* synthetic */ sc8(byte b) {
-        this.a = b;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sc8(PhotoViewer photoViewer) {
+        super(photoViewer.o5, photoViewer.F, photoViewer.w2, photoViewer.c0);
+        this.w0 = photoViewer;
+        this.t0 = new Path();
+        this.v0 = new mm(this, 0L, 420L, k43.h);
     }
 
-    public static /* synthetic */ void e() {
-        throw new IllegalArgumentException();
-    }
-
-    public static /* synthetic */ void i(Object obj, Object obj2, String str) {
-        throw new gp2(str + obj + obj2);
-    }
-
-    public static /* synthetic */ void j(String str) {
-        throw new IllegalStateException(str);
-    }
-
-    @Override // o8c
-    public final Boolean d(c4c c4cVar, View view, Integer num, Float f, Float f2) {
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-        return TL_iv.RichText.TLdeserialize(inputSerializedData, i, z);
-    }
-
-    @Override // m74
-    public final j74[] f(Uri uri, Map map) {
-        return new j74[]{new pb3()};
-    }
-
-    @Override // j8c
-    public final Object g(Integer num, Object obj) {
-        return num.intValue() == 0 ? jva.a1(false, k96.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : k96.E(r4.intValue(), ',');
-    }
-
-    @Override // yc3
-    public final void h(mt8 mt8Var) {
-        mt8Var.get().getClass();
-        throw new ClassCastException();
-    }
-
-    @Override // eja
-    public final void k(int i) {
-        gba.X0 = i;
-        gba.x();
-    }
-
-    @Override // js4
-    public final Object m(Object obj) {
-        int i = y99.f2;
-        return 0;
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public final void onComplete(Task task) {
-        gba.i = SystemClock.elapsedRealtime();
-        if (task.isSuccessful()) {
-            String str = (String) task.getResult();
-            if (TextUtils.isEmpty(str)) {
-                return;
-            }
-            PushListenerController.sendRegistrationToServer(2, str);
-            return;
+    public final void m(boolean z, boolean z2) {
+        this.u0 = z;
+        if (!z2) {
+            this.v0.f(z, true);
         }
-        if (w01.a) {
-            fa4.b("Failed to get regid");
+        invalidate();
+    }
+
+    @Override // v2b, c51, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.t0;
+        path.rewind();
+        path.addRoundRect(this.n0, hl.L(this.r0), hl.L(this.r0), Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        PhotoViewer photoViewer = this.w0;
+        if (this == photoViewer.u5 || this == photoViewer.v5) {
+            canvas.translate(-photoViewer.t5.getX(), -photoViewer.t5.getY());
         }
-        gba.g = "__FIREBASE_FAILED__";
-        PushListenerController.sendRegistrationToServer(2, null);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        switch (this.a) {
-            case 2:
-                RectF rectF = ProfileActivity.Z6;
-                hdVar.dismiss();
-                break;
-            case 3:
-                hdVar.dismiss();
-                break;
-            case 4:
-            default:
-                hdVar.dismiss();
-                break;
-            case 5:
-                hdVar.dismiss();
-                break;
+        photoViewer.P(canvas, this.m0, -13948117, 855638016, false, true, false);
+        float d = this.v0.d(this.u0);
+        if (d > 0.0f) {
+            canvas.drawColor(aob.p1(d, -1));
         }
+        setTextColor(vm2.f(d, -1, -16777216));
+        canvas.restore();
+        super.onDraw(canvas);
     }
 
-    public /* synthetic */ sc8(Object obj, byte b) {
-        this.a = b;
-    }
-
-    @Override // eja
-    public final void n() {
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
+    @Override // android.view.View
+    public final void onDrawForeground(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.t0);
+        super.onDrawForeground(canvas);
+        canvas.restore();
     }
 }

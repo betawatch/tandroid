@@ -1,71 +1,36 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.PrivacyControlActivity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class gt2 extends wgb {
-    public final /* synthetic */ byte a0 = 0;
-    public final /* synthetic */ Object b0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class gt2 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ icc b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ TLRPC.TL_error d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gt2(it2 it2Var, Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.b0 = it2Var;
+    public /* synthetic */ gt2(icc iccVar, TLObject tLObject, TLRPC.TL_error tL_error, byte b) {
+        this.a = b;
+        this.b = iccVar;
+        this.c = tLObject;
+        this.d = tL_error;
     }
 
-    @Override // wgb, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        byte b = this.a0;
-        Object obj = this.b0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TLRPC.TL_error tL_error = this.d;
+        TLObject tLObject = this.c;
+        icc iccVar = this.b;
         switch (b) {
             case 0:
-                super.onLayout(z, i, i2, i3, i4);
-                int L = gl.L(21.0f);
-                it2 it2Var = (it2) obj;
-                int measuredHeight = (getMeasuredHeight() - it2Var.V.getMeasuredHeight()) / 2;
-                be0 be0Var = it2Var.V;
-                be0Var.layout(L, measuredHeight, be0Var.getMeasuredWidth() + L, it2Var.V.getMeasuredHeight() + measuredHeight);
+                iccVar.a(tLObject, tL_error);
                 break;
             default:
-                super.onLayout(z, i, i2, i3, i4);
-                int L2 = gl.L(21.0f);
-                int measuredHeight2 = getMeasuredHeight();
-                PrivacyControlActivity privacyControlActivity = ((yj8) obj).d;
-                int measuredHeight3 = (measuredHeight2 - privacyControlActivity.x0.getMeasuredHeight()) / 2;
-                be0 be0Var2 = privacyControlActivity.x0;
-                be0Var2.layout(L2, measuredHeight3, be0Var2.getMeasuredWidth() + L2, privacyControlActivity.x0.getMeasuredHeight() + measuredHeight3);
+                iccVar.a(tLObject instanceof TLRPC.TL_payments_starsRevenueStats ? ((TLRPC.TL_payments_starsRevenueStats) tLObject).status : null, tL_error);
                 break;
         }
-    }
-
-    @Override // wgb, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        byte b = this.a0;
-        Object obj = this.b0;
-        switch (b) {
-            case 0:
-                super.onMeasure(i, i2);
-                it2 it2Var = (it2) obj;
-                it2Var.V.measure(View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
-                it2Var.V.setRoundRadius(gl.L(30.0f));
-                break;
-            default:
-                super.onMeasure(i, i2);
-                PrivacyControlActivity privacyControlActivity = ((yj8) obj).d;
-                privacyControlActivity.x0.measure(View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(30.0f), TLObject.FLAG_30));
-                privacyControlActivity.x0.setRoundRadius(gl.L(30.0f));
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gt2(yj8 yj8Var, Activity activity) {
-        super(activity);
-        this.b0 = yj8Var;
     }
 }

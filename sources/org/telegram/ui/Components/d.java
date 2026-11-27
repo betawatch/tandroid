@@ -9,7 +9,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class d {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -20,61 +20,61 @@ public final class d {
 
     public final void a(Canvas canvas) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        Drawable backgroundImage = chatActivityEnterView.c2.getBackgroundImage();
+        Drawable backgroundImage = chatActivityEnterView.b2.getBackgroundImage();
         if (backgroundImage != null) {
             backgroundImage.draw(canvas);
         }
-        mu1 mu1Var = chatActivityEnterView.F3;
-        jq1 jq1Var = mu1Var != null ? mu1Var.A0 : null;
-        if (jq1Var == null || jq1Var.getWidth() <= 0) {
+        zu1 zu1Var = chatActivityEnterView.E3;
+        wq1 wq1Var = zu1Var != null ? zu1Var.A0 : null;
+        if (wq1Var == null || wq1Var.getWidth() <= 0) {
             return;
         }
         canvas.save();
-        canvas.translate(jq1Var.getX(), jq1Var.getY());
-        jq1Var.draw(canvas);
+        canvas.translate(wq1Var.getX(), wq1Var.getY());
+        wq1Var.draw(canvas);
         canvas.restore();
     }
 
     public final void b() {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        ew1 ew1Var = chatActivityEnterView.R0;
-        if (ew1Var != null) {
-            ew1Var.invalidate();
+        tw1 tw1Var = chatActivityEnterView.R0;
+        if (tw1Var != null) {
+            tw1Var.invalidate();
         }
-        chatActivityEnterView.n2(chatActivityEnterView.L6);
-        jm3 jm3Var = chatActivityEnterView.j1;
-        boolean z = jm3Var != null && jm3Var.o();
-        ex1 ex1Var = chatActivityEnterView.F0;
-        Editable text = ex1Var == null ? null : ex1Var.getText();
-        ex1 ex1Var2 = chatActivityEnterView.F0;
-        chatActivityEnterView.Y1((ex1Var2 == null || ex1Var2.getLineCount() <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
-        chatActivityEnterView.l6 = z;
-        mu1 mu1Var = chatActivityEnterView.F3;
-        if (mu1Var != null) {
-            mu1Var.Rc();
-            dbb dbbVar = mu1Var.s1;
-            if (dbbVar != null) {
-                dbbVar.d();
+        chatActivityEnterView.z2(chatActivityEnterView.l7);
+        bn3 bn3Var = chatActivityEnterView.j1;
+        boolean z = bn3Var != null && bn3Var.q();
+        tx1 tx1Var = chatActivityEnterView.F0;
+        Editable text = tx1Var == null ? null : tx1Var.getText();
+        tx1 tx1Var2 = chatActivityEnterView.F0;
+        chatActivityEnterView.k2((tx1Var2 == null || tx1Var2.getLineCount() <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
+        chatActivityEnterView.w6 = z;
+        zu1 zu1Var = chatActivityEnterView.E3;
+        if (zu1Var != null) {
+            zu1Var.dd();
+            zeb zebVar = zu1Var.s1;
+            if (zebVar != null) {
+                zebVar.d();
             }
         }
     }
 
     public final void c(float f, int i) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        ew1 ew1Var = chatActivityEnterView.R0;
+        tw1 tw1Var = chatActivityEnterView.R0;
         SparseArray sparseArray = chatActivityEnterView.C1;
-        int i2 = bkb.Ml;
-        int i3 = ChatActivityEnterView.r7;
-        int F0 = chatActivityEnterView.F0(i2);
+        int i2 = aob.Nl;
+        int i3 = ChatActivityEnterView.X7;
+        int J0 = chatActivityEnterView.J0(i2);
         if (f <= 0.004f) {
             if (chatActivityEnterView.B1 != 0) {
                 chatActivityEnterView.B1 = 0;
-                ew1Var.setColorFilter(new PorterDuffColorFilter(F0, PorterDuff.Mode.SRC_IN));
+                tw1Var.setColorFilter(new PorterDuffColorFilter(J0, PorterDuff.Mode.SRC_IN));
                 return;
             }
             return;
         }
-        int f2 = bm2.f(Math.min(1.0f, f), F0, i | (-16777216)) & (-117901064);
+        int f2 = vm2.f(Math.min(1.0f, f), J0, i | (-16777216)) & (-117901064);
         if (f2 == chatActivityEnterView.B1) {
             return;
         }
@@ -87,25 +87,35 @@ public final class d {
             }
             sparseArray.put(f2, colorFilter);
         }
-        ew1Var.setColorFilter(colorFilter);
+        tw1Var.setColorFilter(colorFilter);
     }
 
-    public final void d(float f) {
+    public final void d(String str) {
+        rx rxVar;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        tx1 tx1Var = chatActivityEnterView.F0;
+        if (tx1Var != null && (rxVar = tx1Var.n1) != null) {
+            rxVar.i(null, true);
+        }
+        chatActivityEnterView.W1(str, true);
+    }
+
+    public final void e(float f) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         chatActivityEnterView.y1 = f;
         if (f >= 1.0f || f <= 0.0f) {
             Editable text = chatActivityEnterView.F0.getText();
-            chatActivityEnterView.S1((chatActivityEnterView.F0.getLineCount() <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
+            chatActivityEnterView.d2((chatActivityEnterView.F0.getLineCount() <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
         }
-        chatActivityEnterView.l2();
-        pkb pkbVar = chatActivityEnterView.f2;
-        if (pkbVar != null) {
-            pkbVar.invalidate();
+        chatActivityEnterView.x2();
+        oob oobVar = chatActivityEnterView.e2;
+        if (oobVar != null) {
+            oobVar.invalidate();
         }
-        gw1 gw1Var = chatActivityEnterView.h2;
-        if (gw1Var != null) {
-            gw1Var.invalidate();
+        vw1 vw1Var = chatActivityEnterView.g2;
+        if (vw1Var != null) {
+            vw1Var.invalidate();
         }
-        chatActivityEnterView.q2.setAlpha((1.0f - f) * chatActivityEnterView.z1);
+        chatActivityEnterView.p2.setAlpha((1.0f - f) * chatActivityEnterView.z1);
     }
 }

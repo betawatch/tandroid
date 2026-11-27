@@ -1,20 +1,25 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final class k94 {
-    public int a;
-    public long b;
-    public int c;
-    public int d;
-    public long e;
-    public TLRPC.TL_upload_file f;
-    public TLRPC.TL_upload_webFile g;
-    public TLRPC.TL_upload_cdnFile h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public Runnable l;
+    public final byte a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final byte e;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public k94(int i, int i2, String str, String str2) {
+        this.a = (byte) 1;
+        this.b = i;
+        this.c = str;
+        this.d = str2;
+        this.e = i2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public k94(int i) {
+        this.a = i;
+    }
 }

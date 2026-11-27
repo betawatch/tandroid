@@ -1,57 +1,154 @@
 // default package
 
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.Components.p;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class d7 extends wi2 {
-    public final /* synthetic */ byte h;
-    public final /* synthetic */ Object i;
+public final class d7 extends ImageView {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(h14 h14Var) {
-        super(1.25f);
-        this.h = (byte) 2;
-        this.i = h14Var;
-        this.f = gl.L(7.0f);
+    public /* synthetic */ d7(byte b, Context context, Object obj) {
+        super(context);
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // wi2
-    public final int a() {
-        byte b = this.h;
-        Object obj = this.i;
-        switch (b) {
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                return ((r7) obj).c.b.s0;
-            case 1:
-                return bkb.v0(bkb.Af, (wjb) obj);
-            case 2:
-                return bkb.v0(bkb.Af, ((h14) obj).H.a2);
-            case 3:
-                return bkb.v0(bkb.P5, ((js9) obj).e);
+                getBackground().draw(canvas);
+                super.draw(canvas);
+                break;
             default:
-                return bkb.v0(bkb.Af, ((lw9) obj).G.a1);
+                super.draw(canvas);
+                break;
         }
     }
 
-    public /* synthetic */ d7(FrameLayout frameLayout, byte b) {
-        this.h = b;
-        this.i = frameLayout;
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.a) {
+            case 2:
+                super.invalidate();
+                g75 g75Var = (g75) this.b;
+                g75Var.g0.invalidate();
+                g75Var.invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(wjb wjbVar) {
-        super(1.25f);
-        this.h = (byte) 1;
-        this.i = wjbVar;
-        this.f = gl.L(7.0f);
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                super.onDetachedFromWindow();
+                clearAnimation();
+                Object tag = getTag();
+                s7 s7Var = (s7) this.b;
+                d7 d7Var = s7Var.s;
+                if (tag != null) {
+                    d7Var.setAlpha(1.0f);
+                    s7Var.s.setRotation(0.0f);
+                    s7Var.s.setScaleX(1.0f);
+                    s7Var.s.setScaleY(1.0f);
+                    break;
+                } else {
+                    d7Var.setVisibility(4);
+                    s7Var.s.setAlpha(0.0f);
+                    s7Var.s.setRotation(45.0f);
+                    s7Var.s.setScaleX(0.0f);
+                    s7Var.s.setScaleY(0.0f);
+                    break;
+                }
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d7(lw9 lw9Var) {
-        super(1.25f);
-        this.h = (byte) 4;
-        this.i = lw9Var;
-        this.f = gl.L(7.0f);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 4:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setCheckable(true);
+                accessibilityNodeInfo.setChecked(((o7c) this.b).n.getTransformationMethod() == null);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 2:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(a.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        switch (this.a) {
+            case 1:
+                super.setAlpha(f);
+                ((p) this.b).y.invalidate();
+                break;
+            default:
+                super.setAlpha(f);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f) {
+        switch (this.a) {
+            case 3:
+                super.setTranslationY(f);
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                ArrayList arrayList = photoViewer.i1;
+                if (arrayList != null) {
+                    int size = arrayList.size();
+                    int i = 0;
+                    while (i < size) {
+                        Object obj = arrayList.get(i);
+                        i++;
+                        ((kg5) obj).setTranslationY(f);
+                    }
+                }
+                nb8 nb8Var = photoViewer.h1;
+                if (nb8Var != null) {
+                    nb8Var.setTranslationY(f);
+                }
+                s96 s96Var = photoViewer.g1;
+                if (s96Var != null) {
+                    s96Var.setTranslationY(f);
+                    break;
+                }
+                break;
+            default:
+                super.setTranslationY(f);
+                break;
+        }
     }
 }

@@ -1,33 +1,32 @@
 // default package
 
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class nv8 extends o39 {
-    public ay2 f3;
-    public aw8 g3;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class nv8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sv8 b;
 
-    @Override // o39, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int i;
-        if (this.g3 != null) {
-            canvas2 = canvas;
-            i = canvas2.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-        } else {
-            canvas2 = canvas;
-            i = -1;
-        }
-        ay2 ay2Var = this.f3;
-        if (ay2Var != null) {
-            ay2Var.x(canvas2);
-        }
-        super.dispatchDraw(canvas2);
-        aw8 aw8Var = this.g3;
-        if (aw8Var != null) {
-            aw8Var.x(canvas2);
-            canvas2.restoreToCount(i);
+    public /* synthetic */ nv8(sv8 sv8Var, byte b) {
+        this.a = b;
+        this.b = sv8Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        sv8 sv8Var = this.b;
+        switch (b) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sv8Var.R = floatValue;
+                sv8Var.r.setUseGyroscope(floatValue);
+                break;
+            default:
+                sv8Var.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sv8Var.e();
+                break;
         }
     }
 }

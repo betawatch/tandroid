@@ -1,19 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.File;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qsd implements zn7 {
-    public static final qsd a = new qsd();
-
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)), 4)), 5)), 6)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class qsd {
+    public static boolean a(File file) {
+        if (!file.isDirectory()) {
+            file.delete();
+            return true;
         }
-        throw null;
+        File[] listFiles = file.listFiles();
+        if (listFiles == null) {
+            return false;
+        }
+        boolean z = true;
+        for (File file2 : listFiles) {
+            z = a(file2) && z;
+        }
+        return z;
     }
 }

@@ -1,152 +1,97 @@
 // default package
 
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProxyListActivity;
+import android.graphics.Rect;
+import android.view.View;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class rx5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ LaunchActivity b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public class rx5 {
+    public final View a;
+    public View b;
+    public final pcc c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final Rect h = new Rect();
+    public final pk1 i;
+    public final l45 j;
+    public int k;
+    public int l;
 
-    public /* synthetic */ rx5(LaunchActivity launchActivity, byte b) {
-        this.a = b;
-        this.b = launchActivity;
+    public rx5(View view, boolean z, pcc pccVar) {
+        pk1 pk1Var = new pk1(this, (byte) 4);
+        this.i = pk1Var;
+        l45 l45Var = new l45(this, (byte) 1);
+        this.j = l45Var;
+        this.a = view;
+        this.c = pccVar;
+        this.b = view;
+        if (view.isAttachedToWindow()) {
+            view.getViewTreeObserver().addOnGlobalLayoutListener(l45Var);
+            view.addOnLayoutChangeListener(pk1Var);
+        }
+        view.addOnAttachStateChangeListener(new qx5(this, z, view));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        WeakReference weakReference;
-        byte b = this.a;
-        d dVar = null;
-        byte b2 = 0;
-        LaunchActivity launchActivity = this.b;
-        switch (b) {
-            case 0:
-                String str = LaunchActivity.C1;
-                launchActivity.getClass();
-                t11 t11Var = new t11(launchActivity, null);
-                t11Var.d(R.raw.email_check_inbox, new String[0]);
-                t11Var.b.setText(k96.M0(2131742548, null));
-                d Q = LaunchActivity.Q();
-                if (Q != null) {
-                    m21.g(Q, t11Var, 1500).j();
-                    try {
-                        Q.fragmentView.performHapticFeedback(3, 2);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-            case 1:
-                String str2 = LaunchActivity.C1;
-                if (launchActivity.W0) {
-                    launchActivity.W0 = false;
-                    launchActivity.H(false, false, true);
-                    break;
-                }
-                break;
-            case 2:
-                String str3 = LaunchActivity.C1;
-                if (!launchActivity.w1) {
-                    try {
-                        hd z = ij.z(launchActivity);
-                        z.setOnDismissListener(new ly5(launchActivity, b2));
-                        launchActivity.w1 = true;
-                        z.show();
-                        break;
-                    } catch (Throwable unused2) {
-                        return;
-                    }
-                }
-                break;
-            case 3:
-                String str4 = LaunchActivity.C1;
-                launchActivity.H(false, true, false);
-                if (LaunchActivity.Q() != null && LaunchActivity.Q().getLastStoryViewer() != null) {
-                    LaunchActivity.Q().getLastStoryViewer().U();
-                    break;
-                }
-                break;
-            case 4:
-                String str5 = LaunchActivity.C1;
-                if (!launchActivity.p0.getFragmentStack().isEmpty()) {
-                    launchActivity.p0.getFragmentStack().get(0).showDialog(new u0b(launchActivity, launchActivity.k0, launchActivity.i0, launchActivity.j0));
-                    break;
-                }
-                break;
-            case 5:
-                String str6 = LaunchActivity.C1;
-                o85.g0 = false;
-                o85.k(launchActivity);
-                break;
-            case 6:
-                String str7 = LaunchActivity.C1;
-                if (gl.g != -10 && gl.f == -10 && launchActivity.getResources().getConfiguration().smallestScreenWidthDp < 600 && (weakReference = gl.i) != null && weakReference.get() == launchActivity) {
-                    int i = gl.h;
-                    int i2 = gl.g;
-                    gl.g = -10;
-                    gl.h = -10;
-                    gl.i = null;
-                    try {
-                        launchActivity.setRequestedOrientation(i);
-                        launchActivity.setRequestedOrientation(i2);
-                        break;
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                        return;
-                    }
-                }
-                break;
-            case 7:
-                String str8 = LaunchActivity.C1;
-                launchActivity.u1 = null;
-                break;
-            case 8:
-                String str9 = LaunchActivity.C1;
-                if (launchActivity.T0 != null) {
-                    File file = new File(a.h(), ls6.p(new StringBuilder("remote"), launchActivity.T0.id, ".attheme"));
-                    TLRPC.TL_theme tL_theme = launchActivity.T0;
-                    akb u = bkb.u(file, tL_theme.title, tL_theme, true);
-                    if (u != null) {
-                        launchActivity.t0(new qmb(u, true, 0, false, false));
-                    }
-                    launchActivity.i0();
-                    break;
-                }
-                break;
-            case 9:
-                String str10 = LaunchActivity.C1;
-                ArrayList arrayList = launchActivity.e0;
-                ArrayList arrayList2 = launchActivity.f0;
-                if (gl.O1()) {
-                    if (!arrayList2.isEmpty()) {
-                        dVar = (d) b00.f(1, arrayList2);
-                    }
-                } else if (!arrayList.isEmpty()) {
-                    dVar = (d) b00.f(1, arrayList);
-                }
-                if (!(dVar instanceof ProxyListActivity) && !(dVar instanceof fu8)) {
-                    launchActivity.t0(new ProxyListActivity());
-                    break;
-                }
-                break;
-            case 10:
-                String str11 = LaunchActivity.C1;
-                launchActivity.v1 = null;
-                break;
-            default:
-                String str12 = LaunchActivity.C1;
-                launchActivity.t0(new m66());
-                break;
+    public final void a() {
+        if (this.e) {
+            if (this.l < hl.L(20.0f) + hl.n) {
+                return;
+            } else {
+                this.e = false;
+            }
+        }
+        pcc pccVar = this.c;
+        if (pccVar != null) {
+            pccVar.a(Integer.valueOf(this.l));
+        }
+    }
+
+    public void b(boolean z) {
+        this.d = z;
+        d();
+    }
+
+    public final boolean c() {
+        return this.l > hl.L(20.0f) + hl.n || this.e;
+    }
+
+    public final void d() {
+        int height;
+        if (this.d) {
+            return;
+        }
+        boolean z = this.f;
+        View view = this.a;
+        if (z) {
+            View view2 = this.b;
+            if (view2 != null) {
+                view = view2;
+            }
+            WeakHashMap weakHashMap = ihc.a;
+            l2d a = bhc.a(view);
+            height = a != null ? a.a.f(8).d : 0;
+            this.l = height;
+        } else {
+            Rect rect = this.h;
+            view.getWindowVisibleDisplayFrame(rect);
+            View view3 = this.b;
+            if (view3 != null) {
+                view = view3;
+            }
+            height = view.getHeight() - rect.bottom;
+            this.l = height;
+        }
+        if (this.g) {
+            height = Math.max(0, height - hl.n);
+            this.l = height;
+        }
+        boolean z2 = this.k != height;
+        this.k = height;
+        if (z2) {
+            a();
         }
     }
 }

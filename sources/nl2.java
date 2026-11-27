@@ -1,13 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface nl2 {
-    void a(boolean z);
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-    void b();
-
-    void c(int i, int i2, boolean z);
-
-    int d(int i);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class nl2 extends CharacterStyle {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setAlpha((int) (textPaint.getAlpha() * 0.65f));
+    }
 }

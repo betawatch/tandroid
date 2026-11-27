@@ -1,48 +1,66 @@
 // default package
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class r79 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ wjb d;
-    public final /* synthetic */ k27 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class r79 extends ViewGroup.MarginLayoutParams {
+    public f89 a;
+    public final Rect b;
+    public boolean c;
+    public boolean d;
 
-    public /* synthetic */ r79(mu1 mu1Var, Activity activity, wjb wjbVar, k27 k27Var, byte b) {
-        this.a = b;
-        this.b = mu1Var;
-        this.c = activity;
-        this.d = wjbVar;
-        this.e = k27Var;
+    public r79(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        this.b = new Rect();
+        this.c = true;
+        this.d = false;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        k27 k27Var = this.e;
-        wjb wjbVar = this.d;
-        Activity activity = this.c;
-        mu1 mu1Var = this.b;
-        byte b2 = 2;
-        switch (b) {
-            case 0:
-                u21.b0(mu1Var).c(gl.N2(k96.M0(2131754484, null), -1, 2, new m9(activity, (byte) 3), wjbVar)).j();
-                mu1Var.Pa(k27Var);
-                mu1Var.Ra(k27Var);
-                break;
-            case 1:
-                u21.b0(mu1Var).c(gl.N2(k96.M0(2131754484, null), -1, 2, new m9(activity, b2), wjbVar)).j();
-                mu1Var.Pa(k27Var);
-                mu1Var.Ra(k27Var);
-                break;
-            default:
-                u21.b0(mu1Var).c(gl.N2(k96.M0(2131754484, null), -1, 2, new m9(activity, (byte) 4), wjbVar)).j();
-                mu1Var.Pa(k27Var);
-                mu1Var.Ra(k27Var);
-                break;
+    public final int a() {
+        f89 f89Var = this.a;
+        if (f89Var == null) {
+            return -1;
         }
+        return f89Var.b();
+    }
+
+    public final int b() {
+        f89 f89Var = this.a;
+        if (f89Var == null) {
+            return -1;
+        }
+        return f89Var.c();
+    }
+
+    public r79(int i, int i2) {
+        super(i, i2);
+        this.b = new Rect();
+        this.c = true;
+        this.d = false;
+    }
+
+    public r79(ViewGroup.MarginLayoutParams marginLayoutParams) {
+        super(marginLayoutParams);
+        this.b = new Rect();
+        this.c = true;
+        this.d = false;
+    }
+
+    public r79(ViewGroup.LayoutParams layoutParams) {
+        super(layoutParams);
+        this.b = new Rect();
+        this.c = true;
+        this.d = false;
+    }
+
+    public r79(r79 r79Var) {
+        super((ViewGroup.LayoutParams) r79Var);
+        this.b = new Rect();
+        this.c = true;
+        this.d = false;
     }
 }

@@ -1,130 +1,147 @@
 // default package
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class iea extends FrameLayout {
-    public cu6 E;
-    public int F;
-    public ar8 G;
-    public t7a H;
-    public boolean I;
-    public int J;
-    public boolean K;
-    public float L;
-    public boolean M;
-    public final Paint N;
-    public wjb O;
-    public Drawable P;
-    public long a;
-    public boolean b;
-    public ObjectAnimator c;
-    public gb3 d;
-    public k49 e;
-    public k49 f;
-    public sca h;
-    public hea n;
-    public tca r;
-    public cda s;
-    public eda w;
-    public qca x;
-    public bda y;
+public final class iea extends c79 {
+    public final Context c;
+    public boolean d;
+    public boolean e;
+    public ArrayList f;
+    public final /* synthetic */ kea h;
 
-    public iea(Context context) {
-        super(context);
-        this.N = new Paint();
+    public iea(kea keaVar, Context context) {
+        this.h = keaVar;
+        this.c = context;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setDrawPageBackground(boolean z) {
-        if (this.M != z) {
-            this.M = z;
-            invalidate();
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return f89Var.f != 1;
+    }
+
+    public final TLRPC.TL_forumTopic E(int i) {
+        int i2 = i - 1;
+        if (this.d) {
+            i2 = i - 2;
         }
+        ArrayList arrayList = this.f;
+        if (arrayList == null || i2 < 0 || i2 >= arrayList.size()) {
+            return null;
+        }
+        return (TLRPC.TL_forumTopic) this.f.get(i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setWallpaper(Drawable drawable) {
-        Drawable drawable2 = this.P;
-        if (drawable2 != drawable) {
-            if (drawable2 != null) {
-                drawable2.setCallback(null);
+    @Override // j79
+    public final int b() {
+        ArrayList arrayList = this.f;
+        return (arrayList != null ? arrayList.size() + 1 : 0) + (this.d ? 1 : 0);
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        return i == 0 ? 1 : 0;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        long j;
+        if (f89Var.f == 0) {
+            tea teaVar = (tea) f89Var.a;
+            if (i == 1 && this.d) {
+                teaVar.setAsNewBotForumTopic(this.e);
+                return;
             }
-            this.P = drawable;
-            if (drawable != null) {
-                drawable.setCallback(this);
+            if (this.f != null) {
+                TLRPC.TL_forumTopic E = E(i);
+                kea keaVar = this.h;
+                TLRPC.Dialog dialog = keaVar.x2;
+                boolean z = E != null && keaVar.P1.h((long) E.id) >= 0;
+                lea leaVar = teaVar.b;
+                int i2 = teaVar.f;
+                de0 de0Var = teaVar.a;
+                TextView textView = teaVar.c;
+                if (dialog != null) {
+                    TLRPC.Chat M0 = uc7.s1(i2).M0(Long.valueOf(-dialog.id));
+                    if (dialog.id > 0) {
+                        textView.setText(E.title);
+                        j = 0;
+                    } else if (M0 == null) {
+                        j = 0;
+                        textView.setText("");
+                    } else if (M0.monoforum) {
+                        j = 0;
+                        textView.setText(uc7.s1(i2).A1(wf3.n(E.from_id), false));
+                    } else {
+                        j = 0;
+                        textView.setText(E.title);
+                    }
+                    if (xc2.p0(M0)) {
+                        de0Var.setAnimatedEmojiDrawable(null);
+                        de0Var.setImageDrawable(null);
+                        long n = wf3.n(E.from_id);
+                        if (wf3.D(n)) {
+                            TLRPC.User X1 = uc7.s1(i2).X1(Long.valueOf(n));
+                            yob.X(textView, aob.j5, teaVar.h);
+                            leaVar.q(X1);
+                            if (X1 != null) {
+                                textView.setText(lv2.m(0, X1.first_name, X1.last_name));
+                            } else {
+                                textView.setText("");
+                            }
+                            de0Var.f(X1, leaVar);
+                            de0Var.setRoundRadius(hl.L(28.0f));
+                        } else {
+                            TLRPC.Chat M02 = uc7.s1(i2).M0(Long.valueOf(n));
+                            if (M02 != null) {
+                                textView.setText(M02.title);
+                            } else {
+                                textView.setText("");
+                            }
+                            leaVar.p(M02);
+                            de0Var.f(M0, leaVar);
+                        }
+                    } else if (E.icon_emoji_id != j) {
+                        de0Var.setImageDrawable(null);
+                        de0Var.setAnimatedEmojiDrawable(new wl(13, yac.t0, E.icon_emoji_id));
+                    } else {
+                        de0Var.setAnimatedEmojiDrawable(null);
+                        oo4 oo4Var = new oo4(E.icon_color);
+                        s26 s26Var = new s26(1, null);
+                        String upperCase = E.title.trim().toUpperCase();
+                        s26Var.a(upperCase.length() >= 1 ? upperCase.substring(0, 1) : "");
+                        s26Var.i = 1.8f;
+                        zm2 zm2Var = new zm2(oo4Var, s26Var, 0, 0);
+                        zm2Var.x = true;
+                        de0Var.setImageDrawable(zm2Var);
+                    }
+                    de0Var.setRoundRadius((M0 == null || !M0.forum || z) ? hl.L(28.0f) : hl.L(16.0f));
+                    teaVar.d = dialog.id;
+                    teaVar.e = E.id;
+                }
             }
-            invalidate();
         }
     }
 
-    public final void c(Canvas canvas) {
-        int min = Math.min(0, this.h.getTop());
-        int max = Math.max(getHeight(), this.h.getBottom());
-        int L = gl.L(2.0f);
-        if (this.P != null) {
-            canvas.save();
-            int i = -L;
-            canvas.clipRect(i, min, getWidth() + L, max);
-            this.P.setBounds(i, min, getWidth() + L, max);
-            this.P.draw(canvas);
-            canvas.restore();
-            return;
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View view;
+        Context context = this.c;
+        if (i == 0 || i == 2) {
+            tea teaVar = new tea(context, this.h.J0);
+            teaVar.setLayoutParams(new r79(-1, hl.L(100.0f)));
+            view = teaVar;
+        } else {
+            view = new View(context);
+            view.setLayoutParams(new r79(-1, a.getCurrentActionBarHeight()));
         }
-        if (this.M) {
-            int v0 = bkb.v0(bkb.Z6, this.O);
-            Paint paint = this.N;
-            paint.setColor(v0);
-            canvas.drawRect(-L, min, getWidth() + L, max, paint);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        c(canvas);
-        super.dispatchDraw(canvas);
-        ar8 ar8Var = this.G;
-        if (ar8Var == null || ar8Var.getVisibility() != 0) {
-            return;
-        }
-        v29 fastScroll = this.h.getFastScroll();
-        if (fastScroll != null) {
-            float L = gl.L(36.0f) + fastScroll.getScrollBarY();
-            if (this.F == 9) {
-                L += gl.L(64.0f);
-            }
-            int i = this.F;
-            if (i == 8 || nfa.t0(i)) {
-                L += gl.L(42.0f);
-            }
-            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - gl.L(16.0f);
-            this.G.setPivotX(r2.getMeasuredWidth());
-            this.G.setPivotY(0.0f);
-            this.G.setTranslationX(measuredWidth);
-            this.G.setTranslationY(L);
-        }
-        if (fastScroll.getProgress() > 0.85f) {
-            nfa.m1(this, null, false);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        if (view == this.n) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.P || super.verifyDrawable(drawable);
+        return new n69(view);
     }
 }

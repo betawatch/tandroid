@@ -1,72 +1,194 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
+import android.util.DisplayMetrics;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ku8 extends b4 {
-    public static final Parcelable.Creator<ku8> CREATOR = new t4d(24);
-    public final String a;
-    public final String b;
-    public final qae c;
-    public final a50 d;
-    public final z40 e;
-    public final b50 f;
-    public final x40 h;
-    public final String n;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public class ku8 extends FrameLayout {
+    public final Paint a;
+    public final Path b;
+    public final ju8 c;
+    public float d;
+    public float e;
+    public float f;
+    public boolean h;
+    public um7 n;
 
-    public ku8(String str, String str2, byte[] bArr, a50 a50Var, z40 z40Var, b50 b50Var, x40 x40Var, String str3) {
-        qae o = bArr == null ? null : qae.o(bArr.length, bArr);
-        boolean z = false;
-        fre.a("Must provide a response object.", (a50Var != null && z40Var == null && b50Var == null) || (a50Var == null && z40Var != null && b50Var == null) || (a50Var == null && z40Var == null && b50Var != null));
-        if (b50Var != null || (str != null && o != null)) {
-            z = true;
+    public ku8(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        paint.setColor(-16777216);
+        if (Build.VERSION.SDK_INT < 31 || xea.o() < 1) {
+            this.c = new hu8(this);
+        } else {
+            this.c = new iu8(this, xea.o() == 2 ? 1.0f : 1.5f);
         }
-        fre.a("Must provide id and rawId if not an error response.", z);
-        this.a = str;
-        this.b = str2;
-        this.c = o;
-        this.d = a50Var;
-        this.e = z40Var;
-        this.f = b50Var;
-        this.h = x40Var;
-        this.n = str3;
+        setIntensity(15.0f);
+        setBlurIntensity(0.0f);
+        setWillNotDraw(false);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof ku8)) {
-            return false;
+    public final /* synthetic */ void a(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, hl.L(32.0f));
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (!this.h) {
+            super.draw(canvas);
+        } else {
+            this.c.b(new jz7((Object) this, (byte) 19), canvas);
         }
-        ku8 ku8Var = (ku8) obj;
-        return cqe.a(this.a, ku8Var.a) && cqe.a(this.b, ku8Var.b) && cqe.a(this.c, ku8Var.c) && cqe.a(this.d, ku8Var.d) && cqe.a(this.e, ku8Var.e) && cqe.a(this.f, ku8Var.f) && cqe.a(this.h, ku8Var.h) && cqe.a(this.n, ku8Var.n);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.e, this.d, this.f, this.h, this.n});
+    public float getAvatarEndScale() {
+        float min;
+        int L;
+        um7 um7Var = this.n;
+        if (um7Var == null) {
+            return 0.8f;
+        }
+        boolean z = um7Var.c;
+        RectF rectF = um7Var.e;
+        if (z) {
+            min = rectF.width() - hl.L(2.0f);
+            L = hl.L(100.0f);
+        } else {
+            min = Math.min(rectF.width(), this.n.e.height());
+            L = hl.L(100.0f);
+        }
+        return Math.min(0.8f, min / L);
     }
 
-    public final String toString() {
-        qae qaeVar = this.c;
-        String b = und.b(qaeVar == null ? null : qaeVar.p());
-        String valueOf = String.valueOf(this.d);
-        String valueOf2 = String.valueOf(this.e);
-        String valueOf3 = String.valueOf(this.f);
-        String valueOf4 = String.valueOf(this.h);
-        StringBuilder l = yjb.l("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
-        ls6.u(l, b, ", \n registerResponse=", valueOf, ", \n signResponse=");
-        ls6.u(l, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
-        l.append(valueOf4);
-        l.append(", \n authenticatorAttachment='");
-        l.append(this.n);
-        l.append("'}");
-        return l.toString();
+    public float getHiddenAvatarSizeDp() {
+        um7 um7Var = this.n;
+        if (um7Var == null || !um7Var.c) {
+            return 24.0f;
+        }
+        return (um7Var.e.width() * 0.5f) / hl.p;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        nie.a.b();
-        throw null;
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        um7 um7Var;
+        float f;
+        byte b;
+        super.onSizeChanged(i, i2, i3, i4);
+        Context context = getContext();
+        if (Build.VERSION.SDK_INT >= 28) {
+            um7Var = new um7();
+            int identifier = context.getResources().getIdentifier("config_mainBuiltInDisplayCutout", "string", "android");
+            if (identifier != 0) {
+                String string = context.getString(identifier);
+                if (!string.isEmpty()) {
+                    String trim = string.trim();
+                    DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+                    int i5 = displayMetrics.widthPixels;
+                    float f2 = displayMetrics.density;
+                    if (trim.endsWith("@right")) {
+                        f = i5;
+                        trim = trim.substring(0, trim.length() - 6).trim();
+                        b = 5;
+                    } else if (trim.endsWith("@left")) {
+                        trim = trim.substring(0, trim.length() - 5).trim();
+                        f = 0.0f;
+                        b = 3;
+                    } else {
+                        f = i5 / 2.0f;
+                        b = 17;
+                    }
+                    boolean endsWith = trim.endsWith("@dp");
+                    if (endsWith) {
+                        trim = bs2.n(3, 0, trim);
+                    }
+                    if (trim.contains("@bottom")) {
+                        trim = trim.split("@bottom", 2)[0].trim();
+                    }
+                    try {
+                        q18[] c = hve.c(trim);
+                        Path path = new Path();
+                        hve.f(c, path);
+                        Matrix matrix = new Matrix();
+                        if (endsWith) {
+                            matrix.postScale(f2, f2);
+                        }
+                        matrix.postTranslate(f, 0.0f);
+                        path.transform(matrix);
+                        um7Var.d = path;
+                        RectF rectF = new RectF();
+                        path.computeBounds(rectF, true);
+                        um7Var.e = rectF;
+                        DisplayMetrics displayMetrics2 = context.getResources().getDisplayMetrics();
+                        if (b != 17 && Math.abs(rectF.centerX() - (displayMetrics2.widthPixels / 2.0f)) <= hl.L(2.0f)) {
+                            b = 17;
+                        }
+                        byte b2 = (b != 17 || rectF.left >= ((float) displayMetrics2.widthPixels) / 4.0f) ? b : (byte) 3;
+                        um7Var.a = (b2 != 17 || rectF.right <= (((float) displayMetrics2.widthPixels) / 4.0f) * 3.0f) ? b2 : (byte) 5;
+                        um7Var.b = trim.contains("C") || trim.contains("S") || trim.contains("Q");
+                        um7Var.c = rectF.width() <= ((float) hl.L(32.0f)) || rectF.width() <= rectF.height();
+                    } catch (Throwable th) {
+                        cc4.e("Failed to parse notch info", th);
+                    }
+                    this.n = um7Var;
+                    if ((um7Var != null && um7Var.a != 17) || getWidth() > getHeight()) {
+                        this.n = null;
+                    }
+                    this.c.d(i, i2);
+                }
+            }
+        }
+        um7Var = null;
+        this.n = um7Var;
+        if (um7Var != null) {
+            this.n = null;
+            this.c.d(i, i2);
+        }
+        this.n = null;
+        this.c.d(i, i2);
+    }
+
+    public void setBlurIntensity(float f) {
+        this.f = f;
+        this.c.c(f);
+        invalidate();
+    }
+
+    public void setGooeyEnabled(boolean z) {
+        if (this.h == z) {
+            return;
+        }
+        this.h = z;
+        invalidate();
+    }
+
+    public void setHideProgress(float f) {
+        setPullProgress(f);
+        setBlurIntensity(Math.min((ete.a(f, 0.2f, 0.7f) - 0.2f) / 0.5f, 0.75f));
+        setGooeyEnabled(f > 0.0f && f < 1.0f);
+        setVisibility(f >= 1.0f ? 8 : 0);
+    }
+
+    public void setIntensity(float f) {
+        this.d = f;
+        this.c.a(f);
+        invalidate();
+    }
+
+    public void setPullProgress(float f) {
+        this.e = f;
+        invalidate();
     }
 }

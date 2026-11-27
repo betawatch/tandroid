@@ -1,42 +1,49 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class p67 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class p67 extends wb2 {
+    public int Ld;
+    public int Md;
+    public int Nd;
+    public final /* synthetic */ q67 Od;
 
-    public /* synthetic */ p67(na7 na7Var, TL_account.TL_webBrowserSettings tL_webBrowserSettings, byte b) {
-        this.a = b;
-        this.b = na7Var;
-        this.c = tL_webBrowserSettings;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p67(q67 q67Var, Context context, int i, vnb vnbVar) {
+        super(context, i, true, null, vnbVar);
+        this.Od = q67Var;
+        this.Ld = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Md = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Nd = -1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
-            case 0:
-                f67 f67Var = na7Var.l5;
-                if (tL_webBrowserSettings != null) {
-                    na7Var.m5 = tL_webBrowserSettings;
-                    na7Var.getNotificationCenter().k(kk7.T5, new Object[0]);
-                }
-                gl.r(f67Var);
-                gl.d3(f67Var, 3600010L);
-                break;
-            default:
-                if (tL_webBrowserSettings != null) {
-                    na7Var.m5 = tL_webBrowserSettings;
-                    na7Var.getNotificationCenter().k(kk7.T5, new Object[0]);
-                    break;
-                }
-                break;
+    @Override // wb2
+    public final mpa Y2() {
+        return mpa.d(1, this, this.Od.F);
+    }
+
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
+    }
+
+    @Override // wb2, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        if (!this.ub.x0 || i2 == 0 || this.Ld == Integer.MAX_VALUE || i4 == 0 || this.Md == Integer.MAX_VALUE) {
+            return;
+        }
+        if (this.Nd == (getMessageObject() == null ? 0 : getMessageObject().e1())) {
+            if (!this.Od.A0) {
+                setTranslationY(-(i2 - this.Ld));
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(k43.h).start();
+            }
+            this.Ld = getTop();
+            this.Md = getBottom();
+            this.Nd = getMessageObject() != null ? getMessageObject().e1() : 0;
         }
     }
 }

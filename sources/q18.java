@@ -1,231 +1,116 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.graphics.RectF;
-import android.text.Spannable;
-import android.text.TextPaint;
-import android.view.Menu;
-import android.view.MotionEvent;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.NumberTextView;
+import android.graphics.Path;
+import android.util.Log;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class q18 extends ChatActivityEnterView {
-    public ValueAnimator s7;
-    public int t7;
-    public int u7;
-    public int v7;
-    public final /* synthetic */ y28 w7;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class q18 {
+    public char a;
+    public final float[] b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q18(y28 y28Var, Activity activity, y28 y28Var2, gu0 gu0Var) {
-        super(activity, y28Var2, null, true, gu0Var);
-        this.w7 = y28Var;
+    public q18(q18 q18Var) {
+        this.a = q18Var.a;
+        float[] fArr = q18Var.b;
+        this.b = hve.b(fArr.length, fArr);
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void B0(Menu menu) {
-        mu1.x6(menu, null, false, !this.w7.E1.f, true, true);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void H2() {
-        boolean z;
-        cw1 cw1Var;
-        y28 y28Var = this.w7;
-        boolean z2 = y28Var.w2;
-        if (!y28Var.R1.T0()) {
-            q18 q18Var = y28Var.R1;
-            if ((q18Var.a3 || q18Var.e5 <= 0.0f) && ((cw1Var = this.f1) == null || cw1Var.getVisibility() != 0)) {
-                z = false;
-                y28Var.w2 = z;
-                if (z2 == z) {
-                    if (y28Var.A1) {
-                        m8b m8bVar = ((d8b) y28Var.G1).d;
-                        m8bVar.I0 = z;
-                        m8bVar.U();
-                    }
-                    invalidate();
-                    y28Var.S0.invalidate();
-                    return;
-                }
-                return;
-            }
+    public static void a(Path path, float f, float f2, float f3, float f4, float f5, float f6, float f7, boolean z, boolean z2) {
+        double d;
+        double d2;
+        double radians = Math.toRadians(f7);
+        double cos = Math.cos(radians);
+        double sin = Math.sin(radians);
+        double d3 = f;
+        double d4 = f2;
+        double d5 = f5;
+        double d6 = ((d4 * sin) + (d3 * cos)) / d5;
+        double d7 = f6;
+        double d8 = ((d4 * cos) + ((-f) * sin)) / d7;
+        double d9 = f4;
+        double d10 = ((d9 * sin) + (f3 * cos)) / d5;
+        double d11 = ((d9 * cos) + ((-f3) * sin)) / d7;
+        double d12 = d6 - d10;
+        double d13 = d8 - d11;
+        double d14 = (d6 + d10) / 2.0d;
+        double d15 = (d8 + d11) / 2.0d;
+        double d16 = (d13 * d13) + (d12 * d12);
+        if (d16 == 0.0d) {
+            Log.w("PathParser", " Points are coincident");
+            return;
         }
-        z = true;
-        y28Var.w2 = z;
-        if (z2 == z) {
+        double d17 = (1.0d / d16) - 0.25d;
+        if (d17 < 0.0d) {
+            Log.w("PathParser", "Points are too far apart " + d16);
+            float sqrt = (float) (Math.sqrt(d16) / 1.99999d);
+            a(path, f, f2, f3, f4, f5 * sqrt, sqrt * f6, f7, z, z2);
+            return;
+        }
+        double sqrt2 = Math.sqrt(d17);
+        double d18 = sqrt2 * d12;
+        double d19 = sqrt2 * d13;
+        if (z == z2) {
+            d = d14 - d19;
+            d2 = d15 + d18;
+        } else {
+            d = d14 + d19;
+            d2 = d15 - d18;
+        }
+        double atan2 = Math.atan2(d8 - d2, d6 - d);
+        double atan22 = Math.atan2(d11 - d2, d10 - d) - atan2;
+        if (z2 != (atan22 >= 0.0d)) {
+            atan22 = atan22 > 0.0d ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
+        }
+        double d20 = d * d5;
+        double d21 = d2 * d7;
+        double d22 = (d20 * cos) - (d21 * sin);
+        double d23 = (d21 * cos) + (d20 * sin);
+        int ceil = (int) Math.ceil(Math.abs((atan22 * 4.0d) / 3.141592653589793d));
+        double cos2 = Math.cos(radians);
+        double sin2 = Math.sin(radians);
+        double cos3 = Math.cos(atan2);
+        double sin3 = Math.sin(atan2);
+        double d24 = -d5;
+        double d25 = d24 * cos2;
+        double d26 = d7 * sin2;
+        double d27 = (d25 * sin3) - (d26 * cos3);
+        double d28 = d24 * sin2;
+        double d29 = d7 * cos2;
+        double d30 = atan22 / ceil;
+        double d31 = (cos3 * d29) + (sin3 * d28);
+        double d32 = d3;
+        double d33 = d4;
+        int i = 0;
+        double d34 = atan2;
+        while (i < ceil) {
+            double d35 = d34 + d30;
+            double sin4 = Math.sin(d35);
+            double cos4 = Math.cos(d35);
+            int i2 = ceil;
+            double d36 = (((d5 * cos2) * cos4) + d22) - (d26 * sin4);
+            double d37 = (d29 * sin4) + (d5 * sin2 * cos4) + d23;
+            double d38 = (d25 * sin4) - (d26 * cos4);
+            double d39 = (cos4 * d29) + (sin4 * d28);
+            double d40 = d35 - d34;
+            double tan = Math.tan(d40 / 2.0d);
+            double sqrt3 = ((Math.sqrt(((tan * 3.0d) * tan) + 4.0d) - 1.0d) * Math.sin(d40)) / 3.0d;
+            path.rLineTo(0.0f, 0.0f);
+            path.cubicTo((float) ((d27 * sqrt3) + d32), (float) ((d31 * sqrt3) + d33), (float) (d36 - (sqrt3 * d38)), (float) (d37 - (sqrt3 * d39)), (float) d36, (float) d37);
+            i++;
+            d33 = d37;
+            cos2 = cos2;
+            d28 = d28;
+            d34 = d35;
+            d31 = d39;
+            d32 = d36;
+            ceil = i2;
+            d27 = d38;
+            d30 = d30;
         }
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void I1(float f, float f2, float f3, boolean z) {
-        LinearLayout linearLayout = this.w7.W1;
-        if (linearLayout != null) {
-            linearLayout.setTranslationX((1.0f - f3) * f);
-        }
-        super.I1(f, f2, f3, z);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void U0() {
-        H2();
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean U1(Runnable runnable) {
-        this.w7.d0(runnable);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void c1(int i, int i2) {
-        y28 y28Var = this.w7;
-        if (y28Var.R1 != null) {
-            this.d4 = true;
-            this.u7 = this.F0.getMeasuredHeight();
-            this.v7 = this.F0.getScrollY();
-            invalidate();
-            y28Var.invalidate();
-            this.t7 = y28Var.R1.getBackgroundTop();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        TextView textView;
-        TextView textView2;
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        RectF rectF = gl.P;
-        float width = getWidth();
-        y28 y28Var = this.w7;
-        rectF.set(0.0f, 0.0f, width + (y28Var.Y1 != null ? this.E * 1.5f : 0.0f), getHeight());
-        boolean contains = rectF.contains(motionEvent.getX(), motionEvent.getY());
-        if (motionEvent.getAction() == 0) {
-            if (contains && (textView2 = y28Var.Y1) != null) {
-                textView2.setPressed(true);
-            }
-        } else if (motionEvent.getAction() == 1) {
-            TextView textView3 = y28Var.Y1;
-            if (textView3 != null) {
-                if (contains && textView3.isPressed()) {
-                    y28Var.Y0();
-                }
-                y28Var.Y1.setPressed(false);
-            }
-        } else if (motionEvent.getAction() == 3 && (textView = y28Var.Y1) != null) {
-            textView.setPressed(false);
-        }
-        TextView textView4 = y28Var.Y1;
-        return textView4 != null && textView4.isPressed();
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final int getMessagesCount() {
-        if (this.w7.E1.f) {
-            return 1;
-        }
-        return super.getMessagesCount();
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final long getStarsPrice() {
-        long messageMinPrice;
-        y28 y28Var = this.w7;
-        if (!y28Var.E1.f) {
-            return super.getStarsPrice();
-        }
-        messageMinPrice = y28Var.getMessageMinPrice();
-        return Math.max(messageMinPrice, y28Var.A3);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void r2(int i, boolean z) {
-        super.r2(i, z);
-        H2();
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean u1() {
-        long messageMinPrice;
-        int i;
-        if (this.q2.getAlpha() < 0.5f) {
-            h1();
-            return false;
-        }
-        y28 y28Var = this.w7;
-        if (!y28Var.E1.f) {
-            return super.u1();
-        }
-        long j = y28Var.A3;
-        messageMinPrice = y28Var.getMessageMinPrice();
-        long max = Math.max(j, messageMinPrice);
-        TLRPC.TL_textWithEntities textWithEntities = getTextWithEntities();
-        CharSequence j0 = k27.j0(textWithEntities, false, false, new TextPaint());
-        int length = j0.length();
-        int[] iArr = na7.q1(y28Var.s2).T3;
-        if (length > ((iArr == null || iArr.length <= 2) ? 400 : iArr[2])) {
-            NumberTextView numberTextView = this.c0;
-            if (numberTextView != null) {
-                gl.A3(3.5f, numberTextView, null);
-                try {
-                    this.c0.performHapticFeedback(3, 2);
-                } catch (Exception unused) {
-                }
-            }
-            return false;
-        }
-        if (!y28Var.v0(true)) {
-            if (j0 instanceof Spannable) {
-                Spannable spannable = (Spannable) j0;
-                i = ((gm[]) spannable.getSpans(0, j0.length(), gm.class)).length + ((su3[]) spannable.getSpans(0, j0.length(), su3.class)).length;
-            } else {
-                i = 0;
-            }
-            int i2 = (int) max;
-            if (i > de5.b(y28Var.s2, i2, 2) || j0.length() > de5.b(y28Var.s2, i2, 1)) {
-                y28Var.H0();
-                return false;
-            }
-        }
-        y28Var.B0.n(textWithEntities, max);
-        this.F0.setText("");
-        gl.t1(this);
-        y28Var.A3 = 0L;
-        y28Var.h0(true);
-        N(true);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean v1(boolean z, int i, int i2, long j, boolean z2) {
-        y28 y28Var = this.w7;
-        if (!na7.q1(y28Var.s2).t2()) {
-            return super.v1(z, i, i2, j, z2);
-        }
-        h5.b(y28Var.s2);
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void v2(boolean z) {
-        y28 y28Var = this.w7;
-        w2(y28Var.v1 || y28Var.w1, z);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean w() {
-        return this.w7.v0(true);
+    public q18(char c, float[] fArr) {
+        this.a = c;
+        this.b = fArr;
     }
 }

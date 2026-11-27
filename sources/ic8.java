@@ -1,51 +1,106 @@
 // default package
 
 import android.content.Context;
-import android.util.Pair;
-import android.util.SparseArray;
-import java.util.concurrent.CopyOnWriteArraySet;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ic8 {
-    public static final hc q = new hc(2);
-    public final Context a;
-    public final gc8 b;
-    public final SparseArray c;
-    public final boolean d;
-    public final xc3 e;
-    public final adb f;
-    public final CopyOnWriteArraySet g;
-    public final long h;
-    public final vac i;
-    public iq j = new iq();
-    public cdb k;
-    public Pair l;
-    public int m;
-    public byte n;
-    public long o;
-    public int p;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ic8 extends tc8 {
+    public final /* synthetic */ byte p0;
+    public final /* synthetic */ fn7 q0;
 
-    public ic8(zl3 zl3Var) {
-        this.a = (Context) zl3Var.d;
-        gc8 gc8Var = (gc8) zl3Var.f;
-        gc8Var.getClass();
-        this.b = gc8Var;
-        this.c = new SparseArray();
-        km5 km5Var = mm5.b;
-        w59 w59Var = w59.e;
-        this.d = zl3Var.a;
-        adb adbVar = (adb) zl3Var.g;
-        this.f = adbVar;
-        long j = zl3Var.c;
-        this.h = j != -9223372036854775807L ? -j : -9223372036854775807L;
-        vac vacVar = (vac) zl3Var.h;
-        this.i = vacVar;
-        this.e = new xc3((uac) zl3Var.e, vacVar, adbVar);
-        this.g = new CopyOnWriteArraySet();
-        new fm4(new em4());
-        this.o = -9223372036854775807L;
-        this.p = -1;
-        this.n = (byte) 0;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ic8(fn7 fn7Var, Context context, wc8 wc8Var, FrameLayout frameLayout, byte b) {
+        super(context, wc8Var, frameLayout);
+        this.p0 = b;
+        this.q0 = fn7Var;
+    }
+
+    @Override // tc8
+    public final boolean D() {
+        switch (this.p0) {
+            case 0:
+                return !((PhotoViewer) this.q0).s;
+            default:
+                return super.D();
+        }
+    }
+
+    @Override // tc8
+    public final void E() {
+        switch (this.p0) {
+            case 1:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
+                if (secretMediaViewer.K && getScrollY() <= 0) {
+                    hl.d3(secretMediaViewer.q1, 3000L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // tc8
+    public final void F() {
+        switch (this.p0) {
+            case 1:
+                hl.r(((SecretMediaViewer) this.q0).q1);
+                break;
+        }
+    }
+
+    @Override // tc8
+    public final void G() {
+        switch (this.p0) {
+            case 1:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
+                if (secretMediaViewer.J0 == null) {
+                    secretMediaViewer.l(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.j0, true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.p0) {
+            case 0:
+                super.invalidate();
+                PhotoViewer photoViewer = (PhotoViewer) this.q0;
+                lb8[] lb8VarArr = photoViewer.X0;
+                ImageView[] imageViewArr = photoViewer.y3;
+                if (photoViewer.K) {
+                    int scrollY = getScrollY();
+                    float translationY = photoViewer.R1.getTranslationY();
+                    boolean z = scrollY == 0 && translationY == 0.0f;
+                    boolean z2 = scrollY == 0 && translationY == 0.0f;
+                    if (!z) {
+                        int b = lb8VarArr[0].b() + lb8VarArr[0].j;
+                        int top = (((photoViewer.a2.getTop() + ((int) translationY)) - scrollY) + (a.getCurrentActionBarHeight() + (D() ? hl.m : 0))) - hl.L(12.0f);
+                        boolean z3 = top > hl.L(32.0f) + ((int) imageViewArr[0].getY());
+                        z = top > b;
+                        z2 = z3;
+                    }
+                    if (photoViewer.z3) {
+                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z2) {
+                            imageViewArr[0].setTag(2);
+                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new n88(this, (byte) 6)).start();
+                        } else if (imageViewArr[0].getTag() == null && !z2) {
+                            imageViewArr[0].setTag(3);
+                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
+                        }
+                    }
+                    lb8VarArr[0].e(2, z ? 1.0f : 0.0f, true);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 }

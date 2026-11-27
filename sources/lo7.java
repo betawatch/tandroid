@@ -1,11 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.ComponentName;
+import android.os.IBinder;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface lo7 {
-    void b0(long j);
+public final class lo7 {
+    public final ComponentName a;
+    public final IBinder b;
 
-    long h(ja3 ja3Var);
-
-    fv9 k();
+    public lo7(ComponentName componentName, IBinder iBinder) {
+        this.a = componentName;
+        this.b = iBinder;
+    }
 }

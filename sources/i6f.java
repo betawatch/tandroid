@@ -1,27 +1,38 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class i6f extends b4 {
-    public static final Parcelable.Creator<i6f> CREATOR = new c0f(11);
-    public final float a;
-    public final int b;
-
-    public i6f(float f, int i) {
-        this.a = f;
-        this.b = i;
+public abstract class i6f {
+    public static void a(int i, int i2) {
+        String a;
+        if (i < 0 || i >= i2) {
+            if (i < 0) {
+                a = r6f.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
+            } else {
+                if (i2 < 0) {
+                    lq5.j(uh9.k(i2, "negative size: "));
+                    return;
+                }
+                a = r6f.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+            }
+            throw new IndexOutOfBoundsException(a);
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeFloat(this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        jte.s(parcel, r);
+    public static void b(int i, int i2, int i3) {
+        if (i < 0 || i2 < i || i2 > i3) {
+            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? c(i, i3, "start index") : (i2 < 0 || i2 > i3) ? c(i2, i3, "end index") : r6f.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+        }
+    }
+
+    public static String c(int i, int i2, String str) {
+        if (i < 0) {
+            return r6f.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+        }
+        if (i2 >= 0) {
+            return r6f.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
+        }
+        lq5.j(uh9.k(i2, "negative size: "));
+        return null;
     }
 }

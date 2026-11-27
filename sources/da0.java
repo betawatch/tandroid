@@ -1,42 +1,74 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class da0 extends yi7 {
-    public final xi7 a;
-    public final wi7 b;
+import java.util.ArrayList;
 
-    public da0(xi7 xi7Var, wi7 wi7Var) {
-        this.a = xi7Var;
-        this.b = wi7Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class da0 extends de6 {
+    public final long a;
+    public final long b;
+    public final z70 c;
+    public final Integer d;
+    public final String e;
+    public final ArrayList f;
+
+    public da0(long j, long j2, z70 z70Var, Integer num, String str, ArrayList arrayList) {
+        py8 py8Var = py8.a;
+        this.a = j;
+        this.b = j2;
+        this.c = z70Var;
+        this.d = num;
+        this.e = str;
+        this.f = arrayList;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof yi7) {
-            yi7 yi7Var = (yi7) obj;
-            xi7 xi7Var = this.a;
-            if (xi7Var != null ? xi7Var.equals(((da0) yi7Var).a) : ((da0) yi7Var).a == null) {
-                wi7 wi7Var = this.b;
-                da0 da0Var = (da0) yi7Var;
-                if (wi7Var != null ? wi7Var.equals(da0Var.b) : da0Var.b == null) {
-                    return true;
-                }
-            }
+        if (!(obj instanceof de6)) {
+            return false;
         }
-        return false;
+        da0 da0Var = (da0) ((de6) obj);
+        if (this.a != da0Var.a || this.b != da0Var.b || !this.c.equals(da0Var.c)) {
+            return false;
+        }
+        Integer num = da0Var.d;
+        Integer num2 = this.d;
+        if (num2 == null) {
+            if (num != null) {
+                return false;
+            }
+        } else if (!num2.equals(num)) {
+            return false;
+        }
+        String str = da0Var.e;
+        String str2 = this.e;
+        if (str2 == null) {
+            if (str != null) {
+                return false;
+            }
+        } else if (!str2.equals(str)) {
+            return false;
+        }
+        if (!this.f.equals(da0Var.f)) {
+            return false;
+        }
+        Object obj2 = py8.a;
+        return obj2.equals(obj2);
     }
 
     public final int hashCode() {
-        xi7 xi7Var = this.a;
-        int hashCode = ((xi7Var == null ? 0 : xi7Var.hashCode()) ^ 1000003) * 1000003;
-        wi7 wi7Var = this.b;
-        return hashCode ^ (wi7Var != null ? wi7Var.hashCode() : 0);
+        long j = this.a;
+        long j2 = this.b;
+        int hashCode = (((((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.c.hashCode()) * 1000003;
+        Integer num = this.d;
+        int hashCode2 = (hashCode ^ (num == null ? 0 : num.hashCode())) * 1000003;
+        String str = this.e;
+        return ((((hashCode2 ^ (str != null ? str.hashCode() : 0)) * 1000003) ^ this.f.hashCode()) * 1000003) ^ py8.a.hashCode();
     }
 
     public final String toString() {
-        return "NetworkConnectionInfo{networkType=" + this.a + ", mobileSubtype=" + this.b + "}";
+        return "LogRequest{requestTimeMs=" + this.a + ", requestUptimeMs=" + this.b + ", clientInfo=" + this.c + ", logSource=" + this.d + ", logSourceName=" + this.e + ", logEvents=" + this.f + ", qosTier=" + py8.a + "}";
     }
 }

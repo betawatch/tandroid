@@ -1,42 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class v70 {
-    public final int a;
-    public final long b;
+public final class v70 implements zq7 {
+    public static final v70 a = new v70();
+    public static final sa4 b = sa4.c("sessionId");
+    public static final sa4 c = sa4.c("firstSessionId");
+    public static final sa4 d = sa4.c("sessionIndex");
+    public static final sa4 e = sa4.c("eventTimestampUs");
+    public static final sa4 f = sa4.c("dataCollectionStatus");
+    public static final sa4 g = sa4.c("firebaseInstallationId");
+    public static final sa4 h = sa4.c("firebaseAuthenticationToken");
 
-    public v70(int i, long j) {
-        if (i == 0) {
-            fvc.f("Null status");
-            throw null;
-        }
-        this.a = i;
-        this.b = j;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof v70)) {
-            return false;
-        }
-        v70 v70Var = (v70) obj;
-        return ug8.c(this.a, v70Var.a) && this.b == v70Var.b;
-    }
-
-    public final int hashCode() {
-        int F = (ug8.F(this.a) ^ 1000003) * 1000003;
-        long j = this.b;
-        return F ^ ((int) ((j >>> 32) ^ j));
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("BackendResponse{status=");
-        int i = this.a;
-        sb.append(i != 1 ? i != 2 ? i != 3 ? i != 4 ? "null" : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
-        sb.append(", nextRequestWaitMillis=");
-        return ls6.p(sb, this.b, "}");
+    @Override // l34
+    public final void a(Object obj, Object obj2) {
+        aaa aaaVar = (aaa) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, aaaVar.a);
+        ar7Var.a(c, aaaVar.b);
+        ar7Var.e(d, aaaVar.c);
+        ar7Var.g(e, aaaVar.d);
+        ar7Var.a(f, aaaVar.e);
+        ar7Var.a(g, aaaVar.f);
+        ar7Var.a(h, aaaVar.g);
     }
 }

@@ -1,32 +1,47 @@
 // default package
 
-import java.util.concurrent.Executor;
+import android.os.BadParcelableException;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ald implements Executor {
-    public static final ald a;
-    public static final /* synthetic */ ald[] b;
+public abstract class ald {
+    public static final /* synthetic */ int a = 0;
 
     static {
-        ald aldVar = new ald("INSTANCE", 0);
-        a = aldVar;
-        b = new ald[]{aldVar};
+        ald.class.getClassLoader();
     }
 
-    public static ald[] values() {
-        return (ald[]) b.clone();
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
+        }
+        return (Parcelable) creator.createFromParcel(parcel);
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        runnable.run();
+    public static void b(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(uh9.k(dataAvail, "Parcel data not fully consumed, unread size: "));
+        }
     }
 
-    @Override // java.lang.Enum
-    public final String toString() {
-        return "MoreExecutors.directExecutor()";
+    public static void c(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
+    }
+
+    public static void d(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
+        }
     }
 }

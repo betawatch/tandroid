@@ -1,127 +1,126 @@
 // default package
 
-import android.os.Looper;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nl implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rl b;
-    public final /* synthetic */ ArrayList c;
+public final class nl extends ImageReceiver {
+    public final /* synthetic */ byte K1;
+    public final /* synthetic */ Object L1;
 
-    public /* synthetic */ nl(rl rlVar, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.b = rlVar;
-        this.c = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ nl(Object obj, byte b) {
+        super(null);
+        this.K1 = b;
+        this.L1 = obj;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0054 A[Catch: SQLiteException -> 0x005e, TryCatch #3 {SQLiteException -> 0x005e, blocks: (B:5:0x0013, B:6:0x0019, B:8:0x001f, B:10:0x0027, B:18:0x0054, B:25:0x004e, B:20:0x0057, B:29:0x005a), top: B:4:0x0013 }] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0057 A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        NativeByteBuffer nativeByteBuffer;
-        byte b = this.a;
-        ArrayList arrayList = this.c;
-        rl rlVar = this.b;
-        Object[] objArr = 0;
-        Object[] objArr2 = 0;
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean h0(Drawable drawable, String str, int i, boolean z, int i2) {
+        Runnable runnable;
+        byte b = this.K1;
+        Object obj = this.L1;
         switch (b) {
             case 0:
-                int i = rlVar.e;
-                ad7 Y = ad7.Y(i);
-                SQLiteDatabase sQLiteDatabase = Y.b;
-                if (sQLiteDatabase != null) {
-                    try {
-                        String join = TextUtils.join(",", arrayList);
-                        Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT data FROM animated_emoji WHERE document_id IN (" + join + ")", new Object[0]);
-                        ArrayList arrayList2 = new ArrayList();
-                        HashSet hashSet = new HashSet(arrayList);
-                        while (queryFinalized.next()) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                            try {
-                                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                                if (TLdeserialize != null && TLdeserialize.id != 0) {
-                                    arrayList2.add(TLdeserialize);
-                                    hashSet.remove(Long.valueOf(TLdeserialize.id));
-                                }
-                            } catch (Exception e) {
-                                fa4.g(e, true);
-                            }
-                            if (byteBufferValue != null) {
-                                byteBufferValue.reuse();
-                            }
-                        }
-                        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-                            rlVar.d(arrayList2);
-                            if (!hashSet.isEmpty()) {
-                                ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
-                                TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                                tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
-                                ConnectionsManager.getInstance(i).sendRequest(tL_messages_getCustomEmojiDocuments, new pl(rlVar, arrayList3, objArr2 == true ? 1 : 0));
-                            }
-                        } else {
-                            kk7.f(i).d(new ol(rlVar, arrayList2, hashSet, objArr == true ? 1 : 0));
-                        }
-                        queryFinalized.dispose();
-                        break;
-                    } catch (SQLiteException e2) {
-                        Y.n(e2, true);
-                        return;
-                    }
+                wl wlVar = (wl) obj;
+                wlVar.j();
+                boolean h0 = super.h0(drawable, str, i, z, i2);
+                if (wlVar.m && C()) {
+                    wlVar.m = false;
+                    hl.c3(new c1(wlVar, (byte) 13));
+                }
+                return h0;
+            case 1:
+                boolean h02 = super.h0(drawable, str, i, z, i2);
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
+                duration.addUpdateListener(new g0(this, (byte) 19));
+                duration.start();
+                return h02;
+            case 2:
+            case 3:
+            default:
+                return super.h0(drawable, str, i, z, i2);
+            case 4:
+                if (drawable != null && i != 1) {
+                    ik8.t(((tc6) ((mb0) obj).I).h.animate().alpha(1.0f).translationY(0.0f), k43.k, 250L);
+                }
+                return super.h0(drawable, str, i, z, i2);
+            case 5:
+                o68 o68Var = (o68) obj;
+                boolean h03 = super.h0(drawable, str, i, z, i2);
+                if (i == 1 && (runnable = o68Var.S0) != null) {
+                    runnable.run();
+                    o68Var.S0 = null;
+                }
+                return h03;
+            case 6:
+                boolean h04 = super.h0(drawable, str, i, z, i2);
+                ((PhotoViewer) obj).u1();
+                return h04;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver, em
+    public final void invalidate() {
+        byte b = this.K1;
+        Object obj = this.L1;
+        switch (b) {
+            case 0:
+                ((wl) obj).j();
+                super.invalidate();
+                break;
+            case 2:
+                View view = ((g82) obj).b;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 7:
+                super.invalidate();
+                wsc wscVar = ((vsc) obj).d0;
+                int i = wsc.J1;
+                wscVar.f0();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver
+    public final void s0(int[] iArr) {
+        mh8 mh8Var;
+        switch (this.K1) {
+            case 3:
+                super.s0(iArr);
+                wb2 wb2Var = (wb2) this.L1;
+                int[] iArr2 = wb2Var.T0;
+                iArr2[0] = iArr[0];
+                iArr2[1] = iArr[1];
+                int L = hl.L(6.0f);
+                iArr2[3] = L;
+                iArr2[2] = L;
+                cc2 cc2Var = wb2Var.x2;
+                if (cc2Var != null && (mh8Var = cc2Var.m) != null) {
+                    mh8Var.b.s0(iArr2);
+                    break;
                 }
                 break;
             default:
-                try {
-                    SQLitePreparedStatement executeFast = ad7.Y(rlVar.e).b.executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
-                    for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                        if (arrayList.get(i2) instanceof TLRPC.Document) {
-                            TLRPC.Document document = (TLRPC.Document) arrayList.get(i2);
-                            NativeByteBuffer nativeByteBuffer2 = null;
-                            try {
-                                nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e3) {
-                                e = e3;
-                            }
-                            try {
-                                document.serializeToStream(nativeByteBuffer);
-                                executeFast.requery();
-                                executeFast.bindLong(1, document.id);
-                                executeFast.bindByteBuffer(2, nativeByteBuffer);
-                                executeFast.step();
-                            } catch (Exception e4) {
-                                e = e4;
-                                nativeByteBuffer2 = nativeByteBuffer;
-                                e.printStackTrace();
-                                nativeByteBuffer = nativeByteBuffer2;
-                                if (nativeByteBuffer == null) {
-                                }
-                            }
-                            if (nativeByteBuffer == null) {
-                                nativeByteBuffer.reuse();
-                            }
-                        }
-                    }
-                    executeFast.dispose();
-                    break;
-                } catch (SQLiteException e5) {
-                    fa4.g(e5, true);
-                }
+                super.s0(iArr);
+                break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ nl(Object obj, View view, byte b) {
+        super(view);
+        this.K1 = b;
+        this.L1 = obj;
     }
 }

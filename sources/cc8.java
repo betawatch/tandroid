@@ -1,44 +1,24 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
+import android.media.MediaFormat;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cc8 implements Parcelable {
-    public static final Parcelable.Creator<cc8> CREATOR = new hv6((byte) 11);
-    public final String a;
-    public final CharSequence b;
-    public final int c;
-    public final Bundle d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class cc8 implements sec {
+    public final /* synthetic */ PhotoViewer a;
 
-    public cc8(Parcel parcel) {
-        String readString = parcel.readString();
-        readString.getClass();
-        this.a = readString;
-        CharSequence charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        charSequence.getClass();
-        this.b = charSequence;
-        this.c = parcel.readInt();
-        this.d = parcel.readBundle(lv6.class.getClassLoader());
+    public cc8(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final String toString() {
-        return "Action:mName='" + ((Object) this.b) + ", mIcon=" + this.c + ", mExtras=" + this.d;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.a);
-        TextUtils.writeToParcel(this.b, parcel, i);
-        parcel.writeInt(this.c);
-        parcel.writeBundle(this.d);
+    @Override // sec
+    public final void b(long j, long j2, ko4 ko4Var, MediaFormat mediaFormat) {
+        kfc kfcVar;
+        PhotoViewer photoViewer = this.a;
+        if (!photoViewer.I4 || (kfcVar = photoViewer.G2) == null) {
+            return;
+        }
+        hl.c3(new h68(this, kfcVar, (byte) 8));
     }
 }

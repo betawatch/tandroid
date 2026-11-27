@@ -1,19 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class k3e implements zn7 {
-    public static final k3e a = new k3e();
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.RemoteException;
+import android.util.Log;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class k3e extends e9d {
+    public final IBinder g;
+    public final /* synthetic */ hg0 h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k3e(hg0 hg0Var, int i, IBinder iBinder, Bundle bundle) {
+        super(hg0Var, i, bundle);
+        this.h = hg0Var;
+        this.g = iBinder;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // e9d
+    public final boolean a() {
+        IBinder iBinder = this.g;
+        try {
+            xve.h(iBinder);
+            String interfaceDescriptor = iBinder.getInterfaceDescriptor();
+            hg0 hg0Var = this.h;
+            String l = hg0Var.l();
+            i09 i09Var = hg0Var.t;
+            if (!l.equals(interfaceDescriptor)) {
+                String l2 = hg0Var.l();
+                StringBuilder sb = new StringBuilder(l2.length() + 34 + String.valueOf(interfaceDescriptor).length());
+                sb.append("service descriptor mismatch: ");
+                sb.append(l2);
+                sb.append(" vs. ");
+                sb.append(interfaceDescriptor);
+                Log.w("GmsClient", sb.toString());
+                return false;
+            }
+            IInterface b = hg0Var.b(iBinder);
+            if (b == null || !(hg0Var.y(2, 4, b) || hg0Var.y(3, 4, b))) {
+                return false;
+            }
+            hg0Var.z = null;
+            Bundle g = hg0Var.g();
+            if (i09Var == null) {
+                return true;
+            }
+            ((k05) i09Var.b).onConnected(g);
+            return true;
+        } catch (RemoteException unused) {
+            Log.w("GmsClient", "service probably died");
+            return false;
         }
-        throw null;
+    }
+
+    @Override // e9d
+    public final void b(ws2 ws2Var) {
+        hg0 hg0Var = this.h;
+        k09 k09Var = hg0Var.u;
+        if (k09Var != null) {
+            ((l05) k09Var.b).onConnectionFailed(ws2Var);
+        }
+        hg0Var.s(ws2Var);
     }
 }

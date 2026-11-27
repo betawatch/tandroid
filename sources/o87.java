@@ -1,35 +1,42 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o87 implements uc7 {
-    public final /* synthetic */ na7 a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ TLRPC.InputPeer e;
-    public final /* synthetic */ long f;
+public final /* synthetic */ class o87 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
 
-    public /* synthetic */ o87(na7 na7Var, long j, int i, boolean z, TLRPC.InputPeer inputPeer, long j2) {
-        this.a = na7Var;
-        this.b = j;
-        this.c = i;
-        this.d = z;
-        this.e = inputPeer;
-        this.f = j2;
+    public /* synthetic */ o87(uc7 uc7Var, TL_account.TL_webBrowserSettings tL_webBrowserSettings, byte b) {
+        this.a = b;
+        this.b = uc7Var;
+        this.c = tL_webBrowserSettings;
     }
 
-    @Override // uc7
-    public final void a(int i) {
-        na7 na7Var = this.a;
-        long e = na7Var.getUserConfig().e();
-        long j = this.b;
-        if (j == e) {
-            na7Var.D1().b();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.c;
+        uc7 uc7Var = this.b;
+        switch (b) {
+            case 0:
+                l87 l87Var = uc7Var.m5;
+                if (tL_webBrowserSettings != null) {
+                    uc7Var.n5 = tL_webBrowserSettings;
+                    uc7Var.getNotificationCenter().k(jn7.U5, new Object[0]);
+                }
+                hl.r(l87Var);
+                hl.d3(l87Var, 3600010L);
+                break;
+            default:
+                if (tL_webBrowserSettings != null) {
+                    uc7Var.n5 = tL_webBrowserSettings;
+                    uc7Var.getNotificationCenter().k(jn7.U5, new Object[0]);
+                    break;
+                }
+                break;
         }
-        na7Var.U(j, 2, this.c, Math.max(0, i), this.d, this.e, this.f);
-        na7Var.F(1);
     }
 }

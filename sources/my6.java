@@ -1,58 +1,479 @@
 // default package
 
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.RectF;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Locale;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class my6 extends xy6 {
-    public final /* synthetic */ byte E = 0;
-    public final /* synthetic */ Object F;
+public final /* synthetic */ class my6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public my6(hu0 hu0Var, hu0 hu0Var2, FrameLayout frameLayout, long j) {
-        super(hu0Var2, frameLayout, j, true);
-        this.F = hu0Var;
+    public /* synthetic */ my6(na9 na9Var, boolean z, boolean z2, Bitmap[] bitmapArr, CountDownLatch countDownLatch) {
+        this.a = (byte) 3;
+        this.d = na9Var;
+        this.b = z;
+        this.c = z2;
+        this.e = bitmapArr;
+        this.f = countDownLatch;
     }
 
-    @Override // xy6
-    public final void f(String str, boolean z, boolean z2) {
-        a aVar;
-        byte b = this.E;
-        Object obj = this.F;
+    @Override // java.lang.Runnable
+    public final void run() {
+        pcc pccVar;
+        boolean z;
+        byte b = this.a;
+        byte b2 = 4;
+        boolean z2 = this.c;
+        boolean z3 = this.b;
+        final byte b3 = 1;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
         switch (b) {
             case 0:
-                if (!z2) {
-                    super.f(str, z, z2);
+                xw6 xw6Var = (xw6) obj;
+                yx6 yx6Var = ((qy6) ((c34) obj3).d).j;
+                yx6Var.t();
+                og8 og8Var = yx6Var.t;
+                ote.b(og8Var, (yw6) obj2);
+                int h = og8Var.h();
+                if (z3) {
+                    if (h == 1) {
+                        if (og8Var.m0(2)) {
+                            og8Var.a();
+                        }
+                    } else if (h == 4 && og8Var.m0(4)) {
+                        og8Var.E();
+                    }
+                }
+                if (z2 && og8Var.m0(1)) {
+                    og8Var.j();
+                }
+                yf8 yf8Var = new yf8();
+                yf8Var.a.d(31, 2);
+                yf8Var.a(1, z2);
+                yf8Var.b();
+                yx6Var.n(xw6Var);
+                break;
+            case 1:
+                zp5 zp5Var = (zp5) obj;
+                ((nx7) obj3).l((j18) obj2, z3, z2);
+                if (zp5Var != null) {
+                    zp5Var.run();
+                    break;
+                }
+                break;
+            case 2:
+                RectF rectF = ProfileActivity.Z6;
+                ((ProfileActivity) obj3).F2((TLRPC.User) obj2, (String) obj, z3, z2);
+                break;
+            case 3:
+                Bitmap[] bitmapArr = (Bitmap[]) obj2;
+                CountDownLatch countDownLatch = (CountDownLatch) obj;
+                nx7 nx7Var = ((na9) obj3).E.c;
+                qma qmaVar = nx7Var.g;
+                ym4 h2 = nx7Var.h(new RectF(0.0f, 0.0f, qmaVar.a, qmaVar.b), false, z3, z2);
+                if (h2 != null) {
+                    bitmapArr[0] = (Bitmap) h2.b;
+                }
+                countDownLatch.countDown();
+                break;
+            case 4:
+                final n1a n1aVar = (n1a) obj3;
+                final String str = (String) obj2;
+                String[] strArr = (String[]) obj;
+                final LinkedHashSet linkedHashSet = new LinkedHashSet();
+                final LinkedHashSet linkedHashSet2 = new LinkedHashSet();
+                final HashMap hashMap = ls6.d0(n1aVar.W).r;
+                final ArrayList arrayList = new ArrayList();
+                final ArrayList arrayList2 = new ArrayList();
+                boolean d = pv3.d(str);
+                final ArrayList arrayList3 = new ArrayList();
+                HashMap hashMap2 = new HashMap();
+                final ArrayList arrayList4 = new ArrayList();
+                final boolean z4 = this.b;
+                final boolean z5 = this.c;
+                pcc pccVar2 = new pcc() { // from class: uz9
+                    @Override // pcc
+                    public final void a(Object obj4) {
+                        final n1a n1aVar2 = n1a.this;
+                        final String str2 = str;
+                        final boolean z6 = z4;
+                        final ArrayList arrayList5 = arrayList;
+                        final HashMap hashMap3 = hashMap;
+                        final ArrayList arrayList6 = arrayList2;
+                        final LinkedHashSet linkedHashSet3 = linkedHashSet;
+                        final LinkedHashSet linkedHashSet4 = linkedHashSet2;
+                        final ArrayList arrayList7 = arrayList4;
+                        final ArrayList arrayList8 = arrayList3;
+                        final boolean z7 = z5;
+                        hl.c3(new Runnable() { // from class: yz9
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                n1a n1aVar3 = n1a.this;
+                                qz9 qz9Var = n1aVar3.K1;
+                                if (qz9Var != null) {
+                                    hl.r(qz9Var);
+                                    n1aVar3.K1 = null;
+                                }
+                                String str3 = n1aVar3.B1;
+                                String str4 = str2;
+                                if (str4 != str3) {
+                                    return;
+                                }
+                                n1aVar3.A1 = true;
+                                n1aVar3.z(true, z6);
+                                e0a e0aVar = n1aVar3.g0;
+                                if (e0aVar != null) {
+                                    e0aVar.d(true);
+                                }
+                                ArrayList arrayList9 = n1aVar3.C1;
+                                if (arrayList9 == null) {
+                                    n1aVar3.C1 = new ArrayList();
+                                } else {
+                                    arrayList9.clear();
+                                }
+                                ArrayList arrayList10 = n1aVar3.F1;
+                                if (arrayList10 == null) {
+                                    n1aVar3.F1 = new ArrayList();
+                                } else {
+                                    arrayList10.clear();
+                                }
+                                ArrayList arrayList11 = n1aVar3.E1;
+                                if (arrayList11 == null) {
+                                    n1aVar3.E1 = new ArrayList();
+                                } else {
+                                    arrayList11.clear();
+                                }
+                                ArrayList arrayList12 = n1aVar3.D1;
+                                if (arrayList12 == null) {
+                                    n1aVar3.D1 = new ArrayList();
+                                } else {
+                                    arrayList12.clear();
+                                }
+                                int i = 0;
+                                n1aVar3.j0.x0(0);
+                                int i2 = n1aVar3.a0;
+                                if (i2 == 1 || i2 == 14 || i2 == 11 || i2 == 2) {
+                                    ArrayList arrayList13 = arrayList5;
+                                    if (arrayList13.isEmpty()) {
+                                        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hashMap3.get(str4);
+                                        if (tL_availableReaction != null) {
+                                            n1aVar3.C1.add(w49.c(tL_availableReaction));
+                                        }
+                                    } else {
+                                        n1aVar3.C1.addAll(arrayList13);
+                                    }
+                                    ArrayList arrayList14 = arrayList6;
+                                    if (!arrayList14.isEmpty()) {
+                                        n1aVar3.D1.addAll(arrayList14);
+                                    }
+                                }
+                                Iterator it = linkedHashSet3.iterator();
+                                while (it.hasNext()) {
+                                    Long l = (Long) it.next();
+                                    l.getClass();
+                                    ArrayList arrayList15 = n1aVar3.C1;
+                                    w49 w49Var = new w49();
+                                    long longValue = l.longValue();
+                                    w49Var.g = longValue;
+                                    w49Var.h = longValue;
+                                    arrayList15.add(w49Var);
+                                }
+                                Iterator it2 = linkedHashSet4.iterator();
+                                while (it2.hasNext()) {
+                                    n1aVar3.C1.add(w49.b((String) it2.next()));
+                                }
+                                n1aVar3.F1.addAll(arrayList7);
+                                ArrayList arrayList16 = arrayList8;
+                                int size = arrayList16.size();
+                                while (i < size) {
+                                    Object obj5 = arrayList16.get(i);
+                                    i++;
+                                    n1aVar3.E1.addAll((ArrayList) obj5);
+                                }
+                                n1aVar3.r0.E(!z7);
+                            }
+                        });
+                    }
+                };
+                int i = n1aVar.a0;
+                if (i == 13) {
+                    final byte b4 = 0;
+                    Utilities.u(0, new pcc() { // from class: vz9
+                        @Override // pcc
+                        public final void a(Object obj4) {
+                            byte b5 = 1;
+                            switch (b4) {
+                                case 0:
+                                    n1a n1aVar2 = n1aVar;
+                                    ls6.d0(n1aVar2.W).X(n1a.c2, str, false, new yw9(linkedHashSet2, (Runnable) obj4, b5), false, false, false, false, 0);
+                                    break;
+                                default:
+                                    n1a n1aVar3 = n1aVar;
+                                    String str2 = str;
+                                    ls6 d0 = ls6.d0(n1aVar3.W);
+                                    xz9 xz9Var = new xz9(linkedHashSet2, (Runnable) obj4, (byte) 0);
+                                    if (str2 != null) {
+                                        Utilities.g.c(new g65(str2, d0.t0(5), d0.t0[1], xz9Var, (byte) 28));
+                                        break;
+                                    } else {
+                                        xz9Var.a(new ArrayList());
+                                        break;
+                                    }
+                            }
+                        }
+                    }, pccVar2);
+                    break;
+                } else if (i == 14) {
+                    if (d) {
+                        final byte b5 = 0;
+                        pccVar = new pcc() { // from class: wz9
+                            @Override // pcc
+                            public final void a(Object obj4) {
+                                switch (b5) {
+                                    case 0:
+                                        String str2 = str;
+                                        Runnable runnable = (Runnable) obj4;
+                                        TLRPC.messages_AvailableEffects E0 = uc7.s1(n1aVar.W).E0();
+                                        if (E0 != null) {
+                                            for (int i2 = 0; i2 < E0.effects.size(); i2++) {
+                                                try {
+                                                    TLRPC.TL_availableEffect tL_availableEffect = E0.effects.get(i2);
+                                                    if (str2.contains(tL_availableEffect.emoticon)) {
+                                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList2 : arrayList).add(w49.e(tL_availableEffect));
+                                                    }
+                                                } catch (Exception unused) {
+                                                }
+                                            }
+                                        }
+                                        runnable.run();
+                                        break;
+                                    default:
+                                        n1a n1aVar2 = n1aVar;
+                                        ls6.d0(n1aVar2.W).X(n1a.c2, str, false, new pt((Object) n1aVar2, (Object) arrayList2, (Object) arrayList, obj4, (byte) 19), false, false, false, false, 0);
+                                        break;
+                                }
+                            }
+                        };
+                    } else {
+                        final byte b6 = 1;
+                        pccVar = new pcc() { // from class: wz9
+                            @Override // pcc
+                            public final void a(Object obj4) {
+                                switch (b6) {
+                                    case 0:
+                                        String str2 = str;
+                                        Runnable runnable = (Runnable) obj4;
+                                        TLRPC.messages_AvailableEffects E0 = uc7.s1(n1aVar.W).E0();
+                                        if (E0 != null) {
+                                            for (int i2 = 0; i2 < E0.effects.size(); i2++) {
+                                                try {
+                                                    TLRPC.TL_availableEffect tL_availableEffect = E0.effects.get(i2);
+                                                    if (str2.contains(tL_availableEffect.emoticon)) {
+                                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList2 : arrayList).add(w49.e(tL_availableEffect));
+                                                    }
+                                                } catch (Exception unused) {
+                                                }
+                                            }
+                                        }
+                                        runnable.run();
+                                        break;
+                                    default:
+                                        n1a n1aVar2 = n1aVar;
+                                        ls6.d0(n1aVar2.W).X(n1a.c2, str, false, new pt((Object) n1aVar2, (Object) arrayList2, (Object) arrayList, obj4, (byte) 19), false, false, false, false, 0);
+                                        break;
+                                }
+                            }
+                        };
+                    }
+                    Utilities.u(0, pccVar, pccVar2);
                     break;
                 } else {
-                    aVar = ((d) ((hu0) obj)).actionBar;
-                    aVar.setSearchFieldText("");
+                    Utilities.u(0, new e52(d, str, linkedHashSet, b2), new pcc() { // from class: vz9
+                        @Override // pcc
+                        public final void a(Object obj4) {
+                            byte b52 = 1;
+                            switch (b3) {
+                                case 0:
+                                    n1a n1aVar2 = n1aVar;
+                                    ls6.d0(n1aVar2.W).X(n1a.c2, str, false, new yw9(linkedHashSet, (Runnable) obj4, b52), false, false, false, false, 0);
+                                    break;
+                                default:
+                                    n1a n1aVar3 = n1aVar;
+                                    String str2 = str;
+                                    ls6 d0 = ls6.d0(n1aVar3.W);
+                                    xz9 xz9Var = new xz9(linkedHashSet, (Runnable) obj4, (byte) 0);
+                                    if (str2 != null) {
+                                        Utilities.g.c(new g65(str2, d0.t0(5), d0.t0[1], xz9Var, (byte) 28));
+                                        break;
+                                    } else {
+                                        xz9Var.a(new ArrayList());
+                                        break;
+                                    }
+                            }
+                        }
+                    }, new ku0((Object) n1aVar, (Object) strArr, (Object) str, (Object) linkedHashSet, (byte) 19), new cp8(n1aVar, d, linkedHashSet, str, hashMap, arrayList), new ku0((Object) n1aVar, str, (Object) arrayList3, (Object) hashMap2, (byte) 20), new v58((Object) n1aVar, (Object) str, (Object) arrayList4, (byte) 5), pccVar2);
                     break;
                 }
-            default:
-                vy1 vy1Var = (vy1) obj;
-                zya zyaVar = vy1Var.Q1;
-                if (!this.e.isEmpty()) {
-                    if (!z2) {
-                        super.f(str, z, z2);
-                        break;
+            case 5:
+                c6b c6bVar = (c6b) obj3;
+                TL_stories.TL_stories_getAllStories tL_stories_getAllStories = (TL_stories.TL_stories_getAllStories) obj2;
+                TLObject tLObject = (TLObject) obj;
+                int i2 = c6bVar.a;
+                SharedPreferences sharedPreferences = c6bVar.l;
+                if (z3) {
+                    c6bVar.r = false;
+                } else {
+                    c6bVar.q = false;
+                }
+                cc4.b("StoriesController loaded stories from server state=" + tL_stories_getAllStories.state + " more=" + tL_stories_getAllStories.next + "  " + tLObject);
+                if (tLObject instanceof TL_stories.TL_stories_allStories) {
+                    TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) tLObject;
+                    jf7.Y(i2).j1(tL_stories_allStories.users, null, true, true);
+                    int i3 = tL_stories_allStories.count;
+                    if (z3) {
+                        c6bVar.v = i3;
+                        c6bVar.z = tL_stories_allStories.has_more;
+                        c6bVar.y = tL_stories_allStories.state;
+                        sharedPreferences.edit().putString("last_stories_state_hidden", c6bVar.y).putBoolean("last_stories_has_more_hidden", c6bVar.z).putInt("total_stores_hidden", c6bVar.v).apply();
                     } else {
-                        vy1Var.v1.K.setText("");
+                        c6bVar.u = i3;
+                        c6bVar.p = tL_stories_allStories.has_more;
+                        c6bVar.o = tL_stories_allStories.state;
+                        sharedPreferences.edit().putString("last_stories_state", c6bVar.o).putBoolean("last_stories_has_more", c6bVar.p).putInt("total_stores", c6bVar.u).apply();
+                    }
+                    c6bVar.a0(tL_stories_allStories, z3, false, z2);
+                    break;
+                } else if (tLObject instanceof TL_stories.TL_stories_allStoriesNotModified) {
+                    if (z3) {
+                        c6bVar.z = sharedPreferences.getBoolean("last_stories_has_more_hidden", false);
+                        c6bVar.y = ((TL_stories.TL_stories_allStoriesNotModified) tLObject).state;
+                        sharedPreferences.edit().putString("last_stories_state_hidden", c6bVar.y).apply();
+                        z = c6bVar.z;
+                    } else {
+                        c6bVar.p = sharedPreferences.getBoolean("last_stories_has_more", false);
+                        c6bVar.o = ((TL_stories.TL_stories_allStoriesNotModified) tLObject).state;
+                        sharedPreferences.edit().putString("last_stories_state", c6bVar.o).apply();
+                        z = c6bVar.p;
+                    }
+                    if (z) {
+                        jn7.f(i2).k(jn7.y5, new Object[0]);
                         break;
                     }
-                } else if (zyaVar.getVisibility() != 4) {
-                    zyaVar.setVisibility(4);
-                    break;
                 }
+                break;
+            default:
+                o6b o6bVar = (o6b) obj3;
+                ArrayList arrayList5 = (ArrayList) obj2;
+                kc kcVar = (kc) obj;
+                int i4 = o6bVar.a;
+                jf7 jf7Var = o6bVar.b;
+                SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                for (int i5 = 0; i5 < arrayList5.size(); i5++) {
+                    TL_stories.PeerStories peerStories = (TL_stories.PeerStories) arrayList5.get(i5);
+                    long n = wf3.n(peerStories.peer);
+                    try {
+                        ArrayList<TL_stories.StoryItem> arrayList6 = peerStories.stories;
+                        for (int i6 = 0; i6 < arrayList6.size(); i6++) {
+                            if (arrayList6.get(i6) instanceof TL_stories.TL_storyItemSkipped) {
+                                TL_stories.StoryItem e = o6bVar.e(arrayList6.get(i6).id, n);
+                                if (e instanceof TL_stories.TL_storyItem) {
+                                    arrayList6.set(i6, e);
+                                }
+                            }
+                        }
+                    } catch (Exception e2) {
+                        cc4.g(e2, true);
+                    }
+                }
+                if (!z3) {
+                    try {
+                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT DISTINCT dialog_id FROM stories", new Object[0]);
+                        ArrayList arrayList7 = new ArrayList();
+                        while (queryFinalized.next()) {
+                            long longValue = queryFinalized.longValue(0);
+                            if (longValue > 0) {
+                                TLRPC.User X1 = uc7.s1(i4).X1(Long.valueOf(longValue));
+                                if (X1 == null) {
+                                    X1 = jf7.Y(i4).g0(longValue);
+                                }
+                                if (X1 == null || (X1.stories_hidden == z2 && !arrayList7.contains(Long.valueOf(longValue)))) {
+                                    arrayList7.add(Long.valueOf(longValue));
+                                }
+                            } else {
+                                long j = -longValue;
+                                TLRPC.Chat M0 = uc7.s1(i4).M0(Long.valueOf(j));
+                                if (M0 == null) {
+                                    M0 = jf7.Y(i4).N(j);
+                                }
+                                if (M0 == null || (M0.stories_hidden == z2 && !arrayList7.contains(Long.valueOf(longValue)))) {
+                                    arrayList7.add(Long.valueOf(longValue));
+                                }
+                            }
+                        }
+                        if (f11.a) {
+                            cc4.b("StoriesStorage delete dialogs " + TextUtils.join(",", arrayList7));
+                        }
+                        Locale locale = Locale.US;
+                        sQLiteDatabase.executeFast("DELETE FROM stories WHERE dialog_id IN(" + TextUtils.join(",", arrayList7) + ")").stepThis().dispose();
+                    } catch (Throwable th) {
+                        jf7Var.n(th, true);
+                    }
+                }
+                for (int i7 = 0; i7 < arrayList5.size(); i7++) {
+                    TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) arrayList5.get(i7);
+                    o6bVar.g(wf3.n(peerStories2.peer), peerStories2);
+                }
+                hl.c3(kcVar);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public my6(vy1 vy1Var, d dVar, ww0 ww0Var, long j) {
-        super(dVar, ww0Var, j, false);
-        this.F = vy1Var;
+    public /* synthetic */ my6(c6b c6bVar, boolean z, TL_stories.TL_stories_getAllStories tL_stories_getAllStories, TLObject tLObject, boolean z2) {
+        this.a = (byte) 5;
+        this.d = c6bVar;
+        this.b = z;
+        this.e = tL_stories_getAllStories;
+        this.f = tLObject;
+        this.c = z2;
+    }
+
+    public /* synthetic */ my6(Object obj, Object obj2, boolean z, boolean z2, Object obj3, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.e = obj2;
+        this.b = z;
+        this.c = z2;
+        this.f = obj3;
+    }
+
+    public /* synthetic */ my6(ProfileActivity profileActivity, TLRPC.User user, String str, boolean z, boolean z2) {
+        this.a = (byte) 2;
+        this.d = profileActivity;
+        this.e = user;
+        this.f = str;
+        this.b = z;
+        this.c = z2;
     }
 }

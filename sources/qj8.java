@@ -1,32 +1,54 @@
 // default package
 
-import org.telegram.ui.PrivacyControlActivity;
+import java.io.Serializable;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qj8 implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PrivacyControlActivity b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qj8 implements pj8, Serializable {
+    public final List a;
 
-    public /* synthetic */ qj8(PrivacyControlActivity privacyControlActivity, byte b) {
-        this.a = b;
-        this.b = privacyControlActivity;
+    public qj8(List list) {
+        this.a = list;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        PrivacyControlActivity privacyControlActivity = this.b;
-        switch (b) {
-            case 0:
-                privacyControlActivity.I0();
-                break;
-            case 1:
-                privacyControlActivity.finishFragment();
-                break;
-            default:
-                privacyControlActivity.finishFragment();
-                break;
+    @Override // pj8
+    public final boolean apply(Object obj) {
+        int i = 0;
+        while (true) {
+            List list = this.a;
+            if (i >= list.size()) {
+                return true;
+            }
+            if (!((pj8) list.get(i)).apply(obj)) {
+                return false;
+            }
+            i++;
         }
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof qj8) {
+            return this.a.equals(((qj8) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() + 306654252;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("Predicates.and(");
+        boolean z = true;
+        for (Object obj : this.a) {
+            if (!z) {
+                sb.append(',');
+            }
+            sb.append(obj);
+            z = false;
+        }
+        sb.append(')');
+        return sb.toString();
     }
 }

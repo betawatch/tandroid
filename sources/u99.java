@@ -1,28 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class u99 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ y99 b;
+import com.google.android.gms.cast.MediaError;
+import java.util.ArrayList;
 
-    public /* synthetic */ u99(y99 y99Var, byte b) {
-        this.a = b;
-        this.b = y99Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class u99 {
+    public void a() {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        y99 y99Var = this.b;
-        switch (b) {
-            case 0:
-                y99Var.Y0();
-                break;
-            default:
-                y99Var.d2.O(true);
-                gl.d3(new u99(y99Var, (byte) 0), 150L);
-                break;
-        }
+    public void c() {
+    }
+
+    public void d() {
+    }
+
+    public void e() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void o() {
+    }
+
+    public void b(MediaError mediaError) {
+    }
+
+    public void i(int[] iArr) {
+    }
+
+    public void k(eu6[] eu6VarArr) {
+    }
+
+    public void l(int[] iArr) {
+    }
+
+    public void n(int[] iArr) {
+    }
+
+    public void j(int[] iArr, int i) {
+    }
+
+    public void m(ArrayList arrayList, ArrayList arrayList2, int i) {
+    }
+
+    public void h(String str, long j, int i, long j2, long j3) {
     }
 }

@@ -1,20 +1,27 @@
 // default package
 
-import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class i71 extends qfa {
-    public final /* synthetic */ j71 H0;
+public abstract class i71 extends la {
+    public final byte d;
+    public final ArrayList e = new ArrayList();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i71(j71 j71Var, Context context, jb4 jb4Var, int i) {
-        super(context, jb4Var, i);
-        this.H0 = j71Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public i71(int i) {
+        this.d = i;
     }
 
-    @Override // qfa
-    public final void h() {
-        this.H0.w.G.i(null, (u61) getTag(), true);
+    public abstract void F();
+
+    @Override // j79
+    public final int b() {
+        return this.e.size();
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        return ((p71) this.e.get(i)).a;
     }
 }

@@ -1,39 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class na0 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final byte e;
-    public final lv6 f;
+    public final long a;
+    public final long b;
+    public final long c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public na0(String str, String str2, String str3, String str4, int i, lv6 lv6Var) {
-        if (str == null) {
-            fvc.f("Null appIdentifier");
-            throw null;
-        }
-        this.a = str;
-        if (str2 == null) {
-            fvc.f("Null versionCode");
-            throw null;
-        }
-        this.b = str2;
-        if (str3 == null) {
-            fvc.f("Null versionName");
-            throw null;
-        }
-        this.c = str3;
-        if (str4 == null) {
-            fvc.f("Null installUuid");
-            throw null;
-        }
-        this.d = str4;
-        this.e = i;
-        this.f = lv6Var;
+    public na0(long j, long j2, long j3) {
+        this.a = j;
+        this.b = j2;
+        this.c = j3;
     }
 
     public final boolean equals(Object obj) {
@@ -42,16 +19,27 @@ public final class na0 {
         }
         if (obj instanceof na0) {
             na0 na0Var = (na0) obj;
-            return this.a.equals(na0Var.a) && this.b.equals(na0Var.b) && this.c.equals(na0Var.c) && this.d.equals(na0Var.d) && this.e == na0Var.e && this.f == na0Var.f;
+            if (this.a == na0Var.a && this.b == na0Var.b && this.c == na0Var.c) {
+                return true;
+            }
         }
         return false;
     }
 
     public final int hashCode() {
-        return ((((((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e) * 1000003) ^ this.f.hashCode();
+        long j = this.a;
+        long j2 = this.b;
+        int i = (((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003;
+        long j3 = this.c;
+        return i ^ ((int) ((j3 >>> 32) ^ j3));
     }
 
     public final String toString() {
-        return "AppData{appIdentifier=" + this.a + ", versionCode=" + this.b + ", versionName=" + this.c + ", installUuid=" + this.d + ", deliveryMechanism=" + ((int) this.e) + ", developmentPlatformProvider=" + this.f + "}";
+        StringBuilder sb = new StringBuilder("StartupTime{epochMillis=");
+        sb.append(this.a);
+        sb.append(", elapsedRealtime=");
+        sb.append(this.b);
+        sb.append(", uptimeMillis=");
+        return qu6.p(sb, this.c, "}");
     }
 }

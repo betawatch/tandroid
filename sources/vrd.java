@@ -1,22 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Build;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class vrd {
-    public static int a(int i) {
-        if (i == 0) {
-            return 0;
-        }
-        if (i == 90) {
-            return 1;
-        }
-        if (i == 180) {
-            return 2;
-        }
-        if (i == 270) {
-            return 3;
-        }
-        w26.j(de9.k(i, "Invalid rotation: "));
-        return 0;
+    public static final int a;
+
+    static {
+        a = Build.VERSION.SDK_INT >= 31 ? 33554432 : 0;
     }
 }

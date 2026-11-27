@@ -1,82 +1,158 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.HeaderViewListAdapter;
-import android.widget.ListAdapter;
-import android.widget.PopupWindow;
+import android.os.Handler;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class i07 implements vga, s07, AdapterView.OnItemClickListener {
-    public Rect a;
+public final class i07 {
+    public final ig8 a;
+    public final la3 b;
+    public final c74 f;
+    public final ea3 i;
+    public final xgb j;
+    public boolean l;
+    public pka k = new pka();
+    public final IdentityHashMap d = new IdentityHashMap();
+    public final HashMap e = new HashMap();
+    public final ArrayList c = new ArrayList();
+    public final HashMap g = new HashMap();
+    public final HashSet h = new HashSet();
 
-    public static int m(ListAdapter listAdapter, Context context, int i) {
-        int count = listAdapter.getCount();
-        FrameLayout frameLayout = null;
-        View view = null;
-        int i2 = 0;
-        int i3 = 0;
-        for (int i4 = 0; i4 < count; i4++) {
-            int itemViewType = listAdapter.getItemViewType(i4);
-            if (itemViewType != i3) {
-                view = null;
-                i3 = itemViewType;
-            }
-            if (frameLayout == null) {
-                frameLayout = new FrameLayout(context);
-            }
-            view = listAdapter.getView(i4, view, frameLayout);
-            view.measure(0, 0);
-            int measuredWidth = view.getMeasuredWidth();
-            if (measuredWidth >= i) {
-                return i;
-            }
-            if (measuredWidth > i2) {
-                i2 = measuredWidth;
+    public i07(c74 c74Var, ea3 ea3Var, xgb xgbVar, ig8 ig8Var, la3 la3Var) {
+        this.a = ig8Var;
+        this.b = la3Var;
+        this.f = c74Var;
+        this.i = ea3Var;
+        this.j = xgbVar;
+    }
+
+    public final asb a(int i, ArrayList arrayList, pka pkaVar) {
+        if (!arrayList.isEmpty()) {
+            this.k = pkaVar;
+            for (int i2 = i; i2 < arrayList.size() + i; i2++) {
+                h07 h07Var = (h07) arrayList.get(i2 - i);
+                ArrayList arrayList2 = this.c;
+                if (i2 > 0) {
+                    h07 h07Var2 = (h07) arrayList2.get(i2 - 1);
+                    h07Var.d = h07Var2.a.o.e.o() + h07Var2.d;
+                    h07Var.e = false;
+                    h07Var.c.clear();
+                } else {
+                    h07Var.d = 0;
+                    h07Var.e = false;
+                    h07Var.c.clear();
+                }
+                int o = h07Var.a.o.e.o();
+                for (int i3 = i2; i3 < arrayList2.size(); i3++) {
+                    ((h07) arrayList2.get(i3)).d += o;
+                }
+                arrayList2.add(i2, h07Var);
+                this.e.put(h07Var.b, h07Var);
+                if (this.l) {
+                    e(h07Var);
+                    if (this.d.isEmpty()) {
+                        this.h.add(h07Var);
+                    } else {
+                        g07 g07Var = (g07) this.g.get(h07Var);
+                        if (g07Var != null) {
+                            g07Var.a.d(g07Var.b);
+                        }
+                    }
+                }
             }
         }
-        return i2;
+        return b();
     }
 
-    @Override // s07
-    public final boolean g(c07 c07Var) {
-        return false;
+    public final asb b() {
+        ArrayList arrayList = this.c;
+        if (arrayList.isEmpty()) {
+            return asb.a;
+        }
+        int i = 0;
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            h07 h07Var = (h07) arrayList.get(i2);
+            h07Var.d = i;
+            i += h07Var.a.o.e.o();
+        }
+        return new rg8(arrayList, this.k);
     }
 
-    @Override // s07
-    public final boolean i(c07 c07Var) {
-        return false;
+    public final void c() {
+        Iterator it = this.h.iterator();
+        while (it.hasNext()) {
+            h07 h07Var = (h07) it.next();
+            if (h07Var.c.isEmpty()) {
+                g07 g07Var = (g07) this.g.get(h07Var);
+                if (g07Var != null) {
+                    g07Var.a.d(g07Var.b);
+                }
+                it.remove();
+            }
+        }
     }
 
-    public abstract void n(View view);
-
-    public abstract void o(boolean z);
-
-    @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-        ListAdapter listAdapter = (ListAdapter) adapterView.getAdapter();
-        (listAdapter instanceof HeaderViewListAdapter ? (vz6) ((HeaderViewListAdapter) listAdapter).getWrappedAdapter() : (vz6) listAdapter).a.q((MenuItem) listAdapter.getItem(i), this, !(this instanceof xc1) ? 0 : 4);
+    public final void d(h07 h07Var) {
+        if (h07Var.e && h07Var.c.isEmpty()) {
+            g07 g07Var = (g07) this.g.remove(h07Var);
+            g07Var.getClass();
+            f07 f07Var = g07Var.c;
+            rg0 rg0Var = g07Var.a;
+            rg0Var.p(g07Var.b);
+            rg0Var.s(f07Var);
+            rg0Var.r(f07Var);
+            this.h.remove(h07Var);
+        }
     }
 
-    public abstract void p(int i);
-
-    public abstract void q(int i);
-
-    public abstract void r(PopupWindow.OnDismissListener onDismissListener);
-
-    public abstract void s(boolean z);
-
-    public abstract void t(int i);
-
-    public void l(yz6 yz6Var) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v0, types: [b07, wz6] */
+    public final void e(h07 h07Var) {
+        ml6 ml6Var = h07Var.a;
+        ?? r1 = new wz6() { // from class: b07
+            @Override // wz6
+            public final void a(rg0 rg0Var, asb asbVar) {
+                xgb xgbVar = i07.this.f.h;
+                xgbVar.g(2);
+                xgbVar.h(22);
+            }
+        };
+        f07 f07Var = new f07(this, h07Var);
+        this.g.put(h07Var, new g07(ml6Var, r1, f07Var));
+        Handler handler = new Handler(gcc.z(), null);
+        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) ml6Var.c.d;
+        yz6 yz6Var = new yz6();
+        yz6Var.a = handler;
+        yz6Var.b = f07Var;
+        copyOnWriteArrayList.add(yz6Var);
+        Handler handler2 = new Handler(gcc.z(), null);
+        CopyOnWriteArrayList copyOnWriteArrayList2 = ml6Var.d.c;
+        lr3 lr3Var = new lr3();
+        lr3Var.a = handler2;
+        lr3Var.b = f07Var;
+        copyOnWriteArrayList2.add(lr3Var);
+        ml6Var.l(r1, this.a, this.b);
     }
 
-    @Override // s07
-    public final void k(Context context, yz6 yz6Var) {
+    public final void f(int i, int i2) {
+        for (int i3 = i2 - 1; i3 >= i; i3--) {
+            ArrayList arrayList = this.c;
+            h07 h07Var = (h07) arrayList.remove(i3);
+            this.e.remove(h07Var.b);
+            int i4 = -h07Var.a.o.e.o();
+            for (int i5 = i3; i5 < arrayList.size(); i5++) {
+                ((h07) arrayList.get(i5)).d += i4;
+            }
+            h07Var.e = true;
+            if (this.l) {
+                d(h07Var);
+            }
+        }
     }
 }

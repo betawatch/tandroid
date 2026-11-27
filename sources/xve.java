@@ -1,19 +1,87 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xve implements zn7 {
-    public static final xve a = new xve();
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class xve {
+    public static void a(String str, boolean z) {
+        if (z) {
+            return;
+        }
+        lq5.j(str);
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static void b(boolean z) {
+        if (z) {
+            return;
         }
-        throw null;
+        iy8.d();
+    }
+
+    public static void c(boolean z, String str, Object... objArr) {
+        if (!z) {
+            throw new IllegalArgumentException(String.format(str, objArr));
+        }
+    }
+
+    public static void d(Handler handler) {
+        Looper myLooper = Looper.myLooper();
+        if (myLooper != handler.getLooper()) {
+            String name = myLooper != null ? myLooper.getThread().getName() : "null current looper";
+            String name2 = handler.getLooper().getThread().getName();
+            StringBuilder sb = new StringBuilder(String.valueOf(name).length() + String.valueOf(name2).length() + 35 + 1);
+            qu6.u(sb, "Must be called on ", name2, " thread, but got ", name);
+            grb.k(sb, ".");
+        }
+    }
+
+    public static void e(String str) {
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            return;
+        }
+        grb.i(str);
+    }
+
+    public static void f(String str) {
+        if (TextUtils.isEmpty(str)) {
+            lq5.j("Given String is empty or null");
+        }
+    }
+
+    public static void g(String str, String str2) {
+        if (TextUtils.isEmpty(str)) {
+            lq5.j(str2);
+        }
+    }
+
+    public static void h(Object obj) {
+        if (obj != null) {
+            return;
+        }
+        p3d.h("null reference");
+    }
+
+    public static void i(Object obj, String str) {
+        if (obj != null) {
+            return;
+        }
+        p3d.h(str);
+    }
+
+    public static void j(String str, boolean z) {
+        if (z) {
+            return;
+        }
+        grb.i(str);
+    }
+
+    public static void k(boolean z) {
+        if (z) {
+            return;
+        }
+        grb.g();
     }
 }

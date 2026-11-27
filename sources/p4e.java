@@ -1,19 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class p4e implements zn7 {
-    public static final p4e a = new p4e();
+public final class p4e extends m6f {
+    public final /* synthetic */ byte a;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // m6f
+    public final void a(Exception exc) {
+        switch (this.a) {
+            case 0:
+                exc.printStackTrace();
+                break;
+            default:
+                exc.printStackTrace();
+                break;
         }
-        throw null;
     }
 }

@@ -1,151 +1,85 @@
 // default package
 
-import android.media.MediaRouter;
-import android.os.Bundle;
-import android.view.Display;
+import android.media.MediaRoute2Info;
+import android.media.MediaRouter2;
+import android.media.MediaRouter2$TransferCallback;
+import android.text.TextUtils;
+import android.util.Log;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ju6 extends MediaRouter.Callback {
-    public final vb8 a;
+public final class ju6 extends MediaRouter2$TransferCallback {
+    public final /* synthetic */ ku6 a;
 
-    public ju6(vb8 vb8Var) {
-        this.a = vb8Var;
+    public ju6(ku6 ku6Var) {
+        this.a = ku6Var;
     }
 
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteAdded(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-        vb8 vb8Var = this.a;
-        if (vb8Var.n(routeInfo)) {
-            vb8Var.y();
-        }
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-        int o;
-        vb8 vb8Var = this.a;
-        vb8Var.getClass();
-        if (vb8.s(routeInfo) != null || (o = vb8Var.o(routeInfo)) < 0) {
+    public final void onStop(MediaRouter2.RoutingController routingController) {
+        ku6 ku6Var = this.a;
+        aw6 aw6Var = (aw6) ku6Var.w.remove(routingController);
+        if (aw6Var == null) {
+            Log.w("MR2Provider", "onStop: No matching routeController found. routingController=" + routingController);
             return;
         }
-        tb8 tb8Var = (tb8) vb8Var.H.get(o);
-        String str = tb8Var.b;
-        CharSequence name = tb8Var.a.getName(vb8Var.a);
-        ys6 ys6Var = new ys6(str, name != null ? name.toString() : "");
-        vb8Var.u(tb8Var, ys6Var);
-        tb8Var.c = ys6Var.b();
-        vb8Var.y();
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteGrouped(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo, MediaRouter.RouteGroup routeGroup, int i) {
-        this.a.getClass();
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRoutePresentationDisplayChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-        vb8 vb8Var = this.a;
-        int o = vb8Var.o(routeInfo);
-        if (o >= 0) {
-            tb8 tb8Var = (tb8) vb8Var.H.get(o);
-            Display presentationDisplay = routeInfo.getPresentationDisplay();
-            int displayId = presentationDisplay != null ? presentationDisplay.getDisplayId() : -1;
-            if (displayId != tb8Var.c.a.getInt("presentationDisplayId", -1)) {
-                zs6 zs6Var = tb8Var.c;
-                if (zs6Var == null) {
-                    w26.j("descriptor must not be null");
-                    return;
-                }
-                Bundle bundle = new Bundle(zs6Var.a);
-                ArrayList c = zs6Var.c();
-                ArrayList b = zs6Var.b();
-                HashSet a = zs6Var.a();
-                bundle.putInt("presentationDisplayId", displayId);
-                bundle.putParcelableArrayList("controlFilters", new ArrayList<>(b));
-                bundle.putStringArrayList("groupMemberIds", new ArrayList<>(c));
-                bundle.putStringArrayList("allowedPackages", new ArrayList<>(a));
-                tb8Var.c = new zs6(bundle);
-                vb8Var.y();
-            }
-        }
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteRemoved(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-        int o;
-        vb8 vb8Var = this.a;
-        vb8Var.getClass();
-        if (vb8.s(routeInfo) != null || (o = vb8Var.o(routeInfo)) < 0) {
+        a05 a05Var = (a05) ku6Var.s.b;
+        if (aw6Var != a05Var.e) {
+            int i = a05.F;
             return;
         }
-        vb8Var.H.remove(o);
-        vb8Var.y();
+        jw6 c = a05Var.c();
+        if (a05Var.e() != c) {
+            a05Var.j(c, 2);
+        }
     }
 
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteSelected(MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
-        eu6 a;
-        vb8 vb8Var = this.a;
-        if (routeInfo == vb8Var.s.getSelectedRoute(8388611)) {
-            ub8 s = vb8.s(routeInfo);
-            if (s != null) {
-                s.a.l();
+    public final void onTransfer(MediaRouter2.RoutingController routingController, MediaRouter2.RoutingController routingController2) {
+        jw6 jw6Var;
+        ku6 ku6Var = this.a;
+        ku6Var.w.remove(routingController);
+        if (routingController2 == ku6Var.r.getSystemController()) {
+            a05 a05Var = (a05) ku6Var.s.b;
+            jw6 c = a05Var.c();
+            if (a05Var.e() != c) {
+                a05Var.j(c, 3);
                 return;
             }
-            int o = vb8Var.o(routeInfo);
-            if (o >= 0) {
-                tb8 tb8Var = (tb8) vb8Var.H.get(o);
-                ux4 ux4Var = vb8Var.r;
-                String str = tb8Var.b;
-                ux4Var.a.removeMessages(kk7.k4);
-                du6 d = ux4Var.d(ux4Var.s);
-                if (d == null || (a = d.a(str)) == null) {
-                    return;
-                }
-                a.l();
-            }
-        }
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteUngrouped(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo, MediaRouter.RouteGroup routeGroup) {
-        this.a.getClass();
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteUnselected(MediaRouter mediaRouter, int i, MediaRouter.RouteInfo routeInfo) {
-        this.a.getClass();
-    }
-
-    @Override // android.media.MediaRouter.Callback
-    public final void onRouteVolumeChanged(MediaRouter mediaRouter, MediaRouter.RouteInfo routeInfo) {
-        int o;
-        vb8 vb8Var = this.a;
-        vb8Var.getClass();
-        if (vb8.s(routeInfo) != null || (o = vb8Var.o(routeInfo)) < 0) {
             return;
         }
-        tb8 tb8Var = (tb8) vb8Var.H.get(o);
-        int volume = routeInfo.getVolume();
-        if (volume != tb8Var.c.a.getInt("volume")) {
-            zs6 zs6Var = tb8Var.c;
-            if (zs6Var == null) {
-                w26.j("descriptor must not be null");
-                return;
-            }
-            Bundle bundle = new Bundle(zs6Var.a);
-            ArrayList c = zs6Var.c();
-            ArrayList b = zs6Var.b();
-            HashSet a = zs6Var.a();
-            bundle.putInt("volume", volume);
-            bundle.putParcelableArrayList("controlFilters", new ArrayList<>(b));
-            bundle.putStringArrayList("groupMemberIds", new ArrayList<>(c));
-            bundle.putStringArrayList("allowedPackages", new ArrayList<>(a));
-            tb8Var.c = new zs6(bundle);
-            vb8Var.y();
+        List<MediaRoute2Info> selectedRoutes = routingController2.getSelectedRoutes();
+        if (selectedRoutes.isEmpty()) {
+            Log.w("MR2Provider", "Selected routes are empty. This shouldn't happen.");
+            return;
         }
+        int i = 0;
+        String id = tq6.c(selectedRoutes.get(0)).getId();
+        ku6Var.w.put(routingController2, new gu6(ku6Var, routingController2, id));
+        a05 a05Var2 = (a05) ku6Var.s.b;
+        ArrayList arrayList = a05Var2.j;
+        int size = arrayList.size();
+        while (true) {
+            if (i >= size) {
+                jw6Var = null;
+                break;
+            }
+            Object obj = arrayList.get(i);
+            i++;
+            jw6Var = (jw6) obj;
+            if (jw6Var.c() == a05Var2.r && TextUtils.equals(id, jw6Var.b)) {
+                break;
+            }
+        }
+        if (jw6Var == null) {
+            Log.w("GlobalMediaRouter", "onSelectRoute: The target RouteInfo is not found for descriptorId=" + id);
+        } else {
+            a05Var2.j(jw6Var, 3);
+        }
+        ku6Var.r(routingController2);
+    }
+
+    public final void onTransferFailure(MediaRoute2Info mediaRoute2Info) {
+        Log.w("MR2Provider", "Transfer failed. requestedRoute=" + mediaRoute2Info);
     }
 }

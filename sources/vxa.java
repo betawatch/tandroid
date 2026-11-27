@@ -1,39 +1,54 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vxa extends be0 {
-    public final /* synthetic */ wjb H;
-    public final /* synthetic */ xxa I;
+public final /* synthetic */ class vxa implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nx0[] b;
+    public final /* synthetic */ Context c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vxa(xxa xxaVar, Context context, wjb wjbVar) {
-        super(context);
-        this.I = xxaVar;
-        this.H = wjbVar;
+    public /* synthetic */ vxa(Context context, nx0[] nx0VarArr) {
+        this.a = (byte) 0;
+        this.c = context;
+        this.b = nx0VarArr;
     }
 
-    @Override // be0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        xxa xxaVar = this.I;
-        u2b u2bVar = xxaVar.r;
-        rxa rxaVar = xxaVar.w;
-        if (rxaVar == null || !(rxaVar.a instanceof TL_stats.TL_postInteractionCountersStory)) {
-            super.onDraw(canvas);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        nx0 nx0Var;
+        e eVar;
+        byte b = this.a;
+        Context context = this.c;
+        nx0[] nx0VarArr = this.b;
+        switch (b) {
+            case 0:
+                wqa wqaVar = new wqa(context);
+                if (!hl.O1() && !hl.s1(nx0VarArr[0].i1) && (nx0Var = nx0VarArr[0]) != null && (eVar = nx0Var.i1) != null) {
+                    wqaVar.X(eVar);
+                }
+                wqaVar.show();
+                break;
+            case 1:
+                nx0VarArr[0].dismiss();
+                m01.u(context, ob6.M0(2131752000, null));
+                break;
+            case 2:
+                nx0VarArr[0].dismiss();
+                m01.w(context, ob6.M0(2131751995, null), false);
+                break;
+            default:
+                nx0VarArr[0].dismiss();
+                m01.u(context, ob6.M0(2131751992, null));
+                break;
         }
-        float L = gl.L(1.0f);
-        u2bVar.F.set(L, L, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
-        u2bVar.a = false;
-        u2bVar.b = false;
-        u2bVar.v = true;
-        u2bVar.o = false;
-        u2bVar.z = 1;
-        u2bVar.J = this.H;
-        x2b.h(0L, canvas, this.a, u2bVar);
+    }
+
+    public /* synthetic */ vxa(nx0[] nx0VarArr, Context context, byte b) {
+        this.a = b;
+        this.b = nx0VarArr;
+        this.c = context;
     }
 }

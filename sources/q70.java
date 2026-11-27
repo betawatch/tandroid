@@ -1,19 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class q70 implements zn7 {
-    public static final q70 a = new q70();
-    public static final w84 b = w84.c("performance");
-    public static final w84 c = w84.c("crashlytics");
-    public static final w84 d = w84.c("sessionSamplingRate");
+import android.os.Build;
 
-    @Override // q24
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class q70 implements zq7 {
+    public static final q70 a = new q70();
+    public static final sa4 b = sa4.c("packageName");
+    public static final sa4 c = sa4.c("versionName");
+    public static final sa4 d = sa4.c("appBuildVersion");
+    public static final sa4 e = sa4.c("deviceManufacturer");
+    public static final sa4 f = sa4.c("currentProcessDetails");
+    public static final sa4 g = sa4.c("appProcessDetails");
+
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        a63 a63Var = (a63) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, a63Var.a);
-        ao7Var.a(c, a63Var.b);
-        ao7Var.f(d, a63Var.c);
+        yj yjVar = (yj) obj;
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, yjVar.a);
+        ar7Var.a(c, yjVar.b);
+        ar7Var.a(d, yjVar.c);
+        ar7Var.a(e, Build.MANUFACTURER);
+        ar7Var.a(f, yjVar.d);
+        ar7Var.a(g, yjVar.e);
     }
 }

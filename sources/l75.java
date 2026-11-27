@@ -1,70 +1,31 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.LinearGradient;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Shader;
-import android.view.View;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class l75 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ View f;
+public final class l75 implements dic {
+    public final /* synthetic */ j95 a;
 
-    public /* synthetic */ l75(View view, int i, int i2, int i3, int i4, byte b) {
-        this.a = b;
-        this.f = view;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
+    public l75(j95 j95Var) {
+        this.a = j95Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        int i = this.e;
-        int i2 = this.d;
-        int i3 = this.c;
-        int i4 = this.b;
-        View view = this.f;
-        switch (b) {
-            case 0:
-                m75 m75Var = (m75) view;
-                m75Var.M = bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i4, i3);
-                m75Var.N = bm2.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i2, i);
-                m75Var.G.setColorFilter(new PorterDuffColorFilter(m75Var.M, PorterDuff.Mode.MULTIPLY));
-                m75Var.F.setColor(m75Var.M);
-                m75Var.r.setColor(m75Var.N);
-                m75Var.K.d(bm2.o(m75Var.N, 38));
-                m75Var.invalidate();
-                break;
-            case 1:
-                h85 h85Var = (h85) view;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h85Var.B0 = bm2.f(floatValue, i4, i3);
-                int f = bm2.f(floatValue, i2, i);
-                h85Var.D0 = f;
-                h85Var.T.setColor(f);
-                if (h85Var.S > 0.0f) {
-                    h85Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                yva yvaVar = (yva) view;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yvaVar.r = bm2.f(floatValue2, i4, i3);
-                yvaVar.s = bm2.f(floatValue2, i2, i);
-                yvaVar.E = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{yvaVar.r, yvaVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                yvaVar.invalidate();
-                break;
-        }
+    @Override // dic
+    public final void a(int i) {
+        j95 j95Var = this.a;
+        j95Var.l1.E0.k(i);
+        h75 h75Var = j95Var.t4;
+        h75Var.K = h75Var.M;
+        h75Var.L = h75Var.N;
+        h75Var.O = 0.0f;
+        h75Var.P = 1;
+        h75Var.invalidate();
+    }
+
+    @Override // dic
+    public final void c(int i) {
+    }
+
+    @Override // dic
+    public final void b(float f, int i, int i2) {
     }
 }

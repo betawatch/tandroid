@@ -1,35 +1,26 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fl4 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class fl4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hl4 b;
+    public final /* synthetic */ znb b;
 
-    public /* synthetic */ fl4(hl4 hl4Var, byte b) {
+    public /* synthetic */ fl4(znb znbVar, byte b) {
         this.a = b;
-        this.b = hl4Var;
+        this.b = znbVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        hl4 hl4Var = this.b;
+        znb znbVar = this.b;
         switch (b) {
             case 0:
-                hl4Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hl4Var.invalidate();
-                break;
-            case 1:
-                hl4Var.getClass();
-                hl4Var.w = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                hl4Var.invalidate();
+                jn7.e().k(jn7.w4, znbVar, Boolean.TRUE, null, -1);
                 break;
             default:
-                hl4Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hl4Var.invalidate();
+                znbVar.r();
                 break;
         }
     }

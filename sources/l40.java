@@ -1,365 +1,546 @@
 // default package
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.media.AudioAttributes;
-import android.media.AudioDeviceInfo;
-import android.media.AudioFormat;
-import android.media.AudioManager;
+import android.media.AudioTimestamp;
 import android.media.AudioTrack;
+import android.media.metrics.LogSessionId;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Pair;
-import j$.util.Objects;
+import java.lang.reflect.Method;
 import java.math.RoundingMode;
-import java.util.List;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.HashSet;
+import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class l40 implements s00 {
-    public static final qbb k = vue.a(new k40((byte) 0));
-    public final Context a;
-    public final ie7 b;
-    public final m93 c;
-    public final l69 d;
-    public a66 e;
-    public adb f;
-    public rz g;
-    public uz h;
-    public Looper i;
-    public Context j;
+public final class l40 {
+    public static final Object s = new Object();
+    public static ScheduledExecutorService t;
+    public static int u;
+    public final AudioTrack a;
+    public final s00 b;
+    public final ri6 c;
+    public g40 d;
+    public final o40 e;
+    public final boolean f;
+    public final int g;
+    public final k40 h;
+    public final e86 i = new e86(Thread.currentThread());
+    public boolean j;
+    public long k;
+    public long l;
+    public long m;
+    public ByteBuffer n;
+    public int o;
+    public int p;
+    public int q;
+    public boolean r;
 
-    public l40(wtc wtcVar) {
-        Context context = (Context) wtcVar.a;
-        this.a = context;
-        m93 m93Var = (m93) wtcVar.b;
-        m93Var.getClass();
-        this.c = m93Var;
-        this.b = (ie7) wtcVar.c;
-        this.g = (rz) wtcVar.d;
-        this.d = context == null ? null : new l69(this, (byte) 8);
-        this.f = adb.a;
+    public l40(AudioTrack audioTrack, s00 s00Var, ri6 ri6Var, vgb vgbVar) {
+        int i;
+        this.a = audioTrack;
+        this.b = s00Var;
+        this.c = ri6Var;
+        int i2 = s00Var.a;
+        boolean N = gcc.N(i2);
+        this.f = N;
+        if (N) {
+            i = gcc.u(i2) * Integer.bitCount(s00Var.c);
+            this.g = i;
+        } else {
+            i = -1;
+            this.g = -1;
+        }
+        this.e = new o40(new wz4(this), vgbVar, audioTrack, s00Var.a, i, s00Var.f);
+        if (Build.VERSION.SDK_INT >= 24 && ri6Var != null) {
+            this.d = new g40(audioTrack, ri6Var);
+        }
+        this.h = c() ? new k40(this) : null;
     }
 
-    public final j40 a(r00 r00Var) {
-        Context context;
-        Context context2;
-        try {
-            int i = r00Var.h;
-            int i2 = r00Var.i;
-            if (i2 == -1 || (context2 = this.a) == null || Build.VERSION.SDK_INT < 34) {
-                context = null;
-            } else {
-                Context context3 = this.j;
-                if (context3 == null || context3.getDeviceId() != i2) {
-                    this.j = context2.createDeviceContext(i2);
-                }
-                context = this.j;
-                i = 0;
-            }
-            AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(r00Var.d ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : r00Var.g.b()).setAudioFormat(new AudioFormat.Builder().setSampleRate(r00Var.b).setChannelMask(r00Var.c).setEncoding(r00Var.a).build()).setTransferMode(1).setBufferSizeInBytes(r00Var.f).setSessionId(i);
-            int i3 = Build.VERSION.SDK_INT;
-            if (i3 >= 29) {
-                sessionId.setOffloadedPlayback(r00Var.e);
-            }
-            if (i3 >= 34 && context != null) {
-                sessionId.setContext(context);
-            }
-            AudioTrack build = sessionId.build();
-            if (build.getState() == 1) {
-                return new j40(build, r00Var, this.d, this.f);
-            }
-            try {
-                build.release();
-            } catch (Exception unused) {
-            }
-            throw new p00();
-        } catch (IllegalArgumentException | UnsupportedOperationException e) {
-            throw new p00(e);
-        }
-    }
-
-    public final o00 b(n00 n00Var) {
-        e(n00Var);
-        fm4 fm4Var = (fm4) n00Var.a;
-        nz nzVar = (nz) n00Var.b;
-        k00 a = this.c.a(nzVar, fm4Var);
-        o00 o00Var = new o00();
-        byte b = 0;
-        o00Var.d = (byte) 0;
-        String str = fm4Var.t;
-        int i = fm4Var.Q;
-        if (!Objects.equals(str, "audio/raw") ? this.g.c(nzVar, fm4Var) != null : i == 2) {
-            b = 2;
-        }
-        o00Var.d = b;
-        boolean z = a.a;
-        o00Var.a = z;
-        boolean z2 = a.b;
-        o00Var.b = z2;
-        boolean z3 = a.c;
-        o00Var.c = z3;
-        if (!z && (z2 || z3)) {
-            sc8.j("Secondary offload attribute fields are true but primary isFormatSupportedForOffload is false");
-            return null;
-        }
-        o00 o00Var2 = new o00();
-        o00Var2.a = o00Var.a;
-        o00Var2.b = o00Var.b;
-        o00Var2.c = o00Var.c;
-        o00Var2.d = o00Var.d;
-        return o00Var2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x016b  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x016d  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00c7  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0233  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0305  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0331  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0339  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0324  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0240  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final r00 c(n00 n00Var) {
-        char c;
+    public final long a() {
+        long j;
+        o40 o40Var;
+        vgb vgbVar;
         int i;
+        AudioTrack audioTrack;
+        long j2;
         boolean z;
+        long b;
+        long j3;
+        long Z;
+        byte b2;
+        String str;
+        long j4;
         boolean z2;
-        int i2;
+        b40 b40Var;
+        b40 b40Var2;
+        boolean timestamp;
         boolean z3;
-        int b;
-        int i3;
-        fm4 fm4Var = (fm4) n00Var.a;
-        boolean z4 = n00Var.d;
-        nz nzVar = (nz) n00Var.b;
-        e(n00Var);
-        String str = fm4Var.t;
-        int i4 = fm4Var.O;
-        int i5 = fm4Var.N;
-        int i6 = fm4Var.P;
-        int i7 = fm4Var.Q;
-        if (Objects.equals(str, "audio/raw")) {
-            gre.f(g8c.N(i7));
-            if (i4 == -1) {
-                i4 = g8c.t(i5);
-            }
-            i = g8c.u(i7) * i5;
-            z = false;
-            c = 0;
-        } else {
-            k00 a = z4 ? this.c.a(nzVar, fm4Var) : k00.d;
-            if (z4 && a.a) {
-                str.getClass();
-                int c2 = ud7.c(str, fm4Var.l);
-                if (i4 == -1) {
-                    i4 = g8c.t(i5);
-                }
-                if ((c2 == 11 || c2 == 12) && i6 >= 16000 && !((Boolean) k.get()).booleanValue()) {
-                    if (c2 == 12 && i5 == 2) {
-                        i4 = 4;
+        long j5;
+        AudioTimestamp audioTimestamp;
+        b40 b40Var3;
+        byte b3;
+        byte b4;
+        Method method;
+        Method method2;
+        long intValue;
+        long b5 = b();
+        o40 o40Var2 = this.e;
+        vgb vgbVar2 = o40Var2.b;
+        int i2 = o40Var2.e;
+        c40 c40Var = o40Var2.h;
+        AudioTrack audioTrack2 = o40Var2.d;
+        if (audioTrack2.getPlayState() == 3) {
+            long[] jArr = o40Var2.c;
+            vgbVar2.getClass();
+            j2 = 1000;
+            long nanoTime = System.nanoTime() / 1000;
+            if (nanoTime - o40Var2.l >= 30000) {
+                long Z2 = gcc.Z(i2, o40Var2.a());
+                if (Z2 != 0) {
+                    jArr[o40Var2.s] = gcc.H(Z2, o40Var2.i) - nanoTime;
+                    o40Var2.s = (o40Var2.s + 1) % 10;
+                    int i3 = o40Var2.t;
+                    if (i3 < 10) {
+                        o40Var2.t = i3 + 1;
                     }
-                    i6 /= 2;
-                    c2 = 10;
-                }
-                z = a.b;
-                i7 = c2;
-                i = -1;
-                c = 1;
-                z2 = true;
-                i2 = fm4Var.k;
-                if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr") && i2 == -1) {
-                    i2 = 768000;
-                }
-                gre.p(AudioTrack.getMinBufferSize(i6, i4, i7) == -2);
-                if (i == -1) {
-                    i = 1;
-                }
-                double d = !z2 ? 8.0d : 1.0d;
-                this.b.getClass();
-                if (c != 0) {
-                    z3 = true;
-                    b = gle.b(((500000 * i6) * i) / 1000000);
-                } else if (c == 1) {
-                    z3 = true;
-                    int b2 = yfe.b(i7);
-                    gre.p(b2 != -2147483647);
-                    b = gle.b((50000000 * b2) / 1000000);
+                    o40Var2.l = nanoTime;
+                    o40Var2.k = 0L;
+                    int i4 = 0;
+                    while (true) {
+                        int i5 = o40Var2.t;
+                        if (i4 >= i5) {
+                            break;
+                        }
+                        o40Var2.k = (jArr[i4] / i5) + o40Var2.k;
+                        i4++;
+                    }
                 } else {
-                    if (c != 2) {
-                        sc8.e();
-                        return null;
+                    j = b5;
+                    o40Var = o40Var2;
+                    vgbVar = vgbVar2;
+                    i = i2;
+                    audioTrack = audioTrack2;
+                }
+            }
+            long j6 = o40Var2.n;
+            if (!o40Var2.g || (method = o40Var2.m) == null) {
+                str = "AudioTrackAudioOutput";
+                j4 = 500000;
+            } else {
+                j4 = 500000;
+                if (nanoTime - o40Var2.o >= 500000) {
+                    try {
+                        Integer num = (Integer) method.invoke(audioTrack2, null);
+                        String str2 = gcc.a;
+                        try {
+                            intValue = (num.intValue() * 1000) - o40Var2.f;
+                            o40Var2.n = intValue;
+                            str = "AudioTrackAudioOutput";
+                        } catch (Exception unused) {
+                            str = "AudioTrackAudioOutput";
+                        }
+                    } catch (Exception unused2) {
+                        str = "AudioTrackAudioOutput";
+                        method2 = null;
                     }
-                    int i8 = i7 == 5 ? 500000 : i7 == 8 ? 1000000 : 250000;
-                    if (i2 != -1) {
-                        RoundingMode roundingMode = RoundingMode.CEILING;
-                        i3 = cle.b(i2, 8);
+                    try {
+                        long max = Math.max(intValue, 0L);
+                        o40Var2.n = max;
+                        if (max > 10000000) {
+                            efd.f(str, "Ignoring impossibly large audio latency: " + max);
+                            o40Var2.n = 0L;
+                        }
+                    } catch (Exception unused3) {
+                        method2 = null;
+                        o40Var2.m = method2;
+                        o40Var2.o = nanoTime;
+                        if (j6 == o40Var2.n) {
+                        }
+                        float f = o40Var2.i;
+                        long b6 = o40Var2.b(nanoTime);
+                        b40Var = c40Var.a;
+                        b40Var2 = c40Var.a;
+                        vgbVar = vgbVar2;
+                        int i6 = c40Var.b;
+                        audioTrack = audioTrack2;
+                        if (z2) {
+                        }
+                        c40Var.g = nanoTime;
+                        AudioTrack audioTrack3 = b40Var.a;
+                        AudioTimestamp audioTimestamp2 = b40Var.b;
+                        timestamp = audioTrack3.getTimestamp(audioTimestamp2);
+                        j = b5;
+                        if (timestamp) {
+                        }
+                        if (z3) {
+                        }
+                        b40Var3 = b40Var2;
+                        b3 = 4;
+                        b4 = c40Var.d;
+                        if (b4 == 0) {
+                        }
+                        vgbVar.getClass();
+                        long nanoTime2 = System.nanoTime() / j2;
+                        if (c40Var.d != 2) {
+                        }
+                        o40 o40Var3 = o40Var;
+                        if (z) {
+                        }
+                        j3 = b;
+                        Z = gcc.Z(i, j);
+                        if (j3 < Z) {
+                        }
+                    }
+                    o40Var2.o = nanoTime;
+                } else {
+                    str = "AudioTrackAudioOutput";
+                }
+            }
+            z2 = j6 == o40Var2.n;
+            float f2 = o40Var2.i;
+            long b62 = o40Var2.b(nanoTime);
+            b40Var = c40Var.a;
+            b40Var2 = c40Var.a;
+            vgbVar = vgbVar2;
+            int i62 = c40Var.b;
+            audioTrack = audioTrack2;
+            if (!z2 || nanoTime - c40Var.g >= c40Var.f) {
+                c40Var.g = nanoTime;
+                AudioTrack audioTrack32 = b40Var.a;
+                AudioTimestamp audioTimestamp22 = b40Var.b;
+                timestamp = audioTrack32.getTimestamp(audioTimestamp22);
+                j = b5;
+                if (timestamp) {
+                    z3 = timestamp;
+                    j5 = b62;
+                } else {
+                    long j7 = audioTimestamp22.framePosition;
+                    j5 = b62;
+                    long j8 = b40Var.d;
+                    if (j8 > j7) {
+                        z3 = timestamp;
+                        if (b40Var.f) {
+                            b40Var.g += j8;
+                            b40Var.f = false;
+                        } else {
+                            b40Var.c++;
+                        }
                     } else {
-                        int b3 = yfe.b(i7);
-                        gre.p(b3 != -2147483647);
-                        i3 = b3;
+                        z3 = timestamp;
                     }
-                    z3 = true;
-                    b = gle.b((i8 * i3) / 1000000);
+                    b40Var.d = j7;
+                    b40Var.e = j7 + b40Var.g + (b40Var.c << 32);
                 }
-                int max = (((Math.max(r5, (int) (b * d)) + i) - 1) / i) * i;
-                q00 q00Var = new q00();
-                nz nzVar2 = nz.i;
-                q00Var.i = -1;
-                q00Var.b = i6;
-                q00Var.c = i4;
-                q00Var.a = i7;
-                q00Var.f = max;
-                q00Var.h = n00Var.e;
-                q00Var.g = nzVar;
-                boolean z5 = z3;
-                q00Var.e = c != z5 ? z5 : false;
-                q00Var.d = n00Var.g;
-                q00Var.j = z2;
-                q00Var.k = z;
-                q00Var.i = n00Var.f;
-                return new r00(q00Var);
-            }
-            Pair c3 = this.g.c(nzVar, fm4Var);
-            if (c3 == null) {
-                throw new m00("Unable to configure passthrough for: " + fm4Var);
-            }
-            i7 = ((Integer) c3.first).intValue();
-            i4 = ((Integer) c3.second).intValue();
-            c = 2;
-            i = -1;
-            z = false;
-        }
-        z2 = false;
-        i2 = fm4Var.k;
-        if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr")) {
-            i2 = 768000;
-        }
-        gre.p(AudioTrack.getMinBufferSize(i6, i4, i7) == -2);
-        if (i == -1) {
-        }
-        if (!z2) {
-        }
-        this.b.getClass();
-        if (c != 0) {
-        }
-        int max2 = (((Math.max(r5, (int) (b * d)) + i) - 1) / i) * i;
-        q00 q00Var2 = new q00();
-        nz nzVar22 = nz.i;
-        q00Var2.i = -1;
-        q00Var2.b = i6;
-        q00Var2.c = i4;
-        q00Var2.a = i7;
-        q00Var2.f = max2;
-        q00Var2.h = n00Var.e;
-        q00Var2.g = nzVar;
-        boolean z52 = z3;
-        q00Var2.e = c != z52 ? z52 : false;
-        q00Var2.d = n00Var.g;
-        q00Var2.j = z2;
-        q00Var2.k = z;
-        q00Var2.i = n00Var.f;
-        return new r00(q00Var2);
-    }
-
-    public final void d() {
-        ska skaVar;
-        a66 a66Var = this.e;
-        if (a66Var != null) {
-            a66Var.d();
-        }
-        uz uzVar = this.h;
-        if (uzVar != null) {
-            Context context = uzVar.a;
-            if (uzVar.k) {
-                uzVar.h = null;
-                i00.e(context).unregisterAudioDeviceCallback(uzVar.d);
-                if (Build.VERSION.SDK_INT >= 32 && (skaVar = uzVar.g) != null) {
-                    skaVar.e();
-                    uzVar.g = null;
-                }
-                context.unregisterReceiver(uzVar.e);
-                tz tzVar = uzVar.f;
-                if (tzVar != null) {
-                    tzVar.a.unregisterContentObserver(tzVar);
-                }
-                uzVar.k = false;
-            }
-        }
-    }
-
-    public final void e(n00 n00Var) {
-        rz b;
-        AudioDeviceInfo audioDeviceInfo = (AudioDeviceInfo) n00Var.c;
-        nz nzVar = (nz) n00Var.b;
-        f();
-        uz uzVar = this.h;
-        if (uzVar == null) {
-            Context context = this.a;
-            if (context != null) {
-                uz uzVar2 = new uz(context, new l0(this, (byte) 23), nzVar, audioDeviceInfo);
-                this.h = uzVar2;
-                if (uzVar2.k) {
-                    b = uzVar2.h;
-                    b.getClass();
+                if (z3) {
+                    o40Var = o40Var2;
+                    i = i2;
+                    audioTimestamp = audioTimestamp22;
                 } else {
-                    byte b2 = 1;
-                    uzVar2.k = true;
-                    tz tzVar = uzVar2.f;
-                    if (tzVar != null) {
-                        tzVar.a.registerContentObserver(tzVar.b, false, tzVar);
+                    wz4 wz4Var = c40Var.c;
+                    long j9 = audioTimestamp22.nanoTime / 1000;
+                    audioTimestamp = audioTimestamp22;
+                    long Z3 = gcc.Z(i62, b40Var2.e) + gcc.D(nanoTime - (b40Var2.b.nanoTime / 1000), f2);
+                    if (Math.abs(j9 - nanoTime) > 5000000) {
+                        long j10 = b40Var.e;
+                        wz4Var.getClass();
+                        i = i2;
+                        String str3 = "Spurious audio timestamp (system clock mismatch): " + j10 + ", " + j9 + ", " + nanoTime + ", " + j5 + ", " + ((l40) wz4Var.a).b();
+                        HashSet hashSet = gt6.a;
+                        efd.f(str, str3);
+                        c40Var.a(4);
+                        o40Var = o40Var2;
+                    } else {
+                        long j11 = j5;
+                        i = i2;
+                        if (Math.abs(Z3 - j11) > 5000000) {
+                            long j12 = b40Var.e;
+                            wz4Var.getClass();
+                            o40Var = o40Var2;
+                            b40Var3 = b40Var2;
+                            String str4 = "Spurious audio timestamp (frame position mismatch): " + j12 + ", " + j9 + ", " + nanoTime + ", " + j11 + ", " + ((l40) wz4Var.a).b();
+                            HashSet hashSet2 = gt6.a;
+                            efd.f(str, str4);
+                            b3 = 4;
+                            c40Var.a(4);
+                        } else {
+                            o40Var = o40Var2;
+                            b40Var3 = b40Var2;
+                            b3 = 4;
+                            if (c40Var.d == 4) {
+                                c40Var.a(0);
+                            }
+                        }
+                        b4 = c40Var.d;
+                        if (b4 == 0) {
+                            AudioTimestamp audioTimestamp3 = audioTimestamp;
+                            if (z3) {
+                                long j13 = audioTimestamp3.nanoTime;
+                                if (j13 / 1000 >= c40Var.e) {
+                                    c40Var.h = b40Var.e;
+                                    c40Var.i = j13 / 1000;
+                                    c40Var.a(1);
+                                }
+                            } else if (nanoTime - c40Var.e > j4) {
+                                c40Var.a(3);
+                            }
+                        } else if (b4 != 1) {
+                            if (b4 != 2) {
+                                if (b4 != 3) {
+                                    if (b4 != b3) {
+                                        grb.g();
+                                        return 0L;
+                                    }
+                                } else if (z3) {
+                                    c40Var.a(0);
+                                }
+                            } else if (!z3) {
+                                c40Var.a(0);
+                            }
+                        } else if (z3) {
+                            long j14 = b40Var.e;
+                            long j15 = c40Var.h;
+                            if (j14 > j15) {
+                                b40 b40Var4 = b40Var3;
+                                if (Math.abs((gcc.D(nanoTime - (b40Var4.b.nanoTime / 1000), f2) + gcc.Z(i62, b40Var4.e)) - (gcc.D(nanoTime - c40Var.i, f2) + gcc.Z(i62, j15))) < 1000) {
+                                    c40Var.a(2);
+                                }
+                            }
+                            if (nanoTime - c40Var.e > 2000000) {
+                                c40Var.a(3);
+                            } else {
+                                c40Var.h = b40Var.e;
+                                c40Var.i = audioTimestamp.nanoTime / 1000;
+                            }
+                        } else {
+                            c40Var.a(0);
+                        }
                     }
-                    Context context2 = uzVar2.a;
-                    AudioManager e = i00.e(context2);
-                    sz szVar = uzVar2.d;
-                    Handler handler = uzVar2.c;
-                    e.registerAudioDeviceCallback(szVar, handler);
-                    if (Build.VERSION.SDK_INT >= 32 && uzVar2.g == null) {
-                        uzVar2.g = new ska(context2, new oz(uzVar2, b2), Boolean.valueOf(g8c.Q(context2)));
-                    }
-                    b = rz.b(context2, context2.registerReceiver(uzVar2.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), uzVar2.j, uzVar2.i, uzVar2.a());
-                    uzVar2.h = b;
                 }
-                this.g = b;
+                b40Var3 = b40Var2;
+                b3 = 4;
+                b4 = c40Var.d;
+                if (b4 == 0) {
+                }
+            } else {
+                j = b5;
+                o40Var = o40Var2;
+                i = i2;
             }
         } else {
-            if (audioDeviceInfo != null && !audioDeviceInfo.equals(uzVar.i)) {
-                uzVar.i = audioDeviceInfo;
-                Context context3 = uzVar.a;
-                nz nzVar2 = uzVar.j;
-                List a = uzVar.a();
-                w59 w59Var = rz.e;
-                uzVar.b(rz.b(context3, context3.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), nzVar2, audioDeviceInfo, a));
-            }
-            uz uzVar3 = this.h;
-            if (!Objects.equals(nzVar, uzVar3.j)) {
-                uzVar3.j = nzVar;
-                Context context4 = uzVar3.a;
-                AudioDeviceInfo audioDeviceInfo2 = uzVar3.i;
-                List a2 = uzVar3.a();
-                w59 w59Var2 = rz.e;
-                uzVar3.b(rz.b(context4, context4.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), nzVar, audioDeviceInfo2, a2));
-            }
+            j = b5;
+            o40Var = o40Var2;
+            vgbVar = vgbVar2;
+            i = i2;
+            audioTrack = audioTrack2;
+            j2 = 1000;
         }
-        this.g.getClass();
+        vgbVar.getClass();
+        long nanoTime22 = System.nanoTime() / j2;
+        z = c40Var.d != 2;
+        o40 o40Var32 = o40Var;
+        if (z) {
+            b = o40Var32.b(nanoTime22);
+        } else {
+            float f3 = o40Var32.i;
+            b40 b40Var5 = c40Var.a;
+            b = gcc.D(nanoTime22 - (b40Var5.b.nanoTime / j2), f3) + gcc.Z(c40Var.b, b40Var5.e);
+        }
+        j3 = b;
+        Z = gcc.Z(i, j);
+        if (j3 < Z) {
+            o40Var32.e();
+            c40Var.a(0);
+            return Z;
+        }
+        int playState = audioTrack.getPlayState();
+        if (playState == 3) {
+            if (z || ((b2 = c40Var.d) != 0 && b2 != 1)) {
+                o40Var32.d(j3);
+            }
+            long j16 = o40Var32.z;
+            if (j16 != -9223372036854775807L) {
+                long j17 = j3 - o40Var32.y;
+                long D = gcc.D(nanoTime22 - j16, o40Var32.i);
+                long j18 = o40Var32.y + D;
+                long abs = Math.abs(j18 - j3);
+                if (j17 != 0 && abs < 1000000) {
+                    long j19 = (D * 10) / 100;
+                    j3 = gcc.j(j3, j18 - j19, j18 + j19);
+                }
+            }
+            o40Var32.z = nanoTime22;
+            o40Var32.y = j3;
+        } else if (playState == 1) {
+            o40Var32.d(j3);
+        }
+        return j3;
     }
 
-    public final void f() {
-        if (this.a == null) {
+    public final long b() {
+        if (!this.f) {
+            return this.l;
+        }
+        long j = this.k;
+        long j2 = this.g;
+        String str = gcc.a;
+        return ((j + j2) - 1) / j2;
+    }
+
+    public final boolean c() {
+        return Build.VERSION.SDK_INT >= 29 && this.a.isOffloadedPlayback();
+    }
+
+    public final void d(int i, int i2) {
+        if (Build.VERSION.SDK_INT < 29) {
             return;
         }
-        Looper myLooper = Looper.myLooper();
-        Looper looper = this.i;
-        boolean z = looper == null || looper == myLooper;
-        String name = looper == null ? "null" : looper.getThread().getName();
-        String name2 = myLooper != null ? myLooper.getThread().getName() : "null";
-        if (z) {
-            this.i = myLooper;
-        } else {
-            sc8.j(nue.a("AudioTrackAudioOutputProvider accessed on multiple threads: %s and %s", name, name2));
+        this.a.setOffloadDelayPadding(i, i2);
+    }
+
+    public final void e() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            AudioTrack audioTrack = this.a;
+            if (audioTrack.getPlayState() != 3) {
+                return;
+            }
+            audioTrack.setOffloadEndOfStream();
+            o40 o40Var = this.e;
+            o40Var.A = true;
+            o40Var.h.a.f = true;
         }
+    }
+
+    public final void f(ig8 ig8Var) {
+        LogSessionId logSessionId;
+        if (Build.VERSION.SDK_INT >= 31) {
+            LogSessionId a = ig8Var.a();
+            logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
+            if (a.equals(logSessionId)) {
+                return;
+            }
+            this.a.setLogSessionId(a);
+        }
+    }
+
+    public final boolean g(long j, int i, ByteBuffer byteBuffer) {
+        AudioTrack audioTrack;
+        int write;
+        boolean z;
+        ri6 ri6Var;
+        n40 n40Var;
+        vz vzVar;
+        int i2;
+        long j2 = j;
+        s00 s00Var = this.b;
+        boolean z2 = this.f;
+        if (!z2 && this.p == 0) {
+            this.p = ja3.k(s00Var.a, byteBuffer);
+        }
+        e86 e86Var = this.i;
+        e86Var.getClass();
+        Thread currentThread = Thread.currentThread();
+        Thread thread = e86Var.a;
+        AudioTrack audioTrack2 = this.a;
+        if (currentThread == thread) {
+            long b = b();
+            if (Build.VERSION.SDK_INT >= 24) {
+                i2 = audioTrack2.getUnderrunCount();
+                audioTrack = audioTrack2;
+            } else {
+                boolean z3 = this.r;
+                audioTrack = audioTrack2;
+                boolean z4 = b > gcc.b0(a(), (long) audioTrack2.getSampleRate(), 1000000L, RoundingMode.UP);
+                this.r = z4;
+                i2 = (!z3 || z4 || audioTrack.getPlayState() == 1) ? this.q : this.q + 1;
+            }
+            boolean z5 = i2 > this.q;
+            this.q = i2;
+            if (z5) {
+                e86Var.e(-1, new xz((byte) 2));
+            }
+        } else {
+            audioTrack = audioTrack2;
+        }
+        int remaining = byteBuffer.remaining();
+        if (s00Var.d) {
+            if (j2 == Long.MIN_VALUE) {
+                j2 = this.m;
+            } else {
+                this.m = j2;
+            }
+            int remaining2 = byteBuffer.remaining();
+            if (Build.VERSION.SDK_INT >= 26) {
+                write = audioTrack.write(byteBuffer, remaining2, 1, j2 * 1000);
+            } else {
+                AudioTrack audioTrack3 = audioTrack;
+                if (this.n == null) {
+                    ByteBuffer allocate = ByteBuffer.allocate(16);
+                    this.n = allocate;
+                    allocate.order(ByteOrder.BIG_ENDIAN);
+                    this.n.putInt(1431633921);
+                }
+                if (this.o == 0) {
+                    this.n.putInt(4, remaining2);
+                    this.n.putLong(8, j2 * 1000);
+                    this.n.position(0);
+                    this.o = remaining2;
+                }
+                int remaining3 = this.n.remaining();
+                if (remaining3 > 0) {
+                    int write2 = audioTrack3.write(this.n, remaining3, 1);
+                    if (write2 < 0) {
+                        this.o = 0;
+                        write = write2;
+                    } else if (write2 < remaining3) {
+                        write = 0;
+                    }
+                }
+                write = audioTrack3.write(byteBuffer, remaining2, 1);
+                if (write < 0) {
+                    this.o = 0;
+                } else {
+                    this.o -= write;
+                }
+            }
+        } else {
+            write = audioTrack.write(byteBuffer, byteBuffer.remaining(), 1);
+        }
+        if (write >= 0) {
+            z = write == remaining;
+            if (z2) {
+                this.k += write;
+                return z;
+            }
+            if (z) {
+                this.l = (this.p * i) + this.l;
+            }
+            return z;
+        }
+        z = (Build.VERSION.SDK_INT >= 24 && write == -6) || write == -32;
+        if (z && (ri6Var = this.c) != null && (vzVar = (n40Var = (n40) ri6Var.b).h) != null) {
+            sz szVar = sz.f;
+            n40Var.g = szVar;
+            vzVar.k(szVar);
+        }
+        throw new m00(write, z);
     }
 }

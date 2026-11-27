@@ -1,116 +1,77 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.TextUtils;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.app.Activity;
+import android.app.Dialog;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class xab {
-    public final int a;
-    public final uk1 b;
-    public final wjb c;
-    public final oy8 d;
-    public TL_account.TL_birthday e;
-    public tgb f;
-    public tgb[] g;
-    public tgb[] h;
-    public boolean i;
-    public tgb j;
-    public final RectF k = new RectF();
-    public final Paint l = new Paint(1);
-    public final n41 m;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class xab extends e {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rbb b;
 
-    public xab(int i, uk1 uk1Var, wjb wjbVar) {
-        this.a = i;
-        this.b = uk1Var;
-        this.c = wjbVar;
-        oy8 oy8Var = new oy8(R.raw.cake, gl.L(66.0f), gl.L(66.0f), true, null);
-        this.d = oy8Var;
-        oy8Var.C(false);
-        this.m = new n41(uk1Var);
-    }
-
-    public final void a(Canvas canvas) {
-        int L = gl.L(66.0f);
-        uk1 uk1Var = this.b;
-        int width = (uk1Var.getWidth() - L) / 2;
-        int L2 = gl.L(13.0f) + L;
-        oy8 oy8Var = this.d;
-        oy8Var.setBounds(width, gl.L(13.0f), width + L, L2);
-        oy8Var.draw(canvas);
-        this.f.c((uk1Var.getWidth() - this.f.j()) / 2.0f, gl.L(19.0f) + L, 1.0f, -1, canvas);
-        int h = (int) (this.f.h() + gl.L(19.0f) + L + gl.L(17.0f));
-        int i = 0;
-        for (int i2 = 0; i2 < this.g.length; i2++) {
-            i = (int) (Math.max(this.g[i2].j(), this.h[i2].j()) + gl.L(9.0f) + gl.L(9.0f) + i);
-        }
-        int width2 = (uk1Var.getWidth() - i) / 2;
-        int i3 = 0;
-        while (i3 < this.g.length) {
-            float max = Math.max(this.g[i3].j(), this.h[i3].j()) + gl.L(9.0f) + gl.L(9.0f);
-            float f = width2;
-            float f2 = (max / 2.0f) + f;
-            int i4 = (int) (f + max);
-            tgb tgbVar = this.g[i3];
-            tgbVar.c(f2 - (tgbVar.j() / 2.0f), h, 0.75f, -1, canvas);
-            tgb tgbVar2 = this.h[i3];
-            tgbVar2.c(f2 - (tgbVar2.j() / 2.0f), gl.L(16.0f) + h, 1.0f, -1, canvas);
-            i3++;
-            width2 = i4;
-        }
-        if (this.i) {
-            int L3 = gl.L(38.0f) + h;
-            canvas.save();
-            float j = this.j.j() + gl.L(26.0f);
-            float L4 = gl.L(30.0f);
-            float f3 = L3;
-            RectF rectF = this.k;
-            rectF.set((uk1Var.getWidth() - j) / 2.0f, f3, (uk1Var.getWidth() + j) / 2.0f, f3 + L4);
-            float a = this.m.a(0.1f);
-            canvas.scale(a, a, rectF.centerX(), rectF.centerY());
-            float f4 = L4 / 2.0f;
-            canvas.drawRoundRect(rectF, f4, f4, this.l);
-            this.j.c(gl.L(13.0f) + rectF.left, rectF.centerY(), 1.0f, -1, canvas);
-            canvas.restore();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xab(rbb rbbVar, byte b) {
+        super(null);
+        this.a = b;
+        switch (b) {
+            case 1:
+                this.b = rbbVar;
+                super(null);
+                this.currentAccount = rbbVar.c;
+                break;
+            default:
+                this.b = rbbVar;
+                break;
         }
     }
 
-    public final void b() {
-        ij.l(this.b.getContext(), k96.M0(2131751660, null), k96.M0(2131751659, null), this.e, new ae9(this, (byte) 19), null, true, false, this.c).M2();
+    @Override // org.telegram.ui.ActionBar.e
+    public final Activity getParentActivity() {
+        byte b = this.a;
+        rbb rbbVar = this.b;
+        switch (b) {
+        }
+        return rbbVar.b;
     }
 
-    public final void c(k27 k27Var) {
-        TLRPC.TL_messageActionSuggestBirthday tL_messageActionSuggestBirthday = (TLRPC.TL_messageActionSuggestBirthday) k27Var.k.action;
-        this.e = tL_messageActionSuggestBirthday.birthday;
-        tgb tgbVar = new tgb(TextUtils.concat(k27Var.v, ":"), 13.0f, null);
-        tgbVar.l(6);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        tgbVar.a();
-        tgbVar.o(gl.L(174.0f) - gl.L(32.0f));
-        this.f = tgbVar;
-        int i = (tL_messageActionSuggestBirthday.birthday.flags & 1) != 0 ? 3 : 2;
-        tgb[] tgbVarArr = new tgb[i];
-        this.g = tgbVarArr;
-        this.h = new tgb[i];
-        tgbVarArr[0] = new tgb(k96.M0(2131751662, null), 11.0f, null);
-        this.h[0] = new tgb(String.valueOf(tL_messageActionSuggestBirthday.birthday.day), 11.0f, gl.o());
-        this.g[1] = new tgb(k96.M0(2131751661, null), 11.0f, null);
-        tgb[] tgbVarArr2 = this.h;
-        int i2 = tL_messageActionSuggestBirthday.birthday.month - 1;
-        tgbVarArr2[1] = new tgb((i2 < 0 || i2 >= 12) ? String.valueOf(i2) : k96.M0(new int[]{2131748894, 2131750817, 2131748491, 2131754170, 2131748470, 2131748872, 2131748874, 2131753892, 2131745373, 2131747637, 2131747642, 2131751593}[i2], null), 11.0f, gl.o());
-        if ((tL_messageActionSuggestBirthday.birthday.flags & 1) != 0) {
-            this.g[2] = new tgb(k96.M0(2131751657, null), 11.0f, null);
-            this.h[2] = new tgb(String.valueOf(tL_messageActionSuggestBirthday.birthday.year), 11.0f, gl.o());
+    @Override // org.telegram.ui.ActionBar.e
+    public final vnb getResourceProvider() {
+        byte b = this.a;
+        rbb rbbVar = this.b;
+        switch (b) {
+            case 0:
+                return new pu0(rbbVar.a, (byte) 8);
+            default:
+                return new pu0(rbbVar.a, (byte) 9);
         }
-        this.i = !k27Var.O3();
-        wjb wjbVar = this.c;
-        this.l.setColor(bkb.p1(0.12f, wjbVar != null ? wjbVar.a() : bkb.I.o() ? -1 : -16777216));
-        this.j = new tgb(k96.M0(2131744154, null), 14.0f, gl.o());
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean isLightStatusBar() {
+        byte b = this.a;
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean presentFragment(e eVar) {
+        switch (this.a) {
+            case 0:
+                this.b.S();
+                return false;
+            default:
+                return super.presentFragment(eVar);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final Dialog showDialog(Dialog dialog) {
+        switch (this.a) {
+            case 1:
+                dialog.show();
+                return dialog;
+            default:
+                return super.showDialog(dialog);
+        }
     }
 }

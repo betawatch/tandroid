@@ -1,63 +1,38 @@
 // default package
 
-import android.content.Context;
-import android.text.Editable;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class w31 extends it3 {
-    public final /* synthetic */ byte F;
-    public final /* synthetic */ y31 G;
+public final /* synthetic */ class w31 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ x31 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w31(y31 y31Var, Context context, String str, int i, wjb wjbVar, byte b) {
-        super(context, str, false, false, i, wjbVar);
-        this.F = b;
+    public /* synthetic */ w31(x31 x31Var, byte b) {
+        this.a = b;
+        this.b = x31Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        x31 x31Var = this.b;
         switch (b) {
+            case 0:
+                x31Var.b();
+                break;
             case 1:
-                this.G = y31Var;
-                super(context, str, true, false, i, wjbVar);
+                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
+                int i = x31Var.a;
+                disablepeerconnectedbot.peer = uc7.s1(i).j1(x31Var.s);
+                ConnectionsManager.getInstance(i).sendRequest(disablepeerconnectedbot, null);
+                uc7.s1(i).W3.edit().remove("dialog_botid" + x31Var.s).remove("dialog_boturl" + x31Var.s).remove("dialog_botflags" + x31Var.s).apply();
+                jn7.f(i).k(80, Long.valueOf(x31Var.s));
+                y31.a(i).f = false;
                 break;
             default:
-                this.G = y31Var;
-                break;
-        }
-    }
-
-    @Override // it3
-    public final void a(boolean z) {
-        va vaVar;
-        va vaVar2;
-        byte b = this.F;
-        y31 y31Var = this.G;
-        switch (b) {
-            case 0:
-                if (z && (vaVar = y31Var.a) != null) {
-                    vaVar.z0(2);
-                    break;
-                }
-                break;
-            default:
-                if (z && (vaVar2 = y31Var.a) != null) {
-                    vaVar2.z0(3);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // it3
-    public final void b(Editable editable) {
-        byte b = this.F;
-        y31 y31Var = this.G;
-        switch (b) {
-            case 0:
-                y31Var.n.c(y31Var.s.getText().toString(), y31Var.w.getText().toString());
-                y31Var.f0(true);
-                break;
-            default:
-                y31Var.n.c(y31Var.s.getText().toString(), y31Var.w.getText().toString());
-                y31Var.f0(true);
+                m01.u(x31Var.getContext(), x31Var.y);
                 break;
         }
     }

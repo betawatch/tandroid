@@ -1,63 +1,54 @@
 // default package
 
-import android.util.SparseIntArray;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class gu0 extends si5 {
-    public final /* synthetic */ byte d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class gu0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ nv0 d;
+    public final /* synthetic */ pv0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gu0(wjb wjbVar, byte b) {
-        super(wjbVar);
-        this.d = b;
+    public /* synthetic */ gu0(String[] strArr, int i, nv0 nv0Var, pv0 pv0Var, byte b) {
+        this.a = b;
+        this.b = strArr;
+        this.c = i;
+        this.d = nv0Var;
+        this.e = pv0Var;
     }
 
-    @Override // si5
-    public final void k() {
-        switch (this.d) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        pv0 pv0Var = this.e;
+        nv0 nv0Var = this.d;
+        int i = this.c;
+        String[] strArr = this.b;
+        switch (b) {
             case 0:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-                sparseIntArray.append(bkb.g5, -14803426);
-                sparseIntArray.append(bkb.Z6, -16777216);
-                break;
-            case 1:
-                SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
-                sparseIntArray2.append(bkb.g5, -14803426);
-                sparseIntArray2.append(bkb.Z6, -16777216);
-                break;
-            case 2:
-                ((SparseIntArray) this.b).put(bkb.yf, bm2.o(-1, 30));
-                break;
-            case 3:
-                SparseIntArray sparseIntArray3 = (SparseIntArray) this.b;
-                sparseIntArray3.append(bkb.g5, -14737633);
-                sparseIntArray3.append(bkb.Z6, -13421773);
-                break;
-            case 4:
-                ((SparseIntArray) this.b).put(bkb.yf, -1071635414);
-                break;
-            case 5:
-                SparseIntArray sparseIntArray4 = (SparseIntArray) this.b;
-                sparseIntArray4.put(bkb.yf, bm2.f(0.2f, -16777216, -1));
-                sparseIntArray4.put(bkb.Ne, bm2.f(0.5f, -16777216, -1));
-                break;
-            case 6:
-                ((SparseIntArray) this.b).put(bkb.yf, bm2.o(-1, 30));
-                break;
-            case 7:
-                ((SparseIntArray) this.b).put(bkb.yf, bm2.o(-1, 30));
-                break;
-            case 8:
-                SparseIntArray sparseIntArray5 = (SparseIntArray) this.b;
-                sparseIntArray5.append(bkb.g5, -14737633);
-                sparseIntArray5.append(bkb.Z6, -13421773);
+                if (strArr[0] != null) {
+                    try {
+                        JSONObject jSONObject = new JSONObject();
+                        jSONObject.put("status", strArr[0]);
+                        rv0.t(i, nv0Var, pv0Var, "phone_requested", jSONObject);
+                        break;
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                    }
+                }
                 break;
             default:
-                SparseIntArray sparseIntArray6 = (SparseIntArray) this.b;
-                sparseIntArray6.append(bkb.g5, -14803426);
-                sparseIntArray6.append(bkb.Z6, -16777216);
-                break;
+                try {
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("status", strArr[0]);
+                    rv0.t(i, nv0Var, pv0Var, "write_access_requested", jSONObject2);
+                    break;
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                    return;
+                }
         }
     }
 }

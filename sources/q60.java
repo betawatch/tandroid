@@ -1,13 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class q60 implements zn7 {
+public final class q60 implements zq7 {
     public static final q60 a = new q60();
-    public static final w84 b = w84.c("identifier");
+    public static final sa4 b = sa4.c("assignments");
 
-    @Override // q24
+    @Override // l34
     public final void a(Object obj, Object obj2) {
-        ((ao7) obj2).a(b, ((l90) ((fz2) obj)).a);
+        ((ar7) obj2).a(b, ((k90) ((xz2) obj)).a);
     }
 }

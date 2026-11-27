@@ -4,7 +4,7 @@ import android.webkit.JavascriptInterface;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzld {
     final /* synthetic */ zzly zza;
@@ -57,12 +57,12 @@ public final class zzld {
             zzcg zza = zzcf.zza(zzg.zzi());
             zzly zzlyVar = this.zza;
             zzlyVar.zzz().hashCode();
-            ((cp2) zzlyVar.zzz()).P(zza);
+            ((vp2) zzlyVar.zzz()).P(zza);
             return;
         }
         zzly zzlyVar2 = this.zza;
         zzlyVar2.zzz().hashCode();
-        if (((cp2) zzlyVar2.zzz()).B(g5c.a)) {
+        if (((vp2) zzlyVar2.zzz()).B(f9c.a)) {
             return;
         }
         zzlyVar2.zzz().hashCode();
@@ -85,9 +85,9 @@ public final class zzld {
         zzxx zzi = zzxx.zzi(zzdb.zza(str));
         zzi.toString();
         map = this.zza.zzd;
-        bp2 bp2Var = (bp2) map.remove(zzi.zzk());
-        if (bp2Var != null) {
-            ((cp2) bp2Var).B(zzi);
+        up2 up2Var = (up2) map.remove(zzi.zzk());
+        if (up2Var != null) {
+            ((vp2) up2Var).B(zzi);
         }
     }
 }

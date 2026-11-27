@@ -1,78 +1,67 @@
 // default package
 
-import android.media.MediaMetadata;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class kr6 implements Parcelable {
-    public static final Parcelable.Creator<kr6> CREATOR;
-    public static final ps c;
-    public static final String[] d;
-    public final Bundle a;
-    public MediaMetadata b;
+public final /* synthetic */ class kr6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ls6 b;
+    public final /* synthetic */ byte c;
 
-    static {
-        ps psVar = new ps(0);
-        c = psVar;
-        psVar.put("android.media.metadata.TITLE", 1);
-        psVar.put("android.media.metadata.ARTIST", 1);
-        psVar.put("android.media.metadata.DURATION", 0);
-        psVar.put("android.media.metadata.ALBUM", 1);
-        psVar.put("android.media.metadata.AUTHOR", 1);
-        psVar.put("android.media.metadata.WRITER", 1);
-        psVar.put("android.media.metadata.COMPOSER", 1);
-        psVar.put("android.media.metadata.COMPILATION", 1);
-        psVar.put("android.media.metadata.DATE", 1);
-        psVar.put("android.media.metadata.YEAR", 0);
-        psVar.put("android.media.metadata.GENRE", 1);
-        psVar.put("android.media.metadata.TRACK_NUMBER", 0);
-        psVar.put("android.media.metadata.NUM_TRACKS", 0);
-        psVar.put("android.media.metadata.DISC_NUMBER", 0);
-        psVar.put("android.media.metadata.ALBUM_ARTIST", 1);
-        psVar.put("android.media.metadata.ART", 2);
-        psVar.put("android.media.metadata.ART_URI", 1);
-        psVar.put("android.media.metadata.ALBUM_ART", 2);
-        psVar.put("android.media.metadata.ALBUM_ART_URI", 1);
-        psVar.put("android.media.metadata.USER_RATING", 3);
-        psVar.put("android.media.metadata.RATING", 3);
-        psVar.put("android.media.metadata.DISPLAY_TITLE", 1);
-        psVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
-        psVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
-        psVar.put("android.media.metadata.DISPLAY_ICON", 2);
-        psVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
-        psVar.put("android.media.metadata.MEDIA_ID", 1);
-        psVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
-        psVar.put("android.media.metadata.MEDIA_URI", 1);
-        psVar.put("android.media.metadata.ADVERTISEMENT", 0);
-        psVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
-        d = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION"};
-        CREATOR = new x21((byte) 28);
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ kr6(ls6 ls6Var, int i, byte b) {
+        this.a = b;
+        this.b = ls6Var;
+        this.c = i;
     }
 
-    public kr6(Bundle bundle) {
-        Bundle bundle2 = new Bundle(bundle);
-        this.a = bundle2;
-        ClassLoader classLoader = lv6.class.getClassLoader();
-        classLoader.getClass();
-        bundle2.setClassLoader(classLoader);
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeBundle(this.a);
-    }
-
-    public kr6(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(lv6.class.getClassLoader());
-        readBundle.getClass();
-        this.a = readBundle;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = 2;
+        byte b2 = 7;
+        switch (this.a) {
+            case 0:
+                ls6 ls6Var = this.b;
+                Long[] lArr = ls6Var.G0;
+                Long valueOf = Long.valueOf(System.currentTimeMillis() / 1000);
+                byte b3 = this.c;
+                lArr[b3] = valueOf;
+                if (!(tLObject instanceof TL_account.TL_emojiStatusesNotModified)) {
+                    if (tLObject instanceof TL_account.TL_emojiStatuses) {
+                        TL_account.TL_emojiStatuses tL_emojiStatuses = (TL_account.TL_emojiStatuses) tLObject;
+                        ls6Var.E0[b3] = tL_emojiStatuses.hash;
+                        ls6Var.F0[b3] = tL_emojiStatuses.statuses;
+                        ls6Var.getMessagesStorage().a.c(new sb4(ls6Var, b3, tL_emojiStatuses, b2));
+                        hl.c3(new ip6(ls6Var, b));
+                        break;
+                    }
+                } else {
+                    ls6Var.I0[b3] = false;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.z1(this.c, tLObject instanceof TLRPC.TL_messages_savedGifs ? ((TLRPC.TL_messages_savedGifs) tLObject).gifs : null, true, 0, true);
+                break;
+            default:
+                byte b4 = this.c;
+                if (b4 == 3 || b4 == 7) {
+                    if (tLObject instanceof TLRPC.TL_messages_stickers) {
+                        r2 = ((TLRPC.TL_messages_stickers) tLObject).stickers;
+                    }
+                } else if (b4 == 2) {
+                    if (tLObject instanceof TLRPC.TL_messages_favedStickers) {
+                        r2 = ((TLRPC.TL_messages_favedStickers) tLObject).stickers;
+                    }
+                } else if (tLObject instanceof TLRPC.TL_messages_recentStickers) {
+                    r2 = ((TLRPC.TL_messages_recentStickers) tLObject).stickers;
+                }
+                this.b.z1(b4, r2, false, 0, true);
+                break;
+        }
     }
 }

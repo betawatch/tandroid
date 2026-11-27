@@ -1,147 +1,89 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mi8 extends xh8 {
-    public final ArrayList L2;
-
-    public mi8(d dVar, int i, ArrayList arrayList, wjb wjbVar) {
-        super(dVar, i, null, null, null, wjbVar);
-        ArrayList arrayList2 = new ArrayList();
-        this.L2 = arrayList2;
-        arrayList2.addAll(arrayList);
-        f1();
-        this.T0 = false;
-        this.v0 = false;
-        this.t0 = 0;
-        n8 n8Var = new n8(getContext(), this.J0);
-        n8Var.setOnClickListener(new fr7(this, (byte) 26));
-        n8Var.setCloseStyle(true);
-        this.b.addView(n8Var, nme.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        o39 o39Var = this.n1;
-        int i2 = this.u0;
-        o39Var.setPadding(i2, 0, i2, gl.L(64.0f));
-        Context context = getContext();
-        int i3 = li8.f;
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setClipChildren(false);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        frameLayout2.setClipChildren(false);
-        if (arrayList2.size() == 1) {
-            frameLayout.addView(frameLayout2, nme.d(-1, 94.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-            li8 li8Var = new li8(context, 47.0f);
-            li8Var.d = false;
-            TLRPC.User user = (TLRPC.User) arrayList2.get(0);
-            pb0 pb0Var = li8Var.e;
-            pb0Var.q(user);
-            li8Var.a.f(user, pb0Var);
-            frameLayout2.addView(li8Var, 0, nme.e(94, 94, 17));
-        } else {
-            frameLayout.addView(frameLayout2, nme.d(-1, 83.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-            int i4 = 0;
-            for (int i5 = 0; i5 < arrayList2.size(); i5++) {
-                TLRPC.User user2 = (TLRPC.User) arrayList2.get(i5);
-                li8 li8Var2 = new li8(context, 41.5f);
-                pb0 pb0Var2 = li8Var2.e;
-                pb0Var2.q(user2);
-                li8Var2.a.f(user2, pb0Var2);
-                frameLayout2.addView(li8Var2, 0, nme.e(83, 83, 17));
-                li8Var2.setTranslationX(gl.L(29.0f) * (-i5));
-                if (i5 == 0 && arrayList2.size() > 3) {
-                    ki8 ki8Var = li8Var2.b;
-                    ki8Var.setAlpha(1.0f);
-                    ki8Var.b = arrayList2.size() - 3;
+public abstract class mi8 {
+    public static int a(r47 r47Var) {
+        if (r47Var.D == 17) {
+            TLRPC.Message message = r47Var.k;
+            int i = r47Var.K1;
+            TLRPC.MessageMedia n1 = r47.n1(message);
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(n1) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(n1) : null);
+            if (tL_messageMediaPoll != null) {
+                TLRPC.Poll poll = tL_messageMediaPoll.poll;
+                int i2 = poll.closed ? 8 : 0;
+                if (poll.subscribers_only) {
+                    TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                    TLRPC.Chat M0 = uc7.s1(i).M0(Long.valueOf(-(messageFwdHeader != null ? wf3.n(messageFwdHeader.from_id) : r47.B0(r47Var.k))));
+                    if (M0 != null) {
+                        if (M0.left || M0.kicked) {
+                            i2 |= 1;
+                        }
+                        TLRPC.MessageFwdHeader messageFwdHeader2 = message.fwd_from;
+                        if ((messageFwdHeader2 != null ? messageFwdHeader2.date : message.date) - M0.date < 86400) {
+                            i2 |= 2;
+                        }
+                    }
                 }
-                i4++;
-                if (i5 == 2) {
-                    break;
+                ArrayList<String> arrayList = tL_messageMediaPoll.poll.countries_iso2;
+                if (arrayList == null || arrayList.isEmpty()) {
+                    return i2;
+                }
+                return !tL_messageMediaPoll.poll.countries_iso2.contains(uc7.s1(i).k4.Z.f) ? i2 | 4 : i2;
+            }
+        }
+        return 0;
+    }
+
+    public static SpannableStringBuilder b(int i, r47 r47Var) {
+        if (r47Var.D == 17) {
+            TLRPC.Message message = r47Var.k;
+            int i2 = r47Var.K1;
+            TLRPC.MessageMedia n1 = r47.n1(message);
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(n1) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(n1) : null);
+            if (tL_messageMediaPoll != null) {
+                if (vsd.a(i, 4)) {
+                    ArrayList arrayList = new ArrayList(tL_messageMediaPoll.poll.countries_iso2.size());
+                    ArrayList<String> arrayList2 = tL_messageMediaPoll.poll.countries_iso2;
+                    int size = arrayList2.size();
+                    int i3 = 0;
+                    while (i3 < size) {
+                        String str = arrayList2.get(i3);
+                        i3++;
+                        String str2 = str;
+                        String i0 = ob6.i0(2131750481, str2);
+                        if (!TextUtils.isEmpty(i0)) {
+                            str2 = i0;
+                        }
+                        arrayList.add(str2);
+                    }
+                    boolean z = tL_messageMediaPoll.poll.subscribers_only;
+                    if (arrayList.size() == 1) {
+                        return hl.S2(ob6.a0(null, null, z ? 2131746844 : 2131746841, arrayList.get(0)));
+                    }
+                    StringBuffer stringBuffer = new StringBuffer();
+                    for (int i4 = 0; i4 < arrayList.size() - 1; i4++) {
+                        if (stringBuffer.length() > 0) {
+                            stringBuffer.append(", ");
+                        }
+                        stringBuffer.append((String) arrayList.get(i4));
+                    }
+                    return hl.S2(ob6.a0(null, null, z ? 2131746843 : 2131746840, stringBuffer, c00.g(1, arrayList)));
+                }
+                if (vsd.a(i, 1)) {
+                    TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                    return hl.S2(ob6.a0(null, null, 2131746845, wf3.t(uc7.s1(i2).M0(Long.valueOf(-(messageFwdHeader != null ? wf3.n(messageFwdHeader.from_id) : r47.B0(r47Var.k)))))));
+                }
+                if (vsd.a(i, 2)) {
+                    return hl.S2(ob6.M0(2131746842, null));
                 }
             }
-            frameLayout.setTranslationX((i4 - 1) * gl.L(14.5f));
         }
-        this.w2 = frameLayout;
-        K();
-    }
-
-    public static void g1(ArrayList arrayList) {
-        d Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
-        }
-        mi8 mi8Var = new mi8(Q, y6c.t0, arrayList, Q.getResourceProvider());
-        mi8Var.E2 = true;
-        mi8Var.F2 = true;
-        mi8Var.show();
-    }
-
-    @Override // xh8
-    public final void Y0(int i, View view) {
-        if (i == 0) {
-            view.setOutlineProvider(new xi((byte) 12));
-            view.setClipToOutline(true);
-            zkb.h(bkb.Z6, this.J0, view);
-            ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).topMargin = -gl.L(6.0f);
-        }
-    }
-
-    @Override // xh8
-    public final void Z0(pkb pkbVar) {
-        View view = this.w2;
-        ArrayList arrayList = this.L2;
-        pkbVar.addView(view, nme.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
-    }
-
-    @Override // xh8
-    public final void e1(boolean z) {
-        String a0;
-        this.J2[0].setTextSize(1, 20.0f);
-        this.K2.setPadding(gl.L(30.0f), 0, gl.L(30.0f), 0);
-        this.K2.setLineSpacing(gl.L(2.0f), 1.0f);
-        l46 l46Var = this.J2[0];
-        ArrayList arrayList = this.L2;
-        l46Var.setText(k96.J0(arrayList.size(), "GiftPremiumGiftsSent"));
-        ((ViewGroup.MarginLayoutParams) this.K2.getLayoutParams()).bottomMargin = gl.L(16.0f);
-        ((ViewGroup.MarginLayoutParams) this.K2.getLayoutParams()).topMargin = gl.L(4.0f);
-        int size = arrayList.size();
-        if (size == 1) {
-            a0 = k96.a0(null, null, 2131749481, k96.a0(null, null, 2131749483, l7c.k((TLRPC.User) arrayList.get(0), true)));
-        } else if (size == 2) {
-            a0 = k96.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749481, k96.a0("GiftPremiumUsersTwo", null, 2131749476, l7c.k((TLRPC.User) arrayList.get(0), true), l7c.k((TLRPC.User) arrayList.get(1), true)));
-        } else if (size != 3) {
-            a0 = k96.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", k96.a0("GiftPremiumUsersThree", null, 2131749477, l7c.k((TLRPC.User) arrayList.get(0), true), l7c.k((TLRPC.User) arrayList.get(1), true), l7c.k((TLRPC.User) arrayList.get(2), true)));
-        } else {
-            a0 = k96.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749481, k96.a0("GiftPremiumUsersThree", null, 2131749477, l7c.k((TLRPC.User) arrayList.get(0), true), l7c.k((TLRPC.User) arrayList.get(1), true), l7c.k((TLRPC.User) arrayList.get(2), true)));
-        }
-        this.K2.setText(gl.S2(a0));
-        this.K2.append("\n");
-        this.K2.append("\n");
-        int size2 = arrayList.size();
-        l46 l46Var2 = this.K2;
-        if (size2 == 1) {
-            l46Var2.append(gl.S2(k96.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749496, l7c.k((TLRPC.User) arrayList.get(0), true))));
-        } else {
-            l46Var2.append(gl.S2(k96.M0(2131749497, "GiftPremiumGiftsSentStatus")));
-        }
-    }
-
-    @Override // xh8
-    public final void f1() {
-        this.a2 = 1;
-        this.b2 = 0;
-        this.e2 = 1;
-        int size = this.S1.size();
-        int i = 1 + size;
-        this.f2 = i;
-        this.a2 = size + 2;
-        this.i2 = i;
+        return null;
     }
 }

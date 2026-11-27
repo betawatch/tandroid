@@ -1,110 +1,46 @@
 // default package
 
-import android.os.Build;
-import android.text.Spannable;
-import android.text.SpannableString;
-import j$.util.stream.IntStream;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class x5c implements Spannable {
-    public boolean a = false;
-    public Spannable b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class x5c implements q4b {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ d6c b;
 
-    public x5c(CharSequence charSequence) {
-        this.b = new SpannableString(charSequence);
+    public x5c(d6c d6cVar, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = d6cVar;
+        this.a = inputStickerSet;
     }
 
+    @Override // q4b
     public final void a() {
-        Spannable spannable = this.b;
-        if (!this.a) {
-            byte b = 28;
-            if ((Build.VERSION.SDK_INT < 28 ? new ie7(b) : new w5c(b)).c(spannable)) {
-                this.b = new SpannableString(spannable);
+        d6c d6cVar = this.b;
+        j79 adapter = d6cVar.n.getAdapter();
+        c6c c6cVar = d6cVar.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i = 0;
+        if (adapter == c6cVar) {
+            while (i < c6cVar.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) c6cVar.e.get(i);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    c6cVar.F(stickerSetCovered, null);
+                    return;
+                }
+                i++;
             }
+            return;
         }
-        this.a = true;
-    }
-
-    @Override // java.lang.CharSequence
-    public final char charAt(int i) {
-        return this.b.charAt(i);
-    }
-
-    @Override // java.lang.CharSequence
-    public final /* synthetic */ IntStream chars() {
-        return IntStream.Wrapper.convert(chars());
-    }
-
-    @Override // java.lang.CharSequence
-    public final /* synthetic */ java.util.stream.IntStream codePoints() {
-        return IntStream.Wrapper.convert(codePoints());
-    }
-
-    @Override // android.text.Spanned
-    public final int getSpanEnd(Object obj) {
-        return this.b.getSpanEnd(obj);
-    }
-
-    @Override // android.text.Spanned
-    public final int getSpanFlags(Object obj) {
-        return this.b.getSpanFlags(obj);
-    }
-
-    @Override // android.text.Spanned
-    public final int getSpanStart(Object obj) {
-        return this.b.getSpanStart(obj);
-    }
-
-    @Override // android.text.Spanned
-    public final Object[] getSpans(int i, int i2, Class cls) {
-        return this.b.getSpans(i, i2, cls);
-    }
-
-    @Override // java.lang.CharSequence
-    public final int length() {
-        return this.b.length();
-    }
-
-    @Override // android.text.Spanned
-    public final int nextSpanTransition(int i, int i2, Class cls) {
-        return this.b.nextSpanTransition(i, i2, cls);
-    }
-
-    @Override // android.text.Spannable
-    public final void removeSpan(Object obj) {
-        a();
-        this.b.removeSpan(obj);
-    }
-
-    @Override // android.text.Spannable
-    public final void setSpan(Object obj, int i, int i2, int i3) {
-        a();
-        this.b.setSpan(obj, i, i2, i3);
-    }
-
-    @Override // java.lang.CharSequence
-    public final CharSequence subSequence(int i, int i2) {
-        return this.b.subSequence(i, i2);
-    }
-
-    @Override // java.lang.CharSequence
-    public final String toString() {
-        return this.b.toString();
-    }
-
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream chars() {
-        return kh0.b(this.b);
-    }
-
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream codePoints() {
-        return kh0.c(this.b);
-    }
-
-    public x5c(Spannable spannable) {
-        this.b = spannable;
+        z4b z4bVar = d6cVar.w;
+        ArrayList arrayList = z4bVar.F;
+        while (i < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                z4bVar.F(stickerSetCovered2, null);
+                return;
+            }
+            i++;
+        }
     }
 }

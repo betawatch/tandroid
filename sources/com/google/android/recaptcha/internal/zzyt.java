@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzyt extends zzsn implements zztt {
     private static final zzyt zzb;
@@ -27,7 +27,7 @@ public final class zzyt extends zzsn implements zztt {
         if (i != 1) {
             zzytVar.zzh = i - 2;
         } else {
-            w26.j("Can't get the number of an unknown enum value.");
+            lq5.j("Can't get the number of an unknown enum value.");
         }
     }
 
@@ -35,7 +35,7 @@ public final class zzyt extends zzsn implements zztt {
         if (i != 1) {
             zzytVar.zzf = i - 2;
         } else {
-            w26.j("Can't get the number of an unknown enum value.");
+            lq5.j("Can't get the number of an unknown enum value.");
         }
     }
 
@@ -173,7 +173,7 @@ public final class zzyt extends zzsn implements zztt {
             case 29:
                 i = 31;
                 break;
-            case kk7.S /* 30 */:
+            case jn7.S /* 30 */:
                 i = 32;
                 break;
             case 31:
@@ -236,25 +236,25 @@ public final class zzyt extends zzsn implements zztt {
             case 50:
                 i = 52;
                 break;
-            case kk7.n0 /* 51 */:
+            case jn7.n0 /* 51 */:
                 i = 53;
                 break;
-            case kk7.o0 /* 52 */:
+            case jn7.o0 /* 52 */:
                 i = 54;
                 break;
-            case kk7.p0 /* 53 */:
+            case jn7.p0 /* 53 */:
                 i = 55;
                 break;
-            case kk7.q0 /* 54 */:
+            case jn7.q0 /* 54 */:
                 i = 56;
                 break;
-            case kk7.r0 /* 55 */:
+            case jn7.r0 /* 55 */:
                 i = 57;
                 break;
             case 56:
                 i = 58;
                 break;
-            case kk7.t0 /* 57 */:
+            case jn7.t0 /* 57 */:
                 i = 59;
                 break;
             default:

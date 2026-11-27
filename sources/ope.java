@@ -1,6 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ope extends e0e {
+public final class ope {
+    public final Long a;
+    public final fpe b;
+    public final eoe c;
+    public final Integer d;
+    public final Integer e;
+    public final Integer f;
+    public final Integer g;
+
+    public /* synthetic */ ope(gd4 gd4Var) {
+        this.a = (Long) gd4Var.a;
+        this.b = (fpe) gd4Var.b;
+        this.c = (eoe) gd4Var.c;
+        this.d = (Integer) gd4Var.d;
+        this.e = (Integer) gd4Var.e;
+        this.f = (Integer) gd4Var.f;
+        this.g = (Integer) gd4Var.g;
+    }
 }

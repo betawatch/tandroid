@@ -1,27 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class xe7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ye7 b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ xe7(ye7 ye7Var, byte b) {
-        this.a = b;
-        this.b = ye7Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class xe7 implements Runnable {
+    public final /* synthetic */ jf7 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Reaction d;
+    public final /* synthetic */ short e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ mcc n;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ xe7(jf7 jf7Var, String str, long j, TLRPC.Reaction reaction, int i, int i2, boolean z, mcc mccVar) {
+        this.a = jf7Var;
+        this.b = str;
+        this.c = j;
+        this.d = reaction;
+        this.e = i;
+        this.f = i2;
+        this.h = z;
+        this.n = mccVar;
     }
 
+    /*  JADX ERROR: Type inference failed
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
+        */
     @Override // java.lang.Runnable
     public final void run() {
-        byte b = this.a;
-        ye7 ye7Var = this.b;
-        switch (b) {
-            case 0:
-                ye7Var.x();
-                break;
-            default:
-                ye7Var.m(true);
-                break;
-        }
+        /*
+            Method dump skipped, instructions count: 665
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: xe7.run():void");
     }
 }

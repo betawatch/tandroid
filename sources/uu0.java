@@ -1,28 +1,63 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class uu0 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gt3 b;
+public interface uu0 {
+    wr0 A();
 
-    public /* synthetic */ uu0(gt3 gt3Var, byte b) {
-        this.a = b;
-        this.b = gt3Var;
-    }
+    void a();
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        gt3 gt3Var = this.b;
-        switch (b) {
-            case 0:
-                gl.t1(gt3Var);
-                gl.d3((Runnable) obj, 80L);
-                break;
-            default:
-                gt3Var.H(((Integer) obj).intValue());
-                break;
-        }
-    }
+    void b();
+
+    void c();
+
+    void d(TLRPC.Document document);
+
+    void e(String str);
+
+    void f(ArrayList arrayList);
+
+    String g(boolean z, boolean z2);
+
+    boolean h();
+
+    void i(boolean z);
+
+    void j();
+
+    void k(boolean z);
+
+    void l(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4, String str2);
+
+    void m(int i);
+
+    void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject);
+
+    void o(int i, boolean z);
+
+    void p(boolean z);
+
+    void q(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4);
+
+    void r(int i);
+
+    void s();
+
+    void t(boolean z);
+
+    void u(int i, int i2, boolean z);
+
+    void v(TLRPC.User user, String str, ArrayList arrayList);
+
+    void w(boolean z);
+
+    void x(int i);
+
+    void y(boolean z);
+
+    void z();
 }

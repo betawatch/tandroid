@@ -1,18 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dq1 extends fyc {
-    public final /* synthetic */ mu1 I;
+public final class dq1 extends l01 {
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ wb2 f;
+    public final /* synthetic */ zu1 g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dq1(mu1 mu1Var, wl1 wl1Var) {
-        super(wl1Var);
-        this.I = mu1Var;
+    public /* synthetic */ dq1(zu1 zu1Var, int i, wb2 wb2Var, byte b) {
+        this.d = b;
+        this.g = zu1Var;
+        this.e = i;
+        this.f = wb2Var;
     }
 
-    @Override // fyc
-    public final vxc b(vxc vxcVar) {
-        return this.I.J6(vxcVar);
+    @Override // l01
+    public final void c(boolean z) {
+        switch (this.d) {
+            case 0:
+                if (!z) {
+                    hl.d3(new zd((Object) this, this.e, (byte) 16), 240L);
+                    break;
+                }
+                break;
+            case 1:
+                if (!z) {
+                    hl.d3(new zd((Object) this, this.e, (byte) 18), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z) {
+                    hl.d3(new zd((Object) this, this.e, (byte) 19), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // l01
+    public final void d() {
+        byte b = this.d;
+        wb2 wb2Var = this.f;
+        int i = this.e;
+        zu1 zu1Var = this.g;
+        switch (b) {
+            case 0:
+                zu1Var.lc = i;
+                zu1Var.mc = 6;
+                wb2Var.invalidate();
+                break;
+            case 1:
+                zu1Var.lc = i;
+                zu1Var.mc = 5;
+                zu1Var.oc = null;
+                wb2Var.invalidate();
+                break;
+            default:
+                zu1Var.lc = i;
+                zu1Var.mc = 7;
+                wb2Var.invalidate();
+                break;
+        }
     }
 }

@@ -1,33 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface j34 {
-    void A(l34 l34Var);
+import java.util.Arrays;
 
-    void B(boolean z);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class j34 {
+    public final n34 a;
+    public final byte[] b;
 
-    void C();
+    public j34(n34 n34Var, byte[] bArr) {
+        if (n34Var == null) {
+            p3d.h("encoding is null");
+            throw null;
+        }
+        if (bArr == null) {
+            p3d.h("bytes is null");
+            throw null;
+        }
+        this.a = n34Var;
+        this.b = bArr;
+    }
 
-    void d(boolean z);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof j34)) {
+            return false;
+        }
+        j34 j34Var = (j34) obj;
+        if (this.a.equals(j34Var.a)) {
+            return Arrays.equals(this.b, j34Var.b);
+        }
+        return false;
+    }
 
-    void e(boolean z);
+    public final int hashCode() {
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
+    }
 
-    void f();
-
-    void g();
-
-    boolean i(l34 l34Var);
-
-    void j(boolean z);
-
-    boolean o();
-
-    boolean p();
-
-    void u(float f, float f2, float[] fArr);
-
-    int[] v(l34 l34Var);
-
-    void x();
+    public final String toString() {
+        return "EncodedPayload{encoding=" + this.a + ", bytes=[...]}";
+    }
 }

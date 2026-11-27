@@ -1,136 +1,206 @@
 // default package
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-import android.widget.TextView;
-import androidx.core.content.FileProvider;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.a;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.d0;
-import org.telegram.ui.e0;
+import j$.util.Objects;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class rl5 implements DialogInterface.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class rl5 implements sf7 {
+    public final int a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final boolean e;
+    public final int f;
 
-    public /* synthetic */ rl5(Object obj, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public rl5(int i, String str, String str2, String str3, boolean z, int i2) {
+        yve.f(i2 == -1 || i2 > 0);
+        this.a = i;
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+        this.e = z;
+        this.f = i2;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        d dVar;
-        byte b = this.a;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
-        switch (b) {
-            case 0:
-                wl5 wl5Var = (wl5) obj3;
-                Runnable runnable = (Runnable) obj;
-                int intValue = ((Integer) ((ArrayList) obj2).get(i)).intValue();
-                if (intValue == 0) {
-                    wl5Var.l();
-                    break;
-                } else if (intValue == 1) {
-                    wl5Var.m();
-                    break;
-                } else if (intValue == 2) {
-                    wl5Var.q();
-                    break;
-                } else if (intValue == 3) {
-                    runnable.run();
-                    break;
-                } else if (intValue == 4 && (dVar = wl5Var.a) != null && dVar.getParentActivity() != null) {
+    /* JADX WARN: Removed duplicated region for block: B:12:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0054  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static rl5 d(Map map) {
+        boolean z;
+        int i;
+        List list;
+        String str;
+        List list2;
+        String str2;
+        List list3;
+        String str3;
+        List list4;
+        boolean z2;
+        List list5;
+        int i2;
+        List list6 = (List) map.get("icy-br");
+        boolean z3 = true;
+        int i3 = -1;
+        if (list6 != null) {
+            String str4 = (String) list6.get(0);
+            try {
+                i2 = Integer.parseInt(str4) * 1000;
+                if (i2 > 0) {
+                    z = true;
+                } else {
                     try {
-                        if (wl5Var.a.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                            Intent intent = new Intent("android.media.action.VIDEO_CAPTURE");
-                            File s0 = gl.s0(false);
-                            if (s0 != null) {
-                                if (Build.VERSION.SDK_INT >= 24) {
-                                    Activity parentActivity = wl5Var.a.getParentActivity();
-                                    a.d();
-                                    intent.putExtra("output", FileProvider.c(parentActivity, "org.telegram.messenger.beta.provider", s0));
-                                    intent.addFlags(2);
-                                    intent.addFlags(1);
-                                } else {
-                                    intent.putExtra("output", Uri.fromFile(s0));
-                                }
-                                intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
-                                intent.putExtra("android.intent.extras.LENS_FACING_FRONT", 1);
-                                intent.putExtra("android.intent.extra.USE_FRONT_CAMERA", true);
-                                intent.putExtra("android.intent.extra.durationLimit", 10);
-                                wl5Var.f = s0.getAbsolutePath();
-                            }
-                            wl5Var.a.startActivityForResult(intent, 15);
-                            break;
-                        } else {
-                            wl5Var.a.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 19);
-                            break;
+                        efd.f("IcyHeaders", "Invalid bitrate: " + str4);
+                        z = false;
+                        i2 = -1;
+                    } catch (NumberFormatException unused) {
+                        bp1.s("Invalid bitrate header: ", str4, "IcyHeaders");
+                        z = false;
+                        i = i2;
+                        list = (List) map.get("icy-genre");
+                        if (list == null) {
                         }
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                        return;
+                        list2 = (List) map.get("icy-name");
+                        if (list2 == null) {
+                        }
+                        list3 = (List) map.get("icy-url");
+                        if (list3 == null) {
+                        }
+                        list4 = (List) map.get("icy-pub");
+                        if (list4 == null) {
+                        }
+                        list5 = (List) map.get("icy-metaint");
+                        if (list5 != null) {
+                        }
+                        int i4 = i3;
+                        if (z) {
+                        }
                     }
                 }
-                break;
-            default:
-                d0 d0Var = (d0) obj3;
-                zjb zjbVar = (zjb) obj2;
-                e0 e0Var = (e0) obj;
-                ThemeActivity themeActivity = d0Var.e;
-                if (themeActivity.getParentActivity() != null) {
-                    if (i != 0) {
-                        if (i != 1) {
-                            if (i != 2) {
-                                if (i == 3 && themeActivity.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                                    String M0 = k96.M0(2131751472, "DeleteThemeTitle");
-                                    hd hdVar = alertDialog$Builder.a;
-                                    hdVar.S = M0;
-                                    hdVar.U = k96.M0(2131751473, "DeleteThemeAlert");
-                                    alertDialog$Builder.j(k96.M0(2131751586, "Delete"), new io9(d0Var, e0Var, zjbVar, (byte) 8));
-                                    alertDialog$Builder.g(k96.M0(2131752577, "Cancel"), null);
-                                    themeActivity.showDialog(hdVar);
-                                    TextView textView = (TextView) hdVar.c(-1);
-                                    if (textView != null) {
-                                        zkb.X(textView, bkb.p7, null);
-                                        break;
-                                    }
-                                }
-                            } else {
-                                themeActivity.presentFragment(new ymb(zjbVar.b, zjbVar, false));
-                                break;
-                            }
-                        } else if (zjbVar.r != null) {
-                            String str = "https://" + themeActivity.getMessagesController().N2 + "/addtheme/" + zjbVar.r.slug;
-                            themeActivity.showDialog(new taa(themeActivity.getParentActivity(), null, str, false, str, false, null));
-                            break;
-                        } else {
-                            themeActivity.getMessagesController().B4(zjbVar.b, zjbVar);
-                            kk7.e().k(kk7.u4, zjbVar.b, zjbVar);
-                            break;
-                        }
-                    } else {
-                        ij.T(themeActivity, i == 1 ? 2 : 1, zjbVar.b, zjbVar);
-                        break;
-                    }
-                }
-                break;
+            } catch (NumberFormatException unused2) {
+                i2 = -1;
+            }
+            i = i2;
+        } else {
+            z = false;
+            i = -1;
         }
+        list = (List) map.get("icy-genre");
+        if (list == null) {
+            str = (String) list.get(0);
+            z = true;
+        } else {
+            str = null;
+        }
+        list2 = (List) map.get("icy-name");
+        if (list2 == null) {
+            str2 = (String) list2.get(0);
+            z = true;
+        } else {
+            str2 = null;
+        }
+        list3 = (List) map.get("icy-url");
+        if (list3 == null) {
+            str3 = (String) list3.get(0);
+            z = true;
+        } else {
+            str3 = null;
+        }
+        list4 = (List) map.get("icy-pub");
+        if (list4 == null) {
+            z2 = ((String) list4.get(0)).equals("1");
+            z = true;
+        } else {
+            z2 = false;
+        }
+        list5 = (List) map.get("icy-metaint");
+        if (list5 != null) {
+            String str5 = (String) list5.get(0);
+            try {
+                int parseInt = Integer.parseInt(str5);
+                if (parseInt > 0) {
+                    i3 = parseInt;
+                } else {
+                    try {
+                        efd.f("IcyHeaders", "Invalid metadata interval: " + str5);
+                        z3 = z;
+                    } catch (NumberFormatException unused3) {
+                        i3 = parseInt;
+                        bp1.s("Invalid metadata interval: ", str5, "IcyHeaders");
+                        int i42 = i3;
+                        if (z) {
+                        }
+                    }
+                }
+                z = z3;
+            } catch (NumberFormatException unused4) {
+            }
+        }
+        int i422 = i3;
+        if (z) {
+            return new rl5(i, str, str2, str3, z2, i422);
+        }
+        return null;
+    }
+
+    @Override // sf7
+    public final ko4 a() {
+        return null;
+    }
+
+    @Override // sf7
+    public final void b(lt6 lt6Var) {
+        String str = this.c;
+        if (str != null) {
+            lt6Var.H = str;
+        }
+        String str2 = this.b;
+        if (str2 != null) {
+            lt6Var.F = str2;
+        }
+    }
+
+    @Override // sf7
+    public final byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && rl5.class == obj.getClass()) {
+            rl5 rl5Var = (rl5) obj;
+            if (this.a == rl5Var.a && Objects.equals(this.b, rl5Var.b) && Objects.equals(this.c, rl5Var.c) && Objects.equals(this.d, rl5Var.d) && this.e == rl5Var.e && this.f == rl5Var.f) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i = (527 + this.a) * 31;
+        String str = this.b;
+        int hashCode = (i + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+        String str3 = this.d;
+        return ((((hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31) + (this.e ? 1 : 0)) * 31) + this.f;
+    }
+
+    public final String toString() {
+        return "IcyHeaders: name=\"" + this.c + "\", genre=\"" + this.b + "\", bitrate=" + this.a + ", metadataInterval=" + this.f;
     }
 }

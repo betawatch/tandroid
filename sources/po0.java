@@ -12,14 +12,14 @@ import android.graphics.drawable.Drawable;
 import android.text.Layout;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class po0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
-    public final wjb c;
-    public final tgb d;
-    public final tgb e;
+    public final vnb c;
+    public final pkb d;
+    public final pkb e;
     public final Drawable f;
     public final Drawable g;
     public int h;
@@ -27,23 +27,23 @@ public final class po0 extends Drawable {
     public final Paint j;
     public int k;
 
-    public po0(int i, wjb wjbVar, Context context) {
+    public po0(int i, vnb vnbVar, Context context) {
         Paint paint = new Paint(1);
         this.j = paint;
         this.b = i;
-        this.c = wjbVar;
-        tgb tgbVar = new tgb(k96.M0(2131753065, null), 14.0f, gl.o());
-        this.d = tgbVar;
+        this.c = vnbVar;
+        pkb pkbVar = new pkb(ob6.M0(2131753061, null), 14.0f, hl.o());
+        this.d = pkbVar;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        tgbVar.a();
-        tgb tgbVar2 = new tgb("", 13.0f, null);
-        this.e = tgbVar2;
-        tgbVar2.l(4);
-        tgbVar2.a();
+        pkbVar.a();
+        pkb pkbVar2 = new pkb("", 13.0f, null);
+        this.e = pkbVar2;
+        pkbVar2.l(4);
+        pkbVar2.a();
         this.f = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
-        Drawable d = b00.d(context, R.drawable.arrow_more);
-        this.g = d;
-        d.setAlpha(kk7.i2);
+        Drawable e = c00.e(context, R.drawable.arrow_more);
+        this.g = e;
+        e.setAlpha(jn7.i2);
         paint.setColor(-16777216);
         paint.setAlpha(30);
     }
@@ -52,10 +52,10 @@ public final class po0 extends Drawable {
     public final void draw(Canvas canvas) {
         int i;
         int i2;
-        wjb wjbVar = this.c;
-        if (bkb.g1(wjbVar)) {
-            int v0 = bkb.v0(bkb.Ea, wjbVar);
-            i = bkb.v0(bkb.Fa, wjbVar);
+        vnb vnbVar = this.c;
+        if (aob.g1(vnbVar)) {
+            int v0 = aob.v0(aob.Fa, vnbVar);
+            i = aob.v0(aob.Ga, vnbVar);
             i2 = v0;
         } else {
             i = -1;
@@ -71,34 +71,34 @@ public final class po0 extends Drawable {
             drawable2.setColorFilter(new PorterDuffColorFilter(i4, mode));
             drawable.setColorFilter(new PorterDuffColorFilter(this.k, mode));
         }
-        Paint U0 = bkb.U0("paintChatActionBackground", wjbVar);
-        float L = gl.L(16.0f);
-        float L2 = gl.L(16.0f);
+        Paint U0 = aob.U0("paintChatActionBackground", vnbVar);
+        float L = hl.L(16.0f);
+        float L2 = hl.L(16.0f);
         RectF rectF = this.a;
         canvas.drawRoundRect(rectF, L, L2, U0);
-        if (wjbVar != null ? wjbVar.g() : bkb.b1()) {
-            canvas.drawRoundRect(rectF, gl.L(16.0f), gl.L(16.0f), bkb.U0("paintChatActionBackgroundDarken", wjbVar));
+        if (vnbVar != null ? vnbVar.g() : aob.b1()) {
+            canvas.drawRoundRect(rectF, hl.L(16.0f), hl.L(16.0f), aob.U0("paintChatActionBackgroundDarken", vnbVar));
         }
         canvas.save();
-        canvas.translate(0.0f, rectF.top + gl.L(17.0f));
-        canvas.drawCircle(rectF.centerX(), gl.L(35.0f), gl.L(35.0f), this.j);
-        int centerX = (int) (rectF.centerX() - gl.L(20.0f));
-        int L3 = gl.L(15.0f);
-        drawable2.setBounds(centerX, L3, gl.L(40.0f) + centerX, gl.L(40.0f) + L3);
+        canvas.translate(0.0f, rectF.top + hl.L(17.0f));
+        canvas.drawCircle(rectF.centerX(), hl.L(35.0f), hl.L(35.0f), this.j);
+        int centerX = (int) (rectF.centerX() - hl.L(20.0f));
+        int L3 = hl.L(15.0f);
+        drawable2.setBounds(centerX, L3, hl.L(40.0f) + centerX, hl.L(40.0f) + L3);
         drawable2.draw(canvas);
-        canvas.translate(0.0f, gl.L(70.0f));
-        canvas.translate(0.0f, gl.L(14.0f));
+        canvas.translate(0.0f, hl.L(70.0f));
+        canvas.translate(0.0f, hl.L(14.0f));
         float centerX2 = rectF.centerX();
-        tgb tgbVar = this.d;
-        this.d.c(centerX2 - (tgbVar.j() / 2.0f), tgbVar.h() / 2.0f, 1.0f, i2, canvas);
-        canvas.translate(0.0f, tgbVar.h());
-        canvas.translate(0.0f, gl.L(4.0f));
+        pkb pkbVar = this.d;
+        this.d.c(centerX2 - (pkbVar.j() / 2.0f), pkbVar.h() / 2.0f, 1.0f, i2, canvas);
+        canvas.translate(0.0f, pkbVar.h());
+        canvas.translate(0.0f, hl.L(4.0f));
         float centerX3 = rectF.centerX();
-        tgb tgbVar2 = this.e;
-        this.e.c(centerX3 - (tgbVar2.j() / 2.0f), 0.0f, 1.0f, i2, canvas);
-        canvas.translate(0.0f, tgbVar2.h());
-        canvas.translate(0.0f, gl.L(2.0f));
-        drawable.setBounds((int) (rectF.centerX() - gl.L(10.0f)), 0, (int) (rectF.centerX() + gl.L(10.0f)), gl.L(20.0f));
+        pkb pkbVar2 = this.e;
+        this.e.c(centerX3 - (pkbVar2.j() / 2.0f), 0.0f, 1.0f, i2, canvas);
+        canvas.translate(0.0f, pkbVar2.h());
+        canvas.translate(0.0f, hl.L(2.0f));
+        drawable.setBounds((int) (rectF.centerX() - hl.L(10.0f)), 0, (int) (rectF.centerX() + hl.L(10.0f)), hl.L(20.0f));
         drawable.draw(canvas);
         canvas.restore();
     }

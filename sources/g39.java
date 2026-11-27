@@ -1,55 +1,27 @@
 // default package
 
+import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class g39 implements Runnable {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ h39 e;
+public final class g39 extends d79 {
+    public final /* synthetic */ o39 f3;
 
-    public g39(h39 h39Var, View view, int i, float f, float f2) {
-        this.e = h39Var;
-        this.a = view;
-        this.b = i;
-        this.c = f;
-        this.d = f2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g39(o39 o39Var, Context context, vnb vnbVar) {
+        super(context, vnbVar);
+        this.f3 = o39Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ds5 ds5Var = this.e.b;
-        o39 o39Var = (o39) ds5Var.b;
-        if (this == o39Var.R1) {
-            o39Var.R1 = null;
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        o39 o39Var = this.f3;
+        q37 q37Var = o39Var.K;
+        if (q37Var != null) {
+            q37Var.measure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 0));
         }
-        View view = this.a;
-        if (view != null) {
-            o39Var.k1(view, 0.0f, 0.0f, false);
-            if (((o39) ds5Var.b).Q1) {
-                return;
-            }
-            try {
-                view.playSoundEffect(0);
-            } catch (Exception unused) {
-            }
-            view.sendAccessibilityEvent(1);
-            int i = this.b;
-            if (i != -1) {
-                o39 o39Var2 = (o39) ds5Var.b;
-                c39 c39Var = o39Var2.U0;
-                if (c39Var != null) {
-                    c39Var.d(i, view);
-                    return;
-                }
-                d39 d39Var = o39Var2.V0;
-                if (d39Var != null) {
-                    d39Var.e(this.c - view.getX(), this.d - view.getY(), i, view);
-                }
-            }
-        }
+        super.onMeasure(i, i2);
+        o39Var.f();
     }
 }

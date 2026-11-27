@@ -1,50 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class oy0 implements my0 {
-    public final xu7 a;
-    public final int b;
-    public final int c;
-    public int d;
-    public short e;
+public final class oy0 implements InvocationHandler {
+    public final FeatureFlagHolderBoundaryInterface a;
 
-    public oy0(mf7 mf7Var) {
-        xu7 xu7Var = mf7Var.e;
-        this.a = xu7Var;
-        xu7Var.N(12);
-        this.c = xu7Var.E() & kk7.d4;
-        this.b = xu7Var.E();
+    public oy0(FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface) {
+        this.a = featureFlagHolderBoundaryInterface;
     }
 
-    @Override // my0
-    public final int a() {
-        return -1;
-    }
-
-    @Override // my0
-    public final int b() {
-        return this.b;
-    }
-
-    /* JADX WARN: Type inference failed for: r0v4, types: [int, short] */
-    @Override // my0
-    public final int c() {
-        xu7 xu7Var = this.a;
-        int i = this.c;
-        if (i == 8) {
-            return xu7Var.A();
+    @Override // java.lang.reflect.InvocationHandler
+    public final Object invoke(Object obj, Method method, Object[] objArr) {
+        FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface = this.a;
+        try {
+            return Class.forName(method.getDeclaringClass().getName(), true, featureFlagHolderBoundaryInterface.getClass().getClassLoader()).getDeclaredMethod(method.getName(), method.getParameterTypes()).invoke(featureFlagHolderBoundaryInterface, objArr);
+        } catch (InvocationTargetException e) {
+            throw e.getTargetException();
+        } catch (ReflectiveOperationException e2) {
+            vr9.k("Reflection failed for method ", method, e2);
+            return null;
         }
-        if (i == 16) {
-            return xu7Var.H();
-        }
-        int i2 = this.d;
-        this.d = i2 + 1;
-        if (i2 % 2 != 0) {
-            return this.e & 15;
-        }
-        ?? A = xu7Var.A();
-        this.e = A;
-        return (A & kk7.O3) >> 4;
     }
 }

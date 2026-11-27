@@ -1,25 +1,20 @@
 // default package
 
-import java.util.Map;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nu5 implements zn7 {
-    public final /* synthetic */ byte a;
+public final class nu5 extends x2c {
+    public final /* synthetic */ es4 b;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                throw new t24("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
-            case 1:
-                Map.Entry entry = (Map.Entry) obj;
-                ao7 ao7Var = (ao7) obj2;
-                ao7Var.a(ht8.f, entry.getKey());
-                ao7Var.a(ht8.g, entry.getValue());
-                return;
-            default:
-                throw new t24("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nu5(Iterator it, es4 es4Var) {
+        super(it);
+        this.b = es4Var;
+    }
+
+    @Override // x2c
+    public final Object a(Object obj) {
+        return this.b.apply(obj);
     }
 }

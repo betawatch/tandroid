@@ -1,36 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class uw0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zha b;
-
-    public /* synthetic */ uw0(zha zhaVar, byte b) {
-        this.a = b;
-        this.b = zhaVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        zha zhaVar = this.b;
-        switch (b) {
-            case 0:
-                zhaVar.a(true);
-                break;
-            case 1:
-                zhaVar.a(true);
-                break;
-            case 2:
-                if (!zhaVar.I && zhaVar.U) {
-                    zhaVar.c();
-                    break;
-                }
-                break;
-            default:
-                zhaVar.a(true);
-                break;
+public final class uw0 extends a {
+    @Override // org.telegram.ui.ActionBar.a, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (hl.O1() && !hl.E && !hl.N1()) {
+            Point point = hl.q;
+            i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
         }
+        super.onMeasure(i, i2);
     }
 }

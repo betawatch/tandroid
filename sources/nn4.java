@@ -1,68 +1,70 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.ui.Components.FragmentContextView;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nn4 extends c20 {
-    public final /* synthetic */ byte E;
-    public final /* synthetic */ Context F;
-    public final /* synthetic */ FragmentContextView G;
+public final class nn4 extends FrameLayout {
+    public final in a;
+    public final in b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nn4(FragmentContextView fragmentContextView, Context context, Context context2, byte b) {
+    public nn4(Context context) {
         super(context);
-        this.E = b;
-        this.G = fragmentContextView;
-        this.F = context2;
+        in inVar = new in(context, true, true, false);
+        this.a = inVar;
+        inVar.setTextSize(hl.L(15.0f));
+        inVar.setTypeface(hl.o());
+        int i = aob.L6;
+        yob.U(inVar, i, null);
+        inVar.setGravity(ob6.a0 ? 5 : 3);
+        addView(inVar, tre.d(-1, 20.0f, (ob6.a0 ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        in inVar2 = new in(context, true, true, true);
+        this.b = inVar2;
+        inVar2.b(0.45f, 250L, k43.h);
+        inVar2.setTextSize(hl.L(15.0f));
+        yob.U(inVar2, i, null);
+        inVar2.setGravity(ob6.a0 ? 3 : 5);
+        addView(inVar2, tre.d(-2, 20.0f, (ob6.a0 ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        WeakHashMap weakHashMap = ihc.a;
+        new wgc(R.id.tag_accessibility_heading, Boolean.class, 0, 28, (byte) 2).a(this, Boolean.TRUE);
     }
 
-    @Override // c20
-    public final TextView a() {
-        byte b = this.E;
-        FragmentContextView fragmentContextView = this.G;
-        Context context = this.F;
-        switch (b) {
-            case 0:
-                TextView textView = new TextView(context);
-                textView.setMaxLines(1);
-                textView.setLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setTextSize(1, 15.0f);
-                textView.setGravity(19);
-                wjb wjbVar = fragmentContextView.q0;
-                int i = fragmentContextView.U;
-                if (i == 0 || i == 2) {
-                    textView.setGravity(19);
-                    textView.setTypeface(Typeface.DEFAULT);
-                    textView.setTextSize(1, 15.0f);
-                } else if (i == 4) {
-                    textView.setGravity(51);
-                    zkb.X(textView, bkb.s7, wjbVar);
-                    textView.setTypeface(gl.o());
-                    textView.setTextSize(1, 15.0f);
-                } else if (i == 1 || i == 3) {
-                    textView.setGravity(19);
-                    zkb.X(textView, bkb.z7, wjbVar);
-                    textView.setTypeface(gl.o());
-                    textView.setTextSize(1, 14.0f);
-                }
-                return textView;
-            default:
-                TextView textView2 = new TextView(context);
-                textView2.setMaxLines(1);
-                textView2.setLines(1);
-                textView2.setSingleLine(true);
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                textView2.setGravity(3);
-                textView2.setTextSize(1, 13.0f);
-                zkb.X(textView2, bkb.w7, fragmentContextView.q0);
-                return textView2;
+    public final void a(String str, Runnable runnable) {
+        boolean z = !ob6.a0;
+        in inVar = this.b;
+        inVar.c(str, z, true);
+        inVar.setOnClickListener(new el3(runnable, (byte) 2));
+    }
+
+    public final void b(String str, boolean z) {
+        boolean z2;
+        in inVar = this.a;
+        if (z) {
+            inVar.a();
+            if (!ob6.a0) {
+                z2 = true;
+                inVar.c(str, z2, true);
+            }
         }
+        z2 = false;
+        inVar.c(str, z2, true);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setText(this.a.getText());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 }

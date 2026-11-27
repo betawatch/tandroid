@@ -1,49 +1,18 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class the extends b4 {
-    public static final Parcelable.Creator<the> CREATOR = new rhe((byte) 11);
-    public final byte a;
-    public final byte b;
-    public final String c;
+public final class the implements zq7 {
+    public static final the a = new the();
+    public static final sa4 b = new sa4("maxLabels", c00.n(xnb.q(bpd.class, new tnd(1))));
+    public static final sa4 c = new sa4("confidenceThreshold", c00.n(xnb.q(bpd.class, new tnd(2))));
+    public static final sa4 d = new sa4("customLocalModelOptions", c00.n(xnb.q(bpd.class, new tnd(3))));
 
-    public the(byte b, byte b2, String str) {
-        this.a = b;
-        this.b = b2;
-        this.c = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || the.class != obj.getClass()) {
-            return false;
-        }
-        the theVar = (the) obj;
-        return this.a == theVar.a && this.b == theVar.b && this.c.equals(theVar.c);
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + ((((this.a + 31) * 31) + this.b) * 31);
-    }
-
-    public final String toString() {
-        return b00.j(ir2.p("AmsEntityUpdateParcelable{, mEntityId=", this.a, ", mAttributeId=", this.b, ", mValue='"), this.c, "'}");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        jte.l(parcel, 4, this.c);
-        jte.s(parcel, r);
+    @Override // l34
+    public final void a(Object obj, Object obj2) {
+        ar7 ar7Var = (ar7) obj2;
+        ar7Var.a(b, null);
+        ar7Var.a(c, ((b2f) obj).a);
+        ar7Var.a(d, null);
     }
 }

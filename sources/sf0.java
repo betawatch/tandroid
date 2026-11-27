@@ -1,123 +1,79 @@
 // default package
 
-import java.math.RoundingMode;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class sf0 {
-    public final String a;
-    public final char[] b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final byte[] g;
-    public final boolean h;
+public abstract class sf0 implements h73 {
+    private n73 dataSpec;
+    private final boolean isNetwork;
+    private int listenerCount;
+    private final ArrayList<v2c> listeners = new ArrayList<>(1);
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x007a A[LOOP:0: B:11:0x0076->B:13:0x007a, LOOP_END] */
+    public sf0(boolean z) {
+        this.isNetwork = z;
+    }
+
+    @Override // h73
+    public final void addTransferListener(v2c v2cVar) {
+        v2cVar.getClass();
+        if (this.listeners.contains(v2cVar)) {
+            return;
+        }
+        this.listeners.add(v2cVar);
+        this.listenerCount++;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x001f, code lost:
+    
+        if ((r0.h & 8) != 8) goto L11;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public sf0(String str, char[] cArr, byte[] bArr, boolean z) {
-        int i;
-        this.a = str;
-        cArr.getClass();
-        this.b = cArr;
-        try {
-            int length = cArr.length;
-            RoundingMode roundingMode = RoundingMode.UNNECESSARY;
-            RoundingMode roundingMode2 = RoundingMode.UNNECESSARY;
-            if (length > 0) {
-                switch (dp5.a[roundingMode2.ordinal()]) {
-                    case 1:
-                        ioe.b((length > 0) & (((length + (-1)) & length) == 0));
-                    case 2:
-                    case 3:
-                        i = 31 - Integer.numberOfLeadingZeros(length);
-                        break;
-                    case 4:
-                    case 5:
-                        i = 32 - Integer.numberOfLeadingZeros(length - 1);
-                        break;
-                    case 6:
-                    case 7:
-                    case 8:
-                        int numberOfLeadingZeros = Integer.numberOfLeadingZeros(length);
-                        i = (31 - numberOfLeadingZeros) + ((~(~(((-1257966797) >>> numberOfLeadingZeros) - length))) >>> 31);
-                        break;
-                    default:
-                        wn4.f();
-                        break;
+    public final void bytesTransferred(int i) {
+        n73 n73Var = this.dataSpec;
+        String str = gcc.a;
+        for (int i2 = 0; i2 < this.listenerCount; i2++) {
+            v2c v2cVar = this.listeners.get(i2);
+            boolean z = this.isNetwork;
+            la3 la3Var = (la3) v2cVar;
+            synchronized (la3Var) {
+                if (z) {
+                    if (n73Var != null) {
+                    }
+                    la3Var.i += i;
                 }
-                this.d = i;
-                int numberOfTrailingZeros = Integer.numberOfTrailingZeros(i);
-                int i2 = 1 << (3 - numberOfTrailingZeros);
-                this.e = i2;
-                this.f = i >> numberOfTrailingZeros;
-                this.c = cArr.length - 1;
-                this.g = bArr;
-                boolean[] zArr = new boolean[i2];
-                for (int i3 = 0; i3 < this.f; i3++) {
-                    int i4 = this.d;
-                    RoundingMode roundingMode3 = RoundingMode.CEILING;
-                    zArr[cle.b(i3 << 3, i4)] = true;
-                }
-                this.h = z;
             }
-            w26.j(tb4.n(length, "x (", ") must be > 0"));
-            i = 0;
-            this.d = i;
-            int numberOfTrailingZeros2 = Integer.numberOfTrailingZeros(i);
-            int i22 = 1 << (3 - numberOfTrailingZeros2);
-            this.e = i22;
-            this.f = i >> numberOfTrailingZeros2;
-            this.c = cArr.length - 1;
-            this.g = bArr;
-            boolean[] zArr2 = new boolean[i22];
-            while (i3 < this.f) {
-            }
-            this.h = z;
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException("Illegal alphabet length " + cArr.length, e);
         }
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof sf0)) {
-            return false;
+    @Override // h73
+    public Map getResponseHeaders() {
+        return Collections.EMPTY_MAP;
+    }
+
+    public final void transferEnded() {
+        n73 n73Var = this.dataSpec;
+        String str = gcc.a;
+        for (int i = 0; i < this.listenerCount; i++) {
+            ((la3) this.listeners.get(i)).g(n73Var, this.isNetwork);
         }
-        sf0 sf0Var = (sf0) obj;
-        return this.h == sf0Var.h && Arrays.equals(this.b, sf0Var.b);
+        this.dataSpec = null;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(this.b) + (this.h ? 1231 : 1237);
+    public final void transferInitializing(n73 n73Var) {
+        for (int i = 0; i < this.listenerCount; i++) {
+            this.listeners.get(i).getClass();
+        }
     }
 
-    public final String toString() {
-        return this.a;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public sf0(String str, char[] cArr) {
-        this(str, cArr, r1, false);
-        byte[] bArr = new byte[128];
-        Arrays.fill(bArr, (byte) -1);
-        for (int i = 0; i < cArr.length; i++) {
-            char c = cArr[i];
-            if (!(c < 128)) {
-                w26.j(nue.a("Non-ASCII character: %s", Character.valueOf(c)));
-                throw null;
-            }
-            if (!(bArr[c] == -1)) {
-                w26.j(nue.a("Duplicate character: %s", Character.valueOf(c)));
-                throw null;
-            }
-            bArr[c] = (byte) i;
+    public final void transferStarted(n73 n73Var) {
+        this.dataSpec = n73Var;
+        for (int i = 0; i < this.listenerCount; i++) {
+            ((la3) this.listeners.get(i)).h(n73Var, this.isNetwork);
         }
     }
 }

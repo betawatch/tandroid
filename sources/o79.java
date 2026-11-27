@@ -1,22 +1,142 @@
 // default package
 
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.view.animation.Interpolator;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class o79 extends FrameLayout {
-    public View a;
-    public TextView b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class o79 {
+    public pq8 a;
+    public ArrayList b;
+    public short c;
+    public short d;
+    public short e;
+    public short f;
+    public short g;
+    public Interpolator h;
+    public Interpolator i;
+    public Interpolator j;
+    public Interpolator k;
+    public short l;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(80.0f), TLObject.FLAG_30));
+    public static int b(f89 f89Var) {
+        int i = f89Var.l;
+        int i2 = i & 14;
+        if (f89Var.h()) {
+            return 4;
+        }
+        if ((i & 4) != 0) {
+            return i2;
+        }
+        int i3 = f89Var.d;
+        int b = f89Var.b();
+        return (i3 == -1 || b == -1 || i3 == b) ? i2 : i2 | 2048;
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    public abstract boolean a(f89 f89Var, l09 l09Var, l09 l09Var2);
+
+    public boolean c(f89 f89Var, List list) {
+        return f89Var.a instanceof tk3;
+    }
+
+    public final void d(f89 f89Var) {
+        pq8 pq8Var = this.a;
+        if (pq8Var != null) {
+            RecyclerView recyclerView = (RecyclerView) pq8Var.b;
+            boolean z = true;
+            f89Var.q(true);
+            View view = f89Var.a;
+            if (f89Var.j != null && f89Var.k == null) {
+                f89Var.j = null;
+            }
+            f89Var.k = null;
+            if ((f89Var.l & 16) == 0) {
+                oh2 oh2Var = recyclerView.b;
+                recyclerView.B0();
+                rx6 rx6Var = recyclerView.e;
+                zg2 zg2Var = (zg2) rx6Var.c;
+                i09 i09Var = (i09) rx6Var.b;
+                int indexOfChild = ((RecyclerView) i09Var.b).indexOfChild(view);
+                if (indexOfChild == -1) {
+                    rx6Var.A0(view);
+                } else if (zg2Var.w(indexOfChild)) {
+                    zg2Var.y(indexOfChild);
+                    rx6Var.A0(view);
+                    i09Var.N(indexOfChild);
+                } else {
+                    z = false;
+                }
+                if (z) {
+                    f89 V = RecyclerView.V(view);
+                    oh2Var.l(V);
+                    oh2Var.i(V);
+                }
+                recyclerView.C0(!z);
+                if (z || !f89Var.l()) {
+                    return;
+                }
+                recyclerView.removeDetachedView(view, false);
+            }
+        }
+    }
+
+    public final void e() {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        for (int i = 0; i < size; i++) {
+            d69 d69Var = (d69) arrayList.get(i);
+            d69Var.a.k(d69Var.b, d69Var.c, d69Var.d, false);
+        }
+        arrayList.clear();
+    }
+
+    public abstract void f(f89 f89Var);
+
+    public abstract void g();
+
+    public long h() {
+        return this.c;
+    }
+
+    public long i() {
+        return Math.max(this.f, this.g);
+    }
+
+    public long j() {
+        return this.e;
+    }
+
+    public abstract boolean k();
+
+    public l09 l(c89 c89Var, f89 f89Var, int i, List list) {
+        l09 l09Var = new l09((byte) 4);
+        View view = f89Var.a;
+        l09Var.b = view.getLeft();
+        l09Var.c = view.getTop();
+        view.getRight();
+        view.getBottom();
+        return l09Var;
+    }
+
+    public abstract void m();
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [int, short] */
+    public final void n(long j) {
+        ?? r1 = (int) j;
+        this.c = r1;
+        this.e = r1;
+        this.d = r1;
+        this.f = r1;
+        this.g = r1;
+    }
+
+    public final void o(Interpolator interpolator) {
+        this.h = interpolator;
+        this.i = interpolator;
+        this.j = interpolator;
+        this.k = interpolator;
     }
 }

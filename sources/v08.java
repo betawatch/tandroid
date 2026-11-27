@@ -1,70 +1,61 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class v08 {
-    public boolean f;
-    public boolean g;
-    public boolean h;
-    public Path i;
-    public Paint j;
-    public Drawable k;
-    public final n41 l;
-    public boolean m;
-    public final lm n;
-    public int o;
-    public final /* synthetic */ w08 r;
-    public final Paint a = new Paint(1);
-    public final Paint b = new Paint(1);
-    public final Paint c = new Paint(1);
-    public final Path d = new Path();
-    public final Path e = new Path();
-    public final RectF p = new RectF();
-    public final RectF q = new RectF();
+public final class v08 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x08 b;
 
-    public v08(w08 w08Var) {
-        this.r = w08Var;
-        this.l = new n41(w08Var);
-        this.n = new lm(w08Var, 0L, 320L, s33.h);
+    public v08(x08 x08Var, int i) {
+        this.b = x08Var;
+        this.a = i;
     }
 
-    public final void a(da7 da7Var) {
-        w08 w08Var = this.r;
-        wjb wjbVar = w08Var.a;
-        if (da7Var == null) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length;
+        String code;
+        x08 x08Var = this.b;
+        if (x08Var.I || (length = editable.length()) < 1) {
             return;
         }
-        int[] iArr = da7Var.g;
-        int[] iArr2 = da7Var.h;
-        boolean o = wjbVar == null ? bkb.I.o() : wjbVar.a();
-        byte b = w08Var.c;
-        Paint paint = this.b;
-        Paint paint2 = this.a;
-        if (b != 1) {
-            paint2.setColor(da7Var.e(0, wjbVar));
-            paint.setColor(da7Var.o(o) ? da7Var.e(1, wjbVar) : da7Var.e(0, wjbVar));
-            this.f = da7Var.o(o);
-            this.g = false;
-            return;
+        int i = this.a;
+        if (length > 1) {
+            String obj = editable.toString();
+            x08Var.I = true;
+            for (int i2 = 0; i2 < Math.min(x08Var.P - i, length); i2++) {
+                if (i2 == 0) {
+                    editable.replace(0, length, obj.substring(i2, i2 + 1));
+                } else {
+                    x08Var.d[i + i2].setText(obj.substring(i2, i2 + 1));
+                }
+            }
+            x08Var.I = false;
         }
-        if (o && da7Var.g() != da7Var.f() && da7Var.i() == da7Var.f()) {
-            paint2.setColor(da7Var.e(1, wjbVar));
-            paint.setColor(da7Var.e(0, wjbVar));
-        } else {
-            paint2.setColor(da7Var.e(0, wjbVar));
-            paint.setColor(da7Var.e(1, wjbVar));
+        if (i != x08Var.P - 1) {
+            int i3 = i + 1;
+            EditTextBoldCursor editTextBoldCursor = x08Var.d[i3];
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            x08Var.d[i3].requestFocus();
         }
-        this.c.setColor(da7Var.e(2, wjbVar));
-        this.f = da7Var.h(o) != (o ? iArr2 : iArr)[0];
-        int j = da7Var.j(o);
-        if (o) {
-            iArr = iArr2;
+        int i4 = x08Var.P;
+        if (i == i4 - 1 || (i == i4 - 2 && length >= 2)) {
+            code = x08Var.getCode();
+            if (code.length() == x08Var.P) {
+                x08Var.h(null);
+            }
         }
-        this.g = j != iArr[0];
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

@@ -3,23 +3,23 @@ package com.google.mlkit.vision.common.internal;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class VisionCommonRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        lp2 b = mp2.b(ig7.class);
-        b.a(new wd3(2, 0, hg7.class));
-        b.f = eef.e;
+        eq2 b = fq2.b(ri7.class);
+        b.a(new qe3(2, 0, qi7.class));
+        b.f = uif.e;
         Object[] objArr = {b.b()};
         for (int i = 0; i < 1; i++) {
-            t2f t2fVar = f7f.f;
+            k7f k7fVar = wbf.f;
             if (objArr[i] == null) {
-                fvc.f(de9.k(i, "at index "));
+                p3d.h(uh9.k(i, "at index "));
                 return null;
             }
         }
-        t2f t2fVar2 = f7f.f;
-        return new kff(1, objArr);
+        k7f k7fVar2 = wbf.f;
+        return new akf(1, objArr);
     }
 }

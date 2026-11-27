@@ -1,123 +1,39 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class sx8 implements ValueAnimator.AnimatorUpdateListener {
-    public final vx8 a;
-    public final gb2 b;
-    public final ImageReceiver c;
-    public final long d;
-    public zk0 e;
-    public zk0 f;
-    public Paint g;
-    public final StaticLayout h;
-    public float i;
-    public float j;
-    public ValueAnimator k;
-    public float l;
-    public boolean m;
-    public ValueAnimator n;
-    public float o;
-    public boolean p;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sx8 {
+    public final short a;
+    public final byte[] b;
+    public final Object c;
+    public final Object d;
 
-    public sx8(vx8 vx8Var, long j) {
-        ImageReceiver imageReceiver;
-        String str;
-        String str2;
-        pb0 pb0Var = new pb0((wjb) null);
-        int i = y6c.t0;
-        this.l = 1.0f;
-        this.m = true;
-        this.o = 0.0f;
-        this.p = false;
-        ImageReceiver imageReceiver2 = new ImageReceiver(vx8Var.a);
-        this.c = imageReceiver2;
-        this.a = vx8Var;
-        gb2 gb2Var = vx8Var.E;
-        this.b = gb2Var;
-        this.d = j;
-        pb0Var.p = 1.0f;
-        if (cf3.D(j)) {
-            TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(j));
-            pb0Var.q(V1);
-            if (l7c.D(V1)) {
-                str2 = k96.M0(2131745709, null);
-                pb0Var.f(1);
-                pb0Var.p = 0.75f;
-                imageReceiver = imageReceiver2;
-                imageReceiver.Z(null, null, null, null, pb0Var, 0L, null, V1, 0);
-                imageReceiver.q0(gl.L(21.0f));
-                imageReceiver.i0(0.0f, 0.0f, gl.L(42.0f), gl.L(42.0f));
-                Paint c2 = gb2Var.c2("paintChatActionText");
-                if (str2 != null || c2 == null) {
-                }
-                int L = gl.q.x - gl.L(48.0f);
-                TextPaint textPaint = new TextPaint(c2);
-                this.h = new StaticLayout(TextUtils.ellipsize(str2, textPaint, L, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r5, 0, r5.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                return;
-            }
-            imageReceiver = imageReceiver2;
-            str = V1 != null ? qu2.m(0, V1.first_name, V1.last_name) : "";
-            imageReceiver.U(V1, pb0Var, null);
-        } else {
-            imageReceiver = imageReceiver2;
-            TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-j));
-            str = K0 != null ? K0.title : "";
-            pb0Var.p(K0);
-            imageReceiver.U(K0, pb0Var, null);
-        }
-        str2 = str;
-        imageReceiver.q0(gl.L(21.0f));
-        imageReceiver.i0(0.0f, 0.0f, gl.L(42.0f), gl.L(42.0f));
-        Paint c22 = gb2Var.c2("paintChatActionText");
-        if (str2 != null) {
-        }
+    /* JADX WARN: Multi-variable type inference failed */
+    public sx8(int i, String str, int i2, ArrayList arrayList, byte[] bArr) {
+        this.c = str;
+        this.a = i2;
+        this.d = arrayList == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList);
+        this.b = bArr;
     }
 
-    public static float b(float f, float f2, float f3, float f4) {
-        float f5 = f2 / 2.0f;
-        float f6 = f - f5;
-        float f7 = f + f5;
-        float f8 = f4 - f3;
-        if (f2 <= f8) {
-            return f6 < f3 ? f3 + f5 : f7 > f4 ? f4 - f5 : f;
+    public final int a() {
+        short s = this.a;
+        if (s != 2) {
+            return s != 3 ? 0 : 512;
         }
-        float f9 = (f3 + f4) / 2.0f;
-        float f10 = f2 - f8;
-        float max = Math.max(0.0f, f3 - f6);
-        float max2 = Math.max(0.0f, f7 - f4);
-        float f11 = max + max2;
-        return f11 < 0.1f ? f9 : b00.A(f10, 2.0f, (max - max2) / f11, f9);
+        return 2048;
     }
 
-    public final void a(float f, float f2, float f3, float f4, Canvas canvas) {
-        canvas.save();
-        canvas.translate(f - f3, f2 - f3);
-        canvas.scale(f3 / gl.L(21.0f), f3 / gl.L(21.0f));
-        float f5 = ((this.l * 0.25f) + 0.75f) * f4;
-        ImageReceiver imageReceiver = this.c;
-        imageReceiver.setAlpha(f5);
-        imageReceiver.h(canvas, null);
-        canvas.restore();
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        if (valueAnimator == this.n) {
-            this.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        } else if (valueAnimator == this.k) {
-            this.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        }
-        this.a.invalidateSelf();
+    /* JADX WARN: Multi-variable type inference failed */
+    public sx8(UUID uuid, int i, byte[] bArr, UUID[] uuidArr) {
+        this.c = uuid;
+        this.a = i;
+        this.b = bArr;
+        this.d = uuidArr;
     }
 }

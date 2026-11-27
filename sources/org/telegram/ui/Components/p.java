@@ -27,15 +27,15 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.p;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class p extends FrameLayout implements tjb {
+public class p extends FrameLayout implements snb {
     public AnimatorSet E;
     public final EditTextBoldCursor[] F;
-    public final c7 G;
+    public final d7 G;
     public final ImageView H;
     public final TextView I;
-    public final r7 J;
+    public final s7 J;
     public int K;
     public byte L;
     public byte M;
@@ -49,7 +49,7 @@ public class p extends FrameLayout implements tjb {
     public int U;
     public float V;
     public long W;
-    public final nl2 a;
+    public final hm2 a;
     public float a0;
     public final Paint b;
     public float b0;
@@ -58,7 +58,7 @@ public class p extends FrameLayout implements tjb {
     public final Paint d;
     public float d0;
     public final Paint e;
-    public wjb e0;
+    public vnb e0;
     public final Drawable f;
     public int f0;
     public boolean h;
@@ -67,9 +67,9 @@ public class p extends FrameLayout implements tjb {
     public Bitmap s;
     public final ColorPicker$RadioButton[] w;
     public final FrameLayout x;
-    public final zf2 y;
+    public final rg2 y;
 
-    public p(Context context, boolean z, nl2 nl2Var) {
+    public p(Context context, boolean z, hm2 hm2Var) {
         super(context);
         this.n = new RectF();
         this.w = new ColorPicker$RadioButton[4];
@@ -83,7 +83,7 @@ public class p extends FrameLayout implements tjb {
         this.b0 = 1.0f;
         this.c0 = 0.0f;
         this.d0 = 1.0f;
-        this.a = nl2Var;
+        this.a = hm2Var;
         this.F = new EditTextBoldCursor[2];
         final byte b2 = 0;
         setWillNotDraw(false);
@@ -95,23 +95,23 @@ public class p extends FrameLayout implements tjb {
         this.e = paint;
         paint.setColor(301989888);
         setClipChildren(false);
-        zf2 zf2Var = new zf2(this, context);
-        this.y = zf2Var;
-        zf2Var.setOrientation(0);
-        addView(zf2Var, nme.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
-        zf2Var.setWillNotDraw(false);
+        rg2 rg2Var = new rg2(this, context);
+        this.y = rg2Var;
+        rg2Var.setOrientation(0);
+        addView(rg2Var, tre.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
+        rg2Var.setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         frameLayout.setClipChildren(false);
-        addView(frameLayout, nme.d(kk7.D2, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
+        addView(frameLayout, tre.d(jn7.D2, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
         int i = 0;
         while (i < 4) {
             this.w[i] = new ColorPicker$RadioButton(context);
             ColorPicker$RadioButton colorPicker$RadioButton = this.w[i];
             colorPicker$RadioButton.d = this.T == i;
             colorPicker$RadioButton.b(false);
-            this.x.addView(this.w[i], nme.d(30, 30.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
-            this.w[i].setOnClickListener(new View.OnClickListener(this) { // from class: jl2
+            this.x.addView(this.w[i], tre.d(30, 30.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.w[i].setOnClickListener(new View.OnClickListener(this) { // from class: dm2
                 public final /* synthetic */ p b;
 
                 {
@@ -141,34 +141,34 @@ public class p extends FrameLayout implements tjb {
                 break;
             }
             if (i2 % 2 == 0) {
-                editTextBoldCursorArr[i2] = new kl2(this, context, i2, b2);
+                editTextBoldCursorArr[i2] = new em2(this, context, i2, b2);
                 this.F[i2].setBackgroundDrawable(null);
                 this.F[i2].setText("#");
                 this.F[i2].setEnabled(false);
                 this.F[i2].setFocusable(false);
-                this.F[i2].setPadding(0, gl.L(5.0f), 0, gl.L(16.0f));
-                this.y.addView(this.F[i2], nme.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
+                this.F[i2].setPadding(0, hl.L(5.0f), 0, hl.L(16.0f));
+                this.y.addView(this.F[i2], tre.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
             } else {
-                editTextBoldCursorArr[i2] = new kl2(this, context, i2, b);
+                editTextBoldCursorArr[i2] = new em2(this, context, i2, b);
                 this.F[i2].setBackgroundDrawable(null);
                 this.F[i2].setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
                 this.F[i2].setHint("8BC6ED");
-                this.F[i2].setPadding(0, gl.L(5.0f), 0, gl.L(16.0f));
-                this.y.addView(this.F[i2], nme.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
+                this.F[i2].setPadding(0, hl.L(5.0f), 0, hl.L(16.0f));
+                this.y.addView(this.F[i2], tre.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
                 this.F[i2].addTextChangedListener(new o(this, i2));
-                this.F[i2].setOnEditorActionListener(new ng(b));
+                this.F[i2].setOnEditorActionListener(new mh(b));
             }
             this.F[i2].setTextSize(1, 16.0f);
-            zkb.D(this.F[i2], bkb.G6, this.e0);
+            yob.D(this.F[i2], aob.H6, this.e0);
             EditTextBoldCursor editTextBoldCursor = this.F[i2];
-            int i3 = bkb.F6;
-            zkb.X(editTextBoldCursor, i3, this.e0);
-            this.F[i2].setCursorColor(bkb.v0(i3, this.e0));
-            this.F[i2].setCursorSize(gl.L(18.0f));
+            int i3 = aob.G6;
+            yob.X(editTextBoldCursor, i3, this.e0);
+            this.F[i2].setCursorColor(aob.v0(i3, this.e0));
+            this.F[i2].setCursorSize(hl.L(18.0f));
             this.F[i2].setCursorWidth(1.5f);
             this.F[i2].setSingleLine(true);
             this.F[i2].setGravity(19);
-            this.F[i2].setHeaderHintColor(bkb.v0(bkb.K6, this.e0));
+            this.F[i2].setHeaderHintColor(aob.v0(aob.L6, this.e0));
             this.F[i2].setTransformHintToHeader(true);
             this.F[i2].setInputType(524416);
             this.F[i2].setImeOptions(268435462);
@@ -181,17 +181,17 @@ public class p extends FrameLayout implements tjb {
         }
         ImageView imageView = new ImageView(getContext());
         this.H = imageView;
-        int i4 = bkb.H5;
-        ff0 f0 = bkb.f0(bkb.v0(i4, this.e0), 1, -1);
-        vkb M = zkb.M(i4);
-        wjb wjbVar = this.e0;
+        int i4 = aob.I5;
+        hf0 f0 = aob.f0(aob.v0(i4, this.e0), 1, -1);
+        uob M = yob.M(i4);
+        vnb vnbVar = this.e0;
         imageView.setBackground(f0);
-        zkb.j(imageView, f0, null, M, wjbVar);
+        yob.j(imageView, f0, null, M, vnbVar);
         imageView.setImageResource(R.drawable.msg_add);
-        int i5 = bkb.F6;
-        wjb wjbVar2 = this.e0;
+        int i5 = aob.G6;
+        vnb vnbVar2 = this.e0;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        zkb.s(imageView, i5, wjbVar2, mode);
+        yob.s(imageView, i5, vnbVar2, mode);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.n
@@ -213,8 +213,8 @@ public class p extends FrameLayout implements tjb {
                         Property property2 = View.SCALE_Y;
                         Property property3 = View.SCALE_X;
                         Property property4 = View.ALPHA;
-                        nl2 nl2Var2 = pVar.a;
-                        c7 c7Var = pVar.G;
+                        hm2 hm2Var2 = pVar.a;
+                        d7 d7Var = pVar.G;
                         ImageView imageView2 = pVar.H;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr = pVar.w;
                         if (pVar.E == null) {
@@ -225,9 +225,9 @@ public class p extends FrameLayout implements tjb {
                                     colorPicker$RadioButton2.a(p.c(colorPicker$RadioButtonArr[0].e));
                                 }
                                 if (pVar.h) {
-                                    nl2Var2.c(colorPicker$RadioButtonArr[0].e, 0, true);
+                                    hm2Var2.c(colorPicker$RadioButtonArr[0].e, 0, true);
                                 }
-                                nl2Var2.c(colorPicker$RadioButtonArr[1].e, 1, true);
+                                hm2Var2.c(colorPicker$RadioButtonArr[1].e, 1, true);
                                 pVar.L = (byte) 2;
                             } else if (b6 == 2) {
                                 pVar.L = (byte) 3;
@@ -240,46 +240,46 @@ public class p extends FrameLayout implements tjb {
                                     } else {
                                         fArr[0] = f + 60.0f;
                                     }
-                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(kk7.d4, fArr));
+                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(jn7.d4, fArr));
                                 }
-                                nl2Var2.c(colorPicker$RadioButtonArr[2].e, 2, true);
+                                hm2Var2.c(colorPicker$RadioButtonArr[2].e, 2, true);
                             } else if (b6 == 3) {
                                 pVar.L = (byte) 4;
                                 ColorPicker$RadioButton colorPicker$RadioButton3 = colorPicker$RadioButtonArr[3];
                                 if (colorPicker$RadioButton3.e == 0) {
                                     colorPicker$RadioButton3.a(p.c(colorPicker$RadioButtonArr[2].e));
                                 }
-                                nl2Var2.c(colorPicker$RadioButtonArr[3].e, 3, true);
+                                hm2Var2.c(colorPicker$RadioButtonArr[3].e, 3, true);
                             }
                             ArrayList arrayList = new ArrayList();
                             if (pVar.L < pVar.M) {
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, oo1.h(pVar.L, 1, gl.L(13.0f), (pVar.L - 1) * gl.L(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, bp1.h(pVar.L, 1, hl.L(13.0f), (pVar.L - 1) * hl.L(30.0f))));
                             } else {
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, oo1.h(pVar.L, 1, gl.L(13.0f), (pVar.L - 1) * gl.L(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, bp1.h(pVar.L, 1, hl.L(13.0f), (pVar.L - 1) * hl.L(30.0f))));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
                             }
                             if (pVar.L > 1) {
-                                if (c7Var.getVisibility() != 0) {
-                                    c7Var.setScaleX(0.0f);
-                                    c7Var.setScaleY(0.0f);
+                                if (d7Var.getVisibility() != 0) {
+                                    d7Var.setScaleX(0.0f);
+                                    d7Var.setScaleY(0.0f);
                                 }
-                                c7Var.setVisibility(0);
-                                arrayList.add(ObjectAnimator.ofFloat(c7Var, (Property<c7, Float>) property4, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(c7Var, (Property<c7, Float>) property3, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(c7Var, (Property<c7, Float>) property2, 1.0f));
+                                d7Var.setVisibility(0);
+                                arrayList.add(ObjectAnimator.ofFloat(d7Var, (Property<d7, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(d7Var, (Property<d7, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(d7Var, (Property<d7, Float>) property2, 1.0f));
                             }
                             colorPicker$RadioButtonArr[pVar.L - 1].callOnClick();
                             pVar.E = new AnimatorSet();
                             pVar.g(pVar.getMeasuredWidth(), arrayList, false);
                             pVar.E.playTogether(arrayList);
                             pVar.E.setDuration(180L);
-                            pVar.E.setInterpolator(s33.g);
-                            pVar.E.addListener(new ll2(pVar, b5));
+                            pVar.E.setInterpolator(k43.g);
+                            pVar.E.addListener(new fm2(pVar, b5));
                             pVar.E.start();
                             break;
                         }
@@ -289,7 +289,7 @@ public class p extends FrameLayout implements tjb {
                         Property property6 = View.SCALE_Y;
                         Property property7 = View.SCALE_X;
                         Property property8 = View.ALPHA;
-                        c7 c7Var2 = pVar.G;
+                        d7 d7Var2 = pVar.G;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = pVar.w;
                         ImageView imageView3 = pVar.H;
                         if (pVar.E == null) {
@@ -297,16 +297,16 @@ public class p extends FrameLayout implements tjb {
                             byte b7 = pVar.L;
                             if (b7 == 2) {
                                 pVar.L = (byte) 1;
-                                arrayList2.add(ObjectAnimator.ofFloat(c7Var2, (Property<c7, Float>) property8, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(c7Var2, (Property<c7, Float>) property7, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(c7Var2, (Property<c7, Float>) property6, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(d7Var2, (Property<d7, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(d7Var2, (Property<d7, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(d7Var2, (Property<d7, Float>) property6, 0.0f));
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, 0.0f));
                             } else if (b7 == 3) {
                                 pVar.L = (byte) 2;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, gl.L(13.0f) + gl.L(30.0f)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, hl.L(13.0f) + hl.L(30.0f)));
                             } else if (b7 == 4) {
                                 pVar.L = (byte) 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, (gl.L(30.0f) << 1) + (gl.L(13.0f) << 1)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, (hl.L(30.0f) << 1) + (hl.L(13.0f) << 1)));
                             }
                             if (pVar.L < pVar.M) {
                                 imageView3.setVisibility(0);
@@ -335,11 +335,11 @@ public class p extends FrameLayout implements tjb {
                             int i9 = 0;
                             while (i9 < colorPicker$RadioButtonArr2.length) {
                                 byte b8 = pVar.L;
-                                nl2 nl2Var3 = pVar.a;
+                                hm2 hm2Var3 = pVar.a;
                                 if (i9 < b8) {
-                                    nl2Var3.c(colorPicker$RadioButtonArr2[i9].e, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
+                                    hm2Var3.c(colorPicker$RadioButtonArr2[i9].e, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
                                 } else {
-                                    nl2Var3.c(0, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
+                                    hm2Var3.c(0, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
                                 }
                                 i9++;
                             }
@@ -347,8 +347,8 @@ public class p extends FrameLayout implements tjb {
                             pVar.g(pVar.getMeasuredWidth(), arrayList2, true);
                             pVar.E.playTogether(arrayList2);
                             pVar.E.setDuration(180L);
-                            pVar.E.setInterpolator(s33.g);
-                            pVar.E.addListener(new ll2(pVar, b4));
+                            pVar.E.setInterpolator(k43.g);
+                            pVar.E.addListener(new fm2(pVar, b4));
                             pVar.E.start();
                             break;
                         }
@@ -356,23 +356,23 @@ public class p extends FrameLayout implements tjb {
                 }
             }
         });
-        imageView.setContentDescription(k96.M0(2131754483, null));
-        addView(imageView, nme.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
-        c7 c7Var = new c7((byte) 1, getContext(), this);
-        this.G = c7Var;
-        ff0 f02 = bkb.f0(bkb.v0(i4, this.e0), 1, -1);
-        vkb M2 = zkb.M(i4);
-        wjb wjbVar3 = this.e0;
-        c7Var.setBackground(f02);
-        zkb.j(c7Var, f02, null, M2, wjbVar3);
-        c7Var.setImageResource(R.drawable.msg_close);
-        zkb.s(c7Var, i5, this.e0, mode);
-        c7Var.setAlpha(0.0f);
-        c7Var.setScaleX(0.0f);
-        c7Var.setScaleY(0.0f);
-        c7Var.setScaleType(scaleType);
-        c7Var.setVisibility(4);
-        c7Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.n
+        imageView.setContentDescription(ob6.M0(2131754479, null));
+        addView(imageView, tre.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
+        d7 d7Var = new d7((byte) 1, getContext(), this);
+        this.G = d7Var;
+        hf0 f02 = aob.f0(aob.v0(i4, this.e0), 1, -1);
+        uob M2 = yob.M(i4);
+        vnb vnbVar3 = this.e0;
+        d7Var.setBackground(f02);
+        yob.j(d7Var, f02, null, M2, vnbVar3);
+        d7Var.setImageResource(R.drawable.msg_close);
+        yob.s(d7Var, i5, this.e0, mode);
+        d7Var.setAlpha(0.0f);
+        d7Var.setScaleX(0.0f);
+        d7Var.setScaleY(0.0f);
+        d7Var.setScaleType(scaleType);
+        d7Var.setVisibility(4);
+        d7Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.n
             public final /* synthetic */ p b;
 
             {
@@ -391,8 +391,8 @@ public class p extends FrameLayout implements tjb {
                         Property property2 = View.SCALE_Y;
                         Property property3 = View.SCALE_X;
                         Property property4 = View.ALPHA;
-                        nl2 nl2Var2 = pVar.a;
-                        c7 c7Var2 = pVar.G;
+                        hm2 hm2Var2 = pVar.a;
+                        d7 d7Var2 = pVar.G;
                         ImageView imageView2 = pVar.H;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr = pVar.w;
                         if (pVar.E == null) {
@@ -403,9 +403,9 @@ public class p extends FrameLayout implements tjb {
                                     colorPicker$RadioButton2.a(p.c(colorPicker$RadioButtonArr[0].e));
                                 }
                                 if (pVar.h) {
-                                    nl2Var2.c(colorPicker$RadioButtonArr[0].e, 0, true);
+                                    hm2Var2.c(colorPicker$RadioButtonArr[0].e, 0, true);
                                 }
-                                nl2Var2.c(colorPicker$RadioButtonArr[1].e, 1, true);
+                                hm2Var2.c(colorPicker$RadioButtonArr[1].e, 1, true);
                                 pVar.L = (byte) 2;
                             } else if (b6 == 2) {
                                 pVar.L = (byte) 3;
@@ -418,46 +418,46 @@ public class p extends FrameLayout implements tjb {
                                     } else {
                                         fArr[0] = f + 60.0f;
                                     }
-                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(kk7.d4, fArr));
+                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(jn7.d4, fArr));
                                 }
-                                nl2Var2.c(colorPicker$RadioButtonArr[2].e, 2, true);
+                                hm2Var2.c(colorPicker$RadioButtonArr[2].e, 2, true);
                             } else if (b6 == 3) {
                                 pVar.L = (byte) 4;
                                 ColorPicker$RadioButton colorPicker$RadioButton3 = colorPicker$RadioButtonArr[3];
                                 if (colorPicker$RadioButton3.e == 0) {
                                     colorPicker$RadioButton3.a(p.c(colorPicker$RadioButtonArr[2].e));
                                 }
-                                nl2Var2.c(colorPicker$RadioButtonArr[3].e, 3, true);
+                                hm2Var2.c(colorPicker$RadioButtonArr[3].e, 3, true);
                             }
                             ArrayList arrayList = new ArrayList();
                             if (pVar.L < pVar.M) {
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, oo1.h(pVar.L, 1, gl.L(13.0f), (pVar.L - 1) * gl.L(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, bp1.h(pVar.L, 1, hl.L(13.0f), (pVar.L - 1) * hl.L(30.0f))));
                             } else {
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, oo1.h(pVar.L, 1, gl.L(13.0f), (pVar.L - 1) * gl.L(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, bp1.h(pVar.L, 1, hl.L(13.0f), (pVar.L - 1) * hl.L(30.0f))));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
                             }
                             if (pVar.L > 1) {
-                                if (c7Var2.getVisibility() != 0) {
-                                    c7Var2.setScaleX(0.0f);
-                                    c7Var2.setScaleY(0.0f);
+                                if (d7Var2.getVisibility() != 0) {
+                                    d7Var2.setScaleX(0.0f);
+                                    d7Var2.setScaleY(0.0f);
                                 }
-                                c7Var2.setVisibility(0);
-                                arrayList.add(ObjectAnimator.ofFloat(c7Var2, (Property<c7, Float>) property4, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(c7Var2, (Property<c7, Float>) property3, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(c7Var2, (Property<c7, Float>) property2, 1.0f));
+                                d7Var2.setVisibility(0);
+                                arrayList.add(ObjectAnimator.ofFloat(d7Var2, (Property<d7, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(d7Var2, (Property<d7, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(d7Var2, (Property<d7, Float>) property2, 1.0f));
                             }
                             colorPicker$RadioButtonArr[pVar.L - 1].callOnClick();
                             pVar.E = new AnimatorSet();
                             pVar.g(pVar.getMeasuredWidth(), arrayList, false);
                             pVar.E.playTogether(arrayList);
                             pVar.E.setDuration(180L);
-                            pVar.E.setInterpolator(s33.g);
-                            pVar.E.addListener(new ll2(pVar, b5));
+                            pVar.E.setInterpolator(k43.g);
+                            pVar.E.addListener(new fm2(pVar, b5));
                             pVar.E.start();
                             break;
                         }
@@ -467,7 +467,7 @@ public class p extends FrameLayout implements tjb {
                         Property property6 = View.SCALE_Y;
                         Property property7 = View.SCALE_X;
                         Property property8 = View.ALPHA;
-                        c7 c7Var22 = pVar.G;
+                        d7 d7Var22 = pVar.G;
                         ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = pVar.w;
                         ImageView imageView3 = pVar.H;
                         if (pVar.E == null) {
@@ -475,16 +475,16 @@ public class p extends FrameLayout implements tjb {
                             byte b7 = pVar.L;
                             if (b7 == 2) {
                                 pVar.L = (byte) 1;
-                                arrayList2.add(ObjectAnimator.ofFloat(c7Var22, (Property<c7, Float>) property8, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(c7Var22, (Property<c7, Float>) property7, 0.0f));
-                                arrayList2.add(ObjectAnimator.ofFloat(c7Var22, (Property<c7, Float>) property6, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(d7Var22, (Property<d7, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(d7Var22, (Property<d7, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(d7Var22, (Property<d7, Float>) property6, 0.0f));
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, 0.0f));
                             } else if (b7 == 3) {
                                 pVar.L = (byte) 2;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, gl.L(13.0f) + gl.L(30.0f)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, hl.L(13.0f) + hl.L(30.0f)));
                             } else if (b7 == 4) {
                                 pVar.L = (byte) 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, (gl.L(30.0f) << 1) + (gl.L(13.0f) << 1)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView3, (Property<ImageView, Float>) property5, (hl.L(30.0f) << 1) + (hl.L(13.0f) << 1)));
                             }
                             if (pVar.L < pVar.M) {
                                 imageView3.setVisibility(0);
@@ -513,11 +513,11 @@ public class p extends FrameLayout implements tjb {
                             int i9 = 0;
                             while (i9 < colorPicker$RadioButtonArr2.length) {
                                 byte b8 = pVar.L;
-                                nl2 nl2Var3 = pVar.a;
+                                hm2 hm2Var3 = pVar.a;
                                 if (i9 < b8) {
-                                    nl2Var3.c(colorPicker$RadioButtonArr2[i9].e, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
+                                    hm2Var3.c(colorPicker$RadioButtonArr2[i9].e, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
                                 } else {
-                                    nl2Var3.c(0, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
+                                    hm2Var3.c(0, i9, i9 == colorPicker$RadioButtonArr2.length - 1);
                                 }
                                 i9++;
                             }
@@ -525,8 +525,8 @@ public class p extends FrameLayout implements tjb {
                             pVar.g(pVar.getMeasuredWidth(), arrayList2, true);
                             pVar.E.playTogether(arrayList2);
                             pVar.E.setDuration(180L);
-                            pVar.E.setInterpolator(s33.g);
-                            pVar.E.addListener(new ll2(pVar, b4));
+                            pVar.E.setInterpolator(k43.g);
+                            pVar.E.addListener(new fm2(pVar, b4));
                             pVar.E.start();
                             break;
                         }
@@ -534,38 +534,38 @@ public class p extends FrameLayout implements tjb {
                 }
             }
         });
-        c7Var.setContentDescription(k96.M0(2131752087, null));
-        addView(c7Var, nme.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
+        d7Var.setContentDescription(ob6.M0(2131752064, null));
+        addView(d7Var, tre.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.I = textView;
         textView.setTextSize(1, 15.0f);
-        textView.setTypeface(gl.o());
+        textView.setTypeface(hl.o());
         textView.setGravity(17);
-        textView.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
-        zkb.X(textView, i5, this.e0);
-        addView(textView, nme.d(-2, 36.0f, 53, 0.0f, 3.0f, 14.0f, 0.0f));
-        textView.setOnClickListener(new x00(b));
+        textView.setPadding(hl.L(4.0f), 0, hl.L(4.0f), 0);
+        yob.X(textView, i5, this.e0);
+        addView(textView, tre.d(-2, 36.0f, 53, 0.0f, 3.0f, 14.0f, 0.0f));
+        textView.setOnClickListener(new y00(b));
         if (z) {
-            r7 r7Var = new r7(context, (r6) null, bkb.v0(i5, this.e0));
-            this.J = r7Var;
-            r7Var.setLongClickEnabled(false);
-            r7Var.setIcon(R.drawable.ic_ab_other);
-            r7Var.setContentDescription(k96.M0(2131754838, null));
-            r7Var.e(1, R.drawable.msg_edit, k96.M0(2131747604, null));
-            r7Var.e(2, R.drawable.msg_share, k96.M0(2131745234, null));
-            r7Var.e(3, R.drawable.msg_delete, k96.M0(2131751474, null));
-            r7Var.setMenuYOffset(-gl.L(80.0f));
-            r7Var.setSubMenuOpenSide(2);
-            r7Var.setDelegate(new rh1((Object) this, (byte) 27));
-            r7Var.setAdditionalYOffset(gl.L(72.0f));
-            r7Var.setTranslationX(gl.L(6.0f));
-            ff0 f03 = bkb.f0(bkb.v0(i4, this.e0), 1, -1);
-            vkb M3 = zkb.M(i4);
-            wjb wjbVar4 = this.e0;
-            r7Var.setBackground(f03);
-            zkb.j(r7Var, f03, null, M3, wjbVar4);
-            addView(r7Var, nme.d(30, 30.0f, 53, 0.0f, 2.0f, 10.0f, 0.0f));
-            r7Var.setOnClickListener(new View.OnClickListener(this) { // from class: jl2
+            s7 s7Var = new s7(context, (s6) null, aob.v0(i5, this.e0));
+            this.J = s7Var;
+            s7Var.setLongClickEnabled(false);
+            s7Var.setIcon(R.drawable.ic_ab_other);
+            s7Var.setContentDescription(ob6.M0(2131754834, null));
+            s7Var.e(1, R.drawable.msg_edit, ob6.M0(2131747524, null));
+            s7Var.e(2, R.drawable.msg_share, ob6.M0(2131745154, null));
+            s7Var.e(3, R.drawable.msg_delete, ob6.M0(2131751451, null));
+            s7Var.setMenuYOffset(-hl.L(80.0f));
+            s7Var.setSubMenuOpenSide(2);
+            s7Var.setDelegate(new rd1((Object) this, (byte) 29));
+            s7Var.setAdditionalYOffset(hl.L(72.0f));
+            s7Var.setTranslationX(hl.L(6.0f));
+            hf0 f03 = aob.f0(aob.v0(i4, this.e0), 1, -1);
+            uob M3 = yob.M(i4);
+            vnb vnbVar4 = this.e0;
+            s7Var.setBackground(f03);
+            yob.j(s7Var, f03, null, M3, vnbVar4);
+            addView(s7Var, tre.d(30, 30.0f, 53, 0.0f, 2.0f, 10.0f, 0.0f));
+            s7Var.setOnClickListener(new View.OnClickListener(this) { // from class: dm2
                 public final /* synthetic */ p b;
 
                 {
@@ -605,7 +605,7 @@ public class p extends FrameLayout implements tjb {
         } else {
             fArr[0] = f2 + 20.0f;
         }
-        return Color.HSVToColor(kk7.d4, fArr);
+        return Color.HSVToColor(jn7.d4, fArr);
     }
 
     private float getBrightness() {
@@ -624,7 +624,7 @@ public class p extends FrameLayout implements tjb {
     }
 
     public final void b(Canvas canvas, int i, int i2, int i3, boolean z) {
-        int L = gl.L(z ? 12.0f : 16.0f);
+        int L = hl.L(z ? 12.0f : 16.0f);
         Drawable drawable = this.f;
         drawable.setBounds(i - L, i2 - L, i + L, L + i2);
         drawable.draw(canvas);
@@ -632,9 +632,9 @@ public class p extends FrameLayout implements tjb {
         paint.setColor(-1);
         float f = i;
         float f2 = i2;
-        canvas.drawCircle(f, f2, gl.L(z ? 11.0f : 15.0f), paint);
+        canvas.drawCircle(f, f2, hl.L(z ? 11.0f : 15.0f), paint);
         paint.setColor(i3);
-        canvas.drawCircle(f, f2, gl.L(z ? 9.0f : 13.0f), paint);
+        canvas.drawCircle(f, f2, hl.L(z ? 9.0f : 13.0f), paint);
     }
 
     public final void d(View view) {
@@ -696,25 +696,25 @@ public class p extends FrameLayout implements tjb {
         if (i3 == 1) {
             imageView.setTranslationX(0.0f);
         } else if (i3 == 2) {
-            imageView.setTranslationX(gl.L(13.0f) + gl.L(30.0f));
+            imageView.setTranslationX(hl.L(13.0f) + hl.L(30.0f));
         } else if (i3 == 3) {
-            imageView.setTranslationX((gl.L(30.0f) << 1) + (gl.L(13.0f) << 1));
+            imageView.setTranslationX((hl.L(30.0f) << 1) + (hl.L(13.0f) << 1));
         } else {
-            imageView.setTranslationX(de9.y(13.0f, 3, gl.L(30.0f) * 3));
+            imageView.setTranslationX(uh9.y(13.0f, 3, hl.L(30.0f) * 3));
         }
-        c7 c7Var = this.G;
-        r7 r7Var = this.J;
-        if (r7Var != null) {
+        d7 d7Var = this.G;
+        s7 s7Var = this.J;
+        if (s7Var != null) {
             if (i == 1) {
-                r7Var.setVisibility(0);
+                s7Var.setVisibility(0);
             } else {
-                r7Var.setVisibility(8);
-                c7Var.setTranslationX(0.0f);
+                s7Var.setVisibility(8);
+                d7Var.setTranslationX(0.0f);
             }
         }
         if (i2 <= 1) {
             imageView.setVisibility(8);
-            c7Var.setVisibility(8);
+            d7Var.setVisibility(8);
         } else {
             if (i3 < i2) {
                 imageView.setVisibility(0);
@@ -725,12 +725,12 @@ public class p extends FrameLayout implements tjb {
                 imageView.setVisibility(8);
             }
             if (i3 > 1) {
-                c7Var.setVisibility(0);
-                c7Var.setScaleX(1.0f);
-                c7Var.setScaleY(1.0f);
-                c7Var.setAlpha(1.0f);
+                d7Var.setVisibility(0);
+                d7Var.setScaleX(1.0f);
+                d7Var.setScaleY(1.0f);
+                d7Var.setAlpha(1.0f);
             } else {
-                c7Var.setVisibility(8);
+                d7Var.setVisibility(8);
             }
         }
         this.y.invalidate();
@@ -740,9 +740,9 @@ public class p extends FrameLayout implements tjb {
     public final void g(int i, ArrayList arrayList, boolean z) {
         byte b = this.L;
         float f = 30.0f;
-        int y = de9.y(13.0f, b - 1, gl.L(30.0f) * b);
+        int y = uh9.y(13.0f, b - 1, hl.L(30.0f) * b);
         FrameLayout frameLayout = this.x;
-        float f2 = frameLayout.getLeft() + y > i - gl.L(this.K == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
+        float f2 = frameLayout.getLeft() + y > i - hl.L(this.K == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
         Property property = View.TRANSLATION_X;
         float f3 = -f2;
         if (arrayList != null) {
@@ -804,7 +804,7 @@ public class p extends FrameLayout implements tjb {
                 }
                 colorPicker$RadioButtonArr[i2].setTag(R.id.index_tag, null);
             }
-            i3 = de9.w(13.0f, gl.L(f4), i3);
+            i3 = uh9.w(13.0f, hl.L(f4), i3);
             i2++;
             f = f4;
         }
@@ -821,12 +821,12 @@ public class p extends FrameLayout implements tjb {
     }
 
     public final void h() {
-        c7 c7Var = this.G;
-        if (c7Var == null) {
+        d7 d7Var = this.G;
+        if (d7Var == null) {
             return;
         }
-        float f = c7Var.getTag() != null ? 0.0f : this.a0;
-        float f2 = c7Var.getTag() != null ? 1.0f : this.b0;
+        float f = d7Var.getTag() != null ? 0.0f : this.a0;
+        float f2 = d7Var.getTag() != null ? 1.0f : this.b0;
         float[] fArr = this.O;
         float f3 = fArr[2];
         if (f == 0.0f && f2 == 1.0f) {
@@ -837,7 +837,7 @@ public class p extends FrameLayout implements tjb {
         fArr[2] = 1.0f;
         int HSVToColor = Color.HSVToColor(fArr);
         fArr[2] = f3;
-        float B = gl.B(HSVToColor);
+        float B = hl.B(HSVToColor);
         float max = Math.max(0.0f, Math.min(f / B, 1.0f));
         this.c0 = max;
         this.d0 = Math.max(max, Math.min(f2 / B, 1.0f));
@@ -852,7 +852,7 @@ public class p extends FrameLayout implements tjb {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         float f;
-        int L = gl.L(45.0f);
+        int L = hl.L(45.0f);
         float f2 = L;
         canvas.drawBitmap(this.s, 0.0f, f2, (Paint) null);
         int height = this.s.getHeight() + L;
@@ -866,10 +866,10 @@ public class p extends FrameLayout implements tjb {
         fArr2[1] = fArr[1];
         fArr2[2] = 1.0f;
         int measuredWidth = (int) ((fArr[0] * getMeasuredWidth()) / 360.0f);
-        int A = (int) tb4.A(1.0f, fArr[1], this.s.getHeight(), f2);
+        int A = (int) qd4.A(1.0f, fArr[1], this.s.getHeight(), f2);
         if (!this.R) {
-            int L2 = gl.L(16.0f);
-            float interpolation = s33.g.getInterpolation(this.V);
+            int L2 = hl.L(16.0f);
+            float interpolation = k43.g.getInterpolation(this.V);
             if (measuredWidth < L2) {
                 measuredWidth = (int) (((L2 - measuredWidth) * interpolation) + measuredWidth);
             } else if (measuredWidth > getMeasuredWidth() - L2) {
@@ -882,10 +882,10 @@ public class p extends FrameLayout implements tjb {
             }
         }
         b(canvas, measuredWidth, A, Color.HSVToColor(fArr2), false);
-        float L3 = gl.L(22.0f);
-        float L4 = gl.L(26.0f) + height;
-        float measuredWidth2 = getMeasuredWidth() - gl.L(22.0f);
-        float L5 = gl.L(34.0f) + height;
+        float L3 = hl.L(22.0f);
+        float L4 = hl.L(26.0f) + height;
+        float measuredWidth2 = getMeasuredWidth() - hl.L(22.0f);
+        float L5 = hl.L(34.0f) + height;
         RectF rectF = this.n;
         rectF.set(L3, L4, measuredWidth2, L5);
         LinearGradient linearGradient = this.Q;
@@ -901,7 +901,7 @@ public class p extends FrameLayout implements tjb {
             this.Q = linearGradient2;
             paint2.setShader(linearGradient2);
         }
-        canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), paint2);
+        canvas.drawRoundRect(rectF, hl.L(4.0f), hl.L(4.0f), paint2);
         if (this.c0 == this.d0) {
             f = 0.5f;
         } else {
@@ -934,7 +934,7 @@ public class p extends FrameLayout implements tjb {
     public final void onSizeChanged(int i, int i2, int i3, int i4) {
         if (this.N != i) {
             this.N = i;
-            int L = gl.L(180.0f);
+            int L = hl.L(180.0f);
             Bitmap createBitmap = Bitmap.createBitmap(i, L, Bitmap.Config.ARGB_8888);
             float f = i;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -950,7 +950,7 @@ public class p extends FrameLayout implements tjb {
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x00f0, code lost:
     
-        if (r12 <= (r5.bottom + gl.L(7.0f))) goto L37;
+        if (r12 <= (r5.bottom + hl.L(7.0f))) goto L37;
      */
     /* JADX WARN: Code restructure failed: missing block: B:4:0x000b, code lost:
     
@@ -975,7 +975,7 @@ public class p extends FrameLayout implements tjb {
         }
         int x = (int) motionEvent.getX();
         int y = (int) motionEvent.getY();
-        int L = gl.L(45.0f);
+        int L = hl.L(45.0f);
         boolean z = this.R;
         float[] fArr = this.O;
         if (z || (!this.S && y >= L && y <= this.s.getHeight() + L)) {
@@ -1007,7 +1007,7 @@ public class p extends FrameLayout implements tjb {
                 float f3 = x;
                 if (f3 >= rectF.left && f3 <= rectF.right) {
                     float f4 = y;
-                    if (f4 >= rectF.top - gl.L(7.0f)) {
+                    if (f4 >= rectF.top - hl.L(7.0f)) {
                     }
                 }
             }
@@ -1065,7 +1065,7 @@ public class p extends FrameLayout implements tjb {
                 textView.setVisibility(0);
             }
             arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) View.ALPHA, z ? 1.0f : 0.0f));
-            animatorSet.addListener(new y7((byte) 22, (Object) this, z));
+            animatorSet.addListener(new z7((byte) 22, (Object) this, z));
             animatorSet.playTogether(arrayList);
             animatorSet.setDuration(180L);
             animatorSet.start();
@@ -1082,25 +1082,25 @@ public class p extends FrameLayout implements tjb {
         h();
     }
 
-    public void setResourcesProvider(wjb wjbVar) {
-        this.e0 = wjbVar;
+    public void setResourcesProvider(vnb vnbVar) {
+        this.e0 = vnbVar;
     }
 
-    @Override // tjb
+    @Override // snb
     public final void updateColors() {
-        r7 r7Var = this.J;
-        if (r7Var != null) {
+        s7 s7Var = this.J;
+        if (s7Var != null) {
             try {
-                int v0 = bkb.v0(bkb.F6, this.e0);
+                int v0 = aob.v0(aob.G6, this.e0);
                 if (v0 != this.f0) {
                     this.f0 = v0;
-                    r7Var.setIconColor(v0);
+                    s7Var.setIconColor(v0);
                 }
-                r7Var.O(bkb.v0(bkb.D8, this.e0), false);
-                r7Var.O(bkb.v0(bkb.E8, this.e0), true);
-                r7Var.I(bkb.v0(bkb.F8, this.e0));
+                s7Var.O(aob.v0(aob.E8, this.e0), false);
+                s7Var.O(aob.v0(aob.F8, this.e0), true);
+                s7Var.I(aob.v0(aob.G8, this.e0));
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
                 return;
             }
         }
@@ -1109,14 +1109,14 @@ public class p extends FrameLayout implements tjb {
             for (int i = 0; i < editTextBoldCursorArr.length; i++) {
                 EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i];
                 if (editTextBoldCursor != null) {
-                    editTextBoldCursor.setCursorColor(bkb.v0(bkb.F6, this.e0));
-                    editTextBoldCursorArr[i].setHeaderHintColor(bkb.v0(bkb.K6, this.e0));
+                    editTextBoldCursor.setCursorColor(aob.v0(aob.G6, this.e0));
+                    editTextBoldCursorArr[i].setHeaderHintColor(aob.v0(aob.L6, this.e0));
                 }
             }
         }
     }
 
-    @Override // tjb
+    @Override // snb
     public final void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,70 +1,101 @@
 // default package
 
-import android.app.Notification;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v0 el7, still in use, count: 1, list:
+  (r0v0 el7) from 0x0128: INVOKE (r2v11 android.util.SparseArray), (0 int), (r0v0 el7) VIRTUAL call: android.util.SparseArray.put(int, java.lang.Object):void A[MD:(int, E):void (c)] (LINE:297)
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class el7 {
-    public final CharSequence a;
-    public final long b;
-    public final l38 c;
-    public final Bundle d = new Bundle();
-    public String e;
-    public Uri f;
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF11(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF13(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF15(8),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF14(9),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF12(10),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF10(11),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF8(12),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(13),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(14),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(15),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(16),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(17),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(18),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(19),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF236(100);
 
-    public el7(CharSequence charSequence, long j, l38 l38Var) {
-        this.a = charSequence;
-        this.b = j;
-        this.c = l38Var;
+    public static final SparseArray a;
+
+    static {
+        SparseArray sparseArray = new SparseArray();
+        a = sparseArray;
+        sparseArray.put(0, r0);
+        sparseArray.put(1, r1);
+        sparseArray.put(2, r3);
+        sparseArray.put(3, r5);
+        sparseArray.put(4, r7);
+        sparseArray.put(5, r9);
+        sparseArray.put(6, r11);
+        sparseArray.put(7, r13);
+        sparseArray.put(8, r15);
+        sparseArray.put(9, r14);
+        sparseArray.put(10, r12);
+        sparseArray.put(11, r10);
+        sparseArray.put(12, r8);
+        sparseArray.put(13, r6);
+        sparseArray.put(14, r4);
+        sparseArray.put(15, r2);
+        sparseArray.put(16, r6);
+        sparseArray.put(17, r4);
+        sparseArray.put(18, r2);
+        sparseArray.put(19, r6);
     }
 
-    public static Bundle[] a(ArrayList arrayList) {
-        Bundle[] bundleArr = new Bundle[arrayList.size()];
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            el7 el7Var = (el7) arrayList.get(i);
-            l38 l38Var = el7Var.c;
-            Bundle bundle = new Bundle();
-            CharSequence charSequence = el7Var.a;
-            if (charSequence != null) {
-                bundle.putCharSequence("text", charSequence);
-            }
-            bundle.putLong("time", el7Var.b);
-            bundle.putCharSequence("sender", l38Var.a);
-            if (Build.VERSION.SDK_INT >= 28) {
-                bundle.putParcelable("sender_person", dl7.a(fo.G(l38Var)));
-            } else {
-                bundle.putBundle("person", l38Var.b());
-            }
-            String str = el7Var.e;
-            if (str != null) {
-                bundle.putString(TeXSymbolParser.TYPE_ATTR, str);
-            }
-            Uri uri = el7Var.f;
-            if (uri != null) {
-                bundle.putParcelable("uri", uri);
-            }
-            bundle.putBundle("extras", el7Var.d);
-            bundleArr[i] = bundle;
-        }
-        return bundleArr;
+    public el7(int i) {
     }
 
-    public final Notification.MessagingStyle.Message b() {
-        int i = Build.VERSION.SDK_INT;
-        long j = this.b;
-        l38 l38Var = this.c;
-        CharSequence charSequence = this.a;
-        Notification.MessagingStyle.Message b = i >= 28 ? dl7.b(charSequence, j, fo.G(l38Var)) : cl7.a(charSequence, j, l38Var.a);
-        String str = this.e;
-        if (str != null) {
-            cl7.b(b, str, this.f);
-        }
-        return b;
+    public static el7 valueOf(String str) {
+        return (el7) Enum.valueOf(el7.class, str);
+    }
+
+    public static el7[] values() {
+        return (el7[]) b.clone();
     }
 }

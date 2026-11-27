@@ -1,24 +1,79 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vda extends uu1 {
-    public final /* synthetic */ nfa f;
+public final class vda extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ kea c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vda(nfa nfaVar, Context context, ui5 ui5Var, Bundle bundle) {
-        super(context, ui5Var, bundle);
-        this.f = nfaVar;
+    public /* synthetic */ vda(kea keaVar, boolean z, byte b) {
+        this.a = b;
+        this.c = keaVar;
+        this.b = z;
     }
 
-    @Override // uu1
-    public final void b(boolean z) {
-        r7 r7Var = this.f.q0;
-        if (r7Var != null) {
-            r7Var.setShowSearchProgress(z);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        byte b = this.a;
+        kea keaVar = this.c;
+        switch (b) {
+            case 0:
+                AnimatorSet[] animatorSetArr = keaVar.O1;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                if (animator.equals(keaVar.y1)) {
+                    keaVar.y1 = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        boolean z = this.b;
+        kea keaVar = this.c;
+        switch (b) {
+            case 0:
+                AnimatorSet[] animatorSetArr = keaVar.O1;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!z) {
+                        keaVar.N1[0].setVisibility(4);
+                    }
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                FrameLayout frameLayout = keaVar.q1;
+                if (animator.equals(keaVar.y1)) {
+                    if (!z) {
+                        keaVar.m1.setVisibility(4);
+                        FrameLayout frameLayout2 = keaVar.X1;
+                        if (frameLayout2 != null && frameLayout == null) {
+                            frameLayout2.setVisibility(4);
+                        }
+                        keaVar.p1.setVisibility(4);
+                    } else if (frameLayout != null) {
+                        frameLayout.setVisibility(4);
+                    }
+                    keaVar.y1 = null;
+                    break;
+                }
+                break;
         }
     }
 }

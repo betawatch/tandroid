@@ -1,100 +1,66 @@
 // default package
 
-import android.app.Activity;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.os.Parcel;
+import android.os.Parcelable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wx8 extends View {
-    public final HashMap a;
-    public final ArrayList b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wx8 extends c4 {
+    public static final Parcelable.Creator<wx8> CREATOR;
+    public final ay8 a;
+    public final gfe b;
     public final ArrayList c;
-    public final int d;
 
-    public wx8(Activity activity) {
-        super(activity);
-        this.a = new HashMap();
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = y6c.t0;
+    static {
+        dnd.y(2, ojd.a, ojd.b);
+        CREATOR = new m9d((byte) 27);
     }
 
-    public static String b(gb2 gb2Var) {
-        k27 messageObject = gb2Var.getMessageObject();
-        if (messageObject == null) {
-            return null;
-        }
-        return messageObject.x0() + "_" + messageObject.e1();
-    }
-
-    public final boolean a() {
-        Iterator it = this.a.entrySet().iterator();
-        while (it.hasNext()) {
-            if (!((vx8) ((Map.Entry) it.next()).getValue()).P) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        super.invalidateDrawable(drawable);
-        if (drawable instanceof vx8) {
-            invalidate();
+    public wx8(String str, byte[] bArr, ArrayList arrayList) {
+        gfe gfeVar = gfe.c;
+        gfe o = gfe.o(bArr.length, bArr);
+        xve.h(str);
+        try {
+            this.a = ay8.a(str);
+            this.b = o;
+            this.c = arrayList;
+        } catch (zx8 e) {
+            throw new IllegalArgumentException(e);
         }
     }
 
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            ((vx8) ((Map.Entry) it.next()).getValue()).d();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof wx8)) {
+            return false;
         }
-        hashMap.clear();
-        this.b.clear();
+        wx8 wx8Var = (wx8) obj;
+        ArrayList arrayList = wx8Var.c;
+        if (!this.a.equals(wx8Var.a) || !vue.a(this.b, wx8Var.b)) {
+            return false;
+        }
+        ArrayList arrayList2 = this.c;
+        return arrayList2 == null ? arrayList == null : arrayList != null && arrayList2.containsAll(arrayList) && arrayList.containsAll(arrayList2);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            ((vx8) ((Map.Entry) it.next()).getValue()).draw(canvas);
-        }
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            vx8 vx8Var = (vx8) hashMap.remove((String) obj);
-            if (vx8Var != null) {
-                vx8Var.d();
-            }
-        }
-        arrayList.clear();
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c});
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        Iterator it = this.a.entrySet().iterator();
-        while (it.hasNext()) {
-            ((vx8) ((Map.Entry) it.next()).getValue()).setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        }
+    public final String toString() {
+        String valueOf = String.valueOf(this.a);
+        String b = lsd.b(this.b.p());
+        return c00.k(xnb.l("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", b, ", \n transports="), String.valueOf(this.c), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        this.a.getClass();
+        bye.l(parcel, 2, "public-key");
+        bye.c(parcel, 3, this.b.p());
+        bye.p(parcel, 4, this.c);
+        bye.s(parcel, r);
     }
 }

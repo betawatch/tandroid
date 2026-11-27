@@ -1,94 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.Button;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ls8 extends Button {
-    public final RectF a;
-    public final Paint b;
-    public boolean c;
-    public float d;
-    public long e;
-    public int f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class ls8 implements on5 {
+    public final /* synthetic */ Runnable[] a;
 
-    public ls8(Context context) {
-        super(context);
-        setAllCaps(false);
-        setTextSize(1, 14.0f);
-        setTypeface(gl.o());
-        setOutlineProvider(null);
-        txe.a(this, 8.0f, 0.0f, 8.0f, 0.0f);
-        int L = gl.L(60.0f);
-        setMinWidth(L);
-        setMinimumWidth(L);
-        this.a = new RectF();
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.L(2.0f));
+    public ls8(Runnable[] runnableArr) {
+        this.a = runnableArr;
     }
 
-    public final void a(boolean z, boolean z2) {
-        if (this.c != z) {
-            this.c = z;
-            if (!z2) {
-                this.d = z ? 1.0f : 0.0f;
-            }
-            this.e = System.currentTimeMillis();
-            invalidate();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.c || this.d != 0.0f) {
-            int measuredWidth = getMeasuredWidth() - gl.L(11.0f);
-            float f = measuredWidth;
-            float L = gl.L(3.0f);
-            float L2 = gl.L(8.0f) + measuredWidth;
-            float L3 = gl.L(11.0f);
-            RectF rectF = this.a;
-            rectF.set(f, L, L2, L3);
-            int min = Math.min(kk7.d4, (int) (this.d * 255.0f));
-            Paint paint = this.b;
-            paint.setAlpha(min);
-            canvas.drawArc(rectF, this.f, 220.0f, false, paint);
-            long currentTimeMillis = System.currentTimeMillis();
-            if (Math.abs(this.e - System.currentTimeMillis()) < 1000) {
-                long j = currentTimeMillis - this.e;
-                int i = (int) (this.f + ((360 * j) / 2000.0f));
-                this.f = i - ((i / 360) * 360);
-                boolean z = this.c;
-                float f2 = this.d;
-                if (z) {
-                    if (f2 < 1.0f) {
-                        float f3 = (j / 200.0f) + f2;
-                        this.d = f3;
-                        if (f3 > 1.0f) {
-                            this.d = 1.0f;
-                        }
-                    }
-                } else if (f2 > 0.0f) {
-                    float f4 = f2 - (j / 200.0f);
-                    this.d = f4;
-                    if (f4 < 0.0f) {
-                        this.d = 0.0f;
-                    }
+    @Override // on5
+    public final void v(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        if (imageReceiver.B()) {
+            Runnable[] runnableArr = this.a;
+            if (runnableArr[0] != null) {
+                b29 y = imageReceiver.y();
+                if (y == null) {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
+                } else if (y.t()) {
+                    y.B0 = new uk8(runnableArr, (byte) 13);
+                } else {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
                 }
             }
-            this.e = currentTimeMillis;
-            postInvalidateOnAnimation();
         }
     }
 
-    public void setProgressColor(int i) {
-        this.b.setColor(i);
+    @Override // on5
+    public final void r(ImageReceiver imageReceiver) {
+    }
+
+    @Override // on5
+    public final void z(int i, Drawable drawable) {
     }
 }

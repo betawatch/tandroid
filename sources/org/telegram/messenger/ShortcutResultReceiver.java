@@ -4,17 +4,17 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class ShortcutResultReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
 
     @Override // android.content.BroadcastReceiver
     public final void onReceive(Context context, Intent intent) {
-        int intExtra = intent.getIntExtra("account", y6c.t0);
-        p8c p8cVar = (p8c) hq6.d0(intExtra).p1.remove(intent.getStringExtra("req_id"));
-        if (p8cVar != null) {
-            gl.c3(new mn0(p8cVar, (byte) 12));
+        int intExtra = intent.getIntExtra("account", yac.t0);
+        pcc pccVar = (pcc) ls6.d0(intExtra).p1.remove(intent.getStringExtra("req_id"));
+        if (pccVar != null) {
+            hl.c3(new jn0(pccVar, (byte) 13));
         }
     }
 }

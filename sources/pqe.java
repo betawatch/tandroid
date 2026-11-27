@@ -1,148 +1,111 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'EF0' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pqe extends oee implements ere, RandomAccess {
-    public final ArrayList b;
+public final class pqe {
+    public static final pqe b;
+    public static final pqe c;
+    public static final pqe[] d;
+    public static final /* synthetic */ pqe[] e;
+    public final byte a;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    pqe EF0;
 
     static {
-        new pqe(10).a = false;
-    }
-
-    public pqe(int i) {
-        this(new ArrayList(i));
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i, Object obj) {
-        h();
-        this.b.add(i, (String) obj);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // oee, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i, Collection collection) {
-        h();
-        if (collection instanceof ere) {
-            collection = ((ere) collection).zzd();
+        gue gueVar = gue.f;
+        pqe pqeVar = new pqe("DOUBLE", 0, 0, 1, gueVar);
+        gue gueVar2 = gue.e;
+        pqe pqeVar2 = new pqe("FLOAT", 1, 1, 1, gueVar2);
+        gue gueVar3 = gue.d;
+        pqe pqeVar3 = new pqe("INT64", 2, 2, 1, gueVar3);
+        pqe pqeVar4 = new pqe("UINT64", 3, 3, 1, gueVar3);
+        gue gueVar4 = gue.c;
+        pqe pqeVar5 = new pqe("INT32", 4, 4, 1, gueVar4);
+        pqe pqeVar6 = new pqe("FIXED64", 5, 5, 1, gueVar3);
+        pqe pqeVar7 = new pqe("FIXED32", 6, 6, 1, gueVar4);
+        gue gueVar5 = gue.h;
+        pqe pqeVar8 = new pqe("BOOL", 7, 7, 1, gueVar5);
+        gue gueVar6 = gue.n;
+        pqe pqeVar9 = new pqe("STRING", 8, 8, 1, gueVar6);
+        gue gueVar7 = gue.w;
+        pqe pqeVar10 = new pqe("MESSAGE", 9, 9, 1, gueVar7);
+        gue gueVar8 = gue.r;
+        pqe pqeVar11 = new pqe("BYTES", 10, 10, 1, gueVar8);
+        pqe pqeVar12 = new pqe("UINT32", 11, 11, 1, gueVar4);
+        gue gueVar9 = gue.s;
+        pqe pqeVar13 = new pqe("ENUM", 12, 12, 1, gueVar9);
+        pqe pqeVar14 = new pqe("SFIXED32", 13, 13, 1, gueVar4);
+        pqe pqeVar15 = new pqe("SFIXED64", 14, 14, 1, gueVar3);
+        pqe pqeVar16 = new pqe("SINT32", 15, 15, 1, gueVar4);
+        pqe pqeVar17 = new pqe("SINT64", 16, 16, 1, gueVar3);
+        pqe pqeVar18 = new pqe("GROUP", 17, 17, 1, gueVar7);
+        pqe pqeVar19 = new pqe("DOUBLE_LIST", 18, 18, 2, gueVar);
+        pqe pqeVar20 = new pqe("FLOAT_LIST", 19, 19, 2, gueVar2);
+        pqe pqeVar21 = new pqe("INT64_LIST", 20, 20, 2, gueVar3);
+        pqe pqeVar22 = new pqe("UINT64_LIST", 21, 21, 2, gueVar3);
+        pqe pqeVar23 = new pqe("INT32_LIST", 22, 22, 2, gueVar4);
+        pqe pqeVar24 = new pqe("FIXED64_LIST", 23, 23, 2, gueVar3);
+        pqe pqeVar25 = new pqe("FIXED32_LIST", 24, 24, 2, gueVar4);
+        pqe pqeVar26 = new pqe("BOOL_LIST", 25, 25, 2, gueVar5);
+        pqe pqeVar27 = new pqe("STRING_LIST", 26, 26, 2, gueVar6);
+        pqe pqeVar28 = new pqe("MESSAGE_LIST", 27, 27, 2, gueVar7);
+        pqe pqeVar29 = new pqe("BYTES_LIST", 28, 28, 2, gueVar8);
+        pqe pqeVar30 = new pqe("UINT32_LIST", 29, 29, 2, gueVar4);
+        pqe pqeVar31 = new pqe("ENUM_LIST", 30, 30, 2, gueVar9);
+        pqe pqeVar32 = new pqe("SFIXED32_LIST", 31, 31, 2, gueVar4);
+        pqe pqeVar33 = new pqe("SFIXED64_LIST", 32, 32, 2, gueVar3);
+        pqe pqeVar34 = new pqe("SINT32_LIST", 33, 33, 2, gueVar4);
+        pqe pqeVar35 = new pqe("SINT64_LIST", 34, 34, 2, gueVar3);
+        pqe pqeVar36 = new pqe("DOUBLE_LIST_PACKED", 35, 35, 3, gueVar);
+        b = pqeVar36;
+        pqe pqeVar37 = new pqe("FLOAT_LIST_PACKED", 36, 36, 3, gueVar2);
+        pqe pqeVar38 = new pqe("INT64_LIST_PACKED", 37, 37, 3, gueVar3);
+        pqe pqeVar39 = new pqe("UINT64_LIST_PACKED", 38, 38, 3, gueVar3);
+        pqe pqeVar40 = new pqe("INT32_LIST_PACKED", 39, 39, 3, gueVar4);
+        pqe pqeVar41 = new pqe("FIXED64_LIST_PACKED", 40, 40, 3, gueVar3);
+        pqe pqeVar42 = new pqe("FIXED32_LIST_PACKED", 41, 41, 3, gueVar4);
+        pqe pqeVar43 = new pqe("BOOL_LIST_PACKED", 42, 42, 3, gueVar5);
+        pqe pqeVar44 = new pqe("UINT32_LIST_PACKED", 43, 43, 3, gueVar4);
+        pqe pqeVar45 = new pqe("ENUM_LIST_PACKED", 44, 44, 3, gueVar9);
+        pqe pqeVar46 = new pqe("SFIXED32_LIST_PACKED", 45, 45, 3, gueVar4);
+        pqe pqeVar47 = new pqe("SFIXED64_LIST_PACKED", 46, 46, 3, gueVar3);
+        pqe pqeVar48 = new pqe("SINT32_LIST_PACKED", 47, 47, 3, gueVar4);
+        pqe pqeVar49 = new pqe("SINT64_LIST_PACKED", 48, 48, 3, gueVar3);
+        c = pqeVar49;
+        e = new pqe[]{pqeVar, pqeVar2, pqeVar3, pqeVar4, pqeVar5, pqeVar6, pqeVar7, pqeVar8, pqeVar9, pqeVar10, pqeVar11, pqeVar12, pqeVar13, pqeVar14, pqeVar15, pqeVar16, pqeVar17, pqeVar18, pqeVar19, pqeVar20, pqeVar21, pqeVar22, pqeVar23, pqeVar24, pqeVar25, pqeVar26, pqeVar27, pqeVar28, pqeVar29, pqeVar30, pqeVar31, pqeVar32, pqeVar33, pqeVar34, pqeVar35, pqeVar36, pqeVar37, pqeVar38, pqeVar39, pqeVar40, pqeVar41, pqeVar42, pqeVar43, pqeVar44, pqeVar45, pqeVar46, pqeVar47, pqeVar48, pqeVar49, new pqe("GROUP_LIST", 49, 49, 2, gueVar7), new pqe("MAP", 50, 50, 4, gue.b)};
+        pqe[] values = values();
+        d = new pqe[values.length];
+        for (pqe pqeVar50 : values) {
+            d[pqeVar50.a] = pqeVar50;
         }
-        boolean addAll = this.b.addAll(i, collection);
-        ((AbstractList) this).modCount++;
-        return addAll;
     }
 
-    @Override // oee, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        h();
-        this.b.clear();
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // ere
-    public final Object d(int i) {
-        return this.b.get(i);
-    }
-
-    @Override // ere
-    public final void e(sie sieVar) {
-        h();
-        this.b.add(sieVar);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i) {
-        ArrayList arrayList = this.b;
-        Object obj = arrayList.get(i);
-        if (obj instanceof String) {
-            return (String) obj;
+    /* JADX WARN: Multi-variable type inference failed */
+    public pqe(String str, int i, int i2, int i3, gue gueVar) {
+        this.a = i2;
+        int i4 = zqe.a[ik8.F(i3)];
+        if (i4 == 1) {
+            Class cls = gueVar.a;
+        } else if (i4 == 2) {
+            Class cls2 = gueVar.a;
         }
-        if (!(obj instanceof sie)) {
-            byte[] bArr = (byte[]) obj;
-            String str = new String(bArr, foe.a);
-            if (q0f.a.c(0, bArr.length, bArr)) {
-                arrayList.set(i, str);
-            }
-            return str;
+        if (i3 == 1) {
+            int i5 = zqe.b[gueVar.ordinal()];
         }
-        sie sieVar = (sie) obj;
-        String str2 = sieVar.i() == 0 ? "" : new String(sieVar.b, sieVar.m(), sieVar.i(), foe.a);
-        int m = sieVar.m();
-        if (q0f.a.c(m, sieVar.i() + m, sieVar.b)) {
-            arrayList.set(i, str2);
-        }
-        return str2;
     }
 
-    @Override // oee, java.util.AbstractList, java.util.List
-    public final Object remove(int i) {
-        h();
-        Object remove = this.b.remove(i);
-        ((AbstractList) this).modCount++;
-        if (remove instanceof String) {
-            return (String) remove;
-        }
-        if (!(remove instanceof sie)) {
-            return new String((byte[]) remove, foe.a);
-        }
-        sie sieVar = (sie) remove;
-        return sieVar.i() == 0 ? "" : new String(sieVar.b, sieVar.m(), sieVar.i(), foe.a);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i, Object obj) {
-        h();
-        Object obj2 = this.b.set(i, (String) obj);
-        if (obj2 instanceof String) {
-            return (String) obj2;
-        }
-        if (!(obj2 instanceof sie)) {
-            return new String((byte[]) obj2, foe.a);
-        }
-        sie sieVar = (sie) obj2;
-        return sieVar.i() == 0 ? "" : new String(sieVar.b, sieVar.m(), sieVar.i(), foe.a);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.b.size();
-    }
-
-    @Override // kpe
-    public final kpe zza(int i) {
-        ArrayList arrayList = this.b;
-        if (i < arrayList.size()) {
-            sc8.e();
-            return null;
-        }
-        ArrayList arrayList2 = new ArrayList(i);
-        arrayList2.addAll(arrayList);
-        return new pqe(arrayList2);
-    }
-
-    @Override // ere
-    public final List zzd() {
-        return DesugarCollections.unmodifiableList(this.b);
-    }
-
-    @Override // ere
-    public final ere zze() {
-        return this.a ? new uze(this) : this;
-    }
-
-    public pqe(ArrayList arrayList) {
-        this.b = arrayList;
-    }
-
-    @Override // oee, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        return addAll(this.b.size(), collection);
+    public static pqe[] values() {
+        return (pqe[]) e.clone();
     }
 }

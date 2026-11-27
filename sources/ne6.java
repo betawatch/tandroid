@@ -1,31 +1,46 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ne6 extends fj2 {
-    public final /* synthetic */ byte h;
-    public final /* synthetic */ qe6 n;
+public final /* synthetic */ class ne6 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ qh6 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ne6(qe6 qe6Var, Context context, byte b) {
-        super(context);
-        this.h = b;
-        this.n = qe6Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ ne6(qh6 qh6Var, int i, boolean z, boolean z2) {
+        this.b = qh6Var;
+        this.c = i;
+        this.d = z;
+        this.e = z2;
     }
 
-    @Override // fj2
-    public final void a() {
-        byte b = this.h;
-        qe6 qe6Var = this.n;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.e;
+        boolean z2 = this.d;
+        boolean z3 = this.c;
+        qh6 qh6Var = this.b;
         switch (b) {
             case 0:
-                qe6Var.h(null);
+                qh6Var.L1(z3, z2, z);
                 break;
             default:
-                qe6Var.h(null);
+                boolean z4 = qh6Var.K;
+                qh6Var.K = z3;
+                qh6Var.L1(z2, z, true);
+                qh6Var.K = z4;
                 break;
         }
+    }
+
+    public /* synthetic */ ne6(qh6 qh6Var, boolean z, boolean z2, boolean z3) {
+        this.b = qh6Var;
+        this.c = z;
+        this.d = z2;
+        this.e = z3;
     }
 }

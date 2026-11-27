@@ -1,44 +1,64 @@
 // default package
 
-import android.graphics.Point;
-import android.view.View;
+import java.lang.reflect.Field;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class bac implements View.OnLayoutChangeListener {
-    public Boolean a;
-    public boolean b;
-    public final /* synthetic */ vk9 c;
-
-    public bac(vk9 vk9Var, View view) {
-        this.c = vk9Var;
-        yla ylaVar = new yla((Object) view, (ri4) yla.p, 0.0f);
-        vk9Var.c = ylaVar;
-        ylaVar.m.a(1.0f);
-        ((yla) vk9Var.c).m.b(350.0f);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class bac extends cac {
+    @Override // cac
+    public final boolean h() {
+        if (!super.h()) {
+            return false;
+        }
+        try {
+            Class<?> cls = this.a.getClass();
+            Class<?> cls2 = Long.TYPE;
+            cls.getMethod("getByte", Object.class, cls2);
+            cls.getMethod("putByte", Object.class, cls2, Byte.TYPE);
+            cls.getMethod("getBoolean", Object.class, cls2);
+            cls.getMethod("putBoolean", Object.class, cls2, Boolean.TYPE);
+            cls.getMethod("getFloat", Object.class, cls2);
+            cls.getMethod("putFloat", Object.class, cls2, Float.TYPE);
+            cls.getMethod("getDouble", Object.class, cls2);
+            cls.getMethod("putDouble", Object.class, cls2, Double.TYPE);
+            return true;
+        } catch (Throwable th) {
+            dac.i(th);
+            return false;
+        }
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        Point point = gl.q;
-        boolean z = point.x > point.y;
-        Boolean bool = this.a;
-        if (bool == null || bool.booleanValue() != z) {
-            this.a = Boolean.valueOf(z);
-            this.b = true;
+    @Override // cac
+    public final boolean i() {
+        Unsafe unsafe = this.a;
+        if (unsafe != null) {
+            try {
+                Class<?> cls = unsafe.getClass();
+                cls.getMethod("objectFieldOffset", Field.class);
+                Class<?> cls2 = Long.TYPE;
+                cls.getMethod("getLong", Object.class, cls2);
+                if (dac.c() != null) {
+                    try {
+                        Class<?> cls3 = unsafe.getClass();
+                        cls3.getMethod("getByte", cls2);
+                        cls3.getMethod("putByte", cls2, Byte.TYPE);
+                        cls3.getMethod("getInt", cls2);
+                        cls3.getMethod("putInt", cls2, Integer.TYPE);
+                        cls3.getMethod("getLong", cls2);
+                        cls3.getMethod("putLong", cls2, cls2);
+                        cls3.getMethod("copyMemory", cls2, cls2, cls2);
+                        cls3.getMethod("copyMemory", Object.class, cls2, Object.class, cls2, cls2);
+                        return true;
+                    } catch (Throwable th) {
+                        dac.i(th);
+                        return false;
+                    }
+                }
+            } catch (Throwable th2) {
+                dac.i(th2);
+            }
         }
-        if (i6 == 0 || i6 == i2 || this.b) {
-            this.b = false;
-            return;
-        }
-        vk9 vk9Var = this.c;
-        ((yla) vk9Var.c).d();
-        if (view.getVisibility() != 0) {
-            view.setTranslationY(0.0f);
-            return;
-        }
-        ((yla) vk9Var.c).m.i = 0.0d;
-        view.setTranslationY((i6 - i2) + 0.0f);
-        ((yla) vk9Var.c).h();
+        return false;
     }
 }

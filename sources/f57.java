@@ -1,54 +1,45 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f57 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ ArrayList c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class f57 extends b8 {
+    public final /* synthetic */ byte W;
 
-    public /* synthetic */ f57(na7 na7Var, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.b = na7Var;
-        this.c = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f57(Context context, int i, boolean z, boolean z2, vnb vnbVar, byte b) {
+        super(i, vnbVar, context, z, z2);
+        this.W = b;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Object[] objArr = 0;
-        ArrayList arrayList = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
+    @Override // b8
+    public final void l() {
+        switch (this.W) {
             case 0:
-                na7Var.getNotificationsController().K(arrayList, true, false, null);
-                return;
-            case 1:
-                gl.c3(new f57(na7Var, arrayList, (byte) 2));
-                return;
-            case 2:
-                na7Var.getNotificationsController().K(arrayList, true, false, null);
-                return;
-            case 3:
-                gl.c3(new f57(na7Var, arrayList, (byte) 4));
-                return;
-            case 4:
-                na7Var.getNotificationsController().K(arrayList, true, false, null);
-                return;
-            case 5:
+                setBackground(null);
                 break;
-            case 6:
-                na7Var.getNotificationsController().K(arrayList, true, false, null);
-                return;
             default:
-                gl.c3(new f57(na7Var, arrayList, objArr == true ? 1 : 0));
-                return;
+                setBackground(null);
+                break;
         }
-        for (int i = 0; i < arrayList.size(); i++) {
-            na7Var.f4(na7Var.h1(-((Long) arrayList.get(i)).longValue()), 0L);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.W) {
+            case 0:
+                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
+                    break;
+                }
+                break;
+            default:
+                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
+                    break;
+                }
+                break;
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

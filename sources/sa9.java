@@ -1,29 +1,15 @@
 // default package
 
-import java.io.Serializable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class sa9 implements Serializable {
-    public final Throwable a;
+public final class sa9 implements Comparable {
+    public long b = -9223372036854775807L;
+    public final ArrayList a = new ArrayList();
 
-    public sa9(Throwable th) {
-        th.getClass();
-        this.a = th;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof sa9) {
-            return rp5.a(this.a, ((sa9) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "Failure(" + this.a + ')';
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Long.compare(this.b, ((sa9) obj).b);
     }
 }

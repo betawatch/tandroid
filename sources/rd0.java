@@ -1,62 +1,36 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import org.telegram.messenger.Utilities;
+import android.R;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class rd0 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ wd0 b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ ip5 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ tnd[] f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class rd0 {
+    public static ExecutorService a;
+    public static final int[] b = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
+    public static final int[] c = {R.attr.name, R.attr.pivotX, R.attr.pivotY, R.attr.scaleX, R.attr.scaleY, R.attr.rotation, R.attr.translateX, R.attr.translateY};
+    public static final int[] d = {R.attr.name, R.attr.fillColor, R.attr.pathData, R.attr.strokeColor, R.attr.strokeWidth, R.attr.trimPathStart, R.attr.trimPathEnd, R.attr.trimPathOffset, R.attr.strokeLineCap, R.attr.strokeLineJoin, R.attr.strokeMiterLimit, R.attr.strokeAlpha, R.attr.fillAlpha, R.attr.fillType};
+    public static final int[] e = {R.attr.name, R.attr.pathData, R.attr.fillType};
+    public static final int[] f = {R.attr.drawable};
+    public static final int[] g = {R.attr.name, R.attr.animation};
+    public static final int[] h = {R.attr.interpolator, R.attr.duration, R.attr.startOffset, R.attr.repeatCount, R.attr.repeatMode, R.attr.valueFrom, R.attr.valueTo, R.attr.valueType};
+    public static final int[] i = {R.attr.ordering};
+    public static final int[] j = {R.attr.valueFrom, R.attr.valueTo, R.attr.valueType, R.attr.propertyName};
+    public static final int[] k = {R.attr.value, R.attr.interpolator, R.attr.valueType, R.attr.fraction};
+    public static final int[] l = {R.attr.propertyName, R.attr.pathData, R.attr.propertyXName, R.attr.propertyYName};
 
-    public /* synthetic */ rd0(wd0 wd0Var, ip5 ip5Var, Runnable[] runnableArr, int i, tnd[] tndVarArr) {
-        this.b = wd0Var;
-        this.d = ip5Var;
-        this.c = runnableArr;
-        this.e = i;
-        this.f = tndVarArr;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wd0 wd0Var = this.b;
-                ip5 ip5Var = this.d;
-                Runnable[] runnableArr = this.c;
-                int i = this.e;
-                tnd[] tndVarArr = this.f;
-                try {
-                    GradientDrawable.Orientation orientation = wd0Var.getOrientation();
-                    int[] iArr = wd0Var.a;
-                    int i2 = ip5Var.a;
-                    int i3 = ip5Var.b;
-                    Rect d = wd0.d(orientation, i2, i3);
-                    Bitmap createBitmap = Bitmap.createBitmap(i2, i3, Bitmap.Config.ARGB_8888);
-                    Utilities.drawDitheredGradient(createBitmap, iArr, d.left, d.top, d.right, d.bottom);
-                    gl.c3(new jf((Object) wd0Var, (Object) runnableArr, (Object) createBitmap, (Object) ip5Var, i, (Object) tndVarArr, (byte) 2));
-                    return;
-                } catch (Throwable th) {
-                    gl.c3(new rd0(wd0Var, runnableArr, ip5Var, i, tndVarArr));
-                    throw th;
-                }
-            default:
-                this.b.e(this.c, null, this.d, this.e, this.f);
-                return;
+    public static synchronized Executor a() {
+        ExecutorService executorService;
+        synchronized (rd0.class) {
+            executorService = a;
+            if (executorService == null) {
+                String str = gcc.a;
+                executorService = Executors.newSingleThreadExecutor(new lr2("ExoPlayer:BackgroundExecutor", (byte) 1));
+                a = executorService;
+            }
         }
-    }
-
-    public /* synthetic */ rd0(wd0 wd0Var, Runnable[] runnableArr, ip5 ip5Var, int i, tnd[] tndVarArr) {
-        this.b = wd0Var;
-        this.c = runnableArr;
-        this.d = ip5Var;
-        this.e = i;
-        this.f = tndVarArr;
+        return executorService;
     }
 }

@@ -1,26 +1,22 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.net.Uri;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class m73 extends gw2 {
-    public v73 a;
-    public int b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ v73 d;
-    public int e;
+public final class m73 {
+    public Uri a;
+    public byte b;
+    public byte[] c;
+    public Map d;
+    public long e;
+    public long f;
+    public String g;
+    public byte h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m73(v73 v73Var, gw2 gw2Var) {
-        super(gw2Var);
-        this.d = v73Var;
-    }
-
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.f(this);
+    public final n73 a() {
+        yve.l(this.a, "The uri must be set.");
+        return new n73(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h);
     }
 }

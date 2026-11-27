@@ -1,67 +1,25 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class f84 extends b4 {
-    public static final Parcelable.Creator<f84> CREATOR = new j9d(18);
-    public final String a;
-    public final int b;
-    public final long c;
-    public final boolean d;
+public interface f84 extends z63 {
+    void b(int i, int i2, byte[] bArr);
 
-    public f84(String str, int i, long j, boolean z) {
-        this.a = str;
-        this.b = i;
-        this.c = j;
-        this.d = z;
-    }
+    boolean c(byte[] bArr, int i, int i2, boolean z);
 
-    public final long b() {
-        long j = this.c;
-        return j == -1 ? this.b : j;
-    }
+    boolean d(byte[] bArr, int i, int i2, boolean z);
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof f84) {
-            f84 f84Var = (f84) obj;
-            if (cqe.a(this.a, f84Var.a) && b() == f84Var.b() && this.d == f84Var.d) {
-                return true;
-            }
-        }
-        return false;
-    }
+    long e();
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Long.valueOf(b()), Boolean.valueOf(this.d)});
-    }
+    void g(int i);
 
-    public final String toString() {
-        wk4 wk4Var = new wk4(this);
-        wk4Var.a(this.a, "name");
-        wk4Var.a(Long.valueOf(b()), "version");
-        wk4Var.a(Boolean.valueOf(this.d), "is_fully_rolled_out");
-        return wk4Var.toString();
-    }
+    long getLength();
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 1, this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        long b = b();
-        jte.q(parcel, 3, 8);
-        parcel.writeLong(b);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        jte.s(parcel, r);
-    }
+    long getPosition();
 
-    public f84(String str, long j) {
-        this(str, -1, j, false);
-    }
+    void h();
+
+    void n(int i);
+
+    void readFully(byte[] bArr, int i, int i2);
 }

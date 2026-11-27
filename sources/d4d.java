@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class d4d extends e4d {
     public final transient int r;
@@ -9,7 +9,7 @@ public final class d4d extends e4d {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public d4d(e4d e4dVar, int i, int i2) {
-        super((byte) 1);
+        super((byte) 0);
         this.w = e4dVar;
         this.r = i;
         this.s = i2;
@@ -17,23 +17,23 @@ public final class d4d extends e4d {
 
     @Override // java.util.List
     public final Object get(int i) {
-        yye.a(i, this.s);
+        i3f.a(i, this.s);
         return this.w.get(i + this.r);
     }
 
-    @Override // kzc
-    public final int m() {
-        return this.w.n() + this.r + this.s;
+    @Override // b4d
+    public final int i() {
+        return this.w.j() + this.r + this.s;
     }
 
-    @Override // kzc
-    public final int n() {
-        return this.w.n() + this.r;
+    @Override // b4d
+    public final int j() {
+        return this.w.j() + this.r;
     }
 
-    @Override // kzc
-    public final Object[] o() {
-        return this.w.o();
+    @Override // b4d
+    public final Object[] k() {
+        return this.w.k();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -44,7 +44,7 @@ public final class d4d extends e4d {
     @Override // e4d, java.util.List
     /* renamed from: y, reason: merged with bridge method [inline-methods] */
     public final e4d subList(int i, int i2) {
-        yye.b(i, i2, this.s);
+        i3f.b(i, i2, this.s);
         int i3 = this.r;
         return this.w.subList(i + i3, i2 + i3);
     }

@@ -1,59 +1,34 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class pa extends ReplacementSpan {
-    public final TextPaint a;
-    public final RectF b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public int f;
-    public final wjb h;
+public final /* synthetic */ class pa implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qa b;
+    public final /* synthetic */ m53 c;
 
-    public pa(wjb wjbVar) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new RectF();
-        this.h = wjbVar;
-        textPaint.setTextSize(gl.L(15.0f));
-        textPaint.setColor(bkb.v0(bkb.B6, wjbVar));
+    public /* synthetic */ pa(qa qaVar, m53 m53Var, byte b) {
+        this.a = b;
+        this.b = qaVar;
+        this.c = m53Var;
     }
 
-    public final void a() {
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(k96.M0(2131746215, null), this.a, gl.q.x, k96.a0 ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineWidth(0);
-            this.e = this.c.getHeight();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        m53 m53Var = this.c;
+        qa qaVar = this.b;
+        switch (b) {
+            case 0:
+                qaVar.f = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                m53Var.invalidate();
+                break;
+            default:
+                qaVar.f = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                m53Var.invalidate();
+                break;
         }
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        a();
-        this.a.setColor(bkb.v0(bkb.B6, this.h));
-        Rect clipBounds = canvas.getClipBounds();
-        RectF rectF = this.b;
-        rectF.set(clipBounds);
-        canvas.saveLayerAlpha(rectF, this.f, 31);
-        canvas.translate(f + gl.L(4.0f), (((i5 - i3) / 2.0f) + i3) - (this.e / 2.0f));
-        this.c.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        a();
-        return (int) (gl.L(8.0f) + this.d);
     }
 }

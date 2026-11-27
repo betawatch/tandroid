@@ -1,30 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.net.Uri;
+import android.webkit.DownloadListener;
+import android.webkit.URLUtil;
+import android.widget.TextView;
+import java.util.List;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv0 implements q12, js4, ed {
-    public final /* synthetic */ ow0 a;
+public final class mv0 implements DownloadListener {
+    public final /* synthetic */ nv0 a;
 
-    public /* synthetic */ mv0(ow0 ow0Var) {
-        this.a = ow0Var;
+    public mv0(nv0 nv0Var) {
+        this.a = nv0Var;
     }
 
-    @Override // q12
-    public final void d(boolean z) {
-        ow0 ow0Var = this.a;
-        if (ow0Var.f0 && z) {
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0046, code lost:
+    
+        if (android.text.TextUtils.isEmpty(r1.substring(r2 + 1)) != false) goto L9;
+     */
+    @Override // android.webkit.DownloadListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDownloadStart(String str, String str2, String str3, String str4, long j) {
+        String guessFileName;
+        StringBuilder l = xnb.l("onDownloadStart ", str, " ", str2, " ");
+        qu6.u(l, str3, " ", str4, " ");
+        l.append(j);
+        String sb = l.toString();
+        nv0 nv0Var = this.a;
+        nv0Var.b(sb);
+        try {
+            if (str.startsWith("blob:")) {
+                return;
+            }
+            try {
+                List<String> pathSegments = Uri.parse(str).getPathSegments();
+                guessFileName = pathSegments.get(pathSegments.size() - 1);
+                int lastIndexOf = guessFileName.lastIndexOf(".");
+                if (lastIndexOf > 0) {
+                }
+            } catch (Exception unused) {
+            }
+            guessFileName = URLUtil.guessFileName(str, str3, str4);
+            String U = hl.U(guessFileName);
+            la7 la7Var = new la7((Object) this, (Object) str, (Object) str4, (Object) str2, (Object) U, (byte) 9);
+            if (lq3.q(yac.t0).c(8, j)) {
+                la7Var.run();
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(nv0Var.getContext());
+            id idVar = alertDialog$Builder.a;
+            idVar.S = ob6.M0(2131742561, null);
+            idVar.U = hl.S2(j > 0 ? ob6.a0(null, null, 2131742562, U, hl.i0(j, false, false)) : ob6.a0(null, null, 2131742563, U));
+            alertDialog$Builder.j(ob6.M0(2131742560, null), new tg0(la7Var, (byte) 14));
+            alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+            TextView textView = (TextView) alertDialog$Builder.o().c(-2);
+            if (textView != null) {
+                yob.X(textView, aob.q7, null);
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        ow0Var.m(true);
-    }
-
-    @Override // js4
-    public final Object m(Object obj) {
-        return Boolean.valueOf(this.a.f.getKeyboardHeight() >= gl.L(20.0f));
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        this.a.m(false);
     }
 }

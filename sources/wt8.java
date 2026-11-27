@@ -1,98 +1,31 @@
 // default package
 
-import android.os.SystemClock;
-import org.telegram.tgnet.RequestTimeDelegate;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wt8 implements RequestTimeDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ fba b;
+public final class wt8 extends zb3 {
+    public final /* synthetic */ cga F;
 
-    public /* synthetic */ wt8(fba fbaVar, byte b) {
-        this.a = b;
-        this.b = fbaVar;
+    public wt8(cga cgaVar) {
+        this.F = cgaVar;
     }
 
-    @Override // org.telegram.tgnet.RequestTimeDelegate
-    public final void run(final long j) {
-        byte b = this.a;
-        final fba fbaVar = this.b;
-        switch (b) {
-            case 0:
-                final byte b2 = 0;
-                gl.c3(new Runnable() { // from class: xt8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b3 = b2;
-                        long j2 = j;
-                        fba fbaVar2 = fbaVar;
-                        switch (b3) {
-                            case 0:
-                                fbaVar2.e = SystemClock.elapsedRealtime();
-                                fbaVar2.c = false;
-                                if (j2 == -1) {
-                                    fbaVar2.d = false;
-                                    fbaVar2.b = 0L;
-                                } else {
-                                    fbaVar2.b = j2;
-                                    fbaVar2.d = true;
-                                }
-                                kk7.e().k(kk7.D4, fbaVar2);
-                                break;
-                            default:
-                                fbaVar2.e = SystemClock.elapsedRealtime();
-                                fbaVar2.c = false;
-                                if (j2 == -1) {
-                                    fbaVar2.d = false;
-                                    fbaVar2.b = 0L;
-                                } else {
-                                    fbaVar2.b = j2;
-                                    fbaVar2.d = true;
-                                }
-                                kk7.e().k(kk7.D4, fbaVar2);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final byte b3 = 1;
-                gl.c3(new Runnable() { // from class: xt8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b32 = b3;
-                        long j2 = j;
-                        fba fbaVar2 = fbaVar;
-                        switch (b32) {
-                            case 0:
-                                fbaVar2.e = SystemClock.elapsedRealtime();
-                                fbaVar2.c = false;
-                                if (j2 == -1) {
-                                    fbaVar2.d = false;
-                                    fbaVar2.b = 0L;
-                                } else {
-                                    fbaVar2.b = j2;
-                                    fbaVar2.d = true;
-                                }
-                                kk7.e().k(kk7.D4, fbaVar2);
-                                break;
-                            default:
-                                fbaVar2.e = SystemClock.elapsedRealtime();
-                                fbaVar2.c = false;
-                                if (j2 == -1) {
-                                    fbaVar2.d = false;
-                                    fbaVar2.b = 0L;
-                                } else {
-                                    fbaVar2.b = j2;
-                                    fbaVar2.d = true;
-                                }
-                                kk7.e().k(kk7.D4, fbaVar2);
-                                break;
-                        }
-                    }
-                });
-                break;
-        }
+    @Override // zb3
+    public final void M() {
+        this.F.p();
+    }
+
+    @Override // zb3
+    public final void O() {
+        this.F.p();
+    }
+
+    @Override // zb3
+    public final void P(f89 f89Var) {
+        this.F.p();
+    }
+
+    @Override // zb3
+    public final void Q() {
+        this.F.p();
     }
 }

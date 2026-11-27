@@ -1,13 +1,37 @@
 // default package
 
-import android.hardware.Camera;
-import org.telegram.messenger.camera.CameraSession;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ea1 implements Camera.AutoFocusCallback {
-    @Override // android.hardware.Camera.AutoFocusCallback
-    public final void onAutoFocus(boolean z, Camera camera) {
-        CameraSession.lambda$new$0(z, camera);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ea1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ la1 b;
+
+    public /* synthetic */ ea1(la1 la1Var, byte b) {
+        this.a = b;
+        this.b = la1Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        la1 la1Var = this.b;
+        switch (b) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                la1Var.Z = floatValue;
+                la1Var.b.setAlpha(1.0f - floatValue);
+                if (la1Var.X == 3) {
+                    la1Var.c.setAlpha(1.0f - la1Var.Z);
+                }
+                la1Var.s.setAlpha(1.0f - la1Var.Z);
+                la1Var.x = (la1Var.Z * 0.25f) + 0.5f;
+                la1Var.fragmentView.invalidate();
+                break;
+            default:
+                la1Var.s.invalidate();
+                break;
+        }
     }
 }

@@ -1,307 +1,118 @@
 // default package
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Looper;
-import android.os.Trace;
-import android.util.Pair;
-import android.view.Surface;
-import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.Executor;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ec8 implements hcc {
-    public mm5 a;
-    public fm4 b;
-    public long c;
-    public int d;
-    public Executor e;
-    public final /* synthetic */ ic8 f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ec8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public ec8(ic8 ic8Var, Context context) {
-        this.f = ic8Var;
-        g8c.O(context);
-        km5 km5Var = mm5.b;
-        this.a = w59.e;
-        this.e = ic8.q;
+    public /* synthetic */ ec8(PhotoViewer photoViewer, boolean z, byte b) {
+        this.a = b;
+        this.c = photoViewer;
+        this.b = z;
     }
 
-    @Override // hcc
-    public final boolean a() {
-        return false;
-    }
-
-    @Override // hcc
-    public final Surface b() {
-        gre.p(false);
-        throw null;
-    }
-
-    @Override // hcc
-    public final void c(float f) {
-        ic8 ic8Var = this.f;
-        ic8Var.i.c(f);
-        ic8Var.e.c(f);
-    }
-
-    @Override // hcc
-    public final void d(Surface surface, wia wiaVar) {
-        ic8 ic8Var = this.f;
-        Pair pair = ic8Var.l;
-        if (pair != null && ((Surface) pair.first).equals(surface) && ((wia) ic8Var.l.second).equals(wiaVar)) {
-            return;
-        }
-        ic8Var.l = Pair.create(surface, wiaVar);
-        int i = wiaVar.a;
-    }
-
-    @Override // hcc
-    public final void e() {
-        ic8 ic8Var = this.f;
-        if (ic8Var.d) {
-            ic8Var.e.e();
-        }
-    }
-
-    @Override // hcc
-    public final void f() {
-        ic8 ic8Var = this.f;
-        if (ic8Var.d) {
-            ic8Var.e.f();
-        }
-    }
-
-    @Override // hcc
-    public final void g(fm4 fm4Var, long j, int i, List list) {
-        gre.p(false);
-        this.a = mm5.q(list);
-        this.b = fm4Var;
-        em4 a = fm4Var.a();
-        hl2 hl2Var = fm4Var.L;
-        if (hl2Var == null || !hl2Var.d()) {
-            hl2Var = hl2.h;
-        }
-        a.K = hl2Var;
-        new fm4(a);
-        throw null;
-    }
-
-    @Override // hcc
-    public final void h(long j) {
-        this.c = j;
-    }
-
-    @Override // hcc
-    public final void i() {
-        ic8 ic8Var = this.f;
-        if (ic8Var.o >= -9223372036854775807L) {
-            ic8Var.e.i();
-        }
-    }
-
-    @Override // hcc
-    public final void j(int i) {
-        this.f.e.j(i);
-    }
-
-    @Override // hcc
-    public final void k() {
-        int i = wia.c.a;
-        this.f.l = null;
-    }
-
-    @Override // hcc
-    public final boolean l(long j, sk6 sk6Var) {
-        int i;
-        gre.p(false);
-        long j2 = j + this.c;
-        ic8 ic8Var = this.f;
-        vac vacVar = ic8Var.i;
-        long j3 = vacVar.a == -9223372036854775807L ? -9223372036854775807L : (long) (((j2 - r3) * vacVar.c) + vacVar.b);
-        if (j3 != -9223372036854775807L) {
-            long j4 = ic8Var.h;
-            if (j4 != -9223372036854775807L && j3 < j4 && (i = this.d) < 2) {
-                this.d = i + 1;
-                vk6 vk6Var = sk6Var.c;
-                ek6 ek6Var = sk6Var.a;
-                int i2 = sk6Var.b;
-                Trace.beginSection("dropVideoBuffer");
-                ek6Var.c(i2);
-                Trace.endSection();
-                vk6Var.Y0(0, 1);
-                return true;
-            }
-        }
-        int i3 = ic8Var.p;
-        if (i3 == -1 || i3 != 0) {
-            return false;
-        }
-        throw null;
-    }
-
-    @Override // hcc
-    public final boolean m(fm4 fm4Var) {
-        ic8 ic8Var = this.f;
-        boolean z = true;
-        gre.p(ic8Var.n == 0);
-        hl2 hl2Var = fm4Var.L;
-        if (hl2Var == null || !hl2Var.d()) {
-            hl2Var = hl2.h;
-        }
-        int i = hl2Var.c;
-        if (i == 7) {
-            try {
-                int i2 = Build.VERSION.SDK_INT;
-                if (i2 < 34) {
-                    if (i2 >= 33 && wie.b("EGL_EXT_gl_colorspace_bt2020_pq")) {
-                        adb adbVar = ic8Var.f;
-                        Looper myLooper = Looper.myLooper();
-                        myLooper.getClass();
-                        ic8Var.k = adbVar.a(myLooper, null);
-                        ic8Var.b.a();
-                        throw null;
-                    }
-                }
-            } catch (bw4 e) {
-                throw new gcc(e, fm4Var);
-            }
-        }
-        if (i == 6) {
-            if (Build.VERSION.SDK_INT < 33 || !wie.b("EGL_EXT_gl_colorspace_bt2020_pq")) {
-                z = false;
-            }
-        } else if (i == 7) {
-            z = wie.b("EGL_EXT_gl_colorspace_bt2020_hlg");
-        }
-        if (!z && Build.VERSION.SDK_INT >= 29) {
-            Locale locale = Locale.US;
-            lad.f("PlaybackVidGraphWrapper", "Color transfer " + i + " is not supported. Falling back to OpenGl tone mapping.");
-            hl2 hl2Var2 = hl2.h;
-        } else if (i == 2 || i == 10) {
-            hl2 hl2Var3 = hl2.h;
-        }
-        adb adbVar2 = ic8Var.f;
-        Looper myLooper2 = Looper.myLooper();
-        myLooper2.getClass();
-        ic8Var.k = adbVar2.a(myLooper2, null);
-        ic8Var.b.a();
-        throw null;
-    }
-
-    @Override // hcc
-    public final void n(boolean z) {
-        iq iqVar;
-        ic8 ic8Var = this.f;
-        xc3 xc3Var = ic8Var.e;
-        if (ic8Var.n == 1) {
-            ic8Var.m++;
-            xc3Var.n(z);
-            while (true) {
-                int p = ic8Var.j.p();
-                iqVar = ic8Var.j;
-                if (p <= 1) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        byte b = this.a;
+        PhotoViewer photoViewer = this.c;
+        switch (b) {
+            case 1:
+                if (animator.equals(photoViewer.x)) {
+                    photoViewer.x = null;
                     break;
-                } else {
-                    iqVar.i();
                 }
-            }
-            if (iqVar.p() == 1) {
-                ((hc8) ic8Var.j.i()).getClass();
-                throw null;
-            }
-            ic8Var.o = -9223372036854775807L;
-            cdb cdbVar = ic8Var.k;
-            cdbVar.getClass();
-            cdbVar.e(new w88(ic8Var, (byte) 11));
+                break;
+            case 2:
+                if (animator.equals(photoViewer.M)) {
+                    photoViewer.M = null;
+                    break;
+                }
+                break;
+            case 3:
+                photoViewer.Z7 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // hcc
-    public final void o(List list) {
-        if (this.a.equals(list)) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        boolean z = this.b;
+        PhotoViewer photoViewer = this.c;
+        switch (b) {
+            case 0:
+                if (!z) {
+                    photoViewer.i3.setVisibility(8);
+                    break;
+                }
+                break;
+            case 1:
+                if (animator.equals(photoViewer.x)) {
+                    if (!z) {
+                        photoViewer.Y0.setVisibility(4);
+                    }
+                    photoViewer.x = null;
+                    break;
+                }
+                break;
+            case 2:
+                if (animator.equals(photoViewer.M)) {
+                    if (!z) {
+                        photoViewer.G.setVisibility(4);
+                        if (photoViewer.j0.getTag() != null) {
+                            photoViewer.j0.setVisibility(4);
+                        }
+                        if (photoViewer.R1.getTag() != null) {
+                            photoViewer.R1.setVisibility(4);
+                        }
+                    }
+                    photoViewer.M = null;
+                    break;
+                }
+                break;
+            default:
+                if (animator.equals(photoViewer.Z7)) {
+                    photoViewer.Z7 = new AnimatorSet();
+                    if (z) {
+                        photoViewer.T7.setVisibility(0);
+                        photoViewer.U7.setVisibility(0);
+                        AnimatorSet animatorSet = photoViewer.Z7;
+                        gd8 gd8Var = photoViewer.T7;
+                        Property property = View.TRANSLATION_Y;
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(gd8Var, (Property<gd8, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.U7, (Property<pa2, Float>) property, 0.0f));
+                    } else {
+                        if (photoViewer.R4) {
+                            photoViewer.k0.setVisibility(8);
+                            photoViewer.k0.setAlpha(0.0f);
+                            photoViewer.k0.setBackgroundColor(photoViewer.d2 == 11 ? -16777216 : 2130706432);
+                        }
+                        photoViewer.T7.setVisibility(4);
+                        photoViewer.U7.setVisibility(4);
+                        AnimatorSet animatorSet2 = photoViewer.Z7;
+                        jo0 jo0Var = photoViewer.Q0;
+                        Property property2 = View.TRANSLATION_Y;
+                        animatorSet2.playTogether(ObjectAnimator.ofFloat(jo0Var, (Property<jo0, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.Q0, (Property<jo0, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.T0, (Property<di3, Float>) property2, 0.0f));
+                    }
+                    photoViewer.Z7.addListener(new n88(this, (byte) 10));
+                    photoViewer.Z7.setDuration(200L);
+                    photoViewer.Z7.setInterpolator(hl.F);
+                    photoViewer.Z7.start();
+                    break;
+                }
+                break;
         }
-        this.a = mm5.q(list);
-        fm4 fm4Var = this.b;
-        if (fm4Var == null) {
-            return;
-        }
-        em4 a = fm4Var.a();
-        hl2 hl2Var = fm4Var.L;
-        if (hl2Var == null || !hl2Var.d()) {
-            hl2Var = hl2.h;
-        }
-        a.K = hl2Var;
-        new fm4(a);
-        throw null;
-    }
-
-    @Override // hcc
-    public final void p(long j, long j2) {
-        this.f.e.p(j + this.c, j2);
-    }
-
-    @Override // hcc
-    public final void q(boolean z) {
-        ic8 ic8Var = this.f;
-        if (ic8Var.d) {
-            ic8Var.e.q(z);
-        }
-    }
-
-    @Override // hcc
-    public final boolean r(boolean z) {
-        return this.f.e.a.b(false);
-    }
-
-    @Override // hcc
-    public final void release() {
-        ic8 ic8Var = this.f;
-        if (ic8Var.n == 2) {
-            return;
-        }
-        cdb cdbVar = ic8Var.k;
-        if (cdbVar != null) {
-            cdbVar.f();
-        }
-        ic8Var.l = null;
-        ic8Var.n = (byte) 2;
-    }
-
-    @Override // hcc
-    public final void s(sac sacVar) {
-        this.f.e.k = sacVar;
-    }
-
-    @Override // hcc
-    public final boolean u() {
-        return false;
-    }
-
-    @Override // hcc
-    public final void v() {
-        ic8 ic8Var = this.f;
-        if (ic8Var.j.p() == 0) {
-            ic8Var.e.v();
-            return;
-        }
-        iq iqVar = new iq();
-        if (ic8Var.j.p() <= 0) {
-            ic8Var.j = iqVar;
-        } else {
-            ((hc8) ic8Var.j.i()).getClass();
-            throw null;
-        }
-    }
-
-    @Override // hcc
-    public final void w(pj4 pj4Var) {
-        this.e = vn3.a;
-    }
-
-    @Override // hcc
-    public final void t() {
     }
 }

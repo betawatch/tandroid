@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ViewStubCompat extends View {
     public int a;
@@ -21,7 +21,7 @@ public final class ViewStubCompat extends View {
     public ViewStubCompat(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
         this.a = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, jy8.A, 0, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, w19.A, 0, 0);
         this.b = obtainStyledAttributes.getResourceId(2, -1);
         this.a = obtainStyledAttributes.getResourceId(1, 0);
         setId(obtainStyledAttributes.getResourceId(0, -1));
@@ -33,11 +33,11 @@ public final class ViewStubCompat extends View {
     public final View a() {
         ViewParent parent = getParent();
         if (!(parent instanceof ViewGroup)) {
-            sc8.j("ViewStub must have a non-null ViewGroup viewParent");
+            grb.i("ViewStub must have a non-null ViewGroup viewParent");
             return null;
         }
         if (this.a == 0) {
-            w26.j("ViewStub must have a valid layoutResource");
+            lq5.j("ViewStub must have a valid layoutResource");
             return null;
         }
         ViewGroup viewGroup = (ViewGroup) parent;
@@ -100,7 +100,7 @@ public final class ViewStubCompat extends View {
                 view.setVisibility(i);
                 return;
             } else {
-                sc8.j("setVisibility called on un-referenced view");
+                grb.i("setVisibility called on un-referenced view");
                 return;
             }
         }
@@ -118,6 +118,6 @@ public final class ViewStubCompat extends View {
     public final void draw(Canvas canvas) {
     }
 
-    public void setOnInflateListener(ffc ffcVar) {
+    public void setOnInflateListener(ejc ejcVar) {
     }
 }

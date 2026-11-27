@@ -1,33 +1,33 @@
 // default package
 
-import android.view.View;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ht6 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rt6 b;
+public final class ht6 {
+    public static final String a;
+    public static final String b;
+    public static final String c;
+    public static final String d;
 
-    public /* synthetic */ ht6(rt6 rt6Var, byte b) {
-        this.a = b;
-        this.b = rt6Var;
+    static {
+        String str = gcc.a;
+        a = "0";
+        b = "1";
+        c = "2";
+        d = "3";
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        rt6 rt6Var = this.b;
-        switch (b) {
-            case 0:
-                rt6Var.dismiss();
-                break;
-            default:
-                if (rt6Var.r.g()) {
-                    rt6Var.f.getClass();
-                    gu6.j(2);
-                }
-                rt6Var.dismiss();
-                break;
+    public static ht6 a(Bundle bundle) {
+        Bundle o = gcc.o(bundle.getBundle(a));
+        bundle.getBoolean(b, false);
+        bundle.getBoolean(c, false);
+        bundle.getBoolean(d, false);
+        if (o == null) {
+            o = Bundle.EMPTY;
         }
+        ht6 ht6Var = new ht6();
+        new Bundle(o);
+        return ht6Var;
     }
 }

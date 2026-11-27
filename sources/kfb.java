@@ -1,81 +1,128 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.graphics.RenderEffect;
+import android.graphics.RuntimeShader;
+import android.view.RoundedCorner;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.WindowInsets;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class kfb extends FrameLayout {
-    public final mfb a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public final class kfb extends e23 {
+    public final ArrayList b;
+    public final RuntimeShader c;
+    public RenderEffect d;
+    public int e;
+    public int f;
+    public int g;
+    public float h;
+    public final float[] i;
+    public final float[] j;
+    public final float[] k;
+    public final float[] l;
 
-    public kfb(mfb mfbVar, View view, boolean z) {
-        super(mfbVar.getContext());
-        this.a = mfbVar;
-        setWillNotDraw(false);
-        if (!z) {
-            setPadding(gl.L(12.66f), gl.L(9.33f), gl.L(12.66f), gl.L(9.33f));
-        }
-        addView(view, nme.c(-1.0f, -1));
+    public kfb(View view) {
+        super(view);
+        this.b = new ArrayList();
+        this.i = new float[7];
+        this.j = new float[7];
+        this.k = new float[7];
+        this.l = new float[7];
+        RuntimeShader b = fn3.b(hl.v2(null, R.raw.superripple_effect));
+        this.c = b;
+        h(true);
+        this.d = RenderEffect.createRuntimeShaderEffect(b, "img");
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z = this.c;
-        mfb mfbVar = this.a;
-        if (z || this.d) {
-            canvas2 = canvas;
-            float L = gl.L(10.0f);
-            float[] fArr = mfbVar.c;
-            float f = mfbVar.h;
-            Path path = mfbVar.b;
-            boolean z2 = this.c;
-            float f2 = z2 ? L : 0.0f;
-            fArr[1] = f2;
-            fArr[0] = f2;
-            float f3 = z2 ? L : 0.0f;
-            fArr[3] = f3;
-            fArr[2] = f3;
-            boolean z3 = this.d;
-            float f4 = z3 ? L : 0.0f;
-            fArr[5] = f4;
-            fArr[4] = f4;
-            if (!z3) {
-                L = 0.0f;
-            }
-            fArr[7] = L;
-            fArr[6] = L;
-            path.rewind();
-            RectF rectF = gl.P;
-            rectF.set(f, f, getWidth() - f, ((this.d ? -1.0f : 1.0f) * f) + getHeight());
-            path.addRoundRect(rectF, mfbVar.c, Path.Direction.CW);
-            if (this.b) {
-                canvas2.drawPath(path, mfbVar.d);
-            }
-            canvas2.drawPath(path, mfbVar.e);
-        } else {
-            if (this.b) {
-                float f5 = mfbVar.h;
-                float f6 = mfbVar.h;
-                canvas2 = canvas;
-                canvas2.drawRect(f5, f5, getWidth() + f6, getHeight() + f6, mfbVar.d);
+    public final void h(boolean z) {
+        RoundedCorner roundedCorner;
+        RoundedCorner roundedCorner2;
+        RoundedCorner roundedCorner3;
+        RoundedCorner roundedCorner4;
+        View view = (View) this.a;
+        if (z || this.f != view.getWidth() || this.g != view.getHeight() || Math.abs(this.h - hl.p) > 0.01f) {
+            RuntimeShader runtimeShader = this.c;
+            int width = view.getWidth();
+            this.f = width;
+            int height = view.getHeight();
+            this.g = height;
+            runtimeShader.setFloatUniform("size", width, height);
+            RuntimeShader runtimeShader2 = this.c;
+            float f = hl.p;
+            this.h = f;
+            runtimeShader2.setFloatUniform("density", f);
+            WindowInsets rootWindowInsets = view.getRootWindowInsets();
+            if (rootWindowInsets == null) {
+                roundedCorner4 = null;
+                roundedCorner = null;
+                roundedCorner2 = null;
+                roundedCorner3 = null;
             } else {
-                canvas2 = canvas;
+                roundedCorner = rootWindowInsets.getRoundedCorner(0);
+                roundedCorner2 = rootWindowInsets.getRoundedCorner(1);
+                roundedCorner3 = rootWindowInsets.getRoundedCorner(3);
+                roundedCorner4 = rootWindowInsets.getRoundedCorner(2);
             }
-            float f7 = mfbVar.h;
-            float f8 = mfbVar.h;
-            canvas2.drawRect(f7, f7, getWidth() - f8, getHeight() + f8, mfbVar.e);
+            this.c.setFloatUniform("radius", (roundedCorner4 == null || (view != view.getRootView() && hl.n > 0)) ? 0.0f : roundedCorner4.getRadius(), roundedCorner2 == null ? 0.0f : roundedCorner2.getRadius(), (roundedCorner3 == null || (view != view.getRootView() && hl.n > 0)) ? 0.0f : roundedCorner3.getRadius(), roundedCorner != null ? roundedCorner.getRadius() : 0.0f);
         }
-        super.onDraw(canvas2);
     }
 
-    public void setFilled(boolean z) {
-        this.b = z;
+    public final void i() {
+        float[] fArr;
+        float[] fArr2;
+        float[] fArr3;
+        float[] fArr4;
+        View view = (View) this.a;
+        ArrayList arrayList = this.b;
+        boolean z = false;
+        if (!arrayList.isEmpty()) {
+            boolean z2 = true;
+            boolean z3 = this.e != Math.min(7, arrayList.size());
+            this.e = Math.min(7, arrayList.size());
+            int i = 0;
+            while (true) {
+                int i2 = this.e;
+                fArr = this.l;
+                fArr2 = this.k;
+                fArr3 = this.j;
+                fArr4 = this.i;
+                if (i >= i2) {
+                    break;
+                }
+                jfb jfbVar = (jfb) arrayList.get(i);
+                boolean z4 = z3 || Math.abs(fArr4[i] - jfbVar.d) > 0.001f;
+                float f = jfbVar.d;
+                float f2 = jfbVar.c;
+                float f3 = jfbVar.b;
+                float f4 = jfbVar.a;
+                fArr4[i] = f;
+                boolean z5 = z4 || Math.abs(fArr3[i] - f4) > 0.001f;
+                fArr3[i] = f4;
+                boolean z6 = z5 || Math.abs(fArr2[i] - f3) > 0.001f;
+                fArr2[i] = f3;
+                z3 = z6 || Math.abs(fArr[i] - f2) > 0.001f;
+                fArr[i] = f2;
+                i++;
+            }
+            if (!z3 && this.f == view.getWidth() && this.g == view.getHeight() && Math.abs(this.h - hl.p) <= 0.01f) {
+                z2 = false;
+            }
+            if (z2) {
+                this.c.setIntUniform("count", this.e);
+                this.c.setFloatUniform("t", fArr4);
+                this.c.setFloatUniform("centerX", fArr3);
+                this.c.setFloatUniform("centerY", fArr2);
+                this.c.setFloatUniform("intensity", fArr);
+                h(false);
+                this.d = RenderEffect.createRuntimeShaderEffect(this.c, "img");
+            }
+            z = z2;
+        }
+        view.setRenderEffect(arrayList.isEmpty() ? null : this.d);
+        if (z) {
+            view.invalidate();
+        }
     }
 }

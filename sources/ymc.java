@@ -1,20 +1,36 @@
 // default package
 
-import android.content.Context;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ymc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ dnc b;
+    public final /* synthetic */ int c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ymc extends fnc {
-    public final /* synthetic */ anc E;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ymc(anc ancVar, Context context, wmc wmcVar) {
-        super(context, wmcVar, 2);
-        this.E = ancVar;
+    public /* synthetic */ ymc(dnc dncVar, int i, byte b) {
+        this.a = b;
+        this.b = dncVar;
+        this.c = i;
     }
 
-    @Override // fnc
-    public final void a() {
-        this.E.s = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        dnc dncVar = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new ymc(dncVar, i, (byte) 2));
+                break;
+            case 1:
+                hl.c3(new ymc(dncVar, i, (byte) 3));
+                break;
+            case 2:
+                dncVar.c(i);
+                break;
+            default:
+                dncVar.a(i);
+                break;
+        }
     }
 }

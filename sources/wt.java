@@ -1,149 +1,95 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.m;
-import org.telegram.ui.o;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class wt extends nsc {
-    public final /* synthetic */ o C0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class wt extends l01 {
+    public final /* synthetic */ byte d = 1;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wt(o oVar, Activity activity) {
-        super(activity);
-        this.C0 = oVar;
+    public wt(ju1 ju1Var, r47 r47Var, wb2 wb2Var) {
+        this.g = ju1Var;
+        this.e = r47Var;
+        this.f = wb2Var;
     }
 
-    @Override // nsc
-    public final atc getInstantViewLoader() {
-        byte b = 0;
-        m mVar = this.C0.v0[0];
-        if (mVar.e()) {
-            cv0 webView = mVar.getWebView();
-            atc atcVar = mVar.F;
-            if (webView != null) {
-                if (atcVar != null && (atcVar.f != mVar.getWebView().b || mVar.F.e != mVar.getWebView().getProgress())) {
-                    mVar.F.d(mVar.getWebView());
-                    return mVar.F;
+    @Override // l01
+    public final void b() {
+        switch (this.d) {
+            case 0:
+                xi5 xi5Var = (xi5) this.e;
+                xi5Var.c.m(xi5Var.w, true);
+                View view = xi5Var.s;
+                if (view != null) {
+                    view.invalidate();
                 }
-                if (mVar.F != null && TextUtils.equals(mVar.getWebView().getUrl(), mVar.F.d)) {
-                    return mVar.F;
-                }
-                atc atcVar2 = mVar.F;
-                if (atcVar2 != null) {
-                    atcVar2.a();
-                    atc atcVar3 = mVar.F;
-                    TLRPC.TL_webPage tL_webPage = atcVar3.j;
-                    if (tL_webPage != null) {
-                        ctc.o(tL_webPage);
-                        atcVar3.j = null;
-                    }
-                    mVar.F = null;
-                }
-                atc atcVar4 = new atc(mVar.M.Y);
-                mVar.F = atcVar4;
-                cv0 webView2 = mVar.getWebView();
-                if (!atcVar4.b) {
-                    atcVar4.b = true;
-                    atcVar4.d = webView2.getUrl();
-                    atcVar4.e = webView2.getProgress();
-                    atcVar4.f = webView2.b;
-                    atcVar4.l = ctc.e(webView2, new zsc(atcVar4, b));
-                    TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
-                    tL_messages_getWebPage.url = atcVar4.d;
-                    tL_messages_getWebPage.hash = 0;
-                    atcVar4.k = ConnectionsManager.getInstance(atcVar4.a).sendRequest(tL_messages_getWebPage, new wx9(atcVar4, (byte) 26));
-                }
-                return mVar.F;
-            }
-            if (atcVar != null) {
-                atcVar.a();
-                atc atcVar5 = mVar.F;
-                TLRPC.TL_webPage tL_webPage2 = atcVar5.j;
-                if (tL_webPage2 != null) {
-                    ctc.o(tL_webPage2);
-                    atcVar5.j = null;
-                }
-                mVar.F = null;
-            }
-        } else {
-            atc atcVar6 = mVar.F;
-            if (atcVar6 != null) {
-                atcVar6.a();
-                atc atcVar7 = mVar.F;
-                TLRPC.TL_webPage tL_webPage3 = atcVar7.j;
-                if (tL_webPage3 != null) {
-                    ctc.o(tL_webPage3);
-                    atcVar7.j = null;
-                }
-                mVar.F = null;
-                return null;
-            }
-        }
-        return null;
-    }
-
-    public final void j(float f) {
-        int f2 = bm2.f(this.b0, this.x, this.E);
-        ed0 ed0Var = this.N;
-        ed0Var.a(f2);
-        ed0Var.b(bm2.f(this.b0, this.x, this.E));
-        this.M.invalidate();
-        o oVar = this.C0;
-        eb ebVar = oVar.j0;
-        if (ebVar != null) {
-            ebVar.setOpenProgress(f);
-        }
-        sw swVar = oVar.L;
-        if (swVar != null) {
-            swVar.s();
+                c(false);
+                break;
+            default:
+                super.b();
+                break;
         }
     }
 
-    public final void k(boolean z) {
-        if (this.a0 != z) {
-            ValueAnimator valueAnimator = this.x0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.a0 = z;
-            byte b = 1;
-            ps0 ps0Var = this.c0;
-            if (z) {
-                int i = this.d0;
-                int i2 = gba.m0;
-                if (i != i2) {
-                    this.d0 = i2;
-                    ps0Var.setHint(k96.a0(null, null, 2131754348, is9.a().a));
+    @Override // l01
+    public final void c(boolean z) {
+        switch (this.d) {
+            case 1:
+                if (!z) {
+                    hl.d3(new zo1(((ju1) this.g).a, (byte) 7), 250L);
+                    break;
                 }
-            }
-            ps0Var.setVisibility(0);
-            this.N.c(true, (this.v0 || z) ? 0.0f : 1.0f);
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b0, z ? 1.0f : 0.0f);
-            this.x0 = ofFloat;
-            ofFloat.addUpdateListener(new uwb(this, (byte) 20));
-            this.x0.addListener(new pu9((byte) 19, this, z));
-            this.x0.setInterpolator(s33.h);
-            this.x0.setDuration(360L);
-            this.x0.start();
-            gl.r(new ksc(this, b));
-            gl.d3(new ksc(this, b), this.a0 ? 100L : 0L);
-        }
-        eb ebVar = this.C0.j0;
-        if (ebVar != null) {
-            ebVar.setOpened(z);
+                break;
+            default:
+                super.c(z);
+                break;
         }
     }
 
-    @Override // nsc, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        ((ViewGroup.MarginLayoutParams) this.C0.j0.getLayoutParams()).topMargin = getMeasuredHeight();
+    @Override // l01
+    public final void d() {
+        byte b = this.d;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.g;
+        switch (b) {
+            case 0:
+                q66 q66Var = (q66) obj3;
+                xi5 xi5Var = (xi5) obj2;
+                xi5Var.getClass();
+                m66 m66Var = xi5Var.c;
+                cw cwVar = (cw) obj;
+                xi5Var.s = cwVar != null ? cwVar.b : null;
+                m66Var.m(xi5Var.w, true);
+                if (cwVar != null) {
+                    xi5Var.w = m66.j(cwVar.d, q66Var.i, 0.0f);
+                    int w0 = aob.w0(null, aob.Ce, false);
+                    xi5Var.w.g(aob.p1(0.8f, w0), aob.p1(1.3f, w0), aob.p1(1.0f, w0), aob.p1(4.0f, w0));
+                    xi5Var.w.x.setStrokeWidth(hl.N(1.25f));
+                    m66Var.b(xi5Var.w, cwVar);
+                }
+                View view = xi5Var.s;
+                if (view != null) {
+                    view.invalidate();
+                }
+                super.d();
+                break;
+            default:
+                zu1 zu1Var = ((ju1) obj3).a;
+                zu1Var.lc = ((r47) obj2).e1();
+                zu1Var.mc = 0;
+                zu1Var.nc = null;
+                ((wb2) obj).invalidate();
+                break;
+        }
+    }
+
+    public wt(xi5 xi5Var, cw cwVar, q66 q66Var) {
+        this.e = xi5Var;
+        this.f = cwVar;
+        this.g = q66Var;
     }
 }

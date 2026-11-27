@@ -1,35 +1,105 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.app.Application;
+import android.os.Bundle;
+import java.lang.reflect.Constructor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wt9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ bu9 b;
-    public final /* synthetic */ TLRPC.TL_encryptedChatDiscarded c;
+public final class wt9 implements qhc {
+    public final Application a;
+    public final phc b;
+    public final Bundle c;
+    public final a36 d;
+    public final po e;
 
-    public /* synthetic */ wt9(bu9 bu9Var, TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded, byte b) {
-        this.a = b;
-        this.b = bu9Var;
-        this.c = tL_encryptedChatDiscarded;
+    public wt9(Application application, vt9 vt9Var, Bundle bundle) {
+        phc phcVar;
+        this.e = vt9Var.g();
+        this.d = vt9Var.m();
+        this.c = bundle;
+        this.a = application;
+        if (application != null) {
+            phcVar = phc.H;
+            if (phcVar == null) {
+                phcVar = new phc(application);
+                phc.H = phcVar;
+            }
+        } else {
+            phcVar = new phc(null);
+        }
+        this.b = phcVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded = this.c;
-        bu9 bu9Var = this.b;
-        switch (b) {
-            case 0:
-                bu9Var.getMessagesController().X3(tL_encryptedChatDiscarded, false);
-                bu9Var.getNotificationCenter().k(35, tL_encryptedChatDiscarded);
-                break;
-            default:
-                bu9Var.getMessagesController().X3(tL_encryptedChatDiscarded, false);
-                bu9Var.getMessagesStorage().S1(tL_encryptedChatDiscarded);
-                bu9Var.getNotificationCenter().k(35, tL_encryptedChatDiscarded);
-                break;
+    @Override // qhc
+    public final nhc g(Class cls, e23 e23Var) {
+        AutoCloseable autoCloseable;
+        Application application;
+        e23Var.getClass();
+        String str = (String) e23Var.b(z3f.e);
+        if (str == null) {
+            grb.i("VIEW_MODEL_KEY must always be provided by ViewModelProvider");
+            return null;
         }
+        byte b = 1;
+        if (e23Var.b(fhd.a) != null && e23Var.b(fhd.b) != null) {
+            Application application2 = (Application) e23Var.b(phc.I);
+            boolean isAssignableFrom = il.class.isAssignableFrom(cls);
+            Constructor a = (!isAssignableFrom || application2 == null) ? xt9.a(cls, xt9.b) : xt9.a(cls, xt9.a);
+            return a == null ? this.b.g(cls, e23Var) : (!isAssignableFrom || application2 == null) ? xt9.b(cls, a, fhd.a(e23Var)) : xt9.b(cls, a, application2, fhd.a(e23Var));
+        }
+        if (this.d == null) {
+            grb.i("SAVED_STATE_REGISTRY_OWNER_KEY andVIEW_MODEL_STORE_OWNER_KEY must be provided in the creation extras tosuccessfully create a ViewModel.");
+            return null;
+        }
+        a36 a36Var = this.d;
+        if (a36Var == null) {
+            qyc.c("SavedStateViewModelFactory constructed with empty constructor supports only calls to create(modelClass: Class<T>, extras: CreationExtras).");
+            return null;
+        }
+        boolean isAssignableFrom2 = il.class.isAssignableFrom(cls);
+        Constructor a2 = (!isAssignableFrom2 || this.a == null) ? xt9.a(cls, xt9.b) : xt9.a(cls, xt9.a);
+        if (a2 == null) {
+            if (this.a != null) {
+                return this.b.f(cls);
+            }
+            qf5 qf5Var = qf5.F;
+            if (qf5Var == null) {
+                qf5Var = new qf5((byte) 29);
+                qf5.F = qf5Var;
+            }
+            return qf5Var.f(cls);
+        }
+        po poVar = this.e;
+        poVar.getClass();
+        Bundle bundle = this.c;
+        Bundle c = poVar.c(str);
+        Class[] clsArr = ot9.f;
+        ot9 a3 = fye.a(c, bundle);
+        pt9 pt9Var = new pt9(str, a3);
+        pt9Var.a(poVar, a36Var);
+        z26 z26Var = ((k36) a36Var).b;
+        if (z26Var == z26.b || z26Var.compareTo(z26.d) >= 0) {
+            poVar.g();
+        } else {
+            a36Var.a(new bc3(a36Var, poVar, b));
+        }
+        nhc b2 = (!isAssignableFrom2 || (application = this.a) == null) ? xt9.b(cls, a2, a3) : xt9.b(cls, a2, application, a3);
+        b2.getClass();
+        ohc ohcVar = b2.a;
+        if (ohcVar.d) {
+            ohc.a(pt9Var);
+            return b2;
+        }
+        synchronized (ohcVar.a) {
+            autoCloseable = (AutoCloseable) ohcVar.b.put("androidx.lifecycle.savedstate.vm.tag", pt9Var);
+        }
+        ohc.a(autoCloseable);
+        return b2;
+    }
+
+    @Override // qhc
+    public final /* synthetic */ nhc j(ki2 ki2Var, e23 e23Var) {
+        return xnb.a(this, ki2Var, e23Var);
     }
 }

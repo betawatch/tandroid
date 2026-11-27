@@ -1,59 +1,19 @@
 // default package
 
-import android.os.Bundle;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class s9e {
-    public static k03 a(String str, Bundle bundle) {
-        str.getClass();
-        bundle.getClass();
-        try {
-            int hashCode = str.hashCode();
-            if (hashCode != -1678407252) {
-                if (hashCode != -543568185) {
-                    if (hashCode == -95037569 && str.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string = bundle.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
-                            string.getClass();
-                            return new b13(string, bundle);
-                        } catch (Exception unused) {
-                            throw new jp4();
-                        }
-                    }
-                } else if (str.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                    return new l03("android.credentials.TYPE_PASSWORD_CREDENTIAL", bundle);
-                }
-                throw new jp4();
-            }
-            if (str.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                try {
-                    String string2 = bundle.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
-                    string2.getClass();
-                    Bundle bundle2 = new Bundle();
-                    bundle2.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
-                    l03 l03Var = new l03("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle2);
-                    if (string2.length() != 0) {
-                        try {
-                            new JSONObject(string2);
-                            return l03Var;
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
-                } catch (Exception unused3) {
-                    throw new jp4();
-                }
-            }
-            throw new jp4();
-        } catch (jp4 unused4) {
-            l03 l03Var2 = new l03(str, bundle);
-            if (str.length() > 0) {
-                return l03Var2;
-            }
-            w26.j("type should not be empty");
-            return null;
+public final class s9e implements zq7 {
+    public static final s9e a = new s9e();
+
+    static {
+        xnb.y(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, new ubd(1)), 2)), 3)), 4)), 5)), 6)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

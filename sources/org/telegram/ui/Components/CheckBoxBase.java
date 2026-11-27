@@ -15,7 +15,7 @@ import android.graphics.Shader;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -23,10 +23,10 @@ public class CheckBoxBase {
     public int A;
     public float B;
     public String C;
-    public xf2 D;
-    public m17 E;
-    public wjb F;
-    public js4 G;
+    public pg2 D;
+    public t37 E;
+    public vnb F;
+    public nu4 G;
     public long H;
     public View a;
     public final Paint d;
@@ -53,19 +53,19 @@ public class CheckBoxBase {
     public final Path j = new Path();
     public boolean k = true;
     public float m = 1.0f;
-    public int r = bkb.j7;
+    public int r = aob.k7;
 
-    public CheckBoxBase(int i, wjb wjbVar, View view) {
-        int i2 = bkb.bd;
+    public CheckBoxBase(int i, vnb vnbVar, View view) {
+        int i2 = aob.cd;
         this.s = i2;
         this.t = i2;
-        this.u = bkb.g5;
+        this.u = aob.h5;
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new k32((byte) 4);
+        this.G = new c22((byte) 9);
         this.H = 200L;
-        this.F = wjbVar;
+        this.F = vnbVar;
         this.a = view;
         this.B = i;
         if (I == null) {
@@ -77,11 +77,11 @@ public class CheckBoxBase {
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(gl.L(1.9f));
+        paint.setStrokeWidth(hl.L(1.9f));
         Paint paint2 = new Paint(1);
         this.f = paint2;
         paint2.setStyle(style);
-        paint2.setStrokeWidth(gl.L(1.2f));
+        paint2.setStrokeWidth(hl.L(1.2f));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0044  */
@@ -124,20 +124,20 @@ public class CheckBoxBase {
         float f7;
         float f8;
         int i10;
-        m17 m17Var;
+        t37 t37Var;
         int i11;
         int i12;
         int i13;
         RectF rectF;
         int i14;
         int i15;
-        float L = gl.L(this.B / 2.0f);
+        float L = hl.L(this.B / 2.0f);
         int i16 = this.A;
         if (i16 == 12 || i16 == 13) {
-            L = gl.L(10.0f);
+            L = hl.L(10.0f);
         } else if (i16 != 0 && i16 != 11) {
             f = L;
-            f2 = L - gl.L(0.2f);
+            f2 = L - hl.L(0.2f);
             float f9 = !this.n ? 1.0f : this.o;
             f3 = f9 < 0.5f ? 1.0f : f9 / 0.5f;
             Rect rect2 = this.b;
@@ -160,7 +160,7 @@ public class CheckBoxBase {
                 i2 = centerY;
                 f5 = f9;
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(f10 - f, f11 - f, f10 + f, f11 + f, kk7.d4, 31);
+                canvas2.saveLayerAlpha(f10 - f, f11 - f, f10 + f, f11 + f, jn7.d4, 31);
             }
             i3 = this.s;
             boolean z3 = this.z;
@@ -169,10 +169,10 @@ public class CheckBoxBase {
                 if (z3) {
                     I.setColor(Color.argb((int) (this.m * 25.0f), 0, 0, 0));
                     if (this.A == 8) {
-                        paint2.setColor(bkb.v0(this.t, this.F));
+                        paint2.setColor(aob.v0(this.t, this.F));
                     } else {
                         i4 = -1;
-                        paint2.setColor(gl.R0(f5, this.m, -1, bkb.v0(this.r, this.F)));
+                        paint2.setColor(hl.R0(f5, this.m, -1, aob.v0(this.r, this.F)));
                     }
                 } else {
                     i4 = -1;
@@ -183,7 +183,7 @@ public class CheckBoxBase {
                         if (i17 < 0) {
                             i17 = this.r;
                         }
-                        paint2.setColor(gl.R0(f5, this.m, 16777215, bkb.v0(i17, this.F)));
+                        paint2.setColor(hl.R0(f5, this.m, 16777215, aob.v0(i17, this.F)));
                     }
                 }
                 if (this.z || (i15 = this.A) < 0 || i15 == 12 || i15 == 13) {
@@ -195,8 +195,8 @@ public class CheckBoxBase {
                 } else if (i15 == 8 || i15 == 10 || i15 == 14) {
                     i6 = i2;
                     if (this.v > f4) {
-                        float L2 = f - gl.L(1.5f);
-                        float R1 = gl.R1(L2, this.v, this.w);
+                        float L2 = f - hl.L(1.5f);
+                        float R1 = hl.R1(L2, this.v, this.w);
                         float f12 = i;
                         float f13 = i6;
                         f6 = 1.0f;
@@ -209,15 +209,15 @@ public class CheckBoxBase {
                         f6 = 1.0f;
                         i7 = 7;
                         i5 = -1;
-                        canvas2.drawCircle(i, i6, f - gl.L(1.5f), paint);
+                        canvas2.drawCircle(i, i6, f - hl.L(1.5f), paint);
                     }
                 } else {
                     if (i15 == 6 || i15 == 7) {
                         i6 = i2;
                         float f14 = i;
                         float f15 = i6;
-                        canvas2.drawCircle(f14, f15, f - gl.L(1.0f), I);
-                        canvas2.drawCircle(f14, f15, f - gl.L(1.5f), paint2);
+                        canvas2.drawCircle(f14, f15, f - hl.L(1.0f), I);
+                        canvas2.drawCircle(f14, f15, f - hl.L(1.5f), paint2);
                         paint = paint2;
                         f6 = 1.0f;
                         i7 = 7;
@@ -230,7 +230,7 @@ public class CheckBoxBase {
                     }
                     i5 = -1;
                 }
-                I.setColor(bkb.v0(this.r, this.F));
+                I.setColor(aob.v0(this.r, this.F));
                 i8 = this.A;
                 if (i8 != i5 && i8 != i7 && i8 != 8 && i8 != 9 && i8 != 10 && i8 != 14) {
                     if (i8 == 12 && i8 != 13) {
@@ -254,13 +254,13 @@ public class CheckBoxBase {
                                 i12 = -90;
                             } else {
                                 i11 = (int) (270.0f * f5);
-                                if (k96.a0) {
+                                if (ob6.a0) {
                                     i11 = -i11;
                                 }
                                 i12 = 90;
                             }
                             if (i18 == 6) {
-                                int v0 = bkb.v0(this.u, this.F);
+                                int v0 = aob.v0(this.u, this.F);
                                 int alpha = Color.alpha(v0);
                                 paint.setColor(v0);
                                 paint.setAlpha((int) (alpha * f5));
@@ -268,7 +268,7 @@ public class CheckBoxBase {
                                 rectF = rectF2;
                                 i14 = i12;
                                 canvas2.drawArc(rectF, i12, i11, false, paint);
-                                int v02 = bkb.v0(bkb.W9, this.F);
+                                int v02 = aob.v0(aob.X9, this.F);
                                 int alpha2 = Color.alpha(v02);
                                 paint.setColor(v02);
                                 paint.setAlpha((int) (alpha2 * f5));
@@ -284,42 +284,42 @@ public class CheckBoxBase {
                             float f22 = f5 < 0.5f ? 0.0f : (f5 - 0.5f) / 0.5f;
                             int i19 = this.A;
                             if (i19 == 9) {
-                                I.setColor(bkb.v0(this.t, this.F));
+                                I.setColor(aob.v0(this.t, this.F));
                             } else if (i19 == 11 || i19 == 6 || i19 == i7 || i19 == 10 || ((!this.z && this.s >= 0) || i19 == 14)) {
-                                I.setColor(bkb.v0(this.s, this.F));
+                                I.setColor(aob.v0(this.s, this.F));
                             } else {
                                 int i20 = this.x;
                                 Paint paint3 = I;
                                 if (i20 != 0) {
                                     paint3.setColor(i20);
                                 } else {
-                                    paint3.setColor(bkb.v0(this.k ? bkb.h7 : bkb.i7, this.F));
+                                    paint3.setColor(aob.v0(this.k ? aob.i7 : aob.j7, this.F));
                                 }
                             }
                             if (this.n) {
                                 I.setColor(paint.getColor());
                             } else if (this.h < f6) {
-                                I.setColor(bm2.f(this.h, paint.getColor(), I.getColor()));
+                                I.setColor(vm2.f(this.h, paint.getColor(), I.getColor()));
                             }
                             boolean z4 = this.y;
                             Paint paint4 = this.d;
                             if (z4 || (i10 = this.r) < 0) {
-                                paint4.setColor(bkb.v0(bkb.j7, this.F));
+                                paint4.setColor(aob.v0(aob.k7, this.F));
                             } else {
-                                paint4.setColor(bkb.v0(i10, this.F));
+                                paint4.setColor(aob.v0(i10, this.F));
                             }
-                            if (this.h < f6 && bkb.I.o()) {
-                                paint4.setColor(bm2.f(this.h, I.getColor(), paint4.getColor()));
+                            if (this.h < f6 && aob.I.o()) {
+                                paint4.setColor(vm2.f(this.h, I.getColor(), paint4.getColor()));
                             }
                             if (this.A != -1) {
-                                float L3 = gl.L(this.B) / 2.0f;
+                                float L3 = hl.L(this.B) / 2.0f;
                                 int save = canvas2.save();
                                 canvas2.translate(i - L3, i6 - L3);
                                 boolean z5 = f3 < f6;
                                 if (z5) {
-                                    canvas2.saveLayerAlpha(0.0f, 0.0f, gl.L(this.B), gl.L(this.B), kk7.d4, 31);
+                                    canvas2.saveLayerAlpha(0.0f, 0.0f, hl.L(this.B), hl.L(this.B), jn7.d4, 31);
                                 }
-                                Paint paint5 = (Paint) this.G.m(null);
+                                Paint paint5 = (Paint) this.G.h(null);
                                 int i21 = this.A;
                                 if (i21 == 12 || i21 == 13) {
                                     canvas2 = canvas;
@@ -330,28 +330,28 @@ public class CheckBoxBase {
                                         paint5.setAlpha(alpha3);
                                     }
                                 } else if (this.v > 0.0f) {
-                                    float L4 = f - gl.L(0.5f);
-                                    float R12 = gl.R1(L4, this.v, this.w);
+                                    float L4 = f - hl.L(0.5f);
+                                    float R12 = hl.R1(L4, this.v, this.w);
                                     float f23 = L3 - L4;
                                     float f24 = L3 + L4;
                                     canvas.drawRoundRect(f23, f23, f24, f24, R12, R12, paint5);
                                     float f25 = (f6 - f3) * L4;
-                                    float R13 = gl.R1(f25, this.v, this.w);
+                                    float R13 = hl.R1(f25, this.v, this.w);
                                     if (!z5 || f25 <= 0.0f) {
                                         canvas2 = canvas;
                                     } else {
                                         float f26 = L3 - f25;
                                         float f27 = L3 + f25;
                                         canvas2 = canvas;
-                                        canvas2.drawRoundRect(f26, f26, f27, f27, R13, R13, bkb.Fm);
+                                        canvas2.drawRoundRect(f26, f26, f27, f27, R13, R13, aob.Gm);
                                     }
                                 } else {
                                     canvas2 = canvas;
-                                    float L5 = f - gl.L(0.5f);
+                                    float L5 = f - hl.L(0.5f);
                                     canvas2.drawCircle(L3, L3, L5, paint5);
                                     float f28 = (f6 - f3) * L5;
                                     if (z5 && f28 > 0.0f) {
-                                        canvas2.drawCircle(L3, L3, f28, bkb.Fm);
+                                        canvas2.drawCircle(L3, L3, f28, aob.Gm);
                                     }
                                 }
                                 canvas2.restoreToCount(save);
@@ -363,18 +363,18 @@ public class CheckBoxBase {
                                     paint6.setStyle(Paint.Style.STROKE);
                                     J.setStrokeCap(Paint.Cap.ROUND);
                                     J.setStrokeJoin(Paint.Join.ROUND);
-                                    J.setPathEffect(new DashPathEffect(new float[]{gl.L(0.66f), gl.L(4.0f)}, 0.0f));
+                                    J.setPathEffect(new DashPathEffect(new float[]{hl.L(0.66f), hl.L(4.0f)}, 0.0f));
                                 }
-                                J.setStrokeWidth(gl.L(1.66f));
-                                J.setColor(bkb.v0(bkb.L6, this.F));
-                                canvas2.drawCircle(i, i6, gl.L(9.0f), J);
+                                J.setStrokeWidth(hl.L(1.66f));
+                                J.setColor(aob.v0(aob.M6, this.F));
+                                canvas2.drawCircle(i, i6, hl.L(9.0f), J);
                             } else if (f22 != 0.0f) {
                                 if (this.C != null) {
                                     if (this.g == null) {
                                         i9 = 1;
                                         TextPaint textPaint = new TextPaint(1);
                                         this.g = textPaint;
-                                        textPaint.setTypeface(gl.o());
+                                        textPaint.setTypeface(hl.o());
                                     } else {
                                         i9 = 1;
                                     }
@@ -389,13 +389,13 @@ public class CheckBoxBase {
                                         f8 = 16.5f;
                                         f7 = 10.0f;
                                     }
-                                    this.g.setTextSize(gl.L(f7));
-                                    this.g.setColor(bkb.v0(this.r, this.F));
+                                    this.g.setTextSize(hl.L(f7));
+                                    this.g.setColor(aob.v0(this.r, this.F));
                                     canvas2.save();
                                     float f29 = i;
                                     canvas2.scale(f22, f6, f29, i6);
                                     String str = this.C;
-                                    canvas2.drawText(str, f29 - (this.g.measureText(str) / 2.0f), gl.L(f8), this.g);
+                                    canvas2.drawText(str, f29 - (this.g.measureText(str) / 2.0f), hl.L(f8), this.g);
                                     canvas2.restore();
                                 } else {
                                     float f30 = f6;
@@ -403,10 +403,10 @@ public class CheckBoxBase {
                                     path.reset();
                                     int i22 = this.A;
                                     float f31 = i22 == -1 ? 1.4f : i22 == 5 ? 0.8f : f30;
-                                    float L6 = gl.L(9.0f * f31) * f22;
-                                    float L7 = gl.L(f31 * 4.0f) * f22;
-                                    int L8 = i - gl.L(1.5f);
-                                    int L9 = gl.L(4.0f) + i6;
+                                    float L6 = hl.L(9.0f * f31) * f22;
+                                    float L7 = hl.L(f31 * 4.0f) * f22;
+                                    int L8 = i - hl.L(1.5f);
+                                    int L9 = hl.L(4.0f) + i6;
                                     float sqrt = (float) Math.sqrt((L7 * L7) / 2.0f);
                                     float f32 = L8;
                                     float f33 = L9;
@@ -436,11 +436,11 @@ public class CheckBoxBase {
                         return;
                     }
                     paint.setStyle(Paint.Style.FILL);
-                    m17Var = this.E;
-                    if (m17Var == null && m17Var.l()) {
-                        m17 m17Var2 = this.E;
-                        Shader shader = m17Var2.a;
-                        Matrix matrix = m17Var2.k;
+                    t37Var = this.E;
+                    if (t37Var == null && t37Var.l()) {
+                        t37 t37Var2 = this.E;
+                        Shader shader = t37Var2.a;
+                        Matrix matrix = t37Var2.k;
                         matrix.reset();
                         this.E.a();
                         matrix.postTranslate(f4, (-this.E.r) + rect.top);
@@ -449,7 +449,7 @@ public class CheckBoxBase {
                     } else {
                         paint.setShader(null);
                     }
-                    canvas2.drawCircle(i, i6, (f - gl.L(f6)) * this.m, paint);
+                    canvas2.drawCircle(i, i6, (f - hl.L(f6)) * this.m, paint);
                     paint.setStyle(Paint.Style.STROKE);
                 }
                 f4 = 0.0f;
@@ -460,26 +460,26 @@ public class CheckBoxBase {
             } else if (z3) {
                 int i23 = this.A;
                 if (i23 == 12 || i23 == 13) {
-                    I.setColor(bkb.v0(i3, this.F));
+                    I.setColor(aob.v0(i3, this.F));
                     I.setAlpha((int) (this.m * 255.0f));
-                    paint2.setColor(bkb.v0(this.r, this.F));
+                    paint2.setColor(aob.v0(this.r, this.F));
                 } else if (i23 == 6 || i23 == 7) {
-                    I.setColor(bkb.v0(this.t, this.F));
-                    paint2.setColor(bkb.v0(this.r, this.F));
+                    I.setColor(aob.v0(this.t, this.F));
+                    paint2.setColor(aob.v0(this.r, this.F));
                 } else if (i23 == 10 || i23 == 14) {
-                    paint2.setColor(bkb.v0(this.t, this.F));
+                    paint2.setColor(aob.v0(this.t, this.F));
                 } else {
                     Paint paint7 = I;
-                    int indexOfKey = bkb.km.indexOfKey(bkb.bd);
-                    paint7.setColor(((indexOfKey >= 0 ? bkb.km.valueAt(indexOfKey) : bkb.W) & 16777215) | 671088640);
-                    paint2.setColor(bkb.v0(this.r, this.F));
+                    int indexOfKey = aob.lm.indexOfKey(aob.cd);
+                    paint7.setColor(((indexOfKey >= 0 ? aob.lm.valueAt(indexOfKey) : aob.W) & 16777215) | 671088640);
+                    paint2.setColor(aob.v0(this.r, this.F));
                 }
             } else {
                 int i24 = this.t;
                 if (i24 < 0) {
                     i24 = this.r;
                 }
-                paint2.setColor(gl.R0(f5, this.m, 16777215, bkb.v0(i24, this.F)));
+                paint2.setColor(hl.R0(f5, this.m, 16777215, aob.v0(i24, this.F)));
             }
             i4 = -1;
             if (this.z) {
@@ -489,17 +489,17 @@ public class CheckBoxBase {
             i6 = i2;
             f6 = 1.0f;
             i7 = 7;
-            I.setColor(bkb.v0(this.r, this.F));
+            I.setColor(aob.v0(this.r, this.F));
             i8 = this.A;
             if (i8 != i5) {
                 if (i8 == 12) {
                 }
                 paint.setStyle(Paint.Style.FILL);
-                m17Var = this.E;
-                if (m17Var == null) {
+                t37Var = this.E;
+                if (t37Var == null) {
                 }
                 paint.setShader(null);
-                canvas2.drawCircle(i, i6, (f - gl.L(f6)) * this.m, paint);
+                canvas2.drawCircle(i, i6, (f - hl.L(f6)) * this.m, paint);
                 paint.setStyle(Paint.Style.STROKE);
             }
             f4 = 0.0f;
@@ -534,7 +534,7 @@ public class CheckBoxBase {
         i6 = i2;
         f6 = 1.0f;
         i7 = 7;
-        I.setColor(bkb.v0(this.r, this.F));
+        I.setColor(aob.v0(this.r, this.F));
         i8 = this.A;
         if (i8 != i5) {
         }
@@ -571,16 +571,16 @@ public class CheckBoxBase {
         this.A = i;
         Paint paint = this.f;
         if (i == 12 || i == 13) {
-            paint.setStrokeWidth(gl.L(1.0f));
+            paint.setStrokeWidth(hl.L(1.0f));
         } else if (i == 4 || i == 5) {
-            paint.setStrokeWidth(gl.L(1.9f));
+            paint.setStrokeWidth(hl.L(1.9f));
             if (i == 5) {
-                this.d.setStrokeWidth(gl.L(1.5f));
+                this.d.setStrokeWidth(hl.L(1.5f));
             }
         } else if (i == 3) {
-            paint.setStrokeWidth(gl.L(3.0f));
+            paint.setStrokeWidth(hl.L(3.0f));
         } else if (i != 0) {
-            paint.setStrokeWidth(gl.L(1.5f));
+            paint.setStrokeWidth(hl.L(1.5f));
         }
         b();
     }
@@ -623,8 +623,8 @@ public class CheckBoxBase {
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z ? 1.0f : 0.0f);
         this.p = ofFloat;
-        ofFloat.addListener(new bb1((Object) this, (byte) 28));
-        this.p.setInterpolator(s33.g);
+        ofFloat.addListener(new jb1((Object) this, (byte) 28));
+        this.p.setInterpolator(k43.g);
         this.p.setDuration(this.H);
         this.p.start();
     }
@@ -684,9 +684,9 @@ public class CheckBoxBase {
         if (this.o != f) {
             this.o = f;
             b();
-            xf2 xf2Var = this.D;
-            if (xf2Var != null) {
-                xf2Var.f();
+            pg2 pg2Var = this.D;
+            if (pg2Var != null) {
+                pg2Var.b();
             }
         }
     }

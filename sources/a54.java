@@ -1,26 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class a54 {
-    public final char a;
-    public final String b;
-    public final byte c;
-    public final int d;
+public final class a54 extends c54 {
+    public final va1 c;
+    public final /* synthetic */ e54 d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public a54(String str, int i, int i2) {
-        this.b = str;
-        this.a = i;
-        this.c = i2;
-        this.d = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a54(e54 e54Var, long j, va1 va1Var) {
+        super(j);
+        this.d = e54Var;
+        this.c = va1Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public a54(int i, int i2, int i3, String str) {
-        this.b = str;
-        this.a = i;
-        this.c = i2;
-        this.d = i3;
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.c.C(this.d);
+    }
+
+    @Override // c54
+    public final String toString() {
+        return super.toString() + this.c;
     }
 }

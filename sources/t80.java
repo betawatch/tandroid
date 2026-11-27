@@ -1,26 +1,22 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class t80 extends xy2 {
-    public final u80 a;
-    public final List b;
-    public final List c;
-    public final Boolean d;
-    public final wy2 e;
-    public final List f;
-    public final int g;
+public final class t80 extends yz2 {
+    public final long a;
+    public final String b;
+    public final v80 c;
+    public final f90 d;
+    public final g90 e;
+    public final k90 f;
 
-    public t80(u80 u80Var, List list, List list2, Boolean bool, wy2 wy2Var, List list3, int i) {
-        this.a = u80Var;
-        this.b = list;
-        this.c = list2;
-        this.d = bool;
-        this.e = wy2Var;
-        this.f = list3;
-        this.g = i;
+    public t80(long j, String str, v80 v80Var, f90 f90Var, g90 g90Var, k90 k90Var) {
+        this.a = j;
+        this.b = str;
+        this.c = v80Var;
+        this.d = f90Var;
+        this.e = g90Var;
+        this.f = k90Var;
     }
 
     public final s80 a() {
@@ -31,8 +27,7 @@ public final class t80 extends xy2 {
         s80Var.d = this.d;
         s80Var.e = this.e;
         s80Var.f = this.f;
-        s80Var.g = this.g;
-        s80Var.h = (byte) 1;
+        s80Var.g = (byte) 1;
         return s80Var;
     }
 
@@ -40,89 +35,37 @@ public final class t80 extends xy2 {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof xy2)) {
+        if (!(obj instanceof yz2)) {
             return false;
         }
-        t80 t80Var = (t80) ((xy2) obj);
-        if (!this.a.equals(t80Var.a)) {
+        t80 t80Var = (t80) ((yz2) obj);
+        if (this.a != t80Var.a || !this.b.equals(t80Var.b) || !this.c.equals(t80Var.c) || !this.d.equals(t80Var.d)) {
             return false;
         }
-        List list = t80Var.b;
-        List list2 = this.b;
-        if (list2 == null) {
-            if (list != null) {
+        g90 g90Var = t80Var.e;
+        g90 g90Var2 = this.e;
+        if (g90Var2 == null) {
+            if (g90Var != null) {
                 return false;
             }
-        } else if (!list2.equals(list)) {
+        } else if (!g90Var2.equals(g90Var)) {
             return false;
         }
-        List list3 = t80Var.c;
-        List list4 = this.c;
-        if (list4 == null) {
-            if (list3 != null) {
-                return false;
-            }
-        } else if (!list4.equals(list3)) {
-            return false;
-        }
-        Boolean bool = t80Var.d;
-        Boolean bool2 = this.d;
-        if (bool2 == null) {
-            if (bool != null) {
-                return false;
-            }
-        } else if (!bool2.equals(bool)) {
-            return false;
-        }
-        wy2 wy2Var = t80Var.e;
-        wy2 wy2Var2 = this.e;
-        if (wy2Var2 == null) {
-            if (wy2Var != null) {
-                return false;
-            }
-        } else if (!wy2Var2.equals(wy2Var)) {
-            return false;
-        }
-        List list5 = t80Var.f;
-        List list6 = this.f;
-        if (list6 == null) {
-            if (list5 != null) {
-                return false;
-            }
-        } else if (!list6.equals(list5)) {
-            return false;
-        }
-        return this.g == t80Var.g;
+        k90 k90Var = t80Var.f;
+        k90 k90Var2 = this.f;
+        return k90Var2 == null ? k90Var == null : k90Var2.equals(k90Var);
     }
 
     public final int hashCode() {
-        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
-        List list = this.b;
-        int hashCode2 = (hashCode ^ (list == null ? 0 : list.hashCode())) * 1000003;
-        List list2 = this.c;
-        int hashCode3 = (hashCode2 ^ (list2 == null ? 0 : list2.hashCode())) * 1000003;
-        Boolean bool = this.d;
-        int hashCode4 = (hashCode3 ^ (bool == null ? 0 : bool.hashCode())) * 1000003;
-        wy2 wy2Var = this.e;
-        int hashCode5 = (hashCode4 ^ (wy2Var == null ? 0 : wy2Var.hashCode())) * 1000003;
-        List list3 = this.f;
-        return ((hashCode5 ^ (list3 != null ? list3.hashCode() : 0)) * 1000003) ^ this.g;
+        long j = this.a;
+        int hashCode = (((((((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003;
+        g90 g90Var = this.e;
+        int hashCode2 = (hashCode ^ (g90Var == null ? 0 : g90Var.hashCode())) * 1000003;
+        k90 k90Var = this.f;
+        return hashCode2 ^ (k90Var != null ? k90Var.hashCode() : 0);
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("Application{execution=");
-        sb.append(this.a);
-        sb.append(", customAttributes=");
-        sb.append(this.b);
-        sb.append(", internalKeys=");
-        sb.append(this.c);
-        sb.append(", background=");
-        sb.append(this.d);
-        sb.append(", currentProcessDetails=");
-        sb.append(this.e);
-        sb.append(", appProcessDetails=");
-        sb.append(this.f);
-        sb.append(", uiOrientation=");
-        return de9.l(sb, this.g, "}");
+        return "Event{timestamp=" + this.a + ", type=" + this.b + ", app=" + this.c + ", device=" + this.d + ", log=" + this.e + ", rollouts=" + this.f + "}";
     }
 }

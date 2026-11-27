@@ -1,38 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum bsb extends qsb {
-    public bsb() {
-        super("DoctypePublicIdentifier_singleQuoted", 57);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class bsb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ksb b;
+
+    public /* synthetic */ bsb(ksb ksbVar, byte b) {
+        this.a = b;
+        this.b = ksbVar;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        rpb rpbVar = aqbVar.m;
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            rpbVar.f.append((char) 65533);
-            return;
-        }
-        if (d == '\'') {
-            aqbVar.c = qsb.w0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else {
-            if (d != 65535) {
-                rpbVar.f.append(d);
-                return;
-            }
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ksb ksbVar = this.b;
+        switch (b) {
+            case 0:
+                isb isbVar = ksbVar.N;
+                if (isbVar != null) {
+                    long j = isbVar.a;
+                    if (j > 0) {
+                        ksbVar.I = j;
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                esb esbVar = ksbVar.a;
+                if (esbVar != null) {
+                    esbVar.S1();
+                    break;
+                }
+                break;
+            default:
+                esb esbVar2 = ksbVar.a;
+                if (esbVar2 != null) {
+                    esbVar2.V();
+                    break;
+                }
+                break;
         }
     }
 }

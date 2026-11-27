@@ -4,7 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
@@ -13,23 +12,23 @@ import org.telegram.ui.ActionBar.a;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dm0 extends n5c {
-    public cb f;
-    public final ts h;
-    public final ws n;
-    public r7 r;
-    public r7 s;
+public final class dm0 extends n9c {
+    public db f;
+    public final ys h;
+    public final vs n;
+    public s7 r;
+    public s7 s;
     public String w;
     public NumberTextView x;
-    public final cb e = new cb(null, this.currentAccount, new zl0(this, (byte) 0));
+    public final db e = new db(null, this.currentAccount, new pz(this, 13));
     public final HashSet y = new HashSet();
     public final HashSet E = new HashSet();
 
-    public dm0(ts tsVar, ws wsVar) {
-        this.h = tsVar;
-        this.n = wsVar;
+    public dm0(ys ysVar, vs vsVar) {
+        this.h = ysVar;
+        this.n = vsVar;
     }
 
     public static boolean j0(String str, String str2) {
@@ -38,9 +37,9 @@ public final class dm0 extends n5c {
         }
         String lowerCase = str.toLowerCase();
         String lowerCase2 = str2.toLowerCase();
-        if (!lowerCase.startsWith(lowerCase2) && !de9.t(" ", lowerCase2, lowerCase) && !de9.t(".", lowerCase2, lowerCase)) {
-            String I3 = gl.I3(lowerCase);
-            String I32 = gl.I3(lowerCase2);
+        if (!lowerCase.startsWith(lowerCase2) && !uh9.t(" ", lowerCase2, lowerCase) && !uh9.t(".", lowerCase2, lowerCase)) {
+            String I3 = hl.I3(lowerCase);
+            String I32 = hl.I3(lowerCase2);
             if (!I3.startsWith(I32) && !I3.contains(" ".concat(I32)) && !I3.contains(".".concat(I32))) {
                 return false;
             }
@@ -48,67 +47,67 @@ public final class dm0 extends n5c {
         return true;
     }
 
-    @Override // n5c
-    public final void Y(ArrayList arrayList, l5c l5cVar) {
+    @Override // n9c
+    public final void Y(ArrayList arrayList, l9c l9cVar) {
         CharSequence charSequence;
         TLRPC.MessageMedia messageMedia;
         HashSet hashSet = this.E;
         hashSet.clear();
         boolean isEmpty = TextUtils.isEmpty(this.w);
-        cb cbVar = this.e;
+        db dbVar = this.e;
         if (isEmpty) {
-            ArrayList arrayList2 = cbVar.a;
+            ArrayList arrayList2 = dbVar.a;
             int size = arrayList2.size();
             int i = 0;
             while (i < size) {
                 Object obj = arrayList2.get(i);
                 i++;
-                k27 k27Var = (k27) obj;
-                String a = eb.a(k27Var);
+                r47 r47Var = (r47) obj;
+                String a = fb.a(r47Var);
                 if (!TextUtils.isEmpty(a) && !a.startsWith("#") && !a.startsWith("$") && !a.startsWith("@")) {
                     hashSet.add(a);
-                    int i2 = ab.b;
-                    c4c K = c4c.K(ab.class);
+                    int i2 = bb.b;
+                    b8c K = b8c.K(bb.class);
                     K.A = 3;
                     K.r = false;
-                    K.I = k27Var;
-                    K.L(h0(k27Var));
+                    K.I = r47Var;
+                    K.L(h0(r47Var));
                     arrayList.add(K);
                 }
             }
             charSequence = null;
-            if (!cbVar.f) {
-                arrayList.add(c4c.q(arrayList.size(), 32));
-                arrayList.add(c4c.q(arrayList.size(), 32));
-                arrayList.add(c4c.q(arrayList.size(), 32));
+            if (!dbVar.f) {
+                arrayList.add(b8c.q(arrayList.size(), 32));
+                arrayList.add(b8c.q(arrayList.size(), 32));
+                arrayList.add(b8c.q(arrayList.size(), 32));
             }
         } else {
             charSequence = null;
-            ArrayList arrayList3 = cbVar.a;
+            ArrayList arrayList3 = dbVar.a;
             int size2 = arrayList3.size();
             int i3 = 0;
             while (i3 < size2) {
                 Object obj2 = arrayList3.get(i3);
                 i3++;
-                k27 k27Var2 = (k27) obj2;
-                String a2 = eb.a(k27Var2);
+                r47 r47Var2 = (r47) obj2;
+                String a2 = fb.a(r47Var2);
                 if (!TextUtils.isEmpty(a2) && !a2.startsWith("#") && !a2.startsWith("$") && !a2.startsWith("@")) {
                     hashSet.add(a2);
-                    String J0 = gl.J0(a2, true);
-                    htc b = o74.c().b(J0);
-                    TLRPC.Message message = k27Var2.k;
+                    String J0 = hl.J0(a2, true);
+                    wxc b = j84.c().b(J0);
+                    TLRPC.Message message = r47Var2.k;
                     TLRPC.WebPage webPage = (message == null || (messageMedia = message.media) == null) ? null : messageMedia.webpage;
                     String str = (webPage == null || TextUtils.isEmpty(webPage.site_name)) ? (b == null || TextUtils.isEmpty(b.d)) ? null : b.d : webPage.site_name;
                     String str2 = (webPage == null || TextUtils.isEmpty(webPage.title)) ? null : webPage.title;
                     if (j0(J0, this.w) || j0(str, this.w) || j0(str2, this.w)) {
                         String str3 = this.w;
-                        int i4 = ab.b;
-                        c4c K2 = c4c.K(ab.class);
+                        int i4 = bb.b;
+                        b8c K2 = b8c.K(bb.class);
                         K2.A = 3;
                         K2.r = false;
-                        K2.I = k27Var2;
+                        K2.I = r47Var2;
                         K2.n = str3;
-                        K2.L(h0(k27Var2));
+                        K2.L(h0(r47Var2));
                         arrayList.add(K2);
                     }
                 }
@@ -119,131 +118,131 @@ public final class dm0 extends n5c {
             while (i5 < size3) {
                 Object obj3 = arrayList4.get(i5);
                 i5++;
-                k27 k27Var3 = (k27) obj3;
-                String a3 = eb.a(k27Var3);
+                r47 r47Var3 = (r47) obj3;
+                String a3 = fb.a(r47Var3);
                 if (!TextUtils.isEmpty(a3) && !a3.startsWith("#") && !a3.startsWith("$") && !a3.startsWith("@")) {
                     hashSet.add(a3);
                     String str4 = this.w;
-                    int i6 = ab.b;
-                    c4c K3 = c4c.K(ab.class);
+                    int i6 = bb.b;
+                    b8c K3 = b8c.K(bb.class);
                     K3.A = 3;
                     K3.r = false;
-                    K3.I = k27Var3;
+                    K3.I = r47Var3;
                     K3.n = str4;
-                    K3.L(h0(k27Var3));
+                    K3.L(h0(r47Var3));
                     arrayList.add(K3);
                 }
             }
             if (!this.f.f) {
-                arrayList.add(c4c.q(arrayList.size(), 32));
-                arrayList.add(c4c.q(arrayList.size(), 32));
-                arrayList.add(c4c.q(arrayList.size(), 32));
+                arrayList.add(b8c.q(arrayList.size(), 32));
+                arrayList.add(b8c.q(arrayList.size(), 32));
+                arrayList.add(b8c.q(arrayList.size(), 32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(c4c.C(charSequence));
+        arrayList.add(b8c.C(charSequence));
     }
 
-    @Override // n5c
+    @Override // n9c
     public final CharSequence Z() {
-        return k96.M0(2131742676, null);
+        return ob6.M0(2131742570, null);
     }
 
-    @Override // n5c
-    public final void a0(c4c c4cVar, View view) {
-        if (c4cVar.H(ab.class)) {
-            if (this.actionBar.y()) {
-                f0(c4cVar, view);
+    @Override // n9c
+    public final void a0(b8c b8cVar, View view) {
+        if (b8cVar.H(bb.class)) {
+            if (this.actionBar.z()) {
+                f0(b8cVar, view);
                 return;
             }
             finishFragment();
-            this.n.a(eb.a((k27) c4cVar.I));
+            this.n.a(fb.a((r47) b8cVar.I));
         }
     }
 
-    @Override // n5c
-    public final boolean b0(c4c c4cVar, View view) {
-        if (!c4cVar.H(ab.class)) {
+    @Override // n9c
+    public final boolean b0(b8c b8cVar, View view) {
+        if (!b8cVar.H(bb.class)) {
             return false;
         }
-        f0(c4cVar, view);
+        f0(b8cVar, view);
         return true;
     }
 
-    @Override // n5c, org.telegram.ui.ActionBar.d
+    @Override // n9c, org.telegram.ui.ActionBar.e
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         a aVar = this.actionBar;
-        int i = bkb.c6;
-        zkb.h(i, getResourceProvider(), aVar);
-        this.actionBar.setActionModeColor(bkb.w0(null, i, false));
+        int i = aob.d6;
+        yob.h(i, getResourceProvider(), aVar);
+        this.actionBar.setActionModeColor(aob.w0(null, i, false));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         a aVar2 = this.actionBar;
-        int i2 = bkb.F6;
-        zkb.l(aVar2, 5, i2, getResourceProvider());
-        zkb.l(this.actionBar, 3, bkb.y8, getResourceProvider());
-        zkb.l(this.actionBar, 1, i2, getResourceProvider());
-        zkb.b(this.actionBar, i2, getResourceProvider(), true);
+        int i2 = aob.G6;
+        yob.l(aVar2, 5, i2, getResourceProvider());
+        yob.l(this.actionBar, 3, aob.z8, getResourceProvider());
+        yob.l(this.actionBar, 1, i2, getResourceProvider());
+        yob.b(this.actionBar, i2, getResourceProvider(), true);
         this.actionBar.setCastShadows(true);
-        this.actionBar.setActionBarMenuOnItemClick(new r8(this, (byte) 7));
-        r6 q = this.actionBar.q(null);
+        this.actionBar.setActionBarMenuOnItemClick(new s8(this, (byte) 7));
+        s6 q = this.actionBar.q(null);
         NumberTextView numberTextView = new NumberTextView(q.getContext());
         this.x = numberTextView;
         numberTextView.setTextSize(18);
-        this.x.setTypeface(gl.o());
-        this.x.setTextColor(getThemedColor(bkb.x8));
-        this.x.setOnTouchListener(new p8((byte) 16));
-        q.addView(this.x, nme.m(1.0f, 0, -1, 65, 0, 0));
-        this.s = q.h(R.id.menu_link, R.drawable.msg_message, gl.L(54.0f), k96.M0(2131754877, null));
-        q.h(R.id.menu_delete, R.drawable.msg_delete, gl.L(54.0f), k96.M0(2131751586, null));
-        r7 b = this.actionBar.t().b(0, R.drawable.outline_header_search, getResourceProvider());
+        this.x.setTypeface(hl.o());
+        this.x.setTextColor(getThemedColor(aob.y8));
+        this.x.setOnTouchListener(new q8((byte) 16));
+        q.addView(this.x, tre.m(1.0f, 0, -1, 65, 0, 0));
+        this.s = q.h(R.id.menu_link, R.drawable.msg_message, hl.L(54.0f), ob6.M0(2131754873, null));
+        q.h(R.id.menu_delete, R.drawable.msg_delete, hl.L(54.0f), ob6.M0(2131751563, null));
+        s7 b = this.actionBar.u().b(0, R.drawable.outline_header_search, getResourceProvider());
         b.N();
         b.I = new cm0(this);
         this.r = b;
-        b.setSearchFieldHint(k96.M0(2131745644, null));
-        this.r.setContentDescription(k96.M0(2131745644, null));
+        b.setSearchFieldHint(ob6.M0(2131745564, null));
+        this.r.setContentDescription(ob6.M0(2131745564, null));
         EditTextBoldCursor searchField = this.r.getSearchField();
-        zkb.X(searchField, i2, getResourceProvider());
-        zkb.D(searchField, bkb.Ij, getResourceProvider());
-        zkb.v(searchField, i2, getResourceProvider());
+        yob.X(searchField, i2, getResourceProvider());
+        yob.D(searchField, aob.Jj, getResourceProvider());
+        yob.v(searchField, i2, getResourceProvider());
         this.a.j(new y(this, (byte) 6));
-        zya zyaVar = new zya(context, null, 1, null);
-        zyaVar.d.setText(k96.M0(2131742656, null));
-        zyaVar.e.setVisibility(8);
-        zyaVar.e(false, false);
-        zyaVar.setAnimateLayoutChange(true);
-        ((FrameLayout) this.fragmentView).addView(zyaVar, nme.c(-1.0f, -1));
-        this.a.setEmptyView(zyaVar);
+        z2b z2bVar = new z2b(context, null, 1, null);
+        z2bVar.d.setText(ob6.M0(2131742550, null));
+        z2bVar.e.setVisibility(8);
+        z2bVar.e(false, false);
+        z2bVar.setAnimateLayoutChange(true);
+        ((FrameLayout) this.fragmentView).addView(z2bVar, tre.c(-1.0f, -1));
+        this.a.setEmptyView(z2bVar);
         return this.fragmentView;
     }
 
-    public final void f0(c4c c4cVar, View view) {
-        bb bbVar = (bb) view;
-        k27 k27Var = (k27) c4cVar.I;
-        boolean h0 = h0(k27Var);
+    public final void f0(b8c b8cVar, View view) {
+        cb cbVar = (cb) view;
+        r47 r47Var = (r47) b8cVar.I;
+        boolean h0 = h0(r47Var);
         HashSet hashSet = this.y;
         if (h0) {
-            if (k27Var != null) {
-                hashSet.remove(Integer.valueOf(k27Var.e1()));
+            if (r47Var != null) {
+                hashSet.remove(Integer.valueOf(r47Var.e1()));
             }
-            bbVar.setChecked(false);
+            cbVar.setChecked(false);
         } else {
-            if (k27Var != null) {
-                hashSet.add(Integer.valueOf(k27Var.e1()));
+            if (r47Var != null) {
+                hashSet.add(Integer.valueOf(r47Var.e1()));
             }
-            bbVar.setChecked(true);
+            cbVar.setChecked(true);
         }
         this.x.a(hashSet.size(), true);
         boolean isEmpty = hashSet.isEmpty();
         a aVar = this.actionBar;
         if (isEmpty) {
-            aVar.x();
+            aVar.y();
         } else {
             aVar.R(null, null);
         }
-        gl.P3(this.s, hashSet.size() == 1, true);
+        hl.P3(this.s, hashSet.size() == 1, true);
     }
 
     public final void g0() {
@@ -251,101 +250,71 @@ public final class dm0 extends n5c {
         if (hashSet.size() != 1) {
             return;
         }
-        long e = y6c.h(this.currentAccount).e();
+        long e = yac.h(this.currentAccount).e();
         int intValue = ((Integer) hashSet.iterator().next()).intValue();
         finishFragment();
-        ts tsVar = this.h;
-        if (tsVar != null) {
-            tsVar.run();
+        ys ysVar = this.h;
+        if (ysVar != null) {
+            ysVar.run();
         }
-        gl.d3(new am0(e, intValue, (byte) 0), 80L);
+        hl.d3(new am0(e, intValue, (byte) 0), 80L);
     }
 
-    public final boolean h0(k27 k27Var) {
-        if (k27Var != null) {
-            return this.y.contains(Integer.valueOf(k27Var.e1()));
+    public final boolean h0(r47 r47Var) {
+        if (r47Var != null) {
+            return this.y.contains(Integer.valueOf(r47Var.e1()));
         }
         return false;
     }
 
     public final /* synthetic */ void i0(HashSet hashSet) {
-        na7.q1(this.currentAccount).V(new ArrayList(hashSet), null, null, y6c.h(this.currentAccount).e(), 0, true, 0);
+        uc7.s1(this.currentAccount).X(new ArrayList(hashSet), null, null, yac.h(this.currentAccount).e(), 0, true, 0);
         this.e.b(new ArrayList(hashSet));
-        cb cbVar = this.f;
-        if (cbVar != null) {
-            cbVar.b(new ArrayList(hashSet));
+        db dbVar = this.f;
+        if (dbVar != null) {
+            dbVar.b(new ArrayList(hashSet));
         }
         this.y.clear();
-        this.actionBar.x();
+        this.actionBar.y();
         this.a.g3.O(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final boolean isLightStatusBar() {
-        return gl.B(getThemedColor(bkb.c6)) > 0.721f;
+        return hl.B(getThemedColor(aob.d6)) > 0.721f;
     }
 
-    public final void k0() {
-        int i;
-        int i2 = -1;
-        int i3 = 0;
-        while (true) {
-            if (i3 >= this.a.getChildCount()) {
-                i = 0;
-                break;
-            }
-            View childAt = this.a.getChildAt(i3);
-            this.a.getClass();
-            int R = RecyclerView.R(childAt);
-            if (R >= 0) {
-                i = childAt.getTop();
-                i2 = R;
-                break;
-            } else {
-                i3++;
-                i2 = R;
-            }
-        }
-        this.a.g3.O(true);
-        va vaVar = this.a;
-        if (i2 >= 0) {
-            vaVar.f3.g1(i2, i);
-        } else {
-            vaVar.f3.g1(0, 0);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final boolean onFragmentCreate() {
         this.e.a();
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         this.e.c();
     }
 
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
             a aVar = this.actionBar;
             if (aVar != null) {
-                aVar.setActionModeColor(bkb.w0(null, bkb.c6, false));
+                aVar.setActionModeColor(aob.w0(null, aob.d6, false));
             }
             NumberTextView numberTextView = this.x;
             if (numberTextView != null) {
-                numberTextView.setTextColor(getThemedColor(bkb.x8));
+                numberTextView.setTextColor(getThemedColor(aob.y8));
             }
-            r7 r7Var = this.r;
-            if (r7Var == null || r7Var.getSearchField() == null) {
+            s7 s7Var = this.r;
+            if (s7Var == null || s7Var.getSearchField() == null) {
                 return;
             }
-            this.r.getSearchField().setCursorColor(getThemedColor(bkb.F6));
+            this.r.getSearchField().setCursorColor(getThemedColor(aob.G6));
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 }

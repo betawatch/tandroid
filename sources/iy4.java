@@ -1,6 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class iy4 extends f43 {
+import android.graphics.Canvas;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class iy4 implements mz4, wy4 {
+    public final int a;
+    public final /* synthetic */ jy4 b;
+
+    public iy4(jy4 jy4Var, int i) {
+        this.b = jy4Var;
+        this.a = i;
+    }
+
+    @Override // wy4
+    public final int a() {
+        boolean c = qd4.c(this.a);
+        jy4 jy4Var = this.b;
+        return c ? jy4Var.s : jy4Var.q;
+    }
+
+    @Override // wy4
+    public final void d(float f, float f2, int i, Canvas canvas, RectF rectF) {
+        this.b.b(this.a, canvas, rectF, i, f, f2);
+    }
+
+    @Override // mz4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+        this.b.c(canvas, this.a, f, f2, f3, f4);
+    }
+
+    @Override // wy4
+    public final int f() {
+        boolean c = qd4.c(this.a);
+        jy4 jy4Var = this.b;
+        return c ? jy4Var.n : jy4Var.m;
+    }
+
+    @Override // wy4
+    public final int g() {
+        boolean c = qd4.c(this.a);
+        jy4 jy4Var = this.b;
+        return c ? jy4Var.r : jy4Var.p;
+    }
+
+    @Override // wy4
+    public final boolean h() {
+        return true;
+    }
 }

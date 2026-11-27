@@ -1,79 +1,68 @@
 // default package
 
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class x58 extends FrameLayout {
-    public v58[] a;
-    public xl6[] b;
-    public int c;
-    public w58 d;
-    public Paint e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class x58 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lcb b;
 
-    public final void a(int i, xl6 xl6Var) {
-        String str;
-        this.b[i] = xl6Var;
-        v58[] v58VarArr = this.a;
-        if (xl6Var == null) {
-            v58VarArr[i].setVisibility(4);
-            return;
-        }
-        jm6 jm6Var = xl6Var.d;
-        v58 v58Var = v58VarArr[i];
-        be0 be0Var = v58Var.b;
-        be0Var.q();
-        if (jm6Var == null || (str = jm6Var.I) == null) {
-            be0Var.setImageDrawable(bkb.Q4);
-        } else {
-            be0Var.r(jm6Var.J, jm6Var.K, true);
-            boolean z = jm6Var.b;
-            int i2 = jm6Var.C;
-            if (z) {
-                be0Var.o(mue.d("vthumb://", i2, ":", str), null, bkb.Q4);
-            } else {
-                be0Var.o(mue.d("thumb://", i2, ":", str), null, bkb.Q4);
-            }
-        }
-        ((TextView) v58Var.c).setText(xl6Var.c);
-        ((TextView) v58Var.d).setText(String.format("%d", Integer.valueOf(xl6Var.e.size())));
+    public /* synthetic */ x58(lcb lcbVar, byte b) {
+        this.a = b;
+        this.b = lcbVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        View[] viewArr = this.a;
-        int L = gl.O1() ? ((gl.L(490.0f) - gl.L(12.0f)) - (gl.L(4.0f) * (this.c - 1))) / this.c : ((gl.q.x - gl.L(12.0f)) - (gl.L(4.0f) * (this.c - 1))) / this.c;
-        for (int i3 = 0; i3 < this.c; i3++) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i3].getLayoutParams();
-            layoutParams.topMargin = gl.L(4.0f);
-            layoutParams.leftMargin = (gl.L(4.0f) + L) * i3;
-            layoutParams.width = L;
-            layoutParams.height = L;
-            layoutParams.gravity = 51;
-            viewArr[i3].setLayoutParams(layoutParams);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 0;
+        lcb lcbVar = this.b;
+        switch (b) {
+            case 0:
+                lcbVar.U();
+                break;
+            case 1:
+                lcbVar.d0 = true;
+                lcbVar.k(true);
+                break;
+            case 2:
+                if (lcbVar.G != null) {
+                    zbb zbbVar = lcbVar.w;
+                    if (zbbVar != null) {
+                        si5.c = true;
+                        zbbVar.setLayerType(2, null);
+                    }
+                    lcbVar.G.addListener(new tbb(lcbVar, b2));
+                    lcbVar.G.setDuration(320L);
+                    lcbVar.G.setInterpolator(k43.h);
+                    lcbVar.G.start();
+                    break;
+                }
+                break;
+            case 3:
+                lcbVar.w0 = null;
+                lcbVar.U();
+                break;
+            case 4:
+                lcbVar.P(true);
+                break;
+            case 5:
+                lcbVar.W();
+                icb icbVar = lcbVar.t0;
+                ImageReceiver imageReceiver = icbVar.b;
+                if (imageReceiver != null) {
+                    imageReceiver.v0(false, true);
+                }
+                ImageReceiver imageReceiver2 = icbVar.c;
+                if (imageReceiver2 != null) {
+                    imageReceiver2.v0(false, true);
+                    break;
+                }
+                break;
+            default:
+                lcbVar.i();
+                break;
         }
-        super.onMeasure(i, ug8.E(4.0f, L, TLObject.FLAG_30));
-    }
-
-    public void setAlbumsCount(int i) {
-        int i2 = 0;
-        while (true) {
-            v58[] v58VarArr = this.a;
-            if (i2 >= v58VarArr.length) {
-                this.c = i;
-                return;
-            } else {
-                v58VarArr[i2].setVisibility(i2 < i ? 0 : 4);
-                i2++;
-            }
-        }
-    }
-
-    public void setDelegate(w58 w58Var) {
-        this.d = w58Var;
     }
 }

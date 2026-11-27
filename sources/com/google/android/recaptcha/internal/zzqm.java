@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class zzqm implements Iterable, Serializable {
     public static final zzqm zzb = new zzqk(zzsv.zzb);
@@ -21,14 +21,14 @@ public abstract class zzqm implements Iterable, Serializable {
             return i4;
         }
         if (i < 0) {
-            k93.i(tb4.n(i, "Beginning index: ", " < 0"));
+            su3.g(qd4.n(i, "Beginning index: ", " < 0"));
             return 0;
         }
         if (i2 < i) {
-            k93.i(b00.g(i, i2, "Beginning index larger than ending index: ", ", "));
+            su3.g(c00.h(i, i2, "Beginning index larger than ending index: ", ", "));
             return 0;
         }
-        k93.i(b00.g(i2, i3, "End index: ", " >= "));
+        su3.g(c00.h(i2, i3, "End index: ", " >= "));
         return 0;
     }
 
@@ -69,7 +69,7 @@ public abstract class zzqm implements Iterable, Serializable {
         sb.append(" size=");
         sb.append(zzd);
         sb.append(" contents=\"");
-        return b00.j(sb, zza, "\">");
+        return c00.k(sb, zza, "\">");
     }
 
     public abstract byte zza(int i);

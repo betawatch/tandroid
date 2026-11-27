@@ -1,25 +1,119 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import j$.util.Map;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class qs {
-    public static final int a;
+public final class qs extends vla implements Map, j$.util.Map {
+    public ms d;
+    public os e;
+    public ks f;
 
-    static {
-        Object sa9Var;
-        try {
-            String property = System.getProperty("kotlinx.serialization.json.pool.size");
-            property.getClass();
-            sa9Var = m9b.b(property);
-        } catch (Throwable th) {
-            sa9Var = new sa9(th);
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
+    public final /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
+        return Map.-CC.$default$compute(this, obj, biFunction);
+    }
+
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
+    public final /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
+        return Map.-CC.$default$computeIfAbsent(this, obj, function);
+    }
+
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
+    public final /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
+        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
+    }
+
+    @Override // java.util.Map
+    public final Set entrySet() {
+        ms msVar = this.d;
+        if (msVar != null) {
+            return msVar;
         }
-        if (sa9Var instanceof sa9) {
-            sa9Var = null;
+        ms msVar2 = new ms(this, (byte) 0);
+        this.d = msVar2;
+        return msVar2;
+    }
+
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
+    public final /* synthetic */ void forEach(BiConsumer biConsumer) {
+        Map.-CC.$default$forEach(this, biConsumer);
+    }
+
+    public final boolean j(Collection collection) {
+        Iterator it = collection.iterator();
+        while (it.hasNext()) {
+            if (!super.containsKey(it.next())) {
+                return false;
+            }
         }
-        Integer num = (Integer) sa9Var;
-        a = num != null ? num.intValue() : TLObject.FLAG_21;
+        return true;
+    }
+
+    public final boolean k(Collection collection) {
+        int i = this.c;
+        Iterator it = collection.iterator();
+        while (it.hasNext()) {
+            super.remove(it.next());
+        }
+        return i != this.c;
+    }
+
+    @Override // java.util.Map
+    public final Set keySet() {
+        os osVar = this.e;
+        if (osVar != null) {
+            return osVar;
+        }
+        os osVar2 = new os(this);
+        this.e = osVar2;
+        return osVar2;
+    }
+
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
+    public final /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
+        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
+    }
+
+    @Override // java.util.Map
+    public final void putAll(java.util.Map map) {
+        int size = map.size() + this.c;
+        int i = this.c;
+        int[] iArr = this.a;
+        if (iArr.length < size) {
+            this.a = Arrays.copyOf(iArr, size);
+            this.b = Arrays.copyOf(this.b, size << 1);
+        }
+        if (this.c != i) {
+            bg.b();
+            return;
+        }
+        for (Map.Entry entry : map.entrySet()) {
+            put(entry.getKey(), entry.getValue());
+        }
+    }
+
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
+    public final /* synthetic */ void replaceAll(BiFunction biFunction) {
+        Map.-CC.$default$replaceAll(this, biFunction);
+    }
+
+    @Override // java.util.Map
+    public final Collection values() {
+        ks ksVar = this.f;
+        if (ksVar != null) {
+            return ksVar;
+        }
+        ks ksVar2 = new ks(this);
+        this.f = ksVar2;
+        return ksVar2;
     }
 }

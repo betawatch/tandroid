@@ -1,34 +1,35 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class c57 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ m57 b;
+    public final /* synthetic */ Context c;
 
-    public /* synthetic */ c57(na7 na7Var, TLRPC.User user, byte b) {
+    public /* synthetic */ c57(m57 m57Var, Context context, byte b) {
         this.a = b;
-        this.b = na7Var;
-        this.c = user;
+        this.b = m57Var;
+        this.c = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        TLRPC.User user = this.c;
-        na7 na7Var = this.b;
+        Context context = this.c;
+        m57 m57Var = this.b;
         switch (b) {
             case 0:
-                na7Var.Z2(user, na7Var.k1, true, null);
-                break;
-            case 1:
-                na7Var.h1.remove(Long.valueOf(user.id));
+                m57Var.d0.a(false);
+                hl.c3(new c57(m57Var, context, (byte) 1));
                 break;
             default:
-                na7Var.getContactsController().a(user);
+                if (hl.C1(context)) {
+                    new xk8(43, m57Var.d0.G, context).show();
+                    break;
+                }
                 break;
         }
     }

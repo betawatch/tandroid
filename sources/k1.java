@@ -1,84 +1,284 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Typeface;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import java.util.concurrent.atomic.AtomicReference;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.TextView;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.m;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class k1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class k1 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ k1(s1 s1Var, AtomicReference atomicReference, float f, float f2, r1 r1Var) {
-        this.d = s1Var;
-        this.e = atomicReference;
-        this.b = f;
-        this.c = f2;
-        this.f = r1Var;
+    public /* synthetic */ k1(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        String str;
         byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        float f = this.c;
-        float f2 = this.b;
-        FrameLayout frameLayout = this.d;
+        byte b2 = 1;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                s1 s1Var = (s1) frameLayout;
-                r1 r1Var = (r1) obj;
-                FrameLayout frameLayout2 = s1Var.K;
-                Float f3 = (Float) valueAnimator.getAnimatedValue();
-                float floatValue = (f3.floatValue() - ((Float) ((AtomicReference) obj2).getAndSet(f3)).floatValue()) * 1000.0f * 8.0f;
-                ((Float) valueAnimator.getAnimatedValue()).getClass();
-                Typeface typeface = gl.a;
-                float min = Math.min(floatValue, 250.0f);
-                while (true) {
-                    float f4 = r1Var.a;
-                    if (min <= 0.0f) {
-                        float R1 = gl.R1(f2, f, f4);
-                        s1Var.W = R1;
-                        if (R1 > 0.8f && frameLayout2.getBackground() == null) {
-                            frameLayout2.setBackground(s1Var.L);
-                        }
-                        s1Var.r.setAlpha(1.0f - s1Var.W);
-                        s1Var.s.setAlpha((float) Math.pow(1.0f - s1Var.W, 2.0d));
-                        s1Var.i();
-                        frameLayout2.invalidate();
+                ((t1) obj).h();
+                break;
+            case 1:
+                ((ze7) obj).run();
+                break;
+            case 2:
+                ((p5) obj).dismiss();
+                break;
+            case 3:
+                s6 s6Var = (s6) obj;
+                a aVar = s6Var.b;
+                s7 s7Var = (s7) view;
+                if (!s7Var.t()) {
+                    if (!s7Var.v()) {
+                        s6Var.o(((Integer) view.getTag()).intValue());
                         break;
                     } else {
-                        float min2 = Math.min(min, 18.0f);
-                        float f5 = r1Var.b;
-                        float f6 = (((((-0.020170001f) * f5) + ((f4 - 1.0f) * (-3.8E-4f))) / 1.0f) * min2) + f5;
-                        r1Var.b = f6;
-                        r1Var.a = (f6 * min2) + f4;
-                        min -= min2;
+                        aVar.C(s7Var.T(true));
+                        break;
+                    }
+                } else if (aVar.v0.a()) {
+                    s7Var.U(null, null);
+                    break;
+                }
+                break;
+            case 4:
+                m9 m9Var = (m9) obj;
+                if (m9Var.e.size() != 1) {
+                    new k9(m9Var.getContext()).show();
+                    break;
+                } else {
+                    new uy(m9Var.getContext(), null, null, (kv4) m9Var.e.get(0)).show();
+                    break;
+                }
+            case 5:
+                fb fbVar = (fb) obj;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fbVar.getContext());
+                String M0 = ob6.M0(2131742545, null);
+                id idVar = alertDialog$Builder.a;
+                idVar.S = M0;
+                idVar.U = ob6.M0(2131742546, null);
+                alertDialog$Builder.j(ob6.M0(2131747558, null), new ua(fbVar));
+                alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+                alertDialog$Builder.o();
+                break;
+            case 6:
+                jb jbVar = (jb) obj;
+                TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = jbVar.T1;
+                if (tL_channelAdminLogEventsFilter.join && tL_channelAdminLogEventsFilter.leave && tL_channelAdminLogEventsFilter.edit_rank && tL_channelAdminLogEventsFilter.invite && tL_channelAdminLogEventsFilter.ban && tL_channelAdminLogEventsFilter.unban && tL_channelAdminLogEventsFilter.kick && tL_channelAdminLogEventsFilter.unkick && tL_channelAdminLogEventsFilter.promote && tL_channelAdminLogEventsFilter.demote && tL_channelAdminLogEventsFilter.info && tL_channelAdminLogEventsFilter.settings && tL_channelAdminLogEventsFilter.pinned && tL_channelAdminLogEventsFilter.edit && tL_channelAdminLogEventsFilter.delete && tL_channelAdminLogEventsFilter.group_call && tL_channelAdminLogEventsFilter.invites) {
+                    jbVar.T1 = null;
+                }
+                zh6 zh6Var = jbVar.V1;
+                if (zh6Var != null && jbVar.U1 != null && zh6Var.m() >= jbVar.U1.size()) {
+                    jbVar.V1 = null;
+                }
+                bf1 bf1Var = jbVar.b2;
+                TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = jbVar.T1;
+                zh6 zh6Var2 = jbVar.V1;
+                wf1 wf1Var = bf1Var.a;
+                wf1Var.v0 = tL_channelAdminLogEventsFilter2;
+                wf1Var.x0 = zh6Var2;
+                if (tL_channelAdminLogEventsFilter2 == null && zh6Var2 == null) {
+                    wf1Var.J.setSubtitle(ob6.M0(2131751039, null));
+                } else {
+                    wf1Var.J.setSubtitle(ob6.M0(2131750877, null));
+                }
+                wf1Var.X0(true);
+                jbVar.dismiss();
+                break;
+            case 7:
+                ((od) obj).dismiss();
+                break;
+            case 8:
+                AtomicBoolean atomicBoolean = (AtomicBoolean) obj;
+                atomicBoolean.set(!atomicBoolean.get());
+                ((sg2) view).c(atomicBoolean.get(), true);
+                break;
+            case 9:
+                ((zg3) obj).run();
+                break;
+            case 10:
+                ((fs) obj).toggle();
+                break;
+            case 11:
+                nv0 webView = ((m) obj).f.getWebView();
+                if (webView != null) {
+                    webView.reload();
+                    break;
+                }
+                break;
+            case 12:
+                ((mz) obj).dismiss();
+                break;
+            case 13:
+                x60 x60Var = (x60) obj;
+                if (view != x60Var.e) {
+                    int i = ((w60) view).e;
+                    if (x60Var.Y() == 0 && i > 0) {
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(x60Var.getParentActivity());
+                        String M02 = ob6.M0(2131748341, null);
+                        id idVar2 = alertDialog$Builder2.a;
+                        idVar2.S = M02;
+                        idVar2.U = ob6.a0("AutoDeleteConfirmMessage", null, 2131753858, ob6.c0(i * 60));
+                        alertDialog$Builder2.g(ob6.M0(2131752570, null), new xz((byte) 7));
+                        alertDialog$Builder2.j(ob6.M0(2131751125, null), new o(x60Var, view, (byte) 16));
+                        alertDialog$Builder2.o();
+                        break;
+                    } else {
+                        x60Var.a0(view, true);
+                        break;
+                    }
+                } else {
+                    jj.k(x60Var.getParentActivity(), null, new zm9((Object) x60Var, (byte) 8));
+                    break;
+                }
+            case 14:
+                ((ob0) obj).j0();
+                break;
+            case 15:
+                ((dc0) obj).b(false);
+                break;
+            case 16:
+                ((ny) obj).run();
+                break;
+            case 17:
+                ((ny) obj).run();
+                break;
+            case 18:
+                lq0 lq0Var = ((oq0) obj).d;
+                TL_keyboard.KeyboardButton keyboardButton = (TL_keyboard.KeyboardButton) view.getTag();
+                ChatActivityEnterView chatActivityEnterView = ((ew1) lq0Var).a;
+                int i2 = ChatActivityEnterView.X7;
+                chatActivityEnterView.c1(keyboardButton);
+                break;
+            case 19:
+                ((pz) obj).run();
+                break;
+            case 20:
+                ((xac) obj).run();
+                break;
+            case 21:
+                ((qr0) obj).w.f0(1);
+                break;
+            case 22:
+                or0 or0Var = ((sr0) obj).d;
+                rr0 rr0Var = or0Var.a;
+                rr0 rr0Var2 = or0Var.a;
+                TLRPC.Dialog S0 = rr0Var.getMessagesController().S0(rr0Var.a);
+                if (S0 != null && S0.top_message != 0 && !rr0Var2.d0()) {
+                    TLRPC.User X1 = rr0Var2.getMessagesController().X1(Long.valueOf(rr0Var2.a));
+                    if (X1 != null && X1.bot_has_main_app) {
+                        rr0Var2.getMessagesController().G3(rr0Var2, rr0Var2.getMessagesController().X1(Long.valueOf(rr0Var2.a)), null, rr0Var2.getClassGuid(), null, false, false);
+                        break;
+                    } else {
+                        rr0Var2.g0(false);
+                        break;
+                    }
+                } else {
+                    lr0 lr0Var = new lr0(rr0Var2, b2);
+                    if (!rr0Var2.d0()) {
+                        lr0Var.run();
+                        break;
+                    } else {
+                        rr0Var2.getMessagesController().t5(lr0Var, rr0Var2.a);
+                        break;
                     }
                 }
                 break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ((HorizontalScrollView) frameLayout).setScrollX((int) tb4.A(f, f2, floatValue2, f2));
-                ((c09) obj2).setOutlineProgress(1.0f - floatValue2);
-                ((c09) obj).setOutlineProgress(floatValue2);
+            case 23:
+                ((g21) ((d21) obj).o1).j();
+                v21.e();
                 break;
+            case 24:
+                ((t21) obj).f();
+                break;
+            case 25:
+                x31 x31Var = (x31) obj;
+                in inVar = x31Var.f;
+                int i3 = x31Var.a;
+                boolean z = x31Var.r;
+                x31Var.r = !z;
+                x31Var.h.c(ob6.M0(!z ? 2131753694 : 2131753691, null), true, true);
+                inVar.a();
+                inVar.c(ob6.M0(x31Var.r ? 2131753692 : 2131753693, null), true, true);
+                boolean z2 = x31Var.r;
+                int i4 = x31Var.x;
+                if (z2) {
+                    x31Var.x = i4 | 1;
+                } else {
+                    x31Var.x = i4 & (-2);
+                }
+                uc7.s1(i3).W3.edit().putInt("dialog_botflags" + x31Var.s, x31Var.x).apply();
+                TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
+                toggleconnectedbotpaused.peer = uc7.s1(i3).j1(x31Var.s);
+                toggleconnectedbotpaused.paused = x31Var.r;
+                ConnectionsManager.getInstance(i3).sendRequest(toggleconnectedbotpaused, null);
+                break;
+            case 26:
+                TL_account.TL_businessChatLink tL_businessChatLink = ((l41) obj).f;
+                if (tL_businessChatLink != null) {
+                    hl.g(tL_businessChatLink.link);
+                    d31.b0(LaunchActivity.Q()).k(false).j();
+                    break;
+                }
+                break;
+            case 27:
+                r61 r61Var = (r61) obj;
+                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(r61Var.getContext());
+                String M03 = ob6.M0(2131752063, null);
+                hn hnVar = r61Var.c;
+                if (TextUtils.isEmpty(hnVar.i)) {
+                    str = "";
+                } else {
+                    str = " (" + ((Object) hnVar.i) + ")";
+                }
+                String concat = M03.concat(str);
+                id idVar3 = alertDialog$Builder3.a;
+                idVar3.S = concat;
+                idVar3.U = ob6.M0(2131744471, null);
+                alertDialog$Builder3.j(r61Var.b.i, new tg0(r61Var, (byte) 22));
+                alertDialog$Builder3.g(ob6.M0(2131752570, null), null);
+                r61Var.d.showDialog(idVar3);
+                View c = idVar3.c(-1);
+                if (c instanceof TextView) {
+                    int i5 = aob.p7;
+                    yob.X((TextView) c, i5, null);
+                    c.setBackground(aob.H0(hl.L(6.0f), aob.p1(0.12f, aob.w0(null, i5, false))));
+                    break;
+                }
+                break;
+            case 28:
+                z61 z61Var = (z61) ((x61) obj).f;
+                z61Var.M = !z61Var.M;
+                z61Var.A0(true);
+                z61Var.y0();
+                break;
+            default:
+                n71 n71Var = (n71) obj;
+                switch (n71Var.f) {
+                    case 0:
+                        ((o71) n71Var.h).r.G.g(null, (c71) n71Var.getTag(), true);
+                        break;
+                    default:
+                        ((t71) n71Var.h).n.G.g(null, (c71) n71Var.getTag(), true);
+                        break;
+                }
         }
-    }
-
-    public /* synthetic */ k1(HorizontalScrollView horizontalScrollView, float f, float f2, c09 c09Var, c09 c09Var2) {
-        this.d = horizontalScrollView;
-        this.b = f;
-        this.c = f2;
-        this.e = c09Var;
-        this.f = c09Var2;
     }
 }

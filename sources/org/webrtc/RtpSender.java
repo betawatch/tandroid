@@ -1,55 +1,52 @@
 package org.webrtc;
 
 import java.util.List;
+import org.webrtc.NativeLifecycleLock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class RtpSender {
     private MediaStreamTrack cachedTrack;
     private final DtmfSender dtmfSender;
-    private long nativeRtpSender;
+    final NativeLifecycleLock lifecycleLock;
     private boolean ownsTrack = true;
 
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        long getDtmfSender(long j);
+
+        String getId(long j);
+
+        String getMediaType(long j);
+
+        RtpParameters getParameters(long j);
+
+        List<String> getStreams(long j);
+
+        long getTrack(long j);
+
+        void setFrameEncryptor(long j, long j2);
+
+        boolean setParameters(long j, RtpParameters rtpParameters);
+
+        void setStreams(long j, List<String> list);
+
+        boolean setTrack(long j, long j2);
+    }
+
     public RtpSender(long j) {
-        this.nativeRtpSender = j;
-        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j));
-        if (!nativeGetMediaType(j).equalsIgnoreCase(MediaStreamTrack.AUDIO_TRACK_KIND)) {
+        this.lifecycleLock = new NativeLifecycleLock("RtpSender", j);
+        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(RtpSenderJni.get().getTrack(j));
+        if (!RtpSenderJni.get().getMediaType(j).equalsIgnoreCase(MediaStreamTrack.AUDIO_TRACK_KIND)) {
             this.dtmfSender = null;
         } else {
-            long nativeGetDtmfSender = nativeGetDtmfSender(j);
-            this.dtmfSender = nativeGetDtmfSender != 0 ? new DtmfSender(nativeGetDtmfSender) : null;
+            long dtmfSender = RtpSenderJni.get().getDtmfSender(j);
+            this.dtmfSender = dtmfSender != 0 ? new DtmfSender(dtmfSender) : null;
         }
     }
 
-    private void checkRtpSenderExists() {
-        if (this.nativeRtpSender != 0) {
-            return;
-        }
-        sc8.j("RtpSender has been disposed.");
-    }
-
-    private static native long nativeGetDtmfSender(long j);
-
-    private static native String nativeGetId(long j);
-
-    private static native String nativeGetMediaType(long j);
-
-    private static native RtpParameters nativeGetParameters(long j);
-
-    private static native List<String> nativeGetStreams(long j);
-
-    private static native long nativeGetTrack(long j);
-
-    private static native void nativeSetFrameEncryptor(long j, long j2);
-
-    private static native boolean nativeSetParameters(long j, RtpParameters rtpParameters);
-
-    private static native void nativeSetStreams(long j, List<String> list);
-
-    private static native boolean nativeSetTrack(long j, long j2);
-
-    public void dispose() {
-        checkRtpSenderExists();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$8(long j) {
         DtmfSender dtmfSender = this.dtmfSender;
         if (dtmfSender != null) {
             dtmfSender.dispose();
@@ -58,53 +55,48 @@ public class RtpSender {
         if (mediaStreamTrack != null && this.ownsTrack) {
             mediaStreamTrack.dispose();
         }
-        JniCommon.nativeReleaseRef(this.nativeRtpSender);
-        this.nativeRtpSender = 0L;
+        JniCommon.nativeReleaseRef(j);
     }
 
-    public DtmfSender dtmf() {
-        return this.dtmfSender;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ RtpParameters lambda$getParameters$5(long j) {
+        return RtpSenderJni.get().getParameters(j);
     }
 
-    public long getNativeRtpSender() {
-        checkRtpSenderExists();
-        return this.nativeRtpSender;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ List lambda$getStreams$3(long j) {
+        return RtpSenderJni.get().getStreams(j);
     }
 
-    public RtpParameters getParameters() {
-        checkRtpSenderExists();
-        return nativeGetParameters(this.nativeRtpSender);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$id$6(long j) {
+        return RtpSenderJni.get().getId(j);
     }
 
-    public List<String> getStreams() {
-        checkRtpSenderExists();
-        return nativeGetStreams(this.nativeRtpSender);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setFrameEncryptor$7(FrameEncryptor frameEncryptor, long j) {
+        RtpSenderJni.get().setFrameEncryptor(j, frameEncryptor.getNativeFrameEncryptor());
     }
 
-    public String id() {
-        checkRtpSenderExists();
-        return nativeGetId(this.nativeRtpSender);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$setParameters$4(RtpParameters rtpParameters, long j) {
+        return Boolean.valueOf(RtpSenderJni.get().setParameters(j, rtpParameters));
     }
 
-    public void setFrameEncryptor(FrameEncryptor frameEncryptor) {
-        checkRtpSenderExists();
-        nativeSetFrameEncryptor(this.nativeRtpSender, frameEncryptor.getNativeFrameEncryptor());
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setStreams$2(List list, long j) {
+        RtpSenderJni.get().setStreams(j, list);
     }
 
-    public boolean setParameters(RtpParameters rtpParameters) {
-        checkRtpSenderExists();
-        return nativeSetParameters(this.nativeRtpSender, rtpParameters);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$setTrack$0(long j, long j2) {
+        return Boolean.valueOf(RtpSenderJni.get().setTrack(j, j2));
     }
 
-    public void setStreams(List<String> list) {
-        checkRtpSenderExists();
-        nativeSetStreams(this.nativeRtpSender, list);
-    }
-
-    public boolean setTrack(MediaStreamTrack mediaStreamTrack, boolean z) {
-        checkRtpSenderExists();
-        if (!nativeSetTrack(this.nativeRtpSender, mediaStreamTrack == null ? 0L : mediaStreamTrack.getNativeMediaStreamTrack())) {
-            return false;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$setTrack$1(MediaStreamTrack mediaStreamTrack, boolean z, long j) {
+        if (!(mediaStreamTrack == null ? RtpSenderJni.get().setTrack(j, 0L) : ((Boolean) mediaStreamTrack.lifecycleLock.callOrDefault((NativeLifecycleLock.NativePointerCallable<h40>) new h40((byte) 5, j), (h40) Boolean.FALSE)).booleanValue())) {
+            return Boolean.FALSE;
         }
         MediaStreamTrack mediaStreamTrack2 = this.cachedTrack;
         if (mediaStreamTrack2 != null && this.ownsTrack) {
@@ -112,7 +104,47 @@ public class RtpSender {
         }
         this.cachedTrack = mediaStreamTrack;
         this.ownsTrack = z;
-        return true;
+        return Boolean.TRUE;
+    }
+
+    public void dispose() {
+        this.lifecycleLock.dispose(new ye9(this, (byte) 18));
+    }
+
+    public DtmfSender dtmf() {
+        return this.dtmfSender;
+    }
+
+    public long getNativeRtpSender() {
+        return this.lifecycleLock.getNativePointer();
+    }
+
+    public RtpParameters getParameters() {
+        return (RtpParameters) this.lifecycleLock.call(new iy8((byte) 23));
+    }
+
+    public List<String> getStreams() {
+        return (List) this.lifecycleLock.call(new iy8((byte) 24));
+    }
+
+    public String id() {
+        return (String) this.lifecycleLock.call(new iy8((byte) 22));
+    }
+
+    public void setFrameEncryptor(FrameEncryptor frameEncryptor) {
+        this.lifecycleLock.run(new ye9(frameEncryptor, (byte) 16));
+    }
+
+    public boolean setParameters(RtpParameters rtpParameters) {
+        return ((Boolean) this.lifecycleLock.call(new ye9(rtpParameters, (byte) 17))).booleanValue();
+    }
+
+    public void setStreams(List<String> list) {
+        this.lifecycleLock.run(new ur9(list));
+    }
+
+    public boolean setTrack(MediaStreamTrack mediaStreamTrack, boolean z) {
+        return ((Boolean) this.lifecycleLock.callOrDefault((NativeLifecycleLock.NativePointerCallable<bh>) new bh((Object) this, (Object) mediaStreamTrack, z, (byte) 12), (bh) Boolean.FALSE)).booleanValue();
     }
 
     public MediaStreamTrack track() {

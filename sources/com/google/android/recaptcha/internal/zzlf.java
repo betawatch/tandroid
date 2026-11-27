@@ -2,27 +2,27 @@ package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzlf extends ccb implements eq4 {
+final class zzlf extends yfb implements is4 {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlf(zzly zzlyVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzlf(zzly zzlyVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzc = zzlyVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzlf(this.zzc, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        return new zzlf(this.zzc, zw2Var);
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlf) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzlf) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0069, code lost:
@@ -31,7 +31,7 @@ final class zzlf extends ccb implements eq4 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0077, code lost:
     
-        return g5c.a;
+        return f9c.a;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0053, code lost:
     
@@ -64,24 +64,24 @@ final class zzlf extends ccb implements eq4 {
     
         return r5;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         int i = this.zzb;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         if (i == 0) {
-            qse.b(obj);
+            ixe.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
         } else if (i == 1) {
-            qse.b(obj);
+            ixe.b(obj);
         } else if (i != 2) {
-            qse.b(obj);
+            ixe.b(obj);
         } else {
-            qse.b(obj);
+            ixe.b(obj);
             ((WebView) obj).getSettings().setJavaScriptEnabled(true);
             zzly zzlyVar2 = this.zzc;
             this.zza = null;

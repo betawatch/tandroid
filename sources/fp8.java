@@ -1,65 +1,129 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.d;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fp8 implements qe3 {
-    public final /* synthetic */ d a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ ao8 c;
+public final /* synthetic */ class fp8 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public fp8(ao8 ao8Var, d dVar, Context context) {
-        this.c = ao8Var;
-        this.a = dVar;
-        this.b = context;
+    public /* synthetic */ fp8(ProfileActivity profileActivity, byte b) {
+        this.a = b;
+        this.b = profileActivity;
     }
 
-    @Override // qe3
-    public final void k(ue3 ue3Var) {
-        d dVar = this.a;
-        if (dVar.getMessagesController().M1().J(ue3Var.getDialogId())) {
-            dVar.getOrCreateStoryViewer().getClass();
-            dVar.getOrCreateStoryViewer().H(dVar.getContext(), ue3Var.getDialogId(), new p2b(this.c));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (b) {
+            case 0:
+                RectF rectF = ProfileActivity.Z6;
+                profileActivity.finishPreviewFragment();
+                break;
+            case 1:
+                RectF rectF2 = ProfileActivity.Z6;
+                profileActivity.F3();
+                break;
+            case 2:
+                RectF rectF3 = ProfileActivity.Z6;
+                TLRPC.UserFull userFull = profileActivity.w2;
+                if (userFull != null && userFull.wallet_card != null && profileActivity.getParentActivity() != null) {
+                    profileActivity.showDialog(new sv8(profileActivity, profileActivity.d0, profileActivity.getMessagesController().X1(Long.valueOf(profileActivity.e1)), profileActivity.w2.wallet_card));
+                    break;
+                }
+                break;
+            case 3:
+                RectF rectF4 = ProfileActivity.Z6;
+                profileActivity.t2();
+                break;
+            case 4:
+                RectF rectF5 = ProfileActivity.Z6;
+                Bundle bundle = new Bundle();
+                bundle.putLong("chat_id", profileActivity.f1);
+                bundle.putLong("user_id", profileActivity.e1);
+                profileActivity.presentFragment(new rz8(bundle));
+                break;
+            case 5:
+                RectF rectF6 = ProfileActivity.Z6;
+                profileActivity.J2();
+                break;
+            case 6:
+                RectF rectF7 = ProfileActivity.Z6;
+                profileActivity.E3();
+                break;
+            case 7:
+                RectF rectF8 = ProfileActivity.Z6;
+                profileActivity.E3();
+                break;
+            case 8:
+                RectF rectF9 = ProfileActivity.Z6;
+                if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
+                    int i = 0;
+                    while (i < profileActivity.getParentLayout().getFragmentStack().size()) {
+                        e eVar = (e) profileActivity.getParentLayout().getFragmentStack().get(i);
+                        if (eVar instanceof uj3) {
+                            uj3 uj3Var = (uj3) eVar;
+                            li3 li3Var = uj3Var.H3;
+                            if (li3Var != null) {
+                                e fragment = li3Var.getFragment();
+                                if ((fragment instanceof tzb) && (-((tzb) fragment).a) == profileActivity.a()) {
+                                    uj3Var.H3.a();
+                                }
+                            }
+                        } else if (eVar instanceof zu1) {
+                            if (((zu1) eVar).a() == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).c0(eVar, false);
+                                i--;
+                            }
+                        } else if (eVar instanceof tzb) {
+                            if ((-((tzb) eVar).a) == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).c0(eVar, false);
+                                i--;
+                            }
+                        } else if ((eVar instanceof ProfileActivity) && eVar != profileActivity) {
+                            ProfileActivity profileActivity2 = (ProfileActivity) eVar;
+                            if (profileActivity2.a() == profileActivity.a() && profileActivity2.q1) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).c0(eVar, false);
+                                i--;
+                            }
+                        }
+                        i++;
+                    }
+                }
+                profileActivity.J1 = (byte) 0;
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("chat_id", profileActivity.f1);
+                HashSet hashSet = tzb.s1;
+                profileActivity.presentFragment(tzb.F0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
+                break;
+            case 9:
+                RectF rectF10 = ProfileActivity.Z6;
+                profileActivity.A2();
+                break;
+            case 10:
+                RectF rectF11 = ProfileActivity.Z6;
+                profileActivity.D3();
+                break;
+            case 11:
+                RectF rectF12 = ProfileActivity.Z6;
+                if (profileActivity.s.getTag() == null) {
+                    profileActivity.Y2();
+                    break;
+                }
+                break;
+            default:
+                RectF rectF13 = ProfileActivity.Z6;
+                profileActivity.X2(view);
+                break;
         }
-    }
-
-    @Override // qe3
-    public final boolean m() {
-        return true;
-    }
-
-    @Override // qe3
-    public final void s() {
-        d dVar = this.a;
-        g2b M1 = dVar.getMessagesController().M1();
-        ArrayList arrayList = M1.h;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        boolean z = M1.D(0, cf3.n(((TL_stories.PeerStories) arrayList.get(0)).peer)) != 0;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i = 0; i < arrayList.size(); i++) {
-            long n = cf3.n(((TL_stories.PeerStories) arrayList.get(i)).peer);
-            if (!z || M1.D(0, n) != 0) {
-                arrayList2.add(Long.valueOf(n));
-            }
-        }
-        dVar.getOrCreateStoryViewer().K(this.b, null, arrayList2, 0, null, null, new p2b(this.c), false);
-    }
-
-    @Override // qe3
-    public final void o(ue3 ue3Var) {
-    }
-
-    @Override // qe3
-    public final void v(ue3 ue3Var) {
-    }
-
-    @Override // qe3
-    public final void w(ue3 ue3Var) {
     }
 }

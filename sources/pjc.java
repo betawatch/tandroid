@@ -1,46 +1,18 @@
 // default package
 
-import java.util.Random;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class pjc implements Runnable {
+    public final /* synthetic */ anb a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class pjc extends fk0 {
-    public final void g(float f, float f2) {
-        if (!e66.e(this.r)) {
-            return;
-        }
-        int i = 0;
-        while (true) {
-            float f3 = i;
-            float f4 = this.n;
-            if (f3 >= f4) {
-                return;
-            }
-            float[] fArr = this.i;
-            float f5 = fArr[i];
-            float[] fArr2 = this.j;
-            float f6 = fArr2[i];
-            float f7 = (f6 * f * 8.2f * 1.0f) + (0.8f * f6) + f5;
-            fArr[i] = f7;
-            if (f7 >= 1.0f) {
-                fArr[i] = 0.0f;
-                float[] fArr3 = this.g;
-                this.e[i] = fArr3[i];
-                float[] fArr4 = this.h;
-                this.f[i] = fArr4[i];
-                if (f2 < 1.0f) {
-                    float f8 = 360.0f / f4;
-                    float f9 = this.b;
-                    float f10 = this.a;
-                    Random random = this.m;
-                    fArr3[i] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f9 - f10) * f2) + f10;
-                    fArr4[i] = ((((random.nextInt() * f2) % 100.0f) / 100.0f) * 0.05f * f8) + (f8 * f3);
-                    fArr2[i] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
-                } else {
-                    c(fArr3, fArr4, i);
-                }
-            }
-            i++;
+    public pjc(anb anbVar) {
+        this.a = anbVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        synchronized (this.a.c) {
+            this.a.d = null;
         }
     }
 }

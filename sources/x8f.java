@@ -1,37 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x8f extends vef {
-    private static final x8f zzb;
-    private int zzd;
-    private int zze;
-    private String zzf = "";
-
-    static {
-        x8f x8fVar = new x8f();
-        zzb = x8fVar;
-        vef.e(x8f.class, x8fVar);
-    }
-
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+public abstract class x8f {
+    public static /* synthetic */ boolean a(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, lgf lgfVar, Object obj, Object obj2) {
+        while (!atomicReferenceFieldUpdater.compareAndSet(lgfVar, obj, obj2)) {
+            if (atomicReferenceFieldUpdater.get(lgfVar) != obj && atomicReferenceFieldUpdater.get(lgfVar) != obj) {
+                return false;
+            }
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
-        }
-        if (i2 == 3) {
-            return new x8f();
-        }
-        if (i2 == 4) {
-            return new v8f(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        return true;
     }
 }

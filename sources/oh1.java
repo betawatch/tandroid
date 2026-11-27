@@ -1,48 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class oh1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yh1 b;
+import android.content.Context;
+import android.widget.TextView;
 
-    public /* synthetic */ oh1(yh1 yh1Var, byte b) {
-        this.a = b;
-        this.b = yh1Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class oh1 extends f48 {
+    public final /* synthetic */ ph1 H;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oh1(ph1 ph1Var, Context context, int i, long j, vnb vnbVar) {
+        super(i, j, vnbVar, context);
+        this.H = ph1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        yh1 yh1Var = this.b;
-        switch (b) {
-            case 0:
-                yh1Var.l0(true);
-                break;
-            case 1:
-                yh1Var.l0 = true;
-                yh1Var.m0();
-                break;
-            case 2:
-                yh1Var.E = null;
-                yh1Var.F = null;
-                yh1Var.n0 = null;
-                yh1Var.o0 = null;
-                yh1Var.q0 = null;
-                yh1Var.p0 = null;
-                yh1Var.r0 = 0.0d;
-                yh1Var.i0(false, true);
-                yh1Var.f.m(null, null, yh1Var.w, null);
-                yh1Var.n.setAnimation(yh1Var.L);
-                yh1Var.L.H(0);
-                break;
-            default:
-                yh1Var.l0 = true;
-                if (yh1Var.y.length() > 0) {
-                    yh1Var.d0(yh1Var.y.getText().toString());
-                }
-                yh1Var.m0();
-                break;
+    @Override // f48
+    public final void b(int i, boolean z) {
+        super.b(i, z);
+        ph1 ph1Var = this.H;
+        TextView textView = ph1Var.d;
+        if (textView != null) {
+            textView.setTextColor(ph1Var.b.h.getTextColor());
         }
     }
 }

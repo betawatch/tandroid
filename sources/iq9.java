@@ -1,45 +1,23 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class iq9 extends kq9 {
-    public final /* synthetic */ TLRPC.User b;
+public final class iq9 implements lr9 {
+    public final /* synthetic */ kq9 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iq9(String str, TLRPC.User user) {
-        super(str);
-        this.b = user;
+    public iq9(kq9 kq9Var) {
+        this.a = kq9Var;
     }
 
-    @Override // kq9
-    public final String b() {
-        return l7c.r(this.b);
+    @Override // lr9
+    public final void onRejoinRequested() {
+        hl.c3(new v59(this, (byte) 20));
     }
 
-    @Override // kq9
-    public final void c(d dVar) {
-        TLRPC.User user = this.b;
-        if (user.id != y6c.h(y6c.t0).e()) {
-            dVar.presentFragment(ProfileActivity.P2(user.id));
-            return;
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("user_id", user.id);
-        bundle.putBoolean("my_profile", true);
-        dVar.presentFragment(new ProfileActivity(bundle, null));
-    }
-
-    @Override // kq9
-    public final void d(ImageReceiver imageReceiver) {
-        pb0 pb0Var = new pb0((wjb) null);
-        TLRPC.User user = this.b;
-        pb0Var.q(user);
-        imageReceiver.U(user, pb0Var, null);
+    @Override // lr9
+    public final void onStreamChannels(ArrayList arrayList) {
+        hl.c3(new en9(this, arrayList, (byte) 8));
     }
 }

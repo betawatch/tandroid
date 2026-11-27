@@ -6,15 +6,15 @@ import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class ExperimentalFfmpegVideoDecoder extends dia {
+final class ExperimentalFfmpegVideoDecoder extends yla {
     public final String r;
     public long s;
     public volatile int t;
     public final ArrayDeque u;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static final class PendingInput {
         public final ByteBuffer a;
         public final long b;
@@ -25,15 +25,15 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
         }
     }
 
-    public ExperimentalFfmpegVideoDecoder(int i, int i2, int i3, int i4, fm4 fm4Var) {
-        super(new z83[i], new VideoDecoderOutputBuffer[i2]);
+    public ExperimentalFfmpegVideoDecoder(int i, int i2, int i3, int i4, ko4 ko4Var) {
+        super(new s93[i], new VideoDecoderOutputBuffer[i2]);
         byte[] bArr;
         this.u = new ArrayDeque();
         String str = FfmpegLibrary.a;
-        String a = FfmpegLibrary.a(fm4Var.t);
+        String a = FfmpegLibrary.a(ko4Var.t);
         a.getClass();
         this.r = a;
-        List list = fm4Var.w;
+        List list = ko4Var.w;
         int i5 = 0;
         for (int i6 = 0; i6 < list.size(); i6++) {
             i5 += ((byte[]) list.get(i6)).length;
@@ -47,7 +47,7 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
         } else {
             bArr = null;
         }
-        long ffmpegInitialize = ffmpegInitialize(this.r, bArr, i4, fm4Var.G, fm4Var.A, fm4Var.B);
+        long ffmpegInitialize = ffmpegInitialize(this.r, bArr, i4, ko4Var.G, ko4Var.A, ko4Var.B);
         this.s = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Failed to initialize decoder.");
@@ -67,34 +67,34 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
 
     private native int ffmpegSendPacket(long j, ByteBuffer byteBuffer, int i, long j2);
 
-    @Override // dia
-    public final z83 f() {
-        return new z83(2, FfmpegLibrary.b());
+    @Override // yla
+    public final s93 f() {
+        return new s93(2, FfmpegLibrary.b());
     }
 
-    @Override // dia
-    public final b93 g() {
-        return new VideoDecoderOutputBuffer(new a93() { // from class: androidx.media3.decoder.ffmpeg.a
-            @Override // a93
-            public final void a(b93 b93Var) {
-                ExperimentalFfmpegVideoDecoder.this.o((VideoDecoderOutputBuffer) b93Var);
+    @Override // yla
+    public final u93 g() {
+        return new VideoDecoderOutputBuffer(new t93() { // from class: androidx.media3.decoder.ffmpeg.a
+            @Override // t93
+            public final void b(u93 u93Var) {
+                ExperimentalFfmpegVideoDecoder.this.o((VideoDecoderOutputBuffer) u93Var);
             }
         });
     }
 
-    @Override // u83
+    @Override // n93
     public final String getName() {
         return "ffmpeg" + FfmpegLibrary.c() + "-" + this.r;
     }
 
-    @Override // dia
-    public final x83 h(Throwable th) {
+    @Override // yla
+    public final q93 h(Throwable th) {
         return new FfmpegDecoderException("Unexpected decode error", th);
     }
 
-    @Override // dia
-    public final x83 i(z83 z83Var, b93 b93Var, boolean z) {
-        VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) b93Var;
+    @Override // yla
+    public final q93 i(s93 s93Var, u93 u93Var, boolean z) {
+        VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) u93Var;
         if (z) {
             long ffmpegReset = ffmpegReset(this.s);
             this.s = ffmpegReset;
@@ -103,9 +103,9 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
             }
             this.u.clear();
         }
-        ByteBuffer byteBuffer = z83Var.c;
-        String str = g8c.a;
-        boolean l = l(z83Var.e);
+        ByteBuffer byteBuffer = s93Var.c;
+        String str = gcc.a;
+        boolean l = l(s93Var.e);
         boolean z2 = !l;
         while (!this.u.isEmpty()) {
             PendingInput pendingInput = (PendingInput) this.u.peek();
@@ -120,17 +120,17 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
                 return new FfmpegDecoderException("ffmpegDecode error: (see logcat)");
             }
         }
-        int ffmpegSendPacket2 = ffmpegSendPacket(this.s, byteBuffer, byteBuffer.limit(), z83Var.e);
+        int ffmpegSendPacket2 = ffmpegSendPacket(this.s, byteBuffer, byteBuffer.limit(), s93Var.e);
         if (ffmpegSendPacket2 == -3) {
             ArrayDeque arrayDeque = this.u;
-            long j2 = z83Var.e;
+            long j2 = s93Var.e;
             byteBuffer.position(0);
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(byteBuffer.limit());
             allocateDirect.put(byteBuffer);
             allocateDirect.flip();
             arrayDeque.addLast(new PendingInput(allocateDirect, j2));
             if (l) {
-                videoDecoderOutputBuffer.init(z83Var.e, this.t, null);
+                videoDecoderOutputBuffer.init(s93Var.e, this.t, null);
             }
             int ffmpegReceiveFrame = ffmpegReceiveFrame(this.s, this.t, videoDecoderOutputBuffer, z2);
             if (ffmpegReceiveFrame == -2) {
@@ -141,7 +141,7 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
                 return null;
             }
             if (l) {
-                videoDecoderOutputBuffer.format = z83Var.a;
+                videoDecoderOutputBuffer.format = s93Var.a;
                 return null;
             }
         } else {
@@ -153,7 +153,7 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
                 return new FfmpegDecoderException("ffmpegDecode error: (see logcat)");
             }
             if (l) {
-                videoDecoderOutputBuffer.init(z83Var.e, this.t, null);
+                videoDecoderOutputBuffer.init(s93Var.e, this.t, null);
             }
             int ffmpegReceiveFrame2 = ffmpegReceiveFrame(this.s, this.t, videoDecoderOutputBuffer, z2);
             if (ffmpegReceiveFrame2 == -2) {
@@ -163,7 +163,7 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
                 videoDecoderOutputBuffer.shouldBeSkipped = true;
             }
             if (l) {
-                videoDecoderOutputBuffer.format = z83Var.a;
+                videoDecoderOutputBuffer.format = s93Var.a;
             }
         }
         return null;
@@ -175,11 +175,11 @@ final class ExperimentalFfmpegVideoDecoder extends dia {
         }
         int ffmpegRenderFrame = ffmpegRenderFrame(this.s, surface, videoDecoderOutputBuffer, videoDecoderOutputBuffer.width, videoDecoderOutputBuffer.height);
         if (ffmpegRenderFrame == -2 || ffmpegRenderFrame == -4) {
-            throw new FfmpegDecoderException(de9.k(ffmpegRenderFrame, "Buffer render error: "));
+            throw new FfmpegDecoderException(uh9.k(ffmpegRenderFrame, "Buffer render error: "));
         }
     }
 
-    @Override // dia, u83
+    @Override // yla, n93
     public final void release() {
         super.release();
         ffmpegRelease(this.s);

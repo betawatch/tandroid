@@ -1,26 +1,30 @@
 // default package
 
-import android.graphics.Bitmap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class bb8 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gb8 b;
+    public final /* synthetic */ boolean c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class bb8 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public String e;
-    public ab8[] f;
-    public ab8[] g;
-    public ab8[] h;
-    public ab8[] i;
-    public Bitmap j;
-    public Bitmap k;
-    public Bitmap l;
-    public Bitmap m;
-    public Bitmap n;
-    public Bitmap o;
-    public int p;
-    public Bitmap q;
-    public String r;
+    public /* synthetic */ bb8(gb8 gb8Var, boolean z, byte b) {
+        this.a = b;
+        this.b = gb8Var;
+        this.c = z;
+    }
+
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        boolean z = this.c;
+        gb8 gb8Var = this.b;
+        switch (b) {
+            case 0:
+                d31.F(gb8Var.b.f0, z).j();
+                break;
+            default:
+                d31.F(gb8Var.b.f0, z).j();
+                break;
+        }
+    }
 }

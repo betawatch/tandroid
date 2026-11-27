@@ -1,40 +1,13 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class p4b implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t4b b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface p4b {
+    boolean b();
 
-    public /* synthetic */ p4b(t4b t4bVar, byte b) {
-        this.a = b;
-        this.b = t4bVar;
-    }
+    boolean c();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        t4b t4bVar = this.b;
-        switch (b) {
-            case 0:
-                TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
-                getwebpagepreview.message = t4bVar.T1.d.getText().toString();
-                t4bVar.d2 = ConnectionsManager.getInstance(t4bVar.a).sendRequest(getwebpagepreview, new wx9(t4bVar, (byte) 12));
-                break;
-            case 1:
-                t4bVar.c1();
-                break;
-            default:
-                it3 it3Var = t4bVar.T1;
-                if (t4bVar.isShowing()) {
-                    it3Var.d.requestFocus();
-                    gl.E3(it3Var.d);
-                    break;
-                }
-                break;
-        }
-    }
+    void e(TLRPC.Document document, String str, Object obj, n47 n47Var, boolean z, boolean z2, int i, int i2);
 }

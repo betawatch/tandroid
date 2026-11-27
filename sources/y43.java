@@ -1,32 +1,42 @@
 // default package
 
-import android.os.StrictMode;
-import java.util.Locale;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicLong;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class y43 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e53 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class y43 implements ThreadFactory {
-    public static final ThreadFactory e = Executors.defaultThreadFactory();
-    public final AtomicLong a = new AtomicLong();
-    public final String b;
-    public final byte c;
-    public final StrictMode.ThreadPolicy d;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public y43(String str, int i, StrictMode.ThreadPolicy threadPolicy) {
-        this.b = str;
-        this.c = i;
-        this.d = threadPolicy;
+    public /* synthetic */ y43(e53 e53Var, byte b) {
+        this.a = b;
+        this.b = e53Var;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = e.newThread(new gu2((Object) this, (Object) runnable, (byte) 25));
-        Locale locale = Locale.ROOT;
-        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
-        return newThread;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        e53 e53Var = this.b;
+        switch (b) {
+            case 0:
+                e53Var.a.invalidate();
+                break;
+            default:
+                tt ttVar = e53Var.c;
+                if (ttVar.getParent() != null) {
+                    if (e53Var.d) {
+                        hl.B2(ttVar);
+                    } else {
+                        try {
+                            e53Var.b.removeView(ttVar);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    uk8 uk8Var = e53Var.p;
+                    if (uk8Var != null) {
+                        uk8Var.run();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

@@ -1,43 +1,21 @@
 // default package
 
-import android.content.DialogInterface;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.DrawableWrapper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class mx0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ p8c b;
-    public final /* synthetic */ boolean[] c;
+public final class mx0 extends DrawableWrapper {
+    public ColorFilter a;
 
-    public /* synthetic */ mx0(p8c p8cVar, boolean[] zArr) {
-        this.b = p8cVar;
-        this.c = zArr;
+    @Override // android.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
+    public final ColorFilter getColorFilter() {
+        return this.a;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        boolean[] zArr = this.c;
-        p8c p8cVar = this.b;
-        switch (b) {
-            case 0:
-                if (!zArr[0]) {
-                    p8cVar.a(Boolean.FALSE);
-                    zArr[0] = true;
-                    break;
-                }
-                break;
-            default:
-                if (!zArr[0]) {
-                    p8cVar.a(Boolean.FALSE);
-                    break;
-                }
-                break;
-        }
-    }
-
-    public /* synthetic */ mx0(boolean[] zArr, p8c p8cVar) {
-        this.c = zArr;
-        this.b = p8cVar;
+    @Override // android.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a = colorFilter;
+        super.setColorFilter(colorFilter);
     }
 }

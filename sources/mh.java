@@ -1,71 +1,59 @@
 // default package
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.a;
+import android.view.KeyEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class mh implements ed {
+public final /* synthetic */ class mh implements TextView.OnEditorActionListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ mh(Activity activity, byte b) {
+    public /* synthetic */ mh(byte b) {
         this.a = b;
-        this.b = activity;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        Activity activity = this.b;
-        switch (b) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        switch (this.a) {
             case 0:
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + a.b.getPackageName()));
-                    activity.startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
+                hl.t1(textView);
+                break;
             case 1:
-                try {
-                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent2.setData(Uri.parse("package:" + a.b.getPackageName()));
-                    activity.startActivity(intent2);
+                if (i != 6) {
                     break;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return;
+                } else {
+                    hl.t1(textView);
+                    break;
                 }
             case 2:
-                try {
-                    Intent intent3 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent3.setData(Uri.parse("package:" + a.b.getPackageName()));
-                    activity.startActivity(intent3);
+                if (i == 6) {
+                    textView.clearFocus();
+                    hl.t1(textView);
                     break;
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
-                    return;
                 }
+                break;
             case 3:
-                try {
-                    Intent intent4 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent4.setData(Uri.parse("package:" + a.b.getPackageName()));
-                    activity.startActivity(intent4);
+                if (i == 6) {
+                    textView.clearFocus();
+                    hl.t1(textView);
                     break;
-                } catch (Exception e4) {
-                    fa4.g(e4, true);
-                    return;
+                }
+                break;
+            case 4:
+                if (i != 6) {
+                    break;
+                } else {
+                    hl.t1(textView);
+                    break;
                 }
             default:
-                Intent intent5 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                intent5.setData(Uri.fromParts("package", activity.getPackageName(), null));
-                activity.startActivity(intent5);
-                break;
+                if (i != 6) {
+                    break;
+                } else {
+                    hl.t1(textView);
+                    break;
+                }
         }
+        return false;
     }
 }

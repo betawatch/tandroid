@@ -1,361 +1,187 @@
 // default package
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import android.content.Context;
+import android.content.Intent;
+import android.text.Spannable;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import org.json.JSONObject;
+import org.telegram.messenger.voip.VoIPPreNotificationService;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.c;
+import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ck2 {
-    public static final Logger f = Logger.getLogger(ck2.class.getName());
-    public static final boolean g = d6c.e;
-    public l69 a;
-    public final byte[] b;
-    public final int c;
-    public int d;
-    public final p4c e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ck2 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public ck2(p4c p4cVar, int i) {
-        if (i < 0) {
-            w26.j("bufferSize must be >= 0");
-            throw null;
-        }
-        int max = Math.max(i, 20);
-        this.b = new byte[max];
-        this.c = max;
-        this.e = p4cVar;
+    public /* synthetic */ ck2(lk2 lk2Var, long j, ik2 ik2Var, int i, boolean z, um4 um4Var) {
+        this.e = lk2Var;
+        this.c = j;
+        this.f = ik2Var;
+        this.b = i;
+        this.d = z;
+        this.h = um4Var;
     }
 
-    public static int f(String str) {
-        int length;
-        try {
-            length = f8c.a(str);
-        } catch (e8c unused) {
-            length = str.getBytes(mp5.a).length;
-        }
-        return h(length) + length;
-    }
-
-    public static int g(int i) {
-        return h(i << 3);
-    }
-
-    public static int h(int i) {
-        return (352 - (Integer.numberOfLeadingZeros(i) * 9)) >>> 6;
-    }
-
-    public static int i(long j) {
-        return (640 - (Long.numberOfLeadingZeros(j) * 9)) >>> 6;
-    }
-
-    public final void A(int i, int i2) {
-        C((i << 3) | i2);
-    }
-
-    public final void B(int i, int i2) {
-        k(20);
-        c(i, 0);
-        d(i2);
-    }
-
-    public final void C(int i) {
-        k(5);
-        d(i);
-    }
-
-    public final void D(int i, long j) {
-        k(20);
-        c(i, 0);
-        e(j);
-    }
-
-    public final void E(long j) {
-        k(10);
-        e(j);
-    }
-
-    public final void a(int i) {
-        int i2 = this.d;
-        int i3 = i2 + 1;
-        this.d = i3;
-        byte b = (byte) (i & kk7.d4);
-        byte[] bArr = this.b;
-        bArr[i2] = b;
-        int i4 = i2 + 2;
-        this.d = i4;
-        bArr[i3] = (byte) ((i >> 8) & kk7.d4);
-        int i5 = i2 + 3;
-        this.d = i5;
-        bArr[i4] = (byte) ((i >> 16) & kk7.d4);
-        this.d = i2 + 4;
-        bArr[i5] = (byte) ((i >> 24) & kk7.d4);
-    }
-
-    public final void b(long j) {
-        int i = this.d;
-        int i2 = i + 1;
-        this.d = i2;
-        byte[] bArr = this.b;
-        bArr[i] = (byte) (j & 255);
-        int i3 = i + 2;
-        this.d = i3;
-        bArr[i2] = (byte) ((j >> 8) & 255);
-        int i4 = i + 3;
-        this.d = i4;
-        bArr[i3] = (byte) ((j >> 16) & 255);
-        int i5 = i + 4;
-        this.d = i5;
-        bArr[i4] = (byte) ((j >> 24) & 255);
-        int i6 = i + 5;
-        this.d = i6;
-        bArr[i5] = (byte) (((int) (j >> 32)) & kk7.d4);
-        int i7 = i + 6;
-        this.d = i7;
-        bArr[i6] = (byte) (((int) (j >> 40)) & kk7.d4);
-        int i8 = i + 7;
-        this.d = i8;
-        bArr[i7] = (byte) (((int) (j >> 48)) & kk7.d4);
-        this.d = i + 8;
-        bArr[i8] = (byte) (((int) (j >> 56)) & kk7.d4);
-    }
-
-    public final void c(int i, int i2) {
-        d((i << 3) | i2);
-    }
-
-    public final void d(int i) {
-        boolean z = g;
-        byte[] bArr = this.b;
-        if (z) {
-            while (true) {
-                int i2 = i & (-128);
-                int i3 = this.d;
-                if (i2 == 0) {
-                    this.d = i3 + 1;
-                    d6c.j(bArr, i3, (byte) i);
-                    return;
-                } else {
-                    this.d = i3 + 1;
-                    d6c.j(bArr, i3, (byte) ((i | 128) & kk7.d4));
-                    i >>>= 7;
-                }
-            }
-        } else {
-            while (true) {
-                int i4 = i & (-128);
-                int i5 = this.d;
-                if (i4 == 0) {
-                    this.d = i5 + 1;
-                    bArr[i5] = (byte) i;
-                    return;
-                } else {
-                    this.d = i5 + 1;
-                    bArr[i5] = (byte) ((i | 128) & kk7.d4);
-                    i >>>= 7;
-                }
-            }
-        }
-    }
-
-    public final void e(long j) {
-        boolean z = g;
-        byte[] bArr = this.b;
-        if (z) {
-            while (true) {
-                long j2 = j & (-128);
-                int i = this.d;
-                if (j2 == 0) {
-                    this.d = i + 1;
-                    d6c.j(bArr, i, (byte) j);
-                    return;
-                } else {
-                    this.d = i + 1;
-                    d6c.j(bArr, i, (byte) ((((int) j) | 128) & kk7.d4));
-                    j >>>= 7;
-                }
-            }
-        } else {
-            while (true) {
-                long j3 = j & (-128);
-                int i2 = this.d;
-                if (j3 == 0) {
-                    this.d = i2 + 1;
-                    bArr[i2] = (byte) j;
-                    return;
-                } else {
-                    this.d = i2 + 1;
-                    bArr[i2] = (byte) ((((int) j) | 128) & kk7.d4);
-                    j >>>= 7;
-                }
-            }
-        }
-    }
-
-    public final void j() {
-        this.e.a.write(this.b, 0, this.d);
-        this.d = 0;
-    }
-
-    public final void k(int i) {
-        if (this.c - this.d < i) {
-            j();
-        }
-    }
-
-    public final void l(byte b) {
-        if (this.d == this.c) {
-            j();
-        }
-        int i = this.d;
-        this.d = i + 1;
-        this.b[i] = b;
-    }
-
-    public final void m(byte[] bArr, int i, int i2) {
-        int i3 = this.d;
-        int i4 = this.c;
-        int i5 = i4 - i3;
-        byte[] bArr2 = this.b;
-        if (i5 >= i2) {
-            System.arraycopy(bArr, i, bArr2, i3, i2);
-            this.d += i2;
-            return;
-        }
-        System.arraycopy(bArr, i, bArr2, i3, i5);
-        int i6 = i + i5;
-        int i7 = i2 - i5;
-        this.d = i4;
-        j();
-        if (i7 > i4) {
-            this.e.a.write(bArr, i6, i7);
-        } else {
-            System.arraycopy(bArr, i6, bArr2, 0, i7);
-            this.d = i7;
-        }
-    }
-
-    public final void n(int i, boolean z) {
-        k(11);
-        c(i, 0);
-        byte b = z ? (byte) 1 : (byte) 0;
-        int i2 = this.d;
-        this.d = i2 + 1;
-        this.b[i2] = b;
-    }
-
-    public final void o(int i, f51 f51Var) {
-        A(i, 2);
-        p(f51Var);
-    }
-
-    public final void p(f51 f51Var) {
-        C(f51Var.size());
-        w(f51Var.l(), f51Var.size(), f51Var.b);
-    }
-
-    public final void q(int i, int i2) {
-        k(14);
-        c(i, 5);
-        a(i2);
-    }
-
-    public final void r(int i) {
-        k(4);
-        a(i);
-    }
-
-    public final void s(int i, long j) {
-        k(18);
-        c(i, 1);
-        b(j);
-    }
-
-    public final void t(long j) {
-        k(8);
-        b(j);
-    }
-
-    public final void u(int i, int i2) {
-        k(20);
-        c(i, 0);
-        if (i2 >= 0) {
-            d(i2);
-        } else {
-            e(i2);
-        }
-    }
-
-    public final void v(int i) {
-        if (i >= 0) {
-            C(i);
-        } else {
-            E(i);
-        }
-    }
-
-    public final void w(int i, int i2, byte[] bArr) {
-        m(bArr, i, i2);
-    }
-
-    public final void x(int i, o3 o3Var, nq9 nq9Var) {
-        A(i, 2);
-        C(o3Var.a(nq9Var));
-        nq9Var.i(o3Var, this.a);
-    }
-
-    public final void y(int i, String str) {
-        A(i, 2);
-        z(str);
-    }
-
-    public final void z(String str) {
-        try {
-            int length = str.length() * 3;
-            int h = h(length);
-            int i = h + length;
-            int i2 = this.c;
-            if (i > i2) {
-                byte[] bArr = new byte[length];
-                int b = f8c.a.b(str, bArr, 0, length);
-                C(b);
-                m(bArr, 0, b);
-                return;
-            }
-            if (i > i2 - this.d) {
-                j();
-            }
-            int h2 = h(str.length());
-            int i3 = this.d;
-            byte[] bArr2 = this.b;
-            try {
-                try {
-                    if (h2 == h) {
-                        int i4 = i3 + h2;
-                        this.d = i4;
-                        int b2 = f8c.a.b(str, bArr2, i4, i2 - i4);
-                        this.d = i3;
-                        d((b2 - i3) - h2);
-                        this.d = b2;
-                    } else {
-                        int a = f8c.a(str);
-                        d(a);
-                        this.d = f8c.a.b(str, bArr2, this.d, a);
+    /* JADX WARN: Removed duplicated region for block: B:84:0x018a A[Catch: all -> 0x01aa, TryCatch #0 {, blocks: (B:62:0x0133, B:64:0x013d, B:66:0x0149, B:68:0x0151, B:71:0x0158, B:73:0x015e, B:75:0x0168, B:81:0x0172, B:82:0x0179, B:84:0x018a, B:86:0x0193, B:88:0x0199, B:89:0x01a4, B:93:0x01a6), top: B:61:0x0133 }] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0199 A[Catch: all -> 0x01aa, TryCatch #0 {, blocks: (B:62:0x0133, B:64:0x013d, B:66:0x0149, B:68:0x0151, B:71:0x0158, B:73:0x015e, B:75:0x0168, B:81:0x0172, B:82:0x0179, B:84:0x018a, B:86:0x0193, B:88:0x0199, B:89:0x01a4, B:93:0x01a6), top: B:61:0x0133 }] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        boolean z;
+        q0d q0dVar;
+        TLRPC.User user;
+        switch (this.a) {
+            case 0:
+                lk2 lk2Var = (lk2) this.e;
+                long j = this.c;
+                ik2 ik2Var = (ik2) this.f;
+                int i = this.b;
+                boolean z2 = this.d;
+                um4 um4Var = (um4) this.h;
+                synchronized (mk2.d) {
+                    Spannable spannable = (Spannable) lk2Var.a.get();
+                    if (spannable == null || lk2Var.b.get(Long.valueOf(j)) != ik2Var) {
+                        return;
                     }
-                } catch (e8c e) {
-                    this.d = i3;
-                    throw e;
+                    String str = ik2Var.a;
+                    if (i <= spannable.length() && i == str.length()) {
+                        for (int i2 = 0; i2 < str.length(); i2++) {
+                            if (spannable.charAt(i2) == str.charAt(i2)) {
+                            }
+                        }
+                        z = true;
+                        if (z && !z2) {
+                            mk2.a(spannable, i, (j26) um4Var.b);
+                        }
+                        lk2Var.b.remove(Long.valueOf(j));
+                        if (lk2Var.b.isEmpty()) {
+                            mk2.e.remove(lk2Var);
+                            if (spannable instanceof gk2) {
+                                ((gk2) spannable).a = true;
+                            }
+                        }
+                        if (z) {
+                            jn7.e().k(jn7.l4, new Object[0]);
+                        }
+                        return;
+                    }
+                    z = false;
+                    if (z) {
+                        mk2.a(spannable, i, (j26) um4Var.b);
+                    }
+                    lk2Var.b.remove(Long.valueOf(j));
+                    if (lk2Var.b.isEmpty()) {
+                    }
+                    if (z) {
+                    }
+                    return;
                 }
-            } catch (ArrayIndexOutOfBoundsException e2) {
-                throw new bk2(e2);
-            }
-        } catch (e8c e3) {
-            f.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e3);
-            byte[] bytes = str.getBytes(mp5.a);
-            try {
-                C(bytes.length);
-                w(0, bytes.length, bytes);
-            } catch (IndexOutOfBoundsException e4) {
-                throw new bk2(e4);
-            }
+            case 1:
+                VoIPPreNotificationService.lambda$show$1((Intent) this.e, (TL_phone.PhoneCall) this.f, (Context) this.h, this.b, this.c, this.d);
+                return;
+            default:
+                z zVar = (z) this.e;
+                int i3 = this.b;
+                long j2 = this.c;
+                JSONObject jSONObject = (JSONObject) this.f;
+                String str2 = (String) this.h;
+                boolean z3 = this.d;
+                if (zVar.A || (q0dVar = zVar.R) == null) {
+                    return;
+                }
+                if (i3 != 19) {
+                    z3f z3fVar = q0dVar.d;
+                    if (z3fVar == null) {
+                        q0dVar.b(3, null, j2);
+                        return;
+                    }
+                    z3fVar.getClass();
+                    h0d g = k0d.g(q0dVar);
+                    if (g == null || !g.i || (z3 && !k0d.G(g))) {
+                        q0dVar.b(3, null, j2);
+                        return;
+                    }
+                    TLRPC.TL_widgetQueryTypeData tL_widgetQueryTypeData = new TLRPC.TL_widgetQueryTypeData();
+                    tL_widgetQueryTypeData.with_wallet = z3;
+                    k0d.x(g, q0dVar, j2, tL_widgetQueryTypeData, str2.getBytes(StandardCharsets.UTF_8));
+                    return;
+                }
+                if (q0dVar.d == null) {
+                    q0dVar.b(3, null, j2);
+                    return;
+                }
+                h0d g2 = k0d.g(q0dVar);
+                if (g2 != null) {
+                    long j3 = g2.n;
+                    if (j3 != 0) {
+                        user = uc7.s1(g2.b).X1(Long.valueOf(j3));
+                        e S = LaunchActivity.S();
+                        if (g2 != null || !k0d.G(g2) || user == null || !user.bot) {
+                            q0dVar.b(5, null, j2);
+                            return;
+                        }
+                        if (S == null || S.getContext() == null) {
+                            q0dVar.b(3, null, j2);
+                            return;
+                        }
+                        byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
+                        Context context = S.getContext();
+                        int i4 = g2.b;
+                        vnb resourceProvider = S.getResourceProvider();
+                        g0d g0dVar = new g0d(g2, q0dVar, j2, bytes);
+                        ArrayList arrayList = o55.a;
+                        l55 l55Var = new l55(new boolean[]{false}, g0dVar);
+                        c C = c.C(i4);
+                        boolean[] zArr = {false};
+                        st stVar = new st((Object) zArr, (Object) context, i4, (Object) user, (Object) jSONObject, (Object) resourceProvider, (Object) l55Var, (byte) 7);
+                        if (C.M()) {
+                            stVar.run();
+                            return;
+                        }
+                        o55.a.add(stVar);
+                        C.A0(stVar);
+                        hl.d3(new re4((Object) stVar, (Object) zArr, (Object) l55Var, (byte) 20), 10000L);
+                        return;
+                    }
+                }
+                user = null;
+                e S2 = LaunchActivity.S();
+                if (g2 != null) {
+                }
+                q0dVar.b(5, null, j2);
+                return;
         }
+    }
+
+    public /* synthetic */ ck2(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i, long j, boolean z) {
+        this.e = intent;
+        this.f = phoneCall;
+        this.h = context;
+        this.b = i;
+        this.c = j;
+        this.d = z;
+    }
+
+    public /* synthetic */ ck2(z zVar, int i, long j, JSONObject jSONObject, String str, boolean z) {
+        this.e = zVar;
+        this.b = i;
+        this.c = j;
+        this.f = jSONObject;
+        this.h = str;
+        this.d = z;
     }
 }

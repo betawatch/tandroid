@@ -1,83 +1,81 @@
 // default package
 
-import android.content.Context;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h6e {
-    public static final dc6 i = new dc6("ClientCastAnalytics", null);
-    public static final boolean j = true;
-    public final j6a a;
-    public final ydd b;
-    public final p6d c;
-    public Long e;
-    public h1c g;
-    public byte h = 1;
-    public final String d = UUID.randomUUID().toString();
-    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+public final class h6e extends ese {
+    private static final h6e zzi;
+    private static volatile u0f zzj;
+    private int zzc;
+    private int zzd;
+    private long zze;
+    private long zzf;
+    private long zzg;
+    private long zzh;
 
-    public h6e(Context context, u84 u84Var, j6a j6aVar, ydd yddVar, p6d p6dVar) {
-        this.a = j6aVar;
-        this.b = yddVar;
-        this.c = p6dVar;
+    static {
+        h6e h6eVar = new h6e();
+        zzi = h6eVar;
+        ese.g(h6e.class, h6eVar);
     }
 
-    public final void a(final y3f y3fVar, final int i2) {
-        this.f.execute(new Runnable() { // from class: xyd
-            /* JADX WARN: Removed duplicated region for block: B:13:0x0075  */
-            /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-            @Override // java.lang.Runnable
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-            */
-            public final void run() {
-                n90 n90Var;
-                h1c h1cVar;
-                w3f n = y3f.n(y3fVar);
-                h6e h6eVar = h6e.this;
-                String str = h6eVar.d;
-                n.c();
-                y3f.v((y3f) n.b, str);
-                n.c();
-                y3f.w((y3f) n.b, str);
-                Long l = h6eVar.e;
-                if (l != null) {
-                    int longValue = (int) l.longValue();
-                    n.c();
-                    y3f.x((y3f) n.b, longValue);
+    public static g6e j() {
+        return (g6e) ((ase) zzi.d(5));
+    }
+
+    /* JADX WARN: Type inference failed for: r2v12, types: [java.lang.Object, u0f] */
+    @Override // ese
+    public final Object d(int i) {
+        u0f u0fVar;
+        switch (b7e.a[i - 1]) {
+            case 1:
+                return new h6e();
+            case 2:
+                return new g6e(zzi);
+            case 3:
+                return new j1f(zzi, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဂ\u0001\u0003ဂ\u0002\u0004ဂ\u0004\u0005ဂ\u0003", new Object[]{"zzc", "zzd", r7e.g, "zze", "zzf", "zzh", "zzg"});
+            case 4:
+                return zzi;
+            case 5:
+                u0f u0fVar2 = zzj;
+                if (u0fVar2 != null) {
+                    return u0fVar2;
                 }
-                y3f y3fVar2 = (y3f) n.a();
-                byte b = h6eVar.h;
-                int i3 = b - 1;
-                n90 n90Var2 = null;
-                if (b == 0) {
-                    throw null;
-                }
-                short s = i2;
-                if (i3 != 0) {
-                    if (i3 == 1) {
-                        n90Var = new n90(Integer.valueOf(s - 1), y3fVar2, cj8.a, null);
+                synchronized (h6e.class) {
+                    u0f u0fVar3 = zzj;
+                    u0fVar = u0fVar3;
+                    if (u0fVar3 == null) {
+                        ?? zreVar = new zre();
+                        zzj = zreVar;
+                        u0fVar = zreVar;
                     }
-                    h6e.i.b("analytics event: %s", n90Var2);
-                    fre.h(n90Var2);
-                    h1cVar = h6eVar.g;
-                    if (h1cVar == null) {
-                        h1cVar.a(n90Var2, new fyb((byte) 3));
-                        return;
-                    }
-                    return;
                 }
-                n90Var = new n90(Integer.valueOf(s - 1), y3fVar2, cj8.b, null);
-                n90Var2 = n90Var;
-                h6e.i.b("analytics event: %s", n90Var2);
-                fre.h(n90Var2);
-                h1cVar = h6eVar.g;
-                if (h1cVar == null) {
-                }
-            }
-        });
+                return u0fVar;
+            case 6:
+                return (byte) 1;
+            default:
+                p3d.a();
+            case 7:
+                return null;
+        }
+    }
+
+    public final void k(long j) {
+        this.zzc |= 2;
+        this.zze = j;
+    }
+
+    public final void l(long j) {
+        this.zzc |= 4;
+        this.zzf = j;
+    }
+
+    public final void m(long j) {
+        this.zzc |= 8;
+        this.zzg = j;
+    }
+
+    public final void n(long j) {
+        this.zzc |= 16;
+        this.zzh = j;
     }
 }

@@ -1,30 +1,28 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.security.keystore.KeyGenParameterSpec;
+import javax.crypto.KeyGenerator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class h43 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ m43 b;
-
-    public /* synthetic */ h43(m43 m43Var, byte b) {
-        this.a = b;
-        this.b = m43Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class h43 {
+    public static KeyGenParameterSpec a(KeyGenParameterSpec.Builder builder) {
+        return builder.build();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        m43 m43Var = this.b;
-        switch (b) {
-            case 0:
-                m43Var.getClass();
-                m43Var.a.setAlpha(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                m43Var.a.invalidate();
-                break;
-        }
+    public static KeyGenParameterSpec.Builder b(String str, int i) {
+        return new KeyGenParameterSpec.Builder(str, i);
+    }
+
+    public static void c(KeyGenerator keyGenerator, KeyGenParameterSpec keyGenParameterSpec) {
+        keyGenerator.init(keyGenParameterSpec);
+    }
+
+    public static void d(KeyGenParameterSpec.Builder builder) {
+        builder.setBlockModes("CBC");
+    }
+
+    public static void e(KeyGenParameterSpec.Builder builder) {
+        builder.setEncryptionPaddings("PKCS7Padding");
     }
 }

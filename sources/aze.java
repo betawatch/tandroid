@@ -1,19 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.text.Spannable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class aze implements zn7 {
-    public static final aze a = new aze();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class aze {
+    public static void a(Spannable spannable, Object obj, int i, int i2) {
+        for (Object obj2 : spannable.getSpans(i, i2, obj.getClass())) {
+            if (spannable.getSpanStart(obj2) == i && spannable.getSpanEnd(obj2) == i2 && spannable.getSpanFlags(obj2) == 33) {
+                spannable.removeSpan(obj2);
+            }
         }
-        throw null;
+        spannable.setSpan(obj, i, i2, 33);
     }
 }

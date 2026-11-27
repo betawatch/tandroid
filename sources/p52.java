@@ -1,37 +1,48 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class p52 implements b42, ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p8c b;
+public final class p52 extends TextView {
+    public float a;
+    public boolean b;
+    public final /* synthetic */ Paint c;
 
-    public /* synthetic */ p52(p8c p8cVar, byte b) {
-        this.a = b;
-        this.b = p8cVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p52(Context context, Paint paint) {
+        super(context);
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    @Override // b42
-    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-        this.b.a(new sd8(messageMedia));
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        p8c p8cVar = this.b;
-        switch (b) {
-            case 1:
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.FALSE);
-                    break;
-                }
-                break;
-            default:
-                p8cVar.a(hdVar.g(i, true, true));
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i);
+        boolean z = this.b;
+        float f = this.a;
+        if (z) {
+            float f2 = f + 0.026666667f;
+            this.a = f2;
+            if (f2 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
+            }
+        } else {
+            float f3 = f - 0.026666667f;
+            this.a = f3;
+            if (f3 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
+            }
         }
+        super.onDraw(canvas);
+        canvas.drawCircle(hl.L(14.0f), getMeasuredHeight() / 2, hl.L(4.0f), paint);
+        invalidate();
     }
 }

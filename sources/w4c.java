@@ -1,74 +1,16 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class w4c extends TextView {
-    public boolean a;
-    public final lm b;
-    public ih2 c;
-
-    public w4c(Activity activity) {
-        super(activity);
-        this.b = new lm(this, 0L, 350L, s33.h);
-    }
-
-    public final void a(boolean z, boolean z2) {
-        this.a = z;
-        boolean z3 = true;
-        if (!z2) {
-            this.b.f(z, true);
-        }
-        if (!isPressed() && !z) {
-            z3 = false;
-        }
-        super.setPressed(z3);
-        invalidate();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float d = this.b.d(this.a);
-        if (d <= 0.0f) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (d < 1.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - d) * 255.0f), 31);
-            float f = 1.0f - (0.2f * d);
-            canvas2.scale(f, f, getWidth() / 2.0f, getHeight() / 2.0f);
-            canvas2.translate(0.0f, gl.L(-12.0f) * d);
-            super.onDraw(canvas2);
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-        }
-        if (this.c == null) {
-            ih2 ih2Var = new ih2(gl.L(16.0f), gl.L(2.0f), getCurrentTextColor());
-            this.c = ih2Var;
-            ih2Var.setCallback(this);
-        }
-        this.c.b(getCurrentTextColor());
-        float f2 = 1.0f - d;
-        this.c.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (gl.L(12.0f) * f2)), getWidth() / 2, (getHeight() / 2) + ((int) (f2 * gl.L(12.0f))));
-        this.c.setAlpha((int) (d * 255.0f));
-        this.c.draw(canvas2);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setPressed(boolean z) {
-        super.setPressed(z || this.a);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.c == drawable || super.verifyDrawable(drawable);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class w4c {
+    public us0 a;
+    public String e;
+    public int g;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public int f = 80;
+    public int h = -1;
 }

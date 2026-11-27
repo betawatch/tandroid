@@ -1,15 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface mib {
-    int getBottom();
+public final class mib extends qib {
+    public int d;
 
-    int getTop();
+    @Override // qib
+    public final int a(zib zibVar, sib sibVar, lib libVar, int i, boolean z) {
+        return Math.max(0, this.a - libVar.a(sibVar, i));
+    }
 
-    float getX();
+    @Override // qib
+    public final void b(int i, int i2) {
+        super.b(i, i2);
+        this.d = Math.max(this.d, i + i2);
+    }
 
-    float getY();
+    @Override // qib
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
+    }
 
-    void invalidate();
+    @Override // qib
+    public final int d(boolean z) {
+        return Math.max(super.d(z), this.d);
+    }
 }

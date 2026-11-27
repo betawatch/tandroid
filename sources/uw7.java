@@ -1,57 +1,85 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class uw7 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ vx7 d;
+public final class uw7 extends zu1 {
+    public final /* synthetic */ icc Jd;
+    public final /* synthetic */ dx7 Kd;
 
-    public uw7(vx7 vx7Var, EditTextBoldCursor editTextBoldCursor, String str) {
-        this.d = vx7Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uw7(dx7 dx7Var, icc iccVar) {
+        super(null);
+        this.Kd = dx7Var;
+        this.Jd = iccVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a) {
-            return;
-        }
-        boolean z = true;
-        this.a = true;
-        int i = 0;
-        while (true) {
-            if (i >= editable.length()) {
-                z = false;
-                break;
-            }
-            char charAt = editable.charAt(i);
-            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
-                break;
-            } else {
-                i++;
-            }
-        }
-        this.a = false;
-        EditTextBoldCursor editTextBoldCursor = this.b;
-        if (z) {
-            editTextBoldCursor.setErrorText(k96.M0(2131747256, null));
+    @Override // zu1
+    public final boolean Y7() {
+        return false;
+    }
+
+    @Override // zu1, kz1
+    public final long a() {
+        return 0L;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // zu1, qc6
+    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
+        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
+        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
+        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
+            tL_mediaAreaGeoPoint2 = new TL_stories.TL_mediaAreaGeoPoint();
+            tL_mediaAreaGeoPoint2.geo = messageMedia.geo;
         } else {
-            this.d.O0(editTextBoldCursor, this.c, editable, false);
+            if (!(messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
+                return;
+            }
+            TLRPC.TL_messageMediaVenue tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) messageMedia;
+            long j2 = tL_messageMediaVenue.query_id;
+            if (j2 == -1 || j2 == -2) {
+                TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint3 = new TL_stories.TL_mediaAreaGeoPoint();
+                tL_mediaAreaGeoPoint3.geo = messageMedia.geo;
+                TL_stories.TL_geoPointAddress tL_geoPointAddress = tL_messageMediaVenue.geoAddress;
+                tL_mediaAreaGeoPoint3.address = tL_geoPointAddress;
+                if (tL_geoPointAddress != null) {
+                    tL_mediaAreaGeoPoint3.flags |= 1;
+                }
+                Utilities.e.c(new pl7(messageMedia, tL_mediaAreaGeoPoint3, (byte) 13));
+                tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
+            } else {
+                TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
+                tL_inputMediaAreaVenue.query_id = tL_messageMediaVenue.query_id;
+                tL_inputMediaAreaVenue.result_id = tL_messageMediaVenue.result_id;
+                tL_mediaAreaGeoPoint = tL_inputMediaAreaVenue;
+            }
+            tL_mediaAreaGeoPoint2 = tL_mediaAreaGeoPoint;
         }
+        this.Jd.a(messageMedia, tL_mediaAreaGeoPoint2);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    @Override // org.telegram.ui.ActionBar.e
+    public final Activity getParentActivity() {
+        return hl.W(this.Kd.getContext());
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final vnb getResourceProvider() {
+        return this.Kd.q1;
+    }
+
+    @Override // zu1, kz1
+    public final TLRPC.User h() {
+        return yac.h(this.currentAccount).f();
+    }
+
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final boolean isLightStatusBar() {
+        return false;
     }
 }

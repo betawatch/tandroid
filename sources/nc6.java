@@ -1,49 +1,36 @@
 // default package
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nc6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ae6 b;
+public final class nc6 extends eja {
+    public final /* synthetic */ uc6 x2;
 
-    public /* synthetic */ nc6(ae6 ae6Var, byte b) {
-        this.a = b;
-        this.b = ae6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nc6(uc6 uc6Var, Context context, wia wiaVar, uc6 uc6Var2, mc6 mc6Var, vnb vnbVar) {
+        super(context, 0L, wiaVar, 0, null, null, null, 8, 0, uc6Var2, mc6Var, 0, vnbVar, null);
+        this.x2 = uc6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ae6 ae6Var = this.b;
-        switch (b) {
-            case 0:
-                ae6Var.N.m();
-                break;
-            case 1:
-                ae6Var.O = null;
-                ae6Var.P = null;
-                ae6Var.o(true);
-                ae6Var.e.m(null, null, ae6Var.f, null);
-                vh1 vh1Var = ae6Var.n;
-                oy8 oy8Var = ae6Var.K;
-                vh1Var.setAnimation(oy8Var);
-                oy8Var.H(0);
-                ae6Var.M = true;
-                break;
-            case 2:
-                ae6Var.M = true;
-                break;
-            default:
-                EditTextBoldCursor editTextBoldCursor = ae6Var.c;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                    gl.E3(editTextBoldCursor);
-                    break;
-                }
-                break;
-        }
+    @Override // eja
+    public final boolean H() {
+        return true;
+    }
+
+    @Override // eja
+    public final int I0() {
+        return 32;
+    }
+
+    @Override // eja
+    public final int Z0() {
+        return 3;
+    }
+
+    @Override // eja
+    public final TL_stories.MediaArea getStoriesArea() {
+        return this.x2.T0;
     }
 }

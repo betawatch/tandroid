@@ -1,10 +1,48 @@
 // default package
 
-import java.util.ArrayList;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class gq6 implements Runnable {
+    public final /* synthetic */ ls6 a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ byte e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ int n;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class gq6 {
-    public final ArrayList a = new ArrayList();
-    public Integer b;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ gq6(ls6 ls6Var, long j, boolean z, int i, int i2, int i3, long j2, int i4) {
+        this.a = ls6Var;
+        this.b = j;
+        this.c = z;
+        this.d = i;
+        this.e = i2;
+        this.f = i3;
+        this.h = j2;
+        this.n = i4;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j = this.b;
+        boolean B = wf3.B(j);
+        boolean z = this.c;
+        int i = this.d;
+        byte b = this.e;
+        boolean z2 = z && (i == -1 || (i == 0 && b == 2)) && !B;
+        ls6 ls6Var = this.a;
+        long j2 = this.h;
+        if (z2 || (this.f == 1 && !B)) {
+            ls6Var.f0(b, this.n, j, j2, false);
+        }
+        if (z2) {
+            return;
+        }
+        if (!z) {
+            ls6Var.K1(b, i, j, j2);
+        }
+        ls6Var.getNotificationCenter().k(jn7.W, Long.valueOf(j), Long.valueOf(j2), Integer.valueOf((z && i == -1) ? 0 : i), Boolean.valueOf(z), Integer.valueOf(b));
+    }
 }

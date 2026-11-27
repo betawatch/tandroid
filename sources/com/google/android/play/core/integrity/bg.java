@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -25,9 +25,9 @@ final class bg extends bm {
         this.e = bnVar;
     }
 
-    @Override // s0d
+    @Override // j5d
     public final void b() {
-        q0d q0dVar;
+        h5d h5dVar;
         if (bn.l(this.e)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -38,23 +38,23 @@ final class bg extends bm {
         }
         try {
             bn bnVar = this.e;
-            e0d e0dVar = (e0d) bnVar.a.n;
+            v4d v4dVar = (v4d) bnVar.a.n;
             Bundle a = bn.a(bnVar, this.a, this.b, this.c, 0);
             bk bkVar = new bk(this.e, this.d, this.b);
-            c0d c0dVar = (c0d) e0dVar;
-            c0dVar.getClass();
+            t4d t4dVar = (t4d) v4dVar;
+            t4dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(c0dVar.c);
-            int i = yzc.a;
+            obtain.writeInterfaceToken(t4dVar.c);
+            int i = p4d.a;
             obtain.writeInt(1);
             a.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);
-            c0dVar.b(obtain, 3);
+            t4dVar.b(obtain, 3);
         } catch (RemoteException e) {
             bn bnVar2 = this.e;
             StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest = this.a;
-            q0dVar = bnVar2.b;
-            q0dVar.a(e, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
+            h5dVar = bnVar2.b;
+            h5dVar.a(e, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
             this.d.trySetException(new StandardIntegrityException(-100, e));
         }
     }

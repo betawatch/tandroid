@@ -1,36 +1,42 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class yff {
-    public static final uff a = new uff();
-    public static final wff b = new wff();
+public final class yff extends ljf {
+    private static final pjf zzb = new rad();
+    private static final yff zzd;
+    private int zze;
+    private int zzf;
+    private int zzg;
+    private int zzi;
+    private long zzk;
+    private ojf zzh = mjf.d;
+    private tjf zzj = hlf.d;
 
-    public void a(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) ghf.g(obj, j);
-        if (list instanceof sff) {
-            unmodifiableList = ((sff) list).zzd();
-        } else {
-            if (uff.c.isAssignableFrom(list.getClass())) {
-                return;
-            }
-            if ((list instanceof pgf) && (list instanceof dff)) {
-                ldf ldfVar = (ldf) ((dff) list);
-                boolean z = ldfVar.a;
-                if (z && z) {
-                    ldfVar.a = false;
-                    return;
-                }
-                return;
-            }
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
-        }
-        ghf.i(obj, j, unmodifiableList);
+    static {
+        yff yffVar = new yff();
+        zzd = yffVar;
+        ljf.e(yff.class, yffVar);
     }
 
-    public abstract void b(Object obj, long j, Object obj2);
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzd, "\u0001\u0006\u0000\u0001\u0001\u0007\u0006\u0000\u0002\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003ࠞ\u0005᠌\u0002\u0006\u001b\u0007ဂ\u0003", new Object[]{"zze", "zzf", sae.x, "zzg", rj2.r, "zzh", rg7.y, "zzi", rg7.n, "zzj", nff.class, "zzk"});
+        }
+        if (i2 == 3) {
+            return new yff();
+        }
+        if (i2 == 4) {
+            return new mdf(zzd);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzd;
+    }
 }

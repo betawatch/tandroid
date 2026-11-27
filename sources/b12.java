@@ -1,21 +1,20 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class b12 implements n8c, o8c {
-    public final /* synthetic */ h12 a;
+public final class b12 implements vma {
+    public final /* synthetic */ n12 a;
 
-    @Override // o8c
-    public final Boolean d(c4c c4cVar, View view, Integer num, Float f, Float f2) {
-        this.a.Q(c4cVar, view);
-        return Boolean.TRUE;
+    public b12(n12 n12Var) {
+        this.a = n12Var;
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.Q((c4c) obj, (View) obj2);
+    @Override // vma
+    public final void L(int i, boolean z) {
+        n12 n12Var = this.a;
+        f12 f12Var = n12Var.v2;
+        if (f12Var == n12Var.k2) {
+            f12Var.invalidate();
+        }
     }
 }

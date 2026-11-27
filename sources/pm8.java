@@ -1,48 +1,30 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.RectF;
-import org.telegram.ui.ProfileActivity;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class pm8 {
+    public static final pm8 a;
+    public static final pm8 b;
+    public static final pm8 c;
+    public static final /* synthetic */ pm8[] d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class pm8 extends gb3 {
-    public int F = -1;
-    public final /* synthetic */ ProfileActivity G;
-
-    public pm8(ProfileActivity profileActivity) {
-        this.G = profileActivity;
+    static {
+        pm8 pm8Var = new pm8("DEFAULT", 0);
+        a = pm8Var;
+        pm8 pm8Var2 = new pm8("VERY_LOW", 1);
+        b = pm8Var2;
+        pm8 pm8Var3 = new pm8("HIGHEST", 2);
+        c = pm8Var3;
+        d = new pm8[]{pm8Var, pm8Var2, pm8Var3};
     }
 
-    @Override // gb3
-    public final long K(long j, long j2, long j3) {
-        return 0L;
+    public static pm8 valueOf(String str) {
+        return (pm8) Enum.valueOf(pm8.class, str);
     }
 
-    @Override // gb3
-    public final void N() {
-        gl.c3(new w88(this, (byte) 20));
-    }
-
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        RectF rectF = ProfileActivity.Z6;
-        this.G.I3();
-    }
-
-    @Override // gb3, b49
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new u28(this, (byte) 13));
-            ofFloat.setDuration(this.e);
-            ofFloat.start();
-            this.F = this.G.getNotificationCenter().q(null, this.F, true);
-        }
-        super.m();
+    public static pm8[] values() {
+        return (pm8[]) d.clone();
     }
 }

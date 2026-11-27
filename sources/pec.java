@@ -1,46 +1,38 @@
 // default package
 
-import android.view.View;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEncodingService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class pec implements d39, e39 {
-    public final /* synthetic */ vec a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class pec implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VideoEncodingService b;
 
-    public /* synthetic */ pec(vec vecVar) {
-        this.a = vecVar;
+    public /* synthetic */ pec(VideoEncodingService videoEncodingService, byte b) {
+        this.a = b;
+        this.b = videoEncodingService;
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        j8c j8cVar = this.a.b;
-        if (j8cVar == null) {
-            return false;
-        }
-        return ((Boolean) j8cVar.g(Integer.valueOf(((tec) view).a.a), view)).booleanValue();
-    }
-
-    @Override // d39
-    public final void e(float f, float f2, int i, View view) {
-        vec vecVar = this.a;
-        uec uecVar = vecVar.E;
-        if (uecVar == null || uecVar.b()) {
-            tec tecVar = (tec) view;
-            if (i != vecVar.G || vecVar.E == null) {
-                j8c j8cVar = vecVar.m0;
-                if (j8cVar == null || !((Boolean) j8cVar.g(Integer.valueOf(tecVar.a.a), Integer.valueOf(i))).booleanValue()) {
-                    vecVar.e(tecVar.a.a, i);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        VideoEncodingService videoEncodingService = this.b;
+        switch (b) {
+            case 0:
+                VideoEncodingService videoEncodingService2 = VideoEncodingService.e;
+                videoEncodingService.b();
+                break;
+            default:
+                VideoEncodingService videoEncodingService3 = VideoEncodingService.e;
+                so6 so6Var = MediaController.z().b0;
+                if (so6Var == null) {
+                    videoEncodingService.stopSelf();
+                    break;
+                } else {
+                    videoEncodingService.a(so6Var);
+                    break;
                 }
-            }
         }
-    }
-
-    @Override // d39
-    public final boolean q(View view) {
-        return false;
-    }
-
-    @Override // d39
-    public final void l(View view, float f, float f2) {
     }
 }

@@ -1,67 +1,20 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sr1 extends t09 {
-    public final int[] n1;
-    public ValueAnimator o1;
-    public boolean p1;
-    public final /* synthetic */ mu1 q1;
+public final class sr1 extends y9c {
+    public final /* synthetic */ zu1 O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sr1(mu1 mu1Var, mu1 mu1Var2, Activity activity, int i, wjb wjbVar) {
-        super(3, i, wjbVar, activity, mu1Var2);
-        this.q1 = mu1Var;
-        this.n1 = new int[2];
-        this.p1 = true;
+    public sr1(zu1 zu1Var, Context context) {
+        super(context);
+        this.O = zu1Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        a aVar;
-        super.onLayout(z, i, i2, i3, i4);
-        aVar = ((d) this.q1).actionBar;
-        r7 j = aVar.q(null).j(28);
-        if (j != null) {
-            int[] iArr = this.n1;
-            getLocationInWindow(iArr);
-            float x = getX();
-            float width = getWidth() + x;
-            j.getLocationInWindow(iArr);
-            float width2 = (j.getWidth() / 2.0f) + iArr[0];
-            int L = gl.L(20.0f);
-            boolean z2 = k96.a0;
-            float f = width2 + (L * (z2 ? -1 : 1));
-            boolean z3 = this.p1;
-            if (z2) {
-                q(!z3, f - x);
-            } else {
-                q(!z3, f - width);
-            }
-            this.p1 = false;
-        }
-    }
-
-    public final void q(boolean z, float f) {
-        ValueAnimator valueAnimator = this.o1;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.o1 = null;
-        }
-        if (!z) {
-            setBubbleOffset(f);
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.V0, f);
-        this.o1 = ofFloat;
-        ofFloat.addUpdateListener(new f0(this, (byte) 28));
-        this.o1.setInterpolator(s33.h);
-        this.o1.setDuration(420L);
-        this.o1.start();
+    @Override // y9c
+    public final vnb getResourceProvider() {
+        return this.O.Ba;
     }
 }

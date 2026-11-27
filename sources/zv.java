@@ -1,33 +1,35 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.ui.l;
-import org.telegram.ui.m;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.view.Surface;
+import android.view.TextureView;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zv extends px0 {
-    @Override // px0
-    public final String b() {
-        cv0 cv0Var = this.b;
-        return (cv0Var == null || TextUtils.isEmpty(cv0Var.getTitle())) ? super.b() : this.b.getTitle();
-    }
+public final class zv {
+    public long a;
+    public Bitmap b;
 
-    public final void c(m mVar) {
-        if (mVar != null) {
-            l lVar = mVar.f;
-            lVar.J();
-            this.b = lVar.getWebView();
-            this.d = lVar.getProxy();
-            cv0 cv0Var = this.b;
-            if (cv0Var != null) {
-                cv0Var.onPause();
-                this.E = this.b.getTitle();
-                this.F = this.b.getFavicon();
-                this.x = this.b.getUrl();
-                this.q = mVar.x;
-                this.r = mVar.y;
+    public static zv a(VideoPlayerHolderBase videoPlayerHolderBase, yv yvVar) {
+        zv zvVar = new zv();
+        zvVar.a = videoPlayerHolderBase.getCurrentPosition();
+        if (videoPlayerHolderBase.firstFrameRendered) {
+            TextureView textureView = yvVar.n;
+            TextureView textureView2 = yvVar.n;
+            if (textureView != null && textureView.getSurfaceTexture() != null) {
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Surface surface = new Surface(textureView2.getSurfaceTexture());
+                    Bitmap createBitmap = Bitmap.createBitmap(textureView2.getMeasuredWidth(), textureView2.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                    hl.x0(surface, createBitmap);
+                    surface.release();
+                    zvVar.b = createBitmap;
+                    return zvVar;
+                }
+                zvVar.b = textureView2.getBitmap();
             }
         }
+        return zvVar;
     }
 }

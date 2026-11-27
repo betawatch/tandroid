@@ -1,33 +1,29 @@
 // default package
 
-import android.util.SparseArray;
-
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class hp2 {
-    public static final hp2 a;
-    public static final /* synthetic */ hp2[] b;
+public final class hp2 extends jp2 {
+    public final /* synthetic */ byte f;
+    public final /* synthetic */ lp2 h;
 
-    /* JADX INFO: Fake field, exist only in values array */
-    hp2 EF0;
-
-    static {
-        hp2 hp2Var = new hp2("NOT_SET", 0);
-        hp2 hp2Var2 = new hp2("EVENT_OVERRIDE", 1);
-        a = hp2Var2;
-        b = new hp2[]{hp2Var, hp2Var2};
-        SparseArray sparseArray = new SparseArray();
-        sparseArray.put(0, hp2Var);
-        sparseArray.put(5, hp2Var2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hp2(lp2 lp2Var, byte b) {
+        super(lp2Var);
+        this.f = b;
+        this.h = lp2Var;
     }
 
-    public static hp2 valueOf(String str) {
-        return (hp2) Enum.valueOf(hp2.class, str);
-    }
-
-    public static hp2[] values() {
-        return (hp2[]) b.clone();
+    @Override // jp2
+    public final Object a(int i) {
+        byte b = this.f;
+        lp2 lp2Var = this.h;
+        switch (b) {
+            case 0:
+                return lp2Var.g(i);
+            case 1:
+                return new kp2(lp2Var, i);
+            default:
+                return lp2Var.l(i);
+        }
     }
 }

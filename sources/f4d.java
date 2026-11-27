@@ -1,56 +1,39 @@
 // default package
 
-import android.os.Parcel;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class f4d extends ig0 {
-    public final /* synthetic */ byte q;
+public final class f4d extends e4d {
+    public static final f4d s = new f4d(new Object[0]);
+    public final transient Object[] r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f4d(x1d x1dVar, byte b) {
-        super(o40.a, x1dVar);
-        this.q = b;
+    public f4d(Object[] objArr) {
+        super((byte) 0);
+        this.r = objArr;
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult, jg0
-    public final /* bridge */ /* synthetic */ void a(ua9 ua9Var) {
-        a(ua9Var);
+    @Override // java.util.List
+    public final Object get(int i) {
+        i3f.a(i, 0);
+        Object obj = this.r[i];
+        Objects.requireNonNull(obj);
+        return obj;
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* bridge */ /* synthetic */ ua9 d(Status status) {
-        byte b = this.q;
-        return status;
+    @Override // e4d, b4d
+    public final int h(Object[] objArr) {
+        System.arraycopy(this.r, 0, objArr, 0, 0);
+        return 0;
     }
 
-    @Override // ig0
-    public final void n(xx4 xx4Var) {
-        switch (this.q) {
-            case 0:
-                z3d z3dVar = (z3d) xx4Var;
-                j4d j4dVar = (j4d) z3dVar.k();
-                c4d c4dVar = new c4d(this, (byte) 0);
-                GoogleSignInOptions googleSignInOptions = z3dVar.F;
-                Parcel e = j4dVar.e();
-                int i = w3d.a;
-                e.writeStrongBinder(c4dVar);
-                w3d.c(e, googleSignInOptions);
-                j4dVar.f(e, kk7.m1);
-                break;
-            default:
-                z3d z3dVar2 = (z3d) xx4Var;
-                j4d j4dVar2 = (j4d) z3dVar2.k();
-                c4d c4dVar2 = new c4d(this, (byte) 1);
-                GoogleSignInOptions googleSignInOptions2 = z3dVar2.F;
-                Parcel e2 = j4dVar2.e();
-                int i2 = w3d.a;
-                e2.writeStrongBinder(c4dVar2);
-                w3d.c(e2, googleSignInOptions2);
-                j4dVar2.f(e2, kk7.n1);
-                break;
-        }
+    @Override // b4d
+    public final Object[] k() {
+        return this.r;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return 0;
     }
 }

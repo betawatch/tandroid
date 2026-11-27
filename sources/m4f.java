@@ -3,14 +3,14 @@
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class m4f {
     public static String a(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String sb;
+        String j;
         int i = 0;
         int i2 = 0;
         while (true) {
@@ -20,44 +20,41 @@ public abstract class m4f {
             }
             Object obj = objArr[i2];
             if (obj == null) {
-                sb = "null";
+                j = "null";
             } else {
                 try {
-                    sb = obj.toString();
+                    j = obj.toString();
                 } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder p = ug8.p("<", str2, " threw ");
-                    p.append(e.getClass().getName());
-                    p.append(">");
-                    sb = p.toString();
+                    String y = qd4.y(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(y), (Throwable) e);
+                    j = c00.j("<", y, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i2] = sb;
+            objArr[i2] = j;
             i2++;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length << 4));
+        StringBuilder sb = new StringBuilder(str.length() + (length << 4));
         int i3 = 0;
         while (true) {
             length2 = objArr.length;
             if (i >= length2 || (indexOf = str.indexOf("%s", i3)) == -1) {
                 break;
             }
-            sb2.append((CharSequence) str, i3, indexOf);
-            sb2.append(objArr[i]);
+            sb.append((CharSequence) str, i3, indexOf);
+            sb.append(objArr[i]);
             i++;
             i3 = indexOf + 2;
         }
-        sb2.append((CharSequence) str, i3, str.length());
+        sb.append((CharSequence) str, i3, str.length());
         if (i < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i]);
+            sb.append(" [");
+            sb.append(objArr[i]);
             for (int i4 = i + 1; i4 < objArr.length; i4++) {
-                sb2.append(", ");
-                sb2.append(objArr[i4]);
+                sb.append(", ");
+                sb.append(objArr[i4]);
             }
-            sb2.append(']');
+            sb.append(']');
         }
-        return sb2.toString();
+        return sb.toString();
     }
 }

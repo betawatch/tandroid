@@ -1,290 +1,291 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
 import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.o;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rw extends cja implements wx0 {
-    public final Paint m0;
-    public final Paint n0;
-    public final Paint o0;
-    public final Paint p0;
-    public final lm q0;
-    public boolean r0;
-    public final Path s0;
-    public final RectF t0;
-    public final RectF u0;
-    public final Path v0;
-    public boolean w0;
-    public final /* synthetic */ sw x0;
+public final class rw extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rw(sw swVar, Context context) {
-        super(context, null);
-        this.x0 = swVar;
-        this.m0 = new Paint(1);
-        this.n0 = new Paint(1);
-        this.o0 = new Paint(1);
-        this.p0 = new Paint(1);
-        new Paint(1);
-        this.q0 = new lm(this, 0L, 420L, s33.h);
-        this.s0 = new Path();
-        this.t0 = new RectF();
-        this.u0 = new RectF();
-        this.v0 = new Path();
+    public /* synthetic */ rw(Object obj, Object obj2, boolean z, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.c = obj2;
+        this.b = z;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r20v0 */
-    /* JADX WARN: Type inference failed for: r20v1 */
-    /* JADX WARN: Type inference failed for: r20v3 */
-    @Override // cja, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        boolean z;
-        int i;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 8:
+                this.b = true;
+                break;
+            case 9:
+            default:
+                super.onAnimationCancel(animator);
+                break;
+            case 10:
+                this.b = true;
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        lq9 lq9Var;
         float f;
-        sw swVar = this.x0;
-        o oVar = swVar.L;
-        if (this.r0) {
-            return;
+        jy9 jy9Var;
+        byte b = this.a;
+        Object obj = this.c;
+        Object obj2 = this.d;
+        switch (b) {
+            case 0:
+                tw twVar = (tw) obj2;
+                twVar.y = this.b ? 1.0f : 0.0f;
+                if (!twVar.n) {
+                    twVar.A();
+                }
+                twVar.t();
+                c1 c1Var = (c1) obj;
+                if (c1Var != null) {
+                    c1Var.run();
+                }
+                twVar.r();
+                break;
+            case 1:
+                zu1 zu1Var = (zu1) obj2;
+                if (!this.b) {
+                    Bitmap bitmap = zu1Var.R8;
+                    if (bitmap != null) {
+                        zu1Var.S8 = null;
+                        zu1Var.T8 = null;
+                        bitmap.recycle();
+                        zu1Var.R8 = null;
+                    }
+                    wb2 wb2Var = (wb2) obj;
+                    if (wb2Var != null) {
+                        wb2Var.invalidate();
+                    }
+                    zu1Var.Nb(null);
+                    zu1Var.c9 = null;
+                    zu1Var.m1.invalidate();
+                    zu1Var.A0.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                ArrayList arrayList = (ArrayList) obj;
+                ((g92) obj2).O.setVisibility(this.b ? 0 : 8);
+                for (int i = 0; i < arrayList.size(); i++) {
+                    ((View) arrayList.get(i)).setTranslationY(0.0f);
+                }
+                break;
+            case 3:
+                super.onAnimationEnd(animator);
+                e53 e53Var = (e53) obj2;
+                e53Var.E.remove((ValueAnimator) obj);
+                e53Var.a(this.b);
+                break;
+            case 4:
+                j95 j95Var = (j95) obj2;
+                k75 k75Var = j95Var.s4;
+                ka5 ka5Var = (ka5) obj;
+                if (ka5Var != null) {
+                    ka5Var.f = false;
+                }
+                jn7.f(j95Var.n1.a).j(j95Var.S4);
+                j95Var.R4 = false;
+                boolean z = this.b;
+                float f2 = z ? 1.0f : 0.0f;
+                j95Var.W3 = f2;
+                j95Var.T3.n = f2;
+                if (z) {
+                    k75Var.setAlpha(1.0f);
+                    k75Var.setScaleX(1.0f);
+                    k75Var.setScaleY(1.0f);
+                    k75Var.setTranslationX(0.0f);
+                    k75Var.setTranslationY(0.0f);
+                } else {
+                    j95Var.L4.setAlpha(0);
+                    j95Var.S0();
+                    if (j95Var.X3.getParent() != null) {
+                        j95Var.b.removeView(j95Var.X3);
+                    }
+                    j95Var.X3 = null;
+                    k75Var.setVisibility(8);
+                    j95Var.Y3 = false;
+                    j95Var.R1.X = true;
+                    j95Var.U3.setVisibility(8);
+                    if (j95Var.l2) {
+                        j95Var.l2 = false;
+                        j95Var.E0(true);
+                    }
+                    ka5 ka5Var2 = j95Var.O4;
+                    if (ka5Var2 != null) {
+                        ka5Var2.a.setRoundCorners(0.0f);
+                    }
+                }
+                j95Var.J0();
+                j95Var.b.invalidate();
+                j95Var.l1.invalidate();
+                j95Var.J1.invalidate();
+                break;
+            case 5:
+                ka5 ka5Var3 = (ka5) obj2;
+                ka5 ka5Var4 = (ka5) obj;
+                ka5Var4.setScaleX(1.0f);
+                ka5Var4.setScaleY(1.0f);
+                ka5Var4.setAlpha(1.0f);
+                if (this.b) {
+                    ka5Var3.y.removeView(ka5Var4);
+                    ka5Var3.e();
+                }
+                ka5Var4.setVisibility(8);
+                break;
+            case 6:
+                cna cnaVar = (cna) obj;
+                qh6 qh6Var = (qh6) obj2;
+                if (!qh6Var.K && this.b) {
+                    qh6Var.K1(true, true);
+                }
+                cnaVar.setVisibility(8);
+                cnaVar.g();
+                cnaVar.setX(0.0f);
+                break;
+            case 7:
+                ji8 ji8Var = (ji8) obj2;
+                ji8Var.E = this.b ? 1.0f : 0.0f;
+                ji8Var.c.invalidate();
+                ji8Var.d.invalidate();
+                ji8Var.e();
+                bi8 bi8Var = (bi8) obj;
+                if (bi8Var != null) {
+                    bi8Var.run();
+                    break;
+                }
+                break;
+            case 8:
+                jz8 jz8Var = (jz8) obj2;
+                if (jz8Var.U == animator) {
+                    jz8Var.U = null;
+                }
+                if (!this.b) {
+                    ((Runnable) obj).run();
+                    break;
+                }
+                break;
+            case 9:
+                rz8 rz8Var = (rz8) obj2;
+                rz8Var.k0();
+                rz8Var.d.setReveal(this.b ? 1.0f : 0.0f);
+                ((Runnable) obj).run();
+                break;
+            case 10:
+                ((dr9) obj2).P.k0 = null;
+                if (!this.b && (lq9Var = (lq9) obj) != null) {
+                    lq9Var.run();
+                    break;
+                }
+                break;
+            case 11:
+                mu9 mu9Var = (mu9) obj2;
+                f = this.b ? 1.0f : 0.0f;
+                mu9Var.r = f;
+                mu9Var.E.setScaleX(hl.R1(0.8f, 1.0f, f));
+                mu9Var.E.setScaleY(hl.R1(0.8f, 1.0f, mu9Var.r));
+                mu9Var.E.setAlpha(mu9Var.r);
+                mu9Var.s.invalidate();
+                mu9Var.w.invalidate();
+                Runnable runnable = (Runnable) obj;
+                if (runnable != null) {
+                    hl.c3(runnable);
+                    break;
+                }
+                break;
+            case 12:
+                ky9 ky9Var = (ky9) obj2;
+                ky9Var.s = this.b ? 1.0f : 0.0f;
+                ky9Var.b.invalidate();
+                ky9Var.c.invalidate();
+                ky9Var.e();
+                TextView textView = ky9Var.E;
+                if (textView != null) {
+                    textView.setAlpha(ky9Var.s);
+                }
+                if (ky9Var.T) {
+                    ky9Var.O.invalidate();
+                }
+                if (!ky9Var.T && (jy9Var = ky9Var.O) != null && jy9Var.getSeekBarWaveform() != null) {
+                    xy9 seekBarWaveform = ky9Var.O.getSeekBarWaveform();
+                    seekBarWaveform.L = ky9Var.s;
+                    wb2 wb2Var2 = seekBarWaveform.n;
+                    if (wb2Var2 != null) {
+                        wb2Var2.invalidate();
+                    }
+                }
+                fy9 fy9Var = (fy9) obj;
+                if (fy9Var != null) {
+                    fy9Var.run();
+                    break;
+                }
+                break;
+            case 13:
+                k8b k8bVar = (k8b) obj2;
+                u1 u1Var = k8bVar.c;
+                f = this.b ? 1.0f : 0.0f;
+                k8bVar.E = f;
+                u1Var.setAlpha(f);
+                u1Var.setScaleX(hl.R1(0.9f, 1.0f, k8bVar.E));
+                u1Var.setScaleY(hl.R1(0.9f, 1.0f, k8bVar.E));
+                k8bVar.b.invalidate();
+                f8b f8bVar = (f8b) obj;
+                if (f8bVar != null) {
+                    hl.c3(f8bVar);
+                    break;
+                }
+                break;
+            case 14:
+                ((rbb) obj2).m0();
+                if (!this.b) {
+                    ((View) obj).setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                ktb ktbVar = (ktb) obj2;
+                ktbVar.y = this.b ? 1.0f : 0.0f;
+                ktbVar.b.invalidate();
+                ktbVar.c.invalidate();
+                ktbVar.e();
+                q38 q38Var = (q38) obj;
+                if (q38Var != null) {
+                    q38Var.run();
+                    break;
+                }
+                break;
         }
-        float min = Math.min(swVar.x, 1.0f - swVar.y);
-        Paint paint = this.m0;
-        paint.setColor(-16777216);
-        paint.setAlpha((int) ((1.0f - swVar.J) * 96.0f * min));
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
-        int x = swVar.x() - gl.L(20.0f);
-        boolean z2 = x < a.getCurrentActionBarHeight() + gl.m && min > 0.95f;
-        if (swVar.G != z2) {
-            swVar.G = z2;
-            swVar.s();
-        }
-        float d = this.q0.d(z2);
-        if (swVar.H != (d >= 0.999f)) {
-            swVar.H = d >= 0.999f;
-            swVar.r();
-        }
-        int U1 = gl.U1(Utilities.l(d), x, 0);
-        float max = Math.max(1.0f - swVar.x, swVar.y) * swVar.w();
-        canvas.save();
-        canvas.translate(getWidth() * swVar.J, max);
-        float f2 = U1;
-        float width = getWidth();
-        float L = gl.L(16.0f) + getHeight();
-        RectF rectF = this.t0;
-        rectF.set(0.0f, f2, width, L);
-        float f3 = 1.0f - d;
-        float L2 = gl.L(24.0f) * f3;
-        if (d < 1.0f) {
-            Paint paint2 = this.n0;
-            paint2.setColor(0);
-            i = 0;
-            z = z2;
-            f = 0.0f;
-            paint2.setShadowLayer(gl.L(18.0f), 0.0f, -gl.L(3.0f), bkb.p1(min * 0.26f, -16777216));
-            canvas.drawRoundRect(rectF, L2, L2, paint2);
-        } else {
-            z = z2;
-            i = 0;
-            f = 0.0f;
-        }
-        if (L2 <= f) {
-            canvas.clipRect(rectF);
-        } else {
-            Path path = this.s0;
-            path.rewind();
-            path.addRoundRect(rectF, L2, L2, Path.Direction.CW);
-            canvas.clipPath(path);
-        }
-        int backgroundColor = oVar.v0[1].getBackgroundColor();
-        Paint paint3 = this.o0;
-        paint3.setColor(backgroundColor);
-        canvas.drawRect(rectF, paint3);
-        paint3.setColor(oVar.v0[i].getBackgroundColor());
-        RectF rectF2 = gl.P;
-        rectF2.set(rectF);
-        rectF2.left = oVar.v0[i].getX();
-        canvas.drawRect(rectF2, paint3);
-        oVar.i0.t0 = (!z || gl.L(20.0f) + x > gl.m + oVar.K0) ? i : true;
-        if (d > 0.0f) {
-            canvas.save();
-            float U12 = gl.U1(d, gl.L(20.0f) + x + 1, i);
-            canvas.translate(0.0f, U12);
-            oVar.i0.a(canvas, de9.w(20.0f, x, 1) - U12, d, true);
-            canvas.restore();
-        }
-        canvas.translate(0.0f, -max);
-        if (!gl.m0 && (!oVar.v0[0].e() || canvas.isHardwareAccelerated())) {
-            super.dispatchDraw(canvas);
-        }
-        canvas.translate(0.0f, max);
-        if (d < 1.0f) {
-            int f4 = bm2.f(d, bkb.p1(0.15f, gl.B(swVar.v()) < 0.721f ? -1 : -16777216), -16777216);
-            Paint paint4 = this.p0;
-            paint4.setColor(f4);
-            paint4.setAlpha((int) (paint4.getAlpha() * f3));
-            float width2 = getWidth() / 2.0f;
-            float L3 = ((gl.L(20.0f) / 2.0f) + f2) - (gl.L(8.0f) * d);
-            float U13 = gl.U1(d, gl.L(32.0f), gl.L(48.0f)) / 2.0f;
-            rectF.set(width2 - U13, L3 - gl.L(2.0f), width2 + U13, L3 + gl.L(2.0f));
-            canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint4);
-        }
-        canvas.restore();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y = motionEvent.getY();
-            sw swVar = this.x0;
-            if (y < (swVar.G ? 0 : swVar.x())) {
-                swVar.a(true);
-                return true;
-            }
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    public /* synthetic */ rw(FrameLayout frameLayout, Runnable runnable, byte b) {
+        this.a = b;
+        this.d = frameLayout;
+        this.c = runnable;
     }
 
-    @Override // wx0
-    public RectF getRect() {
-        sw swVar = this.x0;
-        float max = (Math.max(1.0f - swVar.x, swVar.y) * swVar.w()) + (swVar.G ? 0 : swVar.x() - gl.L(20.0f));
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.u0;
-        rectF.set(0.0f, max, width, height);
-        return rectF;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        this.x0.A();
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onNestedPreFling(View view, float f, float f2) {
-        boolean onNestedPreFling = super.onNestedPreFling(view, f, f2);
-        sw swVar = this.x0;
-        o oVar = swVar.L;
-        if (!oVar.Q0.w()) {
-            if (!(oVar.v0[0].b() ? !r2.b.canScrollVertically(-1) : false) || f2 >= -1000.0f) {
-                swVar.m(false, null);
-            } else {
-                swVar.a(true);
-            }
-        }
-        if (f != 0.0f || f2 != 0.0f) {
-            fib fibVar = oVar.Q0;
-            gl.r(fibVar.f0);
-            fibVar.z = false;
-        }
-        this.w0 = true;
-        return onNestedPreFling;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedPreScroll(View view, int i, int i2, int[] iArr) {
-        sw swVar = this.x0;
-        o oVar = swVar.L;
-        if (!swVar.I) {
-            swVar.I = i2 != 0;
-        }
-        if ((oVar.v0[0].b() ? !r0.b.canScrollVertically(-1) : false) && !oVar.Q0.w()) {
-            iArr[1] = Math.min((int) (swVar.w() * swVar.y), i2);
-            swVar.y = Utilities.i(swVar.y - (i2 / swVar.w()), 1.0f, 0.0f);
-            swVar.A();
-            swVar.r();
-        }
-        if (i == 0 && i2 == 0) {
-            return;
-        }
-        fib fibVar = oVar.Q0;
-        gl.r(fibVar.f0);
-        fibVar.z = false;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onStartNestedScroll(View view, View view2, int i) {
-        this.w0 = false;
-        return i == 2;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onStopNestedScroll(View view) {
-        sw swVar = this.x0;
-        swVar.I = false;
-        if (!this.w0 && !swVar.L.Q0.w()) {
-            if (swVar.y > 0.25f) {
-                swVar.a(true);
-            } else {
-                swVar.m(false, null);
-            }
-        }
-        super.onStopNestedScroll(view);
-    }
-
-    @Override // wx0
-    public void setDrawingFromOverlay(boolean z) {
-        if (this.r0 != z) {
-            this.r0 = z;
-            invalidate();
-        }
-    }
-
-    @Override // wx0
-    public final float y(Canvas canvas, RectF rectF, float f, RectF rectF2, float f2) {
-        rectF2.set(getRect());
-        gl.X1(rectF2, rectF, f, rectF2);
-        sw swVar = this.x0;
-        o oVar = swVar.L;
-        float min = Math.min(swVar.x, 1.0f - swVar.y);
-        float f3 = 1.0f - f;
-        Paint paint = this.m0;
-        paint.setColor(-16777216);
-        paint.setAlpha((int) ((1.0f - swVar.J) * min * f3 * 96.0f));
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
-        float U1 = gl.U1(f, gl.L(16.0f), gl.L(18.0f));
-        int w0 = bkb.w0(null, bkb.c6, false);
-        Paint paint2 = this.o0;
-        paint2.setColor(w0);
-        Path path = this.v0;
-        path.rewind();
-        path.addRoundRect(rectF2, U1, U1, Path.Direction.CW);
-        canvas.drawPath(path, paint2);
-        if (getChildCount() == 1) {
-            if (swVar.G) {
-                canvas.save();
-                canvas.clipPath(path);
-                canvas.translate(0.0f, rectF2.top);
-                oVar.i0.draw(canvas);
-                canvas.restore();
-            }
-            View childAt = getChildAt(0);
-            canvas.save();
-            float R1 = gl.R1(1.0f, 0.99f, f);
-            float f4 = R1 - 1.0f;
-            if (Math.abs(f4) > 0.01f) {
-                canvas.scale(R1, R1, rectF2.centerX(), rectF2.centerY());
-            }
-            canvas.clipPath(path);
-            if (Math.abs(f4) > 0.01f) {
-                float f5 = 1.0f / R1;
-                canvas.scale(f5, f5, rectF2.centerX(), rectF2.centerY());
-            }
-            canvas.translate(0.0f, ((swVar.G ? oVar.i0.getMeasuredHeight() : 0) * f3) + (-swVar.x()) + rectF2.top);
-            childAt.draw(canvas);
-            canvas.restore();
-        }
-        return U1;
+    public /* synthetic */ rw(Object obj, boolean z, Object obj2, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.b = z;
+        this.c = obj2;
     }
 }

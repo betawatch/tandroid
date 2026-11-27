@@ -1,24 +1,32 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class g17 extends gm {
-    public final /* synthetic */ j17 a;
+public final /* synthetic */ class g17 implements is6, uw2 {
+    public final /* synthetic */ r17 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g17(j17 j17Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = j17Var;
+    public /* synthetic */ g17(r17 r17Var) {
+        this.a = r17Var;
     }
 
-    @Override // gm, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        int i6 = i5 + i3;
-        int i7 = this.measuredSize;
-        this.a.c.set((int) f, (i6 - i7) / 2, (int) (f + i7), (i6 + i7) / 2);
+    @Override // is6
+    public final void b(String str, ArrayList arrayList) {
+        r17 r17Var = this.a;
+        r17Var.O = arrayList;
+        r17Var.J = null;
+        r17Var.B0 = null;
+        r17Var.y = null;
+        r17Var.E = null;
+        r17Var.K = null;
+        r17Var.R = null;
+        r17Var.N = null;
+        r17Var.L = null;
+        r17Var.Q = null;
+        r17Var.f();
+        w17 w17Var = r17Var.W;
+        ArrayList arrayList2 = r17Var.O;
+        w17Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

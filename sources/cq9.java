@@ -1,9 +1,23 @@
 // default package
 
-import android.os.Bundle;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface cq9 {
-    Bundle c();
+public final class cq9 implements lr9 {
+    public final /* synthetic */ dq9 a;
+
+    public cq9(dq9 dq9Var) {
+        this.a = dq9Var;
+    }
+
+    @Override // lr9
+    public final void onRejoinRequested() {
+        hl.c3(new v59(this, (byte) 19));
+    }
+
+    @Override // lr9
+    public final void onStreamChannels(ArrayList arrayList) {
+        hl.c3(new en9(this, arrayList, (byte) 6));
+    }
 }

@@ -1,23 +1,27 @@
 // default package
 
-import java.util.regex.Pattern;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f34 extends tn5 {
-    public static final Pattern e = Pattern.compile("^&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class f34 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    @Override // tn5
-    public final tg6 b() {
-        String a = a(e);
-        if (a != null) {
-            return e(bg5.a(a));
-        }
-        return null;
+    static {
+        a8c.h(new f34());
     }
 
-    @Override // tn5
-    public final char c() {
-        return '&';
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        g34 g34Var = (g34) view;
+        g34Var.n = (pcc) b8cVar.H;
+        g34Var.r = b8cVar;
+        g34Var.b(b8cVar.A, false);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new g34(context, vnbVar);
     }
 }

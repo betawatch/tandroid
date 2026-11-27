@@ -1,56 +1,30 @@
 // default package
 
-import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class r03 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ o13 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class r03 implements TextWatcher {
+    public final /* synthetic */ bv2 a;
+    public final /* synthetic */ p03 b;
 
-    public /* synthetic */ r03(o13 o13Var, byte b) {
-        this.a = b;
-        this.b = o13Var;
+    public r03(bv2 bv2Var, p03 p03Var) {
+        this.a = bv2Var;
+        this.b = p03Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        o13 o13Var = this.b;
-        switch (b) {
-            case 0:
-                o13Var.M(new c03((CharSequence) null, (byte) 2));
-                break;
-            case 1:
-                o13Var.M(new c03((CharSequence) null, (byte) 2));
-                break;
-            case 2:
-                o13Var.onResult(null);
-                break;
-            case 3:
-                CredentialProviderPlayServicesImpl.onCreateCredential$lambda$5$lambda$4(o13Var);
-                break;
-            case 4:
-                CredentialProviderPlayServicesImpl.onGetCredential$lambda$3$lambda$2(o13Var);
-                break;
-            case 5:
-                CredentialProviderPlayServicesImpl.onGetCredential$lambda$1$lambda$0(o13Var);
-                break;
-            case 6:
-                o13Var.onResult(null);
-                break;
-            case 7:
-                CredentialProviderPlayServicesImpl.onClearCredential$lambda$7$lambda$6(o13Var);
-                break;
-            case 8:
-                o13Var.onResult(null);
-                break;
-            case 9:
-                o13Var.M(new ts4("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", (byte) 2));
-                break;
-            default:
-                o13Var.M(new ts4("No provider data returned.", (byte) 2));
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.run();
+        this.b.run();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

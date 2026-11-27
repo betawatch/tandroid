@@ -1,299 +1,38 @@
 // default package
 
-import android.content.res.Resources;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class yo2 extends Drawable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class yo2 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ byte a;
-    public Object b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public yo2(View view) {
-        this.a = (byte) 0;
-        this.b = new Paint(1);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(new wc(this, (byte) 6));
-            if (view.isAttachedToWindow()) {
-                view.post(new mk2(this, (byte) 2));
-            }
-        }
+    public /* synthetic */ yo2(int i, int i2, Object obj, byte b) {
+        this.a = b;
+        this.b = i;
+        this.c = i2;
+        this.d = obj;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void applyTheme(Resources.Theme theme) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.applyTheme(theme);
-                    break;
-                }
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        byte b = this.a;
+        Object obj = this.d;
+        int i = this.c;
+        int i2 = this.b;
+        switch (b) {
+            case 0:
+                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
+                ((id[]) obj)[0] = null;
                 break;
             default:
-                super.applyTheme(theme);
+                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
+                ((icc) obj).a(null, "CANCELLED");
                 break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void clearColorFilter() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.clearColorFilter();
-                    break;
-                } else {
-                    drawable.clearColorFilter();
-                    break;
-                }
-            default:
-                super.clearColorFilter();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Drawable getCurrent() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getCurrent();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean getPadding(Rect rect) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getPadding(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int[] getState() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Region getTransparentRegion() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getTransparentRegion();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.jumpToCurrentState();
-                    break;
-                }
-                break;
-            default:
-                super.jumpToCurrentState();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean onLevelChange(int i) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.onLevelChange(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i) {
-        ((Paint) this.b).setAlpha(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setChangingConfigurations(int i) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.setChangingConfigurations(i);
-                    break;
-                } else {
-                    drawable.setChangingConfigurations(i);
-                    break;
-                }
-            default:
-                super.setChangingConfigurations(i);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(int i, PorterDuff.Mode mode) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.setColorFilter(i, mode);
-                    break;
-                } else {
-                    drawable.setColorFilter(i, mode);
-                    break;
-                }
-            default:
-                super.setColorFilter(i, mode);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setFilterBitmap(z);
-                    break;
-                }
-                break;
-            default:
-                super.setFilterBitmap(z);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f, float f2) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setHotspot(f, f2);
-                    break;
-                }
-                break;
-            default:
-                super.setHotspot(f, f2);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i, int i2, int i3, int i4) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setHotspotBounds(i, i2, i3, i4);
-                    break;
-                }
-                break;
-            default:
-                super.setHotspotBounds(i, i2, i3, i4);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean setState(int[] iArr) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.setState(iArr);
-    }
-
-    public void a() {
-    }
-
-    public void b() {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        ((Paint) this.b).setColorFilter(colorFilter);
-    }
-
-    public /* synthetic */ yo2() {
-        this.a = (byte) 1;
     }
 }

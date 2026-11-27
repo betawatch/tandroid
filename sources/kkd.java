@@ -1,9 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public @interface kkd {
-    int zza();
+public abstract class kkd {
+    public static final akd a = new akd();
+    public static final akd b;
 
-    ekd zzb() default ekd.a;
+    static {
+        akd akdVar = null;
+        try {
+            akdVar = (akd) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        b = akdVar;
+    }
 }

@@ -1,15 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class gr2 extends cr2 {
-    public float d;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
-    public final hr2 u(qr2 qr2Var) {
-        float f = this.d;
-        r(f >= -3.4028235E38f && f <= Float.MAX_VALUE, Float.valueOf(f));
-        hr2 hr2Var = new hr2(s(), this.a, this.d);
-        q(qr2Var, hr2Var);
-        return hr2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class gr2 extends h2 {
+    public static final /* synthetic */ xh4 f;
+    public List e;
+
+    static {
+        u84 u84Var = new u84(gr2.class, "CompositionTimeToSample.java");
+        u84Var.e(u84Var.d("getEntries", "com.coremedia.iso.boxes.CompositionTimeToSample", "", "", "java.util.List"));
+        f = u84Var.e(u84Var.d("setEntries", "com.coremedia.iso.boxes.CompositionTimeToSample", "java.util.List", "entries", "void"));
+    }
+
+    @Override // h2, z1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a = cvd.a(zpe.g(byteBuffer));
+        this.e = new ArrayList(a);
+        for (int i = 0; i < a; i++) {
+            this.e.add(new fr2(cvd.a(zpe.g(byteBuffer)), byteBuffer.getInt()));
+        }
+    }
+
+    @Override // h2, z1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.size());
+        for (fr2 fr2Var : this.e) {
+            byteBuffer.putInt(fr2Var.a);
+            byteBuffer.putInt(fr2Var.b);
+        }
+    }
+
+    @Override // z1
+    public final long getContentSize() {
+        return (this.e.size() << 3) + 8;
     }
 }

@@ -1,155 +1,26 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class gmc extends Drawable {
-    public final /* synthetic */ byte a;
-    public final Path b;
-    public final Paint c;
-    public final Object d;
-    public final Object e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class gmc extends bnb {
+    public final /* synthetic */ hmc M;
 
-    public gmc() {
-        this.a = (byte) 0;
-        this.c = new Paint(1);
-        this.b = new Path();
-        this.d = new RectF();
-        this.e = new float[]{gl.L(24.0f), gl.L(24.0f), gl.L(24.0f), gl.L(24.0f), 0.0f, 0.0f, 0.0f, 0.0f};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gmc(hmc hmcVar, Context context) {
+        super(context);
+        this.M = hmcVar;
     }
 
-    public final void c() {
-        invalidateSelf();
-        ((wt) this.e).P.setContentDescription(k96.M0(2131750570, null));
+    @Override // bnb, org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        super.onFirstFrameRendered();
+        this.M.b();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte b = this.a;
-        Paint paint = this.c;
-        Path path = this.b;
-        switch (b) {
-            case 0:
-                canvas.drawPath(path, paint);
-                break;
-            default:
-                float d = ((lm) this.d).d(true);
-                float centerX = getBounds().centerX();
-                float centerY = getBounds().centerY();
-                float width = getBounds().width();
-                float f = 0.57f * width;
-                path.rewind();
-                float f2 = f / 2.0f;
-                path.moveTo(centerX - gl.R1(f2, (-f) / 2.0f, d), centerY);
-                float f3 = f2 + centerX;
-                path.lineTo(f3, centerY);
-                float f4 = f3 - (0.27f * width);
-                float f5 = (0.54f * width) / 2.0f;
-                path.moveTo(f4, centerY - f5);
-                path.lineTo(f3, centerY);
-                path.lineTo(f4, f5 + centerY);
-                canvas.save();
-                paint.setStrokeWidth(gl.L(2.0f));
-                canvas.translate(0.0f, (-width) * 0.1f * d);
-                canvas.rotate(d * 90.0f, centerX, centerY);
-                canvas.drawPath(path, paint);
-                canvas.restore();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        switch (this.a) {
-            case 1:
-                return gl.L(24.0f);
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.a) {
-            case 1:
-                return gl.L(24.0f);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-                return -3;
-            default:
-                return -2;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        switch (this.a) {
-            case 0:
-                super.onBoundsChange(rect);
-                RectF rectF = (RectF) this.d;
-                rectF.set(rect);
-                Path path = this.b;
-                path.reset();
-                path.addRoundRect(rectF, (float[]) this.e, Path.Direction.CW);
-                this.c.setShader(new LinearGradient(0.0f, rect.top, 0.0f, rect.bottom, new int[]{-16216082, -12207881}, new float[]{0.15f, 0.53f}, Shader.TileMode.CLAMP));
-                break;
-            default:
-                super.onBoundsChange(rect);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i);
-                invalidateSelf();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                this.c.setColorFilter(colorFilter);
-                invalidateSelf();
-                break;
-        }
-    }
-
-    public gmc(wt wtVar) {
-        this.a = (byte) 1;
-        this.e = wtVar;
-        this.b = new Path();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        this.d = new lm(new frc(this, (byte) 1), 350L, s33.h, 0);
-    }
-
-    private final void a(int i) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
+    @Override // android.view.TextureView, android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
     }
 }

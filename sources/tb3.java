@@ -1,89 +1,59 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tb3 {
-    public final String a;
-    public int b;
-    public long c;
-    public final rx6 d;
-    public boolean e;
-    public boolean f;
-    public final /* synthetic */ ub3 g;
+public final class tb3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ zb3 c;
 
-    public tb3(ub3 ub3Var, String str, int i, rx6 rx6Var) {
-        this.g = ub3Var;
-        this.a = str;
-        this.b = i;
-        this.c = rx6Var == null ? -1L : rx6Var.d;
-        if (rx6Var == null || !rx6Var.c()) {
-            return;
-        }
-        this.d = rx6Var;
+    public /* synthetic */ tb3(zb3 zb3Var, ArrayList arrayList, byte b) {
+        this.a = b;
+        this.c = zb3Var;
+        this.b = arrayList;
     }
 
-    public final boolean a(tj tjVar) {
-        rx6 rx6Var = tjVar.d;
-        aob aobVar = tjVar.b;
-        if (rx6Var == null) {
-            return this.b != tjVar.c;
-        }
-        long j = this.c;
-        if (j == -1) {
-            return false;
-        }
-        if (rx6Var.d > j) {
-            return true;
-        }
-        rx6 rx6Var2 = this.d;
-        if (rx6Var2 == null) {
-            return false;
-        }
-        int i = rx6Var2.b;
-        int b = aobVar.b(rx6Var.a);
-        int b2 = aobVar.b(rx6Var2.a);
-        if (rx6Var.d < rx6Var2.d || b < b2) {
-            return false;
-        }
-        if (b > b2) {
-            return true;
-        }
-        if (!rx6Var.c()) {
-            int i2 = rx6Var.e;
-            return i2 == -1 || i2 > i;
-        }
-        int i3 = rx6Var.b;
-        int i4 = rx6Var.c;
-        if (i3 <= i) {
-            return i3 == i && i4 > rx6Var2.c;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x000e, code lost:
-    
-        if (r0 < r8.o()) goto L15;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(aob aobVar, aob aobVar2) {
-        rx6 rx6Var;
-        int i = this.b;
-        if (i < aobVar.o()) {
-            ub3 ub3Var = this.g;
-            znb znbVar = ub3Var.a;
-            aobVar.n(i, znbVar);
-            for (int i2 = znbVar.m; i2 <= znbVar.n; i2++) {
-                int b = aobVar2.b(aobVar.l(i2));
-                if (b != -1) {
-                    i = aobVar2.f(b, ub3Var.b, false).c;
-                    break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ArrayList arrayList = this.b;
+        zb3 zb3Var = this.c;
+        switch (b) {
+            case 0:
+                int size = arrayList.size();
+                int i = 0;
+                while (i < size) {
+                    Object obj = arrayList.get(i);
+                    i++;
+                    yb3 yb3Var = (yb3) obj;
+                    zb3Var.C(yb3Var.a, yb3Var);
+                    zb3Var.w.add(yb3Var);
                 }
-            }
-            i = -1;
+                arrayList.clear();
+                zb3Var.u.remove(arrayList);
+                break;
+            default:
+                int i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
+                    i2 = Math.min(i2, ((f89) arrayList.get(size2)).b());
+                }
+                for (int size3 = arrayList.size() - 1; size3 >= 0; size3--) {
+                    f89 f89Var = (f89) arrayList.get(size3);
+                    View view = f89Var.a;
+                    ViewPropertyAnimator animate = view.animate();
+                    zb3Var.y.add(f89Var);
+                    animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(zb3Var.h()).setStartDelay((f89Var.b() - i2) * zb3Var.D).setInterpolator(zb3Var.h);
+                    animate.setUpdateListener(new rb3(zb3Var, f89Var, (byte) 1));
+                    animate.setListener(new ub3(zb3Var, f89Var, view, animate)).start();
+                }
+                arrayList.clear();
+                zb3Var.t.remove(arrayList);
+                break;
         }
-        this.b = i;
-        return i != -1 && ((rx6Var = this.d) == null || aobVar2.b(rx6Var.a) != -1);
     }
 }

@@ -1,57 +1,71 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import org.telegram.messenger.support.SparseLongArray;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class g21 extends h11 {
-    public final ry8 a;
-    public final hn b;
-    public final hn c;
+public final class g21 extends c21 implements fn7 {
+    public final d21 d;
+    public SparseLongArray e;
+    public final e f;
+    public final int h;
+    public v21 n;
 
-    public g21(Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        int i = bkb.xj;
-        getThemedColor(i);
-        setBackground(getThemedColor(bkb.vj));
-        ry8 ry8Var = new ry8(context);
-        this.a = ry8Var;
-        ry8Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ry8Var, nme.h(56.0f, 48.0f, 8388627));
-        getThemedColor(i);
-        getThemedColor(bkb.wj);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, nme.i(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        hn hnVar = new hn(context, true, true, true);
-        this.b = hnVar;
-        hnVar.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
-        zkb.U(hnVar, i, wjbVar);
-        hnVar.setTextSize(gl.L(14.0f));
-        hnVar.setTypeface(gl.o());
-        hnVar.setEllipsizeByGradient(true);
-        linearLayout.addView(hnVar, nme.o(-1, 20));
-        hn hnVar2 = new hn(context, true, true, true);
-        this.c = hnVar2;
-        hnVar2.setPadding(gl.L(4.0f), 0, gl.L(4.0f), 0);
-        zkb.U(hnVar2, i, wjbVar);
-        hnVar2.setTypeface(Typeface.SANS_SERIF);
-        hnVar2.setTextSize(gl.L(13.0f));
-        hnVar2.setEllipsizeByGradient(true);
-        linearLayout.addView(hnVar2, nme.o(-1, 18));
+    public g21(int i, e eVar) {
+        super(eVar.getContext(), eVar.getResourceProvider());
+        this.f = eVar;
+        this.h = i;
+        this.b.setLayoutParams(tre.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(tre.h(56.0f, 48.0f, 8388659));
+        d21 d21Var = new d21(this, eVar, getContext(), eVar.getCurrentAccount(), eVar.getResourceProvider());
+        this.d = d21Var;
+        d21Var.setPadding(hl.L(4.0f), hl.L(24.0f), hl.L(4.0f), hl.L(0.0f));
+        this.d.setDelegate(new f21(this));
+        this.d.setTop(true);
+        this.d.setClipChildren(false);
+        this.d.setClipToPadding(false);
+        this.d.setVisibility(0);
+        this.d.setBubbleOffset(-hl.L(80.0f));
+        this.d.setHint(ob6.M0(2131745603, null));
+        addView(this.d, tre.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
+        this.d.m(null, null, true);
     }
 
-    @Override // q11
-    public CharSequence getAccessibilityText() {
-        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == jn7.m3) {
+            this.e = (SparseLongArray) objArr[0];
+        }
     }
 
-    @Override // q11
-    public final void onShow() {
-        super.onShow();
-        this.a.d();
+    @Override // z11
+    public int getMeasuredBackgroundHeight() {
+        return hl.L(30.0f) + this.b.getMeasuredHeight();
+    }
+
+    public final void j() {
+        if (this.d.getReactionsWindow() != null) {
+            this.d.b();
+            if (this.d.getReactionsWindow().a != null) {
+                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        jn7.f(yac.t0).b(this, jn7.m3);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        jn7.f(yac.t0).n(this, jn7.m3);
+    }
+
+    public void setBulletin(v21 v21Var) {
+        this.n = v21Var;
     }
 }

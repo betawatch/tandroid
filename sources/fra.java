@@ -1,31 +1,81 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fra {
-    public da7 a;
-    public wjb b;
-    public int c;
-    public int d;
-    public float e;
+import android.content.Context;
+import android.graphics.Rect;
 
-    public final void a(da7 da7Var) {
-        this.a = da7Var;
-        if (da7Var == null) {
-            this.c = bkb.v0(bkb.z8, this.b);
-            this.d = bkb.v0(bkb.r8, this.b);
-            this.c = bm2.f(this.e, this.c, 603979776);
-            this.d = bm2.f(this.e, this.d, -1);
-            return;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fra extends vz4 implements s84 {
+    public static final /* synthetic */ int w = 0;
+    public final t84 f;
+    public final sh9 h;
+    public final uz4[] n;
+    public final vnb r;
+    public int s;
+
+    public fra(Context context, vnb vnbVar, sh9 sh9Var) {
+        super(context);
+        this.f = new t84(0, this, k43.h, 1600L);
+        this.h = sh9Var;
+        this.r = vnbVar;
+        int i = aob.Nl;
+        int p1 = aob.p1(0.09411765f, aob.v0(i, vnbVar));
+        aob.p1(0.1254902f, aob.v0(i, vnbVar));
+        this.e.setColor(p1);
+        this.n = new uz4[]{uz4.c(context, vnbVar, tz4.I, 2131749414), uz4.c(context, vnbVar, tz4.x, 2131749431), uz4.c(context, vnbVar, tz4.L, 2131749412)};
+        int i2 = 0;
+        while (true) {
+            uz4[] uz4VarArr = this.n;
+            if (i2 >= uz4VarArr.length) {
+                uz4VarArr[0].f(true, false);
+                return;
+            } else {
+                this.a.addView(uz4VarArr[i2], tre.l(1.0f, 0, -1));
+                this.n[i2].setOnClickListener(new w0(this, i2, (byte) 25));
+                i2++;
+            }
         }
-        int c = da7Var.c(bkb.I.o());
-        int d = da7Var.d(bkb.I.o());
-        wjb wjbVar = this.b;
-        int f = bm2.f(0.75f, d, c);
-        int v0 = gl.B(f) > 0.721f ? bkb.v0(bkb.u6, wjbVar) : bkb.a(0.08f, -0.08f, f);
-        this.c = v0;
-        this.d = gl.B(v0) > 0.721f ? -16777216 : -1;
-        this.c = bm2.f(this.e, this.c, 603979776);
-        this.d = bm2.f(this.e, this.d, -1);
+    }
+
+    public final void a(int i) {
+        int i2 = this.s;
+        if (i2 != i) {
+            uz4[] uz4VarArr = this.n;
+            uz4VarArr[i2].f(false, true);
+            uz4VarArr[i].f(true, true);
+            this.s = i;
+            this.f.a(i);
+            this.h.a(Integer.valueOf(i));
+        }
+    }
+
+    public final void b() {
+        float f = this.f.f;
+        float U1 = hl.U1(f / 3.0f, hl.L(8.0f), getMeasuredWidth() - hl.L(8.0f));
+        float U12 = hl.U1((f + 1.0f) / 3.0f, hl.L(8.0f), getMeasuredWidth() - hl.L(8.0f));
+        int measuredHeight = getMeasuredHeight() - hl.L(8.0f);
+        Rect rect = this.c;
+        rect.set((int) U1, hl.L(8.0f), (int) U12, measuredHeight);
+        int L = hl.L(this.b * 7.0f);
+        Rect rect2 = this.d;
+        rect2.set(rect);
+        int i = -L;
+        rect2.inset(i, i);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        b();
+    }
+
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        b();
+        invalidate();
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
     }
 }

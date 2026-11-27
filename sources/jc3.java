@@ -1,267 +1,279 @@
 // default package
 
-import android.text.TextUtils;
+import android.content.Context;
+import android.net.Uri;
 import j$.util.Objects;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jc3 extends qc3 implements Comparable {
-    public final boolean E;
-    public final boolean F;
-    public final int G;
-    public final int H;
-    public final boolean I;
-    public final int J;
-    public final int K;
-    public final int L;
-    public final int M;
-    public final boolean N;
-    public final boolean O;
-    public final boolean P;
-    public final byte e;
-    public final boolean f;
-    public final String h;
-    public final nc3 n;
-    public final boolean r;
-    public final int s;
-    public final int w;
-    public final int x;
-    public final int y;
+public final class jc3 implements uz6 {
+    public final am2 a;
+    public final lh2 b;
+    public uif c;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x011a  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0107 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x00e7 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public jc3(int i, sxb sxbVar, int i2, nc3 nc3Var, int i3, boolean z, ic3 ic3Var, int i4) {
-        super(i, sxbVar, i2);
-        int i5;
-        int i6;
-        boolean z2;
-        String[] I;
-        int i7;
-        int i8;
-        int i9;
-        fm4 fm4Var;
-        boolean z3;
-        nc3 nc3Var2;
-        boolean z4;
-        zxb zxbVar;
-        boolean z5;
-        this.n = nc3Var;
-        boolean z6 = nc3Var.z0;
-        w59 w59Var = nc3Var.v;
-        w59 w59Var2 = nc3Var.q;
-        int i10 = z6 ? 24 : 16;
-        byte b = 0;
-        this.E = false;
-        this.h = sc3.h(this.d.d);
-        this.r = ls6.c(i3, false);
-        int i11 = 0;
-        while (true) {
-            int i12 = w59Var2.d;
-            i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (i11 >= i12) {
-                i6 = 0;
-                i11 = Integer.MAX_VALUE;
-                break;
-            } else {
-                i6 = sc3.g(this.d, (String) w59Var2.get(i11), false);
-                if (i6 > 0) {
-                    break;
-                } else {
-                    i11++;
-                }
-            }
+    public jc3(Context context, db3 db3Var) {
+        lh2 lh2Var = new lh2(context);
+        uif uifVar = new uif((byte) 17);
+        this.b = lh2Var;
+        this.c = uifVar;
+        am2 am2Var = new am2(db3Var, uifVar);
+        this.a = am2Var;
+        if (lh2Var != ((lh2) am2Var.e)) {
+            am2Var.e = lh2Var;
+            ((HashMap) am2Var.c).clear();
+            ((HashMap) am2Var.d).clear();
         }
-        this.w = i11;
-        this.s = i6;
-        int i13 = this.d.f;
-        int i14 = nc3Var.s;
-        this.x = (i13 == 0 || i13 != i14) ? Integer.bitCount(i13 & i14) : Integer.MAX_VALUE;
-        this.y = sc3.f(this.d, nc3Var.r);
-        fm4 fm4Var2 = this.d;
-        int i15 = fm4Var2.f;
-        this.F = i15 == 0 || (i15 & 1) != 0;
-        this.I = (fm4Var2.e & 1) != 0;
-        String str = fm4Var2.t;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case -2123537834:
-                    if (str.equals("audio/eac3-joc")) {
-                        z5 = false;
-                        break;
-                    }
-                    z5 = -1;
-                    break;
-                case 187078297:
-                    if (str.equals("audio/ac4")) {
-                        z5 = true;
-                        break;
-                    }
-                    z5 = -1;
-                    break;
-                case 1504698186:
-                    if (str.equals("audio/iamf")) {
-                        z5 = 2;
-                        break;
-                    }
-                    z5 = -1;
-                    break;
-                default:
-                    z5 = -1;
-                    break;
-            }
-            switch (z5) {
-                case false:
-                case true:
-                case true:
-                    z2 = true;
-                    break;
-            }
-            this.P = z2;
-            int i16 = fm4Var2.N;
-            this.J = i16;
-            this.K = fm4Var2.P;
-            int i17 = fm4Var2.k;
-            this.L = i17;
-            this.f = (i17 != -1 || i17 <= nc3Var.u) && (i16 == -1 || i16 <= nc3Var.t) && ic3Var.apply(fm4Var2);
-            I = g8c.I();
-            i7 = 0;
-            while (true) {
-                if (i7 >= I.length) {
-                    i8 = sc3.g(this.d, I[i7], false);
-                    if (i8 <= 0) {
-                        i7++;
-                    }
-                } else {
-                    i8 = 0;
-                    i7 = Integer.MAX_VALUE;
-                }
-            }
-            this.G = i7;
-            this.H = i8;
-            i9 = 0;
-            while (true) {
-                if (i9 < w59Var.d) {
-                    String str2 = this.d.t;
-                    if (str2 == null || !str2.equals(w59Var.get(i9))) {
-                        i9++;
-                    } else {
-                        i5 = i9;
-                    }
-                }
-            }
-            this.M = i5;
-            this.N = (i3 & 384) != 128;
-            this.O = (i3 & 64) != 64;
-            fm4Var = this.d;
-            z3 = this.f;
-            nc3Var2 = this.n;
-            z4 = nc3Var2.B0;
-            zxbVar = nc3Var2.w;
-            if (ls6.c(i3, z4) && ((z3 || nc3Var2.y0) && (zxbVar.a != 2 || sc3.j(nc3Var2, i3, fm4Var)))) {
-                b = (ls6.c(i3, false) || !z3 || fm4Var.k == -1 || nc3Var2.G || nc3Var2.F || (!nc3Var2.C0 && z) || zxbVar.a == 2 || (i3 & i10) == 0) ? (byte) 1 : (byte) 2;
-            }
-            this.e = b;
-        }
-        z2 = false;
-        this.P = z2;
-        int i162 = fm4Var2.N;
-        this.J = i162;
-        this.K = fm4Var2.P;
-        int i172 = fm4Var2.k;
-        this.L = i172;
-        this.f = (i172 != -1 || i172 <= nc3Var.u) && (i162 == -1 || i162 <= nc3Var.t) && ic3Var.apply(fm4Var2);
-        I = g8c.I();
-        i7 = 0;
-        while (true) {
-            if (i7 >= I.length) {
-            }
-            i7++;
-        }
-        this.G = i7;
-        this.H = i8;
-        i9 = 0;
-        while (true) {
-            if (i9 < w59Var.d) {
-            }
-            i9++;
-        }
-        this.M = i5;
-        this.N = (i3 & 384) != 128;
-        this.O = (i3 & 64) != 64;
-        fm4Var = this.d;
-        z3 = this.f;
-        nc3Var2 = this.n;
-        z4 = nc3Var2.B0;
-        zxbVar = nc3Var2.w;
-        if (ls6.c(i3, z4)) {
-            if (ls6.c(i3, false)) {
-            }
-        }
-        this.e = b;
     }
 
-    @Override // qc3
-    public final int a() {
-        return this.e;
+    public static uz6 e(Class cls, lh2 lh2Var) {
+        try {
+            return (uz6) cls.getConstructor(f73.class).newInstance(lh2Var);
+        } catch (Exception e) {
+            vr9.l(e);
+            return null;
+        }
     }
 
-    @Override // qc3
-    public final boolean b(qc3 qc3Var) {
+    @Override // uz6
+    public final uz6 a() {
+        am2 am2Var = this.a;
+        synchronized (((db3) am2Var.b)) {
+        }
+        Iterator it = ((HashMap) am2Var.d).values().iterator();
+        while (it.hasNext()) {
+            ((uz6) it.next()).a();
+        }
+        return this;
+    }
+
+    @Override // uz6
+    public final uz6 b() {
+        synchronized (((db3) this.a.b)) {
+        }
+        return this;
+    }
+
+    @Override // uz6
+    public final uz6 c(uif uifVar) {
+        this.c = uifVar;
+        am2 am2Var = this.a;
+        am2Var.f = uifVar;
+        db3 db3Var = (db3) am2Var.b;
+        synchronized (db3Var) {
+            db3Var.b = uifVar;
+        }
+        Iterator it = ((HashMap) am2Var.d).values().iterator();
+        while (it.hasNext()) {
+            ((uz6) it.next()).c(uifVar);
+        }
+        return this;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // uz6
+    public final rg0 d(ft6 ft6Var) {
+        Uri uri;
+        boolean z;
         int i;
+        long j;
+        Uri uri2;
         String str;
-        jc3 jc3Var = (jc3) qc3Var;
-        fm4 fm4Var = jc3Var.d;
-        this.n.getClass();
-        fm4 fm4Var2 = this.d;
-        int i2 = fm4Var2.N;
-        if (i2 == -1 || i2 != fm4Var.N) {
-            return false;
+        ss6 ss6Var;
+        String str2;
+        xs6 xs6Var;
+        ft6 ft6Var2 = ft6Var;
+        ft6Var2.b.getClass();
+        String scheme = ft6Var2.b.a.getScheme();
+        if (scheme != null && scheme.equals("ssai")) {
+            throw null;
         }
-        return (this.E || ((str = fm4Var2.t) != null && TextUtils.equals(str, fm4Var.t))) && (i = fm4Var2.P) != -1 && i == fm4Var.P && this.N == jc3Var.N && this.O == jc3Var.O;
-    }
-
-    @Override // java.lang.Comparable
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final int compareTo(jc3 jc3Var) {
-        yq7 yq7Var;
-        yq7 a;
-        boolean z = this.r;
-        boolean z2 = this.f;
-        if (z2 && z) {
-            a = sc3.l;
-            yq7Var = a;
-        } else {
-            yq7 yq7Var2 = sc3.l;
-            yq7Var = yq7Var2;
-            a = yq7Var2.a();
+        boolean equals = Objects.equals(ft6Var2.b.b, "application/x-image-uri");
+        bt6 bt6Var = ft6Var2.b;
+        if (equals) {
+            long j2 = bt6Var.h;
+            String str3 = gcc.a;
+            throw null;
         }
-        boolean z3 = jc3Var.r;
-        int i = jc3Var.L;
-        wo2 c = wo2.a.c(z, z3);
-        Integer valueOf = Integer.valueOf(this.w);
-        Integer valueOf2 = Integer.valueOf(jc3Var.w);
-        hi7 hi7Var = hi7.c;
-        wo2 b = c.b(valueOf, valueOf2, hi7Var).a(this.s, jc3Var.s).a(this.x, jc3Var.x).b(Integer.valueOf(this.y), Integer.valueOf(jc3Var.y), hi7Var).c(this.I, jc3Var.I).c(this.F, jc3Var.F).b(Integer.valueOf(this.G), Integer.valueOf(jc3Var.G), hi7Var).a(this.H, jc3Var.H).c(z2, jc3Var.f).b(Integer.valueOf(this.M), Integer.valueOf(jc3Var.M), hi7Var);
-        boolean z4 = this.n.F;
-        int i2 = this.L;
-        if (z4) {
-            b = b.b(Integer.valueOf(i2), Integer.valueOf(i), yq7Var.a());
+        int M = gcc.M(bt6Var.a, bt6Var.b);
+        if (ft6Var2.b.h != -9223372036854775807L) {
+            db3 db3Var = (db3) this.a.b;
+            synchronized (db3Var) {
+                db3Var.c = true;
+            }
+            this.a.M();
         }
-        wo2 b2 = b.c(this.N, jc3Var.N).c(this.O, jc3Var.O).c(this.P, jc3Var.P).b(Integer.valueOf(this.J), Integer.valueOf(jc3Var.J), a).b(Integer.valueOf(this.K), Integer.valueOf(jc3Var.K), a);
-        if (Objects.equals(this.h, jc3Var.h)) {
-            b2 = b2.b(Integer.valueOf(i2), Integer.valueOf(i), a);
+        try {
+            am2 am2Var = this.a;
+            HashMap hashMap = (HashMap) am2Var.d;
+            uz6 uz6Var = (uz6) hashMap.get(Integer.valueOf(M));
+            if (uz6Var == null) {
+                uz6Var = (uz6) am2Var.B(M).get();
+                uz6Var.c((uif) am2Var.f);
+                uz6Var.a();
+                uz6Var.b();
+                hashMap.put(Integer.valueOf(M), uz6Var);
+            }
+            zs6 a = ft6Var2.c.a();
+            at6 at6Var = ft6Var2.c;
+            if (at6Var.a == -9223372036854775807L) {
+                a.a = -9223372036854775807L;
+            }
+            if (at6Var.d == -3.4028235E38f) {
+                a.d = -3.4028235E38f;
+            }
+            if (at6Var.e == -3.4028235E38f) {
+                a.e = -3.4028235E38f;
+            }
+            if (at6Var.b == -9223372036854775807L) {
+                a.b = -9223372036854775807L;
+            }
+            if (at6Var.c == -9223372036854775807L) {
+                a.c = -9223372036854775807L;
+            }
+            at6 at6Var2 = new at6(a);
+            if (at6Var2.equals(ft6Var2.c)) {
+                uri = null;
+                z = true;
+                i = 0;
+            } else {
+                xs6 xs6Var2 = new xs6();
+                List list = Collections.EMPTY_LIST;
+                no5 no5Var = po5.b;
+                po5 po5Var = j99.e;
+                ct6 ct6Var = ct6.d;
+                us6 a2 = ft6Var2.e.a();
+                String str4 = ft6Var2.a;
+                nt6 nt6Var = ft6Var2.d;
+                ft6Var2.c.a();
+                ct6 ct6Var2 = ft6Var2.f;
+                bt6 bt6Var2 = ft6Var2.b;
+                if (bt6Var2 != null) {
+                    String str5 = bt6Var2.f;
+                    String str6 = bt6Var2.b;
+                    Uri uri3 = bt6Var2.a;
+                    list = bt6Var2.e;
+                    po5Var = bt6Var2.g;
+                    uri = null;
+                    ys6 ys6Var = bt6Var2.c;
+                    if (ys6Var != null) {
+                        i = 0;
+                        xs6 xs6Var3 = new xs6();
+                        z = true;
+                        xs6Var3.a = ys6Var.a;
+                        xs6Var3.b = ys6Var.b;
+                        xs6Var3.c = ys6Var.c;
+                        xs6Var3.d = ys6Var.d;
+                        xs6Var3.e = ys6Var.e;
+                        xs6Var3.f = ys6Var.f;
+                        xs6Var3.g = ys6Var.g;
+                        xs6Var3.h = ys6Var.h;
+                        xs6Var = xs6Var3;
+                    } else {
+                        z = true;
+                        i = 0;
+                        xs6Var = new xs6();
+                    }
+                    ss6 ss6Var2 = bt6Var2.d;
+                    j = bt6Var2.h;
+                    xs6Var2 = xs6Var;
+                    ss6Var = ss6Var2;
+                    str = str6;
+                    uri2 = uri3;
+                    str2 = str5;
+                } else {
+                    uri = null;
+                    z = true;
+                    i = 0;
+                    j = -9223372036854775807L;
+                    uri2 = null;
+                    str = null;
+                    ss6Var = null;
+                    str2 = null;
+                }
+                List list2 = list;
+                po5 po5Var2 = po5Var;
+                zs6 a3 = at6Var2.a();
+                yve.p((xs6Var2.b == null || xs6Var2.a != null) ? z : i);
+                bt6 bt6Var3 = uri2 != null ? new bt6(uri2, str, xs6Var2.a != null ? new ys6(xs6Var2) : uri, ss6Var, list2, str2, po5Var2, j) : uri;
+                if (str4 == null) {
+                    str4 = "";
+                }
+                String str7 = str4;
+                ws6 ws6Var = new ws6(a2);
+                at6 at6Var3 = new at6(a3);
+                if (nt6Var == null) {
+                    nt6Var = nt6.M;
+                }
+                ft6Var2 = new ft6(str7, ws6Var, bt6Var3, at6Var3, nt6Var, ct6Var2);
+            }
+            rg0 d = uz6Var.d(ft6Var2);
+            po5 po5Var3 = ft6Var2.b.g;
+            if (!po5Var3.isEmpty()) {
+                rg0[] rg0VarArr = new rg0[po5Var3.size() + 1];
+                rg0VarArr[i] = d;
+                for (int i2 = i; i2 < po5Var3.size(); i2++) {
+                    jo4 jo4Var = new jo4();
+                    jo4Var.s = dg7.n(((et6) po5Var3.get(i2)).b);
+                    jo4Var.d = ((et6) po5Var3.get(i2)).c;
+                    jo4Var.e = ((et6) po5Var3.get(i2)).d;
+                    jo4Var.f = ((et6) po5Var3.get(i2)).e;
+                    jo4Var.b = ((et6) po5Var3.get(i2)).f;
+                    jo4Var.a = ((et6) po5Var3.get(i2)).g;
+                    ko4 ko4Var = new ko4(jo4Var);
+                    q72 q72Var = new q72((Object) this, (Object) ko4Var, (byte) 22);
+                    lh2 lh2Var = this.b;
+                    jz7 jz7Var = new jz7(q72Var, (byte) 21);
+                    rx6 rx6Var = new rx6();
+                    z6f z6fVar = new z6f((byte) 17);
+                    if (this.c.j(ko4Var)) {
+                        jo4 a4 = ko4Var.a();
+                        a4.s = dg7.n("application/x-media3-cues");
+                        a4.k = ko4Var.t;
+                        a4.T = this.c.y(ko4Var);
+                        ko4Var = new ko4(a4);
+                    }
+                    ko4 ko4Var2 = ko4Var;
+                    int i3 = i2 + 1;
+                    String uri4 = ((et6) po5Var3.get(i2)).a.toString();
+                    us6 us6Var = new us6();
+                    xs6 xs6Var4 = new xs6();
+                    List list3 = Collections.EMPTY_LIST;
+                    no5 no5Var2 = po5.b;
+                    j99 j99Var = j99.e;
+                    zs6 zs6Var = new zs6();
+                    ct6 ct6Var3 = ct6.d;
+                    Uri parse = uri4 == null ? uri : Uri.parse(uri4);
+                    yve.p((xs6Var4.b == null || xs6Var4.a != null) ? z : i);
+                    ft6 ft6Var3 = new ft6("", new ws6(us6Var), parse != null ? new bt6(parse, null, xs6Var4.a != null ? new ys6(xs6Var4) : uri, null, list3, null, j99Var, -9223372036854775807L) : uri, new at6(zs6Var), nt6.M, ct6Var3);
+                    ft6Var3.b.getClass();
+                    rg0VarArr[i3] = new ew8(ft6Var3, lh2Var, jz7Var, rx6Var.G(ft6Var3), z6fVar, TLObject.FLAG_20, ko4Var2);
+                }
+                d = new i37(rg0VarArr);
+            }
+            ws6 ws6Var2 = ft6Var2.e;
+            if (ws6Var2.b != 0 || ws6Var2.d != Long.MIN_VALUE || ws6Var2.f) {
+                rx rxVar = new rx(d);
+                ws6 ws6Var3 = ft6Var2.e;
+                yve.p(!rxVar.b);
+                rxVar.d = ws6Var3.a();
+                yve.p(!rxVar.b);
+                rxVar.b = z;
+                d = new oj2(rxVar);
+            }
+            ft6Var2.b.getClass();
+            if (ft6Var2.b.d == null) {
+                return d;
+            }
+            efd.f("DMediaSourceFactory", "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
+            return d;
+        } catch (ClassNotFoundException e) {
+            vr9.l(e);
+            return null;
         }
-        return b2.e();
     }
 }

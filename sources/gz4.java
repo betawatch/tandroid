@@ -1,10 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class gz4 extends bra {
-    @Override // bra
-    public final int b() {
-        return bm2.o(bkb.D0(this.P), kk7.d3);
+public final class gz4 {
+    public static final gz4 b = new gz4(Float.POSITIVE_INFINITY);
+    public final float a;
+
+    public gz4(float f) {
+        if (Float.isNaN(f) || f < 0.0f) {
+            lq5.j("epsY must be >= 0");
+            throw null;
+        }
+        this.a = f;
     }
 }

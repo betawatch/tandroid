@@ -6,106 +6,105 @@ import android.content.res.Configuration;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dn0 extends fx0 {
+public final class dn0 extends nx0 {
     public static dn0 o1;
     public final an0 l1;
-    public final zy9 m1;
+    public final t2a m1;
     public boolean n1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dn0(Activity activity, ao0 ao0Var, zy9 zy9Var, wjb wjbVar, boolean z) {
-        super(1, wjbVar, (Context) activity, true);
+    public dn0(Activity activity, ao0 ao0Var, t2a t2aVar, vnb vnbVar, boolean z) {
+        super(1, vnbVar, (Context) activity, true);
         byte b = 1;
-        this.m1 = zy9Var;
+        this.m1 = t2aVar;
         byte b2 = 0;
         this.w0 = false;
         this.v0 = false;
         this.T0 = false;
         s0(0);
-        K();
-        gl.l3(this, bm2.h(bkb.v0(bkb.g5, this.J0)) > 0.699999988079071d);
+        J();
+        hl.l3(this, vm2.h(aob.v0(aob.h5, this.J0)) > 0.699999988079071d);
         this.n1 = getContext().getResources().getConfiguration().orientation == 2;
-        an0 an0Var = new an0(this, getContext(), zy9Var, wjbVar, ao0Var);
+        an0 an0Var = new an0(this, getContext(), t2aVar, vnbVar, ao0Var);
         this.l1 = an0Var;
         an0Var.setOverScrollMode(2);
         an0Var.setClipToPadding(false);
-        an0Var.setAdapter(new bn0(ao0Var, zy9Var));
+        an0Var.setAdapter(new bn0(ao0Var, t2aVar));
         an0Var.setPosition(0);
         this.O = an0Var;
         ao0Var.o2 = new zm0(this, b2);
-        ao0Var.m2 = new lv6((Object) this, (Object) zy9Var, (byte) 9);
-        zy9Var.p2 = new cn0(this, ao0Var, wjbVar);
-        zy9Var.n2 = new zm0(this, b);
+        ao0Var.m2 = new qx6((Object) this, (Object) t2aVar, (byte) 9);
+        t2aVar.p2 = new cn0(this, ao0Var, vnbVar);
+        t2aVar.n2 = new zm0(this, b);
         if (!z) {
-            na7.q1(this.a).M1().T();
+            uc7.s1(this.a).O1().T();
         }
-        m21.a(this.c, new oy(b));
+        v21.a(this.c, new py(b));
     }
 
-    public static void D0(d dVar, wjb wjbVar, long j, TL_stories.PrepaidGiveaway prepaidGiveaway) {
+    public static void E0(e eVar, vnb vnbVar, long j, TL_stories.PrepaidGiveaway prepaidGiveaway) {
         if (o1 != null) {
             return;
         }
-        boolean z = wjbVar instanceof f53;
-        d hu0Var = z ? new hu0(dVar) : dVar;
-        dn0 dn0Var = new dn0(dVar.getParentActivity(), new ao0(hu0Var, j, prepaidGiveaway), new zy9(hu0Var, j), hu0Var.getResourceProvider(), z);
+        boolean z = vnbVar instanceof x53;
+        e qu0Var = z ? new qu0(eVar) : eVar;
+        dn0 dn0Var = new dn0(eVar.getParentActivity(), new ao0(qu0Var, j, prepaidGiveaway), new t2a(qu0Var, j), qu0Var.getResourceProvider(), z);
         dn0Var.show();
         o1 = dn0Var;
     }
 
-    @Override // fx0
+    @Override // nx0
     public final boolean D() {
         return false;
     }
 
-    @Override // fx0
-    public final void I() {
-        super.I();
+    @Override // nx0
+    public final void H() {
+        super.H();
         o1 = null;
     }
 
-    @Override // fx0
+    @Override // nx0
     public final void Z(Configuration configuration) {
         this.m1.Z(configuration);
         this.n1 = getContext().getResources().getConfiguration().orientation == 2;
     }
 
-    @Override // fx0, android.app.Dialog
+    @Override // nx0, android.app.Dialog
     public final void onBackPressed() {
         an0 an0Var = this.l1;
         if (an0Var.getCurrentPosition() <= 0) {
             super.onBackPressed();
             return;
         }
-        zy9 zy9Var = this.m1;
-        HashSet hashSet = zy9Var.Z1;
+        t2a t2aVar = this.m1;
+        HashSet hashSet = t2aVar.Z1;
         int size = hashSet.size();
-        HashSet hashSet2 = zy9Var.a2;
+        HashSet hashSet2 = t2aVar.a2;
         if (size == hashSet2.size() && hashSet2.containsAll(hashSet) && hashSet.containsAll(hashSet2)) {
             if (this.d) {
-                gl.t1(zy9Var.b);
+                hl.t1(t2aVar.b);
             }
-            an0Var.E(0);
+            an0Var.F(0);
             return;
         }
-        byte b = zy9Var.m2;
-        Context context = zy9Var.getContext();
-        wjb wjbVar = zy9Var.J0;
-        uy9 uy9Var = new uy9(zy9Var, (byte) 0);
-        byte b2 = 6;
-        uy9 uy9Var2 = new uy9(zy9Var, (byte) 6);
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wjbVar, context);
-        String M0 = k96.M0(2131743596, "UnsavedChanges");
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = M0;
-        byte b3 = 3;
-        hdVar.U = b != 1 ? b != 2 ? b != 3 ? "" : k96.M0(2131753593, "BoostingApplyChangesCountries") : k96.M0(2131753594, "BoostingApplyChangesChannels") : k96.M0(2131753592, "BoostingApplyChangesUsers");
-        alertDialog$Builder.j(k96.M0(2131754213, "ApplyTheme"), new sg0(uy9Var, b2));
-        alertDialog$Builder.g(k96.M0(2131751394, "Discard"), new sg0(uy9Var2, b3));
+        byte b = t2aVar.m2;
+        Context context = t2aVar.getContext();
+        vnb vnbVar = t2aVar.J0;
+        o2a o2aVar = new o2a(t2aVar, (byte) 0);
+        o2a o2aVar2 = new o2a(t2aVar, (byte) 6);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vnbVar, context);
+        String M0 = ob6.M0(2131743490, "UnsavedChanges");
+        id idVar = alertDialog$Builder.a;
+        idVar.S = M0;
+        byte b2 = 3;
+        idVar.U = b != 1 ? b != 2 ? b != 3 ? "" : ob6.M0(2131753589, "BoostingApplyChangesCountries") : ob6.M0(2131753590, "BoostingApplyChangesChannels") : ob6.M0(2131753588, "BoostingApplyChangesUsers");
+        alertDialog$Builder.j(ob6.M0(2131754209, "ApplyTheme"), new tg0(o2aVar, b2));
+        alertDialog$Builder.g(ob6.M0(2131751371, "Discard"), new tg0(o2aVar2, (byte) 4));
         alertDialog$Builder.o();
     }
 }

@@ -1,63 +1,34 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ChatActivityEnterView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class iv1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+public final class iv1 {
+    public wq1 a;
+    public int b;
+    public long c;
+    public int d;
+    public boolean e;
 
-    public /* synthetic */ iv1(int i, int i2, long j, String str, boolean z) {
-        this.f = str;
-        this.b = i;
-        this.c = z;
-        this.d = j;
-        this.e = i2;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Object obj = this.f;
-        switch (b) {
-            case 0:
-                int i = ChatActivityEnterView.r7;
-                ((ChatActivityEnterView) obj).v1(this.c, this.b, this.e, this.d, false);
-                break;
-            default:
-                final String str = (String) obj;
-                TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
-                getuniquestargift.slug = str;
-                final int i2 = this.b;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i2);
-                final int i3 = this.e;
-                final long j = this.d;
-                final boolean z = this.c;
-                connectionsManager.sendRequest(getuniquestargift, new RequestDelegate() { // from class: zp7
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        gl.c3(new jv1(tLObject, i2, z, j, i3, str));
-                    }
-                });
-                break;
+    public final boolean a(r47 r47Var) {
+        if (r47Var == null) {
+            return false;
         }
+        if (r47Var.e1() != this.b) {
+            return this.c != 0 && r47Var.c1() == this.c;
+        }
+        return true;
     }
 
-    public /* synthetic */ iv1(ChatActivityEnterView chatActivityEnterView, boolean z, int i, int i2, long j) {
-        this.f = chatActivityEnterView;
-        this.c = z;
+    public final boolean b(int i, long j) {
+        if (this.b == i && this.c == j) {
+            return false;
+        }
         this.b = i;
-        this.e = i2;
-        this.d = j;
+        this.c = j;
+        if (i != 0) {
+            return true;
+        }
+        this.e = false;
+        return true;
     }
 }

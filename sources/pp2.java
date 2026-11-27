@@ -1,58 +1,31 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pp2 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wp2 b;
+public abstract class pp2 {
+    public static final np2 a = new np2();
+    public static final op2 b = new op2(-1);
+    public static final op2 c = new op2(1);
 
-    public /* synthetic */ pp2(wp2 wp2Var, byte b) {
-        this.a = b;
-        this.b = wp2Var;
+    public pp2 a(int i, int i2) {
+        return np2.f(Integer.compare(i, i2));
     }
 
-    public final void a() {
-        byte b = this.a;
-        wp2 wp2Var = this.b;
-        switch (b) {
-            case 0:
-                Bundle c = ((oo) wp2Var.e.d).c("android:support:activity-result");
-                if (c != null) {
-                    qp2 qp2Var = wp2Var.x;
-                    HashMap hashMap = qp2Var.b;
-                    HashMap hashMap2 = qp2Var.a;
-                    Bundle bundle = qp2Var.g;
-                    ArrayList<Integer> integerArrayList = c.getIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS");
-                    ArrayList<String> stringArrayList = c.getStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS");
-                    if (stringArrayList != null && integerArrayList != null) {
-                        qp2Var.d = c.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
-                        bundle.putAll(c.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
-                        for (int i = 0; i < stringArrayList.size(); i++) {
-                            String str = stringArrayList.get(i);
-                            if (hashMap.containsKey(str)) {
-                                Integer num = (Integer) hashMap.remove(str);
-                                if (!bundle.containsKey(str)) {
-                                    hashMap2.remove(num);
-                                }
-                            }
-                            Integer num2 = integerArrayList.get(i);
-                            num2.intValue();
-                            String str2 = stringArrayList.get(i);
-                            hashMap2.put(num2, str2);
-                            qp2Var.b.put(str2, num2);
-                        }
-                        break;
-                    }
-                }
-                break;
-            default:
-                dn4 dn4Var = (dn4) ((en4) wp2Var).K.b;
-                dn4Var.d.b(dn4Var, dn4Var, null);
-                break;
-        }
+    public pp2 b(Object obj, Object obj2, Comparator comparator) {
+        return np2.f(comparator.compare(obj, obj2));
+    }
+
+    public pp2 c(boolean z, boolean z2) {
+        return np2.f(Boolean.compare(z, z2));
+    }
+
+    public pp2 d(boolean z, boolean z2) {
+        return np2.f(Boolean.compare(z2, z));
+    }
+
+    public int e() {
+        return 0;
     }
 }

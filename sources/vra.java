@@ -1,32 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class vra implements Runnable {
+public final /* synthetic */ class vra implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ et4 b;
+    public final /* synthetic */ wua b;
+    public final /* synthetic */ hw4 c;
 
-    public /* synthetic */ vra(et4 et4Var, byte b) {
+    public /* synthetic */ vra(wua wuaVar, hw4 hw4Var, byte b) {
         this.a = b;
-        this.b = et4Var;
+        this.b = wuaVar;
+        this.c = hw4Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // pcc
+    public final void a(Object obj) {
         byte b = this.a;
-        et4 et4Var = this.b;
+        hw4 hw4Var = this.c;
+        wua wuaVar = this.b;
+        Boolean bool = (Boolean) obj;
         switch (b) {
             case 0:
-                et4Var.a(Boolean.FALSE, "PRODUCT_NOT_FOUND");
-                break;
-            case 1:
-                et4Var.a(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
-                break;
-            case 2:
-                gl.c3(new vra(et4Var, (byte) 3));
+                wuaVar.f2.setLoading(bool.booleanValue());
+                if (hw4Var != null) {
+                    hw4Var.G0(bool.booleanValue());
+                    break;
+                }
                 break;
             default:
-                et4Var.a(Boolean.FALSE, null);
+                wuaVar.f2.setLoading(bool.booleanValue());
+                if (hw4Var != null) {
+                    hw4Var.G0(bool.booleanValue());
+                    break;
+                }
                 break;
         }
     }

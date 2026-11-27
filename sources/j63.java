@@ -1,0 +1,25 @@
+// default package
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface j63 {
+    long I(long j, long j2);
+
+    boolean R();
+
+    long V();
+
+    long Y(long j);
+
+    long a0(long j, long j2);
+
+    long f(long j);
+
+    long j(long j, long j2);
+
+    long r(long j, long j2);
+
+    long v(long j, long j2);
+
+    n29 z(long j);
+}

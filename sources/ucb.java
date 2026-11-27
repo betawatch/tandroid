@@ -1,77 +1,52 @@
 // default package
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.Uri;
-import android.os.Build;
-import android.util.Log;
-import com.google.firebase.messaging.FirebaseMessaging;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ucb extends BroadcastReceiver {
-    public final /* synthetic */ byte a = 0;
-    public Context b;
-    public Object c;
+public abstract class ucb {
+    public x1c b;
+    public g84 c;
+    public lr7 d;
+    public long e;
+    public long f;
+    public long g;
+    public byte h;
+    public int i;
+    public long k;
+    public boolean l;
+    public boolean m;
+    public final jr7 a = new jr7();
+    public k7b j = new k7b((byte) 1, false);
 
-    public ucb(wye wyeVar) {
-        this.c = wyeVar;
+    public void a(long j) {
+        this.g = j;
     }
 
-    public final void a() {
-        if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-            Log.d("FirebaseMessaging", "Connectivity change received registered");
+    public long b(ey7 ey7Var) {
+        byte[] bArr = ey7Var.a;
+        if (bArr[0] != -1) {
+            return -1L;
         }
-        IntentFilter intentFilter = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
-        vcb vcbVar = (vcb) this.c;
-        if (vcbVar != null) {
-            Context context = vcbVar.c.b;
-            this.b = context;
-            context.registerReceiver(this, intentFilter);
+        int i = (bArr[2] & 255) >> 4;
+        if (i == 6 || i == 7) {
+            ey7Var.O(4);
+            ey7Var.I();
         }
+        int b = hle.b(i, ey7Var);
+        ey7Var.N(0);
+        return b;
     }
 
-    public final synchronized void b() {
-        Context context = this.b;
-        if (context != null) {
-            context.unregisterReceiver(this);
-        }
-        this.b = null;
-    }
+    public abstract boolean c(ey7 ey7Var, long j, k7b k7bVar);
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        switch (this.a) {
-            case 0:
-                vcb vcbVar = (vcb) this.c;
-                if (vcbVar != null && vcbVar.a()) {
-                    if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-                        Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
-                    }
-                    vcb vcbVar2 = (vcb) this.c;
-                    FirebaseMessaging firebaseMessaging = vcbVar2.c;
-                    FirebaseMessaging.b(vcbVar2, 0L);
-                    Context context2 = this.b;
-                    if (context2 != null) {
-                        context2.unregisterReceiver(this);
-                    }
-                    this.c = null;
-                    break;
-                }
-                break;
-            default:
-                Uri data = intent.getData();
-                if ("com.google.android.gms".equals(data != null ? data.getSchemeSpecificPart() : null)) {
-                    ((wye) this.c).a();
-                    b();
-                    break;
-                }
-                break;
+    public void d(boolean z) {
+        if (z) {
+            this.j = new k7b((byte) 1, false);
+            this.f = 0L;
+            this.h = (byte) 0;
+        } else {
+            this.h = (byte) 1;
         }
-    }
-
-    public /* synthetic */ ucb() {
+        this.e = -1L;
+        this.g = 0L;
     }
 }

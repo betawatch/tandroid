@@ -1,39 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class o3f extends vef {
-    private static final o3f zzb;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private int zzg;
-    private int zzh;
+import android.content.Context;
+import java.util.ArrayList;
 
-    static {
-        o3f o3fVar = new o3f();
-        zzb = o3fVar;
-        vef.e(o3f.class, o3fVar);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class o3f extends e23 {
+    public final /* synthetic */ byte b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o3f(byte b) {
+        super((byte) 4);
+        this.b = b;
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    @Override // e23
+    public final Object a(Object obj) {
+        switch (this.b) {
+            case 0:
+                y0f y0fVar = (y0f) obj;
+                jg7 c = jg7.c();
+                return new j2f(c.b(), (lja) c.a(lja.class), new q1f(jg7.c().b(), y0fVar), y0fVar.a);
+            case 1:
+                jg7 c2 = jg7.c();
+                return new w5f(c2.b(), (lja) c2.a(lja.class), new n5f(jg7.c().b(), (b5f) obj));
+            case 2:
+                jg7 c3 = jg7.c();
+                return new q8f(c3.b(), (lja) c3.a(lja.class), new e8f(jg7.c().b(), (y7f) obj));
+            case 3:
+                jg7 c4 = jg7.c();
+                Context b = jg7.c().b();
+                ArrayList arrayList = new ArrayList();
+                ((ahf) obj).getClass();
+                kdd kddVar = new kdd();
+                q51 q51Var = q51.e;
+                h5c.b(b);
+                h5c.a().c(q51Var);
+                q51.d.contains(new n34("json"));
+                arrayList.add(kddVar);
+                return new xhf(c4.b(), (lja) c4.a(lja.class));
+            default:
+                jg7 c5 = jg7.c();
+                return new ijf(c5.b(), (lja) c5.a(lja.class), new djf(jg7.c().b(), (wif) obj));
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001ဋ\u0000\u0002ဋ\u0001\u0003᠌\u0002\u0004င\u0003", new Object[]{"zzd", "zze", "zzf", "zzg", vi2.s, "zzh"});
-        }
-        if (i2 == 3) {
-            return new o3f();
-        }
-        if (i2 == 4) {
-            return new v8e(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
     }
 }

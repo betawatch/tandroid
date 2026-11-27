@@ -1,66 +1,21 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ohd {
-    public static final f84 a;
-    public static final f84[] b;
+public final class ohd implements ie9 {
+    public final /* synthetic */ byte a;
+    public final Status b;
 
-    static {
-        f84 f84Var = new f84("register", -1, 1L, true);
-        a = f84Var;
-        b = new f84[]{f84Var, new f84("unregister", -1, 1L, true)};
+    public /* synthetic */ ohd(Status status, byte b) {
+        this.a = b;
+        this.b = status;
     }
 
-    public static Parcelable a(String str, Bundle bundle) {
-        ClassLoader classLoader = ohd.class.getClassLoader();
-        fre.h(classLoader);
-        bundle.setClassLoader(classLoader);
-        Bundle bundle2 = bundle.getBundle("map_state");
-        if (bundle2 == null) {
-            return null;
-        }
-        bundle2.setClassLoader(classLoader);
-        return bundle2.getParcelable(str);
-    }
-
-    public static void b(Bundle bundle, Bundle bundle2) {
-        if (bundle == null || bundle2 == null) {
-            return;
-        }
-        Parcelable a2 = a("MapOptions", bundle);
-        if (a2 != null) {
-            c(bundle2, "MapOptions", a2);
-        }
-        Parcelable a3 = a("StreetViewPanoramaOptions", bundle);
-        if (a3 != null) {
-            c(bundle2, "StreetViewPanoramaOptions", a3);
-        }
-        Parcelable a4 = a("camera", bundle);
-        if (a4 != null) {
-            c(bundle2, "camera", a4);
-        }
-        if (bundle.containsKey("position")) {
-            bundle2.putString("position", bundle.getString("position"));
-        }
-        if (bundle.containsKey("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT")) {
-            bundle2.putBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", bundle.getBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", false));
-        }
-    }
-
-    public static void c(Bundle bundle, String str, Parcelable parcelable) {
-        ClassLoader classLoader = ohd.class.getClassLoader();
-        fre.h(classLoader);
-        bundle.setClassLoader(classLoader);
-        Bundle bundle2 = bundle.getBundle("map_state");
-        if (bundle2 == null) {
-            bundle2 = new Bundle();
-        }
-        bundle2.setClassLoader(classLoader);
-        bundle2.putParcelable(str, parcelable);
-        bundle.putBundle("map_state", bundle2);
+    @Override // ie9
+    public final Status a() {
+        byte b = this.a;
+        return this.b;
     }
 }

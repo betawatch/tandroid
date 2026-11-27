@@ -1,34 +1,37 @@
 // default package
 
-import java.util.Arrays;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class v1d {
-    public final go a;
-    public final f84 b;
+public abstract class v1d {
+    public final int a;
+    public float b;
+    public final Interpolator c;
+    public final short d;
 
-    public /* synthetic */ v1d(go goVar, f84 f84Var) {
-        this.a = goVar;
-        this.b = f84Var;
+    /* JADX WARN: Type inference failed for: r1v1, types: [int, short] */
+    public v1d(int i, Interpolator interpolator, long j) {
+        this.a = i;
+        this.c = interpolator;
+        this.d = (int) j;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof v1d)) {
-            return false;
-        }
-        v1d v1dVar = (v1d) obj;
-        return cqe.a(this.a, v1dVar.a) && cqe.a(this.b, v1dVar.b);
+    public long a() {
+        return this.d;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
+    public float b() {
+        float f = this.b;
+        Interpolator interpolator = this.c;
+        return interpolator != null ? interpolator.getInterpolation(f) : f;
     }
 
-    public final String toString() {
-        wk4 wk4Var = new wk4(this);
-        wk4Var.a(this.a, "key");
-        wk4Var.a(this.b, "feature");
-        return wk4Var.toString();
+    public int c() {
+        return this.a;
+    }
+
+    public void d(float f) {
+        this.b = f;
     }
 }

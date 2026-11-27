@@ -1,14 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hv5 {
-    public final a8 a;
-    public final byte b;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public hv5(a8 a8Var, int i) {
-        this.a = a8Var;
-        this.b = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class hv5 extends us4 implements ur4 {
+    @Override // ur4
+    public final Object invoke(Object obj) {
+        ((iv5) this.receiver).l((Throwable) obj);
+        return f9c.a;
     }
 }

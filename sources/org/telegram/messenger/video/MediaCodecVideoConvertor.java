@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MAX_DECODER_INPUTS_PER_LOOP = 8;
@@ -24,21 +24,21 @@ public class MediaCodecVideoConvertor {
     private static final int PROCESSOR_TYPE_QCOM = 1;
     private static final int PROCESSOR_TYPE_SEC = 4;
     private static final int PROCESSOR_TYPE_TI = 5;
-    private pm6 callback;
+    private to6 callback;
     private long endPresentationTime;
     private MediaExtractor extractor;
     private boolean legacyCodecSetup;
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -46,23 +46,23 @@ public class MediaCodecVideoConvertor {
         int bitrate;
         String blurPath;
         File cacheFile;
-        pm6 callback;
-        fk2 collage;
-        ArrayList<nac> collageParts;
-        zl6 cropState;
+        to6 callback;
+        al2 collage;
+        ArrayList<nec> collageParts;
+        fo6 cropState;
         long duration;
         long endTime;
         int framerate;
         Integer gradientBottomColor;
         Integer gradientTopColor;
-        e4b hdrInfo;
+        b8b hdrInfo;
         boolean isDark;
         boolean isPhoto;
         boolean isRound;
         boolean isSecret;
         boolean isSticker;
         boolean isStory;
-        ArrayList<mac> mediaEntities;
+        ArrayList<mec> mediaEntities;
         String messagePath;
         String messageVideoMaskPath;
         boolean muted;
@@ -74,7 +74,7 @@ public class MediaCodecVideoConvertor {
         int resultHeight;
         int resultWidth;
         int rotationValue;
-        lm6 savedFilterState;
+        po6 savedFilterState;
         public ArrayList<MixedSoundInfo> soundInfos = new ArrayList<>();
         long startTime;
         long videoOffset;
@@ -85,7 +85,7 @@ public class MediaCodecVideoConvertor {
         private ConvertVideoParams() {
         }
 
-        public static ConvertVideoParams of(String str, File file, long j, int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j2, long j3, long j4, boolean z2, long j5, pm6 pm6Var, oac oacVar) {
+        public static ConvertVideoParams of(String str, File file, long j, int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j2, long j3, long j4, boolean z2, long j5, to6 to6Var, oec oecVar) {
             ConvertVideoParams convertVideoParams = new ConvertVideoParams();
             convertVideoParams.videoPath = str;
             convertVideoParams.videoOffset = j;
@@ -104,34 +104,34 @@ public class MediaCodecVideoConvertor {
             convertVideoParams.avatarStartTime = j4;
             convertVideoParams.needCompress = z2;
             convertVideoParams.duration = j5;
-            convertVideoParams.savedFilterState = oacVar.A;
-            convertVideoParams.paintPath = oacVar.B;
-            convertVideoParams.blurPath = oacVar.C;
-            convertVideoParams.mediaEntities = oacVar.G;
-            convertVideoParams.isPhoto = oacVar.I;
-            convertVideoParams.cropState = oacVar.H;
-            convertVideoParams.isRound = oacVar.s;
-            convertVideoParams.callback = pm6Var;
-            convertVideoParams.gradientTopColor = oacVar.P;
-            convertVideoParams.gradientBottomColor = oacVar.Q;
-            convertVideoParams.muted = oacVar.t;
-            convertVideoParams.volume = oacVar.u;
-            convertVideoParams.isStory = oacVar.J;
-            convertVideoParams.hdrInfo = oacVar.K;
-            convertVideoParams.isDark = oacVar.S;
-            convertVideoParams.wallpaperPeerId = oacVar.T;
-            convertVideoParams.account = oacVar.R;
-            convertVideoParams.messagePath = oacVar.D;
-            convertVideoParams.messageVideoMaskPath = oacVar.E;
-            convertVideoParams.backgroundPath = oacVar.F;
-            convertVideoParams.isSticker = oacVar.N;
-            convertVideoParams.collage = oacVar.L;
-            convertVideoParams.collageParts = oacVar.M;
+            convertVideoParams.savedFilterState = oecVar.A;
+            convertVideoParams.paintPath = oecVar.B;
+            convertVideoParams.blurPath = oecVar.C;
+            convertVideoParams.mediaEntities = oecVar.G;
+            convertVideoParams.isPhoto = oecVar.I;
+            convertVideoParams.cropState = oecVar.H;
+            convertVideoParams.isRound = oecVar.s;
+            convertVideoParams.callback = to6Var;
+            convertVideoParams.gradientTopColor = oecVar.P;
+            convertVideoParams.gradientBottomColor = oecVar.Q;
+            convertVideoParams.muted = oecVar.t;
+            convertVideoParams.volume = oecVar.u;
+            convertVideoParams.isStory = oecVar.J;
+            convertVideoParams.hdrInfo = oecVar.K;
+            convertVideoParams.isDark = oecVar.S;
+            convertVideoParams.wallpaperPeerId = oecVar.T;
+            convertVideoParams.account = oecVar.R;
+            convertVideoParams.messagePath = oecVar.D;
+            convertVideoParams.messageVideoMaskPath = oecVar.E;
+            convertVideoParams.backgroundPath = oecVar.F;
+            convertVideoParams.isSticker = oecVar.N;
+            convertVideoParams.collage = oecVar.L;
+            convertVideoParams.collageParts = oecVar.M;
             return convertVideoParams;
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private class DecoderFeeder extends Thread {
         private ByteBuffer audioBuffer;
         private final int audioIndex;
@@ -167,7 +167,7 @@ public class MediaCodecVideoConvertor {
             try {
                 join();
             } catch (InterruptedException e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
 
@@ -177,7 +177,7 @@ public class MediaCodecVideoConvertor {
             long j = 0;
             while (!this.stopFeeding) {
                 try {
-                    if (MediaCodecVideoConvertor.this.callback != null && ((oac) ((spc) MediaCodecVideoConvertor.this.callback).b).V) {
+                    if (MediaCodecVideoConvertor.this.callback != null && ((oec) ((guc) MediaCodecVideoConvertor.this.callback).b).V) {
                         return;
                     }
                     int sampleTrackIndex = this.extractor.getSampleTrackIndex();
@@ -239,7 +239,7 @@ public class MediaCodecVideoConvertor {
                                             if (j3 > j) {
                                                 j = j3;
                                             }
-                                            ((spc) MediaCodecVideoConvertor.this.callback).n(writeSampleData, (j / 1000.0f) / this.durationS);
+                                            ((guc) MediaCodecVideoConvertor.this.callback).n(writeSampleData, (j / 1000.0f) / this.durationS);
                                         }
                                     } finally {
                                     }
@@ -257,7 +257,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -270,20 +270,20 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    private static void applyAudioInputs(ArrayList<MixedSoundInfo> arrayList, ArrayList<h00> arrayList2) {
+    private static void applyAudioInputs(ArrayList<MixedSoundInfo> arrayList, ArrayList<i00> arrayList2) {
         if (arrayList != null) {
             for (int i = 0; i < arrayList.size(); i++) {
                 MixedSoundInfo mixedSoundInfo = arrayList.get(i);
                 try {
-                    as4 as4Var = new as4(mixedSoundInfo.audioFile);
-                    AudioDecoder audioDecoder = as4Var.b;
-                    as4Var.a = Math.max(0.0f, Math.min(mixedSoundInfo.volume, 1.0f));
+                    eu4 eu4Var = new eu4(mixedSoundInfo.audioFile);
+                    AudioDecoder audioDecoder = eu4Var.b;
+                    eu4Var.a = Math.max(0.0f, Math.min(mixedSoundInfo.volume, 1.0f));
                     long j = mixedSoundInfo.startTime;
                     if (j > 0) {
                         if (j < 0) {
                             j = 0;
                         }
-                        as4Var.d = j;
+                        eu4Var.d = j;
                     }
                     long j2 = mixedSoundInfo.audioOffset;
                     if (j2 > 0) {
@@ -295,17 +295,17 @@ public class MediaCodecVideoConvertor {
                     if (j3 > 0) {
                         audioDecoder.setEndTimeUs(j2 + j3);
                     }
-                    arrayList2.add(as4Var);
+                    arrayList2.add(eu4Var);
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    cc4.g(e, true);
                 }
             }
         }
     }
 
     private void checkConversionCanceled() {
-        pm6 pm6Var = this.callback;
-        if (pm6Var != null && ((oac) ((spc) pm6Var).b).V) {
+        to6 to6Var = this.callback;
+        if (to6Var != null && ((oec) ((guc) to6Var).b).V) {
             throw new ConversionCanceledException();
         }
     }
@@ -335,7 +335,7 @@ public class MediaCodecVideoConvertor {
             }
             createEncoderByType = MediaCodec.createEncoderByType(this.outputMimeType);
         } else {
-            String l = gba.l();
+            String l = xea.l();
             createEncoderByType = l != null ? MediaCodec.createByCodecName(l) : null;
         }
         if (createEncoderByType != null || !this.outputMimeType.equals("video/hevc")) {
@@ -362,7 +362,7 @@ public class MediaCodecVideoConvertor {
         int i8 = 1;
         int max = Math.max(1, Math.round(f2));
         int max2 = Math.max(1, Math.round(f4));
-        if (gba.o() <= 1) {
+        if (xea.o() <= 1) {
             max2 = 1;
         } else {
             i8 = max;
@@ -379,8 +379,8 @@ public class MediaCodecVideoConvertor {
         if ((min2 & 1) == 0) {
             f8 += 0.01f;
         }
-        StringBuilder p = ir2.p("source size ", i, "x", i2, "    dest size ");
-        ir2.w(p, i3, "x", i4, "   rotated ");
+        StringBuilder p = bs2.p("source size ", i, "x", i2, "    dest size ");
+        bs2.w(p, i3, "x", i4, "   rotated ");
         p.append(z2);
         p.append("   ratio ");
         p.append(f2);
@@ -394,7 +394,7 @@ public class MediaCodecVideoConvertor {
         p.append(f5);
         p.append("x");
         p.append(f6);
-        fa4.b(p.toString());
+        cc4.b(p.toString());
         String glslFloat = glslFloat(f7);
         String glslFloat2 = glslFloat(f8);
         String glslFloat3 = glslFloat(f5);
@@ -402,9 +402,9 @@ public class MediaCodecVideoConvertor {
         String glslFloat5 = glslFloat(min * min2);
         String glslFloat6 = glslFloat(1.0f / f);
         String glslFloat7 = glslFloat(1.0f / f3);
-        StringBuilder l = yjb.l(z ? "#extension GL_OES_EGL_image_external : require\nuniform samplerExternalOES sTexture;\n" : "uniform sampler2D sTexture;\n", "precision highp float;\nvarying vec2 vTextureCoord;\nconst float offsetX = ", glslFloat, ";\nconst float offsetY = ", glslFloat2);
-        ls6.u(l, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
-        ls6.u(l, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
+        StringBuilder l = xnb.l(z ? "#extension GL_OES_EGL_image_external : require\nuniform samplerExternalOES sTexture;\n" : "uniform sampler2D sTexture;\n", "precision highp float;\nvarying vec2 vTextureCoord;\nconst float offsetX = ", glslFloat, ";\nconst float offsetY = ", glslFloat2);
+        qu6.u(l, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
+        qu6.u(l, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
         l.append(";\nconst float pixelSizeY = ");
         l.append(glslFloat7);
         l.append(";\nvoid main() {\n    vec3 accumulation = vec3(0.0);\n    for (int i = 0; i < ");
@@ -435,7 +435,7 @@ public class MediaCodecVideoConvertor {
     private MediaCodec getDecoderByFormat(MediaFormat mediaFormat) {
         MediaCodec mediaCodec = null;
         if (mediaFormat == null) {
-            wn4.j("getDecoderByFormat: format is null");
+            xi4.l("getDecoderByFormat: format is null");
             return null;
         }
         ArrayList arrayList = new ArrayList();
@@ -457,7 +457,7 @@ public class MediaCodecVideoConvertor {
                 }
             }
         }
-        sdb.b(exc);
+        grb.m(exc);
         return mediaCodec;
     }
 
@@ -483,7 +483,7 @@ public class MediaCodecVideoConvertor {
         return sb.toString();
     }
 
-    private static String hdrFragmentShader(int i, int i2, int i3, int i4, boolean z, e4b e4bVar, int i5, boolean z2) {
+    private static String hdrFragmentShader(int i, int i2, int i3, int i4, boolean z, b8b b8bVar, int i5, boolean z2) {
         int i6;
         int i7;
         if (!z) {
@@ -502,7 +502,7 @@ public class MediaCodecVideoConvertor {
         float f4 = f3 / i7;
         int max = Math.max(1, Math.round(f2));
         int max2 = Math.max(1, Math.round(f4));
-        if (gba.o() <= 1) {
+        if (xea.o() <= 1) {
             max = 1;
             max2 = 1;
         }
@@ -518,8 +518,8 @@ public class MediaCodecVideoConvertor {
         if ((min2 & 1) == 0) {
             f8 += 0.01f;
         }
-        StringBuilder p = ir2.p("HDR source size ", i, "x", i2, "    dest size ");
-        ir2.w(p, i3, "x", i4, "   rotated ");
+        StringBuilder p = bs2.p("HDR source size ", i, "x", i2, "    dest size ");
+        bs2.w(p, i3, "x", i4, "   rotated ");
         p.append(z2);
         p.append("   ratio ");
         p.append(f2);
@@ -533,7 +533,7 @@ public class MediaCodecVideoConvertor {
         p.append(f5);
         p.append("x");
         p.append(f6);
-        fa4.b(p.toString());
+        cc4.b(p.toString());
         String glslFloat = glslFloat(f7);
         String glslFloat2 = glslFloat(f8);
         String glslFloat3 = glslFloat(f5);
@@ -541,15 +541,15 @@ public class MediaCodecVideoConvertor {
         String glslFloat5 = glslFloat(min * min2);
         String glslFloat6 = glslFloat(1.0f / f);
         String glslFloat7 = glslFloat(1.0f / f3);
-        String v2 = e4bVar.a() == 1 ? gl.v2(null, R.raw.hdr2sdr_hlg) : gl.v2(null, R.raw.hdr2sdr_pq);
+        String v2 = b8bVar.a() == 1 ? hl.v2(null, R.raw.hdr2sdr_hlg) : hl.v2(null, R.raw.hdr2sdr_pq);
         StringBuilder sb = new StringBuilder();
         sb.append(v2);
         sb.append("\nvarying vec2 vTextureCoord;\nconst float offsetX = ");
         sb.append(glslFloat);
         sb.append(";\nconst float offsetY = ");
         sb.append(glslFloat2);
-        ls6.u(sb, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
-        ls6.u(sb, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
+        qu6.u(sb, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
+        qu6.u(sb, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
         sb.append(";\nconst float pixelSizeY = ");
         sb.append(glslFloat7);
         sb.append(";\nvoid main() {\n    vec3 accumulation = vec3(0.0);\n    for (int i = 0; i < ");
@@ -594,23 +594,23 @@ public class MediaCodecVideoConvertor {
         int i5;
         int i6;
         boolean z2;
-        pm6 pm6Var;
+        to6 to6Var;
         byte[] array;
         int i7;
         int i8;
         int i9;
         int i10 = 0;
-        int r = MediaController.r(mediaExtractor, false);
-        int r2 = z ? MediaController.r(mediaExtractor, true) : -1;
+        int t = MediaController.t(mediaExtractor, false);
+        int t2 = z ? MediaController.t(mediaExtractor, true) : -1;
         float f2 = j3 / 1000.0f;
-        if (r >= 0) {
-            mediaExtractor.selectTrack(r);
-            MediaFormat trackFormat = mediaExtractor.getTrackFormat(r);
+        if (t >= 0) {
+            mediaExtractor.selectTrack(t);
+            MediaFormat trackFormat = mediaExtractor.getTrackFormat(t);
             i = muxer.addTrack(trackFormat, false);
             try {
                 i9 = trackFormat.getInteger("max-input-size");
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
                 i9 = 0;
             }
             if (j > 0) {
@@ -625,18 +625,18 @@ public class MediaCodecVideoConvertor {
             i = -1;
             i2 = 0;
         }
-        if (r2 >= 0) {
-            mediaExtractor.selectTrack(r2);
-            MediaFormat trackFormat2 = mediaExtractor.getTrackFormat(r2);
+        if (t2 >= 0) {
+            mediaExtractor.selectTrack(t2);
+            MediaFormat trackFormat2 = mediaExtractor.getTrackFormat(t2);
             if (trackFormat2.getString("mime").equals("audio/unknown")) {
                 i3 = -1;
-                r2 = -1;
+                t2 = -1;
             } else {
                 i3 = muxer.addTrack(trackFormat2, true);
                 try {
                     i2 = Math.max(trackFormat2.getInteger("max-input-size"), i2);
                 } catch (Exception e2) {
-                    fa4.g(e2, true);
+                    cc4.g(e2, true);
                 }
                 if (j > 0) {
                     mediaExtractor.seekTo(j, 0);
@@ -652,7 +652,7 @@ public class MediaCodecVideoConvertor {
         }
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i2);
         long j4 = -1;
-        if (r2 < 0 && r < 0) {
+        if (t2 < 0 && t < 0) {
             return -1L;
         }
         checkConversionCanceled();
@@ -664,21 +664,21 @@ public class MediaCodecVideoConvertor {
             long j7 = j4;
             if (Build.VERSION.SDK_INT >= 28) {
                 long sampleSize = mediaExtractor.getSampleSize();
-                i4 = r2;
+                i4 = t2;
                 if (sampleSize > i2) {
                     int i11 = (int) (sampleSize + 1024);
                     i2 = i11;
                     allocateDirect = ByteBuffer.allocateDirect(i11);
                 }
             } else {
-                i4 = r2;
+                i4 = t2;
             }
             bufferInfo.size = mediaExtractor.readSampleData(allocateDirect, i10);
             int sampleTrackIndex = mediaExtractor.getSampleTrackIndex();
-            r2 = i4;
-            int i12 = sampleTrackIndex == r ? i : sampleTrackIndex == r2 ? i3 : -1;
+            t2 = i4;
+            int i12 = sampleTrackIndex == t ? i : sampleTrackIndex == t2 ? i3 : -1;
             if (i12 != -1) {
-                if (sampleTrackIndex != r2 && (array = allocateDirect.array()) != null) {
+                if (sampleTrackIndex != t2 && (array = allocateDirect.array()) != null) {
                     int arrayOffset = allocateDirect.arrayOffset();
                     int limit = allocateDirect.limit() + arrayOffset;
                     int i13 = arrayOffset;
@@ -723,19 +723,19 @@ public class MediaCodecVideoConvertor {
                     z2 = true;
                 }
                 if (bufferInfo.size > 0 && !z2) {
-                    if (sampleTrackIndex == r && j > 0 && j5 == j7) {
+                    if (sampleTrackIndex == t && j > 0 && j5 == j7) {
                         j5 = bufferInfo.presentationTimeUs;
                     }
                     if (j2 < 0 || bufferInfo.presentationTimeUs < j2) {
                         bufferInfo.offset = 0;
                         bufferInfo.flags = mediaExtractor.getSampleFlags();
                         long writeSampleData = muxer.writeSampleData(i12, allocateDirect, bufferInfo, false);
-                        if (writeSampleData != 0 && (pm6Var = this.callback) != null) {
+                        if (writeSampleData != 0 && (to6Var = this.callback) != null) {
                             long j8 = bufferInfo.presentationTimeUs - j5;
                             if (j8 <= j6) {
                                 j8 = j6;
                             }
-                            ((spc) pm6Var).n(writeSampleData, (j8 / f) / f2);
+                            ((guc) to6Var).n(writeSampleData, (j8 / f) / f2);
                             j6 = j8;
                         }
                     } else {
@@ -763,11 +763,11 @@ public class MediaCodecVideoConvertor {
             i2 = i6;
             i10 = 0;
         }
-        if (r >= 0) {
-            mediaExtractor.unselectTrack(r);
+        if (t >= 0) {
+            mediaExtractor.unselectTrack(t);
         }
-        if (r2 >= 0) {
-            mediaExtractor.unselectTrack(r2);
+        if (t2 >= 0) {
+            mediaExtractor.unselectTrack(t2);
         }
         return j5;
     }
@@ -810,7 +810,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

@@ -1,118 +1,184 @@
 // default package
 
-import android.app.Activity;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class xj3 extends l5c {
-    public final int Q;
-    public final int R;
-    public final ArrayList S;
-    public final ArrayList T;
-    public final ArrayList U;
-    public final ArrayList V;
-    public boolean W;
-    public boolean X;
-    public final ArrayList Y;
-    public boolean Z;
-    public boolean a0;
-    public boolean b0;
-    public int c0;
-    public int d0;
-    public String e0;
-    public final li3 f0;
+public class xj3 extends pm implements snb {
+    public FragmentContextView E;
+    public boolean F;
+    public boolean G;
+    public jl0 s;
+    public final Path w;
+    public final RectF x;
+    public int y;
 
-    public xj3(o39 o39Var, Activity activity, int i, int i2) {
-        super(o39Var, activity, i, 0, false, null, null);
-        this.S = new ArrayList();
-        this.T = new ArrayList();
-        this.U = new ArrayList();
-        this.V = new ArrayList();
-        this.Y = new ArrayList();
-        ot9 ot9Var = (ot9) this;
-        this.f0 = new li3(ot9Var, (byte) 4);
-        this.w = new w72(ot9Var, (byte) 20);
-        this.Q = i;
-        this.R = i2;
-        O(false);
+    public xj3(Context context) {
+        super(context);
+        this.w = new Path();
+        this.x = new RectF();
+        this.y = 24;
+        setOrientation(1);
+        updateColors();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void W(boolean z) {
-        this.Z = true;
-        int i = this.d0 + 1;
-        this.d0 = i;
-        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-        tL_messages_searchGlobal.broadcasts_only = true;
-        int i2 = this.R;
-        if (i2 != 0) {
-            tL_messages_searchGlobal.flags |= 1;
-            tL_messages_searchGlobal.folder_id = i2;
-        }
-        tL_messages_searchGlobal.q = this.e0;
-        tL_messages_searchGlobal.limit = 25;
-        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        int i3 = this.Q;
-        if (z) {
-            ArrayList arrayList = this.S;
-            if (!arrayList.isEmpty()) {
-                k27 k27Var = (k27) b00.f(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.c0;
-                tL_messages_searchGlobal.offset_id = k27Var.e1();
-                if (k27Var.k.peer_id == null) {
-                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                } else {
-                    tL_messages_searchGlobal.offset_peer = na7.q1(i3).k1(k27Var.k.peer_id);
-                }
-                gl.d3(new bs1(this, i, tL_messages_searchGlobal, z, (byte) 3), !z ? 800L : 0L);
-                if (z) {
-                    this.a0 = true;
-                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
-                    tL_contacts_search.limit = 20;
-                    tL_contacts_search.broadcasts = true;
-                    tL_contacts_search.q = this.e0;
-                    ConnectionsManager.getInstance(i3).sendRequestTyped(tL_contacts_search, new hc((byte) 0), new ae2(this, tL_contacts_search, (byte) 12));
-                    return;
-                }
-                return;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        int currentStyle;
+        FragmentContextView fragmentContextView;
+        Canvas canvas2 = canvas;
+        if (getMetadata().c.a != 0.0f) {
+            jl0 jl0Var = this.s;
+            if (jl0Var != null) {
+                jl0Var.draw(canvas2);
             }
-        }
-        tL_messages_searchGlobal.offset_rate = 0;
-        tL_messages_searchGlobal.offset_id = 0;
-        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        gl.d3(new bs1(this, i, tL_messages_searchGlobal, z, (byte) 3), !z ? 800L : 0L);
-        if (z) {
+            FragmentContextView fragmentContextView2 = this.E;
+            b76 b76Var = this.c;
+            View view = null;
+            if (fragmentContextView2 != null && ((currentStyle = fragmentContextView2.getCurrentStyle()) == 3 || currentStyle == 1)) {
+                int entriesCount = getEntriesCount();
+                for (int i = 0; i < entriesCount; i++) {
+                    y66 i2 = b76Var.i(i);
+                    float paddingTop = getPaddingTop() + i2.b().top;
+                    View view2 = ((om) i2.a).a;
+                    float c = i2.c();
+                    if (c > 0.0f && (fragmentContextView = this.E) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
+                        cb1 capsuleBlobDrawable = this.E.getCapsuleBlobDrawable();
+                        int L = hl.L(1.0f) + ((int) capsuleBlobDrawable.d());
+                        int i3 = -L;
+                        capsuleBlobDrawable.setBounds(getPaddingLeft() - L, i3, (getMeasuredWidth() - getPaddingRight()) + L, hl.L(36.0f) + (L << 1) + i3);
+                        capsuleBlobDrawable.setAlpha((int) (c * 255.0f));
+                        canvas2.save();
+                        canvas2.translate(0.0f, paddingTop);
+                        capsuleBlobDrawable.draw(canvas2);
+                        canvas2.restore();
+                        view = view2;
+                    }
+                }
+            }
+            View view3 = view;
+            canvas2.save();
+            canvas2.clipPath(this.w);
+            int entriesCount2 = getEntriesCount();
+            int i4 = 0;
+            while (i4 < entriesCount2) {
+                y66 i5 = b76Var.i(i4);
+                float paddingTop2 = getPaddingTop() + i5.b().top;
+                View view4 = ((om) i5.a).a;
+                float min = Math.min(1.0f, i5.c.a) * i5.c();
+                if (min > 0.0f && view3 != view4) {
+                    int alpha = aob.j0.getAlpha();
+                    aob.j0.setAlpha((int) (alpha * min));
+                    float f = 1.0f - min;
+                    canvas2.drawLine(getPaddingLeft() + (hl.L(16.0f) * f), paddingTop2, getWidth() - ((hl.L(16.0f) * f) + getPaddingRight()), paddingTop2, aob.j0);
+                    aob.j0.setAlpha(alpha);
+                }
+                i4++;
+                canvas2 = canvas;
+            }
+            this.F = view3 != null;
+            this.G = false;
+            super.dispatchDraw(canvas);
+            canvas.restore();
+            if (view3 != null) {
+                this.G = true;
+                this.F = false;
+                super.dispatchDraw(canvas);
+            }
         }
     }
 
-    public final void X() {
-        ArrayList arrayList = new ArrayList();
-        int i = this.Q;
-        ArrayList arrayList2 = na7.q1(i).y;
-        int size = arrayList2.size();
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList2.get(i2);
-            i2++;
-            TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-((TLRPC.Dialog) obj).id));
-            if (K0 != null && hc2.V(K0) && hc2.t0(K0) && !hc2.r0(K0)) {
-                arrayList.add(K0);
-                if (arrayList.size() >= 100) {
-                    break;
-                }
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        jl0 jl0Var;
+        if (super.dispatchTouchEvent(motionEvent)) {
+            return true;
         }
-        ArrayList arrayList3 = this.Y;
-        arrayList3.clear();
-        arrayList3.addAll(arrayList);
+        return motionEvent.getAction() == 0 && (jl0Var = this.s) != null && jl0Var.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        FragmentContextView fragmentContextView = this.E;
+        if (fragmentContextView == null || !(fragmentContextView == view || fragmentContextView.getParent() == view)) {
+            if (this.G) {
+                return false;
+            }
+        } else if (this.F) {
+            return false;
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    @Override // pm
+    public final void f() {
+        k();
+        invalidate();
+    }
+
+    public final void k() {
+        float f = getMetadata().g.a;
+        float f2 = getMetadata().c.a;
+        RectF rectF = this.x;
+        rectF.set(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getPaddingTop() + f);
+        float min = Math.min(hl.L(this.y), Math.min(rectF.width(), rectF.height()) / 2.0f);
+        Path path = this.w;
+        path.rewind();
+        path.addRoundRect(rectF, min, min, Path.Direction.CW);
+        jl0 jl0Var = this.s;
+        if (jl0Var != null) {
+            jl0Var.setAlpha((int) (f2 * 255.0f));
+            this.s.setBounds(hl.L(4.0f), hl.L(14.0f), getMeasuredWidth() - hl.L(4.0f), ((getPaddingBottom() + getPaddingTop()) + ((int) f)) - hl.L(14.0f));
+            this.s.r(Math.min(hl.L(this.y), f / 2.0f));
+        }
+    }
+
+    @Override // pm, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        k();
+    }
+
+    public void setBlurredBackground(jl0 jl0Var) {
+        this.s = jl0Var;
+    }
+
+    public void setCallFragmentContextView(FragmentContextView fragmentContextView) {
+        this.E = fragmentContextView;
+        fragmentContextView.getCapsuleBlobDrawable().setCallback(this);
+    }
+
+    public void setDefaultRadiusDp(int i) {
+        this.y = i;
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        jl0 jl0Var = this.s;
+        if (jl0Var != null) {
+            jl0Var.updateColors();
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        if (super.verifyDrawable(drawable)) {
+            return true;
+        }
+        FragmentContextView fragmentContextView = this.E;
+        return fragmentContextView != null && fragmentContextView.getCapsuleBlobDrawable() == drawable;
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

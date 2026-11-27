@@ -2,14 +2,14 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzif {
-    private final d06 zza;
+    private final h26 zza;
 
     public zzif() {
         int i = zzby.zza;
-        this.zza = cne.b(zzie.zza);
+        this.zza = ure.b(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -21,11 +21,11 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, fw2 fw2Var) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, zw2 zw2Var) {
         zzic zzicVar;
         int i;
-        if (fw2Var instanceof zzic) {
-            zzicVar = (zzic) fw2Var;
+        if (zw2Var instanceof zzic) {
+            zzicVar = (zzic) zw2Var;
             int i2 = zzicVar.zzc;
             if ((i2 & TLObject.FLAG_31) != 0) {
                 zzicVar.zzc = i2 - TLObject.FLAG_31;
@@ -33,28 +33,28 @@ public final class zzif {
                 i = zzicVar.zzc;
                 if (i == 0) {
                     if (i == 1) {
-                        qse.b(obj);
+                        ixe.b(obj);
                         return obj;
                     }
-                    sc8.j("call to 'resume' before 'invoke' with coroutine");
+                    grb.i("call to 'resume' before 'invoke' with coroutine");
                     return null;
                 }
-                qse.b(obj);
+                ixe.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
-                Object b = h9e.b(zzidVar, zzicVar);
-                bx2 bx2Var = bx2.a;
-                return b == bx2Var ? bx2Var : b;
+                Object b = xde.b(zzidVar, zzicVar);
+                vx2 vx2Var = vx2.a;
+                return b == vx2Var ? vx2Var : b;
             }
         }
-        zzicVar = new zzic(zzifVar, fw2Var);
+        zzicVar = new zzic(zzifVar, zw2Var);
         Object obj2 = zzicVar.zza;
         i = zzicVar.zzc;
         if (i == 0) {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, fw2 fw2Var) {
-        return zzc(this, zzcyVar, zzyeVar, fw2Var);
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, zw2 zw2Var) {
+        return zzc(this, zzcyVar, zzyeVar, zw2Var);
     }
 }

@@ -1,45 +1,75 @@
 // default package
 
-import org.telegram.messenger.ImageReceiver;
+import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class pd8 extends ld8 {
-    public final jm6 b;
-    public final y3a c;
+public final class pd8 {
+    public final /* synthetic */ nc8 a;
 
-    public pd8(y3a y3aVar) {
-        gl5 gl5Var;
-        this.c = y3aVar;
-        jm6 jm6Var = y3aVar.y;
-        this.b = jm6Var;
-        this.a.q0(gl.L(7.0f));
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.o0(0, 0, true);
-        String str = jm6Var.g;
-        int i = jm6Var.C;
-        String str2 = jm6Var.I;
+    public pd8(nc8 nc8Var) {
+        this.a = nc8Var;
+    }
+
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        hl.c3(new me7((Object) this, Integer.parseInt(str), (byte) 7));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        hl.c3(new nd8(this, (byte) 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f) {
+        this.a.K = f;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i) {
+        this.a.J = i * 1000;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i) {
+        nc8 nc8Var = this.a;
+        nc8Var.I = i * 1000;
+        String str = nc8Var.s;
         if (str != null) {
-            gl5Var = gl5.g(str);
-        } else {
-            String str3 = jm6Var.c;
-            if (str3 != null) {
-                gl5Var = gl5.g(str3);
-            } else if (str2 == null) {
-                imageReceiver.f();
-                gl5Var = null;
-            } else if (!jm6Var.b || jm6Var.d()) {
-                gl5Var = gl5.g("thumb://" + i + ":" + str2);
-                imageReceiver.o0(jm6Var.J, jm6Var.K, true);
+            nc8Var.g(str);
+            nc8Var.s = null;
+        }
+    }
+
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int i;
+        int parseInt = Integer.parseInt(str);
+        nc8 nc8Var = this.a;
+        boolean z = nc8Var.H;
+        boolean z2 = false;
+        byte b = 1;
+        nc8Var.H = parseInt == 1 || parseInt == 3;
+        nc8Var.a(z);
+        if (parseInt != 0) {
+            if (parseInt != 1) {
+                i = 2;
+                if (parseInt == 2) {
+                    i = 3;
+                } else if (parseInt != 3) {
+                    i = 1;
+                }
             } else {
-                gl5Var = gl5.g("vthumb://" + i + ":" + str2);
+                i = 3;
             }
-        }
-        gl5 gl5Var2 = gl5Var;
-        if (gl5Var2 != null) {
-            imageReceiver.d0(gl5Var2, null, null, null, null, 0);
+            z2 = true;
         } else {
-            imageReceiver.f();
+            i = 4;
         }
+        if (i == 3 && nc8Var.h.getVisibility() != 4) {
+            hl.d3(new nd8(this, b), 300L);
+        }
+        hl.c3(new wr6(this, z2, i, b));
     }
 }

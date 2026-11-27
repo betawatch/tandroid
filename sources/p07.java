@@ -1,90 +1,33 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.widget.HeaderViewListAdapter;
-import android.widget.ListAdapter;
-import androidx.appcompat.view.menu.ListMenuItemView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class p07 extends er3 {
-    public final byte E;
-    public b07 F;
-    public c07 G;
-    public final byte y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class p07 {
+    public byte a = 0;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public String e;
+    public float f;
+    public TLRPC.Photo g;
+    public TLRPC.Document h;
+    public TLRPC.Document i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public boolean n;
 
-    public p07(Context context, boolean z) {
-        super(context, z);
-        if (1 == o07.a(context.getResources().getConfiguration())) {
-            this.y = (byte) 21;
-            this.E = (byte) 22;
-        } else {
-            this.y = (byte) 22;
-            this.E = (byte) 21;
+    public final boolean a() {
+        return this.a == 1;
+    }
+
+    public final boolean b() {
+        if (this.a == 2) {
+            return (this.b || this.c || this.d) ? this.h != null : this.g != null;
         }
-    }
-
-    @Override // er3, android.view.View
-    public final boolean onHoverEvent(MotionEvent motionEvent) {
-        vz6 vz6Var;
-        int i;
-        int pointToPosition;
-        int i2;
-        if (this.F != null) {
-            ListAdapter adapter = getAdapter();
-            if (adapter instanceof HeaderViewListAdapter) {
-                HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
-                i = headerViewListAdapter.getHeadersCount();
-                vz6Var = (vz6) headerViewListAdapter.getWrappedAdapter();
-            } else {
-                vz6Var = (vz6) adapter;
-                i = 0;
-            }
-            c07 item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i2 = pointToPosition - i) < 0 || i2 >= vz6Var.getCount()) ? null : vz6Var.getItem(i2);
-            c07 c07Var = this.G;
-            if (c07Var != item) {
-                yz6 yz6Var = vz6Var.a;
-                if (c07Var != null) {
-                    this.F.i(yz6Var, c07Var);
-                }
-                this.G = item;
-                if (item != null) {
-                    this.F.q(yz6Var, item);
-                }
-            }
-        }
-        return super.onHoverEvent(motionEvent);
-    }
-
-    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i, KeyEvent keyEvent) {
-        ListMenuItemView listMenuItemView = (ListMenuItemView) getSelectedView();
-        if (listMenuItemView != null) {
-            if (i == this.y) {
-                if (listMenuItemView.isEnabled() && listMenuItemView.getItemData().hasSubMenu()) {
-                    performItemClick(listMenuItemView, getSelectedItemPosition(), getSelectedItemId());
-                }
-                return true;
-            }
-            if (i == this.E) {
-                setSelection(-1);
-                ListAdapter adapter = getAdapter();
-                (adapter instanceof HeaderViewListAdapter ? (vz6) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (vz6) adapter).a.c(false);
-                return true;
-            }
-        }
-        return super.onKeyDown(i, keyEvent);
-    }
-
-    public void setHoverListener(b07 b07Var) {
-        this.F = b07Var;
-    }
-
-    @Override // er3, android.widget.AbsListView
-    public /* bridge */ /* synthetic */ void setSelector(Drawable drawable) {
-        super.setSelector(drawable);
+        return false;
     }
 }

@@ -7,50 +7,50 @@ import android.provider.Settings;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class VoIPPendingCall {
-    private j5 accountInstance;
+    private k5 accountInstance;
     private final Activity activity;
     private Handler handler;
-    private kk7 notificationCenter;
-    private final gk7 observer;
+    private jn7 notificationCenter;
+    private final fn7 observer;
     private final Runnable releaseRunnable;
     private boolean released;
     private final long userId;
     private final boolean video;
 
-    private VoIPPendingCall(Activity activity, long j, boolean z, long j2, j5 j5Var) {
-        su2 su2Var = new su2(this, (byte) 5);
-        this.observer = su2Var;
-        kbc kbcVar = new kbc(this, (byte) 11);
-        this.releaseRunnable = kbcVar;
+    private VoIPPendingCall(Activity activity, long j, boolean z, long j2, k5 k5Var) {
+        nv2 nv2Var = new nv2(this, (byte) 5);
+        this.observer = nv2Var;
+        azb azbVar = new azb(this, (byte) 28);
+        this.releaseRunnable = azbVar;
         this.activity = activity;
         this.userId = j;
         this.video = z;
-        this.accountInstance = j5Var;
+        this.accountInstance = k5Var;
         if (onConnectionStateUpdated(false)) {
             return;
         }
-        kk7 f = kk7.f(y6c.t0);
+        jn7 f = jn7.f(yac.t0);
         this.notificationCenter = f;
-        f.a(su2Var, kk7.S1);
+        f.a(nv2Var, jn7.T1);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
-        handler.postDelayed(kbcVar, j2);
+        handler.postDelayed(azbVar, j2);
     }
 
     private boolean isAirplaneMode() {
         return Settings.System.getInt(this.activity.getContentResolver(), "airplane_mode_on", 0) != 0;
     }
 
-    private boolean isConnected(j5 j5Var) {
-        return ConnectionsManager.getInstance(j5Var.a).getConnectionState() == 3;
+    private boolean isConnected(k5 k5Var) {
+        return ConnectionsManager.getInstance(k5Var.a).getConnectionState() == 3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(int i, int i2, Object[] objArr) {
-        if (i == kk7.S1) {
+        if (i == jn7.T1) {
             onConnectionStateUpdated(false);
         }
     }
@@ -64,29 +64,29 @@ public final class VoIPPendingCall {
         if (this.released || !(z || isConnected(this.accountInstance) || isAirplaneMode())) {
             return false;
         }
-        na7 q1 = na7.q1(this.accountInstance.a);
-        TLRPC.User V1 = q1.V1(Long.valueOf(this.userId));
-        if (V1 != null) {
-            TLRPC.UserFull W1 = q1.W1(V1.id);
-            rgc.m(V1, this.video, W1 != null && W1.video_calls_available, this.activity, W1, this.accountInstance);
+        uc7 s1 = uc7.s1(this.accountInstance.a);
+        TLRPC.User X1 = s1.X1(Long.valueOf(this.userId));
+        if (X1 != null) {
+            TLRPC.UserFull Y1 = s1.Y1(X1.id);
+            xkc.m(X1, this.video, Y1 != null && Y1.video_calls_available, this.activity, Y1, this.accountInstance);
         } else if (isAirplaneMode()) {
-            rgc.m(null, this.video, false, this.activity, null, this.accountInstance);
+            xkc.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;
     }
 
-    public static VoIPPendingCall startOrSchedule(Activity activity, long j, boolean z, j5 j5Var) {
-        return new VoIPPendingCall(activity, j, z, 1000L, j5Var);
+    public static VoIPPendingCall startOrSchedule(Activity activity, long j, boolean z, k5 k5Var) {
+        return new VoIPPendingCall(activity, j, z, 1000L, k5Var);
     }
 
     public void release() {
         if (this.released) {
             return;
         }
-        kk7 kk7Var = this.notificationCenter;
-        if (kk7Var != null) {
-            kk7Var.n(this.observer, kk7.S1);
+        jn7 jn7Var = this.notificationCenter;
+        if (jn7Var != null) {
+            jn7Var.n(this.observer, jn7.T1);
         }
         Handler handler = this.handler;
         if (handler != null) {

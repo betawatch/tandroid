@@ -1,76 +1,62 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qna implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vqa b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qna implements Iterator {
+    public int a = -1;
+    public boolean b;
+    public Iterator c;
+    public final /* synthetic */ ona d;
 
-    public /* synthetic */ qna(vqa vqaVar, byte b) {
-        this.a = b;
-        this.b = vqaVar;
+    public qna(ona onaVar) {
+        this.d = onaVar;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        TLRPC.Message message;
-        byte b = this.a;
-        vqa vqaVar = this.b;
-        switch (b) {
-            case 0:
-                ((Boolean) obj).booleanValue();
-                vqaVar.dismiss();
-                break;
-            case 1:
-                if (((Boolean) obj).booleanValue()) {
-                    vqaVar.O0 = true;
-                }
-                vqaVar.dismiss();
-                break;
-            case 2:
-                TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
-                if (stargiftupgradepreview != null) {
-                    vqaVar.m3 = stargiftupgradepreview.sample_attributes;
-                    vqaVar.n3 = stargiftupgradepreview.prices;
-                    vqaVar.o3 = stargiftupgradepreview.next_prices;
-                    vqaVar.e2();
-                    break;
-                } else {
-                    vqaVar.getClass();
-                    break;
-                }
-            default:
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
-                vqaVar.I2 = false;
-                vqaVar.J2 = true;
-                if (savedStarGift != null) {
-                    vqaVar.k3 = Boolean.valueOf(savedStarGift.unsaved);
-                    k27 k27Var = vqaVar.C2;
-                    if (k27Var != null && (message = k27Var.k) != null) {
-                        TLRPC.MessageAction messageAction = message.action;
-                        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
-                            TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
-                            boolean z = tL_messageActionStarGiftUnique.saved;
-                            boolean z2 = !savedStarGift.unsaved;
-                            if (z != z2) {
-                                tL_messageActionStarGiftUnique.saved = z2;
-                            }
-                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
-                            TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
-                            boolean z3 = tL_messageActionStarGift.saved;
-                            boolean z4 = !savedStarGift.unsaved;
-                            if (z3 != z4) {
-                                tL_messageActionStarGift.saved = z4;
-                            }
-                        }
-                        vqaVar.l2(k27Var, null);
-                        break;
-                    }
-                }
-                break;
+    public final Iterator a() {
+        Iterator it = this.c;
+        if (it != null) {
+            return it;
         }
+        Iterator it2 = this.d.b.entrySet().iterator();
+        this.c = it2;
+        return it2;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i = this.a + 1;
+        ona onaVar = this.d;
+        return i < onaVar.a.size() || (!onaVar.b.isEmpty() && a().hasNext());
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        this.b = true;
+        int i = this.a + 1;
+        this.a = i;
+        ona onaVar = this.d;
+        return i < onaVar.a.size() ? (Map.Entry) onaVar.a.get(this.a) : (Map.Entry) a().next();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        if (!this.b) {
+            grb.i("remove() was called before next()");
+            return;
+        }
+        this.b = false;
+        int i = ona.f;
+        ona onaVar = this.d;
+        onaVar.c();
+        if (this.a >= onaVar.a.size()) {
+            a().remove();
+            return;
+        }
+        int i2 = this.a;
+        this.a = i2 - 1;
+        onaVar.i(i2);
     }
 }

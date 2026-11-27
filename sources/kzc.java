@@ -1,412 +1,75 @@
 // default package
 
-import j$.lang.Iterable$-CC;
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.Spliterators;
-import j$.util.stream.Stream;
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class kzc extends AbstractCollection implements Serializable, Collection {
-    public static final Object[] b = new Object[0];
-    public static final Object[] c = new Object[0];
-    public static final Object[] d = new Object[0];
-    public static final Object[] e = new Object[0];
-    public static final Object[] f = new Object[0];
-    public static final Object[] h = new Object[0];
-    public final /* synthetic */ byte a;
+public final class kzc {
+    public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
+    public static final Pattern d = Pattern.compile("^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$");
+    public final ey7 a = new ey7();
+    public final StringBuilder b = new StringBuilder();
 
-    public /* synthetic */ kzc(byte b2) {
-        this.a = b2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
+    public static String a(ey7 ey7Var, StringBuilder sb) {
+        boolean z = false;
+        sb.setLength(0);
+        int i = ey7Var.b;
+        int i2 = ey7Var.c;
+        while (i < i2 && !z) {
+            char c2 = (char) ey7Var.a[i];
+            if ((c2 < 'A' || c2 > 'Z') && ((c2 < 'a' || c2 > 'z') && !((c2 >= '0' && c2 <= '9') || c2 == '#' || c2 == '-' || c2 == '.' || c2 == '_'))) {
+                z = true;
+            } else {
+                i++;
+                sb.append(c2);
+            }
         }
+        ey7Var.O(i - ey7Var.b);
+        return sb.toString();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
+    public static String b(ey7 ey7Var, StringBuilder sb) {
+        c(ey7Var);
+        if (ey7Var.a() == 0) {
+            return null;
         }
+        String a = a(ey7Var, sb);
+        return !a.isEmpty() ? a : String.valueOf((char) ey7Var.A());
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.lang.Iterable, j$.util.Collection
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        byte b2 = this.a;
-        Iterable$-CC.$default$forEach(this, consumer);
-    }
-
-    public abstract int h(Object[] objArr);
-
-    public int i() {
-        return 0;
-    }
-
-    public int j() {
-        return 0;
-    }
-
-    public abstract Object[] k();
-
-    public abstract int l(Object[] objArr);
-
-    public abstract int m();
-
-    public int n() {
-        return 0;
-    }
-
-    public abstract Object[] o();
-
-    public int p(Object[] objArr) {
-        v5c u = u();
-        int i = 0;
-        while (u.hasNext()) {
-            objArr[i] = u.next();
-            i++;
-        }
-        return i;
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        byte b2 = this.a;
-        return Stream.Wrapper.convert(parallelStream());
-    }
-
-    public int q() {
-        switch (this.a) {
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-            default:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    public Object[] r() {
-        return null;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ boolean removeIf(Predicate predicate) {
-        byte b2 = this.a;
-        return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(java.util.Collection collection) {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                throw new UnsupportedOperationException();
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    public int s() {
-        switch (this.a) {
-            case 2:
-                throw new UnsupportedOperationException();
-            case 3:
-                throw new UnsupportedOperationException();
-            case 4:
-                throw new UnsupportedOperationException();
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final Spliterator spliterator() {
-        switch (this.a) {
-        }
-        return Spliterators.spliterator(this, 1296);
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        byte b2 = this.a;
-        return Stream.Wrapper.convert(stream());
-    }
-
-    public int t() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                objArr.getClass();
-                int size = size();
-                int length = objArr.length;
-                if (length < size) {
-                    Object[] k = k();
-                    if (k != null) {
-                        break;
-                    } else {
-                        if (length != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
+    public static void c(ey7 ey7Var) {
+        while (true) {
+            for (boolean z = true; ey7Var.a() > 0 && z; z = false) {
+                int i = ey7Var.b;
+                byte[] bArr = ey7Var.a;
+                byte b = bArr[i];
+                char c2 = (char) b;
+                if (c2 == '\t' || c2 == '\n' || c2 == '\f' || c2 == '\r' || c2 == ' ') {
+                    ey7Var.O(1);
+                } else {
+                    int i2 = ey7Var.c;
+                    int i3 = i + 2;
+                    if (i3 <= i2) {
+                        int i4 = i + 1;
+                        if (b == 47 && bArr[i4] == 42) {
+                            while (true) {
+                                int i5 = i3 + 1;
+                                if (i5 >= i2) {
+                                    break;
+                                }
+                                if (((char) bArr[i3]) == '*' && ((char) bArr[i5]) == '/') {
+                                    i3 += 2;
+                                    i2 = i3;
+                                } else {
+                                    i3 = i5;
+                                }
+                            }
+                            ey7Var.O(i2 - ey7Var.b);
                         }
-                        objArr = Arrays.copyOf(objArr, size);
                     }
-                } else if (length > size) {
-                    objArr[size] = null;
                 }
-                h(objArr);
-                break;
-            case 1:
-                objArr.getClass();
-                int size2 = size();
-                int length2 = objArr.length;
-                if (length2 < size2) {
-                    Object[] o = o();
-                    if (o != null) {
-                        break;
-                    } else {
-                        if (length2 != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
-                        }
-                        objArr = Arrays.copyOf(objArr, size2);
-                    }
-                } else if (length2 > size2) {
-                    objArr[size2] = null;
-                }
-                l(objArr);
-                break;
-            case 2:
-                objArr.getClass();
-                int size3 = size();
-                int length3 = objArr.length;
-                if (length3 < size3) {
-                    Object[] v = v();
-                    if (v != null) {
-                        break;
-                    } else {
-                        if (length3 != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
-                        }
-                        objArr = Arrays.copyOf(objArr, size3);
-                    }
-                } else if (length3 > size3) {
-                    objArr[size3] = null;
-                }
-                p(objArr);
-                break;
-            case 3:
-                objArr.getClass();
-                int size4 = size();
-                int length4 = objArr.length;
-                if (length4 < size4) {
-                    Object[] r = r();
-                    if (r != null) {
-                        break;
-                    } else {
-                        if (length4 != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
-                        }
-                        objArr = Arrays.copyOf(objArr, size4);
-                    }
-                } else if (length4 > size4) {
-                    objArr[size4] = null;
-                }
-                w(objArr);
-                break;
-            case 4:
-                objArr.getClass();
-                int size5 = size();
-                int length5 = objArr.length;
-                if (length5 < size5) {
-                    Object[] v2 = v();
-                    if (v2 != null) {
-                        break;
-                    } else {
-                        if (length5 != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
-                        }
-                        objArr = Arrays.copyOf(objArr, size5);
-                    }
-                } else if (length5 > size5) {
-                    objArr[size5] = null;
-                }
-                p(objArr);
-                break;
-            default:
-                objArr.getClass();
-                int size6 = size();
-                int length6 = objArr.length;
-                if (length6 < size6) {
-                    Object[] x = x();
-                    if (x != null) {
-                        break;
-                    } else {
-                        if (length6 != 0) {
-                            objArr = Arrays.copyOf(objArr, 0);
-                        }
-                        objArr = Arrays.copyOf(objArr, size6);
-                    }
-                } else if (length6 > size6) {
-                    objArr[size6] = null;
-                }
-                p(objArr);
-                break;
+            }
+            return;
         }
-        return objArr;
-    }
-
-    public abstract v5c u();
-
-    public Object[] v() {
-        byte b2 = this.a;
-        return null;
-    }
-
-    public abstract int w(Object[] objArr);
-
-    public Object[] x() {
-        return null;
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ j$.util.stream.Stream parallelStream() {
-        byte b2 = this.a;
-        return Collection.-CC.$default$parallelStream(this);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ j$.util.stream.Stream stream() {
-        byte b2 = this.a;
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ java.util.Spliterator spliterator() {
-        byte b2 = this.a;
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        switch (this.a) {
-            case 0:
-                return toArray(b);
-            case 1:
-                return toArray(c);
-            case 2:
-                return toArray(d);
-            case 3:
-                return toArray(e);
-            case 4:
-                return toArray(f);
-            default:
-                return toArray(h);
-        }
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        byte b2 = this.a;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
     }
 }

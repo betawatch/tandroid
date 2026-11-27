@@ -1,41 +1,31 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.view.PixelCopy;
-import java.util.concurrent.CountDownLatch;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ok implements PixelCopy.OnPixelCopyFinishedListener {
+public final /* synthetic */ class ok implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ ok(Object obj, Object obj2, byte b) {
+    public /* synthetic */ ok(View view, byte b) {
         this.a = b;
-        this.b = obj;
-        this.c = obj2;
+        this.b = view;
     }
 
-    @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
-    public final void onPixelCopyFinished(int i) {
-        switch (this.a) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        View view = this.b;
+        switch (b) {
             case 0:
-                boolean[] zArr = (boolean[]) this.b;
-                CountDownLatch countDownLatch = (CountDownLatch) this.c;
-                zArr[0] = i == 0;
-                countDownLatch.countDown();
+                view.setTranslationX((float) (Math.sin(((Float) valueAnimator.getAnimatedValue()).floatValue() * 3.141592653589793d * 4.0d) * (1.0f - r8) * r8 * 4.0f * hl.L(4.0f)));
                 break;
             default:
-                fi6 fi6Var = (fi6) this.b;
-                Bitmap bitmap = (Bitmap) this.c;
-                fi6Var.h = false;
-                if (!fi6Var.i && i == 0) {
-                    fi6Var.f = fi6Var.e;
-                    fi6Var.e = bitmap;
-                    fi6Var.a.run();
-                    break;
-                }
+                float sin = (((float) Math.sin(((Float) valueAnimator.getAnimatedValue()).floatValue() * 3.141592653589793d)) * 0.03f) + 1.0f;
+                view.setScaleX(sin);
+                view.setScaleY(sin);
                 break;
         }
     }

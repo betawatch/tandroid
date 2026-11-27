@@ -1,6 +1,68 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface sp4 extends fq4 {
+import android.content.Context;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.ui.Components.FragmentContextView;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class sp4 extends d20 {
+    public final /* synthetic */ byte E;
+    public final /* synthetic */ Context F;
+    public final /* synthetic */ FragmentContextView G;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ sp4(FragmentContextView fragmentContextView, Context context, Context context2, byte b) {
+        super(context);
+        this.E = b;
+        this.G = fragmentContextView;
+        this.F = context2;
+    }
+
+    @Override // d20
+    public final TextView a() {
+        byte b = this.E;
+        FragmentContextView fragmentContextView = this.G;
+        Context context = this.F;
+        switch (b) {
+            case 0:
+                TextView textView = new TextView(context);
+                textView.setMaxLines(1);
+                textView.setLines(1);
+                textView.setSingleLine(true);
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textView.setTextSize(1, 15.0f);
+                textView.setGravity(19);
+                vnb vnbVar = fragmentContextView.q0;
+                int i = fragmentContextView.U;
+                if (i == 0 || i == 2) {
+                    textView.setGravity(19);
+                    textView.setTypeface(Typeface.DEFAULT);
+                    textView.setTextSize(1, 15.0f);
+                } else if (i == 4) {
+                    textView.setGravity(51);
+                    yob.X(textView, aob.t7, vnbVar);
+                    textView.setTypeface(hl.o());
+                    textView.setTextSize(1, 15.0f);
+                } else if (i == 1 || i == 3) {
+                    textView.setGravity(19);
+                    yob.X(textView, aob.A7, vnbVar);
+                    textView.setTypeface(hl.o());
+                    textView.setTextSize(1, 14.0f);
+                }
+                return textView;
+            default:
+                TextView textView2 = new TextView(context);
+                textView2.setMaxLines(1);
+                textView2.setLines(1);
+                textView2.setSingleLine(true);
+                textView2.setEllipsize(TextUtils.TruncateAt.END);
+                textView2.setGravity(3);
+                textView2.setTextSize(1, 13.0f);
+                yob.X(textView2, aob.x7, fragmentContextView.q0);
+                return textView2;
+        }
+    }
 }

@@ -1,88 +1,107 @@
 // default package
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.ImageView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class j82 implements ed, vc7, ma6, sc7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ p82 b;
+public final class j82 extends if0 implements snb {
+    public int E;
+    public final ImageView s;
+    public i82 w;
+    public TLRPC.Chat x;
+    public boolean y;
 
-    public /* synthetic */ j82(p82 p82Var, byte b) {
-        this.a = b;
-        this.b = p82Var;
+    public j82(Context context, vnb vnbVar) {
+        super(context, vnbVar);
+        this.d.setTypeface(hl.o());
+        ImageView imageView = new ImageView(context);
+        this.s = imageView;
+        imageView.setFocusable(false);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        int w0 = aob.w0(null, aob.Mi, false);
+        this.E = w0;
+        imageView.setBackground(aob.f0(w0, 1, -1));
+        imageView.setImageResource(R.drawable.poll_remove);
+        yob.s(imageView, aob.m6, null, PorterDuff.Mode.MULTIPLY);
+        imageView.setContentDescription(ob6.M0(2131751563, null));
+        boolean z = ob6.a0;
+        addView(imageView, tre.d(48, 50.0f, (z ? 3 : 5) | 17, z ? 3.0f : 0.0f, 0.0f, z ? 0.0f : 3.0f, 0.0f));
+        this.d.setPadding(hl.L(ob6.a0 ? 24.0f : 0.0f), 0, hl.L(ob6.a0 ? 0.0f : 24.0f), 0);
     }
 
-    @Override // ma6
-    public final void b(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
-        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
-        tL_channelLocation.address = messageMedia.address;
-        tL_channelLocation.geo_point = messageMedia.geo;
-        p82 p82Var = this.b;
-        TLRPC.ChatFull chatFull = p82Var.y0;
-        chatFull.location = tL_channelLocation;
-        chatFull.flags |= 32768;
-        p82Var.t0(false, true);
-        p82Var.getMessagesController().Y2(0, p82Var.w0, true);
-    }
-
-    @Override // sc7
-    public final void k(boolean z) {
-        boolean O1 = gl.O1();
-        int i = kk7.s;
-        p82 p82Var = this.b;
-        if (O1) {
-            p82Var.getNotificationCenter().k(i, Long.valueOf(-p82Var.w0));
+    public final void f(TLRPC.Chat chat, int i, boolean z, int i2) {
+        String M0;
+        this.y = z;
+        this.x = chat;
+        rb0 rb0Var = this.b;
+        rb0Var.p(chat);
+        int L = hl.L(20.0f);
+        de0 de0Var = this.c;
+        de0Var.setRoundRadius(L);
+        de0Var.f(chat, rb0Var);
+        String str = chat.title;
+        ff0 ff0Var = this.d;
+        ff0Var.k(pv3.m(str, ff0Var.getPaint().getFontMetricsInt(), false, null, 0));
+        boolean V = xc2.V(chat);
+        if (z) {
+            if (i2 >= 1) {
+                M0 = ob6.G(i2, V ? "Subscribers" : "Members", new Object[0]);
+            } else {
+                M0 = ob6.M0(V ? 2131751355 : 2131754872, null);
+            }
+            setSubtitle(M0);
         } else {
-            p82Var.getNotificationCenter().k(i, new Object[0]);
+            setSubtitle(ob6.G(i, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
         }
-        p82Var.finishFragment();
-        p82Var.getNotificationCenter().k(kk7.J2, Long.valueOf(-p82Var.x0.id), null, p82Var.x0, Boolean.valueOf(z));
+        yob.W(this.e, aob.r5, this.a);
+        setDivider(true);
+        ImageView imageView = this.s;
+        if (z) {
+            imageView.setVisibility(0);
+        } else {
+            imageView.setVisibility(4);
+        }
+        imageView.setOnClickListener(new sb1((Object) this, (Object) chat, (byte) 14));
     }
 
-    @Override // vc7
-    public final void run(long j) {
-        byte b = this.a;
-        p82 p82Var = this.b;
-        switch (b) {
-            case 4:
-                p82Var.x0(Long.valueOf(j));
-                break;
-            default:
-                if (j != 0) {
-                    p82Var.w0 = j;
-                    p82Var.x0 = p82Var.getMessagesController().K0(Long.valueOf(j));
-                    p82Var.O0 = false;
-                    TLRPC.ChatFull chatFull = p82Var.y0;
-                    if (chatFull != null) {
-                        chatFull.hidden_prehistory = true;
-                    }
-                    p82Var.n0();
-                    break;
-                } else {
-                    p82Var.O0 = false;
-                    break;
-                }
+    public TLRPC.Chat getChat() {
+        return this.x;
+    }
+
+    @Override // if0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        this.s.measure(View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
+    }
+
+    public void setChatDeleteListener(i82 i82Var) {
+        this.w = i82Var;
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            int w0 = aob.w0(null, aob.Mi, false);
+            ImageView imageView = this.s;
+            if (imageView == null || w0 == this.E) {
+                return;
+            }
+            this.E = w0;
+            aob.F1(imageView.getBackground(), w0, true);
+            imageView.invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        p82 p82Var = this.b;
-        switch (b) {
-            case 0:
-                p82Var.n0();
-                break;
-            case 1:
-                p82Var.finishFragment();
-                break;
-            case 2:
-                p82Var.n0();
-                break;
-            default:
-                p82Var.finishFragment();
-                break;
-        }
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,27 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Bundle;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum krb extends qsb {
-    public krb() {
-        super("SelfClosingStartTag", 41);
+public final class krb extends s29 {
+    public static final String d;
+    public static final String e;
+    public final boolean b;
+    public final boolean c;
+
+    static {
+        String str = gcc.a;
+        d = "1";
+        e = "2";
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.i.l = true;
-            aqbVar.k();
-            aqbVar.c = lqbVar;
-        } else if (d == 65535) {
-            aqbVar.l(this);
-            aqbVar.c = lqbVar;
-        } else {
-            aqbVar.m(this);
-            zj1Var.q();
-            aqbVar.c = qsb.X;
+    public krb() {
+        this.b = false;
+        this.c = false;
+    }
+
+    @Override // s29
+    public final boolean b() {
+        return this.b;
+    }
+
+    @Override // s29
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(s29.a, 3);
+        bundle.putBoolean(d, this.b);
+        bundle.putBoolean(e, this.c);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof krb)) {
+            return false;
         }
+        krb krbVar = (krb) obj;
+        return this.c == krbVar.c && this.b == krbVar.b;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.b), Boolean.valueOf(this.c));
+    }
+
+    public krb(boolean z) {
+        this.b = true;
+        this.c = z;
     }
 }

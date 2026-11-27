@@ -1,37 +1,55 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y67 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ long d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class y67 extends LinearLayout {
+    public static final /* synthetic */ int d = 0;
+    public final TextView[] a;
+    public final TextView[] b;
+    public final /* synthetic */ z67 c;
 
-    public /* synthetic */ y67(na7 na7Var, TLRPC.TL_error tL_error, long j, byte b) {
-        this.a = b;
-        this.b = na7Var;
-        this.c = tL_error;
-        this.d = j;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y67(z67 z67Var, Context context) {
+        super(context);
+        this.c = z67Var;
+        this.a = new TextView[4];
+        this.b = new TextView[4];
+        setOrientation(1);
+        setPadding(hl.L(16.0f), 0, hl.L(16.0f), hl.L(16.0f));
+        int i = 0;
+        while (i < 2) {
+            LinearLayout j = uh9.j(context, 0);
+            for (int i2 = 0; i2 < 2; i2++) {
+                LinearLayout j2 = uh9.j(context, 1);
+                LinearLayout j3 = uh9.j(context, 0);
+                int i3 = (i << 1) + i2;
+                this.a[i3] = new TextView(context);
+                this.b[i3] = new TextView(context);
+                this.a[i3].setTypeface(hl.o());
+                this.a[i3].setTextSize(1, 17.0f);
+                this.b[i3].setTextSize(1, 13.0f);
+                this.b[i3].setGravity(3);
+                j3.addView(this.a[i3]);
+                j2.addView(j3);
+                j2.addView(this.b[i3]);
+                j.addView(j2, tre.l(1.0f, -1, -2));
+            }
+            addView(j, tre.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, i == 0 ? 16.0f : 0.0f));
+            i++;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
-            case 0:
-                na7Var.B(j, tL_error.text);
-                kk7.f(na7Var.currentAccount).k(kk7.G5, Long.valueOf(j));
-                break;
-            default:
-                na7Var.B(j, tL_error.text);
-                na7Var.l1.remove(Long.valueOf(j));
-                break;
+    public final void a() {
+        for (int i = 0; i < 4; i++) {
+            TextView textView = this.a[i];
+            int i2 = aob.G6;
+            z67 z67Var = this.c;
+            textView.setTextColor(aob.v0(i2, z67Var.getResourceProvider()));
+            this.b[i].setTextColor(aob.v0(aob.z6, z67Var.getResourceProvider()));
         }
     }
 }

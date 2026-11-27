@@ -1,15 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.app.Notification;
+import android.app.Person;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface ao7 {
-    ao7 a(w84 w84Var, Object obj);
+public abstract class ao7 {
+    public static Notification.MessagingStyle a(Person person) {
+        return new Notification.MessagingStyle(person);
+    }
 
-    ao7 d(w84 w84Var, boolean z);
-
-    ao7 e(w84 w84Var, int i);
-
-    ao7 f(w84 w84Var, double d);
-
-    ao7 g(w84 w84Var, long j);
+    public static Notification.MessagingStyle b(Notification.MessagingStyle messagingStyle, boolean z) {
+        return messagingStyle.setGroupConversation(z);
+    }
 }

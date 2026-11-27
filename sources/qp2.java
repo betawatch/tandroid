@@ -1,234 +1,174 @@
 // default package
 
-import android.content.Intent;
-import android.content.IntentSender;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import android.hardware.GeomagneticField;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.location.Location;
+import android.os.SystemClock;
+import android.view.WindowManager;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class qp2 {
-    public final HashMap a = new HashMap();
-    public final HashMap b = new HashMap();
-    public final HashMap c = new HashMap();
-    public ArrayList d = new ArrayList();
-    public final transient HashMap e = new HashMap();
-    public final HashMap f = new HashMap();
-    public final Bundle g = new Bundle();
-    public final /* synthetic */ wp2 h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qp2 implements SensorEventListener {
+    public float E;
+    public boolean F;
+    public float G;
+    public boolean H;
+    public long I;
+    public final cc6 a;
+    public SensorManager b;
+    public Sensor c;
+    public Sensor d;
+    public Sensor e;
+    public boolean f;
+    public final float[] h = new float[9];
+    public final float[] n = new float[9];
+    public final float[] r = new float[4];
+    public final float[] s = new float[3];
+    public final float[] w = new float[3];
+    public boolean x;
+    public float y;
 
-    public qp2(wp2 wp2Var) {
-        this.h = wp2Var;
+    public qp2(cc6 cc6Var) {
+        this.a = cc6Var;
     }
 
-    public final boolean a(int i, int i2, Intent intent) {
-        String str = (String) this.a.get(Integer.valueOf(i));
-        if (str == null) {
-            return false;
+    public final void a(Location location) {
+        if (location == null) {
+            return;
         }
-        v9 v9Var = (v9) this.e.get(str);
-        if (v9Var != null) {
-            r9 r9Var = v9Var.a;
-            if (this.d.contains(str)) {
-                r9Var.i(v9Var.b.a(intent, i2));
-                this.d.remove(str);
-                return true;
-            }
+        try {
+            this.y = new GeomagneticField((float) location.getLatitude(), (float) location.getLongitude(), (float) location.getAltitude(), System.currentTimeMillis()).getDeclination();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        this.f.remove(str);
-        this.g.putParcelable(str, new q9(intent, i2));
-        return true;
     }
 
-    public final void b(int i, s9 s9Var, Object obj) {
-        l69 l69Var;
-        Intent putExtra;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x008d  */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        int i;
         int i2;
-        Bundle bundleExtra;
-        byte b = s9Var.a;
-        Bundle bundle = null;
-        wp2 wp2Var = this.h;
-        switch (b) {
-            case 0:
-                String[] strArr = (String[]) obj;
-                strArr.getClass();
-                byte b2 = 4;
-                if (strArr.length == 0) {
-                    l69Var = new l69(d24.a, b2);
-                    break;
+        int i3;
+        WindowManager windowManager;
+        if (!this.f) {
+            return;
+        }
+        if (sensorEvent.sensor.getType() == 11) {
+            try {
+                float[] fArr = sensorEvent.values;
+                if (fArr.length > 4) {
+                    System.arraycopy(fArr, 0, this.r, 0, 4);
+                    SensorManager.getRotationMatrixFromVector(this.h, this.r);
                 } else {
-                    for (String str : strArr) {
-                        if (rr.b(wp2Var, str) == 0) {
-                        }
-                    }
-                    int b3 = qi6.b(strArr.length);
-                    if (b3 < 16) {
-                        b3 = 16;
-                    }
-                    LinkedHashMap linkedHashMap = new LinkedHashMap(b3);
-                    for (String str2 : strArr) {
-                        linkedHashMap.put(str2, Boolean.TRUE);
-                    }
-                    l69Var = new l69(linkedHashMap, b2);
-                    break;
+                    SensorManager.getRotationMatrixFromVector(this.h, fArr);
                 }
-            default:
-                l69Var = null;
-                break;
-        }
-        if (l69Var != null) {
-            new Handler(Looper.getMainLooper()).post(new jq((Object) this, i, (Object) l69Var, (byte) 1));
-            return;
-        }
-        byte b4 = 2;
-        switch (s9Var.a) {
-            case 0:
-                String[] strArr2 = (String[]) obj;
-                strArr2.getClass();
-                putExtra = new Intent("androidx.activity.result.contract.action.REQUEST_PERMISSIONS").putExtra("androidx.activity.result.contract.extra.PERMISSIONS", strArr2);
-                putExtra.getClass();
-                break;
-            case 1:
-                putExtra = (Intent) obj;
-                putExtra.getClass();
-                break;
-            case 2:
-                jp5 jp5Var = (jp5) obj;
-                jp5Var.getClass();
-                putExtra = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", jp5Var);
-                putExtra.getClass();
-                break;
-            default:
-                jp5 jp5Var2 = (jp5) obj;
-                putExtra = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST");
-                Intent intent = jp5Var2.b;
-                if (intent != null && (bundleExtra = intent.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE")) != null) {
-                    putExtra.putExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE", bundleExtra);
-                    intent.removeExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
-                    if (intent.getBooleanExtra("androidx.fragment.extra.ACTIVITY_OPTIONS_BUNDLE", false)) {
-                        jp5Var2 = new jp5(jp5Var2.a, null, jp5Var2.c, jp5Var2.d);
-                    }
-                }
-                putExtra.putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", jp5Var2);
-                if (go4.K(2)) {
-                    Log.v("FragmentManager", "CreateIntent created the following intent: " + putExtra);
-                    break;
-                }
-                break;
-        }
-        if (putExtra.getExtras() != null && putExtra.getExtras().getClassLoader() == null) {
-            putExtra.setExtrasClassLoader(wp2Var.getClassLoader());
-        }
-        if (putExtra.hasExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE")) {
-            bundle = putExtra.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
-            putExtra.removeExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
-        }
-        Bundle bundle2 = bundle;
-        if ("androidx.activity.result.contract.action.REQUEST_PERMISSIONS".equals(putExtra.getAction())) {
-            String[] stringArrayExtra = putExtra.getStringArrayExtra("androidx.activity.result.contract.extra.PERMISSIONS");
-            if (stringArrayExtra == null) {
-                stringArrayExtra = new String[0];
-            }
-            n9.v(wp2Var, stringArrayExtra, i);
-            return;
-        }
-        if (!"androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(putExtra.getAction())) {
-            wp2Var.startActivityForResult(putExtra, i, bundle2);
-            return;
-        }
-        jp5 jp5Var3 = (jp5) putExtra.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
-        try {
-            i2 = i;
-        } catch (IntentSender.SendIntentException e) {
-            e = e;
-            i2 = i;
-        }
-        try {
-            wp2Var.startIntentSenderForResult(jp5Var3.a, i2, jp5Var3.b, jp5Var3.c, jp5Var3.d, 0, bundle2);
-        } catch (IntentSender.SendIntentException e2) {
-            e = e2;
-            new Handler(Looper.getMainLooper()).post(new jq(this, i2, e, b4));
-        }
-    }
-
-    public final u9 c(String str, s9 s9Var, r9 r9Var) {
-        d(str);
-        this.e.put(str, new v9(r9Var, s9Var));
-        HashMap hashMap = this.f;
-        if (hashMap.containsKey(str)) {
-            Object obj = hashMap.get(str);
-            hashMap.remove(str);
-            r9Var.i(obj);
-        }
-        Bundle bundle = this.g;
-        q9 q9Var = (q9) bundle.getParcelable(str);
-        if (q9Var != null) {
-            bundle.remove(str);
-            r9Var.i(s9Var.a(q9Var.b, q9Var.a));
-        }
-        return new u9(this, str, s9Var, (byte) 1);
-    }
-
-    public final void d(String str) {
-        HashMap hashMap = this.b;
-        if (((Integer) hashMap.get(str)) != null) {
-            return;
-        }
-        r3 r3Var = yy8.a;
-        int nextInt = yy8.a.a().nextInt(2147418112);
-        while (true) {
-            int i = nextInt + 65536;
-            Integer valueOf = Integer.valueOf(i);
-            HashMap hashMap2 = this.a;
-            if (!hashMap2.containsKey(valueOf)) {
-                hashMap2.put(Integer.valueOf(i), str);
-                hashMap.put(str, Integer.valueOf(i));
+            } catch (Exception unused) {
                 return;
-            } else {
-                r3 r3Var2 = yy8.a;
-                nextInt = yy8.a.a().nextInt(2147418112);
             }
+        } else if (sensorEvent.sensor.getType() == 1) {
+            System.arraycopy(sensorEvent.values, 0, this.s, 0, 3);
+            this.x = true;
+            return;
+        } else {
+            if (sensorEvent.sensor.getType() != 2) {
+                return;
+            }
+            System.arraycopy(sensorEvent.values, 0, this.w, 0, 3);
+            if (!this.x || !SensorManager.getRotationMatrix(this.h, null, this.s, this.w)) {
+                return;
+            }
+        }
+        try {
+            windowManager = (WindowManager) a.b.getSystemService("window");
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+        if (windowManager != null && windowManager.getDefaultDisplay() != null) {
+            i = windowManager.getDefaultDisplay().getRotation();
+            i2 = jn7.M1;
+            if (i == 1) {
+                i3 = jn7.N1;
+                if (i != 2) {
+                    if (i != 3) {
+                        i3 = 2;
+                        i2 = 1;
+                    } else {
+                        i2 = 130;
+                        i3 = 1;
+                    }
+                }
+            } else {
+                i3 = 129;
+                i2 = 2;
+            }
+            if (SensorManager.remapCoordinateSystem(this.h, i2, i3, this.n)) {
+                return;
+            }
+            float[] fArr2 = this.n;
+            float f = fArr2[1] - fArr2[2];
+            float f2 = fArr2[4] - fArr2[5];
+            if (f == 0.0f && f2 == 0.0f) {
+                return;
+            }
+            float degrees = (((float) Math.toDegrees(Math.atan2(f, f2))) + this.y) % 360.0f;
+            if (degrees < 0.0f) {
+                degrees += 360.0f;
+            }
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            if (this.F) {
+                float exp = 1.0f - ((float) Math.exp((-(this.I == 0 ? 0.02f : Math.min(0.25f, (elapsedRealtime - r9) / 1000.0f))) / 0.12f));
+                float f3 = this.E;
+                float f4 = (degrees - f3) % 360.0f;
+                if (f4 > 180.0f) {
+                    f4 -= 360.0f;
+                } else if (f4 <= -180.0f) {
+                    f4 += 360.0f;
+                }
+                degrees = ((f4 * exp) + f3) % 360.0f;
+                if (degrees < 0.0f) {
+                    degrees += 360.0f;
+                }
+                this.E = degrees;
+            } else {
+                this.E = degrees;
+                this.F = true;
+            }
+            this.I = elapsedRealtime;
+            if (this.H) {
+                float f5 = (degrees - this.G) % 360.0f;
+                if (f5 > 180.0f) {
+                    f5 -= 360.0f;
+                } else if (f5 <= -180.0f) {
+                    f5 += 360.0f;
+                }
+                if (Math.abs(f5) < 0.3f) {
+                    return;
+                }
+            }
+            this.G = this.E;
+            this.H = true;
+            this.a.b.Q0(false);
+            return;
+        }
+        i = 0;
+        i2 = jn7.M1;
+        if (i == 1) {
+        }
+        if (SensorManager.remapCoordinateSystem(this.h, i2, i3, this.n)) {
         }
     }
 
-    public final void e(String str) {
-        Integer num;
-        if (!this.d.contains(str) && (num = (Integer) this.b.remove(str)) != null) {
-            this.a.remove(num);
-        }
-        this.e.remove(str);
-        HashMap hashMap = this.f;
-        if (hashMap.containsKey(str)) {
-            StringBuilder p = ug8.p("Dropping pending result for request ", str, ": ");
-            p.append(hashMap.get(str));
-            Log.w("ActivityResultRegistry", p.toString());
-            hashMap.remove(str);
-        }
-        Bundle bundle = this.g;
-        if (bundle.containsKey(str)) {
-            StringBuilder p2 = ug8.p("Dropping pending result for request ", str, ": ");
-            p2.append(bundle.getParcelable(str));
-            Log.w("ActivityResultRegistry", p2.toString());
-            bundle.remove(str);
-        }
-        HashMap hashMap2 = this.c;
-        w9 w9Var = (w9) hashMap2.get(str);
-        if (w9Var != null) {
-            ArrayList arrayList = w9Var.b;
-            int size = arrayList.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                w9Var.a.b((b16) obj);
-            }
-            arrayList.clear();
-            hashMap2.remove(str);
-        }
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

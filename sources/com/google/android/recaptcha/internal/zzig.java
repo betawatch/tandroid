@@ -7,13 +7,13 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzig {
     private final List zza;
 
     public zzig(boolean z) {
-        this.zza = zzf(zk2.b("www.recaptcha.net", "www.gstatic.com/recaptcha", "www.gstatic.cn/recaptcha"));
+        this.zza = zzf(tl2.b("www.recaptcha.net", "www.gstatic.com/recaptcha", "www.gstatic.cn/recaptcha"));
     }
 
     public static final boolean zzc(Uri uri) {
@@ -27,7 +27,7 @@ public final class zzig {
         }
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            if (n9b.d(str, (String) it.next())) {
+            if (ldb.d(str, (String) it.next())) {
                 return true;
             }
         }
@@ -40,7 +40,7 @@ public final class zzig {
 
     private static final List zzf(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(al2.c(list2, 10));
+        ArrayList arrayList = new ArrayList(ul2.c(list2, 10));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add("https://" + ((String) it.next()) + "/");

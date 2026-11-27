@@ -1,161 +1,148 @@
 // default package
 
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class u7 extends si4 {
-    public final /* synthetic */ byte e;
-    public final /* synthetic */ ViewGroup f;
+public final class u7 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u7(ViewGroup viewGroup, byte b) {
-        super(false);
-        this.e = b;
-        this.f = viewGroup;
+    public /* synthetic */ u7(Object obj, float f, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = f;
     }
 
-    @Override // yu9
-    public final CharSequence d() {
-        byte b = this.e;
-        ViewGroup viewGroup = this.f;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        byte b2 = 2;
+        byte b3 = 0;
+        float f = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                return cla.a(((v7) viewGroup).getSpeed()) + "x  " + k96.M0(2131754758, null);
+                x7 x7Var = (x7) obj;
+                x7Var.U = null;
+                x7Var.a = f;
+                x7Var.invalidate();
+                break;
             case 1:
-            default:
-                return super.d();
+                dh0 dh0Var = (dh0) obj;
+                dh0Var.g = f;
+                dh0Var.invalidateSelf();
+                break;
             case 2:
-                zu9 zu9Var = ((av9) viewGroup).y;
-                if (zu9Var != null) {
-                    return zu9Var.getContentDescription();
+                fy0 fy0Var = (fy0) obj;
+                fy0Var.i = f;
+                fy0Var.b.invalidate();
+                break;
+            case 3:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                chatActivityEnterView.b7 = null;
+                chatActivityEnterView.c7 = false;
+                if (!chatActivityEnterView.N2) {
+                    tx1 tx1Var = chatActivityEnterView.F0;
+                    if (tx1Var != null) {
+                        tx1Var.setText("");
+                        chatActivityEnterView.F0.setAlpha(1.0f);
+                    }
+                    bn3 bn3Var = chatActivityEnterView.j1;
+                    if (bn3Var != null) {
+                        bn3Var.o();
+                    }
+                    chatActivityEnterView.R0.invalidate();
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    ofFloat.addUpdateListener(new qm1(this, f, b2));
+                    ofFloat.setDuration(200L);
+                    ofFloat.setInterpolator(k43.g);
+                    ofFloat.start();
+                    break;
                 }
-                return null;
-        }
-    }
-
-    @Override // si4
-    public final float h() {
-        switch (this.e) {
-            case 0:
-                return 0.2f;
-            case 1:
-            default:
-                return super.h();
-            case 2:
-                int a0 = ((av9) this.f).y.a0();
-                if (a0 > 0) {
-                    return 1.0f / a0;
+                break;
+            case 4:
+                fj8 fj8Var = (fj8) obj;
+                fj8Var.I.e();
+                fj8Var.b = f;
+                if (f <= 0.0f) {
+                    fj8Var.H = -1;
                 }
-                return 0.05f;
-        }
-    }
-
-    @Override // si4
-    public final float i() {
-        switch (this.e) {
-            case 0:
-                return 3.0f;
-            default:
-                return super.i();
-        }
-    }
-
-    @Override // si4
-    public final float j() {
-        switch (this.e) {
-            case 0:
-                return 0.2f;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // si4
-    public final float k() {
-        float f;
-        int i;
-        int i2;
-        byte b = this.e;
-        ViewGroup viewGroup = this.f;
-        switch (b) {
-            case 0:
-                return ((v7) viewGroup).getSpeed();
-            case 1:
-                gb2 gb2Var = (gb2) viewGroup;
-                xa2 xa2Var = gb2Var.D4;
-                if (gb2Var.Q5.I3()) {
-                    f = xa2Var.b;
-                    i = xa2Var.f;
-                    i2 = xu9.E;
+                fj8Var.c(true);
+                fj8Var.f = false;
+                if (fj8Var.Q != null && Math.abs(f - 1.0f) < 0.01f) {
+                    fj8Var.Q.run();
+                    break;
+                }
+                break;
+            case 5:
+                sv8 sv8Var = (sv8) obj;
+                frc frcVar = sv8Var.r;
+                frcVar.getClass();
+                frcVar.setLayerType(0, null);
+                if (f != 0.0f) {
+                    if (!sv8Var.S) {
+                        ValueAnimator valueAnimator = sv8Var.Q;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                        }
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(sv8Var.R, 1.0f);
+                        sv8Var.Q = ofFloat2;
+                        ofFloat2.setDuration(320L);
+                        sv8Var.Q.setInterpolator(k43.g);
+                        sv8Var.Q.addUpdateListener(new nv8(sv8Var, b3));
+                        sv8Var.Q.start();
+                        break;
+                    }
                 } else {
-                    if (!k27.Q4(gb2Var.Q5.k)) {
-                        if (gb2Var.Q5.g4()) {
-                            return gb2Var.Q5.b0;
-                        }
-                        return 0.0f;
-                    }
-                    if (gb2Var.C4) {
-                        dv9 dv9Var = gb2Var.E4;
-                        return dv9Var.a / dv9Var.g;
-                    }
-                    f = xa2Var.b;
-                    i = xa2Var.f;
-                    i2 = xu9.E;
+                    sv8Var.b();
+                    break;
                 }
-                return f / (i - i2);
-            default:
-                return ((av9) viewGroup).getProgress();
-        }
-    }
-
-    @Override // si4
-    public final void l(float f) {
-        byte b = this.e;
-        ViewGroup viewGroup = this.f;
-        switch (b) {
-            case 0:
-                ((v7) viewGroup).e(true, f);
                 break;
-            case 1:
-                gb2 gb2Var = (gb2) viewGroup;
-                dv9 dv9Var = gb2Var.E4;
-                xa2 xa2Var = gb2Var.D4;
-                if (gb2Var.Q5.I3()) {
-                    xa2Var.g(f);
-                } else if (k27.Q4(gb2Var.Q5.k)) {
-                    if (gb2Var.C4) {
-                        dv9Var.f(false, f);
-                    } else {
-                        xa2Var.g(f);
-                    }
-                } else if (gb2Var.Q5.g4()) {
-                    if (gb2Var.C4) {
-                        if (dv9Var != null) {
-                            dv9Var.f(false, f);
-                        }
-                    } else if (xa2Var != null) {
-                        xa2Var.g(f);
-                    }
-                    gb2Var.Q5.b0 = f;
+            case 6:
+                e39 e39Var = (e39) obj;
+                e39Var.G = f;
+                e39Var.invalidate();
+                break;
+            case 7:
+                ColorMatrix colorMatrix = new ColorMatrix();
+                bna bnaVar = (bna) obj;
+                bnaVar.w = f;
+                colorMatrix.setSaturation(f);
+                if (aob.I.o()) {
+                    hl.h(colorMatrix, (1.0f - bnaVar.w) * (-0.3f));
                 }
-                gb2Var.f(f);
-                gb2Var.invalidate();
+                bnaVar.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             default:
-                av9 av9Var = (av9) viewGroup;
-                av9Var.x = true;
-                av9Var.setProgress(f);
-                av9Var.f(true, f);
-                av9Var.x = false;
+                uqc uqcVar = (uqc) obj;
+                if (uqcVar.n0 == animator) {
+                    uqcVar.n0 = null;
+                    uqcVar.P0(f);
+                    uqcVar.s0.m(false);
+                    break;
+                }
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u7(av9 av9Var, boolean z) {
-        super(z);
-        this.e = (byte) 2;
-        this.f = av9Var;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 4:
+                fj8 fj8Var = (fj8) this.c;
+                fj8Var.f = true;
+                fj8Var.c = this.b;
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

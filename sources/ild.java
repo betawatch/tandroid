@@ -1,88 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.BadParcelableException;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class ild {
-    public abstract void a(ik0 ik0Var);
+    public static final /* synthetic */ int a = 0;
 
-    public abstract void b(x01 x01Var);
-
-    public void c(cj2 cj2Var) {
-        v(cj2Var);
+    static {
+        ild.class.getClassLoader();
     }
 
-    public void d(o43 o43Var) {
-        v(o43Var);
-    }
-
-    public void e(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public void f(s84 s84Var) {
-        v(s84Var);
-    }
-
-    public void g(nd5 nd5Var) {
-        v(nd5Var);
-    }
-
-    public void h(cg5 cg5Var) {
-        v(cg5Var);
-    }
-
-    public void i(bk5 bk5Var) {
-        v(bk5Var);
-    }
-
-    public void j(hn5 hn5Var) {
-        v(hn5Var);
-    }
-
-    public abstract void k(y46 y46Var);
-
-    public void l(f56 f56Var) {
-        v(f56Var);
-    }
-
-    public abstract void m(xq7 xq7Var);
-
-    public abstract void n(tu7 tu7Var);
-
-    public void o(ugb ugbVar) {
-        v(ugbVar);
-    }
-
-    public void p(jjb jjbVar) {
-        v(jjbVar);
-    }
-
-    public void q(cj2 cj2Var) {
-        v(cj2Var);
-    }
-
-    public void r(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public void s(bk5 bk5Var) {
-        v(bk5Var);
-    }
-
-    public void t(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public void u(u14 u14Var) {
-        v(u14Var);
-    }
-
-    public final void v(tg6 tg6Var) {
-        tg6 tg6Var2 = (tg6) tg6Var.c;
-        while (tg6Var2 != null) {
-            tg6 tg6Var3 = (tg6) tg6Var2.f;
-            tg6Var2.a(this);
-            tg6Var2 = tg6Var3;
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
         }
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void b(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(uh9.k(dataAvail, "Parcel data not fully consumed, unread size: "));
+        }
+    }
+
+    public static void c(Parcel parcel, IInterface iInterface) {
+        parcel.writeStrongBinder(iInterface.asBinder());
     }
 }

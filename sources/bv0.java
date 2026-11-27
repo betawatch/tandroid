@@ -1,68 +1,76 @@
 // default package
 
-import android.net.Uri;
-import android.webkit.DownloadListener;
-import android.webkit.URLUtil;
-import android.widget.TextView;
-import java.util.List;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.webkit.PermissionRequest;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class bv0 implements DownloadListener {
-    public final /* synthetic */ cv0 a;
+public final /* synthetic */ class bv0 implements pt2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kv0 b;
+    public final /* synthetic */ PermissionRequest c;
+    public final /* synthetic */ String d;
 
-    public bv0(cv0 cv0Var) {
-        this.a = cv0Var;
+    public /* synthetic */ bv0(kv0 kv0Var, PermissionRequest permissionRequest, String str, byte b) {
+        this.a = b;
+        this.b = kv0Var;
+        this.c = permissionRequest;
+        this.d = str;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0046, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r1.substring(r2 + 1)) != false) goto L9;
-     */
-    @Override // android.webkit.DownloadListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDownloadStart(String str, String str2, String str3, String str4, long j) {
-        String guessFileName;
-        StringBuilder l = yjb.l("onDownloadStart ", str, " ", str2, " ");
-        ls6.u(l, str3, " ", str4, " ");
-        l.append(j);
-        String sb = l.toString();
-        cv0 cv0Var = this.a;
-        cv0Var.b(sb);
-        try {
-            if (str.startsWith("blob:")) {
-                return;
-            }
-            try {
-                List<String> pathSegments = Uri.parse(str).getPathSegments();
-                guessFileName = pathSegments.get(pathSegments.size() - 1);
-                int lastIndexOf = guessFileName.lastIndexOf(".");
-                if (lastIndexOf > 0) {
+    @Override // pt2
+    public final void accept(Object obj) {
+        byte b = this.a;
+        String str = this.d;
+        PermissionRequest permissionRequest = this.c;
+        kv0 kv0Var = this.b;
+        Boolean bool = (Boolean) obj;
+        switch (b) {
+            case 0:
+                if (kv0Var.a != null) {
+                    kv0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        permissionRequest.deny();
+                        break;
+                    } else {
+                        bv0 bv0Var = new bv0(kv0Var, permissionRequest, str, (byte) 2);
+                        boolean z = rv0.R0;
+                        kv0Var.e.R.R(new String[]{"android.permission.RECORD_AUDIO"}, bv0Var);
+                        break;
+                    }
                 }
-            } catch (Exception unused) {
-            }
-            guessFileName = URLUtil.guessFileName(str, str3, str4);
-            String U = gl.U(guessFileName);
-            b87 b87Var = new b87((Object) this, (Object) str, (Object) str4, (Object) str2, (Object) U, (byte) 9);
-            if (up3.q(y6c.t0).c(8, j)) {
-                b87Var.run();
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cv0Var.getContext());
-            hd hdVar = alertDialog$Builder.a;
-            hdVar.S = k96.M0(2131742667, null);
-            hdVar.U = gl.S2(j > 0 ? k96.a0(null, null, 2131742668, U, gl.i0(j, false, false)) : k96.a0(null, null, 2131742669, U));
-            alertDialog$Builder.j(k96.M0(2131742666, null), new sg0(b87Var, (byte) 13));
-            alertDialog$Builder.g(k96.M0(2131752577, null), null);
-            TextView textView = (TextView) alertDialog$Builder.o().c(-2);
-            if (textView != null) {
-                zkb.X(textView, bkb.p7, null);
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+                break;
+            case 1:
+                if (kv0Var.a != null) {
+                    kv0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        permissionRequest.deny();
+                        break;
+                    } else {
+                        bv0 bv0Var2 = new bv0(kv0Var, permissionRequest, str, (byte) 3);
+                        boolean z2 = rv0.R0;
+                        kv0Var.e.R.R(new String[]{"android.permission.CAMERA"}, bv0Var2);
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                if (!bool.booleanValue()) {
+                    permissionRequest.deny();
+                    break;
+                } else {
+                    permissionRequest.grant(new String[]{str});
+                    kv0Var.e.R.U = true;
+                    break;
+                }
+            default:
+                if (!bool.booleanValue()) {
+                    permissionRequest.deny();
+                    break;
+                } else {
+                    permissionRequest.grant(new String[]{str});
+                    kv0Var.e.R.U = true;
+                    break;
+                }
         }
     }
 }

@@ -1,24 +1,72 @@
 // default package
 
-import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class vw5 implements oq4, Serializable {
-    public final byte a;
+public final class vw5 implements m34 {
+    public static final tw5 f;
+    public static final tw5 h;
+    public final HashMap a;
+    public final HashMap b;
+    public final sw5 c;
+    public boolean d;
+    public static final sw5 e = new sw5((byte) 0);
+    public static final uw5 n = new uw5();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public vw5(int i) {
-        this.a = i;
+    /* JADX WARN: Type inference failed for: r0v1, types: [tw5] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [tw5] */
+    static {
+        final byte b = 0;
+        f = new ycc() { // from class: tw5
+            @Override // l34
+            public final void a(Object obj, Object obj2) {
+                switch (b) {
+                    case 0:
+                        ((zcc) obj2).b((String) obj);
+                        break;
+                    default:
+                        ((zcc) obj2).c(((Boolean) obj).booleanValue());
+                        break;
+                }
+            }
+        };
+        final byte b2 = 1;
+        h = new ycc() { // from class: tw5
+            @Override // l34
+            public final void a(Object obj, Object obj2) {
+                switch (b2) {
+                    case 0:
+                        ((zcc) obj2).b((String) obj);
+                        break;
+                    default:
+                        ((zcc) obj2).c(((Boolean) obj).booleanValue());
+                        break;
+                }
+            }
+        };
     }
 
-    @Override // oq4
-    public final int getArity() {
-        return this.a;
+    public vw5() {
+        HashMap hashMap = new HashMap();
+        this.a = hashMap;
+        HashMap hashMap2 = new HashMap();
+        this.b = hashMap2;
+        this.c = e;
+        this.d = false;
+        hashMap2.put(String.class, f);
+        hashMap.remove(String.class);
+        hashMap2.put(Boolean.class, h);
+        hashMap.remove(Boolean.class);
+        hashMap2.put(Date.class, n);
+        hashMap.remove(Date.class);
     }
 
-    public final String toString() {
-        f59.a.getClass();
-        return g59.a(this);
+    @Override // m34
+    public final m34 a(Class cls, zq7 zq7Var) {
+        this.a.put(cls, zq7Var);
+        this.b.remove(cls);
+        return this;
     }
 }

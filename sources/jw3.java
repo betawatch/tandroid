@@ -1,36 +1,17 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class jw3 implements Runnable {
-    public final ArrayList a;
-    public final byte b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class jw3 extends FrameLayout {
+    public de0 a;
+    public int b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public jw3(List list, int i, Throwable th) {
-        kre.a(list, "initCallbacks cannot be null");
-        this.a = new ArrayList(list);
-        this.b = i;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i = 0;
-        if (this.b != 1) {
-            while (i < size) {
-                ((iw3) arrayList.get(i)).getClass();
-                i++;
-            }
-        } else {
-            while (i < size) {
-                ((iw3) arrayList.get(i)).a();
-                i++;
-            }
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.max(hl.L(170.0f), (hl.q.y * 0.34999996f) - hl.L(142.0f)), TLObject.FLAG_30));
     }
 }

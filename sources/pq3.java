@@ -1,80 +1,65 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j$.util.Objects;
-import java.util.Arrays;
-import java.util.UUID;
+import android.os.SystemClock;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pq3 implements Parcelable {
-    public static final Parcelable.Creator<pq3> CREATOR = new x21((byte) 16);
-    public int a;
-    public final UUID b;
-    public final String c;
-    public final String d;
-    public final byte[] e;
+public abstract class pq3 {
+    public static double a;
+    public static long b;
+    public static final int[] c = new int[0];
+    public static final long[] d = new long[0];
+    public static final Object[] e = new Object[0];
 
-    public pq3(Parcel parcel) {
-        this.b = new UUID(parcel.readLong(), parcel.readLong());
-        this.c = parcel.readString();
-        String readString = parcel.readString();
-        String str = g8c.a;
-        this.d = readString;
-        this.e = parcel.createByteArray();
-    }
-
-    public final boolean a(UUID uuid) {
-        UUID uuid2 = g51.b;
-        UUID uuid3 = this.b;
-        return uuid2.equals(uuid3) || uuid.equals(uuid3);
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof pq3)) {
-            return false;
+    public static final int a(int i, int i2, int[] iArr) {
+        iArr.getClass();
+        int i3 = i - 1;
+        int i4 = 0;
+        while (i4 <= i3) {
+            int i5 = (i4 + i3) >>> 1;
+            int i6 = iArr[i5];
+            if (i6 < i2) {
+                i4 = i5 + 1;
+            } else {
+                if (i6 <= i2) {
+                    return i5;
+                }
+                i3 = i5 - 1;
+            }
         }
-        if (obj == this) {
-            return true;
+        return ~i4;
+    }
+
+    public static final int b(long[] jArr, int i, long j) {
+        jArr.getClass();
+        int i2 = i - 1;
+        int i3 = 0;
+        while (i3 <= i2) {
+            int i4 = (i3 + i2) >>> 1;
+            long j2 = jArr[i4];
+            if (j2 < j) {
+                i3 = i4 + 1;
+            } else {
+                if (j2 <= j) {
+                    return i4;
+                }
+                i2 = i4 - 1;
+            }
         }
-        pq3 pq3Var = (pq3) obj;
-        return Objects.equals(this.c, pq3Var.c) && Objects.equals(this.d, pq3Var.d) && Objects.equals(this.b, pq3Var.b) && Arrays.equals(this.e, pq3Var.e);
+        return ~i3;
     }
 
-    public final int hashCode() {
-        int i = this.a;
-        if (i != 0) {
-            return i;
+    public static synchronized long c() {
+        synchronized (pq3.class) {
+            if (b == 0 || SystemClock.elapsedRealtime() - b > 60000) {
+                return la3.d(a.b).b();
+            }
+            return (long) a;
         }
-        int hashCode = this.b.hashCode() * 31;
-        String str = this.c;
-        int hashCode2 = Arrays.hashCode(this.e) + ir2.j((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
-        this.a = hashCode2;
-        return hashCode2;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        UUID uuid = this.b;
-        parcel.writeLong(uuid.getMostSignificantBits());
-        parcel.writeLong(uuid.getLeastSignificantBits());
-        parcel.writeString(this.c);
-        parcel.writeString(this.d);
-        parcel.writeByteArray(this.e);
-    }
-
-    public pq3(UUID uuid, String str, String str2, byte[] bArr) {
-        uuid.getClass();
-        this.b = uuid;
-        this.c = str;
-        str2.getClass();
-        this.d = ud7.n(str2);
-        this.e = bArr;
+    public static boolean d() {
+        return c() >= 3000000;
     }
 }

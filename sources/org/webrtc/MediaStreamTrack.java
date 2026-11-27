@@ -1,13 +1,13 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
-    private long nativeTrack;
+    final NativeLifecycleLock lifecycleLock;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
@@ -24,7 +24,7 @@ public class MediaStreamTrack {
                     return mediaType;
                 }
             }
-            w26.j(de9.k(i, "Unknown native media type: "));
+            lq5.j(uh9.k(i, "Unknown native media type: "));
             return null;
         }
 
@@ -33,7 +33,20 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        boolean getEnabled(long j);
+
+        String getId(long j);
+
+        String getKind(long j);
+
+        State getState(long j);
+
+        boolean setEnabled(long j, boolean z);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum State {
         LIVE,
         ENDED;
@@ -45,77 +58,77 @@ public class MediaStreamTrack {
 
     public MediaStreamTrack(long j) {
         if (j != 0) {
-            this.nativeTrack = j;
+            this.lifecycleLock = new NativeLifecycleLock("MediaStreamTrack", j);
         } else {
-            w26.j("nativeTrack may not be null");
+            lq5.j("nativeTrack may not be null");
             throw null;
         }
-    }
-
-    private void checkMediaStreamTrackExists() {
-        if (this.nativeTrack != 0) {
-            return;
-        }
-        sc8.j("MediaStreamTrack has been disposed.");
     }
 
     public static MediaStreamTrack createMediaStreamTrack(long j) {
         if (j == 0) {
             return null;
         }
-        String nativeGetKind = nativeGetKind(j);
-        if (nativeGetKind.equals(AUDIO_TRACK_KIND)) {
+        String kind = MediaStreamTrackJni.get().getKind(j);
+        if (kind.equals(AUDIO_TRACK_KIND)) {
             return new AudioTrack(j);
         }
-        if (nativeGetKind.equals(VIDEO_TRACK_KIND)) {
+        if (kind.equals(VIDEO_TRACK_KIND)) {
             return new VideoTrack(j);
         }
         return null;
     }
 
-    private static native boolean nativeGetEnabled(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$enabled$2(long j) {
+        return Boolean.valueOf(MediaStreamTrackJni.get().getEnabled(j));
+    }
 
-    private static native String nativeGetId(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$id$0(long j) {
+        return MediaStreamTrackJni.get().getId(j);
+    }
 
-    private static native String nativeGetKind(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$kind$1(long j) {
+        return MediaStreamTrackJni.get().getKind(j);
+    }
 
-    private static native State nativeGetState(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$setEnabled$3(boolean z, long j) {
+        return Boolean.valueOf(MediaStreamTrackJni.get().setEnabled(j, z));
+    }
 
-    private static native boolean nativeSetEnabled(long j, boolean z);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ State lambda$state$4(long j) {
+        return MediaStreamTrackJni.get().getState(j);
+    }
 
     public void dispose() {
-        checkMediaStreamTrackExists();
-        JniCommon.nativeReleaseRef(this.nativeTrack);
-        this.nativeTrack = 0L;
+        this.lifecycleLock.dispose(new da3((byte) 28));
     }
 
     public boolean enabled() {
-        checkMediaStreamTrackExists();
-        return nativeGetEnabled(this.nativeTrack);
+        return ((Boolean) this.lifecycleLock.call(new hz6((byte) 7))).booleanValue();
     }
 
     public long getNativeMediaStreamTrack() {
-        checkMediaStreamTrackExists();
-        return this.nativeTrack;
+        return this.lifecycleLock.getNativePointer();
     }
 
     public String id() {
-        checkMediaStreamTrackExists();
-        return nativeGetId(this.nativeTrack);
+        return (String) this.lifecycleLock.call(new hz6((byte) 10));
     }
 
     public String kind() {
-        checkMediaStreamTrackExists();
-        return nativeGetKind(this.nativeTrack);
+        return (String) this.lifecycleLock.call(new hz6((byte) 9));
     }
 
     public boolean setEnabled(boolean z) {
-        checkMediaStreamTrackExists();
-        return nativeSetEnabled(this.nativeTrack, z);
+        return ((Boolean) this.lifecycleLock.call(new k64((byte) 6, z))).booleanValue();
     }
 
     public State state() {
-        checkMediaStreamTrackExists();
-        return nativeGetState(this.nativeTrack);
+        return (State) this.lifecycleLock.call(new hz6((byte) 8));
     }
 }

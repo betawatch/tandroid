@@ -1,62 +1,45 @@
 // default package
 
-import java.io.File;
-import java.util.Comparator;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class n22 implements Comparator {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d32 b;
+public final /* synthetic */ class n22 implements t69, s22 {
+    public final /* synthetic */ b32 a;
 
-    public /* synthetic */ n22(d32 d32Var, byte b) {
-        this.a = b;
-        this.b = d32Var;
+    public /* synthetic */ n22(b32 b32Var) {
+        this.a = b32Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        byte b = this.a;
-        d32 d32Var = this.b;
-        w22 w22Var = (w22) obj;
-        w22 w22Var2 = (w22) obj2;
-        switch (b) {
-            case 0:
-                File file = w22Var.f;
-                if (file != null) {
-                    if (w22Var2.f == null) {
-                        return 1;
-                    }
-                    boolean isDirectory = file.isDirectory();
-                    if (isDirectory != w22Var2.f.isDirectory()) {
-                        if (!isDirectory) {
-                            return 1;
-                        }
-                    } else {
-                        if (isDirectory || d32Var.d0) {
-                            return w22Var.f.getName().compareToIgnoreCase(w22Var2.f.getName());
-                        }
-                        long lastModified = w22Var.f.lastModified();
-                        long lastModified2 = w22Var2.f.lastModified();
-                        if (lastModified == lastModified2) {
-                            return 0;
-                        }
-                        if (lastModified <= lastModified2) {
-                            return 1;
-                        }
-                    }
-                }
-                return -1;
-            default:
-                if (d32Var.d0) {
-                    return w22Var.f.getName().compareToIgnoreCase(w22Var2.f.getName());
-                }
-                long lastModified3 = w22Var.f.lastModified();
-                long lastModified4 = w22Var2.f.lastModified();
-                if (lastModified3 == lastModified4) {
-                    return 0;
-                }
-                return lastModified3 > lastModified4 ? -1 : 1;
+    @Override // s22
+    public final void b(TLRPC.TL_userContact_old2 tL_userContact_old2, boolean z, int i, long j) {
+        b32 b32Var = this.a;
+        b32Var.b.a(true);
+        b32Var.K.b(tL_userContact_old2, z, i, j);
+    }
+
+    @Override // t69
+    public final boolean e(int i, View view) {
+        Object O;
+        b32 b32Var = this.a;
+        j79 adapter = b32Var.s.getAdapter();
+        x22 x22Var = b32Var.G;
+        if (adapter == x22Var) {
+            O = x22Var.E(i);
+        } else {
+            v22 v22Var = b32Var.F;
+            O = v22Var.O(v22Var.S(i), v22Var.Q(i));
         }
+        if (O == null) {
+            return false;
+        }
+        b32Var.P((a32) view, O);
+        return true;
+    }
+
+    @Override // s22
+    public final void a(ArrayList arrayList, String str, boolean z, int i, long j, boolean z2) {
     }
 }

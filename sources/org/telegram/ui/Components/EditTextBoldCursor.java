@@ -42,26 +42,27 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class EditTextBoldCursor extends lt3 {
-    public static Field E1;
+public class EditTextBoldCursor extends cu3 {
     public static Field F1;
     public static Field G1;
-    public static boolean H1;
-    public static Method I1;
-    public static Class J1;
-    public static Field K1;
-    public static Method L1;
+    public static Field H1;
+    public static boolean I1;
+    public static Method J1;
+    public static Class K1;
+    public static Field L1;
+    public static Method M1;
     public boolean A0;
-    public Paint A1;
+    public boolean A1;
     public float B0;
-    public LinearGradient B1;
+    public Paint B1;
     public long C0;
-    public Matrix C1;
+    public LinearGradient C1;
     public boolean D0;
-    public int D1;
+    public Matrix D1;
     public boolean E0;
+    public int E1;
     public float F0;
     public boolean G0;
     public boolean H0;
@@ -81,19 +82,19 @@ public class EditTextBoldCursor extends lt3 {
     public boolean V0;
     public AnimatorSet W0;
     public float X0;
-    public gk4 Y0;
-    public yi4 Z0;
-    public qr1 a1;
+    public lm4 Y0;
+    public cl4 Z0;
+    public es1 a1;
     public Object b0;
     public View b1;
     public final GradientDrawable c0;
     public View c1;
-    public jab d0;
+    public geb d0;
     public int d1;
     public float e0;
     public boolean e1;
-    public final jm f0;
-    public final ys3 f1;
+    public final km f0;
+    public final qt3 f1;
     public final Paint g0;
     public final ArrayList g1;
     public final Paint h0;
@@ -109,31 +110,31 @@ public class EditTextBoldCursor extends lt3 {
     public int m0;
     public LinearGradient m1;
     public float n0;
-    public boolean n1;
+    public rx n1;
     public final Rect o0;
-    public float o1;
+    public boolean o1;
     public StaticLayout p0;
     public float p1;
     public float q0;
-    public long q1;
+    public float q1;
     public boolean r0;
-    public Rect r1;
+    public long r1;
     public boolean s0;
-    public kl0 s1;
-    public f t0;
-    public Drawable t1;
-    public xs3 u0;
+    public Rect s1;
+    public c t0;
+    public ll0 t1;
+    public pt3 u0;
     public Drawable u1;
-    public xs3 v0;
+    public pt3 v0;
     public Drawable v1;
     public CharSequence w0;
-    public PorterDuffColorFilter w1;
+    public Drawable w1;
     public CharSequence x0;
-    public int x1;
+    public PorterDuffColorFilter x1;
     public int y0;
-    public Runnable y1;
+    public int y1;
     public int z0;
-    public boolean z1;
+    public Runnable z1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EditTextBoldCursor(Context context) {
@@ -150,17 +151,17 @@ public class EditTextBoldCursor extends lt3 {
         this.I = null;
         this.K = new l(this, (byte) 1);
         this.L = new Rect();
-        Boolean bool = lt3.a0;
+        Boolean bool = cu3.a0;
         if (bool == null) {
             String str2 = Build.MANUFACTURER;
             bool = Boolean.valueOf((str2 == null || !(str2.toLowerCase().contains("honor") || str2.toLowerCase().contains("huawei") || str2.toLowerCase().contains("alps") || str2.toLowerCase().contains("vivo") || str2.toLowerCase().contains("oppo") || str2.toLowerCase().contains("oneplus") || str2.toLowerCase().contains("realme"))) && ((str = Build.MODEL) == null || !str.toLowerCase().contains("mediapad")));
-            lt3.a0 = bool;
+            cu3.a0 = bool;
         }
         this.Q = bool.booleanValue();
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
-            this.f = new mk0(this, arrayList, new kt3(this, b));
+            this.f = new nk0(this, arrayList, new bu3(this, b));
         }
-        this.f0 = new jm(this, (byte) 1);
+        this.f0 = new km(this, (byte) 1);
         this.o0 = new Rect();
         this.A0 = true;
         this.B0 = 1.0f;
@@ -177,7 +178,7 @@ public class EditTextBoldCursor extends lt3 {
         this.h1 = false;
         this.j1 = new Rect();
         this.k1 = -1;
-        this.o1 = Float.NaN;
+        this.p1 = Float.NaN;
         int i = Build.VERSION.SDK_INT;
         if (i >= 26) {
             setImportantForAutofill(2);
@@ -186,51 +187,51 @@ public class EditTextBoldCursor extends lt3 {
         this.h0 = new Paint();
         TextPaint textPaint = new TextPaint(1);
         this.i0 = textPaint;
-        textPaint.setTextSize(gl.L(11.0f));
+        textPaint.setTextSize(hl.L(11.0f));
         if (i >= 26) {
             setImportantForAutofill(2);
         }
         if (i >= 29) {
-            ys3 ys3Var = new ys3(this);
-            this.f1 = ys3Var;
-            ys3Var.setShape(new RectShape());
+            qt3 qt3Var = new qt3(this);
+            this.f1 = qt3Var;
+            qt3Var.setShape(new RectShape());
             this.c0 = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-11230757, -11230757});
             setTextCursorDrawable(this.f1);
         }
         try {
-            if (!H1 && G1 == null) {
-                H1 = true;
+            if (!I1 && H1 == null) {
+                I1 = true;
                 Field declaredField = View.class.getDeclaredField("mScrollY");
-                G1 = declaredField;
+                H1 = declaredField;
                 declaredField.setAccessible(true);
             }
         } catch (Throwable unused) {
         }
         try {
-            if (J1 == null) {
+            if (K1 == null) {
                 Field declaredField2 = TextView.class.getDeclaredField("mEditor");
-                E1 = declaredField2;
+                F1 = declaredField2;
                 declaredField2.setAccessible(true);
                 Class<?> cls = Class.forName("android.widget.Editor");
-                J1 = cls;
+                K1 = cls;
                 try {
                     Field declaredField3 = cls.getDeclaredField("mShowCursor");
-                    F1 = declaredField3;
+                    G1 = declaredField3;
                     declaredField3.setAccessible(true);
                 } catch (Exception unused2) {
                 }
                 try {
-                    Method declaredMethod = J1.getDeclaredMethod("invalidateTextDisplayList", null);
-                    L1 = declaredMethod;
+                    Method declaredMethod = K1.getDeclaredMethod("invalidateTextDisplayList", null);
+                    M1 = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (Exception unused3) {
                 }
                 Method declaredMethod2 = TextView.class.getDeclaredMethod("getVerticalOffset", Boolean.TYPE);
-                I1 = declaredMethod2;
+                J1 = declaredMethod2;
                 declaredMethod2.setAccessible(true);
             }
         } catch (Throwable th) {
-            fa4.g(th, true);
+            cc4.g(th, true);
         }
         if (this.f1 == null) {
             try {
@@ -239,23 +240,23 @@ public class EditTextBoldCursor extends lt3 {
                 if (Build.VERSION.SDK_INT >= 29) {
                     setTextCursorDrawable(gradientDrawable);
                 }
-                this.b0 = E1.get(this);
+                this.b0 = F1.get(this);
             } catch (Throwable unused4) {
             }
             try {
-                if (K1 == null) {
+                if (L1 == null) {
                     Field declaredField4 = TextView.class.getDeclaredField("mCursorDrawableRes");
-                    K1 = declaredField4;
+                    L1 = declaredField4;
                     declaredField4.setAccessible(true);
                 }
-                Field field = K1;
+                Field field = L1;
                 if (field != null) {
                     field.set(this, Integer.valueOf(R.drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
         }
-        this.j0 = gl.L(24.0f);
+        this.j0 = hl.L(24.0f);
     }
 
     @Override // android.widget.TextView
@@ -313,7 +314,7 @@ public class EditTextBoldCursor extends lt3 {
     }
 
     public int getHandlesColor() {
-        return this.x1;
+        return this.y1;
     }
 
     public float getHeaderAnimationProgress() {
@@ -346,10 +347,10 @@ public class EditTextBoldCursor extends lt3 {
     }
 
     public Runnable getOnPremiumMenuLockClickListener() {
-        return this.y1;
+        return this.z1;
     }
 
-    public wjb getResourcesProvider() {
+    public vnb getResourcesProvider() {
         return null;
     }
 
@@ -358,41 +359,41 @@ public class EditTextBoldCursor extends lt3 {
         if (this.f1 != null) {
             return super.getTextCursorDrawable();
         }
-        ys3 ys3Var = new ys3(this, new RectShape());
-        ys3Var.getPaint().setColor(0);
-        return ys3Var;
+        qt3 qt3Var = new qt3(this, new RectShape());
+        qt3Var.getPaint().setColor(0);
+        return qt3Var;
     }
 
     @Override // android.widget.TextView
     public Drawable getTextSelectHandle() {
-        Drawable drawable = this.v1;
+        Drawable drawable = this.w1;
         if (drawable != null) {
             return drawable;
         }
         Drawable z = z(super.getTextSelectHandle(), true);
-        this.v1 = z;
+        this.w1 = z;
         return z;
     }
 
     @Override // android.widget.TextView
     public Drawable getTextSelectHandleLeft() {
-        Drawable drawable = this.t1;
+        Drawable drawable = this.u1;
         if (drawable != null) {
             return drawable;
         }
         Drawable z = z(super.getTextSelectHandleLeft(), true);
-        this.t1 = z;
+        this.u1 = z;
         return z;
     }
 
     @Override // android.widget.TextView
     public Drawable getTextSelectHandleRight() {
-        Drawable drawable = this.u1;
+        Drawable drawable = this.v1;
         if (drawable != null) {
             return drawable;
         }
         Drawable z = z(super.getTextSelectHandleRight(), true);
-        this.u1 = z;
+        this.v1 = z;
         return z;
     }
 
@@ -410,7 +411,7 @@ public class EditTextBoldCursor extends lt3 {
                 this.W0 = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "headerAnimationProgress", z2 ? 1.0f : 0.0f));
                 this.W0.setDuration(200L);
-                this.W0.setInterpolator(s33.h);
+                this.W0.setInterpolator(k43.h);
                 this.W0.start();
             } else {
                 this.X0 = z2 ? 1.0f : 0.0f;
@@ -420,16 +421,16 @@ public class EditTextBoldCursor extends lt3 {
     }
 
     public final void m() {
-        gk4 gk4Var = this.Y0;
-        if (gk4Var != null) {
-            gk4Var.a.removeOnLayoutChangeListener(gk4Var.l);
-            ek4 ek4Var = gk4Var.b;
-            if (!ek4Var.F) {
-                ek4Var.G = false;
-                ek4Var.F = true;
-                ek4Var.x.cancel();
-                ek4Var.w.start();
-                ek4Var.D.setEmpty();
+        lm4 lm4Var = this.Y0;
+        if (lm4Var != null) {
+            lm4Var.a.removeOnLayoutChangeListener(lm4Var.l);
+            jm4 jm4Var = lm4Var.b;
+            if (!jm4Var.F) {
+                jm4Var.G = false;
+                jm4Var.F = true;
+                jm4Var.x.cancel();
+                jm4Var.w.start();
+                jm4Var.D.setEmpty();
             }
             this.Y0 = null;
         }
@@ -443,70 +444,71 @@ public class EditTextBoldCursor extends lt3 {
         gradientDrawable.draw(canvas);
     }
 
-    @Override // lt3, android.widget.TextView, android.view.View
+    @Override // cu3, android.widget.TextView, android.view.View
     public void onAttachedToWindow() {
         try {
             super.onAttachedToWindow();
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
         this.c1 = getRootView();
         if (Build.VERSION.SDK_INT < 29) {
-            rg2.d().b(this.f0, 2);
+            jh2.d().b(this.f0, 2);
         }
     }
 
-    @Override // lt3, android.view.View
+    @Override // cu3, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.c1 = null;
         if (Build.VERSION.SDK_INT < 29) {
-            rg2.d().f(this.f0);
+            jh2.d().f(this.f0);
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(22:0|1|(4:144|(5:148|(1:161)|152|(2:154|(1:156))(2:158|(1:160))|157)|162|(2:183|(31:189|(1:191)(1:259)|192|(1:258)(1:196)|197|(3:199|(1:(1:256))(1:203)|204)(1:257)|205|(1:209)|210|(2:251|(1:253)(1:254))(4:214|(8:216|(1:218)|219|(1:221)|222|(5:224|(1:226)|227|(1:229)|230)(1:249)|231|(8:233|(1:235)|236|(1:238)|239|(1:241)|242|243))(1:250)|248|243)|244|(1:246)|247|6|(1:8)|9|10|11|(1:13)(1:142)|14|15|16|17|18|(2:22|23)|26|(5:107|108|(1:137)(2:112|(1:136)(1:116))|117|(2:120|(6:122|(4:124|125|(1:129)|130)|132|125|(2:127|129)|130)(6:133|(4:135|125|(0)|130)|132|125|(0)|130)))(2:28|(3:32|33|(6:35|(4:37|38|(1:42)|43)|45|38|(2:40|42)|43)(6:46|(4:48|38|(0)|43)|45|38|(0)|43)))|50|(21:54|(1:56)(2:97|(19:99|(1:59)|60|(2:62|(12:88|66|(1:68)(1:87)|69|(1:71)(1:86)|72|73|(1:75)|76|(1:78)|79|(3:81|(1:83)|84)(1:85))(12:64|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0)))|90|(1:92)(1:96)|93|(1:95)|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0))(1:100))|57|(0)|60|(0)|90|(0)(0)|93|(0)|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0))|101|(2:103|104)(1:106)))(6:170|(2:172|(1:174)(1:181))(1:182)|175|(1:177)|178|(1:180)))|5|6|(0)|9|10|11|(0)(0)|14|15|16|17|18|(3:20|22|23)|26|(0)(0)|50|(22:52|54|(0)(0)|57|(0)|60|(0)|90|(0)(0)|93|(0)|66|(0)(0)|69|(0)(0)|72|73|(0)|76|(0)|79|(0)(0))|101|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0394, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(22:0|1|(6:145|(1:272)(1:153)|154|(5:158|(1:171)|162|(2:164|(1:166))(2:168|(1:170))|167)|172|(2:193|(31:199|(1:201)(1:269)|202|(1:268)(1:206)|207|(3:209|(1:(1:266))(1:213)|214)(1:267)|215|(1:219)|220|(2:261|(1:263)(1:264))(4:224|(8:226|(1:228)|229|(1:231)|232|(5:234|(1:236)|237|(1:239)|240)(1:259)|241|(8:243|(1:245)|246|(1:248)|249|(1:251)|252|253))(1:260)|258|253)|254|(1:256)|257|7|(1:9)|10|11|12|(1:14)(1:143)|15|16|17|18|19|(2:23|24)|27|(5:108|109|(1:138)(2:113|(1:137)(1:117))|118|(2:121|(6:123|(4:125|126|(1:130)|131)|133|126|(2:128|130)|131)(6:134|(4:136|126|(0)|131)|133|126|(0)|131)))(2:29|(3:33|34|(6:36|(4:38|39|(1:43)|44)|46|39|(2:41|43)|44)(6:47|(4:49|39|(0)|44)|46|39|(0)|44)))|51|(21:55|(1:57)(2:98|(19:100|(1:60)|61|(2:63|(12:89|67|(1:69)(1:88)|70|(1:72)(1:87)|73|74|(1:76)|77|(1:79)|80|(3:82|(1:84)|85)(1:86))(12:65|67|(0)(0)|70|(0)(0)|73|74|(0)|77|(0)|80|(0)(0)))|91|(1:93)(1:97)|94|(1:96)|67|(0)(0)|70|(0)(0)|73|74|(0)|77|(0)|80|(0)(0))(1:101))|58|(0)|61|(0)|91|(0)(0)|94|(0)|67|(0)(0)|70|(0)(0)|73|74|(0)|77|(0)|80|(0)(0))|102|(2:104|105)(1:107)))(6:180|(2:182|(1:184)(1:191))(1:192)|185|(1:187)|188|(1:190)))(1:5)|6|7|(0)|10|11|12|(0)(0)|15|16|17|18|19|(3:21|23|24)|27|(0)(0)|51|(22:53|55|(0)(0)|58|(0)|61|(0)|91|(0)(0)|94|(0)|67|(0)(0)|70|(0)(0)|73|74|(0)|77|(0)|80|(0)(0))|102|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:141:0x03f1, code lost:
     
-        r2 = w01.a;
+        r2 = f11.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x037e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x03db, code lost:
     
-        r4 = w01.a;
+        r4 = f11.a;
      */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x067a  */
-    /* JADX WARN: Removed duplicated region for block: B:106:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x03b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x045a A[Catch: all -> 0x047e, TryCatch #4 {all -> 0x047e, blocks: (B:108:0x03b5, B:110:0x03b9, B:112:0x03bd, B:114:0x03cf, B:117:0x03dd, B:120:0x03e3, B:122:0x03ea, B:124:0x03f2, B:125:0x0418, B:127:0x045a, B:129:0x045d, B:130:0x0462, B:133:0x0405, B:135:0x040d, B:137:0x03d9), top: B:107:0x03b5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0367 A[Catch: Exception -> 0x037e, TryCatch #0 {Exception -> 0x037e, blocks: (B:11:0x0363, B:13:0x0367, B:142:0x0377), top: B:10:0x0363 }] */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0377 A[Catch: Exception -> 0x037e, TRY_LEAVE, TryCatch #0 {Exception -> 0x037e, blocks: (B:11:0x0363, B:13:0x0367, B:142:0x0377), top: B:10:0x0363 }] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0482  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0501 A[Catch: all -> 0x0526, TryCatch #1 {all -> 0x0526, blocks: (B:33:0x048a, B:35:0x0491, B:37:0x0499, B:38:0x04bf, B:40:0x0501, B:42:0x0504, B:43:0x0509, B:46:0x04ac, B:48:0x04b4), top: B:32:0x048a }] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0540  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0561  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0579  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x05aa  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x05c7  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x05f1  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0609  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x062c  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0674  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x05d2  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x05ac  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x032e  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x058e  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x05a1  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0590  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x054d  */
-    @Override // lt3, android.widget.TextView, android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:104:0x06d7  */
+    /* JADX WARN: Removed duplicated region for block: B:107:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0412 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x04b7 A[Catch: all -> 0x04db, TryCatch #2 {all -> 0x04db, blocks: (B:109:0x0412, B:111:0x0416, B:113:0x041a, B:115:0x042c, B:118:0x043a, B:121:0x0440, B:123:0x0447, B:125:0x044f, B:126:0x0475, B:128:0x04b7, B:130:0x04ba, B:131:0x04bf, B:134:0x0462, B:136:0x046a, B:138:0x0436), top: B:108:0x0412 }] */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x03d4 A[Catch: Exception -> 0x03db, TRY_LEAVE, TryCatch #1 {Exception -> 0x03db, blocks: (B:12:0x03c0, B:14:0x03c4, B:143:0x03d4), top: B:11:0x03c0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x03c4 A[Catch: Exception -> 0x03db, TryCatch #1 {Exception -> 0x03db, blocks: (B:12:0x03c0, B:14:0x03c4, B:143:0x03d4), top: B:11:0x03c0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x055e A[Catch: all -> 0x0583, TryCatch #0 {all -> 0x0583, blocks: (B:34:0x04e7, B:36:0x04ee, B:38:0x04f6, B:39:0x051c, B:41:0x055e, B:43:0x0561, B:44:0x0566, B:47:0x0509, B:49:0x0511), top: B:33:0x04e7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x059d  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x05be  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x05d6  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0607  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0624  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x064e  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0666  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0689  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x06d1  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x062f  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x05eb  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x05fe  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x05ed  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x05aa  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x038b  */
+    @Override // cu3, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onDraw(Canvas canvas) {
+        Canvas canvas2;
         float f;
         float f2;
         Field field;
-        ys3 ys3Var;
+        qt3 qt3Var;
         boolean z;
         int totalPaddingTop;
         int i;
@@ -523,8 +525,14 @@ public class EditTextBoldCursor extends lt3 {
         float f5;
         int i4;
         Field field2;
-        Canvas canvas2 = canvas;
         if (length() == 0 || this.T0) {
+            rx rxVar = this.n1;
+            if (rxVar == null || ((mm) rxVar.d).d(rxVar.b) <= 0.0f || (!this.A0 && this.B0 == 0.0f)) {
+                canvas2 = canvas;
+            } else {
+                this.n1.d(canvas, getPaddingLeft(), getMeasuredWidth() - getPaddingRight(), ((getMeasuredHeight() + getPaddingTop()) - getPaddingBottom()) / 2.0f, getPaint().getTextSize(), this.y0, this.m1, (int) (Color.alpha(r7) * this.B0));
+                canvas2 = canvas;
+            }
             boolean z4 = this.A0;
             float f6 = this.B0;
             if (!z4 ? f6 != 0.0f : f6 != 1.0f) {
@@ -551,31 +559,31 @@ public class EditTextBoldCursor extends lt3 {
                 }
                 invalidate();
             }
-            xs3 xs3Var = this.u0;
-            if (xs3Var != null && !TextUtils.isEmpty(xs3Var.i) && (this.A0 || this.B0 != 0.0f)) {
-                xs3 xs3Var2 = this.v0;
-                xs3 xs3Var3 = this.u0;
-                if (xs3Var2 == null) {
-                    xs3Var3.O = 0.0f;
-                    xs3Var3.invalidateSelf();
-                } else if (this.v0.c() + xs3Var3.c() < getMeasuredWidth()) {
+            pt3 pt3Var = this.u0;
+            if (pt3Var != null && !TextUtils.isEmpty(pt3Var.i) && (this.A0 || this.B0 != 0.0f)) {
+                pt3 pt3Var2 = this.v0;
+                pt3 pt3Var3 = this.u0;
+                if (pt3Var2 == null) {
+                    pt3Var3.O = 0.0f;
+                    pt3Var3.invalidateSelf();
+                } else if (this.v0.c() + pt3Var3.c() < getMeasuredWidth()) {
                     canvas2.save();
                     canvas2.translate(this.u0.c() + (this.v0.c() - getMeasuredWidth()), 0.0f);
                     this.v0.C = (int) (Color.alpha(this.y0) * this.B0);
                     this.v0.draw(canvas2);
                     canvas2.restore();
-                    xs3 xs3Var4 = this.u0;
-                    xs3Var4.O = 0.0f;
-                    xs3Var4.invalidateSelf();
+                    pt3 pt3Var4 = this.u0;
+                    pt3Var4.O = 0.0f;
+                    pt3Var4.invalidateSelf();
                 } else {
                     canvas2.save();
                     canvas2.translate(this.e0, 0.0f);
                     this.v0.C = (int) (Color.alpha(this.y0) * this.B0);
                     this.v0.draw(canvas2);
                     canvas2.restore();
-                    xs3 xs3Var5 = this.u0;
-                    xs3Var5.O = (this.v0.c() + gl.L(2.0f)) - this.e0;
-                    xs3Var5.invalidateSelf();
+                    pt3 pt3Var5 = this.u0;
+                    pt3Var5.O = (this.v0.c() + hl.L(2.0f)) - this.e0;
+                    pt3Var5.invalidateSelf();
                 }
                 this.u0.C = (int) (Color.alpha(this.y0) * this.B0);
                 Shader shader = this.u0.a.getShader();
@@ -593,26 +601,26 @@ public class EditTextBoldCursor extends lt3 {
                 float lineLeft = this.p0.getLineLeft(0);
                 float lineWidth = this.p0.getLineWidth(0);
                 int i5 = lineLeft != 0.0f ? (int) (0.0f - lineLeft) : 0;
-                if (this.G0 && k96.a0) {
+                if (this.G0 && ob6.a0) {
                     float scrollX = getScrollX() + i5 + (getMeasuredWidth() - lineWidth);
                     this.q0 = scrollX;
-                    canvas2.translate(scrollX, (this.M0 - this.p0.getHeight()) - gl.L(7.0f));
+                    canvas2.translate(scrollX, (this.M0 - this.p0.getHeight()) - hl.L(7.0f));
                 } else {
                     float scrollX2 = getScrollX() + i5 + this.l1;
                     this.q0 = scrollX2;
-                    canvas2.translate(scrollX2, (this.M0 - this.p0.getHeight()) - gl.M(7.0f));
+                    canvas2.translate(scrollX2, (this.M0 - this.p0.getHeight()) - hl.M(7.0f));
                 }
                 if (this.T0) {
                     float f10 = 1.0f - (this.X0 * 0.3f);
-                    if (this.G0 && k96.a0) {
+                    if (this.G0 && ob6.a0) {
                         float f11 = lineWidth + lineLeft;
                         canvas2.translate(f11 - (f11 * f10), 0.0f);
                     } else if (lineLeft != 0.0f) {
                         canvas2.translate((1.0f - f10) * lineLeft, 0.0f);
                     }
                     canvas2.scale(f10, f10);
-                    canvas2.translate(0.0f, (-gl.L(22.0f)) * this.X0);
-                    getPaint().setColor(bm2.f(this.X0, this.y0, this.z0));
+                    canvas2.translate(0.0f, (-hl.L(22.0f)) * this.X0);
+                    getPaint().setColor(vm2.f(this.X0, this.y0, this.z0));
                 } else {
                     getPaint().setColor(this.y0);
                     getPaint().setAlpha((int) ((Color.alpha(this.y0) / 255.0f) * this.B0 * 255.0f));
@@ -621,86 +629,86 @@ public class EditTextBoldCursor extends lt3 {
                 if (this.m1 != null && !this.T0) {
                     getPaint().setShader(this.m1);
                 }
-                jab jabVar = this.d0;
-                if (jabVar == null || !jabVar.e) {
-                    f = 2.0f;
-                    f2 = 150.0f;
-                    f fVar = this.t0;
-                    if (fVar != null) {
-                        fVar.a(canvas2, new wc3(this, canvas2, (byte) 27));
+                geb gebVar = this.d0;
+                if (gebVar == null || !gebVar.e) {
+                    f = 150.0f;
+                    f2 = 2.0f;
+                    c cVar = this.t0;
+                    if (cVar != null) {
+                        cVar.a(canvas2, new wd3(this, canvas2, (byte) 25));
                     } else {
                         this.p0.draw(canvas2);
                     }
                 } else {
                     canvas2.save();
                     canvas2.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    jab jabVar2 = this.d0;
+                    geb gebVar2 = this.d0;
                     TextPaint paint = getPaint();
-                    EditTextBoldCursor editTextBoldCursor = jabVar2.a;
-                    if (jabVar2.e) {
-                        float f12 = jabVar2.h;
-                        boolean z6 = jabVar2.f;
-                        float f13 = jabVar2.i;
+                    EditTextBoldCursor editTextBoldCursor = gebVar2.a;
+                    if (gebVar2.e) {
+                        float f12 = gebVar2.h;
+                        boolean z6 = gebVar2.f;
+                        float f13 = gebVar2.i;
                         if (!z6) {
                             f13 = 1.0f - f13;
                         }
                         float f14 = f12 * f13;
                         int alpha = paint.getAlpha();
-                        if (jabVar2.d != null) {
+                        if (gebVar2.d != null) {
                             canvas2.save();
                             canvas2.translate(f14, 0.0f);
-                            jabVar2.d.draw(canvas2);
+                            gebVar2.d.draw(canvas2);
                             canvas2.restore();
                         }
-                        if (jabVar2.b != null) {
-                            boolean z7 = jabVar2.f;
-                            f = 2.0f;
-                            float f15 = jabVar2.i;
+                        if (gebVar2.b != null) {
+                            boolean z7 = gebVar2.f;
+                            f = 150.0f;
+                            float f15 = gebVar2.i;
                             if (z7) {
                                 f15 = 1.0f - f15;
                             }
                             canvas2.save();
                             paint.setAlpha((int) (alpha * f15));
                             canvas2.translate(f14, 0.0f);
-                            if (jabVar2.g) {
+                            if (gebVar2.g) {
                                 float f16 = (f15 * 0.1f) + 0.9f;
                                 canvas2.scale(f16, f16, f14, editTextBoldCursor.getMeasuredHeight() / 2.0f);
                             }
-                            jabVar2.b.draw(canvas2);
+                            gebVar2.b.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                         } else {
-                            f = 2.0f;
+                            f = 150.0f;
                         }
-                        if (jabVar2.c != null) {
-                            boolean z8 = jabVar2.f;
-                            float f17 = jabVar2.i;
+                        if (gebVar2.c != null) {
+                            boolean z8 = gebVar2.f;
+                            float f17 = gebVar2.i;
                             if (!z8) {
                                 f17 = 1.0f - f17;
                             }
                             canvas2.save();
                             float f18 = alpha;
-                            f2 = 150.0f;
-                            boolean z9 = jabVar2.f;
-                            float f19 = jabVar2.i;
+                            f2 = 2.0f;
+                            boolean z9 = gebVar2.f;
+                            float f19 = gebVar2.i;
                             if (!z9) {
                                 f19 = 1.0f - f19;
                             }
                             paint.setAlpha((int) (f18 * f19));
                             canvas2.translate(f14, 0.0f);
-                            if (jabVar2.g) {
+                            if (gebVar2.g) {
                                 float f20 = (f17 * 0.1f) + 0.9f;
-                                canvas2.scale(f20, f20, f14, editTextBoldCursor.getMeasuredHeight() / f);
+                                canvas2.scale(f20, f20, f14, editTextBoldCursor.getMeasuredHeight() / 2.0f);
                             }
-                            jabVar2.c.draw(canvas2);
+                            gebVar2.c.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                             canvas2.restore();
                         }
                     } else {
-                        f = 2.0f;
+                        f = 150.0f;
                     }
-                    f2 = 150.0f;
+                    f2 = 2.0f;
                     canvas2.restore();
                 }
                 if (this.m1 != null) {
@@ -708,15 +716,15 @@ public class EditTextBoldCursor extends lt3 {
                 }
                 getPaint().setColor(color);
                 canvas2.restore();
-                if (this.z1) {
-                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.D1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.D1, getHeight(), kk7.d4, 31);
+                if (this.A1) {
+                    canvas2.saveLayerAlpha((getPaddingLeft() + getScrollX()) - this.E1, 0.0f, ((getWidth() + getScrollX()) - getPaddingRight()) + this.E1, getHeight(), jn7.d4, 31);
                 }
                 int extendedPaddingTop = getExtendedPaddingTop();
                 this.m0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                field2 = G1;
+                field2 = H1;
                 if (field2 == null) {
                     this.m0 = field2.getInt(this);
-                    G1.set(this, 0);
+                    H1.set(this, 0);
                 } else {
                     this.m0 = getScrollX();
                 }
@@ -727,21 +735,21 @@ public class EditTextBoldCursor extends lt3 {
                 this.e1 = true;
                 super.onDraw(canvas);
                 this.e1 = false;
-                field = G1;
+                field = H1;
                 if (field != null && (i4 = this.m0) != Integer.MAX_VALUE) {
                     try {
                         field.set(this, Integer.valueOf(i4));
                     } catch (Exception unused) {
-                        boolean z10 = w01.a;
+                        boolean z10 = f11.a;
                     }
                 }
                 canvas2.restore();
-                ys3Var = this.f1;
+                qt3Var = this.f1;
                 GradientDrawable gradientDrawable = this.c0;
                 Rect rect = this.o0;
-                if (ys3Var != null) {
+                if (qt3Var != null) {
                     try {
-                        Field field3 = F1;
+                        Field field3 = G1;
                         if (field3 == null || (obj = this.b0) == null) {
                             z = this.H0;
                             this.H0 = false;
@@ -750,9 +758,9 @@ public class EditTextBoldCursor extends lt3 {
                         }
                         if (this.D0 && z) {
                             canvas2.save();
-                            if (I1 != null) {
-                                if ((getGravity() & kk7.w1) != 48) {
-                                    totalPaddingTop = ((Integer) I1.invoke(this, Boolean.TRUE)).intValue();
+                            if (J1 != null) {
+                                if ((getGravity() & jn7.w1) != 48) {
+                                    totalPaddingTop = ((Integer) J1.invoke(this, Boolean.TRUE)).intValue();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout = getLayout();
                                     int lineForOffset = layout.getLineForOffset(getSelectionStart());
@@ -760,7 +768,7 @@ public class EditTextBoldCursor extends lt3 {
                                     y();
                                     Rect bounds = gradientDrawable.getBounds();
                                     rect.left = bounds.left;
-                                    rect.right = bounds.left + gl.L(this.F0);
+                                    rect.right = bounds.left + hl.L(this.F0);
                                     i = bounds.bottom;
                                     rect.bottom = i;
                                     rect.top = bounds.top;
@@ -786,7 +794,7 @@ public class EditTextBoldCursor extends lt3 {
                                 y();
                                 Rect bounds2 = gradientDrawable.getBounds();
                                 rect.left = bounds2.left;
-                                rect.right = bounds2.left + gl.L(this.F0);
+                                rect.right = bounds2.left + hl.L(this.F0);
                                 i = bounds2.bottom;
                                 rect.bottom = i;
                                 rect.top = bounds2.top;
@@ -804,7 +812,7 @@ public class EditTextBoldCursor extends lt3 {
                                 n(canvas2, gradientDrawable);
                                 canvas2.restore();
                             } else {
-                                if ((getGravity() & kk7.w1) != 48) {
+                                if ((getGravity() & jn7.w1) != 48) {
                                     totalPaddingTop = getTotalPaddingTop() - getExtendedPaddingTop();
                                     canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop);
                                     Layout layout22 = getLayout();
@@ -813,7 +821,7 @@ public class EditTextBoldCursor extends lt3 {
                                     y();
                                     Rect bounds22 = gradientDrawable.getBounds();
                                     rect.left = bounds22.left;
-                                    rect.right = bounds22.left + gl.L(this.F0);
+                                    rect.right = bounds22.left + hl.L(this.F0);
                                     i = bounds22.bottom;
                                     rect.bottom = i;
                                     rect.top = bounds22.top;
@@ -838,7 +846,7 @@ public class EditTextBoldCursor extends lt3 {
                                 y();
                                 Rect bounds222 = gradientDrawable.getBounds();
                                 rect.left = bounds222.left;
-                                rect.right = bounds222.left + gl.L(this.F0);
+                                rect.right = bounds222.left + hl.L(this.F0);
                                 i = bounds222.bottom;
                                 rect.bottom = i;
                                 rect.top = bounds222.top;
@@ -857,14 +865,14 @@ public class EditTextBoldCursor extends lt3 {
                             }
                         }
                     } catch (Throwable unused2) {
-                        boolean z11 = w01.a;
+                        boolean z11 = f11.a;
                     }
                 } else if (this.H0 && this.D0) {
                     try {
                         canvas2.save();
-                        if (I1 != null) {
-                            if ((getGravity() & kk7.w1) != 48) {
-                                totalPaddingTop2 = ((Integer) I1.invoke(this, Boolean.TRUE)).intValue();
+                        if (J1 != null) {
+                            if ((getGravity() & jn7.w1) != 48) {
+                                totalPaddingTop2 = ((Integer) J1.invoke(this, Boolean.TRUE)).intValue();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout3 = getLayout();
                                 int lineForOffset3 = layout3.getLineForOffset(getSelectionStart());
@@ -872,7 +880,7 @@ public class EditTextBoldCursor extends lt3 {
                                 y();
                                 Rect bounds3 = gradientDrawable.getBounds();
                                 rect.left = bounds3.left;
-                                rect.right = bounds3.left + gl.L(this.F0);
+                                rect.right = bounds3.left + hl.L(this.F0);
                                 i3 = bounds3.bottom;
                                 rect.bottom = i3;
                                 rect.top = bounds3.top;
@@ -899,7 +907,7 @@ public class EditTextBoldCursor extends lt3 {
                             y();
                             Rect bounds32 = gradientDrawable.getBounds();
                             rect.left = bounds32.left;
-                            rect.right = bounds32.left + gl.L(this.F0);
+                            rect.right = bounds32.left + hl.L(this.F0);
                             i3 = bounds32.bottom;
                             rect.bottom = i3;
                             rect.top = bounds32.top;
@@ -918,7 +926,7 @@ public class EditTextBoldCursor extends lt3 {
                             canvas2.restore();
                             this.H0 = false;
                         } else {
-                            if ((getGravity() & kk7.w1) != 48) {
+                            if ((getGravity() & jn7.w1) != 48) {
                                 totalPaddingTop2 = getTotalPaddingTop() - getExtendedPaddingTop();
                                 canvas2.translate(getPaddingLeft(), getExtendedPaddingTop() + totalPaddingTop2);
                                 Layout layout322 = getLayout();
@@ -927,7 +935,7 @@ public class EditTextBoldCursor extends lt3 {
                                 y();
                                 Rect bounds322 = gradientDrawable.getBounds();
                                 rect.left = bounds322.left;
-                                rect.right = bounds322.left + gl.L(this.F0);
+                                rect.right = bounds322.left + hl.L(this.F0);
                                 i3 = bounds322.bottom;
                                 rect.bottom = i3;
                                 rect.top = bounds322.top;
@@ -953,7 +961,7 @@ public class EditTextBoldCursor extends lt3 {
                             y();
                             Rect bounds3222 = gradientDrawable.getBounds();
                             rect.left = bounds3222.left;
-                            rect.right = bounds3222.left + gl.L(this.F0);
+                            rect.right = bounds3222.left + hl.L(this.F0);
                             i3 = bounds3222.bottom;
                             rect.bottom = i3;
                             rect.top = bounds3222.top;
@@ -972,17 +980,17 @@ public class EditTextBoldCursor extends lt3 {
                             this.H0 = false;
                         }
                     } catch (Throwable unused3) {
-                        boolean z12 = w01.a;
+                        boolean z12 = f11.a;
                     }
                 }
                 if (this.I0 && this.J0 != 0) {
-                    int L = gl.L(1.0f);
+                    int L = hl.L(1.0f);
                     z2 = this.N0;
                     isEmpty = TextUtils.isEmpty(this.x0);
                     Paint paint2 = this.g0;
                     if (isEmpty) {
                         paint2.setColor(this.L0);
-                        L = gl.L(f);
+                        L = hl.L(f2);
                         this.N0 = false;
                     } else if (isFocused()) {
                         this.N0 = true;
@@ -991,12 +999,12 @@ public class EditTextBoldCursor extends lt3 {
                             this.P0 = SystemClock.elapsedRealtime();
                             this.Q0 = this.O0;
                         }
-                        elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f2;
+                        elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f;
                         if (elapsedRealtime >= 1.0f) {
                             boolean z13 = this.N0;
                             float f21 = this.O0;
                             if (z13) {
-                                int measuredHeight = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                                int measuredHeight = this.s0 ? getMeasuredHeight() - hl.L(f2) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), hl.L(f2)) + getScrollY() + ((int) this.M0);
                                 i2 = this.k1;
                                 if (i2 < 0) {
                                 }
@@ -1008,7 +1016,7 @@ public class EditTextBoldCursor extends lt3 {
                                 if (f4 > 0.0f) {
                                 }
                             } else {
-                                int measuredHeight2 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                                int measuredHeight2 = this.s0 ? getMeasuredHeight() - hl.L(f2) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), hl.L(f2)) + getScrollY() + ((int) this.M0);
                                 i2 = this.k1;
                                 if (i2 < 0) {
                                     i2 = getMeasuredWidth() / 2;
@@ -1020,25 +1028,25 @@ public class EditTextBoldCursor extends lt3 {
                                 }
                                 f4 = this.O0;
                                 if (f4 > 0.0f) {
-                                    float interpolation = s33.j.getInterpolation(f4);
+                                    float interpolation = k43.j.getInterpolation(f4);
                                     if (this.N0) {
                                         this.R0 = max2 * interpolation;
                                         interpolation = 1.0f;
                                     }
-                                    int L2 = (int) (interpolation * gl.L(f));
+                                    int L2 = (int) (interpolation * hl.L(f2));
                                     float f22 = i102;
                                     canvas2 = canvas;
-                                    canvas2.drawRect(getScrollX() + Math.max(0.0f, f22 - (this.R0 / f)), measuredHeight2 - L2, getScrollX() + Math.min((this.R0 / f) + f22, getMeasuredWidth()), measuredHeight2, this.h0);
+                                    canvas2.drawRect(getScrollX() + Math.max(0.0f, f22 - (this.R0 / f2)), measuredHeight2 - L2, getScrollX() + Math.min((this.R0 / f2) + f22, getMeasuredWidth()), measuredHeight2, this.h0);
                                 } else {
                                     canvas2 = canvas;
                                 }
                             }
                         }
-                        this.O0 = gl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
+                        this.O0 = hl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
                         if (elapsedRealtime < 1.0f) {
                             invalidate();
                         }
-                        int measuredHeight22 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                        int measuredHeight22 = this.s0 ? getMeasuredHeight() - hl.L(f2) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), hl.L(f2)) + getScrollY() + ((int) this.M0);
                         i2 = this.k1;
                         if (i2 < 0) {
                         }
@@ -1056,13 +1064,13 @@ public class EditTextBoldCursor extends lt3 {
                     z3 = false;
                     if (z3 != z2) {
                     }
-                    elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f2;
+                    elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f;
                     if (elapsedRealtime >= 1.0f) {
                     }
-                    this.O0 = gl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
+                    this.O0 = hl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
                     if (elapsedRealtime < 1.0f) {
                     }
-                    int measuredHeight222 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+                    int measuredHeight222 = this.s0 ? getMeasuredHeight() - hl.L(f2) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), hl.L(f2)) + getScrollY() + ((int) this.M0);
                     i2 = this.k1;
                     if (i2 < 0) {
                     }
@@ -1074,32 +1082,34 @@ public class EditTextBoldCursor extends lt3 {
                     if (f4 > 0.0f) {
                     }
                 }
-                if (this.z1) {
+                if (this.A1) {
                     return;
                 }
                 canvas2.save();
                 canvas2.translate(getScrollX(), 0.0f);
-                this.A1.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                this.C1.reset();
-                this.B1.setLocalMatrix(this.C1);
-                canvas2.drawRect(getPaddingLeft() - this.D1, 0.0f, getPaddingLeft(), getHeight(), this.A1);
-                this.C1.reset();
-                this.C1.postScale(-1.0f, 1.0f, this.D1 / f, 0.0f);
-                this.C1.postTranslate(getWidth() - getPaddingRight(), 0.0f);
-                this.B1.setLocalMatrix(this.C1);
-                canvas.drawRect(getWidth() - getPaddingRight(), 0.0f, (getWidth() - getPaddingRight()) + this.D1, getHeight(), this.A1);
+                this.B1.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                this.D1.reset();
+                this.C1.setLocalMatrix(this.D1);
+                canvas2.drawRect(getPaddingLeft() - this.E1, 0.0f, getPaddingLeft(), getHeight(), this.B1);
+                this.D1.reset();
+                this.D1.postScale(-1.0f, 1.0f, this.E1 / f2, 0.0f);
+                this.D1.postTranslate(getWidth() - getPaddingRight(), 0.0f);
+                this.C1.setLocalMatrix(this.D1);
+                canvas.drawRect(getWidth() - getPaddingRight(), 0.0f, (getWidth() - getPaddingRight()) + this.E1, getHeight(), this.B1);
                 canvas.restore();
                 canvas.restore();
                 return;
             }
+        } else {
+            canvas2 = canvas;
         }
-        f = 2.0f;
-        f2 = 150.0f;
-        if (this.z1) {
+        f = 150.0f;
+        f2 = 2.0f;
+        if (this.A1) {
         }
         int extendedPaddingTop2 = getExtendedPaddingTop();
         this.m0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        field2 = G1;
+        field2 = H1;
         if (field2 == null) {
         }
         this.k0 = 1;
@@ -1109,18 +1119,18 @@ public class EditTextBoldCursor extends lt3 {
         this.e1 = true;
         super.onDraw(canvas);
         this.e1 = false;
-        field = G1;
+        field = H1;
         if (field != null) {
             field.set(this, Integer.valueOf(i4));
         }
         canvas2.restore();
-        ys3Var = this.f1;
+        qt3Var = this.f1;
         GradientDrawable gradientDrawable2 = this.c0;
         Rect rect2 = this.o0;
-        if (ys3Var != null) {
+        if (qt3Var != null) {
         }
         if (this.I0) {
-            int L3 = gl.L(1.0f);
+            int L3 = hl.L(1.0f);
             z2 = this.N0;
             isEmpty = TextUtils.isEmpty(this.x0);
             Paint paint22 = this.g0;
@@ -1129,13 +1139,13 @@ public class EditTextBoldCursor extends lt3 {
             z3 = false;
             if (z3 != z2) {
             }
-            elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f2;
+            elapsedRealtime = (SystemClock.elapsedRealtime() - this.P0) / f;
             if (elapsedRealtime >= 1.0f) {
             }
-            this.O0 = gl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
+            this.O0 = hl.R1(this.Q0, this.N0 ? 1.0f : 0.0f, Math.max(0.0f, Math.min(1.0f, elapsedRealtime)));
             if (elapsedRealtime < 1.0f) {
             }
-            int measuredHeight2222 = this.s0 ? getMeasuredHeight() - gl.L(f) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), gl.L(f)) + getScrollY() + ((int) this.M0);
+            int measuredHeight2222 = this.s0 ? getMeasuredHeight() - hl.L(f2) : Math.min(Math.max(0, (getPaddingTop() + (getPaddingBottom() + ((getLayout() == null ? 0 : getLayout().getHeight()) - getMeasuredHeight()))) - getScrollY()), hl.L(f2)) + getScrollY() + ((int) this.M0);
             i2 = this.k1;
             if (i2 < 0) {
             }
@@ -1147,7 +1157,7 @@ public class EditTextBoldCursor extends lt3 {
             if (f4 > 0.0f) {
             }
         }
-        if (this.z1) {
+        if (this.A1) {
         }
     }
 
@@ -1156,7 +1166,7 @@ public class EditTextBoldCursor extends lt3 {
         try {
             super.onFocusChanged(z, i, rect);
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
         l(true);
     }
@@ -1169,7 +1179,7 @@ public class EditTextBoldCursor extends lt3 {
             if (getText().length() <= 0) {
                 accessibilityNodeInfo.setText(this.p0.getText());
             } else {
-                new u4(accessibilityNodeInfo).l(this.p0.getText());
+                new v4(accessibilityNodeInfo).l(this.p0.getText());
             }
         }
     }
@@ -1178,25 +1188,25 @@ public class EditTextBoldCursor extends lt3 {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
-        xs3 xs3Var = this.u0;
-        if (xs3Var != null) {
-            xs3Var.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        pt3 pt3Var = this.u0;
+        if (pt3Var != null) {
+            pt3Var.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         }
-        xs3 xs3Var2 = this.v0;
-        if (xs3Var2 != null) {
-            xs3Var2.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        pt3 pt3Var2 = this.v0;
+        if (pt3Var2 != null) {
+            pt3Var2.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
         }
         StaticLayout staticLayout = this.p0;
         if (staticLayout == null || this.u0 != null) {
-            this.M0 = getMeasuredHeight() - gl.L(2.0f);
+            this.M0 = getMeasuredHeight() - hl.L(2.0f);
         } else {
             if (this.d1 != measuredHeight) {
                 s(this.w0, false, staticLayout.getPaint());
             }
             if (this.r0) {
-                this.M0 = ((((((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - this.p0.getHeight()) / 2.0f) + (getPaddingTop() + getExtendedPaddingTop())) + this.p0.getHeight()) - gl.L(1.0f);
+                this.M0 = ((((((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom()) - this.p0.getHeight()) / 2.0f) + (getPaddingTop() + getExtendedPaddingTop())) + this.p0.getHeight()) - hl.L(1.0f);
             } else {
-                this.M0 = ((getMeasuredHeight() - this.p0.getHeight()) / 2.0f) + this.p0.getHeight() + gl.L(6.0f);
+                this.M0 = ((getMeasuredHeight() - this.p0.getHeight()) / 2.0f) + this.p0.getHeight() + hl.L(6.0f);
             }
         }
         this.d1 = measuredHeight;
@@ -1210,7 +1220,7 @@ public class EditTextBoldCursor extends lt3 {
         }
     }
 
-    @Override // lt3, android.widget.TextView
+    @Override // cu3, android.widget.TextView
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
         if (!this.T0 || this.U0) {
@@ -1239,16 +1249,16 @@ public class EditTextBoldCursor extends lt3 {
         if (Build.VERSION.SDK_INT < 29 || runnable == null || j != 500 || !"android.widget.Editor$Blink".equals(runnable.getClass().getName()) || Looper.myLooper() != Looper.getMainLooper()) {
             return super.postDelayed(runnable, j);
         }
-        rg2 d = rg2.d();
-        rg2.c();
+        jh2 d = jh2.d();
+        jh2.c();
         d.h(runnable);
-        qg2 e = d.e(2);
-        e59 e59Var = e.d;
-        if (e59Var == null) {
-            e59Var = new e59(0, false);
-            e.d = e59Var;
+        ih2 e = d.e(2);
+        r89 r89Var = e.d;
+        if (r89Var == null) {
+            r89Var = new r89(0, false);
+            e.d = r89Var;
         }
-        e59Var.add(runnable);
+        r89Var.add(runnable);
         return true;
     }
 
@@ -1256,14 +1266,14 @@ public class EditTextBoldCursor extends lt3 {
         invalidate();
         if (isHardwareAccelerated()) {
             try {
-                if (L1 != null) {
+                if (M1 != null) {
                     Object obj = this.b0;
                     if (obj == null) {
-                        obj = E1.get(this);
+                        obj = F1.get(this);
                         this.b0 = obj;
                     }
                     if (obj != null) {
-                        L1.invoke(obj, null);
+                        M1.invoke(obj, null);
                     }
                 }
             } catch (Exception unused) {
@@ -1278,7 +1288,7 @@ public class EditTextBoldCursor extends lt3 {
     @Override // android.view.View
     public final boolean removeCallbacks(Runnable runnable) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
-            rg2.d().h(runnable);
+            jh2.d().h(runnable);
         }
         return super.removeCallbacks(runnable);
     }
@@ -1298,29 +1308,28 @@ public class EditTextBoldCursor extends lt3 {
         String charSequence3;
         boolean z2;
         CharSequence charSequence4 = charSequence;
-        xs3 xs3Var = this.u0;
+        pt3 pt3Var = this.u0;
         byte b = 1;
-        if (xs3Var != null) {
-            xs3Var.t(charSequence4, !k96.a0, true);
+        if (pt3Var != null) {
+            pt3Var.t(charSequence4, !ob6.a0, true);
             return;
         }
         if (charSequence4 == null) {
             charSequence4 = "";
         }
         CharSequence charSequence5 = charSequence4;
-        byte b2 = 0;
         boolean z3 = getMeasuredWidth() == 0 ? false : z;
-        jab jabVar = this.d0;
+        geb gebVar = this.d0;
         if (z3) {
-            if (jabVar == null) {
-                jabVar = new jab(this);
-                this.d0 = jabVar;
+            if (gebVar == null) {
+                gebVar = new geb(this);
+                this.d0 = gebVar;
             }
-            jab jabVar2 = jabVar;
+            geb gebVar2 = gebVar;
             StaticLayout staticLayout = this.p0;
             CharSequence charSequence6 = this.w0;
             if (staticLayout != null && !charSequence6.equals(charSequence5)) {
-                ValueAnimator valueAnimator = jabVar2.j;
+                ValueAnimator valueAnimator = gebVar2.j;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
@@ -1338,47 +1347,47 @@ public class EditTextBoldCursor extends lt3 {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence2);
                     if (indexOf != 0) {
-                        spannableStringBuilder2.setSpan(new lx2(b), 0, indexOf, 0);
+                        spannableStringBuilder2.setSpan(new fy2(b), 0, indexOf, 0);
                     }
                     if (charSequence3.length() + indexOf != charSequence2.length()) {
-                        spannableStringBuilder2.setSpan(new lx2(b), charSequence3.length() + indexOf, charSequence2.length(), 0);
+                        spannableStringBuilder2.setSpan(new fy2(b), charSequence3.length() + indexOf, charSequence2.length(), 0);
                     }
-                    spannableStringBuilder.setSpan(new lx2(b), indexOf, charSequence3.length() + indexOf, 0);
-                    int L = gl.L(400.0f);
+                    spannableStringBuilder.setSpan(new fy2(b), indexOf, charSequence3.length() + indexOf, 0);
+                    int L = hl.L(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    jabVar2.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
-                    StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, gl.L(400.0f), alignment, 1.0f, 0.0f, false);
-                    jabVar2.d = staticLayout2;
-                    jabVar2.e = true;
-                    jabVar2.f = z2;
-                    jabVar2.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
-                    jabVar2.c = null;
-                    jabVar2.g = false;
+                    gebVar2.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
+                    StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, hl.L(400.0f), alignment, 1.0f, 0.0f, false);
+                    gebVar2.d = staticLayout2;
+                    gebVar2.e = true;
+                    gebVar2.f = z2;
+                    gebVar2.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
+                    gebVar2.c = null;
+                    gebVar2.g = false;
                 } else {
-                    int L2 = gl.L(400.0f);
+                    int L2 = hl.L(400.0f);
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    jabVar2.b = new StaticLayout(charSequence5, textPaint, L2, alignment2, 1.0f, 0.0f, false);
-                    jabVar2.c = new StaticLayout(charSequence6, textPaint, gl.L(400.0f), alignment2, 1.0f, 0.0f, false);
-                    jabVar2.d = null;
-                    jabVar2.e = true;
-                    jabVar2.g = true;
-                    jabVar2.h = 0.0f;
+                    gebVar2.b = new StaticLayout(charSequence5, textPaint, L2, alignment2, 1.0f, 0.0f, false);
+                    gebVar2.c = new StaticLayout(charSequence6, textPaint, hl.L(400.0f), alignment2, 1.0f, 0.0f, false);
+                    gebVar2.d = null;
+                    gebVar2.e = true;
+                    gebVar2.g = true;
+                    gebVar2.h = 0.0f;
                 }
-                jabVar2.i = 0.0f;
+                gebVar2.i = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                jabVar2.j = ofFloat;
-                ofFloat.addUpdateListener(new gja(jabVar2, (byte) 19));
-                jabVar2.j.addListener(new iab(jabVar2, b2));
-                jabVar2.j.setDuration(150L);
-                jabVar2.j.setInterpolator(s33.f);
-                jabVar2.j.start();
+                gebVar2.j = ofFloat;
+                ofFloat.addUpdateListener(new ija(gebVar2, (byte) 21));
+                gebVar2.j.addListener(new po9((Object) gebVar2, (byte) 29));
+                gebVar2.j.setDuration(150L);
+                gebVar2.j.setInterpolator(k43.f);
+                gebVar2.j.start();
             }
-        } else if (jabVar != null) {
-            ValueAnimator valueAnimator2 = jabVar.j;
+        } else if (gebVar != null) {
+            ValueAnimator valueAnimator2 = gebVar.j;
             if (valueAnimator2 != null) {
                 valueAnimator2.cancel();
             }
-            jabVar.e = false;
+            gebVar.e = false;
         }
         this.w0 = charSequence5;
         if (getMeasuredWidth() != 0) {
@@ -1391,7 +1400,7 @@ public class EditTextBoldCursor extends lt3 {
         } else {
             textPaint2 = textPaint;
         }
-        this.p0 = new StaticLayout(charSequence5, textPaint2, gl.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.p0 = new StaticLayout(charSequence5, textPaint2, hl.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         invalidate();
     }
 
@@ -1406,15 +1415,15 @@ public class EditTextBoldCursor extends lt3 {
         invalidate();
     }
 
-    public void setBlurredBackgroundDrawableViewFactory(kl0 kl0Var) {
-        this.s1 = kl0Var;
+    public void setBlurredBackgroundDrawableViewFactory(ll0 ll0Var) {
+        this.t1 = ll0Var;
     }
 
     public void setCursorColor(int i) {
         this.i1 = i;
-        ys3 ys3Var = this.f1;
-        if (ys3Var != null) {
-            ys3Var.getPaint().setColor(i);
+        qt3 qt3Var = this.f1;
+        if (qt3Var != null) {
+            qt3Var.getPaint().setColor(i);
         }
         GradientDrawable gradientDrawable = this.c0;
         if (gradientDrawable != null) {
@@ -1432,14 +1441,14 @@ public class EditTextBoldCursor extends lt3 {
     }
 
     public void setEllipsizeByGradient(boolean z) {
-        this.z1 = z;
+        this.A1 = z;
         if (z) {
-            this.D1 = gl.L(12.0f);
-            this.A1 = new Paint(1);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.D1, 0.0f, new int[]{-1, 16777215}, new float[]{0.4f, 1.0f}, Shader.TileMode.CLAMP);
-            this.B1 = linearGradient;
-            this.A1.setShader(linearGradient);
-            this.C1 = new Matrix();
+            this.E1 = hl.L(12.0f);
+            this.B1 = new Paint(1);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.E1, 0.0f, new int[]{-1, 16777215}, new float[]{0.4f, 1.0f}, Shader.TileMode.CLAMP);
+            this.C1 = linearGradient;
+            this.B1.setShader(linearGradient);
+            this.D1 = new Matrix();
         }
     }
 
@@ -1463,14 +1472,14 @@ public class EditTextBoldCursor extends lt3 {
     }
 
     public void setHandlesColor(int i) {
-        if (Build.VERSION.SDK_INT < 29 || nye.b() || this.x1 == i) {
+        if (Build.VERSION.SDK_INT < 29 || f3f.b() || this.y1 == i) {
             return;
         }
-        this.x1 = i;
-        this.w1 = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
-        z(this.t1, false);
+        this.y1 = i;
+        this.x1 = new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN);
         z(this.u1, false);
         z(this.v1, false);
+        z(this.w1, false);
     }
 
     public void setHeaderAnimationProgress(float f) {
@@ -1485,13 +1494,13 @@ public class EditTextBoldCursor extends lt3 {
 
     public void setHintColor(int i) {
         this.y0 = i;
-        xs3 xs3Var = this.u0;
-        if (xs3Var != null) {
-            xs3Var.u(i);
+        pt3 pt3Var = this.u0;
+        if (pt3Var != null) {
+            pt3Var.u(i);
         }
-        xs3 xs3Var2 = this.v0;
-        if (xs3Var2 != null) {
-            xs3Var2.u(this.y0);
+        pt3 pt3Var2 = this.v0;
+        if (pt3Var2 != null) {
+            pt3Var2.u(this.y0);
         }
         invalidate();
     }
@@ -1525,7 +1534,7 @@ public class EditTextBoldCursor extends lt3 {
     }
 
     public void setOnPremiumMenuLockClickListener(Runnable runnable) {
-        this.y1 = runnable;
+        this.z1 = runnable;
     }
 
     @Override // android.widget.EditText
@@ -1533,7 +1542,7 @@ public class EditTextBoldCursor extends lt3 {
         try {
             super.setSelection(i, i2);
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
@@ -1541,7 +1550,7 @@ public class EditTextBoldCursor extends lt3 {
         this.G0 = z;
     }
 
-    @Override // lt3, android.widget.EditText, android.widget.TextView
+    @Override // cu3, android.widget.EditText, android.widget.TextView
     public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         l(this.S0);
@@ -1551,33 +1560,33 @@ public class EditTextBoldCursor extends lt3 {
     @Override // android.widget.TextView
     public void setTextSelectHandle(Drawable drawable) {
         Drawable z = z(drawable, true);
-        this.v1 = z;
+        this.w1 = z;
         super.setTextSelectHandle(z);
     }
 
     @Override // android.widget.TextView
     public void setTextSelectHandleLeft(Drawable drawable) {
         Drawable z = z(drawable, true);
-        this.t1 = z;
+        this.u1 = z;
         super.setTextSelectHandleLeft(z);
     }
 
     @Override // android.widget.TextView
     public void setTextSelectHandleRight(Drawable drawable) {
         Drawable z = z(drawable, true);
-        this.u1 = z;
+        this.v1 = z;
         super.setTextSelectHandleRight(z);
     }
 
     @Override // android.widget.TextView
     public void setTextSize(int i, float f) {
-        xs3 xs3Var = this.u0;
-        if (xs3Var != null) {
-            xs3Var.w(gl.L(f));
+        pt3 pt3Var = this.u0;
+        if (pt3Var != null) {
+            pt3Var.w(hl.L(f));
         }
-        xs3 xs3Var2 = this.v0;
-        if (xs3Var2 != null) {
-            xs3Var2.w(gl.L(f));
+        pt3 pt3Var2 = this.v0;
+        if (pt3Var2 != null) {
+            pt3Var2.w(hl.L(f));
         }
         super.setTextSize(i, f);
     }
@@ -1610,9 +1619,9 @@ public class EditTextBoldCursor extends lt3 {
         if (this.b1 == null && this.c1 == null) {
             return super.startActionMode(callback);
         }
-        yi4 yi4Var = this.Z0;
-        if (yi4Var != null) {
-            yi4Var.finish();
+        cl4 cl4Var = this.Z0;
+        if (cl4Var != null) {
+            cl4Var.finish();
         }
         m();
         Context context = getContext();
@@ -1620,16 +1629,16 @@ public class EditTextBoldCursor extends lt3 {
         if (view == null) {
             view = this.c1;
         }
-        gk4 gk4Var = new gk4(context, view, getActionModeStyle(), getResourcesProvider(), this.s1);
-        this.Y0 = gk4Var;
-        gk4Var.j = this.y1;
-        gk4Var.k = new wf0(this, (byte) 1);
-        yi4 yi4Var2 = new yi4(getContext(), new zs3(this, callback), this, this.Y0);
-        this.Z0 = yi4Var2;
-        this.a1 = new qr1(this, (byte) 2);
-        callback.onCreateActionMode(yi4Var2, yi4Var2.c);
-        yi4 yi4Var3 = this.Z0;
-        o(yi4Var3, yi4Var3.c);
+        lm4 lm4Var = new lm4(context, view, getActionModeStyle(), getResourcesProvider(), this.t1);
+        this.Y0 = lm4Var;
+        lm4Var.j = this.z1;
+        lm4Var.k = new yf0(this, (byte) 1);
+        cl4 cl4Var2 = new cl4(getContext(), new rt3(this, callback), this, this.Y0);
+        this.Z0 = cl4Var2;
+        this.a1 = new es1(this, (byte) 2);
+        callback.onCreateActionMode(cl4Var2, cl4Var2.c);
+        cl4 cl4Var3 = this.Z0;
+        o(cl4Var3, cl4Var3.c);
         this.Z0.invalidate();
         getViewTreeObserver().addOnPreDrawListener(this.a1);
         invalidate();
@@ -1697,36 +1706,36 @@ public class EditTextBoldCursor extends lt3 {
         if (!hasSelection() || getSelectionStart() < 0 || getSelectionEnd() < 0 || getSelectionStart() == getSelectionEnd() || (text = getText()) == null) {
             return false;
         }
-        dy8[] dy8VarArr = (dy8[]) text.getSpans(getSelectionStart(), getSelectionEnd(), dy8.class);
-        return dy8VarArr == null || dy8VarArr.length == 0;
+        q19[] q19VarArr = (q19[]) text.getSpans(getSelectionStart(), getSelectionEnd(), q19.class);
+        return q19VarArr == null || q19VarArr.length == 0;
     }
 
     public final void x(Canvas canvas, Rect rect) {
-        if (!this.n1) {
-            this.o1 = Float.NaN;
+        if (!this.o1) {
+            this.p1 = Float.NaN;
             return;
         }
         long uptimeMillis = SystemClock.uptimeMillis();
-        if (Float.isNaN(this.o1)) {
-            this.o1 = rect.left;
-            this.p1 = rect.top;
+        if (Float.isNaN(this.p1)) {
+            this.p1 = rect.left;
+            this.q1 = rect.top;
         } else {
-            float exp = 1.0f - ((float) Math.exp((-Math.min(64L, uptimeMillis - this.q1)) / 60.0f));
-            float f = this.o1;
+            float exp = 1.0f - ((float) Math.exp((-Math.min(64L, uptimeMillis - this.r1)) / 60.0f));
+            float f = this.p1;
             float f2 = rect.left;
-            float A = tb4.A(f2, f, exp, f);
-            this.o1 = A;
-            float f3 = this.p1;
-            this.p1 = tb4.A(rect.top, f3, exp, f3);
-            if (Math.abs(f2 - A) >= 0.5f || Math.abs(rect.top - this.p1) >= 0.5f) {
+            float A = qd4.A(f2, f, exp, f);
+            this.p1 = A;
+            float f3 = this.q1;
+            this.q1 = qd4.A(rect.top, f3, exp, f3);
+            if (Math.abs(f2 - A) >= 0.5f || Math.abs(rect.top - this.q1) >= 0.5f) {
                 postInvalidateOnAnimation();
             } else {
-                this.o1 = rect.left;
-                this.p1 = rect.top;
+                this.p1 = rect.left;
+                this.q1 = rect.top;
             }
         }
-        this.q1 = uptimeMillis;
-        canvas.translate(this.o1 - rect.left, this.p1 - rect.top);
+        this.r1 = uptimeMillis;
+        canvas.translate(this.p1 - rect.left, this.q1 - rect.top);
     }
 
     public final void y() {
@@ -1737,10 +1746,10 @@ public class EditTextBoldCursor extends lt3 {
         int lineTop = layout.getLineTop(lineForOffset);
         int lineTop2 = layout.getLineTop(lineForOffset + 1);
         float max = Math.max(0.5f, layout.getPrimaryHorizontal(length) - 0.5f);
-        Rect rect = this.r1;
+        Rect rect = this.s1;
         if (rect == null) {
             rect = new Rect();
-            this.r1 = rect;
+            this.s1 = rect;
         }
         GradientDrawable gradientDrawable = this.c0;
         if (gradientDrawable != null) {
@@ -1754,9 +1763,9 @@ public class EditTextBoldCursor extends lt3 {
         float f = max - scrollX;
         int width = (getWidth() - getCompoundPaddingLeft()) - getCompoundPaddingRight();
         float f2 = width;
-        int i2 = f >= f2 - 1.0f ? (width + scrollX) - (i - this.r1.right) : (Math.abs(f) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (TLObject.FLAG_20 - scrollX)) <= f2 + 1.0f && max <= 1.0f)) ? scrollX - this.r1.left : ((int) max) - this.r1.left;
-        int L = gl.L(this.F0);
-        Rect rect2 = this.r1;
+        int i2 = f >= f2 - 1.0f ? (width + scrollX) - (i - this.s1.right) : (Math.abs(f) <= 1.0f || (TextUtils.isEmpty(getText()) && ((float) (TLObject.FLAG_20 - scrollX)) <= f2 + 1.0f && max <= 1.0f)) ? scrollX - this.s1.left : ((int) max) - this.s1.left;
+        int L = hl.L(this.F0);
+        Rect rect2 = this.s1;
         gradientDrawable.setBounds(i2, lineTop - rect2.top, L + i2, lineTop2 + rect2.bottom);
         layout.getText();
     }
@@ -1766,7 +1775,7 @@ public class EditTextBoldCursor extends lt3 {
             if (z) {
                 drawable = drawable.mutate();
             }
-            PorterDuffColorFilter porterDuffColorFilter = this.w1;
+            PorterDuffColorFilter porterDuffColorFilter = this.x1;
             if (porterDuffColorFilter != null) {
                 drawable.setColorFilter(porterDuffColorFilter);
             }
@@ -1779,7 +1788,7 @@ public class EditTextBoldCursor extends lt3 {
         try {
             super.setSelection(i);
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 

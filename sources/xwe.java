@@ -1,23 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.IInterface;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface xwe {
-    boolean a(Object obj);
+public interface xwe extends IInterface {
+    void t(mae maeVar);
 
-    void b(Object obj);
-
-    void c(Object obj, byte[] bArr, int i, int i2, sad sadVar);
-
-    void d(Object obj, g6e g6eVar);
-
-    void e(nne nneVar, nne nneVar2);
-
-    boolean f(nne nneVar, nne nneVar2);
-
-    int g(nne nneVar);
-
-    Object zza();
-
-    int zzb(Object obj);
+    void zze();
 }

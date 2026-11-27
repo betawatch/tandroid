@@ -1,0 +1,48 @@
+// default package
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class x04 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ x04(Object obj, float f, int i, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.b = f;
+        this.c = i;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        float f = this.b;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                o24 o24Var = ((y04) obj).G;
+                try {
+                    z46 z46Var = new z46(o24Var.Q.getContext(), 0, f);
+                    z46Var.a = i;
+                    o24Var.R.v0(z46Var);
+                    break;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
+                }
+            default:
+                n1a n1aVar = (n1a) obj;
+                try {
+                    z46 z46Var2 = new z46(n1aVar.i0.getContext(), 0, f);
+                    z46Var2.a = i;
+                    n1aVar.s0.v0(z46Var2);
+                    break;
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                }
+        }
+    }
+}

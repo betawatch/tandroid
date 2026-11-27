@@ -1,64 +1,86 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.util.Log;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fm3 implements View.OnKeyListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vt4 b;
+public final /* synthetic */ class fm3 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ float[] b;
+    public final /* synthetic */ pm3 c;
+    public final /* synthetic */ s2c d;
+    public final /* synthetic */ boolean[] e;
 
-    public /* synthetic */ fm3(vt4 vt4Var, byte b) {
-        this.a = b;
-        this.b = vt4Var;
+    public /* synthetic */ fm3(float[] fArr, pm3 pm3Var, s2c s2cVar, boolean[] zArr) {
+        this.b = fArr;
+        this.c = pm3Var;
+        this.d = s2cVar;
+        this.e = zArr;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
-        byte b = this.a;
-        vt4 vt4Var = this.b;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                if (i == 4) {
-                    if (keyEvent.getAction() == 1) {
-                        LinearLayout linearLayout = vt4Var.e;
-                        if (linearLayout == null || vt4Var.O) {
-                            vt4Var.c(null);
-                        } else {
-                            vt4Var.e = null;
-                            vt4Var.h(linearLayout, false);
+                boolean[] zArr = this.e;
+                pm3 pm3Var = this.c;
+                s2c s2cVar = this.d;
+                float[] fArr = this.b;
+                nm3[] nm3VarArr = DictationAsr.a;
+                if (!zArr[0]) {
+                    if (pm3Var != null) {
+                        DictationAsr.k0((nm3) pm3Var.b, false, new im3(zArr, pm3Var, s2cVar, fArr));
+                        break;
+                    } else {
+                        r47 r47Var = s2cVar.b;
+                        Integer valueOf = Integer.valueOf(u2c.r(r47Var));
+                        int i = r47Var.K1;
+                        u2c.R.remove(valueOf);
+                        u2c.S.remove(valueOf);
+                        HashMap hashMap = u2c.P;
+                        if (hashMap != null) {
+                            hashMap.remove(valueOf);
                         }
+                        if (f11.a) {
+                            cc4.b("local transcription of msg_id=" + r47Var.e1() + ": unknown language, no words");
+                        }
+                        TLRPC.Message message = r47Var.k;
+                        message.voiceTranscription = "";
+                        message.voiceTranscriptionWords = null;
+                        message.voiceTranscriptionLocal = true;
+                        message.voiceTranscriptionFinal = true;
+                        message.voiceTranscriptionOpen = true;
+                        message.voiceTranscriptionId = 0L;
+                        u2c.q(r47Var);
+                        jn7 f = jn7.f(i);
+                        Boolean bool = Boolean.TRUE;
+                        f.k(jn7.A1, r47Var, null, null, bool, bool);
+                        break;
                     }
-                    break;
-                }
-                break;
-            case 1:
-                if (i == 4) {
-                    if (keyEvent.getAction() == 1) {
-                        vt4Var.c(null);
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                if (i == 4) {
-                    if (keyEvent.getAction() == 1) {
-                        vt4Var.c(null);
-                    }
-                    break;
                 }
                 break;
             default:
-                if (i == 4) {
-                    if (keyEvent.getAction() == 1) {
-                        vt4Var.c(null);
-                    }
+                float[] fArr2 = this.b;
+                pm3 pm3Var2 = this.c;
+                s2c s2cVar2 = this.d;
+                boolean[] zArr2 = this.e;
+                try {
+                    DictationAsr.f0(fArr2, pm3Var2, s2cVar2, zArr2);
                     break;
+                } catch (Throwable th) {
+                    Log.e("Dictation", "tinyasr: transcription failed", th);
+                    hl.c3(new em3(zArr2, s2cVar2, (byte) 1));
                 }
-                break;
         }
-        return true;
+    }
+
+    public /* synthetic */ fm3(boolean[] zArr, pm3 pm3Var, s2c s2cVar, float[] fArr) {
+        this.e = zArr;
+        this.c = pm3Var;
+        this.d = s2cVar;
+        this.b = fArr;
     }
 }

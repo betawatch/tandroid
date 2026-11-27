@@ -1,42 +1,64 @@
 // default package
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.PremiumPreviewFragment;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class di8 extends n39 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ ei8 d;
+public final /* synthetic */ class di8 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ ji8 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ TLRPC.PollAnswer d;
+    public final /* synthetic */ e e;
+    public final /* synthetic */ ArrayList f;
 
-    public di8(ei8 ei8Var, Context context) {
-        this.d = ei8Var;
-        this.c = context;
+    public /* synthetic */ di8(ji8 ji8Var, boolean z, TLRPC.PollAnswer pollAnswer, e eVar, ArrayList arrayList) {
+        this.b = ji8Var;
+        this.c = z;
+        this.d = pollAnswer;
+        this.e = eVar;
+        this.f = arrayList;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return !((gi8) this.d.n.d.get(s49Var.b())).a.current;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ArrayList arrayList = this.f;
+        e eVar = this.e;
+        TLRPC.PollAnswer pollAnswer = this.d;
+        boolean z = this.c;
+        ji8 ji8Var = this.b;
+        switch (b) {
+            case 0:
+                if (z) {
+                    arrayList.remove(pollAnswer);
+                    eVar.getSendMessagesHelper().v0(ji8Var.I, arrayList, null);
+                } else {
+                    eVar.getSendMessagesHelper().v0(ji8Var.I, null, null);
+                }
+                ji8Var.b(true);
+                break;
+            default:
+                if (z) {
+                    arrayList.add(pollAnswer);
+                    eVar.getSendMessagesHelper().v0(ji8Var.I, arrayList, null);
+                } else {
+                    ArrayList arrayList2 = new ArrayList(1);
+                    arrayList2.add(pollAnswer);
+                    eVar.getSendMessagesHelper().v0(ji8Var.I, arrayList2, null);
+                }
+                ji8Var.b(true);
+                break;
+        }
     }
 
-    @Override // w39
-    public final int b() {
-        return this.d.n.d.size();
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        ri8 ri8Var = (ri8) s49Var.a;
-        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
-        ri8Var.a((gi8) premiumPreviewFragment.d.get(i), i != b() - 1);
-        ri8Var.c(premiumPreviewFragment.e == i, false);
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        ci8 ci8Var = new ci8(this, this.c);
-        ci8Var.setCirclePaintProvider(new dx6((Object) this, (Object) ci8Var, (byte) 23));
-        return new y29(ci8Var);
+    public /* synthetic */ di8(ji8 ji8Var, boolean z, e eVar, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
+        this.b = ji8Var;
+        this.c = z;
+        this.e = eVar;
+        this.f = arrayList;
+        this.d = pollAnswer;
     }
 }

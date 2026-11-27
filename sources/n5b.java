@@ -1,42 +1,27 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class n5b extends v5b {
-    public final /* synthetic */ t5b N;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class n5b extends TL_stories.StoryItem {
+    public final o5b a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n5b(t5b t5bVar, Context context, wjb wjbVar, l5b l5bVar) {
-        super(context, wjbVar, l5bVar);
-        this.N = t5bVar;
-    }
-
-    @Override // v5b
-    public final void setContainerHeight(float f) {
-        super.setContainerHeight(f);
-        t5b t5bVar = this.N;
-        l35 l35Var = t5bVar.E;
-        float y = getY();
-        FrameLayout frameLayout = t5bVar.e;
-        l35Var.setTranslationY((Math.min(gl.L(150.0f), this.K) + (y - (frameLayout == null ? 0 : frameLayout.getPaddingTop()))) - 1.0f);
-        if (frameLayout != null) {
-            frameLayout.invalidate();
+    public n5b(o5b o5bVar, long j, TL_bots.botPreviewMedia botpreviewmedia) {
+        this.a = o5bVar;
+        this.dialogId = j;
+        TLRPC.MessageMedia messageMedia = botpreviewmedia.media;
+        this.media = messageMedia;
+        TLRPC.Document document = messageMedia.document;
+        if (document != null) {
+            document.date = botpreviewmedia.date;
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        super.setTranslationY(f);
-        t5b t5bVar = this.N;
-        l35 l35Var = t5bVar.E;
-        float y = getY();
-        FrameLayout frameLayout = t5bVar.e;
-        l35Var.setTranslationY((Math.min(gl.L(150.0f), this.K) + (y - (frameLayout == null ? 0 : frameLayout.getPaddingTop()))) - 1.0f);
-        if (frameLayout != null) {
-            frameLayout.invalidate();
+        TLRPC.Photo photo = messageMedia.photo;
+        if (photo != null) {
+            photo.date = botpreviewmedia.date;
         }
     }
 }

@@ -1,72 +1,73 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import org.telegram.ui.m;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xx0 {
-    public final RectF a = new RectF();
-    public final yx0 b;
-    public final px0 c;
-    public final nx0 d;
-    public final Paint e;
-    public final Matrix f;
-    public final float[] g;
-    public final float[] h;
-    public float i;
-    public ValueAnimator j;
-    public final n41 k;
-    public final Paint l;
-    public final RectF m;
-    public final Path n;
-    public final Paint o;
-    public final RadialGradient p;
-    public final Matrix q;
-    public final Paint r;
+public class xx0 {
+    public boolean A;
+    public boolean B;
+    public boolean C;
+    public boolean D;
+    public String E;
+    public Bitmap F;
+    public boolean G;
+    public String H;
+    public float I;
+    public o J;
+    public wr0 K;
+    public boolean L;
+    public gzc a;
+    public nv0 b;
+    public m c;
+    public Object d;
+    public boolean e;
+    public String f;
+    public int g;
+    public int h;
+    public int i;
+    public boolean j;
+    public float k = Float.MAX_VALUE;
+    public boolean l = true;
+    public Bitmap m;
+    public boolean n;
+    public boolean o;
+    public int p;
+    public int q;
+    public int r;
+    public int s;
+    public boolean t;
+    public boolean u;
+    public boolean v;
+    public lp w;
+    public String x;
+    public boolean y;
+    public boolean z;
 
-    public xx0(yx0 yx0Var, px0 px0Var, nx0 nx0Var) {
-        Paint paint = new Paint(1);
-        this.e = paint;
-        this.f = new Matrix();
-        this.g = new float[8];
-        this.h = new float[8];
-        this.i = 0.0f;
-        this.l = new Paint(1);
-        this.m = new RectF();
-        this.n = new Path();
-        this.o = new Paint(3);
-        this.p = new RadialGradient(0.0f, 0.0f, 255.0f, new int[]{0, 805306368}, new float[]{0.5f, 1.0f}, Shader.TileMode.CLAMP);
-        this.q = new Matrix();
-        this.r = new Paint(1);
-        this.b = yx0Var;
-        this.c = px0Var;
-        this.d = nx0Var;
-        this.k = new n41(yx0Var);
-        paint.setColor(px0Var.r);
+    public final void a() {
+        try {
+            nv0 nv0Var = this.b;
+            if (nv0Var != null) {
+                nv0Var.destroy();
+                this.b = null;
+            }
+            o oVar = this.J;
+            if (oVar != null) {
+                oVar.p();
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 
-    public final void a(float f) {
-        ValueAnimator valueAnimator = this.j;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    public String b() {
+        if (this.J != null) {
+            return TextUtils.isEmpty(this.E) ? ob6.M0(2131742557, null) : this.E;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, f);
-        this.j = ofFloat;
-        ofFloat.addUpdateListener(new f0(this, (byte) 20));
-        this.j.addListener(new t7(this, f, (byte) 2));
-        float abs = Math.abs(f);
-        ValueAnimator valueAnimator2 = this.j;
-        if (abs < 0.1f) {
-            gl.n(valueAnimator2, 285.0d, 20.0d);
-        } else {
-            valueAnimator2.setInterpolator(s33.h);
-        }
-        this.j.start();
+        gzc gzcVar = this.a;
+        return gzcVar == null ? "" : gzcVar.g == 6 ? gzcVar.e : lbc.r(uc7.s1(gzcVar.a).X1(Long.valueOf(this.a.c)));
     }
 }

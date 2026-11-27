@@ -1,35 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class th7 {
+public final class th7 implements sf7 {
     public final int a;
-    public final qh7 b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final float i;
-    public final int j;
-    public final int k;
-    public final int l;
-    public final int m;
 
-    public th7(int i, qh7 qh7Var, int i2, int i3, int i4, int i5, int i6, int i7, float f, int i8, int i9, int i10, int i11) {
+    public th7(int i) {
         this.a = i;
-        this.b = qh7Var;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-        this.f = i5;
-        this.i = f;
-        this.j = i8;
-        this.k = i9;
-        this.l = i10;
-        this.m = i11;
-        this.g = i6;
-        this.h = i7;
+    }
+
+    @Override // sf7
+    public final ko4 a() {
+        return null;
+    }
+
+    @Override // sf7
+    public final byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof th7) && this.a == ((th7) obj).a;
+    }
+
+    public final int hashCode() {
+        return this.a;
+    }
+
+    public final String toString() {
+        return "Mp4AlternateGroup: " + this.a;
+    }
+
+    @Override // sf7
+    public final void b(lt6 lt6Var) {
     }
 }

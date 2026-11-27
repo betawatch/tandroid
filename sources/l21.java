@@ -1,78 +1,66 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class l21 extends h11 {
-    public final hc0 a;
-    public final l46 b;
-    public final l46 c;
-    public final LinearLayout d;
+public final class l21 extends FrameLayout {
+    public final mm a;
+    public final mm b;
+    public final Paint c;
+    public final RectF d;
+    public final long e;
+    public final /* synthetic */ m21 f;
 
-    public l21(wjb wjbVar, Context context, boolean z) {
-        super(context, wjbVar);
-        s11 s11Var;
-        hc0 hc0Var = new hc0(context, false);
-        this.a = hc0Var;
-        hc0Var.setStyle(11);
-        hc0Var.setAvatarsTextSize(gl.L(18.0f));
-        addView(hc0Var, nme.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
-        if (z) {
-            LinearLayout linearLayout = new LinearLayout(getContext());
-            this.d = linearLayout;
-            linearLayout.setOrientation(1);
-            addView(linearLayout, nme.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
-            s11 s11Var2 = new s11(context, null, (byte) 2);
-            this.b = s11Var2;
-            kk7.i(s11Var2);
-            Typeface typeface = Typeface.SANS_SERIF;
-            s11Var2.setTypeface(typeface);
-            s11Var2.setTextSize(1, 14.0f);
-            s11Var2.setTypeface(gl.o());
-            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            s11Var2.setEllipsize(truncateAt);
-            s11Var2.setMaxLines(1);
-            linearLayout.addView(s11Var2);
-            l46 l46Var = new l46(context, null);
-            this.c = l46Var;
-            l46Var.setTypeface(typeface);
-            l46Var.setTextSize(1, 12.0f);
-            l46Var.setEllipsize(truncateAt);
-            l46Var.setSingleLine(false);
-            l46Var.setMaxLines(3);
-            zkb.G(l46Var, bkb.wj, wjbVar);
-            linearLayout.addView(l46Var, nme.t(-2, -2, 0, 0, 0, 0, 0));
-            s11Var = s11Var2;
-        } else {
-            s11Var = new s11(context, null, (byte) 1);
-            this.b = s11Var;
-            kk7.i(s11Var);
-            s11Var.setTypeface(Typeface.SANS_SERIF);
-            s11Var.setTextSize(1, 15.0f);
-            s11Var.setEllipsize(TextUtils.TruncateAt.END);
-            s11Var.setPadding(0, gl.L(8.0f), 0, gl.L(8.0f));
-            s11Var.setGravity(k96.a0 ? 5 : 3);
-            addView(s11Var, nme.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
-        }
-        zkb.G(s11Var, bkb.wj, wjbVar);
-        setTextColor(getThemedColor(bkb.xj));
-        setBackground(getThemedColor(bkb.vj));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l21(m21 m21Var, Activity activity) {
+        super(activity);
+        this.f = m21Var;
+        k43 k43Var = k43.h;
+        this.a = new mm(320L, this, k43Var);
+        this.b = new mm(320L, this, k43Var);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(268435455);
+        paint.setStrokeWidth(hl.L(1.66f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.d = new RectF();
+        this.e = System.currentTimeMillis();
     }
 
-    @Override // q11
-    public CharSequence getAccessibilityText() {
-        return this.b.getText();
-    }
-
-    public void setTextColor(int i) {
-        this.b.setTextColor(i);
-        l46 l46Var = this.c;
-        if (l46Var != null) {
-            l46Var.setTextColor(i);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        m21 m21Var = this.f;
+        float e = this.a.e(false, m21Var.a);
+        float d = this.b.d(m21Var.a >= 1.0f);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float N = width - hl.N(13.0f);
+        float N2 = height - hl.N(13.0f);
+        float N3 = hl.N(13.0f) + width;
+        float N4 = hl.N(13.0f) + height;
+        RectF rectF = this.d;
+        rectF.set(N, N2, N3, N4);
+        float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
+        float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
+        for (int i = 0; i < 4; i++) {
+            x84 x84Var = di2.h;
+            x84Var.getInterpolation((currentTimeMillis - (i * 1350)) / 667.0f);
+            max += x84Var.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }
+        int p1 = aob.p1((1.0f - d) * 1.0f, -1);
+        Paint paint = this.c;
+        paint.setColor(p1);
+        canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, e) * (-360.0f), false, paint);
+        if (e < 1.0f && d < 1.0f) {
+            invalidate();
+        }
+        super.onDraw(canvas);
     }
 }

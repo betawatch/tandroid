@@ -1,6 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.util.Log;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
+import java.io.File;
+import java.io.IOException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class wy2 {
+public final class wy2 implements Callable {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ Thread c;
+    public final /* synthetic */ oy8 d;
+    public final /* synthetic */ yy2 e;
+
+    public wy2(yy2 yy2Var, long j, Throwable th, Thread thread, oy8 oy8Var) {
+        this.e = yy2Var;
+        this.a = j;
+        this.b = th;
+        this.c = thread;
+        this.d = oy8Var;
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        long j = this.a;
+        long j2 = j / 1000;
+        yy2 yy2Var = this.e;
+        String e = yy2Var.e();
+        if (e == null) {
+            Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
+            return Tasks.forResult(null);
+        }
+        yy2Var.c.i();
+        faa faaVar = yy2Var.m;
+        String concat = "Persisting fatal event for session ".concat(e);
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", concat, null);
+        }
+        faaVar.g(this.b, this.c, "crash", new g54(e, j2, y24.a), true);
+        try {
+            if (!new File((File) yy2Var.g.c, ".ae" + j).createNewFile()) {
+                throw new IOException("Create new file failed.");
+            }
+        } catch (IOException e2) {
+            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e2);
+        }
+        oy8 oy8Var = this.d;
+        yy2Var.a(false, oy8Var, false);
+        yy2Var.b(new r51().a, Boolean.FALSE);
+        if (!yy2Var.b.a()) {
+            return Tasks.forResult(null);
+        }
+        Task task = ((TaskCompletionSource) ((AtomicReference) oy8Var.h).get()).getTask();
+        i03 i03Var = (i03) yy2Var.e.b;
+        wz4 wz4Var = new wz4();
+        wz4Var.a = this;
+        return task.onSuccessTask(i03Var, wz4Var);
+    }
 }

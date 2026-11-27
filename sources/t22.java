@@ -2,14 +2,28 @@
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface t22 {
-    void S();
+public final /* synthetic */ class t22 implements z22 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ iv2 b;
 
-    void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2);
+    public /* synthetic */ t22(iv2 iv2Var, byte b) {
+        this.a = b;
+        this.b = iv2Var;
+    }
 
-    void m(ArrayList arrayList, boolean z, int i, long j);
-
-    void z();
+    @Override // z22
+    public final String run() {
+        byte b = this.a;
+        iv2 iv2Var = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = iv2Var.e;
+                return !arrayList.isEmpty() ? f78.f().e((String) arrayList.get(0)) : "";
+            default:
+                ArrayList arrayList2 = iv2Var.e;
+                return !arrayList2.isEmpty() ? f78.f().e((String) arrayList2.get(0)) : "";
+        }
+    }
 }

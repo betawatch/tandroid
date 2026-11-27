@@ -1,27 +1,31 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.List;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class mgb extends b4 {
-    public static final Parcelable.Creator<mgb> CREATOR = new b1d((byte) 0);
-    public final int a;
-    public List b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class mgb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Switch b;
 
-    public mgb(int i, List list) {
-        this.a = i;
-        this.b = list;
+    public /* synthetic */ mgb(Switch r1, byte b) {
+        this.a = b;
+        this.b = r1;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.p(parcel, 2, this.b);
-        jte.s(parcel, r);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        Switch r1 = this.b;
+        switch (b) {
+            case 0:
+                r1.d = null;
+                break;
+            default:
+                r1.e = null;
+                break;
+        }
     }
 }

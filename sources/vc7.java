@@ -1,7 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface vc7 {
-    void run(long j);
+public final class vc7 implements kf3 {
+    public final /* synthetic */ yc7 a;
+
+    public vc7(yc7 yc7Var) {
+        this.a = yc7Var;
+    }
+
+    @Override // kf3
+    public final void k(of3 of3Var) {
+        yc7 yc7Var = this.a;
+        zu1 zu1Var = yc7Var.f;
+        if (uc7.s1(yc7Var.r).O1().J(of3Var.getDialogId())) {
+            zu1Var.getOrCreateStoryViewer().getClass();
+            zu1Var.getOrCreateStoryViewer().H(yc7Var.c, of3Var.getDialogId(), l6b.a((d79) of3Var.getParent()));
+        }
+    }
+
+    @Override // kf3
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // kf3
+    public final void r() {
+    }
+
+    @Override // kf3
+    public final void o(of3 of3Var) {
+    }
+
+    @Override // kf3
+    public final void v(of3 of3Var) {
+    }
+
+    @Override // kf3
+    public final void w(of3 of3Var) {
+    }
 }

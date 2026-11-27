@@ -1,36 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class oqe extends c2e {
+public final class oqe extends s6e {
     private static final oqe zzb;
     private int zzd;
-    private int zze;
+    private boolean zze;
+    private boolean zzf;
 
     static {
         oqe oqeVar = new oqe();
         zzb = oqeVar;
-        c2e.k(oqe.class, oqeVar);
+        s6e.k(oqe.class, oqeVar);
     }
 
-    public static oqe n() {
-        return zzb;
-    }
-
-    @Override // c2e
+    @Override // s6e
     public final Object d(int i) {
         int i2 = i - 1;
         if (i2 == 0) {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", yqd.i});
+            return new lfe(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဇ\u0000\u0002ဇ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
         if (i2 == 3) {
             return new oqe();
         }
         if (i2 == 4) {
-            return new epd(zzb);
+            return new utd(zzb);
         }
         if (i2 == 5) {
             return zzb;

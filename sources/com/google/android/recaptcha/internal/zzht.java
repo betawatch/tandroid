@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzht {
-    private final d06 zza;
-    private final d06 zzb;
+    private final h26 zza;
+    private final h26 zzb;
 
     public zzht() {
         int i = zzby.zza;
-        this.zza = cne.b(zzhr.zza);
-        this.zzb = cne.b(zzhs.zza);
+        this.zza = ure.b(zzhr.zza);
+        this.zzb = ure.b(zzhs.zza);
     }
 
     public static final /* synthetic */ zzhn zza(zzht zzhtVar) {
@@ -20,7 +20,7 @@ public final class zzht {
         return (zzig) zzhtVar.zza.getValue();
     }
 
-    public final Object zzc(String str, zzzd zzzdVar, fw2 fw2Var) {
-        return h9e.b(new zzhq(this, str, zzzdVar, null), fw2Var);
+    public final Object zzc(String str, zzzd zzzdVar, zw2 zw2Var) {
+        return xde.b(new zzhq(this, str, zzzdVar, null), zw2Var);
     }
 }

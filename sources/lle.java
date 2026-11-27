@@ -1,100 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lle extends c2e {
-    private static final lle zzb;
-    private int zzd;
-    private String zze = "";
-    private String zzf = "";
-    private String zzg = "";
-    private int zzh;
-    private long zzi;
-    private long zzj;
-    private boolean zzk;
-    private int zzl;
-    private int zzm;
-    private long zzn;
-
-    static {
-        lle lleVar = new lle();
-        zzb = lleVar;
-        c2e.k(lle.class, lleVar);
-    }
-
-    public static /* synthetic */ void n(lle lleVar, int i) {
-        lleVar.zzd |= 128;
-        lleVar.zzl = i;
-    }
-
-    public static /* synthetic */ void o(lle lleVar, int i) {
-        lleVar.zzd |= 256;
-        lleVar.zzm = i;
-    }
-
-    public static /* synthetic */ void p(lle lleVar, int i) {
-        lleVar.zzd |= 8;
-        lleVar.zzh = i;
-    }
-
-    public static /* synthetic */ void q(lle lleVar, long j) {
-        lleVar.zzd |= 16;
-        lleVar.zzi = j;
-    }
-
-    public static /* synthetic */ void r(lle lleVar, long j) {
-        lleVar.zzd |= 32;
-        lleVar.zzj = j;
-    }
-
-    public static /* synthetic */ void s(lle lleVar) {
-        lleVar.zzd |= 512;
-        lleVar.zzn = 772604006L;
-    }
-
-    public static /* synthetic */ void t(lle lleVar, String str) {
-        str.getClass();
-        lleVar.zzd |= 4;
-        lleVar.zzg = str;
-    }
-
-    public static /* synthetic */ void u(lle lleVar) {
-        lleVar.zzd |= 64;
-        lleVar.zzk = false;
-    }
-
-    public static /* synthetic */ void v(lle lleVar) {
-        lleVar.zzd |= 1;
-        lleVar.zze = "8.0.0";
-    }
-
-    public static /* synthetic */ void w(lle lleVar, String str) {
-        lleVar.zzd |= 2;
-        lleVar.zzf = str;
-    }
-
-    public static ale x() {
-        return (ale) zzb.f();
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+public abstract class lle {
+    public static uf7 a(cb3 cb3Var, boolean z, boolean z2) {
+        uf7 c0 = new aj3((byte) 12).c0(cb3Var, !z ? vl5.b : z2 ? vl5.c : null, 0);
+        if (c0 == null || c0.a.length == 0) {
+            return null;
         }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\n\u0000\u0001\u0001\n\n\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0002\u0003င\u0003\u0004ဂ\u0004\u0005ဈ\u0001\u0006ဂ\u0005\u0007ဇ\u0006\bင\u0007\tင\b\nဂ\t", new Object[]{"zzd", "zze", "zzg", "zzh", "zzi", "zzf", "zzj", "zzk", "zzl", "zzm", "zzn"});
+        return c0;
+    }
+
+    public static lh2 b(ey7 ey7Var) {
+        ey7Var.O(1);
+        int D = ey7Var.D();
+        long j = ey7Var.b + D;
+        int i = D / 18;
+        long[] jArr = new long[i];
+        long[] jArr2 = new long[i];
+        int i2 = 0;
+        while (true) {
+            if (i2 >= i) {
+                break;
+            }
+            long u = ey7Var.u();
+            if (u == -1) {
+                jArr = Arrays.copyOf(jArr, i2);
+                jArr2 = Arrays.copyOf(jArr2, i2);
+                break;
+            }
+            jArr[i2] = u;
+            jArr2[i2] = ey7Var.u();
+            ey7Var.O(2);
+            i2++;
         }
-        if (i2 == 3) {
-            return new lle();
-        }
-        if (i2 == 4) {
-            return new ale(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
+        ey7Var.O((int) (j - ey7Var.b));
+        return new lh2(jArr, jArr2, (byte) 29);
     }
 }

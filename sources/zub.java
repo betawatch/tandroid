@@ -1,25 +1,38 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class zub extends jr5 {
-    public final /* synthetic */ long u2;
-    public final /* synthetic */ bvb v2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zub(bvb bvbVar, Context context, int i, vf6 vf6Var, long j, d dVar, long j2) {
-        super(context, i, vf6Var, j, dVar, null);
-        this.v2 = bvbVar;
-        this.u2 = j2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum zub extends rwb {
+    public zub() {
+        super("ScriptDataDoubleEscapedDashDash", 30);
     }
 
-    @Override // jr5
-    public final boolean M0() {
-        TLRPC.Chat K0 = this.v2.b.getMessagesController().K0(Long.valueOf(this.u2));
-        return K0 != null && hc2.y(3, K0);
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        wub wubVar = rwb.S;
+        if (d == 0) {
+            bubVar.m(this);
+            bubVar.f((char) 65533);
+            bubVar.c = wubVar;
+            return;
+        }
+        if (d == '-') {
+            bubVar.f(d);
+            return;
+        }
+        if (d == '<') {
+            bubVar.f(d);
+            bubVar.c = rwb.V;
+        } else if (d == '>') {
+            bubVar.f(d);
+            bubVar.c = rwb.f;
+        } else if (d != 65535) {
+            bubVar.f(d);
+            bubVar.c = wubVar;
+        } else {
+            bubVar.l(this);
+            bubVar.c = rwb.a;
+        }
     }
 }

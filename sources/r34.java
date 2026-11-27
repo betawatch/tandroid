@@ -1,49 +1,55 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.AbstractMap;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.tgnet.tl.TL_update;
+import android.animation.TimeInterpolator;
+import android.app.Activity;
+import android.transition.TransitionManager;
+import android.transition.TransitionSet;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class r34 {
-    public final p34 a = new p34();
-    public final p34 b = new p34();
-    public final q34 c = new q34();
-    public final q34 d = new q34();
-    public final q34 e = new q34();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class r34 extends FrameLayout {
+    public final q34 a;
+    public final TransitionSet b;
+    public boolean c;
 
-    public final void a(TL_update.TL_updateEditEphemeralMessage tL_updateEditEphemeralMessage, int i, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2) {
-        TL_ephemeral.EphemeralMessage ephemeralMessage = tL_updateEditEphemeralMessage.message;
-        if (ephemeralMessage.anchor_msg_id != 0) {
-            this.e.a.add(ephemeralMessage);
-            return;
-        }
-        if (!ephemeralMessage.welcome) {
-            this.d.a.add(ephemeralMessage);
-            return;
-        }
-        TLRPC.TL_message b = t34.b(ephemeralMessage);
-        k27 k27Var = new k27(i, (TLRPC.Message) b, (AbstractMap) concurrentHashMap, (AbstractMap) concurrentHashMap2, true, true);
-        b.edit_date = ConnectionsManager.getInstance(i).getCurrentTime();
-        b.flags |= 32768;
-        this.b.a(ephemeralMessage, b, k27Var);
+    public r34(Activity activity) {
+        super(activity);
+        this.c = false;
+        setWillNotDraw(false);
+        q34 q34Var = new q34(activity);
+        this.a = q34Var;
+        addView(q34Var, tre.e(52, 52, 5));
+        TransitionSet transitionSet = new TransitionSet();
+        this.b = transitionSet;
+        transitionSet.setOrdering(0);
+        transitionSet.addTransition(new a6((byte) 1));
+        transitionSet.setDuration(500L);
+        transitionSet.setInterpolator((TimeInterpolator) k43.f);
     }
 
-    public final void b(TL_update.TL_updateNewEphemeralMessage tL_updateNewEphemeralMessage, int i, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2) {
-        TL_ephemeral.EphemeralMessage ephemeralMessage = tL_updateNewEphemeralMessage.message;
-        if (ephemeralMessage.anchor_msg_id != 0) {
-            this.e.a.add(ephemeralMessage);
-        } else {
-            if (!ephemeralMessage.welcome) {
-                this.c.a.add(ephemeralMessage);
-                return;
-            }
-            TLRPC.TL_message b = t34.b(ephemeralMessage);
-            this.a.a(ephemeralMessage, b, new k27(i, (TLRPC.Message) b, (AbstractMap) concurrentHashMap, (AbstractMap) concurrentHashMap2, true, true));
+    public final void a(View.OnClickListener onClickListener, boolean z) {
+        if (this.c) {
+            return;
         }
+        this.c = true;
+        if (z) {
+            TransitionManager.beginDelayedTransition(this, this.b);
+        }
+        q34 q34Var = this.a;
+        q34Var.w = jn7.d4;
+        q34Var.n = -1;
+        q34Var.s = 0;
+        q34Var.r = hl.L(8.0f);
+        ViewGroup.LayoutParams layoutParams = q34Var.getLayoutParams();
+        layoutParams.width = -1;
+        q34Var.setLayoutParams(layoutParams);
+        hl.d3(new vx3(this, onClickListener, (byte) 8), 500L);
+    }
+
+    public q34 getEndCloseView() {
+        return this.a;
     }
 }

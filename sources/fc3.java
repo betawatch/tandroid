@@ -1,134 +1,161 @@
 // default package
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.SurfaceTexture;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fc3 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final Object b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fc3 implements hm6 {
+    public static fc3 h;
+    public boolean a;
+    public boolean b;
+    public final Object c;
+    public final Object d;
+    public Object e;
+    public Object f;
 
-    public fc3(itb itbVar) {
-        this.a = (byte) 2;
-        this.c = itbVar;
-        Context context = itbVar.a.getContext();
-        CharSequence charSequence = itbVar.h;
-        v8 v8Var = new v8();
-        v8Var.e = TLObject.FLAG_12;
-        v8Var.g = TLObject.FLAG_12;
-        v8Var.l = null;
-        v8Var.m = null;
-        v8Var.n = false;
-        v8Var.o = false;
-        v8Var.p = 16;
-        v8Var.i = context;
-        v8Var.a = charSequence;
-        this.b = v8Var;
+    public fc3() {
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = new ygb(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00be  */
-    @Override // android.view.View.OnClickListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                if (!cj3.C4) {
-                    cj3.C4 = true;
-                    SharedPreferences sharedPreferences = a.b.getSharedPreferences("themeconfig", 0);
-                    String str = "Blue";
-                    String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                    if (bkb.O0(string) == null || bkb.O0(string).o()) {
-                        string = "Blue";
-                    }
-                    String str2 = "Dark Blue";
-                    String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                    if (bkb.O0(string2) == null || !bkb.O0(string2).o()) {
-                        string2 = "Dark Blue";
-                    }
-                    akb akbVar = bkb.I;
-                    if (!string.equals(string2)) {
-                        str2 = string2;
-                    } else if (akbVar.o() || string.equals("Dark Blue") || string.equals("Night")) {
-                        str2 = string2;
-                        boolean o = bkb.I.o();
-                        boolean z = !o;
-                        akb O0 = o ? bkb.O0(str2) : bkb.O0(str);
-                        oy8 oy8Var = ((hc3) this.c).d;
-                        oy8Var.K(o ? oy8Var.e[0] - 1 : 0);
-                        ((hc3) this.c).e.getImageView().d();
-                        int[] iArr = {(((hc3) this.c).e.getImageView().getMeasuredWidth() / 2) + r6, de9.w(3.0f, ((hc3) this.c).e.getImageView().getMeasuredHeight() / 2, r6)};
-                        ((hc3) this.c).e.getImageView().getLocationInWindow(iArr);
-                        int i = iArr[0];
-                        int i2 = iArr[1];
-                        kk7.e().k(kk7.v4, O0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), ((hc3) this.c).e.getImageView(), ((hc3) this.c).e, new gu2((Object) this, this.b, (byte) 29));
-                        break;
-                    }
-                    str = string;
-                    boolean o2 = bkb.I.o();
-                    boolean z2 = !o2;
-                    if (o2) {
-                    }
-                    oy8 oy8Var2 = ((hc3) this.c).d;
-                    oy8Var2.K(o2 ? oy8Var2.e[0] - 1 : 0);
-                    ((hc3) this.c).e.getImageView().d();
-                    int[] iArr2 = {(((hc3) this.c).e.getImageView().getMeasuredWidth() / 2) + i, de9.w(3.0f, ((hc3) this.c).e.getImageView().getMeasuredHeight() / 2, i2)};
-                    ((hc3) this.c).e.getImageView().getLocationInWindow(iArr2);
-                    int i3 = iArr2[0];
-                    int i22 = iArr2[1];
-                    kk7.e().k(kk7.v4, O0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z2), ((hc3) this.c).e.getImageView(), ((hc3) this.c).e, new gu2((Object) this, this.b, (byte) 29));
-                }
-                break;
-            case 1:
-                et6 et6Var = (et6) this.c;
-                gt6 gt6Var = et6Var.z.r;
-                eu6 eu6Var = (eu6) this.b;
-                gt6Var.E = eu6Var;
-                eu6Var.l();
-                et6Var.w.setVisibility(4);
-                et6Var.x.setVisibility(0);
-                break;
-            case 2:
-                itb itbVar = (itb) this.c;
-                Window.Callback callback = itbVar.k;
-                if (callback != null && itbVar.l) {
-                    callback.onMenuItemSelected(0, (v8) this.b);
-                    break;
-                }
-                break;
-            default:
-                try {
-                    ((Context) this.b).startActivity((Intent) this.c);
-                    break;
-                } catch (ActivityNotFoundException e) {
-                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e);
-                    return;
-                }
+    public static fc3 b() {
+        fc3 fc3Var = h;
+        if (fc3Var != null) {
+            return fc3Var;
         }
+        fc3 fc3Var2 = new fc3();
+        h = fc3Var2;
+        return fc3Var2;
     }
 
-    public /* synthetic */ fc3(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = obj2;
+    public static void e(String str) {
+        Log.d("PIP_DEBUG", "[utils.pip] ".concat(str));
     }
 
-    public fc3(Context context, Intent intent) {
-        this.a = (byte) 3;
-        this.b = context;
-        this.c = intent;
+    public final me8 a() {
+        ArrayList arrayList = (ArrayList) this.c;
+        for (int i = 0; i < arrayList.size(); i++) {
+            me8 me8Var = (me8) arrayList.get(i);
+            if (me8Var.g()) {
+                return me8Var;
+            }
+        }
+        return null;
+    }
+
+    @Override // hm6
+    public final void c(of8 of8Var) {
+        hm6 hm6Var = (hm6) this.f;
+        if (hm6Var != null) {
+            hm6Var.c(of8Var);
+            of8Var = ((hm6) this.f).f();
+        }
+        ((ze2) this.c).c(of8Var);
+    }
+
+    public final void d() {
+        ((ygb) this.e).j();
+    }
+
+    @Override // hm6
+    public final of8 f() {
+        hm6 hm6Var = (hm6) this.f;
+        return hm6Var != null ? hm6Var.f() : (of8) ((ze2) this.c).e;
+    }
+
+    @Override // hm6
+    public final long g() {
+        if (this.a) {
+            return ((ze2) this.c).g();
+        }
+        hm6 hm6Var = (hm6) this.f;
+        hm6Var.getClass();
+        return hm6Var.g();
+    }
+
+    @Override // hm6
+    public final boolean h() {
+        if (this.a) {
+            return false;
+        }
+        hm6 hm6Var = (hm6) this.f;
+        hm6Var.getClass();
+        return hm6Var.h();
+    }
+
+    public final void i(vg0 vg0Var) {
+        hm6 hm6Var;
+        hm6 k = vg0Var.k();
+        if (k == null || k == (hm6Var = (hm6) this.f)) {
+            return;
+        }
+        if (hm6Var != null) {
+            throw new e64(2, new IllegalStateException("Multiple renderer media clocks enabled."), 1000);
+        }
+        this.f = k;
+        this.e = vg0Var;
+        k.c((of8) ((ze2) this.c).e);
+    }
+
+    public final void j(me8 me8Var, int i) {
+        e("dismissed, prevState=" + i);
+        ((ArrayList) this.c).remove(me8Var);
+        ygb ygbVar = (ygb) this.e;
+        if (me8Var == ygbVar.e) {
+            ygbVar.e = null;
+        }
+        if (me8Var == ygbVar.f) {
+            ne8 ne8Var = ygbVar.g;
+            View view = ygbVar.h;
+            ygbVar.f = null;
+            ygbVar.g = null;
+            ygbVar.h = null;
+            bhb bhbVar = ygbVar.c;
+            if (bhbVar != null) {
+                bhbVar.a(null, null);
+            }
+            if (ne8Var != null) {
+                SurfaceTexture surfaceTexture = ne8Var.a;
+                ne8Var.a = null;
+                if (surfaceTexture != null) {
+                    surfaceTexture.release();
+                }
+            }
+            if (view != null) {
+                me8Var.a.L(view);
+            }
+            LaunchActivity launchActivity = ygbVar.b;
+            if (launchActivity != null && ygbVar.i && hl.F1(launchActivity)) {
+                ygbVar.b.moveTaskToBack(false);
+            }
+            ygbVar.i = false;
+            e26 e26Var = ygbVar.d;
+            if (e26Var != null) {
+                e26Var.b(false);
+            }
+        }
+        d();
+    }
+
+    public final me8 k(je8 je8Var) {
+        me8 me8Var = new me8(this, je8Var);
+        ((ArrayList) this.c).add(me8Var);
+        e("register " + je8Var);
+        d();
+        return me8Var;
+    }
+
+    public fc3(c74 c74Var, vgb vgbVar) {
+        this.d = c74Var;
+        ze2 ze2Var = new ze2();
+        ze2Var.d = vgbVar;
+        ze2Var.e = of8.d;
+        this.c = ze2Var;
+        this.a = true;
     }
 }

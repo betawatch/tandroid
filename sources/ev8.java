@@ -1,38 +1,34 @@
 // default package
 
-import android.util.SparseArray;
+import org.telegram.ui.ProfileActivity;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ev8 {
-    public static final ev8 a;
-    public static final /* synthetic */ ev8[] b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ev8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ProfileActivity b;
 
-    static {
-        ev8 ev8Var = new ev8("DEFAULT", 0);
-        a = ev8Var;
-        ev8 ev8Var2 = new ev8("UNMETERED_ONLY", 1);
-        ev8 ev8Var3 = new ev8("UNMETERED_OR_DAILY", 2);
-        ev8 ev8Var4 = new ev8("FAST_IF_RADIO_AWAKE", 3);
-        ev8 ev8Var5 = new ev8("NEVER", 4);
-        ev8 ev8Var6 = new ev8("UNRECOGNIZED", 5);
-        b = new ev8[]{ev8Var, ev8Var2, ev8Var3, ev8Var4, ev8Var5, ev8Var6};
-        SparseArray sparseArray = new SparseArray();
-        sparseArray.put(0, ev8Var);
-        sparseArray.put(1, ev8Var2);
-        sparseArray.put(2, ev8Var3);
-        sparseArray.put(3, ev8Var4);
-        sparseArray.put(4, ev8Var5);
-        sparseArray.put(-1, ev8Var6);
+    public /* synthetic */ ev8(ProfileActivity profileActivity, byte b) {
+        this.a = b;
+        this.b = profileActivity;
     }
 
-    public static ev8 valueOf(String str) {
-        return (ev8) Enum.valueOf(ev8.class, str);
-    }
-
-    public static ev8[] values() {
-        return (ev8[]) b.clone();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (b) {
+            case 0:
+                profileActivity.k3(true);
+                break;
+            default:
+                gr8 gr8Var = profileActivity.O;
+                if (gr8Var != null) {
+                    gr8Var.f1(14);
+                    profileActivity.k3(false);
+                    break;
+                }
+                break;
+        }
     }
 }

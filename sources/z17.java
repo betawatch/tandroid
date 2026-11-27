@@ -1,25 +1,40 @@
 // default package
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class z17 extends TLRPC.TL_messageMediaStory {
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
-        this.user_id = inputSerializedData.readInt64(z);
-        this.id = inputSerializedData.readInt32(z);
-        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class z17 extends p79 {
+    public final /* synthetic */ a27 a;
+
+    public z17(a27 a27Var) {
+        this.a = a27Var;
     }
 
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-946147809);
-        outputSerializedData.writeInt64(this.user_id);
-        outputSerializedData.writeInt32(this.id);
-        this.storyItem.serializeToStream(outputSerializedData);
+    @Override // p79
+    public final void d(Rect rect, View view, RecyclerView recyclerView, c89 c89Var) {
+        int S;
+        rect.left = 0;
+        rect.right = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        q79 layoutManager = recyclerView.getLayoutManager();
+        b27 b27Var = this.a.j3;
+        if (layoutManager != b27Var.d || (S = RecyclerView.S(view)) == 0 || b27Var.f.N()) {
+            return;
+        }
+        if (b27Var.f.I() == null && b27Var.f.V == null) {
+            rect.top = hl.L(2.0f);
+        } else {
+            S--;
+            u17 u17Var = b27Var.d;
+            u17Var.z1();
+            if (S > u17Var.U) {
+                rect.top = hl.L(2.0f);
+            }
+        }
+        rect.right = b27Var.d.C1(S) ? 0 : hl.L(2.0f);
     }
 }

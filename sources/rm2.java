@@ -1,55 +1,63 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rm2 extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final RectF d;
-    public final /* synthetic */ wjb e;
+public final class rm2 extends LinearLayout {
+    public final qm2 a;
+    public final qm2 b;
+    public final qm2 c;
+    public final EditTextBoldCursor d;
+    public boolean e;
+    public final /* synthetic */ sm2 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rm2(Context context, wjb wjbVar) {
+    public rm2(sm2 sm2Var, Context context) {
         super(context);
-        this.e = wjbVar;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.b = paint2;
-        Paint paint3 = new Paint(1);
-        this.c = paint3;
-        this.d = new RectF();
-        paint2.setColor(-1);
-        paint.setColor(bkb.v0(bkb.c6, wjbVar));
-        paint3.setColor(bkb.v0(bkb.mk, wjbVar));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int i = bkb.c6;
-        wjb wjbVar = this.e;
-        int v0 = bkb.v0(i, wjbVar);
-        Paint paint = this.a;
-        paint.setColor(v0);
-        int v02 = bkb.v0(bkb.mk, wjbVar);
-        Paint paint2 = this.c;
-        paint2.setColor(v02);
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.d;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint);
-        rectF.inset(gl.L(1.33f), gl.L(1.33f));
-        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint2);
-        rectF.inset(gl.N(4.67f), gl.N(9.066f));
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.b);
+        this.f = sm2Var;
+        setOrientation(1);
+        setPadding(hl.L(14.0f), 0, hl.L(14.0f), 0);
+        qm2 qm2Var = new qm2(sm2Var, context);
+        this.a = qm2Var;
+        qm2Var.a(0);
+        addView(qm2Var, tre.q(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        qm2 qm2Var2 = new qm2(sm2Var, context);
+        this.b = qm2Var2;
+        qm2Var2.a(1);
+        addView(qm2Var2, tre.q(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        qm2 qm2Var3 = new qm2(sm2Var, context);
+        this.c = qm2Var3;
+        qm2Var3.a(2);
+        addView(qm2Var3, tre.q(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(21);
+        addView(linearLayout, tre.c(64.0f, -1));
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1711276033);
+        textView.setTextSize(1, 16.0f);
+        textView.setText(ob6.M0(2131747392, null).toUpperCase());
+        textView.setTypeface(hl.o());
+        linearLayout.addView(textView, tre.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.d = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setBackground(aob.b0(hl.L(10.0f), 436207615));
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setTextColor(-1);
+        editTextBoldCursor.setGravity(17);
+        editTextBoldCursor.setSingleLine();
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setImeActionLabel(ob6.M0(2131751319, null), 6);
+        editTextBoldCursor.setTypeface(hl.o());
+        editTextBoldCursor.addTextChangedListener(new d08(this));
+        byte b = 3;
+        editTextBoldCursor.setOnFocusChangeListener(new ts0(this, b));
+        editTextBoldCursor.setOnEditorActionListener(new mh(b));
+        linearLayout.addView(editTextBoldCursor, tre.o(72, 36));
     }
 }

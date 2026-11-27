@@ -1,109 +1,32 @@
 // default package
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class hi2 {
-    public int a;
-    public float b;
-    public float c;
-    public Object d;
-    public Object e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class hi2 extends fic {
+    public gi2 x0;
 
-    public hi2(gi2 gi2Var) {
-        this.d = gi2Var;
+    public hi2(Context context) {
+        super(context);
+        b(new fi2((et8) this, (byte) 0));
     }
 
-    public final boolean a(View view, MotionEvent motionEvent) {
-        gi2 gi2Var = (gi2) this.d;
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        int action = motionEvent.getAction();
-        if (action == 0) {
-            b(view, x, y);
-            if (gi2Var.H0(x, y)) {
-                this.a |= 1;
-                this.b = x;
-                this.c = y;
-                gi2Var.h0();
-                if (gi2Var.s1() && view != null) {
-                    if (((n92) this.e) != null) {
-                        wn4.f();
-                        return false;
-                    }
-                    this.a |= 2;
-                    n92 n92Var = new n92(this, view, (byte) 20);
-                    this.e = n92Var;
-                    view.postDelayed(n92Var, gi2Var.getLongPressDuration());
-                    return true;
-                }
-            }
+    public void setAdapter(gi2 gi2Var) {
+        this.x0 = gi2Var;
+        super.setAdapter((vu7) gi2Var);
+        if (gi2Var != null) {
+            x(gi2Var.j(), false);
         }
-        if (action == 1) {
-            int i = this.a;
-            if ((i & 1) != 0) {
-                if ((i & 4) != 0) {
-                    gi2Var.g(view, x, y);
-                    this.a &= -5;
-                } else {
-                    gi2Var.D(x, y);
-                    if ((this.a & 256) == 0 && view != null) {
-                        view.playSoundEffect(0);
-                    }
-                }
-                b(view, x, y);
-                return true;
-            }
-        } else if (action != 2) {
-            if (action == 3 && (this.a & 1) != 0) {
-                b(view, x, y);
-                return true;
-            }
-        } else if ((this.a & 1) != 0) {
-            gi2Var.k(x, y);
-            if ((this.a & 4) != 0) {
-                gi2Var.f1(view, x, y);
-                return true;
-            }
-            if (gi2Var.S() && Math.max(Math.abs(this.b - x), Math.abs(this.c - y)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
-                b(view, x, y);
-                return true;
-            }
-        }
-        return (this.a & 1) != 0;
     }
 
-    public final void b(View view, float f, float f2) {
-        gi2 gi2Var = (gi2) this.d;
-        int i = this.a;
-        if ((i & 2) != 0) {
-            this.a = i & (-3);
-            n92 n92Var = (n92) this.e;
-            if (n92Var == null) {
-                wn4.f();
-                return;
-            } else {
-                view.removeCallbacks(n92Var);
-                this.e = null;
-            }
-        }
-        int i2 = this.a;
-        if ((i2 & 8) != 0) {
-            this.a = i2 & (-9);
-            gi2Var.n(view, f, f2);
-        }
-        int i3 = this.a;
-        if ((i3 & 4) != 0) {
-            gi2Var.g(view, f, f2);
-            i3 = this.a & (-5);
-            this.a = i3;
-        }
-        if ((i3 & 1) != 0) {
-            gi2Var.n0();
-            this.a &= -2;
+    @Override // fic
+    @Deprecated
+    public void setAdapter(vu7 vu7Var) {
+        if (vu7Var instanceof gi2) {
+            setAdapter((gi2) vu7Var);
+        } else {
+            iy8.d();
         }
     }
 }

@@ -1,215 +1,303 @@
 // default package
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
 import android.view.View;
-import android.view.ViewParent;
-import android.webkit.CookieManager;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.FrameLayout;
-import java.net.URLEncoder;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
+import java.util.Arrays;
+import java.util.Collections;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class tuc extends d {
-    public WebView a;
-    public r7 b;
-    public cw2 c;
-    public final String d;
-    public final String e;
-    public final String f;
-    public final String h;
-    public final k27 n;
-    public final String r;
-    public xia s;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class tuc extends e {
+    public final String[] a;
+    public final int[] b;
+    public final olc c;
+    public final ArrayList d;
+    public ScrollView e;
+    public ImageView f;
+    public c51 h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public boolean y;
 
-    public tuc(String str, String str2, String str3, String str4, k27 k27Var) {
+    public tuc(ArrayList arrayList, olc olcVar) {
         super(null);
-        this.s = new xia((Object) this, (byte) 17);
-        this.d = str;
-        this.e = str2;
-        this.f = str3;
-        this.n = k27Var;
-        this.r = str4;
-        StringBuilder sb = new StringBuilder("https://");
-        sb.append(na7.q1(this.currentAccount).N2);
-        sb.append("/");
-        sb.append(str2);
-        sb.append(TextUtils.isEmpty(str4) ? "" : b00.h("?game=", str4));
-        this.h = sb.toString();
-    }
-
-    public static void Z(String str, k27 k27Var, Activity activity, String str2, String str3) {
-        String str4;
-        try {
-            SharedPreferences sharedPreferences = a.b.getSharedPreferences("botshare", 0);
-            String string = sharedPreferences.getString(String.valueOf(k27Var.e1()), null);
-            StringBuilder sb = new StringBuilder(string != null ? string : "");
-            StringBuilder sb2 = new StringBuilder("tgShareScoreUrl=" + URLEncoder.encode("tgb://share_game_score?hash=", "UTF-8"));
-            if (string == null) {
-                char[] cArr = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-                for (int i = 0; i < 20; i++) {
-                    sb.append(cArr[Utilities.b.nextInt(52)]);
-                }
-            }
-            sb2.append((CharSequence) sb);
-            int indexOf = str.indexOf(35);
-            if (indexOf < 0) {
-                str4 = str + "#" + ((Object) sb2);
+        this.b = new int[3];
+        this.d = new ArrayList();
+        int i = 0;
+        String[] strArr = (String[]) arrayList.toArray(new String[0]);
+        this.a = strArr;
+        if (strArr.length != 12 && strArr.length != 24) {
+            lq5.j("Expected a 12- or 24-word recovery phrase");
+            throw null;
+        }
+        this.c = olcVar;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i2 = 0; i2 < this.a.length; i2 = qd4.g(i2, i2, 1, arrayList2)) {
+        }
+        Collections.shuffle(arrayList2);
+        while (true) {
+            int[] iArr = this.b;
+            if (i >= iArr.length) {
+                Arrays.sort(iArr);
+                return;
             } else {
-                String substring = str.substring(indexOf + 1);
-                if (substring.indexOf(61) >= 0 || substring.indexOf(63) >= 0) {
-                    str4 = str + "&" + ((Object) sb2);
-                } else if (substring.length() > 0) {
-                    str4 = str + "?" + ((Object) sb2);
-                } else {
-                    str4 = str + ((Object) sb2);
-                }
+                iArr[i] = ((Integer) arrayList2.get(i)).intValue();
+                i++;
             }
-            SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.putInt(((Object) sb) + "_date", (int) (System.currentTimeMillis() / 1000));
-            SerializedData serializedData = new SerializedData(k27Var.k.getObjectSize());
-            k27Var.k.serializeToStream(serializedData);
-            edit.putString(((Object) sb) + "_m", Utilities.f(serializedData.toByteArray()));
-            String str5 = ((Object) sb) + "_link";
-            StringBuilder sb3 = new StringBuilder();
-            sb3.append("https://");
-            sb3.append(na7.q1(k27Var.K1).N2);
-            sb3.append("/");
-            sb3.append(str3);
-            sb3.append(TextUtils.isEmpty(str2) ? "" : "?game=" + str2);
-            edit.putString(str5, sb3.toString());
-            edit.commit();
-            d01.p(activity, str4, false);
-            serializedData.cleanup();
-        } catch (Exception e) {
-            fa4.g(e, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void addThemeColorKeys(HashSet hashSet) {
-        super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(bkb.H7));
-        hashSet.add(Integer.valueOf(bkb.G7));
-        hashSet.add(Integer.valueOf(bkb.c6));
-        hashSet.add(Integer.valueOf(bkb.D7));
-        hashSet.add(Integer.valueOf(bkb.C7));
-        hashSet.add(Integer.valueOf(bkb.s8));
-        hashSet.add(Integer.valueOf(bkb.z8));
-        hashSet.add(Integer.valueOf(bkb.u8));
-        hashSet.add(Integer.valueOf(bkb.r8));
+    public final void Y() {
+        if (this.h == null) {
+            return;
+        }
+        ArrayList arrayList = this.d;
+        boolean z = false;
+        boolean z2 = arrayList.size() == this.b.length;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            z2 &= !((zuc) obj).getWord().isEmpty();
+        }
+        this.h.setVisibility(z2 ? 0 : 4);
+        c51 c51Var = this.h;
+        if (z2 && !this.y) {
+            z = true;
+        }
+        c51Var.setEnabled(z);
     }
 
-    @Override // org.telegram.ui.ActionBar.d
+    @Override // org.telegram.ui.ActionBar.e
     public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new ruc(this));
-        r6 t = this.actionBar.t();
-        this.b = t.g(1, R.drawable.share, gl.L(54.0f));
-        t.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, k96.M0(2131747603, null));
-        this.actionBar.setTitle(this.f);
-        this.actionBar.setSubtitle("@" + this.e);
-        cw2 cw2Var = new cw2(context, 1);
-        this.c = cw2Var;
-        this.b.addView(cw2Var, nme.c(-1.0f, -1));
-        this.c.setAlpha(0.0f);
-        this.c.setScaleX(0.1f);
-        this.c.setScaleY(0.1f);
-        this.c.setVisibility(4);
-        gl.u(context, true);
-        WebView webView = new WebView(context);
-        this.a = webView;
-        webView.getSettings().setJavaScriptEnabled(true);
-        this.a.getSettings().setDomStorageEnabled(true);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        this.a.setLayerType(2, null);
-        this.a.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.TEXT_AUTOSIZING);
-        this.a.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        this.a.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(this.a, true);
-        this.a.addJavascriptInterface(new suc(this), "TelegramWebviewProxy");
-        this.a.setWebViewClient(new su(this, (byte) 4));
-        frameLayout.addView(this.a, nme.c(-1.0f, -1));
+        final byte b = 0;
+        this.actionBar.setAddToContainer(false);
+        this.actionBar.setOccupyStatusBar(false);
+        wma wmaVar = new wma(context, null);
+        wmaVar.setDelegate(new yv0(this, (byte) 3));
+        yob.h(aob.d6, this.resourceProvider, wmaVar);
+        this.fragmentView = wmaVar;
+        ScrollView scrollView = new ScrollView(context);
+        this.e = scrollView;
+        final byte b2 = 1;
+        scrollView.setFillViewport(true);
+        this.e.setVerticalScrollBarEnabled(false);
+        this.e.setClipToPadding(false);
+        this.e.setPadding(0, hl.L(96.0f), 0, 0);
+        wmaVar.addView(this.e, tre.c(-1.0f, -1));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(hl.L(36.0f), 0, hl.L(36.0f), hl.L(24.0f));
+        linearLayout.setClipToPadding(false);
+        this.e.addView(linearLayout, new FrameLayout.LayoutParams(-1, -2));
+        ImageView imageView = new ImageView(context);
+        this.f = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        ImageView imageView2 = this.f;
+        int i = aob.G6;
+        yob.s(imageView2, i, this.resourceProvider, PorterDuff.Mode.SRC_IN);
+        this.f.setImageResource(R.drawable.ic_ab_close);
+        ImageView imageView3 = this.f;
+        int i2 = aob.i6;
+        yob.R(imageView3, aob.f0(aob.v0(i2, this.resourceProvider), 3, -1), null, yob.M(i2), this.resourceProvider);
+        this.f.setOnClickListener(new View.OnClickListener(this) { // from class: suc
+            public final /* synthetic */ tuc b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b3 = b;
+                tuc tucVar = this.b;
+                switch (b3) {
+                    case 0:
+                        tucVar.finishFragment();
+                        break;
+                    default:
+                        int[] iArr = tucVar.b;
+                        ArrayList arrayList = tucVar.d;
+                        if (!tucVar.y && arrayList.size() == iArr.length) {
+                            boolean z = f11.a;
+                            int size = arrayList.size();
+                            int i3 = 0;
+                            while (i3 < size) {
+                                Object obj = arrayList.get(i3);
+                                i3++;
+                                if (((zuc) obj).getWord().isEmpty()) {
+                                    break;
+                                }
+                            }
+                            boolean z2 = true;
+                            for (int i4 = 0; i4 < iArr.length; i4++) {
+                                zuc zucVar = (zuc) arrayList.get(i4);
+                                boolean equalsIgnoreCase = tucVar.a[iArr[i4]].equalsIgnoreCase(zucVar.getWord());
+                                if (!equalsIgnoreCase && zucVar.w) {
+                                    hl.B3(zucVar);
+                                }
+                                zucVar.setError(!equalsIgnoreCase);
+                                z2 &= equalsIgnoreCase;
+                            }
+                            if (z2) {
+                                tucVar.y = true;
+                                tucVar.Y();
+                                hl.t1(tucVar.fragmentView);
+                                olc olcVar = tucVar.c;
+                                if (olcVar != null) {
+                                    olcVar.run();
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        wmaVar.addView(this.f, tre.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
+        de0 de0Var = new de0(context);
+        de0Var.setAspectFit(true);
+        de0Var.getImageReceiver().d = hl.t0();
+        ls6.d0(hl.t0()).e2(de0Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
+        de0Var.getImageReceiver().N(1);
+        linearLayout.addView(de0Var, tre.t(100, 100, 1, 0, 0, 0, 12));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(hl.o());
+        textView.setGravity(1);
+        ik8.x(textView, i, this.resourceProvider, null, 2131742636);
+        TextView m = ik8.m(linearLayout, textView, tre.t(-1, -2, 1, 32, 0, 32, 10), context);
+        m.setTextSize(1, 14.0f);
+        m.setGravity(1);
+        yob.X(m, aob.z6, this.resourceProvider);
+        int[] iArr = this.b;
+        uh9.r(null, null, 2131742635, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, m);
+        linearLayout.addView(m, tre.t(-1, -2, 1, 32, 0, 32, 8));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        linearLayout2.setGravity(1);
+        linearLayout2.setClipChildren(false);
+        linearLayout.addView(linearLayout2, tre.t(-1, -2, 1, 0, 16, 0, 0));
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = this.d;
+        int size = arrayList2.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList2.get(i3);
+            i3++;
+            arrayList.add(((zuc) obj).getWord());
+        }
+        arrayList2.clear();
+        int i4 = 0;
+        while (i4 < iArr.length) {
+            zuc zucVar = new zuc(iArr[i4], this.resourceProvider, context, false);
+            if (i4 < arrayList.size()) {
+                zucVar.setText((String) arrayList.get(i4));
+            }
+            zucVar.setOnTextChangedListener(new olc(this, (byte) 15));
+            zucVar.setOnNextListener(new mpc((Object) this, i4, (Object) zucVar, (byte) 4));
+            linearLayout2.addView(zucVar, tre.t(-1, 50, 1, 0, i4 == 0 ? 0 : 12, 0, 0));
+            arrayList2.add(zucVar);
+            i4++;
+        }
+        linearLayout.addView(new View(context), tre.l(1.0f, -1, 0));
+        c51 c51Var = new c51(this.resourceProvider, context, true);
+        this.h = c51Var;
+        c51Var.f();
+        this.h.setText(ob6.M0(2131742805, null));
+        this.h.setOnClickListener(new View.OnClickListener(this) { // from class: suc
+            public final /* synthetic */ tuc b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b3 = b2;
+                tuc tucVar = this.b;
+                switch (b3) {
+                    case 0:
+                        tucVar.finishFragment();
+                        break;
+                    default:
+                        int[] iArr2 = tucVar.b;
+                        ArrayList arrayList3 = tucVar.d;
+                        if (!tucVar.y && arrayList3.size() == iArr2.length) {
+                            boolean z = f11.a;
+                            int size2 = arrayList3.size();
+                            int i32 = 0;
+                            while (i32 < size2) {
+                                Object obj2 = arrayList3.get(i32);
+                                i32++;
+                                if (((zuc) obj2).getWord().isEmpty()) {
+                                    break;
+                                }
+                            }
+                            boolean z2 = true;
+                            for (int i42 = 0; i42 < iArr2.length; i42++) {
+                                zuc zucVar2 = (zuc) arrayList3.get(i42);
+                                boolean equalsIgnoreCase = tucVar.a[iArr2[i42]].equalsIgnoreCase(zucVar2.getWord());
+                                if (!equalsIgnoreCase && zucVar2.w) {
+                                    hl.B3(zucVar2);
+                                }
+                                zucVar2.setError(!equalsIgnoreCase);
+                                z2 &= equalsIgnoreCase;
+                            }
+                            if (z2) {
+                                tucVar.y = true;
+                                tucVar.Y();
+                                hl.t1(tucVar.fragmentView);
+                                olc olcVar = tucVar.c;
+                                if (olcVar != null) {
+                                    olcVar.run();
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+        });
+        linearLayout.addView(this.h, tre.t(-1, 48, 1, 0, 24, 0, 0));
+        Y();
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new blb(this.actionBar, TLObject.FLAG_31, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, bkb.F8));
-        arrayList.add(new blb(this.actionBar, TLObject.FLAG_30, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, bkb.D8));
-        arrayList.add(new blb(this.actionBar, 1073741832, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, bkb.E8));
-        return arrayList;
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        gl.u(getParentActivity(), false);
-        gl.r(this.s);
-        this.a.setLayerType(0, null);
-        this.s = null;
-        try {
-            ViewParent parent = this.a.getParent();
-            if (parent != null) {
-                ((FrameLayout) parent).removeView(this.a);
-            }
-            this.a.stopLoading();
-            this.a.loadUrl("about:blank");
-            this.a.destroy();
-            this.a = null;
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // org.telegram.ui.ActionBar.e
+    public final void onInsets(int i, int i2, int i3, int i4) {
+        this.r = i;
+        this.s = i2;
+        this.w = i3;
+        this.x = i4;
+        ScrollView scrollView = this.e;
+        if (scrollView != null) {
+            scrollView.setPadding(i, hl.L(96.0f) + i2, i3, i4 + this.n);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onResume() {
-        super.onResume();
-        gl.r(this.s);
-        this.s.run();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onThemeColorsChanged() {
-        try {
-            org.telegram.ui.ActionBar.a aVar = this.actionBar;
-            if (aVar != null) {
-                aVar.I(bkb.w0(null, bkb.F8, false), false);
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+        ImageView imageView = this.f;
+        if (imageView != null) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageView.getLayoutParams();
+            layoutParams.leftMargin = hl.L(4.0f) + i;
+            layoutParams.topMargin = hl.L(12.0f) + i2;
+            this.f.setLayoutParams(layoutParams);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
-        WebView webView;
-        if (!z || z2 || (webView = this.a) == null) {
-            return;
-        }
-        webView.loadUrl(this.d);
     }
 }

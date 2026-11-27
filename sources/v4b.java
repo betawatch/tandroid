@@ -1,44 +1,14 @@
 // default package
 
-import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class v4b extends FrameLayout {
-    public final TL_stories.MediaArea a;
-    public final hb6 b;
-
-    public v4b(Context context, hb6 hb6Var, TL_stories.MediaArea mediaArea) {
-        super(context);
-        this.a = mediaArea;
-        this.b = hb6Var;
-        addView(hb6Var);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class v4b extends EditTextBoldCursor {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i, int i2) {
-        hb6 hb6Var = this.b;
-        hb6Var.measure(i, i2);
-        int measuredWidth = (hb6Var.getMeasuredWidth() - hb6Var.getPaddingLeft()) - hb6Var.getPaddingRight();
-        int measuredHeight = (hb6Var.getMeasuredHeight() - hb6Var.getPaddingTop()) - hb6Var.getPaddingBottom();
-        float f = measuredWidth;
-        float f2 = f / 2.0f;
-        hb6Var.setPivotX(hb6Var.getPaddingLeft() + f2);
-        float f3 = measuredHeight;
-        float f4 = f3 / 2.0f;
-        hb6Var.setPivotY(hb6Var.getPaddingTop() + f4);
-        int size = View.MeasureSpec.getSize(i);
-        int size2 = View.MeasureSpec.getSize(i2);
-        setMeasuredDimension(size, size2);
-        float f5 = size;
-        float f6 = size2;
-        float min = Math.min(f5 / f, f6 / f3);
-        hb6Var.setTranslationX((f5 / 2.0f) - (f2 + hb6Var.getPaddingLeft()));
-        hb6Var.setTranslationY((f6 / 2.0f) - (f4 + hb6Var.getPaddingTop()));
-        hb6Var.setScaleX(min);
-        hb6Var.setScaleY(min);
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(50.0f), TLObject.FLAG_30));
     }
 }

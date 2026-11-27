@@ -1,48 +1,62 @@
 // default package
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class mz1 implements m8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class mz1 extends jc0 {
+    public final /* synthetic */ byte e;
 
-    public /* synthetic */ mz1(KeyEvent.Callback callback, byte b) {
-        this.a = b;
-        this.b = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ mz1(byte b, Context context, boolean z) {
+        super(context, z);
+        this.e = b;
     }
 
-    @Override // m8c
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        byte b = this.a;
-        KeyEvent.Callback callback = this.b;
-        switch (b) {
-            case 0:
-                x02 x02Var = (x02) callback;
-                CharSequence charSequence = (CharSequence) obj;
-                zz1 zz1Var = x02Var.B2;
-                zz1Var.setText(charSequence);
-                zz1Var.w(charSequence.length(), charSequence.length());
-                x02Var.i1();
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.e) {
             case 1:
-                x02 x02Var2 = (x02) callback;
-                CharSequence charSequence2 = (CharSequence) obj;
-                b02 b02Var = x02Var2.M2;
-                b02Var.setText(charSequence2);
-                b02Var.w(charSequence2.length(), charSequence2.length());
-                x02Var2.i1();
+                if (!si5.c) {
+                    super.invalidate();
+                    break;
+                } else {
+                    si5.b.add(this);
+                    break;
+                }
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // jc0, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.e) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(hl.L(this.a.n == 0 ? 0 : bp1.h(r4, 1, 20, 24)), TLObject.FLAG_30), i2);
                 break;
             default:
-                mb1 mb1Var = (mb1) callback;
-                cb1 cb1Var = mb1Var.f;
-                cb1Var.setText((CharSequence) obj);
-                cb1Var.d();
-                cb1Var.k(true);
-                za1 za1Var = mb1Var.d0;
-                gl.r(za1Var);
-                za1Var.run();
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate(int i, int i2, int i3, int i4) {
+        switch (this.e) {
+            case 1:
+                if (si5.c) {
+                    si5.b.add(this);
+                    break;
+                } else {
+                    super.invalidate(i, i2, i3, i4);
+                    break;
+                }
+            default:
+                super.invalidate(i, i2, i3, i4);
                 break;
         }
     }

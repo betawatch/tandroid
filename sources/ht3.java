@@ -1,81 +1,93 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.ActionMode;
-import android.view.Menu;
-import org.telegram.messenger.beta.R;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ht3 extends gt3 {
-    public final /* synthetic */ int e2;
-    public final /* synthetic */ wjb f2;
-    public final /* synthetic */ boolean g2;
-    public final /* synthetic */ it3 h2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ht3 extends EdgeEffect {
+    public final byte a;
+    public final gt3 b;
+    public final RecyclerView c;
+    public final zg3 d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ht3(it3 it3Var, Context context, wjb wjbVar, int i, wjb wjbVar2, boolean z) {
-        super(context, wjbVar);
-        this.h2 = it3Var;
-        this.e2 = i;
-        this.f2 = wjbVar2;
-        this.g2 = z;
+    /* JADX WARN: Multi-variable type inference failed */
+    public ht3(RecyclerView recyclerView, int i, gt3 gt3Var) {
+        super(recyclerView.getContext());
+        this.d = new zg3(this, (byte) 18);
+        this.c = recyclerView;
+        this.a = i;
+        this.b = gt3Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        it3 it3Var = this.h2;
-        gn gnVar = it3Var.y;
-        gnVar.u(it3Var.w.a(bkb.v0(it3Var.x <= 0 ? bkb.o7 : bkb.O5, this.f2), false));
-        gnVar.setBounds(getScrollX(), getHeight() - Math.min(gl.L(52.0f), getHeight()), gl.L(42.0f) + ((getWidth() + getScrollX()) - getPaddingRight()), getHeight());
-        gnVar.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void o(ActionMode actionMode, Menu menu) {
-        if (this.g2 && menu.findItem(R.id.menu_bold) == null) {
-            menu.removeItem(android.R.id.shareText);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(k96.M0(2131753668, null));
-            spannableStringBuilder.setSpan(new z3c(gl.o()), 0, spannableStringBuilder.length(), 33);
-            menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(k96.M0(2131748895, null));
-            spannableStringBuilder2.setSpan(new z3c(gl.n1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
-            menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(k96.M0(2131744196, null));
-            vib vibVar = new vib();
-            vibVar.a |= 8;
-            spannableStringBuilder3.setSpan(new wib(vibVar, 0), 0, spannableStringBuilder3.length(), 33);
-            menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 8, spannableStringBuilder3);
-            menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, k96.M0(2131746144, null));
+    public final void a() {
+        boolean b = b();
+        if (this.e != b) {
+            this.e = b;
+            gt3 gt3Var = this.b;
+            if (gt3Var != null) {
+                gt3Var.a(this.a, b);
+            }
         }
     }
 
-    @Override // gt3, org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
-        super.onDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        super.onTextChanged(charSequence, i, i2, i3);
-        it3 it3Var = this.h2;
-        gn gnVar = it3Var.y;
-        if (gnVar == null || this.e2 <= 0) {
-            return;
+    public final boolean b() {
+        if (isFinished()) {
+            return false;
         }
-        gnVar.a();
-        it3Var.c();
+        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.h2.y || super.verifyDrawable(drawable);
+    @Override // android.widget.EdgeEffect
+    public final boolean draw(Canvas canvas) {
+        boolean draw = super.draw(canvas);
+        this.c.postOnAnimation(this.d);
+        return draw;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void finish() {
+        super.finish();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onAbsorb(int i) {
+        super.onAbsorb(i);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f) {
+        super.onPull(f);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final float onPullDistance(float f, float f2) {
+        float onPullDistance = super.onPullDistance(f, f2);
+        a();
+        return onPullDistance;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onRelease() {
+        super.onRelease();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void setSize(int i, int i2) {
+        super.setSize(i, i2);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f, float f2) {
+        super.onPull(f, f2);
+        a();
     }
 }

@@ -1,47 +1,33 @@
 // default package
 
-import java.util.concurrent.CancellationException;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ct5 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ m7 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ct5 extends CancellationException {
-    public final transient bt5 a;
+    public /* synthetic */ ct5(m7 m7Var, byte b) {
+        this.a = b;
+        this.b = m7Var;
+    }
 
-    public ct5(String str, Throwable th, bt5 bt5Var) {
-        super(str);
-        this.a = bt5Var;
-        if (th != null) {
-            initCause(th);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        m7 m7Var = this.b;
+        switch (b) {
+            case 0:
+                hl.E3(m7Var);
+                break;
+            case 1:
+                hl.E3(m7Var);
+                break;
+            case 2:
+                hl.E3(m7Var);
+                break;
+            default:
+                hl.E3(m7Var);
+                break;
         }
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof ct5)) {
-            return false;
-        }
-        ct5 ct5Var = (ct5) obj;
-        return rp5.a(ct5Var.getMessage(), getMessage()) && rp5.a(ct5Var.a, this.a) && rp5.a(ct5Var.getCause(), getCause());
-    }
-
-    @Override // java.lang.Throwable
-    public final Throwable fillInStackTrace() {
-        setStackTrace(new StackTraceElement[0]);
-        return this;
-    }
-
-    public final int hashCode() {
-        String message = getMessage();
-        message.getClass();
-        int hashCode = (this.a.hashCode() + (message.hashCode() * 31)) * 31;
-        Throwable cause = getCause();
-        return hashCode + (cause != null ? cause.hashCode() : 0);
-    }
-
-    @Override // java.lang.Throwable
-    public final String toString() {
-        return super.toString() + "; job=" + this.a;
     }
 }

@@ -1,32 +1,35 @@
 // default package
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.os.Build;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class c89 {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void a(Activity activity, u06 u06Var) {
-        u06Var.getClass();
-        if (activity instanceof e16) {
-            g16 m = ((e16) activity).m();
-            if (ug8.A(m)) {
-                m.e(u06Var);
-            }
+public final class c89 {
+    public int a;
+    public int b;
+    public int c;
+    public byte d;
+    public int e;
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public int l;
+    public long m;
+    public int n;
+
+    public final void a(int i) {
+        if ((this.d & i) != 0) {
+            return;
         }
+        throw new IllegalStateException("Layout state should be one of " + Integer.toBinaryString(i) + " but it is " + Integer.toBinaryString(this.d));
     }
 
-    public static void b(Activity activity) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            a.Companion.getClass();
-            d89.a(activity);
-        }
-        FragmentManager fragmentManager = activity.getFragmentManager();
-        if (fragmentManager.findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag") == null) {
-            fragmentManager.beginTransaction().add(new e89(), "androidx.lifecycle.LifecycleDispatcher.report_fragment_tag").commit();
-            fragmentManager.executePendingTransactions();
-        }
+    public final int b() {
+        return this.g ? this.b - this.c : this.e;
+    }
+
+    public final String toString() {
+        return "State{mTargetPosition=" + this.a + ", mData=null, mItemCount=" + this.e + ", mIsMeasuring=" + this.i + ", mPreviousLayoutItemCount=" + this.b + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.c + ", mStructureChanged=" + this.f + ", mInPreLayout=" + this.g + ", mRunSimpleAnimations=" + this.j + ", mRunPredictiveAnimations=" + this.k + '}';
     }
 }

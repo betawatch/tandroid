@@ -1,28 +1,19 @@
 // default package
 
-import java.util.Collections;
-import java.util.Map;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rke {
-    public static volatile rke a;
-    public static volatile rke b;
-    public static final rke c;
+public final class rke implements zq7 {
+    public static final rke a = new rke();
 
     static {
-        rke rkeVar = new rke();
-        Map map = Collections.EMPTY_MAP;
-        c = rkeVar;
+        xnb.y(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, new tnd(1)), 2)), 3)));
     }
 
-    public static void a() {
-        if (a == null) {
-            synchronized (rke.class) {
-                if (a == null) {
-                    a = c;
-                }
-            }
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

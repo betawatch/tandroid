@@ -1,142 +1,95 @@
 // default package
 
-import java.lang.reflect.Array;
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ns implements Set {
-    public final /* synthetic */ ps a;
+public final class ns implements Iterator {
+    public int a;
+    public int b;
+    public boolean c;
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ Object e;
 
-    public ns(ps psVar) {
-        this.a = psVar;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean contains(Object obj) {
-        return this.a.containsKey(obj);
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean containsAll(Collection collection) {
-        return this.a.j(collection);
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean equals(Object obj) {
-        ps psVar = this.a;
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Set)) {
-            return false;
-        }
-        Set set = (Set) obj;
-        try {
-            if (psVar.c == set.size()) {
-                return psVar.j(set);
-            }
-            return false;
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public ns(qs qsVar, byte b) {
+        this(qsVar.c);
+        this.d = b;
+        switch (b) {
+            case 1:
+                this.e = qsVar;
+                this(qsVar.c);
+                break;
+            default:
+                this.e = qsVar;
+                break;
         }
     }
 
-    @Override // java.util.Set, java.util.Collection
-    public final int hashCode() {
-        ps psVar = this.a;
-        int i = 0;
-        for (int i2 = psVar.c - 1; i2 >= 0; i2--) {
-            Object f = psVar.f(i2);
-            i += f == null ? 0 : f.hashCode();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.b < this.a;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        Object f;
+        if (!hasNext()) {
+            lq5.n();
+            return null;
         }
-        return i;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
-    }
-
-    @Override // java.util.Set, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return new ms(this.a, (byte) 0);
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean remove(Object obj) {
-        ps psVar = this.a;
-        int d = psVar.d(obj);
-        if (d < 0) {
-            return false;
+        int i = this.b;
+        byte b = this.d;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                f = ((qs) obj).f(i);
+                break;
+            case 1:
+                f = ((qs) obj).i(i);
+                break;
+            default:
+                f = ((ss) obj).b[i];
+                break;
         }
-        psVar.g(d);
-        return true;
+        this.b++;
+        this.c = true;
+        return f;
     }
 
-    @Override // java.util.Set, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        return this.a.k(collection);
+    @Override // java.util.Iterator
+    public final void remove() {
+        if (!this.c) {
+            grb.i("Call next() before removing an element.");
+            return;
+        }
+        int i = this.b - 1;
+        this.b = i;
+        byte b = this.d;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                ((qs) obj).g(i);
+                break;
+            case 1:
+                ((qs) obj).g(i);
+                break;
+            default:
+                ((ss) obj).h(i);
+                break;
+        }
+        this.a--;
+        this.c = false;
     }
 
-    @Override // java.util.Set, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        ps psVar = this.a;
-        int i = psVar.c;
-        for (int i2 = i - 1; i2 >= 0; i2--) {
-            if (!collection.contains(psVar.f(i2))) {
-                psVar.g(i2);
-            }
-        }
-        return i != psVar.c;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public ns(ss ssVar) {
+        this(ssVar.c);
+        this.d = (byte) 2;
+        this.e = ssVar;
     }
 
-    @Override // java.util.Set, java.util.Collection
-    public final int size() {
-        return this.a.c;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        ps psVar = this.a;
-        int i = psVar.c;
-        if (objArr.length < i) {
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i);
-        }
-        for (int i2 = 0; i2 < i; i2++) {
-            objArr[i2] = psVar.f(i2);
-        }
-        if (objArr.length > i) {
-            objArr[i] = null;
-        }
-        return objArr;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final Object[] toArray() {
-        ps psVar = this.a;
-        int i = psVar.c;
-        Object[] objArr = new Object[i];
-        for (int i2 = 0; i2 < i; i2++) {
-            objArr[i2] = psVar.f(i2);
-        }
-        return objArr;
+    public ns(int i) {
+        this.a = i;
     }
 }

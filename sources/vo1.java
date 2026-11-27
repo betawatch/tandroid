@@ -1,91 +1,89 @@
 // default package
 
 import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
 import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.d;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vo1 extends pr7 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ SparseArray d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ k27 g;
-    public final /* synthetic */ oz8 h;
-    public final /* synthetic */ k27 i;
-    public final /* synthetic */ SparseIntArray j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ gec l;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ int o;
-    public final /* synthetic */ mu1 p;
+public final /* synthetic */ class vo1 implements hcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public vo1(mu1 mu1Var, int i, SparseArray sparseArray, boolean z, List list, k27 k27Var, oz8 oz8Var, k27 k27Var2, SparseIntArray sparseIntArray, int i2, gec gecVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i3) {
-        this.p = mu1Var;
-        this.c = i;
-        this.d = sparseArray;
-        this.e = z;
-        this.f = list;
-        this.g = k27Var;
-        this.h = oz8Var;
-        this.i = k27Var2;
-        this.j = sparseIntArray;
-        this.k = i2;
-        this.l = gecVar;
-        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.n = iArr;
-        this.o = i3;
+    public /* synthetic */ vo1(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // pr7
-    public final void a(gec gecVar, Object obj) {
-        gecVar.removeView((View) obj);
-    }
-
-    @Override // pr7
-    public final int b() {
-        return this.c;
-    }
-
-    @Override // pr7
-    public final Object e(gec gecVar, int i) {
-        int i2;
-        SparseArray sparseArray = this.d;
-        View view = (View) sparseArray.get(i);
-        if (view != null) {
-            gecVar.addView(view);
-            return view;
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
+    @Override // hcc
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object run() {
+        View view;
+        byte b = this.a;
+        int i = 0;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                return ((zu1) obj2).F8((Context) obj);
+            case 1:
+                w1b w1bVar = (w1b) obj2;
+                i1b i1bVar = (i1b) obj;
+                int childCount = w1bVar.T.getChildCount();
+                while (true) {
+                    w0b w0bVar = w1bVar.T;
+                    if (i >= childCount) {
+                        w0bVar.setItemAnimator(null);
+                        w1bVar.C0.e();
+                        return null;
+                    }
+                    View childAt = w0bVar.getChildAt(i);
+                    if (childAt instanceof h1b) {
+                        h1b h1bVar = (h1b) childAt;
+                        if (h1bVar.r == i1bVar) {
+                            return h1bVar;
+                        }
+                    }
+                    i++;
+                }
+            default:
+                l9c l9cVar = (l9c) obj2;
+                Object obj3 = ((b8c) obj).H;
+                d79 d79Var = l9cVar.d;
+                int i2 = 0;
+                while (true) {
+                    if (i2 < l9cVar.E.size()) {
+                        b8c G = l9cVar.G(i2);
+                        if (G == null || G.H != obj3) {
+                            i2++;
+                        }
+                    } else {
+                        i2 = -1;
+                    }
+                }
+                if (i2 != -1) {
+                    while (i < d79Var.getChildCount()) {
+                        view = d79Var.getChildAt(i);
+                        int S = RecyclerView.S(view);
+                        if (S != -1 && S == i2) {
+                            if (view instanceof u1b) {
+                                return null;
+                            }
+                            return (u1b) view;
+                        }
+                        i++;
+                    }
+                }
+                view = null;
+                if (view instanceof u1b) {
+                }
+                break;
         }
-        int i3 = this.e ? i - 1 : i;
-        TLRPC.ReactionCount reactionCount = i3 >= 0 ? (TLRPC.ReactionCount) this.f.get(i3) : null;
-        Context context = gecVar.getContext();
-        mu1 mu1Var = this.p;
-        ku1 ku1Var = mu1Var.Ba;
-        i2 = ((d) mu1Var).currentAccount;
-        a09 a09Var = new a09(context, ku1Var, i2, this.g, reactionCount, true);
-        oz8 oz8Var = this.h;
-        a09Var.d(oz8Var.getSeenUsers());
-        a09Var.H = new rh1(this, (byte) 5);
-        a09Var.F = new q31(this, this.i, (byte) 15);
-        a09Var.E = new pm0(this.j, i, this.k, this.l, this.m, this.n);
-        if (i3 < 0) {
-            a09Var.setPredictiveCount(this.o);
-            oz8Var.setSeenCallback(new gw(a09Var, (byte) 3));
-        }
-        gecVar.addView(a09Var);
-        sparseArray.put(i, a09Var);
-        return a09Var;
-    }
-
-    @Override // pr7
-    public final boolean f(View view, Object obj) {
-        return view == obj;
     }
 }

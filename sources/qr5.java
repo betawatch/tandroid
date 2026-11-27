@@ -1,23 +1,36 @@
 // default package
 
-import androidx.car.app.model.CarText;
-import androidx.car.app.model.ItemList;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qr5 {
-    public final ArrayList a;
-    public final int b;
-    public final hp7 c;
-    public final dp7 d;
-    public final CarText e;
+public final class qr5 extends wl5 {
+    public final String b;
+    public final String c;
+    public final String d;
 
-    public qr5(ItemList itemList) {
-        this.b = itemList.getSelectedIndex();
-        this.c = itemList.getOnSelectedDelegate();
-        this.d = itemList.getOnItemVisibilityChangedDelegate();
-        this.e = itemList.getNoItemsMessage();
-        this.a = new ArrayList(itemList.getItems());
+    public qr5(String str, String str2, String str3) {
+        super("----");
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || qr5.class != obj.getClass()) {
+            return false;
+        }
+        qr5 qr5Var = (qr5) obj;
+        return this.c.equals(qr5Var.c) && this.b.equals(qr5Var.b) && this.d.equals(qr5Var.d);
+    }
+
+    public final int hashCode() {
+        return this.d.hashCode() + bs2.j(bs2.j(527, 31, this.b), 31, this.c);
+    }
+
+    @Override // wl5
+    public final String toString() {
+        return this.a + ": domain=" + this.b + ", description=" + this.c;
     }
 }

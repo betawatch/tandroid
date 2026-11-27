@@ -4,12 +4,12 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class Alert {
     private static final int MAX_ACTION_COUNT = 2;
     private final List<Action> mActions;
-    private final nc mCallbackDelegate;
+    private final oc mCallbackDelegate;
     private final long mDuration;
     private final CarIcon mIcon;
     private final int mId;
@@ -37,7 +37,7 @@ public final class Alert {
         return this.mActions;
     }
 
-    public nc getCallbackDelegate() {
+    public oc getCallbackDelegate() {
         return this.mCallbackDelegate;
     }
 
@@ -69,7 +69,7 @@ public final class Alert {
         return "[id: " + this.mId + ", title: " + this.mTitle + ", icon: " + this.mIcon + "]";
     }
 
-    public Alert(lc lcVar) {
+    public Alert(mc mcVar) {
         throw null;
     }
 }

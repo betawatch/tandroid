@@ -1,30 +1,30 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Bitmap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class lw5 extends c79 {
-    public final /* synthetic */ Bitmap F;
-    public final /* synthetic */ q88 G;
+public final /* synthetic */ class lw5 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nw5 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw5(q88 q88Var, Context context, gu7 gu7Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, gu7Var, bitmap, null, null);
-        this.G = q88Var;
-        this.F = bitmap2;
+    public /* synthetic */ lw5(nw5 nw5Var, boolean z, byte b) {
+        this.a = b;
+        this.b = nw5Var;
+        this.c = z;
     }
 
-    @Override // c79
-    public final void g(m01 m01Var) {
-        int indexOf = m01.a.indexOf(m01Var);
-        int i = indexOf + 1;
-        if (i <= 1 || this.F != null) {
-            indexOf = i;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.c;
+        nw5 nw5Var = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new lw5(nw5Var, z, (byte) 1));
+                break;
+            default:
+                nw5Var.setJoinRequest(z);
+                break;
         }
-        q88 q88Var = this.G;
-        q88Var.j1.b(indexOf);
-        q88Var.s(m01Var);
     }
 }

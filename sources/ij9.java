@@ -1,182 +1,156 @@
 // default package
 
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ij9 {
-    public static volatile long g;
-    public static volatile long h;
-    public static final HashSet i = new HashSet(Arrays.asList("audio/mpeg3", "audio/mpeg", "audio/ogg", "audio/m4a"));
-    public final long a;
-    public final int c;
-    public int d;
-    public boolean f;
-    public String b = null;
-    public final ArrayList e = new ArrayList();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class ij9 extends ze9 implements snb, zlb {
+    public vh9 E;
+    public boolean F;
+    public final int[] G;
+    public final vnb n;
+    public final Paint r;
+    public final HorizontalScrollView s;
+    public final ImageView w;
+    public Bitmap x;
+    public int y;
 
-    public ij9(int i2) {
-        this.c = i2;
-        this.a = y6c.h(i2).n;
-        SharedPreferences d = d();
-        try {
-            g = d.getLong("hash", 0L);
-            h = d.getLong("lastReload", 0L);
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-        gl.c3(new gj9(this, (byte) 0));
+    public ij9(Context context, vnb vnbVar) {
+        super(context);
+        this.r = new Paint(1);
+        this.y = 0;
+        this.G = new int[4];
+        this.n = vnbVar;
+        setWillNotDraw(false);
+        f(hl.L(16.0f), hl.L(6.0f), hl.L(16.0f), hl.L(6.0f));
+        ImageView imageView = new ImageView(context);
+        this.w = imageView;
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.addView(imageView, new FrameLayout.LayoutParams(-2, -2, 17));
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
+        this.s = horizontalScrollView;
+        horizontalScrollView.setHorizontalScrollBarEnabled(false);
+        horizontalScrollView.setClipToPadding(false);
+        horizontalScrollView.setPadding(0, 0, 0, 0);
+        horizontalScrollView.setFillViewport(true);
+        horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
+        addView(horizontalScrollView, tre.e(-1, -2, 16));
+        updateColors();
     }
 
-    public final void a(TLRPC.Document document) {
-        if (document == null || c(document.id) != null) {
-            return;
+    private String getSource() {
+        mk0 mk0Var = this.a;
+        if (mk0Var == null) {
+            return null;
         }
-        hj9 hj9Var = new hj9();
-        hj9Var.a = document;
-        int i2 = this.d;
-        this.d = i2 + 1;
-        hj9Var.c = i2;
-        hj9Var.d = false;
-        this.e.add(hj9Var);
-        h();
-    }
-
-    public final void b() {
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        Utilities.e.c(new lw8(this, new ArrayList(this.e), (byte) 27));
-    }
-
-    public final TLRPC.Document c(long j) {
-        ArrayList arrayList = this.e;
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            try {
-                if (arrayList.get(i2) != null && ((hj9) arrayList.get(i2)).a != null && ((hj9) arrayList.get(i2)).a.id == j) {
-                    return ((hj9) arrayList.get(i2)).a;
-                }
-            } catch (Exception e) {
-                fa4.g(e, true);
-                return null;
-            }
+        TL_iv.PageBlock pageBlock = mk0Var.b;
+        if (pageBlock instanceof TL_iv.pageBlockMath) {
+            return ((TL_iv.pageBlockMath) pageBlock).source;
         }
         return null;
     }
 
-    public final SharedPreferences d() {
-        if (this.b == null) {
-            this.b = "ringtones_pref_" + this.a;
-        }
-        return a.b.getSharedPreferences(this.b, 0);
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.lg));
+        hashSet.add(Integer.valueOf(aob.G6));
     }
 
-    public final String e(long j) {
-        if (!this.f) {
-            f(true);
-            this.f = true;
+    public final void g(mk0 mk0Var, vh9 vh9Var) {
+        qz5 a;
+        this.a = mk0Var;
+        this.E = vh9Var;
+        c(mk0Var);
+        this.x = null;
+        this.s.scrollTo(0, 0);
+        String source = getSource();
+        if (!TextUtils.isEmpty(source) && (a = qz5.a(source, hl.L(xea.S0 + 4), false)) != null) {
+            this.x = a.a;
         }
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i2 >= arrayList.size()) {
-                return "NoSound";
-            }
-            if (((hj9) arrayList.get(i2)).a != null && ((hj9) arrayList.get(i2)).a.id == j) {
-                if (!TextUtils.isEmpty(((hj9) arrayList.get(i2)).b)) {
-                    return ((hj9) arrayList.get(i2)).b;
-                }
-                ba4.G(this.c);
-                return ba4.I(((hj9) arrayList.get(i2)).a).toString();
-            }
-            i2++;
-        }
+        this.w.setImageBitmap(this.x);
+        invalidate();
     }
 
-    public final void f(boolean z) {
-        SharedPreferences d = d();
-        int i2 = d.getInt("count", 0);
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        for (int i3 = 0; i3 < i2; i3++) {
-            String string = d.getString("tone_document" + i3, "");
-            String string2 = d.getString("tone_local_path" + i3, "");
-            SerializedData serializedData = new SerializedData(Utilities.v(string));
-            try {
-                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-                hj9 hj9Var = new hj9();
-                hj9Var.a = TLdeserialize;
-                hj9Var.b = string2;
-                int i4 = this.d;
-                this.d = i4 + 1;
-                hj9Var.c = i4;
-                arrayList.add(hj9Var);
-            } catch (Throwable th) {
-                boolean z2 = w01.a;
-                fa4.g(th, true);
-            }
-        }
-        if (z) {
-            gl.c3(new gj9(this, (byte) 1));
-        }
+    public mk0 getRow() {
+        return this.a;
     }
 
-    public final void g(boolean z) {
-        boolean z2 = z || System.currentTimeMillis() - h > 86400000;
-        TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
-        getsavedringtones.hash = g;
-        if (z2) {
-            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new n35(this, (byte) 27));
+    public final void h(int[] iArr) {
+        int paddingTop = getPaddingTop();
+        int height = getHeight() - getPaddingBottom();
+        if (this.x != null && this.w.getWidth() > this.s.getWidth()) {
+            iArr[0] = getPaddingLeft();
+            iArr[1] = paddingTop;
+            iArr[2] = getWidth() - getPaddingRight();
+            iArr[3] = height;
             return;
         }
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        b();
+        Bitmap bitmap = this.x;
+        int width = bitmap != null ? bitmap.getWidth() : Math.max(1, getWidth() / 2);
+        int width2 = (getWidth() - width) / 2;
+        iArr[0] = width2 - hl.L(4.0f);
+        iArr[1] = paddingTop;
+        iArr[2] = hl.L(4.0f) + width2 + width;
+        iArr[3] = height;
     }
 
-    public final void h() {
-        SharedPreferences d = d();
-        d.edit().clear().apply();
-        SharedPreferences.Editor edit = d.edit();
-        int i2 = 0;
-        int i3 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i2 >= arrayList.size()) {
-                edit.putInt("count", i3);
-                edit.apply();
-                kk7.f(this.c).k(kk7.g5, new Object[0]);
-                return;
-            }
-            if (!((hj9) arrayList.get(i2)).d) {
-                i3++;
-                TLRPC.Document document = ((hj9) arrayList.get(i2)).a;
-                String str = ((hj9) arrayList.get(i2)).b;
-                SerializedData serializedData = new SerializedData(document.getObjectSize());
-                document.serializeToStream(serializedData);
-                edit.putString("tone_document" + i2, Utilities.f(serializedData.toByteArray()));
-                if (str != null) {
-                    edit.putString("tone_local_path" + i2, str);
-                }
-            }
-            i2++;
+    @Override // zlb
+    public final void k(ArrayList arrayList) {
+        int[] iArr = this.G;
+        h(iArr);
+        arrayList.add(oxe.a(iArr[0], iArr[1], iArr[2], iArr[3]));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        vh9 vh9Var;
+        amb textSelectionHelper;
+        if (this.y != aob.v0(aob.G6, this.n)) {
+            updateColors();
         }
+        if (this.x == null || (vh9Var = this.E) == null || (textSelectionHelper = vh9Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.w() || !(getParent() instanceof RecyclerView)) {
+            return;
+        }
+        ((RecyclerView) getParent()).getClass();
+        int S = RecyclerView.S(this);
+        if (S < 0 || S < textSelectionHelper.p0 || S > textSelectionHelper.s0) {
+            return;
+        }
+        h(this.G);
+        canvas.drawRoundRect(r0[0], r0[1], r0[2], r0[3], hl.L(4.0f), hl.L(4.0f), this.r);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        int i = aob.lg;
+        vnb vnbVar = this.n;
+        this.r.setColor(aob.v0(i, vnbVar));
+        int v0 = aob.v0(aob.G6, vnbVar);
+        if (!this.F || v0 != this.y) {
+            this.F = true;
+            this.y = v0;
+            this.w.setColorFilter(new PorterDuffColorFilter(this.y, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

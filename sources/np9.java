@@ -1,230 +1,177 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.SaveToGallerySettingsActivity;
+import android.graphics.SurfaceTexture;
+import android.opengl.EGL14;
+import android.opengl.EGLConfig;
+import android.opengl.EGLContext;
+import android.opengl.EGLDisplay;
+import android.opengl.EGLSurface;
+import android.opengl.GLES20;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.view.Surface;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class np9 extends ka {
-    public final /* synthetic */ SaveToGallerySettingsActivity d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class np9 {
+    public static final float[] n = {-1.0f, -1.0f, 0.0f, 0.0f, 1.0f, -1.0f, 1.0f, 0.0f, -1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+    public final short a;
+    public final FloatBuffer d;
+    public final HandlerThread e;
+    public int i;
+    public int j;
+    public SurfaceTexture k;
+    public Surface l;
+    public boolean m;
+    public final Object b = new Object();
+    public final float[] c = new float[16];
+    public EGLDisplay f = EGL14.EGL_NO_DISPLAY;
+    public EGLContext g = EGL14.EGL_NO_CONTEXT;
+    public EGLSurface h = EGL14.EGL_NO_SURFACE;
 
-    public np9(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
-        this.d = saveToGallerySettingsActivity;
+    /* JADX WARN: Multi-variable type inference failed */
+    public np9(Surface surface, int i) {
+        this.a = i;
+        FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(64).order(ByteOrder.nativeOrder()).asFloatBuffer();
+        this.d = asFloatBuffer;
+        asFloatBuffer.put(n).position(0);
+        HandlerThread handlerThread = new HandlerThread("RoundVideoTranscoderFrames");
+        this.e = handlerThread;
+        handlerThread.start();
+        try {
+            c(surface);
+            this.i = b();
+            int[] iArr = new int[1];
+            GLES20.glGenTextures(1, iArr, 0);
+            int i2 = iArr[0];
+            this.j = i2;
+            GLES20.glBindTexture(36197, i2);
+            GLES20.glTexParameteri(36197, 10241, 9729);
+            GLES20.glTexParameteri(36197, 10240, 9729);
+            GLES20.glTexParameteri(36197, 10242, 33071);
+            GLES20.glTexParameteri(36197, 10243, 33071);
+            SurfaceTexture surfaceTexture = new SurfaceTexture(this.j);
+            this.k = surfaceTexture;
+            surfaceTexture.setOnFrameAvailableListener(new pa1(this, (byte) 2), new Handler(handlerThread.getLooper()));
+            this.l = new Surface(this.k);
+        } catch (RuntimeException e) {
+            d();
+            throw e;
+        }
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i = s49Var.f;
-        return i == 1 || i == 2 || i == 4 || i == 6;
+    public static int a(int i, String str) {
+        int glCreateShader = GLES20.glCreateShader(i);
+        GLES20.glShaderSource(glCreateShader, str);
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] != 0) {
+            return glCreateShader;
+        }
+        String glGetShaderInfoLog = GLES20.glGetShaderInfoLog(glCreateShader);
+        GLES20.glDeleteShader(glCreateShader);
+        grb.i(c00.i("Unable to compile shader: ", glGetShaderInfoLog));
+        return 0;
     }
 
-    @Override // w39
-    public final int b() {
-        return this.d.s.size();
+    public static int b() {
+        int a = a(35633, "uniform mat4 uTextureMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = (uTextureMatrix * aTextureCoord).xy;\n}\n");
+        int a2 = a(35632, "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n    gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
+        int glCreateProgram = GLES20.glCreateProgram();
+        GLES20.glAttachShader(glCreateProgram, a);
+        GLES20.glAttachShader(glCreateProgram, a2);
+        GLES20.glLinkProgram(glCreateProgram);
+        GLES20.glDeleteShader(a);
+        GLES20.glDeleteShader(a2);
+        int[] iArr = new int[1];
+        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
+        if (iArr[0] != 0) {
+            return glCreateProgram;
+        }
+        String glGetProgramInfoLog = GLES20.glGetProgramInfoLog(glCreateProgram);
+        GLES20.glDeleteProgram(glCreateProgram);
+        grb.i(c00.i("Unable to link program: ", glGetProgramInfoLog));
+        return 0;
     }
 
-    @Override // w39
-    public final int d(int i) {
-        return ((op9) this.d.s.get(i)).a;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        String str;
-        View view = s49Var.a;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.d;
-        ArrayList arrayList = saveToGallerySettingsActivity.s;
-        if (((op9) arrayList.get(i)).a == 1) {
-            ((wgb) view).setNeedDivider(saveToGallerySettingsActivity.w.size() > 0);
+    public final void c(Surface surface) {
+        EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
+        this.f = eglGetDisplay;
+        int[] iArr = new int[2];
+        if (eglGetDisplay == EGL14.EGL_NO_DISPLAY || !EGL14.eglInitialize(eglGetDisplay, iArr, 0, iArr, 1)) {
+            grb.i("Unable to initialize EGL");
             return;
         }
-        if (((op9) arrayList.get(i)).a == 6) {
-            ahb ahbVar = (ahb) view;
-            rp9 b0 = saveToGallerySettingsActivity.b0();
-            if (i == saveToGallerySettingsActivity.e) {
-                ahbVar.f(k96.M0(2131745728, null), b0.a, true);
-                int i2 = bkb.bk;
-                ahbVar.c(saveToGallerySettingsActivity.getThemedColor(i2), R.drawable.msg_filled_data_photos);
-                saveToGallerySettingsActivity.a0(ahbVar, i2);
-                return;
-            }
-            ahbVar.f(k96.M0(2131745721, null), b0.b, false);
-            int i3 = bkb.Yj;
-            ahbVar.c(saveToGallerySettingsActivity.getThemedColor(i3), R.drawable.msg_filled_data_videos);
-            saveToGallerySettingsActivity.a0(ahbVar, i3);
+        EGLConfig[] eGLConfigArr = new EGLConfig[1];
+        int[] iArr2 = new int[1];
+        if (!EGL14.eglChooseConfig(this.f, new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 4, EglBase.EGL_RECORDABLE_ANDROID, 1, 12344}, 0, eGLConfigArr, 0, 1, iArr2, 0) || iArr2[0] == 0) {
+            grb.i("Unable to choose EGL config");
             return;
         }
-        if (((op9) arrayList.get(i)).a == 7) {
-            mhb mhbVar = (mhb) view;
-            if (i != saveToGallerySettingsActivity.h) {
-                mhbVar.setText(((op9) arrayList.get(i)).d);
-                return;
-            }
-            long j = saveToGallerySettingsActivity.b0().c;
-            if (saveToGallerySettingsActivity.c != null) {
-                mhbVar.setText(k96.a0("SaveToGalleryVideoHintCurrent", null, 2131745724, new Object[0]));
-                return;
-            }
-            int i4 = saveToGallerySettingsActivity.a;
-            if (i4 == 1) {
-                mhbVar.setText(k96.a0("SaveToGalleryVideoHintUser", null, 2131745722, new Object[0]));
-                return;
-            } else if (i4 == 4) {
-                mhbVar.setText(k96.a0("SaveToGalleryVideoHintChannels", null, 2131745725, new Object[0]));
-                return;
-            } else {
-                if (i4 == 2) {
-                    mhbVar.setText(k96.a0("SaveToGalleryVideoHintGroup", null, 2131745723, new Object[0]));
-                    return;
-                }
-                return;
-            }
-        }
-        if (((op9) arrayList.get(i)).a == 5) {
-            ((ld5) view).setText(((op9) arrayList.get(i)).d);
+        EGLContext eglCreateContext = EGL14.eglCreateContext(this.f, eGLConfigArr[0], EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, 12344}, 0);
+        this.g = eglCreateContext;
+        if (eglCreateContext == EGL14.EGL_NO_CONTEXT) {
+            grb.i("Unable to create EGL context");
             return;
         }
-        if (((op9) arrayList.get(i)).a == 2) {
-            v6c v6cVar = (v6c) view;
-            qp9 qp9Var = ((op9) arrayList.get(i)).c;
-            TLObject Z1 = saveToGallerySettingsActivity.getMessagesController().Z1(qp9Var.d);
-            if (Z1 instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) Z1;
-                str = user.self ? k96.M0(2131745709, null) : qu2.m(0, user.first_name, user.last_name);
-            } else {
-                str = Z1 instanceof TLRPC.Chat ? ((TLRPC.Chat) Z1).title : null;
+        EGLSurface eglCreateWindowSurface = EGL14.eglCreateWindowSurface(this.f, eGLConfigArr[0], surface, new int[]{12344}, 0);
+        this.h = eglCreateWindowSurface;
+        if (eglCreateWindowSurface == EGL14.EGL_NO_SURFACE) {
+            grb.i("Unable to create EGL surface");
+        } else {
+            if (EGL14.eglMakeCurrent(this.f, eglCreateWindowSurface, eglCreateWindowSurface, this.g)) {
+                return;
             }
-            v6cVar.setSelfAsSavedMessages(true);
-            StringBuilder sb = new StringBuilder();
-            if (qp9Var.a()) {
-                if (qp9Var.a) {
-                    sb.append(k96.M0(2131745728, null));
-                }
-                if (qp9Var.b) {
-                    if (sb.length() != 0) {
-                        sb.append(", ");
-                    }
-                    long j2 = qp9Var.c;
-                    if (j2 <= 0 || j2 >= 4194304000L) {
-                        sb.append(k96.a0("SaveToGalleryVideos", null, 2131745721, new Object[0]));
-                    } else {
-                        sb.append(k96.a0("SaveToGalleryVideosUpTo", null, 2131745720, gl.i0(j2, true, false)));
-                    }
-                }
-            } else {
-                sb.append(k96.M0(2131745729, null));
-            }
-            v6cVar.d(Z1, str, sb, i == arrayList.size() - 1 || ((op9) arrayList.get(i + 1)).a == 2);
+            grb.i("Unable to make EGL context current");
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View view;
-        int i2;
-        TLObject K0;
-        int i3;
-        View view2;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.d;
-        View view3 = null;
-        switch (i) {
-            case 1:
-                wgb wgbVar = new wgb(viewGroup.getContext());
-                wgbVar.o(R.drawable.msg_contact_add, k96.M0(2131747730, null), true);
-                wgbVar.g(bkb.u6, bkb.t6);
-                zkb.h(bkb.c6, null, wgbVar);
-                view3 = wgbVar;
-                break;
-            case 2:
-                View v6cVar = new v6c(4, 0, null, viewGroup.getContext(), false, false);
-                zkb.h(bkb.c6, null, v6cVar);
-                view = v6cVar;
-                view3 = view;
-                break;
-            case 3:
-                view2 = new b9a(viewGroup.getContext(), (de9) null);
-                view3 = view2;
-                break;
-            case 4:
-                wgb wgbVar2 = new wgb(viewGroup.getContext());
-                wgbVar2.k(k96.M0(2131747722, null), false);
-                wgbVar2.g(-1, bkb.o7);
-                zkb.h(bkb.c6, null, wgbVar2);
-                view2 = wgbVar2;
-                view3 = view2;
-                break;
-            case 5:
-                View ld5Var = new ld5(viewGroup.getContext());
-                zkb.h(bkb.c6, null, ld5Var);
-                view2 = ld5Var;
-                view3 = view2;
-                break;
-            case 6:
-                View ahbVar = new ahb(viewGroup.getContext());
-                zkb.h(bkb.c6, null, ahbVar);
-                view2 = ahbVar;
-                view3 = view2;
-                break;
-            case 7:
-                view3 = new mhb(viewGroup.getContext());
-                break;
-            case 8:
-                LinearLayout linearLayout = new LinearLayout(saveToGallerySettingsActivity.getParentActivity());
-                linearLayout.setOrientation(1);
-                av9 av9Var = new av9(saveToGallerySettingsActivity.getParentActivity());
-                FrameLayout frameLayout = new FrameLayout(saveToGallerySettingsActivity.getParentActivity());
-                pp9 pp9Var = new pp9(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
-                pp9Var.setTextSize(gl.L(13.0f));
-                pp9Var.setText(gl.i0(524288L, true, false));
-                frameLayout.addView(pp9Var, nme.e(-2, -2, 83));
-                pp9 pp9Var2 = new pp9(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
-                pp9Var2.setTextSize(gl.L(13.0f));
-                frameLayout.addView(pp9Var2, nme.e(-2, -2, 81));
-                pp9 pp9Var3 = new pp9(saveToGallerySettingsActivity, saveToGallerySettingsActivity.getParentActivity());
-                pp9Var3.setTextSize(gl.L(13.0f));
-                pp9Var3.setText(gl.i0(4194304000L, true, false));
-                frameLayout.addView(pp9Var3, nme.e(-2, -2, 85));
-                linearLayout.addView(frameLayout, nme.t(-1, 20, 0, 21, 10, 21, 0));
-                linearLayout.addView(av9Var, nme.t(-1, 38, 0, 5, 0, 5, 4));
-                long j = saveToGallerySettingsActivity.b0().c;
-                if (j < 0 || j > 4194304000L) {
-                    j = 4194304000L;
-                }
-                av9Var.setReportChanges(true);
-                av9Var.setDelegate(new gl2(this, av9Var, pp9Var, pp9Var2, pp9Var3));
-                av9Var.setProgress(((float) j) > 7.340032E7f ? b00.A(j - 104857600, 4.0894464E9f, 0.3f, 0.7f) : ((j - 524288) / 1.0433331E8f) * 0.7f);
-                av9Var.y.j(false, av9Var.getProgress());
-                zkb.h(bkb.c6, null, linearLayout);
-                view = linearLayout;
-                view3 = view;
-                break;
-            case 9:
-                u6c u6cVar = new u6c(saveToGallerySettingsActivity.getParentActivity(), saveToGallerySettingsActivity.getResourceProvider());
-                if (cf3.D(saveToGallerySettingsActivity.b)) {
-                    i3 = ((d) saveToGallerySettingsActivity).currentAccount;
-                    K0 = na7.q1(i3).V1(Long.valueOf(saveToGallerySettingsActivity.b));
-                } else {
-                    i2 = ((d) saveToGallerySettingsActivity).currentAccount;
-                    K0 = na7.q1(i2).K0(Long.valueOf(-saveToGallerySettingsActivity.b));
-                }
-                u6cVar.a(null, K0);
-                zkb.h(bkb.c6, saveToGallerySettingsActivity.getResourceProvider(), u6cVar);
-                view2 = u6cVar;
-                view3 = view2;
-                break;
-            case 10:
-                view2 = new b9a(viewGroup.getContext(), (de9) null);
-                view3 = view2;
-                break;
+    public final void d() {
+        EGLDisplay eGLDisplay = this.f;
+        if (eGLDisplay != EGL14.EGL_NO_DISPLAY) {
+            EGLSurface eGLSurface = this.h;
+            EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.g);
+            int i = this.i;
+            if (i != 0) {
+                GLES20.glDeleteProgram(i);
+            }
+            int i2 = this.j;
+            if (i2 != 0) {
+                GLES20.glDeleteTextures(1, new int[]{i2}, 0);
+            }
+            EGLDisplay eGLDisplay2 = this.f;
+            EGLSurface eGLSurface2 = EGL14.EGL_NO_SURFACE;
+            EGL14.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, EGL14.EGL_NO_CONTEXT);
+            EGLSurface eGLSurface3 = this.h;
+            if (eGLSurface3 != EGL14.EGL_NO_SURFACE) {
+                EGL14.eglDestroySurface(this.f, eGLSurface3);
+            }
+            EGLContext eGLContext = this.g;
+            if (eGLContext != EGL14.EGL_NO_CONTEXT) {
+                EGL14.eglDestroyContext(this.f, eGLContext);
+            }
+            EGL14.eglReleaseThread();
         }
-        return ls6.h(view3, view3, -1, -2);
+        this.f = EGL14.EGL_NO_DISPLAY;
+        this.g = EGL14.EGL_NO_CONTEXT;
+        this.h = EGL14.EGL_NO_SURFACE;
+        this.i = 0;
+        this.j = 0;
+        Surface surface = this.l;
+        if (surface != null) {
+            surface.release();
+            this.l = null;
+        }
+        SurfaceTexture surfaceTexture = this.k;
+        if (surfaceTexture != null) {
+            surfaceTexture.release();
+            this.k = null;
+        }
+        this.e.quitSafely();
     }
 }

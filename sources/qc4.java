@@ -1,56 +1,34 @@
 // default package
 
-import android.view.View;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qc4 implements e39, ed {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class qc4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ pd4 b;
+    public final /* synthetic */ xc4 b;
+    public final /* synthetic */ TLRPC.TL_messages_sendMedia c;
+    public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ qc4(pd4 pd4Var, byte b) {
+    public /* synthetic */ qc4(xc4 xc4Var, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr, byte b) {
         this.a = b;
-        this.b = pd4Var;
+        this.b = xc4Var;
+        this.c = tL_messages_sendMedia;
+        this.d = objArr;
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        pd4 pd4Var = this.b;
-        gd4 gd4Var = (gd4) pd4Var.Q.get(i);
-        if (gd4Var == null || !(view instanceof v6c)) {
-            return false;
-        }
-        v6c v6cVar = (v6c) view;
-        pd4Var.A0(gd4Var, v6cVar.getName(), v6cVar.getCurrentObject(), gd4Var.g);
-        return true;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        pd4 pd4Var = this.b;
+        Object[] objArr = this.d;
+        xc4 xc4Var = this.b;
         switch (b) {
-            case 1:
-                hd hdVar2 = null;
-                if (pd4Var.getParentActivity() != null) {
-                    hd hdVar3 = new hd(3, null, pd4Var.getParentActivity());
-                    hdVar3.j0 = false;
-                    hdVar3.show();
-                    hdVar2 = hdVar3;
-                }
-                TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter = new TLRPC.TL_messages_updateDialogFilter();
-                tL_messages_updateDialogFilter.id = pd4Var.r.a;
-                pd4Var.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new rv3(pd4Var, hdVar2, (byte) 2));
-                break;
-            case 2:
-                pd4Var.v0();
-                break;
-            case 3:
-                pd4Var.v0();
+            case 0:
+                xc4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (d7a) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
             default:
-                pd4Var.finishFragment();
+                xc4Var.getSendMessagesHelper().O(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (d7a) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
         }
     }

@@ -1,49 +1,56 @@
 // default package
 
-import android.app.AppOpsManager;
-import android.content.Context;
-import android.os.Binder;
-import android.os.Build;
-import android.os.Process;
-import j$.util.Objects;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class qqe {
-    public static int a(Context context, String str, int i, int i2, String str2) {
-        int noteProxyOpNoThrow;
-        if (context.checkPermission(str, i, i2) != -1) {
-            String permissionToOp = AppOpsManager.permissionToOp(str);
-            if (permissionToOp != null) {
-                if (str2 == null) {
-                    String[] packagesForUid = context.getPackageManager().getPackagesForUid(i2);
-                    if (packagesForUid != null && packagesForUid.length > 0) {
-                        str2 = packagesForUid[0];
-                    }
-                }
-                int myUid = Process.myUid();
-                String packageName = context.getPackageName();
-                if (myUid != i2 || !Objects.equals(packageName, str2)) {
-                    noteProxyOpNoThrow = ((AppOpsManager) context.getSystemService(AppOpsManager.class)).noteProxyOpNoThrow(permissionToOp, str2);
-                } else if (Build.VERSION.SDK_INT >= 29) {
-                    AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(AppOpsManager.class);
-                    noteProxyOpNoThrow = appOpsManager == null ? 1 : appOpsManager.checkOpNoThrow(permissionToOp, Binder.getCallingUid(), str2);
-                    if (noteProxyOpNoThrow == 0) {
-                        noteProxyOpNoThrow = appOpsManager != null ? appOpsManager.checkOpNoThrow(permissionToOp, i2, rr.i(context)) : 1;
-                    }
-                } else {
-                    noteProxyOpNoThrow = ((AppOpsManager) context.getSystemService(AppOpsManager.class)).noteProxyOpNoThrow(permissionToOp, str2);
-                }
-                if (noteProxyOpNoThrow != 0) {
-                    return -2;
-                }
-            }
-            return 0;
-        }
-        return -1;
+public final class qqe extends c4 {
+    public static final Parcelable.Creator<qqe> CREATOR = new g3e((byte) 4);
+    public final String a;
+    public final int b;
+    public final int c;
+
+    public qqe(String str, int i, int i2) {
+        this.a = str;
+        this.b = i;
+        this.c = i2;
     }
 
-    public static int b(Context context, String str) {
-        return a(context, str, Process.myPid(), Process.myUid(), context.getPackageName());
+    public final boolean equals(Object obj) {
+        Object obj2;
+        String str;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && qqe.class == obj.getClass()) {
+            qqe qqeVar = (qqe) obj;
+            if (this.b == qqeVar.b && this.c == qqeVar.c && ((str = this.a) == (obj2 = qqeVar.a) || (str != null && str.equals(obj2)))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), Integer.valueOf(this.c)});
+    }
+
+    public final String toString() {
+        Locale locale = Locale.US;
+        return c00.k(bs2.p("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 1, this.a);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        bye.q(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        bye.s(parcel, r);
     }
 }

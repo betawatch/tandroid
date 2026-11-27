@@ -1,40 +1,76 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class o02 extends i98 {
-    public final /* synthetic */ jm6 a;
-    public final /* synthetic */ x02 b;
+public final class o02 extends View {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ n12 b;
 
-    public o02(x02 x02Var, jm6 jm6Var) {
-        this.b = x02Var;
-        this.a = jm6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o02(n12 n12Var, Context context, byte b) {
+        super(context);
+        this.a = b;
+        this.b = n12Var;
     }
 
-    @Override // i98, o98
-    public final void L(int i, oac oacVar, final boolean z, final int i2, int i3, final boolean z2) {
-        x02 x02Var = this.b;
-        x02Var.s4 = true;
-        if (x02Var.W3 == null) {
-            return;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.draw(canvas);
+                this.b.V1.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
-        final jm6 jm6Var = this.a;
-        jm6Var.s = oacVar;
-        ij.X(x02Var.G3, 0L, x02Var.R0() + 1, new p8c() { // from class: n02
-            @Override // p8c
-            public final void a(Object obj) {
-                ArrayList arrayList = ChatAttachAlertPhotoLayout.u1;
-                arrayList.clear();
-                HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
-                hashMap.clear();
-                arrayList.add(0);
-                hashMap.put(0, jm6Var);
-                o02.this.b.W3.B1(7, true, z, i2, 0, 0L, false, z2, ((Long) obj).longValue());
-            }
-        });
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                n12 n12Var = this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, n12Var.v2.getSelectedItemsCount())));
+                TextPaint textPaint = n12Var.G2;
+                int max = Math.max(hl.L(16.0f) + ((int) Math.ceil(textPaint.measureText(format))), hl.L(24.0f));
+                int measuredWidth = getMeasuredWidth() / 2;
+                textPaint.setColor(vm2.o(aob.v0(aob.C5, n12Var.J0), (int) (((n12Var.S2 * 0.42d) + 0.58d) * Color.alpha(r6))));
+                Paint paint = n12Var.I2;
+                paint.setColor(aob.v0(aob.h5, n12Var.J0));
+                RectF rectF = n12Var.H2;
+                int i = max / 2;
+                rectF.set(measuredWidth - i, 0.0f, i + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(rectF, hl.L(12.0f), hl.L(12.0f), paint);
+                paint.setColor(aob.v0(aob.W9, n12Var.J0));
+                rectF.set(hl.L(2.0f) + r8, hl.L(2.0f), r4 - hl.L(2.0f), getMeasuredHeight() - hl.L(2.0f));
+                canvas.drawRoundRect(rectF, hl.L(10.0f), hl.L(10.0f), paint);
+                canvas.drawText(format, measuredWidth - (r3 / 2), hl.L(16.2f), textPaint);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i, i2, i3, i4);
+                this.b.V1.setBounds(0, (i2 - hl.n) - hl.L(48.0f), i, i2);
+                break;
+            default:
+                super.onSizeChanged(i, i2, i3, i4);
+                break;
+        }
     }
 }

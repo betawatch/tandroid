@@ -1,38 +1,72 @@
 // default package
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.Components.q;
+import java.util.Iterator;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class oo5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ q b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class oo5 extends po5 {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ po5 e;
 
-    public /* synthetic */ oo5(q qVar, byte b) {
-        this.a = b;
-        this.b = qVar;
+    public oo5(po5 po5Var, int i, int i2) {
+        this.e = po5Var;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        q qVar = this.b;
-        switch (b) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * qVar.getMeasuredHeight() * 0.5f;
-                qVar.z0 = floatValue;
-                qVar.w.setTranslationY(floatValue + qVar.y0);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qVar.B0 = floatValue2;
-                ul9 ul9Var = qVar.Q;
-                if (ul9Var != null) {
-                    ul9Var.y(floatValue2);
-                    break;
-                }
-                break;
-        }
+    @Override // java.util.List
+    public final Object get(int i) {
+        yve.j(i, this.d);
+        return this.e.get(i + this.c);
+    }
+
+    @Override // po5, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final Iterator iterator() {
+        return listIterator(0);
+    }
+
+    @Override // jo5
+    public final Object[] j() {
+        return this.e.j();
+    }
+
+    @Override // jo5
+    public final int k() {
+        return this.e.l() + this.c + this.d;
+    }
+
+    @Override // jo5
+    public final int l() {
+        return this.e.l() + this.c;
+    }
+
+    @Override // po5, java.util.List
+    public final ListIterator listIterator() {
+        return listIterator(0);
+    }
+
+    @Override // jo5
+    public final boolean m() {
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
+    }
+
+    @Override // po5, java.util.List
+    /* renamed from: x */
+    public final po5 subList(int i, int i2) {
+        yve.n(i, i2, this.d);
+        int i3 = this.c;
+        return this.e.subList(i + i3, i2 + i3);
+    }
+
+    @Override // po5, java.util.List
+    public final /* bridge */ /* synthetic */ ListIterator listIterator(int i) {
+        return listIterator(i);
     }
 }

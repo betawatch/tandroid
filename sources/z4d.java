@@ -1,40 +1,6 @@
 // default package
 
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z4d implements aq2, OnSuccessListener, OnFailureListener {
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ z4d(ad1 ad1Var) {
-        this.a = (byte) 3;
-    }
-
-    @Override // aq2
-    public final Object L(gl2 gl2Var) {
-        switch (this.a) {
-            case 0:
-                return new ie7((byte) 0);
-            default:
-                return new l69(gl2Var.O(k69.class));
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        Log.e("OptionalModuleUtils", "Failed to request modules install request", exc);
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        cze.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
-    }
-
-    public /* synthetic */ z4d(byte b) {
-        this.a = b;
-    }
+public final class z4d extends v3d implements d5d {
 }

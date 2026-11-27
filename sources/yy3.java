@@ -1,23 +1,89 @@
 // default package
 
-import android.content.Context;
+import android.text.InputFilter;
+import android.text.method.PasswordTransformationMethod;
+import android.text.method.TransformationMethod;
+import android.util.SparseArray;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class yy3 extends h14 {
-    public final /* synthetic */ t14 I;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yy3 extends vje {
+    public final TextView a;
+    public final nx3 b;
+    public boolean c = true;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yy3(t14 t14Var, Context context) {
-        super(t14Var, context, 2);
-        this.I = t14Var;
+    public yy3(TextView textView) {
+        this.a = textView;
+        this.b = new nx3(textView);
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        if (getTranslationY() != f) {
-            super.setTranslationY(f);
-            this.I.h0.invalidate();
+    @Override // vje
+    public final InputFilter[] a(InputFilter[] inputFilterArr) {
+        if (!this.c) {
+            SparseArray sparseArray = new SparseArray(1);
+            for (int i = 0; i < inputFilterArr.length; i++) {
+                InputFilter inputFilter = inputFilterArr[i];
+                if (inputFilter instanceof nx3) {
+                    sparseArray.put(i, inputFilter);
+                }
+            }
+            if (sparseArray.size() == 0) {
+                return inputFilterArr;
+            }
+            int length = inputFilterArr.length;
+            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - sparseArray.size()];
+            int i2 = 0;
+            for (int i3 = 0; i3 < length; i3++) {
+                if (sparseArray.indexOfKey(i3) < 0) {
+                    inputFilterArr2[i2] = inputFilterArr[i3];
+                    i2++;
+                }
+            }
+            return inputFilterArr2;
         }
+        int length2 = inputFilterArr.length;
+        int i4 = 0;
+        while (true) {
+            nx3 nx3Var = this.b;
+            if (i4 >= length2) {
+                InputFilter[] inputFilterArr3 = new InputFilter[inputFilterArr.length + 1];
+                System.arraycopy(inputFilterArr, 0, inputFilterArr3, 0, length2);
+                inputFilterArr3[length2] = nx3Var;
+                return inputFilterArr3;
+            }
+            if (inputFilterArr[i4] == nx3Var) {
+                return inputFilterArr;
+            }
+            i4++;
+        }
+    }
+
+    @Override // vje
+    public final void b(boolean z) {
+        if (z) {
+            d();
+        }
+    }
+
+    @Override // vje
+    public final void c(boolean z) {
+        this.c = z;
+        d();
+        TextView textView = this.a;
+        textView.setFilters(a(textView.getFilters()));
+    }
+
+    public final void d() {
+        TextView textView = this.a;
+        TransformationMethod transformationMethod = textView.getTransformationMethod();
+        if (this.c) {
+            if (!(transformationMethod instanceof fz3) && !(transformationMethod instanceof PasswordTransformationMethod)) {
+                transformationMethod = new fz3(transformationMethod);
+            }
+        } else if (transformationMethod instanceof fz3) {
+            transformationMethod = ((fz3) transformationMethod).a;
+        }
+        textView.setTransformationMethod(transformationMethod);
     }
 }

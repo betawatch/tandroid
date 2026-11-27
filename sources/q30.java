@@ -1,47 +1,12 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
+import java.nio.ShortBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class q30 extends c4 {
-    public int f;
-    public byte h;
-    public long n;
+public interface q30 {
+    public static final faf m = new faf(18);
+    public static final z3f o = new z3f(28);
 
-    @Override // a2, iy0
-    public final void getBox(WritableByteChannel writableByteChannel) {
-        writableByteChannel.write(d());
-        ByteBuffer allocate = ByteBuffer.allocate(28);
-        allocate.position(6);
-        ile.d(1, allocate);
-        ile.d(0, allocate);
-        ile.d(0, allocate);
-        allocate.putInt(0);
-        ile.d(this.f, allocate);
-        ile.d(this.h, allocate);
-        ile.d(0, allocate);
-        ile.d(0, allocate);
-        boolean equals = this.e.equals("mlpa");
-        long j = this.n;
-        if (equals) {
-            allocate.putInt((int) j);
-        } else {
-            allocate.putInt((int) (j << 16));
-        }
-        writableByteChannel.write((ByteBuffer) allocate.rewind());
-        c(writableByteChannel);
-    }
-
-    @Override // a2, iy0
-    public final long getSize() {
-        long b = b();
-        return 28 + b + (b + 36 >= 4294967296L ? 16 : 8);
-    }
-
-    @Override // yg0
-    public final String toString() {
-        return "AudioSampleEntry{bytesPerSample=0, bytesPerFrame=0, bytesPerPacket=0, samplesPerPacket=0, packetSize=0, compressionId=0, soundVersion=0, sampleRate=" + this.n + ", sampleSize=" + ((int) this.h) + ", channelCount=" + this.f + ", boxes=" + this.b + '}';
-    }
+    void s(ShortBuffer shortBuffer, int i, ShortBuffer shortBuffer2, int i2, int i3);
 }

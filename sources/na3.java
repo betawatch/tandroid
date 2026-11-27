@@ -1,71 +1,82 @@
 // default package
 
-import android.util.Base64OutputStream;
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.concurrent.Callable;
-import java.util.zip.GZIPOutputStream;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class na3 implements Callable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ oa3 b;
+public final class na3 {
+    public final o31 a;
+    public final ub9 b;
+    public final xg0 c;
+    public final j63 d;
+    public final long e;
+    public final long f;
 
-    public /* synthetic */ na3(oa3 oa3Var, byte b) {
-        this.a = b;
-        this.b = oa3Var;
+    public na3(long j, ub9 ub9Var, xg0 xg0Var, o31 o31Var, long j2, j63 j63Var) {
+        this.e = j;
+        this.b = ub9Var;
+        this.c = xg0Var;
+        this.f = j2;
+        this.a = o31Var;
+        this.d = j63Var;
     }
 
-    private final Object a() {
-        String byteArrayOutputStream;
-        oa3 oa3Var = this.b;
-        synchronized (oa3Var) {
-            td5 td5Var = (td5) oa3Var.a.get();
-            ArrayList b = td5Var.b();
-            td5Var.a();
-            JSONArray jSONArray = new JSONArray();
-            for (int i = 0; i < b.size(); i++) {
-                u90 u90Var = (u90) b.get(i);
-                JSONObject jSONObject = new JSONObject();
-                jSONObject.put("agent", u90Var.a);
-                jSONObject.put("dates", new JSONArray((Collection) u90Var.b));
-                jSONArray.put(jSONObject);
-            }
-            JSONObject jSONObject2 = new JSONObject();
-            jSONObject2.put("heartbeats", jSONArray);
-            jSONObject2.put("version", "2");
-            ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
-            Base64OutputStream base64OutputStream = new Base64OutputStream(byteArrayOutputStream2, 11);
-            try {
-                GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(base64OutputStream);
-                try {
-                    gZIPOutputStream.write(jSONObject2.toString().getBytes("UTF-8"));
-                    gZIPOutputStream.close();
-                    base64OutputStream.close();
-                    byteArrayOutputStream = byteArrayOutputStream2.toString("UTF-8");
-                } finally {
-                }
-            } finally {
-            }
+    public final na3 a(long j, ub9 ub9Var) {
+        long I;
+        j63 b = this.b.b();
+        j63 b2 = ub9Var.b();
+        if (b == null || b2 == null || !b.R() || b.Y(j) == 0 || b2.Y(j) == 0) {
+            return new na3(j, ub9Var, this.c, this.a, this.f, b2);
         }
-        return byteArrayOutputStream;
+        long Y = b.Y(j);
+        long V = b.V();
+        long f = b.f(V);
+        long j2 = Y + V;
+        long j3 = j2 - 1;
+        long j4 = b.j(j3, j) + b.f(j3);
+        long V2 = b2.V();
+        long f2 = b2.f(V2);
+        long j5 = this.f;
+        if (j4 == f2) {
+            I = (j2 - V2) + j5;
+        } else {
+            if (j4 < f2) {
+                throw new kh0();
+            }
+            I = f2 < f ? j5 - (b2.I(f, j) - V) : (b.I(f2, j) - V2) + j5;
+        }
+        return new na3(j, ub9Var, this.c, this.a, I, b2);
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        switch (this.a) {
-            case 0:
-                return a();
-            default:
-                oa3 oa3Var = this.b;
-                synchronized (oa3Var) {
-                    ((td5) oa3Var.a.get()).i(System.currentTimeMillis(), ((tc3) oa3Var.c.get()).a());
-                }
-                return null;
-        }
+    public final long b(long j) {
+        j63 j63Var = this.d;
+        j63Var.getClass();
+        long j2 = this.e;
+        long r = j63Var.r(j2, j) + this.f;
+        j63Var.getClass();
+        return (j63Var.a0(j2, j) + r) - 1;
+    }
+
+    public final long c() {
+        j63 j63Var = this.d;
+        j63Var.getClass();
+        return j63Var.Y(this.e);
+    }
+
+    public final long d(long j) {
+        long e = e(j);
+        j63 j63Var = this.d;
+        j63Var.getClass();
+        return j63Var.j(j - this.f, this.e) + e;
+    }
+
+    public final long e(long j) {
+        j63 j63Var = this.d;
+        j63Var.getClass();
+        return j63Var.f(j - this.f);
+    }
+
+    public final boolean f(long j, long j2) {
+        j63 j63Var = this.d;
+        j63Var.getClass();
+        return j63Var.R() || j2 == -9223372036854775807L || d(j) <= j2;
     }
 }

@@ -1,85 +1,131 @@
 // default package
 
-import android.net.Uri;
-import j$.util.Objects;
-import java.util.List;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xq6 {
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public final Uri a;
-    public final String b;
-    public final uq6 c;
-    public final oq6 d;
-    public final List e;
-    public final String f;
-    public final mm5 g;
-    public final long h;
+public final /* synthetic */ class xq6 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ rf0 n;
+    public final /* synthetic */ Object r;
 
-    static {
-        String str = g8c.a;
-        i = "0";
-        j = "1";
-        k = "2";
-        l = "3";
-        m = "4";
-        n = "5";
-        o = "6";
-        p = "7";
+    public /* synthetic */ xq6(ls6 ls6Var, int i, ArrayList arrayList, boolean z, long j, int i2, int i3, long j2) {
+        this.n = ls6Var;
+        this.b = i;
+        this.r = arrayList;
+        this.h = z;
+        this.c = j;
+        this.e = i2;
+        this.f = i3;
+        this.d = j2;
     }
 
-    public xq6(Uri uri, String str, uq6 uq6Var, oq6 oq6Var, List list, String str2, mm5 mm5Var, long j2) {
-        this.a = uri;
-        this.b = ud7.n(str);
-        this.c = uq6Var;
-        this.d = oq6Var;
-        this.e = list;
-        this.f = str2;
-        this.g = mm5Var;
-        jm5 p2 = mm5.p();
-        for (int i2 = 0; i2 < mm5Var.size(); i2++) {
-            ar6 ar6Var = (ar6) mm5Var.get(i2);
-            r75 r75Var = new r75();
-            r75Var.c = ar6Var.a;
-            r75Var.d = ar6Var.b;
-            r75Var.e = ar6Var.c;
-            r75Var.a = ar6Var.d;
-            r75Var.b = ar6Var.e;
-            r75Var.f = ar6Var.f;
-            r75Var.g = ar6Var.g;
-            p2.c(new zq6(r75Var));
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i;
+        int i2;
+        byte b = this.a;
+        Object obj = this.r;
+        rf0 rf0Var = this.n;
+        switch (b) {
+            case 0:
+                ls6 ls6Var = (ls6) rf0Var;
+                ArrayList arrayList = (ArrayList) obj;
+                int i3 = this.b;
+                boolean z = this.h;
+                long j = this.c;
+                int i4 = this.e;
+                int i5 = this.f;
+                long j2 = this.d;
+                if (i3 == 0) {
+                    try {
+                        if (arrayList.isEmpty() || z) {
+                            ls6Var.getMessagesStorage().E(i4, i5, j, j2);
+                            j2 = j2;
+                            i5 = i5;
+                            i4 = i4;
+                            j = j;
+                            if (arrayList.isEmpty()) {
+                            }
+                        }
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                        return;
+                    }
+                }
+                ls6Var.getMessagesStorage().b.beginTransaction();
+                int i6 = (j2 > 0L ? 1 : (j2 == 0L ? 0 : -1));
+                SQLitePreparedStatement executeFast = i6 != 0 ? ls6Var.getMessagesStorage().b.executeFast("REPLACE INTO media_topics VALUES(?, ?, ?, ?, ?, ?)") : ls6Var.getMessagesStorage().b.executeFast("REPLACE INTO media_v4 VALUES(?, ?, ?, ?, ?)");
+                int size = arrayList.size();
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj2 = arrayList.get(i7);
+                    i7++;
+                    TLRPC.Message message = (TLRPC.Message) obj2;
+                    if (ls6.t(message)) {
+                        executeFast.requery();
+                        r47.p5(message);
+                        i = i6;
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
+                        message.serializeToStream(nativeByteBuffer);
+                        i2 = i3;
+                        executeFast.bindInteger(1, message.id);
+                        executeFast.bindLong(2, j);
+                        int i8 = 3;
+                        if (i != 0) {
+                            executeFast.bindLong(3, j2);
+                            i8 = 4;
+                        }
+                        executeFast.bindInteger(i8, message.date);
+                        executeFast.bindInteger(i8 + 1, i5);
+                        executeFast.bindByteBuffer(i8 + 2, nativeByteBuffer);
+                        executeFast.step();
+                        nativeByteBuffer.reuse();
+                    } else {
+                        i = i6;
+                        i2 = i3;
+                    }
+                    i6 = i;
+                    i3 = i2;
+                }
+                int i9 = i3;
+                executeFast.dispose();
+                if (!z || i4 != 0 || i9 != 0) {
+                    int i10 = (z && i9 == 0) ? 1 : ((TLRPC.Message) arrayList.get(arrayList.size() - 1)).id;
+                    if (i9 != 0) {
+                        ls6Var.getMessagesStorage().s(j, i10, ((TLRPC.Message) arrayList.get(0)).id, i5, j2);
+                    } else if (i4 != 0) {
+                        ls6Var.getMessagesStorage().s(j, i10, i4, i5, j2);
+                    } else {
+                        ls6Var.getMessagesStorage().s(j, i10, ConnectionsManager.DEFAULT_DATACENTER_ID, i5, j2);
+                    }
+                }
+                ls6Var.getMessagesStorage().b.commitTransaction();
+                break;
+            default:
+                ((jf7) rf0Var).B0(this.b, this.e, this.f, this.c, this.d, (TLRPC.messages_Messages) obj, this.h);
+                break;
         }
-        p2.f();
-        this.h = j2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof xq6)) {
-            return false;
-        }
-        xq6 xq6Var = (xq6) obj;
-        return this.a.equals(xq6Var.a) && Objects.equals(this.b, xq6Var.b) && Objects.equals(this.c, xq6Var.c) && Objects.equals(this.d, xq6Var.d) && this.e.equals(xq6Var.e) && Objects.equals(this.f, xq6Var.f) && this.g.equals(xq6Var.g) && this.h == xq6Var.h;
-    }
-
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        String str = this.b;
-        int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
-        uq6 uq6Var = this.c;
-        int hashCode3 = (hashCode2 + (uq6Var == null ? 0 : uq6Var.hashCode())) * 31;
-        oq6 oq6Var = this.d;
-        int hashCode4 = (this.e.hashCode() + ((hashCode3 + (oq6Var == null ? 0 : oq6Var.hashCode())) * 31)) * 31;
-        return (int) (((this.g.hashCode() + ((hashCode4 + (this.f != null ? r0.hashCode() : 0)) * 31)) * 31 * 31) + this.h);
+    public /* synthetic */ xq6(jf7 jf7Var, int i, TLRPC.messages_Messages messages_messages, long j, long j2, int i2, int i3, boolean z) {
+        this.n = jf7Var;
+        this.b = i;
+        this.r = messages_messages;
+        this.c = j;
+        this.d = j2;
+        this.e = i2;
+        this.f = i3;
+        this.h = z;
     }
 }

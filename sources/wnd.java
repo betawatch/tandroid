@@ -1,27 +1,51 @@
 // default package
 
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wnd extends tmd {
-    @Override // tmd
-    public final void a(Object obj, long j) {
-        ((dad) ((mkd) uzd.l(obj, j))).a = false;
+public final class wnd extends dnd {
+    public final /* synthetic */ eod s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wnd(eod eodVar) {
+        super((byte) 4);
+        this.s = eodVar;
     }
 
-    @Override // tmd
-    public final void b(vid vidVar, vid vidVar2, long j) {
-        mkd mkdVar = (mkd) uzd.l(vidVar, j);
-        mkd mkdVar2 = (mkd) uzd.l(vidVar2, j);
-        int size = mkdVar.size();
-        int size2 = mkdVar2.size();
-        if (size > 0 && size2 > 0) {
-            if (!((dad) mkdVar).a) {
-                mkdVar = mkdVar.f(size2 + size);
-            }
-            mkdVar.addAll(mkdVar2);
+    @Override // dnd
+    public final omd B() {
+        return new qnd(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (!(obj instanceof Map.Entry)) {
+            return false;
         }
-        if (size > 0) {
-            mkdVar2 = mkdVar;
-        }
-        uzd.d(vidVar, j, mkdVar2);
+        Map.Entry entry = (Map.Entry) obj;
+        Object obj2 = this.s.get(entry.getKey());
+        return obj2 != null && obj2.equals(entry.getValue());
+    }
+
+    @Override // dnd, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return t5f.a(this.s.entrySet());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return A().listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.s.d.size();
+    }
+
+    @Override // b4d
+    public final v9c u() {
+        return A().listIterator(0);
     }
 }

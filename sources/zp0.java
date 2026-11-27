@@ -1,6 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class zp0 implements Runnable {
     public final /* synthetic */ byte a = 1;
@@ -9,11 +9,11 @@ public final /* synthetic */ class zp0 implements Runnable {
     public final /* synthetic */ long d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ zp0(long j, long j2, long j3, w72 w72Var) {
+    public /* synthetic */ zp0(long j, long j2, long j3, n82 n82Var) {
         this.b = j;
         this.c = j2;
         this.d = j3;
-        this.e = w72Var;
+        this.e = n82Var;
     }
 
     @Override // java.lang.Runnable
@@ -27,15 +27,15 @@ public final /* synthetic */ class zp0 implements Runnable {
                 long j2 = this.b;
                 long j3 = this.c;
                 bq0Var.c(j2, j3, j, true);
-                bue.c(bq0Var.currentAccount, j3);
+                vye.c(bq0Var.currentAccount, j3);
                 break;
             default:
                 long j4 = this.b;
                 long j5 = this.c;
-                r61.l0 = Long.valueOf(j4 * j5);
+                z61.l0 = Long.valueOf(j4 * j5);
                 Long valueOf = Long.valueOf(this.d * j5);
-                r61.m0 = valueOf;
-                ((w72) obj).a(r61.l0, valueOf);
+                z61.m0 = valueOf;
+                ((n82) obj).a(z61.l0, valueOf);
                 break;
         }
     }

@@ -1,32 +1,82 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.EOFException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jr7 implements mh2 {
-    public final Class a;
+public final class jr7 {
+    public final kr7 a = new kr7();
+    public final ey7 b = new ey7(0, new byte[65025]);
+    public int c = -1;
+    public int d;
+    public boolean e;
 
-    public jr7(Class cls) {
-        cls.getClass();
-        this.a = cls;
+    public final int a(int i) {
+        int i2;
+        int i3 = 0;
+        this.d = 0;
+        do {
+            int i4 = this.d;
+            int i5 = i + i4;
+            kr7 kr7Var = this.a;
+            if (i5 >= kr7Var.c) {
+                break;
+            }
+            int[] iArr = kr7Var.f;
+            this.d = i4 + 1;
+            i2 = iArr[i5];
+            i3 += i2;
+        } while (i2 == 255);
+        return i3;
     }
 
-    @Override // mh2
-    public final Class a() {
-        return this.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof jr7) {
-            return rp5.a(this.a, ((jr7) obj).a);
+    public final boolean b(cb3 cb3Var) {
+        int i;
+        yve.p(cb3Var != null);
+        boolean z = this.e;
+        ey7 ey7Var = this.b;
+        if (z) {
+            this.e = false;
+            ey7Var.K(0);
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a + " (Kotlin reflection is not available)";
+        while (!this.e) {
+            int i2 = this.c;
+            kr7 kr7Var = this.a;
+            if (i2 < 0) {
+                if (kr7Var.b(cb3Var, -1L) && kr7Var.a(cb3Var, true)) {
+                    int i3 = kr7Var.d;
+                    if ((kr7Var.a & 1) == 1 && ey7Var.c == 0) {
+                        i3 += a(0);
+                        i = this.d;
+                    } else {
+                        i = 0;
+                    }
+                    try {
+                        cb3Var.l(i3, false);
+                        this.c = i;
+                        i2 = i;
+                    } catch (EOFException unused) {
+                        return false;
+                    }
+                }
+                return false;
+            }
+            int a = a(i2);
+            int i4 = this.c + this.d;
+            if (a > 0) {
+                ey7Var.c(ey7Var.c + a);
+                try {
+                    cb3Var.c(ey7Var.a, ey7Var.c, a, false);
+                    ey7Var.M(ey7Var.c + a);
+                    this.e = kr7Var.f[i4 + (-1)] != 255;
+                } catch (EOFException unused2) {
+                }
+            }
+            if (i4 == kr7Var.c) {
+                i4 = -1;
+            }
+            this.c = i4;
+        }
+        return true;
     }
 }

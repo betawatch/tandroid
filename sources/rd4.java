@@ -1,125 +1,67 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.opengl.GLES20;
-import android.os.Looper;
-import android.view.Surface;
-import java.nio.Buffer;
-import java.nio.FloatBuffer;
+import android.os.Environment;
+import android.text.TextUtils;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.FilesMigrationService;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class rd4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ td4 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class rd4 extends Thread {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ rd4(td4 td4Var, byte b) {
-        this.a = b;
-        this.b = td4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rd4(yla ylaVar) {
+        super("ExoPlayer:SimpleDecoder");
+        this.b = ylaVar;
     }
 
-    @Override // java.lang.Runnable
+    @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
-        vd4 vd4Var;
-        byte b = this.a;
-        td4 td4Var = this.b;
-        switch (b) {
+        switch (this.a) {
             case 0:
-                td4Var.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
-                    break;
-                }
-                break;
-            case 1:
-                if (td4Var.f) {
-                    td4Var.a();
-                    if (td4Var.y) {
-                        td4Var.x.updateTexImage();
-                        td4Var.x.getTransformMatrix(td4Var.E);
-                        td4Var.d();
-                        td4Var.y = false;
-                        wd4 wd4Var = td4Var.K;
-                        wd4Var.P0 = td4Var.E;
-                        wd4Var.W0 = false;
-                        td4Var.G = true;
-                    }
-                    if (td4Var.a0) {
-                        if (!td4Var.h || ((vd4Var = td4Var.K.f1) != null && !vd4Var.m())) {
-                            if (td4Var.c0 == null || td4Var.G) {
-                                GLES20.glViewport(0, 0, td4Var.V, td4Var.W);
-                                td4Var.K.f();
-                                td4Var.K.d();
-                                if (td4Var.c0 == null) {
-                                    td4Var.K.e();
-                                }
-                                td4Var.K.c();
-                                td4Var.U = td4Var.K.b();
-                                td4Var.d0 = true;
-                            }
-                            if (td4Var.d0) {
-                                GLES20.glViewport(0, 0, td4Var.n, td4Var.r);
-                                GLES20.glBindFramebuffer(36160, 0);
-                                int g = td4Var.K.g(!td4Var.U ? 1 : 0);
-                                GLES20.glUseProgram(td4Var.L);
-                                GLES20.glActiveTexture(33984);
-                                GLES20.glBindTexture(3553, g);
-                                GLES20.glUniform1i(td4Var.O, 0);
-                                GLES20.glEnableVertexAttribArray(td4Var.N);
-                                int i = td4Var.N;
-                                FloatBuffer floatBuffer = td4Var.Z;
-                                if (floatBuffer == null) {
-                                    floatBuffer = td4Var.K.a1;
-                                }
-                                GLES20.glVertexAttribPointer(i, 2, 5126, false, 8, (Buffer) floatBuffer);
-                                GLES20.glEnableVertexAttribArray(td4Var.M);
-                                GLES20.glVertexAttribPointer(td4Var.M, 2, 5126, false, 8, (Buffer) td4Var.K.Z0);
-                                GLES20.glDrawArrays(5, 0, 4);
-                                td4Var.b.eglSwapBuffers(td4Var.c, td4Var.e);
-                                xl0 xl0Var = td4Var.J;
-                                if (xl0Var != null) {
-                                    xl0Var.a(g, td4Var.V, td4Var.W, null);
-                                    break;
-                                }
-                            }
-                        } else {
-                            GLES20.glViewport(0, 0, td4Var.n, td4Var.r);
-                            GLES20.glBindFramebuffer(36160, 0);
-                            GLES20.glUseProgram(td4Var.P);
-                            GLES20.glActiveTexture(33984);
-                            GLES20.glBindTexture(36197, td4Var.F[0]);
-                            GLES20.glUniform1i(td4Var.T, 0);
-                            GLES20.glEnableVertexAttribArray(td4Var.S);
-                            int i2 = td4Var.S;
-                            FloatBuffer floatBuffer2 = td4Var.Z;
-                            if (floatBuffer2 == null) {
-                                floatBuffer2 = td4Var.K.a1;
-                            }
-                            GLES20.glVertexAttribPointer(i2, 2, 5126, false, 8, (Buffer) floatBuffer2);
-                            GLES20.glEnableVertexAttribArray(td4Var.Q);
-                            GLES20.glVertexAttribPointer(td4Var.Q, 2, 5126, false, 8, (Buffer) td4Var.K.b1);
-                            GLES20.glUniformMatrix4fv(td4Var.R, 1, false, td4Var.E, 0);
-                            GLES20.glDrawArrays(5, 0, 4);
-                            td4Var.b.eglSwapBuffers(td4Var.c, td4Var.e);
-                            xl0 xl0Var2 = td4Var.J;
-                            if (xl0Var2 != null) {
-                                xl0Var2.a(td4Var.F[0], td4Var.X, td4Var.Y, td4Var.E);
-                                break;
+                FilesMigrationService filesMigrationService = (FilesMigrationService) this.b;
+                File externalStorageDirectory = Environment.getExternalStorageDirectory();
+                if (!TextUtils.isEmpty(xea.e0)) {
+                    ArrayList c1 = hl.c1();
+                    int size = c1.size();
+                    int i = 0;
+                    while (true) {
+                        if (i < size) {
+                            File file = (File) c1.get(i);
+                            if (file.getAbsolutePath().startsWith(xea.e0)) {
+                                externalStorageDirectory = file;
+                            } else {
+                                i++;
                             }
                         }
                     }
                 }
+                File file2 = new File(a.b.getExternalFilesDir(null), "Telegram");
+                File file3 = new File(externalStorageDirectory, "Telegram");
+                filesMigrationService.a = FilesMigrationService.b(file3);
+                long currentTimeMillis = System.currentTimeMillis();
+                if (file3.canRead() && file3.canWrite()) {
+                    filesMigrationService.c(file3, file2);
+                }
+                cc4.b("move time = " + (System.currentTimeMillis() - currentTimeMillis));
+                a.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("migration_to_scoped_storage_finished", true).apply();
+                hl.c3(new lw3((Object) this, (byte) 20));
                 break;
             default:
-                hza hzaVar = td4Var.c0;
-                SurfaceTexture surfaceTexture = td4Var.x;
-                kac kacVar = (kac) hzaVar.b;
-                if (kacVar.a != null) {
-                    kacVar.a.x0(new Surface(surfaceTexture));
-                    break;
-                }
-                break;
+                do {
+                    try {
+                    } catch (InterruptedException e) {
+                        vr9.l(e);
+                    }
+                } while (((yla) this.b).j());
         }
+    }
+
+    public rd4(FilesMigrationService filesMigrationService) {
+        this.b = filesMigrationService;
     }
 }

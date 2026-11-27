@@ -1,80 +1,57 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wzb extends b4c {
-    static {
-        b4c.h(new wzb());
+public final class wzb implements r69 {
+    public final /* synthetic */ zzb a;
+
+    public wzb(zzb zzbVar) {
+        this.a = zzbVar;
     }
 
-    public static c4c i(int i, String str, String str2, String str3, tzb tzbVar) {
-        return j(i, str, str2, str3, tzbVar, false, null, null);
-    }
-
-    public static c4c j(int i, String str, String str2, String str3, View.OnClickListener onClickListener, boolean z, View.OnClickListener onClickListener2, a0 a0Var) {
-        c4c K = c4c.K(wzb.class);
-        K.d = i;
-        K.m = str;
-        K.n = str2;
-        K.o = str3;
-        K.E = onClickListener;
-        K.e = z;
-        K.F = onClickListener2;
-        K.H = a0Var;
-        return K;
-    }
-
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        xzb xzbVar = (xzb) view;
-        CharSequence charSequence = c4cVar.m;
-        CharSequence charSequence2 = c4cVar.n;
-        CharSequence charSequence3 = c4cVar.o;
-        View.OnClickListener onClickListener = c4cVar.E;
-        boolean z2 = c4cVar.e;
-        View.OnClickListener onClickListener2 = c4cVar.F;
-        Object obj = c4cVar.H;
-        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
-        LinearLayout linearLayout = xzbVar.r;
-        LinearLayout linearLayout2 = xzbVar.h;
-        LinearLayout linearLayout3 = xzbVar.b;
-        xzbVar.c.setText(charSequence);
-        xzbVar.d.setText(charSequence2);
-        xzbVar.e.setText(charSequence3);
-        xzbVar.f.setVisibility(onClickListener != null ? 0 : 8);
-        linearLayout3.setOnClickListener(onClickListener);
-        byte b = 1;
-        linearLayout3.setClickable(onClickListener != null);
-        xzbVar.n.a(z2, false);
-        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
-        linearLayout2.setOnClickListener(onClickListener2);
-        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
-        linearLayout.setOnClickListener(new vzb(xzbVar, onClickListener3, b));
-        xzbVar.updateColors();
-    }
-
-    @Override // b4c
-    public final boolean c(c4c c4cVar, c4c c4cVar2) {
-        return TextUtils.equals(c4cVar.m, c4cVar2.m) && TextUtils.equals(c4cVar.n, c4cVar2.n) && TextUtils.equals(c4cVar.o, c4cVar2.o) && c4cVar.F == c4cVar2.F;
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new xzb(context, wjbVar);
-    }
-
-    @Override // b4c
-    public final boolean e(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.d == c4cVar2.d;
-    }
-
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    @Override // r69
+    public final void e(int i, View view) {
+        zzb zzbVar = this.a;
+        ArrayList arrayList = zzbVar.d;
+        if (((yzb) arrayList.get(i)).a == 1) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("chat_id", -zzbVar.c);
+            bundle.putBoolean("for_select", true);
+            tzb tzbVar = new tzb(bundle);
+            tzbVar.B0 = zzbVar.e;
+            tzbVar.w = new uzb(this);
+            zzbVar.presentFragment(tzbVar);
+        }
+        if (((yzb) arrayList.get(i)).a == 2) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((yzb) arrayList.get(i)).c;
+            Bundle bundle2 = new Bundle();
+            bundle2.putLong("dialog_id", zzbVar.c);
+            bundle2.putLong("topic_id", tL_forumTopic.id);
+            bundle2.putBoolean("exception", false);
+            zu8 zu8Var = new zu8(bundle2, null);
+            zu8Var.s = new vzb(this, tL_forumTopic);
+            zzbVar.presentFragment(zu8Var);
+        }
+        if (((yzb) arrayList.get(i)).a == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zzbVar.getParentActivity());
+            String M0 = ob6.M0(2131747640, null);
+            id idVar = alertDialog$Builder.a;
+            idVar.S = M0;
+            idVar.U = ob6.M0(2131747641, null);
+            alertDialog$Builder.j(ob6.M0(2131751563, null), new uzb(this));
+            alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+            zzbVar.showDialog(idVar);
+            TextView textView = (TextView) idVar.c(-1);
+            if (textView != null) {
+                yob.X(textView, aob.q7, null);
+            }
+        }
     }
 }

@@ -1,59 +1,22 @@
 // default package
 
-import java.util.Map;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class y59 extends ym5 {
-    public final transient qm5 d;
-    public final transient Object[] e;
-    public final transient boolean f;
-    public final transient int h;
+public final class y59 implements ut9 {
+    public final LinkedHashSet a = new LinkedHashSet();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public y59(qm5 qm5Var, Object[] objArr, int i, int i2) {
-        this.d = qm5Var;
-        this.e = objArr;
-        this.f = i;
-        this.h = i2;
+    public y59(po poVar) {
+        poVar.f("androidx.savedstate.Restarter", this);
     }
 
-    @Override // gm5, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.d.get(key))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // gm5
-    public final int i(int i, Object[] objArr) {
-        return h().i(i, objArr);
-    }
-
-    @Override // gm5
-    public final boolean m() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    /* renamed from: n */
-    public final v5c iterator() {
-        return h().listIterator(0);
-    }
-
-    @Override // ym5
-    public final mm5 r() {
-        return new x59(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.h;
+    @Override // ut9
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("classes_to_restore", new ArrayList<>(this.a));
+        return bundle;
     }
 }

@@ -14,10 +14,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class yn0 implements View.OnClickListener {
     public final /* synthetic */ byte a;
@@ -26,18 +26,17 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ yn0(ao0 ao0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j, d dVar) {
+    public /* synthetic */ yn0(ao0 ao0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j, e eVar) {
         this.a = (byte) 0;
         this.c = ao0Var;
         this.d = prepaidGiveaway;
         this.b = j;
-        this.e = dVar;
+        this.e = eVar;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        int i;
-        int i2;
+        tn0 tn0Var;
         String str;
         byte b = this.a;
         Object obj = this.e;
@@ -47,92 +46,95 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
             case 0:
                 ao0 ao0Var = (ao0) obj3;
                 TL_stories.PrepaidGiveaway prepaidGiveaway = (TL_stories.PrepaidGiveaway) obj2;
-                d dVar = (d) obj;
+                e eVar = (e) obj;
                 ArrayList arrayList = ao0Var.Z1;
                 ArrayList arrayList2 = ao0Var.X1;
                 TLRPC.Chat chat = ao0Var.W1;
                 ArrayList arrayList3 = ao0Var.Y1;
                 ArrayList arrayList4 = ao0Var.a2;
-                n8 n8Var = ao0Var.l2;
-                if (!n8Var.a.R) {
-                    if (ao0Var.d1()) {
+                o8 o8Var = ao0Var.l2;
+                if (!o8Var.a.R) {
+                    if (ao0Var.e1()) {
                         TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway ? (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway : null;
-                        dt4 dt4Var = new dt4((Object) ao0Var, (TLObject) prepaidGiveaway, (TLObject) tL_prepaidStarsGiveaway, this.b, tL_prepaidStarsGiveaway != null ? tL_prepaidStarsGiveaway.stars : 0L, (byte) 2);
-                        d Q = LaunchActivity.Q();
+                        hv4 hv4Var = new hv4((Object) ao0Var, (TLObject) prepaidGiveaway, (TLObject) tL_prepaidStarsGiveaway, this.b, tL_prepaidStarsGiveaway != null ? tL_prepaidStarsGiveaway.stars : 0L, (byte) 2);
+                        e Q = LaunchActivity.Q();
                         if (Q != null) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getResourceProvider(), Q.getContext());
-                            String M0 = k96.M0(2131753188, null);
-                            hd hdVar = alertDialog$Builder.a;
-                            hdVar.S = M0;
-                            hdVar.U = gl.S2(k96.M0(2131753189, null));
-                            alertDialog$Builder.j(k96.M0(2131744678, null), new sg0(dt4Var, (byte) 5));
-                            alertDialog$Builder.g(k96.M0(2131752577, null), new qm0((byte) 0));
+                            String M0 = ob6.M0(2131753184, null);
+                            id idVar = alertDialog$Builder.a;
+                            idVar.S = M0;
+                            idVar.U = hl.S2(ob6.M0(2131753185, null));
+                            alertDialog$Builder.j(ob6.M0(2131744572, null), new tg0(hv4Var, (byte) 5));
+                            alertDialog$Builder.g(ob6.M0(2131752570, null), new rm0((byte) 1));
                             alertDialog$Builder.o();
                             break;
                         }
                     } else {
-                        int i3 = ao0Var.c2;
-                        int i4 = pn0.w;
-                        byte b2 = 2;
-                        byte b3 = 4;
-                        if (i3 != 3) {
-                            byte b4 = 2;
+                        int i = ao0Var.c2;
+                        int i2 = pn0.w;
+                        byte b2 = 4;
+                        byte b3 = 2;
+                        if (i != 3) {
+                            byte b4 = 16;
                             if (ao0Var.d2 == 1) {
                                 ArrayList c = on0.c(arrayList3.size(), arrayList4);
-                                for (int i5 = 0; i5 < c.size(); i5++) {
-                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) c.get(i5);
+                                int i3 = 0;
+                                while (i3 < c.size()) {
+                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) c.get(i3);
                                     if (tL_premiumGiftCodeOption.months == ao0Var.g2 && arrayList3.size() > 0) {
                                         if (on0.j()) {
                                             Context context = ao0Var.getContext();
-                                            wjb wjbVar = ao0Var.J0;
+                                            vnb vnbVar = ao0Var.J0;
                                             if (tL_premiumGiftCodeOption.store_product == null) {
                                                 ArrayList arrayList5 = new ArrayList();
                                                 int size = arrayList4.size();
-                                                int i6 = 0;
-                                                while (i6 < size) {
-                                                    Object obj4 = arrayList4.get(i6);
-                                                    i6++;
+                                                int i4 = 0;
+                                                while (i4 < size) {
+                                                    Object obj4 = arrayList4.get(i4);
+                                                    i4++;
                                                     TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) obj4;
                                                     if (tL_premiumGiftCodeOption2.months == tL_premiumGiftCodeOption.months && tL_premiumGiftCodeOption2.store_product != null) {
                                                         arrayList5.add(Integer.valueOf(tL_premiumGiftCodeOption2.users));
                                                     }
                                                 }
                                                 String join = TextUtils.join(", ", arrayList5);
-                                                int i7 = tL_premiumGiftCodeOption.users;
-                                                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, wjbVar, context);
-                                                String M02 = k96.M0(2131753299, "BoostingReduceQuantity");
-                                                hd hdVar2 = alertDialog$Builder2.a;
-                                                hdVar2.S = M02;
-                                                hdVar2.U = gl.S2(k96.G(i7, "BoostingReduceUsersTextPlural", join));
-                                                alertDialog$Builder2.j(k96.M0(2131747638, "OK"), new ho9((byte) 13));
+                                                int i5 = tL_premiumGiftCodeOption.users;
+                                                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, vnbVar, context);
+                                                String M02 = ob6.M0(2131753295, "BoostingReduceQuantity");
+                                                id idVar2 = alertDialog$Builder2.a;
+                                                idVar2.S = M02;
+                                                idVar2.U = hl.S2(ob6.G(i5, "BoostingReduceUsersTextPlural", join));
+                                                alertDialog$Builder2.j(ob6.M0(2131747558, "OK"), new vr9(b4));
                                                 alertDialog$Builder2.o();
                                                 break;
                                             }
                                         }
-                                        n8Var.b(true);
-                                        on0.m(arrayList3, tL_premiumGiftCodeOption, ao0Var.W1, null, dVar, new tn0(ao0Var, (byte) 0), new tn0(ao0Var, (byte) 1));
+                                        o8Var.b(true);
+                                        on0.m(arrayList3, tL_premiumGiftCodeOption, ao0Var.W1, null, eVar, new tn0(ao0Var, (byte) 0), new tn0(ao0Var, (byte) 1));
                                         break;
+                                    } else {
+                                        i3++;
+                                        b4 = 16;
                                     }
                                 }
                                 break;
                             } else {
-                                ArrayList c2 = on0.c(ao0Var.Z0(), arrayList4);
-                                int i8 = 0;
-                                while (i8 < c2.size()) {
-                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption3 = (TLRPC.TL_premiumGiftCodeOption) c2.get(i8);
+                                ArrayList c2 = on0.c(ao0Var.a1(), arrayList4);
+                                for (int i6 = 0; i6 < c2.size(); i6++) {
+                                    TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption3 = (TLRPC.TL_premiumGiftCodeOption) c2.get(i6);
                                     if (tL_premiumGiftCodeOption3.months == ao0Var.g2) {
                                         if (on0.j()) {
                                             List list = ao0Var.T1;
                                             Context context2 = ao0Var.getContext();
-                                            wjb wjbVar2 = ao0Var.J0;
-                                            tn0 tn0Var = new tn0(ao0Var, b4);
+                                            vnb vnbVar2 = ao0Var.J0;
+                                            tn0 tn0Var2 = new tn0(ao0Var, b3);
                                             if (tL_premiumGiftCodeOption3.store_product == null) {
                                                 ArrayList arrayList6 = new ArrayList();
                                                 int size2 = arrayList4.size();
-                                                int i9 = 0;
-                                                while (i9 < size2) {
-                                                    Object obj5 = arrayList4.get(i9);
-                                                    i9++;
+                                                int i7 = 0;
+                                                while (i7 < size2) {
+                                                    Object obj5 = arrayList4.get(i7);
+                                                    i7++;
                                                     TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption4 = (TLRPC.TL_premiumGiftCodeOption) obj5;
                                                     if (tL_premiumGiftCodeOption4.months == tL_premiumGiftCodeOption3.months && tL_premiumGiftCodeOption4.store_product != null && list.contains(Integer.valueOf(tL_premiumGiftCodeOption4.users))) {
                                                         arrayList6.add(tL_premiumGiftCodeOption4);
@@ -140,88 +142,84 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
                                                 }
                                                 TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption5 = (TLRPC.TL_premiumGiftCodeOption) arrayList6.get(0);
                                                 int size3 = arrayList6.size();
-                                                int i10 = 0;
-                                                while (i10 < size3) {
-                                                    Object obj6 = arrayList6.get(i10);
-                                                    i10++;
+                                                int i8 = 0;
+                                                while (i8 < size3) {
+                                                    Object obj6 = arrayList6.get(i8);
+                                                    i8++;
                                                     TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption6 = (TLRPC.TL_premiumGiftCodeOption) obj6;
-                                                    int i11 = tL_premiumGiftCodeOption3.users;
-                                                    int i12 = tL_premiumGiftCodeOption6.users;
-                                                    if (i11 > i12 && i12 > tL_premiumGiftCodeOption5.users) {
+                                                    int i9 = tL_premiumGiftCodeOption3.users;
+                                                    int i10 = tL_premiumGiftCodeOption6.users;
+                                                    if (i9 > i10 && i10 > tL_premiumGiftCodeOption5.users) {
                                                         tL_premiumGiftCodeOption5 = tL_premiumGiftCodeOption6;
                                                     }
                                                 }
-                                                String G = k96.G(tL_premiumGiftCodeOption5.months, "GiftMonths", new Object[0]);
-                                                int i13 = tL_premiumGiftCodeOption3.users;
-                                                int i14 = tL_premiumGiftCodeOption5.users;
-                                                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, wjbVar2, context2);
-                                                String M03 = k96.M0(2131753299, "BoostingReduceQuantity");
-                                                hd hdVar3 = alertDialog$Builder3.a;
-                                                hdVar3.S = M03;
-                                                hdVar3.U = gl.S2(k96.G(i13, "BoostingReduceQuantityTextPlural", G, Integer.valueOf(i14)));
-                                                alertDialog$Builder3.j(k96.M0(2131746148, "Reduce"), new o(tn0Var, tL_premiumGiftCodeOption5, (byte) 20));
-                                                alertDialog$Builder3.g(k96.M0(2131752577, "Cancel"), new ho9((byte) 13));
+                                                String G = ob6.G(tL_premiumGiftCodeOption5.months, "GiftMonths", new Object[0]);
+                                                int i11 = tL_premiumGiftCodeOption3.users;
+                                                int i12 = tL_premiumGiftCodeOption5.users;
+                                                AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, vnbVar2, context2);
+                                                String M03 = ob6.M0(2131753295, "BoostingReduceQuantity");
+                                                id idVar3 = alertDialog$Builder3.a;
+                                                idVar3.S = M03;
+                                                idVar3.U = hl.S2(ob6.G(i11, "BoostingReduceQuantityTextPlural", G, Integer.valueOf(i12)));
+                                                alertDialog$Builder3.j(ob6.M0(2131746068, "Reduce"), new o(tn0Var2, tL_premiumGiftCodeOption5, (byte) 20));
+                                                alertDialog$Builder3.g(ob6.M0(2131752570, "Cancel"), new vr9((byte) 16));
                                                 alertDialog$Builder3.o();
                                                 break;
                                             }
                                         }
-                                        int i15 = ao0Var.e2;
-                                        int i16 = dv7.w;
-                                        boolean z = i15 == 1;
+                                        int i13 = ao0Var.e2;
+                                        int i14 = ky7.w;
+                                        boolean z = i13 == 1;
                                         int n = on0.n(ao0Var.h2);
-                                        n8Var.b(true);
+                                        o8Var.b(true);
                                         boolean z2 = ao0Var.s2;
                                         boolean z3 = ao0Var.r2;
                                         String str2 = ao0Var.q2;
-                                        tn0 tn0Var2 = new tn0(ao0Var, (byte) 3);
-                                        tn0 tn0Var3 = new tn0(ao0Var, b3);
+                                        tn0 tn0Var3 = new tn0(ao0Var, (byte) 3);
+                                        tn0 tn0Var4 = new tn0(ao0Var, b2);
                                         boolean j = on0.j();
-                                        int i17 = y6c.t0;
+                                        int i15 = yac.t0;
                                         if (j) {
-                                            na7 q1 = na7.q1(i17);
-                                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(y6c.t0);
+                                            uc7 s1 = uc7.s1(i15);
+                                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(yac.t0);
                                             TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = new TLRPC.TL_inputStorePaymentPremiumGiveaway();
                                             tL_inputStorePaymentPremiumGiveaway.only_new_subscribers = z;
                                             tL_inputStorePaymentPremiumGiveaway.winners_are_visible = z2;
                                             tL_inputStorePaymentPremiumGiveaway.prize_description = str2;
                                             tL_inputStorePaymentPremiumGiveaway.until_date = n;
-                                            int i18 = tL_inputStorePaymentPremiumGiveaway.flags;
-                                            tL_inputStorePaymentPremiumGiveaway.flags = i18 | 6;
+                                            int i16 = tL_inputStorePaymentPremiumGiveaway.flags;
+                                            tL_inputStorePaymentPremiumGiveaway.flags = i16 | 6;
                                             if (z3) {
-                                                tL_inputStorePaymentPremiumGiveaway.flags = i18 | 22;
+                                                tL_inputStorePaymentPremiumGiveaway.flags = i16 | 22;
                                             }
                                             tL_inputStorePaymentPremiumGiveaway.random_id = System.currentTimeMillis();
                                             tL_inputStorePaymentPremiumGiveaway.additional_peers = new ArrayList<>();
                                             int size4 = arrayList2.size();
-                                            int i19 = 0;
-                                            while (i19 < size4) {
-                                                Object obj7 = arrayList2.get(i19);
-                                                int i20 = i19 + 1;
+                                            int i17 = 0;
+                                            while (i17 < size4) {
+                                                Object obj7 = arrayList2.get(i17);
+                                                i17++;
                                                 TLObject tLObject = (TLObject) obj7;
                                                 if (tLObject instanceof TLRPC.Chat) {
-                                                    i = i20;
-                                                    tL_inputStorePaymentPremiumGiveaway.additional_peers.add(q1.h1(-((TLRPC.Chat) tLObject).id));
-                                                } else {
-                                                    i = i20;
+                                                    tL_inputStorePaymentPremiumGiveaway.additional_peers.add(s1.j1(-((TLRPC.Chat) tLObject).id));
                                                 }
-                                                i19 = i;
                                             }
-                                            tL_inputStorePaymentPremiumGiveaway.boost_peer = q1.h1(-chat.id);
+                                            tL_inputStorePaymentPremiumGiveaway.boost_peer = s1.j1(-chat.id);
                                             int size5 = arrayList.size();
-                                            int i21 = 0;
-                                            while (i21 < size5) {
-                                                Object obj8 = arrayList.get(i21);
-                                                i21++;
+                                            int i18 = 0;
+                                            while (i18 < size5) {
+                                                Object obj8 = arrayList.get(i18);
+                                                i18++;
                                                 tL_inputStorePaymentPremiumGiveaway.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) obj8)).iso2);
                                             }
-                                            i5 i5Var = new i5();
-                                            i5Var.b = "inapp";
-                                            i5Var.a = tL_premiumGiftCodeOption3.store_product;
-                                            ci0.h().o(Arrays.asList(i5Var.a()), new zd((Object) tL_inputStorePaymentPremiumGiveaway, (Object) tL_premiumGiftCodeOption3, (Object) connectionsManager, (Object) tn0Var3, (Object) tn0Var2, (Object) dVar, (byte) 3));
+                                            we3 we3Var = new we3();
+                                            we3Var.b = "inapp";
+                                            we3Var.a = tL_premiumGiftCodeOption3.store_product;
+                                            di0.h().o(Arrays.asList(we3Var.a()), new kh((Object) tL_inputStorePaymentPremiumGiveaway, (Object) tL_premiumGiftCodeOption3, (Object) connectionsManager, (Object) tn0Var4, (Object) tn0Var3, (Object) eVar, (byte) 3));
                                             break;
                                         } else {
-                                            na7 q12 = na7.q1(i17);
-                                            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(y6c.t0);
+                                            uc7 s12 = uc7.s1(i15);
+                                            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(yac.t0);
                                             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
                                             TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = new TLRPC.TL_inputInvoicePremiumGiftCode();
                                             TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway2 = new TLRPC.TL_inputStorePaymentPremiumGiveaway();
@@ -229,41 +227,42 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
                                             tL_inputStorePaymentPremiumGiveaway2.winners_are_visible = z2;
                                             tL_inputStorePaymentPremiumGiveaway2.prize_description = str2;
                                             tL_inputStorePaymentPremiumGiveaway2.until_date = n;
-                                            int i22 = tL_inputStorePaymentPremiumGiveaway2.flags;
-                                            tL_inputStorePaymentPremiumGiveaway2.flags = i22 | 6;
+                                            int i19 = tL_inputStorePaymentPremiumGiveaway2.flags;
+                                            tL_inputStorePaymentPremiumGiveaway2.flags = i19 | 6;
                                             if (z3) {
-                                                tL_inputStorePaymentPremiumGiveaway2.flags = i22 | 22;
+                                                tL_inputStorePaymentPremiumGiveaway2.flags = i19 | 22;
                                             }
                                             tL_inputStorePaymentPremiumGiveaway2.random_id = System.currentTimeMillis();
                                             tL_inputStorePaymentPremiumGiveaway2.additional_peers = new ArrayList<>();
                                             int size6 = arrayList2.size();
-                                            int i23 = 0;
-                                            while (i23 < size6) {
-                                                Object obj9 = arrayList2.get(i23);
-                                                int i24 = i23 + 1;
+                                            int i20 = 0;
+                                            while (i20 < size6) {
+                                                Object obj9 = arrayList2.get(i20);
+                                                i20++;
                                                 TLObject tLObject2 = (TLObject) obj9;
                                                 if (tLObject2 instanceof TLRPC.Chat) {
-                                                    i2 = i24;
-                                                    tL_inputStorePaymentPremiumGiveaway2.additional_peers.add(q12.h1(-((TLRPC.Chat) tLObject2).id));
+                                                    tn0Var = tn0Var4;
+                                                    tL_inputStorePaymentPremiumGiveaway2.additional_peers.add(s12.j1(-((TLRPC.Chat) tLObject2).id));
                                                 } else {
-                                                    i2 = i24;
+                                                    tn0Var = tn0Var4;
                                                 }
-                                                i23 = i2;
+                                                tn0Var4 = tn0Var;
                                             }
-                                            tL_inputStorePaymentPremiumGiveaway2.boost_peer = q12.h1(-chat.id);
-                                            tL_inputStorePaymentPremiumGiveaway2.boost_peer = q12.h1(-chat.id);
+                                            tn0 tn0Var5 = tn0Var4;
+                                            tL_inputStorePaymentPremiumGiveaway2.boost_peer = s12.j1(-chat.id);
+                                            tL_inputStorePaymentPremiumGiveaway2.boost_peer = s12.j1(-chat.id);
                                             tL_inputStorePaymentPremiumGiveaway2.currency = tL_premiumGiftCodeOption3.currency;
                                             tL_inputStorePaymentPremiumGiveaway2.amount = tL_premiumGiftCodeOption3.amount;
                                             int size7 = arrayList.size();
-                                            int i25 = 0;
-                                            while (i25 < size7) {
-                                                Object obj10 = arrayList.get(i25);
-                                                i25++;
+                                            int i21 = 0;
+                                            while (i21 < size7) {
+                                                Object obj10 = arrayList.get(i21);
+                                                i21++;
                                                 tL_inputStorePaymentPremiumGiveaway2.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) obj10)).iso2);
                                             }
                                             tL_inputInvoicePremiumGiftCode.purpose = tL_inputStorePaymentPremiumGiveaway2;
                                             tL_inputInvoicePremiumGiftCode.option = tL_premiumGiftCodeOption3;
-                                            JSONObject u = ow0.u(dVar.getResourceProvider(), false);
+                                            JSONObject u = xw0.u(eVar.getResourceProvider(), false);
                                             if (u != null) {
                                                 TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
                                                 tL_payments_getPaymentForm.theme_params = tL_dataJSON;
@@ -271,63 +270,58 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
                                                 tL_payments_getPaymentForm.flags |= 1;
                                             }
                                             tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
-                                            connectionsManager2.sendRequest(tL_payments_getPaymentForm, new fn0((Object) tn0Var3, (Object) q12, (Object) tL_inputInvoicePremiumGiftCode, (Object) dVar, (Object) tn0Var2, (byte) 0));
+                                            connectionsManager2.sendRequest(tL_payments_getPaymentForm, new in0((Object) tn0Var5, (Object) s12, (Object) tL_inputInvoicePremiumGiftCode, (Object) eVar, (Object) tn0Var3, (byte) 0));
                                             break;
                                         }
-                                    } else {
-                                        i8++;
-                                        b4 = b4;
                                     }
                                 }
                                 break;
                             }
                         } else {
-                            Activity W = gl.W(ao0Var.getContext());
+                            Activity W = hl.W(ao0Var.getContext());
                             if (W == null) {
                                 W = LaunchActivity.H1;
                             }
                             if (W != null && !W.isFinishing()) {
-                                TL_stars.TL_starsGiveawayOption b1 = ao0Var.b1(ao0Var.k2);
-                                int Z0 = ao0Var.Z0();
-                                if (b1 != null) {
-                                    n8Var.a.setLoading(true);
-                                    int i26 = ao0Var.e2;
-                                    int i27 = dv7.w;
-                                    boolean z4 = i26 == 1;
-                                    gta v = gta.v(ao0Var.a, false);
+                                TL_stars.TL_starsGiveawayOption c1 = ao0Var.c1(ao0Var.k2);
+                                int a1 = ao0Var.a1();
+                                if (c1 != null) {
+                                    o8Var.a.setLoading(true);
+                                    int i22 = ao0Var.e2;
+                                    int i23 = ky7.w;
+                                    boolean z4 = i22 == 1;
+                                    jxa v = jxa.v(ao0Var.a, false);
                                     int n2 = on0.n(ao0Var.h2);
                                     boolean z5 = ao0Var.s2;
                                     boolean z6 = ao0Var.r2;
                                     String str3 = ao0Var.q2;
-                                    ae2 ae2Var = new ae2(ao0Var, b1, b2);
-                                    int i28 = v.a;
-                                    if (na7.q1(i28).a5()) {
+                                    qe2 qe2Var = new qe2(ao0Var, c1, b3);
+                                    int i24 = v.a;
+                                    if (uc7.s1(i24).i5()) {
                                         TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway = new TLRPC.TL_inputStorePaymentStarsGiveaway();
                                         tL_inputStorePaymentStarsGiveaway.only_new_subscribers = z4;
                                         tL_inputStorePaymentStarsGiveaway.winners_are_visible = z5;
-                                        tL_inputStorePaymentStarsGiveaway.stars = b1.stars;
-                                        na7.q1(i28);
-                                        tL_inputStorePaymentStarsGiveaway.boost_peer = na7.j1(chat);
+                                        Activity activity = W;
+                                        tL_inputStorePaymentStarsGiveaway.stars = c1.stars;
+                                        uc7.s1(i24);
+                                        tL_inputStorePaymentStarsGiveaway.boost_peer = uc7.l1(chat);
                                         if (arrayList2 != null && !arrayList2.isEmpty()) {
                                             tL_inputStorePaymentStarsGiveaway.flags |= 2;
                                             int size8 = arrayList2.size();
-                                            int i29 = 0;
-                                            while (i29 < size8) {
-                                                Object obj11 = arrayList2.get(i29);
-                                                i29++;
-                                                Activity activity = W;
+                                            int i25 = 0;
+                                            while (i25 < size8) {
+                                                Object obj11 = arrayList2.get(i25);
+                                                i25++;
                                                 ArrayList<TLRPC.InputPeer> arrayList7 = tL_inputStorePaymentStarsGiveaway.additional_peers;
-                                                na7.q1(i28);
-                                                arrayList7.add(na7.i1((TLObject) obj11));
-                                                W = activity;
+                                                uc7.s1(i24);
+                                                arrayList7.add(uc7.k1((TLObject) obj11));
                                             }
                                         }
-                                        Activity activity2 = W;
                                         int size9 = arrayList.size();
-                                        int i30 = 0;
-                                        while (i30 < size9) {
-                                            Object obj12 = arrayList.get(i30);
-                                            i30++;
+                                        int i26 = 0;
+                                        while (i26 < size9) {
+                                            Object obj12 = arrayList.get(i26);
+                                            i26++;
                                             tL_inputStorePaymentStarsGiveaway.countries_iso2.add(((TLRPC.TL_help_country) ((TLObject) obj12)).iso2);
                                         }
                                         if (!tL_inputStorePaymentStarsGiveaway.countries_iso2.isEmpty()) {
@@ -337,23 +331,23 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
                                             tL_inputStorePaymentStarsGiveaway.flags |= 16;
                                             tL_inputStorePaymentStarsGiveaway.prize_description = str3;
                                         }
-                                        z3a.B(i28);
-                                        tL_inputStorePaymentStarsGiveaway.random_id = z3a.D();
+                                        r7a.B(i24);
+                                        tL_inputStorePaymentStarsGiveaway.random_id = r7a.D();
                                         tL_inputStorePaymentStarsGiveaway.until_date = n2;
-                                        tL_inputStorePaymentStarsGiveaway.currency = b1.currency;
-                                        tL_inputStorePaymentStarsGiveaway.amount = b1.amount;
-                                        tL_inputStorePaymentStarsGiveaway.users = Z0;
-                                        if (!w01.b() && ci0.h().j() && (str = b1.store_product) != null) {
-                                            i5 i5Var2 = new i5();
-                                            i5Var2.b = "inapp";
-                                            i5Var2.a = str;
-                                            ci0.h().o(Arrays.asList(i5Var2.a()), new lt((Object) v, (Object) ae2Var, (Object) tL_inputStorePaymentStarsGiveaway, (Object) activity2, (byte) 23));
+                                        tL_inputStorePaymentStarsGiveaway.currency = c1.currency;
+                                        tL_inputStorePaymentStarsGiveaway.amount = c1.amount;
+                                        tL_inputStorePaymentStarsGiveaway.users = a1;
+                                        if (!f11.b() && di0.h().j() && (str = c1.store_product) != null) {
+                                            we3 we3Var2 = new we3();
+                                            we3Var2.b = "inapp";
+                                            we3Var2.a = str;
+                                            di0.h().o(Arrays.asList(we3Var2.a()), new pt((Object) v, (Object) qe2Var, (Object) tL_inputStorePaymentStarsGiveaway, (Object) activity, (byte) 24));
                                             break;
                                         } else {
                                             TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
                                             tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsGiveaway;
                                             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm2 = new TLRPC.TL_payments_getPaymentForm();
-                                            JSONObject u2 = ow0.u(gta.F(), false);
+                                            JSONObject u2 = xw0.u(jxa.F(), false);
                                             if (u2 != null) {
                                                 TLRPC.TL_dataJSON tL_dataJSON2 = new TLRPC.TL_dataJSON();
                                                 tL_payments_getPaymentForm2.theme_params = tL_dataJSON2;
@@ -361,16 +355,16 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
                                                 tL_payments_getPaymentForm2.flags |= 1;
                                             }
                                             tL_payments_getPaymentForm2.invoice = tL_inputInvoiceStars;
-                                            ConnectionsManager.getInstance(i28).sendRequest(tL_payments_getPaymentForm2, new ck8((Object) v, (Object) ae2Var, (Object) tL_inputInvoiceStars, (byte) 18));
+                                            ConnectionsManager.getInstance(i24).sendRequest(tL_payments_getPaymentForm2, new qn8((Object) v, (Object) qe2Var, (Object) tL_inputInvoiceStars, (byte) 19));
                                             break;
                                         }
                                     } else {
-                                        d Q2 = LaunchActivity.Q();
+                                        e Q2 = LaunchActivity.Q();
                                         if (Q2 != null && Q2.getContext() != null) {
-                                            gta.c0(Q2.getContext(), Q2.getResourceProvider());
+                                            jxa.d0(Q2.getContext(), Q2.getResourceProvider());
                                             break;
                                         } else {
-                                            gta.c0(W, null);
+                                            jxa.d0(W, null);
                                             break;
                                         }
                                     }
@@ -381,22 +375,22 @@ public final /* synthetic */ class yn0 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                f13 f13Var = (f13) obj3;
-                u41 u41Var = (u41) obj;
-                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, f13Var.J0, (Context) obj2);
-                String M04 = k96.M0(2131748606, null);
-                hd hdVar4 = alertDialog$Builder4.a;
-                hdVar4.S = M04;
-                hdVar4.U = k96.M0(2131748607, null);
-                alertDialog$Builder4.j(k96.M0(2131745831, null), new hs0((Object) f13Var, (Object) u41Var, this.b, (byte) 2));
-                alertDialog$Builder4.g(k96.M0(2131752577, null), null);
+                y13 y13Var = (y13) obj3;
+                c51 c51Var = (c51) obj;
+                AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, y13Var.J0, (Context) obj2);
+                String M04 = ob6.M0(2131748552, null);
+                id idVar4 = alertDialog$Builder4.a;
+                idVar4.S = M04;
+                idVar4.U = ob6.M0(2131748553, null);
+                alertDialog$Builder4.j(ob6.M0(2131745751, null), new ps0((Object) y13Var, (Object) c51Var, this.b, (byte) 2));
+                alertDialog$Builder4.g(ob6.M0(2131752570, null), null);
                 alertDialog$Builder4.c(-1);
                 alertDialog$Builder4.o();
                 break;
             default:
-                cj3 cj3Var = (cj3) obj3;
-                cj3Var.finishPreviewFragment();
-                gl.d3(new m77((Object) cj3Var, obj2, obj, this.b, (byte) 7), 100L);
+                uj3 uj3Var = (uj3) obj3;
+                uj3Var.finishPreviewFragment();
+                hl.d3(new ba7((Object) uj3Var, obj2, obj, this.b, (byte) 7), 100L);
                 break;
         }
     }

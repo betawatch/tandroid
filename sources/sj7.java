@@ -1,25 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class sj7 implements no3, fg2 {
-    public static final sj7 a = new sj7();
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
 
-    @Override // fg2
-    public final boolean a(Throwable th) {
-        return false;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class sj7 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tj7 b;
+
+    public /* synthetic */ sj7(tj7 tj7Var, byte b) {
+        this.a = b;
+        this.b = tj7Var;
     }
 
-    @Override // fg2
-    public final bt5 getParent() {
-        return null;
-    }
-
-    public final String toString() {
-        return "NonDisposableHandle";
-    }
-
-    @Override // no3
-    public final void dispose() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        tj7 tj7Var = this.b;
+        switch (b) {
+            case 0:
+                tj7Var.d.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tj7Var.n = floatValue;
+                View view = tj7Var.b;
+                view.setAlpha(1.0f - floatValue);
+                view.setScaleX(1.0f - tj7Var.n);
+                view.setScaleY(1.0f - tj7Var.n);
+                tj7Var.c.setColorFilter(new PorterDuffColorFilter(vm2.f(tj7Var.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
+                tj7Var.a.invalidate();
+                break;
+        }
     }
 }

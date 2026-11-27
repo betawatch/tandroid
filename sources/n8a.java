@@ -1,94 +1,60 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.style.ImageSpan;
+import java.util.ArrayDeque;
+import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class n8a extends ImageSpan {
-    public static tyb b;
-    public final /* synthetic */ byte a = 1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class n8a implements Executor {
+    public static final Logger f = Logger.getLogger(n8a.class.getName());
+    public final Executor a;
+    public final ArrayDeque b = new ArrayDeque();
+    public int c = 1;
+    public long d = 0;
+    public final xs4 e = new xs4(this);
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public n8a() {
-        super(r0, 0);
-        tyb tybVar = b;
-        if (tybVar == null) {
-            tybVar = new tyb(bkb.n2);
-            b = tybVar;
-        }
-        float textSize = bkb.n2.getTextSize() * 0.89f;
-        int i = (int) (0.02f * textSize);
-        getDrawable().setBounds(0, i, (int) textSize, ((int) (textSize * 1.25f)) + i);
+    public n8a(Executor executor) {
+        xve.h(executor);
+        this.a = executor;
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        switch (this.a) {
-            case 0:
-                Drawable drawable = getDrawable();
-                canvas.save();
-                int i6 = paint.getFontMetricsInt().descent;
-                canvas.translate(f, ((i4 + i6) - ((i6 - r3.ascent) / 2)) - ((drawable.getBounds().bottom - drawable.getBounds().top) / 2));
-                if (k96.a0) {
-                    canvas.scale(-1.0f, 1.0f, drawable.getIntrinsicWidth() / 2, drawable.getIntrinsicHeight() / 2);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        xve.h(runnable);
+        synchronized (this.b) {
+            int i = this.c;
+            if (i == 4 || i == 3) {
+                this.b.add(runnable);
+                return;
+            }
+            long j = this.d;
+            ps9 ps9Var = new ps9(runnable, (byte) 1);
+            this.b.add(ps9Var);
+            this.c = 2;
+            try {
+                this.a.execute(this.e);
+                if (this.c == 2) {
+                    synchronized (this.b) {
+                        if (this.d == j && this.c == 2) {
+                            this.c = 3;
+                        }
+                    }
                 }
-                drawable.draw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-                break;
-        }
-    }
-
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                Rect bounds = getDrawable().getBounds();
-                if (fontMetricsInt != null) {
-                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
-                    int i3 = fontMetricsInt2.descent;
-                    int i4 = fontMetricsInt2.ascent;
-                    int i5 = ((i3 - i4) / 2) + i4;
-                    int i6 = (bounds.bottom - bounds.top) / 2;
-                    int i7 = i5 - i6;
-                    fontMetricsInt.ascent = i7;
-                    fontMetricsInt.top = i7;
-                    int i8 = i5 + i6;
-                    fontMetricsInt.bottom = i8;
-                    fontMetricsInt.descent = i8;
+            } catch (Error | RuntimeException e) {
+                synchronized (this.b) {
+                    int i2 = this.c;
+                    boolean z = (i2 == 1 || i2 == 2) && this.b.removeLastOccurrence(ps9Var);
+                    if (!(e instanceof RejectedExecutionException) || z) {
+                        throw e;
+                    }
                 }
-                return bounds.right;
-            default:
-                return super.getSize(paint, charSequence, i, i2, fontMetricsInt);
+            }
         }
     }
 
-    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 1:
-                float textSize = textPaint.getTextSize() * 0.89f;
-                int i = (int) (0.02f * textSize);
-                getDrawable().setBounds(0, i, (int) textSize, ((int) (textSize * 1.25f)) + i);
-                super.updateDrawState(textPaint);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                break;
-        }
-    }
-
-    public /* synthetic */ n8a(Drawable drawable) {
-        super(drawable);
+    public final String toString() {
+        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.a + "}";
     }
 }

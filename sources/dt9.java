@@ -1,26 +1,55 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class dt9 extends w1 {
-    public static final Parcelable.Creator<dt9> CREATOR = new v1((byte) 2);
-    public boolean c;
+public final class dt9 extends h2 {
+    public static final /* synthetic */ xh4 f;
+    public static final /* synthetic */ xh4 h;
+    public static final /* synthetic */ xh4 n;
+    public List e;
 
-    public dt9(Parcel parcel, ClassLoader classLoader) {
-        super(parcel, classLoader);
-        this.c = ((Boolean) parcel.readValue(null)).booleanValue();
+    static {
+        u84 u84Var = new u84(dt9.class, "SampleToChunkBox.java");
+        f = u84Var.e(u84Var.d("getEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.util.List"));
+        h = u84Var.e(u84Var.d("setEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "java.util.List", "entries", "void"));
+        n = u84Var.e(u84Var.d("toString", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.lang.String"));
+        u84Var.e(u84Var.d("blowup", "com.coremedia.iso.boxes.SampleToChunkBox", "int", "chunkCount", "[J"));
+    }
+
+    @Override // h2, z1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a = cvd.a(zpe.g(byteBuffer));
+        this.e = new ArrayList(a);
+        for (int i = 0; i < a; i++) {
+            this.e.add(new ct9(zpe.g(byteBuffer), zpe.g(byteBuffer), zpe.g(byteBuffer)));
+        }
+    }
+
+    @Override // h2, z1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.size());
+        for (ct9 ct9Var : this.e) {
+            byteBuffer.putInt((int) ct9Var.a);
+            byteBuffer.putInt((int) ct9Var.b);
+            byteBuffer.putInt((int) ct9Var.c);
+        }
+    }
+
+    @Override // z1
+    public final long getContentSize() {
+        return (this.e.size() * 12) + 8;
     }
 
     public final String toString() {
-        return "SearchView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " isIconified=" + this.c + "}";
-    }
-
-    @Override // w1, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        super.writeToParcel(parcel, i);
-        parcel.writeValue(Boolean.valueOf(this.c));
+        lyc b = u84.b(n, this, this);
+        zb9.a().getClass();
+        zb9.b(b);
+        return "SampleToChunkBox[entryCount=" + this.e.size() + "]";
     }
 }

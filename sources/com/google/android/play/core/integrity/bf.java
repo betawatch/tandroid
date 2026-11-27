@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class bf extends bm {
     final /* synthetic */ long a;
@@ -20,9 +20,9 @@ final class bf extends bm {
         this.c = bnVar;
     }
 
-    @Override // s0d
+    @Override // j5d
     public final void b() {
-        q0d q0dVar;
+        h5d h5dVar;
         if (bn.l(this.c)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -33,23 +33,23 @@ final class bf extends bm {
         }
         try {
             bn bnVar = this.c;
-            e0d e0dVar = (e0d) bnVar.a.n;
+            v4d v4dVar = (v4d) bnVar.a.n;
             Bundle b = bn.b(bnVar, this.a, 0);
             bl blVar = new bl(this.c, this.b);
-            c0d c0dVar = (c0d) e0dVar;
-            c0dVar.getClass();
+            t4d t4dVar = (t4d) v4dVar;
+            t4dVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(c0dVar.c);
-            int i = yzc.a;
+            obtain.writeInterfaceToken(t4dVar.c);
+            int i = p4d.a;
             obtain.writeInt(1);
             b.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(blVar);
-            c0dVar.b(obtain, 2);
+            t4dVar.b(obtain, 2);
         } catch (RemoteException e) {
             bn bnVar2 = this.c;
             long j = this.a;
-            q0dVar = bnVar2.b;
-            q0dVar.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j));
+            h5dVar = bnVar2.b;
+            h5dVar.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j));
             this.b.trySetException(new StandardIntegrityException(-100, e));
         }
     }

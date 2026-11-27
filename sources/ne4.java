@@ -1,29 +1,34 @@
 // default package
 
-import android.content.Context;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ne4 extends pi4 {
-    public final /* synthetic */ byte V;
-    public final /* synthetic */ Object W;
+public final /* synthetic */ class ne4 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nf4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ne4(byte b, Context context, Object obj) {
-        super(context, null);
-        this.V = b;
-        this.W = obj;
+    public /* synthetic */ ne4(nf4 nf4Var, byte b) {
+        this.a = b;
+        this.b = nf4Var;
     }
 
-    @Override // pi4
-    public final int getColumnsCount() {
-        byte b = this.V;
-        Object obj = this.W;
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        nf4 nf4Var = this.b;
         switch (b) {
             case 0:
-                return ((af4) obj).s;
+                nf4Var.finishFragment();
+                break;
+            case 1:
+            case 3:
+                nf4Var.r0((TL_chatlists.TL_exportedChatlistInvite) obj);
+                break;
+            case 2:
             default:
-                return ((ye4) obj).d.s;
+                nf4Var.q0((TL_chatlists.TL_exportedChatlistInvite) obj);
+                break;
         }
     }
 }

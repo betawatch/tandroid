@@ -1,35 +1,19 @@
 // default package
 
-import android.content.Context;
-import java.util.Locale;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ktd extends l13 {
-    public final ae7 b;
+public final class ktd implements zq7 {
+    public static final ktd a = new ktd();
 
-    public ktd(ae7 ae7Var) {
-        super((byte) 4);
-        this.b = ae7Var;
+    static {
+        xnb.y(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, new ubd(1)), 2)), 3)));
     }
 
-    @Override // l13
-    public final Object a(Object obj) {
-        nbd nbdVar;
-        ik5 ik5Var = (ik5) obj;
-        Context b = this.b.b();
-        dy4.b.getClass();
-        if (yy4.a(b) >= 204700000) {
-            nbdVar = new ekc(b, ik5Var);
-        } else {
-            h31 h31Var = new h31();
-            h31Var.b = b;
-            Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage());
-            h31Var.c = new qme(1, -1, ik5Var.a, 1);
-            dy4.b.getClass();
-            h31Var.d = yy4.a(b) >= 200400000 ? "com.google.android.gms.vision.ica" : "com.google.android.gms.vision.dynamite";
-            nbdVar = h31Var;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return new kce(ik5Var, nbdVar, l5f.d());
+        throw null;
     }
 }

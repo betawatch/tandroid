@@ -1,233 +1,149 @@
 // default package
 
-import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Stack;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ArticleViewer$WindowView;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bw implements pib, jg7, web {
-    public SpannableStringBuilder E;
-    public int F = -1;
-    public int G = -1;
-    public int H = -1;
-    public cm I;
-    public ArrayList J;
-    public Stack K;
-    public AtomicReference L;
-    public View M;
-    public final vg5 a;
-    public View b;
-    public boolean c;
-    public StaticLayout d;
-    public b46 e;
-    public b46 f;
-    public b46 h;
-    public TL_iv.PageBlock n;
-    public TL_iv.RichText r;
-    public int s;
-    public int w;
-    public int x;
-    public CharSequence y;
+public final class bw implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ o b;
 
-    public bw(vg5 vg5Var) {
-        this.a = vg5Var;
+    public /* synthetic */ bw(o oVar, byte b) {
+        this.a = b;
+        this.b = oVar;
     }
 
-    @Override // pib, jg7
-    public final Layout a() {
-        return this.d;
-    }
-
-    @Override // web
-    public final int b() {
-        return 0;
-    }
-
-    @Override // pib
-    public final Rect c() {
-        return null;
-    }
-
-    @Override // web
-    public final void d(Canvas canvas, View view) {
-        float width;
-        Object obj;
-        TL_iv.RichText richText;
-        this.c = true;
-        this.b = view;
-        vg5 vg5Var = this.a;
-        float f = 0.0f;
-        if (vg5Var.F.isEmpty()) {
-            this.h = null;
-        } else {
-            ow owVar = (ow) vg5Var.F.get(vg5Var.H);
-            if (owVar.c != this.n || ((obj = owVar.b) != (richText = this.r) && (!(obj instanceof String) || richText != null))) {
-                this.h = null;
-            } else if (-1 != owVar.a) {
-                b46 b46Var = new b46(0);
-                this.h = b46Var;
-                b46Var.n = false;
-                b46Var.d(this.d, owVar.a, 0.0f);
-                this.h.o = 0;
-                StaticLayout staticLayout = this.d;
-                int i = owVar.a;
-                staticLayout.getSelectionPath(i, vg5Var.G.length() + i, this.h);
-                this.h.n = true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        ArticleViewer$WindowView articleViewer$WindowView;
+        amb ambVar;
+        byte b = this.a;
+        byte b2 = 0;
+        o oVar = this.b;
+        switch (b) {
+            case 0:
+                if (oVar.L0 && (articleViewer$WindowView = oVar.g0) != null) {
+                    oVar.L0 = false;
+                    if (oVar.b != null) {
+                        try {
+                            articleViewer$WindowView.performHapticFeedback(0, 2);
+                        } catch (Exception unused) {
+                        }
+                        oVar.X(((plb) oVar.b.i).b);
+                        oVar.b = null;
+                        oVar.d = null;
+                        View view = oVar.f;
+                        if (view != null) {
+                            view.invalidate();
+                            break;
+                        }
+                    } else {
+                        View view2 = oVar.f;
+                        if (view2 != null && oVar.Q0.e0(view2)) {
+                            if (oVar.f.getTag() == null || oVar.f.getTag() != "bottomSheet" || (ambVar = oVar.R0) == null) {
+                                oVar.Q0.k0();
+                            } else {
+                                ambVar.k0();
+                            }
+                            if (oVar.Q0.w()) {
+                                try {
+                                    oVar.g0.performHapticFeedback(0, 2);
+                                    break;
+                                } catch (Exception unused2) {
+                                    return;
+                                }
+                            }
+                        } else if (oVar.d != null && oVar.f != null) {
+                            try {
+                                oVar.g0.performHapticFeedback(0, 2);
+                            } catch (Exception unused3) {
+                            }
+                            int[] iArr = new int[2];
+                            oVar.f.getLocationInWindow(iArr);
+                            byte b3 = 1;
+                            int L = (iArr[1] + oVar.e) - hl.L(54.0f);
+                            if (L < 0) {
+                                L = 0;
+                            }
+                            oVar.f.invalidate();
+                            oVar.h = true;
+                            View view3 = oVar.f;
+                            n8 n8Var = oVar.I;
+                            if (n8Var == null || !n8Var.isShowing()) {
+                                if (oVar.C0 == null) {
+                                    oVar.E0 = new Rect();
+                                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(oVar.M, null);
+                                    oVar.C0 = actionBarPopupWindow$ActionBarPopupWindowLayout;
+                                    actionBarPopupWindow$ActionBarPopupWindowLayout.setPadding(hl.L(1.0f), hl.L(1.0f), hl.L(1.0f), hl.L(1.0f));
+                                    oVar.C0.setBackgroundDrawable(oVar.M.getResources().getDrawable(R.drawable.menu_copy));
+                                    oVar.C0.setAnimationEnabled(false);
+                                    oVar.C0.setOnTouchListener(new b7(oVar, (byte) 1));
+                                    oVar.C0.setDispatchKeyEventListener(new xs(oVar));
+                                    oVar.C0.setShownFromBottom(false);
+                                    TextView textView = new TextView(oVar.M);
+                                    oVar.D0 = textView;
+                                    int i = aob.i6;
+                                    hf0 f0 = aob.f0(aob.w0(null, i, false), 2, -1);
+                                    uob M = yob.M(i);
+                                    textView.setBackground(f0);
+                                    yob.j(textView, f0, null, M, null);
+                                    oVar.D0.setGravity(16);
+                                    oVar.D0.setPadding(hl.L(20.0f), 0, hl.L(20.0f), 0);
+                                    oVar.D0.setTextSize(1, 15.0f);
+                                    oVar.D0.setTypeface(hl.o());
+                                    oVar.D0.setText(ob6.M0(2131751732, null).toUpperCase());
+                                    oVar.D0.setOnClickListener(new ws(oVar, (byte) 5));
+                                    oVar.C0.addView(oVar.D0, tre.c(48.0f, -2));
+                                    n8 n8Var2 = new n8(oVar.C0, -2, -2);
+                                    oVar.I = n8Var2;
+                                    n8Var2.b = false;
+                                    n8Var2.setAnimationStyle(R.style.PopupContextAnimation);
+                                    oVar.I.setOutsideTouchable(true);
+                                    oVar.I.setClippingEnabled(true);
+                                    oVar.I.setInputMethodMode(2);
+                                    oVar.I.setSoftInputMode(0);
+                                    oVar.I.getContentView().setFocusableInTouchMode(true);
+                                    oVar.I.setOnDismissListener(new y6(oVar, b3));
+                                }
+                                yob.X(oVar.D0, aob.E8, null);
+                                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = oVar.C0;
+                                if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
+                                    yob.h(aob.G8, null, actionBarPopupWindow$ActionBarPopupWindowLayout2);
+                                }
+                                oVar.C0.measure(View.MeasureSpec.makeMeasureSpec(hl.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(hl.L(1000.0f), TLObject.FLAG_31));
+                                oVar.I.setFocusable(true);
+                                oVar.I.showAtLocation(view3, 48, 0, L);
+                                oVar.I.h();
+                            } else {
+                                oVar.I.d(true);
+                            }
+                            oVar.v0[0].b.setLayoutFrozen(true);
+                            oVar.v0[0].b.setLayoutFrozen(false);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                bw bwVar = oVar.M0;
+                if (bwVar == null) {
+                    bwVar = new bw(oVar, b2);
+                    oVar.M0 = bwVar;
+                }
+                ArticleViewer$WindowView articleViewer$WindowView2 = oVar.g0;
+                if (articleViewer$WindowView2 != null) {
+                    articleViewer$WindowView2.postDelayed(bwVar, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                    break;
+                }
+                break;
         }
-        b46 b46Var2 = this.h;
-        if (b46Var2 != null) {
-            canvas.drawPath(b46Var2, o.A1);
-        }
-        b46 b46Var3 = this.e;
-        if (b46Var3 != null) {
-            canvas.drawPath(b46Var3, o.z1);
-        }
-        b46 b46Var4 = this.f;
-        if (b46Var4 != null) {
-            canvas.drawPath(b46Var4, o.B1);
-        }
-        if (vg5Var.c.h(canvas, this)) {
-            view.invalidate();
-        }
-        if (vg5Var.d == this && vg5Var.b == null && vg5Var.h) {
-            int lineCount = this.d.getLineCount();
-            StaticLayout staticLayout2 = this.d;
-            if (lineCount == 1) {
-                width = staticLayout2.getLineWidth(0);
-                f = this.d.getLineLeft(0);
-            } else {
-                width = staticLayout2.getWidth();
-            }
-            canvas.drawRect((-gl.L(2.0f)) + f, 0.0f, f + width + gl.L(2.0f), this.d.getHeight(), o.y1);
-        }
-        ArrayList arrayList = this.J;
-        if (arrayList == null || arrayList.isEmpty()) {
-            this.d.draw(canvas);
-        } else {
-            qla.g(view, false, this.d.getPaint().getColor(), 0, this.L, 0, this.d, this.J, canvas, false);
-        }
-        this.c = false;
-    }
-
-    @Override // jg7
-    public final View e() {
-        View view = this.M;
-        return view != null ? view : this.b;
-    }
-
-    @Override // web
-    public final void f(View view) {
-        if (view == null) {
-            view = this.M;
-        }
-        gm.release(view, this.I);
-        this.M = null;
-    }
-
-    @Override // web
-    public final void g(int i) {
-        this.x = i;
-    }
-
-    @Override // pib
-    public final CharSequence getPrefix() {
-        return this.y;
-    }
-
-    @Override // pib
-    public final int getRow() {
-        return this.x;
-    }
-
-    @Override // pib
-    public final CharSequence getText() {
-        return this.d.getText();
-    }
-
-    @Override // pib
-    public final int getX() {
-        return this.s;
-    }
-
-    @Override // pib
-    public final int getY() {
-        return this.w;
-    }
-
-    @Override // web
-    public final void h(int i) {
-        this.w = i;
-    }
-
-    @Override // web
-    public final void i(View view) {
-        this.M = view;
-        StaticLayout staticLayout = this.d;
-        if (staticLayout != null) {
-            this.I = gm.update(0, view, false, this.I, staticLayout);
-        }
-    }
-
-    @Override // web
-    public final void j(int i) {
-        this.s = i;
-    }
-
-    public final int k() {
-        int i = this.F;
-        if (i != -1) {
-            return i;
-        }
-        this.F = this.d.getWidth();
-        int i2 = 0;
-        while (true) {
-            int lineCount = this.d.getLineCount();
-            int i3 = this.F;
-            if (i2 >= lineCount) {
-                return i3;
-            }
-            this.F = Math.min(i3, (int) this.d.getLineLeft(i2));
-            i2++;
-        }
-    }
-
-    public final int l() {
-        int i = this.G;
-        if (i != -1) {
-            return i;
-        }
-        int i2 = 0;
-        this.G = 0;
-        while (true) {
-            int lineCount = this.d.getLineCount();
-            int i3 = this.G;
-            if (i2 >= lineCount) {
-                return i3;
-            }
-            this.G = Math.max(i3, (int) this.d.getLineRight(i2));
-            i2++;
-        }
-    }
-
-    public final int m() {
-        int i = this.H;
-        if (i != -1) {
-            return i;
-        }
-        this.H = 0;
-        if (this.d.getLineCount() > 0) {
-            this.H = Math.max(this.H, (int) this.d.getLineRight(r1.getLineCount() - 1));
-        }
-        return this.H;
     }
 }

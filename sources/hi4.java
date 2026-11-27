@@ -1,31 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hi4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mi4 b;
-    public final /* synthetic */ ae9 c;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicReference;
 
-    public /* synthetic */ hi4(mi4 mi4Var, ae9 ae9Var, byte b) {
-        this.a = b;
-        this.b = mi4Var;
-        this.c = ae9Var;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hi4 implements pd0 {
+    public static final AtomicReference a = new AtomicReference();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ae9 ae9Var = this.c;
-        mi4 mi4Var = this.b;
-        mi4Var.getClass();
-        switch (b) {
-            case 0:
-                gl.d3(new hi4(mi4Var, ae9Var, (byte) 1), 320L);
-                break;
-            default:
-                ae9Var.a(new hj3(mi4Var, (byte) 9));
-                break;
+    @Override // pd0
+    public final void a(boolean z) {
+        synchronized (ji4.k) {
+            ArrayList arrayList = new ArrayList(ji4.l.values());
+            int size = arrayList.size();
+            int i = 0;
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ji4 ji4Var = (ji4) obj;
+                if (ji4Var.e.get()) {
+                    Log.d("FirebaseApp", "Notifying background state change listeners.");
+                    Iterator it = ji4Var.i.iterator();
+                    while (it.hasNext()) {
+                        ji4 ji4Var2 = ((gi4) it.next()).a;
+                        if (!z) {
+                            ((hb3) ji4Var2.h.get()).c();
+                        }
+                    }
+                }
+            }
         }
     }
 }

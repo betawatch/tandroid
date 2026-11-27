@@ -1,59 +1,18 @@
 // default package
 
-import android.content.Context;
-import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLObject;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fbc extends vb3 {
-    public final /* synthetic */ lbc d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fbc {
+    public final pkb a;
+    public pkb b;
+    public final boolean c;
+    public final RectF d = new RectF();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fbc(lbc lbcVar, Context context) {
-        super(context);
-        this.d = lbcVar;
-    }
-
-    /* JADX WARN: Type inference failed for: r11v3, types: [float[], java.io.Serializable] */
-    @Override // vb3
-    public final q93 b(Context context) {
-        c30 c30Var = new c30(context, (byte) 2);
-        xi9 xi9Var = new xi9();
-        xi9Var.f = this.d;
-        xm4 xm4Var = new xm4();
-        xm4Var.e = new float[0];
-        xm4Var.b = (byte) 3;
-        xm4Var.d = new float[513];
-        xm4Var.a = new float[1024];
-        xm4Var.c = new float[1024];
-        int[] iArr = new int[1024];
-        xm4Var.h = iArr;
-        iArr[0] = 0;
-        int i = 512;
-        int i2 = 1;
-        while (i2 < 1024) {
-            for (int i3 = 0; i3 < i2; i3++) {
-                int[] iArr2 = (int[]) xm4Var.h;
-                iArr2[i3 + i2] = iArr2[i3] + i;
-            }
-            i2 <<= 1;
-            i >>= 1;
-        }
-        xm4Var.f = new float[1024];
-        xm4Var.g = new float[1024];
-        for (int i4 = 0; i4 < 1024; i4++) {
-            double d = (-3.1415927f) / i4;
-            ((float[]) xm4Var.f)[i4] = (float) Math.sin(d);
-            ((float[]) xm4Var.g)[i4] = (float) Math.cos(d);
-        }
-        xi9Var.c = xm4Var;
-        xi9Var.d = new float[1024];
-        xi9Var.a = 0;
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_13);
-        xi9Var.e = allocateDirect;
-        allocateDirect.position(0);
-        c30Var.d = new mv6(new p20[]{new egb(xi9Var)});
-        return c30Var.b();
+    public fbc(CharSequence charSequence, String str, boolean z) {
+        this.a = new pkb(str, 12.0f, null);
+        this.b = new pkb(charSequence, 12.0f, hl.o());
+        this.c = z;
     }
 }

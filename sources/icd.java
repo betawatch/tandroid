@@ -1,13 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.util.Log;
+
 /* loaded from: classes.dex */
-public abstract class icd {
-    public static final byte[] a = {48, 49, 53, 0};
-    public static final byte[] b = {48, 49, 48, 0};
-    public static final byte[] c = {48, 48, 57, 0};
-    public static final byte[] d = {48, 48, 53, 0};
-    public static final byte[] e = {48, 48, 49, 0};
-    public static final byte[] f = {48, 48, 49, 0};
-    public static final byte[] g = {48, 48, 50, 0};
+public final class icd extends zad {
+    public final /* synthetic */ byte i;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ icd(ko9 ko9Var, String str, Object obj, byte b) {
+        super(ko9Var, str, obj);
+        this.i = b;
+    }
+
+    @Override // zad
+    public final /* synthetic */ Object d(String str) {
+        switch (this.i) {
+            case 0:
+                if (gmf.c.matcher(str).matches()) {
+                    return Boolean.TRUE;
+                }
+                if (gmf.d.matcher(str).matches()) {
+                    return Boolean.FALSE;
+                }
+                String str2 = this.b;
+                StringBuilder sb = new StringBuilder(str.length() + str2.length() + 28);
+                sb.append("Invalid boolean value for ");
+                sb.append(str2);
+                sb.append(": ");
+                sb.append(str);
+                Log.e("PhenotypeFlag", sb.toString());
+                return null;
+            default:
+                return str;
+        }
+    }
 }

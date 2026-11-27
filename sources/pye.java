@@ -1,19 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.RemoteException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pye implements zn7 {
-    public static final pye a = new pye();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class pye {
+    public static void a(gk5 gk5Var) {
+        if (gk5Var != null) {
+            try {
+                fk5 fk5Var = (fk5) gk5Var;
+                Parcel obtain = Parcel.obtain();
+                try {
+                    obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+                    obtain.writeInt(0);
+                    fk5Var.a.transact(3006, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            } catch (RemoteException unused) {
+            }
         }
-        throw null;
     }
 }

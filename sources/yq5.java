@@ -1,34 +1,18 @@
 // default package
 
-import android.content.Context;
+import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yq5 extends mhb {
-    public final /* synthetic */ zq5 E;
-    public final ez3 x;
-    public boolean y;
+public interface yq5 {
+    void G(no6 no6Var, oec oecVar, boolean z, int i, boolean z2, long j);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yq5(zq5 zq5Var, Context context) {
-        super(context);
-        this.E = zq5Var;
-        this.x = new ez3(this, (byte) 16);
-    }
+    int getClassGuid();
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ez3 ez3Var = this.x;
-        gl.r(ez3Var);
-        if (this.y) {
-            gl.d3(ez3Var, 500L);
-        }
-    }
+    View getFragmentView();
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        gl.r(this.x);
-    }
+    Activity getParentActivity();
+
+    boolean y();
 }

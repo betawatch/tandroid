@@ -1,49 +1,135 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class c80 {
-    public int a;
-    public String b;
-    public int c;
-    public int d;
-    public long e;
-    public long f;
-    public long g;
-    public String h;
-    public List i;
-    public byte j;
+public final class c80 extends c03 {
+    public final String b;
+    public final String c;
+    public final int d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final String h;
+    public final String i;
+    public final String j;
+    public final n80 k;
+    public final i80 l;
+    public final f80 m;
 
-    public final d80 a() {
-        String str;
-        if (this.j == 63 && (str = this.b) != null) {
-            return new d80(this.a, str, this.c, this.d, this.e, this.f, this.g, this.h, this.i);
+    public c80(String str, String str2, int i, String str3, String str4, String str5, String str6, String str7, String str8, n80 n80Var, i80 i80Var, f80 f80Var) {
+        this.b = str;
+        this.c = str2;
+        this.d = i;
+        this.e = str3;
+        this.f = str4;
+        this.g = str5;
+        this.h = str6;
+        this.i = str7;
+        this.j = str8;
+        this.k = n80Var;
+        this.l = i80Var;
+        this.m = f80Var;
+    }
+
+    public final b80 a() {
+        b80 b80Var = new b80();
+        b80Var.a = this.b;
+        b80Var.b = this.c;
+        b80Var.c = this.d;
+        b80Var.d = this.e;
+        b80Var.e = this.f;
+        b80Var.f = this.g;
+        b80Var.g = this.h;
+        b80Var.h = this.i;
+        b80Var.i = this.j;
+        b80Var.j = this.k;
+        b80Var.k = this.l;
+        b80Var.l = this.m;
+        b80Var.m = (byte) 1;
+        return b80Var;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb = new StringBuilder();
-        if ((this.j & 1) == 0) {
-            sb.append(" pid");
+        if (!(obj instanceof c03)) {
+            return false;
         }
-        if (this.b == null) {
-            sb.append(" processName");
+        c80 c80Var = (c80) ((c03) obj);
+        if (!this.b.equals(c80Var.b) || !this.c.equals(c80Var.c) || this.d != c80Var.d || !this.e.equals(c80Var.e)) {
+            return false;
         }
-        if ((this.j & 2) == 0) {
-            sb.append(" reasonCode");
+        String str = c80Var.f;
+        String str2 = this.f;
+        if (str2 == null) {
+            if (str != null) {
+                return false;
+            }
+        } else if (!str2.equals(str)) {
+            return false;
         }
-        if ((this.j & 4) == 0) {
-            sb.append(" importance");
+        String str3 = c80Var.g;
+        String str4 = this.g;
+        if (str4 == null) {
+            if (str3 != null) {
+                return false;
+            }
+        } else if (!str4.equals(str3)) {
+            return false;
         }
-        if ((this.j & 8) == 0) {
-            sb.append(" pss");
+        String str5 = c80Var.h;
+        String str6 = this.h;
+        if (str6 == null) {
+            if (str5 != null) {
+                return false;
+            }
+        } else if (!str6.equals(str5)) {
+            return false;
         }
-        if ((this.j & 16) == 0) {
-            sb.append(" rss");
+        if (!this.i.equals(c80Var.i) || !this.j.equals(c80Var.j)) {
+            return false;
         }
-        if ((this.j & 32) == 0) {
-            sb.append(" timestamp");
+        n80 n80Var = c80Var.k;
+        n80 n80Var2 = this.k;
+        if (n80Var2 == null) {
+            if (n80Var != null) {
+                return false;
+            }
+        } else if (!n80Var2.equals(n80Var)) {
+            return false;
         }
-        sc8.j(ir2.o("Missing required properties:", sb));
-        return null;
+        i80 i80Var = c80Var.l;
+        i80 i80Var2 = this.l;
+        if (i80Var2 == null) {
+            if (i80Var != null) {
+                return false;
+            }
+        } else if (!i80Var2.equals(i80Var)) {
+            return false;
+        }
+        f80 f80Var = c80Var.m;
+        f80 f80Var2 = this.m;
+        return f80Var2 == null ? f80Var == null : f80Var2.equals(f80Var);
+    }
+
+    public final int hashCode() {
+        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d) * 1000003) ^ this.e.hashCode()) * 1000003;
+        String str = this.f;
+        int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
+        String str2 = this.g;
+        int hashCode3 = (hashCode2 ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
+        String str3 = this.h;
+        int hashCode4 = (((((hashCode3 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003) ^ this.i.hashCode()) * 1000003) ^ this.j.hashCode()) * 1000003;
+        n80 n80Var = this.k;
+        int hashCode5 = (hashCode4 ^ (n80Var == null ? 0 : n80Var.hashCode())) * 1000003;
+        i80 i80Var = this.l;
+        int hashCode6 = (hashCode5 ^ (i80Var == null ? 0 : i80Var.hashCode())) * 1000003;
+        f80 f80Var = this.m;
+        return hashCode6 ^ (f80Var != null ? f80Var.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "CrashlyticsReport{sdkVersion=" + this.b + ", gmpAppId=" + this.c + ", platform=" + this.d + ", installationUuid=" + this.e + ", firebaseInstallationId=" + this.f + ", firebaseAuthenticationToken=" + this.g + ", appQualitySessionId=" + this.h + ", buildVersion=" + this.i + ", displayVersion=" + this.j + ", session=" + this.k + ", ndkPayload=" + this.l + ", appExitInfo=" + this.m + "}";
     }
 }

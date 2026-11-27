@@ -1,48 +1,33 @@
 // default package
 
-import android.text.TextUtils;
+import android.app.Activity;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ukc implements p8c {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ukc implements fd {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ u41 b;
-    public final /* synthetic */ fx0 c;
-    public final /* synthetic */ wjb d;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ Intent c;
 
-    public /* synthetic */ ukc(u41 u41Var, fx0 fx0Var, wjb wjbVar, byte b) {
+    public /* synthetic */ ukc(Activity activity, Intent intent, byte b) {
         this.a = b;
-        this.b = u41Var;
-        this.c = fx0Var;
-        this.d = wjbVar;
+        this.b = activity;
+        this.c = intent;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // fd
+    public final void w(id idVar, int i) {
         byte b = this.a;
-        wjb wjbVar = this.d;
-        fx0 fx0Var = this.c;
-        u41 u41Var = this.b;
-        String str = (String) obj;
+        Intent intent = this.c;
+        Activity activity = this.b;
         switch (b) {
             case 0:
-                u41Var.setLoading(false);
-                if (!TextUtils.isEmpty(str)) {
-                    new u21(fx0Var.F, wjbVar).f0(str, false);
-                    break;
-                } else {
-                    fx0Var.dismiss();
-                    break;
-                }
+                activity.startActivity(intent);
+                break;
             default:
-                u41Var.setLoading(false);
-                if (str == null) {
-                    fx0Var.dismiss();
-                    break;
-                } else {
-                    new u21(fx0Var.F, wjbVar).f0(str, false);
-                    break;
-                }
+                activity.startActivity(intent);
+                break;
         }
     }
 }

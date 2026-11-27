@@ -1,38 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.text.InputFilter;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vje extends c2e {
-    private static final vje zzb;
+public abstract class vje {
+    public abstract InputFilter[] a(InputFilter[] inputFilterArr);
 
-    static {
-        vje vjeVar = new vje();
-        zzb = vjeVar;
-        c2e.k(vje.class, vjeVar);
-    }
+    public abstract void b(boolean z);
 
-    public static vje n() {
-        return zzb;
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0000", null);
-        }
-        if (i2 == 3) {
-            return new vje();
-        }
-        if (i2 == 4) {
-            return new epd(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
-    }
+    public abstract void c(boolean z);
 }

@@ -1,26 +1,42 @@
 // default package
 
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.util.SparseArray;
-import java.util.WeakHashMap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ka9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ la9 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class ka9 {
-    public static final ThreadLocal a = new ThreadLocal();
-    public static final WeakHashMap b = new WeakHashMap(0);
-    public static final Object c = new Object();
+    public /* synthetic */ ka9(la9 la9Var, byte b) {
+        this.a = b;
+        this.b = la9Var;
+    }
 
-    public static void a(ja9 ja9Var, int i, ColorStateList colorStateList, Resources.Theme theme) {
-        synchronized (c) {
-            WeakHashMap weakHashMap = b;
-            SparseArray sparseArray = (SparseArray) weakHashMap.get(ja9Var);
-            if (sparseArray == null) {
-                sparseArray = new SparseArray();
-                weakHashMap.put(ja9Var, sparseArray);
-            }
-            sparseArray.append(i, new ia9(colorStateList, ja9Var.a.getConfiguration(), theme));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        la9 la9Var = this.b;
+        switch (b) {
+            case 0:
+                na9 na9Var = la9Var.b.d;
+                if (na9Var != null) {
+                    na9Var.postRunnable(na9Var.x);
+                    break;
+                }
+                break;
+            case 1:
+                na9 na9Var2 = la9Var.b.d;
+                if (na9Var2 != null) {
+                    na9Var2.postRunnable(na9Var2.x);
+                    break;
+                }
+                break;
+            default:
+                pa9 pa9Var = la9Var.b;
+                na9 na9Var3 = pa9Var.d;
+                na9Var3.getClass();
+                na9Var3.postRunnable(new ma9(na9Var3, (byte) 1));
+                pa9Var.d = null;
+                break;
         }
     }
 }

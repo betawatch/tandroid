@@ -1,48 +1,28 @@
 // default package
 
-import android.content.pm.PackageInfo;
-import android.net.Uri;
-import android.webkit.WebView;
-import java.util.Set;
-import java.util.WeakHashMap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class juc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ muc b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class juc {
-    public static final boolean a;
-    public static final WeakHashMap b;
-
-    static {
-        Uri.parse("*");
-        Uri.parse("");
-        a = true;
-        b = new WeakHashMap();
+    public /* synthetic */ juc(muc mucVar, byte b) {
+        this.a = b;
+        this.b = mucVar;
     }
 
-    public static void a(WebView webView, String str, Set set, iuc iucVar) {
-        if (!muc.c.b()) {
-            fyb.i("This method is not supported by the current version of the framework and the current WebView APK");
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        muc mucVar = this.b;
+        switch (b) {
+            case 0:
+                mucVar.e0 = null;
+                break;
+            default:
+                mucVar.getClass();
+                d31.b0(mucVar).N(ob6.M0(2131745589, null), ob6.M0(2131751070, null)).j();
+                break;
         }
-        ouc c = c(webView);
-        c.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new gy0(new u39(iucVar, (byte) 23)));
-    }
-
-    public static PackageInfo b() {
-        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
-    }
-
-    public static ouc c(WebView webView) {
-        if (!muc.e.b() || !a) {
-            return new ouc(nuc.a.createWebView(webView));
-        }
-        WeakHashMap weakHashMap = b;
-        ouc oucVar = (ouc) weakHashMap.get(webView);
-        if (oucVar != null) {
-            return oucVar;
-        }
-        ouc oucVar2 = new ouc(nuc.a.createWebView(webView));
-        weakHashMap.put(webView, oucVar2);
-        return oucVar2;
     }
 }

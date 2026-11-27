@@ -1,28 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.Closeable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o54 implements x56 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ y54 b;
-
-    public /* synthetic */ o54(y54 y54Var, byte b) {
-        this.a = b;
-        this.b = y54Var;
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        byte b = this.a;
-        y54 y54Var = this.b;
-        mc8 mc8Var = (mc8) obj;
-        switch (b) {
-            case 2:
-                mc8Var.K(y54Var.P);
-                break;
-            default:
-                mc8Var.C(y54Var.R);
-                break;
-        }
+public abstract class o54 extends px2 implements Closeable, AutoCloseable {
+    static {
+        px2.b.getClass();
     }
 }

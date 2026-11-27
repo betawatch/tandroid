@@ -1,87 +1,42 @@
 // default package
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.security.keystore.KeyGenParameterSpec;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.KeyPairGenerator;
-import java.util.Iterator;
-import java.util.Locale;
-import org.telegram.messenger.a;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class yf4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class yf4 extends y46 {
+    public final /* synthetic */ of2 r;
 
-    public /* synthetic */ yf4(byte b, boolean z) {
-        this.a = b;
-        this.b = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yf4(of2 of2Var, Context context) {
+        super(context);
+        this.r = of2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 1;
-        boolean z = this.b;
-        switch (b) {
-            case 0:
-                KeyPairGenerator keyPairGenerator = ige.b;
-                if (keyPairGenerator == null) {
-                    try {
-                        keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
-                        ige.b = keyPairGenerator;
-                    } catch (Exception e) {
-                        fa4.g(e, true);
-                        keyPairGenerator = null;
-                    }
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0032, code lost:
+    
+        if ((hl.L(21.0f) + r6.getRight()) > ((fg4) r5.r.J).getMeasuredWidth()) goto L12;
+     */
+    @Override // y46, b89
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, a89 a89Var) {
+        int j = j(o(), view);
+        if (j > 0 || (j == 0 && view.getLeft() - hl.L(21.0f) < 0)) {
+            j += hl.L(60.0f);
+        } else {
+            if (j >= 0) {
+                if (j == 0) {
                 }
-                if (keyPairGenerator != null) {
-                    try {
-                        Locale locale = Locale.getDefault();
-                        Locale locale2 = Locale.ENGLISH;
-                        Locale.setDefault(locale2);
-                        Resources resources = a.b.getResources();
-                        Configuration configuration = resources.getConfiguration();
-                        configuration.setLocale(locale2);
-                        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
-                        keyPairGenerator.initialize(new KeyGenParameterSpec.Builder("tmessages_passcode", 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
-                        keyPairGenerator.generateKeyPair();
-                        Locale.setDefault(locale);
-                        Resources resources2 = a.b.getResources();
-                        Configuration configuration2 = resources2.getConfiguration();
-                        configuration2.setLocale(locale);
-                        resources2.updateConfiguration(configuration2, resources2.getDisplayMetrics());
-                        gl.c3(new yf4(b2, z));
-                        break;
-                    } catch (InvalidAlgorithmParameterException e2) {
-                        fa4.g(e2, true);
-                        return;
-                    } catch (Exception e3) {
-                        if (e3.getClass().getName().equals("android.security.KeyStoreException")) {
-                            return;
-                        }
-                        fa4.g(e3, true);
-                        return;
-                    }
-                }
-                break;
-            case 1:
-                kk7.e().k(kk7.P1, Boolean.valueOf(z));
-                break;
-            case 2:
-                Iterator it = e66.n.iterator();
-                while (it.hasNext()) {
-                    p8c p8cVar = (p8c) it.next();
-                    if (p8cVar != null) {
-                        p8cVar.a(Boolean.valueOf(z));
-                    }
-                }
-                break;
-            default:
-                kk7.e().k(kk7.p4, Boolean.FALSE, Boolean.valueOf(z));
-                break;
+            }
+            j -= hl.L(60.0f);
+        }
+        int k = k(p(), view);
+        int max = Math.max(jn7.J2, m((int) Math.sqrt((k * k) + (j * j))));
+        if (max > 0) {
+            a89Var.b(-j, -k, max, this.j);
         }
     }
 }

@@ -1,31 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class lqa {
+    public static final /* synthetic */ int a = 0;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class lqa extends q41 {
-    public final wjb Q;
-    public String R;
-    public int S;
-
-    public lqa(Context context, wjb wjbVar) {
-        super(context);
-        this.Q = wjbVar;
-        zkb.X(this, bkb.F6, wjbVar);
-        setTextSize(1, 14.0f);
-        setPadding(0, gl.L(4.0f), 0, gl.L(4.0f));
-    }
-
-    public final void e(String str, int i, sna snaVar) {
-        if (str == this.R && this.S == i) {
-            return;
+    static {
+        Object ge9Var;
+        Object ge9Var2;
+        Exception exc = new Exception();
+        String simpleName = s3d.class.getSimpleName();
+        StackTraceElement stackTraceElement = exc.getStackTrace()[0];
+        new StackTraceElement("_COROUTINE.".concat(simpleName), "_", stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
+        try {
+            ge9Var = qf0.class.getCanonicalName();
+        } catch (Throwable th) {
+            ge9Var = new ge9(th);
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(vu3.m(str, getPaint().getFontMetricsInt(), false, null, 0));
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) r41.b(bc.I0(i), snaVar != null ? new t79(this, snaVar, i, (byte) 12) : null, this.Q, null));
-        setText(spannableStringBuilder);
-        this.R = str;
-        this.S = i;
+        if (he9.a(ge9Var) != null) {
+            ge9Var = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
+        }
+        try {
+            ge9Var2 = lqa.class.getCanonicalName();
+        } catch (Throwable th2) {
+            ge9Var2 = new ge9(th2);
+        }
+        if (he9.a(ge9Var2) != null) {
+            ge9Var2 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        }
     }
 }

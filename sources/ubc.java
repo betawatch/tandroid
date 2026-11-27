@@ -1,46 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ubc implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ v8b b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+public enum ubc implements Parcelable {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7("required"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF17("preferred"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF27("discouraged");
 
-    public /* synthetic */ ubc(v8b v8bVar, int i, long j) {
-        this.b = v8bVar;
-        this.d = i;
-        this.c = j;
+    public static final Parcelable.Creator<ubc> CREATOR = new ced((byte) 21);
+    public final String a;
+
+    ubc(String str) {
+        this.a = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.d;
-        long j = this.c;
-        v8b v8bVar = this.b;
-        switch (b) {
-            case 0:
-                xbc xbcVar = (xbc) v8bVar.c;
-                String str = g8c.a;
-                l93 l93Var = ((t54) xbcVar).a.s;
-                tj R = l93Var.R((rx6) l93Var.d.e);
-                l93Var.V(R, 1018, new i93(R, i, j));
-                break;
-            default:
-                xbc xbcVar2 = (xbc) v8bVar.c;
-                String str2 = g8c.a;
-                l93 l93Var2 = ((t54) xbcVar2).a.s;
-                tj R2 = l93Var2.R((rx6) l93Var2.d.e);
-                l93Var2.V(R2, 1021, new i93(R2, j, i));
-                break;
+    public static ubc a(String str) {
+        for (ubc ubcVar : values()) {
+            if (str.equals(ubcVar.a)) {
+                return ubcVar;
+            }
         }
+        throw new xgd(qd4.y("User verification requirement ", str, " not supported"));
     }
 
-    public /* synthetic */ ubc(v8b v8bVar, long j, int i) {
-        this.b = v8bVar;
-        this.c = j;
-        this.d = i;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
+        return this.a;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.a);
     }
 }

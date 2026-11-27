@@ -1,27 +1,26 @@
 // default package
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class p70 implements zn7 {
-    public static final p70 a = new p70();
-    public static final w84 b = w84.c("appId");
-    public static final w84 c = w84.c("deviceModel");
-    public static final w84 d = w84.c("sessionSdkVersion");
-    public static final w84 e = w84.c("osVersion");
-    public static final w84 f = w84.c("logEnvironment");
-    public static final w84 g = w84.c("androidAppInfo");
+public final class p70 {
+    public short a;
+    public short b;
+    public float c;
+    public long d;
+    public long e;
+    public long f;
+    public float g;
+    public int h;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        sr srVar = (sr) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, srVar.a);
-        ao7Var.a(c, Build.MODEL);
-        ao7Var.a(d, "3.0.8");
-        ao7Var.a(e, Build.VERSION.RELEASE);
-        ao7Var.a(f, vb6.b);
-        ao7Var.a(g, srVar.b);
+    public final float a(long j) {
+        if (j < this.d) {
+            return 0.0f;
+        }
+        long j2 = this.f;
+        if (j2 < 0 || j < j2) {
+            return w76.b((j - r0) / this.a, 0.0f, 1.0f) * 0.5f;
+        }
+        float f = this.g;
+        return (w76.b((j - j2) / this.h, 0.0f, 1.0f) * f) + (1.0f - f);
     }
 }

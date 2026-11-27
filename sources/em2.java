@@ -1,115 +1,76 @@
 // default package
 
-import java.io.Serializable;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.p;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class em2 implements sw2, Serializable {
-    public final sw2 a;
-    public final qw2 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class em2 extends EditTextBoldCursor {
+    public final /* synthetic */ byte N1;
+    public final /* synthetic */ int O1;
+    public final /* synthetic */ p P1;
 
-    public em2(qw2 qw2Var, sw2 sw2Var) {
-        sw2Var.getClass();
-        this.a = sw2Var;
-        this.b = qw2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ em2(p pVar, Context context, int i, byte b) {
+        super(context);
+        this.N1 = b;
+        this.P1 = pVar;
+        this.O1 = i;
     }
 
-    public final boolean equals(Object obj) {
-        boolean z;
-        if (this == obj) {
-            return true;
+    @Override // android.view.View
+    public final boolean getGlobalVisibleRect(Rect rect, Point point) {
+        switch (this.N1) {
+            case 1:
+                boolean globalVisibleRect = super.getGlobalVisibleRect(rect, point);
+                rect.bottom = hl.L(40.0f) + rect.bottom;
+                return globalVisibleRect;
+            default:
+                return super.getGlobalVisibleRect(rect, point);
         }
-        if (obj instanceof em2) {
-            em2 em2Var = (em2) obj;
-            int i = 2;
-            em2 em2Var2 = em2Var;
-            int i2 = 2;
-            while (true) {
-                sw2 sw2Var = em2Var2.a;
-                em2Var2 = sw2Var instanceof em2 ? (em2) sw2Var : null;
-                if (em2Var2 == null) {
-                    break;
-                }
-                i2++;
-            }
-            em2 em2Var3 = this;
-            while (true) {
-                sw2 sw2Var2 = em2Var3.a;
-                em2Var3 = sw2Var2 instanceof em2 ? (em2) sw2Var2 : null;
-                if (em2Var3 == null) {
-                    break;
-                }
-                i++;
-            }
-            if (i2 == i) {
-                while (true) {
-                    qw2 qw2Var = this.b;
-                    if (!rp5.a(em2Var.get(qw2Var.getKey()), qw2Var)) {
-                        z = false;
-                        break;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.N1) {
+            case 1:
+                super.invalidate();
+                this.P1.F[this.O1 - 1].invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.N1) {
+            case 0:
+                EditTextBoldCursor[] editTextBoldCursorArr = this.P1.F;
+                if (getAlpha() == 1.0f && motionEvent.getAction() == 0) {
+                    int i = this.O1 + 1;
+                    if (editTextBoldCursorArr[i].isFocused()) {
+                        hl.E3(editTextBoldCursorArr[i]);
+                    } else {
+                        editTextBoldCursorArr[i].requestFocus();
                     }
-                    sw2 sw2Var3 = this.a;
-                    if (!(sw2Var3 instanceof em2)) {
-                        sw2Var3.getClass();
-                        qw2 qw2Var2 = (qw2) sw2Var3;
-                        z = rp5.a(em2Var.get(qw2Var2.getKey()), qw2Var2);
-                        break;
-                    }
-                    this = (em2) sw2Var3;
                 }
-                if (z) {
-                    return true;
+                return false;
+            default:
+                if (getAlpha() != 1.0f) {
+                    return false;
                 }
-            }
+                if (isFocused()) {
+                    hl.E3(this);
+                    return super.onTouchEvent(motionEvent);
+                }
+                requestFocus();
+                return false;
         }
-        return false;
-    }
-
-    @Override // sw2
-    public final Object fold(Object obj, eq4 eq4Var) {
-        return eq4Var.invoke(this.a.fold(obj, eq4Var), this.b);
-    }
-
-    @Override // sw2
-    public final qw2 get(rw2 rw2Var) {
-        rw2Var.getClass();
-        while (true) {
-            qw2 qw2Var = this.b.get(rw2Var);
-            if (qw2Var != null) {
-                return qw2Var;
-            }
-            sw2 sw2Var = this.a;
-            if (!(sw2Var instanceof em2)) {
-                return sw2Var.get(rw2Var);
-            }
-            this = (em2) sw2Var;
-        }
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + this.a.hashCode();
-    }
-
-    @Override // sw2
-    public final sw2 minusKey(rw2 rw2Var) {
-        rw2Var.getClass();
-        qw2 qw2Var = this.b;
-        qw2 qw2Var2 = qw2Var.get(rw2Var);
-        sw2 sw2Var = this.a;
-        if (qw2Var2 != null) {
-            return sw2Var;
-        }
-        sw2 minusKey = sw2Var.minusKey(rw2Var);
-        return minusKey == sw2Var ? this : minusKey == z14.a ? qw2Var : new em2(qw2Var, minusKey);
-    }
-
-    @Override // sw2
-    public final sw2 plus(sw2 sw2Var) {
-        sw2Var.getClass();
-        return sw2Var == z14.a ? this : (sw2) sw2Var.fold(this, new dm2((byte) 1));
-    }
-
-    public final String toString() {
-        return "[" + ((String) fold("", new dm2((byte) 0))) + ']';
     }
 }

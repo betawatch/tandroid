@@ -1,34 +1,21 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class j12 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ s12 b;
+public final class j12 extends rq4 {
+    public final n12 L;
 
-    public /* synthetic */ j12(s12 s12Var, byte b) {
-        this.a = b;
-        this.b = s12Var;
+    public j12(n12 n12Var, vnb vnbVar, Context context) {
+        super(context, vnbVar);
+        this.L = n12Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        s12 s12Var = this.b;
-        switch (b) {
-            case 0:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                gw0 gw0Var = s12Var.n;
-                if (gw0Var.getWebView() != null) {
-                    gw0Var.getWebView().setScrollY(intValue);
-                    break;
-                }
-                break;
-            default:
-                s12Var.J.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-        }
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.L.d1(this.r, true);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

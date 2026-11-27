@@ -1,38 +1,47 @@
 // default package
 
-import j$.util.Objects;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r30 {
-    public final fm4 a;
-    public final im5 b;
-    public final aob c;
-    public final rx6 d;
+public final class r30 extends d4 {
+    public int f;
+    public byte h;
+    public long n;
 
-    public r30(c5a c5aVar) {
-        this.a = (fm4) c5aVar.b;
-        this.b = (im5) c5aVar.c;
-        this.c = (aob) c5aVar.d;
-        this.d = (rx6) c5aVar.e;
+    @Override // b2, qy0
+    public final void getBox(WritableByteChannel writableByteChannel) {
+        writableByteChannel.write(d());
+        ByteBuffer allocate = ByteBuffer.allocate(28);
+        allocate.position(6);
+        aqe.d(1, allocate);
+        aqe.d(0, allocate);
+        aqe.d(0, allocate);
+        allocate.putInt(0);
+        aqe.d(this.f, allocate);
+        aqe.d(this.h, allocate);
+        aqe.d(0, allocate);
+        aqe.d(0, allocate);
+        boolean equals = this.e.equals("mlpa");
+        long j = this.n;
+        if (equals) {
+            allocate.putInt((int) j);
+        } else {
+            allocate.putInt((int) (j << 16));
+        }
+        writableByteChannel.write((ByteBuffer) allocate.rewind());
+        c(writableByteChannel);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof r30)) {
-            return false;
-        }
-        r30 r30Var = (r30) obj;
-        return this.a.equals(r30Var.a) && Objects.equals(this.b, r30Var.b) && this.c.equals(r30Var.c) && Objects.equals(this.d, r30Var.d);
+    @Override // b2, qy0
+    public final long getSize() {
+        long b = b();
+        return 28 + b + (b + 36 >= 4294967296L ? 16 : 8);
     }
 
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 961;
-        im5 im5Var = this.b;
-        int hashCode2 = (this.c.hashCode() + ((hashCode + (im5Var == null ? 0 : im5Var.hashCode())) * 31)) * 31;
-        rx6 rx6Var = this.d;
-        return hashCode2 + (rx6Var != null ? rx6Var.hashCode() : 0);
+    @Override // zg0
+    public final String toString() {
+        return "AudioSampleEntry{bytesPerSample=0, bytesPerFrame=0, bytesPerPacket=0, samplesPerPacket=0, packetSize=0, compressionId=0, soundVersion=0, sampleRate=" + this.n + ", sampleSize=" + ((int) this.h) + ", channelCount=" + this.f + ", boxes=" + this.b + '}';
     }
 }

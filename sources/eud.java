@@ -1,35 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class eud extends zud {
-    public final int d;
+public final class eud {
+    public final std a;
+    public final Integer b;
+    public final kue c;
 
-    public eud(int i, byte[] bArr) {
-        super(bArr);
-        zud.k(0, i, bArr.length);
-        this.d = i;
-    }
-
-    @Override // zud
-    public final byte h(int i) {
-        int i2 = this.d;
-        if (((i2 - (i + 1)) | i) >= 0) {
-            return this.b[i];
-        }
-        if (i < 0) {
-            throw new ArrayIndexOutOfBoundsException(de9.k(i, "Index < 0: "));
-        }
-        throw new ArrayIndexOutOfBoundsException(b00.g(i, i2, "Index > length: ", ", "));
-    }
-
-    @Override // zud
-    public final byte i(int i) {
-        return this.b[i];
-    }
-
-    @Override // zud
-    public final int j() {
-        return this.d;
+    public /* synthetic */ eud(htd htdVar) {
+        this.a = (std) htdVar.b;
+        this.b = (Integer) htdVar.c;
+        this.c = (kue) htdVar.d;
     }
 }

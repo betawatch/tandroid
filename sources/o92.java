@@ -1,71 +1,36 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class o92 implements alb {
-    public final /* synthetic */ byte a;
+public final class o92 implements h56 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ v92 b;
 
-    public /* synthetic */ o92(d dVar, byte b) {
-        this.a = b;
+    public o92(v92 v92Var, Context context) {
+        this.b = v92Var;
+        this.a = context;
     }
 
-    @Override // alb
-    public final void a(float f) {
-        byte b = this.a;
+    @Override // h56
+    public final void d() {
+        this.b.c0(true);
     }
 
-    @Override // alb
+    @Override // h56
+    public final void f() {
+        v92 v92Var = this.b;
+        bt5 bt5Var = new bt5(this.a, v92Var.m0, v92Var.Z, v92Var.p0, v92Var, v92Var.a0, true, xc2.T(v92Var.Y));
+        v92Var.q0 = bt5Var;
+        bt5Var.show();
+    }
+
+    @Override // h56
     public final void b() {
-        byte b = this.a;
     }
 
-    private final void c() {
-    }
-
-    private final void d() {
-    }
-
-    private final void e() {
-    }
-
-    private final void f() {
-    }
-
-    private final void g() {
-    }
-
-    private final void h() {
-    }
-
-    private final void i() {
-    }
-
-    private final void j() {
-    }
-
-    private final void k(float f) {
-    }
-
-    private final void l(float f) {
-    }
-
-    private final void m(float f) {
-    }
-
-    private final void n(float f) {
-    }
-
-    private final void o(float f) {
-    }
-
-    private final void p(float f) {
-    }
-
-    private final void q(float f) {
-    }
-
-    private final void r(float f) {
+    @Override // h56
+    public final void h() {
     }
 }

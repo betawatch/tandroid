@@ -1,43 +1,28 @@
 // default package
 
-import java.util.Arrays;
+import android.os.Build;
+import android.webkit.WebView;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x2f {
-    public final String a;
-    public final String b;
-    public final boolean c;
-
-    public x2f(String str, String str2, boolean z) {
-        fre.f(str);
-        this.a = str;
-        fre.f(str2);
-        this.b = str2;
-        this.c = z;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public abstract class x2f {
+    public static InvocationHandler a() {
+        ClassLoader classLoader;
+        if (Build.VERSION.SDK_INT >= 28) {
+            classLoader = go.v();
+        } else {
+            try {
+                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
+                declaredMethod.setAccessible(true);
+                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
+            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                grb.m(e);
+                return null;
+            }
         }
-        if (!(obj instanceof x2f)) {
-            return false;
-        }
-        x2f x2fVar = (x2f) obj;
-        return cqe.a(this.a, x2fVar.a) && cqe.a(this.b, x2fVar.b) && cqe.a(null, null) && this.c == x2fVar.c;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, 4225, Boolean.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        String str = this.a;
-        if (str != null) {
-            return str;
-        }
-        fre.h(null);
-        throw null;
+        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
     }
 }

@@ -5,15 +5,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzku {
-    private List zza = c24.a;
+    private List zza = x24.a;
 
     public final long zza(long[] jArr) {
         ArrayList arrayList;
         List list = this.zza;
-        List g = ss.g(jArr);
+        List g = ts.g(jArr);
         list.getClass();
         if (g instanceof Collection) {
             List list2 = g;
@@ -22,11 +22,11 @@ public final class zzku {
             arrayList.addAll(list2);
         } else {
             arrayList = new ArrayList(list);
-            el2.d(g, arrayList);
+            yl2.d(g, arrayList);
         }
         Iterator it = arrayList.iterator();
         if (!it.hasNext()) {
-            fyb.i("Empty collection can't be reduced.");
+            qyc.c("Empty collection can't be reduced.");
             return 0L;
         }
         Object next = it.next();
@@ -37,6 +37,6 @@ public final class zzku {
     }
 
     public final void zzb(long[] jArr) {
-        this.zza = ss.g(jArr);
+        this.zza = ts.g(jArr);
     }
 }

@@ -1,20 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cj2 extends tg6 {
-    public final /* synthetic */ byte g;
-    public String h;
+import android.view.View;
 
-    @Override // tg6
-    public final void a(ild ildVar) {
-        switch (this.g) {
-            case 0:
-                ildVar.c(this);
-                break;
-            default:
-                ildVar.q(this);
-                break;
-        }
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface cj2 {
+    void D1(View view, float f, float f2);
+
+    void I(float f, float f2);
+
+    boolean T0(float f, float f2);
+
+    boolean W0(View view, float f, float f2);
+
+    boolean Y1();
+
+    boolean e0();
+
+    long getLongPressDuration();
+
+    void j(View view, float f, float f2);
+
+    void n(float f, float f2);
+
+    void p0();
+
+    void s(View view, float f, float f2);
+
+    void x0();
 }

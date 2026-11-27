@@ -1,36 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class maf extends vef {
-    private static final maf zzb;
-    private int zzd;
-    private String zze = "";
-
-    static {
-        maf mafVar = new maf();
-        zzb = mafVar;
-        vef.e(maf.class, mafVar);
-    }
-
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+public final class maf extends v3d implements raf {
+    public final kaf Z(br7 br7Var, zaf zafVar) {
+        kaf kafVar;
+        Parcel R = R();
+        int i = mld.a;
+        R.writeStrongBinder(br7Var);
+        R.writeInt(1);
+        zafVar.writeToParcel(R, 0);
+        Parcel T = T(R, 1);
+        IBinder readStrongBinder = T.readStrongBinder();
+        if (readStrongBinder == null) {
+            kafVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabeler");
+            kafVar = queryLocalInterface instanceof kaf ? (kaf) queryLocalInterface : new kaf(readStrongBinder, "com.google.mlkit.vision.label.aidls.IImageLabeler", (byte) 7);
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001ဈ\u0000", new Object[]{"zzd", "zze"});
-        }
-        if (i2 == 3) {
-            return new maf();
-        }
-        if (i2 == 4) {
-            return new v8f(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        T.recycle();
+        return kafVar;
     }
 }

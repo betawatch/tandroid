@@ -1,36 +1,31 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.WindowInsets;
+import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ew0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ iv0 c;
-    public final /* synthetic */ ow0 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ew0 implements View.OnApplyWindowInsetsListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public ew0(ow0 ow0Var, int i, int i2, iv0 iv0Var) {
-        this.d = ow0Var;
-        this.a = i;
-        this.b = i2;
-        this.c = iv0Var;
+    public /* synthetic */ ew0(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f = bm2.f(1.0f, this.a, this.b);
-        ow0 ow0Var = this.d;
-        ow0Var.S = f;
-        ow0Var.h();
-        nw0 nw0Var = ow0Var.f;
-        nw0Var.invalidate();
-        lw0 lw0Var = ow0Var.Y;
-        lw0Var.setBackgroundColor(ow0Var.S);
-        iv0 iv0Var = this.c;
-        iv0Var.b(lw0Var, 1.0f);
-        ow0Var.a = iv0Var.a(bkb.yj);
-        nw0Var.invalidate();
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                return ((xw0) obj).r(view, windowInsets);
+            case 1:
+                return ((nx0) obj).V(windowInsets);
+            default:
+                return ((SecretMediaViewer) obj).f(windowInsets);
+        }
     }
 }

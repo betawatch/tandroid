@@ -1,36 +1,40 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import android.net.Uri;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ja6 extends nfa {
-    public final /* synthetic */ qa6 x2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ja6 {
+    public static final AtomicLong h = new AtomicLong();
+    public final long a;
+    public final n73 b;
+    public final Uri c;
+    public final Map d;
+    public final long e;
+    public final long f;
+    public final long g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ja6(qa6 qa6Var, Context context, ffa ffaVar, qa6 qa6Var2, ia6 ia6Var, wjb wjbVar) {
-        super(context, 0L, ffaVar, 0, null, null, null, 8, 0, qa6Var2, ia6Var, 0, wjbVar, null);
-        this.x2 = qa6Var;
+    public ja6(ia6 ia6Var) {
+        this.a = ia6Var.a;
+        this.b = ia6Var.b;
+        this.c = ia6Var.d;
+        this.d = ia6Var.e;
+        this.e = ia6Var.c;
+        this.f = ia6Var.f;
+        this.g = ia6Var.g;
     }
 
-    @Override // nfa
-    public final boolean H() {
-        return true;
-    }
-
-    @Override // nfa
-    public final int I0() {
-        return 32;
-    }
-
-    @Override // nfa
-    public final int Z0() {
-        return 3;
-    }
-
-    @Override // nfa
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.x2.T0;
+    public final ia6 a() {
+        ia6 ia6Var = new ia6();
+        ia6Var.a = this.a;
+        ia6Var.b = this.b;
+        ia6Var.d = this.c;
+        ia6Var.e = this.d;
+        ia6Var.c = this.e;
+        ia6Var.f = this.f;
+        ia6Var.g = this.g;
+        return ia6Var;
     }
 }

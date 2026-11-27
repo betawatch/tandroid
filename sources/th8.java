@@ -1,32 +1,131 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class th8 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ xh8 b;
+public final class th8 extends zh8 {
+    public final /* synthetic */ uh8 G;
 
-    public /* synthetic */ th8(xh8 xh8Var, byte b) {
-        this.a = b;
-        this.b = xh8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public th8(uh8 uh8Var, Context context, int i, am7 am7Var) {
+        super(context, i, am7Var, null);
+        this.G = uh8Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        xh8 xh8Var = this.b;
-        switch (b) {
-            case 0:
-                xh8Var.B2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xh8Var.c.invalidate();
-                break;
-            default:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xh8Var.I2.getLayoutParams().height = gl.U1(floatValue, xh8Var.J2[0].getHeight(), xh8Var.J2[1].getHeight());
-                xh8Var.I2.requestLayout();
-                break;
+    @Override // zh8
+    public final boolean f() {
+        wh8 wh8Var = this.G.d;
+        qob qobVar = wh8Var.c;
+        View G = qobVar.G(this);
+        f89 U = G == null ? null : qobVar.U(G);
+        if (U != null) {
+            int b = U.b();
+            int i = wh8Var.E;
+            if (i == wh8Var.n && b == (wh8Var.o0 + i) - 1) {
+                return false;
+            }
         }
+        return true;
+    }
+
+    @Override // zh8
+    public final boolean g(zh8 zh8Var) {
+        int b;
+        wh8 wh8Var = this.G.d;
+        qob qobVar = wh8Var.c;
+        View G = qobVar.G(zh8Var);
+        f89 U = G == null ? null : qobVar.U(G);
+        if (U == null || (b = U.b()) == -1) {
+            return false;
+        }
+        return wh8Var.x[b - wh8Var.o0];
+    }
+
+    @Override // zh8
+    public final void h(qy qyVar, ActionMode actionMode) {
+        if (qyVar.isFocused() && qyVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) != null) {
+                zu1.E6(menu, this.G.d.f.h, false, true, true, true);
+            }
+        }
+    }
+
+    @Override // zh8
+    public final void i(zh8 zh8Var, boolean z) {
+        int b;
+        wh8 wh8Var = this.G.d;
+        wh8Var.c.getChildCount();
+        if (z && wh8Var.M) {
+            Arrays.fill(wh8Var.x, false);
+            for (int i = wh8Var.o0; i < wh8Var.o0 + wh8Var.E; i++) {
+                f89 L = wh8Var.c.L(i);
+                if (L != null) {
+                    View view = L.a;
+                    if (view instanceof zh8) {
+                        ((zh8) view).r.a(false, true);
+                    }
+                }
+            }
+        }
+        super.i(zh8Var, z);
+        qob qobVar = wh8Var.c;
+        View G = qobVar.G(zh8Var);
+        f89 U = G == null ? null : qobVar.U(G);
+        if (U != null && (b = U.b()) != -1) {
+            wh8Var.x[b - wh8Var.o0] = z;
+        }
+        wh8Var.j0();
+    }
+
+    @Override // zh8
+    public final void j(boolean z) {
+        this.G.d.n0(this, z);
+    }
+
+    @Override // zh8
+    public final void k(zh8 zh8Var) {
+        this.G.d.o0(zh8Var);
+    }
+
+    @Override // zh8
+    public final boolean m(ArrayList arrayList) {
+        wh8 wh8Var = this.G.d;
+        if (!arrayList.isEmpty()) {
+            wh8Var.c.getClass();
+            int S = RecyclerView.S(this) - wh8Var.o0;
+            if (S >= 0) {
+                qy qyVar = this.d;
+                qyVar.getText().replace(qyVar.getSelectionStart(), qyVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i = S + 1;
+                while (!arrayList.isEmpty() && i < wh8Var.n) {
+                    for (int length = wh8Var.w.length - 1; length > i; length--) {
+                        CharSequence[] charSequenceArr = wh8Var.w;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    wh8Var.w[i] = (CharSequence) arrayList.remove(0);
+                    wh8Var.E++;
+                    i++;
+                }
+                wh8Var.u0();
+                wh8Var.h0 = (wh8Var.o0 + i) - 1;
+                wh8Var.b.f();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // zh8
+    public final boolean p() {
+        return this.G.d.M;
     }
 }

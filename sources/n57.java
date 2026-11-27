@@ -1,67 +1,136 @@
 // default package
 
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class n57 implements Runnable {
-    public final /* synthetic */ byte a = 2;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class n57 extends Drawable {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    public /* synthetic */ n57(na7 na7Var, long j, long j2, ArrayList arrayList) {
-        this.b = na7Var;
-        this.d = j;
-        this.e = j2;
-        this.c = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        na7 na7Var = this.b;
+    public n57(byte b) {
+        this.a = b;
         switch (b) {
-            case 0:
-                ad7 messagesStorage = na7Var.getMessagesStorage();
-                int i = (int) this.e;
-                long j = this.d;
-                ArrayList arrayList = this.c;
-                na7Var.getMessagesStorage().O1(j, -j, arrayList, messagesStorage.M0(j, arrayList, false, true, 5, i));
-                break;
             case 1:
-                na7 na7Var2 = this.b;
-                ArrayList arrayList2 = this.c;
-                long j2 = this.d;
-                gl.c3(new m57(na7Var2, arrayList2, j2, (byte) 1));
-                ad7 messagesStorage2 = na7Var2.getMessagesStorage();
-                long j3 = this.e;
-                messagesStorage2.D(arrayList2, j3);
-                na7Var2.getMessagesStorage().O1(j3, j2, arrayList2, na7Var2.getMessagesStorage().M0(j3, arrayList2, false, true, 0, 0));
-                break;
-            default:
-                pub pubVar = na7Var.getMessagesController().g4;
-                long j4 = this.d;
-                long j5 = this.e;
-                pubVar.B(0, j4, j5, false);
-                na7Var.getMessagesStorage().e2(0, j4, j5, false);
-                na7Var.getNotificationCenter().k(kk7.b5, Long.valueOf(j4), Long.valueOf(j5), 0, this.c);
+                this.c = new Paint(1);
+                Paint paint = new Paint(1);
+                this.d = paint;
+                this.e = new Matrix();
+                paint.setStyle(Paint.Style.STROKE);
+                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, hl.L(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
                 break;
         }
     }
 
-    public /* synthetic */ n57(na7 na7Var, long j, ArrayList arrayList, long j2) {
-        this.b = na7Var;
-        this.d = j;
-        this.c = arrayList;
-        this.e = j2;
+    public final void b(int i, int i2) {
+        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, hl.L(28.0f), new int[]{i, i2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
-    public /* synthetic */ n57(na7 na7Var, ArrayList arrayList, long j, long j2) {
-        this.b = na7Var;
-        this.c = arrayList;
-        this.d = j;
-        this.e = j2;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                b29 b29Var = (b29) this.d;
+                b29 b29Var2 = (b29) this.c;
+                Rect rect = hl.Q;
+                rect.set(getBounds().centerX() - hl.L(12.0f), getBounds().centerY() - hl.L(12.0f), hl.L(12.0f) + getBounds().centerX(), hl.L(12.0f) + getBounds().centerY());
+                if (((b29) this.e).v()) {
+                    b29 b29Var3 = (b29) this.e;
+                    boolean z = this.b;
+                    if (b29Var3 != (z ? b29Var2 : b29Var)) {
+                        if (z) {
+                            b29Var = b29Var2;
+                        }
+                        this.e = b29Var;
+                        b29Var.H(b29Var.e[0] - 1);
+                    }
+                }
+                ((b29) this.e).setBounds(rect);
+                ((b29) this.e).draw(canvas);
+                break;
+            default:
+                Paint paint = (Paint) this.d;
+                float L = hl.L(10.0f);
+                RectF rectF = hl.P;
+                rectF.set(getBounds());
+                Matrix matrix = (Matrix) this.e;
+                matrix.reset();
+                matrix.postTranslate(rectF.left, rectF.top);
+                canvas.drawRoundRect(rectF, L, L, (Paint) this.c);
+                if (this.b) {
+                    float L2 = hl.L(1.0f);
+                    paint.setStrokeWidth(L2);
+                    matrix.reset();
+                    matrix.postTranslate(rectF.left, rectF.top);
+                    float f = L2 / 2.0f;
+                    rectF.inset(f, f);
+                    canvas.drawRoundRect(rectF, L, L, paint);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return hl.L(24.0f);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return hl.L(24.0f);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        byte b = this.a;
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        switch (this.a) {
+            case 0:
+                ((b29) this.c).setAlpha(i);
+                ((b29) this.d).setAlpha(i);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((b29) this.c).setColorFilter(colorFilter);
+                ((b29) this.d).setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    private final void a(int i) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
     }
 }

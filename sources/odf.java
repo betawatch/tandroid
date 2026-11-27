@@ -1,6 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class odf {
+public final class odf extends ljf {
+    private static final odf zzb;
+    private int zzd;
+    private int zze;
+    private String zzf = "";
+
+    static {
+        odf odfVar = new odf();
+        zzb = odfVar;
+        ljf.e(odf.class, odfVar);
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
+        }
+        if (i2 == 3) {
+            return new odf();
+        }
+        if (i2 == 4) {
+            return new mdf(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
+    }
 }

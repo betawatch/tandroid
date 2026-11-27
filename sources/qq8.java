@@ -1,41 +1,118 @@
 // default package
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qq8 extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final class qq8 extends n1a {
+    public final /* synthetic */ d1a[] f2;
+    public final /* synthetic */ ProfileActivity g2;
 
-    static {
-        b4c.h(new qq8());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qq8(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i, vnb vnbVar, int i2, d1a[] d1aVarArr) {
+        super(profileActivity2, activity, true, num, i, true, vnbVar, i2);
+        this.g2 = profileActivity;
+        this.f2 = d1aVarArr;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        l46 l46Var = (l46) view;
-        l46Var.setGravity(c4cVar.A);
-        Object obj = c4cVar.I;
-        if (obj instanceof Integer) {
-            int intValue = ((Integer) obj).intValue();
-            Object obj2 = c4cVar.H;
-            zkb.X(l46Var, intValue, obj2 instanceof wjb ? (wjb) obj2 : null);
-        } else {
-            ykb ykbVar = zkb.a;
-            l46Var.setTag(R.id.theme_bind, null);
-            l46Var.setTextColor((int) c4cVar.C);
+    @Override // n1a
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        int i;
+        if (tL_starGiftUnique == null) {
+            return true;
         }
-        l46Var.setTextSize(1, c4cVar.B);
-        l46Var.setTypeface(c4cVar.r ? gl.o() : null);
-        int i = c4cVar.i;
-        l46Var.setPadding(i, 0, i, c4cVar.k);
-        l46Var.setText(c4cVar.m);
+        i = ((e) this.g2).currentAccount;
+        return jxa.v(i, false).k(tL_starGiftUnique.id) == null || uc7.e1().getInt("statusgiftpage", 0) >= 2;
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new s11(context, null, (byte) 7);
+    @Override // n1a
+    public final long getDialogId() {
+        return this.g2.a();
+    }
+
+    @Override // n1a
+    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        TLRPC.EmojiStatus emojiStatus;
+        int i;
+        int i2;
+        int i3;
+        d1a[] d1aVarArr = this.f2;
+        ProfileActivity profileActivity = this.g2;
+        if (tL_starGiftUnique != null) {
+            i = ((e) profileActivity).currentAccount;
+            TL_stars.SavedStarGift k = jxa.v(i, false).k(tL_starGiftUnique.id);
+            if (k != null && uc7.e1().getInt("statusgiftpage", 0) < 2) {
+                uc7.e1().edit().putInt("statusgiftpage", uc7.e1().getInt("statusgiftpage", 0) + 1).apply();
+                Context context = getContext();
+                i2 = ((e) profileActivity).currentAccount;
+                i3 = ((e) profileActivity).currentAccount;
+                wua wuaVar = new wua(context, i2, yac.h(i3).e(), profileActivity.A0, null);
+                wuaVar.o2(k, null);
+                wuaVar.t2();
+                wuaVar.show();
+                d1a d1aVar = d1aVarArr[0];
+                if (d1aVar != null) {
+                    profileActivity.T5 = null;
+                    d1aVar.dismiss();
+                    return;
+                }
+                return;
+            }
+            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
+            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
+            emojiStatus = tL_inputEmojiStatusCollectible;
+            if (num != null) {
+                tL_inputEmojiStatusCollectible.flags |= 1;
+                tL_inputEmojiStatusCollectible.until = num.intValue();
+                emojiStatus = tL_inputEmojiStatusCollectible;
+            }
+        } else if (l == null) {
+            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
+        } else {
+            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+            tL_emojiStatus.document_id = l.longValue();
+            emojiStatus = tL_emojiStatus;
+            if (num != null) {
+                tL_emojiStatus.flags |= 1;
+                tL_emojiStatus.until = num.intValue();
+                emojiStatus = tL_emojiStatus;
+            }
+        }
+        profileActivity.F = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
+        uc7 messagesController = profileActivity.getMessagesController();
+        TLRPC.Chat chat = profileActivity.F2;
+        messagesController.u5(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
+        ul ulVar = profileActivity.G;
+        if (ulVar != null) {
+            if (l != null) {
+                ulVar.j(l.longValue(), true);
+            } else if (profileActivity.F2 == null) {
+                ulVar.g(profileActivity.i2(), true);
+            } else {
+                ulVar.g(null, true);
+            }
+            profileActivity.G.m(tL_starGiftUnique != null, true);
+        }
+        if (l != null) {
+            zm zmVar = profileActivity.e0;
+            w49 w49Var = new w49();
+            long longValue = l.longValue();
+            w49Var.g = longValue;
+            w49Var.h = longValue;
+            zmVar.a(w49Var);
+        }
+        profileActivity.M3();
+        profileActivity.O3();
+        d1a d1aVar2 = d1aVarArr[0];
+        if (d1aVar2 != null) {
+            profileActivity.T5 = null;
+            d1aVar2.dismiss();
+        }
     }
 }

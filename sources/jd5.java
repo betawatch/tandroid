@@ -1,36 +1,45 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jd5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ float[] a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ kd5 e;
+public final class jd5 implements TextWatcher {
+    public final /* synthetic */ kd5 a;
 
-    public jd5(kd5 kd5Var, float[] fArr, float f, float f2, boolean z) {
-        this.e = kd5Var;
-        this.a = fArr;
-        this.b = f;
-        this.c = f2;
-        this.d = z;
+    public jd5(kd5 kd5Var) {
+        this.a = kd5Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        float[] fArr = this.a;
-        float f = 1.0f - fArr[0];
-        fArr[0] = 1.0f;
-        this.e.a.b.l = gl.R1(this.b, this.c, 1.0f);
-        uq4 uq4Var = this.e.a.b;
-        uq4Var.f = (f * 360.0f * (this.d ? 1 : -1)) + uq4Var.f;
-        this.e.a.b.b();
-        kd5 kd5Var = this.e;
-        kd5Var.a(kd5Var.a.b.l);
-        this.e.a.j(750L);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String trim = editable.toString().trim();
+        kd5 kd5Var = this.a;
+        nd5 nd5Var = kd5Var.h;
+        if (kd5Var.c != 0) {
+            nd5Var.getConnectionsManager().cancelRequest(kd5Var.c, true);
+            kd5Var.c = 0;
+        }
+        se4 se4Var = kd5Var.d;
+        if (se4Var != null) {
+            hl.r(se4Var);
+        }
+        kd5Var.e = null;
+        if (trim.isEmpty()) {
+            nd5Var.h0(null);
+            return;
+        }
+        se4 se4Var2 = new se4(this, trim, (byte) 27);
+        kd5Var.d = se4Var2;
+        hl.d3(se4Var2, 300L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

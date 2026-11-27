@@ -1,30 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class aqc extends FrameLayout {
-    public final /* synthetic */ cqc a;
+public final class aqc implements TextWatcher {
+    public final /* synthetic */ String[] a;
+    public final /* synthetic */ vlc b;
+    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ a84 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aqc(cqc cqcVar, Context context) {
-        super(context);
-        this.a = cqcVar;
+    public aqc(String[] strArr, vlc vlcVar, Runnable[] runnableArr, a84 a84Var) {
+        this.a = strArr;
+        this.b = vlcVar;
+        this.c = runnableArr;
+        this.d = a84Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(-getLeft(), -getTop());
-        spc spcVar = this.a.j;
-        spcVar.p(canvas);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        if (spcVar.q()) {
-            postInvalidateOnAnimation();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a[0] = editable.toString();
+        this.b.run();
+        Runnable[] runnableArr = this.c;
+        Runnable runnable = runnableArr[0];
+        if (runnable != null) {
+            runnable.run();
+            runnableArr[0] = null;
         }
+        a84 a84Var = this.d;
+        hl.r(a84Var);
+        hl.d3(a84Var, 1000L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

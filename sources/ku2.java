@@ -1,43 +1,51 @@
 // default package
 
-import java.util.HashMap;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ku2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qu2 b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ HashMap d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ku2 implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    public /* synthetic */ ku2(qu2 qu2Var, HashMap hashMap, HashMap hashMap2, byte b) {
-        this.a = b;
-        this.b = qu2Var;
-        this.c = hashMap;
-        this.d = hashMap2;
+    public ku2(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                qu2 qu2Var = this.b;
-                Utilities.e.c(new ku2(qu2Var, this.c, this.d, (byte) 1));
-                if (!qu2Var.e) {
-                    qu2Var.e = true;
-                    ad7 messagesStorage = qu2Var.getMessagesStorage();
-                    messagesStorage.a.c(new cc7(messagesStorage, false, (byte) 0));
-                    break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
+                return;
+            }
+            int intValue = Utilities.z(obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            } else if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            } else {
+                if (obj.equals(String.valueOf(intValue))) {
+                    return;
                 }
-                break;
-            default:
-                qu2 qu2Var2 = this.b;
-                HashMap hashMap = this.c;
-                HashMap hashMap2 = this.d;
-                qu2Var2.l0 = hashMap;
-                qu2Var2.m0 = hashMap2;
-                break;
+                editTextBoldCursor.setText(String.valueOf(intValue));
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

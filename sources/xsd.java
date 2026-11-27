@@ -1,19 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xsd implements zn7 {
-    public static final xsd a = new xsd();
+import android.net.ConnectivityManager;
+import android.net.LinkProperties;
+import android.net.Network;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class xsd extends ConnectivityManager.NetworkCallback {
+    public final /* synthetic */ etd a;
+
+    public xsd(etd etdVar) {
+        this.a = etdVar;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
+        this.a.a(network, linkProperties);
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLost(Network network) {
+        etd etdVar = this.a;
+        synchronized (etdVar.h) {
+            if (etdVar.d == null || etdVar.e == null) {
+                return;
+            }
+            etd.j.b("the network is lost", new Object[0]);
+            if (etdVar.e.remove(network)) {
+                etdVar.d.remove(network);
+            }
+            etdVar.b();
         }
-        throw null;
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onUnavailable() {
+        etd etdVar = this.a;
+        synchronized (etdVar.h) {
+            if (etdVar.d == null || etdVar.e == null) {
+                return;
+            }
+            etd.j.b("all networks are unavailable.", new Object[0]);
+            etdVar.d.clear();
+            etdVar.e.clear();
+            etdVar.b();
+        }
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onAvailable(Network network) {
     }
 }

@@ -1,83 +1,112 @@
 // default package
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ow1 extends ky1 {
-    public final /* synthetic */ byte y0 = 0;
-    public final /* synthetic */ ChatActivityEnterView z0;
+public final class ow1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ow1(ChatActivityEnterView chatActivityEnterView, Context context, wjb wjbVar) {
-        super(R.drawable.input_done, wjbVar, context, true);
-        this.z0 = chatActivityEnterView;
+    public /* synthetic */ ow1(ChatActivityEnterView chatActivityEnterView, boolean z, byte b) {
+        this.a = b;
+        this.c = chatActivityEnterView;
+        this.b = z;
     }
 
-    @Override // ky1
-    public final boolean b() {
-        switch (this.y0) {
-            case 0:
-                return this.z0.c();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                this.b = true;
+                break;
+            case 3:
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                if (animator.equals(chatActivityEnterView.h3)) {
+                    chatActivityEnterView.h3 = null;
+                    break;
+                }
+                break;
             default:
-                return super.b();
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // ky1
-    public final boolean c() {
-        byte b = this.y0;
-        ChatActivityEnterView chatActivityEnterView = this.z0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        cx1 cx1Var;
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.c;
         switch (b) {
             case 0:
-                return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
+                chatActivityEnterView.x0 = this.b ? 1.0f : 0.0f;
+                my1 my1Var = chatActivityEnterView.V0;
+                if (my1Var != null) {
+                    my1Var.Y();
+                    break;
+                }
+                break;
+            case 1:
+                if (chatActivityEnterView.T7) {
+                    chatActivityEnterView.l2.setVisibility(this.b ? 0 : 8);
+                    break;
+                }
+                break;
+            case 2:
+                if (!this.b) {
+                    int i = ChatActivityEnterView.X7;
+                    chatActivityEnterView.s(1.0f);
+                }
+                chatActivityEnterView.R0.setRotation(0.0f);
+                chatActivityEnterView.X5 = false;
+                ez1 ez1Var = chatActivityEnterView.Z0;
+                if (ez1Var != null) {
+                    ez1Var.setScaleX(1.0f);
+                    chatActivityEnterView.Z0.setScaleY(1.0f);
+                }
+                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.C2;
+                if (recordCircle != null) {
+                    recordCircle.P = false;
+                    recordCircle.invalidate();
+                }
+                mva mvaVar = chatActivityEnterView.L5;
+                if (mvaVar != null) {
+                    mvaVar.a();
+                }
+                Bitmap bitmap = chatActivityEnterView.O5;
+                if (bitmap != null) {
+                    bitmap.recycle();
+                    chatActivityEnterView.O5 = null;
+                    break;
+                }
+                break;
+            case 3:
+                if (animator.equals(chatActivityEnterView.h3)) {
+                    chatActivityEnterView.e2.setVisibility(8);
+                    if (this.b && (cx1Var = chatActivityEnterView.y2) != null) {
+                        cx1Var.setVisibility(8);
+                    }
+                    chatActivityEnterView.h3 = null;
+                    break;
+                }
+                break;
             default:
-                return !chatActivityEnterView.g4;
-        }
-    }
-
-    @Override // ky1
-    public final boolean d() {
-        switch (this.y0) {
-            case 0:
-                j47 j47Var = this.z0.M0;
-                if ((j47Var == null || j47Var.u0) && this.w <= 0) {
+                chatActivityEnterView.B2 = null;
+                if (!this.b) {
+                    chatActivityEnterView.y2.setVisibility(8);
+                    break;
                 }
                 break;
         }
-        return true;
     }
 
-    @Override // ky1
-    public final boolean j() {
-        switch (this.y0) {
-            case 0:
-                return this.z0.X5;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        switch (this.y0) {
-            case 0:
-                super.setAlpha(f);
-                int i = ChatActivityEnterView.r7;
-                this.z0.f2();
-                break;
-            default:
-                super.setAlpha(f);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ow1(ChatActivityEnterView chatActivityEnterView, Activity activity, int i, wjb wjbVar) {
-        super(i, wjbVar, activity, true);
-        this.z0 = chatActivityEnterView;
+    public ow1(ChatActivityEnterView chatActivityEnterView) {
+        this.a = (byte) 2;
+        this.c = chatActivityEnterView;
     }
 }

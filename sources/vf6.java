@@ -1,354 +1,277 @@
 // default package
 
-import java.util.Arrays;
+import android.content.Context;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vf6 implements Cloneable {
-    public /* synthetic */ boolean a;
-    public /* synthetic */ long[] b;
-    public /* synthetic */ Object[] c;
-    public /* synthetic */ int d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class vf6 extends cna {
+    public final /* synthetic */ qh6 E;
+    public final bf6 a;
+    public final TextView b;
+    public final TextView c;
+    public final tpa d;
+    public final e29 e;
+    public Bundle f;
+    public String h;
+    public boolean n;
+    public String r;
+    public String s;
+    public String w;
+    public boolean x;
+    public final tf6 y;
 
-    public vf6(int i) {
-        if (i == 0) {
-            this.b = yp3.d;
-            this.c = yp3.e;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00df A[LOOP:0: B:9:0x00dd->B:10:0x00df, LOOP_END] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public vf6(qh6 qh6Var, Context context) {
+        super(context);
+        int i;
+        this.E = qh6Var;
+        this.y = new tf6(this, (byte) 1);
+        setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        e29 e29Var = new e29(context);
+        this.e = e29Var;
+        e29Var.f(R.raw.tsv_setup_mail, jn7.E1, jn7.E1, null);
+        e29Var.setAutoRepeat(false);
+        frameLayout.addView(e29Var, tre.e(jn7.E1, jn7.E1, 1));
+        if (!hl.M1()) {
+            Point point = hl.q;
+            if (point.x <= point.y || hl.O1()) {
+                i = 0;
+                frameLayout.setVisibility(i);
+                addView(frameLayout, tre.e(-1, -2, 1));
+                TextView textView = new TextView(context);
+                this.b = textView;
+                textView.setTextSize(1, 18.0f);
+                textView.setTypeface(hl.o());
+                textView.setText(ob6.M0(2131751088, null));
+                textView.setGravity(17);
+                textView.setLineSpacing(hl.L(2.0f), 1.0f);
+                addView(textView, tre.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
+                TextView textView2 = new TextView(context);
+                this.c = textView2;
+                textView2.setTextSize(1, 14.0f);
+                textView2.setGravity(17);
+                textView2.setLineSpacing(hl.L(2.0f), 1.0f);
+                textView2.setText(ob6.M0(2131745806, null));
+                addView(textView2, tre.t(-2, -2, 1, 12, 8, 12, 0));
+                bf6 bf6Var = new bf6((byte) 1, context, this);
+                this.a = bf6Var;
+                bf6Var.b(6, 1);
+                for (ok2 ok2Var : bf6Var.f) {
+                    ok2Var.setShowSoftInputOnFocusCompat(hl.A1());
+                    ok2Var.addTextChangedListener(new c7(this, (byte) 28));
+                    ok2Var.setOnFocusChangeListener(new ts0(this, (byte) 10));
+                }
+                addView(this.a, tre.t(-2, 42, 1, 0, 32, 0, 0));
+                tpa tpaVar = new tpa(null, context, false);
+                this.d = tpaVar;
+                tpaVar.setGravity(17);
+                tpaVar.setTextSize(1, 14.0f);
+                tpaVar.setLineSpacing(hl.L(2.0f), 1.0f);
+                tpaVar.setPadding(hl.L(16.0f), hl.L(16.0f), hl.L(16.0f), hl.L(16.0f));
+                tpaVar.setMaxLines(2);
+                tpaVar.setOnClickListener(new sa5(this, (byte) 21));
+                FrameLayout frameLayout2 = new FrameLayout(context);
+                frameLayout2.addView(tpaVar, tre.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
+                addView(frameLayout2, tre.l(1.0f, -1, 0));
+                ko9.e(tpaVar);
+            }
+        }
+        i = 8;
+        frameLayout.setVisibility(i);
+        addView(frameLayout, tre.e(-1, -2, 1));
+        TextView textView3 = new TextView(context);
+        this.b = textView3;
+        textView3.setTextSize(1, 18.0f);
+        textView3.setTypeface(hl.o());
+        textView3.setText(ob6.M0(2131751088, null));
+        textView3.setGravity(17);
+        textView3.setLineSpacing(hl.L(2.0f), 1.0f);
+        addView(textView3, tre.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
+        TextView textView22 = new TextView(context);
+        this.c = textView22;
+        textView22.setTextSize(1, 14.0f);
+        textView22.setGravity(17);
+        textView22.setLineSpacing(hl.L(2.0f), 1.0f);
+        textView22.setText(ob6.M0(2131745806, null));
+        addView(textView22, tre.t(-2, -2, 1, 12, 8, 12, 0));
+        bf6 bf6Var2 = new bf6((byte) 1, context, this);
+        this.a = bf6Var2;
+        bf6Var2.b(6, 1);
+        while (r12 < r11) {
+        }
+        addView(this.a, tre.t(-2, 42, 1, 0, 32, 0, 0));
+        tpa tpaVar2 = new tpa(null, context, false);
+        this.d = tpaVar2;
+        tpaVar2.setGravity(17);
+        tpaVar2.setTextSize(1, 14.0f);
+        tpaVar2.setLineSpacing(hl.L(2.0f), 1.0f);
+        tpaVar2.setPadding(hl.L(16.0f), hl.L(16.0f), hl.L(16.0f), hl.L(16.0f));
+        tpaVar2.setMaxLines(2);
+        tpaVar2.setOnClickListener(new sa5(this, (byte) 21));
+        FrameLayout frameLayout22 = new FrameLayout(context);
+        frameLayout22.addView(tpaVar2, tre.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
+        addView(frameLayout22, tre.l(1.0f, -1, 0));
+        ko9.e(tpaVar2);
+    }
+
+    @Override // cna
+    public final boolean a() {
+        return true;
+    }
+
+    @Override // cna
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // cna
+    public final boolean c(boolean z) {
+        this.E.y1(true, true);
+        this.f = null;
+        this.n = false;
+        return true;
+    }
+
+    @Override // cna
+    public final void d() {
+        this.n = false;
+    }
+
+    @Override // cna
+    public String getHeaderName() {
+        return ob6.M0(2131748480, "LoginPassword");
+    }
+
+    @Override // cna
+    public final void h(String str) {
+        int i;
+        if (this.n) {
             return;
         }
-        int i2 = i << 3;
-        int i3 = 4;
-        while (true) {
-            if (i3 >= 32) {
-                break;
-            }
-            int i4 = (1 << i3) - 12;
-            if (i2 <= i4) {
-                i2 = i4;
-                break;
-            }
-            i3++;
+        bf6 bf6Var = this.a;
+        bf6Var.e = true;
+        for (ok2 ok2Var : bf6Var.f) {
+            ok2Var.B(0.0f);
         }
-        int i5 = i2 / 8;
-        this.b = new long[i5];
-        this.c = new Object[i5];
-    }
-
-    public final void a(long j, Long l) {
-        int i = this.d;
-        if (i != 0 && j <= this.b[i - 1]) {
-            k(l, j);
+        String code = bf6Var.getCode();
+        if (code.length() == 0) {
+            n(false);
             return;
         }
-        if (this.a) {
-            long[] jArr = this.b;
-            if (i >= jArr.length) {
-                Object[] objArr = this.c;
-                int i2 = 0;
-                for (int i3 = 0; i3 < i; i3++) {
-                    Object obj = objArr[i3];
-                    if (obj != pad.a) {
-                        if (i3 != i2) {
-                            jArr[i2] = jArr[i3];
-                            objArr[i2] = obj;
-                            objArr[i3] = null;
-                        }
-                        i2++;
-                    }
-                }
-                this.a = false;
-                this.d = i2;
-                i = i2;
-            }
+        this.n = true;
+        qh6 qh6Var = this.E;
+        qh6Var.B1(0, true);
+        TLRPC.TL_auth_checkRecoveryPassword tL_auth_checkRecoveryPassword = new TLRPC.TL_auth_checkRecoveryPassword();
+        tL_auth_checkRecoveryPassword.code = code;
+        i = ((e) qh6Var).currentAccount;
+        ConnectionsManager.getInstance(i).sendRequest(tL_auth_checkRecoveryPassword, new mw3(this, code, (byte) 20), 10);
+    }
+
+    @Override // cna
+    public final void j() {
+        hl.d3(new tf6(this, (byte) 0), qh6.A0);
+    }
+
+    @Override // cna
+    public final void k(Bundle bundle) {
+        Bundle bundle2 = bundle.getBundle("recoveryview_params");
+        this.f = bundle2;
+        if (bundle2 != null) {
+            m(bundle2, true);
         }
-        if (i >= this.b.length) {
-            int i4 = (i + 1) << 3;
-            int i5 = 4;
-            while (true) {
-                if (i5 >= 32) {
-                    break;
-                }
-                int i6 = (1 << i5) - 12;
-                if (i4 <= i6) {
-                    i4 = i6;
-                    break;
-                }
-                i5++;
-            }
-            int i7 = i4 / 8;
-            this.b = Arrays.copyOf(this.b, i7);
-            this.c = Arrays.copyOf(this.c, i7);
-        }
-        this.b[i] = j;
-        this.c[i] = l;
-        this.d = i + 1;
-    }
-
-    public final void b() {
-        int i = this.d;
-        Object[] objArr = this.c;
-        for (int i2 = 0; i2 < i; i2++) {
-            objArr[i2] = null;
-        }
-        this.d = 0;
-        this.a = false;
-    }
-
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final vf6 clone() {
-        Object clone = super.clone();
-        clone.getClass();
-        vf6 vf6Var = (vf6) clone;
-        vf6Var.b = (long[]) this.b.clone();
-        vf6Var.c = (Object[]) this.c.clone();
-        return vf6Var;
-    }
-
-    public final boolean d(long j) {
-        return h(j) >= 0;
-    }
-
-    public final void e(long j) {
-        int b = yp3.b(this.b, this.d, j);
-        if (b >= 0) {
-            Object[] objArr = this.c;
-            Object obj = objArr[b];
-            Object obj2 = pad.a;
-            if (obj != obj2) {
-                objArr[b] = obj2;
-                this.a = true;
-            }
+        String string = bundle.getString("recoveryview_code");
+        if (string != null) {
+            this.a.setText(string);
         }
     }
 
-    public final Object f(long j) {
-        Object obj;
-        int b = yp3.b(this.b, this.d, j);
-        if (b < 0 || (obj = this.c[b]) == pad.a) {
-            return null;
+    @Override // cna
+    public final void l(Bundle bundle) {
+        String code = this.a.getCode();
+        if (code != null && code.length() != 0) {
+            bundle.putString("recoveryview_code", code);
         }
-        return obj;
-    }
-
-    public final Object g(Object obj, long j) {
-        Object obj2;
-        int b = yp3.b(this.b, this.d, j);
-        return (b < 0 || (obj2 = this.c[b]) == pad.a) ? obj : obj2;
-    }
-
-    public final int h(long j) {
-        if (this.a) {
-            int i = this.d;
-            long[] jArr = this.b;
-            Object[] objArr = this.c;
-            int i2 = 0;
-            for (int i3 = 0; i3 < i; i3++) {
-                Object obj = objArr[i3];
-                if (obj != pad.a) {
-                    if (i3 != i2) {
-                        jArr[i2] = jArr[i3];
-                        objArr[i2] = obj;
-                        objArr[i3] = null;
-                    }
-                    i2++;
-                }
-            }
-            this.a = false;
-            this.d = i2;
+        Bundle bundle2 = this.f;
+        if (bundle2 != null) {
+            bundle.putBundle("recoveryview_params", bundle2);
         }
-        return yp3.b(this.b, this.d, j);
     }
 
-    public final boolean i() {
-        return m() == 0;
-    }
-
-    public final long j(int i) {
-        int i2;
-        if (i < 0 || i >= (i2 = this.d)) {
-            v0b.a(de9.k(i, "Expected index to be within 0..size()-1, but was "));
-            return 0L;
-        }
-        if (this.a) {
-            long[] jArr = this.b;
-            Object[] objArr = this.c;
-            int i3 = 0;
-            for (int i4 = 0; i4 < i2; i4++) {
-                Object obj = objArr[i4];
-                if (obj != pad.a) {
-                    if (i4 != i3) {
-                        jArr[i3] = jArr[i4];
-                        objArr[i3] = obj;
-                        objArr[i4] = null;
-                    }
-                    i3++;
-                }
-            }
-            this.a = false;
-            this.d = i3;
-        }
-        return this.b[i];
-    }
-
-    public final void k(Object obj, long j) {
-        int b = yp3.b(this.b, this.d, j);
-        if (b >= 0) {
-            this.c[b] = obj;
+    @Override // cna
+    public final void m(Bundle bundle, boolean z) {
+        if (bundle == null) {
             return;
         }
-        int i = ~b;
-        int i2 = this.d;
-        Object obj2 = pad.a;
-        if (i < i2) {
-            Object[] objArr = this.c;
-            if (objArr[i] == obj2) {
-                this.b[i] = j;
-                objArr[i] = obj;
-                return;
-            }
+        bf6 bf6Var = this.a;
+        bf6Var.setText("");
+        this.f = bundle;
+        this.h = bundle.getString("password");
+        this.r = this.f.getString("requestPhone");
+        this.s = this.f.getString("phoneHash");
+        this.w = this.f.getString("phoneCode");
+        String string = this.f.getString("email_unconfirmed_pattern");
+        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
+        int indexOf = string.indexOf(42);
+        int lastIndexOf = string.lastIndexOf(42);
+        if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
+            rmb rmbVar = new rmb();
+            rmbVar.a |= 256;
+            rmbVar.b = indexOf;
+            int i = lastIndexOf + 1;
+            rmbVar.c = i;
+            valueOf.setSpan(new smb(rmbVar, 0), indexOf, i, 0);
         }
-        if (this.a) {
-            long[] jArr = this.b;
-            if (i2 >= jArr.length) {
-                Object[] objArr2 = this.c;
-                int i3 = 0;
-                for (int i4 = 0; i4 < i2; i4++) {
-                    Object obj3 = objArr2[i4];
-                    if (obj3 != obj2) {
-                        if (i4 != i3) {
-                            jArr[i3] = jArr[i4];
-                            objArr2[i3] = obj3;
-                            objArr2[i4] = null;
-                        }
-                        i3++;
-                    }
-                }
-                this.a = false;
-                this.d = i3;
-                i = ~yp3.b(this.b, i3, j);
-            }
-        }
-        int i5 = this.d;
-        if (i5 >= this.b.length) {
-            int i6 = (i5 + 1) << 3;
-            int i7 = 4;
-            while (true) {
-                if (i7 >= 32) {
-                    break;
-                }
-                int i8 = (1 << i7) - 12;
-                if (i6 <= i8) {
-                    i6 = i8;
-                    break;
-                }
-                i7++;
-            }
-            int i9 = i6 / 8;
-            this.b = Arrays.copyOf(this.b, i9);
-            this.c = Arrays.copyOf(this.c, i9);
-        }
-        int i10 = this.d - i;
-        if (i10 != 0) {
-            long[] jArr2 = this.b;
-            int i11 = i + 1;
-            jArr2.getClass();
-            System.arraycopy(jArr2, i, jArr2, i11, i10);
-            Object[] objArr3 = this.c;
-            ss.c(i11, i, this.d, objArr3, objArr3);
-        }
-        this.b[i] = j;
-        this.c[i] = obj;
-        this.d++;
+        this.d.setText(hl.m0(ob6.M0(2131745808, null), valueOf));
+        this.E.M1(bf6Var);
+        bf6Var.requestFocus();
     }
 
-    public final void l(long j) {
-        int b = yp3.b(this.b, this.d, j);
-        if (b >= 0) {
-            Object[] objArr = this.c;
-            Object obj = objArr[b];
-            Object obj2 = pad.a;
-            if (obj != obj2) {
-                objArr[b] = obj2;
-                this.a = true;
+    public final void n(boolean z) {
+        bf6 bf6Var = this.a;
+        if (this.E.getParentActivity() == null) {
+            return;
+        }
+        try {
+            bf6Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        if (z) {
+            for (ok2 ok2Var : bf6Var.f) {
+                ok2Var.setText("");
             }
         }
+        for (ok2 ok2Var2 : bf6Var.f) {
+            ok2Var2.A(1.0f);
+        }
+        bf6Var.f[0].requestFocus();
+        hl.A3(10.0f, bf6Var, new tf6(this, (byte) 2));
     }
 
-    public final int m() {
-        if (this.a) {
-            int i = this.d;
-            long[] jArr = this.b;
-            Object[] objArr = this.c;
-            int i2 = 0;
-            for (int i3 = 0; i3 < i; i3++) {
-                Object obj = objArr[i3];
-                if (obj != pad.a) {
-                    if (i3 != i2) {
-                        jArr[i2] = jArr[i3];
-                        objArr[i2] = obj;
-                        objArr[i3] = null;
-                    }
-                    i2++;
-                }
-            }
-            this.a = false;
-            this.d = i2;
-        }
-        return this.d;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(this.y);
     }
 
-    public final Object n(int i) {
-        int i2;
-        if (i < 0 || i >= (i2 = this.d)) {
-            v0b.a(de9.k(i, "Expected index to be within 0..size()-1, but was "));
-            return null;
-        }
-        if (this.a) {
-            long[] jArr = this.b;
-            Object[] objArr = this.c;
-            int i3 = 0;
-            for (int i4 = 0; i4 < i2; i4++) {
-                Object obj = objArr[i4];
-                if (obj != pad.a) {
-                    if (i4 != i3) {
-                        jArr[i3] = jArr[i4];
-                        objArr[i3] = obj;
-                        objArr[i4] = null;
-                    }
-                    i3++;
-                }
-            }
-            this.a = false;
-            this.d = i3;
-        }
-        return this.c[i];
-    }
-
-    public final String toString() {
-        if (m() <= 0) {
-            return "{}";
-        }
-        StringBuilder sb = new StringBuilder(this.d * 28);
-        sb.append('{');
-        int i = this.d;
-        for (int i2 = 0; i2 < i; i2++) {
-            if (i2 > 0) {
-                sb.append(", ");
-            }
-            sb.append(j(i2));
-            sb.append('=');
-            Object n = n(i2);
-            if (n != sb) {
-                sb.append(n);
-            } else {
-                sb.append("(this Map)");
-            }
-        }
-        sb.append('}');
-        return sb.toString();
-    }
-
-    public vf6() {
-        this(10);
+    @Override // cna
+    public final void updateColors() {
+        this.b.setTextColor(aob.w0(null, aob.G6, false));
+        this.c.setTextColor(aob.w0(null, aob.D6, false));
+        this.d.setTextColor(aob.w0(null, aob.q6, false));
+        this.a.invalidate();
     }
 }

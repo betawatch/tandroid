@@ -1,29 +1,55 @@
 // default package
 
-import org.webrtc.RenderSynchronizer;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class v69 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ RenderSynchronizer b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class v69 implements Runnable {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ w69 e;
 
-    public /* synthetic */ v69(RenderSynchronizer renderSynchronizer, byte b) {
-        this.a = b;
-        this.b = renderSynchronizer;
+    public v69(w69 w69Var, View view, int i, float f, float f2) {
+        this.e = w69Var;
+        this.a = view;
+        this.b = i;
+        this.c = f;
+        this.d = f2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        byte b = this.a;
-        RenderSynchronizer renderSynchronizer = this.b;
-        switch (b) {
-            case 0:
-                renderSynchronizer.lambda$registerListener$1();
-                break;
-            default:
-                renderSynchronizer.lambda$new$0();
-                break;
+        gu5 gu5Var = this.e.b;
+        d79 d79Var = (d79) gu5Var.b;
+        if (this == d79Var.R1) {
+            d79Var.R1 = null;
+        }
+        View view = this.a;
+        if (view != null) {
+            d79Var.l1(view, 0.0f, 0.0f, false);
+            if (((d79) gu5Var.b).Q1) {
+                return;
+            }
+            try {
+                view.playSoundEffect(0);
+            } catch (Exception unused) {
+            }
+            view.sendAccessibilityEvent(1);
+            int i = this.b;
+            if (i != -1) {
+                d79 d79Var2 = (d79) gu5Var.b;
+                r69 r69Var = d79Var2.U0;
+                if (r69Var != null) {
+                    r69Var.e(i, view);
+                    return;
+                }
+                s69 s69Var = d79Var2.V0;
+                if (s69Var != null) {
+                    s69Var.d(this.c - view.getX(), this.d - view.getY(), i, view);
+                }
+            }
         }
     }
 }

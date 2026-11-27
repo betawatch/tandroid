@@ -1,25 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class c9b implements cv5 {
-    public static final c9b a = new c9b();
-    public static final bj8 b = new bj8("kotlin.String", aj8.f);
+import androidx.recyclerview.widget.RecyclerView;
 
-    @Override // cv5
-    public final void b(c30 c30Var, Object obj) {
-        String str = (String) obj;
-        str.getClass();
-        c30Var.k(str);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class c9b extends v79 {
+    public final /* synthetic */ e9b a;
+
+    public c9b(e9b e9bVar) {
+        this.a = e9bVar;
     }
 
-    @Override // cv5
-    public final Object c(igf igfVar) {
-        return igfVar.m();
-    }
-
-    @Override // cv5
-    public final w4a d() {
-        return b;
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        this.a.b.invalidate();
     }
 }

@@ -4,7 +4,7 @@ import android.opengl.GLES20;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class GlShader {
     private static final String TAG = "GlShader";
@@ -29,7 +29,7 @@ public class GlShader {
             GlUtil.checkNoGLES2Error("Creating GlShader");
         } else {
             Logging.e(TAG, "Could not link program: " + GLES20.glGetProgramInfoLog(this.program));
-            wn4.j(GLES20.glGetProgramInfoLog(this.program));
+            xi4.l(GLES20.glGetProgramInfoLog(this.program));
             throw null;
         }
     }
@@ -48,35 +48,35 @@ public class GlShader {
             return glCreateShader;
         }
         Logging.e(TAG, "Compile error " + GLES20.glGetShaderInfoLog(glCreateShader) + " in shader:\n" + str);
-        wn4.j(GLES20.glGetShaderInfoLog(glCreateShader));
+        xi4.l(GLES20.glGetShaderInfoLog(glCreateShader));
         return 0;
     }
 
     public int getAttribLocation(String str) {
         int i = this.program;
         if (i == -1) {
-            wn4.j("The program has been released");
+            xi4.l("The program has been released");
             return 0;
         }
         int glGetAttribLocation = GLES20.glGetAttribLocation(i, str);
         if (glGetAttribLocation >= 0) {
             return glGetAttribLocation;
         }
-        wn4.j(tb4.y("Could not locate '", str, "' in program"));
+        xi4.l(qd4.y("Could not locate '", str, "' in program"));
         return 0;
     }
 
     public int getUniformLocation(String str) {
         int i = this.program;
         if (i == -1) {
-            wn4.j("The program has been released");
+            xi4.l("The program has been released");
             return 0;
         }
         int glGetUniformLocation = GLES20.glGetUniformLocation(i, str);
         if (glGetUniformLocation >= 0) {
             return glGetUniformLocation;
         }
-        wn4.j(tb4.y("Could not locate uniform '", str, "' in program"));
+        xi4.l(qd4.y("Could not locate uniform '", str, "' in program"));
         return 0;
     }
 
@@ -91,7 +91,7 @@ public class GlShader {
 
     public void setVertexAttribArray(String str, int i, int i2, FloatBuffer floatBuffer) {
         if (this.program == -1) {
-            wn4.j("The program has been released");
+            xi4.l("The program has been released");
             return;
         }
         int attribLocation = getAttribLocation(str);
@@ -102,7 +102,7 @@ public class GlShader {
 
     public void useProgram() {
         if (this.program == -1) {
-            wn4.j("The program has been released");
+            xi4.l("The program has been released");
             return;
         }
         synchronized (EglBase.lock) {

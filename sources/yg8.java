@@ -2,77 +2,96 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yg8 extends hn {
-    public final /* synthetic */ byte s;
-    public final /* synthetic */ ah8 w;
+public final class yg8 extends View {
+    public final Drawable a;
+    public final fm0 b;
+    public final byte c;
+    public zg8 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yg8(ah8 ah8Var, Context context, byte b) {
-        super(context, true, true, true);
-        this.s = b;
-        this.w = ah8Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public yg8(Context context, int i) {
+        super(context);
+        this.b = new fm0(380L, this, k43.h);
+        this.c = i;
+        Drawable e = c00.e(context, R.drawable.outline_poll_attach_24);
+        this.a = e;
+        yob.x(this, e, aob.o7, null, PorterDuff.Mode.SRC_IN);
     }
 
-    @Override // hn, android.view.View
-    public final void onDraw(Canvas canvas) {
-        byte b = this.s;
-        ah8 ah8Var = this.w;
-        switch (b) {
-            case 0:
-                if (ah8Var.P > 0.0f) {
-                    if (ah8Var.O == null) {
-                        ah8Var.O = new ih2(ah8Var.f.getTextColor());
-                    }
-                    int L = (int) ((1.0f - ah8Var.P) * gl.L(24.0f));
-                    ah8Var.O.setBounds(0, L, getWidth(), getHeight() + L);
-                    ah8Var.O.setAlpha((int) (ah8Var.P * 255.0f));
-                    ah8Var.O.draw(canvas);
-                    invalidate();
-                }
-                float f = ah8Var.P;
-                if (f < 1.0f) {
-                    if (f == 0.0f) {
-                        super.onDraw(canvas);
-                        break;
-                    } else {
-                        canvas.save();
-                        canvas.translate(0.0f, (int) (ah8Var.P * gl.L(-24.0f)));
-                        canvas.scale(1.0f, 1.0f - (ah8Var.P * 0.4f));
-                        super.onDraw(canvas);
-                        canvas.restore();
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (ah8Var.P > 0.0f) {
-                    if (ah8Var.O == null) {
-                        ah8Var.O = new ih2(ah8Var.f.getTextColor());
-                    }
-                    int L2 = (int) ((1.0f - ah8Var.P) * gl.L(24.0f));
-                    ah8Var.O.setBounds(0, L2, getWidth(), getHeight() + L2);
-                    ah8Var.O.setAlpha((int) (ah8Var.P * 255.0f));
-                    ah8Var.O.draw(canvas);
-                    invalidate();
-                }
-                float f2 = ah8Var.P;
-                if (f2 < 1.0f) {
-                    if (f2 == 0.0f) {
-                        super.onDraw(canvas);
-                        break;
-                    } else {
-                        canvas.save();
-                        canvas.translate(0.0f, (int) (ah8Var.P * gl.L(-24.0f)));
-                        canvas.scale(1.0f, 1.0f - (ah8Var.P * 0.4f));
-                        super.onDraw(canvas);
-                        canvas.restore();
-                        break;
-                    }
-                }
-                break;
+    public final void a(zg8 zg8Var, boolean z) {
+        zg8 zg8Var2;
+        zg8 zg8Var3;
+        this.b.a(zg8Var != null, z);
+        if (isAttachedToWindow() && (zg8Var3 = this.d) != null) {
+            zg8Var3.b();
         }
+        this.d = zg8Var;
+        if (!isAttachedToWindow() || (zg8Var2 = this.d) == null) {
+            return;
+        }
+        zg8Var2.a(this);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        zg8 zg8Var = this.d;
+        if (zg8Var != null) {
+            zg8Var.a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        zg8 zg8Var = this.d;
+        if (zg8Var != null) {
+            zg8Var.b();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float f = this.b.e;
+        if (f < 1.0f) {
+            canvas.save();
+            float f2 = 1.0f - f;
+            canvas.scale(f2, f2, width, height);
+            this.a.draw(canvas);
+            canvas.restore();
+        }
+        if (f > 0.0f) {
+            float f3 = this.c;
+            int L = hl.L(f3);
+            int width2 = (getWidth() - L) / 2;
+            int height2 = (getHeight() - L) / 2;
+            canvas.save();
+            canvas.translate(width2, height2);
+            canvas.scale(f, f, hl.L(f3) / 2.0f, hl.L(f3) / 2.0f);
+            zg8 zg8Var = this.d;
+            if (zg8Var != null) {
+                zg8Var.c(canvas, hl.L(f3), hl.L(f3));
+            }
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        int L = hl.L(24.0f);
+        int i5 = (i - L) / 2;
+        int i6 = (i2 - L) / 2;
+        this.a.setBounds(i5, i6, i5 + L, L + i6);
     }
 }

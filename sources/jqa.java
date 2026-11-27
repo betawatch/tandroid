@@ -1,375 +1,1073 @@
 // default package
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.RadialGradient;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.text.Layout;
-import android.view.View;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jqa extends yo2 {
-    public gn E;
-    public final float F;
-    public hx2 G;
-    public int H;
-    public int I;
-    public final Paint J;
-    public int K;
-    public byte L;
-    public final Path c;
-    public final RectF d;
-    public final vva e;
-    public final short f;
-    public final View h;
-    public final ImageReceiver n;
-    public final tl r;
-    public RadialGradient s;
-    public final Matrix w;
-    public final tgb x;
-    public final tgb y;
+public class jqa extends pf0 {
+    public final Matrix E1;
+    public final float[] F1;
+    public final Path G1;
+    public boolean[] H1;
+    public float[] I1;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public jqa(View view, TL_stars.StarGift starGift, int i, float f) {
-        super(view);
-        float f2;
-        int i2;
-        float f3;
-        int i3;
-        PointF pointF;
-        this.c = new Path();
-        this.d = new RectF();
-        this.w = new Matrix();
-        this.J = new Paint(1);
-        this.K = gl.L(16.0f);
-        this.L = (byte) 0;
-        this.h = view;
-        this.F = f;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.n = imageReceiver;
-        tl tlVar = new tl(gl.L(i > 180 ? 24.0f : 18.0f), view, false);
-        this.r = tlVar;
-        this.f = i;
-        if (starGift instanceof TL_stars.TL_starGift) {
-            float f4 = i;
-            jva.d1(imageReceiver, starGift.sticker, (int) (0.75f * f4));
-            String str = starGift.title;
-            tgb tgbVar = new tgb(str == null ? "Gift" : str, 16.0f, gl.o());
-            this.x = tgbVar;
-            tgbVar.m(-1);
-            float f5 = i - 30;
-            tgbVar.o(gl.L(f5));
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-            tgbVar.a();
-            tgbVar.l(1);
-            tgb tgbVar2 = new tgb(starGift.sold_out ? k96.M0(2131749951, null) : k96.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
-            this.y = tgbVar2;
-            tgbVar2.o(gl.L(f5));
-            tgbVar2.a();
-            tgbVar2.l(1);
-            vva vvaVar = new vva(1, 40);
-            this.e = vvaVar;
-            float f6 = 0.45f * f4;
-            vvaVar.f(-gl.L(f6), -gl.L(f6), gl.L(f6), gl.L(f4 * 0.25f));
-            float L = gl.L(30.0f);
-            RectF rectF = vvaVar.c;
-            int width = (int) rectF.width();
-            int height = (int) rectF.height();
-            ArrayList arrayList = new ArrayList();
-            ArrayList arrayList2 = new ArrayList();
-            yyc yycVar = Utilities.c;
-            PointF pointF2 = new PointF(gl.U1(yycVar.nextFloat(), 0, width), gl.U1(yycVar.nextFloat(), 0, height));
-            float floor = (float) Math.floor(L / 1.4142135623730951d);
-            int i4 = 0;
-            int ceil = (int) Math.ceil(width / floor);
-            int i5 = ceil + 1;
-            int ceil2 = (int) Math.ceil(height / floor);
-            int i6 = ceil2 + 1;
-            PointF[][] pointFArr = (PointF[][]) Array.newInstance((Class<?>) PointF.class, i5, i6);
-            for (int i7 = 0; i7 < i5; i7++) {
-                for (int i8 = 0; i8 < i6; i8++) {
-                    pointFArr[i7][i8] = null;
-                }
+    public jqa(Context context) {
+        super(context, null);
+        this.E1 = new Matrix();
+        this.F1 = new float[2];
+        this.G1 = new Path();
+        this.x0 = true;
+        this.y0 = true;
+        this.e = false;
+    }
+
+    @Override // pf0
+    /* renamed from: L, reason: merged with bridge method [inline-methods] */
+    public kqa h(nk1 nk1Var) {
+        return new kqa(nk1Var);
+    }
+
+    public final int M(float f, float f2) {
+        RectF rectF = this.I0;
+        float centerX = rectF.centerX();
+        float centerY = rectF.centerY() + hl.L(16.0f);
+        if (f >= centerX) {
+            if (f2 <= centerY) {
+                return 0;
             }
-            pointFArr[(int) Math.floor(pointF2.x / floor)][(int) Math.floor(pointF2.y / floor)] = pointF2;
-            arrayList.add(pointF2);
-            arrayList2.add(pointF2);
-            while (!arrayList2.isEmpty()) {
-                int nextInt = arrayList2.size() > 1 ? Utilities.c.nextInt(arrayList2.size() - 1) : i4;
-                PointF pointF3 = (PointF) arrayList2.get(nextInt);
-                int i9 = i4;
-                while (true) {
-                    if (i9 >= 15) {
-                        f2 = L;
-                        i2 = ceil;
-                        f3 = floor;
-                        arrayList2.remove(nextInt);
-                        break;
-                    }
-                    f3 = floor;
-                    int i10 = i9;
-                    double U1 = gl.U1(r10.nextFloat(), 1, 2) * L;
-                    double U12 = gl.U1(Utilities.c.nextFloat(), i4, 360);
-                    PointF pointF4 = new PointF((float) ((Math.cos(Math.toRadians(U12)) * U1) + pointF3.x), (float) ((Math.sin(Math.toRadians(U12)) * U1) + pointF3.y));
-                    int L2 = gl.L(15.0f) / 2;
-                    float f7 = pointF4.x;
-                    float f8 = L2;
-                    if (f7 >= f8 && f7 < width - L2) {
-                        float f9 = pointF4.y;
-                        if (f9 >= f8 && f9 < height - L2) {
-                            int floor2 = (int) Math.floor(f7 / f3);
-                            int floor3 = (int) Math.floor(pointF4.y / f3);
-                            int min = Math.min(floor2 + 1, ceil);
-                            f2 = L;
-                            int max = Math.max(floor3 - 1, 0);
-                            int min2 = Math.min(floor3 + 1, ceil2);
-                            for (int max2 = Math.max(floor2 - 1, 0); max2 <= min; max2++) {
-                                int i11 = max;
-                                while (i11 <= min2) {
-                                    int i12 = min;
-                                    PointF pointF5 = pointFArr[max2][i11];
-                                    int i13 = max;
-                                    if (pointF5 != null) {
-                                        i3 = ceil;
-                                        pointF = pointF3;
-                                        if (loe.a(pointF5.x, pointF5.y, pointF4.x, pointF4.y) < f2) {
-                                            break;
-                                        }
-                                    } else {
-                                        i3 = ceil;
-                                        pointF = pointF3;
-                                    }
-                                    i11++;
-                                    max = i13;
-                                    min = i12;
-                                    ceil = i3;
-                                    pointF3 = pointF;
-                                }
-                            }
-                            i2 = ceil;
-                            arrayList.add(pointF4);
-                            pointFArr[(int) Math.floor(pointF4.x / f3)][(int) Math.floor(pointF4.y / f3)] = pointF4;
-                            arrayList2.add(pointF4);
+            if (f2 >= centerY) {
+                return 1;
+            }
+        }
+        return (f >= centerX || f2 < centerY) ? 3 : 2;
+    }
+
+    @Override // pf0
+    public float getMinDistance() {
+        return 0.1f;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:101:0x03cd A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x040b  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0419  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x0420  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x03c9  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x03c0  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0560 A[EDGE_INSN: B:202:0x0560->B:203:0x0560 BREAK  A[LOOP:1: B:29:0x0137->B:201:0x0550], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x057d  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x0592 A[LOOP:5: B:207:0x0590->B:208:0x0592, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x0113  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01fc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0233  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x024a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0374  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x03c6  */
+    @Override // pf0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void k(Canvas canvas) {
+        ArrayList arrayList;
+        float f;
+        float f2;
+        float f3;
+        int i;
+        int min;
+        int i2;
+        boolean z;
+        int i3;
+        boolean z2;
+        int size;
+        float f4;
+        int i4;
+        float f5;
+        float f6;
+        float measuredHeight;
+        float measuredHeight2;
+        byte b;
+        int i5;
+        ArrayList arrayList2;
+        float f7;
+        float f8;
+        float f9;
+        float f10;
+        float f11;
+        float f12;
+        int i6;
+        int i7;
+        float f13;
+        float f14;
+        char c;
+        int i8;
+        int i9;
+        float f15;
+        double degrees;
+        int M;
+        int M2;
+        float f16;
+        boolean z3;
+        float f17;
+        float f18;
+        float f19;
+        float f20;
+        double degrees2;
+        int i10;
+        if (this.i0 != null) {
+            float f21 = this.G0;
+            uk1 uk1Var = this.h0;
+            float f22 = uk1Var.l;
+            float f23 = uk1Var.k;
+            float f24 = f21 / (f22 - f23);
+            float f25 = pf0.l1;
+            float f26 = (f23 * f24) - f25;
+            RectF rectF = this.I0;
+            float centerX = rectF.centerX();
+            float centerY = rectF.centerY() + hl.L(16.0f);
+            int i11 = 0;
+            while (true) {
+                arrayList = this.d;
+                if (i11 >= arrayList.size()) {
+                    break;
+                }
+                ((kqa) arrayList.get(i11)).f.reset();
+                ((kqa) arrayList.get(i11)).g.reset();
+                i11++;
+            }
+            canvas.save();
+            boolean[] zArr = this.H1;
+            if (zArr == null || zArr.length < ((iqa) this.i0).d.size()) {
+                this.H1 = new boolean[((iqa) this.i0).d.size()];
+                this.I1 = new float[((iqa) this.i0).d.size()];
+            }
+            byte b2 = this.z0;
+            if (b2 == 2) {
+                f3 = this.A0.f / 0.6f;
+                if (f3 > 1.0f) {
+                    f3 = 1.0f;
+                }
+                Path path = this.G1;
+                path.reset();
+                float width = rectF.width() > rectF.height() ? rectF.width() : rectF.height();
+                float height = (rectF.width() > rectF.height() ? rectF.height() : rectF.width()) * 0.45f;
+                f2 = 0.0f;
+                float A = qd4.A(1.0f, this.A0.f, (width - height) / 2.0f, height);
+                RectF rectF2 = new RectF();
+                f = 1.0f;
+                rectF2.set(centerX - A, centerY - A, centerX + A, centerY + A);
+                path.addRoundRect(rectF2, A, A, Path.Direction.CW);
+                canvas.clipPath(path);
+            } else {
+                f = 1.0f;
+                f2 = 0.0f;
+                if (b2 == 3) {
+                    i = (int) (this.A0.f * 255.0f);
+                    f3 = 0.0f;
+                    float[] fArr = ((iqa) this.i0).b;
+                    int i12 = ((int) (f25 / (fArr.length >= 2 ? f : fArr[1] * f24))) + 1;
+                    int max = Math.max(0, (this.G - i12) - 1);
+                    min = Math.min(((iqa) this.i0).b.length - 1, this.H + i12 + 1);
+                    i2 = max;
+                    float f27 = f2;
+                    float f28 = f27;
+                    z = false;
+                    while (true) {
+                        i3 = pf0.o1;
+                        if (i2 <= min) {
                             break;
                         }
+                        float f29 = f24;
+                        float f30 = f26;
+                        float f31 = f3;
+                        boolean z4 = z;
+                        float f32 = f2;
+                        int i13 = 0;
+                        int i14 = 0;
+                        int i15 = 0;
+                        while (i15 < arrayList.size()) {
+                            o46 o46Var = (o46) arrayList.get(i15);
+                            int i16 = i15;
+                            if (o46Var.n || o46Var.o != f2) {
+                                i10 = i;
+                                long j = o46Var.a.a[i2];
+                                if (j > 0) {
+                                    f32 = (j * o46Var.o) + f32;
+                                    i13++;
+                                }
+                                i14 = i16;
+                            } else {
+                                i10 = i;
+                            }
+                            i15 = i16 + 1;
+                            i = i10;
+                        }
+                        int i17 = i;
+                        float f33 = f2;
+                        int i18 = 0;
+                        while (i18 < arrayList.size()) {
+                            o46 o46Var2 = (o46) arrayList.get(i18);
+                            float f34 = f27;
+                            boolean z5 = o46Var2.n;
+                            Path path2 = o46Var2.f;
+                            if (z5) {
+                                f4 = f33;
+                            } else {
+                                f4 = f33;
+                                if (o46Var2.o == f2) {
+                                    i5 = i13;
+                                    i9 = min;
+                                    arrayList2 = arrayList;
+                                    i6 = max;
+                                    i7 = i3;
+                                    f15 = f2;
+                                    f33 = f4;
+                                    i8 = i14;
+                                    f27 = f34;
+                                    i18++;
+                                    f2 = f15;
+                                    min = i9;
+                                    i14 = i8;
+                                    max = i6;
+                                    i13 = i5;
+                                    i3 = i7;
+                                    arrayList = arrayList2;
+                                }
+                            }
+                            long[] jArr = o46Var2.a.a;
+                            if (i13 == 1) {
+                                if (jArr[i2] != 0) {
+                                    f5 = o46Var2.o;
+                                    i4 = i13;
+                                    float[] fArr2 = ((iqa) this.i0).b;
+                                    f6 = (fArr2[i2] * f29) - f30;
+                                    float measuredWidth = i2 != min ? getMeasuredWidth() : (fArr2[i2 + 1] * f29) - f30;
+                                    if (f5 == f2 && i18 == i14) {
+                                        z4 = true;
+                                    }
+                                    float measuredHeight3 = ((getMeasuredHeight() - this.s) - i3) * f5;
+                                    measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight3) - f4;
+                                    this.I1[i18] = measuredHeight;
+                                    measuredHeight2 = getMeasuredHeight() - this.s;
+                                    if (i2 != min) {
+                                        f34 = f6;
+                                    } else if (i2 == max) {
+                                        f28 = f6;
+                                    }
+                                    b = this.z0;
+                                    float f35 = measuredWidth;
+                                    float[] fArr3 = this.F1;
+                                    i5 = i4;
+                                    Matrix matrix = this.E1;
+                                    if (b == 2 || i18 == i14) {
+                                        arrayList2 = arrayList;
+                                        f7 = f2;
+                                        f8 = measuredHeight;
+                                        f9 = measuredHeight2;
+                                        f10 = f6;
+                                    } else {
+                                        z2c z2cVar = this.A0;
+                                        if (f6 < centerX) {
+                                            f19 = z2cVar.g[i18];
+                                            f20 = z2cVar.h[i18];
+                                        } else {
+                                            f19 = z2cVar.i[i18];
+                                            f20 = z2cVar.j[i18];
+                                        }
+                                        float f36 = centerX - f19;
+                                        float f37 = centerY - f20;
+                                        float f38 = (((f6 - f19) * f37) / f36) + f20;
+                                        float f39 = f - f31;
+                                        float f40 = measuredHeight * f39;
+                                        float f41 = f38 * f31;
+                                        float f42 = f40 + f41;
+                                        float f43 = (measuredHeight2 * f39) + f41;
+                                        float f44 = f37 / f36;
+                                        if (f44 > f2) {
+                                            arrayList2 = arrayList;
+                                            degrees2 = Math.toDegrees(-Math.atan(f44));
+                                        } else {
+                                            arrayList2 = arrayList;
+                                            degrees2 = Math.toDegrees(Math.atan(Math.abs(f44)));
+                                        }
+                                        float f45 = ((float) degrees2) - 90.0f;
+                                        if (f6 >= centerX) {
+                                            fArr3[0] = f6;
+                                            fArr3[1] = f42;
+                                            matrix.reset();
+                                            matrix.postRotate(this.A0.f * f45, centerX, centerY);
+                                            matrix.mapPoints(fArr3);
+                                            float f46 = fArr3[0];
+                                            f8 = fArr3[1];
+                                            if (f46 < centerX) {
+                                                f46 = centerX;
+                                            }
+                                            fArr3[0] = f6;
+                                            fArr3[1] = f43;
+                                            matrix.reset();
+                                            f7 = f45;
+                                            matrix.postRotate(this.A0.f * f7, centerX, centerY);
+                                            matrix.mapPoints(fArr3);
+                                            f9 = fArr3[1];
+                                            f11 = f28;
+                                            f12 = f46;
+                                            f10 = f6 < centerX ? centerX : f6;
+                                        } else {
+                                            f7 = f45;
+                                            if (f35 >= centerX) {
+                                                f10 = (f6 * f39) + (centerX * f31);
+                                                f9 = (centerY * f31) + (f42 * f39);
+                                                f8 = f9;
+                                            } else {
+                                                fArr3[0] = f6;
+                                                fArr3[1] = f42;
+                                                matrix.reset();
+                                                z2c z2cVar2 = this.A0;
+                                                float f47 = z2cVar2.f;
+                                                matrix.postRotate((f47 * z2cVar2.k[i18]) + (f47 * f7), centerX, centerY);
+                                                matrix.mapPoints(fArr3);
+                                                float f48 = fArr3[0];
+                                                f8 = fArr3[1];
+                                                if (f35 >= centerX) {
+                                                    float f49 = this.A0.f;
+                                                    fArr3[0] = (f49 * centerX) + ((f - f49) * f6);
+                                                } else {
+                                                    fArr3[0] = f6;
+                                                }
+                                                fArr3[1] = f43;
+                                                matrix.reset();
+                                                z2c z2cVar3 = this.A0;
+                                                float f50 = z2cVar3.f;
+                                                matrix.postRotate((f50 * z2cVar3.k[i18]) + (f50 * f7), centerX, centerY);
+                                                matrix.mapPoints(fArr3);
+                                                f10 = fArr3[0];
+                                                f9 = fArr3[1];
+                                                f11 = f28;
+                                                f12 = f48;
+                                            }
+                                        }
+                                        i6 = max;
+                                        if (i2 == max) {
+                                            float measuredHeight4 = getMeasuredHeight();
+                                            i7 = i3;
+                                            if (this.z0 != 2 || i18 == i14) {
+                                                z3 = false;
+                                                f17 = f2;
+                                                f18 = measuredHeight4;
+                                            } else {
+                                                fArr3[0] = f2 - centerX;
+                                                fArr3[1] = measuredHeight4;
+                                                matrix.reset();
+                                                z2c z2cVar4 = this.A0;
+                                                float f51 = z2cVar4.f;
+                                                matrix.postRotate((f51 * z2cVar4.k[i18]) + (f7 * f51), centerX, centerY);
+                                                matrix.mapPoints(fArr3);
+                                                z3 = false;
+                                                f17 = fArr3[0];
+                                                f18 = fArr3[1];
+                                            }
+                                            path2.moveTo(f17, f18);
+                                            this.H1[i18] = z3;
+                                        } else {
+                                            i7 = i3;
+                                        }
+                                        z2c z2cVar5 = this.A0;
+                                        f13 = z2cVar5 == null ? f2 : z2cVar5.f;
+                                        if (f5 == f2 || i2 <= 0 || jArr[i2 - 1] != 0 || i2 >= min || jArr[i2 + 1] != 0) {
+                                            f14 = f13;
+                                        } else {
+                                            f14 = f13;
+                                            if (this.z0 != 2) {
+                                                if (!this.H1[i18]) {
+                                                    if (i18 == i14) {
+                                                        path2.lineTo(f10, (f - f14) * f9);
+                                                    } else {
+                                                        path2.lineTo(f10, f9);
+                                                    }
+                                                }
+                                                this.H1[i18] = true;
+                                                c = 0;
+                                                if (i2 == min) {
+                                                    float measuredWidth2 = getMeasuredWidth();
+                                                    float measuredHeight5 = getMeasuredHeight();
+                                                    if (this.z0 != 2 || i18 == i14) {
+                                                        path2.lineTo(measuredWidth2, measuredHeight5);
+                                                    } else {
+                                                        fArr3[c] = measuredWidth2 + centerX;
+                                                        fArr3[1] = measuredHeight5;
+                                                        matrix.reset();
+                                                        z2c z2cVar6 = this.A0;
+                                                        matrix.postRotate(z2cVar6.f * z2cVar6.k[i18], centerX, centerY);
+                                                        matrix.mapPoints(fArr3);
+                                                        float f52 = fArr3[c];
+                                                        float f53 = fArr3[1];
+                                                    }
+                                                    if (this.z0 == 2 && i18 != i14) {
+                                                        z2c z2cVar7 = this.A0;
+                                                        float f54 = (centerY - z2cVar7.h[i18]) / (centerX - z2cVar7.g[i18]);
+                                                        i8 = i14;
+                                                        if (f54 > f2) {
+                                                            i9 = min;
+                                                            degrees = Math.toDegrees(-Math.atan(f54));
+                                                        } else {
+                                                            i9 = min;
+                                                            degrees = Math.toDegrees(Math.atan(Math.abs(f54)));
+                                                        }
+                                                        z2c z2cVar8 = this.A0;
+                                                        float f55 = z2cVar8.g[i18];
+                                                        float f56 = z2cVar8.h[i18];
+                                                        fArr3[0] = f55;
+                                                        fArr3[1] = f56;
+                                                        matrix.reset();
+                                                        z2c z2cVar9 = this.A0;
+                                                        float f57 = z2cVar9.f;
+                                                        matrix.postRotate((f57 * z2cVar9.k[i18]) + ((((float) degrees) - 90.0f) * f57), centerX, centerY);
+                                                        matrix.mapPoints(fArr3);
+                                                        float f58 = fArr3[0];
+                                                        float f59 = fArr3[1];
+                                                        if (Math.abs(f12 - f58) >= 0.001d || ((f59 >= centerY || f8 >= centerY) && (f59 <= centerY || f8 <= centerY))) {
+                                                            M = M(f12, f8);
+                                                            M2 = M(f58, f59);
+                                                        } else {
+                                                            M2 = this.A0.k[i18] == -180.0f ? 0 : 3;
+                                                            M = 0;
+                                                        }
+                                                        while (M <= M2) {
+                                                            if (M == 0) {
+                                                                f16 = f2;
+                                                                path2.lineTo(getMeasuredWidth(), f16);
+                                                            } else if (M == 1) {
+                                                                path2.lineTo(getMeasuredWidth(), getMeasuredHeight());
+                                                                f16 = 0.0f;
+                                                            } else if (M == 2) {
+                                                                f16 = 0.0f;
+                                                                path2.lineTo(0.0f, getMeasuredHeight());
+                                                            } else {
+                                                                f16 = 0.0f;
+                                                                path2.lineTo(0.0f, 0.0f);
+                                                            }
+                                                            M++;
+                                                            f2 = f16;
+                                                        }
+                                                        f15 = f2;
+                                                        f33 = f4 + measuredHeight3;
+                                                        f28 = f11;
+                                                    }
+                                                }
+                                                i8 = i14;
+                                                i9 = min;
+                                                f15 = f2;
+                                                f33 = f4 + measuredHeight3;
+                                                f28 = f11;
+                                            }
+                                        }
+                                        if (this.H1[i18]) {
+                                            if (i18 == i14) {
+                                                path2.lineTo(f10, (f - f14) * f9);
+                                            } else {
+                                                path2.lineTo(f10, f9);
+                                            }
+                                        }
+                                        if (i18 == i14) {
+                                            path2.lineTo(f12, (f - f14) * f8);
+                                        } else {
+                                            path2.lineTo(f12, f8);
+                                        }
+                                        c = 0;
+                                        this.H1[i18] = false;
+                                        if (i2 == min) {
+                                        }
+                                        i8 = i14;
+                                        i9 = min;
+                                        f15 = f2;
+                                        f33 = f4 + measuredHeight3;
+                                        f28 = f11;
+                                    }
+                                    f11 = f28;
+                                    f12 = f10;
+                                    i6 = max;
+                                    if (i2 == max) {
+                                    }
+                                    z2c z2cVar52 = this.A0;
+                                    if (z2cVar52 == null) {
+                                    }
+                                    if (f5 == f2) {
+                                    }
+                                    f14 = f13;
+                                    if (this.H1[i18]) {
+                                    }
+                                    if (i18 == i14) {
+                                    }
+                                    c = 0;
+                                    this.H1[i18] = false;
+                                    if (i2 == min) {
+                                    }
+                                    i8 = i14;
+                                    i9 = min;
+                                    f15 = f2;
+                                    f33 = f4 + measuredHeight3;
+                                    f28 = f11;
+                                }
+                                i4 = i13;
+                                f5 = f2;
+                                float[] fArr22 = ((iqa) this.i0).b;
+                                f6 = (fArr22[i2] * f29) - f30;
+                                if (i2 != min) {
+                                }
+                                if (f5 == f2) {
+                                    z4 = true;
+                                }
+                                float measuredHeight32 = ((getMeasuredHeight() - this.s) - i3) * f5;
+                                measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight32) - f4;
+                                this.I1[i18] = measuredHeight;
+                                measuredHeight2 = getMeasuredHeight() - this.s;
+                                if (i2 != min) {
+                                }
+                                b = this.z0;
+                                float f352 = measuredWidth;
+                                float[] fArr32 = this.F1;
+                                i5 = i4;
+                                Matrix matrix2 = this.E1;
+                                if (b == 2) {
+                                }
+                                arrayList2 = arrayList;
+                                f7 = f2;
+                                f8 = measuredHeight;
+                                f9 = measuredHeight2;
+                                f10 = f6;
+                                f11 = f28;
+                                f12 = f10;
+                                i6 = max;
+                                if (i2 == max) {
+                                }
+                                z2c z2cVar522 = this.A0;
+                                if (z2cVar522 == null) {
+                                }
+                                if (f5 == f2) {
+                                }
+                                f14 = f13;
+                                if (this.H1[i18]) {
+                                }
+                                if (i18 == i14) {
+                                }
+                                c = 0;
+                                this.H1[i18] = false;
+                                if (i2 == min) {
+                                }
+                                i8 = i14;
+                                i9 = min;
+                                f15 = f2;
+                                f33 = f4 + measuredHeight32;
+                                f28 = f11;
+                            } else {
+                                if (f32 != f2) {
+                                    i4 = i13;
+                                    f5 = (jArr[i2] * o46Var2.o) / f32;
+                                    float[] fArr222 = ((iqa) this.i0).b;
+                                    f6 = (fArr222[i2] * f29) - f30;
+                                    if (i2 != min) {
+                                    }
+                                    if (f5 == f2) {
+                                    }
+                                    float measuredHeight322 = ((getMeasuredHeight() - this.s) - i3) * f5;
+                                    measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight322) - f4;
+                                    this.I1[i18] = measuredHeight;
+                                    measuredHeight2 = getMeasuredHeight() - this.s;
+                                    if (i2 != min) {
+                                    }
+                                    b = this.z0;
+                                    float f3522 = measuredWidth;
+                                    float[] fArr322 = this.F1;
+                                    i5 = i4;
+                                    Matrix matrix22 = this.E1;
+                                    if (b == 2) {
+                                    }
+                                    arrayList2 = arrayList;
+                                    f7 = f2;
+                                    f8 = measuredHeight;
+                                    f9 = measuredHeight2;
+                                    f10 = f6;
+                                    f11 = f28;
+                                    f12 = f10;
+                                    i6 = max;
+                                    if (i2 == max) {
+                                    }
+                                    z2c z2cVar5222 = this.A0;
+                                    if (z2cVar5222 == null) {
+                                    }
+                                    if (f5 == f2) {
+                                    }
+                                    f14 = f13;
+                                    if (this.H1[i18]) {
+                                    }
+                                    if (i18 == i14) {
+                                    }
+                                    c = 0;
+                                    this.H1[i18] = false;
+                                    if (i2 == min) {
+                                    }
+                                    i8 = i14;
+                                    i9 = min;
+                                    f15 = f2;
+                                    f33 = f4 + measuredHeight322;
+                                    f28 = f11;
+                                }
+                                i4 = i13;
+                                f5 = f2;
+                                float[] fArr2222 = ((iqa) this.i0).b;
+                                f6 = (fArr2222[i2] * f29) - f30;
+                                if (i2 != min) {
+                                }
+                                if (f5 == f2) {
+                                }
+                                float measuredHeight3222 = ((getMeasuredHeight() - this.s) - i3) * f5;
+                                measuredHeight = ((getMeasuredHeight() - this.s) - measuredHeight3222) - f4;
+                                this.I1[i18] = measuredHeight;
+                                measuredHeight2 = getMeasuredHeight() - this.s;
+                                if (i2 != min) {
+                                }
+                                b = this.z0;
+                                float f35222 = measuredWidth;
+                                float[] fArr3222 = this.F1;
+                                i5 = i4;
+                                Matrix matrix222 = this.E1;
+                                if (b == 2) {
+                                }
+                                arrayList2 = arrayList;
+                                f7 = f2;
+                                f8 = measuredHeight;
+                                f9 = measuredHeight2;
+                                f10 = f6;
+                                f11 = f28;
+                                f12 = f10;
+                                i6 = max;
+                                if (i2 == max) {
+                                }
+                                z2c z2cVar52222 = this.A0;
+                                if (z2cVar52222 == null) {
+                                }
+                                if (f5 == f2) {
+                                }
+                                f14 = f13;
+                                if (this.H1[i18]) {
+                                }
+                                if (i18 == i14) {
+                                }
+                                c = 0;
+                                this.H1[i18] = false;
+                                if (i2 == min) {
+                                }
+                                i8 = i14;
+                                i9 = min;
+                                f15 = f2;
+                                f33 = f4 + measuredHeight3222;
+                                f28 = f11;
+                            }
+                            f27 = f34;
+                            i18++;
+                            f2 = f15;
+                            min = i9;
+                            i14 = i8;
+                            max = i6;
+                            i13 = i5;
+                            i3 = i7;
+                            arrayList = arrayList2;
+                        }
+                        i2++;
+                        min = min;
+                        f24 = f29;
+                        f26 = f30;
+                        f3 = f31;
+                        z = z4;
+                        i = i17;
                     }
-                    f2 = L;
-                    i3 = ceil;
-                    pointF = pointF3;
-                    i9 = i10 + 1;
-                    floor = f3;
-                    L = f2;
-                    ceil = i3;
-                    pointF3 = pointF;
-                    i4 = 0;
+                    int i19 = i;
+                    ArrayList arrayList3 = arrayList;
+                    z2 = z;
+                    canvas.save();
+                    canvas.clipRect(f28, i3, f27, getMeasuredHeight() - this.s);
+                    if (z2) {
+                        canvas.drawColor(aob.w0(null, aob.ik, false));
+                    }
+                    for (size = arrayList3.size() - 1; size >= 0; size--) {
+                        o46 o46Var3 = (o46) arrayList3.get(size);
+                        Paint paint = o46Var3.c;
+                        paint.setAlpha(i19);
+                        canvas.drawPath(o46Var3.f, paint);
+                        paint.setAlpha(jn7.d4);
+                    }
+                    canvas.restore();
+                    canvas.restore();
                 }
-                floor = f3;
-                L = f2;
-                ceil = i2;
-                i4 = 0;
+                f3 = 0.0f;
             }
+            i = jn7.d4;
+            float[] fArr4 = ((iqa) this.i0).b;
+            int i122 = ((int) (f25 / (fArr4.length >= 2 ? f : fArr4[1] * f24))) + 1;
+            int max2 = Math.max(0, (this.G - i122) - 1);
+            min = Math.min(((iqa) this.i0).b.length - 1, this.H + i122 + 1);
+            i2 = max2;
+            float f272 = f2;
+            float f282 = f272;
+            z = false;
+            while (true) {
+                i3 = pf0.o1;
+                if (i2 <= min) {
+                }
+                i2++;
+                min = min;
+                f24 = f29;
+                f26 = f30;
+                f3 = f31;
+                z = z4;
+                i = i17;
+            }
+            int i192 = i;
+            ArrayList arrayList32 = arrayList;
+            z2 = z;
+            canvas.save();
+            canvas.clipRect(f282, i3, f272, getMeasuredHeight() - this.s);
+            if (z2) {
+            }
+            while (size >= 0) {
+            }
+            canvas.restore();
+            canvas.restore();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00ed A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x011c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0161  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0154  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x010b  */
+    @Override // pf0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void n(Canvas canvas) {
+        int i;
+        boolean z;
+        float f;
+        boolean z2;
+        ok1 ok1Var;
+        if (this.i0 != null) {
+            ArrayList arrayList = this.d;
             int size = arrayList.size();
-            ArrayList arrayList3 = vvaVar.b;
-            int size2 = size - arrayList3.size();
-            for (int i14 = 0; i14 < size2; i14++) {
-                arrayList3.add(new uva(vvaVar));
+            for (int i2 = 0; i2 < size; i2++) {
+                ((kqa) arrayList.get(i2)).g.reset();
             }
-            int size3 = arrayList.size();
-            vvaVar.j = size3;
-            if (vvaVar.l != null) {
-                cyb cybVar = new cyb(size3);
-                vvaVar.l = cybVar;
-                Bitmap bitmap = vvaVar.d;
-                float width2 = bitmap.getWidth();
-                float height2 = bitmap.getHeight();
-                int i15 = 0;
-                while (i15 < cybVar.b) {
-                    int i16 = i15;
-                    cyb.d((float[]) cybVar.d, i16, 0.0f, 0.0f, width2, height2);
-                    i15 = i16 + 1;
+            ok1 ok1Var2 = this.i0;
+            int i3 = ((iqa) ok1Var2).n;
+            boolean[] zArr = this.H1;
+            if (zArr == null || zArr.length < ((iqa) ok1Var2).d.size()) {
+                this.H1 = new boolean[((iqa) this.i0).d.size()];
+            }
+            boolean z3 = false;
+            for (int i4 = 0; i4 < i3; i4++) {
+                float f2 = 0.0f;
+                float f3 = 0.0f;
+                int i5 = 0;
+                int i6 = 0;
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    o46 o46Var = (o46) arrayList.get(i7);
+                    if (o46Var.n || o46Var.o != 0.0f) {
+                        if (((iqa) this.i0).m[i7][i4] > 0) {
+                            f3 += ((iqa) r12).m[i7][i4] * o46Var.o;
+                            i5++;
+                        }
+                        i6 = i7;
+                    }
+                }
+                int i8 = i3 - 1;
+                float f4 = (i4 / i8) * this.D0;
+                float f5 = 0.0f;
+                int i9 = 0;
+                while (i9 < arrayList.size()) {
+                    o46 o46Var2 = (o46) arrayList.get(i9);
+                    float f6 = f2;
+                    boolean z4 = o46Var2.n;
+                    Path path = o46Var2.g;
+                    if (!z4 && o46Var2.o == f6) {
+                        i = i3;
+                    } else if (i5 == 1) {
+                        if (((iqa) this.i0).m[i9][i4] != 0) {
+                            f = o46Var2.o;
+                            i = i3;
+                            z = z3;
+                            boolean z5 = (f == f6 || i9 != i6) ? z : true;
+                            int i10 = this.C0;
+                            float f7 = f * i10;
+                            float f8 = (i10 - f7) - f5;
+                            if (i4 != 0) {
+                                z2 = z5;
+                                path.moveTo(f6, i10);
+                                this.H1[i9] = false;
+                            } else {
+                                z2 = z5;
+                            }
+                            ok1Var = this.i0;
+                            if (((iqa) ok1Var).m[i9][i4] == 0 || i4 <= 0 || ((iqa) ok1Var).m[i9][i4 - 1] != 0 || i4 >= i8 || ((iqa) ok1Var).m[i9][i4 + 1] != 0) {
+                                if (this.H1[i9]) {
+                                    path.lineTo(f4, i10);
+                                }
+                                path.lineTo(f4, f8);
+                                this.H1[i9] = false;
+                            } else {
+                                if (!this.H1[i9]) {
+                                    path.lineTo(f4, i10);
+                                }
+                                this.H1[i9] = true;
+                            }
+                            if (i4 == i8) {
+                                path.lineTo(this.D0, i10);
+                            }
+                            f5 += f7;
+                            z3 = z2;
+                        }
+                        i = i3;
+                        z = z3;
+                        f = f6;
+                        if (f == f6) {
+                        }
+                        int i102 = this.C0;
+                        float f72 = f * i102;
+                        float f82 = (i102 - f72) - f5;
+                        if (i4 != 0) {
+                        }
+                        ok1Var = this.i0;
+                        if (((iqa) ok1Var).m[i9][i4] == 0) {
+                        }
+                        if (this.H1[i9]) {
+                        }
+                        path.lineTo(f4, f82);
+                        this.H1[i9] = false;
+                        if (i4 == i8) {
+                        }
+                        f5 += f72;
+                        z3 = z2;
+                    } else {
+                        if (f3 != f6) {
+                            i = i3;
+                            z = z3;
+                            f = (((iqa) this.i0).m[i9][i4] * o46Var2.o) / f3;
+                            if (f == f6) {
+                            }
+                            int i1022 = this.C0;
+                            float f722 = f * i1022;
+                            float f822 = (i1022 - f722) - f5;
+                            if (i4 != 0) {
+                            }
+                            ok1Var = this.i0;
+                            if (((iqa) ok1Var).m[i9][i4] == 0) {
+                            }
+                            if (this.H1[i9]) {
+                            }
+                            path.lineTo(f4, f822);
+                            this.H1[i9] = false;
+                            if (i4 == i8) {
+                            }
+                            f5 += f722;
+                            z3 = z2;
+                        }
+                        i = i3;
+                        z = z3;
+                        f = f6;
+                        if (f == f6) {
+                        }
+                        int i10222 = this.C0;
+                        float f7222 = f * i10222;
+                        float f8222 = (i10222 - f7222) - f5;
+                        if (i4 != 0) {
+                        }
+                        ok1Var = this.i0;
+                        if (((iqa) ok1Var).m[i9][i4] == 0) {
+                        }
+                        if (this.H1[i9]) {
+                        }
+                        path.lineTo(f4, f8222);
+                        this.H1[i9] = false;
+                        if (i4 == i8) {
+                        }
+                        f5 += f7222;
+                        z3 = z2;
+                    }
+                    i9++;
+                    i3 = i;
+                    f2 = 0.0f;
                 }
             }
-            long currentTimeMillis = System.currentTimeMillis();
-            for (int i17 = 0; i17 < vvaVar.j; i17++) {
-                uva uvaVar = (uva) arrayList3.get(i17);
-                PointF pointF6 = (PointF) arrayList.get(i17);
-                vvaVar.c(uvaVar, currentTimeMillis, true);
-                uvaVar.a = pointF6.x + rectF.left;
-                uvaVar.b = pointF6.y + rectF.top;
-                uvaVar.h = gl.R1(0.4f, 1.0f, Utilities.c.nextFloat());
-                uvaVar.e *= 1.25f;
+            if (z3) {
+                canvas.drawColor(aob.w0(null, aob.ik, false));
             }
-        } else if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) gta.i(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) gta.i(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) gta.i(starGift.attributes, TL_stars.starGiftAttributeModel.class);
-            if (stargiftattributepattern != null) {
-                tlVar.i(stargiftattributepattern.document, false);
-            }
-            if (stargiftattributebackdrop != null) {
-                this.s = new RadialGradient(0.0f, 0.0f, gl.N(i) / 2.0f, new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                tlVar.k(Integer.valueOf(stargiftattributebackdrop.pattern_color | (-16777216)));
-            }
-            if (stargiftattributemodel != null) {
-                jva.d1(imageReceiver, stargiftattributemodel.document, (int) (i * 0.75f));
+            for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
+                o46 o46Var3 = (o46) arrayList.get(size2);
+                canvas.drawPath(o46Var3.g, o46Var3.c);
             }
         }
-        ((Paint) this.b).setShader(this.s);
-        if (view.isAttachedToWindow()) {
-            a();
-        }
     }
 
-    @Override // yo2
-    public final void a() {
-        this.r.a();
-        this.n.I();
-        if (this.G != null) {
-            int currentTime = ConnectionsManager.getInstance(y6c.t0).getCurrentTime();
-            int i = this.I;
-            if (currentTime >= i) {
-                i = this.H;
+    @Override // pf0, android.view.View
+    public void onDraw(Canvas canvas) {
+        F();
+        k(canvas);
+        i(canvas);
+        ArrayList arrayList = this.b;
+        this.n0 = arrayList.size();
+        int i = 0;
+        while (true) {
+            this.o0 = i;
+            int i2 = this.o0;
+            if (i2 >= this.n0) {
+                j(canvas);
+                m(canvas);
+                o(canvas);
+                super.onDraw(canvas);
+                return;
             }
-            this.G.a(i - currentTime);
+            l(canvas, (rk1) arrayList.get(i2));
+            p(canvas, (rk1) arrayList.get(this.o0));
+            i = this.o0 + 1;
         }
     }
 
-    @Override // yo2
-    public final void b() {
-        this.r.b();
-        this.n.K();
-        hx2 hx2Var = this.G;
-        if (hx2Var != null) {
-            hx2Var.b();
-        }
-    }
-
-    public final void c(int i) {
-        tgb tgbVar = this.y;
-        if (tgbVar != null) {
-            tgbVar.m(i | (-16777216));
-        }
-    }
-
-    public final void d(int i, int i2) {
-        this.I = i;
-        this.H = i2;
-        if (this.G == null) {
-            this.G = new hx2(new wh9(this, (byte) 21));
-        }
-        this.G.a(ConnectionsManager.getInstance(y6c.t0).getCurrentTime() < i ? i - r0 : i2 - r0);
-        if (this.E == null) {
-            gn gnVar = new gn(false, false, false);
-            this.E = gnVar;
-            gnVar.u(-1);
-            this.E.w(gl.L(12.0f));
-            this.E.setCallback(new in(this, (byte) 11));
-        }
-        f();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        tgb tgbVar;
-        Paint paint = (Paint) this.b;
-        Rect bounds = getBounds();
-        RectF rectF = this.d;
-        rectF.set(bounds);
-        canvas.save();
-        Path path = this.c;
-        path.rewind();
-        float f = this.K;
-        path.addRoundRect(rectF, f, f, Path.Direction.CW);
-        canvas.clipPath(path);
-        if (this.s != null) {
-            Matrix matrix = this.w;
-            matrix.reset();
-            matrix.postTranslate(rectF.centerX(), rectF.centerY());
-            this.s.setLocalMatrix(matrix);
-            paint.setShader(this.s);
-        }
-        canvas.drawPaint(paint);
-        canvas.save();
-        canvas.translate(rectF.centerX(), rectF.centerY());
-        ana.a(canvas, this.L, this.r, rectF.width(), rectF.height(), 1.0f, this.F);
-        vva vvaVar = this.e;
-        if (vvaVar != null) {
-            vvaVar.b(canvas, -1, 1.0f);
-        }
-        canvas.restore();
-        tgb tgbVar2 = this.x;
-        ImageReceiver imageReceiver = this.n;
-        if (tgbVar2 == null || (tgbVar = this.y) == null) {
-            float min = Math.min(rectF.width(), rectF.height()) * 0.75f;
-            float f2 = min / 2.0f;
-            imageReceiver.i0(rectF.centerX() - f2, rectF.centerY() - f2, min, min);
-            imageReceiver.h(canvas, null);
-        } else {
-            if (this.E != null) {
-                Paint paint2 = this.J;
-                paint2.setColor(1342177280);
-                canvas.drawRoundRect(rectF.left + gl.L(6.0f), gl.L(6.0f) + rectF.top, rectF.left + gl.L(20.0f) + Math.max(this.E.c(), gl.L(3.0f)), rectF.top + gl.L(23.0f), gl.L(8.5f), gl.L(8.5f), paint2);
-                canvas.save();
-                canvas.translate(rectF.left + gl.L(13.0f), rectF.top + gl.L(14.0f));
-                this.E.draw(canvas);
-                canvas.restore();
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x013c  */
+    @Override // pf0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void q(z2c z2cVar) {
+        ArrayList arrayList;
+        int i;
+        float f;
+        ok1 ok1Var = this.i0;
+        if (ok1Var != null) {
+            float f2 = this.G0;
+            uk1 uk1Var = this.h0;
+            float f3 = uk1Var.l;
+            float f4 = uk1Var.k;
+            float f5 = f2 / (f3 - f4);
+            float f6 = pf0.l1;
+            float f7 = (f4 * f5) - f6;
+            int i2 = 2;
+            int i3 = 1;
+            int i4 = ((int) (f6 / (((iqa) ok1Var).b.length < 2 ? 1.0f : ((iqa) ok1Var).b[1] * f5))) + 1;
+            int i5 = 0;
+            int max = Math.max(0, (this.G - i4) - 1);
+            int min = Math.min(((iqa) this.i0).b.length - 1, this.H + i4 + 1);
+            this.A0.g = new float[((iqa) this.i0).d.size()];
+            this.A0.h = new float[((iqa) this.i0).d.size()];
+            this.A0.i = new float[((iqa) this.i0).d.size()];
+            this.A0.j = new float[((iqa) this.i0).d.size()];
+            this.A0.k = new float[((iqa) this.i0).d.size()];
+            int i6 = 0;
+            while (i6 < i2) {
+                int i7 = i6 == i3 ? min : max;
+                int i8 = i5;
+                int i9 = i8;
+                float f8 = 0.0f;
+                while (true) {
+                    arrayList = this.d;
+                    if (i8 >= arrayList.size()) {
+                        break;
+                    }
+                    o46 o46Var = (o46) arrayList.get(i8);
+                    if (o46Var.n || o46Var.o != 0.0f) {
+                        long j = o46Var.a.a[i7];
+                        if (j > 0) {
+                            f8 += j * o46Var.o;
+                            i9++;
+                        }
+                    }
+                    i8++;
+                }
+                int i10 = 0;
+                int i11 = 0;
+                while (i10 < arrayList.size()) {
+                    o46 o46Var2 = (o46) arrayList.get(i10);
+                    if (o46Var2.n || o46Var2.o != 0.0f) {
+                        long[] jArr = o46Var2.a.a;
+                        if (i9 == i3) {
+                            if (jArr[i7] != 0) {
+                                f = o46Var2.o;
+                                i = i6;
+                                float f9 = (((iqa) this.i0).b[i7] * f5) - f7;
+                                float measuredHeight = f * ((getMeasuredHeight() - this.s) - pf0.o1);
+                                float f10 = i11;
+                                float measuredHeight2 = ((getMeasuredHeight() - this.s) - measuredHeight) - f10;
+                                i11 = (int) (f10 + measuredHeight);
+                                z2c z2cVar2 = this.A0;
+                                if (i != 0) {
+                                    z2cVar2.g[i10] = f9;
+                                    z2cVar2.h[i10] = measuredHeight2;
+                                } else {
+                                    z2cVar2.i[i10] = f9;
+                                    z2cVar2.j[i10] = measuredHeight2;
+                                }
+                            }
+                            i = i6;
+                            f = 0.0f;
+                            float f92 = (((iqa) this.i0).b[i7] * f5) - f7;
+                            float measuredHeight3 = f * ((getMeasuredHeight() - this.s) - pf0.o1);
+                            float f102 = i11;
+                            float measuredHeight22 = ((getMeasuredHeight() - this.s) - measuredHeight3) - f102;
+                            i11 = (int) (f102 + measuredHeight3);
+                            z2c z2cVar22 = this.A0;
+                            if (i != 0) {
+                            }
+                        } else {
+                            if (f8 != 0.0f) {
+                                i = i6;
+                                f = (jArr[i7] * o46Var2.o) / f8;
+                                float f922 = (((iqa) this.i0).b[i7] * f5) - f7;
+                                float measuredHeight32 = f * ((getMeasuredHeight() - this.s) - pf0.o1);
+                                float f1022 = i11;
+                                float measuredHeight222 = ((getMeasuredHeight() - this.s) - measuredHeight32) - f1022;
+                                i11 = (int) (f1022 + measuredHeight32);
+                                z2c z2cVar222 = this.A0;
+                                if (i != 0) {
+                                }
+                            }
+                            i = i6;
+                            f = 0.0f;
+                            float f9222 = (((iqa) this.i0).b[i7] * f5) - f7;
+                            float measuredHeight322 = f * ((getMeasuredHeight() - this.s) - pf0.o1);
+                            float f10222 = i11;
+                            float measuredHeight2222 = ((getMeasuredHeight() - this.s) - measuredHeight322) - f10222;
+                            i11 = (int) (f10222 + measuredHeight322);
+                            z2c z2cVar2222 = this.A0;
+                            if (i != 0) {
+                            }
+                        }
+                    } else {
+                        i = i6;
+                    }
+                    i10++;
+                    i6 = i;
+                    i3 = 1;
+                }
+                i6++;
+                i5 = 0;
+                i2 = 2;
+                i3 = 1;
             }
-            float min2 = Math.min(rectF.width(), rectF.height()) * 0.6f;
-            imageReceiver.i0(rectF.centerX() - (min2 / 2.0f), (rectF.height() * 0.12f) + rectF.top, min2, min2);
-            imageReceiver.h(canvas, null);
-            tgbVar2.e(canvas, rectF.centerX() - (tgbVar2.j() / 2.0f), rectF.bottom - gl.L(50.0f));
-            tgbVar.e(canvas, rectF.centerX() - (tgbVar.j() / 2.0f), rectF.bottom - gl.L(30.0f));
         }
-        canvas.restore();
     }
 
-    public final void e(int i, int i2) {
-        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, gl.N(this.f) / 2.0f, new int[]{i | (-16777216), i2 | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.s = radialGradient;
-        ((Paint) this.b).setShader(radialGradient);
-    }
-
-    public final void f() {
-        tgb tgbVar;
-        int currentTime = ConnectionsManager.getInstance(y6c.t0).getCurrentTime();
-        int i = this.H;
-        if (currentTime > i) {
-            this.E.t(k96.M0(2131750350, null), true, true);
-        } else {
-            int i2 = this.I;
-            gn gnVar = this.E;
-            if (currentTime < i2) {
-                gnVar.t(k96.a0(null, null, 2131750349, gl.g0(i2 - currentTime, true, false)), true, true);
-            } else {
-                gnVar.t(gl.g0(i - currentTime, true, false), true, true);
-            }
-        }
-        if (currentTime <= this.H || (tgbVar = this.y) == null) {
-            return;
-        }
-        tgbVar.p(k96.M0(2131749951, null));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(this.f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(this.f);
+    @Override // pf0
+    public final long r(int i, int i2) {
+        return 100L;
     }
 }

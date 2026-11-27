@@ -1,52 +1,39 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class he9 {
-    public final /* synthetic */ ye9 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class he9 implements Serializable {
+    public final Object a;
 
-    public he9(ye9 ye9Var) {
-        this.a = ye9Var;
+    public static final Throwable a(Object obj) {
+        if (obj instanceof ge9) {
+            return ((ge9) obj).a;
+        }
+        return null;
     }
 
-    public final void a(lk0 lk0Var) {
-        ye9 ye9Var = this.a;
-        ArrayList arrayList = ye9Var.t3;
-        int indexOf = arrayList.indexOf(lk0Var);
-        if (indexOf < 0 || !ye9.t3(lk0Var)) {
-            return;
+    public final boolean equals(Object obj) {
+        if (obj instanceof he9) {
+            return ur5.a(this.a, ((he9) obj).a);
         }
-        int M3 = ye9Var.M3(indexOf);
-        if (M3 >= arrayList.size()) {
-            M3 = arrayList.size() - 1;
+        return false;
+    }
+
+    public final int hashCode() {
+        Object obj = this.a;
+        if (obj == null) {
+            return 0;
         }
-        ld9 ld9Var = ye9Var.R3;
-        if (ld9Var != null) {
-            ld9Var.d();
+        return obj.hashCode();
+    }
+
+    public final String toString() {
+        Object obj = this.a;
+        if (obj instanceof ge9) {
+            return ((ge9) obj).toString();
         }
-        while (M3 >= indexOf) {
-            arrayList.remove(M3);
-            M3--;
-        }
-        lk0 lk0Var2 = null;
-        lk0 lk0Var3 = indexOf > 0 ? (lk0) arrayList.get(indexOf - 1) : null;
-        if (lk0Var3 != null && !lk0Var3.i && !ye9.t3(lk0Var3) && !ye9.A3(lk0Var3.b)) {
-            lk0Var2 = lk0Var3;
-        }
-        if (arrayList.isEmpty()) {
-            lk0Var2 = new lk0(new TL_iv.pageBlockParagraph(), 0, 0);
-            arrayList.add(lk0Var2);
-        }
-        ye9Var.g3.O(false);
-        ld9 ld9Var2 = ye9Var.R3;
-        if (ld9Var2 != null) {
-            ld9Var2.h();
-        }
-        if (lk0Var2 != null) {
-            ye9Var.post(new sd9(ye9Var, lk0Var2, (byte) 22));
-        }
+        return "Success(" + obj + ')';
     }
 }

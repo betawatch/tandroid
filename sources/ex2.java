@@ -1,6 +1,58 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ex2 extends Error {
+public final class ex2 implements Iterable {
+    public final Object a = new Object();
+    public final HashMap b = new HashMap();
+    public Set c = Collections.EMPTY_SET;
+    public List d = Collections.EMPTY_LIST;
+
+    public final int h(mr3 mr3Var) {
+        int intValue;
+        synchronized (this.a) {
+            intValue = this.b.containsKey(mr3Var) ? ((Integer) this.b.get(mr3Var)).intValue() : 0;
+        }
+        return intValue;
+    }
+
+    public final void i(mr3 mr3Var) {
+        synchronized (this.a) {
+            Integer num = (Integer) this.b.get(mr3Var);
+            if (num == null) {
+                return;
+            }
+            ArrayList arrayList = new ArrayList(this.d);
+            arrayList.remove(mr3Var);
+            this.d = DesugarCollections.unmodifiableList(arrayList);
+            int intValue = num.intValue();
+            HashMap hashMap = this.b;
+            if (intValue == 1) {
+                hashMap.remove(mr3Var);
+                HashSet hashSet = new HashSet(this.c);
+                hashSet.remove(mr3Var);
+                this.c = DesugarCollections.unmodifiableSet(hashSet);
+            } else {
+                hashMap.put(mr3Var, Integer.valueOf(num.intValue() - 1));
+            }
+        }
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        Iterator it;
+        synchronized (this.a) {
+            it = this.d.iterator();
+        }
+        return it;
+    }
 }

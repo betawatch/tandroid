@@ -1,85 +1,78 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class z implements TextWatcher {
-    public final /* synthetic */ ImageView a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ TextView f;
-    public final /* synthetic */ ScrollView h;
+public final class z implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public z(ImageView imageView, int i, int i2, LinearLayout linearLayout, ArrayList arrayList, TextView textView, ScrollView scrollView) {
-        this.a = imageView;
-        this.b = i;
-        this.c = i2;
-        this.d = linearLayout;
-        this.e = arrayList;
-        this.f = textView;
-        this.h = scrollView;
+    public /* synthetic */ z(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        LinearLayout linearLayout;
-        int i;
-        int i2;
-        String str;
-        String lowerCase = editable.toString().trim().toLowerCase();
-        boolean isEmpty = lowerCase.isEmpty();
-        int i3 = 8;
-        this.a.setVisibility(editable.length() > 0 ? 0 : 8);
-        int i4 = this.b;
-        while (true) {
-            linearLayout = this.d;
-            i = this.c;
-            if (i4 >= i) {
-                break;
-            }
-            linearLayout.getChildAt(i4).setVisibility(!isEmpty ? 8 : 0);
-            i4++;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        byte b = this.a;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                b1 b1Var = (b1) obj;
+                d79 d79Var = b1Var.n1;
+                kg5 kg5Var = (kg5) obj2;
+                if (b1Var.y2 == kg5Var && kg5Var.getParent() != null) {
+                    b1Var.k1(false);
+                } else if (d79Var.getViewTreeObserver().isAlive()) {
+                    d79Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                return true;
+            case 1:
+                kg5 kg5Var2 = (kg5) obj2;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                if (kg5Var2.getParent() != null) {
+                    int i = ChatActivityEnterView.X7;
+                    chatActivityEnterView.w1(kg5Var2);
+                } else if (chatActivityEnterView.getViewTreeObserver().isAlive()) {
+                    chatActivityEnterView.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                return true;
+            case 2:
+                ((ci3) obj).a.f0[0].a.getViewTreeObserver().removeOnPreDrawListener(this);
+                hl.d3((pqa) obj2, 100L);
+                return false;
+            case 3:
+                j95 j95Var = (j95) obj;
+                j95Var.J1.getViewTreeObserver().removeOnPreDrawListener(this);
+                j95Var.i4 = null;
+                j95Var.T3.h((wc2) obj2);
+                hl.V3(j95Var.e4);
+                j95Var.b.requestLayout();
+                return false;
+            default:
+                ((ViewTreeObserver) obj2).removeOnPreDrawListener(this);
+                i19 i19Var = (i19) obj;
+                c21 c21Var = i19Var.X;
+                if (c21Var != null) {
+                    int[] iArr = i19.e0;
+                    c21Var.getLocationInWindow(iArr);
+                    float f = iArr[0];
+                    float translationY = iArr[1] - i19Var.X.getTranslationY();
+                    c21 c21Var2 = i19Var.X;
+                    float topOffset = translationY + (c21Var2.top ? c21Var2.getTopOffset() : -c21Var2.getBottomOffset());
+                    i19Var.a.getLocationInWindow(iArr);
+                    float f2 = iArr[0];
+                    float f3 = iArr[1];
+                    i19Var.Y = (i19Var.X.a.getMeasuredWidth() / 2.0f) + (f - f2) + i19Var.X.a.getLeft();
+                    i19Var.Z = (i19Var.X.a.getMeasuredHeight() / 2.0f) + (topOffset - f3) + i19Var.X.a.getTop();
+                }
+                i19Var.c();
+                return true;
         }
-        int i5 = 0;
-        int i6 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i5 >= arrayList.size() || (i2 = i + i5) >= linearLayout.getChildCount()) {
-                break;
-            }
-            u0c u0cVar = (u0c) arrayList.get(i5);
-            String str2 = u0cVar.d;
-            if (str2 == null) {
-                str2 = (u0cVar.b + " " + u0cVar.c).toLowerCase();
-            }
-            boolean z = isEmpty || str2.contains(lowerCase) || ((str = u0cVar.a) != null && str.toLowerCase().startsWith(lowerCase));
-            linearLayout.getChildAt(i2).setVisibility(z ? 0 : 8);
-            if (z) {
-                i6++;
-            }
-            i5++;
-        }
-        if (!isEmpty && i6 == 0) {
-            i3 = 0;
-        }
-        this.f.setVisibility(i3);
-        this.h.scrollTo(0, 0);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

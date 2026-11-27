@@ -1,29 +1,29 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzot {
     public static Object zza(Object obj, String str) {
         if (obj != null) {
             return obj;
         }
-        fvc.f(str.concat(" must not be null"));
+        p3d.h(str.concat(" must not be null"));
         return null;
     }
 
     public static String zzb(String str) {
         if (str.isEmpty()) {
-            w26.j("identifier must not be empty");
+            lq5.j("identifier must not be empty");
             return null;
         }
         if (!zzc(str.charAt(0))) {
-            w26.j("identifier must start with an ASCII letter: ".concat(str));
+            lq5.j("identifier must start with an ASCII letter: ".concat(str));
             return null;
         }
         for (int i = 1; i < str.length(); i++) {
             char charAt = str.charAt(i);
             if (!zzc(charAt) && ((charAt < '0' || charAt > '9') && charAt != '_')) {
-                w26.j("identifier must contain only ASCII letters, digits or underscore: ".concat(str));
+                lq5.j("identifier must contain only ASCII letters, digits or underscore: ".concat(str));
                 return null;
             }
         }

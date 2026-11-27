@@ -1,55 +1,23 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Paint;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class u75 extends w39 implements GroupCallMessagesController.CallMessageListener {
-    public List c;
-    public boolean d;
-    public int e;
-    public TLRPC.InputGroupCall f;
+public final class u75 extends Paint {
+    public final /* synthetic */ j95 a;
 
-    @Override // w39
-    public final int b() {
-        List list = this.c;
-        if (list != null) {
-            return list.size();
-        }
-        return 0;
+    public u75(j95 j95Var) {
+        this.a = j95Var;
     }
 
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onNewGroupCallMessage(long j, GroupCallMessage groupCallMessage) {
-        if (this.c == null) {
-            this.c = new ArrayList();
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i) {
+        super.setAlpha(i);
+        ViewGroup viewGroup = this.a.b;
+        if (viewGroup != null) {
+            viewGroup.invalidate();
         }
-        this.c.add(0, groupCallMessage);
-        i(0);
-    }
-
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onPopGroupCallMessage() {
-        List list = this.c;
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        int size = this.c.size() - 1;
-        this.c.remove(size);
-        r(size);
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        s75 s75Var = (s75) s49Var;
-        List list = this.c;
-        if (list == null || list.size() <= i) {
-            return;
-        }
-        ((t75) s75Var.a).set((GroupCallMessage) this.c.get(i));
     }
 }

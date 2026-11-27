@@ -1,22 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class jt5 extends ft5 {
-    public final /* synthetic */ pt5 e;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public jt5(pt5 pt5Var) {
-        this.e = pt5Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class jt5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kt5 b;
+
+    public /* synthetic */ jt5(kt5 kt5Var, byte b) {
+        this.a = b;
+        this.b = kt5Var;
     }
 
-    @Override // ft5
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // ft5
-    public final void l(Throwable th) {
-        this.e.v();
-        throw null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        kt5 kt5Var = this.b;
+        switch (b) {
+            case 0:
+                kt5Var.e.X1 = null;
+                kt5Var.requestLayout();
+                break;
+            default:
+                kt5Var.e.X1 = null;
+                kt5Var.a = false;
+                break;
+        }
     }
 }

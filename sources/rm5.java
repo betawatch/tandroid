@@ -1,42 +1,55 @@
 // default package
 
-import j$.util.Objects;
-import java.util.Map;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rm5 extends v5c {
-    public final v5c b;
-    public Object c;
-    public v5c d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rm5 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
 
-    public rm5(nm5 nm5Var) {
-        super((byte) 0);
-        b69 b69Var = nm5Var.e;
-        ym5 ym5Var = b69Var.a;
-        if (ym5Var == null) {
-            ym5Var = b69Var.c();
-            b69Var.a = ym5Var;
-        }
-        this.b = ym5Var.iterator();
-        this.c = null;
-        this.d = ls5.e;
+    public /* synthetic */ rm5(int i, String str, boolean z) {
+        this.c = i;
+        this.b = str;
+        this.d = z;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.d.hasNext() || this.b.hasNext();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.d;
+        int i = this.c;
+        String str = this.b;
+        switch (b) {
+            case 0:
+                jn7.f(i).k(jn7.V1, str, Boolean.valueOf(z));
+                break;
+            default:
+                h0d h0dVar = (h0d) k0d.a.get(str);
+                if (h0dVar != null && h0dVar.v != null) {
+                    if (!k0d.g.contains(h0dVar)) {
+                        h0dVar.M = i;
+                        h0dVar.N = z;
+                        ArrayList arrayList = k0d.f;
+                        arrayList.remove(h0dVar);
+                        arrayList.add(h0dVar);
+                        k0d.o();
+                        break;
+                    } else {
+                        h0dVar.M = i;
+                        h0dVar.v.m(i);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.d.hasNext()) {
-            Map.Entry entry = (Map.Entry) this.b.next();
-            this.c = entry.getKey();
-            this.d = ((gm5) entry.getValue()).iterator();
-        }
-        Object obj = this.c;
-        Objects.requireNonNull(obj);
-        return new hm5(obj, this.d.next());
+    public /* synthetic */ rm5(String str, int i, boolean z) {
+        this.b = str;
+        this.c = i;
+        this.d = z;
     }
 }

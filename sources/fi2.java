@@ -1,43 +1,90 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.util.Log;
+import android.view.View;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes.dex */
-public final class fi2 {
-    public static final yn j = new yn("ClearcutLogger.API", new op5(10), new wn());
-    public final Context a;
-    public final String b;
-    public final int c;
-    public final String d;
-    public final int e;
-    public final h7e f;
-    public final u84 g;
-    public final c6e h;
-    public final o7f i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fi2 implements dic {
+    public final /* synthetic */ byte a;
+    public int b;
+    public final /* synthetic */ View c;
 
-    public fi2(Context context) {
-        u84 u84Var = new u84(context, j, null, new eef((byte) 13));
-        c6e c6eVar = c6e.a;
-        o7f o7fVar = new o7f(context);
-        this.e = -1;
-        h7e h7eVar = h7e.b;
-        this.f = h7eVar;
-        this.a = context;
-        this.b = context.getPackageName();
-        int i = 0;
-        try {
-            i = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.wtf("ClearcutLogger", "This can't happen.", e);
+    public /* synthetic */ fi2(View view, byte b) {
+        this.a = b;
+        this.c = view;
+    }
+
+    @Override // dic
+    public final void a(int i) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                yr8 yr8Var = (yr8) this.c;
+                ProfileActivity profileActivity = yr8Var.n;
+                int k = profileActivity.o0.E0.k(i);
+                yr8Var.a(this.b != k);
+                this.b = k;
+                if (profileActivity.r0 != null) {
+                    if (!profileActivity.T0.y()) {
+                        yr8Var.c();
+                        break;
+                    } else {
+                        hl.d3(new uk8(yr8Var, (byte) 10), 500L);
+                        break;
+                    }
+                }
+                break;
         }
-        this.c = i;
-        this.e = -1;
-        this.d = "VISION";
-        this.g = u84Var;
-        this.h = c6eVar;
-        this.f = h7eVar;
-        this.i = o7fVar;
+    }
+
+    @Override // dic
+    public final void b(float f, int i, int i2) {
+        vy4 vy4Var;
+        byte b = this.a;
+        View view = this.c;
+        switch (b) {
+            case 0:
+                if (i == ((et8) view).getCurrentItem() && f == 0.0f && this.b == 1) {
+                    d();
+                    break;
+                }
+                break;
+            default:
+                vy4Var = ((e) ((yr8) view).n).glassEngine;
+                vy4Var.g();
+                break;
+        }
+    }
+
+    @Override // dic
+    public final void c(int i) {
+        switch (this.a) {
+            case 0:
+                if (i == 0) {
+                    d();
+                }
+                this.b = i;
+                break;
+        }
+    }
+
+    public final void d() {
+        et8 et8Var = (et8) this.c;
+        if (et8Var.x0 != null) {
+            int currentItem = et8Var.getCurrentItem();
+            int k = et8Var.x0.k(currentItem) + et8Var.x0.j();
+            if (currentItem != k) {
+                et8Var.x(k, false);
+            }
+        }
+    }
+
+    private final void e(int i) {
+    }
+
+    private final void f(int i) {
     }
 }

@@ -1,140 +1,29 @@
 // default package
 
-import android.util.Log;
-import android.view.WindowManager;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.concurrent.ExecutorsRegistrar;
-import com.google.firebase.installations.FirebaseInstallationsRegistrar;
-import com.google.firebase.pnv.internal.FirebasePhoneNumberVerificationRegistrar;
-import com.google.firebase.sessions.FirebaseSessionsRegistrar;
-import java.io.IOException;
-import java.util.concurrent.ScheduledExecutorService;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w44 implements aq2, x56, y56, ed, Continuation, OnFailureListener, eia, fia {
-    public final /* synthetic */ byte a;
+public final class w44 implements feb, cy8 {
+    public final HashMap a = new HashMap();
+    public ArrayDeque b = new ArrayDeque();
+    public final Executor c;
 
-    public /* synthetic */ w44(y54 y54Var) {
-        this.a = (byte) 5;
+    public w44(Executor executor) {
+        this.c = executor;
     }
 
-    public static /* synthetic */ void d(Object obj, Object obj2, String str) {
-        throw new IllegalStateException(str + obj + obj2);
-    }
-
-    public static /* synthetic */ void e(Object obj, String str) {
-        throw new IOException(str + obj);
-    }
-
-    public static /* synthetic */ void f(String str, Object obj, Object obj2, Object obj3, Object obj4) {
-        throw new IllegalStateException(str + obj + obj2 + obj3 + obj4);
-    }
-
-    @Override // aq2
-    public final Object L(gl2 gl2Var) {
-        rg4 lambda$getComponents$0;
-        yg4 components$lambda$0;
-        fh4 components$lambda$02;
-        ih4 components$lambda$1;
-        switch (this.a) {
-            case 0:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
-            case 1:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
-            case 2:
-                e06 e06Var = ExecutorsRegistrar.a;
-                return m4c.a;
-            case 17:
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(gl2Var);
-                return lambda$getComponents$0;
-            case 19:
-                components$lambda$0 = FirebasePhoneNumberVerificationRegistrar.getComponents$lambda$0(gl2Var);
-                return components$lambda$0;
-            case 21:
-                components$lambda$02 = FirebaseSessionsRegistrar.getComponents$lambda$0(gl2Var);
-                return components$lambda$02;
-            default:
-                components$lambda$1 = FirebaseSessionsRegistrar.getComponents$lambda$1(gl2Var);
-                return components$lambda$1;
+    public final void a(xi4 xi4Var) {
+        Executor executor = this.c;
+        synchronized (this) {
+            executor.getClass();
+            if (!this.a.containsKey(r63.class)) {
+                this.a.put(r63.class, new ConcurrentHashMap());
+            }
+            ((ConcurrentHashMap) this.a.get(r63.class)).put(xi4Var, executor);
         }
-    }
-
-    @Override // fia
-    public final void b(Object obj, float f) {
-        sj4 sj4Var = (sj4) obj;
-        switch (this.a) {
-            case 25:
-                WindowManager.LayoutParams layoutParams = sj4Var.e;
-                sj4Var.B = f;
-                layoutParams.x = (int) f;
-                sj4Var.r();
-                break;
-            default:
-                WindowManager.LayoutParams layoutParams2 = sj4Var.e;
-                sj4Var.C = f;
-                layoutParams2.y = (int) f;
-                sj4Var.r();
-                break;
-        }
-    }
-
-    @Override // y56
-    public final void c(Object obj, gi4 gi4Var) {
-        ((mc8) obj).c(new lc8(gi4Var));
-    }
-
-    @Override // eia
-    public final float get(Object obj) {
-        sj4 sj4Var = (sj4) obj;
-        switch (this.a) {
-            case 24:
-                return sj4Var.B;
-            default:
-                return sj4Var.C;
-        }
-    }
-
-    @Override // x56
-    public final void invoke(Object obj) {
-        mc8 mc8Var = (mc8) obj;
-        switch (this.a) {
-            case 4:
-                mc8Var.F(new j54(2, new gp2("Player release timed out."), 1003));
-                break;
-            default:
-                mc8Var.onRenderedFirstFrame();
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        Log.e("FirebaseCrashlytics", "Error fetching settings.", exc);
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public final Object then(Task task) {
-        int i;
-        switch (this.a) {
-            case 8:
-                i = 403;
-                break;
-            default:
-                i = -1;
-                break;
-        }
-        return Integer.valueOf(i);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        hdVar.dismiss();
-    }
-
-    public /* synthetic */ w44(byte b) {
-        this.a = b;
     }
 }

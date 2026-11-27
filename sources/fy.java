@@ -1,76 +1,81 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fy implements Iterable, Cloneable {
-    public static final String[] d = new String[0];
-    public int a = 0;
-    public String[] b;
-    public String[] c;
-
-    public fy() {
-        String[] strArr = d;
-        this.b = strArr;
-        this.c = strArr;
-    }
+public final class fy implements Map.Entry, Cloneable {
+    public String a;
+    public String b;
+    public gy c;
 
     public final Object clone() {
         try {
-            fy fyVar = (fy) super.clone();
-            fyVar.a = this.a;
-            String[] strArr = this.b;
-            int i = this.a;
-            String[] strArr2 = new String[i];
-            System.arraycopy(strArr, 0, strArr2, 0, Math.min(strArr.length, i));
-            this.b = strArr2;
-            String[] strArr3 = this.c;
-            int i2 = this.a;
-            String[] strArr4 = new String[i2];
-            System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i2));
-            this.c = strArr4;
-            return fyVar;
+            return (fy) super.clone();
         } catch (CloneNotSupportedException e) {
-            sdb.b(e);
+            grb.m(e);
             return null;
         }
     }
 
+    @Override // java.util.Map.Entry
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || fy.class != obj.getClass()) {
-            return false;
-        }
-        fy fyVar = (fy) obj;
-        if (this.a == fyVar.a && Arrays.equals(this.b, fyVar.b)) {
-            return Arrays.equals(this.c, fyVar.c);
+        if (obj != null && fy.class == obj.getClass()) {
+            fy fyVar = (fy) obj;
+            String str = this.a;
+            String str2 = fyVar.a;
+            if (str == null ? str2 != null : !str.equals(str2)) {
+                return false;
+            }
+            String str3 = this.b;
+            String str4 = fyVar.b;
+            if (str3 != null) {
+                return str3.equals(str4);
+            }
+            if (str4 == null) {
+                return true;
+            }
         }
         return false;
     }
 
-    public final int h(String str) {
-        if (str == null) {
-            w26.j("Object must not be null");
-            return 0;
-        }
-        for (int i = 0; i < this.a; i++) {
-            if (str.equals(this.b[i])) {
-                return i;
-            }
-        }
-        return -1;
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.a;
     }
 
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
     public final int hashCode() {
-        return (((this.a * 31) + Arrays.hashCode(this.b)) * 31) + Arrays.hashCode(this.c);
+        String str = this.a;
+        int hashCode = (str != null ? str.hashCode() : 0) * 31;
+        String str2 = this.b;
+        return hashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new v2(this);
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        String str;
+        String str2 = (String) obj;
+        gy gyVar = this.c;
+        String str3 = this.a;
+        int h = gyVar.h(str3);
+        String str4 = "";
+        if (h != -1 && (str = gyVar.c[h]) != null) {
+            str4 = str;
+        }
+        int h2 = gyVar.h(str3);
+        if (h2 != -1) {
+            gyVar.c[h2] = str2;
+        }
+        this.b = str2;
+        return str4;
     }
 }

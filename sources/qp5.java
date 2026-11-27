@@ -1,25 +1,23 @@
 // default package
 
-import java.util.concurrent.locks.AbstractOwnableSynchronizer;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qp5 extends AbstractOwnableSynchronizer implements Runnable {
-    public final h2c a;
+public final class qp5 extends c4 {
+    public static final Parcelable.Creator<qp5> CREATOR = new g3e((byte) 7);
 
-    public qp5(h2c h2cVar) {
-        this.a = h2cVar;
+    public final boolean equals(Object obj) {
+        return this == obj || (obj instanceof qp5);
     }
 
-    public final void a(Thread thread) {
-        setExclusiveOwnerThread(thread);
+    public final int hashCode() {
+        return 0;
     }
 
-    public final String toString() {
-        return this.a.toString();
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        bye.s(parcel, bye.r(parcel, 20293));
     }
 }

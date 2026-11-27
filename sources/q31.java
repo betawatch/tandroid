@@ -1,541 +1,449 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
+import android.app.Notification;
+import android.app.RemoteInput;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.location.Location;
-import android.net.Uri;
+import android.graphics.Matrix;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 import android.os.RemoteException;
-import android.text.Editable;
+import android.text.TextUtils;
 import android.util.Log;
-import android.util.Pair;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ImageView;
-import androidx.car.app.CarAppPermissionActivity;
-import androidx.car.app.IOnRequestPermissionsListener;
-import androidx.car.app.IStartCarApp;
-import androidx.car.app.notification.CarAppNotificationBroadcastReceiver;
+import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.ProfileActivity;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class q31 implements l8c, ed, wi3, r69, r9, ub0, e39, gj, z97, yw5, s29, zz8, sc7, ResultCallback, xh5, n48, ll5, e12, vb9, vc7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class q31 implements ggd {
+    public static final v11 f = new v11();
+    public boolean a;
+    public final Object b;
+    public final Object c;
+    public final Object d;
+    public Object e;
 
-    public /* synthetic */ q31(ff1 ff1Var, gb2 gb2Var, TLRPC.User user) {
-        this.a = (byte) 6;
-        this.b = ff1Var;
-        this.c = user;
-    }
-
-    @Override // ll5
-    public final void C(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
-        j52 j52Var = (j52) this.b;
-        jm6 jm6Var = (jm6) this.c;
-        if (z && !z2 && jm6Var.M && j52Var.d.n() == null) {
-            if (j52Var.d.n() != null && !j52Var.d.n().isRecycled()) {
-                j52Var.d.n().recycle();
-                j52Var.d.g0(null);
-            }
-            j52Var.d.f0(Utilities.D(imageReceiver.n(), false));
-        }
-    }
-
-    @Override // wi3
-    public final boolean G() {
-        return false;
-    }
-
-    @Override // xh5
-    public final boolean a(MotionEvent motionEvent, wy4 wy4Var) {
-        Location location;
-        c42 c42Var = (c42) this.b;
-        wjb wjbVar = (wjb) this.c;
-        ImageView imageView = c42Var.n;
-        Property property = View.TRANSLATION_Y;
-        ImageView imageView2 = c42Var.P;
-        if (motionEvent.getAction() == 0) {
-            AnimatorSet animatorSet = c42Var.b0;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-            }
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            c42Var.b0 = animatorSet2;
-            animatorSet2.setDuration(200L);
-            c42Var.b0.playTogether(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, c42Var.k0 - gl.L(10.0f)));
-            c42Var.b0.start();
-        } else if (motionEvent.getAction() == 1) {
-            AnimatorSet animatorSet3 = c42Var.b0;
-            if (animatorSet3 != null) {
-                animatorSet3.cancel();
-            }
-            c42Var.H = 0.0f;
-            AnimatorSet animatorSet4 = new AnimatorSet();
-            c42Var.b0 = animatorSet4;
-            animatorSet4.setDuration(200L);
-            c42Var.b0.playTogether(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, c42Var.k0));
-            c42Var.b0.start();
-        }
-        if (motionEvent.getAction() == 2) {
-            if (!c42Var.m0) {
-                int i = bkb.kj;
-                zkb.s(imageView, i, wjbVar, PorterDuff.Mode.MULTIPLY);
-                imageView.setTag(Integer.valueOf(i));
-                c42Var.m0 = true;
-            }
-            ty4 ty4Var = c42Var.E;
-            if (ty4Var != null && (location = c42Var.j0) != null) {
-                location.setLatitude(((yh5) ty4Var.d().b).a);
-                c42Var.j0.setLongitude(((yh5) c42Var.E.d().b).b);
-            }
-            c42Var.L.L(c42Var.j0);
-        }
-        return wy4Var.a(motionEvent).booleanValue();
-    }
-
-    @Override // z97
-    public final boolean b(TLRPC.TL_error tL_error) {
-        ((mu1) this.b).F8((Context) this.c, tL_error);
-        return false;
-    }
-
-    @Override // n48
-    public final void c(o48 o48Var) {
-        TLRPC.Chat chat;
-        e52 e52Var = (e52) this.b;
-        o48 o48Var2 = (o48) this.c;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = e52Var.w;
-        boolean z = chatAttachAlertPhotoLayout.w0;
-        x02 x02Var = chatAttachAlertPhotoLayout.b;
-        if (z) {
-            byte b = x02Var.N2;
-            d dVar = x02Var.Z1;
-            if (b != 0 || x02Var.B1) {
-                return;
-            }
-            int intValue = ((Integer) o48Var.getTag()).intValue();
-            jm6 photoEntry = o48Var.getPhotoEntry();
-            if (chatAttachAlertPhotoLayout.Y(photoEntry)) {
-                return;
-            }
-            HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
-            if (hashMap.size() + 1 > chatAttachAlertPhotoLayout.i0()) {
-                new u21(x02Var.o3, chatAttachAlertPhotoLayout.a).t(gl.S2(k96.G(dVar.getMessagesController().k4.i0.f(), "BusinessRepliesToastLimit", new Object[0])), null).j();
-                return;
-            }
-            boolean containsKey = hashMap.containsKey(Integer.valueOf(photoEntry.C));
-            boolean z2 = !containsKey;
-            if (!containsKey && x02Var.P3 >= 0 && hashMap.size() >= x02Var.P3) {
-                if (!x02Var.Q3 || !(dVar instanceof mu1) || (chat = ((mu1) dVar).e) == null || hc2.N(chat) || !chat.slowmode_enabled || chatAttachAlertPhotoLayout.M == 2) {
-                    return;
-                }
-                ij.L(chatAttachAlertPhotoLayout.getContext(), k96.M0(2131745118, null), k96.M0(2131745111, null), null, null, chatAttachAlertPhotoLayout.a).o();
-                if (chatAttachAlertPhotoLayout.M == 1) {
-                    chatAttachAlertPhotoLayout.M = (byte) 2;
-                    return;
-                }
-                return;
-            }
-            int size = !containsKey ? ChatAttachAlertPhotoLayout.u1.size() : -1;
-            if ((dVar instanceof mu1) && x02Var.Q3) {
-                o48Var.b(size, z2, true);
-            } else {
-                o48Var.b(-1, z2, true);
-            }
-            chatAttachAlertPhotoLayout.R(photoEntry, intValue);
-            e52 e52Var2 = chatAttachAlertPhotoLayout.w;
-            if (e52Var == e52Var2) {
-                e52 e52Var3 = chatAttachAlertPhotoLayout.H;
-                if (e52Var3.d && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
-                    intValue++;
-                }
-                if (e52Var3.f && intValue >= chatAttachAlertPhotoLayout.N0) {
-                    intValue++;
-                }
-                e52Var3.g(intValue);
-            } else {
-                e52Var2.g(intValue);
-            }
-            x02Var.F1(containsKey ? 2 : 1);
-            o48Var2.setHasSpoiler(photoEntry.M);
-            o48Var2.setHighQuality(photoEntry.c());
-            o48Var2.f(photoEntry.N, hashMap.size() > 1);
-        }
-    }
-
-    @Override // r69
-    public final void call() {
-        IStartCarApp iStartCarApp = (IStartCarApp) this.b;
-        Intent intent = (Intent) this.c;
-        int i = CarAppNotificationBroadcastReceiver.a;
-        iStartCarApp.startCarApp(intent);
-    }
-
-    @Override // e39
-    public final boolean d(int i, View view) {
-        return ((eg1) this.b).H0((Context) this.c, view, i);
-    }
-
-    @Override // vb9
-    public final cs5 e(mc9 mc9Var) {
-        tg2 tg2Var = (tg2) this.b;
-        wjb wjbVar = (wjb) this.c;
-        e72 e72Var = (e72) tg2Var.c;
-        cs5 cs5Var = new cs5(e72Var, wjbVar, mc9Var, false, false, true);
-        e72Var.I = cs5Var;
-        return cs5Var;
-    }
-
-    @Override // s29
-    public final void f() {
-        mu1 mu1Var = (mu1) this.b;
-        ((qw4) this.c).g();
-        mu1Var.I7();
-    }
-
-    @Override // e12
-    public final void g(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2) {
-        p8c p8cVar = (p8c) this.b;
-        x31 x31Var = (x31) this.c;
-        if (!arrayList.isEmpty()) {
-            p8cVar.a(new td8((k27) arrayList.get(0)));
-        }
-        x31Var.a(true);
-    }
-
-    @Override // l8c
-    public final void h(Object obj, TLRPC.Document document, Boolean bool) {
-        y31 y31Var = (y31) this.b;
-        View view = (View) this.c;
-        y31Var.x = false;
-        gl.r(y31Var.e);
-        t31 t31Var = y31Var.n;
-        y31Var.y = document;
-        t31Var.setSticker(document);
-        ((wgb) view).setValueSticker(document);
-        y31Var.f0(true);
-    }
-
-    @Override // r9
-    public final void i(Object obj) {
-        CarAppPermissionActivity carAppPermissionActivity = (CarAppPermissionActivity) this.b;
-        IOnRequestPermissionsListener iOnRequestPermissionsListener = (IOnRequestPermissionsListener) this.c;
-        int i = CarAppPermissionActivity.K;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        for (Map.Entry entry : ((Map) obj).entrySet()) {
-            Boolean bool = (Boolean) entry.getValue();
-            if (bool == null || !bool.booleanValue()) {
-                arrayList2.add((String) entry.getKey());
-            } else {
-                arrayList.add((String) entry.getKey());
-            }
-        }
-        try {
-            iOnRequestPermissionsListener.onRequestPermissionsResult((String[]) arrayList.toArray(new String[0]), (String[]) arrayList2.toArray(new String[0]));
-        } catch (RemoteException e) {
-            Log.e("CarApp", "CarAppService dead when accepting/rejecting permissions", e);
-        }
-        carAppPermissionActivity.finish();
-    }
-
-    @Override // ub0
-    public final void j(cc0 cc0Var) {
-        ff1 ff1Var = (ff1) this.b;
-        TLRPC.User user = (TLRPC.User) this.c;
-        int ordinal = cc0Var.ordinal();
-        if (ordinal == 0) {
-            ff1Var.a(user);
-            return;
-        }
-        if (ordinal == 3) {
-            kf1 kf1Var = ff1Var.a;
-            if (user != null) {
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", user.id);
-                d dVar = kf1Var.n;
-                if (dVar.getMessagesController().A(bundle, dVar, null, null)) {
-                    dVar.presentFragment(new mu1(bundle));
-                }
-            }
-        }
-    }
-
-    @Override // sc7
-    public final void k(boolean z) {
-        aq1 aq1Var = (aq1) this.b;
-        long j = ((TLRPC.User) this.c).id;
-        mu1 mu1Var = aq1Var.b;
-        long j2 = mu1Var.s4;
-        if (j != j2) {
-            return;
-        }
-        mu1Var.xa(j2, false);
-    }
-
-    @Override // zz8
-    public final void l(long j, TLRPC.MessagePeerReaction messagePeerReaction) {
-        vo1 vo1Var = (vo1) this.b;
-        k27 k27Var = (k27) this.c;
-        mu1 mu1Var = vo1Var.p;
-        Bundle bundle = new Bundle();
-        if (j > 0) {
-            bundle.putLong("user_id", j);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x03e5  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0409  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0434  */
+    /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:149:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public q31(wn7 wn7Var) {
+        Notification.Builder builder;
+        String str;
+        int i;
+        Notification.BubbleMetadata bubbleMetadata;
+        int i2;
+        Notification.BubbleMetadata bubbleMetadata2;
+        yd6 yd6Var;
+        Bundle[] bundleArr;
+        ArrayList arrayList;
+        int i3;
+        ArrayList arrayList2;
+        this.e = new Bundle();
+        this.d = wn7Var;
+        Context context = wn7Var.a;
+        ArrayList arrayList3 = wn7Var.G;
+        ArrayList arrayList4 = wn7Var.c;
+        ArrayList arrayList5 = wn7Var.d;
+        this.b = context;
+        if (Build.VERSION.SDK_INT >= 26) {
+            builder = qq5.a(context, wn7Var.y);
+            this.c = builder;
         } else {
-            bundle.putLong("chat_id", -j);
+            builder = new Notification.Builder(context);
+            this.c = builder;
         }
-        bundle.putInt("report_reaction_message_id", k27Var.e1());
-        bundle.putLong("report_reaction_from_dialog_id", mu1Var.l6);
-        mu1Var.presentFragment(new ProfileActivity(bundle, null));
-        mu1Var.G5(true);
-    }
-
-    @Override // yw5
-    public final void n(Exception exc) {
-        AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-        AtomicReference atomicReference = (AtomicReference) this.c;
-        fa4.d("mlkit: failed to detect language in message");
-        atomicBoolean.set(false);
-        if (atomicReference.get() != null) {
-            ((Runnable) atomicReference.get()).run();
-            atomicReference.set(null);
-        }
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        ku1 ku1Var = (ku1) this.b;
-        ye7 ye7Var = (ye7) this.c;
-        Pair pair = (Pair) obj;
-        if (pair != null) {
-            long longValue = ((Long) pair.first).longValue();
-            Bitmap bitmap = (Bitmap) pair.second;
-            jy3 jy3Var = ku1Var.f;
-            if (jy3Var == null || longValue != jy3Var.h(ku1Var.q ? 1 : 0) || bitmap == null) {
-                return;
-            }
-            ye7Var.x = bitmap;
-            ye7Var.i();
-        }
-    }
-
-    @Override // wi3
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
-        byte b;
-        v51 v51Var = (v51) this.b;
-        cj3 cj3Var2 = (cj3) this.c;
-        ArrayList arrayList2 = v51Var.c;
-        cj3Var2.finishFragment();
-        m51 m51Var = null;
-        int i3 = 0;
+        Notification notification = wn7Var.F;
+        Context context2 = null;
+        builder.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, null).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(wn7Var.e).setContentText(wn7Var.f).setContentInfo(null).setContentIntent(wn7Var.g).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(null, (notification.flags & 128) != 0).setNumber(wn7Var.i).setProgress(wn7Var.n, wn7Var.o, wn7Var.p);
+        IconCompat iconCompat = wn7Var.h;
+        builder.setLargeIcon(iconCompat == null ? null : jpe.a(iconCompat, context));
+        builder.setSubText(wn7Var.m).setUsesChronometer(false).setPriority(wn7Var.j);
+        ArrayList arrayList6 = wn7Var.b;
+        int size = arrayList6.size();
         int i4 = 0;
         while (true) {
-            boolean z3 = true;
-            if (i4 >= arrayList.size()) {
+            str = "android.support.allowGeneratedReplies";
+            if (i4 >= size) {
                 break;
             }
-            int i5 = 0;
-            while (true) {
-                if (i5 >= v51Var.d.size()) {
-                    z3 = false;
-                    break;
-                }
-                if (((m51) v51Var.d.get(i5)).a == ((zc7) arrayList.get(i4)).a) {
-                    m51Var = (m51) v51Var.d.get(i5);
-                    break;
-                }
-                i5++;
-            }
-            if (!z3) {
-                b = v51Var.getMessagesController().h4.c(v51Var.e) != 2 ? (byte) 2 : (byte) 3;
-                ArrayList arrayList3 = v51Var.d;
-                m51 m51Var2 = new m51(((zc7) arrayList.get(i4)).a, b);
-                arrayList3.add(m51Var2);
-                m51Var = m51Var2;
-            }
+            Object obj = arrayList6.get(i4);
             i4++;
-        }
-        v51Var.getMessagesController().h4.h(v51Var.e, v51Var.d);
-        v51Var.Y();
-        if (m51Var != null) {
-            int i6 = 0;
-            while (true) {
-                if (i6 < arrayList2.size()) {
-                    if (((u51) arrayList2.get(i6)).c != null && ((u51) arrayList2.get(i6)).c.a == m51Var.a) {
-                        i3 = i6;
-                        break;
-                    }
+            ln7 ln7Var = (ln7) obj;
+            IconCompat a = ln7Var.a();
+            byte b = ln7Var.f;
+            boolean z = ln7Var.d;
+            Bundle bundle = ln7Var.a;
+            ArrayList arrayList7 = arrayList6;
+            int i5 = size;
+            Notification.Action.Builder builder2 = new Notification.Action.Builder(a != null ? jpe.a(a, context2) : context2, ln7Var.h, ln7Var.i);
+            t99[] t99VarArr = ln7Var.c;
+            if (t99VarArr != null) {
+                RemoteInput[] a2 = t99.a(t99VarArr);
+                int length = a2.length;
+                int i6 = 0;
+                while (i6 < length) {
+                    RemoteInput[] remoteInputArr = a2;
+                    builder2.addRemoteInput(remoteInputArr[i6]);
                     i6++;
+                    a2 = remoteInputArr;
+                }
+            }
+            Bundle bundle2 = new Bundle(bundle);
+            bundle2.putBoolean("android.support.allowGeneratedReplies", z);
+            int i7 = Build.VERSION.SDK_INT;
+            if (i7 >= 24) {
+                lh0.l(builder2, z);
+            }
+            bundle2.putInt("android.support.action.semanticAction", b);
+            if (i7 >= 28) {
+                go.A(builder2, b);
+            }
+            if (i7 >= 29) {
+                sr.r(builder2);
+            }
+            if (i7 >= 31) {
+                zz.t(builder2);
+            }
+            bundle2.putBoolean("android.support.action.showsUserInterface", ln7Var.e);
+            builder2.addExtras(bundle2);
+            ((Notification.Builder) this.c).addAction(builder2.build());
+            arrayList6 = arrayList7;
+            size = i5;
+            context2 = null;
+        }
+        Bundle bundle3 = wn7Var.v;
+        if (bundle3 != null) {
+            ((Bundle) this.e).putAll(bundle3);
+        }
+        ((Notification.Builder) this.c).setShowWhen(wn7Var.k);
+        ((Notification.Builder) this.c).setLocalOnly(wn7Var.t);
+        ((Notification.Builder) this.c).setGroup(wn7Var.q);
+        ((Notification.Builder) this.c).setSortKey(wn7Var.s);
+        ((Notification.Builder) this.c).setGroupSummary(wn7Var.r);
+        this.a = wn7Var.C;
+        ((Notification.Builder) this.c).setCategory(wn7Var.u);
+        ((Notification.Builder) this.c).setColor(wn7Var.w);
+        ((Notification.Builder) this.c).setVisibility(wn7Var.x);
+        ((Notification.Builder) this.c).setPublicVersion(null);
+        ((Notification.Builder) this.c).setSound(notification.sound, notification.audioAttributes);
+        if (Build.VERSION.SDK_INT < 28) {
+            if (arrayList4 == null) {
+                arrayList2 = null;
+            } else {
+                arrayList2 = new ArrayList(arrayList4.size());
+                int size2 = arrayList4.size();
+                int i8 = 0;
+                while (i8 < size2) {
+                    Object obj2 = arrayList4.get(i8);
+                    i8++;
+                    b78 b78Var = (b78) obj2;
+                    CharSequence charSequence = b78Var.a;
+                    String str2 = b78Var.c;
+                    if (str2 == null) {
+                        if (charSequence != null) {
+                            str2 = "name:" + ((Object) charSequence);
+                        } else {
+                            str2 = "";
+                        }
+                    }
+                    arrayList2.add(str2);
+                }
+            }
+            if (arrayList2 != null) {
+                if (arrayList3 == null) {
+                    arrayList3 = arrayList2;
                 } else {
-                    break;
+                    ss ssVar = new ss(arrayList3.size() + arrayList2.size());
+                    ssVar.addAll(arrayList2);
+                    ssVar.addAll(arrayList3);
+                    arrayList3 = new ArrayList(ssVar);
                 }
             }
-            v51Var.b.w0(i3);
-            gl.d3(new q21(v51Var, m51Var, b), 150L);
         }
-        return true;
-    }
-
-    @Override // vc7
-    public final void run(long j) {
-        p82 p82Var = (p82) this.b;
-        hd hdVar = (hd) this.c;
-        p82Var.getClass();
-        hdVar.dismiss();
-        p82Var.O0 = false;
-        if (j != 0) {
-            p82Var.w0 = j;
-            TLRPC.Chat K0 = p82Var.getMessagesController().K0(Long.valueOf(j));
-            p82Var.x0 = K0;
-            TLRPC.ChatFull chatFull = p82Var.y0;
-            if (chatFull != null) {
-                chatFull.hidden_prehistory = true;
-            }
-            boolean z = K0.forum_tabs != p82Var.H0;
-            boolean z2 = K0.forum_sidebar != p82Var.I0;
-            p82Var.getMessagesController().g5(p82Var.w0, p82Var.F0, p82Var.H0, p82Var.I0);
-            TLRPC.Chat chat = p82Var.x0;
-            chat.forum = p82Var.F0;
-            chat.forum_tabs = p82Var.H0;
-            chat.forum_sidebar = p82Var.I0;
-            if (z || z2) {
-                p82Var.u0(z);
+        if (arrayList3 != null && !arrayList3.isEmpty()) {
+            int size3 = arrayList3.size();
+            int i9 = 0;
+            while (i9 < size3) {
+                Object obj3 = arrayList3.get(i9);
+                i9++;
+                ((Notification.Builder) this.c).addPerson((String) obj3);
             }
         }
-    }
-
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        k27 threadMessage;
-        byte b = this.a;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (b) {
-            case 10:
-                mu1 mu1Var = (mu1) obj2;
-                mu1Var.z6();
-                z3a.X(mu1Var.getAccountInstance(), (Uri) obj, mu1Var.l6, mu1Var.F5, mu1Var.m4, null, mu1Var.H5, z, i, mu1Var.Q6());
-                break;
-            case 12:
-                mu1 mu1Var2 = (mu1) obj2;
-                mu1Var2.getSendMessagesHelper().q0(x3a.b((String) obj, mu1Var2.l6, mu1Var2.F5, mu1Var2.m4, null, false, null, null, null, z, i, 0, null, false));
-                mu1Var2.a0.setFieldText("");
-                mu1Var2.w7(false);
-                break;
-            case 17:
-                wt1 wt1Var = (wt1) obj2;
-                k27 k27Var = (k27) obj;
-                if (z) {
-                    wt1Var.a.getMessagesController().s(k27Var.k.id, i, cf3.n(k27Var.k.peer_id), null, false);
-                    break;
-                }
-                break;
-            case 20:
-                String str = (String) obj;
-                ChatActivityEnterView chatActivityEnterView = ((dx1) obj2).a;
-                long j = chatActivityEnterView.G3;
-                k27 k27Var2 = chatActivityEnterView.J3;
-                threadMessage = chatActivityEnterView.getThreadMessage();
-                x3a b2 = x3a.b(str, j, k27Var2, threadMessage, null, false, null, null, null, z, i, i2, null, false);
-                mu1 mu1Var3 = chatActivityEnterView.F3;
-                b2.K = mu1Var3 != null ? mu1Var3.Q6() : null;
-                b2.O = chatActivityEnterView.O6;
-                z3a.B(chatActivityEnterView.R).q0(b2);
-                chatActivityEnterView.setFieldText("");
-                chatActivityEnterView.n0.c();
-                ow1 ow1Var = chatActivityEnterView.K0;
-                chatActivityEnterView.O6 = 0L;
-                ow1Var.setEffect(0L);
-                break;
-            case 21:
-                ((gy1) obj2).L((gi3) obj, z, i, i2);
-                break;
-            default:
-                k62 k62Var = (k62) obj2;
-                View view = (View) obj;
-                if (z) {
-                    k62Var.W = i;
-                    k62Var.V = 0;
-                    if (!(view instanceof wgb)) {
-                        k62Var.r.g(k62Var.J0);
-                        break;
-                    } else {
-                        k62Var.U((wgb) view, true);
-                        break;
+        if (arrayList5.size() > 0) {
+            Bundle bundle4 = wn7Var.v;
+            if (bundle4 == null) {
+                bundle4 = new Bundle();
+                wn7Var.v = bundle4;
+            }
+            Bundle bundle5 = bundle4.getBundle("android.car.EXTENSIONS");
+            bundle5 = bundle5 == null ? new Bundle() : bundle5;
+            Bundle bundle6 = new Bundle(bundle5);
+            Bundle bundle7 = new Bundle();
+            int i10 = 0;
+            while (i10 < arrayList5.size()) {
+                String num = Integer.toString(i10);
+                ln7 ln7Var2 = (ln7) arrayList5.get(i10);
+                Bundle bundle8 = new Bundle();
+                IconCompat a3 = ln7Var2.a();
+                Bundle bundle9 = ln7Var2.a;
+                bundle8.putInt("icon", a3 != null ? a3.g() : 0);
+                bundle8.putCharSequence("title", ln7Var2.h);
+                bundle8.putParcelable("actionIntent", ln7Var2.i);
+                Bundle bundle10 = new Bundle(bundle9);
+                bundle10.putBoolean(str, ln7Var2.d);
+                bundle8.putBundle("extras", bundle10);
+                t99[] t99VarArr2 = ln7Var2.c;
+                if (t99VarArr2 == null) {
+                    arrayList = arrayList5;
+                    i3 = i10;
+                    bundleArr = null;
+                } else {
+                    bundleArr = new Bundle[t99VarArr2.length];
+                    arrayList = arrayList5;
+                    i3 = i10;
+                    int i11 = 0;
+                    while (i11 < t99VarArr2.length) {
+                        t99 t99Var = t99VarArr2[i11];
+                        int i12 = i11;
+                        Bundle bundle11 = new Bundle();
+                        t99Var.getClass();
+                        t99[] t99VarArr3 = t99VarArr2;
+                        String str3 = str;
+                        bundle11.putString("resultKey", "extra_voice_reply");
+                        bundle11.putCharSequence("label", t99Var.a);
+                        bundle11.putCharSequenceArray("choices", null);
+                        bundle11.putBoolean("allowFreeFormInput", true);
+                        bundle11.putBundle("extras", t99Var.b);
+                        HashSet hashSet = t99Var.c;
+                        if (!hashSet.isEmpty()) {
+                            ArrayList<String> arrayList8 = new ArrayList<>(hashSet.size());
+                            Iterator it = hashSet.iterator();
+                            while (it.hasNext()) {
+                                arrayList8.add((String) it.next());
+                            }
+                            bundle11.putStringArrayList("allowedDataTypes", arrayList8);
+                        }
+                        bundleArr[i12] = bundle11;
+                        i11 = i12 + 1;
+                        t99VarArr2 = t99VarArr3;
+                        str = str3;
                     }
                 }
-                break;
+                String str4 = str;
+                bundle8.putParcelableArray("remoteInputs", bundleArr);
+                bundle8.putBoolean("showsUserInterface", ln7Var2.e);
+                bundle8.putInt("semanticAction", ln7Var2.f);
+                bundle7.putBundle(num, bundle8);
+                i10 = i3 + 1;
+                arrayList5 = arrayList;
+                str = str4;
+            }
+            bundle5.putBundle("invisible_actions", bundle7);
+            bundle6.putBundle("invisible_actions", bundle7);
+            Bundle bundle12 = wn7Var.v;
+            Bundle bundle13 = bundle12;
+            if (bundle12 == null) {
+                Bundle bundle14 = new Bundle();
+                wn7Var.v = bundle14;
+                bundle13 = bundle14;
+            }
+            bundle13.putBundle("android.car.EXTENSIONS", bundle5);
+            ((Bundle) this.e).putBundle("android.car.EXTENSIONS", bundle6);
+        }
+        int i13 = Build.VERSION.SDK_INT;
+        if (i13 >= 24) {
+            ((Notification.Builder) this.c).setExtras(wn7Var.v);
+            lh0.m((Notification.Builder) this.c);
+        }
+        if (i13 >= 26) {
+            qq5.h((Notification.Builder) this.c);
+            qq5.j((Notification.Builder) this.c);
+            qq5.k((Notification.Builder) this.c, wn7Var.z);
+            qq5.l((Notification.Builder) this.c, wn7Var.B);
+            qq5.i((Notification.Builder) this.c, wn7Var.C ? 1 : 0);
+            if (!TextUtils.isEmpty(wn7Var.y)) {
+                bubbleMetadata = null;
+                i = 0;
+                ((Notification.Builder) this.c).setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);
+                if (i13 >= 28) {
+                    int size4 = arrayList4.size();
+                    int i14 = i;
+                    while (i14 < size4) {
+                        Object obj4 = arrayList4.get(i14);
+                        i14++;
+                        b78 b78Var2 = (b78) obj4;
+                        Notification.Builder builder3 = (Notification.Builder) this.c;
+                        b78Var2.getClass();
+                        go.a(builder3, go.G(b78Var2));
+                    }
+                }
+                i2 = Build.VERSION.SDK_INT;
+                if (i2 >= 29) {
+                    return;
+                }
+                sr.o((Notification.Builder) this.c, wn7Var.D);
+                Notification.Builder builder4 = (Notification.Builder) this.c;
+                un7 un7Var = wn7Var.E;
+                if (un7Var != null) {
+                    if (i2 >= 30) {
+                        bubbleMetadata2 = tn7.a(un7Var);
+                    } else if (i2 == 29) {
+                        bubbleMetadata2 = sn7.a(un7Var);
+                    }
+                    sr.q(builder4, bubbleMetadata2);
+                    yd6Var = wn7Var.A;
+                    if (yd6Var == null) {
+                        sr.u((Notification.Builder) this.c, yd6Var.b);
+                        return;
+                    }
+                    return;
+                }
+                bubbleMetadata2 = bubbleMetadata;
+                sr.q(builder4, bubbleMetadata2);
+                yd6Var = wn7Var.A;
+                if (yd6Var == null) {
+                }
+            }
+        }
+        i = 0;
+        bubbleMetadata = null;
+        if (i13 >= 28) {
+        }
+        i2 = Build.VERSION.SDK_INT;
+        if (i2 >= 29) {
         }
     }
 
-    @Override // wi3
-    public final boolean t(cj3 cj3Var) {
-        return false;
+    public static void b(Notification notification) {
+        notification.sound = null;
+        notification.vibrate = null;
+        notification.defaults &= -4;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (b) {
-            case 1:
-                ((f41) obj2).e0((TL_account.TL_businessChatLink) obj);
-                break;
-            case 5:
-                d01.p(((nf1) obj2).getParentActivity(), (String) obj, true);
-                break;
-            case 7:
-                ((eg1) obj2).F0((TL_payments.connectedBotStarRef) obj);
-                break;
-            default:
-                ((yh1) obj2).f0((TLRPC.Chat) obj);
-                break;
+    @Override // ggd
+    public final ArrayList a(jq5 jq5Var) {
+        Bitmap createBitmap;
+        if (((trd) this.e) == null) {
+            zzb();
+        }
+        if (((trd) this.e) == null) {
+            throw new kg7("Waiting for the image labeling module to be downloaded. Please wait.", 14);
+        }
+        Bitmap bitmap = jq5Var.a;
+        xve.h(bitmap);
+        int i = jq5Var.d;
+        int i2 = jq5Var.b;
+        int i3 = jq5Var.c;
+        if (i == 0) {
+            createBitmap = Bitmap.createBitmap(bitmap, 0, 0, i2, i3);
+        } else {
+            Matrix matrix = new Matrix();
+            matrix.postRotate(i);
+            createBitmap = Bitmap.createBitmap(bitmap, 0, 0, i2, i3, matrix, true);
+        }
+        try {
+            trd trdVar = (trd) this.e;
+            xve.h(trdVar);
+            br7 br7Var = new br7(createBitmap);
+            Parcel R = trdVar.R();
+            int i4 = mld.a;
+            R.writeStrongBinder(br7Var);
+            R.writeInt(1);
+            int r = bye.r(R, 20293);
+            bye.q(R, 2, 4);
+            R.writeInt(-1);
+            bye.s(R, r);
+            Parcel T = trdVar.T(R, 1);
+            tge[] tgeVarArr = (tge[]) T.createTypedArray(tge.CREATOR);
+            T.recycle();
+            ArrayList arrayList = new ArrayList();
+            for (tge tgeVar : tgeVarArr) {
+                arrayList.add(new im5(tgeVar.c, tgeVar.d, tgeVar.b, tgeVar.a));
+            }
+            return arrayList;
+        } catch (RemoteException e) {
+            throw new kg7("Failed to run legacy image labeler.", e);
         }
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
+    @Override // ggd
+    public final void zzb() {
+        oae wxdVar;
+        String str = (String) this.d;
+        Context context = (Context) this.b;
+        Log.d("LegacyLabelDelegate", "Try to load legacy label module.");
+        if (((trd) this.e) == null) {
+            try {
+                IBinder b = vs3.c(context, vs3.b, str).b("com.google.android.gms.vision.label.ChimeraNativeImageLabelerCreator");
+                int i = e3e.b;
+                if (b == null) {
+                    wxdVar = null;
+                } else {
+                    IInterface queryLocalInterface = b.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator");
+                    wxdVar = queryLocalInterface instanceof oae ? (oae) queryLocalInterface : new wxd(b, "com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator", (byte) 7);
+                }
+                trd Z = ((wxd) wxdVar).Z(new br7(context), (hre) this.c);
+                this.e = Z;
+                if (Z != null || this.a) {
+                    return;
+                }
+                Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
+                zt7.a(context);
+                this.a = true;
+            } catch (RemoteException e) {
+                throw new kg7("Failed to create legacy image labeler.", e);
+            } catch (ss3 e2) {
+                if (str.equals("com.google.android.gms.vision.dynamite")) {
+                    throw new kg7("Failed to load deprecated vision dynamite module.", e2);
+                }
+                if (this.a) {
+                    return;
+                }
+                Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
+                zt7.a(context);
+                this.a = true;
+            }
+        }
     }
 
-    public /* synthetic */ q31(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
+    @Override // ggd
+    public final void zzc() {
+        trd trdVar = (trd) this.e;
+        if (trdVar != null) {
+            try {
+                trdVar.V(trdVar.R(), 2);
+            } catch (RemoteException e) {
+                Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e);
+            }
+            this.e = null;
+        }
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(Throwable th) {
+    public q31(Context context, lm5 lm5Var) {
+        this.b = context;
+        Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage());
+        this.c = new hre(1, -1, lm5Var.a, 1);
+        j05.b.getClass();
+        this.d = c15.a(context) >= 200400000 ? "com.google.android.gms.vision.ica" : "com.google.android.gms.vision.dynamite";
     }
 
-    @Override // ll5
-    public final void v(ImageReceiver imageReceiver) {
-    }
-
-    @Override // ll5
-    public final void E(int i, Drawable drawable) {
+    public q31(e84 e84Var, ko4 ko4Var, usb usbVar, uif uifVar, boolean z) {
+        this.b = e84Var;
+        this.c = ko4Var;
+        this.d = usbVar;
+        this.e = uifVar;
+        this.a = z;
     }
 }

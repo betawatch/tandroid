@@ -1,53 +1,70 @@
 // default package
 
-import java.util.List;
+import android.os.Bundle;
+import org.webrtc.MediaStreamTrack;
+import org.webrtc.NativeLifecycleLock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface k64 {
-    boolean a(int i, long j);
+public final /* synthetic */ class k64 implements b86, nu4, ot2, NativeLifecycleLock.NativePointerCallable, rs4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
 
-    void b(long j, long j2, long j3, List list, bk6[] bk6VarArr);
+    public /* synthetic */ k64(byte b, boolean z) {
+        this.a = b;
+        this.b = z;
+    }
 
-    sxb c();
+    @Override // ot2
+    public final void accept(Object obj) {
+        byte b = this.a;
+        boolean z = this.b;
+        og8 og8Var = (og8) obj;
+        switch (b) {
+            case 3:
+                og8Var.V(z);
+                break;
+            case 4:
+                og8Var.o0(z);
+                break;
+            default:
+                og8Var.v(z);
+                break;
+        }
+    }
 
-    int d();
+    @Override // rs4
+    public final v21 b(d31 d31Var) {
+        return d31Var.k(this.b);
+    }
 
-    int e(fm4 fm4Var);
+    @Override // org.webrtc.NativeLifecycleLock.NativePointerCallable
+    public final Object call(long j) {
+        Boolean lambda$setEnabled$3;
+        lambda$setEnabled$3 = MediaStreamTrack.lambda$setEnabled$3(this.b, j);
+        return lambda$setEnabled$3;
+    }
 
-    void f();
+    @Override // nu4
+    public final Object h(Object obj) {
+        Bundle l = bs2.l("afterSignup", this.b);
+        fj6 fj6Var = new fj6();
+        fj6Var.s0(l);
+        return fj6Var;
+    }
 
-    boolean g(long j, zg2 zg2Var, List list);
-
-    void h(boolean z);
-
-    fm4 i(int i);
-
-    void j();
-
-    int k(int i);
-
-    int l(long j, List list);
-
-    int length();
-
-    void m();
-
-    int n();
-
-    fm4 o();
-
-    int p();
-
-    boolean q(int i, long j);
-
-    void r(float f);
-
-    Object s();
-
-    void t();
-
-    void u();
-
-    int v(int i);
+    @Override // b86
+    public final void invoke(Object obj) {
+        byte b = this.a;
+        boolean z = this.b;
+        bg8 bg8Var = (bg8) obj;
+        switch (b) {
+            case 0:
+                bg8Var.v(z);
+                break;
+            default:
+                bg8Var.h(z);
+                break;
+        }
+    }
 }

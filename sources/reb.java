@@ -1,31 +1,13 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface reb {
+    heb j(int i, int i2, byte[] bArr);
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class reb extends veb {
-    public int d;
+    void l(byte[] bArr, int i, int i2, qeb qebVar, ot2 ot2Var);
 
-    @Override // veb
-    public final int a(efb efbVar, xeb xebVar, qeb qebVar, int i, boolean z) {
-        return Math.max(0, this.a - qebVar.a(xebVar, i));
-    }
+    void reset();
 
-    @Override // veb
-    public final void b(int i, int i2) {
-        super.b(i, i2);
-        this.d = Math.max(this.d, i + i2);
-    }
-
-    @Override // veb
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
-    }
-
-    @Override // veb
-    public final int d(boolean z) {
-        return Math.max(super.d(z), this.d);
-    }
+    int s();
 }

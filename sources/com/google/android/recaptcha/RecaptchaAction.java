@@ -1,6 +1,6 @@
 package com.google.android.recaptcha;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class RecaptchaAction {
     public static final Companion Companion = new Companion(null);
@@ -35,7 +35,7 @@ public final class RecaptchaAction {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof RecaptchaAction) && rp5.a(this.action, ((RecaptchaAction) obj).action);
+        return (obj instanceof RecaptchaAction) && ur5.a(this.action, ((RecaptchaAction) obj).action);
     }
 
     public final String getAction() {
@@ -47,10 +47,10 @@ public final class RecaptchaAction {
     }
 
     public String toString() {
-        return b00.j(new StringBuilder("RecaptchaAction(action="), this.action, ")");
+        return c00.k(new StringBuilder("RecaptchaAction(action="), this.action, ")");
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Companion {
         private Companion() {
         }
@@ -59,12 +59,12 @@ public final class RecaptchaAction {
             return new RecaptchaAction(str, null);
         }
 
-        public /* synthetic */ Companion(t93 t93Var) {
+        public /* synthetic */ Companion(ma3 ma3Var) {
             this();
         }
     }
 
-    public /* synthetic */ RecaptchaAction(String str, t93 t93Var) {
+    public /* synthetic */ RecaptchaAction(String str, ma3 ma3Var) {
         this(str);
     }
 }

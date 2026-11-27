@@ -1,46 +1,71 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.o;
+import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class jt implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ gk7 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class jt implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ jt(na7 na7Var, long j, int i) {
-        this.d = na7Var;
-        this.b = j;
-        this.c = i;
+    public /* synthetic */ jt(Object obj, float f, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = f;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        gk7 gk7Var = this.d;
+        float f = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                gl.c3(new o57((o) gk7Var, tLObject, this.c, this.b, (byte) 2));
+                ((o) obj).i0.N.c(true, f);
+                break;
+            case 1:
+                l11 l11Var = (l11) obj;
+                if (l11Var.a.getTranslationX() == f) {
+                    l11Var.E.b();
+                    break;
+                }
+                break;
+            case 2:
+                ((HttpGetFileTask) obj).lambda$doInBackground$0(f);
+                break;
+            case 3:
+                co8 co8Var = (co8) obj;
+                gkc gkcVar = co8Var.c;
+                int i = gkcVar.x;
+                if (f > 0.0f) {
+                    if (i < 2) {
+                        gkcVar.c(i + 1, true);
+                    }
+                } else if (i > 0) {
+                    gkcVar.c(i - 1, true);
+                }
+                co8Var.b = false;
+                break;
+            case 4:
+                er9 er9Var = ((tq9) obj).a;
+                if (er9Var.t0 != f) {
+                    er9Var.t0 = f;
+                    er9Var.r();
+                    er9Var.f.requestLayout();
+                    break;
+                }
                 break;
             default:
-                na7 na7Var = (na7) gk7Var;
-                na7Var.g5.remove(this.b + "_" + this.c);
-                if (tL_error == null && tLObject != null) {
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                rr9 rr9Var = (rr9) obj;
+                rr9Var.i = f;
+                s64 s64Var = rr9Var.f;
+                if (s64Var != null) {
+                    s64Var.R(f);
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ jt(o oVar, int i, long j) {
-        this.d = oVar;
-        this.c = i;
-        this.b = j;
     }
 }

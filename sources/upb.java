@@ -1,28 +1,63 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class upb extends vpb {
-    @Override // vpb
-    /* renamed from: B */
-    public final vpb s() {
-        super.s();
-        this.m = new fy();
-        return this;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class upb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pqb b;
+
+    public /* synthetic */ upb(pqb pqbVar, byte b) {
+        this.a = b;
+        this.b = pqbVar;
     }
 
-    @Override // vpb, fs5
-    public final /* bridge */ /* synthetic */ fs5 s() {
-        s();
-        return this;
-    }
-
-    @Override // fs5
-    public final String toString() {
-        fy fyVar = this.m;
-        if (fyVar == null || fyVar.a <= 0) {
-            return "<" + z() + ">";
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        pqb pqbVar = this.b;
+        switch (b) {
+            case 0:
+                super.onAnimationEnd(animator);
+                pqbVar.z0.invalidate();
+                pqbVar.y0[1].setVisibility(8);
+                pqbVar.e2 = null;
+                break;
+            case 1:
+                pqbVar.D0 = null;
+                break;
+            case 2:
+                if (pqbVar.F0.getTag() == null) {
+                    pqbVar.F0.setVisibility(4);
+                }
+                pqbVar.J0 = null;
+                break;
+            case 3:
+                if (pqbVar.G0.getTag() == null) {
+                    pqbVar.G0.setVisibility(4);
+                }
+                pqbVar.K0 = null;
+                break;
+            case 4:
+                gh1 gh1Var = pqbVar.j2;
+                if (gh1Var != null) {
+                    if (gh1Var.getParent() != null) {
+                        ((ViewGroup) pqbVar.j2.getParent()).removeView(pqbVar.j2);
+                    }
+                    pqbVar.j2 = null;
+                }
+                pqbVar.l2 = null;
+                super.onAnimationEnd(animator);
+                break;
+            default:
+                if (!pqbVar.r1.a()) {
+                    pqbVar.T1.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        return "<" + z() + " " + this.m.toString() + ">";
     }
 }

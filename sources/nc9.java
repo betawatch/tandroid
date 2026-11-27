@@ -1,63 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class nc9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hd9 b;
+import android.os.Bundle;
+import org.telegram.tgnet.tl.TL_stars;
 
-    public /* synthetic */ nc9(hd9 hd9Var, byte b) {
-        this.a = b;
-        this.b = hd9Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class nc9 extends zu1 {
+    public boolean Jd;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique Kd;
+    public final /* synthetic */ long Ld;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nc9(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j) {
+        super(bundle);
+        this.Kd = tL_starGiftUnique;
+        this.Ld = j;
+        this.Jd = false;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        hd9 hd9Var = this.b;
-        switch (b) {
-            case 0:
-                hd9Var.F0();
-                break;
-            case 1:
-                if (hd9Var.L0 != 0) {
-                    hd9Var.b0.setVisibility(8);
-                    break;
-                }
-                break;
-            case 2:
-                if (hd9Var.L0 != 1) {
-                    hd9Var.i0.setVisibility(8);
-                    break;
-                }
-                break;
-            case 3:
-                if (hd9Var.L0 != 2) {
-                    hd9Var.w0.setVisibility(8);
-                    break;
-                }
-                break;
-            case 4:
-                hd9Var.m0();
-                break;
-            case 5:
-                hd9Var.v0(2147483646, 0, true);
-                j47 j47Var = hd9Var.P0;
-                if (j47Var != null) {
-                    j47Var.f(false);
-                    hd9Var.P0 = null;
-                    break;
-                }
-                break;
-            default:
-                hd9Var.v0(0, 0, false);
-                j47 j47Var2 = hd9Var.P0;
-                if (j47Var2 != null) {
-                    j47Var2.f(true);
-                    hd9Var.P0 = null;
-                    break;
-                }
-                break;
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Jd) {
+            return;
+        }
+        this.Jd = true;
+        v21 O = d31.b0(this).O(this.Kd.getDocument(), ob6.M0(2131752866, null), ob6.a0(null, null, 2131752867, wf3.r(this.currentAccount, this.Ld)));
+        O.s = false;
+        O.j();
+        tj4 tj4Var = this.J9;
+        if (tj4Var != null) {
+            tj4Var.c(true);
         }
     }
 }

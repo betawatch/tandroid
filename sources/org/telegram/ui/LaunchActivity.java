@@ -75,6 +75,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.video.VideoAds;
+import org.telegram.messenger.voip.CallAudioDevice;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -91,8 +92,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.PipRoundVideoView;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.LaunchActivity;
@@ -101,11 +101,10 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.o;
 import org.webrtc.MediaStreamTrack;
-import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
+public class LaunchActivity extends ug0 implements sk5, fn7, oj3 {
     public static final String C1 = UUID.randomUUID().toString();
     public static final Pattern D1 = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
     public static boolean E1;
@@ -113,15 +112,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     public static boolean G1;
     public static LaunchActivity H1;
     public static Pattern I1;
-    public static ts J1;
+    public static ys J1;
     public static LaunchActivity K1;
-    public obb A1;
-    public sgb B0;
+    public kfb A1;
+    public okb B0;
     public int B1;
-    public rk0 C0;
-    public hd E0;
+    public sk0 C0;
+    public id E0;
     public View F0;
-    public hd G0;
+    public id G0;
     public boolean H0;
     public HashMap I0;
     public HashMap J0;
@@ -135,63 +134,63 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     public boolean R;
     public TLRPC.TL_wallPaper R0;
     public String S;
-    public akb S0;
+    public znb S0;
     public String T;
     public TLRPC.TL_theme T0;
     public CharSequence U;
     public boolean U0;
     public ArrayList V;
-    public hd V0;
+    public id V0;
     public ArrayList W;
     public ArrayList X;
     public boolean X0;
     public Uri Y;
-    public y0a Y0;
+    public r4a Y0;
     public String Z;
-    public ez3 Z0;
+    public zz3 Z0;
     public ArrayList a0;
     public ArrayList b0;
     public Uri c0;
     public int d0;
-    public h24 e1;
-    public zj f1;
-    public twc g1;
-    public c25 h0;
+    public c34 e1;
+    public ak f1;
+    public j1d g1;
+    public l45 h0;
     public boolean h1;
     public ArrayList i0;
-    public ip4 i1;
+    public mr4 i1;
     public ArrayList j0;
-    public xz5 j1;
+    public a26 j1;
     public String k0;
-    public yz5 k1;
+    public b26 k1;
     public ActionMode l0;
     public boolean l1;
     public boolean m0;
-    public wtc m1;
-    public umb n0;
-    public wtc n1;
-    public v31 o0;
+    public u8a m1;
+    public tqb n0;
+    public u8a n1;
+    public d41 o0;
     public ActionBarLayout p0;
-    public bz5 p1;
+    public j16 p1;
     public ActionBarLayout q0;
-    public be2 q1;
+    public te2 q1;
     public ActionBarLayout r0;
     public boolean r1;
-    public zz5 s0;
+    public c26 s0;
     public ViewGroup s1;
     public FrameLayout t0;
-    public final zq7 t1;
-    public n81 u0;
-    public hd u1;
-    public yc v0;
-    public hd v1;
-    public vz5 w0;
+    public final fu7 t1;
+    public w81 u0;
+    public id u1;
+    public d26 v0;
+    public id v1;
+    public y16 w0;
     public boolean w1;
-    public yx0 x0;
+    public gy0 x0;
     public long x1;
-    public mq3 y0;
+    public dr3 y0;
     public int[] y1;
-    public aw7 z0;
+    public hz7 z0;
     public ValueAnimator z1;
     public final ArrayList Q = new ArrayList();
     public final ArrayList e0 = new ArrayList();
@@ -203,41 +202,41 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     public final ArrayList a1 = new ArrayList();
     public final SparseIntArray b1 = new SparseIntArray();
     public int c1 = 5934;
-    public final tz5 d1 = new tz5();
+    public final w16 d1 = new w16();
     public boolean o1 = true;
 
     public LaunchActivity() {
         System.identityHashCode(this);
-        this.t1 = new zq7(this);
+        this.t1 = new fu7(this);
         this.B1 = 0;
     }
 
-    public static void C0(j5 j5Var, cj3 cj3Var, CharSequence charSequence, long j, k27 k27Var, long j2, boolean z, int i, int i2) {
-        bba bbaVar;
-        bba bbaVar2;
-        int i3 = j5Var.a;
-        boolean z2 = cj3Var == null || (bbaVar2 = cj3Var.I2) == null || bbaVar2.n;
+    public static void C0(k5 k5Var, uj3 uj3Var, CharSequence charSequence, long j, r47 r47Var, long j2, boolean z, int i, int i2) {
+        sea seaVar;
+        sea seaVar2;
+        int i3 = k5Var.a;
+        boolean z2 = uj3Var == null || (seaVar2 = uj3Var.I2) == null || seaVar2.n;
         TLRPC.WebPage webPage = null;
-        if (z2 && cj3Var != null && (bbaVar = cj3Var.I2) != null) {
-            webPage = bbaVar.getLoadedWebPage();
+        if (z2 && uj3Var != null && (seaVar = uj3Var.I2) != null) {
+            webPage = seaVar.getLoadedWebPage();
         }
         TLRPC.WebPage webPage2 = webPage;
         if (TextUtils.isEmpty(charSequence)) {
             return;
         }
         if (webPage2 == null && z2) {
-            z3a.Z(j5Var, charSequence, j, j2, z, i, i2);
+            r7a.Z(k5Var, charSequence, j, j2, z, i, i2);
             return;
         }
-        CharSequence G = z3a.G(charSequence);
+        CharSequence G = r7a.G(charSequence);
         if (G == null || G.length() == 0) {
             return;
         }
         CharSequence[] charSequenceArr = {G};
-        z3a.B(i3).q0(x3a.b(charSequenceArr[0].toString(), j, k27Var, k27Var, webPage2, z2, hq6.d0(i3).Y(charSequenceArr, true, true), null, null, z, i, i2, null, false));
+        r7a.B(i3).q0(p7a.b(charSequenceArr[0].toString(), j, r47Var, r47Var, webPage2, z2, ls6.d0(i3).Y(charSequenceArr, true, true), null, null, z, i, i2, null, false));
     }
 
-    public static void E(int i) {
+    public static void F(int i) {
         LaunchActivity launchActivity = K1;
         if (launchActivity != null) {
             launchActivity.D(i);
@@ -245,60 +244,60 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     }
 
     public static void G0(LaunchActivity launchActivity, int i, TLRPC.TL_attachMenuBot tL_attachMenuBot, String str, boolean z) {
-        org.telegram.ui.ActionBar.d Q = Q();
+        org.telegram.ui.ActionBar.e Q = Q();
         if (Q != null) {
             long j = tL_attachMenuBot.bot_id;
-            quc b = quc.b(i, j, j, tL_attachMenuBot.short_name, null, 1, 0, 0L, null, false, str, null, 2, false, false);
+            gzc b = gzc.b(i, j, j, tL_attachMenuBot.short_name, null, 1, 0, 0L, null, false, str, null, 2, false, false);
             if (launchActivity.O() == null || launchActivity.O().l(b) == null) {
-                TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(tL_attachMenuBot.bot_id));
-                String C12 = V1 == null ? null : na7.q1(i).C1(V1.restriction_reason);
-                if (!TextUtils.isEmpty(C12)) {
-                    na7.q1(i);
-                    na7.X4(C12, Q);
+                TLRPC.User X1 = uc7.s1(i).X1(Long.valueOf(tL_attachMenuBot.bot_id));
+                String E12 = X1 == null ? null : uc7.s1(i).E1(X1.restriction_reason);
+                if (!TextUtils.isEmpty(E12)) {
+                    uc7.s1(i);
+                    uc7.f5(E12, Q);
                     return;
                 }
-                ow0 ow0Var = new ow0(launchActivity, Q.getResourceProvider());
-                ow0Var.C0 = false;
-                ow0Var.B(z);
-                ow0Var.m0 = launchActivity;
-                ow0Var.x(Q, b);
-                ow0Var.show();
+                xw0 xw0Var = new xw0(launchActivity, Q.getResourceProvider());
+                xw0Var.C0 = false;
+                xw0Var.B(z);
+                xw0Var.m0 = launchActivity;
+                xw0Var.x(Q, b);
+                xw0Var.show();
             }
         }
     }
 
     public static void K() {
-        ArrayList<zf0> arrayList;
-        org.telegram.ui.ActionBar.d S = S();
+        ArrayList<ag0> arrayList;
+        org.telegram.ui.ActionBar.e S = S();
         if (S != null) {
-            x14 v = S.getParentLayout() instanceof ActionBarLayout ? ((ActionBarLayout) S.getParentLayout()).v() : null;
+            s24 v = S.getParentLayout() instanceof ActionBarLayout ? ((ActionBarLayout) S.getParentLayout()).v() : null;
             if (v != null && (arrayList = v.sheetsStack) != null) {
                 for (int size = arrayList.size() - 1; size >= 0; size--) {
                     v.sheetsStack.get(size).a(true);
                 }
             }
-            ArrayList<zf0> arrayList2 = S.sheetsStack;
+            ArrayList<ag0> arrayList2 = S.sheetsStack;
             if (arrayList2 != null) {
                 for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
                     S.sheetsStack.get(size2).a(true);
                 }
             }
             ArrayList arrayList3 = new ArrayList();
-            Iterator it = ow0.b1.iterator();
+            Iterator it = xw0.b1.iterator();
             while (it.hasNext()) {
-                arrayList3.add((ow0) it.next());
+                arrayList3.add((xw0) it.next());
             }
             int size3 = arrayList3.size();
             int i = 0;
             while (i < size3) {
                 Object obj = arrayList3.get(i);
                 i++;
-                ((ow0) obj).m(true);
+                ((xw0) obj).m(true);
             }
         }
     }
 
-    public static org.telegram.ui.ActionBar.d M() {
+    public static org.telegram.ui.ActionBar.e M() {
         ActionBarLayout actionBarLayout;
         BubbleActivity bubbleActivity = BubbleActivity.b0;
         if (bubbleActivity != null && (actionBarLayout = bubbleActivity.T) != null) {
@@ -306,7 +305,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
         LaunchActivity launchActivity = H1;
         if (launchActivity != null && !launchActivity.Q.isEmpty()) {
-            return ((ActionBarLayout) ((ui5) b00.f(1, H1.Q))).r();
+            return ((ActionBarLayout) ((wk5) c00.g(1, H1.Q))).r();
         }
         LaunchActivity launchActivity2 = H1;
         if (launchActivity2 == null || launchActivity2.N() == null) {
@@ -315,7 +314,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return ((ActionBarLayout) H1.N()).r();
     }
 
-    public static org.telegram.ui.ActionBar.d Q() {
+    public static org.telegram.ui.ActionBar.e Q() {
         ActionBarLayout actionBarLayout;
         BubbleActivity bubbleActivity = BubbleActivity.b0;
         if (bubbleActivity != null && (actionBarLayout = bubbleActivity.T) != null) {
@@ -323,7 +322,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
         LaunchActivity launchActivity = H1;
         if (launchActivity != null && !launchActivity.Q.isEmpty()) {
-            return ((ui5) b00.f(1, H1.Q)).getLastFragment();
+            return ((wk5) c00.g(1, H1.Q)).getLastFragment();
         }
         LaunchActivity launchActivity2 = H1;
         if (launchActivity2 == null || launchActivity2.N() == null) {
@@ -332,7 +331,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return H1.N().getLastFragment();
     }
 
-    public static org.telegram.ui.ActionBar.d S() {
+    public static org.telegram.ui.ActionBar.e S() {
         ActionBarLayout actionBarLayout;
         BubbleActivity bubbleActivity = BubbleActivity.b0;
         if (bubbleActivity != null && (actionBarLayout = bubbleActivity.T) != null) {
@@ -340,7 +339,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
         LaunchActivity launchActivity = H1;
         if (launchActivity != null && !launchActivity.Q.isEmpty()) {
-            return ((ui5) b00.f(1, H1.Q)).getSafeLastFragment();
+            return ((wk5) c00.g(1, H1.Q)).getSafeLastFragment();
         }
         LaunchActivity launchActivity2 = H1;
         if (launchActivity2 == null || launchActivity2.N() == null) {
@@ -351,7 +350,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     public static String T(int i, String str, HashMap hashMap) {
         String str2 = (String) hashMap.get(str);
-        return str2 == null ? k96.M0(i, str) : str2;
+        return str2 == null ? ob6.M0(i, str) : str2;
     }
 
     public static int U(Uri uri) {
@@ -387,7 +386,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             try {
                 return (Integer.parseInt(split.length - 4 >= 0 ? split[split.length - 4] : "0") * 86400) + (Integer.parseInt(split.length - 3 < 0 ? "0" : split[split.length - 3]) * 3600) + (Integer.parseInt(str2) * 60) + Integer.parseInt(str);
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
                 return -1;
             }
         }
@@ -407,37 +406,37 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     public static void a0(float f, float f2, float f3) {
         View decorView;
-        obb obbVar;
+        kfb kfbVar;
         LaunchActivity launchActivity = H1;
         if (launchActivity == null || (decorView = launchActivity.getWindow().getDecorView()) == null) {
             return;
         }
-        if (Build.VERSION.SDK_INT >= 33 && ((obbVar = launchActivity.A1) == null || ((View) obbVar.a) != decorView)) {
-            launchActivity.A1 = new obb(decorView);
+        if (Build.VERSION.SDK_INT >= 33 && ((kfbVar = launchActivity.A1) == null || ((View) kfbVar.a) != decorView)) {
+            launchActivity.A1 = new kfb(decorView);
         }
-        obb obbVar2 = launchActivity.A1;
-        if (obbVar2 != null) {
-            View view = (View) obbVar2.a;
-            ArrayList arrayList = obbVar2.b;
+        kfb kfbVar2 = launchActivity.A1;
+        if (kfbVar2 != null) {
+            View view = (View) kfbVar2.a;
+            ArrayList arrayList = kfbVar2.b;
             if (arrayList.size() < 7) {
-                float max = (Math.max(Math.max(loe.a(0.0f, 0.0f, f, f2), loe.a(view.getWidth(), 0.0f, f, f2)), Math.max(loe.a(0.0f, view.getHeight(), f, f2), loe.a(view.getWidth(), view.getHeight(), f, f2))) * 2.0f) / (gl.p * 1200.0f);
+                float max = (Math.max(Math.max(dte.a(0.0f, 0.0f, f, f2), dte.a(view.getWidth(), 0.0f, f, f2)), Math.max(dte.a(0.0f, view.getHeight(), f, f2), dte.a(view.getWidth(), view.getHeight(), f, f2))) * 2.0f) / (hl.p * 1200.0f);
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, max);
-                nbb nbbVar = new nbb(f, f2, f3);
-                ofFloat.addUpdateListener(new pk(obbVar2, nbbVar, (byte) 28));
-                ofFloat.addListener(new eh8((Object) obbVar2, (Object) nbbVar, (byte) 18));
-                ofFloat.setInterpolator(s33.g);
+                jfb jfbVar = new jfb(f, f2, f3);
+                ofFloat.addUpdateListener(new lk(kfbVar2, jfbVar, (byte) 28));
+                ofFloat.addListener(new wd8((Object) kfbVar2, (Object) jfbVar, (byte) 19));
+                ofFloat.setInterpolator(k43.g);
                 ofFloat.setDuration((long) (max * 1000.0f));
-                arrayList.add(nbbVar);
-                obbVar2.i();
+                arrayList.add(jfbVar);
+                kfbVar2.i();
                 ofFloat.start();
             }
         }
     }
 
-    public static a06 c0() {
+    public static e26 c0() {
         LaunchActivity launchActivity = H1;
         if (launchActivity != null) {
-            return new a06(launchActivity, true);
+            return new e26(launchActivity, true);
         }
         return null;
     }
@@ -447,19 +446,19 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         org.telegram.messenger.a.t();
         org.telegram.messenger.a.m();
         if (!z) {
-            boolean z2 = w01.a;
+            boolean z2 = f11.a;
         }
         org.telegram.messenger.a.a.getClass();
         ((ApplicationLoaderImpl) org.telegram.messenger.a.a).getClass();
-        oh0 e = oh0.e();
+        ph0 e = ph0.e();
         String str = e.a;
-        lh0 lh0Var = (str == null || (i = e.b) == 0) ? null : new lh0(str, i, e.c);
+        mh0 mh0Var = (str == null || (i = e.b) == 0) ? null : new mh0(str, i, e.c);
         boolean z3 = this.o1;
         this.o1 = false;
         org.telegram.messenger.a aVar = org.telegram.messenger.a.a;
-        mn6 mn6Var = new mn6((Object) this, z3, (Object) lh0Var, (byte) 29);
+        ds6 ds6Var = new ds6((Object) this, z3, (Object) mh0Var, (byte) 28);
         ((ApplicationLoaderImpl) aVar).getClass();
-        oh0.e().a(mn6Var, z);
+        ph0.e().a(ds6Var, z);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0059, code lost:
@@ -508,7 +507,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:77:0x00e4, code lost:
     
-        fa4.g(r6, true);
+        cc4.g(r6, true);
      */
     /* JADX WARN: Code restructure failed: missing block: B:82:0x00dd, code lost:
     
@@ -520,7 +519,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     */
     public final void A0(Uri uri) {
         InputStream inputStream;
-        int i = y6c.t0;
+        int i = yac.t0;
         InputStream inputStream2 = null;
         r3 = null;
         r3 = null;
@@ -531,10 +530,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         r3 = null;
         r3 = null;
         String str = null;
-        hd hdVar = new hd(3, null, this);
+        id idVar = new id(3, null, this);
         byte b = 1;
         int[] iArr = {0};
-        String q = ba4.q(MediaController.v(uri));
+        String q = xb4.q(MediaController.y(uri));
         if (q == null || !q.endsWith(".zip")) {
             try {
                 inputStream = getContentResolver().openInputStream(uri);
@@ -555,7 +554,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         str = sb.toString();
                     } catch (Exception e) {
                         e = e;
-                        fa4.g(e, true);
+                        cc4.g(e, true);
                     }
                 } catch (Throwable th) {
                     th = th;
@@ -564,7 +563,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         try {
                             inputStream2.close();
                         } catch (Exception e2) {
-                            fa4.g(e2, true);
+                            cc4.g(e2, true);
                         }
                     }
                     throw th;
@@ -599,7 +598,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 try {
                                     break;
                                 } catch (Exception e4) {
-                                    fa4.g(e4, true);
+                                    cc4.g(e4, true);
                                 }
                             } else {
                                 nextEntry = zipInputStream.getNextEntry();
@@ -611,125 +610,125 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
             } catch (Exception e5) {
                 try {
-                    fa4.g(e5, true);
+                    cc4.g(e5, true);
                 } catch (Exception e6) {
-                    fa4.g(e6, true);
+                    cc4.g(e6, true);
                 }
             }
         }
         if (str != null) {
             TLRPC.TL_messages_checkHistoryImport tL_messages_checkHistoryImport = new TLRPC.TL_messages_checkHistoryImport();
             tL_messages_checkHistoryImport.import_head = str;
-            iArr[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkHistoryImport, new ae(this, uri, i, hdVar));
-            hdVar.setOnCancelListener(new f74(i, iArr, b));
+            iArr[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkHistoryImport, new lh(this, uri, i, idVar));
+            idVar.setOnCancelListener(new z74(b, i, iArr));
             try {
-                hdVar.q(300L);
+                idVar.q(300L);
             } catch (Exception unused) {
             }
         }
     }
 
     public final void B() {
-        if (this.P != y6c.t0 || this.m1 == null) {
-            wtc wtcVar = this.m1;
-            if (wtcVar != null) {
-                wtcVar.a();
+        if (this.P != yac.t0 || this.m1 == null) {
+            u8a u8aVar = this.m1;
+            if (u8aVar != null) {
+                u8aVar.a();
                 this.m1 = null;
             }
-            int i = y6c.t0;
+            int i = yac.t0;
             this.P = i;
-            wtc wtcVar2 = new wtc(kk7.f(i), this);
-            wtcVar2.b(kk7.o3);
-            wtcVar2.b(kk7.H2);
-            wtcVar2.b(kk7.i0);
-            wtcVar2.b(kk7.Y4);
-            wtcVar2.b(kk7.S1);
-            wtcVar2.b(kk7.L0);
-            wtcVar2.b(kk7.Q0);
-            wtcVar2.b(kk7.b1);
-            wtcVar2.b(kk7.P);
-            wtcVar2.b(kk7.M0);
-            wtcVar2.b(kk7.X1);
-            wtcVar2.b(kk7.Y1);
-            wtcVar2.b(kk7.u1);
-            wtcVar2.b(kk7.v2);
-            wtcVar2.b(kk7.w1);
-            wtcVar2.b(kk7.k5);
-            wtcVar2.b(kk7.h5);
-            wtcVar2.b(kk7.t5);
-            wtcVar2.b(kk7.S5);
-            this.m1 = wtcVar2;
+            u8a u8aVar2 = new u8a(jn7.f(i), this);
+            u8aVar2.b(jn7.p3);
+            u8aVar2.b(jn7.I2);
+            u8aVar2.b(jn7.j0);
+            u8aVar2.b(jn7.Z4);
+            u8aVar2.b(jn7.T1);
+            u8aVar2.b(jn7.M0);
+            u8aVar2.b(jn7.R0);
+            u8aVar2.b(jn7.c1);
+            u8aVar2.b(jn7.P);
+            u8aVar2.b(jn7.N0);
+            u8aVar2.b(jn7.Y1);
+            u8aVar2.b(jn7.Z1);
+            u8aVar2.b(jn7.v1);
+            u8aVar2.b(jn7.w2);
+            u8aVar2.b(jn7.x1);
+            u8aVar2.b(jn7.l5);
+            u8aVar2.b(jn7.i5);
+            u8aVar2.b(jn7.u5);
+            u8aVar2.b(jn7.T5);
+            this.m1 = u8aVar2;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x06ef  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x06f1  */
     /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B0(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final String str26, final String str27, final c01 c01Var, final boolean z3, final int i4, final boolean z4, final int i5, final int i6, final String str28, final String str29, final boolean z5, final String str30, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final String str31, final Integer num3, final boolean z11, final byte[] bArr) {
-        hb5 hb5Var;
+    public final void B0(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, final String str26, final String str27, final l01 l01Var, final boolean z3, final int i4, final boolean z4, final int i5, final int i6, final String str28, final String str29, final boolean z5, final String str30, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final String str31, final Integer num3, final boolean z11, final byte[] bArr) {
+        tg5 tg5Var;
         final byte b;
-        hd hdVar;
+        id idVar;
         int[] iArr;
         final int i7;
-        qx3 qx3Var;
-        u0b u0bVar;
+        ly3 ly3Var;
+        s4b s4bVar;
         TLRPC.Chat chat;
-        if (i2 == 0 && y6c.c() >= 2 && hashMap != null) {
-            ij.i(this, new ej() { // from class: iz5
-                @Override // ej
+        if (i2 == 0 && yac.c() >= 2 && hashMap != null) {
+            jj.i(this, new fj() { // from class: l16
+                @Override // fj
                 public final void a(int i8) {
                     String str32 = LaunchActivity.C1;
                     LaunchActivity launchActivity = LaunchActivity.this;
                     if (i8 != i) {
                         launchActivity.N0(i8);
                     }
-                    launchActivity.B0(i8, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, 1, i3, str23, str24, str25, str26, str27, c01Var, z3, i4, z4, i5, i6, str28, str29, z5, str30, z6, z7, z8, z9, z10, str31, num3, z11, bArr);
+                    launchActivity.B0(i8, str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, z, num, l, l2, num2, str13, hashMap, str14, str15, str16, str17, tL_wallPaper, str18, str19, str20, str21, z2, str22, 1, i3, str23, str24, str25, str26, str27, l01Var, z3, i4, z4, i5, i6, str28, str29, z5, str30, z6, z7, z8, z9, z10, str31, num3, z11, bArr);
                 }
             }).show();
             return;
         }
-        final c01 c01Var2 = c01Var;
+        final l01 l01Var2 = l01Var;
         char c = 1;
         char c2 = 1;
         char c3 = 1;
         char c4 = 1;
         final byte b2 = 0;
         if (str16 != null) {
-            SparseArray sparseArray = kk7.e().a;
-            int i8 = kk7.i4;
+            SparseArray sparseArray = jn7.e().a;
+            int i8 = jn7.j4;
             if (sparseArray.indexOfKey(i8) >= 0) {
-                kk7.e().k(i8, str16);
+                jn7.e().k(i8, str16);
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-            String M0 = k96.M0(R.string.AppName, null);
-            hd hdVar2 = alertDialog$Builder.a;
-            hdVar2.S = M0;
-            hdVar2.U = gl.S2(k96.a0(null, null, 2131747574, str16));
-            alertDialog$Builder.j(k96.M0(2131747638, null), null);
+            String M0 = ob6.M0(R.string.AppName, null);
+            id idVar2 = alertDialog$Builder.a;
+            idVar2.S = M0;
+            idVar2.U = hl.S2(ob6.a0(null, null, 2131747494, str16));
+            alertDialog$Builder.j(ob6.M0(2131747558, null), null);
             F0(alertDialog$Builder);
             return;
         }
         if (str17 != null) {
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(this);
-            String M02 = k96.M0(2131753891, null);
-            hd hdVar3 = alertDialog$Builder2.a;
-            hdVar3.S = M02;
-            hdVar3.U = k96.M0(2131753881, null);
-            alertDialog$Builder2.j(k96.M0(2131747638, null), null);
+            String M02 = ob6.M0(2131753887, null);
+            id idVar3 = alertDialog$Builder2.a;
+            idVar3.S = M02;
+            idVar3.U = ob6.M0(2131753877, null);
+            alertDialog$Builder2.j(ob6.M0(2131747558, null), null);
             F0(alertDialog$Builder2);
             return;
         }
-        hd hdVar4 = new hd(3, null, this);
-        final kz5 kz5Var = new kz5(c01Var2, hdVar4, b2);
+        id idVar4 = new id(3, null, this);
+        final tg5 tg5Var2 = new tg5(l01Var2, idVar4, (byte) 25);
         final int[] iArr2 = {0};
         if (str10 != null) {
             TLRPC.TL_contacts_importContactToken tL_contacts_importContactToken = new TLRPC.TL_contacts_importContactToken();
             tL_contacts_importContactToken.token = str10;
             final byte b3 = 0;
-            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_contacts_importContactToken, new RequestDelegate(this) { // from class: lz5
+            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_contacts_importContactToken, new RequestDelegate(this) { // from class: n16
                 public final /* synthetic */ LaunchActivity b;
 
                 {
@@ -741,15 +740,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     switch (b3) {
                         case 0:
                             String str32 = LaunchActivity.C1;
-                            gl.c3(new qx5(this.b, tLObject, i, str10, tL_error, kz5Var));
+                            hl.c3(new uz5(this.b, tLObject, i, str10, tL_error, tg5Var2));
                             break;
                         case 1:
                             String str33 = LaunchActivity.C1;
-                            gl.c3(new i57((Object) this.b, (Object) tLObject, i, (Object) str10, (Object) kz5Var, (byte) 17));
+                            hl.c3(new l77((Object) this.b, (Object) tLObject, i, (Object) str10, (Object) tg5Var2, (byte) 18));
                             break;
                         default:
                             String str34 = LaunchActivity.C1;
-                            gl.c3(new qx5(this.b, tL_error, tLObject, i, str10, kz5Var));
+                            hl.c3(new uz5(this.b, tL_error, tLObject, i, str10, tg5Var2));
                             break;
                     }
                 }
@@ -758,7 +757,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             TL_chatlists.TL_chatlists_checkChatlistInvite tL_chatlists_checkChatlistInvite = new TL_chatlists.TL_chatlists_checkChatlistInvite();
             tL_chatlists_checkChatlistInvite.slug = str11;
             final byte b4 = 1;
-            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_chatlists_checkChatlistInvite, new RequestDelegate(this) { // from class: lz5
+            iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_chatlists_checkChatlistInvite, new RequestDelegate(this) { // from class: n16
                 public final /* synthetic */ LaunchActivity b;
 
                 {
@@ -770,15 +769,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     switch (b4) {
                         case 0:
                             String str32 = LaunchActivity.C1;
-                            gl.c3(new qx5(this.b, tLObject, i, str11, tL_error, kz5Var));
+                            hl.c3(new uz5(this.b, tLObject, i, str11, tL_error, tg5Var2));
                             break;
                         case 1:
                             String str33 = LaunchActivity.C1;
-                            gl.c3(new i57((Object) this.b, (Object) tLObject, i, (Object) str11, (Object) kz5Var, (byte) 17));
+                            hl.c3(new l77((Object) this.b, (Object) tLObject, i, (Object) str11, (Object) tg5Var2, (byte) 18));
                             break;
                         default:
                             String str34 = LaunchActivity.C1;
-                            gl.c3(new qx5(this.b, tL_error, tLObject, i, str11, kz5Var));
+                            hl.c3(new uz5(this.b, tL_error, tLObject, i, str11, tg5Var2));
                             break;
                     }
                 }
@@ -786,19 +785,19 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         } else {
             byte b5 = 14;
             if (str29 != null) {
-                kt4 c5 = kt4.c(this.P);
-                i8c i8cVar = new i8c(this) { // from class: mz5
+                ov4 c5 = ov4.c(this.P);
+                icc iccVar = new icc(this) { // from class: o16
                     public final /* synthetic */ LaunchActivity b;
 
                     {
                         this.b = this;
                     }
 
-                    @Override // i8c
+                    @Override // icc
                     public final void a(Object obj, Object obj2) {
-                        gt4 b6;
+                        kv4 b6;
                         byte b7 = b2;
-                        kz5 kz5Var2 = kz5Var;
+                        tg5 tg5Var3 = tg5Var2;
                         switch (b7) {
                             case 0:
                                 TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState = (TL_payments.TL_StarGiftAuctionState) obj;
@@ -806,15 +805,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 String str32 = LaunchActivity.C1;
                                 LaunchActivity launchActivity = this.b;
                                 if (tL_error != null) {
-                                    ir2.v(null, 2131749800, u21.b0((d) b00.f(1, launchActivity.e0)), R.raw.error, 36);
-                                } else if (tL_StarGiftAuctionState != null && (b6 = kt4.c(launchActivity.P).b(tL_StarGiftAuctionState.gift.id)) != null) {
-                                    new kna(launchActivity, null, launchActivity.P, b6.d.title, b6.h, false).show();
+                                    bs2.v(null, 2131749762, d31.b0((e) c00.g(1, launchActivity.e0)), R.raw.error, 36);
+                                } else if (tL_StarGiftAuctionState != null && (b6 = ov4.c(launchActivity.P).b(tL_StarGiftAuctionState.gift.id)) != null) {
+                                    new gra(launchActivity, null, launchActivity.P, b6.d.title, b6.h, false).show();
                                 }
                                 try {
-                                    kz5Var2.run();
+                                    tg5Var3.run();
                                     break;
                                 } catch (Exception e) {
-                                    fa4.g(e, true);
+                                    cc4.g(e, true);
                                     return;
                                 }
                                 break;
@@ -824,15 +823,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 String str33 = LaunchActivity.C1;
                                 LaunchActivity launchActivity2 = this.b;
                                 if (tL_error2 != null) {
-                                    ir2.v(null, 2131749800, u21.b0((d) b00.f(1, launchActivity2.e0)), R.raw.error, 36);
+                                    bs2.v(null, 2131749762, d31.b0((e) c00.g(1, launchActivity2.e0)), R.raw.error, 36);
                                 } else if (tL_StarGiftAuctionState2 != null) {
-                                    ez.Z0(launchActivity2, null, launchActivity2.P, 0L, tL_StarGiftAuctionState2.gift.id, null);
+                                    fz.a1(launchActivity2, null, launchActivity2.P, 0L, tL_StarGiftAuctionState2.gift.id, null);
                                 }
                                 try {
-                                    kz5Var2.run();
+                                    tg5Var3.run();
                                     break;
                                 } catch (Exception e2) {
-                                    fa4.g(e2, true);
+                                    cc4.g(e2, true);
                                 }
                         }
                     }
@@ -842,22 +841,22 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 TL_payments.TL_getStarGiftAuctionState tL_getStarGiftAuctionState = new TL_payments.TL_getStarGiftAuctionState();
                 tL_getStarGiftAuctionState.auction = tL_inputStarGiftAuctionSlug;
                 tL_getStarGiftAuctionState.version = 0;
-                iArr2[0] = c5.getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new hc(b2), new ae2(c5, i8cVar, b5));
+                iArr2[0] = c5.getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState, new ic(b2), new qe2(c5, iccVar, b5));
             } else if (str28 != null) {
-                kt4 c6 = kt4.c(this.P);
+                ov4 c6 = ov4.c(this.P);
                 final char c7 = c4 == true ? 1 : 0;
-                i8c i8cVar2 = new i8c(this) { // from class: mz5
+                icc iccVar2 = new icc(this) { // from class: o16
                     public final /* synthetic */ LaunchActivity b;
 
                     {
                         this.b = this;
                     }
 
-                    @Override // i8c
+                    @Override // icc
                     public final void a(Object obj, Object obj2) {
-                        gt4 b6;
+                        kv4 b6;
                         byte b7 = c7;
-                        kz5 kz5Var2 = kz5Var;
+                        tg5 tg5Var3 = tg5Var2;
                         switch (b7) {
                             case 0:
                                 TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState = (TL_payments.TL_StarGiftAuctionState) obj;
@@ -865,15 +864,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 String str32 = LaunchActivity.C1;
                                 LaunchActivity launchActivity = this.b;
                                 if (tL_error != null) {
-                                    ir2.v(null, 2131749800, u21.b0((d) b00.f(1, launchActivity.e0)), R.raw.error, 36);
-                                } else if (tL_StarGiftAuctionState != null && (b6 = kt4.c(launchActivity.P).b(tL_StarGiftAuctionState.gift.id)) != null) {
-                                    new kna(launchActivity, null, launchActivity.P, b6.d.title, b6.h, false).show();
+                                    bs2.v(null, 2131749762, d31.b0((e) c00.g(1, launchActivity.e0)), R.raw.error, 36);
+                                } else if (tL_StarGiftAuctionState != null && (b6 = ov4.c(launchActivity.P).b(tL_StarGiftAuctionState.gift.id)) != null) {
+                                    new gra(launchActivity, null, launchActivity.P, b6.d.title, b6.h, false).show();
                                 }
                                 try {
-                                    kz5Var2.run();
+                                    tg5Var3.run();
                                     break;
                                 } catch (Exception e) {
-                                    fa4.g(e, true);
+                                    cc4.g(e, true);
                                     return;
                                 }
                                 break;
@@ -883,15 +882,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 String str33 = LaunchActivity.C1;
                                 LaunchActivity launchActivity2 = this.b;
                                 if (tL_error2 != null) {
-                                    ir2.v(null, 2131749800, u21.b0((d) b00.f(1, launchActivity2.e0)), R.raw.error, 36);
+                                    bs2.v(null, 2131749762, d31.b0((e) c00.g(1, launchActivity2.e0)), R.raw.error, 36);
                                 } else if (tL_StarGiftAuctionState2 != null) {
-                                    ez.Z0(launchActivity2, null, launchActivity2.P, 0L, tL_StarGiftAuctionState2.gift.id, null);
+                                    fz.a1(launchActivity2, null, launchActivity2.P, 0L, tL_StarGiftAuctionState2.gift.id, null);
                                 }
                                 try {
-                                    kz5Var2.run();
+                                    tg5Var3.run();
                                     break;
                                 } catch (Exception e2) {
-                                    fa4.g(e2, true);
+                                    cc4.g(e2, true);
                                 }
                         }
                     }
@@ -901,12 +900,12 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 TL_payments.TL_getStarGiftAuctionState tL_getStarGiftAuctionState2 = new TL_payments.TL_getStarGiftAuctionState();
                 tL_getStarGiftAuctionState2.auction = tL_inputStarGiftAuctionSlug2;
                 tL_getStarGiftAuctionState2.version = 0;
-                iArr2[0] = c6.getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState2, new hc(b2), new ae2(c6, i8cVar2, b5));
+                iArr2[0] = c6.getConnectionsManager().sendRequestTyped(tL_getStarGiftAuctionState2, new ic(b2), new qe2(c6, iccVar2, b5));
             } else if (str19 != null) {
                 TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
                 getuniquestargift.slug = str19;
                 final byte b6 = 2;
-                iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(getuniquestargift, new RequestDelegate(this) { // from class: lz5
+                iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(getuniquestargift, new RequestDelegate(this) { // from class: n16
                     public final /* synthetic */ LaunchActivity b;
 
                     {
@@ -918,15 +917,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         switch (b6) {
                             case 0:
                                 String str32 = LaunchActivity.C1;
-                                gl.c3(new qx5(this.b, tLObject, i, str19, tL_error, kz5Var));
+                                hl.c3(new uz5(this.b, tLObject, i, str19, tL_error, tg5Var2));
                                 break;
                             case 1:
                                 String str33 = LaunchActivity.C1;
-                                gl.c3(new i57((Object) this.b, (Object) tLObject, i, (Object) str19, (Object) kz5Var, (byte) 17));
+                                hl.c3(new l77((Object) this.b, (Object) tLObject, i, (Object) str19, (Object) tg5Var2, (byte) 18));
                                 break;
                             default:
                                 String str34 = LaunchActivity.C1;
-                                gl.c3(new qx5(this.b, tL_error, tLObject, i, str19, kz5Var));
+                                hl.c3(new uz5(this.b, tL_error, tLObject, i, str19, tg5Var2));
                                 break;
                         }
                     }
@@ -936,12 +935,12 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = new TLRPC.TL_inputInvoiceSlug();
                 tL_inputInvoiceSlug.slug = str18;
                 tL_payments_getPaymentForm.invoice = tL_inputInvoiceSlug;
-                iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_payments_getPaymentForm, new vt0(this, (Object) tL_inputInvoiceSlug, (Object) kz5Var, i, str18, (byte) 6));
+                iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_payments_getPaymentForm, new eu0(this, (Object) tL_inputInvoiceSlug, (Object) tg5Var2, i, str18, (byte) 6));
             } else {
                 if (str == null) {
                     String str32 = str3;
                     if (str2 == null) {
-                        hb5Var = null;
+                        tg5Var = null;
                         ArrayList arrayList = this.e0;
                         if (str32 != null) {
                             if (arrayList.isEmpty()) {
@@ -949,18 +948,18 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             }
                             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
                             tL_inputStickerSetShortName.short_name = str32;
-                            org.telegram.ui.ActionBar.d dVar = (org.telegram.ui.ActionBar.d) b00.f(1, arrayList);
-                            if (dVar instanceof mu1) {
-                                mu1 mu1Var = (mu1) dVar;
-                                u0bVar = new u0b(this, dVar, tL_inputStickerSetShortName, null, (mu1Var.d1.getVisibility() == 0 || !((chat = mu1Var.e) == null || hc2.t(chat))) ? null : mu1Var.a0, mu1Var.getResourceProvider());
-                                boolean Q7 = mu1Var.Q7();
-                                u0bVar.i0 = Q7;
-                                u0bVar.n = Q7;
+                            org.telegram.ui.ActionBar.e eVar = (org.telegram.ui.ActionBar.e) c00.g(1, arrayList);
+                            if (eVar instanceof zu1) {
+                                zu1 zu1Var = (zu1) eVar;
+                                s4bVar = new s4b(this, eVar, tL_inputStickerSetShortName, null, (zu1Var.d1.getVisibility() == 0 || !((chat = zu1Var.e) == null || xc2.t(chat))) ? null : zu1Var.a0, zu1Var.getResourceProvider());
+                                boolean Y7 = zu1Var.Y7();
+                                s4bVar.i0 = Y7;
+                                s4bVar.n = Y7;
                             } else {
-                                u0bVar = new u0b(this, dVar, tL_inputStickerSetShortName, null, null, null);
+                                s4bVar = new s4b(this, eVar, tL_inputStickerSetShortName, null, null, null);
                             }
-                            u0bVar.K1 = str4 != null;
-                            dVar.showDialog(u0bVar);
+                            s4bVar.K1 = str4 != null;
+                            eVar.showDialog(s4bVar);
                             return;
                         }
                         if (str4 != null) {
@@ -974,24 +973,24 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             tL_inputStickerSetShortName2.short_name = str32;
                             ArrayList arrayList2 = new ArrayList(1);
                             arrayList2.add(tL_inputStickerSetShortName2);
-                            org.telegram.ui.ActionBar.d dVar2 = (org.telegram.ui.ActionBar.d) b00.f(1, arrayList);
-                            if (dVar2 instanceof mu1) {
-                                mu1 mu1Var2 = (mu1) dVar2;
-                                qx3Var = new qx3(dVar2, this, mu1Var2.getResourceProvider(), arrayList2);
-                                boolean Q72 = mu1Var2.Q7();
-                                qx3Var.i0 = Q72;
-                                qx3Var.n = Q72;
+                            org.telegram.ui.ActionBar.e eVar2 = (org.telegram.ui.ActionBar.e) c00.g(1, arrayList);
+                            if (eVar2 instanceof zu1) {
+                                zu1 zu1Var2 = (zu1) eVar2;
+                                ly3Var = new ly3(eVar2, this, zu1Var2.getResourceProvider(), arrayList2);
+                                boolean Y72 = zu1Var2.Y7();
+                                ly3Var.i0 = Y72;
+                                ly3Var.n = Y72;
                             } else {
-                                qx3Var = new qx3(dVar2, this, null, arrayList2);
+                                ly3Var = new ly3(eVar2, this, null, arrayList2);
                             }
-                            dVar2.showDialog(qx3Var);
+                            eVar2.showDialog(ly3Var);
                             return;
                         }
                         if (str9 != null) {
-                            cj3 cj3Var = new cj3(tb4.j(3, "onlySelect", "dialogsType", true));
-                            cj3Var.E2 = new ym1(this, z, i, str9);
+                            uj3 uj3Var = new uj3(qd4.j(3, "onlySelect", "dialogsType", true));
+                            uj3Var.E2 = new an1(this, z, i, str9);
                             b = 0;
-                            u0(cj3Var, false, true);
+                            u0(uj3Var, false, true);
                             i7 = i;
                         } else {
                             b = 0;
@@ -1007,11 +1006,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 getauthorizationform.bot_id = longValue;
                                 getauthorizationform.scope = (String) hashMap.get("scope");
                                 getauthorizationform.public_key = (String) hashMap.get("public_key");
-                                iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(getauthorizationform, new by5(this, iArr2, i, kz5Var, getauthorizationform, str33, str34, str35, (byte) 1));
+                                iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(getauthorizationform, new c06(this, iArr2, i, tg5Var2, getauthorizationform, str33, str34, str35, (byte) 1));
                             } else if (str15 != null) {
                                 TLRPC.TL_help_getDeepLinkInfo tL_help_getDeepLinkInfo = new TLRPC.TL_help_getDeepLinkInfo();
                                 tL_help_getDeepLinkInfo.path = str15;
-                                iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(tL_help_getDeepLinkInfo, new RequestDelegate(this) { // from class: jz5
+                                iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(tL_help_getDeepLinkInfo, new RequestDelegate(this) { // from class: m16
                                     public final /* synthetic */ LaunchActivity b;
 
                                     {
@@ -1023,11 +1022,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                         switch (b) {
                                             case 0:
                                                 String str36 = LaunchActivity.C1;
-                                                gl.c3(new sx5((Object) this.b, (Object) kz5Var, (Object) tLObject, (byte) 0));
+                                                hl.c3(new ls5((Object) this.b, (Object) tg5Var2, (Object) tLObject, (byte) 5));
                                                 break;
                                             default:
                                                 String str37 = LaunchActivity.C1;
-                                                gl.c3(new e45(this.b, kz5Var, tLObject, tL_error, (byte) 9));
+                                                hl.c3(new g65(this.b, tg5Var2, tLObject, tL_error, (byte) 9));
                                                 break;
                                         }
                                     }
@@ -1038,7 +1037,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 tL_langpack_getLanguage.lang_pack = "android";
                                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.P);
                                 final char c8 = c2 == true ? 1 : 0;
-                                iArr2[0] = connectionsManager.sendRequest(tL_langpack_getLanguage, new RequestDelegate(this) { // from class: jz5
+                                iArr2[0] = connectionsManager.sendRequest(tL_langpack_getLanguage, new RequestDelegate(this) { // from class: m16
                                     public final /* synthetic */ LaunchActivity b;
 
                                     {
@@ -1050,11 +1049,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                         switch (c8) {
                                             case 0:
                                                 String str36 = LaunchActivity.C1;
-                                                gl.c3(new sx5((Object) this.b, (Object) kz5Var, (Object) tLObject, (byte) 0));
+                                                hl.c3(new ls5((Object) this.b, (Object) tg5Var2, (Object) tLObject, (byte) 5));
                                                 break;
                                             default:
                                                 String str37 = LaunchActivity.C1;
-                                                gl.c3(new e45(this.b, kz5Var, tLObject, tL_error, (byte) 9));
+                                                hl.c3(new g65(this.b, tg5Var2, tLObject, tL_error, (byte) 9));
                                                 break;
                                         }
                                     }
@@ -1064,49 +1063,49 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     try {
                                         TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
                                         int i9 = wallPaperSettings.third_background_color;
-                                        gl.c3(new hb5(this, new qmb(i9 != 0 ? new krc(wallPaperSettings.background_color, wallPaperSettings.second_background_color, i9, wallPaperSettings.fourth_background_color, "c") : new krc(wallPaperSettings.background_color, wallPaperSettings.second_background_color, gl.q1(wallPaperSettings.rotation, false), "c"), null, true), (byte) 28));
+                                        hl.c3(new tg5(this, new pqb(i9 != 0 ? new yvc(wallPaperSettings.background_color, wallPaperSettings.second_background_color, i9, wallPaperSettings.fourth_background_color, "c") : new yvc(wallPaperSettings.background_color, wallPaperSettings.second_background_color, hl.q1(wallPaperSettings.rotation, false), "c"), null, true), (byte) 23));
                                     } catch (Exception e) {
-                                        fa4.g(e, true);
+                                        cc4.g(e, true);
                                     }
                                 }
                                 TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
                                 TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
                                 tL_inputWallPaperSlug.slug = tL_wallPaper.slug;
                                 getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                                iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(getwallpaper, new k45(this, kz5Var, tL_wallPaper, (byte) 3));
+                                iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(getwallpaper, new m65(this, tg5Var2, tL_wallPaper, (byte) 3));
                             } else {
                                 if (str20 != null) {
-                                    hb5 hb5Var2 = new hb5(this, c01Var2, (byte) 29);
+                                    tg5 tg5Var3 = new tg5(this, l01Var2, (byte) 24);
                                     TL_account.getTheme gettheme = new TL_account.getTheme();
                                     gettheme.format = "android";
                                     TLRPC.TL_inputThemeSlug tL_inputThemeSlug = new TLRPC.TL_inputThemeSlug();
                                     tL_inputThemeSlug.slug = str20;
                                     gettheme.theme = tL_inputThemeSlug;
-                                    hdVar = hdVar4;
-                                    iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(gettheme, new k45(this, hdVar, kz5Var, (byte) 4));
+                                    idVar = idVar4;
+                                    iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(gettheme, new m65(this, idVar, tg5Var2, (byte) 4));
                                     i7 = i;
-                                    hb5Var = hb5Var2;
+                                    tg5Var = tg5Var3;
                                 } else {
-                                    hdVar = hdVar4;
+                                    idVar = idVar4;
                                     if (l == null || (num == null && !z5)) {
                                         iArr = iArr2;
                                         i7 = i;
                                         if (str30 != null) {
                                             TL_account.resolveBusinessChatLink resolvebusinesschatlink = new TL_account.resolveBusinessChatLink();
                                             resolvebusinesschatlink.slug = str30;
-                                            ConnectionsManager.getInstance(this.P).sendRequest(resolvebusinesschatlink, new cz5(this, c == true ? 1 : 0));
+                                            ConnectionsManager.getInstance(this.P).sendRequest(resolvebusinesschatlink, new c16(this, c == true ? 1 : 0));
                                         }
                                     } else {
                                         if (l2 != null) {
-                                            TLRPC.Chat K0 = na7.q1(i).K0(l);
-                                            if (K0 != null) {
-                                                iArr2[0] = z0(i, kz5Var, num, num2, l2, num3, null, K0, null, null, 0, -1);
+                                            TLRPC.Chat M03 = uc7.s1(i).M0(l);
+                                            if (M03 != null) {
+                                                iArr2[0] = z0(i, tg5Var2, num, num2, l2, num3, null, M03, null, null, 0, -1);
                                             } else {
                                                 TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
                                                 TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
                                                 tL_inputChannel.channel_id = l.longValue();
                                                 tL_channels_getChannels.id.add(tL_inputChannel);
-                                                iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(tL_channels_getChannels, new by5(this, iArr2, i, kz5Var, num, num2, l2, num3, (byte) 2));
+                                                iArr2[0] = ConnectionsManager.getInstance(this.P).sendRequest(tL_channels_getChannels, new c06(this, iArr2, i, tg5Var2, num, num2, l2, num3, (byte) 2));
                                             }
                                         } else {
                                             Bundle bundle = new Bundle();
@@ -1120,18 +1119,18 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                             if (bArr != null) {
                                                 bundle.putByteArray("poll_option_id", bArr);
                                             }
-                                            TLRPC.Chat K02 = na7.q1(this.P).K0(l);
-                                            if (K02 != null && hc2.R(K02) && z5) {
-                                                w0(Long.valueOf(-l.longValue()), kz5Var, c01Var2, null);
-                                            } else if (K02 == null || !K02.forum) {
-                                                org.telegram.ui.ActionBar.d dVar3 = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.d) b00.f(1, arrayList) : null;
-                                                if (dVar3 == null || na7.q1(i).A(bundle, dVar3, null, null)) {
+                                            TLRPC.Chat M04 = uc7.s1(this.P).M0(l);
+                                            if (M04 != null && xc2.R(M04) && z5) {
+                                                w0(Long.valueOf(-l.longValue()), tg5Var2, l01Var2, null);
+                                            } else if (M04 == null || !M04.forum) {
+                                                org.telegram.ui.ActionBar.e eVar3 = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.e) c00.g(1, arrayList) : null;
+                                                if (eVar3 == null || uc7.s1(i).C(bundle, eVar3, null, null)) {
                                                     iArr = iArr2;
                                                     i7 = i;
-                                                    gl.c3(new jy5(this, bundle, l, iArr2, kz5Var, z5, c01Var2, l2, num, num3, bArr, dVar3, i));
+                                                    hl.c3(new j06(this, bundle, l, iArr2, tg5Var2, z5, l01Var2, l2, num, num3, bArr, eVar3, i));
                                                 }
                                             } else {
-                                                l0(-l.longValue(), num, null, num3, bArr, new ay5(kz5Var, (byte) 2), 0, -1);
+                                                l0(-l.longValue(), num, null, num3, bArr, new b06(tg5Var2, (byte) 2), 0, -1);
                                             }
                                         }
                                         i7 = i;
@@ -1142,37 +1141,37 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             i7 = i;
                         }
                         iArr = iArr2;
-                        hdVar = hdVar4;
+                        idVar = idVar4;
                     } else if (i2 == 0) {
                         TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite = new TLRPC.TL_messages_checkChatInvite();
                         tL_messages_checkChatInvite.hash = str2;
-                        iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkChatInvite, new vt0(this, i, hdVar4, kz5Var, str2), 2);
+                        iArr2[0] = ConnectionsManager.getInstance(i).sendRequest(tL_messages_checkChatInvite, new eu0(this, i, idVar4, tg5Var2, str2), 2);
                         i7 = i;
                         iArr = iArr2;
-                        hdVar = hdVar4;
+                        idVar = idVar4;
                         b = 0;
                     } else {
                         if (i2 == 1) {
                             TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
                             tL_messages_importChatInvite.hash = str2;
-                            hb5Var = null;
-                            ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_importChatInvite, null, new wm1((Object) this, (Object) kz5Var, i, (byte) (c3 == true ? 1 : 0)), 2);
+                            tg5Var = null;
+                            ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_importChatInvite, null, new pn1((Object) this, (Object) tg5Var2, i, (byte) (c3 == true ? 1 : 0)), 2);
                         } else {
-                            hb5Var = null;
+                            tg5Var = null;
                         }
                         i7 = i;
                         iArr = iArr2;
-                        hdVar = hdVar4;
+                        idVar = idVar4;
                         b = 0;
                     }
                     if (iArr[b] != 0) {
-                        hdVar.setOnCancelListener(new bg(i7, iArr, hb5Var));
+                        idVar.setOnCancelListener(new ef(i7, iArr, tg5Var));
                         try {
-                            if (c01Var2 != null) {
-                                c01Var2.b = new j45(i7, iArr, hb5Var);
-                                c01Var2.d();
+                            if (l01Var2 != null) {
+                                l01Var2.b = new l65(i7, iArr, tg5Var);
+                                l01Var2.d();
                             } else {
-                                hdVar.q(300L);
+                                idVar.q(300L);
                             }
                             return;
                         } catch (Exception unused) {
@@ -1181,53 +1180,53 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                     return;
                 }
-                if (c01Var2 != null) {
-                    c01Var2.d();
+                if (l01Var2 != null) {
+                    l01Var2.d();
                 }
-                k7c Y1 = na7.q1(i).Y1();
+                kbc a2 = uc7.s1(i).a2();
                 i7 = i;
-                p8c p8cVar = new p8c() { // from class: nz5
-                    /* JADX WARN: Can't wrap try/catch for region: R(10:59|(12:63|(3:(1:362)|(1:365)|(1:368))|66|(2:68|(2:70|(5:72|(2:74|(2:76|77)(1:78))(1:82)|79|80|81)(8:83|84|(2:86|(2:88|89))(1:357)|(3:91|(1:95)|96)(4:(5:118|(1:(2:350|(2:352|(1:354)(1:355)))(3:122|123|(11:125|(3:127|(1:158)(1:131)|132)(2:159|(1:164)(1:163))|133|(2:148|(2:153|(1:157))(1:152))(1:137)|138|(1:140)|141|(1:143)|144|(1:146)|147)(1:(2:319|(3:340|341|(2:343|344)(1:346))(7:325|(1:327)(1:339)|328|(1:330)|331|(2:333|(1:335)(1:337))(1:338)|336))(17:167|(3:169|(1:311)(2:173|(2:175|176)(1:177))|178)(3:312|(3:314|(1:316)|317)|318)|(1:310)(1:183)|184|(1:186)|(3:188|(1:190)|(1:192))|193|(1:195)|196|(1:198)|(1:200)|(1:202)|(1:204)(1:309)|(1:206)(1:308)|207|(1:307)(1:210)|(3:214|(1:306)(1:218)|(1:(2:253|(4:288|289|290|(5:292|(1:294)(1:301)|(2:296|(1:298))|299|300)(1:302))(1:(4:282|(1:284)(1:287)|285|286)(2:(1:281)(1:261)|(8:267|(1:269)|270|(1:272)|273|274|275|277)(2:265|266))))(1:252))(12:221|(1:223)|224|(1:231)|232|(1:234)|235|236|(3:238|(3:240|241|242)(1:244)|243)|245|246|(1:248)(1:249)))))))|356|123|(0)(0))(4:107|(1:117)(2:111|(2:113|114)(1:115))|116|114)|98|99|101)|97|98|99|101))(1:358))(1:360)|359|84|(0)(0)|(0)(0)|97|98|99|101)|372|373|374|(7:376|(1:378)|379|380|381|382|(1:384)(1:385))|97|98|99|101) */
-                    /* JADX WARN: Code restructure failed: missing block: B:363:0x0184, code lost:
+                pcc pccVar = new pcc() { // from class: p16
+                    /* JADX WARN: Can't wrap try/catch for region: R(10:59|(12:63|(3:(1:368)|(1:371)|(1:374))|66|(2:68|(2:70|(5:72|(2:74|(2:76|77)(1:78))(1:82)|79|80|81)(8:83|84|(2:86|(2:88|89))(1:363)|(3:91|(1:95)|96)(4:(5:118|(1:(2:356|(2:358|(1:360)(1:361)))(3:122|123|(11:125|(3:127|(1:158)(1:131)|132)(2:159|(1:164)(1:163))|133|(2:148|(2:153|(1:157))(1:152))(1:137)|138|(1:140)|141|(1:143)|144|(1:146)|147)(1:(2:325|(3:346|347|(2:349|350)(1:352))(7:331|(1:333)(1:345)|334|(1:336)|337|(2:339|(1:341)(1:343))(1:344)|342))(17:167|(3:169|(1:317)(2:173|(2:175|176)(1:177))|178)(3:318|(3:320|(1:322)|323)|324)|(1:316)(1:183)|184|(1:186)|(3:188|(1:190)|(1:192))|193|(1:195)|196|(1:198)|(1:200)|(1:202)|(1:204)(1:315)|(1:206)(1:314)|207|(1:313)(1:210)|(3:214|(1:312)(1:218)|(1:(2:253|(4:288|289|290|(8:292|(1:294)(1:307)|(2:296|(1:298))|(1:300)(1:306)|301|(1:303)|304|305)(1:308))(1:(4:282|(1:284)(1:287)|285|286)(2:(1:281)(1:261)|(8:267|(1:269)|270|(1:272)|273|274|275|277)(2:265|266))))(1:252))(12:221|(1:223)|224|(1:231)|232|(1:234)|235|236|(3:238|(3:240|241|242)(1:244)|243)|245|246|(1:248)(1:249)))))))|362|123|(0)(0))(4:107|(1:117)(2:111|(2:113|114)(1:115))|116|114)|98|99|101)|97|98|99|101))(1:364))(1:366)|365|84|(0)(0)|(0)(0)|97|98|99|101)|378|379|380|(7:382|(1:384)|385|386|387|388|(1:390)(1:391))|97|98|99|101) */
+                    /* JADX WARN: Code restructure failed: missing block: B:369:0x0184, code lost:
                     
                         if (r3.longValue() > 0) goto L65;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:366:0x018e, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:372:0x018e, code lost:
                     
                         if (r3.longValue() < 0) goto L65;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:369:0x0198, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:375:0x0198, code lost:
                     
                         if (r3.longValue() < 0) goto L65;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:388:0x0a74, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:394:0x0a84, code lost:
                     
                         r0 = move-exception;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:389:0x0a72, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:395:0x0a82, code lost:
                     
                         r13 = true;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:390:0x0a76, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:396:0x0a86, code lost:
                     
-                        fa4.g(r0, true);
+                        cc4.g(r0, true);
                      */
                     /* JADX WARN: Multi-variable type inference failed */
                     /* JADX WARN: Removed duplicated region for block: B:105:0x043e  */
                     /* JADX WARN: Removed duplicated region for block: B:125:0x050e  */
                     /* JADX WARN: Removed duplicated region for block: B:165:0x061e  */
-                    /* JADX WARN: Removed duplicated region for block: B:357:0x0414  */
+                    /* JADX WARN: Removed duplicated region for block: B:363:0x0414  */
                     /* JADX WARN: Removed duplicated region for block: B:86:0x03f4  */
                     /* JADX WARN: Removed duplicated region for block: B:91:0x041a  */
                     /* JADX WARN: Type inference failed for: r13v40 */
-                    /* JADX WARN: Type inference failed for: r13v41, types: [java.lang.String, wjb] */
+                    /* JADX WARN: Type inference failed for: r13v41, types: [java.lang.String, vnb] */
                     /* JADX WARN: Type inference failed for: r13v43 */
-                    @Override // p8c
+                    @Override // pcc
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
                     public final void a(Object obj) {
-                        kz5 kz5Var2;
+                        tg5 tg5Var4;
                         boolean z12;
                         boolean z13;
                         String str36;
@@ -1238,16 +1237,16 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         String str41;
                         final String str42;
                         LaunchActivity launchActivity;
-                        c01 c01Var3;
+                        l01 l01Var3;
                         final boolean z14;
                         final String str43;
                         String str44;
                         int i10;
-                        kz5 kz5Var3;
+                        tg5 tg5Var5;
                         final int i11;
                         int i12;
                         String str45;
-                        kz5 kz5Var4;
+                        tg5 tg5Var6;
                         LaunchActivity launchActivity2;
                         ArrayList arrayList3;
                         Integer num4;
@@ -1266,35 +1265,35 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         boolean z15;
                         String str49;
                         boolean z16;
-                        x14 v;
-                        ArrayList<zf0> arrayList4;
-                        kz5 kz5Var5;
+                        s24 v;
+                        ArrayList<ag0> arrayList4;
+                        tg5 tg5Var7;
                         boolean z17;
                         boolean z18;
                         boolean z19;
                         ?? r13;
-                        u21 b0;
+                        d31 b0;
                         int i17;
                         final String str50;
                         final Long l5 = (Long) obj;
                         String str51 = LaunchActivity.C1;
                         final LaunchActivity launchActivity3 = LaunchActivity.this;
                         ArrayList arrayList5 = launchActivity3.e0;
-                        final kz5 kz5Var6 = kz5Var;
+                        final tg5 tg5Var8 = tg5Var2;
                         Object[] objArr = 0;
                         byte b7 = 1;
                         if (l5 != null && l5.longValue() == Long.MAX_VALUE) {
                             try {
-                                kz5Var6.run();
+                                tg5Var8.run();
                             } catch (Exception e2) {
-                                fa4.g(e2, true);
+                                cc4.g(e2, true);
                             }
                             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, null, launchActivity3);
-                            String M03 = k96.M0(2131754345, null);
-                            hd hdVar5 = alertDialog$Builder3.a;
-                            hdVar5.S = M03;
-                            hdVar5.U = k96.M0(2131754346, null);
-                            ug8.y(null, 2131747638, alertDialog$Builder3, null);
+                            String M05 = ob6.M0(2131754341, null);
+                            id idVar5 = alertDialog$Builder3.a;
+                            idVar5.S = M05;
+                            idVar5.U = ob6.M0(2131754342, null);
+                            ik8.y(null, 2131747558, alertDialog$Builder3, null);
                             return;
                         }
                         if (launchActivity3.isFinishing()) {
@@ -1302,61 +1301,61 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         }
                         final boolean z20 = z4;
                         if (z20 && l5 != null) {
-                            g2b M1 = na7.q1(launchActivity3.P).M1();
+                            c6b O1 = uc7.s1(launchActivity3.P).O1();
                             long longValue2 = l5.longValue();
-                            vx5 vx5Var = new vx5(launchActivity3, kz5Var6, l5, objArr == true ? 1 : 0);
-                            int i18 = M1.a;
-                            TL_stories.PeerStories x = M1.x(longValue2);
+                            wz5 wz5Var = new wz5(launchActivity3, tg5Var8, l5, objArr == true ? 1 : 0);
+                            int i18 = O1.a;
+                            TL_stories.PeerStories x = O1.x(longValue2);
                             if (x != null) {
                                 for (int i19 = 0; i19 < x.stories.size(); i19++) {
                                     if ((x.stories.get(i19).media instanceof TLRPC.TL_messageMediaVideoStream) && !(x.stories.get(i19) instanceof TL_stories.TL_storyItemSkipped)) {
-                                        vx5Var.a(x.stories.get(i19));
+                                        wz5Var.a(x.stories.get(i19));
                                         return;
                                     }
                                 }
                             }
                             long j2 = ((-93321425) + longValue2) << 12;
-                            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) M1.E.f(j2);
+                            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) O1.E.f(j2);
                             if (storyItem != null) {
-                                vx5Var.a(storyItem);
+                                wz5Var.a(storyItem);
                                 return;
                             }
                             TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
-                            tL_stories_getPeerStories.peer = na7.q1(i18).h1(longValue2);
-                            ConnectionsManager.getInstance(i18).sendRequest(tL_stories_getPeerStories, new o1b(M1, j2, vx5Var));
+                            tL_stories_getPeerStories.peer = uc7.s1(i18).j1(longValue2);
+                            ConnectionsManager.getInstance(i18).sendRequest(tL_stories_getPeerStories, new l5b(O1, j2, wz5Var));
                             return;
                         }
                         final int i20 = i4;
                         if (i20 != 0 && l5 != null) {
-                            na7.q1(launchActivity3.P).M1().f0(i20, l5.longValue(), new vx5(launchActivity3, kz5Var6, l5, b7));
+                            uc7.s1(launchActivity3.P).O1().f0(i20, l5.longValue(), new wz5(launchActivity3, tg5Var8, l5, b7));
                             return;
                         }
                         final int i21 = i5;
                         if (i21 != 0 && l5 != null) {
-                            g2b M12 = na7.q1(launchActivity3.P).M1();
+                            c6b O12 = uc7.s1(launchActivity3.P).O1();
                             long longValue3 = l5.longValue();
-                            go2 go2Var = new go2((Object) launchActivity3, (Object) kz5Var6, (Object) l5, i21, (byte) 3);
-                            int i22 = M12.a;
-                            u1b A = M12.A(longValue3, false);
+                            zo2 zo2Var = new zo2((Object) launchActivity3, (Object) tg5Var8, (Object) l5, i21, (byte) 3);
+                            int i22 = O12.a;
+                            q5b A = O12.A(longValue3, false);
                             if (A != null) {
-                                z1b b8 = A.b(i21);
+                                v5b b8 = A.b(i21);
                                 if (b8 != null) {
                                     TL_stories.TL_storyAlbum tL_storyAlbum = new TL_stories.TL_storyAlbum();
                                     tL_storyAlbum.album_id = b8.a;
                                     tL_storyAlbum.title = b8.b;
                                     tL_storyAlbum.icon_photo = b8.c;
                                     tL_storyAlbum.icon_video = b8.d;
-                                    go2Var.a(tL_storyAlbum);
+                                    zo2Var.a(tL_storyAlbum);
                                     return;
                                 }
                                 if (A.f) {
-                                    go2Var.a(null);
+                                    zo2Var.a(null);
                                     return;
                                 }
                             }
                             TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
-                            tL_getAlbums.peer = na7.q1(i22).h1(longValue3);
-                            ConnectionsManager.getInstance(i22).sendRequest(tL_getAlbums, new l12(i21, go2Var));
+                            tL_getAlbums.peer = uc7.s1(i22).j1(longValue3);
+                            ConnectionsManager.getInstance(i22).sendRequest(tL_getAlbums, new b22(i21, zo2Var));
                             return;
                         }
                         final String str52 = str;
@@ -1407,7 +1406,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 final String str75 = str23;
                                 final String str76 = str24;
                                 final String str77 = str25;
-                                final c01 c01Var4 = c01Var2;
+                                final l01 l01Var4 = l01Var2;
                                 final boolean z24 = z3;
                                 final int i25 = i6;
                                 final String str78 = str28;
@@ -1433,22 +1432,22 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     str41 = str58;
                                     str42 = str64;
                                     launchActivity = launchActivity3;
-                                    c01Var3 = c01Var4;
+                                    l01Var3 = l01Var4;
                                     z14 = z22;
                                     str43 = str62;
                                 } else {
-                                    final TLRPC.User V1 = na7.q1(i23).V1(l5);
-                                    if (V1 != null) {
-                                        if (V1.bot) {
-                                            if (V1.bot_attach_menu) {
+                                    final TLRPC.User X1 = uc7.s1(i23).X1(l5);
+                                    if (X1 != null) {
+                                        if (X1.bot) {
+                                            if (X1.bot_attach_menu) {
                                                 str50 = str58;
-                                                if (!hq6.d0(i23).l(V1.id)) {
+                                                if (!ls6.d0(i23).l(X1.id)) {
                                                     TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
-                                                    na7 q1 = na7.q1(i23);
-                                                    tL_messages_getAttachMenuBot.bot = q1.o1(q1.V1(l5));
+                                                    uc7 s1 = uc7.s1(i23);
+                                                    tL_messages_getAttachMenuBot.bot = s1.q1(s1.X1(l5));
                                                     ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(i23);
                                                     final int i26 = z23 ? 1 : 0;
-                                                    connectionsManager2.sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate() { // from class: wx5
+                                                    connectionsManager2.sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate() { // from class: xz5
                                                         @Override // org.telegram.tgnet.RequestDelegate
                                                         public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
                                                             String str83 = LaunchActivity.C1;
@@ -1489,7 +1488,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                             final String str106 = str75;
                                                             final String str107 = str76;
                                                             final String str108 = str77;
-                                                            final c01 c01Var5 = c01Var4;
+                                                            final l01 l01Var5 = l01Var4;
                                                             final boolean z35 = z24;
                                                             final int i29 = i20;
                                                             final boolean z36 = z20;
@@ -1511,13 +1510,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                             final Long l10 = l5;
                                                             final String str113 = str56;
                                                             final String str114 = str82;
-                                                            final TLRPC.User user = V1;
-                                                            final kz5 kz5Var7 = kz5Var6;
+                                                            final TLRPC.User user = X1;
+                                                            final tg5 tg5Var9 = tg5Var8;
                                                             final int i32 = z34 ? 1 : 0;
-                                                            gl.c3(new Runnable() { // from class: ey5
+                                                            hl.c3(new Runnable() { // from class: e06
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    c01 c01Var6;
+                                                                    l01 l01Var6;
                                                                     TLRPC.User user2;
                                                                     final String str115;
                                                                     final boolean z44;
@@ -1562,7 +1561,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                     final String str139 = str106;
                                                                     final String str140 = str107;
                                                                     final String str141 = str108;
-                                                                    final c01 c01Var7 = c01Var5;
+                                                                    final l01 l01Var7 = l01Var5;
                                                                     final boolean z48 = z35;
                                                                     final int i37 = i29;
                                                                     final int i38 = i30;
@@ -1583,7 +1582,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                         final Integer num14 = num11;
                                                                         final byte[] bArr5 = bArr4;
                                                                         final int i40 = z47 ? 1 : 0;
-                                                                        gl.c3(new Runnable() { // from class: qy5
+                                                                        hl.c3(new Runnable() { // from class: r06
                                                                             @Override // java.lang.Runnable
                                                                             public final void run() {
                                                                                 String str146 = LaunchActivity.C1;
@@ -1620,7 +1619,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                                 boolean z58 = z46;
                                                                                 String str168 = str138;
                                                                                 boolean z59 = i40;
-                                                                                launchActivity6.B0(i41, str147, str148, str149, str150, str151, str152, str153, str154, str155, str156, str157, str158, z57, num15, l13, l14, num16, str159, hashMap5, str160, str161, str162, str163, tL_wallPaper5, str164, str165, str166, str167, z58, str168, z59 ? 1 : 0, i36, str139, str140, str141, null, null, c01Var7, z48, i37, z56, i38, i39, str144, str145, z49, str142, z50, z51, z52, z53, z54, str143, num14, z55, bArr5);
+                                                                                launchActivity6.B0(i41, str147, str148, str149, str150, str151, str152, str153, str154, str155, str156, str157, str158, z57, num15, l13, l14, num16, str159, hashMap5, str160, str161, str162, str163, tL_wallPaper5, str164, str165, str166, str167, z58, str168, z59 ? 1 : 0, i36, str139, str140, str141, null, null, l01Var7, z48, i37, z56, i38, i39, str144, str145, z49, str142, z50, z51, z52, z53, z54, str143, num14, z55, bArr5);
                                                                             }
                                                                         });
                                                                         return;
@@ -1635,11 +1634,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                         final String str146 = str113;
                                                                         final String str147 = str114;
                                                                         final TLRPC.User user3 = user;
-                                                                        final kz5 kz5Var8 = kz5Var7;
+                                                                        final tg5 tg5Var10 = tg5Var9;
                                                                         if ((z58 || tL_attachMenuBot.side_menu_disclaimer_needed) && z59) {
                                                                             final int i41 = z47 ? 1 : 0;
-                                                                            psc.a(launchActivity5, new p8c() { // from class: ry5
-                                                                                @Override // p8c
+                                                                            exc.a(launchActivity5, new pcc() { // from class: s06
+                                                                                @Override // pcc
                                                                                 public final void a(Object obj2) {
                                                                                     String str148 = LaunchActivity.C1;
                                                                                     TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
@@ -1647,11 +1646,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                                     tL_attachMenuBot2.request_write_access = false;
                                                                                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                                                                                     int i42 = i35;
-                                                                                    na7 q12 = na7.q1(i42);
-                                                                                    tL_messages_toggleBotInAttachMenu.bot = q12.o1(q12.V1(l13));
+                                                                                    uc7 s12 = uc7.s1(i42);
+                                                                                    tL_messages_toggleBotInAttachMenu.bot = s12.q1(s12.X1(l13));
                                                                                     tL_messages_toggleBotInAttachMenu.enabled = true;
                                                                                     tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                                                                                    ConnectionsManager.getInstance(i42).sendRequest(tL_messages_toggleBotInAttachMenu, new vv0(i42, (byte) 1), 66);
+                                                                                    ConnectionsManager.getInstance(i42).sendRequest(tL_messages_toggleBotInAttachMenu, new fw0(i42, (byte) 1), 66);
                                                                                     LaunchActivity launchActivity6 = LaunchActivity.this;
                                                                                     String str149 = str117;
                                                                                     String str150 = str118;
@@ -1684,13 +1683,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                                     boolean z61 = z46;
                                                                                     String str170 = str138;
                                                                                     boolean z62 = i41;
-                                                                                    launchActivity6.x0(i42, str149, str150, str151, str152, str153, str154, str155, str156, str157, str158, str159, str160, z60, num15, l14, l15, num16, str161, hashMap5, str162, str163, str164, str165, tL_wallPaper5, str166, str167, str168, str169, z61, str170, z62 ? 1 : 0, i36, str139, str140, str141, str146, str147, c01Var7, z48, i37, i38, i39, z49, str142, user3, kz5Var8, z59, true, z50, z51, z52, z53, z54, str143, z55);
+                                                                                    launchActivity6.x0(i42, str149, str150, str151, str152, str153, str154, str155, str156, str157, str158, str159, str160, z60, num15, l14, l15, num16, str161, hashMap5, str162, str163, str164, str165, tL_wallPaper5, str166, str167, str168, str169, z61, str170, z62 ? 1 : 0, i36, str139, str140, str141, str146, str147, l01Var7, z48, i37, i38, i39, z49, str142, user3, tg5Var10, z59, true, z50, z51, z52, z53, z54, str143, z55);
                                                                                 }
-                                                                            }, c01Var7 != null ? new tp5(c01Var7, (byte) 7) : null);
+                                                                            }, l01Var7 != null ? new ea5(l01Var7, (byte) 22) : null);
                                                                             return;
                                                                         }
                                                                         if (tL_attachMenuBot.request_write_access) {
-                                                                            c01Var6 = c01Var7;
+                                                                            l01Var6 = l01Var7;
                                                                             user2 = user3;
                                                                             str115 = str142;
                                                                             z44 = z49;
@@ -1698,10 +1697,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                             i34 = i38;
                                                                         } else {
                                                                             if (!z48) {
-                                                                                launchActivity5.x0(i35, str117, str118, str119, str120, str121, str122, str123, str124, str125, str126, str127, str128, z45, num12, l11, l12, num13, str129, hashMap4, str130, str131, str132, str133, tL_wallPaper4, str134, str135, str136, str137, z46, str138, z47 ? 1 : 0, i36, str139, str140, str141, str146, str147, c01Var7, z48, i37, i38, i39, z49, str142, user3, kz5Var8, false, false, z50, z51, z52, z53, z54, str143, z55);
+                                                                                launchActivity5.x0(i35, str117, str118, str119, str120, str121, str122, str123, str124, str125, str126, str127, str128, z45, num12, l11, l12, num13, str129, hashMap4, str130, str131, str132, str133, tL_wallPaper4, str134, str135, str136, str137, z46, str138, z47 ? 1 : 0, i36, str139, str140, str141, str146, str147, l01Var7, z48, i37, i38, i39, z49, str142, user3, tg5Var10, false, false, z50, z51, z52, z53, z54, str143, z55);
                                                                                 return;
                                                                             }
-                                                                            c01Var6 = c01Var7;
+                                                                            l01Var6 = l01Var7;
                                                                             user2 = user3;
                                                                             str115 = str142;
                                                                             z44 = z49;
@@ -1709,29 +1708,29 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                             i34 = i38;
                                                                         }
                                                                         final AtomicBoolean atomicBoolean = new AtomicBoolean(true);
-                                                                        d Q = LaunchActivity.Q();
+                                                                        e Q = LaunchActivity.Q();
                                                                         final TLRPC.User user4 = user2;
-                                                                        final c01 c01Var8 = c01Var6;
+                                                                        final l01 l01Var8 = l01Var6;
                                                                         final int i42 = z47 ? 1 : 0;
-                                                                        ij.m(Q, atomicBoolean, user4, new Runnable() { // from class: sy5
+                                                                        jj.m(Q, atomicBoolean, user4, new Runnable() { // from class: t06
                                                                             @Override // java.lang.Runnable
                                                                             public final void run() {
                                                                                 String str148 = LaunchActivity.C1;
                                                                                 LaunchActivity launchActivity6 = LaunchActivity.this;
                                                                                 int i43 = launchActivity6.P;
                                                                                 Long l14 = l13;
-                                                                                bue.c(i43, l14.longValue());
+                                                                                vye.c(i43, l14.longValue());
                                                                                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                                                                                 tL_attachMenuBot2.inactive = false;
                                                                                 AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                                                 tL_attachMenuBot2.request_write_access = !atomicBoolean2.get();
                                                                                 TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                                                                                 int i44 = i35;
-                                                                                na7 q12 = na7.q1(i44);
-                                                                                tL_messages_toggleBotInAttachMenu.bot = q12.o1(q12.V1(l14));
+                                                                                uc7 s12 = uc7.s1(i44);
+                                                                                tL_messages_toggleBotInAttachMenu.bot = s12.q1(s12.X1(l14));
                                                                                 tL_messages_toggleBotInAttachMenu.write_allowed = atomicBoolean2.get();
-                                                                                ConnectionsManager.getInstance(i44).sendRequest(tL_messages_toggleBotInAttachMenu, new vv0(i44, (byte) 2), 66);
-                                                                                launchActivity6.x0(i44, str117, str118, str119, str120, str121, str122, str123, str124, str125, str126, str127, str128, z45, num12, l11, l12, num13, str129, hashMap4, str130, str131, str132, str133, tL_wallPaper4, str134, str135, str136, str137, z46, str138, i42 ? 1 : 0, i36, str139, str140, str141, str146, str147, c01Var8, z48, i37, i34, i33, z44, str115, user4, kz5Var8, false, false, z50, z51, z52, z53, z54, str143, z55);
+                                                                                ConnectionsManager.getInstance(i44).sendRequest(tL_messages_toggleBotInAttachMenu, new fw0(i44, (byte) 2), 66);
+                                                                                launchActivity6.x0(i44, str117, str118, str119, str120, str121, str122, str123, str124, str125, str126, str127, str128, z45, num12, l11, l12, num13, str129, hashMap4, str130, str131, str132, str133, tL_wallPaper4, str134, str135, str136, str137, z46, str138, i42 ? 1 : 0, i36, str139, str140, str141, str146, str147, l01Var8, z48, i37, i34, i33, z44, str115, user4, tg5Var10, false, false, z50, z51, z52, z53, z54, str143, z55);
                                                                             }
                                                                         });
                                                                     }
@@ -1745,7 +1744,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                             } else {
                                                 str50 = str58;
                                             }
-                                            launchActivity3.x0(i23, str52, str57, str50, str59, str60, str61, str62, str63, str64, str65, str66, str67, z22, num6, l6, l7, num7, str53, hashMap2, str68, str69, str70, str71, tL_wallPaper2, str72, str73, str74, str54, z21, str55, z23 ? 1 : 0, i24, str75, str76, str77, str56, str82, c01Var4, z24, i20, i21, i25, z25, str80, V1, kz5Var6, false, false, z26, z27, z28, z29, z30, str81, z31);
+                                            launchActivity3.x0(i23, str52, str57, str50, str59, str60, str61, str62, str63, str64, str65, str66, str67, z22, num6, l6, l7, num7, str53, hashMap2, str68, str69, str70, str71, tL_wallPaper2, str72, str73, str74, str54, z21, str55, z23 ? 1 : 0, i24, str75, str76, str77, str56, str82, l01Var4, z24, i20, i21, i25, z25, str80, X1, tg5Var8, false, false, z26, z27, z28, z29, z30, str81, z31);
                                             return;
                                         }
                                         str38 = str61;
@@ -1754,13 +1753,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                         str41 = str58;
                                         launchActivity = launchActivity3;
                                         str37 = str53;
-                                        kz5Var3 = kz5Var6;
+                                        tg5Var5 = tg5Var8;
                                         z14 = z22;
                                         str36 = str82;
                                         i11 = i25;
                                         str43 = str62;
                                         str42 = str64;
-                                        c01Var3 = c01Var4;
+                                        l01Var3 = l01Var4;
                                         str44 = str59;
                                         i10 = i23;
                                         if (z25) {
@@ -1769,8 +1768,8 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                         } else {
                                             i12 = i10;
                                             str45 = str60;
-                                            if (hc2.R(na7.q1(i10).K0(Long.valueOf(-l5.longValue())))) {
-                                                launchActivity.w0(l5, kz5Var3, c01Var3, null);
+                                            if (xc2.R(uc7.s1(i10).M0(Long.valueOf(-l5.longValue())))) {
+                                                launchActivity.w0(l5, tg5Var5, l01Var3, null);
                                                 return;
                                             }
                                         }
@@ -1784,58 +1783,58 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                         num4 = num6;
                                                         l3 = l7;
                                                         i13 = i12;
-                                                        kz5Var4 = kz5Var3;
-                                                        final kz5 kz5Var7 = kz5Var4;
+                                                        tg5Var6 = tg5Var5;
+                                                        final tg5 tg5Var9 = tg5Var6;
                                                         if (str37 == null) {
                                                             Bundle bundle2 = new Bundle();
                                                             bundle2.putBoolean("onlySelect", true);
                                                             bundle2.putBoolean("cantSendToChannels", true);
                                                             bundle2.putInt("dialogsType", 1);
-                                                            bundle2.putString("selectAlertString", k96.M0(2131745432, null));
-                                                            bundle2.putString("selectAlertStringGroup", k96.M0(2131745433, null));
-                                                            cj3 cj3Var2 = new cj3(bundle2);
-                                                            cj3Var2.E2 = new xx5(launchActivity2, str37, i13, na7.q1(i13).V1(l5));
-                                                            if (gl.O1()) {
-                                                                z18 = !launchActivity2.q0.getFragmentStack().isEmpty() && (launchActivity2.q0.getFragmentStack().get(launchActivity2.q0.getFragmentStack().size() + (-1)) instanceof ah6);
+                                                            bundle2.putString("selectAlertString", ob6.M0(2131745352, null));
+                                                            bundle2.putString("selectAlertStringGroup", ob6.M0(2131745353, null));
+                                                            uj3 uj3Var2 = new uj3(bundle2);
+                                                            uj3Var2.E2 = new yz5(launchActivity2, str37, i13, uc7.s1(i13).X1(l5));
+                                                            if (hl.O1()) {
+                                                                z18 = !launchActivity2.q0.getFragmentStack().isEmpty() && (launchActivity2.q0.getFragmentStack().get(launchActivity2.q0.getFragmentStack().size() + (-1)) instanceof fj6);
                                                                 z17 = true;
                                                             } else {
                                                                 z17 = true;
-                                                                z18 = launchActivity2.p0.getFragmentStack().size() > 1 && (launchActivity2.p0.getFragmentStack().get(launchActivity2.p0.getFragmentStack().size() - 1) instanceof ah6);
+                                                                z18 = launchActivity2.p0.getFragmentStack().size() > 1 && (launchActivity2.p0.getFragmentStack().get(launchActivity2.p0.getFragmentStack().size() - 1) instanceof fj6);
                                                             }
-                                                            ((ActionBarLayout) launchActivity2.N()).U(cj3Var2, z18, z17);
+                                                            ((ActionBarLayout) launchActivity2.N()).U(uj3Var2, z18, z17);
                                                             if (SecretMediaViewer.e() && SecretMediaViewer.d().s) {
                                                                 SecretMediaViewer.d().c(false, false);
-                                                            } else if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-                                                                PhotoViewer.r0().B(false, true);
+                                                            } else if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+                                                                PhotoViewer.q0().A(false, true);
                                                             } else if (o.F() && o.u().W) {
                                                                 o.u().l(false, true);
                                                             }
-                                                            t7b.v();
-                                                            h75 h75Var = h75.s5;
-                                                            if (h75Var != null) {
-                                                                h75Var.dismiss();
+                                                            rbb.v();
+                                                            j95 j95Var = j95.s5;
+                                                            if (j95Var != null) {
+                                                                j95Var.dismiss();
                                                             }
-                                                            on9 on9Var = on9.Q0;
-                                                            if (on9Var != null) {
-                                                                on9Var.dismiss();
+                                                            er9 er9Var = er9.Q0;
+                                                            if (er9Var != null) {
+                                                                er9Var.dismiss();
                                                             }
-                                                            if (gl.O1()) {
+                                                            if (hl.O1()) {
                                                                 launchActivity2.p0.W(true, true);
                                                                 launchActivity2.r0.W(true, true);
                                                             }
-                                                            kz5Var2 = kz5Var7;
+                                                            tg5Var4 = tg5Var9;
                                                         } else if (str38 == null && str43 == null) {
                                                             Bundle bundle3 = new Bundle();
-                                                            TLRPC.User V12 = na7.q1(i13).V1(l5);
+                                                            TLRPC.User X12 = uc7.s1(i13).X1(l5);
                                                             final String str83 = str37;
                                                             if (l5.longValue() < 0) {
                                                                 final LaunchActivity launchActivity5 = launchActivity2;
                                                                 i14 = i13;
                                                                 final Integer num9 = num4;
-                                                                final TLRPC.Chat K03 = na7.q1(i13).K0(Long.valueOf(-l5.longValue()));
-                                                                if (!z31 || K03.linked_monoforum_id == 0) {
+                                                                final TLRPC.Chat M06 = uc7.s1(i13).M0(Long.valueOf(-l5.longValue()));
+                                                                if (!z31 || M06.linked_monoforum_id == 0) {
                                                                     num5 = num9;
-                                                                    kz5Var5 = kz5Var7;
+                                                                    tg5Var7 = tg5Var9;
                                                                     str46 = str54;
                                                                     str47 = str55;
                                                                     i15 = i24;
@@ -1849,24 +1848,24 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                 } else {
                                                                     final String str84 = str39;
                                                                     final String str85 = str44;
-                                                                    if (na7.q1(i14).K0(Long.valueOf(K03.linked_monoforum_id)) == null) {
+                                                                    if (uc7.s1(i14).M0(Long.valueOf(M06.linked_monoforum_id)) == null) {
                                                                         TLRPC.TL_channels_getFullChannel tL_channels_getFullChannel = new TLRPC.TL_channels_getFullChannel();
-                                                                        tL_channels_getFullChannel.channel = na7.g1(K03);
+                                                                        tL_channels_getFullChannel.channel = uc7.i1(M06);
                                                                         ConnectionsManager connectionsManager3 = ConnectionsManager.getInstance(i14);
                                                                         final String str86 = str36;
                                                                         final String str87 = str40;
                                                                         final String str88 = str45;
-                                                                        final c01 c01Var5 = c01Var3;
+                                                                        final l01 l01Var5 = l01Var3;
                                                                         final String str89 = str41;
                                                                         final int i27 = z23 ? 1 : 0;
-                                                                        connectionsManager3.sendRequest(tL_channels_getFullChannel, new RequestDelegate() { // from class: zx5
+                                                                        connectionsManager3.sendRequest(tL_channels_getFullChannel, new RequestDelegate() { // from class: a06
                                                                             @Override // org.telegram.tgnet.RequestDelegate
                                                                             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
                                                                                 String str90 = LaunchActivity.C1;
                                                                                 final LaunchActivity launchActivity6 = LaunchActivity.this;
                                                                                 final int i28 = i14;
-                                                                                final TLRPC.Chat chat2 = K03;
-                                                                                final kz5 kz5Var8 = kz5Var7;
+                                                                                final TLRPC.Chat chat2 = M06;
+                                                                                final tg5 tg5Var10 = tg5Var9;
                                                                                 final String str91 = str52;
                                                                                 final String str92 = str57;
                                                                                 final String str93 = str89;
@@ -1904,7 +1903,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                                 final String str115 = str77;
                                                                                 final String str116 = str56;
                                                                                 final String str117 = str86;
-                                                                                final c01 c01Var6 = c01Var5;
+                                                                                final l01 l01Var6 = l01Var5;
                                                                                 final boolean z35 = z24;
                                                                                 final int i30 = i20;
                                                                                 final boolean z36 = z20;
@@ -1924,33 +1923,33 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                                 final boolean z43 = z31;
                                                                                 final byte[] bArr4 = bArr3;
                                                                                 final int i33 = z34 ? 1 : 0;
-                                                                                gl.c3(new Runnable() { // from class: hy5
+                                                                                hl.c3(new Runnable() { // from class: h06
                                                                                     @Override // java.lang.Runnable
                                                                                     public final void run() {
                                                                                         String str122 = LaunchActivity.C1;
                                                                                         TLObject tLObject2 = tLObject;
                                                                                         boolean z44 = tLObject2 instanceof TLRPC.TL_messages_chatFull;
-                                                                                        kz5 kz5Var9 = kz5Var8;
+                                                                                        tg5 tg5Var11 = tg5Var10;
                                                                                         if (!z44) {
                                                                                             try {
-                                                                                                kz5Var9.run();
+                                                                                                tg5Var11.run();
                                                                                                 return;
                                                                                             } catch (Exception e3) {
-                                                                                                fa4.g(e3, true);
+                                                                                                cc4.g(e3, true);
                                                                                                 return;
                                                                                             }
                                                                                         }
                                                                                         TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) tLObject2;
                                                                                         int i34 = i28;
-                                                                                        na7.q1(i34).b4(tL_messages_chatFull.users, false);
-                                                                                        na7.q1(i34).V3(tL_messages_chatFull.chats, false);
-                                                                                        ad7.Y(i34).j1(tL_messages_chatFull.users, tL_messages_chatFull.chats, false, true);
-                                                                                        if (na7.q1(i34).K0(Long.valueOf(chat2.linked_monoforum_id)) == null) {
+                                                                                        uc7.s1(i34).j4(tL_messages_chatFull.users, false);
+                                                                                        uc7.s1(i34).c4(tL_messages_chatFull.chats, false);
+                                                                                        jf7.Y(i34).j1(tL_messages_chatFull.users, tL_messages_chatFull.chats, false, true);
+                                                                                        if (uc7.s1(i34).M0(Long.valueOf(chat2.linked_monoforum_id)) == null) {
                                                                                             try {
-                                                                                                kz5Var9.run();
+                                                                                                tg5Var11.run();
                                                                                                 return;
                                                                                             } catch (Exception e4) {
-                                                                                                fa4.g(e4, true);
+                                                                                                cc4.g(e4, true);
                                                                                                 return;
                                                                                             }
                                                                                         }
@@ -1986,7 +1985,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                                         boolean z46 = z33;
                                                                                         String str144 = str112;
                                                                                         boolean z47 = i33;
-                                                                                        launchActivity7.B0(i34, str123, str124, str125, str126, str127, str128, str129, str130, str131, str132, str133, str134, z45, num13, l10, l11, num14, str135, hashMap4, str136, str137, str138, str139, tL_wallPaper4, str140, str141, str142, str143, z46, str144, z47 ? 1 : 0, i29, str113, str114, str115, str116, str117, c01Var6, z35, i30, z36, i31, i32, str118, str119, z37, str120, z38, z39, z40, z41, z42, str121, num12, z43, bArr4);
+                                                                                        launchActivity7.B0(i34, str123, str124, str125, str126, str127, str128, str129, str130, str131, str132, str133, str134, z45, num13, l10, l11, num14, str135, hashMap4, str136, str137, str138, str139, tL_wallPaper4, str140, str141, str142, str143, z46, str144, z47 ? 1 : 0, i29, str113, str114, str115, str116, str117, l01Var6, z35, i30, z36, i31, i32, str118, str119, z37, str120, z38, z39, z40, z41, z42, str121, num12, z43, bArr4);
                                                                                     }
                                                                                 });
                                                                             }
@@ -1994,7 +1993,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                         return;
                                                                     }
                                                                     num5 = num9;
-                                                                    kz5Var5 = kz5Var7;
+                                                                    tg5Var7 = tg5Var9;
                                                                     str46 = str54;
                                                                     str47 = str55;
                                                                     i15 = i24;
@@ -2003,10 +2002,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                     launchActivity2 = launchActivity5;
                                                                     l4 = l5;
                                                                     bArr2 = bArr3;
-                                                                    bundle3.putLong("chat_id", K03.linked_monoforum_id);
-                                                                    j = -K03.linked_monoforum_id;
+                                                                    bundle3.putLong("chat_id", M06.linked_monoforum_id);
+                                                                    j = -M06.linked_monoforum_id;
                                                                 }
-                                                                kz5Var2 = kz5Var5;
+                                                                tg5Var4 = tg5Var7;
                                                             } else {
                                                                 i14 = i13;
                                                                 num5 = num4;
@@ -2017,7 +2016,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                 i16 = i11;
                                                                 str48 = str45;
                                                                 l4 = l5;
-                                                                kz5Var2 = kz5Var7;
+                                                                tg5Var4 = tg5Var9;
                                                                 bArr2 = bArr3;
                                                                 bundle3.putLong("user_id", l4.longValue());
                                                                 long longValue4 = l4.longValue();
@@ -2029,7 +2028,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                 }
                                                                 j = longValue4;
                                                             }
-                                                            if (str48 == null || V12 == null || !V12.bot) {
+                                                            if (str48 == null || X12 == null || !X12.bot) {
                                                                 z15 = false;
                                                             } else {
                                                                 bundle3.putString("botUser", str48);
@@ -2073,16 +2072,16 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                             } else {
                                                                 z16 = z15;
                                                             }
-                                                            d dVar4 = (arrayList3.isEmpty() || str46 != null) ? null : (d) b00.f(1, arrayList3);
-                                                            if (dVar4 == null || na7.q1(i14).A(bundle3, dVar4, null, null)) {
-                                                                boolean z32 = (dVar4 instanceof mu1) && ((mu1) dVar4).a() == j;
+                                                            e eVar4 = (arrayList3.isEmpty() || str46 != null) ? null : (e) c00.g(1, arrayList3);
+                                                            if (eVar4 == null || uc7.s1(i14).C(bundle3, eVar4, null, null)) {
+                                                                boolean z32 = (eVar4 instanceof zu1) && ((zu1) eVar4).a() == j;
                                                                 if (z16 && z32) {
                                                                     ArrayList arrayList6 = new ArrayList();
-                                                                    ArrayList<zf0> arrayList7 = dVar4.sheetsStack;
+                                                                    ArrayList<ag0> arrayList7 = eVar4.sheetsStack;
                                                                     if (arrayList7 != null) {
                                                                         arrayList6.addAll(arrayList7);
                                                                     }
-                                                                    if ((dVar4.getParentLayout() instanceof ActionBarLayout) && (v = ((ActionBarLayout) dVar4.getParentLayout()).v()) != null && v != dVar4 && (arrayList4 = v.sheetsStack) != null) {
+                                                                    if ((eVar4.getParentLayout() instanceof ActionBarLayout) && (v = ((ActionBarLayout) eVar4.getParentLayout()).v()) != null && v != eVar4 && (arrayList4 = v.sheetsStack) != null) {
                                                                         arrayList6.addAll(arrayList4);
                                                                     }
                                                                     int size = arrayList6.size();
@@ -2091,37 +2090,37 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                         Object obj2 = arrayList6.get(i28);
                                                                         i28++;
                                                                     }
-                                                                    ArrayList arrayList8 = new ArrayList(ow0.b1);
+                                                                    ArrayList arrayList8 = new ArrayList(xw0.b1);
                                                                     int size2 = arrayList8.size();
                                                                     int i29 = 0;
                                                                     while (i29 < size2) {
                                                                         Object obj3 = arrayList8.get(i29);
                                                                         i29++;
-                                                                        ow0 ow0Var = (ow0) obj3;
-                                                                        if (ow0Var.J == j) {
-                                                                            ow0Var.m(true);
+                                                                        xw0 xw0Var = (xw0) obj3;
+                                                                        if (xw0Var.J == j) {
+                                                                            xw0Var.m(true);
                                                                         }
                                                                     }
-                                                                    mu1 mu1Var3 = (mu1) dVar4;
-                                                                    if (mu1Var3.x8 != 0) {
-                                                                        mu1Var3.getMessagesController().E4(str48, mu1Var3.f);
+                                                                    zu1 zu1Var3 = (zu1) eVar4;
+                                                                    if (zu1Var3.x8 != 0) {
+                                                                        zu1Var3.getMessagesController().M4(str48, zu1Var3.f);
                                                                     } else {
-                                                                        mu1Var3.e7 = true;
-                                                                        na7 messagesController = mu1Var3.getMessagesController();
-                                                                        TLRPC.User user = mu1Var3.f;
-                                                                        mu1Var3.w8 = str48;
-                                                                        messagesController.E4(str48, user);
-                                                                        mu1Var3.Dc(false);
+                                                                        zu1Var3.e7 = true;
+                                                                        uc7 messagesController = zu1Var3.getMessagesController();
+                                                                        TLRPC.User user = zu1Var3.f;
+                                                                        zu1Var3.w8 = str48;
+                                                                        messagesController.M4(str48, user);
+                                                                        zu1Var3.Pc(false);
                                                                     }
                                                                 } else {
                                                                     if (str49 == null || !z32) {
                                                                         long j3 = -j;
-                                                                        TLRPC.Chat K04 = na7.q1(launchActivity2.P).K0(Long.valueOf(j3));
+                                                                        TLRPC.Chat M07 = uc7.s1(launchActivity2.P).M0(Long.valueOf(j3));
                                                                         if (z29 || i16 > 0) {
                                                                             try {
-                                                                                kz5Var2.run();
+                                                                                tg5Var4.run();
                                                                             } catch (Exception e3) {
-                                                                                fa4.g(e3, true);
+                                                                                cc4.g(e3, true);
                                                                             }
                                                                             if (launchActivity2.isFinishing()) {
                                                                                 return;
@@ -2135,131 +2134,136 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                                             if (i16 > 0) {
                                                                                 bundle4.putBoolean("open_gifts", true);
                                                                                 bundle4.putInt("open_gifts_collection", i16);
-                                                                                if (l4.longValue() == y6c.h(launchActivity2.P).e()) {
+                                                                                if (l4.longValue() == yac.h(launchActivity2.P).e()) {
                                                                                     bundle4.putBoolean("my_profile", true);
                                                                                 }
                                                                             }
-                                                                            ((ActionBarLayout) launchActivity2.N()).S(new ProfileActivity(bundle4, null));
+                                                                            e e0 = i16 > 0 ? null : rr0.e0(launchActivity2.P, l4.longValue());
+                                                                            wk5 N = launchActivity2.N();
+                                                                            if (e0 == null) {
+                                                                                e0 = new ProfileActivity(bundle4, null);
+                                                                            }
+                                                                            ((ActionBarLayout) N).S(e0);
                                                                             return;
                                                                         }
-                                                                        if (K04 == null || !K04.forum) {
+                                                                        if (M07 == null || !M07.forum) {
                                                                             String str91 = str47;
                                                                             long j4 = j;
                                                                             Integer num10 = num5;
-                                                                            na7.q1(i14).p0(j4, num10 == null ? 0 : num10.intValue(), new rz5(launchActivity2, kz5Var2, str91, dVar4, j4, num10, bundle3));
+                                                                            uc7.s1(i14).r0(j4, num10 == null ? 0 : num10.intValue(), new u16(launchActivity2, tg5Var4, str91, eVar4, j4, num10, bundle3));
                                                                             return;
                                                                         }
                                                                         Long valueOf = (l3 != null || num5 == null) ? l3 : Long.valueOf(num5.intValue());
                                                                         if (valueOf != null && valueOf.longValue() != 0) {
-                                                                            launchActivity2.l0(j, num5, null, num8, bArr4, new ay5(kz5Var2, (byte) 0), 0, -1);
+                                                                            launchActivity2.l0(j, num5, null, num8, bArr4, new b06(tg5Var4, (byte) 0), 0, -1);
                                                                             return;
                                                                         }
-                                                                        kz5 kz5Var8 = kz5Var2;
-                                                                        Bundle k = ls6.k(j3, "chat_id");
+                                                                        tg5 tg5Var10 = tg5Var4;
+                                                                        Bundle k = qu6.k(j3, "chat_id");
                                                                         if (str46 != null) {
                                                                             k.putString("voicechat", str46);
                                                                         }
                                                                         if (z21) {
                                                                             k.putBoolean("videochat", true);
                                                                         }
-                                                                        launchActivity2.t0(qvb.F0(launchActivity2, k));
+                                                                        launchActivity2.t0(tzb.G0(launchActivity2, k));
                                                                         try {
-                                                                            kz5Var8.run();
+                                                                            tg5Var10.run();
                                                                             return;
                                                                         } catch (Exception e4) {
-                                                                            fa4.g(e4, true);
+                                                                            cc4.g(e4, true);
                                                                             return;
                                                                         }
                                                                     }
-                                                                    mu1 mu1Var4 = (mu1) dVar4;
-                                                                    mu1Var4.getClass();
+                                                                    zu1 zu1Var4 = (zu1) eVar4;
+                                                                    zu1Var4.getClass();
                                                                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                                                                     tL_contacts_resolveUsername.username = str49;
-                                                                    mu1Var4.getConnectionsManager().sendRequest(tL_contacts_resolveUsername, new xk1(mu1Var4, (byte) 0));
+                                                                    zu1Var4.getConnectionsManager().sendRequest(tL_contacts_resolveUsername, new ym1(zu1Var4, (byte) 5));
                                                                 }
                                                             }
                                                         } else {
                                                             int i30 = i13;
-                                                            kz5Var2 = kz5Var7;
-                                                            TLRPC.User V13 = na7.q1(i30).V1(l5);
-                                                            if (V13 == null || (V13.bot && V13.bot_nochats)) {
+                                                            tg5Var4 = tg5Var9;
+                                                            TLRPC.User X13 = uc7.s1(i30).X1(l5);
+                                                            if (X13 == null || (X13.bot && X13.bot_nochats)) {
                                                                 try {
                                                                     if (arrayList3.isEmpty()) {
                                                                         return;
                                                                     }
-                                                                    u21.b0((d) arrayList3.get(arrayList3.size() - 1)).t(k96.M0(2131753105, null), null).j();
+                                                                    d31.b0((e) arrayList3.get(arrayList3.size() - 1)).t(ob6.M0(2131753101, null), null).j();
                                                                     return;
                                                                 } catch (Exception e5) {
-                                                                    fa4.g(e5, true);
+                                                                    cc4.g(e5, true);
                                                                     return;
                                                                 }
                                                             }
-                                                            Bundle j5 = tb4.j(2, "onlySelect", "dialogsType", true);
+                                                            Bundle j5 = qd4.j(2, "onlySelect", "dialogsType", true);
                                                             j5.putBoolean("resetDelegate", false);
                                                             j5.putBoolean("closeFragment", false);
                                                             j5.putBoolean("allowGroups", str38 != null);
                                                             j5.putBoolean("allowChannels", str43 != null);
                                                             String str92 = TextUtils.isEmpty(str38) ? TextUtils.isEmpty(str43) ? null : str43 : str38;
-                                                            cj3 cj3Var3 = new cj3(j5);
-                                                            cj3Var3.E2 = new yx5(launchActivity2, i30, V13, str39, str92, cj3Var3);
-                                                            launchActivity2.t0(cj3Var3);
+                                                            uj3 uj3Var3 = new uj3(j5);
+                                                            uj3Var3.E2 = new zz5(launchActivity2, i30, X13, str39, str92, uj3Var3);
+                                                            launchActivity2.t0(uj3Var3);
                                                         }
                                                     } else if (l5.longValue() < 0) {
-                                                        kz5 kz5Var9 = kz5Var3;
-                                                        int z0 = launchActivity4.z0(i12, kz5Var9, num6, num7, l7, null, null, na7.q1(i12).K0(Long.valueOf(-l5.longValue())), null, null, 0, -1);
+                                                        tg5 tg5Var11 = tg5Var5;
+                                                        int z0 = launchActivity4.z0(i12, tg5Var11, num6, num7, l7, null, null, uc7.s1(i12).M0(Long.valueOf(-l5.longValue())), null, null, 0, -1);
                                                         iArr2[0] = z0;
                                                         if (z0 != 0) {
                                                             return;
                                                         }
                                                         z12 = true;
-                                                        kz5Var2 = kz5Var9;
+                                                        tg5Var4 = tg5Var11;
                                                     }
                                                 }
-                                                kz5Var4 = kz5Var3;
+                                                tg5Var6 = tg5Var5;
                                                 launchActivity2 = launchActivity4;
                                                 arrayList3 = arrayList5;
                                                 num4 = num6;
                                                 l3 = l7;
                                                 i13 = i12;
-                                                final kz5 kz5Var72 = kz5Var4;
+                                                final tg5 tg5Var92 = tg5Var6;
                                                 if (str37 == null) {
                                                 }
                                             } else {
-                                                TLRPC.User V14 = na7.q1(i12).V1(l5);
-                                                if (V14 == null || !V14.bot) {
+                                                TLRPC.User X14 = uc7.s1(i12).X1(l5);
+                                                if (X14 == null || !X14.bot) {
                                                     z19 = true;
                                                     r13 = 0;
-                                                    b0 = u21.b0((d) b00.f(1, arrayList5));
-                                                    i17 = 2131752974;
-                                                } else if (V14.bot_attach_menu) {
+                                                    b0 = d31.b0((e) c00.g(1, arrayList5));
+                                                    i17 = 2131752967;
+                                                } else if (X14.bot_attach_menu) {
                                                     long longValue5 = l5.longValue();
                                                     TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot2 = new TLRPC.TL_messages_getAttachMenuBot();
-                                                    na7 q12 = na7.q1(i12);
-                                                    tL_messages_getAttachMenuBot2.bot = q12.o1(q12.V1(l5));
-                                                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getAttachMenuBot2, new pr0(launchActivity, i12, str36, str77, V14, str75, longValue5));
+                                                    uc7 s12 = uc7.s1(i12);
+                                                    tL_messages_getAttachMenuBot2.bot = s12.q1(s12.X1(l5));
+                                                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getAttachMenuBot2, new xr0(launchActivity, i12, str36, str77, X14, str75, longValue5));
                                                     z19 = true;
-                                                    kz5Var2 = kz5Var3;
+                                                    tg5Var4 = tg5Var5;
                                                     z12 = z19;
                                                 } else {
                                                     z19 = true;
-                                                    b0 = u21.b0((d) b00.f(1, arrayList5));
-                                                    i17 = 2131753106;
+                                                    b0 = d31.b0((e) c00.g(1, arrayList5));
+                                                    i17 = 2131753102;
                                                     r13 = 0;
                                                 }
-                                                yjb.x(r13, i17, b0, r13);
-                                                kz5Var2 = kz5Var3;
+                                                xnb.x(r13, i17, b0, r13);
+                                                tg5Var4 = tg5Var5;
                                                 z12 = z19;
                                             }
-                                            kz5Var2.run();
+                                            tg5Var4.run();
                                             return;
                                         }
-                                        TLRPC.User V15 = na7.q1(i12).V1(l5);
-                                        if (V15 != null && V15.bot) {
-                                            na7.q1(i12).z3(null, V15, str36, 0, c01Var3, z26, z27);
+                                        TLRPC.User X15 = uc7.s1(i12).X1(l5);
+                                        if (X15 != null && X15.bot) {
+                                            uc7.s1(i12).G3(null, X15, str36, 0, l01Var3, z26, z27);
                                         }
-                                        kz5Var2 = kz5Var3;
+                                        tg5Var4 = tg5Var5;
                                         z12 = true;
-                                        kz5Var2.run();
+                                        tg5Var4.run();
                                         return;
                                     }
                                     str38 = str61;
@@ -2272,33 +2276,33 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     str36 = str82;
                                     str43 = str62;
                                     str42 = str64;
-                                    c01Var3 = c01Var4;
+                                    l01Var3 = l01Var4;
                                 }
                                 str44 = str59;
                                 i10 = i23;
-                                kz5Var3 = kz5Var6;
+                                tg5Var5 = tg5Var8;
                                 i11 = i25;
                                 if (z25) {
                                 }
                                 if (str36 != null) {
                                 }
                                 z12 = true;
-                                kz5Var2.run();
+                                tg5Var4.run();
                                 return;
                             }
-                            kz5Var2.run();
+                            tg5Var4.run();
                             return;
                         } catch (Exception e6) {
-                            fa4.g(e6, z12);
+                            cc4.g(e6, z12);
                             return;
                         }
-                        kz5Var2 = kz5Var6;
-                        d Q = LaunchActivity.Q();
+                        tg5Var4 = tg5Var8;
+                        e Q = LaunchActivity.Q();
                         if (Q != null) {
-                            if (Q instanceof mu1) {
-                                ((mu1) Q).Fb();
+                            if (Q instanceof zu1) {
+                                ((zu1) Q).Qb();
                             }
-                            Typeface typeface = gl.a;
+                            Typeface typeface = hl.a;
                             try {
                                 Double.parseDouble(str52);
                                 z13 = true;
@@ -2306,20 +2310,20 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 z13 = false;
                             }
                             if (z13) {
-                                u21.b0(Q).t(k96.M0(2131747989, null), null).j();
+                                d31.b0(Q).t(ob6.M0(2131747912, null), null).j();
                             } else {
-                                u21.b0(Q).t(k96.M0(2131747942, null), null).j();
+                                d31.b0(Q).t(ob6.M0(2131747865, null), null).j();
                             }
                         }
                         z12 = true;
                     }
                 };
-                c01Var2 = c01Var2;
-                Y1.a(str, str31, p8cVar);
+                l01Var2 = l01Var2;
+                a2.a(str, str31, pccVar);
                 iArr = iArr2;
-                hdVar = hdVar4;
+                idVar = idVar4;
                 b = 0;
-                hb5Var = null;
+                tg5Var = null;
                 if (iArr[b] != 0) {
                 }
             }
@@ -2327,53 +2331,59 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         i7 = i;
         b = 0;
         iArr = iArr2;
-        hb5Var = null;
-        hdVar = hdVar4;
+        tg5Var = null;
+        idVar = idVar4;
         if (iArr[b] != 0) {
         }
     }
 
     public final void C() {
         if (Build.VERSION.SDK_INT >= 24) {
-            ip4 ip4Var = this.i1;
-            if (ip4Var == null && gba.o) {
-                ip4Var = ip4.a(this, this.v0);
-                this.i1 = ip4Var;
+            mr4 mr4Var = this.i1;
+            if (mr4Var == null && xea.o) {
+                mr4Var = mr4.a(this, this.v0);
+                this.i1 = mr4Var;
             }
-            if (ip4Var == null || gba.o) {
+            if (mr4Var == null || xea.o) {
                 return;
             }
-            ip4Var.b();
+            mr4Var.b();
             this.i1 = null;
         }
     }
 
     public final void D(int i) {
         K1 = this;
-        Set set = s60.a;
+        Set set = u60.a;
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-        if (Math.abs(currentTimeMillis - gba.G) >= 86400) {
-            gba.G = currentTimeMillis;
-            Utilities.f.c(new eg(currentTimeMillis, (Object) ba4.j(4), (byte) 5));
+        if (Math.abs(currentTimeMillis - xea.G) >= 86400) {
+            xea.G = currentTimeMillis;
+            Utilities.f.c(new zd(currentTimeMillis, (Object) xb4.j(4), (byte) 5));
         }
-        if (w01.a) {
+        if (f11.a) {
             int currentTimeMillis2 = (int) (System.currentTimeMillis() / 1000);
-            if (Math.abs(currentTimeMillis2 - gba.H) >= 3600) {
-                gba.H = currentTimeMillis2;
-                Utilities.f.c(new xv0(currentTimeMillis2, (byte) 11));
+            if (Math.abs(currentTimeMillis2 - xea.H) >= 3600) {
+                xea.H = currentTimeMillis2;
+                Utilities.f.c(new gw0(currentTimeMillis2, (byte) 15));
             }
         }
         if ((Build.VERSION.SDK_INT < 26 || i != 0) && !this.w1) {
-            Utilities.e.d(new sv1(this, i, (byte) 2), 2000L);
+            Utilities.e.d(new gw1(this, i, (byte) 2), 2000L);
         }
     }
 
     public final void D0(int i) {
         this.y0.setInternalNavigationBarColor(i);
-        qx0 O = O();
+        yx0 O = O();
         if (O != null) {
             O.setNavigationBarColor(i);
         }
+    }
+
+    @Override // oj3
+    public final boolean E() {
+        ArrayList arrayList = this.V;
+        return (arrayList != null && arrayList.size() == 1) || this.S != null;
     }
 
     public final void E0() {
@@ -2381,21 +2391,21 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         if (indexOfChild != -1) {
             this.y0.removeViewAt(indexOfChild);
         }
-        if (gl.O1()) {
+        if (hl.O1()) {
             getWindow().setSoftInputMode(16);
-            zz5 zz5Var = new zz5(this, this);
-            this.s0 = zz5Var;
-            mq3 mq3Var = this.y0;
+            c26 c26Var = new c26(this, this);
+            this.s0 = c26Var;
+            dr3 dr3Var = this.y0;
             if (indexOfChild != -1) {
-                mq3Var.addView(zz5Var, indexOfChild, nme.c(-1.0f, -1));
+                dr3Var.addView(c26Var, indexOfChild, tre.c(-1.0f, -1));
             } else {
-                mq3Var.addView(zz5Var, nme.c(-1.0f, -1));
+                dr3Var.addView(c26Var, tre.c(-1.0f, -1));
             }
-            n81 n81Var = new n81(this, null);
-            this.u0 = n81Var;
-            n81Var.setOccupyStatusBar(false);
-            this.u0.U(bkb.r0());
-            this.s0.addView(this.u0, nme.w(-1, -1));
+            w81 w81Var = new w81(this, null);
+            this.u0 = w81Var;
+            w81Var.setOccupyStatusBar(false);
+            this.u0.U(aob.r0());
+            this.s0.addView(this.u0, tre.w(-1, -1));
             ViewGroup viewGroup = (ViewGroup) this.p0.getView().getParent();
             if (viewGroup != null) {
                 viewGroup.removeView(this.p0.getView());
@@ -2414,8 +2424,8 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             this.t0.setBackgroundColor(1056964608);
             this.s0.addView(this.t0);
             byte b = 9;
-            this.t0.setOnTouchListener(new a7(this, b));
-            this.t0.setOnClickListener(new x00(b));
+            this.t0.setOnTouchListener(new b7(this, b));
+            this.t0.setOnClickListener(new y00(b));
             ActionBarLayout actionBarLayout2 = new ActionBarLayout(this, false);
             this.q0 = actionBarLayout2;
             actionBarLayout2.T0 = true;
@@ -2434,46 +2444,59 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 viewGroup2.removeView(this.p0.getView());
             }
             this.p0.setFragmentStack(this.e0);
-            mq3 mq3Var2 = this.y0;
+            dr3 dr3Var2 = this.y0;
             ActionBarLayout actionBarLayout3 = this.p0;
             if (indexOfChild != -1) {
-                mq3Var2.addView(actionBarLayout3.getView(), indexOfChild, new ViewGroup.LayoutParams(-1, -1));
+                dr3Var2.addView(actionBarLayout3.getView(), indexOfChild, new ViewGroup.LayoutParams(-1, -1));
             } else {
-                mq3Var2.addView(actionBarLayout3.getView(), new ViewGroup.LayoutParams(-1, -1));
+                dr3Var2.addView(actionBarLayout3.getView(), new ViewGroup.LayoutParams(-1, -1));
             }
         }
-        uge.a(this, gba.t1, false);
+        nle.a(this, xea.t1, false);
     }
 
-    public final void F() {
-        if (!gl.O1() || this.r0 == null) {
+    public final id F0(AlertDialog$Builder alertDialog$Builder) {
+        try {
+            id o = alertDialog$Builder.o();
+            o.setCanceledOnTouchOutside(true);
+            o.setOnDismissListener(new gf(this, o, (byte) 10));
+            this.D0.add(o);
+            return o;
+        } catch (Exception e) {
+            cc4.g(e, true);
+            return null;
+        }
+    }
+
+    public final void G() {
+        if (!hl.O1() || this.r0 == null) {
             return;
         }
-        Boolean bool = gl.L;
+        Boolean bool = hl.L;
         if (bool != null) {
             if (bool.booleanValue() != (org.telegram.messenger.a.b != null && org.telegram.messenger.a.b.getResources().getBoolean(R.bool.isTablet))) {
                 return;
             }
         }
-        if (gl.E || (gl.N1() && getResources().getConfiguration().orientation != 2)) {
+        if (hl.E || (hl.N1() && getResources().getConfiguration().orientation != 2)) {
             this.N0 = true;
-            List<org.telegram.ui.ActionBar.d> fragmentStack = this.r0.getFragmentStack();
+            List<org.telegram.ui.ActionBar.e> fragmentStack = this.r0.getFragmentStack();
             if (!fragmentStack.isEmpty()) {
                 while (fragmentStack.size() > 0) {
-                    org.telegram.ui.ActionBar.d dVar = fragmentStack.get(0);
-                    if (dVar instanceof mu1) {
-                        mu1 mu1Var = (mu1) dVar;
-                        mu1Var.m5 = true;
-                        mu1Var.n5 = true;
+                    org.telegram.ui.ActionBar.e eVar = fragmentStack.get(0);
+                    if (eVar instanceof zu1) {
+                        zu1 zu1Var = (zu1) eVar;
+                        zu1Var.m5 = true;
+                        zu1Var.n5 = true;
                     }
-                    dVar.onPause();
-                    dVar.onFragmentDestroy();
-                    dVar.setParentLayout(null);
-                    fragmentStack.remove(dVar);
-                    this.p0.b(-1, dVar);
+                    eVar.onPause();
+                    eVar.onFragmentDestroy();
+                    eVar.setParentLayout(null);
+                    fragmentStack.remove(eVar);
+                    this.p0.b(-1, eVar);
                 }
-                aw7 aw7Var = this.z0;
-                if (aw7Var == null || aw7Var.b.getVisibility() != 0) {
+                hz7 hz7Var = this.z0;
+                if (hz7Var == null || hz7Var.b.getVisibility() != 0) {
                     this.p0.W(true, true);
                 }
             }
@@ -2482,23 +2505,23 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             return;
         }
         this.N0 = false;
-        List<org.telegram.ui.ActionBar.d> fragmentStack2 = this.p0.getFragmentStack();
+        List<org.telegram.ui.ActionBar.e> fragmentStack2 = this.p0.getFragmentStack();
         if (fragmentStack2.size() >= 2) {
             while (1 < fragmentStack2.size()) {
-                org.telegram.ui.ActionBar.d dVar2 = fragmentStack2.get(1);
-                if (dVar2 instanceof mu1) {
-                    mu1 mu1Var2 = (mu1) dVar2;
-                    mu1Var2.m5 = true;
-                    mu1Var2.n5 = true;
+                org.telegram.ui.ActionBar.e eVar2 = fragmentStack2.get(1);
+                if (eVar2 instanceof zu1) {
+                    zu1 zu1Var2 = (zu1) eVar2;
+                    zu1Var2.m5 = true;
+                    zu1Var2.n5 = true;
                 }
-                dVar2.onPause();
-                dVar2.onFragmentDestroy();
-                dVar2.setParentLayout(null);
-                fragmentStack2.remove(dVar2);
-                this.r0.b(-1, dVar2);
+                eVar2.onPause();
+                eVar2.onFragmentDestroy();
+                eVar2.setParentLayout(null);
+                fragmentStack2.remove(eVar2);
+                this.r0.b(-1, eVar2);
             }
-            aw7 aw7Var2 = this.z0;
-            if (aw7Var2 == null || aw7Var2.b.getVisibility() != 0) {
+            hz7 hz7Var2 = this.z0;
+            if (hz7Var2 == null || hz7Var2.b.getVisibility() != 0) {
                 this.p0.W(true, true);
                 this.r0.W(true, true);
             }
@@ -2507,68 +2530,49 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         this.u0.setVisibility(this.r0.getFragmentStack().isEmpty() ? 0 : 8);
     }
 
-    public final hd F0(AlertDialog$Builder alertDialog$Builder) {
-        try {
-            hd o = alertDialog$Builder.o();
-            o.setCanceledOnTouchOutside(true);
-            o.setOnDismissListener(new cf(this, o, (byte) 10));
-            this.D0.add(o);
-            return o;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    @Override // wi3
-    public final boolean G() {
-        ArrayList arrayList = this.V;
-        return (arrayList != null && arrayList.size() == 1) || this.S != null;
-    }
-
     public final void H(boolean z, boolean z2, boolean z3) {
-        ku1 ku1Var;
+        xu1 xu1Var;
         boolean z4;
         ArrayList arrayList = this.e0;
         boolean z5 = true;
-        org.telegram.ui.ActionBar.d dVar = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.d) b00.f(1, arrayList) : null;
+        org.telegram.ui.ActionBar.e eVar = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.e) c00.g(1, arrayList) : null;
         char c = 2;
-        if (dVar != null && (dVar.isRemovingFromStack() || dVar.isInPreviewMode())) {
-            dVar = arrayList.size() > 1 ? (org.telegram.ui.ActionBar.d) b00.f(2, arrayList) : null;
+        if (eVar != null && (eVar.isRemovingFromStack() || eVar.isInPreviewMode())) {
+            eVar = arrayList.size() > 1 ? (org.telegram.ui.ActionBar.e) c00.g(2, arrayList) : null;
         }
-        if (dVar != null) {
-            dVar.hasForceLightStatusBar();
+        if (eVar != null) {
+            eVar.hasForceLightStatusBar();
         }
         if (z2) {
-            if (dVar != null) {
-                z4 = dVar.isLightStatusBar();
-                if (dVar.getParentLayout() instanceof ActionBarLayout) {
-                    ActionBarLayout actionBarLayout = (ActionBarLayout) dVar.getParentLayout();
+            if (eVar != null) {
+                z4 = eVar.isLightStatusBar();
+                if (eVar.getParentLayout() instanceof ActionBarLayout) {
+                    ActionBarLayout actionBarLayout = (ActionBarLayout) eVar.getParentLayout();
                     if (actionBarLayout.v() == null || actionBarLayout.v().getLastSheet() == null) {
-                        ArrayList<zf0> arrayList2 = dVar.sheetsStack;
+                        ArrayList<ag0> arrayList2 = eVar.sheetsStack;
                         if (arrayList2 != null && !arrayList2.isEmpty()) {
-                            zf0 zf0Var = (zf0) b00.f(1, dVar.sheetsStack);
-                            if (zf0Var.t()) {
-                                z4 = zf0Var.f();
+                            ag0 ag0Var = (ag0) c00.g(1, eVar.sheetsStack);
+                            if (ag0Var.s()) {
+                                z4 = ag0Var.f();
                             }
                         }
                     } else {
-                        zf0 lastSheet = actionBarLayout.v().getLastSheet();
-                        if (lastSheet.t()) {
+                        ag0 lastSheet = actionBarLayout.v().getLastSheet();
+                        if (lastSheet.s()) {
                             z4 = lastSheet.f();
                         }
                     }
                 }
             } else {
-                z4 = bm2.h(bkb.w0(null, bkb.r8, true)) > 0.699999988079071d;
+                z4 = vm2.h(aob.w0(null, aob.s8, true)) > 0.699999988079071d;
             }
-            gl.k3(this, z4);
+            hl.k3(this, z4);
         }
-        if (Build.VERSION.SDK_INT >= 26 && z3 && (!z || dVar == null || !dVar.isInPreviewMode())) {
-            int w0 = (dVar == null || !z) ? bkb.w0(null, bkb.Z6, true) : dVar.getNavigationBarColor();
-            if (dVar instanceof mu1) {
-                mu1 mu1Var = (mu1) dVar;
-                if (!mu1Var.ic || (mu1Var.w.s != 1 && ((ku1Var = mu1Var.Ba) == null || !ku1Var.q))) {
+        if (Build.VERSION.SDK_INT >= 26 && z3 && (!z || eVar == null || !eVar.isInPreviewMode())) {
+            int w0 = (eVar == null || !z) ? aob.w0(null, aob.a7, true) : eVar.getNavigationBarColor();
+            if (eVar instanceof zu1) {
+                zu1 zu1Var = (zu1) eVar;
+                if (!zu1Var.tc || (zu1Var.w.s != 1 && ((xu1Var = zu1Var.Ba) == null || !xu1Var.q))) {
                     c = 1;
                 }
             } else {
@@ -2578,58 +2582,58 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 c = 0;
             }
             if (this.p0.v() != null) {
-                x14 v = this.p0.v();
+                s24 v = this.p0.v();
                 if (v.sheetsStack != null) {
                     for (int i = 0; i < v.sheetsStack.size(); i++) {
-                        zf0 zf0Var2 = v.sheetsStack.get(i);
-                        if (zf0Var2.z()) {
-                            w0 = zf0Var2.e(w0);
+                        ag0 ag0Var2 = v.sheetsStack.get(i);
+                        if (ag0Var2.z()) {
+                            w0 = ag0Var2.e(w0);
                             c = 0;
                         }
                     }
                 }
             }
-            Iterator it = ow0.b1.iterator();
+            Iterator it = xw0.b1.iterator();
             while (it.hasNext()) {
-                w0 = ((ow0) it.next()).e(w0);
+                w0 = ((xw0) it.next()).e(w0);
                 c = 0;
             }
             D0(w0);
-            if ((c != 0 || gl.B(w0) < 0.721f) && c != 1) {
+            if ((c != 0 || hl.B(w0) < 0.721f) && c != 1) {
                 z5 = false;
             }
-            gl.h3(this, z5);
+            hl.h3(this, z5);
         }
         if (z2) {
             getWindow().setStatusBarColor(0);
         }
     }
 
-    public final void H0(nq4 nq4Var) {
-        org.telegram.ui.ActionBar.d dVar;
+    public final void H0(rs4 rs4Var) {
+        org.telegram.ui.ActionBar.e eVar;
         ArrayList arrayList = this.f0;
         if (arrayList.isEmpty()) {
             ArrayList arrayList2 = this.g0;
             if (arrayList2.isEmpty()) {
                 ArrayList arrayList3 = this.e0;
-                dVar = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.d) b00.f(1, arrayList3) : null;
+                eVar = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.e) c00.g(1, arrayList3) : null;
             } else {
-                dVar = (org.telegram.ui.ActionBar.d) b00.f(1, arrayList2);
+                eVar = (org.telegram.ui.ActionBar.e) c00.g(1, arrayList2);
             }
         } else {
-            dVar = (org.telegram.ui.ActionBar.d) b00.f(1, arrayList);
+            eVar = (org.telegram.ui.ActionBar.e) c00.g(1, arrayList);
         }
-        if (u21.a(dVar)) {
-            nq4Var.a(u21.b0(dVar)).j();
+        if (d31.a(eVar)) {
+            rs4Var.b(d31.b0(eVar)).j();
         }
     }
 
     public final void I(boolean z) {
-        fc2 fc2Var;
+        vc2 vc2Var;
         long j;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         boolean z2 = false;
-        if (sharedInstance == null || (fc2Var = sharedInstance.groupCall) == null) {
+        if (sharedInstance == null || (vc2Var = sharedInstance.groupCall) == null) {
             this.m0 = false;
             return;
         }
@@ -2645,15 +2649,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 j = -j2;
             }
         } else {
-            j = y6c.h(this.P).n;
+            j = yac.h(this.P).n;
         }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) fc2Var.d.f(j);
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) vc2Var.d.f(j);
         boolean z4 = (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted) ? false : true;
         if (z4 && groupCallParticipant.raise_hand_rating != 0) {
             z2 = true;
         }
         this.m0 = z2;
-        if (z || !z3 || z2 || z4 || h75.s5 != null) {
+        if (z || !z3 || z2 || z4 || j95.s5 != null) {
             return;
         }
         M0(38);
@@ -2661,64 +2665,64 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     public final void I0() {
         byte b;
-        i96 i96Var;
-        if (y6c.h(this.P).o()) {
+        mb6 mb6Var;
+        if (yac.h(this.P).o()) {
             final byte b2 = 1;
             try {
                 if (this.H0 || org.telegram.messenger.a.x) {
                     return;
                 }
-                String string = na7.c1().getString("language_showed2", "");
-                final String str = na7.q1(this.P).s3;
+                String string = uc7.e1().getString("language_showed2", "");
+                final String str = uc7.s1(this.P).s3;
                 if (string.equals(str)) {
-                    if (w01.a) {
-                        fa4.b("alert already showed for ".concat(string));
+                    if (f11.a) {
+                        cc4.b("alert already showed for ".concat(string));
                         return;
                     }
                     return;
                 }
-                final i96[] i96VarArr = new i96[2];
+                final mb6[] mb6VarArr = new mb6[2];
                 byte b3 = 0;
                 String str2 = str.contains("-") ? str.split("-")[0] : str;
                 String str3 = "in".equals(str2) ? "id" : "iw".equals(str2) ? "he" : "jw".equals(str2) ? "jv" : null;
                 int i = 0;
                 while (true) {
-                    if (i >= k96.D0().J.size()) {
+                    if (i >= ob6.D0().J.size()) {
                         b = b3;
                         break;
                     }
-                    i96 i96Var2 = (i96) k96.D0().J.get(i);
+                    mb6 mb6Var2 = (mb6) ob6.D0().J.get(i);
                     b = b3;
-                    if (i96Var2.c.equals("en")) {
-                        i96VarArr[b] = i96Var2;
+                    if (mb6Var2.c.equals("en")) {
+                        mb6VarArr[b] = mb6Var2;
                     }
-                    if (i96Var2.c.replace("_", "-").equals(str) || i96Var2.c.equals(str2) || i96Var2.c.equals(str3)) {
-                        i96VarArr[1] = i96Var2;
+                    if (mb6Var2.c.replace("_", "-").equals(str) || mb6Var2.c.equals(str2) || mb6Var2.c.equals(str3)) {
+                        mb6VarArr[1] = mb6Var2;
                     }
-                    if (i96VarArr[b] != null && i96VarArr[1] != null) {
+                    if (mb6VarArr[b] != null && mb6VarArr[1] != null) {
                         break;
                     }
                     i++;
                     b3 = b;
                 }
-                i96 i96Var3 = i96VarArr[b];
-                if (i96Var3 == null || (i96Var = i96VarArr[1]) == null || i96Var3 == i96Var) {
+                mb6 mb6Var3 = mb6VarArr[b];
+                if (mb6Var3 == null || (mb6Var = mb6VarArr[1]) == null || mb6Var3 == mb6Var) {
                     return;
                 }
-                if (w01.a) {
-                    fa4.b("show lang alert for " + i96VarArr[b].b() + " and " + i96VarArr[1].b());
+                if (f11.a) {
+                    cc4.b("show lang alert for " + mb6VarArr[b].b() + " and " + mb6VarArr[1].b());
                 }
                 this.I0 = null;
                 this.J0 = null;
                 this.H0 = true;
                 TLRPC.TL_langpack_getStrings tL_langpack_getStrings = new TLRPC.TL_langpack_getStrings();
-                tL_langpack_getStrings.lang_code = i96VarArr[1].c();
+                tL_langpack_getStrings.lang_code = mb6VarArr[1].c();
                 tL_langpack_getStrings.keys.add("English");
                 tL_langpack_getStrings.keys.add("ChooseYourLanguage");
                 tL_langpack_getStrings.keys.add("ChooseYourLanguageOther");
                 tL_langpack_getStrings.keys.add("ChangeLanguageLater");
                 final byte b4 = b;
-                ConnectionsManager.getInstance(this.P).sendRequest(tL_langpack_getStrings, new RequestDelegate(this) { // from class: dz5
+                ConnectionsManager.getInstance(this.P).sendRequest(tL_langpack_getStrings, new RequestDelegate(this) { // from class: d16
                     public final /* synthetic */ LaunchActivity b;
 
                     {
@@ -2742,14 +2746,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 }
                                 final byte b5 = 0;
                                 final LaunchActivity launchActivity = this.b;
-                                final i96[] i96VarArr2 = i96VarArr;
+                                final mb6[] mb6VarArr2 = mb6VarArr;
                                 final String str5 = str;
-                                gl.c3(new Runnable() { // from class: ux5
+                                hl.c3(new Runnable() { // from class: vz5
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         byte b6 = b5;
                                         String str6 = str5;
-                                        i96[] i96VarArr3 = i96VarArr2;
+                                        mb6[] mb6VarArr3 = mb6VarArr2;
                                         HashMap hashMap2 = hashMap;
                                         LaunchActivity launchActivity2 = launchActivity;
                                         switch (b6) {
@@ -2757,7 +2761,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str7 = LaunchActivity.C1;
                                                 launchActivity2.I0 = hashMap2;
                                                 if (launchActivity2.J0 != null) {
-                                                    launchActivity2.J0(i96VarArr3[1], i96VarArr3[0], str6);
+                                                    launchActivity2.J0(mb6VarArr3[1], mb6VarArr3[0], str6);
                                                     break;
                                                 }
                                                 break;
@@ -2765,7 +2769,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str8 = LaunchActivity.C1;
                                                 launchActivity2.J0 = hashMap2;
                                                 if (launchActivity2.I0 != null) {
-                                                    launchActivity2.J0(i96VarArr3[1], i96VarArr3[0], str6);
+                                                    launchActivity2.J0(mb6VarArr3[1], mb6VarArr3[0], str6);
                                                     break;
                                                 }
                                                 break;
@@ -2786,14 +2790,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 }
                                 final byte b6 = 1;
                                 final LaunchActivity launchActivity2 = this.b;
-                                final i96[] i96VarArr3 = i96VarArr;
+                                final mb6[] mb6VarArr3 = mb6VarArr;
                                 final String str7 = str;
-                                gl.c3(new Runnable() { // from class: ux5
+                                hl.c3(new Runnable() { // from class: vz5
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         byte b62 = b6;
                                         String str62 = str7;
-                                        i96[] i96VarArr32 = i96VarArr3;
+                                        mb6[] mb6VarArr32 = mb6VarArr3;
                                         HashMap hashMap22 = hashMap2;
                                         LaunchActivity launchActivity22 = launchActivity2;
                                         switch (b62) {
@@ -2801,7 +2805,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str72 = LaunchActivity.C1;
                                                 launchActivity22.I0 = hashMap22;
                                                 if (launchActivity22.J0 != null) {
-                                                    launchActivity22.J0(i96VarArr32[1], i96VarArr32[0], str62);
+                                                    launchActivity22.J0(mb6VarArr32[1], mb6VarArr32[0], str62);
                                                     break;
                                                 }
                                                 break;
@@ -2809,7 +2813,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str8 = LaunchActivity.C1;
                                                 launchActivity22.J0 = hashMap22;
                                                 if (launchActivity22.I0 != null) {
-                                                    launchActivity22.J0(i96VarArr32[1], i96VarArr32[0], str62);
+                                                    launchActivity22.J0(mb6VarArr32[1], mb6VarArr32[0], str62);
                                                     break;
                                                 }
                                                 break;
@@ -2821,12 +2825,12 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                 }, 8);
                 TLRPC.TL_langpack_getStrings tL_langpack_getStrings2 = new TLRPC.TL_langpack_getStrings();
-                tL_langpack_getStrings2.lang_code = i96VarArr[b4].c();
+                tL_langpack_getStrings2.lang_code = mb6VarArr[b4].c();
                 tL_langpack_getStrings2.keys.add("English");
                 tL_langpack_getStrings2.keys.add("ChooseYourLanguage");
                 tL_langpack_getStrings2.keys.add("ChooseYourLanguageOther");
                 tL_langpack_getStrings2.keys.add("ChangeLanguageLater");
-                ConnectionsManager.getInstance(this.P).sendRequest(tL_langpack_getStrings2, new RequestDelegate(this) { // from class: dz5
+                ConnectionsManager.getInstance(this.P).sendRequest(tL_langpack_getStrings2, new RequestDelegate(this) { // from class: d16
                     public final /* synthetic */ LaunchActivity b;
 
                     {
@@ -2850,14 +2854,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 }
                                 final byte b5 = 0;
                                 final LaunchActivity launchActivity = this.b;
-                                final i96[] i96VarArr2 = i96VarArr;
+                                final mb6[] mb6VarArr2 = mb6VarArr;
                                 final String str5 = str;
-                                gl.c3(new Runnable() { // from class: ux5
+                                hl.c3(new Runnable() { // from class: vz5
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         byte b62 = b5;
                                         String str62 = str5;
-                                        i96[] i96VarArr32 = i96VarArr2;
+                                        mb6[] mb6VarArr32 = mb6VarArr2;
                                         HashMap hashMap22 = hashMap;
                                         LaunchActivity launchActivity22 = launchActivity;
                                         switch (b62) {
@@ -2865,7 +2869,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str72 = LaunchActivity.C1;
                                                 launchActivity22.I0 = hashMap22;
                                                 if (launchActivity22.J0 != null) {
-                                                    launchActivity22.J0(i96VarArr32[1], i96VarArr32[0], str62);
+                                                    launchActivity22.J0(mb6VarArr32[1], mb6VarArr32[0], str62);
                                                     break;
                                                 }
                                                 break;
@@ -2873,7 +2877,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str8 = LaunchActivity.C1;
                                                 launchActivity22.J0 = hashMap22;
                                                 if (launchActivity22.I0 != null) {
-                                                    launchActivity22.J0(i96VarArr32[1], i96VarArr32[0], str62);
+                                                    launchActivity22.J0(mb6VarArr32[1], mb6VarArr32[0], str62);
                                                     break;
                                                 }
                                                 break;
@@ -2894,14 +2898,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 }
                                 final byte b6 = 1;
                                 final LaunchActivity launchActivity2 = this.b;
-                                final i96[] i96VarArr3 = i96VarArr;
+                                final mb6[] mb6VarArr3 = mb6VarArr;
                                 final String str7 = str;
-                                gl.c3(new Runnable() { // from class: ux5
+                                hl.c3(new Runnable() { // from class: vz5
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         byte b62 = b6;
                                         String str62 = str7;
-                                        i96[] i96VarArr32 = i96VarArr3;
+                                        mb6[] mb6VarArr32 = mb6VarArr3;
                                         HashMap hashMap22 = hashMap2;
                                         LaunchActivity launchActivity22 = launchActivity2;
                                         switch (b62) {
@@ -2909,7 +2913,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str72 = LaunchActivity.C1;
                                                 launchActivity22.I0 = hashMap22;
                                                 if (launchActivity22.J0 != null) {
-                                                    launchActivity22.J0(i96VarArr32[1], i96VarArr32[0], str62);
+                                                    launchActivity22.J0(mb6VarArr32[1], mb6VarArr32[0], str62);
                                                     break;
                                                 }
                                                 break;
@@ -2917,7 +2921,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                 String str8 = LaunchActivity.C1;
                                                 launchActivity22.J0 = hashMap22;
                                                 if (launchActivity22.I0 != null) {
-                                                    launchActivity22.J0(i96VarArr32[1], i96VarArr32[0], str62);
+                                                    launchActivity22.J0(mb6VarArr32[1], mb6VarArr32[0], str62);
                                                     break;
                                                 }
                                                 break;
@@ -2929,7 +2933,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                 }, 8);
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
     }
@@ -2942,17 +2946,17 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         while (i2 < size) {
             Object obj = arrayList.get(i2);
             i2++;
-            ((org.telegram.ui.ActionBar.d) obj).onFragmentDestroy();
+            ((org.telegram.ui.ActionBar.e) obj).onFragmentDestroy();
         }
         arrayList.clear();
-        if (gl.O1()) {
+        if (hl.O1()) {
             ArrayList arrayList2 = this.f0;
             int size2 = arrayList2.size();
             int i3 = 0;
             while (i3 < size2) {
                 Object obj2 = arrayList2.get(i3);
                 i3++;
-                ((org.telegram.ui.ActionBar.d) obj2).onFragmentDestroy();
+                ((org.telegram.ui.ActionBar.e) obj2).onFragmentDestroy();
             }
             arrayList2.clear();
             ArrayList arrayList3 = this.g0;
@@ -2960,196 +2964,196 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             while (i < size3) {
                 Object obj3 = arrayList3.get(i);
                 i++;
-                ((org.telegram.ui.ActionBar.d) obj3).onFragmentDestroy();
+                ((org.telegram.ui.ActionBar.e) obj3).onFragmentDestroy();
             }
             arrayList3.clear();
         }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x006f A[Catch: Exception -> 0x0162, TryCatch #0 {Exception -> 0x0162, blocks: (B:3:0x0008, B:6:0x0024, B:9:0x005d, B:12:0x0067, B:15:0x006f, B:18:0x0081, B:21:0x008a, B:25:0x00be, B:28:0x0088, B:31:0x00e1), top: B:2:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x006f A[Catch: Exception -> 0x0162, TryCatch #0 {Exception -> 0x0162, blocks: (B:3:0x0008, B:6:0x0024, B:9:0x005d, B:12:0x0067, B:15:0x006f, B:18:0x0081, B:21:0x008a, B:25:0x00be, B:28:0x0088, B:31:0x00e0), top: B:2:0x0008 }] */
     /* JADX WARN: Removed duplicated region for block: B:35:0x005a  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0056  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void J0(i96 i96Var, i96 i96Var2, String str) {
+    public final void J0(mb6 mb6Var, mb6 mb6Var2, String str) {
         boolean z;
         boolean z2;
         int i;
-        i96 i96Var3;
-        i96 i96Var4;
+        mb6 mb6Var3;
+        mb6 mb6Var4;
         int i2;
         boolean z3 = true;
         try {
             this.H0 = false;
-            i96 i96Var5 = i96Var;
-            if (!i96Var5.j) {
+            mb6 mb6Var5 = mb6Var;
+            if (!mb6Var5.j) {
                 try {
-                    if (!k96.D0().B.h()) {
+                    if (!ob6.D0().B.h()) {
                         z2 = false;
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-                        hd hdVar = alertDialog$Builder.a;
-                        hdVar.S = T(2131752096, "ChooseYourLanguage", this.I0);
-                        hdVar.T = T(2131752096, "ChooseYourLanguage", this.J0);
+                        id idVar = alertDialog$Builder.a;
+                        idVar.S = T(2131752073, "ChooseYourLanguage", this.I0);
+                        idVar.T = T(2131752073, "ChooseYourLanguage", this.J0);
                         LinearLayout linearLayout = new LinearLayout(this);
                         linearLayout.setOrientation(1);
-                        xw5[] xw5VarArr = new xw5[2];
-                        String T = T(2131751115, "English", this.I0);
+                        cz5[] cz5VarArr = new cz5[2];
+                        String T = T(2131751092, "English", this.I0);
                         if (z2) {
-                            i96Var3 = i96Var2;
-                            i96Var4 = i96Var5;
+                            mb6Var3 = mb6Var2;
+                            mb6Var4 = mb6Var5;
                         } else {
-                            i96Var4 = i96Var2;
-                            i96Var3 = i96Var5;
+                            mb6Var4 = mb6Var2;
+                            mb6Var3 = mb6Var5;
                         }
-                        i96[] i96VarArr = {i96Var3, i96Var4};
+                        mb6[] mb6VarArr = {mb6Var3, mb6Var4};
                         if (!z2) {
-                            i96Var5 = i96Var2;
+                            mb6Var5 = mb6Var2;
                         }
-                        i96[] i96VarArr2 = {i96Var5};
+                        mb6[] mb6VarArr2 = {mb6Var5};
                         i2 = 0;
                         for (i = 2; i2 < i; i = 2) {
-                            xw5 xw5Var = new xw5(this);
-                            xw5VarArr[i2] = xw5Var;
-                            i96 i96Var6 = i96VarArr[i2];
-                            String str2 = i96Var6 == i96Var2 ? T : null;
-                            xw5Var.b.setText(str2 != null ? str2 : i96Var6.a);
-                            xw5Var.c.setText(i96Var6.b);
-                            xw5Var.e = i96Var6;
-                            xw5Var.d = z3;
-                            xw5VarArr[i2].setTag(Integer.valueOf(i2));
-                            xw5 xw5Var2 = xw5VarArr[i2];
-                            int i3 = bkb.H5;
-                            zkb.R(xw5Var2, bkb.f0(bkb.w0(null, i3, false), 2, -1), null, zkb.M(i3), null);
-                            xw5VarArr[i2].a.a(i2 == 0, false);
-                            linearLayout.addView(xw5VarArr[i2], nme.o(-1, 50));
-                            xw5VarArr[i2].setOnClickListener(new xf3((Object) i96VarArr2, (Object) xw5VarArr, (byte) 29));
+                            cz5 cz5Var = new cz5(this);
+                            cz5VarArr[i2] = cz5Var;
+                            mb6 mb6Var6 = mb6VarArr[i2];
+                            String str2 = mb6Var6 == mb6Var2 ? T : null;
+                            cz5Var.b.setText(str2 != null ? str2 : mb6Var6.a);
+                            cz5Var.c.setText(mb6Var6.b);
+                            cz5Var.e = mb6Var6;
+                            cz5Var.d = z3;
+                            cz5VarArr[i2].setTag(Integer.valueOf(i2));
+                            cz5 cz5Var2 = cz5VarArr[i2];
+                            int i3 = aob.I5;
+                            yob.R(cz5Var2, aob.f0(aob.w0(null, i3, false), 2, -1), null, yob.M(i3), null);
+                            cz5VarArr[i2].a.a(i2 == 0, false);
+                            linearLayout.addView(cz5VarArr[i2], tre.o(-1, 50));
+                            cz5VarArr[i2].setOnClickListener(new uv5(mb6VarArr2, cz5VarArr, (byte) 2));
                             i2++;
                             z3 = true;
                         }
-                        xw5 xw5Var3 = new xw5(this);
-                        String T2 = T(2131752095, "ChooseYourLanguageOther", this.I0);
-                        String T3 = T(2131752095, "ChooseYourLanguageOther", this.J0);
-                        xw5Var3.b.setText(T2);
-                        xw5Var3.c.setText(T3);
-                        xw5Var3.a.a(false, false);
-                        xw5Var3.e = null;
-                        xw5Var3.d = false;
-                        int i4 = bkb.H5;
-                        ff0 f0 = bkb.f0(bkb.w0(null, i4, false), 2, -1);
-                        vkb M = zkb.M(i4);
-                        xw5Var3.setBackground(f0);
-                        zkb.j(xw5Var3, f0, null, M, null);
-                        xw5Var3.setOnClickListener(new b95(this, (byte) 15));
-                        linearLayout.addView(xw5Var3, nme.o(-1, 50));
+                        cz5 cz5Var3 = new cz5(this);
+                        String T2 = T(2131752072, "ChooseYourLanguageOther", this.I0);
+                        String T3 = T(2131752072, "ChooseYourLanguageOther", this.J0);
+                        cz5Var3.b.setText(T2);
+                        cz5Var3.c.setText(T3);
+                        cz5Var3.a.a(false, false);
+                        cz5Var3.e = null;
+                        cz5Var3.d = false;
+                        int i4 = aob.I5;
+                        hf0 f0 = aob.f0(aob.w0(null, i4, false), 2, -1);
+                        uob M = yob.M(i4);
+                        cz5Var3.setBackground(f0);
+                        yob.j(cz5Var3, f0, null, M, null);
+                        cz5Var3.setOnClickListener(new sa5(this, (byte) 16));
+                        linearLayout.addView(cz5Var3, tre.o(-1, 50));
                         alertDialog$Builder.n(linearLayout);
-                        alertDialog$Builder.g(k96.M0(2131747638, null), new h45(this, i96VarArr2, (byte) 7));
+                        alertDialog$Builder.g(ob6.M0(2131747558, null), new u34(this, mb6VarArr2, (byte) 13));
                         this.G0 = F0(alertDialog$Builder);
-                        na7.c1().edit().putString("language_showed2", str).commit();
+                        uc7.e1().edit().putString("language_showed2", str).commit();
                     }
                 } catch (Exception e) {
                     e = e;
                     z = true;
-                    fa4.g(e, z);
+                    cc4.g(e, z);
                     return;
                 }
             }
             z2 = true;
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(this);
-            hd hdVar2 = alertDialog$Builder2.a;
-            hdVar2.S = T(2131752096, "ChooseYourLanguage", this.I0);
-            hdVar2.T = T(2131752096, "ChooseYourLanguage", this.J0);
+            id idVar2 = alertDialog$Builder2.a;
+            idVar2.S = T(2131752073, "ChooseYourLanguage", this.I0);
+            idVar2.T = T(2131752073, "ChooseYourLanguage", this.J0);
             LinearLayout linearLayout2 = new LinearLayout(this);
             linearLayout2.setOrientation(1);
-            xw5[] xw5VarArr2 = new xw5[2];
-            String T4 = T(2131751115, "English", this.I0);
+            cz5[] cz5VarArr2 = new cz5[2];
+            String T4 = T(2131751092, "English", this.I0);
             if (z2) {
             }
-            i96[] i96VarArr3 = {i96Var3, i96Var4};
+            mb6[] mb6VarArr3 = {mb6Var3, mb6Var4};
             if (!z2) {
             }
-            i96[] i96VarArr22 = {i96Var5};
+            mb6[] mb6VarArr22 = {mb6Var5};
             i2 = 0;
             while (i2 < i) {
             }
-            xw5 xw5Var32 = new xw5(this);
-            String T22 = T(2131752095, "ChooseYourLanguageOther", this.I0);
-            String T32 = T(2131752095, "ChooseYourLanguageOther", this.J0);
-            xw5Var32.b.setText(T22);
-            xw5Var32.c.setText(T32);
-            xw5Var32.a.a(false, false);
-            xw5Var32.e = null;
-            xw5Var32.d = false;
-            int i42 = bkb.H5;
-            ff0 f02 = bkb.f0(bkb.w0(null, i42, false), 2, -1);
-            vkb M2 = zkb.M(i42);
-            xw5Var32.setBackground(f02);
-            zkb.j(xw5Var32, f02, null, M2, null);
-            xw5Var32.setOnClickListener(new b95(this, (byte) 15));
-            linearLayout2.addView(xw5Var32, nme.o(-1, 50));
+            cz5 cz5Var32 = new cz5(this);
+            String T22 = T(2131752072, "ChooseYourLanguageOther", this.I0);
+            String T32 = T(2131752072, "ChooseYourLanguageOther", this.J0);
+            cz5Var32.b.setText(T22);
+            cz5Var32.c.setText(T32);
+            cz5Var32.a.a(false, false);
+            cz5Var32.e = null;
+            cz5Var32.d = false;
+            int i42 = aob.I5;
+            hf0 f02 = aob.f0(aob.w0(null, i42, false), 2, -1);
+            uob M2 = yob.M(i42);
+            cz5Var32.setBackground(f02);
+            yob.j(cz5Var32, f02, null, M2, null);
+            cz5Var32.setOnClickListener(new sa5(this, (byte) 16));
+            linearLayout2.addView(cz5Var32, tre.o(-1, 50));
             alertDialog$Builder2.n(linearLayout2);
-            alertDialog$Builder2.g(k96.M0(2131747638, null), new h45(this, i96VarArr22, (byte) 7));
+            alertDialog$Builder2.g(ob6.M0(2131747558, null), new u34(this, mb6VarArr22, (byte) 13));
             this.G0 = F0(alertDialog$Builder2);
-            na7.c1().edit().putString("language_showed2", str).commit();
+            uc7.e1().edit().putString("language_showed2", str).commit();
         } catch (Exception e2) {
             e = e2;
             z = true;
         }
     }
 
-    public final void K0(boolean z, boolean z2, int i, int i2, mk2 mk2Var) {
+    public final void K0(boolean z, boolean z2, int i, int i2, zg3 zg3Var) {
         if (this.y0 == null || isFinishing()) {
             return;
         }
         if (this.z0 == null) {
-            this.z0 = new aw7(this);
+            this.z0 = new hz7(this);
         }
-        gba.w = true;
+        xea.w = true;
         int i3 = 0;
         if (SecretMediaViewer.e() && SecretMediaViewer.d().s) {
             SecretMediaViewer.d().c(false, false);
-        } else if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-            PhotoViewer.r0().B(false, true);
+        } else if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+            PhotoViewer.q0().A(false, true);
         } else if (o.F() && o.u().W) {
             o.u().l(false, true);
         }
-        t7b.v();
-        k27 k27Var = MediaController.w().v0;
-        if (k27Var != null && k27Var.g4()) {
-            MediaController.w().l(true, true, false, false);
+        rbb.v();
+        r47 r47Var = MediaController.z().v0;
+        if (r47Var != null && r47Var.g4()) {
+            MediaController.z().m(true, true, false, false);
         }
         this.z0.show();
-        zv7 zv7Var = this.z0.b;
+        gz7 gz7Var = this.z0.b;
         ArrayList arrayList = this.A0;
         arrayList.isEmpty();
-        zv7Var.m(z2, i, i2, new hb5(this, mk2Var, (byte) 27));
+        gz7Var.m(z2, i, i2, new tg5(this, zg3Var, (byte) 22));
         for (int i4 = 0; i4 < arrayList.size(); i4++) {
-            yv7 yv7Var = (yv7) arrayList.get(i4);
+            fz7 fz7Var = (fz7) arrayList.get(i4);
             if (z) {
                 arrayList.size();
             }
-            yv7Var.m(z2, i, i2, null);
+            fz7Var.m(z2, i, i2, null);
         }
-        gba.B = true;
-        he heVar = new he(this, (byte) 3);
-        this.z0.b.setDelegate(heVar);
+        xea.B = true;
+        pd pdVar = new pd(this, (byte) 4);
+        this.z0.b.setDelegate(pdVar);
         int size = arrayList.size();
         while (i3 < size) {
             Object obj = arrayList.get(i3);
             i3++;
-            ((yv7) obj).setDelegate(heVar);
+            ((fz7) obj).setDelegate(pdVar);
         }
         try {
-            im7.n(y6c.t0).Y();
+            ip7.n(yac.t0).Y();
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0075  */
-    /* JADX WARN: Type inference failed for: r13v3, types: [k96] */
+    /* JADX WARN: Type inference failed for: r13v3, types: [ob6] */
     /* JADX WARN: Type inference failed for: r6v14 */
     /* JADX WARN: Type inference failed for: r6v15 */
     /* JADX WARN: Type inference failed for: r6v5, types: [int] */
@@ -3162,28 +3166,28 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     public final ArrayList L(String str, String str2) {
         String str3;
         String lowerCase;
-        TLRPC.User V1;
-        na7 q1 = na7.q1(this.P);
-        qu2 r = qu2.r(this.P);
+        TLRPC.User X1;
+        uc7 s1 = uc7.s1(this.P);
+        lv2 r = lv2.r(this.P);
         ArrayList arrayList = new ArrayList(r.f0);
         ArrayList arrayList2 = new ArrayList();
         String str4 = null;
         boolean z = false;
         if (str2 != null) {
-            String h = p38.h(str2, false);
+            String h = f78.h(str2, false);
             TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) r.l0.get(h);
             if (tL_contact == null) {
                 tL_contact = (TLRPC.TL_contact) r.m0.get(h.substring(Math.max(0, h.length() - 7)));
             }
             if (tL_contact != null) {
-                TLRPC.User V12 = q1.V1(Long.valueOf(tL_contact.user_id));
-                if (V12 == null || V12.self) {
+                TLRPC.User X12 = s1.X1(Long.valueOf(tL_contact.user_id));
+                if (X12 == null || X12.self) {
                     str3 = null;
                     if (arrayList2.isEmpty() && str3 != null) {
                         lowerCase = str3.trim().toLowerCase();
                         if (!TextUtils.isEmpty(lowerCase)) {
                             ?? r7 = 1;
-                            String S0 = k96.D0().S0(lowerCase, true, false);
+                            String S0 = ob6.D0().S0(lowerCase, true, false);
                             if (lowerCase.equals(S0) || S0.length() == 0) {
                                 S0 = null;
                             }
@@ -3192,19 +3196,19 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             int i = 0;
                             while (i < size) {
                                 TLRPC.TL_contact tL_contact2 = (TLRPC.TL_contact) arrayList.get(i);
-                                if (tL_contact2 != null && (V1 = q1.V1(Long.valueOf(tL_contact2.user_id))) != null && !V1.self) {
+                                if (tL_contact2 != null && (X1 = s1.X1(Long.valueOf(tL_contact2.user_id))) != null && !X1.self) {
                                     char c = 3;
                                     String[] strArr2 = new String[3];
-                                    strArr2[z ? 1 : 0] = qu2.m(z ? 1 : 0, V1.first_name, V1.last_name).toLowerCase();
-                                    String S02 = k96.D0().S0(strArr2[z ? 1 : 0], r7, z);
+                                    strArr2[z ? 1 : 0] = lv2.m(z ? 1 : 0, X1.first_name, X1.last_name).toLowerCase();
+                                    String S02 = ob6.D0().S0(strArr2[z ? 1 : 0], r7, z);
                                     strArr2[r7] = S02;
                                     if (strArr2[z ? 1 : 0].equals(S02)) {
                                         strArr2[r7] = str4;
                                     }
-                                    if (l7c.B(V1)) {
-                                        strArr2[2] = k96.M0(2131746073, str4).toLowerCase();
-                                    } else if (V1.self) {
-                                        strArr2[2] = k96.M0(2131745709, str4).toLowerCase();
+                                    if (lbc.B(X1)) {
+                                        strArr2[2] = ob6.M0(2131745993, str4).toLowerCase();
+                                    } else if (X1.self) {
+                                        strArr2[2] = ob6.M0(2131745629, str4).toLowerCase();
                                     }
                                     int i2 = z ? 1 : 0;
                                     int i3 = i2;
@@ -3221,7 +3225,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                                     }
                                                     c = 3;
                                                 }
-                                                String p = l7c.p(V1);
+                                                String p = lbc.p(X1);
                                                 if (i3 == 0 && p != null && p.startsWith(str5)) {
                                                     i3 = 1;
                                                 }
@@ -3263,84 +3267,84 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         Object[] objArr = 0;
         Object[] objArr2 = 0;
         if (this.B0 == null) {
-            final sgb sgbVar = new sgb(this);
-            zkb.h(bkb.c6, null, sgbVar);
-            int i2 = gl.m;
+            final okb okbVar = new okb(this);
+            yob.h(aob.d6, null, okbVar);
+            int i2 = hl.m;
             if (i2 > 0) {
                 View view = new View(this);
                 view.setBackgroundColor(-16777216);
-                sgbVar.addView(view, new FrameLayout.LayoutParams(-1, i2));
+                okbVar.addView(view, new FrameLayout.LayoutParams(-1, i2));
             }
             LinearLayout linearLayout = new LinearLayout(this);
             final byte b = 1;
             linearLayout.setOrientation(1);
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(R.drawable.logo_middle);
-            linearLayout.addView(imageView, nme.t(-2, -2, 3, 0, 28, 0, 0));
+            linearLayout.addView(imageView, tre.t(-2, -2, 3, 0, 28, 0, 0));
             TextView textView = new TextView(this);
-            int i3 = bkb.F6;
-            tb4.w(textView, i3, null, 1, 17.0f);
-            textView.setText(k96.M0(2131746591, null));
-            linearLayout.addView(textView, nme.t(-2, -2, 3, 0, 20, 0, 0));
+            int i3 = aob.G6;
+            qd4.w(textView, i3, null, 1, 17.0f);
+            textView.setText(ob6.M0(2131746511, null));
+            linearLayout.addView(textView, tre.t(-2, -2, 3, 0, 20, 0, 0));
             TextView textView2 = new TextView(this);
-            sgbVar.a = textView2;
-            zkb.X(textView2, i3, null);
-            zkb.G(textView2, bkb.I6, null);
+            okbVar.a = textView2;
+            yob.X(textView2, i3, null);
+            yob.G(textView2, aob.J6, null);
             textView2.setTextSize(1, 15.0f);
-            textView2.setMovementMethod(new cl(objArr2 == true ? 1 : 0));
+            textView2.setMovementMethod(new dl(objArr2 == true ? 1 : 0));
             textView2.setGravity(51);
-            textView2.setLineSpacing(gl.L(2.0f), 1.0f);
-            linearLayout.addView(textView2, nme.t(-1, -2, 3, 0, 15, 0, 15));
+            textView2.setLineSpacing(hl.L(2.0f), 1.0f);
+            linearLayout.addView(textView2, tre.t(-1, -2, 3, 0, 15, 0, 15));
             ScrollView scrollView = new ScrollView(this);
             scrollView.setVerticalScrollBarEnabled(false);
             scrollView.setOverScrollMode(2);
             f = 4.0f;
-            scrollView.setPadding(gl.L(24.0f), i2, gl.L(24.0f), gl.L(75.0f));
+            scrollView.setPadding(hl.L(24.0f), i2, hl.L(24.0f), hl.L(75.0f));
             scrollView.addView(linearLayout, new FrameLayout.LayoutParams(-1, -2));
-            sgbVar.addView(scrollView, nme.o(-1, -2));
+            okbVar.addView(scrollView, tre.o(-1, -2));
             TextView textView3 = new TextView(this);
-            textView3.setText(k96.M0(2131751592, null).toUpperCase());
+            textView3.setText(ob6.M0(2131751569, null).toUpperCase());
             textView3.setGravity(17);
-            textView3.setTypeface(gl.o());
-            int i4 = bkb.x6;
-            zkb.X(textView3, i4, null);
+            textView3.setTypeface(hl.o());
+            int i4 = aob.y6;
+            yob.X(textView3, i4, null);
             textView3.setTextSize(1, 14.0f);
-            ff0 H0 = bkb.H0(gl.L(3.0f), bkb.w0(null, i4, false));
-            vkb g = zkb.g(i4, 25);
+            hf0 H0 = aob.H0(hl.L(3.0f), aob.w0(null, i4, false));
+            uob g = yob.g(i4, 25);
             textView3.setBackground(H0);
-            zkb.j(textView3, H0, null, g, null);
-            textView3.setPadding(gl.L(20.0f), gl.L(10.0f), gl.L(20.0f), gl.L(10.0f));
-            sgbVar.addView(textView3, nme.d(-2, -2.0f, 83, 16.0f, 0.0f, 16.0f, 16.0f));
+            yob.j(textView3, H0, null, g, null);
+            textView3.setPadding(hl.L(20.0f), hl.L(10.0f), hl.L(20.0f), hl.L(10.0f));
+            okbVar.addView(textView3, tre.d(-2, -2.0f, 83, 16.0f, 0.0f, 16.0f, 16.0f));
             final Object[] objArr3 = objArr == true ? 1 : 0;
-            textView3.setOnClickListener(new View.OnClickListener() { // from class: pgb
+            textView3.setOnClickListener(new View.OnClickListener() { // from class: lkb
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     byte b2 = objArr3;
                     byte b3 = 1;
-                    sgb sgbVar2 = sgbVar;
+                    okb okbVar2 = okbVar;
                     switch (b2) {
                         case 0:
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(view2.getContext());
-                            String M0 = k96.M0(2131743957, null);
-                            hd hdVar = alertDialog$Builder.a;
-                            hdVar.S = M0;
-                            alertDialog$Builder.j(k96.M0(2131751590, null), new qgb(sgbVar2, b3));
-                            alertDialog$Builder.g(k96.M0(2131753753, null), null);
-                            hdVar.U = k96.M0(2131743736, null);
+                            String M0 = ob6.M0(2131743851, null);
+                            id idVar = alertDialog$Builder.a;
+                            idVar.S = M0;
+                            alertDialog$Builder.j(ob6.M0(2131751567, null), new mkb(okbVar2, b3));
+                            alertDialog$Builder.g(ob6.M0(2131753749, null), null);
+                            idVar.U = ob6.M0(2131743630, null);
                             alertDialog$Builder.o();
                             break;
                         default:
-                            if (sgbVar2.c.min_age_confirm == 0) {
-                                sgbVar2.a();
+                            if (okbVar2.c.min_age_confirm == 0) {
+                                okbVar2.a();
                                 break;
                             } else {
                                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(view2.getContext());
-                                String M02 = k96.M0(2131743739, null);
-                                hd hdVar2 = alertDialog$Builder2.a;
-                                hdVar2.S = M02;
-                                alertDialog$Builder2.j(k96.M0(2131754303, null), new qgb(sgbVar2, (byte) 0));
-                                alertDialog$Builder2.g(k96.M0(2131752577, null), null);
-                                hdVar2.U = k96.a0("TosAgeText", null, 2131743740, k96.G(sgbVar2.c.min_age_confirm, "Years", new Object[0]));
+                                String M02 = ob6.M0(2131743633, null);
+                                id idVar2 = alertDialog$Builder2.a;
+                                idVar2.S = M02;
+                                alertDialog$Builder2.j(ob6.M0(2131754299, null), new mkb(okbVar2, (byte) 0));
+                                alertDialog$Builder2.g(ob6.M0(2131752570, null), null);
+                                idVar2.U = ob6.a0("TosAgeText", null, 2131743634, ob6.G(okbVar2.c.min_age_confirm, "Years", new Object[0]));
                                 alertDialog$Builder2.o();
                                 break;
                             }
@@ -3348,44 +3352,44 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
             });
             TextView textView4 = new TextView(this);
-            textView4.setText(k96.M0(2131754716, null));
+            textView4.setText(ob6.M0(2131754712, null));
             textView4.setGravity(17);
-            textView4.setTypeface(gl.o());
+            textView4.setTypeface(hl.o());
             textView4.setTextColor(-1);
             textView4.setTextSize(1, 14.0f);
-            int L = gl.L(4.0f);
-            textView4.setBackgroundDrawable(bkb.i0(L, L, L, L, -11491093, -12346402, -12346402));
-            textView4.setPadding(gl.L(34.0f), 0, gl.L(34.0f), 0);
-            sgbVar.addView(textView4, nme.d(-2, 42.0f, 85, 16.0f, 0.0f, 16.0f, 16.0f));
-            textView4.setOnClickListener(new View.OnClickListener() { // from class: pgb
+            int L = hl.L(4.0f);
+            textView4.setBackgroundDrawable(aob.i0(L, L, L, L, -11491093, -12346402, -12346402));
+            textView4.setPadding(hl.L(34.0f), 0, hl.L(34.0f), 0);
+            okbVar.addView(textView4, tre.d(-2, 42.0f, 85, 16.0f, 0.0f, 16.0f, 16.0f));
+            textView4.setOnClickListener(new View.OnClickListener() { // from class: lkb
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     byte b2 = b;
                     byte b3 = 1;
-                    sgb sgbVar2 = sgbVar;
+                    okb okbVar2 = okbVar;
                     switch (b2) {
                         case 0:
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(view2.getContext());
-                            String M0 = k96.M0(2131743957, null);
-                            hd hdVar = alertDialog$Builder.a;
-                            hdVar.S = M0;
-                            alertDialog$Builder.j(k96.M0(2131751590, null), new qgb(sgbVar2, b3));
-                            alertDialog$Builder.g(k96.M0(2131753753, null), null);
-                            hdVar.U = k96.M0(2131743736, null);
+                            String M0 = ob6.M0(2131743851, null);
+                            id idVar = alertDialog$Builder.a;
+                            idVar.S = M0;
+                            alertDialog$Builder.j(ob6.M0(2131751567, null), new mkb(okbVar2, b3));
+                            alertDialog$Builder.g(ob6.M0(2131753749, null), null);
+                            idVar.U = ob6.M0(2131743630, null);
                             alertDialog$Builder.o();
                             break;
                         default:
-                            if (sgbVar2.c.min_age_confirm == 0) {
-                                sgbVar2.a();
+                            if (okbVar2.c.min_age_confirm == 0) {
+                                okbVar2.a();
                                 break;
                             } else {
                                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(view2.getContext());
-                                String M02 = k96.M0(2131743739, null);
-                                hd hdVar2 = alertDialog$Builder2.a;
-                                hdVar2.S = M02;
-                                alertDialog$Builder2.j(k96.M0(2131754303, null), new qgb(sgbVar2, (byte) 0));
-                                alertDialog$Builder2.g(k96.M0(2131752577, null), null);
-                                hdVar2.U = k96.a0("TosAgeText", null, 2131743740, k96.G(sgbVar2.c.min_age_confirm, "Years", new Object[0]));
+                                String M02 = ob6.M0(2131743633, null);
+                                id idVar2 = alertDialog$Builder2.a;
+                                idVar2.S = M02;
+                                alertDialog$Builder2.j(ob6.M0(2131754299, null), new mkb(okbVar2, (byte) 0));
+                                alertDialog$Builder2.g(ob6.M0(2131752570, null), null);
+                                idVar2.U = ob6.a0("TosAgeText", null, 2131743634, ob6.G(okbVar2.c.min_age_confirm, "Years", new Object[0]));
                                 alertDialog$Builder2.o();
                                 break;
                             }
@@ -3393,31 +3397,31 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
             });
             View view2 = new View(this);
-            zkb.h(bkb.c7, null, view2);
+            yob.h(aob.d7, null, view2);
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, 1);
-            layoutParams.bottomMargin = gl.L(75.0f);
+            layoutParams.bottomMargin = hl.L(75.0f);
             layoutParams.gravity = 80;
-            sgbVar.addView(view2, layoutParams);
-            this.B0 = sgbVar;
-            sgbVar.setAlpha(0.0f);
-            this.y0.addView(this.B0, nme.c(-1.0f, -1));
-            this.B0.setDelegate(new oz5(this));
+            okbVar.addView(view2, layoutParams);
+            this.B0 = okbVar;
+            okbVar.setAlpha(0.0f);
+            this.y0.addView(this.B0, tre.c(-1.0f, -1));
+            this.B0.setDelegate(new r16(this));
         } else {
             f = 4.0f;
         }
-        TLRPC.TL_help_termsOfService tL_help_termsOfService2 = y6c.h(i).a0;
+        TLRPC.TL_help_termsOfService tL_help_termsOfService2 = yac.h(i).a0;
         if (tL_help_termsOfService2 != tL_help_termsOfService && (tL_help_termsOfService2 == null || !tL_help_termsOfService2.id.data.equals(tL_help_termsOfService.id.data))) {
-            y6c.h(i).a0 = tL_help_termsOfService;
-            y6c.h(i).u(false);
+            yac.h(i).a0 = tL_help_termsOfService;
+            yac.h(i).u(false);
         }
-        sgb sgbVar2 = this.B0;
-        if (sgbVar2.getVisibility() != 0) {
-            sgbVar2.setVisibility(0);
+        okb okbVar2 = this.B0;
+        if (okbVar2.getVisibility() != 0) {
+            okbVar2.setVisibility(0);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_help_termsOfService.text);
-        k27.b(spannableStringBuilder, tL_help_termsOfService.entities, false, false, false, false, 0);
-        int L2 = gl.L(10.0f);
-        int L3 = gl.L(f);
+        r47.b(spannableStringBuilder, tL_help_termsOfService.entities, false, false, false, false, 0);
+        int L2 = hl.L(10.0f);
+        int L3 = hl.L(f);
         int length = spannableStringBuilder.length() - 2;
         for (int i5 = 0; i5 < length; i5++) {
             if (spannableStringBuilder.charAt(i5) == '\n') {
@@ -3425,17 +3429,17 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 if (spannableStringBuilder.charAt(i6) == '-') {
                     int i7 = i5 + 2;
                     if (spannableStringBuilder.charAt(i7) == ' ') {
-                        y01 y01Var = new y01(L2, L3);
+                        h11 h11Var = new h11(L2, L3);
                         spannableStringBuilder.replace(i6, i5 + 3, (CharSequence) "\u0000\u0000");
-                        spannableStringBuilder.setSpan(y01Var, i6, i7, 33);
+                        spannableStringBuilder.setSpan(h11Var, i6, i7, 33);
                     }
                 }
             }
         }
-        sgbVar2.a.setText(spannableStringBuilder);
-        sgbVar2.c = tL_help_termsOfService;
-        sgbVar2.d = i;
-        this.B0.animate().alpha(1.0f).setDuration(150L).setInterpolator(gl.F).setListener(null).start();
+        okbVar2.a.setText(spannableStringBuilder);
+        okbVar2.c = tL_help_termsOfService;
+        okbVar2.d = i;
+        this.B0.animate().alpha(1.0f).setDuration(150L).setInterpolator(hl.F).setListener(null).start();
     }
 
     public final void M0(int i) {
@@ -3444,25 +3448,25 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             return;
         }
         TLRPC.Chat chat = sharedInstance.getChat();
-        org.telegram.ui.ActionBar.d dVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
-        if (dVar instanceof ah6) {
-            dVar = ((ah6) dVar).b0();
+        org.telegram.ui.ActionBar.e eVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
+        if (eVar instanceof fj6) {
+            eVar = ((fj6) eVar).b0();
         }
         UndoView undoView = null;
-        if (dVar instanceof mu1) {
-            mu1 mu1Var = (mu1) dVar;
-            if (chat != null && mu1Var.a() == (-chat.id)) {
+        if (eVar instanceof zu1) {
+            zu1 zu1Var = (zu1) eVar;
+            if (chat != null && zu1Var.a() == (-chat.id)) {
                 chat = null;
             }
-            mu1Var.b6();
-            undoView = mu1Var.N3;
-        } else if (dVar instanceof cj3) {
-            undoView = ((cj3) dVar).u3();
-        } else if (dVar instanceof ProfileActivity) {
-            undoView = ((ProfileActivity) dVar).M;
+            zu1Var.i6();
+            undoView = zu1Var.N3;
+        } else if (eVar instanceof uj3) {
+            undoView = ((uj3) eVar).w3();
+        } else if (eVar instanceof ProfileActivity) {
+            undoView = ((ProfileActivity) eVar).M;
         }
         if (undoView != null) {
-            undoView.m(chat, i, 0L);
+            undoView.m(0L, chat, i);
         }
         if (i != 38 || VoIPService.getSharedInstance() == null) {
             return;
@@ -3470,17 +3474,17 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         VoIPService.getSharedInstance().playAllowTalkSound();
     }
 
-    public final ui5 N() {
+    public final wk5 N() {
         ActionBarLayout actionBarLayout = this.p0;
         ArrayList arrayList = this.Q;
-        return !arrayList.isEmpty() ? (ui5) b00.f(1, arrayList) : actionBarLayout;
+        return !arrayList.isEmpty() ? (wk5) c00.g(1, arrayList) : actionBarLayout;
     }
 
     public final void N0(int i) {
-        O0(i, new wn4((byte) 26));
+        O0(i, new lq5((byte) 7));
     }
 
-    public final qx0 O() {
+    public final yx0 O() {
         ActionBarLayout actionBarLayout = this.r0;
         if (actionBarLayout != null && actionBarLayout.getBottomSheetTabs() != null) {
             return this.r0.getBottomSheetTabs();
@@ -3492,17 +3496,17 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return this.p0.getBottomSheetTabs();
     }
 
-    public final void O0(int i, js4 js4Var) {
-        if (i == y6c.t0 || !y6c.q(i)) {
+    public final void O0(int i, nu4 nu4Var) {
+        if (i == yac.t0 || !yac.q(i)) {
             return;
         }
         this.l1 = true;
         ConnectionsManager.getInstance(this.P).setAppPaused(true, false);
-        y6c.t0 = i;
-        y6c.h(0).u(false);
+        yac.t0 = i;
+        yac.h(0).u(false);
         B();
-        kk7.e().k(kk7.e4, Integer.valueOf(i));
-        if (gl.O1()) {
+        jn7.e().k(jn7.f4, Integer.valueOf(i));
+        if (hl.O1()) {
             this.q0.Z();
             this.r0.Z();
             if (!this.N0) {
@@ -3514,24 +3518,24 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             this.q0.getView().setVisibility(8);
         }
         this.p0.Z();
-        this.p0.b(-3, (ah6) js4Var.m(null));
+        this.p0.b(-3, (fj6) nu4Var.h(null));
         this.p0.W(true, true);
-        if (gl.O1()) {
+        if (hl.O1()) {
             this.q0.W(true, true);
             this.r0.W(true, true);
         }
         if (!org.telegram.messenger.a.x) {
             ConnectionsManager.getInstance(this.P).setAppPaused(false, false);
         }
-        if (y6c.h(i).a0 != null) {
-            L0(i, y6c.h(i).a0);
+        if (yac.h(i).a0 != null) {
+            L0(i, yac.h(i).a0);
         }
         P0();
         this.l1 = false;
     }
 
-    public final org.telegram.ui.ActionBar.d P() {
-        return mf6.w1(this.P, false).getInt("currentViewNum", 0) != 0 ? new mf6() : new wp5();
+    public final org.telegram.ui.ActionBar.e P() {
+        return qh6.x1(this.P, false).getInt("currentViewNum", 0) != 0 ? new qh6() : new yr5();
     }
 
     public final void P0() {
@@ -3542,27 +3546,27 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             this.d0 = connectionState;
             if (connectionState == 2) {
                 str = "WaitingForNetwork";
-                i = 2131742970;
+                i = 2131742864;
             } else if (connectionState == 5) {
                 str = "Updating";
-                i = 2131743571;
+                i = 2131743465;
             } else if (connectionState == 4) {
                 str = "ConnectingToProxyWithDots";
-                i = 2131751793;
+                i = 2131751770;
             } else if (connectionState == 1) {
                 str = "Connecting";
-                i = 2131751797;
+                i = 2131751774;
             } else {
                 i = 0;
                 str = null;
             }
-            rx5 rx5Var = (connectionState == 1 || connectionState == 4) ? new rx5(this, (byte) 9) : null;
+            sz5 sz5Var = (connectionState == 1 || connectionState == 4) ? new sz5(this, (byte) 7) : null;
             ActionBarLayout actionBarLayout = this.p0;
             actionBarLayout.N0 = str;
             actionBarLayout.O0 = i;
-            actionBarLayout.P0 = rx5Var;
+            actionBarLayout.P0 = sz5Var;
             for (int i2 = 0; i2 < actionBarLayout.V0.size(); i2++) {
-                ((org.telegram.ui.ActionBar.d) actionBarLayout.V0.get(i2)).setTitleOverlayText(actionBarLayout.N0, actionBarLayout.O0, rx5Var);
+                ((org.telegram.ui.ActionBar.e) actionBarLayout.V0.get(i2)).setTitleOverlayText(actionBarLayout.N0, actionBarLayout.O0, sz5Var);
             }
         }
     }
@@ -3571,19 +3575,19 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return this.e0.size();
     }
 
-    /*  JADX ERROR: Types fix failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r33v5 ??), method size: 16172
+    /*  JADX ERROR: Type inference failed
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:96)
+        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    public final boolean V(android.content.Intent r128, boolean r129, boolean r130, boolean r131, c01 r132, boolean r133, boolean r134) {
+    public final boolean V(android.content.Intent r128, boolean r129, boolean r130, boolean r131, l01 r132, boolean r133, boolean r134) {
         /*
-            Method dump skipped, instructions count: 16172
+            Method dump skipped, instructions count: 16224
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.V(android.content.Intent, boolean, boolean, boolean, c01, boolean, boolean):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.V(android.content.Intent, boolean, boolean, boolean, l01, boolean, boolean):boolean");
     }
 
     public final void W() {
@@ -3594,12 +3598,12 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         actionMode.finish();
     }
 
-    public final void X(int i, TLRPC.User user, String str, c01 c01Var) {
-        na7 q1 = na7.q1(i);
+    public final void X(int i, TLRPC.User user, String str, l01 l01Var) {
+        uc7 s1 = uc7.s1(i);
         TLRPC.TL_contacts_importNoPaidMessagesToken tL_contacts_importNoPaidMessagesToken = new TLRPC.TL_contacts_importNoPaidMessagesToken();
-        tL_contacts_importNoPaidMessagesToken.user_id = q1.o1(user);
+        tL_contacts_importNoPaidMessagesToken.user_id = s1.q1(user);
         tL_contacts_importNoPaidMessagesToken.token = str;
-        ConnectionsManager.getInstance(i).sendRequestTyped(tL_contacts_importNoPaidMessagesToken, new hc((byte) 0), new u15(this, c01Var, q1, i, user));
+        ConnectionsManager.getInstance(i).sendRequestTyped(tL_contacts_importNoPaidMessagesToken, new ic((byte) 0), new g45(this, l01Var, s1, i, user));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:65:0x0077  */
@@ -3611,10 +3615,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         long j;
         long j2;
         long j3;
-        Boolean bool = gl.L;
+        Boolean bool = hl.L;
         if (bool != null) {
-            gl.L = null;
-            if (bool.booleanValue() != gl.O1()) {
+            hl.L = null;
+            if (bool.booleanValue() != hl.O1()) {
                 boolean booleanValue = bool.booleanValue();
                 ArrayList arrayList = this.f0;
                 ArrayList arrayList2 = this.g0;
@@ -3638,39 +3642,39 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     while (i < size) {
                         Object obj = arrayList4.get(i);
                         i++;
-                        org.telegram.ui.ActionBar.d dVar = (org.telegram.ui.ActionBar.d) obj;
-                        if (!(dVar instanceof ah6)) {
-                            if (dVar instanceof cj3) {
-                                cj3 cj3Var = (cj3) dVar;
-                                if (cj3Var.H3() && !cj3Var.D3()) {
+                        org.telegram.ui.ActionBar.e eVar = (org.telegram.ui.ActionBar.e) obj;
+                        if (!(eVar instanceof fj6)) {
+                            if (eVar instanceof uj3) {
+                                uj3 uj3Var = (uj3) eVar;
+                                if (uj3Var.J3() && !uj3Var.F3()) {
                                     j3 = 0;
-                                    if (cj3Var.a3 != 0) {
-                                        if (!(dVar instanceof mu1)) {
-                                            mu1 mu1Var = (mu1) dVar;
-                                            if (!mu1Var.P7()) {
-                                                arrayList2.add(dVar);
+                                    if (uj3Var.a3 != 0) {
+                                        if (!(eVar instanceof zu1)) {
+                                            zu1 zu1Var = (zu1) eVar;
+                                            if (!zu1Var.X7()) {
+                                                arrayList2.add(eVar);
                                                 if (j4 == j3) {
-                                                    j4 = mu1Var.a();
-                                                    j = mu1Var.d();
+                                                    j4 = zu1Var.a();
+                                                    j = zu1Var.c();
                                                 }
                                             }
                                         }
-                                        arrayList.add(dVar);
+                                        arrayList.add(eVar);
                                     }
                                 }
                             }
                             j3 = 0;
-                            if (!(dVar instanceof mu1)) {
+                            if (!(eVar instanceof zu1)) {
                             }
-                            arrayList.add(dVar);
+                            arrayList.add(eVar);
                         }
-                        arrayList3.add(dVar);
+                        arrayList3.add(eVar);
                     }
                     j2 = j4;
                 }
                 E0();
                 this.p0.W(true, true);
-                if (gl.O1()) {
+                if (hl.O1()) {
                     this.r0.W(true, true);
                     this.q0.W(true, true);
                     int size2 = arrayList3.size();
@@ -3678,25 +3682,25 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     while (i2 < size2) {
                         Object obj2 = arrayList3.get(i2);
                         i2++;
-                        Object obj3 = (org.telegram.ui.ActionBar.d) obj2;
-                        if (obj3 instanceof ah6) {
-                            obj3 = ((ah6) obj3).K;
+                        Object obj3 = (org.telegram.ui.ActionBar.e) obj2;
+                        if (obj3 instanceof fj6) {
+                            obj3 = ((fj6) obj3).M;
                         }
-                        if (obj3 instanceof cj3) {
-                            cj3 cj3Var2 = (cj3) obj3;
-                            if (cj3Var2.H3()) {
-                                zc7 zc7Var = cj3Var2.r2;
-                                zc7Var.a = j2;
-                                zc7Var.b = j;
-                                bj3[] bj3VarArr = cj3Var2.f0;
-                                if (bj3VarArr != null) {
-                                    for (bj3 bj3Var : bj3VarArr) {
-                                        if (bj3Var.a() && gl.O1()) {
-                                            bj3Var.d.s = zc7Var.a;
+                        if (obj3 instanceof uj3) {
+                            uj3 uj3Var2 = (uj3) obj3;
+                            if (uj3Var2.J3()) {
+                                if7 if7Var = uj3Var2.r2;
+                                if7Var.a = j2;
+                                if7Var.b = j;
+                                tj3[] tj3VarArr = uj3Var2.f0;
+                                if (tj3VarArr != null) {
+                                    for (tj3 tj3Var : tj3VarArr) {
+                                        if (tj3Var.a() && hl.O1()) {
+                                            tj3Var.d.s = if7Var.a;
                                         }
                                     }
-                                    int i3 = na7.q5;
-                                    cj3Var2.C5(512, true);
+                                    int i3 = uc7.r5;
+                                    uj3Var2.G5(512, true);
                                 }
                             }
                         }
@@ -3706,15 +3710,15 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
     }
 
-    @Override // qi5
+    @Override // sk5
     public final void a(float f) {
         if (o.F() && o.u().W) {
             o u = o.u();
             u.Q();
             o.e0(u);
             if (u.g0 != null) {
-                u.v0[0].b.h1();
-                u.v0[1].b.h1();
+                u.v0[0].b.i1();
+                u.v0[1].b.i1();
                 u.g0.invalidate();
                 u.r0.invalidate();
                 if (f == 1.0f) {
@@ -3724,59 +3728,59 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
         }
         if (PhotoViewer.C0()) {
-            PhotoViewer.r0().G2();
+            PhotoViewer.q0().G2();
         }
     }
 
-    @Override // qi5
+    @Override // sk5
     public final void b(ActionBarLayout actionBarLayout, boolean z) {
-        if (gl.O1() && actionBarLayout == this.q0) {
+        if (hl.O1() && actionBarLayout == this.q0) {
             this.r0.W(z, z);
             this.p0.W(z, z);
         }
     }
 
     public final void b0() {
-        ui5[] ui5VarArr = {this.p0, this.q0, this.r0};
+        wk5[] wk5VarArr = {this.p0, this.q0, this.r0};
         for (int i = 0; i < 3; i++) {
-            ui5 ui5Var = ui5VarArr[i];
-            if (ui5Var instanceof ActionBarLayout) {
-                ((ActionBarLayout) ui5Var).C();
+            wk5 wk5Var = wk5VarArr[i];
+            if (wk5Var instanceof ActionBarLayout) {
+                ((ActionBarLayout) wk5Var).C();
             }
         }
     }
 
     public final boolean d0(boolean z) {
         boolean z2;
-        hj4 hj4Var = uge.a;
-        if (hj4Var != null) {
-            if (hj4Var.s) {
+        ll4 ll4Var = nle.a;
+        if (ll4Var != null) {
+            if (ll4Var.s) {
                 if (z) {
-                    hj4Var.c(false);
+                    ll4Var.c(false);
                 }
             }
             return false;
         }
-        aw7 aw7Var = this.z0;
-        if (aw7Var == null || aw7Var.b.getVisibility() != 0) {
-            yx0 yx0Var = this.x0;
-            if (yx0Var == null || !(z2 = yx0Var.V)) {
-                hd hdVar = vs9.I;
-                if (hdVar != null) {
+        hz7 hz7Var = this.z0;
+        if (hz7Var == null || hz7Var.b.getVisibility() != 0) {
+            gy0 gy0Var = this.x0;
+            if (gy0Var == null || !(z2 = gy0Var.V)) {
+                id idVar = ow9.I;
+                if (idVar != null) {
                     if (z) {
-                        hdVar.dismiss();
-                        vs9.I = null;
+                        idVar.dismiss();
+                        ow9.I = null;
                         return false;
                     }
-                } else if (xv2.g0 == null || !xv2.e().E) {
+                } else if (rw2.g0 == null || !rw2.e().E) {
                     if (SecretMediaViewer.e() && SecretMediaViewer.d().s) {
                         if (z) {
                             SecretMediaViewer.d().c(true, false);
                             return false;
                         }
-                    } else if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
+                    } else if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
                         if (z) {
-                            PhotoViewer.r0().B(true, false);
+                            PhotoViewer.q0().A(true, false);
                             return false;
                         }
                     } else {
@@ -3788,11 +3792,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         }
                     }
                 } else if (z) {
-                    xv2.e().c();
+                    rw2.e().c();
                     return false;
                 }
             } else if (z && z2) {
-                yx0Var.a(false);
+                gy0Var.a(false);
                 return false;
             }
         } else if (z) {
@@ -3802,80 +3806,84 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:220:0x04c9 A[Catch: all -> 0x0600, TryCatch #1 {all -> 0x0600, blocks: (B:203:0x0464, B:205:0x047b, B:206:0x0482, B:208:0x0494, B:209:0x049a, B:211:0x04a5, B:213:0x04ab, B:214:0x04b5, B:216:0x04b9, B:220:0x04c9, B:225:0x04d9, B:226:0x04d7, B:227:0x04dc, B:229:0x04e0, B:231:0x04e6, B:232:0x04f1, B:234:0x0501, B:235:0x0507), top: B:202:0x0464 }] */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x04d5  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x04d7 A[Catch: all -> 0x0600, TryCatch #1 {all -> 0x0600, blocks: (B:203:0x0464, B:205:0x047b, B:206:0x0482, B:208:0x0494, B:209:0x049a, B:211:0x04a5, B:213:0x04ab, B:214:0x04b5, B:216:0x04b9, B:220:0x04c9, B:225:0x04d9, B:226:0x04d7, B:227:0x04dc, B:229:0x04e0, B:231:0x04e6, B:232:0x04f1, B:234:0x0501, B:235:0x0507), top: B:202:0x0464 }] */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0501 A[Catch: all -> 0x0600, TryCatch #1 {all -> 0x0600, blocks: (B:203:0x0464, B:205:0x047b, B:206:0x0482, B:208:0x0494, B:209:0x049a, B:211:0x04a5, B:213:0x04ab, B:214:0x04b5, B:216:0x04b9, B:220:0x04c9, B:225:0x04d9, B:226:0x04d7, B:227:0x04dc, B:229:0x04e0, B:231:0x04e6, B:232:0x04f1, B:234:0x0501, B:235:0x0507), top: B:202:0x0464 }] */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0520 A[Catch: all -> 0x05fe, TryCatch #4 {all -> 0x05fe, blocks: (B:238:0x0510, B:240:0x0520, B:242:0x0524, B:243:0x052a, B:245:0x052e, B:248:0x05a1, B:250:0x05c5, B:251:0x05e1, B:253:0x05e8, B:254:0x05f7), top: B:237:0x0510 }] */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x059c  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x05c5 A[Catch: all -> 0x05fe, TryCatch #4 {all -> 0x05fe, blocks: (B:238:0x0510, B:240:0x0520, B:242:0x0524, B:243:0x052a, B:245:0x052e, B:248:0x05a1, B:250:0x05c5, B:251:0x05e1, B:253:0x05e8, B:254:0x05f7), top: B:237:0x0510 }] */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x05e8 A[Catch: all -> 0x05fe, TryCatch #4 {all -> 0x05fe, blocks: (B:238:0x0510, B:240:0x0520, B:242:0x0524, B:243:0x052a, B:245:0x052e, B:248:0x05a1, B:250:0x05c5, B:251:0x05e1, B:253:0x05e8, B:254:0x05f7), top: B:237:0x0510 }] */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x0642  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x064c  */
-    /* JADX WARN: Removed duplicated region for block: B:273:? A[ADDED_TO_REGION, REMOVE, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:273:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0647  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x05f5  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0506  */
-    @Override // gk7
+    /* JADX WARN: Removed duplicated region for block: B:220:0x04ca A[Catch: all -> 0x0605, TryCatch #4 {all -> 0x0605, blocks: (B:203:0x0463, B:205:0x047a, B:206:0x0481, B:208:0x0493, B:209:0x0499, B:211:0x04a4, B:213:0x04aa, B:214:0x04b4, B:216:0x04ba, B:220:0x04ca, B:225:0x04da, B:226:0x04d8, B:227:0x04dd, B:229:0x04e1, B:231:0x04e7, B:232:0x04f2, B:234:0x0502, B:235:0x0508), top: B:202:0x0463 }] */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x04d6  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x04d8 A[Catch: all -> 0x0605, TryCatch #4 {all -> 0x0605, blocks: (B:203:0x0463, B:205:0x047a, B:206:0x0481, B:208:0x0493, B:209:0x0499, B:211:0x04a4, B:213:0x04aa, B:214:0x04b4, B:216:0x04ba, B:220:0x04ca, B:225:0x04da, B:226:0x04d8, B:227:0x04dd, B:229:0x04e1, B:231:0x04e7, B:232:0x04f2, B:234:0x0502, B:235:0x0508), top: B:202:0x0463 }] */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x0502 A[Catch: all -> 0x0605, TryCatch #4 {all -> 0x0605, blocks: (B:203:0x0463, B:205:0x047a, B:206:0x0481, B:208:0x0493, B:209:0x0499, B:211:0x04a4, B:213:0x04aa, B:214:0x04b4, B:216:0x04ba, B:220:0x04ca, B:225:0x04da, B:226:0x04d8, B:227:0x04dd, B:229:0x04e1, B:231:0x04e7, B:232:0x04f2, B:234:0x0502, B:235:0x0508), top: B:202:0x0463 }] */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0521 A[Catch: all -> 0x0602, TryCatch #2 {all -> 0x0602, blocks: (B:238:0x050c, B:240:0x0521, B:242:0x0525, B:243:0x052b, B:245:0x0533), top: B:237:0x050c }] */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x05a0  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x05c7 A[Catch: all -> 0x0600, TryCatch #0 {all -> 0x0600, blocks: (B:248:0x055b, B:251:0x05a5, B:253:0x05c7, B:254:0x05e3, B:256:0x05eb, B:257:0x05f9), top: B:247:0x055b }] */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x05eb A[Catch: all -> 0x0600, TryCatch #0 {all -> 0x0600, blocks: (B:248:0x055b, B:251:0x05a5, B:253:0x05c7, B:254:0x05e3, B:256:0x05eb, B:257:0x05f9), top: B:247:0x055b }] */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x064a  */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x0654  */
+    /* JADX WARN: Removed duplicated region for block: B:276:? A[ADDED_TO_REGION, REMOVE, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:276:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x064f  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x05f7  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0507  */
+    /* JADX WARN: Type inference failed for: r15v23, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r15v37 */
+    /* JADX WARN: Type inference failed for: r15v38 */
+    @Override // fn7
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        on9 on9Var;
-        h75 h75Var;
+        int i3;
+        String[] strArr;
         char c;
+        org.telegram.ui.ActionBar.e eVar;
+        er9 er9Var;
+        j95 j95Var;
         char c2;
+        char c3;
+        ?? r15;
         ActionBarLayout actionBarLayout;
         Runnable runnable;
-        int[] iArr;
-        boolean booleanValue;
-        ry8 ry8Var;
-        int measuredWidth;
-        int measuredHeight;
-        Bitmap bitmap;
         boolean z;
+        boolean z2;
+        Bitmap bitmap;
+        boolean z3;
         View view;
-        int i3 = 0;
-        byte b = 1;
-        if (i == kk7.H2) {
+        int i4 = 0;
+        if (i == jn7.I2) {
             while (true) {
-                if (i3 >= 4) {
-                    i3 = -1;
+                if (i4 >= 4) {
+                    i4 = -1;
                     break;
-                } else if (y6c.h(i3).o()) {
+                } else if (yac.h(i4).o()) {
                     break;
                 } else {
-                    i3++;
+                    i4++;
                 }
             }
-            sgb sgbVar = this.B0;
-            if (sgbVar != null) {
-                sgbVar.setVisibility(8);
+            okb okbVar = this.B0;
+            if (okbVar != null) {
+                okbVar.setVisibility(8);
             }
-            if (i3 != -1) {
-                N0(i3);
+            if (i4 != -1) {
+                N0(i4);
                 return;
             }
-            qa9.Y(true);
+            ee9.Y(true);
             J();
             this.p0.Y();
-            if (gl.O1()) {
+            if (hl.O1()) {
                 this.q0.Y();
                 this.r0.Y();
             }
-            wp5 wp5Var = new wp5();
-            wp5Var.O = true;
-            t0(wp5Var);
+            yr5 yr5Var = new yr5();
+            yr5Var.O = true;
+            t0(yr5Var);
             return;
         }
-        if (i == kk7.o3) {
+        if (i == jn7.p3) {
             Long l = (Long) objArr[0];
             l.getClass();
-            w0(l, null, null, objArr.length > 1 ? (gb2) objArr[1] : null);
+            w0(l, null, null, objArr.length > 1 ? (wb2) objArr[1] : null);
             return;
         }
-        if (i == kk7.m4) {
+        if (i == jn7.n4) {
             if (objArr[0] != this) {
                 e0();
                 finish();
@@ -3883,11 +3891,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
             return;
         }
-        if (i == kk7.S1) {
+        if (i == jn7.T1) {
             int connectionState = ConnectionsManager.getInstance(i2).getConnectionState();
             if (this.d0 != connectionState) {
-                if (w01.a) {
-                    fa4.b("switch to state " + connectionState);
+                if (f11.a) {
+                    cc4.b("switch to state " + connectionState);
                 }
                 this.d0 = connectionState;
                 P0();
@@ -3895,11 +3903,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
             return;
         }
-        if (i == kk7.i0 || i == kk7.Y4) {
+        if (i == jn7.j0 || i == jn7.Z4) {
             return;
         }
-        byte b2 = 2;
-        if (i == kk7.L0) {
+        byte b = 10;
+        byte b2 = 3;
+        byte b3 = 2;
+        if (i == jn7.M0) {
             Integer num = (Integer) objArr[0];
             if (num.intValue() != 6) {
                 if (num.intValue() != 3 || this.E0 == null) {
@@ -3907,57 +3917,57 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         L0(i2, (TLRPC.TL_help_termsOfService) objArr[1]);
                         return;
                     }
-                    org.telegram.ui.ActionBar.d dVar = !this.e0.isEmpty() ? (org.telegram.ui.ActionBar.d) b00.f(1, this.e0) : null;
+                    org.telegram.ui.ActionBar.e eVar2 = !this.e0.isEmpty() ? (org.telegram.ui.ActionBar.e) c00.g(1, this.e0) : null;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-                    alertDialog$Builder.a.S = k96.M0(R.string.AppName, null);
-                    if (dVar != null) {
+                    alertDialog$Builder.a.S = ob6.M0(R.string.AppName, null);
+                    if (eVar2 != null) {
                         HashMap hashMap = new HashMap();
-                        int i4 = bkb.K5;
-                        hashMap.put("info1", Integer.valueOf(dVar.getThemedColor(i4)));
-                        hashMap.put("info2", Integer.valueOf(dVar.getThemedColor(i4)));
-                        alertDialog$Builder.l(R.raw.not_available, 52, dVar.getThemedColor(i4), hashMap);
-                        alertDialog$Builder.m(i4, dVar.getResourceProvider());
+                        int i5 = aob.L5;
+                        hashMap.put("info1", Integer.valueOf(eVar2.getThemedColor(i5)));
+                        hashMap.put("info2", Integer.valueOf(eVar2.getThemedColor(i5)));
+                        alertDialog$Builder.l(R.raw.not_available, 52, eVar2.getThemedColor(i5), hashMap);
+                        alertDialog$Builder.m(i5, eVar2.getResourceProvider());
                         alertDialog$Builder.a.X = true;
                     }
                     if (num.intValue() != 2 && num.intValue() != 3) {
-                        alertDialog$Builder.g(k96.M0(2131748139, null), new jh((Object) this, i2, (byte) 9));
+                        alertDialog$Builder.g(ob6.M0(2131748085, null), new wg(this, i2, b));
                     }
                     if (num.intValue() == 5) {
-                        alertDialog$Builder.a.U = k96.M0(2131747933, null);
-                        alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                        alertDialog$Builder.a.U = ob6.M0(2131747856, null);
+                        alertDialog$Builder.j(ob6.M0(2131747558, null), null);
                     } else if (num.intValue() == 0) {
-                        alertDialog$Builder.a.U = k96.M0(2131747935, null);
-                        alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                        alertDialog$Builder.a.U = ob6.M0(2131747858, null);
+                        alertDialog$Builder.j(ob6.M0(2131747558, null), null);
                     } else if (num.intValue() == 1) {
-                        alertDialog$Builder.a.U = k96.M0(2131747934, null);
-                        alertDialog$Builder.j(k96.M0(2131747638, null), null);
+                        alertDialog$Builder.a.U = ob6.M0(2131747857, null);
+                        alertDialog$Builder.j(ob6.M0(2131747558, null), null);
                     } else if (num.intValue() == 2) {
                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf((String) objArr[1]);
                         String str = (String) objArr[2];
                         if (str.startsWith("PREMIUM_GIFT_SELF_REQUIRED_")) {
                             String str2 = (String) objArr[1];
                             int indexOf = str2.indexOf(42);
-                            int i5 = indexOf + 1;
-                            int indexOf2 = str2.indexOf(42, i5);
+                            int i6 = indexOf + 1;
+                            int indexOf2 = str2.indexOf(42, i6);
                             if (indexOf != -1 && indexOf2 != -1 && indexOf != indexOf2) {
-                                valueOf.replace(indexOf, indexOf2 + 1, (CharSequence) str2.substring(i5, indexOf2));
-                                valueOf.setSpan(new r21(this, (byte) 6), indexOf, indexOf2 - 1, 33);
+                                valueOf.replace(indexOf, indexOf2 + 1, (CharSequence) str2.substring(i6, indexOf2));
+                                valueOf.setSpan(new a31(this, (byte) 6), indexOf, indexOf2 - 1, 33);
                             }
                         }
                         alertDialog$Builder.a.U = valueOf;
                         if (str.startsWith("AUTH_KEY_DROP_")) {
-                            alertDialog$Builder.j(k96.M0(2131752577, null), null);
-                            alertDialog$Builder.g(k96.L0(2131748551), new he(this, (byte) 4));
+                            alertDialog$Builder.j(ob6.M0(2131752570, null), null);
+                            alertDialog$Builder.g(ob6.M0(2131748497, null), new pd(this, b2));
                         } else if (str.startsWith("PREMIUM_")) {
-                            alertDialog$Builder.k(k96.L0(2131743990));
-                            alertDialog$Builder.j(k96.L0(2131747638), null);
+                            alertDialog$Builder.k(ob6.L0(2131743884));
+                            alertDialog$Builder.j(ob6.L0(2131747558), null);
                         } else {
-                            alertDialog$Builder.j(k96.L0(2131747638), null);
+                            alertDialog$Builder.j(ob6.L0(2131747558), null);
                         }
                     } else if (num.intValue() == 3) {
-                        alertDialog$Builder.k(k96.L0(2131746418));
-                        alertDialog$Builder.f(k96.L0(2131743539));
-                        alertDialog$Builder.j(k96.L0(2131747638), null);
+                        alertDialog$Builder.k(ob6.L0(2131746338));
+                        alertDialog$Builder.f(ob6.L0(2131743433));
+                        alertDialog$Builder.j(ob6.L0(2131747558), null);
                         this.E0 = F0(alertDialog$Builder);
                         return;
                     }
@@ -3968,98 +3978,99 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
             return;
         }
-        if (i == kk7.Q0) {
+        byte b4 = 7;
+        if (i == jn7.R0) {
             HashMap hashMap2 = (HashMap) objArr[0];
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(this);
-            alertDialog$Builder2.k(k96.L0(R.string.AppName));
-            alertDialog$Builder2.j(k96.L0(2131747638), null);
-            alertDialog$Builder2.g(k96.L0(2131745229), new yf((Object) this, (Object) hashMap2, i2, (byte) 6));
-            alertDialog$Builder2.f(k96.L0(2131745230));
+            alertDialog$Builder2.k(ob6.L0(R.string.AppName));
+            alertDialog$Builder2.j(ob6.L0(2131747558), null);
+            alertDialog$Builder2.g(ob6.L0(2131745149), new bf(this, hashMap2, i2, b4));
+            alertDialog$Builder2.f(ob6.L0(2131745150));
             if (this.e0.isEmpty()) {
                 return;
             }
-            ((org.telegram.ui.ActionBar.d) b00.f(1, this.e0)).showDialog(alertDialog$Builder2.a);
+            ((org.telegram.ui.ActionBar.e) c00.g(1, this.e0)).showDialog(alertDialog$Builder2.a);
             return;
         }
-        if (i == kk7.B4) {
-            n81 n81Var = this.u0;
-            if (n81Var != null) {
-                n81Var.U(bkb.r0());
+        if (i == jn7.C4) {
+            w81 w81Var = this.u0;
+            if (w81Var != null) {
+                w81Var.U(aob.r0());
                 return;
             }
             return;
         }
-        if (i == kk7.m0) {
+        if (i == jn7.n0) {
             this.e1.i();
             return;
         }
-        if (i == kk7.z4) {
-            boolean z2 = this.e0.size() > 1 && (b00.f(1, this.e0) instanceof ProfileActivity);
-            y0((!z2 || ((ProfileActivity) b00.f(1, this.e0)).r2()) ? z2 : false);
+        if (i == jn7.A4) {
+            boolean z4 = this.e0.size() > 1 && (c00.g(1, this.e0) instanceof ProfileActivity);
+            y0((!z4 || ((ProfileActivity) c00.g(1, this.e0)).s2()) ? z4 : false);
             return;
         }
-        if (i == kk7.A4) {
+        if (i == jn7.B4) {
             I0();
             return;
         }
-        if (i == kk7.b1) {
+        if (i == jn7.c1) {
             if (this.e0.isEmpty()) {
                 return;
             }
             LaunchActivity launchActivity = H1;
             if (launchActivity == null || launchActivity.O() == null || H1.O().m((TLRPC.TL_webPage) objArr[0]) == null) {
-                ((org.telegram.ui.ActionBar.d) b00.f(1, this.e0)).createArticleViewer(false).L(null, (TLRPC.TL_webPage) objArr[0], (String) objArr[1], null);
+                ((org.telegram.ui.ActionBar.e) c00.g(1, this.e0)).createArticleViewer(false).L(null, (TLRPC.TL_webPage) objArr[0], (String) objArr[1], null);
                 return;
             }
             return;
         }
-        if (i == kk7.P) {
+        if (i == jn7.P) {
             ActionBarLayout actionBarLayout2 = this.p0;
             if (actionBarLayout2 == null || actionBarLayout2.getFragmentStack().isEmpty()) {
                 return;
             }
             ((Integer) objArr[0]).getClass();
             HashMap hashMap3 = (HashMap) objArr[1];
-            boolean booleanValue2 = ((Boolean) objArr[2]).booleanValue();
-            boolean booleanValue3 = ((Boolean) objArr[3]).booleanValue();
-            org.telegram.ui.ActionBar.d dVar2 = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
+            boolean booleanValue = ((Boolean) objArr[2]).booleanValue();
+            boolean booleanValue2 = ((Boolean) objArr[3]).booleanValue();
+            org.telegram.ui.ActionBar.e eVar3 = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(this);
-            int i6 = bkb.K5;
-            alertDialog$Builder3.l(R.raw.permission_request_contacts, 72, bkb.u0(i6), null);
-            alertDialog$Builder3.m(i6, null);
-            alertDialog$Builder3.k(k96.L0(2131743579));
-            alertDialog$Builder3.f(k96.L0(2131743580));
-            alertDialog$Builder3.j(k96.L0(2131747638), new px5(i2, hashMap3, booleanValue2, booleanValue3, (byte) 1));
-            alertDialog$Builder3.g(k96.L0(2131752577), new px5(i2, hashMap3, booleanValue2, booleanValue3, (byte) 2));
-            alertDialog$Builder3.a.x0 = new px5(i2, hashMap3, booleanValue2, booleanValue3, (byte) 0);
-            hd hdVar = alertDialog$Builder3.a;
-            dVar2.showDialog(hdVar);
-            hdVar.setCanceledOnTouchOutside(false);
+            int i7 = aob.L5;
+            alertDialog$Builder3.l(R.raw.permission_request_contacts, 72, aob.u0(i7), null);
+            alertDialog$Builder3.m(i7, null);
+            alertDialog$Builder3.k(ob6.L0(2131743473));
+            alertDialog$Builder3.f(ob6.L0(2131743474));
+            alertDialog$Builder3.j(ob6.L0(2131747558), new g16(i2, hashMap3, booleanValue, booleanValue2, (byte) 0));
+            alertDialog$Builder3.g(ob6.L0(2131752570), new g16(i2, hashMap3, booleanValue, booleanValue2, (byte) 1));
+            alertDialog$Builder3.a.x0 = new g16(i2, hashMap3, booleanValue, booleanValue2, (byte) 2);
+            id idVar = alertDialog$Builder3.a;
+            eVar3.showDialog(idVar);
+            idVar.setCanceledOnTouchOutside(false);
             return;
         }
-        if (i == kk7.p4) {
-            zkb.b0(null, true);
+        if (i == jn7.q4) {
+            yob.b0(null, true);
             b0();
             if (!((Boolean) objArr[0]).booleanValue()) {
                 try {
-                    setTaskDescription(new ActivityManager.TaskDescription((String) null, (Bitmap) null, bkb.u0(bkb.r8) | (-16777216)));
+                    setTaskDescription(new ActivityManager.TaskDescription((String) null, (Bitmap) null, aob.u0(aob.s8) | (-16777216)));
                 } catch (Exception unused) {
                 }
             }
             H(objArr.length > 2 && ((Boolean) objArr[2]).booleanValue(), true, (!(objArr.length > 1 ? ((Boolean) objArr[1]).booleanValue() : true) || this.W0 || this.p0.z()) ? false : true);
             return;
         }
-        byte b3 = 26;
-        if (i != kk7.v4) {
-            if (i == kk7.M0) {
+        byte b5 = 9;
+        if (i != jn7.w4) {
+            if (i == jn7.N0) {
                 try {
-                    ((Status) objArr[0]).c(this, kk7.V1);
+                    ((Status) objArr[0]).c(this, jn7.V1);
                     return;
                 } catch (Throwable unused2) {
                     return;
                 }
             }
-            if (i == kk7.X1) {
+            if (i == jn7.Y1) {
                 String str3 = (String) objArr[0];
                 String str4 = this.P0;
                 if (str4 == null) {
@@ -4070,7 +4081,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     this.Q0 = null;
                     File file = (File) objArr[1];
                     if (!this.U0) {
-                        Utilities.e.c(new sx5(this, this.S0, file, b2));
+                        Utilities.e.c(new ls5(this, this.S0, file, b5));
                         return;
                     } else {
                         r0(this.T0, this.R0, this.S0);
@@ -4080,22 +4091,22 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
                 if (str4.equals(str3)) {
                     this.P0 = null;
-                    File file2 = new File(org.telegram.messenger.a.h(), ls6.p(new StringBuilder("remote"), this.T0.id, ".attheme"));
+                    File file2 = new File(org.telegram.messenger.a.h(), qu6.p(new StringBuilder("remote"), this.T0.id, ".attheme"));
                     TLRPC.TL_theme tL_theme = this.T0;
-                    akb k0 = bkb.k0(file2, tL_theme.title, tL_theme);
+                    znb k0 = aob.k0(file2, tL_theme.title, tL_theme);
                     if (k0 != null) {
                         if (k0.c != null && !new File(k0.c).exists()) {
                             TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
                             TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
                             tL_inputWallPaperSlug.slug = k0.e;
                             getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                            ConnectionsManager.getInstance(k0.F).sendRequest(getwallpaper, new rv3(this, k0, (byte) 13));
+                            ConnectionsManager.getInstance(k0.F).sendRequest(getwallpaper, new mw3(this, k0, (byte) 14));
                             return;
                         }
                         TLRPC.TL_theme tL_theme2 = this.T0;
-                        akb u = bkb.u(file2, tL_theme2.title, tL_theme2, true);
+                        znb u = aob.u(file2, tL_theme2.title, tL_theme2, true);
                         if (u != null) {
-                            t0(new qmb(u, true, 0, false, false));
+                            t0(new pqb(u, true, 0, false, false));
                         }
                     }
                     i0();
@@ -4103,7 +4114,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
                 return;
             }
-            if (i == kk7.Y1) {
+            if (i == jn7.Z1) {
                 String str6 = (String) objArr[0];
                 if (str6.equals(this.P0) || str6.equals(this.Q0)) {
                     i0();
@@ -4111,7 +4122,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
                 return;
             }
-            if (i == kk7.M4) {
+            if (i == jn7.N4) {
                 if (org.telegram.messenger.a.x) {
                     return;
                 }
@@ -4123,165 +4134,177 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     return;
                 }
             }
-            if (i == kk7.t4) {
+            if (i == jn7.u4) {
                 H(objArr.length > 0 && ((Boolean) objArr[0]).booleanValue(), true, !this.W0);
                 return;
             }
-            if (i == kk7.u1) {
+            if (i == jn7.v1) {
                 if (objArr.length <= 1 || this.e0.isEmpty()) {
                     return;
                 }
-                ij.c0(this.P, (TLRPC.TL_error) objArr[2], (org.telegram.ui.ActionBar.d) b00.f(1, this.e0), (TLObject) objArr[1], new Object[0]);
+                jj.c0(this.P, (TLRPC.TL_error) objArr[2], (org.telegram.ui.ActionBar.e) c00.g(1, this.e0), (TLObject) objArr[1], new Object[0]);
                 return;
             }
-            if (i == kk7.m5) {
-                ij.c0(this.P, (TLRPC.TL_error) objArr[1], (org.telegram.ui.ActionBar.d) b00.f(1, this.e0), (TLObject) objArr[0], new Object[0]);
+            if (i == jn7.n5) {
+                jj.c0(this.P, (TLRPC.TL_error) objArr[1], (org.telegram.ui.ActionBar.e) c00.g(1, this.e0), (TLObject) objArr[0], new Object[0]);
                 return;
             }
-            if (i == kk7.w1) {
-                hq6.d0(i2).h2(this, (TLObject) objArr[0], 2, !this.e0.isEmpty() ? (org.telegram.ui.ActionBar.d) b00.f(1, this.e0) : null, false, true);
+            if (i == jn7.x1) {
+                ls6.d0(i2).h2(this, (TLObject) objArr[0], 2, !this.e0.isEmpty() ? (org.telegram.ui.ActionBar.e) c00.g(1, this.e0) : null, false, true);
                 return;
             }
-            if (i == kk7.R4) {
+            if (i == jn7.S4) {
                 if (this.e0.isEmpty()) {
                     return;
                 }
                 int intValue = ((Integer) objArr[0]).intValue();
-                FrameLayout frameLayout = (!h75.t5 || (h75Var = h75.s5) == null) ? null : h75Var.c;
-                if (h75.t5 && (on9Var = on9.Q0) != null) {
-                    frameLayout = on9Var.f;
+                FrameLayout frameLayout = (!j95.t5 || (j95Var = j95.s5) == null) ? null : j95Var.c;
+                if (j95.t5 && (er9Var = er9.Q0) != null) {
+                    frameLayout = er9Var.f;
                 }
                 FrameLayout frameLayout2 = frameLayout;
-                org.telegram.ui.ActionBar.d dVar3 = frameLayout2 == null ? (org.telegram.ui.ActionBar.d) b00.f(1, this.e0) : null;
+                if (frameLayout2 == null) {
+                    c = 1;
+                    eVar = (org.telegram.ui.ActionBar.e) c00.g(1, this.e0);
+                } else {
+                    c = 1;
+                    eVar = null;
+                }
                 switch (intValue) {
                     case 0:
-                        TLRPC.Document document = (TLRPC.Document) objArr[1];
+                        TLRPC.Document document = (TLRPC.Document) objArr[c];
                         int intValue2 = ((Integer) objArr[2]).intValue();
-                        nza nzaVar = new nza(this, null, 1, intValue2, document, null);
-                        int i7 = (intValue2 == 6 || intValue2 == 7) ? 3500 : 1500;
-                        if (dVar3 == null) {
-                            m21.f(frameLayout2, nzaVar, i7).j();
+                        l3b l3bVar = new l3b(this, null, 1, intValue2, document, null);
+                        int i8 = (intValue2 == 6 || intValue2 == 7) ? 3500 : 1500;
+                        if (eVar == null) {
+                            v21.f(frameLayout2, l3bVar, i8).j();
                             break;
                         } else {
-                            m21.g(dVar3, nzaVar, i7).j();
+                            v21.g(eVar, l3bVar, i8).j();
                             break;
                         }
                         break;
                     case 1:
-                        if (dVar3 == null) {
-                            u21.a0(frameLayout2, null).t((String) objArr[1], null).j();
+                        if (eVar == null) {
+                            d31.a0(frameLayout2, null).t((String) objArr[1], null).j();
                             break;
                         } else {
-                            u21.b0(dVar3).t((String) objArr[1], null).j();
+                            d31.b0(eVar).t((String) objArr[1], null).j();
                             break;
                         }
                     case 2:
-                        (frameLayout2 != null ? u21.a0(frameLayout2, null) : u21.b0(dVar3)).t(k96.L0(((Long) objArr[1]).longValue() > 0 ? 2131742565 : 2131752404), null).j();
+                        (frameLayout2 != null ? d31.a0(frameLayout2, null) : d31.b0(eVar)).t(ob6.L0(((Long) objArr[c]).longValue() > 0 ? 2131742459 : 2131752390), null).j();
                         break;
                     case 3:
-                        (frameLayout2 != null ? u21.a0(frameLayout2, null) : u21.b0(dVar3)).t(k96.L0(((Long) objArr[1]).longValue() > 0 ? 2131742546 : 2131752273), null).j();
+                        (frameLayout2 != null ? d31.a0(frameLayout2, null) : d31.b0(eVar)).t(ob6.L0(((Long) objArr[c]).longValue() > 0 ? 2131742440 : 2131752251), null).j();
                         break;
                     case 4:
-                        if (dVar3 == null) {
-                            u21.a0(frameLayout2, null).u((String) objArr[1], (String) objArr[2], null).j();
+                        if (eVar == null) {
+                            d31.a0(frameLayout2, null).u((String) objArr[1], (String) objArr[2], null).j();
                             break;
                         } else {
-                            u21.b0(dVar3).u((String) objArr[1], (String) objArr[2], dVar3.getResourceProvider()).j();
+                            d31.b0(eVar).u((String) objArr[1], (String) objArr[2], eVar.getResourceProvider()).j();
                             break;
                         }
                     case 5:
-                        hr hrVar = new hr(this, (c06) objArr[1]);
-                        if (dVar3 == null) {
-                            m21.f(frameLayout2, hrVar, 1500).j();
+                        ir irVar = new ir(this, (g26) objArr[c]);
+                        if (eVar == null) {
+                            v21.f(frameLayout2, irVar, 1500).j();
                             break;
                         } else {
-                            m21.g(dVar3, hrVar, 1500).j();
+                            v21.g(eVar, irVar, 1500).j();
                             break;
                         }
                     case 6:
-                        if (dVar3 == null) {
-                            u21.a0(frameLayout2, null).T((String) objArr[1]).j();
+                        if (eVar == null) {
+                            d31.a0(frameLayout2, null).T((String) objArr[c]).j();
                             break;
                         } else {
-                            u21.b0(dVar3).T((String) objArr[1]).j();
+                            d31.b0(eVar).T((String) objArr[c]).j();
                             break;
                         }
                 }
                 return;
             }
-            if (i == kk7.v2) {
+            if (i == jn7.w2) {
                 I(false);
                 return;
             }
-            if (i == kk7.k5) {
+            if (i == jn7.l5) {
                 if (this.e0.isEmpty()) {
                     return;
                 }
-                org.telegram.ui.ActionBar.d dVar4 = (org.telegram.ui.ActionBar.d) b00.f(1, this.e0);
-                if (dVar4.getParentActivity() != null) {
-                    dVar4.showDialog(new h26(((Integer) objArr[0]).intValue(), this.P, null, dVar4.getParentActivity(), dVar4));
+                org.telegram.ui.ActionBar.e eVar4 = (org.telegram.ui.ActionBar.e) c00.g(1, this.e0);
+                if (eVar4.getParentActivity() != null) {
+                    eVar4.showDialog(new l46(((Integer) objArr[0]).intValue(), this.P, null, eVar4.getParentActivity(), eVar4));
                     return;
                 }
                 return;
             }
-            if (i == kk7.h5) {
-                na7.q1(this.P).X3.edit().remove("transcribeButtonPressed").apply();
+            if (i == jn7.i5) {
+                uc7.s1(this.P).X3.edit().remove("transcribeButtonPressed").apply();
                 return;
             }
-            if (i == kk7.p5) {
+            if (i == jn7.q5) {
                 int intValue3 = ((Integer) objArr[0]).intValue();
-                String[] strArr = (intValue3 != 0 || Build.VERSION.SDK_INT < 31) ? null : new String[]{"android.permission.BLUETOOTH_CONNECT"};
+                if (intValue3 != 0 || Build.VERSION.SDK_INT < 31) {
+                    i3 = 1;
+                    strArr = null;
+                } else {
+                    i3 = 1;
+                    strArr = new String[]{"android.permission.BLUETOOTH_CONNECT"};
+                }
                 if (strArr != null) {
-                    int i8 = this.c1 + 1;
-                    this.c1 = i8;
-                    this.b1.put(i8, intValue3);
-                    n9.v(this, strArr, this.c1);
+                    int i9 = this.c1 + i3;
+                    this.c1 = i9;
+                    this.b1.put(i9, intValue3);
+                    o9.v(this, strArr, this.c1);
                     return;
                 }
                 return;
             }
-            if (i == kk7.t5) {
+            if (i == jn7.u5) {
                 long longValue = ((Long) objArr[0]).longValue();
                 if (((Boolean) objArr[1]).booleanValue()) {
-                    mm4.r(longValue, this.p0);
+                    ro4.r(longValue, this.p0);
                     return;
                 }
                 return;
             }
-            if (i == kk7.O5) {
+            if (i == jn7.P5) {
                 if (this.u1 == null) {
                     TLParseException tLParseException = (TLParseException) objArr[0];
                     StringBuilder sb = new StringBuilder();
                     sb.append(tLParseException.getMessage());
                     sb.append("\n\n");
-                    sb.append(gl.C0());
+                    sb.append(hl.C0());
                     StringBuilder sb2 = new StringBuilder();
                     StringWriter stringWriter = new StringWriter();
                     tLParseException.printStackTrace(new PrintWriter(stringWriter));
-                    sb2.append(gl.C0());
+                    sb2.append(hl.C0());
                     sb2.append("\n\n");
                     sb2.append(stringWriter);
                     AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(this, null);
                     alertDialog$Builder4.k("TL Error");
                     alertDialog$Builder4.f(sb);
-                    alertDialog$Builder4.g(k96.L0(2131751755), new ry4((Object) sb2, (byte) 21));
-                    alertDialog$Builder4.j(k96.L0(2131747638), null);
-                    alertDialog$Builder4.i(new ly5(this, b));
-                    hd o = alertDialog$Builder4.o();
+                    alertDialog$Builder4.g(ob6.L0(2131751732), new e05((Object) sb2, (byte) 23));
+                    alertDialog$Builder4.j(ob6.L0(2131747558), null);
+                    alertDialog$Builder4.i(new l06(this, (byte) 1));
+                    id o = alertDialog$Builder4.o();
                     this.u1 = o;
                     o.setCanceledOnTouchOutside(true);
                     return;
                 }
                 return;
             }
-            if (i != kk7.P5) {
-                if (i == kk7.S5) {
+            if (i != jn7.Q5) {
+                if (i == jn7.T5) {
                     aq0 aq0Var = (aq0) objArr[0];
-                    org.telegram.ui.ActionBar.d Q = Q();
-                    u21 b0 = Q instanceof mu1 ? u21.b0(Q) : u21.Y();
-                    String r = cf3.r(this.P, aq0Var.a);
+                    org.telegram.ui.ActionBar.e Q = Q();
+                    d31 b0 = Q instanceof zu1 ? d31.b0(Q) : d31.Y();
+                    String r = wf3.r(this.P, aq0Var.a);
                     TLRPC.JoinChatBotResult joinChatBotResult = aq0Var.b;
-                    gl.d3(new hb5(this, joinChatBotResult instanceof TLRPC.TL_joinChatBotResultApproved ? b0.H(R.raw.contact_check, gl.S2(k96.Z(2131749182, r))) : joinChatBotResult instanceof TLRPC.TL_joinChatBotResultDeclined ? b0.H(R.raw.e_hand_2, gl.S2(k96.Z(2131749181, r))) : joinChatBotResult instanceof TLRPC.TL_joinChatBotResultQueued ? b0.Q(R.raw.timer_toast, 24, gl.S2(k96.Z(2131749180, r))) : null, b3), 400L);
+                    hl.d3(new tg5(this, joinChatBotResult instanceof TLRPC.TL_joinChatBotResultApproved ? b0.H(R.raw.contact_check, hl.S2(ob6.Z(2131749128, r))) : joinChatBotResult instanceof TLRPC.TL_joinChatBotResultDeclined ? b0.H(R.raw.e_hand_2, hl.S2(ob6.Z(2131749127, r))) : joinChatBotResult instanceof TLRPC.TL_joinChatBotResultQueued ? b0.Q(R.raw.timer_toast, 24, hl.S2(ob6.Z(2131749126, r))) : null, (byte) 20), 400L);
                     return;
                 }
                 return;
@@ -4294,13 +4317,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 sb3.append('\n');
                 sb3.append(intValue4);
                 sb3.append('\n');
-                sb3.append(gl.C0());
+                sb3.append(hl.C0());
                 AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(this, null);
                 alertDialog$Builder5.k("Memory Leak Found");
                 alertDialog$Builder5.f(sb3);
-                alertDialog$Builder5.j(k96.L0(2131747638), null);
-                alertDialog$Builder5.i(new ly5(this, b2));
-                hd o2 = alertDialog$Builder5.o();
+                alertDialog$Builder5.j(ob6.L0(2131747558), null);
+                alertDialog$Builder5.i(new l06(this, b3));
+                id o2 = alertDialog$Builder5.o();
                 this.v1 = o2;
                 o2.setCanceledOnTouchOutside(true);
                 return;
@@ -4308,28 +4331,31 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             return;
         }
         if (objArr[2] == null || this.n0.getVisibility() == 0) {
-            c = 3;
+            c2 = 3;
+            boolean z5 = true;
+            z = z5;
             if (objArr[2] == null) {
-                c2 = 0;
-                cj3.C4 = false;
-                akb akbVar = (akb) objArr[c2];
-                boolean booleanValue4 = ((Boolean) objArr[1]).booleanValue();
-                int intValue5 = ((Integer) objArr[c]).intValue();
-                Runnable runnable2 = objArr.length > 7 ? (Runnable) objArr[7] : null;
+                c3 = 0;
+                uj3.E4 = false;
+                r15 = z5;
+                znb znbVar = (znb) objArr[c3];
+                boolean booleanValue3 = ((Boolean) objArr[r15]).booleanValue();
+                int intValue5 = ((Integer) objArr[c2]).intValue();
+                Runnable runnable2 = objArr.length <= 7 ? (Runnable) objArr[7] : null;
                 actionBarLayout = this.p0;
-                if (actionBarLayout != null) {
-                    actionBarLayout.e(new ti5(akbVar, intValue5, booleanValue4, true), runnable2);
-                    if (gl.O1()) {
+                if (actionBarLayout == null) {
+                    actionBarLayout.e(new vk5(znbVar, intValue5, booleanValue3, r15), runnable2);
+                    if (hl.O1()) {
                         ActionBarLayout actionBarLayout3 = this.q0;
                         if (actionBarLayout3 != null) {
                             runnable = null;
-                            actionBarLayout3.e(new ti5(akbVar, intValue5, booleanValue4, true), null);
+                            actionBarLayout3.e(new vk5(znbVar, intValue5, booleanValue3, r15), null);
                         } else {
                             runnable = null;
                         }
                         ActionBarLayout actionBarLayout4 = this.r0;
                         if (actionBarLayout4 != null) {
-                            actionBarLayout4.e(new ti5(akbVar, intValue5, booleanValue4, true), runnable);
+                            actionBarLayout4.e(new vk5(znbVar, intValue5, booleanValue3, r15), runnable);
                             return;
                         }
                         return;
@@ -4340,14 +4366,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
         } else {
             try {
-                iArr = (int[]) objArr[2];
-                booleanValue = ((Boolean) objArr[4]).booleanValue();
-                ry8Var = (ry8) objArr[5];
+                int[] iArr = (int[]) objArr[2];
+                boolean booleanValue4 = ((Boolean) objArr[4]).booleanValue();
+                e29 e29Var = (e29) objArr[5];
                 if (objArr.length > 8) {
                     ((Boolean) objArr[8]).getClass();
                 }
-                measuredWidth = this.y0.getMeasuredWidth();
-                measuredHeight = this.y0.getMeasuredHeight();
+                int measuredWidth = this.y0.getMeasuredWidth();
+                int measuredHeight = this.y0.getMeasuredHeight();
                 this.F0 = null;
                 if (objArr.length > 6) {
                     this.F0 = (View) objArr[6];
@@ -4358,180 +4384,210 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 if (view2 != null && view2.getBackground() != null) {
                     this.F0.getBackground().setAlpha(0);
                 }
-            } catch (Throwable th) {
-                th = th;
-                c = 3;
-            }
-            try {
-                if (Build.VERSION.SDK_INT >= 26) {
-                    bitmap = gl.A0(getWindow());
-                    if (bitmap != null) {
-                        z = true;
-                        if (bitmap == null) {
-                            bitmap = gl.H3(this.y0);
-                        }
-                        if (bitmap != null && ry8Var != null) {
-                            umb.a(bitmap, !z ? null : this.y0, ry8Var);
-                        }
-                        view = this.F0;
-                        if (view != null && view.getBackground() != null) {
-                            this.F0.getBackground().setAlpha(kk7.d4);
-                        }
-                        this.v0.removeView(this.n0);
-                        this.n0 = new umb(this);
-                        oy8 animatedDrawable = ry8Var == null ? ry8Var.getAnimatedDrawable() : null;
-                        c = 3;
-                        this.v0.addView(this.n0, 1, nme.c(-1.0f, -1));
-                        this.o0.setVisibility(8);
-                        if (ry8Var != null) {
-                            umb umbVar = this.n0;
-                            ColorFilter colorFilter = animatedDrawable != null ? animatedDrawable.getColorFilter() : null;
-                            umbVar.n = ry8Var;
-                            umbVar.r = colorFilter;
-                        }
-                        this.n0.setImageBitmap(bitmap);
-                        this.n0.setVisibility(0);
-                        int i9 = measuredWidth - iArr[0];
-                        int i10 = measuredHeight - iArr[1];
-                        double sqrt = Math.sqrt((i10 * i10) + (i9 * i9));
-                        int i11 = iArr[0];
-                        int i12 = measuredHeight - iArr[1];
-                        float max = (float) Math.max(sqrt, Math.sqrt((i12 * i12) + (i11 * i11)));
-                        int i13 = measuredWidth - iArr[0];
-                        int i14 = iArr[1];
-                        double sqrt2 = Math.sqrt((i14 * i14) + (i13 * i13));
-                        int i15 = iArr[0];
-                        int i16 = iArr[1];
-                        float max2 = Math.max(max, (float) Math.max(sqrt2, Math.sqrt((i16 * i16) + (i15 * i15))));
-                        this.n0.b(iArr[0], iArr[1], booleanValue);
-                        float f = max2 / 0.6f;
-                        umb umbVar2 = this.n0;
-                        ax1 ax1Var = umb.x;
-                        float f2 = 0.0f;
-                        if (!booleanValue) {
-                            f2 = f;
-                            f = 0.0f;
-                        }
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(umbVar2, ax1Var, f2, f);
-                        ofFloat.setDuration(450L);
-                        ofFloat.setInterpolator(ls3.e);
-                        ofFloat.addListener(new i8(this, ry8Var, animatedDrawable, (byte) 8));
-                        if (this.F0 != null) {
-                            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                            ofFloat2.addUpdateListener(new tx5(this, (byte) 0));
-                            ofFloat2.setDuration(ofFloat.getDuration());
-                            ofFloat2.start();
-                        }
-                        gl.d3(new rx5(this, b), !booleanValue ? (measuredHeight - iArr[1]) / gl.L(2.25f) : 50L);
-                        ofFloat.start();
-                    }
-                } else {
-                    bitmap = null;
-                }
-                this.v0.addView(this.n0, 1, nme.c(-1.0f, -1));
-                this.o0.setVisibility(8);
-                if (ry8Var != null) {
-                }
-                this.n0.setImageBitmap(bitmap);
-                this.n0.setVisibility(0);
-                int i92 = measuredWidth - iArr[0];
-                int i102 = measuredHeight - iArr[1];
-                double sqrt3 = Math.sqrt((i102 * i102) + (i92 * i92));
-                int i112 = iArr[0];
-                int i122 = measuredHeight - iArr[1];
-                float max3 = (float) Math.max(sqrt3, Math.sqrt((i122 * i122) + (i112 * i112)));
-                int i132 = measuredWidth - iArr[0];
-                int i142 = iArr[1];
-                double sqrt22 = Math.sqrt((i142 * i142) + (i132 * i132));
-                int i152 = iArr[0];
-                int i162 = iArr[1];
-                float max22 = Math.max(max3, (float) Math.max(sqrt22, Math.sqrt((i162 * i162) + (i152 * i152))));
-                this.n0.b(iArr[0], iArr[1], booleanValue);
-                float f3 = max22 / 0.6f;
-                umb umbVar22 = this.n0;
-                ax1 ax1Var2 = umb.x;
-                float f22 = 0.0f;
-                if (!booleanValue) {
-                }
-                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(umbVar22, ax1Var2, f22, f3);
-                ofFloat3.setDuration(450L);
-                ofFloat3.setInterpolator(ls3.e);
-                ofFloat3.addListener(new i8(this, ry8Var, animatedDrawable, (byte) 8));
-                if (this.F0 != null) {
-                }
-                gl.d3(new rx5(this, b), !booleanValue ? (measuredHeight - iArr[1]) / gl.L(2.25f) : 50L);
-                ofFloat3.start();
-            } catch (Throwable th2) {
-                th = th2;
-                fa4.f(th);
                 try {
+                    try {
+                        if (Build.VERSION.SDK_INT >= 26) {
+                            bitmap = hl.A0(getWindow());
+                            if (bitmap != null) {
+                                z3 = true;
+                                if (bitmap == null) {
+                                    bitmap = hl.H3(this.y0);
+                                }
+                                if (bitmap != null && e29Var != null) {
+                                    tqb.a(bitmap, !z3 ? null : this.y0, e29Var);
+                                }
+                                view = this.F0;
+                                if (view != null && view.getBackground() != null) {
+                                    this.F0.getBackground().setAlpha(jn7.d4);
+                                }
+                                this.v0.removeView(this.n0);
+                                this.n0 = new tqb(this);
+                                b29 animatedDrawable = e29Var == null ? e29Var.getAnimatedDrawable() : null;
+                                c2 = 3;
+                                this.v0.addView(this.n0, 1, tre.c(-1.0f, -1));
+                                this.o0.setVisibility(8);
+                                if (e29Var != null) {
+                                    tqb tqbVar = this.n0;
+                                    ColorFilter colorFilter = animatedDrawable != null ? animatedDrawable.getColorFilter() : null;
+                                    tqbVar.n = e29Var;
+                                    tqbVar.r = colorFilter;
+                                }
+                                this.n0.setImageBitmap(bitmap);
+                                this.n0.setVisibility(0);
+                                int i10 = measuredWidth - iArr[0];
+                                int i11 = measuredHeight - iArr[1];
+                                double sqrt = Math.sqrt((i11 * i11) + (i10 * i10));
+                                int i12 = iArr[0];
+                                int i13 = i12 * i12;
+                                int i14 = measuredHeight - iArr[1];
+                                z2 = true;
+                                float max = (float) Math.max(sqrt, Math.sqrt((i14 * i14) + i13));
+                                int i15 = measuredWidth - iArr[0];
+                                int i16 = iArr[1];
+                                double sqrt2 = Math.sqrt((i16 * i16) + (i15 * i15));
+                                int i17 = iArr[0];
+                                int i18 = iArr[1];
+                                float max2 = Math.max(max, (float) Math.max(sqrt2, Math.sqrt((i18 * i18) + (i17 * i17))));
+                                this.n0.b(iArr[0], iArr[1], booleanValue4);
+                                float f = max2 / 0.6f;
+                                tqb tqbVar2 = this.n0;
+                                px1 px1Var = tqb.x;
+                                float f2 = 0.0f;
+                                if (!booleanValue4) {
+                                    f2 = f;
+                                    f = 0.0f;
+                                }
+                                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(tqbVar2, px1Var, f2, f);
+                                ofFloat.setDuration(450L);
+                                ofFloat.setInterpolator(dt3.e);
+                                ofFloat.addListener(new j8(this, e29Var, animatedDrawable, b5));
+                                if (this.F0 != null) {
+                                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+                                    ofFloat2.addUpdateListener(new h16(this, (byte) 0));
+                                    ofFloat2.setDuration(ofFloat.getDuration());
+                                    ofFloat2.start();
+                                }
+                                hl.d3(new sz5(this, (byte) 6), !booleanValue4 ? (measuredHeight - iArr[1]) / hl.L(2.25f) : 50L);
+                                ofFloat.start();
+                                z = z2;
+                            }
+                        } else {
+                            bitmap = null;
+                        }
+                        float max3 = (float) Math.max(sqrt, Math.sqrt((i14 * i14) + i13));
+                        int i152 = measuredWidth - iArr[0];
+                        int i162 = iArr[1];
+                        double sqrt22 = Math.sqrt((i162 * i162) + (i152 * i152));
+                        int i172 = iArr[0];
+                        int i182 = iArr[1];
+                        float max22 = Math.max(max3, (float) Math.max(sqrt22, Math.sqrt((i182 * i182) + (i172 * i172))));
+                        this.n0.b(iArr[0], iArr[1], booleanValue4);
+                        float f3 = max22 / 0.6f;
+                        tqb tqbVar22 = this.n0;
+                        px1 px1Var2 = tqb.x;
+                        float f22 = 0.0f;
+                        if (!booleanValue4) {
+                        }
+                        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(tqbVar22, px1Var2, f22, f3);
+                        ofFloat3.setDuration(450L);
+                        ofFloat3.setInterpolator(dt3.e);
+                        ofFloat3.addListener(new j8(this, e29Var, animatedDrawable, b5));
+                        if (this.F0 != null) {
+                        }
+                        hl.d3(new sz5(this, (byte) 6), !booleanValue4 ? (measuredHeight - iArr[1]) / hl.L(2.25f) : 50L);
+                        ofFloat3.start();
+                        z = z2;
+                    } catch (Throwable th) {
+                        th = th;
+                        cc4.f(th);
+                        try {
+                            this.n0.setImageDrawable(null);
+                            this.v0.removeView(this.n0);
+                            uj3.E4 = false;
+                            z = z2;
+                        } catch (Exception e) {
+                            cc4.f(e);
+                            z = z2;
+                        }
+                        c3 = 0;
+                        r15 = z;
+                        znb znbVar2 = (znb) objArr[c3];
+                        boolean booleanValue32 = ((Boolean) objArr[r15]).booleanValue();
+                        int intValue52 = ((Integer) objArr[c2]).intValue();
+                        if (objArr.length <= 7) {
+                        }
+                        actionBarLayout = this.p0;
+                        if (actionBarLayout == null) {
+                        }
+                    }
+                    this.v0.addView(this.n0, 1, tre.c(-1.0f, -1));
+                    this.o0.setVisibility(8);
+                    if (e29Var != null) {
+                    }
+                    this.n0.setImageBitmap(bitmap);
+                    this.n0.setVisibility(0);
+                    int i102 = measuredWidth - iArr[0];
+                    int i112 = measuredHeight - iArr[1];
+                    double sqrt3 = Math.sqrt((i112 * i112) + (i102 * i102));
+                    int i122 = iArr[0];
+                    int i132 = i122 * i122;
+                    int i142 = measuredHeight - iArr[1];
+                    z2 = true;
+                } catch (Throwable th2) {
+                    th = th2;
+                    z2 = true;
+                    cc4.f(th);
                     this.n0.setImageDrawable(null);
                     this.v0.removeView(this.n0);
-                    cj3.C4 = false;
-                } catch (Exception e) {
-                    fa4.f(e);
+                    uj3.E4 = false;
+                    z = z2;
+                    c3 = 0;
+                    r15 = z;
+                    znb znbVar22 = (znb) objArr[c3];
+                    boolean booleanValue322 = ((Boolean) objArr[r15]).booleanValue();
+                    int intValue522 = ((Integer) objArr[c2]).intValue();
+                    if (objArr.length <= 7) {
+                    }
+                    actionBarLayout = this.p0;
+                    if (actionBarLayout == null) {
+                    }
                 }
-                c2 = 0;
-                akb akbVar2 = (akb) objArr[c2];
-                boolean booleanValue42 = ((Boolean) objArr[1]).booleanValue();
-                int intValue52 = ((Integer) objArr[c]).intValue();
-                if (objArr.length > 7) {
+                z3 = false;
+                if (bitmap == null) {
                 }
-                actionBarLayout = this.p0;
-                if (actionBarLayout != null) {
+                if (bitmap != null) {
+                    tqb.a(bitmap, !z3 ? null : this.y0, e29Var);
                 }
+                view = this.F0;
+                if (view != null) {
+                    this.F0.getBackground().setAlpha(jn7.d4);
+                }
+                this.v0.removeView(this.n0);
+                this.n0 = new tqb(this);
+                if (e29Var == null) {
+                }
+                c2 = 3;
+            } catch (Throwable th3) {
+                th = th3;
+                c2 = 3;
             }
-            z = false;
-            if (bitmap == null) {
-            }
-            if (bitmap != null) {
-                umb.a(bitmap, !z ? null : this.y0, ry8Var);
-            }
-            view = this.F0;
-            if (view != null) {
-                this.F0.getBackground().setAlpha(kk7.d4);
-            }
-            this.v0.removeView(this.n0);
-            this.n0 = new umb(this);
-            if (ry8Var == null) {
-            }
-            c = 3;
         }
-        c2 = 0;
-        akb akbVar22 = (akb) objArr[c2];
-        boolean booleanValue422 = ((Boolean) objArr[1]).booleanValue();
-        int intValue522 = ((Integer) objArr[c]).intValue();
-        if (objArr.length > 7) {
+        c3 = 0;
+        r15 = z;
+        znb znbVar222 = (znb) objArr[c3];
+        boolean booleanValue3222 = ((Boolean) objArr[r15]).booleanValue();
+        int intValue5222 = ((Integer) objArr[c2]).intValue();
+        if (objArr.length <= 7) {
         }
         actionBarLayout = this.p0;
-        if (actionBarLayout != null) {
+        if (actionBarLayout == null) {
         }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x00e3, code lost:
     
-        if (((mu1) r0).R9() != false) goto L62;
+        if (((zu1) r0).ca() != false) goto L62;
      */
-    @Override // vp2, android.app.Activity, android.view.Window.Callback
+    @Override // oq2, android.app.Activity, android.view.Window.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.d Q;
+        org.telegram.ui.ActionBar.e Q;
         keyEvent.getKeyCode();
         if ((keyEvent.getKeyCode() != 24 && keyEvent.getKeyCode() != 25) || (Q = Q()) == null || Q.getLastStoryViewer() == null) {
             if (keyEvent.getAction() == 0 && (keyEvent.getKeyCode() == 24 || keyEvent.getKeyCode() == 25)) {
                 if (VoIPService.getSharedInstance() == null) {
                     ArrayList arrayList = this.e0;
-                    if (!arrayList.isEmpty() && ((!PhotoViewer.C0() || !PhotoViewer.r0().V0()) && keyEvent.getRepeatCount() == 0)) {
-                        org.telegram.ui.ActionBar.d dVar = (org.telegram.ui.ActionBar.d) b00.f(1, arrayList);
-                        if (!(dVar instanceof mu1) || org.telegram.ui.ActionBar.d.hasSheets(dVar) || !((mu1) dVar).R9()) {
-                            if (gl.O1()) {
+                    if (!arrayList.isEmpty() && ((!PhotoViewer.C0() || !PhotoViewer.q0().V0()) && keyEvent.getRepeatCount() == 0)) {
+                        org.telegram.ui.ActionBar.e eVar = (org.telegram.ui.ActionBar.e) c00.g(1, arrayList);
+                        if (!(eVar instanceof zu1) || org.telegram.ui.ActionBar.e.hasSheets(eVar) || !((zu1) eVar).ca()) {
+                            if (hl.O1()) {
                                 ArrayList arrayList2 = this.g0;
                                 if (!arrayList2.isEmpty()) {
-                                    org.telegram.ui.ActionBar.d dVar2 = (org.telegram.ui.ActionBar.d) b00.f(1, arrayList2);
-                                    if (dVar2 instanceof mu1) {
-                                        if (!org.telegram.ui.ActionBar.d.hasSheets(dVar2)) {
+                                    org.telegram.ui.ActionBar.e eVar2 = (org.telegram.ui.ActionBar.e) c00.g(1, arrayList2);
+                                    if (eVar2 instanceof zu1) {
+                                        if (!org.telegram.ui.ActionBar.e.hasSheets(eVar2)) {
                                         }
                                     }
                                 }
@@ -4539,11 +4595,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         }
                     }
                 } else if (Build.VERSION.SDK_INT >= 32) {
-                    boolean isSpeakerMuted = WebRtcAudioTrack.isSpeakerMuted();
+                    boolean isSpeakerMuted = CallAudioDevice.isSpeakerMuted();
                     AudioManager audioManager = (AudioManager) getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
                     boolean z = audioManager.getStreamVolume(0) == audioManager.getStreamMinVolume(0) && keyEvent.getKeyCode() == 25;
-                    WebRtcAudioTrack.setSpeakerMute(z);
-                    if (isSpeakerMuted != WebRtcAudioTrack.isSpeakerMuted()) {
+                    CallAudioDevice.setSpeakerMute(z);
+                    if (isSpeakerMuted != CallAudioDevice.isSpeakerMuted()) {
                         M0(z ? 42 : 43);
                     }
                 }
@@ -4551,11 +4607,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             try {
                 return super.dispatchKeyEvent(keyEvent);
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
                 return false;
             }
         }
-        m8b lastStoryViewer = Q.getLastStoryViewer();
+        lcb lastStoryViewer = Q.getLastStoryViewer();
         lastStoryViewer.getClass();
         if (keyEvent.getKeyCode() == 24 || keyEvent.getKeyCode() == 25) {
             lastStoryViewer.r(keyEvent);
@@ -4566,80 +4622,80 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     public final void e0() {
         HashSet hashSet;
-        ez3 ez3Var = this.Z0;
-        if (ez3Var != null) {
-            gl.r(ez3Var);
+        zz3 zz3Var = this.Z0;
+        if (zz3Var != null) {
+            hl.r(zz3Var);
             this.Z0 = null;
         }
         if (this.R) {
             return;
         }
         this.R = true;
-        wtc wtcVar = this.m1;
-        if (wtcVar != null) {
-            wtcVar.a();
+        u8a u8aVar = this.m1;
+        if (u8aVar != null) {
+            u8aVar.a();
             this.m1 = null;
         }
-        wtc wtcVar2 = this.n1;
-        if (wtcVar2 != null) {
-            wtcVar2.a();
+        u8a u8aVar2 = this.n1;
+        if (u8aVar2 != null) {
+            u8aVar2.a();
             this.n1 = null;
         }
-        bz5 bz5Var = this.p1;
-        if (bz5Var == null || (hashSet = e66.n) == null) {
+        j16 j16Var = this.p1;
+        if (j16Var == null || (hashSet = i86.n) == null) {
             return;
         }
-        hashSet.remove(bz5Var);
+        hashSet.remove(j16Var);
     }
 
-    public final void f0(Intent intent, c01 c01Var) {
+    public final void f0(Intent intent, l01 l01Var) {
         super.onNewIntent(intent);
         Z();
-        F();
-        V(intent, true, false, false, c01Var, true, false);
+        G();
+        V(intent, true, false, false, l01Var, true, false);
     }
 
     public final void g0() {
         if (this.Z0 != null) {
-            if (w01.a) {
-                fa4.b("cancel lockRunnable onPasscodePause");
+            if (f11.a) {
+                cc4.b("cancel lockRunnable onPasscodePause");
             }
-            gl.r(this.Z0);
+            hl.r(this.Z0);
             this.Z0 = null;
         }
-        if (gba.r.length() != 0) {
-            gba.A = (int) (SystemClock.elapsedRealtime() / 1000);
-            ez3 ez3Var = new ez3(this, (byte) 19);
-            this.Z0 = ez3Var;
-            if (gba.w) {
-                gl.d3(ez3Var, 1000L);
-                if (w01.a) {
-                    fa4.b("schedule app lock in 1000");
+        if (xea.r.length() != 0) {
+            xea.A = (int) (SystemClock.elapsedRealtime() / 1000);
+            zz3 zz3Var = new zz3(this, (byte) 19);
+            this.Z0 = zz3Var;
+            if (xea.w) {
+                hl.d3(zz3Var, 1000L);
+                if (f11.a) {
+                    cc4.b("schedule app lock in 1000");
                 }
-            } else if (gba.x != 0) {
-                if (w01.a) {
-                    fa4.b("schedule app lock in " + ((gba.x * 1000) + 1000));
+            } else if (xea.x != 0) {
+                if (f11.a) {
+                    cc4.b("schedule app lock in " + ((xea.x * 1000) + 1000));
                 }
-                gl.d3(this.Z0, (gba.x * 1000) + 1000);
+                hl.d3(this.Z0, (xea.x * 1000) + 1000);
             }
         } else {
-            gba.A = 0;
+            xea.A = 0;
         }
-        gba.x();
+        xea.x();
     }
 
-    @Override // qi5
-    public final boolean h(org.telegram.ui.ActionBar.d dVar, ActionBarLayout actionBarLayout) {
-        if (gl.O1()) {
-            boolean z = dVar instanceof cj3;
-            if (z || (dVar instanceof ah6)) {
+    @Override // sk5
+    public final boolean h(org.telegram.ui.ActionBar.e eVar, ActionBarLayout actionBarLayout) {
+        if (hl.O1()) {
+            boolean z = eVar instanceof uj3;
+            if (z || (eVar instanceof fj6)) {
                 boolean z2 = actionBarLayout != this.p0;
-                if (z2 && z && !((cj3) dVar).H3()) {
+                if (z2 && z && !((uj3) eVar).J3()) {
                     z2 = false;
                 }
                 if (z2) {
                     this.p0.Z();
-                    this.p0.b(-1, dVar);
+                    this.p0.b(-1, eVar);
                     this.q0.Z();
                     this.q0.getView().setVisibility(8);
                     if (!this.N0 && this.r0.getFragmentStack().isEmpty()) {
@@ -4647,7 +4703,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                     return false;
                 }
-            } else if (!(dVar instanceof mu1) || ((mu1) dVar).P7()) {
+            } else if (!(eVar instanceof zu1) || ((zu1) eVar).X7()) {
                 ActionBarLayout actionBarLayout2 = this.q0;
                 if (actionBarLayout != actionBarLayout2) {
                     actionBarLayout2.getView().setVisibility(0);
@@ -4657,24 +4713,24 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             i = -1;
                             break;
                         }
-                        if (y6c.h(i).o()) {
+                        if (yac.h(i).o()) {
                             break;
                         }
                         i++;
                     }
-                    if ((dVar instanceof mf6) && i == -1) {
+                    if ((eVar instanceof qh6) && i == -1) {
                         this.u0.setVisibility(0);
                         this.t0.setBackgroundColor(0);
                     } else {
                         this.t0.setBackgroundColor(2130706432);
                     }
-                    this.q0.b(-1, dVar);
+                    this.q0.b(-1, eVar);
                     return false;
                 }
             } else if (this.N0) {
                 ActionBarLayout actionBarLayout3 = this.p0;
                 if (actionBarLayout != actionBarLayout3) {
-                    actionBarLayout3.b(-1, dVar);
+                    actionBarLayout3.b(-1, eVar);
                     if (!this.q0.getFragmentStack().isEmpty()) {
                         while (true) {
                             int size = this.q0.getFragmentStack().size() - 1;
@@ -4694,7 +4750,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     actionBarLayout5.getView().setVisibility(0);
                     this.u0.setVisibility(8);
                     this.r0.Z();
-                    this.r0.b(-1, dVar);
+                    this.r0.b(-1, eVar);
                     if (!this.q0.getFragmentStack().isEmpty()) {
                         while (true) {
                             int size2 = this.q0.getFragmentStack().size() - 1;
@@ -4715,29 +4771,29 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     public final void h0() {
         if (this.Z0 != null) {
-            if (w01.a) {
-                fa4.b("cancel lockRunnable onPasscodeResume");
+            if (f11.a) {
+                cc4.b("cancel lockRunnable onPasscodeResume");
             }
-            gl.r(this.Z0);
+            hl.r(this.Z0);
             this.Z0 = null;
         }
-        if (gl.n2(true)) {
+        if (hl.n2(true)) {
             K0(true, false, -1, -1, null);
         }
-        if (gba.A != 0) {
-            gba.A = 0;
-            gba.x();
-            if (w01.a) {
-                fa4.b("reset lastPauseTime onPasscodeResume");
+        if (xea.A != 0) {
+            xea.A = 0;
+            xea.x();
+            if (f11.a) {
+                cc4.b("reset lastPauseTime onPasscodeResume");
             }
         }
     }
 
     public final void i0() {
-        hd hdVar = this.V0;
-        if (hdVar != null) {
+        id idVar = this.V0;
+        if (idVar != null) {
             try {
-                hdVar.dismiss();
+                idVar.dismiss();
             } finally {
                 this.V0 = null;
             }
@@ -4749,14 +4805,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         this.T0 = null;
     }
 
-    @Override // qi5
+    @Override // sk5
     public final boolean j() {
         if (SecretMediaViewer.e() && SecretMediaViewer.d().s) {
             SecretMediaViewer.d().c(true, false);
             return true;
         }
-        if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-            PhotoViewer.r0().B(true, false);
+        if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+            PhotoViewer.q0().A(true, false);
             return true;
         }
         if (!o.F() || !o.u().W) {
@@ -4783,65 +4839,65 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         bundle.putBoolean("allowSwitchAccount", true);
         ArrayList arrayList2 = this.b0;
         if (arrayList2 == null) {
-            bundle.putString("selectAlertString", k96.M0(2131745401, null));
-            bundle.putString("selectAlertStringGroup", k96.M0(2131745402, null));
+            bundle.putString("selectAlertString", ob6.M0(2131745321, null));
+            bundle.putString("selectAlertStringGroup", ob6.M0(2131745322, null));
         } else if (arrayList2.size() != 1) {
-            bundle.putString("selectAlertString", k96.M0(2131745401, null));
-            bundle.putString("selectAlertStringGroup", k96.M0(2131745439, null));
+            bundle.putString("selectAlertString", ob6.M0(2131745321, null));
+            bundle.putString("selectAlertStringGroup", ob6.M0(2131745359, null));
         }
-        cj3 cj3Var = new cj3(bundle);
-        cj3Var.E2 = this;
+        uj3 uj3Var = new uj3(bundle);
+        uj3Var.E2 = this;
         if (this.S != null || ((arrayList = this.V) != null && !arrayList.isEmpty())) {
             ArrayList arrayList3 = new ArrayList();
             ArrayList arrayList4 = this.V;
             if (arrayList4 != null && !arrayList4.isEmpty()) {
-                arrayList3.addAll(mu1.O5(this.V, false, null));
+                arrayList3.addAll(zu1.V5(this.V, false, null));
             }
             String str2 = this.S;
             if (str2 != null) {
-                arrayList3.add(new jm6(0, str2, 0, true, 0, 0));
+                arrayList3.add(new no6(0, str2, 0, true, 0, 0));
             }
             if (!arrayList3.isEmpty()) {
                 if (!TextUtils.isEmpty(this.U)) {
-                    ((jm6) arrayList3.get(0)).a = this.U;
+                    ((no6) arrayList3.get(0)).a = this.U;
                 }
                 CharSequence charSequence = this.U;
                 if (arrayList3.isEmpty()) {
-                    cj3Var.F2 = null;
+                    uj3Var.F2 = null;
                 } else {
-                    cj3Var.F2 = arrayList3;
-                    cj3Var.G2 = null;
-                    cj3Var.O2 = false;
-                    if (cj3Var.D1 != null) {
-                        cj3Var.B2(charSequence);
+                    uj3Var.F2 = arrayList3;
+                    uj3Var.G2 = null;
+                    uj3Var.O2 = false;
+                    if (uj3Var.D1 != null) {
+                        uj3Var.D2(charSequence);
                     } else {
-                        cj3Var.Z3 = charSequence;
+                        uj3Var.b4 = charSequence;
                     }
                 }
             }
         } else if (!TextUtils.isEmpty(this.U)) {
             CharSequence charSequence2 = this.U;
-            int i = bba.J;
+            int i = sea.J;
             if (charSequence2 != null && charSequence2.length() != 0) {
                 try {
-                    matcher = gl.S.matcher(charSequence2);
+                    matcher = hl.S.matcher(charSequence2);
                 } catch (Exception unused) {
                 }
                 if (matcher.find()) {
                     str = charSequence2.subSequence(matcher.start(), matcher.end()).toString();
                     CharSequence charSequence3 = this.U;
                     if (str == null) {
-                        cj3Var.U4(charSequence3, str);
+                        uj3Var.Y4(charSequence3, str);
                     } else if (charSequence3 == null || charSequence3.length() == 0) {
-                        cj3Var.H2 = null;
+                        uj3Var.H2 = null;
                     } else {
-                        cj3Var.H2 = charSequence3;
-                        cj3Var.G2 = null;
-                        cj3Var.F2 = null;
-                        if (cj3Var.D1 != null) {
-                            cj3Var.B2(charSequence3);
+                        uj3Var.H2 = charSequence3;
+                        uj3Var.G2 = null;
+                        uj3Var.F2 = null;
+                        if (uj3Var.D1 != null) {
+                            uj3Var.D2(charSequence3);
                         } else {
-                            cj3Var.Z3 = charSequence3;
+                            uj3Var.b4 = charSequence3;
                         }
                     }
                 }
@@ -4851,33 +4907,33 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             if (str == null) {
             }
         }
-        ((ActionBarLayout) N()).U(cj3Var, !gl.O1() || (actionBarLayout = this.q0) == null ? !(this.p0.getFragmentStack().size() <= 1 || !(this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1) instanceof ah6)) : !(actionBarLayout.getFragmentStack().isEmpty() || !(this.q0.getFragmentStack().get(this.q0.getFragmentStack().size() - 1) instanceof ah6)), !z);
+        ((ActionBarLayout) N()).U(uj3Var, !hl.O1() || (actionBarLayout = this.q0) == null ? !(this.p0.getFragmentStack().size() <= 1 || !(this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1) instanceof fj6)) : !(actionBarLayout.getFragmentStack().isEmpty() || !(this.q0.getFragmentStack().get(this.q0.getFragmentStack().size() - 1) instanceof fj6)), !z);
         if (SecretMediaViewer.e() && SecretMediaViewer.d().s) {
             SecretMediaViewer.d().c(false, false);
-        } else if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-            PhotoViewer.r0().B(false, true);
+        } else if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+            PhotoViewer.q0().A(false, true);
         } else if (o.F() && o.u().W) {
             o.u().l(false, true);
         }
-        t7b.v();
-        h75 h75Var = h75.s5;
-        if (h75Var != null) {
-            h75Var.dismiss();
+        rbb.v();
+        j95 j95Var = j95.s5;
+        if (j95Var != null) {
+            j95Var.dismiss();
         }
-        on9 on9Var = on9.Q0;
-        if (on9Var != null) {
-            on9Var.dismiss();
+        er9 er9Var = er9.Q0;
+        if (er9Var != null) {
+            er9Var.dismiss();
         }
-        if (z || !gl.O1()) {
+        if (z || !hl.O1()) {
             return;
         }
         this.p0.W(true, true);
         this.r0.W(true, true);
     }
 
-    @Override // qi5
+    @Override // sk5
     public final boolean k(ActionBarLayout actionBarLayout) {
-        if (gl.O1()) {
+        if (hl.O1()) {
             if (actionBarLayout == this.p0 && actionBarLayout.getFragmentStack().size() <= 1 && !this.l1) {
                 e0();
                 finish();
@@ -4903,32 +4959,32 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     public final void k0(TL_account.Password password) {
         String str;
-        mf6 mf6Var = new mf6();
-        rx5 rx5Var = new rx5(this, (byte) 0);
-        mf6Var.G = (byte) 3;
-        mf6Var.a = 12;
-        mf6Var.e0 = rx5Var;
+        qh6 qh6Var = new qh6();
+        sz5 sz5Var = new sz5(this, (byte) 1);
+        qh6Var.G = (byte) 3;
+        qh6Var.a = 12;
+        qh6Var.e0 = sz5Var;
         if (password == null || (str = password.login_email_pattern) == null) {
-            t0(mf6Var);
+            t0(qh6Var);
             return;
         }
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(str);
         int indexOf = password.login_email_pattern.indexOf(42);
         int lastIndexOf = password.login_email_pattern.lastIndexOf(42);
         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-            vib vibVar = new vib();
-            vibVar.a |= 256;
-            vibVar.b = indexOf;
+            rmb rmbVar = new rmb();
+            rmbVar.a |= 256;
+            rmbVar.b = indexOf;
             int i = lastIndexOf + 1;
-            vibVar.c = i;
-            valueOf.setSpan(new wib(vibVar, 0), indexOf, i, 0);
+            rmbVar.c = i;
+            valueOf.setSpan(new smb(rmbVar, 0), indexOf, i, 0);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = valueOf;
-        hdVar.U = k96.M0(2131751189, null);
-        alertDialog$Builder.j(k96.M0(2131752536, null), new h45(this, mf6Var, (byte) 6));
-        ug8.y(null, 2131752577, alertDialog$Builder, null);
+        id idVar = alertDialog$Builder.a;
+        idVar.S = valueOf;
+        idVar.U = ob6.M0(2131751166, null);
+        alertDialog$Builder.j(ob6.M0(2131752529, null), new u34(this, qh6Var, (byte) 11));
+        ik8.y(null, 2131752570, alertDialog$Builder, null);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:143:0x00ce, code lost:
@@ -4941,11 +4997,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
      */
     /* JADX WARN: Removed duplicated region for block: B:111:0x010b  */
     /* JADX WARN: Removed duplicated region for block: B:122:0x0118 A[SYNTHETIC] */
-    @Override // qi5
+    @Override // sk5
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean l(ActionBarLayout actionBarLayout, ri5 ri5Var) {
+    public final boolean l(ActionBarLayout actionBarLayout, tk5 tk5Var) {
         ActionBarLayout actionBarLayout2;
         ActionBarLayout actionBarLayout3;
         ActionBarLayout actionBarLayout4;
@@ -4954,22 +5010,22 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         ActionBarLayout actionBarLayout6;
         ActionBarLayout actionBarLayout7;
         ActionBarLayout actionBarLayout8;
-        org.telegram.ui.ActionBar.d dVar = ri5Var.a;
-        boolean z = ri5Var.b;
-        boolean z2 = ri5Var.c;
+        org.telegram.ui.ActionBar.e eVar = tk5Var.a;
+        boolean z = tk5Var.b;
+        boolean z2 = tk5Var.c;
         if (o.F() && o.u().W) {
             o.u().l(false, true);
         }
-        if (gl.O1()) {
-            if (dVar instanceof ah6) {
+        if (hl.O1()) {
+            if (eVar instanceof fj6) {
                 ActionBarLayout actionBarLayout9 = this.p0;
                 if (actionBarLayout != actionBarLayout9) {
                     actionBarLayout9.Z();
-                    ui5 N = N();
-                    ri5Var.b = z;
-                    ri5Var.c = z2;
-                    ri5Var.d = false;
-                    ((ActionBarLayout) N).R(ri5Var);
+                    wk5 N = N();
+                    tk5Var.b = z;
+                    tk5Var.c = z2;
+                    tk5Var.d = false;
+                    ((ActionBarLayout) N).R(tk5Var);
                     this.q0.Z();
                     this.q0.getView().setVisibility(8);
                     if (!this.N0 && this.r0.getFragmentStack().isEmpty()) {
@@ -4978,7 +5034,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                     return false;
                 }
-                if ((!(dVar instanceof mu1) && !((mu1) dVar).P7()) || ri5Var.g || (actionBarLayout == (actionBarLayout3 = this.r0) && (actionBarLayout3.getFragmentStack().size() > 1 || !(this.r0.getLastFragment() instanceof mu1)))) {
+                if ((!(eVar instanceof zu1) && !((zu1) eVar).X7()) || tk5Var.g || (actionBarLayout == (actionBarLayout3 = this.r0) && (actionBarLayout3.getFragmentStack().size() > 1 || !(this.r0.getLastFragment() instanceof zu1)))) {
                     boolean z3 = this.N0;
                     if (!z3) {
                         ActionBarLayout actionBarLayout10 = this.r0;
@@ -4990,10 +5046,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 this.u0.setVisibility(8);
                                 this.r0.Z();
                                 ActionBarLayout actionBarLayout11 = this.r0;
-                                ri5Var.c = true;
-                                ri5Var.b = z;
-                                ri5Var.d = false;
-                                actionBarLayout11.R(ri5Var);
+                                tk5Var.c = true;
+                                tk5Var.b = z;
+                                tk5Var.d = false;
+                                actionBarLayout11.R(tk5Var);
                                 if (!this.q0.getFragmentStack().isEmpty()) {
                                     while (true) {
                                         int size = this.q0.getFragmentStack().size() - 1;
@@ -5019,18 +5075,18 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     }
                                     actionBarLayout7.j(!z2, false);
                                 }
-                                ui5 N2 = N();
-                                ri5Var.b = this.p0.getFragmentStack().size() > 1;
-                                ri5Var.c = z2;
-                                ri5Var.d = false;
-                                ((ActionBarLayout) N2).R(ri5Var);
+                                wk5 N2 = N();
+                                tk5Var.b = this.p0.getFragmentStack().size() > 1;
+                                tk5Var.c = z2;
+                                tk5Var.d = false;
+                                ((ActionBarLayout) N2).R(tk5Var);
                                 return false;
                             }
-                            ui5 N3 = N();
-                            ri5Var.b = this.p0.getFragmentStack().size() > 1;
-                            ri5Var.c = z2;
-                            ri5Var.d = false;
-                            ((ActionBarLayout) N3).R(ri5Var);
+                            wk5 N3 = N();
+                            tk5Var.b = this.p0.getFragmentStack().size() > 1;
+                            tk5Var.c = z2;
+                            tk5Var.d = false;
+                            ((ActionBarLayout) N3).R(tk5Var);
                             if (!this.q0.getFragmentStack().isEmpty()) {
                                 while (true) {
                                     int size3 = this.q0.getFragmentStack().size() - 1;
@@ -5063,10 +5119,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             actionBarLayout5.j(!z2, false);
                         }
                         if (!z4) {
-                            ui5 N4 = N();
-                            ri5Var.c = z2;
-                            ri5Var.d = false;
-                            ((ActionBarLayout) N4).R(ri5Var);
+                            wk5 N4 = N();
+                            tk5Var.c = z2;
+                            tk5Var.d = false;
+                            ((ActionBarLayout) N4).R(tk5Var);
                         }
                         return z4;
                     }
@@ -5081,34 +5137,34 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             i = -1;
                             break;
                         }
-                        if (y6c.h(i).o()) {
+                        if (yac.h(i).o()) {
                             break;
                         }
                         i++;
                     }
-                    if ((dVar instanceof mf6) || i != -1) {
+                    if ((eVar instanceof qh6) || i != -1) {
                         this.t0.setBackgroundColor(2130706432);
                     } else {
                         this.u0.setVisibility(0);
                         this.t0.setBackgroundColor(0);
                     }
                     ActionBarLayout actionBarLayout15 = this.q0;
-                    ri5Var.b = z;
-                    ri5Var.c = z2;
-                    ri5Var.d = false;
-                    actionBarLayout15.R(ri5Var);
+                    tk5Var.b = z;
+                    tk5Var.c = z2;
+                    tk5Var.d = false;
+                    actionBarLayout15.R(tk5Var);
                     return false;
                 }
             } else {
-                if (dVar instanceof cj3) {
-                    cj3 cj3Var = (cj3) dVar;
-                    if (cj3Var.H3() && actionBarLayout != (actionBarLayout2 = this.p0)) {
+                if (eVar instanceof uj3) {
+                    uj3 uj3Var = (uj3) eVar;
+                    if (uj3Var.J3() && actionBarLayout != (actionBarLayout2 = this.p0)) {
                         actionBarLayout2.Z();
-                        ui5 N5 = N();
-                        ri5Var.b = z;
-                        ri5Var.c = z2;
-                        ri5Var.d = false;
-                        ((ActionBarLayout) N5).R(ri5Var);
+                        wk5 N5 = N();
+                        tk5Var.b = z;
+                        tk5Var.c = z2;
+                        tk5Var.d = false;
+                        ((ActionBarLayout) N5).R(tk5Var);
                         this.q0.Z();
                         this.q0.getView().setVisibility(8);
                         if (!this.N0 && this.r0.getFragmentStack().isEmpty()) {
@@ -5118,13 +5174,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         return false;
                     }
                     if (actionBarLayout == this.p0) {
-                        if (cj3Var.getArguments() != null) {
-                            if (cj3Var.getArguments().getInt("folderId", 0) != 1) {
+                        if (uj3Var.getArguments() != null) {
+                            if (uj3Var.getArguments().getInt("folderId", 0) != 1) {
                             }
                         }
                     }
                 }
-                if (!(dVar instanceof mu1)) {
+                if (!(eVar instanceof zu1)) {
                 }
                 actionBarLayout4 = this.q0;
                 if (actionBarLayout4 != null) {
@@ -5135,14 +5191,14 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         }
                         i++;
                     }
-                    if (dVar instanceof mf6) {
+                    if (eVar instanceof qh6) {
                     }
                     this.t0.setBackgroundColor(2130706432);
                     ActionBarLayout actionBarLayout152 = this.q0;
-                    ri5Var.b = z;
-                    ri5Var.c = z2;
-                    ri5Var.d = false;
-                    actionBarLayout152.R(ri5Var);
+                    tk5Var.b = z;
+                    tk5Var.c = z2;
+                    tk5Var.d = false;
+                    actionBarLayout152.R(tk5Var);
                     return false;
                 }
             }
@@ -5153,47 +5209,47 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     public final void l0(final long j, final Integer num, final String str, final Integer num2, final byte[] bArr, final Runnable runnable, final int i, final int i2) {
         if (num != null) {
             TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-            tL_channels_getMessages.channel = na7.q1(this.P).f1(-j);
+            tL_channels_getMessages.channel = uc7.s1(this.P).h1(-j);
             tL_channels_getMessages.id.add(num);
-            ConnectionsManager.getInstance(this.P).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: nx5
+            ConnectionsManager.getInstance(this.P).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: q16
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     String str2 = LaunchActivity.C1;
-                    gl.c3(new cy5(LaunchActivity.this, tLObject, num, num2, bArr, j, runnable, str, i, i2));
+                    hl.c3(new d06(LaunchActivity.this, tLObject, num, num2, bArr, j, runnable, str, i, i2));
                 }
             });
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", -j);
-        t0(qvb.F0(this, bundle));
+        t0(tzb.G0(this, bundle));
         if (runnable != null) {
             runnable.run();
         }
     }
 
     public final void m0(int i, long j, TLRPC.TL_error tL_error) {
-        mu1 mu1Var = new mu1(ls6.k(j, "user_id"));
-        t0(mu1Var);
-        gl.d3(new jf4((Object) tL_error, (Object) mu1Var, (Object) na7.q1(i).V1(Long.valueOf(j)), (byte) 29), 300L);
+        zu1 zu1Var = new zu1(qu6.k(j, "user_id"));
+        t0(zu1Var);
+        hl.d3(new ls5((Object) tL_error, (Object) zu1Var, uc7.s1(i).X1(Long.valueOf(j)), (byte) 4), 300L);
     }
 
-    public final void n0(int i, String str, String str2, c01 c01Var) {
-        if (c01Var != null) {
-            c01Var.d();
+    public final void n0(int i, String str, String str2, l01 l01Var) {
+        if (l01Var != null) {
+            l01Var.d();
         }
-        na7 q1 = na7.q1(i);
+        uc7 s1 = uc7.s1(i);
         TLRPC.TL_contacts_importContactToken tL_contacts_importContactToken = new TLRPC.TL_contacts_importContactToken();
         tL_contacts_importContactToken.token = str;
-        ConnectionsManager.getInstance(i).sendRequest(tL_contacts_importContactToken, new vt0(this, (Object) c01Var, (Object) q1, i, str2, (byte) 5));
+        ConnectionsManager.getInstance(i).sendRequest(tL_contacts_importContactToken, new eu0(this, (Object) l01Var, (Object) s1, i, str2, (byte) 5));
     }
 
-    public final void o0(int i, String str, String str2, c01 c01Var) {
-        if (c01Var != null) {
-            c01Var.d();
+    public final void o0(int i, String str, String str2, l01 l01Var) {
+        if (l01Var != null) {
+            l01Var.d();
         }
-        na7 q1 = na7.q1(i);
-        q1.Y1().a(str, null, new hz5(this, q1, c01Var, i, str2, (byte) 0));
+        uc7 s1 = uc7.s1(i);
+        s1.a2().a(str, null, new k16(this, s1, l01Var, i, str2, (byte) 0));
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -5209,7 +5265,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 aVar.setVisibility(0);
             }
             actionBarLayout.D0 = false;
-            if (gl.O1()) {
+            if (hl.O1()) {
                 ActionBarLayout actionBarLayout2 = this.r0;
                 org.telegram.ui.ActionBar.a aVar2 = actionBarLayout2.E;
                 if (aVar2 != null) {
@@ -5232,11 +5288,11 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         this.l0 = actionMode;
         try {
             Menu menu = actionMode.getMenu();
-            if (menu != null && !this.p0.q(menu) && gl.O1() && !this.r0.q(menu)) {
+            if (menu != null && !this.p0.q(menu) && hl.O1() && !this.r0.q(menu)) {
                 this.q0.q(menu);
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
         if (actionMode.getType() != 1) {
             ActionBarLayout actionBarLayout = this.p0;
@@ -5245,7 +5301,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 aVar.setVisibility(8);
             }
             actionBarLayout.D0 = true;
-            if (gl.O1()) {
+            if (hl.O1()) {
                 ActionBarLayout actionBarLayout2 = this.r0;
                 org.telegram.ui.ActionBar.a aVar2 = actionBarLayout2.E;
                 if (aVar2 != null) {
@@ -5262,40 +5318,40 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
     }
 
-    @Override // en4, wp2, android.app.Activity
+    @Override // jp4, pq2, android.app.Activity
     public final void onActivityResult(int i, int i2, Intent intent) {
-        y28 currentPeerView;
-        gl2 gl2Var;
+        o68 currentPeerView;
+        am2 am2Var;
         VoIPService sharedInstance;
-        if (gba.r.length() != 0 && gba.A != 0) {
-            gba.A = 0;
-            if (w01.a) {
-                fa4.b("reset lastPauseTime onActivityResult");
+        if (xea.r.length() != 0 && xea.A != 0) {
+            xea.A = 0;
+            if (f11.a) {
+                cc4.b("reset lastPauseTime onActivityResult");
             }
-            y6c.h(this.P).u(false);
+            yac.h(this.P).u(false);
         }
         if (i == 105) {
             boolean canDrawOverlays = Settings.canDrawOverlays(this);
             org.telegram.messenger.a.G = canDrawOverlays;
             if (canDrawOverlays) {
-                h75 h75Var = h75.s5;
-                if (h75Var != null) {
-                    h75Var.I();
+                j95 j95Var = j95.s5;
+                if (j95Var != null) {
+                    j95Var.H();
                 }
-                on9 on9Var = on9.Q0;
-                if (on9Var != null) {
-                    on9Var.e();
+                er9 er9Var = er9.Q0;
+                if (er9Var != null) {
+                    er9Var.e();
                 }
-                gl.d3(new rx5(this, (byte) 5), 200L);
+                hl.d3(new sz5(this, (byte) 4), 200L);
                 return;
             }
             return;
         }
         super.onActivityResult(i, i2, intent);
         if (i >= 22336 && i <= 22399) {
-            l15 l15Var = bje.b;
-            if (l15Var != null && l15Var.e == this && l15Var.f && l15Var.g == i) {
-                l15Var.c(i2 != -1 ? "AUTH_CANCELED" : null);
+            p35 p35Var = tne.b;
+            if (p35Var != null && p35Var.e == this && p35Var.f && p35Var.g == i) {
+                p35Var.c(i2 != -1 ? "AUTH_CANCELED" : null);
                 return;
             }
             return;
@@ -5309,32 +5365,32 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             return;
         }
         if (i == 140) {
-            Utilities.d.c(new x6c((byte) 25, eb6.f(this.P), i2 == -1));
+            Utilities.d.c(new xac((byte) 25, id6.f(this.P), i2 == -1));
             return;
         }
         if (i == 521) {
-            be2 be2Var = this.q1;
-            if (be2Var != null) {
-                be2Var.a(Boolean.valueOf(i2 == -1));
+            te2 te2Var = this.q1;
+            if (te2Var != null) {
+                te2Var.a(Boolean.valueOf(i2 == -1));
                 this.q1 = null;
                 return;
             }
             return;
         }
         ThemeEditorView themeEditorView = ThemeEditorView.p;
-        if (themeEditorView != null && (gl2Var = themeEditorView.m) != null) {
-            gl2Var.E(i, i2, intent);
+        if (themeEditorView != null && (am2Var = themeEditorView.m) != null) {
+            am2Var.E(i, i2, intent);
         }
         ActionBarLayout actionBarLayout = this.p0;
         if (actionBarLayout != null && actionBarLayout.getFragmentStack().size() != 0) {
-            org.telegram.ui.ActionBar.d dVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
-            dVar.onActivityResultFragment(i, i2, intent);
-            if (dVar.getLastStoryViewer() != null && (currentPeerView = dVar.getLastStoryViewer().o0.getCurrentPeerView()) != null && i2 == -1) {
+            org.telegram.ui.ActionBar.e eVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
+            eVar.onActivityResultFragment(i, i2, intent);
+            if (eVar.getLastStoryViewer() != null && (currentPeerView = eVar.getLastStoryViewer().o0.getCurrentPeerView()) != null && i2 == -1) {
                 if (i == 0 || i == 2) {
                     currentPeerView.j0();
-                    x31 x31Var = currentPeerView.y2;
-                    if (x31Var != null) {
-                        x31Var.d2.j0(i, intent, null);
+                    f41 f41Var = currentPeerView.s2;
+                    if (f41Var != null) {
+                        f41Var.d2.i0(i, intent, null);
                     }
                 } else if (i == 21) {
                     if (intent == null) {
@@ -5350,16 +5406,16 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         } else {
                             currentPeerView.U0();
                         }
-                        x31 x31Var2 = currentPeerView.y2;
-                        if (x31Var2 != null) {
-                            x31Var2.dismiss();
+                        f41 f41Var2 = currentPeerView.s2;
+                        if (f41Var2 != null) {
+                            f41Var2.dismiss();
                         }
                         currentPeerView.a0(true);
                     }
                 }
             }
         }
-        if (gl.O1()) {
+        if (hl.O1()) {
             ActionBarLayout actionBarLayout2 = this.r0;
             if (actionBarLayout2 != null && actionBarLayout2.getFragmentStack().size() != 0) {
                 this.r0.getFragmentStack().get(this.r0.getFragmentStack().size() - 1).onActivityResultFragment(i, i2, intent);
@@ -5369,13 +5425,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 this.q0.getFragmentStack().get(this.q0.getFragmentStack().size() - 1).onActivityResultFragment(i, i2, intent);
             }
         }
-        kk7.e().k(kk7.e5, Integer.valueOf(i), Integer.valueOf(i2), intent);
+        jn7.e().k(jn7.f5, Integer.valueOf(i), Integer.valueOf(i2), intent);
     }
 
-    @Override // wp2, android.app.Activity
+    @Override // pq2, android.app.Activity
     public final void onBackPressed() {
         if (d0(true)) {
-            if (!gl.O1()) {
+            if (!hl.O1()) {
                 this.p0.G();
                 return;
             }
@@ -5389,75 +5445,77 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 this.p0.G();
                 return;
             }
-            org.telegram.ui.ActionBar.d dVar = this.r0.getFragmentStack().get(this.r0.getFragmentStack().size() - 1);
-            if (dVar.onBackPressed(true)) {
-                dVar.finishFragment();
+            org.telegram.ui.ActionBar.e eVar = this.r0.getFragmentStack().get(this.r0.getFragmentStack().size() - 1);
+            if (eVar.onBackPressed(true)) {
+                eVar.finishFragment();
             }
         }
     }
 
-    @Override // wp2, android.app.Activity, android.content.ComponentCallbacks
+    @Override // pq2, android.app.Activity, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
-        gl.v(this, configuration);
+        int i;
+        int j;
+        hl.v(this, configuration);
         this.t1.a();
-        gl.r3(getWindow());
+        hl.r3(getWindow());
         super.onConfigurationChanged(configuration);
-        mb3 c = mb3.c();
-        ArrayList arrayList = (ArrayList) c.c;
-        LaunchActivity launchActivity = (LaunchActivity) c.f;
-        if (launchActivity == null || !gl.F1(launchActivity)) {
-            for (int i = 0; i < arrayList.size(); i++) {
-                sj4 sj4Var = ((xa8) arrayList.get(i)).e;
-                if (sj4Var != null && sj4Var.h != null && !sj4Var.K) {
-                    Activity activity = sj4Var.c;
-                    gl.v(activity, activity.getResources().getConfiguration());
-                    qj4.b = null;
-                    Point point = gl.q;
-                    sj4Var.A = (Math.min(point.x, point.y) - (sj4.m() * 2.0f)) / sj4Var.h();
-                    int h = (int) (sj4Var.h() * sj4Var.z);
-                    sa8 sa8Var = sj4Var.b;
-                    int Q0 = sa8Var.Q0();
-                    int S1 = sa8Var.S1();
-                    float f = (Q0 <= 0 || S1 <= 0) ? 0.5625f : S1 / Q0;
-                    int i2 = (int) (((int) (sj4.i(f) * f)) * sj4Var.z);
-                    if (sj4Var.x != h || sj4Var.y != i2) {
-                        WindowManager.LayoutParams layoutParams = sj4Var.e;
-                        sj4Var.x = h;
-                        layoutParams.width = h;
-                        sj4Var.y = i2;
-                        layoutParams.height = i2;
-                        sj4Var.r();
+        fc3 b = fc3.b();
+        ArrayList arrayList = (ArrayList) b.c;
+        LaunchActivity launchActivity = (LaunchActivity) b.f;
+        if (launchActivity == null || !hl.F1(launchActivity)) {
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                xl4 xl4Var = ((me8) arrayList.get(i2)).e;
+                if (xl4Var != null) {
+                    boolean z = xl4Var.d;
+                    if (xl4Var.j != null && !xl4Var.N) {
+                        Activity activity = xl4Var.c;
+                        hl.v(activity, activity.getResources().getConfiguration());
+                        kj4.c = null;
+                        kj4.d = null;
+                        if (z) {
+                            xl4Var.D = 1.0f;
+                            i = xl4Var.A;
+                            j = xl4Var.B;
+                        } else {
+                            Point point = hl.q;
+                            xl4Var.D = (Math.min(point.x, point.y) - (xl4.n() * 2.0f)) / xl4Var.i();
+                            i = (int) (xl4Var.i() * xl4Var.C);
+                            je8 je8Var = xl4Var.b;
+                            int U = je8Var.U();
+                            int q0 = je8Var.q0();
+                            float f = (U <= 0 || q0 <= 0) ? 0.5625f : q0 / U;
+                            j = (int) (((int) (xl4.j(f) * f)) * xl4Var.C);
+                        }
+                        if (xl4Var.A != i || xl4Var.B != j) {
+                            WindowManager.LayoutParams layoutParams = xl4Var.f;
+                            xl4Var.A = i;
+                            layoutParams.width = i;
+                            xl4Var.B = j;
+                            layoutParams.height = j;
+                            xl4Var.v();
+                        }
+                        vpa vpaVar = xl4Var.G;
+                        vpaVar.b = xl4Var.E;
+                        vpaVar.c = true;
+                        vpaVar.m.i = xl4.p(r6, xl4Var.A);
+                        xl4Var.G.h();
+                        vpa vpaVar2 = xl4Var.H;
+                        vpaVar2.b = xl4Var.F;
+                        vpaVar2.c = true;
+                        vpaVar2.m.i = xl4.e(r6, xl4Var.B);
+                        xl4Var.H.h();
                     }
-                    yla ylaVar = sj4Var.D;
-                    ylaVar.b = sj4Var.B;
-                    ylaVar.c = true;
-                    ylaVar.m.i = sj4.n(r6, sj4Var.x);
-                    sj4Var.D.h();
-                    yla ylaVar2 = sj4Var.E;
-                    ylaVar2.b = sj4Var.C;
-                    ylaVar2.c = true;
-                    ylaVar2.m.i = sj4.e(r6, sj4Var.y);
-                    sj4Var.E.h();
                 }
             }
         }
-        gl.Y2();
+        hl.Y2();
         Z();
-        F();
-        gl.c3(new rx5(this, (byte) 6));
-        PipRoundVideoView pipRoundVideoView = PipRoundVideoView.G;
-        if (pipRoundVideoView != null) {
-            int i3 = pipRoundVideoView.y.getInt("sidex", 1);
-            int i4 = pipRoundVideoView.y.getInt("sidey", 0);
-            float f2 = pipRoundVideoView.y.getFloat("px", 0.0f);
-            float f3 = pipRoundVideoView.y.getFloat("py", 0.0f);
-            pipRoundVideoView.w.x = PipRoundVideoView.b(f2, i3, pipRoundVideoView.h, true);
-            pipRoundVideoView.w.y = PipRoundVideoView.b(f3, i4, pipRoundVideoView.n, false);
-            pipRoundVideoView.x.updateViewLayout(pipRoundVideoView.a, pipRoundVideoView.w);
-        }
-        ou3 ou3Var = ou3.R1;
-        if (ou3Var != null) {
-            ou3Var.Z(configuration);
+        G();
+        hl.c3(new sz5(this, (byte) 5));
+        iv3 iv3Var = iv3.R1;
+        if (iv3Var != null) {
+            iv3Var.Z(configuration);
         }
         dn0 dn0Var = dn0.o1;
         if (dn0Var != null) {
@@ -5466,92 +5524,88 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         Drawable[] drawableArr = PhotoViewer.d9;
         ThemeEditorView themeEditorView = ThemeEditorView.p;
         if (themeEditorView != null) {
-            int i5 = themeEditorView.l.getInt("sidex", 1);
-            int i6 = themeEditorView.l.getInt("sidey", 0);
-            float f4 = themeEditorView.l.getFloat("px", 0.0f);
-            float f5 = themeEditorView.l.getFloat("py", 0.0f);
-            themeEditorView.i.x = ThemeEditorView.b(f4, i5, themeEditorView.g, true);
-            themeEditorView.i.y = ThemeEditorView.b(f5, i6, themeEditorView.h, false);
+            int i3 = themeEditorView.l.getInt("sidex", 1);
+            int i4 = themeEditorView.l.getInt("sidey", 0);
+            float f2 = themeEditorView.l.getFloat("px", 0.0f);
+            float f3 = themeEditorView.l.getFloat("py", 0.0f);
+            themeEditorView.i.x = ThemeEditorView.b(f2, i3, themeEditorView.g, true);
+            themeEditorView.i.y = ThemeEditorView.b(f3, i4, themeEditorView.h, false);
             try {
                 if (themeEditorView.c.getParent() != null) {
                     themeEditorView.j.updateViewLayout(themeEditorView.c, themeEditorView.i);
                 }
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
-        if (bkb.o == 3) {
-            bkb.E(false);
+        if (aob.o == 3) {
+            aob.E(false);
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(43:0|1|(1:3)(1:226)|4|(2:10|(2:29|30)(2:14|(2:18|(1:28))))|32|(2:33|34)|35|(1:37)|38|(1:42)|43|(1:46)|47|(4:49|50|51|(1:53))|57|(1:59)|60|(3:66|(1:68)(1:222)|(3:70|71|(23:73|74|75|85|(1:87)(1:176)|88|89|90|91|(1:93)(1:173)|(1:95)|96|(1:98)|99|(1:171)|103|104|105|(2:107|(1:109))|110|(1:112)|113|(14:115|(1:117)|118|119|(4:127|(1:(1:130)(1:133))(1:134)|131|132)|(1:136)|137|138|139|(3:141|142|143)(1:161)|144|(3:146|(1:148)|149)(2:152|(3:154|(1:156)|157))|150|151)(2:165|166))))|223|85|(0)(0)|88|89|90|91|(0)(0)|(0)|96|(0)|99|(1:101)|169|171|103|104|105|(0)|110|(0)|113|(0)(0)|(1:(0))) */
-    /* JADX WARN: Can't wrap try/catch for region: R(44:0|1|(1:3)(1:226)|4|(2:10|(2:29|30)(2:14|(2:18|(1:28))))|32|33|34|35|(1:37)|38|(1:42)|43|(1:46)|47|(4:49|50|51|(1:53))|57|(1:59)|60|(3:66|(1:68)(1:222)|(3:70|71|(23:73|74|75|85|(1:87)(1:176)|88|89|90|91|(1:93)(1:173)|(1:95)|96|(1:98)|99|(1:171)|103|104|105|(2:107|(1:109))|110|(1:112)|113|(14:115|(1:117)|118|119|(4:127|(1:(1:130)(1:133))(1:134)|131|132)|(1:136)|137|138|139|(3:141|142|143)(1:161)|144|(3:146|(1:148)|149)(2:152|(3:154|(1:156)|157))|150|151)(2:165|166))))|223|85|(0)(0)|88|89|90|91|(0)(0)|(0)|96|(0)|99|(1:101)|169|171|103|104|105|(0)|110|(0)|113|(0)(0)|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x05d6, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(42:0|1|(1:3)(1:219)|4|(2:10|(2:29|30)(2:14|(2:18|(1:28))))|32|(2:33|34)|35|(1:37)|38|(1:42)|43|(1:46)|47|(4:49|50|51|(1:53))|57|(1:59)|60|(3:66|(1:68)(1:215)|(3:70|71|(23:73|74|75|85|(1:87)|88|89|90|91|(1:93)(1:167)|(1:95)|96|(1:98)|99|(1:165)|103|104|105|(2:107|(1:109))|110|(1:112)|113|(14:115|(1:117)|118|119|(4:127|(1:(1:130)(1:133))(1:134)|131|132)|(1:136)|137|138|139|(1:141)|143|(3:145|(1:147)|148)(2:151|(3:153|(1:155)|156))|149|150)(2:159|160))))|216|85|(0)|88|89|90|91|(0)(0)|(0)|96|(0)|99|(1:101)|163|165|103|104|105|(0)|110|(0)|113|(0)(0)) */
+    /* JADX WARN: Can't wrap try/catch for region: R(43:0|1|(1:3)(1:219)|4|(2:10|(2:29|30)(2:14|(2:18|(1:28))))|32|33|34|35|(1:37)|38|(1:42)|43|(1:46)|47|(4:49|50|51|(1:53))|57|(1:59)|60|(3:66|(1:68)(1:215)|(3:70|71|(23:73|74|75|85|(1:87)|88|89|90|91|(1:93)(1:167)|(1:95)|96|(1:98)|99|(1:165)|103|104|105|(2:107|(1:109))|110|(1:112)|113|(14:115|(1:117)|118|119|(4:127|(1:(1:130)(1:133))(1:134)|131|132)|(1:136)|137|138|139|(1:141)|143|(3:145|(1:147)|148)(2:151|(3:153|(1:155)|156))|149|150)(2:159|160))))|216|85|(0)|88|89|90|91|(0)(0)|(0)|96|(0)|99|(1:101)|163|165|103|104|105|(0)|110|(0)|113|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x05d6, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x05d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x05d7, code lost:
     
-        fa4.g(r0, true);
+        cc4.g(r0, true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:174:0x0503, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x0503, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x0504, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x0504, code lost:
     
-        fa4.g(r0, true);
+        cc4.g(r0, true);
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x04db A[Catch: Exception -> 0x0503, TryCatch #7 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:169:0x04e1, B:171:0x04e5), top: B:89:0x04a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0534 A[Catch: all -> 0x05d6, TryCatch #2 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:165:0x05ce, B:166:0x05d5), top: B:104:0x051a }] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0560 A[Catch: all -> 0x05d6, TryCatch #2 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:165:0x05ce, B:166:0x05d5), top: B:104:0x051a }] */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0572 A[Catch: all -> 0x05d6, TryCatch #2 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:165:0x05ce, B:166:0x05d5), top: B:104:0x051a }] */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x06de  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x06f4  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x05ce A[Catch: all -> 0x05d6, TryCatch #2 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:165:0x05ce, B:166:0x05d5), top: B:104:0x051a }] */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x04b3  */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x0498  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0496  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x04ae A[Catch: Exception -> 0x0503, TRY_ENTER, TryCatch #7 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:169:0x04e1, B:171:0x04e5), top: B:89:0x04a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x04b6 A[Catch: Exception -> 0x0503, TryCatch #7 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:169:0x04e1, B:171:0x04e5), top: B:89:0x04a6 }] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x04be A[Catch: Exception -> 0x0503, TryCatch #7 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:169:0x04e1, B:171:0x04e5), top: B:89:0x04a6 }] */
-    /* JADX WARN: Type inference failed for: r5v40, types: [android.app.AppOpsManager$OnOpChangedListener, ua8] */
-    @Override // en4, wp2, vp2, android.app.Activity
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04db A[Catch: Exception -> 0x0503, TryCatch #6 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:163:0x04e1, B:165:0x04e5), top: B:89:0x04a6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0534 A[Catch: all -> 0x05d6, TryCatch #1 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:159:0x05ce, B:160:0x05d5), top: B:104:0x051a }] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0560 A[Catch: all -> 0x05d6, TryCatch #1 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:159:0x05ce, B:160:0x05d5), top: B:104:0x051a }] */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0572 A[Catch: all -> 0x05d6, TryCatch #1 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:159:0x05ce, B:160:0x05d5), top: B:104:0x051a }] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x05ce A[Catch: all -> 0x05d6, TryCatch #1 {all -> 0x05d6, blocks: (B:105:0x051a, B:107:0x0534, B:109:0x0548, B:110:0x0554, B:112:0x0560, B:113:0x0564, B:115:0x0572, B:117:0x059e, B:118:0x05ae, B:159:0x05ce, B:160:0x05d5), top: B:104:0x051a }] */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x04b3  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0495  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x04ae A[Catch: Exception -> 0x0503, TRY_ENTER, TryCatch #6 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:163:0x04e1, B:165:0x04e5), top: B:89:0x04a6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x04b6 A[Catch: Exception -> 0x0503, TryCatch #6 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:163:0x04e1, B:165:0x04e5), top: B:89:0x04a6 }] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x04be A[Catch: Exception -> 0x0503, TryCatch #6 {Exception -> 0x0503, blocks: (B:90:0x04a6, B:93:0x04ae, B:95:0x04b6, B:96:0x04ba, B:98:0x04be, B:99:0x04d5, B:101:0x04db, B:163:0x04e1, B:165:0x04e5), top: B:89:0x04a6 }] */
+    /* JADX WARN: Type inference failed for: r12v7, types: [android.app.AppOpsManager$OnOpChangedListener, le8] */
+    @Override // jp4, pq2, oq2, android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onCreate(Bundle bundle) {
         long j;
-        boolean z;
-        int i;
-        lg4 lg4Var;
+        li4 li4Var;
         String str;
         String lowerCase;
         ActionBarLayout actionBarLayout;
         String string;
         Intent intent;
         Uri data;
+        byte b = 1;
         E1 = true;
         F1++;
-        boolean z2 = w01.a;
+        boolean z = f11.a;
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder(StrictMode.getVmPolicy()).detectLeakedClosableObjects().penaltyLog().build());
         H1 = this;
         org.telegram.messenger.a.v();
-        gl.v(this, getResources().getConfiguration());
-        this.P = y6c.t0;
-        this.f1 = new zj(this, (byte) 6);
+        hl.v(this, getResources().getConfiguration());
+        this.P = yac.t0;
+        this.f1 = new ak(this, (byte) 6);
         IntentFilter intentFilter = new IntentFilter("org.telegram.messenger.DEBUG_THEME");
-        int i2 = Build.VERSION.SDK_INT;
-        zj zjVar = this.f1;
-        if (i2 >= 33) {
-            registerReceiver(zjVar, intentFilter, 2);
+        int i = Build.VERSION.SDK_INT;
+        ak akVar = this.f1;
+        if (i >= 33) {
+            registerReceiver(akVar, intentFilter, 2);
         } else {
-            registerReceiver(zjVar, intentFilter);
+            registerReceiver(akVar, intentFilter);
         }
-        if (!y6c.h(this.P).o() && (intent = getIntent()) != null && intent.getAction() != null) {
+        if (!yac.h(this.P).o() && (intent = getIntent()) != null && intent.getAction() != null) {
             if ("android.intent.action.SEND".equals(intent.getAction()) || "android.intent.action.SEND_MULTIPLE".equals(intent.getAction())) {
                 super.onCreate(bundle);
                 finish();
@@ -5565,138 +5619,139 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
         requestWindowFeature(1);
         setTheme(R.style.Theme_TMessages);
-        byte b = 0;
+        Object[] objArr = 0;
+        Object[] objArr2 = 0;
         try {
-            setTaskDescription(new ActivityManager.TaskDescription((String) null, (Bitmap) null, bkb.w0(null, bkb.r8, false) | (-16777216)));
+            setTaskDescription(new ActivityManager.TaskDescription((String) null, (Bitmap) null, aob.w0(null, aob.s8, false) | (-16777216)));
         } catch (Throwable unused) {
         }
-        getWindow().setBackgroundDrawable(new x9((byte) 0));
+        getWindow().setBackgroundDrawable(new y9((byte) 0));
         getWindow().setFormat(-1);
-        h24 h24Var = new h24(getWindow(), new wn4((byte) 25));
-        this.e1 = h24Var;
-        h24Var.a();
+        byte b2 = 8;
+        c34 c34Var = new c34(getWindow(), new lq5(b2));
+        this.e1 = c34Var;
+        c34Var.a();
         super.onCreate(bundle);
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 24) {
-            gl.E = isInMultiWindowMode();
+        int i2 = Build.VERSION.SDK_INT;
+        if (i2 >= 24) {
+            hl.E = isInMultiWindowMode();
         }
-        bkb.O();
-        bkb.S(this);
-        if (gba.r.length() != 0 && gba.w) {
-            gba.A = (int) (SystemClock.elapsedRealtime() / 1000);
+        aob.O();
+        aob.S(this);
+        if (xea.r.length() != 0 && xea.w) {
+            xea.A = (int) (SystemClock.elapsedRealtime() / 1000);
         }
-        Typeface typeface = gl.a;
+        Typeface typeface = hl.a;
         this.p0 = new ActionBarLayout(this, true);
-        yc ycVar = new yc((byte) 29, (Context) this, (Object) this);
-        this.v0 = ycVar;
-        ycVar.setClipToPadding(false);
+        d26 d26Var = new d26(objArr2 == true ? 1 : 0, this, this);
+        this.v0 = d26Var;
+        d26Var.setClipToPadding(false);
         this.v0.setClipChildren(false);
         setContentView(this.v0);
-        this.g1 = new twc(this.v0);
-        mb3 c = mb3.c();
-        a06 a06Var = new a06(this, false);
-        LaunchActivity launchActivity = (LaunchActivity) c.f;
+        this.g1 = new j1d(this.v0);
+        fc3 b3 = fc3.b();
+        e26 e26Var = new e26(this, false);
+        LaunchActivity launchActivity = (LaunchActivity) b3.f;
         if (launchActivity != null && launchActivity != this) {
-            ((ddb) c.e).c();
+            ((ygb) b3.e).c();
         }
-        c.f = this;
-        c.a = false;
-        c.b = false;
-        ddb ddbVar = (ddb) c.e;
-        ddbVar.b = this;
-        ddbVar.d = a06Var;
-        ddbVar.n = null;
-        ddbVar.c = new gdb(this);
-        ((ViewGroup) getWindow().getDecorView()).addView(ddbVar.c);
+        b3.f = this;
+        b3.a = false;
+        b3.b = false;
+        ygb ygbVar = (ygb) b3.e;
+        ygbVar.b = this;
+        ygbVar.d = e26Var;
+        ygbVar.n = null;
+        ygbVar.c = new bhb(this);
+        ((ViewGroup) getWindow().getDecorView()).addView(ygbVar.c);
         Context context = org.telegram.messenger.a.b;
-        final w88 w88Var = new w88(c, (byte) 8);
-        if (wqe.a == null) {
+        final x38 x38Var = new x38(b3, (byte) 23);
+        if (ove.a == null) {
             AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService("appops");
             final String packageName = context.getPackageName();
-            ?? r5 = new AppOpsManager.OnOpChangedListener() { // from class: ua8
+            ?? r12 = new AppOpsManager.OnOpChangedListener() { // from class: le8
                 @Override // android.app.AppOpsManager.OnOpChangedListener
                 public final void onOpChanged(String str2, String str3) {
                     if (packageName.equals(str3)) {
-                        gl.c3(w88Var);
+                        hl.c3(x38Var);
                     }
                 }
             };
-            wqe.a = r5;
+            ove.a = r12;
             try {
-                appOpsManager.startWatchingMode("android:system_alert_window", packageName, r5);
-                if (i3 >= 26) {
-                    appOpsManager.startWatchingMode("android:picture_in_picture", packageName, wqe.a);
+                appOpsManager.startWatchingMode("android:system_alert_window", packageName, r12);
+                if (i2 >= 26) {
+                    appOpsManager.startWatchingMode("android:picture_in_picture", packageName, ove.a);
                 }
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
-        umb umbVar = new umb(this);
-        this.n0 = umbVar;
-        umbVar.setVisibility(8);
-        mq3 mq3Var = new mq3(this);
-        this.y0 = mq3Var;
-        mq3Var.setActionBarLayout(this.p0);
-        this.y0.addOnLayoutChangeListener(new uz5());
+        tqb tqbVar = new tqb(this);
+        this.n0 = tqbVar;
+        tqbVar.setVisibility(8);
+        dr3 dr3Var = new dr3(this);
+        this.y0 = dr3Var;
+        dr3Var.setActionBarLayout(this.p0);
+        this.y0.addOnLayoutChangeListener(new x16());
         this.y0.setClipChildren(false);
         this.y0.setClipToPadding(false);
-        this.v0.addView(this.y0, nme.c(-1.0f, -1));
-        byte b2 = 3;
-        v31 v31Var = new v31(this, b2);
-        this.o0 = v31Var;
-        v31Var.setScaleType(ImageView.ScaleType.CENTER);
-        this.v0.addView(this.o0, nme.c(48.0f, 48));
+        this.v0.addView(this.y0, tre.c(-1.0f, -1));
+        d41 d41Var = new d41((Context) this, (byte) 3);
+        this.o0 = d41Var;
+        d41Var.setScaleType(ImageView.ScaleType.CENTER);
+        this.v0.addView(this.o0, tre.c(48.0f, 48));
         this.o0.setVisibility(8);
-        yc ycVar2 = this.v0;
-        yx0 yx0Var = new yx0(this);
-        this.x0 = yx0Var;
-        ycVar2.addView(yx0Var);
-        yc ycVar3 = this.v0;
-        vz5 vz5Var = new vz5(this);
-        vz5Var.setVisibility(8);
-        this.w0 = vz5Var;
-        ycVar3.addView(vz5Var);
+        d26 d26Var2 = this.v0;
+        gy0 gy0Var = new gy0(this);
+        this.x0 = gy0Var;
+        d26Var2.addView(gy0Var);
+        d26 d26Var3 = this.v0;
+        y16 y16Var = new y16(this);
+        y16Var.setVisibility(8);
+        this.w0 = y16Var;
+        d26Var3.addView(y16Var);
         E0();
         this.y0.setParentActionBarLayout(this.p0);
         this.p0.setDrawerLayoutContainer(this.y0);
         this.p0.setFragmentStack(this.e0);
-        this.p0.setFragmentStackChangedListener(new rx5(this, b2));
+        this.p0.setFragmentStackChangedListener(new sz5(this, b2));
         this.p0.setDelegate(this);
-        bkb.m1(true);
+        aob.m1(true);
         B();
         P0();
-        kk7 e2 = kk7.e();
-        int i4 = kk7.m4;
-        e2.k(i4, this);
+        jn7 e2 = jn7.e();
+        int i3 = jn7.n4;
+        e2.k(i3, this);
         this.d0 = ConnectionsManager.getInstance(this.P).getConnectionState();
-        wtc wtcVar = this.n1;
-        if (wtcVar != null) {
-            wtcVar.a();
+        u8a u8aVar = this.n1;
+        if (u8aVar != null) {
+            u8aVar.a();
             this.n1 = null;
         }
-        wtc wtcVar2 = new wtc(kk7.e(), this);
-        wtcVar2.b(kk7.L0);
-        wtcVar2.b(kk7.z4);
-        wtcVar2.b(kk7.A4);
-        wtcVar2.b(kk7.p4);
-        wtcVar2.b(kk7.v4);
-        wtcVar2.b(kk7.t4);
-        wtcVar2.b(i4);
-        wtcVar2.b(kk7.m0);
-        wtcVar2.b(kk7.B4);
-        wtcVar2.b(kk7.M4);
-        wtcVar2.b(kk7.R4);
-        wtcVar2.b(kk7.p5);
-        wtcVar2.b(kk7.m5);
-        wtcVar2.b(kk7.O5);
-        wtcVar2.b(kk7.P5);
-        this.n1 = wtcVar2;
-        bz5 bz5Var = new bz5(this, b);
-        this.p1 = bz5Var;
-        e66.a(bz5Var);
+        u8a u8aVar2 = new u8a(jn7.e(), this);
+        u8aVar2.b(jn7.M0);
+        u8aVar2.b(jn7.A4);
+        u8aVar2.b(jn7.B4);
+        u8aVar2.b(jn7.q4);
+        u8aVar2.b(jn7.w4);
+        u8aVar2.b(jn7.u4);
+        u8aVar2.b(i3);
+        u8aVar2.b(jn7.n0);
+        u8aVar2.b(jn7.C4);
+        u8aVar2.b(jn7.N4);
+        u8aVar2.b(jn7.S4);
+        u8aVar2.b(jn7.q5);
+        u8aVar2.b(jn7.n5);
+        u8aVar2.b(jn7.P5);
+        u8aVar2.b(jn7.Q5);
+        this.n1 = u8aVar2;
+        j16 j16Var = new j16(this, b);
+        this.p1 = j16Var;
+        i86.a(j16Var);
         if (this.p0.getFragmentStack().isEmpty() && ((actionBarLayout = this.q0) == null || actionBarLayout.getFragmentStack().isEmpty())) {
-            if (y6c.h(this.P).o()) {
-                this.p0.b(-1, new ah6());
+            if (yac.h(this.P).o()) {
+                this.p0.b(-1, new fj6());
             } else {
                 this.p0.b(-1, P());
             }
@@ -5709,8 +5764,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
                 if (string != null) {
                     Bundle bundle2 = bundle.getBundle("args");
+                    j = string.hashCode();
                     try {
-                        switch (string.hashCode()) {
+                        switch (j) {
                             case -1529105743:
                                 j = 0;
                                 if (string.equals("wallpapers")) {
@@ -5733,23 +5789,23 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             case 3052376:
                                 j = 0;
                                 if (string.equals("chat") && bundle2 != null) {
-                                    mu1 mu1Var = new mu1(bundle2);
+                                    zu1 zu1Var = new zu1(bundle2);
                                     long j2 = bundle.getLong("topic_id");
                                     long j3 = bundle2.getLong("chat_id");
                                     if (j2 != 0 && j3 != 0) {
-                                        TLRPC.Chat K0 = na7.q1(this.P).K0(Long.valueOf(j3));
-                                        if (hc2.c0(K0) && !hc2.a(K0) && !hc2.u0(K0)) {
+                                        TLRPC.Chat M0 = uc7.s1(this.P).M0(Long.valueOf(j3));
+                                        if (xc2.c0(M0) && !xc2.a(M0) && !xc2.u0(M0)) {
                                             Bundle bundle3 = new Bundle();
                                             bundle3.putLong("chat_id", j3);
-                                            org.telegram.ui.ActionBar.d F0 = qvb.F0(this, bundle3);
-                                            if (F0 instanceof qvb) {
-                                                this.p0.b(-1, F0);
+                                            org.telegram.ui.ActionBar.e G0 = tzb.G0(this, bundle3);
+                                            if (G0 instanceof tzb) {
+                                                this.p0.b(-1, G0);
                                             }
                                         }
-                                        mm4.a(mu1Var, zc7.a(-j3, j2));
+                                        ro4.a(zu1Var, if7.a(-j3, j2));
                                     }
-                                    if (this.p0.b(-1, mu1Var)) {
-                                        mu1Var.n8 = bundle.getString("path");
+                                    if (this.p0.b(-1, zu1Var)) {
+                                        zu1Var.n8 = bundle.getString("path");
                                         break;
                                     }
                                 }
@@ -5757,9 +5813,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             case 98629247:
                                 j = 0;
                                 if (string.equals("group") && bundle2 != null) {
-                                    wa5 wa5Var = new wa5(bundle2);
-                                    if (this.p0.b(-1, wa5Var)) {
-                                        wa5Var.restoreSelfArgs(bundle);
+                                    xc5 xc5Var = new xc5(bundle2);
+                                    if (this.p0.b(-1, xc5Var)) {
+                                        xc5Var.restoreSelfArgs(bundle);
                                         break;
                                     }
                                 }
@@ -5767,9 +5823,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             case 738950403:
                                 j = 0;
                                 if (string.equals("channel") && bundle2 != null) {
-                                    yh1 yh1Var = new yh1(bundle2);
-                                    if (this.p0.b(-1, yh1Var)) {
-                                        yh1Var.restoreSelfArgs(bundle);
+                                    gi1 gi1Var = new gi1(bundle2);
+                                    if (this.p0.b(-1, gi1Var)) {
+                                        gi1Var.restoreSelfArgs(bundle);
                                         break;
                                     }
                                 }
@@ -5777,7 +5833,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             case 1434631203:
                                 if (string.equals("settings")) {
                                     j = 0;
-                                    bundle2.putLong("user_id", y6c.h(this.P).n);
+                                    bundle2.putLong("user_id", yac.h(this.P).n);
                                     ProfileActivity profileActivity2 = new ProfileActivity(bundle2, null);
                                     this.p0.b(-1, profileActivity2);
                                     profileActivity2.restoreSelfArgs(bundle);
@@ -5786,18 +5842,17 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 break;
                             case 1523894383:
                                 if (string.equals("settings2")) {
-                                    this.p0.b(-1, new d8a(null));
+                                    this.p0.b(-1, new tba(null));
                                     break;
                                 }
                                 break;
                         }
                     } catch (Exception e4) {
                         e = e4;
-                        fa4.g(e, true);
-                        F();
+                        cc4.g(e, true);
+                        G();
                         H(false, true, !this.W0);
                         long j4 = j;
-                        byte b3 = 3;
                         V(getIntent(), false, bundle != null, false, null, true, true);
                         String str2 = Build.DISPLAY;
                         String str3 = Build.USER;
@@ -5805,137 +5860,120 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         }
                         if (str3 != null) {
                         }
-                        if (w01.a) {
+                        if (f11.a) {
                         }
                         if (!lowerCase.contains("flyme")) {
                         }
-                        gl.y = true;
+                        hl.y = true;
                         View rootView = getWindow().getDecorView().getRootView();
                         ViewTreeObserver viewTreeObserver = rootView.getViewTreeObserver();
-                        c25 c25Var = new c25(rootView, (byte) 2);
-                        this.h0 = c25Var;
-                        viewTreeObserver.addOnGlobalLayoutListener(c25Var);
-                        MediaController.w().K0 = this;
+                        l45 l45Var = new l45(rootView, (byte) 2);
+                        this.h0 = l45Var;
+                        viewTreeObserver.addOnGlobalLayoutListener(l45Var);
+                        MediaController.z().K0 = this;
                         ((ApplicationLoaderImpl) org.telegram.messenger.a.a).getClass();
-                        boolean z3 = w01.a;
-                        String valueOf = String.valueOf(y6c.h(y6c.t0).n);
-                        if (y6c.h(y6c.t0).f() != null) {
+                        boolean z2 = f11.a;
+                        String valueOf = String.valueOf(yac.h(yac.t0).n);
+                        if (yac.h(yac.t0).f() != null) {
                         }
-                        if (ConnectionsManager.getInstance(y6c.t0).isTestBackend()) {
+                        if (ConnectionsManager.getInstance(yac.t0).isTestBackend()) {
                         }
-                        lg4Var = (lg4) jg4.c().b(lg4.class);
-                        if (lg4Var == null) {
+                        li4Var = (li4) ji4.c().b(li4.class);
+                        if (li4Var == null) {
                         }
                     }
-                    F();
+                    G();
                     H(false, true, !this.W0);
                     long j42 = j;
-                    byte b32 = 3;
                     V(getIntent(), false, bundle != null, false, null, true, true);
                     String str22 = Build.DISPLAY;
                     String str32 = Build.USER;
                     lowerCase = str22 != null ? str22.toLowerCase() : "";
                     String lowerCase3 = str32 != null ? lowerCase.toLowerCase() : "";
-                    if (w01.a) {
-                        fa4.b("OS name " + lowerCase + " " + lowerCase3);
+                    if (f11.a) {
+                        cc4.b("OS name " + lowerCase + " " + lowerCase3);
                     }
                     if ((!lowerCase.contains("flyme") || lowerCase3.contains("flyme")) && Build.VERSION.SDK_INT <= 24) {
-                        gl.y = true;
+                        hl.y = true;
                         View rootView2 = getWindow().getDecorView().getRootView();
                         ViewTreeObserver viewTreeObserver2 = rootView2.getViewTreeObserver();
-                        c25 c25Var2 = new c25(rootView2, (byte) 2);
-                        this.h0 = c25Var2;
-                        viewTreeObserver2.addOnGlobalLayoutListener(c25Var2);
+                        l45 l45Var2 = new l45(rootView2, (byte) 2);
+                        this.h0 = l45Var2;
+                        viewTreeObserver2.addOnGlobalLayoutListener(l45Var2);
                     }
-                    MediaController.w().K0 = this;
+                    MediaController.z().K0 = this;
                     ((ApplicationLoaderImpl) org.telegram.messenger.a.a).getClass();
-                    boolean z32 = w01.a;
-                    String valueOf2 = String.valueOf(y6c.h(y6c.t0).n);
-                    if (y6c.h(y6c.t0).f() != null) {
-                        String p = l7c.p(y6c.h(y6c.t0).f());
+                    boolean z22 = f11.a;
+                    String valueOf2 = String.valueOf(yac.h(yac.t0).n);
+                    if (yac.h(yac.t0).f() != null) {
+                        String p = lbc.p(yac.h(yac.t0).f());
                         if (!TextUtils.isEmpty(p)) {
                             valueOf2 = "@" + p;
                         }
                     }
-                    if (ConnectionsManager.getInstance(y6c.t0).isTestBackend()) {
+                    if (ConnectionsManager.getInstance(yac.t0).isTestBackend()) {
                         valueOf2 = valueOf2.concat(" [TEST SERVER]");
                     }
-                    lg4Var = (lg4) jg4.c().b(lg4.class);
-                    if (lg4Var == null) {
+                    li4Var = (li4) ji4.c().b(li4.class);
+                    if (li4Var == null) {
                         throw new NullPointerException("FirebaseCrashlytics component is not present.");
                     }
-                    rc1 rc1Var = lg4Var.a;
-                    ((pz2) ((mv6) rc1Var.n).b).a(new gu2((Object) rc1Var, (Object) valueOf2, (byte) 7));
-                    lg4Var.b("version", "public");
-                    lg4Var.b("model", Build.MODEL);
-                    lg4Var.b("manufacturer", Build.MANUFACTURER);
+                    zc1 zc1Var = li4Var.a;
+                    ((i03) ((rx6) zc1Var.n).b).a(new bv2((Object) zc1Var, (Object) valueOf2, (byte) 6));
+                    li4Var.b("version", "public");
+                    li4Var.b("model", Build.MODEL);
+                    li4Var.b("manufacturer", Build.MANUFACTURER);
                     if (Build.VERSION.SDK_INT >= 31) {
                         str = Build.SOC_MODEL;
-                        lg4Var.b("soc_model", str);
-                        lg4Var.b("soc_manufacturer", Build.SOC_MANUFACTURER);
+                        li4Var.b("soc_model", str);
+                        li4Var.b("soc_manufacturer", Build.SOC_MANUFACTURER);
                     }
-                    lg4Var.b("device", Build.DEVICE);
-                    lg4Var.b("product", Build.PRODUCT);
-                    lg4Var.b("hardware", Build.HARDWARE);
-                    lg4Var.b("user", Build.USER);
-                    lg4Var.a();
-                    ige.b(true);
-                    int i5 = Build.VERSION.SDK_INT;
-                    if (i5 >= 28 && ((ActivityManager) getSystemService("activity")).isBackgroundRestricted() && System.currentTimeMillis() - aue.a.getLong("last_checked", j42) >= 86400000 && aue.a.getInt("dismissed_count", 0) < 3) {
-                        Pattern pattern = ij.a;
+                    li4Var.b("device", Build.DEVICE);
+                    li4Var.b("product", Build.PRODUCT);
+                    li4Var.b("hardware", Build.HARDWARE);
+                    li4Var.b("user", Build.USER);
+                    li4Var.a();
+                    ele.b(true);
+                    int i4 = Build.VERSION.SDK_INT;
+                    if (i4 >= 28 && ((ActivityManager) getSystemService("activity")).isBackgroundRestricted() && System.currentTimeMillis() - sye.a.getLong("last_checked", j42) >= 86400000 && sye.a.getInt("dismissed_count", 0) < 3) {
+                        Pattern pattern = jj.a;
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-                        alertDialog$Builder.a.S = k96.M0(2131754280, null);
-                        alertDialog$Builder.a.U = gl.S2(k96.M0(fqe.a() ? i5 >= 31 ? 2131754278 : 2131754277 : 2131754279, null));
-                        int i6 = bkb.K5;
-                        alertDialog$Builder.l(R.raw.permission_request_apk, 72, bkb.w0(null, i6, false), null);
-                        alertDialog$Builder.m(i6, null);
-                        alertDialog$Builder.j(k96.M0(2131747107, null), new he(this, (byte) 2));
-                        alertDialog$Builder.g(k96.M0(2131751760, null), null);
-                        alertDialog$Builder.a.setOnDismissListener(new g5(b32));
+                        alertDialog$Builder.a.S = ob6.M0(2131754276, null);
+                        alertDialog$Builder.a.U = hl.S2(ob6.M0(xue.a() ? i4 >= 31 ? 2131754274 : 2131754273 : 2131754275, null));
+                        int i5 = aob.L5;
+                        alertDialog$Builder.l(R.raw.permission_request_apk, 72, aob.w0(null, i5, false), null);
+                        alertDialog$Builder.m(i5, null);
+                        alertDialog$Builder.j(ob6.M0(2131747027, null), new pd(this, objArr == true ? 1 : 0));
+                        alertDialog$Builder.g(ob6.M0(2131751737, null), null);
+                        alertDialog$Builder.a.setOnDismissListener(new h5((byte) 2));
                         alertDialog$Builder.a.show();
-                        aue.a.edit().putLong("last_checked", System.currentTimeMillis()).apply();
+                        sye.a.edit().putLong("last_checked", System.currentTimeMillis()).apply();
                     }
-                    if (i5 >= 31) {
-                        getWindow().getDecorView().addOnAttachStateChangeListener(new wz5(this));
+                    if (i4 >= 31) {
+                        getWindow().getDecorView().addOnAttachStateChangeListener(new z16(this));
                     }
-                    m21.a(this.v0, new oy((byte) 8));
+                    v21.a(this.v0, new py((byte) 8));
                     getWindow().getDecorView().setSystemUiVisibility(1792);
                     Window window = getWindow();
                     try {
-                        gl.S(window);
-                        if (i5 >= 28) {
-                            z = false;
-                            try {
-                                window.setNavigationBarDividerColor(0);
-                            } catch (Throwable th) {
-                                th = th;
-                                fa4.g(th, true);
-                                BackupAgent.a();
-                                qa9.Y(z);
-                                i = Build.VERSION.SDK_INT;
-                                if (i < 34) {
-                                }
-                                C();
-                                return;
-                            }
-                        } else {
-                            z = false;
+                        hl.S(window);
+                        if (i4 >= 28) {
+                            window.setNavigationBarDividerColor(0);
                         }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        z = false;
+                    } catch (Throwable th) {
+                        cc4.g(th, true);
                     }
                     BackupAgent.a();
-                    qa9.Y(z);
-                    i = Build.VERSION.SDK_INT;
-                    if (i < 34) {
+                    ee9.Y(false);
+                    int i6 = Build.VERSION.SDK_INT;
+                    if (i6 >= 34) {
                         if (this.j1 == null) {
-                            this.j1 = new xz5(this);
+                            this.j1 = new a26(this);
                         }
                         getOnBackInvokedDispatcher().registerOnBackInvokedCallback(0, this.j1);
-                    } else if (i >= 33) {
+                    } else if (i6 >= 33) {
                         if (this.k1 == null) {
-                            this.k1 = new yz5(this);
+                            this.k1 = new b26(this);
                         }
                         getOnBackInvokedDispatcher().registerOnBackInvokedCallback(0, this.k1);
                     }
@@ -5945,10 +5983,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
         }
         j = 0;
-        F();
+        G();
         H(false, true, !this.W0);
         long j422 = j;
-        byte b322 = 3;
         V(getIntent(), false, bundle != null, false, null, true, true);
         String str222 = Build.DISPLAY;
         String str322 = Build.USER;
@@ -5956,63 +5993,63 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
         if (str322 != null) {
         }
-        if (w01.a) {
+        if (f11.a) {
         }
         if (!lowerCase.contains("flyme")) {
         }
-        gl.y = true;
+        hl.y = true;
         View rootView22 = getWindow().getDecorView().getRootView();
         ViewTreeObserver viewTreeObserver22 = rootView22.getViewTreeObserver();
-        c25 c25Var22 = new c25(rootView22, (byte) 2);
-        this.h0 = c25Var22;
-        viewTreeObserver22.addOnGlobalLayoutListener(c25Var22);
-        MediaController.w().K0 = this;
+        l45 l45Var22 = new l45(rootView22, (byte) 2);
+        this.h0 = l45Var22;
+        viewTreeObserver22.addOnGlobalLayoutListener(l45Var22);
+        MediaController.z().K0 = this;
         ((ApplicationLoaderImpl) org.telegram.messenger.a.a).getClass();
-        boolean z322 = w01.a;
-        String valueOf22 = String.valueOf(y6c.h(y6c.t0).n);
-        if (y6c.h(y6c.t0).f() != null) {
+        boolean z222 = f11.a;
+        String valueOf22 = String.valueOf(yac.h(yac.t0).n);
+        if (yac.h(yac.t0).f() != null) {
         }
-        if (ConnectionsManager.getInstance(y6c.t0).isTestBackend()) {
+        if (ConnectionsManager.getInstance(yac.t0).isTestBackend()) {
         }
-        lg4Var = (lg4) jg4.c().b(lg4.class);
-        if (lg4Var == null) {
+        li4Var = (li4) ji4.c().b(li4.class);
+        if (li4Var == null) {
         }
     }
 
-    @Override // en4, android.app.Activity
+    @Override // jp4, android.app.Activity
     public final void onDestroy() {
-        ip4 ip4Var;
+        mr4 mr4Var;
         ArrayList arrayList;
-        oc6 oc6Var;
-        l15 l15Var = bje.b;
-        if (l15Var != null && l15Var.e == this) {
-            l15Var.c("AUTH_CANCELED");
-            bje.b.e();
+        d26 d26Var;
+        p35 p35Var = tne.b;
+        if (p35Var != null && p35Var.e == this) {
+            p35Var.c("AUTH_CANCELED");
+            tne.b.e();
         }
-        mb3 c = mb3.c();
-        ArrayList arrayList2 = (ArrayList) c.c;
-        if (((LaunchActivity) c.f) == this) {
+        fc3 b = fc3.b();
+        ArrayList arrayList2 = (ArrayList) b.c;
+        if (((LaunchActivity) b.f) == this) {
             for (int size = arrayList2.size() - 1; size >= 0; size--) {
-                ((xa8) arrayList2.get(size)).b();
+                ((me8) arrayList2.get(size)).b();
             }
-            ((ddb) c.e).c();
-            c.f = null;
-            ((ArrayList) c.d).clear();
+            ((ygb) b.e).c();
+            b.f = null;
+            ((ArrayList) b.d).clear();
         }
         int i = 0;
         E1 = false;
         F1--;
-        zj zjVar = this.f1;
-        if (zjVar != null) {
-            unregisterReceiver(zjVar);
+        ak akVar = this.f1;
+        if (akVar != null) {
+            unregisterReceiver(akVar);
             this.f1 = null;
         }
         if (F1 == 0) {
             if (PhotoViewer.k9 != null) {
-                PhotoViewer.k9.M();
+                PhotoViewer.k9.L();
             }
             if (PhotoViewer.C0()) {
-                PhotoViewer.r0().M();
+                PhotoViewer.q0().L();
             }
             if (SecretMediaViewer.e()) {
                 SecretMediaViewer d = SecretMediaViewer.d();
@@ -6021,30 +6058,30 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     runnable.run();
                     d.o1 = null;
                 }
-                a06 a06Var = d.k1;
-                if (a06Var != null) {
-                    a06Var.a();
+                e26 e26Var = d.k1;
+                if (e26Var != null) {
+                    e26Var.a();
                     d.k1 = null;
                 }
-                kk7.f(d.a).n(d, kk7.v);
-                kk7.f(d.a).n(d, kk7.k0);
-                kk7.f(d.a).n(d, kk7.h0);
+                jn7.f(d.a).n(d, jn7.v);
+                jn7.f(d.a).n(d, jn7.l0);
+                jn7.f(d.a).n(d, jn7.i0);
                 d.s = false;
                 d.M = null;
-                jl5 jl5Var = d.h0;
-                if (jl5Var != null) {
-                    jl5Var.a();
+                mn5 mn5Var = d.h0;
+                if (mn5Var != null) {
+                    mn5Var.a();
                     d.h0 = null;
                 }
                 d.j();
-                if (d.b != null && (oc6Var = d.d) != null) {
+                if (d.b != null && (d26Var = d.d) != null) {
                     try {
-                        if (oc6Var.getParent() != null) {
+                        if (d26Var.getParent() != null) {
                             ((WindowManager) d.b.getSystemService("window")).removeViewImmediate(d.d);
                         }
                         d.d = null;
                     } catch (Exception e) {
-                        fa4.g(e, true);
+                        cc4.g(e, true);
                     }
                 }
                 SecretMediaViewer.w1 = null;
@@ -6052,8 +6089,8 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             if (o.F()) {
                 o.u().q();
             }
-            if (xv2.g0 != null) {
-                xv2 e2 = xv2.e();
+            if (rw2.g0 != null) {
+                rw2 e2 = rw2.e();
                 e2.E = false;
                 e2.l = null;
                 e2.W = null;
@@ -6073,50 +6110,46 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         }
                         e2.y = null;
                     } catch (Exception e3) {
-                        fa4.g(e3, true);
+                        cc4.g(e3, true);
                     }
-                    xv2.g0 = null;
-                    kk7.e().k(kk7.j1, 8);
+                    rw2.g0 = null;
+                    jn7.e().k(jn7.k1, 8);
                 }
             }
-            h75 h75Var = h75.s5;
-            if (h75Var != null) {
-                h75Var.I();
+            j95 j95Var = j95.s5;
+            if (j95Var != null) {
+                j95Var.H();
             }
-            on9 on9Var = on9.Q0;
-            if (on9Var != null) {
-                on9Var.e();
+            er9 er9Var = er9.Q0;
+            if (er9Var != null) {
+                er9Var.e();
             }
-            PipRoundVideoView pipRoundVideoView = PipRoundVideoView.G;
-            if (pipRoundVideoView != null) {
-                pipRoundVideoView.a(false);
-            }
-            int i2 = bkb.a;
-            ou3 ou3Var = ou3.R1;
-            if (ou3Var != null) {
-                ou3Var.E0();
+            int i2 = aob.a;
+            iv3 iv3Var = iv3.R1;
+            if (iv3Var != null) {
+                iv3Var.F0();
             }
             ThemeEditorView themeEditorView = ThemeEditorView.p;
             if (themeEditorView != null) {
                 themeEditorView.a();
             }
-            hj4 hj4Var = uge.a;
-            if (hj4Var != null) {
-                hj4Var.e.edit().putFloat("x", (float) hj4Var.c.m.i).putFloat("y", (float) hj4Var.d.m.i).commit();
+            ll4 ll4Var = nle.a;
+            if (ll4Var != null) {
+                ll4Var.e.edit().putFloat("x", (float) ll4Var.c.m.i).putFloat("y", (float) ll4Var.d.m.i).commit();
             }
-            uge.a = null;
-            SparseArray sparseArray = vl.r;
+            nle.a = null;
+            SparseArray sparseArray = wl.r;
             if (sparseArray != null) {
                 sparseArray.clear();
             }
         }
-        MediaController w = MediaController.w();
-        if (w.K0 == this) {
-            w.K0 = null;
+        MediaController z = MediaController.z();
+        if (z.K0 == this) {
+            z.K0 = null;
         }
-        MediaController w2 = MediaController.w();
-        if (w2.L0 == this.s1) {
-            w2.L0 = null;
+        MediaController z2 = MediaController.z();
+        if (z2.L0 == this.s1) {
+            z2.L0 = null;
         }
         while (true) {
             try {
@@ -6130,7 +6163,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 }
                 i++;
             } catch (Exception e4) {
-                fa4.g(e4, true);
+                cc4.g(e4, true);
             }
         }
         arrayList.clear();
@@ -6139,7 +6172,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 getWindow().getDecorView().getRootView().getViewTreeObserver().removeOnGlobalLayoutListener(this.h0);
             }
         } catch (Exception e5) {
-            fa4.g(e5, true);
+            cc4.g(e5, true);
         }
         int i3 = Build.VERSION.SDK_INT;
         if (i3 >= 34) {
@@ -6149,31 +6182,31 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         } else if (i3 >= 33 && this.j1 != null) {
             getOnBackInvokedDispatcher().unregisterOnBackInvokedCallback(this.k1);
         }
-        m21.h(this.v0);
+        v21.h(this.v0);
         VideoAds.dropCache();
         J();
         super.onDestroy();
         e0();
-        h24 h24Var = this.e1;
-        if (h24Var != null) {
-            h24Var.g();
+        c34 c34Var = this.e1;
+        if (c34Var != null) {
+            c34Var.g();
         }
-        if (i3 < 24 || (ip4Var = this.i1) == null) {
+        if (i3 < 24 || (mr4Var = this.i1) == null) {
             return;
         }
-        ip4Var.b();
+        mr4Var.b();
     }
 
     @Override // android.app.Activity, android.view.KeyEvent.Callback
     public final boolean onKeyUp(int i, KeyEvent keyEvent) {
-        if (i == 82 && !gba.B) {
-            if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
+        if (i == 82 && !xea.B) {
+            if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
                 return super.onKeyUp(i, keyEvent);
             }
             if (o.F() && o.u().W) {
                 return super.onKeyUp(i, keyEvent);
             }
-            if (!gl.O1()) {
+            if (!hl.O1()) {
                 this.p0.getView().onKeyUp(i, keyEvent);
             } else if (this.q0.getView().getVisibility() == 0 && !this.q0.getFragmentStack().isEmpty()) {
                 this.q0.getView().onKeyUp(i, keyEvent);
@@ -6192,7 +6225,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         ActionBarLayout actionBarLayout = this.p0;
         if (actionBarLayout != null) {
             actionBarLayout.K();
-            if (gl.O1()) {
+            if (hl.O1()) {
                 ActionBarLayout actionBarLayout2 = this.r0;
                 if (actionBarLayout2 != null) {
                     actionBarLayout2.K();
@@ -6205,61 +6238,61 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
     }
 
-    @Override // wp2, android.app.Activity
+    @Override // pq2, android.app.Activity
     public final void onMultiWindowModeChanged(boolean z) {
-        gl.E = z;
+        hl.E = z;
         this.t1.a();
-        F();
+        G();
         super.onMultiWindowModeChanged(z);
     }
 
-    @Override // wp2, android.app.Activity
+    @Override // pq2, android.app.Activity
     public final void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Z();
-        F();
+        G();
         V(intent, true, false, false, null, true, true);
     }
 
-    @Override // en4, android.app.Activity
+    @Override // jp4, android.app.Activity
     public final void onPause() {
         VoIPService sharedInstance;
-        sj4 sj4Var;
-        ya8 ya8Var;
+        xl4 xl4Var;
+        ne8 ne8Var;
         super.onPause();
         G1 = false;
-        vvc.q(true);
-        mb3 c = mb3.c();
-        ArrayList arrayList = (ArrayList) c.c;
-        if (this == ((LaunchActivity) c.f)) {
-            c.b = false;
-            ddb ddbVar = (ddb) c.e;
-            LaunchActivity launchActivity = ddbVar.b;
-            if (launchActivity != null && Build.VERSION.SDK_INT >= 31 && ddbVar.f == null && ddbVar.e != null && gl.F1(launchActivity)) {
-                ddbVar.i(ddbVar.e);
+        k0d.q(true);
+        fc3 b = fc3.b();
+        ArrayList arrayList = (ArrayList) b.c;
+        if (this == ((LaunchActivity) b.f)) {
+            b.b = false;
+            ygb ygbVar = (ygb) b.e;
+            LaunchActivity launchActivity = ygbVar.b;
+            if (launchActivity != null && Build.VERSION.SDK_INT >= 31 && ygbVar.f == null && ygbVar.e != null && hl.F1(launchActivity)) {
+                ygbVar.i(ygbVar.e);
             }
             for (int i = 0; i < arrayList.size(); i++) {
-                xa8 xa8Var = (xa8) arrayList.get(i);
-                if (xa8Var.c == 1 && (sj4Var = xa8Var.e) != null && !sj4Var.f && (ya8Var = sj4Var.j) != null && sj4Var.l != null && ya8Var.isAvailable()) {
+                me8 me8Var = (me8) arrayList.get(i);
+                if (me8Var.c == 1 && (xl4Var = me8Var.e) != null && !xl4Var.g && (ne8Var = xl4Var.l) != null && xl4Var.n != null && ne8Var.isAvailable()) {
                     try {
-                        Bitmap bitmap = sj4Var.j.getBitmap();
+                        Bitmap bitmap = xl4Var.l.getBitmap();
                         if (bitmap != null) {
-                            sj4Var.l.setImageBitmap(bitmap);
-                            sj4Var.l.setVisibility(0);
-                            sj4Var.j.setFirstFrameCallback(null);
+                            xl4Var.n.setImageBitmap(bitmap);
+                            xl4Var.n.setVisibility(0);
+                            xl4Var.l.setFirstFrameCallback(null);
                         }
                     } catch (Throwable th) {
-                        fa4.g(th, true);
+                        cc4.g(th, true);
                     }
                 }
             }
         }
-        kk7.e().k(kk7.i1, Integer.valueOf(TLObject.FLAG_12));
+        jn7.e().k(jn7.j1, Integer.valueOf(TLObject.FLAG_12));
         org.telegram.messenger.a.x = true;
-        Utilities.d.c(new xv0(this.P, (byte) 5));
+        Utilities.d.c(new gw0(this.P, (byte) 5));
         g0();
         this.p0.M();
-        if (gl.O1()) {
+        if (hl.O1()) {
             ActionBarLayout actionBarLayout = this.r0;
             if (actionBarLayout != null) {
                 actionBarLayout.M();
@@ -6269,9 +6302,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 actionBarLayout2.M();
             }
         }
-        aw7 aw7Var = this.z0;
-        if (aw7Var != null) {
-            aw7Var.b.k();
+        hz7 hz7Var = this.z0;
+        if (hz7Var != null) {
+            hz7Var.b.k();
         }
         ArrayList arrayList2 = this.A0;
         int size = arrayList2.size();
@@ -6279,65 +6312,65 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         while (i2 < size) {
             Object obj = arrayList2.get(i2);
             i2++;
-            ((yv7) obj).k();
+            ((fz7) obj).k();
         }
         org.telegram.messenger.a aVar = org.telegram.messenger.a.a;
         ConnectionsManager.getInstance(this.P).setAppPaused(true, false);
-        if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-            PhotoViewer r0 = PhotoViewer.r0();
-            if (r0.k2 != null) {
-                r0.B(false, false);
+        if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+            PhotoViewer q0 = PhotoViewer.q0();
+            if (q0.k2 != null) {
+                q0.A(false, false);
             } else {
-                lbc lbcVar = r0.G2;
-                if (lbcVar != null && r0.Z2) {
-                    lbcVar.r0(gl.F1(r0.E));
+                kfc kfcVar = q0.G2;
+                if (kfcVar != null && q0.Z2) {
+                    kfcVar.r0(hl.F1(q0.E));
                 }
             }
         }
-        t7b t7bVar = t7b.G2;
-        if (t7bVar != null) {
-            t7bVar.t(false);
-            j7b j7bVar = t7bVar.d1;
-            if (j7bVar != null) {
-                j7bVar.f.r();
+        rbb rbbVar = rbb.G2;
+        if (rbbVar != null) {
+            rbbVar.t(false);
+            hbb hbbVar = rbbVar.d1;
+            if (hbbVar != null) {
+                hbbVar.f.r();
             }
-            i7b i7bVar = t7bVar.Y0;
-            if (i7bVar != null) {
-                i7bVar.x(0, true);
+            gbb gbbVar = rbbVar.Y0;
+            if (gbbVar != null) {
+                gbbVar.x(0, true);
             }
         }
-        xgc.a(this);
-        hgc hgcVar = hgc.m1;
-        if (hgcVar != null) {
-            boolean isInteractive = ((PowerManager) hgcVar.b.getSystemService("power")).isInteractive();
-            boolean canDrawOverlays = Settings.canDrawOverlays(hgcVar.b);
-            boolean z = canDrawOverlays || wqe.a(hgcVar.b);
-            if (hgcVar.D0 && VoIPService.getSharedInstance() != null && !VoIPService.getSharedInstance().isConverting() && canDrawOverlays) {
-                int measuredHeight = hgc.m1.u0.getMeasuredHeight();
-                hgc hgcVar2 = hgc.m1;
-                xgc.f(hgcVar2.b, hgcVar2.a, hgcVar2.u0.getMeasuredWidth(), measuredHeight, 0);
-                WindowInsets windowInsets = hgc.m1.r0;
+        dlc.a(this);
+        mkc mkcVar = mkc.m1;
+        if (mkcVar != null) {
+            boolean isInteractive = ((PowerManager) mkcVar.b.getSystemService("power")).isInteractive();
+            boolean canDrawOverlays = Settings.canDrawOverlays(mkcVar.b);
+            boolean z = canDrawOverlays || ove.a(mkcVar.b);
+            if (mkcVar.D0 && VoIPService.getSharedInstance() != null && !VoIPService.getSharedInstance().isConverting() && canDrawOverlays) {
+                int measuredHeight = mkc.m1.u0.getMeasuredHeight();
+                mkc mkcVar2 = mkc.m1;
+                dlc.f(mkcVar2.b, mkcVar2.a, mkcVar2.u0.getMeasuredWidth(), measuredHeight, 0);
+                WindowInsets windowInsets = mkc.m1.r0;
                 if (windowInsets != null) {
-                    xgc.W = windowInsets.getSystemWindowInsetTop();
-                    hgc.m1.r0.getSystemWindowInsetBottom();
+                    dlc.W = windowInsets.getSystemWindowInsetTop();
+                    mkc.m1.r0.getSystemWindowInsetBottom();
                 }
             }
-            if (hgcVar.n0 && ((!z || !isInteractive) && (sharedInstance = VoIPService.getSharedInstance()) != null)) {
+            if (mkcVar.n0 && ((!z || !isInteractive) && (sharedInstance = VoIPService.getSharedInstance()) != null)) {
                 sharedInstance.setVideoState(false, 1);
             }
-            if (xgc.d() != null) {
-                xgc.d().e();
+            if (dlc.d() != null) {
+                dlc.d().e();
             }
-        } else if (xgc.d() != null) {
-            xgc.d().e();
+        } else if (dlc.d() != null) {
+            dlc.d().e();
         }
-        HashMap hashMap = pla.n;
+        HashMap hashMap = mpa.n;
         if (hashMap != null) {
             Iterator it = hashMap.values().iterator();
             while (it.hasNext()) {
-                ola olaVar = ((pla) it.next()).f;
-                if (olaVar != null) {
-                    olaVar.b = true;
+                lpa lpaVar = ((mpa) it.next()).f;
+                if (lpaVar != null) {
+                    lpaVar.b = true;
                 }
             }
         }
@@ -6347,85 +6380,85 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     
         if (r7.f != null) goto L10;
      */
-    @Override // wp2, android.app.Activity
+    @Override // pq2, android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onPictureInPictureModeChanged(boolean z, Configuration configuration) {
-        xa8 xa8Var;
+        me8 me8Var;
         View view;
-        xa8 xa8Var2;
+        me8 me8Var2;
         super.onPictureInPictureModeChanged(z, configuration);
-        ddb ddbVar = (ddb) mb3.c().e;
-        if (ddbVar.f == null) {
-            if (z && (xa8Var2 = ddbVar.e) != null) {
-                ddbVar.i(xa8Var2);
+        ygb ygbVar = (ygb) fc3.b().e;
+        if (ygbVar.f == null) {
+            if (z && (me8Var2 = ygbVar.e) != null) {
+                ygbVar.i(me8Var2);
             }
         }
         if (z) {
-            mb3.e("system: complete enter");
-            ddbVar.i = true;
-            if (ddbVar.o && (xa8Var = ddbVar.f) != null && (view = ddbVar.h) != null) {
-                xa8Var.a.y0(view);
+            fc3.e("system: complete enter");
+            ygbVar.i = true;
+            if (ygbVar.o && (me8Var = ygbVar.f) != null && (view = ygbVar.h) != null) {
+                me8Var.a.N(view);
             }
-            if (ddbVar.o) {
-                ddbVar.o = false;
-                xa8 xa8Var3 = ddbVar.f;
-                if (xa8Var3 != null && Build.VERSION.SDK_INT >= 26) {
-                    ddbVar.a(xa8Var3);
+            if (ygbVar.o) {
+                ygbVar.o = false;
+                me8 me8Var3 = ygbVar.f;
+                if (me8Var3 != null && Build.VERSION.SDK_INT >= 26) {
+                    ygbVar.a(me8Var3);
                 }
             }
-            a06 a06Var = ddbVar.d;
-            if (a06Var != null) {
-                a06Var.b(true);
+            e26 e26Var = ygbVar.d;
+            if (e26Var != null) {
+                e26Var.b(true);
             }
-            View view2 = ddbVar.h;
+            View view2 = ygbVar.h;
             if (view2 != null) {
                 view2.setVisibility(0);
             }
-            gdb gdbVar = ddbVar.c;
-            if (gdbVar != null) {
-                gdbVar.requestLayout();
+            bhb bhbVar = ygbVar.c;
+            if (bhbVar != null) {
+                bhbVar.requestLayout();
             }
-        } else if (ddbVar.a.a) {
-            ddbVar.d();
+        } else if (ygbVar.a.a) {
+            ygbVar.d();
         } else {
-            mb3.e("system: closed by the user");
-            ddbVar.i = false;
-            ddbVar.o = false;
-            a06 a06Var2 = ddbVar.d;
-            if (a06Var2 != null) {
-                a06Var2.b(false);
+            fc3.e("system: closed by the user");
+            ygbVar.i = false;
+            ygbVar.o = false;
+            e26 e26Var2 = ygbVar.d;
+            if (e26Var2 != null) {
+                e26Var2.b(false);
             }
-            xa8 xa8Var4 = ddbVar.f;
-            if (xa8Var4 != null) {
-                xa8Var4.b();
+            me8 me8Var4 = ygbVar.f;
+            if (me8Var4 != null) {
+                me8Var4.b();
             }
         }
         if (z || this.r1) {
             return;
         }
         if (PhotoViewer.k9 != null) {
-            PhotoViewer.k9.M();
+            PhotoViewer.k9.L();
         }
         if (PhotoViewer.C0()) {
-            PhotoViewer.r0().B(false, false);
+            PhotoViewer.q0().A(false, false);
         }
     }
 
     @Override // android.app.Activity
     public final boolean onPictureInPictureRequested() {
-        ((ddb) mb3.c().e).g();
+        ((ygb) fc3.b().e).g();
         return super.onPictureInPictureRequested();
     }
 
     @Override // android.app.Activity
     public final void onPictureInPictureUiStateChanged(PictureInPictureUiState pictureInPictureUiState) {
         super.onPictureInPictureUiStateChanged(pictureInPictureUiState);
-        ((ddb) mb3.c().e).f(pictureInPictureUiState);
+        ((ygb) fc3.b().e).f(pictureInPictureUiState);
     }
 
-    @Override // en4, wp2, android.app.Activity
+    @Override // jp4, pq2, android.app.Activity
     public final void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
         super.onRequestPermissionsResult(i, strArr, iArr);
         if (w(i, strArr, iArr)) {
@@ -6433,7 +6466,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             if (this.p0.getFragmentStack().size() != 0) {
                 this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1).onRequestPermissionsResultFragment(i, strArr, iArr);
             }
-            if (gl.O1()) {
+            if (hl.O1()) {
                 if (this.r0.getFragmentStack().size() != 0) {
                     this.r0.getFragmentStack().get(this.r0.getFragmentStack().size() - 1).onRequestPermissionsResultFragment(i, strArr, iArr);
                 }
@@ -6441,111 +6474,110 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     this.q0.getFragmentStack().get(this.q0.getFragmentStack().size() - 1).onRequestPermissionsResultFragment(i, strArr, iArr);
                 }
             }
-            hgc.h(iArr, i);
-            t7b t7bVar = t7b.G2;
+            mkc.h(iArr, i);
+            rbb rbbVar = rbb.G2;
             byte b = 2;
             byte b2 = 0;
-            if (t7bVar != null) {
-                f53 f53Var = t7bVar.a;
-                Activity activity = t7bVar.b;
+            if (rbbVar != null) {
+                x53 x53Var = rbbVar.a;
+                Activity activity = rbbVar.b;
                 boolean z = iArr != null && iArr.length == 1 && iArr[0] == 0;
                 if (i == 111) {
-                    t7bVar.t2 = !z;
-                    if (z && t7bVar.g0 == 0) {
-                        t7bVar.B0.setCameraThumb(null);
+                    rbbVar.t2 = !z;
+                    if (z && rbbVar.g0 == 0) {
+                        rbbVar.B0.setCameraThumb(null);
                         if (CameraController.getInstance().isCameraInitied()) {
-                            t7bVar.p();
+                            rbbVar.p();
                         } else {
-                            CameraController.getInstance().initCamera(new d6b(t7bVar, b2));
+                            CameraController.getInstance().initCamera(new bab(rbbVar, b2));
                         }
                     }
                 } else if (i == 114) {
                     if (z) {
-                        MediaController.N(0);
-                        t7bVar.c(true);
+                        MediaController.R(0);
+                        rbbVar.c(true);
                     } else {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f53Var, activity);
-                        int i2 = bkb.K5;
-                        alertDialog$Builder.l(R.raw.permission_request_folder, 72, bkb.w0(null, i2, false), null);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, x53Var, activity);
+                        int i2 = aob.L5;
+                        alertDialog$Builder.l(R.raw.permission_request_folder, 72, aob.w0(null, i2, false), null);
                         alertDialog$Builder.m(i2, null);
-                        SpannableStringBuilder S2 = gl.S2(k96.M0(2131747106, null));
-                        hd hdVar = alertDialog$Builder.a;
-                        hdVar.U = S2;
-                        alertDialog$Builder.j(k96.M0(2131747107, null), new k6b(t7bVar, b));
-                        alertDialog$Builder.g(k96.M0(2131751760, null), null);
-                        hdVar.show();
+                        SpannableStringBuilder S2 = hl.S2(ob6.M0(2131747026, null));
+                        id idVar = alertDialog$Builder.a;
+                        idVar.U = S2;
+                        alertDialog$Builder.j(ob6.M0(2131747027, null), new jab(rbbVar, b));
+                        alertDialog$Builder.g(ob6.M0(2131751737, null), null);
+                        idVar.show();
                     }
                 } else if (i == 112) {
                     if (!z) {
-                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, f53Var, activity);
-                        int i3 = bkb.K5;
-                        alertDialog$Builder2.l(R.raw.permission_request_camera, 72, bkb.w0(null, i3, false), null);
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, x53Var, activity);
+                        int i3 = aob.L5;
+                        alertDialog$Builder2.l(R.raw.permission_request_camera, 72, aob.w0(null, i3, false), null);
                         alertDialog$Builder2.m(i3, null);
-                        SpannableStringBuilder S22 = gl.S2(k96.M0(2131747116, null));
-                        hd hdVar2 = alertDialog$Builder2.a;
-                        hdVar2.U = S22;
-                        alertDialog$Builder2.j(k96.M0(2131747107, null), new k6b(t7bVar, (byte) 3));
-                        alertDialog$Builder2.g(k96.M0(2131751760, null), null);
-                        hdVar2.show();
+                        SpannableStringBuilder S22 = hl.S2(ob6.M0(2131747036, null));
+                        id idVar2 = alertDialog$Builder2.a;
+                        idVar2.U = S22;
+                        alertDialog$Builder2.j(ob6.M0(2131747027, null), new jab(rbbVar, (byte) 3));
+                        alertDialog$Builder2.g(ob6.M0(2131751737, null), null);
+                        idVar2.show();
                     }
                 } else if (i == 115) {
                     if (z) {
-                        sm3 sm3Var = t7bVar.z2;
-                        if (sm3Var != null) {
-                            sm3Var.run();
+                        hl3 hl3Var = rbbVar.z2;
+                        if (hl3Var != null) {
+                            hl3Var.run();
                         }
                     } else {
-                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, f53Var, activity);
-                        int i4 = bkb.K5;
-                        alertDialog$Builder3.l(R.raw.permission_request_folder, 72, bkb.w0(null, i4, false), null);
+                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, x53Var, activity);
+                        int i4 = aob.L5;
+                        alertDialog$Builder3.l(R.raw.permission_request_folder, 72, aob.w0(null, i4, false), null);
                         alertDialog$Builder3.m(i4, null);
-                        SpannableStringBuilder S23 = gl.S2(k96.M0(2131747120, null));
-                        hd hdVar3 = alertDialog$Builder3.a;
-                        hdVar3.U = S23;
-                        alertDialog$Builder3.j(k96.M0(2131747107, null), new k6b(t7bVar, (byte) 5));
-                        alertDialog$Builder3.g(k96.M0(2131751760, null), null);
-                        hdVar3.show();
+                        SpannableStringBuilder S23 = hl.S2(ob6.M0(2131747040, null));
+                        id idVar3 = alertDialog$Builder3.a;
+                        idVar3.U = S23;
+                        alertDialog$Builder3.j(ob6.M0(2131747027, null), new jab(rbbVar, (byte) 5));
+                        alertDialog$Builder3.g(ob6.M0(2131751737, null), null);
+                        idVar3.show();
                     }
-                    t7bVar.z2 = null;
+                    rbbVar.z2 = null;
                 }
             }
-            kk7.e().k(kk7.f5, Integer.valueOf(i), strArr, iArr);
+            jn7.e().k(jn7.g5, Integer.valueOf(i), strArr, iArr);
             SparseIntArray sparseIntArray = this.b1;
             if (sparseIntArray.get(i, -1) >= 0) {
                 int i5 = sparseIntArray.get(i, -1);
                 sparseIntArray.delete(i);
-                kk7.e().k(kk7.q5, Integer.valueOf(i5));
+                jn7.e().k(jn7.r5, Integer.valueOf(i5));
             }
-            kk7.e().k(kk7.r5, Integer.valueOf(i), strArr, iArr);
+            jn7.e().k(jn7.s5, Integer.valueOf(i), strArr, iArr);
         }
     }
 
-    @Override // en4, android.app.Activity
+    @Override // jp4, android.app.Activity
     public final void onResume() {
-        k27 k27Var;
-        a79 a79Var;
-        xl6 xl6Var;
+        na9 na9Var;
+        do6 do6Var;
         LaunchActivity launchActivity;
         super.onResume();
         byte b = 0;
-        vvc.q(false);
+        k0d.q(false);
         G1 = true;
-        mb3 c = mb3.c();
-        ArrayList arrayList = (ArrayList) c.c;
-        ArrayList arrayList2 = (ArrayList) c.d;
-        if (this == ((LaunchActivity) c.f)) {
-            c.b = true;
-            ddb ddbVar = (ddb) c.e;
-            if (ddbVar.f != null && (launchActivity = ddbVar.b) != null && !gl.F1(launchActivity)) {
-                ddbVar.d();
+        fc3 b2 = fc3.b();
+        ArrayList arrayList = (ArrayList) b2.c;
+        ArrayList arrayList2 = (ArrayList) b2.d;
+        if (this == ((LaunchActivity) b2.f)) {
+            b2.b = true;
+            ygb ygbVar = (ygb) b2.e;
+            if (ygbVar.f != null && (launchActivity = ygbVar.b) != null && !hl.F1(launchActivity)) {
+                ygbVar.d();
             }
             for (int i = 0; i < arrayList.size(); i++) {
-                xa8 xa8Var = (xa8) arrayList.get(i);
-                sj4 sj4Var = xa8Var.e;
-                if (sj4Var != null && xa8Var.c == 1 && sj4Var.g && !sj4Var.K) {
-                    if ((sj4Var.b.U() && Settings.canDrawOverlays(sj4Var.c)) != sj4Var.f) {
-                        sj4Var.l();
-                        sj4Var.a();
+                me8 me8Var = (me8) arrayList.get(i);
+                xl4 xl4Var = me8Var.e;
+                if (xl4Var != null && me8Var.c == 1 && xl4Var.h && !xl4Var.N) {
+                    if ((!xl4Var.d && xl4Var.b.E() && Settings.canDrawOverlays(xl4Var.c)) != xl4Var.g) {
+                        xl4Var.m();
+                        xl4Var.a();
                     }
                 }
             }
@@ -6560,43 +6592,43 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     ((Runnable) obj).run();
                 }
             }
-            c.d();
+            b2.d();
         }
-        byte b2 = 3;
-        if (bkb.o == 3) {
-            bkb.E(false);
+        byte b3 = 3;
+        if (aob.o == 3) {
+            aob.E(false);
         }
-        eb6[] eb6VarArr = eb6.P;
+        id6[] id6VarArr = id6.P;
         int i3 = 0;
         while (true) {
             if (i3 >= 4) {
                 break;
             }
-            if (y6c.h(i3).o() && !eb6.f(i3).J.isEmpty()) {
-                eb6.q();
+            if (yac.h(i3).o() && !id6.f(i3).J.isEmpty()) {
+                id6.q();
                 break;
             }
             i3++;
         }
         I(true);
-        kk7.e().k(kk7.j1, Integer.valueOf(TLObject.FLAG_12));
-        MediaController w = MediaController.w();
+        jn7.e().k(jn7.k1, Integer.valueOf(TLObject.FLAG_12));
+        MediaController z = MediaController.z();
         ViewGroup view = this.p0.getView();
         this.s1 = view;
-        w.L0 = view;
+        z.L0 = view;
         org.telegram.messenger.a.x = false;
-        na7.q1(this.P).Z4(null);
+        uc7.s1(this.P).h5(null);
         I0();
-        Utilities.d.c(new ql3((byte) 19));
+        Utilities.d.c(new jm3((byte) 21));
         D(0);
-        if (Build.VERSION.SDK_INT >= 24 && (xl6Var = MediaController.b2) != null) {
-            Utilities.e.d(new xv0(xl6Var.e.size(), (byte) 7), 2000L);
+        if (Build.VERSION.SDK_INT >= 24 && (do6Var = MediaController.b2) != null) {
+            Utilities.e.d(new gw0(do6Var.e.size(), (byte) 7), 2000L);
         }
         h0();
-        aw7 aw7Var = this.z0;
-        if (aw7Var == null || aw7Var.b.getVisibility() != 0) {
+        hz7 hz7Var = this.z0;
+        if (hz7Var == null || hz7Var.b.getVisibility() != 0) {
             this.p0.N();
-            if (gl.O1()) {
+            if (hl.O1()) {
                 ActionBarLayout actionBarLayout = this.r0;
                 if (actionBarLayout != null) {
                     actionBarLayout.N();
@@ -6608,7 +6640,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
         } else {
             this.p0.l();
-            if (gl.O1()) {
+            if (hl.O1()) {
                 ActionBarLayout actionBarLayout3 = this.r0;
                 if (actionBarLayout3 != null) {
                     actionBarLayout3.l();
@@ -6625,374 +6657,373 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             while (i4 < size2) {
                 Object obj2 = arrayList4.get(i4);
                 i4++;
-                ((yv7) obj2).l();
+                ((fz7) obj2).l();
             }
         }
         ConnectionsManager.getInstance(this.P).setAppPaused(false, false);
         P0();
-        if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-            PhotoViewer r0 = PhotoViewer.r0();
-            k98 k98Var = r0.f0;
-            if (k98Var != null) {
-                k98Var.invalidate();
-                gl.d3(new on7(r0, b, b2), 100L);
+        if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+            PhotoViewer q0 = PhotoViewer.q0();
+            ad8 ad8Var = q0.f0;
+            if (ad8Var != null) {
+                ad8Var.invalidate();
+                hl.d3(new me7((Object) q0, (int) b, (byte) 6), 100L);
             }
-            lbc lbcVar = r0.G2;
-            if (lbcVar != null) {
-                lbcVar.o0(lbcVar.S() + 1);
-                if (r0.Z2) {
-                    r0.G2.r0(true);
+            kfc kfcVar = q0.G2;
+            if (kfcVar != null) {
+                kfcVar.o0(kfcVar.S() + 1);
+                if (q0.Z2) {
+                    q0.G2.r0(true);
                 }
             }
-            q88 q88Var = r0.M1;
-            if (q88Var != null && (a79Var = q88Var.M0.d) != null) {
-                a79Var.postRunnable(a79Var.x);
+            hc8 hc8Var = q0.M1;
+            if (hc8Var != null && (na9Var = hc8Var.G0.d) != null) {
+                na9Var.postRunnable(na9Var.x);
             }
         }
-        t7b t7bVar = t7b.G2;
-        if (t7bVar != null) {
-            t7bVar.O();
+        rbb rbbVar = rbb.G2;
+        if (rbbVar != null) {
+            rbbVar.O();
         }
-        if (PipRoundVideoView.G != null && MediaController.w().C() && (k27Var = MediaController.w().v0) != null) {
-            MediaController.w().h0(k27Var, k27Var.b0);
-        }
-        if (y6c.h(y6c.t0).a0 != null) {
-            int i5 = y6c.t0;
-            L0(i5, y6c.h(i5).a0);
+        if (yac.h(yac.t0).a0 != null) {
+            int i5 = yac.t0;
+            L0(i5, yac.h(i5).a0);
         } else {
-            TLRPC.TL_help_appUpdate tL_help_appUpdate = gba.f1;
+            TLRPC.TL_help_appUpdate tL_help_appUpdate = xea.f1;
             if (tL_help_appUpdate != null && tL_help_appUpdate.can_not_skip) {
-                int i6 = y6c.t0;
+                int i6 = yac.t0;
                 if (this.C0 == null) {
-                    rk0 rk0Var = new rk0(this);
+                    sk0 sk0Var = new sk0(this);
                     GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-                    int i7 = bkb.c6;
-                    rk0Var.x = new GradientDrawable(orientation, new int[]{bkb.w0(null, i7, false), 0});
-                    rk0Var.y = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{bkb.w0(null, i7, false), 0});
-                    zkb.h(i7, null, rk0Var);
-                    int i8 = (int) (gl.m / gl.p);
+                    int i7 = aob.d6;
+                    sk0Var.x = new GradientDrawable(orientation, new int[]{aob.w0(null, i7, false), 0});
+                    sk0Var.y = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{aob.w0(null, i7, false), 0});
+                    yob.h(i7, null, sk0Var);
+                    int i8 = (int) (hl.m / hl.p);
                     FrameLayout frameLayout = new FrameLayout(this);
-                    rk0Var.addView(frameLayout, new FrameLayout.LayoutParams(-1, gl.L(176.0f) + gl.m));
-                    ry8 ry8Var = new ry8(this);
-                    ry8Var.f(R.raw.qr_code_logo, kk7.s1, kk7.s1, null);
-                    ry8Var.d();
-                    ry8Var.getAnimatedDrawable().F(1);
-                    ry8Var.setScaleType(ImageView.ScaleType.CENTER);
-                    ry8Var.setPadding(0, 0, 0, gl.L(14.0f));
-                    frameLayout.addView(ry8Var, nme.d(-2, -2.0f, 17, 0.0f, i8, 0.0f, 0.0f));
-                    ry8Var.setOnClickListener(new qk0(rk0Var));
+                    sk0Var.addView(frameLayout, new FrameLayout.LayoutParams(-1, hl.L(176.0f) + hl.m));
+                    e29 e29Var = new e29(this);
+                    e29Var.f(R.raw.qr_code_logo, jn7.s1, jn7.s1, null);
+                    e29Var.d();
+                    e29Var.getAnimatedDrawable().F(1);
+                    e29Var.setScaleType(ImageView.ScaleType.CENTER);
+                    e29Var.setPadding(0, 0, 0, hl.L(14.0f));
+                    frameLayout.addView(e29Var, tre.d(-2, -2.0f, 17, 0.0f, i8, 0.0f, 0.0f));
+                    e29Var.setOnClickListener(new rk0(sk0Var));
                     FrameLayout frameLayout2 = new FrameLayout(this);
                     ScrollView scrollView = new ScrollView(this);
-                    rk0Var.f = scrollView;
-                    gl.u3(scrollView, bkb.w0(null, bkb.r8, false));
-                    scrollView.setPadding(0, gl.L(16.0f), 0, gl.L(16.0f));
+                    sk0Var.f = scrollView;
+                    hl.u3(scrollView, aob.w0(null, aob.s8, false));
+                    scrollView.setPadding(0, hl.L(16.0f), 0, hl.L(16.0f));
                     scrollView.setClipToPadding(false);
-                    rk0Var.addView(scrollView, nme.d(-1, -1.0f, 51, 27.0f, i8 + kk7.H2, 27.0f, 130.0f));
+                    sk0Var.addView(scrollView, tre.d(-1, -1.0f, 51, 27.0f, i8 + jn7.H2, 27.0f, 130.0f));
                     scrollView.addView(frameLayout2);
                     TextView textView = new TextView(this);
-                    int i9 = bkb.F6;
-                    zkb.X(textView, i9, null);
+                    int i9 = aob.G6;
+                    yob.X(textView, i9, null);
                     textView.setTextSize(1, 20.0f);
                     textView.setGravity(49);
-                    textView.setTypeface(gl.o());
-                    textView.setText(k96.M0(2131743577, null));
-                    frameLayout2.addView(textView, nme.e(-2, -2, 49));
+                    textView.setTypeface(hl.o());
+                    textView.setText(ob6.M0(2131743471, null));
+                    frameLayout2.addView(textView, tre.e(-2, -2, 49));
                     TextView textView2 = new TextView(this);
-                    rk0Var.a = textView2;
-                    zkb.X(textView2, i9, null);
-                    zkb.G(textView2, bkb.I6, null);
+                    sk0Var.a = textView2;
+                    yob.X(textView2, i9, null);
+                    yob.G(textView2, aob.J6, null);
                     textView2.setTextSize(1, 15.0f);
-                    textView2.setMovementMethod(new cl(b));
+                    textView2.setMovementMethod(new dl(b));
                     textView2.setGravity(49);
-                    textView2.setLineSpacing(gl.L(2.0f), 1.0f);
-                    frameLayout2.addView(textView2, nme.d(-2, -2.0f, 51, 0.0f, 44.0f, 0.0f, 0.0f));
-                    yc ycVar = new yc(this, b2);
-                    rk0Var.d = ycVar;
-                    ycVar.setPadding(gl.L(34.0f), 0, gl.L(34.0f), 0);
-                    ycVar.setBackgroundDrawable(sjb.f(bkb.Ei, 4.0f));
-                    ycVar.setPadding(gl.L(34.0f), 0, gl.L(34.0f), 0);
-                    rk0Var.addView(ycVar, nme.d(-2, 46.0f, 81, 0.0f, 0.0f, 0.0f, 45.0f));
-                    ycVar.setOnClickListener(new qk0(rk0Var, this));
+                    textView2.setLineSpacing(hl.L(2.0f), 1.0f);
+                    frameLayout2.addView(textView2, tre.d(-2, -2.0f, 51, 0.0f, 44.0f, 0.0f, 0.0f));
+                    zc zcVar = new zc(this, b3);
+                    sk0Var.d = zcVar;
+                    zcVar.setPadding(hl.L(34.0f), 0, hl.L(34.0f), 0);
+                    zcVar.setBackgroundDrawable(rnb.f(aob.Fi, 4.0f));
+                    zcVar.setPadding(hl.L(34.0f), 0, hl.L(34.0f), 0);
+                    sk0Var.addView(zcVar, tre.d(-2, 46.0f, 81, 0.0f, 0.0f, 0.0f, 45.0f));
+                    zcVar.setOnClickListener(new rk0(sk0Var, this));
                     TextView textView3 = new TextView(this);
-                    rk0Var.b = textView3;
+                    sk0Var.b = textView3;
                     textView3.setGravity(17);
-                    textView3.setTypeface(gl.o());
+                    textView3.setTypeface(hl.o());
                     textView3.setTextColor(-1);
                     textView3.setTextSize(1, 14.0f);
-                    ycVar.addView(textView3, nme.e(-2, -2, 17));
-                    yc ycVar2 = new yc((byte) 4, (Context) this, (Object) rk0Var);
-                    rk0Var.c = ycVar2;
-                    ycVar2.setWillNotDraw(false);
-                    ycVar2.setAlpha(0.0f);
-                    ycVar2.setScaleX(0.1f);
-                    ycVar2.setScaleY(0.1f);
-                    ycVar2.setVisibility(4);
-                    ty8 ty8Var = new ty8(ycVar2);
-                    rk0Var.e = ty8Var;
-                    ty8Var.d(null, true, false);
-                    ty8Var.o = -1;
-                    ycVar.addView(ycVar2, nme.e(36, 36, 17));
-                    this.C0 = rk0Var;
-                    this.y0.addView(rk0Var, nme.c(-1.0f, -1));
+                    zcVar.addView(textView3, tre.e(-2, -2, 17));
+                    zc zcVar2 = new zc((byte) 4, (Context) this, (Object) sk0Var);
+                    sk0Var.c = zcVar2;
+                    zcVar2.setWillNotDraw(false);
+                    zcVar2.setAlpha(0.0f);
+                    zcVar2.setScaleX(0.1f);
+                    zcVar2.setScaleY(0.1f);
+                    zcVar2.setVisibility(4);
+                    g29 g29Var = new g29(zcVar2);
+                    sk0Var.e = g29Var;
+                    g29Var.d(null, true, false);
+                    g29Var.o = -1;
+                    zcVar.addView(zcVar2, tre.e(36, 36, 17));
+                    this.C0 = sk0Var;
+                    this.y0.addView(sk0Var, tre.c(-1.0f, -1));
                 }
-                rk0 rk0Var2 = this.C0;
-                rk0Var2.w = 0;
-                rk0Var2.n = tL_help_appUpdate;
-                rk0Var2.s = i6;
+                sk0 sk0Var2 = this.C0;
+                sk0Var2.w = 0;
+                sk0Var2.n = tL_help_appUpdate;
+                sk0Var2.s = i6;
                 TLRPC.Document document = tL_help_appUpdate.document;
                 if (document instanceof TLRPC.TL_document) {
-                    rk0Var2.r = ba4.r(null, document);
+                    sk0Var2.r = xb4.r(null, document);
                 }
-                if (rk0Var2.getVisibility() != 0) {
-                    rk0Var2.setVisibility(0);
+                if (sk0Var2.getVisibility() != 0) {
+                    sk0Var2.setVisibility(0);
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_help_appUpdate.text);
-                k27.b(spannableStringBuilder, tL_help_appUpdate.entities, false, false, false, false, 0);
-                rk0Var2.a.setText(spannableStringBuilder);
-                boolean z = tL_help_appUpdate.document instanceof TLRPC.TL_document;
-                TextView textView4 = rk0Var2.b;
-                if (z) {
-                    textView4.setText(k96.M0(2131743583, null).concat(String.format(Locale.US, " (%1$s)", gl.i0(tL_help_appUpdate.document.size, false, false))));
+                r47.b(spannableStringBuilder, tL_help_appUpdate.entities, false, false, false, false, 0);
+                sk0Var2.a.setText(spannableStringBuilder);
+                boolean z2 = tL_help_appUpdate.document instanceof TLRPC.TL_document;
+                TextView textView4 = sk0Var2.b;
+                if (z2) {
+                    textView4.setText(ob6.M0(2131743477, null).concat(String.format(Locale.US, " (%1$s)", hl.i0(tL_help_appUpdate.document.size, false, false))));
                 } else {
-                    textView4.setText(k96.M0(2131743583, null));
+                    textView4.setText(ob6.M0(2131743477, null));
                 }
-                kk7.f(rk0Var2.s).b(rk0Var2, kk7.X1);
-                kk7.f(rk0Var2.s).b(rk0Var2, kk7.Y1);
-                kk7.f(rk0Var2.s).b(rk0Var2, kk7.W1);
+                jn7.f(sk0Var2.s).b(sk0Var2, jn7.Y1);
+                jn7.f(sk0Var2.s).b(sk0Var2, jn7.Z1);
+                jn7.f(sk0Var2.s).b(sk0Var2, jn7.X1);
                 org.telegram.messenger.a.t();
             }
         }
         A(false);
         org.telegram.messenger.a.G = Settings.canDrawOverlays(this);
-        xgc.a(this);
-        hgc hgcVar = hgc.m1;
-        if (hgcVar != null) {
-            if (xgc.d() != null) {
-                xgc.b();
+        dlc.a(this);
+        mkc mkcVar = mkc.m1;
+        if (mkcVar != null) {
+            if (dlc.d() != null) {
+                dlc.b();
             }
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             if (sharedInstance != null) {
                 if (sharedInstance.getVideoState(false) == 1) {
                     sharedInstance.setVideoState(false, 2);
                 }
-                hgcVar.y();
+                mkcVar.y();
             } else if (VoIPService.getSharedState() == null) {
-                hgcVar.u0.b();
+                mkcVar.u0.b();
             }
-            hgcVar.J0 = ((KeyguardManager) hgcVar.b.getSystemService("keyguard")).inKeyguardRestrictedInputMode();
-            if (xgc.d() != null) {
-                xgc.d().getClass();
+            mkcVar.J0 = ((KeyguardManager) mkcVar.b.getSystemService("keyguard")).inKeyguardRestrictedInputMode();
+            if (dlc.d() != null) {
+                dlc.d().getClass();
                 VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                 if (sharedInstance2 != null && sharedInstance2.getVideoState(false) == 1) {
                     sharedInstance2.setVideoState(false, 2);
                 }
             }
-        } else if (xgc.d() != null) {
-            xgc.d().getClass();
+        } else if (dlc.d() != null) {
+            dlc.d().getClass();
             VoIPService sharedInstance3 = VoIPService.getSharedInstance();
             if (sharedInstance3 != null && sharedInstance3.getVideoState(false) == 1) {
                 sharedInstance3.setVideoState(false, 2);
             }
         }
         Z();
-        HashMap hashMap = pla.n;
+        HashMap hashMap = mpa.n;
         if (hashMap != null) {
             Iterator it = hashMap.values().iterator();
             while (it.hasNext()) {
-                ola olaVar = ((pla) it.next()).f;
-                if (olaVar != null) {
-                    olaVar.b = false;
+                lpa lpaVar = ((mpa) it.next()).f;
+                if (lpaVar != null) {
+                    lpaVar.b = false;
                 }
             }
         }
         org.telegram.messenger.a aVar = org.telegram.messenger.a.a;
-        ts tsVar = J1;
-        if (tsVar != null) {
-            tsVar.run();
+        ys ysVar = J1;
+        if (ysVar != null) {
+            ysVar.run();
             J1 = null;
         }
-        na7 q1 = na7.q1(this.P);
-        if (q1.u3.contains("SETUP_LOGIN_EMAIL") || q1.u3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
-            Utilities.d.c(new c87(na7.q1(this.P), (byte) 11));
+        uc7 s1 = uc7.s1(this.P);
+        if (s1.u3.contains("SETUP_LOGIN_EMAIL") || s1.u3.contains("SETUP_LOGIN_EMAIL_NOSKIP")) {
+            Utilities.d.c(new pa7(uc7.s1(this.P), (byte) 9));
         }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x00a1 A[Catch: Exception -> 0x012f, TRY_LEAVE, TryCatch #0 {Exception -> 0x012f, blocks: (B:3:0x0001, B:5:0x000a, B:7:0x000e, B:9:0x0018, B:11:0x00a1, B:15:0x00af, B:17:0x00be, B:19:0x00c2, B:20:0x012b, B:24:0x00cc, B:27:0x00d2, B:28:0x00db, B:30:0x00df, B:31:0x00e5, B:33:0x00e9, B:35:0x00f2, B:36:0x00f8, B:39:0x0102, B:40:0x010b, B:43:0x0111, B:45:0x0119, B:46:0x0122, B:48:0x0126, B:50:0x0030, B:52:0x0034, B:54:0x003e, B:55:0x0056, B:57:0x0062, B:59:0x007a, B:61:0x0086), top: B:2:0x0001 }] */
     /* JADX WARN: Removed duplicated region for block: B:49:? A[RETURN, SYNTHETIC] */
-    @Override // wp2, vp2, android.app.Activity
+    @Override // pq2, oq2, android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onSaveInstanceState(Bundle bundle) {
-        org.telegram.ui.ActionBar.d dVar;
+        org.telegram.ui.ActionBar.e eVar;
         try {
             super.onSaveInstanceState(bundle);
-            if (gl.O1()) {
+            if (hl.O1()) {
                 ActionBarLayout actionBarLayout = this.q0;
                 if (actionBarLayout == null || actionBarLayout.getFragmentStack().isEmpty()) {
                     ActionBarLayout actionBarLayout2 = this.r0;
                     if (actionBarLayout2 == null || actionBarLayout2.getFragmentStack().isEmpty()) {
                         if (!this.p0.getFragmentStack().isEmpty()) {
-                            dVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
+                            eVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
                         }
-                        dVar = null;
+                        eVar = null;
                     } else {
-                        dVar = this.r0.getFragmentStack().get(this.r0.getFragmentStack().size() - 1);
+                        eVar = this.r0.getFragmentStack().get(this.r0.getFragmentStack().size() - 1);
                     }
                 } else {
-                    dVar = this.q0.getFragmentStack().get(this.q0.getFragmentStack().size() - 1);
+                    eVar = this.q0.getFragmentStack().get(this.q0.getFragmentStack().size() - 1);
                 }
-                if (dVar != null) {
-                    Bundle arguments = dVar.getArguments();
-                    if ((dVar instanceof mu1) && arguments != null) {
+                if (eVar != null) {
+                    Bundle arguments = eVar.getArguments();
+                    if ((eVar instanceof zu1) && arguments != null) {
                         bundle.putBundle("args", arguments);
                         bundle.putString("fragment", "chat");
-                        mu1 mu1Var = (mu1) dVar;
-                        if (mu1Var.x4 && mu1Var.g4 == 0) {
-                            bundle.putLong("topic_id", mu1Var.d());
+                        zu1 zu1Var = (zu1) eVar;
+                        if (zu1Var.x4 && zu1Var.g4 == 0) {
+                            bundle.putLong("topic_id", zu1Var.c());
                         }
-                    } else if ((dVar instanceof wa5) && arguments != null) {
+                    } else if ((eVar instanceof xc5) && arguments != null) {
                         bundle.putBundle("args", arguments);
                         bundle.putString("fragment", "group");
-                    } else if (dVar instanceof WallpapersListActivity) {
+                    } else if (eVar instanceof WallpapersListActivity) {
                         bundle.putString("fragment", "wallpapers");
-                    } else if (dVar instanceof ProfileActivity) {
-                        ProfileActivity profileActivity = (ProfileActivity) dVar;
-                        if (profileActivity.r2()) {
+                    } else if (eVar instanceof ProfileActivity) {
+                        ProfileActivity profileActivity = (ProfileActivity) eVar;
+                        if (profileActivity.s2()) {
                             bundle.putString("fragment", "settings");
                         } else if (profileActivity.f1 != 0 && arguments != null) {
                             bundle.putBundle("args", arguments);
                             bundle.putString("fragment", "chat_profile");
                         }
-                    } else if ((dVar instanceof yh1) && arguments != null && arguments.getInt("step") == 0) {
+                    } else if ((eVar instanceof gi1) && arguments != null && arguments.getInt("step") == 0) {
                         bundle.putBundle("args", arguments);
                         bundle.putString("fragment", "channel");
-                    } else if (dVar instanceof d8a) {
+                    } else if (eVar instanceof tba) {
                         bundle.putString("fragment", "settings2");
                     }
-                    dVar.saveSelfArgs(bundle);
+                    eVar.saveSelfArgs(bundle);
                     return;
                 }
                 return;
             }
             if (!this.p0.getFragmentStack().isEmpty()) {
-                dVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
-                if (dVar != null) {
+                eVar = this.p0.getFragmentStack().get(this.p0.getFragmentStack().size() - 1);
+                if (eVar != null) {
                 }
             }
-            dVar = null;
-            if (dVar != null) {
+            eVar = null;
+            if (eVar != null) {
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x006d, code lost:
     
         if (r1 != null) goto L31;
      */
-    @Override // en4, android.app.Activity
+    @Override // jp4, android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onStart() {
-        sj4 sj4Var;
-        ya8 ya8Var;
+        xl4 xl4Var;
+        ne8 ne8Var;
         super.onStart();
         this.r1 = true;
-        mb3 c = mb3.c();
-        ArrayList arrayList = (ArrayList) c.c;
-        if (this == ((LaunchActivity) c.f)) {
-            c.a = true;
+        fc3 b = fc3.b();
+        ArrayList arrayList = (ArrayList) b.c;
+        if (this == ((LaunchActivity) b.f)) {
+            b.a = true;
             for (int i = 0; i < arrayList.size(); i++) {
-                xa8 xa8Var = (xa8) arrayList.get(i);
-                if (xa8Var.c == 1 && (sj4Var = xa8Var.e) != null && !sj4Var.f && (ya8Var = sj4Var.j) != null) {
-                    ya8Var.post(new vc4(sj4Var, ya8Var, (byte) 10));
+                me8 me8Var = (me8) arrayList.get(i);
+                if (me8Var.c == 1 && (xl4Var = me8Var.e) != null && !xl4Var.g && (ne8Var = xl4Var.l) != null) {
+                    ne8Var.post(new se4(xl4Var, ne8Var, (byte) 7));
                 }
             }
         }
-        WeakReference weakReference = d01.e;
+        WeakReference weakReference = m01.e;
         Activity activity = weakReference == null ? null : (Activity) weakReference.get();
         if (activity != null && activity != this) {
-            d01.y(activity);
+            m01.z(activity);
         }
-        if (d01.b == null) {
-            d01.e = new WeakReference(this);
+        if (m01.b == null) {
+            m01.e = new WeakReference(this);
             try {
-                if (TextUtils.isEmpty(d01.d)) {
-                    String a = cbe.a(this);
-                    d01.d = a;
+                if (TextUtils.isEmpty(m01.d)) {
+                    String a = sfe.a(this);
+                    m01.d = a;
                 }
-                b01 b01Var = new b01();
-                b5a b5aVar = new b5a();
-                b5aVar.b = new WeakReference(b01Var);
-                d01.c = b5aVar;
-                String str = d01.d;
+                k01 k01Var = new k01();
+                t8a t8aVar = new t8a();
+                t8aVar.b = new WeakReference(k01Var);
+                m01.c = t8aVar;
+                String str = m01.d;
                 Intent intent = new Intent("android.support.customtabs.action.CustomTabsService");
                 if (!TextUtils.isEmpty(str)) {
                     intent.setPackage(str);
                 }
-                if (!bindService(intent, b5aVar, 33)) {
-                    d01.c = null;
+                if (!bindService(intent, t8aVar, 33)) {
+                    m01.c = null;
                 }
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
         org.telegram.messenger.a.y = false;
-        o85.k(this);
-        h75 h75Var = h75.s5;
-        if (h75Var != null) {
-            h75Var.n1();
+        ra5.k(this);
+        j95 j95Var = j95.s5;
+        if (j95Var != null) {
+            j95Var.o1();
         }
-        on9 on9Var = on9.Q0;
-        if (on9Var != null) {
-            on9Var.I0 = false;
-            on9Var.v();
+        er9 er9Var = er9.Q0;
+        if (er9Var != null) {
+            er9Var.I0 = false;
+            er9Var.v();
         }
     }
 
-    @Override // en4, android.app.Activity
+    @Override // jp4, android.app.Activity
     public final void onStop() {
-        sj4 sj4Var;
+        xl4 xl4Var;
         super.onStop();
-        l15 l15Var = bje.b;
-        if (l15Var != null && l15Var.e == this && Build.VERSION.SDK_INT < 30) {
-            l15 l15Var2 = bje.b;
-            if (!l15Var2.f) {
-                l15Var2.c("AUTH_CANCELED");
-                bje.b.e();
+        p35 p35Var = tne.b;
+        if (p35Var != null && p35Var.e == this && Build.VERSION.SDK_INT < 30) {
+            p35 p35Var2 = tne.b;
+            if (!p35Var2.f) {
+                p35Var2.c("AUTH_CANCELED");
+                tne.b.e();
             }
         }
         this.r1 = false;
-        mb3 c = mb3.c();
-        ArrayList arrayList = (ArrayList) c.c;
-        if (this == ((LaunchActivity) c.f)) {
-            c.a = false;
-            ((ddb) c.e).getClass();
+        fc3 b = fc3.b();
+        ArrayList arrayList = (ArrayList) b.c;
+        if (this == ((LaunchActivity) b.f)) {
+            b.a = false;
+            ((ygb) b.e).getClass();
             for (int i = 0; i < arrayList.size(); i++) {
-                xa8 xa8Var = (xa8) arrayList.get(i);
-                if (xa8Var.c == 1 && (sj4Var = xa8Var.e) != null && !sj4Var.f) {
-                    xa8Var.a.e();
-                    xa8Var.d();
+                me8 me8Var = (me8) arrayList.get(i);
+                byte b2 = me8Var.c;
+                je8 je8Var = me8Var.a;
+                if (b2 == 1 && (xl4Var = me8Var.e) != null && !xl4Var.g && je8Var.A0()) {
+                    je8Var.b();
+                    me8Var.e();
                 }
             }
         }
-        if (PhotoViewer.C0() && PhotoViewer.r0().V0()) {
-            PhotoViewer.r0().g1();
+        if (PhotoViewer.C0() && PhotoViewer.q0().V0()) {
+            PhotoViewer.q0().g1();
         }
-        d01.y(this);
+        m01.z(this);
         org.telegram.messenger.a.y = true;
-        o85.k(this);
-        h75 h75Var = h75.s5;
-        if (h75Var != null) {
-            h75Var.m1();
+        ra5.k(this);
+        j95 j95Var = j95.s5;
+        if (j95Var != null) {
+            j95Var.n1();
         }
-        on9 on9Var = on9.Q0;
-        if (on9Var != null) {
-            on9Var.I0 = true;
-            on9Var.v();
+        er9 er9Var = er9.Q0;
+        if (er9Var != null) {
+            er9Var.I0 = true;
+            er9Var.v();
         }
     }
 
@@ -7004,7 +7035,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
 
     @Override // android.app.Activity
     public final void onUserLeaveHint() {
-        ((ddb) mb3.c().e).g();
+        ((ygb) fc3.b().e).g();
         ArrayList arrayList = this.a1;
         int size = arrayList.size();
         int i = 0;
@@ -7016,18 +7047,18 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         ActionBarLayout actionBarLayout = this.p0;
         if (actionBarLayout != null) {
             if (!actionBarLayout.V0.isEmpty()) {
-                ((org.telegram.ui.ActionBar.d) oo1.m(1, actionBarLayout.V0)).onUserLeaveHint();
+                ((org.telegram.ui.ActionBar.e) bp1.m(1, actionBarLayout.V0)).onUserLeaveHint();
             }
-            k6 k6Var = actionBarLayout.H;
-            if (k6Var != null) {
-                k6Var.onUserLeaveHint();
+            l6 l6Var = actionBarLayout.H;
+            if (l6Var != null) {
+                l6Var.onUserLeaveHint();
             }
         }
     }
 
     public final void p0(long[] jArr, boolean z) {
         boolean z2;
-        p2b a;
+        l6b a;
         long[] jArr2 = jArr;
         int i = 0;
         while (true) {
@@ -7035,25 +7066,25 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 z2 = true;
                 break;
             }
-            TLRPC.User V1 = na7.q1(this.P).V1(Long.valueOf(jArr2[i]));
-            if (V1 != null && !V1.stories_hidden) {
+            TLRPC.User X1 = uc7.s1(this.P).X1(Long.valueOf(jArr2[i]));
+            if (X1 != null && !X1.stories_hidden) {
                 z2 = false;
                 break;
             }
             i++;
         }
-        org.telegram.ui.ActionBar.d Q = Q();
+        org.telegram.ui.ActionBar.e Q = Q();
         if (Q != null) {
-            g2b M1 = na7.q1(this.P).M1();
-            ArrayList arrayList = new ArrayList(z2 ? M1.h : M1.g);
+            c6b O1 = uc7.s1(this.P).O1();
+            ArrayList arrayList = new ArrayList(z2 ? O1.h : O1.g);
             boolean z3 = z2;
             ArrayList arrayList2 = new ArrayList();
             ArrayList arrayList3 = new ArrayList();
             if (!z3) {
                 ArrayList arrayList4 = new ArrayList();
                 for (int i2 = 0; i2 < jArr2.length; i2++) {
-                    TLRPC.User V12 = na7.q1(this.P).V1(Long.valueOf(jArr2[i2]));
-                    if (V12 == null || !V12.stories_hidden) {
+                    TLRPC.User X12 = uc7.s1(this.P).X1(Long.valueOf(jArr2[i2]));
+                    if (X12 == null || !X12.stories_hidden) {
                         arrayList4.add(Long.valueOf(jArr2[i2]));
                     }
                 }
@@ -7070,152 +7101,54 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             int i4 = 0;
             if (z) {
                 while (i4 < jArr2.length) {
-                    i4 = mue.c(i4, 1, jArr2[i4], arrayList3);
+                    i4 = dze.c(i4, 1, jArr2[i4], arrayList3);
                 }
             } else {
                 while (i4 < jArr2.length) {
-                    i4 = mue.c(i4, 1, jArr2[i4], arrayList2);
+                    i4 = dze.c(i4, 1, jArr2[i4], arrayList2);
                 }
             }
             if (!arrayList3.isEmpty() && z) {
-                na7 q1 = na7.q1(this.P);
+                uc7 s1 = uc7.s1(this.P);
                 int[] iArr = {arrayList3.size()};
-                sx5 sx5Var = new sx5((Object) this, (Object) iArr, (Object) jArr2, (byte) 3);
+                ls5 ls5Var = new ls5((Object) this, (Object) iArr, (Object) jArr2, (byte) 8);
                 for (int i5 = 0; i5 < arrayList3.size(); i5++) {
                     long longValue = ((Long) arrayList3.get(i5)).longValue();
                     TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
-                    TLRPC.InputPeer h1 = q1.h1(longValue);
-                    tL_stories_getPeerStories.peer = h1;
-                    if (h1 instanceof TLRPC.TL_inputPeerEmpty) {
+                    TLRPC.InputPeer j1 = s1.j1(longValue);
+                    tL_stories_getPeerStories.peer = j1;
+                    if (j1 instanceof TLRPC.TL_inputPeerEmpty) {
                         iArr[0] = iArr[0] - 1;
                     } else {
-                        ConnectionsManager.getInstance(this.P).sendRequest(tL_stories_getPeerStories, new w47((Object) q1, longValue, (Object) sx5Var, (byte) 3));
+                        ConnectionsManager.getInstance(this.P).sendRequest(tL_stories_getPeerStories, new p87((Object) s1, longValue, (Object) ls5Var, (byte) 3));
                     }
                 }
                 return;
             }
-            long e = y6c.h(this.P).e();
+            long e = yac.h(this.P).e();
             for (int i6 = 0; i6 < arrayList.size(); i6++) {
-                long n = cf3.n(((TL_stories.PeerStories) arrayList.get(i6)).peer);
-                if (n != e && !arrayList2.contains(Long.valueOf(n)) && M1.K(n)) {
+                long n = wf3.n(((TL_stories.PeerStories) arrayList.get(i6)).peer);
+                if (n != e && !arrayList2.contains(Long.valueOf(n)) && O1.K(n)) {
                     arrayList2.add(Long.valueOf(n));
                 }
             }
             if (arrayList2.isEmpty()) {
                 return;
             }
-            if (Q instanceof cj3) {
+            if (Q instanceof uj3) {
                 try {
-                    a = p2b.a(((cj3) Q).F0.h);
+                    a = l6b.a(((uj3) Q).F0.h);
                 } catch (Exception unused) {
                 }
-                p2b p2bVar = a;
+                l6b l6bVar = a;
                 Q.getOrCreateStoryViewer().y();
-                Q.getOrCreateStoryViewer().K(this, null, arrayList2, 0, null, null, p2bVar, false);
+                Q.getOrCreateStoryViewer().K(this, null, arrayList2, 0, null, null, l6bVar, false);
             }
             a = null;
-            p2b p2bVar2 = a;
+            l6b l6bVar2 = a;
             Q.getOrCreateStoryViewer().y();
-            Q.getOrCreateStoryViewer().K(this, null, arrayList2, 0, null, null, p2bVar2, false);
+            Q.getOrCreateStoryViewer().K(this, null, arrayList2, 0, null, null, l6bVar2, false);
         }
-    }
-
-    public final void q0(final int i, final long j, final boolean z) {
-        TL_stories.StoryItem storyItem;
-        y1b y1bVar;
-        y1b z2;
-        k27 f;
-        k27 f2;
-        TL_stories.StoryItem storyItem2;
-        g2b M1 = na7.q1(this.P).M1();
-        TL_stories.PeerStories x = M1.x(j);
-        p2b p2bVar = null;
-        if (x != null) {
-            int i2 = 0;
-            while (true) {
-                if (i2 >= x.stories.size()) {
-                    storyItem2 = null;
-                    break;
-                } else {
-                    if (x.stories.get(i2).id == i) {
-                        storyItem2 = x.stories.get(i2);
-                        break;
-                    }
-                    i2++;
-                }
-            }
-            if (storyItem2 != null) {
-                storyItem2.dialogId = j;
-                org.telegram.ui.ActionBar.d Q = Q();
-                if (Q != null) {
-                    if (Q instanceof cj3) {
-                        try {
-                            p2bVar = p2b.a(((cj3) Q).F0.h);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    p2b p2bVar2 = p2bVar;
-                    Q.getOrCreateStoryViewer().y();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(Long.valueOf(storyItem2.dialogId));
-                    if (z) {
-                        Q.getOrCreateStoryViewer().w1 = true;
-                    }
-                    Q.getOrCreateStoryViewer().K(this, storyItem2, arrayList, 0, null, x, p2bVar2, false);
-                    return;
-                }
-                return;
-            }
-            storyItem = storyItem2;
-        } else {
-            storyItem = null;
-        }
-        if (storyItem == null) {
-            y1b z3 = M1.z(0, -1, j, true);
-            if (z3 == null || (f2 = z3.f(i)) == null) {
-                z3 = null;
-            } else {
-                storyItem = f2.l;
-            }
-            if (storyItem != null || (z2 = M1.z(1, -1, j, true)) == null || (f = z2.f(i)) == null) {
-                y1bVar = z3;
-            } else {
-                storyItem = f.l;
-                y1bVar = z2;
-            }
-            if (storyItem != null && y1bVar != null) {
-                storyItem.dialogId = j;
-                org.telegram.ui.ActionBar.d Q2 = Q();
-                if (Q2 == null) {
-                    return;
-                }
-                if (Q2 instanceof cj3) {
-                    try {
-                        p2bVar = p2b.a(((cj3) Q2).F0.h);
-                    } catch (Exception unused2) {
-                    }
-                }
-                p2b p2bVar3 = p2bVar;
-                Q2.getOrCreateStoryViewer().y();
-                ArrayList arrayList2 = new ArrayList();
-                arrayList2.add(Long.valueOf(storyItem.dialogId));
-                if (z) {
-                    Q2.getOrCreateStoryViewer().w1 = true;
-                }
-                Q2.getOrCreateStoryViewer().K(this, storyItem, arrayList2, 0, y1bVar, null, p2bVar3, false);
-                return;
-            }
-        }
-        TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-        tL_stories_getStoriesByID.peer = na7.q1(this.P).h1(j);
-        tL_stories_getStoriesByID.id.add(Integer.valueOf(i));
-        ConnectionsManager.getInstance(this.P).sendRequest(tL_stories_getStoriesByID, new RequestDelegate() { // from class: gz5
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                String str = LaunchActivity.C1;
-                gl.c3(new tm3(LaunchActivity.this, tLObject, i, j, z));
-            }
-        });
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -7235,20 +7168,20 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
     /* JADX WARN: Type inference failed for: r10v19 */
     /* JADX WARN: Type inference failed for: r10v23, types: [android.net.Uri, java.lang.CharSequence, java.lang.String, java.util.ArrayList] */
     /* JADX WARN: Type inference failed for: r10v24 */
-    @Override // wi3
+    @Override // oj3
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, final CharSequence charSequence, boolean z, boolean z2, int i, final int i2, qvb qvbVar) {
-        mu1 mu1Var;
-        final mu1 mu1Var2;
+    public final boolean q(uj3 uj3Var, ArrayList arrayList, final CharSequence charSequence, boolean z, boolean z2, int i, final int i2, tzb tzbVar) {
+        zu1 zu1Var;
+        final zu1 zu1Var2;
         CharSequence charSequence2;
         boolean z3;
-        k27 k27Var;
-        mu1 mu1Var3;
+        r47 r47Var;
+        zu1 zu1Var3;
         long j;
         long j2;
-        j5 j5Var;
+        k5 k5Var;
         int i3;
         boolean z4;
         boolean z5;
@@ -7279,46 +7212,46 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         ?? r10;
         final LaunchActivity launchActivity4 = this;
         final ArrayList arrayList5 = arrayList;
-        final int currentAccount = cj3Var != null ? cj3Var.getCurrentAccount() : launchActivity4.P;
+        final int currentAccount = uj3Var != null ? uj3Var.getCurrentAccount() : launchActivity4.P;
         Uri uri = launchActivity4.Y;
         boolean z10 = true;
         boolean z11 = false;
         if (uri != null) {
             ArrayList arrayList6 = launchActivity4.X != null ? new ArrayList(launchActivity4.X) : null;
-            hd hdVar = new hd(3, null, launchActivity4);
-            z3a.B(currentAccount).P(((zc7) arrayList5.get(0)).a, launchActivity4.Y, launchActivity4.X, new ez5(launchActivity4, currentAccount, cj3Var, z, arrayList6, uri, hdVar));
+            id idVar = new id(3, null, launchActivity4);
+            r7a.B(currentAccount).P(((if7) arrayList5.get(0)).a, launchActivity4.Y, launchActivity4.X, new e16(launchActivity4, currentAccount, uj3Var, z, arrayList6, uri, idVar));
             try {
-                hdVar.q(300L);
+                idVar.q(300L);
             } catch (Exception unused) {
             }
             launchActivity3 = launchActivity4;
             r10 = 0;
         } else {
-            cj3 cj3Var2 = cj3Var;
-            final boolean z12 = cj3Var2 == null || cj3Var2.L2 || z2;
-            int i7 = i != 0 ? i : cj3Var2 == null ? 0 : cj3Var2.M2;
-            boolean z13 = cj3Var2 != null && cj3Var2.O2;
+            uj3 uj3Var2 = uj3Var;
+            final boolean z12 = uj3Var2 == null || uj3Var2.L2 || z2;
+            int i7 = i != 0 ? i : uj3Var2 == null ? 0 : uj3Var2.M2;
+            boolean z13 = uj3Var2 != null && uj3Var2.O2;
             if (arrayList5.size() <= 1) {
-                long j3 = ((zc7) arrayList5.get(0)).a;
-                Bundle l = ir2.l("scrollToTopOnResume", true);
-                if (!gl.O1()) {
-                    kk7.f(currentAccount).k(kk7.s, new Object[0]);
+                long j3 = ((if7) arrayList5.get(0)).a;
+                Bundle l = bs2.l("scrollToTopOnResume", true);
+                if (!hl.O1()) {
+                    jn7.f(currentAccount).k(jn7.s, new Object[0]);
                 }
-                if (cf3.B(j3)) {
+                if (wf3.B(j3)) {
                     l.putInt("enc_id", (int) (j3 & 4294967295L));
-                } else if (cf3.D(j3)) {
+                } else if (wf3.D(j3)) {
                     l.putLong("user_id", j3);
                 } else {
                     l.putLong("chat_id", -j3);
                 }
-                if (na7.q1(currentAccount).A(l, cj3Var2, null, null)) {
-                    mu1 mu1Var4 = new mu1(l);
-                    mm4.a(mu1Var4, (zc7) arrayList5.get(0));
-                    mu1Var = mu1Var4;
+                if (uc7.s1(currentAccount).C(l, uj3Var2, null, null)) {
+                    zu1 zu1Var4 = new zu1(l);
+                    ro4.a(zu1Var4, (if7) arrayList5.get(0));
+                    zu1Var = zu1Var4;
                 }
                 return false;
             }
-            mu1Var = null;
+            zu1Var = null;
             ArrayList arrayList7 = launchActivity4.b0;
             int size2 = arrayList7 != null ? arrayList7.size() : 0;
             if (launchActivity4.S != null) {
@@ -7343,32 +7276,32 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 size2++;
             }
             for (int i8 = 0; i8 < arrayList5.size(); i8++) {
-                if (ij.h(launchActivity4, launchActivity4.P, ((zc7) arrayList5.get(i8)).a, size2 > 1)) {
+                if (jj.h(launchActivity4, launchActivity4.P, ((if7) arrayList5.get(i8)).a, size2 > 1)) {
                     return false;
                 }
             }
-            if (qvbVar != null) {
-                qvbVar.removeSelfFromStack();
+            if (tzbVar != null) {
+                tzbVar.removeSelfFromStack();
             }
             ArrayList arrayList11 = launchActivity4.b0;
             if (arrayList11 != null && arrayList11.size() == 1) {
                 ArrayList arrayList12 = launchActivity4.e0;
                 if (!arrayList12.isEmpty()) {
-                    b48 b48Var = new b48((org.telegram.ui.ActionBar.d) b00.f(1, arrayList12), null, null, launchActivity4.c0, null, null, null, null, null);
-                    mu1Var2 = mu1Var;
+                    r78 r78Var = new r78((org.telegram.ui.ActionBar.e) c00.g(1, arrayList12), null, null, launchActivity4.c0, null, null, null, null, null);
+                    zu1Var2 = zu1Var;
                     final int i9 = i7;
-                    b48Var.E1 = new b22() { // from class: fz5
-                        @Override // b22
+                    r78Var.E1 = new s22() { // from class: f16
+                        @Override // s22
                         public final void b(TLRPC.TL_userContact_old2 tL_userContact_old2, boolean z14, int i10, long j4) {
-                            k27 k27Var2;
+                            r47 r47Var2;
                             TLRPC.TL_forumTopic f;
                             TLRPC.Message message2;
                             String str2 = LaunchActivity.C1;
-                            mu1 mu1Var5 = mu1Var2;
-                            if (mu1Var5 != null) {
-                                ((ActionBarLayout) LaunchActivity.this.N()).U(mu1Var5, true, false);
+                            zu1 zu1Var5 = zu1Var2;
+                            if (zu1Var5 != null) {
+                                ((ActionBarLayout) LaunchActivity.this.N()).U(zu1Var5, true, false);
                             }
-                            j5 a = j5.a(y6c.t0);
+                            k5 a = k5.a(yac.t0);
                             int i11 = a.a;
                             int i12 = 0;
                             while (true) {
@@ -7376,55 +7309,55 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 if (i12 >= arrayList13.size()) {
                                     return;
                                 }
-                                long j5 = ((zc7) arrayList13.get(i12)).a;
-                                long j6 = ((zc7) arrayList13.get(i12)).b;
-                                if (j6 == 0 || (f = na7.q1(i11).g4.f(-j5, j6)) == null || (message2 = f.topicStartMessage) == null) {
-                                    k27Var2 = null;
+                                long j5 = ((if7) arrayList13.get(i12)).a;
+                                long j6 = ((if7) arrayList13.get(i12)).b;
+                                if (j6 == 0 || (f = uc7.s1(i11).g4.f(-j5, j6)) == null || (message2 = f.topicStartMessage) == null) {
+                                    r47Var2 = null;
                                 } else {
-                                    k27Var2 = new k27(i11, message2, false, false);
-                                    k27Var2.p = true;
+                                    r47Var2 = new r47(i11, message2, false, false);
+                                    r47Var2.p = true;
                                 }
-                                k27 k27Var3 = k27Var2;
+                                r47 r47Var3 = r47Var2;
                                 int i13 = i9;
                                 int i14 = i10 != 0 ? i10 : i13;
                                 int i15 = i2;
-                                x3a g = x3a.g(tL_userContact_old2, j5, k27Var3, k27Var3, null, null, z14, i14, i15);
+                                p7a g = p7a.g(tL_userContact_old2, j5, r47Var3, r47Var3, null, null, z14, i14, i15);
                                 CharSequence charSequence11 = charSequence;
                                 if (TextUtils.isEmpty(charSequence11)) {
                                     g.O = 0L;
                                 }
                                 g.L = false;
-                                z3a.B(currentAccount).q0(g);
+                                r7a.B(currentAccount).q0(g);
                                 if (!TextUtils.isEmpty(charSequence11)) {
-                                    z3a.Z(a, charSequence11, j5, 0L, z12, i10 != 0 ? i10 : i13, i15);
+                                    r7a.Z(a, charSequence11, j5, 0L, z12, i10 != 0 ? i10 : i13, i15);
                                 }
                                 i12++;
                             }
                         }
 
-                        @Override // b22
+                        @Override // s22
                         public final void a(ArrayList arrayList13, String str2, boolean z14, int i10, long j4, boolean z15) {
                         }
                     };
-                    ((org.telegram.ui.ActionBar.d) b00.f(1, arrayList12)).showDialog(b48Var);
+                    ((org.telegram.ui.ActionBar.e) c00.g(1, arrayList12)).showDialog(r78Var);
                     launchActivity3 = launchActivity4;
-                    mu1 mu1Var5 = mu1Var2;
-                    if (cj3Var != null && mu1Var5 == null && !z10) {
-                        cj3Var.finishFragment();
+                    zu1 zu1Var5 = zu1Var2;
+                    if (uj3Var != null && zu1Var5 == null && !z10) {
+                        uj3Var.finishFragment();
                     }
                     r10 = 0;
                 }
             }
-            mu1Var2 = mu1Var;
+            zu1Var2 = zu1Var;
             if (TextUtils.isEmpty(charSequence)) {
                 charSequence2 = charSequence;
             } else {
                 launchActivity4.U = charSequence;
                 charSequence2 = null;
             }
-            Object[] objArr = cj3Var2 != null && cj3Var2.x3();
+            Object[] objArr = uj3Var2 != null && uj3Var2.z3();
             if (objArr != false) {
-                ArrayList arrayList13 = cj3Var2.F2;
+                ArrayList arrayList13 = uj3Var2.F2;
                 ArrayList arrayList14 = new ArrayList();
                 if (arrayList13 != null) {
                     int size3 = arrayList13.size();
@@ -7432,34 +7365,34 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     while (i10 < size3) {
                         Object obj = arrayList13.get(i10);
                         i10++;
-                        jm6 jm6Var = (jm6) obj;
-                        y3a y3aVar = new y3a();
-                        boolean z14 = jm6Var.b;
-                        if (z14 || (str = jm6Var.h) == null) {
-                            String str2 = jm6Var.I;
+                        no6 no6Var = (no6) obj;
+                        q7a q7aVar = new q7a();
+                        boolean z14 = no6Var.b;
+                        if (z14 || (str = no6Var.h) == null) {
+                            String str2 = no6Var.I;
                             if (str2 != null) {
-                                y3aVar.c = str2;
+                                q7aVar.c = str2;
                             }
                         } else {
-                            y3aVar.c = str;
+                            q7aVar.c = str;
                         }
-                        y3aVar.e = jm6Var.c;
-                        y3aVar.f = jm6Var.g;
-                        y3aVar.o = z14;
-                        y3aVar.p = jm6Var.d();
-                        y3aVar.q = jm6Var.j();
+                        q7aVar.e = no6Var.c;
+                        q7aVar.f = no6Var.g;
+                        q7aVar.o = z14;
+                        q7aVar.p = no6Var.d();
+                        q7aVar.q = no6Var.j();
                         boolean z15 = z11;
-                        y3aVar.z = jm6Var.m;
-                        y3aVar.A = jm6Var.P;
-                        CharSequence charSequence11 = jm6Var.a;
-                        y3aVar.d = charSequence11 != null ? charSequence11.toString() : null;
-                        y3aVar.i = jm6Var.n;
-                        y3aVar.j = jm6Var.r;
-                        y3aVar.h = jm6Var.x;
-                        y3aVar.k = jm6Var.s;
-                        y3aVar.r = jm6Var.L;
-                        y3aVar.x = jm6Var.c();
-                        arrayList14.add(y3aVar);
+                        q7aVar.z = no6Var.m;
+                        q7aVar.A = no6Var.P;
+                        CharSequence charSequence11 = no6Var.a;
+                        q7aVar.d = charSequence11 != null ? charSequence11.toString() : null;
+                        q7aVar.i = no6Var.n;
+                        q7aVar.j = no6Var.r;
+                        q7aVar.h = no6Var.x;
+                        q7aVar.k = no6Var.s;
+                        q7aVar.r = no6Var.L;
+                        q7aVar.x = no6Var.c();
+                        arrayList14.add(q7aVar);
                         z11 = z15;
                     }
                 }
@@ -7472,17 +7405,17 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                     CharSequence[] charSequenceArr = new CharSequence[1];
                     charSequenceArr[z16 ? 1 : 0] = charSequence12;
-                    ArrayList Y = hq6.d0(launchActivity4.P).Y(charSequenceArr, z16, true);
+                    ArrayList Y = ls6.d0(launchActivity4.P).Y(charSequenceArr, z16, true);
                     CharSequence charSequence13 = charSequenceArr[z16 ? 1 : 0];
                     String charSequence14 = charSequence13 == null ? null : charSequence13.toString();
                     for (int i11 = 0; i11 < launchActivity4.V.size(); i11++) {
-                        y3a y3aVar2 = (y3a) launchActivity4.V.get(i11);
+                        q7a q7aVar2 = (q7a) launchActivity4.V.get(i11);
                         if (i11 == 0) {
-                            y3aVar2.d = charSequence14;
-                            y3aVar2.i = Y;
+                            q7aVar2.d = charSequence14;
+                            q7aVar2.i = Y;
                         } else {
-                            y3aVar2.d = null;
-                            y3aVar2.i = null;
+                            q7aVar2.d = null;
+                            q7aVar2.i = null;
                         }
                     }
                 }
@@ -7493,20 +7426,20 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             CharSequence charSequence15 = null;
             int i12 = 0;
             while (i12 < arrayList5.size()) {
-                long j4 = ((zc7) arrayList5.get(i12)).a;
-                long j5 = ((zc7) arrayList5.get(i12)).b;
-                j5 a = j5.a(y6c.t0);
+                long j4 = ((if7) arrayList5.get(i12)).a;
+                long j5 = ((if7) arrayList5.get(i12)).b;
+                k5 a = k5.a(yac.t0);
                 int i13 = a.a;
                 if (j5 != 0) {
                     z3 = z17;
-                    TLRPC.TL_forumTopic f = na7.q1(i13).g4.f(-j4, j5);
+                    TLRPC.TL_forumTopic f = uc7.s1(i13).g4.f(-j4, j5);
                     if (f != null && (message = f.topicStartMessage) != null) {
-                        k27 k27Var2 = new k27(i13, message, false, false);
-                        k27Var2.p = true;
-                        k27Var = k27Var2;
-                        if (mu1Var2 == null) {
-                            ((ActionBarLayout) launchActivity4.N()).U(mu1Var2, cj3Var2 != null, cj3Var2 == null || launchActivity4.S != null || ((arrayList4 = launchActivity4.V) != null && arrayList4.size() > 0));
-                            boolean z18 = cj3Var2 != null;
+                        r47 r47Var2 = new r47(i13, message, false, false);
+                        r47Var2.p = true;
+                        r47Var = r47Var2;
+                        if (zu1Var2 == null) {
+                            ((ActionBarLayout) launchActivity4.N()).U(zu1Var2, uj3Var2 != null, uj3Var2 == null || launchActivity4.S != null || ((arrayList4 = launchActivity4.V) != null && arrayList4.size() > 0));
+                            boolean z18 = uj3Var2 != null;
                             String str3 = launchActivity4.S;
                             if (str3 == null || j5 != 0 || objArr == true) {
                                 ArrayList arrayList15 = launchActivity4.V;
@@ -7515,7 +7448,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     z3 = z18;
                                     CharSequence charSequence16 = charSequence15;
                                     i3 = i13;
-                                    mu1Var3 = mu1Var2;
+                                    zu1Var3 = zu1Var2;
                                     j = j5;
                                     if (launchActivity4.S != null) {
                                         CharSequence charSequence17 = launchActivity4.U;
@@ -7529,13 +7462,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                         ArrayList arrayList16 = new ArrayList();
                                         arrayList16.add(launchActivity4.S);
                                         j2 = j4;
-                                        j5Var = a;
-                                        z3a.V(j5Var, arrayList16, arrayList16, null, charSequence8, null, j2, k27Var, k27Var, z12, i7);
+                                        k5Var = a;
+                                        r7a.V(k5Var, arrayList16, arrayList16, null, charSequence8, null, j2, r47Var, r47Var, z12, i7);
                                         z13 = z19;
                                         charSequence15 = charSequence8;
                                     } else {
                                         j2 = j4;
-                                        j5Var = a;
+                                        k5Var = a;
                                         ArrayList arrayList17 = launchActivity4.V;
                                         if (arrayList17 == null || arrayList17.size() <= 0) {
                                             z13 = z19;
@@ -7543,18 +7476,18 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                             CharSequence charSequence19 = launchActivity4.U;
                                             if (charSequence19 != null && charSequence19.length() <= 1024 && launchActivity4.V.size() == 1) {
                                                 CharSequence[] charSequenceArr2 = {launchActivity4.U};
-                                                ((y3a) launchActivity4.V.get(0)).i = hq6.d0(launchActivity4.P).Y(charSequenceArr2, false, true);
-                                                ((y3a) launchActivity4.V.get(0)).d = charSequenceArr2[0].toString();
+                                                ((q7a) launchActivity4.V.get(0)).i = ls6.d0(launchActivity4.P).Y(charSequenceArr2, false, true);
+                                                ((q7a) launchActivity4.V.get(0)).d = charSequenceArr2[0].toString();
                                                 launchActivity4.U = null;
                                             }
                                             ArrayList arrayList18 = launchActivity4.V;
                                             int i14 = i7;
-                                            k27 k27Var3 = k27Var;
-                                            z3a.W(j5Var, arrayList18, j2, k27Var3, k27Var, null, null, z19, arrayList18.size() > 1, null, null, z12, i14, i2, false, null, null, 0L, false, 0L, 0L, null, null, false);
+                                            r47 r47Var3 = r47Var;
+                                            r7a.W(k5Var, arrayList18, j2, r47Var3, r47Var, null, null, z19, arrayList18.size() > 1, null, null, z12, i14, i2, false, null, null, 0L, false, 0L, 0L, null, null, false);
                                             j2 = j2;
                                             z13 = z19;
                                             i7 = i14;
-                                            k27Var = k27Var3;
+                                            r47Var = r47Var3;
                                         }
                                         charSequence15 = charSequence16;
                                     }
@@ -7564,42 +7497,42 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     ArrayList arrayList19 = launchActivity4.V;
                                     CharSequence charSequence20 = (charSequence2 == null || charSequence2.length() == 0) ? launchActivity4.U : charSequence2;
                                     boolean z20 = z13;
-                                    ArrayList O5 = mu1.O5(arrayList19, mu1Var2.y(), charSequence20);
-                                    if (O5.isEmpty()) {
+                                    ArrayList V5 = zu1.V5(arrayList19, zu1Var2.y(), charSequence20);
+                                    if (V5.isEmpty()) {
                                         z3 = z18;
                                         charSequence9 = charSequence15;
                                         i3 = i13;
                                         z9 = false;
-                                        mu1Var3 = mu1Var2;
+                                        zu1Var3 = zu1Var2;
                                         j = j5;
                                         charSequence10 = null;
                                     } else {
-                                        if (mu1Var2.getParentActivity() != null) {
-                                            boolean[] zArr = new boolean[O5.size()];
+                                        if (zu1Var2.getParentActivity() != null) {
+                                            boolean[] zArr = new boolean[V5.size()];
                                             Arrays.fill(zArr, true);
                                             z3 = z18;
                                             charSequence9 = charSequence15;
-                                            PhotoViewer.r0().T1(null, mu1Var2, mu1Var2.Ba);
-                                            PhotoViewer r0 = PhotoViewer.r0();
-                                            ArrayList arrayList20 = new ArrayList(O5);
-                                            int size4 = O5.size() - 1;
-                                            hs1 hs1Var = new hs1(mu1Var2, O5, zArr);
+                                            PhotoViewer.q0().T1(null, zu1Var2, zu1Var2.Ba);
+                                            PhotoViewer q0 = PhotoViewer.q0();
+                                            ArrayList arrayList20 = new ArrayList(V5);
+                                            int size4 = V5.size() - 1;
+                                            vs1 vs1Var = new vs1(zu1Var2, V5, zArr);
                                             i3 = i13;
-                                            mu1 mu1Var6 = mu1Var2;
+                                            zu1 zu1Var6 = zu1Var2;
                                             j = j5;
-                                            r0.o1(arrayList20, size4, 0, false, hs1Var, mu1Var6);
-                                            mu1Var3 = mu1Var6;
+                                            q0.o1(arrayList20, size4, 0, false, vs1Var, zu1Var6);
+                                            zu1Var3 = zu1Var6;
                                             charSequence10 = null;
                                         } else {
                                             z3 = z18;
                                             charSequence9 = charSequence15;
                                             i3 = i13;
-                                            mu1Var3 = mu1Var2;
+                                            zu1Var3 = zu1Var2;
                                             j = j5;
                                             charSequence10 = null;
-                                            mu1Var3.y6(charSequence20, null);
-                                            mu1Var3.rb(0, O5, false, false);
-                                            mu1Var3.z4();
+                                            zu1Var3.F6(charSequence20, null);
+                                            zu1Var3.Cb(0, V5, false, false);
+                                            zu1Var3.E4();
                                         }
                                         z9 = true;
                                     }
@@ -7608,32 +7541,32 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     }
                                     charSequence15 = charSequence9;
                                     j2 = j4;
-                                    j5Var = a;
+                                    k5Var = a;
                                     z7 = false;
                                     z8 = z9;
                                     z13 = z20;
                                 }
                             } else {
-                                mu1Var2.va(launchActivity4.U, str3);
+                                zu1Var2.Ga(launchActivity4.U, str3);
                                 launchActivity4.U = null;
                                 z3 = z18;
                                 j2 = j4;
                                 i3 = i13;
                                 z7 = true;
                                 z8 = false;
-                                mu1Var3 = mu1Var2;
-                                j5Var = a;
+                                zu1Var3 = zu1Var2;
+                                k5Var = a;
                                 j = j5;
                             }
                             z4 = z13;
                             z6 = z7;
                             z5 = z8;
                         } else {
-                            mu1Var3 = mu1Var2;
+                            zu1Var3 = zu1Var2;
                             j = j5;
                             CharSequence charSequence21 = charSequence15;
                             j2 = j4;
-                            j5Var = a;
+                            k5Var = a;
                             i3 = i13;
                             if (launchActivity4.S != null) {
                                 CharSequence charSequence22 = launchActivity4.U;
@@ -7646,7 +7579,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 }
                                 ArrayList arrayList21 = new ArrayList();
                                 arrayList21.add(launchActivity4.S);
-                                z3a.V(j5Var, arrayList21, arrayList21, null, charSequence3, null, j2, k27Var, k27Var, z12, i7);
+                                r7a.V(k5Var, arrayList21, arrayList21, null, charSequence3, null, j2, r47Var, r47Var, z12, i7);
                                 charSequence15 = charSequence3;
                             } else {
                                 charSequence15 = charSequence21;
@@ -7655,19 +7588,19 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 CharSequence charSequence24 = launchActivity4.U;
                                 if (charSequence24 != null && charSequence24.length() <= 1024 && launchActivity4.V.size() == 1) {
                                     CharSequence[] charSequenceArr3 = {launchActivity4.U};
-                                    ((y3a) launchActivity4.V.get(0)).i = hq6.d0(launchActivity4.P).Y(charSequenceArr3, false, true);
-                                    ((y3a) launchActivity4.V.get(0)).d = charSequenceArr3[0].toString();
+                                    ((q7a) launchActivity4.V.get(0)).i = ls6.d0(launchActivity4.P).Y(charSequenceArr3, false, true);
+                                    ((q7a) launchActivity4.V.get(0)).d = charSequenceArr3[0].toString();
                                     launchActivity4.U = null;
                                 }
                                 ArrayList arrayList22 = launchActivity4.V;
                                 int i15 = i7;
-                                k27 k27Var4 = k27Var;
+                                r47 r47Var4 = r47Var;
                                 boolean z21 = z13;
-                                z3a.W(j5Var, arrayList22, j2, k27Var4, k27Var, null, null, z21, arrayList22.size() > 1, null, null, z12, i15, i2, false, null, null, 0L, false, 0L, 0L, null, null, false);
+                                r7a.W(k5Var, arrayList22, j2, r47Var4, r47Var, null, null, z21, arrayList22.size() > 1, null, null, z12, i15, i2, false, null, null, 0L, false, 0L, 0L, null, null, false);
                                 j2 = j2;
                                 z4 = z21;
                                 i7 = i15;
-                                k27Var = k27Var4;
+                                r47Var = r47Var4;
                             } else {
                                 z4 = z13;
                             }
@@ -7687,20 +7620,20 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 }
                             }
                             CharSequence charSequence25 = charSequence15;
-                            z3a.V(j5Var, launchActivity4.W, launchActivity4.a0, launchActivity4.X, charSequence25, launchActivity4.Z, j2, k27Var, k27Var, z12, i7);
+                            r7a.V(k5Var, launchActivity4.W, launchActivity4.a0, launchActivity4.X, charSequence25, launchActivity4.Z, j2, r47Var, r47Var, z12, i7);
                             charSequence5 = charSequence25;
                         } else {
                             charSequence5 = charSequence15;
                         }
-                        j5 j5Var2 = j5Var;
+                        k5 k5Var2 = k5Var;
                         if (launchActivity4.T != null) {
                             File file = new File(launchActivity4.T);
                             if (file.exists()) {
                                 TLRPC.TL_document tL_document = new TLRPC.TL_document();
                                 tL_document.file_reference = new byte[0];
                                 tL_document.dc_id = TLObject.FLAG_31;
-                                tL_document.id = gba.p();
-                                tL_document.user_id = y6c.h(i3).e();
+                                tL_document.id = xea.p();
+                                tL_document.user_id = yac.h(i3).e();
                                 tL_document.mime_type = "audio/ogg";
                                 tL_document.date = ConnectionsManager.getInstance(i3).getCurrentTime();
                                 tL_document.size = (int) file.length();
@@ -7714,16 +7647,16 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 tL_document.attributes.add(tL_documentAttributeAudio);
                                 i4 = 0;
                                 CharSequence[] charSequenceArr4 = {launchActivity4.U};
-                                ArrayList Y2 = hq6.d0(launchActivity4.P).Y(charSequenceArr4, false, true);
-                                z3a B = z3a.B(i3);
+                                ArrayList Y2 = ls6.d0(launchActivity4.P).Y(charSequenceArr4, false, true);
+                                r7a B = r7a.B(i3);
                                 String absolutePath = file.getAbsolutePath();
                                 CharSequence charSequence26 = charSequenceArr4[0];
                                 long j6 = j2;
-                                k27 k27Var5 = k27Var;
+                                r47 r47Var5 = r47Var;
                                 int i16 = i7;
-                                x3a f2 = x3a.f(tL_document, null, absolutePath, j6, k27Var5, k27Var, charSequence26 == null ? null : charSequence26.toString(), Y2, null, null, z12, i16, i2, 0, null, null, false);
+                                p7a f2 = p7a.f(tL_document, null, absolutePath, j6, r47Var5, r47Var, charSequence26 == null ? null : charSequence26.toString(), Y2, null, null, z12, i16, i2, 0, null, null, false);
                                 j2 = j6;
-                                k27Var = k27Var5;
+                                r47Var = r47Var5;
                                 i7 = i16;
                                 B.q0(f2);
                                 if (launchActivity4.U != null) {
@@ -7734,7 +7667,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 launchActivity = launchActivity4;
                                 if (charSequence6 != null) {
                                     i5 = i4;
-                                    C0(j5Var2, cj3Var2, charSequence6, j2, k27Var, j7, z12, i7, i2);
+                                    C0(k5Var2, uj3Var2, charSequence6, j2, r47Var, j7, z12, i7, i2);
                                 } else {
                                     i5 = i4;
                                 }
@@ -7743,12 +7676,12 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     i6 = i5;
                                     while (i6 < launchActivity.b0.size()) {
                                         TLRPC.User user = (TLRPC.User) launchActivity.b0.get(i6);
-                                        z3a B2 = z3a.B(currentAccount);
+                                        r7a B2 = r7a.B(currentAccount);
                                         long j8 = j2;
-                                        k27 k27Var6 = k27Var;
-                                        x3a g = x3a.g(user, j8, k27Var6, k27Var, null, null, z12, i7, i2);
+                                        r47 r47Var6 = r47Var;
+                                        p7a g = p7a.g(user, j8, r47Var6, r47Var, null, null, z12, i7, i2);
                                         j2 = j8;
-                                        k27Var = k27Var6;
+                                        r47Var = r47Var6;
                                         B2.q0(g);
                                         i6++;
                                         launchActivity = this;
@@ -7760,13 +7693,13 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                 } else {
                                     launchActivity2 = this;
                                     charSequence7 = charSequence2;
-                                    C0(j5Var2, cj3Var, charSequence7, j2, k27Var, j7, z12, i7, i2);
+                                    C0(k5Var2, uj3Var, charSequence7, j2, r47Var, j7, z12, i7, i2);
                                 }
                                 i12++;
-                                cj3Var2 = cj3Var;
+                                uj3Var2 = uj3Var;
                                 arrayList5 = arrayList;
                                 charSequence2 = charSequence7;
-                                mu1Var2 = mu1Var3;
+                                zu1Var2 = zu1Var3;
                                 launchActivity4 = launchActivity2;
                                 z13 = z4;
                                 z17 = z22;
@@ -7790,10 +7723,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         launchActivity2 = this;
                         charSequence7 = charSequence2;
                         i12++;
-                        cj3Var2 = cj3Var;
+                        uj3Var2 = uj3Var;
                         arrayList5 = arrayList;
                         charSequence2 = charSequence7;
-                        mu1Var2 = mu1Var3;
+                        zu1Var2 = zu1Var3;
                         launchActivity4 = launchActivity2;
                         z13 = z4;
                         z17 = z22;
@@ -7802,8 +7735,8 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 } else {
                     z3 = z17;
                 }
-                k27Var = null;
-                if (mu1Var2 == null) {
+                r47Var = null;
+                if (zu1Var2 == null) {
                 }
                 boolean z222 = z3;
                 if (launchActivity4.W == null) {
@@ -7818,9 +7751,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     }
                 }
                 CharSequence charSequence252 = charSequence15;
-                z3a.V(j5Var, launchActivity4.W, launchActivity4.a0, launchActivity4.X, charSequence252, launchActivity4.Z, j2, k27Var, k27Var, z12, i7);
+                r7a.V(k5Var, launchActivity4.W, launchActivity4.a0, launchActivity4.X, charSequence252, launchActivity4.Z, j2, r47Var, r47Var, z12, i7);
                 charSequence5 = charSequence252;
-                j5 j5Var22 = j5Var;
+                k5 k5Var22 = k5Var;
                 if (launchActivity4.T != null) {
                 }
                 i4 = 0;
@@ -7837,10 +7770,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 launchActivity2 = this;
                 charSequence7 = charSequence2;
                 i12++;
-                cj3Var2 = cj3Var;
+                uj3Var2 = uj3Var;
                 arrayList5 = arrayList;
                 charSequence2 = charSequence7;
-                mu1Var2 = mu1Var3;
+                zu1Var2 = zu1Var3;
                 launchActivity4 = launchActivity2;
                 z13 = z4;
                 z17 = z222;
@@ -7848,9 +7781,9 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
             }
             z10 = z17;
             launchActivity3 = launchActivity4;
-            mu1 mu1Var52 = mu1Var2;
-            if (cj3Var != null) {
-                cj3Var.finishFragment();
+            zu1 zu1Var52 = zu1Var2;
+            if (uj3Var != null) {
+                uj3Var.finishFragment();
             }
             r10 = 0;
         }
@@ -7866,164 +7799,141 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return true;
     }
 
-    public final void r0(TLRPC.TL_theme tL_theme, TLRPC.TL_wallPaper tL_wallPaper, akb akbVar) {
-        int i = akbVar.g0;
-        zjb d = akbVar.d(tL_theme, this.P, 0);
-        akbVar.a0 = akbVar.Z;
-        akbVar.u(d.a);
-        d.s = tL_wallPaper;
-        t0(new qmb(akbVar, i != akbVar.g0, 0, false, false));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void s0(final int i, int i2, final TLRPC.Chat chat, final int i3, TLRPC.TL_forumTopic tL_forumTopic, final Runnable runnable, final String str, final Integer num, final byte[] bArr, final int i4, final ArrayList arrayList, final int i5) {
-        final int i6;
-        TLRPC.TL_forumTopic tL_forumTopic2;
-        ArrayList arrayList2;
-        if (tL_forumTopic == null) {
-            i6 = i2;
-            tL_forumTopic2 = na7.q1(i).g4.f(chat.id, i6);
-        } else {
-            i6 = i2;
-            tL_forumTopic2 = tL_forumTopic;
-        }
-        if (tL_forumTopic2 == null) {
-            TL_forum.TL_messages_getForumTopicsByID tL_messages_getForumTopicsByID = new TL_forum.TL_messages_getForumTopicsByID();
-            tL_messages_getForumTopicsByID.peer = na7.q1(this.P).h1(-chat.id);
-            tL_messages_getForumTopicsByID.topics.add(Integer.valueOf(i6));
-            ConnectionsManager.getInstance(i).sendRequest(tL_messages_getForumTopicsByID, new RequestDelegate() { // from class: ty5
-                @Override // org.telegram.tgnet.RequestDelegate
-                public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-                    String str2 = LaunchActivity.C1;
-                    final LaunchActivity launchActivity = LaunchActivity.this;
-                    final int i7 = i;
-                    final TLRPC.Chat chat2 = chat;
-                    final int i8 = i6;
-                    final int i9 = i3;
-                    final Runnable runnable2 = runnable;
-                    final String str3 = str;
-                    final Integer num2 = num;
-                    final byte[] bArr2 = bArr;
-                    final int i10 = i4;
-                    final ArrayList arrayList3 = arrayList;
-                    final int i11 = i5;
-                    gl.c3(new Runnable() { // from class: yy5
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            String str4 = LaunchActivity.C1;
-                            if (tL_error == null) {
-                                TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) tLObject;
-                                vf6 vf6Var = new vf6();
-                                for (int i12 = 0; i12 < tL_messages_forumTopics.messages.size(); i12++) {
-                                    vf6Var.k(tL_messages_forumTopics.messages.get(i12), tL_messages_forumTopics.messages.get(i12).id);
-                                }
-                                int i13 = i7;
-                                na7.q1(i13).b4(tL_messages_forumTopics.users, false);
-                                na7.q1(i13).V3(tL_messages_forumTopics.chats, false);
-                                pub pubVar = na7.q1(i13).g4;
-                                TLRPC.Chat chat3 = chat2;
-                                pubVar.u(chat3.id, tL_messages_forumTopics.topics, vf6Var, false, 2, -1);
-                                pub pubVar2 = na7.q1(i13).g4;
-                                long j = chat3.id;
-                                int i14 = i8;
-                                LaunchActivity.this.s0(i13, i14, chat3, i9, pubVar2.f(j, i14), runnable2, str3, num2, bArr2, i10, arrayList3, i11);
-                            }
+    public final void q0(final int i, final long j, final boolean z) {
+        TL_stories.StoryItem storyItem;
+        u5b u5bVar;
+        u5b z2;
+        r47 f;
+        r47 f2;
+        TL_stories.StoryItem storyItem2;
+        c6b O1 = uc7.s1(this.P).O1();
+        TL_stories.PeerStories x = O1.x(j);
+        l6b l6bVar = null;
+        if (x != null) {
+            int i2 = 0;
+            while (true) {
+                if (i2 >= x.stories.size()) {
+                    storyItem2 = null;
+                    break;
+                } else {
+                    if (x.stories.get(i2).id == i) {
+                        storyItem2 = x.stories.get(i2);
+                        break;
+                    }
+                    i2++;
+                }
+            }
+            if (storyItem2 != null) {
+                storyItem2.dialogId = j;
+                org.telegram.ui.ActionBar.e Q = Q();
+                if (Q != null) {
+                    if (Q instanceof uj3) {
+                        try {
+                            l6bVar = l6b.a(((uj3) Q).F0.h);
+                        } catch (Exception unused) {
                         }
-                    });
-                }
-            });
-            return;
-        }
-        ArrayList arrayList3 = this.e0;
-        org.telegram.ui.ActionBar.d dVar = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.d) b00.f(1, arrayList3) : null;
-        if (dVar instanceof mu1) {
-            mu1 mu1Var = (mu1) dVar;
-            if (mu1Var.a() == (-chat.id) && mu1Var.x4 && mu1Var.d() == tL_forumTopic2.id) {
-                if (str != null) {
-                    mu1Var.Ab(i3, i5, str);
-                }
-                mu1Var.i8 = num;
-                mu1Var.ib(i3, i4, true, 0, true, 0, null, null, null);
-                if (runnable == null) {
-                    runnable.run();
+                    }
+                    l6b l6bVar2 = l6bVar;
+                    Q.getOrCreateStoryViewer().y();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(Long.valueOf(storyItem2.dialogId));
+                    if (z) {
+                        Q.getOrCreateStoryViewer().w1 = true;
+                    }
+                    Q.getOrCreateStoryViewer().K(this, storyItem2, arrayList, 0, null, x, l6bVar2, false);
                     return;
                 }
                 return;
             }
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("chat_id", chat.id);
-        if (i3 != tL_forumTopic2.id) {
-            bundle.putInt("message_id", Math.max(1, i3));
-        }
-        if (num != null) {
-            bundle.putInt("task_id", num.intValue());
-        }
-        mu1 mu1Var2 = new mu1(bundle);
-        if (arrayList.isEmpty()) {
-            TLRPC.Message message = new TLRPC.Message();
-            message.id = 1;
-            message.action = new TLRPC.TL_messageActionChannelMigrateFrom();
-            arrayList2 = arrayList;
-            arrayList2.add(new k27(i, message, false, false));
+            storyItem = storyItem2;
         } else {
-            arrayList2 = arrayList;
+            storyItem = null;
         }
-        mu1Var2.Db(arrayList2, chat, i3, tL_forumTopic2.read_inbox_max_id, tL_forumTopic2.read_outbox_max_id, tL_forumTopic2);
-        if (i3 != tL_forumTopic2.id) {
-            if (str != null) {
-                mu1Var2.Ab(i3, i5, str);
+        if (storyItem == null) {
+            u5b z3 = O1.z(0, -1, j, true);
+            if (z3 == null || (f2 = z3.f(i)) == null) {
+                z3 = null;
             } else {
-                mu1Var2.i8 = num;
-                mu1Var2.d8 = i3;
+                storyItem = f2.l;
             }
-            mu1Var2.ib(i3, i4, true, 0, true, 0, null, null, null);
+            if (storyItem != null || (z2 = O1.z(1, -1, j, true)) == null || (f = z2.f(i)) == null) {
+                u5bVar = z3;
+            } else {
+                storyItem = f.l;
+                u5bVar = z2;
+            }
+            if (storyItem != null && u5bVar != null) {
+                storyItem.dialogId = j;
+                org.telegram.ui.ActionBar.e Q2 = Q();
+                if (Q2 == null) {
+                    return;
+                }
+                if (Q2 instanceof uj3) {
+                    try {
+                        l6bVar = l6b.a(((uj3) Q2).F0.h);
+                    } catch (Exception unused2) {
+                    }
+                }
+                l6b l6bVar3 = l6bVar;
+                Q2.getOrCreateStoryViewer().y();
+                ArrayList arrayList2 = new ArrayList();
+                arrayList2.add(Long.valueOf(storyItem.dialogId));
+                if (z) {
+                    Q2.getOrCreateStoryViewer().w1 = true;
+                }
+                Q2.getOrCreateStoryViewer().K(this, storyItem, arrayList2, 0, u5bVar, null, l6bVar3, false);
+                return;
+            }
         }
-        t0(mu1Var2);
-        if (runnable == null) {
-        }
+        TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
+        tL_stories_getStoriesByID.peer = uc7.s1(this.P).j1(j);
+        tL_stories_getStoriesByID.id.add(Integer.valueOf(i));
+        ConnectionsManager.getInstance(this.P).sendRequest(tL_stories_getStoriesByID, new RequestDelegate() { // from class: i16
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                String str = LaunchActivity.C1;
+                hl.c3(new kn3(LaunchActivity.this, tLObject, i, j, z));
+            }
+        });
     }
 
-    @Override // android.app.Activity
-    public final void setRequestedOrientation(int i) {
-        gl.g = -10;
-        gl.h = -10;
-        gl.i = null;
-        super.setRequestedOrientation(i);
+    public final void r0(TLRPC.TL_theme tL_theme, TLRPC.TL_wallPaper tL_wallPaper, znb znbVar) {
+        int i = znbVar.g0;
+        ynb d = znbVar.d(tL_theme, this.P, 0);
+        znbVar.a0 = znbVar.Z;
+        znbVar.u(d.a);
+        d.s = tL_wallPaper;
+        t0(new pqb(znbVar, i != znbVar.g0, 0, false, false));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0071, code lost:
     
         if (r7 == null) goto L28;
      */
-    @Override // wi3
+    @Override // oj3
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean t(cj3 cj3Var) {
-        f4b l;
+    public final boolean s(uj3 uj3Var) {
+        c8b l;
         FileOutputStream fileOutputStream;
         ArrayList arrayList = this.V;
         if (arrayList == null || arrayList.isEmpty()) {
             String str = this.S;
             if (str != null) {
-                jm6 jm6Var = new jm6(0, str, 0, true, 0, 0);
+                no6 no6Var = new no6(0, str, 0, true, 0, 0);
                 try {
-                    Bitmap q = z3a.q(1, str);
-                    File file = new File(ba4.z(4), "-2147483648_" + gba.p() + ".jpg");
+                    Bitmap q = r7a.q(1, str);
+                    File file = new File(xb4.z(4), "-2147483648_" + xea.p() + ".jpg");
                     try {
                         fileOutputStream = new FileOutputStream(file);
                         try {
                             q.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                            jm6Var.c = file.getAbsolutePath();
+                            no6Var.c = file.getAbsolutePath();
                         } catch (Throwable th) {
                             th = th;
                             try {
-                                fa4.g(th, true);
+                                cc4.g(th, true);
                             } catch (Throwable th2) {
                                 if (fileOutputStream != null) {
                                     try {
@@ -8041,28 +7951,28 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                     fileOutputStream.close();
                 } catch (Throwable unused2) {
                 }
-                l = f4b.l(jm6Var);
+                l = c8b.l(no6Var);
             }
             l = null;
         } else {
-            ArrayList O5 = mu1.O5(this.V, false, null);
-            if (!O5.isEmpty()) {
-                l = f4b.l((jm6) O5.get(0));
+            ArrayList V5 = zu1.V5(this.V, false, null);
+            if (!V5.isEmpty()) {
+                l = c8b.l((no6) V5.get(0));
             }
             l = null;
         }
         if (l == null) {
             return false;
         }
-        wx n = na7.q1(this.P).M1().n();
+        xx n = uc7.s1(this.P).O1().n();
         if (n != null && n.a(this.P, 1)) {
-            cj3Var.showDialog(new h26(n.b(), this.P, null, this, cj3Var));
+            uj3Var.showDialog(new l46(n.b(), this.P, null, this, uj3Var));
             return false;
         }
         l.o = true;
         l.M = false;
-        t7b.C(this, this.P).R(null, l, 0L);
-        cj3Var.finishFragment();
+        rbb.C(this, this.P).R(null, l, 0L);
+        uj3Var.finishFragment();
         this.V = null;
         this.S = null;
         this.T = null;
@@ -8075,48 +7985,170 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         return true;
     }
 
-    public final void t0(org.telegram.ui.ActionBar.d dVar) {
-        ((ActionBarLayout) N()).S(dVar);
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void s0(final int i, int i2, final TLRPC.Chat chat, final int i3, TLRPC.TL_forumTopic tL_forumTopic, final Runnable runnable, final String str, final Integer num, final byte[] bArr, final int i4, final ArrayList arrayList, final int i5) {
+        final int i6;
+        TLRPC.TL_forumTopic tL_forumTopic2;
+        ArrayList arrayList2;
+        if (tL_forumTopic == null) {
+            i6 = i2;
+            tL_forumTopic2 = uc7.s1(i).g4.f(chat.id, i6);
+        } else {
+            i6 = i2;
+            tL_forumTopic2 = tL_forumTopic;
+        }
+        if (tL_forumTopic2 == null) {
+            TL_forum.TL_messages_getForumTopicsByID tL_messages_getForumTopicsByID = new TL_forum.TL_messages_getForumTopicsByID();
+            tL_messages_getForumTopicsByID.peer = uc7.s1(this.P).j1(-chat.id);
+            tL_messages_getForumTopicsByID.topics.add(Integer.valueOf(i6));
+            ConnectionsManager.getInstance(i).sendRequest(tL_messages_getForumTopicsByID, new RequestDelegate() { // from class: u06
+                @Override // org.telegram.tgnet.RequestDelegate
+                public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+                    String str2 = LaunchActivity.C1;
+                    final LaunchActivity launchActivity = LaunchActivity.this;
+                    final int i7 = i;
+                    final TLRPC.Chat chat2 = chat;
+                    final int i8 = i6;
+                    final int i9 = i3;
+                    final Runnable runnable2 = runnable;
+                    final String str3 = str;
+                    final Integer num2 = num;
+                    final byte[] bArr2 = bArr;
+                    final int i10 = i4;
+                    final ArrayList arrayList3 = arrayList;
+                    final int i11 = i5;
+                    hl.c3(new Runnable() { // from class: x06
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            String str4 = LaunchActivity.C1;
+                            if (tL_error == null) {
+                                TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) tLObject;
+                                zh6 zh6Var = new zh6();
+                                for (int i12 = 0; i12 < tL_messages_forumTopics.messages.size(); i12++) {
+                                    zh6Var.k(tL_messages_forumTopics.messages.get(i12).id, tL_messages_forumTopics.messages.get(i12));
+                                }
+                                int i13 = i7;
+                                uc7.s1(i13).j4(tL_messages_forumTopics.users, false);
+                                uc7.s1(i13).c4(tL_messages_forumTopics.chats, false);
+                                qyb qybVar = uc7.s1(i13).g4;
+                                TLRPC.Chat chat3 = chat2;
+                                qybVar.u(chat3.id, tL_messages_forumTopics.topics, zh6Var, false, 2, -1);
+                                qyb qybVar2 = uc7.s1(i13).g4;
+                                long j = chat3.id;
+                                int i14 = i8;
+                                LaunchActivity.this.s0(i13, i14, chat3, i9, qybVar2.f(j, i14), runnable2, str3, num2, bArr2, i10, arrayList3, i11);
+                            }
+                        }
+                    });
+                }
+            });
+            return;
+        }
+        ArrayList arrayList3 = this.e0;
+        org.telegram.ui.ActionBar.e eVar = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.e) c00.g(1, arrayList3) : null;
+        if (eVar instanceof zu1) {
+            zu1 zu1Var = (zu1) eVar;
+            if (zu1Var.a() == (-chat.id) && zu1Var.x4 && zu1Var.c() == tL_forumTopic2.id) {
+                if (str != null) {
+                    zu1Var.Lb(i3, i5, str);
+                }
+                zu1Var.i8 = num;
+                zu1Var.tb(i3, i4, true, 0, true, 0, null, null, null);
+                if (runnable == null) {
+                    runnable.run();
+                    return;
+                }
+                return;
+            }
+        }
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", chat.id);
+        if (i3 != tL_forumTopic2.id) {
+            bundle.putInt("message_id", Math.max(1, i3));
+        }
+        if (num != null) {
+            bundle.putInt("task_id", num.intValue());
+        }
+        zu1 zu1Var2 = new zu1(bundle);
+        if (arrayList.isEmpty()) {
+            TLRPC.Message message = new TLRPC.Message();
+            message.id = 1;
+            message.action = new TLRPC.TL_messageActionChannelMigrateFrom();
+            arrayList2 = arrayList;
+            arrayList2.add(new r47(i, message, false, false));
+        } else {
+            arrayList2 = arrayList;
+        }
+        zu1Var2.Ob(arrayList2, chat, i3, tL_forumTopic2.read_inbox_max_id, tL_forumTopic2.read_outbox_max_id, tL_forumTopic2);
+        if (i3 != tL_forumTopic2.id) {
+            if (str != null) {
+                zu1Var2.Lb(i3, i5, str);
+            } else {
+                zu1Var2.i8 = num;
+                zu1Var2.d8 = i3;
+            }
+            zu1Var2.tb(i3, i4, true, 0, true, 0, null, null, null);
+        }
+        t0(zu1Var2);
+        if (runnable == null) {
+        }
     }
 
-    public final boolean u0(org.telegram.ui.ActionBar.d dVar, boolean z, boolean z2) {
-        return ((ActionBarLayout) N()).U(dVar, z, z2);
+    @Override // android.app.Activity
+    public final void setRequestedOrientation(int i) {
+        hl.g = -10;
+        hl.h = -10;
+        hl.i = null;
+        super.setRequestedOrientation(i);
+    }
+
+    public final void t0(org.telegram.ui.ActionBar.e eVar) {
+        ((ActionBarLayout) N()).S(eVar);
+    }
+
+    public final boolean u0(org.telegram.ui.ActionBar.e eVar, boolean z, boolean z2) {
+        return ((ActionBarLayout) N()).U(eVar, z, z2);
     }
 
     public final void v0(long j) {
+        byte b = 0;
         int i = 0;
         while (true) {
             ArrayList arrayList = this.D0;
             if (i >= arrayList.size()) {
-                org.telegram.ui.ActionBar.d S = S();
+                org.telegram.ui.ActionBar.e S = S();
                 if (S != null && S.sheetsStack != null) {
                     for (int i2 = 0; i2 < S.sheetsStack.size(); i2++) {
-                        if (S.sheetsStack.get(i2).t()) {
+                        if (S.sheetsStack.get(i2).s()) {
                             S.sheetsStack.get(i2);
                         }
                     }
                 }
-                x14 v = this.p0.v();
+                s24 v = this.p0.v();
                 if (v != null && v.sheetsStack != null) {
                     for (int i3 = 0; i3 < v.sheetsStack.size(); i3++) {
-                        if (v.sheetsStack.get(i3).t()) {
+                        if (v.sheetsStack.get(i3).s()) {
                             v.sheetsStack.get(i3);
                         }
                     }
                 }
-                bz5 bz5Var = new bz5(this, (byte) 1);
-                TLRPC.User V1 = na7.q1(this.P).V1(Long.valueOf(j));
-                if (V1 != null) {
-                    bz5Var.a(V1);
+                j16 j16Var = new j16(this, b);
+                TLRPC.User X1 = uc7.s1(this.P).X1(Long.valueOf(j));
+                if (X1 != null) {
+                    j16Var.a(X1);
                     return;
                 } else {
-                    ad7.Y(this.P).a.c(new de2((Object) this, j, (Object) bz5Var, (byte) 27));
+                    jf7.Y(this.P).a.c(new ue2((Object) this, j, (Object) j16Var, (byte) 27));
                     return;
                 }
             }
-            if (arrayList.get(i) instanceof ow0) {
-                ow0 ow0Var = (ow0) arrayList.get(i);
-                if (ow0Var.isShowing() && ow0Var.J == j) {
+            if (arrayList.get(i) instanceof xw0) {
+                xw0 xw0Var = (xw0) arrayList.get(i);
+                if (xw0Var.isShowing() && xw0Var.J == j) {
                     return;
                 }
             }
@@ -8124,27 +8156,27 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
     }
 
-    public final void w0(Long l, kz5 kz5Var, c01 c01Var, gb2 gb2Var) {
-        og1 E0 = na7.q1(this.P).E0();
-        if (c01Var != null) {
-            c01Var.d();
+    public final void w0(Long l, tg5 tg5Var, l01 l01Var, wb2 wb2Var) {
+        xg1 G0 = uc7.s1(this.P).G0();
+        if (l01Var != null) {
+            l01Var.d();
         }
-        E0.a(l.longValue(), new f25(this, c01Var, kz5Var, E0, l, gb2Var, (byte) 3));
+        G0.a(l.longValue(), new o45(this, l01Var, tg5Var, G0, l, wb2Var, (byte) 2));
     }
 
-    public final void x0(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, String str26, final String str27, final c01 c01Var, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str28, final TLRPC.User user, final kz5 kz5Var, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final boolean z11, final String str29, final boolean z12) {
+    public final void x0(final int i, final String str, final String str2, final String str3, final String str4, final String str5, final String str6, final String str7, final String str8, final String str9, final String str10, final String str11, final String str12, final boolean z, final Integer num, final Long l, final Long l2, final Integer num2, final String str13, final HashMap hashMap, final String str14, final String str15, final String str16, final String str17, final TLRPC.TL_wallPaper tL_wallPaper, final String str18, final String str19, final String str20, final String str21, final boolean z2, final String str22, final int i2, final int i3, final String str23, final String str24, final String str25, String str26, final String str27, final l01 l01Var, final boolean z3, final int i4, final int i5, final int i6, final boolean z4, final String str28, final TLRPC.User user, final tg5 tg5Var, final boolean z5, final boolean z6, final boolean z7, final boolean z8, final boolean z9, final boolean z10, final boolean z11, final String str29, final boolean z12) {
         TLRPC.TL_messages_getBotApp tL_messages_getBotApp = new TLRPC.TL_messages_getBotApp();
         TLRPC.TL_inputBotAppShortName tL_inputBotAppShortName = new TLRPC.TL_inputBotAppShortName();
-        tL_inputBotAppShortName.bot_id = na7.q1(i).o1(user);
+        tL_inputBotAppShortName.bot_id = uc7.s1(i).q1(user);
         tL_inputBotAppShortName.short_name = str26;
         tL_messages_getBotApp.app = tL_inputBotAppShortName;
-        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getBotApp, new RequestDelegate() { // from class: iy5
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getBotApp, new RequestDelegate() { // from class: i06
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 String str30 = LaunchActivity.C1;
-                final c01 c01Var2 = c01Var;
-                if (c01Var2 != null) {
-                    c01Var2.b();
+                final l01 l01Var2 = l01Var;
+                if (l01Var2 != null) {
+                    l01Var2.b();
                 }
                 final LaunchActivity launchActivity = LaunchActivity.this;
                 final int i7 = i;
@@ -8154,20 +8186,20 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 final boolean z16 = z9;
                 if (tL_error == null) {
                     final TLRPC.TL_messages_botApp tL_messages_botApp = (TLRPC.TL_messages_botApp) tLObject;
-                    final kz5 kz5Var2 = kz5Var;
+                    final tg5 tg5Var2 = tg5Var;
                     final TLRPC.User user2 = user;
                     final String str31 = str27;
                     final boolean z17 = z6;
                     final boolean z18 = z5;
-                    gl.c3(new Runnable() { // from class: py5
+                    hl.c3(new Runnable() { // from class: p06
                         @Override // java.lang.Runnable
                         public final void run() {
                             String str32 = LaunchActivity.C1;
-                            kz5Var2.run();
+                            tg5Var2.run();
                             AtomicBoolean atomicBoolean = new AtomicBoolean();
                             LaunchActivity launchActivity2 = LaunchActivity.this;
                             ArrayList arrayList = launchActivity2.e0;
-                            d dVar = (arrayList == null || arrayList.isEmpty()) ? null : (d) b00.f(1, arrayList);
+                            e eVar = (arrayList == null || arrayList.isEmpty()) ? null : (e) c00.g(1, arrayList);
                             int i8 = i7;
                             TLRPC.User user3 = user2;
                             TLRPC.TL_messages_botApp tL_messages_botApp2 = tL_messages_botApp;
@@ -8176,19 +8208,19 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             boolean z20 = z15;
                             boolean z21 = z16;
                             boolean z22 = z13;
-                            wy5 wy5Var = new wy5(launchActivity2, dVar, i8, user3, tL_messages_botApp2, atomicBoolean, str33, z19, z20, z21, z22);
+                            w06 w06Var = new w06(launchActivity2, eVar, i8, user3, tL_messages_botApp2, atomicBoolean, str33, z19, z20, z21, z22);
                             if (z17) {
-                                wy5Var.run();
+                                w06Var.run();
                                 return;
                             }
                             if (tL_messages_botApp2.inactive && z18) {
-                                hj3 hj3Var = new hj3(wy5Var, (byte) 20);
-                                c01 c01Var3 = c01Var2;
-                                psc.a(launchActivity2, hj3Var, c01Var3 != null ? new tp5(c01Var3, (byte) 7) : null);
+                                zj3 zj3Var = new zj3(w06Var, (byte) 20);
+                                l01 l01Var3 = l01Var2;
+                                exc.a(launchActivity2, zj3Var, l01Var3 != null ? new ea5(l01Var3, (byte) 22) : null);
                             } else if (tL_messages_botApp2.request_write_access || z22) {
-                                ij.m(dVar, atomicBoolean, user3, wy5Var);
+                                jj.m(eVar, atomicBoolean, user3, w06Var);
                             } else {
-                                wy5Var.run();
+                                w06Var.run();
                             }
                         }
                     });
@@ -8239,7 +8271,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 final String str58 = str29;
                 final boolean z25 = z12;
                 final int i12 = z21 ? 1 : 0;
-                gl.c3(new Runnable() { // from class: oy5
+                hl.c3(new Runnable() { // from class: o06
                     @Override // java.lang.Runnable
                     public final void run() {
                         String str59 = LaunchActivity.C1;
@@ -8276,7 +8308,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         boolean z27 = z20;
                         String str81 = str53;
                         boolean z28 = i12;
-                        launchActivity2.B0(i13, str60, str61, str62, str63, str64, str65, str66, str67, str68, str69, str70, str71, z26, num5, l5, l6, num6, str72, hashMap3, str73, str74, str75, str76, tL_wallPaper3, str77, str78, str79, str80, z27, str81, z28 ? 1 : 0, i8, str54, str55, str56, null, null, c01Var2, z13, i9, false, i10, i11, null, null, z22, str57, z14, z15, z16, z23, z24, str58, null, z25, null);
+                        launchActivity2.B0(i13, str60, str61, str62, str63, str64, str65, str66, str67, str68, str69, str70, str71, z26, num5, l5, l6, num6, str72, hashMap3, str73, str74, str75, str76, tL_wallPaper3, str77, str78, str79, str80, z27, str81, z28 ? 1 : 0, i8, str54, str55, str56, null, null, l01Var2, z13, i9, false, i10, i11, null, null, z22, str57, z14, z15, z16, z23, z24, str58, null, z25, null);
                     }
                 });
             }
@@ -8304,21 +8336,21 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         }
         ValueAnimator ofArgb = ValueAnimator.ofArgb(i2 >= 26 ? getWindow().getNavigationBarColor() : 0, i);
         this.z1 = ofArgb;
-        ofArgb.addUpdateListener(new tx5(this, (byte) 1));
-        this.z1.addListener(new cn(this, i, (byte) 6));
-        this.z1.setInterpolator(s33.h);
+        ofArgb.addUpdateListener(new h16(this, (byte) 1));
+        this.z1.addListener(new dn(this, i, (byte) 6));
+        this.z1.setInterpolator(k43.h);
         this.z1.setDuration(320L);
         this.z1.start();
     }
 
-    public final int z0(final int i, final kz5 kz5Var, final Integer num, final Integer num2, final Long l, final Integer num3, final byte[] bArr, final TLRPC.Chat chat, final Runnable runnable, final String str, final int i2, final int i3) {
+    public final int z0(final int i, final tg5 tg5Var, final Integer num, final Integer num2, final Long l, final Integer num3, final byte[] bArr, final TLRPC.Chat chat, final Runnable runnable, final String str, final int i2, final int i3) {
         if (chat == null) {
             return 0;
         }
         final TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage = new TLRPC.TL_messages_getDiscussionMessage();
-        tL_messages_getDiscussionMessage.peer = na7.j1(chat);
+        tL_messages_getDiscussionMessage.peer = uc7.l1(chat);
         tL_messages_getDiscussionMessage.msg_id = num2 != null ? num.intValue() : (int) l.longValue();
-        return ConnectionsManager.getInstance(i).sendRequest(tL_messages_getDiscussionMessage, new RequestDelegate() { // from class: ox5
+        return ConnectionsManager.getInstance(i).sendRequest(tL_messages_getDiscussionMessage, new RequestDelegate() { // from class: tz5
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
                 String str2 = LaunchActivity.C1;
@@ -8335,8 +8367,8 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                 final int i5 = i2;
                 final int i6 = i3;
                 final TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage2 = tL_messages_getDiscussionMessage;
-                final kz5 kz5Var2 = kz5Var;
-                gl.c3(new Runnable() { // from class: ky5
+                final tg5 tg5Var2 = tg5Var;
+                hl.c3(new Runnable() { // from class: k06
                     /* JADX WARN: Can't wrap try/catch for region: R(10:0|1|(5:3|(1:5)|6|7|(5:14|(3:16|(1:18)|19)(3:33|(1:(1:36)(1:(1:39)(1:40)))(1:(1:(1:43)(1:(1:45)(1:46))))|37)|20|(2:31|32)|(2:23|29)(1:30)))|47|48|(1:50)|20|(0)|(0)(0)|(1:(0))) */
                     /* JADX WARN: Code restructure failed: missing block: B:52:0x0141, code lost:
                     
@@ -8344,7 +8376,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                      */
                     /* JADX WARN: Code restructure failed: missing block: B:53:0x0142, code lost:
                     
-                        fa4.g(r0, true);
+                        cc4.g(r0, true);
                      */
                     /* JADX WARN: Removed duplicated region for block: B:23:0x014e A[Catch: Exception -> 0x0152, TRY_LEAVE, TryCatch #0 {Exception -> 0x0152, blocks: (B:32:0x0149, B:23:0x014e), top: B:31:0x0149 }] */
                     /* JADX WARN: Removed duplicated region for block: B:30:? A[RETURN, SYNTHETIC] */
@@ -8354,7 +8386,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
                     public final void run() {
-                        kz5 kz5Var3;
+                        tg5 tg5Var3;
                         String str4 = LaunchActivity.C1;
                         LaunchActivity launchActivity2 = LaunchActivity.this;
                         ArrayList arrayList = launchActivity2.e0;
@@ -8364,12 +8396,12 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                         if (z) {
                             TLRPC.TL_messages_discussionMessage tL_messages_discussionMessage = (TLRPC.TL_messages_discussionMessage) tLObject2;
                             int i7 = i4;
-                            na7.q1(i7).b4(tL_messages_discussionMessage.users, false);
-                            na7.q1(i7).V3(tL_messages_discussionMessage.chats, false);
+                            uc7.s1(i7).j4(tL_messages_discussionMessage.users, false);
+                            uc7.s1(i7).c4(tL_messages_discussionMessage.chats, false);
                             ArrayList arrayList2 = new ArrayList();
                             int size = tL_messages_discussionMessage.messages.size();
                             for (int i8 = 0; i8 < size; i8++) {
-                                arrayList2.add(new k27(y6c.t0, tL_messages_discussionMessage.messages.get(i8), true, true));
+                                arrayList2.add(new r47(yac.t0, tL_messages_discussionMessage.messages.get(i8), true, true));
                             }
                             boolean isEmpty = arrayList2.isEmpty();
                             TLRPC.Chat chat3 = chat2;
@@ -8390,39 +8422,39 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                                     launchActivity2.s0(i7, longValue, chat3, num7.intValue(), null, runnable3, str5, num9, bArr3, i5, arrayList2, i9);
                                 } else {
                                     Bundle bundle = new Bundle();
-                                    bundle.putLong("chat_id", -k27.B0(((k27) arrayList2.get(0)).k));
+                                    bundle.putLong("chat_id", -r47.B0(((r47) arrayList2.get(0)).k));
                                     bundle.putInt("message_id", Math.max(1, num8.intValue()));
-                                    mu1 mu1Var = new mu1(bundle);
-                                    mu1Var.Db(arrayList2, chat3, tL_messages_getDiscussionMessage2.msg_id, tL_messages_discussionMessage.read_inbox_max_id, tL_messages_discussionMessage.read_outbox_max_id, null);
+                                    zu1 zu1Var = new zu1(bundle);
+                                    zu1Var.Ob(arrayList2, chat3, tL_messages_getDiscussionMessage2.msg_id, tL_messages_discussionMessage.read_inbox_max_id, tL_messages_discussionMessage.read_outbox_max_id, null);
                                     if (num7 != null) {
                                         if (bArr3 != null) {
-                                            mu1Var.j8 = bArr3;
-                                            mu1Var.d8 = num7.intValue();
+                                            zu1Var.j8 = bArr3;
+                                            zu1Var.d8 = num7.intValue();
                                         } else if (str5 != null) {
-                                            mu1Var.Ab(num7.intValue(), i9, str5);
+                                            zu1Var.Lb(num7.intValue(), i9, str5);
                                         } else {
-                                            mu1Var.i8 = num9;
-                                            mu1Var.d8 = num7.intValue();
+                                            zu1Var.i8 = num9;
+                                            zu1Var.d8 = num7.intValue();
                                         }
                                     } else if (l3 != null) {
                                         if (bArr3 != null) {
-                                            mu1Var.j8 = bArr3;
-                                            mu1Var.d8 = num8.intValue();
+                                            zu1Var.j8 = bArr3;
+                                            zu1Var.d8 = num8.intValue();
                                         } else if (str5 != null) {
-                                            mu1Var.Ab(num8.intValue(), i9, str5);
+                                            zu1Var.Lb(num8.intValue(), i9, str5);
                                         } else {
-                                            mu1Var.i8 = num9;
-                                            mu1Var.d8 = num8.intValue();
+                                            zu1Var.i8 = num9;
+                                            zu1Var.d8 = num8.intValue();
                                         }
                                     }
-                                    launchActivity2.t0(mu1Var);
+                                    launchActivity2.t0(zu1Var);
                                 }
-                                kz5Var3 = kz5Var2;
-                                if (kz5Var3 != null) {
+                                tg5Var3 = tg5Var2;
+                                if (tg5Var3 != null) {
                                     try {
-                                        kz5Var3.run();
+                                        tg5Var3.run();
                                     } catch (Exception e) {
-                                        fa4.g(e, true);
+                                        cc4.g(e, true);
                                         return;
                                     }
                                 }
@@ -8434,10 +8466,10 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
                             }
                         }
                         if (!arrayList.isEmpty()) {
-                            u21.b0((d) arrayList.get(arrayList.size() - 1)).t(k96.M0(2131752318, null), null).j();
+                            d31.b0((e) arrayList.get(arrayList.size() - 1)).t(ob6.M0(2131752300, null), null).j();
                         }
-                        kz5Var3 = kz5Var2;
-                        if (kz5Var3 != null) {
+                        tg5Var3 = tg5Var2;
+                        if (tg5Var3 != null) {
                         }
                         if (runnable3 == null) {
                         }
@@ -8447,7 +8479,7 @@ public class LaunchActivity extends tg0 implements qi5, gk7, wi3 {
         });
     }
 
-    @Override // qi5
+    @Override // sk5
     public final void e(int[] iArr) {
     }
 }

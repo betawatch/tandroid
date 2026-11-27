@@ -1,99 +1,38 @@
 // default package
 
-import java.util.Hashtable;
-import java.util.StringTokenizer;
+import android.content.DialogInterface;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ExternalActionActivity;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class z74 {
-    public static final Hashtable b;
-    public static final Object[] c;
-    public static /* synthetic */ Class d;
-    public final ClassLoader a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class z74 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
 
-    static {
-        Hashtable hashtable = new Hashtable();
-        b = hashtable;
-        hashtable.put("void", Void.TYPE);
-        hashtable.put("boolean", Boolean.TYPE);
-        hashtable.put("byte", Byte.TYPE);
-        hashtable.put("char", Character.TYPE);
-        hashtable.put("short", Short.TYPE);
-        hashtable.put("int", Integer.TYPE);
-        hashtable.put("long", Long.TYPE);
-        hashtable.put("float", Float.TYPE);
-        hashtable.put("double", Double.TYPE);
-        c = new Object[0];
+    public /* synthetic */ z74(byte b, int i, int[] iArr) {
+        this.a = b;
+        this.b = i;
+        this.c = iArr;
     }
 
-    public z74(Class cls, String str) {
-        this.a = cls.getClassLoader();
-    }
-
-    /* JADX WARN: Unreachable blocks removed: 3, instructions: 5 */
-    public static Class a(ClassLoader classLoader, String str) {
-        if (str.equals("*")) {
-            return null;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        byte b = this.a;
+        int[] iArr = this.c;
+        int i = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = ExternalActionActivity.y;
+                ConnectionsManager.getInstance(i).cancelRequest(iArr[0], true);
+                break;
+            default:
+                String str = LaunchActivity.C1;
+                ConnectionsManager.getInstance(i).cancelRequest(iArr[0], true);
+                break;
         }
-        Class cls = (Class) b.get(str);
-        if (cls != null) {
-            return cls;
-        }
-        try {
-            return classLoader == null ? Class.forName(str) : Class.forName(str, false, classLoader);
-        } catch (ClassNotFoundException unused) {
-            Class<ClassNotFoundException> cls2 = d;
-            if (cls2 == null) {
-                cls2 = ClassNotFoundException.class;
-                d = cls2;
-            }
-            return cls2;
-        }
-    }
-
-    public static c5a b(z24 z24Var, Object obj, Object obj2) {
-        boolean z = false;
-        return new c5a(z24Var, obj, obj2, c, z, (byte) 6);
-    }
-
-    public static c5a c(z24 z24Var, Object obj, Object obj2, Object obj3) {
-        return new c5a(z24Var, obj, obj2, new Object[]{obj3}, false, (byte) 6);
-    }
-
-    public final ha d(String str, String str2, String str3, String str4, String str5) {
-        ClassLoader classLoader = this.a;
-        Class a = a(classLoader, str2);
-        StringTokenizer stringTokenizer = new StringTokenizer(str3, ":");
-        int countTokens = stringTokenizer.countTokens();
-        Class[] clsArr = new Class[countTokens];
-        for (int i = 0; i < countTokens; i++) {
-            clsArr[i] = a(classLoader, stringTokenizer.nextToken());
-        }
-        StringTokenizer stringTokenizer2 = new StringTokenizer(str4, ":");
-        int countTokens2 = stringTokenizer2.countTokens();
-        String[] strArr = new String[countTokens2];
-        for (int i2 = 0; i2 < countTokens2; i2++) {
-            strArr[i2] = stringTokenizer2.nextToken();
-        }
-        StringTokenizer stringTokenizer3 = new StringTokenizer("", ":");
-        int countTokens3 = stringTokenizer3.countTokens();
-        Class[] clsArr2 = new Class[countTokens3];
-        for (int i3 = 0; i3 < countTokens3; i3++) {
-            clsArr2[i3] = a(classLoader, stringTokenizer3.nextToken());
-        }
-        Class a2 = a(classLoader, str5);
-        ha haVar = new ha((byte) 2);
-        haVar.b = 1;
-        haVar.c = str;
-        haVar.e = a;
-        haVar.g = clsArr;
-        haVar.h = a2;
-        return haVar;
-    }
-
-    public final z24 e(ha haVar) {
-        z24 z24Var = new z24((byte) 10, false);
-        z24Var.b = haVar;
-        return z24Var;
     }
 }

@@ -1,32 +1,27 @@
 // default package
 
-import java.io.File;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pl6 extends File {
-    public final /* synthetic */ byte a;
+public final class pl6 {
+    public long a;
+    public int b;
+    public int c;
+    public Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pl6(File file, String str, byte b) {
-        super(file, str);
-        this.a = b;
-    }
-
-    @Override // java.io.File
-    public final boolean delete() {
-        switch (this.a) {
-            case 0:
-                if (w01.a) {
-                    fa4.d("delete voice file (trimmed)");
-                }
-                break;
-            default:
-                if (w01.a) {
-                    fa4.d("delete voice file (from resume)");
-                }
-                break;
+    public final long a() {
+        int i;
+        long j = this.a;
+        if (j == -1 || j == 0) {
+            return -9223372036854775807L;
         }
-        return super.delete();
+        ci7 ci7Var = (ci7) this.d;
+        long j2 = j * ci7Var.g;
+        if (this.b != -1 && (i = this.c) != -1) {
+            j2 -= r5 + i;
+        }
+        if (j2 > 0) {
+            return gcc.Z(ci7Var.d, j2 - 1);
+        }
+        return -9223372036854775807L;
     }
 }

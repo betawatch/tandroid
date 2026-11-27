@@ -1,38 +1,40 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class s6c extends uj5 {
-    public final String b;
-    public final String c;
+public final class s6c {
+    public static s6c d;
+    public long a;
+    public long b;
+    public boolean c;
 
-    public s6c(String str, String str2, String str3) {
-        super(str);
-        this.b = str2;
-        this.c = str3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a(double d2, double d3, long j) {
+        double d4 = (0.01720197f * ((j - 946728000000L) / 8.64E7f)) + 6.24006f;
+        double sin = (Math.sin(r3 * 3.0f) * 5.236000106378924E-6d) + (Math.sin(2.0f * r3) * 3.4906598739326E-4d) + (Math.sin(d4) * 0.03341960161924362d) + d4 + 1.796593063d + 3.141592653589793d;
+        double sin2 = (Math.sin(2.0d * sin) * (-0.0069d)) + (Math.sin(d4) * 0.0053d) + Math.round((r2 - 9.0E-4f) - r6) + 9.0E-4f + ((-d3) / 360.0d);
+        double asin = Math.asin(Math.sin(sin) * 0.3979486262630266d);
+        double d5 = d2 * 0.01745329238474369d;
+        double sin3 = ((-0.10452846616578243d) - (Math.sin(asin) * Math.sin(d5))) / (Math.cos(asin) * Math.cos(d5));
+        if (sin3 >= 1.0d) {
+            this.c = true;
+            this.a = -1L;
+            this.b = -1L;
+        } else {
+            if (sin3 <= -1.0d) {
+                this.c = false;
+                this.a = -1L;
+                this.b = -1L;
+                return;
+            }
+            double acos = (float) (Math.acos(sin3) / 6.283185307179586d);
+            this.a = Math.round((sin2 + acos) * 8.64E7d) + 946728000000L;
+            long round = Math.round((sin2 - acos) * 8.64E7d) + 946728000000L;
+            this.b = round;
+            if (round >= j || this.a <= j) {
+                this.c = true;
+            } else {
+                this.c = false;
+            }
         }
-        if (obj == null || s6c.class != obj.getClass()) {
-            return false;
-        }
-        s6c s6cVar = (s6c) obj;
-        return this.a.equals(s6cVar.a) && Objects.equals(this.b, s6cVar.b) && this.c.equals(s6cVar.c);
-    }
-
-    public final int hashCode() {
-        int j = ir2.j(527, 31, this.a);
-        String str = this.b;
-        return this.c.hashCode() + ((j + (str != null ? str.hashCode() : 0)) * 31);
-    }
-
-    @Override // uj5
-    public final String toString() {
-        return this.a + ": url=" + this.c;
     }
 }

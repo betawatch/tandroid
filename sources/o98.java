@@ -1,119 +1,79 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface o98 {
-    void A(int i);
+public final class o98 extends FrameLayout {
+    public m98[] a;
+    public do6[] b;
+    public int c;
+    public n98 d;
+    public Paint e;
 
-    CharSequence B(int i);
+    public final void a(int i, do6 do6Var) {
+        String str;
+        this.b[i] = do6Var;
+        m98[] m98VarArr = this.a;
+        if (do6Var == null) {
+            m98VarArr[i].setVisibility(4);
+            return;
+        }
+        no6 no6Var = do6Var.d;
+        m98 m98Var = m98VarArr[i];
+        de0 de0Var = m98Var.b;
+        de0Var.q();
+        if (no6Var == null || (str = no6Var.I) == null) {
+            de0Var.setImageDrawable(aob.R4);
+        } else {
+            de0Var.r(no6Var.J, no6Var.K, true);
+            boolean z = no6Var.b;
+            int i2 = no6Var.C;
+            if (z) {
+                de0Var.o(dze.d("vthumb://", i2, ":", str), null, aob.R4);
+            } else {
+                de0Var.o(dze.d("thumb://", i2, ":", str), null, aob.R4);
+            }
+        }
+        ((TextView) m98Var.c).setText(do6Var.c);
+        ((TextView) m98Var.d).setText(String.format("%d", Integer.valueOf(do6Var.e.size())));
+    }
 
-    void C();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        View[] viewArr = this.a;
+        int L = hl.O1() ? ((hl.L(490.0f) - hl.L(12.0f)) - (hl.L(4.0f) * (this.c - 1))) / this.c : ((hl.q.x - hl.L(12.0f)) - (hl.L(4.0f) * (this.c - 1))) / this.c;
+        for (int i3 = 0; i3 < this.c; i3++) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i3].getLayoutParams();
+            layoutParams.topMargin = hl.L(4.0f);
+            layoutParams.leftMargin = (hl.L(4.0f) + L) * i3;
+            layoutParams.width = L;
+            layoutParams.height = L;
+            layoutParams.gravity = 51;
+            viewArr[i3].setLayoutParams(layoutParams);
+        }
+        super.onMeasure(i, ik8.E(4.0f, L, TLObject.FLAG_30));
+    }
 
-    int D(int i, oac oacVar);
+    public void setAlbumsCount(int i) {
+        int i2 = 0;
+        while (true) {
+            m98[] m98VarArr = this.a;
+            if (i2 >= m98VarArr.length) {
+                this.c = i;
+                return;
+            } else {
+                m98VarArr[i2].setVisibility(i2 < i ? 0 : 4);
+                i2++;
+            }
+        }
+    }
 
-    void E(boolean z);
-
-    void F();
-
-    int G();
-
-    boolean H();
-
-    void I();
-
-    boolean J();
-
-    boolean K();
-
-    void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2);
-
-    p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2);
-
-    boolean N();
-
-    boolean O();
-
-    boolean P();
-
-    boolean Q();
-
-    int R(Object obj);
-
-    int S(int i);
-
-    boolean T();
-
-    boolean U();
-
-    k27 V();
-
-    void W();
-
-    void X(int i);
-
-    void Y(int i);
-
-    boolean Z();
-
-    long a();
-
-    void a0(int i);
-
-    boolean b();
-
-    String b0();
-
-    void c(oac oacVar);
-
-    CharSequence c0(int i);
-
-    ArrayList d();
-
-    void e();
-
-    void f(CharSequence charSequence);
-
-    void g(String str, String str2, boolean z);
-
-    boolean h();
-
-    boolean i();
-
-    void j();
-
-    jl5 k(int i);
-
-    boolean l();
-
-    void m();
-
-    void n();
-
-    boolean o();
-
-    boolean p();
-
-    boolean q();
-
-    void r();
-
-    boolean s();
-
-    boolean t();
-
-    HashMap u();
-
-    boolean v();
-
-    boolean w(int i);
-
-    int x();
-
-    boolean y();
-
-    boolean z();
+    public void setDelegate(n98 n98Var) {
+        this.d = n98Var;
+    }
 }

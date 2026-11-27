@@ -1,31 +1,65 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
+import java.util.AbstractList;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public final class pyd implements IInterface {
-    public final IBinder a;
+public final class pyd extends wed {
+    public static final pyd c;
+    public final ArrayList b;
 
-    public pyd(IBinder iBinder) {
-        this.a = iBinder;
+    static {
+        pyd pydVar = new pyd(new ArrayList(10));
+        c = pydVar;
+        pydVar.a = false;
     }
 
-    public final void a(Parcel parcel, int i) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            this.a.transact(i, parcel, obtain, 0);
-            obtain.readException();
-        } finally {
-            parcel.recycle();
-            obtain.recycle();
+    public pyd(ArrayList arrayList) {
+        this.b = arrayList;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final void add(int i, Object obj) {
+        h();
+        this.b.add(i, obj);
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // dpd
+    public final dpd f(int i) {
+        ArrayList arrayList = this.b;
+        if (i < arrayList.size()) {
+            iy8.d();
+            return null;
         }
+        ArrayList arrayList2 = new ArrayList(i);
+        arrayList2.addAll(arrayList);
+        return new pyd(arrayList2);
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i) {
+        return this.b.get(i);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object remove(int i) {
+        h();
+        Object remove = this.b.remove(i);
+        ((AbstractList) this).modCount++;
+        return remove;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object set(int i, Object obj) {
+        h();
+        Object obj2 = this.b.set(i, obj);
+        ((AbstractList) this).modCount++;
+        return obj2;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.b.size();
     }
 }

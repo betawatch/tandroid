@@ -1,44 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yd9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mc9 b;
-    public final /* synthetic */ int c;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.util.SparseArray;
+import java.util.WeakHashMap;
 
-    public /* synthetic */ yd9(mc9 mc9Var, int i, byte b) {
-        this.a = b;
-        this.b = mc9Var;
-        this.c = i;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class yd9 {
+    public static final ThreadLocal a = new ThreadLocal();
+    public static final WeakHashMap b = new WeakHashMap(0);
+    public static final Object c = new Object();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        mc9 mc9Var = this.b;
-        switch (b) {
-            case 0:
-                mc9Var.O();
-                mc9Var.setSelection(Math.max(0, Math.min(i, mc9Var.length())));
-                break;
-            case 1:
-                mc9Var.O();
-                mc9Var.setSelection(Math.max(0, Math.min(i, mc9Var.length())));
-                break;
-            case 2:
-                mc9Var.O();
-                mc9Var.setSelection(Math.max(0, Math.min(i, mc9Var.length())));
-                break;
-            case 3:
-                mc9Var.O();
-                mc9Var.setSelection(Math.min(i, mc9Var.length()));
-                break;
-            default:
-                mc9Var.O();
-                mc9Var.setSelection(Math.max(0, Math.min(i, mc9Var.length())));
-                break;
+    public static void a(xd9 xd9Var, int i, ColorStateList colorStateList, Resources.Theme theme) {
+        synchronized (c) {
+            WeakHashMap weakHashMap = b;
+            SparseArray sparseArray = (SparseArray) weakHashMap.get(xd9Var);
+            if (sparseArray == null) {
+                sparseArray = new SparseArray();
+                weakHashMap.put(xd9Var, sparseArray);
+            }
+            sparseArray.append(i, new wd9(colorStateList, xd9Var.a.getConfiguration(), theme));
         }
     }
 }

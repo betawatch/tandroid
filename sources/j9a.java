@@ -1,62 +1,87 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class j9a extends l9a {
-    public final /* synthetic */ byte f;
-    public final /* synthetic */ i9a g;
-    public final /* synthetic */ m9a h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j9a implements ku4 {
+    public static final j9a a;
+    private static final o8a descriptor;
 
-    public /* synthetic */ j9a(m9a m9aVar, i9a i9aVar, byte b) {
-        this.f = b;
-        this.h = m9aVar;
-        this.g = i9aVar;
+    static {
+        j9a j9aVar = new j9a();
+        a = j9aVar;
+        ug8 ug8Var = new ug8("com.google.firebase.sessions.settings.SessionConfigs", j9aVar, 5);
+        ug8Var.j("sessionsEnabled", false);
+        ug8Var.j("sessionSamplingRate", false);
+        ug8Var.j("sessionTimeoutSeconds", false);
+        ug8Var.j("cacheDurationSeconds", false);
+        ug8Var.j("cacheUpdatedTimeSeconds", false);
+        descriptor = ug8Var;
     }
 
-    @Override // l9a
-    public final void a() {
-        byte b = this.f;
-        m9a m9aVar = this.h;
-        switch (b) {
-            case 0:
-                d9a d9aVar = m9aVar.h;
-                float f = d9aVar.i;
-                float f2 = d9aVar.j;
-                this.d = f;
-                this.e = f2;
-                break;
-            default:
-                d9a d9aVar2 = m9aVar.h;
-                float f3 = d9aVar2.d;
-                float f4 = d9aVar2.e;
-                this.d = f3;
-                this.e = f4;
-                break;
-        }
+    @Override // ku4
+    public final hx5[] a() {
+        hx5 a2 = lud.a(hm0.a);
+        hx5 a3 = lud.a(vp3.a);
+        jr5 jr5Var = jr5.a;
+        return new hx5[]{a2, a3, lud.a(jr5Var), lud.a(jr5Var), lud.a(yh6.a)};
     }
 
-    @Override // l9a
-    public final void b(float f, float f2) {
-        byte b = this.f;
-        i9a i9aVar = this.g;
-        m9a m9aVar = this.h;
-        switch (b) {
-            case 0:
-                d9a d9aVar = m9aVar.h;
-                d9aVar.i = f;
-                d9aVar.j = f2;
-                this.d = f;
-                this.e = f2;
-                i9aVar.a();
-                break;
-            default:
-                d9a d9aVar2 = m9aVar.h;
-                d9aVar2.d = f;
-                d9aVar2.e = f2;
-                this.d = f;
-                this.e = f2;
-                i9aVar.a();
-                break;
+    @Override // hx5
+    public final void b(d30 d30Var, Object obj) {
+        l9a l9aVar = (l9a) obj;
+        l9aVar.getClass();
+        o8a o8aVar = descriptor;
+        d30 a2 = d30Var.a(o8aVar);
+        a2.h(o8aVar, 0, hm0.a, l9aVar.a);
+        a2.h(o8aVar, 1, vp3.a, l9aVar.b);
+        jr5 jr5Var = jr5.a;
+        a2.h(o8aVar, 2, jr5Var, l9aVar.c);
+        a2.h(o8aVar, 3, jr5Var, l9aVar.d);
+        a2.h(o8aVar, 4, yh6.a, l9aVar.e);
+        a2.l(o8aVar);
+    }
+
+    @Override // hx5
+    public final Object c(ykf ykfVar) {
+        o8a o8aVar = descriptor;
+        ykf a2 = ykfVar.a(o8aVar);
+        int i = 0;
+        Boolean bool = null;
+        Double d = null;
+        Integer num = null;
+        Integer num2 = null;
+        Long l = null;
+        boolean z = true;
+        while (z) {
+            int b = a2.b(o8aVar);
+            if (b == -1) {
+                z = false;
+            } else if (b == 0) {
+                bool = (Boolean) a2.j(o8aVar, 0, hm0.a, bool);
+                i |= 1;
+            } else if (b == 1) {
+                d = (Double) a2.j(o8aVar, 1, vp3.a, d);
+                i |= 2;
+            } else if (b == 2) {
+                num = (Integer) a2.j(o8aVar, 2, jr5.a, num);
+                i |= 4;
+            } else if (b == 3) {
+                num2 = (Integer) a2.j(o8aVar, 3, jr5.a, num2);
+                i |= 8;
+            } else {
+                if (b != 4) {
+                    throw new yw5(b);
+                }
+                l = (Long) a2.j(o8aVar, 4, yh6.a, l);
+                i |= 16;
+            }
         }
+        a2.o(o8aVar);
+        return new l9a(i, bool, d, num, num2, l);
+    }
+
+    @Override // hx5
+    public final o8a d() {
+        return descriptor;
     }
 }

@@ -1,462 +1,320 @@
 // default package
 
-import android.app.Dialog;
 import android.content.Context;
-import android.os.Bundle;
-import android.text.TextUtils;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Arrays;
+import java.util.Locale;
+import org.json.JSONObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.Wallet.c;
-import org.telegram.ui.web.HttpGetFileTask;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class sr0 implements Runnable {
-    public final /* synthetic */ byte a = 2;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+public final class sr0 extends FrameLayout implements u0d, yi5 {
+    public boolean E;
+    public boolean F;
+    public boolean G;
+    public final int a;
+    public final long b;
+    public final vnb c;
+    public final or0 d;
+    public final v0d e;
+    public final yc f;
+    public final tb h;
+    public final FrameLayout n;
+    public final c51 r;
+    public final int s;
+    public q0d w;
+    public final Rect x;
+    public int y;
 
-    public /* synthetic */ sr0(int i, TLRPC.TL_error tL_error, is0 is0Var, TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP, TwoStepVerificationActivity twoStepVerificationActivity, wy wyVar, d dVar, long j) {
-        this.d = i;
-        this.b = tL_error;
-        this.e = is0Var;
-        this.f = tL_inputCheckPasswordSRP;
-        this.h = twoStepVerificationActivity;
-        this.n = wyVar;
-        this.r = dVar;
-        this.c = j;
+    public sr0(Context context, int i, long j, vnb vnbVar, or0 or0Var) {
+        super(context);
+        this.x = new Rect();
+        this.F = true;
+        this.a = i;
+        this.b = j;
+        this.c = vnbVar;
+        this.d = or0Var;
+        this.e = new v0d(this, hl.p);
+        this.s = aob.v0(aob.d6, vnbVar);
+        yc ycVar = new yc(context, or0Var);
+        this.f = ycVar;
+        ycVar.setFillViewport(true);
+        ycVar.setVerticalScrollBarEnabled(false);
+        ycVar.setOverScrollMode(2);
+        tb tbVar = new tb((byte) 2, context, this);
+        this.h = tbVar;
+        ycVar.addView(tbVar, new FrameLayout.LayoutParams(-1, -2));
+        addView(ycVar, tre.c(-1.0f, -1));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.n = frameLayout;
+        c51 i2 = xnb.i(24, vnbVar, context, true);
+        this.r = i2;
+        i2.setOnClickListener(new k1(this, (byte) 22));
+        frameLayout.addView(i2, tre.d(-1, 48.0f, jn7.D1, 16.0f, 12.0f, 16.0f, 12.0f));
+        addView(frameLayout, tre.e(-1, -2, 80));
+        k();
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x0299, code lost:
-    
-        if (r0.equals("AVAILABLE_BALANCE_TOO_SMALL") == false) goto L123;
-     */
-    /* JADX WARN: Type inference failed for: r3v10, types: [java.lang.String, wjb] */
-    /* JADX WARN: Type inference failed for: r3v12 */
-    /* JADX WARN: Type inference failed for: r3v17 */
-    /* JADX WARN: Type inference failed for: r3v9 */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z;
-        String str;
-        int i;
-        u21 Y;
-        int i2;
-        ?? r3;
-        u21 b0;
-        int i3;
-        cj3 cj3Var;
-        byte b = this.a;
-        char c = 6;
-        boolean[] zArr = uz4.a;
-        int i4 = this.d;
-        Object obj = this.r;
-        Object obj2 = this.n;
-        Object obj3 = this.h;
-        Object obj4 = this.f;
-        Object obj5 = this.b;
-        Object obj6 = this.e;
-        switch (b) {
-            case 0:
-                TLObject tLObject = (TLObject) obj5;
-                hd hdVar = (hd) obj6;
-                Context context = (Context) obj4;
-                wjb wjbVar = (wjb) obj3;
-                st0 st0Var = (st0) obj2;
-                p pVar = (p) obj;
-                if (tLObject instanceof TLRPC.TL_messages_preparedInlineMessage) {
-                    TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) tLObject;
-                    TLRPC.BotInlineMessage botInlineMessage = tL_messages_preparedInlineMessage.result.send_message;
-                    boolean z2 = botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage;
-                    int i5 = this.d;
-                    long j = this.c;
-                    if (z2) {
-                        TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
-                        if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
-                            String str2 = tL_botInlineMessageMediaWebPage.url;
-                            tr0 tr0Var = new tr0(hdVar, context, i5, j, tL_messages_preparedInlineMessage, wjbVar, st0Var, pVar);
-                            int[] iArr = new int[1];
-                            gk7[] gk7VarArr = new gk7[1];
-                            TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
-                            getwebpagepreview.message = str2;
-                            iArr[0] = ConnectionsManager.getInstance(i5).sendRequestTyped(getwebpagepreview, new hc((byte) 0), new e(iArr, tr0Var, gk7VarArr, i5, (byte) 3));
-                            hdVar.setOnCancelListener(new ur0(new va7(iArr, i5, gk7VarArr, (byte) 7), (byte) 0));
-                            break;
-                        }
-                    }
-                    File[] fileArr = new File[1];
-                    vr0 vr0Var = new vr0(hdVar, context, i5, j, tL_messages_preparedInlineMessage, fileArr, wjbVar, st0Var, pVar);
-                    TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
-                    if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
-                        TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
-                        TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
-                        if ((botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaAuto) || (botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
-                            String str3 = botInlineResult.content.url;
-                            String x = fl5.x(str3, null);
-                            String C = TextUtils.isEmpty(x) ? ba4.C(tL_messages_preparedInlineMessage.result.content.mime_type) : b00.h(".", x);
-                            File file = new File(ba4.z(4), Utilities.a(str3) + C);
-                            if (file.exists()) {
-                                vr0Var.run();
-                                break;
-                            } else {
-                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new x0(fileArr, vr0Var, (byte) 6), null);
-                                httpGetFileTask.setDestFile(file);
-                                httpGetFileTask.setMaxSize(8388608L);
-                                httpGetFileTask.execute(str3);
-                                hdVar.setOnCancelListener(new ur0(httpGetFileTask, (byte) 1));
-                                break;
-                            }
-                        }
-                    }
-                    vr0Var.run();
-                    break;
-                } else {
-                    pVar.a("MESSAGE_EXPIRED", null);
-                    break;
-                }
-                break;
-            case 1:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
-                TLObject tLObject2 = (TLObject) obj5;
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj4;
-                d dVar = (d) obj3;
-                is0 is0Var = (is0) obj2;
-                wy wyVar = (wy) obj;
-                if (tL_error == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject2;
-                    twoStepVerificationActivity.J = password;
-                    TwoStepVerificationActivity.e0(password);
-                    uz4.b(dVar, this.c, twoStepVerificationActivity.d0(), twoStepVerificationActivity, is0Var, wyVar);
-                    break;
-                } else {
-                    zArr[i4] = false;
-                    twoStepVerificationActivity.s0();
-                    u21.e0(tL_error);
-                    break;
-                }
-            case 2:
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;
-                is0 is0Var2 = (is0) obj6;
-                TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP = (TLRPC.TL_inputCheckPasswordSRP) obj4;
-                TwoStepVerificationActivity twoStepVerificationActivity2 = (TwoStepVerificationActivity) obj3;
-                wy wyVar2 = (wy) obj2;
-                d dVar2 = (d) obj;
-                zArr[i4] = false;
-                if (tL_error2 == null || ((!"API_WITHDRAWAL_FEATURE_DISABLED".equals(tL_error2.text) && !"FEATURE_DISABLED".equals(tL_error2.text)) || is0Var2 == null)) {
-                    twoStepVerificationActivity2.s0();
-                    if (!uz4.h(tL_error2, twoStepVerificationActivity2)) {
-                        twoStepVerificationActivity2.finishFragment();
-                        if (tL_error2 != null) {
-                            String str4 = tL_error2.text;
-                            if (str4 == null || !str4.startsWith("FLOOD_WAIT")) {
-                                str = null;
-                                String str5 = tL_error2.text;
-                                if (str5 == null || !str5.startsWith("TMP_PASSWORD")) {
-                                    String str6 = tL_error2.text;
-                                    str6.getClass();
-                                    switch (str6.hashCode()) {
-                                        case -1154072843:
-                                            if (str6.equals("AMOUNT_TOO_SMALL")) {
-                                                c = 0;
-                                                break;
-                                            }
-                                            c = 65535;
-                                            break;
-                                        case -577854011:
-                                            if (str6.equals("FEATURE_DISABLED")) {
-                                                c = 1;
-                                                break;
-                                            }
-                                            c = 65535;
-                                            break;
-                                        case -456249281:
-                                            if (str6.equals("WALLET_CREATING")) {
-                                                c = 2;
-                                                break;
-                                            }
-                                            c = 65535;
-                                            break;
-                                        case 54255434:
-                                            if (str6.equals("API_WITHDRAWAL_FEATURE_DISABLED")) {
-                                                c = 3;
-                                                break;
-                                            }
-                                            c = 65535;
-                                            break;
-                                        case 367129409:
-                                            if (str6.equals("STARS_REVENUE_ONLY_TON")) {
-                                                c = 4;
-                                                break;
-                                            }
-                                            c = 65535;
-                                            break;
-                                        case 1149363434:
-                                            if (str6.equals("WALLET_UNAVAILABLE")) {
-                                                c = 5;
-                                                break;
-                                            }
-                                            c = 65535;
-                                            break;
-                                        case 1810617411:
-                                            break;
-                                        default:
-                                            c = 65535;
-                                            break;
-                                    }
-                                    switch (c) {
-                                        case 0:
-                                        case 6:
-                                            i = 2131749327;
-                                            break;
-                                        case 1:
-                                        case 3:
-                                            i = 2131749320;
-                                            break;
-                                        case 2:
-                                            i = 2131749623;
-                                            break;
-                                        case 4:
-                                            i = 2131749326;
-                                            break;
-                                        case 5:
-                                            i = 2131749621;
-                                            break;
-                                        default:
-                                            i = 0;
-                                            break;
-                                    }
-                                    if (i != 0) {
-                                        ir2.v(null, i, wyVar2 != null ? u21.Y() : u21.b0(dVar2), R.raw.error, 36);
-                                        break;
-                                    } else {
-                                        u21.e0(tL_error2);
-                                        break;
-                                    }
-                                } else {
-                                    Y = u21.Y();
-                                    i2 = 2131749321;
-                                }
-                            } else {
-                                Y = u21.Y();
-                                i2 = 2131750670;
-                                str = null;
-                            }
-                            ir2.v(str, i2, Y, R.raw.error, 36);
-                            break;
-                        } else {
-                            if (wyVar2 != null) {
-                                wyVar2.run();
-                                z = true;
-                            } else {
-                                int currentAccount = dVar2.getCurrentAccount();
-                                tz4 tz4Var = new tz4(currentAccount, this.c, dVar2);
-                                uz4.b[currentAccount] = tz4Var;
-                                kk7.f(currentAccount).k(kk7.A3, new Object[0]);
-                                gl.d3(new qz4(tz4Var, (byte) 0), 1000L);
-                                z = true;
-                                if (is0Var2 != null) {
-                                    gta.v(i4, true).P(true);
-                                }
-                            }
-                            gta.v(i4, z).L();
-                            ct0.g(i4).l(y6c.h(i4).e());
-                            ct0.g(i4).j(y6c.h(i4).e(), z);
-                            c.C(i4).J();
-                            break;
-                        }
-                    }
-                } else {
-                    is0Var2.a(tL_inputCheckPasswordSRP, twoStepVerificationActivity2);
-                    break;
-                }
-                break;
-            case 3:
-                pk5 pk5Var = (pk5) obj5;
-                String str7 = (String) obj6;
-                pk5Var.getClass();
-                gl.c3(new oe(this.d, str7, (TLRPC.InputFile) obj4, (TLRPC.InputEncryptedFile) obj3, (byte[]) obj2, (byte[]) obj, this.c));
-                pk5Var.b.u.remove(str7);
-                break;
-            default:
-                LaunchActivity launchActivity = (LaunchActivity) obj6;
-                TLObject tLObject3 = (TLObject) obj5;
-                String str8 = (String) obj4;
-                String str9 = (String) obj3;
-                TLRPC.User user = (TLRPC.User) obj2;
-                String str10 = (String) obj;
-                String str11 = LaunchActivity.C1;
-                ArrayList arrayList = launchActivity.g0;
-                ArrayList arrayList2 = launchActivity.e0;
-                ArrayList arrayList3 = launchActivity.D0;
-                if (tLObject3 instanceof TLRPC.TL_attachMenuBotsBot) {
-                    TLRPC.TL_attachMenuBotsBot tL_attachMenuBotsBot = (TLRPC.TL_attachMenuBotsBot) tLObject3;
-                    int i6 = this.d;
-                    na7.q1(i6).b4(tL_attachMenuBotsBot.users, false);
-                    TLRPC.TL_attachMenuBot tL_attachMenuBot = tL_attachMenuBotsBot.bot;
-                    if (str8 != null) {
-                        LaunchActivity.G0(launchActivity, launchActivity.P, tL_attachMenuBot, str8, false);
-                        break;
-                    } else {
-                        d dVar3 = (d) b00.f(1, arrayList2);
-                        if (gl.O1() && !(dVar3 instanceof mu1) && !arrayList.isEmpty()) {
-                            dVar3 = (d) b00.f(1, arrayList);
-                        }
-                        ArrayList arrayList4 = new ArrayList();
-                        if (!TextUtils.isEmpty(str9)) {
-                            String[] split = str9.split(" ");
-                            int length = split.length;
-                            int i7 = 0;
-                            while (i7 < length) {
-                                int i8 = i7;
-                                String str12 = split[i8];
-                                Pattern pattern = hq6.U1;
-                                String[] strArr = split;
-                                ArrayList<TLRPC.AttachMenuPeerType> arrayList5 = tL_attachMenuBot.peer_types;
-                                int i9 = length;
-                                int size = arrayList5.size();
-                                int i10 = 0;
-                                while (i10 < size) {
-                                    TLRPC.AttachMenuPeerType attachMenuPeerType = arrayList5.get(i10);
-                                    int i11 = i10 + 1;
-                                    TLRPC.AttachMenuPeerType attachMenuPeerType2 = attachMenuPeerType;
-                                    ArrayList<TLRPC.AttachMenuPeerType> arrayList6 = arrayList5;
-                                    if ((((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeSameBotPM) || (attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeBotPM)) && str12.equals("bots")) || (((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeBroadcast) && str12.equals("channels")) || (((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeChat) && str12.equals("groups")) || ((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypePM) && str12.equals("users"))))) {
-                                        arrayList4.add(str12);
-                                        i7 = i8 + 1;
-                                        split = strArr;
-                                        length = i9;
-                                    } else {
-                                        arrayList5 = arrayList6;
-                                        i10 = i11;
-                                    }
-                                }
-                                i7 = i8 + 1;
-                                split = strArr;
-                                length = i9;
-                            }
-                        }
-                        if (arrayList4.isEmpty()) {
-                            cj3Var = null;
-                        } else {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("dialogsType", 14);
-                            bundle.putBoolean("onlySelect", true);
-                            bundle.putBoolean("allowGroups", arrayList4.contains("groups"));
-                            bundle.putBoolean("allowMegagroups", arrayList4.contains("groups"));
-                            bundle.putBoolean("allowLegacyGroups", arrayList4.contains("groups"));
-                            bundle.putBoolean("allowUsers", arrayList4.contains("users"));
-                            bundle.putBoolean("allowChannels", arrayList4.contains("channels"));
-                            bundle.putBoolean("allowBots", arrayList4.contains("bots"));
-                            cj3Var = new cj3(bundle);
-                            cj3Var.E2 = new xx5(launchActivity, user, str10, i6);
-                        }
-                        if (tL_attachMenuBot.inactive) {
-                            xx xxVar = new xx(launchActivity);
-                            xxVar.setColor(bkb.w0(null, bkb.ha, false));
-                            zkb.h(bkb.K5, null, xxVar);
-                            xxVar.setAttachBot(tL_attachMenuBot);
-                            psc.a(launchActivity, new fh(launchActivity, i6, this.c, cj3Var, dVar3, user, str10), null);
-                            break;
-                        } else if (cj3Var != null) {
-                            if (dVar3 != null) {
-                                dVar3.dismissCurrentDialog();
-                            }
-                            for (int i12 = 0; i12 < arrayList3.size(); i12++) {
-                                if (((Dialog) arrayList3.get(i12)).isShowing()) {
-                                    ((Dialog) arrayList3.get(i12)).dismiss();
-                                }
-                            }
-                            arrayList3.clear();
-                            launchActivity.t0(cj3Var);
-                            break;
-                        } else {
-                            i3 = 2131753137;
-                            if (dVar3 instanceof mu1) {
-                                mu1 mu1Var = (mu1) dVar3;
-                                if (hq6.v(tL_attachMenuBot, mu1Var.h() != null ? mu1Var.h() : mu1Var.e)) {
-                                    mu1Var.ba(user.id, str10, false);
-                                    break;
-                                } else {
-                                    b0 = u21.b0(dVar3);
-                                    r3 = 0;
-                                }
-                            } else {
-                                r3 = 0;
-                                b0 = u21.b0(dVar3);
-                            }
-                        }
-                    }
-                } else {
-                    r3 = 0;
-                    b0 = u21.b0((d) b00.f(1, arrayList2));
-                    i3 = 2131753106;
-                }
-                yjb.x(r3, i3, b0, r3);
-                break;
+    @Override // yi5
+    public final void a(qeb qebVar, RectF rectF) {
+        qebVar.b = true;
+    }
+
+    @Override // u0d
+    public final void b(boolean z) {
+        this.f.requestDisallowInterceptTouchEvent(z);
+    }
+
+    public final void c() {
+        i();
+        q0d q0dVar = this.w;
+        if (q0dVar != null) {
+            h0d g = k0d.g(q0dVar);
+            if (g != null) {
+                g.p = null;
+            }
+            q0d q0dVar2 = this.w;
+            h0d g2 = k0d.g(q0dVar2);
+            if (g2 != null && g2.o) {
+                k0d.i();
+                g2.p = null;
+                k0d.a.remove(g2.a);
+                q0dVar2.n();
+                q0dVar2.f = null;
+                q0dVar2.g = null;
+                q0dVar2.d = null;
+                k0d.F();
+            }
+            this.w = null;
+        }
+        this.e.r();
+    }
+
+    public final void e() {
+        String d;
+        if (this.G || this.w == null || !this.E || !this.F || getWidth() <= 0 || getHeight() <= 0) {
+            return;
+        }
+        this.G = true;
+        this.w.m(getWidth());
+        j();
+        q0d q0dVar = this.w;
+        int[] iArr = c1d.a;
+        vnb vnbVar = this.c;
+        boolean a = vnbVar != null ? vnbVar.a() : aob.I.o();
+        try {
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("colorScheme", a ? "dark" : "light");
+            JSONObject u = xw0.u(vnbVar, true);
+            if (u != null) {
+                jSONObject.put("params", u);
+            }
+            JSONObject f = c1d.f();
+            f.put("padding", "8px 16px");
+            jSONObject.put("text", f);
+            d = jSONObject.toString();
+        } catch (Exception e) {
+            cc4.g(e, true);
+            d = c1d.d(a);
+        }
+        q0dVar.k(d);
+        q0d q0dVar2 = this.w;
+        v0d v0dVar = this.e;
+        v0dVar.b(q0dVar2);
+        v0dVar.q(true);
+        h0d g = k0d.g(this.w);
+        if (g != null) {
+            g.p = this;
+        }
+        k0d.u(this.w);
+        tb tbVar = this.h;
+        tbVar.requestLayout();
+        tbVar.invalidate();
+    }
+
+    @Override // u0d
+    public final void f() {
+        this.h.invalidate();
+        this.d.a();
+    }
+
+    @Override // yi5
+    public final void g(Canvas canvas, RectF rectF) {
+        canvas.drawColor(this.s);
+        if (canvas.isHardwareAccelerated()) {
+            canvas.save();
+            tb tbVar = this.h;
+            int left = tbVar.getLeft();
+            yc ycVar = this.f;
+            canvas.translate(left - ycVar.getScrollX(), tbVar.getTop() - ycVar.getScrollY());
+            this.e.c(canvas, tbVar.getWidth());
+            canvas.restore();
         }
     }
 
-    public /* synthetic */ sr0(pk5 pk5Var, int i, String str, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, long j) {
-        this.b = pk5Var;
-        this.d = i;
-        this.e = str;
-        this.f = inputFile;
-        this.h = inputEncryptedFile;
-        this.n = bArr;
-        this.r = bArr2;
-        this.c = j;
+    public View getBottomBar() {
+        return this.n;
     }
 
-    public /* synthetic */ sr0(TLObject tLObject, int i, hd hdVar, Context context, long j, wjb wjbVar, st0 st0Var, p pVar) {
-        this.b = tLObject;
-        this.d = i;
-        this.e = hdVar;
-        this.f = context;
-        this.c = j;
-        this.h = wjbVar;
-        this.n = st0Var;
-        this.r = pVar;
+    public View getWidgetView() {
+        return this.h;
     }
 
-    public /* synthetic */ sr0(TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, d dVar, long j, is0 is0Var, wy wyVar, int i) {
-        this.e = tL_error;
-        this.b = tLObject;
-        this.f = twoStepVerificationActivity;
-        this.h = dVar;
-        this.c = j;
-        this.n = is0Var;
-        this.r = wyVar;
-        this.d = i;
+    @Override // u0d
+    public final void h() {
+        this.h.requestLayout();
     }
 
-    public /* synthetic */ sr0(LaunchActivity launchActivity, TLObject tLObject, int i, String str, String str2, TLRPC.User user, String str3, long j) {
-        this.e = launchActivity;
-        this.b = tLObject;
-        this.d = i;
-        this.f = str;
-        this.h = str2;
-        this.n = user;
-        this.r = str3;
-        this.c = j;
+    public final void i() {
+        if (this.G) {
+            this.G = false;
+            v0d v0dVar = this.e;
+            v0dVar.q(false);
+            v0dVar.r();
+            q0d q0dVar = this.w;
+            if (q0dVar != null) {
+                k0d.r(q0dVar);
+            }
+        }
+    }
+
+    public final void j() {
+        if (this.w == null || getHeight() <= 0) {
+            return;
+        }
+        float f = hl.p;
+        float L = hl.L(72.0f);
+        q0d q0dVar = this.w;
+        Rect rect = this.x;
+        float f2 = rect.top / f;
+        float f3 = rect.bottom / f;
+        float f4 = rect.left / f;
+        float f5 = rect.right / f;
+        float f6 = this.y / f;
+        float f7 = L / f;
+        float height = getHeight() / f;
+        synchronized (q0dVar) {
+            String format = String.format(Locale.US, "{\"device\":{\"top\":%.2f,\"right\":%.2f,\"bottom\":%.2f,\"left\":%.2f},\"content\":{\"top\":%.2f,\"right\":0,\"bottom\":%.2f,\"left\":0,\"cornerLeft\":0,\"cornerRight\":0},\"viewportHeight\":%.2f}", Float.valueOf(f2), Float.valueOf(f5), Float.valueOf(f3), Float.valueOf(f4), Float.valueOf(f6), Float.valueOf(f7), Float.valueOf(height));
+            if (format.equals(q0dVar.w)) {
+                return;
+            }
+            q0dVar.w = format;
+            q0dVar.x = true;
+            hl.c3(new p0d(q0dVar, (byte) 1));
+        }
+    }
+
+    public final void k() {
+        String M0;
+        or0 or0Var = this.d;
+        rr0 rr0Var = or0Var.a;
+        TLRPC.Dialog S0 = rr0Var.getMessagesController().S0(rr0Var.a);
+        if (S0 == null || S0.top_message == 0 || or0Var.a.d0()) {
+            M0 = ob6.M0(2131744572, null);
+        } else {
+            rr0 rr0Var2 = or0Var.a;
+            TLRPC.User X1 = rr0Var2.getMessagesController().X1(Long.valueOf(rr0Var2.a));
+            M0 = (X1 == null || !X1.bot_has_main_app) ? ob6.M0(2131752993, null) : ob6.M0(2131746435, null);
+        }
+        this.r.i(M0, false, true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.E = true;
+        e();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.E = false;
+        i();
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        q0d q0dVar = this.w;
+        if (q0dVar != null && this.G) {
+            q0dVar.m(i);
+            j();
+        }
+        hl.c3(new pz(this, (byte) 24));
+    }
+
+    public void setActive(boolean z) {
+        if (this.F == z) {
+            return;
+        }
+        this.F = z;
+        if (z) {
+            e();
+        } else {
+            i();
+        }
+    }
+
+    public void setChromeTop(int i) {
+        if (this.y == i) {
+            return;
+        }
+        this.y = i;
+        j();
+    }
+
+    public void setWidget(TL_bots.TL_botProfileWidget tL_botProfileWidget) {
+        q0d q0dVar;
+        ConcurrentHashMap concurrentHashMap = k0d.a;
+        if (tL_botProfileWidget == null || tL_botProfileWidget.payload == null) {
+            q0dVar = null;
+        } else {
+            StringBuilder sb = new StringBuilder("tg-widget:profile/");
+            int i = this.a;
+            sb.append(i);
+            sb.append("/");
+            long j = this.b;
+            sb.append(j);
+            sb.append("/");
+            sb.append(Arrays.hashCode(tL_botProfileWidget.payload));
+            sb.append("/");
+            sb.append(tL_botProfileWidget.can_query ? 1 : 0);
+            sb.append(tL_botProfileWidget.background_query ? 1 : 0);
+            String sb2 = sb.toString();
+            ConcurrentHashMap concurrentHashMap2 = k0d.a;
+            h0d h0dVar = (h0d) concurrentHashMap2.get(sb2);
+            if (h0dVar == null) {
+                h0d h0dVar2 = new h0d(sb2, i, j, tL_botProfileWidget);
+                concurrentHashMap2.put(sb2, h0dVar2);
+                jf7 Y = jf7.Y(h0dVar2.b);
+                Y.a.c(new cxc((Object) Y, (Object) h0dVar2, (byte) 11));
+            } else {
+                h0dVar.s = tL_botProfileWidget.public_data_hash;
+                k0d.a(h0dVar, k0d.D(tL_botProfileWidget.chat_data), k0d.D(tL_botProfileWidget.public_data));
+            }
+            q0dVar = k0d.h(sb2);
+        }
+        if (q0dVar == this.w) {
+            return;
+        }
+        c();
+        this.w = q0dVar;
+        e();
+    }
+
+    @Override // u0d
+    public final void d() {
+    }
+
+    @Override // u0d
+    public void setCursor(String str) {
     }
 }

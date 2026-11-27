@@ -1,16 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class z5e {
-    public final Throwable a;
+public enum z5e implements sse {
+    b(0),
+    c(1),
+    d(2),
+    e(3);
 
-    static {
-        new z5e(new i2("Failure occurred while trying to finish a future.", (byte) 3));
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    z5e(int i) {
+        this.a = i;
     }
 
-    public z5e(Throwable th) {
-        boolean z = y4f.d;
-        this.a = th;
+    @Override // java.lang.Enum
+    public final String toString() {
+        return "<" + z5e.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + ((int) this.a) + " name=" + name() + '>';
     }
 }

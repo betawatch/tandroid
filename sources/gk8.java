@@ -1,279 +1,95 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class gk8 extends d implements gk7 {
-    public final boolean E;
-    public o39 a;
-    public t26 b;
-    public fk8 c;
-    public g24 d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
-    public int s;
-    public int w;
-    public int x;
-    public final boolean y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class gk8 extends ju4 {
+    private static final gk8 DEFAULT_INSTANCE;
+    private static volatile gy7 PARSER = null;
+    public static final int STRINGS_FIELD_NUMBER = 1;
+    private or5 strings_ = pw8.d;
 
-    public gk8() {
-        super(null);
-        this.E = true;
-        this.y = true;
+    static {
+        gk8 gk8Var = new gk8();
+        DEFAULT_INSTANCE = gk8Var;
+        ju4.j(gk8.class, gk8Var);
     }
 
-    public final void Y(Long l, View view) {
-        if (getParentActivity() == null) {
-            return;
-        }
-        cs5 I = cs5.I(this, view);
-        I.X(new ColorDrawable(bkb.w0(null, bkb.c6, false)));
-        boolean z = this.E;
-        I.k(0, k96.M0(2131743672, null), new h18(this, l, (byte) 28), z);
-        boolean z2 = !z;
-        I.l(z ? 0 : R.drawable.msg_user_remove, new am6(this, l), k96.M0(2131746128, null), z2, true);
-        I.V = kk7.T2;
-        I.a0();
+    public static gk8 m() {
+        return DEFAULT_INSTANCE;
     }
 
-    public final void Z() {
-        this.e = 0;
-        this.f = -1;
-        this.n = -1;
-        this.h = -1;
-        this.x = -1;
-        if (!this.y || getMessagesController().y0 >= 0) {
-            int i = this.e;
-            int i2 = i + 1;
-            this.e = i2;
-            this.f = i;
-            boolean z = this.E;
-            if (!z) {
-                throw null;
-            }
-            this.e = i + 2;
-            this.h = i2;
-            int size = getMessagesController().x0.size();
-            if (size != 0) {
-                if (z) {
-                    int i3 = this.e;
-                    this.e = i3 + 1;
-                    this.n = i3;
+    public static fk8 o() {
+        return (fk8) ((hu4) DEFAULT_INSTANCE.c(5));
+    }
+
+    @Override // ju4
+    public final Object c(int i) {
+        gy7 gy7Var;
+        switch (ik8.F(i)) {
+            case 0:
+                return (byte) 1;
+            case 1:
+                return null;
+            case 2:
+                return new v29(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001a", new Object[]{"strings_"});
+            case 3:
+                return new gk8();
+            case 4:
+                return new fk8(DEFAULT_INSTANCE);
+            case 5:
+                return DEFAULT_INSTANCE;
+            case 6:
+                gy7 gy7Var2 = PARSER;
+                if (gy7Var2 != null) {
+                    return gy7Var2;
                 }
-                int i4 = this.e;
-                this.r = i4;
-                int i5 = i4 + size;
-                this.s = i5;
-                int i6 = i5 + 1;
-                this.e = i6;
-                this.w = i5;
-                if (!z) {
-                    this.e = i5 + 2;
-                    this.x = i6;
+                synchronized (gk8.class) {
+                    gy7Var = PARSER;
+                    if (gy7Var == null) {
+                        gy7Var = new iu4();
+                        PARSER = gy7Var;
+                    }
                 }
-            } else {
-                this.n = -1;
-                this.r = -1;
-                this.s = -1;
-                this.w = -1;
-                this.x = -1;
-            }
-        }
-        fk8 fk8Var = this.c;
-        if (fk8Var != null) {
-            fk8Var.f();
+                return gy7Var;
+            default:
+                p3d.a();
+                return null;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void addThemeColorKeys(HashSet hashSet) {
-        super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(bkb.u6));
-        hashSet.add(Integer.valueOf(bkb.t6));
-        hashSet.add(Integer.valueOf(bkb.l6));
-        hashSet.add(Integer.valueOf(bkb.F6));
-        hashSet.add(Integer.valueOf(bkb.K6));
-        hashSet.add(Integer.valueOf(bkb.T7));
-        hashSet.add(Integer.valueOf(bkb.S7));
-        hashSet.add(Integer.valueOf(bkb.R7));
-        hashSet.add(Integer.valueOf(bkb.Q7));
-        hashSet.add(Integer.valueOf(bkb.P7));
-        hashSet.add(Integer.valueOf(bkb.O7));
-        hashSet.add(Integer.valueOf(bkb.N7));
-        hashSet.add(Integer.valueOf(bkb.I7));
-        hashSet.add(Integer.valueOf(bkb.a7));
-        hashSet.add(Integer.valueOf(bkb.h6));
-        hashSet.add(Integer.valueOf(bkb.s8));
-        hashSet.add(Integer.valueOf(bkb.z8));
-        hashSet.add(Integer.valueOf(bkb.u8));
-        hashSet.add(Integer.valueOf(bkb.r8));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        pha phaVar = this.simpleActionBar;
-        boolean z = this.E;
-        if (z == 1) {
-            phaVar.setTitle(k96.M0(2131753678, null));
-        } else if (z == 2) {
-            phaVar.setTitle(k96.M0(2131750717, null));
-        } else {
-            phaVar.setTitle(k96.M0(2131748098, null));
+    public final void l(Set set) {
+        or5 or5Var = this.strings_;
+        boolean z = ((t3) or5Var).a;
+        or5 or5Var2 = or5Var;
+        if (!z) {
+            int size = or5Var.size();
+            pw8 j = ((pw8) or5Var).j(size == 0 ? 10 : size << 1);
+            this.strings_ = j;
+            or5Var2 = j;
         }
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bq5(this, (byte) 29));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        g24 g24Var = new g24(context, null);
-        this.d = g24Var;
-        if (z == 1) {
-            g24Var.setText(k96.M0(2131748047, null));
-        } else {
-            g24Var.setText(k96.M0(2131748031, null));
+        Charset charset = pr5.a;
+        if (or5Var2 instanceof ArrayList) {
+            ((ArrayList) or5Var2).ensureCapacity(set.size() + or5Var2.size());
         }
-        o39 o39Var = new o39(context, null);
-        this.a = o39Var;
-        o39Var.r1();
-        this.a.setItemSelectorColorProvider(new ek8(this));
-        this.a.setSectionsDrawBackground(true);
-        this.a.setEmptyView(this.d);
-        o39 o39Var2 = this.a;
-        t26 t26Var = new t26(1, false);
-        this.b = t26Var;
-        o39Var2.setLayoutManager(t26Var);
-        this.a.setVerticalScrollBarEnabled(false);
-        o39 o39Var3 = this.a;
-        fk8 fk8Var = new fk8(this, context);
-        this.c = fk8Var;
-        o39Var3.setAdapter(fk8Var);
-        this.a.setVerticalScrollbarPosition(k96.a0 ? 1 : 2);
-        frameLayout.addView(this.a, nme.c(-1.0f, -1));
-        frameLayout.addView(this.d, nme.c(-1.0f, -1));
-        this.a.setOnItemClickListener(new bf4(this, (byte) 25));
-        this.a.setOnItemLongClickListener(new ek8(this));
-        if (z == 1) {
-            this.a.setOnScrollListener(new n58(this, (byte) 6));
-            int i = getMessagesController().y0;
-            g24 g24Var2 = this.d;
-            if (i < 0) {
-                g24Var2.b();
-            } else {
-                g24Var2.c();
-            }
-        }
-        Z();
-        return this.fragmentView;
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        o39 o39Var;
-        if (i != 2) {
-            if (i == kk7.f0) {
-                this.d.c();
-                Z();
+        int size2 = or5Var2.size();
+        for (Object obj : set) {
+            if (obj == null) {
+                String str = "Element at index " + (or5Var2.size() - size2) + " is null.";
+                for (int size3 = or5Var2.size() - 1; size3 >= size2; size3--) {
+                    or5Var2.remove(size3);
+                }
+                p3d.h(str);
                 return;
             }
-            return;
-        }
-        int intValue = ((Integer) objArr[0]).intValue();
-        int i3 = na7.q5;
-        if (((intValue & 2) == 0 && (intValue & 1) == 0) || (o39Var = this.a) == null) {
-            return;
-        }
-        int childCount = o39Var.getChildCount();
-        for (int i4 = 0; i4 < childCount; i4++) {
-            View childAt = this.a.getChildAt(i4);
-            if (childAt instanceof gh6) {
-                ((gh6) childAt).d(intValue);
-            }
+            or5Var2.add(obj);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        o92 o92Var = new o92(this, (byte) 6);
-        arrayList.add(new blb(this.a, 16, new Class[]{gh6.class, dh6.class, ld5.class}, (Paint) null, (Drawable[]) null, (alb) null, bkb.c6));
-        arrayList.add(new blb(this.d, 4, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, bkb.b7));
-        arrayList.add(new blb(this.d, 2048, (Class[]) null, (Paint) null, (Drawable[]) null, (alb) null, bkb.g6));
-        arrayList.add(new blb(this.a, 0, new Class[]{gh6.class}, new String[]{"statusColor"}, (Drawable[]) null, o92Var, bkb.x6));
-        arrayList.add(new blb(this.a, 0, new Class[]{gh6.class}, new String[]{"statusOnlineColor"}, (Drawable[]) null, o92Var, bkb.m6));
-        return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        super.onFragmentCreate();
-        kk7.f(this.currentAccount).b(this, 2);
-        if (this.E) {
-            kk7.f(this.currentAccount).b(this, kk7.f0);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        kk7.f(this.currentAccount).n(this, 2);
-        if (this.E) {
-            kk7.f(this.currentAccount).n(this, kk7.f0);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onResume() {
-        super.onResume();
-        fk8 fk8Var = this.c;
-        if (fk8Var != null) {
-            fk8Var.f();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onThemeColorsChanged() {
-        try {
-            g24 g24Var = this.d;
-            if (g24Var != null) {
-                g24Var.setProgressBarColor(bkb.w0(null, bkb.g6, false));
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-        try {
-            super.onThemeColorsChanged();
-        } catch (Exception e2) {
-            fa4.g(e2, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        return true;
+    public final or5 n() {
+        return this.strings_;
     }
 }

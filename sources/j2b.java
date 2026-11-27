@@ -1,94 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.util.TypedValue;
-import android.view.View;
+import android.net.Uri;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class j2b extends View {
-    public final String a;
-    public final String b;
-    public final oy8 c;
-    public final Paint d;
-    public final TextPaint e;
-    public final TextPaint f;
-    public final RectF h;
-    public float n;
-    public final Rect r;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class j2b {
+    public final int a;
+    public final long b;
+    public final Uri c;
+    public final po5 d;
+    public final po5 e;
 
-    public j2b(Context context, int i, String str, String str2) {
-        super(context);
-        this.r = new Rect();
-        this.a = str;
-        this.b = str2;
-        oy8 oy8Var = new oy8(i, gl.L(36.0f), gl.L(36.0f), true, null);
-        this.c = oy8Var;
-        oy8Var.F(1);
-        oy8Var.M(this);
-        Paint paint = new Paint(1);
-        this.d = paint;
-        paint.setColor(383310040);
-        TextPaint textPaint = new TextPaint(1);
-        this.e = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(TypedValue.applyDimension(1, 16.0f, getResources().getDisplayMetrics()));
-        textPaint.setTypeface(gl.o());
-        TextPaint textPaint2 = new TextPaint(1);
-        this.f = textPaint2;
-        textPaint2.setColor(-1761607681);
-        textPaint2.setTextSize(TypedValue.applyDimension(1, 14.0f, getResources().getDisplayMetrics()));
-        this.h = new RectF();
+    public j2b(int i, long j, Uri uri, j99 j99Var, j99 j99Var2) {
+        this.a = i;
+        this.b = j;
+        this.c = uri;
+        this.d = po5.q(j99Var);
+        this.e = po5.q(j99Var2);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int L = gl.L(40.0f);
-        int measuredHeight = getMeasuredHeight() / 2;
-        int L2 = (int) ((gl.L(8.0f) * this.n) + gl.L(36.0f));
-        int i = L2 / 2;
-        int i2 = L - i;
-        int i3 = measuredHeight - i;
-        oy8 oy8Var = this.c;
-        oy8Var.setBounds(i2, i3, i2 + L2, L2 + i3);
-        oy8Var.draw(canvas);
-        if (this.n > 0.0f) {
-            float N = (1.0f - this.n) * gl.N(4.0f);
-            float f = N * 2.0f;
-            float measuredWidth = getMeasuredWidth() - f;
-            float measuredHeight2 = getMeasuredHeight() - f;
-            RectF rectF = this.h;
-            rectF.set(N, N, measuredWidth, measuredHeight2);
-            int i4 = (int) (this.n * 30.0f);
-            Paint paint = this.d;
-            paint.setAlpha(i4);
-            canvas.drawRoundRect(rectF, gl.N(12.0f), gl.N(12.0f), paint);
-            canvas.save();
-            float f2 = this.n;
-            canvas.scale((f2 * 0.05f) + 1.0f, (f2 * 0.05f) + 1.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        canvas.drawText(this.a, gl.N(80.0f), (getMeasuredHeight() / 2.0f) - gl.N(4.0f), this.e);
-        canvas.drawText(this.b, gl.N(80.0f), gl.N(18.0f) + (getMeasuredHeight() / 2.0f), this.f);
-        if (this.n > 0.0f) {
-            canvas.restore();
+        if (!(obj instanceof j2b)) {
+            return false;
         }
+        j2b j2bVar = (j2b) obj;
+        return this.a == j2bVar.a && this.b == j2bVar.b && Objects.equals(this.c, j2bVar.c) && Objects.equals(this.d, j2bVar.d) && Objects.equals(this.e, j2bVar.e);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        int L = gl.L(40.0f);
-        int measuredHeight = getMeasuredHeight() / 2;
-        int L2 = gl.L(36.0f);
-        int i3 = L2 / 2;
-        int i4 = L - i3;
-        int i5 = measuredHeight - i3;
-        this.c.setBounds(i4, i5, i4 + L2, L2 + i5);
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Long.valueOf(this.b), this.c, this.d, this.e);
     }
 }

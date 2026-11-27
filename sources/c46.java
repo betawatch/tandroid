@@ -1,65 +1,24 @@
 // default package
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class c46 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final class c46 implements View.OnClickListener {
+    public final /* synthetic */ d46 a;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
-        int readInt32 = inputSerializedData.readInt32(z);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z);
-        }
+    public c46(d46 d46Var) {
+        this.a = d46Var;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        TLRPC.WebPage webPage = this.d;
-        int i = this.a;
-        this.a = webPage != null ? i | 1 : i & (-2);
-        boolean isEmpty = TextUtils.isEmpty(this.b);
-        int i2 = this.a;
-        int i3 = !isEmpty ? i2 | 2 : i2 & (-3);
-        this.a = i3;
-        int i4 = this.e ? i3 | 8 : i3 & (-9);
-        this.a = i4;
-        int i5 = this.f ? i4 | 16 : i4 & (-17);
-        this.a = i5;
-        outputSerializedData.writeInt32(i5);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
-        }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
-        }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        kb kbVar = (kb) view.getParent();
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(kbVar.getCurrentChannel());
+        l46 l46Var = this.a.c;
+        int i = l46.R2;
+        l46Var.p1(arrayList);
     }
 }

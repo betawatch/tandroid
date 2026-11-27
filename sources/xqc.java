@@ -1,139 +1,29 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class xqc implements gk7 {
-    public static final do3 e = new do3("wallpaperMaskQueue", true);
-    public static final xqc[] f = new xqc[32];
-    public final int a;
-    public final HashMap b = new HashMap();
-    public final HashMap c = new HashMap();
-    public final HashMap d = new HashMap();
+public final /* synthetic */ class xqc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zqc b;
 
-    public xqc(int i) {
-        this.a = i;
+    public /* synthetic */ xqc(zqc zqcVar, byte b) {
+        this.a = b;
+        this.b = zqcVar;
     }
 
-    public static String b(TLRPC.WallPaper wallPaper) {
-        if (!TextUtils.isEmpty(wallPaper.slug)) {
-            return wallPaper.slug;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        zqc zqcVar = this.b;
+        switch (b) {
+            case 0:
+                zqcVar.performClick();
+                break;
+            default:
+                zqcVar.h.invalidate();
+                zqcVar.n.invalidate();
+                zqcVar.e.invalidate();
+                break;
         }
-        return "id" + wallPaper.id;
-    }
-
-    public final void a(wqc wqcVar, mqc mqcVar) {
-        ng5 ng5Var = wqcVar.a;
-        ArrayList arrayList = wqcVar.d;
-        String a = ng5Var.a();
-        HashMap hashMap = this.d;
-        if (mqcVar == null) {
-            hashMap.put(a, Long.valueOf(SystemClock.elapsedRealtime()));
-        } else {
-            hashMap.remove(a);
-        }
-        this.b.remove(a);
-        int size = arrayList.size();
-        for (int i = 0; i < size; i++) {
-            ((p8c) arrayList.get(i)).a(mqcVar);
-        }
-    }
-
-    public final void c(wqc wqcVar) {
-        int i = this.a;
-        ba4.G(i);
-        File J = ba4.J(wqcVar.e, null, true, true);
-        if (J.exists()) {
-            e.postRunnable(new wbc(this, wqcVar, J, (byte) 19));
-            return;
-        }
-        String r = ba4.r(null, wqcVar.e);
-        HashMap hashMap = this.c;
-        if (hashMap.isEmpty()) {
-            kk7.f(i).a(this, kk7.X1);
-            kk7.f(i).a(this, kk7.Y1);
-        }
-        hashMap.put(r, wqcVar);
-        ba4 G = ba4.G(i);
-        gl5 b = gl5.b(wqcVar.e);
-        Object obj = wqcVar.f;
-        if (obj == null) {
-            obj = "wallpaper";
-        }
-        G.V(b, obj, null, 1, 1);
-    }
-
-    public final void d(String str, boolean z, TLRPC.Document document, Object obj, p8c p8cVar) {
-        ng5 c = ng5.c(str);
-        String a = c.a();
-        Long l = (Long) this.d.get(a);
-        if (l != null && SystemClock.elapsedRealtime() - l.longValue() < 60000) {
-            p8cVar.a(null);
-            return;
-        }
-        HashMap hashMap = this.b;
-        wqc wqcVar = (wqc) hashMap.get(a);
-        if (wqcVar != null) {
-            wqcVar.d.add(p8cVar);
-            return;
-        }
-        wqc wqcVar2 = new wqc(c, str);
-        wqcVar2.c = z ? str : null;
-        wqcVar2.e = document;
-        wqcVar2.f = obj;
-        wqcVar2.d.add(p8cVar);
-        hashMap.put(a, wqcVar2);
-        e.postRunnable(new rnc(this, str, c, wqcVar2));
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        int i3 = kk7.Y1;
-        int i4 = kk7.X1;
-        if (i == i4 || i == i3) {
-            String str = (String) objArr[0];
-            HashMap hashMap = this.c;
-            wqc wqcVar = (wqc) hashMap.remove(str);
-            if (wqcVar == null) {
-                return;
-            }
-            if (hashMap.isEmpty()) {
-                kk7.f(i2).n(this, i4);
-                kk7.f(i2).n(this, i3);
-            }
-            if (i != i4) {
-                e(wqcVar);
-                return;
-            }
-            ba4.G(i2);
-            e.postRunnable(new wbc(this, wqcVar, ba4.J(wqcVar.e, null, true, true), (byte) 19));
-        }
-    }
-
-    public final void e(wqc wqcVar) {
-        boolean z = wqcVar.g;
-        String str = wqcVar.b;
-        if (!z && str.equals(wqcVar.c)) {
-            long j = a.b.getSharedPreferences(ConnectionsManager.getInstance(this.a).isTestBackend() ? "wallpaper_patterns_test" : "wallpaper_patterns", 0).getLong("rejected_".concat(str), 0L);
-            if (j == 0 || Math.abs(System.currentTimeMillis() - j) >= 86400000) {
-                wqcVar.g = true;
-                TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
-                TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                tL_inputWallPaperSlug.slug = str;
-                getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                ConnectionsManager.getInstance(this.a).sendRequest(getwallpaper, new apa(this, wqcVar, (byte) 26));
-                return;
-            }
-        }
-        a(wqcVar, null);
     }
 }

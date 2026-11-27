@@ -2,15 +2,15 @@ package org.telegram.ui.web;
 
 import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class BotWebViewContainer$WebViewProxy {
-    public hv0 a;
-    public final cv0 b;
+    public rv0 a;
+    public final nv0 b;
 
-    public BotWebViewContainer$WebViewProxy(cv0 cv0Var, hv0 hv0Var) {
-        this.b = cv0Var;
-        this.a = hv0Var;
+    public BotWebViewContainer$WebViewProxy(nv0 nv0Var, rv0 rv0Var) {
+        this.b = nv0Var;
+        this.a = rv0Var;
     }
 
     @JavascriptInterface
@@ -18,11 +18,11 @@ public class BotWebViewContainer$WebViewProxy {
         if (this.a == null) {
             return;
         }
-        gl.c3(new fv0((Object) this, (Object) str, (Object) str2, (byte) 0));
+        hl.c3(new tu0(this, str, str2, (byte) 1));
     }
 
     @JavascriptInterface
     public void resolveShare(String str, byte[] bArr, String str2, String str3) {
-        gl.c3(new b87((Object) this, (Object) str, (Object) bArr, (Object) str2, (Object) str3, (byte) 10));
+        hl.c3(new la7((Object) this, (Object) str, (Object) bArr, (Object) str2, (Object) str3, (byte) 10));
     }
 }

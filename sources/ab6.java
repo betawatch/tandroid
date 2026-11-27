@@ -1,44 +1,48 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ab6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eb6 b;
-    public final /* synthetic */ ArrayList c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ab6 implements aca {
+    public final Bundle a;
 
-    public /* synthetic */ ab6(eb6 eb6Var, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.b = eb6Var;
-        this.c = arrayList;
+    public ab6(Context context) {
+        context.getClass();
+        Bundle bundle = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
+        this.a = bundle == null ? Bundle.EMPTY : bundle;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ArrayList arrayList = this.c;
-        eb6 eb6Var = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList2 = eb6Var.b;
-                arrayList2.addAll(arrayList);
-                for (int i = 0; i < arrayList2.size(); i++) {
-                    db6 db6Var = (db6) arrayList2.get(i);
-                    eb6Var.a.k(db6Var, db6Var.a);
-                }
-                gl.c3(new ab6(eb6Var, arrayList, (byte) 1));
-                break;
-            default:
-                eb6Var.J.addAll(arrayList);
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    db6 db6Var2 = (db6) arrayList.get(i2);
-                    eb6Var.K.k(db6Var2, db6Var2.a);
-                }
-                eb6.q();
-                kk7.e().k(kk7.F4, new Object[0]);
-                break;
+    @Override // aca
+    public final Object a(zw2 zw2Var) {
+        return f9c.a;
+    }
+
+    @Override // aca
+    public final Boolean b() {
+        Bundle bundle = this.a;
+        if (bundle.containsKey("firebase_sessions_enabled")) {
+            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
         }
+        return null;
+    }
+
+    @Override // aca
+    public final bs3 c() {
+        Bundle bundle = this.a;
+        if (bundle.containsKey("firebase_sessions_sessions_restart_timeout")) {
+            return new bs3(mje.c(bundle.getInt("firebase_sessions_sessions_restart_timeout"), fs3.d));
+        }
+        return null;
+    }
+
+    @Override // aca
+    public final Double d() {
+        Bundle bundle = this.a;
+        if (bundle.containsKey("firebase_sessions_sampling_rate")) {
+            return Double.valueOf(bundle.getDouble("firebase_sessions_sampling_rate"));
+        }
+        return null;
     }
 }

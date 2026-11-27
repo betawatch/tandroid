@@ -1,119 +1,135 @@
 // default package
 
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.TextUtils;
+import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class w49 implements h49 {
-    public RecyclerView a;
-    public boolean c;
-    public int d;
-    public int e;
-    public int f;
-    public boolean g;
-    public boolean h;
-    public int i;
-    public final v49 k;
-    public int b = -1;
-    public final int j = gl.L(80.0f);
-    public final bg7 l = new bg7(this, (byte) 14);
+public final class w49 {
+    public boolean a;
+    public boolean b;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public String f;
+    public long g;
+    public long h;
 
-    public w49(v49 v49Var) {
-        this.k = v49Var;
+    public static w49 b(String str) {
+        if (str == null) {
+            str = "";
+        }
+        w49 w49Var = new w49();
+        if (!str.startsWith("animated_")) {
+            w49Var.f = str;
+            w49Var.h = str.hashCode();
+            return w49Var;
+        }
+        try {
+            long parseLong = Long.parseLong(str.substring(9));
+            w49Var.g = parseLong;
+            w49Var.h = parseLong;
+            return w49Var;
+        } catch (Exception unused) {
+            w49Var.f = str;
+            w49Var.h = str.hashCode();
+            return w49Var;
+        }
     }
 
-    @Override // h49
-    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
-        View E = recyclerView.E(motionEvent.getX(), motionEvent.getY());
-        int R = E != null ? RecyclerView.R(E) : -1;
-        float y = motionEvent.getY();
-        int action = motionEvent.getAction();
-        v49 v49Var = this.k;
-        bg7 bg7Var = this.l;
-        if (action == 1) {
-            this.c = false;
-            this.g = false;
-            this.h = false;
-            gl.r(bg7Var);
-            v49Var.v(false);
-            return;
+    public static w49 c(TLRPC.TL_availableReaction tL_availableReaction) {
+        w49 w49Var = new w49();
+        w49Var.f = tL_availableReaction.reaction;
+        w49Var.h = r3.hashCode();
+        return w49Var;
+    }
+
+    public static w49 d(TLRPC.Reaction reaction) {
+        w49 w49Var = new w49();
+        if (reaction instanceof TLRPC.TL_reactionPaid) {
+            w49Var.a = true;
+            return w49Var;
         }
-        if (action == 2) {
-            if (this.j > -1) {
-                if (y >= 0.0f && y <= this.d) {
-                    this.h = false;
-                    if (!this.g) {
-                        this.g = true;
-                        gl.r(bg7Var);
-                        gl.c3(bg7Var);
-                    }
-                    this.i = ((int) (this.d - (y - 0.0f))) / 2;
-                } else if (y >= this.e && y <= this.f) {
-                    this.g = false;
-                    if (!this.h) {
-                        this.h = true;
-                        gl.r(bg7Var);
-                        gl.c3(bg7Var);
-                    }
-                    this.i = ((int) ((y + this.f) - (this.e + r11))) / 2;
-                } else if (this.g || this.h) {
-                    gl.r(bg7Var);
-                    this.g = false;
-                    this.h = false;
-                }
+        if (reaction instanceof TLRPC.TL_reactionEmoji) {
+            w49Var.f = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
+            w49Var.h = r3.hashCode();
+            return w49Var;
+        }
+        if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
+            long j = ((TLRPC.TL_reactionCustomEmoji) reaction).document_id;
+            w49Var.g = j;
+            w49Var.h = j;
+        }
+        return w49Var;
+    }
+
+    public static w49 e(TLRPC.TL_availableEffect tL_availableEffect) {
+        w49 w49Var = new w49();
+        w49Var.b = true;
+        long j = tL_availableEffect.id;
+        w49Var.c = j;
+        w49Var.e = tL_availableEffect.effect_animation_id == 0;
+        w49Var.g = tL_availableEffect.effect_sticker_id;
+        w49Var.h = j;
+        w49Var.d = tL_availableEffect.premium_required;
+        w49Var.f = tL_availableEffect.emoticon;
+        return w49Var;
+    }
+
+    public final w49 a() {
+        String V;
+        long j = this.g;
+        return (j == 0 || (V = r47.V(wl.e(yac.t0, j), null, null)) == null) ? this : b(V);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && w49.class == obj.getClass()) {
+            w49 w49Var = (w49) obj;
+            if (this.g == w49Var.g && Objects.equals(this.f, w49Var.f)) {
+                return true;
             }
-            if (R == -1 || this.b == R) {
-                return;
-            }
-            this.b = R;
-            v49Var.H1(E, !v49Var.n2(R));
         }
+        return false;
     }
 
-    @Override // h49
-    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
-        boolean z = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().b() == 0);
-        if (z) {
-            this.a = recyclerView;
-            int i = this.j;
-            if (i > -1) {
-                this.d = i;
-                this.e = recyclerView.getMeasuredHeight() - i;
-                this.f = recyclerView.getMeasuredHeight();
-            }
-        }
-        if (z && motionEvent.getAction() == 1) {
-            this.c = false;
-            this.g = false;
-            this.h = false;
-            gl.r(this.l);
-            this.k.v(false);
-        }
-        return z;
+    public final boolean f(TLRPC.Reaction reaction) {
+        return reaction instanceof TLRPC.TL_reactionEmoji ? TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, this.f) : (reaction instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == this.g;
     }
 
-    public final void d(int i, View view, boolean z) {
-        if (this.c) {
-            return;
+    public final TLRPC.Reaction g() {
+        if (this.a) {
+            return new TLRPC.TL_reactionPaid();
         }
-        this.b = -1;
-        gl.r(this.l);
-        this.g = false;
-        this.h = false;
-        v49 v49Var = this.k;
-        if (!v49Var.K(i)) {
-            this.c = false;
-            return;
+        if (this.f != null) {
+            TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
+            tL_reactionEmoji.emoticon = this.f;
+            return tL_reactionEmoji;
         }
-        v49Var.v(true);
-        v49Var.H1(view, z);
-        this.c = true;
-        this.b = i;
+        TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = new TLRPC.TL_reactionCustomEmoji();
+        tL_reactionCustomEmoji.document_id = this.g;
+        return tL_reactionCustomEmoji;
     }
 
-    @Override // h49
-    public final void c(boolean z) {
+    public final int hashCode() {
+        return Objects.hash(this.f, Long.valueOf(this.g));
+    }
+
+    public final String toString() {
+        TLRPC.Document e;
+        if (!TextUtils.isEmpty(this.f)) {
+            return this.f;
+        }
+        long j = this.g;
+        if (j != 0 && (e = wl.e(yac.t0, j)) != null) {
+            return r47.V(e, null, null);
+        }
+        StringBuilder sb = new StringBuilder("VisibleReaction{");
+        sb.append(this.g);
+        sb.append(", ");
+        return c00.k(sb, this.f, "}");
     }
 }

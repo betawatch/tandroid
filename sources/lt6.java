@@ -1,34 +1,66 @@
 // default package
 
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import androidx.mediarouter.app.MediaRouteVolumeSlider;
-import org.telegram.messenger.beta.R;
+import android.net.Uri;
+import android.os.Bundle;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lt6 extends jt6 {
-    public final int A;
-    public final /* synthetic */ pt6 B;
-    public final TextView z;
+public final class lt6 {
+    public CharSequence A;
+    public CharSequence B;
+    public CharSequence C;
+    public Integer D;
+    public Integer E;
+    public CharSequence F;
+    public CharSequence G;
+    public CharSequence H;
+    public Integer I;
+    public Bundle J;
+    public po5 K;
+    public CharSequence a;
+    public CharSequence b;
+    public CharSequence c;
+    public CharSequence d;
+    public CharSequence e;
+    public CharSequence f;
+    public CharSequence g;
+    public Long h;
+    public s29 i;
+    public s29 j;
+    public byte[] k;
+    public l31 l;
+    public Integer m;
+    public Uri n;
+    public Integer o;
+    public Integer p;
+    public Integer q;
+    public Boolean r;
+    public Boolean s;
+    public Integer t;
+    public Integer u;
+    public Integer v;
+    public Integer w;
+    public Integer x;
+    public Integer y;
+    public CharSequence z;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public lt6(pt6 pt6Var, View view) {
-        super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
-        this.B = pt6Var;
-        rt6 rt6Var = pt6Var.x;
-        this.z = (TextView) view.findViewById(R.id.mr_group_volume_route_name);
-        Resources resources = rt6Var.E.getResources();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        TypedValue typedValue = new TypedValue();
-        resources.getValue(R.dimen.mr_dynamic_volume_group_list_item_height, typedValue, true);
-        this.A = (int) typedValue.getDimension(displayMetrics);
+    public lt6() {
+        no5 no5Var = po5.b;
+        this.K = j99.e;
+    }
+
+    public final void a(int i, byte[] bArr) {
+        if (this.k == null || i == 3 || !Objects.equals(this.m, 3)) {
+            this.k = (byte[]) bArr.clone();
+            this.l = null;
+            this.m = Integer.valueOf(i);
+        }
+    }
+
+    public final void b(byte[] bArr, Integer num) {
+        this.k = bArr == null ? null : (byte[]) bArr.clone();
+        this.l = null;
+        this.m = num;
     }
 }

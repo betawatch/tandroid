@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class TL_toncenter {
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class apiResponse extends TLObject {
         public static final int constructor = -1399980519;
@@ -34,14 +34,14 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class getOnrampProviders extends TLMethod<Vector<onrampProviderInfo>> {
         public static final int constructor = 1061028060;
         public String crypto_currency;
 
         @Override // org.telegram.tgnet.TLMethod
         public Vector<onrampProviderInfo> deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
-            return Vector.TLDeserialize(inputSerializedData, i, z, new sdb((byte) 11));
+            return Vector.TLDeserialize(inputSerializedData, i, z, new nhb((byte) 16));
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -56,7 +56,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampAvailability extends TLObject {
         public static final int constructor = -104314509;
         public boolean allowed;
@@ -80,7 +80,7 @@ public class TL_toncenter {
             if (TLObject.hasFlag(this.flags, 4)) {
                 this.state = inputSerializedData.readString(z);
             }
-            this.methods = Vector.deserialize(inputSerializedData, new sdb((byte) 12), z);
+            this.methods = Vector.deserialize(inputSerializedData, new nhb((byte) 17), z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -102,7 +102,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampBaseCurrencies extends TLObject {
         public ArrayList<String> currencies = new ArrayList<>();
 
@@ -126,7 +126,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampLimits extends TLObject {
         public static final int constructor = 2078435198;
         public String base_currency;
@@ -162,7 +162,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampMethodAvailability extends TLObject {
         public static final int constructor = -1631009112;
         public boolean available;
@@ -191,7 +191,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampProviderInfo extends TLObject {
         public static final int constructor = 230847874;
         public ArrayList<String> crypto_currencies = new ArrayList<>();
@@ -234,7 +234,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampQuote extends TLObject {
         public static final int constructor = 2055213545;
         public String base_amount;
@@ -285,7 +285,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class onrampSession extends TLObject {
         public static final int constructor = -773575132;
         public int expires_date;
@@ -315,7 +315,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class streamingUrl extends TLObject {
         public static final int constructor = 428373505;
         public int expires;
@@ -339,7 +339,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class createOnrampSession extends TLMethod<onrampSession> {
         public static final int constructor = -1575387914;
         public String address;
@@ -401,7 +401,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class getOnrampAvailability extends TLMethod<onrampAvailability> {
         public static final int constructor = 784505169;
         public String base_currency;
@@ -427,7 +427,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class getOnrampBaseCurrencies extends TLMethod<onrampBaseCurrencies> {
         public static final int constructor = 478932467;
         public String crypto_currency;
@@ -446,7 +446,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class getOnrampLimits extends TLMethod<onrampLimits> {
         public static final int constructor = -2132258307;
         public String base_currency;
@@ -474,7 +474,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class getOnrampQuote extends TLMethod<onrampQuote> {
         public static final int constructor = -530168326;
         public String base_amount;
@@ -512,7 +512,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class getStreamingUrl extends TLMethod<streamingUrl> {
         public static final int constructor = -844143673;
 
@@ -527,7 +527,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     /* loaded from: classes3.dex */
     public static class performApiRequest extends TLMethod<apiResponse> {
         public static final int constructor = -1921262239;

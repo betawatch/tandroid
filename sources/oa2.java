@@ -1,26 +1,22 @@
 // default package
 
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oa2 extends ClickableSpan {
-    public final TLRPC.User a;
-    public final /* synthetic */ pa2 b;
+public final class oa2 extends RadioButton {
+    public final /* synthetic */ pa2 y;
 
-    public oa2(pa2 pa2Var, TLRPC.User user) {
-        this.b = pa2Var;
-        this.a = user;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oa2(pa2 pa2Var, Context context) {
+        super(context);
+        this.y = pa2Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        gb2 gb2Var = this.b.a;
-        bb2 bb2Var = gb2Var.eb;
-        if (bb2Var != null) {
-            bb2Var.c0(gb2Var, this.a, 0.0f, 0.0f);
-        }
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.y.invalidate();
     }
 }

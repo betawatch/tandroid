@@ -1,14 +1,22 @@
 // default package
 
-import android.os.IBinder;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ji5 implements li5 {
-    public IBinder a;
+public abstract class ji5 {
+    public final String a;
+    public final int b;
+    public final Map c;
+    public int d = -1;
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public ji5(int i, String str, Map map) {
+        this.a = str;
+        this.b = i;
+        this.c = map;
+    }
+
+    public Map a() {
+        return this.c;
     }
 }

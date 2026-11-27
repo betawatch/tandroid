@@ -1,251 +1,174 @@
 // default package
 
-import android.content.Context;
+import android.media.MediaRoute2Info;
+import android.media.MediaRouter2;
 import android.os.Bundle;
+import android.os.DeadObjectException;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.SystemClock;
-import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
 import android.util.Log;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import android.util.SparseArray;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class gu6 {
-    public static ux4 c;
-    public final Context a;
-    public final ArrayList b = new ArrayList();
+public final class gu6 extends zv6 {
+    public final String f;
+    public final MediaRouter2.RoutingController g;
+    public final Messenger h;
+    public final Messenger i;
+    public final Handler k;
+    public ev6 o;
+    public final /* synthetic */ ku6 p;
+    public final SparseArray j = new SparseArray();
+    public final AtomicInteger l = new AtomicInteger(1);
+    public final z96 m = new z96(this, 20);
+    public int n = -1;
 
-    static {
-        Log.isLoggable("AxMediaRouter", 3);
+    public gu6(ku6 ku6Var, MediaRouter2.RoutingController routingController, String str) {
+        this.p = ku6Var;
+        this.g = routingController;
+        this.f = str;
+        Messenger n = ku6.n(routingController);
+        this.h = n;
+        this.i = n == null ? null : new Messenger(new d1(this));
+        this.k = new Handler(Looper.getMainLooper());
     }
 
-    public gu6(Context context) {
-        this.a = context;
+    @Override // aw6
+    public final void d() {
+        this.g.release();
     }
 
-    public static void b() {
-        if (Looper.myLooper() == Looper.getMainLooper()) {
+    @Override // aw6
+    public final void f(int i) {
+        MediaRouter2.RoutingController routingController = this.g;
+        if (routingController == null) {
             return;
         }
-        sc8.j("The media router service must only be accessed on the application's main thread.");
+        routingController.setVolume(i);
+        this.n = i;
+        Handler handler = this.k;
+        z96 z96Var = this.m;
+        handler.removeCallbacks(z96Var);
+        handler.postDelayed(z96Var, 1000L);
     }
 
-    public static ux4 c() {
-        ux4 ux4Var = c;
-        if (ux4Var != null) {
-            return ux4Var;
-        }
-        sc8.j("getGlobalRouter cannot be called when sGlobal is null");
-        return null;
-    }
-
-    public static gu6 d(Context context) {
-        if (context == null) {
-            w26.j("context must not be null");
-            return null;
-        }
-        b();
-        ux4 ux4Var = c;
-        if (ux4Var == null) {
-            ux4Var = new ux4(context.getApplicationContext());
-            c = ux4Var;
-        }
-        ArrayList arrayList = ux4Var.i;
-        int size = arrayList.size();
-        while (true) {
-            size--;
-            if (size < 0) {
-                gu6 gu6Var = new gu6(context);
-                arrayList.add(new WeakReference(gu6Var));
-                return gu6Var;
-            }
-            gu6 gu6Var2 = (gu6) ((WeakReference) arrayList.get(size)).get();
-            if (gu6Var2 == null) {
-                arrayList.remove(size);
-            } else if (gu6Var2.a == context) {
-                return gu6Var2;
-            }
-        }
-    }
-
-    public static MediaSessionCompat$Token e() {
-        ux4 ux4Var = c;
-        if (ux4Var == null) {
-            return null;
-        }
-        xl3 xl3Var = ux4Var.C;
-        if (xl3Var != null) {
-            mv6 mv6Var = (mv6) xl3Var.b;
-            if (mv6Var != null) {
-                return ((zu6) mv6Var.b).c;
-            }
-            return null;
-        }
-        mv6 mv6Var2 = ux4Var.D;
-        if (mv6Var2 != null) {
-            return ((zu6) mv6Var2.b).c;
-        }
-        return null;
-    }
-
-    public static eu6 f() {
-        b();
-        return c().e();
-    }
-
-    public static boolean g() {
-        Bundle bundle;
-        if (c == null) {
-            return false;
-        }
-        iu6 iu6Var = c().u;
-        return iu6Var == null || (bundle = iu6Var.e) == null || bundle.getBoolean("androidx.mediarouter.media.MediaRouterParams.ENABLE_GROUP_VOLUME_UX", true);
-    }
-
-    public static void i(iu6 iu6Var) {
-        b();
-        ux4 c2 = c();
-        iu6 iu6Var2 = c2.u;
-        rx4 rx4Var = c2.a;
-        c2.u = iu6Var;
-        boolean f = c2.f();
-        fs6 fs6Var = c2.r;
-        if (f) {
-            if (fs6Var == null) {
-                fs6 fs6Var2 = new fs6(c2.h, new gi3(c2));
-                c2.r = fs6Var2;
-                c2.a(fs6Var2, true);
-                c2.k();
-                ee3 ee3Var = c2.c;
-                ((Handler) ee3Var.d).post((bg7) ee3Var.h);
-            }
-            if ((iu6Var2 != null && iu6Var2.d) != iu6Var.d) {
-                fs6 fs6Var3 = c2.r;
-                fs6Var3.h = c2.A;
-                if (!fs6Var3.b) {
-                    fs6Var3.b = true;
-                    ((c1) fs6Var3.e).sendEmptyMessage(2);
-                }
-            }
-        } else if (fs6Var != null) {
-            du6 d = c2.d(fs6Var);
-            if (d != null) {
-                b();
-                fs6Var.f = null;
-                fs6Var.h(null);
-                c2.m(d, null);
-                rx4Var.b(514, d);
-                c2.l.remove(d);
-            }
-            c2.r = null;
-            ee3 ee3Var2 = c2.c;
-            ((Handler) ee3Var2.d).post((bg7) ee3Var2.h);
-        }
-        rx4Var.b(769, iu6Var);
-    }
-
-    public static void j(int i) {
-        if (i < 0 || i > 3) {
-            w26.j("Unsupported reason to unselect route");
+    @Override // aw6
+    public final void i(int i) {
+        MediaRouter2.RoutingController routingController = this.g;
+        if (routingController == null) {
             return;
         }
-        b();
-        ux4 c2 = c();
-        eu6 c3 = c2.c();
-        if (c2.e() != c3) {
-            c2.i(c3, i);
-        }
-    }
-
-    public final void a(yt6 yt6Var, zt6 zt6Var, int i) {
-        au6 au6Var;
-        if (yt6Var == null) {
-            w26.j("selector must not be null");
-            return;
-        }
-        if (zt6Var == null) {
-            w26.j("callback must not be null");
-            return;
-        }
-        b();
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        boolean z = false;
-        int i2 = 0;
-        while (true) {
-            if (i2 >= size) {
-                i2 = -1;
-                break;
-            } else if (((au6) arrayList.get(i2)).b == zt6Var) {
-                break;
-            } else {
-                i2++;
-            }
-        }
+        int i2 = this.n;
         if (i2 < 0) {
-            au6Var = new au6(this, zt6Var);
-            arrayList.add(au6Var);
+            i2 = routingController.getVolume();
+        }
+        int max = Math.max(0, Math.min(i2 + i, this.g.getVolumeMax()));
+        this.n = max;
+        this.g.setVolume(max);
+        Handler handler = this.k;
+        z96 z96Var = this.m;
+        handler.removeCallbacks(z96Var);
+        handler.postDelayed(z96Var, 1000L);
+    }
+
+    @Override // zv6
+    public final void m(String str) {
+        if (str == null || str.isEmpty()) {
+            Log.w("MR2Provider", "onAddMemberRoute: Ignoring null or empty routeId.");
+            return;
+        }
+        MediaRoute2Info o = this.p.o(str);
+        if (o == null) {
+            Log.w("MR2Provider", "onAddMemberRoute: Specified route not found. routeId=".concat(str));
         } else {
-            au6Var = (au6) arrayList.get(i2);
-        }
-        boolean z2 = true;
-        if (i != au6Var.d) {
-            au6Var.d = i;
-            z = true;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if ((i & 1) != 0) {
-            z = true;
-        }
-        au6Var.e = elapsedRealtime;
-        yt6 yt6Var2 = au6Var.c;
-        yt6Var2.a();
-        yt6Var.a();
-        if (yt6Var2.b.containsAll(yt6Var.b)) {
-            z2 = z;
-        } else {
-            yt6 yt6Var3 = au6Var.c;
-            xt6 xt6Var = new xt6();
-            if (yt6Var3 == null) {
-                w26.j("selector must not be null");
-                return;
-            }
-            yt6Var3.a();
-            if (!yt6Var3.b.isEmpty()) {
-                xt6Var.a = new ArrayList(yt6Var3.b);
-            }
-            xt6Var.a(yt6Var.c());
-            au6Var.c = xt6Var.b();
-        }
-        if (z2) {
-            c().k();
+            this.g.selectRoute(o);
         }
     }
 
-    public final void h(zt6 zt6Var) {
-        if (zt6Var == null) {
-            w26.j("callback must not be null");
+    @Override // zv6
+    public final void n(String str) {
+        if (str == null || str.isEmpty()) {
+            Log.w("MR2Provider", "onRemoveMemberRoute: Ignoring null or empty routeId.");
             return;
         }
-        b();
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i = 0;
-        while (true) {
-            if (i >= size) {
-                i = -1;
-                break;
-            } else if (((au6) arrayList.get(i)).b == zt6Var) {
-                break;
-            } else {
-                i++;
-            }
+        MediaRoute2Info o = this.p.o(str);
+        if (o == null) {
+            Log.w("MR2Provider", "onRemoveMemberRoute: Specified route not found. routeId=".concat(str));
+        } else {
+            this.g.deselectRoute(o);
         }
-        if (i >= 0) {
-            arrayList.remove(i);
-            c().k();
+    }
+
+    @Override // zv6
+    public final void o(List list) {
+        if (list == null || list.isEmpty()) {
+            Log.w("MR2Provider", "onUpdateMemberRoutes: Ignoring null or empty routeIds.");
+            return;
+        }
+        String str = (String) list.get(0);
+        ku6 ku6Var = this.p;
+        MediaRoute2Info o = ku6Var.o(str);
+        if (o != null) {
+            ku6Var.r.transferTo(o);
+            return;
+        }
+        Log.w("MR2Provider", "onUpdateMemberRoutes: Specified route not found. routeId=" + str);
+    }
+
+    public final String p() {
+        ev6 ev6Var = this.o;
+        return ev6Var != null ? ev6Var.d() : this.g.getId();
+    }
+
+    public final void q(int i, String str) {
+        Messenger messenger;
+        MediaRouter2.RoutingController routingController = this.g;
+        if (routingController == null || routingController.isReleased() || (messenger = this.h) == null) {
+            return;
+        }
+        int andIncrement = this.l.getAndIncrement();
+        Message obtain = Message.obtain();
+        obtain.what = 7;
+        obtain.arg1 = andIncrement;
+        Bundle bundle = new Bundle();
+        bundle.putInt("volume", i);
+        bundle.putString("routeId", str);
+        obtain.setData(bundle);
+        obtain.replyTo = this.i;
+        try {
+            messenger.send(obtain);
+        } catch (DeadObjectException unused) {
+        } catch (RemoteException e) {
+            Log.e("MR2Provider", "Could not send control request to service.", e);
+        }
+    }
+
+    public final void r(int i, String str) {
+        Messenger messenger;
+        MediaRouter2.RoutingController routingController = this.g;
+        if (routingController == null || routingController.isReleased() || (messenger = this.h) == null) {
+            return;
+        }
+        int andIncrement = this.l.getAndIncrement();
+        Message obtain = Message.obtain();
+        obtain.what = 8;
+        obtain.arg1 = andIncrement;
+        Bundle bundle = new Bundle();
+        bundle.putInt("volume", i);
+        bundle.putString("routeId", str);
+        obtain.setData(bundle);
+        obtain.replyTo = this.i;
+        try {
+            messenger.send(obtain);
+        } catch (DeadObjectException unused) {
+        } catch (RemoteException e) {
+            Log.e("MR2Provider", "Could not send control request to service.", e);
         }
     }
 }

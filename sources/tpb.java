@@ -1,10 +1,204 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class tpb extends vpb {
-    @Override // fs5
-    public final String toString() {
-        return "</" + z() + ">";
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.p;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class tpb implements hm2 {
+    public final /* synthetic */ pqb a;
+
+    public tpb(pqb pqbVar) {
+        this.a = pqbVar;
+    }
+
+    @Override // hm2
+    public final void a(boolean z) {
+        int i;
+        int i2;
+        pqb pqbVar = this.a;
+        ynb ynbVar = pqbVar.w;
+        if (!z) {
+            jj.T(pqbVar, 1, null, null);
+            return;
+        }
+        if (ynbVar.r == null) {
+            pqbVar.finishFragment();
+            i2 = ((e) pqbVar).currentAccount;
+            uc7.s1(i2).J4(ynbVar.b, ynbVar);
+            jn7.e().k(jn7.v4, ynbVar.b, ynbVar);
+            return;
+        }
+        StringBuilder sb = new StringBuilder("https://");
+        i = ((e) pqbVar).currentAccount;
+        sb.append(uc7.s1(i).N2);
+        sb.append("/addtheme/");
+        sb.append(ynbVar.r.slug);
+        String sb2 = sb.toString();
+        pqbVar.showDialog(new kea(pqbVar.getParentActivity(), null, sb2, false, sb2, false, null));
+    }
+
+    @Override // hm2
+    public final void b() {
+        pqb pqbVar = this.a;
+        if (pqbVar.getParentActivity() != null) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pqbVar.getParentActivity());
+            String M0 = ob6.M0(2131751449, null);
+            id idVar = alertDialog$Builder.a;
+            idVar.S = M0;
+            idVar.U = ob6.M0(2131751450, null);
+            alertDialog$Builder.j(ob6.M0(2131751563, null), new hja(this, (byte) 28));
+            alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+            pqbVar.showDialog(idVar);
+            TextView textView = (TextView) idVar.c(-1);
+            if (textView != null) {
+                yob.X(textView, aob.q7, pqbVar.a);
+            }
+        }
+    }
+
+    @Override // hm2
+    public final void c(int i, int i2, boolean z) {
+        pqb pqbVar = this.a;
+        if (pqbVar.b == 2) {
+            pqbVar.f1(i, i2, true);
+            return;
+        }
+        Runnable runnable = pqbVar.a0;
+        ynb ynbVar = pqbVar.w;
+        if (i2 != -1) {
+            int i3 = pqbVar.Z;
+            if (i3 != -1 && i3 != i2) {
+                runnable.run();
+            }
+            pqbVar.Y = i;
+            pqbVar.Z = i2;
+            if (z) {
+                runnable.run();
+                return;
+            } else {
+                if (pqbVar.b0) {
+                    return;
+                }
+                pqbVar.b0 = true;
+                pqbVar.fragmentView.postDelayed(runnable, 16L);
+                return;
+            }
+        }
+        int i4 = pqbVar.n;
+        if (i4 == 1 || i4 == 2) {
+            long j = pqbVar.K;
+            if (j != 0) {
+                ynbVar.j = j;
+            } else {
+                ynbVar.j = 0L;
+            }
+            long j2 = pqbVar.L;
+            if (j2 != 0) {
+                ynbVar.k = j2;
+            } else {
+                ynbVar.k = 0L;
+            }
+            long j3 = pqbVar.M;
+            if (j3 != 0) {
+                ynbVar.l = j3;
+            } else {
+                ynbVar.l = 0L;
+            }
+            long j4 = pqbVar.N;
+            if (j4 != 0) {
+                ynbVar.m = j4;
+            } else {
+                ynbVar.m = 0L;
+            }
+            ynbVar.n = pqbVar.Q;
+            if (i4 == 2) {
+                int C0 = aob.C0(aob.Ee);
+                int C02 = aob.C0(aob.Fe);
+                int C03 = aob.C0(aob.Ge);
+                int C04 = aob.C0(aob.He);
+                int i5 = (int) ynbVar.k;
+                int i6 = (int) ynbVar.l;
+                int i7 = (int) ynbVar.m;
+                int i8 = (int) ynbVar.j;
+                p pVar = pqbVar.X;
+                if (i7 != 0) {
+                    C04 = i7;
+                }
+                pVar.e(C04, 3);
+                p pVar2 = pqbVar.X;
+                if (i6 != 0) {
+                    C03 = i6;
+                }
+                pVar2.e(C03, 2);
+                p pVar3 = pqbVar.X;
+                if (i5 != 0) {
+                    C02 = i5;
+                }
+                pVar3.e(C02, 1);
+                p pVar4 = pqbVar.X;
+                if (i8 != 0) {
+                    C0 = i8;
+                }
+                pVar4.e(C0, 0);
+            }
+        }
+        int i9 = pqbVar.n;
+        if (i9 == 1 || i9 == 3) {
+            int i10 = pqbVar.F;
+            if (i10 != 0) {
+                ynbVar.e = i10;
+            } else {
+                ynbVar.e = 0;
+            }
+            int i11 = pqbVar.G;
+            if (i11 != 0) {
+                ynbVar.f = i11;
+            } else {
+                ynbVar.f = 0;
+            }
+            int i12 = pqbVar.H;
+            if (i12 != 0) {
+                ynbVar.g = i12;
+            } else {
+                ynbVar.g = 0;
+            }
+            int i13 = pqbVar.I;
+            if (i13 != 0) {
+                ynbVar.h = i13;
+            } else {
+                ynbVar.h = 0;
+                i13 = 0;
+            }
+            if (i9 == 3) {
+                pqbVar.X.e(i13, 3);
+                pqbVar.X.e(ynbVar.g, 2);
+                pqbVar.X.e(ynbVar.f, 1);
+                p pVar5 = pqbVar.X;
+                int i14 = ynbVar.e;
+                if (i14 == 0) {
+                    i14 = ynbVar.c;
+                }
+                pVar5.e(i14, 0);
+            }
+        }
+        aob.r1(false, false);
+        pqbVar.w0.i1();
+    }
+
+    @Override // hm2
+    public final int d(int i) {
+        ynb ynbVar;
+        pqb pqbVar = this.a;
+        if (pqbVar.n != 3) {
+            return 0;
+        }
+        znb znbVar = pqbVar.g0;
+        if (znbVar.T && i == 0 && (ynbVar = (ynb) znbVar.b0.get(aob.n)) != null) {
+            return ynbVar.e;
+        }
+        return 0;
     }
 }

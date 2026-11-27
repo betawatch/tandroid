@@ -1,29 +1,35 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicReferenceArray;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class t0a extends nv9 {
-    public final /* synthetic */ AtomicReferenceArray g;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class t0a implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ w0a b;
 
-    public t0a(long j, t0a t0aVar, int i) {
-        super(j, t0aVar, i);
-        this.g = new AtomicReferenceArray(s0a.f);
+    public /* synthetic */ t0a(w0a w0aVar, byte b) {
+        this.a = b;
+        this.b = w0aVar;
     }
 
-    @Override // nv9
-    public final int g() {
-        return s0a.f;
-    }
-
-    @Override // nv9
-    public final void h(int i, sw2 sw2Var) {
-        this.g.set(i, s0a.e);
-        i();
-    }
-
-    public final String toString() {
-        return "SemaphoreSegment[id=" + this.d + ", hashCode=" + hashCode() + ']';
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        w0a w0aVar = this.b;
+        switch (b) {
+            case 0:
+                w0aVar.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w0aVar.W.i0.invalidate();
+                break;
+            case 1:
+                w0aVar.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w0aVar.W.i0.invalidate();
+                break;
+            default:
+                w0aVar.O = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w0aVar.W.i0.invalidate();
+                break;
+        }
     }
 }

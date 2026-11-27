@@ -1,53 +1,23 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wp1 extends bl0 {
-    public final /* synthetic */ byte s;
-    public final /* synthetic */ mu1 w;
+public final class wp1 extends dl1 {
+    public final /* synthetic */ zu1 z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wp1(mu1 mu1Var, wjb wjbVar, int i, byte b) {
-        super(i, wjbVar);
-        this.s = b;
-        this.w = mu1Var;
+    public wp1(zu1 zu1Var, vnb vnbVar, Activity activity) {
+        super(vnbVar, activity, false);
+        this.z2 = zu1Var;
     }
 
-    @Override // bl0, al0
-    public final int t1() {
-        int i;
-        int i2;
-        byte b = this.s;
-        mu1 mu1Var = this.w;
-        switch (b) {
-            case 0:
-                i = ((d) mu1Var).currentAccount;
-                if (!nod.d(i, mu1Var.Ba)) {
-                    return bm2.o(mu1Var.getThemedColor(bkb.Ie), kk7.d4);
-                }
-                ku1 ku1Var = mu1Var.Ba;
-                if (ku1Var == null || ku1Var.a()) {
-                    a();
-                    return this.d;
-                }
-                a();
-                return bm2.o(this.d, kk7.s3);
-            case 1:
-                return mu1Var.x.t1();
-            default:
-                i2 = ((d) mu1Var).currentAccount;
-                if (!nod.d(i2, mu1Var.Ba)) {
-                    return bm2.o(mu1Var.getThemedColor(bkb.c6), kk7.d4);
-                }
-                ku1 ku1Var2 = mu1Var.Ba;
-                if (ku1Var2 == null || ku1Var2.a()) {
-                    a();
-                    return this.d;
-                }
-                a();
-                return bm2.o(this.d, kk7.s3);
-        }
+    @Override // dl1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        float y = getY();
+        zu1 zu1Var = this.z2;
+        j0(zu1Var.g1.getY() + y, zu1Var.m1.getBackgroundSizeY());
     }
 }

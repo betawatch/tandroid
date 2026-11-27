@@ -1,38 +1,31 @@
 // default package
 
-import java.util.ArrayList;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class q1a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z3a b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class q1a implements sy4, ry4 {
+    public final /* synthetic */ r1a a;
 
-    public /* synthetic */ q1a(z3a z3aVar, long j, ArrayList arrayList, byte b) {
-        this.a = b;
-        this.b = z3aVar;
-        this.c = j;
-        this.d = arrayList;
+    public /* synthetic */ q1a(r1a r1aVar) {
+        this.a = r1aVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ArrayList arrayList = this.d;
-        long j = this.c;
-        z3a z3aVar = this.b;
-        switch (b) {
-            case 0:
-                z3aVar.getMessagesController().n3(arrayList, j);
-                break;
-            case 1:
-                z3aVar.getMessagesController().n3(arrayList, j);
-                break;
-            default:
-                z3aVar.getMessagesController().n3(arrayList, j);
-                break;
+    @Override // sy4
+    public final int h() {
+        return aob.v0(aob.d6, this.a.J0);
+    }
+
+    @Override // ry4
+    public final void k(int i) {
+        r1a r1aVar = this.a;
+        tq3 tq3Var = r1aVar.g2;
+        if (Build.VERSION.SDK_INT < 31 || tq3Var == null) {
+            return;
         }
+        if (vsd.a(i, 4)) {
+            tq3Var.h(r1aVar.X0.e());
+        }
+        tq3Var.e(r1aVar.i2, r1aVar.b.getWidth(), r1aVar.b.getHeight());
     }
 }

@@ -1,164 +1,278 @@
 // default package
 
 import android.content.Context;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Base64;
+import com.google.android.gms.fido.common.Transport;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.concurrent.Executor;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class v23 {
-    public final ScaleGestureDetector a;
-    public j33 b;
-    public float c;
-    public float d;
-    public final float f;
-    public VelocityTracker g;
-    public boolean h;
-    public long k;
-    public boolean l;
-    public final float e = gl.L(1.0f);
-    public int i = -1;
-    public int j = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class v23 extends q23 {
+    public final Context e;
+    public h23 f;
+    public Executor g;
+    public CancellationSignal h;
+    public final q13 i;
 
     public v23(Context context) {
-        this.f = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
-        this.a = new ScaleGestureDetector(context, new u23(this, (byte) 0));
+        context.getClass();
+        this.e = context;
+        this.i = new q13(this, new Handler(Looper.getMainLooper()), (byte) 2);
     }
 
-    public final void a(MotionEvent motionEvent) {
-        float x;
-        float y;
-        float x2;
-        float y2;
-        float x3;
-        float y3;
-        i33 i33Var;
-        this.a.onTouchEvent(motionEvent);
-        int action = motionEvent.getAction() & kk7.d4;
-        if (action == 0) {
-            this.i = motionEvent.getPointerId(0);
-            this.k = SystemClock.elapsedRealtime();
-        } else if (action == 1 || action == 3) {
-            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (i33Var = this.b.N) != null) {
-                i33Var.t2();
-            }
-            this.i = -1;
-        } else if (action == 6) {
-            int action2 = (motionEvent.getAction() & 65280) >> 8;
-            if (motionEvent.getPointerId(action2) == this.i) {
-                int i = action2 == 0 ? 1 : 0;
-                this.i = motionEvent.getPointerId(i);
-                this.c = motionEvent.getX(i);
-                this.d = motionEvent.getY(i);
-            }
-        }
-        int i2 = this.i;
-        if (i2 == -1) {
-            i2 = 0;
-        }
-        this.j = motionEvent.findPointerIndex(i2);
-        int action3 = motionEvent.getAction();
-        if (action3 != 0) {
-            if (action3 == 1) {
-                if (this.h) {
-                    if (this.g != null) {
-                        try {
-                            x3 = motionEvent.getX(this.j);
-                        } catch (Exception unused) {
-                            x3 = motionEvent.getX();
-                        }
-                        this.c = x3;
-                        try {
-                            y3 = motionEvent.getY(this.j);
-                        } catch (Exception unused2) {
-                            y3 = motionEvent.getY();
-                        }
-                        this.d = y3;
-                        this.g.addMovement(motionEvent);
-                        this.g.computeCurrentVelocity(1000);
-                        if (Math.max(Math.abs(this.g.getXVelocity()), Math.abs(this.g.getYVelocity())) >= this.f) {
-                            this.b.getClass();
+    public static u13 e(tx8 tx8Var) {
+        JSONObject jSONObject;
+        try {
+            d50 d50Var = tx8Var.f;
+            gfe gfeVar = tx8Var.c;
+            try {
+                JSONObject jSONObject2 = new JSONObject();
+                if (gfeVar != null && gfeVar.p().length > 0) {
+                    jSONObject2.put("rawId", lsd.b(gfeVar.p()));
+                }
+                String str = tx8Var.n;
+                if (str != null) {
+                    jSONObject2.put("authenticatorAttachment", str);
+                }
+                String str2 = tx8Var.b;
+                if (str2 != null && d50Var == null) {
+                    jSONObject2.put(TeXSymbolParser.TYPE_ATTR, str2);
+                }
+                String str3 = tx8Var.a;
+                if (str3 != null) {
+                    jSONObject2.put("id", str3);
+                }
+                String str4 = "response";
+                b50 b50Var = tx8Var.e;
+                boolean z = true;
+                if (b50Var != null) {
+                    jSONObject = b50Var.b();
+                } else {
+                    c50 c50Var = tx8Var.d;
+                    if (c50Var != null) {
+                        jSONObject = c50Var.b();
+                    } else {
+                        z = false;
+                        if (d50Var != null) {
+                            try {
+                                JSONObject jSONObject3 = new JSONObject();
+                                jSONObject3.put("code", (int) d50Var.a.a);
+                                String str5 = d50Var.b;
+                                if (str5 != null) {
+                                    jSONObject3.put("message", str5);
+                                }
+                                str4 = "error";
+                                jSONObject = jSONObject3;
+                            } catch (JSONException e) {
+                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);
+                            }
+                        } else {
+                            jSONObject = null;
                         }
                     }
-                    this.h = false;
                 }
-                VelocityTracker velocityTracker = this.g;
-                if (velocityTracker != null) {
-                    velocityTracker.recycle();
-                    this.g = null;
+                if (jSONObject != null) {
+                    jSONObject2.put(str4, jSONObject);
                 }
-                this.l = false;
-                return;
+                z40 z40Var = tx8Var.h;
+                if (z40Var != null) {
+                    jSONObject2.put("clientExtensionResults", z40Var.b());
+                } else if (z) {
+                    jSONObject2.put("clientExtensionResults", new JSONObject());
+                }
+                String jSONObject4 = jSONObject2.toString();
+                jSONObject4.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
+                return new u13(jSONObject4, bundle);
+            } catch (JSONException e2) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e2);
             }
-            if (action3 != 2) {
-                if (action3 == 3) {
-                    VelocityTracker velocityTracker2 = this.g;
-                    if (velocityTracker2 != null) {
-                        velocityTracker2.recycle();
-                        this.g = null;
+        } catch (Throwable th) {
+            throw new v03("The PublicKeyCredential response json had an unexpected exception when parsing: " + th.getMessage(), (byte) 2);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final vx8 d(t13 t13Var) {
+        y40 y40Var;
+        f50 f50Var;
+        y40 y40Var2;
+        JSONArray jSONArray;
+        String str;
+        ArrayList arrayList;
+        long j;
+        LinkedHashMap linkedHashMap = ux8.a;
+        String str2 = t13Var.d;
+        Context context = this.e;
+        context.getClass();
+        if (i05.e.c(context, j05.a) == 0) {
+            PackageManager packageManager = context.getPackageManager();
+            packageManager.getClass();
+            if (Build.VERSION.SDK_INT >= 28) {
+                PackageInfo packageInfo = packageManager.getPackageInfo("com.google.android.gms", 0);
+                packageInfo.getClass();
+                j = go.u(packageInfo);
+            } else {
+                j = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
+            }
+            if (j > 241217000) {
+                return new vx8(str2);
+            }
+        }
+        JSONObject jSONObject = new JSONObject(str2);
+        byte[] a = mwe.a(jSONObject);
+        JSONObject jSONObject2 = jSONObject.getJSONObject("user");
+        String str3 = "id";
+        String string = jSONObject2.getString("id");
+        string.getClass();
+        int i = 11;
+        byte[] decode = Base64.decode(string, 11);
+        decode.getClass();
+        String string2 = jSONObject2.getString("name");
+        String string3 = jSONObject2.getString("displayName");
+        String optString = jSONObject2.optString("icon", "");
+        string3.getClass();
+        if (string3.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions UserEntity missing displayName or they are unexpectedly empty");
+        }
+        if (decode.length == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions UserEntity missing user id or they are unexpectedly empty");
+        }
+        string2.getClass();
+        if (string2.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions UserEntity missing user name or they are unexpectedly empty");
+        }
+        by8 by8Var = new by8(string2, decode, optString, string3);
+        JSONObject jSONObject3 = jSONObject.getJSONObject("rp");
+        String string4 = jSONObject3.getString("id");
+        String optString2 = jSONObject3.optString("name", "");
+        String optString3 = jSONObject3.optString("icon", "");
+        optString3.getClass();
+        if (optString3.length() == 0) {
+            optString3 = null;
+        }
+        optString2.getClass();
+        if (optString2.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions rp name is missing or unexpectedly empty");
+        }
+        string4.getClass();
+        if (string4.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions rp ID is missing or unexpectedly empty");
+        }
+        yx8 yx8Var = new yx8(string4, optString2, optString3);
+        JSONArray jSONArray2 = jSONObject.getJSONArray("pubKeyCredParams");
+        ArrayList arrayList2 = new ArrayList();
+        int length = jSONArray2.length();
+        int i2 = 0;
+        while (i2 < length) {
+            JSONObject jSONObject4 = jSONArray2.getJSONObject(i2);
+            LinkedHashMap linkedHashMap2 = ux8.a;
+            int i3 = i2;
+            int i4 = (int) jSONObject4.getLong("alg");
+            String optString4 = jSONObject4.optString(TeXSymbolParser.TYPE_ATTR, "");
+            optString4.getClass();
+            if (optString4.length() == 0) {
+                throw new JSONException("PublicKeyCredentialCreationOptions PublicKeyCredentialParameter type missing or unexpectedly empty");
+            }
+            try {
+                t51.a(i4);
+                arrayList2.add(new xx8(optString4, i4));
+            } catch (Throwable unused) {
+            }
+            i2 = i3 + 1;
+        }
+        ArrayList arrayList3 = new ArrayList();
+        LinkedHashMap linkedHashMap3 = ux8.a;
+        if (jSONObject.has("excludeCredentials")) {
+            JSONArray jSONArray3 = jSONObject.getJSONArray("excludeCredentials");
+            int length2 = jSONArray3.length();
+            int i5 = 0;
+            while (i5 < length2) {
+                JSONObject jSONObject5 = jSONArray3.getJSONObject(i5);
+                LinkedHashMap linkedHashMap4 = ux8.a;
+                String string5 = jSONObject5.getString(str3);
+                string5.getClass();
+                byte[] decode2 = Base64.decode(string5, i);
+                decode2.getClass();
+                String string6 = jSONObject5.getString(TeXSymbolParser.TYPE_ATTR);
+                string6.getClass();
+                if (string6.length() == 0) {
+                    throw new JSONException("PublicKeyCredentialDescriptor type value is not found or unexpectedly empty");
+                }
+                if (decode2.length == 0) {
+                    throw new JSONException("PublicKeyCredentialDescriptor id value is not found or unexpectedly empty");
+                }
+                if (jSONObject5.has("transports")) {
+                    jSONArray = jSONArray3;
+                    arrayList = new ArrayList();
+                    JSONArray jSONArray4 = jSONObject5.getJSONArray("transports");
+                    int length3 = jSONArray4.length();
+                    str = str3;
+                    int i6 = 0;
+                    while (i6 < length3) {
+                        try {
+                            int i7 = i6;
+                            arrayList.add(Transport.a(jSONArray4.getString(i6)));
+                            i6 = i7 + 1;
+                        } catch (b5c e) {
+                            throw new s13(new i1((byte) 4), e.getMessage());
+                        }
                     }
-                    this.l = false;
-                    this.h = false;
-                    return;
+                } else {
+                    jSONArray = jSONArray3;
+                    str = str3;
+                    arrayList = null;
                 }
-                return;
+                arrayList3.add(new wx8(string6, decode2, arrayList));
+                i5++;
+                jSONArray3 = jSONArray;
+                str3 = str;
+                i = 11;
             }
         }
-        if (!this.l) {
-            VelocityTracker obtain = VelocityTracker.obtain();
-            this.g = obtain;
-            if (obtain != null) {
-                obtain.addMovement(motionEvent);
-            }
-            try {
-                x2 = motionEvent.getX(this.j);
-            } catch (Exception unused3) {
-                x2 = motionEvent.getX();
-            }
-            this.c = x2;
-            try {
-                y2 = motionEvent.getY(this.j);
-            } catch (Exception unused4) {
-                y2 = motionEvent.getY();
-            }
-            this.d = y2;
-            this.h = false;
-            this.l = true;
-            return;
+        LinkedHashMap linkedHashMap5 = ux8.a;
+        String optString5 = jSONObject.optString("attestation", "none");
+        optString5.getClass();
+        ey a2 = ey.a(optString5.length() != 0 ? optString5 : "none");
+        Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getLong("timeout") / 1000.0d) : null;
+        if (jSONObject.has("authenticatorSelection")) {
+            JSONObject jSONObject6 = jSONObject.getJSONObject("authenticatorSelection");
+            boolean optBoolean = jSONObject6.optBoolean("requireResidentKey", false);
+            String optString6 = jSONObject6.optString("residentKey", "");
+            optString6.getClass();
+            pd9 a3 = optString6.length() > 0 ? pd9.a(optString6) : null;
+            Boolean valueOf2 = Boolean.valueOf(optBoolean);
+            String optString7 = jSONObject6.optString("authenticatorAttachment", "");
+            optString7.getClass();
+            cy a4 = optString7.length() > 0 ? cy.a(optString7) : null;
+            y40Var = null;
+            f50Var = new f50(a4 == null ? null : a4.a, valueOf2, null, a3 == null ? null : a3.a);
+        } else {
+            y40Var = null;
+            f50Var = null;
         }
-        try {
-            x = motionEvent.getX(this.j);
-        } catch (Exception unused5) {
-            x = motionEvent.getX();
+        if (jSONObject.has("extensions")) {
+            JSONObject jSONObject7 = jSONObject.getJSONObject("extensions");
+            String optString8 = jSONObject7.optString("appid", "");
+            optString8.getClass();
+            y40Var2 = new y40(optString8.length() > 0 ? new ra4(optString8) : y40Var, null, jSONObject7.optBoolean("uvm", false) ? new tbc(true) : y40Var, null, null, null, null, null, jSONObject7.optBoolean("thirdPartyPayment", false) ? new h15(true) : y40Var, null, null, null);
+        } else {
+            y40Var2 = y40Var;
         }
-        try {
-            y = motionEvent.getY(this.j);
-        } catch (Exception unused6) {
-            y = motionEvent.getY();
-        }
-        float f = x - this.c;
-        float f2 = y - this.d;
-        boolean z = this.h;
-        if (!z) {
-            boolean z2 = ((float) Math.sqrt((double) ((f2 * f2) + (f * f)))) >= this.e;
-            this.h = z2;
-            z = z2;
-        }
-        if (z) {
-            j33 j33Var = this.b;
-            if (!j33Var.G) {
-                j33Var.M.g(f, f2);
-                j33Var.r(false);
-            }
-            this.c = x;
-            this.d = y;
-            VelocityTracker velocityTracker3 = this.g;
-            if (velocityTracker3 != null) {
-                velocityTracker3.addMovement(motionEvent);
-            }
-        }
+        return new vx8(yx8Var, by8Var, a, arrayList2, valueOf, arrayList3, f50Var, null, null, a2.a, y40Var2, null, null);
     }
 }

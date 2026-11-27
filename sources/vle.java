@@ -1,116 +1,19 @@
 // default package
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.os.Build;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.Window;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class vle {
-    public static boolean a = false;
-    public static Method b = null;
-    public static boolean c = false;
-    public static Field d;
+public final class vle implements zq7 {
+    public static final vle a = new vle();
 
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean a(kv5 kv5Var, View view, Window.Callback callback, KeyEvent keyEvent) {
-        DialogInterface.OnKeyListener onKeyListener;
-        Window window;
-        boolean z = false;
-        if (kv5Var != null) {
-            if (Build.VERSION.SDK_INT >= 28) {
-                return kv5Var.i(keyEvent);
-            }
-            if (callback instanceof Activity) {
-                Activity activity = (Activity) callback;
-                activity.onUserInteraction();
-                Window window2 = activity.getWindow();
-                if (window2.hasFeature(8)) {
-                    ActionBar actionBar = activity.getActionBar();
-                    if (keyEvent.getKeyCode() == 82 && actionBar != null) {
-                        if (!a) {
-                            try {
-                                b = actionBar.getClass().getMethod("onMenuKeyEvent", KeyEvent.class);
-                            } catch (NoSuchMethodException unused) {
-                            }
-                            a = true;
-                        }
-                        Method method = b;
-                        if (method != null) {
-                            try {
-                                Object invoke = method.invoke(actionBar, keyEvent);
-                                if (invoke != null) {
-                                    z = ((Boolean) invoke).booleanValue();
-                                }
-                            } catch (IllegalAccessException | InvocationTargetException unused2) {
-                            }
-                        }
-                        if (z) {
-                            return true;
-                        }
-                    }
-                }
-                if (window2.superDispatchKeyEvent(keyEvent)) {
-                    return true;
-                }
-                View decorView = window2.getDecorView();
-                if (jdc.c(decorView, keyEvent)) {
-                    return true;
-                }
-                return keyEvent.dispatch(activity, decorView != null ? decorView.getKeyDispatcherState() : null, activity);
-            }
-            if (callback instanceof Dialog) {
-                Dialog dialog = (Dialog) callback;
-                if (!c) {
-                    try {
-                        Field declaredField = Dialog.class.getDeclaredField("mOnKeyListener");
-                        d = declaredField;
-                        declaredField.setAccessible(true);
-                    } catch (NoSuchFieldException unused3) {
-                    }
-                    c = true;
-                }
-                Field field = d;
-                if (field != null) {
-                    try {
-                        onKeyListener = (DialogInterface.OnKeyListener) field.get(dialog);
-                    } catch (IllegalAccessException unused4) {
-                    }
-                    if (onKeyListener == null && onKeyListener.onKey(dialog, keyEvent.getKeyCode(), keyEvent)) {
-                        return true;
-                    }
-                    window = dialog.getWindow();
-                    if (!window.superDispatchKeyEvent(keyEvent)) {
-                        return true;
-                    }
-                    View decorView2 = window.getDecorView();
-                    if (jdc.c(decorView2, keyEvent)) {
-                        return true;
-                    }
-                    return keyEvent.dispatch(dialog, decorView2 != null ? decorView2.getKeyDispatcherState() : null, dialog);
-                }
-                onKeyListener = null;
-                if (onKeyListener == null) {
-                }
-                window = dialog.getWindow();
-                if (!window.superDispatchKeyEvent(keyEvent)) {
-                }
-            } else if ((view != null && jdc.c(view, keyEvent)) || kv5Var.i(keyEvent)) {
-                return true;
-            }
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return false;
+        throw null;
     }
 }

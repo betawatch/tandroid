@@ -1,50 +1,79 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Point;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class of4 extends zde {
-    public final /* synthetic */ tf4 a;
+public final /* synthetic */ class of4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rf4 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public of4(tf4 tf4Var) {
-        this.a = tf4Var;
+    public /* synthetic */ of4(rf4 rf4Var, int i, int i2, byte b) {
+        this.a = b;
+        this.b = rf4Var;
+        this.c = i;
+        this.d = i2;
     }
 
-    @Override // zde
-    public final boolean b(int i, int i2) {
-        tf4 tf4Var = this.a;
-        rf4 rf4Var = (rf4) tf4Var.g3.get(i);
-        rf4 rf4Var2 = (rf4) tf4Var.f3.get(i2);
-        if (!rf4Var.b(rf4Var2)) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i;
+        switch (this.a) {
+            case 0:
+                rf4 rf4Var = this.b;
+                int i2 = this.c;
+                int i3 = this.d;
+                if (rf4Var.X != i2 || rf4Var.Y != i3) {
+                    rf4Var.X = i2;
+                    rf4Var.Y = i3;
+                    int o = xea.o();
+                    int i4 = 1920;
+                    if (o != 1) {
+                        if (o != 2) {
+                            i4 = 720;
+                        } else {
+                            Point point = hl.q;
+                            i4 = Math.min(1920, Math.max(point.x, point.y));
+                        }
+                    }
+                    if (xea.o() == 0 && ((i = rf4Var.X) > 1280 || rf4Var.Y > 1280)) {
+                        rf4Var.X = i / 2;
+                        rf4Var.Y /= 2;
+                    }
+                    int i5 = rf4Var.X;
+                    if (i5 > i4 || rf4Var.Y > i4) {
+                        int i6 = rf4Var.Y;
+                        if (i5 > i6) {
+                            rf4Var.Y = (int) (i6 / (i4 / i5));
+                            rf4Var.X = i4;
+                        } else {
+                            rf4Var.X = (int) (i5 / (i4 / i6));
+                            rf4Var.Y = i4;
+                        }
+                    }
+                    rf4Var.a0 = false;
+                    rf4Var.d();
+                    rf4Var.e0.run();
+                    break;
+                }
+                break;
+            case 1:
+                rf4 rf4Var2 = this.b;
+                int i7 = this.c;
+                int i8 = this.d;
+                rf4Var2.n = i7;
+                rf4Var2.r = i8;
+                break;
+            default:
+                rf4 rf4Var3 = this.b;
+                int i9 = this.c;
+                int i10 = this.d;
+                yl0 yl0Var = rf4Var3.J;
+                yl0Var.l = i9;
+                yl0Var.m = i10;
+                break;
         }
-        byte b = rf4Var.d;
-        if (b != 4) {
-            return b == 6 ? rf4Var.c.equals(rf4Var2.c) : b == 7;
-        }
-        TLObject tLObject = rf4Var.f;
-        if (tLObject instanceof TLRPC.User) {
-            TLObject tLObject2 = rf4Var2.f;
-            if (tLObject2 instanceof TLRPC.User) {
-                return ((TLRPC.User) tLObject).id == ((TLRPC.User) tLObject2).id;
-            }
-        }
-        if (!(tLObject instanceof TLRPC.Chat)) {
-            return false;
-        }
-        TLObject tLObject3 = rf4Var2.f;
-        return (tLObject3 instanceof TLRPC.Chat) && ((TLRPC.Chat) tLObject).id == ((TLRPC.Chat) tLObject3).id;
-    }
-
-    @Override // zde
-    public final int c() {
-        return this.a.f3.size();
-    }
-
-    @Override // zde
-    public final int d() {
-        return this.a.g3.size();
     }
 }

@@ -1,185 +1,103 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.content.Context;
+import android.content.SharedPreferences;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class oja extends ra9 implements eq4 {
-    public Object b;
-    public Iterator c;
-    public int d;
-    public int e;
-    public byte f;
-    public /* synthetic */ Object h;
-    public final /* synthetic */ Iterator n;
+public final class oja {
+    public final w73 a;
+    public final pja b;
+    public final Context c;
+    public final String d;
+    public final tgb e;
+    public final LinkedHashSet f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oja(Iterator it, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.n = it;
+    public oja(Context context, String str, Set set, w73 w73Var, pja pjaVar) {
+        set.getClass();
+        yj8 yj8Var = new yj8((byte) 1, context, str);
+        this.a = w73Var;
+        this.b = pjaVar;
+        this.c = context;
+        this.d = str;
+        this.e = new tgb(yj8Var);
+        this.f = set == rja.a ? null : new LinkedHashSet(set);
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        oja ojaVar = new oja(this.n, fw2Var);
-        ojaVar.h = obj;
-        return ojaVar;
-    }
-
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        return ((oja) create((o4a) obj, (fw2) obj2)).invokeSuspend(g5c.a);
-    }
-
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        byte b;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0063, code lost:
+    
+        if (r4.isEmpty() == false) goto L35;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object a(Object obj, ax2 ax2Var) {
+        nja njaVar;
+        Object obj2;
         int i;
-        int i2;
-        ArrayList arrayList;
-        Iterator it;
-        int i3;
-        int i4;
-        int i5;
-        fj9 fj9Var;
-        o4a o4aVar = (o4a) this.h;
-        byte b2 = this.f;
-        boolean z = true;
-        bx2 bx2Var = bx2.a;
-        if (b2 == 0) {
-            b = 1;
-            qse.b(obj);
-            i = 0;
-            i2 = 0;
-            arrayList = new ArrayList(20);
-            it = this.n;
-            i3 = 20;
-        } else {
-            if (b2 != 1) {
-                if (b2 != 2) {
-                    if (b2 == 3) {
-                        i4 = this.e;
-                        int i6 = this.d;
-                        Iterator it2 = this.c;
-                        fj9 fj9Var2 = (fj9) this.b;
-                        qse.b(obj);
-                        fj9Var2.i();
-                        while (true) {
-                            int i7 = fj9Var2.b;
-                            Object[] objArr = fj9Var2.a;
-                            if (!it2.hasNext()) {
-                                i5 = i6;
-                                fj9Var = fj9Var2;
+        if (ax2Var instanceof nja) {
+            njaVar = (nja) ax2Var;
+            int i2 = njaVar.d;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                njaVar.d = i2 - TLObject.FLAG_31;
+                obj2 = njaVar.b;
+                i = njaVar.d;
+                boolean z = true;
+                if (i != 0) {
+                    ixe.b(obj2);
+                    njaVar.a = this;
+                    njaVar.d = 1;
+                    obj2 = this.a.invoke(obj, njaVar);
+                    vx2 vx2Var = vx2.a;
+                    if (obj2 == vx2Var) {
+                        return vx2Var;
+                    }
+                } else {
+                    if (i != 1) {
+                        grb.i("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    this = njaVar.a;
+                    ixe.b(obj2);
+                }
+                if (((Boolean) obj2).booleanValue()) {
+                    return Boolean.FALSE;
+                }
+                LinkedHashSet linkedHashSet = this.f;
+                tgb tgbVar = this.e;
+                if (linkedHashSet != null) {
+                    SharedPreferences sharedPreferences = (SharedPreferences) tgbVar.getValue();
+                    if (!linkedHashSet.isEmpty()) {
+                        Iterator it = linkedHashSet.iterator();
+                        while (it.hasNext()) {
+                            if (sharedPreferences.contains((String) it.next())) {
                                 break;
                             }
-                            Object next = it2.next();
-                            boolean z2 = z;
-                            if (fj9Var2.h() == i7) {
-                                sc8.j("ring buffer is full");
-                                return null;
-                            }
-                            int i8 = fj9Var2.c;
-                            int i9 = fj9Var2.d;
-                            objArr[(i8 + i9) % i7] = next;
-                            fj9Var2.d = i9 + 1;
-                            if (fj9Var2.h() == i7) {
-                                if (fj9Var2.d >= 20) {
-                                    ArrayList arrayList2 = new ArrayList(fj9Var2);
-                                    this.h = o4aVar;
-                                    this.b = fj9Var2;
-                                    this.c = it2;
-                                    this.d = i6;
-                                    this.e = i4;
-                                    this.f = (byte) 3;
-                                    o4aVar.c(arrayList2, this);
-                                    return bx2Var;
-                                }
-                                int i10 = i7 + (i7 >> 1) + 1;
-                                if (i10 > 20) {
-                                    i10 = 20;
-                                }
-                                fj9Var2 = new fj9(fj9Var2.d, fj9Var2.c == 0 ? Arrays.copyOf(objArr, i10) : fj9Var2.toArray(new Object[i10]));
-                            }
-                            z = z2;
-                        }
-                    } else if (b2 == 4) {
-                        i4 = this.e;
-                        i5 = this.d;
-                        fj9Var = (fj9) this.b;
-                        qse.b(obj);
-                        fj9Var.i();
-                    } else {
-                        if (b2 != 5) {
-                            sc8.j("call to 'resume' before 'invoke' with coroutine");
-                            return null;
                         }
                     }
-                    if (fj9Var.d > 20) {
-                        ArrayList arrayList3 = new ArrayList(fj9Var);
-                        this.h = o4aVar;
-                        this.b = fj9Var;
-                        this.c = null;
-                        this.d = i5;
-                        this.e = i4;
-                        this.f = (byte) 4;
-                        o4aVar.c(arrayList3, this);
-                        return bx2Var;
-                    }
-                    if (!fj9Var.isEmpty()) {
-                        this.h = null;
-                        this.b = null;
-                        this.c = null;
-                        this.d = i5;
-                        this.e = i4;
-                        this.f = (byte) 5;
-                        o4aVar.c(fj9Var, this);
-                        return bx2Var;
-                    }
-                    return g5c.a;
+                    z = false;
+                    return Boolean.valueOf(z);
                 }
-                qse.b(obj);
-                return g5c.a;
-            }
-            b = 1;
-            i = this.e;
-            int i11 = this.d;
-            Iterator it3 = this.c;
-            qse.b(obj);
-            arrayList = new ArrayList(20);
-            it = it3;
-            i3 = i11;
-            i2 = i;
-        }
-        while (it.hasNext()) {
-            Object next2 = it.next();
-            if (i > 0) {
-                i--;
-            } else {
-                arrayList.add(next2);
-                if (arrayList.size() == 20) {
-                    this.h = o4aVar;
-                    this.b = arrayList;
-                    this.c = it;
-                    this.d = i3;
-                    this.e = i2;
-                    this.f = b;
-                    o4aVar.c(arrayList, this);
-                    return bx2Var;
-                }
+                Map<String, ?> all = ((SharedPreferences) tgbVar.getValue()).getAll();
+                all.getClass();
             }
         }
-        if (!arrayList.isEmpty()) {
-            this.h = null;
-            this.b = null;
-            this.c = null;
-            this.d = i3;
-            this.e = i2;
-            this.f = (byte) 2;
-            o4aVar.c(arrayList, this);
-            return bx2Var;
+        njaVar = new nja(this, ax2Var);
+        obj2 = njaVar.b;
+        i = njaVar.d;
+        boolean z2 = true;
+        if (i != 0) {
         }
-        return g5c.a;
+        if (((Boolean) obj2).booleanValue()) {
+        }
     }
 }

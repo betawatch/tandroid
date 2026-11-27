@@ -1,69 +1,59 @@
 // default package
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ad extends FrameLayout {
-    public final TextView a;
-    public final ImageView b;
+public final class ad extends xmb {
+    public final /* synthetic */ byte d;
 
-    public ad(Context context, wjb wjbVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ad(Context context, byte b) {
         super(context);
-        int i = bkb.H5;
-        Drawable f0 = bkb.f0(bkb.v0(i, wjbVar), 2, -1);
-        vkb M = zkb.M(i);
-        setBackground(f0);
-        zkb.j(this, f0, null, M, wjbVar);
-        setPadding(gl.L(23.0f), 0, gl.L(23.0f), 0);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        zkb.s(imageView, bkb.I5, wjbVar, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, nme.e(-2, 40, (k96.a0 ? 5 : 3) | 16));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        zkb.X(textView, bkb.i5, wjbVar);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, nme.e(-2, -2, (k96.a0 ? 5 : 3) | 16));
+        this.d = b;
     }
 
-    public final void a(int i, CharSequence charSequence) {
-        TextView textView = this.a;
-        textView.setText(charSequence);
-        ImageView imageView = this.b;
-        if (i == 0) {
-            imageView.setVisibility(4);
-            textView.setPadding(0, 0, 0, 0);
-        } else {
-            imageView.setImageResource(i);
-            imageView.setVisibility(0);
-            textView.setPadding(k96.a0 ? 0 : gl.L(56.0f), 0, k96.a0 ? gl.L(56.0f) : 0, 0);
+    @Override // android.widget.TextView, android.view.View
+    public final void setEnabled(boolean z) {
+        switch (this.d) {
+            case 0:
+                super.setEnabled(z);
+                setAlpha(z ? 1.0f : 0.5f);
+                break;
+            case 1:
+                super.setEnabled(z);
+                setAlpha(z ? 1.0f : 0.5f);
+                break;
+            case 2:
+                super.setEnabled(z);
+                setAlpha(z ? 1.0f : 0.5f);
+                break;
+            default:
+                super.setEnabled(z);
+                setAlpha(z ? 1.0f : 0.5f);
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setGravity(int i) {
-        this.a.setGravity(i);
-    }
-
-    public void setTextColor(int i) {
-        this.a.setTextColor(i);
+    @Override // xmb, android.widget.TextView
+    public final void setTextColor(int i) {
+        switch (this.d) {
+            case 0:
+                super.setTextColor(i);
+                setBackground(aob.H0(hl.L(20.0f), i));
+                break;
+            case 1:
+                super.setTextColor(i);
+                setBackground(aob.H0(hl.L(20.0f), i));
+                break;
+            case 2:
+                super.setTextColor(i);
+                setBackground(aob.H0(hl.L(20.0f), i));
+                break;
+            default:
+                super.setTextColor(i);
+                setBackgroundDrawable(aob.H0(hl.L(20.0f), i));
+                break;
+        }
     }
 }

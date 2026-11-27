@@ -1,34 +1,46 @@
 // default package
 
-import android.text.SpannableStringBuilder;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dh3 extends vu8 {
-    public final /* synthetic */ byte f0 = 0;
-    public final /* synthetic */ Object g0;
+public final /* synthetic */ class dh3 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Activity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh3(qvb qvbVar, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = qvbVar;
+    public /* synthetic */ dh3(Activity activity, byte b) {
+        this.a = b;
+        this.b = activity;
     }
 
-    @Override // vu8
-    public final float d() {
-        byte b = this.f0;
-        Object obj = this.g0;
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        Activity activity = this.b;
+        Boolean bool = (Boolean) obj;
         switch (b) {
             case 0:
-                return ((bj3) obj).a.getViewOffset();
+                if (bool.booleanValue()) {
+                    if (!jve.a()) {
+                        jve.f();
+                        break;
+                    } else {
+                        activity.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
+                break;
             default:
-                return ((qvb) obj).O.m3;
+                if (bool.booleanValue()) {
+                    if (!jve.a()) {
+                        jve.f();
+                        break;
+                    } else {
+                        activity.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh3(String str, String str2, bj3 bj3Var) {
-        super(str, str2);
-        this.g0 = bj3Var;
     }
 }

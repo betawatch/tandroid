@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzcn implements Comparable {
     private int zza;
@@ -8,7 +8,7 @@ public final class zzcn implements Comparable {
     private long zzc;
 
     public final String toString() {
-        return ls6.o(f9b.i(10, String.valueOf(this.zzb)), " us| #Usages: ", f9b.i(5, String.valueOf(this.zza)), yjb.l("avgExecutionTime: ", f9b.i(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", f9b.i(10, String.valueOf(this.zzc)), " us| totalTime: "));
+        return qu6.o(ddb.i(10, String.valueOf(this.zzb)), " us| #Usages: ", ddb.i(5, String.valueOf(this.zza)), xnb.l("avgExecutionTime: ", ddb.i(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", ddb.i(10, String.valueOf(this.zzc)), " us| totalTime: "));
     }
 
     @Override // java.lang.Comparable

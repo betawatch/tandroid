@@ -1,27 +1,63 @@
 // default package
 
-import j$.util.Objects;
-import java.util.List;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class nl4 {
-    public String a;
-    public String b;
-    public List c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class nl4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xl4 b;
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof nl4)) {
-            return false;
-        }
-        nl4 nl4Var = (nl4) obj;
-        return Objects.equals(this.a, nl4Var.a) && Objects.equals(this.b, nl4Var.b) && Objects.equals(this.c, nl4Var.c);
+    public /* synthetic */ nl4(xl4 xl4Var, byte b) {
+        this.a = b;
+        this.b = xl4Var;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Object[] objArr = 0;
+        byte b2 = 1;
+        xl4 xl4Var = this.b;
+        switch (b) {
+            case 0:
+                ImageView imageView = xl4Var.n;
+                if (imageView != null) {
+                    imageView.setVisibility(8);
+                    xl4Var.n.setImageDrawable(null);
+                    break;
+                }
+                break;
+            case 1:
+                ImageView imageView2 = xl4Var.n;
+                if (imageView2 != null) {
+                    imageView2.setVisibility(8);
+                    xl4Var.n.setImageDrawable(null);
+                    break;
+                }
+                break;
+            case 2:
+                if (xl4Var.b() && xl4Var.c()) {
+                    float f = xl4Var.S[0];
+                    if (xl4Var.b.G(f >= ((float) xl4Var.A) * 0.5f, f, xl4Var.J) && !xl4Var.x) {
+                        xl4Var.x = true;
+                        xl4Var.q(true);
+                        if (!xl4Var.z) {
+                            xl4Var.z = true;
+                            hl.d3(xl4Var.V, 1500L);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                hl.c3(new nl4(xl4Var, objArr == true ? 1 : 0));
+                break;
+            default:
+                xl4Var.getClass();
+                hl.c3(new nl4(xl4Var, b2));
+                break;
+        }
     }
 }

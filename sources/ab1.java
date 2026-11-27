@@ -1,68 +1,19 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.animation.TimeInterpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ab1 extends bl0 {
-    public final /* synthetic */ byte s;
+public final /* synthetic */ class ab1 implements TimeInterpolator {
+    public final /* synthetic */ byte a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ab1(int i, wjb wjbVar) {
-        super(i, wjbVar);
-        this.s = (byte) 2;
-    }
-
-    @Override // bl0, al0
-    public final int K() {
-        switch (this.s) {
-            case 2:
-                return c() ? 117440511 : 285212672;
-            default:
-                return super.K();
-        }
-    }
-
-    @Override // bl0
-    public final boolean c() {
-        switch (this.s) {
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f) {
+        switch (this.a) {
             case 0:
-            case 1:
-                return true;
+                return ((((6.0f * f) - 15.0f) * f) + 10.0f) * f * f * f;
             default:
-                return super.c();
+                return f;
         }
-    }
-
-    @Override // bl0, al0
-    public final int d1() {
-        switch (this.s) {
-            case 2:
-                if (c()) {
-                    return 83886079;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.d1();
-        }
-    }
-
-    @Override // bl0, al0
-    public final int k0() {
-        switch (this.s) {
-            case 2:
-                if (c()) {
-                    return 301989887;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.k0();
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ab1(wjb wjbVar, int i, float f, byte b) {
-        super(wjbVar, i, f);
-        this.s = b;
     }
 }

@@ -1,63 +1,39 @@
 // default package
 
-import j$.util.Objects;
+import android.content.ComponentName;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class iw6 implements ru6 {
-    public final mw6 a;
+public final class iw6 {
+    public final bw6 a;
+    public final ArrayList b = new ArrayList();
+    public final boolean c;
+    public final xh4 d;
+    public fo4 e;
 
-    public iw6(mw6 mw6Var) {
-        this.a = mw6Var;
+    public iw6(bw6 bw6Var, boolean z) {
+        this.a = bw6Var;
+        this.d = (xh4) bw6Var.d;
+        this.c = z;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final jw6 a(String str) {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            jw6 jw6Var = (jw6) obj;
+            if (jw6Var.b.equals(str)) {
+                return jw6Var;
+            }
         }
-        if (obj == null || obj.getClass() != iw6.class) {
-            return false;
-        }
-        return Objects.equals(this.a, ((iw6) obj).a);
+        return null;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a);
-    }
-
-    @Override // ru6
-    public final void e() {
-    }
-
-    @Override // ru6
-    public final void b(int i) {
-    }
-
-    @Override // ru6
-    public final void a(int i, p5a p5aVar) {
-    }
-
-    @Override // ru6
-    public final void d(int i, q06 q06Var) {
-    }
-
-    @Override // ru6
-    public final void f(int i, kc8 kc8Var) {
-    }
-
-    @Override // ru6
-    public final void g(int i, o6a o6aVar) {
-    }
-
-    @Override // ru6
-    public final void c(int i, int i2, int i3) {
-    }
-
-    @Override // ru6
-    public final void h(int i, wc8 wc8Var, kc8 kc8Var, boolean z, boolean z2) {
-    }
-
-    @Override // ru6
-    public final void i(int i, l6a l6aVar, boolean z, boolean z2, int i2) {
+    public final String toString() {
+        return "MediaRouter.RouteProviderInfo{ packageName=" + ((ComponentName) this.d.b).getPackageName() + " }";
     }
 }

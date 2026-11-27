@@ -1,69 +1,38 @@
 // default package
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import j$.util.Objects;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class p5a {
-    public static final w59 d;
-    public static final w59 e;
-    public static final w59 f;
-    public static final w59 g;
-    public static final String h;
-    public static final String i;
-    public static final String j;
-    public final int a;
-    public final String b;
-    public final Bundle c;
+public final /* synthetic */ class p5a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r7a b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
 
-    static {
-        km5 km5Var = mm5.b;
-        w59 w59Var = w59.e;
-        d = w59Var;
-        e = mm5.u(40010);
-        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
-        xpe.a(7, objArr);
-        f = mm5.o(7, objArr);
-        g = w59Var;
-        String str = g8c.a;
-        h = "0";
-        i = "1";
-        j = "2";
+    public /* synthetic */ p5a(r7a r7aVar, long j, ArrayList arrayList, byte b) {
+        this.a = b;
+        this.b = r7aVar;
+        this.c = j;
+        this.d = arrayList;
     }
 
-    public p5a(int i2) {
-        gre.e("commandCode shouldn't be COMMAND_CODE_CUSTOM", i2 != 0);
-        this.a = i2;
-        this.b = "";
-        this.c = Bundle.EMPTY;
-    }
-
-    public final Bundle a() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(h, this.a);
-        bundle.putString(i, this.b);
-        bundle.putBundle(j, this.c);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof p5a)) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ArrayList arrayList = this.d;
+        long j = this.c;
+        r7a r7aVar = this.b;
+        switch (b) {
+            case 0:
+                r7aVar.getMessagesController().t3(arrayList, j);
+                break;
+            case 1:
+                r7aVar.getMessagesController().t3(arrayList, j);
+                break;
+            default:
+                r7aVar.getMessagesController().t3(arrayList, j);
+                break;
         }
-        p5a p5aVar = (p5a) obj;
-        return this.a == p5aVar.a && TextUtils.equals(this.b, p5aVar.b);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.b, Integer.valueOf(this.a));
-    }
-
-    public p5a(String str, Bundle bundle) {
-        this.a = 0;
-        this.b = str;
-        bundle.getClass();
-        this.c = new Bundle(bundle);
     }
 }

@@ -1,67 +1,32 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yr2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tv6 b;
-    public final /* synthetic */ su6 c;
+public abstract class yr2 {
+    public final String a;
+    public String b;
+    public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
 
-    public /* synthetic */ yr2(tv6 tv6Var, su6 su6Var, byte b) {
-        this.a = b;
-        this.b = tv6Var;
-        this.c = su6Var;
+    public yr2(String str) {
+        this.a = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 15;
-        su6 su6Var = this.c;
-        tv6 tv6Var = this.b;
-        switch (b) {
-            case 0:
-                if (!tv6Var.i()) {
-                    if (tv6Var.x) {
-                        if (!tv6.j(su6Var)) {
-                            if (tv6Var.h(su6Var)) {
-                                tv6Var.x = false;
-                            }
-                        }
-                    }
-                    tv6Var.e.getClass();
-                    break;
-                }
-                break;
-            case 1:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 1, ox6.X(new yw6(b2)));
-                break;
-            case 2:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 9, ox6.X(new yw6((byte) 20)));
-                break;
-            case 3:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 7, ox6.X(new yw6((byte) 17)));
-                break;
-            case 4:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 12, ox6.X(new yw6((byte) 19)));
-                break;
-            case 5:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 11, ox6.X(new yw6((byte) 16)));
-                break;
-            case 6:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 3, ox6.X(new yw6((byte) 21)));
-                break;
-            case 7:
-                tv6Var.g.S(su6Var, TLObject.FLAG_31, 1, ox6.X(new yw6(b2)));
-                break;
-            case 8:
-                tv6Var.g.Q(su6Var, TLObject.FLAG_31);
-                break;
-            default:
-                tv6Var.g.Q(su6Var, TLObject.FLAG_31);
-                break;
-        }
+    public final void a(Runnable runnable) {
+        this.c.addIfAbsent(runnable);
+    }
+
+    public abstract boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
+
+    public abstract boolean c(SharedPreferences.Editor editor);
+
+    public abstract void d(SharedPreferences sharedPreferences);
+
+    public final String e() {
+        String str = this.b;
+        return str != null ? str : this.a;
     }
 }

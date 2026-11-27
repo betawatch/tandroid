@@ -1,835 +1,1531 @@
 // default package
 
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FilterInputStream;
-import java.io.InputStream;
-import java.io.StringReader;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.net.Uri;
+import android.os.Build;
+import android.text.Editable;
+import android.util.LongSparseArray;
+import android.view.GestureDetector;
+import android.view.KeyEvent;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.window.OnBackInvokedDispatcher;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Pattern;
-import javax.xml.parsers.SAXParserFactory;
-import org.telegram.messenger.a;
-import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
+import java.util.WeakHashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.o;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class lcb {
-    public static final double[] a = new double[128];
-    public static final Pattern b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class lcb implements fn7, ag0 {
+    public static boolean A1;
+    public static boolean D1;
+    public static boolean x1;
+    public static TL_stories.StoryItem z1;
+    public kcb A0;
+    public w96 B0;
+    public dcb C0;
+    public SurfaceView D0;
+    public x96 E0;
+    public boolean F;
+    public Uri F0;
+    public ValueAnimator G;
+    public d30 G0;
+    public ValueAnimator H;
+    public boolean H0;
+    public ValueAnimator I;
+    public boolean I0;
+    public long J;
+    public final pn J0;
+    public int K;
+    public boolean K0;
+    public float L;
+    public boolean L0;
+    public float M;
+    public final ArrayList M0;
+    public i6b N;
+    public boolean N0;
+    public float O;
+    public u5b O0;
+    public float P;
+    public int P0;
+    public float Q;
+    public TL_stories.PeerStories Q0;
+    public float R;
+    public boolean R0;
+    public float S;
+    public boolean S0;
+    public float T;
+    public TL_stories.StoryItem T0;
+    public int U0;
+    public float V;
+    public boolean V0;
+    public float W;
+    public int[] W0;
+    public float X;
+    public boolean X0;
+    public float Y;
+    public boolean Y0;
+    public float Z;
+    public boolean Z0;
+    public float a0;
+    public boolean a1;
+    public boolean b0;
+    public final x58 b1;
+    public float c0;
+    public boolean c1;
+    public boolean d0;
+    public y6b d1;
+    public float e0;
+    public final LongSparseIntArray e1;
+    public final e f;
+    public float f0;
+    public boolean f1;
+    public boolean g0;
+    public boolean g1;
+    public int h;
+    public boolean h0;
+    public boolean h1;
+    public boolean i0;
+    public boolean i1;
+    public GestureDetector j0;
+    public boolean j1;
+    public boolean k0;
+    public boolean k1;
+    public boolean l0;
+    public boolean l1;
+    public boolean m0;
+    public boolean m1;
+    public WindowManager n;
+    public boolean n0;
+    public s8b n1;
+    public acb o0;
+    public x58 o1;
+    public boolean p1;
+    public int q0;
+    public float q1;
+    public WindowManager.LayoutParams r;
+    public boolean r0;
+    public boolean r1;
+    public ybb s;
+    public float s0;
+    public boolean s1;
+    public final icb t0;
+    public long t1;
+    public hcb u0;
+    public g6b u1;
+    public Dialog v0;
+    public ValueAnimator v1;
+    public zbb w;
+    public ag0 w0;
+    public boolean w1;
+    public g4a x;
+    public boolean x0;
+    public boolean y;
+    public final ArrayList y0;
+    public jx z0;
+    public static final ArrayList y1 = new ArrayList();
+    public static float B1 = 1.0f;
+    public static boolean C1 = true;
+    public static final LongSparseArray E1 = new LongSparseArray();
+    public boolean a = xea.Y;
+    public boolean b = true;
+    public boolean c = false;
+    public boolean d = false;
+    public boolean e = true;
+    public final x53 E = new x53();
+    public final RectF U = new RectF();
+    public final float[] p0 = new float[2];
 
-    static {
-        int i = 0;
-        while (true) {
-            double[] dArr = a;
-            if (i >= 128) {
-                b = Pattern.compile("(?<=\\))\\s*(?=[A-Za-z])");
-                return;
-            } else {
-                dArr[i] = Math.pow(10.0d, i);
-                i++;
-            }
-        }
+    public lcb(e eVar) {
+        icb icbVar = new icb();
+        icbVar.k = 1.0f;
+        this.t0 = icbVar;
+        this.y0 = new ArrayList();
+        this.H0 = true;
+        this.J0 = new pn(null);
+        this.M0 = new ArrayList();
+        this.Z0 = false;
+        this.b1 = new x58(this, (byte) 4);
+        this.e1 = new LongSparseIntArray();
+        new Paint(1);
+        this.f = eVar;
     }
 
-    public static String a(byte[] bArr) {
-        try {
-            StringBuilder sb = new StringBuilder(bArr.length << 1);
-            sb.append('M');
-            for (byte b2 : bArr) {
-                int i = b2 & 255;
-                if (i >= 192) {
-                    sb.append("AACAAAAHAAALMAAAQASTAVAAAZaacaaaahaaalmaaaqastava.az0123456789-,".charAt(i - 192));
-                } else {
-                    if (i >= 128) {
-                        sb.append(',');
-                    } else if (i >= 64) {
-                        sb.append('-');
-                    }
-                    sb.append(b2 & 63);
-                }
-            }
-            sb.append('z');
-            return sb.toString();
-        } catch (Exception e) {
-            fa4.g(e, true);
+    public static boolean B(r47 r47Var) {
+        if (z1 != null) {
+            return (r47Var.D == 23 || r47Var.Y4()) && !A1 && z1.messageId == r47Var.e1() && z1.messageType != 3;
+        }
+        return false;
+    }
+
+    public static void N(long j, TL_stories.StoryItem storyItem, Editable editable) {
+        if (j == 0 || storyItem == null) {
+            return;
+        }
+        E1.put(j + (j >> 16) + (storyItem.id << 16), editable);
+    }
+
+    public static CharSequence x(long j, TL_stories.StoryItem storyItem) {
+        if (j == 0 || storyItem == null) {
             return "";
         }
+        return (CharSequence) E1.get(j + (j >> 16) + (storyItem.id << 16), "");
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0080, code lost:
-    
-        if (r6 != 'T') goto L40;
-     */
+    public final boolean A() {
+        e eVar;
+        if (this.X0 || this.Z0 || this.Y0 || this.L0 || this.r0 || this.y || this.v0 != null || this.w0 != null || this.H0 || this.I0 || this.V != 1.0f || this.f0 != 0.0f || this.i1) {
+            return true;
+        }
+        if ((this.l1 && this.a) || this.k1 || this.j1 || this.p1 || this.W != 0.0f || this.u1 != null) {
+            return true;
+        }
+        return (!this.b || (eVar = this.f) == null || eVar.getLastStoryViewer() == this) ? false : true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Path b(String str) {
-        char c;
-        float f;
-        int i;
-        gcb gcbVar;
-        float f2;
-        float f3;
-        float f4;
-        float f5;
-        float f6;
-        boolean z;
-        String str2 = str;
-        a.l();
-        int length = str2.length();
-        gcb gcbVar2 = new gcb();
-        gcbVar2.b = str2;
-        gcbVar2.c = 0;
-        gcbVar2.d = str2.length();
-        gcbVar2.a = str2.charAt(0);
-        gcbVar2.d();
-        Path path = new Path();
-        char c2 = 0;
-        float f7 = 0.0f;
-        float f8 = 0.0f;
-        float f9 = 0.0f;
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        float f12 = 0.0f;
-        while (true) {
-            int i2 = gcbVar2.c;
-            if (i2 >= length) {
-                return path;
-            }
-            char charAt = str2.charAt(i2);
-            switch (charAt) {
-                case '+':
-                case '-':
-                case '.':
-                case '0':
-                case '1':
-                case '2':
-                case kk7.n0 /* 51 */:
-                case kk7.o0 /* 52 */:
-                case kk7.p0 /* 53 */:
-                case kk7.q0 /* 54 */:
-                case kk7.r0 /* 55 */:
-                case '8':
-                case kk7.t0 /* 57 */:
-                    if (c2 != 'm' && c2 != 'M') {
-                        if (c2 != 'c') {
-                            if (c2 != 'C') {
-                                if (c2 != 'l') {
-                                    if (c2 != 'L') {
-                                        if (c2 != 's') {
-                                            if (c2 != 'S') {
-                                                if (c2 != 'h') {
-                                                    if (c2 != 'H') {
-                                                        if (c2 != 'v') {
-                                                            if (c2 != 'V') {
-                                                                if (c2 != 'q') {
-                                                                    if (c2 != 'Q') {
-                                                                        if (c2 != 'a') {
-                                                                            if (c2 != 'A') {
-                                                                                if (c2 != 't') {
-                                                                                    break;
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        c = c2;
-                        break;
-                    } else {
-                        c = c2;
-                        c2 = (char) (c2 - 1);
-                        break;
-                    }
-                    break;
-                case ',':
-                case '/':
-                default:
-                    gcbVar2.a = gcbVar2.b();
-                    c2 = charAt;
-                    c = c2;
-                    break;
-            }
-            boolean z2 = true;
-            switch (c2) {
-                case 'A':
-                case kk7.h1 /* 97 */:
-                    float a2 = gcbVar2.a();
-                    float a3 = gcbVar2.a();
-                    float a4 = gcbVar2.a();
-                    boolean z3 = ((int) gcbVar2.a()) == 1;
-                    boolean z4 = ((int) gcbVar2.a()) == 1;
-                    float a5 = gcbVar2.a();
-                    float a6 = gcbVar2.a();
-                    if (c2 == 'a') {
-                        f = a5 + f7;
-                        a6 += f8;
-                    } else {
-                        f = a5;
-                    }
-                    float f13 = a6;
-                    if (f7 == f && f8 == f13) {
-                        i = length;
-                        gcbVar = gcbVar2;
-                        f2 = f13;
-                        f3 = f9;
-                        f4 = f10;
-                        f5 = f11;
-                        f6 = f12;
-                    } else if (a2 == 0.0f || a3 == 0.0f) {
-                        i = length;
-                        gcbVar = gcbVar2;
-                        f2 = f13;
-                        f3 = f9;
-                        f4 = f10;
-                        f5 = f11;
-                        f6 = f12;
-                        path.lineTo(f, f2);
-                    } else {
-                        float abs = Math.abs(a2);
-                        float abs2 = Math.abs(a3);
-                        i = length;
-                        gcbVar = gcbVar2;
-                        double radians = Math.toRadians(a4 % 360.0d);
-                        double cos = Math.cos(radians);
-                        double sin = Math.sin(radians);
-                        float f14 = f7;
-                        float f15 = f8;
-                        double d = (f14 - f) / 2.0d;
-                        double d2 = (f15 - f13) / 2.0d;
-                        double d3 = (sin * d2) + (cos * d);
-                        f3 = f9;
-                        f4 = f10;
-                        double d4 = (cos * d2) + ((-sin) * d);
-                        double d5 = abs * abs;
-                        double d6 = abs2 * abs2;
-                        double d7 = d3 * d3;
-                        double d8 = d4 * d4;
-                        double d9 = (d8 / d6) + (d7 / d5);
-                        if (d9 > 0.99999d) {
-                            double sqrt = Math.sqrt(d9) * 1.00001d;
-                            abs = (float) (abs * sqrt);
-                            abs2 = (float) (abs2 * sqrt);
-                            d5 = abs * abs;
-                            d6 = abs2 * abs2;
-                        }
-                        double d10 = d5;
-                        double d11 = d6;
-                        double d12 = z3 == z4 ? -1.0d : 1.0d;
-                        double d13 = d10 * d8;
-                        double d14 = (d10 * d11) - d13;
-                        double d15 = d11 * d7;
-                        double d16 = (d14 - d15) / (d13 + d15);
-                        if (d16 < 0.0d) {
-                            d16 = 0.0d;
-                        }
-                        double sqrt2 = Math.sqrt(d16) * d12;
-                        double d17 = abs;
-                        double d18 = d17 * d4;
-                        double d19 = abs2;
-                        double d20 = (d18 / d19) * sqrt2;
-                        double d21 = sqrt2 * (-((d19 * d3) / d17));
-                        double d22 = (f15 + f13) / 2.0d;
-                        double d23 = ((cos * d20) - (sin * d21)) + ((f14 + f) / 2.0d);
-                        f5 = f11;
-                        f6 = f12;
-                        double d24 = (cos * d21) + (sin * d20) + d22;
-                        double d25 = (d3 - d20) / d17;
-                        double d26 = (d4 - d21) / d19;
-                        double d27 = ((-d3) - d20) / d17;
-                        double d28 = ((-d4) - d21) / d19;
-                        double d29 = (d26 * d26) + (d25 * d25);
-                        double acos = Math.acos(d25 / Math.sqrt(d29)) * (d26 < 0.0d ? -1.0d : 1.0d);
-                        double sqrt3 = ((d26 * d28) + (d25 * d27)) / Math.sqrt(((d28 * d28) + (d27 * d27)) * d29);
-                        double acos2 = ((d25 * d28) - (d26 * d27) < 0.0d ? -1.0d : 1.0d) * (sqrt3 < -1.0d ? 3.141592653589793d : sqrt3 > 1.0d ? 0.0d : Math.acos(sqrt3));
-                        if (acos2 == 0.0d) {
-                            path.lineTo(f, f13);
-                            f2 = f13;
-                        } else {
-                            if (z4) {
-                                if (acos2 < 0.0d) {
-                                    acos2 += 6.283185307179586d;
-                                }
-                            } else if (acos2 > 0.0d) {
-                                acos2 -= 6.283185307179586d;
-                            }
-                            double d30 = acos2 % 6.283185307179586d;
-                            double d31 = acos % 6.283185307179586d;
-                            int ceil = (int) Math.ceil((Math.abs(d30) * 2.0d) / 3.141592653589793d);
-                            double d32 = d30 / ceil;
-                            double d33 = d32 / 2.0d;
-                            double sin2 = (Math.sin(d33) * 1.3333333333333333d) / (Math.cos(d33) + 1.0d);
-                            int i3 = ceil * 6;
-                            float[] fArr = new float[i3];
-                            int i4 = 0;
-                            int i5 = 0;
-                            while (true) {
-                                Path path2 = path;
-                                float f16 = f13;
-                                if (i4 < ceil) {
-                                    double d34 = (i4 * d32) + d31;
-                                    double cos2 = Math.cos(d34);
-                                    double sin3 = Math.sin(d34);
-                                    fArr[i5] = (float) (cos2 - (sin2 * sin3));
-                                    fArr[i5 + 1] = (float) ((cos2 * sin2) + sin3);
-                                    double d35 = d34 + d32;
-                                    double cos3 = Math.cos(d35);
-                                    double d36 = d32;
-                                    double sin4 = Math.sin(d35);
-                                    int i6 = i4;
-                                    fArr[i5 + 2] = (float) ((sin2 * sin4) + cos3);
-                                    fArr[i5 + 3] = (float) (sin4 - (sin2 * cos3));
-                                    int i7 = i5 + 5;
-                                    fArr[i5 + 4] = (float) cos3;
-                                    i5 += 6;
-                                    fArr[i7] = (float) sin4;
-                                    i4 = i6 + 1;
-                                    path = path2;
-                                    f13 = f16;
-                                    d32 = d36;
-                                    i3 = i3;
-                                } else {
-                                    int i8 = i3;
-                                    Matrix matrix = new Matrix();
-                                    matrix.postScale(abs, abs2);
-                                    matrix.postRotate(a4);
-                                    matrix.postTranslate((float) d23, (float) d24);
-                                    matrix.mapPoints(fArr);
-                                    fArr[i8 - 2] = f;
-                                    fArr[i8 - 1] = f16;
-                                    for (int i9 = 0; i9 < i8; i9 += 6) {
-                                        path2.cubicTo(fArr[i9], fArr[i9 + 1], fArr[i9 + 2], fArr[i9 + 3], fArr[i9 + 4], fArr[i9 + 5]);
-                                    }
-                                    path = path2;
-                                    f2 = f16;
-                                }
-                            }
-                        }
-                    }
-                    f7 = f;
-                    f8 = f2;
-                    f11 = f5;
-                    f12 = f6;
-                    f9 = f3;
-                    f10 = f4;
-                    z2 = false;
-                    break;
-                case kk7.D0 /* 67 */:
-                case kk7.j1 /* 99 */:
-                    z = true;
-                    float a7 = gcbVar2.a();
-                    float a8 = gcbVar2.a();
-                    float a9 = gcbVar2.a();
-                    float a10 = gcbVar2.a();
-                    float a11 = gcbVar2.a();
-                    float a12 = gcbVar2.a();
-                    if (c2 == 'c') {
-                        a7 += f7;
-                        a9 += f7;
-                        a11 += f7;
-                        a8 += f8;
-                        a10 += f8;
-                        a12 += f8;
-                    }
-                    float f17 = a7;
-                    float f18 = a8;
-                    float f19 = a9;
-                    float f20 = a10;
-                    float f21 = a11;
-                    float f22 = a12;
-                    path.cubicTo(f17, f18, f19, f20, f21, f22);
-                    f9 = f19;
-                    f10 = f20;
-                    f7 = f21;
-                    f8 = f22;
-                    i = length;
-                    gcbVar = gcbVar2;
-                    z2 = z;
-                    break;
-                case kk7.I0 /* 72 */:
-                case kk7.o1 /* 104 */:
-                    float a13 = gcbVar2.a();
-                    if (c2 == 'h') {
-                        path.rLineTo(a13, 0.0f);
-                        f7 += a13;
-                        i = length;
-                        gcbVar = gcbVar2;
-                        z2 = false;
-                        break;
-                    } else {
-                        path.lineTo(a13, f8);
-                        i = length;
-                        gcbVar = gcbVar2;
-                        f7 = a13;
-                        z2 = false;
-                    }
-                case kk7.M0 /* 76 */:
-                case kk7.s1 /* 108 */:
-                    float a14 = gcbVar2.a();
-                    float a15 = gcbVar2.a();
-                    if (c2 == 'l') {
-                        path.rLineTo(a14, a15);
-                        f7 += a14;
-                        f8 += a15;
-                        i = length;
-                        gcbVar = gcbVar2;
-                        z2 = false;
-                        break;
-                    } else {
-                        path.lineTo(a14, a15);
-                        i = length;
-                        gcbVar = gcbVar2;
-                        f7 = a14;
-                        f8 = a15;
-                        z2 = false;
-                    }
-                case kk7.N0 /* 77 */:
-                case kk7.t1 /* 109 */:
-                    float a16 = gcbVar2.a();
-                    float a17 = gcbVar2.a();
-                    if (c2 == 'm') {
-                        f11 += a16;
-                        f12 += a17;
-                        path.rMoveTo(a16, a17);
-                        f7 += a16;
-                        f8 += a17;
-                        i = length;
-                        gcbVar = gcbVar2;
-                        z2 = false;
-                        break;
-                    } else {
-                        path.moveTo(a16, a17);
-                        i = length;
-                        gcbVar = gcbVar2;
-                        f7 = a16;
-                        f11 = f7;
-                        f8 = a17;
-                        f12 = f8;
-                        z2 = false;
-                    }
-                case kk7.R0 /* 81 */:
-                case kk7.x1 /* 113 */:
-                    z = true;
-                    float a18 = gcbVar2.a();
-                    float a19 = gcbVar2.a();
-                    float a20 = gcbVar2.a();
-                    float a21 = gcbVar2.a();
-                    if (c2 == 'q') {
-                        a18 += f7;
-                        a19 += f8;
-                        a20 += f7;
-                        a21 += f8;
-                    }
-                    f9 = a18;
-                    f10 = a19;
-                    f7 = a20;
-                    f8 = a21;
-                    path.quadTo(f9, f10, f7, f8);
-                    i = length;
-                    gcbVar = gcbVar2;
-                    z2 = z;
-                    break;
-                case kk7.T0 /* 83 */:
-                case kk7.z1 /* 115 */:
-                    float a22 = gcbVar2.a();
-                    float a23 = gcbVar2.a();
-                    float a24 = gcbVar2.a();
-                    float a25 = gcbVar2.a();
-                    if (c2 == 's') {
-                        a22 += f7;
-                        a24 += f7;
-                        a23 += f8;
-                        a25 += f8;
-                    }
-                    float f23 = a25;
-                    float f24 = (f7 * 2.0f) - f9;
-                    float f25 = (f8 * 2.0f) - f10;
-                    float f26 = a22;
-                    float f27 = a23;
-                    z = true;
-                    float f28 = a24;
-                    path.cubicTo(f24, f25, f26, f27, f28, f23);
-                    i = length;
-                    gcbVar = gcbVar2;
-                    f9 = f26;
-                    f10 = f27;
-                    f7 = f28;
-                    f8 = f23;
-                    z2 = z;
-                    break;
-                case kk7.U0 /* 84 */:
-                case kk7.A1 /* 116 */:
-                    float a26 = gcbVar2.a();
-                    float a27 = gcbVar2.a();
-                    if (c2 == 't') {
-                        a26 += f7;
-                        a27 += f8;
-                    }
-                    f9 = (f7 * 2.0f) - f9;
-                    f10 = (f8 * 2.0f) - f10;
-                    path.quadTo(f9, f10, a26, a27);
-                    i = length;
-                    gcbVar = gcbVar2;
-                    f7 = a26;
-                    f8 = a27;
-                    break;
-                case kk7.W0 /* 86 */:
-                case kk7.C1 /* 118 */:
-                    float a28 = gcbVar2.a();
-                    if (c2 == 'v') {
-                        path.rLineTo(0.0f, a28);
-                        f8 += a28;
-                        i = length;
-                        gcbVar = gcbVar2;
-                        z2 = false;
-                        break;
-                    } else {
-                        path.lineTo(f7, a28);
-                        i = length;
-                        gcbVar = gcbVar2;
-                        f8 = a28;
-                        z2 = false;
-                    }
-                case kk7.a1 /* 90 */:
-                case kk7.F1 /* 122 */:
-                    path.close();
-                    path.moveTo(f11, f12);
-                    i = length;
-                    gcbVar = gcbVar2;
-                    f7 = f11;
-                    f9 = f7;
-                    f8 = f12;
-                    f10 = f8;
-                    break;
-                default:
-                    i = length;
-                    gcbVar = gcbVar2;
-                    z2 = false;
-                    break;
-            }
-            if (!z2) {
-                f9 = f7;
-                f10 = f8;
-            }
-            gcbVar.d();
-            str2 = str;
-            length = i;
-            gcbVar2 = gcbVar;
-            c2 = c;
+    public final void C() {
+        TL_stories.StoryItem storyItem;
+        o68 currentPeerView;
+        int selectedPosition;
+        this.d = true;
+        icb icbVar = this.t0;
+        ImageReceiver imageReceiver = icbVar.b;
+        if (imageReceiver != null) {
+            imageReceiver.v0(true, true);
         }
-    }
-
-    public static Bitmap c(float f, int i, int i2, int i3, int i4, int i5) {
-        try {
-            InputStream openRawResource = a.b.getResources().openRawResource(i);
-            try {
-                XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                icb icbVar = new icb(i2, i3, Integer.valueOf(i4), false, f, i5);
-                xMLReader.setContentHandler(icbVar);
-                xMLReader.parse(new InputSource(openRawResource));
-                Bitmap bitmap = icbVar.b;
-                if (openRawResource != null) {
-                    openRawResource.close();
+        ImageReceiver imageReceiver2 = icbVar.c;
+        if (imageReceiver2 != null) {
+            imageReceiver2.setAlpha(1.0f);
+            icbVar.c.v0(true, true);
+        }
+        if (this.O0 != null && (currentPeerView = this.o0.getCurrentPeerView()) != null && (selectedPosition = currentPeerView.getSelectedPosition()) >= 0 && selectedPosition < this.O0.i.size()) {
+            this.U0 = ((r47) this.O0.i.get(selectedPosition)).e1();
+        }
+        if (this.u0 != null) {
+            long currentDialogId = this.o0.getCurrentDialogId();
+            int i = this.U0;
+            if (this.O0 instanceof w5b) {
+                o68 currentPeerView2 = this.o0.getCurrentPeerView();
+                int selectedPosition2 = currentPeerView2 == null ? 0 : currentPeerView2.getSelectedPosition();
+                if (currentPeerView2 != null) {
+                    ArrayList arrayList = currentPeerView2.f1;
+                    if (selectedPosition2 >= 0 && selectedPosition2 < arrayList.size()) {
+                        storyItem = (TL_stories.StoryItem) arrayList.get(selectedPosition2);
+                        if (storyItem != null) {
+                            currentDialogId = storyItem.dialogId;
+                            i = storyItem.id;
+                        }
+                    }
                 }
-                return bitmap;
-            } finally {
+                storyItem = null;
+                if (storyItem != null) {
+                }
             }
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
+            this.u0.x(currentDialogId, i, new x58(this, (byte) 5));
         }
     }
 
-    public static Bitmap d(int i, int i2, int i3, int i4) {
-        return c(1.0f, i, i2, i3, i4, 1);
-    }
-
-    public static Bitmap e(int i, int i2, String str) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            icb icbVar = new icb(i, i2, null, false);
-            xMLReader.setContentHandler(icbVar);
-            xMLReader.parse(new InputSource(new StringReader(str)));
-            return icbVar.b;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static Bitmap f(FilterInputStream filterInputStream, int i, int i2) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            icb icbVar = new icb(i, i2, null, false);
-            xMLReader.setContentHandler(icbVar);
-            xMLReader.parse(new InputSource(filterInputStream));
-            return icbVar.b;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static kcb g(int i, Integer num) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            icb icbVar = new icb(0, 0, num, true);
-            xMLReader.setContentHandler(icbVar);
-            xMLReader.parse(new InputSource(a.b.getResources().openRawResource(i)));
-            return icbVar.c;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static kcb h(String str) {
-        try {
-            XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-            icb icbVar = new icb(0, 0, null, true);
-            xMLReader.setContentHandler(icbVar);
-            xMLReader.parse(new InputSource(new StringReader(str)));
-            return icbVar.c;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static kcb i(int i, int i2, Path path) {
-        try {
-            kcb kcbVar = new kcb();
-            kcbVar.a.add(path);
-            kcbVar.b.put(path, new Paint(1));
-            kcbVar.e = i;
-            kcbVar.f = i2;
-            return kcbVar;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static Float j(String str, Attributes attributes) {
-        String k = k(str, attributes);
-        if (k == null) {
-            return null;
-        }
-        if (k.endsWith("px")) {
-            k = ir2.n(2, 0, k);
-        } else if (k.endsWith("mm")) {
-            return null;
-        }
-        return Float.valueOf(Float.parseFloat(k));
-    }
-
-    public static String k(String str, Attributes attributes) {
-        int length = attributes.getLength();
-        for (int i = 0; i < length; i++) {
-            if (attributes.getLocalName(i).equals(str)) {
-                return attributes.getValue(i);
+    public final void D(boolean z) {
+        Activity W = hl.W(this.f.getContext());
+        if (W != null) {
+            try {
+                W.setRequestedOrientation(z ? 1 : -1);
+            } catch (Exception unused) {
+            }
+            if (z) {
+                W.getWindow().addFlags(128);
+            } else {
+                W.getWindow().clearFlags(128);
             }
         }
+    }
+
+    public final void E(int i, Context context, TL_stories.StoryItem storyItem, l6b l6bVar) {
+        if (storyItem != null) {
+            this.h = i;
+            if (storyItem.dialogId <= 0 || uc7.s1(i).X1(Long.valueOf(storyItem.dialogId)) != null) {
+                if (storyItem.dialogId >= 0 || uc7.s1(this.h).M0(Long.valueOf(-storyItem.dialogId)) != null) {
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(Long.valueOf(storyItem.dialogId));
+                    F(i, context, storyItem, arrayList, 0, null, null, l6bVar, false);
+                }
+            }
+        }
+    }
+
+    public final void F(int i, Context context, TL_stories.StoryItem storyItem, ArrayList arrayList, int i2, u5b u5bVar, TL_stories.PeerStories peerStories, hcb hcbVar, boolean z) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher;
+        boolean C12 = hl.C1(context);
+        ArrayList arrayList2 = this.y0;
+        if (!C12) {
+            arrayList2.clear();
+            return;
+        }
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
+        }
+        if (this.n0) {
+            arrayList2.clear();
+            return;
+        }
+        B1 = 1.0f;
+        kcb kcbVar = this.A0;
+        if (kcbVar != null) {
+            kcbVar.setSpeed(1.0f);
+        }
+        boolean z2 = (hl.O1() || this.r1) ? false : true;
+        this.b = z2;
+        this.a = xea.Y && z2;
+        this.U0 = storyItem == null ? 0 : storyItem.messageId;
+        this.N0 = storyItem != null && u5bVar == null && peerStories == null;
+        this.S0 = false;
+        if (storyItem != null) {
+            this.T0 = storyItem;
+            z1 = storyItem;
+        }
+        this.O0 = u5bVar;
+        this.Q0 = peerStories;
+        this.u0 = hcbVar;
+        this.R0 = z;
+        this.h = i;
+        this.X = 0.0f;
+        this.Y = 0.0f;
+        acb acbVar = this.o0;
+        if (acbVar != null) {
+            acbVar.setHorizontalProgressToDismiss(0.0f);
+            this.o0.G0 = 0;
+        }
+        this.e0 = 0.0f;
+        this.a0 = 0.0f;
+        this.m0 = false;
+        this.W = 0.0f;
+        this.n0 = true;
+        this.a1 = false;
+        this.Z0 = false;
+        this.e1.clear();
+        hl.r(this.b1);
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        this.r = layoutParams;
+        layoutParams.height = -1;
+        layoutParams.format = -3;
+        layoutParams.width = -1;
+        layoutParams.gravity = 51;
+        layoutParams.type = 99;
+        layoutParams.softInputMode = 16;
+        hl.m(layoutParams);
+        this.r.flags = -2147417728;
+        this.H0 = false;
+        this.c1 = false;
+        e Q = LaunchActivity.Q();
+        if (this.s == null) {
+            this.j0 = new GestureDetector(new ubb(this));
+            this.s = new ybb(this, context, Q);
+        }
+        if (this.w == null) {
+            this.w = new zbb(this, context);
+            acb acbVar2 = new acb(this, this.h, context, this, this.E);
+            this.o0 = acbVar2;
+            acbVar2.setDelegate(new ccb(this, u5bVar, arrayList, context));
+            this.w.addView(this.o0, tre.e(-1, -1, 1));
+            this.z0 = new jx(context);
+            if (this.a) {
+                SurfaceView surfaceView = new SurfaceView(context);
+                this.D0 = surfaceView;
+                surfaceView.setZOrderMediaOverlay(false);
+                this.D0.setZOrderOnTop(false);
+                this.z0.addView(this.D0);
+            } else {
+                dcb dcbVar = new dcb(this, context);
+                this.C0 = dcbVar;
+                this.z0.addView(dcbVar);
+            }
+            x96 x96Var = new x96(context, this.h);
+            this.E0 = x96Var;
+            x96Var.setVisibility(8);
+            this.z0.addView(this.E0);
+            y6b y6bVar = new y6b(context);
+            Paint paint = new Paint(1);
+            y6bVar.a = paint;
+            y6bVar.c = new bva((Object) y6bVar, (byte) 5);
+            y6bVar.d = new mm(y6bVar);
+            y6bVar.e = new mm(y6bVar);
+            paint.setColor(-1);
+            this.d1 = y6bVar;
+            this.w.addView(y6bVar, tre.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
+        }
+        x96 x96Var2 = this.E0;
+        if (x96Var2 != null) {
+            x96Var2.setAccount(this.h);
+        }
+        hl.B2(this.z0);
+        this.s.addView(this.z0);
+        SurfaceView surfaceView2 = this.D0;
+        byte b = 4;
+        if (surfaceView2 != null) {
+            surfaceView2.setVisibility(4);
+        }
+        hl.B2(this.w);
+        this.s.addView(this.w);
+        this.s.setClipChildren(false);
+        if (this.N0) {
+            W();
+        }
+        acb acbVar3 = this.o0;
+        if (u5bVar != null) {
+            acbVar3.D(this.h, u5bVar.d, u5bVar.h());
+        } else {
+            int i3 = this.h;
+            acbVar3.B0 = arrayList;
+            acbVar3.z0 = i3;
+            acbVar3.setAdapter(null);
+            acbVar3.setAdapter(acbVar3.A0);
+            acbVar3.setCurrentItem(i2);
+            acbVar3.D0 = true;
+        }
+        this.n = (WindowManager) context.getSystemService("window");
+        if (Q == null || Q.getLayoutContainer() == null || Q.isSupportEdgeToEdge()) {
+            this.b = false;
+        }
+        this.c = this.b && Q != null && Q.isSupportEdgeToEdge();
+        zbb zbbVar = this.w;
+        hja hjaVar = new hja(this, (byte) 21);
+        WeakHashMap weakHashMap = ihc.a;
+        ahc.i(zbbVar, hjaVar);
+        boolean z3 = this.b;
+        ybb ybbVar = this.s;
+        if (z3) {
+            hl.B2(ybbVar);
+            this.s.setTag(R.id.sheet_attached_to_fragment_tag, new Object());
+            Q.getLayoutContainer().addView(this.s);
+            if (!this.c) {
+                hl.V2(Q.getParentActivity(), Q.getClassGuid());
+            }
+        } else {
+            ybbVar.setFocusable(false);
+            this.w.setFocusable(false);
+            this.w.setSystemUiVisibility(1792);
+            hl.s3(this.n, this.s, this.r);
+            this.n.addView(this.s, this.r);
+            if (Build.VERSION.SDK_INT >= 33 && (findOnBackInvokedDispatcher = this.s.findOnBackInvokedDispatcher()) != null) {
+                findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, new vo(this, b));
+            }
+        }
+        this.s.requestLayout();
+        A1 = true;
+        W();
+        this.V = 0.0f;
+        l();
+        x1 = true;
+        if (C1) {
+            C1 = false;
+            D1 = ((AudioManager) this.s.getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND)).getRingerMode() != 2;
+        }
+        if (this.b) {
+            D(true);
+        }
+        if (!this.b) {
+            y1.add(this);
+        }
+        if (Q != null) {
+            hl.t1(Q.getFragmentView());
+        }
+    }
+
+    public final void G(Context context, int i, u5b u5bVar, l6b l6bVar) {
+        this.h = yac.t0;
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(Long.valueOf(u5bVar.d));
+        this.P0 = i;
+        K(context, null, arrayList, 0, u5bVar, null, l6bVar, false);
+    }
+
+    public final void H(Context context, long j, hcb hcbVar) {
+        ArrayList<TL_stories.StoryItem> arrayList;
+        this.h = yac.t0;
+        ArrayList arrayList2 = new ArrayList();
+        arrayList2.add(Long.valueOf(j));
+        c6b O1 = uc7.s1(this.h).O1();
+        int i = O1.a;
+        TL_stories.PeerStories x = O1.x(j);
+        if (x != null) {
+            int i2 = 0;
+            while (true) {
+                int size = x.stories.size();
+                arrayList = x.stories;
+                if (i2 >= size) {
+                    break;
+                }
+                if (t6b.w(i, arrayList.get(i2))) {
+                    x.stories.remove(i2);
+                    i2--;
+                }
+                i2++;
+            }
+            if (arrayList.isEmpty() && !O1.K(j)) {
+                O1.g.remove(x);
+                O1.h.remove(x);
+                jn7.f(i).k(jn7.y5, new Object[0]);
+            }
+        }
+        K(context, null, arrayList2, 0, null, null, hcbVar, false);
+    }
+
+    public final void I(Context context, TL_stories.PeerStories peerStories, xh4 xh4Var) {
+        ArrayList<TL_stories.StoryItem> arrayList;
+        if (peerStories == null || (arrayList = peerStories.stories) == null || arrayList.isEmpty()) {
+            this.y0.clear();
+            return;
+        }
+        this.h = yac.t0;
+        ArrayList arrayList2 = new ArrayList();
+        arrayList2.add(Long.valueOf(wf3.n(peerStories.peer)));
+        K(context, peerStories.stories.get(0), arrayList2, 0, null, peerStories, xh4Var, false);
+    }
+
+    public final void J(Context context, TL_stories.StoryItem storyItem, l6b l6bVar) {
+        E(yac.t0, context, storyItem, l6bVar);
+    }
+
+    public final void K(Context context, TL_stories.StoryItem storyItem, ArrayList arrayList, int i, u5b u5bVar, TL_stories.PeerStories peerStories, hcb hcbVar, boolean z) {
+        F(yac.t0, context, storyItem, arrayList, i, u5bVar, peerStories, hcbVar, z);
+    }
+
+    public final void L(e eVar) {
+        e Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
+        }
+        if (this.b) {
+            Q.presentFragment(eVar);
+        } else {
+            Q.presentFragment(eVar);
+            o(false);
+        }
+    }
+
+    public final void M() {
+        ArrayList arrayList;
+        this.F0 = null;
+        O(false);
+        c(true);
+        kcb kcbVar = this.A0;
+        if (kcbVar != null) {
+            kcbVar.release(null);
+            this.A0 = null;
+        }
+        x96 x96Var = this.E0;
+        if (x96Var != null) {
+            x96Var.e(0L, null);
+        }
+        w96 w96Var = this.B0;
+        if (w96Var != null && !ba6.a(w96Var)) {
+            w96 w96Var2 = this.B0;
+            if (w96Var2.n) {
+                w96Var2.d();
+            } else {
+                w96Var2.h();
+            }
+        }
+        this.B0 = null;
+        ba6 ba6Var = ba6.E;
+        if (ba6Var != null && ba6Var.c == this) {
+            ba6Var.c = null;
+            y96 y96Var = ba6Var.w;
+            LaunchActivity launchActivity = ba6Var.x;
+            if (launchActivity != null) {
+                if (launchActivity != null) {
+                    launchActivity.a1.remove(y96Var);
+                }
+                ba6Var.x = null;
+            }
+            me8 me8Var = ba6Var.a;
+            if (me8Var != null && me8Var.f()) {
+                me8 me8Var2 = ba6Var.a;
+                if (me8Var2.c == 0) {
+                    ba6Var.a = null;
+                    ba6Var.c(null);
+                    me8Var2.h();
+                }
+            }
+        }
+        int i = 0;
+        while (true) {
+            arrayList = this.M0;
+            if (i >= arrayList.size()) {
+                break;
+            }
+            ((kcb) arrayList.get(i)).release(null);
+            i++;
+        }
+        arrayList.clear();
+        zh6 zh6Var = uc7.s1(this.h).O1().m;
+        for (int i2 = 0; i2 < zh6Var.m(); i2++) {
+            ((hjc) zh6Var.n(i2)).b(false);
+        }
+        if (this.b) {
+            D(false);
+        }
+        e eVar = this.f;
+        if (eVar != null) {
+            eVar.removeSheet(this);
+        }
+        y1.remove(this);
+        this.y0.clear();
+        this.f0 = 0.0f;
+        z1 = null;
+    }
+
+    public final void O(boolean z) {
+        this.r0 = z;
+        if (z) {
+            bva bvaVar = this.d1.c;
+            hl.r(bvaVar);
+            bvaVar.run();
+        }
+        U();
+    }
+
+    public final void P(boolean z) {
+        o68 currentPeerView;
+        o68 currentPeerView2;
+        n68 n68Var;
+        kcb kcbVar;
+        d30 d30Var;
+        if (this.a1 != z) {
+            this.a1 = z;
+            if (z && !this.f1 && (currentPeerView2 = this.o0.getCurrentPeerView()) != null && (n68Var = currentPeerView2.y1) != null && !n68Var.f && n68Var.b == null) {
+                if (!this.l0 && !this.k0 && (d30Var = this.G0) != null && ((kcb) d30Var.c) != null) {
+                    currentPeerView2.M0.invalidate();
+                    yw0.e.a();
+                }
+                d30 d30Var2 = this.G0;
+                if (d30Var2 != null && (kcbVar = (kcb) d30Var2.c) != null && !this.l0) {
+                    kcbVar.setSeeking(true);
+                }
+                this.l0 = true;
+            }
+            U();
+            acb acbVar = this.o0;
+            if (acbVar == null || (currentPeerView = acbVar.getCurrentPeerView()) == null) {
+                return;
+            }
+            currentPeerView.setLongpressed(this.a1);
+        }
+    }
+
+    public final void Q(boolean z) {
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (!this.b || launchActivity == null) {
+            return;
+        }
+        if (z) {
+            Window window = launchActivity.getWindow();
+            Typeface typeface = hl.a;
+            this.x0 = Build.VERSION.SDK_INT >= 26 ? vsd.a(window.getDecorView().getSystemUiVisibility(), 16) : false;
+        }
+        if (this.x0) {
+            hl.h3(launchActivity, !z);
+        }
+    }
+
+    public final void R() {
+        xb xbVar;
+        xt3 editField;
+        o68 currentPeerView = this.o0.getCurrentPeerView();
+        if (currentPeerView == null || currentPeerView.L1 == null || (((xbVar = currentPeerView.L2) != null && xbVar.getVisibility() == 0) || (editField = currentPeerView.L1.getEditField()) == null)) {
+            i();
+            return;
+        }
+        editField.requestFocus();
+        hl.E3(editField);
+        hl.d3(new x58(this, (byte) 6), 200L);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00b8  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void S() {
+        e eVar;
+        Activity W;
+        d30 d30Var;
+        if (this.B0 == null || (eVar = this.f) == null || this.E0 == null || (W = hl.W(eVar.getContext())) == null) {
+            return;
+        }
+        w96 w96Var = this.B0;
+        Bitmap bitmap = this.E0.getBitmap();
+        ba6 ba6Var = ba6.E;
+        if (ba6Var == null) {
+            ba6Var = new ba6();
+            ba6.E = ba6Var;
+        }
+        me8 me8Var = ba6Var.a;
+        if (me8Var != null && me8Var.f()) {
+            me8 me8Var2 = ba6Var.a;
+            if (me8Var2.c != 0) {
+                if (ba6Var.b != w96Var) {
+                    me8Var2.b();
+                }
+                this.B0 = null;
+                d30Var = this.G0;
+                if (d30Var != null) {
+                    d30Var.b = null;
+                }
+                this.E0.e(0L, null);
+                o(true);
+            }
+        }
+        ba6Var.c = this;
+        ba6Var.c(w96Var);
+        me8 me8Var3 = ba6Var.a;
+        if (me8Var3 == null || !me8Var3.f()) {
+            ba6Var.a = fc3.b().k(ba6Var);
+        }
+        ne8 i = ba6Var.a.i(W, bitmap, true);
+        if (i != null) {
+            if (w96Var instanceof kq9) {
+                da6 da6Var = new da6(i);
+                ba6Var.f = da6Var;
+                ((kq9) w96Var).L(da6Var);
+            } else {
+                ba6Var.e = new ke8(i);
+                ba6Var.e().a = ba6Var.e;
+                ((dq9) w96Var).L(ba6Var.e());
+            }
+            w96Var.F(1.0f);
+            String str = "floating, call " + w96Var.j();
+            if (f11.a) {
+                cc4.b("live story pip: ".concat(str));
+            }
+            this.B0 = null;
+            d30Var = this.G0;
+            if (d30Var != null) {
+            }
+            this.E0.e(0L, null);
+            o(true);
+        }
+    }
+
+    public final void T() {
+        boolean z = D1;
+        D1 = !z;
+        kcb kcbVar = this.A0;
+        int i = 0;
+        if (kcbVar != null) {
+            kcbVar.setAudioEnabled(z, false);
+        }
+        while (true) {
+            ArrayList arrayList = this.M0;
+            if (i >= arrayList.size()) {
+                break;
+            }
+            ((kcb) arrayList.get(i)).setAudioEnabled(!D1, true);
+            i++;
+        }
+        o68 currentPeerView = this.o0.getCurrentPeerView();
+        if (currentPeerView != null) {
+            currentPeerView.h1.a(D1, true);
+        }
+        if (D1) {
+            return;
+        }
+        this.d1.b();
+    }
+
+    public final void U() {
+        if (this.o0 == null) {
+            return;
+        }
+        boolean A = A();
+        if (this.b) {
+            e eVar = this.f;
+            if (eVar.isPaused() || !eVar.isLastFragment()) {
+                A = true;
+            }
+        }
+        if (o.u().W) {
+            A = true;
+        }
+        this.o0.setPaused(A);
+        kcb kcbVar = this.A0;
+        if (kcbVar != null) {
+            if (A) {
+                kcbVar.pause();
+            } else {
+                kcbVar.play(B1);
+            }
+        }
+        this.o0.E0 = (this.y || this.H0 || this.I0 || this.a1 || this.f1 || this.f0 != 0.0f || this.j1) ? false : true;
+    }
+
+    public final void V() {
+        float l = Utilities.l(Math.abs(Math.max(this.Y, this.X) / hl.L(80.0f)));
+        if (this.W != l) {
+            this.W = l;
+            l();
+            o68 currentPeerView = this.o0.getCurrentPeerView();
+            if (currentPeerView != null && currentPeerView.h2) {
+                currentPeerView.invalidate();
+            }
+            w96 w96Var = this.B0;
+            if (w96Var != null) {
+                w96Var.F((1.0f - this.W) * this.V);
+            }
+        }
+        ybb ybbVar = this.s;
+        if (ybbVar != null) {
+            ybbVar.invalidate();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x006b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0079 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0082  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void W() {
+        int i;
+        TL_stories.StoryItem storyItem;
+        u5b u5bVar;
+        long j;
+        int i2;
+        if (this.u0 == null) {
+            this.V0 = false;
+            this.P = 0.0f;
+            this.O = 0.0f;
+            return;
+        }
+        icb icbVar = this.t0;
+        ImageReceiver imageReceiver = icbVar.b;
+        if (imageReceiver != null) {
+            imageReceiver.v0(true, true);
+        }
+        ImageReceiver imageReceiver2 = icbVar.c;
+        if (imageReceiver2 != null) {
+            imageReceiver2.setAlpha(1.0f);
+            icbVar.c.v0(true, true);
+        }
+        o68 currentPeerView = this.o0.getCurrentPeerView();
+        int selectedPosition = currentPeerView == null ? 0 : currentPeerView.getSelectedPosition();
+        if (currentPeerView != null) {
+            ArrayList arrayList = currentPeerView.f1;
+            if (selectedPosition >= 0 && selectedPosition < arrayList.size()) {
+                i = ((TL_stories.StoryItem) arrayList.get(selectedPosition)).id;
+                if (currentPeerView != null) {
+                    ArrayList arrayList2 = currentPeerView.f1;
+                    if (selectedPosition >= 0 && selectedPosition < arrayList2.size()) {
+                        storyItem = (TL_stories.StoryItem) arrayList2.get(selectedPosition);
+                        if (storyItem == null && this.N0) {
+                            storyItem = this.T0;
+                        }
+                        long currentDialogId = this.o0.getCurrentDialogId();
+                        u5bVar = this.O0;
+                        if (!(u5bVar instanceof p5b) && storyItem != null) {
+                            currentDialogId = storyItem.dialogId;
+                            i = storyItem.messageId;
+                        } else if (!(u5bVar instanceof w5b) && storyItem != null) {
+                            currentDialogId = storyItem.dialogId;
+                            i = storyItem.id;
+                        } else if (u5bVar != null) {
+                            i = this.P0;
+                        }
+                        j = currentDialogId;
+                        i2 = i;
+                        icbVar.a = null;
+                        icbVar.m = null;
+                        icbVar.b = null;
+                        icbVar.c = null;
+                        icbVar.e = null;
+                        icbVar.f = null;
+                        icbVar.g = null;
+                        icbVar.d = null;
+                        icbVar.l = null;
+                        icbVar.h = 0.0f;
+                        icbVar.i = 0.0f;
+                        icbVar.o = 0;
+                        icbVar.j = null;
+                        icbVar.k = 1.0f;
+                        if (!this.u0.j(j, this.U0, i2, storyItem == null ? -1 : storyItem.messageType, icbVar)) {
+                            this.V0 = false;
+                            this.P = 0.0f;
+                            this.O = 0.0f;
+                            return;
+                        }
+                        icbVar.o = i2;
+                        View view = icbVar.a;
+                        if (view == null) {
+                            this.V0 = false;
+                            this.P = 0.0f;
+                            this.O = 0.0f;
+                            return;
+                        }
+                        int[] iArr = new int[2];
+                        view.getLocationOnScreen(iArr);
+                        View view2 = icbVar.a;
+                        if (view2 instanceof wb2) {
+                            iArr[1] = view2.getPaddingTop() + iArr[1];
+                        }
+                        float f = iArr[0];
+                        this.L = f;
+                        this.M = iArr[1];
+                        KeyEvent.Callback callback = icbVar.a;
+                        if (callback instanceof i6b) {
+                            this.N = (i6b) callback;
+                        } else {
+                            this.N = null;
+                        }
+                        this.V0 = false;
+                        ImageReceiver imageReceiver3 = icbVar.b;
+                        if (imageReceiver3 != null) {
+                            this.O = imageReceiver3.r() + f;
+                            this.P = icbVar.b.s() + iArr[1];
+                            ImageReceiver imageReceiver4 = icbVar.b;
+                            float f2 = imageReceiver4.N0;
+                            this.S = f2;
+                            this.T = imageReceiver4.O0;
+                            q6b q6bVar = icbVar.m;
+                            if (q6bVar != null) {
+                                this.S = q6bVar.b() * f2;
+                                this.T = icbVar.m.b() * this.T;
+                            }
+                            if (icbVar.a.getParent() instanceof View) {
+                                View view3 = (View) icbVar.a.getParent();
+                                this.O = (view3.getScaleX() * icbVar.b.r()) + iArr[0];
+                                this.P = (view3.getScaleY() * icbVar.b.s()) + iArr[1];
+                                this.S = view3.getScaleX() * this.S;
+                                this.T = view3.getScaleY() * this.T;
+                            }
+                            this.V0 = true;
+                        } else {
+                            ImageReceiver imageReceiver5 = icbVar.c;
+                            if (imageReceiver5 != null) {
+                                this.O = imageReceiver5.r() + f;
+                                this.P = icbVar.c.s() + iArr[1];
+                                ImageReceiver imageReceiver6 = icbVar.c;
+                                this.S = imageReceiver6.N0;
+                                this.T = imageReceiver6.O0;
+                                this.W0 = imageReceiver6.X0;
+                            }
+                        }
+                        icbVar.g.getLocationOnScreen(iArr);
+                        float f3 = icbVar.h;
+                        if (f3 == 0.0f && icbVar.i == 0.0f) {
+                            this.Q = 0.0f;
+                            this.R = 0.0f;
+                            return;
+                        } else {
+                            float f4 = iArr[1];
+                            this.Q = f3 + f4;
+                            this.R = f4 + icbVar.i;
+                            return;
+                        }
+                    }
+                }
+                storyItem = null;
+                if (storyItem == null) {
+                    storyItem = this.T0;
+                }
+                long currentDialogId2 = this.o0.getCurrentDialogId();
+                u5bVar = this.O0;
+                if (!(u5bVar instanceof p5b)) {
+                }
+                if (!(u5bVar instanceof w5b)) {
+                }
+                if (u5bVar != null) {
+                }
+                j = currentDialogId2;
+                i2 = i;
+                icbVar.a = null;
+                icbVar.m = null;
+                icbVar.b = null;
+                icbVar.c = null;
+                icbVar.e = null;
+                icbVar.f = null;
+                icbVar.g = null;
+                icbVar.d = null;
+                icbVar.l = null;
+                icbVar.h = 0.0f;
+                icbVar.i = 0.0f;
+                icbVar.o = 0;
+                icbVar.j = null;
+                icbVar.k = 1.0f;
+                if (!this.u0.j(j, this.U0, i2, storyItem == null ? -1 : storyItem.messageType, icbVar)) {
+                }
+            }
+        }
+        i = 0;
+        if (currentPeerView != null) {
+        }
+        storyItem = null;
+        if (storyItem == null) {
+        }
+        long currentDialogId22 = this.o0.getCurrentDialogId();
+        u5bVar = this.O0;
+        if (!(u5bVar instanceof p5b)) {
+        }
+        if (!(u5bVar instanceof w5b)) {
+        }
+        if (u5bVar != null) {
+        }
+        j = currentDialogId22;
+        i2 = i;
+        icbVar.a = null;
+        icbVar.m = null;
+        icbVar.b = null;
+        icbVar.c = null;
+        icbVar.e = null;
+        icbVar.f = null;
+        icbVar.g = null;
+        icbVar.d = null;
+        icbVar.l = null;
+        icbVar.h = 0.0f;
+        icbVar.i = 0.0f;
+        icbVar.o = 0;
+        icbVar.j = null;
+        icbVar.k = 1.0f;
+        if (!this.u0.j(j, this.U0, i2, storyItem == null ? -1 : storyItem.messageType, icbVar)) {
+        }
+    }
+
+    @Override // ag0
+    public final void a(boolean z) {
+        o(true);
+    }
+
+    public final void c(boolean z) {
+        boolean z2 = f11.a;
+        boolean z3 = !this.n0 || z;
+        if (this.e != z3) {
+            this.e = z3;
+            SurfaceView surfaceView = this.D0;
+            if (surfaceView != null) {
+                surfaceView.setSecure(!z3);
+            }
+            x96 x96Var = this.E0;
+            if (x96Var != null) {
+                x96Var.setSecure(!z3);
+            }
+            if (this.b) {
+                e eVar = this.f;
+                if (eVar.getParentActivity() != null) {
+                    if (z3) {
+                        eVar.getParentActivity().getWindow().clearFlags(TLObject.FLAG_13);
+                        hl.f2();
+                        return;
+                    } else {
+                        eVar.getParentActivity().getWindow().addFlags(TLObject.FLAG_13);
+                        hl.f2();
+                        return;
+                    }
+                }
+                return;
+            }
+            WindowManager.LayoutParams layoutParams = this.r;
+            if (z3) {
+                layoutParams.flags &= -8193;
+                hl.f2();
+            } else {
+                layoutParams.flags |= TLObject.FLAG_13;
+                hl.f2();
+            }
+            try {
+                this.n.updateViewLayout(this.s, this.r);
+            } catch (Exception e) {
+                cc4.g(e, true);
+            }
+        }
+    }
+
+    @Override // ag0
+    public final View d() {
+        return this.s;
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        int i3 = 0;
+        if (i == jn7.A5) {
+            if (this.O0 == ((u5b) objArr[0])) {
+                w();
+                acb acbVar = this.o0;
+                u5b u5bVar = this.O0;
+                acbVar.D(this.h, u5bVar.d, u5bVar.h());
+                g4a g4aVar = this.x;
+                if (g4aVar != null) {
+                    TL_stories.StoryItem selectedStory = g4aVar.getSelectedStory();
+                    ArrayList arrayList = new ArrayList();
+                    int i4 = 0;
+                    while (i3 < this.O0.i.size()) {
+                        if (selectedStory != null && selectedStory.id == ((r47) this.O0.i.get(i3)).l.id) {
+                            i4 = i3;
+                        }
+                        arrayList.add(((r47) this.O0.i.get(i3)).l);
+                        i3++;
+                    }
+                    this.x.b(i4, this.O0.d, arrayList);
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        if (i == jn7.y5) {
+            hcb hcbVar = this.u0;
+            if (hcbVar instanceof l6b) {
+                l6b l6bVar = (l6b) hcbVar;
+                if (!l6bVar.r || l6bVar.n) {
+                    return;
+                }
+                c6b O1 = uc7.s1(this.h).O1();
+                ArrayList arrayList2 = l6bVar.f ? O1.h : O1.g;
+                ArrayList<Long> dialogIds = this.o0.getDialogIds();
+                boolean z = false;
+                for (int i5 = 0; i5 < arrayList2.size(); i5++) {
+                    long n = wf3.n(((TL_stories.PeerStories) arrayList2.get(i5)).peer);
+                    if ((!l6bVar.h || O1.K(n)) && !dialogIds.contains(Long.valueOf(n))) {
+                        dialogIds.add(Long.valueOf(n));
+                        z = true;
+                    }
+                }
+                if (z) {
+                    this.o0.getAdapter().g();
+                }
+            }
+            g4a g4aVar2 = this.x;
+            if (g4aVar2 != null) {
+                ArrayList arrayList3 = g4aVar2.h.H;
+                while (i3 < arrayList3.size()) {
+                    ((g3a) arrayList3.get(i3)).b();
+                    i3++;
+                }
+                return;
+            }
+            return;
+        }
+        int i6 = jn7.c1;
+        if (i != i6 && i != jn7.d1) {
+            if (i == jn7.z5) {
+                long longValue = ((Long) objArr[0]).longValue();
+                int intValue = ((Integer) objArr[1]).intValue();
+                TL_stories.StoryItem storyItem = this.T0;
+                if (storyItem != null && storyItem.dialogId == longValue && storyItem.id == intValue) {
+                    this.S0 = true;
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        U();
+        if (i != i6) {
+            if (this.s1 || w() == null) {
+                return;
+            }
+            w().c1(false);
+            return;
+        }
+        kcb kcbVar = this.A0;
+        if (kcbVar == null) {
+            this.t1 = 0L;
+            return;
+        }
+        this.t1 = kcbVar.currentPosition;
+        this.A0.release(null);
+        this.A0 = null;
+    }
+
+    @Override // ag0, android.content.DialogInterface
+    public final void dismiss() {
+        o(true);
+    }
+
+    @Override // ag0
+    public final int e(int i) {
+        return vm2.f((((1.0f - this.W) * 0.5f) + 0.5f) * this.V, i, -16777216);
+    }
+
+    @Override // ag0
+    public final boolean f() {
+        return false;
+    }
+
+    @Override // ag0
+    public final void g(int i) {
+        if (this.q0 != i) {
+            this.q0 = i;
+            this.o0.setKeyboardHeight(i);
+            this.o0.requestLayout();
+            g4a g4aVar = this.x;
+            if (g4aVar != null) {
+                g4aVar.setKeyboardHeight(i);
+            }
+        }
+    }
+
+    @Override // ag0
+    public final boolean h() {
+        return this.K0;
+    }
+
+    public final void i() {
+        if (this.I == null) {
+            this.k0 = false;
+            this.m0 = false;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a0, 0.0f);
+            this.I = ofFloat;
+            ofFloat.addUpdateListener(new sbb(this, (byte) 2));
+            this.I.addListener(new tbb(this, (byte) 1));
+            this.I.setDuration(250L);
+            this.I.setInterpolator(hb.w);
+            this.I.start();
+        }
+    }
+
+    @Override // ag0
+    public final d31 j() {
         return null;
     }
 
-    public static icb l(File file, int i, int i2, boolean z) {
-        try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            try {
-                XMLReader xMLReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
-                icb icbVar = new icb(i, i2, z ? -1 : null, false);
-                if (!z) {
-                    icbVar.F = true;
-                }
-                xMLReader.setContentHandler(icbVar);
-                xMLReader.parse(new InputSource(fileInputStream));
-                fileInputStream.close();
-                return icbVar;
-            } finally {
+    public final void k(boolean z) {
+        if (this.v1 == null) {
+            if (this.q0 != 0) {
+                hl.t1(this.x);
+                return;
             }
-        } catch (Exception e) {
-            fa4.g(e, true);
+            if (this.d0 || this.f0 != 0.0f) {
+                this.J0.d();
+                if (!z) {
+                    float f = this.f0;
+                    g4a g4aVar = this.x;
+                    float f2 = g4aVar.c;
+                    if (f == f2) {
+                        float f3 = f2 - 1.0f;
+                        this.f0 = f3;
+                        g4aVar.setOffset(f3);
+                    }
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f0, z ? this.x.c : 0.0f);
+                this.v1 = ofFloat;
+                ofFloat.addUpdateListener(new sbb(this, (byte) 3));
+                this.v1.addListener(new i1a((byte) 6, this, z));
+                ValueAnimator valueAnimator = this.v1;
+                if (z) {
+                    valueAnimator.setDuration(350L);
+                    this.v1.setInterpolator(k43.h);
+                } else {
+                    valueAnimator.setDuration(350L);
+                    this.v1.setInterpolator(k43.f);
+                }
+                this.v1.start();
+            }
+        }
+    }
+
+    public final void l() {
+        LaunchActivity launchActivity;
+        if (!this.b || (launchActivity = LaunchActivity.H1) == null) {
+            return;
+        }
+        launchActivity.H(true, true, true);
+    }
+
+    public final void m() {
+        if (this.x == null) {
+            g4a g4aVar = new g4a(this, this.w.getContext());
+            this.x = g4aVar;
+            this.w.addView(g4aVar, 0);
+        }
+        o68 currentPeerView = this.o0.getCurrentPeerView();
+        if (currentPeerView != null) {
+            if (this.O0 == null) {
+                this.x.b(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer(), currentPeerView.getStoryItems());
+                return;
+            }
+            ArrayList arrayList = new ArrayList();
+            for (int i = 0; i < this.O0.i.size(); i++) {
+                arrayList.add(((r47) this.O0.i.get(i)).l);
+            }
+            this.x.b(currentPeerView.getListPosition(), this.O0.d, arrayList);
+        }
+    }
+
+    public final void o(boolean z) {
+        hl.t1(this.s);
+        this.H0 = true;
+        this.h1 = true;
+        U();
+        Q(false);
+        W();
+        this.J0.d();
+        this.c0 = this.X;
+        this.F = false;
+        byte b = 2;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.V, 0.0f);
+        this.G = ofFloat;
+        ofFloat.addUpdateListener(new sbb(this, (byte) 0));
+        if (z) {
+            C();
+        } else {
+            this.P = 0.0f;
+            this.O = 0.0f;
+            icb icbVar = this.t0;
+            ImageReceiver imageReceiver = icbVar.b;
+            if (imageReceiver != null) {
+                imageReceiver.v0(true, true);
+            }
+            ImageReceiver imageReceiver2 = icbVar.c;
+            if (imageReceiver2 != null) {
+                imageReceiver2.v0(true, true);
+            }
+            icbVar.c = null;
+            icbVar.b = null;
+        }
+        hl.d3(new x58(this, b), 16L);
+        if (this.c1) {
+            this.c1 = false;
+        }
+    }
+
+    @Override // ag0
+    public final void p() {
+        o68 currentPeerView;
+        boolean z = false;
+        if (this.f0 == 0.0f) {
+            acb acbVar = this.o0;
+            if (acbVar != null && (currentPeerView = acbVar.getCurrentPeerView()) != null) {
+                z = currentPeerView.i0();
+            }
+            if (z) {
+                return;
+            }
+            o(true);
+            return;
+        }
+        g4a g4aVar = this.x;
+        if (g4aVar.y > 0) {
+            hl.t1(g4aVar);
+            return;
+        }
+        z3a currentPage = g4aVar.getCurrentPage();
+        if (currentPage != null) {
+            i3a i3aVar = currentPage.r;
+            q3a q3aVar = currentPage.f;
+            if (q3aVar != null && q3aVar.a) {
+                q3aVar.a();
+                return;
+            } else if (Math.abs(currentPage.c.getTranslationY() - i3aVar.getPaddingTop()) > hl.L(2.0f)) {
+                i3aVar.dispatchTouchEvent(hl.R());
+                i3aVar.A0(0);
+                return;
+            }
+        }
+        k(false);
+    }
+
+    public final void q() {
+        o68 o68Var;
+        acb acbVar = this.o0;
+        if (acbVar != null) {
+            ArrayList arrayList = acbVar.Q0;
+            for (int i = 0; i < acbVar.getChildCount(); i++) {
+                View childAt = acbVar.getChildAt(i);
+                if ((childAt instanceof w6b) && (o68Var = ((w6b) childAt).a) != null && !o68Var.E3) {
+                    o68Var.E3 = true;
+                    g58 g58Var = o68Var.L1;
+                    if (g58Var != null) {
+                        g58Var.g1();
+                    }
+                }
+            }
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                o68 o68Var2 = (o68) arrayList.get(i2);
+                if (!o68Var2.E3) {
+                    o68Var2.E3 = true;
+                    g58 g58Var2 = o68Var2.L1;
+                    if (g58Var2 != null) {
+                        g58Var2.g1();
+                    }
+                }
+            }
+        }
+    }
+
+    public final void r(KeyEvent keyEvent) {
+        if (D1) {
+            T();
+            return;
+        }
+        o68 currentPeerView = this.o0.getCurrentPeerView();
+        if (currentPeerView != null) {
+            n68 n68Var = currentPeerView.y1;
+            if (!n68Var.h() && n68Var.e) {
+                currentPeerView.X0(true);
+                return;
+            }
+        }
+        this.d1.onKeyDown(keyEvent.getKeyCode(), keyEvent);
+    }
+
+    @Override // ag0
+    public final boolean s() {
+        return !this.H0;
+    }
+
+    public final void t(Runnable runnable) {
+        if (runnable != null) {
+            this.y0.add(runnable);
+        }
+    }
+
+    @Override // ag0
+    public final boolean u(Dialog dialog) {
+        try {
+            this.v0 = dialog;
+            dialog.setOnDismissListener(new dl8(this, (byte) 10));
+            dialog.show();
+            U();
+            return true;
+        } catch (Throwable th) {
+            cc4.g(th, true);
+            this.v0 = null;
+            return false;
+        }
+    }
+
+    public final boolean v(ybb ybbVar, float f, float f2, boolean z) {
+        g58 g58Var;
+        g58 g58Var2;
+        if (ybbVar == null) {
+            return false;
+        }
+        if (this.X0) {
+            return true;
+        }
+        if (this.x != null && this.f0 != 0.0f) {
+            return true;
+        }
+        o68 currentPeerView = this.o0.getCurrentPeerView();
+        if (currentPeerView != null) {
+            if (currentPeerView.y0(currentPeerView, ((f - this.w.getX()) - this.o0.getX()) - currentPeerView.getX(), ((f2 - this.w.getY()) - this.o0.getY()) - currentPeerView.getY(), z)) {
+                return true;
+            }
+            if (currentPeerView.f2) {
+                return false;
+            }
+        }
+        if (z) {
+            return false;
+        }
+        if (currentPeerView != null && (g58Var2 = currentPeerView.L1) != null && g58Var2.getVisibility() == 0) {
+            if (f2 > currentPeerView.L1.getY() + currentPeerView.getY() + this.o0.getY() + this.w.getY()) {
+                return true;
+            }
+        }
+        if ((currentPeerView == null || (g58Var = currentPeerView.L1) == null || !g58Var.X0()) && this.u1 == null) {
+            return hl.Y(ybbVar, f, f2, currentPeerView);
+        }
+        return true;
+    }
+
+    public final o68 w() {
+        acb acbVar = this.o0;
+        if (acbVar == null) {
             return null;
         }
+        return acbVar.getCurrentPeerView();
     }
 
-    public static il8 m(String str) {
-        int length = str.length();
-        ArrayList arrayList = new ArrayList();
-        int i = 0;
-        boolean z = false;
-        for (int i2 = 1; i2 < length; i2++) {
-            if (z) {
-                z = false;
+    public final void y() {
+        if (this.n0) {
+            hl.t1(this.s);
+            this.H0 = true;
+            this.K0 = false;
+            this.V = 0.0f;
+            this.W = 0.0f;
+            U();
+            this.P = 0.0f;
+            this.O = 0.0f;
+            icb icbVar = this.t0;
+            ImageReceiver imageReceiver = icbVar.b;
+            if (imageReceiver != null) {
+                imageReceiver.v0(true, true);
+            }
+            ImageReceiver imageReceiver2 = icbVar.c;
+            if (imageReceiver2 != null) {
+                imageReceiver2.v0(true, true);
+            }
+            icbVar.c = null;
+            icbVar.b = null;
+            zbb zbbVar = this.w;
+            if (zbbVar != null) {
+                zbbVar.a(true);
+            }
+            this.J0.e();
+            d30 d30Var = this.G0;
+            if (d30Var != null) {
+                d30Var.m();
+            }
+            M();
+            if (this.b) {
+                hl.B2(this.s);
             } else {
-                char charAt = str.charAt(i2);
-                switch (charAt) {
-                    case '\t':
-                    case '\n':
-                    case ' ':
-                    case ',':
-                    case '-':
-                        if (charAt != '-' || str.charAt(i2 - 1) != 'e') {
-                            String substring = str.substring(i, i2);
-                            if (substring.trim().length() > 0) {
-                                arrayList.add(Float.valueOf(Float.parseFloat(substring)));
-                                if (charAt == '-') {
-                                    i = i2;
-                                    break;
-                                } else {
-                                    i = i2 + 1;
-                                    z = true;
-                                    break;
-                                }
-                            } else {
-                                i++;
-                                break;
-                            }
-                        } else {
-                            break;
-                        }
-                    case ')':
-                    case 'A':
-                    case kk7.D0 /* 67 */:
-                    case kk7.I0 /* 72 */:
-                    case kk7.M0 /* 76 */:
-                    case kk7.N0 /* 77 */:
-                    case kk7.R0 /* 81 */:
-                    case kk7.T0 /* 83 */:
-                    case kk7.U0 /* 84 */:
-                    case kk7.W0 /* 86 */:
-                    case kk7.a1 /* 90 */:
-                    case kk7.h1 /* 97 */:
-                    case kk7.j1 /* 99 */:
-                    case kk7.o1 /* 104 */:
-                    case kk7.s1 /* 108 */:
-                    case kk7.t1 /* 109 */:
-                    case kk7.x1 /* 113 */:
-                    case kk7.z1 /* 115 */:
-                    case kk7.A1 /* 116 */:
-                    case kk7.C1 /* 118 */:
-                    case kk7.F1 /* 122 */:
-                        String substring2 = str.substring(i, i2);
-                        if (substring2.trim().length() > 0) {
-                            arrayList.add(Float.valueOf(Float.parseFloat(substring2)));
-                        }
-                        return new il8(arrayList);
-                }
+                this.n.removeView(this.s);
+            }
+            this.s = null;
+            q();
+            this.n0 = false;
+            this.d = false;
+            l();
+            x58 x58Var = this.o1;
+            if (x58Var != null) {
+                x58Var.run();
+                this.o1 = null;
             }
         }
-        String substring3 = str.substring(i);
-        if (substring3.length() > 0) {
-            try {
-                arrayList.add(Float.valueOf(Float.parseFloat(substring3)));
-            } catch (NumberFormatException unused) {
-            }
-        }
-        return new il8(arrayList);
     }
 
-    public static Matrix n(String str) {
-        List<String> list;
-        Matrix matrix;
-        float floatValue;
-        Matrix matrix2;
-        Matrix matrix3 = new Matrix();
-        if (str == null) {
-            list = Collections.EMPTY_LIST;
-        } else {
-            String trim = str.trim();
-            if (trim.isEmpty()) {
-                list = Collections.EMPTY_LIST;
-            } else {
-                String[] split = b.split(trim);
-                ArrayList arrayList = new ArrayList(split.length);
-                for (String str2 : split) {
-                    String trim2 = str2.trim();
-                    if (!trim2.isEmpty()) {
-                        arrayList.add(trim2);
-                    }
-                }
-                list = arrayList;
-            }
-        }
-        for (String str3 : list) {
-            if (str3.startsWith("matrix(")) {
-                ArrayList arrayList2 = m(str3.substring(7)).a;
-                if (arrayList2.size() == 6) {
-                    matrix = new Matrix();
-                    matrix.setValues(new float[]{((Float) arrayList2.get(0)).floatValue(), ((Float) arrayList2.get(2)).floatValue(), ((Float) arrayList2.get(4)).floatValue(), ((Float) arrayList2.get(1)).floatValue(), ((Float) arrayList2.get(3)).floatValue(), ((Float) arrayList2.get(5)).floatValue(), 0.0f, 0.0f, 1.0f});
-                }
-                matrix = null;
-            } else if (str3.startsWith("translate(")) {
-                ArrayList arrayList3 = m(str3.substring(10)).a;
-                if (arrayList3.size() > 0) {
-                    float floatValue2 = ((Float) arrayList3.get(0)).floatValue();
-                    floatValue = arrayList3.size() > 1 ? ((Float) arrayList3.get(1)).floatValue() : 0.0f;
-                    matrix2 = new Matrix();
-                    matrix2.postTranslate(floatValue2, floatValue);
-                    matrix = matrix2;
-                }
-                matrix = null;
-            } else {
-                if (str3.startsWith("scale(")) {
-                    ArrayList arrayList4 = m(str3.substring(6)).a;
-                    if (arrayList4.size() > 0) {
-                        float floatValue3 = ((Float) arrayList4.get(0)).floatValue();
-                        floatValue = arrayList4.size() > 1 ? ((Float) arrayList4.get(1)).floatValue() : 0.0f;
-                        matrix2 = new Matrix();
-                        matrix2.postScale(floatValue3, floatValue);
-                        matrix = matrix2;
-                    }
-                } else if (str3.startsWith("skewX(")) {
-                    ArrayList arrayList5 = m(str3.substring(6)).a;
-                    if (arrayList5.size() > 0) {
-                        float floatValue4 = ((Float) arrayList5.get(0)).floatValue();
-                        matrix = new Matrix();
-                        matrix.postSkew((float) Math.tan(floatValue4), 0.0f);
-                    }
-                } else if (str3.startsWith("skewY(")) {
-                    ArrayList arrayList6 = m(str3.substring(6)).a;
-                    if (arrayList6.size() > 0) {
-                        float floatValue5 = ((Float) arrayList6.get(0)).floatValue();
-                        matrix = new Matrix();
-                        matrix.postSkew(0.0f, (float) Math.tan(floatValue5));
-                    }
-                } else if (str3.startsWith("rotate(")) {
-                    ArrayList arrayList7 = m(str3.substring(7)).a;
-                    if (arrayList7.size() > 0) {
-                        matrix = new Matrix();
-                        float floatValue6 = ((Float) arrayList7.get(0)).floatValue();
-                        if (arrayList7.size() > 2) {
-                            matrix.postRotate(floatValue6, ((Float) arrayList7.get(1)).floatValue(), ((Float) arrayList7.get(2)).floatValue());
-                        } else {
-                            matrix.postRotate(floatValue6);
-                        }
-                    }
-                }
-                matrix = null;
-            }
-            if (matrix != null) {
-                matrix3.preConcat(matrix);
-            }
-        }
-        return matrix3;
+    @Override // ag0
+    public final boolean z() {
+        return this.b && this.s != null;
+    }
+
+    @Override // ag0
+    public final void b(boolean z) {
+    }
+
+    @Override // ag0
+    public final void n(Runnable runnable) {
     }
 }

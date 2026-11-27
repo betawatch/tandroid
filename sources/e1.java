@@ -1,6 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Looper;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e1 extends s9b {
+public final class e1 implements io4 {
+    public final Thread c;
+    public final kc d;
+    public volatile boolean e;
+    public volatile int f;
+    public int g;
+    public volatile boolean i;
+    public final Object a = new Object();
+    public volatile int h = -1;
+    public final d1 b = new d1(this, Looper.getMainLooper(), (byte) 0);
+
+    public e1(kc kcVar) {
+        this.d = kcVar;
+        byte b = 0;
+        vr vrVar = vr.f;
+        this.e = vrVar.a > 0;
+        vrVar.d.add(this);
+        Thread thread = new Thread(new c1(this, b), "ANRDetector");
+        this.c = thread;
+        thread.start();
+    }
+
+    @Override // io4
+    public final void a() {
+        synchronized (this.a) {
+            this.f++;
+            this.e = false;
+        }
+        this.b.removeMessages(1);
+        this.c.interrupt();
+    }
+
+    @Override // io4
+    public final void b() {
+        synchronized (this.a) {
+            this.f++;
+            this.e = true;
+            this.i = false;
+            this.a.notifyAll();
+        }
+        this.c.interrupt();
+    }
 }

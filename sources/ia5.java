@@ -1,96 +1,52 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.UsersSelectActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ia5 implements View.OnKeyListener {
+public final class ia5 extends AnimatorListenerAdapter {
     public final /* synthetic */ byte a;
-    public boolean b;
-    public final /* synthetic */ d c;
+    public final /* synthetic */ ka5 b;
 
-    public /* synthetic */ ia5(d dVar, byte b) {
+    public /* synthetic */ ia5(ka5 ka5Var, byte b) {
         this.a = b;
-        this.c = dVar;
+        this.b = ka5Var;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         byte b = this.a;
-        d dVar = this.c;
+        ka5 ka5Var = this.b;
         switch (b) {
             case 0:
-                qa5 qa5Var = (qa5) dVar;
-                if (i == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !qa5Var.b0.isEmpty()) {
-                            qa5Var.h.c((ya5) b00.f(1, qa5Var.b0));
-                            qa5Var.w0();
-                            qa5Var.l0();
-                            break;
-                        }
-                    } else {
-                        this.b = qa5Var.f.r.length() == 0;
-                    }
+                ka5Var.F = false;
+                ka5Var.invalidate();
+                break;
+            case 1:
+                ja5 ja5Var = ka5Var.b0;
+                float f = ka5Var.W ? 0.0f : 1.0f;
+                ka5Var.a0 = f;
+                ja5Var.setAlpha(f);
+                ja5Var.setVisibility(ka5Var.W ? 8 : 0);
+                ka5Var.a.invalidate();
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                ka5Var.H0 = null;
+                ga5 ga5Var = ka5Var.a;
+                ga5Var.setRotationY(0.0f);
+                if (!ka5Var.I0) {
+                    ga5Var.d.a();
+                    break;
                 }
+                break;
+            case 3:
+                ka5Var.F = false;
                 break;
             default:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) dVar;
-                ArrayList arrayList = usersSelectActivity.Q;
-                if (i == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
-                            ya5 ya5Var = (ya5) b00.f(1, arrayList);
-                            usersSelectActivity.b.b(ya5Var);
-                            if (usersSelectActivity.y == 2) {
-                                if (ya5Var.getUid() == -9223372036854775800L) {
-                                    usersSelectActivity.L &= -2;
-                                } else if (ya5Var.getUid() == -9223372036854775799L) {
-                                    usersSelectActivity.L &= -3;
-                                } else if (ya5Var.getUid() == Long.MIN_VALUE) {
-                                    usersSelectActivity.L &= -5;
-                                } else if (ya5Var.getUid() == -9223372036854775807L) {
-                                    usersSelectActivity.L &= -9;
-                                }
-                            } else if (ya5Var.getUid() == Long.MIN_VALUE) {
-                                int i2 = na7.q5;
-                                usersSelectActivity.L &= -2;
-                            } else if (ya5Var.getUid() == -9223372036854775807L) {
-                                int i3 = na7.q5;
-                                usersSelectActivity.L &= -3;
-                            } else if (ya5Var.getUid() == -9223372036854775806L) {
-                                int i4 = na7.q5;
-                                usersSelectActivity.L &= -5;
-                            } else if (ya5Var.getUid() == -9223372036854775805L) {
-                                int i5 = na7.q5;
-                                usersSelectActivity.L &= -9;
-                            } else if (ya5Var.getUid() == -9223372036854775804L) {
-                                int i6 = na7.q5;
-                                usersSelectActivity.L &= -17;
-                            } else if (ya5Var.getUid() == -9223372036854775803L) {
-                                int i7 = na7.q5;
-                                usersSelectActivity.L &= -33;
-                            } else if (ya5Var.getUid() == -9223372036854775802L) {
-                                int i8 = na7.q5;
-                                usersSelectActivity.L &= -65;
-                            } else if (ya5Var.getUid() == -9223372036854775801L) {
-                                int i9 = na7.q5;
-                                usersSelectActivity.L &= -129;
-                            }
-                            usersSelectActivity.c0();
-                            usersSelectActivity.Z();
-                            break;
-                        }
-                    } else {
-                        this.b = usersSelectActivity.c.length() == 0;
-                    }
-                }
+                ka5Var.F = false;
                 break;
         }
-        return true;
     }
 }

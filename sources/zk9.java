@@ -1,222 +1,191 @@
 // default package
 
-import android.location.Location;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.Components.q;
-import org.telegram.ui.SaveToGallerySettingsActivity;
-import org.telegram.ui.SecretMediaViewer;
-import org.webrtc.ScreenCapturerAndroid;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class zk9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class zk9 extends dk9 {
+    public final gl9 X;
+    public final gl9 Y;
+    public final gl9[] Z;
+    public final boolean a0;
 
-    public /* synthetic */ zk9(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public zk9(hl9 hl9Var, Rect rect, int i, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2, Layout.Alignment alignment) {
+        super(hl9Var, rect, i);
+        this.a0 = alignment == Layout.Alignment.ALIGN_CENTER;
+        gl9 gl9Var = new gl9(hl9Var, spannableStringBuilder, this.c, alignment);
+        this.X = gl9Var;
+        gl9 gl9Var2 = !TextUtils.isEmpty(spannableStringBuilder2) ? new gl9(hl9Var, spannableStringBuilder2, this.c, alignment) : null;
+        this.Y = gl9Var2;
+        this.Z = gl9Var2 == null ? new gl9[]{gl9Var} : new gl9[]{gl9Var, gl9Var2};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        long cameraFlipElapsedMs;
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                pb1 pb1Var = (pb1) obj;
-                if (pb1Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) pb1Var.getParent()).removeView(pb1Var);
-                    break;
-                }
-                break;
-            case 1:
-                q qVar = (q) ((gi3) obj).a;
-                qVar.s0 = true;
-                StringBuilder sb = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
-                cameraFlipElapsedMs = qVar.getCameraFlipElapsedMs();
-                sb.append(cameraFlipElapsedMs);
-                fa4.b(sb.toString());
-                qVar.n(true);
-                qVar.q();
-                break;
-            case 2:
-                ((km9) obj).a.C(false);
-                break;
-            case 3:
-                nm9 nm9Var = ((mm9) obj).a;
-                if (!nm9Var.w && nm9Var.V != null) {
-                    fa4.b("[LivePlayer] stream asks to rejoin");
-                    nm9Var.X = true;
-                    nm9Var.n();
-                    break;
-                }
-                break;
-            case 4:
-                um9 um9Var = ((sm9) obj).a;
-                if (!um9Var.w && um9Var.O != null) {
-                    fa4.b("[LivePlayer] stream asks to rejoin");
-                    um9Var.K();
-                    break;
-                }
-                break;
-            case 5:
-                v76 v76Var = ((tm9) obj).a.Y;
-                if (v76Var != null) {
-                    v76Var.run();
-                    break;
-                }
-                break;
-            case 6:
-                sn9 sn9Var = ((pn9) obj).h;
-                xa8 xa8Var = sn9Var.a;
-                if (xa8Var != null) {
-                    xa8Var.d();
-                }
-                rn9 rn9Var = sn9Var.f;
-                if (rn9Var != null) {
-                    rn9Var.a();
-                    break;
-                }
-                break;
-            case 7:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
-                saveToGallerySettingsActivity.w.clear();
-                saveToGallerySettingsActivity.getUserConfig().z(saveToGallerySettingsActivity.a, saveToGallerySettingsActivity.w);
-                saveToGallerySettingsActivity.d0();
-                break;
-            case 8:
-                ((ScreenCapturerAndroid) obj).lambda$stopCapture$0();
-                break;
-            case 9:
-                wb5 wb5Var = (wb5) obj;
-                wb5Var.dismiss();
-                d01.t(wb5Var.getContext(), k96.M0(2131746425, null));
-                break;
-            case 10:
-                hs9 hs9Var = (hs9) obj;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                int i = hs9Var.d;
-                ba4.G(i).y(arrayList);
-                ba4.G(i).P(arrayList2);
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    ba4.G(i);
-                    if (ba4.M(((k27) arrayList.get(i2)).k, false, true).exists()) {
-                        arrayList3.add((k27) arrayList.get(i2));
-                    }
-                }
-                for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                    ba4.G(i);
-                    if (!ba4.M(((k27) arrayList2.get(i3)).k, false, true).exists()) {
-                        arrayList4.add((k27) arrayList2.get(i3));
-                    }
-                }
-                gl.c3(new gm8(hs9Var, arrayList3, arrayList4, (byte) 24));
-                break;
-            case 11:
-                ((ks9) obj).invalidateSelf();
-                break;
-            case 12:
-                ((vs9) obj).f.setVisibility(8);
-                break;
-            case 13:
-                ((hi3) obj).r();
-                break;
-            case 14:
-                bu9 bu9Var = (bu9) obj;
-                ArrayList arrayList5 = bu9Var.f;
-                if (!arrayList5.isEmpty()) {
-                    bu9Var.getMessagesController().Q3(arrayList5, null, null, false, 0);
-                    arrayList5.clear();
-                    break;
-                }
-                break;
-            case 15:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((eh8) obj).c;
-                Runnable runnable = secretMediaViewer.n0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.n0 = null;
-                    break;
-                }
-                break;
-            case 16:
-                qu9 qu9Var = (qu9) ((u39) obj).b;
-                qu9Var.R = true;
-                qu9Var.O.invalidate();
-                break;
-            case 17:
-                ((tu9) obj).k();
-                break;
-            case 18:
-                gb2 gb2Var = ((dv9) obj).n;
-                if (gb2Var != null) {
-                    gb2Var.invalidate();
-                    break;
-                }
-                break;
-            case 19:
-                iv9 iv9Var = (iv9) obj;
-                iv9Var.q = false;
-                iv9Var.b.run();
-                break;
-            case 20:
-                gl.P3(((lw9) obj).c, true, true);
-                break;
-            case 21:
-                l5c l5cVar = ((iy9) obj).d2;
-                if (l5cVar != null) {
-                    l5cVar.O(true);
-                    break;
-                }
-                break;
-            case 22:
-                ((by9) obj).a();
-                break;
-            case 23:
-                ((bz9) obj).f();
-                break;
-            case 24:
-                new jh8(((c0a) obj).d.L.f, 14, false).show();
-                break;
-            case 25:
-                gl.E3(((o0a) obj).m1);
-                break;
-            case 26:
-                ((g0b) obj).a(null);
-                break;
-            case 27:
-                gl.c3((c2a) obj);
-                break;
-            case 28:
-                z3a z3aVar = (z3a) obj;
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.T1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.V1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.U1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.Z1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.a2);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.b2);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.R1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.Q1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.X1);
-                z3aVar.getNotificationCenter().a(z3aVar, kk7.Y1);
-                break;
-            default:
-                ep epVar = (ep) obj;
-                v3a v3aVar = (v3a) epVar.a;
-                Location location = (Location) epVar.f;
-                if (location != null) {
-                    v3aVar.X(location);
-                } else {
-                    v3aVar.S();
-                }
-                epVar.c();
-                break;
+    @Override // dk9
+    public final int H() {
+        Rect rect = this.b;
+        int h0 = h0() + this.X.b.getHeight() + rect.top;
+        gl9 gl9Var = this.Y;
+        return h0 + (gl9Var != null ? gl9Var.b.getHeight() : 0) + rect.bottom;
+    }
+
+    @Override // dk9
+    public final int I() {
+        gl9 gl9Var = this.Y;
+        if (gl9Var == null) {
+            gl9Var = this.X;
         }
+        Rect rect = this.b;
+        return gl9Var.q() + rect.left + rect.right;
+    }
+
+    @Override // dk9
+    public final int J() {
+        Rect rect = this.b;
+        int i = rect.left;
+        int r = this.X.r();
+        gl9 gl9Var = this.Y;
+        return Math.max(r, gl9Var != null ? gl9Var.r() : 0) + i + rect.right;
+    }
+
+    @Override // dk9
+    public final kmb[] K() {
+        return this.Z;
+    }
+
+    @Override // dk9
+    public final void S() {
+        this.X.i(this.W);
+        gl9 gl9Var = this.Y;
+        if (gl9Var != null) {
+            gl9Var.i(this.W);
+        }
+    }
+
+    @Override // dk9
+    public final void U() {
+        this.X.f(this.W);
+        gl9 gl9Var = this.Y;
+        if (gl9Var != null) {
+            gl9Var.f(this.W);
+        }
+    }
+
+    @Override // dk9
+    public final void V(Canvas canvas) {
+        canvas.save();
+        gl9 gl9Var = this.X;
+        canvas.translate(i0(gl9Var), 0.0f);
+        gl9Var.d(canvas, gl9Var.T);
+        canvas.restore();
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            canvas.save();
+            canvas.translate(i0(gl9Var2), h0() + gl9Var.b.getHeight());
+            gl9Var2.d(canvas, gl9Var2.T);
+            canvas.restore();
+        }
+    }
+
+    @Override // dk9
+    public final boolean X(MotionEvent motionEvent) {
+        int i;
+        gl9 gl9Var = this.X;
+        int height = gl9Var.b.getHeight();
+        float y = motionEvent.getY();
+        int i2 = 0;
+        if (y < 0.0f || y >= height) {
+            gl9Var = this.Y;
+            if (gl9Var == null || y < h0() + height) {
+                return false;
+            }
+            int i0 = i0(gl9Var);
+            i2 = h0() + height;
+            i = i0;
+        } else {
+            i = i0(gl9Var);
+        }
+        motionEvent.offsetLocation(-i, -i2);
+        boolean t = gl9Var.t(motionEvent);
+        motionEvent.offsetLocation(i, i2);
+        return t;
+    }
+
+    @Override // dk9
+    public final void Y(int i, int i2, int i3) {
+        gl9 gl9Var = this.X;
+        gl9Var.c = (i0(gl9Var) + i) - gl9Var.f;
+        gl9Var.d = i2;
+        gl9Var.e = i3;
+        gl9 gl9Var2 = this.Y;
+        if (gl9Var2 != null) {
+            gl9Var2.c = (i0(gl9Var2) + i) - gl9Var2.f;
+            gl9Var2.d = h0() + gl9Var.b.getHeight() + i2;
+            gl9Var2.e = i3;
+        }
+    }
+
+    @Override // dk9, si7
+    public final Layout a() {
+        return this.X.b;
+    }
+
+    public final int h0() {
+        if (this.Y != null) {
+            return hl.L(2.0f);
+        }
+        return 0;
+    }
+
+    public final int i0(gl9 gl9Var) {
+        int L;
+        int r;
+        Rect rect = this.b;
+        boolean z = this.a0;
+        hl9 hl9Var = this.a;
+        if (z) {
+            L = (((hl9Var.C + hl9Var.T) - hl9Var.S) - gl9Var.r()) / 2;
+            r = rect.left;
+        } else {
+            if (!hl9Var.H()) {
+                return 0;
+            }
+            L = (((hl9Var.C + hl9Var.T) - hl.L(14.0f)) - rect.right) - rect.left;
+            r = gl9Var.r();
+        }
+        return L - r;
+    }
+
+    @Override // dk9
+    public final void j(SpannableStringBuilder spannableStringBuilder) {
+        dk9.k(spannableStringBuilder, null, this.Z);
+    }
+
+    @Override // dk9
+    public final boolean t(CharacterStyle characterStyle, int i, vj9 vj9Var) {
+        boolean o = this.X.o(characterStyle, vj9Var);
+        Rect rect = this.b;
+        if (o) {
+            vj9Var.e = (i0(r0) + rect.left) - r0.f;
+            vj9Var.f = i + rect.top;
+            return true;
+        }
+        gl9 gl9Var = this.Y;
+        if (gl9Var == null || !gl9Var.o(characterStyle, vj9Var)) {
+            return false;
+        }
+        vj9Var.e = (i0(gl9Var) + rect.left) - gl9Var.f;
+        vj9Var.f = h0() + r0.b.getHeight() + i + rect.top;
+        return true;
+    }
+
+    @Override // dk9
+    public final boolean u() {
+        return this.a0;
     }
 }

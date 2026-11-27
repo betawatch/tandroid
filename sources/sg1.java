@@ -1,30 +1,53 @@
 // default package
 
-import org.telegram.messenger.beta.R;
+import j$.util.Objects;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class sg1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ nh1 b;
+public final class sg1 extends ka {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    public /* synthetic */ sg1(nh1 nh1Var, byte b) {
-        this.a = b;
-        this.b = nh1Var;
+    public sg1(TL_stories.Boost boost, boolean z, int i) {
+        super(5, true);
+        this.d = boost;
+        this.f = z;
+        this.g = i;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        nh1 nh1Var = this.b;
-        switch (b) {
-            case 0:
-                nh1Var.X0();
-                break;
-            default:
-                nh1Var.getClass();
-                ir2.v(null, 2131752248, u21.b0(nh1Var), R.raw.done, 36);
-                break;
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z = this.f;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || sg1.class != obj.getClass()) {
+            return false;
+        }
+        sg1 sg1Var = (sg1) obj;
+        TL_stories.Boost boost = sg1Var.d;
+        boolean z2 = sg1Var.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = sg1Var.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z == z2;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z == z2 && this.g == sg1Var.g;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public sg1(int i, String str) {
+        super(i, false);
+        this.c = str;
     }
 }

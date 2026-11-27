@@ -1,21 +1,20 @@
 // default package
 
 import android.os.Bundle;
-import org.json.JSONObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class b13 extends k03 {
-    public b13(String str, Bundle bundle) {
-        super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", bundle);
-        if (str.length() != 0) {
-            try {
-                new JSONObject(str);
-                return;
-            } catch (Exception unused) {
-            }
-        }
-        w26.j("registrationResponseJson must not be empty, and must be a valid JSON");
-        throw null;
+public abstract class b13 {
+    public final Bundle a;
+    public final Bundle b;
+    public final j5 c;
+
+    public b13(Bundle bundle, Bundle bundle2, j5 j5Var) {
+        this.a = bundle;
+        this.b = bundle2;
+        this.c = j5Var;
+        bundle.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", false);
+        bundle.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", false);
+        bundle2.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", false);
     }
 }

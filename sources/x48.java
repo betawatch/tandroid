@@ -1,56 +1,40 @@
 // default package
 
-import android.animation.AnimatorSet;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class x48 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public z48 c;
-    public AnimatorSet d;
-    public bg7 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class x48 implements View.OnLongClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ o68 b;
 
-    public final void a(String str, int i, float f) {
-        TextView textView = this.a;
-        TextView textView2 = this.b;
-        AnimatorSet animatorSet = this.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.d = null;
+    public /* synthetic */ x48(o68 o68Var, byte b) {
+        this.a = b;
+        this.b = o68Var;
+    }
+
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        byte b = this.a;
+        o68 o68Var = this.b;
+        switch (b) {
+            case 0:
+                if (!o68Var.v0(true)) {
+                    fu5 G = fu5.G(o68Var.t0.w, o68Var.l0, view);
+                    G.b(R.drawable.msg_edit, ob6.M0(2131748564, null), new u48(o68Var, (byte) 6), false);
+                    G.k(R.drawable.menu_delete_paid, ob6.M0(2131748563, null), new u48(o68Var, (byte) 7), o68Var.u3 > 0);
+                    G.W(5);
+                    G.a0 = true;
+                    G.a0();
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                o68Var.v0.j(o68Var.v0(false));
+                break;
         }
-        gl.r(this.e);
-        textView2.setTag(null);
-        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
-        if (f > 0.0f) {
-            textView2.setText("+" + ((int) f));
-        } else {
-            textView2.setText(String.valueOf((int) f));
-        }
-        textView2.setAlpha(0.0f);
-        textView.setAlpha(1.0f);
-        z48 z48Var = this.c;
-        z48Var.h = i;
-        z48Var.n = (byte) 100;
-        z48Var.a((int) f, false);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(40.0f), TLObject.FLAG_30));
-    }
-
-    public void setSeekBarDelegate(y48 y48Var) {
-        this.c.setDelegate(new dx6((Object) this, (Object) y48Var, (byte) 15));
-    }
-
-    @Override // android.view.View
-    public void setTag(Object obj) {
-        super.setTag(obj);
-        this.c.setTag(obj);
+        return true;
     }
 }

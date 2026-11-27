@@ -1,9 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface dd3 {
-    no3 a(long j, nob nobVar, sw2 sw2Var);
+public final class dd3 extends jd3 implements Comparable {
+    public final int e;
+    public final int f;
 
-    void b(long j, na1 na1Var);
+    public dd3(int i, t1c t1cVar, int i2, gd3 gd3Var, int i3) {
+        super(i, t1cVar, i2);
+        int i4;
+        this.e = qu6.c(i3, gd3Var.B0) ? 1 : 0;
+        ko4 ko4Var = this.d;
+        int i5 = ko4Var.A;
+        int i6 = -1;
+        if (i5 != -1 && (i4 = ko4Var.B) != -1) {
+            i6 = i5 * i4;
+        }
+        this.f = i6;
+    }
+
+    @Override // jd3
+    public final int a() {
+        return this.e;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Integer.compare(this.f, ((dd3) obj).f);
+    }
 }

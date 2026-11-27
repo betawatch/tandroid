@@ -1,114 +1,119 @@
 // default package
 
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ko2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final class ko2 extends LinearLayout implements snb {
+    public final vnb a;
+    public final n57 b;
+    public final FrameLayout c;
+    public final ImageView d;
+    public final TextView e;
+    public final TextView f;
+    public final boolean h;
+    public boolean n;
 
-    public /* synthetic */ ko2(gk7 gk7Var, boolean z, long j, byte b) {
-        this.a = b;
-        this.d = gk7Var;
-        this.b = z;
-        this.c = j;
+    public ko2(vnb vnbVar, Context context, boolean z) {
+        super(context);
+        this.a = vnbVar;
+        this.h = z;
+        setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        n57 n57Var = new n57((byte) 1);
+        this.b = n57Var;
+        frameLayout.setBackground(n57Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, tre.e(24, 24, 17));
+        LinearLayout j = uh9.j(context, 1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView m = ik8.m(j, textView, tre.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = m;
+        m.setGravity(17);
+        m.setMinWidth(hl.L(20.66f));
+        m.setPadding(hl.L(6.33f), 0, hl.L(6.33f), 0);
+        m.setTextSize(1, 16.0f);
+        if (ob6.a0) {
+            addView(m, tre.j(13.33f, 0.0f));
+            addView(j, tre.q(0, -2, 1.0f, 23, 20, 0, z ? 12 : 16, 0));
+            addView(frameLayout, tre.t(28, 28, 21, 0, 0, z ? 9 : 14, 0));
+        } else {
+            addView(frameLayout, tre.t(28, 28, 19, z ? 9 : 14, 0, 0, 0));
+            addView(j, tre.q(0, -2, 1.0f, 23, z ? 12 : 16, 0, 20, 0));
+            addView(m, tre.j(0.0f, 13.33f));
+        }
+        updateColors();
+        setUnreadMode(true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 2;
-        byte b3 = 0;
-        boolean z = this.b;
-        long j = this.c;
-        Object obj = this.d;
-        switch (b) {
-            case 0:
-                mo2 mo2Var = (mo2) obj;
-                mo2Var.i = null;
-                mo2Var.g.l(j);
-                for (int size = mo2Var.j.size() - 1; size >= 0; size--) {
-                    if (cf3.n(((TL_communities.CommunityPeerRequest) mo2Var.j.get(size)).peer) == j) {
-                        mo2Var.j.remove(size);
-                    }
-                }
-                mo2Var.a();
-                lo2 lo2Var = mo2Var.h;
-                if (lo2Var != null) {
-                    lo2Var.U0();
-                }
-                na7 q1 = na7.q1(mo2Var.d);
-                long j2 = mo2Var.e;
-                jo2 jo2Var = new jo2(mo2Var, b2);
-                TL_communities.TL_communities_togglePeerLinkRequestApproval tL_communities_togglePeerLinkRequestApproval = new TL_communities.TL_communities_togglePeerLinkRequestApproval();
-                tL_communities_togglePeerLinkRequestApproval.community = q1.f1(j2);
-                tL_communities_togglePeerLinkRequestApproval.peer = q1.h1(j);
-                tL_communities_togglePeerLinkRequestApproval.reject = !z;
-                q1.getConnectionsManager().sendRequestTyped(tL_communities_togglePeerLinkRequestApproval, new hc(b3), new et4((Object) q1, j2, (Object) jo2Var, (byte) 3));
-                break;
-            case 1:
-                HashSet hashSet = ((im7) obj).y;
-                if (z) {
-                    hashSet.add(Long.valueOf(j));
-                    break;
-                } else {
-                    hashSet.remove(Long.valueOf(j));
-                    break;
-                }
-            case 2:
-                bwa bwaVar = (bwa) obj;
-                bwaVar.z1 = j;
-                bwaVar.y1 = j;
-                if (z) {
-                    i76 i76Var = bwaVar.A1;
-                    i76Var.c = j;
-                    bwaVar.B1.set(i76Var);
-                }
-                bwaVar.H0();
-                bwaVar.D1.a(true, true);
-                awa awaVar = bwaVar.x1;
-                if (awaVar != null) {
-                    awaVar.setMyPrivacy(bwaVar.y1);
-                    break;
-                }
-                break;
-            case 3:
-                t5b t5bVar = (t5b) obj;
-                y5b y5bVar = t5bVar.a0;
-                if (z) {
-                    int i = y5b.X1;
-                    na7.q1(y5bVar.a).W2(Long.valueOf(j), new hy3(t5bVar, j, b2), kk7.d3);
-                    break;
-                } else {
-                    int i2 = y5b.X1;
-                    na7.q1(y5bVar.a).Y2(0, j, true);
-                    break;
-                }
-            default:
-                pub pubVar = (pub) obj;
-                pubVar.getUserConfig().j().edit().remove("topics_end_reached_" + j).apply();
-                pubVar.a.l(j);
-                pubVar.b.l(j);
-                pubVar.d.delete(j);
-                pubVar.s.l(j);
-                TLRPC.Chat K0 = pubVar.getMessagesController().K0(Long.valueOf(j));
-                if (K0 != null && (K0.forum || K0.monoforum)) {
-                    pubVar.n(0, j, z);
-                }
-                pubVar.y(j, true);
-                break;
+    public final void a(int i, int i2, int i3, CharSequence charSequence, CharSequence charSequence2, boolean z) {
+        this.c.setVisibility(i3 != 0 ? 0 : 8);
+        this.e.setTranslationX(i3 == 0 ? hl.L(2.0f) : 0.0f);
+        this.b.b(i, i2);
+        this.d.setImageResource(i3);
+        setTitle(charSequence);
+        setValue(charSequence2);
+        setUnreadMode(z);
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.G6));
+        hashSet.add(Integer.valueOf(aob.U8));
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(this.h ? 44.0f : 50.0f), TLObject.FLAG_30));
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.e.setText(charSequence);
+    }
+
+    public void setUnreadMode(boolean z) {
+        if (this.n != z) {
+            this.n = z;
+            float f = z ? 13.0f : 16.0f;
+            TextView textView = this.f;
+            textView.setTextSize(1, f);
+            textView.setTypeface(z ? hl.o() : null);
+            int i = z ? aob.W8 : aob.n6;
+            vnb vnbVar = this.a;
+            yob.X(textView, i, vnbVar);
+            textView.setBackground(z ? aob.b0(hl.L(10.33f), aob.v0(aob.U8, vnbVar)) : null);
         }
     }
 
-    public /* synthetic */ ko2(Object obj, long j, boolean z, byte b) {
-        this.a = b;
-        this.d = obj;
-        this.c = j;
-        this.b = z;
+    public void setValue(CharSequence charSequence) {
+        int i = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.f;
+        textView.setVisibility(i);
+        textView.setText(charSequence);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        int i = aob.G6;
+        vnb vnbVar = this.a;
+        this.e.setTextColor(aob.v0(i, vnbVar));
+        int v0 = aob.v0(this.n ? aob.W8 : aob.n6, vnbVar);
+        TextView textView = this.f;
+        textView.setTextColor(v0);
+        textView.setBackground(this.n ? aob.b0(hl.L(10.33f), aob.v0(aob.U8, vnbVar)) : null);
+        this.b.b = vnbVar != null ? vnbVar.a() : aob.I.o();
     }
 }

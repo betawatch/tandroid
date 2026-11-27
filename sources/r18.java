@@ -1,386 +1,379 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.graphics.BlendMode;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.Build;
+import android.text.TextUtils;
+import java.io.File;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.q;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class r18 implements hy1 {
-    public final /* synthetic */ y28 a;
+public final class r18 extends de0 implements jq3 {
+    public RectF H;
+    public RadialProgress2 I;
+    public TLRPC.TL_wallPaper J;
+    public int K;
+    public LinearGradient L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public int Q;
+    public Paint R;
+    public hh7 S;
+    public int T;
+    public mqb U;
+    public int V;
 
-    public r18(y28 y28Var) {
-        this.a = y28Var;
-    }
-
-    @Override // hy1
-    public final void C0(CharSequence charSequence, boolean z, boolean z2) {
-        y28 y28Var = this.a;
-        if (y28Var.T2 == null) {
-            s18 s18Var = new s18(y28Var, y28Var.getContext(), y28Var.r1, y28Var.z0.f, y28Var.r0);
-            y28Var.T2 = s18Var;
-            s18Var.p(new t18(y28Var));
-            y28Var.addView(y28Var.T2, nme.e(-1, -1, 83));
-        }
-        if (y28Var.T2.getAdapter() != null) {
-            y28Var.T2.setDialogId(y28Var.r1);
-            boolean z3 = y28Var.E1.f;
-            s18 s18Var2 = y28Var.T2;
-            if (z3) {
-                kz6 adapter = s18Var2.getAdapter();
-                if (adapter.k0 == 0 && adapter.v0 == 0 && adapter.u0 == 0 && adapter.F0 == 0) {
-                    adapter.x0 = null;
-                    adapter.G = null;
-                    ArrayList arrayList = adapter.B0;
-                    if (arrayList != null) {
-                        arrayList.clear();
-                    }
-                    ArrayList arrayList2 = adapter.S;
-                    if (arrayList2 != null) {
-                        arrayList2.clear();
-                    }
-                    adapter.U = null;
-                    adapter.V = null;
-                    ArrayList arrayList3 = adapter.y;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    ArrayList arrayList4 = adapter.J;
-                    if (arrayList4 != null) {
-                        arrayList4.clear();
-                    }
-                    ArrayList arrayList5 = adapter.K;
-                    if (arrayList5 != null) {
-                        arrayList5.clear();
-                    }
-                    ArrayList arrayList6 = adapter.N;
-                    if (arrayList6 != null) {
-                        arrayList6.clear();
-                    }
-                    ArrayList arrayList7 = adapter.O;
-                    if (arrayList7 != null) {
-                        arrayList7.clear();
-                    }
-                    adapter.f();
-                }
-            } else {
-                kz6 adapter2 = s18Var2.getAdapter();
-                na7.q1(y28Var.s2).V1(Long.valueOf(y28Var.r1));
-                TLRPC.Chat K0 = na7.q1(y28Var.s2).K0(Long.valueOf(-y28Var.r1));
-                adapter2.getClass();
-                adapter2.m0 = K0;
-                y28Var.T2.getAdapter().U(charSequence, y28Var.R1.getCursorPosition(), null, false, false);
-            }
-        }
-        y28Var.invalidate();
-    }
-
-    @Override // hy1
-    public final bu1 D() {
-        return null;
-    }
-
-    @Override // hy1
-    public final void G0() {
-        q qVar = this.a.z2;
-        if (qVar != null) {
-            qVar.y();
-        }
-    }
-
-    @Override // hy1
-    public final boolean H0() {
-        TLRPC.User V1;
-        y28 y28Var = this.a;
-        return (y28Var.r1 < 0 || (V1 = na7.q1(y28Var.s2).V1(Long.valueOf(y28Var.r1))) == null || l7c.D(V1) || V1.bot) ? false : true;
-    }
-
-    @Override // hy1
-    public final void I0() {
-        this.a.H0();
-    }
-
-    @Override // hy1
-    public final void L0() {
-        this.a.requestLayout();
-    }
-
-    @Override // hy1
-    public final boolean M() {
-        return true;
-    }
-
-    @Override // hy1
-    public final boolean Q0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // hy1
-    public final void g1() {
-        String str;
-        y28 y28Var = this.a;
-        if (y28Var.u1) {
-            y28Var.Y0();
+    @Override // jq3
+    public final void B(boolean z) {
+        TLRPC.TL_wallPaper tL_wallPaper = this.U.a.d.Y0;
+        TLRPC.TL_wallPaper tL_wallPaper2 = this.J;
+        if (!(tL_wallPaper2 == null && tL_wallPaper == null) && (tL_wallPaper == null || tL_wallPaper2 == null || tL_wallPaper2.id != tL_wallPaper.id)) {
             return;
         }
-        if (y28Var.M2 == null) {
-            ke5 ke5Var = new ke5(9, y28Var.r0, y28Var.getContext(), false);
-            y28Var.M2 = ke5Var;
-            ke5Var.setVisibility(8);
-            y28Var.addView(y28Var.M2, nme.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
-        }
-        long j = y28Var.r1;
-        int i = y28Var.s2;
-        if (j >= 0) {
-            str = l7c.k(na7.q1(i).V1(Long.valueOf(y28Var.r1)), true);
+        if (z) {
+            this.I.setIcon(4, false, true);
         } else {
-            TLRPC.Chat K0 = na7.q1(i).K0(Long.valueOf(-y28Var.r1));
-            str = K0 != null ? K0.title : "";
+            u(tL_wallPaper2, true, z);
         }
-        y28Var.M2.setText(gl.S2(k96.a0(null, null, y28Var.R1.d1 ? 2131743355 : 2131743278, str)));
-        y28Var.M2.c(y28Var.R1.getAudioVideoButtonContainer());
     }
 
-    @Override // hy1
-    public final int h() {
-        return 0;
+    @Override // jq3
+    public final void N(String str) {
+        this.I.o(true, 1.0f);
+        TLRPC.TL_wallPaper tL_wallPaper = this.U.a.d.Y0;
+        TLRPC.TL_wallPaper tL_wallPaper2 = this.J;
+        if (!(tL_wallPaper2 == null && tL_wallPaper == null) && (tL_wallPaper == null || tL_wallPaper2 == null || tL_wallPaper2.id != tL_wallPaper.id)) {
+            return;
+        }
+        u(tL_wallPaper2, false, true);
     }
 
-    @Override // hy1
-    public final TLRPC.Peer i() {
-        t76 t76Var;
-        m8b m8bVar = this.a.z0;
-        if (m8bVar == null || (t76Var = m8bVar.B0) == null) {
-            return null;
-        }
-        if (t76Var.s == null ? false : !r0.messages_enabled) {
-            return null;
-        }
-        return t76Var.l();
+    @Override // jq3
+    public int getObserverTag() {
+        return this.T;
     }
 
-    @Override // hy1
-    public final void k1(int i, int i2, int i3, long j, long j2, boolean z) {
-        y28 y28Var = this.a;
-        boolean z2 = false;
-        if (y28Var.z2 == null && CameraView.isCameraAllowed()) {
-            y28Var.z2 = new q(y28Var.getContext(), new z18(y28Var), y28Var.r0, false);
-            y28Var.addView(y28Var.z2, Math.min(y28Var.indexOfChild(y28Var.R1.getRecordCircle()), y28Var.indexOfChild(y28Var.R1.E2)), nme.e(-1, -1, 51));
+    @Override // jq3
+    public final void i(long j, long j2) {
+        RadialProgress2 radialProgress2 = this.I;
+        radialProgress2.o(true, Math.min(1.0f, j / j2));
+        TLRPC.TL_wallPaper tL_wallPaper = this.U.a.d.Y0;
+        TLRPC.TL_wallPaper tL_wallPaper2 = this.J;
+        if ((!(tL_wallPaper2 == null && tL_wallPaper == null) && (tL_wallPaper == null || tL_wallPaper2 == null || tL_wallPaper2.id != tL_wallPaper.id)) || radialProgress2.i.q == 10) {
+            return;
         }
-        q qVar = y28Var.z2;
-        if (qVar != null) {
+        u(tL_wallPaper2, false, true);
+    }
+
+    @Override // de0, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        v(false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x016d  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x003b  */
+    @Override // de0, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        int i;
+        int i2;
+        pqb pqbVar;
+        int i3;
+        int i4;
+        pqb pqbVar2;
+        int i5;
+        int i6;
+        pqb pqbVar3;
+        int i7;
+        int i8;
+        hh7 hh7Var;
+        BlendMode blendMode;
+        RadialProgress2 radialProgress2 = this.I;
+        RectF rectF = this.H;
+        Paint paint = this.R;
+        mqb mqbVar = this.U;
+        float f = mqbVar.a.d.n1;
+        this.a.P(null);
+        pqb pqbVar4 = mqbVar.a.d;
+        if (pqbVar4.b == 2) {
+            i = pqbVar4.b1;
+        } else {
+            int C0 = aob.C0(aob.Ee);
+            i = (int) pqbVar4.w.j;
             if (i == 0) {
-                qVar.v();
-                return;
-            }
-            if (i == 1 || i == 3 || i == 4) {
-                qVar.u(i, i2, i3, j, j2, z);
-                return;
-            }
-            if (i == 2) {
-                z2 = true;
-            } else if (i != 5) {
-                return;
-            }
-            qVar.f(z2);
-        }
-    }
-
-    @Override // hy1
-    public final int o0() {
-        return this.a.getHeight();
-    }
-
-    @Override // hy1
-    public final void s1() {
-        this.a.J0();
-    }
-
-    @Override // hy1
-    public final TL_stories.StoryItem t0() {
-        return this.a.E1.a;
-    }
-
-    @Override // hy1
-    public final void u(CharSequence charSequence, boolean z, int i, int i2, long j) {
-        y28 y28Var = this.a;
-        if (y28Var.w2) {
-            gl.d3(new et(this, j, (byte) 23), 200L);
-        } else {
-            y28Var.a0(j <= 0);
-        }
-    }
-
-    @Override // hy1
-    public final boolean u0(long j) {
-        y28 y28Var = this.a;
-        x28 x28Var = y28Var.E1;
-        TL_stories.StoryItem storyItem = x28Var.a;
-        if (storyItem != null && (storyItem.media instanceof TLRPC.TL_messageMediaVideoStream)) {
-            TL_phone.saveDefaultSendAs savedefaultsendas = new TL_phone.saveDefaultSendAs();
-            savedefaultsendas.call = ((TLRPC.TL_messageMediaVideoStream) x28Var.a.media).call;
-            savedefaultsendas.send_as = na7.q1(y28Var.s2).h1(j);
-            ConnectionsManager.getInstance(y28Var.s2).sendRequest(savedefaultsendas, null);
-            t76 t76Var = y28Var.z0.B0;
-            if (t76Var != null) {
-                TLRPC.Peer w1 = na7.q1(y28Var.s2).w1(j);
-                TLRPC.GroupCall groupCall = t76Var.s;
-                if (groupCall != null) {
-                    groupCall.flags = TLObject.setFlag(groupCall.flags, TLObject.FLAG_21, true);
-                    t76Var.s.default_send_as = w1;
+                i2 = C0;
+                pqbVar = mqbVar.a.d;
+                if (pqbVar.b != 2) {
+                    i3 = pqbVar.d1;
+                } else {
+                    int C02 = aob.C0(aob.Fe);
+                    i3 = (int) pqbVar.w.k;
+                    if (i3 == 0) {
+                        i4 = C02;
+                        pqbVar2 = mqbVar.a.d;
+                        if (pqbVar2.b == 2) {
+                            i5 = pqbVar2.e1;
+                        } else {
+                            int C03 = aob.C0(aob.Ge);
+                            i5 = (int) pqbVar2.w.l;
+                            if (i5 == 0) {
+                                i6 = C03;
+                                pqbVar3 = mqbVar.a.d;
+                                if (pqbVar3.b != 2) {
+                                    i7 = pqbVar3.f1;
+                                } else {
+                                    int C04 = aob.C0(aob.He);
+                                    i7 = (int) pqbVar3.w.m;
+                                    if (i7 == 0) {
+                                        i7 = C04;
+                                    }
+                                }
+                                pqb pqbVar5 = mqbVar.a.d;
+                                int i9 = pqbVar5.b != 2 ? pqbVar5.j1 : pqbVar5.w.n;
+                                int i10 = pqbVar5.m1;
+                                if (i4 != 0) {
+                                    i8 = i2;
+                                    this.L = null;
+                                    this.S = null;
+                                    this.a.W(null);
+                                } else if (this.L != null && i2 == this.M && i4 == this.N && i6 == this.O && i7 == this.P && i9 == this.Q) {
+                                    i8 = i2;
+                                } else {
+                                    this.M = i2;
+                                    this.N = i4;
+                                    this.O = i6;
+                                    this.P = i7;
+                                    this.Q = i9;
+                                    if (i6 != 0) {
+                                        this.L = null;
+                                        hh7 hh7Var2 = this.S;
+                                        if (hh7Var2 != null) {
+                                            i8 = i2;
+                                            hh7Var2.n(false, i8, i4, i6, i7);
+                                        } else {
+                                            hh7 hh7Var3 = new hh7(i2, i4, i6, i7, true, false);
+                                            i8 = i2;
+                                            this.S = hh7Var3;
+                                            hh7Var3.u(hl.L(6.0f));
+                                            this.S.p(this);
+                                        }
+                                        ImageReceiver imageReceiver = this.a;
+                                        if (f < 0.0f) {
+                                            imageReceiver.W(this.S.k);
+                                        } else {
+                                            imageReceiver.W(null);
+                                            int i11 = Build.VERSION.SDK_INT;
+                                            ImageReceiver imageReceiver2 = this.a;
+                                            if (i11 >= 29) {
+                                                blendMode = BlendMode.SOFT_LIGHT;
+                                                imageReceiver2.P(blendMode);
+                                            } else {
+                                                imageReceiver2.p1 = new PorterDuffColorFilter(mqbVar.a.d.l1, PorterDuff.Mode.SRC_IN);
+                                            }
+                                        }
+                                    } else {
+                                        i8 = i2;
+                                        Rect d = yd0.d(yd0.c(i9), getMeasuredWidth(), getMeasuredHeight());
+                                        this.L = new LinearGradient(d.left, d.top, d.right, d.bottom, new int[]{i8, i4}, (float[]) null, Shader.TileMode.CLAMP);
+                                        this.S = null;
+                                        this.a.W(null);
+                                    }
+                                }
+                                hh7Var = this.S;
+                                if (hh7Var == null) {
+                                    hh7Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                                    this.S.draw(canvas);
+                                } else {
+                                    paint.setShader(this.L);
+                                    if (this.L == null) {
+                                        paint.setColor(i8);
+                                    }
+                                    rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                                    canvas.drawRoundRect(rectF, hl.L(6.0f), hl.L(6.0f), paint);
+                                }
+                                super.onDraw(canvas);
+                                if (radialProgress2.i.q == 4) {
+                                    radialProgress2.setColors(i10, i10, -1, -1);
+                                    radialProgress2.draw(canvas);
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                        i6 = i5;
+                        pqbVar3 = mqbVar.a.d;
+                        if (pqbVar3.b != 2) {
+                        }
+                        pqb pqbVar52 = mqbVar.a.d;
+                        if (pqbVar52.b != 2) {
+                        }
+                        int i102 = pqbVar52.m1;
+                        if (i4 != 0) {
+                        }
+                        hh7Var = this.S;
+                        if (hh7Var == null) {
+                        }
+                        super.onDraw(canvas);
+                        if (radialProgress2.i.q == 4) {
+                        }
+                    }
+                }
+                i4 = i3;
+                pqbVar2 = mqbVar.a.d;
+                if (pqbVar2.b == 2) {
+                }
+                i6 = i5;
+                pqbVar3 = mqbVar.a.d;
+                if (pqbVar3.b != 2) {
+                }
+                pqb pqbVar522 = mqbVar.a.d;
+                if (pqbVar522.b != 2) {
+                }
+                int i1022 = pqbVar522.m1;
+                if (i4 != 0) {
+                }
+                hh7Var = this.S;
+                if (hh7Var == null) {
+                }
+                super.onDraw(canvas);
+                if (radialProgress2.i.q == 4) {
                 }
             }
-            y28Var.h0(true);
-            y28Var.R1.v2(true);
-            y28Var.R1.N(true);
-            y28Var.c1(false);
         }
-        return true;
+        i2 = i;
+        pqbVar = mqbVar.a.d;
+        if (pqbVar.b != 2) {
+        }
+        i4 = i3;
+        pqbVar2 = mqbVar.a.d;
+        if (pqbVar2.b == 2) {
+        }
+        i6 = i5;
+        pqbVar3 = mqbVar.a.d;
+        if (pqbVar3.b != 2) {
+        }
+        pqb pqbVar5222 = mqbVar.a.d;
+        if (pqbVar5222.b != 2) {
+        }
+        int i10222 = pqbVar5222.m1;
+        if (i4 != 0) {
+        }
+        hh7Var = this.S;
+        if (hh7Var == null) {
+        }
+        super.onDraw(canvas);
+        if (radialProgress2.i.q == 4) {
+        }
     }
 
-    @Override // hy1
-    public final TLRPC.TL_channels_sendAsPeers v() {
-        t76 t76Var;
-        y28 y28Var = this.a;
-        if (!y28Var.E1.f) {
-            return null;
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(hl.L(100.0f), hl.L(100.0f));
+    }
+
+    public void setPattern(TLRPC.TL_wallPaper tL_wallPaper) {
+        r18 r18Var;
+        this.J = tL_wallPaper;
+        if (tL_wallPaper != null) {
+            r18Var = this;
+            r18Var.g(1, 0L, jn5.c(xb4.w(tL_wallPaper.document.thumbs, hl.L(100.0f), false, null, false), tL_wallPaper.document), null, tL_wallPaper, "100_100", null, "png");
+        } else {
+            r18Var = this;
+            r18Var.setImageDrawable(null);
         }
-        m8b m8bVar = y28Var.z0;
-        if (m8bVar != null && (t76Var = m8bVar.B0) != null) {
-            if (t76Var.s == null ? false : !r0.messages_enabled) {
-                return null;
+        r18Var.v(false);
+    }
+
+    public final void u(Object obj, boolean z, boolean z2) {
+        File J;
+        String str;
+        int i = this.K;
+        RadialProgress2 radialProgress2 = this.I;
+        if (obj instanceof TLRPC.TL_wallPaper) {
+            TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
+            String r = xb4.r(null, tL_wallPaper.document);
+            if (TextUtils.isEmpty(r)) {
+                return;
+            }
+            xb4.G(i);
+            J = xb4.J(tL_wallPaper.document, null, true, true);
+            str = r;
+        } else {
+            if (!(obj instanceof ro6)) {
+                radialProgress2.setIcon(6, z, z2);
+                return;
+            }
+            ro6 ro6Var = (ro6) obj;
+            TLRPC.Photo photo = ro6Var.K;
+            if (photo != null) {
+                TLRPC.PhotoSize w = xb4.w(photo.sizes, this.V, true, null, false);
+                xb4.G(i);
+                J = xb4.J(w, null, true, true);
+                str = xb4.r(null, w);
+            } else {
+                J = in5.w(ro6Var.C);
+                str = J.getName();
+            }
+            if (TextUtils.isEmpty(str)) {
+                return;
             }
         }
-        return y28Var.D3;
-    }
-
-    @Override // hy1
-    public final void w(float f, int i) {
-        q qVar = this.a.z2;
-        if (qVar != null) {
-            qVar.h(f, i);
+        if (J.exists()) {
+            lq3.q(i).v(this);
+            radialProgress2.o(z2, 1.0f);
+            radialProgress2.setIcon(6, z, z2);
+            return;
         }
-    }
-
-    @Override // hy1
-    public final boolean y0() {
-        tl9 tl9Var;
-        q qVar = this.a.z2;
-        if (qVar == null || (tl9Var = qVar.S) == null) {
-            return false;
+        lq3.q(i).a(str, null, this);
+        xb4.G(i).S(str);
+        Float s = in5.z().s(str);
+        if (s != null) {
+            radialProgress2.o(z2, s.floatValue());
+        } else {
+            radialProgress2.o(z2, 0.0f);
         }
-        int i = tl9Var.a;
-        return i == 4 || i == 5 || i == 6;
+        radialProgress2.setIcon(10, z, z2);
     }
 
-    @Override // hy1
-    public final void B() {
+    public final void v(boolean z) {
+        TLRPC.TL_wallPaper tL_wallPaper = this.U.a.d.Y0;
+        TLRPC.TL_wallPaper tL_wallPaper2 = this.J;
+        if (!(tL_wallPaper2 == null && tL_wallPaper == null) && (tL_wallPaper == null || tL_wallPaper2 == null || tL_wallPaper2.id != tL_wallPaper.id)) {
+            this.I.setIcon(4, false, z);
+        } else {
+            u(tL_wallPaper, false, z);
+        }
+        super.invalidate();
     }
 
-    @Override // hy1
-    public final void H() {
-    }
-
-    @Override // hy1
-    public final void K0() {
-    }
-
-    @Override // hy1
-    public final void R0() {
-    }
-
-    @Override // hy1
-    public final void S() {
-    }
-
-    @Override // hy1
-    public final void U() {
-    }
-
-    @Override // hy1
-    public final void W0() {
-    }
-
-    @Override // hy1
-    public final void a() {
-    }
-
-    @Override // hy1
-    public final void e() {
-    }
-
-    @Override // hy1
-    public final void e1() {
-    }
-
-    @Override // hy1
-    public final void g0() {
-    }
-
-    @Override // hy1
-    public final void j() {
-    }
-
-    @Override // hy1
-    public final void n() {
-    }
-
-    @Override // hy1
-    public final void o1() {
-    }
-
-    @Override // hy1
-    public final void p1() {
-    }
-
-    @Override // hy1
-    public final void r() {
-    }
-
-    @Override // hy1
-    public final void y() {
-    }
-
-    @Override // hy1
-    public final void P0(CharSequence charSequence) {
-    }
-
-    @Override // hy1
-    public final void f1(int i) {
-    }
-
-    @Override // hy1
-    public final void j1(boolean z) {
-    }
-
-    @Override // hy1
-    public final void k(float f) {
-    }
-
-    @Override // hy1
-    public final void m(boolean z) {
-    }
-
-    @Override // hy1
-    public final void n0(int i) {
-    }
-
-    @Override // hy1
-    public final void z(boolean z) {
-    }
-
-    @Override // hy1
-    public final void O0(View view, CharSequence charSequence, boolean z) {
+    @Override // jq3
+    public final void l(long j, long j2) {
     }
 }

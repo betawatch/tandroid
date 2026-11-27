@@ -3,27 +3,27 @@
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class gn0 implements Runnable {
     public final /* synthetic */ byte a;
     public final /* synthetic */ TLRPC.Chat b;
     public final /* synthetic */ int c;
     public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ p8c e;
+    public final /* synthetic */ pcc e;
 
-    public /* synthetic */ gn0(TLRPC.Chat chat, int i, ArrayList arrayList, p8c p8cVar, byte b) {
+    public /* synthetic */ gn0(TLRPC.Chat chat, int i, ArrayList arrayList, pcc pccVar, byte b) {
         this.a = b;
         this.b = chat;
         this.c = i;
         this.d = arrayList;
-        this.e = p8cVar;
+        this.e = pccVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        p8c p8cVar = this.e;
+        pcc pccVar = this.e;
         ArrayList arrayList = this.d;
         int i = this.c;
         TLRPC.Chat chat = this.b;
@@ -32,13 +32,13 @@ public final /* synthetic */ class gn0 implements Runnable {
                 if (chat == null) {
                     on0.o(i, arrayList);
                 }
-                p8cVar.a(arrayList);
+                pccVar.a(arrayList);
                 break;
             default:
                 if (chat == null) {
                     on0.o(i, arrayList);
                 }
-                p8cVar.a(arrayList);
+                pccVar.a(arrayList);
                 break;
         }
     }

@@ -1,51 +1,70 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Parcel;
+import android.os.RemoteException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class o3e extends u3e {
-    public final transient int r;
-    public final transient int s;
-    public final /* synthetic */ u3e w;
+public final class o3e extends AsyncTask {
+    public static final he6 c = new he6("FetchBitmapTask", null);
+    public final ome a;
+    public final am2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o3e(u3e u3eVar, int i, int i2) {
-        super((byte) 5);
-        this.w = u3eVar;
-        this.r = i;
-        this.s = i2;
+    public o3e(Context context, int i, int i2, am2 am2Var) {
+        ome omeVar;
+        this.b = am2Var;
+        Context applicationContext = context.getApplicationContext();
+        kad kadVar = new kad(this);
+        he6 he6Var = mbd.a;
+        try {
+            hcd b = mbd.b(applicationContext.getApplicationContext());
+            br7 br7Var = new br7(applicationContext.getApplicationContext());
+            Parcel T = b.T(b.R(), 8);
+            int readInt = T.readInt();
+            T.recycle();
+            omeVar = readInt >= 233700000 ? b.d0(br7Var, new br7(this), kadVar, i, i2) : b.c0(new br7(this), kadVar, i, i2);
+        } catch (RemoteException | zg7 e) {
+            mbd.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", hcd.class.getSimpleName());
+            omeVar = null;
+        }
+        this.a = omeVar;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        p1f.a(i, this.s);
-        return this.w.get(i + this.r);
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        Uri uri;
+        ome omeVar;
+        Uri[] uriArr = (Uri[]) objArr;
+        if (uriArr.length == 1 && (uri = uriArr[0]) != null && (omeVar = this.a) != null) {
+            try {
+                rae raeVar = (rae) omeVar;
+                Parcel R = raeVar.R();
+                ald.c(R, uri);
+                Parcel T = raeVar.T(R, 1);
+                Bitmap bitmap = (Bitmap) ald.a(T, Bitmap.CREATOR);
+                T.recycle();
+                return bitmap;
+            } catch (RemoteException e) {
+                c.a(e, "Unable to call %s on %s.", "doFetch", ome.class.getSimpleName());
+            }
+        }
+        return null;
     }
 
-    @Override // kzc
-    public final int q() {
-        return this.w.s() + this.r + this.s;
-    }
-
-    @Override // kzc
-    public final int s() {
-        return this.w.s() + this.r;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.s;
-    }
-
-    @Override // kzc
-    public final Object[] x() {
-        return this.w.x();
-    }
-
-    @Override // u3e, java.util.List
-    /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public final u3e subList(int i, int i2) {
-        p1f.c(i, i2, this.s);
-        int i3 = this.r;
-        return this.w.subList(i + i3, i2 + i3);
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        am2 am2Var = this.b;
+        if (am2Var != null) {
+            q9d q9dVar = (q9d) am2Var.f;
+            if (q9dVar != null) {
+                q9dVar.b(bitmap);
+            }
+            am2Var.e = null;
+        }
     }
 }

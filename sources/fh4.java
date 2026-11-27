@@ -1,30 +1,16 @@
 // default package
 
-import android.app.Application;
-import android.content.Context;
-import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fh4 {
-    public final jg4 a;
-    public final k7a b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fh4 extends FrameLayout {
+    public e29 a;
 
-    public fh4(jg4 jg4Var, k7a k7aVar, sw2 sw2Var, i7a i7aVar) {
-        jg4Var.getClass();
-        k7aVar.getClass();
-        sw2Var.getClass();
-        i7aVar.getClass();
-        this.a = jg4Var;
-        this.b = k7aVar;
-        Log.d("FirebaseSessions", "Initializing Firebase Sessions 3.0.8.");
-        jg4Var.a();
-        Context applicationContext = jg4Var.a.getApplicationContext();
-        if (applicationContext instanceof Application) {
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(i7aVar);
-            ppd.b(h9e.a(sw2Var), new eh4(this, i7aVar, null, (byte) 0));
-        } else {
-            Log.e("FirebaseSessions", "Failed to register lifecycle callbacks, unexpected context " + applicationContext.getClass() + '.');
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
     }
 }

@@ -1,32 +1,38 @@
 // default package
 
-import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.SuccessContinuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.util.Arrays;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e6d implements SuccessContinuation, ohe, OnFailureListener {
-    public static final /* synthetic */ e6d a = new e6d();
+public final class e6d extends c4 {
+    public static final Parcelable.Creator<e6d> CREATOR = new s5d((byte) 4);
+    public final int a;
+    public final String b;
+    public final long c;
+    public final int d;
+    public final boolean e;
 
-    @Override // ohe
-    public final byte[] a(int i, int i2, byte[] bArr) {
-        return Arrays.copyOfRange(bArr, i, i2 + i);
+    public e6d(int i, int i2, long j, String str, boolean z) {
+        this.a = i;
+        this.b = str;
+        this.c = j;
+        this.d = i2;
+        this.e = z;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        Log.e("OptionalModuleUtils", "Failed to check feature availability", exc);
-    }
-
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public final Task then(Object obj) {
-        Bundle bundle = (Bundle) obj;
-        int i = fm9.h;
-        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.l(parcel, 2, this.b);
+        bye.q(parcel, 3, 8);
+        parcel.writeLong(this.c);
+        bye.q(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        bye.q(parcel, 5, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import j$.util.concurrent.ConcurrentHashMap;
+import java.lang.ref.Reference;
+import java.lang.ref.ReferenceQueue;
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class l5e implements zn7 {
-    public static final l5e a = new l5e();
+public final class l5e extends m6f {
+    public final k7b a = new k7b((byte) 17);
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // m6f
+    public final void a(Exception exc) {
+        exc.printStackTrace();
+        k7b k7bVar = this.a;
+        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) k7bVar.b;
+        ReferenceQueue referenceQueue = (ReferenceQueue) k7bVar.c;
+        for (Reference poll = referenceQueue.poll(); poll != null; poll = referenceQueue.poll()) {
+            concurrentHashMap.remove(poll);
         }
-        throw null;
+        List<Throwable> list = (List) concurrentHashMap.get(new a5e(exc));
+        if (list == null) {
+            return;
+        }
+        synchronized (list) {
+            for (Throwable th : list) {
+                System.err.print("Suppressed: ");
+                th.printStackTrace();
+            }
+        }
     }
 }

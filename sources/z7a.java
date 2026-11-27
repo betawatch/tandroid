@@ -1,57 +1,31 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class z7a extends b4c {
-    static {
-        b4c.h(new z7a());
+public final class z7a implements u11 {
+    public final /* synthetic */ v21 a;
+    public final /* synthetic */ b8a b;
+
+    public z7a(b8a b8aVar, v21 v21Var) {
+        this.b = b8aVar;
+        this.a = v21Var;
     }
 
-    public static c4c i(int i, int i2, int i3, int i4, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
-        c4c K = c4c.K(z7a.class);
-        K.d = i;
-        K.k = i4;
-        K.m = charSequence;
-        K.n = charSequence2;
-        K.o = charSequence3;
-        K.C = (i3 << 32) | (i2 & 4294967295L);
-        return K;
+    @Override // u11
+    public final void a() {
+        this.b.G.add(this.a);
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        long j = c4cVar.C;
-        int i = (int) j;
-        int i2 = (int) (j >>> 32);
-        a8a a8aVar = (a8a) view;
-        int i3 = c4cVar.k;
-        CharSequence charSequence = c4cVar.m;
-        CharSequence charSequence2 = c4cVar.n;
-        CharSequence charSequence3 = c4cVar.o;
-        TextView textView = a8aVar.e;
-        TextView textView2 = a8aVar.f;
-        a8aVar.n = (i == 0 && i2 == 0) ? false : true;
-        a8aVar.c.setVisibility(i3 != 0 ? 0 : 8);
-        textView.setTranslationX(i3 == 0 ? gl.L(2.0f) : 0.0f);
-        textView2.setTranslationX(i3 == 0 ? gl.L(2.0f) : 0.0f);
-        a8aVar.b.b(i, i2);
-        a8aVar.d.setImageResource(i3);
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        a8aVar.r = !isEmpty;
-        textView2.setVisibility(isEmpty ? 8 : 0);
-        textView2.setText(charSequence2);
-        a8aVar.setValue(charSequence3);
-        a8aVar.updateColors();
+    @Override // u11
+    public final void b() {
+        this.b.G.remove(this.a);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new a8a(context, wjbVar);
+    @Override // u11
+    public final void c() {
+    }
+
+    @Override // u11
+    public final void d(v21 v21Var) {
     }
 }

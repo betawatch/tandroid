@@ -1,23 +1,88 @@
 // default package
 
-import android.app.Activity;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.d;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class uo1 extends qx3 {
-    public final /* synthetic */ vo1 Q1;
+public final /* synthetic */ class uo1 implements ce8, nr7, fd {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zu1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uo1(vo1 vo1Var, d dVar, Activity activity, wjb wjbVar, ArrayList arrayList) {
-        super(dVar, activity, wjbVar, arrayList);
-        this.Q1 = vo1Var;
+    public /* synthetic */ uo1(zu1 zu1Var, byte b) {
+        this.a = b;
+        this.b = zu1Var;
     }
 
-    @Override // qx3, fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        this.Q1.p.r6(false, true, 0.0f);
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        zu1 zu1Var = this.b;
+        l2d Q6 = zu1Var.Q6(l2dVar);
+        mq5 H0 = hl.H0(Q6, false);
+        int i = H0.a;
+        int i2 = H0.c;
+        if (zu1Var.Cb != i || zu1Var.Db != i2) {
+            zu1Var.Cb = i;
+            zu1Var.Db = i2;
+            zu1Var.m1.requestLayout();
+        }
+        zu1Var.w.j(Q6);
+        zc zcVar = zu1Var.Z3;
+        if (zcVar != null) {
+            zcVar.setPadding(i, 0, i2, 0);
+        }
+        zu1Var.z5();
+        zu1Var.D5();
+        zu1Var.P7();
+        boolean p = Q6.a.p(8);
+        if (zu1Var.Bb != p) {
+            zu1Var.Bb = p;
+            zu1Var.m1.R();
+        }
+        ir1 ir1Var = zu1Var.F1;
+        if (ir1Var != null) {
+            ihc.b(ir1Var, Q6);
+        }
+        return l2d.b;
+    }
+
+    @Override // ce8
+    public final void a(float[] fArr) {
+        zu1 zu1Var = this.b;
+        fArr[1] = zu1Var.A0.getBottom() - zu1Var.Ya;
+        fArr[0] = (zu1Var.A0.getTop() + zu1Var.P9) - hl.L(4.0f);
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        zu1 zu1Var = this.b;
+        switch (b) {
+            case 2:
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + a.b.getPackageName()));
+                    zu1Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
+                }
+            case 3:
+                sr1 sr1Var = zu1Var.E0;
+                if (sr1Var != null) {
+                    sr1Var.callOnClick();
+                    break;
+                }
+                break;
+            case 4:
+                zu1Var.finishFragment();
+                break;
+            default:
+                zu1Var.presentFragment(new o7c(6, null));
+                break;
+        }
     }
 }

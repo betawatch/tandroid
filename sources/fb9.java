@@ -1,36 +1,45 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class fb9 implements TextWatcher {
-    public final /* synthetic */ gb9 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fb9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ vnb d;
+    public final /* synthetic */ en9 e;
 
-    public fb9(gb9 gb9Var) {
-        this.a = gb9Var;
+    public /* synthetic */ fb9(e eVar, Context context, vnb vnbVar, en9 en9Var, byte b) {
+        this.a = b;
+        this.b = eVar;
+        this.c = context;
+        this.d = vnbVar;
+        this.e = en9Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        gb9 gb9Var = this.a;
-        if (gb9Var.d2 != null) {
-            gb9Var.d2 = null;
-            gb9Var.a2.i(k96.M0(2131754056, null), true, true);
-            l5c l5cVar = gb9Var.U1;
-            if (l5cVar != null) {
-                l5cVar.O(true);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        en9 en9Var = this.e;
+        vnb vnbVar = this.d;
+        Context context = this.c;
+        e eVar = this.b;
+        switch (b) {
+            case 0:
+                d31.b0(eVar).c(hl.N2(ob6.M0(2131754480, null), -1, 2, new xf1(context, (byte) 11), vnbVar)).j();
+                hl.c3(en9Var);
+                break;
+            case 1:
+                d31.b0(eVar).c(hl.N2(ob6.M0(2131754480, null), -1, 2, new xf1(context, (byte) 9), vnbVar)).j();
+                hl.c3(en9Var);
+                break;
+            default:
+                d31.b0(eVar).c(hl.N2(ob6.M0(2131754480, null), -1, 2, new xf1(context, (byte) 14), vnbVar)).j();
+                hl.c3(en9Var);
+                break;
         }
-        gb9Var.Y0();
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

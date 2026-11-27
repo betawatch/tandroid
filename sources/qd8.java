@@ -1,115 +1,236 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qd8 extends ld8 implements Drawable.Callback, x74 {
-    public final String b;
-    public final Drawable d;
-    public final ih2 f;
-    public kd8 h;
-    public TLRPC.WebPage n;
-    public final fm0 r;
-    public final fm0 s;
-    public final kp c = new kp((byte) 11, false);
-    public final Paint e = new Paint(1);
+public abstract class qd8 extends FrameLayout {
+    public TLRPC.WebPage E;
+    public float F;
+    public boolean G;
+    public boolean H;
+    public int I;
+    public int J;
+    public float K;
+    public boolean L;
+    public x38 M;
+    public int a;
+    public PhotoViewer b;
+    public LinearLayout c;
+    public TextView d;
+    public TextView e;
+    public ev3 f;
+    public tb h;
+    public RadialProgressView n;
+    public b8 r;
+    public String s;
+    public ArrayList w;
+    public String x;
+    public boolean y;
 
-    public qd8(String str) {
-        ih2 ih2Var = new ih2(-1);
-        this.f = ih2Var;
-        s33 s33Var = s33.h;
-        this.r = new fm0(0, this, s33Var, 320L, false);
-        this.s = new fm0(0, this, s33Var, 320L, false);
-        this.b = str;
-        this.a.q0(gl.L(7.0f));
-        this.d = b00.d(a.b, R.drawable.media_link_24);
-        ih2Var.setCallback(this);
-        ih2Var.b(bkb.w0(null, bkb.n7, false));
-        ih2Var.a = gl.L(15.0f);
-    }
-
-    @Override // ld8
-    public final void a(View view) {
-        super.a(view);
-        this.h = (kd8) view;
-    }
-
-    @Override // ld8
-    public final void b() {
-        super.b();
-        this.h = null;
-    }
-
-    @Override // ld8
-    public final void c(Canvas canvas, int i, int i2) {
-        float f = i;
-        float f2 = i2;
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.i0(0.0f, 0.0f, f, f2);
-        imageReceiver.h(canvas, null);
-        ih2 ih2Var = this.f;
-        ih2Var.setBounds(0, 0, i, i2);
-        int w0 = bkb.w0(null, bkb.Z6, false);
-        fm0 fm0Var = this.s;
-        int f3 = bm2.f(fm0Var.e, w0, TLObject.FLAG_30);
-        Paint paint = this.e;
-        paint.setColor(f3);
-        canvas.drawRoundRect(0.0f, 0.0f, f, f2, gl.L(7.0f), gl.L(7.0f), paint);
-        int f4 = bm2.f(fm0Var.e, bkb.w0(null, bkb.n7, false), -1);
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        kp kpVar = this.c;
-        kpVar.getClass();
-        PorterDuffColorFilter porterDuffColorFilter = (PorterDuffColorFilter) kpVar.c;
-        if (porterDuffColorFilter == null || kpVar.b != f4 || ((PorterDuff.Mode) kpVar.d) != mode) {
-            porterDuffColorFilter = new PorterDuffColorFilter(f4, mode);
-            kpVar.c = porterDuffColorFilter;
-            kpVar.b = f4;
-            kpVar.d = mode;
-        }
-        Drawable drawable = this.d;
-        drawable.setColorFilter(porterDuffColorFilter);
-        kq3.e(this.d, f / 2.0f, f2 / 2.0f, gl.L(24.0f), gl.L(24.0f), 17);
-        fm0 fm0Var2 = this.r;
-        kq3.b(canvas, drawable, 1.0f - fm0Var2.e);
-        kq3.b(canvas, ih2Var, fm0Var2.e);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        kd8 kd8Var = this.h;
-        if (kd8Var != null) {
-            kd8Var.invalidate();
+    public final void a(boolean z) {
+        x38 x38Var = this.M;
+        boolean z2 = this.H;
+        if (z) {
+            if (z2) {
+                return;
+            }
+            hl.r(x38Var);
+        } else if (z2) {
+            hl.d3(x38Var, 500L);
         }
     }
 
-    @Override // x74
-    public final void p(int i, float f, float f2, y74 y74Var) {
-        kd8 kd8Var = this.h;
-        if (kd8Var != null) {
-            kd8Var.invalidate();
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String b(int i) {
+        float f;
+        int i2;
+        ArrayList arrayList = this.w;
+        int videoDuration = getVideoDuration() / 1000;
+        if (videoDuration > 100) {
+            if (videoDuration <= 250) {
+                i2 = ((int) (i / 2.0f)) / 25;
+            } else if (videoDuration <= 500) {
+                i2 = ((int) (i / 4.0f)) / 25;
+            } else if (videoDuration <= 1000) {
+                i2 = ((int) (i / 5.0f)) / 25;
+            } else {
+                f = i / 10.0f;
+            }
+            if (i2 >= arrayList.size()) {
+                return (String) arrayList.get(i2);
+            }
+            return null;
+        }
+        f = i;
+        i2 = (int) (f / 25.0f);
+        if (i2 >= arrayList.size()) {
         }
     }
 
-    @Override // x74
-    public final void F(float f, int i) {
+    public final boolean c() {
+        return this.y && "inapp".equals(uc7.s1(this.a).k4.Q0.f);
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    public final boolean d() {
+        if (this.n.getVisibility() != 0) {
+            me8 a = fc3.b().a();
+            if (a != null) {
+                a.b();
+                hl.d3(new md8(this, (byte) 0), 300L);
+                return true;
+            }
+            this.h.setVisibility(0);
+            PhotoViewer photoViewer = this.b;
+            if (photoViewer.E != null && photoViewer.g0 != null) {
+                photoViewer.V();
+                photoViewer.U8.i(photoViewer.E, null, true);
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.L) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final void e() {
+        if (this.H && this.y) {
+            h("pauseVideo();");
+            this.H = false;
+            a(true);
+        }
+    }
+
+    public final void f() {
+        if (this.H || !this.y) {
+            return;
+        }
+        h("playVideo();");
+        this.H = true;
+        a(false);
+    }
+
+    public final void g(String str) {
+        int videoDuration = getVideoDuration() / 1000;
+        ArrayList arrayList = this.w;
+        arrayList.clear();
+        if (videoDuration > 15) {
+            String[] split = str.split("\\|");
+            String k = c00.k(new StringBuilder(), split[0].split("\\$")[0], "2/");
+            String str2 = split[0].split("\\$N")[1];
+            String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
+            int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
+            for (int i = 0; i < ceil; i++) {
+                Locale locale = Locale.ROOT;
+                arrayList.add(k + "M" + i + str2 + "&sigh=" + str3);
+            }
+        }
+    }
+
+    public float getBufferedPosition() {
+        return this.K;
+    }
+
+    public int getCurrentPosition() {
+        return this.J;
+    }
+
+    public int getEmbedHeight() {
+        TLRPC.WebPage webPage = this.E;
+        if (webPage != null) {
+            return webPage.embed_height;
+        }
+        return 0;
+    }
+
+    public int getEmbedWidth() {
+        TLRPC.WebPage webPage = this.E;
+        if (webPage != null) {
+            return webPage.embed_width;
+        }
+        return 0;
+    }
+
+    public int getVideoDuration() {
+        return this.I;
+    }
+
+    public WebView getWebView() {
+        return this.f;
+    }
+
+    public final void h(String str) {
+        this.f.evaluateJavascript(str, null);
+    }
+
+    public final void i(long j) {
+        boolean z = this.H;
+        this.J = (int) j;
+        if (z) {
+            e();
+            hl.d3(new kt((Object) this, j, (byte) 25), 100L);
+        } else {
+            h("seekTo(" + Math.round(j / 1000.0f) + ", true);");
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        ev3 ev3Var = this.f;
+        if (ev3Var.getParent() == this) {
+            TLRPC.WebPage webPage = this.E;
+            int i3 = webPage.embed_width;
+            if (i3 == 0) {
+                i3 = 100;
+            }
+            int i4 = webPage.embed_height;
+            int i5 = i4 != 0 ? i4 : 100;
+            int size = View.MeasureSpec.getSize(i);
+            int size2 = View.MeasureSpec.getSize(i2);
+            float f = i3;
+            float f2 = i5;
+            float min = Math.min(size / f, size2 / f2);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ev3Var.getLayoutParams();
+            int i6 = (int) (f * min);
+            layoutParams.width = i6;
+            int i7 = (int) (f2 * min);
+            layoutParams.height = i7;
+            layoutParams.topMargin = (size2 - i7) / 2;
+            layoutParams.leftMargin = (size - i6) / 2;
+        }
+        super.onMeasure(i, i2);
+    }
+
+    public void setPlaybackSpeed(float f) {
+        this.F = f;
+        if (this.n.getVisibility() == 0) {
+            this.G = true;
+        } else if (this.y) {
+            h("setPlaybackSpeed(" + f + ");");
+        }
+    }
+
+    public void setTouchDisabled(boolean z) {
+        this.L = z;
     }
 }

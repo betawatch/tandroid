@@ -1,31 +1,30 @@
 // default package
 
-import android.widget.FrameLayout;
+import android.content.Context;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface xb1 {
-    FrameLayout E();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class xb1 extends qo9 {
+    public final /* synthetic */ zb1 G;
 
-    long I();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xb1(zb1 zb1Var, Context context) {
+        super(context);
+        this.G = zb1Var;
+    }
 
-    long J();
-
-    void L(cc1 cc1Var);
-
-    void M(long j);
-
-    void R(l34 l34Var);
-
-    void l(boolean z);
-
-    FrameLayout m();
-
-    wjb o();
-
-    cc1 p();
-
-    cc1 t();
-
-    long v();
+    @Override // qo9
+    public final void c() {
+        hl.r(this.h);
+        if (this.c <= 0) {
+            a(true);
+        } else {
+            CameraController.getInstance().stopVideoRecording(this.a.getCameraSessionRecording(), false, false);
+        }
+        zb1 zb1Var = this.G;
+        if (zb1Var.O1) {
+            zb1Var.z(true, false);
+        }
+    }
 }

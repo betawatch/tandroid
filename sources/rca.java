@@ -1,55 +1,64 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class rca extends yo {
-    public final /* synthetic */ pca c;
-    public final /* synthetic */ nfa d;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-    public rca(nfa nfaVar, pca pcaVar) {
-        this.d = nfaVar;
-        this.c = pcaVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class rca extends View {
+    public int a;
+    public final int b;
+    public boolean c;
+    public boolean d;
+
+    public rca(Context context, uh9 uh9Var) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.a = 12;
+        int i = this.b;
+        if (i == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i);
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003a, code lost:
-    
-        if (r4.getAdapter().d(r9) != 2) goto L11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r4.d(r9) == 2) goto L21;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x003c, code lost:
-    
-        r1 = 1;
-     */
-    @Override // yo
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i) {
-        nfa nfaVar = this.d;
-        int[] iArr = nfaVar.p1;
-        dea deaVar = nfaVar.R;
-        pca pcaVar = this.c;
-        int i2 = iArr[nfa.j0(pcaVar.F) ? 1 : 0];
-        w39 adapter = pcaVar.h.getAdapter();
-        uda udaVar = nfaVar.K;
-        if (adapter != udaVar) {
-            int x1 = nfaVar.x1(pcaVar.h.getAdapter());
-            sca scaVar = pcaVar.h;
-            if (x1 == -1) {
-                if (scaVar.getAdapter() != deaVar) {
-                    i2 = pcaVar.x.J;
-                } else if (pcaVar.h.getAdapter() == deaVar && nfaVar.w1[5].a.isEmpty()) {
-                    i2 = pcaVar.x.J;
-                } else {
-                    qca qcaVar = pcaVar.x;
-                    qcaVar.z1();
-                    i2 = qcaVar.R.get(i);
-                }
-            }
+    private int getBackgroundResId() {
+        boolean z = this.c;
+        boolean z2 = this.d;
+        return z ? z2 ? R.drawable.greydivider : R.drawable.greydivider_bottom : z2 ? R.drawable.greydivider_top : R.drawable.transparent;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(this.a), TLObject.FLAG_30));
+    }
+
+    public void setSize(int i) {
+        this.a = i;
+    }
+
+    public rca(Context context, Object obj) {
+        this(context, (uh9) null);
+    }
+
+    public rca(Context context) {
+        this(context, (uh9) null);
+    }
+
+    public rca(Context context, int i, int i2) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.b = i;
+        this.a = 12;
+        if (i == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i);
         }
-        return Math.min(i2, pcaVar.x.J);
     }
 }

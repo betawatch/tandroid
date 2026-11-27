@@ -1,58 +1,21 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PrivacyControlActivity;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class xj8 implements o73 {
+    public final o73 a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class xj8 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yj8 b;
-
-    public /* synthetic */ xj8(yj8 yj8Var, byte b) {
-        this.a = b;
-        this.b = yj8Var;
+    public xj8(o73 o73Var) {
+        this.a = o73Var;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        TL_account.TL_birthday tL_birthday;
-        int i;
-        int i2;
-        byte b = this.a;
-        yj8 yj8Var = this.b;
-        switch (b) {
-            case 0:
-                PrivacyControlActivity privacyControlActivity = yj8Var.d;
-                privacyControlActivity.N = ((Integer) obj).intValue();
-                gl.U3(privacyControlActivity.l0, privacyControlActivity.c);
-                privacyControlActivity.N0();
-                break;
-            default:
-                TL_account.TL_birthday tL_birthday2 = (TL_account.TL_birthday) obj;
-                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
-                updatebirthday.flags |= 1;
-                updatebirthday.birthday = tL_birthday2;
-                PrivacyControlActivity privacyControlActivity2 = yj8Var.d;
-                TLRPC.UserFull W1 = privacyControlActivity2.getMessagesController().W1(privacyControlActivity2.getUserConfig().e());
-                if (W1 != null) {
-                    tL_birthday = W1.birthday;
-                    W1.flags2 |= 32;
-                    W1.birthday = tL_birthday2;
-                    privacyControlActivity2.getMessagesStorage().g2(W1, false);
-                } else {
-                    tL_birthday = null;
-                }
-                privacyControlActivity2.getMessagesController().h2();
-                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new k45(yj8Var, W1, tL_birthday, (byte) 29), 1024);
-                i = ((d) privacyControlActivity2).currentAccount;
-                na7.q1(i).n4(0L, "BIRTHDAY_SETUP");
-                i2 = ((d) privacyControlActivity2).currentAccount;
-                kk7.f(i2).k(kk7.i5, new Object[0]);
-                privacyControlActivity2.P0(true);
-                break;
-        }
+    @Override // o73
+    public final Object a(is4 is4Var, ax2 ax2Var) {
+        return this.a.a(new wj8(is4Var, null, (byte) 0), ax2Var);
+    }
+
+    @Override // o73
+    public final mm4 getData() {
+        return this.a.getData();
     }
 }

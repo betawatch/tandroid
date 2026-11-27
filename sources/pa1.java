@@ -1,22 +1,41 @@
 // default package
 
-import java.util.concurrent.CancellationException;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.camera.CameraView;
+import org.webrtc.SurfaceTextureHelper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pa1 extends fp2 {
-    public static final /* synthetic */ long c = ex.a.objectFieldOffset(pa1.class.getDeclaredField("_resumed$volatile"));
-    private volatile /* synthetic */ int _resumed$volatile;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class pa1 implements SurfaceTexture.OnFrameAvailableListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public pa1(na1 na1Var, Throwable th, boolean z) {
-        super(th, z);
-        if (th == null) {
-            th = new CancellationException("Continuation " + na1Var + " was cancelled normally");
+    public /* synthetic */ pa1(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
+    }
+
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                ((CameraView.CameraGLThread) obj).updTex(surfaceTexture);
+                return;
+            case 1:
+                ((rf4) obj).b(false, true, true);
+                return;
+            case 2:
+                np9 np9Var = (np9) obj;
+                synchronized (np9Var.b) {
+                    np9Var.m = true;
+                    np9Var.b.notifyAll();
+                }
+                return;
+            default:
+                ((SurfaceTextureHelper) obj).lambda$new$0(surfaceTexture);
+                return;
         }
-        this._resumed$volatile = 0;
     }
 }

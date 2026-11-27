@@ -1,80 +1,69 @@
 // default package
 
-import android.content.Context;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wy8 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final RadioButton c;
-    public byte d;
+public final class wy8 extends j79 {
+    public final /* synthetic */ pz8 c;
 
-    public wy8(Context context, wjb wjbVar) {
-        super(context);
-        this.d = (byte) 50;
-        RadioButton radioButton = new RadioButton(context);
-        this.c = radioButton;
-        radioButton.setSize(gl.L(20.0f));
-        zkb.O(radioButton, bkb.C5, bkb.D5, wjbVar);
-        boolean z = k96.a0;
-        addView(radioButton, nme.d(22, 22.0f, (z ? 5 : 3) | 48, z ? 0 : 18, 14.0f, z ? 18 : 0, 0.0f));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        zkb.X(textView, bkb.i5, wjbVar);
-        ug8.w(textView, 1, 16.0f, 1, 1);
-        textView.setSingleLine(true);
-        textView.setGravity((k96.a0 ? 5 : 3) | 16);
-        boolean z2 = k96.a0;
-        addView(textView, nme.d(-2, -2.0f, (z2 ? 5 : 3) | 48, z2 ? 21 : 51, 13.0f, z2 ? 51 : 21, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        zkb.X(textView2, bkb.x6, wjbVar);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity((k96.a0 ? 5 : 3) | 16);
-        textView2.setVisibility(8);
-        boolean z3 = k96.a0;
-        addView(textView2, nme.d(-2, -2.0f, (z3 ? 5 : 3) | 48, z3 ? 21 : 51, 37.0f, z3 ? 51 : 21, 0.0f));
+    public wy8(pz8 pz8Var) {
+        this.c = pz8Var;
     }
 
-    public final void a(int i, int i2) {
-        this.c.b(i, i2);
+    @Override // j79
+    public final int b() {
+        return this.c.s;
     }
 
-    public final void b(CharSequence charSequence, boolean z) {
-        this.a.setText(charSequence);
-        this.b.setVisibility(8);
-        this.c.a(z, false);
+    @Override // j79
+    public final int d(int i) {
+        pz8 pz8Var = this.c;
+        az8 az8Var = (az8) pz8Var.n.get(pz8Var.f(i));
+        return (az8Var.b == null || i != az8Var.d) ? 1 : 0;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.c.f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3;
-        TextView textView = this.b;
-        if (textView.getVisibility() == 0) {
-            textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i) - gl.L(72.0f), TLObject.FLAG_30), i2);
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        pz8 pz8Var = this.c;
+        az8 az8Var = (az8) pz8Var.n.get(pz8Var.f(i));
+        int i2 = f89Var.f;
+        View view = f89Var.a;
+        if (i2 != 0) {
+            ((xy8) view).set((TLRPC.Document) az8Var.c.get((i - az8Var.d) - (az8Var.b == null ? 0 : 1)));
+            return;
         }
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
-        int L = gl.L(this.d);
-        if (textView.getVisibility() == 0) {
-            i3 = textView.getMeasuredHeight() + gl.L(4.0f);
+        zy8 zy8Var = (zy8) view;
+        String str = az8Var.b;
+        int i3 = (pz8Var.x || az8Var.a != 2) ? 0 : 1;
+        TextView textView = zy8Var.b;
+        TextView textView2 = zy8Var.a;
+        textView2.setText(str != null ? str.replace('\n', ' ') : null);
+        textView2.setTextColor(zy8Var.c.y);
+        textView.setVisibility(i3 != 0 ? 0 : 8);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView2.getLayoutParams();
+        int L = hl.L(15.0f) + (i3 != 0 ? hl.L(6.0f) + hl.L(20.0f) + hl.L(12.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString()))) : 0);
+        if (layoutParams.rightMargin != L) {
+            layoutParams.rightMargin = L;
+            textView2.setLayoutParams(layoutParams);
+        }
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View xy8Var;
+        pz8 pz8Var = this.c;
+        if (i == 0) {
+            xy8Var = new zy8(pz8Var, viewGroup.getContext());
+            xy8Var.setLayoutParams(new r79(-1, hl.L(44.0f)));
         } else {
-            i3 = 0;
+            xy8Var = new xy8(viewGroup.getContext(), pz8Var.a);
+            xy8Var.setLayoutParams(new r79(-1, -2));
         }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(L + i3, TLObject.FLAG_30));
+        return new vy8(xy8Var);
     }
 }

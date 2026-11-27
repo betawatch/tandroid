@@ -1,135 +1,41 @@
 // default package
 
-import android.content.SharedPreferences;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oj0 {
-    public static volatile oj0[] f = new oj0[4];
-    public static final Object[] g = new Object[4];
-    public final int a;
-    public long b;
-    public mj0 c;
-    public final Set d;
-    public boolean e;
+public final class oj0 extends TLObject {
+    public static final /* synthetic */ int b = 0;
+    public ArrayList a = new ArrayList();
 
-    static {
-        for (int i = 0; i < 4; i++) {
-            g[i] = new Object();
-        }
-    }
-
-    public oj0(int i) {
-        oj0 oj0Var;
-        Exception exc;
-        nj0 nj0Var;
-        this.a = i;
-        SharedPreferences sharedPreferences = na7.q1(i).X3;
-        this.b = sharedPreferences.getLong("bday_check", 0L);
-        nj0 nj0Var2 = null;
-        String string = sharedPreferences.getString("bday_contacts", null);
-        if (string != null) {
-            try {
-                SerializedData serializedData = new SerializedData(Utilities.v(string));
-                int readInt32 = serializedData.readInt32(true);
-                if (readInt32 != 290452237) {
-                    try {
-                        int i2 = nj0.b;
-                    } catch (Exception e) {
-                        exc = e;
-                        oj0Var = this;
-                        fa4.g(exc, true);
-                        oj0Var.d = sharedPreferences.getStringSet("bday_hidden", new HashSet());
-                    }
-                } else {
-                    try {
-                        nj0Var2 = new nj0();
-                    } catch (Exception e2) {
-                        oj0Var = this;
-                        exc = e2;
-                        fa4.g(exc, true);
-                        oj0Var.d = sharedPreferences.getStringSet("bday_hidden", new HashSet());
-                    }
-                }
-                nj0Var = (nj0) TLObject.TLdeserialize(nj0.class, nj0Var2, serializedData, readInt32, true);
-            } catch (Exception e3) {
-                e = e3;
-                oj0Var = this;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
+        int readInt32 = inputSerializedData.readInt32(z);
+        if (readInt32 != 481674261) {
+            if (z) {
+                throw new RuntimeException(String.format("wrong Vector magic, got %x", Integer.valueOf(readInt32)));
             }
-            if (nj0Var != null && !nj0Var.a.isEmpty()) {
-                ArrayList arrayList = new ArrayList();
-                for (int i3 = 0; i3 < nj0Var.a.size(); i3++) {
-                    arrayList.add(Long.valueOf(((TL_account.TL_contactBirthday) nj0Var.a.get(i3)).contact_id));
-                }
-                oj0Var = this;
-                try {
-                    ad7.Y(i).a.c(new tn6((Object) oj0Var, i, (Object) arrayList, (Object) nj0Var, (byte) 6));
-                } catch (Exception e4) {
-                    e = e4;
-                    exc = e;
-                    fa4.g(exc, true);
-                    oj0Var.d = sharedPreferences.getStringSet("bday_hidden", new HashSet());
-                }
-                oj0Var.d = sharedPreferences.getStringSet("bday_hidden", new HashSet());
+        } else {
+            int readInt322 = inputSerializedData.readInt32(z);
+            for (int i = 0; i < readInt322; i++) {
+                this.a.add(TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z));
             }
         }
-        oj0Var = this;
-        oj0Var.d = sharedPreferences.getStringSet("bday_hidden", new HashSet());
     }
 
-    public static oj0 a(int i) {
-        oj0 oj0Var;
-        oj0 oj0Var2 = f[i];
-        if (oj0Var2 != null) {
-            return oj0Var2;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(TL_account.contactBirthdays.constructor);
+        outputSerializedData.writeInt32(Vector.constructor);
+        int size = this.a.size();
+        outputSerializedData.writeInt32(size);
+        for (int i = 0; i < size; i++) {
+            ((TL_account.TL_contactBirthday) this.a.get(i)).serializeToStream(outputSerializedData);
         }
-        synchronized (g[i]) {
-            oj0Var = f[i];
-            if (oj0Var == null) {
-                oj0[] oj0VarArr = f;
-                oj0 oj0Var3 = new oj0(i);
-                oj0VarArr[i] = oj0Var3;
-                oj0Var = oj0Var3;
-            }
-        }
-        return oj0Var;
-    }
-
-    public static boolean d(TLRPC.UserFull userFull) {
-        return (userFull == null || !e(userFull.birthday) || l7c.c(userFull)) ? false : true;
-    }
-
-    public static boolean e(TL_account.TL_birthday tL_birthday) {
-        if (tL_birthday == null) {
-            return false;
-        }
-        Calendar calendar = Calendar.getInstance();
-        return tL_birthday.day == calendar.get(5) && tL_birthday.month == calendar.get(2) + 1;
-    }
-
-    public final mj0 b() {
-        mj0 mj0Var = this.c;
-        if (mj0Var == null || this.d.contains(mj0Var.a)) {
-            return null;
-        }
-        return this.c;
-    }
-
-    public final boolean c(long j) {
-        mj0 mj0Var = this.c;
-        if (mj0Var != null && mj0Var.a(j)) {
-            return true;
-        }
-        TLRPC.UserFull W1 = na7.q1(this.a).W1(j);
-        return (W1 == null || !e(W1.birthday) || l7c.c(W1)) ? false : true;
     }
 }

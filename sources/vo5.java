@@ -1,18 +1,41 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
+import java.util.Collection;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface vo5 {
-    void E(jm6 jm6Var, oac oacVar, boolean z, int i, boolean z2, long j);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vo5 extends jo5 {
+    public final qo5 b;
 
-    int getClassGuid();
+    public vo5(qo5 qo5Var) {
+        this.b = qo5Var;
+    }
 
-    View getFragmentView();
+    @Override // jo5, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            Collection collection = (Collection) this.b.a().get(key);
+            if (collection != null && collection.contains(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    Activity getParentActivity();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    /* renamed from: n */
+    public final v9c iterator() {
+        qo5 qo5Var = this.b;
+        qo5Var.getClass();
+        return new uo5(qo5Var);
+    }
 
-    boolean y();
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final int size() {
+        return this.b.f;
+    }
 }

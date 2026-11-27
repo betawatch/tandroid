@@ -1,25 +1,38 @@
 // default package
 
-import android.os.Build;
-import android.os.IBinder;
-import java.util.UUID;
+import java.nio.ByteBuffer;
+import java.nio.channels.ByteChannel;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class g51 {
-    public static final int a;
-    public static final UUID b;
-    public static final UUID c;
-    public static final UUID d;
-    public static final UUID e;
-    public static final UUID f;
+public final class g51 implements ByteChannel {
+    public ByteBuffer a;
 
-    static {
-        a = Build.VERSION.SDK_INT >= 30 ? IBinder.getSuggestedMaxIpcSizeBytes() : 65536;
-        b = new UUID(0L, 0L);
-        c = new UUID(1186680826959645954L, -5988876978535335093L);
-        d = new UUID(-2129748144642739255L, 8654423357094679310L);
-        e = new UUID(-1301668207276963122L, -6645017420763422227L);
-        f = new UUID(-7348484286925749626L, -6083546864340672619L);
+    @Override // java.nio.channels.Channel
+    public final boolean isOpen() {
+        return true;
+    }
+
+    @Override // java.nio.channels.ReadableByteChannel
+    public final int read(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        ByteBuffer byteBuffer2 = this.a;
+        if (byteBuffer2.remaining() <= 0) {
+            return -1;
+        }
+        byteBuffer.put((ByteBuffer) byteBuffer2.duplicate().limit(byteBuffer.remaining() + byteBuffer2.position()));
+        byteBuffer2.position(byteBuffer2.position() + remaining);
+        return remaining;
+    }
+
+    @Override // java.nio.channels.WritableByteChannel
+    public final int write(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        this.a.put(byteBuffer);
+        return remaining;
+    }
+
+    @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
     }
 }

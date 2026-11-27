@@ -1,41 +1,9 @@
 // default package
 
-import org.webrtc.TextureViewRenderer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gc7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
-
-    public /* synthetic */ gc7(Object obj, int i, int i2, int i3, int i4, byte b) {
-        this.a = b;
-        this.f = obj;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.e;
-        int i2 = this.d;
-        int i3 = this.c;
-        int i4 = this.b;
-        Object obj = this.f;
-        switch (b) {
-            case 0:
-                ((ad7) obj).y1(i4, i3, i2, i);
-                break;
-            default:
-                ((TextureViewRenderer) obj).lambda$onFrameResolutionChanged$0(i4, i3, i2, i);
-                break;
-        }
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface gc7 {
+    boolean b(TLRPC.TL_error tL_error);
 }

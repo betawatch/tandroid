@@ -1,29 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class vz3 extends yo {
-    public final /* synthetic */ t14 c;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-    public vz3(t14 t14Var) {
-        this.c = t14Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class vz3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ i24 b;
+
+    public /* synthetic */ vz3(i24 i24Var, byte b) {
+        this.a = b;
+        this.b = i24Var;
     }
 
-    @Override // yo
-    public final int i(int i) {
-        t14 t14Var = this.c;
-        d04 d04Var = t14Var.S;
-        uz3 uz3Var = t14Var.R;
-        w39 adapter = t14Var.Q.getAdapter();
-        t04 t04Var = t14Var.T;
-        if (adapter == t04Var) {
-            int d = t04Var.d(i);
-            if (d == 1 || d == 3 || d == 2 || d == 4 || d == 5) {
-                return uz3Var.J;
-            }
-        } else if ((t14Var.e0 && i == 0) || i == d04Var.d || i == d04Var.c || i == d04Var.f || d04Var.r.indexOfKey(i) >= 0 || d04Var.w.indexOfKey(i) >= 0) {
-            return uz3Var.J;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        i24 i24Var = this.b;
+        byte b2 = 0;
+        switch (b) {
+            case 0:
+                a04 a04Var = i24Var.x.R.H0;
+                if (!a04Var.G) {
+                    a04Var.d(true);
+                    Utilities.B(new vz3(i24Var, (byte) 1), new h24(i24Var, b2));
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList = i24Var.r;
+                ArrayList arrayList2 = i24Var.h;
+                j24 j24Var = i24Var.x;
+                o24 o24Var = j24Var.R;
+                if (j24Var.N == i24Var.b) {
+                    arrayList2.remove(arrayList);
+                    j24Var.F = i24Var.c;
+                    j24Var.G = i24Var.d;
+                    j24Var.H = i24Var.e;
+                    j24Var.I = i24Var.f;
+                    j24Var.J = arrayList2;
+                    j24Var.K = i24Var.n;
+                    j24Var.L = new ArrayList(arrayList);
+                    o24Var.H0.d(false);
+                    j79 adapter = o24Var.E0.getAdapter();
+                    j24 j24Var2 = o24Var.A0;
+                    if (adapter != j24Var2) {
+                        o24Var.E0.setAdapter(j24Var2);
+                    }
+                    j24Var.f();
+                    break;
+                }
+                break;
         }
-        return 1;
     }
 }

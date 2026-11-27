@@ -1,41 +1,33 @@
 // default package
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import org.telegram.messenger.a;
+import android.graphics.Color;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class eo3 {
-    public static ArrayList j;
-    public static eo3 k;
-    public static final ArrayList l = new ArrayList();
-    public static final sv m = new sv(6);
-    public ArrayList a;
-    public SparseIntArray b;
-    public ArrayList c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public boolean h;
-    public o1 i;
+public final class eo3 extends CharacterStyle implements UpdateAppearance {
+    public final long a;
+    public long b;
+    public final int c;
+    public final int d;
+    public boolean e;
 
-    public static void a(Runnable runnable) {
-        if (Thread.currentThread() != a.d.getLooper().getThread()) {
-            boolean z = w01.a;
-            fa4.g(new RuntimeException("wrong thread"), true);
-            return;
+    public eo3(long j, int i, int i2) {
+        this.a = j;
+        this.c = i;
+        this.d = i2;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        textPaint.setColor(vm2.f(ho3.b(Math.max(0.0f, Math.min(1.0f, (uptimeMillis - this.a) / 750.0f))), this.c, this.d));
+        if (this.b > 0) {
+            float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (uptimeMillis - r5) / 220.0f));
+            textPaint.setAlpha((int) (Color.alpha(r2) * bp1.v(max, max, max, 1.0f)));
         }
-        if (j == null) {
-            ArrayList arrayList = l;
-            if (arrayList.isEmpty()) {
-                j = new ArrayList(100);
-            } else {
-                j = (ArrayList) tb4.l(1, arrayList);
-            }
-            gl.c3(m);
-        }
-        j.add(runnable);
     }
 }

@@ -1,63 +1,24 @@
 // default package
 
-import android.graphics.Insets;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class io5 {
-    public static final io5 e = new io5(0, 0, 0, 0);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-
-    public io5(int i, int i2, int i3, int i4) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-    }
-
-    public static io5 a(io5 io5Var, io5 io5Var2) {
-        return b(Math.max(io5Var.a, io5Var2.a), Math.max(io5Var.b, io5Var2.b), Math.max(io5Var.c, io5Var2.c), Math.max(io5Var.d, io5Var2.d));
-    }
-
-    public static io5 b(int i, int i2, int i3, int i4) {
-        return (i == 0 && i2 == 0 && i3 == 0 && i4 == 0) ? e : new io5(i, i2, i3, i4);
-    }
-
-    public static io5 c(Insets insets) {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        i = insets.left;
-        i2 = insets.top;
-        i3 = insets.right;
-        i4 = insets.bottom;
-        return b(i, i2, i3, i4);
-    }
-
-    public final Insets d() {
-        return rr.m(this.a, this.b, this.c, this.d);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public abstract class io5 {
+    public static int b(int i, int i2) {
+        if (i2 < 0) {
+            lq5.j("cannot store more than MAX_VALUE elements");
+            return 0;
         }
-        if (obj == null || io5.class != obj.getClass()) {
-            return false;
+        if (i2 <= i) {
+            return i;
         }
-        io5 io5Var = (io5) obj;
-        return this.d == io5Var.d && this.a == io5Var.a && this.c == io5Var.c && this.b == io5Var.b;
+        int i3 = i + (i >> 1) + 1;
+        if (i3 < i2) {
+            i3 = Integer.highestOneBit(i2 - 1) << 1;
+        }
+        return i3 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i3;
     }
 
-    public final int hashCode() {
-        return (((((this.a * 31) + this.b) * 31) + this.c) * 31) + this.d;
-    }
-
-    public final String toString() {
-        return "Insets{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
-    }
+    public abstract io5 a(Object obj);
 }

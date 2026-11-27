@@ -16,20 +16,20 @@ import androidx.appcompat.view.menu.ActionMenuItemView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class ActionMenuView extends o26 implements xz6, v07 {
-    public yz6 G;
+public class ActionMenuView extends s46 implements e27, c37 {
+    public f27 G;
     public Context H;
     public int I;
     public boolean J;
-    public b9 K;
-    public v39 L;
+    public c9 K;
+    public k09 L;
     public boolean M;
     public int N;
     public final int O;
     public final int P;
-    public e9 Q;
+    public f9 Q;
 
     public ActionMenuView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
@@ -41,44 +41,44 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         this.I = 0;
     }
 
-    public static d9 i() {
-        d9 d9Var = new d9(-2, -2);
-        d9Var.a = false;
-        ((LinearLayout.LayoutParams) d9Var).gravity = 16;
-        return d9Var;
+    public static e9 i() {
+        e9 e9Var = new e9(-2, -2);
+        e9Var.a = false;
+        ((LinearLayout.LayoutParams) e9Var).gravity = 16;
+        return e9Var;
     }
 
-    public static d9 j(ViewGroup.LayoutParams layoutParams) {
-        d9 d9Var;
+    public static e9 j(ViewGroup.LayoutParams layoutParams) {
+        e9 e9Var;
         if (layoutParams == null) {
             return i();
         }
-        if (layoutParams instanceof d9) {
-            d9 d9Var2 = (d9) layoutParams;
-            d9Var = new d9(d9Var2);
-            d9Var.a = d9Var2.a;
+        if (layoutParams instanceof e9) {
+            e9 e9Var2 = (e9) layoutParams;
+            e9Var = new e9(e9Var2);
+            e9Var.a = e9Var2.a;
         } else {
-            d9Var = new d9(layoutParams);
+            e9Var = new e9(layoutParams);
         }
-        if (((LinearLayout.LayoutParams) d9Var).gravity <= 0) {
-            ((LinearLayout.LayoutParams) d9Var).gravity = 16;
+        if (((LinearLayout.LayoutParams) e9Var).gravity <= 0) {
+            ((LinearLayout.LayoutParams) e9Var).gravity = 16;
         }
-        return d9Var;
+        return e9Var;
     }
 
-    @Override // xz6
-    public final boolean a(c07 c07Var) {
-        return this.G.q(c07Var, null, 0);
+    @Override // e27
+    public final boolean a(j27 j27Var) {
+        return this.G.q(j27Var, null, 0);
     }
 
-    @Override // v07
-    public final void b(yz6 yz6Var) {
-        this.G = yz6Var;
+    @Override // c37
+    public final void b(f27 f27Var) {
+        this.G = f27Var;
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // s46, android.view.ViewGroup
     public final boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        return layoutParams instanceof d9;
+        return layoutParams instanceof e9;
     }
 
     @Override // android.view.View
@@ -86,65 +86,65 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         return false;
     }
 
-    @Override // o26
+    @Override // s46
     /* renamed from: e */
-    public final /* bridge */ /* synthetic */ n26 generateDefaultLayoutParams() {
+    public final /* bridge */ /* synthetic */ r46 generateDefaultLayoutParams() {
         return i();
     }
 
-    @Override // o26
+    @Override // s46
     /* renamed from: f */
-    public final n26 generateLayoutParams(AttributeSet attributeSet) {
-        return new d9(getContext(), attributeSet);
+    public final r46 generateLayoutParams(AttributeSet attributeSet) {
+        return new e9(getContext(), attributeSet);
     }
 
-    @Override // o26
+    @Override // s46
     /* renamed from: g */
-    public final /* bridge */ /* synthetic */ n26 generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    public final /* bridge */ /* synthetic */ r46 generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return j(layoutParams);
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // s46, android.view.ViewGroup
     public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return i();
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // s46, android.view.ViewGroup
     public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
-        return new d9(getContext(), attributeSet);
+        return new e9(getContext(), attributeSet);
     }
 
     public Menu getMenu() {
-        yz6 yz6Var = this.G;
-        if (yz6Var != null) {
-            return yz6Var;
+        f27 f27Var = this.G;
+        if (f27Var != null) {
+            return f27Var;
         }
         Context context = getContext();
-        yz6 yz6Var2 = new yz6(context);
-        this.G = yz6Var2;
-        yz6Var2.e = new qx4(this);
-        b9 b9Var = new b9(context);
-        this.K = b9Var;
-        b9Var.x = true;
-        b9Var.y = true;
-        b9Var.e = new i2f((byte) 13);
-        this.G.b(b9Var, this.H);
-        b9 b9Var2 = this.K;
-        b9Var2.n = this;
-        yz6 yz6Var3 = b9Var2.c;
-        this.G = yz6Var3;
-        return yz6Var3;
+        f27 f27Var2 = new f27(context);
+        this.G = f27Var2;
+        f27Var2.e = new wz4(this);
+        c9 c9Var = new c9(context);
+        this.K = c9Var;
+        c9Var.x = true;
+        c9Var.y = true;
+        c9Var.e = new z6f((byte) 13);
+        this.G.b(c9Var, this.H);
+        c9 c9Var2 = this.K;
+        c9Var2.n = this;
+        f27 f27Var3 = c9Var2.c;
+        this.G = f27Var3;
+        return f27Var3;
     }
 
     public Drawable getOverflowIcon() {
         getMenu();
-        b9 b9Var = this.K;
-        a9 a9Var = b9Var.r;
-        if (a9Var != null) {
-            return a9Var.getDrawable();
+        c9 c9Var = this.K;
+        b9 b9Var = c9Var.r;
+        if (b9Var != null) {
+            return b9Var.getDrawable();
         }
-        if (b9Var.w) {
-            return b9Var.s;
+        if (c9Var.w) {
+            return c9Var.s;
         }
         return null;
     }
@@ -164,20 +164,20 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         }
         KeyEvent.Callback childAt = getChildAt(i - 1);
         KeyEvent.Callback childAt2 = getChildAt(i);
-        if (i < getChildCount() && (childAt instanceof c9)) {
-            z = ((c9) childAt).b();
+        if (i < getChildCount() && (childAt instanceof d9)) {
+            z = ((d9) childAt).b();
         }
-        return (i <= 0 || !(childAt2 instanceof c9)) ? z : z | ((c9) childAt2).c();
+        return (i <= 0 || !(childAt2 instanceof d9)) ? z : z | ((d9) childAt2).c();
     }
 
     @Override // android.view.View
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        b9 b9Var = this.K;
-        if (b9Var != null) {
-            b9Var.j();
-            if (this.K.f()) {
-                this.K.e();
+        c9 c9Var = this.K;
+        if (c9Var != null) {
+            c9Var.j();
+            if (this.K.g()) {
+                this.K.d();
                 this.K.l();
             }
         }
@@ -186,18 +186,18 @@ public class ActionMenuView extends o26 implements xz6, v07 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        b9 b9Var = this.K;
-        if (b9Var != null) {
-            b9Var.e();
-            y8 y8Var = b9Var.K;
-            if (y8Var == null || !y8Var.b()) {
+        c9 c9Var = this.K;
+        if (c9Var != null) {
+            c9Var.d();
+            z8 z8Var = c9Var.K;
+            if (z8Var == null || !z8Var.b()) {
                 return;
             }
-            y8Var.i.dismiss();
+            z8Var.i.dismiss();
         }
     }
 
-    @Override // o26, android.view.ViewGroup, android.view.View
+    @Override // s46, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int width;
         int i5;
@@ -210,24 +210,24 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         int dividerWidth = getDividerWidth();
         int i7 = i3 - i;
         int paddingRight = (i7 - getPaddingRight()) - getPaddingLeft();
-        boolean a = gfc.a(this);
+        boolean a = fjc.a(this);
         int i8 = 0;
         int i9 = 0;
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = getChildAt(i10);
             if (childAt.getVisibility() != 8) {
-                d9 d9Var = (d9) childAt.getLayoutParams();
-                if (d9Var.a) {
+                e9 e9Var = (e9) childAt.getLayoutParams();
+                if (e9Var.a) {
                     int measuredWidth = childAt.getMeasuredWidth();
                     if (k(i10)) {
                         measuredWidth += dividerWidth;
                     }
                     int measuredHeight = childAt.getMeasuredHeight();
                     if (a) {
-                        i5 = getPaddingLeft() + ((LinearLayout.LayoutParams) d9Var).leftMargin;
+                        i5 = getPaddingLeft() + ((LinearLayout.LayoutParams) e9Var).leftMargin;
                         width = i5 + measuredWidth;
                     } else {
-                        width = (getWidth() - getPaddingRight()) - ((LinearLayout.LayoutParams) d9Var).rightMargin;
+                        width = (getWidth() - getPaddingRight()) - ((LinearLayout.LayoutParams) e9Var).rightMargin;
                         i5 = width - measuredWidth;
                     }
                     int i11 = i6 - (measuredHeight / 2);
@@ -235,7 +235,7 @@ public class ActionMenuView extends o26 implements xz6, v07 {
                     paddingRight -= measuredWidth;
                     i8 = 1;
                 } else {
-                    paddingRight -= (childAt.getMeasuredWidth() + ((LinearLayout.LayoutParams) d9Var).leftMargin) + ((LinearLayout.LayoutParams) d9Var).rightMargin;
+                    paddingRight -= (childAt.getMeasuredWidth() + ((LinearLayout.LayoutParams) e9Var).leftMargin) + ((LinearLayout.LayoutParams) e9Var).rightMargin;
                     k(i10);
                     i9++;
                 }
@@ -256,14 +256,14 @@ public class ActionMenuView extends o26 implements xz6, v07 {
             int width2 = getWidth() - getPaddingRight();
             for (int i15 = 0; i15 < childCount; i15++) {
                 View childAt3 = getChildAt(i15);
-                d9 d9Var2 = (d9) childAt3.getLayoutParams();
-                if (childAt3.getVisibility() != 8 && !d9Var2.a) {
-                    int i16 = width2 - ((LinearLayout.LayoutParams) d9Var2).rightMargin;
+                e9 e9Var2 = (e9) childAt3.getLayoutParams();
+                if (childAt3.getVisibility() != 8 && !e9Var2.a) {
+                    int i16 = width2 - ((LinearLayout.LayoutParams) e9Var2).rightMargin;
                     int measuredWidth3 = childAt3.getMeasuredWidth();
                     int measuredHeight3 = childAt3.getMeasuredHeight();
                     int i17 = i6 - (measuredHeight3 / 2);
                     childAt3.layout(i16 - measuredWidth3, i17, i16, measuredHeight3 + i17);
-                    width2 = i16 - ((measuredWidth3 + ((LinearLayout.LayoutParams) d9Var2).leftMargin) + max);
+                    width2 = i16 - ((measuredWidth3 + ((LinearLayout.LayoutParams) e9Var2).leftMargin) + max);
                 }
             }
             return;
@@ -271,14 +271,14 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         int paddingLeft = getPaddingLeft();
         for (int i18 = 0; i18 < childCount; i18++) {
             View childAt4 = getChildAt(i18);
-            d9 d9Var3 = (d9) childAt4.getLayoutParams();
-            if (childAt4.getVisibility() != 8 && !d9Var3.a) {
-                int i19 = paddingLeft + ((LinearLayout.LayoutParams) d9Var3).leftMargin;
+            e9 e9Var3 = (e9) childAt4.getLayoutParams();
+            if (childAt4.getVisibility() != 8 && !e9Var3.a) {
+                int i19 = paddingLeft + ((LinearLayout.LayoutParams) e9Var3).leftMargin;
                 int measuredWidth4 = childAt4.getMeasuredWidth();
                 int measuredHeight4 = childAt4.getMeasuredHeight();
                 int i20 = i6 - (measuredHeight4 / 2);
                 childAt4.layout(i19, i20, i19 + measuredWidth4, measuredHeight4 + i20);
-                paddingLeft = measuredWidth4 + ((LinearLayout.LayoutParams) d9Var3).rightMargin + max + i19;
+                paddingLeft = measuredWidth4 + ((LinearLayout.LayoutParams) e9Var3).rightMargin + max + i19;
             }
         }
     }
@@ -287,14 +287,14 @@ public class ActionMenuView extends o26 implements xz6, v07 {
     /* JADX WARN: Type inference failed for: r11v12, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r11v14 */
     /* JADX WARN: Type inference failed for: r11v37 */
-    @Override // o26, android.view.View
+    @Override // s46, android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
         int i4;
         ?? r11;
         int i5;
         int i6;
-        yz6 yz6Var;
+        f27 f27Var;
         boolean z = this.M;
         boolean z2 = View.MeasureSpec.getMode(i) == 1073741824;
         this.M = z2;
@@ -302,16 +302,16 @@ public class ActionMenuView extends o26 implements xz6, v07 {
             this.N = 0;
         }
         int size = View.MeasureSpec.getSize(i);
-        if (this.M && (yz6Var = this.G) != null && size != this.N) {
+        if (this.M && (f27Var = this.G) != null && size != this.N) {
             this.N = size;
-            yz6Var.p(true);
+            f27Var.p(true);
         }
         int childCount = getChildCount();
         if (!this.M || childCount <= 0) {
             for (int i7 = 0; i7 < childCount; i7++) {
-                d9 d9Var = (d9) getChildAt(i7).getLayoutParams();
-                ((LinearLayout.LayoutParams) d9Var).rightMargin = 0;
-                ((LinearLayout.LayoutParams) d9Var).leftMargin = 0;
+                e9 e9Var = (e9) getChildAt(i7).getLayoutParams();
+                ((LinearLayout.LayoutParams) e9Var).rightMargin = 0;
+                ((LinearLayout.LayoutParams) e9Var).leftMargin = 0;
             }
             super.onMeasure(i, i2);
             return;
@@ -355,16 +355,16 @@ public class ActionMenuView extends o26 implements xz6, v07 {
                 if (z4) {
                     childAt.setPadding(i3, 0, i3, 0);
                 }
-                d9 d9Var2 = (d9) childAt.getLayoutParams();
-                d9Var2.f = false;
-                d9Var2.c = 0;
-                d9Var2.b = 0;
-                d9Var2.d = false;
-                ((LinearLayout.LayoutParams) d9Var2).leftMargin = 0;
-                ((LinearLayout.LayoutParams) d9Var2).rightMargin = 0;
-                d9Var2.e = z4 && !TextUtils.isEmpty(((ActionMenuItemView) childAt).getText());
-                int i20 = d9Var2.a ? 1 : i10;
-                d9 d9Var3 = (d9) childAt.getLayoutParams();
+                e9 e9Var2 = (e9) childAt.getLayoutParams();
+                e9Var2.f = false;
+                e9Var2.c = 0;
+                e9Var2.b = 0;
+                e9Var2.d = false;
+                ((LinearLayout.LayoutParams) e9Var2).leftMargin = 0;
+                ((LinearLayout.LayoutParams) e9Var2).rightMargin = 0;
+                e9Var2.e = z4 && !TextUtils.isEmpty(((ActionMenuItemView) childAt).getText());
+                int i20 = e9Var2.a ? 1 : i10;
+                e9 e9Var3 = (e9) childAt.getLayoutParams();
                 int i21 = i10;
                 i5 = i12;
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(childMeasureSpec) - i19, View.MeasureSpec.getMode(childMeasureSpec));
@@ -384,14 +384,14 @@ public class ActionMenuView extends o26 implements xz6, v07 {
                         i6 = 2;
                     }
                 }
-                d9Var3.d = !d9Var3.a && z6;
-                d9Var3.b = i6;
+                e9Var3.d = !e9Var3.a && z6;
+                e9Var3.b = i6;
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(i6 * i5, TLObject.FLAG_30), makeMeasureSpec);
                 i15 = Math.max(i15, i6);
-                if (d9Var2.d) {
+                if (e9Var2.d) {
                     i17++;
                 }
-                if (d9Var2.a) {
+                if (e9Var2.a) {
                     z3 = true;
                 }
                 i10 = i21 - i6;
@@ -418,10 +418,10 @@ public class ActionMenuView extends o26 implements xz6, v07 {
             int i28 = 0;
             while (i28 < childCount2) {
                 int i29 = i13;
-                d9 d9Var4 = (d9) getChildAt(i28).getLayoutParams();
+                e9 e9Var4 = (e9) getChildAt(i28).getLayoutParams();
                 boolean z9 = z7;
-                if (d9Var4.d) {
-                    int i30 = d9Var4.b;
+                if (e9Var4.d) {
+                    int i30 = e9Var4.b;
                     if (i30 < i26) {
                         j2 = 1 << i28;
                         i26 = i30;
@@ -445,11 +445,11 @@ public class ActionMenuView extends o26 implements xz6, v07 {
             int i32 = 0;
             while (i32 < childCount2) {
                 View childAt2 = getChildAt(i32);
-                d9 d9Var5 = (d9) childAt2.getLayoutParams();
+                e9 e9Var5 = (e9) childAt2.getLayoutParams();
                 boolean z11 = z3;
                 long j3 = 1 << i32;
                 if ((j2 & j3) != 0) {
-                    if (z10 && d9Var5.e) {
+                    if (z10 && e9Var5.e) {
                         r11 = 1;
                         r11 = 1;
                         if (i25 == 1) {
@@ -458,10 +458,10 @@ public class ActionMenuView extends o26 implements xz6, v07 {
                     } else {
                         r11 = 1;
                     }
-                    d9Var5.b += r11;
-                    d9Var5.f = r11;
+                    e9Var5.b += r11;
+                    e9Var5.f = r11;
                     i25--;
-                } else if (d9Var5.b == i31) {
+                } else if (e9Var5.b == i31) {
                     j |= j3;
                 }
                 i32++;
@@ -476,11 +476,11 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         if (i25 > 0 && j != 0 && (i25 < i14 - 1 || z12 || i15 > 1)) {
             float bitCount = Long.bitCount(j);
             if (!z12) {
-                if ((j & 1) != 0 && !((d9) getChildAt(0).getLayoutParams()).e) {
+                if ((j & 1) != 0 && !((e9) getChildAt(0).getLayoutParams()).e) {
                     bitCount -= 0.5f;
                 }
                 int i33 = childCount2 - 1;
-                if ((j & (1 << i33)) != 0 && !((d9) getChildAt(i33).getLayoutParams()).e) {
+                if ((j & (1 << i33)) != 0 && !((e9) getChildAt(i33).getLayoutParams()).e) {
                     bitCount -= 0.5f;
                 }
             }
@@ -489,25 +489,25 @@ public class ActionMenuView extends o26 implements xz6, v07 {
             for (int i35 = 0; i35 < childCount2; i35++) {
                 if ((j & (1 << i35)) != 0) {
                     View childAt3 = getChildAt(i35);
-                    d9 d9Var6 = (d9) childAt3.getLayoutParams();
+                    e9 e9Var6 = (e9) childAt3.getLayoutParams();
                     if (childAt3 instanceof ActionMenuItemView) {
-                        d9Var6.c = i34;
-                        d9Var6.f = true;
-                        if (i35 == 0 && !d9Var6.e) {
-                            ((LinearLayout.LayoutParams) d9Var6).leftMargin = (-i34) / 2;
+                        e9Var6.c = i34;
+                        e9Var6.f = true;
+                        if (i35 == 0 && !e9Var6.e) {
+                            ((LinearLayout.LayoutParams) e9Var6).leftMargin = (-i34) / 2;
                         }
                         z13 = true;
-                    } else if (d9Var6.a) {
-                        d9Var6.c = i34;
-                        d9Var6.f = true;
-                        ((LinearLayout.LayoutParams) d9Var6).rightMargin = (-i34) / 2;
+                    } else if (e9Var6.a) {
+                        e9Var6.c = i34;
+                        e9Var6.f = true;
+                        ((LinearLayout.LayoutParams) e9Var6).rightMargin = (-i34) / 2;
                         z13 = true;
                     } else {
                         if (i35 != 0) {
-                            ((LinearLayout.LayoutParams) d9Var6).leftMargin = i34 / 2;
+                            ((LinearLayout.LayoutParams) e9Var6).leftMargin = i34 / 2;
                         }
                         if (i35 != childCount2 - 1) {
-                            ((LinearLayout.LayoutParams) d9Var6).rightMargin = i34 / 2;
+                            ((LinearLayout.LayoutParams) e9Var6).rightMargin = i34 / 2;
                         }
                     }
                 }
@@ -517,9 +517,9 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         if (z8) {
             for (int i36 = 0; i36 < childCount2; i36++) {
                 View childAt4 = getChildAt(i36);
-                d9 d9Var7 = (d9) childAt4.getLayoutParams();
-                if (d9Var7.f) {
-                    childAt4.measure(View.MeasureSpec.makeMeasureSpec((d9Var7.b * i24) + d9Var7.c, TLObject.FLAG_30), childMeasureSpec);
+                e9 e9Var7 = (e9) childAt4.getLayoutParams();
+                if (e9Var7.f) {
+                    childAt4.measure(View.MeasureSpec.makeMeasureSpec((e9Var7.b * i24) + e9Var7.c, TLObject.FLAG_30), childMeasureSpec);
                 }
             }
         }
@@ -530,19 +530,19 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         this.K.H = z;
     }
 
-    public void setOnMenuItemClickListener(e9 e9Var) {
-        this.Q = e9Var;
+    public void setOnMenuItemClickListener(f9 f9Var) {
+        this.Q = f9Var;
     }
 
     public void setOverflowIcon(Drawable drawable) {
         getMenu();
-        b9 b9Var = this.K;
-        a9 a9Var = b9Var.r;
-        if (a9Var != null) {
-            a9Var.setImageDrawable(drawable);
+        c9 c9Var = this.K;
+        b9 b9Var = c9Var.r;
+        if (b9Var != null) {
+            b9Var.setImageDrawable(drawable);
         } else {
-            b9Var.w = true;
-            b9Var.s = drawable;
+            c9Var.w = true;
+            c9Var.s = drawable;
         }
     }
 
@@ -561,13 +561,13 @@ public class ActionMenuView extends o26 implements xz6, v07 {
         }
     }
 
-    public void setPresenter(b9 b9Var) {
-        this.K = b9Var;
-        b9Var.n = this;
-        this.G = b9Var.c;
+    public void setPresenter(c9 c9Var) {
+        this.K = c9Var;
+        c9Var.n = this;
+        this.G = c9Var.c;
     }
 
-    @Override // o26, android.view.ViewGroup
+    @Override // s46, android.view.ViewGroup
     public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return j(layoutParams);
     }

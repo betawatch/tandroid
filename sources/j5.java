@@ -1,45 +1,43 @@
 // default package
 
-import android.content.SharedPreferences;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class j5 {
-    public static volatile j5[] b = new j5[4];
-    public int a;
+    public final /* synthetic */ byte a;
+    public final String b;
+    public final String c;
 
-    public static j5 a(int i) {
-        j5 j5Var;
-        j5 j5Var2 = b[i];
-        if (j5Var2 != null) {
-            return j5Var2;
+    public j5(String str, String str2, byte b) {
+        this.a = b;
+        switch (b) {
+            case 2:
+                xve.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
+                this.b = str;
+                this.c = (str2 == null || str2.length() <= 0) ? null : str2;
+                return;
+            default:
+                this.b = str;
+                this.c = str2;
+                if (str.length() > 0) {
+                    return;
+                }
+                lq5.j("userId should not be empty");
+                throw null;
         }
-        synchronized (j5.class) {
-            j5Var = b[i];
-            if (j5Var == null) {
-                j5[] j5VarArr = b;
-                j5 j5Var3 = new j5();
-                j5Var3.a = i;
-                j5VarArr[i] = j5Var3;
-                j5Var = j5Var3;
-            }
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 4:
+                return this.b + ", " + this.c;
+            default:
+                return super.toString();
         }
-        return j5Var;
     }
 
-    public final na7 b() {
-        return na7.q1(this.a);
-    }
-
-    public final kk7 c() {
-        return kk7.f(this.a);
-    }
-
-    public final SharedPreferences d() {
-        return na7.q1(this.a).W3;
-    }
-
-    public final y6c e() {
-        return y6c.h(this.a);
+    public /* synthetic */ j5(String str, String str2, byte b, boolean z) {
+        this.a = b;
+        this.b = str;
+        this.c = str2;
     }
 }

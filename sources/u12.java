@@ -1,55 +1,10 @@
 // default package
 
-import android.content.Context;
+import android.text.Editable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class u12 extends qqc {
-    public final /* synthetic */ byte x;
-    public final /* synthetic */ n39 y;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u12(dy0 dy0Var, Context context) {
-        super(context, 1);
-        this.x = (byte) 0;
-        this.y = dy0Var;
-    }
-
-    @Override // qqc
-    public final void a(int i, Object obj) {
-        byte b = this.x;
-        n39 n39Var = this.y;
-        switch (b) {
-            case 0:
-                vs2 vs2Var = ((v12) ((dy0) n39Var).f).y;
-                if (vs2Var != null) {
-                    vs2Var.accept(obj);
-                    break;
-                }
-                break;
-            case 1:
-                ((mrc) n39Var).d.E0(this, obj, i);
-                break;
-            default:
-                ((orc) n39Var).F.presentFragment(new qmb(obj, null, true));
-                break;
-        }
-    }
-
-    @Override // qqc
-    public final boolean b(Object obj, int i) {
-        switch (this.x) {
-            case 1:
-                return ((mrc) this.y).d.F0(this, obj, i);
-            default:
-                return super.b(obj, i);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u12(n39 n39Var, Context context, byte b) {
-        super(context, 5);
-        this.x = b;
-        this.y = n39Var;
-    }
+public interface u12 {
+    void d(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2);
 }

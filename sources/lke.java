@@ -1,19 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class lke implements zn7 {
-    public static final lke a = new lke();
+import java.io.Serializable;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)), 5)), 6)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class lke {
+    public static String a(byte[] bArr) {
+        StringBuilder sb = new StringBuilder(bArr.length << 1);
+        for (byte b : bArr) {
+            sb.append(String.format("%02x", Byte.valueOf(b)));
+        }
+        return sb.toString();
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    /* JADX WARN: Multi-variable type inference failed */
+    public static long[] b(Serializable serializable) {
+        if (!(serializable instanceof int[])) {
+            if (serializable instanceof long[]) {
+                return (long[]) serializable;
+            }
+            return null;
         }
-        throw null;
+        int[] iArr = (int[]) serializable;
+        long[] jArr = new long[iArr.length];
+        for (int i = 0; i < iArr.length; i++) {
+            jArr[i] = iArr[i];
+        }
+        return jArr;
     }
 }

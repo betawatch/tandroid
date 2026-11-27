@@ -1,32 +1,92 @@
 // default package
 
-import android.content.Intent;
-import android.os.Binder;
-import android.os.Process;
-import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.FirebaseMessagingService;
+import android.util.Base64;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class myc extends Binder {
-    public final z24 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class myc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pyc b;
 
-    public myc(z24 z24Var) {
-        this.a = z24Var;
+    public /* synthetic */ myc(pyc pycVar, byte b) {
+        this.a = b;
+        this.b = pycVar;
     }
 
-    public final void a(nyc nycVar) {
-        if (Binder.getCallingUid() != Process.myUid()) {
-            throw new SecurityException("Binding only allowed within app");
+    private final void a() {
+        pyc pycVar = this.b;
+        pycVar.g();
+        synchronized (pycVar.a) {
+            if (pycVar.u) {
+                return;
+            }
+            hl.d3(new myc(pycVar, (byte) 2), 1000L);
         }
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "service received new intent via bind strategy");
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0087, code lost:
+    
+        return;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                pyc pycVar = this.b;
+                cv5 cv5Var = pycVar.p;
+                if (cv5Var != null) {
+                    try {
+                        if (!czc.c.b()) {
+                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                        }
+                        cv5Var.a.postMessage("{\"t\":\"close\"}");
+                    } catch (Exception unused) {
+                    }
+                }
+                pycVar.g();
+                return;
+            case 1:
+                this.b.c();
+                return;
+            case 2:
+                this.b.e();
+                return;
+            case 3:
+                a();
+                return;
+            default:
+                pyc pycVar2 = this.b;
+                while (true) {
+                    synchronized (pycVar2.a) {
+                        cv5 cv5Var2 = pycVar2.p;
+                        if (!pycVar2.u && cv5Var2 != null && pycVar2.r && !pycVar2.n.isEmpty()) {
+                            byte[] bArr = (byte[]) pycVar2.n.removeFirst();
+                            pycVar2.w -= bArr.length;
+                            try {
+                                if (!pycVar2.q) {
+                                    String str = "tproxy-base64:" + Base64.encodeToString(bArr, 2);
+                                    if (!czc.c.b()) {
+                                        throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                                    }
+                                    cv5Var2.a.postMessage(str);
+                                } else {
+                                    if (!czc.a.b()) {
+                                        throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                                    }
+                                    cv5Var2.a.postMessageWithPayload(new oy0(new sxc(bArr)));
+                                }
+                            } catch (Exception e) {
+                                cc4.g(e, true);
+                                pycVar2.h();
+                                return;
+                            }
+                        }
+                    }
+                }
+                break;
         }
-        Intent intent = nycVar.a;
-        FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.a.b;
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        firebaseMessagingService.a.execute(new mg3(firebaseMessagingService, intent, taskCompletionSource, (byte) 18));
-        taskCompletionSource.getTask().addOnCompleteListener(new hc((byte) 1), new dkc(nycVar, (byte) 11));
     }
 }

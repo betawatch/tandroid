@@ -1,40 +1,38 @@
 // default package
 
-import org.telegram.ui.Wallet.WalletEngine2;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tnc implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ p8c c;
-    public final /* synthetic */ String d;
+public final class tnc extends View {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vnc b;
 
-    public /* synthetic */ tnc(WalletEngine2 walletEngine2, p8c p8cVar, String str) {
-        this.b = walletEngine2;
-        this.c = p8cVar;
-        this.d = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ tnc(vnc vncVar, Context context, byte b) {
+        super(context);
+        this.a = b;
+        this.b = vncVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
         byte b = this.a;
-        String str = this.d;
-        p8c p8cVar = this.c;
-        WalletEngine2 walletEngine2 = this.b;
+        vnc vncVar = this.b;
         switch (b) {
             case 0:
-                walletEngine2.lambda$getTransactionByHash$42(str, p8cVar);
+                RectF rectF = hl.P;
+                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                vncVar.j(canvas, rectF, vncVar.h0 ? -1 : vncVar.i0, 1.0f);
                 break;
             default:
-                walletEngine2.lambda$previewSignMessage$10(p8cVar, str);
+                RectF rectF2 = hl.P;
+                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                vncVar.e(canvas, rectF2, vncVar.h0 ? -1 : vncVar.i0, 1.0f);
                 break;
         }
-    }
-
-    public /* synthetic */ tnc(WalletEngine2 walletEngine2, String str, p8c p8cVar) {
-        this.b = walletEngine2;
-        this.d = str;
-        this.c = p8cVar;
     }
 }

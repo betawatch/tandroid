@@ -1,128 +1,239 @@
 // default package
 
-import android.graphics.RenderEffect;
-import android.graphics.RuntimeShader;
-import android.view.RoundedCorner;
-import android.view.View;
-import android.view.WindowInsets;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.animation.ValueAnimator;
+import android.view.MotionEvent;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class obb extends l13 {
-    public final ArrayList b;
-    public final RuntimeShader c;
-    public RenderEffect d;
-    public int e;
-    public int f;
-    public int g;
-    public float h;
-    public final float[] i;
-    public final float[] j;
-    public final float[] k;
-    public final float[] l;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class obb extends tu4 {
+    public final /* synthetic */ qbb a;
 
-    public obb(View view) {
-        super(view);
-        this.b = new ArrayList();
-        this.i = new float[7];
-        this.j = new float[7];
-        this.k = new float[7];
-        this.l = new float[7];
-        RuntimeShader b = nm3.b(gl.v2(null, R.raw.superripple_effect));
-        this.c = b;
-        h(true);
-        this.d = RenderEffect.createRuntimeShaderEffect(b, "img");
+    public obb(qbb qbbVar) {
+        this.a = qbbVar;
     }
 
-    public final void h(boolean z) {
-        RoundedCorner roundedCorner;
-        RoundedCorner roundedCorner2;
-        RoundedCorner roundedCorner3;
-        RoundedCorner roundedCorner4;
-        View view = (View) this.a;
-        if (z || this.f != view.getWidth() || this.g != view.getHeight() || Math.abs(this.h - gl.p) > 0.01f) {
-            RuntimeShader runtimeShader = this.c;
-            int width = view.getWidth();
-            this.f = width;
-            int height = view.getHeight();
-            this.g = height;
-            runtimeShader.setFloatUniform("size", width, height);
-            RuntimeShader runtimeShader2 = this.c;
-            float f = gl.p;
-            this.h = f;
-            runtimeShader2.setFloatUniform("density", f);
-            WindowInsets rootWindowInsets = view.getRootWindowInsets();
-            if (rootWindowInsets == null) {
-                roundedCorner4 = null;
-                roundedCorner = null;
-                roundedCorner2 = null;
-                roundedCorner3 = null;
-            } else {
-                roundedCorner = rootWindowInsets.getRoundedCorner(0);
-                roundedCorner2 = rootWindowInsets.getRoundedCorner(1);
-                roundedCorner3 = rootWindowInsets.getRoundedCorner(3);
-                roundedCorner4 = rootWindowInsets.getRoundedCorner(2);
-            }
-            this.c.setFloatUniform("radius", (roundedCorner4 == null || (view != view.getRootView() && gl.n > 0)) ? 0.0f : roundedCorner4.getRadius(), roundedCorner2 == null ? 0.0f : roundedCorner2.getRadius(), (roundedCorner3 == null || (view != view.getRootView() && gl.n > 0)) ? 0.0f : roundedCorner3.getRadius(), roundedCorner != null ? roundedCorner.getRadius() : 0.0f);
+    @Override // tu4
+    public final boolean a() {
+        wab wabVar;
+        rbb rbbVar = this.a.o0;
+        if (rbbVar.g0 != 0 || (wabVar = rbbVar.C0) == null || rbbVar.T1 || !wabVar.isInited() || rbbVar.Q1 || rbbVar.P0.y0) {
+            return false;
         }
+        du9 du9Var = rbbVar.E0;
+        return (du9Var == null || !(du9Var.y.i || du9Var.M)) && !rbbVar.H() && rbbVar.q2 == null;
     }
 
-    public final void i() {
-        float[] fArr;
-        float[] fArr2;
-        float[] fArr3;
-        float[] fArr4;
-        View view = (View) this.a;
-        ArrayList arrayList = this.b;
-        boolean z = false;
-        if (!arrayList.isEmpty()) {
-            boolean z2 = true;
-            boolean z3 = this.e != Math.min(7, arrayList.size());
-            this.e = Math.min(7, arrayList.size());
-            int i = 0;
-            while (true) {
-                int i2 = this.e;
-                fArr = this.l;
-                fArr2 = this.k;
-                fArr3 = this.j;
-                fArr4 = this.i;
-                if (i >= i2) {
-                    break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
+        rbb rbbVar = this.a.o0;
+        wab wabVar = rbbVar.C0;
+        if (wabVar == null || rbbVar.T1 || rbbVar.Q1 || !wabVar.isInited() || rbbVar.g0 != 0 || rbbVar.P1 == -1) {
+            return false;
+        }
+        rbbVar.C0.switchCamera();
+        rbbVar.P0.d(180.0f);
+        uc7.e1().edit().putBoolean("stories_camera", rbbVar.C0.isFrontface()).apply();
+        if (rbbVar.p0()) {
+            rbbVar.s.c(null);
+            return true;
+        }
+        rbbVar.s.d();
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onDoubleTapEvent(MotionEvent motionEvent) {
+        wab wabVar = this.a.o0.C0;
+        if (wabVar == null) {
+            return false;
+        }
+        wabVar.O = null;
+        wabVar.L = -1L;
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        qbb qbbVar = this.a;
+        qbbVar.m0 = 0.0f;
+        qbbVar.n0 = 0.0f;
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        du9 du9Var;
+        wab wabVar;
+        r3d r3dVar;
+        fbb fbbVar;
+        qbb qbbVar = this.a;
+        rbb rbbVar = qbbVar.o0;
+        ValueAnimator valueAnimator = rbbVar.F;
+        if ((valueAnimator != null && valueAnimator.isRunning()) || (((du9Var = rbbVar.E0) != null && (du9Var.y.i || du9Var.M)) || rbbVar.P0.y0 || (((wabVar = rbbVar.C0) != null && wabVar.s) || qbbVar.k0 || (((r3dVar = rbbVar.W0) != null && (r3dVar.G || r3dVar.H)) || rbbVar.G())))) {
+            return false;
+        }
+        boolean z = true;
+        qbbVar.i0 = true;
+        if (rbbVar.X) {
+            if (Math.abs(rbbVar.r.a) >= hl.L(1.0f)) {
+                if ((f2 <= 0.0f || Math.abs(f2) <= 2000.0f || Math.abs(f2) <= Math.abs(f)) && rbbVar.L <= 0.4f) {
+                    rbbVar.b();
+                } else {
+                    rbbVar.o(true);
                 }
-                nbb nbbVar = (nbb) arrayList.get(i);
-                boolean z4 = z3 || Math.abs(fArr4[i] - nbbVar.d) > 0.001f;
-                float f = nbbVar.d;
-                float f2 = nbbVar.c;
-                float f3 = nbbVar.b;
-                float f4 = nbbVar.a;
-                fArr4[i] = f;
-                boolean z5 = z4 || Math.abs(fArr3[i] - f4) > 0.001f;
-                fArr3[i] = f4;
-                boolean z6 = z5 || Math.abs(fArr2[i] - f3) > 0.001f;
-                fArr2[i] = f3;
-                z3 = z6 || Math.abs(fArr[i] - f2) > 0.001f;
-                fArr[i] = f2;
-                i++;
+            } else if (rbbVar.N0 != null && !rbbVar.M0 && rbbVar.P1 != -1) {
+                if (Math.abs(f2) <= 200.0f || (rbbVar.N0.d.canScrollVertically(-1) && rbbVar.L0)) {
+                    rbbVar.c(!rbbVar.R1 && rbbVar.N0.getTranslationY() < ((float) rbbVar.N0.getPadding()));
+                } else {
+                    rbbVar.c(!rbbVar.R1 && f2 < 0.0f);
+                }
             }
-            if (!z3 && this.f == view.getWidth() && this.g == view.getHeight() && Math.abs(this.h - gl.p) <= 0.01f) {
-                z2 = false;
+            rbbVar.M0 = false;
+            rbbVar.X = false;
+            rbbVar.Y = false;
+            if (z && (fbbVar = rbbVar.B0) != null) {
+                fbbVar.a();
             }
-            if (z2) {
-                this.c.setIntUniform("count", this.e);
-                this.c.setFloatUniform("t", fArr4);
-                this.c.setFloatUniform("centerX", fArr3);
-                this.c.setFloatUniform("centerY", fArr2);
-                this.c.setFloatUniform("intensity", fArr);
-                h(false);
-                this.d = RenderEffect.createRuntimeShaderEffect(this.c, "img");
-            }
-            z = z2;
+            return z;
         }
-        view.setRenderEffect(arrayList.isEmpty() ? null : this.d);
+        z = false;
+        rbbVar.M0 = false;
+        rbbVar.X = false;
+        rbbVar.Y = false;
         if (z) {
-            view.invalidate();
+            fbbVar.a();
         }
+        return z;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00ed  */
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        du9 du9Var;
+        wab wabVar;
+        r3d r3dVar;
+        zt4 zt4Var;
+        float max;
+        qbb qbbVar = this.a;
+        rbb rbbVar = qbbVar.o0;
+        ValueAnimator valueAnimator = rbbVar.F;
+        if ((valueAnimator != null && valueAnimator.isRunning()) || rbbVar.p2 != null || rbbVar.o2 != null || (((du9Var = rbbVar.E0) != null && (du9Var.y.i || du9Var.M)) || rbbVar.P0.y0 || (((wabVar = rbbVar.C0) != null && wabVar.s) || qbbVar.k0 || (((r3dVar = rbbVar.W0) != null && (r3dVar.G || r3dVar.H)) || rbbVar.G() || rbbVar.R1 || rbbVar.Q1 || rbbVar.g0 != 0)))) {
+            return false;
+        }
+        if (!rbbVar.Y) {
+            float f3 = qbbVar.m0 + f2;
+            qbbVar.m0 = f3;
+            if (!rbbVar.X && Math.abs(f3) >= hl.e) {
+                fbb fbbVar = rbbVar.B0;
+                if (fbbVar != null) {
+                    fbbVar.a();
+                }
+                rbbVar.X = true;
+            }
+        }
+        if (rbbVar.X) {
+            int measuredHeight = (rbbVar.n.getMeasuredHeight() - ((int) (hl.q.y * 0.35f))) - (a.getCurrentActionBarHeight() + hl.m);
+            zt4 zt4Var2 = rbbVar.N0;
+            if (zt4Var2 != null) {
+                float f4 = measuredHeight;
+                if (zt4Var2.getTranslationY() < f4) {
+                    qbbVar.l0 = rbbVar.N0.getTranslationY() - f4;
+                    zt4Var = rbbVar.N0;
+                    if (zt4Var != null && zt4Var.d.canScrollVertically(-1)) {
+                        f2 = Math.max(0.0f, f2);
+                    }
+                    float f5 = qbbVar.l0 - f2;
+                    qbbVar.l0 = f5;
+                    max = Math.max(-measuredHeight, f5);
+                    qbbVar.l0 = max;
+                    if (rbbVar.g0 == 1) {
+                        max = Math.max(0.0f, max);
+                        qbbVar.l0 = max;
+                    }
+                    if (max < 0.0f) {
+                        rbbVar.r.setTranslationY(max);
+                        zt4 zt4Var3 = rbbVar.N0;
+                        if (zt4Var3 != null) {
+                            zt4Var3.setTranslationY(measuredHeight);
+                        }
+                    } else {
+                        rbbVar.r.setTranslationY(0.0f);
+                        if (rbbVar.N0 == null) {
+                            rbbVar.r(false);
+                        }
+                        rbbVar.N0.setTranslationY(measuredHeight + qbbVar.l0);
+                    }
+                }
+            }
+            qbbVar.l0 = rbbVar.r.a;
+            zt4Var = rbbVar.N0;
+            if (zt4Var != null) {
+                f2 = Math.max(0.0f, f2);
+            }
+            float f52 = qbbVar.l0 - f2;
+            qbbVar.l0 = f52;
+            max = Math.max(-measuredHeight, f52);
+            qbbVar.l0 = max;
+            if (rbbVar.g0 == 1) {
+            }
+            if (max < 0.0f) {
+            }
+        }
+        if (!rbbVar.X) {
+            float f6 = qbbVar.n0 + f;
+            qbbVar.n0 = f6;
+            if (!rbbVar.Y && Math.abs(f6) >= hl.e) {
+                fbb fbbVar2 = rbbVar.B0;
+                if (fbbVar2 != null) {
+                    fbbVar2.a();
+                }
+                rbbVar.Y = true;
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        wab wabVar = this.a.o0.C0;
+        if (wabVar == null) {
+            return false;
+        }
+        zr3 zr3Var = wabVar.O;
+        if (zr3Var == null) {
+            return true;
+        }
+        zr3Var.run();
+        wabVar.O = null;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        rbb rbbVar = this.a.o0;
+        rbbVar.X = false;
+        rbbVar.Y = false;
+        if (!a() && onSingleTapConfirmed(motionEvent)) {
+            return true;
+        }
+        if (!rbbVar.H() || motionEvent.getY() >= rbbVar.N0.g()) {
+            return false;
+        }
+        rbbVar.c(false);
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

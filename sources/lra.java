@@ -1,49 +1,71 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lra implements i8c {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ i8c c;
-    public final /* synthetic */ p8c d;
+public final /* synthetic */ class lra implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wua b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ lra(p8c p8cVar, boolean[] zArr, i8c i8cVar) {
-        this.d = p8cVar;
-        this.b = zArr;
-        this.c = i8cVar;
+    public /* synthetic */ lra(wua wuaVar, long j, byte b) {
+        this.a = b;
+        this.b = wuaVar;
+        this.c = j;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        p8c p8cVar = this.d;
-        i8c i8cVar = this.c;
-        boolean[] zArr = this.b;
-        Long l = (Long) obj;
-        Boolean bool = (Boolean) obj2;
+        long j = this.c;
+        wua wuaVar = this.b;
         switch (b) {
             case 0:
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.TRUE);
-                }
-                zArr[0] = true;
-                i8cVar.a(bool.booleanValue() ? "paid" : "failed", l);
+                wuaVar.Z1(j);
                 break;
-            default:
-                zArr[0] = true;
-                i8cVar.a(bool.booleanValue() ? "paid" : "failed", l);
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.TRUE);
+            case 1:
+                wuaVar.Z1(j);
+                break;
+            case 2:
+                jra jraVar = wuaVar.s3;
+                wuaVar.A2(1, true, null);
+                if (j > 0) {
+                    hl.r(jraVar);
+                    hl.c3(jraVar);
                     break;
                 }
                 break;
+            case 3:
+                wuaVar.Z1(j);
+                break;
+            case 4:
+                wuaVar.Z1(j);
+                break;
+            case 5:
+                dza dzaVar = new dza(wuaVar.getContext(), wuaVar.J0, this.c, 10, null, new ida(wuaVar, new boolean[]{false}, (byte) 16), 0L);
+                dzaVar.setOnDismissListener(new rsa(wuaVar, (byte) 0));
+                dzaVar.show();
+                break;
+            case 6:
+                wuaVar.V1(j);
+                break;
+            case 7:
+                wuaVar.Z1(j);
+                break;
+            case 8:
+                wuaVar.V1(j);
+                break;
+            case 9:
+                wuaVar.Z1(j);
+                break;
+            case 10:
+                wuaVar.V1(j);
+                break;
+            case 11:
+                wuaVar.Z1(j);
+                break;
+            default:
+                wuaVar.V1(j);
+                break;
         }
-    }
-
-    public /* synthetic */ lra(boolean[] zArr, i8c i8cVar, p8c p8cVar) {
-        this.b = zArr;
-        this.c = i8cVar;
-        this.d = p8cVar;
     }
 }

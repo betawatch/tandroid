@@ -17,20 +17,20 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wp0 extends pf0 {
+public final class wp0 extends rf0 {
     public static volatile wp0[] f = new wp0[4];
-    public final lj9 a;
-    public final lj9 b;
+    public final zm9 a;
+    public final zm9 b;
     public final Set c;
     public final LongSparseArray d;
     public final SharedPreferences e;
 
     public wp0(int i) {
         super(i);
-        this.a = new lj9((byte) 10);
-        this.b = new lj9((byte) 10);
+        this.a = new zm9((byte) 10);
+        this.b = new zm9((byte) 10);
         this.c = DesugarCollections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
         this.d = new LongSparseArray();
         this.e = a.b.getSharedPreferences("bot_drafts" + i, 0);
@@ -87,14 +87,14 @@ public final class wp0 extends pf0 {
             inputPeer2 = ((TLRPC.TL_messages_sendMultiMedia) tLObject).peer;
         } else {
             inputPeer = null;
-            final long m = cf3.m(inputPeer);
-            if (inputPeer != null || m <= 0 || !l7c.x(getMessagesController().V1(Long.valueOf(m)))) {
+            final long m = wf3.m(inputPeer);
+            if (inputPeer != null || m <= 0 || !lbc.x(getMessagesController().X1(Long.valueOf(m)))) {
                 return true;
             }
             final long[] jArr = new long[list.size()];
             byte b = 0;
             for (int i = 0; i < list.size(); i++) {
-                jArr[i] = ((k27) list.get(i)).e1();
+                jArr[i] = ((r47) list.get(i)).e1();
             }
             if (z) {
                 j2 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
@@ -113,7 +113,7 @@ public final class wp0 extends pf0 {
                         while (i2 < size) {
                             Long l = arrayList.get(i2);
                             i2++;
-                            j3 = hq6.r(j3, l.longValue());
+                            j3 = ls6.r(j3, l.longValue());
                             inputPeer = inputPeer;
                         }
                         inputPeer3 = inputPeer;
@@ -129,7 +129,7 @@ public final class wp0 extends pf0 {
                             while (i3 < size2) {
                                 TLRPC.TL_inputSingleMedia tL_inputSingleMedia = arrayList2.get(i3);
                                 i3++;
-                                j2 = hq6.r(j2, tL_inputSingleMedia.random_id);
+                                j2 = ls6.r(j2, tL_inputSingleMedia.random_id);
                             }
                         } else {
                             j2 = 0;
@@ -168,23 +168,23 @@ public final class wp0 extends pf0 {
                         D = ~j2;
                     } else {
                         getSendMessagesHelper().getClass();
-                        D = z3a.D();
+                        D = r7a.D();
                     }
                     if (TextUtils.isEmpty(str)) {
-                        str = k96.M0(2131743741, null);
+                        str = ob6.M0(2131743635, null);
                     } else if (str.length() > 16) {
                         str = str.substring(0, 16).concat("...");
                     }
                     final String str2 = str;
-                    uc7 uc7Var = new uc7() { // from class: op0
-                        @Override // uc7
+                    df7 df7Var = new df7() { // from class: np0
+                        @Override // df7
                         public final void a(int i5) {
                             wp0 wp0Var = wp0.this;
                             TLObject tLObject2 = tLObject;
                             Runnable runnable2 = runnable;
                             if (i5 <= 0) {
                                 wp0Var.c.add(tLObject2);
-                                gl.c3(runnable2);
+                                hl.c3(runnable2);
                                 return;
                             }
                             boolean z2 = tLObject2 instanceof TLRPC.TL_messages_forwardMessages;
@@ -224,15 +224,15 @@ public final class wp0 extends pf0 {
                             wp0Var.getMessagesStorage().a.c(new wy(wp0Var, jArr, m, i5, runnable2));
                         }
                     };
-                    final long m2 = cf3.m(inputPeer3);
+                    final long m2 = wf3.m(inputPeer3);
                     LongSparseArray longSparseArray = this.d;
                     List list2 = (List) longSparseArray.get(m2);
                     if (list2 != null) {
-                        list2.add(uc7Var);
+                        list2.add(df7Var);
                         return false;
                     }
                     ArrayList arrayList4 = new ArrayList(1);
-                    arrayList4.add(uc7Var);
+                    arrayList4.add(df7Var);
                     longSparseArray.put(m2, arrayList4);
                     TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
                     tL_messages_createForumTopic.title = TextUtils.isEmpty(str2) ? "#New Chat" : str2;
@@ -240,8 +240,8 @@ public final class wp0 extends pf0 {
                     tL_messages_createForumTopic.peer = inputPeer3;
                     tL_messages_createForumTopic.random_id = D;
                     final long j4 = D;
-                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new hc(b), new i8c() { // from class: qp0
-                        @Override // i8c
+                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new ic(b), new icc() { // from class: qp0
+                        @Override // icc
                         public final void a(Object obj, Object obj2) {
                             ArrayList<TLRPC.Update> arrayList5;
                             TLRPC.Updates updates = (TLRPC.Updates) obj;
@@ -270,7 +270,7 @@ public final class wp0 extends pf0 {
                                     arrayList5 = arrayList6;
                                     if (update2 instanceof TL_update.TL_updateNewMessage) {
                                         TLRPC.Message message = ((TL_update.TL_updateNewMessage) update2).message;
-                                        if (i6 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && k27.B0(message) == j5) {
+                                        if (i6 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && r47.B0(message) == j5) {
                                             i6 = message.id;
                                         }
                                     }
@@ -280,7 +280,7 @@ public final class wp0 extends pf0 {
                             if (i5 == 0) {
                                 i5 = i6;
                             }
-                            wp0Var.getMessagesController().R3(updates, false);
+                            wp0Var.getMessagesController().Y3(updates, false);
                             if (i5 == 0) {
                                 wp0Var.f(-1, j5);
                                 return;
@@ -291,7 +291,7 @@ public final class wp0 extends pf0 {
                             String str3 = str2;
                             tL_messageActionTopicCreate.title = str3;
                             tL_messageService.action = tL_messageActionTopicCreate;
-                            tL_messageService.peer_id = wp0Var.getMessagesController().w1(j5);
+                            tL_messageService.peer_id = wp0Var.getMessagesController().y1(j5);
                             tL_messageService.dialog_id = j5;
                             tL_messageService.id = i5;
                             tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
@@ -302,13 +302,13 @@ public final class wp0 extends pf0 {
                             tL_forumTopic.title = str3;
                             tL_forumTopic.top_message = i5;
                             tL_forumTopic.topMessage = tL_messageService;
-                            tL_forumTopic.from_id = wp0Var.getMessagesController().w1(wp0Var.getUserConfig().n);
+                            tL_forumTopic.from_id = wp0Var.getMessagesController().y1(wp0Var.getUserConfig().n);
                             tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
                             tL_forumTopic.icon_color = 0;
                             tL_forumTopic.title_missing = true;
                             wp0Var.getMessagesController().g4.q(j5, tL_forumTopic, true);
                             wp0Var.f(i5, j5);
-                            wp0Var.getNotificationCenter().k(kk7.L5, new up0(j5, i5));
+                            wp0Var.getNotificationCenter().k(jn7.M5, new up0(j5, i5));
                         }
                     });
                     return false;
@@ -321,16 +321,16 @@ public final class wp0 extends pf0 {
             }
         }
         inputPeer = inputPeer2;
-        final long m3 = cf3.m(inputPeer);
+        final long m3 = wf3.m(inputPeer);
         return inputPeer != null ? true : true;
     }
 
     public final boolean c(int i, long j) {
-        LongSparseArray x = this.a.x(j, i);
-        if (x != null && x.size() > 0) {
-            int size = x.size();
+        LongSparseArray H0 = this.a.H0(j, i);
+        if (H0 != null && H0.size() > 0) {
+            int size = H0.size();
             for (int i2 = 0; i2 < size; i2++) {
-                if (!((rp0) x.valueAt(i2)).e) {
+                if (!((rp0) H0.valueAt(i2)).e) {
                     return true;
                 }
             }
@@ -344,11 +344,11 @@ public final class wp0 extends pf0 {
 
     public final void e(long j, int i, long j2) {
         long j3 = i;
-        rp0 rp0Var = (rp0) this.a.H(j, j3, j2);
+        rp0 rp0Var = (rp0) this.a.O0(j, j3, j2);
         if (rp0Var == null) {
             return;
         }
-        getNotificationCenter().k(kk7.N5, new sp0(j, rp0Var.b, j3));
+        getNotificationCenter().k(jn7.O5, new sp0(j, rp0Var.b, j3));
     }
 
     public final void f(int i, long j) {
@@ -358,38 +358,38 @@ public final class wp0 extends pf0 {
             longSparseArray.remove(j);
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                ((uc7) it.next()).a(i);
+                ((df7) it.next()).a(i);
             }
         }
     }
 
     public final void g(int i, long j) {
         long j2;
-        lj9 lj9Var;
+        zm9 zm9Var;
         long j3 = i;
-        lj9 lj9Var2 = this.a;
+        zm9 zm9Var2 = this.a;
         long j4 = j;
-        LongSparseArray x = lj9Var2.x(j4, j3);
-        if (x != null) {
-            int size = x.size();
+        LongSparseArray H0 = zm9Var2.H0(j4, j3);
+        if (H0 != null) {
+            int size = H0.size();
             int i2 = 0;
             while (i2 < size) {
-                rp0 rp0Var = (rp0) x.valueAt(i2);
+                rp0 rp0Var = (rp0) H0.valueAt(i2);
                 if (rp0Var.e) {
                     long j5 = j3;
-                    getNotificationCenter().k(kk7.N5, new sp0(j4, rp0Var.b, j5));
-                    lj9Var = lj9Var2;
-                    lj9Var.H(j, j5, rp0Var.a);
+                    getNotificationCenter().k(jn7.O5, new sp0(j4, rp0Var.b, j5));
+                    zm9Var = zm9Var2;
+                    zm9Var.O0(j, j5, rp0Var.a);
                     j2 = j5;
                     i2--;
                     size--;
                 } else {
                     j2 = j3;
-                    lj9Var = lj9Var2;
+                    zm9Var = zm9Var2;
                 }
                 i2++;
                 j4 = j;
-                lj9Var2 = lj9Var;
+                zm9Var2 = zm9Var;
                 j3 = j2;
             }
         }

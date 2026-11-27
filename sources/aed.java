@@ -1,15 +1,7 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class aed {
-    public static final f84 a;
-    public static final f84[] b;
-
-    static {
-        f84 f84Var = new f84("auth_api_credentials_begin_sign_in", 9L);
-        f84 f84Var2 = new f84("auth_api_credentials_sign_out", 2L);
-        a = f84Var2;
-        b = new f84[]{f84Var, f84Var2, new f84("auth_api_credentials_authorize", 1L), new f84("auth_api_credentials_revoke_access", 1L), new f84("auth_api_credentials_save_password", 4L), new f84("auth_api_credentials_get_sign_in_intent", 6L), new f84("auth_api_credentials_save_account_linking_token", 3L), new f84("auth_api_credentials_get_phone_number_hint_intent", 3L)};
-    }
+    public static final z3f a = new z3f(19);
 }

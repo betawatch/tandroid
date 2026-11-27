@@ -1,66 +1,320 @@
 // default package
 
-import android.content.DialogInterface;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.DatePicker;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import j$.util.Objects;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jg implements DialogInterface.OnShowListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ View b;
+public final /* synthetic */ class jg implements pcc {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ KeyEvent.Callback e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ jg(View view, byte b) {
-        this.a = b;
-        this.b = view;
+    public /* synthetic */ jg(int i, int i2, zh zhVar, bi biVar, int i3, ai aiVar) {
+        this.b = i;
+        this.c = i2;
+        this.e = zhVar;
+        this.f = biVar;
+        this.d = i3;
+        this.g = aiVar;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    /* JADX WARN: Type inference failed for: r10v13 */
+    /* JADX WARN: Type inference failed for: r10v14, types: [fd, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r10v26 */
+    @Override // pcc
+    public final void a(Object obj) {
+        int i;
+        int i2;
+        ?? r10;
+        AlertDialog$Builder alertDialog$Builder;
+        AlertDialog$Builder alertDialog$Builder2;
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings;
         byte b = this.a;
-        View view = this.b;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        int i3 = this.d;
+        int i4 = this.c;
+        int i5 = this.b;
+        KeyEvent.Callback callback = this.e;
         switch (b) {
             case 0:
-                mi miVar = (mi) view;
-                miVar.requestFocus();
-                gl.E3(miVar);
-                break;
-            case 1:
-                py pyVar = (py) view;
-                pyVar.requestFocus();
-                gl.E3(pyVar);
-                break;
-            case 2:
-                c41 c41Var = (c41) view;
-                c41Var.requestFocus();
-                gl.E3(c41Var);
-                break;
-            case 3:
-                p32 p32Var = (p32) view;
-                p32Var.requestFocus();
-                gl.E3(p32Var);
-                break;
-            case 4:
-                DatePicker datePicker = (DatePicker) view;
-                int childCount = datePicker.getChildCount();
-                for (int i = 0; i < childCount; i++) {
-                    View childAt = datePicker.getChildAt(i);
-                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                    layoutParams.width = -1;
-                    childAt.setLayoutParams(layoutParams);
+                zh zhVar = (zh) callback;
+                bi biVar = (bi) obj3;
+                ai aiVar = (ai) obj2;
+                Boolean bool = (Boolean) obj;
+                int i6 = i5 % 60;
+                int i7 = (i5 - i6) / 60;
+                int i8 = i4 % 60;
+                int i9 = (i4 - i8) / 60;
+                if (i8 == 0 && i9 > 0) {
+                    i9--;
+                    i8 = 59;
                 }
-                break;
-            case 5:
-                dq8 dq8Var = (dq8) view;
-                dq8Var.requestFocus();
-                gl.E3(dq8Var);
+                if (bool.booleanValue()) {
+                    i2 = zhVar.getValue();
+                    i = biVar.getValue();
+                } else {
+                    i = i3 % 60;
+                    i2 = (i3 - i) / 60;
+                    if (i2 == 24) {
+                        i2--;
+                        i = 59;
+                    }
+                }
+                zhVar.setMinValue(i7);
+                zhVar.setMaxValue(i9);
+                if (i2 > i9) {
+                    zhVar.setValue(i9);
+                    i2 = i9;
+                } else if (i2 < i7) {
+                    zhVar.setValue(i7);
+                    i2 = i7;
+                }
+                if (i2 <= i7) {
+                    biVar.setMinValue(i6);
+                    biVar.setMaxValue(i7 == i9 ? i8 : 59);
+                } else if (i2 >= i9) {
+                    if (i7 != i9) {
+                        i6 = 0;
+                    }
+                    biVar.setMinValue(i6);
+                    biVar.setMaxValue(i8);
+                } else if (i7 == i9) {
+                    biVar.setMinValue(i6);
+                    biVar.setMaxValue(i8);
+                } else {
+                    biVar.setMinValue(0);
+                    biVar.setMaxValue(59);
+                }
+                if (i > biVar.getMaxValue()) {
+                    i = biVar.getMaxValue();
+                    biVar.setValue(i);
+                } else if (i < biVar.getMinValue()) {
+                    i = biVar.getMinValue();
+                    biVar.setValue(i);
+                }
+                if (!bool.booleanValue()) {
+                    zhVar.setValue(i2);
+                    biVar.setValue(i);
+                }
+                aiVar.invalidate();
                 break;
             default:
-                p32 p32Var2 = (p32) view;
-                p32Var2.requestFocus();
-                gl.E3(p32Var2);
+                final wua wuaVar = (wua) callback;
+                final bx4[] bx4VarArr = (bx4[]) obj3;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj2;
+                Long l = (Long) obj;
+                byte b2 = 20;
+                if (l.longValue() != -99 && l.longValue() != -98) {
+                    jr9 jr9Var = new jr9(wuaVar, l, bx4VarArr, b2);
+                    if (l.longValue() < 0) {
+                        TLRPC.ChatFull N0 = uc7.s1(wuaVar.a).N0(-l.longValue());
+                        if (N0 == null) {
+                            TLRPC.TL_channels_getFullChannel tL_channels_getFullChannel = new TLRPC.TL_channels_getFullChannel();
+                            tL_channels_getFullChannel.channel = uc7.s1(wuaVar.a).h1(-l.longValue());
+                            ConnectionsManager.getInstance(wuaVar.a).sendRequest(tL_channels_getFullChannel, new ol7(wuaVar, jr9Var, (byte) 29));
+                            break;
+                        } else if (!N0.stargifts_available) {
+                            alertDialog$Builder2 = new AlertDialog$Builder(0, wuaVar.J0, wuaVar.getContext());
+                            String M0 = ob6.M0(2131750221, null);
+                            id idVar = alertDialog$Builder2.a;
+                            idVar.S = M0;
+                            idVar.U = ob6.M0(2131750222, null);
+                        }
+                    } else if (l.longValue() >= 0) {
+                        TLRPC.User X1 = uc7.s1(wuaVar.a).X1(l);
+                        TLRPC.UserFull Y1 = uc7.s1(wuaVar.a).Y1(l.longValue());
+                        if (Y1 != null && (disallowedGiftsSettings = Y1.disallowed_stargifts) != null && disallowedGiftsSettings.disallow_unique_stargifts) {
+                            c00.v(ob6.a0(null, null, 2131743397, wf3.s(l.longValue())), new d31(bx4VarArr[0].c, wuaVar.J0), R.raw.error, 36);
+                            break;
+                        } else if (Y1 == null && X1 != null) {
+                            TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
+                            tL_users_getFullUser.id = uc7.s1(wuaVar.a).q1(X1);
+                            ConnectionsManager.getInstance(wuaVar.a).sendRequest(tL_users_getFullUser, new au0((Object) wuaVar, (Object) bx4VarArr, (Object) l, (Object) jr9Var, (byte) 19));
+                            break;
+                        }
+                    }
+                    jr9Var.run();
+                    break;
+                } else if (i5 >= i4) {
+                    if (l.longValue() == -98) {
+                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, wuaVar.J0, wuaVar.getContext());
+                        String M02 = ob6.M0(2131750063, null);
+                        id idVar2 = alertDialog$Builder3.a;
+                        idVar2.S = M02;
+                        idVar2.U = ob6.M0(2131750062, null);
+                        String x = c.C(wuaVar.a).x();
+                        LinearLayout linearLayout = new LinearLayout(wuaVar.getContext());
+                        linearLayout.setOrientation(1);
+                        if (!TextUtils.isEmpty(x)) {
+                            TextView textView = new TextView(wuaVar.getContext());
+                            textView.setTypeface(hl.n1("fonts/rmono.ttf"));
+                            textView.setTextSize(1, 16.5f);
+                            textView.setLetterSpacing(0.01818182f);
+                            textView.setLineSpacing(hl.L(23.0f) - textView.getPaint().getFontMetricsInt(null), 1.0f);
+                            textView.setIncludeFontPadding(false);
+                            textView.setGravity(17);
+                            textView.setPadding(0, hl.L(14.0f), 0, hl.L(14.0f));
+                            int i10 = aob.j5;
+                            int v0 = aob.v0(i10, wuaVar.J0);
+                            ShapeDrawable b0 = aob.b0(hl.L(20.0f), aob.p1(0.045f, v0));
+                            uob K = yob.K(0.045f, i10);
+                            vnb vnbVar = wuaVar.J0;
+                            textView.setBackground(b0);
+                            yob.j(textView, b0, K, null, vnbVar);
+                            int v02 = aob.v0(aob.r5, wuaVar.J0);
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                            int length = (x.length() + 3) / 4;
+                            for (int i11 = 0; i11 < length; i11++) {
+                                if (i11 > 0) {
+                                    spannableStringBuilder.append((CharSequence) (i11 % 4 == 0 ? "\n" : " "));
+                                }
+                                int length2 = spannableStringBuilder.length();
+                                int i12 = i11 << 2;
+                                spannableStringBuilder.append((CharSequence) x, i12, Math.min(x.length(), i12 + 4));
+                                spannableStringBuilder.setSpan(new ForegroundColorSpan(((i11 / 4) + (i11 % 4)) % 2 == 0 ? v0 : v02), length2, spannableStringBuilder.length(), 33);
+                            }
+                            textView.setText(spannableStringBuilder);
+                            linearLayout.addView(textView, tre.k(20.0f, 0.0f, 20.0f, 14.0f, -1, -2));
+                        }
+                        TextView textView2 = new TextView(wuaVar.getContext());
+                        textView2.setTextSize(1, 15.0f);
+                        yob.X(textView2, aob.j5, wuaVar.J0);
+                        uh9.q(textView2, 17, null, 2131750067);
+                        linearLayout.addView(textView2, tre.k(24.0f, 0.0f, 24.0f, 0.0f, -1, -2));
+                        LinearLayout linearLayout2 = new LinearLayout(wuaVar.getContext());
+                        linearLayout2.setOrientation(0);
+                        byte b3 = 16;
+                        linearLayout2.setGravity(16);
+                        int i13 = aob.r5;
+                        wuaVar.c1(linearLayout2, R.drawable.msg_settings, 14, i13, ob6.M0(2131745223, null), true);
+                        wuaVar.c1(linearLayout2, R.drawable.mini_gram_14, 15, aob.Fi, ob6.M0(2131742845, null), true);
+                        wuaVar.c1(linearLayout2, R.drawable.menu_gift, 14, i13, ob6.M0(2131742821, null), false);
+                        linearLayout.addView(linearLayout2, tre.t(-2, -2, 1, 0, 7, 0, 3));
+                        wuaVar.v3 = true;
+                        sg2 sg2Var = new sg2(1, wuaVar.J0, wuaVar.getContext());
+                        int i14 = aob.i6;
+                        hf0 f0 = aob.f0(aob.v0(i14, wuaVar.J0), 7, hl.L(12.0f));
+                        uob M = yob.M(i14);
+                        vnb vnbVar2 = wuaVar.J0;
+                        sg2Var.setBackground(f0);
+                        yob.j(sg2Var, f0, null, M, vnbVar2);
+                        sg2Var.setMultiline(true);
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) sg2Var.getCheckBoxView().getLayoutParams();
+                        layoutParams.topMargin = 0;
+                        layoutParams.gravity = (ob6.a0 ? 5 : 3) | 16;
+                        sg2Var.getCheckBoxView().setLayoutParams(layoutParams);
+                        sg2Var.e(ob6.M0(2131750097, null), "", true, false, false);
+                        sg2Var.setPadding(ob6.a0 ? hl.L(4.0f) : 0, hl.L(12.0f), ob6.a0 ? 0 : hl.L(4.0f), hl.L(12.0f));
+                        sg2Var.setOnClickListener(new jy8(wuaVar, sg2Var, b3));
+                        linearLayout.addView(sg2Var, tre.k(8.0f, 4.0f, 8.0f, 0.0f, -1, -2));
+                        alertDialog$Builder3.n(linearLayout);
+                        idVar2.H = (byte) 20;
+                        r10 = 0;
+                        final byte b4 = 0;
+                        alertDialog$Builder3.j(ob6.M0(2131750068, null), new fd() { // from class: rra
+                            @Override // fd
+                            public final void w(id idVar3, int i15) {
+                                byte b5 = b4;
+                                bx4[] bx4VarArr2 = bx4VarArr;
+                                wua wuaVar2 = wuaVar;
+                                switch (b5) {
+                                    case 0:
+                                        l01 g = idVar3.g(i15, true, true);
+                                        bx4 bx4Var = bx4VarArr2[0];
+                                        Objects.requireNonNull(bx4Var);
+                                        wuaVar2.z2(true, idVar3, g, new qw4(bx4Var, (byte) 1));
+                                        break;
+                                    default:
+                                        l01 g2 = idVar3.g(i15, true, true);
+                                        bx4 bx4Var2 = bx4VarArr2[0];
+                                        Objects.requireNonNull(bx4Var2);
+                                        wuaVar2.z2(false, idVar3, g2, new qw4(bx4Var2, (byte) 1));
+                                        break;
+                                }
+                            }
+                        });
+                        alertDialog$Builder = alertDialog$Builder3;
+                    } else {
+                        LinearLayout linearLayout3 = new LinearLayout(wuaVar.getContext());
+                        linearLayout3.setOrientation(1);
+                        linearLayout3.addView(new xta(wuaVar.getContext(), tL_starGiftUnique), tre.t(-1, -2, 48, 0, -4, 0, 0));
+                        TextView textView3 = new TextView(wuaVar.getContext());
+                        int i15 = aob.j5;
+                        qd4.w(textView3, i15, wuaVar.J0, 1, 20.0f);
+                        textView3.setText(ob6.M0(2131750171, null));
+                        linearLayout3.addView(textView3, tre.t(-1, -2, 48, 24, 4, 24, 14));
+                        TextView textView4 = new TextView(wuaVar.getContext());
+                        yob.X(textView4, i15, wuaVar.J0);
+                        textView4.setTextSize(1, 16.0f);
+                        uh9.r(null, null, 2131750172, new Object[]{wuaVar.t1()}, textView4);
+                        linearLayout3.addView(textView4, tre.t(-1, -2, 48, 24, 0, 24, 4));
+                        AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, wuaVar.J0, wuaVar.getContext());
+                        alertDialog$Builder4.n(linearLayout3);
+                        r10 = 0;
+                        final byte b5 = 1;
+                        alertDialog$Builder4.j(ob6.M0(2131750173, null), new fd() { // from class: rra
+                            @Override // fd
+                            public final void w(id idVar3, int i152) {
+                                byte b52 = b5;
+                                bx4[] bx4VarArr2 = bx4VarArr;
+                                wua wuaVar2 = wuaVar;
+                                switch (b52) {
+                                    case 0:
+                                        l01 g = idVar3.g(i152, true, true);
+                                        bx4 bx4Var = bx4VarArr2[0];
+                                        Objects.requireNonNull(bx4Var);
+                                        wuaVar2.z2(true, idVar3, g, new qw4(bx4Var, (byte) 1));
+                                        break;
+                                    default:
+                                        l01 g2 = idVar3.g(i152, true, true);
+                                        bx4 bx4Var2 = bx4VarArr2[0];
+                                        Objects.requireNonNull(bx4Var2);
+                                        wuaVar2.z2(false, idVar3, g2, new qw4(bx4Var2, (byte) 1));
+                                        break;
+                                }
+                            }
+                        });
+                        alertDialog$Builder = alertDialog$Builder4;
+                    }
+                    ik8.y(r10, 2131752570, alertDialog$Builder, r10);
+                    break;
+                } else {
+                    alertDialog$Builder2 = new AlertDialog$Builder(0, wuaVar.J0, wuaVar.getContext());
+                    String M03 = ob6.M0(2131750166, null);
+                    id idVar3 = alertDialog$Builder2.a;
+                    idVar3.S = M03;
+                    idVar3.U = ob6.G(Math.max(1, i3), "Gift2ExportTONUnlocksAlertText", new Object[0]);
+                }
+                c00.u(null, 2131747558, alertDialog$Builder2, null);
                 break;
         }
+    }
+
+    public /* synthetic */ jg(wua wuaVar, int i, int i2, int i3, bx4[] bx4VarArr, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        this.e = wuaVar;
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
+        this.f = bx4VarArr;
+        this.g = tL_starGiftUnique;
     }
 }

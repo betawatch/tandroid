@@ -1,19 +1,19 @@
 package com.google.android.gms.vision.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class Flags {
-    private static final ei4 zza;
+    private static final ik4 zza;
 
     static {
-        uia uiaVar;
-        di4 di4Var = new di4();
-        uia uiaVar2 = uia.b;
-        synchronized (uia.class) {
-            uiaVar = uia.b;
+        pma pmaVar;
+        hk4 hk4Var = new hk4();
+        pma pmaVar2 = pma.b;
+        synchronized (pma.class) {
+            pmaVar = pma.b;
         }
-        uiaVar.a.b.add(di4Var);
-        zza = di4Var;
+        pmaVar.a.a.add(hk4Var);
+        zza = hk4Var;
     }
 
     private Flags() {

@@ -1,78 +1,9 @@
 // default package
 
-import android.view.View;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class p7 {
-    public final byte a;
-    public byte b;
-    public int c;
-    public oy8 d;
-    public CharSequence e;
-    public boolean f;
-    public View g;
-    public fo1 h;
-    public byte i;
-    public View j;
-    public do1 k;
-    public byte l = 0;
-    public byte m = 0;
-    public Integer n;
-    public Integer o;
+public interface p7 {
+    void A();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public p7(int i) {
-        this.a = i;
-    }
-
-    public final void a(int i, int i2) {
-        Integer num = this.n;
-        if (num == null || this.o == null || num.intValue() != i || this.o.intValue() != i2) {
-            this.n = Integer.valueOf(i);
-            this.o = Integer.valueOf(i2);
-            View view = this.j;
-            if (view instanceof a8) {
-                ((a8) view).d(i, i2);
-            }
-        }
-    }
-
-    public final void b(int i) {
-        if (i != this.c) {
-            this.c = i;
-            View view = this.j;
-            if (view instanceof a8) {
-                ((a8) view).setIcon(i);
-            }
-        }
-    }
-
-    public final void c(do1 do1Var) {
-        this.k = do1Var;
-        View view = this.j;
-        if (view != null) {
-            view.setOnClickListener(do1Var);
-        }
-    }
-
-    public final void d(CharSequence charSequence) {
-        this.e = charSequence;
-        View view = this.j;
-        if (view instanceof a8) {
-            ((a8) view).setText(charSequence);
-        } else if (view instanceof TextView) {
-            ((TextView) view).setText(charSequence);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void e(int i) {
-        this.l = i;
-        View view = this.j;
-        if (view != null) {
-            view.setVisibility(i);
-        }
-    }
+    void W();
 }

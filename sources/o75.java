@@ -1,62 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class o75 extends FrameLayout {
-    public int a;
-    public r95 b;
-    public h85 c;
-    public gc2 d;
-    public boolean e;
-    public final boolean f;
+public final class o75 implements s95 {
+    public final /* synthetic */ j95 a;
 
-    public o75(Context context, boolean z) {
-        super(context);
-        this.f = z;
+    public o75(j95 j95Var) {
+        this.a = j95Var;
     }
 
-    public float getItemHeight() {
-        return this.b != null ? r0.F() : getMeasuredHeight();
-    }
-
-    public gc2 getParticipant() {
-        return this.d;
-    }
-
-    public h85 getRenderer() {
-        return this.c;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.e = false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        if (this.f) {
-            ((View) getParent()).getMeasuredWidth();
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
-        } else {
-            float f = h75.u5 ? 3.0f : 2.0f;
-            float L = (gl.q.x - (gl.L(14.0f) << 1)) + (h75.u5 ? -gl.L(90.0f) : 0);
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) ((h75.v5 ? L / 2.0f : L / f) + gl.L(4.0f)), TLObject.FLAG_30));
+    public final void a(GroupCallMessage groupCallMessage) {
+        e Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
         }
-    }
-
-    public void setRenderer(h85 h85Var) {
-        this.c = h85Var;
+        boolean z = Q instanceof ProfileActivity;
+        j95 j95Var = this.a;
+        if (z && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
+            j95Var.dismiss();
+            return;
+        }
+        int G0 = j95Var.G0();
+        Bundle bundle = new Bundle();
+        long j = groupCallMessage.fromId;
+        if (j > 0) {
+            bundle.putLong("user_id", j);
+        } else {
+            bundle.putLong("chat_id", -j);
+        }
+        boolean z2 = true;
+        if (groupCallMessage.fromId == yac.h(j95Var.n1.a).e()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (G0 > 0 && G0 != Integer.MAX_VALUE) {
+            z2 = false;
+        }
+        Q.presentFragment(profileActivity, false, z2);
+        j95Var.dismiss();
     }
 }

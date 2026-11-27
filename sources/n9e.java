@@ -1,31 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class n9e {
-    public static fga a;
+public final class n9e implements zq7 {
+    public static final n9e a = new n9e();
 
-    public static final void a() {
-        try {
-            fga fgaVar = a;
-            if (fgaVar == null) {
-                fgaVar = (fga) ((b53) ((ih4) jg4.c().b(ih4.class))).o.get();
-                fgaVar.getClass();
-                a = fgaVar;
-            }
-            if (fgaVar == null) {
-                rp5.e("sharedSessionRepository");
-                throw null;
-            }
-            if (fgaVar.i) {
-                if (fgaVar != null) {
-                    fgaVar.a();
-                } else {
-                    rp5.e("sharedSessionRepository");
-                    throw null;
-                }
-            }
-        } catch (Exception unused) {
+    static {
+        xnb.y(xnb.n(zbd.class, new wad(1)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
+        throw null;
     }
 }

@@ -1,29 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class r62 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ it3 b;
+import android.content.Context;
+import android.view.View;
 
-    public /* synthetic */ r62(it3 it3Var, byte b) {
-        this.a = b;
-        this.b = it3Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class r62 extends y46 {
+    public final /* synthetic */ q22 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r62(q22 q22Var, Context context) {
+        super(context);
+        this.r = q22Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        it3 it3Var = this.b;
-        switch (b) {
-            case 0:
-                ht3 ht3Var = it3Var.d;
-                ht3Var.requestFocus();
-                gl.E3(ht3Var);
-                break;
-            default:
-                gl.t1(it3Var.d);
-                break;
+    @Override // y46
+    public final int k(int i, View view) {
+        int i2;
+        a72 a72Var = (a72) this.r.V;
+        if (a72Var.W0) {
+            i = -1;
         }
+        int k = super.k(i, view);
+        if (a72Var.W0) {
+            k += hl.L(160.0f);
+        }
+        if (!a72Var.W0) {
+            k = uh9.f(7.0f, a72Var.S0 - hl.m, k);
+        }
+        if (a72Var.W0 && k == 0 && (i2 = a72Var.X0) >= 0) {
+            a72Var.j0(i2);
+            a72Var.X0 = -1;
+        }
+        a72Var.W0 = false;
+        return k;
+    }
+
+    @Override // y46
+    public final int m(int i) {
+        return super.m(i) << 1;
     }
 }

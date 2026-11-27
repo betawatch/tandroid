@@ -1,95 +1,69 @@
 // default package
 
-import android.app.Activity;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import android.os.Bundle;
+import com.google.android.gms.tasks.CancellationToken;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.CancellationException;
+import org.json.JSONObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class cj4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hj4 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class cj4 implements h23 {
+    public final /* synthetic */ CancellationToken a;
+    public final /* synthetic */ TaskCompletionSource b;
+    public final /* synthetic */ z56 c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Runnable[] e;
 
-    public /* synthetic */ cj4(hj4 hj4Var, byte b) {
-        this.a = b;
-        this.b = hj4Var;
+    public cj4(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, z56 z56Var, int i, Runnable[] runnableArr) {
+        this.a = cancellationToken;
+        this.b = taskCompletionSource;
+        this.c = z56Var;
+        this.d = i;
+        this.e = runnableArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        hj4 hj4Var = this.b;
-        boolean z = false;
-        switch (b) {
-            case 0:
-                d Q = LaunchActivity.Q();
-                xk0 xk0Var = new xk0(Q.getParentActivity(), false);
-                if (Q.getFragmentView() instanceof cja) {
-                    xk0Var.l1 = (cja) Q.getFragmentView();
-                }
-                Activity parentActivity = Q.getParentActivity();
-                LinearLayout m = ir2.m(parentActivity, 1);
-                TextView textView = new TextView(parentActivity);
-                textView.setText("Saturation " + (xk0.m1 * 5.0f));
-                int i = bkb.m5;
-                zkb.X(textView, i, null);
-                ug8.w(textView, 1, 16.0f, 1, 1);
-                textView.setSingleLine(true);
-                textView.setGravity((k96.a0 ? 3 : 5) | 48);
-                m.addView(textView, nme.d(-2, -1.0f, (k96.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                av9 av9Var = new av9(parentActivity);
-                av9Var.setDelegate(new lv6((Object) xk0Var, (Object) textView, (byte) 8));
-                av9Var.setReportChanges(true);
-                m.addView(av9Var, nme.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                TextView textView2 = new TextView(parentActivity);
-                textView2.setText("Alpha " + xk0.o1);
-                zkb.X(textView2, i, null);
-                ug8.w(textView2, 1, 16.0f, 1, 1);
-                textView2.setSingleLine(true);
-                textView2.setGravity((k96.a0 ? 3 : 5) | 48);
-                m.addView(textView2, nme.d(-2, -1.0f, (k96.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                av9 av9Var2 = new av9(parentActivity);
-                av9Var2.setDelegate(new tg2(xk0Var, textView2, z, (byte) 10));
-                av9Var2.setReportChanges(true);
-                m.addView(av9Var2, nme.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                TextView textView3 = new TextView(parentActivity);
-                textView3.setText("Blur Radius");
-                zkb.X(textView3, i, null);
-                ug8.w(textView3, 1, 16.0f, 1, 1);
-                textView3.setSingleLine(true);
-                textView3.setGravity((k96.a0 ? 3 : 5) | 48);
-                m.addView(textView3, nme.d(-2, -1.0f, (k96.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                av9 av9Var3 = new av9(parentActivity);
-                av9Var3.setDelegate(new l69(xk0Var, (byte) 11));
-                av9Var3.setReportChanges(true);
-                m.addView(av9Var3, nme.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                m.addOnLayoutChangeListener(new wk0(av9Var, av9Var3, av9Var2));
-                ScrollView scrollView = new ScrollView(parentActivity);
-                scrollView.addView(m);
-                xk0Var.O = scrollView;
-                xk0Var.show();
-                hj4Var.c(false);
-                break;
-            case 1:
-                gba.J();
-                Toast.makeText(hj4Var.getContext(), k96.M0(gba.F0 ? 2131751606 : 2131751607, null), 0).show();
-                break;
-            case 2:
-                ProfileActivity.l3((Activity) hj4Var.getContext(), false);
-                break;
-            default:
-                hj4Var.n = true;
-                try {
-                    hj4Var.performHapticFeedback(0);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
+    @Override // h23
+    public final void B(Object obj) {
+        yu4 yu4Var = (yu4) obj;
+        if (this.a.isCancellationRequested()) {
+            return;
+        }
+        boolean z = yu4Var instanceof om7;
+        TaskCompletionSource taskCompletionSource = this.b;
+        if (z) {
+            taskCompletionSource.trySetException(new Exception("EMPTY"));
+        } else if ((yu4Var instanceof vu4) || (yu4Var instanceof zu4)) {
+            taskCompletionSource.trySetException(new CancellationException());
+        } else {
+            taskCompletionSource.trySetException(yu4Var);
+        }
+    }
+
+    @Override // h23
+    public final void onResult(Object obj) {
+        bv4 bv4Var = (bv4) obj;
+        TaskCompletionSource taskCompletionSource = this.b;
+        CancellationToken cancellationToken = this.a;
+        if (cancellationToken.isCancellationRequested()) {
+            return;
+        }
+        try {
+            String string = new JSONObject(((Bundle) bv4Var.a.a).getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON")).getJSONObject("data").getJSONObject("vp_token").getJSONArray("firebase").getString(0);
+            this.c.run();
+            TLRPC.TL_auth_finishFirebasePnvLogin tL_auth_finishFirebasePnvLogin = new TLRPC.TL_auth_finishFirebasePnvLogin();
+            tL_auth_finishFirebasePnvLogin.google_token = string;
+            int i = this.d;
+            zs2 zs2Var = new zs2(i, ConnectionsManager.getInstance(i).sendRequestTyped(tL_auth_finishFirebasePnvLogin, new ic((byte) 0), new qe2(cancellationToken, taskCompletionSource, (byte) 13), 8), (byte) 3);
+            Runnable[] runnableArr = this.e;
+            runnableArr[0] = zs2Var;
+            if (cancellationToken.isCancellationRequested()) {
+                runnableArr[0].run();
+            }
+        } catch (Exception e) {
+            taskCompletionSource.trySetException(e);
         }
     }
 }

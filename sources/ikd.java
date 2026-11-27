@@ -1,19 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ikd implements zn7 {
-    public static final ikd a = new ikd();
+import java.util.Iterator;
+import java.util.Map;
 
-    static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ikd extends thd {
+    public final transient ybd h;
+    public final transient Object[] n;
+    public final transient boolean r;
+
+    public ikd(ybd ybdVar, Object[] objArr) {
+        super((byte) 1);
+        this.h = ybdVar;
+        this.n = objArr;
+        this.r = true;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.h.get(key))) {
+                return true;
+            }
         }
-        throw null;
+        return false;
+    }
+
+    @Override // qdd
+    public final int h(Object[] objArr) {
+        ghd ghdVar = this.f;
+        if (ghdVar == null) {
+            ghdVar = new dkd(this);
+            this.f = ghdVar;
+        }
+        return ghdVar.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        ghd ghdVar = this.f;
+        if (ghdVar == null) {
+            ghdVar = new dkd(this);
+            this.f = ghdVar;
+        }
+        return ghdVar.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.r ? 1 : 0;
     }
 }

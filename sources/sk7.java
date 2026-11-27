@@ -1,76 +1,110 @@
 // default package
 
-import android.app.Notification;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class sk7 extends gl7 {
-    public final /* synthetic */ byte e;
-    public Object f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class sk7 extends nx0 {
+    public final ir1 l1;
+    public final ArrayList m1;
+    public boolean n1;
+    public FrameLayout o1;
+    public Integer p1;
 
-    public sk7(byte b) {
-        this.e = b;
-        switch (b) {
-            case 1:
-                this.f = new ArrayList();
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sk7(Context context, vnb vnbVar, View... viewArr) {
+        super(1, vnbVar, context, true);
+        List asList = Arrays.asList(viewArr);
+        ArrayList arrayList = new ArrayList();
+        this.m1 = arrayList;
+        if (asList != null) {
+            arrayList.addAll(asList);
+        }
+        qk7 qk7Var = new qk7(this, context);
+        this.b = qk7Var;
+        ir1 ir1Var = new ir1((byte) 3, context, this);
+        this.l1 = ir1Var;
+        int i = this.u0;
+        ir1Var.setPadding(i, 0, i, hl.n);
+        qk7Var.addView(ir1Var, tre.e(-1, -1, jn7.D1));
+    }
+
+    @Override // nx0
+    public final boolean D() {
+        return this.l1.getCurrentPosition() == 0;
+    }
+
+    public final void E0(rk7 rk7Var) {
+        this.m1.add(rk7Var);
+        if (this.n1) {
+            ir1 ir1Var = this.l1;
+            ir1Var.E(false);
+            ir1Var.m(false);
         }
     }
 
-    @Override // gl7
-    public final void b(h31 h31Var) {
-        switch (this.e) {
-            case 0:
-                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) h31Var.c).setBigContentTitle(this.b).bigText((CharSequence) this.f);
-                if (this.d) {
-                    bigText.setSummaryText(this.c);
-                    break;
-                }
-                break;
-            default:
-                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) h31Var.c).setBigContentTitle(this.b);
-                if (this.d) {
-                    bigContentTitle.setSummaryText(this.c);
-                }
-                ArrayList arrayList = (ArrayList) this.f;
-                int size = arrayList.size();
-                int i = 0;
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
-                    bigContentTitle.addLine((CharSequence) obj);
-                }
-                break;
+    @Override // nx0
+    public final boolean F(MotionEvent motionEvent) {
+        return this.l1.getCurrentPosition() == 0;
+    }
+
+    public final void F0(int i) {
+        this.p1 = Integer.valueOf(i);
+        s0(i);
+        K(i);
+        ((qk7) this.b).invalidate();
+    }
+
+    public final void G0(LinearLayout linearLayout) {
+        FrameLayout frameLayout = this.o1;
+        if (frameLayout == null) {
+            FrameLayout frameLayout2 = new FrameLayout(getContext());
+            this.o1 = frameLayout2;
+            frameLayout2.setClipChildren(false);
+            this.o1.setClipToPadding(false);
+            this.b.addView(this.o1, tre.e(-1, -2, 80));
+        } else {
+            frameLayout.removeAllViews();
         }
+        this.o1.addView(linearLayout, tre.e(-1, -2, 80));
+        ir1 ir1Var = this.l1;
+        int i = this.u0;
+        ir1Var.setPadding(i, 0, i, 0);
+        ((qk7) this.b).requestLayout();
     }
 
-    @Override // gl7
-    public final String c() {
-        switch (this.e) {
-            case 0:
-                return "androidx.core.app.NotificationCompat$BigTextStyle";
-            default:
-                return "androidx.core.app.NotificationCompat$InboxStyle";
+    @Override // nx0, android.app.Dialog
+    public final void onBackPressed() {
+        ir1 ir1Var = this.l1;
+        if (ir1Var.getCurrentPosition() <= 0) {
+            super.onBackPressed();
+            return;
         }
-    }
-
-    public final void d(String str) {
-        if (str != null) {
-            ((ArrayList) this.f).add(xk7.c(str));
+        for (View view : ir1Var.getViewPages()) {
+            if (view != null) {
+                hl.t1(view);
+            }
         }
+        ir1Var.F(ir1Var.getCurrentPosition() - 1);
     }
 
-    public final void e(String str) {
-        this.f = xk7.c(str);
-    }
-
-    public final void f(String str) {
-        this.b = xk7.c(str);
-    }
-
-    public final void g(String str) {
-        this.c = xk7.c(str);
-        this.d = true;
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        if (!this.n1) {
+            this.n1 = true;
+            this.l1.setAdapter(new mm2(this, (byte) 3));
+        }
+        super.show();
+        Integer num = this.p1;
+        if (num != null) {
+            y0(num.intValue());
+        }
     }
 }

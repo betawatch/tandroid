@@ -1,38 +1,69 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class u65 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ v65 b;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import java.util.ArrayList;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ u65(v65 v65Var, byte b) {
-        this.a = b;
-        this.b = v65Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class u65 extends e29 {
+    public final /* synthetic */ j95 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u65(j95 j95Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.r = j95Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        v65 v65Var = this.b;
-        switch (b) {
-            case 0:
-                sb sbVar = v65Var.b;
-                if (sbVar != null) {
-                    sbVar.setVisibility(0);
-                }
-                gl.d3(new u65(v65Var, (byte) 2), 16L);
-                break;
-            case 1:
-                sb sbVar2 = v65Var.b;
-                if (sbVar2 != null) {
-                    sbVar2.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                v65Var.b();
-                break;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        j95 j95Var = this.r;
+        byte b = j95Var.z3;
+        accessibilityNodeInfo.setEnabled(b == 0 || b == 1);
+        if (j95Var.z3 == 1) {
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, ob6.M0(2131742945, null)));
         }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j95 j95Var = this.r;
+        z55 z55Var = j95Var.q4;
+        ArrayList arrayList = j95Var.S3;
+        if (motionEvent.getAction() == 0 && j95Var.z3 == 0 && j95Var.T2 != null) {
+            hl.d3(z55Var, 300L);
+            j95Var.K3 = true;
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            if (j95Var.K3) {
+                hl.r(z55Var);
+                j95Var.K3 = false;
+            } else if (j95Var.L3) {
+                hl.r(j95Var.p4);
+                j95Var.I1(0, true);
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(true, true, false);
+                    try {
+                        j95Var.v1.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                }
+                arrayList.clear();
+                arrayList.addAll(j95Var.R3);
+                for (int i = 0; i < arrayList.size(); i++) {
+                    ((ka5) arrayList.get(i)).j(true);
+                }
+                j95Var.L3 = false;
+                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                super.onTouchEvent(obtain);
+                obtain.recycle();
+                return true;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

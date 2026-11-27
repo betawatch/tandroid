@@ -4,22 +4,22 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.LongSparseArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ExtendedDefaultDataSourceFactory implements m63 {
-    private final m63 baseDataSourceFactory;
+public final class ExtendedDefaultDataSourceFactory implements f73 {
+    private final f73 baseDataSourceFactory;
     private final Context context;
-    private final vyb listener;
+    private final v2c listener;
     private final LongSparseArray<Uri> mtprotoUris;
 
-    public ExtendedDefaultDataSourceFactory(Context context, vyb vybVar, m63 m63Var) {
+    public ExtendedDefaultDataSourceFactory(Context context, v2c v2cVar, f73 f73Var) {
         this.mtprotoUris = new LongSparseArray<>();
         this.context = context.getApplicationContext();
-        this.listener = vybVar;
-        this.baseDataSourceFactory = m63Var;
+        this.listener = v2cVar;
+        this.baseDataSourceFactory = f73Var;
     }
 
-    @Override // m63
+    @Override // f73
     public ExtendedDefaultDataSource createDataSource() {
         return new ExtendedDefaultDataSource(this.context, this.listener, this.baseDataSourceFactory.createDataSource(), this.mtprotoUris);
     }
@@ -32,15 +32,15 @@ public final class ExtendedDefaultDataSourceFactory implements m63 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ExtendedDefaultDataSourceFactory(Context context, String str, vyb vybVar) {
-        this(context, vybVar, r0);
-        xf4 xf4Var = new xf4((byte) 5);
-        xf4Var.d = str;
-        xf4Var.c = vybVar;
-        xf4Var.a = true;
+    public ExtendedDefaultDataSourceFactory(Context context, String str, v2c v2cVar) {
+        this(context, v2cVar, r0);
+        vh4 vh4Var = new vh4((byte) 5);
+        vh4Var.d = str;
+        vh4Var.c = v2cVar;
+        vh4Var.a = true;
     }
 
     public ExtendedDefaultDataSourceFactory(Context context, String str) {
-        this(context, str, (vyb) null);
+        this(context, str, (v2c) null);
     }
 }

@@ -1,44 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ko1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ mu1 c;
-    public final /* synthetic */ boolean d;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ko1(int i, mu1 mu1Var, boolean z) {
-        this.b = i;
-        this.c = mu1Var;
-        this.d = z;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ko1 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zu1 b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ TLRPC.User d;
+
+    public /* synthetic */ ko1(zu1 zu1Var, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, byte b) {
+        this.a = b;
+        this.b = zu1Var;
+        this.c = tL_attachMenuBot;
+        this.d = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        boolean z = this.d;
-        mu1 mu1Var = this.c;
-        byte b2 = this.b;
+        TLRPC.User user = this.d;
+        TLRPC.TL_attachMenuBot tL_attachMenuBot = this.c;
+        zu1 zu1Var = this.b;
         switch (b) {
             case 0:
-                mu1Var.Uc(b2, z);
+                hl.c3(new ro1(zu1Var, tL_error, tL_attachMenuBot, user));
                 break;
             default:
-                if (b2 != 2) {
-                    mu1Var.Z9();
-                    mu1Var.rc();
-                }
-                no2.f(u21.b0(mu1Var), b2, z);
+                hl.c3(new ro1(zu1Var, tL_attachMenuBot, tL_error, user));
                 break;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ ko1(mu1 mu1Var, boolean z, int i) {
-        this.c = mu1Var;
-        this.d = z;
-        this.b = i;
     }
 }

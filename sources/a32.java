@@ -1,177 +1,148 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.util.SparseArray;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class a32 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pi4 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class a32 extends FrameLayout {
+    public final de0 a;
+    public final ff0 b;
+    public final ema c;
+    public final og2 d;
+    public final rb0 e;
+    public TLRPC.User f;
+    public int h;
+    public CharSequence n;
+    public CharSequence r;
+    public TLRPC.User s;
+    public String w;
+    public boolean x;
 
-    public /* synthetic */ a32(Object obj, pi4 pi4Var, int i, byte b) {
-        this.a = b;
-        this.d = obj;
-        this.b = pi4Var;
-        this.c = i;
+    public a32(Context context, vnb vnbVar) {
+        super(context);
+        this.e = new rb0(vnbVar);
+        de0 de0Var = new de0(context);
+        this.a = de0Var;
+        de0Var.setRoundRadius(hl.L(23.0f));
+        boolean z = ob6.a0;
+        addView(de0Var, tre.d(46, 46.0f, (z ? 5 : 3) | 48, z ? 0.0f : 14.0f, 9.0f, z ? 14.0f : 0.0f, 0.0f));
+        ff0 ff0Var = new ff0(context, (byte) 1);
+        this.b = ff0Var;
+        jn7.i(ff0Var);
+        yob.W(ff0Var, aob.j5, vnbVar);
+        ff0Var.setTypeface(hl.o());
+        ff0Var.setTextSize(16);
+        ff0Var.setGravity((ob6.a0 ? 5 : 3) | 48);
+        boolean z2 = ob6.a0;
+        addView(ff0Var, tre.d(-1, 20.0f, (z2 ? 5 : 3) | 48, z2 ? 28.0f : 72.0f, 12.0f, z2 ? 72.0f : 28.0f, 0.0f));
+        ema emaVar = new ema(context);
+        this.c = emaVar;
+        emaVar.setTextSize(13);
+        yob.W(emaVar, aob.q5, vnbVar);
+        emaVar.setGravity((ob6.a0 ? 5 : 3) | 48);
+        boolean z3 = ob6.a0;
+        addView(emaVar, tre.d(-1, 20.0f, (z3 ? 5 : 3) | 48, z3 ? 28.0f : 72.0f, 36.0f, z3 ? 72.0f : 28.0f, 0.0f));
+        og2 og2Var = new og2(21, vnbVar, context);
+        this.d = og2Var;
+        og2Var.b(-1, aob.d6, aob.k7);
+        og2Var.setDrawUnchecked(false);
+        og2Var.setDrawBackgroundAsArc(3);
+        boolean z4 = ob6.a0;
+        addView(og2Var, tre.d(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 44.0f, 37.0f, z4 ? 44.0f : 0.0f, 0.0f));
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        int i;
-        byte b = this.a;
-        int i2 = this.c;
-        pi4 pi4Var = this.b;
-        Object obj = this.d;
-        int i3 = 2;
-        switch (b) {
-            case 0:
-                c32 c32Var = (c32) obj;
-                d32 d32Var = c32Var.Y;
-                d32Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = d32Var.r.getChildCount();
-                AnimatorSet animatorSet = new AnimatorSet();
-                for (0; i < childCount; i + 1) {
-                    View childAt = d32Var.r.getChildAt(i);
-                    if (pi4Var != null) {
-                        d32Var.r.getClass();
-                        i = RecyclerView.R(childAt) < i2 ? i + 1 : 0;
-                    }
-                    childAt.setAlpha(0.0f);
-                    int min = (int) ((Math.min(d32Var.r.getMeasuredHeight(), Math.max(0, childAt.getTop())) / d32Var.r.getMeasuredHeight()) * 100.0f);
-                    ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                    ofFloat.setStartDelay(min);
-                    ofFloat.setDuration(200L);
-                    animatorSet.playTogether(ofFloat);
+    public final void a(TLRPC.User user, CharSequence charSequence, z22 z22Var, boolean z) {
+        de0 de0Var = this.a;
+        ff0 ff0Var = this.b;
+        if (user == null && charSequence == null) {
+            this.r = null;
+            this.n = null;
+            ff0Var.l("", false);
+            this.c.l("", false);
+            de0Var.setImageDrawable(null);
+        } else {
+            this.r = null;
+            this.n = charSequence;
+            this.f = user;
+            this.x = z;
+            setWillNotDraw(!z);
+            rb0 rb0Var = this.e;
+            TLRPC.User user2 = this.f;
+            if (user2 != null) {
+                rb0Var.q(user2);
+                TLRPC.UserStatus userStatus = this.f.status;
+            } else {
+                CharSequence charSequence2 = this.n;
+                long j = this.h;
+                if (charSequence2 != null) {
+                    rb0Var.j(j, charSequence2.toString(), null, null);
+                } else {
+                    rb0Var.j(j, "#", null, null);
                 }
-                animatorSet.addListener(new z22(this));
-                c32Var.V.d();
-                animatorSet.start();
-                if (pi4Var != null && pi4Var.getParent() == null) {
-                    d32Var.r.addView(pi4Var);
-                    d49 layoutManager = d32Var.r.getLayoutManager();
-                    if (layoutManager != null) {
-                        layoutManager.L(pi4Var);
-                        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(pi4Var, (Property<pi4, Float>) View.ALPHA, pi4Var.getAlpha(), 0.0f);
-                        ofFloat2.addListener(new z22(this, layoutManager));
-                        ofFloat2.start();
-                    }
-                }
-                return true;
-            case 1:
-                kf2 kf2Var = (kf2) obj;
-                kf2Var.c.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount2 = kf2Var.c.getChildCount();
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                for (int i4 = 0; i4 < childCount2; i4++) {
-                    View childAt2 = kf2Var.c.getChildAt(i4);
-                    if (childAt2 != pi4Var) {
-                        kf2Var.c.getClass();
-                        if (RecyclerView.R(childAt2) >= i2) {
-                            childAt2.setAlpha(0.0f);
-                            int min2 = (int) ((Math.min(kf2Var.c.getMeasuredHeight(), Math.max(0, childAt2.getTop())) / kf2Var.c.getMeasuredHeight()) * 100.0f);
-                            ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(childAt2, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                            ofFloat3.setStartDelay(min2);
-                            ofFloat3.setDuration(200L);
-                            animatorSet2.playTogether(ofFloat3);
-                        }
-                    }
-                }
-                if (pi4Var != null && pi4Var.getParent() == null) {
-                    kf2Var.c.addView(pi4Var);
-                    d49 layoutManager2 = kf2Var.c.getLayoutManager();
-                    if (layoutManager2 != null) {
-                        layoutManager2.L(pi4Var);
-                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(pi4Var, (Property<pi4, Float>) View.ALPHA, pi4Var.getAlpha(), 0.0f);
-                        ofFloat4.addListener(new bb1(this, layoutManager2));
-                        ofFloat4.start();
-                    }
-                }
-                animatorSet2.start();
-                return true;
-            case 2:
-                float f = 0.0f;
-                af4 af4Var = (af4) obj;
-                af4Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                fu fuVar = af4Var.b;
-                int childCount3 = fuVar.getChildCount();
-                AnimatorSet animatorSet3 = new AnimatorSet();
-                int i5 = 0;
-                while (i5 < childCount3) {
-                    View childAt3 = fuVar.getChildAt(i5);
-                    if (pi4Var != null) {
-                        fuVar.getClass();
-                        if (RecyclerView.R(childAt3) < i2) {
-                            i5++;
-                            f = 0.0f;
-                        }
-                    }
-                    childAt3.setAlpha(f);
-                    int min3 = (int) ((Math.min(fuVar.getMeasuredHeight(), Math.max(0, childAt3.getTop())) / fuVar.getMeasuredHeight()) * 100.0f);
-                    ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(childAt3, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                    ofFloat5.setStartDelay(min3);
-                    ofFloat5.setDuration(200L);
-                    animatorSet3.playTogether(ofFloat5);
-                    i5++;
-                    f = 0.0f;
-                }
-                animatorSet3.addListener(new pe4(this));
-                af4Var.m0.d();
-                animatorSet3.start();
-                if (pi4Var != null && pi4Var.getParent() == null) {
-                    fuVar.addView(pi4Var);
-                    d49 layoutManager3 = fuVar.getLayoutManager();
-                    if (layoutManager3 != null) {
-                        layoutManager3.L(pi4Var);
-                        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(pi4Var, (Property<pi4, Float>) View.ALPHA, pi4Var.getAlpha(), 0.0f);
-                        ofFloat6.addListener(new pe4(this, layoutManager3));
-                        ofFloat6.start();
-                    }
-                }
-                return true;
-            default:
-                t29 t29Var = (t29) obj;
-                SparseArray sparseArray = t29Var.b;
-                o39 o39Var = t29Var.a;
-                o39Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                t29Var.h.remove(this);
-                int childCount4 = o39Var.getChildCount();
-                AnimatorSet animatorSet4 = new AnimatorSet();
-                int i6 = 0;
-                while (i6 < childCount4) {
-                    View childAt4 = o39Var.getChildAt(i6);
-                    o39Var.getClass();
-                    int R = RecyclerView.R(childAt4);
-                    if (childAt4 != pi4Var && R >= i2 - 1 && sparseArray.get(R, null) == null) {
-                        sparseArray.put(R, Float.valueOf(0.0f));
-                        t29Var.d = true;
-                        o39Var.invalidate();
-                        float[] fArr = new float[i3];
-                        // fill-array-data instruction
-                        fArr[0] = 0.0f;
-                        fArr[1] = 1.0f;
-                        ValueAnimator ofFloat7 = ValueAnimator.ofFloat(fArr);
-                        ofFloat7.addUpdateListener(new tw0(this, R, (byte) 3));
-                        ofFloat7.addListener(new cn(this, R, (byte) 9));
-                        ofFloat7.setStartDelay((int) ((Math.min(o39Var.getMeasuredHeight(), Math.max(0, childAt4.getTop())) / o39Var.getMeasuredHeight()) * 100.0f));
-                        ofFloat7.setDuration(200L);
-                        animatorSet4.playTogether(ofFloat7);
-                    }
-                    i6++;
-                    i3 = 2;
-                }
-                t29Var.g.add(animatorSet4);
-                animatorSet4.start();
-                animatorSet4.addListener(new eh8(this, animatorSet4, (byte) 7));
-                return false;
+            }
+            CharSequence charSequence3 = this.n;
+            if (charSequence3 != null) {
+                ff0Var.l(charSequence3, false);
+            } else {
+                TLRPC.User user3 = this.f;
+                ff0Var.l(user3 != null ? lbc.r(user3) : "", false);
+            }
+            setStatus(this.r);
+            TLRPC.User user4 = this.f;
+            if (user4 != null) {
+                de0Var.f(user4, rb0Var);
+            } else {
+                de0Var.setImageDrawable(rb0Var);
+            }
+        }
+        Utilities.e.c(new dy1(this, z22Var, (byte) 12));
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.x) {
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(70.0f) : 0), getMeasuredHeight() - 1, aob.j0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(64.0f) + (this.x ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setCurrentId(int i) {
+        this.h = i;
+    }
+
+    public void setStatus(CharSequence charSequence) {
+        String str;
+        this.r = charSequence;
+        if (charSequence != null) {
+            this.c.l(charSequence, false);
+            return;
+        }
+        TLRPC.User user = this.f;
+        if (user != null) {
+            if (TextUtils.isEmpty(user.phone)) {
+                this.c.l(ob6.M0(2131747559, null), false);
+            } else if (this.s != this.f && (str = this.w) != null) {
+                this.c.l(str, false);
+            } else {
+                this.c.l("", false);
+                Utilities.e.c(new y22(this, (byte) 0));
+            }
         }
     }
 }

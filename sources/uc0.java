@@ -1,47 +1,41 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class uc0 extends ft5 {
-    public static final /* synthetic */ long n = ex.a.objectFieldOffset(uc0.class.getDeclaredField("_disposer$volatile"));
-    private volatile /* synthetic */ Object _disposer$volatile;
-    public final na1 e;
-    public no3 f;
-    public final /* synthetic */ wc0 h;
+public final class uc0 implements pc0 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public uc0(wc0 wc0Var, na1 na1Var) {
-        this.h = wc0Var;
-        this.e = na1Var;
+    public uc0(int i, int i2, int i3, int i4, int i5, int i6) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+        this.f = i6;
     }
 
-    @Override // ft5
-    public final void l(Throwable th) {
-        na1 na1Var = this.e;
-        if (th != null) {
-            lo5 E = na1Var.E(new fp2(th, false), null);
-            if (E != null) {
-                na1Var.e(E);
-                vc0 vc0Var = (vc0) ex.a.getObjectVolatile(this, n);
-                if (vc0Var != null) {
-                    vc0Var.b();
-                    return;
-                }
-                return;
-            }
-            return;
+    public final int a() {
+        int i = this.a;
+        if (i == 1935960438) {
+            return 2;
         }
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = wc0.b;
-        wc0 wc0Var = this.h;
-        if (atomicIntegerFieldUpdater.decrementAndGet(wc0Var) == 0) {
-            zc3[] zc3VarArr = wc0Var.a;
-            ArrayList arrayList = new ArrayList(zc3VarArr.length);
-            for (zc3 zc3Var : zc3VarArr) {
-                arrayList.add(zc3Var.getCompleted());
-            }
-            na1Var.resumeWith(arrayList);
+        if (i == 1935963489) {
+            return 1;
         }
+        if (i == 1937012852) {
+            return 3;
+        }
+        efd.f("AviStreamHeaderChunk", "Found unsupported streamType fourCC: " + Integer.toHexString(i));
+        return -1;
+    }
+
+    @Override // pc0
+    public final int getType() {
+        return 1752331379;
     }
 }

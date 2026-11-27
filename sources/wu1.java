@@ -1,27 +1,20 @@
 // default package
 
-import android.content.Context;
-import android.widget.LinearLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wu1 extends LinearLayout {
-    public final xu1[] a;
+public final class wu1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ hh7 a;
 
-    public wu1(Context context) {
-        super(context);
-        this.a = new xu1[2];
+    public wu1(hh7 hh7Var) {
+        this.a = hh7Var;
     }
 
-    public final void a(cr1 cr1Var, LinearLayout.LayoutParams layoutParams) {
-        int childCount = getChildCount();
-        if (childCount < 2) {
-            this.a[childCount] = cr1Var;
-            addView(cr1Var, layoutParams);
-        }
-    }
-
-    public xu1[] getButtons() {
-        return this.a;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.q(1.0f);
     }
 }

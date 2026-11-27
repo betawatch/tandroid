@@ -1,690 +1,556 @@
 // default package
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import j$.util.DesugarCollections;
-import java.nio.ByteBuffer;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.util.Pair;
+import android.view.View;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Serializable;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ChatsWidgetConfigActivity;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.p;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rd1 extends ud1 {
-    public final xu7 h = new xu7();
-    public final qd1 i = new qd1();
-    public int j = -1;
-    public final int k;
-    public final pd1[] l;
-    public pd1 m;
-    public List n;
-    public List o;
-    public qd1 p;
-    public int q;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rd1 implements t93, fd, ncc, on5, dz5, l39, bf7, cq0, gq5, t69, CameraController.VideoTakeCallback, b88, hcb, kk4, ResultCallback, nu3, n7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public rd1(int i, List list) {
-        this.k = i == -1 ? 1 : i;
-        if (list != null) {
-            byte[] bArr = wj2.a;
-            if (list.size() == 1 && ((byte[]) list.get(0)).length == 1) {
-                byte b = ((byte[]) list.get(0))[0];
-            }
-        }
-        this.l = new pd1[8];
-        int i2 = 0;
-        while (true) {
-            pd1[] pd1VarArr = this.l;
-            if (i2 >= 8) {
-                this.m = pd1VarArr[0];
-                return;
-            } else {
-                pd1VarArr[i2] = new pd1();
-                i2++;
-            }
-        }
+    public /* synthetic */ rd1(nq1 nq1Var, boolean z) {
+        this.a = (byte) 9;
+        this.b = nq1Var;
     }
 
-    @Override // ud1
-    public final qx4 f() {
-        List list = this.n;
-        this.o = list;
-        list.getClass();
-        return new qx4(list);
-    }
-
-    @Override // ud1, u83
-    public final void flush() {
-        super.flush();
-        this.n = null;
-        this.o = null;
-        this.q = 0;
-        this.m = this.l[0];
-        l();
-        this.p = null;
-    }
-
-    @Override // ud1
-    public final void g(sd1 sd1Var) {
-        qd1 qd1Var;
-        ByteBuffer byteBuffer = sd1Var.c;
-        byteBuffer.getClass();
-        byte[] array = byteBuffer.array();
-        int limit = byteBuffer.limit();
-        xu7 xu7Var = this.h;
-        xu7Var.L(limit, array);
-        while (xu7Var.a() >= 3) {
-            int A = xu7Var.A();
-            int i = A & 3;
-            boolean z = (A & 4) == 4;
-            byte A2 = (byte) xu7Var.A();
-            byte A3 = (byte) xu7Var.A();
-            if (i == 2 || i == 3) {
+    @Override // bf7
+    public final void A(boolean z) {
+        wk5 wk5Var;
+        wk5 wk5Var2;
+        wk5 wk5Var3;
+        wk5 wk5Var4;
+        wk5 wk5Var5;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 9:
+                zu1 zu1Var = ((nq1) obj).b.b;
+                zu1Var.Ia(zu1Var.s4, true);
+                break;
+            case 10:
+                zu1 zu1Var2 = ((xs1) obj).m1;
                 if (z) {
-                    if (i == 3) {
-                        j();
-                        int i2 = (A2 & 192) >> 6;
-                        int i3 = this.j;
-                        if (i3 != -1 && i2 != (i3 + 1) % 4) {
-                            l();
-                            lad.f("Cea708Decoder", "Sequence number discontinuity. previous=" + this.j + " current=" + i2);
-                        }
-                        this.j = i2;
-                        int i4 = A2 & 63;
-                        if (i4 == 0) {
-                            i4 = 64;
-                        }
-                        qd1Var = new qd1(i2, i4);
-                        this.p = qd1Var;
-                        byte[] bArr = qd1Var.b;
-                        qd1Var.e = 1;
-                        bArr[0] = A3;
-                    } else {
-                        gre.f(i == 2);
-                        qd1 qd1Var2 = this.p;
-                        if (qd1Var2 == null) {
-                            lad.c("Cea708Decoder", "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
-                        } else {
-                            byte[] bArr2 = qd1Var2.b;
-                            int i5 = qd1Var2.e;
-                            int i6 = i5 + 1;
-                            qd1Var2.e = i6;
-                            bArr2[i5] = A2;
-                            qd1Var2.e = i5 + 2;
-                            bArr2[i6] = A3;
-                            qd1Var = qd1Var2;
-                        }
-                    }
-                    if (qd1Var.e == (qd1Var.d << 1) - 1) {
-                        j();
+                    zu1Var2.i6();
+                    UndoView undoView = zu1Var2.N3;
+                    if (undoView != null) {
+                        undoView.j(76, 0L, null);
+                        break;
                     }
                 }
-            }
+                break;
+            default:
+                bg2 bg2Var = ((tf2) obj).m1;
+                if (z) {
+                    wk5Var = ((e) bg2Var).parentLayout;
+                    if (wk5Var != null) {
+                        wk5Var2 = ((e) bg2Var).parentLayout;
+                        List fragmentStack = wk5Var2.getFragmentStack();
+                        wk5Var3 = ((e) bg2Var).parentLayout;
+                        e eVar = (e) fragmentStack.get(wk5Var3.getFragmentStack().size() - 2);
+                        if (!(eVar instanceof g92)) {
+                            bg2Var.finishFragment();
+                            break;
+                        } else {
+                            eVar.removeSelfFromStack();
+                            Bundle bundle = new Bundle();
+                            bundle.putLong("chat_id", bg2Var.N);
+                            g92 g92Var = new g92(bundle);
+                            g92Var.p0(bg2Var.r);
+                            wk5Var4 = ((e) bg2Var).parentLayout;
+                            wk5Var5 = ((e) bg2Var).parentLayout;
+                            ((ActionBarLayout) wk5Var4).b(wk5Var5.getFragmentStack().size() - 1, g92Var);
+                            bg2Var.finishFragment();
+                            g92Var.c.j(76, 0L, null);
+                            break;
+                        }
+                    }
+                }
+                break;
         }
     }
 
-    @Override // u83
-    public final String getName() {
-        return "Cea708Decoder";
+    @Override // gq5
+    public final boolean a(kj4 kj4Var, int i, Bundle bundle) {
+        wy1 wy1Var = (wy1) this.b;
+        ChatActivityEnterView chatActivityEnterView = wy1Var.g2;
+        if (chatActivityEnterView.T7) {
+            return true;
+        }
+        int i2 = c11.a;
+        if (Build.VERSION.SDK_INT >= 25 && (i & 1) != 0) {
+            try {
+                ((iq5) kj4Var.b).g();
+            } catch (Exception unused) {
+                return false;
+            }
+        }
+        iq5 iq5Var = (iq5) kj4Var.b;
+        if (!iq5Var.getDescription().hasMimeType("image/gif") && !r7a.w0(iq5Var.e(), null)) {
+            wy1Var.J(iq5Var.e(), iq5Var.getDescription().getMimeType(0));
+            return true;
+        }
+        if (chatActivityEnterView.c()) {
+            jj.J(chatActivityEnterView.D3, chatActivityEnterView.E3.a(), new h01((Object) wy1Var, (Object) kj4Var, (byte) 23), chatActivityEnterView.K4);
+            return true;
+        }
+        wy1Var.L(kj4Var, true, 0, 0);
+        return true;
     }
 
-    @Override // ud1
-    public final boolean i() {
-        return this.n != this.o;
+    @Override // t93
+    public final void b(u93 u93Var) {
+        de1 de1Var = (de1) this.b;
+        ce1 ce1Var = (ce1) u93Var;
+        ce1Var.clear();
+        de1Var.b.add(ce1Var);
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public final void j() {
-        boolean z;
-        int i;
-        int i2;
-        qd1 qd1Var = this.p;
-        if (qd1Var == null) {
+    @Override // l39
+    public final void c(ArrayList arrayList) {
+        jp1 jp1Var = (jp1) this.b;
+        zu1 zu1Var = jp1Var.p;
+        if (zu1Var.getParentActivity() == null || zu1Var.getParentActivity() == null) {
             return;
         }
-        if (qd1Var.e != (qd1Var.d << 1) - 1) {
-            lad.b("Cea708Decoder", "DtvCcPacket ended prematurely; size is " + ((this.p.d << 1) - 1) + ", but current index is " + this.p.e + " (sequence number " + this.p.c + ");");
-        }
-        qd1 qd1Var2 = this.p;
-        byte[] bArr = qd1Var2.b;
-        int i3 = qd1Var2.e;
-        qd1 qd1Var3 = this.i;
-        qd1Var3.j(i3, bArr);
-        boolean z2 = false;
-        while (true) {
-            if (qd1Var3.b() > 0) {
-                int i4 = 3;
-                int f = qd1Var3.f(3);
-                int f2 = qd1Var3.f(5);
-                int i5 = 2;
-                if (f == 7) {
-                    qd1Var3.n(2);
-                    f = qd1Var3.f(6);
-                    if (f < 7) {
-                        b00.o(f, "Invalid extended service number: ", "Cea708Decoder");
-                    }
-                }
-                if (f2 == 0) {
-                    if (f != 0) {
-                        lad.f("Cea708Decoder", "serviceNumber is non-zero (" + f + ") when blockSize is 0");
-                    }
-                } else if (f != this.k) {
-                    qd1Var3.o(f2);
-                } else {
-                    int i6 = (qd1Var3.c << 3) + qd1Var3.d + (f2 << 3);
-                    while ((qd1Var3.c << i4) + qd1Var3.d < i6) {
-                        int f3 = qd1Var3.f(8);
-                        if (f3 == 16) {
-                            z = true;
-                            int f4 = qd1Var3.f(8);
-                            if (f4 <= 31) {
-                                if (f4 > 7) {
-                                    if (f4 <= 15) {
-                                        qd1Var3.n(8);
-                                    } else if (f4 <= 23) {
-                                        qd1Var3.n(16);
-                                    } else if (f4 <= 31) {
-                                        qd1Var3.n(24);
-                                    }
-                                }
-                            } else if (f4 <= 127) {
-                                if (f4 == 32) {
-                                    this.m.a(' ');
-                                } else if (f4 == 33) {
-                                    this.m.a((char) 160);
-                                } else if (f4 == 37) {
-                                    this.m.a((char) 8230);
-                                } else if (f4 == 42) {
-                                    this.m.a((char) 352);
-                                } else if (f4 == 44) {
-                                    this.m.a((char) 338);
-                                } else if (f4 == 63) {
-                                    this.m.a((char) 376);
-                                } else if (f4 == 57) {
-                                    this.m.a((char) 8482);
-                                } else if (f4 == 58) {
-                                    this.m.a((char) 353);
-                                } else if (f4 == 60) {
-                                    this.m.a((char) 339);
-                                } else if (f4 != 61) {
-                                    switch (f4) {
-                                        case 48:
-                                            this.m.a((char) 9608);
-                                            break;
-                                        case 49:
-                                            this.m.a((char) 8216);
-                                            break;
-                                        case 50:
-                                            this.m.a((char) 8217);
-                                            break;
-                                        case kk7.n0 /* 51 */:
-                                            this.m.a((char) 8220);
-                                            break;
-                                        case kk7.o0 /* 52 */:
-                                            this.m.a((char) 8221);
-                                            break;
-                                        case kk7.p0 /* 53 */:
-                                            this.m.a((char) 8226);
-                                            break;
-                                        default:
-                                            switch (f4) {
-                                                case kk7.C1 /* 118 */:
-                                                    this.m.a((char) 8539);
-                                                    break;
-                                                case kk7.D1 /* 119 */:
-                                                    this.m.a((char) 8540);
-                                                    break;
-                                                case 120:
-                                                    this.m.a((char) 8541);
-                                                    break;
-                                                case kk7.E1 /* 121 */:
-                                                    this.m.a((char) 8542);
-                                                    break;
-                                                case kk7.F1 /* 122 */:
-                                                    this.m.a((char) 9474);
-                                                    break;
-                                                case kk7.G1 /* 123 */:
-                                                    this.m.a((char) 9488);
-                                                    break;
-                                                case kk7.H1 /* 124 */:
-                                                    this.m.a((char) 9492);
-                                                    break;
-                                                case kk7.I1 /* 125 */:
-                                                    this.m.a((char) 9472);
-                                                    break;
-                                                case kk7.J1 /* 126 */:
-                                                    this.m.a((char) 9496);
-                                                    break;
-                                                case kk7.K1 /* 127 */:
-                                                    this.m.a((char) 9484);
-                                                    break;
-                                                default:
-                                                    b00.o(f4, "Invalid G2 character: ", "Cea708Decoder");
-                                                    break;
-                                            }
-                                    }
-                                } else {
-                                    this.m.a((char) 8480);
-                                }
-                                z2 = z;
-                            } else if (f4 > 159) {
-                                i = 2;
-                                i2 = 3;
-                                if (f4 <= 255) {
-                                    if (f4 == 160) {
-                                        this.m.a((char) 13252);
-                                    } else {
-                                        b00.o(f4, "Invalid G3 character: ", "Cea708Decoder");
-                                        this.m.a('_');
-                                    }
-                                    z2 = true;
-                                } else {
-                                    b00.o(f4, "Invalid extended command: ", "Cea708Decoder");
-                                }
-                            } else if (f4 <= 135) {
-                                qd1Var3.n(32);
-                            } else if (f4 <= 143) {
-                                qd1Var3.n(40);
-                            } else if (f4 <= 159) {
-                                i = 2;
-                                qd1Var3.n(2);
-                                i2 = 3;
-                                qd1Var3.n(qd1Var3.f(6) << 3);
-                            }
-                            i = 2;
-                            i2 = 3;
-                        } else if (f3 <= 31) {
-                            if (f3 != 0) {
-                                if (f3 == i4) {
-                                    this.n = k();
-                                } else if (f3 != 8) {
-                                    switch (f3) {
-                                        case 12:
-                                            l();
-                                            break;
-                                        case 13:
-                                            this.m.a('\n');
-                                            break;
-                                        case 14:
-                                            break;
-                                        default:
-                                            if (f3 < 17 || f3 > 23) {
-                                                if (f3 < 24 || f3 > 31) {
-                                                    b00.o(f3, "Invalid C0 command: ", "Cea708Decoder");
-                                                    break;
-                                                } else {
-                                                    lad.f("Cea708Decoder", "Currently unsupported COMMAND_P16 Command: " + f3);
-                                                    qd1Var3.n(16);
-                                                    break;
-                                                }
-                                            } else {
-                                                lad.f("Cea708Decoder", "Currently unsupported COMMAND_EXT1 Command: " + f3);
-                                                qd1Var3.n(8);
-                                                break;
-                                            }
-                                    }
-                                } else {
-                                    SpannableStringBuilder spannableStringBuilder = this.m.b;
-                                    int length = spannableStringBuilder.length();
-                                    if (length > 0) {
-                                        spannableStringBuilder.delete(length - 1, length);
-                                    }
-                                }
-                            }
-                            i2 = i4;
-                            i = i5;
-                        } else if (f3 <= 127) {
-                            pd1 pd1Var = this.m;
-                            if (f3 == 127) {
-                                pd1Var.a((char) 9835);
-                            } else {
-                                pd1Var.a((char) (f3 & kk7.d4));
-                            }
-                            i2 = i4;
-                            i = i5;
-                            z2 = true;
-                        } else {
-                            if (f3 <= 159) {
-                                pd1[] pd1VarArr = this.l;
-                                switch (f3) {
-                                    case 128:
-                                    case kk7.M1 /* 129 */:
-                                    case kk7.N1 /* 130 */:
-                                    case kk7.O1 /* 131 */:
-                                    case kk7.P1 /* 132 */:
-                                    case 133:
-                                    case 134:
-                                    case kk7.Q1 /* 135 */:
-                                        z = true;
-                                        int i7 = f3 - 128;
-                                        if (this.q != i7) {
-                                            this.q = i7;
-                                            this.m = pd1VarArr[i7];
-                                            break;
-                                        }
-                                        break;
-                                    case kk7.R1 /* 136 */:
-                                        z = true;
-                                        for (int i8 = 1; i8 <= 8; i8++) {
-                                            if (qd1Var3.e()) {
-                                                pd1 pd1Var2 = pd1VarArr[8 - i8];
-                                                pd1Var2.a.clear();
-                                                pd1Var2.b.clear();
-                                                pd1Var2.o = -1;
-                                                pd1Var2.p = -1;
-                                                pd1Var2.q = -1;
-                                                pd1Var2.s = -1;
-                                                pd1Var2.u = 0;
-                                            }
-                                        }
-                                        break;
-                                    case kk7.S1 /* 137 */:
-                                        for (int i9 = 1; i9 <= 8; i9++) {
-                                            if (qd1Var3.e()) {
-                                                pd1VarArr[8 - i9].d = true;
-                                            }
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.T1 /* 138 */:
-                                        for (int i10 = 1; i10 <= 8; i10++) {
-                                            if (qd1Var3.e()) {
-                                                pd1VarArr[8 - i10].d = false;
-                                            }
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.U1 /* 139 */:
-                                        for (int i11 = 1; i11 <= 8; i11++) {
-                                            if (qd1Var3.e()) {
-                                                pd1VarArr[8 - i11].d = !r1.d;
-                                            }
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.V1 /* 140 */:
-                                        for (int i12 = 1; i12 <= 8; i12++) {
-                                            if (qd1Var3.e()) {
-                                                pd1VarArr[8 - i12].d();
-                                            }
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.W1 /* 141 */:
-                                        qd1Var3.n(8);
-                                        z = true;
-                                        break;
-                                    case kk7.X1 /* 142 */:
-                                        z = true;
-                                        break;
-                                    case kk7.Y1 /* 143 */:
-                                        l();
-                                        z = true;
-                                        break;
-                                    case kk7.Z1 /* 144 */:
-                                        int i13 = i5;
-                                        if (this.m.c) {
-                                            qd1Var3.f(4);
-                                            qd1Var3.f(i13);
-                                            qd1Var3.f(i13);
-                                            boolean e = qd1Var3.e();
-                                            boolean e2 = qd1Var3.e();
-                                            qd1Var3.f(3);
-                                            qd1Var3.f(3);
-                                            this.m.e(e, e2);
-                                        } else {
-                                            qd1Var3.n(16);
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.a2 /* 145 */:
-                                        if (this.m.c) {
-                                            int c = pd1.c(qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2));
-                                            int c2 = pd1.c(qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2));
-                                            qd1Var3.n(2);
-                                            pd1.c(qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2), 0);
-                                            this.m.f(c, c2);
-                                        } else {
-                                            qd1Var3.n(24);
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.b2 /* 146 */:
-                                        if (this.m.c) {
-                                            qd1Var3.n(4);
-                                            int f5 = qd1Var3.f(4);
-                                            qd1Var3.n(2);
-                                            qd1Var3.f(6);
-                                            pd1 pd1Var3 = this.m;
-                                            if (pd1Var3.u != f5) {
-                                                pd1Var3.a('\n');
-                                            }
-                                            pd1Var3.u = f5;
-                                        } else {
-                                            qd1Var3.n(16);
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.c2 /* 147 */:
-                                    case kk7.d2 /* 148 */:
-                                    case kk7.e2 /* 149 */:
-                                    case kk7.f2 /* 150 */:
-                                    default:
-                                        b00.o(f3, "Invalid C1 command: ", "Cea708Decoder");
-                                        z = true;
-                                        break;
-                                    case kk7.g2 /* 151 */:
-                                        if (this.m.c) {
-                                            int c3 = pd1.c(qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2));
-                                            qd1Var3.f(2);
-                                            pd1.c(qd1Var3.f(2), qd1Var3.f(2), qd1Var3.f(2), 0);
-                                            qd1Var3.e();
-                                            qd1Var3.e();
-                                            qd1Var3.f(2);
-                                            qd1Var3.f(2);
-                                            int f6 = qd1Var3.f(2);
-                                            qd1Var3.n(8);
-                                            pd1 pd1Var4 = this.m;
-                                            pd1Var4.n = c3;
-                                            pd1Var4.k = f6;
-                                        } else {
-                                            qd1Var3.n(32);
-                                        }
-                                        z = true;
-                                        break;
-                                    case kk7.h2 /* 152 */:
-                                    case kk7.i2 /* 153 */:
-                                    case kk7.j2 /* 154 */:
-                                    case kk7.k2 /* 155 */:
-                                    case kk7.l2 /* 156 */:
-                                    case kk7.m2 /* 157 */:
-                                    case kk7.n2 /* 158 */:
-                                    case kk7.o2 /* 159 */:
-                                        int i14 = f3 - 152;
-                                        pd1 pd1Var5 = pd1VarArr[i14];
-                                        qd1Var3.n(i5);
-                                        boolean e3 = qd1Var3.e();
-                                        qd1Var3.n(i5);
-                                        int f7 = qd1Var3.f(i4);
-                                        boolean e4 = qd1Var3.e();
-                                        int f8 = qd1Var3.f(7);
-                                        int f9 = qd1Var3.f(8);
-                                        int f10 = qd1Var3.f(4);
-                                        int f11 = qd1Var3.f(4);
-                                        qd1Var3.n(i5);
-                                        qd1Var3.n(6);
-                                        qd1Var3.n(i5);
-                                        int f12 = qd1Var3.f(3);
-                                        int f13 = qd1Var3.f(3);
-                                        ArrayList arrayList = pd1Var5.a;
-                                        pd1Var5.c = true;
-                                        pd1Var5.d = e3;
-                                        pd1Var5.e = f7;
-                                        pd1Var5.f = e4;
-                                        pd1Var5.g = f8;
-                                        pd1Var5.h = f9;
-                                        pd1Var5.i = f10;
-                                        int i15 = f11 + 1;
-                                        if (pd1Var5.j != i15) {
-                                            pd1Var5.j = i15;
-                                            while (true) {
-                                                if (arrayList.size() >= pd1Var5.j || arrayList.size() >= 15) {
-                                                    arrayList.remove(0);
-                                                }
-                                            }
-                                        }
-                                        if (f12 != 0 && pd1Var5.l != f12) {
-                                            pd1Var5.l = f12;
-                                            int i16 = f12 - 1;
-                                            int i17 = pd1.B[i16];
-                                            boolean z3 = pd1.A[i16];
-                                            int i18 = pd1.y[i16];
-                                            int i19 = pd1.z[i16];
-                                            int i20 = pd1.x[i16];
-                                            pd1Var5.n = i17;
-                                            pd1Var5.k = i20;
-                                        }
-                                        if (f13 != 0 && pd1Var5.m != f13) {
-                                            pd1Var5.m = f13;
-                                            int i21 = f13 - 1;
-                                            int i22 = pd1.D[i21];
-                                            int i23 = pd1.C[i21];
-                                            pd1Var5.e(false, false);
-                                            pd1Var5.f(pd1.v, pd1.E[i21]);
-                                        }
-                                        if (this.q != i14) {
-                                            this.q = i14;
-                                            this.m = pd1VarArr[i14];
-                                        }
-                                        z = true;
-                                        break;
-                                }
-                            } else {
-                                z = true;
-                                if (f3 <= 255) {
-                                    this.m.a((char) (f3 & kk7.d4));
-                                } else {
-                                    b00.o(f3, "Invalid base command: ", "Cea708Decoder");
-                                    i = 2;
-                                    i2 = 3;
-                                }
-                            }
-                            z2 = z;
-                            i = 2;
-                            i2 = 3;
-                        }
-                        i5 = i;
-                        i4 = i2;
-                    }
-                }
-            }
-        }
-        if (z2) {
-            this.n = k();
-        }
-        this.p = null;
+        ip1 ip1Var = new ip1(jp1Var, zu1Var, zu1Var.getParentActivity(), zu1Var.Ba, arrayList);
+        boolean Y7 = zu1Var.Y7();
+        ip1Var.i0 = Y7;
+        ip1Var.n = Y7;
+        ip1Var.p0 = false;
+        zu1Var.M5(false);
+        zu1Var.showDialog(ip1Var);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0092  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final List k() {
-        Layout.Alignment alignment;
-        boolean z;
-        float f;
-        float f2;
-        ArrayList arrayList = new ArrayList();
-        for (int i = 0; i < 8; i++) {
-            pd1[] pd1VarArr = this.l;
-            pd1 pd1Var = pd1VarArr[i];
-            if (pd1Var.c && (!pd1Var.a.isEmpty() || pd1Var.b.length() != 0)) {
-                pd1 pd1Var2 = pd1VarArr[i];
-                if (pd1Var2.d) {
-                    ArrayList arrayList2 = pd1Var2.a;
-                    od1 od1Var = null;
-                    if (pd1Var2.c && (!arrayList2.isEmpty() || pd1Var2.b.length() != 0)) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                        for (int i2 = 0; i2 < arrayList2.size(); i2++) {
-                            spannableStringBuilder.append((CharSequence) arrayList2.get(i2));
-                            spannableStringBuilder.append('\n');
-                        }
-                        spannableStringBuilder.append((CharSequence) pd1Var2.b());
-                        int i3 = pd1Var2.k;
-                        if (i3 != 0) {
-                            if (i3 == 1) {
-                                alignment = Layout.Alignment.ALIGN_OPPOSITE;
-                            } else if (i3 == 2) {
-                                alignment = Layout.Alignment.ALIGN_CENTER;
-                            } else if (i3 != 3) {
-                                wn4.g(pd1Var2.k, "Unexpected justification value: ");
-                                return null;
-                            }
-                            Layout.Alignment alignment2 = alignment;
-                            z = pd1Var2.f;
-                            int i4 = pd1Var2.h;
-                            int i5 = pd1Var2.g;
-                            if (z) {
-                                f = i4 / 209.0f;
-                                f2 = i5 / 74.0f;
-                            } else {
-                                f = i4 / 99.0f;
-                                f2 = i5 / 99.0f;
-                            }
-                            float f3 = (f * 0.9f) + 0.05f;
-                            float f4 = (f2 * 0.9f) + 0.05f;
-                            int i6 = pd1Var2.i;
-                            int i7 = i6 / 3;
-                            int i8 = i7 != 0 ? 0 : i7 == 1 ? 1 : 2;
-                            int i9 = i6 % 3;
-                            int i10 = i9 != 0 ? 0 : i9 == 1 ? 1 : 2;
-                            int i11 = pd1Var2.n;
-                            od1Var = new od1(spannableStringBuilder, alignment2, f4, i8, f3, i10, i11 == pd1.w, i11, pd1Var2.e);
-                        }
-                        alignment = Layout.Alignment.ALIGN_NORMAL;
-                        Layout.Alignment alignment22 = alignment;
-                        z = pd1Var2.f;
-                        int i42 = pd1Var2.h;
-                        int i52 = pd1Var2.g;
-                        if (z) {
-                        }
-                        float f32 = (f * 0.9f) + 0.05f;
-                        float f42 = (f2 * 0.9f) + 0.05f;
-                        int i62 = pd1Var2.i;
-                        int i72 = i62 / 3;
-                        if (i72 != 0) {
-                        }
-                        int i92 = i62 % 3;
-                        if (i92 != 0) {
-                        }
-                        int i112 = pd1Var2.n;
-                        od1Var = new od1(spannableStringBuilder, alignment22, f42, i8, f32, i10, i112 == pd1.w, i112, pd1Var2.e);
+    public final sd1 d(rx6 rx6Var) {
+        td1 td1Var = (td1) this.b;
+        URL url = (URL) rx6Var.b;
+        String c = pse.c("CctTransportBackend");
+        if (Log.isLoggable(c, 4)) {
+            Log.i(c, String.format("Making request to: %s", url));
+        }
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setConnectTimeout(30000);
+        httpURLConnection.setReadTimeout(130000);
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setInstanceFollowRedirects(false);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestProperty("User-Agent", "datatransport/3.3.0 android/");
+        httpURLConnection.setRequestProperty("Content-Encoding", "gzip");
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setRequestProperty("Accept-Encoding", "gzip");
+        String str = (String) rx6Var.d;
+        if (str != null) {
+            httpURLConnection.setRequestProperty("X-Goog-Api-Key", str);
+        }
+        try {
+            OutputStream outputStream = httpURLConnection.getOutputStream();
+            try {
+                GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
+                try {
+                    kj4 kj4Var = td1Var.a;
+                    y70 y70Var = (y70) rx6Var.c;
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(gZIPOutputStream));
+                    vw5 vw5Var = (vw5) kj4Var.b;
+                    bx5 bx5Var = new bx5(bufferedWriter, vw5Var.a, vw5Var.b, vw5Var.c, vw5Var.d);
+                    bx5Var.h(y70Var);
+                    bx5Var.j();
+                    bx5Var.b.flush();
+                    gZIPOutputStream.close();
+                    if (outputStream != null) {
+                        outputStream.close();
                     }
-                    if (od1Var != null) {
-                        arrayList.add(od1Var);
+                    int responseCode = httpURLConnection.getResponseCode();
+                    Integer valueOf = Integer.valueOf(responseCode);
+                    String c2 = pse.c("CctTransportBackend");
+                    if (Log.isLoggable(c2, 4)) {
+                        Log.i(c2, String.format("Status Code: %d", valueOf));
                     }
-                } else {
-                    continue;
+                    pse.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    pse.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
+                        return new sd1(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
+                    }
+                    if (responseCode != 200) {
+                        return new sd1(responseCode, null, 0L);
+                    }
+                    InputStream inputStream = httpURLConnection.getInputStream();
+                    try {
+                        InputStream gZIPInputStream = "gzip".equals(httpURLConnection.getHeaderField("Content-Encoding")) ? new GZIPInputStream(inputStream) : inputStream;
+                        try {
+                            sd1 sd1Var = new sd1(responseCode, null, ea0.a(new BufferedReader(new InputStreamReader(gZIPInputStream))).a);
+                            if (gZIPInputStream != null) {
+                                gZIPInputStream.close();
+                            }
+                            if (inputStream != null) {
+                                inputStream.close();
+                            }
+                            return sd1Var;
+                        } finally {
+                        }
+                    } finally {
+                    }
+                } finally {
                 }
+            } finally {
             }
+        } catch (ConnectException e) {
+            e = e;
+            pse.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            return new sd1(500, null, 0L);
+        } catch (UnknownHostException e2) {
+            e = e2;
+            pse.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            return new sd1(500, null, 0L);
+        } catch (IOException e3) {
+            e = e3;
+            pse.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            return new sd1(400, null, 0L);
+        } catch (o34 e4) {
+            e = e4;
+            pse.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            return new sd1(400, null, 0L);
         }
-        Collections.sort(arrayList, od1.c);
-        ArrayList arrayList3 = new ArrayList(arrayList.size());
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            arrayList3.add(((od1) arrayList.get(i12)).a);
-        }
-        return DesugarCollections.unmodifiableList(arrayList3);
     }
 
-    public final void l() {
-        for (int i = 0; i < 8; i++) {
-            this.l[i].d();
+    @Override // t69
+    public final boolean e(int i, View view) {
+        Object O;
+        u32 u32Var = (u32) this.b;
+        j79 adapter = u32Var.r.getAdapter();
+        m32 m32Var = u32Var.w;
+        if (adapter == m32Var) {
+            O = m32Var.E(i);
+        } else {
+            t32 t32Var = u32Var.E;
+            O = t32Var.O(t32Var.S(i), t32Var.Q(i));
         }
+        return u32Var.T(view, O);
+    }
+
+    @Override // n7
+    public final void g(int i) {
+        hm2 hm2Var = ((p) this.b).a;
+        if (i == 1 || i == 2) {
+            hm2Var.a(i == 2);
+        } else if (i == 3) {
+            hm2Var.b();
+        }
+    }
+
+    @Override // nu3
+    public final void h() {
+        ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) this.b;
+        int i = ChatsWidgetConfigActivity.G;
+        Intent intent = new Intent();
+        intent.putExtra("appWidgetId", chatsWidgetConfigActivity.F);
+        chatsWidgetConfigActivity.setResult(-1, intent);
+        chatsWidgetConfigActivity.finish();
+    }
+
+    public final void i(String str) {
+        zu1 zu1Var = ((it1) this.b).R;
+        if (str.startsWith("@")) {
+            zu1Var.getMessagesController().H3(str.substring(1), zu1Var, 0, null);
+            return;
+        }
+        if (str.startsWith("#") || str.startsWith("$")) {
+            uj3 uj3Var = new uj3(null);
+            uj3Var.p2 = str;
+            zu1Var.presentFragment(uj3Var);
+        } else {
+            if (!str.startsWith("/")) {
+                zu1Var.Pa(0, str, null, null, false);
+                return;
+            }
+            zu1Var.a0.L1(null, str, false, false);
+            if (zu1Var.a0.getFieldText() == null) {
+                zu1Var.E7(false);
+            }
+        }
+    }
+
+    @Override // hcb
+    public final boolean j(long j, int i, int i2, int i3, icb icbVar) {
+        b82 b82Var = (b82) ((a82) this.b).T;
+        ImageReceiver imageReceiver = b82Var.a;
+        icbVar.c = imageReceiver;
+        icbVar.l = imageReceiver;
+        a82 a82Var = b82Var.H;
+        icbVar.m = a82Var;
+        boolean z = a82Var.w;
+        b82 b82Var2 = b82Var.L.e;
+        icbVar.a = b82Var2;
+        icbVar.k = b82Var2.getAlpha();
+        icbVar.h = 0.0f;
+        icbVar.i = hl.q.y;
+        icbVar.g = (View) b82Var.getParent();
+        return true;
+    }
+
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        cj1 cj1Var = (cj1) this.b;
+        b8c b8cVar = (b8c) obj;
+        ej1 ej1Var = cj1Var.f;
+        Object obj3 = b8cVar.H;
+        if (obj3 instanceof TL_stars.StarsTransaction) {
+            nza.l1(cj1Var.getContext(), true, ej1Var.e, cj1Var.c, (TL_stars.StarsTransaction) b8cVar.H, cj1Var.b);
+        } else if (obj3 instanceof TL_stats.BroadcastRevenueTransaction) {
+            ij1.N(cj1Var.getContext(), cj1Var.c, (TL_stats.BroadcastRevenueTransaction) b8cVar.H, ej1Var.e, cj1Var.b);
+        }
+    }
+
+    @Override // dz5
+    public final void l(Exception exc) {
+        ((eq0) this.b).setClickable(false);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        af2 af2Var = (af2) this.b;
+        Pair pair = (Pair) obj;
+        if (pair != null) {
+            af2Var.a.put((Long) pair.first, (Bitmap) pair.second);
+        }
+    }
+
+    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
+    public final void onFinishVideoRecording(String str, long j) {
+        int i;
+        int i2;
+        no6 no6Var;
+        g52 g52Var = (g52) this.b;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = g52Var.e;
+        n12 n12Var = chatAttachAlertPhotoLayout.b;
+        if (g52Var.a == null || n12Var.P1 || chatAttachAlertPhotoLayout.Q == null) {
+            return;
+        }
+        ChatAttachAlertPhotoLayout.r1 = false;
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(new File(str).getAbsolutePath(), options);
+            i = options.outWidth;
+            try {
+                i2 = options.outHeight;
+            } catch (Exception unused) {
+                i2 = 0;
+                int i3 = i;
+                int i4 = ChatAttachAlertPhotoLayout.v1;
+                ChatAttachAlertPhotoLayout.v1 = i4 - 1;
+                no6Var = new no6(i4, g52Var.a.getAbsolutePath(), 0, true, i3, i2);
+                no6Var.E = (int) (j / 1000.0f);
+                no6Var.c = str;
+                if (n12Var.N2 != 0) {
+                    fo6 fo6Var = new fo6();
+                    no6Var.A = fo6Var;
+                    fo6Var.l = true;
+                    fo6Var.u = false;
+                    fo6Var.v = 1.0f;
+                }
+                chatAttachAlertPhotoLayout.l0(no6Var, false, false);
+            }
+        } catch (Exception unused2) {
+            i = 0;
+        }
+        int i32 = i;
+        int i42 = ChatAttachAlertPhotoLayout.v1;
+        ChatAttachAlertPhotoLayout.v1 = i42 - 1;
+        no6Var = new no6(i42, g52Var.a.getAbsolutePath(), 0, true, i32, i2);
+        no6Var.E = (int) (j / 1000.0f);
+        no6Var.c = str;
+        if (n12Var.N2 != 0 && chatAttachAlertPhotoLayout.Q.isFrontface()) {
+            fo6 fo6Var2 = new fo6();
+            no6Var.A = fo6Var2;
+            fo6Var2.l = true;
+            fo6Var2.u = false;
+            fo6Var2.v = 1.0f;
+        }
+        chatAttachAlertPhotoLayout.l0(no6Var, false, false);
+    }
+
+    @Override // kk4
+    public final boolean run() {
+        TLRPC.Message message;
+        hd5 hd5Var;
+        wb2 wb2Var = (wb2) this.b;
+        r47 r47Var = wb2Var.Q5;
+        if (r47Var == null || (message = r47Var.k) == null) {
+            return false;
+        }
+        if (r47Var.D != 29 || ((hd5Var = wb2Var.X5) != null && hd5Var.i)) {
+            return (message.noforwards && !r47.c3(message)) || wb2Var.Q5.R4() || wb2Var.Q5.y2();
+        }
+        return true;
+    }
+
+    @Override // on5
+    public final void v(ImageReceiver imageReceiver, boolean z, boolean z2, boolean z3) {
+        b29 y;
+        al1 al1Var;
+        dl1 dl1Var = (dl1) this.b;
+        if (!z || (y = dl1Var.J.y()) == null) {
+            return;
+        }
+        r47 r47Var = dl1Var.Q0;
+        byte b = 0;
+        if (r47Var == null || r47Var.o1) {
+            if (y.b0 < 1) {
+                y.stop();
+                y.I(y.e[0] - 1, false, false);
+                return;
+            }
+            return;
+        }
+        r47Var.o1 = true;
+        y.I(0, false, false);
+        hl.c3(new zk1(y, b));
+        if (r47Var.n1 || dl1Var.M1) {
+            r47Var.n1 = false;
+            dl1Var.M1 = false;
+            try {
+                dl1Var.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            if (dl1Var.getContext() instanceof LaunchActivity) {
+                ((LaunchActivity) dl1Var.getContext()).w0.c(false);
+            }
+            TLRPC.VideoSize videoSize = dl1Var.J1;
+            if (videoSize == null || (al1Var = dl1Var.g1) == null) {
+                return;
+            }
+            al1Var.q(dl1Var, dl1Var.I1, videoSize);
+        }
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        int i2;
+        byte b = this.a;
+        byte b2 = 0;
+        Object obj = this.b;
+        switch (b) {
+            case 2:
+                ((gi1) obj).h0(idVar);
+                break;
+            case 6:
+                ((hm1) obj).run();
+                break;
+            case 8:
+                zu1 zu1Var = ((oq1) obj).b;
+                zu1Var.finishFragment();
+                zu1Var.getNotificationCenter().k(128, zu1Var.e4);
+                break;
+            case 12:
+                zu1 zu1Var2 = ((dt1) obj).a.R;
+                i2 = ((e) zu1Var2).currentAccount;
+                af2.e(i2).a(zu1Var2.l6, true, true);
+                break;
+            case 13:
+                ((qy1) obj).a.V0.p();
+                break;
+            case 15:
+                ((dy1) obj).run();
+                uc7.e1().edit().putBoolean("trimvoicehint", false).apply();
+                break;
+            case 19:
+                ((a72) obj).b.dismiss();
+                break;
+            case 20:
+                ((i62) obj).a.F.p();
+                break;
+            case 22:
+                ((m92) obj).b.d0();
+                break;
+            case 23:
+                na2 na2Var = (na2) obj;
+                boolean z = na2Var.s;
+                if (!z || na2Var.h.linked_chat_id != 0) {
+                    id[] idVarArr = {new id(3, null, na2Var.getParentActivity())};
+                    TLRPC.TL_channels_setDiscussionGroup tL_channels_setDiscussionGroup = new TLRPC.TL_channels_setDiscussionGroup();
+                    if (z) {
+                        tL_channels_setDiscussionGroup.broadcast = uc7.i1(na2Var.f);
+                        tL_channels_setDiscussionGroup.group = new TLRPC.TL_inputChannelEmpty();
+                    } else {
+                        tL_channels_setDiscussionGroup.broadcast = new TLRPC.TL_inputChannelEmpty();
+                        tL_channels_setDiscussionGroup.group = uc7.i1(na2Var.f);
+                    }
+                    hl.d3(new ba2(na2Var, idVarArr, na2Var.getConnectionsManager().sendRequest(tL_channels_setDiscussionGroup, new ql(na2Var, idVarArr, (byte) 21)), b2), 500L);
+                    break;
+                }
+                break;
+            default:
+                ((le) obj).a(1);
+                break;
+        }
+    }
+
+    @Override // hcb
+    public final void x(long j, int i, x58 x58Var) {
+        x58Var.run();
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+    }
+
+    public /* synthetic */ rd1(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
+    }
+
+    @Override // hcb
+    public final void f(boolean z) {
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(Throwable th) {
+    }
+
+    @Override // on5
+    public final void r(ImageReceiver imageReceiver) {
+    }
+
+    @Override // on5
+    public final void z(int i, Drawable drawable) {
     }
 }

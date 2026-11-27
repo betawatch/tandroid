@@ -1,47 +1,41 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class v9c extends b4 {
-    public static final Parcelable.Creator<v9c> CREATOR = new hv6((byte) 23);
-    public final int a;
-    public final String b;
-    public final int c;
+public abstract class v9c implements Iterator {
+    public final /* synthetic */ byte a;
 
-    public v9c(int i, int i2, String str) {
-        str.getClass();
-        this.a = i;
-        this.b = str;
-        this.c = i2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            case 1:
+                throw new UnsupportedOperationException();
+            case 2:
+                throw new UnsupportedOperationException();
+            case 3:
+                throw new UnsupportedOperationException();
+            case 4:
+                throw new UnsupportedOperationException();
+            case 5:
+                throw new UnsupportedOperationException();
+            case 6:
+                throw new UnsupportedOperationException();
+            case 7:
+                throw new UnsupportedOperationException();
+            case 8:
+                throw new UnsupportedOperationException();
+            case 9:
+                throw new UnsupportedOperationException();
+            case 10:
+                throw new UnsupportedOperationException();
+            case 11:
+                throw new UnsupportedOperationException();
+            default:
+                throw new UnsupportedOperationException();
         }
-        if (!(obj instanceof v9c)) {
-            return false;
-        }
-        v9c v9cVar = (v9c) obj;
-        return this.a == v9cVar.a && rp5.a(this.b, v9cVar.b) && this.c == v9cVar.c;
-    }
-
-    public final int hashCode() {
-        return ir2.j(this.a * 31, 31, this.b) + this.c;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.l(parcel, 2, this.b);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        jte.s(parcel, r);
     }
 }

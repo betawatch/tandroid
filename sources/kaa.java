@@ -1,20 +1,38 @@
 // default package
 
-import android.content.Context;
+import android.media.session.MediaSession;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class kaa extends waa {
-    public final /* synthetic */ maa O;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kaa {
+    public static final String b;
+    public static final String c;
+    public final laa a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kaa(maa maaVar, Context context, wjb wjbVar) {
-        super(0, wjbVar, context);
-        this.O = maaVar;
+    static {
+        gt6.a("media3.session");
+        String str = gcc.a;
+        b = "0";
+        c = "1";
     }
 
-    @Override // waa
-    public final String a() {
-        return this.O.f.V1 ? k96.M0(2131745991, null) : k96.M0(2131750472, null);
+    public kaa(int i, String str, sz6 sz6Var, Bundle bundle, MediaSession.Token token) {
+        this.a = new laa(i, str, sz6Var, bundle, token);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof kaa) {
+            return this.a.equals(((kaa) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return this.a.toString();
     }
 }

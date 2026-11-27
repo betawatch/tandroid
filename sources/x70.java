@@ -1,34 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x70 extends li2 {
-    public final u70 a;
+public final class x70 {
+    public final int a;
+    public final long b;
 
-    public x70(u70 u70Var) {
-        this.a = u70Var;
+    public x70(int i, long j) {
+        if (i == 0) {
+            p3d.h("Null status");
+            throw null;
+        }
+        this.a = i;
+        this.b = j;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof li2)) {
+        if (!(obj instanceof x70)) {
             return false;
         }
-        li2 li2Var = (li2) obj;
-        Object obj2 = ki2.a;
-        if (obj2.equals(obj2)) {
-            return this.a.equals(((x70) li2Var).a);
-        }
-        return false;
+        x70 x70Var = (x70) obj;
+        return ik8.c(this.a, x70Var.a) && this.b == x70Var.b;
     }
 
     public final int hashCode() {
-        return ((ki2.a.hashCode() ^ 1000003) * 1000003) ^ this.a.hashCode();
+        int F = (ik8.F(this.a) ^ 1000003) * 1000003;
+        long j = this.b;
+        return F ^ ((int) ((j >>> 32) ^ j));
     }
 
     public final String toString() {
-        return "ClientInfo{clientType=" + ki2.a + ", androidClientInfo=" + this.a + "}";
+        StringBuilder sb = new StringBuilder("BackendResponse{status=");
+        int i = this.a;
+        sb.append(i != 1 ? i != 2 ? i != 3 ? i != 4 ? "null" : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
+        sb.append(", nextRequestWaitMillis=");
+        return qu6.p(sb, this.b, "}");
     }
 }

@@ -1,122 +1,29 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class m4a extends bya {
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public float d;
-    public final Paint e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class m4a extends hz9 {
+    public final /* synthetic */ AtomicReferenceArray g;
 
-    public m4a(boolean z) {
-        if (z) {
-            Paint paint = new Paint(1);
-            this.e = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeWidth(gl.L(2.0f));
-        }
+    public m4a(long j, m4a m4aVar, int i) {
+        super(j, m4aVar, i);
+        this.g = new AtomicReferenceArray(l4a.f);
     }
 
-    @Override // bya
-    public final void b(int i) {
-        Paint paint = this.e;
-        if (paint != null) {
-            paint.setColor(i);
-        }
+    @Override // hz9
+    public final int g() {
+        return l4a.f;
     }
 
-    @Override // bya
-    public final void c(boolean z) {
-        this.a = z;
+    @Override // hz9
+    public final void h(int i, mx2 mx2Var) {
+        this.g.set(i, l4a.e);
+        i();
     }
 
-    @Override // bya
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.e;
-        if (paint == null) {
-            paint = bkb.c2;
-        }
-        Paint paint2 = paint;
-        int i = 0;
-        while (i < 3) {
-            if (i == 0) {
-                paint2.setAlpha((int) (this.d * 255.0f));
-            } else if (i == 2) {
-                paint2.setAlpha((int) ((1.0f - this.d) * 255.0f));
-            } else {
-                paint2.setAlpha(kk7.d4);
-            }
-            float L = (gl.L(5.0f) * i) + (gl.L(5.0f) * this.d);
-            float f = 8.0f;
-            Canvas canvas2 = canvas;
-            canvas2.drawLine(L, gl.L(this.a ? 3.0f : 4.0f), L + gl.L(4.0f), gl.L(this.a ? 7.0f : 8.0f), paint2);
-            float L2 = gl.L(this.a ? 11.0f : 12.0f);
-            float L3 = L + gl.L(4.0f);
-            if (this.a) {
-                f = 7.0f;
-            }
-            canvas2.drawLine(L, L2, L3, gl.L(f), paint2);
-            i++;
-            canvas = canvas2;
-        }
-        if (!this.c) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j = currentTimeMillis - this.b;
-        this.b = currentTimeMillis;
-        if (j > 50) {
-            j = 50;
-        }
-        this.d = (j / 500.0f) + this.d;
-        while (true) {
-            float f2 = this.d;
-            if (f2 <= 1.0f) {
-                a();
-                return;
-            }
-            this.d = f2 - 1.0f;
-        }
-    }
-
-    @Override // bya
-    public final void e() {
-        this.c = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(14.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final String toString() {
+        return "SemaphoreSegment[id=" + this.d + ", hashCode=" + hashCode() + ']';
     }
 }

@@ -1,80 +1,108 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mzb extends hn {
-    public final Paint s;
-    public final i46 w;
-    public final /* synthetic */ ozb x;
+public final class mzb extends c79 {
+    public final /* synthetic */ ozb c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mzb(ozb ozbVar, Context context) {
-        super(context, false, false, false);
-        this.x = ozbVar;
-        this.s = new Paint(1);
-        this.w = new i46();
+    public mzb(ozb ozbVar) {
+        this.c = ozbVar;
     }
 
-    @Override // hn, android.view.View
-    public final void onDraw(Canvas canvas) {
-        RectF rectF;
-        if (k96.a0) {
-            rectF = gl.P;
-            rectF.set(getWidth() - d(), (getHeight() - gl.L(18.0f)) / 2.0f, getWidth(), (gl.L(18.0f) + getHeight()) / 2.0f);
-        } else {
-            rectF = gl.P;
-            rectF.set(0.0f, (getHeight() - gl.L(18.0f)) / 2.0f, d(), (gl.L(18.0f) + getHeight()) / 2.0f);
-        }
-        rzb rzbVar = this.x.n;
-        int i = bkb.Fj;
-        String[] strArr = rzb.R1;
-        int p1 = bkb.p1(0.1175f, bkb.v0(i, rzbVar.J0));
-        Paint paint = this.s;
-        paint.setColor(p1);
-        canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), paint);
-        if (this.w.g(canvas)) {
-            invalidate();
-        }
-        super.onDraw(canvas);
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        int i = f89Var.f;
+        return i == 3 || i == 2;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        RectF rectF;
-        rzb rzbVar = this.x.n;
-        int action = motionEvent.getAction();
-        i46 i46Var = this.w;
-        if (action != 0) {
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1) {
-                    performClick();
-                }
-                i46Var.e(true);
-                invalidate();
+    @Override // j79
+    public final int b() {
+        ozb ozbVar = this.c;
+        if (ozbVar.o0) {
+            return 0;
+        }
+        return ozbVar.n0;
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        ozb ozbVar = this.c;
+        if (i == ozbVar.k0 || i == ozbVar.h0) {
+            return 1;
+        }
+        if (i < ozbVar.i0 || i >= ozbVar.j0) {
+            return (i < ozbVar.l0 || i >= ozbVar.m0) ? 0 : 3;
+        }
+        return 2;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        int i2;
+        View view = f89Var.a;
+        ozb ozbVar = this.c;
+        tzb tzbVar = ozbVar.w0;
+        if (d(i) == 1) {
+            p55 p55Var = (p55) view;
+            if (i == ozbVar.h0) {
+                p55Var.setText(ob6.M0(2131743651, null));
             }
-            return super.onTouchEvent(motionEvent);
+            if (i == ozbVar.k0) {
+                p55Var.setText(ob6.M0(2131745484, null));
+            }
         }
-        String[] strArr = rzb.R1;
-        m46 m46Var = new m46(null, rzbVar.J0, motionEvent.getX(), motionEvent.getY(), 0);
-        m46Var.d(bkb.p1(0.1175f, bkb.v0(bkb.Fj, rzbVar.J0)));
-        b46 b = m46Var.b();
-        if (k96.a0) {
-            rectF = gl.P;
-            rectF.set(getWidth() - d(), (getHeight() - gl.L(18.0f)) / 2.0f, getWidth(), (gl.L(18.0f) + getHeight()) / 2.0f);
+        if (d(i) == 2) {
+            zxb zxbVar = (zxb) view;
+            zxbVar.setTopic((TLRPC.TL_forumTopic) ozbVar.f0.get(i - ozbVar.i0));
+            zxbVar.d = i != ozbVar.j0 - 1;
+        }
+        if (d(i) == 3) {
+            r47 r47Var = (r47) ozbVar.g0.get(i - ozbVar.l0);
+            qzb qzbVar = (qzb) view;
+            qzbVar.b5 = i != ozbVar.m0 - 1;
+            i2 = ((e) tzbVar).currentAccount;
+            long b2 = r47.b2(i2, r47Var.k, true, false);
+            if (b2 == 0) {
+                b2 = 1;
+            }
+            TLRPC.TL_forumTopic f = tzbVar.s.f(tzbVar.a, b2);
+            if (f != null) {
+                qzbVar.g0(f, r47.B0(r47Var.k), r47Var, false, false);
+                qzbVar.setTopicIcon(f);
+            } else {
+                cc4.b("cant find topic " + b2);
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v4, types: [of3, qzb] */
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        FrameLayout frameLayout;
+        boolean z;
+        tzb tzbVar = this.c.w0;
+        if (i == 1) {
+            frameLayout = new p55(viewGroup.getContext(), null);
+        } else if (i == 2) {
+            frameLayout = new zxb(viewGroup.getContext());
         } else {
-            rectF = gl.P;
-            rectF.set(0.0f, (getHeight() - gl.L(18.0f)) / 2.0f, d(), (gl.L(18.0f) + getHeight()) / 2.0f);
+            if (i != 3) {
+                xi4.l("unsupported view type");
+                return null;
+            }
+            ?? qzbVar = new qzb(tzbVar, viewGroup.getContext(), true);
+            z = ((e) tzbVar).inPreviewMode;
+            qzbVar.l0 = z;
+            frameLayout = qzbVar;
         }
-        b.addRect(rectF, Path.Direction.CW);
-        i46Var.a(m46Var, null);
-        invalidate();
-        return true;
+        frameLayout.setLayoutParams(new r79(-1, -2));
+        return new n69(frameLayout);
     }
 }

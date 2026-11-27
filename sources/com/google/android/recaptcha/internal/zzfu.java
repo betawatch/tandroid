@@ -1,30 +1,30 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzfu extends ccb implements eq4 {
+final class zzfu extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzgb zzb;
     final /* synthetic */ long zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfu(zzgb zzgbVar, long j, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzfu(zzgb zzgbVar, long j, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzgbVar;
         this.zzc = j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzfu zzfuVar = new zzfu(this.zzb, this.zzc, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzfu zzfuVar = new zzfu(this.zzb, this.zzc, zw2Var);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfu) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzfu) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x004f, code lost:
@@ -43,7 +43,7 @@ final class zzfu extends ccb implements eq4 {
     
         if (r14 != r4) goto L12;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,10 +53,10 @@ final class zzfu extends ccb implements eq4 {
         zzdt zzdtVar;
         zzhk zzhkVar;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
-                qse.b(obj);
+                ixe.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j = this.zzc;
@@ -65,17 +65,17 @@ final class zzfu extends ccb implements eq4 {
                 obj = zzgbVar.zzq(j, this);
             } else if (i == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                qse.b(obj);
+                ixe.b(obj);
             } else {
                 if (i != 2) {
-                    qse.b(obj);
+                    ixe.b(obj);
                     long longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue >= 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                qse.b(obj);
+                ixe.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
@@ -91,10 +91,10 @@ final class zzfu extends ccb implements eq4 {
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();
             zzdrVar = zzdv.zzd;
-            if (!rp5.a(zze, zzdrVar)) {
+            if (!ur5.a(zze, zzdrVar)) {
                 zzdv zze2 = zzgbVar3.zze();
                 zzdtVar = zzdv.zzc;
-                if (!rp5.a(zze2, zzdtVar)) {
+                if (!ur5.a(zze2, zzdtVar)) {
                     throw zzcgVar2;
                 }
             }

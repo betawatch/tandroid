@@ -1,35 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.util.JsonReader;
+import android.util.JsonToken;
+import java.io.BufferedReader;
+import java.io.IOException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ea0 {
     public final long a;
-    public final ra0 b;
-    public final p90 c;
 
-    public ea0(long j, ra0 ra0Var, p90 p90Var) {
+    public ea0(long j) {
         this.a = j;
-        this.b = ra0Var;
-        this.c = p90Var;
+    }
+
+    public static ea0 a(BufferedReader bufferedReader) {
+        JsonReader jsonReader = new JsonReader(bufferedReader);
+        try {
+            jsonReader.beginObject();
+            while (jsonReader.hasNext()) {
+                if (jsonReader.nextName().equals("nextRequestWaitMillis")) {
+                    return jsonReader.peek() == JsonToken.STRING ? new ea0(Long.parseLong(jsonReader.nextString())) : new ea0(jsonReader.nextLong());
+                }
+                jsonReader.skipValue();
+            }
+            throw new IOException("Response is missing nextRequestWaitMillis field.");
+        } finally {
+            jsonReader.close();
+        }
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof ea0)) {
-            return false;
-        }
-        ea0 ea0Var = (ea0) obj;
-        return this.a == ea0Var.a && this.b.equals(ea0Var.b) && this.c.equals(ea0Var.c);
+        return (obj instanceof ea0) && this.a == ((ea0) obj).a;
     }
 
     public final int hashCode() {
         long j = this.a;
-        return ((((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode();
+        return 1000003 ^ ((int) ((j >>> 32) ^ j));
     }
 
     public final String toString() {
-        return "PersistedEvent{id=" + this.a + ", transportContext=" + this.b + ", event=" + this.c + "}";
+        return qu6.p(new StringBuilder("LogResponse{nextRequestWaitMillis="), this.a, "}");
     }
 }

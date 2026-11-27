@@ -1,43 +1,43 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class zt9 implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zt9 implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ bu9 b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ du9 b;
 
-    public /* synthetic */ zt9(bu9 bu9Var, ArrayList arrayList, byte b) {
+    public /* synthetic */ zt9(du9 du9Var, byte b) {
         this.a = b;
-        this.b = bu9Var;
-        this.c = arrayList;
+        this.b = du9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // pcc
+    public final void a(Object obj) {
         byte b = this.a;
-        ArrayList arrayList = this.c;
-        bu9 bu9Var = this.b;
+        du9 du9Var = this.b;
         switch (b) {
             case 0:
-                for (int i = 0; i < arrayList.size(); i++) {
-                    k27 k27Var = new k27(bu9Var.currentAccount, (TLRPC.Message) arrayList.get(i), false, true);
-                    k27Var.C0 = true;
-                    bu9Var.getSendMessagesHelper().j0(0L, k27Var, true);
+                cu9 cu9Var = (cu9) obj;
+                du9Var.I = null;
+                du9Var.F = cu9Var;
+                du9Var.E = cu9Var != null;
+                du9Var.a();
+                du9Var.invalidate();
+                bab babVar = du9Var.b;
+                if (babVar != null) {
+                    babVar.run();
+                    break;
                 }
                 break;
             default:
-                bu9Var.getClass();
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    k27 k27Var2 = (k27) bu9Var.getMessagesController().T.f(((Long) arrayList.get(i2)).longValue());
-                    if (k27Var2 != null) {
-                        k27Var2.Z = true;
-                    }
+                e eVar = (e) obj;
+                cu9 cu9Var2 = du9Var.F;
+                if (cu9Var2 != null || eVar == null) {
+                    cu9Var2.c(eVar);
+                    break;
                 }
-                break;
         }
     }
 }

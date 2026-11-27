@@ -1,68 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class gh7 {
-    public int[] a;
-    public int b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class gh7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ hh7 b;
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof gh7) {
-            gh7 gh7Var = (gh7) obj;
-            int i = gh7Var.b;
-            int i2 = this.b;
-            if (i == i2) {
-                int[] iArr = this.a;
-                int[] iArr2 = gh7Var.a;
-                fp5 a = ise.a(0, i2);
-                int i3 = a.a;
-                int i4 = a.b;
-                if (i3 > i4) {
-                    return true;
-                }
-                while (iArr[i3] == iArr2[i3]) {
-                    if (i3 == i4) {
-                        return true;
-                    }
-                    i3++;
-                }
-                return false;
-            }
-        }
-        return false;
+    public /* synthetic */ gh7(hh7 hh7Var, byte b) {
+        this.a = b;
+        this.b = hh7Var;
     }
 
-    public final int hashCode() {
-        int[] iArr = this.a;
-        int i = this.b;
-        int i2 = 0;
-        for (int i3 = 0; i3 < i; i3++) {
-            i2 += iArr[i3] * 31;
-        }
-        return i2;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        int[] iArr = this.a;
-        int i = this.b;
-        int i2 = 0;
-        while (true) {
-            if (i2 >= i) {
-                sb.append((CharSequence) "]");
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        hh7 hh7Var = this.b;
+        switch (b) {
+            case 0:
+                hh7Var.x();
                 break;
-            }
-            int i3 = iArr[i2];
-            if (i2 == -1) {
-                sb.append((CharSequence) "...");
+            default:
+                hh7Var.m(true);
                 break;
-            }
-            if (i2 != 0) {
-                sb.append((CharSequence) ", ");
-            }
-            sb.append(i3);
-            i2++;
         }
-        return sb.toString();
     }
 }

@@ -1,112 +1,70 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Base64;
+import java.util.Arrays;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum bhe implements x7d {
-    b(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(100),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(101),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(kk7.m1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(kk7.n1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(kk7.o1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.p1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.q1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(kk7.r1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.s1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.t1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(kk7.u1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.v1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.w1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.x1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.y1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.z1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.A1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.e3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.f3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(203),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.h3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.i3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.j3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.k3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.X4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.Y4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.Z4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(kk7.a5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(kk7.b5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(400),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(401),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(402),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(403),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(404),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(405),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(406),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(407),
-    c(9999);
+public final class bhe extends c4 {
+    public static final Parcelable.Creator<bhe> CREATOR = new ime((byte) 4);
+    public final boolean a;
+    public final gfe b;
 
-    public final short a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    bhe(int i) {
-        this.a = i;
+    public bhe(boolean z, gfe gfeVar) {
+        this.a = z;
+        this.b = gfeVar;
     }
 
-    @Override // x7d
-    public final int zza() {
-        return this.a;
+    public final JSONObject b() {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            if (this.a) {
+                jSONObject.put("enabled", true);
+            }
+            gfe gfeVar = this.b;
+            byte[] p = gfeVar == null ? null : gfeVar.p();
+            if (p != null) {
+                JSONObject jSONObject2 = new JSONObject();
+                jSONObject2.put("first", Base64.encodeToString(Arrays.copyOf(p, 32), 11));
+                if (p.length == 64) {
+                    jSONObject2.put("second", Base64.encodeToString(Arrays.copyOfRange(p, 32, 64), 11));
+                }
+                jSONObject.put("results", jSONObject2);
+            }
+            return jSONObject;
+        } catch (JSONException e) {
+            grb.j("Error encoding AuthenticationExtensionsPrfOutputs to JSON object", e);
+            return null;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof bhe)) {
+            return false;
+        }
+        bhe bheVar = (bhe) obj;
+        return this.a == bheVar.a && vue.a(this.b, bheVar.b);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b});
+    }
+
+    public final String toString() {
+        return qd4.y("AuthenticationExtensionsPrfOutputs{", b().toString(), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        gfe gfeVar = this.b;
+        bye.c(parcel, 2, gfeVar == null ? null : gfeVar.p());
+        bye.s(parcel, r);
     }
 }

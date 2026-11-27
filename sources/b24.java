@@ -1,55 +1,44 @@
 // default package
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class b24 implements ListIterator {
-    public static final b24 a = new b24();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class b24 extends t2b {
+    public final /* synthetic */ byte H3;
+    public final /* synthetic */ c24 I3;
 
-    @Override // java.util.ListIterator
-    public final /* bridge */ /* synthetic */ void add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public b24(c24 c24Var, Context context, int i, vnb vnbVar, int i2) {
+        super(i, vnbVar, context);
+        this.I3 = c24Var;
+        this.H3 = i2;
     }
 
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final boolean hasNext() {
-        return false;
+    @Override // t2b
+    public final boolean C1() {
+        return i86.e(8200);
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return false;
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final Object next() {
-        throw new NoSuchElementException();
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return 0;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        throw new NoSuchElementException();
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return -1;
-    }
-
-    @Override // java.util.ListIterator, java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.ListIterator
-    public final /* bridge */ /* synthetic */ void set(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    @Override // t2b
+    public final void I1(int i) {
+        b04 b04Var;
+        t04 t04Var;
+        super.I1(i);
+        c24 c24Var = this.I3;
+        o24 o24Var = c24Var.H;
+        b24 b24Var = c24Var.r;
+        boolean z = b24Var.getSelectedCategory() == null;
+        int i2 = o24.U2;
+        o24Var.L(z);
+        byte b = this.H3;
+        if (b == 1 && (t04Var = o24Var.J) != null) {
+            t04Var.n(b24Var.getSelectedCategory() == null);
+        } else if (b == 0 && (b04Var = o24Var.C0) != null) {
+            b04Var.p0 = b24Var.getSelectedCategory() == null;
+            b04Var.invalidate();
+        }
+        c24Var.g(false);
     }
 }

@@ -3,13 +3,13 @@ package org.webrtc;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class MediaConstraints {
     public final List<KeyValuePair> mandatory = new ArrayList();
     public final List<KeyValuePair> optional = new ArrayList();
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class KeyValuePair {
         private final String key;
         private final String value;
@@ -23,13 +23,11 @@ public class MediaConstraints {
             if (this == obj) {
                 return true;
             }
-            if (obj != null && getClass() == obj.getClass()) {
-                KeyValuePair keyValuePair = (KeyValuePair) obj;
-                if (this.key.equals(keyValuePair.key) && this.value.equals(keyValuePair.value)) {
-                    return true;
-                }
+            if (!(obj instanceof KeyValuePair)) {
+                return false;
             }
-            return false;
+            KeyValuePair keyValuePair = (KeyValuePair) obj;
+            return this.key.equals(keyValuePair.key) && this.value.equals(keyValuePair.value);
         }
 
         public String getKey() {

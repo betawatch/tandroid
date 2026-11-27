@@ -1,52 +1,47 @@
 // default package
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class zb9 extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class zb9 {
+    public static final /* synthetic */ Throwable a;
+    public static final /* synthetic */ zb9 b;
 
     static {
-        b4c.h(new zb9());
-    }
-
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        ac9 ac9Var = (ac9) view;
-        lk0 lk0Var = (lk0) c4cVar.H;
-        he9 he9Var = (he9) c4cVar.I;
-        mc9 mc9Var = ac9Var.d;
-        boolean z2 = ac9Var.f != lk0Var;
-        ac9Var.f = lk0Var;
-        ac9Var.h = he9Var;
-        TL_iv.PageBlock pageBlock = lk0Var.b;
-        if (pageBlock instanceof TL_iv.pageBlockDetails) {
-            TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
-            ac9Var.c.a(pageblockdetails.open ? 0.0f : 1.0f);
-            SpannableStringBuilder r = yi9.r(pageblockdetails.title, null, true);
-            if (!lk0Var.s) {
-                lk0Var.s = true;
-                lk0Var.r = r.length() == 0 || (yi9.q(0, r.length(), r) & 1) != 0;
-            }
-            mc9Var.setAutoBold(lk0Var.r);
-            if (z2 || !String.valueOf(mc9Var.getText()).equals(yi9.l(pageblockdetails.title))) {
-                mc9Var.setTextSilently(r);
-                mc9Var.f();
-            }
+        try {
+            b = new zb9();
+        } catch (Throwable th) {
+            a = th;
         }
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new ac9(context, wjbVar);
+    public static zb9 a() {
+        String stringBuffer;
+        zb9 zb9Var = b;
+        if (zb9Var != null) {
+            return zb9Var;
+        }
+        Throwable th = a;
+        if (th == null) {
+            stringBuffer = "com.googlecode.mp4parser.RequiresParseDetailAspect";
+        } else {
+            StringBuffer stringBuffer2 = new StringBuffer("Exception while initializing com.googlecode.mp4parser.RequiresParseDetailAspect: ");
+            stringBuffer2.append(th);
+            stringBuffer = stringBuffer2.toString();
+        }
+        mm7 mm7Var = new mm7(stringBuffer);
+        mm7Var.a = th;
+        throw mm7Var;
     }
 
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    public static void b(lyc lycVar) {
+        Object obj = lycVar.c;
+        if (obj instanceof z1) {
+            if (((z1) obj).isParsed()) {
+                return;
+            }
+            ((z1) obj).parseDetails();
+        } else {
+            throw new RuntimeException("Only methods in subclasses of " + z1.class.getName() + " can  be annotated with ParseDetail");
+        }
     }
 }

@@ -1,37 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ob9 extends b4c {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        b4c.h(new ob9());
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class ob9 {
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void a(Activity activity, y26 y26Var) {
+        y26Var.getClass();
+        if (activity instanceof i36) {
+            k36 m = ((i36) activity).m();
+            if (ik8.A(m)) {
+                m.e(y26Var);
+            }
+        }
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        pb9 pb9Var = (pb9) view;
-        lk0 lk0Var = (lk0) c4cVar.H;
-        nb9 nb9Var = (nb9) c4cVar.I;
-        pb9Var.a = lk0Var;
-        pb9Var.F = nb9Var;
-        pb9Var.c(lk0Var);
-        pb9Var.h();
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        pb9 pb9Var = new pb9(i, wjbVar, context);
-        pb9Var.setBackground(new ed9(bkb.v0(bkb.c6, wjbVar)));
-        return pb9Var;
-    }
-
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    public static void b(Activity activity) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            a.Companion.getClass();
+            pb9.a(activity);
+        }
+        FragmentManager fragmentManager = activity.getFragmentManager();
+        if (fragmentManager.findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag") == null) {
+            fragmentManager.beginTransaction().add(new qb9(), "androidx.lifecycle.LifecycleDispatcher.report_fragment_tag").commit();
+            fragmentManager.executePendingTransactions();
+        }
     }
 }

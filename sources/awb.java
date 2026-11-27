@@ -1,40 +1,38 @@
 // default package
 
-import j$.util.Objects;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class awb implements k8c {
-    public final /* synthetic */ lwb a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Boolean d;
-
-    public /* synthetic */ awb(lwb lwbVar, String str, long j, Boolean bool) {
-        this.a = lwbVar;
-        this.b = str;
-        this.c = j;
-        this.d = bool;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum awb extends rwb {
+    public awb() {
+        super("BeforeDoctypePublicIdentifier", 55);
     }
 
-    @Override // k8c
-    public final void a(Object obj, Object obj2, Object obj3) {
-        ArrayList arrayList = (ArrayList) obj;
-        oub oubVar = (oub) obj2;
-        Integer num = (Integer) obj3;
-        lwb lwbVar = this.a;
-        ArrayList arrayList2 = lwbVar.N;
-        lwbVar.O = 0;
-        if (this.b.equals(lwbVar.M)) {
-            if (this.c == lwbVar.V) {
-                if (Objects.equals(this.d, lwbVar.W)) {
-                    arrayList2.addAll(arrayList);
-                    lwbVar.Q = oubVar;
-                    lwbVar.R = oubVar == null || arrayList2.size() >= num.intValue();
-                    lwbVar.n();
-                }
-            }
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
+            return;
+        }
+        if (d == '\"') {
+            bubVar.c = rwb.u0;
+            return;
+        }
+        if (d == '\'') {
+            bubVar.c = rwb.v0;
+            return;
+        }
+        mub mubVar = rwb.a;
+        if (d == '>') {
+            bubVar.m(this);
+            bubVar.j();
+            bubVar.c = mubVar;
+        } else if (d != 65535) {
+            bubVar.m(this);
+            bubVar.c = rwb.D0;
+        } else {
+            bubVar.l(this);
+            bubVar.j();
+            bubVar.c = mubVar;
         }
     }
 }

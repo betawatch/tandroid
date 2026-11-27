@@ -1,51 +1,33 @@
 // default package
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.ActionBar.a;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class bw0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ ow0 f;
+public final /* synthetic */ class bw0 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xw0 b;
 
-    public bw0(ow0 ow0Var, boolean z, float f, float f2, float f3, float f4) {
-        this.f = ow0Var;
-        this.a = z;
-        this.b = f;
-        this.c = f2;
-        this.d = f3;
-        this.e = f4;
+    public /* synthetic */ bw0(xw0 xw0Var, byte b) {
+        this.a = b;
+        this.b = xw0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ow0 ow0Var = this.f;
-        gw0 gw0Var = ow0Var.E;
-        lw0 lw0Var = ow0Var.Y;
-        fw0 fw0Var = ow0Var.x;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        ow0Var.i0 = floatValue;
-        if (!this.a) {
-            floatValue = 1.0f - floatValue;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        xw0 xw0Var = this.b;
+        switch (b) {
+            case 0:
+                nv0 webView = xw0Var.E.getWebView();
+                if (webView != null) {
+                    webView.reload();
+                    break;
+                }
+                break;
+            default:
+                xw0Var.w();
+                break;
         }
-        ow0Var.h0 = floatValue;
-        lw0Var.setAlpha(1.0f - floatValue);
-        lw0Var.setTranslationY((-a.getCurrentActionBarHeight()) * ow0Var.h0);
-        float f = this.b;
-        float f2 = ow0Var.i0;
-        float f3 = this.c;
-        fw0Var.setTranslationY(gl.R1(f, f3, f2));
-        fw0Var.setTranslationX(gl.R1(this.d, 0.0f, ow0Var.i0));
-        ow0Var.n0.setTranslationX(gl.R1(this.e, 0.0f, ow0Var.i0));
-        ow0Var.o0.setAlpha(ow0Var.h0);
-        ow0Var.f.invalidate();
-        gw0Var.setViewPortHeightOffset(fw0Var.getTranslationY() - f3);
-        gw0Var.l(false, false);
-        ow0Var.H();
     }
 }

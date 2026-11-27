@@ -1,52 +1,40 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class em5 extends fm5 {
-    public Object[] a;
-    public int b;
-    public boolean c;
+public final class em5 extends yi6 {
+    public final /* synthetic */ byte g;
+    public final String h;
+    public final String i;
 
-    public em5(int i) {
-        krd.b(i, "initialCapacity");
-        this.a = new Object[i];
-        this.b = 0;
+    public /* synthetic */ em5(String str, String str2, byte b) {
+        this.g = b;
+        this.h = str;
+        this.i = str2;
     }
 
-    public final void c(Object obj) {
-        obj.getClass();
-        e(1);
-        Object[] objArr = this.a;
-        int i = this.b;
-        this.b = i + 1;
-        objArr[i] = obj;
-    }
-
-    public final void d(Iterable iterable) {
-        if (iterable instanceof Collection) {
-            Collection collection = (Collection) iterable;
-            e(collection.size());
-            if (collection instanceof gm5) {
-                this.b = ((gm5) collection).i(this.b, this.a);
-                return;
-            }
-        }
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            a(it.next());
+    @Override // yi6
+    public final void a(zpd zpdVar) {
+        switch (this.g) {
+            case 0:
+                zpdVar.i(this);
+                break;
+            default:
+                zpdVar.s(this);
+                break;
         }
     }
 
-    public final void e(int i) {
-        Object[] objArr = this.a;
-        int b = fm5.b(objArr.length, this.b + i);
-        if (b > objArr.length || this.c) {
-            this.a = Arrays.copyOf(this.a, b);
-            this.c = false;
+    @Override // yi6
+    public final String f() {
+        byte b = this.g;
+        String str = this.i;
+        String str2 = this.h;
+        switch (b) {
+            case 0:
+                return "destination=" + str2 + ", title=" + str;
+            default:
+                return "destination=" + str2 + ", title=" + str;
         }
     }
 }

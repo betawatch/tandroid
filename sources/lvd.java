@@ -1,27 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lvd implements zn7 {
+public final class lvd implements zq7 {
     public static final lvd a = new lvd();
-    public static final w84 b = new w84("durationMs", b00.m(yjb.n(g7d.class, new d6d(1))));
-    public static final w84 c = new w84("imageSource", b00.m(yjb.n(g7d.class, new d6d(2))));
-    public static final w84 d = new w84("imageFormat", b00.m(yjb.n(g7d.class, new d6d(3))));
-    public static final w84 e = new w84("imageByteSize", b00.m(yjb.n(g7d.class, new d6d(4))));
-    public static final w84 f = new w84("imageWidth", b00.m(yjb.n(g7d.class, new d6d(5))));
-    public static final w84 g = new w84("imageHeight", b00.m(yjb.n(g7d.class, new d6d(6))));
-    public static final w84 h = new w84("rotationDegrees", b00.m(yjb.n(g7d.class, new d6d(7))));
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        xke xkeVar = (xke) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, xkeVar.a);
-        ao7Var.a(c, xkeVar.b);
-        ao7Var.a(d, xkeVar.c);
-        ao7Var.a(e, xkeVar.d);
-        ao7Var.a(f, xkeVar.e);
-        ao7Var.a(g, xkeVar.f);
-        ao7Var.a(h, xkeVar.g);
+    static {
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

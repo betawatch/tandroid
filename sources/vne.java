@@ -1,36 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vne extends c2e {
-    private static final vne zzb;
-    private int zzd;
-    private int zze;
-    private String zzf = "";
+public final class vne implements zq7 {
+    public static final vne a = new vne();
 
     static {
-        vne vneVar = new vne();
-        zzb = vneVar;
-        c2e.k(vne.class, vneVar);
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)));
     }
 
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", yqd.h, "zzf"});
-        }
-        if (i2 == 3) {
-            return new vne();
-        }
-        if (i2 == 4) {
-            return new epd(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
         throw null;
     }

@@ -1,58 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ds4 implements Cloneable {
-    public final fs4 a;
-    public fs4 b;
-
-    public ds4(fs4 fs4Var) {
-        this.a = fs4Var;
-        if (fs4Var.g()) {
-            w26.j("Default instance must be immutable.");
-            throw null;
-        }
-        this.b = fs4Var.i();
-    }
-
-    public final fs4 a() {
-        fs4 b = b();
-        b.getClass();
-        if (fs4.f(b, true)) {
-            return b;
-        }
-        throw new f5c();
-    }
-
-    public final fs4 b() {
-        boolean g = this.b.g();
-        fs4 fs4Var = this.b;
-        if (!g) {
-            return fs4Var;
-        }
-        fs4Var.getClass();
-        ft8 ft8Var = ft8.c;
-        ft8Var.getClass();
-        ft8Var.a(fs4Var.getClass()).c(fs4Var);
-        fs4Var.h();
-        return this.b;
-    }
-
-    public final void c() {
-        if (this.b.g()) {
-            return;
-        }
-        fs4 i = this.a.i();
-        fs4 fs4Var = this.b;
-        ft8 ft8Var = ft8.c;
-        ft8Var.getClass();
-        ft8Var.a(i.getClass()).b(i, fs4Var);
-        this.b = i;
-    }
-
-    public final Object clone() {
-        ds4 ds4Var = (ds4) this.a.c(5);
-        ds4Var.b = b();
-        return ds4Var;
-    }
+public interface ds4 extends js4 {
 }

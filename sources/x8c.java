@@ -1,44 +1,62 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x8c extends b4 {
-    public static final Parcelable.Creator<x8c> CREATOR = new j9d((byte) 23);
-    public final int a;
-    public final short b;
-    public final short c;
+public final class x8c extends ju9 {
+    public final ThreadLocal f;
+    private volatile boolean threadLocalIsSet;
 
-    public x8c(int i, short s, short s2) {
-        this.a = i;
-        this.b = s;
-        this.c = s2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof x8c)) {
-            return false;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public x8c(zw2 zw2Var, mx2 mx2Var) {
+        super(zw2Var, mx2Var.get(r0) == null ? mx2Var.plus(r0) : mx2Var);
+        y8c y8cVar = y8c.a;
+        this.f = new ThreadLocal();
+        if (zw2Var.getContext().get(rj2.b) instanceof px2) {
+            return;
         }
-        x8c x8cVar = (x8c) obj;
-        return this.a == x8cVar.a && this.b == x8cVar.b && this.c == x8cVar.c;
+        Object c = xhd.c(mx2Var, null);
+        xhd.a(mx2Var, c);
+        T(mx2Var, c);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Short.valueOf(this.b), Short.valueOf(this.c)});
+    public final boolean S() {
+        boolean z = this.threadLocalIsSet && this.f.get() == null;
+        this.f.remove();
+        return !z;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        jte.s(parcel, r);
+    public final void T(mx2 mx2Var, Object obj) {
+        this.threadLocalIsSet = true;
+        this.f.set(new rx7(mx2Var, obj));
+    }
+
+    @Override // ju9, sv5
+    public final void g(Object obj) {
+        if (this.threadLocalIsSet) {
+            rx7 rx7Var = (rx7) this.f.get();
+            if (rx7Var != null) {
+                xhd.a((mx2) rx7Var.a, rx7Var.b);
+            }
+            this.f.remove();
+        }
+        Object a = pxd.a(obj);
+        zw2 zw2Var = this.e;
+        mx2 context = zw2Var.getContext();
+        Object c = xhd.c(context, null);
+        x8c c2 = c != xhd.a ? g4e.c(zw2Var, context, c) : null;
+        try {
+            this.e.resumeWith(a);
+            if (c2 == null || c2.S()) {
+                xhd.a(context, c);
+            }
+        } catch (Throwable th) {
+            if (c2 == null || c2.S()) {
+                xhd.a(context, c);
+            }
+            throw th;
+        }
     }
 }

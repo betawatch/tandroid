@@ -1,63 +1,230 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_toncenter;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.c;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.utils.twidget.z;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class mpc extends ReplacementSpan {
-    public final String a;
-    public final String b;
-    public final boolean c;
-    public float d;
-    public int e;
-    public int f;
-    public opc h;
-    public opc n;
-    public final /* synthetic */ ppc r;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class mpc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public mpc(ppc ppcVar, String str, boolean z, boolean z2) {
-        this.r = ppcVar;
-        this.a = str;
-        this.b = z ? ppcVar.Q : "";
-        this.c = z2;
+    public /* synthetic */ mpc(int i, Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.b = i;
+        this.c = obj;
+        this.d = obj2;
     }
 
-    public final int a() {
-        return Math.round((ppc.T.getInterpolation(this.r.J) * (this.f - r0)) + this.e);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        q0d q0dVar;
+        Object[] objArr = 0;
+        switch (this.a) {
+            case 0:
+                int i = this.b;
+                gpc gpcVar = (gpc) this.c;
+                c cVar = (c) this.d;
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i);
+                connectionsManager.sendRequestTyped(new TL_toncenter.getOnrampProviders(), new ic(objArr == true ? 1 : 0), new p((Object) gpcVar, (Object) cVar, (Object) connectionsManager, (byte) 27));
+                break;
+            case 1:
+                Context context = (Context) this.c;
+                int i2 = this.b;
+                String str = ((TL_wallet.walletTransaction[]) this.d)[0].tx_hash;
+                if (!TextUtils.isEmpty(str)) {
+                    String str2 = uc7.s1(i2).k4.O1.f;
+                    if (TextUtils.isEmpty(str2)) {
+                        str2 = "https://tonviewer.com/";
+                    } else if (!str2.endsWith("/")) {
+                        str2 = str2.concat("/");
+                    }
+                    StringBuilder l = c00.l(str2, "transaction/");
+                    l.append(Uri.encode(str));
+                    m01.w(context, l.toString(), false);
+                    break;
+                }
+                break;
+            case 2:
+                wqc wqcVar = (wqc) this.c;
+                int i3 = this.b;
+                Bitmap[] bitmapArr = (Bitmap[]) this.d;
+                if (wqcVar.f0 == i3) {
+                    wqcVar.f(bitmapArr);
+                    wqcVar.a.run();
+                    break;
+                }
+                break;
+            case 3:
+                atc atcVar = (atc) this.c;
+                int i4 = this.b;
+                zuc zucVar = (zuc) this.d;
+                int i5 = i4 + 1;
+                ArrayList arrayList = atcVar.w;
+                if (i5 < arrayList.size()) {
+                    ((zuc) arrayList.get(i5)).a.requestFocus();
+                    break;
+                } else {
+                    hl.t1(zucVar);
+                    break;
+                }
+            case 4:
+                tuc tucVar = (tuc) this.c;
+                int i6 = this.b;
+                zuc zucVar2 = (zuc) this.d;
+                int i7 = i6 + 1;
+                ArrayList arrayList2 = tucVar.d;
+                if (i7 < arrayList2.size()) {
+                    ((zuc) arrayList2.get(i7)).a.requestFocus();
+                    break;
+                } else {
+                    hl.t1(zucVar2);
+                    break;
+                }
+            case 5:
+                int i8 = this.b;
+                String str3 = (String) this.c;
+                pcc pccVar = (pcc) this.d;
+                lvc[] lvcVarArr = lvc.f;
+                lvc lvcVar = lvcVarArr[i8];
+                if (lvcVar == null) {
+                    lvcVar = new lvc(i8);
+                    lvcVarArr[i8] = lvcVar;
+                }
+                lvcVar.d(str3, true, null, null, pccVar);
+                break;
+            case 6:
+                cwc cwcVar = (cwc) this.c;
+                int i9 = this.b;
+                TLObject tLObject = (TLObject) this.d;
+                HashMap hashMap = cwcVar.e;
+                WallpapersListActivity wallpapersListActivity = cwcVar.F;
+                ArrayList arrayList3 = cwcVar.d;
+                if (i9 == cwcVar.w) {
+                    cwcVar.s = 0;
+                    int size = arrayList3.size();
+                    if (tLObject != null) {
+                        TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
+                        cwcVar.r = messages_botresults.next_offset;
+                        int size2 = messages_botresults.results.size();
+                        for (int i10 = 0; i10 < size2; i10++) {
+                            TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i10);
+                            if ("photo".equals(botInlineResult.type) && !hashMap.containsKey(botInlineResult.id)) {
+                                ro6 ro6Var = new ro6();
+                                TLRPC.Photo photo = botInlineResult.photo;
+                                if (photo != null) {
+                                    TLRPC.PhotoSize w = xb4.w(photo.sizes, hl.Y0(false), false, null, false);
+                                    TLRPC.PhotoSize w2 = xb4.w(botInlineResult.photo.sizes, jn7.q5, false, null, false);
+                                    if (w != null) {
+                                        ro6Var.E = w.w;
+                                        ro6Var.F = w.h;
+                                        ro6Var.L = w;
+                                        ro6Var.K = botInlineResult.photo;
+                                        ro6Var.G = w.size;
+                                        ro6Var.M = w2;
+                                        ro6Var.B = botInlineResult.id;
+                                        ro6Var.H = false;
+                                        arrayList3.add(ro6Var);
+                                        hashMap.put(ro6Var.B, ro6Var);
+                                    }
+                                } else if (botInlineResult.content != null) {
+                                    int i11 = 0;
+                                    while (true) {
+                                        if (i11 < botInlineResult.content.attributes.size()) {
+                                            TLRPC.DocumentAttribute documentAttribute = botInlineResult.content.attributes.get(i11);
+                                            if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
+                                                ro6Var.E = documentAttribute.w;
+                                                ro6Var.F = documentAttribute.h;
+                                            } else {
+                                                i11++;
+                                            }
+                                        }
+                                    }
+                                    TLRPC.WebDocument webDocument = botInlineResult.thumb;
+                                    if (webDocument != null) {
+                                        ro6Var.D = webDocument.url;
+                                    } else {
+                                        ro6Var.D = null;
+                                    }
+                                    TLRPC.WebDocument webDocument2 = botInlineResult.content;
+                                    ro6Var.C = webDocument2.url;
+                                    ro6Var.G = webDocument2.size;
+                                    ro6Var.B = botInlineResult.id;
+                                    ro6Var.H = false;
+                                    arrayList3.add(ro6Var);
+                                    hashMap.put(ro6Var.B, ro6Var);
+                                }
+                            }
+                        }
+                        cwcVar.f = size == arrayList3.size() || cwcVar.r == null;
+                    }
+                    if (size != arrayList3.size()) {
+                        int i12 = size % wallpapersListActivity.O;
+                        float f = size;
+                        int ceil = (int) Math.ceil(f / r15);
+                        if (i12 != 0) {
+                            cwcVar.g(((int) Math.ceil(f / wallpapersListActivity.O)) - 1);
+                        }
+                        wallpapersListActivity.I.p(ceil, ((int) Math.ceil(arrayList3.size() / wallpapersListActivity.O)) - ceil);
+                    }
+                    wallpapersListActivity.L.c();
+                    break;
+                }
+                break;
+            default:
+                z zVar = (z) this.c;
+                int i13 = this.b;
+                String str4 = (String) this.d;
+                if (!zVar.A && (q0dVar = zVar.R) != null) {
+                    if (i13 != 13) {
+                        boolean equals = "1".equals(str4);
+                        if (q0dVar.z != equals) {
+                            q0dVar.z = equals;
+                            z3f z3fVar = q0dVar.d;
+                            if (z3fVar != null) {
+                                z3fVar.getClass();
+                                k0d.F();
+                                break;
+                            }
+                        }
+                    } else if (q0dVar.d != null && !TextUtils.isEmpty(str4)) {
+                        hl.g(str4);
+                        e S = hl.C3() ? LaunchActivity.S() : null;
+                        if (S != null) {
+                            if (str4.length() > 80) {
+                                str4 = str4.substring(0, 80).concat("…");
+                            }
+                            d31.b0(S).Q(R.raw.copy, 36, ob6.a0(null, null, 2131742497, str4)).j();
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        Canvas canvas2;
-        Paint paint2;
-        int i6;
-        float textSize = paint.getTextSize();
-        if (this.c) {
-            paint.setTextSize((28.0f * textSize) / 44.0f);
-        }
-        float f2 = f - this.d;
-        opc opcVar = this.n;
-        if (opcVar != null) {
-            paint2 = paint;
-            i6 = i4;
-            canvas2 = canvas;
-            opcVar.b(canvas2, paint2, this.b, f2, i6);
-        } else {
-            canvas2 = canvas;
-            paint2 = paint;
-            i6 = i4;
-        }
-        this.h.b(canvas2, paint2, this.a, f2, i6);
-        paint2.setTextSize(textSize);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt != null) {
-            paint.getFontMetricsInt(fontMetricsInt);
-        }
-        return a();
+    public /* synthetic */ mpc(Object obj, int i, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+        this.d = obj2;
     }
 }

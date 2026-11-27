@@ -2,28 +2,30 @@ package org.webrtc;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class SoftwareVideoDecoderFactory implements VideoDecoderFactory {
     private static final String TAG = "SoftwareVideoDecoderFactory";
-    private final long nativeFactory = nativeCreateFactory();
+    private final long nativeFactory = SoftwareVideoDecoderFactoryJni.get().createFactory();
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static native long nativeCreate(long j, long j2, VideoCodecInfo videoCodecInfo);
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        long create(long j, long j2, VideoCodecInfo videoCodecInfo);
 
-    private static native long nativeCreateFactory();
+        long createFactory();
 
-    private static native List<VideoCodecInfo> nativeGetSupportedCodecs(long j);
+        List<VideoCodecInfo> getSupportedCodecs(long j);
 
-    private static native boolean nativeIsSupported(long j, VideoCodecInfo videoCodecInfo);
+        boolean isSupported(long j, VideoCodecInfo videoCodecInfo);
+    }
 
     @Override // org.webrtc.VideoDecoderFactory
     public VideoDecoder createDecoder(final VideoCodecInfo videoCodecInfo) {
-        if (nativeIsSupported(this.nativeFactory, videoCodecInfo)) {
+        if (SoftwareVideoDecoderFactoryJni.get().isSupported(this.nativeFactory, videoCodecInfo)) {
             return new WrappedNativeVideoDecoder() { // from class: org.webrtc.SoftwareVideoDecoderFactory.1
                 @Override // org.webrtc.WrappedNativeVideoDecoder, org.webrtc.VideoDecoder
                 public long createNative(long j) {
-                    return SoftwareVideoDecoderFactory.nativeCreate(SoftwareVideoDecoderFactory.this.nativeFactory, j, videoCodecInfo);
+                    return SoftwareVideoDecoderFactoryJni.get().create(SoftwareVideoDecoderFactory.this.nativeFactory, j, videoCodecInfo);
                 }
             };
         }
@@ -33,6 +35,6 @@ public class SoftwareVideoDecoderFactory implements VideoDecoderFactory {
 
     @Override // org.webrtc.VideoDecoderFactory
     public VideoCodecInfo[] getSupportedCodecs() {
-        return (VideoCodecInfo[]) nativeGetSupportedCodecs(this.nativeFactory).toArray(new VideoCodecInfo[0]);
+        return (VideoCodecInfo[]) SoftwareVideoDecoderFactoryJni.get().getSupportedCodecs(this.nativeFactory).toArray(new VideoCodecInfo[0]);
     }
 }

@@ -1,15 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class gc8 {
-    public final fc8 a = new fc8();
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.ui.PhotoViewer;
 
-    public final void a() {
-        try {
-            ((gc8) Class.forName("androidx.media3.effect.SingleInputVideoGraph$Factory").getConstructor(fc8.class).newInstance(this.a)).a();
-        } catch (Exception e) {
-            ho9.n(e);
-        }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class gc8 extends il6 {
+    public final /* synthetic */ PhotoViewer L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gc8(PhotoViewer photoViewer, Context context, int i, Bitmap bitmap, Bitmap bitmap2, int i2, fo6 fo6Var) {
+        super(context, i, bitmap, bitmap2, i2, fo6Var);
+        this.L = photoViewer;
     }
 }

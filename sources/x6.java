@@ -1,12 +1,13 @@
 // default package
 
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.PopupWindow;
-import org.telegram.ui.o;
+import android.widget.ImageView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class x6 implements PopupWindow.OnDismissListener {
+public final /* synthetic */ class x6 implements View.OnKeyListener {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -15,76 +16,68 @@ public final /* synthetic */ class x6 implements PopupWindow.OnDismissListener {
         this.b = obj;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
+        n8 n8Var;
         byte b = this.a;
         Object obj = this.b;
         switch (b) {
             case 0:
-                o7 o7Var = ((r7) obj).R;
-                if (o7Var != null) {
-                    o7Var.A();
+                s7 s7Var = (s7) obj;
+                if (i == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && (n8Var = s7Var.d) != null && n8Var.isShowing()) {
+                    s7Var.d.d(true);
                     break;
                 }
                 break;
             case 1:
-                o oVar = (o) obj;
-                View view = oVar.f;
-                if (view != null) {
-                    oVar.d = null;
-                    view.invalidate();
-                    oVar.f = null;
+                zu1 zu1Var = (zu1) obj;
+                zu1Var.getClass();
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                if (i == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
+                    zu1Var.Ka();
                     break;
                 }
                 break;
             case 2:
-                mu1 mu1Var = (mu1) obj;
-                mu1Var.g9 = null;
-                mu1Var.l9 = null;
-                mu1Var.k9 = null;
-                mu1Var.C0.R = true;
-                mu1Var.r6(false, true, 0.0f);
-                ar1 ar1Var = mu1Var.a0;
-                if (ar1Var != null && ar1Var.getEditField() != null) {
-                    mu1Var.a0.getEditField().setAllowDrawCursor(true);
+                y62 y62Var = (y62) obj;
+                EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) view;
+                if (i == 67 && keyEvent.getAction() == 0 && editTextBoldCursor2.length() == 0) {
+                    ImageView imageView = y62Var.f;
+                    if (imageView != null) {
+                        imageView.callOnClick();
+                    }
                     break;
                 }
                 break;
             case 3:
-                bq1 bq1Var = (bq1) obj;
-                bq1Var.b = null;
-                mu1 mu1Var2 = bq1Var.x;
-                mu1Var2.g9 = null;
-                mu1Var2.l9 = null;
-                mu1Var2.k9 = null;
-                mu1Var2.C0.R = true;
-                if (mu1Var2.h9) {
-                    mu1Var2.r6(false, true, 0.0f);
-                } else {
-                    mu1Var2.h9 = true;
-                }
-                ar1 ar1Var2 = mu1Var2.a0;
-                if (ar1Var2 != null && ar1Var2.getEditField() != null) {
-                    mu1Var2.a0.getEditField().setAllowDrawCursor(true);
+                bx3 bx3Var = (bx3) obj;
+                if (i == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && bx3Var.isShowing()) {
+                    bx3Var.dismiss();
                     break;
                 }
                 break;
             case 4:
-                f9 f9Var = (f9) obj;
-                f9Var.k();
-                f9Var.a = false;
-                break;
-            case 5:
-                ((rw5) obj).I1.d();
-                break;
-            case 6:
-                ((wt7) obj).y1.d();
+                b18 b18Var = (b18) obj;
+                if (i == 67 && b18Var.Z[2].length() == 0) {
+                    b18Var.Z[1].requestFocus();
+                    EditTextBoldCursor editTextBoldCursor3 = b18Var.Z[1];
+                    editTextBoldCursor3.setSelection(editTextBoldCursor3.length());
+                    b18Var.Z[1].dispatchKeyEvent(keyEvent);
+                    break;
+                }
                 break;
             default:
-                lqc lqcVar = (lqc) obj;
-                lqcVar.getViewTreeObserver().removeOnGlobalLayoutListener(lqcVar.I);
-                lqcVar.getViewTreeObserver().removeOnScrollChangedListener(lqcVar.J);
+                th8 th8Var = (th8) obj;
+                EditTextBoldCursor editTextBoldCursor4 = (EditTextBoldCursor) view;
+                if (i == 67 && keyEvent.getAction() == 0 && editTextBoldCursor4.length() == 0) {
+                    ImageView imageView2 = th8Var.f;
+                    if (imageView2 != null) {
+                        imageView2.callOnClick();
+                    }
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

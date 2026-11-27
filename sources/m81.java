@@ -1,37 +1,75 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
+import java.util.HashSet;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m81 implements n8c, o8c, no7 {
-    public final /* synthetic */ z81 a;
+public final /* synthetic */ class m81 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ i91 b;
+    public final /* synthetic */ id c;
+    public final /* synthetic */ HashSet d;
+    public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ m81(z81 z81Var) {
-        this.a = z81Var;
+    public /* synthetic */ m81(i91 i91Var, id idVar, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z, byte b) {
+        this.a = b;
+        this.b = i91Var;
+        this.c = idVar;
+        this.d = hashSet;
+        this.e = tL_inputGroupCallInviteMessage;
+        this.f = z;
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        return this.a.onInsetsInternal(view, vxcVar);
-    }
-
-    @Override // o8c
-    public final Boolean d(c4c c4cVar, View view, Integer num, Float f, Float f2) {
-        boolean z;
-        Object obj = c4cVar.H;
-        if (obj instanceof w81) {
-            this.a.Z(((w81) obj).c, (v81) view);
-            z = true;
-        } else {
-            z = false;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final i91 i91Var = this.b;
+                i91Var.getClass();
+                final byte b = 0;
+                final id idVar = this.c;
+                final HashSet hashSet = this.d;
+                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
+                final boolean z = this.f;
+                hl.c3(new Runnable() { // from class: o81
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (b) {
+                            case 0:
+                                i91Var.h0(idVar, tLObject, hashSet, tL_inputGroupCallInviteMessage, z, tL_error);
+                                break;
+                            default:
+                                i91Var.g0(idVar, tLObject, hashSet, tL_inputGroupCallInviteMessage, z, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final byte b2 = 1;
+                final i91 i91Var2 = this.b;
+                final id idVar2 = this.c;
+                final HashSet hashSet2 = this.d;
+                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
+                final boolean z2 = this.f;
+                hl.c3(new Runnable() { // from class: o81
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (b2) {
+                            case 0:
+                                i91Var2.h0(idVar2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z2, tL_error);
+                                break;
+                            default:
+                                i91Var2.g0(idVar2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z2, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        return Boolean.valueOf(z);
-    }
-
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.i0((c4c) obj, (View) obj2);
     }
 }

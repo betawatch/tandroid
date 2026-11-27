@@ -1,61 +1,61 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class p8d extends b4 {
-    public static final Parcelable.Creator<p8d> CREATOR = new t4d((byte) 26);
-    public final String a;
-    public final ArrayList b;
+public final class p8d extends d05 {
+    public final o8d F;
 
-    public p8d(String str, ArrayList arrayList) {
-        this.a = str;
-        this.b = arrayList;
-        fre.h(str);
-        fre.h(arrayList);
+    public p8d(Context context, Looper looper, oxb oxbVar, o8d o8dVar, k05 k05Var, l05 l05Var) {
+        super(68, k05Var, l05Var, oxbVar, context, looper);
+        o8dVar = o8dVar == null ? o8d.c : o8dVar;
+        zhc zhcVar = new zhc((byte) 7, false);
+        zhcVar.b = Boolean.FALSE;
+        o8d o8dVar2 = o8d.c;
+        o8dVar.getClass();
+        zhcVar.b = Boolean.valueOf(o8dVar.a);
+        zhcVar.c = o8dVar.b;
+        zhcVar.c = j8d.a();
+        this.F = new o8d(zhcVar);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // hg0
+    public final IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        if (obj == null || p8d.class != obj.getClass()) {
-            return false;
-        }
-        p8d p8dVar = (p8d) obj;
-        String str = p8dVar.a;
-        String str2 = this.a;
-        if (str2 != null) {
-            if (!str2.equals(str)) {
-                return false;
-            }
-        } else if (str != null) {
-            return false;
-        }
-        ArrayList arrayList = p8dVar.b;
-        ArrayList arrayList2 = this.b;
-        return arrayList2 != null ? arrayList2.equals(arrayList) : arrayList == null;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.credentials.internal.ICredentialsService");
+        return queryLocalInterface instanceof r8d ? (r8d) queryLocalInterface : new r8d(iBinder, "com.google.android.gms.auth.api.credentials.internal.ICredentialsService", (byte) 2);
     }
 
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = ((str != null ? str.hashCode() : 0) + 31) * 31;
-        ArrayList arrayList = this.b;
-        return hashCode + (arrayList != null ? arrayList.hashCode() : 0);
+    @Override // hg0
+    public final Bundle h() {
+        o8d o8dVar = this.F;
+        o8dVar.getClass();
+        Bundle bundle = new Bundle();
+        bundle.putString("consumer_package", null);
+        bundle.putBoolean("force_save_dialog", o8dVar.a);
+        bundle.putString("log_session_id", o8dVar.b);
+        return bundle;
     }
 
-    public final String toString() {
-        return b00.i("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
+    @Override // hg0
+    public final int i() {
+        return 12800000;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.p(parcel, 3, this.b);
-        jte.s(parcel, r);
+    @Override // hg0
+    public final String l() {
+        return "com.google.android.gms.auth.api.credentials.internal.ICredentialsService";
+    }
+
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.auth.api.credentials.service.START";
     }
 }

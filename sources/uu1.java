@@ -1,72 +1,11 @@
 // default package
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class uu1 extends FrameLayout {
-    public final tu1 a;
-    public final ui5 b;
-    public View c;
-    public int d;
-    public boolean e;
+public final class uu1 {
+    public final /* synthetic */ xu1 a;
 
-    public uu1(Context context, ui5 ui5Var, Bundle bundle) {
-        super(context);
-        this.e = true;
-        this.b = ui5Var;
-        tu1 tu1Var = new tu1(this, bundle);
-        this.a = tu1Var;
-        tu1Var.mb = true;
-    }
-
-    public void a() {
-        int i;
-        tu1 tu1Var = this.a;
-        if (tu1Var.onFragmentCreate()) {
-            this.c = tu1Var.fragmentView;
-            tu1Var.setParentLayout(this.b);
-            View view = this.c;
-            if (view == null) {
-                this.c = tu1Var.createView(getContext());
-            } else {
-                ViewGroup viewGroup = (ViewGroup) view.getParent();
-                if (viewGroup != null) {
-                    tu1Var.onRemoveFromParent();
-                    viewGroup.removeView(this.c);
-                }
-            }
-            jq1 jq1Var = tu1Var.A0;
-            if (jq1Var != null && (i = this.d) != 0) {
-                jq1Var.setPadding(0, i, 0, 0);
-            }
-            tu1Var.wa();
-            addView(this.c, nme.c(-1.0f, -1));
-            if (this.e) {
-                tu1Var.onResume();
-            }
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-    }
-
-    public void setTopPadding(int i) {
-        this.d = i;
-    }
-
-    public void b(boolean z) {
+    public uu1(xu1 xu1Var) {
+        this.a = xu1Var;
     }
 }

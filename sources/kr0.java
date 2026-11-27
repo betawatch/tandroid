@@ -15,42 +15,42 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class kr0 extends FrameLayout implements tjb, gk7 {
+public abstract class kr0 extends FrameLayout implements snb, fn7 {
     public static LongSparseArray F;
     public static LongSparseArray G;
     public int E;
-    public final d a;
+    public final e a;
     public final int b;
-    public final wjb c;
+    public final vnb c;
     public final long d;
-    public final s1b e;
+    public final o5b e;
     public final ArrayList f;
     public final ArrayList h;
     public final uq0 n;
-    public final vec r;
+    public final uic r;
     public Boolean s;
     public int w;
     public float x;
     public ValueAnimator y;
 
-    public kr0(Context context, d dVar, long j) {
+    public kr0(Context context, e eVar, long j) {
         super(context);
         this.f = new ArrayList();
         this.h = new ArrayList();
         this.s = null;
-        this.w = gl.q.y;
-        this.E = Utilities.j(gba.q1, 6, 2);
-        this.a = dVar;
-        int currentAccount = dVar.getCurrentAccount();
+        this.w = hl.q.y;
+        this.E = Utilities.j(xea.q1, 6, 2);
+        this.a = eVar;
+        int currentAccount = eVar.getCurrentAccount();
         this.b = currentAccount;
-        wjb resourceProvider = dVar.getResourceProvider();
+        vnb resourceProvider = eVar.getResourceProvider();
         this.c = resourceProvider;
         this.d = j;
-        setBackgroundColor(bkb.v(bkb.v0(bkb.c6, resourceProvider), bkb.p1(0.04f, bkb.v0(bkb.F6, resourceProvider))));
+        setBackgroundColor(aob.v(aob.v0(aob.d6, resourceProvider), aob.p1(0.04f, aob.v0(aob.G6, resourceProvider))));
         LongSparseArray longSparseArray = G;
         if (longSparseArray == null) {
             longSparseArray = new LongSparseArray();
@@ -64,45 +64,45 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
             longSparseArray3.put(j2, longSparseArray4);
             longSparseArray2 = longSparseArray4;
         }
-        s1b s1bVar = (s1b) longSparseArray2.get(j);
-        if (s1bVar == null) {
-            s1b s1bVar2 = new s1b(currentAccount, j, "", null);
-            longSparseArray2.put(j, s1bVar2);
-            s1bVar = s1bVar2;
+        o5b o5bVar = (o5b) longSparseArray2.get(j);
+        if (o5bVar == null) {
+            o5b o5bVar2 = new o5b(currentAccount, j, "", null);
+            longSparseArray2.put(j, o5bVar2);
+            o5bVar = o5bVar2;
         }
-        this.e = s1bVar;
-        kca kcaVar = (kca) this;
-        uq0 uq0Var = new uq0(kcaVar, context);
+        this.e = o5bVar;
+        bga bgaVar = (bga) this;
+        uq0 uq0Var = new uq0(bgaVar, context);
         this.n = uq0Var;
         uq0Var.setAllowDisallowInterceptTouch(true);
-        uq0Var.setAdapter(new bn0((byte) 1, context, kcaVar));
-        addView(uq0Var, nme.e(-1, -1, kk7.D1));
-        vec l = uq0Var.l(9, true);
+        uq0Var.setAdapter(new bn0((byte) 1, context, bgaVar));
+        addView(uq0Var, tre.e(-1, -1, jn7.D1));
+        uic l = uq0Var.l(9, true);
         this.r = l;
         l.r = 12;
-        l.setPreTabClick(new sg0(kcaVar, (byte) 9));
-        addView(l, nme.e(-1, 42, 48));
+        l.setPreTabClick(new tg0(bgaVar, (byte) 9));
+        addView(l, tre.e(-1, 42, 48));
         i(false);
     }
 
     public final void a(String str) {
-        d dVar = this.a;
-        if (dVar == null || dVar.getParentActivity() == null) {
+        e eVar = this.a;
+        if (eVar == null || eVar.getParentActivity() == null) {
             return;
         }
-        x02 x02Var = new x02(dVar.getParentActivity(), dVar, false, false, false, this.c);
-        x02Var.t1(1, false);
-        x02Var.Q2 = true;
-        x02Var.P2 = false;
-        x02Var.g3.setText(k96.M0(2131752109, null));
-        x02Var.d2.h0();
-        x02Var.W3 = new mv6((Object) this, (Object) x02Var, (Object) str, (byte) 10);
-        x02Var.Z0();
-        x02Var.show();
+        n12 n12Var = new n12(eVar.getParentActivity(), eVar, false, false, false, this.c);
+        n12Var.u1(1, false);
+        n12Var.Q2 = true;
+        n12Var.P2 = false;
+        n12Var.g3.setText(ob6.M0(2131752086, null));
+        n12Var.d2.g0();
+        n12Var.W3 = new rx6((Object) this, (Object) n12Var, (Object) str, (byte) 10);
+        n12Var.a1();
+        n12Var.show();
     }
 
     public final void b(String str) {
-        s1b s1bVar;
+        o5b o5bVar;
         TLRPC.MessageMedia messageMedia;
         if (TextUtils.isEmpty(str)) {
             return;
@@ -113,26 +113,26 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
         while (true) {
             ArrayList arrayList = this.f;
             if (i >= arrayList.size()) {
-                s1bVar = null;
+                o5bVar = null;
                 break;
             }
-            s1bVar = (s1b) arrayList.get(i);
-            if (s1bVar != null && TextUtils.equals(s1bVar.E, str)) {
+            o5bVar = (o5b) arrayList.get(i);
+            if (o5bVar != null && TextUtils.equals(o5bVar.E, str)) {
                 break;
             } else {
                 i++;
             }
         }
-        if (s1bVar != null) {
-            ArrayList arrayList2 = s1bVar.i;
+        if (o5bVar != null) {
+            ArrayList arrayList2 = o5bVar.i;
             TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
             int i2 = this.b;
-            deletepreviewmedia.bot = na7.q1(i2).m1(this.d);
+            deletepreviewmedia.bot = uc7.s1(i2).o1(this.d);
             deletepreviewmedia.lang_code = str;
             for (int i3 = 0; i3 < arrayList2.size(); i3++) {
-                TL_stories.StoryItem storyItem = ((k27) arrayList2.get(i3)).l;
+                TL_stories.StoryItem storyItem = ((r47) arrayList2.get(i3)).l;
                 if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                    deletepreviewmedia.media.add(na7.f5(messageMedia));
+                    deletepreviewmedia.media.add(uc7.n5(messageMedia));
                 }
             }
             ConnectionsManager.getInstance(i2).sendRequest(deletepreviewmedia, null);
@@ -141,30 +141,30 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
         this.r.e(-1, 0);
     }
 
-    public abstract boolean c(k27 k27Var);
+    public abstract boolean c(r47 r47Var);
 
     public final boolean d() {
-        s1b s1bVar;
+        o5b o5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (s1bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
             return true;
         }
-        ArrayList arrayList = s1bVar.i;
+        ArrayList arrayList = o5bVar.i;
         for (int i = 0; i < arrayList.size(); i++) {
-            if (!c((k27) arrayList.get(i))) {
+            if (!c((r47) arrayList.get(i))) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override // gk7
+    @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        int i3 = kk7.z5;
+        int i3 = jn7.A5;
         uq0 uq0Var = this.n;
         int i4 = 0;
         if (i != i3) {
-            if (i == kk7.x5) {
+            if (i == jn7.y5) {
                 i(true);
                 View[] viewPages = uq0Var.getViewPages();
                 int length = viewPages.length;
@@ -180,8 +180,8 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
             return;
         }
         Object obj = objArr[0];
-        s1b s1bVar = this.e;
-        if (obj == s1bVar) {
+        o5b o5bVar = this.e;
+        if (obj == o5bVar) {
             i(true);
             View[] viewPages2 = uq0Var.getViewPages();
             int length2 = viewPages2.length;
@@ -189,7 +189,7 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
                 View view2 = viewPages2[i4];
                 if (view2 instanceof gr0) {
                     gr0 gr0Var = (gr0) view2;
-                    if (gr0Var.a == s1bVar) {
+                    if (gr0Var.a == o5bVar) {
                         gr0Var.w.f();
                     }
                 }
@@ -209,23 +209,23 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
         }
     }
 
-    public abstract boolean e(k27 k27Var);
+    public abstract boolean e(r47 r47Var);
 
     public final void f() {
-        s1b s1bVar;
+        o5b o5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (s1bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = s1bVar.i;
+        ArrayList arrayList = o5bVar.i;
         for (int i = 0; i < arrayList.size(); i++) {
-            if (!c((k27) arrayList.get(i))) {
-                e((k27) arrayList.get(i));
+            if (!c((r47) arrayList.get(i))) {
+                e((r47) arrayList.get(i));
             }
         }
     }
 
-    public abstract boolean g(k27 k27Var);
+    public abstract boolean g(r47 r47Var);
 
     public String getBotPreviewsSubtitle() {
         int i;
@@ -234,18 +234,18 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
         StringBuilder sb = new StringBuilder();
         View currentView = this.n.getCurrentView();
         if (currentView instanceof gr0) {
-            s1b s1bVar = ((gr0) currentView).a;
-            if (s1bVar != null) {
-                ArrayList arrayList = s1bVar.i;
+            o5b o5bVar = ((gr0) currentView).a;
+            if (o5bVar != null) {
+                ArrayList arrayList = o5bVar.i;
                 i = 0;
                 i2 = 0;
                 for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                    k27 k27Var = (k27) arrayList.get(i3);
-                    TL_stories.StoryItem storyItem = k27Var.l;
+                    r47 r47Var = (r47) arrayList.get(i3);
+                    TL_stories.StoryItem storyItem = r47Var.l;
                     if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                        if (k27.J4(messageMedia.document)) {
+                        if (r47.J4(messageMedia.document)) {
                             i2++;
-                        } else if (k27Var.l.media.photo != null) {
+                        } else if (r47Var.l.media.photo != null) {
                             i++;
                         }
                     }
@@ -255,16 +255,16 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
                 i2 = 0;
             }
             if (i == 0 && i2 == 0) {
-                return k96.M0(2131753002, null);
+                return ob6.M0(2131752998, null);
             }
             if (i > 0) {
-                sb.append(k96.G(i, "Images", new Object[0]));
+                sb.append(ob6.G(i, "Images", new Object[0]));
             }
             if (i2 > 0) {
                 if (sb.length() > 0) {
                     sb.append(", ");
                 }
-                sb.append(k96.G(i2, "Videos", new Object[0]));
+                sb.append(ob6.G(i2, "Videos", new Object[0]));
             }
         }
         return sb.toString();
@@ -272,28 +272,28 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
 
     public String getCurrentLang() {
         View view;
-        s1b s1bVar;
+        o5b o5bVar;
         uq0 uq0Var = this.n;
         View[] viewPages = uq0Var.getViewPages();
         if (Math.abs(uq0Var.getCurrentPosition() - uq0Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
-        if (!(view instanceof gr0) || (s1bVar = ((gr0) view).a) == null) {
+        if (!(view instanceof gr0) || (o5bVar = ((gr0) view).a) == null) {
             return null;
         }
-        return s1bVar.E;
+        return o5bVar.E;
     }
 
-    public s1b getCurrentList() {
-        s1b s1bVar;
+    public o5b getCurrentList() {
+        o5b o5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (s1bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
             return null;
         }
-        return s1bVar;
+        return o5bVar;
     }
 
-    public o39 getCurrentListView() {
+    public d79 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof gr0) {
             return ((gr0) currentView).f;
@@ -302,12 +302,12 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
     }
 
     public int getItemsCount() {
-        s1b s1bVar;
+        o5b o5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (s1bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
             return 0;
         }
-        return s1bVar.i.size();
+        return o5bVar.i.size();
     }
 
     public int getStartedTrackingX() {
@@ -315,22 +315,22 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
     }
 
     public final void h() {
-        s1b s1bVar;
+        o5b o5bVar;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof gr0) || (s1bVar = ((gr0) currentView).a) == null) {
+        if (!(currentView instanceof gr0) || (o5bVar = ((gr0) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = s1bVar.i;
+        ArrayList arrayList = o5bVar.i;
         for (int i = 0; i < arrayList.size(); i++) {
-            if (c((k27) arrayList.get(i))) {
-                g((k27) arrayList.get(i));
+            if (c((r47) arrayList.get(i))) {
+                g((r47) arrayList.get(i));
             }
         }
     }
 
     public final void i(boolean z) {
-        s1b s1bVar;
-        f4b f4bVar;
+        o5b o5bVar;
+        c8b c8bVar;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
         int size = arrayList2.size();
@@ -343,18 +343,18 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
                 arrayList.add(str);
             }
         }
-        g2b M1 = na7.q1(this.b).M1();
+        c6b O1 = uc7.s1(this.b).O1();
         long j = this.d;
-        ArrayList E = M1.E(j);
+        ArrayList E = O1.E(j);
         if (E != null) {
             int size2 = E.size();
             int i2 = 0;
             while (i2 < size2) {
                 Object obj2 = E.get(i2);
                 i2++;
-                f2b f2bVar = (f2b) obj2;
-                if (f2bVar != null && (f4bVar = f2bVar.c) != null && f4bVar.J0 == j && !TextUtils.isEmpty(f4bVar.K0) && !arrayList.contains(f4bVar.K0)) {
-                    arrayList.add(f4bVar.K0);
+                b6b b6bVar = (b6b) obj2;
+                if (b6bVar != null && (c8bVar = b6bVar.c) != null && c8bVar.J0 == j && !TextUtils.isEmpty(c8bVar.K0) && !arrayList.contains(c8bVar.K0)) {
+                    arrayList.add(c8bVar.K0);
                 }
             }
         }
@@ -370,34 +370,34 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
             int i4 = 0;
             while (true) {
                 if (i4 >= arrayList4.size()) {
-                    s1bVar = null;
+                    o5bVar = null;
                     break;
                 } else {
-                    if (TextUtils.equals(((s1b) arrayList4.get(i4)).E, str2)) {
-                        s1bVar = (s1b) arrayList4.get(i4);
+                    if (TextUtils.equals(((o5b) arrayList4.get(i4)).E, str2)) {
+                        o5bVar = (o5b) arrayList4.get(i4);
                         break;
                     }
                     i4++;
                 }
             }
-            if (s1bVar == null) {
-                s1b s1bVar2 = new s1b(this.b, this.d, str2, null);
-                s1bVar2.H(null);
-                s1bVar = s1bVar2;
+            if (o5bVar == null) {
+                o5b o5bVar2 = new o5b(this.b, this.d, str2, null);
+                o5bVar2.H(null);
+                o5bVar = o5bVar2;
             }
-            arrayList3.add(s1bVar);
+            arrayList3.add(o5bVar);
         }
         uq0 uq0Var = this.n;
         uq0Var.m(true);
-        SpannableString spannableString = new SpannableString("+ ".concat(k96.M0(2131746518, null)));
-        cm2 cm2Var = new cm2(R.drawable.msg_filled_plus, 0);
-        cm2Var.I = 0.9f;
-        cm2Var.J = 0.9f;
-        cm2Var.H = 0.85f;
-        spannableString.setSpan(cm2Var, 0, 1, 33);
-        vec vecVar = this.r;
-        vecVar.a(-1, spannableString);
-        vecVar.y.f();
+        SpannableString spannableString = new SpannableString("+ ".concat(ob6.M0(2131746438, null)));
+        wm2 wm2Var = new wm2(R.drawable.msg_filled_plus, 0);
+        wm2Var.I = 0.9f;
+        wm2Var.J = 0.9f;
+        wm2Var.H = 0.85f;
+        spannableString.setSpan(wm2Var, 0, 1, 33);
+        uic uicVar = this.r;
+        uicVar.a(-1, spannableString);
+        uicVar.y.f();
         boolean z2 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z2) {
@@ -408,16 +408,16 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
             this.s = Boolean.valueOf(z2);
             if (!z) {
                 this.x = z2 ? 1.0f : 0.0f;
-                vecVar.setTranslationY(gl.L(z2 ? 0.0f : -42.0f));
-                uq0Var.setTranslationY(gl.L(z2 ? 42.0f : 0.0f));
+                uicVar.setTranslationY(hl.L(z2 ? 0.0f : -42.0f));
+                uq0Var.setTranslationY(hl.L(z2 ? 42.0f : 0.0f));
                 return;
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z2 ? 1.0f : 0.0f);
             this.y = ofFloat;
-            ofFloat.addUpdateListener(new f0(this, (byte) 17));
-            this.y.addListener(new y7((byte) 6, (Object) this, z2));
+            ofFloat.addUpdateListener(new g0(this, (byte) 17));
+            this.y.addListener(new z7((byte) 6, (Object) this, z2));
             this.y.setDuration(320L);
-            this.y.setInterpolator(s33.h);
+            this.y.setInterpolator(k43.h);
             this.y.start();
         }
     }
@@ -429,9 +429,9 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
             yq0 yq0Var = gr0Var.f;
             for (int i = 0; i < yq0Var.getChildCount(); i++) {
                 View childAt = yq0Var.getChildAt(i);
-                if (childAt instanceof qfa) {
-                    qfa qfaVar = (qfa) childAt;
-                    qfaVar.i(gr0Var.a0.c(qfaVar.getMessageObject()), true);
+                if (childAt instanceof jja) {
+                    jja jjaVar = (jja) childAt;
+                    jjaVar.i(gr0Var.a0.c(jjaVar.getMessageObject()), true);
                 }
             }
         }
@@ -455,8 +455,8 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
             longSparseArray2 = longSparseArray4;
         }
         longSparseArray2.put(this.d, this);
-        kk7.f(i).b(this, kk7.z5);
-        kk7.f(i).b(this, kk7.x5);
+        jn7.f(i).b(this, jn7.A5);
+        jn7.f(i).b(this, jn7.y5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -472,8 +472,8 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
         if (longSparseArray2 != null) {
             longSparseArray2.remove(this.d);
         }
-        kk7.f(i).n(this, kk7.z5);
-        kk7.f(i).n(this, kk7.x5);
+        jn7.f(i).n(this, jn7.A5);
+        jn7.f(i).n(this, jn7.y5);
     }
 
     public void setVisibleHeight(int i) {
@@ -488,18 +488,18 @@ public abstract class kr0 extends FrameLayout implements tjb, gk7 {
         }
     }
 
-    @Override // tjb
+    @Override // snb
     public final void updateColors() {
-        wjb wjbVar = this.c;
+        vnb vnbVar = this.c;
         try {
-            setBackgroundColor(bkb.v(bkb.v0(bkb.c6, wjbVar), bkb.p1(0.04f, bkb.v0(bkb.F6, wjbVar))));
+            setBackgroundColor(aob.v(aob.v0(aob.d6, vnbVar), aob.p1(0.04f, aob.v0(aob.G6, vnbVar))));
             invalidate();
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 
-    @Override // tjb
+    @Override // snb
     public final void addColorKeys(HashSet hashSet) {
     }
 }

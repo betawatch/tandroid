@@ -1,73 +1,19 @@
 // default package
 
-import android.app.KeyguardManager;
-import android.graphics.Typeface;
-import android.security.keystore.KeyPermanentlyInvalidatedException;
-import java.security.KeyPairGenerator;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import javax.crypto.Cipher;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ige {
-    public static KeyStore a;
-    public static KeyPairGenerator b;
-    public static Boolean c;
+public final class ige implements zq7 {
+    public static final ige a = new ige();
 
-    public static boolean a() {
-        Boolean bool = c;
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        try {
-            Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding").init(2, a.getKey("tmessages_passcode", null));
-            c = Boolean.FALSE;
-            return false;
-        } catch (KeyPermanentlyInvalidatedException unused) {
-            c = Boolean.TRUE;
-            return true;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            c = Boolean.FALSE;
-            return false;
-        }
+    static {
+        xnb.y(xnb.q(bpd.class, new tnd(1)));
     }
 
-    public static void b(boolean z) {
-        if (d()) {
-            return;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        Typeface typeface = gl.a;
-        if (((KeyguardManager) a.b.getSystemService("keyguard")).isKeyguardSecure() && eg4.b(a.b) && eg4.a(a.b)) {
-            Utilities.e.c(new yf4((byte) 0, z));
-        }
-    }
-
-    public static KeyStore c() {
-        KeyStore keyStore = a;
-        if (keyStore != null) {
-            return keyStore;
-        }
-        try {
-            KeyStore keyStore2 = KeyStore.getInstance("AndroidKeyStore");
-            a = keyStore2;
-            keyStore2.load(null);
-            return a;
-        } catch (Exception e) {
-            fa4.g(e, true);
-            return null;
-        }
-    }
-
-    public static boolean d() {
-        try {
-            return c().containsAlias("tmessages_passcode");
-        } catch (KeyStoreException e) {
-            fa4.g(e, true);
-            return false;
-        }
+        throw null;
     }
 }

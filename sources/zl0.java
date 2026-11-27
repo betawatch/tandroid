@@ -1,27 +1,92 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class zl0 implements Runnable {
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class zl0 implements e84 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ dm0 b;
+    public final lma b;
 
-    public /* synthetic */ zl0(dm0 dm0Var, byte b) {
+    public zl0(byte b) {
         this.a = b;
-        this.b = dm0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        dm0 dm0Var = this.b;
         switch (b) {
-            case 0:
-                dm0Var.k0();
+            case 1:
+                this.b = new lma(35152, 2, "image/png");
                 break;
             default:
-                dm0Var.k0();
+                this.b = new lma(16973, 2, "image/bmp");
                 break;
         }
+    }
+
+    @Override // e84
+    public final e84 a() {
+        byte b = this.a;
+        return this;
+    }
+
+    @Override // e84
+    public final int b(f84 f84Var, v11 v11Var) {
+        byte b = this.a;
+        lma lmaVar = this.b;
+        switch (b) {
+        }
+        return lmaVar.b(f84Var, v11Var);
+    }
+
+    @Override // e84
+    public final boolean c(f84 f84Var) {
+        byte b = this.a;
+        lma lmaVar = this.b;
+        switch (b) {
+        }
+        return lmaVar.c(f84Var);
+    }
+
+    @Override // e84
+    public final void d(long j, long j2) {
+        byte b = this.a;
+        lma lmaVar = this.b;
+        switch (b) {
+            case 0:
+                lmaVar.d(j, j2);
+                break;
+            default:
+                lmaVar.d(j, j2);
+                break;
+        }
+    }
+
+    @Override // e84
+    public final List e() {
+        byte b = this.a;
+        no5 no5Var = po5.b;
+        return j99.e;
+    }
+
+    @Override // e84
+    public final void f(g84 g84Var) {
+        byte b = this.a;
+        lma lmaVar = this.b;
+        switch (b) {
+            case 0:
+                lmaVar.f(g84Var);
+                break;
+            default:
+                lmaVar.f(g84Var);
+                break;
+        }
+    }
+
+    @Override // e84
+    public final void release() {
+        byte b = this.a;
+    }
+
+    private final void g() {
+    }
+
+    private final void h() {
     }
 }

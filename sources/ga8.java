@@ -1,35 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ga8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ja8 b;
+import android.graphics.drawable.Drawable;
+import android.text.style.ClickableSpan;
+import android.widget.TextView;
+import org.telegram.ui.PhotoViewer;
 
-    public /* synthetic */ ga8(ja8 ja8Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ga8 implements icc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ PhotoViewer b;
+
+    public /* synthetic */ ga8(PhotoViewer photoViewer, byte b) {
         this.a = b;
-        this.b = ja8Var;
+        this.b = photoViewer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // icc
+    public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        ja8 ja8Var = this.b;
+        PhotoViewer photoViewer = this.b;
         switch (b) {
             case 0:
-                ja8Var.d.a(false);
+                Drawable[] drawableArr = PhotoViewer.d9;
+                photoViewer.b1((ClickableSpan) obj, (TextView) obj2);
                 break;
             default:
-                Runnable runnable = ja8Var.I;
-                ja8Var.I = null;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                Runnable runnable2 = ja8Var.J;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
+                Drawable[] drawableArr2 = PhotoViewer.d9;
+                photoViewer.x(((Boolean) obj2).booleanValue(), false, (((Float) obj).floatValue() * 2.8f) + 0.2f);
                 break;
         }
     }

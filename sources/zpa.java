@@ -1,40 +1,31 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class zpa {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final int j;
+    public final int k;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class zpa extends FrameLayout {
-    public final int[] a;
-    public final /* synthetic */ aqa b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zpa(aqa aqaVar, Context context) {
-        super(context);
-        this.b = aqaVar;
-        this.a = new int[2];
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        FrameLayout frameLayout;
-        super.onLayout(z, i, i2, i3, i4);
-        aqa aqaVar = this.b;
-        xf5 xf5Var = aqaVar.i;
-        if (xf5Var == null || xf5Var.d.getChildCount() < 2 || aqaVar.t == null || (frameLayout = aqaVar.m) == null) {
-            return;
-        }
-        int[] iArr = this.a;
-        frameLayout.getLocationInWindow(iArr);
-        float translationX = iArr[0] - aqaVar.m.getTranslationX();
-        float translationY = iArr[1] - aqaVar.m.getTranslationY();
-        View childAt = xf5Var.d.getChildAt(1);
-        childAt.getLocationInWindow(iArr);
-        float translationX2 = iArr[0] - childAt.getTranslationX();
-        float translationY2 = iArr[1] - childAt.getTranslationY();
-        aqaVar.t.setTranslationY(((translationY2 - translationY) - r8.getMeasuredHeight()) - xf5Var.getMeasuredHeight());
-        aqaVar.t.o(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - gl.L(12.0f));
+    public zpa(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+        this.f = i6;
+        this.g = i7;
+        this.h = i8;
+        this.i = i9;
+        this.j = i10;
+        this.k = i11;
     }
 }

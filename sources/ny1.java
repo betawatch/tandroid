@@ -1,46 +1,53 @@
 // default package
 
-import java.util.HashMap;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ny1 extends HashMap {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class ny1 implements hj, fd {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ ny1(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public /* synthetic */ ny1(qy1 qy1Var, View view, Object obj, String str, Object obj2, no6 no6Var, boolean z) {
+        this.c = qy1Var;
+        this.d = view;
+        this.e = obj;
+        this.a = str;
+        this.f = obj2;
+        this.h = no6Var;
+        this.b = z;
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object get(Object obj) {
-        switch (this.a) {
-            case 0:
-                byte b = ((qy1) this.b).w;
-                oy8 oy8Var = (oy8) super.get(obj);
-                if (oy8Var != null) {
-                    return oy8Var;
-                }
-                py1 py1Var = (py1) obj;
-                oy8 oy8Var2 = new oy8(py1Var.c, gl.L(b), gl.L(b));
-                put(py1Var, oy8Var2);
-                return oy8Var2;
-            default:
-                return super.get(obj);
-        }
+    @Override // fd
+    public final void w(id idVar, int i) {
+        bg2 bg2Var = (bg2) this.c;
+        TLRPC.User user = (TLRPC.User) this.d;
+        TLObject tLObject = (TLObject) this.e;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.f;
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.h;
+        bg2Var.getClass();
+        bg2Var.x0(user.id, tLObject, tL_chatAdminRights, tL_chatBannedRights, this.a, this.b, bg2Var.e1 == 1 ? 0 : 1, false);
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        switch (this.a) {
-            case 1:
-                String str = (String) obj;
-                String str2 = (String) obj2;
-                ((ci7) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
-                return (String) super.put(str, str2);
-            default:
-                return super.put(obj, obj2);
-        }
+    @Override // hj
+    public final void y(int i, int i2, boolean z) {
+        ((qy1) this.c).B((View) this.d, this.e, this.a, this.f, z, i, i2, (no6) this.h, this.b);
+    }
+
+    public /* synthetic */ ny1(bg2 bg2Var, TLRPC.User user, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z) {
+        this.c = bg2Var;
+        this.d = user;
+        this.e = tLObject;
+        this.f = tL_chatAdminRights;
+        this.h = tL_chatBannedRights;
+        this.a = str;
+        this.b = z;
     }
 }

@@ -1,147 +1,80 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.Locale;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class f51 implements Iterable, Serializable {
-    public static final f51 c = new f51(mp5.b);
-    public static final e51 d;
-    public int a = 0;
-    public final byte[] b;
+public final class f51 extends sf0 {
+    public final e51 a;
+    public Uri b;
+    public byte[] c;
+    public int d;
+    public int e;
+    public boolean f;
 
-    static {
-        d = wj.a() ? new eef((byte) 14) : new o5f((byte) 14);
-    }
-
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public f51(byte[] bArr) {
-        bArr.getClass();
-        this.b = bArr;
+        super(false);
+        e51 e51Var = new e51(bArr);
+        this.a = e51Var;
+        yve.f(bArr.length > 0);
     }
 
-    public static int i(int i, int i2, int i3) {
-        int i4 = i2 - i;
-        if ((i | i2 | i4 | (i3 - i2)) >= 0) {
-            return i4;
+    @Override // h73
+    public final void close() {
+        if (this.f) {
+            this.f = false;
+            transferEnded();
         }
-        if (i < 0) {
-            k93.i(tb4.n(i, "Beginning index: ", " < 0"));
-            return 0;
-        }
-        if (i2 < i) {
-            k93.i(b00.g(i, i2, "Beginning index larger than ending index: ", ", "));
-            return 0;
-        }
-        k93.i(b00.g(i2, i3, "End index: ", " >= "));
-        return 0;
+        this.b = null;
+        this.c = null;
     }
 
-    public static f51 j(int i, int i2, byte[] bArr) {
-        i(i, i + i2, bArr.length);
-        return new f51(d.g(i, i2, bArr));
+    @Override // h73
+    public final Uri getUri() {
+        return this.b;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // h73
+    public final long open(n73 n73Var) {
+        transferInitializing(n73Var);
+        Uri uri = n73Var.a;
+        long j = n73Var.f;
+        this.b = uri;
+        byte[] bArr = this.a.a;
+        this.c = bArr;
+        long j2 = n73Var.e;
+        if (j2 > bArr.length) {
+            throw new k73(2008);
         }
-        if ((obj instanceof f51) && size() == ((f51) obj).size()) {
-            if (size() == 0) {
-                return true;
-            }
-            if (!(obj instanceof f51)) {
-                return obj.equals(this);
-            }
-            f51 f51Var = (f51) obj;
-            int i = this.a;
-            int i2 = f51Var.a;
-            if (i == 0 || i2 == 0 || i == i2) {
-                int size = size();
-                if (size > f51Var.size()) {
-                    haf.b(size, size());
-                    return false;
-                }
-                if (size > f51Var.size()) {
-                    fvc.e(f51Var.size(), de9.m(size, "Ran off end of other: 0, ", ", "));
-                    return false;
-                }
-                byte[] bArr = f51Var.b;
-                int l = l() + size;
-                int l2 = l();
-                int l3 = f51Var.l();
-                while (l2 < l) {
-                    if (this.b[l2] == bArr[l3]) {
-                        l2++;
-                        l3++;
-                    }
-                }
-                return true;
-            }
+        int i = (int) j2;
+        this.d = i;
+        int length = bArr.length - i;
+        this.e = length;
+        if (j != -1) {
+            this.e = (int) Math.min(length, j);
         }
-        return false;
+        this.f = true;
+        transferStarted(n73Var);
+        return j != -1 ? j : this.e;
     }
 
-    public byte h(int i) {
-        return this.b[i];
-    }
-
-    public final int hashCode() {
-        int i = this.a;
-        if (i != 0) {
-            return i;
-        }
-        int size = size();
-        int l = l();
-        int i2 = size;
-        for (int i3 = l; i3 < l + size; i3++) {
-            i2 = (i2 * 31) + this.b[i3];
-        }
+    @Override // z63
+    public final int read(byte[] bArr, int i, int i2) {
         if (i2 == 0) {
-            i2 = 1;
+            return 0;
         }
-        this.a = i2;
-        return i2;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new c51(this);
-    }
-
-    public void k(int i, byte[] bArr) {
-        System.arraycopy(this.b, 0, bArr, 0, i);
-    }
-
-    public int l() {
-        return 0;
-    }
-
-    public byte m(int i) {
-        return this.b[i];
-    }
-
-    public int size() {
-        return this.b.length;
-    }
-
-    public final String toString() {
-        String concat;
-        Locale locale = Locale.ROOT;
-        String hexString = Integer.toHexString(System.identityHashCode(this));
-        int size = size();
-        if (size() <= 50) {
-            concat = gve.a(this);
-        } else {
-            int i = i(0, 47, size());
-            concat = gve.a(i == 0 ? c : new d51(this.b, l(), i)).concat("...");
+        int i3 = this.e;
+        if (i3 == 0) {
+            return -1;
         }
-        StringBuilder sb = new StringBuilder("<ByteString@");
-        sb.append(hexString);
-        sb.append(" size=");
-        sb.append(size);
-        sb.append(" contents=\"");
-        return b00.j(sb, concat, "\">");
+        int min = Math.min(i2, i3);
+        byte[] bArr2 = this.c;
+        bArr2.getClass();
+        System.arraycopy(bArr2, this.d, bArr, i, min);
+        this.d += min;
+        this.e -= min;
+        bytesTransferred(min);
+        return min;
     }
 }

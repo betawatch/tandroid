@@ -1,31 +1,98 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ll implements sl {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vl b;
+public final class ll {
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final short f;
+    public final k43 g;
+    public boolean h;
+    public long i;
+    public int j;
 
-    public /* synthetic */ ll(vl vlVar, byte b) {
-        this.a = b;
-        this.b = vlVar;
+    /* JADX WARN: Type inference failed for: r2v1, types: [int, short] */
+    public ll(View view, long j, k43 k43Var) {
+        this.f = (short) 200;
+        k43 k43Var2 = k43.f;
+        this.a = view;
+        this.f = (int) j;
+        this.g = k43Var;
+        this.e = true;
     }
 
-    @Override // sl
-    public final void a(TLRPC.Document document) {
-        byte b = this.a;
-        vl vlVar = this.b;
-        switch (b) {
-            case 0:
-                vlVar.e = document;
-                vlVar.i(false);
-                break;
-            default:
-                vlVar.e = document;
-                vlVar.i(false);
-                break;
+    public final int a(int i, boolean z) {
+        long j = this.f;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (z || j <= 0 || this.e) {
+            this.d = i;
+            this.c = i;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i) {
+            this.h = true;
+            this.d = i;
+            this.j = this.c;
+            this.i = elapsedRealtime;
         }
+        if (this.h) {
+            float a = ete.a((elapsedRealtime - this.i) / j, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                int i2 = this.j;
+                int i3 = this.d;
+                k43 k43Var = this.g;
+                if (k43Var == null) {
+                    this.c = vm2.f(a, i2, i3);
+                } else {
+                    this.c = vm2.f(k43Var.getInterpolation(a), i2, i3);
+                }
+            }
+            if (a >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public ll(View view) {
+        this.f = (short) 200;
+        this.g = k43.f;
+        this.a = view;
+        this.e = true;
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [int, short] */
+    public ll(View view, long j, k43 k43Var, int i) {
+        this.f = (short) 200;
+        k43 k43Var2 = k43.f;
+        this.a = view;
+        this.f = (int) j;
+        this.g = k43Var;
+        this.e = true;
+    }
+
+    /* JADX WARN: Type inference failed for: r2v1, types: [int, short] */
+    public ll(Runnable runnable, long j, k43 k43Var) {
+        this.f = (short) 200;
+        k43 k43Var2 = k43.f;
+        this.b = runnable;
+        this.f = (int) j;
+        this.g = k43Var;
+        this.e = true;
     }
 }

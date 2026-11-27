@@ -1,36 +1,17 @@
 // default package
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class kid extends efd {
-    public final transient Object[] c;
-    public final transient boolean d;
-    public final transient int e;
+public abstract class kid {
+    public static final a94 a;
+    public static final a94[] b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public kid(int i, int i2, Object[] objArr) {
-        this.c = objArr;
-        this.d = i;
-        this.e = i2;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i) {
-        sze.a(i, this.e);
-        Object obj = this.c[(i << 1) + (this.d ? 1 : 0)];
-        Objects.requireNonNull(obj);
-        return obj;
-    }
-
-    @Override // ned
-    public final boolean l() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.e;
+    static {
+        a94 a94Var = new a94("fpnv_exchange_credential_response_for_phone_number_api", -1, 1L, true);
+        a94 a94Var2 = new a94("fpnv_get_consent_screen_intent", -1, 1L, true);
+        a94 a94Var3 = new a94("fpnv_get_digital_credential_payload_api", -1, 1L, true);
+        a94 a94Var4 = new a94("fpnv_get_verification_support_info", -1, 1L, true);
+        a = a94Var4;
+        b = new a94[]{a94Var, a94Var2, a94Var3, a94Var4, new a94("fpnv_test_sessions", -1, 1L, true), new a94("fpnv_verify_phone_number", -1, 1L, true)};
     }
 }

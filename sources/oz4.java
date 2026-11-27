@@ -1,55 +1,23 @@
 // default package
 
-import java.util.HashMap;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oz4 implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ gk7 d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class oz4 implements mz4 {
+    public final Paint a = new Paint(1);
+    public int b;
 
-    public /* synthetic */ oz4(na7 na7Var, HashMap hashMap, String str, vf6 vf6Var, long j, int i) {
-        this.d = na7Var;
-        this.e = hashMap;
-        this.f = str;
-        this.g = vf6Var;
-        this.b = j;
-        this.c = i;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.g;
-        Object obj2 = this.f;
-        Object obj3 = this.e;
-        gk7 gk7Var = this.d;
-        switch (b) {
-            case 0:
-                gl.c3(new sr0(tL_error, tLObject, (TwoStepVerificationActivity) gk7Var, (d) obj3, this.b, (is0) obj2, (wy) obj, this.c));
-                break;
-            default:
-                gl.c3(new oe((na7) gk7Var, (HashMap) obj3, (String) obj2, tLObject, (vf6) obj, this.b, this.c));
-                break;
+    public final void a(int i) {
+        if (this.b != i) {
+            this.b = i;
+            this.a.setColor(i);
         }
     }
 
-    public /* synthetic */ oz4(TwoStepVerificationActivity twoStepVerificationActivity, d dVar, long j, is0 is0Var, wy wyVar, int i) {
-        this.d = twoStepVerificationActivity;
-        this.e = dVar;
-        this.b = j;
-        this.f = is0Var;
-        this.g = wyVar;
-        this.c = i;
+    @Override // mz4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+        canvas.drawRect(f, f2, f3, f4, this.a);
     }
 }

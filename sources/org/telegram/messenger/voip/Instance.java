@@ -7,7 +7,7 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class Instance {
     public static final int AUDIO_STATE_ACTIVE = 1;
@@ -51,10 +51,10 @@ public final class Instance {
     public static final int VIDEO_STATE_INACTIVE = 0;
     public static final int VIDEO_STATE_PAUSED = 1;
     private static int bufferSize;
-    private static ServerConfig globalServerConfig = new ServerConfig(new JSONObject());
+    private static ServerConfig globalServerConfig = new ServerConfig(new JSONObject(), 0);
     private static NativeInstance instance;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Candidate {
         public final String component;
         public final String foundation;
@@ -91,7 +91,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Config {
         public final String customParameters;
         public final int dataSaving;
@@ -128,7 +128,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class EncryptionKey {
         public final boolean isOutgoing;
         public final byte[] value;
@@ -143,7 +143,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Endpoint {
         public final long id;
         public final String ipv4;
@@ -174,7 +174,7 @@ public final class Instance {
                 this.password = str4;
             } else if (bArr != null) {
                 this.username = "reflector";
-                this.password = g8c.g0(bArr);
+                this.password = gcc.g0(bArr);
             } else {
                 this.username = null;
                 this.password = null;
@@ -187,7 +187,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class FinalState {
         public String debugLog;
         public final boolean isRatingSuggested;
@@ -206,7 +206,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Fingerprint {
         public final String fingerprint;
         public final String hash;
@@ -223,27 +223,27 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface OnRemoteMediaStateUpdatedListener {
         void onMediaStateUpdated(int i, int i2);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface OnSignalBarsUpdatedListener {
         void onSignalBarsUpdated(int i);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface OnSignalingDataListener {
         void onSignalingData(byte[] bArr);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface OnStateUpdatedListener {
         void onStateUpdated(int i, boolean z);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Proxy {
         public final String host;
         public final String login;
@@ -265,11 +265,11 @@ public final class Instance {
             sb.append(", login='");
             sb.append(this.login);
             sb.append("', password='");
-            return b00.j(sb, this.password, "'}");
+            return c00.k(sb, this.password, "'}");
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class TrafficStats {
         public final long bytesReceivedMobile;
         public final long bytesReceivedWifi;
@@ -295,7 +295,7 @@ public final class Instance {
         if (instance != null) {
             return;
         }
-        sc8.j("tgvoip version is not set");
+        grb.i("tgvoip version is not set");
     }
 
     public static void destroyInstance() {
@@ -310,11 +310,11 @@ public final class Instance {
         return globalServerConfig;
     }
 
-    public static NativeInstance makeInstance(String str, Config config, String str2, Endpoint[] endpointArr, Proxy proxy, int i, EncryptionKey encryptionKey, VideoSink videoSink, long j, NativeInstance.AudioLevelsCallback audioLevelsCallback) {
+    public static NativeInstance makeInstance(String str, Config config, String str2, Endpoint[] endpointArr, Proxy proxy, int i, EncryptionKey encryptionKey, VideoSink videoSink, long j, NativeInstance.AudioLevelsCallback audioLevelsCallback, int i2, String str3) {
         if (!"2.4.4".equals(str)) {
             ContextUtils.initialize(org.telegram.messenger.a.b);
         }
-        instance = NativeInstance.make(str, config, str2, endpointArr, proxy, i, encryptionKey, videoSink, j, audioLevelsCallback);
+        instance = NativeInstance.make(str, config, str2, endpointArr, proxy, i, encryptionKey, videoSink, j, audioLevelsCallback, i2, str3);
         setGlobalServerConfig(globalServerConfig.jsonObject.toString());
         setBufferSize(bufferSize);
         return instance;
@@ -330,19 +330,19 @@ public final class Instance {
 
     public static void setGlobalServerConfig(String str) {
         try {
-            globalServerConfig = new ServerConfig(new JSONObject(str));
+            globalServerConfig = new ServerConfig(new JSONObject(str), 0);
             NativeInstance nativeInstance = instance;
             if (nativeInstance != null) {
                 nativeInstance.setGlobalServerConfig(str);
             }
         } catch (JSONException e) {
-            if (w01.a) {
-                fa4.e("failed to parse tgvoip server config", e);
+            if (f11.a) {
+                cc4.e("failed to parse tgvoip server config", e);
             }
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class ServerConfig {
         public final boolean enableStunMarking;
         public final boolean enable_h264_decoder;
@@ -380,6 +380,10 @@ public final class Instance {
 
         public String getString(String str, String str2) {
             return this.jsonObject.optString(str, str2);
+        }
+
+        public /* synthetic */ ServerConfig(JSONObject jSONObject, int i) {
+            this(jSONObject);
         }
     }
 }

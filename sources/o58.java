@@ -1,249 +1,79 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class o58 extends i98 {
-    public final /* synthetic */ u58 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class o58 extends FrameLayout {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ o68 b;
 
-    public o58(u58 u58Var) {
-        this.a = u58Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o58(o68 o68Var, Context context, byte b) {
+        super(context);
+        this.a = b;
+        this.b = o68Var;
     }
 
-    @Override // i98, o98
-    public final int D(int i, oac oacVar) {
-        int a0;
-        boolean z;
-        u58 u58Var = this.a;
-        ArrayList arrayList = u58Var.f;
-        ArrayList arrayList2 = u58Var.c;
-        xl6 xl6Var = u58Var.K;
-        if (xl6Var != null) {
-            if (i >= 0 && i < xl6Var.e.size()) {
-                jm6 jm6Var = (jm6) xl6Var.e.get(i);
-                a0 = u58Var.a0(-1, jm6Var);
-                if (a0 == -1) {
-                    jm6Var.s = oacVar;
-                    a0 = arrayList2.indexOf(Integer.valueOf(jm6Var.C));
-                    z = true;
-                } else {
-                    jm6Var.s = null;
-                    z = false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int x;
+        byte b = this.a;
+        o68 o68Var = this.b;
+        switch (b) {
+            case 0:
+                if (o68Var.p2.getVisibility() == 0 && o68Var.p2.getLayoutParams().width != (x = (int) (((o68Var.k2.getX() + o68Var.k2.getMeasuredWidth()) - o68Var.p2.getX()) + hl.L(10.0f)))) {
+                    o68Var.p2.getLayoutParams().width = x;
+                    o68Var.p2.invalidate();
+                    o68Var.p2.requestLayout();
                 }
-            }
-            return -1;
-        }
-        if (i >= 0 && i < arrayList.size()) {
-            nm6 nm6Var = (nm6) arrayList.get(i);
-            a0 = u58Var.a0(-1, nm6Var);
-            if (a0 == -1) {
-                nm6Var.s = oacVar;
-                a0 = arrayList2.indexOf(nm6Var.B);
-                z = true;
-            } else {
-                nm6Var.s = null;
-                z = false;
-            }
-        }
-        return -1;
-        int childCount = u58Var.L.getChildCount();
-        int i2 = 0;
-        while (true) {
-            if (i2 >= childCount) {
+                super.dispatchDraw(canvas);
                 break;
-            }
-            View childAt = u58Var.L.getChildAt(i2);
-            if (((Integer) childAt.getTag()).intValue() == i) {
-                ((o48) childAt).b(u58Var.e ? a0 : -1, z, false);
-            } else {
-                i2++;
-            }
-        }
-        u58Var.m0(z ? 1 : 2);
-        u58Var.t0.e();
-        return a0;
-    }
-
-    @Override // i98, o98
-    public final void F() {
-        u58 u58Var = this.a;
-        int childCount = u58Var.L.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childAt = u58Var.L.getChildAt(i);
-            if (childAt instanceof o48) {
-                ((o48) childAt).g(true);
-            }
-        }
-    }
-
-    @Override // i98, o98
-    public final int G() {
-        return this.a.b.size();
-    }
-
-    @Override // i98, o98
-    public final void L(int i, oac oacVar, boolean z, int i2, int i3, boolean z2) {
-        u58 u58Var = this.a;
-        ArrayList arrayList = u58Var.f;
-        xl6 xl6Var = u58Var.K;
-        if (u58Var.b.isEmpty()) {
-            if (xl6Var != null) {
-                if (i < 0 || i >= xl6Var.e.size()) {
-                    return;
+            case 1:
+                super.dispatchDraw(canvas);
+                if (o68Var.n1 && o68Var.B0 != null) {
+                    canvas.save();
+                    canvas.translate((getMeasuredWidth() - o68Var.B0.c()) - hl.L(6.0f), 0.0f);
+                    float e = o68Var.D0.e(false, o68Var.F0 ? 1.0f : 0.0f);
+                    canvas.scale(e, e, o68Var.B0.c() / 2.0f, hl.L(20.0f));
+                    hn hnVar = o68Var.B0;
+                    hnVar.C = jn7.d4;
+                    hnVar.draw(canvas);
+                    canvas.restore();
+                    break;
                 }
-                jm6 jm6Var = (jm6) xl6Var.e.get(i);
-                jm6Var.s = oacVar;
-                u58Var.a0(-1, jm6Var);
-            } else {
-                if (i < 0 || i >= arrayList.size()) {
-                    return;
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                if (o68Var.n1 && o68Var.A0 != null) {
+                    canvas.save();
+                    canvas.translate((getMeasuredWidth() - o68Var.A0.c()) - hl.L(6.0f), 0.0f);
+                    float e2 = o68Var.C0.e(false, o68Var.E0 ? 1.0f : 0.0f);
+                    canvas.scale(e2, e2, o68Var.A0.c() / 2.0f, hl.L(20.0f));
+                    hn hnVar2 = o68Var.A0;
+                    hnVar2.C = jn7.d4;
+                    hnVar2.draw(canvas);
+                    canvas.restore();
+                    break;
                 }
-                nm6 nm6Var = (nm6) arrayList.get(i);
-                nm6Var.s = oacVar;
-                u58Var.a0(-1, nm6Var);
-            }
-        }
-        u58Var.i0(i2, z);
-    }
-
-    @Override // i98, o98
-    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        u58 u58Var = this.a;
-        o48 c0 = u58Var.c0(i);
-        if (c0 == null) {
-            return null;
-        }
-        be0 imageView = c0.getImageView();
-        int[] iArr = new int[2];
-        imageView.getLocationInWindow(iArr);
-        p98 p98Var = new p98();
-        p98Var.b = iArr[0];
-        p98Var.c = iArr[1];
-        p98Var.d = u58Var.L;
-        ImageReceiver imageReceiver = imageView.getImageReceiver();
-        p98Var.a = imageReceiver;
-        p98Var.e = imageReceiver.p();
-        p98Var.k = c0.getScale();
-        c0.g(false);
-        return p98Var;
-    }
-
-    @Override // i98, o98
-    public final int R(Object obj) {
-        u58 u58Var = this.a;
-        ArrayList arrayList = u58Var.c;
-        HashMap hashMap = u58Var.b;
-        Object valueOf = obj instanceof jm6 ? Integer.valueOf(((jm6) obj).C) : obj instanceof nm6 ? ((nm6) obj).B : null;
-        if (valueOf == null || !hashMap.containsKey(valueOf)) {
-            return -1;
-        }
-        hashMap.remove(valueOf);
-        int indexOf = arrayList.indexOf(valueOf);
-        if (indexOf >= 0) {
-            arrayList.remove(indexOf);
-        }
-        if (u58Var.e) {
-            u58Var.l0();
-        }
-        return indexOf;
-    }
-
-    @Override // i98, o98
-    public final void X(int i) {
-        u58 u58Var = this.a;
-        xl6 xl6Var = u58Var.K;
-        o48 c0 = u58Var.c0(i);
-        if (c0 != null) {
-            if (xl6Var == null) {
-                c0.e((nm6) u58Var.f.get(i));
-                return;
-            }
-            be0 imageView = c0.getImageView();
-            imageView.q();
-            jm6 jm6Var = (jm6) xl6Var.e.get(i);
-            String str = jm6Var.c;
-            int i2 = jm6Var.C;
-            String str2 = jm6Var.I;
-            if (str != null) {
-                imageView.o(str, null, bkb.Q4);
-                return;
-            }
-            if (str2 == null) {
-                imageView.setImageDrawable(bkb.Q4);
-                return;
-            }
-            imageView.r(jm6Var.J, jm6Var.K, true);
-            if (!jm6Var.b || jm6Var.d()) {
-                imageView.o(mue.d("thumb://", i2, ":", str2), null, bkb.Q4);
-            } else {
-                imageView.o(mue.d("vthumb://", i2, ":", str2), null, bkb.Q4);
-            }
+                break;
         }
     }
 
-    @Override // i98, o98
-    public final void a0(int i) {
-        u58 u58Var = this.a;
-        int childCount = u58Var.L.getChildCount();
-        for (int i2 = 0; i2 < childCount; i2++) {
-            View childAt = u58Var.L.getChildAt(i2);
-            if (childAt.getTag() != null) {
-                o48 o48Var = (o48) childAt;
-                int intValue = ((Integer) childAt.getTag()).intValue();
-                xl6 xl6Var = u58Var.K;
-                if (xl6Var == null ? !(intValue < 0 || intValue >= u58Var.f.size()) : !(intValue < 0 || intValue >= xl6Var.e.size())) {
-                    if (intValue == i) {
-                        o48Var.g(true);
-                        return;
-                    }
-                }
-            }
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        byte b = this.a;
+        o68 o68Var = this.b;
+        switch (b) {
+            case 1:
+                return drawable == o68Var.B0 || super.verifyDrawable(drawable);
+            case 2:
+                return drawable == o68Var.A0 || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
         }
-    }
-
-    @Override // i98, o98
-    public final ArrayList d() {
-        return this.a.c;
-    }
-
-    @Override // i98, o98
-    public final jl5 k(int i) {
-        o48 c0 = this.a.c0(i);
-        if (c0 != null) {
-            return c0.getImageView().getImageReceiver().p();
-        }
-        return null;
-    }
-
-    @Override // i98, o98
-    public final boolean t() {
-        u58 u58Var = this.a;
-        u58Var.t0.l(0, true, true);
-        u58Var.finishFragment();
-        return true;
-    }
-
-    @Override // i98, o98
-    public final HashMap u() {
-        return this.a.b;
-    }
-
-    @Override // i98, o98
-    public final boolean w(int i) {
-        u58 u58Var = this.a;
-        ArrayList arrayList = u58Var.f;
-        HashMap hashMap = u58Var.b;
-        xl6 xl6Var = u58Var.K;
-        return xl6Var != null ? i >= 0 && i < xl6Var.e.size() && hashMap.containsKey(Integer.valueOf(((jm6) xl6Var.e.get(i)).C)) : i >= 0 && i < arrayList.size() && hashMap.containsKey(((nm6) arrayList.get(i)).B);
-    }
-
-    @Override // i98, o98
-    public final boolean y() {
-        return this.a.F;
     }
 }

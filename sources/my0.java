@@ -1,11 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface my0 {
-    int a();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class my0 {
+    public boolean a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public vnb g;
 
-    int b();
+    public my0(my0 my0Var) {
+        this.a = my0Var.a;
+        this.b = my0Var.b;
+        this.c = my0Var.c;
+        this.d = my0Var.d;
+        this.e = my0Var.e;
+        this.f = my0Var.f;
+        this.g = my0Var.g;
+    }
 
-    int c();
+    public my0() {
+        this.b = 1;
+        this.f = 1;
+    }
 }

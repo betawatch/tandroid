@@ -1,30 +1,40 @@
 // default package
 
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class fsc extends TLObject {
-    public double a;
-    public double b;
-    public String c;
-    public float d;
+public final /* synthetic */ class fsc implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ pcc c;
+    public final /* synthetic */ String d;
 
-    public final String a() {
-        boolean a = gsc.a();
-        float f = this.d;
-        if (!a) {
-            return de9.l(new StringBuilder(), (int) Math.round(((f * 9.0d) / 5.0d) + 32.0d), "°F");
-        }
-        return Math.round(f) + "°C";
+    public /* synthetic */ fsc(WalletEngine2 walletEngine2, pcc pccVar, String str) {
+        this.b = walletEngine2;
+        this.c = pccVar;
+        this.d = str;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeDouble(this.a);
-        outputSerializedData.writeDouble(this.b);
-        outputSerializedData.writeString(this.c);
-        outputSerializedData.writeFloat(this.d);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.d;
+        pcc pccVar = this.c;
+        WalletEngine2 walletEngine2 = this.b;
+        switch (b) {
+            case 0:
+                walletEngine2.lambda$getTransactionByHash$42(str, pccVar);
+                break;
+            default:
+                walletEngine2.lambda$previewSignMessage$10(pccVar, str);
+                break;
+        }
+    }
+
+    public /* synthetic */ fsc(WalletEngine2 walletEngine2, String str, pcc pccVar) {
+        this.b = walletEngine2;
+        this.d = str;
+        this.c = pccVar;
     }
 }

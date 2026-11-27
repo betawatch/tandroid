@@ -1,31 +1,248 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.text.InputFilter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class h4a implements l11 {
-    public final /* synthetic */ m21 a;
-    public final /* synthetic */ j4a b;
+public final class h4a extends nx0 {
+    public final lu7 l1;
+    public final EditTextBoldCursor m1;
+    public final TextView n1;
+    public final in o1;
+    public final c51 p1;
+    public final in q1;
+    public final xkb r1;
+    public final ImageView s1;
+    public final ImageView t1;
+    public final oj u1;
+    public final oj v1;
+    public final oj w1;
+    public final oj x1;
+    public oj y1;
+    public int z1;
 
-    public h4a(j4a j4aVar, m21 m21Var) {
-        this.b = j4aVar;
-        this.a = m21Var;
+    public h4a(Context context, vnb vnbVar, int i, oj ojVar, ku9 ku9Var) {
+        super(1, vnbVar, context, true);
+        this.a = i;
+        this.Q0 = true;
+        this.E = true;
+        hr hrVar = uc7.s1(i).k4;
+        long max = Math.max(hrVar.q.f(), 10000000L);
+        pj pjVar = pj.b;
+        this.w1 = oj.j(max, pjVar);
+        this.x1 = oj.j(hrVar.r.f(), pjVar);
+        long f = hrVar.o.f();
+        pj pjVar2 = pj.a;
+        this.u1 = oj.h(f, pjVar2);
+        this.v1 = oj.h(hrVar.p.f(), pjVar2);
+        L(aob.h5);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        LinearLayout j = uh9.j(context, 0);
+        linearLayout.addView(j, tre.t(-1, 56, 55, 0, 0, 0, 0));
+        in inVar = new in(context, false, false, false);
+        this.o1 = inVar;
+        int i2 = aob.G6;
+        yob.U(inVar, i2, null);
+        inVar.setTextSize(hl.L(20.0f));
+        inVar.setGravity(8388627);
+        inVar.setTypeface(hl.o());
+        j.addView(inVar, tre.q(-1, -1, 1.0f, jn7.D1, 22, 0, 22, 0));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        linearLayout.addView(linearLayout2, tre.l(1.0f, -1, -2));
+        lu7 lu7Var = new lu7(context, null);
+        this.l1 = lu7Var;
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.m1 = editTextBoldCursor;
+        editTextBoldCursor.setCursorSize(hl.L(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setImeOptions(268435462);
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setBackground(null);
+        editTextBoldCursor.setPadding(hl.L(42.0f), hl.L(16.0f), hl.L(16.0f), hl.L(16.0f));
+        yob.X(editTextBoldCursor, i2, null);
+        editTextBoldCursor.requestFocus();
+        lu7Var.setLeftPadding(hl.L(28.0f));
+        lu7Var.e(editTextBoldCursor);
+        lu7Var.b(1.0f, ojVar != null && !ojVar.l() ? 1.0f : 0.0f, false);
+        lu7Var.setForceUseCenter2(true);
+        editTextBoldCursor.setOnFocusChangeListener(new ts0(this, (byte) 18));
+        lu7Var.addView(editTextBoldCursor, tre.e(-1, -2, 48));
+        linearLayout2.addView(lu7Var, tre.k(18.0f, 0.0f, 18.0f, 0.0f, -1, 58));
+        ImageView imageView = new ImageView(context);
+        this.s1 = imageView;
+        imageView.setImageResource(R.drawable.star_small_inner);
+        lu7Var.addView(imageView, tre.d(22, 22.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.t1 = imageView2;
+        imageView2.setImageResource(R.drawable.mini_gram_72);
+        lu7Var.addView(imageView2, tre.d(22, 22.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        in inVar2 = new in(context, false, false, false);
+        this.q1 = inVar2;
+        int i3 = aob.y6;
+        yob.U(inVar2, i3, null);
+        inVar2.setTextSize(hl.L(13.0f));
+        inVar2.setGravity(5);
+        lu7Var.addView(inVar2, tre.d(-2, -1.0f, 21, 0.0f, 0.0f, 16.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.n1 = textView;
+        yob.X(textView, i3, null);
+        textView.setTextSize(1, 13.0f);
+        linearLayout2.addView(textView, tre.t(-1, -2, 55, 33, 4, 33, 0));
+        xkb xkbVar = new xkb(context);
+        this.r1 = xkbVar;
+        xkbVar.c.setLayoutParams(tre.d(20, 20.0f, (ob6.a0 ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
+        xkbVar.b(ob6.M0(2131745855, null), ob6.M0(2131745856, null), true, false);
+        xkbVar.setOnClickListener(new jn8(this, (byte) 24));
+        linearLayout2.addView(xkbVar, tre.t(-1, -2, 55, 0, 16, 0, 16));
+        LinearLayout linearLayout3 = new LinearLayout(context);
+        linearLayout3.setOrientation(1);
+        linearLayout.addView(linearLayout3, tre.r(-1, -2, 80));
+        c51 i4 = xnb.i(24, vnbVar, context, true);
+        this.p1 = i4;
+        i4.setOnClickListener(new jy8(this, ku9Var, (byte) 10));
+        i4.i(ob6.M0(2131745878, null), false, true);
+        linearLayout3.addView(i4, tre.k(18.0f, 0.0f, 18.0f, 8.0f, -1, 48));
+        if (ojVar != null) {
+            F0(oj.j(ojVar.b, ojVar.a), !ojVar.l(), true, false);
+        } else {
+            F0(oj.j(0L, pjVar2), false, true, false);
+        }
+        this.O = linearLayout;
+        editTextBoldCursor.addTextChangedListener(new nh6(this, (byte) 13));
     }
 
-    @Override // l11
-    public final void a() {
-        this.b.G.add(this.a);
+    public final oj E0() {
+        return this.y1.a == pj.b ? this.x1 : this.v1;
     }
 
-    @Override // l11
-    public final void b() {
-        this.b.G.remove(this.a);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void F0(oj ojVar, boolean z, boolean z2, boolean z3) {
+        int i;
+        pj pjVar = pj.b;
+        pj pjVar2 = pj.a;
+        oj ojVar2 = this.y1;
+        int i2 = this.z1;
+        this.z1 = 0;
+        if (ojVar != null) {
+            this.y1 = ojVar;
+        } else {
+            this.y1 = oj.j(0L, ojVar2.a);
+            this.z1 |= 1;
+        }
+        long j = E0().b;
+        oj ojVar3 = this.y1;
+        if (j < ojVar3.b) {
+            this.z1 |= 4;
+        }
+        if (!ojVar3.l()) {
+            oj ojVar4 = this.y1;
+            if ((ojVar4.a == pjVar ? this.w1 : this.u1).b > ojVar4.b) {
+                this.z1 |= 2;
+            }
+        }
+        boolean z4 = z2 || ojVar2.a != this.y1.a;
+        boolean z5 = z2 || ojVar2.b != this.y1.b;
+        boolean z6 = z2 || i2 != this.z1;
+        if (z6) {
+            this.l1.a((this.z1 & (-9)) == 0 ? 0.0f : 1.0f);
+        }
+        if (z4) {
+            ImageView imageView = this.t1;
+            in inVar = this.o1;
+            EditTextBoldCursor editTextBoldCursor = this.m1;
+            i = 0;
+            pj pjVar3 = this.y1.a;
+            if (pjVar3 == pjVar2) {
+                inVar.c(ob6.M0(2131745850, null), z3, true);
+                editTextBoldCursor.setInputType(2);
+                editTextBoldCursor.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Long.toString(E0().a()).length())});
+            } else if (pjVar3 == pjVar) {
+                inVar.c(ob6.M0(2131745849, null), z3, true);
+                editTextBoldCursor.setInputType(8194);
+                editTextBoldCursor.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Long.toString(E0().a()).length() + 3)});
+            }
+            this.r1.c.a(this.y1.a == pjVar, z3);
+            ImageView imageView2 = this.s1;
+            if (z3) {
+                imageView2.animate().alpha(this.y1.a == pjVar2 ? 1.0f : 0.0f).scaleX(this.y1.a == pjVar2 ? 1.0f : 0.0f).scaleY(this.y1.a == pjVar2 ? 1.0f : 0.0f).setDuration(180L).start();
+                imageView.animate().alpha(this.y1.a == pjVar ? 1.0f : 0.0f).scaleX(this.y1.a == pjVar ? 1.0f : 0.0f).scaleY(this.y1.a == pjVar ? 1.0f : 0.0f).setDuration(180L).start();
+            } else {
+                imageView2.setAlpha(this.y1.a == pjVar2 ? 1.0f : 0.0f);
+                imageView.setAlpha(this.y1.a == pjVar ? 1.0f : 0.0f);
+            }
+        } else {
+            i = 0;
+        }
+        if (z4 || z6) {
+            lu7 lu7Var = this.l1;
+            int i3 = this.z1;
+            if ((i3 & 4) != 0) {
+                Object[] objArr = new Object[1];
+                objArr[i] = E0().g();
+                lu7Var.setText(ob6.a0(null, null, 2131745852, objArr));
+            } else {
+                int i4 = i3 & 2;
+                oj ojVar5 = this.y1;
+                if (i4 != 0) {
+                    oj ojVar6 = ojVar5.a == pjVar ? this.w1 : this.u1;
+                    Object[] objArr2 = new Object[1];
+                    objArr2[i] = ojVar6.g();
+                    lu7Var.setText(ob6.a0(null, null, 2131745851, objArr2));
+                } else {
+                    lu7Var.setText(ob6.M0(ojVar5.a == pjVar2 ? 2131745854 : 2131745853, null));
+                }
+            }
+        }
+        if (z4 || z5 || z6) {
+            c51 c51Var = this.p1;
+            boolean z7 = (this.z1 != 0 || this.y1.b <= 0) ? i : 1;
+            if (c51Var.e0 != z7) {
+                c51Var.setEnabled(z7);
+                c51Var.setClickable(z7);
+                if (z3) {
+                    ik8.s(c51Var.animate(), z7 != 0 ? 1.0f : 0.6f, 180L);
+                } else {
+                    c51Var.setAlpha(z7 != 0 ? 1.0f : 0.6f);
+                }
+            }
+        }
+        if (z4 || z5) {
+            hr hrVar = uc7.s1(this.a).k4;
+            oj ojVar7 = this.y1;
+            pj pjVar4 = ojVar7.a;
+            if (pjVar4 == pjVar2) {
+                this.n1.setText(hl.S2(ob6.G((int) oj.j((ojVar7.b * hrVar.m.f()) / 1000, ojVar7.a).a(), "ResellGiftInfo", new Object[i])));
+            } else if (pjVar4 == pjVar) {
+                this.n1.setText(hl.S2(ob6.a0(null, null, 2131745859, oj.j((ojVar7.b * hrVar.n.f()) / 1000, ojVar7.a).b())));
+            }
+            StringBuilder sb = new StringBuilder(10);
+            sb.append('~');
+            pj pjVar5 = this.y1.a;
+            int i5 = this.a;
+            double d = pjVar5 == pjVar ? uc7.s1(i5).k4.k.i : uc7.s1(i5).k4.A3.i * 1.0E-5d;
+            di0.h();
+            sb.append(di0.f("USD", 2, (long) (this.y1.c() * d * 100.0d), false));
+            this.q1.c(sb, z3, true);
+        }
+        if (z && z5) {
+            String b = this.y1.b();
+            this.m1.setText(b);
+            this.m1.setSelection(b.length());
+        }
     }
 
-    @Override // l11
-    public final void c() {
-    }
-
-    @Override // l11
-    public final void d(m21 m21Var) {
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        super.show();
+        hl.d3(new ux9(this, (byte) 12), 50L);
     }
 }

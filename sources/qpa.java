@@ -1,128 +1,76 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qpa extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final RadialGradient[] d;
-    public final Matrix e;
-    public final lm f;
-    public final RadialGradient h;
-    public final Path n;
-    public int r;
-    public int s;
+public final class qpa extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ rpa c;
+    public final /* synthetic */ nk0 d;
 
-    public qpa(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new RadialGradient[2];
-        this.e = new Matrix();
-        this.f = new lm(1.0f, this, 0L, 420L, s33.h);
-        this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
-        this.n = new Path();
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+    public qpa(nk0 nk0Var, View view, ArrayList arrayList, rpa rpaVar) {
+        this.d = nk0Var;
+        this.a = view;
+        this.b = arrayList;
+        this.c = rpaVar;
     }
 
-    public final void a(int i, int i2) {
-        if (this.r == i && this.s == i2) {
-            return;
-        }
-        RadialGradient[] radialGradientArr = this.d;
-        radialGradientArr[0] = radialGradientArr[1];
-        this.r = i;
-        this.s = i2;
-        radialGradientArr[1] = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{i, i2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.f.e(true, 0.0f);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f;
-        float f2 = 1.0f;
-        float e = this.f.e(false, 1.0f);
-        float currentTimeMillis = ((System.currentTimeMillis() % 15000) / 15000.0f) * 360.0f;
-        if (getAlpha() > 0.0f) {
-            invalidate();
-        }
-        Paint.Style style = Paint.Style.STROKE;
-        Paint paint = this.b;
-        paint.setStyle(style);
-        paint.setStrokeWidth(gl.L(2.0f));
-        Path path = this.n;
-        path.rewind();
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float min = Math.min(getWidth(), getHeight()) / 2.0f;
-        for (int i = 0; i < 6; i++) {
-            float i2 = ir2.i(i, 60.0f, 12.5f, currentTimeMillis);
-            path.moveTo(width, height);
-            double d = ((i2 - 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d)) * min) + width, (((float) Math.sin(d)) * min) + height);
-            double d2 = ((i2 + 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d2)) * min) + width, (((float) Math.sin(d2)) * min) + height);
-            path.lineTo(width, height);
-        }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), kk7.d4, 31);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x = (int) motionEvent.getX();
+        int y = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y;
+        int paddingLeft = x - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        nk0 nk0Var = this.d;
+        int i = paddingLeft - nk0Var.b;
+        int i2 = paddingTop - nk0Var.c;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
         int i3 = 0;
-        while (true) {
-            RadialGradient[] radialGradientArr = this.d;
-            int length = radialGradientArr.length;
-            Matrix matrix = this.e;
-            if (i3 >= length) {
-                matrix.reset();
-                float f3 = min / 100.0f;
-                matrix.postScale(f3, f3);
-                matrix.postTranslate(width, height);
-                RadialGradient radialGradient = this.h;
-                radialGradient.setLocalMatrix(matrix);
-                Paint paint2 = this.c;
-                paint2.setShader(radialGradient);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint2);
-                canvas.restore();
-                return;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            if (((npa) obj).getBounds().contains(i, i2)) {
+                nk0Var.a = true;
+                return true;
             }
-            if (radialGradientArr[i3] == null) {
-                f = e;
-            } else {
-                f = e;
-                float pow = (float) Math.pow(f2 - Math.abs(i3 - e), 0.5d);
-                if (pow > 0.0f) {
-                    matrix.reset();
-                    float f4 = min / 100.0f;
-                    matrix.postScale(f4, f4);
-                    matrix.postTranslate(width, height);
-                    radialGradientArr[i3].setLocalMatrix(matrix);
-                    RadialGradient radialGradient2 = radialGradientArr[i3];
-                    Paint paint3 = this.a;
-                    paint3.setShader(radialGradient2);
-                    float f5 = pow * 255.0f;
-                    paint3.setAlpha((int) (0.3f * f5));
-                    paint.setShader(radialGradientArr[i3]);
-                    paint.setAlpha((int) f5);
-                    canvas.drawPath(path, paint3);
-                    canvas.drawPath(path, paint);
+        }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        nk0 nk0Var = this.d;
+        if (nk0Var.a) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            nk0Var.a = false;
+            int x = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i = paddingLeft - nk0Var.b;
+            int i2 = paddingTop - nk0Var.c;
+            ArrayList arrayList = this.b;
+            int size = arrayList.size();
+            int i3 = 0;
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                npa npaVar = (npa) obj;
+                if (npaVar.getBounds().contains(i, i2)) {
+                    this.c.d(npaVar, i, i2);
+                    return true;
                 }
             }
-            i3++;
-            e = f;
-            f2 = 1.0f;
         }
+        return false;
     }
 }

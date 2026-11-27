@@ -1,44 +1,63 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.LaunchActivity;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class hr9 extends fm {
-    public final lm d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ScrollSlidingTextTabStrip f;
+public final class hr9 extends FrameLayout {
+    public final hmc a;
+    public boolean b;
+    public boolean c;
+    public final long d;
+    public final ki7 e;
+    public final /* synthetic */ ir9 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hr9(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i) {
-        super(context);
-        this.f = scrollSlidingTextTabStrip;
-        this.e = i;
-        this.d = new lm(360L, this, s33.h);
+    public hr9(ir9 ir9Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.f = ir9Var;
+        this.c = true;
+        this.d = SystemClock.elapsedRealtime();
+        this.e = new ki7(this, (byte) 23);
+        setBackgroundColor(-16777216);
+        l91 l91Var = new l91(launchActivity);
+        addView(l91Var, tre.c(-1.0f, -1));
+        hmc hmcVar = new hmc(launchActivity, false, false, false, false);
+        this.a = hmcVar;
+        RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
+        gmc gmcVar = hmcVar.d;
+        gmcVar.setScalingType(scalingType);
+        hmcVar.b0 = (byte) 0;
+        gmcVar.setRotateTextureWithScreen(true);
+        gmcVar.b(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
+        View view = hmcVar.h;
+        if (view != null) {
+            view.setVisibility(8);
+        }
+        addView(hmcVar, tre.c(-1.0f, -1));
+        vc2 c = ir9.c();
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (c == null || sharedInstance == null || sharedInstance.getChat() == null) {
+            return;
+        }
+        sharedInstance.getAccount();
+        l91Var.a(sharedInstance.getChat());
     }
 
-    @Override // fm, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float d = this.d.d(this.f.o0);
-        if (d > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (gl.R1(1.0f, 0.5f, d) * 255.0f));
-        } else {
-            canvas2 = canvas;
+    public final void a() {
+        boolean a = this.f.b.a(this.d);
+        if (this.c == a) {
+            return;
         }
-        super.onDraw(canvas2);
-        if (d > 0.0f) {
-            canvas2.restore();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+        this.c = a;
+        hmc hmcVar = this.a;
+        hmcVar.animate().cancel();
+        ik8.s(hmcVar.animate(), a ? 1.0f : 0.0f, 200L);
     }
 }

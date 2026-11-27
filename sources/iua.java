@@ -1,46 +1,83 @@
 // default package
 
-import android.widget.LinearLayout;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class iua extends i98 {
-    public final /* synthetic */ be0 a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ long c;
+public final class iua {
+    public final sua a;
+    public nua b;
+    public nua c;
+    public nua d;
+    public eua h;
+    public eua i;
+    public eua j;
+    public eua k;
+    public TL_stars.TL_starGiftUnique l;
+    public long m;
+    public jra r;
+    public jra s;
+    public float t;
+    public boolean u;
+    public boolean v;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public float n = 0.0f;
+    public boolean o = false;
+    public boolean p = false;
+    public boolean q = false;
 
-    public iua(be0 be0Var, LinearLayout linearLayout, long j) {
-        this.a = be0Var;
-        this.b = linearLayout;
-        this.c = j;
+    public iua(sua suaVar) {
+        this.a = suaVar;
+        suaVar.c.addOnAttachStateChangeListener(new xc(this, (byte) 20));
     }
 
-    @Override // i98, o98
-    public final boolean K() {
-        return true;
-    }
-
-    @Override // i98, o98
-    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        be0 be0Var = this.a;
-        ImageReceiver imageReceiver = be0Var.getImageReceiver();
-        int[] iArr = new int[2];
-        be0Var.getLocationInWindow(iArr);
-        p98 p98Var = new p98();
-        p98Var.b = iArr[0];
-        p98Var.c = iArr[1];
-        p98Var.d = this.b;
-        p98Var.m = null;
-        p98Var.a = imageReceiver;
-        if (z) {
-            p98Var.e = imageReceiver.p();
+    public final void a() {
+        this.o = false;
+        this.a.c.c();
+        eua euaVar = this.h;
+        if (euaVar != null) {
+            euaVar.a();
         }
-        p98Var.h = imageReceiver.z();
-        p98Var.f = this.c;
-        p98Var.j = 0;
-        p98Var.i = 0;
-        return p98Var;
+        eua euaVar2 = this.i;
+        if (euaVar2 != null) {
+            euaVar2.a();
+        }
+        eua euaVar3 = this.j;
+        if (euaVar3 != null) {
+            euaVar3.a();
+        }
+        eua euaVar4 = this.k;
+        if (euaVar4 != null) {
+            euaVar4.a();
+        }
+        c();
+    }
+
+    public final void b() {
+        if (!this.o || this.v) {
+            return;
+        }
+        this.v = true;
+        hl.c3(new cua(this, (byte) 1));
+    }
+
+    public final void c() {
+        if (this.o) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((gua) obj).a();
+        }
+        arrayList.clear();
+        this.f.clear();
+        this.g.clear();
     }
 }

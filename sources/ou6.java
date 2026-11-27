@@ -1,90 +1,299 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Point;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Display;
-import android.view.WindowManager;
-import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.LaunchActivity;
+import android.os.SystemClock;
+import android.text.method.LinkMovementMethod;
+import android.view.ContextThemeWrapper;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ou6 {
-    public static final AtomicReference l = new AtomicReference(null);
-    public final Context a;
-    public final oc8 b;
-    public String c;
-    public final cff d;
-    public final Bundle e;
-    public final Bundle f;
-    public wj0 g;
-    public final w59 h;
-    public final w59 i;
-    public final w59 j;
-    public boolean k;
+public final class ou6 extends ep {
+    public TextView E;
+    public LinearLayout F;
+    public Button G;
+    public ProgressBar H;
+    public ListView I;
+    public mu6 J;
+    public final ak K;
+    public boolean L;
+    public long M;
+    public final d1 N;
+    public final lw6 f;
+    public final lu6 h;
+    public dw6 n;
+    public ArrayList r;
+    public TextView s;
+    public TextView w;
+    public RelativeLayout x;
+    public TextView y;
 
-    public ou6(LaunchActivity launchActivity, oc8 oc8Var) {
-        cff cffVar = new cff((byte) 21);
-        Context applicationContext = launchActivity.getApplicationContext();
-        applicationContext.getClass();
-        this.a = applicationContext;
-        this.b = oc8Var;
-        gre.f(oc8Var.N());
-        this.c = "";
-        this.d = cffVar;
-        this.e = new Bundle();
-        this.f = new Bundle();
-        km5 km5Var = mm5.b;
-        w59 w59Var = w59.e;
-        this.h = w59Var;
-        this.i = w59Var;
-        this.j = w59Var;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ou6(Context context) {
+        super(r3, r1 == 0 ? nte.e(r3) : r1);
+        byte b = 0;
+        ContextThemeWrapper a = nte.a(context, false);
+        int g = nte.g(a, R.attr.mediaRouteTheme);
+        this.n = dw6.c;
+        this.N = new d1(this, (byte) 7);
+        this.f = lw6.d(getContext());
+        this.h = new lu6(this, b);
+        this.K = new ak(this, (byte) 8);
     }
 
-    public final uu6 a() {
-        gre.p(!this.k);
-        this.k = true;
-        Object obj = uu6.c;
-        int intValue = ((Integer) tv6.C.get()).intValue();
-        int i = Build.VERSION.SDK_INT;
-        Context context = this.a;
-        if (i < 27) {
-            intValue = Math.max(intValue, (int) TypedValue.applyDimension(1, 320.0f, context.getResources().getDisplayMetrics()));
+    @Override // ep, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        try {
+            getContext().unregisterReceiver(this.K);
+        } catch (IllegalArgumentException unused) {
         }
-        wj0 wj0Var = this.g;
-        if (wj0Var == null) {
-            dd ddVar = new dd(context, (byte) 5);
-            ddVar.b = (intValue << 1) - 1;
-            q63 q63Var = new q63(ddVar);
-            this.g = q63Var;
-            wj0Var = q63Var;
+        super.dismiss();
+    }
+
+    public final void e(List list) {
+        this.M = SystemClock.uptimeMillis();
+        this.r.clear();
+        this.r.addAll(list);
+        this.J.notifyDataSetChanged();
+        d1 d1Var = this.N;
+        d1Var.removeMessages(3);
+        d1Var.removeMessages(2);
+        if (!list.isEmpty()) {
+            i(1);
+        } else {
+            i(0);
+            d1Var.sendMessageDelayed(d1Var.obtainMessage(2), 5000L);
         }
-        wj0 ddVar2 = new dd(wj0Var, intValue, (byte) 15);
-        this.g = ddVar2;
-        if (i == 29) {
-            AtomicReference atomicReference = l;
-            im5 im5Var = (im5) atomicReference.get();
-            if (im5Var == null) {
-                Display defaultDisplay = ((WindowManager) context.getSystemService(WindowManager.class)).getDefaultDisplay();
-                Point point = new Point();
-                defaultDisplay.getSize(point);
-                Point point2 = new Point();
-                defaultDisplay.getRealSize(point2);
-                int i2 = point2.y;
-                int i3 = point2.x;
-                Point point3 = new Point(i2 - (i3 - point.x), i3 - (i2 - point.y));
-                im5 im5Var2 = new im5(new int[]{Math.max(point.x / 6, point.y / 6), Math.max(point3.x / 6, point3.y / 6)}, 2);
-                atomicReference.set(im5Var2);
-                im5Var = im5Var2;
+    }
+
+    public final void f() {
+        if (this.L) {
+            this.f.getClass();
+            lw6.b();
+            ArrayList arrayList = new ArrayList(lw6.c().j);
+            int size = arrayList.size();
+            while (true) {
+                int i = size - 1;
+                if (size <= 0) {
+                    break;
+                }
+                jw6 jw6Var = (jw6) arrayList.get(i);
+                if (jw6Var.d() || !jw6Var.g || !jw6Var.h(this.n)) {
+                    arrayList.remove(i);
+                }
+                size = i;
             }
-            wj0 sk4Var = new sk4(ddVar2, im5Var, (byte) 24);
-            this.g = sk4Var;
-            ddVar2 = sk4Var;
+            Collections.sort(arrayList, nu6.b);
+            if (SystemClock.uptimeMillis() - this.M >= 300) {
+                e(arrayList);
+                return;
+            }
+            d1 d1Var = this.N;
+            d1Var.removeMessages(1);
+            d1Var.sendMessageAtTime(d1Var.obtainMessage(1, arrayList), this.M + 300);
         }
-        this.g = new tg2(ddVar2, (byte) 12);
-        return new uu6(context, this.c, this.b, this.h, this.i, this.j, this.d, this.e, this.f, this.g);
+    }
+
+    public final void h(dw6 dw6Var) {
+        if (dw6Var == null) {
+            lq5.j("selector must not be null");
+            return;
+        }
+        if (this.n.equals(dw6Var)) {
+            return;
+        }
+        this.n = dw6Var;
+        if (this.L) {
+            lw6 lw6Var = this.f;
+            lu6 lu6Var = this.h;
+            lw6Var.h(lu6Var);
+            lw6Var.a(dw6Var, lu6Var, 1);
+        }
+        f();
+    }
+
+    public final void i(int i) {
+        if (i == 0) {
+            setTitle(R.string.mr_chooser_title);
+            this.I.setVisibility(8);
+            this.w.setVisibility(0);
+            this.H.setVisibility(0);
+            this.F.setVisibility(8);
+            this.G.setVisibility(8);
+            this.E.setVisibility(8);
+            this.x.setVisibility(8);
+            return;
+        }
+        if (i == 1) {
+            setTitle(R.string.mr_chooser_title);
+            this.I.setVisibility(0);
+            this.w.setVisibility(8);
+            this.H.setVisibility(8);
+            this.F.setVisibility(8);
+            this.G.setVisibility(8);
+            this.E.setVisibility(8);
+            this.x.setVisibility(8);
+            return;
+        }
+        if (i == 2) {
+            setTitle(R.string.mr_chooser_title);
+            this.I.setVisibility(8);
+            this.w.setVisibility(8);
+            this.H.setVisibility(0);
+            this.F.setVisibility(8);
+            this.G.setVisibility(8);
+            this.E.setVisibility(4);
+            this.x.setVisibility(0);
+            return;
+        }
+        if (i != 3) {
+            return;
+        }
+        setTitle(R.string.mr_chooser_zero_routes_found_title);
+        this.I.setVisibility(8);
+        this.w.setVisibility(8);
+        this.H.setVisibility(8);
+        this.F.setVisibility(0);
+        this.G.setVisibility(0);
+        this.E.setVisibility(0);
+        this.x.setVisibility(0);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.L = true;
+        this.f.a(this.n, this.h, 1);
+        f();
+        d1 d1Var = this.N;
+        d1Var.removeMessages(2);
+        d1Var.removeMessages(3);
+        d1Var.removeMessages(1);
+        d1Var.sendMessageDelayed(d1Var.obtainMessage(2), 5000L);
+    }
+
+    @Override // ep, rq2, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        String string;
+        boolean z;
+        super.onCreate(bundle);
+        setContentView(R.layout.mr_chooser_dialog);
+        this.r = new ArrayList();
+        this.J = new mu6(getContext(), this.r);
+        this.s = (TextView) findViewById(R.id.mr_chooser_title);
+        this.w = (TextView) findViewById(R.id.mr_chooser_searching);
+        this.x = (RelativeLayout) findViewById(R.id.mr_chooser_wifi_warning_container);
+        this.y = (TextView) findViewById(R.id.mr_chooser_wifi_warning_description);
+        this.E = (TextView) findViewById(R.id.mr_chooser_wifi_learn_more);
+        this.F = (LinearLayout) findViewById(R.id.mr_chooser_ok_button_container);
+        this.G = (Button) findViewById(R.id.mr_chooser_ok_button);
+        this.H = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
+        Context context = getContext();
+        Boolean bool = iie.a;
+        boolean z2 = false;
+        if (bool == null) {
+            if (!iie.c(context)) {
+                PackageManager packageManager = context.getPackageManager();
+                Boolean bool2 = iie.e;
+                if (bool2 == null) {
+                    bool2 = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
+                    iie.e = bool2;
+                }
+                if (!bool2.booleanValue() && !iie.a(context) && !iie.d(context)) {
+                    z = true;
+                    bool = Boolean.valueOf(z);
+                    iie.a = bool;
+                }
+            }
+            z = false;
+            bool = Boolean.valueOf(z);
+            iie.a = bool;
+        }
+        if (!bool.booleanValue()) {
+            Boolean bool3 = iie.c;
+            if (bool3 == null) {
+                SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+                if (Build.VERSION.SDK_INT >= 30 && sensorManager != null && sensorManager.getDefaultSensor(36) != null) {
+                    z2 = true;
+                }
+                bool3 = Boolean.valueOf(z2);
+                iie.c = bool3;
+            }
+            if (!bool3.booleanValue()) {
+                if (iie.c(context) || iie.b(context.getResources())) {
+                    string = context.getString(R.string.mr_chooser_wifi_warning_description_tablet);
+                } else if (iie.d(context)) {
+                    string = context.getString(R.string.mr_chooser_wifi_warning_description_tv);
+                } else {
+                    PackageManager packageManager2 = context.getPackageManager();
+                    Boolean bool4 = iie.e;
+                    if (bool4 == null) {
+                        bool4 = Boolean.valueOf(packageManager2.hasSystemFeature("android.hardware.type.watch"));
+                        iie.e = bool4;
+                    }
+                    string = bool4.booleanValue() ? context.getString(R.string.mr_chooser_wifi_warning_description_watch) : iie.a(context) ? context.getString(R.string.mr_chooser_wifi_warning_description_car) : context.getString(R.string.mr_chooser_wifi_warning_description_unknown);
+                }
+                this.y.setText(string);
+                this.E.setMovementMethod(LinkMovementMethod.getInstance());
+                this.G.setOnClickListener(new sa5(this, (byte) 26));
+                ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
+                this.I = listView;
+                listView.setAdapter((ListAdapter) this.J);
+                this.I.setOnItemClickListener(this.J);
+                this.I.setEmptyView(findViewById(android.R.id.empty));
+                getWindow().setLayout(mte.a(getContext()), -2);
+                getContext().registerReceiver(this.K, new IntentFilter("android.intent.action.SCREEN_OFF"));
+            }
+        }
+        string = context.getString(R.string.mr_chooser_wifi_warning_description_phone);
+        this.y.setText(string);
+        this.E.setMovementMethod(LinkMovementMethod.getInstance());
+        this.G.setOnClickListener(new sa5(this, (byte) 26));
+        ListView listView2 = (ListView) findViewById(R.id.mr_chooser_list);
+        this.I = listView2;
+        listView2.setAdapter((ListAdapter) this.J);
+        this.I.setOnItemClickListener(this.J);
+        this.I.setEmptyView(findViewById(android.R.id.empty));
+        getWindow().setLayout(mte.a(getContext()), -2);
+        getContext().registerReceiver(this.K, new IntentFilter("android.intent.action.SCREEN_OFF"));
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        this.L = false;
+        this.f.h(this.h);
+        d1 d1Var = this.N;
+        d1Var.removeMessages(1);
+        d1Var.removeMessages(2);
+        d1Var.removeMessages(3);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // ep, android.app.Dialog
+    public final void setTitle(CharSequence charSequence) {
+        this.s.setText(charSequence);
+    }
+
+    @Override // ep, android.app.Dialog
+    public final void setTitle(int i) {
+        this.s.setText(i);
     }
 }

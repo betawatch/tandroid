@@ -1,40 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class b3f extends vef {
-    private static final b3f zzb;
-    private int zzd;
-    private int zze;
-    private double zzf;
-    private double zzg;
-    private double zzh;
-    private double zzi;
-
-    static {
-        b3f b3fVar = new b3f();
-        zzb = b3fVar;
-        vef.e(b3f.class, b3fVar);
-    }
-
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+public abstract class b3f {
+    public static int a(int i) {
+        if (i == 1) {
+            return 0;
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001ဋ\u0000\u0002က\u0001\u0003က\u0002\u0004က\u0003\u0005က\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
+        if (i == 2) {
+            return 1;
         }
-        if (i2 == 3) {
-            return new b3f();
+        if (i == 4) {
+            return 2;
         }
-        if (i2 == 4) {
-            return new v8e(zzb);
+        if (i == 8) {
+            return 3;
         }
-        if (i2 != 5) {
-            return null;
+        if (i == 16) {
+            return 4;
         }
-        return zzb;
+        if (i == 32) {
+            return 5;
+        }
+        if (i == 64) {
+            return 6;
+        }
+        if (i == 128) {
+            return 7;
+        }
+        if (i == 256) {
+            return 8;
+        }
+        if (i == 512) {
+            return 9;
+        }
+        lq5.j(uh9.k(i, "type needs to be >= FIRST and <= LAST, type="));
+        return 0;
     }
 }

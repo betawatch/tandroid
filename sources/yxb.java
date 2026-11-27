@@ -1,48 +1,43 @@
 // default package
 
-import java.util.Collections;
-import java.util.List;
+import android.util.Log;
+import j$.util.Objects;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class yxb {
-    public static final String c;
-    public static final String d;
-    public final sxb a;
-    public final mm5 b;
+    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
+    public final String a;
+    public final String b;
+    public final String c;
 
-    static {
-        String str = g8c.a;
-        c = "0";
-        d = "1";
-    }
-
-    public yxb(sxb sxbVar, List list) {
-        if (!list.isEmpty() && (((Integer) Collections.min(list)).intValue() < 0 || ((Integer) Collections.max(list)).intValue() >= sxbVar.a)) {
-            throw new IndexOutOfBoundsException();
+    public yxb(String str, String str2) {
+        String str3;
+        if (str2 == null || !str2.startsWith("/topics/")) {
+            str3 = str2;
+        } else {
+            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
+            str3 = str2.substring(8);
         }
-        this.a = sxbVar;
-        this.b = mm5.q(list);
+        if (str3 == null || !d.matcher(str3).matches()) {
+            lq5.j(qd4.y("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
+            throw null;
+        }
+        this.a = str3;
+        this.b = str;
+        this.c = qd4.p(str, "!", str2);
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (!(obj instanceof yxb)) {
+            return false;
         }
-        if (obj != null && yxb.class == obj.getClass()) {
-            yxb yxbVar = (yxb) obj;
-            if (this.a.equals(yxbVar.a) && this.b.equals(yxbVar.b)) {
-                return true;
-            }
-        }
-        return false;
+        yxb yxbVar = (yxb) obj;
+        return this.a.equals(yxbVar.a) && this.b.equals(yxbVar.b);
     }
 
     public final int hashCode() {
-        return (this.b.hashCode() * 31) + this.a.hashCode();
-    }
-
-    public yxb(sxb sxbVar, int i) {
-        this(sxbVar, mm5.u(Integer.valueOf(i)));
+        return Objects.hash(this.b, this.a);
     }
 }

@@ -1,34 +1,81 @@
 // default package
 
-import java.util.Collections;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class xh0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ci0 b;
+    public final /* synthetic */ id[] b;
 
-    public /* synthetic */ xh0(ci0 ci0Var, byte b) {
+    public /* synthetic */ xh0(id[] idVarArr, byte b) {
         this.a = b;
-        this.b = ci0Var;
+        this.b = idVarArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        ci0 ci0Var = this.b;
+        id[] idVarArr = this.b;
         switch (b) {
             case 0:
-                ci0Var.getClass();
-                try {
-                    ci0Var.o(Collections.singletonList(ci0.k), new yh0(ci0Var, (byte) 0));
+                id idVar = new id(3, null, a.b);
+                idVarArr[0] = idVar;
+                idVar.q(500L);
+                break;
+            case 1:
+                id idVar2 = idVarArr[0];
+                if (idVar2 != null) {
+                    idVar2.dismiss();
                     break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
                 }
+                break;
+            case 2:
+                try {
+                    idVarArr[0].dismiss();
+                } catch (Throwable unused) {
+                }
+                idVarArr[0] = null;
+                break;
+            case 3:
+                try {
+                    idVarArr[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                idVarArr[0] = null;
+                break;
+            case 4:
+                hl.c3(new xh0(idVarArr, (byte) 6));
+                break;
+            case 5:
+                hl.c3(new xh0(idVarArr, (byte) 7));
+                break;
+            case 6:
+                idVarArr[0].dismiss();
+                break;
+            case 7:
+                idVarArr[0].dismiss();
+                break;
+            case 8:
+                id idVar3 = idVarArr[0];
+                if (idVar3 != null) {
+                    idVar3.dismiss();
+                    break;
+                }
+                break;
+            case 9:
+                try {
+                    idVarArr[0].dismiss();
+                } catch (Throwable unused3) {
+                }
+                idVarArr[0] = null;
+                break;
             default:
-                ci0Var.q();
+                try {
+                    idVarArr[0].dismiss();
+                } catch (Throwable unused4) {
+                }
+                idVarArr[0] = null;
                 break;
         }
     }

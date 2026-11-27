@@ -1,53 +1,61 @@
 // default package
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.HorizontalScrollView;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class bd9 extends HorizontalScrollView {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class bd9 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bd9(Context context, byte b) {
-        super(context);
-        this.a = b;
+    static {
+        a8c.h(new bd9());
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.a) {
-            case 0:
-                int mode = View.MeasureSpec.getMode(i);
-                int size = View.MeasureSpec.getSize(i);
-                if (mode != 1073741824) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 0), i2);
-                    int measuredWidth = getMeasuredWidth();
-                    if (mode == Integer.MIN_VALUE) {
-                        measuredWidth = Math.min(measuredWidth, size);
-                    }
-                    setMeasuredDimension(measuredWidth, getMeasuredHeight());
-                    break;
-                } else {
-                    super.onMeasure(i, i2);
-                    break;
-                }
-            default:
-                int mode2 = View.MeasureSpec.getMode(i);
-                int size2 = View.MeasureSpec.getSize(i);
-                if (mode2 != 1073741824) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size2, 0), i2);
-                    int measuredWidth2 = getMeasuredWidth();
-                    if (mode2 == Integer.MIN_VALUE) {
-                        measuredWidth2 = Math.min(measuredWidth2, size2);
-                    }
-                    setMeasuredDimension(measuredWidth2, getMeasuredHeight());
-                    break;
-                } else {
-                    super.onMeasure(i, i2);
-                    break;
-                }
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        cd9 cd9Var = (cd9) view;
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) b8cVar.H;
+        int i = b8cVar.A;
+        String str = (String) b8cVar.m;
+        boolean z2 = b8cVar.e;
+        vnb vnbVar = cd9Var.P;
+        e29 e29Var = cd9Var.c;
+        ad9 ad9Var = cd9Var.b0;
+        if (ad9Var == null || cd9Var.a0 != stargiftattributepattern.document.id) {
+            cd9Var.a0 = stargiftattributepattern.document.id;
+            if (ad9Var != null) {
+                ad9Var.o(e29Var);
+            }
+            ad9 ad9Var2 = new ad9(3, cd9Var.W, stargiftattributepattern.document);
+            cd9Var.b0 = ad9Var2;
+            yob.x(cd9Var, ad9Var2, aob.E8, vnbVar, PorterDuff.Mode.SRC_IN);
         }
+        if (e29Var.isAttachedToWindow()) {
+            cd9Var.b0.b(e29Var);
+        }
+        CharSequence charSequence = stargiftattributepattern.name;
+        if (!TextUtils.isEmpty(str)) {
+            charSequence = hl.u1(charSequence, str, vnbVar);
+        }
+        if (i > 0) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+            spannableStringBuilder.append((CharSequence) "  ");
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) Integer.toString(i));
+            spannableStringBuilder.setSpan(new y7c(hl.o()), length, spannableStringBuilder.length(), 33);
+            charSequence = spannableStringBuilder;
+        }
+        cd9Var.j(charSequence, 0, cd9Var.b0);
+        cd9Var.setChecked(z2);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new cd9(i, vnbVar, context);
     }
 }

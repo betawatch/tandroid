@@ -1,32 +1,52 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class hr5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ir5 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hr5 implements Iterator {
+    public final int a;
+    public final int b;
+    public boolean c;
+    public int d;
 
-    public /* synthetic */ hr5(ir5 ir5Var, byte b) {
-        this.a = b;
-        this.b = ir5Var;
+    public hr5(int i, int i2, int i3) {
+        this.a = i3;
+        this.b = i2;
+        boolean z = false;
+        if (i3 <= 0 ? i >= i2 : i <= i2) {
+            z = true;
+        }
+        this.c = z;
+        this.d = z ? i : i2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        ir5 ir5Var = this.b;
-        switch (b) {
-            case 0:
-                ir5Var.e.X1 = null;
-                ir5Var.requestLayout();
-                break;
-            default:
-                ir5Var.e.X1 = null;
-                ir5Var.a = false;
-                break;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.c;
+    }
+
+    @Override // java.util.Iterator
+    public final /* bridge */ /* synthetic */ Object next() {
+        return Integer.valueOf(nextInt());
+    }
+
+    public final int nextInt() {
+        int i = this.d;
+        if (i != this.b) {
+            this.d = this.a + i;
+            return i;
         }
+        if (this.c) {
+            this.c = false;
+            return i;
+        }
+        lq5.n();
+        return 0;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

@@ -1,31 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fw6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lw6 b;
-    public final /* synthetic */ ad8 c;
+public final class fw6 {
+    public final lw6 a;
+    public final ew6 b;
+    public dw6 c = dw6.c;
+    public int d;
+    public long e;
 
-    public /* synthetic */ fw6(lw6 lw6Var, ad8 ad8Var, byte b) {
-        this.a = b;
-        this.b = lw6Var;
-        this.c = ad8Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ad8 ad8Var = this.c;
-        lw6 lw6Var = this.b;
-        switch (b) {
-            case 0:
-                lw6Var.p.K(lw6Var.f0(ad8Var));
-                lw6Var.l.D(ad8Var.q().a(17) ? ad8Var.y0() : aob.a);
-                break;
-            default:
-                lw6Var.p.K(lw6Var.f0(ad8Var));
-                break;
-        }
+    public fw6(lw6 lw6Var, ew6 ew6Var) {
+        this.a = lw6Var;
+        this.b = ew6Var;
     }
 }

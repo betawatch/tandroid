@@ -1,83 +1,67 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class t51 extends ka {
-    public final /* synthetic */ v51 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class t51 implements Parcelable {
+    public static final Parcelable.Creator<t51> CREATOR = new t4f(15);
+    public final kj a;
 
-    public t51(v51 v51Var) {
-        this.d = v51Var;
+    public t51(kj kjVar) {
+        this.a = kjVar;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i = s49Var.f;
-        return i == 1 || i == 2 || i == 4;
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.d.c.size();
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        return ((u51) this.d.c.get(i)).a;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        v51 v51Var = this.d;
-        ArrayList arrayList = v51Var.c;
-        if (((u51) arrayList.get(i)).a == 2) {
-            v6c v6cVar = (v6c) s49Var.a;
-            m51 m51Var = ((u51) arrayList.get(i)).c;
-            TLObject Z1 = v51Var.getMessagesController().Z1(m51Var.a);
-            String str = null;
-            if (Z1 instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) Z1;
-                str = user.self ? k96.M0(2131745709, null) : qu2.m(0, user.first_name, user.last_name);
-            } else if (Z1 instanceof TLRPC.Chat) {
-                str = ((TLRPC.Chat) Z1).title;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static t51 a(int i) {
+        f29 f29Var;
+        if (i == -262) {
+            f29Var = f29.b;
+        } else {
+            f29[] values = f29.values();
+            int length = values.length;
+            int i2 = 0;
+            while (true) {
+                if (i2 >= length) {
+                    for (ws3 ws3Var : ws3.values()) {
+                        if (ws3Var.a == i) {
+                            f29Var = ws3Var;
+                        }
+                    }
+                    throw new s51(qd4.n(i, "Algorithm with COSE value ", " not supported"));
+                }
+                f29 f29Var2 = values[i2];
+                if (f29Var2.a == i) {
+                    f29Var = f29Var2;
+                    break;
+                }
+                i2++;
             }
-            v6cVar.setSelfAsSavedMessages(true);
-            v6cVar.d(Z1, str, o51.f(m51Var.b), i == arrayList.size() - 1 || ((u51) arrayList.get(i + 1)).a == 2);
         }
+        return new t51(f29Var);
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View view;
-        View view2 = null;
-        if (i != 1) {
-            if (i == 2) {
-                View v6cVar = new v6c(4, 0, null, viewGroup.getContext(), false, false);
-                zkb.h(bkb.c6, null, v6cVar);
-                view2 = v6cVar;
-            } else if (i == 3) {
-                view = new b9a(viewGroup.getContext(), (de9) null);
-            } else if (i == 4) {
-                wgb wgbVar = new wgb(viewGroup.getContext());
-                wgbVar.k(k96.M0(2131747722, null), false);
-                wgbVar.g(-1, bkb.o7);
-                zkb.h(bkb.c6, null, wgbVar);
-                view = wgbVar;
-            }
-            return ls6.h(view2, view2, -1, -2);
-        }
-        wgb wgbVar2 = new wgb(viewGroup.getContext());
-        wgbVar2.o(R.drawable.msg_contact_add, k96.M0(2131747730, null), true);
-        wgbVar2.g(bkb.u6, bkb.t6);
-        zkb.h(bkb.c6, null, wgbVar2);
-        view = wgbVar2;
-        view2 = view;
-        return ls6.h(view2, view2, -1, -2);
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof t51) && this.a.a() == ((t51) obj).a.a();
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    public final String toString() {
+        return qd4.y("COSEAlgorithmIdentifier{algorithm=", String.valueOf(this.a), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a.a());
     }
 }

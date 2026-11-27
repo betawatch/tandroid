@@ -1,70 +1,68 @@
 // default package
 
-import android.util.Pair;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ee7 implements kv9 {
-    public final long[] a;
-    public final long[] b;
-    public final long c;
+public final /* synthetic */ class ee7 implements Runnable {
+    public final /* synthetic */ int E;
+    public final /* synthetic */ boolean F;
+    public final /* synthetic */ boolean G;
+    public final /* synthetic */ jf7 a;
+    public final /* synthetic */ psb b;
+    public final /* synthetic */ qsb c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int w;
+    public final /* synthetic */ int x;
+    public final /* synthetic */ long y;
 
-    public ee7(long j, long[] jArr, long[] jArr2) {
-        this.a = jArr;
-        this.b = jArr2;
-        this.c = j == -9223372036854775807L ? g8c.T(jArr2[jArr2.length - 1]) : j;
+    public /* synthetic */ ee7(jf7 jf7Var, psb psbVar, qsb qsbVar, long j, long j2, int i, int i2, int i3, int i4, int i5, int i6, int i7, long j3, int i8, boolean z, boolean z2) {
+        this.a = jf7Var;
+        this.b = psbVar;
+        this.c = qsbVar;
+        this.d = j;
+        this.e = j2;
+        this.f = i;
+        this.h = i2;
+        this.n = i3;
+        this.r = i4;
+        this.s = i5;
+        this.w = i6;
+        this.x = i7;
+        this.y = j3;
+        this.E = i8;
+        this.F = z;
+        this.G = z2;
     }
 
-    public static Pair i(long j, long[] jArr, long[] jArr2) {
-        int f = g8c.f(jArr, j, true);
-        long j2 = jArr[f];
-        long j3 = jArr2[f];
-        int i = f + 1;
-        if (i == jArr.length) {
-            return Pair.create(Long.valueOf(j2), Long.valueOf(j3));
-        }
-        return Pair.create(Long.valueOf(j), Long.valueOf(((long) ((jArr[i] == j2 ? 0.0d : (j - j2) / (r6 - j2)) * (jArr2[i] - j3))) + j3));
-    }
-
-    @Override // kv9
-    public final long a() {
-        return -1L;
-    }
-
-    @Override // kv9
-    public final long b() {
-        return 0L;
-    }
-
-    @Override // fv9
-    public final boolean c() {
-        return true;
-    }
-
-    @Override // fv9
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // kv9
-    public final long e(long j) {
-        return g8c.T(((Long) i(j, this.a, this.b).second).longValue());
-    }
-
-    @Override // fv9
-    public final ev9 f(long j) {
-        Pair i = i(g8c.i0(g8c.j(j, 0L, this.c)), this.b, this.a);
-        hv9 hv9Var = new hv9(g8c.T(((Long) i.first).longValue()), ((Long) i.second).longValue());
-        return new ev9(hv9Var, hv9Var);
-    }
-
-    @Override // kv9
-    public final int g() {
-        return -2147483647;
-    }
-
-    @Override // fv9
-    public final long h() {
-        return this.c;
+    @Override // java.lang.Runnable
+    public final void run() {
+        jf7 jf7Var = this.a;
+        psb psbVar = this.b;
+        qsb qsbVar = this.c;
+        long j = this.d;
+        long j2 = this.e;
+        int i = this.f;
+        int i2 = this.h;
+        int i3 = this.n;
+        int i4 = this.r;
+        int i5 = this.s;
+        int i6 = this.w;
+        int i7 = this.x;
+        long j3 = this.y;
+        int i8 = this.E;
+        boolean z = this.F;
+        boolean z2 = this.G;
+        qsb.a(psbVar);
+        psb d = qsb.d(qsbVar, "MessagesStorage.getMessages");
+        ne7 d0 = jf7Var.d0(j, j2, i, i2, i3, i4, i5, i6, i7, j3, i8, z, z2, qsbVar);
+        qsb.a(d);
+        Utilities.d.c(new t87(qsb.d(qsbVar, "MessagesStorage.getMessages: stageQueue.postRunnable"), d0, (byte) 19));
     }
 }

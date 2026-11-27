@@ -2,11 +2,11 @@ package org.webrtc;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
+import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.os.SystemClock;
-import android.util.AndroidException;
 import android.util.Range;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ import java.util.Map;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
@@ -53,8 +53,8 @@ public class Camera2Enumerator implements CameraEnumerator {
     private CameraCharacteristics getCameraCharacteristics(String str) {
         try {
             return this.cameraManager.getCameraCharacteristics(str);
-        } catch (AndroidException e) {
-            Logging.e(TAG, "Camera access exception: " + e);
+        } catch (CameraAccessException | RuntimeException e) {
+            Logging.e(TAG, "Camera access exception", e);
             return null;
         }
     }
@@ -119,8 +119,8 @@ public class Camera2Enumerator implements CameraEnumerator {
                 }
             }
             return true;
-        } catch (Throwable th) {
-            Logging.e(TAG, "Camera access exception: " + th);
+        } catch (CameraAccessException | RuntimeException e) {
+            Logging.e(TAG, "Failed to check if camera2 is supported", e);
             return false;
         }
     }
@@ -134,8 +134,8 @@ public class Camera2Enumerator implements CameraEnumerator {
     public String[] getDeviceNames() {
         try {
             return this.cameraManager.getCameraIdList();
-        } catch (AndroidException e) {
-            Logging.e(TAG, "Camera access exception: " + e);
+        } catch (CameraAccessException e) {
+            Logging.e(TAG, "Camera access exception", e);
             return new String[0];
         }
     }

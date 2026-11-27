@@ -1,14 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class l19 extends fwa {
-    public final Throwable b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l19(int i, Throwable th) {
-        super(i);
-        th.getClass();
-        this.b = th;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class l19 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public int i;
+    public kmb j;
+    public float k;
+    public float l;
 }

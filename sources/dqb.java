@@ -1,9 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum dqb extends qsb {
-    public dqb() {
-        super("RCDATAEndTagOpen", 11);
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dqb extends yc8 {
+    public final /* synthetic */ no6 a;
+    public final /* synthetic */ eqb b;
+
+    public dqb(eqb eqbVar, no6 no6Var) {
+        this.b = eqbVar;
+        this.a = no6Var;
+    }
+
+    @Override // yc8, ed8
+    public final void L(int i, oec oecVar, boolean z, int i2, int i3, boolean z2) {
+        pqb pqbVar = this.b.a;
+        no6 no6Var = this.a;
+        if (no6Var.h != null) {
+            File file = new File(xb4.z(4), Utilities.b.nextInt() + ".jpg");
+            Point b1 = hl.b1();
+            Bitmap G = in5.G(no6Var.h, null, (float) b1.x, (float) b1.y, true);
+            try {
+                G.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            File file2 = new File(no6Var.h);
+            pqbVar.D1 = new zvc(file2, file2, "");
+            pqbVar.E1 = G;
+            pqbVar.d2 = 0;
+            pqbVar.z0.requestLayout();
+            pqbVar.g1(false);
+            pqbVar.y1 = null;
+            pqbVar.n1();
+        }
+    }
+
+    @Override // yc8, ed8
+    public final boolean y() {
+        return false;
     }
 }

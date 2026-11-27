@@ -1,33 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class t5d extends qo2 {
-    public final /* synthetic */ byte f;
-    public final /* synthetic */ so2 h;
+public final class t5d extends h6d {
+    public final /* synthetic */ byte b = 0;
+    public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t5d(so2 so2Var, byte b) {
-        super(so2Var, (byte) 0);
-        this.f = b;
-        this.h = so2Var;
+    public t5d(u5d u5dVar, u5d u5dVar2) {
+        super(u5dVar2);
+        this.c = u5dVar;
     }
 
-    @Override // qo2
-    public final Object b(int i) {
-        byte b = this.f;
-        so2 so2Var = this.h;
+    @Override // h6d
+    public final void a() {
+        byte b = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                Object[] objArr = so2Var.d;
-                objArr.getClass();
-                return objArr[i];
-            case 1:
-                return new k7d(so2Var, i);
+                ((u5d) obj).F0(1);
+                break;
             default:
-                Object[] objArr2 = so2Var.e;
-                objArr2.getClass();
-                return objArr2[i];
+                ((fg0) obj).a(new ws2(16, null, null));
+                break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t5d(x5d x5dVar, g6d g6dVar, fg0 fg0Var) {
+        super(g6dVar);
+        this.c = fg0Var;
     }
 }

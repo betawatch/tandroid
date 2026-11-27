@@ -1,136 +1,165 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.widget.ImageView;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.os.StatFs;
+import java.io.File;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.a;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class gw1 extends ImageView {
+public final /* synthetic */ class gw1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gw1(ChatActivityEnterView chatActivityEnterView, Context context, byte b) {
-        super(context);
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ gw1(Object obj, int i, byte b) {
         this.a = b;
-        this.b = chatActivityEnterView;
+        this.c = obj;
+        this.b = i;
     }
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
+    /* JADX WARN: Removed duplicated region for block: B:22:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0083  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i;
+        File z;
+        boolean z2;
+        NativeByteBuffer byteBufferValue;
+        byte b = this.a;
+        byte b2 = 2;
+        byte b3 = 1;
+        byte b4 = this.b;
+        Object obj = this.c;
+        switch (b) {
             case 0:
-                if (getAlpha() < 0.5f || this.b.y1 > 0.0f) {
-                    return false;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                int i2 = ChatActivityEnterView.X7;
+                if (b4 == 0) {
+                    chatActivityEnterView.p3 = 0;
                 }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                float f = chatActivityEnterView.y1;
-                if (f < 1.0f) {
-                    if (f <= 0.0f) {
-                        super.draw(canvas);
-                        break;
-                    } else {
-                        int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - chatActivityEnterView.y1) * 255.0f));
-                        super.draw(canvas);
-                        canvas.restoreToCount(saveLayerAlpha);
-                        break;
+                chatActivityEnterView.W0 = null;
+                my1 my1Var = chatActivityEnterView.V0;
+                if (my1Var != null) {
+                    if (chatActivityEnterView.I7 == null) {
+                        my1Var.setTranslationY(0.0f);
+                    }
+                    chatActivityEnterView.V0.setVisibility(8);
+                    chatActivityEnterView.c2.removeView(chatActivityEnterView.V0);
+                    if (chatActivityEnterView.v4) {
+                        chatActivityEnterView.v4 = false;
+                        chatActivityEnterView.V0 = null;
+                    }
+                }
+                xy1 xy1Var = chatActivityEnterView.O3;
+                if (xy1Var != null) {
+                    xy1Var.o(0.0f);
+                }
+                chatActivityEnterView.requestLayout();
+                break;
+            case 1:
+                j95 j95Var = (j95) obj;
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    sharedInstance.setAudioOutput(b4);
+                    j95Var.n5 = Integer.valueOf(b4);
+                }
+                d31 d31Var = new d31(j95Var.F, new w53());
+                Resources resources = j95Var.getContext().getResources();
+                if (b4 == 2) {
+                    i = R.drawable.msg_voice_bluetooth;
+                } else if (b4 == 0) {
+                    i = R.drawable.msg_voice_speaker;
+                } else {
+                    VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+                    i = (sharedInstance2 == null || !sharedInstance2.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
+                }
+                d31Var.M(resources.getDrawable(i).mutate(), j95.Y0(b4)).k(j95Var.g1());
+                break;
+            case 2:
+                LaunchActivity launchActivity = (LaunchActivity) obj;
+                String str = LaunchActivity.C1;
+                if (yac.h(launchActivity.P).o()) {
+                    try {
+                        SharedPreferences e1 = uc7.e1();
+                        if ((((b4 == 2 || b4 == 1) && Math.abs(launchActivity.x1 - System.currentTimeMillis()) > 240000) || Math.abs(e1.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z = xb4.z(4)) != null) {
+                            StatFs statFs = new StatFs(z.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (b4 > 0) {
+                                launchActivity.x1 = System.currentTimeMillis();
+                            } else if (availableBlocksLong < 52428800) {
+                            }
+                            e1.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                            hl.c3(new sz5(launchActivity, b2));
+                            break;
+                        }
+                    } catch (Throwable unused) {
+                        return;
                     }
                 }
                 break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        switch (this.a) {
-            case 1:
-                super.onLayout(z, i, i2, i3, i4);
-                post(new uv1(this.b, (byte) 16));
-                break;
-            default:
-                super.onLayout(z, i, i2, i3, i4);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
             case 3:
-                if (getAlpha() <= 0.0f) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f) {
-        byte b = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (b) {
-            case 1:
-                super.setAlpha(f);
-                pw1 pw1Var = chatActivityEnterView.z2;
-                if (pw1Var != null) {
-                    pw1Var.setTranslationX(pw1Var.a);
-                    break;
-                }
+                uc6 uc6Var = (uc6) obj;
+                uc6Var.V.g1(0, -hl.L(b4));
+                uc6Var.N0(false);
                 break;
-            case 2:
-                super.setAlpha(f);
-                pw1 pw1Var2 = chatActivityEnterView.z2;
-                if (pw1Var2 != null) {
-                    pw1Var2.setTranslationX(pw1Var2.a);
-                    break;
-                }
-                break;
-            case 3:
-                super.setAlpha(f);
-                a aVar = chatActivityEnterView.a1;
-                if (aVar != null) {
-                    aVar.invalidate();
-                    break;
-                }
+            case 4:
+                MediaController mediaController = (MediaController) obj;
+                String[] strArr = MediaController.W1;
+                jn7.f(mediaController.i1).k(jn7.n2, Integer.valueOf(mediaController.h1), Integer.valueOf(b4 == 2 ? 1 : 0));
                 break;
             default:
-                super.setAlpha(f);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void setVisibility(int i) {
-        switch (this.a) {
-            case 3:
-                super.setVisibility(i);
-                a aVar = this.b.a1;
-                if (aVar != null) {
-                    aVar.invalidate();
+                ls6 ls6Var = (ls6) obj;
+                try {
+                    SQLiteCursor queryFinalized = ls6Var.getMessagesStorage().b.queryFinalized("SELECT data FROM emoji_statuses WHERE type = " + ((int) b4) + " LIMIT 1", new Object[0]);
+                    if (!queryFinalized.next() || queryFinalized.getColumnCount() <= 0 || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
+                        z2 = false;
+                    } else {
+                        TL_account.EmojiStatuses TLdeserialize = TL_account.EmojiStatuses.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                        if (TLdeserialize instanceof TL_account.TL_emojiStatuses) {
+                            ls6Var.E0[b4] = TLdeserialize.hash;
+                            ls6Var.F0[b4] = TLdeserialize.statuses;
+                            z2 = true;
+                        } else {
+                            z2 = false;
+                        }
+                        try {
+                            byteBufferValue.reuse();
+                        } catch (Exception e) {
+                            e = e;
+                            cc4.g(e, true);
+                            ls6Var.H0[b4] = true;
+                            ls6Var.I0[b4] = false;
+                            if (!z2) {
+                            }
+                        }
+                    }
+                    queryFinalized.dispose();
+                } catch (Exception e2) {
+                    e = e2;
+                    z2 = false;
+                }
+                ls6Var.H0[b4] = true;
+                ls6Var.I0[b4] = false;
+                if (!z2) {
+                    hl.c3(new ip6(ls6Var, b3));
+                    break;
+                } else {
+                    ls6Var.N(b4, false);
                     break;
                 }
-                break;
-            default:
-                super.setVisibility(i);
                 break;
         }
     }

@@ -1,19 +1,12 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.text.PrecomputedText;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w9c {
-    public final byte a;
-    public final byte b;
-
-    public w9c(int i) {
-        this.a = (byte) (i & kk7.A3);
-        this.b = (byte) (i & 31);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public w9c(int i, int i2) {
-        this.a = i;
-        this.b = i2;
+public final class w9c extends rg7 {
+    @Override // rg7
+    public final boolean c(CharSequence charSequence) {
+        return charSequence instanceof PrecomputedText;
     }
 }

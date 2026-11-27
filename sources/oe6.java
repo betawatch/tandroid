@@ -1,80 +1,92 @@
 // default package
 
-import android.content.Context;
+import android.os.Bundle;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oe6 extends qc6 {
-    public final /* synthetic */ byte e;
-    public final /* synthetic */ jja f;
+public final /* synthetic */ class oe6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qh6 b;
+    public final /* synthetic */ TLRPC.auth_SentCode c;
+    public final /* synthetic */ Bundle d;
+    public final /* synthetic */ boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oe6(qe6 qe6Var, Context context, byte b) {
-        super(qe6Var.v0, context);
-        this.e = b;
-        switch (b) {
-            case 1:
-                this.f = qe6Var;
-                super(qe6Var.v0, context);
-                break;
-            default:
-                this.f = qe6Var;
-                break;
-        }
+    public /* synthetic */ oe6(byte b, qh6 qh6Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, boolean z) {
+        this.a = b;
+        this.b = qh6Var;
+        this.c = auth_sentcode;
+        this.d = bundle;
+        this.e = z;
     }
 
-    @Override // qc6
-    public final boolean a() {
-        byte b = this.e;
-        jja jjaVar = this.f;
-        switch (b) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                return ((qe6) jjaVar).l0;
-            case 1:
-                return ((qe6) jjaVar).l0;
+                boolean z = tLObject instanceof TLRPC.TL_boolTrue;
+                final qh6 qh6Var = this.b;
+                final TLRPC.auth_SentCode auth_sentcode = this.c;
+                final Bundle bundle = this.d;
+                if (!z) {
+                    qh6Var.getClass();
+                    cc4.b("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    qh6Var.H1(bundle, auth_sentcode, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    qh6Var.y1(false, true);
+                    qh6Var.r0 = false;
+                    auth_sentcode.type.verifiedFirebase = true;
+                    final byte b = 0;
+                    final boolean z2 = this.e;
+                    hl.c3(new Runnable() { // from class: pe6
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (b) {
+                                case 0:
+                                    qh6Var.q1(bundle, auth_sentcode, z2);
+                                    break;
+                                default:
+                                    qh6Var.q1(bundle, auth_sentcode, z2);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
             default:
-                return ((qd6) jjaVar).N;
+                boolean z3 = tLObject instanceof TLRPC.TL_boolTrue;
+                final qh6 qh6Var2 = this.b;
+                final TLRPC.auth_SentCode auth_sentcode2 = this.c;
+                final Bundle bundle2 = this.d;
+                if (!z3) {
+                    qh6Var2.getClass();
+                    cc4.b("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    qh6Var2.H1(bundle2, auth_sentcode2, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    qh6Var2.y1(false, true);
+                    qh6Var2.r0 = false;
+                    auth_sentcode2.type.verifiedFirebase = true;
+                    final byte b2 = 1;
+                    final boolean z4 = this.e;
+                    hl.c3(new Runnable() { // from class: pe6
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (b2) {
+                                case 0:
+                                    qh6Var2.q1(bundle2, auth_sentcode2, z4);
+                                    break;
+                                default:
+                                    qh6Var2.q1(bundle2, auth_sentcode2, z4);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
         }
-    }
-
-    @Override // qc6
-    public final boolean b() {
-        byte b = this.e;
-        jja jjaVar = this.f;
-        switch (b) {
-            case 0:
-                if (getVisibility() == 0) {
-                    qe6 qe6Var = (qe6) jjaVar;
-                    if (qe6Var.b0 <= 0 || qe6Var.U == null) {
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                qe6 qe6Var2 = (qe6) jjaVar;
-                if (isClickable() && getVisibility() == 0 && !qe6Var2.g0) {
-                    oe6 oe6Var = qe6Var2.w;
-                    if ((oe6Var == null || oe6Var.getVisibility() == 8) && !qe6Var2.l0) {
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (getVisibility() == 0) {
-                    qd6 qd6Var = (qd6) jjaVar;
-                    if (qd6Var.Q <= 0 || qd6Var.O == null) {
-                        break;
-                    }
-                }
-                break;
-        }
-        return true;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oe6(qd6 qd6Var, Context context) {
-        super(qd6Var.b0, context);
-        this.e = (byte) 2;
-        this.f = qd6Var;
     }
 }

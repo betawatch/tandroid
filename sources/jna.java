@@ -1,81 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Rect;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jna extends px4 implements x74 {
-    public static final /* synthetic */ int w = 0;
-    public final y74 f;
-    public final ae9 h;
-    public final ox4[] n;
-    public final wjb r;
-    public int s;
+public final /* synthetic */ class jna implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lna b;
 
-    public jna(Context context, wjb wjbVar, ae9 ae9Var) {
-        super(context);
-        this.f = new y74(0, this, s33.h, 1600L);
-        this.h = ae9Var;
-        this.r = wjbVar;
-        int i = bkb.Ml;
-        int p1 = bkb.p1(0.09411765f, bkb.v0(i, wjbVar));
-        bkb.p1(0.1254902f, bkb.v0(i, wjbVar));
-        this.e.setColor(p1);
-        this.n = new ox4[]{ox4.c(context, wjbVar, nx4.H, 2131749453), ox4.c(context, wjbVar, nx4.w, 2131749470), ox4.c(context, wjbVar, nx4.K, 2131749451)};
-        int i2 = 0;
-        while (true) {
-            ox4[] ox4VarArr = this.n;
-            if (i2 >= ox4VarArr.length) {
-                ox4VarArr[0].f(true, false);
-                return;
-            } else {
-                this.a.addView(ox4VarArr[i2], nme.l(1.0f, 0, -1));
-                this.n[i2].setOnClickListener(new v0(this, i2, (byte) 24));
-                i2++;
-            }
+    public /* synthetic */ jna(lna lnaVar, byte b) {
+        this.a = b;
+        this.b = lnaVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        lna lnaVar = this.b;
+        switch (b) {
+            case 0:
+                lnaVar.W0 = false;
+                if (!lnaVar.Z0 && lnaVar.X0) {
+                    lnaVar.x(true);
+                    break;
+                }
+                break;
+            case 1:
+                lnaVar.W0 = false;
+                break;
+            case 2:
+                lnaVar.Z0 = false;
+                if (!lnaVar.W0 && lnaVar.X0) {
+                    lnaVar.x(true);
+                    break;
+                }
+                break;
+            default:
+                lnaVar.Z0 = false;
+                break;
         }
-    }
-
-    public final void a(int i) {
-        int i2 = this.s;
-        if (i2 != i) {
-            ox4[] ox4VarArr = this.n;
-            ox4VarArr[i2].f(false, true);
-            ox4VarArr[i].f(true, true);
-            this.s = i;
-            this.f.a(i);
-            this.h.a(Integer.valueOf(i));
-        }
-    }
-
-    public final void b() {
-        float f = this.f.f;
-        float U1 = gl.U1(f / 3.0f, gl.L(8.0f), getMeasuredWidth() - gl.L(8.0f));
-        float U12 = gl.U1((f + 1.0f) / 3.0f, gl.L(8.0f), getMeasuredWidth() - gl.L(8.0f));
-        int measuredHeight = getMeasuredHeight() - gl.L(8.0f);
-        Rect rect = this.c;
-        rect.set((int) U1, gl.L(8.0f), (int) U12, measuredHeight);
-        int L = gl.L(this.b * 7.0f);
-        Rect rect2 = this.d;
-        rect2.set(rect);
-        int i = -L;
-        rect2.inset(i, i);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        b();
-    }
-
-    @Override // x74
-    public final void p(int i, float f, float f2, y74 y74Var) {
-        b();
-        invalidate();
-    }
-
-    @Override // x74
-    public final void F(float f, int i) {
     }
 }

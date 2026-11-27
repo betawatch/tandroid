@@ -1,46 +1,39 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ot4 extends nt4 {
-    public final /* synthetic */ pt4 r;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class ot4 extends vt4 {
+    public final /* synthetic */ wt4 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ot4(pt4 pt4Var, wjb wjbVar) {
-        super(wjbVar);
-        this.r = pt4Var;
+    public ot4(wt4 wt4Var) {
+        super(wt4Var);
+        this.y = wt4Var;
     }
 
-    @Override // nt4
-    public final void E() {
-        pt4 pt4Var = this.r;
-        String str = pt4Var.V1;
-        new u21(pt4Var.c, pt4Var.J0).Q(R.raw.chats_infotip, 36, ((str == null || str.isEmpty()) && pt4Var.S1.to_id == -1) ? k96.M0(2131753331, null) : k96.M0(2131753330, null)).k(true);
+    @Override // vt4
+    public final void F(boolean z) {
+        wt4 wt4Var = this.y;
+        s7 s7Var = wt4Var.H;
+        if (s7Var != null) {
+            s7Var.setShowSearchProgress(z);
+        }
+        wt4Var.s.e(z, true);
     }
 
-    @Override // nt4
-    public final void F(TLObject tLObject) {
-        pt4 pt4Var = this.r;
-        TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = pt4Var.S1;
-        d dVar = pt4Var.r1;
-        pt4Var.dismiss();
-        if (tLObject instanceof TLRPC.Chat) {
-            dVar.presentFragment(mu1.W9(-((TLRPC.Chat) tLObject).id));
-            return;
+    @Override // j79
+    public final void f() {
+        super.f();
+        boolean isEmpty = TextUtils.isEmpty(this.f);
+        z2b z2bVar = this.y.s;
+        if (isEmpty) {
+            z2bVar.setStickerType(11);
+            z2bVar.d.setText(ob6.M0(2131745488, null));
+        } else {
+            z2bVar.setStickerType(1);
+            z2bVar.d.setText(ob6.a0(null, null, 2131747897, this.f));
         }
-        if (tLObject instanceof TLRPC.User) {
-            dVar.presentFragment(mu1.W9(((TLRPC.User) tLObject).id));
-            return;
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("chat_id", -cf3.n(tL_payments_checkedGiftCode.from_id));
-        bundle.putInt("message_id", tL_payments_checkedGiftCode.giveaway_msg_id);
-        dVar.presentFragment(new mu1(bundle));
     }
 }

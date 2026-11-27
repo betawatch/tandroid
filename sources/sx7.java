@@ -1,36 +1,34 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class sx7 extends View implements tjb {
-    public Paint a;
-    public Paint b;
-    public float c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sx7 {
+    public final Object a;
+    public final Object b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public sx7(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            this.a.setColor(bkb.w0(null, bkb.Wi, false));
-            this.b.setColor(bkb.w0(null, bkb.Xi, false));
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof sx7)) {
+            return false;
         }
+        sx7 sx7Var = (sx7) obj;
+        return Objects.equals(sx7Var.a, this.a) && Objects.equals(sx7Var.b, this.b);
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    public final int hashCode() {
+        Object obj = this.a;
+        int hashCode = obj == null ? 0 : obj.hashCode();
+        Object obj2 = this.b;
+        return hashCode ^ (obj2 != null ? obj2.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "Pair{" + this.a + " " + this.b + "}";
     }
 }

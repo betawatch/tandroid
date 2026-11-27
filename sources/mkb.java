@@ -1,94 +1,47 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mkb extends FrameLayout implements tjb {
-    public final av9 a;
-    public final byte b;
-    public final TextPaint c;
-    public int d;
-    public final /* synthetic */ ThemeActivity e;
+public final /* synthetic */ class mkb implements fd {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ okb b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mkb(ThemeActivity themeActivity, Context context) {
-        super(context);
-        this.e = themeActivity;
-        this.b = (byte) 17;
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setTextSize(gl.L(16.0f));
-        av9 av9Var = new av9(context);
-        this.a = av9Var;
-        av9Var.setReportChanges(true);
-        av9Var.setSeparatorsCount(18);
-        av9Var.setDelegate(new v39(this, (byte) 15));
-        av9Var.setImportantForAccessibility(2);
-        addView(av9Var, nme.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+    public /* synthetic */ mkb(okb okbVar, byte b) {
+        this.a = b;
+        this.b = okbVar;
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.Lj));
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w0 = bkb.w0(null, bkb.H6, false);
-        TextPaint textPaint = this.c;
-        textPaint.setColor(w0);
-        canvas.drawText(String.valueOf(gba.U0), getMeasuredWidth() - gl.L(39.0f), gl.L(28.0f), textPaint);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-        this.a.setProgress(gba.U0 / this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i, Bundle bundle) {
-        return super.performAccessibilityAction(i, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i, bundle);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        av9 av9Var = this.a;
-        if (av9Var == null) {
-            return;
-        }
-        try {
-            int w0 = bkb.w0(null, bkb.Lj, false);
-            if (w0 != this.d) {
-                this.d = w0;
-                av9Var.setOuterColor(w0);
-            }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        okb okbVar = this.b;
+        switch (b) {
+            case 0:
+                okbVar.a();
+                break;
+            case 1:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(okbVar.getContext());
+                String M0 = ob6.M0(2131743631, null);
+                id idVar2 = alertDialog$Builder.a;
+                idVar2.U = M0;
+                idVar2.S = ob6.M0(R.string.AppName, null);
+                alertDialog$Builder.j(ob6.M0(2131751617, null), new mkb(okbVar, (byte) 2));
+                alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+                alertDialog$Builder.o();
+                break;
+            default:
+                id idVar3 = new id(3, null, okbVar.getContext());
+                idVar3.j0 = false;
+                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
+                deleteaccount.reason = "Decline ToS update";
+                ConnectionsManager.getInstance(okbVar.d).sendRequest(deleteaccount, new isa(okbVar, idVar3, (byte) 12));
+                idVar3.show();
+                break;
         }
     }
 }

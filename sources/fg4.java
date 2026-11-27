@@ -1,48 +1,813 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public class fg4 extends v30 {
-    /* JADX WARN: Illegal instructions before constructor call */
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.os.SystemClock;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.util.SparseIntArray;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class fg4 extends FrameLayout {
+    public jo0 A0;
+    public boolean B0;
+    public float C0;
+    public ValueAnimator D0;
+    public boolean E;
+    public ch3 E0;
+    public boolean F;
+    public ch3 F0;
+    public final gu G;
+    public jl0 G0;
+    public final int H;
+    public final Path H0;
+    public final of2 I;
+    public final t20 J;
+    public ag4 K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public boolean Q;
+    public float R;
+    public int S;
+    public int T;
+    public int U;
+    public final GradientDrawable V;
+    public int W;
+    public final vnb a;
+    public int a0;
+    public final TextPaint b;
+    public int b0;
+    public final TextPaint c;
+    public int c0;
+    public final TextPaint d;
+    public int d0;
+    public final Paint e;
+    public int e0;
+    public PorterDuffColorFilter f;
+    public int f0;
+    public int g0;
+    public final ArrayList h;
+    public int h0;
+    public int i0;
+    public boolean j0;
+    public final k43 k0;
+    public final SparseIntArray l0;
+    public final SparseIntArray m0;
+    public boolean n;
+    public final SparseIntArray n0;
+    public final SparseIntArray o0;
+    public final SparseIntArray p0;
+    public final SparseIntArray q0;
+    public long r;
+    public float r0;
+    public boolean s;
+    public int s0;
+    public int t0;
+    public final xf4 u0;
+    public Drawable v0;
+    public float w;
+    public int w0;
+    public float x;
+    public final zz3 x0;
+    public AnimatorSet y;
+    public float y0;
+    public final w10 z0;
+
+    public fg4(Context context, vnb vnbVar) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.c = textPaint2;
+        TextPaint textPaint3 = new TextPaint(1);
+        this.d = textPaint3;
+        this.e = new Paint(1);
+        this.f = new PorterDuffColorFilter(0, PorterDuff.Mode.SRC_IN);
+        this.h = new ArrayList();
+        this.M = -1;
+        this.S = -1;
+        this.T = -1;
+        this.U = -1;
+        this.W = aob.K8;
+        this.a0 = aob.I8;
+        this.b0 = aob.J8;
+        this.c0 = aob.L8;
+        this.d0 = aob.s8;
+        this.e0 = -1;
+        this.f0 = -1;
+        this.g0 = -1;
+        this.h0 = -1;
+        this.k0 = k43.h;
+        this.l0 = new SparseIntArray(5);
+        this.m0 = new SparseIntArray(5);
+        this.n0 = new SparseIntArray(5);
+        this.o0 = new SparseIntArray(5);
+        this.p0 = new SparseIntArray(5);
+        this.q0 = new SparseIntArray(5);
+        this.x0 = new zz3(this, (byte) 2);
+        this.z0 = new w10(this, (byte) 3);
+        this.H0 = new Path();
+        this.a = vnbVar;
+        textPaint2.setTextSize(hl.N(11.0f));
+        textPaint2.setTypeface(hl.o());
+        textPaint.setTextSize(hl.N(14.0f));
+        textPaint.setTypeface(hl.o());
+        textPaint3.setStyle(Paint.Style.STROKE);
+        textPaint3.setStrokeCap(Paint.Cap.ROUND);
+        textPaint3.setStrokeWidth(hl.L(1.5f));
+        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
+        this.V = gradientDrawable;
+        float N = hl.N(14.0f);
+        gradientDrawable.setCornerRadii(new float[]{N, N, N, N, N, N, N, N});
+        gradientDrawable.setColor(aob.v0(this.W, vnbVar));
+        setHorizontalScrollBarEnabled(false);
+        gu guVar = new gu((byte) 18, context, (Object) this);
+        this.G = guVar;
+        guVar.setClipChildren(false);
+        xf4 xf4Var = new xf4(this);
+        this.u0 = xf4Var;
+        xf4Var.C = false;
+        guVar.setItemAnimator(xf4Var);
+        guVar.setSelectorType(9);
+        guVar.setSelectorRadius(6);
+        yob.l(guVar, 20, this.c0, vnbVar);
+        of2 of2Var = new of2((ViewGroup) this, (byte) 1);
+        this.I = of2Var;
+        guVar.setLayoutManager(of2Var);
+        new lu5(new eg4(this)).h(guVar);
+        int max = Math.max(0, hl.L(11.5f));
+        this.H = max;
+        guVar.setPadding(max, 0, max, 0);
+        guVar.setClipToPadding(false);
+        guVar.setDrawSelectorBehind(true);
+        t20 t20Var = new t20(this, context, (byte) 4);
+        this.J = t20Var;
+        t20Var.C(true);
+        guVar.setAdapter(t20Var);
+        guVar.setOnItemClickListener(new vf4(this));
+        guVar.setOnItemLongClickListener(new vf4(this));
+        guVar.setOnScrollListener(new to2(this, (byte) 11));
+        guVar.z2 = true;
+        guVar.setOverScrollMode(2);
+        addView(guVar, tre.e(-1, 36, 48));
+    }
+
+    private void setUnreadOnlyBannerProgress(float f) {
+        if (this.C0 != f) {
+            this.C0 = f;
+            jo0 jo0Var = this.A0;
+            if (jo0Var != null) {
+                jo0Var.setAlpha(f);
+                this.A0.setVisibility(f > 0.0f ? 0 : 8);
+                this.A0.setClickable(this.B0);
+            }
+            requestLayout();
+            invalidate();
+            ch3 ch3Var = this.F0;
+            if (ch3Var != null) {
+                ch3Var.run();
+            }
+        }
+    }
+
+    public final void a(int i, int i2, String str) {
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        if (size == 0 && this.M == -1) {
+            this.M = i;
+        }
+        this.l0.put(size, i);
+        this.m0.put(size, i2);
+        this.n0.put(i, size);
+        int i3 = this.M;
+        if (i3 != -1 && i3 == i) {
+            this.L = size;
+        }
+        bg4 bg4Var = new bg4(this, i, str, false);
+        bg4Var.e = false;
+        bg4Var.f = false;
+        this.N = uh9.w(24.0f, bg4Var.a(true), this.N);
+        arrayList.add(bg4Var);
+    }
+
+    public final void b(int i, int i2, String str, ArrayList arrayList, boolean z, boolean z2, boolean z3) {
+        ArrayList arrayList2 = this.h;
+        int size = arrayList2.size();
+        if (size == 0 && this.M == -1) {
+            this.M = i;
+        }
+        this.l0.put(size, i);
+        this.m0.put(size, i2);
+        this.n0.put(i, size);
+        int i3 = this.M;
+        if (i3 != -1 && i3 == i) {
+            this.L = size;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+        TextPaint textPaint = this.b;
+        bg4 bg4Var = new bg4(this, i, r47.A5(pv3.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0), arrayList, textPaint.getFontMetricsInt(), false), z);
+        bg4Var.e = z2;
+        bg4Var.f = z3;
+        this.N = uh9.w(24.0f, bg4Var.a(true), this.N);
+        arrayList2.add(bg4Var);
+    }
+
+    public final void c(int i, int i2, int i3, int i4, int i5) {
+        AnimatorSet animatorSet = this.y;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        this.e0 = i;
+        this.f0 = i2;
+        this.g0 = i3;
+        this.h0 = i5;
+        this.c0 = i4;
+        yob.J(this.G, i4, this.a);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.y = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.z0, 0.0f, 1.0f));
+        this.y.setDuration(320L);
+        this.y.addListener(new zf4(this, (byte) 1));
+        this.y.start();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public fg4(int i, String str) {
-        super(str, r0);
-        String str2;
-        switch (i) {
-            case 55501:
-                str2 = "The carrier associated with this SIM is not supported.";
-                break;
-            case 55502:
-                str2 = "Invalid digital credential response.";
-                break;
-            case 55503:
-                str2 = "Integrity check failed in an unexpected place.";
-                break;
-            case 55504:
-                str2 = "Preflight check failed - we could not mint a digital credentials request on the server.";
-                break;
-            case 55505:
-                str2 = "The API is not supported - this API with the specified parameters is not intended to be called at this time.";
-                break;
-            case 55506:
-                str2 = "The Android Credential Manager has failed unexpectedly.";
-                break;
-            case 55507:
-                str2 = "Invalid test number ID(s) - might be empty, expired or duplicated.";
-                break;
-            case 55508:
-                str2 = "Test session already enabled - `enableTestSession` should only be called once.";
-                break;
-            case 55509:
-                str2 = "An Activity context is required to call this API.";
-                break;
-            default:
-                str2 = "An unexpected error has occurred.";
-                break;
+    public final void d() {
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        boolean z = false;
+        for (int i = 0; i < size; i++) {
+            bg4 bg4Var = (bg4) arrayList.get(i);
+            if (bg4Var.d != this.K.q(bg4Var.a) && this.K.q(bg4Var.a) >= 0) {
+                if (this.o0.get(i) != bg4Var.a(true) || this.j0) {
+                    this.j0 = true;
+                    requestLayout();
+                    this.N = 0;
+                    bg4 e = e();
+                    if (e != null) {
+                        e.b(ob6.M0(2131750772, null));
+                    }
+                    for (int i2 = 0; i2 < size; i2++) {
+                        this.N = uh9.w(24.0f, ((bg4) arrayList.get(i2)).a(true), this.N);
+                    }
+                    z = true;
+                    if (z) {
+                        return;
+                    }
+                    this.G.setItemAnimator(this.u0);
+                    this.J.f();
+                    return;
+                }
+                z = true;
+            }
         }
-        Throwable th = new Throwable(str2);
-        fre.g(str, "Detail message must not be empty");
+        if (z) {
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        canvas.save();
+        canvas.clipPath(this.H0);
+        super.dispatchDraw(canvas);
+        if (this.C0 <= 0.0f || this.A0 == null) {
+            canvas2 = canvas;
+        } else {
+            int alpha = aob.j0.getAlpha();
+            aob.j0.setAlpha((int) (alpha * this.C0));
+            float top = this.A0.getTop();
+            canvas2 = canvas;
+            canvas2.drawLine(hl.L(9.0f), top, getMeasuredWidth() - hl.L(9.0f), top, aob.j0);
+            aob.j0.setAlpha(alpha);
+        }
+        canvas2.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        float f;
+        float f2;
+        float f3;
+        f89 L;
+        int i;
+        int i2;
+        boolean drawChild = super.drawChild(canvas, view, j);
+        gu guVar = this.G;
+        if (view == guVar) {
+            getMeasuredHeight();
+            int alpha = (int) (guVar.getAlpha() * 255.0f);
+            GradientDrawable gradientDrawable = this.V;
+            gradientDrawable.setAlpha(alpha);
+            if (this.Q || this.S != -1) {
+                int K0 = this.I.K0();
+                if (K0 == -1 || (L = guVar.L(K0)) == null) {
+                    f = 2.0f;
+                    f2 = 0.0f;
+                    f3 = 0.0f;
+                } else {
+                    if (this.Q) {
+                        i = this.s0;
+                        i2 = this.L;
+                    } else {
+                        i = this.L;
+                        i2 = this.S;
+                    }
+                    SparseIntArray sparseIntArray = this.q0;
+                    int i3 = sparseIntArray.get(i);
+                    int i4 = sparseIntArray.get(i2);
+                    SparseIntArray sparseIntArray2 = this.o0;
+                    f = 2.0f;
+                    int i5 = sparseIntArray2.get(i);
+                    int i6 = sparseIntArray2.get(i2);
+                    SparseIntArray sparseIntArray3 = this.p0;
+                    sparseIntArray3.get(i);
+                    sparseIntArray3.get(i2);
+                    float L2 = this.O != 0 ? hl.L(12.0f) + hl.U1(this.R, i3, i4) : hl.L(12.0f) + (hl.U1(this.R, i3, i4) - (sparseIntArray.get(K0) - L.a.getLeft()));
+                    f3 = hl.U1(this.R, i5, i6);
+                    f2 = L2;
+                }
+            } else {
+                f89 L3 = guVar.L(this.L);
+                if (L3 != null) {
+                    dg4 dg4Var = (dg4) L3.a;
+                    f3 = Math.max(hl.L(16.0f), dg4Var.a0 ? hl.R1(dg4Var.j0, dg4Var.d, dg4Var.y) : dg4Var.d);
+                    f2 = (int) bp1.z(dg4Var.a0 ? hl.R1(dg4Var.j0 + hl.L(20.0f), dg4Var.getMeasuredWidth(), dg4Var.y) : dg4Var.getMeasuredWidth(), f3, 2.0f, dg4Var.getX());
+                } else {
+                    f2 = 0.0f;
+                    f3 = 0.0f;
+                }
+                f = 2.0f;
+            }
+            if (f3 != 0.0f) {
+                canvas.save();
+                canvas.translate(guVar.getTranslationX(), 0.0f);
+                canvas.scale(guVar.getScaleX(), 1.0f, guVar.getX() + guVar.getPivotX(), guVar.getPivotY());
+                float f4 = this.O / f;
+                int measuredHeight = ((guVar.getMeasuredHeight() / 2) + guVar.getTop()) - hl.L(14.0f);
+                gradientDrawable.setBounds((int) ((f2 - hl.L(12.5f)) - f4), measuredHeight, (int) (f2 + f3 + hl.L(12.5f) + f4), hl.L(28.0f) + measuredHeight);
+                gradientDrawable.setAlpha(31);
+                gradientDrawable.draw(canvas);
+                canvas.restore();
+            }
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = Math.min(17L, elapsedRealtime - this.r);
+        this.r = elapsedRealtime;
+        boolean z = this.n;
+        boolean z2 = true;
+        if (z || this.w != 0.0f) {
+            boolean z3 = this.s;
+            float f5 = this.w;
+            if (z3) {
+                boolean z4 = f5 <= 0.0f;
+                float f6 = (min / 420.0f) + f5;
+                this.w = f6;
+                if (!z && z4 && f6 >= 0.0f) {
+                    this.w = 0.0f;
+                    f6 = 0.0f;
+                }
+                if (f6 >= 1.0f) {
+                    this.w = 1.0f;
+                    this.s = false;
+                }
+            } else {
+                r3 = f5 >= 0.0f;
+                float f7 = f5 - (min / 420.0f);
+                this.w = f7;
+                if (!z && r3 && f7 <= 0.0f) {
+                    this.w = 0.0f;
+                    f7 = 0.0f;
+                }
+                if (f7 <= -1.0f) {
+                    this.w = -1.0f;
+                    this.s = true;
+                }
+            }
+            r3 = true;
+        }
+        if (z) {
+            float f8 = this.x;
+            if (f8 < 1.0f) {
+                float f9 = (min / 180.0f) + f8;
+                this.x = f9;
+                if (f9 > 1.0f) {
+                    this.x = 1.0f;
+                }
+            }
+            z2 = r3;
+        } else {
+            if (!z) {
+                float f10 = this.x;
+                if (f10 > 0.0f) {
+                    float f11 = f10 - (min / 180.0f);
+                    this.x = f11;
+                    if (f11 < 0.0f) {
+                        this.x = 0.0f;
+                    }
+                }
+            }
+            z2 = r3;
+        }
+        if (z2) {
+            guVar.i1();
+            guVar.invalidate();
+            invalidate();
+        }
+        return drawChild;
+    }
+
+    public final bg4 e() {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i >= arrayList.size()) {
+                return null;
+            }
+            if (((bg4) arrayList.get(i)).e) {
+                return (bg4) arrayList.get(i);
+            }
+            i++;
+        }
+    }
+
+    public final /* synthetic */ void f(ValueAnimator valueAnimator) {
+        setUnreadOnlyBannerProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    }
+
+    public int getCurrentTabId() {
+        return this.M;
+    }
+
+    public int getCurrentTabStableId() {
+        return this.m0.get(this.L, -1);
+    }
+
+    public int getDefaultTabId() {
+        bg4 e = e();
+        if (e == null) {
+            return -1;
+        }
+        return e.a;
+    }
+
+    public int getFirstTabId() {
+        return this.l0.get(0, 0);
+    }
+
+    public int getLastTabId() {
+        return this.l0.get(getTabsCount() - 1, 0);
+    }
+
+    public d79 getListView() {
+        return this.G;
+    }
+
+    public int getSelectorColorKey() {
+        return this.c0;
+    }
+
+    public Drawable getSelectorDrawable() {
+        return this.V;
+    }
+
+    public d79 getTabsContainer() {
+        return this.G;
+    }
+
+    public int getTabsCount() {
+        return this.h.size();
+    }
+
+    public float getUnreadOnlyBannerHeight() {
+        return hl.L(48.0f) * this.C0;
+    }
+
+    public final void h(int i) {
+        ArrayList arrayList = this.h;
+        if (arrayList.isEmpty() || this.U == i || i < 0 || i >= arrayList.size()) {
+            return;
+        }
+        this.U = i;
+        this.G.A0(i);
+    }
+
+    public final void i(bg4 bg4Var, int i) {
+        if (bg4Var.f) {
+            ag4 ag4Var = this.K;
+            if (ag4Var != null) {
+                ag4Var.s(bg4Var, false);
+                return;
+            }
+            return;
+        }
+        int i2 = this.L;
+        boolean z = i2 < i;
+        this.U = -1;
+        this.s0 = i2;
+        this.t0 = this.M;
+        this.L = i;
+        this.M = bg4Var.a;
+        boolean z2 = this.Q;
+        zz3 zz3Var = this.x0;
+        if (z2) {
+            hl.r(zz3Var);
+            this.Q = false;
+        }
+        this.r0 = 0.0f;
+        this.R = 0.0f;
+        this.Q = true;
+        setEnabled(false);
+        hl.d3(zz3Var, 16L);
+        ag4 ag4Var2 = this.K;
+        if (ag4Var2 != null) {
+            ag4Var2.s(bg4Var, z);
+        }
+        h(i);
+    }
+
+    public final void j(float f, int i) {
+        int i2 = this.n0.get(i, -1);
+        if (i2 >= 0) {
+            if (f < 0.0f) {
+                f = 0.0f;
+            } else if (f > 1.0f) {
+                f = 1.0f;
+            }
+            if (f > 0.0f) {
+                this.S = i2;
+                this.T = i;
+            } else {
+                this.S = -1;
+                this.T = -1;
+            }
+            this.R = f;
+            gu guVar = this.G;
+            guVar.i1();
+            guVar.invalidate();
+            invalidate();
+            h(i2);
+            if (f >= 1.0f) {
+                this.S = -1;
+                this.T = -1;
+                this.L = i2;
+                this.M = i;
+            }
+        }
+    }
+
+    public final boolean k(int i) {
+        for (int i2 = 0; i2 < this.h.size(); i2++) {
+            if (this.m0.get(i2, -1) == i) {
+                this.L = i2;
+                this.M = this.l0.get(i2);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void l(ch3 ch3Var, ch3 ch3Var2) {
+        this.E0 = ch3Var;
+        this.F0 = ch3Var2;
+    }
+
+    public final void m(boolean z, boolean z2) {
+        if (this.B0 == z && (z2 || this.D0 == null)) {
+            return;
+        }
+        this.B0 = z;
+        if (z && this.A0 == null) {
+            jo0 jo0Var = new jo0(this, getContext());
+            this.A0 = jo0Var;
+            addView(jo0Var, tre.d(-1, 48.0f, 48, 0.0f, 36.0f, 0.0f, 0.0f));
+        }
+        ValueAnimator valueAnimator = this.D0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.D0 = null;
+        }
+        float f = z ? 1.0f : 0.0f;
+        if (z2) {
+            float f2 = this.C0;
+            if (f2 != f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f2, f);
+                this.D0 = ofFloat;
+                ofFloat.addUpdateListener(new az1(this, (byte) 28));
+                this.D0.addListener(new zf4(this, (byte) 0));
+                this.D0.setDuration(320L);
+                this.D0.setInterpolator(k43.h);
+                this.D0.start();
+                return;
+            }
+        }
+        setUnreadOnlyBannerProgress(f);
+    }
+
+    public final void n(int i) {
+        int i2 = 0;
+        while (true) {
+            gu guVar = this.G;
+            if (i2 >= guVar.getChildCount()) {
+                return;
+            }
+            if (guVar.getChildAt(i2) instanceof dg4) {
+                dg4 dg4Var = (dg4) guVar.getChildAt(i2);
+                if (dg4Var.b.a == i) {
+                    dg4Var.b(1.0f, 0);
+                    try {
+                        dg4Var.performHapticFeedback(3);
+                        return;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+            }
+            i2++;
+        }
+    }
+
+    public final void o() {
+        SparseIntArray sparseIntArray = this.q0;
+        sparseIntArray.clear();
+        SparseIntArray sparseIntArray2 = this.o0;
+        sparseIntArray2.clear();
+        SparseIntArray sparseIntArray3 = this.p0;
+        sparseIntArray3.clear();
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        int i = this.H;
+        for (int i2 = 0; i2 < size; i2++) {
+            int a = ((bg4) arrayList.get(i2)).a(false);
+            sparseIntArray2.put(i2, a);
+            sparseIntArray3.put(i2, ((bg4) arrayList.get(i2)).d);
+            sparseIntArray.put(i2, (this.O / 2) + i);
+            i += hl.L(24.0f) + a + this.O;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        int i5 = i3 - i;
+        if (this.i0 != i5) {
+            this.i0 = i5;
+            this.U = -1;
+            if (this.Q) {
+                hl.r(this.x0);
+                this.Q = false;
+                setEnabled(true);
+                ag4 ag4Var = this.K;
+                if (ag4Var != null) {
+                    ag4Var.a(1.0f);
+                }
+            }
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i, int i2) {
+        ArrayList arrayList = this.h;
+        if (!arrayList.isEmpty()) {
+            int size = View.MeasureSpec.getSize(i) - (this.H << 1);
+            bg4 e = e();
+            t20 t20Var = this.J;
+            gu guVar = this.G;
+            if (e != null) {
+                e.b(ob6.M0(2131750772, null));
+                int a = e.a(false);
+                e.b(ob6.M0(this.N > size ? 2131750771 : 2131750772, null));
+                int a2 = e.a(false) + (this.N - a);
+                int i3 = this.O;
+                int size2 = a2 < size ? (size - a2) / arrayList.size() : 0;
+                this.O = size2;
+                if (i3 != size2) {
+                    this.F = true;
+                    o79 itemAnimator = guVar.getItemAnimator();
+                    guVar.setItemAnimator(null);
+                    t20Var.f();
+                    guVar.setItemAnimator(itemAnimator);
+                    this.F = false;
+                }
+                o();
+                this.j0 = false;
+            } else {
+                int i4 = this.O;
+                int i5 = this.P;
+                if (i4 != i5) {
+                    this.O = i5;
+                    this.F = true;
+                    o79 itemAnimator2 = guVar.getItemAnimator();
+                    guVar.setItemAnimator(null);
+                    t20Var.f();
+                    guVar.setItemAnimator(itemAnimator2);
+                    this.F = false;
+                }
+                o();
+            }
+        }
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + hl.L(36.0f) + getPaddingTop() + ((int) getUnreadOnlyBannerHeight()), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        Path path = this.H0;
+        path.rewind();
+        path.addRoundRect(hl.L(9.0f), hl.L(9.0f), i - hl.L(9.0f), i2 - hl.L(9.0f), hl.L(16.0f), hl.L(16.0f), Path.Direction.CW);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.F) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    public void setAnimationIdicatorProgress(float f) {
+        this.R = f;
+        gu guVar = this.G;
+        guVar.i1();
+        guVar.invalidate();
+        invalidate();
+        ag4 ag4Var = this.K;
+        if (ag4Var != null) {
+            ag4Var.a(f);
+        }
+    }
+
+    public void setBlurredBackground(jl0 jl0Var) {
+        this.G0 = jl0Var;
+        setBackground(jl0Var);
+    }
+
+    public void setDelegate(ag4 ag4Var) {
+        this.K = ag4Var;
+    }
+
+    public void setExtraTabWidth(int i) {
+        if (this.P != i) {
+            this.P = i;
+            requestLayout();
+        }
+    }
+
+    public void setIsEditing(boolean z) {
+        this.n = z;
+        this.s = true;
+        gu guVar = this.G;
+        guVar.i1();
+        guVar.invalidate();
+        this.J.f();
+        invalidate();
+        if (this.n || !this.E) {
+            return;
+        }
+        jf7.Y(yac.t0).v1();
+        TLRPC.TL_messages_updateDialogFiltersOrder tL_messages_updateDialogFiltersOrder = new TLRPC.TL_messages_updateDialogFiltersOrder();
+        ArrayList T0 = uc7.s1(yac.t0).T0();
+        int size = T0.size();
+        byte b = 0;
+        for (int i = 0; i < size; i++) {
+            ac7 ac7Var = (ac7) T0.get(i);
+            boolean d = ac7Var.d();
+            ArrayList<Integer> arrayList = tL_messages_updateDialogFiltersOrder.order;
+            if (d) {
+                arrayList.add(0);
+            } else {
+                arrayList.add(Integer.valueOf(ac7Var.a));
+            }
+        }
+        uc7.s1(yac.t0).q3();
+        ConnectionsManager.getInstance(yac.t0).sendRequest(tL_messages_updateDialogFiltersOrder, new xe2(b));
+        this.E = false;
+    }
+
+    public void g() {
     }
 }

@@ -1,48 +1,75 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.TextView;
+import android.os.Build;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class z42 extends TextView {
-    public float a;
-    public boolean b;
-    public final /* synthetic */ Paint c;
+public final /* synthetic */ class z42 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z42(Context context, Paint paint) {
-        super(context);
-        this.c = paint;
-        this.a = 0.0f;
+    public /* synthetic */ z42(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, byte b) {
+        this.a = b;
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i = (int) ((this.a * 130.0f) + 125.0f);
-        Paint paint = this.c;
-        paint.setAlpha(i);
-        boolean z = this.b;
-        float f = this.a;
-        if (z) {
-            float f2 = f + 0.026666667f;
-            this.a = f2;
-            if (f2 >= 1.0f) {
-                this.a = 1.0f;
-                this.b = false;
-            }
-        } else {
-            float f3 = f - 0.026666667f;
-            this.a = f3;
-            if (f3 <= 0.0f) {
-                this.a = 0.0f;
-                this.b = true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        switch (b) {
+            case 0:
+                boolean z = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.b.c.removeView(chatAttachAlertPhotoLayout.Q);
+                chatAttachAlertPhotoLayout.Q = null;
+                break;
+            case 1:
+                boolean z2 = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.x.setVisibility(8);
+                break;
+            case 2:
+                boolean z3 = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.w0(false);
+                chatAttachAlertPhotoLayout.o0 = null;
+                break;
+            case 3:
+                boolean z4 = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.w0(false);
+                chatAttachAlertPhotoLayout.o0 = null;
+                break;
+            case 4:
+                boolean z5 = ChatAttachAlertPhotoLayout.r1;
+                chatAttachAlertPhotoLayout.H.f();
+                break;
+            case 5:
+                boolean z6 = ChatAttachAlertPhotoLayout.r1;
+                n12 n12Var = chatAttachAlertPhotoLayout.b;
+                if (sr.b(n12Var.Z1.getParentActivity(), "android.permission.CAMERA") == 0) {
+                    chatAttachAlertPhotoLayout.k0();
+                    break;
+                } else {
+                    try {
+                        n12Var.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+            default:
+                boolean z7 = ChatAttachAlertPhotoLayout.r1;
+                try {
+                    int i = Build.VERSION.SDK_INT;
+                    n12 n12Var2 = chatAttachAlertPhotoLayout.b;
+                    if (i >= 33) {
+                        n12Var2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES"}, 4);
+                    } else {
+                        n12Var2.Z1.getParentActivity().requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                    }
+                    break;
+                } catch (Exception unused2) {
+                    return;
+                }
         }
-        super.onDraw(canvas);
-        canvas.drawCircle(gl.L(14.0f), getMeasuredHeight() / 2, gl.L(4.0f), paint);
-        invalidate();
     }
 }

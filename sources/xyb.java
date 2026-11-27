@@ -1,34 +1,25 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class xyb implements Iterator {
-    public final Iterator a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class xyb implements View.OnClickListener {
+    public final /* synthetic */ tzb a;
 
-    public xyb(Iterator it) {
-        it.getClass();
-        this.a = it;
+    public xyb(tzb tzbVar) {
+        this.a = tzbVar;
     }
 
-    public Object a(Object obj) {
-        return ((Map.Entry) obj).getValue();
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        return a(this.a.next());
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.a.remove();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        tzb tzbVar = this.a;
+        if (tzbVar.N) {
+            jj.g0(tzbVar, -tzbVar.a, null, tzbVar.e(), null, false, tzbVar.K, new ze1(this, (byte) 7), tzbVar.getResourceProvider());
+            return;
+        }
+        tzbVar.getMessagesController().k(tzbVar.a, tzbVar.getUserConfig().f(), null, tzbVar, false, new po4(tzbVar, (byte) 3), new syb(tzbVar));
+        jn7.e().k(jn7.L4, new Object[0]);
+        tzbVar.S0(false);
     }
 }

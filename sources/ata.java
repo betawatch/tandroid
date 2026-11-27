@@ -1,0 +1,37 @@
+// default package
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ata extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ q38 b;
+    public final /* synthetic */ wua c;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public ata(wua wuaVar, int i, q38 q38Var) {
+        this.c = wuaVar;
+        this.a = i;
+        this.b = q38Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        wua wuaVar = this.c;
+        wuaVar.P1();
+        gta gtaVar = wuaVar.b2;
+        byte b = this.a;
+        gtaVar.setVisibility(b == 0 ? 0 : 8);
+        wuaVar.n2.setVisibility(b == 1 ? 0 : 8);
+        wuaVar.w2.setVisibility(b == 2 ? 0 : 8);
+        wuaVar.y2.setVisibility(b == 3 ? 0 : 8);
+        wuaVar.C2();
+        wuaVar.X2 = null;
+        q38 q38Var = this.b;
+        if (q38Var != null) {
+            q38Var.run();
+        }
+    }
+}

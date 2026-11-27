@@ -1,41 +1,66 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum fsb extends qsb {
-    public fsb() {
-        super("AfterDoctypeSystemKeyword", 60);
+import android.graphics.RectF;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class fsb {
+    public int a;
+    public boolean b;
+    public isb c;
+    public String d;
+    public long e;
+    public long f;
+    public float g;
+    public float h;
+    public float i;
+    public final RectF j = new RectF();
+    public final mm k;
+    public final /* synthetic */ ksb l;
+
+    public fsb(ksb ksbVar) {
+        this.l = ksbVar;
+        this.k = new mm(360L, ksbVar, k43.h);
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
-        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            aqbVar.c = qsb.z0;
+    public final void a(boolean z) {
+        ksb ksbVar = this.l;
+        if (ksbVar.getMeasuredWidth() > 0) {
+            isb isbVar = this.c;
+            if (isbVar != null) {
+                if (!z) {
+                    return;
+                }
+                isbVar.a();
+                this.c = null;
+            }
+            Long l = null;
+            boolean z2 = this.b;
+            String str = this.d;
+            int i = ksbVar.w1;
+            int i2 = ksbVar.z1;
+            int i3 = (i - i2) - i2;
+            int L = hl.L(38.0f);
+            long j = this.e;
+            if (j > 2) {
+                l = Long.valueOf(j);
+            }
+            this.c = new isb(ksbVar, z2, str, i3, L, l, ksbVar.getMaxScrollDuration(), ksbVar.a1, ksbVar.b1, new s8b(this, (byte) 25));
+        }
+    }
+
+    public final void b() {
+        ksb ksbVar = this.l;
+        ArrayList arrayList = ksbVar.r;
+        int i = this.a;
+        if (i < 0 || i >= arrayList.size()) {
             return;
         }
-        if (d == '\"') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.A0;
+        dsb dsbVar = (dsb) arrayList.get(this.a);
+        if (ksbVar.getMeasuredWidth() <= 0 || dsbVar != null) {
             return;
         }
-        if (d == '\'') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.B0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else if (d != 65535) {
-            aqbVar.m(this);
-            aqbVar.j();
-        } else {
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        }
+        arrayList.set(this.a, new dsb(ksbVar, this.d, (ksbVar.getMeasuredWidth() - ksbVar.getPaddingLeft()) - ksbVar.getPaddingRight()));
     }
 }

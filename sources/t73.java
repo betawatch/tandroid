@@ -1,25 +1,39 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import java.io.File;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class t73 extends gw2 {
-    public a59 a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ v73 c;
-    public int d;
+public final class t73 extends az5 implements sr4 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ o83 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t73(v73 v73Var, gw2 gw2Var) {
-        super(gw2Var);
-        this.c = v73Var;
+    public /* synthetic */ t73(o83 o83Var, byte b) {
+        super(0);
+        this.b = b;
+        this.c = o83Var;
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.i(null, false, this);
+    @Override // sr4
+    public final Object invoke() {
+        switch (this.b) {
+            case 0:
+                return ((ed4) this.c.j.getValue()).c;
+            default:
+                bd4 bd4Var = this.c.a;
+                File canonicalFile = ((File) bd4Var.c.invoke()).getCanonicalFile();
+                synchronized (bd4.e) {
+                    String absolutePath = canonicalFile.getAbsolutePath();
+                    LinkedHashSet linkedHashSet = bd4.d;
+                    if (linkedHashSet.contains(absolutePath)) {
+                        throw new IllegalStateException(("There are multiple DataStores active for the same file: " + absolutePath + ". You should either maintain your DataStore as a singleton or confirm that there is no two DataStore's active on the same file (by confirming that the scope is cancelled).").toString());
+                    }
+                    absolutePath.getClass();
+                    linkedHashSet.add(absolutePath);
+                }
+                return new ed4(canonicalFile, bd4Var.a, (nr5) bd4Var.b.invoke(canonicalFile), new ad4(canonicalFile, (byte) 0));
+        }
     }
 }

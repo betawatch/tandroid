@@ -1,908 +1,199 @@
 // default package
 
-import android.content.Intent;
-import android.media.Rating;
-import android.media.session.MediaSession;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.BadParcelableException;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.ResultReceiver;
-import android.support.v4.media.RatingCompat;
-import android.support.v4.media.session.MediaSessionCompat$Token;
-import android.text.TextUtils;
+import android.os.AsyncTask;
+import android.os.SystemClock;
+import android.support.v4.media.MediaDescriptionCompat;
 import android.util.Log;
-import androidx.versionedparcelable.ParcelImpl;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xu6 extends MediaSession.Callback {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class xu6 extends AsyncTask {
+    public final Bitmap a;
+    public final Uri b;
+    public int c;
+    public long d;
+    public final /* synthetic */ bv6 e;
 
-    public /* synthetic */ xu6(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public xu6(bv6 bv6Var) {
+        this.e = bv6Var;
+        MediaDescriptionCompat mediaDescriptionCompat = bv6Var.m0;
+        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
+        if (bitmap != null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
+            bitmap = null;
+        }
+        this.a = bitmap;
+        MediaDescriptionCompat mediaDescriptionCompat2 = bv6Var.m0;
+        this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
     }
 
-    private final void c(String str, Bundle bundle, ResultReceiver resultReceiver) {
-        aac aacVar;
-        bv6 b = b();
-        if (b == null) {
-            return;
+    public final BufferedInputStream a(Uri uri) {
+        InputStream openInputStream;
+        String lowerCase = uri.getScheme().toLowerCase();
+        if ("android.resource".equals(lowerCase) || "content".equals(lowerCase) || "file".equals(lowerCase)) {
+            openInputStream = this.e.s.getContentResolver().openInputStream(uri);
+        } else {
+            URLConnection openConnection = new URL(uri.toString()).openConnection();
+            short s = bv6.G0;
+            openConnection.setConnectTimeout(s);
+            openConnection.setReadTimeout(s);
+            openInputStream = openConnection.getInputStream();
         }
-        Bundle o = g8c.o(bundle);
-        e(b);
-        try {
-            if (str.equals("android.support.v4.media.session.command.GET_EXTRA_BINDER")) {
-                if (resultReceiver != null) {
-                    Bundle bundle2 = new Bundle();
-                    kv6 kv6Var = b.c;
-                    li5 a = kv6Var.a();
-                    bundle2.putBinder("android.support.v4.media.session.EXTRA_BINDER", a == null ? null : a.asBinder());
-                    synchronized (kv6Var.a) {
+        if (openInputStream == null) {
+            return null;
+        }
+        return new BufferedInputStream(openInputStream);
+    }
+
+    /* JADX WARN: Not initialized variable reg: 5, insn: 0x00a6: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:167), block:B:61:0x00a6 */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00ed  */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        BufferedInputStream bufferedInputStream;
+        InputStream inputStream2 = null;
+        Bitmap bitmap = this.a;
+        if (bitmap == null) {
+            Uri uri = this.b;
+            try {
+                if (uri != null) {
+                    try {
+                        bufferedInputStream = a(uri);
                         try {
-                            aacVar = kv6Var.d;
-                        } finally {
-                        }
-                    }
-                    if (aacVar != null) {
-                        Bundle bundle3 = new Bundle();
-                        bundle3.putParcelable("a", new ParcelImpl(aacVar));
-                        bundle2.putParcelable("android.support.v4.media.session.SESSION_TOKEN2", bundle3);
-                    }
-                    resultReceiver.send(0, bundle2);
-                }
-            } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM")) {
-                if (o != null) {
-                    ((yu6) this.b).c((kq6) dne.a(o.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), kq6.CREATOR));
-                }
-            } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM_AT")) {
-                if (o != null) {
-                    ((yu6) this.b).d((kq6) dne.a(o.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), kq6.CREATOR), o.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX"));
-                }
-            } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM")) {
-                if (o != null) {
-                    ((yu6) this.b).E((kq6) dne.a(o.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), kq6.CREATOR));
-                }
-            } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT")) {
-                ArrayList arrayList = b.h;
-                if (arrayList != null && o != null) {
-                    int i = o.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX", -1);
-                    jv6 jv6Var = (i < 0 || i >= arrayList.size()) ? null : (jv6) arrayList.get(i);
-                    if (jv6Var != null) {
-                        ((yu6) this.b).E(jv6Var.a);
-                    }
-                }
-            } else {
-                ((yu6) this.b).e(str, o, resultReceiver);
-            }
-        } catch (BadParcelableException unused) {
-            lad.c("MediaSessionCompat", "Could not unparcel the extra data.");
-        }
-        b.d(null);
-    }
-
-    public static void d(zu6 zu6Var) {
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 28) {
-            return;
-        }
-        MediaSession mediaSession = zu6Var.a;
-        String str = null;
-        if (i >= 24) {
-            try {
-                str = (String) mediaSession.getClass().getMethod("getCallingPackage", null).invoke(mediaSession, null);
-            } catch (Exception e) {
-                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e);
-            }
-        }
-        if (TextUtils.isEmpty(str)) {
-            str = "android.media.session.MediaController";
-        }
-        zu6Var.e(new nw6(str, -1, -1));
-    }
-
-    public static void e(bv6 bv6Var) {
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 28) {
-            return;
-        }
-        MediaSession mediaSession = bv6Var.a;
-        String str = null;
-        if (i >= 24) {
-            try {
-                str = (String) mediaSession.getClass().getMethod("getCallingPackage", null).invoke(mediaSession, null);
-            } catch (Exception e) {
-                lad.d("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e);
-            }
-        }
-        if (TextUtils.isEmpty(str)) {
-            str = "android.media.session.MediaController";
-        }
-        bv6Var.d(new mw6(str, -1, -1));
-    }
-
-    public final zu6 a() {
-        zu6 zu6Var;
-        synchronized (((yu6) this.b).b) {
-            zu6Var = (zu6) ((yu6) this.b).d.get();
-        }
-        if (zu6Var == null || ((yu6) this.b) != zu6Var.b()) {
-            return null;
-        }
-        return zu6Var;
-    }
-
-    public final bv6 b() {
-        bv6 bv6Var;
-        synchronized (((yu6) this.b).b) {
-            bv6Var = (bv6) ((yu6) this.b).d.get();
-        }
-        if (bv6Var == null || ((yu6) this.b) != bv6Var.b()) {
-            return null;
-        }
-        return bv6Var;
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onCommand(String str, Bundle bundle, ResultReceiver resultReceiver) {
-        int i;
-        aac aacVar;
-        switch (this.a) {
-            case 0:
-                c(str, bundle, resultReceiver);
-                return;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    try {
-                        if (str.equals("android.support.v4.media.session.command.GET_EXTRA_BINDER")) {
-                            Bundle bundle2 = new Bundle();
-                            MediaSessionCompat$Token mediaSessionCompat$Token = a.c;
-                            mi5 a2 = mediaSessionCompat$Token.a();
-                            bundle2.putBinder("android.support.v4.media.session.EXTRA_BINDER", a2 == null ? null : a2.asBinder());
-                            synchronized (mediaSessionCompat$Token.a) {
-                                try {
-                                    aacVar = mediaSessionCompat$Token.d;
-                                } finally {
+                            try {
+                                if (bufferedInputStream == null) {
+                                    Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                    if (bufferedInputStream == null) {
+                                        return null;
+                                    }
+                                } else {
+                                    BitmapFactory.Options options = new BitmapFactory.Options();
+                                    options.inJustDecodeBounds = true;
+                                    BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                    if (options.outWidth != 0 && options.outHeight != 0) {
+                                        try {
+                                            bufferedInputStream.reset();
+                                        } catch (IOException unused) {
+                                            bufferedInputStream.close();
+                                            bufferedInputStream = a(uri);
+                                            if (bufferedInputStream == null) {
+                                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                                if (bufferedInputStream == null) {
+                                                    return null;
+                                                }
+                                            }
+                                        }
+                                        options.inJustDecodeBounds = false;
+                                        options.inSampleSize = Math.max(1, Integer.highestOneBit(options.outHeight / this.e.k(options.outWidth, options.outHeight)));
+                                        if (!isCancelled()) {
+                                            bitmap = BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                            try {
+                                                bufferedInputStream.close();
+                                            } catch (IOException unused2) {
+                                            }
+                                        }
+                                        bufferedInputStream.close();
+                                        return null;
+                                    }
                                 }
-                            }
-                            if (aacVar != null) {
-                                Bundle bundle3 = new Bundle();
-                                bundle3.putParcelable("a", new ParcelImpl(aacVar));
-                                bundle2.putParcelable("android.support.v4.media.session.SESSION_TOKEN2", bundle3);
-                            }
-                            resultReceiver.send(0, bundle2);
-                        } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM")) {
-                        } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM_AT")) {
-                            bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX");
-                        } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM")) {
-                        } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT") && a.g != null && (i = bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX", -1)) >= 0 && i < a.g.size()) {
-                        }
-                    } catch (BadParcelableException unused) {
-                        Log.e("MediaSessionCompat", "Could not unparcel the extra data.");
-                    }
-                    a.e(null);
-                    return;
-                }
-                return;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onCustomAction(String str, Bundle bundle) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                yu6 yu6Var = (yu6) obj;
-                bv6 b2 = b();
-                if (b2 != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b2);
-                    try {
-                        if (str.equals("android.support.v4.media.session.action.PLAY_FROM_URI")) {
-                            if (o != null) {
-                                yu6Var.v((Uri) o.getParcelable("android.support.v4.media.session.action.ARGUMENT_URI"), g8c.o(o.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS")));
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.PREPARE")) {
-                            yu6Var.w();
-                        } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_MEDIA_ID")) {
-                            if (o != null) {
-                                yu6Var.x(o.getString("android.support.v4.media.session.action.ARGUMENT_MEDIA_ID"), g8c.o(o.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS")));
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_SEARCH")) {
-                            if (o != null) {
-                                yu6Var.A(o.getString("android.support.v4.media.session.action.ARGUMENT_QUERY"), g8c.o(o.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS")));
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_URI")) {
-                            if (o != null) {
-                                yu6Var.D((Uri) o.getParcelable("android.support.v4.media.session.action.ARGUMENT_URI"), g8c.o(o.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS")));
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.SET_CAPTIONING_ENABLED")) {
-                            if (o != null) {
-                                o.getBoolean("android.support.v4.media.session.action.ARGUMENT_CAPTIONING_ENABLED");
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.SET_REPEAT_MODE")) {
-                            if (o != null) {
-                                yu6Var.M(o.getInt("android.support.v4.media.session.action.ARGUMENT_REPEAT_MODE"));
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.SET_SHUFFLE_MODE")) {
-                            if (o != null) {
-                                yu6Var.P(o.getInt("android.support.v4.media.session.action.ARGUMENT_SHUFFLE_MODE"));
-                            }
-                        } else if (str.equals("android.support.v4.media.session.action.SET_RATING")) {
-                            if (o != null) {
-                                hz8 hz8Var = (hz8) dne.a(o.getParcelable("android.support.v4.media.session.action.ARGUMENT_RATING"), hz8.CREATOR);
-                                g8c.o(o.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
-                                yu6Var.L(hz8Var);
-                            }
-                        } else if (!str.equals("android.support.v4.media.session.action.SET_PLAYBACK_SPEED")) {
-                            yu6Var.g(str, o);
-                        } else if (o != null) {
-                            yu6Var.J(o.getFloat("android.support.v4.media.session.action.ARGUMENT_PLAYBACK_SPEED", 1.0f));
-                        }
-                    } catch (BadParcelableException unused) {
-                        lad.c("MediaSessionCompat", "Could not unparcel the data.");
-                    }
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                yu6 yu6Var2 = (yu6) obj;
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    try {
-                        if (str.equals("android.support.v4.media.session.action.PLAY_FROM_URI")) {
-                            mv6.B(bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
-                        } else if (!str.equals("android.support.v4.media.session.action.PREPARE")) {
-                            if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_MEDIA_ID")) {
-                                String string = bundle.getString("android.support.v4.media.session.action.ARGUMENT_MEDIA_ID");
-                                Bundle bundle2 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                                mv6.B(bundle2);
-                                yu6Var2.x(string, bundle2);
-                            } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_SEARCH")) {
-                                String string2 = bundle.getString("android.support.v4.media.session.action.ARGUMENT_QUERY");
-                                Bundle bundle3 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                                mv6.B(bundle3);
-                                yu6Var2.A(string2, bundle3);
-                            } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_URI")) {
-                                mv6.B(bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
-                            } else if (str.equals("android.support.v4.media.session.action.SET_CAPTIONING_ENABLED")) {
-                                bundle.getBoolean("android.support.v4.media.session.action.ARGUMENT_CAPTIONING_ENABLED");
-                            } else if (str.equals("android.support.v4.media.session.action.SET_REPEAT_MODE")) {
-                                yu6Var2.M(bundle.getInt("android.support.v4.media.session.action.ARGUMENT_REPEAT_MODE"));
-                            } else if (str.equals("android.support.v4.media.session.action.SET_SHUFFLE_MODE")) {
-                                yu6Var2.P(bundle.getInt("android.support.v4.media.session.action.ARGUMENT_SHUFFLE_MODE"));
-                            } else if (str.equals("android.support.v4.media.session.action.SET_RATING")) {
-                                mv6.B(bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
-                            } else if (str.equals("android.support.v4.media.session.action.SET_PLAYBACK_SPEED")) {
-                                bundle.getFloat("android.support.v4.media.session.action.ARGUMENT_PLAYBACK_SPEED", 1.0f);
-                            } else {
-                                yu6Var2.f(str);
-                            }
-                        }
-                    } catch (BadParcelableException unused2) {
-                        Log.e("MediaSessionCompat", "Could not unparcel the data.");
-                    }
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onFastForward() {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    e(b);
-                    ((yu6) this.b).h();
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final boolean onMediaButtonEvent(Intent intent) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    boolean i = ((yu6) obj).i(intent);
-                    b2.d(null);
-                    if (i || super.onMediaButtonEvent(intent)) {
-                    }
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    boolean i2 = ((yu6) obj).i(intent);
-                    a.e(null);
-                    if (i2 || super.onMediaButtonEvent(intent)) {
-                    }
-                }
-                break;
-        }
-        return false;
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPause() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    ((yu6) obj).k();
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    ((yu6) obj).k();
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPlay() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    ((yu6) obj).n();
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    ((yu6) obj).n();
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPlayFromMediaId(String str, Bundle bundle) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b2);
-                    ((yu6) obj).q(str, o);
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    ((yu6) obj).q(str, bundle);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPlayFromSearch(String str, Bundle bundle) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b2);
-                    ((yu6) obj).u(str, o);
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    ((yu6) obj).t(str);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPlayFromUri(Uri uri, Bundle bundle) {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b);
-                    ((yu6) this.b).v(uri, o);
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPrepare() {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    e(b);
-                    ((yu6) this.b).w();
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPrepareFromMediaId(String str, Bundle bundle) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b2);
-                    ((yu6) obj).x(str, o);
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    ((yu6) obj).x(str, bundle);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPrepareFromSearch(String str, Bundle bundle) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b2);
-                    ((yu6) obj).A(str, o);
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    ((yu6) obj).A(str, bundle);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onPrepareFromUri(Uri uri, Bundle bundle) {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    Bundle o = g8c.o(bundle);
-                    e(b);
-                    ((yu6) this.b).D(uri, o);
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    mv6.B(bundle);
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onRewind() {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    e(b);
-                    ((yu6) this.b).F();
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onSeekTo(long j) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    ((yu6) obj).G(j);
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    ((yu6) obj).G(j);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onSetPlaybackSpeed(float f) {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    e(b);
-                    ((yu6) this.b).J(f);
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onSetRating(Rating rating) {
-        hz8 hz8Var;
-        hz8 hz8Var2;
-        RatingCompat ratingCompat;
-        float f;
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    e(b);
-                    yu6 yu6Var = (yu6) this.b;
-                    if (rating != null) {
-                        int ratingStyle = rating.getRatingStyle();
-                        if (rating.isRated()) {
-                            switch (ratingStyle) {
-                                case 1:
-                                    hz8Var = new hz8(1, rating.hasHeart() ? 1.0f : 0.0f);
-                                    hz8Var.getClass();
-                                    hz8Var.c = rating;
-                                    break;
-                                case 2:
-                                    hz8Var2 = new hz8(2, rating.isThumbUp() ? 1.0f : 0.0f);
-                                    hz8Var = hz8Var2;
-                                    hz8Var.getClass();
-                                    hz8Var.c = rating;
-                                    break;
-                                case 3:
-                                case 4:
-                                case 5:
-                                    hz8Var = hz8.d(rating.getStarRating(), ratingStyle);
-                                    hz8Var.getClass();
-                                    hz8Var.c = rating;
-                                    break;
-                                case 6:
-                                    hz8Var = hz8.c(rating.getPercentRating());
-                                    hz8Var.getClass();
-                                    hz8Var.c = rating;
-                                    break;
-                            }
-                            yu6Var.K(hz8Var);
-                            b.d(null);
-                            break;
-                        } else {
-                            switch (ratingStyle) {
-                                case 1:
-                                case 2:
-                                case 3:
-                                case 4:
-                                case 5:
-                                case 6:
-                                    hz8Var2 = new hz8(ratingStyle, -1.0f);
-                                    hz8Var = hz8Var2;
-                                    break;
-                                default:
-                                    hz8Var = null;
-                                    break;
-                            }
-                            hz8Var.getClass();
-                            hz8Var.c = rating;
-                            yu6Var.K(hz8Var);
-                            b.d(null);
-                        }
-                    }
-                    hz8Var = null;
-                    yu6Var.K(hz8Var);
-                    b.d(null);
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    if (rating != null) {
-                        int b2 = gz8.b(rating);
-                        if (gz8.e(rating)) {
-                            switch (b2) {
-                                case 1:
-                                    ratingCompat = new RatingCompat(1, gz8.d(rating) ? 1.0f : 0.0f);
-                                    ratingCompat.getClass();
-                                    break;
-                                case 2:
-                                    ratingCompat = new RatingCompat(2, gz8.f(rating) ? 1.0f : 0.0f);
-                                    ratingCompat.getClass();
-                                    break;
-                                case 3:
-                                case 4:
-                                case 5:
-                                    float c = gz8.c(rating);
-                                    if (b2 == 3) {
-                                        f = 3.0f;
-                                    } else if (b2 == 4) {
-                                        f = 4.0f;
-                                    } else if (b2 != 5) {
-                                        Log.e("Rating", "Invalid rating style (" + b2 + ") for a star rating");
-                                        break;
-                                    } else {
-                                        f = 5.0f;
+                                bufferedInputStream.close();
+                                return null;
+                            } catch (IOException e) {
+                                e = e;
+                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
+                                if (bufferedInputStream != null) {
+                                    try {
+                                        bufferedInputStream.close();
+                                    } catch (IOException unused3) {
                                     }
-                                    if (c >= 0.0f && c <= f) {
-                                        ratingCompat = new RatingCompat(b2, c);
-                                        ratingCompat.getClass();
-                                        break;
-                                    } else {
-                                        Log.e("Rating", "Trying to set out of range star-based rating");
-                                        break;
-                                    }
-                                case 6:
-                                    float a2 = gz8.a(rating);
-                                    if (a2 >= 0.0f && a2 <= 100.0f) {
-                                        ratingCompat = new RatingCompat(6, a2);
-                                        ratingCompat.getClass();
-                                        break;
-                                    } else {
-                                        Log.e("Rating", "Invalid percentage-based rating value");
-                                        break;
-                                    }
-                                    break;
+                                }
+                                bitmap = null;
+                                if (bitmap == null) {
+                                }
+                                if (bitmap != null) {
+                                    ux7 ux7Var = new ux7(bitmap);
+                                    ux7Var.a = (byte) 1;
+                                    ArrayList arrayList = (ArrayList) ux7Var.a().b;
+                                    this.c = DesugarCollections.unmodifiableList(arrayList).isEmpty() ? 0 : ((vx7) DesugarCollections.unmodifiableList(arrayList).get(0)).d;
+                                }
+                                return bitmap;
                             }
-                            ratingCompat = null;
-                            ratingCompat.getClass();
-                        } else {
-                            switch (b2) {
-                                case 1:
-                                case 2:
-                                case 3:
-                                case 4:
-                                case 5:
-                                case 6:
-                                    ratingCompat = new RatingCompat(b2, -1.0f);
-                                    break;
-                                default:
-                                    ratingCompat = null;
-                                    break;
-                            }
-                            ratingCompat.getClass();
+                        } catch (IOException unused4) {
+                            return null;
                         }
+                    } catch (IOException e2) {
+                        e = e2;
+                        bufferedInputStream = null;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (inputStream2 != null) {
+                            try {
+                                inputStream2.close();
+                            } catch (IOException unused5) {
+                            }
+                        }
+                        throw th;
                     }
-                    a.e(null);
-                    break;
                 }
-                break;
+                bitmap = null;
+            } catch (Throwable th2) {
+                th = th2;
+                inputStream2 = inputStream;
+            }
         }
+        if (bitmap == null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't use recycled bitmap: " + bitmap);
+            return null;
+        }
+        if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
+            ux7 ux7Var2 = new ux7(bitmap);
+            ux7Var2.a = (byte) 1;
+            ArrayList arrayList2 = (ArrayList) ux7Var2.a().b;
+            this.c = DesugarCollections.unmodifiableList(arrayList2).isEmpty() ? 0 : ((vx7) DesugarCollections.unmodifiableList(arrayList2).get(0)).d;
+        }
+        return bitmap;
     }
 
-    @Override // android.media.session.MediaSession.Callback
-    public final void onSkipToNext() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    ((yu6) obj).S();
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    ((yu6) obj).S();
-                    a.e(null);
-                    break;
-                }
-                break;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        bv6 bv6Var = this.e;
+        bv6Var.n0 = null;
+        Bitmap bitmap2 = bv6Var.o0;
+        Bitmap bitmap3 = this.a;
+        boolean equals = Objects.equals(bitmap2, bitmap3);
+        Uri uri = this.b;
+        if (equals && Objects.equals(bv6Var.p0, uri)) {
+            return;
         }
+        bv6Var.o0 = bitmap3;
+        bv6Var.r0 = bitmap;
+        bv6Var.p0 = uri;
+        bv6Var.s0 = this.c;
+        bv6Var.q0 = true;
+        bv6Var.q(SystemClock.uptimeMillis() - this.d > 120);
     }
 
-    @Override // android.media.session.MediaSession.Callback
-    public final void onSkipToPrevious() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    ((yu6) obj).V();
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    ((yu6) obj).V();
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onSkipToQueueItem(long j) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                bv6 b2 = b();
-                if (b2 != null) {
-                    e(b2);
-                    ((yu6) obj).Y(j);
-                    b2.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    ((yu6) obj).Y(j);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.media.session.MediaSession.Callback
-    public final void onStop() {
-        switch (this.a) {
-            case 0:
-                bv6 b = b();
-                if (b != null) {
-                    e(b);
-                    ((yu6) this.b).b0();
-                    b.d(null);
-                    break;
-                }
-                break;
-            default:
-                zu6 a = a();
-                if (a != null) {
-                    d(a);
-                    a.e(null);
-                    break;
-                }
-                break;
-        }
+    @Override // android.os.AsyncTask
+    public final void onPreExecute() {
+        this.d = SystemClock.uptimeMillis();
+        bv6 bv6Var = this.e;
+        bv6Var.q0 = false;
+        bv6Var.r0 = null;
+        bv6Var.s0 = 0;
     }
 }

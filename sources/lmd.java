@@ -1,15 +1,37 @@
 // default package
 
-import java.io.IOException;
+import j$.util.Objects;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class lmd {
-    public static void a(Appendable appendable, char c) {
-        try {
-            appendable.append(c);
-        } catch (IOException e) {
-            sdb.b(e);
-        }
+public final class lmd extends vjd {
+    public final /* synthetic */ smd c;
+
+    public lmd(smd smdVar) {
+        this.c = smdVar;
+    }
+
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i) {
+        smd smdVar = this.c;
+        k4f.a(i, smdVar.e);
+        Object[] objArr = smdVar.d;
+        int i2 = i << 1;
+        Object obj = objArr[i2];
+        Objects.requireNonNull(obj);
+        Object obj2 = objArr[i2 + 1];
+        Objects.requireNonNull(obj2);
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // ejd
+    public final boolean l() {
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.e;
     }
 }

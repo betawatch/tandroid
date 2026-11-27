@@ -1,34 +1,6 @@
 // default package
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fw8 extends ViewOutlineProvider {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ gw8 b;
-
-    public /* synthetic */ fw8(gw8 gw8Var, byte b) {
-        this.a = b;
-        this.b = gw8Var;
-    }
-
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        byte b = this.a;
-        gw8 gw8Var = this.b;
-        switch (b) {
-            case 0:
-                float translationY = view.getTranslationY() + view.getTop();
-                float translationX = view.getTranslationX() + view.getLeft();
-                outline.setRoundRect(Math.round(gw8Var.n - translationX), Math.round(gw8Var.r - translationY), Math.round(gw8Var.s - translationX), Math.round(gw8Var.w - translationY), gw8Var.x);
-                break;
-            default:
-                int height = view.getHeight();
-                outline.setRoundRect(gw8Var.b0, gw8Var.c0, view.getWidth() - gw8Var.b0, view.getHeight() - gw8Var.d0, ((height - r3) - gw8Var.d0) / 2.0f);
-                break;
-        }
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class fw8 implements uc1 {
 }

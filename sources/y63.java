@@ -1,169 +1,114 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class y63 {
-    public final /* synthetic */ lh7 a;
-    public final /* synthetic */ z49 b;
-    public final /* synthetic */ c59 c;
-    public final /* synthetic */ v73 d;
+public final class y63 extends yfb implements is4 {
+    public Iterator a;
+    public oja b;
+    public Object c;
+    public byte d;
+    public /* synthetic */ Object e;
+    public final /* synthetic */ List f;
+    public final /* synthetic */ ArrayList h;
 
-    public y63(lh7 lh7Var, z49 z49Var, c59 c59Var, v73 v73Var) {
-        this.a = lh7Var;
-        this.b = z49Var;
-        this.c = c59Var;
-        this.d = v73Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y63(List list, ArrayList arrayList, zw2 zw2Var) {
+        super(2, zw2Var);
+        this.f = list;
+        this.h = arrayList;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0084, code lost:
-    
-        if (r10.d(r0) != r6) goto L50;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00a9 A[Catch: all -> 0x00c9, TRY_LEAVE, TryCatch #2 {all -> 0x00c9, blocks: (B:27:0x004b, B:28:0x00a1, B:30:0x00a9), top: B:26:0x004b }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x008a A[Catch: all -> 0x00d4, TRY_LEAVE, TryCatch #0 {all -> 0x00d4, blocks: (B:40:0x0086, B:42:0x008a, B:45:0x00cc, B:46:0x00d3), top: B:39:0x0086 }] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00cc A[Catch: all -> 0x00d4, TRY_ENTER, TryCatch #0 {all -> 0x00d4, blocks: (B:40:0x0086, B:42:0x008a, B:45:0x00cc, B:46:0x00d3), top: B:39:0x0086 }] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
-    /* JADX WARN: Type inference failed for: r4v3, types: [lh7] */
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        y63 y63Var = new y63(this.f, this.h, zw2Var);
+        y63Var.e = obj;
+        return y63Var;
+    }
+
+    @Override // is4
+    public final Object invoke(Object obj, Object obj2) {
+        return ((y63) create(obj, (zw2) obj2)).invokeSuspend(f9c.a);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0095 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0043  */
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object a(f63 f63Var, gw2 gw2Var) {
-        x63 x63Var;
-        int i;
-        z49 z49Var;
-        c59 c59Var;
-        v73 v73Var;
-        nh7 nh7Var;
-        eq4 eq4Var;
-        lh7 lh7Var;
-        lh7 lh7Var2;
-        c59 c59Var2;
-        Object obj;
-        try {
-            if (gw2Var instanceof x63) {
-                x63Var = (x63) gw2Var;
-                int i2 = x63Var.n;
-                if ((i2 & TLObject.FLAG_31) != 0) {
-                    x63Var.n = i2 - TLObject.FLAG_31;
-                    Object obj2 = x63Var.f;
-                    i = x63Var.n;
-                    bx2 bx2Var = bx2.a;
-                    if (i != 0) {
-                        qse.b(obj2);
-                        x63Var.a = f63Var;
-                        lh7 lh7Var3 = this.a;
-                        x63Var.b = lh7Var3;
-                        z49Var = this.b;
-                        x63Var.c = z49Var;
-                        c59Var = this.c;
-                        x63Var.d = c59Var;
-                        v73Var = this.d;
-                        x63Var.e = v73Var;
-                        x63Var.n = 1;
-                        nh7Var = (nh7) lh7Var3;
-                        eq4Var = f63Var;
-                    } else {
-                        if (i != 1) {
-                            if (i != 2) {
-                                if (i != 3) {
-                                    sc8.j("call to 'resume' before 'invoke' with coroutine");
-                                    return null;
-                                }
-                                obj = x63Var.c;
-                                c59Var2 = (c59) x63Var.b;
-                                lh7Var = (lh7) x63Var.a;
-                                try {
-                                    qse.b(obj2);
-                                    c59Var2.a = obj;
-                                    Object obj3 = c59Var2.a;
-                                    ((nh7) lh7Var).f(null);
-                                    return obj3;
-                                } catch (Throwable th) {
-                                    th = th;
-                                    ((nh7) lh7Var).f(null);
-                                    throw th;
-                                }
-                            }
-                            v73Var = (v73) x63Var.c;
-                            c59Var2 = (c59) x63Var.b;
-                            lh7Var2 = (lh7) x63Var.a;
-                            try {
-                                qse.b(obj2);
-                                if (!rp5.a(obj2, c59Var2.a)) {
-                                    lh7Var = lh7Var2;
-                                    Object obj32 = c59Var2.a;
-                                    ((nh7) lh7Var).f(null);
-                                    return obj32;
-                                }
-                                x63Var.a = lh7Var2;
-                                x63Var.b = c59Var2;
-                                x63Var.c = obj2;
-                                x63Var.n = 3;
-                                if (v73Var.i(obj2, false, x63Var) != bx2Var) {
-                                    obj = obj2;
-                                    lh7Var = lh7Var2;
-                                    c59Var2.a = obj;
-                                    Object obj322 = c59Var2.a;
-                                    ((nh7) lh7Var).f(null);
-                                    return obj322;
-                                }
-                                return bx2Var;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                lh7Var = lh7Var2;
-                                ((nh7) lh7Var).f(null);
-                                throw th;
-                            }
-                        }
-                        v73Var = x63Var.e;
-                        c59 c59Var3 = x63Var.d;
-                        z49Var = (z49) x63Var.c;
-                        ?? r4 = (lh7) x63Var.b;
-                        eq4 eq4Var2 = (eq4) x63Var.a;
-                        qse.b(obj2);
-                        c59Var = c59Var3;
-                        eq4Var = eq4Var2;
-                        nh7Var = r4;
-                    }
-                    if (!z49Var.a) {
-                        throw new IllegalStateException("InitializerApi.updateData should not be called after initialization is complete.");
-                    }
-                    Object obj4 = c59Var.a;
-                    x63Var.a = nh7Var;
-                    x63Var.b = c59Var;
-                    x63Var.c = v73Var;
-                    x63Var.d = null;
-                    x63Var.e = null;
-                    x63Var.n = 2;
-                    Object invoke = eq4Var.invoke(obj4, x63Var);
-                    if (invoke != bx2Var) {
-                        lh7Var2 = nh7Var;
-                        obj2 = invoke;
-                        c59Var2 = c59Var;
-                        if (!rp5.a(obj2, c59Var2.a)) {
-                        }
-                    }
-                    return bx2Var;
+    public final Object invokeSuspend(Object obj) {
+        Iterator it;
+        List list;
+        oja ojaVar;
+        Iterator it2;
+        Object obj2;
+        byte b = this.d;
+        vx2 vx2Var = vx2.a;
+        if (b == 0) {
+            ixe.b(obj);
+            obj = this.e;
+            it = this.f.iterator();
+            list = this.h;
+        } else if (b == 1) {
+            obj2 = this.c;
+            oja ojaVar2 = this.b;
+            it2 = this.a;
+            List list2 = (List) this.e;
+            ixe.b(obj);
+            ojaVar = ojaVar2;
+            list = list2;
+            if (!((Boolean) obj).booleanValue()) {
+                list.add(new x63(ojaVar, null, (byte) 0));
+                this.e = list;
+                this.a = it2;
+                this.b = null;
+                this.c = null;
+                this.d = (byte) 2;
+                obj = ojaVar.b.a(new sja((SharedPreferences) ojaVar.e.getValue(), ojaVar.f), obj2, this);
+                if (obj != vx2Var) {
+                    it = it2;
+                }
+                return vx2Var;
+            }
+            obj = obj2;
+            it = it2;
+        } else {
+            if (b != 2) {
+                grb.i("call to 'resume' before 'invoke' with coroutine");
+                return null;
+            }
+            it = this.a;
+            list = (List) this.e;
+            ixe.b(obj);
+        }
+        if (!it.hasNext()) {
+            oja ojaVar3 = (oja) it.next();
+            this.e = list;
+            this.a = it;
+            this.b = ojaVar3;
+            this.c = obj;
+            this.d = (byte) 1;
+            Object a = ojaVar3.a(obj, this);
+            if (a != vx2Var) {
+                Iterator it3 = it;
+                obj2 = obj;
+                obj = a;
+                ojaVar = ojaVar3;
+                it2 = it3;
+                if (!((Boolean) obj).booleanValue()) {
+                }
+                if (!it.hasNext()) {
+                    return obj;
                 }
             }
-            if (!z49Var.a) {
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            lh7Var = nh7Var;
-            ((nh7) lh7Var).f(null);
-            throw th;
-        }
-        x63Var = new x63(this, gw2Var);
-        Object obj22 = x63Var.f;
-        i = x63Var.n;
-        bx2 bx2Var2 = bx2.a;
-        if (i != 0) {
+            return vx2Var;
         }
     }
 }

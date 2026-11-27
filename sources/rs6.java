@@ -1,107 +1,117 @@
 // default package
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.support.v4.media.session.PlaybackStateCompat;
-import android.support.v4.media.session.a;
-import android.util.Log;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityManager;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import java.nio.ByteBuffer;
+import java.util.Date;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rs6 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ws6 b;
+public final class rs6 extends h2 {
+    public static final /* synthetic */ xh4 E;
+    public static final /* synthetic */ xh4 F;
+    public static final /* synthetic */ xh4 G;
+    public static final /* synthetic */ xh4 H;
+    public static final /* synthetic */ xh4 I;
+    public static final /* synthetic */ xh4 J;
+    public static final /* synthetic */ xh4 s;
+    public static final /* synthetic */ xh4 w;
+    public static final /* synthetic */ xh4 x;
+    public static final /* synthetic */ xh4 y;
+    public Date e;
+    public Date f;
+    public long h;
+    public long n;
+    public String r;
 
-    public /* synthetic */ rs6(ws6 ws6Var, byte b) {
-        this.a = b;
-        this.b = ws6Var;
+    static {
+        u84 u84Var = new u84(rs6.class, "MediaHeaderBox.java");
+        s = u84Var.e(u84Var.d("getCreationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.util.Date"));
+        w = u84Var.e(u84Var.d("getModificationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.util.Date"));
+        J = u84Var.e(u84Var.d("toString", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.lang.String"));
+        x = u84Var.e(u84Var.d("getTimescale", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "long"));
+        y = u84Var.e(u84Var.d("getDuration", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "long"));
+        E = u84Var.e(u84Var.d("getLanguage", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.lang.String"));
+        F = u84Var.e(u84Var.d("setCreationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "java.util.Date", "creationTime", "void"));
+        u84Var.e(u84Var.d("setModificationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "java.util.Date", "modificationTime", "void"));
+        G = u84Var.e(u84Var.d("setTimescale", "com.coremedia.iso.boxes.MediaHeaderBox", "long", "timescale", "void"));
+        H = u84Var.e(u84Var.d("setDuration", "com.coremedia.iso.boxes.MediaHeaderBox", "long", "duration", "void"));
+        I = u84Var.e(u84Var.d("setLanguage", "com.coremedia.iso.boxes.MediaHeaderBox", "java.lang.String", "language", "void"));
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        PlaybackStateCompat playbackStateCompat;
-        PendingIntent sessionActivity;
-        byte b = this.a;
-        int i = 0;
-        ws6 ws6Var = this.b;
-        switch (b) {
-            case 0:
-                Context context = ws6Var.s;
-                AccessibilityManager accessibilityManager = ws6Var.E0;
-                int id = view.getId();
-                if (id != 16908313 && id != 16908314) {
-                    if (id != R.id.mr_control_playback_ctrl) {
-                        if (id == R.id.mr_close) {
-                            ws6Var.dismiss();
-                            break;
-                        }
-                    } else {
-                        wk4 wk4Var = ws6Var.j0;
-                        if (wk4Var != null && (playbackStateCompat = ws6Var.l0) != null) {
-                            if (playbackStateCompat.a == 3) {
-                                long j = playbackStateCompat.e;
-                                if ((514 & j) != 0) {
-                                    wk4Var.Z().a.pause();
-                                    i = R.string.mr_controller_pause;
-                                } else if ((j & 1) != 0) {
-                                    wk4Var.Z().a.stop();
-                                    i = R.string.mr_controller_stop;
-                                }
-                            } else if ((playbackStateCompat.e & 516) != 0) {
-                                wk4Var.Z().a.play();
-                                i = R.string.mr_controller_play;
-                            }
-                            if (accessibilityManager != null && accessibilityManager.isEnabled() && i != 0) {
-                                AccessibilityEvent obtain = AccessibilityEvent.obtain(TLObject.FLAG_14);
-                                obtain.setPackageName(context.getPackageName());
-                                obtain.setClassName(rs6.class.getName());
-                                obtain.getText().add(context.getString(i));
-                                accessibilityManager.sendAccessibilityEvent(obtain);
-                                break;
-                            }
-                        }
-                    }
-                } else {
-                    if (ws6Var.r.g()) {
-                        gu6 gu6Var = ws6Var.h;
-                        int i2 = id == 16908313 ? 2 : 1;
-                        gu6Var.getClass();
-                        gu6.j(i2);
-                    }
-                    ws6Var.dismiss();
-                    break;
-                }
-                break;
-            case 1:
-                ws6Var.dismiss();
-                break;
-            case 2:
-                wk4 wk4Var2 = ws6Var.j0;
-                if (wk4Var2 != null && (sessionActivity = ((a) wk4Var2.b).a.getSessionActivity()) != null) {
-                    try {
-                        sessionActivity.send();
-                        ws6Var.dismiss();
-                        break;
-                    } catch (PendingIntent.CanceledException unused) {
-                        Log.e("MediaRouteCtrlDialog", sessionActivity + " was not sent, it had been canceled.");
-                        return;
-                    }
-                }
-                break;
-            default:
-                boolean z = ws6Var.v0;
-                ws6Var.v0 = !z;
-                if (!z) {
-                    ws6Var.V.setVisibility(0);
-                }
-                ws6Var.B0 = ws6Var.v0 ? ws6Var.C0 : ws6Var.D0;
-                ws6Var.t(true);
-                break;
+    @Override // h2, z1
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        if (e() == 1) {
+            this.e = ehe.b(zpe.h(byteBuffer));
+            this.f = ehe.b(zpe.h(byteBuffer));
+            this.h = zpe.g(byteBuffer);
+            this.n = zpe.h(byteBuffer);
+        } else {
+            this.e = ehe.b(zpe.g(byteBuffer));
+            this.f = ehe.b(zpe.g(byteBuffer));
+            this.h = zpe.g(byteBuffer);
+            this.n = zpe.g(byteBuffer);
         }
+        int f = zpe.f(byteBuffer);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 3; i++) {
+            sb.append((char) (((f >> ((2 - i) * 5)) & 31) + 96));
+        }
+        this.r = sb.toString();
+        zpe.f(byteBuffer);
+    }
+
+    @Override // h2, z1
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        int e = e();
+        Date date = this.e;
+        if (e == 1) {
+            byteBuffer.putLong(ehe.a(date));
+            byteBuffer.putLong(ehe.a(this.f));
+            byteBuffer.putInt((int) this.h);
+            byteBuffer.putLong(this.n);
+        } else {
+            byteBuffer.putInt((int) ehe.a(date));
+            byteBuffer.putInt((int) ehe.a(this.f));
+            byteBuffer.putInt((int) this.h);
+            byteBuffer.putInt((int) this.n);
+        }
+        String str = this.r;
+        if (str.getBytes().length != 3) {
+            lq5.j(qd4.y("\"", str, "\" language string isn't exactly 3 characters long!"));
+            return;
+        }
+        int i = 0;
+        for (int i2 = 0; i2 < 3; i2++) {
+            i += (str.getBytes()[i2] - 96) << ((2 - i2) * 5);
+        }
+        aqe.d(i, byteBuffer);
+        aqe.d(0, byteBuffer);
+    }
+
+    @Override // z1
+    public final long getContentSize() {
+        return (e() == 1 ? 32L : 20L) + 4;
+    }
+
+    public final String toString() {
+        lyc b = u84.b(J, this, this);
+        zb9.a().getClass();
+        zb9.b(b);
+        StringBuilder sb = new StringBuilder("MediaHeaderBox[creationTime=");
+        bp1.r(u84.b(s, this, this));
+        sb.append(this.e);
+        sb.append(";modificationTime=");
+        bp1.r(u84.b(w, this, this));
+        sb.append(this.f);
+        sb.append(";timescale=");
+        bp1.r(u84.b(x, this, this));
+        sb.append(this.h);
+        sb.append(";duration=");
+        bp1.r(u84.b(y, this, this));
+        sb.append(this.n);
+        sb.append(";language=");
+        bp1.r(u84.b(E, this, this));
+        return c00.k(sb, this.r, "]");
     }
 }

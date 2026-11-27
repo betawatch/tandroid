@@ -1,18 +1,47 @@
 // default package
 
-import android.text.TextPaint;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h4c implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a5c b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ r47 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class h4c extends g4c {
-    public h4c(String str) {
-        super(str.replace((char) 8238, ' '), (vib) null);
+    public /* synthetic */ h4c(a5c a5cVar, String str, r47 r47Var, long j, int i, byte b) {
+        this.a = b;
+        this.b = a5cVar;
+        this.c = str;
+        this.d = r47Var;
+        this.e = j;
+        this.f = i;
     }
 
-    @Override // g4c, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setTypeface(gl.o());
-        textPaint.setUnderlineText(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.c;
+        switch (b) {
+            case 0:
+                a5c a5cVar = this.b;
+                r47 r47Var = this.d;
+                long j = this.e;
+                int i = this.f;
+                xqe.b(str, new l4c(a5cVar, r47Var, j, i), new l4c(a5cVar, r47Var, j, i), false);
+                break;
+            default:
+                if (str == null) {
+                    str = "und";
+                }
+                r47 r47Var2 = this.d;
+                r47Var2.k.originalLanguage = str;
+                a5c a5cVar2 = this.b;
+                a5cVar2.getMessagesStorage().U1(this.e, r47Var2.k);
+                a5cVar2.w.remove(Integer.valueOf(this.f));
+                a5cVar2.e(r47Var2);
+                break;
+        }
     }
 }

@@ -1,114 +1,93 @@
 // default package
 
-import java.util.List;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e4 implements j74 {
-    public final f4 a = new f4("audio/ac3");
-    public final xu7 b = new xu7(2786);
-    public boolean c;
+public final class e4 extends gn4 implements Runnable {
+    public x76 n;
+    public Object r;
 
-    @Override // j74
-    public final int b(k74 k74Var, m11 m11Var) {
-        xu7 xu7Var = this.b;
-        int read = ((ja3) k74Var).read(xu7Var.a, 0, 2786);
-        if (read == -1) {
-            return -1;
-        }
-        xu7Var.N(0);
-        xu7Var.M(read);
-        boolean z = this.c;
-        f4 f4Var = this.a;
-        if (!z) {
-            f4Var.o = 0L;
-            this.c = true;
-        }
-        f4Var.b(xu7Var);
-        return 0;
+    public static e4 o(x76 x76Var, es4 es4Var) {
+        e4 e4Var = new e4();
+        x76Var.getClass();
+        e4Var.n = x76Var;
+        e4Var.r = es4Var;
+        x76Var.b(e4Var, mo3.a);
+        return e4Var;
     }
 
-    @Override // j74
-    public final boolean c(k74 k74Var) {
-        ja3 ja3Var;
-        int a;
-        xu7 xu7Var = new xu7(10);
-        int i = 0;
-        while (true) {
-            ja3Var = (ja3) k74Var;
-            ja3Var.d(xu7Var.a, 0, 10, false);
-            xu7Var.N(0);
-            if (xu7Var.D() != 4801587) {
-                break;
+    @Override // u2
+    public final void d() {
+        x76 x76Var = this.n;
+        boolean z = false;
+        if ((x76Var != null) & (this.a instanceof i2)) {
+            Object obj = this.a;
+            if ((obj instanceof i2) && ((i2) obj).a) {
+                z = true;
             }
-            xu7Var.O(3);
-            int z = xu7Var.z();
-            i += z + 10;
-            ja3Var.a(z, false);
+            x76Var.cancel(z);
         }
-        ja3Var.f = 0;
-        ja3Var.a(i, false);
-        int i2 = 0;
-        int i3 = i;
-        while (true) {
-            ja3Var.d(xu7Var.a, 0, 6, false);
-            xu7Var.N(0);
-            if (xu7Var.H() != 2935) {
-                ja3Var.f = 0;
-                i3++;
-                if (i3 - i >= 8192) {
-                    break;
-                }
-                ja3Var.a(i3, false);
-                i2 = 0;
-            } else {
-                i2++;
-                if (i2 >= 4) {
-                    return true;
-                }
-                byte[] bArr = xu7Var.a;
-                if (bArr.length < 6) {
-                    a = -1;
-                } else if (((bArr[5] & 248) >> 3) > 10) {
-                    a = ((((bArr[2] & 7) << 8) | (bArr[3] & 255)) + 1) << 1;
-                } else {
-                    byte b = bArr[4];
-                    a = cd3.a((b & 192) >> 6, b & 63);
-                }
-                if (a == -1) {
-                    break;
-                }
-                ja3Var.a(a - 6, false);
+        this.n = null;
+        this.r = null;
+    }
+
+    @Override // u2
+    public final String j() {
+        String str;
+        x76 x76Var = this.n;
+        Object obj = this.r;
+        String j = super.j();
+        if (x76Var != null) {
+            str = "inputFuture=[" + x76Var + "], ";
+        } else {
+            str = "";
+        }
+        if (obj == null) {
+            if (j != null) {
+                return str.concat(j);
             }
+            return null;
         }
-        return false;
+        return str + "function=[" + obj + "]";
     }
 
-    @Override // j74
-    public final void d(long j, long j2) {
-        this.c = false;
-        this.a.d();
-    }
-
-    @Override // j74
-    public final List e() {
-        km5 km5Var = mm5.b;
-        return w59.e;
-    }
-
-    @Override // j74
-    public final void f(l74 l74Var) {
-        this.a.h(l74Var, new l2c(0, 1));
-        l74Var.z();
-        l74Var.g0(new oc0(-9223372036854775807L));
-    }
-
-    @Override // j74
-    public final j74 a() {
-        return this;
-    }
-
-    @Override // j74
-    public final void release() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        x76 x76Var = this.n;
+        Object obj = this.r;
+        if (((this.a instanceof i2) | (x76Var == null)) || (obj == null)) {
+            return;
+        }
+        this.n = null;
+        if (x76Var.isCancelled()) {
+            n(x76Var);
+            return;
+        }
+        try {
+            try {
+                Object apply = ((es4) obj).apply(fne.a(x76Var));
+                this.r = null;
+                l(apply);
+            } catch (Throwable th) {
+                try {
+                    if (th instanceof InterruptedException) {
+                        Thread.currentThread().interrupt();
+                    }
+                    m(th);
+                } finally {
+                    this.r = null;
+                }
+            }
+        } catch (Error e) {
+            m(e);
+        } catch (CancellationException unused) {
+            cancel(false);
+        } catch (ExecutionException e2) {
+            m(e2.getCause());
+        } catch (Exception e3) {
+            m(e3);
+        }
     }
 }

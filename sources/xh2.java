@@ -1,16 +1,48 @@
 // default package
 
 import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.RemoteException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xh2 extends b4 {
-    public static final Parcelable.Creator<xh2> CREATOR = new x21((byte) 7);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class xh2 {
+    public final z0f a;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        jte.s(parcel, jte.r(parcel, 20293));
+    public xh2(z0f z0fVar) {
+        xve.h(z0fVar);
+        this.a = z0fVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof xh2)) {
+            return false;
+        }
+        try {
+            z0f z0fVar = this.a;
+            z0f z0fVar2 = ((xh2) obj).a;
+            fre freVar = (fre) z0fVar;
+            Parcel R = freVar.R();
+            jld.c(R, z0fVar2);
+            Parcel Q = freVar.Q(R, 17);
+            boolean z = Q.readInt() != 0;
+            Q.recycle();
+            return z;
+        } catch (RemoteException e) {
+            p3d.i(e);
+            return false;
+        }
+    }
+
+    public final int hashCode() {
+        try {
+            fre freVar = (fre) this.a;
+            Parcel Q = freVar.Q(freVar.R(), 18);
+            int readInt = Q.readInt();
+            Q.recycle();
+            return readInt;
+        } catch (RemoteException e) {
+            p3d.i(e);
+            return 0;
+        }
     }
 }

@@ -15,19 +15,19 @@ import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private p8c doneCallback;
+    private pcc doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private p8c progressCallback;
+    private pcc progressCallback;
 
-    public HttpGetFileTask(p8c p8cVar, p8c p8cVar2) {
-        this.doneCallback = p8cVar;
-        this.progressCallback = p8cVar2;
+    public HttpGetFileTask(pcc pccVar, pcc pccVar2) {
+        this.doneCallback = pccVar;
+        this.progressCallback = pccVar2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -119,7 +119,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                 if (i3 != 0) {
                     r0 = i3;
                     if (responseCode2 != 206) {
-                        fa4.b("failed to resume, server doesn't support partial content. downloading from the beginning");
+                        cc4.b("failed to resume, server doesn't support partial content. downloading from the beginning");
                         try {
                             File file = this.file;
                             if (file != null) {
@@ -138,10 +138,10 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                             j = 0;
                             if (e instanceof ProtocolException) {
                                 this.exception = e;
-                                fa4.g(e, true);
+                                cc4.g(e, true);
                                 return r19;
                             }
-                            fa4.b("got unexpected end of stream, lets try to resume");
+                            cc4.b("got unexpected end of stream, lets try to resume");
                             i2++;
                             str = r17;
                             i = 0;
@@ -164,7 +164,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                     if (str2 == null) {
                         str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                     }
-                    this.file = f4b.w(y6c.t0, str2);
+                    this.file = c8b.w(yac.t0, str2);
                 }
                 try {
                     bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
@@ -181,7 +181,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                             r19 = obj;
                                             if (read == -1) {
                                                 if (this.progressCallback != null) {
-                                                    gl.c3(new iu4(this, (byte) 25));
+                                                    hl.c3(new ea5(this, (byte) 10));
                                                 }
                                                 if (channel != null) {
                                                     channel.close();
@@ -203,13 +203,13 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                                     try {
                                                         break;
                                                     } catch (Exception e2) {
-                                                        fa4.g(e2, true);
+                                                        cc4.g(e2, true);
                                                     }
                                                 } else {
                                                     if (contentLengthLong > 0) {
                                                         float l = Utilities.l(j / contentLengthLong);
                                                         if (this.progressCallback != null) {
-                                                            gl.c3(new kt(this, l, (byte) 2));
+                                                            hl.c3(new jt(this, l, (byte) 2));
                                                         }
                                                     }
                                                     obj = r19;
@@ -284,7 +284,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                 r17 = str;
                 r19 = 0;
             }
-            fa4.b("got unexpected end of stream, lets try to resume");
+            cc4.b("got unexpected end of stream, lets try to resume");
             i2++;
             str = r17;
             i = 0;
@@ -298,12 +298,12 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        p8c p8cVar = this.doneCallback;
-        if (p8cVar != null) {
+        pcc pccVar = this.doneCallback;
+        if (pccVar != null) {
             if (this.exception == null) {
-                p8cVar.a(file);
+                pccVar.a(file);
             } else {
-                p8cVar.a(null);
+                pccVar.a(null);
             }
         }
     }

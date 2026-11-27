@@ -1,62 +1,29 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.view.View;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jza {
-    public boolean b;
-    public int c;
-    public Bitmap d;
-    public Bitmap e;
-    public Bitmap f;
-    public Bitmap g;
-    public float j;
-    public float k;
-    public int n;
-    public float[] o;
-    public final Paint r;
-    public final Paint s;
-    public final /* synthetic */ mza t;
-    public final lm a = new lm(0.0f, (View) null, 0, 320, s33.h);
-    public final RectF h = new RectF();
-    public final RectF i = new RectF();
-    public final Path l = new Path();
-    public final Path m = new Path();
-    public final Paint p = new Paint(1);
-    public final Paint q = new Paint(1);
+public final /* synthetic */ class jza implements Runnable {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
 
-    public jza(mza mzaVar) {
-        this.t = mzaVar;
-        new Paint(1);
-        this.r = new Paint(1);
-        this.s = new Paint(1);
+    public /* synthetic */ jza(int i, int i2, long j, boolean z) {
+        this.a = j;
+        this.b = i;
+        this.c = i2;
+        this.d = z;
     }
 
-    public final Bitmap a() {
-        Bitmap bitmap = this.g;
-        return bitmap != null ? bitmap : this.f;
-    }
-
-    public final Bitmap b() {
-        Bitmap bitmap = this.e;
-        return bitmap != null ? bitmap : this.d;
-    }
-
-    public final Bitmap c() {
-        Bitmap createBitmap = Bitmap.createBitmap(b().getWidth(), b().getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        canvas.drawColor(-16777216);
-        Paint paint = new Paint(3);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        canvas.drawBitmap(b(), 0.0f, 0.0f, paint);
-        return createBitmap;
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j = this.a;
+        int i = this.b;
+        int i2 = this.c;
+        if (j != 0) {
+            kt0.g(i).p(i2, j);
+        } else {
+            jxa.v(i, this.d).W(i2);
+        }
     }
 }

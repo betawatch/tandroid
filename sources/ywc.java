@@ -1,149 +1,44 @@
 // default package
 
-import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import androidx.appcompat.widget.ActionBarContextView;
-import java.lang.ref.WeakReference;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ywc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xt b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ywc extends f9 implements wz6 {
-    public final Context c;
-    public final yz6 d;
-    public tg2 e;
-    public WeakReference f;
-    public final /* synthetic */ zwc h;
-
-    public ywc(zwc zwcVar, Context context, tg2 tg2Var) {
-        this.h = zwcVar;
-        this.c = context;
-        this.e = tg2Var;
-        yz6 yz6Var = new yz6(context);
-        yz6Var.l = true;
-        this.d = yz6Var;
-        yz6Var.e = this;
+    public /* synthetic */ ywc(xt xtVar, byte b) {
+        this.a = b;
+        this.b = xtVar;
     }
 
-    @Override // wz6
-    public final boolean B(yz6 yz6Var, MenuItem menuItem) {
-        tg2 tg2Var = this.e;
-        if (tg2Var != null) {
-            return ((wtc) tg2Var.b).w(this, menuItem);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        xt xtVar = this.b;
+        switch (b) {
+            case 0:
+                boolean z = xtVar.a0;
+                xs0 xs0Var = xtVar.c0;
+                if (!z) {
+                    xs0Var.clearFocus();
+                    hl.t1(xs0Var);
+                    break;
+                } else {
+                    xs0Var.requestFocus();
+                    hl.E3(xs0Var);
+                    break;
+                }
+            default:
+                xtVar.B0 = true;
+                if (xtVar.getParent() != null) {
+                    xtVar.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                try {
+                    xtVar.performHapticFeedback(0, 1);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
         }
-        return false;
-    }
-
-    @Override // f9
-    public final void b() {
-        zwc zwcVar = this.h;
-        if (zwcVar.i != this) {
-            return;
-        }
-        if (zwcVar.p) {
-            zwcVar.j = this;
-            zwcVar.k = this.e;
-        } else {
-            this.e.S(this);
-        }
-        this.e = null;
-        zwcVar.a(false);
-        ActionBarContextView actionBarContextView = zwcVar.f;
-        if (actionBarContextView.w == null) {
-            actionBarContextView.e();
-        }
-        zwcVar.c.setHideOnContentScrollEnabled(zwcVar.t);
-        zwcVar.i = null;
-    }
-
-    @Override // f9
-    public final View c() {
-        WeakReference weakReference = this.f;
-        if (weakReference != null) {
-            return (View) weakReference.get();
-        }
-        return null;
-    }
-
-    @Override // f9
-    public final yz6 d() {
-        return this.d;
-    }
-
-    @Override // f9
-    public final xbb e() {
-        return new xbb(this.c);
-    }
-
-    @Override // f9
-    public final CharSequence f() {
-        return this.h.f.getSubtitle();
-    }
-
-    @Override // f9
-    public final CharSequence g() {
-        return this.h.f.getTitle();
-    }
-
-    @Override // f9
-    public final void h() {
-        if (this.h.i != this) {
-            return;
-        }
-        yz6 yz6Var = this.d;
-        yz6Var.w();
-        try {
-            this.e.W(this, yz6Var);
-        } finally {
-            yz6Var.v();
-        }
-    }
-
-    @Override // f9
-    public final boolean i() {
-        return this.h.f.J;
-    }
-
-    @Override // f9
-    public final void l(View view) {
-        this.h.f.setCustomView(view);
-        this.f = new WeakReference(view);
-    }
-
-    @Override // f9
-    public final void m(int i) {
-        n(this.h.a.getResources().getString(i));
-    }
-
-    @Override // f9
-    public final void n(CharSequence charSequence) {
-        this.h.f.setSubtitle(charSequence);
-    }
-
-    @Override // f9
-    public final void o(int i) {
-        p(this.h.a.getResources().getString(i));
-    }
-
-    @Override // wz6
-    public final void o1(yz6 yz6Var) {
-        if (this.e != null) {
-            h();
-            b9 b9Var = this.h.f.d;
-            if (b9Var != null) {
-                b9Var.l();
-            }
-        }
-    }
-
-    @Override // f9
-    public final void p(CharSequence charSequence) {
-        this.h.f.setTitle(charSequence);
-    }
-
-    @Override // f9
-    public final void q(boolean z) {
-        this.a = z;
-        this.h.f.setTitleOptional(z);
     }
 }

@@ -1,25 +1,12 @@
 // default package
 
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qy4 {
+    public boolean a;
+    public final /* synthetic */ vy4 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class qy4 implements sh5 {
-    public LatLngBounds a;
-
-    public final yh5 a() {
-        LatLngBounds latLngBounds = this.a;
-        LatLng latLng = latLngBounds.a;
-        double d = latLng.a;
-        LatLng latLng2 = latLngBounds.b;
-        double d2 = (d + latLng2.a) / 2.0d;
-        double d3 = latLng2.b;
-        double d4 = latLng.b;
-        if (d4 > d3) {
-            d3 += 360.0d;
-        }
-        LatLng latLng3 = new LatLng(d2, (d3 + d4) / 2.0d);
-        return new yh5(latLng3.a, latLng3.b);
+    public qy4(vy4 vy4Var) {
+        this.b = vy4Var;
     }
 }

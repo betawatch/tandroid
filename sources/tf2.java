@@ -1,35 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class tf2 extends ih2 {
-    public final /* synthetic */ byte i = 1;
+public final class tf2 extends by4 {
+    public final /* synthetic */ bg2 m1;
 
-    public /* synthetic */ tf2(float f, float f2, int i) {
-        super(f, f2, i);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tf2(bg2 bg2Var, Activity activity, bg2 bg2Var2) {
+        super(activity, bg2Var2);
+        this.m1 = bg2Var;
     }
 
-    @Override // ih2, android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        switch (this.i) {
-            case 0:
-                return (int) ((this.b * 2.0f) + this.a);
-            default:
-                return gl.L(26.0f);
-        }
-    }
-
-    @Override // ih2, android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.i) {
-            case 0:
-                return (int) ((this.b * 2.0f) + this.a);
-            default:
-                return gl.L(26.0f);
-        }
-    }
-
-    public /* synthetic */ tf2(int i) {
-        super(i);
+    @Override // by4
+    public final void F0() {
+        bg2 bg2Var = this.m1;
+        bg2Var.getMessagesController().Q(bg2Var.getParentActivity(), bg2Var.n, bg2Var, new rd1(this, (byte) 27));
     }
 }

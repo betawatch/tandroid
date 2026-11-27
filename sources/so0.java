@@ -1,8 +1,8 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class so0 extends aod {
+public final class so0 extends rsd {
     public final /* synthetic */ byte a;
     public final /* synthetic */ Object b;
 
@@ -11,59 +11,59 @@ public final class so0 extends aod {
         this.b = obj;
     }
 
-    @Override // aod
+    @Override // rsd
     public final void a(int i, CharSequence charSequence) {
         byte b = this.a;
         Object obj = this.b;
         switch (b) {
             case 0:
-                fa4.b("BotBiometry onAuthenticationError " + i + " \"" + ((Object) charSequence) + "\"");
+                cc4.b("BotBiometry onAuthenticationError " + i + " \"" + ((Object) charSequence) + "\"");
                 uo0 uo0Var = (uo0) obj;
-                ae2 ae2Var = uo0Var.j;
-                if (ae2Var != null) {
+                qe2 qe2Var = uo0Var.j;
+                if (qe2Var != null) {
                     uo0Var.j = null;
-                    ae2Var.a(Boolean.FALSE, null);
+                    qe2Var.a(Boolean.FALSE, null);
                     break;
                 }
                 break;
             default:
-                fa4.b("PasscodeView onAuthenticationError " + i + " \"" + ((Object) charSequence) + "\"");
-                ((yv7) obj).o(true);
+                cc4.b("PasscodeView onAuthenticationError " + i + " \"" + ((Object) charSequence) + "\"");
+                ((fz7) obj).o(true);
                 break;
         }
     }
 
-    @Override // aod
+    @Override // rsd
     public final void b() {
         switch (this.a) {
             case 0:
-                fa4.b("BotBiometry onAuthenticationFailed");
+                cc4.b("BotBiometry onAuthenticationFailed");
                 break;
             default:
-                fa4.b("PasscodeView onAuthenticationFailed");
-                ((yv7) this.b).o(true);
+                cc4.b("PasscodeView onAuthenticationFailed");
+                ((fz7) this.b).o(true);
                 break;
         }
     }
 
-    @Override // aod
-    public final void c(fj0 fj0Var) {
+    @Override // rsd
+    public final void c(gj0 gj0Var) {
         byte b = this.a;
         Object obj = this.b;
         switch (b) {
             case 0:
-                fa4.b("BotBiometry onAuthenticationSucceeded");
+                cc4.b("BotBiometry onAuthenticationSucceeded");
                 uo0 uo0Var = (uo0) obj;
-                ae2 ae2Var = uo0Var.j;
-                if (ae2Var != null) {
+                qe2 qe2Var = uo0Var.j;
+                if (qe2Var != null) {
                     uo0Var.j = null;
-                    ae2Var.a(Boolean.TRUE, fj0Var);
+                    qe2Var.a(Boolean.TRUE, gj0Var);
                     break;
                 }
                 break;
             default:
-                fa4.b("PasscodeView onAuthenticationSucceeded");
-                ((yv7) obj).n(true);
+                cc4.b("PasscodeView onAuthenticationSucceeded");
+                ((fz7) obj).n(true);
                 break;
         }
     }

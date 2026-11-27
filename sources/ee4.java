@@ -1,55 +1,39 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.DialogInterface;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ee4 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ee4 implements DialogInterface.OnShowListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public ee4(yva yvaVar, float f, int i) {
-        this.a = (byte) 1;
-        this.d = yvaVar;
-        this.b = f;
-        this.c = i;
+    public /* synthetic */ ee4(EditTextBoldCursor editTextBoldCursor, byte b) {
+        this.a = b;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         byte b = this.a;
-        float f = this.b;
-        int i = this.c;
-        View view = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.b;
         switch (b) {
             case 0:
-                fe4 fe4Var = (fe4) view;
-                fe4Var.b(i == 5 ? 0.0f : -f, i + 1);
-                fe4Var.E = 0.0f;
-                fe4Var.invalidate();
+                hl.c3(new l(editTextBoldCursor, (byte) 4));
                 break;
             case 1:
-                yva yvaVar = (yva) view;
-                yvaVar.d0 = f;
-                if (yvaVar.getValue() != i) {
-                    yvaVar.e(yvaVar.getValue());
-                }
-                yvaVar.invalidate();
+                editTextBoldCursor.requestFocus();
+                hl.E3(editTextBoldCursor);
+                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
+                break;
+            case 2:
+                editTextBoldCursor.requestFocus();
+                hl.E3(editTextBoldCursor);
                 break;
             default:
-                ((nsc) view).c(i, f, false);
+                hl.c3(new l(editTextBoldCursor, (byte) 10));
                 break;
         }
-    }
-
-    public /* synthetic */ ee4(View view, int i, float f, byte b) {
-        this.a = b;
-        this.d = view;
-        this.c = i;
-        this.b = f;
     }
 }

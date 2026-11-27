@@ -1,187 +1,158 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.Spanned;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.os.Handler;
+import android.text.TextUtils;
+import j$.util.Objects;
+import java.io.File;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ba1 extends TextView {
-    public final /* synthetic */ byte a = 0;
-    public final Paint b;
-    public Path c;
-    public Object d;
-    public final Object e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ba1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ba1(vs9 vs9Var, Context context) {
-        super(context);
-        this.e = vs9Var;
-        this.c = new Path();
-        this.d = new RectF();
-        this.b = new Paint();
+    public /* synthetic */ ba1(tw2 tw2Var, String str, File file, boolean z, boolean z2) {
+        this.a = (byte) 1;
+        this.d = tw2Var;
+        this.e = str;
+        this.b = z;
+        this.c = z2;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                int p1 = bkb.p1(0.15f, bkb.v0(bkb.n6, ((vs9) this.e).c));
-                Paint paint = this.b;
-                paint.setColor(p1);
-                RectF rectF = (RectF) this.d;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                Path path = this.c;
-                Paint paint2 = i19.S;
-                i19.h(rectF, gl.P, path);
-                canvas.drawPath(path, paint);
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        nd4 nd4Var;
+        nd4 nd4Var2;
+        NativeInstance nativeInstance;
         switch (this.a) {
             case 0:
-                b46 b46Var = (b46) this.c;
-                if (b46Var != null) {
-                    canvas.drawPath(b46Var, this.b);
-                }
-                if (((i46) this.e).g(canvas)) {
-                    invalidate();
-                }
-                super.onDraw(canvas);
+                ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
                 break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        switch (this.a) {
             case 1:
-                vs9 vs9Var = (vs9) this.e;
-                super.onLayout(z, i, i2, i3, i4);
-                int width = getWidth();
-                int i5 = 0;
-                for (int i6 = 0; i6 < vs9Var.getChildCount(); i6++) {
-                    width = Math.min(width, vs9Var.getChildAt(i6).getLeft());
-                    i5 = Math.max(i5, vs9Var.getChildAt(i6).getRight());
+                tw2 tw2Var = (tw2) this.d;
+                String str = (String) this.e;
+                boolean z = this.b;
+                boolean z2 = this.c;
+                vw2 vw2Var = tw2Var.b;
+                vw2Var.f0 = false;
+                vw2Var.g0 = str;
+                if (str == null) {
+                    vw2Var.g0 = "";
                 }
-                setPivotX((width + i5) / 2.0f);
+                vw2Var.h0 = z;
+                vw2Var.f(z2, true);
                 break;
-            default:
-                super.onLayout(z, i, i2, i3, i4);
+            case 2:
+                ub4 ub4Var = (ub4) this.d;
+                boolean z3 = this.b;
+                String str2 = (String) this.e;
+                boolean z4 = this.c;
+                xb4 xb4Var = ub4Var.d;
+                if (z3) {
+                    xb4Var.n.remove(str2);
+                } else {
+                    xb4Var.h.remove(str2);
+                }
+                sm5 sm5Var = ub4Var.d.F;
+                if (sm5Var != null) {
+                    Utilities.d.c(new ps1((Object) sm5Var, sm5Var.a, (Object) str2, z3, (byte) 5));
+                }
+                xb4 xb4Var2 = ub4Var.d;
+                if (!z4) {
+                    int i = xb4Var2.r - 1;
+                    xb4Var2.r = i;
+                    if (i < 1 && (nd4Var = (nd4) xb4Var2.e.poll()) != null) {
+                        ub4Var.d.r++;
+                        nd4Var.c();
+                        break;
+                    }
+                } else {
+                    int i2 = xb4Var2.s - 1;
+                    xb4Var2.s = i2;
+                    if (i2 < 1 && (nd4Var2 = (nd4) xb4Var2.f.poll()) != null) {
+                        ub4Var.d.s++;
+                        nd4Var2.c();
+                        break;
+                    }
+                }
                 break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i, i2);
-                if (getText() instanceof Spanned) {
-                    Spanned spanned = (Spanned) getText();
-                    g4c[] g4cVarArr = (g4c[]) spanned.getSpans(0, spanned.length(), g4c.class);
-                    if (g4cVarArr != null && g4cVarArr.length > 0) {
-                        b46 b46Var = new b46(0);
-                        this.c = b46Var;
-                        b46Var.n = false;
-                        for (int i3 = 0; i3 < g4cVarArr.length; i3++) {
-                            int spanStart = spanned.getSpanStart(g4cVarArr[i3]);
-                            int spanEnd = spanned.getSpanEnd(g4cVarArr[i3]);
-                            ((b46) this.c).d(getLayout(), spanStart, 0.0f);
-                            int i4 = getText() != null ? getPaint().baselineShift : 0;
-                            b46 b46Var2 = (b46) this.c;
-                            b46Var2.o = i4 != 0 ? gl.L(i4 > 0 ? 5.0f : -2.0f) + i4 : 0;
-                            getLayout().getSelectionPath(spanStart, spanEnd, (b46) this.c);
+            case 3:
+                c cVar = (c) this.d;
+                pcc pccVar = (pcc) this.e;
+                boolean z5 = this.b;
+                boolean z6 = this.c;
+                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) cVar.e;
+                k35 k35Var = cVar.c;
+                if (k35Var == null || !TextUtils.equals(k35Var.c, tL_walletState.address) || !cVar.c.f(tL_walletState.public_key)) {
+                    cVar.E(z5, z6, false, new p((Object) cVar, (Object) pccVar, (Object) tL_walletState, (byte) 14));
+                    break;
+                } else {
+                    pccVar.a(null);
+                    break;
+                }
+            case 4:
+                dq9 dq9Var = (dq9) this.d;
+                NativeInstance nativeInstance2 = (NativeInstance) this.e;
+                boolean z7 = this.b;
+                boolean z8 = this.c;
+                boolean z9 = dq9Var.w;
+                if (!z9 && (nativeInstance = dq9Var.P) == nativeInstance2 && !z7 && !dq9Var.h) {
+                    if (!z8) {
+                        g01 g01Var = dq9Var.Y;
+                        if (g01Var != null) {
+                            g01Var.k();
+                            dq9Var.Y = null;
                         }
-                        ((b46) this.c).n = true;
+                        dq9Var.Z = false;
+                        break;
+                    } else if (!z9 && nativeInstance != null && dq9Var.Y == null) {
+                        g01 g01Var2 = new g01(dq9Var.e, dq9Var.f, dq9Var.k(), dq9Var.P, new wp9(dq9Var, nativeInstance));
+                        dq9Var.Y = g01Var2;
+                        g01Var2.b.post(new xac((byte) 6, g01Var2, a.o()));
+                        dq9Var.N();
+                        g01 g01Var3 = dq9Var.Y;
+                        Handler handler = g01Var3.b;
+                        xz0 xz0Var = g01Var3.d;
+                        Objects.requireNonNull(xz0Var);
+                        handler.post(new gz0(xz0Var, (byte) 6));
                         break;
                     }
                 }
                 break;
             default:
-                super.onMeasure(i, i2);
+                qoc qocVar = (qoc) this.d;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.e;
+                boolean z10 = this.b;
+                boolean z11 = this.c;
+                atomicBoolean.set(false);
+                ((zhc) qocVar.c).d(z10, z11);
                 break;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                i46 i46Var = (i46) this.e;
-                Layout layout = getLayout();
-                int x = (int) (motionEvent.getX() - 0.0f);
-                int y = (int) (motionEvent.getY() - 0.0f);
-                if (motionEvent.getAction() == 0 || motionEvent.getAction() == 1) {
-                    int lineForVertical = layout.getLineForVertical(y);
-                    float f = x;
-                    int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f);
-                    float lineLeft = layout.getLineLeft(lineForVertical);
-                    if (lineLeft <= f && layout.getLineWidth(lineForVertical) + lineLeft >= f && y >= 0 && y <= layout.getHeight()) {
-                        Spannable spannable = (Spannable) layout.getText();
-                        ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                        if (clickableSpanArr.length != 0) {
-                            i46Var.e(true);
-                            if (motionEvent.getAction() != 0) {
-                                if (motionEvent.getAction() == 1) {
-                                    m46 m46Var = (m46) this.d;
-                                    if (m46Var != null) {
-                                        CharacterStyle characterStyle = m46Var.i;
-                                        ClickableSpan clickableSpan = clickableSpanArr[0];
-                                        if (characterStyle == clickableSpan) {
-                                            clickableSpan.onClick(this);
-                                        }
-                                    }
-                                    this.d = null;
-                                    break;
-                                }
-                            } else {
-                                m46 m46Var2 = new m46(clickableSpanArr[0], null, motionEvent.getX(), motionEvent.getY(), 0);
-                                this.d = m46Var2;
-                                m46Var2.d(771751935);
-                                i46Var.a((m46) this.d, null);
-                                int spanStart = spannable.getSpanStart(((m46) this.d).i);
-                                int spanEnd = spannable.getSpanEnd(((m46) this.d).i);
-                                b46 b = ((m46) this.d).b();
-                                b.d(layout, spanStart, 0.0f);
-                                layout.getSelectionPath(spanStart, spanEnd, b);
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    i46Var.e(true);
-                    this.d = null;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+    public /* synthetic */ ba1(ub4 ub4Var, boolean z, String str, boolean z2) {
+        this.a = (byte) 2;
+        this.d = ub4Var;
+        this.b = z;
+        this.e = str;
+        this.c = z2;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ba1(Context context, Paint paint) {
-        super(context);
-        this.b = paint;
-        this.e = new i46(this);
+    public /* synthetic */ ba1(Object obj, Object obj2, boolean z, boolean z2, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.e = obj2;
+        this.b = z;
+        this.c = z2;
     }
 }

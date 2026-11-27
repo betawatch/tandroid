@@ -1,41 +1,78 @@
 // default package
 
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.ui.ProfileActivity;
+import j$.time.LocalDate;
+import j$.time.ZoneOffset;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class yd implements View.OnClickListener {
+public final /* synthetic */ class yd implements dq7, o69, b86, ot2 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ag2[] b;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ yd(ag2[] ag2VarArr, byte b) {
+    public /* synthetic */ yd(int i, byte b) {
         this.a = b;
-        this.b = ag2VarArr;
+        this.b = i;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // ot2
+    public final void accept(Object obj) {
         byte b = this.a;
-        ag2[] ag2VarArr = this.b;
+        int i = this.b;
+        og8 og8Var = (og8) obj;
         switch (b) {
-            case 0:
-                ag2VarArr[((Integer) view.getTag()).intValue()].c(!ag2VarArr[r4.intValue()].b(), true);
+            case 6:
+                og8Var.e0(i);
                 break;
-            case 1:
-                ag2VarArr[((Integer) view.getTag()).intValue()].c(!ag2VarArr[r4.intValue()].b(), true);
+            case 7:
+                og8Var.K(i);
                 break;
-            case 2:
-                ag2VarArr[((Integer) view.getTag()).intValue()].c(!ag2VarArr[r4.intValue()].b(), true);
-                break;
-            case 3:
-                ag2VarArr[0].c(!r3.b(), true);
+            case 8:
+                og8Var.n0(i);
                 break;
             default:
-                RectF rectF = ProfileActivity.Z6;
-                ag2VarArr[0].c(!r3.b(), true);
+                og8Var.I0(i);
                 break;
         }
+    }
+
+    @Override // dq7
+    public final String c(int i) {
+        byte b = this.a;
+        int i2 = this.b;
+        switch (b) {
+            case 0:
+                return i == i2 ? "—" : String.format("%02d", Integer.valueOf(i));
+            default:
+                if (i == 0) {
+                    return ob6.M0(2131748285, null);
+                }
+                LocalDate plusDays = LocalDate.now().plusDays(i);
+                int year = plusDays.getYear();
+                long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
+                if (year != i2) {
+                    return ob6.D0().x0().format(epochMilli);
+                }
+                return ob6.D0().z0().format(epochMilli) + ", " + ob6.D0().v0().format(epochMilli);
+        }
+    }
+
+    @Override // b86
+    public final void invoke(Object obj) {
+        byte b = this.a;
+        int i = this.b;
+        bg8 bg8Var = (bg8) obj;
+        switch (b) {
+            case 3:
+                bg8Var.g(i);
+                break;
+            default:
+                bg8Var.d(i);
+                break;
+        }
+    }
+
+    @Override // o69
+    public final int run() {
+        return this.b;
     }
 }

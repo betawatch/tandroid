@@ -3,10 +3,10 @@
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class jhf extends x8d implements Set {
-    public transient jff f;
+public abstract class jhf extends qdd implements Set {
+    public transient wbf f;
 
     @Override // java.util.Collection, java.util.Set
     public final boolean equals(Object obj) {
@@ -34,15 +34,5 @@ public abstract class jhf extends x8d implements Set {
             i += next != null ? next.hashCode() : 0;
         }
         return i;
-    }
-
-    public final jff l() {
-        jff jffVar = this.f;
-        if (jffVar != null) {
-            return jffVar;
-        }
-        zhf zhfVar = new zhf((c5d) this);
-        this.f = zhfVar;
-        return zhfVar;
     }
 }

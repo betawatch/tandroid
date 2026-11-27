@@ -1,65 +1,30 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
-import android.window.OnBackInvokedCallback;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
+import android.content.res.Configuration;
+import android.os.LocaleList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class uo implements OnBackInvokedCallback {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ uo(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+public abstract class uo {
+    public static void a(Configuration configuration, Configuration configuration2, Configuration configuration3) {
+        LocaleList locales = configuration.getLocales();
+        LocaleList locales2 = configuration2.getLocales();
+        if (locales.equals(locales2)) {
+            return;
+        }
+        configuration3.setLocales(locales2);
+        configuration3.locale = configuration2.locale;
     }
 
-    public final void onBackInvoked() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((bp) obj).r();
-                break;
-            case 1:
-                ((op4) obj).invoke();
-                break;
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.d9;
-                Activity activity = photoViewer.E;
-                if (!(activity instanceof LaunchActivity)) {
-                    if (photoViewer.V0()) {
-                        photoViewer.B(true, false);
-                        break;
-                    }
-                } else {
-                    ((LaunchActivity) activity).onBackPressed();
-                    break;
-                }
-                break;
-            case 3:
-                ((t7b) obj).K();
-                break;
-            case 4:
-                m8b m8bVar = (m8b) obj;
-                LaunchActivity launchActivity = LaunchActivity.H1;
-                if (launchActivity == null) {
-                    m8bVar.q();
-                    break;
-                } else {
-                    launchActivity.onBackPressed();
-                    break;
-                }
-            case 5:
-                ((Runnable) obj).run();
-                break;
-            default:
-                ((sfc) obj).run();
-                break;
-        }
+    public static qb6 b(Configuration configuration) {
+        return qb6.b(configuration.getLocales().toLanguageTags());
+    }
+
+    public static void c(qb6 qb6Var) {
+        LocaleList.setDefault(LocaleList.forLanguageTags(qb6Var.a.a()));
+    }
+
+    public static void d(Configuration configuration, qb6 qb6Var) {
+        configuration.setLocales(LocaleList.forLanguageTags(qb6Var.a.a()));
     }
 }

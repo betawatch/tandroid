@@ -1,31 +1,32 @@
 // default package
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class nj2 extends CharacterStyle {
-    public final String a;
-    public final float b;
-    public final boolean c;
-
-    public nj2(String str, String str2, boolean z) {
-        this.c = z;
-        this.a = str;
-        int length = str2 == null ? 0 : str2.length();
-        jj8 jj8Var = qj2.a;
-        this.b = length > 120 ? 5 : length > 50 ? 3 : 2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class nj2 extends IOException {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public nj2(long j, int i, long j2) {
+        super("Illegal clipping: ".concat(r4));
+        String str;
+        if (i != 0) {
+            if (i == 1) {
+                str = "not seekable to start";
+            } else if (i != 2) {
+                str = "unknown";
+            } else {
+                yve.p((j == -9223372036854775807L || j2 == -9223372036854775807L) ? false : true);
+                str = "start exceeds end. Start time: " + j + ", End time: " + j2;
+            }
+        } else {
+            str = "invalid period count";
+        }
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (this.c) {
-            textPaint.setTextSize(gl.L(gba.S0 - this.b));
-        }
-        textPaint.setColor(bkb.w0(null, bkb.Uc, false));
-        textPaint.setTypeface(Typeface.MONOSPACE);
-        textPaint.setUnderlineText(false);
+    public nj2(int i) {
+        this(-9223372036854775807L, i, -9223372036854775807L);
     }
 }

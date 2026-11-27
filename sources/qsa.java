@@ -1,74 +1,34 @@
 // default package
 
-import android.content.Context;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qsa implements p8c {
-    public final /* synthetic */ gta a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ p8c d;
-    public final /* synthetic */ Context e;
-    public final /* synthetic */ wjb f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ String h;
-    public final /* synthetic */ k27 i;
-    public final /* synthetic */ TLRPC.InputInvoice j;
-    public final /* synthetic */ TLRPC.TL_payments_paymentFormStars k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ long m;
+public final /* synthetic */ class qsa implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wua b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ qsa(gta gtaVar, long j, boolean[] zArr, p8c p8cVar, Context context, wjb wjbVar, boolean z, String str, k27 k27Var, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, int i, long j2) {
-        this.a = gtaVar;
-        this.b = j;
-        this.c = zArr;
-        this.d = p8cVar;
-        this.e = context;
-        this.f = wjbVar;
-        this.g = z;
-        this.h = str;
-        this.i = k27Var;
-        this.j = inputInvoice;
-        this.k = tL_payments_paymentFormStars;
-        this.l = i;
-        this.m = j2;
+    public /* synthetic */ qsa(wua wuaVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z, byte b) {
+        this.a = b;
+        this.b = wuaVar;
+        this.c = twoStepVerificationActivity;
+        this.d = z;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        p8c p8cVar = (p8c) obj;
-        gta gtaVar = this.a;
-        long j = gtaVar.f.amount;
-        long j2 = this.b;
-        boolean[] zArr = this.c;
-        p8c p8cVar2 = this.d;
-        k27 k27Var = this.i;
-        TLRPC.InputInvoice inputInvoice = this.j;
-        TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = this.k;
-        int i = this.l;
-        if (j >= j2) {
-            gtaVar.X(k27Var, inputInvoice, tL_payments_paymentFormStars, new ora(gtaVar, i, p8cVar, zArr, p8cVar2));
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                hl.c3(new wsa(this.b, tLObject, this.c, this.d, tL_error));
+                break;
+            default:
+                hl.c3(new wsa(this.b, tL_error, this.c, tLObject, this.d));
+                break;
         }
-        boolean a5 = na7.q1(gtaVar.a).a5();
-        Context context = this.e;
-        wjb wjbVar = this.f;
-        if (a5) {
-            boolean[] zArr2 = {false};
-            zua zuaVar = new zua(context, wjbVar, j2, this.g ? 9 : 0, this.h, new nx1(gtaVar, zArr2, k27Var, inputInvoice, tL_payments_paymentFormStars, zArr, i, p8cVar2, p8cVar), this.m);
-            zuaVar.setOnDismissListener(new cu0(gtaVar, p8cVar, zArr2, zArr, p8cVar2, (byte) 3));
-            zuaVar.show();
-            return;
-        }
-        if (p8cVar != null) {
-            p8cVar.a(Boolean.FALSE);
-        }
-        if (!zArr[0] && p8cVar2 != null) {
-            p8cVar2.a("cancelled");
-            zArr[0] = true;
-        }
-        gta.c0(context, wjbVar);
     }
 }

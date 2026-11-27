@@ -1,145 +1,237 @@
 // default package
 
-import android.os.SystemClock;
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.StaticLayout;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ac2 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ fc2 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ac2 {
+    public final wb2 a;
+    public int b;
+    public jj2 c;
+    public String d;
+    public jxc e;
+    public Drawable f;
+    public int g = -1;
 
-    public /* synthetic */ ac2(fc2 fc2Var, byte b) {
-        this.a = b;
-        this.b = fc2Var;
+    public ac2(wb2 wb2Var) {
+        this.a = wb2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        final byte b2 = 0;
-        final fc2 fc2Var = this.b;
-        switch (b) {
-            case 0:
-                gl.c3(new Runnable() { // from class: bc2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b3 = b2;
-                        TLObject tLObject2 = tLObject;
-                        switch (b3) {
-                            case 0:
-                                long elapsedRealtime = SystemClock.elapsedRealtime();
-                                fc2 fc2Var2 = fc2Var;
-                                fc2Var2.N = elapsedRealtime;
-                                fc2Var2.O = false;
-                                if (tLObject2 != null) {
-                                    TL_phone.groupParticipants groupparticipants = (TL_phone.groupParticipants) tLObject2;
-                                    na7.q1(fc2Var2.C.a).b4(groupparticipants.users, false);
-                                    na7.q1(fc2Var2.C.a).V3(groupparticipants.chats, false);
-                                    TLRPC.GroupCall groupCall = fc2Var2.b;
-                                    int i = groupCall.participants_count;
-                                    int i2 = groupparticipants.count;
-                                    if (i != i2) {
-                                        groupCall.participants_count = i2;
-                                        if (w01.a) {
-                                            b00.p(fc2Var2.b.participants_count, new StringBuilder("new participants reload count "));
-                                        }
-                                        kk7.f(fc2Var2.C.a).k(kk7.v2, Long.valueOf(fc2Var2.c), Long.valueOf(fc2Var2.b.id), Boolean.FALSE);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                boolean z = tLObject2 instanceof TL_phone.groupCall;
-                                fc2 fc2Var3 = fc2Var;
-                                if (!z) {
-                                    fc2Var3.getClass();
-                                    break;
-                                } else {
-                                    TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
-                                    fc2Var3.b = groupcall.call;
-                                    na7.q1(fc2Var3.C.a).b4(groupcall.users, false);
-                                    na7.q1(fc2Var3.C.a).V3(groupcall.chats, false);
-                                    ArrayList<TLRPC.GroupCallParticipant> arrayList = groupcall.participants;
-                                    String str = groupcall.participants_next_offset;
-                                    TLRPC.GroupCall groupCall2 = groupcall.call;
-                                    fc2Var3.n(arrayList, true, "", str, groupCall2.version, groupCall2.participants_count);
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 1:
-                fc2Var.getClass();
-                if (tLObject != null) {
-                    na7.q1(fc2Var.C.a).R3((TLRPC.Updates) tLObject, false);
-                    break;
+    public final void a(Canvas canvas) {
+        wb2 wb2Var = this.a;
+        nl nlVar = wb2Var.U0;
+        rx6 rx6Var = wb2Var.ec;
+        Drawable drawable = (Drawable) rx6Var.d;
+        if (drawable == null) {
+            drawable = c00.e((Context) rx6Var.b, R.drawable.map_pin);
+            rx6Var.d = drawable;
+        }
+        int intrinsicWidth = (int) (drawable.getIntrinsicWidth() * 0.8f);
+        int intrinsicHeight = (int) (drawable.getIntrinsicHeight() * 0.8f);
+        int z = (int) bp1.z(nlVar.N0, intrinsicWidth, 2.0f, nlVar.L0);
+        int interpolation = (int) ((((nlVar.O0 / 2.0f) - intrinsicHeight) + nlVar.M0) - ((1.0f - k43.k.getInterpolation(nlVar.i1)) * hl.L(16.0f)));
+        drawable.setAlpha((int) (Math.min(1.0f, nlVar.i1 * 5.0f) * 255.0f));
+        drawable.setBounds(z, interpolation, intrinsicWidth + z, intrinsicHeight + interpolation);
+        drawable.draw(canvas);
+        if (nlVar.i1 < 1.0f) {
+            wb2Var.invalidate();
+        }
+    }
+
+    public final void b(Canvas canvas) {
+        float f;
+        float f2;
+        float f3;
+        String C;
+        float abs;
+        float f4;
+        RectF rectF;
+        float f5;
+        wb2 wb2Var;
+        ImageReceiver imageReceiver;
+        dc2 dc2Var;
+        float f6;
+        wb2 wb2Var2 = this.a;
+        int i = wb2Var2.a6;
+        ImageReceiver imageReceiver2 = wb2Var2.F7;
+        dc2 dc2Var2 = wb2Var2.ub;
+        RectF rectF2 = wb2Var2.c4;
+        nl nlVar = wb2Var2.U0;
+        if (wb2Var2.e3 != null) {
+            if (wb2Var2.Q5.O3()) {
+                aob.H2.setColor(aob.v0(aob.Wc, wb2Var2.cc));
+                aob.I2.setColor(aob.v0(wb2Var2.A2() ? aob.Cc : aob.Bc, wb2Var2.cc));
+            } else {
+                aob.H2.setColor(aob.v0(aob.Vc, wb2Var2.cc));
+                aob.I2.setColor(aob.v0(wb2Var2.A2() ? aob.Ae : aob.ze, wb2Var2.cc));
+            }
+            if (!(r47.n1(wb2Var2.Q5.k) instanceof TLRPC.TL_messageMediaGeoLive)) {
+                canvas.save();
+                canvas.translate(nlVar.L0 + hl.L(6.0f), nlVar.x() + hl.L(8.0f));
+                wb2Var2.e3.draw(canvas);
+                if (wb2Var2.x3 != null) {
+                    canvas.translate(0.0f, hl.L(21.0f));
+                    wb2Var2.x3.draw(canvas);
                 }
-                break;
-            case 2:
-                fc2Var.getClass();
-                if (tLObject != null) {
-                    na7.q1(fc2Var.C.a).R3((TLRPC.Updates) tLObject, false);
-                    break;
-                }
-                break;
-            default:
-                fc2Var.getClass();
-                final byte b3 = 1;
-                gl.c3(new Runnable() { // from class: bc2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b32 = b3;
-                        TLObject tLObject2 = tLObject;
-                        switch (b32) {
-                            case 0:
-                                long elapsedRealtime = SystemClock.elapsedRealtime();
-                                fc2 fc2Var2 = fc2Var;
-                                fc2Var2.N = elapsedRealtime;
-                                fc2Var2.O = false;
-                                if (tLObject2 != null) {
-                                    TL_phone.groupParticipants groupparticipants = (TL_phone.groupParticipants) tLObject2;
-                                    na7.q1(fc2Var2.C.a).b4(groupparticipants.users, false);
-                                    na7.q1(fc2Var2.C.a).V3(groupparticipants.chats, false);
-                                    TLRPC.GroupCall groupCall = fc2Var2.b;
-                                    int i = groupCall.participants_count;
-                                    int i2 = groupparticipants.count;
-                                    if (i != i2) {
-                                        groupCall.participants_count = i2;
-                                        if (w01.a) {
-                                            b00.p(fc2Var2.b.participants_count, new StringBuilder("new participants reload count "));
-                                        }
-                                        kk7.f(fc2Var2.C.a).k(kk7.v2, Long.valueOf(fc2Var2.c), Long.valueOf(fc2Var2.b.id), Boolean.FALSE);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                boolean z = tLObject2 instanceof TL_phone.groupCall;
-                                fc2 fc2Var3 = fc2Var;
-                                if (!z) {
-                                    fc2Var3.getClass();
-                                    break;
-                                } else {
-                                    TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
-                                    fc2Var3.b = groupcall.call;
-                                    na7.q1(fc2Var3.C.a).b4(groupcall.users, false);
-                                    na7.q1(fc2Var3.C.a).V3(groupcall.chats, false);
-                                    ArrayList<TLRPC.GroupCallParticipant> arrayList = groupcall.participants;
-                                    String str = groupcall.participants_next_offset;
-                                    TLRPC.GroupCall groupCall2 = groupcall.call;
-                                    fc2Var3.n(arrayList, true, "", str, groupCall2.version, groupCall2.participants_count);
-                                    break;
-                                }
-                        }
+                canvas.restore();
+                return;
+            }
+            int x = (int) (nlVar.x() + hl.L(30.0f));
+            if (!wb2Var2.h3 || dc2Var2.j) {
+                wb2Var2.S9 = true;
+                StaticLayout staticLayout = wb2Var2.e3;
+                StaticLayout staticLayout2 = wb2Var2.x3;
+                f = 1.0f;
+                boolean z = false;
+                if (dc2Var2.j) {
+                    float f7 = dc2Var2.m;
+                    String str = dc2Var2.l;
+                    staticLayout = dc2Var2.n;
+                    StaticLayout staticLayout3 = dc2Var2.o;
+                    f2 = 255.0f;
+                    abs = f7;
+                    f4 = 1.0f - dc2Var2.L1;
+                    C = str;
+                    staticLayout2 = staticLayout3;
+                    f3 = 2.0f;
+                } else {
+                    f2 = 255.0f;
+                    if (r47.n1(wb2Var2.Q5.k).period == Integer.MAX_VALUE) {
+                        C = "";
+                        f4 = 1.0f;
+                        abs = 1.0f;
+                        f3 = 2.0f;
+                        z = true;
+                    } else {
+                        f3 = 2.0f;
+                        C = ob6.C(Math.abs(r47.n1(wb2Var2.Q5.k).period - (ConnectionsManager.getInstance(i).getCurrentTime() - wb2Var2.Q5.k.date)));
+                        abs = 1.0f - (Math.abs(ConnectionsManager.getInstance(i).getCurrentTime() - wb2Var2.Q5.k.date) / r47.n1(wb2Var2.Q5.k).period);
+                        f4 = 1.0f;
                     }
-                });
-                break;
+                }
+                float f8 = f4;
+                rectF2.set(nlVar.w() - hl.L(43.0f), x - hl.L(15.0f), nlVar.w() - hl.L(13.0f), hl.L(15.0f) + x);
+                if (wb2Var2.Q5.O3()) {
+                    Paint paint = aob.l2;
+                    int i2 = aob.Mb;
+                    paint.setColor(aob.v0(i2, wb2Var2.cc));
+                    aob.F2.setColor(aob.v0(i2, wb2Var2.cc));
+                } else {
+                    Paint paint2 = aob.l2;
+                    int i3 = aob.ud;
+                    paint2.setColor(aob.v0(i3, wb2Var2.cc));
+                    aob.F2.setColor(aob.v0(i3, wb2Var2.cc));
+                }
+                int alpha = aob.H2.getAlpha();
+                int alpha2 = aob.I2.getAlpha();
+                int alpha3 = aob.F2.getAlpha();
+                if (f8 != 1.0f) {
+                    f5 = 50.0f;
+                    rectF = rectF2;
+                    aob.H2.setAlpha((int) (alpha * f8));
+                    aob.I2.setAlpha((int) (alpha2 * f8));
+                    aob.F2.setAlpha((int) (alpha3 * f8));
+                    canvas.save();
+                    canvas.translate(0.0f, (-hl.L(50.0f)) * dc2Var2.L1);
+                } else {
+                    rectF = rectF2;
+                    f5 = 50.0f;
+                }
+                aob.l2.setAlpha((int) (f8 * f5));
+                StaticLayout staticLayout4 = staticLayout2;
+                canvas.drawCircle(rectF.centerX(), rectF.centerY(), hl.L(15.0f), aob.l2);
+                aob.l2.setAlpha((int) (f8 * f2));
+                StaticLayout staticLayout5 = staticLayout;
+                wb2Var = wb2Var2;
+                imageReceiver = imageReceiver2;
+                RectF rectF3 = rectF;
+                canvas.drawArc(rectF3, -90.0f, abs * (-360.0f), false, aob.l2);
+                if (z) {
+                    if (this.f == null) {
+                        this.f = wb2Var.getContext().getResources().getDrawable(R.drawable.filled_location_forever).mutate();
+                    }
+                    if (aob.F2.getColor() != this.g) {
+                        Drawable drawable = this.f;
+                        int color = aob.F2.getColor();
+                        this.g = color;
+                        drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+                    }
+                    dc2Var = dc2Var2;
+                    f6 = abs;
+                    this.f.setBounds(bp1.A(2, (int) rectF3.centerX(), this.f), bp1.y(2, (int) rectF3.centerY(), this.f), bp1.w(2, (int) rectF3.centerX(), this.f), bp1.i(2, (int) rectF3.centerY(), this.f));
+                    this.f.draw(canvas);
+                } else {
+                    dc2Var = dc2Var2;
+                    f6 = abs;
+                    float measureText = aob.F2.measureText(C);
+                    int length = C.length();
+                    float f9 = length > 4 ? 0.75f : length > 3 ? 0.85f : 1.0f;
+                    canvas.save();
+                    canvas.scale(f9, f9, rectF3.centerX(), rectF3.centerY());
+                    canvas.drawText(C, rectF3.centerX() - (measureText / f3), hl.L(4.0f) + x, aob.F2);
+                    canvas.restore();
+                }
+                if (staticLayout5 != null && staticLayout4 != null) {
+                    canvas.save();
+                    canvas.translate(nlVar.L0 + hl.L(10.0f), nlVar.x() + hl.L(10.0f));
+                    staticLayout5.draw(canvas);
+                    canvas.translate(0.0f, hl.L(23.0f));
+                    staticLayout4.draw(canvas);
+                    canvas.restore();
+                }
+                if (f8 != 1.0f) {
+                    aob.H2.setAlpha(alpha);
+                    aob.I2.setAlpha(alpha2);
+                    aob.F2.setAlpha(alpha3);
+                    canvas.restore();
+                }
+                dc2 dc2Var3 = dc2Var;
+                dc2Var3.m = f6;
+                dc2Var3.l = C;
+                dc2Var3.n = staticLayout5;
+                dc2Var3.o = staticLayout4;
+            } else {
+                dc2Var2.l = null;
+                dc2Var2.n = null;
+                dc2Var2.o = null;
+                wb2Var = wb2Var2;
+                imageReceiver = imageReceiver2;
+                f3 = 2.0f;
+                f = 1.0f;
+                f2 = 255.0f;
+            }
+            float f10 = nlVar.G() ? f : nlVar.i1;
+            if (f10 > 0.0f) {
+                if (nlVar.E() || nlVar.G()) {
+                    int L = (int) (((nlVar.N0 / f3) + nlVar.L0) - hl.L(31.0f));
+                    int L2 = (int) ((((nlVar.O0 / f3) + nlVar.M0) - hl.L(38.0f)) - ((f - k43.k.getInterpolation(f10)) * hl.L(16.0f)));
+                    rx6 rx6Var = wb2Var.ec;
+                    Drawable drawable2 = (Drawable) rx6Var.c;
+                    if (drawable2 == null) {
+                        drawable2 = c00.e((Context) rx6Var.b, R.drawable.livepin);
+                        rx6Var.c = drawable2;
+                    }
+                    jf0.u(L, L2, drawable2);
+                    float f11 = f10 * 5.0f;
+                    drawable2.setAlpha((int) (Math.min(f, f11) * f2));
+                    drawable2.draw(canvas);
+                    ImageReceiver imageReceiver3 = imageReceiver;
+                    imageReceiver3.i0(hl.L(5.0f) + L, hl.L(5.0f) + L2, hl.L(52.0f), hl.L(52.0f));
+                    imageReceiver3.setAlpha(Math.min(1.0f, f11));
+                    imageReceiver3.h(canvas, null);
+                }
+            }
         }
     }
 }

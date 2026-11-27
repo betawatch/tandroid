@@ -1,33 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.PhotoViewer;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class h88 extends ecc {
-    public final /* synthetic */ PhotoViewer i0;
+public final class h88 extends rn {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ k88 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h88(PhotoViewer photoViewer, Context context, s68 s68Var) {
-        super(context, s68Var);
-        this.i0 = photoViewer;
+    public h88(k88 k88Var, byte b) {
+        super("thumbAnimationProgress", (byte) 0);
+        this.b = b;
+        switch (b) {
+            case 1:
+                this.c = k88Var;
+                super("thumbImageVisibleProgress", (byte) 0);
+                break;
+            default:
+                this.c = k88Var;
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        Drawable[] drawableArr = PhotoViewer.d9;
-        this.i0.R2();
+    @Override // rn
+    public final void c(Object obj, float f) {
+        byte b = this.b;
+        k88 k88Var = this.c;
+        switch (b) {
+            case 0:
+                k88Var.r = f;
+                ((k88) obj).invalidate();
+                break;
+            default:
+                k88Var.n = f;
+                ((k88) obj).invalidate();
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void setVisibility(int i) {
-        super.setVisibility(i);
-        if (i == 0) {
-            Drawable[] drawableArr = PhotoViewer.d9;
-            this.i0.R2();
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        byte b = this.b;
+        k88 k88Var = this.c;
+        switch (b) {
+            case 0:
+                return Float.valueOf(k88Var.r);
+            default:
+                return Float.valueOf(k88Var.n);
         }
     }
 }

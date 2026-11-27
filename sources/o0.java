@@ -1,16 +1,52 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class o0 extends gb3 {
-    public final /* synthetic */ r0 F;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-    public o0(r0 r0Var) {
-        this.F = r0Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class o0 implements TextWatcher {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ s0 b;
+
+    public /* synthetic */ o0(s0 s0Var, byte b) {
+        this.a = b;
+        this.b = s0Var;
     }
 
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        this.F.b.invalidate();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        byte b = this.a;
+        s0 s0Var = this.b;
+        switch (b) {
+            case 0:
+                s0Var.a1();
+                break;
+            default:
+                s0Var.a1();
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
+    }
+
+    private final void a(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void b(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void c(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void d(int i, int i2, int i3, CharSequence charSequence) {
     }
 }

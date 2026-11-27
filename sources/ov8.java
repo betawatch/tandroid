@@ -1,44 +1,46 @@
 // default package
 
-import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ov8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sv8 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ov8 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final /* synthetic */ ew8 c;
+    public /* synthetic */ ov8(sv8 sv8Var, byte b) {
+        this.a = b;
+        this.b = sv8Var;
+    }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ov8(ew8 ew8Var, Context context) {
-        super(context);
-        this.c = ew8Var;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextColor(ew8Var.y);
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(gl.o());
-        textView.setSingleLine();
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(16);
-        addView(textView, nme.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextColor(-1);
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTypeface(gl.o());
-        textView2.setGravity(17);
-        textView2.setPadding(gl.L(10.0f), 0, gl.L(10.0f), 0);
-        textView2.setText(k96.M0(2131743637, null));
-        GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setColor(620756991);
-        gradientDrawable.setCornerRadius(gl.L(13.0f));
-        textView2.setBackground(gradientDrawable);
-        textView2.setOnClickListener(new ik8(this, (byte) 4));
-        addView(textView2, nme.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        sv8 sv8Var = this.b;
+        switch (b) {
+            case 0:
+                if (!sv8Var.T && !sv8Var.S) {
+                    sv8Var.a(1.0f);
+                    break;
+                }
+                break;
+            default:
+                if (!sv8Var.T && !sv8Var.S) {
+                    uk0.c(sv8Var.F, sv8Var.h);
+                    sv8Var.G.d();
+                    frc frcVar = sv8Var.r;
+                    ov8 ov8Var = new ov8(sv8Var, (byte) 0);
+                    zqc zqcVar = frcVar.E;
+                    if (zqcVar == null) {
+                        ov8Var.run();
+                        break;
+                    } else if (zqcVar.b == null) {
+                        zqcVar.d = ov8Var;
+                        break;
+                    } else {
+                        ov8Var.run();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

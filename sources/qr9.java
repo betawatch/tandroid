@@ -1,41 +1,13 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class qr9 implements yr9 {
-    public final /* synthetic */ nt2 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public interface qr9 {
+    void a(int i, int i2);
 
-    public qr9(nt2 nt2Var) {
-        this.a = nt2Var;
-    }
+    boolean b();
 
-    @Override // yr9
-    public final vf6 O0() {
-        return null;
-    }
-
-    @Override // yr9
-    public final boolean U1(int i) {
-        return true;
-    }
-
-    @Override // yr9
-    public final void r(int i) {
-        nt2 nt2Var = this.a;
-        nt2Var.f();
-        if (i != 0) {
-            nt2Var.F();
-        }
-    }
-
-    @Override // yr9
-    public final vf6 t1() {
-        return null;
-    }
-
-    @Override // yr9
-    public final void m2(ArrayList arrayList) {
-    }
+    Surface getSurface();
 }

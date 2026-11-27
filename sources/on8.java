@@ -1,16 +1,43 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.PrivacySettingsActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class on8 extends nd4 {
-    @Override // nd4, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        canvas.save();
-        canvas.translate(gl.L(2.0f), 0.0f);
-        super.draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
-        canvas.restore();
+public final /* synthetic */ class on8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ PrivacySettingsActivity b;
+
+    public /* synthetic */ on8(PrivacySettingsActivity privacySettingsActivity, byte b) {
+        this.a = b;
+        this.b = privacySettingsActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        PrivacySettingsActivity privacySettingsActivity = this.b;
+        switch (b) {
+            case 0:
+                privacySettingsActivity.a.f();
+                privacySettingsActivity.S = true;
+                break;
+            case 1:
+                privacySettingsActivity.c.dismiss();
+                break;
+            default:
+                privacySettingsActivity.getClass();
+                c21 c21Var = new c21(privacySettingsActivity.getParentActivity(), null);
+                c21Var.h(R.raw.email_check_inbox, new String[0]);
+                c21Var.b.setText(ob6.M0(2131742442, null));
+                v21.g(privacySettingsActivity, c21Var, 1500).j();
+                try {
+                    privacySettingsActivity.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                privacySettingsActivity.E0();
+                break;
+        }
     }
 }

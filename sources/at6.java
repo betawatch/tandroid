@@ -1,7 +1,105 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Bundle;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class at6 {
-    public static final at6 a = new at6();
+    public static final at6 f = new at6(new zs6());
+    public static final String g;
+    public static final String h;
+    public static final String i;
+    public static final String j;
+    public static final String k;
+    public final long a;
+    public final long b;
+    public final long c;
+    public final float d;
+    public final float e;
+
+    static {
+        String str = gcc.a;
+        g = "0";
+        h = "1";
+        i = "2";
+        j = "3";
+        k = "4";
+    }
+
+    public at6(zs6 zs6Var) {
+        long j2 = zs6Var.a;
+        long j3 = zs6Var.b;
+        long j4 = zs6Var.c;
+        float f2 = zs6Var.d;
+        float f3 = zs6Var.e;
+        this.a = j2;
+        this.b = j3;
+        this.c = j4;
+        this.d = f2;
+        this.e = f3;
+    }
+
+    public final zs6 a() {
+        zs6 zs6Var = new zs6();
+        zs6Var.a = this.a;
+        zs6Var.b = this.b;
+        zs6Var.c = this.c;
+        zs6Var.d = this.d;
+        zs6Var.e = this.e;
+        return zs6Var;
+    }
+
+    public final Bundle b() {
+        Bundle bundle = new Bundle();
+        at6 at6Var = f;
+        long j2 = at6Var.a;
+        long j3 = this.a;
+        if (j3 != j2) {
+            bundle.putLong(g, j3);
+        }
+        long j4 = at6Var.b;
+        long j5 = this.b;
+        if (j5 != j4) {
+            bundle.putLong(h, j5);
+        }
+        long j6 = at6Var.c;
+        long j7 = this.c;
+        if (j7 != j6) {
+            bundle.putLong(i, j7);
+        }
+        float f2 = at6Var.d;
+        float f3 = this.d;
+        if (f3 != f2) {
+            bundle.putFloat(j, f3);
+        }
+        float f4 = at6Var.e;
+        float f5 = this.e;
+        if (f5 != f4) {
+            bundle.putFloat(k, f5);
+        }
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof at6)) {
+            return false;
+        }
+        at6 at6Var = (at6) obj;
+        return this.a == at6Var.a && this.b == at6Var.b && this.c == at6Var.c && this.d == at6Var.d && this.e == at6Var.e;
+    }
+
+    public final int hashCode() {
+        long j2 = this.a;
+        long j3 = this.b;
+        int i2 = ((((int) (j2 ^ (j2 >>> 32))) * 31) + ((int) (j3 ^ (j3 >>> 32)))) * 31;
+        long j4 = this.c;
+        int i3 = (i2 + ((int) (j4 ^ (j4 >>> 32)))) * 31;
+        float f2 = this.d;
+        int floatToIntBits = (i3 + (f2 != 0.0f ? Float.floatToIntBits(f2) : 0)) * 31;
+        float f3 = this.e;
+        return floatToIntBits + (f3 != 0.0f ? Float.floatToIntBits(f3) : 0);
+    }
 }

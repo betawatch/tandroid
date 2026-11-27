@@ -5,7 +5,7 @@ import android.media.MediaCodecList;
 import java.util.ArrayList;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
     private static final String TAG = "MediaCodecVideoDecoderFactory";
@@ -18,22 +18,12 @@ class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
     }
 
     private MediaCodecInfo findCodecForType(VideoCodecMimeType videoCodecMimeType) {
-        int i = 0;
-        while (true) {
-            MediaCodecInfo mediaCodecInfo = null;
-            if (i >= MediaCodecList.getCodecCount()) {
-                return null;
-            }
-            try {
-                mediaCodecInfo = MediaCodecList.getCodecInfoAt(i);
-            } catch (IllegalArgumentException e) {
-                Logging.e(TAG, "Cannot retrieve decoder codec info", e);
-            }
+        for (MediaCodecInfo mediaCodecInfo : new MediaCodecList(1).getCodecInfos()) {
             if (mediaCodecInfo != null && !mediaCodecInfo.isEncoder() && isSupportedCodec(mediaCodecInfo, videoCodecMimeType)) {
                 return mediaCodecInfo;
             }
-            i++;
         }
+        return null;
     }
 
     private boolean isCodecAllowed(MediaCodecInfo mediaCodecInfo) {

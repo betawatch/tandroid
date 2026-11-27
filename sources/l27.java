@@ -1,34 +1,28 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.view.CollapsibleActionView;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class l27 extends k27 {
-    public final /* synthetic */ byte u3;
-    public final /* synthetic */ o27 v3;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class l27 extends FrameLayout implements ml2 {
+    public final CollapsibleActionView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public l27(o27 o27Var, int i, TLRPC.TL_message tL_message, int i2) {
-        super(i, tL_message, true, false);
-        this.v3 = o27Var;
-        this.u3 = i2;
+    public l27(View view) {
+        super(view.getContext());
+        this.a = (CollapsibleActionView) view;
+        addView(view);
     }
 
-    @Override // k27
-    public final boolean m5() {
-        if (this.v3.k) {
-            return false;
-        }
-        return super.m5();
+    @Override // ml2
+    public final void onActionViewCollapsed() {
+        this.a.onActionViewCollapsed();
     }
 
-    @Override // k27
-    public final void n0(TLRPC.User user) {
-        super.n0(user);
-        if (this.u3 == 2) {
-            this.v3.b(this);
-        }
+    @Override // ml2
+    public final void onActionViewExpanded() {
+        this.a.onActionViewExpanded();
     }
 }

@@ -1,30 +1,32 @@
 // default package
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cj8 {
-    public static final cj8 a;
-    public static final cj8 b;
-    public static final cj8 c;
-    public static final /* synthetic */ cj8[] d;
+import android.animation.ValueAnimator;
 
-    static {
-        cj8 cj8Var = new cj8("DEFAULT", 0);
-        a = cj8Var;
-        cj8 cj8Var2 = new cj8("VERY_LOW", 1);
-        b = cj8Var2;
-        cj8 cj8Var3 = new cj8("HIGHEST", 2);
-        c = cj8Var3;
-        d = new cj8[]{cj8Var, cj8Var2, cj8Var3};
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class cj8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ fj8 b;
+
+    public /* synthetic */ cj8(fj8 fj8Var, byte b) {
+        this.a = b;
+        this.b = fj8Var;
     }
 
-    public static cj8 valueOf(String str) {
-        return (cj8) Enum.valueOf(cj8.class, str);
-    }
-
-    public static cj8[] values() {
-        return (cj8[]) d.clone();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        fj8 fj8Var = this.b;
+        switch (b) {
+            case 0:
+                fj8Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fj8Var.c(true);
+                break;
+            default:
+                fj8Var.getClass();
+                fj8Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fj8Var.c(true);
+                break;
+        }
     }
 }

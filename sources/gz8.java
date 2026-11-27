@@ -1,51 +1,68 @@
 // default package
 
-import android.media.Rating;
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.messenger.a;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class gz8 {
-    public static float a(Rating rating) {
-        return rating.getPercentRating();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class gz8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jz8 b;
+
+    public /* synthetic */ gz8(jz8 jz8Var, byte b) {
+        this.a = b;
+        this.b = jz8Var;
     }
 
-    public static int b(Rating rating) {
-        return rating.getRatingStyle();
-    }
-
-    public static float c(Rating rating) {
-        return rating.getStarRating();
-    }
-
-    public static boolean d(Rating rating) {
-        return rating.hasHeart();
-    }
-
-    public static boolean e(Rating rating) {
-        return rating.isRated();
-    }
-
-    public static boolean f(Rating rating) {
-        return rating.isThumbUp();
-    }
-
-    public static Rating g(boolean z) {
-        return Rating.newHeartRating(z);
-    }
-
-    public static Rating h(float f) {
-        return Rating.newPercentageRating(f);
-    }
-
-    public static Rating i(int i, float f) {
-        return Rating.newStarRating(i, f);
-    }
-
-    public static Rating j(boolean z) {
-        return Rating.newThumbRating(z);
-    }
-
-    public static Rating k(int i) {
-        return Rating.newUnratedRating(i);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        jz8 jz8Var = this.b;
+        switch (b) {
+            case 0:
+                jz8Var.g();
+                jz8Var.a.A(jz8Var);
+                break;
+            case 1:
+                af0 af0Var = jz8Var.j0;
+                if (af0Var != null) {
+                    af0Var.d();
+                    jz8Var.j0 = null;
+                }
+                Bitmap bitmap = jz8Var.l0;
+                if (bitmap != null) {
+                    bitmap.recycle();
+                    jz8Var.l0 = null;
+                }
+                jz8Var.g0.quitSafely();
+                break;
+            case 2:
+                try {
+                    Context context = a.b;
+                    qwe qweVar = new qwe();
+                    qweVar.a = 256;
+                    jz8Var.j0 = new af0(new cgd(context, qweVar));
+                } catch (Throwable th) {
+                    cc4.g(th, true);
+                }
+                jz8Var.k0 = new aj3((byte) 29);
+                break;
+            default:
+                if (!jz8Var.W && !jz8Var.V && jz8Var.b == null && CameraView.isCameraAllowed()) {
+                    CameraController.getInstance().initCamera(null);
+                    CameraView cameraView = new CameraView(jz8Var.getContext(), false);
+                    cameraView.setUseMaxPreview(true);
+                    cameraView.setOptimizeForBarcode(true);
+                    cameraView.setAlpha(0.0f);
+                    cameraView.setDelegate(new m88((Object) jz8Var, (Object) cameraView, (byte) 17));
+                    jz8Var.b = cameraView;
+                    jz8Var.addView(cameraView, 0, tre.c(-1.0f, -1));
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,69 +1,35 @@
 // default package
 
-import android.graphics.RectF;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ce2 implements RequestDelegate {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ce2 implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ tqb b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ oe2 e;
 
-    public /* synthetic */ ce2(byte b) {
-        this.a = b;
+    public ce2(oe2 oe2Var, tqb tqbVar, float f, boolean z) {
+        this.e = oe2Var;
+        this.b = tqbVar;
+        this.c = f;
+        this.d = z;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = 1;
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 2:
-                gl.c3(new ki1(tL_error, b));
-                break;
-            case 3:
-                gl.c3(new x57(tLObject, b));
-                break;
-            case 4:
-                RectF rectF = ProfileActivity.Z6;
-                break;
-            case 5:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 6:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 7:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 8:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 9:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 10:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 11:
-                gl.c3(new jc((byte) 10));
-                break;
-            case 12:
-                VoIPService.lambda$callFailed$110(tLObject, tL_error);
-                break;
-            default:
-                VoIPService.lambda$createGroupInstance$70(tLObject, tL_error);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        oe2 oe2Var = this.e;
+        oe2Var.L1 = floatValue;
+        if (!this.d) {
+            floatValue = 1.0f - floatValue;
         }
-    }
-
-    private final void a(TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.b.setRadius(this.c * floatValue);
+        if (this.a || oe2Var.L1 <= 0.5f) {
+            return;
+        }
+        this.a = true;
     }
 }

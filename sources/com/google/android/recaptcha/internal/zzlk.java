@@ -2,31 +2,31 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzlk extends ccb implements eq4 {
+final class zzlk extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzly zzb;
     final /* synthetic */ String zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzlk(zzly zzlyVar, String str, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzlk(zzly zzlyVar, String str, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzlyVar;
         this.zzc = str;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzlk zzlkVar = new zzlk(this.zzb, this.zzc, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzlk zzlkVar = new zzlk(this.zzb, this.zzc, zw2Var);
         zzlkVar.zzd = obj;
         return zzlkVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlk) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzlk) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0107, code lost:
@@ -39,7 +39,7 @@ final class zzlk extends ccb implements eq4 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:21:0x00c4, code lost:
     
-        if (((cp2) r0).h(r16) == r8) goto L43;
+        if (((vp2) r0).h(r16) == r8) goto L43;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00b2, code lost:
     
@@ -57,7 +57,7 @@ final class zzlk extends ccb implements eq4 {
     
         if (r6 != r8) goto L18;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -72,21 +72,21 @@ final class zzlk extends ccb implements eq4 {
         zzcr zzD;
         Object h;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
         } catch (Exception e) {
             zzcg zza3 = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzW, e.getMessage(), null, 8, null));
             zzly zzlyVar = this.zzb;
             String str = this.zzc;
             map = zzlyVar.zzd;
-            bp2 bp2Var = (bp2) map.remove(str);
-            if (bp2Var != null) {
-                ((cp2) bp2Var).P(zza3);
+            up2 up2Var = (up2) map.remove(str);
+            if (up2Var != null) {
+                ((vp2) up2Var).P(zza3);
             }
-            a = qse.a(zza3);
+            a = ixe.a(zza3);
         }
         if (i == 0) {
-            qse.b(obj);
+            ixe.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzdj zzn = this.zzb.zzn();
             zzmc zzmcVar = zzmc.zzd;
@@ -95,11 +95,11 @@ final class zzlk extends ccb implements eq4 {
             zza = zzn.zza(zzmcVar, this);
         } else if (i == 1) {
             zzhkVar = (zzhk) this.zzd;
-            qse.b(obj);
+            ixe.b(obj);
             zza = obj;
         } else if (i == 2) {
             zzhkVar = (zzhk) this.zzd;
-            qse.b(obj);
+            ixe.b(obj);
             zza2 = obj;
             if (!((Boolean) zza2).booleanValue()) {
                 zzly zzlyVar2 = this.zzb;
@@ -107,23 +107,23 @@ final class zzlk extends ccb implements eq4 {
                 this.zza = 3;
                 zzu = zzly.zzu(zzlyVar2, this);
             }
-            bp2 zzz = this.zzb.zzz();
+            up2 zzz = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
         } else if (i == 3) {
             zzhkVar = (zzhk) this.zzd;
-            qse.b(obj);
+            ixe.b(obj);
             zzu = obj;
             this.zzd = null;
             this.zza = 4;
         } else if (i == 4) {
-            qse.b(obj);
-            bp2 zzz2 = this.zzb.zzz();
+            ixe.b(obj);
+            up2 zzz2 = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
         } else {
             if (i != 5) {
-                qse.b(obj);
+                ixe.b(obj);
                 h = obj;
                 zzxx zzxxVar = (zzxx) h;
                 zzxw zzf = zzxx.zzf();
@@ -136,10 +136,10 @@ final class zzlk extends ccb implements eq4 {
                 zzf3.zzf(zzxxVar.zzM());
                 zzf.zzs(zzf3);
                 a = zzf.zzk();
-                return new ta9(a);
+                return new he9(a);
             }
-            qse.b(obj);
-            cp2 a2 = hsd.a();
+            ixe.b(obj);
+            vp2 a2 = xwd.a();
             zzly zzlyVar3 = this.zzb;
             map2 = zzlyVar3.zzd;
             String str2 = this.zzc;
@@ -149,12 +149,12 @@ final class zzlk extends ccb implements eq4 {
             byte[] zzd = ((zzzf) zzf4.zzk()).zzd();
             String zzi = zzpp.zzh().zzi(zzd, 0, zzd.length);
             zzD = zzlyVar3.zzD();
-            ppd.b(zzD.zzb(), new zzlj(zzlyVar3, zzi, null));
+            fud.b(zzD.zzb(), new zzlj(zzlyVar3, zzi, null));
             this.zza = 6;
             h = a2.h(this);
         }
         if (((Boolean) zza).booleanValue()) {
-            return new ta9(new sa9(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
+            return new he9(new ge9(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
         }
         zzdj zzn2 = this.zzb.zzn();
         zzmc zzmcVar2 = zzmc.zzc;

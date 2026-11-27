@@ -1,42 +1,32 @@
 // default package
 
-import android.os.Bundle;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h3d implements ey4, fy4 {
-    public final yn a;
-    public final boolean b;
-    public r1d c;
+public final class h3d {
+    public static final h3d b;
+    public di4 a;
 
-    public h3d(yn ynVar, boolean z) {
-        this.a = ynVar;
-        this.b = z;
+    static {
+        h3d h3dVar = new h3d();
+        h3dVar.a = null;
+        b = h3dVar;
     }
 
-    @Override // ey4
-    public final void onConnected(Bundle bundle) {
-        fre.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        this.c.onConnected(bundle);
-    }
-
-    @Override // fy4
-    public final void onConnectionFailed(ds2 ds2Var) {
-        yn ynVar = this.a;
-        boolean z = this.b;
-        fre.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        r1d r1dVar = this.c;
-        r1dVar.a.lock();
-        try {
-            r1dVar.m.a1(ds2Var, ynVar, z);
-        } finally {
-            r1dVar.a.unlock();
+    public static di4 a(Context context) {
+        di4 di4Var;
+        h3d h3dVar = b;
+        synchronized (h3dVar) {
+            di4Var = h3dVar.a;
+            if (di4Var == null) {
+                if (context.getApplicationContext() != null) {
+                    context = context.getApplicationContext();
+                }
+                di4Var = new di4(context);
+                h3dVar.a = di4Var;
+            }
         }
-    }
-
-    @Override // ey4
-    public final void onConnectionSuspended(int i) {
-        fre.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        this.c.onConnectionSuspended(i);
+        return di4Var;
     }
 }

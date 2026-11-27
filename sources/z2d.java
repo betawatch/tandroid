@@ -1,42 +1,6 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class z2d extends z0d {
-    public final /* synthetic */ byte c;
-    public final /* synthetic */ TaskCompletionSource d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z2d(u84 u84Var, TaskCompletionSource taskCompletionSource, byte b) {
-        super((byte) 0);
-        this.c = b;
-        this.d = taskCompletionSource;
-    }
-
-    @Override // z0d
-    public final void T(Status status, me7 me7Var) {
-        switch (this.c) {
-            case 0:
-                dve.b(status, me7Var, this.d);
-                break;
-            default:
-                super.T(status, me7Var);
-                break;
-        }
-    }
-
-    @Override // z0d
-    public final void V(Status status, oe7 oe7Var) {
-        switch (this.c) {
-            case 1:
-                dve.b(status, oe7Var, this.d);
-                break;
-            default:
-                super.V(status, oe7Var);
-                break;
-        }
-    }
+public enum z2d extends a3d {
 }

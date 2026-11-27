@@ -1,50 +1,51 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ucc {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
+import android.os.Looper;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicLong;
 
-    public final boolean a() {
-        int i = this.a;
-        int i2 = 2;
-        if ((i & 7) != 0) {
-            int i3 = this.d;
-            int i4 = this.b;
-            if (((i3 > i4 ? 1 : i3 == i4 ? 2 : 4) & i) == 0) {
-                return false;
-            }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class ucc {
+    public static final ExecutorService a;
+
+    static {
+        wc3 wc3Var = new wc3(new AtomicLong(1L), (byte) 1);
+        ThreadPoolExecutor.DiscardPolicy discardPolicy = new ThreadPoolExecutor.DiscardPolicy();
+        ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), wc3Var, discardPolicy));
+        Runtime.getRuntime().addShutdownHook(new Thread(new r54(unconfigurableExecutorService, (byte) 1), "Crashlytics Shutdown Hook for awaitEvenIfOnMainThread task continuation executor"));
+        a = unconfigurableExecutorService;
+    }
+
+    public static void a(Task task) {
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        task.continueWith(a, new ftb(countDownLatch, (byte) 8));
+        Looper mainLooper = Looper.getMainLooper();
+        Looper myLooper = Looper.myLooper();
+        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+        if (mainLooper == myLooper) {
+            countDownLatch.await(3000L, timeUnit);
+        } else {
+            countDownLatch.await(4000L, timeUnit);
         }
-        if ((i & kk7.w1) != 0) {
-            int i5 = this.d;
-            int i6 = this.c;
-            if ((((i5 > i6 ? 1 : i5 == i6 ? 2 : 4) << 4) & i) == 0) {
-                return false;
+        if (task.isSuccessful()) {
+            task.getResult();
+        } else {
+            if (task.isCanceled()) {
+                throw new CancellationException("Task is already canceled");
             }
+            if (!task.isComplete()) {
+                throw new TimeoutException();
+            }
+            vr9.l(task.getException());
         }
-        if ((i & 1792) != 0) {
-            int i7 = this.e;
-            int i8 = this.b;
-            if ((((i7 > i8 ? 1 : i7 == i8 ? 2 : 4) << 8) & i) == 0) {
-                return false;
-            }
-        }
-        if ((i & 28672) != 0) {
-            int i9 = this.e;
-            int i10 = this.c;
-            if (i9 > i10) {
-                i2 = 1;
-            } else if (i9 != i10) {
-                i2 = 4;
-            }
-            if ((i & (i2 << 12)) == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }

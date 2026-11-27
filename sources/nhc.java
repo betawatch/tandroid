@@ -1,36 +1,31 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nhc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ TLRPC.Updates c;
-    public final /* synthetic */ long d;
+public abstract class nhc {
+    public final ohc a = new ohc();
 
-    public /* synthetic */ nhc(VoIPService voIPService, TLRPC.Updates updates, long j, byte b) {
-        this.a = b;
-        this.b = voIPService;
-        this.c = updates;
-        this.d = j;
+    public final void a() {
+        ohc ohcVar = this.a;
+        if (!ohcVar.d) {
+            ohcVar.d = true;
+            synchronized (ohcVar.a) {
+                Iterator it = ohcVar.b.values().iterator();
+                while (it.hasNext()) {
+                    ohc.a((AutoCloseable) it.next());
+                }
+                Iterator it2 = ohcVar.c.iterator();
+                while (it2.hasNext()) {
+                    ohc.a((AutoCloseable) it2.next());
+                }
+                ohcVar.c.clear();
+            }
+        }
+        b();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        TLRPC.Updates updates = this.c;
-        VoIPService voIPService = this.b;
-        switch (b) {
-            case 0:
-                voIPService.lambda$startConferenceGroupCall$49(updates, j);
-                break;
-            default:
-                voIPService.lambda$startConferenceGroupCall$41(updates, j);
-                break;
-        }
+    public void b() {
     }
 }

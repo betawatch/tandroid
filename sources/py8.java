@@ -1,24 +1,38 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class py8 extends ImageReceiver {
-    public final /* synthetic */ ry8 K1;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class py8 {
+    public static final py8 a;
+    public static final /* synthetic */ py8[] b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public py8(ry8 ry8Var) {
-        super(null);
-        this.K1 = ry8Var;
+    static {
+        py8 py8Var = new py8("DEFAULT", 0);
+        a = py8Var;
+        py8 py8Var2 = new py8("UNMETERED_ONLY", 1);
+        py8 py8Var3 = new py8("UNMETERED_OR_DAILY", 2);
+        py8 py8Var4 = new py8("FAST_IF_RADIO_AWAKE", 3);
+        py8 py8Var5 = new py8("NEVER", 4);
+        py8 py8Var6 = new py8("UNRECOGNIZED", 5);
+        b = new py8[]{py8Var, py8Var2, py8Var3, py8Var4, py8Var5, py8Var6};
+        SparseArray sparseArray = new SparseArray();
+        sparseArray.put(0, py8Var);
+        sparseArray.put(1, py8Var2);
+        sparseArray.put(2, py8Var3);
+        sparseArray.put(3, py8Var4);
+        sparseArray.put(4, py8Var5);
+        sparseArray.put(-1, py8Var6);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean h0(Drawable drawable, String str, int i, boolean z, int i2) {
-        if (drawable != null) {
-            this.K1.c();
-        }
-        return super.h0(drawable, str, i, z, i2);
+    public static py8 valueOf(String str) {
+        return (py8) Enum.valueOf(py8.class, str);
+    }
+
+    public static py8[] values() {
+        return (py8[]) b.clone();
     }
 }

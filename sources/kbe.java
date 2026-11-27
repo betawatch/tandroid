@@ -1,19 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class kbe implements zn7 {
-    public static final kbe a = new kbe();
+public final class kbe extends k8e {
+    public final transient Object[] r;
+    public final transient boolean s;
+    public final transient int w;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+    /* JADX WARN: Multi-variable type inference failed */
+    public kbe(int i, int i2, Object[] objArr) {
+        super((byte) 5);
+        this.r = objArr;
+        this.s = i;
+        this.w = i2;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // java.util.List
+    public final Object get(int i) {
+        h6f.a(i, this.w);
+        Object obj = this.r[(i << 1) + (this.s ? 1 : 0)];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.w;
     }
 }

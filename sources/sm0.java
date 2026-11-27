@@ -3,13 +3,13 @@
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class sm0 implements Runnable {
     public final /* synthetic */ byte a = 0;
     public final /* synthetic */ TLRPC.Chat b;
 
-    public /* synthetic */ sm0(vqa vqaVar, TLRPC.Chat chat) {
+    public /* synthetic */ sm0(wua wuaVar, TLRPC.Chat chat) {
         this.b = chat;
     }
 
@@ -20,14 +20,14 @@ public final /* synthetic */ class sm0 implements Runnable {
         switch (b) {
             case 0:
                 if (chat != null) {
-                    ag0 ag0Var = new ag0();
-                    ag0Var.a = true;
-                    LaunchActivity.Q().showAsSheet(new lo0(-chat.id), ag0Var);
+                    bg0 bg0Var = new bg0();
+                    bg0Var.a = true;
+                    LaunchActivity.Q().showAsSheet(new lo0(-chat.id), bg0Var);
                     break;
                 }
                 break;
             default:
-                vqa.g2(uxa.d0(chat, true));
+                wua.h2(w1b.d0(chat, true));
                 break;
         }
     }

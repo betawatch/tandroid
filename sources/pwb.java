@@ -1,45 +1,34 @@
 // default package
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Build;
-import android.util.Log;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pwb extends BroadcastReceiver {
-    public qwb a;
-    public final /* synthetic */ qwb b;
-
-    public pwb(qwb qwbVar, qwb qwbVar2) {
-        this.b = qwbVar;
-        this.a = qwbVar2;
+public enum pwb extends rwb {
+    public pwb() {
+        super("TagOpen", 7);
     }
 
-    public final void a() {
-        if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-            Log.d("FirebaseMessaging", "Connectivity change received registered");
-        }
-        this.b.a.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-    }
-
-    @Override // android.content.BroadcastReceiver
-    public final synchronized void onReceive(Context context, Intent intent) {
-        qwb qwbVar = this.a;
-        if (qwbVar == null) {
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char i = ik1Var.i();
+        if (i == '!') {
+            bubVar.a(rwb.h0);
             return;
         }
-        if (qwbVar.d()) {
-            if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-                Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
-            }
-            qwb qwbVar2 = this.a;
-            qwbVar2.d.e.schedule(qwbVar2, 0L, TimeUnit.SECONDS);
-            context.unregisterReceiver(this);
-            this.a = null;
+        if (i == '/') {
+            bubVar.a(rwb.n);
+            return;
+        }
+        if (i == '?') {
+            bubVar.a(rwb.g0);
+            return;
+        }
+        if (ik1Var.o()) {
+            bubVar.d(true);
+            bubVar.c = rwb.r;
+        } else {
+            bubVar.m(this);
+            bubVar.f('<');
+            bubVar.c = rwb.a;
         }
     }
 }

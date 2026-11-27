@@ -1,54 +1,64 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kc8 {
-    public static final kc8 b = new jc8().b();
-    public static final String c;
-    public final gi4 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class kc8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lc8 b;
 
-    static {
-        String str = g8c.a;
-        c = "0";
+    public /* synthetic */ kc8(lc8 lc8Var, byte b) {
+        this.a = b;
+        this.b = lc8Var;
     }
 
-    public kc8(gi4 gi4Var) {
-        this.a = gi4Var;
-    }
-
-    public final boolean a(int i) {
-        return this.a.a.get(i);
-    }
-
-    public final Bundle b() {
-        Bundle bundle = new Bundle();
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int i = 0;
-        while (true) {
-            gi4 gi4Var = this.a;
-            if (i >= gi4Var.a.size()) {
-                bundle.putIntegerArrayList(c, arrayList);
-                return bundle;
-            }
-            arrayList.add(Integer.valueOf(gi4Var.a(i)));
-            i++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        lc8 lc8Var = this.b;
+        switch (b) {
+            case 0:
+                PhotoViewer photoViewer = (PhotoViewer) lc8Var.b;
+                photoViewer.R1.getNextView().setText((CharSequence) null);
+                ic8 ic8Var = photoViewer.U1;
+                ic8Var.l0 = false;
+                if (ic8Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) ic8Var.o0.getLayoutParams()).topMargin = ic8Var.m0;
+                    ic8Var.m0 = -1;
+                    ic8Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((PhotoViewer) lc8Var.b).R1.setTranslationY(0.0f);
+                break;
         }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ic8 ic8Var = ((PhotoViewer) this.b.b).U1;
+                Method method = ic8Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(ic8Var, null);
+                        break;
+                    } catch (Exception e) {
+                        cc4.g(e, true);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        if (obj instanceof kc8) {
-            return this.a.equals(((kc8) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
     }
 }

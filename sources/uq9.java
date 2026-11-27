@@ -1,80 +1,20 @@
 // default package
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class uq9 extends l13 {
-    public long b;
-    public long[] c;
-    public long[] d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class uq9 extends ViewOutlineProvider {
+    public final /* synthetic */ er9 a;
 
-    public static Serializable h(int i, xu7 xu7Var) {
-        if (i == 0) {
-            return Double.valueOf(Double.longBitsToDouble(xu7Var.u()));
-        }
-        if (i == 1) {
-            return Boolean.valueOf(xu7Var.A() == 1);
-        }
-        if (i == 2) {
-            return j(xu7Var);
-        }
-        if (i != 3) {
-            if (i == 8) {
-                return i(xu7Var);
-            }
-            if (i != 10) {
-                if (i != 11) {
-                    return null;
-                }
-                Date date = new Date((long) Double.longBitsToDouble(xu7Var.u()));
-                xu7Var.O(2);
-                return date;
-            }
-            int E = xu7Var.E();
-            ArrayList arrayList = new ArrayList(E);
-            for (int i2 = 0; i2 < E; i2++) {
-                Serializable h = h(xu7Var.A(), xu7Var);
-                if (h != null) {
-                    arrayList.add(h);
-                }
-            }
-            return arrayList;
-        }
-        HashMap hashMap = new HashMap();
-        while (true) {
-            String j = j(xu7Var);
-            int A = xu7Var.A();
-            if (A == 9) {
-                return hashMap;
-            }
-            Serializable h2 = h(A, xu7Var);
-            if (h2 != null) {
-                hashMap.put(j, h2);
-            }
-        }
+    public uq9(er9 er9Var) {
+        this.a = er9Var;
     }
 
-    public static HashMap i(xu7 xu7Var) {
-        int E = xu7Var.E();
-        HashMap hashMap = new HashMap(E);
-        for (int i = 0; i < E; i++) {
-            String j = j(xu7Var);
-            Serializable h = h(xu7Var.A(), xu7Var);
-            if (h != null) {
-                hashMap.put(j, h);
-            }
-        }
-        return hashMap;
-    }
-
-    public static String j(xu7 xu7Var) {
-        int H = xu7Var.H();
-        int i = xu7Var.b;
-        xu7Var.O(H);
-        return new String(xu7Var.a, i, H);
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), (1.0f - this.a.U) * hl.L(12.0f));
     }
 }

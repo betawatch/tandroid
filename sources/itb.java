@@ -1,98 +1,65 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.Window;
-import androidx.appcompat.widget.Toolbar;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class itb implements g93 {
-    public Toolbar a;
-    public int b;
-    public View c;
-    public Drawable d;
-    public Drawable e;
-    public Drawable f;
-    public boolean g;
-    public CharSequence h;
-    public CharSequence i;
-    public CharSequence j;
-    public Window.Callback k;
-    public boolean l;
-    public b9 m;
-    public int n;
-    public Drawable o;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class itb extends wb2 {
+    public final Path Ld;
+    public final Paint Md;
+    public final /* synthetic */ int Nd;
+    public final /* synthetic */ int Od;
+    public final /* synthetic */ int Pd;
+    public final /* synthetic */ ktb Qd;
 
-    public final void a(int i) {
-        View view;
-        Toolbar toolbar = this.a;
-        int i2 = this.b ^ i;
-        this.b = i;
-        if (i2 != 0) {
-            if ((i2 & 4) != 0) {
-                if ((i & 4) != 0) {
-                    b();
-                }
-                if ((this.b & 4) != 0) {
-                    Drawable drawable = this.f;
-                    if (drawable == null) {
-                        drawable = this.o;
-                    }
-                    toolbar.setNavigationIcon(drawable);
-                } else {
-                    toolbar.setNavigationIcon((Drawable) null);
-                }
-            }
-            if ((i2 & 3) != 0) {
-                c();
-            }
-            if ((i2 & 8) != 0) {
-                if ((i & 8) != 0) {
-                    toolbar.setTitle(this.h);
-                    toolbar.setSubtitle(this.i);
-                } else {
-                    toolbar.setTitle((CharSequence) null);
-                    toolbar.setSubtitle((CharSequence) null);
-                }
-            }
-            if ((i2 & 16) == 0 || (view = this.c) == null) {
-                return;
-            }
-            if ((i & 16) != 0) {
-                toolbar.addView(view);
-            } else {
-                toolbar.removeView(view);
-            }
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public itb(ktb ktbVar, Context context, int i, vnb vnbVar, int i2, int i3, int i4) {
+        super(context, i, false, null, vnbVar);
+        this.Qd = ktbVar;
+        this.Nd = i2;
+        this.Od = i3;
+        this.Pd = i4;
+        this.Ld = new Path();
+        this.Md = new Paint(1);
     }
 
-    public final void b() {
-        if ((this.b & 4) != 0) {
-            boolean isEmpty = TextUtils.isEmpty(this.j);
-            Toolbar toolbar = this.a;
-            if (isEmpty) {
-                toolbar.setNavigationContentDescription(this.n);
-            } else {
-                toolbar.setNavigationContentDescription(this.j);
-            }
-        }
+    @Override // wb2
+    public final void j1(Canvas canvas) {
+        this.S4 = 0;
+        this.T4 = this.Q4.size() - 1;
+        super.j1(canvas);
     }
 
-    public final void c() {
-        Drawable drawable;
-        int i = this.b;
-        if ((i & 2) == 0) {
-            drawable = null;
-        } else if ((i & 1) != 0) {
-            drawable = this.e;
-            if (drawable == null) {
-                drawable = this.d;
-            }
-        } else {
-            drawable = this.d;
-        }
-        this.a.setLogo(drawable);
+    @Override // wb2, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int e2 = e2(this.Nd);
+        float X1 = X1(e2);
+        float W1 = W1(e2);
+        RectF rectF = hl.P;
+        rectF.set(getPollButtonsLeft(), X1, getPollButtonsRight(), W1);
+        Path path = this.Ld;
+        path.rewind();
+        path.addRoundRect(rectF, hl.L(8.0f), hl.L(8.0f), Path.Direction.CW);
+        Paint paint = this.Md;
+        paint.setColor(0);
+        paint.setShadowLayer(hl.L(2.0f), 0.0f, hl.L(0.66f), aob.p1(this.Qd.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, hl.L(8.0f), hl.L(8.0f), paint);
+        canvas.clipPath(path);
+        d1(canvas);
+        canvas.restore();
+    }
+
+    @Override // wb2, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(this.Od, this.Pd);
+    }
+
+    @Override // wb2, android.view.View
+    public final void setPressed(boolean z) {
     }
 }

@@ -1,108 +1,29 @@
 // default package
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class x4a implements w4a, p71 {
-    public final w4a a;
-    public final String b;
-    public final Set c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class x4a extends View {
+    public final /* synthetic */ TL_stars.StarGift a;
+    public final /* synthetic */ float b;
 
-    public x4a(w4a w4aVar) {
-        Set set;
-        w4aVar.getClass();
-        this.a = w4aVar;
-        this.b = w4aVar.a() + '?';
-        if (w4aVar instanceof p71) {
-            set = ((p71) w4aVar).b();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x4a(Context context, TL_stars.StarGift starGift, float f) {
+        super(context);
+        this.a = starGift;
+        this.b = f;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (this.a == null) {
+            super.onMeasure(i, i2);
         } else {
-            HashSet hashSet = new HashSet(w4aVar.f());
-            int f = w4aVar.f();
-            for (int i = 0; i < f; i++) {
-                hashSet.add(w4aVar.g(i));
-            }
-            set = hashSet;
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i) * this.b), TLObject.FLAG_30), i2);
         }
-        this.c = set;
-    }
-
-    @Override // w4a
-    public final String a() {
-        return this.b;
-    }
-
-    @Override // p71
-    public final Set b() {
-        return this.c;
-    }
-
-    @Override // w4a
-    public final boolean c() {
-        return true;
-    }
-
-    @Override // w4a
-    public final int d(String str) {
-        str.getClass();
-        return this.a.d(str);
-    }
-
-    @Override // w4a
-    public final vte e() {
-        return this.a.e();
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof x4a) {
-            return rp5.a(this.a, ((x4a) obj).a);
-        }
-        return false;
-    }
-
-    @Override // w4a
-    public final int f() {
-        return this.a.f();
-    }
-
-    @Override // w4a
-    public final String g(int i) {
-        return this.a.g(i);
-    }
-
-    @Override // w4a
-    public final List getAnnotations() {
-        return this.a.getAnnotations();
-    }
-
-    @Override // w4a
-    public final List h(int i) {
-        return this.a.h(i);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode() * 31;
-    }
-
-    @Override // w4a
-    public final w4a i(int i) {
-        return this.a.i(i);
-    }
-
-    @Override // w4a
-    public final boolean isInline() {
-        return this.a.isInline();
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.a);
-        sb.append('?');
-        return sb.toString();
     }
 }

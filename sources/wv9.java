@@ -1,64 +1,78 @@
 // default package
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class wv9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tx9 b;
+public final class wv9 extends qie {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ ArrayList i;
+    public final /* synthetic */ aw9 j;
 
-    public /* synthetic */ wv9(tx9 tx9Var, byte b) {
-        this.a = b;
-        this.b = tx9Var;
+    public wv9(aw9 aw9Var, int i, int i2, int i3, int i4, int i5, ArrayList arrayList, int i6, int i7, ArrayList arrayList2) {
+        this.j = aw9Var;
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = i4;
+        this.e = i5;
+        this.f = arrayList;
+        this.g = i6;
+        this.h = i7;
+        this.i = arrayList2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        tx9 tx9Var = this.b;
-        switch (b) {
-            case 0:
-                tx9Var.getClass();
-                HashSet hashSet = pg5.a;
-                yv2 yv2Var = fl5.z().p;
-                if (((CountDownLatch) yv2Var.c) == null) {
-                    yv2Var.c = new CountDownLatch(1);
-                }
-                pg5.b = true;
-                pg5.e = false;
-                pg5.g = false;
-                gl.d3(new wv9(tx9Var, (byte) 2), 0L);
-                break;
-            case 1:
-                ArrayList arrayList = tx9Var.C1;
-                if (arrayList != null) {
-                    arrayList.clear();
-                }
-                ArrayList arrayList2 = tx9Var.D1;
-                if (arrayList2 != null) {
-                    arrayList2.clear();
-                }
-                ArrayList arrayList3 = tx9Var.F1;
-                if (arrayList3 != null) {
-                    arrayList3.clear();
-                }
-                tx9Var.r0.E(true);
-                break;
-            case 2:
-                tx9Var.W1.start();
-                break;
-            case 3:
-                tx9Var.B(true, true, true);
-                break;
-            default:
-                kk7 e = kk7.e();
-                wv9 wv9Var = tx9Var.T1;
-                e.e.remove(wv9Var);
-                kk7.e().d(wv9Var);
-                break;
+    @Override // qie
+    public final boolean a(int i, int i2) {
+        return b(i, i2);
+    }
+
+    @Override // qie
+    public final boolean b(int i, int i2) {
+        r47 r47Var;
+        aw9 aw9Var = this.j;
+        if (i >= 0 && i2 >= 0) {
+            if (i == this.b && i2 == aw9Var.s) {
+                return true;
+            }
+            if (i == this.c && i2 == aw9Var.y) {
+                return true;
+            }
         }
+        r47 r47Var2 = null;
+        int i3 = this.d;
+        if (i < i3 || i >= this.e) {
+            int i4 = this.g;
+            r47Var = (i < i4 || i >= this.h) ? null : (r47) this.i.get(i - i4);
+        } else {
+            r47Var = (r47) this.f.get(i - i3);
+        }
+        int i5 = aw9Var.w;
+        if (i2 < i5 || i2 >= aw9Var.x) {
+            int i6 = aw9Var.E;
+            if (i2 >= i6 && i2 < aw9Var.F) {
+                r47Var2 = (r47) aw9Var.f.get(i2 - i6);
+            }
+        } else {
+            r47Var2 = (r47) aw9Var.e.get(i2 - i5);
+        }
+        return (r47Var2 == null || r47Var == null || r47Var2.F0() == null || r47Var.F0() == null || r47Var2.F0().id != r47Var.F0().id) ? false : true;
+    }
+
+    @Override // qie
+    public final int c() {
+        return this.j.r;
+    }
+
+    @Override // qie
+    public final int d() {
+        return this.a;
     }
 }

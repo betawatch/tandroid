@@ -1,27 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class dj7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jj7 b;
+import android.os.FileObserver;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-    public /* synthetic */ dj7(jj7 jj7Var, byte b) {
-        this.a = b;
-        this.b = jj7Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class dj7 extends FileObserver {
+    public static final Object b = new Object();
+    public static final LinkedHashMap c = new LinkedHashMap();
+    public final CopyOnWriteArrayList a;
+
+    public dj7(String str) {
+        super(str, 128);
+        this.a = new CopyOnWriteArrayList();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        jj7 jj7Var = this.b;
-        switch (b) {
-            case 0:
-                gl.t1(jj7Var.l1);
-                break;
-            default:
-                gl.E3(jj7Var.m1.getEditText());
-                break;
+    @Override // android.os.FileObserver
+    public final void onEvent(int i, String str) {
+        Iterator it = this.a.iterator();
+        while (it.hasNext()) {
+            ((ur4) it.next()).invoke(str);
         }
     }
 }

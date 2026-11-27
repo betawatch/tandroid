@@ -1,35 +1,16 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ke3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ue3 b;
+public final class ke3 extends zb3 {
+    public final /* synthetic */ me3 F;
 
-    public /* synthetic */ ke3(ue3 ue3Var, byte b) {
-        this.a = b;
-        this.b = ue3Var;
+    public ke3(me3 me3Var) {
+        this.F = me3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        ue3 ue3Var = this.b;
-        switch (b) {
-            case 0:
-                ue3Var.W3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ue3Var.invalidate();
-                break;
-            case 1:
-                ue3Var.X3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ue3Var.invalidate();
-                break;
-            default:
-                ue3Var.z4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ue3Var.invalidate();
-                break;
-        }
+    @Override // zb3
+    public final void P(f89 f89Var) {
+        this.F.b.invalidate();
     }
 }

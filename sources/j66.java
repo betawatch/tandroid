@@ -1,42 +1,36 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class j66 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ k66 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class j66 {
+    public StringBuilder d;
+    public String e;
+    public String f;
+    public char g;
+    public StringBuilder h;
+    public int a = 1;
+    public final StringBuilder b = new StringBuilder();
+    public final ArrayList c = new ArrayList();
+    public boolean i = false;
 
-    public /* synthetic */ j66(k66 k66Var, float f, byte b) {
-        this.a = b;
-        this.c = k66Var;
-        this.b = f;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        float f = this.b;
-        k66 k66Var = this.c;
-        switch (b) {
-            case 0:
-                TextView textView = k66Var.f;
-                int w0 = bkb.w0(null, bkb.x6, false);
-                int w02 = bkb.w0(null, bkb.m6, false);
-                k66Var.s = f;
-                textView.setTextColor(bm2.f(f, w0, w02));
-                break;
-            default:
-                TextView textView2 = k66Var.d;
-                int w03 = bkb.w0(null, bkb.x6, false);
-                int w04 = bkb.w0(null, bkb.m6, false);
-                k66Var.x = f;
-                textView2.setTextColor(bm2.f(f, w03, w04));
-                break;
+    public final void a() {
+        if (this.i) {
+            String a = u44.a(this.f);
+            StringBuilder sb = this.h;
+            String a2 = sb != null ? u44.a(sb.toString()) : null;
+            String str = this.e;
+            i66 i66Var = new i66();
+            i66Var.g = str;
+            i66Var.h = a;
+            i66Var.i = a2;
+            this.c.add(i66Var);
+            this.d = null;
+            this.i = false;
+            this.e = null;
+            this.f = null;
+            this.h = null;
         }
     }
 }

@@ -1,163 +1,99 @@
 // default package
 
 import android.app.Activity;
-import android.graphics.Typeface;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mi3 implements vl5 {
-    public final /* synthetic */ cj3 a;
+public final class mi3 extends n1a {
+    public final /* synthetic */ d1a[] f2;
+    public final /* synthetic */ uj3 g2;
 
-    public mi3(cj3 cj3Var) {
-        this.a = cj3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mi3(uj3 uj3Var, uj3 uj3Var2, Activity activity, Integer num, vnb vnbVar, d1a[] d1aVarArr) {
+        super(uj3Var2, activity, true, num, 0, vnbVar);
+        this.g2 = uj3Var;
+        this.f2 = d1aVarArr;
     }
 
-    @Override // vl5
-    public final void H(float f) {
-        m21 m21Var = this.a.i4;
-        if (m21Var != null) {
-            ((d21) m21Var.e).setProgress(f * 0.9f);
+    @Override // n1a
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        int i;
+        if (tL_starGiftUnique == null) {
+            return true;
         }
+        i = ((e) this.g2).currentAccount;
+        return jxa.v(i, false).k(tL_starGiftUnique.id) == null || uc7.e1().getInt("statusgiftpage", 0) >= 2;
     }
 
-    @Override // vl5
-    public final void O(boolean z, boolean z2) {
-        wjb wjbVar;
-        wjb wjbVar2;
-        cj3 cj3Var = this.a;
-        m21 m21Var = cj3Var.i4;
-        if (m21Var != null) {
-            m21Var.b();
-            cj3Var.i4 = null;
-        }
-        Activity parentActivity = cj3Var.getParentActivity();
-        wjbVar = ((d) cj3Var).resourceProvider;
-        d21 d21Var = new d21(parentActivity, wjbVar);
-        c21 c21Var = new c21(d21Var, parentActivity);
-        d21Var.b = c21Var;
-        c21Var.setWillNotDraw(false);
-        d21Var.addView(c21Var, nme.i(32.0f, 32.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        be0 be0Var = new be0(parentActivity);
-        d21Var.c = be0Var;
-        be0Var.setRoundRadius(gl.L(14.0f));
-        c21Var.addView(be0Var, nme.e(28, 28, 17));
-        hn hnVar = new hn(parentActivity, false, false, false);
-        d21Var.d = hnVar;
-        hnVar.setTypeface(Typeface.SANS_SERIF);
-        hnVar.setTextSize(gl.L(15.0f));
-        hnVar.setPadding(0, gl.L(8.0f), 0, gl.L(8.0f));
-        d21Var.addView(hnVar, nme.i(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
-        d21Var.setTextColor(d21Var.getThemedColor(bkb.xj));
-        d21Var.setBackground(d21Var.getThemedColor(bkb.vj));
-        if (z) {
-            be0Var.setImageBitmap(cj3Var.f4.r);
-        } else {
-            be0Var.setImageBitmap(PhotoViewer.r0().B4.n());
-        }
-        Activity parentActivity2 = cj3Var.getParentActivity();
-        wjbVar2 = ((d) cj3Var).resourceProvider;
-        k21 k21Var = new k21(wjbVar2, parentActivity2, true);
-        k21Var.e(k96.M0(2131743321, null));
-        k21Var.b = new li3(this, (byte) 0);
-        d21Var.setButton(k21Var);
-        d21Var.getButton().setVisibility(8);
-        hnVar.c(k96.M0(z2 ? 2131742529 : 2131742531, null), true, true);
-        m21 b = u21.b0(cj3Var).b(d21Var, -1);
-        cj3Var.i4 = b;
-        b.r = false;
-        b.i(false);
-        m21 m21Var2 = cj3Var.i4;
-        m21Var2.s = true;
-        m21Var2.j();
-    }
-
-    @Override // vl5
-    public final void U(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, final String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final boolean z, final TLRPC.VideoSize videoSize) {
-        gl.c3(new Runnable() { // from class: ki3
-            @Override // java.lang.Runnable
-            public final void run() {
-                a aVar;
-                mi3 mi3Var = mi3.this;
-                cj3 cj3Var = mi3Var.a;
-                TLRPC.InputFile inputFile3 = inputFile;
-                TLRPC.InputFile inputFile4 = inputFile2;
-                TLRPC.VideoSize videoSize2 = videoSize;
-                if (inputFile3 == null && inputFile4 == null && videoSize2 == null) {
-                    cj3Var.g4 = photoSize2.location;
-                    cj3Var.h4 = photoSize.location;
-                } else {
-                    if (cj3Var.g4 == null) {
-                        return;
-                    }
-                    TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
-                    if (inputFile3 != null) {
-                        tL_photos_uploadProfilePhoto.file = inputFile3;
-                        tL_photos_uploadProfilePhoto.flags |= 1;
-                    }
-                    if (inputFile4 != null) {
-                        tL_photos_uploadProfilePhoto.video = inputFile4;
-                        int i = tL_photos_uploadProfilePhoto.flags;
-                        tL_photos_uploadProfilePhoto.video_start_ts = d;
-                        tL_photos_uploadProfilePhoto.flags = i | 6;
-                    }
-                    if (videoSize2 != null) {
-                        tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize2;
-                        tL_photos_uploadProfilePhoto.flags |= 16;
-                    }
-                    cj3Var.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new mi1(mi3Var, str, z, (byte) 2));
+    @Override // n1a
+    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i;
+        int i2;
+        int i3;
+        vnb vnbVar;
+        TLRPC.EmojiStatus emojiStatus;
+        d1a[] d1aVarArr = this.f2;
+        uj3 uj3Var = this.g2;
+        if (l == null) {
+            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
+        } else if (tL_starGiftUnique != null) {
+            i = ((e) uj3Var).currentAccount;
+            TL_stars.SavedStarGift k = jxa.v(i, false).k(tL_starGiftUnique.id);
+            if (k != null && uc7.e1().getInt("statusgiftpage", 0) < 2) {
+                uc7.e1().edit().putInt("statusgiftpage", uc7.e1().getInt("statusgiftpage", 0) + 1).apply();
+                Context context = getContext();
+                i2 = ((e) uj3Var).currentAccount;
+                i3 = ((e) uj3Var).currentAccount;
+                long e = yac.h(i3).e();
+                vnbVar = ((e) uj3Var).resourceProvider;
+                wua wuaVar = new wua(context, i2, e, vnbVar, null);
+                wuaVar.o2(k, null);
+                wuaVar.t2();
+                wuaVar.show();
+                d1a d1aVar = d1aVarArr[0];
+                if (d1aVar != null) {
+                    uj3Var.N0 = null;
+                    d1aVar.dismiss();
+                    return;
                 }
-                aVar = ((d) cj3Var).actionBar;
-                aVar.t().requestLayout();
+                return;
             }
-        });
-    }
-
-    @Override // vl5
-    public final boolean c() {
-        return true;
-    }
-
-    @Override // vl5
-    public final p98 getCloseIntoObject() {
-        cj3 cj3Var = this.a;
-        m21 m21Var = cj3Var.i4;
-        if (m21Var == null) {
-            return null;
+            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
+            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
+            emojiStatus = tL_inputEmojiStatusCollectible;
+            if (num != null) {
+                tL_inputEmojiStatusCollectible.flags |= 1;
+                tL_inputEmojiStatusCollectible.until = num.intValue();
+                emojiStatus = tL_inputEmojiStatusCollectible;
+            }
+        } else {
+            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+            tL_emojiStatus.document_id = l.longValue();
+            emojiStatus = tL_emojiStatus;
+            if (num != null) {
+                tL_emojiStatus.flags |= 1;
+                tL_emojiStatus.until = num.intValue();
+                emojiStatus = tL_emojiStatus;
+            }
         }
-        d21 d21Var = (d21) m21Var.e;
-        p98 p98Var = new p98();
-        int[] iArr = new int[2];
-        be0 be0Var = d21Var.c;
-        be0 be0Var2 = d21Var.c;
-        be0Var.getLocationInWindow(iArr);
-        p98Var.b = iArr[0];
-        p98Var.c = iArr[1];
-        p98Var.d = cj3Var.fragmentView;
-        ImageReceiver imageReceiver = be0Var2.getImageReceiver();
-        p98Var.a = imageReceiver;
-        p98Var.e = imageReceiver.p();
-        p98Var.i = 0;
-        p98Var.h = p98Var.a.X0;
-        p98Var.k = be0Var2.getScaleX();
-        return p98Var;
-    }
-
-    @Override // vl5
-    public final String getInitialSearchString() {
-        return null;
-    }
-
-    @Override // vl5
-    public final boolean x() {
-        return true;
-    }
-
-    @Override // vl5
-    public final void T() {
+        uj3Var.getMessagesController().v5(emojiStatus, tL_starGiftUnique);
+        if (l != null) {
+            zm zmVar = uj3Var.G3;
+            w49 w49Var = new w49();
+            long longValue = l.longValue();
+            w49Var.g = longValue;
+            w49Var.h = longValue;
+            zmVar.a(w49Var);
+        }
+        d1a d1aVar2 = d1aVarArr[0];
+        if (d1aVar2 != null) {
+            uj3Var.N0 = null;
+            d1aVar2.dismiss();
+        }
     }
 }

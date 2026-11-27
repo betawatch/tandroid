@@ -1,13 +1,166 @@
 // default package
 
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oaa extends zr9 {
-    @Override // zr9
-    public final boolean d(TLObject tLObject) {
-        return !(tLObject instanceof TLRPC.Chat) || hc2.B((TLRPC.Chat) tLObject);
+public final /* synthetic */ class oaa implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ SessionsActivity b;
+
+    public /* synthetic */ oaa(SessionsActivity sessionsActivity, byte b) {
+        this.a = b;
+        this.b = sessionsActivity;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final byte b2 = 0;
+        final SessionsActivity sessionsActivity = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new ux9(sessionsActivity, (byte) 17));
+                break;
+            case 1:
+                final byte b3 = 1;
+                hl.c3(new Runnable() { // from class: qaa
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b4 = b3;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        SessionsActivity sessionsActivity2 = sessionsActivity;
+                        switch (b4) {
+                            case 0:
+                                if (sessionsActivity2.getParentActivity() != null) {
+                                    if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                        bs2.v(null, 2131754278, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    } else {
+                                        bs2.v(null, 2131743534, d31.b0(sessionsActivity2), R.raw.error, 36);
+                                    }
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    bs2.v(null, 2131754283, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    bs2.v(null, 2131754283, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                for (int i = 0; i < 4; i++) {
+                    yac h = yac.h(i);
+                    if (h.o()) {
+                        h.d = false;
+                        h.u(false);
+                        uc7.s1(i).k4(xea.e, xea.f);
+                        ConnectionsManager.getInstance(i).setUserId(h.e());
+                    }
+                }
+                break;
+            case 2:
+                final byte b4 = 2;
+                hl.c3(new Runnable() { // from class: qaa
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b42 = b4;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        SessionsActivity sessionsActivity2 = sessionsActivity;
+                        switch (b42) {
+                            case 0:
+                                if (sessionsActivity2.getParentActivity() != null) {
+                                    if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                        bs2.v(null, 2131754278, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    } else {
+                                        bs2.v(null, 2131743534, d31.b0(sessionsActivity2), R.raw.error, 36);
+                                    }
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    bs2.v(null, 2131754283, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    bs2.v(null, 2131754283, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                for (int i2 = 0; i2 < 4; i2++) {
+                    yac h2 = yac.h(i2);
+                    if (h2.o()) {
+                        h2.d = false;
+                        h2.u(false);
+                        uc7.s1(i2).k4(xea.e, xea.f);
+                        ConnectionsManager.getInstance(i2).setUserId(h2.e());
+                    }
+                }
+                break;
+            default:
+                hl.c3(new Runnable() { // from class: qaa
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b42 = b2;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        SessionsActivity sessionsActivity2 = sessionsActivity;
+                        switch (b42) {
+                            case 0:
+                                if (sessionsActivity2.getParentActivity() != null) {
+                                    if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                        bs2.v(null, 2131754278, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    } else {
+                                        bs2.v(null, 2131743534, d31.b0(sessionsActivity2), R.raw.error, 36);
+                                    }
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    bs2.v(null, 2131754283, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    bs2.v(null, 2131754283, d31.b0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.o0(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

@@ -1,30 +1,31 @@
 // default package
 
-import com.google.android.gms.tasks.OnFailureListener;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vrc implements OnFailureListener {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class vrc implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ u41 b;
+    public final /* synthetic */ yrc b;
 
-    public /* synthetic */ vrc(u41 u41Var, byte b) {
+    public /* synthetic */ vrc(yrc yrcVar, byte b) {
         this.a = b;
-        this.b = u41Var;
+        this.b = yrcVar;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        u41 u41Var = this.b;
+        yrc yrcVar = this.b;
         switch (b) {
             case 0:
-                fa4.d("wear-auth: /answer send failed: " + exc.getMessage());
-                u41Var.setLoading(false);
+                yrcVar.i();
                 break;
             default:
-                fa4.d("wear-auth: /token send failed: " + exc.getMessage());
-                u41Var.setLoading(false);
+                Runnable runnable = yrcVar.d0;
+                yrcVar.d0 = null;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

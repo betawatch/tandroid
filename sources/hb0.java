@@ -1,39 +1,53 @@
 // default package
 
-import j$.util.Objects;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class hb0 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class hb0 extends n1a {
+    public boolean f2;
+    public final /* synthetic */ ob0 g2;
 
-    public final hb0 a() {
-        hb0 hb0Var = new hb0();
-        hb0Var.c = this.c;
-        hb0Var.d = this.d;
-        hb0Var.e = this.e;
-        hb0Var.f = this.f;
-        hb0Var.b = this.b;
-        return hb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hb0(ob0 ob0Var, ob0 ob0Var2, Activity activity, int i) {
+        super(ob0Var2, activity, false, null, 4, true, null, 16, i);
+        this.g2 = ob0Var;
+        this.f2 = true;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // n1a
+    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i;
+        TLRPC.TL_emojiList tL_emojiList;
+        boolean z;
+        int i2;
+        boolean z2 = this.S;
+        ob0 ob0Var = this.g2;
+        if (z2) {
+            i2 = ((e) ob0Var).currentAccount;
+            tL_emojiList = ls6.d0(i2).M1;
+        } else {
+            i = ((e) ob0Var).currentAccount;
+            tL_emojiList = ls6.d0(i).N1;
         }
-        if (!(obj instanceof hb0)) {
-            return false;
+        if (tL_emojiList != null) {
+            z = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l != null ? l.longValue() : 0L));
+        } else {
+            z = false;
         }
-        hb0 hb0Var = (hb0) obj;
-        return this.c == hb0Var.c && this.d == hb0Var.d && this.e == hb0Var.e && this.f == hb0Var.f;
+        ob0Var.l0(z, l != null ? l.longValue() : 0L, document);
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+    @Override // n1a, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        if (this.f2) {
+            this.f2 = false;
+            this.g2.b.r(null);
+        }
     }
 }

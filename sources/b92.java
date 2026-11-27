@@ -1,91 +1,52 @@
 // default package
 
-import android.content.Context;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class b92 extends ju5 {
-    public final /* synthetic */ Context x;
-    public final /* synthetic */ f92 y;
+public final /* synthetic */ class b92 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ g92 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b92(f92 f92Var, Context context, TLRPC.Chat chat, Context context2) {
-        super(context, chat);
-        this.y = f92Var;
-        this.x = context2;
+    public /* synthetic */ b92(g92 g92Var, byte b) {
+        this.a = b;
+        this.b = g92Var;
     }
 
-    @Override // ju5
-    public final boolean a(final boolean z, hu5 hu5Var) {
-        TLRPC.ChatFull chatFull;
-        int i;
-        wjb wjbVar;
-        f92 f92Var = this.y;
-        final byte b = 1;
-        if (!f92Var.W || (chatFull = f92Var.Z) == null || (i = chatFull.invitesCount) == 0) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        g92 g92Var = this.b;
+        switch (b) {
+            case 0:
+                g92Var.k0();
+                break;
+            case 1:
+                g92Var.j0();
+                break;
+            case 2:
+                g92Var.b.dismiss();
+                g92Var.finishFragment();
+                break;
+            case 3:
+                g92Var.N.setChecked(g92Var.x0.autotranslation);
+                break;
+            default:
+                g92Var.e.setImageDrawable(g92Var.r);
+                g92Var.c0.o(R.drawable.msg_addphoto, ob6.M0(2131752177, "ChatSetPhotoOrVideo"), true);
+                TLRPC.User user = g92Var.D0;
+                if (user != null) {
+                    user.photo = null;
+                    g92Var.getMessagesController().i4(g92Var.D0, true, false);
+                }
+                g92Var.P0 = true;
+                if (g92Var.S0 == null) {
+                    g92Var.S0 = new b29(R.raw.camera_outline, hl.L(50.0f), hl.L(50.0f), false, null);
+                }
+                g92Var.c0.e.setTranslationX(-hl.L(8.0f));
+                g92Var.c0.e.setAnimation(g92Var.S0);
+                break;
         }
-        String str = f92Var.b0 ? z ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
-        Context context = this.x;
-        wjbVar = ((d) f92Var).resourceProvider;
-        final byte b2 = 0;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wjbVar, context);
-        String M0 = k96.M0(2131754201, null);
-        hd hdVar = alertDialog$Builder.a;
-        hdVar.S = M0;
-        hdVar.U = gl.S2(k96.G(i, str, new Object[0]));
-        alertDialog$Builder.j(k96.M0(2131754203, null), new ed(this) { // from class: a92
-            public final /* synthetic */ b92 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // ed
-            public final void u(hd hdVar2, int i2) {
-                byte b3 = b2;
-                boolean z2 = z;
-                b92 b92Var = this.b;
-                switch (b3) {
-                    case 0:
-                        b92Var.setJoinRequest(z2);
-                        b92Var.y.X = true;
-                        break;
-                    default:
-                        b92Var.setJoinRequest(z2);
-                        b92Var.y.X = false;
-                        break;
-                }
-            }
-        });
-        alertDialog$Builder.g(k96.M0(2131754202, null), new ed(this) { // from class: a92
-            public final /* synthetic */ b92 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // ed
-            public final void u(hd hdVar2, int i2) {
-                byte b3 = b;
-                boolean z2 = z;
-                b92 b92Var = this.b;
-                switch (b3) {
-                    case 0:
-                        b92Var.setJoinRequest(z2);
-                        b92Var.y.X = true;
-                        break;
-                    default:
-                        b92Var.setJoinRequest(z2);
-                        b92Var.y.X = false;
-                        break;
-                }
-            }
-        });
-        f92Var.showDialog(hdVar);
-        return false;
     }
 }

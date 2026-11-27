@@ -1,35 +1,68 @@
 // default package
 
-import android.content.Context;
+import android.media.AudioManager;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a00 implements qbb {
+public final /* synthetic */ class a00 implements AudioManager.OnAudioFocusChangeListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ a00(Context context, byte b) {
+    public /* synthetic */ a00(Object obj, byte b) {
         this.a = b;
-        this.b = context;
+        this.b = obj;
     }
 
-    @Override // qbb
-    public final Object get() {
+    @Override // android.media.AudioManager.OnAudioFocusChangeListener
+    public final void onAudioFocusChange(int i) {
+        oz ozVar;
         byte b = this.a;
-        Context context = this.b;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                return i00.e(context);
-            case 1:
-                return new qb3(context, new ka3());
-            case 2:
-                return new vb3(context);
-            case 3:
-                return new qb3(context, new ka3());
-            case 4:
-                return new sc3(context, new o5f((byte) 13));
+                d00 d00Var = (d00) obj;
+                d00Var.getClass();
+                if (i != -3 && i != -2) {
+                    if (i == -1) {
+                        c74 c74Var = d00Var.c;
+                        if (c74Var != null) {
+                            c74Var.h.b(33, -1, 0).b();
+                        }
+                        d00Var.a();
+                        d00Var.b(1);
+                        break;
+                    } else if (i == 1) {
+                        d00Var.b(2);
+                        c74 c74Var2 = d00Var.c;
+                        if (c74Var2 != null) {
+                            c74Var2.h.b(33, 1, 0).b();
+                            break;
+                        }
+                    } else {
+                        c00.p(i, "Unknown focus change type: ", "AudioFocusManager");
+                        break;
+                    }
+                } else if (i != -2 && ((ozVar = d00Var.d) == null || ozVar.a != 1)) {
+                    d00Var.b(4);
+                    break;
+                } else {
+                    c74 c74Var3 = d00Var.c;
+                    if (c74Var3 != null) {
+                        c74Var3.h.b(33, 0, 0).b();
+                    }
+                    d00Var.b(3);
+                    break;
+                }
+                break;
             default:
-                return s93.d(context);
+                MediaController mediaController = (MediaController) obj;
+                String[] strArr = MediaController.W1;
+                if (i != 1) {
+                    mediaController.W = false;
+                    break;
+                }
+                break;
         }
     }
 }

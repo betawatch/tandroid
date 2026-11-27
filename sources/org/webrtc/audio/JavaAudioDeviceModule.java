@@ -10,7 +10,7 @@ import org.webrtc.JniCommon;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class JavaAudioDeviceModule implements AudioDeviceModule {
     private static final String TAG = "JavaAudioDeviceModule";
@@ -25,7 +25,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
     private final boolean useStereoInput;
     private final boolean useStereoOutput;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface AudioRecordErrorCallback {
         void onWebRtcAudioRecordError(String str);
 
@@ -34,20 +34,20 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         void onWebRtcAudioRecordStartError(AudioRecordStartErrorCode audioRecordStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum AudioRecordStartErrorCode {
         AUDIO_RECORD_START_EXCEPTION,
         AUDIO_RECORD_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface AudioRecordStateCallback {
         void onWebRtcAudioRecordStart();
 
         void onWebRtcAudioRecordStop();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class AudioSamples {
         private final int audioFormat;
         private final int channelCount;
@@ -78,7 +78,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface AudioTrackErrorCallback {
         void onWebRtcAudioTrackError(String str);
 
@@ -87,20 +87,110 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         void onWebRtcAudioTrackStartError(AudioTrackStartErrorCode audioTrackStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum AudioTrackStartErrorCode {
         AUDIO_TRACK_START_EXCEPTION,
         AUDIO_TRACK_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface AudioTrackStateCallback {
         void onWebRtcAudioTrackStart();
 
         void onWebRtcAudioTrackStop();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        long createAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, long j, int i, int i2, boolean z, boolean z2);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    public interface SamplesReadyCallback {
+        void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
+    }
+
+    private JavaAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i, int i2, boolean z, boolean z2) {
+        this.nativeLock = new Object();
+        this.context = context;
+        this.audioManager = audioManager;
+        this.audioInput = webRtcAudioRecord;
+        this.audioOutput = webRtcAudioTrack;
+        this.inputSampleRate = i;
+        this.outputSampleRate = i2;
+        this.useStereoInput = z;
+        this.useStereoOutput = z2;
+    }
+
+    public static Builder builder(Context context) {
+        return new Builder(context, 0);
+    }
+
+    public static boolean isBuiltInAcousticEchoCancelerSupported() {
+        return WebRtcAudioEffects.isAcousticEchoCancelerSupported();
+    }
+
+    public static boolean isBuiltInNoiseSuppressorSupported() {
+        return WebRtcAudioEffects.isNoiseSuppressorSupported();
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public long getNative(long j) {
+        long j2;
+        synchronized (this.nativeLock) {
+            j2 = this.nativeAudioDeviceModule;
+            if (j2 == 0) {
+                j2 = JavaAudioDeviceModuleJni.get().createAudioDeviceModule(this.context, this.audioManager, this.audioInput, this.audioOutput, j, this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput);
+                this.nativeAudioDeviceModule = j2;
+            }
+        }
+        return j2;
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public void release() {
+        synchronized (this.nativeLock) {
+            long j = this.nativeAudioDeviceModule;
+            if (j != 0) {
+                JniCommon.nativeReleaseRef(j);
+                this.nativeAudioDeviceModule = 0L;
+            }
+        }
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public void setMicrophoneMute(boolean z) {
+        Logging.d(TAG, "setMicrophoneMute: " + z);
+        this.audioInput.setMicrophoneMute(z);
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public boolean setNoiseSuppressorEnabled(boolean z) {
+        Logging.d(TAG, "setNoiseSuppressorEnabled: " + z);
+        return this.audioInput.setNoiseSuppressorEnabled(z);
+    }
+
+    public void setPreferredInputDevice(AudioDeviceInfo audioDeviceInfo) {
+        Logging.d(TAG, "setPreferredInputDevice: " + audioDeviceInfo.getId());
+        this.audioInput.setPreferredDevice(audioDeviceInfo);
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public final boolean setPreferredMicrophoneFieldDimension(float f) {
+        return false;
+    }
+
+    @Override // org.webrtc.audio.AudioDeviceModule
+    public void setSpeakerMute(boolean z) {
+        Logging.d(TAG, "setSpeakerMute: " + z);
+        this.audioOutput.setSpeakerMute(z);
+    }
+
+    public /* synthetic */ JavaAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i, int i2, boolean z, boolean z2, int i3) {
+        this(context, audioManager, webRtcAudioRecord, webRtcAudioTrack, i, i2, z, z2);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class Builder {
         private AudioAttributes audioAttributes;
         private int audioFormat;
@@ -161,7 +251,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
             if (scheduledExecutorService == null) {
                 scheduledExecutorService = WebRtcAudioRecord.newDefaultScheduler();
             }
-            return new JavaAudioDeviceModule(this.context, this.audioManager, new WebRtcAudioRecord(this.context, scheduledExecutorService, this.audioManager, this.audioSource, this.audioFormat, this.audioRecordErrorCallback, this.audioRecordStateCallback, this.samplesReadyCallback, this.useHardwareAcousticEchoCanceler, this.useHardwareNoiseSuppressor), new WebRtcAudioTrack(this.context, this.audioManager, this.audioAttributes, this.audioTrackErrorCallback, this.audioTrackStateCallback, this.useLowLatency, this.enableVolumeLogger), this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput);
+            return new JavaAudioDeviceModule(this.context, this.audioManager, new WebRtcAudioRecord(this.context, scheduledExecutorService, this.audioManager, this.audioSource, this.audioFormat, this.audioRecordErrorCallback, this.audioRecordStateCallback, this.samplesReadyCallback, this.useHardwareAcousticEchoCanceler, this.useHardwareNoiseSuppressor), new WebRtcAudioTrack(this.context, this.audioManager, this.audioAttributes, this.audioTrackErrorCallback, this.audioTrackStateCallback, this.useLowLatency, this.enableVolumeLogger), this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput, 0);
         }
 
         public Builder setAudioAttributes(AudioAttributes audioAttributes) {
@@ -265,88 +355,9 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
             this.useStereoOutput = z;
             return this;
         }
-    }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    public interface SamplesReadyCallback {
-        void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
-    }
-
-    private JavaAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i, int i2, boolean z, boolean z2) {
-        this.nativeLock = new Object();
-        this.context = context;
-        this.audioManager = audioManager;
-        this.audioInput = webRtcAudioRecord;
-        this.audioOutput = webRtcAudioTrack;
-        this.inputSampleRate = i;
-        this.outputSampleRate = i2;
-        this.useStereoInput = z;
-        this.useStereoOutput = z2;
-    }
-
-    public static Builder builder(Context context) {
-        return new Builder(context);
-    }
-
-    public static boolean isBuiltInAcousticEchoCancelerSupported() {
-        return WebRtcAudioEffects.isAcousticEchoCancelerSupported();
-    }
-
-    public static boolean isBuiltInNoiseSuppressorSupported() {
-        return WebRtcAudioEffects.isNoiseSuppressorSupported();
-    }
-
-    private static native long nativeCreateAudioDeviceModule(Context context, AudioManager audioManager, WebRtcAudioRecord webRtcAudioRecord, WebRtcAudioTrack webRtcAudioTrack, int i, int i2, boolean z, boolean z2);
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public long getNativeAudioDeviceModulePointer() {
-        long j;
-        synchronized (this.nativeLock) {
-            j = this.nativeAudioDeviceModule;
-            if (j == 0) {
-                j = nativeCreateAudioDeviceModule(this.context, this.audioManager, this.audioInput, this.audioOutput, this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput);
-                this.nativeAudioDeviceModule = j;
-            }
+        public /* synthetic */ Builder(Context context, int i) {
+            this(context);
         }
-        return j;
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public void release() {
-        synchronized (this.nativeLock) {
-            long j = this.nativeAudioDeviceModule;
-            if (j != 0) {
-                JniCommon.nativeReleaseRef(j);
-                this.nativeAudioDeviceModule = 0L;
-            }
-        }
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public void setMicrophoneMute(boolean z) {
-        Logging.d(TAG, "setMicrophoneMute: " + z);
-        this.audioInput.setMicrophoneMute(z);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public boolean setNoiseSuppressorEnabled(boolean z) {
-        Logging.d(TAG, "setNoiseSuppressorEnabled: " + z);
-        return this.audioInput.setNoiseSuppressorEnabled(z);
-    }
-
-    public void setPreferredInputDevice(AudioDeviceInfo audioDeviceInfo) {
-        Logging.d(TAG, "setPreferredInputDevice: " + audioDeviceInfo);
-        this.audioInput.setPreferredDevice(audioDeviceInfo);
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public final boolean setPreferredMicrophoneFieldDimension(float f) {
-        return false;
-    }
-
-    @Override // org.webrtc.audio.AudioDeviceModule
-    public void setSpeakerMute(boolean z) {
-        Logging.d(TAG, "setSpeakerMute: " + z);
-        this.audioOutput.setSpeakerMute(z);
     }
 }

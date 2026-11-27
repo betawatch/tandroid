@@ -1,29 +1,23 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xv5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rw5 b;
+public final class xv5 extends d79 {
+    public final /* synthetic */ bw5 f3;
 
-    public /* synthetic */ xv5(rw5 rw5Var, byte b) {
-        this.a = b;
-        this.b = rw5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xv5(bw5 bw5Var, Context context) {
+        super(context, null);
+        this.f3 = bw5Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        rw5 rw5Var = this.b;
-        switch (b) {
-            case 0:
-                rw5Var.Z1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                rw5Var.Z1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.t1) {
+            return;
         }
+        super.requestLayout();
     }
 }

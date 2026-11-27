@@ -1,38 +1,84 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f50 implements zn7 {
-    public static final f50 a = new f50();
-    public static final w84 b = w84.c("sdkVersion");
-    public static final w84 c = w84.c("model");
-    public static final w84 d = w84.c("hardware");
-    public static final w84 e = w84.c("device");
-    public static final w84 f = w84.c("product");
-    public static final w84 g = w84.c("osBuild");
-    public static final w84 h = w84.c("manufacturer");
-    public static final w84 i = w84.c("fingerprint");
-    public static final w84 j = w84.c("locale");
-    public static final w84 k = w84.c("country");
-    public static final w84 l = w84.c("mccMnc");
-    public static final w84 m = w84.c("applicationBuild");
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        bk bkVar = (bk) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, ((u70) bkVar).a);
-        u70 u70Var = (u70) bkVar;
-        ao7Var.a(c, u70Var.b);
-        ao7Var.a(d, u70Var.c);
-        ao7Var.a(e, u70Var.d);
-        ao7Var.a(f, u70Var.e);
-        ao7Var.a(g, u70Var.f);
-        ao7Var.a(h, u70Var.g);
-        ao7Var.a(i, u70Var.h);
-        ao7Var.a(j, u70Var.i);
-        ao7Var.a(k, u70Var.j);
-        ao7Var.a(l, u70Var.k);
-        ao7Var.a(m, u70Var.l);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class f50 extends c4 {
+    public static final Parcelable.Creator<f50> CREATOR = new t4f(2);
+    public final cy a;
+    public final Boolean b;
+    public final ubc c;
+    public final pd9 d;
+
+    public f50(String str, Boolean bool, String str2, String str3) {
+        cy a;
+        if (str == null) {
+            a = null;
+        } else {
+            try {
+                a = cy.a(str);
+            } catch (ay | od9 | xgd e) {
+                throw new IllegalArgumentException(e);
+            }
+        }
+        this.a = a;
+        this.b = bool;
+        this.c = str2 == null ? null : ubc.a(str2);
+        this.d = str3 != null ? pd9.a(str3) : null;
+    }
+
+    public final pd9 b() {
+        pd9 pd9Var = this.d;
+        if (pd9Var == null) {
+            pd9Var = null;
+            Boolean bool = this.b;
+            if (bool != null) {
+                if (bool.booleanValue()) {
+                    return pd9.b;
+                }
+                return null;
+            }
+        }
+        return pd9Var;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof f50)) {
+            return false;
+        }
+        f50 f50Var = (f50) obj;
+        return vue.a(this.a, f50Var.a) && vue.a(this.b, f50Var.b) && vue.a(this.c, f50Var.c) && vue.a(b(), f50Var.b());
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, b()});
+    }
+
+    public final String toString() {
+        String valueOf = String.valueOf(this.a);
+        String valueOf2 = String.valueOf(this.c);
+        String valueOf3 = String.valueOf(this.d);
+        StringBuilder p = ik8.p("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
+        p.append(this.b);
+        p.append(", \n requireUserVerification=");
+        p.append(valueOf2);
+        p.append(", \n residentKeyRequirement=");
+        return c00.k(p, valueOf3, "\n }");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        cy cyVar = this.a;
+        bye.l(parcel, 2, cyVar == null ? null : cyVar.a);
+        bye.a(parcel, 3, this.b);
+        ubc ubcVar = this.c;
+        bye.l(parcel, 4, ubcVar == null ? null : ubcVar.a);
+        pd9 b = b();
+        bye.l(parcel, 5, b != null ? b.a : null);
+        bye.s(parcel, r);
     }
 }

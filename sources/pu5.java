@@ -1,23 +1,42 @@
 // default package
 
-import j$.util.DesugarTimeZone;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pu5 implements y8c {
-    public static final SimpleDateFormat a;
+public final class pu5 implements Iterator {
+    public static final pu5 a;
+    public static final /* synthetic */ pu5[] b;
 
     static {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
-        a = simpleDateFormat;
-        simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
+        pu5 pu5Var = new pu5("INSTANCE", 0);
+        a = pu5Var;
+        b = new pu5[]{pu5Var};
     }
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        ((z8c) obj2).b(a.format((Date) obj));
+    public static pu5 valueOf(String str) {
+        return (pu5) Enum.valueOf(pu5.class, str);
+    }
+
+    public static pu5[] values() {
+        return (pu5[]) b.clone();
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        throw new NoSuchElementException();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        yve.o("no calls to next() since the last call to remove()", false);
     }
 }

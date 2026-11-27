@@ -1,95 +1,220 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ltc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ stc b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class ltc extends FrameLayout {
+    public boolean E;
+    public boolean F;
+    public final View a;
+    public final EditTextBoldCursor b;
+    public final View c;
+    public final vnb d;
+    public final fpc e;
+    public final fpc f;
+    public final Paint h;
+    public final TextPaint n;
+    public final RectF r;
+    public ValueAnimator s;
+    public float w;
+    public float x;
+    public jl0 y;
 
-    public /* synthetic */ ltc(stc stcVar, byte b) {
-        this.a = b;
-        this.b = stcVar;
+    public ltc(Context context, View view, vnb vnbVar, fpc fpcVar, fpc fpcVar2, fpc fpcVar3) {
+        super(context);
+        this.h = new Paint(1);
+        this.n = new TextPaint(1);
+        this.r = new RectF();
+        this.x = 1.0f;
+        this.a = view;
+        this.d = vnbVar;
+        this.e = fpcVar;
+        this.f = fpcVar3;
+        setWillNotDraw(false);
+        addView(view, tre.e(-2, 40, 51));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.b = editTextBoldCursor;
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setTextSize(15.0f);
+        int i = aob.G6;
+        yob.X(editTextBoldCursor, i, vnbVar);
+        yob.D(editTextBoldCursor, aob.H6, vnbVar);
+        yob.l(editTextBoldCursor, 30, i, vnbVar);
+        editTextBoldCursor.setHint(ob6.M0(2131742657, null));
+        editTextBoldCursor.setBackground(null);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setGravity(16);
+        editTextBoldCursor.setImeOptions(3);
+        editTextBoldCursor.setVisibility(4);
+        editTextBoldCursor.setEnabled(false);
+        byte b = 29;
+        editTextBoldCursor.setOnEditorActionListener(new j(this, b));
+        editTextBoldCursor.addTextChangedListener(new nh6(fpcVar2, (byte) 25));
+        addView(editTextBoldCursor, tre.d(-1, 40.0f, 48, 40.0f, 0.0f, 44.0f, 0.0f));
+        View view2 = new View(context);
+        this.c = view2;
+        view2.setContentDescription(ob6.M0(2131745564, null));
+        int i2 = aob.i6;
+        Drawable f0 = aob.f0(aob.v0(i2, vnbVar), 1, -1);
+        uob M = yob.M(i2);
+        view2.setBackground(f0);
+        yob.j(view2, f0, null, M, vnbVar);
+        view2.setOnClickListener(new kla(this, b));
+        addView(view2, tre.e(40, 40, 53));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        stc stcVar = this.b;
-        switch (b) {
-            case 0:
-                otc otcVar = stcVar.g0;
-                lbc lbcVar = stcVar.a;
-                if (lbcVar != null && lbcVar.c0()) {
-                    otcVar.c((int) (lbcVar.S() / 1000));
-                    otcVar.x = (int) (lbcVar.N() / 1000);
-                    otcVar.invalidate();
-                    gl.d3(stcVar.j0, 1000L);
-                    break;
-                }
-                break;
-            default:
-                otc otcVar2 = stcVar.g0;
-                ImageView imageView = stcVar.e;
-                TextureView textureView = stcVar.d;
-                stcVar.a0 = false;
-                Bitmap bitmap = stcVar.h;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    stcVar.h = null;
-                }
-                stcVar.T = true;
-                if (imageView != null) {
-                    try {
-                        int width = textureView.getWidth();
-                        int height = textureView.getHeight();
-                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                        Bitmap a = dc1.a(width, height);
-                        stcVar.h = a;
-                        textureView.getBitmap(a);
-                    } catch (Throwable th) {
-                        Bitmap bitmap2 = stcVar.h;
-                        if (bitmap2 != null) {
-                            bitmap2.recycle();
-                            stcVar.h = null;
-                        }
-                        fa4.g(th, true);
-                    }
-                    if (stcVar.h != null) {
-                        imageView.setVisibility(0);
-                        imageView.setImageBitmap(stcVar.h);
-                    } else {
-                        imageView.setImageDrawable(null);
-                    }
-                }
-                stcVar.V = true;
-                stcVar.n();
-                stcVar.o();
-                stcVar.k();
-                stcVar.m();
-                ViewGroup viewGroup = (ViewGroup) otcVar2.getParent();
-                if (viewGroup != null) {
-                    viewGroup.removeView(otcVar2);
-                }
-                ptc ptcVar = stcVar.w;
-                otc otcVar3 = stcVar.g0;
-                boolean z = stcVar.V;
-                int i = stcVar.h0;
-                int i2 = stcVar.i0;
-                stcVar.c.getVideoRotation();
-                TextureView f = ptcVar.f(otcVar3, z, i, i2, stcVar.J);
-                stcVar.n = f;
-                f.setVisibility(4);
-                ViewGroup viewGroup2 = (ViewGroup) textureView.getParent();
-                if (viewGroup2 != null) {
-                    viewGroup2.removeView(textureView);
-                }
-                otcVar2.d(false, false);
-                break;
+    public static float c(float f, float f2, float f3) {
+        float max = Math.max(0.0f, Math.min(1.0f, (f3 - f) / (f2 - f)));
+        return xnb.B(max, 2.0f, 3.0f, max * max);
+    }
+
+    public final void a() {
+        if (this.E) {
+            this.F = true;
+            EditTextBoldCursor editTextBoldCursor = this.b;
+            hl.t1(editTextBoldCursor);
+            editTextBoldCursor.clearFocus();
         }
+    }
+
+    public final void b(boolean z) {
+        if (this.E == z) {
+            return;
+        }
+        this.E = z;
+        this.F = false;
+        ValueAnimator valueAnimator = this.s;
+        if (valueAnimator != null) {
+            this.s = null;
+            valueAnimator.cancel();
+        }
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        editTextBoldCursor.setEnabled(z);
+        editTextBoldCursor.setVisibility(0);
+        this.c.setContentDescription(ob6.M0(z ? 2131752006 : 2131745564, null));
+        if (!z) {
+            hl.t1(editTextBoldCursor);
+            editTextBoldCursor.clearFocus();
+            editTextBoldCursor.setText("");
+        }
+        this.e.a(Boolean.valueOf(z));
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z ? 1.0f : 0.0f);
+        this.s = ofFloat;
+        ofFloat.setDuration(z ? 380L : 300L);
+        this.s.setInterpolator(k43.h);
+        this.a.setVisibility(0);
+        this.s.addUpdateListener(new pzb(this, (byte) 17));
+        this.s.addListener(new omb(this, (byte) 29));
+        this.s.start();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        ValueAnimator valueAnimator = this.s;
+        if (valueAnimator != null) {
+            this.s = null;
+            valueAnimator.cancel();
+        }
+        float f = this.E ? 1.0f : 0.0f;
+        this.w = f;
+        this.f.a(Float.valueOf(f));
+        float f2 = this.E ? 0.0f : 1.0f;
+        View view = this.a;
+        view.setAlpha(f2);
+        view.setScaleX(this.E ? 0.94f : 1.0f);
+        view.setVisibility(this.E ? 4 : 0);
+        float f3 = this.E ? 1.0f : 0.0f;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        editTextBoldCursor.setAlpha(f3);
+        editTextBoldCursor.setTranslationX(0.0f);
+        editTextBoldCursor.setVisibility(this.E ? 0 : 4);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float max = Math.max(this.x, this.w);
+        if (max > 0.0f) {
+            if (max < 1.0f) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), Math.round(max * 255.0f));
+                float f = (max * 0.2f) + 0.8f;
+                float L = hl.L(40.0f) / 2.0f;
+                canvas.scale(f, f, getWidth() - L, L);
+            }
+            float L2 = hl.L(40.0f);
+            float f2 = L2 / 2.0f;
+            float width = getWidth() - f2;
+            float width2 = (1.0f - this.w) * (getWidth() - L2);
+            float width3 = getWidth();
+            RectF rectF = this.r;
+            rectF.set(width2, 0.0f, width3, L2);
+            jl0 jl0Var = this.y;
+            vnb vnbVar = this.d;
+            Paint paint = this.h;
+            if (jl0Var != null) {
+                jl0Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                this.y.draw(canvas);
+            } else {
+                paint.setStyle(Paint.Style.FILL);
+                paint.setColor(aob.v0(aob.d6, vnbVar));
+                canvas.drawRoundRect(rectF, f2, f2, paint);
+            }
+            paint.setColor(aob.v0(aob.G6, vnbVar));
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(hl.L(1.9f));
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            float c = c(0.08f, 0.85f, this.w);
+            float f3 = 1.0f - c;
+            float L3 = hl.L(6.0f) * f3;
+            if (L3 > 0.3f) {
+                canvas.drawCircle(width - (hl.L(1.5f) * f3), f2 - (hl.L(1.5f) * f3), L3, paint);
+            }
+            float L4 = (hl.L(2.6f) * f3) - (hl.L(5.0f) * c);
+            float L5 = (hl.L(5.0f) * c) + (hl.L(6.5f) * f3);
+            canvas.drawLine(width + L4, L4 + f2, width + L5, L5 + f2, paint);
+            float L6 = hl.L(5.0f) * c;
+            if (L6 > 0.3f) {
+                canvas.drawLine(width + L6, f2 - L6, width - L6, f2 + L6, paint);
+            }
+            paint.setAlpha(Math.round(c(0.3f, 0.9f, this.w) * 255.0f));
+            float d = ((1.0f - this.w) * c00.d(80.0f, getWidth(), 0)) + hl.L(22.0f);
+            canvas.drawCircle(d - hl.L(1.0f), f2 - hl.L(1.0f), hl.L(5.0f), paint);
+            canvas.drawLine(hl.L(3.0f) + d, hl.L(3.0f) + f2, d + hl.L(7.0f), f2 + hl.L(7.0f), paint);
+            paint.setAlpha(jn7.d4);
+            if (max < 1.0f) {
+                canvas.restore();
+            }
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        float L = hl.L(14.0f);
+        TextPaint textPaint = this.n;
+        textPaint.setTextSize(L);
+        textPaint.setTypeface(hl.o());
+        int L2 = hl.L(62.0f) + ((int) Math.ceil(textPaint.measureText(ob6.M0(2131742613, null)))) + ((int) Math.ceil(textPaint.measureText(ob6.M0(2131742821, null))));
+        int size = View.MeasureSpec.getSize(i);
+        int min = Math.min(L2, Math.max(0, size - hl.L(48.0f)));
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();
+        layoutParams.width = min;
+        layoutParams.leftMargin = Math.max(0, Math.min((size - min) / 2, (size - hl.L(48.0f)) - min));
+        super.onMeasure(i, i2);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.y || super.verifyDrawable(drawable);
     }
 }

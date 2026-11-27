@@ -1,61 +1,136 @@
 // default package
 
 import android.content.Context;
-import android.os.Bundle;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.IInterface;
-import android.os.Looper;
+import android.os.RemoteException;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class y3d extends xx4 {
-    public final x3d F;
-
-    public y3d(Context context, Looper looper, ntb ntbVar, x3d x3dVar, ey4 ey4Var, fy4 fy4Var) {
-        super(68, ey4Var, fy4Var, ntbVar, context, looper);
-        x3dVar = x3dVar == null ? x3d.c : x3dVar;
-        aec aecVar = new aec((byte) 7, false);
-        aecVar.b = Boolean.FALSE;
-        x3d x3dVar2 = x3d.c;
-        x3dVar.getClass();
-        aecVar.b = Boolean.valueOf(x3dVar.a);
-        aecVar.c = x3dVar.b;
-        aecVar.c = s3d.a();
-        this.F = new x3d(aecVar);
-    }
-
-    @Override // gg0
-    public final IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+public final class y3d {
+    public static final HashMap o = new HashMap();
+    public final Context a;
+    public final h5d b;
+    public final String c;
+    public boolean g;
+    public final Intent h;
+    public final p5d i;
+    public t8a m;
+    public IInterface n;
+    public final ArrayList d = new ArrayList();
+    public final HashSet e = new HashSet();
+    public final Object f = new Object();
+    public final l5d k = new IBinder.DeathRecipient() { // from class: l5d
+        @Override // android.os.IBinder.DeathRecipient
+        public final void binderDied() {
+            y3d y3dVar = y3d.this;
+            int i = 0;
+            y3dVar.b.b("reportBinderDeath", new Object[0]);
+            if (y3dVar.j.get() != null) {
+                grb.o();
+                return;
+            }
+            y3dVar.b.b("%s : Binder has died.", y3dVar.c);
+            ArrayList arrayList = y3dVar.d;
+            int size = arrayList.size();
+            while (i < size) {
+                Object obj = arrayList.get(i);
+                i++;
+                ((j5d) obj).a(new RemoteException(String.valueOf(y3dVar.c).concat(" : Binder has died.")));
+            }
+            y3dVar.d.clear();
+            synchronized (y3dVar.f) {
+                y3dVar.e();
+            }
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.credentials.internal.ICredentialsService");
-        return queryLocalInterface instanceof a4d ? (a4d) queryLocalInterface : new a4d(iBinder, "com.google.android.gms.auth.api.credentials.internal.ICredentialsService", (byte) 2);
+    };
+    public final AtomicInteger l = new AtomicInteger(0);
+    public final WeakReference j = new WeakReference(null);
+
+    /* JADX WARN: Type inference failed for: r0v3, types: [l5d] */
+    public y3d(Context context, h5d h5dVar, String str, Intent intent, p5d p5dVar) {
+        this.a = context;
+        this.b = h5dVar;
+        this.c = str;
+        this.h = intent;
+        this.i = p5dVar;
     }
 
-    @Override // gg0
-    public final Bundle h() {
-        x3d x3dVar = this.F;
-        x3dVar.getClass();
-        Bundle bundle = new Bundle();
-        bundle.putString("consumer_package", null);
-        bundle.putBoolean("force_save_dialog", x3dVar.a);
-        bundle.putString("log_session_id", x3dVar.b);
-        return bundle;
+    public static void b(y3d y3dVar, j5d j5dVar) {
+        IInterface iInterface = y3dVar.n;
+        h5d h5dVar = y3dVar.b;
+        ArrayList arrayList = y3dVar.d;
+        int i = 0;
+        if (iInterface != null || y3dVar.g) {
+            if (!y3dVar.g) {
+                j5dVar.run();
+                return;
+            } else {
+                h5dVar.b("Waiting to bind to the service.", new Object[0]);
+                arrayList.add(j5dVar);
+                return;
+            }
+        }
+        h5dVar.b("Initiate binding to the service.", new Object[0]);
+        arrayList.add(j5dVar);
+        t8a t8aVar = new t8a(y3dVar, (byte) 1);
+        y3dVar.m = t8aVar;
+        y3dVar.g = true;
+        if (y3dVar.a.bindService(y3dVar.h, t8aVar, 1)) {
+            return;
+        }
+        h5dVar.b("Failed to bind to the service.", new Object[0]);
+        y3dVar.g = false;
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((j5d) obj).a(new z3d("Failed to bind to the service."));
+        }
+        arrayList.clear();
     }
 
-    @Override // gg0
-    public final int i() {
-        return 12800000;
+    public final Handler a() {
+        Handler handler;
+        HashMap hashMap = o;
+        synchronized (hashMap) {
+            if (!hashMap.containsKey(this.c)) {
+                HandlerThread handlerThread = new HandlerThread(this.c, 10);
+                handlerThread.start();
+                hashMap.put(this.c, new Handler(handlerThread.getLooper()));
+            }
+            handler = (Handler) hashMap.get(this.c);
+        }
+        return handler;
     }
 
-    @Override // gg0
-    public final String l() {
-        return "com.google.android.gms.auth.api.credentials.internal.ICredentialsService";
+    public final void c(j5d j5dVar, TaskCompletionSource taskCompletionSource) {
+        a().post(new n5d(this, j5dVar.c(), taskCompletionSource, j5dVar));
     }
 
-    @Override // gg0
-    public final String n() {
-        return "com.google.android.gms.auth.api.credentials.service.START";
+    public final void d(TaskCompletionSource taskCompletionSource) {
+        synchronized (this.f) {
+            this.e.remove(taskCompletionSource);
+        }
+        a().post(new x3d(this, (byte) 1));
+    }
+
+    public final void e() {
+        HashSet hashSet = this.e;
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            ((TaskCompletionSource) it.next()).trySetException(new RemoteException(String.valueOf(this.c).concat(" : Binder has died.")));
+        }
+        hashSet.clear();
     }
 }

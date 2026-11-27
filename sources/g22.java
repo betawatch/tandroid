@@ -1,102 +1,246 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Typeface;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class g22 extends n39 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public f22 f;
-    public int h;
-    public final /* synthetic */ k22 n;
+public final class g22 extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ViewGroup c;
 
-    public g22(k22 k22Var, Context context) {
-        this.n = k22Var;
-        this.c = context;
+    public /* synthetic */ g22(ViewGroup viewGroup, int i, byte b) {
+        this.a = b;
+        this.c = viewGroup;
+        this.b = i;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f == 0;
-    }
-
-    public final Object E(int i) {
-        int i2 = i - 1;
-        if (i2 < 0 || i2 >= this.d.size()) {
-            return null;
-        }
-        return this.d.get(i2);
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.d.size() + 2;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 1;
-        }
-        return i == b() - 1 ? 2 : 0;
-    }
-
-    @Override // w39
-    public final void f() {
-        super.f();
-        this.n.S();
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        TLRPC.User user;
-        if (s49Var.f == 0) {
-            j22 j22Var = (j22) s49Var.a;
-            boolean z = i != b() + (-2);
-            Object E = E(i);
-            if (E instanceof nu2) {
-                nu2 nu2Var = (nu2) E;
-                user = nu2Var.m;
-                if (user == null) {
-                    j22Var.setCurrentId(nu2Var.a);
-                    j22Var.a(null, (CharSequence) this.e.get(i - 1), new c22(nu2Var, (byte) 1), z);
-                    user = null;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                k53 k53Var = (k53) this.c;
+                h53 h53Var = k53Var.r;
+                if (k53Var.n) {
+                    k53Var.removeCallbacks(h53Var);
                 }
-            } else {
-                user = (TLRPC.User) E;
-            }
-            if (user != null) {
-                j22Var.a(user, (CharSequence) this.e.get(i - 1), new d22(user, (byte) 1), z);
-            }
-            boolean containsKey = this.n.x.containsKey(a22.a(E));
-            wf2 wf2Var = j22Var.d;
-            if (wf2Var.getVisibility() != 0) {
-                wf2Var.setVisibility(0);
-            }
-            wf2Var.a(containsKey, false);
+                k53Var.n = true;
+                k53Var.postDelayed(h53Var, 200L);
+                k53Var.h.run();
+                return true;
+            case 2:
+                return true;
+            default:
+                return super.onDown(motionEvent);
         }
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View j22Var;
-        Context context = this.c;
-        if (i == 0) {
-            j22Var = new j22(context, this.n.a);
-        } else if (i != 1) {
-            j22Var = new View(context);
-            j22Var.setTag(-33024);
-        } else {
-            j22Var = new View(context);
-            j22Var.setLayoutParams(new e49(-1, gl.L(56.0f)));
-            j22Var.setTag(-33024);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        nv0 nv0Var;
+        byte b = this.a;
+        ViewGroup viewGroup = this.c;
+        switch (b) {
+            case 0:
+                i22 i22Var = (i22) viewGroup;
+                if (i22Var.d || !i22Var.N) {
+                    return false;
+                }
+                if (i22Var.K && !i22Var.M) {
+                    return false;
+                }
+                if (i22Var.O && !i22Var.b(false)) {
+                    return false;
+                }
+                float x = motionEvent.getX();
+                float y = motionEvent.getY();
+                float x2 = motionEvent2.getX();
+                float y2 = motionEvent2.getY();
+                Typeface typeface = hl.a;
+                float f3 = x2 - x;
+                float f4 = y2 - y;
+                float sqrt = (float) Math.sqrt((f4 * f4) + (f3 * f3));
+                float eventTime = motionEvent2.getEventTime() - motionEvent.getEventTime();
+                if (f2 >= hl.L(650.0f) && ((sqrt > hl.L(200.0f) || eventTime > 250.0f) && ((nv0Var = i22Var.y) == null || nv0Var.getScrollY() == 0))) {
+                    i22Var.x = true;
+                    float f5 = i22Var.r;
+                    if (f5 < i22Var.I && !i22Var.K) {
+                        i22Var.d(0.0f);
+                    } else if (i22Var.K && i22Var.M && (i22Var.R == (-i22Var.f) + i22Var.e || (f5 <= (-r7) && f2 < hl.L(1200.0f)))) {
+                        i22Var.d((-i22Var.f) + i22Var.e);
+                    } else {
+                        h22 h22Var = i22Var.G;
+                        if (h22Var != null) {
+                            h22Var.e(false);
+                        }
+                    }
+                } else {
+                    if (f2 > -700.0f) {
+                        return false;
+                    }
+                    float f6 = i22Var.r;
+                    float f7 = (-i22Var.f) + i22Var.e;
+                    if (f6 <= f7) {
+                        return false;
+                    }
+                    i22Var.x = true;
+                    i22Var.d(f7);
+                }
+                return true;
+            case 1:
+            default:
+                return super.onFling(motionEvent, motionEvent2, f, f2);
+            case 2:
+                fj8 fj8Var = (fj8) viewGroup;
+                if (!fj8Var.f && !fj8Var.h && f >= 600.0f) {
+                    fj8Var.e = false;
+                    fj8Var.h = false;
+                    fj8Var.a(0.0f, f / 6000.0f);
+                }
+                return false;
         }
-        return new y29(j22Var);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x0195, code lost:
+    
+        if (r6.canScrollHorizontally(r19 >= 0.0f ? 1 : -1) == false) goto L97;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x01ac, code lost:
+    
+        r0.d = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x01aa, code lost:
+    
+        if ((java.lang.Math.abs(r19) * 1.5f) >= java.lang.Math.abs(r1)) goto L101;
+     */
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        float f3;
+        nv0 nv0Var;
+        MotionEvent motionEvent3;
+        byte b = this.a;
+        int i = this.b;
+        ViewGroup viewGroup = this.c;
+        int i2 = 0;
+        switch (b) {
+            case 0:
+                i22 i22Var = (i22) viewGroup;
+                if (i22Var.T) {
+                    f3 = f2;
+                } else {
+                    float f4 = i22Var.S + f2;
+                    i22Var.S = f4;
+                    float abs = Math.abs(f4);
+                    float f5 = i22Var.U;
+                    if (abs > f5) {
+                        i22Var.T = true;
+                        float f6 = i22Var.S;
+                        f3 = f6 > 0.0f ? f6 - f5 : f6 + f5;
+                    } else {
+                        f3 = 0.0f;
+                    }
+                }
+                if (!i22Var.c && !i22Var.d && i22Var.N && (!i22Var.O || i22Var.r != (-i22Var.f) + i22Var.e || i22Var.b(false))) {
+                    if (((Boolean) i22Var.J.h(null)).booleanValue() && i22Var.r == (-i22Var.f) + i22Var.e) {
+                        i22Var.d = true;
+                    } else {
+                        float f7 = i;
+                        if (Math.abs(f3) >= f7 && Math.abs(f3) * 1.5f >= Math.abs(f) && (i22Var.r != (-i22Var.f) + i22Var.e || (nv0Var = i22Var.y) == null || (f3 < 0.0f && nv0Var.getScrollY() == 0))) {
+                            i22Var.c = true;
+                            MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                            while (i2 < i22Var.getChildCount()) {
+                                i22Var.getChildAt(i2).dispatchTouchEvent(obtain);
+                                i2++;
+                            }
+                            obtain.recycle();
+                            return true;
+                        }
+                        nv0 nv0Var2 = i22Var.y;
+                        if (nv0Var2 != null) {
+                            break;
+                        }
+                        if (Math.abs(f) >= f7) {
+                            break;
+                        }
+                    }
+                }
+                if (i22Var.c) {
+                    if (f3 < 0.0f) {
+                        float f8 = i22Var.r;
+                        if (f8 > (-i22Var.f) + i22Var.e) {
+                            i22Var.r = f8 - f3;
+                        } else {
+                            if (i22Var.y != null) {
+                                float scrollY = r5.getScrollY() + f3;
+                                i22Var.y.setScrollY((int) ete.a(scrollY, 0.0f, Math.max(r1.getContentHeight(), i22Var.y.getHeight()) - i22Var.e));
+                                if (scrollY < 0.0f) {
+                                    i22Var.r -= scrollY;
+                                }
+                            } else {
+                                i22Var.r = f8 - f3;
+                            }
+                        }
+                    } else if (f3 > 0.0f) {
+                        float f9 = i22Var.r - f3;
+                        i22Var.r = f9;
+                        if (i22Var.y != null && f9 < (-i22Var.f) + i22Var.e) {
+                            float scrollY2 = r1.getScrollY() - ((i22Var.r + i22Var.f) - i22Var.e);
+                            i22Var.y.setScrollY((int) ete.a(scrollY2, 0.0f, Math.max(r3.getContentHeight(), i22Var.y.getHeight()) - i22Var.e));
+                        }
+                    }
+                    float a = ete.a(i22Var.r, (-i22Var.f) + i22Var.e, (i22Var.getHeight() - i22Var.f) + i22Var.e);
+                    i22Var.r = a;
+                    if (i22Var.K && !i22Var.M) {
+                        i22Var.r = Math.min(a, (-i22Var.f) + i22Var.e);
+                    }
+                    i22Var.c();
+                }
+                return true;
+            case 1:
+                k53 k53Var = (k53) viewGroup;
+                if (k53Var.n || k53Var.f) {
+                    float f10 = i;
+                    if (Math.abs(f) >= f10 || Math.abs(f2) >= f10) {
+                        k53Var.n = false;
+                        k53Var.f = false;
+                        k53Var.removeCallbacks(k53Var.r);
+                        k53Var.removeCallbacks(k53Var.h);
+                    }
+                }
+                return false;
+            default:
+                fj8 fj8Var = (fj8) viewGroup;
+                if (fj8Var.e || fj8Var.h) {
+                    motionEvent3 = motionEvent2;
+                } else {
+                    if (fj8Var.E || fj8Var.b != 1.0f || f > (-i) || Math.abs(f) < Math.abs(1.5f * f2)) {
+                        motionEvent3 = motionEvent2;
+                    } else {
+                        motionEvent3 = motionEvent2;
+                        if (!fj8Var.d(fj8Var.getChildAt(fj8Var.b > 0.5f ? 1 : 0), motionEvent3)) {
+                            fj8Var.e = true;
+                            MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                            while (i2 < fj8Var.getChildCount()) {
+                                fj8Var.getChildAt(i2).dispatchTouchEvent(obtain2);
+                                i2++;
+                            }
+                            obtain2.recycle();
+                        }
+                    }
+                    fj8Var.h = true;
+                }
+                if (fj8Var.e) {
+                    fj8Var.c = -1.0f;
+                    fj8Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / fj8Var.getWidth()));
+                    fj8Var.c(true);
+                }
+                return fj8Var.e;
+        }
     }
 }

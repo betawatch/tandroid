@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzkp implements zzjt {
     public static final zzkp zza = new zzkp();
@@ -14,7 +14,7 @@ public final class zzkp implements zzjt {
     @Override // com.google.android.recaptcha.internal.zzjt
     public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 2) {
-            fvc.c(4, 3, null);
+            p3d.d(4, 3, null);
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
@@ -22,7 +22,7 @@ public final class zzkp implements zzjt {
             zza2 = null;
         }
         if (zza2 == null) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -32,7 +32,7 @@ public final class zzkp implements zzjt {
         if (zza3 != null) {
             zzizVar.zzc().zze(i, zzb(zza2, zza3));
         } else {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
         }
     }
 
@@ -56,23 +56,23 @@ public final class zzkp implements zzjt {
         int i = 0;
         if (obj instanceof String) {
             if (obj2 instanceof Byte) {
-                byte[] bytes = ((String) obj).getBytes(bk1.a);
+                byte[] bytes = ((String) obj).getBytes(kk1.a);
                 int length = bytes.length;
                 ArrayList arrayList = new ArrayList(length);
                 while (i < length) {
                     arrayList.add(Byte.valueOf((byte) (bytes[i] ^ ((Number) obj2).byteValue())));
                     i++;
                 }
-                return yk2.h(arrayList);
+                return sl2.h(arrayList);
             }
             if (obj2 instanceof Integer) {
                 char[] charArray = ((String) obj).toCharArray();
                 int length2 = charArray.length;
                 ArrayList arrayList2 = new ArrayList(length2);
                 while (i < length2) {
-                    i = tb4.g(charArray[i] ^ ((Number) obj2).intValue(), i, 1, arrayList2);
+                    i = qd4.g(charArray[i] ^ ((Number) obj2).intValue(), i, 1, arrayList2);
                 }
-                return yk2.j(arrayList2);
+                return sl2.j(arrayList2);
             }
         }
         if (z && (obj2 instanceof byte[])) {
@@ -97,7 +97,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList5 = new ArrayList(length3);
             int i2 = 0;
             while (i2 < length3) {
-                i2 = tb4.g(iArr[i2] ^ ((Number) obj).intValue(), i2, 1, arrayList5);
+                i2 = qd4.g(iArr[i2] ^ ((Number) obj).intValue(), i2, 1, arrayList5);
             }
             return arrayList5.toArray(new Integer[0]);
         }
@@ -107,7 +107,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList6 = new ArrayList(length4);
             int i3 = 0;
             while (i3 < length4) {
-                i3 = mue.c(i3, 1, jArr[i3] ^ ((Number) obj).longValue(), arrayList6);
+                i3 = dze.c(i3, 1, jArr[i3] ^ ((Number) obj).longValue(), arrayList6);
             }
             return arrayList6.toArray(new Long[0]);
         }
@@ -136,7 +136,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList9 = new ArrayList(length5);
             int i4 = 0;
             while (i4 < length5) {
-                i4 = tb4.g(iArr2[i4] ^ ((Number) obj2).intValue(), i4, 1, arrayList9);
+                i4 = qd4.g(iArr2[i4] ^ ((Number) obj2).intValue(), i4, 1, arrayList9);
             }
             return arrayList9.toArray(new Integer[0]);
         }
@@ -147,7 +147,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList10 = new ArrayList(length6);
             int i5 = 0;
             while (i5 < length6) {
-                i5 = mue.c(i5, 1, jArr2[i5] ^ ((Number) obj2).longValue(), arrayList10);
+                i5 = dze.c(i5, 1, jArr2[i5] ^ ((Number) obj2).longValue(), arrayList10);
             }
             return arrayList10.toArray(new Long[0]);
         }
@@ -156,15 +156,15 @@ public final class zzkp implements zzjt {
             int length7 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzjs.zza(this, length7, bArr4.length);
-            fp5 a = ise.a(0, length7);
-            ArrayList arrayList11 = new ArrayList(al2.c(a, 10));
+            ir5 a = bxe.a(0, length7);
+            ArrayList arrayList11 = new ArrayList(ul2.c(a, 10));
             Iterator it = a.iterator();
             while (true) {
-                ep5 ep5Var = (ep5) it;
-                if (!ep5Var.c) {
+                hr5 hr5Var = (hr5) it;
+                if (!hr5Var.c) {
                     return arrayList11.toArray(new Byte[0]);
                 }
-                int nextInt = ep5Var.nextInt();
+                int nextInt = hr5Var.nextInt();
                 arrayList11.add(Byte.valueOf((byte) (bArr3[nextInt] ^ bArr4[nextInt])));
             }
         } else if (z6 && (obj2 instanceof short[])) {
@@ -172,15 +172,15 @@ public final class zzkp implements zzjt {
             int length8 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzjs.zza(this, length8, sArr4.length);
-            fp5 a2 = ise.a(0, length8);
-            ArrayList arrayList12 = new ArrayList(al2.c(a2, 10));
+            ir5 a2 = bxe.a(0, length8);
+            ArrayList arrayList12 = new ArrayList(ul2.c(a2, 10));
             Iterator it2 = a2.iterator();
             while (true) {
-                ep5 ep5Var2 = (ep5) it2;
-                if (!ep5Var2.c) {
+                hr5 hr5Var2 = (hr5) it2;
+                if (!hr5Var2.c) {
                     return arrayList12.toArray(new Short[0]);
                 }
-                int nextInt2 = ep5Var2.nextInt();
+                int nextInt2 = hr5Var2.nextInt();
                 arrayList12.add(Short.valueOf((short) (sArr3[nextInt2] ^ sArr4[nextInt2])));
             }
         } else if (z7 && (obj2 instanceof int[])) {
@@ -188,35 +188,35 @@ public final class zzkp implements zzjt {
             int length9 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzjs.zza(this, length9, iArr4.length);
-            fp5 a3 = ise.a(0, length9);
-            ArrayList arrayList13 = new ArrayList(al2.c(a3, 10));
+            ir5 a3 = bxe.a(0, length9);
+            ArrayList arrayList13 = new ArrayList(ul2.c(a3, 10));
             Iterator it3 = a3.iterator();
             while (true) {
-                ep5 ep5Var3 = (ep5) it3;
-                if (!ep5Var3.c) {
+                hr5 hr5Var3 = (hr5) it3;
+                if (!hr5Var3.c) {
                     return arrayList13.toArray(new Integer[0]);
                 }
-                int nextInt3 = ep5Var3.nextInt();
+                int nextInt3 = hr5Var3.nextInt();
                 arrayList13.add(Integer.valueOf(iArr3[nextInt3] ^ iArr4[nextInt3]));
             }
         } else {
             if (!z8 || !(obj2 instanceof long[])) {
-                fvc.c(4, 5, null);
+                p3d.d(4, 5, null);
                 return null;
             }
             long[] jArr3 = (long[]) obj;
             int length10 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
             zzjs.zza(this, length10, jArr4.length);
-            fp5 a4 = ise.a(0, length10);
-            ArrayList arrayList14 = new ArrayList(al2.c(a4, 10));
+            ir5 a4 = bxe.a(0, length10);
+            ArrayList arrayList14 = new ArrayList(ul2.c(a4, 10));
             Iterator it4 = a4.iterator();
             while (true) {
-                ep5 ep5Var4 = (ep5) it4;
-                if (!ep5Var4.c) {
+                hr5 hr5Var4 = (hr5) it4;
+                if (!hr5Var4.c) {
                     return arrayList14.toArray(new Long[0]);
                 }
-                int nextInt4 = ep5Var4.nextInt();
+                int nextInt4 = hr5Var4.nextInt();
                 arrayList14.add(Long.valueOf(jArr3[nextInt4] ^ jArr4[nextInt4]));
             }
         }

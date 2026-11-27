@@ -1,69 +1,82 @@
 // default package
 
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import java.util.ArrayList;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.LaunchActivity;
+import java.util.Arrays;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class s45 extends ry8 {
-    public final /* synthetic */ h75 r;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class s45 implements pcc {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s45(h75 h75Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.r = h75Var;
+    public /* synthetic */ s45(a55 a55Var, w45 w45Var, v35 v35Var, boolean z, c35 c35Var) {
+        this.c = a55Var;
+        this.d = w45Var;
+        this.e = v35Var;
+        this.b = z;
+        this.f = c35Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        h75 h75Var = this.r;
-        byte b = h75Var.z3;
-        accessibilityNodeInfo.setEnabled(b == 0 || b == 1);
-        if (h75Var.z3 == 1) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, k96.M0(2131743051, null)));
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        h75 h75Var = this.r;
-        w35 w35Var = h75Var.q4;
-        ArrayList arrayList = h75Var.S3;
-        if (motionEvent.getAction() == 0 && h75Var.z3 == 0 && h75Var.T2 != null) {
-            gl.d3(w35Var, 300L);
-            h75Var.K3 = true;
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (h75Var.K3) {
-                gl.r(w35Var);
-                h75Var.K3 = false;
-            } else if (h75Var.L3) {
-                gl.r(h75Var.p4);
-                h75Var.H1(0, true);
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(true, true, false);
-                    try {
-                        h75Var.v1.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        Object obj5 = this.c;
+        switch (b) {
+            case 0:
+                a55 a55Var = (a55) obj5;
+                w45 w45Var = (w45) obj4;
+                v35 v35Var = (v35) obj3;
+                c35 c35Var = (c35) obj2;
+                byte[] bArr = (byte[]) obj;
+                if (!a55Var.i(w45Var) && a55Var.A(w45Var)) {
+                    TL_wallet.tonConnectClaimRequest tonconnectclaimrequest = new TL_wallet.tonConnectClaimRequest();
+                    tonconnectclaimrequest.session_id = w45Var.a.id;
+                    tonconnectclaimrequest.msg_id = w45Var.b;
+                    tonconnectclaimrequest.app_request_id = w45Var.d;
+                    boolean z = this.b;
+                    tonconnectclaimrequest.declined = z;
+                    tonconnectclaimrequest.challenge_answer = bArr;
+                    a55Var.f.sendRequestTyped(tonconnectclaimrequest, new ic((byte) 0), new r45(a55Var, bArr, w45Var, v35Var, z, c35Var));
+                    break;
+                } else {
+                    if (bArr != null) {
+                        Arrays.fill(bArr, (byte) 0);
                     }
+                    v35Var.a("Request expired or wallet changed");
+                    break;
                 }
-                arrayList.clear();
-                arrayList.addAll(h75Var.R3);
-                for (int i = 0; i < arrayList.size(); i++) {
-                    ((h85) arrayList.get(i)).j(true);
+            default:
+                wua wuaVar = (wua) obj5;
+                l01 l01Var = (l01) obj4;
+                Runnable runnable = (Runnable) obj3;
+                id idVar = (id) obj2;
+                if (!((Boolean) obj).booleanValue()) {
+                    l01Var.c(false);
+                    idVar.dismiss();
+                    runnable.run();
+                    break;
+                } else {
+                    yac h = yac.h(wuaVar.a);
+                    h.y = null;
+                    h.u(false);
+                    wuaVar.a2(this.b, l01Var, runnable);
+                    break;
                 }
-                h75Var.L3 = false;
-                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                super.onTouchEvent(obtain);
-                obtain.recycle();
-                return true;
-            }
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    public /* synthetic */ s45(wua wuaVar, boolean z, l01 l01Var, Runnable runnable, id idVar) {
+        this.c = wuaVar;
+        this.b = z;
+        this.d = l01Var;
+        this.e = runnable;
+        this.f = idVar;
     }
 }

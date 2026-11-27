@@ -1,24 +1,23 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class zk2 {
+    public final al2 a;
+    public final int b;
+    public final int c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class zk2 {
-    public static List a(Object obj) {
-        List singletonList = Collections.singletonList(obj);
-        singletonList.getClass();
-        return singletonList;
+    public zk2(al2 al2Var, int i, int i2) {
+        this.a = al2Var;
+        this.b = i;
+        this.c = i2;
     }
 
-    public static List b(Object... objArr) {
-        if (objArr.length <= 0) {
-            return c24.a;
-        }
-        List asList = Arrays.asList(objArr);
-        asList.getClass();
-        return asList;
+    public final float a(float f) {
+        return (f / this.a.d[this.c]) * this.b;
+    }
+
+    public final float b(float f) {
+        return (f / this.a.d[this.c]) * (this.b + 1);
     }
 }

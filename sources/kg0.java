@@ -1,56 +1,7 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class kg0 extends FrameLayout implements qr7 {
-    public final wjb a;
-    public final o39 b;
-    public final t26 c;
-
-    public kg0(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        o39 o39Var = new o39(context, wjbVar);
-        this.b = o39Var;
-        o39Var.setNestedScrollingEnabled(true);
-        o39Var.setAdapter(a());
-        t26 t26Var = new t26(1, false);
-        this.c = t26Var;
-        o39Var.setLayoutManager(t26Var);
-        o39Var.setClipToPadding(false);
-        addView(o39Var, nme.c(-1.0f, -1));
-    }
-
-    public w39 a() {
-        return new gx0(this, (byte) 2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Paint U0 = bkb.U0("paintDivider", this.a);
-        if (U0 == null) {
-            U0 = bkb.j0;
-        }
-        canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, U0);
-    }
-
-    @Override // qr7
-    public void setOffset(float f) {
-        if (Math.abs(f / getMeasuredWidth()) == 1.0f) {
-            o39 o39Var = this.b;
-            if (o39Var.K(0) == null || o39Var.K(0).a.getTop() != o39Var.getPaddingTop()) {
-                o39Var.w0(0);
-            }
-        }
-    }
-
-    public void setTopOffset(int i) {
-        this.b.setPadding(0, i, 0, 0);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface kg0 {
+    void a(ie9 ie9Var);
 }

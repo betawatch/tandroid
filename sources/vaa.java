@@ -1,110 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vaa extends Drawable {
-    public final Paint a;
-    public final oy8 b;
-    public final Drawable c;
-    public final wjb d;
-    public int e;
-    public int f;
-    public int g;
+public final /* synthetic */ class vaa implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ waa b;
 
-    public vaa(Context context, View view, boolean z, int i, wjb wjbVar) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.g = kk7.d4;
-        this.d = wjbVar;
-        this.e = bkb.v0(bkb.Xk, wjbVar);
-        this.f = bkb.v0(bkb.Yk, wjbVar);
-        paint.setShader(new LinearGradient(0.0f, 0.0f, gl.L(56.0f), gl.L(56.0f), new int[]{this.e, this.f}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        if (!z) {
-            this.b = null;
-            Drawable d = b00.d(context, i);
-            this.c = d;
-            d.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            return;
+    public /* synthetic */ vaa(waa waaVar, byte b) {
+        this.a = b;
+        this.b = waaVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        byte b = this.a;
+        waa waaVar = this.b;
+        switch (b) {
+            case 0:
+                String str2 = waaVar.b.text;
+                if (str2 == null || !str2.equals("AUTH_TOKEN_EXCEPTION")) {
+                    str = ob6.M0(2131751070, null) + "\n" + waaVar.b.text;
+                } else {
+                    str = ob6.M0(2131754704, null);
+                }
+                jj.r0(waaVar.c, ob6.M0(2131753887, null), str, null);
+                break;
+            default:
+                jj.r0(waaVar.c, ob6.M0(2131753887, null), ob6.M0(2131751070, null), null);
+                break;
         }
-        oy8 oy8Var = new oy8(R.raw.story_repost, gl.L(42.0f), gl.L(42.0f), true, null);
-        this.b = oy8Var;
-        oy8Var.M(view);
-        gl.d3(new pk1(oy8Var, (byte) 8), 450L);
-        this.c = null;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.a;
-        wjb wjbVar = this.d;
-        try {
-            int v0 = bkb.v0(bkb.Xk, wjbVar);
-            int v02 = bkb.v0(bkb.Yk, wjbVar);
-            if (v0 != this.e || v02 != this.f) {
-                this.e = v0;
-                this.f = v02;
-                paint.setShader(new LinearGradient(0.0f, 0.0f, gl.L(56.0f), gl.L(56.0f), new int[]{v0, v02}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
-        canvas.save();
-        canvas.translate(getBounds().left, getBounds().top);
-        RectF rectF = gl.P;
-        rectF.set(0.0f, 0.0f, getBounds().width(), getBounds().height());
-        paint.setAlpha(this.g);
-        float min = (this.g / 255.0f) * (Math.min(getBounds().width(), getBounds().height()) / 2.0f);
-        canvas.drawRoundRect(rectF, min, min, paint);
-        canvas.restore();
-        Drawable drawable = this.b;
-        int L = gl.L(drawable != null ? 20.0f : 15.0f);
-        Rect rect = gl.Q;
-        rect.set(getBounds().centerX() - L, getBounds().centerY() - L, getBounds().centerX() + L, getBounds().centerY() + L);
-        if (drawable == null) {
-            drawable = this.c;
-        }
-        if (drawable != null) {
-            drawable.setBounds(rect);
-            drawable.setAlpha(this.g);
-            drawable.draw(canvas);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(56.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(56.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.g = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

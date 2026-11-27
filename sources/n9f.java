@@ -1,22 +1,29 @@
 // default package
 
-import java.util.HashMap;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class n9f {
-    public static final String[] a = {"text1", "text2", "icon", "intent_action", "intent_data", "intent_data_id", "intent_extra_data", "suggest_large_icon", "intent_activity", "thing_proto"};
-    public static final HashMap b = new HashMap(10);
+public final class n9f extends c4 implements ie9 {
+    public static final Parcelable.Creator<n9f> CREATOR = new t4f(12);
+    public Status a;
+    public ArrayList b;
+    public String[] c;
 
-    static {
-        int i = 0;
-        while (true) {
-            String[] strArr = a;
-            if (i >= 10) {
-                return;
-            }
-            b.put(strArr[i], Integer.valueOf(i));
-            i++;
-        }
+    @Override // ie9
+    public final Status a() {
+        return this.a;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.k(parcel, 1, this.a, i);
+        bye.p(parcel, 2, this.b);
+        bye.m(parcel, 3, this.c);
+        bye.s(parcel, r);
     }
 }

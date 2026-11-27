@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class CarText {
     private final List<SpanWrapper> mSpans;
@@ -16,7 +16,7 @@ public final class CarText {
     private final String mText;
     private final List<String> mTextVariants;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class Builder {
         CharSequence mText;
         List<CharSequence> mTextVariants = new ArrayList();
@@ -49,8 +49,8 @@ public final class CarText {
             arrayList.add(charSequence.toString());
             arrayList2.add(getSpans(charSequence));
         }
-        this.mTextVariants = qrd.a(arrayList);
-        this.mSpansForVariants = qrd.a(arrayList2);
+        this.mTextVariants = gwd.a(arrayList);
+        this.mSpansForVariants = gwd.a(arrayList2);
     }
 
     public static CarText create(CharSequence charSequence) {
@@ -79,7 +79,7 @@ public final class CarText {
                 }
             }
         }
-        return qrd.a(arrayList);
+        return gwd.a(arrayList);
     }
 
     public static boolean isNullOrEmpty(CarText carText) {
@@ -139,7 +139,7 @@ public final class CarText {
         return this.mText;
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class SpanWrapper {
         private final CarSpan mCarSpan;
         private final int mEnd;
@@ -192,7 +192,7 @@ public final class CarText {
             sb.append(", ");
             sb.append(this.mEnd);
             sb.append(", flags: ");
-            return de9.l(sb, this.mFlags, "]");
+            return uh9.l(sb, this.mFlags, "]");
         }
 
         public SpanWrapper() {

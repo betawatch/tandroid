@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzeo extends ccb implements eq4 {
+final class zzeo extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzeq zzb;
     final /* synthetic */ long zzc;
@@ -12,23 +12,23 @@ final class zzeo extends ccb implements eq4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzeo(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzeo(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzeqVar;
         this.zzc = j;
         this.zzd = recaptchaAction;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzeo zzeoVar = new zzeo(this.zzb, this.zzc, this.zzd, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzeo zzeoVar = new zzeo(this.zzb, this.zzc, this.zzd, zw2Var);
         zzeoVar.zze = obj;
         return zzeoVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzeo) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzeo) create((zzgr) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x004e, code lost:
@@ -43,7 +43,7 @@ final class zzeo extends ccb implements eq4 {
     
         if (r10 != r2) goto L13;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,10 +52,10 @@ final class zzeo extends ccb implements eq4 {
         zzdw zzdwVar;
         zzeo zzeoVar;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
-                qse.b(obj);
+                ixe.b(obj);
                 zzgrVar = (zzgr) this.zze;
                 zzeq zzeqVar = this.zzb;
                 long j = this.zzc;
@@ -69,7 +69,7 @@ final class zzeo extends ccb implements eq4 {
                 obj = zzdwVar.zza(zzb, recaptchaAction, j, zzeoVar);
             } else {
                 if (i != 1) {
-                    qse.b(obj);
+                    ixe.b(obj);
                     String str = (String) obj;
                     if (str.length() != 0) {
                         return str;
@@ -77,7 +77,7 @@ final class zzeo extends ccb implements eq4 {
                     throw new zzcg(zzce.zzb, zzcd.zzaW, null, null, 12, null);
                 }
                 zzgrVar = (zzgr) this.zze;
-                qse.b(obj);
+                ixe.b(obj);
                 zzeoVar = this;
             }
             zzeoVar.zze = null;

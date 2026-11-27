@@ -1,287 +1,128 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import android.util.SparseArray;
 import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class hfa extends w29 {
-    public final Context c;
-    public boolean d;
-    public jb4 e;
-    public final /* synthetic */ nfa f;
+public final /* synthetic */ class hfa implements wp4, hf7, oj3 {
+    public final /* synthetic */ eja a;
 
-    public hfa(nfa nfaVar, Context context) {
-        this.f = nfaVar;
-        this.c = context;
+    public /* synthetic */ hfa(eja ejaVar) {
+        this.a = ejaVar;
     }
 
-    @Override // n39
-    public boolean D(s49 s49Var) {
+    @Override // oj3
+    public final boolean E() {
         return false;
     }
 
-    @Override // w29
-    public final boolean E(o39 o39Var) {
-        nfa nfaVar = this.f;
-        if (!nfaVar.q0()) {
-            int ceil = (int) Math.ceil(e() / ((this == nfaVar.K || nfaVar.x1(this) != -1) ? nfaVar.p1[0] : nfaVar.t1));
-            if (o39Var.getChildCount() != 0 && o39Var.getChildAt(0).getMeasuredHeight() * ceil > o39Var.getMeasuredHeight()) {
-                return true;
+    @Override // hf7
+    public final void a(String str) {
+        this.a.w0(str);
+    }
+
+    public final void b(boolean z) {
+        eja ejaVar = this.a;
+        if (!z) {
+            ejaVar.requestLayout();
+        }
+        ejaVar.setVisibleHeight(ejaVar.Q1);
+    }
+
+    @Override // oj3
+    public final boolean q(uj3 uj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, tzb tzbVar) {
+        eja ejaVar = this.a;
+        SparseArray[] sparseArrayArr = ejaVar.c1;
+        e eVar = ejaVar.y1;
+        ArrayList arrayList2 = new ArrayList();
+        boolean z3 = true;
+        int i3 = 1;
+        while (true) {
+            int i4 = 0;
+            if (i3 < 0) {
+                break;
             }
-        }
-        return false;
-    }
-
-    @Override // w29
-    public String F(int i) {
-        ArrayList arrayList = this.f.w1[0].e;
-        if (arrayList.isEmpty()) {
-            return "";
-        }
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            if (i <= ((nea) arrayList.get(i2)).b) {
-                return ((nea) arrayList.get(i2)).a;
+            ArrayList arrayList3 = new ArrayList();
+            for (int i5 = 0; i5 < sparseArrayArr[i3].size(); i5++) {
+                arrayList3.add(Integer.valueOf(sparseArrayArr[i3].keyAt(i5)));
             }
-        }
-        return ((nea) b00.f(1, arrayList)).a;
-    }
-
-    @Override // w29
-    public final void G(o39 o39Var, float f, int[] iArr) {
-        int i;
-        int measuredHeight = o39Var.getChildAt(0).getMeasuredHeight();
-        nfa nfaVar = this.f;
-        if (nfaVar.y1(this) != -1 || this == nfaVar.L) {
-            i = nfaVar.t1;
-        } else {
-            int x1 = nfaVar.x1(this);
-            int[] iArr2 = nfaVar.p1;
-            i = x1 != -1 ? iArr2[1] : iArr2[0];
-        }
-        int ceil = (int) (Math.ceil(e() / i) * measuredHeight);
-        int measuredHeight2 = o39Var.getMeasuredHeight() - o39Var.getPaddingTop();
-        if (measuredHeight == 0) {
-            iArr[1] = 0;
-            iArr[0] = 0;
-        } else {
-            float f2 = f * (ceil - measuredHeight2);
-            iArr[0] = ((int) (f2 / measuredHeight)) * i;
-            iArr[1] = ((int) f2) % measuredHeight;
-        }
-    }
-
-    @Override // w29
-    public final float H(o39 o39Var) {
-        int i;
-        nfa nfaVar = this.f;
-        if (this == nfaVar.L || nfaVar.y1(this) != -1) {
-            i = nfaVar.t1;
-        } else {
-            int x1 = nfaVar.x1(this);
-            int[] iArr = nfaVar.p1;
-            i = x1 != -1 ? iArr[1] : iArr[0];
-        }
-        int ceil = (int) Math.ceil(e() / i);
-        if (o39Var.getChildCount() == 0) {
-            return 0.0f;
-        }
-        int measuredHeight = o39Var.getChildAt(0).getMeasuredHeight();
-        if (RecyclerView.R(o39Var.getChildAt(0)) < 0) {
-            return 0.0f;
-        }
-        return (((r3 / i) * measuredHeight) - (r2.getTop() - o39Var.getPaddingTop())) / ((ceil * measuredHeight) - (o39Var.getMeasuredHeight() - o39Var.getPaddingTop()));
-    }
-
-    @Override // w29
-    public void I() {
-        this.f.n1(0, true);
-    }
-
-    @Override // w29
-    public final void J(o39 o39Var) {
-        if (this.d) {
-            this.d = false;
-            int i = 0;
-            for (int i2 = 0; i2 < o39Var.getChildCount(); i2++) {
-                View childAt = o39Var.getChildAt(i2);
-                if (childAt instanceof qfa) {
-                    i = ((qfa) childAt).getMessageId();
-                }
-                if (i != 0) {
-                    break;
+            Collections.sort(arrayList3);
+            int size = arrayList3.size();
+            while (i4 < size) {
+                Object obj = arrayList3.get(i4);
+                i4++;
+                Integer num = (Integer) obj;
+                if (num.intValue() > 0) {
+                    arrayList2.add((r47) sparseArrayArr[i3].get(num.intValue()));
                 }
             }
-            if (i == 0) {
-                this.f.L(0, o39Var, true);
-            }
+            sparseArrayArr[i3].clear();
+            i3--;
         }
-    }
-
-    @Override // w29
-    public final void K() {
-        this.d = true;
-        iea P = this.f.P(0);
-        if (P != null) {
-            nfa.m1(P, null, false);
+        ejaVar.d1 = 0;
+        ejaVar.l1(false);
+        pia piaVar = ejaVar.U;
+        if (piaVar != null) {
+            piaVar.x.clear();
         }
-    }
-
-    public int L(int i) {
-        return this.f.w1[0].m + i;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0032, code lost:
-    
-        if (r0[1] != false) goto L14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0051, code lost:
-    
-        if (r5[1] != false) goto L20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0082, code lost:
-    
-        if (r3[1] != false) goto L39;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0086, code lost:
-    
-        if (r0.l == false) goto L39;
-     */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public int b() {
-        int size;
-        nfa nfaVar = this.f;
-        boolean B = cf3.B(nfaVar.m1);
-        cfa[] cfaVarArr = nfaVar.w1;
-        if (B) {
-            if (cfaVarArr[0].a.size() != 0 || cfaVarArr[0].g) {
-                if (cfaVarArr[0].a.size() == 0) {
-                    boolean[] zArr = cfaVarArr[0].i;
-                    if (zArr[0]) {
-                    }
-                    return 0;
-                }
-                size = cfaVarArr[0].c().size() + cfaVarArr[0].d();
-                if (size != 0) {
-                    boolean[] zArr2 = cfaVarArr[0].i;
-                    if (zArr2[0]) {
-                    }
-                    return size + 1;
-                }
-                return size;
-            }
-            return 1;
-        }
-        cfa cfaVar = cfaVarArr[0];
-        if (cfaVar.o) {
-            return cfaVar.e();
-        }
-        if (cfaVar.a.size() != 0 || cfaVarArr[0].g) {
-            if (cfaVarArr[0].a.size() == 0) {
-                cfa cfaVar2 = cfaVarArr[0];
-                boolean[] zArr3 = cfaVar2.i;
-                if (zArr3[0]) {
-                }
-            }
-            if (cfaVarArr[0].e() != 0) {
-                return Math.max(cfaVarArr[0].e(), cfaVarArr[0].c().size() + cfaVarArr[0].d());
-            }
-            size = cfaVarArr[0].c().size() + cfaVarArr[0].d();
-            if (size == 0) {
-                return size;
-            }
-            cfa cfaVar3 = cfaVarArr[0];
-            boolean[] zArr4 = cfaVar3.i;
-            if (zArr4[0] && zArr4[1]) {
-                return size;
-            }
-            boolean z = cfaVar3.r;
-            if ((z ? cfaVar3.u : cfaVar3.n) != 0) {
-                return (z ? cfaVar3.u : cfaVar3.n) + size;
-            }
-            return size + 1;
-        }
-        return 1;
-    }
-
-    @Override // w39
-    public int d(int i) {
-        cfa[] cfaVarArr = this.f.w1;
-        if (!this.d && cfaVarArr[0].c().size() == 0) {
-            cfa cfaVar = cfaVarArr[0];
-            if (!cfaVar.g && cfaVar.l) {
-                return 2;
-            }
-        }
-        cfaVarArr[0].getClass();
-        cfaVarArr[0].c().size();
-        cfaVarArr[0].getClass();
-        return 0;
-    }
-
-    @Override // w39
-    public int e() {
-        return this.f.w1[0].e();
-    }
-
-    @Override // w39
-    public void t(s49 s49Var, int i) {
-        nfa nfaVar = this.f;
-        int[] iArr = nfaVar.p1;
-        cfa[] cfaVarArr = nfaVar.w1;
-        if (s49Var.f == 0) {
-            ArrayList c = cfaVarArr[0].c();
-            int d = i - cfaVarArr[0].d();
-            View view = s49Var.a;
-            if (view instanceof qfa) {
-                qfa qfaVar = (qfa) view;
-                int messageId = qfaVar.getMessageId();
-                int i2 = this == nfaVar.K ? iArr[0] : nfaVar.x1(this) != -1 ? iArr[1] : nfaVar.t1;
-                if (d < 0 || d >= c.size()) {
-                    qfaVar.k(null, i2, false);
-                    qfaVar.i(false, false);
-                    return;
-                }
-                k27 k27Var = (k27) c.get(d);
-                boolean z = k27Var.e1() == messageId;
-                if (nfaVar.F1) {
-                    qfaVar.i(nfaVar.c1[(k27.B0(k27Var.k) > nfaVar.m1 ? 1 : (k27.B0(k27Var.k) == nfaVar.m1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(k27Var.e1()) >= 0, z);
+        UndoView undoView = null;
+        if (arrayList.size() <= 1 && ((if7) arrayList.get(0)).a != eVar.getUserConfig().e() && charSequence == null) {
+            long j = ((if7) arrayList.get(0)).a;
+            Bundle l = bs2.l("scrollToTopOnResume", true);
+            if (wf3.B(j)) {
+                l.putInt("enc_id", (int) (j & 4294967295L));
+            } else {
+                if (wf3.D(j)) {
+                    l.putLong("user_id", j);
                 } else {
-                    qfaVar.i(false, z);
+                    l.putLong("chat_id", -j);
                 }
-                qfaVar.k(k27Var, i2, false);
+                if (!eVar.getMessagesController().C(l, uj3Var, null, null)) {
+                    return true;
+                }
             }
+            eVar.getNotificationCenter().k(jn7.s, new Object[0]);
+            zu1 zu1Var = new zu1(l);
+            ro4.a(zu1Var, (if7) arrayList.get(0));
+            uj3Var.presentFragment(zu1Var, true);
+            zu1Var.cc(arrayList2);
+            return true;
         }
+        ejaVar.J1(true);
+        int i6 = 0;
+        while (i6 < arrayList.size()) {
+            long j2 = ((if7) arrayList.get(i6)).a;
+            if (charSequence != null) {
+                eVar.getSendMessagesHelper().q0(p7a.b(charSequence.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            }
+            eVar.getSendMessagesHelper().p0(arrayList2, j2, false, false, true, 0, 0, null, -1, 0L, 0L, null);
+            i6++;
+            z3 = z3;
+            undoView = undoView;
+        }
+        boolean z4 = z3;
+        UndoView undoView2 = undoView;
+        uj3Var.finishFragment();
+        UndoView undoView3 = eVar instanceof ProfileActivity ? ((ProfileActivity) eVar).M : undoView2;
+        if (undoView3 == null) {
+            return z4;
+        }
+        if (arrayList.size() == z4) {
+            undoView3.m(((if7) arrayList.get(0)).a, Integer.valueOf(arrayList2.size()), 53);
+            return z4;
+        }
+        undoView3.k(0L, 53, Integer.valueOf(arrayList2.size()), Integer.valueOf(arrayList.size()), null, null);
+        return z4;
     }
 
-    @Override // w39
-    public s49 x(ViewGroup viewGroup, int i) {
-        nfa nfaVar = this.f;
-        wjb wjbVar = nfaVar.I1;
-        Context context = this.c;
-        if (i != 0 && i != 19) {
-            bi G = nfa.G(0, nfaVar.m1, wjbVar, context);
-            G.setLayoutParams(new e49(-1, -1));
-            return new y29(G);
-        }
-        if (this.e == null) {
-            this.e = new jb4(viewGroup.getContext(), wjbVar);
-        }
-        qfa qfaVar = new qfa(context, this.e, nfaVar.y1.getCurrentAccount());
-        if (i == 19) {
-            qfaVar.x0 = true;
-        }
-        qfaVar.setGradientView(nfaVar.E);
-        if (nfaVar.x1(this) != -1) {
-            qfaVar.e0 = true;
-        }
-        qfaVar.setLayoutParams(new e49(-1, -2));
-        return new y29(qfaVar);
+    @Override // oj3
+    public final boolean s(uj3 uj3Var) {
+        return false;
     }
 }

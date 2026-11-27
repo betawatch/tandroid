@@ -1,38 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class yye {
-    public static void a(int i, int i2) {
-        String a;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                a = zye.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
-            } else {
-                if (i2 < 0) {
-                    w26.j(de9.k(i2, "negative size: "));
-                    return;
-                }
-                a = zye.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
-            }
-            throw new IndexOutOfBoundsException(a);
-        }
+    public final uf7 a(wf7 wf7Var) {
+        ByteBuffer byteBuffer = wf7Var.c;
+        byteBuffer.getClass();
+        yve.f(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
+        return b(wf7Var, byteBuffer);
     }
 
-    public static void b(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? c(i, i3, "start index") : (i2 < 0 || i2 > i3) ? c(i2, i3, "end index") : zye.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
-        }
-    }
-
-    public static String c(int i, int i2, String str) {
-        if (i < 0) {
-            return zye.a("%s (%s) must not be negative", str, Integer.valueOf(i));
-        }
-        if (i2 >= 0) {
-            return zye.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
-        }
-        w26.j(de9.k(i2, "negative size: "));
-        return null;
-    }
+    public abstract uf7 b(wf7 wf7Var, ByteBuffer byteBuffer);
 }

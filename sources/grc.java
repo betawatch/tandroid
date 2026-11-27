@@ -1,26 +1,28 @@
 // default package
 
-import android.graphics.Bitmap;
-import java.io.File;
-import org.telegram.ui.WallpapersListActivity;
+import android.os.SystemClock;
+import j$.util.Collection;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class grc implements crc {
-    public final /* synthetic */ WallpapersListActivity a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class grc implements Runnable {
+    public final /* synthetic */ hrc a;
 
-    public grc(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    public grc(hrc hrcVar) {
+        this.a = hrcVar;
     }
 
-    @Override // crc
-    public final void b(File file, Bitmap bitmap, boolean z) {
-        qmb qmbVar = new qmb(new lrc(file, file, ""), bitmap, false);
-        qmbVar.g1(0L);
-        this.a.presentFragment(qmbVar, z);
-    }
-
-    @Override // crc
-    public final void a() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        hrc hrcVar = this.a;
+        WeakHashMap weakHashMap = hrcVar.e;
+        Collection.-EL.removeIf(weakHashMap.entrySet(), new hh((byte) 3, uptimeMillis));
+        if (weakHashMap.isEmpty()) {
+            hrcVar.a();
+        } else {
+            hrcVar.d.postDelayed(this, 250L);
+        }
     }
 }

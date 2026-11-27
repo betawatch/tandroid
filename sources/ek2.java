@@ -1,23 +1,25 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class ek2 {
-    public final fk2 a;
-    public final int b;
-    public final int c;
+    public final String a;
+    public final String b;
 
-    public ek2(fk2 fk2Var, int i, int i2) {
-        this.a = fk2Var;
-        this.b = i;
-        this.c = i2;
+    public ek2(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    public final float a(float f) {
-        return (f / this.a.d[this.c]) * this.b;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ek2)) {
+            return false;
+        }
+        ek2 ek2Var = (ek2) obj;
+        return this.a.equals(ek2Var.a) && this.b.equals(ek2Var.b);
     }
 
-    public final float b(float f) {
-        return (f / this.a.d[this.c]) * (this.b + 1);
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

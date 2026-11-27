@@ -1,65 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class t5c {
-    public static s5c a(Object obj) {
-        fs4 fs4Var = (fs4) obj;
-        s5c s5cVar = fs4Var.unknownFields;
-        if (s5cVar != s5c.f) {
-            return s5cVar;
-        }
-        s5c s5cVar2 = new s5c(0, new int[8], new Object[8], true);
-        fs4Var.unknownFields = s5cVar2;
-        return s5cVar2;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class t5c extends sd4 {
+    public final /* synthetic */ d6c Y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t5c(d6c d6cVar, int i, s5c s5cVar) {
+        super(5, i, s5cVar);
+        this.Y = d6cVar;
     }
 
-    public static boolean b(int i, af0 af0Var, Object obj) {
-        ak2 ak2Var = (ak2) af0Var.d;
-        int i2 = af0Var.a;
-        int i3 = i2 >>> 3;
-        int i4 = i2 & 7;
-        if (i4 == 0) {
-            af0Var.B(0);
-            ((s5c) obj).c(i3 << 3, Long.valueOf(ak2Var.n()));
-            return true;
+    @Override // sd4
+    public final boolean A1() {
+        d6c d6cVar = this.Y;
+        return d6cVar.n.getAdapter() == d6cVar.w;
+    }
+
+    @Override // x46
+    public final boolean X0() {
+        return ob6.a0;
+    }
+
+    @Override // u55, x46, q79
+    public final int n0(int i, oh2 oh2Var, c89 c89Var) {
+        int i2;
+        View m;
+        d6c d6cVar = this.Y;
+        if (d6cVar.O) {
+            return super.n0(i, oh2Var, c89Var);
         }
-        if (i4 == 1) {
-            af0Var.B(1);
-            ((s5c) obj).c((i3 << 3) | 1, Long.valueOf(ak2Var.k()));
-            return true;
+        int i3 = 0;
+        if (d6cVar.M != null) {
+            return 0;
         }
-        if (i4 == 2) {
-            ((s5c) obj).c((i3 << 3) | 2, af0Var.h());
-            return true;
-        }
-        if (i4 != 3) {
-            if (i4 == 4) {
-                return false;
+        if (d6cVar.N) {
+            while (true) {
+                i2 = 1;
+                if (i3 >= r()) {
+                    break;
+                }
+                s5c s5cVar = d6cVar.n;
+                View q = q(i3);
+                s5cVar.getClass();
+                int S = RecyclerView.S(q);
+                if (S < 1) {
+                    i2 = S;
+                    break;
+                }
+                i3++;
             }
-            if (i4 != 5) {
-                throw zp5.b();
+            if (i2 == 0 && (m = d6cVar.r.m(i2)) != null && m.getTop() - i > hl.L(58.0f)) {
+                i = m.getTop() - hl.L(58.0f);
             }
-            af0Var.B(5);
-            ((s5c) obj).c((i3 << 3) | 5, Integer.valueOf(ak2Var.j()));
-            return true;
         }
-        s5c s5cVar = new s5c(0, new int[8], new Object[8], true);
-        int i5 = i3 << 3;
-        int i6 = i5 | 4;
-        int i7 = i + 1;
-        if (i7 >= 100) {
-            throw new zp5("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
-        }
-        while (af0Var.c() != Integer.MAX_VALUE && b(i7, af0Var, s5cVar)) {
-        }
-        if (i6 != af0Var.a) {
-            throw new zp5("Protocol message end-group tag did not match expected tag.");
-        }
-        if (s5cVar.e) {
-            s5cVar.e = false;
-        }
-        ((s5c) obj).c(i5 | 3, s5cVar);
-        return true;
+        return super.n0(i, oh2Var, c89Var);
+    }
+
+    @Override // u55, x46, q79
+    public final boolean x0() {
+        return false;
     }
 }

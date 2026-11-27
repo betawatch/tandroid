@@ -1,79 +1,44 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i45 implements pcc {
+    public final /* synthetic */ w45 a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ c51 c;
+    public final /* synthetic */ c51 d;
+    public final /* synthetic */ a55 e;
+    public final /* synthetic */ sk7 f;
+    public final /* synthetic */ boolean[] g;
+    public final /* synthetic */ vnb h;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class i45 implements RequestDelegate {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ gk7 d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ TLObject g;
-
-    public /* synthetic */ i45(h75 h75Var, long j, hd[] hdVarArr, TLRPC.User user, boolean z, TL_phone.inviteToGroupCall invitetogroupcall) {
-        this.d = h75Var;
-        this.b = j;
-        this.e = hdVarArr;
-        this.f = user;
-        this.c = z;
-        this.g = invitetogroupcall;
+    public /* synthetic */ i45(w45 w45Var, boolean[] zArr, c51 c51Var, c51 c51Var2, a55 a55Var, sk7 sk7Var, boolean[] zArr2, vnb vnbVar) {
+        this.a = w45Var;
+        this.b = zArr;
+        this.c = c51Var;
+        this.d = c51Var2;
+        this.e = a55Var;
+        this.f = sk7Var;
+        this.g = zArr2;
+        this.h = vnbVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        TLObject tLObject2 = this.g;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        gk7 gk7Var = this.d;
-        switch (b) {
-            case 0:
-                h75 h75Var = (h75) gk7Var;
-                hd[] hdVarArr = (hd[]) obj2;
-                TLRPC.User user = (TLRPC.User) obj;
-                TL_phone.inviteToGroupCall invitetogroupcall = (TL_phone.inviteToGroupCall) tLObject2;
-                long j = this.b;
-                if (tLObject == null) {
-                    gl.c3(new ms0(h75Var, hdVarArr, this.c, tL_error, j, invitetogroupcall));
-                    break;
-                } else {
-                    na7.q1(h75Var.n1.a).R3((TLRPC.Updates) tLObject, false);
-                    gl.c3(new m77((Object) h75Var, j, (Object) hdVarArr, (Object) user, (byte) 11));
-                    break;
-                }
-            default:
-                na7 na7Var = (na7) gk7Var;
-                q21 q21Var = (q21) obj2;
-                d dVar = (d) obj;
-                TLRPC.TL_channels_editBanned tL_channels_editBanned = (TLRPC.TL_channels_editBanned) tLObject2;
-                if (tL_error != null) {
-                    gl.c3(new z77((Object) na7Var, (Object) tL_error, (Object) dVar, (Object) tL_channels_editBanned, this.c, (byte) 0));
-                    break;
-                } else {
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
-                    gl.d3(new r57(na7Var, this.b, (byte) 15), 1000L);
-                    if (q21Var != null) {
-                        gl.c3(q21Var);
-                        break;
-                    }
-                }
-                break;
+    @Override // pcc
+    public final void a(Object obj) {
+        Boolean bool = (Boolean) obj;
+        w45 w45Var = this.a;
+        if (w45Var.m || w45Var.n) {
+            return;
         }
-    }
-
-    public /* synthetic */ i45(na7 na7Var, long j, q21 q21Var, d dVar, TLRPC.TL_channels_editBanned tL_channels_editBanned, boolean z) {
-        this.d = na7Var;
-        this.b = j;
-        this.e = q21Var;
-        this.f = dVar;
-        this.g = tL_channels_editBanned;
-        this.c = z;
+        boolean booleanValue = bool.booleanValue();
+        boolean[] zArr = this.b;
+        if (booleanValue || zArr[0]) {
+            c51 c51Var = this.c;
+            c51Var.setEnabled(false);
+            c51 c51Var2 = this.d;
+            c51Var2.setEnabled(false);
+            (bool.booleanValue() ? c51Var2 : c51Var).setLoading(true);
+            this.e.e(w45Var, bool.booleanValue(), new m45(c51Var, c51Var2, this.f, this.g, this.h, w45Var, zArr));
+        }
     }
 }

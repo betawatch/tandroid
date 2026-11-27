@@ -1,87 +1,65 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.voip.VoIPPendingCall;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nv2 implements View.OnClickListener {
-    public final /* synthetic */ byte a = 2;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class nv2 implements fn7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ nv2(tv2 tv2Var, ArrayList arrayList, boolean z) {
-        this.c = tv2Var;
-        this.d = arrayList;
-        this.b = z;
+    public /* synthetic */ nv2(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object[] objArr) {
+        wa waVar;
         byte b = this.a;
-        boolean z = this.b;
-        Object obj = this.d;
-        Object obj2 = this.c;
+        Object obj = this.b;
         switch (b) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                xv2 xv2Var = ((tv2) obj2).a;
-                if (xv2Var.w != null && xv2Var.l != null) {
-                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
-                    if (intValue == 0) {
-                        xv2Var.l.y(xv2Var.W);
-                    } else if (intValue == 1) {
-                        xv2Var.l.r(xv2Var.W);
-                    } else if (intValue == 2) {
-                        xv2Var.l.r(null);
-                    } else if (intValue == 3) {
-                        xv2Var.l.E(xv2Var.W);
-                    } else if (intValue == 4) {
-                        xv2Var.l.o(xv2Var.W);
-                    } else if (intValue == 5) {
-                        hq6.d0(xv2Var.r).d(2, xv2Var.b0, xv2Var.W, (int) (System.currentTimeMillis() / 1000), this.b);
-                    }
-                    xv2Var.d();
+                d30 d30Var = (d30) obj;
+                if (i == 25) {
+                    d30Var.o(false);
                     break;
                 }
                 break;
             case 1:
-                i61 i61Var = (i61) obj2;
-                Runnable runnable = (Runnable) obj;
-                d Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Q.presentFragment(new PremiumPreviewFragment(0, z ? "lastseen" : "readtime"));
-                    i61Var.dismiss();
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
+                qmb qmbVar = (qmb) obj;
+                if (i == 263) {
+                    qmbVar.getTextView().invalidate();
+                    break;
                 }
+                break;
+            case 2:
+                ((fx0) obj).invalidate();
+                break;
+            case 3:
+                f09 f09Var = (f09) obj;
+                if (objArr.length > 1 && objArr[1] == f09Var.j2) {
+                    f09Var.y0();
+                    break;
+                }
+                break;
+            case 4:
+                dkb dkbVar = (dkb) obj;
+                if (i == 257) {
+                    hl.c3(new s8b(dkbVar, (byte) 13));
+                    break;
+                }
+                break;
+            case 5:
+                ((VoIPPendingCall) obj).lambda$new$0(i, i2, objArr);
                 break;
             default:
-                g29 g29Var = (g29) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                if (z) {
-                    ((nfa) g29Var.b).J.p();
+                muc mucVar = (muc) obj;
+                if (!mucVar.r && (waVar = mucVar.a) != null) {
+                    waVar.g3.O(true);
+                    break;
                 }
-                runnable2.run();
                 break;
         }
-    }
-
-    public /* synthetic */ nv2(g29 g29Var, boolean z, Runnable runnable) {
-        this.c = g29Var;
-        this.b = z;
-        this.d = runnable;
-    }
-
-    public /* synthetic */ nv2(boolean z, i61 i61Var, Runnable runnable) {
-        this.b = z;
-        this.c = i61Var;
-        this.d = runnable;
     }
 }

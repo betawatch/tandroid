@@ -1,61 +1,134 @@
 // default package
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class c41 extends EditTextBoldCursor {
-    public final kl M1;
-    public int N1;
-    public final gn O1;
-    public final /* synthetic */ wjb P1;
+public final class c41 extends FrameLayout {
+    public final /* synthetic */ byte a = 0;
+    public int b;
+    public final Object c;
+    public final Object d;
+    public final /* synthetic */ fn7 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c41(Activity activity, wjb wjbVar) {
-        super(activity);
-        this.P1 = wjbVar;
-        this.M1 = new kl(this);
-        gn gnVar = new gn(false, true, true);
-        this.O1 = gnVar;
-        gnVar.n(0.2f, 160L, s33.h);
-        gnVar.w(gl.L(15.33f));
-        gnVar.setCallback(this);
-        gnVar.b = 5;
+    public c41(g41 g41Var, Context context) {
+        super(context);
+        this.e = g41Var;
+        this.b = -1;
+        this.c = new Rect();
+        this.d = new mm(220L, this, k43.h);
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a = this.M1.a(bkb.v0(this.N1 < 0 ? bkb.o7 : bkb.O5, this.P1), false);
-        gn gnVar = this.O1;
-        gnVar.u(a);
-        gnVar.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        gnVar.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        super.onTextChanged(charSequence, i, i2, i3);
-        gn gnVar = this.O1;
-        if (gnVar != null) {
-            this.N1 = 32 - charSequence.length();
-            gnVar.a();
-            gnVar.t(this.N1 > 4 ? "" : String.valueOf(this.N1), true, true);
+        switch (this.a) {
+            case 1:
+                pm3 pm3Var = (pm3) this.d;
+                Path path = (Path) this.c;
+                n12 n12Var = (n12) this.e;
+                jl0 jl0Var = n12Var.y2;
+                if (jl0Var != null) {
+                    jl0Var.setBounds(0, (int) n12Var.S3, getMeasuredWidth(), getMeasuredHeight());
+                    jl0Var.draw(canvas);
+                }
+                float L = hl.L(20.0f);
+                int L2 = hl.L(7.0f);
+                int L3 = hl.L(7.0f);
+                RectF rectF = hl.P;
+                float f = L2;
+                rectF.set(getPaddingLeft(), f, getWidth() - getPaddingRight(), getHeight() - L3);
+                path.rewind();
+                path.addRoundRect(rectF, L, L, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                canvas.saveLayerAlpha(rectF, jn7.d4, 31);
+                super.dispatchDraw(canvas);
+                rectF.set(getPaddingLeft(), f, getWidth() - getPaddingRight(), hl.L(6.0f) + L2);
+                pm3Var.r(canvas, rectF, 1, 1.0f);
+                rectF.set(getPaddingLeft(), (getHeight() - L3) - hl.L(6.0f), getWidth() - getPaddingRight(), getHeight() - L3);
+                pm3Var.r(canvas, rectF, 3, 1.0f);
+                canvas.restore();
+                canvas.restore();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.O1 || super.verifyDrawable(drawable);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.a) {
+            case 0:
+                float width = getWidth() / 2.0f;
+                mm mmVar = (mm) this.d;
+                g41 g41Var = (g41) this.e;
+                float e = mmVar.e(false, g41Var.n.getWidth());
+                Rect rect = (Rect) this.c;
+                float f = e / 2.0f;
+                rect.set((int) (width - (g41Var.n.getScaleX() * f)), (int) (((1.0f - g41Var.n.getScaleY()) * g41Var.n.getHeight()) + g41Var.n.getY()), (int) ((g41Var.n.getScaleX() * f) + width), (int) (g41Var.n.getY() + g41Var.n.getHeight()));
+                g41Var.r.setBounds(rect);
+                g41Var.r.draw(canvas);
+                return super.drawChild(canvas, view, j);
+            default:
+                return super.drawChild(canvas, view, j);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 1:
+                int i5 = this.b;
+                ImageView imageView = ((n12) this.e).v1;
+                int top = i5 - imageView.getTop();
+                super.onLayout(z, i, i2, i3, i4);
+                this.b = getHeight();
+                if (imageView.getVisibility() == 0 && getHeight() - imageView.getTop() != top) {
+                    imageView.setTranslationY(imageView.getTranslationY() + ((getHeight() - imageView.getTop()) - top));
+                    imageView.animate().translationY(0.0f).setDuration(320L).setInterpolator(k43.h).start();
+                    break;
+                }
+                break;
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.a) {
+            case 0:
+                g41 g41Var = (g41) this.e;
+                g41Var.n.measure(i, i2);
+                invalidate();
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, hl.L(36.0f) + g41Var.n.getMeasuredHeight()), TLObject.FLAG_30));
+                if (this.b < 0) {
+                    this.b = getMeasuredHeight();
+                    break;
+                }
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c41(n12 n12Var, Context context) {
+        super(context);
+        this.e = n12Var;
+        this.c = new Path();
+        this.d = new pm3((byte) 7);
     }
 }

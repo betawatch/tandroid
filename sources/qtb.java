@@ -1,30 +1,18 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class qtb extends iu5 {
+    public String e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qtb implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vtb b;
-
-    public /* synthetic */ qtb(vtb vtbVar, byte b) {
-        this.a = b;
-        this.b = vtbVar;
+    @Override // iu5
+    public final iu5 s() {
+        this.e = null;
+        return this;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        vtb vtbVar = this.b;
-        switch (b) {
-            case 0:
-                new jh8((d) vtbVar, 11, false).show();
-                break;
-            default:
-                vtbVar.e.requestFocus();
-                gl.E3(vtbVar.e);
-                break;
-        }
+    @Override // iu5
+    public String toString() {
+        return this.e;
     }
 }

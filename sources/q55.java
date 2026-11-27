@@ -1,72 +1,69 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.Build;
-import android.widget.FrameLayout;
-import org.telegram.ui.LaunchActivity;
+import android.os.Bundle;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class q55 extends FrameLayout {
-    public final RectF a;
-    public final RectF b;
-    public final RectF c;
-    public final Paint d;
-    public final /* synthetic */ h75 e;
+public final /* synthetic */ class q55 implements fd, ncc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r55 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q55(h75 h75Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.e = h75Var;
-        this.a = new RectF();
-        this.b = new RectF();
-        this.c = new RectF();
-        this.d = new Paint(1);
+    public /* synthetic */ q55(r55 r55Var, byte b) {
+        this.a = b;
+        this.b = r55Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        h75 h75Var = this.e;
-        r55 r55Var = h75Var.y1;
-        float y = r55Var.getY() + r55Var.getMeasuredHeight();
-        y74 y74Var = h75Var.q5;
-        float f = y - y74Var.f;
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, f, measuredWidth, measuredHeight);
-        float y2 = r55Var.getY() + r55Var.getMeasuredHeight();
-        float measuredWidth2 = getMeasuredWidth();
-        float measuredHeight2 = getMeasuredHeight();
-        RectF rectF2 = this.b;
-        rectF2.set(0.0f, y2, measuredWidth2, measuredHeight2);
-        float y3 = (r55Var.getY() + r55Var.getMeasuredHeight()) - y74Var.f;
-        float measuredWidth3 = getMeasuredWidth();
-        float y4 = r55Var.getY() + r55Var.getMeasuredHeight();
-        RectF rectF3 = this.c;
-        rectF3.set(0.0f, y3, measuredWidth3, y4);
-        int i = Build.VERSION.SDK_INT;
-        Paint paint = this.d;
-        if (i < 29 || h75Var.G4 == null || !canvas.isHardwareAccelerated()) {
-            paint.setColor(-14933463);
-            canvas.drawRect(rectF3, paint);
-            paint.setColor(bm2.k(234881023, -14933463));
-            canvas.drawRect(rectF2, paint);
-        } else {
-            paint.setColor(-14933463);
-            canvas.drawRect(rectF, paint);
-            canvas.save();
-            canvas.clipRect(rectF);
-            canvas.translate(-getX(), -getY());
-            float f2 = h75Var.H4;
-            canvas.scale(f2, f2);
-            canvas.drawRenderNode(h75Var.G4);
-            canvas.restore();
-            paint.setColor(234881023);
-            canvas.drawRect(rectF2, paint);
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        b8c b8cVar = (b8c) obj;
+        r55 r55Var = this.b;
+        if (r55Var.c.h(b8cVar)) {
+            return;
         }
-        super.dispatchDraw(canvas);
+        int i = b8cVar.d;
+        if (i == 2 || b8cVar.a == 17) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", r55Var.getUserConfig().e());
+            bundle.putInt("chatMode", 5);
+            bundle.putString("quick_reply", "hello");
+            r55Var.presentFragment(new zu1(bundle));
+            return;
+        }
+        if (i == 1) {
+            r55Var.r = !r55Var.r;
+            r55Var.b.g3.O(true);
+            r55Var.Y(true);
+        } else {
+            if (i == 3) {
+                u41 u41Var = r55Var.c;
+                r55Var.s = true;
+                u41Var.h = true;
+                r55Var.b.g3.O(true);
+                r55Var.Y(true);
+                return;
+            }
+            if (i == 4) {
+                u41 u41Var2 = r55Var.c;
+                r55Var.s = false;
+                u41Var2.h = false;
+                r55Var.b.g3.O(true);
+                r55Var.Y(true);
+            }
+        }
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        r55 r55Var = this.b;
+        switch (b) {
+            case 0:
+                r55Var.b0();
+                break;
+            default:
+                r55Var.finishFragment();
+                break;
+        }
     }
 }

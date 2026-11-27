@@ -6,35 +6,35 @@ import android.os.Handler;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ProcessLifecycleInitializer implements pn5 {
-    @Override // pn5
+public final class ProcessLifecycleInitializer implements sp5 {
+    @Override // sp5
     public final List a() {
-        return c24.a;
+        return x24.a;
     }
 
-    @Override // pn5
+    @Override // sp5
     public final Object b(Context context) {
         context.getClass();
-        mv6 N = mv6.N(context);
-        N.getClass();
-        if (!((HashSet) N.c).contains(ProcessLifecycleInitializer.class)) {
-            sc8.j("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
+        rx6 O = rx6.O(context);
+        O.getClass();
+        if (!((HashSet) O.c).contains(ProcessLifecycleInitializer.class)) {
+            grb.i("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
             return null;
         }
-        if (!a16.a.getAndSet(true)) {
+        if (!e36.a.getAndSet(true)) {
             Context applicationContext = context.getApplicationContext();
             applicationContext.getClass();
-            ((Application) applicationContext).registerActivityLifecycleCallbacks(new z06());
+            ((Application) applicationContext).registerActivityLifecycleCallbacks(new d36());
         }
-        dl8 dl8Var = dl8.r;
-        dl8Var.getClass();
-        dl8Var.e = new Handler();
-        dl8Var.f.e(u06.ON_CREATE);
+        qo8 qo8Var = qo8.r;
+        qo8Var.getClass();
+        qo8Var.e = new Handler();
+        qo8Var.f.e(y26.ON_CREATE);
         Context applicationContext2 = context.getApplicationContext();
         applicationContext2.getClass();
-        ((Application) applicationContext2).registerActivityLifecycleCallbacks(new cl8(dl8Var));
-        return dl8Var;
+        ((Application) applicationContext2).registerActivityLifecycleCallbacks(new po8(qo8Var));
+        return qo8Var;
     }
 }

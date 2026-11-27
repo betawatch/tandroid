@@ -1,18 +1,55 @@
 // default package
 
-import android.net.Uri;
-import java.util.Map;
+import org.webrtc.DataChannel;
+import org.webrtc.NativeLifecycleLock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface o63 extends g63 {
-    void addTransferListener(vyb vybVar);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class o63 implements NativeLifecycleLock.NativeRunnable, NativeLifecycleLock.NativeCallable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ DataChannel b;
 
-    void close();
+    public /* synthetic */ o63(DataChannel dataChannel, byte b) {
+        this.a = b;
+        this.b = dataChannel;
+    }
 
-    Map getResponseHeaders();
+    @Override // org.webrtc.NativeLifecycleLock.NativeCallable
+    public final Object call() {
+        DataChannel.State lambda$state$4;
+        String lambda$label$2;
+        Integer lambda$id$3;
+        Long lambda$bufferedAmount$5;
+        byte b = this.a;
+        DataChannel dataChannel = this.b;
+        switch (b) {
+            case 1:
+                lambda$state$4 = dataChannel.lambda$state$4();
+                return lambda$state$4;
+            case 2:
+            default:
+                lambda$bufferedAmount$5 = dataChannel.lambda$bufferedAmount$5();
+                return lambda$bufferedAmount$5;
+            case 3:
+                lambda$label$2 = dataChannel.lambda$label$2();
+                return lambda$label$2;
+            case 4:
+                lambda$id$3 = dataChannel.lambda$id$3();
+                return lambda$id$3;
+        }
+    }
 
-    Uri getUri();
-
-    long open(u63 u63Var);
+    @Override // org.webrtc.NativeLifecycleLock.NativeRunnable
+    public final void run() {
+        byte b = this.a;
+        DataChannel dataChannel = this.b;
+        switch (b) {
+            case 0:
+                dataChannel.lambda$close$6();
+                break;
+            default:
+                dataChannel.lambda$unregisterObserver$1();
+                break;
+        }
+    }
 }

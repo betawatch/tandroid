@@ -1,81 +1,84 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.os.SystemClock;
-import org.telegram.ui.ActionBar.d;
+import android.util.Property;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qw1 implements Runnable {
+public final class qw1 extends Property {
     public final /* synthetic */ byte a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ qw1(ChatActivityEnterView chatActivityEnterView, byte b) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qw1(ChatActivityEnterView chatActivityEnterView, byte b) {
+        super(Float.class, "attach_scale");
         this.a = b;
-        this.b = chatActivityEnterView;
+        switch (b) {
+            case 1:
+                this.b = chatActivityEnterView;
+                super(Float.class, "emoji_button_alpha");
+                break;
+            case 2:
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_layout_translation_x");
+                break;
+            case 3:
+                this.b = chatActivityEnterView;
+                super(Float.class, "message_text_translation_x");
+                break;
+            case 4:
+                this.b = chatActivityEnterView;
+                super(Float.class, "emoji_button_scale");
+                break;
+            default:
+                this.b = chatActivityEnterView;
+                break;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        long j;
-        long j2;
+    @Override // android.util.Property
+    public final Object get(Object obj) {
         byte b = this.a;
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (b) {
             case 0:
-                qw1 qw1Var = chatActivityEnterView.h4;
-                if ((chatActivityEnterView.G0() && chatActivityEnterView.z()) || d.hasSheets(chatActivityEnterView.F3) || chatActivityEnterView.O2 || chatActivityEnterView.F0 == null || !chatActivityEnterView.a4 || chatActivityEnterView.p3 || gl.D || gl.E) {
-                    return;
-                }
-                hy1 hy1Var = chatActivityEnterView.P3;
-                if (hy1Var != null) {
-                    hy1Var.K0();
-                }
-                chatActivityEnterView.F0.requestFocus();
-                gl.E3(chatActivityEnterView.F0);
-                gl.r(qw1Var);
-                gl.d3(qw1Var, 100L);
-                return;
+                return Float.valueOf(chatActivityEnterView.F);
             case 1:
-                bn3 bn3Var = chatActivityEnterView.n6;
-                if (bn3Var == null || !bn3Var.d) {
-                    j = 0;
-                } else {
-                    long j3 = bn3Var.e;
-                    if (j3 == 0) {
-                        j2 = 0;
-                    } else {
-                        j2 = j3 + bn3Var.a + (bn3Var.C ? 180L : 0L);
-                    }
-                    j = j2 - SystemClock.uptimeMillis();
-                }
-                if (j > 0) {
-                    gl.d3(this, j + 16);
-                    return;
-                }
-                chatActivityEnterView.r6 = null;
-                chatActivityEnterView.p6 = false;
-                chatActivityEnterView.q6 = true;
-                chatActivityEnterView.s6 = SystemClock.uptimeMillis();
-                bn3 bn3Var2 = chatActivityEnterView.n6;
-                if (bn3Var2 != null) {
-                    bn3Var2.c();
-                }
-                try {
-                    chatActivityEnterView.u1();
-                    return;
-                } finally {
-                    chatActivityEnterView.q6 = false;
-                    gl.d3(new uv1(chatActivityEnterView, (byte) 17), 450L);
-                }
+                return Float.valueOf(chatActivityEnterView.n);
+            case 2:
+                return Float.valueOf(chatActivityEnterView.y);
+            case 3:
+                return Float.valueOf(chatActivityEnterView.H);
             default:
-                AnimatorSet animatorSet = chatActivityEnterView.W0;
-                if (animatorSet == null || animatorSet.isRunning()) {
-                    return;
-                }
-                chatActivityEnterView.W0.start();
-                return;
+                return Float.valueOf(chatActivityEnterView.h);
+        }
+    }
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        byte b = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (b) {
+            case 0:
+                chatActivityEnterView.F = ((Float) obj2).floatValue();
+                chatActivityEnterView.s2();
+                break;
+            case 1:
+                chatActivityEnterView.n = ((Float) obj2).floatValue();
+                chatActivityEnterView.x2();
+                break;
+            case 2:
+                chatActivityEnterView.y = ((Float) obj2).floatValue();
+                chatActivityEnterView.s2();
+                break;
+            case 3:
+                chatActivityEnterView.H = ((Float) obj2).floatValue();
+                chatActivityEnterView.B2();
+                break;
+            default:
+                chatActivityEnterView.h = ((Float) obj2).floatValue();
+                chatActivityEnterView.x2();
+                break;
         }
     }
 }

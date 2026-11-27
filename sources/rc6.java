@@ -1,34 +1,50 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rc6 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ad6 b;
-    public final /* synthetic */ String c;
+public final class rc6 implements TextureView.SurfaceTextureListener {
+    public final TextureView.SurfaceTextureListener a;
+    public final /* synthetic */ uc6 b;
 
-    public /* synthetic */ rc6(ad6 ad6Var, String str, byte b) {
-        this.a = b;
-        this.b = ad6Var;
-        this.c = str;
+    public rc6(uc6 uc6Var, TextureView.SurfaceTextureListener surfaceTextureListener) {
+        this.b = uc6Var;
+        this.a = surfaceTextureListener;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        String str = this.c;
-        ad6 ad6Var = this.b;
-        switch (b) {
-            case 0:
-                gl.c3(new tc6(ad6Var, tL_error, str, tLObject));
-                break;
-            default:
-                gl.c3(new tc6(ad6Var, tL_error, tLObject, str));
-                break;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureAvailable(surfaceTexture, i, i2);
         }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        return surfaceTextureListener == null || surfaceTextureListener.onSurfaceTextureDestroyed(surfaceTexture);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureSizeChanged(surfaceTexture, i, i2);
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        vy4 vy4Var;
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureUpdated(surfaceTexture);
+        }
+        vy4Var = ((e) this.b).glassEngine;
+        vy4Var.g();
     }
 }

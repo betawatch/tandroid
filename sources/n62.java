@@ -1,93 +1,122 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.text.Editable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class n62 extends n39 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public String e;
-    public final /* synthetic */ p62 f;
+public final class n62 implements l12 {
+    public final /* synthetic */ e a;
+    public final /* synthetic */ pcc b;
+    public final /* synthetic */ f41 c;
 
-    public n62(p62 p62Var, Context context) {
-        this.f = p62Var;
-        this.c = context;
+    public n62(f41 f41Var, pcc pccVar, e eVar) {
+        this.a = eVar;
+        this.b = pccVar;
+        this.c = f41Var;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f == 0;
+    @Override // l12
+    public final boolean E0() {
+        return false;
     }
 
-    @Override // w39
-    public final int b() {
-        return this.d.size() + 2;
+    @Override // l12
+    public final void O0(vq0 vq0Var) {
+        jn7.f(this.a.getCurrentAccount()).d(vq0Var);
     }
 
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 1;
-        }
-        return i == b() - 1 ? 2 : 0;
+    @Override // l12
+    public final boolean o() {
+        return false;
     }
 
-    @Override // w39
-    public final void f() {
-        super.f();
-        this.f.Q();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-    @Override // w39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(s49 s49Var, int i) {
-        Object obj;
-        if (s49Var.f != 0) {
-            return;
-        }
-        jx8 jx8Var = (jx8) s49Var.a;
-        boolean z = i != b() + (-2);
-        int i2 = i - 1;
-        if (i2 >= 0) {
-            ArrayList arrayList = this.d;
-            if (i2 < arrayList.size()) {
-                obj = arrayList.get(i2);
-                if (obj instanceof nx8) {
-                    return;
+    @Override // l12
+    public final void z0(int i, boolean z, boolean z2, int i2, int i3, long j, boolean z3, boolean z4, long j2) {
+        f41 f41Var = this.c;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = f41Var.d2;
+        pcc pccVar = this.b;
+        if (i == 15) {
+            e eVar = this.a;
+            jj.d0(eVar.getContext(), eVar.getResourceProvider(), null, null, new m62(pccVar, (byte) 0), null);
+        } else if (i == 7 || i == 8) {
+            HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
+            ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
+            if (selectedPhotosOrder.size() > 0) {
+                Object obj = selectedPhotos.get(selectedPhotosOrder.get(0));
+                q7a q7aVar = new q7a();
+                if (obj instanceof no6) {
+                    no6 no6Var = (no6) obj;
+                    String str = no6Var.h;
+                    if (str != null) {
+                        q7aVar.c = str;
+                    } else {
+                        q7aVar.c = no6Var.I;
+                    }
+                    q7aVar.e = no6Var.c;
+                    q7aVar.f = no6Var.g;
+                    q7aVar.k = no6Var.s;
+                    q7aVar.p = no6Var.d();
+                    q7aVar.z = no6Var.m;
+                    q7aVar.q = true;
+                    q7aVar.o = no6Var.b;
+                    CharSequence charSequence = no6Var.a;
+                    q7aVar.d = charSequence != null ? charSequence.toString() : null;
+                    q7aVar.i = no6Var.n;
+                    q7aVar.j = no6Var.r;
+                    q7aVar.h = no6Var.x;
+                    q7aVar.v = no6Var.S;
+                    q7aVar.y = no6Var;
+                } else if (obj instanceof ro6) {
+                    ro6 ro6Var = (ro6) obj;
+                    String str2 = ro6Var.h;
+                    if (str2 != null) {
+                        q7aVar.c = str2;
+                    } else {
+                        q7aVar.l = ro6Var;
+                    }
+                    q7aVar.e = ro6Var.c;
+                    q7aVar.f = ro6Var.g;
+                    q7aVar.k = ro6Var.s;
+                    CharSequence charSequence2 = ro6Var.I;
+                    q7aVar.d = charSequence2 != null ? charSequence2.toString() : null;
+                    q7aVar.i = ro6Var.n;
+                    q7aVar.j = ro6Var.r;
+                    q7aVar.h = ro6Var.x;
+                    TLRPC.BotInlineResult botInlineResult = ro6Var.N;
+                    if (botInlineResult != null && ro6Var.H) {
+                        q7aVar.m = botInlineResult;
+                        q7aVar.n = ro6Var.O;
+                    }
+                    System.currentTimeMillis();
                 }
-                nx8 nx8Var = (nx8) obj;
-                jx8Var.a(nx8Var, this.e, z);
-                jx8Var.d.a(this.f.x.contains(Integer.valueOf(nx8Var.a)), false);
-                return;
+                pccVar.a(new dh8(q7aVar));
             }
         }
-        obj = null;
-        if (obj instanceof nx8) {
-        }
+        f41Var.a(true);
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        View jx8Var;
-        Context context = this.c;
-        if (i == 0) {
-            jx8Var = new jx8(this.f.a, context, false);
-        } else if (i != 1) {
-            jx8Var = new View(context);
-            jx8Var.setTag(-33024);
-        } else {
-            jx8Var = new View(context);
-            jx8Var.setLayoutParams(new e49(-1, gl.L(56.0f)));
-            jx8Var.setTag(-33024);
-        }
-        return new y29(jx8Var);
+    @Override // l12
+    public final void R() {
+    }
+
+    @Override // l12
+    public final void V() {
+    }
+
+    @Override // l12
+    public final void e0(Object obj) {
+    }
+
+    @Override // l12
+    public final void i0(TLRPC.User user) {
+    }
+
+    @Override // l12
+    public final void f0(ArrayList arrayList, Editable editable, boolean z, int i, int i2, long j, boolean z2, long j2) {
     }
 }

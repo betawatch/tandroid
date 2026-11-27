@@ -1,95 +1,52 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
-import android.view.Choreographer;
-import android.view.PixelCopy;
-import android.view.Surface;
-import android.view.SurfaceView;
+import android.media.LoudnessCodecController;
+import android.media.MediaCodec;
+import java.util.HashSet;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class fi6 {
-    public final t96 a;
-    public SurfaceView d;
-    public Bitmap e;
-    public Bitmap f;
-    public boolean g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public long l;
-    public final Handler b = new Handler(Looper.getMainLooper());
-    public final Paint c = new Paint(2);
-    public final fp4 m = new fp4(this, (byte) 1);
-    public final tp5 n = new tp5(this, (byte) 27);
+    public final HashSet a = new HashSet();
+    public LoudnessCodecController b;
 
-    public fi6(t96 t96Var) {
-        this.a = t96Var;
-    }
-
-    public final void a() {
-        this.l = SystemClock.uptimeMillis() + 1500;
-        if (this.k) {
-            this.b.removeCallbacks(this.n);
-            this.k = false;
+    public final void a(MediaCodec mediaCodec) {
+        LoudnessCodecController loudnessCodecController = this.b;
+        if (loudnessCodecController == null || loudnessCodecController.addMediaCodec(mediaCodec)) {
+            yve.p(this.a.add(mediaCodec));
         }
-        b();
     }
 
     public final void b() {
-        if (!this.g || this.i || this.d == null || this.j || this.k) {
-            return;
-        }
-        if (SystemClock.uptimeMillis() < this.l) {
-            this.j = true;
-            Choreographer.getInstance().postFrameCallback(this.m);
-        } else {
-            this.k = true;
-            this.b.postDelayed(this.n, 400L);
+        this.a.clear();
+        LoudnessCodecController loudnessCodecController = this.b;
+        if (loudnessCodecController != null) {
+            loudnessCodecController.close();
         }
     }
 
-    public final void c() {
-        Surface surface;
-        if (!this.g || this.i) {
+    public final void c(MediaCodec mediaCodec) {
+        LoudnessCodecController loudnessCodecController;
+        if (!this.a.remove(mediaCodec) || (loudnessCodecController = this.b) == null) {
             return;
         }
-        if (!this.h) {
-            SurfaceView surfaceView = this.d;
-            if (Build.VERSION.SDK_INT >= 24 && surfaceView != null && surfaceView.isAttachedToWindow() && surfaceView.getWidth() > 0 && surfaceView.getHeight() > 0 && (surface = surfaceView.getHolder().getSurface()) != null && surface.isValid()) {
-                int max = Math.max(1, surfaceView.getWidth() / 4);
-                int max2 = Math.max(1, surfaceView.getHeight() / 4);
-                Bitmap bitmap = this.f;
-                if (bitmap == null || bitmap.getWidth() != max || this.f.getHeight() != max2) {
-                    this.f = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
-                }
-                Bitmap bitmap2 = this.f;
-                this.h = true;
-                try {
-                    PixelCopy.request(surfaceView, bitmap2, new ok(this, bitmap2, (byte) 1), this.b);
-                } catch (Exception e) {
-                    this.h = false;
-                    fa4.g(e, true);
-                }
+        loudnessCodecController.removeMediaCodec(mediaCodec);
+    }
+
+    public final void d(int i) {
+        LoudnessCodecController loudnessCodecController = this.b;
+        if (loudnessCodecController != null) {
+            loudnessCodecController.close();
+            this.b = null;
+        }
+        LoudnessCodecController create = LoudnessCodecController.create(i, mo3.a, new ei6());
+        this.b = create;
+        Iterator it = this.a.iterator();
+        while (it.hasNext()) {
+            if (!create.addMediaCodec((MediaCodec) it.next())) {
+                it.remove();
             }
-        }
-        b();
-    }
-
-    public final void d() {
-        if (this.j) {
-            Choreographer.getInstance().removeFrameCallback(this.m);
-            this.j = false;
-        }
-        if (this.k) {
-            this.b.removeCallbacks(this.n);
-            this.k = false;
         }
     }
 }

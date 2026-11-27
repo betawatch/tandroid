@@ -1,10 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.AbstractCollection;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class gxe {
-    public static byte a(long j) {
-        gre.d(j, "out of range: %s", (j >> 8) == 0);
-        return (byte) j;
-    }
+public final class gxe {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public Boolean f;
+    public Boolean g;
+    public Boolean h;
+    public Integer i;
+    public Integer j;
+    public AbstractCollection k;
 }

@@ -1,11 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface cv5 {
-    void b(c30 c30Var, Object obj);
+public final class cv5 {
+    public final JsReplyProxyBoundaryInterface a;
 
-    Object c(igf igfVar);
-
-    w4a d();
+    public cv5(JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface) {
+        this.a = jsReplyProxyBoundaryInterface;
+    }
 }

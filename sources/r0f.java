@@ -1,16 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class r0f {
-    public static void a(Object obj, Object obj2) {
-        if (obj == null) {
-            fvc.f("null key in entry: null=".concat(String.valueOf(obj2)));
-        } else {
-            if (obj2 != null) {
-                return;
-            }
-            fvc.f(tb4.y("null value in entry: ", obj.toString(), "=null"));
+    public static long a(ey7 ey7Var, int i, int i2) {
+        ey7Var.N(i);
+        if (ey7Var.a() < 5) {
+            return -9223372036854775807L;
         }
+        int m = ey7Var.m();
+        if ((8388608 & m) != 0 || ((2096896 & m) >> 8) != i2 || (m & 32) == 0 || ey7Var.A() < 7 || ey7Var.a() < 7 || (ey7Var.A() & 16) != 16) {
+            return -9223372036854775807L;
+        }
+        ey7Var.k(0, 6, new byte[6]);
+        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((r0[4] & 255) >> 7);
     }
 }

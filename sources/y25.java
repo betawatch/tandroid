@@ -1,49 +1,62 @@
 // default package
 
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.Wallet.a;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y25 implements View.OnClickListener {
+public final /* synthetic */ class y25 implements icc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ j35 b;
+    public final /* synthetic */ a b;
 
-    public /* synthetic */ y25(j35 j35Var, byte b) {
+    public /* synthetic */ y25(a aVar, byte b) {
         this.a = b;
-        this.b = j35Var;
+        this.b = aVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v3, types: [org.telegram.tgnet.TLRPC$TL_error] */
+    @Override // icc
+    public final void a(Object obj, Object obj2) {
         byte b = this.a;
-        j35 j35Var = this.b;
+        a aVar = this.b;
         switch (b) {
             case 0:
-                if (!j35Var.a() && !j35Var.d) {
-                    j35Var.d = false;
-                    if (!j35Var.f) {
-                        j35Var.f = true;
-                        j35Var.b.c();
-                    }
-                    if (!j35Var.e) {
-                        j35Var.a.dismiss();
-                        break;
-                    }
+                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
+                String str = (String) obj2;
+                c cVar = aVar.d;
+                if (importedWalletProof != null) {
+                    TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
+                    disablebackup.new_public_key = aVar.c;
+                    TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
+                    disablebackup.proof = walletownershipproof;
+                    walletownershipproof.signature = importedWalletProof.signature;
+                    walletownershipproof.timestamp = importedWalletProof.timestamp;
+                    ConnectionsManager.getInstance(cVar.a).sendRequestTyped(disablebackup, new ic((byte) 0), new y25(aVar, (byte) 1));
+                    break;
+                } else {
+                    c.m("disable backup: failed to prove challenge: ".concat(str != null ? str : "NULL_ERROR"));
+                    break;
                 }
-                break;
             default:
-                if (!j35Var.a() && !j35Var.d) {
-                    j35Var.d = false;
-                    if (!j35Var.f) {
-                        j35Var.f = true;
-                        j35Var.b.c();
-                    }
-                    if (!j35Var.e) {
-                        j35Var.a.dismiss();
-                        break;
-                    }
+                TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
+                ?? r5 = (TLRPC.TL_error) obj2;
+                c cVar2 = aVar.d;
+                if (walletState != null) {
+                    cVar2.z0(walletState);
+                    cVar2.Z();
+                    hl.d3(new jm3((byte) 10), 1000L);
+                    break;
+                } else {
+                    StringBuilder sb = new StringBuilder("disable backup: failed to disable backup on server: ");
+                    sb.append((Object) (r5 != 0 ? r5 : "NULL_ERROR"));
+                    c.m(sb.toString());
+                    break;
                 }
-                break;
         }
     }
 }

@@ -1,32 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class slc extends fj3 {
-    public final ShapeDrawable H;
-    public final /* synthetic */ hmc I;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class slc implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ long d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public slc(hmc hmcVar, Context context) {
-        super(context);
-        this.I = hmcVar;
-        this.H = bkb.b0(gl.L(22.0f), hmcVar.getThemedColor(bkb.c6));
+    public /* synthetic */ slc(VoIPService voIPService, TLRPC.Updates updates, long j, byte b) {
+        this.a = b;
+        this.b = voIPService;
+        this.c = updates;
+        this.d = j;
     }
 
-    @Override // fj3, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int ceil = (int) Math.ceil(getMetadata().g.a);
-        if (ceil > 0) {
-            ShapeDrawable shapeDrawable = this.H;
-            shapeDrawable.getPaint().setColor(this.I.getThemedColor(bkb.c6));
-            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
-            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
-            shapeDrawable.draw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.d;
+        TLRPC.Updates updates = this.c;
+        VoIPService voIPService = this.b;
+        switch (b) {
+            case 0:
+                voIPService.lambda$startConferenceGroupCall$49(updates, j);
+                break;
+            default:
+                voIPService.lambda$startConferenceGroupCall$41(updates, j);
+                break;
         }
-        super.dispatchDraw(canvas);
     }
 }

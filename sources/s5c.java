@@ -1,176 +1,50 @@
 // default package
 
-import java.util.Arrays;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class s5c {
-    public static final s5c f = new s5c(0, new int[0], new Object[0], false);
-    public int a;
-    public int[] b;
-    public Object[] c;
-    public int d = -1;
-    public boolean e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class s5c extends d79 {
+    public final /* synthetic */ z5c f3;
+    public final /* synthetic */ d6c g3;
 
-    public s5c(int i, int[] iArr, Object[] objArr, boolean z) {
-        this.a = i;
-        this.b = iArr;
-        this.c = objArr;
-        this.e = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s5c(d6c d6cVar, Context context, z5c z5cVar) {
+        super(context, null);
+        this.g3 = d6cVar;
+        this.f3 = z5cVar;
     }
 
-    public final void a(int i) {
-        int[] iArr = this.b;
-        if (i > iArr.length) {
-            int i2 = this.a;
-            int i3 = (i2 / 2) + i2;
-            if (i3 >= i) {
-                i = i3;
-            }
-            if (i < 8) {
-                i = 8;
-            }
-            this.b = Arrays.copyOf(iArr, i);
-            this.c = Arrays.copyOf(this.c, i);
-        }
+    @Override // d79
+    public final boolean G0(float f) {
+        return f >= ((float) (hl.L(58.0f) + this.g3.F));
     }
 
-    public final int b() {
-        int g;
-        int i;
-        int g2;
-        int i2 = this.d;
-        if (i2 != -1) {
-            return i2;
-        }
-        int i3 = 0;
-        for (int i4 = 0; i4 < this.a; i4++) {
-            int i5 = this.b[i4];
-            int i6 = i5 >>> 3;
-            int i7 = i5 & 7;
-            if (i7 != 0) {
-                if (i7 == 1) {
-                    ((Long) this.c[i4]).getClass();
-                    g2 = ck2.g(i6) + 8;
-                } else if (i7 == 2) {
-                    f51 f51Var = (f51) this.c[i4];
-                    int g3 = ck2.g(i6);
-                    int size = f51Var.size();
-                    i3 = ls6.f(size, size, g3, i3);
-                } else if (i7 == 3) {
-                    g = ck2.g(i6) << 1;
-                    i = ((s5c) this.c[i4]).b();
-                } else {
-                    if (i7 != 5) {
-                        ho9.n(zp5.b());
-                        return 0;
-                    }
-                    ((Integer) this.c[i4]).getClass();
-                    g2 = ck2.g(i6) + 4;
-                }
-                i3 = g2 + i3;
-            } else {
-                long longValue = ((Long) this.c[i4]).longValue();
-                g = ck2.g(i6);
-                i = ck2.i(longValue);
-            }
-            i3 = i + g + i3;
-        }
-        this.d = i3;
-        return i3;
+    @Override // d79, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        this.g3.G = true;
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public final void c(int i, Object obj) {
-        if (!this.e) {
-            fvc.b();
-            return;
-        }
-        a(this.a + 1);
-        int[] iArr = this.b;
-        int i2 = this.a;
-        iArr[i2] = i;
-        this.c[i2] = obj;
-        this.a = i2 + 1;
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return super.onInterceptTouchEvent(motionEvent) || this.f3.d(this, motionEvent);
     }
 
-    public final void d(l69 l69Var) {
-        if (this.a != 0) {
-            l69Var.getClass();
-            ck2 ck2Var = (ck2) l69Var.b;
-            for (int i = 0; i < this.a; i++) {
-                int i2 = this.b[i];
-                Object obj = this.c[i];
-                int i3 = i2 >>> 3;
-                int i4 = i2 & 7;
-                if (i4 == 0) {
-                    ck2Var.D(i3, ((Long) obj).longValue());
-                } else if (i4 == 1) {
-                    ck2Var.s(i3, ((Long) obj).longValue());
-                } else if (i4 == 2) {
-                    ck2Var.o(i3, (f51) obj);
-                } else if (i4 == 3) {
-                    ck2Var.A(i3, 3);
-                    ((s5c) obj).d(l69Var);
-                    ck2Var.A(i3, 4);
-                } else {
-                    if (i4 != 5) {
-                        sdb.b(zp5.b());
-                        return;
-                    }
-                    ck2Var.q(i3, ((Integer) obj).intValue());
-                }
-            }
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || !(obj instanceof s5c)) {
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.g3.M != null) {
             return false;
         }
-        s5c s5cVar = (s5c) obj;
-        int i = this.a;
-        if (i == s5cVar.a) {
-            int[] iArr = this.b;
-            int[] iArr2 = s5cVar.b;
-            int i2 = 0;
-            while (true) {
-                if (i2 >= i) {
-                    Object[] objArr = this.c;
-                    Object[] objArr2 = s5cVar.c;
-                    int i3 = this.a;
-                    for (int i4 = 0; i4 < i3; i4++) {
-                        if (objArr[i4].equals(objArr2[i4])) {
-                        }
-                    }
-                    return true;
-                }
-                if (iArr[i2] != iArr2[i2]) {
-                    break;
-                }
-                i2++;
-            }
-        }
-        return false;
+        return super.onTouchEvent(motionEvent);
     }
 
-    public final int hashCode() {
-        int i = this.a;
-        int i2 = (527 + i) * 31;
-        int[] iArr = this.b;
-        int i3 = 17;
-        int i4 = 17;
-        for (int i5 = 0; i5 < i; i5++) {
-            i4 = (i4 * 31) + iArr[i5];
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.g3.I) {
+            return;
         }
-        int i6 = (i2 + i4) * 31;
-        Object[] objArr = this.c;
-        int i7 = this.a;
-        for (int i8 = 0; i8 < i7; i8++) {
-            i3 = (i3 * 31) + objArr[i8].hashCode();
-        }
-        return i6 + i3;
+        super.requestLayout();
     }
 }

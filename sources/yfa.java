@@ -1,9 +1,32 @@
 // default package
 
-import java.util.LinkedHashSet;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class yfa implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ eja b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class yfa {
-    public static final LinkedHashSet a = new LinkedHashSet();
+    public /* synthetic */ yfa(eja ejaVar, byte b) {
+        this.a = b;
+        this.b = ejaVar;
+    }
+
+    @Override // pcc
+    public final void a(Object obj) {
+        ida idaVar;
+        byte b = this.a;
+        eja ejaVar = this.b;
+        v5b v5bVar = (v5b) obj;
+        switch (b) {
+            case 0:
+                ejaVar.getClass();
+                idaVar = new ida(ejaVar, v5bVar, (byte) 3);
+                break;
+            default:
+                int[] iArr = eja.t2;
+                idaVar = new ida(ejaVar, v5bVar, (byte) 3);
+                break;
+        }
+        hl.d3(idaVar, 100L);
+    }
 }

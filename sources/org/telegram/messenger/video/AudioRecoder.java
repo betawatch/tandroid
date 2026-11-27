@@ -9,17 +9,17 @@ import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
-    ArrayList<h00> audioInputs;
+    ArrayList<i00> audioInputs;
     private final MediaCodec encoder;
     private boolean encoderDone;
     private ByteBuffer[] encoderInputBuffers;
     private ByteBuffer[] encoderOutputBuffers;
     public final MediaFormat format;
-    h00 mainInput;
+    i00 mainInput;
     private int sampleRate;
     private long totalDurationUs;
     private final int TIMEOUT_USEC = 2500;
@@ -34,7 +34,7 @@ public class AudioRecoder {
     private int channelCount = 2;
     private long encoderInputPresentationTimeUs = 0;
 
-    public AudioRecoder(ArrayList<h00> arrayList, long j) {
+    public AudioRecoder(ArrayList<i00> arrayList, long j) {
         this.sampleRate = 44100;
         this.audioInputs = arrayList;
         this.totalDurationUs = j;
@@ -89,7 +89,7 @@ public class AudioRecoder {
                 this.audioInputs.get(i).d();
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
     }
 

@@ -1,35 +1,56 @@
 // default package
 
-import j$.util.Objects;
-import java.util.HashSet;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class q5a {
-    public static final q5a b = new q5a(new HashSet());
-    public static final String c;
-    public final ym5 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class q5a implements Runnable {
+    public final /* synthetic */ b77 E;
+    public final /* synthetic */ ki8 F;
+    public final /* synthetic */ ArrayList G;
+    public final /* synthetic */ ArrayList H;
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ k5 c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ r47 f;
+    public final /* synthetic */ r47 h;
+    public final /* synthetic */ ou1 n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ c5a w;
+    public final /* synthetic */ long x;
+    public final /* synthetic */ long y;
 
-    static {
-        String str = g8c.a;
-        c = "0";
+    public /* synthetic */ q5a(ArrayList arrayList, ArrayList arrayList2, k5 k5Var, ArrayList arrayList3, long j, r47 r47Var, r47 r47Var2, ou1 ou1Var, boolean z, int i, c5a c5aVar, long j2, long j3, b77 b77Var, ki8 ki8Var, ArrayList arrayList4, ArrayList arrayList5) {
+        this.a = arrayList;
+        this.b = arrayList2;
+        this.c = k5Var;
+        this.d = arrayList3;
+        this.e = j;
+        this.f = r47Var;
+        this.h = r47Var2;
+        this.n = ou1Var;
+        this.r = z;
+        this.s = i;
+        this.w = c5aVar;
+        this.x = j2;
+        this.y = j3;
+        this.E = b77Var;
+        this.F = ki8Var;
+        this.G = arrayList4;
+        this.H = arrayList5;
     }
 
-    public q5a(HashSet hashSet) {
-        this.a = ym5.q(hashSet);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        ArrayList arrayList = this.a;
+        boolean isEmpty = arrayList.isEmpty();
+        ArrayList arrayList2 = this.b;
+        if (isEmpty && arrayList2.isEmpty()) {
+            return;
         }
-        if (obj instanceof q5a) {
-            return this.a.equals(((q5a) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a);
+        r7a.U(this.s, this.e, 0L, this.x, this.y, this.c, this.n, null, this.f, this.h, null, this.E, this.F, this.w, null, null, arrayList, this.d, arrayList2, null, this.G, this.H, null, this.r, false);
     }
 }

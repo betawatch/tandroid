@@ -1,93 +1,116 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class u09 extends n39 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ y09 d;
+public final class u09 extends FrameLayout implements snb {
+    public final rb0 a;
+    public final ImageReceiver b;
+    public final TextView c;
+    public final TextView d;
+    public final og2 e;
+    public final Path f;
+    public final Paint h;
+    public final vnb n;
+    public final int[] r;
+    public boolean s;
 
-    public u09(y09 y09Var, Context context) {
-        this.d = y09Var;
-        this.c = context;
+    public u09(Context context, vnb vnbVar) {
+        super(context);
+        this.a = new rb0((vnb) null);
+        this.b = new ImageReceiver(this);
+        this.f = new Path();
+        this.h = new Paint(1);
+        this.r = new int[1];
+        this.n = vnbVar;
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setSingleLine();
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        yob.X(textView, aob.G6, vnbVar);
+        textView.setTypeface(hl.o());
+        textView.setTextSize(1, 16.0f);
+        boolean z = ob6.a0;
+        addView(textView, tre.d(-1, -2.0f, 7, z ? 40.0f : 78.0f, 10.33f, z ? 78.0f : 40.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setLines(2);
+        textView2.setEllipsize(truncateAt);
+        yob.X(textView2, aob.z6, vnbVar);
+        textView2.setTextSize(1, 15.0f);
+        boolean z2 = ob6.a0;
+        addView(textView2, tre.d(-1, -2.0f, 7, z2 ? 40.0f : 78.0f, 32.0f, z2 ? 78.0f : 40.0f, 0.0f));
+        og2 og2Var = new og2(21, vnbVar, getContext());
+        this.e = og2Var;
+        og2Var.b(-1, aob.d6, aob.k7);
+        og2Var.setDrawUnchecked(false);
+        og2Var.setDrawBackgroundAsArc(3);
+        addView(og2Var, tre.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i = s49Var.f;
-        return i == 3 || i == 2;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = ob6.a0 ? getMeasuredWidth() - hl.L(65.0f) : hl.L(9.0f);
+        float L = hl.L(11.33f);
+        float L2 = hl.L(56.0f);
+        float L3 = hl.L(56.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.i0(measuredWidth, L, L2, L3);
+        imageReceiver.h(canvas, null);
+        super.onDraw(canvas);
+        canvas.drawPath(this.f, this.h);
+        if (this.s) {
+            Paint U0 = aob.U0("paintDivider", this.n);
+            if (U0 == null) {
+                U0 = aob.j0;
+            }
+            canvas.drawRect(hl.L(ob6.a0 ? 0.0f : 78.0f), getMeasuredHeight() - 1, getWidth() - hl.L(ob6.a0 ? 78.0f : 0.0f), getMeasuredHeight(), U0);
+        }
     }
 
-    @Override // w39
-    public final int b() {
-        y09 y09Var = this.d;
-        return y09Var.f + (y09Var.e < 0 ? y09Var.getMediaDataController().h.size() : 0) + 1;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(78.0f) + (this.s ? 1 : 0), TLObject.FLAG_30));
+        Paint.Style style = Paint.Style.STROKE;
+        Paint paint = this.h;
+        paint.setStyle(style);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(hl.N(1.66f));
+        paint.setColor(aob.p1(0.85f, aob.v0(aob.z6, this.n)));
+        Path path = this.f;
+        path.rewind();
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float N = ob6.a0 ? hl.N(29.66f) : getMeasuredWidth() - hl.N(24.33f);
+        path.moveTo(N, measuredHeight - hl.N(5.66f));
+        path.lineTo((hl.N(5.33f) * (ob6.a0 ? -1 : 1)) + N, measuredHeight);
+        path.lineTo(N, hl.N(5.66f) + measuredHeight);
     }
 
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 0;
+    @Override // snb
+    public final void updateColors() {
+        try {
+            this.h.setColor(aob.p1(0.85f, aob.v0(aob.z6, this.n)));
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        y09 y09Var = this.d;
-        if (i == y09Var.c) {
-            return 2;
-        }
-        if (i == y09Var.e) {
-            return 3;
-        }
-        return i == b() - 1 ? 4 : 1;
     }
 
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        int i2;
-        int i3;
-        if (d(i) != 1) {
-            return;
-        }
-        va0 va0Var = (va0) s49Var.a;
-        y09 y09Var = this.d;
-        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) y09Var.getMediaDataController().h.get(i - y09Var.d);
-        String str = tL_availableReaction.reaction;
-        i2 = ((d) y09Var).currentAccount;
-        boolean contains = str.contains(hq6.d0(i2).S());
-        i3 = ((d) y09Var).currentAccount;
-        va0Var.a(tL_availableReaction, contains, i3);
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        ui5 ui5Var;
-        View view;
-        y09 y09Var = this.d;
-        Context context = this.c;
-        if (i == 0) {
-            ui5Var = ((d) y09Var).parentLayout;
-            tmb tmbVar = new tmb(context, ui5Var, 2);
-            tmbVar.setImportantForAccessibility(4);
-            tmbVar.x = y09Var;
-            view = tmbVar;
-        } else if (i == 2) {
-            mhb mhbVar = new mhb(context);
-            mhbVar.setText(k96.M0(2131751340, null));
-            view = mhbVar;
-        } else if (i == 3) {
-            x09 x09Var = new x09(y09Var, context);
-            x09Var.a(false);
-            view = x09Var;
-        } else if (i != 4) {
-            view = new va0(context, true, true);
-        } else {
-            View d62Var = new d62(context, (byte) 22);
-            d62Var.setTag(-33024);
-            view = d62Var;
-        }
-        return new y29(view);
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

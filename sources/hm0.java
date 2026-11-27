@@ -1,30 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class hm0 implements cv5 {
+public final class hm0 implements hx5 {
     public static final hm0 a = new hm0();
-    public static final bj8 b = new bj8("kotlin.Boolean", aj8.b);
+    public static final om8 b = new om8("kotlin.Boolean", nm8.b);
 
-    @Override // cv5
-    public final void b(c30 c30Var, Object obj) {
+    @Override // hx5
+    public final void b(d30 d30Var, Object obj) {
         boolean booleanValue = ((Boolean) obj).booleanValue();
-        if (c30Var.a) {
-            c30Var.k(String.valueOf(booleanValue));
+        if (d30Var.a) {
+            d30Var.k(String.valueOf(booleanValue));
         } else {
-            ((nj1) ((e31) c30Var.b).c).c(String.valueOf(booleanValue));
+            ((wj1) ((n31) d30Var.b).c).c(String.valueOf(booleanValue));
         }
     }
 
-    @Override // cv5
-    public final Object c(igf igfVar) {
+    @Override // hx5
+    public final Object c(ykf ykfVar) {
         boolean z;
         boolean z2;
-        cyb cybVar = (cyb) igfVar.d;
-        int t = cybVar.t();
-        String str = (String) cybVar.f;
+        d2c d2cVar = (d2c) ykfVar.d;
+        int t = d2cVar.t();
+        String str = (String) d2cVar.f;
         if (t == str.length()) {
-            cyb.m(cybVar, "EOF", 0, 6);
+            d2c.m(d2cVar, "EOF", 0, 6);
             throw null;
         }
         if (str.charAt(t) == '\"') {
@@ -33,40 +33,40 @@ public final class hm0 implements cv5 {
         } else {
             z = false;
         }
-        int r = cybVar.r(t);
+        int r = d2cVar.r(t);
         if (r >= str.length() || r == -1) {
-            cyb.m(cybVar, "EOF", 0, 6);
+            d2c.m(d2cVar, "EOF", 0, 6);
             throw null;
         }
         int i = r + 1;
         int charAt = str.charAt(r) | ' ';
         if (charAt == 102) {
-            cybVar.f(i, "alse");
+            d2cVar.f(i, "alse");
             z2 = false;
         } else {
             if (charAt != 116) {
-                cyb.m(cybVar, "Expected valid boolean literal prefix, but had '" + cybVar.k() + '\'', 0, 6);
+                d2c.m(d2cVar, "Expected valid boolean literal prefix, but had '" + d2cVar.k() + '\'', 0, 6);
                 throw null;
             }
-            cybVar.f(i, "rue");
+            d2cVar.f(i, "rue");
             z2 = true;
         }
         if (z) {
-            if (cybVar.b == str.length()) {
-                cyb.m(cybVar, "EOF", 0, 6);
+            if (d2cVar.b == str.length()) {
+                d2c.m(d2cVar, "EOF", 0, 6);
                 throw null;
             }
-            if (str.charAt(cybVar.b) != '\"') {
-                cyb.m(cybVar, "Expected closing quotation mark", 0, 6);
+            if (str.charAt(d2cVar.b) != '\"') {
+                d2c.m(d2cVar, "Expected closing quotation mark", 0, 6);
                 throw null;
             }
-            cybVar.b++;
+            d2cVar.b++;
         }
         return Boolean.valueOf(z2);
     }
 
-    @Override // cv5
-    public final w4a d() {
+    @Override // hx5
+    public final o8a d() {
         return b;
     }
 }

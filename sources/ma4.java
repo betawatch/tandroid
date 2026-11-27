@@ -1,45 +1,43 @@
 // default package
 
-import android.net.Uri;
-import androidx.core.content.FileProvider;
-import java.io.File;
-import java.io.IOException;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
 import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ma4 {
-    public final String a;
-    public final HashMap b = new HashMap();
+    public final HashMap a;
 
-    public ma4(String str) {
-        this.a = str;
+    public ma4(byte b) {
+        switch (b) {
+            case 1:
+                this.a = new HashMap();
+                break;
+            default:
+                this.a = new HashMap();
+                break;
+        }
     }
 
-    public final File a(Uri uri) {
-        String encodedPath = uri.getEncodedPath();
-        int indexOf = encodedPath.indexOf(47, 1);
-        if (indexOf == -1) {
-            w26.i(uri, "Unable to find path from root: ");
-            return null;
-        }
-        String decode = Uri.decode(encodedPath.substring(1, indexOf));
-        String decode2 = Uri.decode(encodedPath.substring(indexOf + 1));
-        File file = (File) this.b.get(decode);
-        if (file == null) {
-            w26.i(uri, "Unable to find configured root for ");
-            return null;
-        }
-        File file2 = new File(file, decode2);
-        try {
-            File canonicalFile = file2.getCanonicalFile();
-            if (FileProvider.e(canonicalFile.getPath()).startsWith(FileProvider.e(file.getPath()).concat("/"))) {
-                return canonicalFile;
+    public final void a(IBinder iBinder) {
+        synchronized (this.a) {
+            if (iBinder != null) {
+                iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
             }
-            throw new SecurityException("Resolved path jumped beyond configured root");
-        } catch (IOException unused) {
-            w26.i(file2, "Failed to resolve canonical path for ");
-            return null;
+            new xme();
+            for (Map.Entry entry : this.a.entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                try {
+                    throw null;
+                } catch (RemoteException unused) {
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
+                }
+            }
         }
     }
 }

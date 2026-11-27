@@ -1,69 +1,82 @@
 // default package
 
 import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
+import android.view.KeyEvent;
+import android.view.View;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ux1 implements Runnable {
-    public final /* synthetic */ k27 a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
-    public final /* synthetic */ k27 d;
-    public final /* synthetic */ TLRPC.User e;
-    public final /* synthetic */ ChatActivityEnterView f;
+public final class ux1 implements View.OnKeyListener {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public ux1(ChatActivityEnterView chatActivityEnterView, k27 k27Var, long j, TL_keyboard.KeyboardButtonProto keyboardButtonProto, k27 k27Var2, TLRPC.User user) {
-        this.f = chatActivityEnterView;
-        this.a = k27Var;
-        this.b = j;
-        this.c = keyboardButtonProto;
-        this.d = k27Var2;
-        this.e = user;
+    public ux1(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        mu1 mu1Var = chatActivityEnterView.F3;
-        if (chatActivityEnterView.c2.Q() > gl.L(20.0f) || chatActivityEnterView.Q0()) {
-            chatActivityEnterView.J0(false);
-            gl.t1(chatActivityEnterView);
-            gl.d3(this, 150L);
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d3, code lost:
+    
+        if (r7.getAction() != 0) goto L70;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00d7, code lost:
+    
+        if (r4.O2 != null) goto L70;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00d9, code lost:
+    
+        r4.E1();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00dc, code lost:
+    
+        return true;
+     */
+    @Override // android.view.View.OnKeyListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        if (keyEvent != null) {
+            chatActivityEnterView.E0 = keyEvent.isShiftPressed();
+            chatActivityEnterView.D0 = keyEvent.isCtrlPressed();
         }
-        if (mu1Var != null) {
-            int i = chatActivityEnterView.R;
-            long j = this.a.k.dialog_id;
-            TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
-            String text = keyboardButtonProto.getText();
-            String url = keyboardButtonProto.getUrl();
-            boolean c = jdb.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
-            k27 k27Var = this.d;
-            quc b = quc.b(i, j, this.b, text, url, c ? 1 : 0, k27Var != null ? k27Var.k.id : 0, mu1Var == null ? 0L : mu1Var.c7(), null, false, null, null, 0, false, false);
-            LaunchActivity launchActivity = LaunchActivity.H1;
-            if (launchActivity != null && launchActivity.O() != null && LaunchActivity.H1.O().l(b) != null) {
-                ep0 ep0Var = chatActivityEnterView.m0;
-                if (ep0Var != null) {
-                    ep0Var.setOpened(false);
-                    return;
+        if (i == 4 && !chatActivityEnterView.o3 && chatActivityEnterView.U0() && keyEvent.getAction() == 1) {
+            if (rw2.g0 != null && rw2.e().E) {
+                rw2.e().c();
+                return true;
+            }
+            if (chatActivityEnterView.U2 != 1 || chatActivityEnterView.b3 == null) {
+                if (keyEvent.getAction() == 1) {
+                    if (chatActivityEnterView.U2 == 1 && chatActivityEnterView.b3 != null) {
+                        uc7.s1(chatActivityEnterView.R).X3.edit().putInt("hidekeyboard_" + chatActivityEnterView.F3, chatActivityEnterView.b3.e1()).commit();
+                    }
+                    if (chatActivityEnterView.G2 != 0) {
+                        chatActivityEnterView.Z1(0, true);
+                        my1 my1Var = chatActivityEnterView.V0;
+                        if (my1Var != null) {
+                            my1Var.r(true);
+                        }
+                        chatActivityEnterView.F0.requestFocus();
+                        return true;
+                    }
+                    if (chatActivityEnterView.o4) {
+                        chatActivityEnterView.a2(false, true, false, true);
+                        return true;
+                    }
+                    if (chatActivityEnterView.q4 == null) {
+                        if (chatActivityEnterView.b3 != null && chatActivityEnterView.U2 != 1 && TextUtils.isEmpty(chatActivityEnterView.F0.getTextToUse())) {
+                            chatActivityEnterView.i2(1, 1, true, true);
+                            return true;
+                        }
+                        chatActivityEnterView.i2(0, 0, true, false);
+                    }
                 }
-                return;
+                return true;
             }
-            TLRPC.User user = this.e;
-            String C1 = user == null ? null : na7.q1(chatActivityEnterView.R).C1(user.restriction_reason);
-            if (!TextUtils.isEmpty(C1)) {
-                na7.q1(chatActivityEnterView.R);
-                na7.X4(C1, mu1Var);
-            } else {
-                ow0 ow0Var = new ow0(chatActivityEnterView.getContext(), chatActivityEnterView.L4);
-                ow0Var.m0 = chatActivityEnterView.E3;
-                ow0Var.x(mu1Var, b);
-                ow0Var.show();
+        } else if (i == 66 && !keyEvent.isShiftPressed()) {
+            if (chatActivityEnterView.q3) {
             }
         }
+        return false;
     }
 }

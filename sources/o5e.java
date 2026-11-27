@@ -1,33 +1,69 @@
 // default package
 
-import java.util.AbstractMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class o5e extends u3e {
-    public final /* synthetic */ u5e r;
+public final class o5e extends ese {
+    private static final o5e zzf;
+    private static volatile u0f zzg;
+    private int zzc;
+    private String zzd = "";
+    private String zze = "";
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5e(u5e u5eVar) {
-        super((byte) 5);
-        this.r = u5eVar;
+    static {
+        o5e o5eVar = new o5e();
+        zzf = o5eVar;
+        ese.g(o5e.class, o5eVar);
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i) {
-        u5e u5eVar = this.r;
-        p1f.a(i, u5eVar.x);
-        Object[] objArr = u5eVar.w;
-        int i2 = i << 1;
-        Object obj = objArr[i2];
-        obj.getClass();
-        Object obj2 = objArr[i2 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    public static n5e k() {
+        return (n5e) ((ase) zzf.d(5));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.r.x;
+    /* JADX WARN: Type inference failed for: r2v12, types: [java.lang.Object, u0f] */
+    @Override // ese
+    public final Object d(int i) {
+        u0f u0fVar;
+        switch (b7e.a[i - 1]) {
+            case 1:
+                return new o5e();
+            case 2:
+                return new n5e(zzf);
+            case 3:
+                return new j1f(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzc", "zzd", "zze"});
+            case 4:
+                return zzf;
+            case 5:
+                u0f u0fVar2 = zzg;
+                if (u0fVar2 != null) {
+                    return u0fVar2;
+                }
+                synchronized (o5e.class) {
+                    u0f u0fVar3 = zzg;
+                    u0fVar = u0fVar3;
+                    if (u0fVar3 == null) {
+                        ?? zreVar = new zre();
+                        zzg = zreVar;
+                        u0fVar = zreVar;
+                    }
+                }
+                return u0fVar;
+            case 6:
+                return (byte) 1;
+            default:
+                p3d.a();
+            case 7:
+                return null;
+        }
+    }
+
+    public final void j(String str) {
+        str.getClass();
+        this.zzc |= 1;
+        this.zzd = str;
+    }
+
+    public final void m(String str) {
+        this.zzc |= 2;
+        this.zze = str;
     }
 }

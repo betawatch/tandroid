@@ -1,33 +1,31 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mua extends ClickableSpan {
-    public final /* synthetic */ fx0[] a;
-    public final /* synthetic */ long b;
+public final class mua extends y41 {
+    public final vnb Q;
+    public String R;
+    public int S;
 
-    public mua(fx0[] fx0VarArr, long j) {
-        this.a = fx0VarArr;
-        this.b = j;
+    public mua(Context context, vnb vnbVar) {
+        super(context);
+        this.Q = vnbVar;
+        yob.X(this, aob.G6, vnbVar);
+        setTextSize(1, 14.0f);
+        setPadding(0, hl.L(4.0f), 0, hl.L(4.0f));
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        d S = LaunchActivity.S();
-        if (S != null) {
-            S.presentFragment(mu1.W9(this.b));
+    public final void e(String str, int i, ora oraVar) {
+        if (str == this.R && this.S == i) {
+            return;
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(pv3.m(str, getPaint().getFontMetricsInt(), false, null, 0));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) z41.b(cc.J0(i), oraVar != null ? new a39(this, oraVar, i, (byte) 13) : null, this.Q, null));
+        setText(spannableStringBuilder);
+        this.R = str;
+        this.S = i;
     }
 }

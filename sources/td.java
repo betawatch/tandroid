@@ -1,36 +1,94 @@
 // default package
 
-import java.util.function.ToLongFunction;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class td implements ToLongFunction {
+public final /* synthetic */ class td implements fd, Continuation, gc7 {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ td(byte b) {
+    public /* synthetic */ td(Runnable runnable, byte b) {
         this.a = b;
+        this.b = runnable;
     }
 
-    @Override // java.util.function.ToLongFunction
-    public final long applyAsLong(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((k27) obj).Z0();
-            case 1:
-                return Long.parseLong((String) obj);
-            case 2:
-                return ((hm7) obj).e;
-            case 3:
-                return ((hm7) obj).e;
-            case 4:
-                if (((rxa) obj).b == null) {
-                    return 0L;
-                }
-                return r0.k.date;
-            case 5:
-                return ((joc) obj).I;
+    @Override // gc7
+    public final boolean b(TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        Runnable runnable = this.b;
+        switch (b) {
+            case 9:
+                runnable.run();
+                break;
+            case 10:
+                runnable.run();
+                break;
+            case 11:
+                runnable.run();
+                break;
+            case 12:
+                runnable.run();
+                break;
+            case 13:
+                runnable.run();
+                break;
             default:
-                return ((joc) obj).J;
+                runnable.run();
+                break;
+        }
+        return true;
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public final Object then(Task task) {
+        this.b.run();
+        return Tasks.forResult(null);
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        Runnable runnable = this.b;
+        switch (b) {
+            case 0:
+                runnable.run();
+                break;
+            case 1:
+                runnable.run();
+                break;
+            case 2:
+                runnable.run();
+                break;
+            case 3:
+                idVar.dismiss();
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 4:
+                runnable.run();
+                break;
+            case 5:
+                runnable.run();
+                break;
+            case 6:
+            default:
+                runnable.run();
+                break;
+            case 7:
+                runnable.run();
+                break;
+            case 8:
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
     }
 }

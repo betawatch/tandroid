@@ -1,53 +1,32 @@
 // default package
 
-import java.util.ArrayList;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xa6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ eb6 b;
-    public final /* synthetic */ db6 c;
+public final class xa6 {
+    public final long a;
+    public final float b;
+    public final long c;
 
-    public /* synthetic */ xa6(eb6 eb6Var, db6 db6Var, byte b) {
-        this.a = b;
-        this.b = eb6Var;
-        this.c = db6Var;
+    public xa6(wa6 wa6Var) {
+        this.a = wa6Var.a;
+        this.b = wa6Var.b;
+        this.c = wa6Var.c;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        db6 db6Var = this.c;
-        eb6 eb6Var = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = eb6Var.J;
-                arrayList.remove(db6Var);
-                eb6Var.K.l(db6Var.a);
-                if (arrayList.isEmpty()) {
-                    eb6.s();
-                }
-                kk7.e().k(kk7.F4, new Object[0]);
-                break;
-            case 1:
-                ArrayList arrayList2 = eb6Var.J;
-                arrayList2.remove(db6Var);
-                eb6Var.K.l(db6Var.a);
-                if (arrayList2.isEmpty()) {
-                    eb6.s();
-                }
-                kk7.e().k(kk7.F4, new Object[0]);
-                break;
-            default:
-                ArrayList arrayList3 = eb6Var.J;
-                arrayList3.remove(db6Var);
-                eb6Var.K.l(db6Var.a);
-                if (arrayList3.isEmpty()) {
-                    eb6.s();
-                }
-                kk7.e().k(kk7.F4, new Object[0]);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof xa6)) {
+            return false;
+        }
+        xa6 xa6Var = (xa6) obj;
+        return this.a == xa6Var.a && this.b == xa6Var.b && this.c == xa6Var.c;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Float.valueOf(this.b), Long.valueOf(this.c));
     }
 }

@@ -1,64 +1,54 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.os.Bundle;
+import android.os.Looper;
+import j$.util.DesugarCollections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class pe8 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ ve8 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.PollAnswer d;
-    public final /* synthetic */ d e;
-    public final /* synthetic */ ArrayList f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class pe8 {
+    public byte a;
+    public Object b;
+    public Object c;
 
-    public /* synthetic */ pe8(ve8 ve8Var, boolean z, TLRPC.PollAnswer pollAnswer, d dVar, ArrayList arrayList) {
-        this.b = ve8Var;
-        this.c = z;
-        this.d = pollAnswer;
-        this.e = dVar;
-        this.f = arrayList;
+    public pe8() {
+        this.b = DesugarCollections.synchronizedMap(new qs(0));
+        this.a = (byte) 0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ArrayList arrayList = this.f;
-        d dVar = this.e;
-        TLRPC.PollAnswer pollAnswer = this.d;
-        boolean z = this.c;
-        ve8 ve8Var = this.b;
-        switch (b) {
-            case 0:
-                if (z) {
-                    arrayList.remove(pollAnswer);
-                    dVar.getSendMessagesHelper().v0(ve8Var.I, arrayList, null);
-                } else {
-                    dVar.getSendMessagesHelper().v0(ve8Var.I, null, null);
-                }
-                ve8Var.b(true);
-                break;
-            default:
-                if (z) {
-                    arrayList.add(pollAnswer);
-                    dVar.getSendMessagesHelper().v0(ve8Var.I, arrayList, null);
-                } else {
-                    ArrayList arrayList2 = new ArrayList(1);
-                    arrayList2.add(pollAnswer);
-                    dVar.getSendMessagesHelper().v0(ve8Var.I, arrayList2, null);
-                }
-                ve8Var.b(true);
-                break;
+    public final void a(String str, c36 c36Var) {
+        Map map = (Map) this.b;
+        if (map.containsKey(str)) {
+            lq5.j(qu6.o("LifecycleCallback with tag ", str, " already added to this fragment.", new StringBuilder(str.length() + 59)));
+            return;
+        }
+        map.put(str, c36Var);
+        if (this.a > 0) {
+            new b99(Looper.getMainLooper(), (byte) 4).post(new uy1((Object) this, (Object) c36Var, (Object) str, (byte) 5));
         }
     }
 
-    public /* synthetic */ pe8(ve8 ve8Var, boolean z, d dVar, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
-        this.b = ve8Var;
-        this.c = z;
-        this.e = dVar;
-        this.f = arrayList;
-        this.d = pollAnswer;
+    public final void b(Bundle bundle) {
+        this.a = (byte) 1;
+        this.c = bundle;
+        for (Map.Entry entry : ((Map) this.b).entrySet()) {
+            ((c36) entry.getValue()).onCreate(bundle != null ? bundle.getBundle((String) entry.getKey()) : null);
+        }
+    }
+
+    public final void c(Bundle bundle) {
+        if (bundle != null) {
+            for (Map.Entry entry : ((Map) this.b).entrySet()) {
+                Bundle bundle2 = new Bundle();
+                ((c36) entry.getValue()).onSaveInstanceState(bundle2);
+                bundle.putBundle((String) entry.getKey(), bundle2);
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public pe8(int i) {
+        this.a = i;
     }
 }

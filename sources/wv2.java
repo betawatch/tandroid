@@ -1,28 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLRPC;
+import android.content.ClipData;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.ContentInfo;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wv2 extends LinearLayout {
-    public final be0 a;
-    public final jia b;
-    public final wjb c;
-    public TLRPC.StickerSetCovered d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wv2 implements xv2 {
+    public final ContentInfo.Builder a;
 
-    public wv2(Context context, wjb wjbVar) {
-        super(context);
-        this.c = wjbVar;
-        be0 be0Var = new be0(context);
-        this.a = be0Var;
-        jia jiaVar = new jia(context);
-        this.b = jiaVar;
-        jiaVar.setTextSize(16);
-        jiaVar.setTextColor(-1);
-        setOrientation(0);
-        addView(be0Var, nme.t(24, 24, 17, 17, 0, 17, 0));
-        addView(jiaVar, nme.t(-2, -2, 17, 0, 0, 12, 0));
+    public wv2(ClipData clipData, int i) {
+        this.a = vv2.a(clipData, i);
+    }
+
+    @Override // xv2
+    public final bw2 build() {
+        return new bw2(new zv2(this.a.build()));
+    }
+
+    @Override // xv2
+    public final void c(Uri uri) {
+        this.a.setLinkUri(uri);
+    }
+
+    @Override // xv2
+    public final void d(int i) {
+        this.a.setFlags(i);
+    }
+
+    @Override // xv2
+    public final void setExtras(Bundle bundle) {
+        this.a.setExtras(bundle);
     }
 }

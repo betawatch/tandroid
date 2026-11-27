@@ -1,26 +1,35 @@
 // default package
 
-import java.util.List;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yh0 implements bi0, wu8 {
+public final /* synthetic */ class yh0 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ci0 b;
+    public final /* synthetic */ di0 b;
 
-    public /* synthetic */ yh0(ci0 ci0Var, byte b) {
+    public /* synthetic */ yh0(di0 di0Var, byte b) {
         this.a = b;
-        this.b = ci0Var;
+        this.b = di0Var;
     }
 
-    @Override // wu8
-    public final void a(fi0 fi0Var, List list) {
-        this.b.m(fi0Var, list, null);
-    }
-
-    @Override // bi0
-    public final void b(fi0 fi0Var, List list) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        this.b.n(fi0Var, list);
+        di0 di0Var = this.b;
+        switch (b) {
+            case 0:
+                di0Var.getClass();
+                try {
+                    di0Var.o(Collections.singletonList(di0.k), new zh0(di0Var, (byte) 0));
+                    break;
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                    return;
+                }
+            default:
+                di0Var.q();
+                break;
+        }
     }
 }

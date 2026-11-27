@@ -1,37 +1,42 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.HashMap;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class lt7 extends AnimatorListenerAdapter {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class lt7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ wt7 b;
+    public final /* synthetic */ ot7 b;
 
-    public /* synthetic */ lt7(wt7 wt7Var, byte b) {
+    public /* synthetic */ lt7(ot7 ot7Var, byte b) {
         this.a = b;
-        this.b = wt7Var;
+        this.b = ot7Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        wt7 wt7Var = this.b;
+        ot7 ot7Var = this.b;
         switch (b) {
             case 0:
-                wt7Var.R1 = 0.0f;
-                wt7Var.P1.setAlpha(1.0f);
-                wt7Var.P1.setVisibility(8);
-                wt7Var.P1.k();
+                EditTextBoldCursor editTextBoldCursor = ot7Var.r1;
+                editTextBoldCursor.requestFocus();
+                hl.E3(editTextBoldCursor);
                 break;
             case 1:
-                wt7Var.j2.setTranslationY(0.0f);
+                jra jraVar = ot7Var.n1;
+                if (jraVar != null) {
+                    jraVar.run();
+                }
+                ot7Var.dismiss();
                 break;
             default:
-                wt7Var.m2 = false;
-                wt7Var.j2.setTranslationY(0.0f);
-                wt7Var.t0();
+                int i = ot7Var.a;
+                String str = ot7Var.l1.slug;
+                HashMap hashMap = vs7.a;
+                jf7 Y = jf7.Y(i);
+                Y.a.c(new t87(Y, str, (byte) 23));
                 break;
         }
     }

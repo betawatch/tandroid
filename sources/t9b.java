@@ -1,90 +1,183 @@
 // default package
 
-import java.net.InetAddress;
-import java.net.Socket;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.os.Build;
+import android.view.View;
+import android.widget.ScrollView;
+import java.util.ArrayList;
 import java.util.HashSet;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class t9b extends SSLSocketFactory {
-    public final SSLSocketFactory a = HttpsURLConnection.getDefaultSSLSocketFactory();
-    public final boolean b;
-    public final boolean c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class t9b extends ScrollView implements snb {
+    public final mm E;
+    public final LinearGradient F;
+    public final Paint G;
+    public final Matrix H;
+    public boolean I;
+    public int J;
+    public float K;
+    public int L;
+    public boolean M;
+    public final vnb a;
+    public final m7 b;
+    public final int c;
+    public final a3a d;
+    public final ArrayList e;
+    public zc5 f;
+    public final i9b h;
+    public boolean n;
+    public pcc r;
+    public final mm s;
+    public final LinearGradient w;
+    public final Paint x;
+    public final Matrix y;
 
-    public t9b() {
-        String[] strArr;
-        try {
-            strArr = SSLContext.getDefault().getSupportedSSLParameters().getProtocols();
-        } catch (NoSuchAlgorithmException unused) {
-            strArr = new String[0];
+    public t9b(Context context, vnb vnbVar, i9b i9bVar) {
+        super(context);
+        this.e = new ArrayList();
+        k43 k43Var = k43.h;
+        this.s = new mm(this, 0L, 300L, k43Var);
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, hl.L(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode);
+        this.w = linearGradient;
+        Paint paint = new Paint(1);
+        this.x = paint;
+        this.y = new Matrix();
+        this.E = new mm(this, 0L, 300L, k43Var);
+        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, hl.L(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode);
+        this.F = linearGradient2;
+        Paint paint2 = new Paint(1);
+        this.G = paint2;
+        this.H = new Matrix();
+        paint.setShader(linearGradient);
+        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
+        paint.setXfermode(new PorterDuffXfermode(mode));
+        paint2.setShader(linearGradient2);
+        paint2.setXfermode(new PorterDuffXfermode(mode));
+        this.a = vnbVar;
+        this.h = i9bVar;
+        setVerticalScrollBarEnabled(false);
+        hl.u3(this, aob.w0(null, aob.d6, false));
+        a3a a3aVar = new a3a(this, context);
+        this.d = a3aVar;
+        addView(a3aVar, tre.c(-2.0f, -1));
+        m7 m7Var = new m7((byte) 8, context, this);
+        this.b = m7Var;
+        if (Build.VERSION.SDK_INT >= 25) {
+            m7Var.setRevealOnFocusHint(false);
         }
-        boolean z = false;
-        boolean z2 = false;
-        for (String str : strArr) {
-            if (str.equals("TLSv1.1")) {
-                z = true;
-            } else if (str.equals("TLSv1.2")) {
-                z2 = true;
+        m7Var.setTextSize(1, 16.0f);
+        yob.l(m7Var, 34, aob.Oi, vnbVar);
+        yob.X(m7Var, aob.G6, vnbVar);
+        int i = aob.Pi;
+        yob.l(m7Var, 30, i, vnbVar);
+        yob.l(m7Var, 36, i, vnbVar);
+        m7Var.setCursorWidth(1.5f);
+        m7Var.setInputType(m7Var.getInputType() | jn7.F2);
+        m7Var.setSingleLine(true);
+        m7Var.setBackgroundDrawable(null);
+        m7Var.setVerticalScrollBarEnabled(false);
+        m7Var.setHorizontalScrollBarEnabled(false);
+        m7Var.setTextIsSelectable(false);
+        m7Var.setPadding(0, 0, 0, 0);
+        m7Var.setImeOptions(268435462);
+        m7Var.setGravity((ob6.a0 ? 5 : 3) | 16);
+        a3aVar.addView(m7Var);
+        m7Var.setHintText(ob6.M0(2131745564, null));
+        this.c = (int) m7Var.getPaint().measureText(ob6.M0(2131745564, null));
+        m7Var.addTextChangedListener(new nh6(this, (byte) 15));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float scrollY = getScrollY();
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, jn7.d4, 31);
+        super.dispatchDraw(canvas);
+        canvas.save();
+        float d = this.s.d(canScrollVertically(-1));
+        Matrix matrix = this.y;
+        matrix.reset();
+        matrix.postTranslate(0.0f, scrollY);
+        this.w.setLocalMatrix(matrix);
+        Paint paint = this.x;
+        paint.setAlpha((int) (d * 255.0f));
+        canvas.drawRect(0.0f, scrollY, getWidth(), hl.L(8.0f) + r0, paint);
+        float d2 = this.E.d(canScrollVertically(1));
+        Matrix matrix2 = this.H;
+        matrix2.reset();
+        matrix2.postTranslate(0.0f, (getHeight() + r0) - hl.L(8.0f));
+        this.F.setLocalMatrix(matrix2);
+        Paint paint2 = this.G;
+        paint2.setAlpha((int) (d2 * 255.0f));
+        canvas.drawRect(0.0f, (getHeight() + r0) - hl.L(8.0f), getWidth(), getHeight() + r0, paint2);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(150.0f), TLObject.FLAG_31));
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
+        if (this.I) {
+            this.I = false;
+            return false;
+        }
+        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+        rect.top = uh9.w(20.0f, this.J, rect.top);
+        rect.bottom = uh9.w(50.0f, this.J, rect.bottom);
+        return super.requestChildRectangleOnScreen(view, rect, z);
+    }
+
+    public void setContainerHeight(float f) {
+        this.K = f;
+        a3a a3aVar = this.d;
+        if (a3aVar != null) {
+            a3aVar.requestLayout();
+        }
+    }
+
+    public void setOnSearchTextChange(pcc pccVar) {
+        this.r = pccVar;
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.n = true;
+        this.b.setText(charSequence);
+        this.n = false;
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        vnb vnbVar = this.a;
+        m7 m7Var = this.b;
+        if (m7Var != null) {
+            try {
+                m7Var.setHintColor(aob.v0(aob.Oi, vnbVar));
+                int i = aob.Pi;
+                m7Var.setCursorColor(aob.v0(i, vnbVar));
+                m7Var.setHandlesColor(aob.v0(i, vnbVar));
+            } catch (Exception e) {
+                cc4.g(e, true);
+                return;
             }
         }
-        this.b = z;
-        this.c = z2;
+        hl.u3(this, aob.w0(null, aob.d6, false));
     }
 
-    public final Socket a(Socket socket) {
-        if (!(socket instanceof SSLSocket)) {
-            return socket;
-        }
-        SSLSocket sSLSocket = (SSLSocket) socket;
-        HashSet hashSet = new HashSet(Arrays.asList(sSLSocket.getEnabledProtocols()));
-        if (this.b) {
-            hashSet.add("TLSv1.1");
-        }
-        if (this.c) {
-            hashSet.add("TLSv1.2");
-        }
-        sSLSocket.setEnabledProtocols((String[]) hashSet.toArray(new String[0]));
-        return sSLSocket;
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public final Socket createSocket(Socket socket, String str, int i, boolean z) {
-        return a(this.a.createSocket(socket, str, i, z));
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public final String[] getDefaultCipherSuites() {
-        return this.a.getDefaultCipherSuites();
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public final String[] getSupportedCipherSuites() {
-        return this.a.getSupportedCipherSuites();
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(String str, int i) {
-        return a(this.a.createSocket(str, i));
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(String str, int i, InetAddress inetAddress, int i2) {
-        return a(this.a.createSocket(str, i, inetAddress, i2));
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(InetAddress inetAddress, int i) {
-        return a(this.a.createSocket(inetAddress, i));
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(InetAddress inetAddress, int i, InetAddress inetAddress2, int i2) {
-        return a(this.a.createSocket(inetAddress, i, inetAddress2, i2));
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

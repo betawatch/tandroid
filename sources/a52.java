@@ -1,119 +1,111 @@
 // default package
 
-import android.view.View;
+import android.text.Editable;
+import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class a52 extends i98 {
-    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
+public final /* synthetic */ class a52 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ byte c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object h;
 
-    public a52(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
-        this.a = chatAttachAlertPhotoLayout;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ a52(sm5 sm5Var, File file, String str, int i, Object obj, int i2) {
+        this.d = sm5Var;
+        this.e = file;
+        this.f = str;
+        this.b = i;
+        this.h = obj;
+        this.c = i2;
     }
 
-    @Override // i98, o98
-    public final int D(int i, oac oacVar) {
-        boolean z;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
-        s42 s42Var = chatAttachAlertPhotoLayout.r;
-        s42 s42Var2 = chatAttachAlertPhotoLayout.F;
-        x02 x02Var = chatAttachAlertPhotoLayout.b;
-        if (x02Var.P3 < 0 || ChatAttachAlertPhotoLayout.t1.size() < x02Var.P3 || w(i)) {
-            boolean z2 = ChatAttachAlertPhotoLayout.r1;
-            jm6 d0 = chatAttachAlertPhotoLayout.d0(i);
-            if (d0 != null && !chatAttachAlertPhotoLayout.Y(d0)) {
-                if (ChatAttachAlertPhotoLayout.t1.size() + 1 <= chatAttachAlertPhotoLayout.i0()) {
-                    int R = chatAttachAlertPhotoLayout.R(d0, -1);
-                    if (R == -1) {
-                        R = ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(d0.C));
-                        z = true;
-                    } else {
-                        d0.s = null;
-                        z = false;
-                    }
-                    d0.s = oacVar;
-                    int childCount = s42Var2.getChildCount();
-                    int i2 = 0;
-                    while (true) {
-                        if (i2 >= childCount) {
-                            break;
-                        }
-                        View childAt = s42Var2.getChildAt(i2);
-                        if (!(childAt instanceof o48) || ((Integer) childAt.getTag()).intValue() != i) {
-                            i2++;
-                        } else if ((x02Var.Z1 instanceof mu1) && x02Var.Q3) {
-                            ((o48) childAt).b(R, z, false);
-                        } else {
-                            ((o48) childAt).b(-1, z, false);
-                        }
-                    }
-                    int childCount2 = s42Var.getChildCount();
-                    int i3 = 0;
-                    while (true) {
-                        if (i3 >= childCount2) {
-                            break;
-                        }
-                        View childAt2 = s42Var.getChildAt(i3);
-                        if (!(childAt2 instanceof o48) || ((Integer) childAt2.getTag()).intValue() != i) {
-                            i3++;
-                        } else if ((x02Var.Z1 instanceof mu1) && x02Var.Q3) {
-                            ((o48) childAt2).b(R, z, false);
-                        } else {
-                            ((o48) childAt2).b(-1, z, false);
-                        }
-                    }
-                    x02Var.F1(z ? 1 : 2);
-                    return R;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b;
+        hc4 E;
+        byte b2 = this.a;
+        Object obj = this.h;
+        Serializable serializable = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        switch (b2) {
+            case 0:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj3;
+                e eVar = (e) obj2;
+                ArrayList arrayList = (ArrayList) serializable;
+                zu1 zu1Var = (zu1) obj;
+                boolean z = ChatAttachAlertPhotoLayout.r1;
+                n12 n12Var = chatAttachAlertPhotoLayout.b;
+                if (!n12Var.z1 || n12Var.A1) {
+                    b = this.c;
+                } else {
+                    PhotoViewer.q0().T1(null, eVar, null);
+                    PhotoViewer q0 = PhotoViewer.q0();
+                    q0.h = 0;
+                    q0.n = false;
+                    b = 3;
                 }
-            }
+                if (n12Var.B1) {
+                    b = 13;
+                }
+                PhotoViewer.q0().o1(arrayList, this.b, b, false, chatAttachAlertPhotoLayout.i1, n12Var.B1 ? null : zu1Var);
+                PhotoViewer.q0().G1(n12Var.K1);
+                if (n12Var.z1 && !n12Var.A1) {
+                    PhotoViewer.q0().P = false;
+                } else if (n12Var.N2 != 0) {
+                    PhotoViewer.q0().P = true;
+                    PhotoViewer.q0().Q = n12Var.O2 != null;
+                }
+                if (n12Var.A1) {
+                    PhotoViewer.q0().U(null, null, false, n12Var.D1);
+                }
+                if (ChatAttachAlertPhotoLayout.T()) {
+                    PhotoViewer q02 = PhotoViewer.q0();
+                    Editable text = n12Var.V0().getText();
+                    q02.u7 = true;
+                    q02.v7 = text;
+                    q02.J1(null, text, false, false);
+                    q02.E2(null);
+                    break;
+                }
+                break;
+            default:
+                sm5 sm5Var = (sm5) obj3;
+                File file = (File) obj2;
+                String str = (String) serializable;
+                sm5Var.getClass();
+                int i = this.b;
+                if (file != null && ((str.endsWith(".mp4") || str.endsWith(".jpg")) && (E = xb4.E(obj)) != null)) {
+                    r47 r47Var = obj instanceof r47 ? (r47) obj : null;
+                    long j = E.a;
+                    if (eye.d(j >= 0 ? 1 : xc2.V(uc7.s1(i).M0(Long.valueOf(-j))) ? 4 : 2, E, r47Var, i)) {
+                        hl.e(file.toString());
+                    }
+                }
+                jn7.f(i).k(jn7.Y1, str, file);
+                in5 in5Var = sm5Var.b;
+                in5Var.s.c(new av2(in5Var, str, this.c, file, (byte) 1));
+                break;
         }
-        return -1;
     }
 
-    @Override // i98, o98
-    public final int G() {
-        return ChatAttachAlertPhotoLayout.t1.size();
-    }
-
-    @Override // i98, o98
-    public final boolean O() {
-        x02 x02Var = this.a.b;
-        return x02Var != null && x02Var.c2;
-    }
-
-    @Override // i98, o98
-    public final int S(int i) {
-        boolean z = ChatAttachAlertPhotoLayout.r1;
-        jm6 d0 = this.a.d0(i);
-        if (d0 == null) {
-            return -1;
-        }
-        return ChatAttachAlertPhotoLayout.u1.indexOf(Integer.valueOf(d0.C));
-    }
-
-    @Override // i98, o98
-    public final ArrayList d() {
-        return ChatAttachAlertPhotoLayout.u1;
-    }
-
-    @Override // i98, o98
-    public final void m() {
-        boolean z = ChatAttachAlertPhotoLayout.r1;
-        this.a.y0();
-    }
-
-    @Override // i98, o98
-    public final HashMap u() {
-        return ChatAttachAlertPhotoLayout.t1;
-    }
-
-    @Override // i98, o98
-    public final boolean w(int i) {
-        boolean z = ChatAttachAlertPhotoLayout.r1;
-        jm6 d0 = this.a.d0(i);
-        return d0 != null && ChatAttachAlertPhotoLayout.t1.containsKey(Integer.valueOf(d0.C));
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ a52(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i, e eVar, ArrayList arrayList, int i2, zu1 zu1Var) {
+        this.d = chatAttachAlertPhotoLayout;
+        this.c = i;
+        this.e = eVar;
+        this.f = arrayList;
+        this.b = i2;
+        this.h = zu1Var;
     }
 }

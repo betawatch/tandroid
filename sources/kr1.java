@@ -1,20 +1,34 @@
 // default package
 
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class kr1 extends zu3 {
-    public final /* synthetic */ mu1 O;
+public final class kr1 extends sd2 {
+    public final /* synthetic */ zu1 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kr1(mu1 mu1Var, mu1 mu1Var2, FrameLayout frameLayout, jq1 jq1Var, int i, long j, long j2) {
-        super(mu1Var2, frameLayout, jq1Var, i, j, j2);
-        this.O = mu1Var;
+    public kr1(zu1 zu1Var, Context context) {
+        super(context);
+        this.f = zu1Var;
     }
 
-    @Override // zu3
-    public final void h() {
-        this.O.Qc();
+    @Override // sd2
+    public final void a(boolean z) {
+        zu1 zu1Var = this.f;
+        zu1Var.F5();
+        zu1Var.D5();
+        zu1Var.G5();
+        zu1Var.H5();
+        gs1 gs1Var = zu1Var.Mb;
+        if (gs1Var != null) {
+            gs1Var.setTranslationY(zu1Var.T9 + getCurrentHeight());
+        }
+        if (!z) {
+            zu1Var.O7();
+        } else {
+            zu1Var.aa = true;
+            zu1Var.Rc();
+        }
     }
 }

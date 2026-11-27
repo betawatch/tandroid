@@ -1,36 +1,110 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ob3 implements qbb {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-    public /* synthetic */ ob3(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ob3 extends zme implements Map {
+    public final Map b;
+
+    public ob3(Map map) {
+        this.b = map;
     }
 
-    @Override // qbb
-    public final Object get() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                try {
-                    return (qx6) ((Class) obj).getConstructor(null).newInstance(null);
-                } catch (Exception e) {
-                    ho9.n(e);
-                    return null;
+    @Override // java.util.Map
+    public final void clear() {
+        this.b.clear();
+    }
+
+    @Override // java.util.Map
+    public final boolean containsKey(Object obj) {
+        return obj != null && this.b.containsKey(obj);
+    }
+
+    @Override // java.util.Map
+    public final boolean containsValue(Object obj) {
+        qk6 qk6Var = new qk6(entrySet().iterator());
+        if (obj == null) {
+            while (qk6Var.hasNext()) {
+                if (qk6Var.next() == null) {
+                    return true;
                 }
-            case 1:
-                return (lb3) obj;
-            case 2:
-                return (sc3) obj;
-            case 3:
-                return (vb3) obj;
-            default:
-                return (xn9) obj;
+            }
+            return false;
         }
+        while (qk6Var.hasNext()) {
+            if (obj.equals(qk6Var.next())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // zme
+    public final Object d() {
+        return this.b;
+    }
+
+    @Override // java.util.Map
+    public final Set entrySet() {
+        return qye.b(this.b.entrySet(), new nb3((byte) 0));
+    }
+
+    @Override // java.util.Map
+    public final boolean equals(Object obj) {
+        return obj != null && use.b(this, obj);
+    }
+
+    @Override // java.util.Map
+    public final Object get(Object obj) {
+        if (obj == null) {
+            return null;
+        }
+        return (List) this.b.get(obj);
+    }
+
+    @Override // java.util.Map
+    public final int hashCode() {
+        return qye.c(entrySet());
+    }
+
+    @Override // java.util.Map
+    public final boolean isEmpty() {
+        Map map = this.b;
+        return map.isEmpty() || (map.size() == 1 && map.containsKey(null));
+    }
+
+    @Override // java.util.Map
+    public final Set keySet() {
+        return qye.b(this.b.keySet(), new nb3((byte) 1));
+    }
+
+    @Override // java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        return this.b.put(obj, obj2);
+    }
+
+    @Override // java.util.Map
+    public final void putAll(Map map) {
+        this.b.putAll(map);
+    }
+
+    @Override // java.util.Map
+    public final Object remove(Object obj) {
+        return this.b.remove(obj);
+    }
+
+    @Override // java.util.Map
+    public final int size() {
+        Map map = this.b;
+        return map.size() - (map.containsKey(null) ? 1 : 0);
+    }
+
+    @Override // java.util.Map
+    public final Collection values() {
+        return this.b.values();
     }
 }

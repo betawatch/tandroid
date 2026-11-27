@@ -1,75 +1,85 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
+import android.content.Context;
+import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class cm1 implements View.OnClickListener {
+public final /* synthetic */ class cm1 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ Serializable h;
-    public final /* synthetic */ TLRPC.InputPeer n;
-    public final /* synthetic */ int[] r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ bm1 w;
-    public final /* synthetic */ Object x;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ fn7 e;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ cm1(mu1 mu1Var, int i, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z, bm1 bm1Var) {
-        this.a = (byte) 2;
-        this.b = mu1Var;
-        this.c = i;
-        this.d = arrayList;
-        this.h = strArr;
-        this.e = str;
-        this.f = str2;
-        this.n = inputPeer;
-        this.r = iArr;
-        this.x = charSequence;
-        this.s = z;
-        this.w = bm1Var;
+    public /* synthetic */ cm1(zu1 zu1Var, long j, boolean z, boolean z2) {
+        this.a = (byte) 0;
+        this.e = zu1Var;
+        this.d = j;
+        this.b = z;
+        this.c = z2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        Object obj = this.x;
-        Object obj2 = this.h;
+        int i = 2131751879;
+        long j = this.d;
+        boolean z = this.c;
+        boolean z2 = this.b;
+        fn7 fn7Var = this.e;
         switch (b) {
             case 0:
-                this.b.k8(this.c, this.d, this.e, this.f, (String) obj2, this.n, this.r, (TL_iv.RichMessage) obj, this.s, this.w);
+                ((zu1) fn7Var).d9(j, z2, z);
                 break;
             case 1:
-                this.b.l8(this.c, this.d, this.e, this.f, (String) obj2, this.n, this.r, (CharSequence) obj, this.s, this.w);
+                xn2 xn2Var = (xn2) fn7Var;
+                String M0 = ob6.M0(2131751880, null);
+                if (z2) {
+                    i = 2131751882;
+                } else if (z) {
+                    i = 2131751881;
+                }
+                jj.s0(xn2Var, M0, ob6.M0(i, null), ob6.M0(2131746048, null), true, new rn2(xn2Var, j, (byte) 0));
+                break;
+            case 2:
+                xo2 xo2Var = (xo2) fn7Var;
+                Context context = xo2Var.getContext();
+                vnb vnbVar = xo2Var.J0;
+                String M02 = ob6.M0(2131751880, null);
+                if (z2) {
+                    i = 2131751882;
+                } else if (z) {
+                    i = 2131751881;
+                }
+                id M = jj.M(context, vnbVar, M02, ob6.M0(i, null), ob6.M0(2131746048, null), new kt((Object) xo2Var, j, (byte) 10));
+                M.show();
+                TextView textView = (TextView) M.c(-1);
+                if (textView != null) {
+                    yob.X(textView, aob.q7, null);
+                    break;
+                }
                 break;
             default:
-                boolean z = this.s;
-                bm1 bm1Var = this.w;
-                this.b.m8(this.c, this.d, (String[]) obj2, this.e, this.f, this.n, this.r, (CharSequence) obj, z, bm1Var);
+                uc7 uc7Var = (uc7) fn7Var;
+                ArrayList arrayList = z2 ? uc7Var.m0 : uc7Var.l0;
+                if (!z) {
+                    arrayList.remove(Long.valueOf(j));
+                    break;
+                } else if (!arrayList.contains(Long.valueOf(j))) {
+                    arrayList.add(Long.valueOf(j));
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ cm1(mu1 mu1Var, int i, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z, bm1 bm1Var, byte b) {
+    public /* synthetic */ cm1(fn7 fn7Var, boolean z, boolean z2, long j, byte b) {
         this.a = b;
-        this.b = mu1Var;
-        this.c = i;
-        this.d = arrayList;
-        this.e = str;
-        this.f = str2;
-        this.h = str3;
-        this.n = inputPeer;
-        this.r = iArr;
-        this.x = obj;
-        this.s = z;
-        this.w = bm1Var;
+        this.e = fn7Var;
+        this.b = z;
+        this.c = z2;
+        this.d = j;
     }
 }

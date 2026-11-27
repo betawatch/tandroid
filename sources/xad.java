@@ -1,19 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.SuccessContinuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xad extends qdd {
-    public static final xad a = new xad();
+public final /* synthetic */ class xad implements SuccessContinuation, fme, OnFailureListener {
+    public static final /* synthetic */ xad a = new xad();
 
-    public final boolean equals(Object obj) {
-        return obj == this;
+    @Override // fme
+    public final byte[] a(int i, int i2, byte[] bArr) {
+        return Arrays.copyOfRange(bArr, i, i2 + i);
     }
 
-    public final int hashCode() {
-        return 2040732332;
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        Log.e("OptionalModuleUtils", "Failed to check feature availability", exc);
     }
 
-    public final String toString() {
-        return "Optional.absent()";
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public final Task then(Object obj) {
+        Bundle bundle = (Bundle) obj;
+        int i = up9.h;
+        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
     }
 }

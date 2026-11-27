@@ -1,32 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class je6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qe6 b;
-    public final /* synthetic */ int c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ je6(qe6 qe6Var, int i, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class je6 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qh6 b;
+
+    public /* synthetic */ je6(qh6 qh6Var, byte b) {
         this.a = b;
-        this.b = qe6Var;
-        this.c = i;
+        this.b = qh6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        int i = this.c;
-        qe6 qe6Var = this.b;
+        qh6 qh6Var = this.b;
         switch (b) {
             case 0:
-                gl.c3(new je6(qe6Var, i, (byte) 1));
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qh6Var.c.setAlpha(floatValue);
+                qh6Var.c.setTranslationY((1.0f - floatValue) * hl.L(230.0f));
                 break;
             case 1:
-                qe6Var.z(i);
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qh6Var.c.setAlpha(floatValue2);
+                qh6Var.c.setTranslationY((1.0f - floatValue2) * hl.L(230.0f));
                 break;
             default:
-                qe6Var.f.f[i].D(1.0f);
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f = (0.9f * floatValue3) + 0.1f;
+                qh6Var.W.setScaleX(f);
+                qh6Var.W.setScaleY(f);
+                qh6Var.W.setAlpha(floatValue3);
                 break;
         }
     }

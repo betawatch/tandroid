@@ -1,310 +1,76 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wsa {
-    public final int a;
-    public final long b;
-    public boolean c;
-    public boolean d;
-    public xsa g;
-    public boolean j;
-    public boolean k;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final HashMap h = new HashMap();
-    public int i = -1;
+public final /* synthetic */ class wsa implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ wua b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ boolean f;
 
-    public wsa(int i, long j) {
-        this.a = i;
-        this.b = j;
-        i();
+    public /* synthetic */ wsa(wua wuaVar, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z, TLRPC.TL_error tL_error) {
+        this.b = wuaVar;
+        this.e = tLObject;
+        this.d = twoStepVerificationActivity;
+        this.f = z;
+        this.c = tL_error;
     }
 
-    public final void a(int i, ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        xsa e = e(i);
-        byte b = 1;
-        int i2 = 0;
-        long j = this.b;
-        int i3 = this.a;
-        if (e != null) {
-            e.l.addAll(0, arrayList);
-            e.n = arrayList.size() + e.n;
-            kk7.f(i3).k(kk7.H3, Long.valueOf(j), e);
-            n(i);
-        }
-        TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-        updatestargiftcollection.peer = na7.q1(i3).h1(j);
-        updatestargiftcollection.collection_id = i;
-        updatestargiftcollection.flags |= 4;
-        int size = arrayList.size();
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
-            l(savedStarGift, i, true);
-            if (savedStarGift.msg_id > 0) {
-                TL_stars.TL_inputSavedStarGiftUser tL_inputSavedStarGiftUser = new TL_stars.TL_inputSavedStarGiftUser();
-                tL_inputSavedStarGiftUser.msg_id = savedStarGift.msg_id;
-                updatestargiftcollection.add_stargift.add(tL_inputSavedStarGiftUser);
-            } else if (savedStarGift.saved_id != 0) {
-                TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
-                tL_inputSavedStarGiftChat.peer = na7.q1(i3).h1(j);
-                tL_inputSavedStarGiftChat.saved_id = savedStarGift.saved_id;
-                updatestargiftcollection.add_stargift.add(tL_inputSavedStarGiftChat);
-            } else {
-                fa4.l("can't convert gift to inputgift to add into the collection");
-            }
-        }
-        ConnectionsManager.getInstance(i3).sendRequest(updatestargiftcollection, new usa(this, b));
-    }
-
-    public final void b(p8c p8cVar, String str) {
-        if (this.k) {
-            return;
-        }
-        this.k = true;
-        TL_stars.TL_starGiftCollection tL_starGiftCollection = new TL_stars.TL_starGiftCollection();
-        tL_starGiftCollection.collection_id = -1;
-        tL_starGiftCollection.title = str;
-        this.e.add(tL_starGiftCollection);
-        j();
-        int i = this.a;
-        long j = this.b;
-        xsa xsaVar = new xsa(i, j, false);
-        xsaVar.c = true;
-        xsaVar.d = -1;
-        xsaVar.n = 0;
-        xsaVar.j = true;
-        this.h.put(-1, xsaVar);
-        TL_stars.createStarGiftCollection createstargiftcollection = new TL_stars.createStarGiftCollection();
-        createstargiftcollection.peer = na7.q1(i).h1(j);
-        createstargiftcollection.title = str;
-        ConnectionsManager.getInstance(i).sendRequest(createstargiftcollection, new rt0((Object) this, (Object) tL_starGiftCollection, (Object) xsaVar, (Object) p8cVar, (byte) 23));
-    }
-
-    public final TL_stars.TL_starGiftCollection c(int i) {
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i2 >= arrayList.size()) {
-                return null;
-            }
-            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) arrayList.get(i2);
-            if (i == tL_starGiftCollection.collection_id) {
-                return tL_starGiftCollection;
-            }
-            i2++;
-        }
-    }
-
-    public final ArrayList d() {
-        return h() ? this.e : this.f;
-    }
-
-    public final xsa e(int i) {
-        return (xsa) this.h.get(Integer.valueOf(i));
-    }
-
-    public final int f(int i) {
-        int i2 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i2 >= arrayList.size()) {
-                return -1;
-            }
-            if (i == ((TL_stars.TL_starGiftCollection) arrayList.get(i2)).collection_id) {
-                return i2;
-            }
-            i2++;
-        }
-    }
-
-    public final void g() {
-        if (this.i != -1) {
-            ConnectionsManager.getInstance(this.a).cancelRequest(this.i, true);
-            this.i = -1;
-        }
-        this.c = false;
-        this.d = false;
-        if (this.j) {
-            i();
-        }
-    }
-
-    public final boolean h() {
-        long j = this.b;
-        int i = this.a;
-        return j >= 0 ? j == 0 || j == y6c.h(i).e() : hc2.w(5, na7.q1(i).K0(Long.valueOf(-j)));
-    }
-
-    public final void i() {
-        if (this.c || this.d) {
-            return;
-        }
-        this.c = true;
-        TL_stars.getStarGiftCollections getstargiftcollections = new TL_stars.getStarGiftCollections();
-        int i = this.a;
-        getstargiftcollections.peer = na7.q1(i).h1(this.b);
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        byte b = 0;
-        long j = 0;
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj = arrayList.get(i2);
-            i2++;
-            j = hq6.r(j, ((TL_stars.TL_starGiftCollection) obj).hash);
-        }
-        getstargiftcollections.hash = j;
-        this.i = ConnectionsManager.getInstance(i).sendRequest(getstargiftcollections, new usa(this, b));
-    }
-
-    public final void j() {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        int i = 0;
-        while (true) {
-            ArrayList arrayList2 = this.e;
-            if (i >= arrayList2.size()) {
-                return;
-            }
-            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) arrayList2.get(i);
-            if (tL_starGiftCollection.gifts_count > 0) {
-                arrayList.add(tL_starGiftCollection);
-            }
-            i++;
-        }
-    }
-
-    public final void k(int i, TL_stars.SavedStarGift savedStarGift) {
-        boolean z;
-        boolean z2;
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(savedStarGift);
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        xsa e = e(i);
-        boolean z3 = true;
-        boolean z4 = false;
-        if (e != null) {
-            ArrayList arrayList2 = e.l;
-            if (!arrayList2.isEmpty()) {
-                int i2 = 0;
-                while (i2 < arrayList2.size()) {
-                    TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) arrayList2.get(i2);
-                    int i3 = 0;
-                    while (true) {
-                        if (i3 >= arrayList.size()) {
-                            break;
-                        }
-                        if (gta.h(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i3))) {
-                            arrayList2.remove(i2);
-                            e.n = Math.max(0, e.n - 1);
-                            i2--;
-                            break;
-                        }
-                        i3++;
-                    }
-                    i2++;
-                }
-            }
-        }
-        n(i);
-        TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-        int i4 = this.a;
-        na7 q1 = na7.q1(i4);
-        long j = this.b;
-        updatestargiftcollection.peer = q1.h1(j);
-        updatestargiftcollection.collection_id = i;
-        byte b = 2;
-        updatestargiftcollection.flags |= 2;
-        int size = arrayList.size();
-        int i5 = 0;
-        while (i5 < size) {
-            Object obj = arrayList.get(i5);
-            i5++;
-            TL_stars.SavedStarGift savedStarGift3 = (TL_stars.SavedStarGift) obj;
-            l(savedStarGift3, i, z4);
-            if (savedStarGift3.msg_id > 0) {
-                TL_stars.TL_inputSavedStarGiftUser tL_inputSavedStarGiftUser = new TL_stars.TL_inputSavedStarGiftUser();
-                tL_inputSavedStarGiftUser.msg_id = savedStarGift3.msg_id;
-                updatestargiftcollection.delete_stargift.add(tL_inputSavedStarGiftUser);
-                z = z3;
-                z2 = z4;
-            } else if (savedStarGift3.saved_id != 0) {
-                TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat = new TL_stars.TL_inputSavedStarGiftChat();
-                tL_inputSavedStarGiftChat.peer = na7.q1(i4).h1(j);
-                z = z3;
-                z2 = z4;
-                tL_inputSavedStarGiftChat.saved_id = savedStarGift3.saved_id;
-                updatestargiftcollection.delete_stargift.add(tL_inputSavedStarGiftChat);
-            } else {
-                z = z3;
-                z2 = z4;
-                fa4.l("can't convert gift to inputgift to add into the collection");
-            }
-            z3 = z;
-            z4 = z2;
-        }
-        updatestargiftcollection.delete_stargift.size();
-        ConnectionsManager.getInstance(i4).sendRequest(updatestargiftcollection, new usa(this, b));
-        kk7 f = kk7.f(i4);
-        Object[] objArr = new Object[2];
-        objArr[z4 ? 1 : 0] = Long.valueOf(j);
-        objArr[z3 ? 1 : 0] = e;
-        f.k(kk7.H3, objArr);
-    }
-
-    public final void l(TL_stars.SavedStarGift savedStarGift, int i, boolean z) {
-        Iterator it = this.h.values().iterator();
-        while (it.hasNext()) {
-            ((xsa) it.next()).r(savedStarGift, i, z);
-        }
-        xsa xsaVar = this.g;
-        if (xsaVar != null) {
-            xsaVar.r(savedStarGift, i, z);
-        }
-    }
-
-    public final void m(TL_stars.SavedStarGift savedStarGift, boolean z) {
-        Iterator it = this.h.values().iterator();
-        while (it.hasNext()) {
-            ((xsa) it.next()).s(savedStarGift, z);
-        }
-        xsa xsaVar = this.g;
-        if (xsaVar != null) {
-            xsaVar.s(savedStarGift, z);
-        }
-    }
-
-    public final void n(int i) {
-        xsa e = e(i);
-        TL_stars.TL_starGiftCollection c = c(i);
-        if (e != null) {
-            ArrayList arrayList = e.l;
-            if (c != null) {
-                TL_stars.SavedStarGift savedStarGift = arrayList.isEmpty() ? null : (TL_stars.SavedStarGift) arrayList.get(0);
-                int i2 = c.flags;
-                if (savedStarGift == null) {
-                    c.flags = i2 & (-2);
-                    c.icon = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 0;
+        boolean z = this.f;
+        TLObject tLObject = this.e;
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        wua wuaVar = this.b;
+        switch (b) {
+            case 0:
+                if (!(tLObject instanceof TL_account.tmpPassword)) {
+                    wuaVar.Q1(tL_error, twoStepVerificationActivity, z);
+                    break;
                 } else {
-                    c.flags = i2 | 1;
-                    c.icon = savedStarGift.gift.getDocument();
+                    TL_account.tmpPassword tmppassword = (TL_account.tmpPassword) tLObject;
+                    yac.h(wuaVar.a).y = tmppassword;
+                    yac.h(wuaVar.a).u(false);
+                    wuaVar.D1(tmppassword.tmp_password, twoStepVerificationActivity, z, null);
+                    break;
                 }
-                kk7.f(this.a).k(kk7.I3, Long.valueOf(this.b), this);
-            }
+            default:
+                if (tL_error == null && twoStepVerificationActivity != null) {
+                    TL_account.Password password = (TL_account.Password) tLObject;
+                    twoStepVerificationActivity.J = password;
+                    TwoStepVerificationActivity.e0(password);
+                    TLRPC.TL_inputCheckPasswordSRP d0 = twoStepVerificationActivity.d0();
+                    TL_account.getTmpPassword gettmppassword = new TL_account.getTmpPassword();
+                    gettmppassword.password = d0;
+                    gettmppassword.period = 600;
+                    ConnectionsManager.getInstance(wuaVar.a).sendRequest(gettmppassword, new qsa(wuaVar, twoStepVerificationActivity, z, b2));
+                    break;
+                } else {
+                    if (twoStepVerificationActivity != null) {
+                        twoStepVerificationActivity.s0();
+                    }
+                    d31.c0(tL_error != null ? tL_error.text : "NULL_ERROR");
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ wsa(wua wuaVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject, boolean z) {
+        this.b = wuaVar;
+        this.c = tL_error;
+        this.d = twoStepVerificationActivity;
+        this.e = tLObject;
+        this.f = z;
     }
 }

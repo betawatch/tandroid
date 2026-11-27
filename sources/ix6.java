@@ -1,7 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface ix6 {
-    void g(ad8 ad8Var, su6 su6Var);
+import android.media.session.MediaSessionManager;
+import android.text.TextUtils;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class ix6 extends ex6 {
+    @Override // ex6
+    public final sy6 c() {
+        MediaSessionManager.RemoteUserInfo currentControllerInfo = this.a.getCurrentControllerInfo();
+        sy6 sy6Var = new sy6();
+        String packageName = currentControllerInfo.getPackageName();
+        if (packageName == null) {
+            p3d.h("package shouldn't be null");
+            return null;
+        }
+        if (TextUtils.isEmpty(packageName)) {
+            lq5.j("packageName should be nonempty");
+            return null;
+        }
+        sy6Var.a = new vy6(currentControllerInfo.getPackageName(), currentControllerInfo.getPid(), currentControllerInfo.getUid());
+        return sy6Var;
+    }
+
+    @Override // ex6
+    public final void e(sy6 sy6Var) {
+    }
 }

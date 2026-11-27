@@ -1,38 +1,58 @@
 // default package
 
-import java.io.Serializable;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class i6e extends y1f implements Serializable {
-    public final MessageDigest a;
-    public final int b;
-    public final boolean c;
-    public final String d;
+public final class i6e extends ese {
+    private static final i6e zzj;
+    private static volatile u0f zzk;
+    private int zzc;
+    private long zze;
+    private o5e zzf;
+    private b6e zzh;
+    private q5e zzi;
+    private String zzd = "";
+    private String zzg = "";
 
-    public i6e() {
-        boolean z;
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-            this.a = messageDigest;
-            this.b = messageDigest.getDigestLength();
-            this.d = "Hashing.sha256()";
-            try {
-                messageDigest.clone();
-                z = true;
-            } catch (CloneNotSupportedException unused) {
-                z = false;
-            }
-            this.c = z;
-        } catch (NoSuchAlgorithmException e) {
-            fi7.g(e);
-            throw null;
-        }
+    static {
+        i6e i6eVar = new i6e();
+        zzj = i6eVar;
+        ese.g(i6e.class, i6eVar);
     }
 
-    public final String toString() {
-        return this.d;
+    /* JADX WARN: Type inference failed for: r2v12, types: [java.lang.Object, u0f] */
+    @Override // ese
+    public final Object d(int i) {
+        u0f u0fVar;
+        switch (b7e.a[i - 1]) {
+            case 1:
+                return new i6e();
+            case 2:
+                return new p5e(zzj);
+            case 3:
+                return new j1f(zzj, "\u0001\u0006\u0000\u0001\u0001\u0011\u0006\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဂ\u0001\u0003ဉ\u0002\u0006ဈ\u0003\u0010ဉ\u0004\u0011ဉ\u0005", new Object[]{"zzc", "zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
+            case 4:
+                return zzj;
+            case 5:
+                u0f u0fVar2 = zzk;
+                if (u0fVar2 != null) {
+                    return u0fVar2;
+                }
+                synchronized (i6e.class) {
+                    u0f u0fVar3 = zzk;
+                    u0fVar = u0fVar3;
+                    if (u0fVar3 == null) {
+                        ?? zreVar = new zre();
+                        zzk = zreVar;
+                        u0fVar = zreVar;
+                    }
+                }
+                return u0fVar;
+            case 6:
+                return (byte) 1;
+            default:
+                p3d.a();
+            case 7:
+                return null;
+        }
     }
 }

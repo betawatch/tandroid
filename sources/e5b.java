@@ -1,18 +1,102 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class e5b extends i49 {
-    public final /* synthetic */ g5b a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class e5b extends FrameLayout implements snb {
+    public qmb E;
+    public float F;
+    public float G;
+    public ValueAnimator H;
+    public ValueAnimator I;
+    public vh4 J;
+    public float K;
+    public boolean L;
+    public fe1 M;
+    public Paint a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public boolean e;
+    public nf9 f;
+    public TextView h;
+    public TextView n;
+    public TextView r;
+    public TextView s;
+    public TextView w;
+    public View x;
+    public int y;
 
-    public e5b(g5b g5bVar) {
-        this.a = g5bVar;
+    @Override // android.view.View
+    public final void invalidate() {
+        TextView textView = this.s;
+        TextView textView2 = this.r;
+        TextView textView3 = this.n;
+        TextView textView4 = this.h;
+        super.invalidate();
+        this.f.invalidate();
+        int i = this.y;
+        int i2 = aob.Mj;
+        if (i != aob.w0(null, i2, false)) {
+            this.y = aob.w0(null, i2, false);
+            textView4.setCompoundDrawablesWithIntrinsicBounds(aob.K(hl.L(10.0f), this.y), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView4.setCompoundDrawablePadding(hl.L(6.0f));
+            textView3.setCompoundDrawablesWithIntrinsicBounds(aob.K(hl.L(10.0f), this.y), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView3.setCompoundDrawablePadding(hl.L(6.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds(aob.K(hl.L(10.0f), vm2.o(this.y, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablePadding(hl.L(6.0f));
+            textView.setCompoundDrawablesWithIntrinsicBounds(aob.K(hl.L(10.0f), vm2.o(this.y, jn7.K1)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablePadding(hl.L(6.0f));
+        }
+        yob.X(this.E.getTextView(), aob.G6, null);
+        yob.h(aob.d7, null, this.x);
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        this.a.b.invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        vh4 vh4Var = this.J;
+        if (vh4Var != null) {
+            vh4Var.a = true;
+            AnimatorSet animatorSet = (AnimatorSet) vh4Var.d;
+            if (animatorSet.isRunning()) {
+                return;
+            }
+            animatorSet.start();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        vh4 vh4Var = this.J;
+        if (vh4Var != null) {
+            vh4Var.a = false;
+            ((AnimatorSet) vh4Var.d).cancel();
+        }
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            if (this.f == null || this.h == null || this.y == aob.w0(null, aob.Mj, false)) {
+                return;
+            }
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

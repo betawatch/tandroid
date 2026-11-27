@@ -1,111 +1,46 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sv4 extends Drawable {
-    public final int a;
-    public final RectF b;
-    public final Path c;
-    public final Paint d;
-    public final vva e;
-    public boolean f;
-    public iu4 g;
-    public hj3 h;
-    public boolean i;
+public final class sv4 extends rv4 {
+    public final /* synthetic */ tv4 r;
 
-    public sv4(int i, int i2) {
-        this.b = new RectF();
-        this.c = new Path();
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.a = i;
-        paint.setColor(i2);
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new vva(1, 25);
-        } else {
-            this.e = null;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sv4(tv4 tv4Var, vnb vnbVar) {
+        super(vnbVar);
+        this.r = tv4Var;
     }
 
-    public final void a() {
-        boolean z = this.e != null && this.i && e66.e(131072);
-        if (this.f == z) {
+    @Override // rv4
+    public final void E() {
+        tv4 tv4Var = this.r;
+        String str = tv4Var.V1;
+        new d31(tv4Var.c, tv4Var.J0).Q(R.raw.chats_infotip, 36, ((str == null || str.isEmpty()) && tv4Var.S1.to_id == -1) ? ob6.M0(2131753327, null) : ob6.M0(2131753326, null)).k(true);
+    }
+
+    @Override // rv4
+    public final void F(TLObject tLObject) {
+        tv4 tv4Var = this.r;
+        TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = tv4Var.S1;
+        e eVar = tv4Var.r1;
+        tv4Var.dismiss();
+        if (tLObject instanceof TLRPC.Chat) {
+            eVar.presentFragment(zu1.ha(-((TLRPC.Chat) tLObject).id));
             return;
         }
-        this.f = z;
-        if (z) {
-            rg2 d = rg2.d();
-            iu4 iu4Var = new iu4(this, (byte) 4);
-            this.g = iu4Var;
-            d.a(15, iu4Var);
-        } else {
-            rg2.d().g(this.g);
+        if (tLObject instanceof TLRPC.User) {
+            eVar.presentFragment(zu1.ha(((TLRPC.User) tLObject).id));
+            return;
         }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.d;
-        Path path = this.c;
-        canvas.drawPath(path, paint);
-        vva vvaVar = this.e;
-        if (vvaVar != null) {
-            if (this.f || !this.i) {
-                canvas.save();
-                canvas.clipPath(path);
-                if (this.g == null) {
-                    vvaVar.d();
-                }
-                vvaVar.a(canvas, this.a);
-                canvas.restore();
-                if (this.g == null) {
-                    invalidateSelf();
-                }
-            }
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        float min = Math.min(rect.width(), rect.height()) / 2.0f;
-        RectF rectF = this.b;
-        rectF.set(rect);
-        Path path = this.c;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        vva vvaVar = this.e;
-        if (vvaVar != null) {
-            vvaVar.g(rectF);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.d.setAlpha(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.d.setColorFilter(colorFilter);
-    }
-
-    public sv4(int i) {
-        this(bm2.o(i, 128), i);
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", -wf3.n(tL_payments_checkedGiftCode.from_id));
+        bundle.putInt("message_id", tL_payments_checkedGiftCode.giveaway_msg_id);
+        eVar.presentFragment(new zu1(bundle));
     }
 }

@@ -1,47 +1,59 @@
 // default package
 
-import android.graphics.Insets;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class l4b implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ m4b a;
+public final class l4b extends ku5 {
+    public int f;
+    public final /* synthetic */ s4b g;
 
-    public l4b(m4b m4bVar) {
-        this.a = m4bVar;
+    public l4b(s4b s4bVar) {
+        this.g = s4bVar;
+        this.e = (byte) 15;
+        this.f = -1;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        m4b m4bVar = this.a;
-        oc6 oc6Var = m4bVar.b;
-        Rect rect = m4bVar.h;
-        int i5 = Build.VERSION.SDK_INT;
-        if (i5 >= 30) {
-            Insets insets = windowInsets.getInsets(647);
-            i = insets.left;
-            i2 = insets.top;
-            i3 = insets.right;
-            i4 = insets.bottom;
-            rect.set(i, i2, i3, i4);
+    @Override // iu5
+    public final boolean o(RecyclerView recyclerView, f89 f89Var, f89 f89Var2) {
+        int i = f89Var.f;
+        if (i == 3 || i != f89Var2.f) {
+            return false;
+        }
+        s4b s4bVar = this.g;
+        if (s4bVar.M1 == null) {
+            return false;
+        }
+        int b = f89Var.b();
+        int b2 = f89Var2.b();
+        s4bVar.M1.documents.add(b2, s4bVar.M1.documents.remove(b));
+        s4bVar.n1.j(b, b2);
+        this.f = b2;
+        return true;
+    }
+
+    @Override // iu5
+    public final void q(f89 f89Var, int i) {
+        s4b s4bVar = this.g;
+        if (i != 0 || s4bVar.p1 == null || this.f <= 0) {
+            if (i == 2) {
+                s4bVar.p1 = ((x2b) f89Var.a).getSticker();
+            }
         } else {
-            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
+            tL_stickers_changeStickerPosition.position = this.f;
+            tL_stickers_changeStickerPosition.sticker = ls6.c0(s4bVar.p1, "").document;
+            this.f = -1;
+            s4bVar.p1 = null;
         }
-        oc6Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        oc6Var.requestLayout();
-        if (i5 < 30) {
-            return windowInsets.consumeSystemWindowInsets();
-        }
-        windowInsets2 = WindowInsets.CONSUMED;
-        return windowInsets2;
+    }
+
+    @Override // iu5
+    public final void r(f89 f89Var) {
+    }
+
+    @Override // iu5
+    public final void p(RecyclerView recyclerView, f89 f89Var, f89 f89Var2, int i, int i2, int i3) {
     }
 }

@@ -1,11 +1,23 @@
 // default package
 
-import android.media.MediaFormat;
+import android.graphics.Insets;
+import android.view.WindowInsetsAnimation;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class uc3 implements sac {
-    @Override // sac
-    public final void c(long j, long j2, fm4 fm4Var, MediaFormat mediaFormat) {
+public abstract /* synthetic */ class uc3 {
+    public static /* synthetic */ WindowInsetsAnimation.Bounds a(Insets insets, Insets insets2) {
+        return new WindowInsetsAnimation.Bounds(insets, insets2);
+    }
+
+    public static /* synthetic */ WindowInsetsAnimation b(int i, Interpolator interpolator, long j) {
+        return new WindowInsetsAnimation(i, interpolator, j);
+    }
+
+    public static /* synthetic */ void c() {
+    }
+
+    public static /* synthetic */ void d() {
     }
 }

@@ -1,34 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class mmd {
-    public static final int a(rs rsVar, Object obj, int i) {
-        int i2 = rsVar.c;
-        if (i2 == 0) {
-            return -1;
-        }
-        try {
-            int a = yp3.a(i2, i, rsVar.a);
-            if (a < 0 || rp5.a(obj, rsVar.b[a])) {
-                return a;
-            }
-            int i3 = a + 1;
-            while (i3 < i2 && rsVar.a[i3] == i) {
-                if (rp5.a(obj, rsVar.b[i3])) {
-                    return i3;
-                }
-                i3++;
-            }
-            for (int i4 = a - 1; i4 >= 0 && rsVar.a[i4] == i; i4--) {
-                if (rp5.a(obj, rsVar.b[i4])) {
-                    return i4;
-                }
-            }
-            return ~i3;
-        } catch (IndexOutOfBoundsException unused) {
-            zf.b();
-            return 0;
-        }
+public final class mmd extends u3d {
+    public final ybf b;
+
+    public mmd(ybf ybfVar) {
+        super((byte) 3, false);
+        attachInterface(this, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideServiceCallback");
+        this.b = ybfVar;
     }
 }

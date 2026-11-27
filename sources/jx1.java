@@ -1,29 +1,21 @@
 // default package
 
-import android.widget.FrameLayout;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jx1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ FrameLayout b;
+public final class jx1 implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ wla a;
+    public final /* synthetic */ a8a b;
 
-    public /* synthetic */ jx1(FrameLayout frameLayout, byte b) {
-        this.a = b;
-        this.b = frameLayout;
+    public jx1(wla wlaVar, a8a a8aVar) {
+        this.a = wlaVar;
+        this.b = a8aVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        FrameLayout frameLayout = this.b;
-        switch (b) {
-            case 0:
-                gl.B2(frameLayout);
-                break;
-            default:
-                gl.B2(frameLayout);
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        wla wlaVar = this.a;
+        wlaVar.post(new on1(this, wlaVar, this.b, (byte) 10));
     }
 }

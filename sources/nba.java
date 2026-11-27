@@ -1,29 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nba implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ nfa b;
+import android.content.Context;
+import android.view.View;
 
-    public /* synthetic */ nba(nfa nfaVar, byte b) {
-        this.a = b;
-        this.b = nfaVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class nba extends a8c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        a8c.h(new nba());
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        nfa nfaVar = this.b;
-        z1b z1bVar = (z1b) obj;
-        switch (b) {
-            case 0:
-                gl.d3(new t7a(nfaVar, z1bVar, (byte) 2), 100L);
-                break;
-            default:
-                int[] iArr = nfa.t2;
-                gl.d3(new t7a(nfaVar, z1bVar, (byte) 2), 100L);
-                break;
-        }
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        ((oba) view).set(b8cVar.A);
+    }
+
+    @Override // a8c
+    public final boolean c(b8c b8cVar, b8c b8cVar2) {
+        return b8cVar.A == b8cVar2.A;
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new oba(context, vnbVar);
+    }
+
+    @Override // a8c
+    public final boolean e(b8c b8cVar, b8c b8cVar2) {
+        return b8cVar.d == b8cVar2.d;
     }
 }

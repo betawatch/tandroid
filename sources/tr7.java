@@ -1,38 +1,55 @@
 // default package
 
-import java.util.ArrayList;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class tr7 implements f36, sa1 {
+    public final a36 a;
+    public final cq4 b;
+    public ur7 c;
+    public final /* synthetic */ vr7 d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tr7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ vr7 b;
-
-    public /* synthetic */ tr7(vr7 vr7Var, byte b) {
-        this.a = b;
-        this.b = vr7Var;
+    public tr7(vr7 vr7Var, a36 a36Var, cq4 cq4Var) {
+        cq4Var.getClass();
+        this.d = vr7Var;
+        this.a = a36Var;
+        this.b = cq4Var;
+        a36Var.a(this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        vr7 vr7Var = this.b;
-        switch (b) {
-            case 0:
-                vr7Var.invalidate();
-                vr7Var.b();
-                break;
-            default:
-                ArrayList arrayList = vr7Var.e;
-                int size = arrayList.size();
-                int i = 0;
-                while (i < size) {
-                    Object obj = arrayList.get(i);
-                    i++;
-                    ((oy8) obj).x(true);
-                }
-                arrayList.clear();
-                break;
+    @Override // f36
+    public final void b(i36 i36Var, y26 y26Var) {
+        if (y26Var == y26.ON_START) {
+            vr7 vr7Var = this.d;
+            ls lsVar = vr7Var.b;
+            cq4 cq4Var = this.b;
+            lsVar.addLast(cq4Var);
+            ur7 ur7Var = new ur7(vr7Var, cq4Var);
+            cq4Var.b.add(ur7Var);
+            vr7Var.c();
+            cq4Var.c = new j03(0, vr7Var, vr7.class, "updateEnabledCallbacks", "updateEnabledCallbacks()V", 0, (byte) 4);
+            this.c = ur7Var;
+            return;
         }
+        if (y26Var != y26.ON_STOP) {
+            if (y26Var == y26.ON_DESTROY) {
+                cancel();
+            }
+        } else {
+            ur7 ur7Var2 = this.c;
+            if (ur7Var2 != null) {
+                ur7Var2.cancel();
+            }
+        }
+    }
+
+    @Override // sa1
+    public final void cancel() {
+        this.a.b(this);
+        this.b.b.remove(this);
+        ur7 ur7Var = this.c;
+        if (ur7Var != null) {
+            ur7Var.cancel();
+        }
+        this.c = null;
     }
 }

@@ -1,19 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rge implements zn7 {
-    public static final rge a = new rge();
+import android.os.Parcel;
+import android.util.Log;
+import com.google.android.gms.common.api.Status;
 
-    static {
-        yjb.y(yjb.q(kkd.class, new cjd(1)));
+/* loaded from: classes.dex */
+public final class rge extends jg0 {
+    public final cyd q;
+
+    public rge(cyd cydVar, o6d o6dVar) {
+        super(bj2.j, o6dVar);
+        this.q = cydVar;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // jg0
+    public final void n(d05 d05Var) {
+        cyd cydVar = this.q;
+        qre qreVar = (qre) d05Var;
+        lme lmeVar = new lme(this);
+        try {
+            khe kheVar = cydVar.r;
+            int c = kheVar.c();
+            byte[] bArr = new byte[c];
+            b9e.b(kheVar, bArr, c);
+            cydVar.b = bArr;
+            aaf aafVar = (aaf) qreVar.k();
+            Parcel obtain = Parcel.obtain();
+            obtain.writeInterfaceToken("com.google.android.gms.clearcut.internal.IClearcutLoggerService");
+            int i = bld.a;
+            obtain.writeStrongBinder(lmeVar);
+            obtain.writeInt(1);
+            cydVar.writeToParcel(obtain, 0);
+            try {
+                aafVar.a.transact(1, obtain, null, 1);
+            } finally {
+                obtain.recycle();
+            }
+        } catch (RuntimeException e) {
+            Log.e("ClearcutLoggerApiImpl", "derived ClearcutLogger.MessageProducer ", e);
+            o(new Status(10, "MessageProducer", null, null));
         }
-        throw null;
     }
 }

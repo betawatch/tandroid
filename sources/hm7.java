@@ -1,33 +1,45 @@
 // default package
 
-import android.util.Pair;
-import java.util.HashMap;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class hm7 {
-    public final long a;
-    public String b;
-    public final HashMap c;
-    public boolean d;
-    public long e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class hm7 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ Object d;
 
-    public hm7(String str, long j, int i, long j2, long j3) {
-        HashMap hashMap = new HashMap();
-        this.c = hashMap;
-        this.a = j;
-        this.b = str;
-        hashMap.put(Integer.valueOf(i), new Pair(Long.valueOf(j2), Long.valueOf(j3)));
-        this.e = j2;
+    public /* synthetic */ hm7(v94 v94Var, r47 r47Var, boolean z) {
+        this.c = v94Var;
+        this.d = r47Var;
+        this.b = z;
     }
 
-    public final long a() {
-        long j = -1;
-        for (Pair pair : this.c.values()) {
-            if (j == -1 || j > ((Long) pair.first).longValue()) {
-                j = ((Long) pair.first).longValue();
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        Object obj = this.d;
+        boolean z = this.b;
+        FrameLayout frameLayout = this.c;
+        switch (b) {
+            case 0:
+                v94 v94Var = (v94) frameLayout;
+                if (v94Var.getMessage() == ((r47) obj)) {
+                    v94Var.o(z, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                    break;
+                }
+                break;
+            default:
+                ((xd8) frameLayout).i(z, (pt2) obj, valueAnimator);
+                break;
         }
-        return j;
+    }
+
+    public /* synthetic */ hm7(xd8 xd8Var, boolean z, pt2 pt2Var) {
+        this.c = xd8Var;
+        this.b = z;
+        this.d = pt2Var;
     }
 }

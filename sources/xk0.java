@@ -1,12 +1,57 @@
 // default package
 
-import android.graphics.Color;
+import android.graphics.Rect;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xk0 extends fx0 {
-    public static float m1 = 1.0f;
-    public static float n1 = 1.0f;
-    public static float o1 = 1.0f - (Color.alpha(bkb.w0(null, bkb.ng, false)) / 255.0f);
-    public cja l1;
+public final class xk0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ byte a;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
+
+    public xk0(lm4 lm4Var) {
+        this.a = (byte) 1;
+        this.d = lm4Var;
+        this.b = new Rect();
+        this.c = new Rect();
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+        byte b = this.a;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.b;
+        switch (b) {
+            case 0:
+                ((uy9) obj3).setProgress(yk0.m1);
+                ((uy9) obj2).setProgress(yk0.n1);
+                ((uy9) obj).setProgress(yk0.o1);
+                break;
+            default:
+                Rect rect = (Rect) obj3;
+                rect.set(i, i2, i3, i4);
+                Rect rect2 = (Rect) obj2;
+                rect2.set(i5, i6, i7, i8);
+                lm4 lm4Var = (lm4) obj;
+                jm4 jm4Var = lm4Var.b;
+                if (jm4Var.e() && !rect.equals(rect2)) {
+                    lm4Var.h = true;
+                    if (jm4Var.e()) {
+                        lm4Var.c();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    public xk0(uy9 uy9Var, uy9 uy9Var2, uy9 uy9Var3) {
+        this.a = (byte) 0;
+        this.b = uy9Var;
+        this.c = uy9Var2;
+        this.d = uy9Var3;
+    }
 }

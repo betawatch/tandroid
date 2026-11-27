@@ -1,30 +1,21 @@
 // default package
 
-import android.content.DialogInterface;
-import org.telegram.ui.o;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class at implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class at implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ o b;
+    public final /* synthetic */ AnimatorSet b;
 
-    public /* synthetic */ at(o oVar, byte b) {
+    public /* synthetic */ at(AnimatorSet animatorSet, byte b) {
         this.a = b;
-        this.b = oVar;
+        this.b = animatorSet;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        o oVar = this.b;
-        switch (b) {
-            case 0:
-                oVar.c.e(true);
-                break;
-            default:
-                oVar.l0 = null;
-                break;
-        }
+        this.b.start();
     }
 }

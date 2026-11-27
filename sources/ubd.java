@@ -1,70 +1,49 @@
 // default package
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ubd extends ndd {
-    public final /* synthetic */ byte r;
-    public final /* synthetic */ double s;
-    public final /* synthetic */ i69 t;
+public final class ubd implements bdd {
+    public final byte a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ubd(i69 i69Var, double d, byte b) {
-        super(i69Var, false);
-        this.r = b;
-        this.t = i69Var;
-        this.s = d;
+    /* JADX WARN: Multi-variable type inference failed */
+    public ubd(int i) {
+        this.a = i;
     }
 
-    @Override // ndd
-    public final void n() {
-        byte b = this.r;
-        double d = this.s;
-        i69 i69Var = this.t;
-        switch (b) {
-            case 0:
-                y8d y8dVar = i69Var.c;
-                f9d o = o();
-                y8dVar.getClass();
-                if (Double.isInfinite(d) || Double.isNaN(d)) {
-                    throw new IllegalArgumentException("Volume cannot be " + d);
-                }
-                JSONObject jSONObject = new JSONObject();
-                long l = y8dVar.l();
-                try {
-                    jSONObject.put("requestId", l);
-                    jSONObject.put(TeXSymbolParser.TYPE_ATTR, "SET_VOLUME");
-                    jSONObject.put("mediaSessionId", y8dVar.p());
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("level", d);
-                    jSONObject.put("volume", jSONObject2);
-                } catch (JSONException unused) {
-                }
-                y8dVar.n(l, jSONObject.toString());
-                y8dVar.n.a(l, o);
-                return;
-            default:
-                y8d y8dVar2 = i69Var.c;
-                f9d o2 = o();
-                if (y8dVar2.f == null) {
-                    throw new m8d();
-                }
-                JSONObject jSONObject3 = new JSONObject();
-                long l2 = y8dVar2.l();
-                try {
-                    jSONObject3.put("requestId", l2);
-                    jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "SET_PLAYBACK_RATE");
-                    jSONObject3.put("playbackRate", d);
-                    fre.i(y8dVar2.f, "mediaStatus should not be null");
-                    jSONObject3.put("mediaSessionId", y8dVar2.f.b);
-                } catch (JSONException unused2) {
-                }
-                y8dVar2.n(l2, jSONObject3.toString());
-                y8dVar2.u.a(l2, o2);
-                return;
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return bdd.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof bdd)) {
+            return false;
+        }
+        bdd bddVar = (bdd) obj;
+        return this.a == bddVar.zza() && vcd.a.equals(bddVar.zzb());
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (vcd.a.hashCode() ^ 2041407134);
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + vcd.a + ')';
+    }
+
+    @Override // bdd
+    public final int zza() {
+        return this.a;
+    }
+
+    @Override // bdd
+    public final vcd zzb() {
+        return vcd.a;
     }
 }

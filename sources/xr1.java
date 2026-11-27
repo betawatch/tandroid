@@ -1,62 +1,109 @@
 // default package
 
-import android.app.Activity;
-import android.text.style.CharacterStyle;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.TextureView;
+import android.view.View;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xr1 extends UndoView {
-    public final /* synthetic */ byte k0 = 1;
-    public final /* synthetic */ Object l0;
+public final class xr1 implements be8, li1 {
+    public final /* synthetic */ zu1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xr1(mu1 mu1Var, Activity activity, mu1 mu1Var2, wjb wjbVar) {
-        super(activity, mu1Var2, true, wjbVar);
-        this.l0 = mu1Var;
+    public /* synthetic */ xr1(zu1 zu1Var) {
+        this.a = zu1Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void b(CharacterStyle characterStyle) {
-        switch (this.k0) {
-            case 0:
-                ((mu1) this.l0).f6(characterStyle, false, null, null);
-                break;
+    @Override // be8
+    public final TextureView D() {
+        return this.a.M8;
+    }
+
+    @Override // be8
+    public final void J(r47 r47Var) {
+        zu1 zu1Var;
+        if (r47Var == null) {
+            return;
+        }
+        if (MediaController.z().H(r47Var)) {
+            int i = 0;
+            while (true) {
+                int childCount = this.a.A0.getChildCount();
+                zu1Var = this.a;
+                if (i >= childCount) {
+                    break;
+                }
+                if (zu1Var.A0.getChildAt(i) instanceof wb2) {
+                    wb2 wb2Var = (wb2) this.a.A0.getChildAt(i);
+                    if (wb2Var.getMessageObject() != null && wb2Var.getMessageObject().e1() == r47Var.e1()) {
+                        lm m = wb2Var.getPhotoImage().m();
+                        if (m.c0) {
+                            m.stop();
+                        }
+                        Bitmap m2 = m.m();
+                        if (m2 != null) {
+                            try {
+                                wr1 wr1Var = this.a.Ta;
+                                int width = m2.getWidth();
+                                int height = m2.getHeight();
+                                m98 m98Var = wr1Var.d;
+                                Bitmap bitmap = m98Var == null ? null : ((TextureView) m98Var.d).getBitmap(width, height);
+                                new Canvas(m2).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+                                bitmap.recycle();
+                            } catch (Throwable th) {
+                                cc4.g(th, true);
+                            }
+                        }
+                    }
+                }
+                i++;
+            }
+            zu1Var.e6(true);
+            MediaController z = MediaController.z();
+            zu1 zu1Var2 = this.a;
+            z.s0(zu1Var2.M8, zu1Var2.L8, zu1Var2.J8, true);
+        }
+        this.a.A0.invalidate();
+    }
+
+    @Override // li1
+    public final void f0(boolean z) {
+        z92 z92Var = this.a.U;
+        z92Var.e = !z;
+        z92Var.invalidate();
+    }
+
+    @Override // be8
+    public final void k(r47 r47Var) {
+        zu1 zu1Var = this.a;
+        zu1Var.A0.K0(true);
+        zu1Var.A0.E0();
+        if (MediaController.z().H(r47Var)) {
+            zu1Var.m1.removeView(zu1Var.J8);
+            zu1Var.J8 = null;
+            zu1Var.M8 = null;
+            zu1Var.L8 = null;
+        }
+        for (int i = 0; i < zu1Var.A0.getChildCount(); i++) {
+            if (zu1Var.A0.getChildAt(i) instanceof wb2) {
+                wb2 wb2Var = (wb2) zu1Var.A0.getChildAt(i);
+                if (wb2Var.getMessageObject() != null && wb2Var.getMessageObject().e1() == r47Var.e1()) {
+                    wb2Var.getPhotoImage().v0(false, true);
+                }
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.UndoView, android.view.View
-    public final void invalidate() {
-        switch (this.k0) {
-            case 1:
-                super.invalidate();
-                ((e55) this.l0).invalidate();
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
+    @Override // li1
+    public final void m0(RectF rectF) {
+        rectF.set(this.a.U.r.S.m);
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j, int i, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        int i2;
-        switch (this.k0) {
-            case 0:
-                uq1 uq1Var = ((mu1) this.l0).m2;
-                setAdditionalTranslationY((uq1Var == null || !(((i2 = uq1Var.U) == 1 || i2 == 3) && uq1Var.T)) ? 0.0f : gl.L(uq1Var.getStyleHeight()));
-                super.k(j, i, obj, obj2, runnable, runnable2);
-                break;
-            default:
-                super.k(j, i, obj, obj2, runnable, runnable2);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xr1(e55 e55Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.l0 = e55Var;
+    @Override // li1
+    public final View x0() {
+        return this.a.U;
     }
 }

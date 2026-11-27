@@ -1,203 +1,126 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.Spanned;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class bib implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rib b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class bib extends y1 {
+    public final ArrayList c;
+    public final ArrayList d;
+    public final aib a = new aib();
+    public final ArrayList b = new ArrayList();
+    public boolean e = true;
 
-    public /* synthetic */ bib(rib ribVar, byte b) {
-        this.a = b;
-        this.b = ribVar;
+    public bib(ArrayList arrayList, ArrayList arrayList2) {
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int l;
-        int i;
-        int o;
-        byte b = this.a;
-        rib ribVar = this.b;
-        switch (b) {
-            case 0:
-                if (ribVar.N && ribVar.E != null) {
-                    if (ribVar.Z && ribVar.W == null) {
-                        l = gl.L(8.0f);
-                    } else if (ribVar.W != null) {
-                        l = ribVar.l() >> 1;
-                    }
-                    if (!ribVar.Z && !ribVar.j0) {
-                        boolean z = ribVar.O;
-                        mib mibVar = ribVar.W;
-                        if (z) {
-                            if (mibVar.getBottom() - l < ribVar.F.getMeasuredHeight() - ribVar.n()) {
-                                i = ribVar.W.getBottom() - ribVar.F.getMeasuredHeight();
-                                o = ribVar.n();
-                                l = i + o;
-                            }
-                        } else if (mibVar.getTop() + l > ribVar.o()) {
-                            i = -ribVar.W.getTop();
-                            o = ribVar.o();
-                            l = i + o;
-                        }
-                    }
-                    o39 o39Var = ribVar.E;
-                    if (o39Var != null) {
-                        if (!ribVar.O) {
-                            l = -l;
-                        }
-                        o39Var.scrollBy(0, l);
-                    }
-                    gl.c3(this);
-                    break;
-                }
-                break;
-            case 1:
-                rib ribVar2 = this.b;
-                kya kyaVar = ribVar2.m0;
-                Rect rect = ribVar2.B;
-                hi2 hi2Var = ribVar2.a0;
-                mib mibVar2 = ribVar2.X;
-                if (mibVar2 != null && ribVar2.C != null) {
-                    mib mibVar3 = ribVar2.W;
-                    CharSequence r = ribVar2.r(mibVar2, true);
-                    o39 o39Var2 = ribVar2.E;
-                    if (o39Var2 != null) {
-                        o39Var2.J0(false);
-                    }
-                    int i2 = ribVar2.s;
-                    int i3 = ribVar2.t;
-                    if (!rect.isEmpty()) {
-                        int i4 = rect.right;
-                        if (i2 > i4) {
-                            i2 = i4 - 1;
-                        }
-                        int i5 = rect.left;
-                        if (i2 < i5) {
-                            i2 = i5 + 1;
-                        }
-                        int i6 = rect.top;
-                        if (i3 < i6) {
-                            i3 = i6 + 1;
-                        }
-                        int i7 = rect.bottom;
-                        if (i3 > i7) {
-                            i3 = i7 - 1;
-                        }
-                    }
-                    int j = ribVar2.j(i2, i3, ribVar2.c, ribVar2.d, mibVar2, true);
-                    if (j >= r.length()) {
-                        ribVar2.h(j, hi2Var, true);
-                        Layout layout = (Layout) hi2Var.d;
-                        if (layout == null) {
-                            ribVar2.v = -1;
-                            ribVar2.u = -1;
-                            break;
-                        } else {
-                            int lineCount = layout.getLineCount() - 1;
-                            float f = i2 - ribVar2.c;
-                            if (f < ((Layout) hi2Var.d).getLineRight(lineCount) + gl.L(4.0f) && f > ((Layout) hi2Var.d).getLineLeft(lineCount)) {
-                                j = r.length() - 1;
-                            }
-                        }
-                    }
-                    if (j >= 0 && j < r.length() && r.charAt(j) != '\n') {
-                        int i8 = ribVar2.c;
-                        int i9 = ribVar2.d;
-                        ribVar2.e(false);
-                        ribVar2.C.setVisibility(0);
-                        ribVar2.K(mibVar2, mibVar3);
-                        ribVar2.u = j;
-                        ribVar2.v = j;
-                        if (r instanceof Spanned) {
-                            Spanned spanned = (Spanned) r;
-                            su3[] su3VarArr = (su3[]) spanned.getSpans(0, r.length(), su3.class);
-                            int length = su3VarArr.length;
-                            int i10 = 0;
-                            while (true) {
-                                if (i10 < length) {
-                                    su3 su3Var = su3VarArr[i10];
-                                    int spanStart = spanned.getSpanStart(su3Var);
-                                    int spanEnd = spanned.getSpanEnd(su3Var);
-                                    if (j < spanStart || j > spanEnd) {
-                                        i10++;
-                                    } else {
-                                        ribVar2.u = spanStart;
-                                        ribVar2.v = spanEnd;
-                                    }
-                                } else {
-                                    gm[] gmVarArr = (gm[]) spanned.getSpans(0, r.length(), gm.class);
-                                    int length2 = gmVarArr.length;
-                                    int i11 = 0;
-                                    while (true) {
-                                        if (i11 < length2) {
-                                            gm gmVar = gmVarArr[i11];
-                                            int spanStart2 = spanned.getSpanStart(gmVar);
-                                            int spanEnd2 = spanned.getSpanEnd(gmVar);
-                                            if (j < spanStart2 || j > spanEnd2) {
-                                                i11++;
-                                            } else {
-                                                ribVar2.u = spanStart2;
-                                                ribVar2.v = spanEnd2;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if (ribVar2.u == ribVar2.v) {
-                            while (true) {
-                                int i12 = ribVar2.u;
-                                if (i12 > 0 && rib.x(r.charAt(i12 - 1))) {
-                                    ribVar2.u--;
-                                }
-                            }
-                            while (ribVar2.v < r.length() && rib.x(r.charAt(ribVar2.v))) {
-                                ribVar2.v++;
-                            }
-                        }
-                        ribVar2.a = i8;
-                        ribVar2.b = i9;
-                        ribVar2.W = mibVar2;
-                        try {
-                            ribVar2.C.performHapticFeedback(0, 1);
-                        } catch (Exception unused) {
-                        }
-                        gl.r(kyaVar);
-                        gl.c3(kyaVar);
-                        ribVar2.S();
-                        ribVar2.v();
-                        if (mibVar3 != null) {
-                            mibVar3.invalidate();
-                        }
-                        ive iveVar = ribVar2.D;
-                        if (iveVar != null) {
-                            iveVar.a(true);
-                        }
-                        ribVar2.i = true;
-                        ribVar2.R = true;
-                        ribVar2.k = true;
-                        ribVar2.g = 0.0f;
-                        ribVar2.f = 0.0f;
-                        ribVar2.E();
-                    }
-                    ribVar2.z = false;
-                    ribVar2.e = false;
-                    break;
-                }
-                break;
-            default:
-                yi4 yi4Var = ribVar.Y;
-                if (yi4Var != null && !ribVar.P) {
-                    yi4Var.hide(Long.MAX_VALUE);
-                    gl.d3(ribVar.n0, 1000L);
-                    break;
-                }
-                break;
+    public static ArrayList i(CharSequence charSequence) {
+        String trim = charSequence.toString().trim();
+        if (trim.startsWith("|")) {
+            trim = trim.substring(1);
         }
+        ArrayList arrayList = new ArrayList();
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        while (i < trim.length()) {
+            char charAt = trim.charAt(i);
+            if (charAt == '\\') {
+                int i2 = i + 1;
+                if (i2 >= trim.length() || trim.charAt(i2) != '|') {
+                    sb.append('\\');
+                } else {
+                    sb.append('|');
+                    i = i2;
+                }
+            } else if (charAt != '|') {
+                sb.append(charAt);
+            } else {
+                arrayList.add(sb.toString());
+                sb.setLength(0);
+            }
+            i++;
+        }
+        if (sb.length() > 0) {
+            arrayList.add(sb.toString());
+        }
+        return arrayList;
+    }
+
+    @Override // y1
+    public final void a(CharSequence charSequence) {
+        if (this.e) {
+            this.e = false;
+        } else {
+            this.b.add(charSequence);
+        }
+    }
+
+    @Override // y1
+    public final hk0 e() {
+        return this.a;
+    }
+
+    @Override // y1
+    public final void g(tp5 tp5Var) {
+        ArrayList arrayList;
+        ArrayList arrayList2 = this.d;
+        int size = arrayList2.size();
+        kib kibVar = new kib();
+        aib aibVar = this.a;
+        aibVar.b(kibVar);
+        yi6 bjbVar = new bjb();
+        kibVar.b(bjbVar);
+        int i = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i >= size) {
+                break;
+            }
+            String str = (String) arrayList2.get(i);
+            iib iibVar = new iib();
+            if (i < arrayList.size()) {
+                iibVar.h = (gib) arrayList.get(i);
+            }
+            tp5Var.a(str.trim(), iibVar);
+            iibVar.g = true;
+            bjbVar.b(iibVar);
+            i++;
+        }
+        ArrayList arrayList3 = this.b;
+        int size2 = arrayList3.size();
+        yi6 yi6Var = null;
+        int i2 = 0;
+        while (i2 < size2) {
+            Object obj = arrayList3.get(i2);
+            i2++;
+            ArrayList i3 = i((CharSequence) obj);
+            yi6 bjbVar2 = new bjb();
+            int i4 = 0;
+            while (i4 < size) {
+                String str2 = i4 < i3.size() ? (String) i3.get(i4) : "";
+                iib iibVar2 = new iib();
+                if (i4 < arrayList.size()) {
+                    iibVar2.h = (gib) arrayList.get(i4);
+                }
+                tp5Var.a(str2.trim(), iibVar2);
+                bjbVar2.b(iibVar2);
+                i4++;
+            }
+            if (yi6Var == null) {
+                yi6Var = new cib();
+                aibVar.b(yi6Var);
+            }
+            yi6Var.b(bjbVar2);
+        }
+    }
+
+    @Override // y1
+    public final qk2 h(mp3 mp3Var) {
+        if (mp3Var.a.toString().contains("|")) {
+            return qk2.a(mp3Var.b);
+        }
+        return null;
     }
 }

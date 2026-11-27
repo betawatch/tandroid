@@ -9,28 +9,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
-    private final y21 mBundle;
-    private final kc1 mHostDispatcher;
+    private final h31 mBundle;
+    private final sc1 mHostDispatcher;
     private final boolean mIsSingleShot;
-    private final Map<wo7, Executor> mListeners = new HashMap();
+    private final Map<wr7, Executor> mListeners = new HashMap();
     private final int mResultType;
     private final T mUnsupportedValue;
 
-    public CarResultStub(int i, y21 y21Var, boolean z, T t, kc1 kc1Var) {
-        Objects.requireNonNull(kc1Var);
-        this.mHostDispatcher = kc1Var;
+    public CarResultStub(int i, h31 h31Var, boolean z, T t, sc1 sc1Var) {
+        Objects.requireNonNull(sc1Var);
+        this.mHostDispatcher = sc1Var;
         this.mResultType = i;
-        this.mBundle = y21Var;
+        this.mBundle = h31Var;
         this.mIsSingleShot = z;
         Objects.requireNonNull(t);
         this.mUnsupportedValue = t;
     }
 
-    private T convertAndRecast(y21 y21Var) {
-        return (T) y21Var.a();
+    private T convertAndRecast(h31 h31Var) {
+        return (T) h31Var.a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,47 +40,47 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z, y21 y21Var) {
-        notifyResults(z, y21Var);
+    public /* synthetic */ Object lambda$onCarHardwareResult$0(boolean z, h31 h31Var) {
+        notifyResults(z, h31Var);
         return null;
     }
 
-    private void notifyResults(boolean z, y21 y21Var) {
-        T convertAndRecast = z ? convertAndRecast(y21Var) : this.mUnsupportedValue;
-        for (Map.Entry<wo7, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new q21(entry, convertAndRecast, (byte) 16));
+    private void notifyResults(boolean z, h31 h31Var) {
+        T convertAndRecast = z ? convertAndRecast(h31Var) : this.mUnsupportedValue;
+        for (Map.Entry<wr7, Executor> entry : this.mListeners.entrySet()) {
+            entry.getValue().execute(new z21(entry, convertAndRecast, (byte) 16));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
         }
     }
 
-    public void addListener(Executor executor, wo7 wo7Var) {
+    public void addListener(Executor executor, wr7 wr7Var) {
         this.mListeners.isEmpty();
-        Objects.requireNonNull(wo7Var);
+        Objects.requireNonNull(wr7Var);
         throw new ClassCastException();
     }
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
-    public void onCarHardwareResult(int i, boolean z, y21 y21Var, IBinder iBinder) {
-        e.c(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new ch((Object) this, z, (Object) y21Var, (byte) 3));
+    public void onCarHardwareResult(int i, boolean z, h31 h31Var, IBinder iBinder) {
+        e.c(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new bh((Object) this, z, (Object) h31Var, (byte) 3));
     }
 
-    public boolean removeListener(wo7 wo7Var) {
-        Map<wo7, Executor> map = this.mListeners;
-        Objects.requireNonNull(wo7Var);
-        map.remove(wo7Var);
+    public boolean removeListener(wr7 wr7Var) {
+        Map<wr7, Executor> map = this.mListeners;
+        Objects.requireNonNull(wr7Var);
+        map.remove(wr7Var);
         if (!this.mListeners.isEmpty()) {
             return false;
         }
         if (this.mIsSingleShot) {
             return true;
         }
-        kc1 kc1Var = this.mHostDispatcher;
+        sc1 sc1Var = this.mHostDispatcher;
         int i = this.mResultType;
-        y21 y21Var = this.mBundle;
-        kc1Var.getClass();
-        e.d("unsubscribeCarHardwareResult", new qm0(kc1Var, i, y21Var));
+        h31 h31Var = this.mBundle;
+        sc1Var.getClass();
+        e.d("unsubscribeCarHardwareResult", new rm0(sc1Var, i, h31Var));
         return true;
     }
 }

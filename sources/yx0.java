@@ -2,1124 +2,571 @@
 
 import android.R;
 import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RadialGradient;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.SurfaceTexture;
 import android.graphics.drawable.Drawable;
-import android.os.Handler;
+import android.text.TextPaint;
 import android.view.MotionEvent;
-import android.view.PixelCopy;
-import android.view.Surface;
-import android.view.VelocityTracker;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.OverScroller;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a;
+import java.util.WeakHashMap;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yx0 extends View {
-    public float E;
-    public float F;
-    public long G;
-    public boolean H;
-    public boolean I;
-    public VelocityTracker J;
-    public float K;
-    public boolean L;
-    public float M;
-    public Bitmap N;
-    public BitmapShader O;
-    public Paint P;
-    public Matrix Q;
-    public final RectF R;
-    public final ArrayList S;
-    public View T;
-    public ValueAnimator U;
-    public boolean V;
-    public float W;
-    public qx0 a;
-    public ValueAnimator a0;
-    public vx0 b;
-    public final int[] b0;
-    public nx0 c;
-    public final int[] c0;
-    public ValueAnimator d;
-    public final RectF d0;
-    public float e;
-    public final RectF e0;
-    public final lm f;
-    public final RectF f0;
-    public final Path g0;
-    public final OverScroller h;
-    public tgb h0;
-    public boolean i0;
-    public ff0 j0;
-    public xl3 k0;
-    public final int n;
-    public final int r;
-    public int s;
-    public final ux0 w;
-    public xx0 x;
+public final class yx0 extends FrameLayout {
+    public static final HashMap L = new HashMap();
+    public static final HashMap M = new HashMap();
+    public static TextPaint N;
+    public boolean E;
+    public final RectF F;
+    public ValueAnimator G;
+    public float H;
+    public int I;
+    public final HashSet J;
+    public final HashSet K;
+    public final Paint a;
+    public boolean b;
+    public boolean c;
+    public final ActionBarLayout d;
+    public final wx0 e;
+    public int f;
+    public final ll h;
+    public int n;
+    public final ll r;
+    public boolean s;
+    public final mm w;
+    public int x;
     public boolean y;
 
-    public yx0(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.f = new lm(this, 0L, 350L, s33.h);
-        this.R = new RectF();
-        this.S = new ArrayList();
-        this.b0 = new int[2];
-        this.c0 = new int[2];
-        this.d0 = new RectF();
-        this.e0 = new RectF();
-        this.f0 = new RectF();
-        this.g0 = new Path();
-        setWillNotDraw(false);
-        this.h = new OverScroller(launchActivity);
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(launchActivity);
-        this.n = viewConfiguration.getScaledMaximumFlingVelocity();
-        this.r = viewConfiguration.getScaledMinimumFlingVelocity();
-        ux0 ux0Var = new ux0(this, this);
-        this.w = ux0Var;
-        jdc.k(this, ux0Var);
-        setImportantForAccessibility(2);
-        bdc.i(this, new sg0(this, (byte) 14));
+    public yx0(Context context, ActionBarLayout actionBarLayout) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = true;
+        this.c = false;
+        k43 k43Var = k43.h;
+        this.h = new ll(this, 200L, k43Var, 0);
+        this.r = new ll(this, 200L, k43Var, 0);
+        this.w = new mm(this, 0L, 200L, k43Var);
+        this.x = yac.t0;
+        this.F = new RectF();
+        this.J = new HashSet();
+        this.K = new HashSet();
+        this.d = actionBarLayout;
+        setNavigationBarColor(aob.w0(null, aob.a7, false));
+        wx0 wx0Var = new wx0(this, this);
+        this.e = wx0Var;
+        ihc.l(this, wx0Var);
+        n();
+        o(false);
     }
 
-    public static void g(ViewGroup viewGroup, float f, final x0 x0Var) {
-        if (viewGroup.getWidth() <= 0 || viewGroup.getHeight() <= 0) {
-            x0Var.a(null);
-            return;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static TextPaint getTextPaint() {
+        if (N == null) {
+            TextPaint textPaint = new TextPaint(1);
+            N = textPaint;
+            textPaint.setTypeface(hl.o());
+            N.setTextSize(hl.L(17.0f));
         }
-        final SurfaceTexture d = fk.d();
-        d.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
-        final Surface surface = new Surface(d);
-        final Bitmap createBitmap = Bitmap.createBitmap(viewGroup.getWidth(), viewGroup.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas lockHardwareCanvas = surface.lockHardwareCanvas();
-        lockHardwareCanvas.translate(0.0f, f);
-        viewGroup.draw(lockHardwareCanvas);
-        surface.unlockCanvasAndPost(lockHardwareCanvas);
-        PixelCopy.request(surface, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: tx0
-            @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
-            public final void onPixelCopyFinished(int i) {
-                x0 x0Var2 = x0.this;
-                Bitmap bitmap = createBitmap;
-                Surface surface2 = surface;
-                SurfaceTexture surfaceTexture = d;
-                if (i == 0) {
-                    x0Var2.a(bitmap);
-                } else {
-                    bitmap.recycle();
-                    x0Var2.a(null);
-                }
-                surface2.release();
-                surfaceTexture.release();
-            }
-        }, new Handler());
+        return N;
     }
 
-    private float getScrollStep() {
-        return gl.L(200.0f);
+    public static String p(String str) {
+        if (str == null) {
+            return null;
+        }
+        int indexOf = str.indexOf(35);
+        return indexOf >= 0 ? str.substring(0, indexOf + 1) : str;
     }
 
-    private void setModalAccessibility(boolean z) {
-        setImportantForAccessibility(z ? 1 : 2);
-        ViewParent parent = getParent();
-        if (parent instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) parent;
-            for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                View childAt = viewGroup.getChildAt(i);
-                if (childAt != this) {
-                    childAt.setImportantForAccessibility(z ? 4 : 0);
-                }
-            }
-        }
-        ux0 ux0Var = this.w;
-        if (ux0Var != null) {
-            ux0Var.i();
-        }
-        if (z) {
-            sendAccessibilityEvent(32);
-        }
-    }
-
-    public final void a(boolean z) {
-        if (this.V == z) {
-            return;
-        }
-        ValueAnimator valueAnimator = this.a0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.V = z;
-        qx0 qx0Var = this.a;
-        if (qx0Var != null) {
-            qx0Var.b = false;
-            qx0Var.invalidate();
-        }
-        setModalAccessibility(z);
-        invalidate();
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.W, z ? 1.0f : 0.0f);
-        this.a0 = ofFloat;
-        ofFloat.addUpdateListener(new rx0(this, (byte) 0));
-        this.a0.addListener(new g0(this, (byte) 27));
-        this.a0.setInterpolator(s33.h);
-        this.a0.setDuration(320L);
-        this.a0.start();
-    }
-
-    public final void b(vx0 vx0Var) {
+    public final void b() {
         ValueAnimator valueAnimator;
-        if (this.a == null) {
+        ArrayList<xx0> tabs = getTabs();
+        int size = tabs.size();
+        if (size == 0) {
             return;
         }
-        if (this.b != null && (valueAnimator = this.d) != null) {
-            valueAnimator.end();
-            this.d = null;
+        xx0 xx0Var = (xx0) c00.g(1, tabs);
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        gy0 gy0Var = launchActivity == null ? null : launchActivity.x0;
+        if (gy0Var != null && (valueAnimator = gy0Var.d) != null) {
+            valueAnimator.cancel();
+            gy0Var.d = null;
         }
-        this.b = vx0Var;
-        vx0Var.b(false);
-        ValueAnimator valueAnimator2 = this.d;
-        if (valueAnimator2 != null) {
-            valueAnimator2.cancel();
+        if (size == 1 || gy0Var == null) {
+            e(xx0Var);
+        } else {
+            gy0Var.f();
         }
-        px0 c = vx0Var.c();
-        qx0 qx0Var = this.a;
-        ArrayList<px0> tabs = qx0Var.getTabs();
-        ArrayList<nx0> tabDrawables = qx0Var.getTabDrawables();
-        nx0 nx0Var = new nx0(qx0Var, c);
-        byte b = 1;
-        nx0Var.e.e(true, -1.0f);
-        nx0Var.f.e(true, 0.0f);
-        tabDrawables.add(nx0Var);
-        tabs.add(0, c);
+    }
+
+    public final vx0 c(xx0 xx0Var) {
+        ArrayList<vx0> tabDrawables = getTabDrawables();
         for (int i = 0; i < tabDrawables.size(); i++) {
-            nx0 nx0Var2 = tabDrawables.get(i);
-            int indexOf = tabs.indexOf(nx0Var2.a);
-            nx0Var2.d = indexOf;
-            if (indexOf >= 0) {
-                nx0Var2.c = indexOf;
+            if (tabDrawables.get(i).a == xx0Var) {
+                return tabDrawables.get(i);
             }
         }
-        qx0Var.n();
-        qx0Var.o(true);
-        qx0Var.invalidate();
-        ox0 ox0Var = qx0Var.e;
-        if (ox0Var != null) {
-            ox0Var.i();
-        }
-        this.c = nx0Var;
-        post(new nv0(vx0Var, (byte) 4));
-        invalidate();
-        this.e = 0.0f;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.d = ofFloat;
-        ofFloat.addUpdateListener(new rx0(this, (byte) 2));
-        this.d.addListener(new i8(this, c, vx0Var, b));
-        gl.n(this.d, 220.0d, 30.0d);
-        this.d.setDuration((long) (r11.getDuration() * 1.1f));
-        this.d.start();
+        return null;
     }
 
-    public final float c(boolean z) {
-        return (e(z) - Math.min(3.0f, e(z))) - (Utilities.i(4.0f - e(z), 0.5f, 0.0f) * (Math.min(3.0f, e(z)) / 3.0f));
+    public final void d(RectF rectF, float f) {
+        rectF.set(hl.L(4.0f), (getHeight() - hl.L(4.0f)) - hl.L(50.0f), getWidth() - hl.L(4.0f), getHeight() - hl.L(4.0f));
+        rectF.offset(0.0f, (-hl.L(8.0f)) * f);
+        float R1 = hl.R1(1.0f, 0.95f, Math.abs(f));
+        float centerX = rectF.centerX();
+        float centerY = rectF.centerY();
+        float width = rectF.width();
+        float height = rectF.height();
+        float f2 = (width / 2.0f) * R1;
+        rectF.left = centerX - f2;
+        rectF.right = centerX + f2;
+        float f3 = (height / 2.0f) * R1;
+        rectF.top = centerY - f3;
+        rectF.bottom = centerY + f3;
     }
 
-    @Override // android.view.View
-    public final void computeScroll() {
-        if (this.h.computeScrollOffset()) {
-            setScrollOffset(r0.getCurrY() / getScrollStep());
-            postInvalidateOnAnimation();
-        }
-    }
-
-    public final float d(boolean z) {
-        return Utilities.i(e(z), 1.0f, 0.0f) * ((-getScrollWindow()) / 3.0f);
-    }
-
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        RectF rectF;
-        ArrayList arrayList;
-        float f;
-        int i;
-        ff0 i0;
-        float f2;
-        int i2;
-        int i3;
-        float f3;
-        float f4;
-        ArrayList arrayList2;
-        float f5;
-        RectF rectF2;
-        int i4;
-        float f6;
-        float f7;
-        yx0 yx0Var = this;
-        super.dispatchDraw(canvas);
-        vx0 vx0Var = yx0Var.b;
-        float f8 = 1.0f;
-        float f9 = 0.0f;
-        int i5 = 1;
-        int[] iArr = yx0Var.b0;
-        int[] iArr2 = yx0Var.c0;
-        int i6 = 0;
-        RectF rectF3 = yx0Var.d0;
-        if (vx0Var != null) {
-            yx0Var.getLocationOnScreen(iArr2);
-            yx0Var.a.getLocationOnScreen(iArr);
-            yx0Var.a.d(rectF3, 0.0f);
-            rectF3.offset(iArr[0] - iArr2[0], iArr[1] - iArr2[1]);
-            canvas.save();
-            canvas.clipRect(0, 0, yx0Var.getMeasuredWidth(), yx0Var.getMeasuredHeight() - yx0Var.s);
-            wx0 d = yx0Var.b.d();
-            float f10 = yx0Var.e;
-            RectF rectF4 = yx0Var.f0;
-            float y = d.y(canvas, rectF3, f10, rectF4, f10);
-            if (yx0Var.c != null) {
-                Path path = yx0Var.g0;
-                path.rewind();
-                path.addRoundRect(rectF4, y, y, Path.Direction.CW);
-                canvas.save();
-                canvas.clipPath(path);
-                float B = ls6.B(1.0f, yx0Var.e, gl.L(50.0f), rectF4.top);
-                rectF3.set(rectF4.left, B, rectF4.right, gl.L(50.0f) + B);
-                yx0Var.a.setupTab(yx0Var.c);
-                yx0Var.c.a(canvas, rectF3, y, yx0Var.e, 1.0f);
-                rectF = rectF3;
-                canvas.restore();
-            } else {
-                rectF = rectF3;
-            }
-            canvas.restore();
-        } else {
-            rectF = rectF3;
-        }
-        if (yx0Var.W <= 0.0f) {
-            return;
-        }
-        canvas.save();
-        View view = yx0Var.T;
-        RectF rectF5 = yx0Var.R;
-        if (view != null) {
-            view.getLocationOnScreen(iArr);
-            yx0Var.getLocationOnScreen(iArr2);
-            rectF5.set(iArr[0] - iArr2[0], iArr[1] - iArr2[1], yx0Var.T.getWidth() + r1, yx0Var.T.getHeight() + (iArr[1] - iArr2[1]));
-        } else {
-            iArr[1] = 0;
-            iArr[0] = 0;
-            rectF5.set(0.0f, 0.0f, 0.0f, 0.0f);
-        }
-        canvas.clipRect(rectF5);
-        canvas.translate(rectF5.left, rectF5.top);
-        float width = rectF5.width();
-        float height = rectF5.height();
-        float f11 = 255.0f;
-        if (yx0Var.N != null) {
-            yx0Var.Q.reset();
-            float width2 = rectF5.width() / yx0Var.N.getWidth();
-            yx0Var.Q.postScale(width2, width2);
-            yx0Var.O.setLocalMatrix(yx0Var.Q);
-            yx0Var.P.setAlpha((int) (yx0Var.W * 255.0f));
-            canvas.drawRect(0.0f, 0.0f, width, height, yx0Var.P);
-        }
-        canvas.saveLayerAlpha(0.0f, 0.0f, width, height, kk7.d4, 31);
-        float f12 = width;
-        float L = gl.L(55.0f) + gl.L(40.0f) + gl.m;
-        float L2 = gl.L(68.0f);
-        int min = (int) Math.min(gl.L(340.0f), 0.95f * f12);
-        int height2 = (int) (gl.O1() ? rectF5.height() * 0.5f : 0.75f * height);
-        float f13 = f12 / 2.0f;
-        float f14 = 0.0f;
-        int i7 = 0;
-        while (true) {
-            arrayList = yx0Var.S;
-            f = f11;
-            if (i7 >= arrayList.size()) {
-                break;
-            }
-            f14 += ((xx0) arrayList.get(i7)).d.d >= 0 ? 1.0f : 0.0f;
-            i7++;
-            f11 = f;
-        }
-        float e = yx0Var.f.e(false, f14);
-        float R1 = gl.R1(0.0f, 1.0f - Utilities.i(yx0Var.getScrollWindow() <= 0.0f ? 0.0f : ((yx0Var.getScrollMin() - yx0Var.getScrollOffset()) / (yx0Var.getScrollWindow() * 0.15f)) * 0.2f, 1.0f, 0.0f), yx0Var.W);
-        int i8 = 0;
-        while (true) {
-            i = i5;
-            int i9 = i6;
-            if (i8 >= arrayList.size() + 1) {
-                break;
-            }
-            if (i8 == arrayList.size()) {
-                f6 = L;
-                f2 = L2;
-                i3 = min;
-                f3 = R1;
-                i2 = i8;
-                f4 = f12;
-                f7 = f8;
-                arrayList2 = arrayList;
-                f5 = e;
-                rectF2 = rectF;
-                i4 = height2;
-            } else {
-                xx0 xx0Var = (xx0) arrayList.get(i8);
-                if (i8 < arrayList.size()) {
-                    nx0 nx0Var = xx0Var.d;
-                }
-                nx0 nx0Var2 = xx0Var.d;
-                float f15 = f8;
-                float[] fArr = xx0Var.h;
-                float f16 = f9;
-                float[] fArr2 = xx0Var.g;
-                float f17 = L;
-                Matrix matrix = xx0Var.f;
-                float c = (e - f15) - nx0Var2.c();
-                f2 = L2;
-                i2 = i8;
-                float max = (c - Math.max(yx0Var.getScrollMin(), yx0Var.getScrollOffset())) / yx0Var.getScrollWindow();
-                float min2 = (Math.min(5.0f, c) * gl.L(6.0f)) + f17;
-                float f18 = height2;
-                float f19 = ((((height - f2) - (0.26f * f18)) - min2) * max) + min2;
-                float f20 = min / 2.0f;
-                i3 = min;
-                RectF rectF6 = yx0Var.e0;
-                rectF6.set(f13 - f20, f19, f13 + f20, f19 + f18);
-                int i10 = ((rectF6.top > height || rectF6.bottom < f16 || R1 < 0.1f) && c < e - 3.0f) ? i : i9;
-                yx0Var.a.d(rectF, Utilities.i(nx0Var2.c(), f15, f16));
-                rectF.offset(yx0Var.a.getX(), yx0Var.a.getY());
-                gl.a2(rectF, rectF6, R1, rectF6);
-                qx0 qx0Var = yx0Var.a;
-                if (qx0Var != null) {
-                    qx0Var.setupTab(nx0Var2);
-                }
-                if (rectF6.top > height || rectF6.bottom < 0.0f) {
-                    f3 = R1;
-                    f4 = f12;
-                    arrayList2 = arrayList;
-                    f5 = e;
-                    rectF2 = rectF;
-                    i4 = height2;
-                    f6 = f17;
-                    f7 = 1.0f;
-                } else {
-                    canvas.save();
-                    xx0Var.a.set(rectF6);
-                    matrix.reset();
-                    fArr2[i9] = rectF6.left;
-                    float f21 = rectF6.top;
-                    fArr2[i] = f21;
-                    float f22 = rectF6.right;
-                    fArr2[2] = f22;
-                    fArr2[3] = f21;
-                    fArr2[4] = f22;
-                    fArr2[5] = (rectF6.height() * 1.0f) + f21;
-                    fArr2[6] = rectF6.left;
-                    fArr2[7] = (rectF6.height() * 1.0f) + rectF6.top;
-                    fArr[i9] = rectF6.left;
-                    fArr[i] = rectF6.top - gl.L(0.0f);
-                    fArr[2] = rectF6.right;
-                    fArr[3] = rectF6.top - gl.L(0.0f);
-                    float f23 = R1 * 1.0f;
-                    fArr[4] = (gl.R1(1.0f, 0.83f, f23) * (rectF6.width() / 2.0f)) + rectF6.centerX();
-                    fArr[5] = (gl.R1(1.0f, 0.6f, f23) * ((rectF6.height() * 1.0f) + gl.L(0.0f))) + (rectF6.top - gl.L(0.0f));
-                    fArr[6] = rectF6.centerX() - (gl.R1(1.0f, 0.83f, f23) * (rectF6.width() / 2.0f));
-                    fArr[7] = (gl.R1(1.0f, 0.6f, f23) * ((rectF6.height() * 1.0f) + gl.L(0.0f))) + (rectF6.top - gl.L(0.0f));
-                    matrix.setPolyToPoly(fArr2, 0, fArr, 0, 4);
-                    canvas.concat(matrix);
-                    float R12 = gl.R1(nx0Var2.b(), 1.0f, yx0Var.W);
-                    float R13 = gl.R1(Utilities.l((c - e) + 2.0f), 1.0f, Utilities.l((R1 - 0.1f) / 0.8f));
-                    nx0 nx0Var3 = xx0Var.d;
-                    RadialGradient radialGradient = xx0Var.p;
-                    Paint paint = xx0Var.o;
-                    Paint paint2 = xx0Var.r;
-                    Matrix matrix2 = xx0Var.q;
-                    f3 = R1;
-                    px0 px0Var = xx0Var.c;
-                    arrayList2 = arrayList;
-                    Path path2 = xx0Var.n;
-                    f5 = e;
-                    Paint paint3 = xx0Var.e;
-                    rectF2 = rectF;
-                    RectF rectF7 = xx0Var.m;
-                    i4 = height2;
-                    Paint paint4 = xx0Var.l;
-                    f4 = f12;
-                    f7 = 1.0f;
-                    float i11 = Utilities.i(1.0f - ((Math.abs(xx0Var.i) - 0.3f) / 0.7f), 1.0f, 0.0f) * R12;
-                    if (i11 <= 0.0f) {
-                        f6 = f17;
+        Canvas canvas2;
+        getTabs();
+        ArrayList<vx0> tabDrawables = getTabDrawables();
+        if (this.H > 0.0f) {
+            this.a.setColor(this.h.a(this.f, false));
+            super.dispatchDraw(canvas);
+            int a = this.r.a(this.n, false);
+            float d = this.w.d(this.s);
+            if (this.b) {
+                int i = 0;
+                while (i < tabDrawables.size()) {
+                    vx0 vx0Var = tabDrawables.get(i);
+                    float c = vx0Var.c();
+                    float b = vx0Var.b();
+                    if (b <= 0.0f || c > 1.99f) {
+                        canvas2 = canvas;
                     } else {
-                        float f24 = f23 * 1.0f;
-                        float R14 = gl.R1(1.0f, 1.3f, f24);
-                        float currentActionBarHeight = ((a.getCurrentActionBarHeight() + gl.m) - gl.L(50.0f)) * 0.0f;
-                        canvas.save();
-                        canvas.rotate(xx0Var.i * 20.0f, (xx0Var.i * gl.L(50.0f)) + rectF6.centerX(), rectF6.bottom + gl.L(350.0f));
-                        float a = xx0Var.k.a(0.01f);
-                        canvas.scale(a, a, rectF6.centerX(), rectF6.centerY());
-                        float U1 = gl.U1(f23, gl.L(18.0f), gl.L(18.0f));
-                        if (i10 != 0) {
-                            paint4.setColor(i9);
-                            paint4.setShadowLayer(gl.L(30.0f), 0.0f, gl.L(10.0f), bkb.p1(i11 * f23 * 1.0f, TLObject.FLAG_29));
-                            canvas.drawRoundRect(rectF6, U1, U1, paint4);
-                            paint3.setAlpha((int) (i11 * f));
-                            canvas.drawRoundRect(rectF6, U1, U1, paint3);
-                            canvas.restore();
-                            f6 = f17;
-                            f7 = 1.0f;
-                        } else {
-                            path2.rewind();
-                            path2.addRoundRect(rectF6, U1, U1, Path.Direction.CW);
-                            canvas.save();
-                            paint4.setColor(0);
-                            paint4.setShadowLayer(gl.L(30.0f), 0.0f, gl.L(10.0f), bkb.p1(i11 * f23 * 1.0f, TLObject.FLAG_29));
-                            canvas.drawPath(path2, paint4);
-                            canvas.clipPath(path2);
-                            float f25 = i11 * f * f23;
-                            int i12 = (int) f25;
-                            paint3.setAlpha(i12);
-                            canvas.drawRoundRect(rectF6, U1, U1, paint3);
-                            canvas.save();
-                            canvas.translate(rectF6.left, ir2.i(gl.L(50.0f), R14, rectF6.top, currentActionBarHeight));
-                            canvas.scale(1.0f, gl.R1(1.0f, 1.25f, f24));
-                            if (px0Var != null && px0Var.m != null) {
-                                float width3 = rectF6.width() / px0Var.m.getWidth();
-                                canvas.scale(width3, width3);
-                                paint.setAlpha(i12);
-                                canvas.drawBitmap(px0Var.m, 0.0f, 0.0f, paint);
-                            }
-                            canvas.restore();
-                            canvas.save();
-                            paint2.setAlpha((int) (f25 * 1.0f));
-                            matrix2.reset();
-                            float height3 = rectF6.height() / f;
-                            matrix2.postScale(height3, height3);
-                            matrix2.postTranslate(rectF6.centerX(), rectF6.top);
-                            radialGradient.setLocalMatrix(matrix2);
-                            paint2.setShader(radialGradient);
-                            canvas.drawRect(rectF6, paint2);
-                            canvas.restore();
-                            rectF7.set(rectF6);
-                            rectF7.bottom = Math.min(rectF6.height(), gl.L(50.0f)) + rectF7.top;
-                            rectF7.offset(0.0f, currentActionBarHeight);
-                            nx0Var3.w = f23;
-                            f7 = 1.0f;
-                            canvas.scale(1.0f, R14, rectF7.centerX(), rectF7.top);
-                            float f26 = i11 * i11;
-                            f6 = f17;
-                            nx0Var3.a(canvas, rectF7, U1, f26, R13);
-                            canvas.restore();
-                            canvas.restore();
-                        }
+                        RectF rectF = this.F;
+                        d(rectF, c);
+                        vx0Var.w = 0.0f;
+                        boolean z = d > 0.5f;
+                        vx0Var.m = a;
+                        vx0Var.o = z;
+                        canvas2 = canvas;
+                        vx0Var.a(canvas2, rectF, hl.L(18.0f), b, 1.0f);
                     }
-                    canvas.restore();
+                    i++;
+                    canvas = canvas2;
                 }
             }
-            i8 = i2 + 1;
-            L = f6;
-            f8 = f7;
-            i5 = i;
-            R1 = f3;
-            arrayList = arrayList2;
-            e = f5;
-            rectF = rectF2;
-            height2 = i4;
-            L2 = f2;
-            f12 = f4;
-            min = i3;
-            f9 = 0.0f;
-            i6 = 0;
-            yx0Var = this;
         }
-        float f27 = L;
-        float f28 = f12;
-        canvas.save();
-        if (this.k0 == null) {
-            this.k0 = new xl3((byte) 7);
-        }
-        RectF rectF8 = gl.P;
-        rectF8.set(0.0f, 0.0f, f28, f27);
-        this.k0.s(canvas, rectF8, i, this.W);
-        canvas.restore();
-        canvas.restore();
-        if (this.h0 == null) {
-            this.h0 = new tgb(k96.M0(2131753096, null), 14.0f, gl.o());
-        }
-        if (this.j0 == null || this.i0 != bkb.I.o()) {
-            boolean o = bkb.I.o();
-            this.i0 = o;
-            if (o) {
-                i0 = bkb.i0(64, 64, 64, 64, 553648127, 872415231, 872415231);
-                this.j0 = i0;
-            } else {
-                i0 = bkb.i0(64, 64, 64, 64, 771751936, 1140850688, 1140850688);
-                this.j0 = i0;
-            }
-            i0.setCallback(this);
-        }
-        float L3 = this.h0.c + gl.L(24.0f);
-        float f29 = (f28 - L3) / 2.0f;
-        this.j0.setBounds((int) f29, (int) ((f27 - (gl.L(95.0f) / 2.0f)) - gl.L(14.0f)), (int) ((f28 + L3) / 2.0f), (int) ((f27 - (gl.L(95.0f) / 2.0f)) + gl.L(14.0f)));
-        this.j0.setAlpha((int) (this.W * f));
-        this.j0.draw(canvas);
-        this.h0.c(f29 + gl.L(12.0f), f27 - (gl.L(95.0f) / 2.0f), this.W, -1, canvas);
-        canvas.restore();
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchHoverEvent(MotionEvent motionEvent) {
-        ux0 ux0Var;
-        if (this.W <= 0.0f || (ux0Var = this.w) == null || !ux0Var.f(motionEvent)) {
+        wx0 wx0Var;
+        if (!this.b || getTabs().isEmpty() || (wx0Var = this.e) == null || !wx0Var.f(motionEvent)) {
             return super.dispatchHoverEvent(motionEvent);
         }
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:171:0x0437  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0467  */
-    /* JADX WARN: Type inference failed for: r8v28 */
-    /* JADX WARN: Type inference failed for: r8v29 */
-    /* JADX WARN: Type inference failed for: r8v3, types: [android.view.VelocityTracker, xx0] */
-    /* JADX WARN: Type inference failed for: r8v30 */
-    /* JADX WARN: Type inference failed for: r8v31 */
-    /* JADX WARN: Type inference failed for: r8v32 */
-    /* JADX WARN: Type inference failed for: r8v33 */
-    /* JADX WARN: Type inference failed for: r8v34 */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        boolean z;
-        ?? r8;
-        VelocityTracker velocityTracker;
-        VelocityTracker velocityTracker2;
-        boolean z2;
-        xx0 xx0Var;
-        final byte b = 0;
-        if ((gl.O1() && motionEvent.getAction() == 0 && !this.R.contains(motionEvent.getX(), motionEvent.getY())) || this.W <= 0.0f) {
-            return false;
+    public final void e(xx0 xx0Var) {
+        zu1 zu1Var;
+        nr1 nr1Var;
+        e Q = LaunchActivity.Q();
+        if (Q == null || Q.getParentActivity() == null) {
+            return;
         }
-        VelocityTracker velocityTracker3 = this.J;
-        if (velocityTracker3 == null) {
-            velocityTracker3 = VelocityTracker.obtain();
-            this.J = velocityTracker3;
+        boolean z = Q instanceof zu1;
+        if (z && (nr1Var = (zu1Var = (zu1) Q).a0) != null) {
+            nr1Var.U();
+            zu1Var.a0.O0(true, false, true);
         }
-        velocityTracker3.addMovement(motionEvent);
-        int action = motionEvent.getAction();
-        OverScroller overScroller = this.h;
-        if (action == 0) {
-            this.G = System.currentTimeMillis();
-            this.F = motionEvent.getX();
-            this.E = motionEvent.getY();
-            float x = motionEvent.getX();
-            float y = motionEvent.getY();
-            if (this.W >= 1.0f) {
-                ArrayList arrayList = this.S;
-                for (int size = arrayList.size() - 1; size >= 0; size--) {
-                    xx0Var = (xx0) arrayList.get(size);
-                    if (Math.abs(xx0Var.i) < 0.4f && xx0Var.a.contains(x, y)) {
-                        break;
-                    }
+        if (xx0Var.J == null) {
+            new y0(this, xx0Var, (byte) 8).a(Q);
+            if (xx0Var.C) {
+                if (z && ((zu1) Q).a() == xx0Var.a.c) {
+                    return;
                 }
+                this.c = true;
+                hl.d3(new tu0(this, Q, zu1.ha(xx0Var.a.c), (byte) 3), 220L);
+                return;
             }
-            xx0Var = null;
-            this.x = xx0Var;
-            ff0 ff0Var = this.j0;
-            boolean z3 = ff0Var != null && ff0Var.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-            this.L = z3;
-            if (z3) {
-                this.x = null;
-            }
-            ff0 ff0Var2 = this.j0;
-            if (ff0Var2 != null) {
-                ff0Var2.setHotspot(motionEvent.getX(), motionEvent.getY());
-                this.j0.setState(this.L ? new int[]{R.attr.state_pressed, R.attr.state_enabled} : new int[0]);
-            }
-            this.H = false;
-            this.I = false;
-            this.y = false;
-            xx0 xx0Var2 = this.x;
-            if (xx0Var2 != null) {
-                ValueAnimator valueAnimator = xx0Var2.j;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                boolean contains = this.x.d.l.getBounds().contains((int) (motionEvent.getX() - this.x.a.left), (int) ((motionEvent.getY() - this.x.a.top) - gl.L(24.0f)));
-                this.y = contains;
-                if (contains) {
-                    ff0 ff0Var3 = this.x.d.l;
-                    float x2 = motionEvent.getX();
-                    RectF rectF = this.d0;
-                    ff0Var3.setHotspot((int) (x2 - rectF.left), (int) (motionEvent.getY() - rectF.centerY()));
-                }
-                this.x.k.c(!this.y);
-                this.x.d.l.setState(this.y ? new int[]{R.attr.state_pressed, R.attr.state_enabled} : new int[0]);
-            }
-            this.K = motionEvent.getY();
-            if (!overScroller.isFinished()) {
-                overScroller.abortAnimation();
-            }
-            ValueAnimator valueAnimator2 = this.U;
-            if (valueAnimator2 == null) {
-                return true;
-            }
+            return;
+        }
+        e sheetFragment = this.d.getSheetFragment();
+        o oVar = xx0Var.J;
+        tw twVar = oVar.L;
+        tx0.a(twVar);
+        sheetFragment.addSheet(twVar);
+        sw swVar = twVar.c;
+        twVar.h = false;
+        twVar.n = false;
+        ValueAnimator valueAnimator = twVar.E;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator valueAnimator2 = twVar.F;
+        if (valueAnimator2 != null) {
             valueAnimator2.cancel();
-            this.U = null;
-            return true;
         }
-        if (motionEvent.getAction() == 2) {
-            xx0 xx0Var3 = this.x;
-            if (xx0Var3 != null) {
-                if (xx0Var3.k.i) {
-                    if (!this.I && !this.H && loe.a(this.F, motionEvent.getY(), motionEvent.getX(), motionEvent.getY()) > gl.e) {
-                        this.I = true;
-                    }
-                    if (!this.H && !this.I && loe.a(motionEvent.getX(), this.E, motionEvent.getX(), motionEvent.getY()) > gl.e) {
-                        if (!overScroller.isFinished()) {
-                            overScroller.abortAnimation();
-                        }
-                        ValueAnimator valueAnimator3 = this.U;
-                        if (valueAnimator3 != null) {
-                            valueAnimator3.cancel();
-                            this.U = null;
-                        }
-                        this.H = true;
-                    }
-                    if (this.a != null && (this.H || this.I)) {
-                        this.x.k.c(false);
-                        ValueAnimator valueAnimator4 = this.x.j;
-                        if (valueAnimator4 != null) {
-                            valueAnimator4.cancel();
-                        }
-                    }
-                } else {
-                    if (!this.y && !this.I && !this.H && loe.a(this.F, motionEvent.getY(), motionEvent.getX(), motionEvent.getY()) > gl.e) {
-                        this.I = true;
-                    }
-                    if (!this.y && !this.H && !this.I && loe.a(motionEvent.getX(), this.E, motionEvent.getX(), motionEvent.getY()) > gl.e) {
-                        if (!overScroller.isFinished()) {
-                            overScroller.abortAnimation();
-                        }
-                        ValueAnimator valueAnimator5 = this.U;
-                        if (valueAnimator5 != null) {
-                            valueAnimator5.cancel();
-                            this.U = null;
-                        }
-                        this.H = true;
-                    }
-                    if (this.y) {
-                        boolean contains2 = this.x.d.l.getBounds().contains((int) (motionEvent.getX() - this.x.a.left), (int) ((motionEvent.getY() - this.x.a.top) - gl.L(24.0f)));
-                        this.y = contains2;
-                        if (!contains2) {
-                            this.x.d.l.setState(new int[0]);
-                        }
-                    }
-                }
-                xx0 xx0Var4 = this.x;
-                if (!xx0Var4.k.i) {
-                    if (this.I) {
-                        xx0Var4.i = (motionEvent.getX() - this.F) / gl.L(300.0f);
-                    } else if (this.H) {
-                        float y2 = motionEvent.getY() - this.K;
-                        if (this.M < getScrollMin()) {
-                            y2 *= 1.0f - (Utilities.i((getScrollMin() - this.M) / getScrollStep(), 1.0f, 0.0f) * 0.5f);
-                        }
-                        setScrollOffset(Utilities.i(((getScrollOffset() * getScrollStep()) - y2) / getScrollStep(), getScrollMax(), getScrollMin() - (getScrollStep() * 1.4f)));
-                        invalidate();
-                    }
-                }
-                invalidate();
-            }
-            ff0 ff0Var4 = this.j0;
-            if (ff0Var4 != null && this.L) {
-                boolean z4 = this.x == null && ff0Var4.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-                this.L = z4;
-                if (!z4) {
-                    this.j0.setState(new int[0]);
-                }
-            }
-            this.K = motionEvent.getY();
-            return true;
-        }
-        if (motionEvent.getAction() != 1) {
-            if (motionEvent.getAction() != 3) {
-                return true;
-            }
-            xx0 xx0Var5 = this.x;
-            if (xx0Var5 != null) {
-                xx0Var5.a(0.0f);
-                this.x.k.c(false);
-                this.x.d.l.setState(new int[0]);
-            }
-            this.x = null;
-            this.y = false;
-            VelocityTracker velocityTracker4 = this.J;
-            if (velocityTracker4 != null) {
-                velocityTracker4.recycle();
-                this.J = null;
-            }
-            this.L = false;
-            ff0 ff0Var5 = this.j0;
-            if (ff0Var5 == null) {
-                return true;
-            }
-            ff0Var5.setState(new int[0]);
-            return true;
-        }
-        xx0 xx0Var6 = this.x;
-        if (xx0Var6 != null) {
-            if (this.a == null || Math.abs(xx0Var6.i) <= 0.4f) {
-                this.x.a(0.0f);
-                if (this.a != null && this.x.k.i) {
-                    a(false);
-                    xx0 xx0Var7 = this.x;
-                    xx0Var7.getClass();
-                    this.a.e(xx0Var7.c);
-                } else if (this.H) {
-                    if (this.M < getScrollMin() - (getScrollWindow() * 0.15f)) {
-                        a(false);
-                    } else if (this.M < getScrollMin()) {
-                        h(getScrollMin());
-                    } else {
-                        this.J.computeCurrentVelocity(1000, this.n);
-                        float yVelocity = this.J.getYVelocity();
-                        if (Math.abs(yVelocity) > this.r) {
-                            velocityTracker = null;
-                            z = true;
-                            overScroller.fling(0, (int) (getScrollOffset() * getScrollStep()), 0, (int) (-yVelocity), 0, 0, (int) (getScrollMin() * getScrollStep()), (int) (getScrollMax() * getScrollStep()), 0, (int) (getScrollStep() * 0.1f));
-                        } else {
-                            velocityTracker = null;
-                            z = true;
-                            overScroller.startScroll(0, (int) (getScrollOffset() * getScrollStep()), 0, 0, 0);
-                        }
-                        this.J.recycle();
-                        this.J = velocityTracker;
-                        postInvalidateOnAnimation();
-                        velocityTracker2 = velocityTracker;
-                        this.x.k.c(false);
-                        z2 = this.y;
-                        if (z2) {
-                            z2 = this.x.d.l.getBounds().contains((int) (motionEvent.getX() - this.x.a.left), (int) ((motionEvent.getY() - this.x.a.top) - gl.L(24.0f)));
-                            this.y = z2;
-                        }
-                        if (z2) {
-                            final xx0 xx0Var8 = this.x;
-                            qx0 qx0Var = this.a;
-                            px0 px0Var = xx0Var8.c;
-                            final byte b2 = z ? (byte) 1 : (byte) 0;
-                            qx0Var.g(px0Var, new p8c(this) { // from class: sx0
-                                public final /* synthetic */ yx0 b;
-
-                                {
-                                    this.b = this;
-                                }
-
-                                @Override // p8c
-                                public final void a(Object obj) {
-                                    byte b3 = b2;
-                                    xx0 xx0Var9 = xx0Var8;
-                                    yx0 yx0Var = this.b;
-                                    Boolean bool = (Boolean) obj;
-                                    switch (b3) {
-                                        case 0:
-                                            if (!bool.booleanValue()) {
-                                                xx0Var9.a(0.0f);
-                                                break;
-                                            } else {
-                                                xx0Var9.a(xx0Var9.i < 0.0f ? -1.0f : 1.0f);
-                                                yx0Var.h(Utilities.i(yx0Var.M, yx0Var.c(false), yx0Var.d(false)));
-                                                if (yx0Var.a.getTabs().isEmpty()) {
-                                                    yx0Var.a(false);
-                                                    break;
-                                                }
-                                            }
-                                            break;
-                                        default:
-                                            if (!bool.booleanValue()) {
-                                                xx0Var9.a(0.0f);
-                                                break;
-                                            } else {
-                                                xx0Var9.a(1.0f);
-                                                yx0Var.h(Utilities.i(yx0Var.M, yx0Var.c(false), yx0Var.d(false)));
-                                                if (yx0Var.a.getTabs().isEmpty()) {
-                                                    yx0Var.a(false);
-                                                    break;
-                                                }
-                                            }
-                                            break;
-                                    }
-                                }
-                            });
-                        }
-                        this.x.d.l.setState(new int[0]);
-                        r8 = velocityTracker2;
-                    }
-                    velocityTracker = null;
-                    z = true;
-                    this.J.recycle();
-                    this.J = velocityTracker;
-                    postInvalidateOnAnimation();
-                    velocityTracker2 = velocityTracker;
-                    this.x.k.c(false);
-                    z2 = this.y;
-                    if (z2) {
-                    }
-                    if (z2) {
-                    }
-                    this.x.d.l.setState(new int[0]);
-                    r8 = velocityTracker2;
-                }
-            } else {
-                final xx0 xx0Var9 = this.x;
-                this.a.g(xx0Var9.c, new p8c(this) { // from class: sx0
-                    public final /* synthetic */ yx0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // p8c
-                    public final void a(Object obj) {
-                        byte b3 = b;
-                        xx0 xx0Var92 = xx0Var9;
-                        yx0 yx0Var = this.b;
-                        Boolean bool = (Boolean) obj;
-                        switch (b3) {
-                            case 0:
-                                if (!bool.booleanValue()) {
-                                    xx0Var92.a(0.0f);
-                                    break;
-                                } else {
-                                    xx0Var92.a(xx0Var92.i < 0.0f ? -1.0f : 1.0f);
-                                    yx0Var.h(Utilities.i(yx0Var.M, yx0Var.c(false), yx0Var.d(false)));
-                                    if (yx0Var.a.getTabs().isEmpty()) {
-                                        yx0Var.a(false);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (!bool.booleanValue()) {
-                                    xx0Var92.a(0.0f);
-                                    break;
-                                } else {
-                                    xx0Var92.a(1.0f);
-                                    yx0Var.h(Utilities.i(yx0Var.M, yx0Var.c(false), yx0Var.d(false)));
-                                    if (yx0Var.a.getTabs().isEmpty()) {
-                                        yx0Var.a(false);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-            }
-            velocityTracker2 = null;
-            z = true;
-            this.x.k.c(false);
-            z2 = this.y;
-            if (z2) {
-            }
-            if (z2) {
-            }
-            this.x.d.l.setState(new int[0]);
-            r8 = velocityTracker2;
-        } else {
-            Object obj = null;
-            z = true;
-            if (this.L) {
-                this.a.f();
-                a(false);
-                r8 = obj;
-            } else {
-                r8 = obj;
-                if (loe.a(this.F, this.E, motionEvent.getX(), motionEvent.getY()) <= gl.e) {
-                    r8 = obj;
-                    if (!this.H) {
-                        r8 = obj;
-                        if (!this.I) {
-                            r8 = obj;
-                            if (System.currentTimeMillis() - this.G <= ViewConfiguration.getTapTimeout() * 1.2f) {
-                                a(false);
-                                r8 = obj;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        this.x = r8;
-        this.y = false;
-        VelocityTracker velocityTracker5 = this.J;
-        if (velocityTracker5 != null) {
-            velocityTracker5.recycle();
-            this.J = r8;
-        }
-        this.L = false;
-        ff0 ff0Var6 = this.j0;
-        if (ff0Var6 == null) {
-            return z;
-        }
-        ff0Var6.setState(new int[0]);
-        return z;
-    }
-
-    public final float e(boolean z) {
-        float f = 0.0f;
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.S;
-            if (i >= arrayList.size()) {
-                break;
-            }
-            f += ((xx0) arrayList.get(i)).d.d >= 0 ? 1.0f : 0.0f;
-            i++;
-        }
-        return z ? this.f.e(false, f) : f;
+        twVar.y = 0.0f;
+        twVar.x = 0.0f;
+        twVar.r();
+        twVar.A();
+        swVar.invalidate();
+        swVar.requestLayout();
+        oVar.W(sheetFragment.getParentActivity(), sheetFragment);
+        twVar.q(sheetFragment);
+        twVar.o();
+        h(this.x, xx0Var, false);
     }
 
     public final void f() {
-        nx0 nx0Var;
-        qx0 qx0Var = this.a;
-        if (qx0Var == null || !(qx0Var.getParent() instanceof View)) {
+        ArrayList<xx0> tabs = getTabs();
+        ArrayList<vx0> tabDrawables = getTabDrawables();
+        for (int i = 0; i < tabs.size(); i++) {
+            tabs.get(i).a();
+        }
+        tabs.clear();
+        for (int i2 = 0; i2 < tabDrawables.size(); i2++) {
+            tabDrawables.get(i2).d = -1;
+        }
+        n();
+        o(true);
+        invalidate();
+        tabs.isEmpty();
+    }
+
+    public final void g(xx0 xx0Var, pcc pccVar) {
+        String str;
+        if (xx0Var == null) {
+            pccVar.a(Boolean.TRUE);
             return;
         }
-        HashSet hashSet = ow0.b1;
-        if (!hashSet.isEmpty()) {
-            Iterator it = new HashSet(hashSet).iterator();
-            while (it.hasNext()) {
-                ((ow0) it.next()).m(true);
-            }
-            gl.d3(new nv0(this, (byte) 5), 100L);
+        if (!xx0Var.y) {
+            h(this.x, xx0Var, true);
+            pccVar.a(Boolean.TRUE);
             return;
         }
-        ValueAnimator valueAnimator = this.d;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.d = null;
-        }
-        View view = (View) this.a.getParent();
-        this.T = view;
-        int[] iArr = this.b0;
-        if (view != null) {
-            view.getLocationOnScreen(iArr);
+        TLRPC.User X1 = uc7.s1(xx0Var.a.a).X1(Long.valueOf(xx0Var.a.c));
+        if (X1 != null) {
+            str = lv2.m(0, X1.first_name, X1.last_name);
         } else {
-            iArr[1] = 0;
-            iArr[0] = 0;
+            gzc gzcVar = xx0Var.a;
+            str = gzcVar.g == 6 ? gzcVar.e : null;
         }
-        int[] iArr2 = this.c0;
-        getLocationOnScreen(iArr2);
-        this.R.set(iArr[0] - iArr2[0], iArr[1] - iArr2[1], this.T.getWidth() + r5, this.T.getHeight() + (iArr[1] - iArr2[1]));
-        View view2 = this.T;
-        gl.m0 = true;
-        this.N = gl.h2(14.0f, 14, view2);
-        gl.m0 = false;
-        Paint paint = new Paint(1);
-        this.P = paint;
-        Bitmap bitmap = this.N;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.O = bitmapShader;
-        paint.setShader(bitmapShader);
-        ColorMatrix colorMatrix = new ColorMatrix();
-        gl.i(colorMatrix, bkb.I.o() ? 0.08f : 0.25f);
-        this.P.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        this.Q = new Matrix();
-        ArrayList arrayList = this.S;
-        arrayList.clear();
-        ArrayList<px0> tabs = this.a.getTabs();
-        ArrayList<nx0> tabDrawables = this.a.getTabDrawables();
-        for (int size = tabs.size() - 1; size >= 0; size--) {
-            px0 px0Var = tabs.get(size);
-            int i = 0;
-            while (true) {
-                if (i >= tabDrawables.size()) {
-                    nx0Var = null;
-                    break;
+        boolean[] zArr = {false};
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
+        id idVar = alertDialog$Builder.a;
+        idVar.S = str;
+        idVar.U = ob6.M0(2131752898, null);
+        alertDialog$Builder.j(ob6.M0(2131752897, null), new xg(this, zArr, xx0Var, pccVar, r9));
+        alertDialog$Builder.g(ob6.M0(2131752570, null), new ie(zArr, (Object) pccVar, (Object) r9, (byte) 8));
+        id[] idVarArr = {idVar};
+        idVar.setOnDismissListener(new ux0(zArr, pccVar));
+        idVarArr[0].show();
+        yob.X((TextView) idVarArr[0].c(-1), aob.q7, null);
+    }
+
+    public Paint getBackgroundPaint() {
+        return this.a;
+    }
+
+    public int getExpandedHeight() {
+        int size = getTabs().size();
+        if (size == 0) {
+            return 0;
+        }
+        return size == 1 ? hl.L(60.0f) : hl.L(68.0f);
+    }
+
+    public ArrayList<vx0> getTabDrawables() {
+        int i = this.x;
+        Integer valueOf = Integer.valueOf(i);
+        HashMap hashMap = M;
+        ArrayList<vx0> arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList != null) {
+            return arrayList;
+        }
+        Integer valueOf2 = Integer.valueOf(i);
+        ArrayList<vx0> arrayList2 = new ArrayList<>();
+        hashMap.put(valueOf2, arrayList2);
+        return arrayList2;
+    }
+
+    public ArrayList<xx0> getTabs() {
+        int i = this.x;
+        Integer valueOf = Integer.valueOf(i);
+        HashMap hashMap = L;
+        ArrayList<xx0> arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList != null) {
+            return arrayList;
+        }
+        Integer valueOf2 = Integer.valueOf(i);
+        ArrayList<xx0> arrayList2 = new ArrayList<>();
+        hashMap.put(valueOf2, arrayList2);
+        return arrayList2;
+    }
+
+    public final boolean h(int i, xx0 xx0Var, boolean z) {
+        Integer valueOf = Integer.valueOf(i);
+        HashMap hashMap = L;
+        ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList == null) {
+            Integer valueOf2 = Integer.valueOf(i);
+            ArrayList arrayList2 = new ArrayList();
+            hashMap.put(valueOf2, arrayList2);
+            arrayList = arrayList2;
+        }
+        Integer valueOf3 = Integer.valueOf(i);
+        HashMap hashMap2 = M;
+        ArrayList arrayList3 = (ArrayList) hashMap2.get(valueOf3);
+        if (arrayList3 == null) {
+            Integer valueOf4 = Integer.valueOf(i);
+            arrayList3 = new ArrayList();
+            hashMap2.put(valueOf4, arrayList3);
+        }
+        arrayList.remove(xx0Var);
+        if (z) {
+            xx0Var.a();
+        }
+        for (int i2 = 0; i2 < arrayList3.size(); i2++) {
+            vx0 vx0Var = (vx0) arrayList3.get(i2);
+            int indexOf = arrayList.indexOf(vx0Var.a);
+            vx0Var.d = indexOf;
+            if (indexOf >= 0) {
+                vx0Var.c = indexOf;
+            }
+        }
+        n();
+        hl.d3(new tu0(this, arrayList3, xx0Var, (byte) 4), 320L);
+        o(true);
+        invalidate();
+        wx0 wx0Var = this.e;
+        if (wx0Var != null) {
+            wx0Var.i();
+        }
+        return arrayList.isEmpty();
+    }
+
+    public final void i(int i, boolean z) {
+        if (i != this.f) {
+            ActionBarLayout actionBarLayout = this.d;
+            if (!actionBarLayout.R || actionBarLayout.U) {
+                z = false;
+            }
+            this.f = i;
+            int v = aob.v(i, aob.p1((hl.B(i) > 0.721f ? 1 : (hl.B(i) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
+            this.n = v;
+            this.s = hl.B(v) < 0.721f;
+            if (!z) {
+                this.h.a(this.f, true);
+                this.r.a(this.n, true);
+                this.w.f(this.s, true);
+            }
+            invalidate();
+        }
+    }
+
+    public final boolean j(float f, float f2, int i) {
+        ArrayList<xx0> tabs = getTabs();
+        ArrayList<vx0> tabDrawables = getTabDrawables();
+        if (this.b) {
+            xx0 xx0Var = tabs.isEmpty() ? null : tabs.get(0);
+            vx0 c = c(xx0Var);
+            if (c != null) {
+                hf0 hf0Var = c.l;
+                float c2 = c.c();
+                RectF rectF = this.F;
+                d(rectF, c2);
+                byte b = 2;
+                if (i == 0 || i == 2) {
+                    boolean contains = hf0Var.getBounds().contains((int) (f - rectF.left), (int) (f2 - rectF.centerY()));
+                    this.y = contains;
+                    this.E = !contains && rectF.contains(f, f2);
+                    hf0Var.setState(this.y ? new int[]{R.attr.state_pressed, R.attr.state_enabled} : new int[0]);
+                } else if (i == 1 || i == 3) {
+                    if (this.E && i == 1) {
+                        b();
+                    } else if (this.y && i == 1) {
+                        g(xx0Var, new bm0(b));
+                    }
+                    this.y = false;
+                    this.E = false;
+                    hf0Var.setState(new int[0]);
                 }
-                nx0Var = tabDrawables.get(i);
-                if (nx0Var.a == px0Var) {
-                    break;
+                for (int i2 = 0; i2 < tabDrawables.size(); i2++) {
+                    if (tabDrawables.get(i2) != c) {
+                        tabDrawables.get(i2).l.setState(new int[0]);
+                    }
+                }
+            } else {
+                this.E = false;
+                this.y = false;
+            }
+        } else {
+            this.E = false;
+            this.y = false;
+        }
+        return this.E || this.y;
+    }
+
+    public final xx0 k(r47 r47Var) {
+        TLRPC.Message message;
+        TLRPC.MessageMedia messageMedia;
+        TLRPC.WebPage webPage;
+        if (r47Var == null || (message = r47Var.k) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
+            return null;
+        }
+        return m(webPage);
+    }
+
+    public final xx0 l(gzc gzcVar) {
+        Integer valueOf = Integer.valueOf(this.x);
+        HashMap hashMap = L;
+        ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList == null) {
+            Integer valueOf2 = Integer.valueOf(this.x);
+            ArrayList arrayList2 = new ArrayList();
+            hashMap.put(valueOf2, arrayList2);
+            arrayList = arrayList2;
+        }
+        for (int i = 0; i < arrayList.size(); i++) {
+            xx0 xx0Var = (xx0) arrayList.get(i);
+            if (gzcVar.equals(xx0Var.a)) {
+                e(xx0Var);
+                return xx0Var;
+            }
+        }
+        return null;
+    }
+
+    public final xx0 m(TLRPC.WebPage webPage) {
+        if (webPage == null) {
+            return null;
+        }
+        ArrayList<xx0> tabs = getTabs();
+        for (int i = 0; i < tabs.size(); i++) {
+            xx0 xx0Var = tabs.get(i);
+            o oVar = xx0Var.J;
+            if (oVar != null && !oVar.e0.isEmpty()) {
+                Object g = c00.g(1, xx0Var.J.e0);
+                if ((g instanceof TLRPC.WebPage) && ((TLRPC.WebPage) g).id == webPage.id) {
+                    e(xx0Var);
+                    return xx0Var;
+                }
+            }
+        }
+        return null;
+    }
+
+    public final void n() {
+        CharSequence m;
+        ArrayList<xx0> tabs = getTabs();
+        ArrayList<vx0> tabDrawables = getTabDrawables();
+        CharSequence charSequence = null;
+        for (int i = 0; i < tabDrawables.size(); i++) {
+            vx0 vx0Var = tabDrawables.get(i);
+            if (tabs.size() <= 1 || vx0Var.c != 0) {
+                m = pv3.m(vx0Var.a.b(), getTextPaint().getFontMetricsInt(), false, null, 0);
+                vx0Var.v = null;
+            } else {
+                m = pv3.m(ob6.G(tabs.size() - 1, "BotMoreTabs", vx0Var.a.b()), getTextPaint().getFontMetricsInt(), false, null, 0);
+                if (m == null) {
+                    vx0Var.v = null;
                 } else {
-                    i++;
+                    vx0Var.v = new pkb(m, 17.0f, hl.o());
                 }
             }
-            if (nx0Var != null) {
-                arrayList.add(new xx0(this, px0Var, nx0Var));
+            charSequence = m;
+        }
+        if (tabs.isEmpty()) {
+            setImportantForAccessibility(2);
+            setContentDescription(ob6.a0(null, null, 2131754744, ""));
+        } else {
+            setImportantForAccessibility(1);
+            if (charSequence == null) {
+                charSequence = "";
+            }
+            setContentDescription(ob6.a0(null, null, 2131754744, charSequence));
+        }
+    }
+
+    public final void o(boolean z) {
+        if (this.I != getExpandedHeight()) {
+            ValueAnimator valueAnimator = this.G;
+            if (valueAnimator != null) {
+                this.G = null;
+                valueAnimator.cancel();
+            }
+            this.I = getExpandedHeight();
+            Iterator it = this.K.iterator();
+            while (it.hasNext()) {
+                ((Runnable) it.next()).run();
+            }
+            if (z) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.H, this.I);
+                this.G = ofFloat;
+                ofFloat.addUpdateListener(new g0(this, (byte) 20));
+                this.G.addListener(new h0(this, (byte) 26));
+                this.G.setDuration(250L);
+                this.G.setInterpolator(hb.w);
+                this.G.start();
+            } else {
+                this.H = this.I;
+                invalidate();
+            }
+            Object parent = getParent();
+            if (parent instanceof View) {
+                WeakHashMap weakHashMap = ihc.a;
+                ygc.c((View) parent);
             }
         }
-        this.f.e(true, arrayList.size());
-        setScrollOffset(getScrollMax());
-        a(true);
     }
 
-    public float getScrollMax() {
-        return c(true);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return j(motionEvent.getX(), motionEvent.getY(), motionEvent.getAction()) || super.onTouchEvent(motionEvent);
     }
 
-    public float getScrollMin() {
-        return d(true);
-    }
-
-    public float getScrollOffset() {
-        return this.M;
-    }
-
-    public float getScrollRange() {
-        return e(true);
-    }
-
-    public float getScrollWindow() {
-        return Math.min(3.0f, getScrollRange());
-    }
-
-    public final void h(float f) {
-        ValueAnimator valueAnimator = this.U;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.U = null;
+    public void setCurrentAccount(int i) {
+        if (this.x != i) {
+            this.x = i;
+            o(false);
+            invalidate();
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M, f);
-        this.U = ofFloat;
-        ofFloat.addUpdateListener(new rx0(this, (byte) 1));
-        this.U.setDuration(250L);
-        this.U.setInterpolator(s33.h);
-        this.U.start();
     }
 
-    public void setScrollOffset(float f) {
-        this.M = f;
+    public void setNavigationBarColor(int i) {
+        i(i, true);
     }
 
-    public void setTabsView(qx0 qx0Var) {
-        this.a = qx0Var;
+    public void setupTab(vx0 vx0Var) {
+        int a = this.r.a(this.n, false);
+        float d = this.w.d(this.s);
+        vx0Var.w = 0.0f;
+        boolean z = d > 0.5f;
+        vx0Var.m = a;
+        vx0Var.o = z;
     }
 
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.j0 || super.verifyDrawable(drawable);
-    }
-
-    public void setSlowerDismiss(boolean z) {
+        super.verifyDrawable(drawable);
+        return true;
     }
 }

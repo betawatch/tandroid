@@ -1,229 +1,146 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sha extends View implements x74 {
-    public int E;
-    public int F;
-    public int G;
-    public final pha a;
-    public final boolean b;
-    public final rha c;
-    public final qha d;
-    public final Drawable e;
-    public final ih2 f;
-    public final TextPaint h;
-    public final Paint n;
-    public final RectF r;
-    public CharSequence s;
-    public float w;
-    public final fm0 x;
-    public final fm0 y;
+public final class sha extends c79 {
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public int n;
+    public final /* synthetic */ eja r;
 
-    public sha(Context context, pha phaVar, String str) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.h = textPaint;
-        this.n = new Paint(1);
-        this.r = new RectF();
-        s33 s33Var = s33.h;
-        this.x = new fm0(0, this, s33Var, 380L, true);
-        this.y = new fm0(1, this, s33Var, 250L, false);
-        this.a = phaVar;
-        this.b = true;
-        this.c = (rha) wcd.j.a();
-        this.d = (qha) wcd.k.a();
-        this.s = str;
-        this.e = context.getDrawable(R.drawable.ic_ab_done).mutate();
-        ih2 ih2Var = new ih2(gl.L(18.0f), gl.L(2.0f), -1);
-        this.f = ih2Var;
-        ih2Var.setCallback(this);
-        textPaint.setTypeface(gl.o());
-        textPaint.setTextSize(gl.L(15.0f));
-        c();
-        CharSequence charSequence = this.s;
-        this.w = charSequence != null ? textPaint.measureText(charSequence, 0, charSequence.length()) : 0.0f;
-        setContentDescription(str);
-        setOnClickListener(new ik8(this, (byte) 28));
+    public sha(eja ejaVar, Context context) {
+        this.r = ejaVar;
+        this.c = context;
     }
 
-    public final void a(boolean z, boolean z2) {
-        y74 y74Var;
-        fm0 fm0Var = this.x;
-        if (fm0Var.f == z && (z2 || (y74Var = fm0Var.h) == null || !y74Var.h)) {
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        int i = f89Var.f;
+        return i == 14 || i == 25;
+    }
+
+    public final void E(long j) {
+        e eVar = this.r.y1;
+        if (this.e) {
             return;
         }
-        pha phaVar = this.a;
-        fm0Var.a(z, z2 && phaVar.y());
-        p(0, fm0Var.e, 0.0f, null);
-        phaVar.requestLayout();
-    }
-
-    public final void b(boolean z) {
-        this.y.a(z, this.a.y());
-        invalidate();
-    }
-
-    public final void c() {
-        pha phaVar = this.a;
-        wjb wjbVar = phaVar.a;
-        this.E = bkb.v0(bkb.Ei, wjbVar);
-        this.F = bm2.f(0.5f, bkb.v0(bkb.Z6, wjbVar), this.E);
-        int v0 = bkb.v0(bkb.Ii, wjbVar);
-        this.G = v0;
-        int i = phaVar.g0;
-        rha rhaVar = this.c;
-        rha rhaVar2 = rha.b;
-        if (rhaVar != rhaVar2) {
-            v0 = i;
+        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
+        TLRPC.InputUser o1 = eVar.getMessagesController().o1(F());
+        tL_messages_getCommonChats.user_id = o1;
+        if (o1 instanceof TLRPC.TL_inputUserEmpty) {
+            return;
         }
-        this.e.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.SRC_IN));
-        this.f.b(v0);
-        this.h.setColor(v0);
-        setBackground(bkb.Y(rhaVar == rhaVar2 ? bkb.p1(0.2f, this.G) : phaVar.i0, gl.L(23.0f), gl.L(23.0f)));
-        invalidate();
+        tL_messages_getCommonChats.limit = 100;
+        tL_messages_getCommonChats.max_id = j;
+        this.e = true;
+        f();
+        this.n = eVar.getConnectionsManager().sendRequest(tL_messages_getCommonChats, new yp9(this, (byte) 2));
+        eVar.getConnectionsManager().bindRequestToGuid(this.n, eVar.getClassGuid());
     }
 
-    public int getButtonId() {
-        return this.b ? 1 : 0;
+    public final long F() {
+        eja ejaVar = this.r;
+        long j = ejaVar.m1;
+        return wf3.B(j) ? ejaVar.y1.getMessagesController().a1(Integer.valueOf((int) (j & 4294967295L))).user_id : j;
     }
 
-    public int getButtonWidth() {
-        if (this.d == qha.a || TextUtils.isEmpty(this.s)) {
-            return gl.L(46.0f);
+    public final boolean G() {
+        TLRPC.User X1;
+        return (this.d.isEmpty() || (X1 = this.r.y1.getMessagesController().X1(Long.valueOf(F()))) == null || X1.bot || X1.self || lbc.z(X1)) ? false : true;
+    }
+
+    @Override // j79
+    public final int b() {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty() && !this.e) {
+            return 1;
         }
-        return ls6.e(32.0f, (int) Math.ceil(this.w), gl.L(46.0f));
-    }
-
-    public qha getShape() {
-        return this.d;
-    }
-
-    public rha getStyle() {
-        return this.c;
-    }
-
-    public float getTargetVisibleFactor() {
-        return (this.c == rha.b || this.x.f) ? 1.0f : 0.0f;
-    }
-
-    public float getVisibleFactor() {
-        if (this.c == rha.b) {
-            return 1.0f;
+        int size = arrayList.size();
+        if (arrayList.isEmpty()) {
+            return size;
         }
-        return this.x.e;
+        if (G()) {
+            size++;
+        }
+        return !this.h ? size + 1 : size;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f;
-        float width = getWidth();
-        float height = getHeight();
-        if (this.c == rha.b) {
-            int f2 = bm2.f(this.x.e, this.F, this.E);
-            Paint paint = this.n;
-            paint.setColor(f2);
-            RectF rectF = this.r;
-            rectF.set(0.0f, 0.0f, width, height);
-            float f3 = height / 2.0f;
-            canvas.drawRoundRect(rectF, f3, f3, paint);
+    @Override // j79
+    public final int d(int i) {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty() && !this.e) {
+            return 15;
         }
-        float f4 = this.y.e;
-        if (f4 < 1.0f) {
-            float R1 = gl.R1(1.0f, 0.6f, f4);
-            canvas.save();
-            canvas.scale(R1, R1, width / 2.0f, height / 2.0f);
-            float f5 = 1.0f - f4;
-            int i = (int) (f5 * 255.0f);
-            if (this.d == qha.a || TextUtils.isEmpty(this.s)) {
-                f = 0.0f;
-                Drawable drawable = this.e;
-                float intrinsicWidth = drawable.getIntrinsicWidth();
-                float intrinsicHeight = drawable.getIntrinsicHeight();
-                drawable.setBounds((int) ((width - intrinsicWidth) / 2.0f), (int) ((height - intrinsicHeight) / 2.0f), (int) ((intrinsicWidth + width) / 2.0f), (int) ((intrinsicHeight + height) / 2.0f));
-                drawable.setAlpha(i);
-                drawable.draw(canvas);
-            } else {
-                TextPaint textPaint = this.h;
-                int alpha = textPaint.getAlpha();
-                textPaint.setAlpha((int) (alpha * f5));
-                float descent = ((height - textPaint.descent()) - textPaint.ascent()) / 2.0f;
-                CharSequence charSequence = this.s;
-                f = 0.0f;
-                canvas.drawText(charSequence, 0, charSequence.length(), (width - this.w) / 2.0f, descent, textPaint);
-                textPaint.setAlpha(alpha);
+        if (G()) {
+            if (i == 0) {
+                return 25;
             }
-            canvas.restore();
-        } else {
-            f = 0.0f;
+            i--;
         }
-        if (f4 > f) {
-            float R12 = gl.R1(0.6f, 1.0f, f4);
-            canvas.save();
-            canvas.scale(R12, R12, width / 2.0f, height / 2.0f);
-            ih2 ih2Var = this.f;
-            ih2Var.setBounds(0, 0, (int) width, (int) height);
-            ih2Var.setAlpha((int) (f4 * 255.0f));
-            ih2Var.draw(canvas);
-            canvas.restore();
-        }
+        return i < arrayList.size() ? 14 : 16;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(getButtonWidth(), gl.L(46.0f));
-    }
-
-    @Override // x74
-    public final void p(int i, float f, float f2, y74 y74Var) {
-        if (i == 0) {
-            this.a.k();
-        }
-        invalidate();
-    }
-
-    public void setText(CharSequence charSequence) {
-        float f;
-        if (TextUtils.equals(this.s, charSequence)) {
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        int i2 = f89Var.f;
+        View view = f89Var.a;
+        if (i2 != 14) {
+            if (i2 == 25 && (view instanceof ij6)) {
+                ((ij6) view).b(R.drawable.msg_groups_create, 5, ob6.a0(null, null, 2131751710, lbc.k(this.r.y1.getMessagesController().X1(Long.valueOf(F())), true)), true);
+                return;
+            }
             return;
         }
-        this.s = charSequence;
-        setContentDescription(charSequence);
-        CharSequence charSequence2 = this.s;
-        if (charSequence2 != null) {
-            f = this.h.measureText(charSequence2, 0, charSequence2.length());
-        } else {
-            f = 0.0f;
+        if (view instanceof bv8) {
+            bv8 bv8Var = (bv8) view;
+            if (G()) {
+                i--;
+            }
+            ArrayList arrayList = this.d;
+            bv8Var.C((TLRPC.Chat) arrayList.get(i), null, null, null, false, false);
+            bv8Var.N = (i == arrayList.size() - 1 && this.h) ? false : true;
         }
-        this.w = f;
-        requestLayout();
-        this.a.requestLayout();
     }
 
-    @Override // android.view.View
-    public void setTranslationX(float f) {
-        super.setTranslationX(f);
-        this.a.invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.f || super.verifyDrawable(drawable);
-    }
-
-    @Override // x74
-    public final void F(float f, int i) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        bv8 bv8Var;
+        eja ejaVar = this.r;
+        vnb vnbVar = ejaVar.I1;
+        Context context = this.c;
+        if (i == 14) {
+            bv8Var = new bv8(context, vnbVar);
+        } else {
+            if (i == 15) {
+                ci G = eja.G(6, ejaVar.m1, vnbVar, context);
+                G.setLayoutParams(new r79(-1, -1));
+                return new n69(G);
+            }
+            if (i != 25) {
+                tk4 tk4Var = new tk4(context, vnbVar);
+                tk4Var.setIsSingleCell(true);
+                tk4Var.x = false;
+                tk4Var.setViewType(1);
+                bv8Var = tk4Var;
+            } else {
+                ij6 ij6Var = new ij6(context);
+                ij6Var.a(aob.v6, aob.u6);
+                ij6Var.setTextLeft(hl.C);
+                bv8Var = ij6Var;
+            }
+        }
+        return qu6.h(bv8Var, bv8Var, -1, -2);
     }
 }

@@ -1,57 +1,55 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rs5 extends x1 {
-    public final qs5 a = new qs5();
-    public final StringBuilder b = new StringBuilder();
-    public final int c;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ProfileActivity;
 
-    public rs5(int i) {
-        this.c = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rs5 implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ c79 h;
+
+    public /* synthetic */ rs5(c79 c79Var, TLRPC.User user, String str, boolean z, boolean z2, boolean z3, byte b) {
+        this.a = b;
+        this.h = c79Var;
+        this.b = user;
+        this.c = str;
+        this.d = z;
+        this.e = z2;
+        this.f = z3;
     }
 
-    @Override // x1
-    public final void a(CharSequence charSequence) {
-        StringBuilder sb = this.b;
-        sb.append(charSequence);
-        sb.append('\n');
-    }
-
-    @Override // x1
-    public final void d() {
-        this.a.g = this.b.toString();
-    }
-
-    @Override // x1
-    public final gk0 e() {
-        return this.a;
-    }
-
-    @Override // x1
-    public final vj2 h(vo3 vo3Var) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         int i;
-        int i2 = vo3Var.e;
-        String str = vo3Var.a;
-        int length = str.length();
-        if (vo3Var.g < 4) {
-            int i3 = i2;
-            while (true) {
-                if (i3 >= length) {
-                    i = length - i2;
-                    break;
-                }
-                if ('$' != str.charAt(i3)) {
-                    i = i3 - i2;
-                    break;
-                }
-                i3++;
-            }
-            int i4 = this.c;
-            if (i == i4 && lqe.b(' ', str, i2 + i4, length) == length) {
-                return new vj2(-1, -1, true);
-            }
+        vnb vnbVar;
+        byte b = this.a;
+        c79 c79Var = this.h;
+        switch (b) {
+            case 0:
+                bt5 bt5Var = ((ws5) c79Var).c;
+                sjb.b(bt5Var.getContext(), bt5Var.a, -bt5Var.a2, this.b, this.c, this.d, this.e, this.f, bt5Var.J0);
+                break;
+            case 1:
+                ProfileActivity profileActivity = ((wr8) c79Var).e;
+                Activity parentActivity = profileActivity.getParentActivity();
+                i = ((e) profileActivity).currentAccount;
+                long a = profileActivity.a();
+                vnbVar = ((e) profileActivity).resourceProvider;
+                sjb.b(parentActivity, i, a, this.b, this.c, this.d, this.e, this.f, vnbVar);
+                break;
+            default:
+                eja ejaVar = ((rha) c79Var).f;
+                sjb.b(ejaVar.getContext(), ejaVar.y1.getCurrentAccount(), ejaVar.m1, this.b, this.c, this.d, this.e, this.f, ejaVar.I1);
+                break;
         }
-        return vj2.a(vo3Var.b);
     }
 }

@@ -1,21 +1,11 @@
 // default package
 
-import android.util.Base64;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class und {
-    public static byte[] a(String str) {
-        if (str == null) {
-            return null;
-        }
-        return Base64.decode(str, 11);
-    }
+public interface und {
+    public static final /* synthetic */ int D = 0;
 
-    public static String b(byte[] bArr) {
-        if (bArr == null) {
-            return null;
-        }
-        return Base64.encodeToString(bArr, 11);
+    static {
+        hnd.c(3, new Object[]{"com.android.vending.billing.PURCHASES_UPDATED", uoe.c, "com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED", uoe.d, "com.android.vending.billing.ALTERNATIVE_BILLING", uoe.e}, null);
     }
 }

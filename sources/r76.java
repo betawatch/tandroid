@@ -1,54 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class r76 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t76 b;
+import android.widget.AbsListView;
 
-    public /* synthetic */ r76(t76 t76Var, byte b) {
-        this.a = b;
-        this.b = t76Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class r76 implements AbsListView.OnScrollListener {
+    public final /* synthetic */ s76 a;
+
+    public r76(s76 s76Var) {
+        this.a = s76Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        t76 t76Var = this.b;
-        switch (b) {
-            case 0:
-                t76Var.B();
-                break;
-            case 1:
-                if (!t76Var.w) {
-                    t76Var.x();
-                    break;
-                }
-                break;
-            case 2:
-            case 5:
-                t76Var.G();
-                break;
-            case 3:
-                t76Var.A();
-                break;
-            case 4:
-                t76Var.u();
-                kk7.f(t76Var.e).k(kk7.F2, Long.valueOf(t76Var.s.id));
-                t76Var.E(true);
-                break;
-            case 6:
-                t76Var.A();
-                break;
-            case 7:
-                t76Var.B();
-                break;
-            case 8:
-                kk7.f(t76Var.e).k(kk7.F2, Long.valueOf(t76Var.j()));
-                break;
-            default:
-                t76Var.f();
-                break;
+    @Override // android.widget.AbsListView.OnScrollListener
+    public final void onScrollStateChanged(AbsListView absListView, int i) {
+        s76 s76Var = this.a;
+        q76 q76Var = s76Var.H;
+        op opVar = s76Var.P;
+        if (i != 1 || opVar.getInputMethodMode() == 2 || opVar.getContentView() == null) {
+            return;
         }
+        s76Var.L.removeCallbacks(q76Var);
+        q76Var.run();
+    }
+
+    @Override // android.widget.AbsListView.OnScrollListener
+    public final void onScroll(AbsListView absListView, int i, int i2, int i3) {
     }
 }

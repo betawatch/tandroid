@@ -1,17 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class r4a extends t2 {
-    public final int n;
-    public final o6a r;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class r4a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ a5a b;
 
-    public r4a(int i, o6a o6aVar) {
-        this.n = i;
-        this.r = o6aVar;
+    public /* synthetic */ r4a(a5a a5aVar, byte b) {
+        this.a = b;
+        this.b = a5aVar;
     }
 
-    public final void o() {
-        super.l(this.r);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        a5a a5aVar = this.b;
+        switch (b) {
+            case 0:
+                a5aVar.b1(false);
+                break;
+            case 1:
+                a5aVar.b1(true);
+                break;
+            case 2:
+                wua wuaVar = new wua(a5aVar.getContext(), a5aVar.T1, a5aVar.U1, a5aVar.J0, null);
+                long j = a5aVar.X1.id;
+                String str = a5aVar.a2;
+                wuaVar.l3 = true;
+                jxa.v(wuaVar.a, false).H(j, new ku9(wuaVar, str, (byte) 8));
+                break;
+            case 3:
+                fz.c1(a5aVar.J0, a5aVar.getContext(), a5aVar.X1);
+                break;
+            case 4:
+                new eza(a5aVar.getContext(), a5aVar.J0).show();
+                break;
+            default:
+                a5aVar.dismiss();
+                break;
+        }
     }
 }

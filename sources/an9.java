@@ -1,32 +1,39 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class an9 implements ed, no7 {
-    public final /* synthetic */ on9 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class an9 extends c4 {
+    public static final Parcelable.Creator<an9> CREATOR = new m9d(17);
+    public final int a;
+    public final boolean b;
+    public final boolean c;
+    public final int d;
+    public final int e;
 
-    public /* synthetic */ an9(on9 on9Var) {
-        this.a = on9Var;
+    public an9(int i, int i2, int i3, boolean z, boolean z2) {
+        this.a = i;
+        this.b = z;
+        this.c = z2;
+        this.d = i2;
+        this.e = i3;
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        io5 g = vxcVar.a.g(647);
-        on9 on9Var = this.a;
-        on9Var.R = g;
-        on9Var.f.requestLayout();
-        return vxc.b;
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        if (VoIPService.getSharedInstance() != null) {
-            VoIPService.getSharedInstance().hangUp(1);
-        }
-        this.a.dismiss();
-        kk7.e().k(kk7.u2, new Object[0]);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        bye.q(parcel, 3, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        bye.q(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        bye.q(parcel, 5, 4);
+        parcel.writeInt(this.e);
+        bye.s(parcel, r);
     }
 }

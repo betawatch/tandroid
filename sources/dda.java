@@ -1,14 +1,35 @@
 // default package
 
-import android.graphics.Outline;
 import android.view.View;
-import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dda extends ViewOutlineProvider {
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), gl.L(16.0f));
+public final /* synthetic */ class dda implements qs3 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ fn7 c;
+    public final /* synthetic */ View d;
+
+    public /* synthetic */ dda(fn7 fn7Var, View view, int[] iArr, byte b) {
+        this.a = b;
+        this.c = fn7Var;
+        this.d = view;
+        this.b = iArr;
+    }
+
+    @Override // qs3
+    public final void a(vpa vpaVar, float f, float f2) {
+        byte b = this.a;
+        int[] iArr = this.b;
+        View view = this.d;
+        fn7 fn7Var = this.c;
+        switch (b) {
+            case 0:
+                ((kea) fn7Var).L0((nea) view, iArr, f / 1000.0f);
+                break;
+            default:
+                ((tda) fn7Var).d.L0(view, iArr, f / 1000.0f);
+                break;
+        }
     }
 }

@@ -1,11 +1,38 @@
 // default package
 
-import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public abstract class r40 {
-    public static BiometricPrompt$AuthenticationCallback a(t40 t40Var) {
-        return new q40(t40Var);
+    public static void a() {
+        a.b.getSharedPreferences("saved_tokens_login", 0).edit().clear().apply();
+        a.b.getSharedPreferences("saved_tokens", 0).edit().clear().apply();
+    }
+
+    public static ArrayList b() {
+        SharedPreferences sharedPreferences = a.b.getSharedPreferences("saved_tokens_login", 0);
+        int i = sharedPreferences.getInt("count", 0);
+        if (i == 0) {
+            return null;
+        }
+        ArrayList arrayList = new ArrayList();
+        for (int i2 = 0; i2 < i; i2++) {
+            try {
+                SerializedData serializedData = new SerializedData(Utilities.v(sharedPreferences.getString("log_in_token_" + i2, "")));
+                TLRPC.auth_Authorization TLdeserialize = TLRPC.auth_Authorization.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                if (TLdeserialize instanceof TLRPC.TL_auth_authorization) {
+                    arrayList.add((TLRPC.TL_auth_authorization) TLdeserialize);
+                }
+            } catch (Exception e) {
+                cc4.g(e, true);
+            }
+        }
+        return arrayList;
     }
 }

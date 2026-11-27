@@ -1,20 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class dqc {
-    public static do3 a;
-    public static final int[] b = new int[kk7.M1];
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
 
-    static {
-        int i = 0;
-        while (true) {
-            int[] iArr = b;
-            if (i >= 129) {
-                return;
-            }
-            iArr[i] = (int) (Math.max(0.0d, Math.min(1.0d, 7.5d - Math.sqrt(i))) * 255.0d);
-            i++;
-        }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dqc {
+    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
+    public final /* synthetic */ TL_wallet.nftItem b;
+    public final /* synthetic */ uqc c;
+
+    public dqc(uqc uqcVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, TL_wallet.nftItem nftitem) {
+        this.c = uqcVar;
+        this.a = tL_starGiftUnique;
+        this.b = nftitem;
     }
 }

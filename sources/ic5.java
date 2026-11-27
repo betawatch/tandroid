@@ -1,115 +1,40 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
-import java.util.HashMap;
-import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ic5 extends g2 {
-    public static final /* synthetic */ z24 E;
-    public static final /* synthetic */ z24 F;
-    public static final /* synthetic */ z24 G;
-    public static final /* synthetic */ z24 x;
-    public static final /* synthetic */ z24 y;
-    public String e;
-    public String f;
-    public long h;
-    public long n;
-    public long r;
-    public boolean s;
-    public long w;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ic5 extends vq4 {
+    public final /* synthetic */ rc5 r;
 
-    static {
-        z74 z74Var = new z74(ic5.class, "HandlerBox.java");
-        x = z74Var.e(z74Var.d("getHandlerType", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
-        y = z74Var.e(z74Var.d("setName", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "name", "void"));
-        E = z74Var.e(z74Var.d("setHandlerType", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "handlerType", "void"));
-        F = z74Var.e(z74Var.d("getName", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
-        z74Var.e(z74Var.d("getHumanReadableTrackType", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
-        G = z74Var.e(z74Var.d("toString", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
-        HashMap hashMap = new HashMap();
-        hashMap.put("odsm", "ObjectDescriptorStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("crsm", "ClockReferenceStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("sdsm", "SceneDescriptionStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("m7sm", "MPEG7Stream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("ocsm", "ObjectContentInfoStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("ipsm", "IPMP Stream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("mjsm", "MPEG-J Stream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        hashMap.put("mdir", "Apple Meta Data iTunes Reader");
-        hashMap.put("mp7b", "MPEG-7 binary XML");
-        hashMap.put("mp7t", "MPEG-7 XML");
-        hashMap.put("vide", "Video Track");
-        hashMap.put("soun", "Sound Track");
-        hashMap.put("hint", "Hint Track");
-        hashMap.put("appl", "Apple specific");
-        hashMap.put("meta", "Timed Metadata track - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO");
-        DesugarCollections.unmodifiableMap(hashMap);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ic5(rc5 rc5Var, Context context, int i) {
+        super(context, i);
+        this.r = rc5Var;
     }
 
-    @Override // g2, y1
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        f(byteBuffer);
-        this.w = hle.g(byteBuffer);
-        this.e = hle.b(byteBuffer);
-        this.h = hle.g(byteBuffer);
-        this.n = hle.g(byteBuffer);
-        this.r = hle.g(byteBuffer);
-        if (byteBuffer.remaining() <= 0) {
-            this.s = false;
-            return;
-        }
-        byte[] bArr = new byte[byteBuffer.remaining()];
-        byteBuffer.get(bArr);
-        try {
-            String str = new String(bArr, "UTF-8");
-            this.f = str;
-            if (!str.endsWith(WebViewProviderFactoryBoundaryInterface.MULTI_COOKIE_VALUE_SEPARATOR)) {
-                this.s = false;
-            } else {
-                this.f = ir2.n(1, 0, this.f);
-                this.s = true;
-            }
-        } catch (UnsupportedEncodingException e) {
-            throw new Error(e);
-        }
+    @Override // vq4
+    public final void a(zc5 zc5Var) {
+        super.a(zc5Var);
+        this.r.u0();
     }
 
-    @Override // g2, y1
-    public final void getContent(ByteBuffer byteBuffer) {
-        i(byteBuffer);
-        byteBuffer.putInt((int) this.w);
-        byteBuffer.put(or5.d(this.e));
-        byteBuffer.putInt((int) this.h);
-        byteBuffer.putInt((int) this.n);
-        byteBuffer.putInt((int) this.r);
-        String str = this.f;
-        if (str != null) {
-            byteBuffer.put(pxe.a(str));
-        }
-        if (this.s) {
-            byteBuffer.put((byte) 0);
-        }
+    @Override // vq4
+    public final void b() {
+        super.b();
+        this.r.u0();
     }
 
-    @Override // y1
-    public final long getContentSize() {
-        boolean z = this.s;
-        String str = this.f;
-        return z ? pxe.b(str) + 25 : pxe.b(str) + 24;
-    }
-
-    public final String toString() {
-        c5a b = z74.b(G, this, this);
-        n89.a().getClass();
-        n89.b(b);
-        StringBuilder sb = new StringBuilder("HandlerBox[handlerType=");
-        oo1.r(z74.b(x, this, this));
-        sb.append(this.e);
-        sb.append(";name=");
-        oo1.r(z74.b(F, this, this));
-        return b00.j(sb, this.f, "]");
+    @Override // vq4
+    public final void c(zc5 zc5Var) {
+        rc5 rc5Var = this.r;
+        if (zc5Var == rc5Var.Y) {
+            rc5Var.Y = null;
+        }
+        if (zc5Var == rc5Var.Z) {
+            rc5Var.Z = null;
+        }
+        super.c(zc5Var);
+        rc5Var.u0();
     }
 }

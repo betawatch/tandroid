@@ -1,39 +1,32 @@
 // default package
 
-import java.io.Serializable;
-import java.util.AbstractSequentialList;
-import java.util.List;
-import java.util.ListIterator;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class d66 extends AbstractSequentialList implements Serializable {
-    public final List a;
-    public final aq4 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class d66 extends zu1 {
+    public boolean Jd;
+    public final /* synthetic */ TLRPC.User Kd;
+    public final /* synthetic */ TLRPC.User[] Ld;
+    public final /* synthetic */ long Md;
 
-    public d66(List list, aq4 aq4Var) {
-        list.getClass();
-        this.a = list;
-        this.b = aq4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d66(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j) {
+        super(bundle);
+        this.Kd = user;
+        this.Ld = userArr;
+        this.Md = j;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
-    }
-
-    @Override // java.util.AbstractSequentialList, java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i) {
-        return new b66(this, this.a.listIterator(i), (byte) 1);
-    }
-
-    @Override // java.util.AbstractList
-    public final void removeRange(int i, int i2) {
-        this.a.subList(i, i2).clear();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.size();
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Jd) {
+            return;
+        }
+        this.Jd = true;
+        d31.b0(this).I(R.raw.contact_check, ob6.a0(null, null, 2131751704, lbc.r(this.Kd)), hl.N2(ob6.a0(null, null, 2131751705, lbc.r(this.Ld[0])), -1, 0, new kt((Object) this, this.Md, (byte) 18), null)).j();
     }
 }

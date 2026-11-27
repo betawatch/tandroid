@@ -1,75 +1,149 @@
 // default package
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import org.json.JSONObject;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mr0 implements SensorEventListener {
-    public long a;
-    public float[] b;
-    public float[] c;
-    public final /* synthetic */ or0 d;
+public final /* synthetic */ class mr0 implements yi5 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public mr0(or0 or0Var) {
-        this.d = or0Var;
+    public /* synthetic */ mr0(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public final void a() {
-        if (this.b == null || this.c == null) {
-            return;
-        }
-        or0 or0Var = this.d;
-        if (or0Var.k != null) {
-            this.a = System.currentTimeMillis();
-            float[] fArr = new float[9];
-            if (SensorManager.getRotationMatrix(fArr, new float[9], this.b, this.c)) {
-                SensorManager.getOrientation(fArr, new float[3]);
-                try {
-                    JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("absolute", true);
-                    jSONObject.put("alpha", -r7[0]);
-                    jSONObject.put("beta", -r7[1]);
-                    jSONObject.put("gamma", r7[2]);
-                    or0Var.k.c("window.Telegram.WebView.receiveEvent('device_orientation_changed', " + jSONObject + ");");
-                } catch (Exception unused) {
+    @Override // yi5
+    public final void a(qeb qebVar, RectF rectF) {
+        byte b = this.a;
+        qebVar.b = true;
+    }
+
+    @Override // yi5
+    public final void g(Canvas canvas, RectF rectF) {
+        f12 f12Var;
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                rr0 rr0Var = (rr0) obj;
+                RectF rectF2 = rr0Var.E;
+                if (rr0Var.s != null) {
+                    rr0Var.h0(rectF2);
+                    canvas.save();
+                    canvas.clipRect(rectF2);
+                    sr0 sr0Var = rr0Var.d;
+                    uk0.b(sr0Var, canvas, rectF, sr0Var, rr0Var.c, (int) ((rr0Var.s != null ? Math.min(1.0f, rr0Var.x / 0.22f) : 1.0f) * 255.0f));
+                    canvas.restore();
+                    break;
+                } else {
+                    sr0 sr0Var2 = rr0Var.d;
+                    uk0.a(sr0Var2, canvas, rectF, sr0Var2, rr0Var.c);
+                    break;
                 }
-            }
+            case 1:
+                nx0 nx0Var = (nx0) obj;
+                ViewGroup viewGroup = nx0Var.b;
+                if (viewGroup != null && viewGroup.getVisibility() == 0 && viewGroup.getParent() == nx0Var.c) {
+                    canvas.save();
+                    canvas.translate(viewGroup.getX(), viewGroup.getY());
+                    viewGroup.draw(canvas);
+                    canvas.restore();
+                    break;
+                }
+                break;
+            case 2:
+                ((uf1) obj).X(canvas, rectF);
+                break;
+            case 3:
+                n12 n12Var = (n12) obj;
+                int i = 0;
+                while (i < 2) {
+                    f12 f12Var2 = i == 0 ? n12Var.v2 : n12Var.w2;
+                    if (f12Var2 != null && f12Var2.c != null && f12Var2.getVisibility() == 0) {
+                        uk0.b(f12Var2.c, canvas, rectF, f12Var2.d, n12Var.b, (int) (((i == 0 && (f12Var = n12Var.w2) != null && f12Var.getVisibility() == 0) ? (1.0f - n12Var.w2.getAlpha()) * f12Var2.getAlpha() : f12Var2.getAlpha()) * 255.0f));
+                    }
+                    i++;
+                }
+                break;
+            case 4:
+                o24 o24Var = (o24) obj;
+                b14 b14Var = o24Var.Q;
+                uk0.a(b14Var, canvas, rectF, b14Var, o24Var);
+                rz3 rz3Var = o24Var.i0;
+                uk0.a(rz3Var, canvas, rectF, rz3Var, o24Var);
+                wz3 wz3Var = o24Var.E0;
+                uk0.a(wz3Var, canvas, rectF, wz3Var, o24Var);
+                break;
+            case 5:
+                ((uc6) obj).d0(canvas, rectF);
+                break;
+            case 6:
+                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
+                d79 d79Var = premiumPreviewFragment.a;
+                uk0.a(d79Var, canvas, rectF, d79Var, premiumPreviewFragment.e0);
+                break;
+            case 7:
+                RectF rectF3 = ProfileActivity.Z6;
+                canvas.save();
+                canvas.translate(-r0.getScrollX(), -r0.getScrollY());
+                ((View) obj).draw(canvas);
+                canvas.restore();
+                break;
+            case 8:
+                RectF rectF4 = ProfileActivity.Z6;
+                is8 is8Var = ((ProfileActivity) obj).d1;
+                int i2 = is8.R;
+                is8Var.P = true;
+                is8Var.draw(canvas);
+                is8Var.P = false;
+                break;
+            case 9:
+                zp8 zp8Var = (zp8) obj;
+                zj0 zj0Var = zp8Var.S2;
+                if (zj0Var == null) {
+                    p69 p69Var = zp8Var.H2;
+                    if (p69Var != null) {
+                        p69Var.g(canvas, rectF);
+                        break;
+                    }
+                } else {
+                    zj0Var.g(canvas, rectF);
+                    break;
+                }
+                break;
+            case 10:
+                r1a r1aVar = (r1a) obj;
+                d79 d79Var2 = r1aVar.n1;
+                uk0.b(d79Var2, canvas, rectF, d79Var2, r1aVar.b, jn7.d4);
+                break;
+            case 11:
+                kea keaVar = (kea) obj;
+                mda mdaVar = keaVar.A1;
+                uk0.a(mdaVar, canvas, rectF, mdaVar, keaVar.b);
+                break;
+            default:
+                uqc uqcVar = (uqc) obj;
+                wa waVar = uqcVar.a;
+                uk0.a(waVar, canvas, rectF, waVar, (ViewGroup) uqcVar.fragmentView);
+                iqc iqcVar = uqcVar.e;
+                if (iqcVar != null && uqcVar.n != null && iqcVar.getVisibility() == 0 && uqcVar.e.getAlpha() > 0.0f) {
+                    int save = canvas.save();
+                    canvas.translate(uqcVar.n.getX() + uqcVar.e.getLeft(), uqcVar.n.getY() + uqcVar.e.getTop());
+                    canvas.concat(uqcVar.e.getMatrix());
+                    if (uqcVar.e.getAlpha() < 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, uqcVar.e.getWidth(), uqcVar.e.getHeight(), (int) (uqcVar.e.getAlpha() * 255.0f));
+                    }
+                    uqcVar.e.draw(canvas);
+                    canvas.restoreToCount(save);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        or0 or0Var = this.d;
-        oz ozVar = or0Var.q;
-        if (ozVar != null) {
-            gl.r(ozVar);
-            or0Var.q = null;
-        }
-        if (or0Var.l || or0Var.k == null) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis() - this.a;
-        if (sensorEvent.sensor.getType() == 1) {
-            this.b = sensorEvent.values;
-        }
-        if (sensorEvent.sensor.getType() == 2) {
-            this.c = sensorEvent.values;
-        }
-        long j = or0Var.h;
-        if (currentTimeMillis >= j) {
-            a();
-            return;
-        }
-        oz ozVar2 = new oz(this, (byte) 25);
-        or0Var.q = ozVar2;
-        gl.d3(ozVar2, j - currentTimeMillis);
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

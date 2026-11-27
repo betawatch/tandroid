@@ -2,195 +2,216 @@
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ync extends nv4 {
-    public boolean A0;
-    public ValueAnimator B0;
-    public TL_wallet.nftItem x0;
-    public koc y0;
-    public float z0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ync implements u37 {
+    public final wb2 a;
+    public final d79 b;
+    public final float c;
+    public float d;
+    public final Paint e = new Paint(1);
+    public final ValueAnimator f;
+    public final ChatActivityEnterView.RecordCircle g;
+    public final int h;
+    public final m12 i;
+    public final vnb j;
+    public float k;
+    public float l;
 
-    @Override // nv4
-    public final void b(zr5 zr5Var, Canvas canvas, float f, float f2, float f3) {
-        if (this.z0 == 1.0f) {
-            super.b(zr5Var, canvas, f, f2, f3);
-            return;
+    public ync(wb2 wb2Var, nr1 nr1Var, d79 d79Var, m12 m12Var, vnb vnbVar) {
+        this.j = vnbVar;
+        this.a = wb2Var;
+        this.i = m12Var;
+        this.b = d79Var;
+        wb2Var.setEnterTransitionInProgress(true);
+        ChatActivityEnterView.RecordCircle recordCircle = nr1Var.getRecordCircle();
+        this.g = recordCircle;
+        if (recordCircle != null) {
+            this.c = recordCircle.M;
+            recordCircle.N = true;
+            recordCircle.O = true;
         }
-        canvas.save();
-        float f4 = this.z0;
-        canvas.scale(f4, f4, f / 2.0f, f2 / 2.0f);
-        super.b(zr5Var, canvas, f, f2, f3);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.z0 == 1.0f) {
-            super.draw(canvas);
-            return;
-        }
-        canvas.save();
-        float f = this.z0;
-        canvas.scale(f, f, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        koc kocVar;
-        float f;
-        float f2;
-        int i;
-        float f3;
-        float f4;
-        boolean drawChild = super.drawChild(canvas, view, j);
-        FrameLayout frameLayout = this.d;
-        if (view == frameLayout && (kocVar = this.y0) != null) {
-            RectF rectF = kocVar.I;
-            Paint paint = kocVar.y;
-            joc jocVar = kocVar.l1;
-            if (this == kocVar.m1 && jocVar != null && jocVar.v != null) {
-                paint.setShader(null);
-                paint.setColorFilter(null);
-                float l = Utilities.l(kocVar.q1.a);
-                float[] D = kocVar.D(kocVar.o1 % 2.0f);
-                float f5 = D[0] * l;
-                float f6 = D[1] * l;
-                float f7 = D[2] * l;
-                int left = frameLayout.getLeft();
-                be0 be0Var = this.E;
-                float left2 = be0Var.getLeft() + left + (be0Var.getWidth() / 2.0f);
-                float height = (be0Var.getHeight() / 2.0f) + be0Var.getTop() + frameLayout.getTop();
-                float B = yjb.B(f7, 0.025f, (0.07f * f6) + 1.0f, (be0Var.getWidth() * kk7.K4) / 268.0f);
-                if (f6 <= 0.01f || jocVar.w == null) {
-                    f = 0.01f;
-                } else {
-                    float f8 = ((176.0f * B) / 128.0f) / 2.0f;
-                    float L = (gl.L(2.0f) * f6) + height;
-                    f = 0.01f;
-                    rectF.set(left2 - f8, L - f8, left2 + f8, L + f8);
-                    paint.setColor(-16777216);
-                    paint.setAlpha((int) (60.0f * f6));
-                    canvas.drawBitmap(jocVar.w, (Rect) null, rectF, paint);
-                    paint.setColor(-1);
-                }
-                float l2 = jocVar.u == null ? 0.0f : Utilities.l(1.4f * f6);
-                float L2 = height - (gl.L(5.0f) * f6);
-                float f9 = f6 * (-5.0f);
-                if (l2 < 0.99f) {
-                    paint.setAlpha(kk7.d4);
-                    f3 = L2;
-                    f4 = f9;
-                    f2 = B;
-                    i = 255;
-                    kocVar.r(canvas, jocVar.v, left2, f3, f2, f5, 1.0f, f4, 0.24f, 0.97f);
-                } else {
-                    f2 = B;
-                    i = 255;
-                    f3 = L2;
-                    f4 = f9;
-                }
-                if (l2 > f) {
-                    paint.setAlpha((int) (l2 * 255.0f));
-                    kocVar.r(canvas, jocVar.u, left2, f3, f2, f5, 1.0f, f4, 0.24f, 0.97f);
-                }
-                paint.setAlpha(i);
+        Paint paint = new Paint(1);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+        paint.setShader(new LinearGradient(0.0f, hl.L(12.0f), 0.0f, 0.0f, 0, -16777216, Shader.TileMode.CLAMP));
+        this.h = wb2Var.getMessageObject().m1;
+        ((ArrayList) m12Var.c).add(this);
+        m12Var.a();
+        ((ViewGroup) m12Var.d).invalidate();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.f = ofFloat;
+        ofFloat.addUpdateListener(new cmc(this, m12Var, (byte) 2));
+        ofFloat.setInterpolator(new LinearInterpolator());
+        ofFloat.setDuration(220L);
+        ofFloat.addListener(new xnc(this, wb2Var, m12Var));
+        if (wb2Var.getSeekBarWaveform() != null) {
+            xy9 seekBarWaveform = wb2Var.getSeekBarWaveform();
+            seekBarWaveform.v.e(true, 0.0f);
+            wb2 wb2Var2 = seekBarWaveform.n;
+            if (wb2Var2 != null) {
+                wb2Var2.invalidate();
             }
         }
-        return drawChild;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void drawableStateChanged() {
-        OvershootInterpolator overshootInterpolator;
+    @Override // u37
+    public final void a(final Canvas canvas) {
+        float x;
+        final float y;
+        float y2;
+        float x2;
         float f;
-        long j;
-        super.drawableStateChanged();
-        if (isPressed() == this.A0) {
-            return;
-        }
-        boolean isPressed = isPressed();
-        this.A0 = isPressed;
-        if (isPressed) {
-            f = 0.96f;
-            j = 80;
-            overshootInterpolator = null;
+        final float f2 = this.d;
+        float f3 = f2 > 0.6f ? 1.0f : f2 / 0.6f;
+        ChatActivityEnterView.RecordCircle recordCircle = this.g;
+        m12 m12Var = this.i;
+        if (recordCircle == null) {
+            x = 0.0f;
+            y = 0.0f;
         } else {
-            overshootInterpolator = new OvershootInterpolator(1.5f);
-            f = 1.0f;
-            j = 350;
+            x = (recordCircle.getX() + recordCircle.K) - m12Var.getX();
+            y = (recordCircle.getY() + recordCircle.L) - m12Var.getY();
         }
-        m(f, j, overshootInterpolator);
-    }
-
-    public final void m(float f, long j, OvershootInterpolator overshootInterpolator) {
-        ValueAnimator valueAnimator = this.B0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        wb2 wb2Var = this.a;
+        int i = wb2Var.getMessageObject().m1;
+        int i2 = this.h;
+        d79 d79Var = this.b;
+        if (i != i2) {
+            x2 = this.k;
+            y2 = this.l;
+        } else {
+            y2 = (d79Var.getY() + (wb2Var.getY() + wb2Var.getRadialProgress().a.centerY())) - m12Var.getY();
+            x2 = (d79Var.getX() + (wb2Var.getX() + wb2Var.getRadialProgress().a.centerX())) - m12Var.getX();
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.z0, f);
-        this.B0 = ofFloat;
-        ofFloat.addUpdateListener(new uwb(this, (byte) 13));
-        if (overshootInterpolator != null) {
-            this.B0.setInterpolator(overshootInterpolator);
+        this.k = x2;
+        this.l = y2;
+        float interpolation = k43.f.getInterpolation(f2);
+        float interpolation2 = k43.h.getInterpolation(f2);
+        final float f4 = (x2 * interpolation2) + ((1.0f - interpolation2) * x);
+        float f5 = 1.0f - interpolation;
+        final float f6 = (y2 * interpolation) + (y * f5);
+        float height = wb2Var.getRadialProgress().a.height() / 2.0f;
+        float f7 = (height * interpolation) + (this.c * f5);
+        d79Var.getY();
+        m12Var.getY();
+        d79Var.getMeasuredHeight();
+        if (m12Var.getMeasuredHeight() > 0) {
+            m12Var.getMeasuredHeight();
         }
-        this.B0.setDuration(j);
-        this.B0.start();
-    }
-
-    public final void n(float f) {
-        this.z0 = f;
-        invalidate();
-        if (getParent() instanceof View) {
-            ((View) getParent()).invalidate();
+        int i3 = wb2Var.getRadialProgress().p;
+        int i4 = aob.Pe;
+        vnb vnbVar = this.j;
+        float f8 = f3;
+        int v0 = aob.v0(i4, vnbVar);
+        if (i3 < 0) {
+            i3 = i4;
         }
-    }
-
-    public final void o() {
-        ValueAnimator valueAnimator = this.B0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        int f9 = vm2.f(interpolation, v0, aob.v0(i3, vnbVar));
+        Paint paint = this.e;
+        paint.setColor(f9);
+        if (recordCircle != null) {
+            float f10 = 1.0f - f8;
+            gk0 gk0Var = recordCircle.h;
+            gk0 gk0Var2 = recordCircle.n;
+            f = x;
+            float interpolation3 = k43.g.getInterpolation(recordCircle.I);
+            ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+            float f11 = chatActivityEnterView.X4;
+            float f12 = f11 > 0.7f ? 1.0f : f11 / 0.7f;
+            canvas.save();
+            float f13 = ((gk0Var2.t * 1.4f) + 0.878f) * chatActivityEnterView.V4 * f12 * interpolation3 * f10;
+            canvas.scale(f13, f13, f4, f6);
+            gk0Var2.a(f4, f6, canvas, gk0Var2.d);
+            canvas.restore();
+            float f14 = ((gk0Var.t * 1.4f) + 0.926f) * chatActivityEnterView.V4 * f12 * interpolation3 * f10;
+            canvas.save();
+            canvas.scale(f14, f14, f4, f6);
+            gk0Var.a(f4, f6, canvas, gk0Var.d);
+            canvas.restore();
+        } else {
+            f = x;
         }
-        if (this.z0 == 1.0f) {
-            return;
-        }
-        setScaleX(getScaleX() * this.z0);
-        setScaleY(getScaleY() * this.z0);
-        n(1.0f);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        koc kocVar = this.y0;
-        if (kocVar != null) {
-            kocVar.i(this);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        koc kocVar = this.y0;
-        if (kocVar != null) {
-            kocVar.h.remove(this);
-        }
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        xk2.W = getMeasuredHeight();
+        canvas.drawCircle(f4, f6, f7, paint);
+        canvas.save();
+        final float f15 = f7 / height;
+        canvas.scale(f15, f15, f4, f6);
+        final float centerX = f4 - wb2Var.getRadialProgress().a.centerX();
+        final float centerY = f6 - wb2Var.getRadialProgress().a.centerY();
+        canvas.translate(centerX, centerY);
+        wb2Var.getRadialProgress().E = interpolation;
+        wb2Var.getRadialProgress().B = false;
+        final float f16 = f;
+        wb2Var.E1(canvas, interpolation, new Runnable() { // from class: wnc
+            @Override // java.lang.Runnable
+            public final void run() {
+                float f17;
+                Canvas canvas2;
+                Drawable drawable;
+                ync yncVar = ync.this;
+                RadialProgress2 radialProgress = yncVar.a.getRadialProgress();
+                Canvas canvas3 = canvas;
+                radialProgress.draw(canvas3);
+                float f18 = centerX;
+                float f19 = centerY;
+                canvas3.translate(-f18, -f19);
+                float f20 = f15;
+                float f21 = 1.0f / f20;
+                float f22 = f4;
+                float f23 = f6;
+                canvas3.scale(f21, f21, f22, f23);
+                ChatActivityEnterView.RecordCircle recordCircle2 = yncVar.g;
+                if (recordCircle2 != null) {
+                    int i5 = (int) f16;
+                    int i6 = (int) y;
+                    float f24 = 1.0f - f2;
+                    recordCircle2.b();
+                    ChatActivityEnterView chatActivityEnterView2 = ChatActivityEnterView.this;
+                    boolean z = chatActivityEnterView2.j5;
+                    Rect rect = chatActivityEnterView2.H4;
+                    Drawable drawable2 = null;
+                    if (z) {
+                        if (recordCircle2.f != 1.0f) {
+                            drawable2 = chatActivityEnterView2.d1 ? chatActivityEnterView2.E4 : chatActivityEnterView2.D4;
+                        }
+                        drawable = chatActivityEnterView2.F4;
+                        f17 = f24;
+                        canvas2 = canvas3;
+                        rect.set(bp1.A(2, i5, drawable), bp1.y(2, i6, drawable), bp1.w(2, i5, drawable), bp1.i(2, i6, drawable));
+                        if (drawable2 != null) {
+                            drawable2.setBounds(bp1.A(2, i5, drawable2), bp1.y(2, i6, drawable2), bp1.w(2, i5, drawable2), bp1.i(2, i6, drawable2));
+                        }
+                    } else {
+                        f17 = f24;
+                        canvas2 = canvas3;
+                        drawable = chatActivityEnterView2.d1 ? chatActivityEnterView2.E4 : chatActivityEnterView2.D4;
+                        rect.set(i5 - hl.L(12.0f), i6 - hl.L(12.0f), hl.L(12.0f) + i5, hl.L(12.0f) + i6);
+                    }
+                    Drawable drawable3 = drawable;
+                    Drawable drawable4 = drawable2;
+                    drawable3.setBounds(rect);
+                    recordCircle2.d0 = ChatActivityEnterView.RecordCircle.c((recordCircle2.M - hl.L(19.0f)) / Math.max(1.0f, recordCircle2.r - hl.L(19.0f)));
+                    canvas3 = canvas2;
+                    recordCircle2.d(canvas3, drawable3, drawable4, recordCircle2.f, (int) (255.0f * f17));
+                }
+                canvas3.scale(f20, f20, f22, f23);
+                canvas3.translate(f18, f19);
+            }
+        });
+        wb2Var.getRadialProgress().B = true;
+        wb2Var.getRadialProgress().E = 1.0f;
+        canvas.restore();
     }
 }

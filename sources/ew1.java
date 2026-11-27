@@ -1,63 +1,46 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.beta.R;
+import android.view.KeyEvent;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ew1 extends qy1 {
-    public final /* synthetic */ ChatActivityEnterView G;
+public final /* synthetic */ class ew1 implements lq0, fd, vt3, l8 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ew1(ChatActivityEnterView chatActivityEnterView, Activity activity) {
-        super(activity);
-        this.G = chatActivityEnterView;
+    public /* synthetic */ ew1(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // qy1, android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        ChatActivityEnterView chatActivityEnterView = this.G;
-        Paint paint = chatActivityEnterView.G2;
-        float[] fArr = chatActivityEnterView.G6;
-        float[] fArr2 = chatActivityEnterView.F6;
-        int i = ChatActivityEnterView.r7;
-        if (!chatActivityEnterView.n0()) {
-            super.onDraw(canvas);
-            if (getTag() == null || chatActivityEnterView.f2 == null || chatActivityEnterView.X0 || this.x || hq6.d0(chatActivityEnterView.R).v0[0].isEmpty() || paint == null) {
-                return;
-            }
-            canvas.drawCircle(gl.L(9.0f) + (getWidth() / 2), (getHeight() / 2) - gl.L(8.0f), gl.L(5.0f), paint);
-            return;
+    @Override // vt3
+    public final void c() {
+        int i = ChatActivityEnterView.X7;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.F0.f();
+        xy1 xy1Var = chatActivityEnterView.O3;
+        if (xy1Var != null) {
+            xy1Var.d1(chatActivityEnterView.F0.getTextToUse());
         }
-        if (chatActivityEnterView.E6 == null) {
-            oy8 oy8Var = new oy8(R.raw.chat_audio_record_delete_outline, gl.L(28.0f), gl.L(28.0f), false, null);
-            chatActivityEnterView.E6 = oy8Var;
-            oy8Var.E(true);
-            chatActivityEnterView.E6.p0 = false;
-            int F0 = chatActivityEnterView.F0(bkb.Uf);
-            oy8 oy8Var2 = chatActivityEnterView.E6;
-            oy8Var2.a0 = true;
-            oy8Var2.L(F0, "Cup Grey");
-            chatActivityEnterView.E6.L(F0, "Box_Grey 2");
-            chatActivityEnterView.E6.L(F0, "Box Grey");
-            chatActivityEnterView.E6.j();
-            chatActivityEnterView.E6.M(this);
-            chatActivityEnterView.E6.O(true, 0.0f);
+    }
+
+    @Override // l8
+    public final void o(KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView;
+        nx1 nx1Var;
+        int i = ChatActivityEnterView.X7;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (nx1Var = (chatActivityEnterView = this.a).O0) != null && nx1Var.isShowing()) {
+            chatActivityEnterView.O0.dismiss();
         }
-        oy8 oy8Var3 = chatActivityEnterView.E6;
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float scaleX = getScaleX() != 0.0f ? getScaleX() : 1.0f;
-        float scaleY = getScaleY() != 0.0f ? getScaleY() : 1.0f;
-        if (chatActivityEnterView.h0(chatActivityEnterView.b2, fArr2) && chatActivityEnterView.h0(this, fArr)) {
-            width = oo1.z(fArr2[0], fArr[0], scaleX, width);
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        int i2 = ChatActivityEnterView.X7;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.T();
+        tx1 tx1Var = chatActivityEnterView.F0;
+        if (tx1Var != null) {
+            tx1Var.setText("");
         }
-        float L = gl.L(14.0f) / scaleX;
-        float L2 = gl.L(14.0f) / scaleY;
-        oy8Var3.setBounds(Math.round(width - L), Math.round(height - L2), Math.round(width + L), Math.round(height + L2));
-        oy8Var3.draw(canvas);
     }
 }

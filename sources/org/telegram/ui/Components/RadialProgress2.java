@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class RadialProgress2 {
     public float A;
@@ -22,7 +22,7 @@ public class RadialProgress2 {
     public Bitmap C;
     public Canvas D;
     public float E;
-    public wjb F;
+    public vnb F;
     public int G;
     public float H;
     public float I;
@@ -32,8 +32,8 @@ public class RadialProgress2 {
     public final Paint f;
     public final Paint g;
     public final Paint h;
-    public final tj6 i;
-    public final tj6 j;
+    public final yl6 i;
+    public final yl6 j;
     public float k;
     public int l;
     public int m;
@@ -53,7 +53,7 @@ public class RadialProgress2 {
     public final RectF a = new RectF();
     public int d = -1;
 
-    public RadialProgress2(View view, wjb wjbVar) {
+    public RadialProgress2(View view, vnb vnbVar) {
         Paint paint = new Paint(1);
         this.f = paint;
         this.g = new Paint(1);
@@ -70,26 +70,26 @@ public class RadialProgress2 {
         this.E = 1.0f;
         this.H = 1.0f;
         this.I = 1.0f;
-        this.F = wjbVar;
+        this.F = vnbVar;
         this.e = new Paint(1);
         this.b = view;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.w = imageReceiver;
         imageReceiver.K0 = true;
-        tj6 tj6Var = new tj6();
-        this.i = tj6Var;
-        tj6 tj6Var2 = new tj6();
-        this.j = tj6Var2;
-        tj6Var2.j = true;
-        tj6Var2.b.setStrokeWidth(gl.L(2.0f));
-        tj6Var2.d(4, false);
-        int L = gl.L(22.0f);
+        yl6 yl6Var = new yl6();
+        this.i = yl6Var;
+        yl6 yl6Var2 = new yl6();
+        this.j = yl6Var2;
+        yl6Var2.j = true;
+        yl6Var2.b.setStrokeWidth(hl.L(2.0f));
+        yl6Var2.d(4, false);
+        int L = hl.L(22.0f);
         this.x = L;
         imageReceiver.q0(L);
         paint.setColor(1677721600);
         if (view != null) {
-            tj6Var.A = new em0(view);
-            tj6Var2.A = new em0(view);
+            yl6Var.A = new em0(view);
+            yl6Var2.A = new em0(view);
         }
     }
 
@@ -98,22 +98,22 @@ public class RadialProgress2 {
     }
 
     public final float b() {
-        tj6 tj6Var = this.i;
-        int i = tj6Var.q;
-        int i2 = tj6Var.p;
+        yl6 yl6Var = this.i;
+        int i = yl6Var.q;
+        int i2 = yl6Var.p;
         if ((i == 3 || i == 6 || i == 10 || i == 8 || i == 0) && i2 == 4) {
-            return tj6Var.b();
+            return yl6Var.b();
         }
         if (i != 4) {
             return 1.0f;
         }
-        return 1.0f - tj6Var.b();
+        return 1.0f - yl6Var.b();
     }
 
     public final void c() {
         if (this.C == null) {
             try {
-                this.C = Bitmap.createBitmap(gl.L(48.0f), gl.L(48.0f), Bitmap.Config.ARGB_8888);
+                this.C = Bitmap.createBitmap(hl.L(48.0f), hl.L(48.0f), Bitmap.Config.ARGB_8888);
                 this.D = new Canvas(this.C);
             } catch (Throwable unused) {
             }
@@ -121,7 +121,7 @@ public class RadialProgress2 {
     }
 
     public final void d() {
-        int L = gl.L(2.0f);
+        int L = hl.L(2.0f);
         View view = this.b;
         RectF rectF = this.a;
         int i = ((int) rectF.left) - L;
@@ -149,34 +149,34 @@ public class RadialProgress2 {
         Canvas canvas4;
         int argb;
         boolean z;
-        tj6 tj6Var = this.i;
-        int i6 = tj6Var.q;
-        Paint paint2 = tj6Var.c;
-        if (i6 != 4 || tj6Var.b() < 1.0f) {
+        yl6 yl6Var = this.i;
+        int i6 = yl6Var.q;
+        Paint paint2 = yl6Var.c;
+        if (i6 != 4 || yl6Var.b() < 1.0f) {
             RectF rectF = this.a;
             if (rectF.isEmpty()) {
                 return;
             }
-            int i7 = tj6Var.q;
+            int i7 = yl6Var.q;
             float b = b();
             boolean z2 = this.z;
-            tj6 tj6Var2 = this.j;
+            yl6 yl6Var2 = this.j;
             Paint paint3 = this.h;
             if (!z2 || this.q >= 0) {
                 int i8 = this.u;
                 if (i8 >= 0) {
-                    tj6Var2.c(bkb.v0(i8, this.F));
+                    yl6Var2.c(aob.v0(i8, this.F));
                 } else {
-                    tj6Var2.c(this.n);
+                    yl6Var2.c(this.n);
                 }
                 int i9 = this.p;
                 if (i9 >= 0) {
                     int i10 = this.q;
-                    wjb wjbVar = this.F;
+                    vnb vnbVar = this.F;
                     if (i10 >= 0) {
-                        paint3.setColor(gl.R0(this.r, this.s, bkb.v0(i9, wjbVar), bkb.v0(this.q, this.F)));
+                        paint3.setColor(hl.R0(this.r, this.s, aob.v0(i9, vnbVar), aob.v0(this.q, this.F)));
                     } else {
-                        paint3.setColor(bkb.v0(i9, wjbVar));
+                        paint3.setColor(aob.v0(i9, vnbVar));
                     }
                 } else {
                     paint3.setColor(this.l);
@@ -184,13 +184,13 @@ public class RadialProgress2 {
             } else {
                 int i11 = this.v;
                 if (i11 >= 0) {
-                    tj6Var2.c(bkb.v0(i11, this.F));
+                    yl6Var2.c(aob.v0(i11, this.F));
                 } else {
-                    tj6Var2.c(this.o);
+                    yl6Var2.c(this.o);
                 }
                 int i12 = this.t;
                 if (i12 >= 0) {
-                    paint3.setColor(bkb.v0(i12, this.F));
+                    paint3.setColor(aob.v0(i12, this.F));
                 } else {
                     paint3.setColor(this.m);
                 }
@@ -200,34 +200,34 @@ public class RadialProgress2 {
             if (z3) {
                 int i13 = this.v;
                 if (i13 >= 0) {
-                    i = bkb.v0(i13, this.F);
-                    tj6Var.c(i);
-                    paint2.setColor(bkb.v0(this.t, this.F) | (-16777216));
+                    i = aob.v0(i13, this.F);
+                    yl6Var.c(i);
+                    paint2.setColor(aob.v0(this.t, this.F) | (-16777216));
                 } else {
                     i = this.o;
-                    tj6Var.c(i);
+                    yl6Var.c(i);
                     paint2.setColor(this.m | (-16777216));
                 }
                 int i14 = this.t;
                 if (i14 >= 0) {
-                    paint4.setColor(bkb.v0(i14, this.F));
+                    paint4.setColor(aob.v0(i14, this.F));
                 } else {
                     paint4.setColor(this.m);
                 }
             } else {
                 int i15 = this.u;
                 if (i15 >= 0) {
-                    i = bkb.v0(i15, this.F);
-                    tj6Var.c(i);
-                    paint2.setColor(bkb.v0(this.p, this.F) | (-16777216));
+                    i = aob.v0(i15, this.F);
+                    yl6Var.c(i);
+                    paint2.setColor(aob.v0(this.p, this.F) | (-16777216));
                 } else {
                     i = this.n;
-                    tj6Var.c(i);
+                    yl6Var.c(i);
                     paint2.setColor(this.l | (-16777216));
                 }
                 int i16 = this.p;
                 if (i16 >= 0) {
-                    paint4.setColor(bkb.v0(i16, this.F));
+                    paint4.setColor(aob.v0(i16, this.F));
                 } else {
                     paint4.setColor(this.l);
                 }
@@ -266,7 +266,7 @@ public class RadialProgress2 {
                     argb = Color.argb(Color.alpha(i) + ((int) ((255 - r9) * f4)), red + ((int) ((255 - red) * f4)), green + ((int) ((255 - green) * f4)), blue + ((int) ((255 - blue) * f4)));
                     z = true;
                 }
-                tj6Var.c(argb);
+                yl6Var.c(argb);
                 int i17 = this.x;
                 float f5 = ceil - i17;
                 float f6 = ceil2 - i17;
@@ -284,7 +284,7 @@ public class RadialProgress2 {
             } else {
                 i2 = canvas5.save();
                 float f8 = f;
-                float B2 = ls6.B(f8, this.s, 0.1f, f8);
+                float B2 = qu6.B(f8, this.s, 0.1f, f8);
                 this.D.scale(B2, B2, ceil, ceil2);
             }
             if (z4 && this.B) {
@@ -314,37 +314,37 @@ public class RadialProgress2 {
                 float f9 = this.I;
                 canvas.scale(f9, f9, ceil, ceil2);
             }
-            tj6Var.setBounds(ceil - i18, ceil2 - i18, ceil + i18, ceil2 + i18);
-            tj6Var.E = imageReceiver.B();
+            yl6Var.setBounds(ceil - i18, ceil2 - i18, ceil + i18, ceil2 + i18);
+            yl6Var.E = imageReceiver.B();
             if (this.c || this.q >= 0) {
                 Canvas canvas6 = this.D;
                 if (canvas6 != null) {
-                    tj6Var.draw(canvas6);
+                    yl6Var.draw(canvas6);
                 } else {
-                    tj6Var.draw(canvas);
+                    yl6Var.draw(canvas);
                 }
             } else {
-                tj6Var.o = this.E;
-                tj6Var.draw(canvas);
+                yl6Var.o = this.E;
+                yl6Var.draw(canvas);
             }
             if (i2 != Integer.MIN_VALUE && (canvas2 = this.D) != null) {
                 canvas2.restoreToCount(i2);
             }
             if (this.c || this.q >= 0) {
-                if (Math.abs(rectF.width() - gl.L(44.0f)) < gl.p) {
-                    centerX = rectF.centerX() + gl.L(16.0f);
+                if (Math.abs(rectF.width() - hl.L(44.0f)) < hl.p) {
+                    centerX = rectF.centerX() + hl.L(16.0f);
                     i4 = 20;
-                    centerY = rectF.centerY() + gl.L(16.0f);
+                    centerY = rectF.centerY() + hl.L(16.0f);
                     i3 = 0;
                 } else {
-                    centerX = rectF.centerX() + gl.L(18.0f);
+                    centerX = rectF.centerX() + hl.L(18.0f);
                     i3 = 2;
                     i4 = 22;
-                    centerY = rectF.centerY() + gl.L(18.0f);
+                    centerY = rectF.centerY() + hl.L(18.0f);
                 }
                 int i20 = i4 / 2;
                 if (this.c) {
-                    f3 = tj6Var2.q != 4 ? 1.0f : 1.0f - tj6Var2.b();
+                    f3 = yl6Var2.q != 4 ? 1.0f : 1.0f - yl6Var2.b();
                     if (f3 == 0.0f) {
                         this.c = false;
                     }
@@ -354,12 +354,12 @@ public class RadialProgress2 {
                 Canvas canvas7 = this.D;
                 if (canvas7 != null) {
                     float f10 = i4 + 18 + i3;
-                    canvas7.drawCircle(gl.L(f10), gl.L(f10), gl.L(i20 + 1) * f3 * this.k, bkb.m0);
+                    canvas7.drawCircle(hl.L(f10), hl.L(f10), hl.L(i20 + 1) * f3 * this.k, aob.m0);
                 } else {
                     int i21 = this.d;
                     Paint paint6 = this.e;
                     paint6.setColor(i21);
-                    canvas.drawCircle(centerX, centerY, gl.L(12.0f), paint6);
+                    canvas.drawCircle(centerX, centerY, hl.L(12.0f), paint6);
                 }
                 if (this.D != null) {
                     canvas.drawBitmap(this.C, (int) rectF.left, (int) rectF.top, (Paint) null);
@@ -372,10 +372,10 @@ public class RadialProgress2 {
                     i5 = TLObject.FLAG_31;
                 }
                 float f12 = i20;
-                canvas.drawCircle(centerX, centerY, tb4.A(1.0f, this.s, gl.L(1.0f), gl.L(f12) * f3), paint);
+                canvas.drawCircle(centerX, centerY, qd4.A(1.0f, this.s, hl.L(1.0f), hl.L(f12) * f3), paint);
                 if (this.c) {
-                    tj6Var2.setBounds((int) (centerX - (gl.L(f12) * f3)), (int) (centerY - (gl.L(f12) * f3)), (int) ((gl.L(f12) * f3) + centerX), (int) ((gl.L(f12) * f3) + centerY));
-                    tj6Var2.draw(canvas);
+                    yl6Var2.setBounds((int) (centerX - (hl.L(f12) * f3)), (int) (centerY - (hl.L(f12) * f3)), (int) ((hl.L(f12) * f3) + centerX), (int) ((hl.L(f12) * f3) + centerY));
+                    yl6Var2.draw(canvas);
                 }
                 if (i5 != Integer.MIN_VALUE) {
                     canvas.restoreToCount(i5);
@@ -406,34 +406,34 @@ public class RadialProgress2 {
         String str2;
         if (str != null) {
             Locale locale = Locale.US;
-            str2 = tb4.m(this.x << 1, this.x << 1, "_");
+            str2 = qd4.m(this.x << 1, this.x << 1, "_");
         } else {
             str2 = null;
         }
         this.w.e0(str, str2, null, null, -1L);
     }
 
-    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, k27 k27Var) {
+    public final void i(TLRPC.PhotoSize photoSize, TLRPC.Document document, r47 r47Var) {
         Locale locale = Locale.US;
-        gl5 c = gl5.c(photoSize, document);
+        jn5 c = jn5.c(photoSize, document);
         int i = this.x;
-        this.w.d0(c, tb4.m(i << 1, i << 1, "_"), null, null, k27Var, 1);
+        this.w.d0(c, qd4.m(i << 1, i << 1, "_"), null, null, r47Var, 1);
     }
 
     public final void j(TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, TLRPC.Document document, Object obj) {
         Locale locale = Locale.US;
-        String m = tb4.m(this.x << 1, this.x << 1, "_");
-        this.w.Z(photoSize == null ? null : gl5.c(photoSize, document), m, photoSize2 != null ? gl5.c(photoSize2, document) : null, m, null, 0L, null, obj, 1);
+        String m = qd4.m(this.x << 1, this.x << 1, "_");
+        this.w.Z(photoSize == null ? null : jn5.c(photoSize, document), m, photoSize2 != null ? jn5.c(photoSize2, document) : null, m, null, 0L, null, obj, 1);
     }
 
     public final void k(int i, boolean z, boolean z2) {
         if (i == 2 || i == 3 || i == 4) {
-            tj6 tj6Var = this.j;
-            if (z && i == tj6Var.q) {
+            yl6 yl6Var = this.j;
+            if (z && i == yl6Var.q) {
                 return;
             }
-            tj6Var.d(i, z2);
-            boolean z3 = i != 4 || tj6Var.b() < 1.0f;
+            yl6Var.d(i, z2);
+            boolean z3 = i != 4 || yl6Var.b() < 1.0f;
             this.c = z3;
             if (z3) {
                 c();
@@ -480,18 +480,18 @@ public class RadialProgress2 {
     }
 
     public void setAsMini() {
-        tj6 tj6Var = this.i;
-        tj6Var.j = true;
-        tj6Var.b.setStrokeWidth(gl.L(2.0f));
+        yl6 yl6Var = this.i;
+        yl6Var.j = true;
+        yl6Var.b.setStrokeWidth(hl.L(2.0f));
     }
 
     public void setBackgroundGradientDrawable(LinearGradient linearGradient) {
-        tj6 tj6Var = this.i;
-        tj6Var.C = linearGradient;
-        tj6Var.D = new Matrix();
-        tj6 tj6Var2 = this.j;
-        tj6Var2.C = linearGradient;
-        tj6Var2.D = new Matrix();
+        yl6 yl6Var = this.i;
+        yl6Var.C = linearGradient;
+        yl6Var.D = new Matrix();
+        yl6 yl6Var2 = this.j;
+        yl6Var2.C = linearGradient;
+        yl6Var2.D = new Matrix();
     }
 
     public void setCircleRadius(int i) {
@@ -511,11 +511,11 @@ public class RadialProgress2 {
     }
 
     public void setIcon(int i, boolean z, boolean z2) {
-        tj6 tj6Var = this.i;
-        if (z && i == tj6Var.q) {
+        yl6 yl6Var = this.i;
+        if (z && i == yl6Var.q) {
             return;
         }
-        tj6Var.d(i, z2);
+        yl6Var.d(i, z2);
         View view = this.b;
         if (view != null) {
             if (z2) {

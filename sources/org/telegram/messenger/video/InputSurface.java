@@ -8,7 +8,7 @@ import android.opengl.EGLExt;
 import android.opengl.EGLSurface;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class InputSurface {
     private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -30,7 +30,7 @@ public class InputSurface {
             z = true;
         }
         if (z) {
-            wn4.j("EGL error encountered (see log)");
+            xi4.l("EGL error encountered (see log)");
         }
     }
 
@@ -38,24 +38,24 @@ public class InputSurface {
         EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
         this.mEGLDisplay = eglGetDisplay;
         if (eglGetDisplay == EGL14.EGL_NO_DISPLAY) {
-            wn4.j("unable to get EGL14 display");
+            xi4.l("unable to get EGL14 display");
             return;
         }
         int[] iArr = new int[2];
         if (!EGL14.eglInitialize(eglGetDisplay, iArr, 0, iArr, 1)) {
             this.mEGLDisplay = null;
-            wn4.j("unable to initialize EGL14");
+            xi4.l("unable to initialize EGL14");
             return;
         }
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
         if (!EGL14.eglChooseConfig(this.mEGLDisplay, new int[]{12324, 8, 12323, 8, 12322, 8, 12352, 4, 12610, 1, 12344}, 0, eGLConfigArr, 0, 1, new int[1], 0)) {
-            wn4.j("unable to find RGB888+recordable ES2 EGL config");
+            xi4.l("unable to find RGB888+recordable ES2 EGL config");
             return;
         }
         this.mEGLContext = EGL14.eglCreateContext(this.mEGLDisplay, eGLConfigArr[0], EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, 12344}, 0);
         checkEglError("eglCreateContext");
         if (this.mEGLContext == null) {
-            wn4.j("null context");
+            xi4.l("null context");
             return;
         }
         this.mEGLSurface = EGL14.eglCreateWindowSurface(this.mEGLDisplay, eGLConfigArr[0], this.mSurface, new int[]{12344}, 0);
@@ -63,7 +63,7 @@ public class InputSurface {
         if (this.mEGLSurface != null) {
             return;
         }
-        wn4.j("surface was null");
+        xi4.l("surface was null");
     }
 
     public Surface getSurface() {
@@ -76,7 +76,7 @@ public class InputSurface {
         if (EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.mEGLContext)) {
             return;
         }
-        wn4.j("eglMakeCurrent failed");
+        xi4.l("eglMakeCurrent failed");
     }
 
     public void release() {

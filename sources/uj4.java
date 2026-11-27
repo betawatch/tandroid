@@ -2,31 +2,44 @@
 
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class uj4 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ek4 b;
+public final class uj4 extends hn {
+    public final /* synthetic */ byte e0 = 0;
+    public final /* synthetic */ Object f0;
 
-    public /* synthetic */ uj4(ek4 ek4Var, byte b) {
-        this.a = b;
-        this.b = ek4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uj4(View view) {
+        super(false, false, false, false, true);
+        this.f0 = view;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        ek4 ek4Var = this.b;
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        byte b = this.e0;
+        Object obj = this.f0;
         switch (b) {
             case 0:
-                ek4Var.f();
+                ((View) obj).invalidate();
                 break;
             case 1:
-                ek4Var.f();
+                ((Runnable) obj).run();
                 break;
             default:
-                ek4Var.f();
+                ((voa) obj).invalidate();
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uj4(Runnable runnable) {
+        super(false, true, true, true, false);
+        this.f0 = runnable;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uj4(voa voaVar) {
+        super(false, false, false, true, true);
+        this.f0 = voaVar;
     }
 }

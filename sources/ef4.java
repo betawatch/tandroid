@@ -1,69 +1,90 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityEvent;
-import android.widget.ImageView;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ef4 extends ImageView {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class ef4 extends ka {
+    public View.OnClickListener c;
+    public String d;
+    public String e;
+    public boolean f;
+    public boolean g;
+    public long h;
+    public String i;
+    public short j;
+    public int k;
+    public boolean l;
+    public TL_chatlists.TL_exportedChatlistInvite m;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ef4(Object obj, Context context, int i, byte b) {
-        super(context);
-        this.a = b;
-        this.c = obj;
-        this.b = i;
+    public static ef4 b(int i, String str, boolean z) {
+        ef4 ef4Var = new ef4(4, false);
+        ef4Var.k = i;
+        ef4Var.d = str;
+        ef4Var.l = z;
+        return ef4Var;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                super.onDraw(canvas);
-                ff4 ff4Var = (ff4) this.c;
-                r86 r86Var = ff4Var.s;
-                if (ff4Var.r) {
-                    int i = this.b / 2;
-                    r86Var.setBounds(i, i, getWidth() - i, getHeight() - i);
-                    r86Var.draw(canvas);
-                    break;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static ef4 c(int i, String str, String str2, boolean z) {
+        ef4 ef4Var = new ef4(1, false);
+        ef4Var.g = z;
+        ef4Var.d = str;
+        ef4Var.i = str2;
+        ef4Var.j = i;
+        return ef4Var;
+    }
+
+    public static ef4 d(String str) {
+        ef4 ef4Var = new ef4(TextUtils.isEmpty(str) ? 3 : 6, false);
+        ef4Var.d = str;
+        return ef4Var;
+    }
+
+    public final boolean equals(Object obj) {
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
+        if (this != obj) {
+            if (obj == null || ef4.class != obj.getClass()) {
+                return false;
+            }
+            ef4 ef4Var = (ef4) obj;
+            int i = this.a;
+            if (i != ef4Var.a) {
+                return false;
+            }
+            if (i == 11) {
+                if (!TextUtils.equals(this.d, ef4Var.d) || !TextUtils.equals(this.e, ef4Var.e)) {
+                    return false;
                 }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                if (accessibilityEvent.getEventType() == 32768) {
-                    ((f65) ((f95) this.c).d).l1.x(this.b, true);
-                    break;
+            } else {
+                if ((i == 0 || i == 1 || i == 3 || i == 4) && !TextUtils.equals(this.d, ef4Var.d)) {
+                    return false;
                 }
-                break;
-            default:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                break;
+                int i2 = this.a;
+                if (i2 == 0) {
+                    if (this.f != ef4Var.f) {
+                        return false;
+                    }
+                } else if (i2 == 1) {
+                    if (this.h != ef4Var.h || !TextUtils.equals(this.i, ef4Var.i) || this.j != ef4Var.j) {
+                        return false;
+                    }
+                } else if (i2 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = ef4Var.m)) {
+                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
+                        return false;
+                    }
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
+                    boolean z = tL_exportedChatlistInvite3.revoked;
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = ef4Var.m;
+                    if (z != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != ef4Var.m.peers.size()) {
+                        return false;
+                    }
+                }
+            }
         }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 0:
-                return drawable == ((ff4) this.c).s || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
-        }
+        return true;
     }
 }

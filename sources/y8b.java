@@ -1,49 +1,199 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class y8b implements vd3 {
-    @Override // vd3
-    public final void a(ugb ugbVar, ugb ugbVar2, int i) {
-        x8b x8bVar = new x8b();
-        tg6 tg6Var = (tg6) ugbVar.f;
-        while (tg6Var != null && tg6Var != ugbVar2) {
-            tg6 tg6Var2 = (tg6) tg6Var.f;
-            x8bVar.b(tg6Var);
-            tg6Var = tg6Var2;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public abstract class y8b extends FrameLayout implements qk4 {
+    public final x8b a;
+    public final FrameLayout b;
+    public final TextView c;
+    public final FrameLayout d;
+    public final TextView e;
+    public final FrameLayout f;
+    public final TextView h;
+    public float n;
+    public float r;
+    public int s;
+    public ValueAnimator w;
+    public pcc x;
+    public pcc y;
+
+    public y8b(Activity activity) {
+        super(activity);
+        x8b x8bVar = new x8b(this, activity);
+        this.a = x8bVar;
+        final byte b = 0;
+        x8bVar.setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.b = frameLayout;
+        TextView textView = new TextView(activity);
+        this.c = textView;
+        final byte b2 = 1;
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(hl.o());
+        textView.setTextColor(-1);
+        textView.setText(ob6.M0(2131744285, null));
+        frameLayout.addView(textView, tre.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        x8bVar.addView(frameLayout, tre.s(-2, -1, jn7.w1, 0.0f, 0.0f, 6.66f, 0.0f));
+        frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: w8b
+            public final /* synthetic */ y8b b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b3 = b;
+                y8b y8bVar = this.b;
+                switch (b3) {
+                    case 0:
+                        y8bVar.b(-1);
+                        break;
+                    case 1:
+                        y8bVar.b(0);
+                        break;
+                    default:
+                        y8bVar.b(1);
+                        break;
+                }
+            }
+        });
+        iye.a(frameLayout);
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        this.d = frameLayout2;
+        TextView textView2 = new TextView(activity);
+        this.e = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTypeface(hl.o());
+        textView2.setTextColor(-1);
+        textView2.setText(ob6.M0(2131744239, null));
+        frameLayout2.addView(textView2, tre.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        x8bVar.addView(frameLayout2, tre.s(-2, -1, jn7.w1, 0.0f, 0.0f, 6.66f, 0.0f));
+        frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: w8b
+            public final /* synthetic */ y8b b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b3 = b2;
+                y8b y8bVar = this.b;
+                switch (b3) {
+                    case 0:
+                        y8bVar.b(-1);
+                        break;
+                    case 1:
+                        y8bVar.b(0);
+                        break;
+                    default:
+                        y8bVar.b(1);
+                        break;
+                }
+            }
+        });
+        iye.a(frameLayout2);
+        FrameLayout frameLayout3 = new FrameLayout(activity);
+        this.f = frameLayout3;
+        TextView textView3 = new TextView(activity);
+        this.h = textView3;
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTypeface(hl.o());
+        textView3.setTextColor(-1);
+        textView3.setText(ob6.M0(2131744104, null));
+        frameLayout3.addView(textView3, tre.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        x8bVar.addView(frameLayout3, tre.t(-2, -1, jn7.w1, 0, 0, 0, 0));
+        final byte b3 = 2;
+        frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: w8b
+            public final /* synthetic */ y8b b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b32 = b3;
+                y8b y8bVar = this.b;
+                switch (b32) {
+                    case 0:
+                        y8bVar.b(-1);
+                        break;
+                    case 1:
+                        y8bVar.b(0);
+                        break;
+                    default:
+                        y8bVar.b(1);
+                        break;
+                }
+            }
+        });
+        iye.a(frameLayout3);
+        addView(x8bVar, tre.e(-2, -1, jn7.x1));
+    }
+
+    public final void a(int i) {
+        if (this.s == i) {
+            return;
         }
-        x8bVar.g();
-        tg6 tg6Var3 = (tg6) ugbVar.f;
-        x8bVar.f = tg6Var3;
-        if (tg6Var3 != null) {
-            tg6Var3.e = x8bVar;
+        this.s = i;
+        ValueAnimator valueAnimator = this.w;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        x8bVar.e = ugbVar;
-        ugbVar.f = x8bVar;
-        tg6 tg6Var4 = (tg6) ugbVar.b;
-        x8bVar.b = tg6Var4;
-        if (((tg6) x8bVar.f) == null) {
-            tg6Var4.d = x8bVar;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, i);
+        this.w = ofFloat;
+        ofFloat.addUpdateListener(new ija(this, (byte) 18));
+        this.w.setDuration(320L);
+        this.w.setInterpolator(k43.h);
+        this.w.start();
+    }
+
+    public final void b(int i) {
+        if (this.s != i) {
+            a(i);
+            pcc pccVar = this.x;
+            if (pccVar != null) {
+                pccVar.a(Integer.valueOf(i));
+            }
         }
     }
 
-    @Override // vd3
-    public final char b() {
-        return '~';
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (((oab) this).E.G()) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // vd3
-    public final int c() {
-        return 2;
+    @Override // android.view.View, qk4
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
     }
 
-    @Override // vd3
-    public final int d(ud3 ud3Var, ud3 ud3Var2) {
-        return (ud3Var.g < 2 || ud3Var2.g < 2) ? 0 : 2;
+    @Override // qk4
+    public void setInvert(float f) {
+        this.n = f;
+        this.c.setTextColor(vm2.f(f, -1, -16777216));
+        this.e.setTextColor(vm2.f(f, -1, -16777216));
+        this.h.setTextColor(vm2.f(f, -1, -16777216));
     }
 
-    @Override // vd3
-    public final char e() {
-        return '~';
+    public void setOnSwitchModeListener(pcc pccVar) {
+        this.x = pccVar;
+    }
+
+    public void setOnSwitchingModeListener(pcc pccVar) {
+        this.y = pccVar;
     }
 }

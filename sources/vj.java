@@ -1,18 +1,25 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface vj {
+    void i(jt6 jt6Var);
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class vj extends MetricAffectingSpan {
-    public String a;
+    void j(p93 p93Var);
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-    }
+    void k(s64 s64Var, qx6 qx6Var);
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-    }
+    void n(uj ujVar, int i, long j);
+
+    void onRenderedFirstFrame(uj ujVar);
+
+    void onSeekStarted(uj ujVar);
+
+    void s(ggc ggcVar);
+
+    void u(e64 e64Var);
+
+    void w(uj ujVar, jt6 jt6Var);
+
+    void y(uj ujVar, int i);
 }

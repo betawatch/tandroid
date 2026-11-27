@@ -1,30 +1,30 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qg3 implements uc7 {
+public final /* synthetic */ class qg3 implements df7 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ cj3 b;
+    public final /* synthetic */ uj3 b;
 
-    public /* synthetic */ qg3(cj3 cj3Var, byte b) {
+    public /* synthetic */ qg3(uj3 uj3Var, byte b) {
         this.a = b;
-        this.b = cj3Var;
+        this.b = uj3Var;
     }
 
-    @Override // uc7
+    @Override // df7
     public final void a(int i) {
         byte b = this.a;
-        cj3 cj3Var = this.b;
+        uj3 uj3Var = this.b;
         switch (b) {
             case 0:
-                cj3Var.W1 = i != 0;
-                na7.d1().edit().putBoolean("askAboutContacts", cj3Var.W1).commit();
-                cj3Var.A2(false);
+                uj3Var.W1 = i != 0;
+                uc7.f1().edit().putBoolean("askAboutContacts", uj3Var.W1).apply();
+                uj3Var.C2(false);
                 break;
             default:
-                cj3Var.W1 = i != 0;
-                na7.d1().edit().putBoolean("askAboutContacts", cj3Var.W1).apply();
-                cj3Var.A2(false);
+                uj3Var.W1 = i != 0;
+                uc7.f1().edit().putBoolean("askAboutContacts", uj3Var.W1).commit();
+                uj3Var.C2(false);
                 break;
         }
     }

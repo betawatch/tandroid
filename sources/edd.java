@@ -1,47 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class edd {
-    public static final lo5 a = new lo5("NO_THREAD_ELEMENTS");
-    public static final dm2 b = new dm2(6);
-    public static final dm2 c = new dm2(7);
-    public static final dm2 d = new dm2(8);
+public final class edd extends kcd {
+    public final transient ybd r;
+    public final transient Object[] s;
+    public final transient int w;
 
-    public static final void a(sw2 sw2Var, Object obj) {
-        if (obj != a) {
-            if (!(obj instanceof fnb)) {
-                sw2Var.fold(null, c).getClass();
-                fyb.g();
-                return;
-            }
-            ow2[] ow2VarArr = ((fnb) obj).b;
-            int length = ow2VarArr.length - 1;
-            if (length < 0) {
-                return;
-            }
-            ow2 ow2Var = ow2VarArr[length];
-            throw null;
-        }
+    public edd(ybd ybdVar, Object[] objArr, int i) {
+        super((byte) 2);
+        this.r = ybdVar;
+        this.s = objArr;
+        this.w = i;
     }
 
-    public static final Object b(sw2 sw2Var) {
-        Object fold = sw2Var.fold(0, b);
-        fold.getClass();
-        return fold;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.r.get(key))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static final Object c(sw2 sw2Var, Object obj) {
-        if (obj == null) {
-            obj = b(sw2Var);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        kbd kbdVar = this.n;
+        if (kbdVar == null) {
+            kbdVar = new add(this);
+            this.n = kbdVar;
         }
-        if (obj == 0) {
-            return a;
+        return kbdVar.listIterator(0);
+    }
+
+    @Override // b4d
+    public final int p(Object[] objArr) {
+        kbd kbdVar = this.n;
+        if (kbdVar == null) {
+            kbdVar = new add(this);
+            this.n = kbdVar;
         }
-        if (obj instanceof Integer) {
-            return sw2Var.fold(new fnb(((Number) obj).intValue(), sw2Var), d);
-        }
-        fyb.g();
-        return null;
+        return kbdVar.p(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.w;
     }
 }

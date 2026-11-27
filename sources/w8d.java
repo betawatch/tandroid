@@ -1,99 +1,56 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Status;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class w8d {
-    public static final int[] a = {4, 6, 6, 8, 8, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12};
+public final class w8d extends jg0 {
+    public final /* synthetic */ byte q;
 
-    public static void a(qj0 qj0Var, int i, int i2) {
-        for (int i3 = 0; i3 < i2; i3 += 2) {
-            int i4 = i - i3;
-            int i5 = i4;
-            while (true) {
-                int i6 = i + i3;
-                if (i5 <= i6) {
-                    qj0Var.c(i5, i4);
-                    qj0Var.c(i5, i6);
-                    qj0Var.c(i4, i5);
-                    qj0Var.c(i6, i5);
-                    i5++;
-                }
-            }
-        }
-        int i7 = i - i2;
-        qj0Var.c(i7, i7);
-        int i8 = i7 + 1;
-        qj0Var.c(i8, i7);
-        qj0Var.c(i7, i8);
-        int i9 = i + i2;
-        qj0Var.c(i9, i7);
-        qj0Var.c(i9, i8);
-        qj0Var.c(i9, i9 - 1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w8d(o6d o6dVar, byte b) {
+        super(q40.a, o6dVar);
+        this.q = b;
     }
 
-    public static pj0 b(pj0 pj0Var, int i, int i2) {
-        hs4 hs4Var;
-        int i3 = pj0Var.b / i2;
-        if (i2 == 4) {
-            hs4Var = hs4.k;
-        } else if (i2 == 6) {
-            hs4Var = hs4.j;
-        } else if (i2 == 8) {
-            hs4Var = hs4.m;
-        } else if (i2 == 10) {
-            hs4Var = hs4.i;
-        } else {
-            if (i2 != 12) {
-                w26.j(de9.k(i2, "Unsupported word size "));
-                return null;
-            }
-            hs4Var = hs4.h;
-        }
-        wk4 wk4Var = new wk4(hs4Var);
-        int i4 = i / i2;
-        int[] iArr = new int[i4];
-        int i5 = pj0Var.b / i2;
-        for (int i6 = 0; i6 < i5; i6++) {
-            int i7 = 0;
-            for (int i8 = 0; i8 < i2; i8++) {
-                i7 |= pj0Var.d((i6 * i2) + i8) ? 1 << ((i2 - i8) - 1) : 0;
-            }
-            iArr[i6] = i7;
-        }
-        wk4Var.V(iArr, i4 - i3);
-        pj0 pj0Var2 = new pj0();
-        pj0Var2.b(0, i % i2);
-        for (int i9 = 0; i9 < i4; i9++) {
-            pj0Var2.b(iArr[i9], i2);
-        }
-        return pj0Var2;
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult, kg0
+    public final /* bridge */ /* synthetic */ void a(ie9 ie9Var) {
+        a(ie9Var);
     }
 
-    public static pj0 c(pj0 pj0Var, int i) {
-        pj0 pj0Var2 = new pj0();
-        int i2 = pj0Var.b;
-        int i3 = (1 << i) - 2;
-        int i4 = 0;
-        while (i4 < i2) {
-            int i5 = 0;
-            for (int i6 = 0; i6 < i; i6++) {
-                int i7 = i4 + i6;
-                if (i7 >= i2 || pj0Var.d(i7)) {
-                    i5 |= 1 << ((i - 1) - i6);
-                }
-            }
-            int i8 = i5 & i3;
-            if (i8 == i3) {
-                pj0Var2.b(i8, i);
-            } else if (i8 == 0) {
-                pj0Var2.b(i5 | 1, i);
-            } else {
-                pj0Var2.b(i5, i);
-                i4 += i;
-            }
-            i4--;
-            i4 += i;
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult
+    public final /* bridge */ /* synthetic */ ie9 d(Status status) {
+        byte b = this.q;
+        return status;
+    }
+
+    @Override // jg0
+    public final void n(d05 d05Var) {
+        switch (this.q) {
+            case 0:
+                q8d q8dVar = (q8d) d05Var;
+                a9d a9dVar = (a9d) q8dVar.k();
+                t8d t8dVar = new t8d(this, (byte) 0);
+                GoogleSignInOptions googleSignInOptions = q8dVar.F;
+                Parcel e = a9dVar.e();
+                int i = n8d.a;
+                e.writeStrongBinder(t8dVar);
+                n8d.c(e, googleSignInOptions);
+                a9dVar.f(e, jn7.m1);
+                break;
+            default:
+                q8d q8dVar2 = (q8d) d05Var;
+                a9d a9dVar2 = (a9d) q8dVar2.k();
+                t8d t8dVar2 = new t8d(this, (byte) 1);
+                GoogleSignInOptions googleSignInOptions2 = q8dVar2.F;
+                Parcel e2 = a9dVar2.e();
+                int i2 = n8d.a;
+                e2.writeStrongBinder(t8dVar2);
+                n8d.c(e2, googleSignInOptions2);
+                a9dVar2.f(e2, jn7.n1);
+                break;
         }
-        return pj0Var2;
     }
 }

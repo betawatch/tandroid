@@ -1,98 +1,121 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import java.util.WeakHashMap;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zz5 extends RelativeLayout {
-    public io5 a;
-    public boolean b;
-    public final /* synthetic */ LaunchActivity c;
+public final /* synthetic */ class zz5 implements oj3, fd {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zz5(LaunchActivity launchActivity, LaunchActivity launchActivity2) {
-        super(launchActivity2);
-        this.c = launchActivity;
-        this.a = io5.e;
-        ry4 ry4Var = new ry4((Object) this, (byte) 22);
-        WeakHashMap weakHashMap = jdc.a;
-        bdc.i(this, ry4Var);
+    public /* synthetic */ zz5(f42 f42Var, ku0 ku0Var, int i, a19 a19Var, TextView textView, pcc pccVar) {
+        this.b = f42Var;
+        this.c = ku0Var;
+        this.a = i;
+        this.d = a19Var;
+        this.e = textView;
+        this.f = pccVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ActionBarLayout actionBarLayout = this.c.q0;
-        if (actionBarLayout != null) {
-            actionBarLayout.P(canvas, this);
-        }
-        super.dispatchDraw(canvas);
+    @Override // oj3
+    public final boolean E() {
+        return false;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int measuredWidth = getMeasuredWidth();
-        getMeasuredHeight();
-        LaunchActivity launchActivity = this.c;
-        if (launchActivity.N0) {
-            launchActivity.p0.getView().layout(0, 0, launchActivity.p0.getView().getMeasuredWidth(), launchActivity.p0.getView().getMeasuredHeight());
+    @Override // oj3
+    public final boolean q(uj3 uj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, tzb tzbVar) {
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        final LaunchActivity launchActivity = (LaunchActivity) this.b;
+        final TLRPC.User user = (TLRPC.User) this.c;
+        final String str = (String) this.d;
+        final String str2 = (String) this.e;
+        final uj3 uj3Var2 = (uj3) this.f;
+        String str3 = LaunchActivity.C1;
+        final long j = ((if7) arrayList.get(0)).a;
+        final TLRPC.Chat M0 = uc7.s1(launchActivity.P).M0(Long.valueOf(-j));
+        final int i3 = this.a;
+        if (M0 == null || (!M0.creator && ((tL_chatAdminRights = M0.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
+            String M02 = ob6.M0(2131754456, null);
+            id idVar = alertDialog$Builder.a;
+            idVar.S = M02;
+            idVar.U = hl.S2(ob6.a0("AddMembersAlertNamesText", null, 2131754392, lbc.r(user), M0 == null ? "" : M0.title));
+            alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+            alertDialog$Builder.j(ob6.M0(2131754456, null), new fd() { // from class: g06
+                @Override // fd
+                public final void w(id idVar2, int i4) {
+                    String str4 = LaunchActivity.C1;
+                    Bundle l = bs2.l("scrollToTopOnResume", true);
+                    long j2 = -j;
+                    l.putLong("chat_id", j2);
+                    zu1 zu1Var = new zu1(l);
+                    int i5 = i3;
+                    jn7.f(i5).k(jn7.s, new Object[0]);
+                    uc7.s1(i5).k(j2, user, str2, zu1Var, false, null, null);
+                    ((ActionBarLayout) LaunchActivity.this.N()).U(zu1Var, true, false);
+                }
+            });
+            alertDialog$Builder.o();
         } else {
-            io5 io5Var = this.a;
-            int k1 = gl.k1(measuredWidth, io5Var.a, io5Var.c);
-            launchActivity.p0.getView().layout(0, 0, launchActivity.p0.getView().getMeasuredWidth(), launchActivity.p0.getView().getMeasuredHeight());
-            launchActivity.r0.getView().layout(k1, 0, launchActivity.r0.getView().getMeasuredWidth() + k1, launchActivity.r0.getView().getMeasuredHeight());
+            uc7.s1(i3).I(M0, user, new ic7() { // from class: f06
+                @Override // ic7
+                public final void a(boolean z3, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str4) {
+                    String str5 = LaunchActivity.C1;
+                    hl.c3(new v06(LaunchActivity.this, str, tL_chatAdminRights2, z3, str2, i3, M0, uj3Var2, user, j, str4));
+                }
+            });
         }
-        int measuredWidth2 = (measuredWidth - launchActivity.q0.getView().getMeasuredWidth()) / 2;
-        int L = gl.L(8.0f) + this.a.b;
-        launchActivity.q0.getView().layout(measuredWidth2, L, launchActivity.q0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.q0.getView().getMeasuredHeight() + L);
-        n81 n81Var = launchActivity.u0;
-        n81Var.layout(0, 0, n81Var.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
-        FrameLayout frameLayout = launchActivity.t0;
-        frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.t0.getMeasuredHeight());
+        return true;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        this.b = true;
-        int size = View.MeasureSpec.getSize(i);
-        int size2 = View.MeasureSpec.getSize(i2);
-        setMeasuredDimension(size, size2);
-        String str = LaunchActivity.C1;
-        boolean z = gl.E;
-        LaunchActivity launchActivity = this.c;
-        if ((!z && (!gl.N1() || launchActivity.getResources().getConfiguration().orientation == 2)) == launchActivity.N0 && !launchActivity.O0) {
-            launchActivity.O0 = true;
-            gl.c3(new tp5(this, (byte) 9));
-        }
-        if (launchActivity.N0) {
-            launchActivity.p0.getView().measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        } else {
-            io5 io5Var = this.a;
-            int k1 = gl.k1(size, io5Var.a, io5Var.c);
-            launchActivity.p0.getView().measure(View.MeasureSpec.makeMeasureSpec(k1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-            launchActivity.r0.getView().measure(View.MeasureSpec.makeMeasureSpec(size - k1, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        }
-        launchActivity.u0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        launchActivity.t0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        ViewGroup view = launchActivity.q0.getView();
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.min(gl.L(500.0f), size - gl.L(16.0f)), TLObject.FLAG_30);
-        io5 io5Var2 = this.a;
-        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(((size2 - io5Var2.b) - io5Var2.d) - gl.L(16.0f), TLObject.FLAG_30));
-        this.b = false;
+    @Override // oj3
+    public final boolean s(uj3 uj3Var) {
+        return false;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.b) {
+    @Override // fd
+    public final void w(id idVar, int i) {
+        f42 f42Var = (f42) this.b;
+        ku0 ku0Var = (ku0) this.c;
+        a19 a19Var = (a19) this.d;
+        TextView textView = (TextView) this.e;
+        pcc pccVar = (pcc) this.f;
+        String obj = f42Var.getText().toString();
+        if (obj.length() <= 0 || obj.length() > 32) {
+            hl.z3(f42Var);
+            ku0Var.a(Boolean.FALSE);
             return;
         }
-        super.requestLayout();
+        b19 f = b19.f(this.a);
+        int i2 = a19Var == null ? -1 : a19Var.a;
+        a19 d = f.d(obj);
+        if (d == null || d.a == i2) {
+            pccVar.a(obj);
+            idVar.dismiss();
+        } else {
+            hl.z3(f42Var);
+            textView.setText(ob6.M0(2131752643, null));
+            ku0Var.a(Boolean.TRUE);
+        }
+    }
+
+    public /* synthetic */ zz5(LaunchActivity launchActivity, int i, TLRPC.User user, String str, String str2, uj3 uj3Var) {
+        this.b = launchActivity;
+        this.a = i;
+        this.c = user;
+        this.d = str;
+        this.e = str2;
+        this.f = uj3Var;
     }
 }

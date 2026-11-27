@@ -1,13 +1,46 @@
 // default package
 
-import java.io.Closeable;
+import android.content.Context;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class gbd implements Closeable {
-    public static final gbd a = new gbd();
+public final class gbd extends d05 {
+    public final Context F;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+    public gbd(k05 k05Var, l05 l05Var, oxb oxbVar, Context context, Looper looper) {
+        super(45, k05Var, l05Var, oxbVar, context, looper);
+        this.F = context;
+    }
+
+    @Override // hg0
+    public final /* bridge */ /* synthetic */ IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.safetynet.internal.ISafetyNetService");
+        return queryLocalInterface instanceof xge ? (xge) queryLocalInterface : new xge(iBinder);
+    }
+
+    @Override // hg0
+    public final int i() {
+        return 12200000;
+    }
+
+    @Override // hg0
+    public final String l() {
+        return "com.google.android.gms.safetynet.internal.ISafetyNetService";
+    }
+
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.safetynet.service.START";
+    }
+
+    @Override // hg0
+    public final boolean x() {
+        return true;
     }
 }

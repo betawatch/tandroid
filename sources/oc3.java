@@ -1,100 +1,339 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class oc3 extends qc3 implements Comparable {
-    public final boolean E;
-    public final boolean e;
-    public final boolean f;
-    public final boolean h;
-    public final boolean n;
-    public final int r;
-    public final int s;
-    public final int w;
-    public final int x;
-    public final int y;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer;
+import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
 
-    public oc3(int i, sxb sxbVar, int i2, nc3 nc3Var, int i3, String str, String str2) {
-        super(i, sxbVar, i2);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class oc3 {
+    public final Context a;
+    public final vj0 b;
+    public boolean c = false;
+
+    public oc3(Context context) {
+        this.a = context;
+        this.b = new vj0(context, (byte) 2);
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(10:(2:10|11)|12|13|14|(12:(2:15|16)|23|24|25|26|27|28|29|30|31|32|(3:34|35|37))|17|18|19|20|21) */
+    /* JADX WARN: Can't wrap try/catch for region: R(24:75|76|12|13|14|15|16|17|18|19|20|21|23|24|25|(2:26|27)|28|29|30|31|32|34|35|37) */
+    /* JADX WARN: Can't wrap try/catch for region: R(28:3|(1:5)|6|7|8|9|10|11|12|13|14|(2:15|16)|17|18|19|20|21|23|24|25|26|27|28|29|30|31|32|(3:34|35|37)) */
+    /* JADX WARN: Can't wrap try/catch for region: R(7:(2:10|11)|(12:(2:15|16)|23|24|25|26|27|28|29|30|31|32|(3:34|35|37))|17|18|19|20|21) */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x014a, code lost:
+    
+        r14 = r9;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0154, code lost:
+    
+        r9 = r14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00c7, code lost:
+    
+        r14 = r9;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00d1, code lost:
+    
+        r9 = r14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void a(Context context, int i, y30 y30Var, Handler handler, n64 n64Var, ArrayList arrayList) {
+        int i2;
+        int i3;
         int i4;
-        boolean z = false;
-        this.f = ls6.c(i3, false);
-        int i5 = this.d.e;
-        int i6 = nc3Var.C;
-        w59 w59Var = nc3Var.y;
-        int i7 = i5 & (~i6);
-        this.h = (i7 & 1) != 0;
-        this.n = (i7 & 2) != 0;
-        w59 u = str2 != null ? mm5.u(str2) : w59Var.isEmpty() ? mm5.u("") : w59Var;
-        int i8 = 0;
-        while (true) {
-            if (i8 >= u.d) {
-                i4 = 0;
-                i8 = Integer.MAX_VALUE;
-                break;
-            } else {
-                i4 = sc3.g(this.d, (String) u.get(i8), nc3Var.D);
-                if (i4 > 0) {
-                    break;
-                } else {
-                    i8++;
+        int i5;
+        arrayList.add(new km6(context, this.b, handler, n64Var, y30Var));
+        if (i == 0) {
+            return;
+        }
+        int size = arrayList.size();
+        if (i == 2) {
+            size--;
+        }
+        try {
+            try {
+                i2 = size + 1;
+            } catch (ClassNotFoundException unused) {
+            }
+            try {
+                try {
+                    try {
+                        arrayList.add(size, (vg0) Class.forName("androidx.media3.decoder.midi.MidiRenderer").getConstructor(Context.class, Handler.class, p30.class, y30.class).newInstance(context, handler, n64Var, y30Var));
+                        efd.e("DefaultRenderersFactory", "Loaded MidiRenderer.");
+                    } catch (ClassNotFoundException unused2) {
+                        size = i2;
+                        i2 = size;
+                        i3 = i2 + 1;
+                        arrayList.add(i2, (vg0) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                        efd.e("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
+                        i4 = i3 + 1;
+                        arrayList.add(i3, (vg0) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                        efd.e("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
+                        try {
+                            i5 = i4 + 1;
+                        } catch (ClassNotFoundException unused3) {
+                        }
+                        try {
+                            try {
+                                arrayList.add(i4, (vg0) FfmpegAudioRenderer.class.getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                                efd.e("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
+                            } catch (ClassNotFoundException unused4) {
+                                i4 = i5;
+                                i5 = i4;
+                                Class<?> cls = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
+                                Object newInstance = cls.getConstructor(y30.class).newInstance(y30Var);
+                                cls.getMethod("setEventHandlerAndListener", Handler.class, p30.class).invoke(newInstance, handler, n64Var);
+                                vg0 vg0Var = (vg0) cls.getMethod("build", null).invoke(newInstance, null);
+                                vg0Var.getClass();
+                                int i6 = i5 + 1;
+                                arrayList.add(i5, vg0Var);
+                                efd.e("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
+                                arrayList.add(i6, (vg0) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                                efd.e("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
+                                return;
+                            }
+                            Class<?> cls2 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
+                            Object newInstance2 = cls2.getConstructor(y30.class).newInstance(y30Var);
+                            cls2.getMethod("setEventHandlerAndListener", Handler.class, p30.class).invoke(newInstance2, handler, n64Var);
+                            vg0 vg0Var2 = (vg0) cls2.getMethod("build", null).invoke(newInstance2, null);
+                            vg0Var2.getClass();
+                            int i62 = i5 + 1;
+                            arrayList.add(i5, vg0Var2);
+                            efd.e("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
+                            arrayList.add(i62, (vg0) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                            efd.e("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
+                            return;
+                        } catch (Exception e) {
+                            su3.f("Error instantiating IAMF extension", e);
+                            return;
+                        }
+                    }
+                    try {
+                        try {
+                            arrayList.add(i2, (vg0) Class.forName("androidx.media3.decoder.opus.LibopusAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                            efd.e("DefaultRenderersFactory", "Loaded LibopusAudioRenderer.");
+                        } catch (ClassNotFoundException unused5) {
+                            i2 = i3;
+                            i3 = i2;
+                            i4 = i3 + 1;
+                            arrayList.add(i3, (vg0) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                            efd.e("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
+                            i5 = i4 + 1;
+                            arrayList.add(i4, (vg0) FfmpegAudioRenderer.class.getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                            efd.e("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
+                            Class<?> cls22 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
+                            Object newInstance22 = cls22.getConstructor(y30.class).newInstance(y30Var);
+                            cls22.getMethod("setEventHandlerAndListener", Handler.class, p30.class).invoke(newInstance22, handler, n64Var);
+                            vg0 vg0Var22 = (vg0) cls22.getMethod("build", null).invoke(newInstance22, null);
+                            vg0Var22.getClass();
+                            int i622 = i5 + 1;
+                            arrayList.add(i5, vg0Var22);
+                            efd.e("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
+                            arrayList.add(i622, (vg0) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                            efd.e("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
+                            return;
+                        }
+                        i5 = i4 + 1;
+                        arrayList.add(i4, (vg0) FfmpegAudioRenderer.class.getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                        efd.e("DefaultRenderersFactory", "Loaded FfmpegAudioRenderer.");
+                        Class<?> cls222 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
+                        Object newInstance222 = cls222.getConstructor(y30.class).newInstance(y30Var);
+                        cls222.getMethod("setEventHandlerAndListener", Handler.class, p30.class).invoke(newInstance222, handler, n64Var);
+                        vg0 vg0Var222 = (vg0) cls222.getMethod("build", null).invoke(newInstance222, null);
+                        vg0Var222.getClass();
+                        int i6222 = i5 + 1;
+                        arrayList.add(i5, vg0Var222);
+                        efd.e("DefaultRenderersFactory", "Loaded IamfAudioRenderer.");
+                        try {
+                            arrayList.add(i6222, (vg0) Class.forName("androidx.media3.decoder.mpegh.MpeghAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                            efd.e("DefaultRenderersFactory", "Loaded MpeghAudioRenderer.");
+                            return;
+                        } catch (ClassNotFoundException unused6) {
+                            return;
+                        } catch (Exception e2) {
+                            su3.f("Error instantiating MPEG-H extension", e2);
+                            return;
+                        }
+                    } catch (Exception e3) {
+                        su3.f("Error instantiating FFmpeg extension", e3);
+                        return;
+                    }
+                    i4 = i3 + 1;
+                    arrayList.add(i3, (vg0) Class.forName("androidx.media3.decoder.flac.LibflacAudioRenderer").getConstructor(Handler.class, p30.class, y30.class).newInstance(handler, n64Var, y30Var));
+                    efd.e("DefaultRenderersFactory", "Loaded LibflacAudioRenderer.");
+                } catch (Exception e4) {
+                    su3.f("Error instantiating FLAC extension", e4);
+                    return;
                 }
+                i3 = i2 + 1;
+            } catch (Exception e5) {
+                su3.f("Error instantiating Opus extension", e5);
+            }
+        } catch (Exception e6) {
+            su3.f("Error instantiating MIDI extension", e6);
+        }
+    }
+
+    public ja3 b(Context context) {
+        return new d30(context, (byte) 2).b();
+    }
+
+    /* JADX WARN: Unreachable blocks removed: 1, instructions: 2 */
+    public void c(Context context, int i, Handler handler, n64 n64Var, ArrayList arrayList) {
+        char c;
+        int i2;
+        Class<?> cls = Integer.TYPE;
+        Class<?> cls2 = Long.TYPE;
+        zm6 zm6Var = new zm6(context);
+        zm6Var.c = this.b;
+        zm6Var.d = (short) 5000;
+        zm6Var.e = handler;
+        zm6Var.f = n64Var;
+        zm6Var.g = (byte) 50;
+        yve.p(!zm6Var.b);
+        Handler handler2 = zm6Var.e;
+        n64 n64Var2 = zm6Var.f;
+        yve.p(handler2 != null ? n64Var2 != null : n64Var2 == null);
+        zm6Var.b = true;
+        arrayList.add(new bn6(zm6Var));
+        if (i != 0) {
+            int size = arrayList.size();
+            if (i == 2) {
+                size--;
+            }
+            try {
+                try {
+                    c = 2;
+                    try {
+                        i2 = size + 1;
+                        try {
+                            arrayList.add(size, (vg0) Class.forName("androidx.media3.decoder.vp9.LibvpxVideoRenderer").getConstructor(cls2, Handler.class, vfc.class, cls).newInstance(5000L, handler, n64Var, 50));
+                            efd.e("DefaultRenderersFactory", "Loaded LibvpxVideoRenderer.");
+                        } catch (ClassNotFoundException unused) {
+                            size = i2;
+                            i2 = size;
+                            try {
+                                Class<?> cls3 = Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer");
+                                Class<?>[] clsArr = new Class[4];
+                                clsArr[0] = cls2;
+                                clsArr[1] = Handler.class;
+                                clsArr[c] = vfc.class;
+                                clsArr[3] = cls;
+                                Constructor<?> constructor = cls3.getConstructor(clsArr);
+                                Object[] objArr = new Object[4];
+                                objArr[0] = 5000L;
+                                objArr[1] = handler;
+                                objArr[c] = n64Var;
+                                objArr[3] = 50;
+                                vg0 vg0Var = (vg0) constructor.newInstance(objArr);
+                                int i3 = i2 + 1;
+                                try {
+                                    arrayList.add(i2, vg0Var);
+                                    efd.e("DefaultRenderersFactory", "Loaded Libdav1dVideoRenderer.");
+                                } catch (ClassNotFoundException unused2) {
+                                    i2 = i3;
+                                    i3 = i2;
+                                    int i4 = ExperimentalFfmpegVideoRenderer.y0;
+                                    Class[] clsArr2 = new Class[4];
+                                    clsArr2[0] = cls2;
+                                    clsArr2[1] = Handler.class;
+                                    clsArr2[c] = vfc.class;
+                                    clsArr2[3] = cls;
+                                    Constructor constructor2 = ExperimentalFfmpegVideoRenderer.class.getConstructor(clsArr2);
+                                    Object[] objArr2 = new Object[4];
+                                    objArr2[0] = 5000L;
+                                    objArr2[1] = handler;
+                                    objArr2[c] = n64Var;
+                                    objArr2[3] = 50;
+                                    arrayList.add(i3, (vg0) constructor2.newInstance(objArr2));
+                                    efd.e("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
+                                }
+                                int i42 = ExperimentalFfmpegVideoRenderer.y0;
+                                Class[] clsArr22 = new Class[4];
+                                clsArr22[0] = cls2;
+                                clsArr22[1] = Handler.class;
+                                clsArr22[c] = vfc.class;
+                                clsArr22[3] = cls;
+                                Constructor constructor22 = ExperimentalFfmpegVideoRenderer.class.getConstructor(clsArr22);
+                                Object[] objArr22 = new Object[4];
+                                objArr22[0] = 5000L;
+                                objArr22[1] = handler;
+                                objArr22[c] = n64Var;
+                                objArr22[3] = 50;
+                                arrayList.add(i3, (vg0) constructor22.newInstance(objArr22));
+                                efd.e("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
+                            } catch (Exception e) {
+                                su3.f("Error instantiating AV1 extension", e);
+                                return;
+                            }
+                        }
+                    } catch (ClassNotFoundException unused3) {
+                    }
+                } catch (ClassNotFoundException unused4) {
+                    c = 2;
+                }
+                try {
+                    Class<?> cls32 = Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer");
+                    Class<?>[] clsArr3 = new Class[4];
+                    clsArr3[0] = cls2;
+                    clsArr3[1] = Handler.class;
+                    clsArr3[c] = vfc.class;
+                    clsArr3[3] = cls;
+                    Constructor<?> constructor3 = cls32.getConstructor(clsArr3);
+                    Object[] objArr3 = new Object[4];
+                    objArr3[0] = 5000L;
+                    objArr3[1] = handler;
+                    objArr3[c] = n64Var;
+                    objArr3[3] = 50;
+                    vg0 vg0Var2 = (vg0) constructor3.newInstance(objArr3);
+                    int i32 = i2 + 1;
+                    arrayList.add(i2, vg0Var2);
+                    efd.e("DefaultRenderersFactory", "Loaded Libdav1dVideoRenderer.");
+                } catch (ClassNotFoundException unused5) {
+                }
+                try {
+                    int i422 = ExperimentalFfmpegVideoRenderer.y0;
+                    Class[] clsArr222 = new Class[4];
+                    clsArr222[0] = cls2;
+                    clsArr222[1] = Handler.class;
+                    clsArr222[c] = vfc.class;
+                    clsArr222[3] = cls;
+                    Constructor constructor222 = ExperimentalFfmpegVideoRenderer.class.getConstructor(clsArr222);
+                    Object[] objArr222 = new Object[4];
+                    objArr222[0] = 5000L;
+                    objArr222[1] = handler;
+                    objArr222[c] = n64Var;
+                    objArr222[3] = 50;
+                    arrayList.add(i32, (vg0) constructor222.newInstance(objArr222));
+                    efd.e("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
+                } catch (ClassNotFoundException unused6) {
+                } catch (Exception e2) {
+                    su3.f("Error instantiating FFmpeg extension", e2);
+                }
+            } catch (Exception e3) {
+                su3.f("Error instantiating VP9 extension", e3);
             }
         }
-        this.r = i8;
-        this.s = i4;
-        int i9 = str2 != null ? 1088 : nc3Var.A;
-        int i10 = this.d.f;
-        yq7 yq7Var = sc3.l;
-        int bitCount = (i10 == 0 || i10 != i9) ? Integer.bitCount(i10 & i9) : Integer.MAX_VALUE;
-        this.w = bitCount;
-        fm4 fm4Var = this.d;
-        this.E = (fm4Var.f & 1088) != 0;
-        int f = sc3.f(fm4Var, nc3Var.z);
-        this.x = f;
-        int g = sc3.g(this.d, str, sc3.h(str) == null);
-        this.y = g;
-        boolean z2 = i4 > 0 || (w59Var.isEmpty() && bitCount > 0) || ((w59Var.isEmpty() && f != Integer.MAX_VALUE) || this.h || ((this.n && g > 0) || nc3Var.x));
-        if (ls6.c(i3, nc3Var.B0) && z2) {
-            z = true;
-        }
-        this.e = z;
     }
 
-    @Override // qc3
-    public final int a() {
-        return this.e ? 1 : 0;
-    }
-
-    @Override // qc3
-    public final boolean b(qc3 qc3Var) {
-        return false;
-    }
-
-    @Override // java.lang.Comparable
-    /* renamed from: c, reason: merged with bridge method [inline-methods] */
-    public final int compareTo(oc3 oc3Var) {
-        wo2 c = wo2.a.c(this.f, oc3Var.f);
-        Integer valueOf = Integer.valueOf(this.r);
-        Integer valueOf2 = Integer.valueOf(oc3Var.r);
-        hi7 hi7Var = hi7.b;
-        hi7 hi7Var2 = hi7.c;
-        wo2 b = c.b(valueOf, valueOf2, hi7Var2);
-        int i = oc3Var.s;
-        int i2 = this.s;
-        wo2 a = b.a(i2, i);
-        int i3 = oc3Var.w;
-        int i4 = this.w;
-        wo2 c2 = a.a(i4, i3).b(Integer.valueOf(this.x), Integer.valueOf(oc3Var.x), hi7Var2).c(this.h, oc3Var.h);
-        Boolean valueOf3 = Boolean.valueOf(this.n);
-        Boolean valueOf4 = Boolean.valueOf(oc3Var.n);
-        if (i2 != 0) {
-            hi7Var = hi7Var2;
+    public final vg0[] d(Handler handler, n64 n64Var, n64 n64Var2, n64 n64Var3, n64 n64Var4) {
+        ArrayList arrayList = new ArrayList();
+        c(this.a, this.c ? 1 : 0, handler, n64Var, arrayList);
+        Context context = this.a;
+        a(this.a, this.c ? 1 : 0, b(context), handler, n64Var2, arrayList);
+        arrayList.add(new vlb(n64Var3, handler.getLooper()));
+        Looper looper = handler.getLooper();
+        for (int i = 0; i < 4; i++) {
+            arrayList.add(new zf7(n64Var4, looper));
         }
-        wo2 a2 = c2.b(valueOf3, valueOf4, hi7Var).a(this.y, oc3Var.y);
-        if (i4 == 0) {
-            a2 = a2.d(this.E, oc3Var.E);
-        }
-        return a2.e();
+        arrayList.add(new ca1());
+        arrayList.add(new tn5(new vj0(context, (byte) 0)));
+        return (vg0[]) arrayList.toArray(new vg0[0]);
     }
 }

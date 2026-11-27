@@ -1,19 +1,37 @@
 // default package
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class d64 {
-    public final ArrayList a;
-    public final wga b;
-    public final int c;
-    public final long d;
+public interface d64 {
+    Map b(byte[] bArr);
 
-    public d64(ArrayList arrayList, wga wgaVar, int i, long j) {
-        this.a = arrayList;
-        this.b = wgaVar;
-        this.c = i;
-        this.d = j;
-    }
+    c64 d();
+
+    or4 g(byte[] bArr);
+
+    byte[] h();
+
+    void i(byte[] bArr, byte[] bArr2);
+
+    void k(byte[] bArr);
+
+    byte[] l(byte[] bArr, byte[] bArr2);
+
+    void m(wz4 wz4Var);
+
+    void r(byte[] bArr);
+
+    void release();
+
+    b64 u(byte[] bArr, List list, int i, HashMap hashMap);
+
+    int v();
+
+    void x(byte[] bArr, ig8 ig8Var);
+
+    boolean z(String str, byte[] bArr);
 }

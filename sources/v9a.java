@@ -1,85 +1,48 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.content.pm.PackageInfo;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class v9a extends o39 {
-    public final /* synthetic */ byte f3;
-    public final /* synthetic */ taa g3;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class v9a {
+    public static final v9a a = new v9a();
+    public static final kj4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v9a(taa taaVar, Context context, wjb wjbVar, byte b) {
-        super(context, wjbVar);
-        this.f3 = b;
-        this.g3 = taaVar;
+    static {
+        vw5 vw5Var = new vw5();
+        vw5Var.a(u9a.class, u70.a);
+        vw5Var.a(aaa.class, v70.a);
+        vw5Var.a(t63.class, s70.a);
+        vw5Var.a(tr.class, r70.a);
+        vw5Var.a(yj.class, q70.a);
+        vw5Var.a(mo8.class, t70.a);
+        vw5Var.d = true;
+        b = new kj4((Object) vw5Var, (byte) 10);
     }
 
-    @Override // o39
-    public final boolean F0(float f) {
-        byte b = this.f3;
-        float f2 = 58.0f;
-        taa taaVar = this.g3;
-        switch (b) {
-            case 0:
-                if (taaVar.c2 && taaVar.j2[1] != null) {
-                    f2 = 111.0f;
-                }
-                if (f >= gl.L(f2) + taaVar.B2.b) {
-                    break;
-                }
-                break;
-            default:
-                if (taaVar.c2 && taaVar.j2[1] != null) {
-                    f2 = 111.0f;
-                }
-                if (f >= gl.L(f2) + taaVar.B2.b) {
-                    break;
-                }
-                break;
+    public static tr a(ji4 ji4Var) {
+        ji4Var.a();
+        Context context = ji4Var.a;
+        context.getClass();
+        String packageName = context.getPackageName();
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
+        String valueOf = Build.VERSION.SDK_INT >= 28 ? String.valueOf(packageInfo.getLongVersionCode()) : String.valueOf(packageInfo.versionCode);
+        ji4Var.a();
+        String str = ji4Var.c.b;
+        str.getClass();
+        Build.MODEL.getClass();
+        Build.VERSION.RELEASE.getClass();
+        packageName.getClass();
+        String str2 = packageInfo.versionName;
+        if (str2 == null) {
+            str2 = valueOf;
         }
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        byte b = this.f3;
-        float f = 58.0f;
-        taa taaVar = this.g3;
-        switch (b) {
-            case 0:
-                o39 o39Var = taaVar.z1;
-                if (o39Var.getVisibility() != 8) {
-                    canvas.save();
-                    int i = taaVar.k2;
-                    if (taaVar.c2 && taaVar.j2[1] != null) {
-                        f = 111.0f;
-                    }
-                    canvas.clipRect(0, gl.L(f) + i, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (o39Var.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                o39 o39Var2 = taaVar.z1;
-                if (o39Var2.getVisibility() != 8) {
-                    canvas.save();
-                    int i2 = taaVar.k2;
-                    if (taaVar.c2 && taaVar.j2[1] != null) {
-                        f = 111.0f;
-                    }
-                    canvas.clipRect(0, gl.L(f) + i2, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (o39Var2.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-        }
+        Build.MANUFACTURER.getClass();
+        ji4Var.a();
+        mo8 f = t4.f(context);
+        ji4Var.a();
+        return new tr(str, new yj(packageName, str2, valueOf, f, t4.c(context)));
     }
 }

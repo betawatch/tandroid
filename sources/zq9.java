@@ -1,30 +1,30 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class zq9 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ er9 b;
+public final class zq9 extends kea {
+    public final /* synthetic */ er9 U2;
 
-    public /* synthetic */ zq9(er9 er9Var, byte b) {
-        this.a = b;
-        this.b = er9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zq9(er9 er9Var, Context context, String str, String str2) {
+        super(context, null, str, null, false, str2, null, true);
+        this.U2 = er9Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        er9 er9Var = this.b;
-        switch (b) {
-            case 0:
-                er9Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            default:
-                er9Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
+    @Override // kea
+    public final void M0(zh6 zh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        if (z) {
+            int m = zh6Var.m();
+            UndoView undoView = this.U2.J;
+            if (m == 1) {
+                undoView.m(((TLRPC.Dialog) zh6Var.n(0)).id, Integer.valueOf(i), 41);
+            } else {
+                undoView.k(0L, 41, Integer.valueOf(i), Integer.valueOf(zh6Var.m()), null, null);
+            }
         }
     }
 }

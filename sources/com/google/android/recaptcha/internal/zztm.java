@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zztm extends LinkedHashMap {
     private static final zztm zza;
@@ -32,7 +32,7 @@ public final class zztm extends LinkedHashMap {
             if (!(obj instanceof zzsp)) {
                 return obj.hashCode();
             }
-            fvc.b();
+            p3d.a();
             return 0;
         }
         byte[] bArr = (byte[]) obj;
@@ -48,7 +48,7 @@ public final class zztm extends LinkedHashMap {
         if (this.zzb) {
             return;
         }
-        fvc.b();
+        p3d.a();
     }
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map

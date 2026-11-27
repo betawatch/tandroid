@@ -1,158 +1,99 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.identitycredentials.GetCredentialRequest;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.util.Arrays;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u84 extends by4 implements v19 {
-    public static final yn l = new yn("Fido.FIDO2_API", new op5(22), new wn());
-    public static final yn m = new yn("IdentityCredentials.API", new op5(0), new wn());
-    public static final yn n = new yn("ClientNotification.API", new op5(5), new wn());
-    public static final yn o = new yn("ClientTelemetry.API", new op5(6), new wn());
-    public static final yn p = new yn("ModuleInstall.API", new op5(4), new wn());
-    public static final yn q = new yn("SmsRetriever.API", new op5(11), new wn());
-    public static final yn r = new yn("LocationServices.API", new op5(14), new wn());
-    public static final yn s = new yn("RecaptchaBase.API", new op5(19), new wn());
-    public static final yn t = new yn("CloudMessaging.API", new op5(17), new wn());
-    public static final yn u = new yn("CastApi.API", new op5(20), new wn());
-    public static byte v = 1;
+public final class u84 {
+    public static final Hashtable b;
+    public static final Object[] c;
+    public static /* synthetic */ Class d;
+    public final ClassLoader a;
 
-    public u84(Context context, ay4 ay4Var) {
-        super(context, asc.a, zrc.a, ay4Var);
+    static {
+        Hashtable hashtable = new Hashtable();
+        b = hashtable;
+        hashtable.put("void", Void.TYPE);
+        hashtable.put("boolean", Boolean.TYPE);
+        hashtable.put("byte", Byte.TYPE);
+        hashtable.put("char", Character.TYPE);
+        hashtable.put("short", Short.TYPE);
+        hashtable.put("int", Integer.TYPE);
+        hashtable.put("long", Long.TYPE);
+        hashtable.put("float", Float.TYPE);
+        hashtable.put("double", Double.TYPE);
+        c = new Object[0];
     }
 
-    public final Task f(tq7... tq7VarArr) {
-        boolean z = false;
-        fre.a("Please provide at least one OptionalModuleApi.", tq7VarArr.length > 0);
-        for (tq7 tq7Var : tq7VarArr) {
-            fre.i(tq7Var, "Requested API must not be null.");
-        }
-        eo b = eo.b(Arrays.asList(tq7VarArr), false);
-        if (b.a.isEmpty()) {
-            return Tasks.forResult(new me7(0, true));
-        }
-        agb b2 = bgb.b();
-        b2.c = new f84[]{vdd.a};
-        b2.d = (char) 27301;
-        b2.b = false;
-        b2.a = new aec(this, b, z, (byte) 6);
-        return e(0, b2.a());
+    public u84(Class cls, String str) {
+        this.a = cls.getClassLoader();
     }
 
-    public final Task g(GetCredentialRequest getCredentialRequest) {
-        agb b = bgb.b();
-        b.c = new f84[]{led.a};
-        b.a = new e6e((Object) getCredentialRequest, (byte) 3);
-        b.d = (char) 32701;
-        Task e = e(0, b.a());
-        e.getClass();
-        return e;
-    }
-
-    public final Intent h() {
-        int l2 = l();
-        int i = l2 - 1;
-        if (l2 == 0) {
-            throw null;
+    /* JADX WARN: Unreachable blocks removed: 3, instructions: 5 */
+    public static Class a(ClassLoader classLoader, String str) {
+        if (str.equals("*")) {
+            return null;
         }
-        vn vnVar = this.e;
-        Context context = this.a;
-        if (i == 2) {
-            h4d.a.a("getFallbackSignInIntent()", new Object[0]);
-            Intent a = h4d.a(context, (GoogleSignInOptions) vnVar);
-            a.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
-            return a;
+        Class cls = (Class) b.get(str);
+        if (cls != null) {
+            return cls;
         }
-        if (i == 3) {
-            return h4d.a(context, (GoogleSignInOptions) vnVar);
-        }
-        h4d.a.a("getNoImplementationSignInIntent()", new Object[0]);
-        Intent a2 = h4d.a(context, (GoogleSignInOptions) vnVar);
-        a2.setAction("com.google.android.gms.auth.NO_IMPL");
-        return a2;
-    }
-
-    public final Task i(mgb mgbVar) {
-        agb b = bgb.b();
-        b.c = new f84[]{udd.a};
-        b.b = false;
-        b.a = new u39(mgbVar, (byte) 25);
-        return e(2, b.a());
-    }
-
-    public final void j(LocationRequest locationRequest, ly4 ly4Var, Looper looper) {
-        if (looper == null) {
-            looper = Looper.myLooper();
-            fre.i(looper, "invalid null looper");
-        }
-        w56 w = s34.w(looper, ly4Var, ly4.class.getSimpleName());
-        qx qxVar = new qx(this, w);
-        aec aecVar = new aec(qxVar, locationRequest, false, (byte) 10);
-        t59 t59Var = new t59();
-        t59Var.e = true;
-        t59Var.a = aecVar;
-        t59Var.b = qxVar;
-        t59Var.c = w;
-        t59Var.f = (short) 2436;
-        b(t59Var.a());
-    }
-
-    public final Task k() {
-        BasePendingResult basePendingResult;
-        byte b = 0;
-        boolean z = l() == 3;
-        h4d.a.a("Signing out", new Object[0]);
-        h4d.b(this.a);
-        x1d x1dVar = this.i;
-        if (z) {
-            BasePendingResult cyaVar = new cya(x1dVar, b);
-            cyaVar.a(Status.e);
-            basePendingResult = cyaVar;
-        } else {
-            f4d f4dVar = new f4d(x1dVar, (byte) 0);
-            x1dVar.b.d(1, f4dVar);
-            basePendingResult = f4dVar;
-        }
-        return wbd.a(basePendingResult, new o5f((byte) 29));
-    }
-
-    public final synchronized int l() {
-        byte b;
-        b = v;
-        if (b == 1) {
-            Context context = this.a;
-            cy4 cy4Var = cy4.e;
-            int c = cy4Var.c(context, 12451000);
-            if (c == 0) {
-                b = 4;
-                v = (byte) 4;
-            } else if (cy4Var.a(c, context, null) != null || ds3.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
-                b = 2;
-                v = (byte) 2;
-            } else {
-                b = 3;
-                v = (byte) 3;
+        try {
+            return classLoader == null ? Class.forName(str) : Class.forName(str, false, classLoader);
+        } catch (ClassNotFoundException unused) {
+            Class<ClassNotFoundException> cls2 = d;
+            if (cls2 == null) {
+                cls2 = ClassNotFoundException.class;
+                d = cls2;
             }
+            return cls2;
         }
-        return b;
     }
 
-    public final Task m(String[] strArr) {
-        agb b = bgb.b();
-        b.a = new e6e(this, strArr);
-        b.c = new f84[]{ied.b};
-        b.b = false;
-        b.d = (char) 8425;
-        return e(0, b.a());
+    public static lyc b(xh4 xh4Var, Object obj, Object obj2) {
+        boolean z = false;
+        return new lyc(xh4Var, obj, obj2, c, z, (byte) 6);
+    }
+
+    public static lyc c(xh4 xh4Var, Object obj, Object obj2, Object obj3) {
+        return new lyc(xh4Var, obj, obj2, new Object[]{obj3}, false, (byte) 6);
+    }
+
+    public final ia d(String str, String str2, String str3, String str4, String str5) {
+        ClassLoader classLoader = this.a;
+        Class a = a(classLoader, str2);
+        StringTokenizer stringTokenizer = new StringTokenizer(str3, ":");
+        int countTokens = stringTokenizer.countTokens();
+        Class[] clsArr = new Class[countTokens];
+        for (int i = 0; i < countTokens; i++) {
+            clsArr[i] = a(classLoader, stringTokenizer.nextToken());
+        }
+        StringTokenizer stringTokenizer2 = new StringTokenizer(str4, ":");
+        int countTokens2 = stringTokenizer2.countTokens();
+        String[] strArr = new String[countTokens2];
+        for (int i2 = 0; i2 < countTokens2; i2++) {
+            strArr[i2] = stringTokenizer2.nextToken();
+        }
+        StringTokenizer stringTokenizer3 = new StringTokenizer("", ":");
+        int countTokens3 = stringTokenizer3.countTokens();
+        Class[] clsArr2 = new Class[countTokens3];
+        for (int i3 = 0; i3 < countTokens3; i3++) {
+            clsArr2[i3] = a(classLoader, stringTokenizer3.nextToken());
+        }
+        Class a2 = a(classLoader, str5);
+        ia iaVar = new ia((byte) 2);
+        iaVar.b = 1;
+        iaVar.c = str;
+        iaVar.e = a;
+        iaVar.g = clsArr;
+        iaVar.h = a2;
+        return iaVar;
+    }
+
+    public final xh4 e(ia iaVar) {
+        xh4 xh4Var = new xh4((byte) 8, false);
+        xh4Var.b = iaVar;
+        return xh4Var;
     }
 }

@@ -1,83 +1,38 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hg3 implements View.OnLongClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cj3 b;
+public final class hg3 extends zm2 {
+    public int E;
+    public final /* synthetic */ Drawable F;
+    public final /* synthetic */ Drawable G;
+    public final /* synthetic */ ii3 H;
 
-    public /* synthetic */ hg3(cj3 cj3Var, byte b) {
-        this.a = b;
-        this.b = cj3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hg3(ii3 ii3Var, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super(drawable, drawable2);
+        this.H = ii3Var;
+        this.F = drawable3;
+        this.G = drawable4;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        byte b = this.a;
-        cj3 cj3Var = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = cj3Var.K2;
-                if (cj3Var.getParentActivity() == null) {
-                    break;
-                } else {
-                    boolean z = !arrayList.isEmpty();
-                    boolean z2 = true;
-                    for (int i = 0; i < arrayList.size(); i++) {
-                        long longValue = ((Long) arrayList.get(i)).longValue();
-                        if (z && longValue != cj3Var.getUserConfig().e()) {
-                            z = false;
-                        }
-                        if (cf3.B(longValue)) {
-                            z2 = false;
-                        }
-                        TLRPC.Chat K0 = cj3Var.getMessagesController().K0(Long.valueOf(-longValue));
-                        if (K0 != null && !hc2.B(K0)) {
-                            z2 = false;
-                        }
-                    }
-                    boolean z3 = cj3Var.x3() && cj3Var.E2();
-                    if (z3) {
-                        ArrayList arrayList2 = cj3Var.F2;
-                        int size = arrayList2.size();
-                        int i2 = 0;
-                        while (true) {
-                            if (i2 < size) {
-                                Object obj = arrayList2.get(i2);
-                                i2++;
-                                if (((jm6) obj).b()) {
-                                    z3 = false;
-                                }
-                            }
-                        }
-                    }
-                    ArrayList arrayList3 = cj3Var.F2;
-                    boolean z4 = arrayList3 != null && arrayList3.size() > 1;
-                    cs5 I = cs5.I(cj3Var, view);
-                    I.k(R.drawable.msg_sendfile, k96.M0(z4 ? 2131745443 : 2131745444, null), new wf3(cj3Var, (byte) 13), z3);
-                    I.b(R.drawable.input_notify_off, k96.M0(2131745391, null), new wf3(cj3Var, (byte) 14), false);
-                    I.k(R.drawable.msg_calendar2, k96.M0(z ? 2131745322 : 2131745667, null), new x6c((byte) 15, cj3Var, z), z2);
-                    I.a0();
-                    break;
-                }
-                break;
-            case 1:
-                cj3 cj3Var2 = this.b;
-                cj3Var2.G4(cj3Var2.K2, kk7.o1, true, true, null);
-                break;
-            case 2:
-                cj3Var.A4(view);
-                break;
-            default:
-                cj3Var.getContactsController().B();
-                cj3Var.b5();
-                break;
+    @Override // zm2, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        ii3 ii3Var = this.H;
+        int i = ii3Var.b;
+        int f = ii3Var.f(i == 0 ? aob.s8 : aob.M8);
+        if (this.E != f) {
+            this.E = f;
+            int f2 = vm2.f(0.1f, ii3Var.f(i == 0 ? aob.A8 : aob.P8), f);
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            this.F.setColorFilter(new PorterDuffColorFilter(f2, mode));
+            this.G.setColorFilter(new PorterDuffColorFilter(f, mode));
         }
-        return true;
+        super.draw(canvas);
     }
 }

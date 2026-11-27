@@ -1,148 +1,138 @@
 // default package
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
+import android.util.SparseIntArray;
+import java.util.Comparator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j97 implements Runnable {
+public final /* synthetic */ class j97 implements Comparator {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ e c;
+    public final /* synthetic */ uc7 b;
 
-    public /* synthetic */ j97(int i, e eVar, byte b) {
+    public /* synthetic */ j97(uc7 uc7Var, byte b) {
         this.a = b;
-        this.b = i;
-        this.c = eVar;
+        this.b = uc7Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00d0  */
-    /* JADX WARN: Type inference failed for: r7v1, types: [int] */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x005d, code lost:
+    
+        if ((r13 instanceof org.telegram.tgnet.TLRPC.TL_dialogFolder) == false) goto L40;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0062, code lost:
+    
+        if ((r13 instanceof org.telegram.tgnet.TLRPC.TL_dialogFolder) == false) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x00c3, code lost:
+    
+        if ((r13 instanceof org.telegram.tgnet.TLRPC.TL_dialogFolder) == false) goto L67;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x00c8, code lost:
+    
+        if ((r13 instanceof org.telegram.tgnet.TLRPC.TL_dialogFolder) == false) goto L57;
+     */
+    @Override // java.util.Comparator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        TLRPC.help_AppConfig help_appconfig;
-        NativeByteBuffer byteBufferValue;
-        SQLiteCursor sQLiteCursor2;
-        TLRPC.messages_AvailableEffects messages_availableeffects;
-        NativeByteBuffer byteBufferValue2;
+    public final int compare(Object obj, Object obj2) {
+        TLRPC.Dialog dialog;
+        int i;
+        int i2;
         byte b = this.a;
-        SQLiteCursor sQLiteCursor3 = null;
-        e eVar = this.c;
-        ?? r7 = this.b;
+        uc7 uc7Var = this.b;
         switch (b) {
             case 0:
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = ad7.Y(r7).b;
-                        if (sQLiteDatabase != null) {
-                            sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM app_config", new Object[0]);
-                            try {
-                                if (!sQLiteCursor.next() || (byteBufferValue = sQLiteCursor.byteBufferValue(0)) == null) {
-                                    help_appconfig = null;
-                                } else {
-                                    help_appconfig = TLRPC.help_AppConfig.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), true);
-                                    byteBufferValue.reuse();
-                                }
-                                if (help_appconfig instanceof TLRPC.TL_help_appConfig) {
-                                    eVar.a(Long.valueOf(r2.hash), (TLRPC.TL_help_appConfig) help_appconfig);
-                                } else {
-                                    eVar.a(0L, null);
-                                }
-                                sQLiteCursor3 = sQLiteCursor;
-                            } catch (Exception e) {
-                                e = e;
-                                fa4.g(e, true);
-                                eVar.a(0L, null);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    return;
-                                }
-                                return;
+                TLRPC.Dialog dialog2 = (TLRPC.Dialog) obj;
+                TLRPC.Dialog dialog3 = (TLRPC.Dialog) obj2;
+                ac7 ac7Var = uc7Var.q4;
+                int i3 = ac7Var == null ? Integer.MIN_VALUE : ac7Var.j.get(dialog2.id, TLObject.FLAG_31);
+                ac7 ac7Var2 = uc7Var.q4;
+                int i4 = ac7Var2 == null ? Integer.MIN_VALUE : ac7Var2.j.get(dialog3.id, TLObject.FLAG_31);
+                if (!(dialog2 instanceof TLRPC.TL_dialogFolder)) {
+                    break;
+                } else {
+                    break;
+                }
+                if (i3 != Integer.MIN_VALUE) {
+                    if (i4 != Integer.MIN_VALUE) {
+                        if (i3 <= i4) {
+                            if (i3 >= i4) {
+                                return 0;
                             }
                         }
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th) {
-                        th = th;
-                        sQLiteCursor3 = r7;
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                        }
-                        throw th;
+                        return 1;
                     }
-                } catch (Exception e2) {
-                    e = e2;
-                    sQLiteCursor = null;
-                } catch (Throwable th2) {
-                    th = th2;
-                    if (sQLiteCursor3 != null) {
-                    }
-                    throw th;
+                    return -1;
                 }
+                if (i4 == Integer.MIN_VALUE) {
+                    ls6 mediaDataController = uc7Var.getMediaDataController();
+                    long i5 = wf3.i(dialog2, mediaDataController.T(dialog2.id, 0L));
+                    long i6 = wf3.i(dialog3, mediaDataController.T(dialog3.id, 0L));
+                    if (i5 >= i6) {
+                        if (i5 <= i6) {
+                            return 0;
+                        }
+                        return -1;
+                    }
+                }
+                return 1;
+            case 1:
+                TLRPC.Dialog dialog4 = (TLRPC.Dialog) obj;
+                TLRPC.Dialog dialog5 = (TLRPC.Dialog) obj2;
+                if (!(dialog4 instanceof TLRPC.TL_dialogFolder)) {
+                    break;
+                } else {
+                    break;
+                }
+                if (dialog4.pinned) {
+                    if (dialog5.pinned) {
+                        int i7 = dialog4.pinnedNum;
+                        int i8 = dialog5.pinnedNum;
+                        if (i7 >= i8) {
+                            if (i7 <= i8) {
+                                return 0;
+                            }
+                        }
+                        return 1;
+                    }
+                    return -1;
+                }
+                if (!dialog5.pinned) {
+                    ls6 mediaDataController2 = uc7Var.getMediaDataController();
+                    long i9 = wf3.i(dialog4, mediaDataController2.T(dialog4.id, 0L));
+                    long i10 = wf3.i(dialog5, mediaDataController2.T(dialog5.id, 0L));
+                    if (i9 >= i10) {
+                        if (i9 <= i10) {
+                            return 0;
+                        }
+                        return -1;
+                    }
+                }
+                return 1;
+            case 2:
+                zb7 zb7Var = (zb7) obj2;
+                TLRPC.Dialog dialog6 = ((zb7) obj).d;
+                if (dialog6 != null && (dialog = zb7Var.d) != null) {
+                    return uc7Var.s4.compare(dialog6, dialog);
+                }
+                if (zb7Var.d != null) {
+                    return 1;
+                }
+                return dialog6 != null ? -1 : 0;
+            case 3:
+                SparseIntArray sparseIntArray = uc7Var.F0;
+                i = sparseIntArray.get(((sl8) obj).a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i2 = sparseIntArray.get(((sl8) obj2).a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
             default:
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase2 = ad7.Y(r7).b;
-                        if (sQLiteDatabase2 != null) {
-                            sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data FROM effects", new Object[0]);
-                            try {
-                                if (!sQLiteCursor2.next() || (byteBufferValue2 = sQLiteCursor2.byteBufferValue(0)) == null) {
-                                    messages_availableeffects = null;
-                                } else {
-                                    messages_availableeffects = TLRPC.messages_AvailableEffects.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), true);
-                                    byteBufferValue2.reuse();
-                                }
-                                if (messages_availableeffects instanceof TLRPC.TL_messages_availableEffects) {
-                                    eVar.a(Long.valueOf(r2.hash), (TLRPC.TL_messages_availableEffects) messages_availableeffects);
-                                } else {
-                                    eVar.a(0L, null);
-                                }
-                                sQLiteCursor3 = sQLiteCursor2;
-                            } catch (Exception e3) {
-                                e = e3;
-                                fa4.g(e, true);
-                                eVar.a(0L, null);
-                                if (sQLiteCursor2 != null) {
-                                    sQLiteCursor2.dispose();
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        th = th3;
-                        sQLiteCursor3 = r7;
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Exception e4) {
-                    e = e4;
-                    sQLiteCursor2 = null;
-                } catch (Throwable th4) {
-                    th = th4;
-                    if (sQLiteCursor3 != null) {
-                    }
-                    throw th;
-                }
+                SparseIntArray sparseIntArray2 = uc7Var.E0;
+                i = sparseIntArray2.get(((sl8) obj).a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i2 = sparseIntArray2.get(((sl8) obj2).a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
         }
+        return i - i2;
     }
 }

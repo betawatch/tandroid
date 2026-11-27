@@ -1,31 +1,43 @@
 // default package
 
-import android.os.SystemClock;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pk5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fl5 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface pk5 {
+    boolean a();
 
-    public pk5(fl5 fl5Var, int i) {
-        this.b = fl5Var;
-        this.a = i;
-    }
+    void b(boolean z, boolean z2);
 
-    public final void a(qb4 qb4Var, final String str, final long j, final long j2, final boolean z) {
-        this.b.u.put(str, new long[]{j, j2});
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = qb4Var.S;
-        if (j3 == 0 || j3 < elapsedRealtime - 100 || j == j2) {
-            qb4Var.S = elapsedRealtime;
-            final int i = this.a;
-            gl.c3(new Runnable() { // from class: nk5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    kk7.f(i).k(kk7.V1, str, Long.valueOf(j), Long.valueOf(j2), Boolean.valueOf(z));
-                }
-            });
-        }
-    }
+    void c(TLRPC.ReactionCount reactionCount, boolean z, float f, float f2);
+
+    float getAlpha();
+
+    float getCheckBoxTranslation();
+
+    float getDeltaBottom();
+
+    int getHeight();
+
+    int getMeasuredHeight();
+
+    r47 getMessageObject();
+
+    float getPivotX();
+
+    float getScaleX();
+
+    float getScaleY();
+
+    float getSlidingOffsetX();
+
+    float getX();
+
+    float getY();
+
+    boolean j();
+
+    boolean m();
+
+    boolean n();
 }

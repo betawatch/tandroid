@@ -1,147 +1,132 @@
 // default package
 
-import android.app.Activity;
 import android.content.Context;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vb extends l5c {
-    public final /* synthetic */ byte Q;
-    public final /* synthetic */ Object R;
+public final class vb extends eva {
+    public final /* synthetic */ byte r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vb(KeyEvent.Callback callback, o39 o39Var, Context context, int i, i8c i8cVar, wjb wjbVar, byte b) {
-        super(o39Var, context, i, 0, false, i8cVar, wjbVar);
-        this.Q = b;
-        this.R = callback;
+    public /* synthetic */ vb(Context context, byte b) {
+        super(context);
+        this.r = b;
     }
 
-    @Override // l5c, w39
-    public final void t(s49 s49Var, int i) {
-        d76 d76Var;
-        i76 i76Var;
-        switch (this.Q) {
-            case 2:
-                super.t(s49Var, i);
-                l18 l18Var = (l18) this.R;
-                if (l18Var.E) {
-                    View view = s49Var.a;
-                    if ((view instanceof d76) && (i76Var = (d76Var = (d76) view).L) != null && i76Var.a == l18Var.y) {
-                        d76Var.a();
-                        l18Var.E = false;
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.t(s49Var, i);
-                break;
-        }
-    }
-
-    @Override // l5c, w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        wjb wjbVar;
-        wjb wjbVar2;
-        wjb wjbVar3;
-        wjb wjbVar4;
-        byte b = this.Q;
-        Object obj = this.R;
-        switch (b) {
+    @Override // eva
+    public final void a() {
+        switch (this.r) {
             case 0:
-                bc bcVar = (bc) obj;
-                if (i != 42) {
-                    break;
-                } else {
-                    Activity parentActivity = bcVar.getParentActivity();
-                    int i2 = bkb.K6;
-                    wjbVar = ((d) bcVar).resourceProvider;
-                    ld5 ld5Var = new ld5(parentActivity, i2, 21, 0, false, wjbVar);
-                    ld5Var.setHeight(25);
-                    break;
-                }
+                super.a();
+                dva dvaVar = this.a;
+                dvaVar.q = true;
+                dvaVar.J = false;
+                dvaVar.K = true;
+                dvaVar.H = true;
+                dvaVar.c();
+                break;
             case 1:
-                eg1 eg1Var = (eg1) obj;
-                if (i != 42) {
-                    break;
-                } else {
-                    Activity parentActivity2 = eg1Var.getParentActivity();
-                    int i3 = bkb.K6;
-                    wjbVar2 = ((d) eg1Var).resourceProvider;
-                    ld5 ld5Var2 = new ld5(parentActivity2, i3, 21, 0, false, wjbVar2);
-                    ld5Var2.setHeight(25);
-                    break;
-                }
-            case 3:
-                y99 y99Var = (y99) obj;
-                if (i != 0) {
-                    if (i != 42) {
-                        break;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            case 4:
-                jva jvaVar = (jva) obj;
-                if (i != 42) {
-                    break;
-                } else {
-                    Activity parentActivity3 = jvaVar.getParentActivity();
-                    int i4 = bkb.K6;
-                    wjbVar3 = ((d) jvaVar).resourceProvider;
-                    ld5 ld5Var3 = new ld5(parentActivity3, i4, 21, 0, false, wjbVar3);
-                    ld5Var3.setHeight(25);
-                    break;
-                }
-            case 5:
-                ydb ydbVar = (ydb) obj;
-                if (i != 42) {
-                    break;
-                } else {
-                    Activity parentActivity4 = ydbVar.getParentActivity();
-                    int i5 = bkb.K6;
-                    wjbVar4 = ((d) ydbVar).resourceProvider;
-                    ld5 ld5Var4 = new ld5(parentActivity4, i5, 21, 0, false, wjbVar4);
-                    ld5Var4.setHeight(25);
-                    break;
-                }
-        }
-        return super.x(viewGroup, i);
-    }
-
-    @Override // l5c, w39
-    public final void y(s49 s49Var) {
-        d76 d76Var;
-        i76 i76Var;
-        switch (this.Q) {
+                super.a();
+                dva dvaVar2 = this.a;
+                dvaVar2.q = true;
+                dvaVar2.J = false;
+                dvaVar2.K = true;
+                dvaVar2.H = true;
+                dvaVar2.c();
+                break;
             case 2:
-                super.y(s49Var);
-                l18 l18Var = (l18) this.R;
-                if (l18Var.E) {
-                    View view = s49Var.a;
-                    if ((view instanceof d76) && (i76Var = (d76Var = (d76) view).L) != null && i76Var.a == l18Var.y) {
-                        d76Var.a();
-                        l18Var.E = false;
-                        break;
-                    }
-                }
+                dva dvaVar3 = this.a;
+                dvaVar3.q = true;
+                dvaVar3.J = false;
+                dvaVar3.H = true;
+                dvaVar3.I = true;
+                dvaVar3.k = hl.L(-14.0f);
+                dva dvaVar4 = this.a;
+                dvaVar4.x = (short) 2000;
+                dvaVar4.y = (short) 3000;
+                dvaVar4.r = (byte) 16;
+                dvaVar4.G = false;
+                dvaVar4.N = 28;
+                dvaVar4.P = aob.Dk;
+                dvaVar4.c();
+                break;
+            case 3:
+                k15 k15Var = new k15(50);
+                this.a = k15Var;
+                k15Var.N = 100;
+                k15Var.L = false;
+                k15Var.G = false;
+                k15Var.J = true;
+                k15Var.H = true;
+                k15Var.I = false;
+                k15Var.r = (byte) 4;
+                k15Var.w = 0.98f;
+                k15Var.v = 0.98f;
+                k15Var.u = 0.98f;
+                k15Var.c();
+                break;
+            case 4:
+                dva dvaVar5 = this.a;
+                dvaVar5.q = true;
+                dvaVar5.J = false;
+                dvaVar5.H = true;
+                dvaVar5.I = true;
+                dvaVar5.k = hl.L(-14.0f);
+                dva dvaVar6 = this.a;
+                dvaVar6.x = (short) 2000;
+                dvaVar6.y = (short) 3000;
+                dvaVar6.r = (byte) 16;
+                dvaVar6.G = false;
+                dvaVar6.N = 28;
+                dvaVar6.P = aob.Dk;
+                dvaVar6.c();
                 break;
             default:
-                super.y(s49Var);
+                super.a();
+                dva dvaVar7 = this.a;
+                dvaVar7.q = true;
+                dvaVar7.J = false;
+                dvaVar7.K = true;
+                dvaVar7.H = true;
+                dvaVar7.c();
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vb(iz4 iz4Var, o39 o39Var, Activity activity, int i, int i2, i8c i8cVar, wjb wjbVar, byte b) {
-        super(o39Var, activity, i, i2, true, i8cVar, wjbVar);
-        this.Q = b;
-        this.R = iz4Var;
+    @Override // eva
+    public final int getStarsRectWidth() {
+        switch (this.r) {
+            case 0:
+                return getMeasuredWidth();
+            case 1:
+                return getMeasuredWidth();
+            case 2:
+            default:
+                return super.getStarsRectWidth();
+            case 3:
+                return getMeasuredWidth();
+        }
+    }
+
+    @Override // eva, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.r) {
+            case 2:
+                super.onMeasure(i, i2);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - hl.L(52.0f));
+                break;
+            case 3:
+            default:
+                super.onMeasure(i, i2);
+                break;
+            case 4:
+                super.onMeasure(i, i2);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - hl.L(52.0f));
+                break;
+            case 5:
+                super.onMeasure(i, i2);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - hl.L(52.0f));
+                break;
+        }
     }
 }

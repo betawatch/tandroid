@@ -1,29 +1,29 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class tm0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ AtomicBoolean b;
+public final /* synthetic */ class tm0 implements fd, nr7, sy4 {
+    public final /* synthetic */ nx0 a;
 
-    public /* synthetic */ tm0(AtomicBoolean atomicBoolean, byte b) {
-        this.a = b;
-        this.b = atomicBoolean;
+    public /* synthetic */ tm0(nx0 nx0Var) {
+        this.a = nx0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        AtomicBoolean atomicBoolean = this.b;
-        switch (b) {
-            case 0:
-                atomicBoolean.set(true);
-                break;
-            default:
-                atomicBoolean.set(true);
-                break;
-        }
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        return this.a.Y(l2dVar);
+    }
+
+    @Override // sy4
+    public final int h() {
+        return aob.v0(aob.h5, this.a.J0);
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        this.a.dismiss();
+        bx4.g1(false, null);
     }
 }

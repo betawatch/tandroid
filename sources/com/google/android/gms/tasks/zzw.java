@@ -4,7 +4,7 @@ import android.app.Activity;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -15,7 +15,7 @@ final class zzw<TResult> extends Task<TResult> {
     private Exception zzf;
 
     private final void zzf() {
-        fre.j("Task is not yet complete", this.zzc);
+        xve.j("Task is not yet complete", this.zzc);
     }
 
     private final void zzg() {
@@ -175,7 +175,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final void zzc(Exception exc) {
-        fre.i(exc, "Exception must not be null");
+        xve.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             zzg();
             this.zzc = true;
@@ -185,7 +185,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final boolean zzd(Exception exc) {
-        fre.i(exc, "Exception must not be null");
+        xve.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             if (this.zzc) {
                 return false;

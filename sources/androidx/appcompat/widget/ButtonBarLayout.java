@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class ButtonBarLayout extends LinearLayout {
     public boolean a;
@@ -19,9 +19,9 @@ public class ButtonBarLayout extends LinearLayout {
     public ButtonBarLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.c = -1;
-        int[] iArr = jy8.k;
+        int[] iArr = w19.k;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr);
-        jdc.j(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
+        ihc.k(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
         this.a = obtainStyledAttributes.getBoolean(0, true);
         obtainStyledAttributes.recycle();
         if (getOrientation() == 1) {
@@ -109,7 +109,7 @@ public class ButtonBarLayout extends LinearLayout {
                 i5 = getPaddingBottom() + measuredHeight;
             }
         }
-        WeakHashMap weakHashMap = jdc.a;
+        WeakHashMap weakHashMap = ihc.a;
         if (getMinimumHeight() != i5) {
             setMinimumHeight(i5);
             if (i2 == 0) {

@@ -1,70 +1,97 @@
 // default package
 
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import java.io.OutputStream;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r26 {
-    public boolean a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public List k;
-    public boolean l;
+public final class r26 extends OutputStream {
+    public final /* synthetic */ byte a;
+    public long b;
 
-    public final void a(View view) {
-        int b;
-        int size = this.k.size();
-        View view2 = null;
-        int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        for (int i2 = 0; i2 < size; i2++) {
-            View view3 = ((s49) this.k.get(i2)).a;
-            e49 e49Var = (e49) view3.getLayoutParams();
-            if (view3 != view && !e49Var.a.j() && (b = (e49Var.b() - this.d) * this.e) >= 0 && b < i) {
-                view2 = view3;
-                if (b == 0) {
-                    break;
-                } else {
-                    i = b;
+    @Override // java.io.OutputStream
+    public final void write(byte[] bArr, int i, int i2) {
+        int i3;
+        int length;
+        int i4;
+        int length2;
+        int i5;
+        int length3;
+        int i6;
+        int length4;
+        int i7;
+        switch (this.a) {
+            case 0:
+                if (i < 0 || i > bArr.length || i2 < 0 || (i3 = i + i2) > bArr.length || i3 < 0) {
+                    throw new IndexOutOfBoundsException();
                 }
-            }
-        }
-        if (view2 == null) {
-            this.d = -1;
-        } else {
-            this.d = ((e49) view2.getLayoutParams()).b();
+                this.b += i2;
+                return;
+            case 1:
+                if (i < 0 || i > (length = bArr.length) || i2 < 0 || (i4 = i + i2) > length || i4 < 0) {
+                    throw new IndexOutOfBoundsException();
+                }
+                this.b += i2;
+                return;
+            case 2:
+                if (i < 0 || i > (length2 = bArr.length) || i2 < 0 || (i5 = i + i2) > length2 || i5 < 0) {
+                    throw new IndexOutOfBoundsException();
+                }
+                this.b += i2;
+                return;
+            case 3:
+                if (i < 0 || i > (length3 = bArr.length) || i2 < 0 || (i6 = i + i2) > length3 || i6 < 0) {
+                    throw new IndexOutOfBoundsException();
+                }
+                this.b += i2;
+                return;
+            default:
+                if (i < 0 || i > (length4 = bArr.length) || i2 < 0 || (i7 = i + i2) > length4 || i7 < 0) {
+                    throw new IndexOutOfBoundsException();
+                }
+                this.b += i2;
+                return;
         }
     }
 
-    public final boolean b(p49 p49Var) {
-        int i = this.d;
-        return i >= 0 && i < p49Var.b();
+    @Override // java.io.OutputStream
+    public final void write(byte[] bArr) {
+        switch (this.a) {
+            case 0:
+                this.b += bArr.length;
+                break;
+            case 1:
+                this.b += bArr.length;
+                break;
+            case 2:
+                this.b += bArr.length;
+                break;
+            case 3:
+                this.b += bArr.length;
+                break;
+            default:
+                this.b += bArr.length;
+                break;
+        }
     }
 
-    public final View c(wg2 wg2Var) {
-        List list = this.k;
-        if (list == null) {
-            View view = wg2Var.k(this.d, Long.MAX_VALUE).a;
-            this.d += this.e;
-            return view;
+    @Override // java.io.OutputStream
+    public final void write(int i) {
+        switch (this.a) {
+            case 0:
+                this.b++;
+                break;
+            case 1:
+                this.b++;
+                break;
+            case 2:
+                this.b++;
+                break;
+            case 3:
+                this.b++;
+                break;
+            default:
+                this.b++;
+                break;
         }
-        int size = list.size();
-        for (int i = 0; i < size; i++) {
-            View view2 = ((s49) this.k.get(i)).a;
-            e49 e49Var = (e49) view2.getLayoutParams();
-            if (!e49Var.a.j() && this.d == e49Var.b()) {
-                a(view2);
-                return view2;
-            }
-        }
-        return null;
     }
 }

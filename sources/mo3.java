@@ -1,22 +1,36 @@
 // default package
 
-import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class mo3 implements no3 {
-    public final ScheduledFuture a;
+public final class mo3 implements Executor {
+    public static final mo3 a;
+    public static final /* synthetic */ mo3[] b;
 
-    public mo3(ScheduledFuture scheduledFuture) {
-        this.a = scheduledFuture;
+    static {
+        mo3 mo3Var = new mo3("INSTANCE", 0);
+        a = mo3Var;
+        b = new mo3[]{mo3Var};
     }
 
-    @Override // no3
-    public final void dispose() {
-        this.a.cancel(false);
+    public static mo3 valueOf(String str) {
+        return (mo3) Enum.valueOf(mo3.class, str);
     }
 
+    public static mo3[] values() {
+        return (mo3[]) b.clone();
+    }
+
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        runnable.run();
+    }
+
+    @Override // java.lang.Enum
     public final String toString() {
-        return "DisposableFutureHandle[" + this.a + ']';
+        return "MoreExecutors.directExecutor()";
     }
 }

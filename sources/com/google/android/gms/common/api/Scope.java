@@ -4,15 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class Scope extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<Scope> CREATOR = new igd(25);
+public final class Scope extends c4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<Scope> CREATOR = new zkd(25);
     public final int a;
     public final String b;
 
     public Scope(int i, String str) {
-        fre.g(str, "scopeUri must not be null or empty");
+        xve.g(str, "scopeUri must not be null or empty");
         this.a = i;
         this.b = str;
     }
@@ -37,10 +37,10 @@ public final class Scope extends b4 implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        jte.l(parcel, 2, this.b);
-        jte.s(parcel, r);
+        bye.l(parcel, 2, this.b);
+        bye.s(parcel, r);
     }
 }

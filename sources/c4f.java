@@ -1,67 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class c4f {
-    public pbf a(vbf vbfVar) {
-        pbf pbfVar;
-        pbf pbfVar2 = pbf.d;
-        synchronized (vbfVar) {
-            pbfVar = vbfVar.b;
-            if (pbfVar != pbfVar2) {
-                vbfVar.b = pbfVar2;
-            }
+public final class c4f implements zq7 {
+    public static final c4f a = new c4f();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return pbfVar;
-    }
-
-    public tbf b(vbf vbfVar) {
-        tbf tbfVar;
-        tbf tbfVar2 = tbf.c;
-        synchronized (vbfVar) {
-            tbfVar = vbfVar.c;
-            if (tbfVar != tbfVar2) {
-                vbfVar.c = tbfVar2;
-            }
-        }
-        return tbfVar;
-    }
-
-    public void c(tbf tbfVar, tbf tbfVar2) {
-        tbfVar.b = tbfVar2;
-    }
-
-    public void d(tbf tbfVar, Thread thread) {
-        tbfVar.a = thread;
-    }
-
-    public boolean e(vbf vbfVar, pbf pbfVar, pbf pbfVar2) {
-        synchronized (vbfVar) {
-            if (vbfVar.b != pbfVar) {
-                return false;
-            }
-            vbfVar.b = pbfVar2;
-            return true;
-        }
-    }
-
-    public boolean f(vbf vbfVar, Object obj, Object obj2) {
-        synchronized (vbfVar) {
-            if (vbfVar.a != obj) {
-                return false;
-            }
-            vbfVar.a = obj2;
-            return true;
-        }
-    }
-
-    public boolean g(vbf vbfVar, tbf tbfVar, tbf tbfVar2) {
-        synchronized (vbfVar) {
-            if (vbfVar.c != tbfVar) {
-                return false;
-            }
-            vbfVar.c = tbfVar2;
-            return true;
-        }
+        throw null;
     }
 }

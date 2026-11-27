@@ -1,61 +1,53 @@
 // default package
 
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.ActionBar.e;
+import org.webrtc.DtmfSender;
+import org.webrtc.NativeLifecycleLock;
+import org.webrtc.PeerConnection;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wr3 extends ri4 {
-    public final /* synthetic */ byte a;
+public final /* synthetic */ class wr3 implements NativeLifecycleLock.NativePointerCallable, fd, NativeLifecycleLock.NativeCallable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    @Override // ri4
-    public final float a(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((View) obj).getAlpha();
-            case 1:
-                return ((View) obj).getTranslationX();
-            case 2:
-                return ((View) obj).getTranslationY();
-            case 3:
-                return ((View) obj).getScaleX();
-            case 4:
-                return ((View) obj).getScaleY();
-            case 5:
-                return ((View) obj).getRotation();
-            case 6:
-                return ((View) obj).getRotationX();
-            default:
-                return ((View) obj).getRotationY();
-        }
+    public /* synthetic */ wr3(int i, int i2, Object obj) {
+        this.c = obj;
+        this.a = i;
+        this.b = i2;
     }
 
-    @Override // ri4
-    public final void b(Object obj, float f) {
-        switch (this.a) {
-            case 0:
-                ((View) obj).setAlpha(f);
-                break;
-            case 1:
-                ((View) obj).setTranslationX(f);
-                break;
-            case 2:
-                ((View) obj).setTranslationY(f);
-                break;
-            case 3:
-                ((View) obj).setScaleX(f);
-                break;
-            case 4:
-                ((View) obj).setScaleY(f);
-                break;
-            case 5:
-                ((View) obj).setRotation(f);
-                break;
-            case 6:
-                ((View) obj).setRotationX(f);
-                break;
-            default:
-                ((View) obj).setRotationY(f);
-                break;
-        }
+    @Override // org.webrtc.NativeLifecycleLock.NativeCallable
+    public final Object call() {
+        Boolean lambda$startRtcEventLog$39;
+        lambda$startRtcEventLog$39 = ((PeerConnection) this.c).lambda$startRtcEventLog$39(this.a, this.b);
+        return lambda$startRtcEventLog$39;
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        e eVar = (e) this.c;
+        l01 g = idVar.g(-1, true, true);
+        g.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i2 = this.b;
+        ConnectionsManager.getInstance(i2).sendRequestTyped(tL_resolveStarGiftOffer, new f(i2, eVar, g, idVar));
+    }
+
+    public /* synthetic */ wr3(int i, int i2, e eVar) {
+        this.a = i;
+        this.b = i2;
+        this.c = eVar;
+    }
+
+    @Override // org.webrtc.NativeLifecycleLock.NativePointerCallable
+    public final Object call(long j) {
+        Boolean lambda$insertDtmf$1;
+        lambda$insertDtmf$1 = DtmfSender.lambda$insertDtmf$1((String) this.c, this.a, this.b, j);
+        return lambda$insertDtmf$1;
     }
 }

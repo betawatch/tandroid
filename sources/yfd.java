@@ -1,19 +1,92 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class yfd implements zn7 {
-    public static final yfd a = new yfd();
+import java.util.Arrays;
+import org.telegram.tgnet.ConnectionsManager;
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum yfd {
+    b(-999),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF18(-3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF27(-2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF36(-1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF44(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF52(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF60(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF70(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF83(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF96(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF109(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF122(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF133(8),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF148(11),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF163(12);
+
+    public static final hnd c;
+    public final int a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v8 */
+    /* JADX WARN: Type inference failed for: r2v9 */
     static {
-        yjb.y(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, yjb.s(yjb.o(i8d.class, new b7d(1)), 2)), 3)));
+        boolean z = false;
+        lp lpVar = new lp((byte) 20, z);
+        lpVar.c = new Object[8];
+        lpVar.b = 0;
+        yfd[] values = values();
+        int length = values.length;
+        for (?? r2 = z; r2 < length; r2++) {
+            yfd yfdVar = values[r2];
+            Integer valueOf = Integer.valueOf(yfdVar.a);
+            int i = lpVar.b + 1;
+            Object[] objArr = (Object[]) lpVar.c;
+            int length2 = objArr.length;
+            int i2 = i << 1;
+            if (i2 > length2) {
+                if (i2 > length2) {
+                    length2 = length2 + (length2 >> 1) + 1;
+                    length2 = length2 < i2 ? Integer.highestOneBit(i2 - 1) << 1 : length2;
+                    if (length2 < 0) {
+                        length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    }
+                }
+                objArr = Arrays.copyOf(objArr, length2);
+                lpVar.c = objArr;
+            }
+            int i3 = lpVar.b;
+            int i4 = i3 << 1;
+            objArr[i4] = valueOf;
+            objArr[i4 + 1] = yfdVar;
+            lpVar.b = i3 + 1;
+        }
+        zjd zjdVar = (zjd) lpVar.d;
+        if (zjdVar != null) {
+            throw zjdVar.a();
+        }
+        hnd c2 = hnd.c(lpVar.b, (Object[]) lpVar.c, lpVar);
+        zjd zjdVar2 = (zjd) lpVar.d;
+        if (zjdVar2 != null) {
+            throw zjdVar2.a();
+        }
+        c = c2;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    yfd(int i) {
+        this.a = i;
     }
 }

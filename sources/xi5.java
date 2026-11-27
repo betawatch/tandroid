@@ -1,9 +1,35 @@
 // default package
 
-import android.os.IInterface;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface xi5 extends IInterface {
-    public static final String g = "android$support$v4$app$INotificationSideChannel".replace('$', '.');
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class xi5 {
+    public String G;
+    public int H;
+    public n8 I;
+    public nx0 J;
+    public q66 b;
+    public cw d;
+    public int e;
+    public View f;
+    public boolean h;
+    public TLRPC.Chat n;
+    public boolean r;
+    public View s;
+    public va6 w;
+    public VideoPlayerHolderBase x;
+    public yv y;
+    public int a = 0;
+    public final m66 c = new m66();
+    public final zh6 E = new zh6();
+    public ArrayList F = new ArrayList();
+
+    public abstract void a(ex exVar, plb plbVar);
+
+    public abstract boolean b(ex exVar, TL_iv.PageBlock pageBlock);
 }

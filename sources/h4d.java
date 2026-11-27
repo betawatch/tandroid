@@ -1,40 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
-import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class h4d {
-    public static final lh0 a = new lh0("GoogleSignInCommon", new String[0]);
+public final class h4d implements l4d {
+    public static final Object c = new Object();
+    public volatile i4d a;
+    public volatile Object b;
 
-    public static Intent a(Context context, GoogleSignInOptions googleSignInOptions) {
-        a.a("getSignInIntent()", new Object[0]);
-        SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
-        Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
-        intent.setPackage(context.getPackageName());
-        intent.setClass(context, SignInHubActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("config", signInConfiguration);
-        intent.putExtra("config", bundle);
-        return intent;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static h4d b(i4d i4dVar) {
+        if (i4dVar instanceof h4d) {
+            return (h4d) i4dVar;
+        }
+        h4d h4dVar = new h4d();
+        h4dVar.b = c;
+        h4dVar.a = i4dVar;
+        return h4dVar;
     }
 
-    public static void b(Context context) {
-        i4d.N2(context).O2();
-        Set set = gy4.a;
-        synchronized (set) {
+    @Override // m4d
+    public final Object a() {
+        Object obj;
+        Object obj2 = this.b;
+        Object obj3 = c;
+        if (obj2 != obj3) {
+            return obj2;
         }
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            ((gy4) it.next()).b();
+        synchronized (this) {
+            obj = this.b;
+            if (obj == obj3) {
+                obj = this.a.a();
+                Object obj4 = this.b;
+                if (obj4 != obj3 && obj4 != obj) {
+                    throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
+                }
+                this.b = obj;
+                this.a = null;
+            }
         }
-        hy4.a();
+        return obj;
     }
 }

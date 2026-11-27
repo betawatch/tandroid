@@ -6,30 +6,30 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static rg4 lambda$getComponents$0(xp2 xp2Var) {
-        return new qg4((jg4) xp2Var.a(jg4.class), xp2Var.d(qd5.class), (ExecutorService) xp2Var.i(new xw8(md0.class, ExecutorService.class)), new v4a((Executor) xp2Var.i(new xw8(nk0.class, Executor.class))));
+    public static ri4 lambda$getComponents$0(qq2 qq2Var) {
+        return new qi4((ji4) qq2Var.a(ji4.class), qq2Var.d(rf5.class), (ExecutorService) qq2Var.h(new h09(od0.class, ExecutorService.class)), new n8a((Executor) qq2Var.h(new h09(ok0.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<mp2> getComponents() {
-        lp2 b = mp2.b(rg4.class);
+    public List<fq2> getComponents() {
+        eq2 b = fq2.b(ri4.class);
         b.a = LIBRARY_NAME;
-        b.a(wd3.b(jg4.class));
-        b.a(new wd3(0, 1, qd5.class));
-        b.a(new wd3(new xw8(md0.class, ExecutorService.class), 1, 0));
-        b.a(new wd3(new xw8(nk0.class, Executor.class), 1, 0));
-        b.f = new w44((byte) 17);
-        mp2 b2 = b.b();
-        pd5 pd5Var = new pd5((byte) 0);
-        lp2 b3 = mp2.b(pd5.class);
+        b.a(qe3.b(ji4.class));
+        b.a(new qe3(0, 1, rf5.class));
+        b.a(new qe3(new h09(od0.class, ExecutorService.class), 1, 0));
+        b.a(new qe3(new h09(ok0.class, Executor.class), 1, 0));
+        b.f = new su3((byte) 29);
+        fq2 b2 = b.b();
+        qf5 qf5Var = new qf5((byte) 0);
+        eq2 b3 = fq2.b(qf5.class);
         b3.e = true;
-        b3.f = new kp2(pd5Var, (byte) 1);
-        return Arrays.asList(b2, b3.b(), one.a(LIBRARY_NAME, "19.1.2"));
+        b3.f = new dq2(qf5Var, (byte) 1);
+        return Arrays.asList(b2, b3.b(), ise.a(LIBRARY_NAME, "19.1.2"));
     }
 }

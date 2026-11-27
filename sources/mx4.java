@@ -1,17 +1,44 @@
 // default package
 
-import android.graphics.Canvas;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mx4 implements gx4 {
-    public gx4 a;
+public final class mx4 extends wua {
+    public final /* synthetic */ byte y3 = 1;
+    public final /* synthetic */ ny0 z3;
 
-    @Override // gx4
-    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
-        gx4 gx4Var = this.a;
-        if (gx4Var != null) {
-            gx4Var.e(f, f2, f3, f4, canvas);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mx4(yx4 yx4Var, Context context, int i, long j, vnb vnbVar) {
+        super(context, i, j, vnbVar, null);
+        this.z3 = yx4Var;
+    }
+
+    @Override // nx0
+    public final int O() {
+        switch (this.y3) {
+            case 1:
+                return ((wua) this.z3).O();
+            default:
+                return super.O();
         }
+    }
+
+    @Override // wua, nx0, ag0
+    public final d31 j() {
+        switch (this.y3) {
+            case 0:
+                yx4 yx4Var = (yx4) this.z3;
+                return new d31(yx4Var.c, yx4Var.J0);
+            default:
+                return super.j();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mx4(wua wuaVar, Context context, int i, long j, vnb vnbVar, View view) {
+        super(context, i, j, vnbVar, view);
+        this.z3 = wuaVar;
     }
 }

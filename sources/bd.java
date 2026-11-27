@@ -1,70 +1,69 @@
 // default package
 
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bd implements ViewTreeObserver.OnScrollChangedListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class bd extends FrameLayout {
+    public final TextView a;
+    public final ImageView b;
 
-    public /* synthetic */ bd(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public bd(Context context, vnb vnbVar) {
+        super(context);
+        int i = aob.I5;
+        Drawable f0 = aob.f0(aob.v0(i, vnbVar), 2, -1);
+        uob M = yob.M(i);
+        setBackground(f0);
+        yob.j(this, f0, null, M, vnbVar);
+        setPadding(hl.L(23.0f), 0, hl.L(23.0f), 0);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        yob.s(imageView, aob.J5, vnbVar, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, tre.e(-2, 40, (ob6.a0 ? 5 : 3) | 16));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        yob.X(textView, aob.j5, vnbVar);
+        textView.setTextSize(1, 16.0f);
+        addView(textView, tre.e(-2, -2, (ob6.a0 ? 5 : 3) | 16));
     }
 
-    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
-    public final void onScrollChanged() {
-        xr5 xr5Var;
-        byte b = this.a;
-        boolean z = false;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                hd hdVar = ((cd) obj).d;
-                hdVar.i(0, hdVar.f != null && hdVar.w.getScrollY() > hdVar.x.getTop());
-                if (hdVar.u0 != null) {
-                    if (hdVar.w.getHeight() + hdVar.w.getScrollY() < hdVar.x.getBottom()) {
-                        z = true;
-                    }
-                }
-                hdVar.i(1, z);
-                hdVar.w.invalidate();
-                break;
-            case 1:
-                ((jf4) obj).run();
-                break;
-            case 2:
-                cs5 cs5Var = (cs5) obj;
-                if (cs5Var.h0 != null && (xr5Var = cs5Var.m) != null && xr5Var.isShowing()) {
-                    int[] iArr = new int[2];
-                    cs5Var.h0.getLocationOnScreen(iArr);
-                    int i = iArr[0];
-                    int[] iArr2 = cs5Var.k0;
-                    if (i != iArr2[0] || iArr[1] != iArr2[1]) {
-                        iArr2[0] = i;
-                        iArr2[1] = iArr[1];
-                        cs5Var.P();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                koc kocVar = (koc) obj;
-                if (kocVar.i1) {
-                    kocVar.f0();
-                    break;
-                }
-                break;
-            default:
-                lqc lqcVar = (lqc) obj;
-                PopupWindow popupWindow = lqcVar.s;
-                if (popupWindow != null && popupWindow.isShowing()) {
-                    lqcVar.c();
-                    break;
-                }
-                break;
+    public final void a(int i, CharSequence charSequence) {
+        TextView textView = this.a;
+        textView.setText(charSequence);
+        ImageView imageView = this.b;
+        if (i == 0) {
+            imageView.setVisibility(4);
+            textView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView.setImageResource(i);
+            imageView.setVisibility(0);
+            textView.setPadding(ob6.a0 ? 0 : hl.L(56.0f), 0, ob6.a0 ? hl.L(56.0f) : 0, 0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(48.0f), TLObject.FLAG_30));
+    }
+
+    public void setGravity(int i) {
+        this.a.setGravity(i);
+    }
+
+    public void setTextColor(int i) {
+        this.a.setTextColor(i);
     }
 }

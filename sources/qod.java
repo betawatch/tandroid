@@ -1,19 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qod implements zn7 {
-    public static final qod a = new qod();
+public abstract class qod {
+    public static final a94 a;
+    public static final a94[] b;
 
     static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+        a94 a94Var = new a94("wallet", 1L);
+        a94 a94Var2 = new a94("wallet_biometric_auth_keys", 1L);
+        a94 a94Var3 = new a94("wallet_payment_dynamic_update", 2L);
+        a = a94Var3;
+        b = new a94[]{a94Var, a94Var2, a94Var3, new a94("wallet_1p_initialize_buyflow", 1L), new a94("wallet_warm_up_ui_process", 1L), new a94("wallet_get_setup_wizard_intent", 4L), new a94("wallet_get_payment_card_recognition_intent", 1L)};
     }
 }

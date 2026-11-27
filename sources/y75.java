@@ -1,33 +1,19 @@
 // default package
 
-import android.graphics.RenderNode;
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class y75 extends u75 {
-    public final /* synthetic */ b85 h;
+public final class y75 extends AnimatorListenerAdapter {
+    public final /* synthetic */ j95 a;
 
-    public y75(b85 b85Var) {
-        this.h = b85Var;
-        this.e = -1;
+    public y75(j95 j95Var) {
+        this.a = j95Var;
     }
 
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        t75 t75Var = new t75(viewGroup.getContext());
-        t75Var.setPadding(gl.L(22.0f), 0, gl.L(22.0f), 0);
-        s75 s75Var = new s75(t75Var);
-        b85 b85Var = this.h;
-        View view = b85Var.X0;
-        RenderNode renderNode = b85Var.V0;
-        float f = b85Var.W0;
-        t75 t75Var2 = s75Var.v;
-        t75Var2.H = view;
-        t75Var2.F = renderNode;
-        t75Var2.G = f;
-        t75Var2.setDelegate(b85Var.Z0);
-        return s75Var;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.Q2 = null;
     }
 }

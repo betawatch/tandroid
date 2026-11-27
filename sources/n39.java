@@ -1,10 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class n39 extends w39 {
-    public boolean D(s49 s49Var) {
-        int i = s49Var.f;
-        return i == 0 || i == 2;
-    }
+public interface n39 {
+    void g(long j, TLRPC.MessagePeerReaction messagePeerReaction);
 }

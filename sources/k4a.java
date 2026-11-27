@@ -1,182 +1,264 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+import java.util.concurrent.atomic.AtomicLongFieldUpdater;
+import java.util.concurrent.atomic.AtomicReferenceArray;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class k4a extends View implements tjb {
-    public static final gia x;
-    public ImageReceiver a;
-    public pb0 b;
-    public ff0 c;
-    public Paint d;
-    public Paint e;
-    public yla f;
-    public ValueAnimator h;
-    public float n;
-    public boolean r;
-    public boolean s;
-    public int w;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class k4a {
+    public static final /* synthetic */ AtomicLongFieldUpdater b;
+    public static final /* synthetic */ AtomicLongFieldUpdater c;
+    public static final /* synthetic */ AtomicIntegerFieldUpdater d;
+    public static final /* synthetic */ long e;
+    public static final /* synthetic */ long f;
+    public static final /* synthetic */ long g;
+    private volatile /* synthetic */ int _availablePermits$volatile;
+    public final ua1 a;
+    private volatile /* synthetic */ long deqIdx$volatile;
+    private volatile /* synthetic */ long enqIdx$volatile;
+    private volatile /* synthetic */ Object head$volatile;
+    private volatile /* synthetic */ Object tail$volatile;
 
     static {
-        gia giaVar = new gia(new ho9((byte) 7), new ho9((byte) 8));
-        giaVar.c = 100.0f;
-        x = giaVar;
+        Unsafe unsafe = fx.a;
+        f = unsafe.objectFieldOffset(k4a.class.getDeclaredField("head$volatile"));
+        b = AtomicLongFieldUpdater.newUpdater(k4a.class, "deqIdx$volatile");
+        g = unsafe.objectFieldOffset(k4a.class.getDeclaredField("tail$volatile"));
+        c = AtomicLongFieldUpdater.newUpdater(k4a.class, "enqIdx$volatile");
+        d = AtomicIntegerFieldUpdater.newUpdater(k4a.class, "_availablePermits$volatile");
+        e = unsafe.objectFieldOffset(k4a.class.getDeclaredField("_availablePermits$volatile"));
     }
 
-    public final void a(boolean z, boolean z2, float f) {
-        if (!z) {
-            this.n = f;
-            invalidate();
-            return;
-        }
-        yla ylaVar = this.f;
-        if (ylaVar != null) {
-            ylaVar.d();
-        }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.s = false;
-        this.r = false;
-        float f2 = this.n;
-        if (!z2) {
-            ValueAnimator duration = ValueAnimator.ofFloat(f2, f).setDuration(200L);
-            this.h = duration;
-            duration.setInterpolator(s33.f);
-            this.h.addUpdateListener(new x89(this, (byte) 22));
-            this.h.addListener(new ng9((Object) this, (byte) 11));
-            this.h.start();
-            return;
-        }
-        float f3 = f2 * 100.0f;
-        yla ylaVar2 = new yla(this, x);
-        ylaVar2.b = f3;
-        ylaVar2.c = true;
-        this.f = ylaVar2;
-        boolean z3 = f < this.n;
-        float f4 = f * 100.0f;
-        this.s = z3;
-        this.r = !z3;
-        zla zlaVar = new zla(f4);
-        zlaVar.i = f4;
-        zlaVar.b(450.0f);
-        zlaVar.a(1.0f);
-        ylaVar2.m = zlaVar;
-        this.f.b(new nz1(this, z3, f3, f4));
-        this.f.a(new zv0(this, (byte) 8));
-        this.f.h();
+    public k4a() {
+        m4a m4aVar = new m4a(0L, null, 2);
+        this.head$volatile = m4aVar;
+        this.tail$volatile = m4aVar;
+        this._availablePermits$volatile = 1;
+        this.a = new ua1((Object) this, (byte) 2);
     }
 
-    @Override // android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        this.c.setState(getDrawableState());
-    }
-
-    public float getProgress() {
-        return this.n;
-    }
-
-    @Override // android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        this.c.jumpToCurrentState();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.I();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.K();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.d;
-        Paint paint2 = this.e;
-        canvas.save();
-        float f = 1.0f;
-        if (this.r) {
-            f = 1.0f - this.n;
-        } else if (this.s) {
-            f = this.n;
-        }
-        canvas.scale(f, f, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.onDraw(canvas);
-        this.a.h(canvas, null);
-        int i = (int) (this.n * 255.0f);
-        paint.setAlpha(i);
-        canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, paint);
-        canvas.save();
-        paint2.setAlpha(i);
-        float strokeWidth = paint2.getStrokeWidth() + gl.L(10.0f);
-        canvas.drawLine(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth, paint2);
-        canvas.drawLine(strokeWidth, getHeight() - strokeWidth, getWidth() - strokeWidth, strokeWidth, paint2);
-        canvas.restore();
-        this.c.setBounds(0, 0, getWidth(), getHeight());
-        this.c.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
-        this.a.i0(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-    }
-
-    public void setAvatar(TLObject tLObject) {
-        pb0 pb0Var = this.b;
-        setContentDescription(k96.a0("AccDescrSendAsPeer", null, 2131754774, tLObject instanceof TLRPC.User ? l7c.k((TLRPC.User) tLObject, true) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
-        pb0Var.k(tLObject);
-        this.a.U(tLObject, pb0Var, null);
-    }
-
-    public void setProgress(float f) {
-        a(true, f != 0.0f, f);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        this.d.setColor(bkb.w0(null, bkb.Tf, false));
-        this.e.setColor(bkb.w0(null, bkb.Sf, false));
-        if (this.c != null) {
-            int p1 = bkb.p1(0.2f, bkb.w0(null, bkb.c6, false));
-            if (p1 != this.w) {
-                this.w = p1;
-                bkb.F1(this.c, p1, true);
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0093, code lost:
+    
+        if (r5.f() == false) goto L59;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0095, code lost:
+    
+        r5.e();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(vj7 vj7Var) {
+        Object b2;
+        f9c f9cVar;
+        long j;
+        i4a i4aVar;
+        long j2;
+        long j3;
+        va1 va1Var = vj7Var.a;
+        wj7 wj7Var = vj7Var.b;
+        while (true) {
+            int andDecrement = d.getAndDecrement(this);
+            if (andDecrement <= 1) {
+                byte b3 = 0;
+                f9c f9cVar2 = f9c.a;
+                if (andDecrement > 0) {
+                    wj7.h.set(wj7Var, null);
+                    va1Var.B(f9cVar2, va1Var.c, new ua1(new a2(wj7Var, vj7Var), b3));
+                    return;
+                }
+                Unsafe unsafe = fx.a;
+                long j4 = g;
+                m4a m4aVar = (m4a) unsafe.getObjectVolatile(this, j4);
+                long andIncrement = c.getAndIncrement(this);
+                i4a i4aVar2 = i4a.a;
+                long j5 = andIncrement / l4a.f;
+                while (true) {
+                    b2 = td3.b(m4aVar, j5, i4aVar2);
+                    if (mye.b(b2)) {
+                        f9cVar = f9cVar2;
+                        break;
+                    }
+                    hz9 a = mye.a(b2);
+                    while (true) {
+                        hz9 hz9Var = (hz9) fx.a.getObjectVolatile(this, j4);
+                        f9cVar = f9cVar2;
+                        j = j4;
+                        if (hz9Var.d >= a.d) {
+                            break;
+                        }
+                        if (!a.j()) {
+                            break;
+                        }
+                        i4aVar = i4aVar2;
+                        while (true) {
+                            Unsafe unsafe2 = fx.a;
+                            j2 = j5;
+                            if (!unsafe2.compareAndSwapObject(this, g, hz9Var, a)) {
+                                j3 = j;
+                                if (unsafe2.getObjectVolatile(this, j3) != hz9Var) {
+                                    break;
+                                }
+                                j = j3;
+                                j5 = j2;
+                            } else if (hz9Var.f()) {
+                                hz9Var.e();
+                            }
+                        }
+                        j4 = j3;
+                        i4aVar2 = i4aVar;
+                        j5 = j2;
+                        f9cVar2 = f9cVar;
+                    }
+                    f9cVar2 = f9cVar;
+                    j4 = j;
+                }
+                m4a m4aVar2 = (m4a) mye.a(b2);
+                AtomicReferenceArray atomicReferenceArray = m4aVar2.g;
+                int i = (int) (andIncrement % l4a.f);
+                while (!atomicReferenceArray.compareAndSet(i, null, vj7Var)) {
+                    if (atomicReferenceArray.get(i) != null) {
+                        ow5 ow5Var = l4a.b;
+                        ow5 ow5Var2 = l4a.c;
+                        while (!atomicReferenceArray.compareAndSet(i, ow5Var, ow5Var2)) {
+                            f9c f9cVar3 = f9cVar;
+                            if (atomicReferenceArray.get(i) == ow5Var) {
+                                f9cVar = f9cVar3;
+                            }
+                        }
+                        wj7.h.set(wj7Var, null);
+                        va1Var.B(f9cVar, va1Var.c, new ua1((Object) new a2(wj7Var, vj7Var), (byte) 0));
+                        return;
+                    }
+                }
+                vj7Var.a(m4aVar2, i);
+                return;
             }
-            invalidate();
-            return;
         }
-        this.w = bkb.p1(0.2f, bkb.w0(null, bkb.c6, false));
-        int L = gl.L(18.0f);
-        int i = this.w;
-        ff0 i0 = bkb.i0(L, L, L, L, 0, i, i);
-        this.c = i0;
-        i0.setCallback(this);
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || this.c == drawable;
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0073, code lost:
+    
+        if (r5.f() == false) goto L77;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0075, code lost:
+    
+        r5.e();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b() {
+        Object b2;
+        boolean z;
+        boolean z2;
+        long j;
+        long j2;
+        k4a k4aVar = this;
+        do {
+            int andIncrement = d.getAndIncrement(k4aVar);
+            boolean z3 = true;
+            if (andIncrement >= 1) {
+                while (true) {
+                    Unsafe unsafe = fx.a;
+                    long j3 = e;
+                    int intVolatile = unsafe.getIntVolatile(k4aVar, j3);
+                    if (intVolatile <= 1 || unsafe.compareAndSwapInt(k4aVar, j3, intVolatile, 1)) {
+                        break;
+                    } else {
+                        k4aVar = this;
+                    }
+                }
+                throw new IllegalStateException("The number of released permits cannot be greater than 1".toString());
+            }
+            if (andIncrement >= 0) {
+                return;
+            }
+            Unsafe unsafe2 = fx.a;
+            long j4 = f;
+            m4a m4aVar = (m4a) unsafe2.getObjectVolatile(k4aVar, j4);
+            long andIncrement2 = b.getAndIncrement(k4aVar);
+            long j5 = andIncrement2 / l4a.f;
+            j4a j4aVar = j4a.a;
+            while (true) {
+                b2 = td3.b(m4aVar, j5, j4aVar);
+                if (mye.b(b2)) {
+                    z = z3;
+                    break;
+                }
+                hz9 a = mye.a(b2);
+                while (true) {
+                    hz9 hz9Var = (hz9) fx.a.getObjectVolatile(k4aVar, j4);
+                    z = z3;
+                    j = j4;
+                    if (hz9Var.d >= a.d) {
+                        break;
+                    }
+                    if (!a.j()) {
+                        break;
+                    }
+                    while (true) {
+                        Unsafe unsafe3 = fx.a;
+                        if (!unsafe3.compareAndSwapObject(k4aVar, f, hz9Var, a)) {
+                            j2 = j;
+                            if (unsafe3.getObjectVolatile(k4aVar, j2) != hz9Var) {
+                                break;
+                            } else {
+                                j = j2;
+                            }
+                        } else if (hz9Var.f()) {
+                            hz9Var.e();
+                        }
+                    }
+                    j4 = j2;
+                    z3 = z;
+                }
+                z3 = z;
+                j4 = j;
+            }
+            m4a m4aVar2 = (m4a) mye.a(b2);
+            AtomicReferenceArray atomicReferenceArray = m4aVar2.g;
+            m4aVar2.b();
+            boolean z4 = false;
+            if (m4aVar2.d <= j5) {
+                int i = (int) (andIncrement2 % l4a.f);
+                Object andSet = atomicReferenceArray.getAndSet(i, l4a.b);
+                if (andSet == null) {
+                    int i2 = l4a.a;
+                    for (int i3 = 0; i3 < i2; i3++) {
+                        if (atomicReferenceArray.get(i) != l4a.c) {
+                        }
+                    }
+                    ow5 ow5Var = l4a.b;
+                    ow5 ow5Var2 = l4a.d;
+                    while (true) {
+                        if (!atomicReferenceArray.compareAndSet(i, ow5Var, ow5Var2)) {
+                            if (atomicReferenceArray.get(i) != ow5Var) {
+                                break;
+                            }
+                        } else {
+                            z4 = z;
+                            break;
+                        }
+                    }
+                    z2 = !z4;
+                } else if (andSet != l4a.e) {
+                    if (!(andSet instanceof ta1)) {
+                        lq5.i(andSet, "unexpected: ");
+                        return;
+                    }
+                    ta1 ta1Var = (ta1) andSet;
+                    ow5 b3 = ta1Var.b(f9c.a, k4aVar.a);
+                    if (b3 != null) {
+                        ta1Var.e(b3);
+                    }
+                }
+                z2 = z;
+                break;
+            }
+            z2 = false;
+        } while (!z2);
     }
 }

@@ -1,125 +1,56 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rm1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class rm1 implements Runnable {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ byte c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ rm1(Object obj, float f, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = f;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ rm1(zu1 zu1Var, int i, int i2, CharacterStyle characterStyle, wb2 wb2Var) {
+        this.d = zu1Var;
+        this.b = i;
+        this.c = i2;
+        this.e = characterStyle;
+        this.f = wb2Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        float f = this.b;
-        Object obj = this.c;
+        Object obj = this.f;
+        byte b2 = this.c;
+        int i = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
         switch (b) {
             case 0:
-                mu1 mu1Var = (mu1) obj;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mu1Var.X8 = floatValue;
-                mu1Var.b9 = floatValue / f;
-                View view = mu1Var.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i = ChatActivityEnterView.r7;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ex1 ex1Var = chatActivityEnterView.F0;
-                if (ex1Var != null) {
-                    ex1Var.setAlpha(1.0f - floatValue2);
-                }
-                bw1 bw1Var = chatActivityEnterView.O4;
-                float R1 = gl.R1(1.0f, 0.6f, floatValue2);
-                bw1Var.getClass();
-                ChatActivityEnterView chatActivityEnterView2 = bw1Var.b;
-                chatActivityEnterView2.h = R1;
-                chatActivityEnterView2.l2();
-                bw1 bw1Var2 = chatActivityEnterView.Q4;
-                bw1Var2.getClass();
-                ChatActivityEnterView chatActivityEnterView3 = bw1Var2.b;
-                chatActivityEnterView3.n = (1.0f - floatValue2) * f;
-                chatActivityEnterView3.l2();
-                break;
-            case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ChatActivityEnterView chatActivityEnterView4 = (ChatActivityEnterView) ((t7) obj).c;
-                bw1 bw1Var3 = chatActivityEnterView4.O4;
-                float R12 = gl.R1(0.6f, 1.0f, floatValue3);
-                bw1Var3.getClass();
-                ChatActivityEnterView chatActivityEnterView5 = bw1Var3.b;
-                chatActivityEnterView5.h = R12;
-                chatActivityEnterView5.l2();
-                bw1 bw1Var4 = chatActivityEnterView4.Q4;
-                bw1Var4.getClass();
-                ChatActivityEnterView chatActivityEnterView6 = bw1Var4.b;
-                chatActivityEnterView6.n = f * floatValue3;
-                chatActivityEnterView6.l2();
-                break;
-            case 3:
-                ((k62) obj).F.setTranslationY(gl.R1(f, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 4:
-                ArrayList arrayList = (ArrayList) obj;
-                float floatValue4 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                    View view2 = (View) arrayList.get(i2);
-                    if (view2 != null) {
-                        view2.setTranslationY(f * floatValue4);
-                    }
-                }
-                break;
-            case 5:
-                ((ie8) obj).S.setTranslationY(gl.R1(f, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 6:
-                yt8 yt8Var = (yt8) obj;
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float R13 = gl.R1(0.0f, f, floatValue5);
-                yt8Var.a.setTranslationX(R13);
-                yt8Var.b.setTranslationX(R13);
-                ImageView imageView = yt8Var.c;
-                imageView.setTranslationX(R13);
-                wf2 wf2Var = yt8Var.f;
-                wf2Var.setTranslationX((k96.a0 ? gl.L(32.0f) : -gl.L(32.0f)) + R13);
-                float f2 = (floatValue5 * 0.5f) + 0.5f;
-                wf2Var.setScaleX(f2);
-                wf2Var.setScaleY(f2);
-                wf2Var.setAlpha(floatValue5);
-                float f3 = 1.0f - floatValue5;
-                float f4 = (f3 * 0.5f) + 0.5f;
-                imageView.setScaleX(f4);
-                imageView.setScaleY(f4);
-                imageView.setAlpha(f3);
-                break;
-            case 7:
-                nkc nkcVar = (nkc) obj;
-                nkcVar.getClass();
-                nkcVar.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + f) % 360.0f;
-                nkcVar.a.invalidate();
+                zu1 zu1Var = (zu1) obj3;
+                zu1Var.lc = i;
+                zu1Var.mc = b2;
+                zu1Var.nc = (CharacterStyle) obj2;
+                ((wb2) obj).invalidate();
                 break;
             default:
-                voc vocVar = (voc) obj;
-                float floatValue6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vocVar.c = vocVar.c();
-                vocVar.d = f * floatValue6;
-                vocVar.s = floatValue6 > 0.0f;
+                xqc xqcVar = (xqc) obj;
+                hl.c3(new b6c((zqc) obj3, new wqc(((Context) obj2).getApplicationContext(), i, b2, xqcVar), xqcVar, (byte) 22));
                 break;
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ rm1(zqc zqcVar, Context context, int i, int i2, xqc xqcVar) {
+        this.d = zqcVar;
+        this.e = context;
+        this.b = i;
+        this.c = i2;
+        this.f = xqcVar;
     }
 }

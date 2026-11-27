@@ -1,19 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class aie implements zn7 {
-    public static final aie a = new aie();
-
-    static {
-        yjb.y(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, yjb.u(yjb.q(kkd.class, new cjd(1)), 2)), 3)));
+public abstract class aie {
+    public static final Object a(long j, zw2 zw2Var) {
+        if (j > 0) {
+            va1 va1Var = new va1(1, xpe.a(zw2Var));
+            va1Var.s();
+            if (j < Long.MAX_VALUE) {
+                b(va1Var.e).b(j, va1Var);
+            }
+            Object q = va1Var.q();
+            if (q == vx2.a) {
+                return q;
+            }
+        }
+        return f9c.a;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public static final vd3 b(mx2 mx2Var) {
+        kx2 kx2Var = mx2Var.get(rj2.b);
+        vd3 vd3Var = kx2Var instanceof vd3 ? (vd3) kx2Var : null;
+        return vd3Var == null ? bb3.a : vd3Var;
     }
 }

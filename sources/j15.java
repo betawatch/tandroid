@@ -1,30 +1,20 @@
 // default package
 
-import android.hardware.biometrics.BiometricPrompt;
-import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class j15 extends al8 {
+    public final /* synthetic */ byte r;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class j15 extends BiometricPrompt$AuthenticationCallback {
-    public final /* synthetic */ l15 a;
-
-    public j15(l15 l15Var) {
-        this.a = l15Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j15(int i, int i2, int i3, int i4, vnb vnbVar, byte b) {
+        super(i, i2, i3, i4, vnbVar);
+        this.r = b;
     }
 
-    public final void onAuthenticationError(int i, CharSequence charSequence) {
-        l15 l15Var = this.a;
-        if (!l15Var.f() || l15Var.f) {
-            return;
+    @Override // al8
+    public final int c(int i) {
+        switch (this.r) {
         }
-        if (i == 10 || i == 5) {
-            l15Var.c("AUTH_CANCELED");
-        } else {
-            l15Var.a();
-        }
-    }
-
-    public final void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
-        this.a.c(null);
+        return aob.D0(i);
     }
 }

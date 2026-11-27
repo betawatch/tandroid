@@ -1,0 +1,29 @@
+// default package
+
+import android.content.Context;
+import java.lang.ref.WeakReference;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class zif {
+    public static WeakReference b;
+    public final qa4 a;
+
+    public zif(Context context) {
+        this.a = new qa4(context, txd.a, wn.g, new uif((byte) 19));
+    }
+
+    public static synchronized zif a(LaunchActivity launchActivity) {
+        zif zifVar;
+        synchronized (zif.class) {
+            WeakReference weakReference = b;
+            zifVar = weakReference == null ? null : (zif) weakReference.get();
+            if (zifVar == null) {
+                zifVar = new zif(launchActivity.getApplicationContext());
+                b = new WeakReference(zifVar);
+            }
+        }
+        return zifVar;
+    }
+}

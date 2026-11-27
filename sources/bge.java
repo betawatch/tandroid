@@ -1,19 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.net.Uri;
+import java.util.Collections;
+import java.util.Map;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bge implements zn7 {
-    public static final bge a = new bge();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class bge {
+    public static n73 a(ub9 ub9Var, String str, n29 n29Var, int i) {
+        Map map = Collections.EMPTY_MAP;
+        Uri d = d2f.d(str, n29Var.c);
+        long j = n29Var.a;
+        long j2 = n29Var.b;
+        String a = ub9Var.a();
+        if (a == null) {
+            a = d2f.d(((xg0) ub9Var.b.get(0)).a, n29Var.c).toString();
         }
-        throw null;
+        String str2 = a;
+        yve.l(d, "The uri must be set.");
+        return new n73(d, 1, null, o99.h, j, j2, str2, i);
     }
 }

@@ -1,36 +1,24 @@
 // default package
 
-import android.app.Notification;
-import android.app.PictureInPictureParams;
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.FilesMigrationService;
+import android.util.Log;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class fk {
-    public static /* synthetic */ Notification.Builder a(Context context, String str) {
-        return new Notification.Builder(context, str);
-    }
+public final class fk extends ge6 {
+    public final /* synthetic */ byte a;
+    public Object b;
 
-    public static /* synthetic */ Notification.Builder b(FilesMigrationService filesMigrationService, String str) {
-        return new Notification.Builder(filesMigrationService, str);
-    }
-
-    public static /* synthetic */ PictureInPictureParams.Builder c() {
-        return new PictureInPictureParams.Builder();
-    }
-
-    public static /* synthetic */ SurfaceTexture d() {
-        return new SurfaceTexture(false);
-    }
-
-    public static /* synthetic */ void e() {
-    }
-
-    public static /* synthetic */ void f() {
-    }
-
-    public static /* synthetic */ void g() {
+    @Override // ge6
+    public final void b(String str) {
+        switch (this.a) {
+            case 0:
+                Log.d("isoparser", ((String) this.b) + ":" + str);
+                break;
+            default:
+                ((Logger) this.b).log(Level.FINE, str);
+                break;
+        }
     }
 }

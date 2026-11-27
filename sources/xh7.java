@@ -1,69 +1,27 @@
 // default package
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.util.List;
-import java.util.logging.Level;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xh7 implements Runnable {
-    public final InputStream a;
-    public final Socket b;
-    public final /* synthetic */ ei7 c;
+public final class xh7 {
+    public final p1c a;
+    public final y1c b;
+    public final x1c c;
+    public final g6c d;
+    public final boolean e;
+    public final boolean f;
+    public int g;
+    public ko4 h;
 
-    public xh7(ei7 ei7Var, InputStream inputStream, Socket socket) {
-        this.c = ei7Var;
-        this.a = inputStream;
-        this.b = socket;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        OutputStream outputStream;
-        InputStream inputStream = this.a;
-        ei7 ei7Var = this.c;
-        Socket socket = this.b;
-        OutputStream outputStream2 = null;
-        try {
-            try {
-                outputStream = socket.getOutputStream();
-            } catch (Throwable th) {
-                th = th;
-            }
-        } catch (Exception e) {
-            e = e;
-        }
-        try {
-            ai7 ai7Var = new ai7(ei7Var, new yg2((byte) 2), this.a, outputStream, socket.getInetAddress());
-            while (!socket.isClosed()) {
-                ai7Var.c();
-            }
-            ei7.c(outputStream);
-        } catch (Exception e2) {
-            e = e2;
-            outputStream2 = outputStream;
-            if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
-                ei7.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
-            }
-            ei7.c(outputStream2);
-            ei7.c(inputStream);
-            ei7.c(socket);
-            ((List) ei7Var.c.c).remove(this);
-        } catch (Throwable th2) {
-            th = th2;
-            outputStream2 = outputStream;
-            ei7.c(outputStream2);
-            ei7.c(inputStream);
-            ei7.c(socket);
-            ((List) ei7Var.c.c).remove(this);
-            throw th;
-        }
-        ei7.c(inputStream);
-        ei7.c(socket);
-        ((List) ei7Var.c.c).remove(this);
+    public xh7(p1c p1cVar, y1c y1cVar, x1c x1cVar) {
+        this.a = p1cVar;
+        this.b = y1cVar;
+        this.c = x1cVar;
+        int i = p1cVar.b;
+        ko4 ko4Var = p1cVar.g;
+        this.e = i == 2;
+        this.f = Objects.equals(ko4Var.t, "application/x-itut-t35");
+        this.d = "audio/true-hd".equals(ko4Var.t) ? new g6c() : null;
     }
 }

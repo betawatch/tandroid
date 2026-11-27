@@ -4,21 +4,21 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class AuthenticatorService extends Service {
-    public static e50 a;
+    public static g50 a;
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
         if (!intent.getAction().equals("android.accounts.AccountAuthenticator")) {
             return null;
         }
-        e50 e50Var = a;
-        if (e50Var == null) {
-            e50Var = new e50(this);
-            a = e50Var;
+        g50 g50Var = a;
+        if (g50Var == null) {
+            g50Var = new g50(this);
+            a = g50Var;
         }
-        return e50Var.getIBinder();
+        return g50Var.getIBinder();
     }
 }

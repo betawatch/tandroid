@@ -1,35 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.concurrent.Delayed;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class de3 {
-    public static final de3 c = new de3(new ie7(18));
-    public static final String d;
-    public static final String e;
-    public final int a = 0;
-    public final int b = 0;
+public final class de3 extends b4 implements ScheduledFuture {
+    public final ScheduledFuture n;
 
-    static {
-        String str = g8c.a;
-        d = "1";
-        e = "2";
+    public de3(ce3 ce3Var) {
+        this.n = ce3Var.a(new z8d((Object) this, (byte) 28));
     }
 
-    public de3(ie7 ie7Var) {
+    @Override // java.lang.Comparable
+    public final int compareTo(Delayed delayed) {
+        return this.n.compareTo(delayed);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof de3)) {
-            return false;
-        }
-        de3 de3Var = (de3) obj;
-        return this.a == de3Var.a && this.b == de3Var.b;
+    @Override // b4
+    public final void d() {
+        ScheduledFuture scheduledFuture = this.n;
+        Object obj = this.a;
+        scheduledFuture.cancel((obj instanceof u3) && ((u3) obj).a);
     }
 
-    public final int hashCode() {
-        return (((16337 + this.a) * 31) + this.b) * 31;
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.n.getDelay(timeUnit);
     }
 }

@@ -1,25 +1,70 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class az9 {
+    public static final az9 c;
+    public static final az9 d;
+    public static final az9 e;
+    public static final az9 f;
+    public final long a;
+    public final long b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class az9 extends ReplacementSpan {
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public az9(int i) {
-        this.a = i;
+    static {
+        az9 az9Var = new az9(0L, 0L);
+        c = az9Var;
+        d = new az9(Long.MAX_VALUE, Long.MAX_VALUE);
+        e = new az9(Long.MAX_VALUE, 0L);
+        new az9(0L, Long.MAX_VALUE);
+        f = az9Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return gl.L(this.a);
+    public az9(long j, long j2) {
+        yve.f(j >= 0);
+        yve.f(j2 >= 0);
+        this.a = j;
+        this.b = j2;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+    public final long a(long j, long j2, long j3) {
+        long j4 = this.a;
+        long j5 = this.b;
+        if (j4 == 0 && j5 == 0) {
+            return j;
+        }
+        String str = gcc.a;
+        long j6 = j - j4;
+        long j7 = (((j4 ^ j) > 0L ? 1 : ((j4 ^ j) == 0L ? 0 : -1)) >= 0) | (((j ^ j6) > 0L ? 1 : ((j ^ j6) == 0L ? 0 : -1)) >= 0) ? j6 : ((j6 >>> 63) ^ 1) + Long.MAX_VALUE;
+        if ((j7 == Long.MIN_VALUE && j6 != Long.MIN_VALUE) || (j7 == Long.MAX_VALUE && j6 != Long.MAX_VALUE)) {
+            j7 = Long.MIN_VALUE;
+        }
+        long a = gcc.a(j, j5);
+        boolean z = j7 <= j2 && j2 <= a;
+        boolean z2 = j7 <= j3 && j3 <= a;
+        if (z) {
+            if (!z2 || Math.abs(j2 - j) <= Math.abs(j3 - j)) {
+                return j2;
+            }
+        } else if (!z2) {
+            return j7;
+        }
+        return j3;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && az9.class == obj.getClass()) {
+            az9 az9Var = (az9) obj;
+            if (this.a == az9Var.a && this.b == az9Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
     }
 }

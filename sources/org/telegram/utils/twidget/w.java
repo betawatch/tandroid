@@ -7,10 +7,10 @@ import android.os.SystemClock;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class w extends Binder implements jj5 {
-    public final yvc a;
+public final class w extends Binder implements ll5 {
+    public final n0d a;
     public final WidgetSandboxBackend b;
     public volatile long c;
     public final ByteArrayOutputStream d;
@@ -19,26 +19,26 @@ public final class w extends Binder implements jj5 {
     public long i;
     public final /* synthetic */ x j;
 
-    public w(x xVar, yvc yvcVar, WidgetSandboxBackend widgetSandboxBackend) {
+    public w(x xVar, n0d n0dVar, WidgetSandboxBackend widgetSandboxBackend) {
         this.j = xVar;
         attachInterface(this, "org.telegram.utils.twidget.IWidgetEngineCallback");
         this.d = new ByteArrayOutputStream();
         this.e = new Semaphore(4);
         this.f = 2000.0d;
         this.i = SystemClock.elapsedRealtime();
-        this.a = yvcVar;
+        this.a = n0dVar;
         this.b = widgetSandboxBackend;
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void B(int i, byte[] bArr) {
         a(new s(this, bArr, i, (byte) 0));
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void E(final int i, final int i2, final byte[] bArr) {
-        a(new xvc() { // from class: org.telegram.utils.twidget.v
-            @Override // xvc
+        a(new m0d() { // from class: org.telegram.utils.twidget.v
+            @Override // m0d
             public final Object run() {
                 w wVar = w.this;
                 wVar.b.recordLayer(i, i2, wVar.b(bArr));
@@ -47,12 +47,12 @@ public final class w extends Binder implements jj5 {
         });
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void I(byte[] bArr) {
-        a(new cwb(this, bArr, (byte) 13));
+        a(new yw9(this, bArr, (byte) 29));
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void J(int i, float f) {
         try {
             this.b.state(i, f);
@@ -60,17 +60,17 @@ public final class w extends Binder implements jj5 {
         }
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void O(int i) {
         a(new q(this, i, (byte) 0));
     }
 
-    public final Object a(xvc xvcVar) {
+    public final Object a(m0d m0dVar) {
         if (this.a.w == 0) {
             this.a.w = Binder.getCallingPid();
         }
         if (!this.e.tryAcquire()) {
-            sc8.j("Widget engine: too many calls at once");
+            grb.i("Widget engine: too many calls at once");
             return null;
         }
         try {
@@ -78,7 +78,7 @@ public final class w extends Binder implements jj5 {
                 throw new IllegalStateException("Widget engine: too many calls at once");
             }
             try {
-                return xvcVar.run();
+                return m0dVar.run();
             } finally {
                 this.j.i.release();
             }
@@ -95,22 +95,22 @@ public final class w extends Binder implements jj5 {
         return byteArray;
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void m(int i, int i2, int i3, byte[] bArr) {
         a(new i(this, i, i2, i3, bArr, (byte) 1));
     }
 
-    @Override // jj5
+    @Override // ll5
     public final byte[] n(final int i, final int i2, final int i3, final int i4, final int i5) {
-        return (byte[]) a(new xvc() { // from class: org.telegram.utils.twidget.u
-            @Override // xvc
+        return (byte[]) a(new m0d() { // from class: org.telegram.utils.twidget.u
+            @Override // m0d
             public final Object run() {
                 return w.this.b.canvasRead(i, i2, i3, i4, i5);
             }
         });
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void o(int i) {
         a(new q(this, i, (byte) 1));
     }
@@ -184,10 +184,10 @@ public final class w extends Binder implements jj5 {
         }
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void p(final byte[] bArr, final byte[] bArr2, final double d, final int i, final int i2, final float f, final float f2, final int i3, final int i4) {
-        a(new xvc() { // from class: org.telegram.utils.twidget.t
-            @Override // xvc
+        a(new m0d() { // from class: org.telegram.utils.twidget.t
+            @Override // m0d
             public final Object run() {
                 int i5;
                 w wVar = w.this;
@@ -205,33 +205,33 @@ public final class w extends Binder implements jj5 {
                         return null;
                     }
                 }
-                w26.j("Frame size");
+                lq5.j("Frame size");
                 return null;
             }
         });
     }
 
-    @Override // jj5
+    @Override // ll5
     public final float[] q(final int i, final byte[] bArr, final float f, final int i2, final boolean z, final byte[] bArr2) {
-        return (float[]) a(new xvc() { // from class: org.telegram.utils.twidget.r
-            @Override // xvc
+        return (float[]) a(new m0d() { // from class: org.telegram.utils.twidget.r
+            @Override // m0d
             public final Object run() {
                 return w.this.b.defineFont(i, bArr, f, i2, z, bArr2);
             }
         });
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void w(byte[] bArr) {
         a(new l(this, bArr, (byte) 2));
     }
 
-    @Override // jj5
+    @Override // ll5
     public final float y(int i, byte[] bArr) {
         return ((Float) a(new s(this, bArr, i, (byte) 1))).floatValue();
     }
 
-    @Override // jj5
+    @Override // ll5
     public final void z(int i, int i2, int i3, int[] iArr) {
         a(new i(this, i, i2, i3, iArr, (byte) 2));
     }

@@ -1,67 +1,21 @@
 // default package
 
-import android.os.Environment;
-import android.text.TextUtils;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.FilesMigrationService;
-import org.telegram.messenger.a;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ub4 extends Thread {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ Object b;
+public final class ub4 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ xb4 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ub4(dia diaVar) {
-        super("ExoPlayer:SimpleDecoder");
-        this.b = diaVar;
+    public ub4(xb4 xb4Var, boolean z, String str, boolean z2) {
+        this.d = xb4Var;
+        this.a = z;
+        this.b = str;
+        this.c = z2;
     }
 
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                FilesMigrationService filesMigrationService = (FilesMigrationService) this.b;
-                File externalStorageDirectory = Environment.getExternalStorageDirectory();
-                if (!TextUtils.isEmpty(gba.e0)) {
-                    ArrayList c1 = gl.c1();
-                    int size = c1.size();
-                    int i = 0;
-                    while (true) {
-                        if (i < size) {
-                            File file = (File) c1.get(i);
-                            if (file.getAbsolutePath().startsWith(gba.e0)) {
-                                externalStorageDirectory = file;
-                            } else {
-                                i++;
-                            }
-                        }
-                    }
-                }
-                File file2 = new File(a.b.getExternalFilesDir(null), "Telegram");
-                File file3 = new File(externalStorageDirectory, "Telegram");
-                filesMigrationService.a = FilesMigrationService.b(file3);
-                long currentTimeMillis = System.currentTimeMillis();
-                if (file3.canRead() && file3.canWrite()) {
-                    filesMigrationService.c(file3, file2);
-                }
-                fa4.b("move time = " + (System.currentTimeMillis() - currentTimeMillis));
-                a.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("migration_to_scoped_storage_finished", true).apply();
-                gl.c3(new s54((Object) this, (byte) 7));
-                break;
-            default:
-                do {
-                    try {
-                    } catch (InterruptedException e) {
-                        ho9.n(e);
-                    }
-                } while (((dia) this.b).j());
-        }
-    }
-
-    public ub4(FilesMigrationService filesMigrationService) {
-        this.b = filesMigrationService;
+    public final void a() {
+        xb4.K.c(new ba1(this, this.a, this.b, this.c));
     }
 }

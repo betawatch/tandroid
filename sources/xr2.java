@@ -1,51 +1,80 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xr2 extends huc {
-    public final /* synthetic */ byte b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class xr2 extends yr2 {
+    public final double d;
+    public final double e;
+    public final double f;
+    public final double g;
+    public final int h;
+    public volatile double i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xr2(String str, buc bucVar, int i, byte b) {
-        super(str, bucVar, i);
-        this.b = b;
+    public xr2(String str, double d, double d2, double d3, double d4, int i) {
+        super(str);
+        this.d = d;
+        this.e = d2;
+        this.f = d3;
+        this.g = d4;
+        this.h = i;
+        this.i = d;
     }
 
-    @Override // huc
-    public final void a() {
-        byte b = this.b;
-        buc bucVar = this.a;
-        switch (b) {
-            case 0:
-                try {
-                    bucVar.b();
-                    break;
-                } catch (cuc e) {
-                    xf4 xf4Var = bucVar.d;
-                    xf4Var.f(e);
-                    ArrayList arrayList = (ArrayList) xf4Var.u();
-                    int size = arrayList.size();
-                    int i = 0;
-                    while (i < size) {
-                        Object obj = arrayList.get(i);
-                        i++;
-                        o15 o15Var = (o15) obj;
-                        try {
-                            try {
-                                gl.c3(new tn6((Object) o15Var.c, xf4Var.b, o15Var.a, (Object) "connect error: ".concat(p15.b(e)), (byte) 24));
-                            } catch (Throwable unused) {
-                            }
-                        } catch (Throwable unused2) {
-                            o15Var.getClass();
-                        }
-                    }
-                    return;
-                }
-            default:
-                bucVar.d();
-                break;
+    @Override // yr2
+    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+            return false;
         }
+        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+        if (Double.isNaN(d) || Double.isInfinite(d)) {
+            return false;
+        }
+        double max = Math.max(this.e, Math.min(this.f, d));
+        if (max == this.i || Math.abs(max - this.i) < this.g) {
+            return false;
+        }
+        this.i = max;
+        editor.putLong(e(), Double.doubleToRawLongBits(max));
+        return true;
+    }
+
+    @Override // yr2
+    public final boolean c(SharedPreferences.Editor editor) {
+        if (this.h != 2) {
+            return false;
+        }
+        double d = this.i;
+        double d2 = this.d;
+        if (d == d2) {
+            return false;
+        }
+        this.i = d2;
+        editor.remove(e());
+        return true;
+    }
+
+    @Override // yr2
+    public final void d(SharedPreferences sharedPreferences) {
+        if (!sharedPreferences.contains(e())) {
+            this.i = this.d;
+            return;
+        }
+        try {
+            try {
+                this.i = Math.max(this.e, Math.min(this.f, Double.longBitsToDouble(sharedPreferences.getLong(e(), 0L))));
+            } catch (ClassCastException e) {
+                cc4.g(e, true);
+                this.i = this.d;
+            }
+        } catch (ClassCastException unused) {
+            this.i = Math.max(this.e, Math.min(this.f, sharedPreferences.getFloat(e(), (float) this.d)));
+        }
+    }
+
+    public final String toString() {
+        return this.a + "=" + this.i;
     }
 }

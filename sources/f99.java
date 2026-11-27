@@ -1,128 +1,207 @@
 // default package
 
+import android.content.ComponentName;
 import android.content.Context;
-import android.text.SpannableString;
-import android.widget.LinearLayout;
-import org.telegram.ui.Wallet.c;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Build;
+import android.os.IBinder;
+import android.os.Messenger;
+import android.os.RemoteException;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class f99 extends LinearLayout implements gk7 {
-    public final int a;
-    public final hn b;
-    public final hn c;
-    public final cm2[] d;
-    public final cm2[] e;
-    public SpannableString f;
-    public p8c h;
-    public long n;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class f99 extends bw6 implements ServiceConnection {
+    public static final /* synthetic */ int H = 0;
+    public z89 E;
+    public boolean F;
+    public jz7 G;
+    public final ComponentName r;
+    public final b99 s;
+    public final ArrayList w;
+    public boolean x;
+    public boolean y;
 
-    public f99(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.d = new cm2[1];
-        this.e = new cm2[1];
-        this.n = -1L;
-        this.a = i;
-        setOrientation(1);
-        setGravity(21);
-        int L = gl.L(6.0f);
-        setPadding(gl.L(13.0f) + L, L, gl.L(14.0f) + L, L);
-        hn a = a(context, wjbVar);
-        this.b = a;
-        addView(a, nme.r(-2, 18, 5));
-        hn a2 = a(context, wjbVar);
-        this.c = a2;
-        addView(a2, nme.r(-2, 18, 5));
-        b(false);
+    static {
+        Log.isLoggable("MediaRouteProviderProxy", 3);
     }
 
-    public static hn a(Context context, wjb wjbVar) {
-        hn hnVar = new hn(context, false, true, false);
-        hnVar.n = true;
-        hnVar.setTypeface(gl.o());
-        hnVar.setTextSize(gl.L(14.0f));
-        hnVar.setGravity(5);
-        zkb.U(hnVar, bkb.F6, wjbVar);
-        return hnVar;
+    public f99(Context context, ComponentName componentName) {
+        super(context, new xh4((Object) componentName, (byte) 15));
+        this.w = new ArrayList();
+        this.r = componentName;
+        this.s = new b99();
     }
 
-    public final void b(boolean z) {
-        int i = this.a;
-        gta v = gta.v(i, false);
-        gta v2 = gta.v(i, true);
-        long j = v.m().amount;
-        nj p = v2.p();
-        if (uz4.c(i)) {
-            p = nj.j(Math.max(0L, c.C(i).z()) + p.b, oj.b);
+    @Override // bw6
+    public final zv6 c(String str) {
+        if (str == null) {
+            lq5.j("initialMemberRouteId cannot be null.");
+            return null;
         }
-        boolean z2 = v.e;
-        hn hnVar = this.c;
-        hn hnVar2 = this.b;
-        if (!z2 || !v2.e) {
-            if (this.f == null) {
-                SpannableString spannableString = new SpannableString("x");
-                this.f = spannableString;
-                spannableString.setSpan(new u86(gl.L(48.0f), hnVar2), 0, 1, 33);
+        fo4 fo4Var = (fo4) this.n;
+        if (fo4Var != null) {
+            List list = fo4Var.b;
+            int size = list.size();
+            for (int i = 0; i < size; i++) {
+                if (((ev6) list.get(i)).d().equals(str)) {
+                    d99 d99Var = new d99(this, str);
+                    this.w.add(d99Var);
+                    if (this.F) {
+                        d99Var.b(this.E);
+                    }
+                    r();
+                    return d99Var;
+                }
             }
-            hnVar2.c(this.f, false, true);
-            hnVar.setVisibility(8);
-            this.n = -1L;
+        }
+        return null;
+    }
+
+    @Override // bw6
+    public final aw6 d(String str) {
+        if (str != null) {
+            return o(str, null);
+        }
+        lq5.j("routeId cannot be null");
+        return null;
+    }
+
+    @Override // bw6
+    public final aw6 e(String str, String str2) {
+        if (str == null) {
+            lq5.j("routeId cannot be null");
+            return null;
+        }
+        if (str2 != null) {
+            return o(str, str2);
+        }
+        lq5.j("routeGroupId cannot be null");
+        return null;
+    }
+
+    @Override // bw6
+    public final void f(gv6 gv6Var) {
+        if (this.F) {
+            z89 z89Var = this.E;
+            int i = z89Var.d;
+            z89Var.d = i + 1;
+            z89Var.b(10, i, 0, gv6Var != null ? gv6Var.a : null, null);
+        }
+        r();
+    }
+
+    public final void n() {
+        if (this.y) {
             return;
         }
-        hnVar2.c(jva.a1(false, "⭐️".concat(k96.E(j, ' ')), 0.7f, this.d), z, true);
-        if (p.l()) {
-            hnVar.setVisibility(8);
+        Intent intent = new Intent("android.media.MediaRouteProviderService");
+        intent.setComponent(this.r);
+        try {
+            this.y = this.a.bindService(intent, this, Build.VERSION.SDK_INT >= 29 ? 4097 : 1);
+        } catch (SecurityException unused) {
+        }
+    }
+
+    public final e99 o(String str, String str2) {
+        fo4 fo4Var = (fo4) this.n;
+        if (fo4Var == null) {
+            return null;
+        }
+        List list = fo4Var.b;
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            if (((ev6) list.get(i)).d().equals(str)) {
+                e99 e99Var = new e99(this, str, str2);
+                this.w.add(e99Var);
+                if (this.F) {
+                    e99Var.b(this.E);
+                }
+                r();
+                return e99Var;
+            }
+        }
+        return null;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        if (this.y) {
+            p();
+            Messenger messenger = iBinder != null ? new Messenger(iBinder) : null;
+            if (messenger != null) {
+                try {
+                    if (messenger.getBinder() != null) {
+                        z89 z89Var = new z89(this, messenger);
+                        int i = z89Var.d;
+                        z89Var.d = i + 1;
+                        z89Var.h = i;
+                        if (z89Var.b(1, i, 4, null, null)) {
+                            try {
+                                z89Var.a.getBinder().linkToDeath(z89Var, 0);
+                                this.E = z89Var;
+                                return;
+                            } catch (RemoteException unused) {
+                                z89Var.binderDied();
+                                return;
+                            }
+                        }
+                        return;
+                    }
+                } catch (NullPointerException unused2) {
+                }
+            }
+            Log.e("MediaRouteProviderProxy", this + ": Service returned invalid messenger binder");
+        }
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        p();
+    }
+
+    public final void p() {
+        if (this.E != null) {
+            g(null);
+            this.F = false;
+            ArrayList arrayList = this.w;
+            int size = arrayList.size();
+            for (int i = 0; i < size; i++) {
+                ((a99) arrayList.get(i)).c();
+            }
+            z89 z89Var = this.E;
+            z89Var.b(2, 0, 0, null, null);
+            z89Var.b.b.clear();
+            z89Var.a.getBinder().unlinkToDeath(z89Var, 0);
+            z89Var.r.s.post(new y89(z89Var, (byte) 0));
+            this.E = null;
+        }
+    }
+
+    public final void q() {
+        if (this.y) {
+            this.y = false;
+            p();
+            try {
+                this.a.unbindService(this);
+            } catch (IllegalArgumentException e) {
+                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e);
+            }
+        }
+    }
+
+    public final void r() {
+        if (!this.x || (((gv6) this.h) == null && this.w.isEmpty())) {
+            q();
         } else {
-            hnVar.setVisibility(0);
-            String concat = "⭐️".concat(p.o(2).d());
-            cm2[] cm2VarArr = this.e;
-            hnVar.c(jva.a1(true, concat, 0.7f, cm2VarArr), z, true);
-            cm2 cm2Var = cm2VarArr[0];
-            if (cm2Var != null) {
-                cm2Var.a(bkb.Yl);
-            }
-        }
-        this.n = j;
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.z3 || i == kk7.c4) {
-            b(true);
+            n();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        b(false);
-        int i = this.a;
-        kk7.f(i).a(this, kk7.z3);
-        kk7.f(i).a(this, kk7.c4);
-        if (uz4.c(i) && c.C(i).x() == null) {
-            c.C(i).J();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        int i = this.a;
-        kk7.f(i).n(this, kk7.z3);
-        kk7.f(i).n(this, kk7.c4);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        p8c p8cVar = this.h;
-        if (p8cVar == null || i == i3) {
-            return;
-        }
-        p8cVar.a(Integer.valueOf(i));
-    }
-
-    public void setOnWidthChanged(p8c p8cVar) {
-        this.h = p8cVar;
+    public final String toString() {
+        return "Service connection " + this.r.flattenToShortString();
     }
 }

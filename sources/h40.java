@@ -1,26 +1,60 @@
 // default package
 
-import android.media.AudioTrack;
-import android.media.AudioTrack$StreamEventCallback;
+import org.webrtc.MediaStream;
+import org.webrtc.NativeLifecycleLock;
+import org.webrtc.RtpSender;
+import org.webrtc.TimestampAligner;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h40 extends AudioTrack$StreamEventCallback {
-    public final /* synthetic */ i40 a;
+public final /* synthetic */ class h40 implements b86, ot2, NativeLifecycleLock.NativePointerCallable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ long b;
 
-    public h40(i40 i40Var) {
-        this.a = i40Var;
+    public /* synthetic */ h40(byte b, long j) {
+        this.a = b;
+        this.b = j;
     }
 
-    public final void onDataRequest(AudioTrack audioTrack, int i) {
-        this.a.c.i.e(-1, new wz((byte) 4));
+    @Override // ot2
+    public final void accept(Object obj) {
+        ((og8) obj).g(this.b);
     }
 
-    public final void onPresentationEnded(AudioTrack audioTrack) {
-        this.a.c.i.e(-1, new wz((byte) 5));
+    @Override // org.webrtc.NativeLifecycleLock.NativePointerCallable
+    public final Object call(long j) {
+        Boolean lambda$removeMediaStreamTrack$12;
+        Boolean lambda$removeTrack$8;
+        Boolean lambda$removeTrack$6;
+        Boolean lambda$setTrack$0;
+        Long lambda$translateTimestamp$0;
+        switch (this.a) {
+            case 2:
+                lambda$removeMediaStreamTrack$12 = MediaStream.lambda$removeMediaStreamTrack$12(this.b, j);
+                return lambda$removeMediaStreamTrack$12;
+            case 3:
+                lambda$removeTrack$8 = MediaStream.lambda$removeTrack$8(this.b, j);
+                return lambda$removeTrack$8;
+            case 4:
+                lambda$removeTrack$6 = MediaStream.lambda$removeTrack$6(this.b, j);
+                return lambda$removeTrack$6;
+            case 5:
+                lambda$setTrack$0 = RtpSender.lambda$setTrack$0(this.b, j);
+                return lambda$setTrack$0;
+            default:
+                lambda$translateTimestamp$0 = TimestampAligner.lambda$translateTimestamp$0(this.b, j);
+                return lambda$translateTimestamp$0;
+        }
     }
 
-    public final void onTearDown(AudioTrack audioTrack) {
-        this.a.c.i.e(-1, new wz((byte) 4));
+    @Override // b86
+    public final void invoke(Object obj) {
+        v30 v30Var;
+        ha3 ha3Var = (ha3) obj;
+        ja3 ja3Var = ha3Var.a;
+        if (ha3Var != ja3Var.j || (v30Var = ja3Var.n) == null) {
+            return;
+        }
+        v30Var.n(this.b);
     }
 }

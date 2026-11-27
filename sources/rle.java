@@ -1,22 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class rle {
-    public static odc a(Class cls) {
-        try {
-            Object newInstance = cls.getDeclaredConstructor(null).newInstance(null);
-            newInstance.getClass();
-            return (odc) newInstance;
-        } catch (IllegalAccessException e) {
-            ho9.l("Cannot create an instance of ", cls, e);
-            return null;
-        } catch (InstantiationException e2) {
-            ho9.l("Cannot create an instance of ", cls, e2);
-            return null;
-        } catch (NoSuchMethodException e3) {
-            ho9.l("Cannot create an instance of ", cls, e3);
-            return null;
-        }
+public final class rle {
+    public static final e2a a;
+
+    static {
+        int i = dnd.r;
+        Object[] objArr = jqd.F;
+        new qrd("FIDO");
+        a = new e2a(Boolean.FALSE);
     }
 }

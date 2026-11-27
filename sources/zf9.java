@@ -1,161 +1,70 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.os.SystemClock;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class zf9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ bg9 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class zf9 implements TextWatcher {
+    public final /* synthetic */ dg9 a;
 
-    public /* synthetic */ zf9(bg9 bg9Var, byte b) {
-        this.a = b;
-        this.b = bg9Var;
+    public zf9(dg9 dg9Var) {
+        this.a = dg9Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a7, code lost:
-    
-        if (r1.length() >= r2) goto L47;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0104, code lost:
-    
-        if (r0.isRecycled() == false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x0177, code lost:
-    
-        r0.recycle();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x0140, code lost:
-    
-        if (r0.isRecycled() == false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x016b, code lost:
-    
-        if (r0.isRecycled() == false) goto L93;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0175, code lost:
-    
-        if (r0.isRecycled() == false) goto L93;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        Bitmap bitmap;
-        byte b = this.a;
-        String str = null;
-        bg9 bg9Var = this.b;
-        switch (b) {
-            case 0:
-                String str2 = bg9Var.b;
-                TLRPC.Document document = bg9Var.r;
-                if (document != null && !TextUtils.isEmpty(str2)) {
-                    try {
-                        String str3 = document.mime_type;
-                        String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? fl5.G(str2, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? z3a.q(1, str2) : null;
-                        if (bitmap != null) {
-                            try {
-                                ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
-                                int size = arrayList.size();
-                                int i = 0;
-                                while (true) {
-                                    if (i < size) {
-                                        TLRPC.DocumentAttribute documentAttribute = arrayList.get(i);
-                                        i++;
-                                        if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
-                                        }
-                                    } else {
-                                        TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                                        tL_documentAttributeImageSize.w = bitmap.getWidth();
-                                        tL_documentAttributeImageSize.h = bitmap.getHeight();
-                                        document.attributes.add(tL_documentAttributeImageSize);
-                                    }
-                                }
-                                TLRPC.PhotoSize U = fl5.U(bitmap, 320.0f, 320.0f, 80, false);
-                                if (U != null) {
-                                    document.thumbs.clear();
-                                    document.thumbs.add(U);
-                                    document.flags |= 1;
-                                    ba4.G(bg9Var.a);
-                                    File J = ba4.J(U, null, true, true);
-                                    if (J != null && J.exists()) {
-                                        str = J.getAbsolutePath();
-                                    }
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            } catch (Throwable unused) {
-                                if (bitmap != null) {
-                                    break;
-                                }
-                                bg9Var.G = str;
-                                gl.c3(new zf9(bg9Var, (byte) 2));
-                                return;
-                            }
-                        } else if (bitmap != null) {
-                            break;
-                        }
-                    } catch (Throwable unused2) {
-                        bitmap = null;
-                    }
-                }
-                bg9Var.G = str;
-                gl.c3(new zf9(bg9Var, (byte) 2));
-                return;
-            case 1:
-                String str4 = bg9Var.b;
-                try {
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-                    options.inJustDecodeBounds = true;
-                    BitmapFactory.decodeFile(str4, options);
-                    String str5 = options.outMimeType;
-                    boolean z = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
-                    float Y0 = gl.Y0(false);
-                    Bitmap G = fl5.G(str4, null, Y0, Y0, true);
-                    if (G == null) {
-                        G = fl5.G(str4, null, 800.0f, 800.0f, true);
-                    }
-                    if (G != null) {
-                        File file = new File(ba4.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");
-                        try {
-                            FileOutputStream fileOutputStream = new FileOutputStream(file);
-                            try {
-                                boolean compress = G.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
-                                fileOutputStream.close();
-                                if (compress && file.length() > 0) {
-                                    if (z) {
-                                        long length = new File(str4).length();
-                                        if (length > 0) {
-                                            break;
-                                        }
-                                    }
-                                    str4 = file.getAbsolutePath();
-                                }
-                            } finally {
-                            }
-                        } finally {
-                            G.recycle();
-                        }
-                    }
-                } catch (Throwable unused3) {
-                }
-                gl.c3(new lw8(bg9Var, str4, (byte) 24));
-                return;
-            default:
-                if (bg9Var.x || bg9Var.y) {
-                    return;
-                }
-                bg9Var.a(bg9Var.b);
-                return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        Editable editable2;
+        dg9 dg9Var = this.a;
+        if (dg9Var.j2 || dg9Var.f2 == null) {
+            return;
         }
+        if (!dg9Var.r2 || editable.length() <= 0) {
+            editable2 = editable;
+        } else {
+            editable2 = editable;
+            mm9.o(editable2, 0, editable.length(), 1, true, dg9Var.y2);
+        }
+        if (dg9Var.o2 || dg9Var.k2 || dg9Var.l2) {
+            dg9Var.f2.Q(editable2);
+            return;
+        }
+        dg9Var.j2 = true;
+        boolean z = false;
+        for (int length = editable2.length() - 1; length >= 0; length--) {
+            if (editable2.charAt(length) == '\n') {
+                editable2.delete(length, length + 1);
+                z = true;
+            }
+        }
+        dg9Var.j2 = false;
+        cg9 cg9Var = dg9Var.f2;
+        if (z) {
+            cg9Var.U(dg9Var);
+        } else {
+            cg9Var.Q(editable2);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        cg9 cg9Var;
+        dg9 dg9Var = this.a;
+        if (dg9Var.j2 || (cg9Var = dg9Var.f2) == null) {
+            return;
+        }
+        cg9Var.l(i2, i3);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        dg9 dg9Var = this.a;
+        if (i2 > 0 && i3 == 0) {
+            dg9Var.z2 = SystemClock.uptimeMillis();
+        }
+        dg9Var.w2 = true;
+        dg9Var.N();
+        dg9Var.setLongClickable(dg9Var.length() == 0);
     }
 }

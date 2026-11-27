@@ -1,49 +1,94 @@
 // default package
 
-import j$.util.Objects;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class g4d extends e4d {
-    public static final g4d w = new g4d(0, new Object[0]);
+public final class g4d extends b4d implements Set, j$.util.Set {
+    public static final Object[] w;
+    public static final g4d x;
+    public transient f4d n;
     public final transient Object[] r;
-    public final transient boolean s;
+    public final transient Object[] s;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public g4d(int i, Object[] objArr) {
-        super((byte) 1);
+    static {
+        Object[] objArr = new Object[0];
+        w = objArr;
+        x = new g4d(objArr, objArr);
+    }
+
+    public g4d(Object[] objArr, Object[] objArr2) {
+        super((byte) 0);
         this.r = objArr;
-        this.s = i;
+        this.s = objArr2;
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        yye.a(i, this.s ? 1 : 0);
-        Object obj = this.r[i];
-        Objects.requireNonNull(obj);
-        return obj;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        int length = this.s.length;
+        return false;
     }
 
-    @Override // e4d, kzc
-    public final int l(Object[] objArr) {
-        Object[] objArr2 = this.r;
-        boolean z = this.s;
-        System.arraycopy(objArr2, 0, objArr, 0, z ? 1 : 0);
-        return z ? 1 : 0;
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (set.size() == 0) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
     }
 
-    @Override // kzc
-    public final int m() {
-        return this.s ? 1 : 0;
+    @Override // b4d
+    public final int h(Object[] objArr) {
+        System.arraycopy(this.r, 0, objArr, 0, 0);
+        return 0;
     }
 
-    @Override // kzc
-    public final Object[] o() {
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return 0;
+    }
+
+    @Override // b4d
+    public final int i() {
+        return 0;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        f4d f4dVar = this.n;
+        if (f4dVar == null) {
+            c4d c4dVar = e4d.n;
+            f4dVar = f4d.s;
+            this.n = f4dVar;
+        }
+        return f4dVar.listIterator(0);
+    }
+
+    @Override // b4d
+    public final int j() {
+        return 0;
+    }
+
+    @Override // b4d
+    public final Object[] k() {
         return this.r;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.s ? 1 : 0;
+        return 0;
     }
 }

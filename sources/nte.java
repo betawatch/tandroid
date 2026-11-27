@@ -1,41 +1,70 @@
 // default package
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
+import android.widget.ProgressBar;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class nte {
-    public static wp9 a(Bundle bundle, Bundle bundle2) {
-        if (bundle == null) {
-            if (bundle2 == null) {
-                return new wp9();
-            }
-            HashMap hashMap = new HashMap();
-            for (String str : bundle2.keySet()) {
-                str.getClass();
-                hashMap.put(str, bundle2.get(str));
-            }
-            return new wp9(hashMap);
+    public static ContextThemeWrapper a(Context context, boolean z) {
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, g(context, !z ? R.attr.dialogTheme : R.attr.alertDialogTheme));
+        return g(contextThemeWrapper, R.attr.mediaRouteTheme) != 0 ? new ContextThemeWrapper(contextThemeWrapper, e(contextThemeWrapper)) : contextThemeWrapper;
+    }
+
+    public static int b(Context context) {
+        return vm2.g(-1, f(context, R.attr.colorPrimary)) >= 3.0d ? -1 : -570425344;
+    }
+
+    public static float c(Context context) {
+        TypedValue typedValue = new TypedValue();
+        if (context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, typedValue, true)) {
+            return typedValue.getFloat();
         }
-        ClassLoader classLoader = wp9.class.getClassLoader();
-        classLoader.getClass();
-        bundle.setClassLoader(classLoader);
-        ArrayList parcelableArrayList = bundle.getParcelableArrayList("keys");
-        ArrayList parcelableArrayList2 = bundle.getParcelableArrayList("values");
-        if (parcelableArrayList == null || parcelableArrayList2 == null || parcelableArrayList.size() != parcelableArrayList2.size()) {
-            sc8.j("Invalid bundle passed as restored state");
-            return null;
+        return 0.5f;
+    }
+
+    public static Drawable d(Context context, int i) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{i});
+        Drawable a = yqd.a(context, obtainStyledAttributes.getResourceId(0, 0));
+        if (h(context)) {
+            a.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int size = parcelableArrayList.size();
-        for (int i = 0; i < size; i++) {
-            Object obj = parcelableArrayList.get(i);
-            obj.getClass();
-            linkedHashMap.put((String) obj, parcelableArrayList2.get(i));
+        obtainStyledAttributes.recycle();
+        return a;
+    }
+
+    public static int e(Context context) {
+        return h(context) ? b(context) == -570425344 ? R.style.Theme_MediaRouter_Light : R.style.Theme_MediaRouter_Light_DarkControlPanel : b(context) == -570425344 ? R.style.Theme_MediaRouter_LightControlPanel : R.style.Theme_MediaRouter;
+    }
+
+    public static int f(Context context, int i) {
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(i, typedValue, true);
+        return typedValue.resourceId != 0 ? context.getResources().getColor(typedValue.resourceId) : typedValue.data;
+    }
+
+    public static int g(Context context, int i) {
+        TypedValue typedValue = new TypedValue();
+        if (context.getTheme().resolveAttribute(i, typedValue, true)) {
+            return typedValue.resourceId;
         }
-        return new wp9(linkedHashMap);
+        return 0;
+    }
+
+    public static boolean h(Context context) {
+        TypedValue typedValue = new TypedValue();
+        return context.getTheme().resolveAttribute(R.attr.isLightTheme, typedValue, true) && typedValue.data != 0;
+    }
+
+    public static void i(Context context, ProgressBar progressBar) {
+        if (progressBar.isIndeterminate()) {
+            progressBar.getIndeterminateDrawable().setColorFilter(context.getColor(h(context) ? R.color.mr_cast_progressbar_progress_and_thumb_light : R.color.mr_cast_progressbar_progress_and_thumb_dark), PorterDuff.Mode.SRC_IN);
+        }
     }
 }

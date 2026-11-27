@@ -1,267 +1,229 @@
 // default package
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ax3 implements vv2 {
-    public final /* synthetic */ qx3 a;
+public final class ax3 extends View {
+    public final vnb E;
+    public icc F;
+    public int G;
+    public boolean H;
+    public long I;
+    public boolean J;
+    public final int a;
+    public final Drawable[] b;
+    public final Drawable c;
+    public final Drawable d;
+    public String e;
+    public boolean f;
+    public int h;
+    public final int[] n;
+    public final int[] r;
+    public final Paint s;
+    public final RectF w;
+    public final mm x;
+    public final mm y;
 
-    public ax3(qx3 qx3Var) {
-        this.a = qx3Var;
+    public ax3(Context context, vnb vnbVar) {
+        super(context);
+        this.a = hl.L(hl.O1() ? 40.0f : 32.0f);
+        this.b = new Drawable[11];
+        this.n = new int[]{0, 0};
+        this.r = new int[]{0, 0};
+        this.s = new Paint(1);
+        this.w = new RectF();
+        k43 k43Var = k43.h;
+        this.x = new mm(125L, this, k43Var);
+        this.y = new mm(125L, this, k43Var);
+        this.G = -1;
+        this.H = true;
+        this.E = vnbVar;
+        this.c = getResources().getDrawable(R.drawable.stickers_back_all);
+        this.d = getResources().getDrawable(R.drawable.stickers_back_arrow);
+        a();
     }
 
-    @Override // vv2
-    public final boolean A(TLRPC.Document document) {
-        return y6c.h(y6c.t0).p() && k27.H2(document);
+    public final void a() {
+        int i = aob.h5;
+        vnb vnbVar = this.E;
+        aob.A1(aob.v0(i, vnbVar), this.c);
+        aob.A1(aob.v0(i, vnbVar), this.d);
+        jr2.b.setColorFilter(new PorterDuffColorFilter(aob.v0(aob.Ef, vnbVar), PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // vv2
-    public final String C(boolean z) {
-        return null;
+    public String getEmoji() {
+        return this.e;
     }
 
-    @Override // vv2
-    public final void E(TLRPC.Document document) {
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(k27.U(document));
-        valueOf.setSpan(new gm(document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
-        if (gl.g(valueOf)) {
-            qx3 qx3Var = this.a;
-            new u21((FrameLayout) qx3Var.b, qx3Var.J0).i(k96.M0(2131751172, null)).j();
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        ax3 ax3Var = this;
+        int measuredWidth = ax3Var.getMeasuredWidth();
+        int measuredHeight = ax3Var.getMeasuredHeight() - hl.L(2.0f);
+        Drawable drawable = ax3Var.c;
+        boolean z = 0;
+        drawable.setBounds(0, 0, measuredWidth, measuredHeight);
+        drawable.draw(canvas);
+        int L = ax3Var.h - hl.L(9.0f);
+        int measuredHeight2 = ax3Var.getMeasuredHeight() - hl.L(6.34f);
+        int L2 = hl.L(9.0f) + ax3Var.h;
+        int measuredHeight3 = ax3Var.getMeasuredHeight();
+        Drawable drawable2 = ax3Var.d;
+        drawable2.setBounds(L, measuredHeight2, L2, measuredHeight3);
+        drawable2.draw(canvas);
+        if (ax3Var.e != null) {
+            boolean z2 = ax3Var.f;
+            vnb vnbVar = ax3Var.E;
+            int[] iArr = ax3Var.n;
+            mm mmVar = ax3Var.x;
+            Paint paint = ax3Var.s;
+            Drawable[] drawableArr = ax3Var.b;
+            RectF rectF = ax3Var.w;
+            float f = 1.0f;
+            int i = ax3Var.a;
+            if (!z2) {
+                float e = mmVar.e(false, iArr[0]);
+                float f2 = i;
+                int L3 = hl.L(5.0f);
+                float f3 = L3;
+                int i2 = L3 + i;
+                rectF.set((int) ((f2 * e) + hl.L((e * 4.0f) + 5.0f)), f3, r4 + i, i2);
+                rectF.inset(hl.L(-2.0f), hl.L(-2.0f));
+                paint.setColor(aob.v0(aob.i6, vnbVar));
+                canvas.drawRoundRect(rectF, hl.L(4.0f), hl.L(4.0f), paint);
+                for (int i3 = 0; i3 < 6; i3++) {
+                    Drawable drawable3 = drawableArr[i3];
+                    if (drawable3 != null) {
+                        int L4 = hl.L((i3 << 2) + 5) + (i * i3);
+                        float min = ((1.0f - (Math.min(0.5f, Math.abs(i3 - e)) * 2.0f)) * 0.1f) + 0.9f;
+                        canvas.save();
+                        float f4 = f2 / 2.0f;
+                        canvas.scale(min, min, L4 + f4, f4 + f3);
+                        drawable3.setBounds(L4, L3, L4 + i, i2);
+                        drawable3.draw(canvas);
+                        canvas.restore();
+                    }
+                }
+                return;
+            }
+            int i4 = 0;
+            while (i4 < 2) {
+                float e2 = (i4 == 0 ? mmVar : ax3Var.y).e(z, iArr[i4]);
+                int i5 = z;
+                float max = Math.max(0.0f, Math.min(f, -e2));
+                rectF.set((int) ((i * (e2 + f)) + hl.L((r6 * 4.0f) + (Math.max(0.0f, Math.min(f, r6)) * 3.0f) + 5.0f)), hl.U1(max, ((hl.L(f) + i) * i4) + hl.L(3.0f), (ax3Var.getMeasuredHeight() - i) / 2), r6 + i, r9 + i);
+                rectF.inset(hl.L(-2.0f), hl.L(max * (-2.0f)));
+                paint.setColor(aob.p1(hl.R1(f, 0.5f, max), aob.v0(aob.i6, vnbVar)));
+                canvas.drawRoundRect(rectF, hl.L(4.0f), hl.L(4.0f), paint);
+                int i6 = i5;
+                while (i6 < 5) {
+                    i6++;
+                    int i7 = (i4 * 5) + i6;
+                    int L5 = hl.L((i6 << 2) + 8) + (i * i6);
+                    int L6 = ((hl.L(f) + i) * i4) + hl.L(3.0f);
+                    drawableArr[i7].setBounds(L5, L6, L5 + i, L6 + i);
+                    drawableArr[i7].draw(canvas);
+                    f = f;
+                }
+                i4++;
+                ax3Var = this;
+                z = i5;
+            }
+            char c = z;
+            drawableArr[c].setBounds(hl.L(5.0f), (getMeasuredHeight() - i) / 2, hl.L(5.0f) + i, (getMeasuredHeight() + i) / 2);
+            drawableArr[c].draw(canvas);
+            canvas.drawRect(hl.L(8.45f) + i, hl.L(2.0f), uh9.w(8.45f, i, 1), getMeasuredHeight() - hl.L(6.0f), aob.j0);
         }
     }
 
-    @Override // vv2
-    public final boolean F() {
-        return false;
-    }
-
-    @Override // vv2
-    public final cs5 G(ViewGroup viewGroup) {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean K() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean P(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final Boolean S(TLRPC.Document document) {
-        TLRPC.User f;
-        if (!y6c.h(y6c.t0).p() || !k27.H2(document) || (f = y6c.h(y6c.t0).f()) == null) {
-            return null;
-        }
-        Long i = l7c.i(f);
-        return Boolean.valueOf(document != null && (i == null || i.longValue() != document.id));
-    }
-
-    @Override // vv2
-    public final boolean T() {
-        return true;
-    }
-
-    @Override // vv2
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // vv2
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean c() {
-        d dVar = this.a.m1;
-        if (dVar instanceof mu1) {
-            return ((mu1) dVar).P7();
-        }
-        return false;
-    }
-
-    @Override // vv2
-    public final TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // vv2
-    public final TLRPC.PollAnswer g() {
-        return null;
-    }
-
-    @Override // vv2
-    public final boolean h() {
-        return true;
-    }
-
-    @Override // vv2
-    public final boolean i() {
-        return false;
-    }
-
-    @Override // vv2
-    public final boolean j(int i) {
-        d dVar = this.a.m1;
-        if (!(dVar instanceof mu1) || !((mu1) dVar).I4()) {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i;
+        int i2;
+        int i3;
+        if (this.J) {
+            this.J = false;
             return false;
         }
-        if (y6c.h(y6c.t0).p()) {
-            return true;
+        if (!this.f) {
+            return super.onTouchEvent(motionEvent);
         }
-        return ((mu1) dVar).h() != null && l7c.D(((mu1) dVar).h());
-    }
-
-    @Override // vv2
-    public final boolean n() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void r(TLRPC.Document document) {
-        TLRPC.EmojiStatus emojiStatus;
-        if (document == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-            tL_emojiStatus.document_id = document.id;
-            emojiStatus = tL_emojiStatus;
+        int i4 = 0;
+        while (true) {
+            Drawable[] drawableArr = this.b;
+            if (i4 >= drawableArr.length) {
+                i4 = -1;
+                break;
+            }
+            if (drawableArr[i4].getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) || ((i3 = this.G) != -1 && ((i4 == 0 || ((i3 == 0 && i4 >= 1 && i4 <= 5) || (i3 == 1 && i4 >= 6 && i4 <= 10))) && ((int) motionEvent.getX()) >= drawableArr[i4].getBounds().left && ((int) motionEvent.getX()) <= drawableArr[i4].getBounds().right))) {
+                break;
+            }
+            i4++;
         }
-        TLRPC.User f = y6c.h(y6c.t0).f();
-        Object tL_emojiStatusEmpty = f == null ? new TLRPC.TL_emojiStatusEmpty() : f.emoji_status;
-        qx3 qx3Var = this.a;
-        na7.q1(qx3Var.a).n5(emojiStatus, null);
-        eu3 eu3Var = new eu3(this, tL_emojiStatusEmpty, (byte) 3);
-        if (document != null) {
-            new u21((FrameLayout) qx3Var.b, qx3Var.J0).r(document, k96.M0(2131745353, null), k96.M0(2131743646, null), eu3Var).j();
-            return;
+        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 2 && motionEvent.getAction() != 1) {
+            return false;
         }
-        e21 e21Var = new e21(qx3Var.getContext(), qx3Var.J0);
-        e21Var.b.setText(k96.M0(2131746094, null));
-        e21Var.a.setImageResource(R.drawable.msg_settings_premium);
-        k21 k21Var = new k21(qx3Var.J0, qx3Var.getContext(), true);
-        k21Var.b = eu3Var;
-        e21Var.setButton(k21Var);
-        m21.f((FrameLayout) qx3Var.b, e21Var, 1500).j();
-    }
-
-    @Override // vv2
-    public final boolean t() {
+        int action = motionEvent.getAction();
+        int[] iArr = this.n;
+        if (action == 0) {
+            this.G = -1;
+            this.I = System.currentTimeMillis();
+            this.H = iArr[0] == iArr[1];
+        }
+        int i5 = iArr[0];
+        int[] iArr2 = this.r;
+        iArr2[0] = i5;
+        iArr2[1] = iArr[1];
+        boolean z = System.currentTimeMillis() - this.I > 300 && motionEvent.getAction() == 2;
+        if (i4 == 0) {
+            iArr[0] = -1;
+            iArr[1] = -1;
+        } else if (i4 >= 1 && i4 <= 5 && ((i2 = this.G) == -1 || i2 == 0)) {
+            this.G = 0;
+            int i6 = i4 - 1;
+            iArr[0] = i6;
+            if (iArr[1] == -1 || (this.H && z)) {
+                iArr[1] = i6;
+            }
+        } else if (i4 >= 6 && i4 <= 10 && ((i = this.G) == -1 || i == 1)) {
+            this.G = 1;
+            int i7 = i4 - 6;
+            iArr[1] = i7;
+            if (iArr[0] == -1 || (this.H && z)) {
+                iArr[0] = i7;
+            }
+        }
+        if (iArr2[0] != iArr[0] || iArr2[1] != iArr[1]) {
+            hl.W3(this);
+            icc iccVar = this.F;
+            if (iccVar != null) {
+                iccVar.a(Integer.valueOf(iArr[0]), Integer.valueOf(iArr[1]));
+            }
+        }
+        invalidate();
+        if (motionEvent.getAction() == 1) {
+            this.G = -1;
+        }
         return true;
     }
 
-    @Override // vv2
-    public final k27 w() {
-        return null;
+    public void setArrowX(int i) {
+        this.h = i;
+        invalidate();
     }
 
-    @Override // vv2
-    public final boolean x() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void y(TLRPC.Document document) {
-        qx3 qx3Var = this.a;
-        d dVar = qx3Var.m1;
-        if (dVar instanceof mu1) {
-            ((mu1) dVar).nb(document);
-        }
-        qx3Var.G0();
-        qx3Var.dismiss();
-    }
-
-    @Override // vv2
-    public final boolean z() {
-        return false;
-    }
-
-    @Override // vv2
-    public final void L() {
-    }
-
-    @Override // vv2
-    public final void N() {
-    }
-
-    @Override // vv2
-    public final void p() {
-    }
-
-    @Override // vv2
-    public final void q() {
-    }
-
-    @Override // vv2
-    public final void B(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void I(s3a s3aVar) {
-    }
-
-    @Override // vv2
-    public final void Q(String str) {
-    }
-
-    @Override // vv2
-    public final void l(String str) {
-    }
-
-    @Override // vv2
-    public final void m(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void o(TLRPC.Document document) {
-    }
-
-    @Override // vv2
-    public final void v(String str) {
-    }
-
-    @Override // vv2
-    public final void J(Object obj, Object obj2) {
-    }
-
-    @Override // vv2
-    public final void O(TLRPC.InputStickerSet inputStickerSet, boolean z) {
-    }
-
-    @Override // vv2
-    public final void s(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // vv2
-    public final void R(CharSequence charSequence, String str, pz1 pz1Var) {
-    }
-
-    @Override // vv2
-    public final void u(Object obj, Object obj2, boolean z, int i, int i2) {
-    }
-
-    @Override // vv2
-    public final void k(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
+    public void setOnSelectionUpdateListener(icc iccVar) {
+        this.F = iccVar;
     }
 }

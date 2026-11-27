@@ -1,23 +1,27 @@
 // default package
 
-import android.view.View;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class md8 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ nd8 a;
+public final /* synthetic */ class md8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qd8 b;
 
-    public md8(nd8 nd8Var) {
-        this.a = nd8Var;
+    public /* synthetic */ md8(qd8 qd8Var, byte b) {
+        this.a = b;
+        this.b = qd8Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.c.e();
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.a.c.f();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        qd8 qd8Var = this.b;
+        switch (b) {
+            case 0:
+                qd8Var.d();
+                break;
+            default:
+                qd8Var.f();
+                break;
+        }
     }
 }

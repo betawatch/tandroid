@@ -1,244 +1,66 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.SystemClock;
+import android.text.TextUtils;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.regex.Pattern;
+import org.json.JSONObject;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qd1 {
-    public final /* synthetic */ byte a;
-    public byte[] b;
-    public int c;
-    public int d;
-    public int e;
+public abstract class qd1 {
+    public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
+    public static final Random b = new Random(SystemClock.elapsedRealtime());
 
-    public qd1(int i, int i2) {
-        this.a = (byte) 0;
-        this.c = i;
-        this.d = i2;
-        this.b = new byte[(i2 << 1) - 1];
-        this.e = 0;
+    public static String a(String str, JSONObject jSONObject) {
+        if (jSONObject == null || !jSONObject.has(str)) {
+            return null;
+        }
+        return jSONObject.optString(str);
     }
 
-    public final void a() {
-        int i;
-        int i2 = this.c;
-        gre.p(i2 >= 0 && (i2 < (i = this.e) || (i2 == i && this.d == 0)));
-    }
-
-    public final int b() {
-        return ((this.e - this.c) << 3) - this.d;
-    }
-
-    public final void c() {
-        if (this.d == 0) {
+    public static void b(String str) {
+        if (TextUtils.isEmpty(str)) {
+            lq5.j("Namespace cannot be null or empty");
             return;
         }
-        this.d = 0;
-        this.c++;
-        a();
-    }
-
-    public final int d() {
-        gre.p(this.d == 0);
-        return this.c;
-    }
-
-    public final boolean e() {
-        switch (this.a) {
-            case 1:
-                boolean z = (this.b[this.c] & (128 >> this.d)) != 0;
-                m();
-                return z;
-            default:
-                boolean z2 = (((this.b[this.d] & 255) >> this.e) & 1) == 1;
-                n(1);
-                return z2;
+        if (str.length() > 128) {
+            lq5.j("Invalid namespace length");
+        } else if (!str.startsWith("urn:x-cast:")) {
+            lq5.j("Namespace must begin with the prefix \"urn:x-cast:\"");
+        } else {
+            if (str.length() != 11) {
+                return;
+            }
+            lq5.j("Namespace must begin with the prefix \"urn:x-cast:\" and have non-empty suffix");
         }
     }
 
-    public final int f(int i) {
-        switch (this.a) {
-            case 1:
-                if (i == 0) {
-                    return 0;
-                }
-                this.d += i;
-                int i2 = 0;
-                while (true) {
-                    int i3 = this.d;
-                    if (i3 <= 8) {
-                        byte[] bArr = this.b;
-                        int i4 = this.c;
-                        int i5 = (i2 | ((bArr[i4] & 255) >> (8 - i3))) & ((-1) >>> (32 - i));
-                        if (i3 == 8) {
-                            this.d = 0;
-                            this.c = i4 + 1;
-                        }
-                        a();
-                        return i5;
-                    }
-                    int i6 = i3 - 8;
-                    this.d = i6;
-                    byte[] bArr2 = this.b;
-                    int i7 = this.c;
-                    this.c = i7 + 1;
-                    i2 |= (bArr2[i7] & 255) << i6;
-                }
-            default:
-                int i8 = this.d;
-                int min = Math.min(i, 8 - this.e);
-                byte[] bArr3 = this.b;
-                int i9 = i8 + 1;
-                int i10 = ((bArr3[i8] & 255) >> this.e) & (kk7.d4 >> (8 - min));
-                while (min < i) {
-                    i10 |= (bArr3[i9] & 255) << min;
-                    min += 8;
-                    i9++;
-                }
-                int i11 = i10 & ((-1) >>> (32 - i));
-                n(i);
-                return i11;
+    public static ArrayList c(int[] iArr) {
+        ArrayList arrayList = new ArrayList();
+        int length = iArr.length;
+        int i = 0;
+        while (i < length) {
+            i = qd4.g(iArr[i], i, 1, arrayList);
         }
+        return arrayList;
     }
 
-    public final void g(int i, byte[] bArr) {
-        int i2 = i >> 3;
-        for (int i3 = 0; i3 < i2; i3++) {
-            byte[] bArr2 = this.b;
-            int i4 = this.c;
-            int i5 = i4 + 1;
-            this.c = i5;
-            byte b = bArr2[i4];
-            int i6 = this.d;
-            byte b2 = (byte) (b << i6);
-            bArr[i3] = b2;
-            bArr[i3] = (byte) (b2 | ((bArr2[i5] & 255) >> (8 - i6)));
+    public static boolean d(Object obj, Object obj2) {
+        return obj == null ? obj2 == null : obj2 != null && obj.equals(obj2);
+    }
+
+    public static int[] e(AbstractCollection abstractCollection) {
+        int[] iArr = new int[abstractCollection.size()];
+        Iterator it = abstractCollection.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            iArr[i] = ((Integer) it.next()).intValue();
+            i++;
         }
-        int i7 = i & 7;
-        if (i7 == 0) {
-            return;
-        }
-        byte b3 = (byte) (bArr[i2] & (kk7.d4 >> i7));
-        bArr[i2] = b3;
-        int i8 = this.d;
-        if (i8 + i7 > 8) {
-            byte[] bArr3 = this.b;
-            int i9 = this.c;
-            this.c = i9 + 1;
-            bArr[i2] = (byte) (b3 | ((bArr3[i9] & 255) << i8));
-            i8 -= 8;
-            this.d = i8;
-        }
-        int i10 = i8 + i7;
-        this.d = i10;
-        byte[] bArr4 = this.b;
-        int i11 = this.c;
-        bArr[i2] = (byte) (bArr[i2] | ((byte) (((bArr4[i11] & 255) >> (8 - i10)) << (8 - i7))));
-        if (i10 == 8) {
-            this.d = 0;
-            this.c = i11 + 1;
-        }
-        a();
-    }
-
-    public final long h(int i) {
-        if (i <= 32) {
-            int f = f(i);
-            String str = g8c.a;
-            return f & 4294967295L;
-        }
-        int f2 = f(i - 32);
-        int f3 = f(32);
-        String str2 = g8c.a;
-        return ((f2 & 4294967295L) << 32) | (f3 & 4294967295L);
-    }
-
-    public final void i(int i, byte[] bArr) {
-        gre.p(this.d == 0);
-        System.arraycopy(this.b, this.c, bArr, 0, i);
-        this.c += i;
-        a();
-    }
-
-    public final void j(int i, byte[] bArr) {
-        this.b = bArr;
-        this.c = 0;
-        this.d = 0;
-        this.e = i;
-    }
-
-    public final void k(xu7 xu7Var) {
-        j(xu7Var.c, xu7Var.a);
-        l(xu7Var.b << 3);
-    }
-
-    public final void l(int i) {
-        int i2 = i / 8;
-        this.c = i2;
-        this.d = i - (i2 << 3);
-        a();
-    }
-
-    public final void m() {
-        int i = this.d + 1;
-        this.d = i;
-        if (i == 8) {
-            this.d = 0;
-            this.c++;
-        }
-        a();
-    }
-
-    public final void n(int i) {
-        int i2;
-        switch (this.a) {
-            case 1:
-                int i3 = i / 8;
-                int i4 = this.c + i3;
-                this.c = i4;
-                int i5 = (i - (i3 << 3)) + this.d;
-                this.d = i5;
-                if (i5 > 7) {
-                    this.c = i4 + 1;
-                    this.d = i5 - 8;
-                }
-                a();
-                break;
-            default:
-                int i6 = i / 8;
-                int i7 = this.d + i6;
-                this.d = i7;
-                int i8 = (i - (i6 << 3)) + this.e;
-                this.e = i8;
-                if (i8 > 7) {
-                    i7++;
-                    this.d = i7;
-                    i8 -= 8;
-                    this.e = i8;
-                }
-                gre.p(i7 >= 0 && (i7 < (i2 = this.c) || (i7 == i2 && i8 == 0)));
-                break;
-        }
-    }
-
-    public final void o(int i) {
-        gre.p(this.d == 0);
-        this.c += i;
-        a();
-    }
-
-    public qd1(byte[] bArr) {
-        this.a = (byte) 2;
-        this.b = bArr;
-        this.c = bArr.length;
-    }
-
-    public qd1(int i, byte[] bArr) {
-        this.a = (byte) 1;
-        this.b = bArr;
-        this.e = i;
-    }
-
-    public qd1() {
-        this.a = (byte) 1;
-        this.b = g8c.b;
+        return iArr;
     }
 }

@@ -1,40 +1,103 @@
 // default package
 
-import android.content.Context;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.media.AudioManager;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class y6b extends ir3 {
-    public final /* synthetic */ t7b c0;
+public final class y6b extends View {
+    public Paint a;
+    public boolean b;
+    public bva c;
+    public mm d;
+    public mm e;
+    public float f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y6b(t7b t7bVar, Context context, boolean z) {
-        super(context, z);
-        this.c0 = t7bVar;
+    public final void a(boolean z) {
+        bva bvaVar = this.c;
+        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
+        int streamVolume = audioManager.getStreamVolume(3);
+        float f = streamMaxVolume;
+        int max = (int) Math.max(1.0f, f / 15.0f);
+        if (z) {
+            int i = streamVolume + max;
+            if (i <= streamMaxVolume) {
+                streamMaxVolume = i;
+            }
+        } else {
+            streamMaxVolume = streamVolume - max;
+            if (streamMaxVolume < 0) {
+                streamMaxVolume = 0;
+            }
+        }
+        audioManager.setStreamVolume(3, streamMaxVolume, 0);
+        float f2 = streamMaxVolume / f;
+        this.f = f2;
+        if (!this.b) {
+            this.e.e(true, f2);
+        }
+        invalidate();
+        this.b = true;
+        hl.r(bvaVar);
+        hl.d3(bvaVar, 2000L);
     }
 
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void receivedAmplitude(double d) {
-        f29 f29Var = this.c0.P0;
-        if (f29Var != null) {
-            f29Var.h0 = Utilities.i((float) (d / 1800.0d), 1.0f, 0.0f);
+    public final void b() {
+        bva bvaVar = this.c;
+        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
+        int streamMinVolume = Build.VERSION.SDK_INT >= 28 ? audioManager.getStreamMinVolume(3) : 0;
+        int streamVolume = audioManager.getStreamVolume(3);
+        if (streamVolume <= streamMinVolume) {
+            a(true);
+            return;
+        }
+        if (this.b) {
+            return;
+        }
+        float f = streamVolume / streamMaxVolume;
+        this.f = f;
+        this.e.e(true, f);
+        this.b = true;
+        invalidate();
+        hl.r(bvaVar);
+        hl.d3(bvaVar, 2000L);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.a;
+        super.onDraw(canvas);
+        mm mmVar = this.e;
+        mmVar.e(false, this.f);
+        mm mmVar2 = this.d;
+        mmVar2.e(false, this.b ? 1.0f : 0.0f);
+        if (mmVar2.c != 0.0f) {
+            float measuredHeight = getMeasuredHeight() / 2.0f;
+            paint.setAlpha((int) (mmVar2.c * 255.0f));
+            RectF rectF = hl.P;
+            rectF.set(0.0f, 0.0f, getMeasuredWidth() * mmVar.c, getMeasuredHeight());
+            canvas.drawRoundRect(rectF, measuredHeight, measuredHeight, paint);
         }
     }
 
-    @Override // ir3
-    public final void s(boolean z) {
-        t7b t7bVar = this.c0;
-        t7bVar.p1.b(t7bVar.d1.getText());
-        t7bVar.p1.a(false, z, t7bVar.l0);
-    }
-
-    @Override // ir3, org.telegram.messenger.camera.CameraView
-    public final void toggleDual() {
-        super.toggleDual();
-        t7b t7bVar = this.c0;
-        t7bVar.G0.setValue(isDual());
-        t7bVar.G0.setContentDescription(k96.M0(isDual() ? 2131754886 : 2131754887, null));
-        t7bVar.d0(t7bVar.A());
+    @Override // android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i, KeyEvent keyEvent) {
+        if (keyEvent.getAction() == 0 && i == 24) {
+            a(true);
+            return true;
+        }
+        if (keyEvent.getAction() != 0 || i != 25) {
+            return super.onKeyDown(i, keyEvent);
+        }
+        a(false);
+        return true;
     }
 }

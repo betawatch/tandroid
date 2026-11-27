@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.text.TextUtils;
 import org.telegram.messenger.PushListenerController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class b implements PushListenerController.IPushListenerServiceProvider {
     public static final b b = new b();
@@ -24,11 +24,11 @@ public final class b implements PushListenerController.IPushListenerServiceProvi
         Boolean bool = this.a;
         if (bool == null) {
             try {
-                Boolean valueOf = Boolean.valueOf(cy4.e.c(a.b, dy4.a) == 0);
+                Boolean valueOf = Boolean.valueOf(i05.e.c(a.b, j05.a) == 0);
                 this.a = valueOf;
                 bool = valueOf;
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
                 bool = Boolean.FALSE;
                 this.a = bool;
             }
@@ -38,11 +38,11 @@ public final class b implements PushListenerController.IPushListenerServiceProvi
 
     @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
     public final void onRequestPushToken() {
-        if (!TextUtils.isEmpty(gba.f)) {
-            boolean z = w01.a;
-        } else if (w01.a) {
-            fa4.b("FCM Registration not found.");
+        if (!TextUtils.isEmpty(xea.f)) {
+            boolean z = f11.a;
+        } else if (f11.a) {
+            cc4.b("FCM Registration not found.");
         }
-        Utilities.e.c(new sr8(this, (byte) 4));
+        Utilities.e.c(new uk8(this, (byte) 20));
     }
 }

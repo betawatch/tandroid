@@ -1,40 +1,121 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.TimeUnit;
+import android.content.Context;
+import android.os.Build;
+import android.os.Process;
+import android.os.WorkSource;
+import android.util.Log;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class g3d implements b38 {
-    public final /* synthetic */ BasePendingResult a;
-    public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ c38 c;
+public abstract class g3d {
+    public static final Method a;
+    public static final Method b;
+    public static final Method c;
+    public static final Method d;
+    public static Boolean e;
 
-    public g3d(BasePendingResult basePendingResult, TaskCompletionSource taskCompletionSource, c38 c38Var) {
-        this.a = basePendingResult;
-        this.b = taskCompletionSource;
-        this.c = c38Var;
+    static {
+        Method method;
+        Method method2;
+        Method method3;
+        Method method4;
+        Class<?> cls = Integer.TYPE;
+        Process.myUid();
+        try {
+            method = WorkSource.class.getMethod("add", cls);
+        } catch (Exception unused) {
+            method = null;
+        }
+        a = method;
+        try {
+            method2 = WorkSource.class.getMethod("add", cls, String.class);
+        } catch (Exception unused2) {
+            method2 = null;
+        }
+        b = method2;
+        try {
+            method3 = WorkSource.class.getMethod("size", null);
+        } catch (Exception unused3) {
+            method3 = null;
+        }
+        c = method3;
+        try {
+            WorkSource.class.getMethod("get", cls);
+        } catch (Exception unused4) {
+        }
+        try {
+            WorkSource.class.getMethod("getName", cls);
+        } catch (Exception unused5) {
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            try {
+                WorkSource.class.getMethod("createWorkChain", null);
+            } catch (Exception e2) {
+                Log.w("WorkSourceUtil", "Missing WorkChain API createWorkChain", e2);
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            try {
+                Class.forName("android.os.WorkSource$WorkChain").getMethod("addNode", cls, String.class);
+            } catch (Exception e3) {
+                Log.w("WorkSourceUtil", "Missing WorkChain class", e3);
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            try {
+                method4 = WorkSource.class.getMethod("isEmpty", null);
+                try {
+                    method4.setAccessible(true);
+                } catch (Exception unused6) {
+                }
+            } catch (Exception unused7) {
+            }
+            d = method4;
+            e = null;
+        }
+        method4 = null;
+        d = method4;
+        e = null;
     }
 
-    @Override // b38
-    public final void a(Status status) {
-        if (!status.b()) {
-            this.b.setException(bmd.a(status));
-            return;
-        }
-        BasePendingResult basePendingResult = this.a;
-        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-        fre.j("Result has already been consumed.", !basePendingResult.j);
-        try {
-            if (!basePendingResult.d.await(0L, timeUnit)) {
-                basePendingResult.e(Status.n);
+    public static void a(WorkSource workSource, int i, String str) {
+        Method method = b;
+        if (method != null) {
+            if (str == null) {
+                str = "";
             }
-        } catch (InterruptedException unused) {
-            basePendingResult.e(Status.f);
+            try {
+                method.invoke(workSource, Integer.valueOf(i), str);
+                return;
+            } catch (Exception e2) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e2);
+                return;
+            }
         }
-        fre.j("Result is not ready.", basePendingResult.g());
-        this.b.setResult(this.c.n0(basePendingResult.j()));
+        Method method2 = a;
+        if (method2 != null) {
+            try {
+                method2.invoke(workSource, Integer.valueOf(i));
+            } catch (Exception e3) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e3);
+            }
+        }
+    }
+
+    public static synchronized boolean b(Context context) {
+        synchronized (g3d.class) {
+            Boolean bool = e;
+            if (bool != null) {
+                return bool.booleanValue();
+            }
+            if (context == null) {
+                return false;
+            }
+            boolean z = sr.b(context, "android.permission.UPDATE_DEVICE_STATS") == 0;
+            e = Boolean.valueOf(z);
+            return z;
+        }
     }
 }

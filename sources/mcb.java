@@ -1,19 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class mcb {
-    public int a;
-    public float b;
-    public float c;
+import android.graphics.Canvas;
+import android.view.View;
 
-    public mcb(float f, float f2, int i) {
-        this.a = i;
-        this.b = f;
-        this.c = f2;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public abstract class mcb {
+    public abstract void a(Canvas canvas, float f);
 
-    public final Object clone() {
-        return new mcb(this.b, this.c, this.a);
-    }
+    public abstract void b(boolean z);
+
+    public abstract void c(View view);
 }

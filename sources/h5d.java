@@ -1,19 +1,48 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
+import android.os.Process;
+import android.os.RemoteException;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.IllegalFormatException;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h5d implements IInterface {
-    public final IBinder a;
+public final class h5d {
+    public final String a;
 
-    public h5d(IBinder iBinder) {
-        this.a = iBinder;
+    public h5d(String str) {
+        this.a = ("UID: [" + Process.myUid() + "]  PID: [" + Process.myPid() + "] ").concat(str);
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public static String d(String str, String str2, Object... objArr) {
+        if (objArr.length > 0) {
+            try {
+                str2 = String.format(Locale.US, str2, objArr);
+            } catch (IllegalFormatException e) {
+                Log.e("PlayCore", "Unable to format ".concat(str2), e);
+                str2 = qd4.q(str2, " [", TextUtils.join(", ", objArr), "]");
+            }
+        }
+        return qd4.y(str, " : ", str2);
+    }
+
+    public final void a(RemoteException remoteException, String str, Object... objArr) {
+        if (Log.isLoggable("PlayCore", 6)) {
+            Log.e("PlayCore", d(this.a, str, objArr), remoteException);
+        }
+    }
+
+    public final void b(String str, Object... objArr) {
+        if (Log.isLoggable("PlayCore", 4)) {
+            Log.i("PlayCore", d(this.a, str, objArr));
+        }
+    }
+
+    public final void c(String str, Object... objArr) {
+        if (Log.isLoggable("PlayCore", 5)) {
+            Log.w("PlayCore", d(this.a, str, objArr));
+        }
     }
 }

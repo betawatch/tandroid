@@ -1,44 +1,103 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
+import android.media.session.PlaybackState;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class sf8 implements ed, n8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ uf8 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sf8 implements Parcelable {
+    public static final Parcelable.Creator<sf8> CREATOR = new mx6((byte) 9);
+    public final int a;
+    public final long b;
+    public final long c;
+    public final float d;
+    public final long e;
+    public final int f;
+    public final CharSequence h;
+    public final long n;
+    public final List r;
+    public final long s;
+    public final Bundle w;
+    public PlaybackState x;
 
-    public /* synthetic */ sf8(uf8 uf8Var, byte b) {
-        this.a = b;
-        this.b = uf8Var;
+    public sf8(Parcel parcel) {
+        this.a = parcel.readInt();
+        this.b = parcel.readLong();
+        this.d = parcel.readFloat();
+        this.n = parcel.readLong();
+        this.c = parcel.readLong();
+        this.e = parcel.readLong();
+        this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        List createTypedArrayList = parcel.createTypedArrayList(rf8.CREATOR);
+        if (createTypedArrayList == null) {
+            no5 no5Var = po5.b;
+            createTypedArrayList = j99.e;
+        }
+        this.r = createTypedArrayList;
+        this.s = parcel.readLong();
+        this.w = parcel.readBundle(qx6.class.getClassLoader());
+        this.f = parcel.readInt();
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        View view = (View) obj2;
-        if (((c4c) obj).d == 1) {
-            ahb ahbVar = (ahb) view;
-            boolean z = !ahbVar.e.h;
-            uf8 uf8Var = this.b;
-            uf8Var.n = z;
-            ahbVar.setChecked(z);
-            uf8Var.d.g3.O(true);
-            uf8Var.Y(true);
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        uf8 uf8Var = this.b;
-        switch (b) {
-            case 0:
-                uf8Var.c0();
-                break;
-            default:
-                uf8Var.finishFragment();
-                break;
-        }
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("PlaybackState {state=");
+        sb.append(this.a);
+        sb.append(", position=");
+        sb.append(this.b);
+        sb.append(", buffered position=");
+        sb.append(this.c);
+        sb.append(", speed=");
+        sb.append(this.d);
+        sb.append(", updated=");
+        sb.append(this.n);
+        sb.append(", actions=");
+        sb.append(this.e);
+        sb.append(", error code=");
+        sb.append(this.f);
+        sb.append(", error message=");
+        sb.append(this.h);
+        sb.append(", custom actions=");
+        sb.append(this.r);
+        sb.append(", active item id=");
+        return qu6.p(sb, this.s, "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.a);
+        parcel.writeLong(this.b);
+        parcel.writeFloat(this.d);
+        parcel.writeLong(this.n);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.e);
+        TextUtils.writeToParcel(this.h, parcel, i);
+        parcel.writeTypedList(this.r);
+        parcel.writeLong(this.s);
+        parcel.writeBundle(this.w);
+        parcel.writeInt(this.f);
+    }
+
+    public sf8(int i, long j, long j2, float f, long j3, int i2, CharSequence charSequence, long j4, ArrayList arrayList, long j5, Bundle bundle) {
+        this.a = i;
+        this.b = j;
+        this.c = j2;
+        this.d = f;
+        this.e = j3;
+        this.f = i2;
+        this.h = charSequence;
+        this.n = j4;
+        this.r = new ArrayList(arrayList);
+        this.s = j5;
+        this.w = bundle;
     }
 }

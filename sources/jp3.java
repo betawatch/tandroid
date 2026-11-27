@@ -1,44 +1,70 @@
 // default package
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jp3 implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class jp3 extends y1 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ op3 b;
-    public final /* synthetic */ File c;
+    public final hk0 b;
 
-    public /* synthetic */ jp3(op3 op3Var, File file, byte b) {
+    public jp3(byte b) {
         this.a = b;
-        this.b = op3Var;
-        this.c = file;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        byte b2 = 2;
-        File file = this.c;
-        op3 op3Var = this.b;
         switch (b) {
-            case 0:
-                if (op3Var.c && op3Var.r != null) {
-                    MediaController.d0(file.getAbsolutePath(), op3Var.getContext(), 1, null, null, new kp3(op3Var, (byte) 1));
-                    break;
-                }
-                break;
             case 1:
-                op3Var.r.c(file);
-                if (op3Var.c && op3Var.r != null) {
-                    gl.c3(new jp3(op3Var, file, b2));
-                    break;
-                }
+                this.b = new inb();
                 break;
             default:
-                MediaController.d0(file.getAbsolutePath(), op3Var.getContext(), 0, null, null, new kp3(op3Var, (byte) 2));
+                this.b = new ip3();
                 break;
         }
+    }
+
+    @Override // y1
+    public final void a(CharSequence charSequence) {
+        byte b = this.a;
+    }
+
+    @Override // y1
+    public final boolean b(hk0 hk0Var) {
+        switch (this.a) {
+            case 0:
+                return true;
+            default:
+                return super.b(hk0Var);
+        }
+    }
+
+    @Override // y1
+    public final hk0 e() {
+        byte b = this.a;
+        hk0 hk0Var = this.b;
+        switch (b) {
+            case 0:
+                return (ip3) hk0Var;
+            default:
+                return (inb) hk0Var;
+        }
+    }
+
+    @Override // y1
+    public final boolean f() {
+        switch (this.a) {
+            case 0:
+                return true;
+            default:
+                return super.f();
+        }
+    }
+
+    @Override // y1
+    public final qk2 h(mp3 mp3Var) {
+        switch (this.a) {
+            case 0:
+                return qk2.a(mp3Var.b);
+            default:
+                return null;
+        }
+    }
+
+    private final void i(CharSequence charSequence) {
     }
 }

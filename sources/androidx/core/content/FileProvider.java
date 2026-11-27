@@ -20,7 +20,7 @@ import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -29,23 +29,23 @@ public class FileProvider extends ContentProvider {
     public final Object a;
     public final int b;
     public String c;
-    public ma4 d;
+    public jc4 d;
 
     public FileProvider(int i) {
         this.a = new Object();
         this.b = i;
     }
 
-    public static ma4 b(int i, Context context, String str) {
-        ma4 ma4Var;
+    public static jc4 b(int i, Context context, String str) {
+        jc4 jc4Var;
         HashMap hashMap = h;
         synchronized (hashMap) {
-            ma4Var = (ma4) hashMap.get(str);
-            if (ma4Var == null) {
+            jc4Var = (jc4) hashMap.get(str);
+            if (jc4Var == null) {
                 try {
                     try {
-                        ma4Var = d(i, context, str);
-                        hashMap.put(str, ma4Var);
+                        jc4Var = d(i, context, str);
+                        hashMap.put(str, jc4Var);
                     } catch (XmlPullParserException e2) {
                         throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e2);
                     }
@@ -54,11 +54,11 @@ public class FileProvider extends ContentProvider {
                 }
             }
         }
-        return ma4Var;
+        return jc4Var;
     }
 
     public static Uri c(Context context, String str, File file) {
-        ma4 b = b(0, context, str);
+        jc4 b = b(0, context, str);
         try {
             String canonicalPath = file.getCanonicalPath();
             Map.Entry entry = null;
@@ -69,23 +69,23 @@ public class FileProvider extends ContentProvider {
                 }
             }
             if (entry == null) {
-                w26.j(b00.h("Failed to find configured root that contains ", canonicalPath));
+                lq5.j(c00.i("Failed to find configured root that contains ", canonicalPath));
                 return null;
             }
             String path2 = ((File) entry.getValue()).getPath();
             return new Uri.Builder().scheme("content").authority(b.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
         } catch (IOException unused) {
-            w26.i(file, "Failed to resolve canonical path for ");
+            lq5.q(file, "Failed to resolve canonical path for ");
             return null;
         }
     }
 
-    public static ma4 d(int i, Context context, String str) {
+    public static jc4 d(int i, Context context, String str) {
         File file;
-        ma4 ma4Var = new ma4(str);
+        jc4 jc4Var = new jc4(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            w26.j(b00.h("Couldn't find meta-data for provider with authority ", str));
+            lq5.j(c00.i("Couldn't find meta-data for provider with authority ", str));
             return null;
         }
         if (resolveContentProvider.metaData == null && i != 0) {
@@ -95,13 +95,13 @@ public class FileProvider extends ContentProvider {
         }
         XmlResourceParser loadXmlMetaData = resolveContentProvider.loadXmlMetaData(context.getPackageManager(), "android.support.FILE_PROVIDER_PATHS");
         if (loadXmlMetaData == null) {
-            w26.j("Missing android.support.FILE_PROVIDER_PATHS meta-data");
+            lq5.j("Missing android.support.FILE_PROVIDER_PATHS meta-data");
             return null;
         }
         while (true) {
             int next = loadXmlMetaData.next();
             if (next == 1) {
-                return ma4Var;
+                return jc4Var;
             }
             if (next == 2) {
                 String name = loadXmlMetaData.getName();
@@ -144,11 +144,11 @@ public class FileProvider extends ContentProvider {
                         file = new File(file, str2);
                     }
                     if (TextUtils.isEmpty(attributeValue)) {
-                        w26.j("Name must not be empty");
+                        lq5.j("Name must not be empty");
                         return null;
                     }
                     try {
-                        ma4Var.b.put(attributeValue, file.getCanonicalFile());
+                        jc4Var.b.put(attributeValue, file.getCanonicalFile());
                     } catch (IOException e2) {
                         throw new IllegalArgumentException("Failed to resolve canonical path for " + file, e2);
                     }
@@ -158,22 +158,22 @@ public class FileProvider extends ContentProvider {
     }
 
     public static String e(String str) {
-        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : ir2.n(1, 0, str);
+        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : bs2.n(1, 0, str);
     }
 
-    public final ma4 a() {
-        ma4 ma4Var;
+    public final jc4 a() {
+        jc4 jc4Var;
         synchronized (this.a) {
             if (this.c == null) {
                 throw new NullPointerException("mAuthority is null. Did you override attachInfo and did not call super.attachInfo()?");
             }
-            ma4Var = this.d;
-            if (ma4Var == null) {
-                ma4Var = b(this.b, getContext(), this.c);
-                this.d = ma4Var;
+            jc4Var = this.d;
+            if (jc4Var == null) {
+                jc4Var = b(this.b, getContext(), this.c);
+                this.d = jc4Var;
             }
         }
-        return ma4Var;
+        return jc4Var;
     }
 
     @Override // android.content.ContentProvider
@@ -244,7 +244,7 @@ public class FileProvider extends ContentProvider {
             i = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                w26.j(b00.h("Invalid mode: ", str));
+                lq5.j(c00.i("Invalid mode: ", str));
                 return null;
             }
             i = 1006632960;

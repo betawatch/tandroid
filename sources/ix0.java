@@ -1,35 +1,9 @@
 // default package
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class ix0 extends fy0 {
-    public final LinearLayout S1;
-    public FrameLayout T1;
-    public u41 U1;
+public interface ix0 {
+    void x();
 
-    public ix0(Context context, wjb wjbVar) {
-        super(context, null, false, false, wjbVar);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.S1 = linearLayout;
-        linearLayout.setOrientation(1);
-    }
-
-    @Override // fy0
-    public final n39 G0(o39 o39Var) {
-        return new gx0(this, (byte) 0);
-    }
-
-    @Override // fy0
-    public final CharSequence J0() {
-        return null;
-    }
-
-    @Override // fx0, android.app.Dialog
-    public final void setTitle(CharSequence charSequence) {
-        this.o1.setTitle(charSequence);
-    }
+    boolean y();
 }

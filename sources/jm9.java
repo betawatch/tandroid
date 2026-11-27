@@ -1,21 +1,25 @@
 // default package
 
-import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class jm9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ NativeInstance b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class jm9 {
+    public final TL_iv.PageBlock a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
 
-    public /* synthetic */ jm9(NativeInstance nativeInstance, byte b) {
-        this.a = b;
-        this.b = nativeInstance;
+    public jm9(TL_iv.PageBlock pageBlock, int i, int i2, boolean z, boolean z2) {
+        this.a = pageBlock;
+        this.b = i;
+        this.c = i2;
+        this.d = z;
+        this.e = z2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        this.b.stopGroup();
+    public jm9(TL_iv.PageBlock pageBlock, int i, int i2) {
+        this(pageBlock, i, i2, false, false);
     }
 }

@@ -1,25 +1,57 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface k74 extends g63 {
-    void b(int i, int i2, byte[] bArr);
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
-    boolean c(byte[] bArr, int i, int i2, boolean z);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class k74 extends LinearLayout {
+    public final ImageView a;
+    public final p66 b;
+    public final p66 c;
 
-    boolean d(byte[] bArr, int i, int i2, boolean z);
+    public k74(int i, vnb vnbVar, Context context) {
+        super(context);
+        setOrientation(0);
+        setPadding(hl.L(i == 1 ? 11.0f : 32.0f), 0, hl.L(i == 1 ? 11.0f : 32.0f), hl.L(i == 1 ? 8.0f : 12.0f));
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        int i2 = aob.G6;
+        yob.s(imageView, i2, null, PorterDuff.Mode.SRC_IN);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, tre.t(24, 24, 51, 0, 6, 16, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        p66 p66Var = new p66(context, null);
+        this.b = p66Var;
+        p66Var.setTypeface(hl.o());
+        p66Var.setTextSize(1, 14.0f);
+        yob.X(p66Var, i2, vnbVar);
+        int i3 = aob.Xc;
+        yob.G(p66Var, i3, vnbVar);
+        linearLayout.addView(p66Var, tre.t(-1, -2, 7, 0, 0, 0, 3));
+        p66 p66Var2 = new p66(context, null);
+        this.c = p66Var2;
+        p66Var2.setTextSize(1, 14.0f);
+        yob.X(p66Var2, aob.z6, vnbVar);
+        yob.G(p66Var2, i3, vnbVar);
+        linearLayout.addView(p66Var2, tre.r(-1, -2, 7));
+        addView(linearLayout, tre.q(-1, -2, 1.0f, 55, 0, 0, 0, 0));
+    }
 
-    long f();
+    public final void a(int i, CharSequence charSequence, CharSequence charSequence2) {
+        this.a.setImageResource(i);
+        this.b.setText(charSequence);
+        this.c.setText(charSequence2);
+    }
 
-    void g(int i);
+    public void setSubtitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
 
-    long getLength();
-
-    long getPosition();
-
-    void h();
-
-    void m(int i);
-
-    void readFully(byte[] bArr, int i, int i2);
+    public void setTitle(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
 }

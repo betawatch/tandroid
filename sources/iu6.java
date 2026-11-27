@@ -1,22 +1,60 @@
 // default package
 
-import android.os.Bundle;
+import android.media.MediaRouter2$RouteCallback;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class iu6 {
-    public final byte a;
-    public final boolean b;
-    public final boolean c;
-    public final boolean d;
-    public final Bundle e;
+public final class iu6 extends MediaRouter2$RouteCallback {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ku6 b;
 
-    public iu6(hu6 hu6Var) {
-        this.a = hu6Var.a;
-        this.b = hu6Var.b;
-        this.c = hu6Var.c;
-        this.d = hu6Var.d;
-        Bundle bundle = hu6Var.e;
-        this.e = bundle == null ? Bundle.EMPTY : new Bundle(bundle);
+    public /* synthetic */ iu6(ku6 ku6Var, byte b) {
+        this.a = b;
+        this.b = ku6Var;
+    }
+
+    public final void onRoutesAdded(List list) {
+        switch (this.a) {
+            case 0:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesAdded(list);
+                break;
+        }
+    }
+
+    public final void onRoutesChanged(List list) {
+        switch (this.a) {
+            case 0:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesChanged(list);
+                break;
+        }
+    }
+
+    public final void onRoutesRemoved(List list) {
+        switch (this.a) {
+            case 0:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesRemoved(list);
+                break;
+        }
+    }
+
+    public final void onRoutesUpdated(List list) {
+        switch (this.a) {
+            case 1:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesUpdated(list);
+                break;
+        }
     }
 }

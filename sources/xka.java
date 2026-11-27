@@ -1,74 +1,93 @@
 // default package
 
-import android.app.Activity;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.Arrays;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Dictation.DictationAsr;
+import android.accounts.Account;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class xka implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zka b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class xka extends d05 {
+    public final boolean F;
+    public final oxb G;
+    public final Bundle H;
+    public final Integer I;
 
-    public /* synthetic */ xka(zka zkaVar, byte b) {
-        this.a = b;
-        this.b = zkaVar;
+    public xka(Context context, Looper looper, oxb oxbVar, Bundle bundle, k05 k05Var, l05 l05Var) {
+        super(44, k05Var, l05Var, oxbVar, context, looper);
+        this.F = true;
+        this.G = oxbVar;
+        this.H = bundle;
+        this.I = (Integer) oxbVar.h;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        zka zkaVar = this.b;
-        switch (b) {
-            case 0:
-                if (!Arrays.equals(zkaVar.h, DictationAsr.G()) && zkaVar.getParentActivity() != null && zkaVar.a != null) {
-                    zkaVar.c0(zkaVar.getParentActivity());
-                    zkaVar.a.g3.O(true);
-                    break;
-                } else {
-                    zkaVar.d0();
-                    break;
-                }
-                break;
-            default:
-                Activity parentActivity = zkaVar.getParentActivity();
-                wjb resourceProvider = zkaVar.getResourceProvider();
-                t1 t1Var = new t1((byte) 10, parentActivity, false);
-                t1Var.setOrientation(1);
-                t1Var.addView(new wka(parentActivity, resourceProvider), nme.t(-1, 120, 1, 0, 16, 0, 10));
-                TextView textView = new TextView(parentActivity);
-                textView.setTextSize(1, 20.0f);
-                textView.setTextColor(bkb.v0(bkb.i5, resourceProvider));
-                textView.setTypeface(gl.o());
-                textView.setGravity(1);
-                textView.setText(k96.M0(2131745043, null));
-                t1Var.addView(textView, nme.t(-1, -2, 1, 32, 0, 32, 9));
-                TextView textView2 = new TextView(parentActivity);
-                textView2.setTextSize(1, 14.0f);
-                textView2.setTextColor(bkb.v0(bkb.y6, resourceProvider));
-                textView2.setGravity(1);
-                textView2.setText(k96.M0(2131745044, null));
-                t1Var.addView(textView2, nme.t(-1, -2, 1, 32, 0, 32, 25));
-                t1Var.addView(jue.a(parentActivity, resourceProvider, R.drawable.msg2_devices, k96.M0(2131745046, null), k96.M0(2131745045, null)), nme.t(-1, -2, 7, 32, 0, 32, 16));
-                t1Var.addView(jue.a(parentActivity, resourceProvider, R.drawable.menu_privacy, k96.M0(2131745048, null), k96.M0(2131745047, null)), nme.t(-1, -2, 7, 32, 0, 32, 16));
-                t1Var.addView(jue.a(parentActivity, resourceProvider, R.drawable.msg2_data, k96.M0(2131745051, null), k96.M0(2131745050, null)), nme.t(-1, -2, 7, 32, 0, 32, 16));
-                u41 u41Var = new u41(resourceProvider, parentActivity, true);
-                u41Var.setRoundRadius(24);
-                u41Var.i(vqa.k2("👌 ".concat(k96.M0(2131749356, null))), false, true);
-                u41Var.setOnClickListener(new f5(r2, (byte) 3));
-                t1Var.addView(u41Var, nme.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
-                FrameLayout frameLayout = new FrameLayout(parentActivity);
-                frameLayout.addView(t1Var, nme.e(-1, -2, 1));
-                fx0 i = ug8.i(parentActivity, false, 1, resourceProvider);
-                i.O = frameLayout;
-                i.U0 = (byte) 49;
-                i.show();
-                fx0[] fx0VarArr = {i};
-                i.M(bkb.g5);
-                break;
+    public final void B(q5d q5dVar) {
+        try {
+            this.G.getClass();
+            Account account = new Account("<<default account>>", "com.google");
+            GoogleSignInAccount b = "<<default account>>".equals(account.name) ? a5b.a(this.h).b() : null;
+            Integer num = this.I;
+            xve.h(num);
+            a8d a8dVar = new a8d(2, account, num.intValue(), b);
+            i7d i7dVar = (i7d) k();
+            n7d n7dVar = new n7d(1, a8dVar);
+            Parcel c = i7dVar.c();
+            v6d.b(c, n7dVar);
+            v6d.c(c, q5dVar);
+            i7dVar.d(c, 12);
+        } catch (RemoteException e) {
+            Log.w("SignInClientImpl", "Remote service probably died when signIn is called");
+            try {
+                q5dVar.U(new t7d(1, new ws2(8, null, null), null));
+            } catch (RemoteException unused) {
+                Log.wtf("SignInClientImpl", "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException.", e);
+            }
         }
+    }
+
+    @Override // hg0
+    public final IInterface b(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.signin.internal.ISignInService");
+        return queryLocalInterface instanceof i7d ? (i7d) queryLocalInterface : new i7d(iBinder, "com.google.android.gms.signin.internal.ISignInService", (byte) 1);
+    }
+
+    @Override // hg0
+    public final Bundle h() {
+        oxb oxbVar = this.G;
+        boolean equals = this.h.getPackageName().equals((String) oxbVar.d);
+        Bundle bundle = this.H;
+        if (!equals) {
+            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) oxbVar.d);
+        }
+        return bundle;
+    }
+
+    @Override // hg0
+    public final int i() {
+        return 12451000;
+    }
+
+    @Override // hg0
+    public final String l() {
+        return "com.google.android.gms.signin.internal.ISignInService";
+    }
+
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.signin.service.START";
+    }
+
+    @Override // hg0
+    public final boolean w() {
+        return this.F;
     }
 }

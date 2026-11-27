@@ -1,42 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ji0 implements fv9 {
-    public final li0 a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final long f;
+public final class ji0 extends wl5 {
+    public final byte[] b;
 
-    public ji0(li0 li0Var, long j, long j2, long j3, long j4, long j5) {
-        this.a = li0Var;
-        this.b = j;
-        this.c = j2;
-        this.d = j3;
-        this.e = j4;
-        this.f = j5;
+    public ji0(String str, byte[] bArr) {
+        super(str);
+        this.b = bArr;
     }
 
-    @Override // fv9
-    public final boolean c() {
-        return true;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || ji0.class != obj.getClass()) {
+            return false;
+        }
+        ji0 ji0Var = (ji0) obj;
+        return this.a.equals(ji0Var.a) && Arrays.equals(this.b, ji0Var.b);
     }
 
-    @Override // fv9
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // fv9
-    public final ev9 f(long j) {
-        hv9 hv9Var = new hv9(j, ki0.a(this.a.c(j), 0L, this.c, this.d, this.e, this.f));
-        return new ev9(hv9Var, hv9Var);
-    }
-
-    @Override // fv9
-    public final long h() {
-        return this.b;
+    public final int hashCode() {
+        return Arrays.hashCode(this.b) + bs2.j(527, 31, this.a);
     }
 }

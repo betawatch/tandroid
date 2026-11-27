@@ -1,63 +1,299 @@
 // default package
 
-import android.animation.ObjectAnimator;
-import android.graphics.drawable.AnimationDrawable;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
+import android.util.StateSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vm extends wld {
-    public final ObjectAnimator a;
-    public final boolean b;
+public final class vm extends Drawable.ConstantState {
+    public boolean A;
+    public ColorFilter B;
+    public boolean C;
+    public ColorStateList D;
+    public PorterDuff.Mode E;
+    public boolean F;
+    public boolean G;
+    public int[][] H;
+    public zh6 I;
+    public koa J;
+    public final ym a;
+    public Resources b;
+    public int c;
+    public int d;
+    public int e;
+    public SparseArray f;
+    public Drawable[] g;
+    public int h;
+    public boolean i;
+    public boolean j;
+    public Rect k;
+    public boolean l;
+    public boolean m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
+    public boolean r;
+    public int s;
+    public boolean t;
+    public boolean u;
+    public boolean v;
+    public boolean w;
+    public int x;
+    public int y;
+    public int z;
 
-    public vm(AnimationDrawable animationDrawable, boolean z, boolean z2) {
-        int i;
-        int numberOfFrames = animationDrawable.getNumberOfFrames() - 1;
-        if (z) {
-            i = numberOfFrames;
-            numberOfFrames = 0;
+    public vm(vm vmVar, ym ymVar, Resources resources) {
+        this.i = false;
+        this.l = false;
+        this.w = true;
+        this.y = 0;
+        this.z = 0;
+        this.a = ymVar;
+        this.b = resources != null ? resources : vmVar != null ? vmVar.b : null;
+        int i = vmVar != null ? vmVar.c : 0;
+        int i2 = ym.K;
+        i = resources != null ? resources.getDisplayMetrics().densityDpi : i;
+        i = i == 0 ? jn7.p2 : i;
+        this.c = i;
+        if (vmVar != null) {
+            this.d = vmVar.d;
+            this.e = vmVar.e;
+            this.u = true;
+            this.v = true;
+            this.i = vmVar.i;
+            this.l = vmVar.l;
+            this.w = vmVar.w;
+            this.x = vmVar.x;
+            this.y = vmVar.y;
+            this.z = vmVar.z;
+            this.A = vmVar.A;
+            this.B = vmVar.B;
+            this.C = vmVar.C;
+            this.D = vmVar.D;
+            this.E = vmVar.E;
+            this.F = vmVar.F;
+            this.G = vmVar.G;
+            if (vmVar.c == i) {
+                if (vmVar.j) {
+                    this.k = vmVar.k != null ? new Rect(vmVar.k) : null;
+                    this.j = true;
+                }
+                if (vmVar.m) {
+                    this.n = vmVar.n;
+                    this.o = vmVar.o;
+                    this.p = vmVar.p;
+                    this.q = vmVar.q;
+                    this.m = true;
+                }
+            }
+            if (vmVar.r) {
+                this.s = vmVar.s;
+                this.r = true;
+            }
+            if (vmVar.t) {
+                this.t = true;
+            }
+            Drawable[] drawableArr = vmVar.g;
+            this.g = new Drawable[drawableArr.length];
+            this.h = vmVar.h;
+            SparseArray sparseArray = vmVar.f;
+            if (sparseArray != null) {
+                this.f = sparseArray.clone();
+            } else {
+                this.f = new SparseArray(this.h);
+            }
+            int i3 = this.h;
+            for (int i4 = 0; i4 < i3; i4++) {
+                Drawable drawable = drawableArr[i4];
+                if (drawable != null) {
+                    Drawable.ConstantState constantState = drawable.getConstantState();
+                    if (constantState != null) {
+                        this.f.put(i4, constantState);
+                    } else {
+                        this.g[i4] = drawableArr[i4];
+                    }
+                }
+            }
         } else {
-            i = 0;
+            this.g = new Drawable[10];
+            this.h = 0;
         }
-        wm wmVar = new wm();
-        int numberOfFrames2 = animationDrawable.getNumberOfFrames();
-        wmVar.b = numberOfFrames2;
-        int[] iArr = wmVar.a;
-        if (iArr == null || iArr.length < numberOfFrames2) {
-            iArr = new int[numberOfFrames2];
-            wmVar.a = iArr;
+        if (vmVar != null) {
+            this.H = vmVar.H;
+            this.I = vmVar.I;
+            this.J = vmVar.J;
+        } else {
+            this.H = new int[this.g.length][];
+            this.I = new zh6();
+            this.J = new koa();
         }
-        int i2 = 0;
-        for (int i3 = 0; i3 < numberOfFrames2; i3++) {
-            int duration = animationDrawable.getDuration(z ? (numberOfFrames2 - i3) - 1 : i3);
-            iArr[i3] = duration;
-            i2 += duration;
-        }
-        wmVar.c = i2;
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(animationDrawable, "currentIndex", i, numberOfFrames);
-        zo2.a(ofInt, true);
-        ofInt.setDuration(wmVar.c);
-        ofInt.setInterpolator(wmVar);
-        this.b = z2;
-        this.a = ofInt;
     }
 
-    @Override // wld
-    public final boolean a() {
-        return this.b;
+    public final int a(Drawable drawable) {
+        int i = this.h;
+        if (i >= this.g.length) {
+            int i2 = i + 10;
+            Drawable[] drawableArr = new Drawable[i2];
+            Drawable[] drawableArr2 = this.g;
+            if (drawableArr2 != null) {
+                System.arraycopy(drawableArr2, 0, drawableArr, 0, i);
+            }
+            this.g = drawableArr;
+            int[][] iArr = new int[i2][];
+            System.arraycopy(this.H, 0, iArr, 0, i);
+            this.H = iArr;
+        }
+        drawable.mutate();
+        drawable.setVisible(false, true);
+        drawable.setCallback(this.a);
+        this.g[i] = drawable;
+        this.h++;
+        this.e |= drawable.getChangingConfigurations();
+        this.r = false;
+        this.t = false;
+        this.k = null;
+        this.j = false;
+        this.m = false;
+        this.u = false;
+        return i;
     }
 
-    @Override // wld
     public final void b() {
-        this.a.reverse();
+        this.m = true;
+        c();
+        int i = this.h;
+        Drawable[] drawableArr = this.g;
+        this.o = -1;
+        this.n = -1;
+        this.q = 0;
+        this.p = 0;
+        for (int i2 = 0; i2 < i; i2++) {
+            Drawable drawable = drawableArr[i2];
+            int intrinsicWidth = drawable.getIntrinsicWidth();
+            if (intrinsicWidth > this.n) {
+                this.n = intrinsicWidth;
+            }
+            int intrinsicHeight = drawable.getIntrinsicHeight();
+            if (intrinsicHeight > this.o) {
+                this.o = intrinsicHeight;
+            }
+            int minimumWidth = drawable.getMinimumWidth();
+            if (minimumWidth > this.p) {
+                this.p = minimumWidth;
+            }
+            int minimumHeight = drawable.getMinimumHeight();
+            if (minimumHeight > this.q) {
+                this.q = minimumHeight;
+            }
+        }
     }
 
-    @Override // wld
     public final void c() {
-        this.a.start();
+        SparseArray sparseArray = this.f;
+        if (sparseArray != null) {
+            int size = sparseArray.size();
+            for (int i = 0; i < size; i++) {
+                int keyAt = this.f.keyAt(i);
+                Drawable.ConstantState constantState = (Drawable.ConstantState) this.f.valueAt(i);
+                Drawable[] drawableArr = this.g;
+                Drawable newDrawable = constantState.newDrawable(this.b);
+                newDrawable.setLayoutDirection(this.x);
+                Drawable mutate = newDrawable.mutate();
+                mutate.setCallback(this.a);
+                drawableArr[keyAt] = mutate;
+            }
+            this.f = null;
+        }
     }
 
-    @Override // wld
-    public final void d() {
-        this.a.cancel();
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final boolean canApplyTheme() {
+        int i = this.h;
+        Drawable[] drawableArr = this.g;
+        for (int i2 = 0; i2 < i; i2++) {
+            Drawable drawable = drawableArr[i2];
+            if (drawable == null) {
+                Drawable.ConstantState constantState = (Drawable.ConstantState) this.f.get(i2);
+                if (constantState != null && constantState.canApplyTheme()) {
+                    return true;
+                }
+            } else if (drawable.canApplyTheme()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final Drawable d(int i) {
+        int indexOfKey;
+        Drawable drawable = this.g[i];
+        if (drawable != null) {
+            return drawable;
+        }
+        SparseArray sparseArray = this.f;
+        if (sparseArray == null || (indexOfKey = sparseArray.indexOfKey(i)) < 0) {
+            return null;
+        }
+        Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
+        newDrawable.setLayoutDirection(this.x);
+        Drawable mutate = newDrawable.mutate();
+        mutate.setCallback(this.a);
+        this.g[i] = mutate;
+        this.f.removeAt(indexOfKey);
+        if (this.f.size() == 0) {
+            this.f = null;
+        }
+        return mutate;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v3, types: [java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r3v4 */
+    public final int e(int i) {
+        ?? r3;
+        if (i < 0) {
+            return 0;
+        }
+        koa koaVar = this.J;
+        int i2 = 0;
+        koaVar.getClass();
+        int a = pq3.a(koaVar.c, i, koaVar.a);
+        if (a >= 0 && (r3 = koaVar.b[a]) != shd.a) {
+            i2 = r3;
+        }
+        return i2.intValue();
+    }
+
+    public final int f(int[] iArr) {
+        int[][] iArr2 = this.H;
+        int i = this.h;
+        for (int i2 = 0; i2 < i; i2++) {
+            if (StateSet.stateSetMatches(iArr2[i2], iArr)) {
+                return i2;
+            }
+        }
+        return -1;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final int getChangingConfigurations() {
+        return this.d | this.e;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final Drawable newDrawable() {
+        return new ym(this, null);
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final Drawable newDrawable(Resources resources) {
+        return new ym(this, resources);
     }
 }

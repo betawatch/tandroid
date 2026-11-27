@@ -1,67 +1,17 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w3 extends fld {
-    public final AtomicReferenceFieldUpdater a;
-    public final AtomicReferenceFieldUpdater b;
-    public final AtomicReferenceFieldUpdater c;
-    public final AtomicReferenceFieldUpdater d;
-    public final AtomicReferenceFieldUpdater e;
+public final class w3 {
+    public static final w3 d = new w3(null, null);
+    public final Runnable a;
+    public final Executor b;
+    public w3 c;
 
-    public w3(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
-        this.a = atomicReferenceFieldUpdater;
-        this.b = atomicReferenceFieldUpdater2;
-        this.c = atomicReferenceFieldUpdater3;
-        this.d = atomicReferenceFieldUpdater4;
-        this.e = atomicReferenceFieldUpdater5;
-    }
-
-    @Override // fld
-    public final boolean a(a4 a4Var, v3 v3Var, v3 v3Var2) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
-        do {
-            atomicReferenceFieldUpdater = this.d;
-            if (atomicReferenceFieldUpdater.compareAndSet(a4Var, v3Var, v3Var2)) {
-                return true;
-            }
-        } while (atomicReferenceFieldUpdater.get(a4Var) == v3Var);
-        return false;
-    }
-
-    @Override // fld
-    public final boolean b(a4 a4Var, Object obj, Object obj2) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
-        do {
-            atomicReferenceFieldUpdater = this.e;
-            if (atomicReferenceFieldUpdater.compareAndSet(a4Var, obj, obj2)) {
-                return true;
-            }
-        } while (atomicReferenceFieldUpdater.get(a4Var) == obj);
-        return false;
-    }
-
-    @Override // fld
-    public final boolean c(a4 a4Var, z3 z3Var, z3 z3Var2) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
-        do {
-            atomicReferenceFieldUpdater = this.c;
-            if (atomicReferenceFieldUpdater.compareAndSet(a4Var, z3Var, z3Var2)) {
-                return true;
-            }
-        } while (atomicReferenceFieldUpdater.get(a4Var) == z3Var);
-        return false;
-    }
-
-    @Override // fld
-    public final void d(z3 z3Var, z3 z3Var2) {
-        this.b.lazySet(z3Var, z3Var2);
-    }
-
-    @Override // fld
-    public final void e(z3 z3Var, Thread thread) {
-        this.a.lazySet(z3Var, thread);
+    public w3(Runnable runnable, Executor executor) {
+        this.a = runnable;
+        this.b = executor;
     }
 }

@@ -1,46 +1,106 @@
 // default package
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class o61 extends r51 {
-    public final /* synthetic */ p61 f0;
+public class o61 extends FrameLayout implements snb {
+    public final zc a;
+    public final hn b;
+    public final hn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o61(p61 p61Var, Context context) {
-        super(context, 11, r51.a0, 0, r51.b0);
-        this.f0 = p61Var;
+    public o61(Context context) {
+        super(context);
+        zc zcVar = new zc((byte) 6, context, this);
+        this.a = zcVar;
+        int i = aob.Fi;
+        zcVar.setBackground(rnb.f(i, 24.0f));
+        zcVar.setImportantForAccessibility(1);
+        iye.b(zcVar, 0.02f, 1.2f);
+        if (ob6.a0) {
+            TextView textView = new TextView(context);
+            textView.setText(ob6.M0(2131752063, null));
+            textView.setGravity(17);
+            bs2.t(textView, 1, 14.0f);
+            yob.X(textView, aob.Ji, null);
+            zcVar.addView(textView, tre.e(-2, -1, 17));
+        }
+        hn hnVar = new hn(true, true, true);
+        this.b = hnVar;
+        k43 k43Var = k43.h;
+        hnVar.n(0.25f, 300L, k43Var);
+        hnVar.setCallback(zcVar);
+        hnVar.w(hl.L(14.0f));
+        hnVar.t(ob6.M0(2131752063, null), true, true);
+        hnVar.b = 5;
+        hnVar.x(hl.o());
+        int i2 = aob.Ji;
+        hnVar.u(aob.w0(null, i2, false));
+        hn hnVar2 = new hn(true, true, true);
+        this.c = hnVar2;
+        hnVar2.n(0.25f, 300L, k43Var);
+        hnVar2.setCallback(zcVar);
+        hnVar2.w(hl.L(14.0f));
+        hnVar2.x(hl.o());
+        hnVar2.u(aob.v(aob.w0(null, i, false), aob.p1(0.7f, aob.w0(null, i2, false))));
+        hnVar2.t("", true, true);
+        zcVar.setContentDescription(TextUtils.concat(hnVar.i, "\t", hnVar2.i));
+        addView(zcVar, tre.d(-1, 48.0f, jn7.D1, 16.0f, 16.0f, 16.0f, 16.0f));
     }
 
-    @Override // r51
-    public final void c(int i, boolean z) {
-        r61 r61Var = (r61) this.f0.f;
-        if (!z) {
-            r61Var.b.m1();
-            return;
-        }
-        int i2 = -1;
-        if (i == 8) {
-            i = -1;
-        }
-        int i3 = 0;
-        while (true) {
-            if (i3 < r61Var.g0.size()) {
-                n61 n61Var = (n61) r61Var.g0.get(i3);
-                if (n61Var != null && n61Var.a == 11 && n61Var.f == i) {
-                    i2 = i3;
-                    break;
-                }
-                i3++;
-            } else {
-                break;
+    public final void a(long j, boolean z) {
+        String M0 = z ? ob6.M0(2131752063, null) : ob6.M0(2131752015, null);
+        hn hnVar = this.b;
+        hnVar.t(M0, true, true);
+        String i0 = j <= 0 ? "" : hl.i0(j, false, false);
+        hn hnVar2 = this.c;
+        hnVar2.t(i0, true, true);
+        setDisabled(j <= 0);
+        zc zcVar = this.a;
+        zcVar.invalidate();
+        zcVar.setContentDescription(TextUtils.concat(hnVar.i, "\t", hnVar2.i));
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.Fi));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    }
+
+    public void setDisabled(boolean z) {
+        zc zcVar = this.a;
+        zcVar.animate().cancel();
+        zcVar.animate().alpha(z ? 0.65f : 1.0f).start();
+        zcVar.setClickable(!z);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            hn hnVar = this.b;
+            if (hnVar != null) {
+                hnVar.u(aob.w0(null, aob.Ji, false));
             }
-        }
-        if (i2 >= 0) {
-            r61Var.b.f1(new pf(i2, (byte) 2), 0, true);
-        } else {
-            r61Var.b.m1();
+            hn hnVar2 = this.c;
+            if (hnVar2 != null) {
+                hnVar2.u(aob.v(aob.w0(null, aob.Fi, false), aob.p1(0.7f, aob.w0(null, aob.Ji, false))));
+            }
+            zc zcVar = this.a;
+            if (zcVar != null) {
+                zcVar.invalidate();
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 }

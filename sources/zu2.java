@@ -1,196 +1,186 @@
 // default package
 
+import android.accounts.Account;
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.res.AssetFileDescriptor;
-import android.net.Uri;
-import android.os.Bundle;
-import j$.util.Objects;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.channels.FileChannel;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.provider.ContactsContract;
+import java.util.ArrayList;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zu2 extends qf0 {
-    public final ContentResolver a;
-    public Uri b;
-    public AssetFileDescriptor c;
-    public FileInputStream d;
-    public long e;
-    public boolean f;
+public final /* synthetic */ class zu2 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lv2 b;
+    public final /* synthetic */ ArrayList c;
 
-    public zu2(Context context) {
-        super(false);
-        this.a = context.getContentResolver();
+    public /* synthetic */ zu2(lv2 lv2Var, ArrayList arrayList, byte b) {
+        this.a = b;
+        this.b = lv2Var;
+        this.c = arrayList;
     }
 
-    @Override // o63
-    public final void close() {
-        this.b = null;
-        try {
-            try {
-                FileInputStream fileInputStream = this.d;
-                if (fileInputStream != null) {
-                    fileInputStream.close();
-                }
-                this.d = null;
-                try {
-                    try {
-                        AssetFileDescriptor assetFileDescriptor = this.c;
-                        if (assetFileDescriptor != null) {
-                            assetFileDescriptor.close();
-                        }
-                    } catch (IOException e) {
-                        throw new yu2(e, 2000);
-                    }
-                } finally {
-                    this.c = null;
-                    if (this.f) {
-                        this.f = false;
-                        transferEnded();
-                    }
-                }
-            } catch (IOException e2) {
-                throw new yu2(e2, 2000);
-            }
-        } catch (Throwable th) {
-            this.d = null;
-            try {
-                try {
-                    AssetFileDescriptor assetFileDescriptor2 = this.c;
-                    if (assetFileDescriptor2 != null) {
-                        assetFileDescriptor2.close();
-                    }
-                    this.c = null;
-                    if (this.f) {
-                        this.f = false;
-                        transferEnded();
-                    }
-                    throw th;
-                } catch (IOException e3) {
-                    throw new yu2(e3, 2000);
-                }
-            } finally {
-                this.c = null;
-                if (this.f) {
-                    this.f = false;
-                    transferEnded();
-                }
-            }
-        }
-    }
-
-    @Override // o63
-    public final Uri getUri() {
-        return this.b;
-    }
-
-    @Override // o63
-    public final long open(u63 u63Var) {
-        int i;
-        AssetFileDescriptor openAssetFileDescriptor;
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x01a3, code lost:
+    
+        if (r12 != null) goto L83;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x01a5, code lost:
+    
+        r12.close();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x01a8, code lost:
+    
+        cc4.b("performWriteContactsToPhoneBookInternal " + (java.lang.System.currentTimeMillis() - r17));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x01bf, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x018e, code lost:
+    
+        if (r12 != null) goto L83;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01c3  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        Cursor cursor;
         long j;
-        try {
-            try {
-                Uri uri = u63Var.a;
-                long j2 = u63Var.f;
-                long j3 = u63Var.e;
-                Uri normalizeScheme = uri.normalizeScheme();
-                this.b = normalizeScheme;
-                transferInitializing(u63Var);
-                boolean equals = Objects.equals(normalizeScheme.getScheme(), "content");
-                ContentResolver contentResolver = this.a;
-                if (equals) {
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("android.provider.extra.ACCEPT_ORIGINAL_MEDIA_FORMAT", true);
-                    openAssetFileDescriptor = contentResolver.openTypedAssetFileDescriptor(normalizeScheme, "*/*", bundle);
-                } else {
-                    openAssetFileDescriptor = contentResolver.openAssetFileDescriptor(normalizeScheme, "r");
-                }
-                this.c = openAssetFileDescriptor;
-                if (openAssetFileDescriptor == null) {
-                    i = 2000;
-                    try {
-                        throw new yu2(new IOException("Could not open file descriptor for: " + normalizeScheme), 2000);
-                    } catch (IOException e) {
-                        e = e;
-                        throw new yu2(e, e instanceof FileNotFoundException ? 2005 : i);
-                    }
-                }
-                long length = openAssetFileDescriptor.getLength();
-                FileInputStream fileInputStream = new FileInputStream(openAssetFileDescriptor.getFileDescriptor());
-                this.d = fileInputStream;
-                if (length != -1 && j3 > length) {
-                    throw new yu2(null, 2008);
-                }
-                long startOffset = openAssetFileDescriptor.getStartOffset();
-                long skip = fileInputStream.skip(startOffset + j3) - startOffset;
-                if (skip != j3) {
-                    throw new yu2(null, 2008);
-                }
-                if (length == -1) {
-                    FileChannel channel = fileInputStream.getChannel();
-                    long size = channel.size();
-                    if (size == 0) {
-                        this.e = -1L;
-                        j = -1;
-                    } else {
-                        j = size - channel.position();
-                        this.e = j;
-                        if (j < 0) {
-                            throw new yu2(null, 2008);
-                        }
-                    }
-                } else {
-                    j = length - skip;
-                    this.e = j;
-                    if (j < 0) {
-                        throw new yu2(null, 2008);
-                    }
-                }
-                if (j2 != -1) {
-                    this.e = j == -1 ? j2 : Math.min(j, j2);
-                }
-                this.f = true;
-                transferStarted(u63Var);
-                return j2 != -1 ? j2 : this.e;
-            } catch (IOException e2) {
-                e = e2;
-                i = 2000;
-            }
-        } catch (yu2 e3) {
-            throw e3;
-        }
-    }
-
-    @Override // g63
-    public final int read(byte[] bArr, int i, int i2) {
-        if (i2 == 0) {
-            return 0;
-        }
-        long j = this.e;
-        if (j != 0) {
-            if (j != -1) {
+        int i = 0;
+        switch (this.a) {
+            case 0:
+                lv2 lv2Var = this.b;
+                ArrayList arrayList = this.c;
+                long currentTimeMillis = System.currentTimeMillis();
                 try {
-                    i2 = (int) Math.min(j, i2);
-                } catch (IOException e) {
-                    throw new yu2(e, 2000);
+                    try {
+                        Account account = lv2Var.a;
+                        if (!lv2.w() || account == null) {
+                            return;
+                        }
+                        if (!(a.b.checkSelfPermission("android.permission.WRITE_CONTACTS") == 0)) {
+                            return;
+                        }
+                        SharedPreferences sharedPreferences = uc7.s1(lv2Var.currentAccount).X3;
+                        boolean z = sharedPreferences.getBoolean("contacts_updated_v7", false);
+                        boolean z2 = !z;
+                        if (!z) {
+                            sharedPreferences.edit().putBoolean("contacts_updated_v7", true).commit();
+                        }
+                        ContentResolver contentResolver = a.b.getContentResolver();
+                        Cursor query = contentResolver.query(ContactsContract.RawContacts.CONTENT_URI, new String[]{"_id", "sync2", "account_name"}, "account_type=?", new String[]{account.type}, "deleted ASC");
+                        try {
+                            try {
+                                zh6 zh6Var = new zh6();
+                                if (query == null) {
+                                    j = currentTimeMillis;
+                                    cursor = query;
+                                    break;
+                                } else {
+                                    zh6 zh6Var2 = new zh6();
+                                    ArrayList arrayList2 = new ArrayList();
+                                    while (query.moveToNext()) {
+                                        long j2 = query.getLong(i);
+                                        j = currentTimeMillis;
+                                        try {
+                                            long j3 = query.getLong(1);
+                                            if (j3 != 0) {
+                                                if (account.name.equals(query.getString(2))) {
+                                                    if (!z || zh6Var2.h(j3) >= 0) {
+                                                        arrayList2.add(Long.valueOf(j2));
+                                                    } else {
+                                                        zh6Var2.k(j3, Long.valueOf(j2));
+                                                    }
+                                                }
+                                                zh6Var.k(j3, Long.valueOf(j2));
+                                            }
+                                            currentTimeMillis = j;
+                                            i = 0;
+                                        } catch (Exception e) {
+                                            e = e;
+                                            cursor = query;
+                                            try {
+                                                cc4.g(e, true);
+                                                break;
+                                            } catch (Throwable th) {
+                                                th = th;
+                                                if (cursor != null) {
+                                                    cursor.close();
+                                                }
+                                                throw th;
+                                            }
+                                        }
+                                    }
+                                    j = currentTimeMillis;
+                                    query.close();
+                                    try {
+                                        cc4.b("performWriteContactsToPhoneBookInternal contacts array " + arrayList.size() + " " + z2 + " bookContactsSize=" + zh6Var.m() + " toDelete=" + arrayList2.size() + " currentAccount=" + lv2Var.currentAccount);
+                                        if (!arrayList2.isEmpty()) {
+                                            lv2Var.k(contentResolver, account, arrayList2, zh6Var2, zh6Var);
+                                        }
+                                        ArrayList arrayList3 = null;
+                                        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                                            TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList.get(i2);
+                                            if (!z || zh6Var.h(tL_contact.user_id) < 0) {
+                                                if (arrayList3 == null) {
+                                                    arrayList3 = new ArrayList();
+                                                }
+                                                lv2Var.b(arrayList3, lv2Var.getMessagesController().X1(Long.valueOf(tL_contact.user_id)));
+                                                if (arrayList3.size() > 450) {
+                                                    contentResolver.applyBatch("com.android.contacts", arrayList3);
+                                                    arrayList3.clear();
+                                                }
+                                            }
+                                        }
+                                        if (arrayList3 != null && !arrayList3.isEmpty()) {
+                                            contentResolver.applyBatch("com.android.contacts", arrayList3);
+                                            arrayList3.clear();
+                                        }
+                                        cursor = null;
+                                        break;
+                                    } catch (Exception e2) {
+                                        e = e2;
+                                        cursor = null;
+                                        cc4.g(e, true);
+                                    }
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                cursor = query;
+                                if (cursor != null) {
+                                }
+                                throw th;
+                            }
+                        } catch (Exception e3) {
+                            e = e3;
+                            j = currentTimeMillis;
+                        }
+                    } catch (Exception e4) {
+                        e = e4;
+                        j = currentTimeMillis;
+                    }
+                } catch (Throwable th3) {
+                    th = th3;
+                    cursor = null;
                 }
-            }
-            FileInputStream fileInputStream = this.d;
-            String str = g8c.a;
-            int read = fileInputStream.read(bArr, i, i2);
-            if (read != -1) {
-                long j2 = this.e;
-                if (j2 != -1) {
-                    this.e = j2 - read;
+                break;
+            case 1:
+                lv2 lv2Var2 = this.b;
+                ArrayList arrayList4 = this.c;
+                int size = arrayList4.size();
+                while (i < size) {
+                    Object obj = arrayList4.get(i);
+                    i++;
+                    lv2Var2.j(((TLRPC.User) obj).id);
                 }
-                bytesTransferred(read);
-                return read;
-            }
+                return;
+            default:
+                this.b.i(this.c, false);
+                return;
         }
-        return -1;
     }
 }

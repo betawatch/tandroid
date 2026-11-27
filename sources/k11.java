@@ -1,41 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class k11 extends ri4 {
+public final /* synthetic */ class k11 implements Runnable {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ v21 b;
 
-    public /* synthetic */ k11(byte b) {
+    public /* synthetic */ k11(v21 v21Var, byte b) {
         this.a = b;
+        this.b = v21Var;
     }
 
-    @Override // ri4
-    public final float a(Object obj) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        v21 v21Var = this.b;
+        switch (b) {
             case 0:
-                return ((q11) obj).inOutOffset;
-            case 1:
-                return ((ch6) obj).O;
-            default:
-                return ((ch6) obj).N;
-        }
-    }
-
-    @Override // ri4
-    public final void b(Object obj, float f) {
-        switch (this.a) {
-            case 0:
-                ((q11) obj).setInOutOffset(f);
+                FrameLayout frameLayout = v21Var.h;
+                z11 z11Var = v21Var.e;
+                r11 r11Var = v21Var.q;
+                if (r11Var != null && !z11Var.top) {
+                    r11Var.b(0.0f);
+                    v21Var.q.c(v21Var);
+                }
+                z11Var.transitionRunningExit = false;
+                z11Var.onExitTransitionEnd();
+                z11Var.onHide();
+                frameLayout.removeView(v21Var.f);
+                frameLayout.removeOnLayoutChangeListener(v21Var.c);
+                z11Var.onDetach();
+                Runnable runnable = v21Var.w;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             case 1:
-                ch6 ch6Var = (ch6) obj;
-                ch6Var.O = f;
-                ch6Var.invalidate();
+                FrameLayout frameLayout2 = v21Var.h;
+                frameLayout2.removeView(v21Var.f);
+                frameLayout2.removeOnLayoutChangeListener(v21Var.c);
                 break;
             default:
-                ch6 ch6Var2 = (ch6) obj;
-                ch6Var2.N = f;
-                ch6Var2.invalidate();
+                v21Var.b();
                 break;
         }
     }

@@ -1,28 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ey0 {
-    public boolean a;
-    public int b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public int f;
-    public wjb g;
+public interface ey0 {
+    Context getContext();
 
-    public ey0(ey0 ey0Var) {
-        this.a = ey0Var.a;
-        this.b = ey0Var.b;
-        this.c = ey0Var.c;
-        this.d = ey0Var.d;
-        this.e = ey0Var.e;
-        this.f = ey0Var.f;
-        this.g = ey0Var.g;
-    }
+    RectF getRect();
 
-    public ey0() {
-        this.b = 1;
-        this.f = 1;
-    }
+    void setDrawingFromOverlay(boolean z);
+
+    float y(Canvas canvas, RectF rectF, float f, RectF rectF2, float f2);
 }

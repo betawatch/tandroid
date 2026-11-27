@@ -1,98 +1,59 @@
 // default package
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class h5 {
-    public static boolean a;
+public final /* synthetic */ class h5 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
 
-    public static boolean a(int i, TLRPC.User user) {
-        String p;
-        if (user != null && (p = l7c.p(user)) != null) {
-            try {
-                Matcher matcher = Pattern.compile("t\\.me/([a-zA-Z0-9]+)/?").matcher(na7.q1(i).k4.Z2.f);
-                if (matcher.find()) {
-                    if (p.equalsIgnoreCase(matcher.group(1))) {
-                        return true;
-                    }
-                }
-            } catch (Exception e) {
-                fa4.g(e, true);
-                return false;
-            }
-        }
-        return false;
+    public /* synthetic */ h5(boolean[] zArr) {
+        this.a = (byte) 1;
     }
 
-    public static void b(int i) {
-        if (a || y6c.t0 != i) {
-            return;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                i5.a = false;
+                break;
+            case 1:
+                break;
+            case 2:
+                sye.a.edit().putInt("dismissed_count", sye.a.getInt("dismissed_count", 0) + 1).apply();
+                break;
+            case 3:
+            case 4:
+                break;
+            case 5:
+                MediaController.h2 = false;
+                break;
+            case 6:
+                break;
+            default:
+                k0d.i = false;
+                break;
         }
-        Context context = LaunchActivity.H1;
-        if (context == null) {
-            context = a.b;
-        }
-        if (context == null) {
-            return;
-        }
-        d S = LaunchActivity.S();
-        c(i, S != null ? S.getResourceProvider() : null, context);
     }
 
-    public static void c(int i, wjb wjbVar, Context context) {
-        if (a) {
-            return;
-        }
-        byte b = 1;
-        byte b2 = 0;
-        fx0 h = de9.h(1, wjbVar, context, false);
-        va7 va7Var = new va7(i, context, r5, b);
-        LinearLayout j = de9.j(context, 1);
-        j.setPadding(gl.L(16.0f), gl.L(20.0f), gl.L(16.0f), gl.L(8.0f));
-        j.setClipChildren(false);
-        j.setClipToPadding(false);
-        ry8 ry8Var = new ry8(context);
-        ry8Var.f(R.raw.media_forbidden, gl.L(115.0f), gl.L(115.0f), null);
-        ry8Var.d();
-        j.addView(ry8Var, nme.t(kk7.z1, kk7.z1, 17, 0, 0, 0, 9));
-        TextView textView = new TextView(context);
-        ug8.v(textView, 1, 20.0f);
-        ug8.x(textView, bkb.F6, wjbVar, null, 2131754695);
-        textView.setGravity(17);
-        j.addView(textView, nme.t(-1, -2, 17, 0, 0, 0, 23));
-        q64 q64Var = new q64(1, wjbVar, context);
-        q64Var.a(R.drawable.msg_block2, k96.M0(2131754706, null), k96.M0(2131754707, null));
-        j.addView(q64Var, nme.t(-1, -2, 17, 0, 0, 0, 0));
-        q64 q64Var2 = new q64(1, wjbVar, context);
-        q64Var2.a(R.drawable.menu_privacy, k96.M0(2131754704, null), k96.M0(2131754705, null));
-        j.addView(q64Var2, nme.t(-1, -2, 17, 0, 0, 0, 0));
-        q64 q64Var3 = new q64(1, wjbVar, context);
-        q64Var3.a(R.drawable.menu_feature_hourglass, k96.M0(2131754702, null), gl.N2(k96.a0(null, null, 2131754703, k96.f0(na7.q1(i).k4.Y2.f())), -1, 0, new b1(va7Var, (byte) 2), null));
-        j.addView(q64Var3, nme.t(-1, -2, 17, 0, 0, 0, 0));
-        u41 u41Var = new u41(wjbVar, context, true);
-        u41Var.i(k96.M0(2131754697, null), false, true);
-        u41Var.setOnClickListener(new j1(va7Var, b));
-        j.addView(u41Var, nme.t(-1, 48, 7, 0, 13, 0, 4));
-        u41 u41Var2 = new u41(wjbVar, context, false);
-        u41Var2.i(k96.M0(2131754696, null), false, true);
-        u41Var2.setOnClickListener(new f5(r5, b2));
-        j.addView(u41Var2, nme.t(-1, 48, 7, 0, 0, 0, 0));
-        h.O = j;
-        fx0[] fx0VarArr = {h};
-        h.T0 = false;
-        h.K();
-        a = true;
-        fx0VarArr[0].show();
-        fx0VarArr[0].setOnDismissListener(new g5(b2));
+    public /* synthetic */ h5(kc kcVar, boolean[] zArr, byte b) {
+        this.a = b;
+    }
+
+    public /* synthetic */ h5(byte b) {
+        this.a = b;
+    }
+
+    private final void a(DialogInterface dialogInterface) {
+    }
+
+    private final void b(DialogInterface dialogInterface) {
+    }
+
+    private final void c(DialogInterface dialogInterface) {
+    }
+
+    private final void d(DialogInterface dialogInterface) {
     }
 }

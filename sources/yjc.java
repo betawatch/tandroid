@@ -1,24 +1,94 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class yjc {
-    public final short a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final byte[] g;
+import android.view.View;
+import org.telegram.messenger.voip.VoIPService;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public yjc(int i, int i2, int i3, int i4, int i5, int i6, byte[] bArr) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        this.e = i5;
-        this.f = i6;
-        this.g = bArr;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class yjc implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ mkc b;
+
+    public /* synthetic */ yjc(mkc mkcVar, byte b) {
+        this.a = b;
+        this.b = mkcVar;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        VoIPService sharedInstance;
+        byte b = this.a;
+        int i = 1;
+        mkc mkcVar = this.b;
+        switch (b) {
+            case 0:
+                if (VoIPService.getSharedInstance() != null) {
+                    hl.r(mkcVar.S0);
+                    mkcVar.R0 = false;
+                    VoIPService.getSharedInstance().hangUp();
+                    break;
+                }
+                break;
+            case 1:
+                if (mkcVar.n0 && mkcVar.m0 && System.currentTimeMillis() - mkcVar.K0 > 500) {
+                    hl.r(mkcVar.S0);
+                    mkcVar.R0 = false;
+                    mkcVar.K0 = System.currentTimeMillis();
+                    mkcVar.a0.setRelativePosition(mkcVar.Z);
+                    mkcVar.b0 = true;
+                    mkcVar.H0 = true;
+                    mkcVar.q0 = mkcVar.p0;
+                    mkcVar.y();
+                    break;
+                }
+                break;
+            case 2:
+                if (mkcVar.H0 && System.currentTimeMillis() - mkcVar.K0 > 500) {
+                    hl.r(mkcVar.S0);
+                    mkcVar.R0 = false;
+                    mkcVar.K0 = System.currentTimeMillis();
+                    mkcVar.Z.setRelativePosition(mkcVar.a0);
+                    mkcVar.b0 = false;
+                    mkcVar.H0 = false;
+                    mkcVar.q0 = mkcVar.p0;
+                    mkcVar.y();
+                    break;
+                }
+                break;
+            case 3:
+                if (System.currentTimeMillis() - mkcVar.K0 >= 500) {
+                    mkcVar.K0 = System.currentTimeMillis();
+                    boolean z = mkcVar.C0;
+                    if (!z && mkcVar.B0) {
+                        mkcVar.c(!z);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                if (System.currentTimeMillis() - mkcVar.K0 >= 500) {
+                    mkcVar.K0 = System.currentTimeMillis();
+                    if (mkcVar.B0) {
+                        mkcVar.c(!mkcVar.C0);
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                if (mkcVar.L.getTag() != null && (sharedInstance = VoIPService.getSharedInstance()) != null) {
+                    mkcVar.s();
+                    if (sharedInstance.isBluetoothOn()) {
+                        i = 2;
+                    } else if (sharedInstance.isSpeakerphoneOn()) {
+                        i = 0;
+                    }
+                    sharedInstance.toggleSpeakerphoneOrShowRouteSheet(mkcVar.b, false, Integer.valueOf(i));
+                    break;
+                }
+                break;
+            default:
+                mkcVar.g();
+                break;
+        }
     }
 }

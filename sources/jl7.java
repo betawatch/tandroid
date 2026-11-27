@@ -1,11 +1,109 @@
 // default package
 
-import android.app.Notification;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.ViewGroup;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class jl7 {
-    public static Notification.Action.Builder a(Notification.Action.Builder builder, boolean z) {
-        return builder.setAllowGeneratedReplies(z);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public class jl7 extends ny0 implements snb {
+    public l9c S1;
+    public final ViewGroup T1;
+    public final Paint U1;
+    public float V1;
+
+    public jl7(Context context, ViewGroup viewGroup, vnb vnbVar) {
+        super(context, null, true, false, vnbVar);
+        this.U1 = new Paint();
+        this.u1 = 0.1f;
+        this.T1 = viewGroup;
+        d79 d79Var = this.n1;
+        int i = this.u0;
+        d79Var.setPadding(i, 0, i, 0);
+        updateColors();
+        this.S1.O(false);
+    }
+
+    @Override // ny0
+    public final c79 H0(d79 d79Var) {
+        l9c l9cVar = new l9c(d79Var, getContext(), this.a, 0, true, new yt4((Object) this, (byte) 21), this.J0);
+        this.S1 = l9cVar;
+        return l9cVar;
+    }
+
+    @Override // ny0
+    public final CharSequence K0() {
+        return null;
+    }
+
+    @Override // ny0
+    public void P0(float f) {
+        this.V1 = f;
+        if (this.F != null) {
+            this.F.setTranslationY(Math.max((this.b.getY() + f) + this.t0, this.F.getHeight() + (hl.L(56.0f) + hl.m)) - this.F.getBottom());
+        }
+    }
+
+    @Override // nx0
+    public final void W(Canvas canvas) {
+        float width;
+        float f;
+        ex0 ex0Var = this.c;
+        float height = ex0Var.getHeight();
+        float max = Math.max(height - hl.n, this.b.getY() + this.V1 + this.t0);
+        if (max >= height) {
+            return;
+        }
+        if (this.b.getWidth() < ex0Var.getWidth()) {
+            f = this.b.getX() + this.u0;
+            width = (this.b.getX() + this.b.getWidth()) - this.u0;
+        } else {
+            width = ex0Var.getWidth();
+            f = 0.0f;
+        }
+        canvas.drawRect(f, max, width, height, this.U1);
+    }
+
+    public int Z0() {
+        return aob.v0(aob.a7, this.J0);
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.a7));
+    }
+
+    @Override // nx0, android.app.Dialog
+    public void show() {
+        if (getWindow() != null) {
+            hl.S(getWindow());
+        }
+        super.show();
+        int Z0 = Z0();
+        y0(Z0);
+        hl.i3(this, hl.B(Z0) > 0.721f);
+        if (getWindow() != null) {
+            getWindow().getDecorView().requestApplyInsets();
+        }
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        int Z0 = Z0();
+        this.U1.setColor(Z0);
+        s0(Z0);
+        K(Z0);
+        ViewGroup viewGroup = this.T1;
+        if (viewGroup != null) {
+            viewGroup.invalidate();
+        }
+    }
+
+    @Override // nx0
+    public final void y0(int i) {
+        super.y0(i);
+        hl.o3(this, 0, false, null);
     }
 }

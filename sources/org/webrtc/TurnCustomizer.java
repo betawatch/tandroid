@@ -1,31 +1,29 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class TurnCustomizer {
-    private long nativeTurnCustomizer;
+    private final NativeLifecycleLock lifecycleLock;
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        void freeTurnCustomizer(long j);
+    }
 
     public TurnCustomizer(long j) {
-        this.nativeTurnCustomizer = j;
+        this.lifecycleLock = new NativeLifecycleLock("TurnCustomizer", j);
     }
 
-    private void checkTurnCustomizerExists() {
-        if (this.nativeTurnCustomizer != 0) {
-            return;
-        }
-        sc8.j("TurnCustomizer has been disposed.");
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$dispose$0(long j) {
+        TurnCustomizerJni.get().freeTurnCustomizer(j);
     }
-
-    private static native void nativeFreeTurnCustomizer(long j);
 
     public void dispose() {
-        checkTurnCustomizerExists();
-        nativeFreeTurnCustomizer(this.nativeTurnCustomizer);
-        this.nativeTurnCustomizer = 0L;
+        this.lifecycleLock.dispose(new grb((byte) 14));
     }
 
     public long getNativeTurnCustomizer() {
-        checkTurnCustomizerExists();
-        return this.nativeTurnCustomizer;
+        return this.lifecycleLock.getNativePointer();
     }
 }

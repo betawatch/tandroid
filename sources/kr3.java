@@ -1,36 +1,30 @@
 // default package
 
-import android.content.Context;
-import org.telegram.tgnet.TLObject;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class kr3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ mr3 b;
+    public final /* synthetic */ nr3 c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class kr3 extends gf0 {
-    public final jia s;
-    public TLObject w;
-
-    public kr3(Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.c.setVisibility(8);
-        jia jiaVar = this.e;
-        int i = bkb.A6;
-        zkb.W(jiaVar, i, wjbVar);
-        jia jiaVar2 = new jia(context);
-        this.s = jiaVar2;
-        jiaVar2.setTextSize(16);
-        zkb.W(jiaVar2, i, wjbVar);
-        jiaVar2.setGravity(k96.a0 ? 3 : 5);
-        addView(jiaVar2);
-        boolean z = k96.a0;
-        jiaVar2.setLayoutParams(nme.d(-1, -2.0f, (z ? 3 : 5) | 16, z ? 20.0f : 0.0f, 0.0f, z ? 0.0f : 20.0f, 0.0f));
+    public /* synthetic */ kr3(mr3 mr3Var, nr3 nr3Var, byte b) {
+        this.a = b;
+        this.b = mr3Var;
+        this.c = nr3Var;
     }
 
-    @Override // gf0
-    public final boolean b() {
-        return true;
-    }
-
-    public Object getGifCode() {
-        return this.w;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        nr3 nr3Var = this.c;
+        mr3 mr3Var = this.b;
+        switch (b) {
+            case 0:
+                nr3Var.I(mr3Var.a, mr3Var.b);
+                break;
+            default:
+                nr3Var.y(mr3Var.a, mr3Var.b);
+                break;
+        }
     }
 }

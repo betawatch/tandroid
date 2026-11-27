@@ -1,40 +1,24 @@
 // default package
 
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
+import android.view.animation.Interpolator;
+import java.util.Collections;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xa9 extends Binder implements aj5 {
-    public static final /* synthetic */ int b = 0;
-    public final /* synthetic */ ya9 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class xa9 implements Iterable {
+    public final b76 a;
 
-    public xa9(ya9 ya9Var) {
-        this.a = ya9Var;
-        attachInterface(this, aj5.h);
+    public xa9(wa9 wa9Var, Interpolator interpolator, long j) {
+        this.a = new b76(new um4(this, wa9Var, false, (byte) 24), interpolator, j);
     }
 
-    @Override // android.os.Binder
-    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-        String str = aj5.h;
-        if (i >= 1 && i <= 16777215) {
-            parcel.enforceInterface(str);
-        }
-        if (i == 1598968902) {
-            parcel2.writeString(str);
-            return true;
-        }
-        if (i != 1) {
-            return super.onTransact(i, parcel, parcel2, i2);
-        }
-        this.a.a(parcel.readInt(), (Bundle) (parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null));
-        return true;
+    public final void h(Object obj, boolean z) {
+        this.a.m(obj != null ? Collections.singletonList(obj) : null, z);
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.b.iterator();
     }
 }

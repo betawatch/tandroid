@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Callback {
     private static final String TAG = "SurfaceEglRenderer";
@@ -110,8 +110,13 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         ThreadUtils.checkIsOnMainThread();
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        releaseEglSurface(new wm3(countDownLatch, (byte) 1), false);
+        releaseEglSurface(new nn3(countDownLatch, (byte) 1));
         ThreadUtils.awaitUninterruptibly(countDownLatch);
+    }
+
+    public SurfaceEglRenderer(String str, VideoFrameDrawer videoFrameDrawer) {
+        super(str, videoFrameDrawer);
+        this.layoutLock = new Object();
     }
 
     @Override // org.webrtc.EglRenderer

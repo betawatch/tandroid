@@ -1,11 +1,66 @@
 // default package
 
-import android.util.LongSparseArray;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class la9 {
-    public static void a(LongSparseArray longSparseArray) {
-        longSparseArray.clear();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class la9 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ tl0 a;
+    public final /* synthetic */ pa9 b;
+
+    public la9(pa9 pa9Var, tl0 tl0Var) {
+        this.b = pa9Var;
+        this.a = tl0Var;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+        if (surfaceTexture != null) {
+            pa9 pa9Var = this.b;
+            if (pa9Var.d == null) {
+                na9 na9Var = new na9(pa9Var, surfaceTexture, this.a);
+                pa9Var.d = na9Var;
+                na9Var.n = i;
+                na9Var.r = i2;
+                pa9Var.i();
+                pa9Var.post(new ka9(this, (byte) 1));
+                nx7 nx7Var = pa9Var.c;
+                if (nx7Var.v) {
+                    nx7Var.f.f(new lx7(nx7Var, nx7Var.w, (byte) 0));
+                    nx7Var.w = null;
+                    nx7Var.v = false;
+                }
+            }
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        pa9 pa9Var = this.b;
+        if (pa9Var.d != null && !pa9Var.E) {
+            nx7 nx7Var = pa9Var.c;
+            nx7Var.f.f(new pl7(nx7Var, new ka9(this, (byte) 2), (byte) 14));
+        }
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
+        pa9 pa9Var = this.b;
+        na9 na9Var = pa9Var.d;
+        if (na9Var == null) {
+            return;
+        }
+        na9Var.n = i;
+        na9Var.r = i2;
+        pa9Var.i();
+        na9 na9Var2 = pa9Var.d;
+        na9Var2.postRunnable(na9Var2.x);
+        pa9Var.d.postRunnable(new ka9(this, (byte) 0));
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

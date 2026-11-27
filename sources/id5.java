@@ -1,15 +1,17 @@
 // default package
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class id5 extends ViewOutlineProvider {
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float L = gl.L(12.0f);
-        outline.setRoundRect(0, 0, view.getWidth(), (int) (view.getHeight() + L), L);
+public final class id5 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
+    public final /* synthetic */ nd5 c;
+
+    public id5(nd5 nd5Var, boolean z, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.c = nd5Var;
+        this.a = z;
+        this.b = tL_messages_stickerSet;
     }
 }

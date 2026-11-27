@@ -1,119 +1,20 @@
 // default package
 
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tc0 implements j74 {
-    public final /* synthetic */ byte a;
-    public final xu7 b;
-    public final qia c;
+public final class tc0 implements pc0 {
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public tc0(byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.b = new xu7(4);
-                this.c = new qia(-1, -1, "image/webp");
-                break;
-            default:
-                this.b = new xu7(4);
-                this.c = new qia(-1, -1, "image/avif");
-                break;
-        }
+    public tc0(int i, int i2, int i3) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
     }
 
-    @Override // j74
-    public final j74 a() {
-        byte b = this.a;
-        return this;
-    }
-
-    @Override // j74
-    public final int b(k74 k74Var, m11 m11Var) {
-        byte b = this.a;
-        qia qiaVar = this.c;
-        switch (b) {
-        }
-        return qiaVar.b(k74Var, m11Var);
-    }
-
-    @Override // j74
-    public final boolean c(k74 k74Var) {
-        byte b = this.a;
-        xu7 xu7Var = this.b;
-        switch (b) {
-            case 0:
-                ja3 ja3Var = (ja3) k74Var;
-                ja3Var.a(4, false);
-                xu7Var.K(4);
-                ja3Var.d(xu7Var.a, 0, 4, false);
-                if (xu7Var.C() == 1718909296) {
-                    xu7Var.K(4);
-                    ja3Var.d(xu7Var.a, 0, 4, false);
-                    if (xu7Var.C() == 1635150182) {
-                    }
-                }
-                break;
-            default:
-                xu7Var.K(4);
-                ja3 ja3Var2 = (ja3) k74Var;
-                ja3Var2.d(xu7Var.a, 0, 4, false);
-                if (xu7Var.C() == 1380533830) {
-                    ja3Var2.a(4, false);
-                    xu7Var.K(4);
-                    ja3Var2.d(xu7Var.a, 0, 4, false);
-                    if (xu7Var.C() == 1464156752) {
-                    }
-                }
-                break;
-        }
-        return false;
-    }
-
-    @Override // j74
-    public final void d(long j, long j2) {
-        byte b = this.a;
-        qia qiaVar = this.c;
-        switch (b) {
-            case 0:
-                qiaVar.d(j, j2);
-                break;
-            default:
-                qiaVar.d(j, j2);
-                break;
-        }
-    }
-
-    @Override // j74
-    public final List e() {
-        byte b = this.a;
-        km5 km5Var = mm5.b;
-        return w59.e;
-    }
-
-    @Override // j74
-    public final void f(l74 l74Var) {
-        byte b = this.a;
-        qia qiaVar = this.c;
-        switch (b) {
-            case 0:
-                qiaVar.f(l74Var);
-                break;
-            default:
-                qiaVar.f(l74Var);
-                break;
-        }
-    }
-
-    @Override // j74
-    public final void release() {
-        byte b = this.a;
-    }
-
-    private final void g() {
-    }
-
-    private final void h() {
+    @Override // pc0
+    public final int getType() {
+        return 1751742049;
     }
 }

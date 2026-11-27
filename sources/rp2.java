@@ -1,133 +1,299 @@
 // default package
 
-import android.os.Build;
+import android.content.res.Resources;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.Region;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.Window;
-import android.view.inputmethod.InputMethodManager;
-import android.window.OnBackInvokedDispatcher;
-import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rp2 implements b16 {
-    public static byte c = 0;
-    public static Field d;
-    public static Field e;
-    public static Field f;
+public abstract class rp2 extends Drawable {
     public final /* synthetic */ byte a;
-    public wp2 b;
+    public Object b;
 
-    public /* synthetic */ rp2(wp2 wp2Var, byte b) {
-        this.a = b;
-        this.b = wp2Var;
-    }
-
-    @Override // b16
-    public final void b(e16 e16Var, u06 u06Var) {
-        switch (this.a) {
-            case 0:
-                if (u06Var == u06.ON_STOP) {
-                    Window window = this.b.getWindow();
-                    View peekDecorView = window != null ? window.peekDecorView() : null;
-                    if (peekDecorView != null) {
-                        peekDecorView.cancelPendingInputEvents();
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 1:
-                if (u06Var == u06.ON_DESTROY) {
-                    this.b.b.c = null;
-                    if (!this.b.isChangingConfigurations()) {
-                        this.b.f().a();
-                    }
-                    up2 up2Var = this.b.r;
-                    wp2 wp2Var = up2Var.d;
-                    wp2Var.getWindow().getDecorView().removeCallbacks(up2Var);
-                    wp2Var.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(up2Var);
-                    return;
-                }
-                return;
-            case 2:
-                wp2 wp2Var2 = this.b;
-                if (wp2Var2.f == null) {
-                    tp2 tp2Var = (tp2) wp2Var2.getLastNonConfigurationInstance();
-                    if (tp2Var != null) {
-                        wp2Var2.f = tp2Var.a;
-                    }
-                    if (wp2Var2.f == null) {
-                        wp2Var2.f = new sdc();
-                    }
-                }
-                wp2Var2.d.b(this);
-                return;
-            case 3:
-                if (u06Var != u06.ON_CREATE || Build.VERSION.SDK_INT < 33) {
-                    return;
-                }
-                vo7 vo7Var = this.b.n;
-                OnBackInvokedDispatcher a = sp2.a((wp2) e16Var);
-                vo7Var.getClass();
-                a.getClass();
-                vo7Var.e = a;
-                vo7Var.b(vo7Var.g);
-                return;
-            default:
-                if (u06Var == u06.ON_DESTROY) {
-                    if (c == 0) {
-                        try {
-                            c = (byte) 2;
-                            Field declaredField = InputMethodManager.class.getDeclaredField("mServedView");
-                            e = declaredField;
-                            declaredField.setAccessible(true);
-                            Field declaredField2 = InputMethodManager.class.getDeclaredField("mNextServedView");
-                            f = declaredField2;
-                            declaredField2.setAccessible(true);
-                            Field declaredField3 = InputMethodManager.class.getDeclaredField("mH");
-                            d = declaredField3;
-                            declaredField3.setAccessible(true);
-                            c = (byte) 1;
-                        } catch (NoSuchFieldException unused) {
-                        }
-                    }
-                    if (c == 1) {
-                        InputMethodManager inputMethodManager = (InputMethodManager) this.b.getSystemService("input_method");
-                        try {
-                            Object obj = d.get(inputMethodManager);
-                            if (obj != null) {
-                                synchronized (obj) {
-                                    try {
-                                        try {
-                                            View view = (View) e.get(inputMethodManager);
-                                            if (view != null) {
-                                                if (!view.isAttachedToWindow()) {
-                                                    try {
-                                                        f.set(inputMethodManager, null);
-                                                        inputMethodManager.isActive();
-                                                    } catch (IllegalAccessException unused2) {
-                                                    }
-                                                }
-                                            }
-                                        } catch (IllegalAccessException unused3) {
-                                        }
-                                    } catch (ClassCastException unused4) {
-                                    }
-                                }
-                                return;
-                            }
-                            return;
-                        } catch (IllegalAccessException unused5) {
-                            return;
-                        }
-                    }
-                    return;
-                }
-                return;
+    public rp2(View view) {
+        this.a = (byte) 0;
+        this.b = new Paint(1);
+        if (view != null) {
+            view.addOnAttachStateChangeListener(new xc(this, (byte) 6));
+            if (view.isAttachedToWindow()) {
+                view.post(new vd2(this, (byte) 8));
+            }
         }
     }
 
+    @Override // android.graphics.drawable.Drawable
+    public void applyTheme(Resources.Theme theme) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.applyTheme(theme);
+                    break;
+                }
+                break;
+            default:
+                super.applyTheme(theme);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void clearColorFilter() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.clearColorFilter();
+                    break;
+                } else {
+                    drawable.clearColorFilter();
+                    break;
+                }
+            default:
+                super.clearColorFilter();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final Drawable getCurrent() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getCurrent();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getMinimumHeight() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getMinimumHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getMinimumWidth() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getMinimumWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final boolean getPadding(Rect rect) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getPadding(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int[] getState() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final Region getTransparentRegion() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getTransparentRegion();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void jumpToCurrentState() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.jumpToCurrentState();
+                    break;
+                }
+                break;
+            default:
+                super.jumpToCurrentState();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean onLevelChange(int i) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.onLevelChange(i);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i) {
+        ((Paint) this.b).setAlpha(i);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setChangingConfigurations(int i) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.setChangingConfigurations(i);
+                    break;
+                } else {
+                    drawable.setChangingConfigurations(i);
+                    break;
+                }
+            default:
+                super.setChangingConfigurations(i);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(int i, PorterDuff.Mode mode) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.setColorFilter(i, mode);
+                    break;
+                } else {
+                    drawable.setColorFilter(i, mode);
+                    break;
+                }
+            default:
+                super.setColorFilter(i, mode);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setFilterBitmap(boolean z) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setFilterBitmap(z);
+                    break;
+                }
+                break;
+            default:
+                super.setFilterBitmap(z);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setHotspot(float f, float f2) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setHotspot(f, f2);
+                    break;
+                }
+                break;
+            default:
+                super.setHotspot(f, f2);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setHotspotBounds(int i, int i2, int i3, int i4) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setHotspotBounds(i, i2, i3, i4);
+                    break;
+                }
+                break;
+            default:
+                super.setHotspotBounds(i, i2, i3, i4);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final boolean setState(int[] iArr) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.setState(iArr);
+    }
+
+    public void a() {
+    }
+
+    public void b() {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+        ((Paint) this.b).setColorFilter(colorFilter);
+    }
+
     public /* synthetic */ rp2() {
-        this.a = (byte) 4;
+        this.a = (byte) 1;
     }
 }

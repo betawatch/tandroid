@@ -1,48 +1,111 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class aq6 implements Runnable {
-    public final /* synthetic */ hq6 a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ byte e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ int n;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ls6 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ aq6(hq6 hq6Var, long j, boolean z, int i, int i2, int i3, long j2, int i4) {
-        this.a = hq6Var;
-        this.b = j;
-        this.c = z;
-        this.d = i;
-        this.e = i2;
-        this.f = i3;
-        this.h = j2;
-        this.n = i4;
+    public /* synthetic */ aq6(ls6 ls6Var, String str, byte b) {
+        this.a = b;
+        this.b = ls6Var;
+        this.c = str;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00c0  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        long j = this.b;
-        boolean B = cf3.B(j);
-        boolean z = this.c;
-        int i = this.d;
-        byte b = this.e;
-        boolean z2 = z && (i == -1 || (i == 0 && b == 2)) && !B;
-        hq6 hq6Var = this.a;
-        long j2 = this.h;
-        if (z2 || (this.f == 1 && !B)) {
-            hq6Var.f0(b, this.n, j, j2, false);
+        int i;
+        int i2;
+        TLRPC.TL_messages_getEmojiKeywordsDifference tL_messages_getEmojiKeywordsDifference;
+        byte b = this.a;
+        String str = this.c;
+        ls6 ls6Var = this.b;
+        switch (b) {
+            case 0:
+                ls6 ls6Var2 = this.b;
+                String str2 = this.c;
+                String str3 = null;
+                try {
+                    SQLiteCursor queryFinalized = ls6Var2.getMessagesStorage().b.queryFinalized("SELECT alias, version, date FROM emoji_keywords_info_v2 WHERE lang = ?", str2);
+                    if (queryFinalized.next()) {
+                        str3 = queryFinalized.stringValue(0);
+                        i = queryFinalized.intValue(1);
+                        try {
+                            queryFinalized.longValue(2);
+                        } catch (Exception e) {
+                            e = e;
+                            cc4.g(e, true);
+                            String str4 = str3;
+                            i2 = i;
+                            boolean z = f11.a;
+                            if (i2 != -1) {
+                            }
+                            ls6Var2.getConnectionsManager().sendRequest(tL_messages_getEmojiKeywordsDifference, new lh((Object) ls6Var2, i2, (Object) str4, (Object) str2, (byte) 5));
+                            return;
+                        }
+                    } else {
+                        i = -1;
+                    }
+                    queryFinalized.dispose();
+                } catch (Exception e2) {
+                    e = e2;
+                    i = -1;
+                }
+                String str42 = str3;
+                i2 = i;
+                boolean z2 = f11.a;
+                if (i2 != -1) {
+                    TLRPC.TL_messages_getEmojiKeywords tL_messages_getEmojiKeywords = new TLRPC.TL_messages_getEmojiKeywords();
+                    tL_messages_getEmojiKeywords.lang_code = str2;
+                    tL_messages_getEmojiKeywordsDifference = tL_messages_getEmojiKeywords;
+                } else {
+                    TLRPC.TL_messages_getEmojiKeywordsDifference tL_messages_getEmojiKeywordsDifference2 = new TLRPC.TL_messages_getEmojiKeywordsDifference();
+                    tL_messages_getEmojiKeywordsDifference2.lang_code = str2;
+                    tL_messages_getEmojiKeywordsDifference2.from_version = i2;
+                    tL_messages_getEmojiKeywordsDifference = tL_messages_getEmojiKeywordsDifference2;
+                }
+                ls6Var2.getConnectionsManager().sendRequest(tL_messages_getEmojiKeywordsDifference, new lh((Object) ls6Var2, i2, (Object) str42, (Object) str2, (byte) 5));
+            case 1:
+                try {
+                    SQLitePreparedStatement executeFast = ls6Var.getMessagesStorage().b.executeFast("DELETE FROM emoji_keywords_info_v2 WHERE lang = ?");
+                    executeFast.bindString(1, str);
+                    executeFast.step();
+                    executeFast.dispose();
+                    hl.c3(new aq6(ls6Var, str, (byte) 3));
+                    break;
+                } catch (Exception e3) {
+                    cc4.g(e3, true);
+                    return;
+                }
+            case 2:
+                ls6Var.C1.remove(str);
+                ls6Var.D1.add(str);
+                ls6Var.getNotificationCenter().k(jn7.n3, new Object[0]);
+                break;
+            case 3:
+                ls6Var.C1.remove(str);
+                ls6Var.D1.add(str);
+                ls6Var.O(new String[]{str}, false);
+                ls6Var.getNotificationCenter().k(jn7.n3, new Object[0]);
+                break;
+            case 4:
+                ls6Var.C1.remove(str);
+                ls6Var.getNotificationCenter().k(jn7.L2, str);
+                break;
+            default:
+                ls6Var.T.remove(str);
+                break;
         }
-        if (z2) {
-            return;
-        }
-        if (!z) {
-            hq6Var.K1(b, i, j, j2);
-        }
-        hq6Var.getNotificationCenter().k(kk7.V, Long.valueOf(j), Long.valueOf(j2), Integer.valueOf((z && i == -1) ? 0 : i), Boolean.valueOf(z), Integer.valueOf(b));
     }
 }

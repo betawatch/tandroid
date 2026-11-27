@@ -1,65 +1,104 @@
 // default package
 
-import java.io.Serializable;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class om5 implements Serializable {
-    public static final om5 c = new om5(0, new long[0]);
-    public final long[] a;
-    public final int b;
+public final class om5 extends jq {
+    public final /* synthetic */ byte e;
+    public final /* synthetic */ in5 f;
 
-    public om5(int i, long[] jArr) {
-        this.a = jArr;
-        this.b = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public om5(in5 in5Var) {
+        super(10485760);
+        this.e = (byte) 2;
+        this.f = in5Var;
     }
 
-    public final long a(int i) {
-        gre.j(i, this.b);
-        return this.a[i];
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof om5) {
-            om5 om5Var = (om5) obj;
-            int i = om5Var.b;
-            int i2 = this.b;
-            if (i2 == i) {
-                for (int i3 = 0; i3 < i2; i3++) {
-                    if (a(i3) == om5Var.a(i3)) {
+    @Override // jq
+    public final void e(Object obj, Object obj2, String str) {
+        byte b = this.e;
+        in5 in5Var = this.f;
+        switch (b) {
+            case 0:
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
+                String str2 = in5Var.F;
+                if (str2 == null || !str2.equals(str)) {
+                    Integer num = (Integer) in5Var.a.get(str);
+                    if (num == null || num.intValue() == 0) {
+                        Bitmap bitmap = bitmapDrawable.getBitmap();
+                        if (!bitmap.isRecycled()) {
+                            ArrayList arrayList = new ArrayList();
+                            arrayList.add(bitmap);
+                            hl.x2(arrayList);
+                            break;
+                        }
                     }
                 }
-                return true;
-            }
+                break;
+            case 1:
+                BitmapDrawable bitmapDrawable2 = (BitmapDrawable) obj;
+                String str3 = in5Var.F;
+                if (str3 == null || !str3.equals(str)) {
+                    Integer num2 = (Integer) in5Var.a.get(str);
+                    if (num2 == null || num2.intValue() == 0) {
+                        Bitmap bitmap2 = bitmapDrawable2.getBitmap();
+                        if (!bitmap2.isRecycled()) {
+                            ArrayList arrayList2 = new ArrayList();
+                            arrayList2.add(bitmap2);
+                            hl.x2(arrayList2);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                BitmapDrawable bitmapDrawable3 = (BitmapDrawable) obj;
+                Integer num3 = (Integer) in5Var.a.get(str);
+                boolean z = bitmapDrawable3 instanceof lm;
+                if (z) {
+                    in5Var.f.remove((lm) bitmapDrawable3);
+                }
+                if (num3 == null || num3.intValue() == 0) {
+                    if (z) {
+                        ((lm) bitmapDrawable3).u();
+                    }
+                    if (bitmapDrawable3 instanceof b29) {
+                        ((b29) bitmapDrawable3).x(false);
+                        break;
+                    }
+                }
+                break;
         }
-        return false;
     }
 
-    public final int hashCode() {
-        int i = 1;
-        for (int i2 = 0; i2 < this.b; i2++) {
-            i = (i * 31) + zne.b(this.a[i2]);
+    @Override // jq
+    public final Object l(String str, Object obj) {
+        switch (this.e) {
+            case 2:
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
+                if (bitmapDrawable instanceof lm) {
+                    this.f.f.add((lm) bitmapDrawable);
+                }
+                return (BitmapDrawable) super.l(str, bitmapDrawable);
+            default:
+                return super.l(str, obj);
         }
-        return i;
     }
 
-    public final String toString() {
-        int i = this.b;
-        if (i == 0) {
-            return "[]";
+    @Override // jq
+    public final int q(Object obj) {
+        switch (this.e) {
         }
-        StringBuilder sb = new StringBuilder(i * 5);
-        sb.append('[');
-        long[] jArr = this.a;
-        sb.append(jArr[0]);
-        for (int i2 = 1; i2 < i; i2++) {
-            sb.append(", ");
-            sb.append(jArr[i2]);
-        }
-        sb.append(']');
-        return sb.toString();
+        return in5.Z((BitmapDrawable) obj);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ om5(in5 in5Var, int i, byte b) {
+        super(i);
+        this.e = b;
+        this.f = in5Var;
     }
 }

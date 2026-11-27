@@ -1,18 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class vub extends is5 {
-    public final /* synthetic */ qvb T;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vub(qvb qvbVar, pvb pvbVar) {
-        super(pvbVar);
-        this.T = qvbVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum vub extends rwb {
+    public vub() {
+        super("ScriptDataDoubleEscapeStart", 27);
     }
 
-    @Override // is5
-    public final boolean r() {
-        return this.T.y > 0;
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        rwb.a(bubVar, ik1Var, rwb.S, rwb.L);
     }
 }

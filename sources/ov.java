@@ -1,46 +1,53 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ov extends View {
-    public final /* synthetic */ pv a;
+public final class ov extends vu7 {
+    public final /* synthetic */ qv c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ov(pv pvVar, Activity activity) {
-        super(activity);
-        this.a = pvVar;
+    public ov(qv qvVar) {
+        this.c = qvVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float i;
-        pv pvVar = this.a;
-        if (pvVar.e == null) {
-            return;
+    @Override // vu7
+    public final int b() {
+        TL_iv.pageBlockSlideshow pageblockslideshow = this.c.e;
+        if (pageblockslideshow == null) {
+            return 0;
         }
-        int b = pvVar.c.b();
-        int L = gl.L(4.0f) + de9.y(6.0f, b - 1, gl.L(7.0f) * b);
-        float f = pvVar.x + pvVar.w;
-        if (L < getMeasuredWidth()) {
-            i = (getMeasuredWidth() - L) / 2.0f;
+        return pageblockslideshow.items.size();
+    }
+
+    @Override // vu7
+    public final int c(Object obj) {
+        return this.c.e.items.contains(((nv) obj).a) ? -1 : -2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // vu7
+    public final Object e(fic ficVar, int i) {
+        yv yvVar;
+        qv qvVar = this.c;
+        ex exVar = qvVar.y;
+        o oVar = qvVar.E;
+        TL_iv.PageBlock pageBlock = qvVar.e.items.get(i);
+        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
+            dv dvVar = new dv(qvVar.getContext(), oVar, exVar, 1);
+            dvVar.a((TL_iv.pageBlockPhoto) pageBlock, exVar.F.cached_page, false, true);
+            yvVar = dvVar;
         } else {
-            float L2 = gl.L(4.0f);
-            int L3 = gl.L(13.0f);
-            i = L2 - (Utilities.i(f - (((getMeasuredWidth() - gl.L(8.0f)) / 2) / L3), Math.max(0, (b - (r10 << 1)) - 1), 0.0f) * L3);
+            yv yvVar2 = new yv(qvVar.getContext(), oVar, exVar, 1);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            yvVar2.b(pageblockvideo, (zv) oVar.E.f(pageblockvideo.video_id), false, true);
+            yvVar = yvVar2;
         }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        for (int i2 = 0; i2 < pvVar.e.items.size(); i2++) {
-            float max = Math.max(0.0f, 1.0f - Math.abs(i2 - f));
-            o.D1.setAlpha((int) ((max * 95.0f) + 160.0f));
-            canvas.drawCircle(gl.L(4.0f) + i + (gl.L(13.0f) * i2), getMeasuredHeight() / 2.0f, (gl.L(1.0f) * max) + gl.L(2.0f), o.D1);
-        }
-        canvas.restore();
+        ficVar.addView(yvVar);
+        nv nvVar = new nv();
+        nvVar.b = yvVar;
+        nvVar.a = pageBlock;
+        return nvVar;
     }
 }

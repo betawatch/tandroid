@@ -1,42 +1,48 @@
 // default package
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class lib extends Path {
-    public static ArrayList d;
-    public float a;
-    public ArrayList b;
-    public int c;
+public final class lib {
+    public final /* synthetic */ byte a;
 
-    @Override // android.graphics.Path
-    public final void addRect(float f, float f2, float f3, float f4, Path.Direction direction) {
-        ArrayList arrayList = d;
-        RectF rectF = (arrayList == null || arrayList.size() <= 0) ? new RectF() : (RectF) d.remove(0);
-        rectF.set(f, f2, f3, f4);
-        this.b.add(rectF);
-        this.c++;
-        super.addRect(f, f2, f3, f4, direction);
-        if (f4 > this.a) {
-            this.a = f4;
+    public /* synthetic */ lib(byte b) {
+        this.a = b;
+    }
+
+    public final int a(sib sibVar, int i) {
+        switch (this.a) {
+            case 0:
+            case 3:
+            default:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i;
         }
     }
 
-    @Override // android.graphics.Path
-    public final void reset() {
-        ArrayList arrayList = this.b;
-        super.reset();
-        ArrayList arrayList2 = d;
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList(arrayList.size());
-            d = arrayList2;
+    public final int b(sib sibVar, int i) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+            case 3:
+            default:
+                return 0;
+            case 2:
+                return i;
         }
-        arrayList2.addAll(arrayList);
-        arrayList.clear();
-        this.c = 0;
-        this.a = 0.0f;
+    }
+
+    public final int c(int i, int i2) {
+        switch (this.a) {
+            case 4:
+                return i2;
+            default:
+                return i;
+        }
     }
 }

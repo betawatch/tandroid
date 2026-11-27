@@ -1,45 +1,47 @@
 // default package
 
-import android.os.IBinder;
-import android.os.Parcel;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xg5 implements zg5 {
-    public IBinder a;
+public final class xg5 {
+    public final String a;
+    public final byte b;
+    public final double c;
+    public final String d;
 
-    public final boolean a(x43 x43Var) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-            obtain.writeStrongBinder(x43Var);
-            this.a.transact(3, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readInt() != 0;
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
+    /* JADX WARN: Multi-variable type inference failed */
+    public xg5(int i, String str, String str2) {
+        boolean z = true;
+        if (i == 1 && !str2.startsWith("0x") && !str2.startsWith("0X")) {
+            z = false;
         }
+        yve.p(z);
+        this.a = str;
+        this.b = i;
+        this.d = str2;
+        this.c = 0.0d;
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof xg5)) {
+            return false;
+        }
+        xg5 xg5Var = (xg5) obj;
+        return this.b == xg5Var.b && Double.compare(this.c, xg5Var.c) == 0 && this.a.equals(xg5Var.a) && Objects.equals(this.d, xg5Var.d);
     }
 
-    public final boolean b() {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-            obtain.writeLong(0L);
-            this.a.transact(2, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readInt() != 0;
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
-        }
+    public final int hashCode() {
+        return Objects.hash(this.a, Integer.valueOf(this.b), Double.valueOf(this.c), this.d);
+    }
+
+    public xg5(String str, double d) {
+        this.a = str;
+        this.b = (byte) 2;
+        this.c = d;
+        this.d = null;
     }
 }

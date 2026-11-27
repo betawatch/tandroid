@@ -1,141 +1,64 @@
 // default package
 
-import android.text.TextUtils;
-import android.util.Log;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.os.IBinder;
+import android.os.IInterface;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class b5d {
-    public static final dc6 a = new dc6("MetadataUtils", null);
-    public static final String[] b;
-    public static final String c;
-
-    static {
-        String[] strArr = {"Z", "+hh", "+hhmm", "+hh:mm"};
-        b = strArr;
-        c = "yyyyMMdd'T'HHmmss".concat(String.valueOf(strArr[0]));
+public final class b5d extends d05 {
+    @Override // hg0
+    public final IInterface b(IBinder iBinder) {
+        iBinder.getClass();
+        int i = k5d.b;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.firebase.pnv.internal.IFpnvService");
+        return queryLocalInterface instanceof m5d ? (m5d) queryLocalInterface : new i5d(iBinder);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00f3  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static Calendar a(String str) {
-        String substring;
-        String substring2;
-        String str2;
-        boolean isEmpty = TextUtils.isEmpty(str);
-        dc6 dc6Var = a;
-        if (isEmpty) {
-            dc6Var.b("Input string is empty or null", new Object[0]);
-            return null;
+    @Override // hg0
+    public final void e(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        if (fileDescriptor == null || strArr == null) {
+            return;
         }
-        if (TextUtils.isEmpty(str)) {
-            dc6Var.b("Input string is empty or null", new Object[0]);
-        } else {
-            try {
-                substring = str.substring(0, 8);
-            } catch (IndexOutOfBoundsException e) {
-                Log.e(dc6Var.a, dc6Var.d("Error extracting the date", new Object[0]), e);
-            }
-            if (!TextUtils.isEmpty(substring)) {
-                dc6Var.b("Invalid date format", new Object[0]);
-                return null;
-            }
-            try {
-                if (TextUtils.isEmpty(str)) {
-                    dc6Var.b("string is empty or null", new Object[0]);
-                } else {
-                    int indexOf = str.indexOf(84);
-                    int i = indexOf + 1;
-                    if (indexOf == 8) {
-                        try {
-                            substring2 = str.substring(i);
-                            if (substring2.length() != 6) {
-                                char charAt = substring2.charAt(6);
-                                String[] strArr = b;
-                                if (charAt == '+' || charAt == '-') {
-                                    int length = substring2.length();
-                                    if (length == strArr[1].length() + 6 || length == strArr[2].length() + 6 || length == strArr[3].length() + 6) {
-                                        substring2 = substring2.replaceAll("([\\+\\-]\\d\\d):(\\d\\d)", "$1$2");
-                                    }
-                                } else if (charAt == 'Z' && substring2.length() == strArr[0].length() + 6) {
-                                    substring2 = substring2.substring(0, substring2.length() - 1).concat("+0000");
-                                }
-                            }
-                        } catch (IndexOutOfBoundsException e2) {
-                            Log.e(dc6Var.a, dc6Var.d("Error extracting the time substring: %s", new Object[0]), e2);
-                        }
-                        if (TextUtils.isEmpty(substring2)) {
-                            substring = tb4.p(substring, "T", substring2);
-                            str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
-                        } else {
-                            str2 = "yyyyMMdd";
-                        }
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.setTime(new SimpleDateFormat(str2).parse(substring));
-                        return calendar;
-                    }
-                    dc6Var.b("T delimeter is not found", new Object[0]);
-                }
-                calendar.setTime(new SimpleDateFormat(str2).parse(substring));
-                return calendar;
-            } catch (ParseException e3) {
-                Log.e(dc6Var.a, dc6Var.d("Error parsing string", new Object[0]), e3);
-                return null;
-            }
-            substring2 = null;
-            if (TextUtils.isEmpty(substring2)) {
-            }
-            Calendar calendar2 = Calendar.getInstance();
-        }
-        substring = null;
-        if (!TextUtils.isEmpty(substring)) {
+        super.e(str, fileDescriptor, printWriter, strArr);
+    }
+
+    @Override // hg0
+    public final a94[] f() {
+        return kid.b;
+    }
+
+    @Override // hg0
+    public final int i() {
+        return 17895000;
+    }
+
+    @Override // hg0
+    public final void j(wi5 wi5Var, Set set) {
+        if (set != null) {
+            super.j(wi5Var, set);
         }
     }
 
-    public static JSONArray b(ArrayList arrayList) {
-        arrayList.getClass();
-        JSONArray jSONArray = new JSONArray();
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            vsc vscVar = (vsc) obj;
-            vscVar.getClass();
-            JSONObject jSONObject = new JSONObject();
-            try {
-                jSONObject.put("url", vscVar.b.toString());
-                jSONObject.put("width", vscVar.c);
-                jSONObject.put("height", vscVar.d);
-            } catch (JSONException unused) {
-            }
-            jSONArray.put(jSONObject);
-        }
-        return jSONArray;
+    @Override // hg0
+    public final String l() {
+        return "com.google.firebase.pnv.internal.IFpnvService";
     }
 
-    public static void c(ArrayList arrayList, JSONArray jSONArray) {
-        try {
-            arrayList.clear();
-            for (int i = 0; i < jSONArray.length(); i++) {
-                try {
-                    arrayList.add(new vsc(jSONArray.getJSONObject(i)));
-                } catch (IllegalArgumentException unused) {
-                }
-            }
-        } catch (JSONException unused2) {
-        }
+    @Override // hg0
+    public final String n() {
+        return "com.google.android.gms.firebase.fpnv.service.START";
+    }
+
+    @Override // hg0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // hg0
+    public final boolean x() {
+        return true;
     }
 }

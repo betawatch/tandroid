@@ -1,49 +1,53 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class pt8 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ st8 b;
+public final class pt8 extends xt3 {
+    public final ll f2;
+    public int g2;
+    public final hn h2;
+    public final /* synthetic */ eu8 i2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pt8(st8 st8Var, Activity activity) {
-        super(activity);
-        this.b = st8Var;
-        this.a = false;
+    public pt8(eu8 eu8Var, Context context, vnb vnbVar) {
+        super(context, vnbVar);
+        this.i2 = eu8Var;
+        this.f2 = new ll(this);
+        hn hnVar = new hn(false, true, true);
+        this.h2 = hnVar;
+        hnVar.n(0.2f, 160L, k43.h);
+        hnVar.w(hl.L(15.33f));
+        hnVar.setCallback(this);
+        hnVar.b = 5;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        st8 st8Var = this.b;
-        hn7 hn7Var = st8Var.I;
-        hn7 hn7Var2 = st8Var.H;
-        this.a = true;
-        Point point = gl.q;
-        int i3 = point.x > point.y ? 3 : 5;
-        hn7Var2.setItemCount(i3);
-        hn7Var.setItemCount(i3);
-        hn7Var2.getLayoutParams().height = gl.L(54.0f) * i3;
-        hn7Var.getLayoutParams().height = gl.L(54.0f) * i3;
-        this.a = false;
-        int size = View.MeasureSpec.getSize(i);
-        st8Var.O = size;
-        if (size != 0) {
-            st8Var.c(false);
-        }
-        super.onMeasure(i, i2);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a = this.f2.a(aob.v0(this.g2 < 0 ? aob.p7 : aob.P5, this.i2.f), false);
+        hn hnVar = this.h2;
+        hnVar.u(a);
+        hnVar.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        hnVar.draw(canvas);
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, cu3, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        super.onTextChanged(charSequence, i, i2, i3);
+        hn hnVar = this.h2;
+        if (hnVar != null) {
+            this.g2 = 12 - charSequence.length();
+            hnVar.a();
+            hnVar.t(this.g2 > 4 ? "" : String.valueOf(this.g2), true, true);
         }
-        super.requestLayout();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.h2 || super.verifyDrawable(drawable);
     }
 }

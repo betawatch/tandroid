@@ -4,11 +4,11 @@ import android.content.Context;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzlc implements zzlb {
     private final Context zza;
-    private final Map zzb = qi6.c(new ku7(2, "activity"), new ku7(3, "phone"), new ku7(4, "input_method"), new ku7(5, MediaStreamTrack.AUDIO_TRACK_KIND));
+    private final Map zzb = uk6.c(new rx7(2, "activity"), new rx7(3, "phone"), new rx7(4, "input_method"), new rx7(5, MediaStreamTrack.AUDIO_TRACK_KIND));
 
     public zzlc(Context context) {
         this.zza = context;
@@ -27,7 +27,7 @@ public final class zzlc implements zzlb {
         }
         Integer num = (Integer) obj;
         if (num == null) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return null;
         }
         Object obj2 = this.zzb.get(Integer.valueOf(num.intValue()));

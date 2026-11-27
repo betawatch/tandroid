@@ -1,22 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class x3 implements Runnable {
-    public final ea9 a;
-    public final t56 b;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-    public x3(ea9 ea9Var, t56 t56Var) {
-        this.a = ea9Var;
-        this.b = t56Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class x3 extends wpd {
+    public final AtomicReferenceFieldUpdater a;
+    public final AtomicReferenceFieldUpdater b;
+    public final AtomicReferenceFieldUpdater c;
+    public final AtomicReferenceFieldUpdater d;
+    public final AtomicReferenceFieldUpdater e;
+
+    public x3(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
+        this.a = atomicReferenceFieldUpdater;
+        this.b = atomicReferenceFieldUpdater2;
+        this.c = atomicReferenceFieldUpdater3;
+        this.d = atomicReferenceFieldUpdater4;
+        this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.a.a == this) {
-            if (a4.f.b(this.a, this, a4.h(this.b))) {
-                a4.e(this.a);
+    @Override // wpd
+    public final boolean a(b4 b4Var, w3 w3Var, w3 w3Var2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.d;
+            if (atomicReferenceFieldUpdater.compareAndSet(b4Var, w3Var, w3Var2)) {
+                return true;
             }
-        }
+        } while (atomicReferenceFieldUpdater.get(b4Var) == w3Var);
+        return false;
+    }
+
+    @Override // wpd
+    public final boolean b(b4 b4Var, Object obj, Object obj2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.e;
+            if (atomicReferenceFieldUpdater.compareAndSet(b4Var, obj, obj2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(b4Var) == obj);
+        return false;
+    }
+
+    @Override // wpd
+    public final boolean c(b4 b4Var, a4 a4Var, a4 a4Var2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.c;
+            if (atomicReferenceFieldUpdater.compareAndSet(b4Var, a4Var, a4Var2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(b4Var) == a4Var);
+        return false;
+    }
+
+    @Override // wpd
+    public final void d(a4 a4Var, a4 a4Var2) {
+        this.b.lazySet(a4Var, a4Var2);
+    }
+
+    @Override // wpd
+    public final void e(a4 a4Var, Thread thread) {
+        this.a.lazySet(a4Var, thread);
     }
 }

@@ -1,42 +1,30 @@
 // default package
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class sk1 {
-    public float a;
-    public float b;
-    public int c;
-    public StaticLayout d;
-    public TextPaint e;
-    public final ArrayList f = new ArrayList();
-    public final AtomicReference g = new AtomicReference();
-    public cm h;
-    public final /* synthetic */ uk1 i;
+    public final byte a;
+    public int b;
+    public float c;
+    public float d;
+    public ValueAnimator e;
+    public float f = 0.0f;
+    public final /* synthetic */ uk1 g;
 
-    public sk1(uk1 uk1Var) {
-        this.i = uk1Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public sk1(uk1 uk1Var, int i) {
+        this.g = uk1Var;
+        this.a = i;
     }
 
-    public final void a(int i, TextPaint textPaint, CharSequence charSequence) {
-        this.e = textPaint;
-        this.c = i;
-        StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
-        this.d = staticLayout;
-        uk1 uk1Var = this.i;
-        k27 k27Var = uk1Var.Q0;
-        ArrayList arrayList = this.f;
-        if (k27Var == null || !k27Var.N0) {
-            qla.b(uk1Var, staticLayout, -1, i, null, arrayList);
-        } else {
-            arrayList.clear();
-        }
-        this.h = gm.update(0, (View) uk1Var, false, this.h, this.d);
+    public final void a() {
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.e = ofFloat;
+        ofFloat.setDuration(600L);
+        this.e.setInterpolator(pf0.D1);
+        this.e.addUpdateListener(new g0(this, (byte) 27));
+        this.e.start();
     }
 }

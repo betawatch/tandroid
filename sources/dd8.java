@@ -1,304 +1,230 @@
 // default package
 
-import android.util.Pair;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Point;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dd8 extends aob {
-    public static final /* synthetic */ int n = 0;
-    public final int e;
-    public final wga f;
-    public final int g;
-    public final int h;
-    public final int[] i;
-    public final int[] j;
-    public final aob[] k;
-    public final Object[] l;
-    public final HashMap m;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dd8 extends FrameLayout implements fn7 {
+    public final FrameLayout a;
+    public final b6 b;
+    public final ema[] c;
+    public final in d;
+    public AnimatorSet e;
+    public AnimatorSet f;
+    public boolean h;
+    public ValueAnimator n;
+    public float r;
+    public int s;
 
-    public dd8(aob[] aobVarArr, Object[] objArr, wga wgaVar) {
-        this.f = wgaVar;
-        this.e = wgaVar.c();
-        int length = aobVarArr.length;
-        this.k = aobVarArr;
-        this.i = new int[length];
-        this.j = new int[length];
-        this.l = objArr;
-        this.m = new HashMap();
-        int length2 = aobVarArr.length;
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        int i4 = 0;
-        while (i < length2) {
-            aob aobVar = aobVarArr[i];
-            this.k[i4] = aobVar;
-            this.j[i4] = i2;
-            this.i[i4] = i3;
-            i2 += aobVar.o();
-            i3 += this.k[i4].h();
-            this.m.put(objArr[i4], Integer.valueOf(i4));
-            i++;
-            i4++;
+    public dd8(Activity activity) {
+        super(activity);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        frameLayout.setPadding(hl.L(56.0f), 0, 0, 0);
+        addView(frameLayout, tre.e(-1, -1, jn7.D1));
+        b6 b6Var = new b6(activity, (byte) 25);
+        this.b = b6Var;
+        b6Var.setPivotX(hl.L(16.0f));
+        b6Var.setPadding(hl.L(16.0f), 0, 0, 0);
+        b6Var.setClipToPadding(false);
+        frameLayout.addView(b6Var, tre.e(-1, -1, jn7.D1));
+        this.c = new ema[2];
+        for (int i = 0; i < 2; i++) {
+            this.c[i] = new ema(activity);
+            this.c[i].setGravity(19);
+            this.c[i].setTextColor(-1);
+            this.c[i].setTextSize(20);
+            this.c[i].setTypeface(hl.o());
+            this.c[i].setDrawablePadding(hl.L(4.0f));
+            this.c[i].setScrollNonFitText(true);
+            this.b.addView(this.c[i], tre.e(-1, -2, 19));
         }
-        this.g = i2;
-        this.h = i3;
+        in inVar = new in(activity, true, false, false);
+        this.d = inVar;
+        inVar.b(0.4f, 320L, k43.h);
+        inVar.setTextSize(hl.L(14.0f));
+        inVar.setGravity(19);
+        inVar.setTextColor(-1);
+        inVar.setEllipsizeByGradient(true);
+        inVar.setImportantForAccessibility(1);
+        inVar.setAccessibilityLiveRegion(1);
+        this.a.addView(inVar, tre.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
     }
 
-    @Override // aob
-    public final int a(boolean z) {
-        if (this.e != 0) {
-            int i = 0;
-            if (z) {
-                int[] iArr = this.f.b;
-                i = iArr.length > 0 ? iArr[0] : -1;
+    public final void a(CharSequence charSequence, boolean z) {
+        boolean isEmpty = TextUtils.isEmpty(charSequence);
+        boolean z2 = !isEmpty;
+        boolean z3 = this.h;
+        in inVar = this.d;
+        if (z2 != z3) {
+            this.h = z2;
+            AnimatorSet animatorSet = this.f;
+            if (animatorSet != null) {
+                animatorSet.cancel();
             }
-            while (x(i).p()) {
-                i = w(i, z);
-                if (i == -1) {
-                }
-            }
-            return x(i).a(z) + v(i);
-        }
-        return -1;
-    }
-
-    @Override // aob
-    public final int b(Object obj) {
-        int b;
-        if (!(obj instanceof Pair)) {
-            return -1;
-        }
-        Pair pair = (Pair) obj;
-        Object obj2 = pair.first;
-        Object obj3 = pair.second;
-        int q = q(obj2);
-        if (q == -1 || (b = x(q).b(obj3)) == -1) {
-            return -1;
-        }
-        return u(q) + b;
-    }
-
-    @Override // aob
-    public final int c(boolean z) {
-        int i;
-        int i2 = this.e;
-        if (i2 != 0) {
-            wga wgaVar = this.f;
+            Point point = hl.q;
+            int L = hl.L((!isEmpty ? 30 : 33) - (point.x > point.y ? 6 : 0));
+            b6 b6Var = this.b;
             if (z) {
-                int[] iArr = wgaVar.b;
-                i = iArr.length > 0 ? iArr[iArr.length - 1] : -1;
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(ObjectAnimator.ofFloat(inVar, (Property<in, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
+                float[] fArr = {L};
+                Property property = View.TRANSLATION_Y;
+                arrayList.add(ObjectAnimator.ofFloat(inVar, (Property<in, Float>) property, fArr));
+                arrayList.add(ObjectAnimator.ofFloat(b6Var, (Property<b6, Float>) property, isEmpty ? 0.0f : hl.L(-12.0f)));
+                arrayList.add(ObjectAnimator.ofFloat(b6Var, (Property<b6, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(b6Var, (Property<b6, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                this.f = animatorSet2;
+                animatorSet2.playTogether(arrayList);
+                this.f.setInterpolator(k43.h);
+                this.f.start();
             } else {
-                i = i2 - 1;
+                inVar.setAlpha(!isEmpty ? 1.0f : 0.0f);
+                inVar.setTranslationY(L);
+                b6Var.setTranslationY(isEmpty ? 0.0f : hl.L(-12.0f));
+                b6Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
+                b6Var.setScaleY(isEmpty ? 1.0f : 0.87f);
             }
-            while (x(i).p()) {
-                i = z ? wgaVar.d(i) : i > 0 ? i - 1 : -1;
-                if (i == -1) {
-                }
-            }
-            return x(i).c(z) + v(i);
         }
-        return -1;
+        inVar.c(charSequence, z, true);
+        if (TextUtils.isEmpty(charSequence)) {
+            charSequence = null;
+        }
+        inVar.setContentDescription(charSequence);
     }
 
-    @Override // aob
-    public final int e(int i, int i2, boolean z) {
-        int s = s(i);
-        int v = v(s);
-        int e = x(s).e(i - v, i2 == 2 ? 0 : i2, z);
-        if (e != -1) {
-            return v + e;
-        }
-        int w = w(s, z);
-        while (w != -1) {
-            if (!x(w).p()) {
-                return x(w).a(z) + v(w);
-            }
-            w = w(w, z);
-        }
-        if (i2 == 2) {
-            return a(z);
-        }
-        return -1;
+    public final void b(boolean z) {
+        ema[] emaVarArr = this.c;
+        emaVarArr[0].getPaint().setShadowLayer(hl.N(0.66f), 0.0f, 1.0f, z ? 1912602624 : 0);
+        emaVarArr[1].getPaint().setShadowLayer(hl.N(0.66f), 0.0f, 1.0f, z ? 1912602624 : 0);
+        this.d.getDrawable().s(hl.N(0.66f), 1.0f, z ? 1912602624 : 0);
     }
 
-    @Override // aob
-    public final xnb f(int i, xnb xnbVar, boolean z) {
-        int r = r(i);
-        int v = v(r);
-        x(r).f(i - u(r), xnbVar, z);
-        xnbVar.c += v;
+    public final void c(CharSequence charSequence) {
+        ema[] emaVarArr = this.c;
+        emaVarArr[1].setAlpha(0.0f);
+        emaVarArr[1].setVisibility(8);
+        CharSequence text = emaVarArr[0].getText();
+        if (!(text == null ? false : TextUtils.equals(text.toString(), charSequence.toString()))) {
+            ema emaVar = emaVarArr[0];
+            emaVar.S = 0.0f;
+            emaVar.b();
+        }
+        emaVarArr[0].k(charSequence);
+        emaVarArr[0].setAlpha(1.0f);
+        emaVarArr[0].setTranslationX(0.0f);
+        emaVarArr[0].setTranslationY(0.0f);
+    }
+
+    public final void d(CharSequence charSequence, boolean z, boolean z2) {
+        ema[] emaVarArr = this.c;
+        CharSequence text = emaVarArr[0].getText();
+        if (text == null ? false : TextUtils.equals(text.toString(), charSequence.toString())) {
+            return;
+        }
+        AnimatorSet animatorSet = this.e;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.e = null;
+        }
+        ema emaVar = emaVarArr[1];
+        ema emaVar2 = emaVarArr[0];
+        emaVar.getClass();
+        emaVar.S = emaVar2.S;
+        emaVar.b();
+        emaVarArr[1].k(emaVarArr[0].getText());
+        emaVarArr[1].setRightPadding((int) this.r);
+        ema emaVar3 = emaVarArr[0];
+        emaVar3.S = 0.0f;
+        emaVar3.b();
+        emaVarArr[0].k(charSequence);
+        float L = hl.L(8.0f) * (z2 ? 1 : -1);
+        emaVarArr[1].setTranslationX(0.0f);
+        emaVarArr[1].setTranslationY(0.0f);
         if (z) {
-            Object t = t(r);
-            Object obj = xnbVar.b;
-            obj.getClass();
-            xnbVar.b = Pair.create(t, obj);
+            emaVarArr[0].setTranslationX(0.0f);
+            emaVarArr[0].setTranslationY(-L);
+        } else {
+            emaVarArr[0].setTranslationX(-L);
+            emaVarArr[0].setTranslationY(0.0f);
         }
-        return xnbVar;
-    }
-
-    @Override // aob
-    public final xnb g(Object obj, xnb xnbVar) {
-        Pair pair = (Pair) obj;
-        Object obj2 = pair.first;
-        Object obj3 = pair.second;
-        int q = q(obj2);
-        int v = v(q);
-        x(q).g(obj3, xnbVar);
-        xnbVar.c += v;
-        xnbVar.b = obj;
-        return xnbVar;
-    }
-
-    @Override // aob
-    public final int h() {
-        return this.h;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0025, code lost:
-    
-        if (r0 > 0) goto L21;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0028, code lost:
-    
-        r0 = r0 - 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0028, code lost:
-    
-        r0 = -1;
-     */
-    @Override // aob
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int k(int i, int i2, boolean z) {
-        int i3;
-        int s = s(i);
-        int v = v(s);
-        int k = x(s).k(i - v, i2 == 2 ? 0 : i2, z);
-        if (k != -1) {
-            return v + k;
-        }
-        wga wgaVar = this.f;
+        emaVarArr[0].setAlpha(0.0f);
+        emaVarArr[1].setAlpha(1.0f);
+        emaVarArr[0].setVisibility(0);
+        emaVarArr[1].setVisibility(0);
+        ArrayList arrayList = new ArrayList();
+        Property property = View.ALPHA;
+        arrayList.add(ObjectAnimator.ofFloat(emaVarArr[1], (Property<ema, Float>) property, 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(emaVarArr[0], (Property<ema, Float>) property, 1.0f));
+        ema emaVar4 = emaVarArr[1];
+        Property property2 = View.TRANSLATION_X;
+        Property property3 = View.TRANSLATION_Y;
+        arrayList.add(ObjectAnimator.ofFloat(emaVar4, (Property<ema, Float>) (z ? property3 : property2), L));
+        ema emaVar5 = emaVarArr[0];
         if (z) {
-            i3 = wgaVar.d(s);
+            property2 = property3;
         }
-        while (i3 != -1) {
-            if (!x(i3).p()) {
-                return x(i3).c(z) + v(i3);
-            }
-            i3 = z ? wgaVar.d(i3) : i3 > 0 ? i3 - 1 : -1;
+        arrayList.add(ObjectAnimator.ofFloat(emaVar5, (Property<ema, Float>) property2, 0.0f));
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.e = animatorSet2;
+        animatorSet2.playTogether(arrayList);
+        this.e.addListener(new n88(this, (byte) 11));
+        this.e.setDuration(320L);
+        this.e.setInterpolator(k43.h);
+        this.e.start();
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i == jn7.l4) {
+            ema[] emaVarArr = this.c;
+            emaVarArr[0].invalidate();
+            emaVarArr[1].invalidate();
+            this.d.invalidate();
         }
-        if (i2 == 2) {
-            return c(z);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        jn7.e().b(this, jn7.l4);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        jn7.e().n(this, jn7.l4);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        this.a.layout(0, hl.m, i3 - i, i4 - i2);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        int i3 = hl.m;
+        int i4 = this.s;
+        int i5 = hl.q.y;
+        if (i4 != i5) {
+            this.s = i5;
+            this.h = !this.h;
+            a(this.d.getText(), false);
         }
-        return -1;
-    }
-
-    @Override // aob
-    public final Object l(int i) {
-        int r = r(i);
-        return Pair.create(t(r), x(r).l(i - u(r)));
-    }
-
-    @Override // aob
-    public final znb m(int i, znb znbVar, long j) {
-        int s = s(i);
-        int v = v(s);
-        int u = u(s);
-        x(s).m(i - v, znbVar, j);
-        Object t = t(s);
-        Object obj = znb.p;
-        Object obj2 = znbVar.a;
-        if (obj != obj2) {
-            t = Pair.create(t, obj2);
-        }
-        znbVar.a = t;
-        znbVar.m += u;
-        znbVar.n += u;
-        return znbVar;
-    }
-
-    @Override // aob
-    public final int o() {
-        return this.g;
-    }
-
-    public final int q(Object obj) {
-        Integer num = (Integer) this.m.get(obj);
-        if (num == null) {
-            return -1;
-        }
-        return num.intValue();
-    }
-
-    public final int r(int i) {
-        return g8c.e(this.i, i + 1, false, false);
-    }
-
-    public final int s(int i) {
-        return g8c.e(this.j, i + 1, false, false);
-    }
-
-    public final Object t(int i) {
-        return this.l[i];
-    }
-
-    public final int u(int i) {
-        return this.i[i];
-    }
-
-    public final int v(int i) {
-        return this.j[i];
-    }
-
-    public final int w(int i, boolean z) {
-        if (!z) {
-            if (i < this.e - 1) {
-                return i + 1;
-            }
-            return -1;
-        }
-        wga wgaVar = this.f;
-        int i2 = wgaVar.c[i] + 1;
-        int[] iArr = wgaVar.b;
-        if (i2 < iArr.length) {
-            return iArr[i2];
-        }
-        return -1;
-    }
-
-    public final aob x(int i) {
-        return this.k[i];
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public dd8(ArrayList arrayList, wga wgaVar) {
-        this(r0, r1, wgaVar);
-        aob[] aobVarArr = new aob[arrayList.size()];
-        int size = arrayList.size();
-        int i = 0;
-        int i2 = 0;
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            aobVarArr[i2] = ((wx6) obj).b();
-            i2++;
-        }
-        Object[] objArr = new Object[arrayList.size()];
-        int size2 = arrayList.size();
-        int i4 = 0;
-        while (i4 < size2) {
-            Object obj2 = arrayList.get(i4);
-            i4++;
-            objArr[i] = ((wx6) obj2).a();
-            i++;
-        }
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - i3, TLObject.FLAG_30));
+        setMeasuredDimension(size, size2);
     }
 }

@@ -1,74 +1,38 @@
 // default package
 
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ac0 implements vs2 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public abstract class ac0 {
+    public final zb0 a = new zb0(this, 0);
+    public final jn7 b = jn7.f(yac.t0);
+    public final TLObject c;
+    public final int d;
+    public final int e;
+    public cc0 f;
+    public boolean g;
 
-    public /* synthetic */ ac0(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
+    public ac0(int i, int i2, TLObject tLObject) {
+        this.c = tLObject;
+        this.d = i;
+        this.e = i2;
     }
 
-    @Override // vs2
-    public final void accept(Object obj) {
+    public void a() {
+        uc7.s1(yac.t0).e3(this.d, ((TLRPC.Chat) this.c).id, false);
+    }
+
+    public void b(Object... objArr) {
         boolean z;
-        byte b = this.a;
-        byte b2 = 1;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
-        switch (b) {
-            case 0:
-                bc0 bc0Var = (bc0) obj3;
-                wb0 wb0Var = (wb0) obj2;
-                cc0[] cc0VarArr = wb0Var.i;
-                yb0 yb0Var = wb0Var.j;
-                if (!bc0Var.F) {
-                    if (!(obj instanceof TLRPC.UserFull)) {
-                        if (obj instanceof TLRPC.ChatFull) {
-                            bc0Var.a(wb0.a((TLRPC.Chat) yb0Var.c, (TLRPC.ChatFull) obj, cc0VarArr));
-                            break;
-                        }
-                    } else {
-                        bc0Var.a(wb0.c((TLRPC.User) yb0Var.c, (TLRPC.UserFull) obj, cc0VarArr));
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                p8c p8cVar = (p8c) obj2;
-                if (((fi0) obj3).a == 0) {
-                    gl.c3(new mn0(p8cVar, b2));
-                    break;
-                }
-                break;
-            case 2:
-                tn0 tn0Var = (tn0) obj2;
-                if (((fi0) obj3).a == 0) {
-                    gl.c3(new oz(tn0Var, (byte) 16));
-                    break;
-                }
-                break;
-            case 3:
-                ((x6b) obj3).v0((k38) obj2, (Integer) obj);
-                break;
-            case 4:
-                et4 et4Var = (et4) obj2;
-                int i = ((fi0) obj3).a;
-                z = i == 0;
-                gl.c3(new vj6((Object) et4Var, z, (Object) (z ? null : ci0.i(i)), (byte) 26));
-                break;
-            default:
-                ae2 ae2Var = (ae2) obj2;
-                int i2 = ((fi0) obj3).a;
-                z = i2 == 0;
-                gl.c3(new vj6((Object) ae2Var, z, (Object) (z ? null : ci0.i(i2)), (byte) 25));
-                break;
+        TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
+        if (chatFull != null && chatFull.id == ((TLRPC.Chat) this.c).id && (z = this.g)) {
+            if (z) {
+                this.g = false;
+                this.b.n(this.a, this.e);
+            }
+            this.f.accept(chatFull);
         }
     }
 }

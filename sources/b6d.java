@@ -1,77 +1,74 @@
 // default package
 
-import java.util.ListIterator;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class b6d extends v5c implements ListIterator {
-    public final int b;
-    public int c;
-    public final r6d d;
+public final class b6d extends b99 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b6d(r6d r6dVar, int i) {
-        super((byte) 6);
-        int size = r6dVar.size();
-        k4f.b(i, size);
-        this.b = size;
-        this.c = i;
-        this.d = r6dVar;
+    public /* synthetic */ b6d(Object obj, Looper looper, byte b) {
+        super(looper, (byte) 1);
+        this.a = b;
+        this.b = obj;
     }
 
-    public final Object a(int i) {
-        return this.d.get(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            w26.g();
-            return null;
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        switch (this.a) {
+            case 0:
+                d6d d6dVar = (d6d) this.b;
+                int i = message.what;
+                if (i == 1) {
+                    ReentrantLock reentrantLock = d6dVar.b;
+                    reentrantLock.lock();
+                    try {
+                        if (d6dVar.e()) {
+                            d6dVar.i();
+                        }
+                        return;
+                    } finally {
+                        reentrantLock.unlock();
+                    }
+                }
+                if (i == 2) {
+                    d6dVar.g();
+                    return;
+                }
+                StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 20);
+                sb.append("Unknown message id: ");
+                sb.append(i);
+                Log.w("GoogleApiClientImpl", sb.toString());
+                return;
+            default:
+                int i2 = message.what;
+                if (i2 != 1) {
+                    if (i2 == 2) {
+                        throw ((RuntimeException) message.obj);
+                    }
+                    StringBuilder sb2 = new StringBuilder(String.valueOf(i2).length() + 20);
+                    sb2.append("Unknown message id: ");
+                    sb2.append(i2);
+                    Log.w("GACStateManager", sb2.toString());
+                    return;
+                }
+                h6d h6dVar = (h6d) message.obj;
+                i6d i6dVar = (i6d) this.b;
+                h6dVar.getClass();
+                i6dVar.a.lock();
+                try {
+                    if (i6dVar.m == h6dVar.a) {
+                        h6dVar.a();
+                    }
+                    return;
+                } finally {
+                    i6dVar.a.unlock();
+                }
         }
-        int i = this.c;
-        this.c = i + 1;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            w26.g();
-            return null;
-        }
-        int i = this.c - 1;
-        this.c = i;
-        return a(i);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
     }
 }

@@ -1,31 +1,69 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ThemeActivity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class st1 extends c01 {
-    public final /* synthetic */ gb2 d;
-    public final /* synthetic */ wt1 e;
+public final /* synthetic */ class st1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ju1 b;
 
-    public st1(wt1 wt1Var, gb2 gb2Var) {
-        this.e = wt1Var;
-        this.d = gb2Var;
+    public /* synthetic */ st1(ju1 ju1Var, byte b) {
+        this.a = b;
+        this.b = ju1Var;
     }
 
-    @Override // c01
-    public final void c(boolean z) {
-        if (z) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ju1 ju1Var = this.b;
+        switch (b) {
+            case 0:
+                zu1 zu1Var = ju1Var.a;
+                zu1Var.v5 = null;
+                zu1Var.w5 = null;
+                break;
+            case 1:
+                zu1 zu1Var2 = ju1Var.a;
+                new xk8((e) zu1Var2, 8, true).show();
+                zu1Var2.getMessagesController().O3();
+                break;
+            case 2:
+                zu1 zu1Var3 = ju1Var.a;
+                new xk8((e) zu1Var3, 8, true).show();
+                zu1Var3.getMessagesController().O3();
+                break;
+            case 3:
+                zu1 zu1Var4 = ju1Var.a;
+                new xk8((e) zu1Var4, 8, true).show();
+                zu1Var4.getMessagesController().O3();
+                break;
+            case 4:
+                ju1Var.a.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
+                break;
+            case 5:
+                zu1 zu1Var5 = ju1Var.a;
+                zu1Var5.v5 = null;
+                zu1Var5.w5 = null;
+                break;
+            case 6:
+                ju1Var.a.a0.o1();
+                break;
+            case 7:
+                ju1Var.a.a0.o1();
+                break;
+            case 8:
+                zu1 zu1Var6 = ju1Var.a;
+                ThemeActivity themeActivity = new ThemeActivity(0);
+                themeActivity.V0 = true;
+                zu1Var6.presentFragment(themeActivity);
+                break;
+            default:
+                zu1 zu1Var7 = ju1Var.a;
+                zu1Var7.showDialog(new xk8((e) zu1Var7, 39, false));
+                break;
         }
-        gl.d3(new ho1(this.e.a, (byte) 11), 250L);
-    }
-
-    @Override // c01
-    public final void d() {
-        mu1 mu1Var = this.e.a;
-        gb2 gb2Var = this.d;
-        mu1Var.ac = gb2Var.getMessageObject().e1();
-        mu1Var.bc = 2;
-        mu1Var.cc = null;
-        gb2Var.invalidate();
     }
 }

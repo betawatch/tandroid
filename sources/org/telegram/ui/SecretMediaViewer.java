@@ -44,19 +44,19 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
+public class SecretMediaViewer implements fn7, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer w1;
     public float A0;
     public float B0;
     public float C0;
     public float D0;
-    public i88 E;
+    public ac8 E;
     public float E0;
     public boolean F;
     public float F0;
-    public x10 G;
+    public y10 G;
     public int[] G0;
     public AnimatorSet H;
     public boolean H0;
@@ -67,32 +67,32 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     public boolean K;
     public GestureDetector K0;
     public boolean L;
-    public fs1 M;
+    public ts1 M;
     public float M0;
     public int N;
     public int O;
     public float O0;
-    public tbc P;
+    public sfc P;
     public float P0;
-    public si9 Q;
+    public nf9 Q;
     public float Q0;
-    public jia R;
+    public ema R;
     public float R0;
     public View S;
     public float S0;
-    public ju9 T;
+    public ey9 T;
     public float T0;
     public ImageView U;
     public float U0;
-    public xb8 V;
+    public mf8 V;
     public float V0;
     public FrameLayout W;
     public float W0;
-    public s78 X;
+    public kb8 X;
     public float X0;
-    public g98 Y;
+    public wc8 Y;
     public boolean Y0;
-    public r88 Z;
+    public ic8 Z;
     public boolean Z0;
     public int a;
     public int a0;
@@ -103,25 +103,25 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     public boolean b1;
     public WindowManager.LayoutParams c;
     public boolean c0;
-    public oc6 d;
+    public d26 d;
     public float d0;
     public boolean d1;
-    public st e;
+    public tt e;
     public long e0;
     public boolean e1;
     public View f;
     public WindowInsets f0;
-    public kr9 f1;
-    public k27 g0;
+    public dv9 f1;
+    public r47 g0;
     public boolean g1;
-    public jl5 h0;
+    public mn5 h0;
     public boolean i0;
-    public a06 k1;
+    public e26 k1;
     public byte l0;
     public boolean l1;
     public long m0;
     public int m1;
-    public iu9 n;
+    public dy9 n;
     public Runnable n0;
     public boolean n1;
     public boolean o0;
@@ -129,7 +129,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     public float p0;
     public boolean p1;
     public float q0;
-    public je5 r;
+    public kg5 r;
     public float r0;
     public float[] r1;
     public boolean s;
@@ -140,7 +140,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     public boolean v1;
     public long w;
     public float w0;
-    public ix x;
+    public jx x;
     public TextureView y;
     public float y0;
     public float z0;
@@ -151,13 +151,13 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     public final DecelerateInterpolator L0 = new DecelerateInterpolator(1.5f);
     public float N0 = 1.0f;
     public boolean c1 = true;
-    public final cu9 h1 = new cu9(this, 2);
+    public final xx9 h1 = new xx9(this, 2);
     public final int[] i1 = new int[2];
     public final int[] j1 = new int[2];
-    public final cu9 q1 = new cu9(this, 3);
+    public final xx9 q1 = new xx9(this, 3);
     public final Path s1 = new Path();
-    public final pm t1 = new pm("videoCrossfadeAlpha", 13);
-    public final pm u1 = new pm("animationValue", 14);
+    public final qm t1 = new qm("videoCrossfadeAlpha", 13);
+    public final qm u1 = new qm("animationValue", 14);
 
     public static SecretMediaViewer d() {
         SecretMediaViewer secretMediaViewer;
@@ -193,7 +193,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, "animationValue", 0.0f, 1.0f));
         this.J0.setInterpolator(this.L0);
         this.J0.setDuration(250L);
-        this.J0.addListener(new hu9(this, (byte) 3));
+        this.J0.addListener(new cy9(this, (byte) 3));
         this.J0.start();
     }
 
@@ -237,8 +237,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean c(boolean z, boolean z2) {
-        p98 p98Var;
-        i88 i88Var;
+        fd8 fd8Var;
+        ac8 ac8Var;
         Runnable runnable;
         Runnable runnable2;
         char c;
@@ -263,11 +263,11 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 Activity activity = this.b;
                 byte b2 = 1;
                 if (activity != null) {
-                    gl.h3(activity, this.n1);
+                    hl.h3(activity, this.n1);
                     Activity activity2 = this.b;
                     int i2 = this.m1;
                     if (activity2 != null) {
-                        gl.p3(activity2.getWindow(), i2, true, null);
+                        hl.p3(activity2.getWindow(), i2, true, null);
                     }
                     Activity activity3 = this.b;
                     boolean z4 = activity3 instanceof LaunchActivity;
@@ -275,47 +275,47 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                     if (z4) {
                         ((LaunchActivity) activity3).z(i3);
                     } else if (activity3 != null) {
-                        gl.p3(activity3.getWindow(), i3, true, null);
+                        hl.p3(activity3.getWindow(), i3, true, null);
                     }
                 }
-                a06 a06Var = this.k1;
-                if (a06Var != null) {
-                    a06Var.a();
+                e26 e26Var = this.k1;
+                if (e26Var != null) {
+                    e26Var.a();
                     this.k1 = null;
                 }
-                kk7.f(this.a).n(this, kk7.v);
-                kk7.f(this.a).n(this, kk7.k0);
-                kk7.f(this.a).n(this, kk7.h0);
+                jn7.f(this.a).n(this, jn7.v);
+                jn7.f(this.a).n(this, jn7.l0);
+                jn7.f(this.a).n(this, jn7.i0);
                 this.j0 = false;
                 System.currentTimeMillis();
-                fs1 fs1Var = this.M;
-                if (fs1Var != null) {
-                    k27 k27Var = this.g0;
-                    TLRPC.MessageMedia messageMedia = k27Var.k.media;
+                ts1 ts1Var = this.M;
+                if (ts1Var != null) {
+                    r47 r47Var = this.g0;
+                    TLRPC.MessageMedia messageMedia = r47Var.k.media;
                     if (!(messageMedia.photo instanceof TLRPC.TL_photoEmpty) && !(messageMedia.document instanceof TLRPC.TL_documentEmpty)) {
-                        p98Var = fs1Var.M(k27Var, null, 0, true, false);
-                        i88Var = this.E;
-                        if (i88Var != null) {
-                            i88Var.f0();
+                        fd8Var = ts1Var.M(r47Var, null, 0, true, false);
+                        ac8Var = this.E;
+                        if (ac8Var != null) {
+                            ac8Var.f0();
                         }
                         PhotoBackgroundDrawable photoBackgroundDrawable = this.k0;
                         if (z) {
                             l(false, true);
                             AnimatorSet animatorSet = new AnimatorSet();
-                            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, (Property<st, Float>) View.SCALE_X, 0.9f);
-                            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.e, (Property<st, Float>) View.SCALE_Y, 0.9f);
-                            ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, rn.d, 0);
-                            x10 x10Var = this.G;
+                            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, (Property<tt, Float>) View.SCALE_X, 0.9f);
+                            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.e, (Property<tt, Float>) View.SCALE_Y, 0.9f);
+                            ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, sn.d, 0);
+                            y10 y10Var = this.G;
                             Property property = View.ALPHA;
-                            ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(x10Var, (Property<x10, Float>) property, 0.0f);
-                            ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.Z, (Property<r88, Float>) property, 0.0f);
+                            ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(y10Var, (Property<y10, Float>) property, 0.0f);
+                            ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.Z, (Property<ic8, Float>) property, 0.0f);
                             ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(this.f, (Property<View, Float>) property, 0.0f);
-                            ju9 ju9Var = this.T;
-                            animatorSet.playTogether(ofFloat, ofFloat2, ofInt, ofFloat3, ofFloat4, ofFloat5, ObjectAnimator.ofFloat(ju9Var, ju9Var.n, 0.0f), ObjectAnimator.ofFloat(this.T, (Property<ju9, Float>) property, 0.0f));
+                            ey9 ey9Var = this.T;
+                            animatorSet.playTogether(ofFloat, ofFloat2, ofInt, ofFloat3, ofFloat4, ofFloat5, ObjectAnimator.ofFloat(ey9Var, ey9Var.n, 0.0f), ObjectAnimator.ofFloat(this.T, (Property<ey9, Float>) property, 0.0f));
                             this.l0 = (byte) 2;
-                            this.n0 = new cu9(this, p98Var, b2);
+                            this.n0 = new xx9(this, fd8Var, b2);
                             animatorSet.setDuration(200L);
-                            animatorSet.addListener(new hu9(this, (byte) 2));
+                            animatorSet.addListener(new cy9(this, (byte) 2));
                             this.m0 = System.currentTimeMillis();
                             runnable = null;
                             this.e.setLayerType(2, null);
@@ -324,8 +324,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                             this.l0 = (byte) 3;
                             this.e.invalidate();
                             this.J0 = new AnimatorSet();
-                            if (p98Var != null) {
-                                ImageReceiver imageReceiver = p98Var.a;
+                            if (fd8Var != null) {
+                                ImageReceiver imageReceiver = fd8Var.a;
                                 Drawable drawable = imageReceiver.b0;
                                 c2 = 7;
                                 if (drawable instanceof BitmapDrawable) {
@@ -337,28 +337,28 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                                 if (bitmap == null || z2 || this.o1 != null) {
                                     c = 3;
                                 } else {
-                                    p98Var.a.v0(false, true);
-                                    RectF rectF = p98Var.a.Q0;
+                                    fd8Var.a.v0(false, true);
+                                    RectF rectF = fd8Var.a.Q0;
                                     float f = rectF.right - rectF.left;
                                     c3 = 6;
                                     float f2 = rectF.bottom - rectF.top;
-                                    Point point = gl.q;
+                                    Point point = hl.q;
                                     c4 = 5;
                                     c5 = 4;
                                     c = 3;
-                                    this.A0 = Math.max(f / point.x, f2 / (point.y + gl.m));
-                                    float f3 = p98Var.b;
+                                    this.A0 = Math.max(f / point.x, f2 / (point.y + hl.m));
+                                    float f3 = fd8Var.b;
                                     float f4 = rectF.left;
                                     this.y0 = ((f / 2.0f) + (f3 + f4)) - (r8 / 2);
-                                    this.z0 = ((f2 / 2.0f) + (p98Var.c + rectF.top)) - (r7 / 2);
-                                    this.F0 = Math.abs(f4 - p98Var.a.L0);
-                                    int abs = (int) Math.abs(rectF.top - p98Var.a.M0);
-                                    p98Var.d.getLocationInWindow(new int[2]);
-                                    float f5 = (r8[1] - (p98Var.c + rectF.top)) + p98Var.j;
+                                    this.z0 = ((f2 / 2.0f) + (fd8Var.c + rectF.top)) - (r7 / 2);
+                                    this.F0 = Math.abs(f4 - fd8Var.a.L0);
+                                    int abs = (int) Math.abs(rectF.top - fd8Var.a.M0);
+                                    fd8Var.d.getLocationInWindow(new int[2]);
+                                    float f5 = (r8[1] - (fd8Var.c + rectF.top)) + fd8Var.j;
                                     this.B0 = f5;
                                     float f6 = abs;
                                     this.B0 = Math.max(0.0f, Math.max(f5, f6));
-                                    float height = (((p98Var.c + rectF.top) + ((int) f2)) - (p98Var.d.getHeight() + r8[1])) + p98Var.i;
+                                    float height = (((fd8Var.c + rectF.top) + ((int) f2)) - (fd8Var.d.getHeight() + r8[1])) + fd8Var.i;
                                     this.C0 = height;
                                     this.C0 = Math.max(0.0f, Math.max(height, f6));
                                     this.D0 = 0.0f;
@@ -370,25 +370,25 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                                     this.H0 = false;
                                     l(false, true);
                                     z3 = this.K;
-                                    pm pmVar = this.u1;
+                                    qm qmVar = this.u1;
                                     if (z3) {
                                         b = 0;
                                         ImageReceiver imageReceiver2 = this.h;
                                         imageReceiver2.m1 = true;
                                         AnimatorSet animatorSet2 = this.J0;
-                                        ObjectAnimator ofInt2 = ObjectAnimator.ofInt(photoBackgroundDrawable, rn.d, 0);
-                                        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(this, pmVar, 0.0f, 1.0f);
-                                        x10 x10Var2 = this.G;
+                                        ObjectAnimator ofInt2 = ObjectAnimator.ofInt(photoBackgroundDrawable, sn.d, 0);
+                                        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(this, qmVar, 0.0f, 1.0f);
+                                        y10 y10Var2 = this.G;
                                         Property property2 = View.ALPHA;
-                                        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(x10Var2, (Property<x10, Float>) property2, 0.0f);
-                                        ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(this.Z, (Property<r88, Float>) property2, 0.0f);
+                                        ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(y10Var2, (Property<y10, Float>) property2, 0.0f);
+                                        ObjectAnimator ofFloat8 = ObjectAnimator.ofFloat(this.Z, (Property<ic8, Float>) property2, 0.0f);
                                         ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(this.f, (Property<View, Float>) property2, 0.0f);
-                                        ju9 ju9Var2 = this.T;
-                                        ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(ju9Var2, ju9Var2.n, 0.0f);
-                                        ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(this.T, (Property<ju9, Float>) property2, 0.0f);
+                                        ey9 ey9Var2 = this.T;
+                                        ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(ey9Var2, ey9Var2.n, 0.0f);
+                                        ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(this.T, (Property<ey9, Float>) property2, 0.0f);
                                         i = 2;
-                                        ObjectAnimator ofFloat12 = ObjectAnimator.ofFloat(this.r, (Property<je5, Float>) property2, 0.0f);
-                                        ObjectAnimator ofFloat13 = ObjectAnimator.ofFloat(imageReceiver2, rn.c, 0.0f);
+                                        ObjectAnimator ofFloat12 = ObjectAnimator.ofFloat(this.r, (Property<kg5, Float>) property2, 0.0f);
+                                        ObjectAnimator ofFloat13 = ObjectAnimator.ofFloat(imageReceiver2, sn.c, 0.0f);
                                         Animator[] animatorArr = new Animator[9];
                                         animatorArr[0] = ofInt2;
                                         animatorArr[1] = ofFloat6;
@@ -404,18 +404,18 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                                         this.c0 = false;
                                         this.b0 = false;
                                         AnimatorSet animatorSet3 = this.J0;
-                                        ObjectAnimator ofInt3 = ObjectAnimator.ofInt(photoBackgroundDrawable, rn.d, 0);
-                                        ObjectAnimator ofFloat14 = ObjectAnimator.ofFloat(this, pmVar, 0.0f, 1.0f);
-                                        x10 x10Var3 = this.G;
+                                        ObjectAnimator ofInt3 = ObjectAnimator.ofInt(photoBackgroundDrawable, sn.d, 0);
+                                        ObjectAnimator ofFloat14 = ObjectAnimator.ofFloat(this, qmVar, 0.0f, 1.0f);
+                                        y10 y10Var3 = this.G;
                                         Property property3 = View.ALPHA;
-                                        ObjectAnimator ofFloat15 = ObjectAnimator.ofFloat(x10Var3, (Property<x10, Float>) property3, 0.0f);
-                                        ObjectAnimator ofFloat16 = ObjectAnimator.ofFloat(this.Z, (Property<r88, Float>) property3, 0.0f);
+                                        ObjectAnimator ofFloat15 = ObjectAnimator.ofFloat(y10Var3, (Property<y10, Float>) property3, 0.0f);
+                                        ObjectAnimator ofFloat16 = ObjectAnimator.ofFloat(this.Z, (Property<ic8, Float>) property3, 0.0f);
                                         ObjectAnimator ofFloat17 = ObjectAnimator.ofFloat(this.f, (Property<View, Float>) property3, 0.0f);
-                                        ju9 ju9Var3 = this.T;
-                                        ObjectAnimator ofFloat18 = ObjectAnimator.ofFloat(ju9Var3, ju9Var3.n, 0.0f);
-                                        ObjectAnimator ofFloat19 = ObjectAnimator.ofFloat(this.T, (Property<ju9, Float>) property3, 0.0f);
+                                        ey9 ey9Var3 = this.T;
+                                        ObjectAnimator ofFloat18 = ObjectAnimator.ofFloat(ey9Var3, ey9Var3.n, 0.0f);
+                                        ObjectAnimator ofFloat19 = ObjectAnimator.ofFloat(this.T, (Property<ey9, Float>) property3, 0.0f);
                                         b = 0;
-                                        ObjectAnimator ofFloat20 = ObjectAnimator.ofFloat(this.r, (Property<je5, Float>) property3, 0.0f);
+                                        ObjectAnimator ofFloat20 = ObjectAnimator.ofFloat(this.r, (Property<kg5, Float>) property3, 0.0f);
                                         ObjectAnimator ofFloat21 = ObjectAnimator.ofFloat(this, this.t1, 0.0f);
                                         Animator[] animatorArr2 = new Animator[9];
                                         animatorArr2[0] = ofInt3;
@@ -430,10 +430,10 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                                         animatorSet3.playTogether(animatorArr2);
                                         i = 2;
                                     }
-                                    this.n0 = new cu9(this, p98Var, b);
+                                    this.n0 = new xx9(this, fd8Var, b);
                                     this.J0.setInterpolator(new DecelerateInterpolator());
                                     this.J0.setDuration(250L);
-                                    this.J0.addListener(new eh8((Object) this, (Object) p98Var, (byte) 12));
+                                    this.J0.addListener(new wd8((Object) this, (Object) fd8Var, (byte) 13));
                                     this.m0 = System.currentTimeMillis();
                                     this.e.setLayerType(i, null);
                                     this.J0.start();
@@ -446,7 +446,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                             c3 = 6;
                             c4 = 5;
                             c5 = 4;
-                            int i4 = gl.q.y + gl.m;
+                            int i4 = hl.q.y + hl.m;
                             if (this.w0 < 0.0f) {
                                 i4 = -i4;
                             }
@@ -454,13 +454,13 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                             this.H0 = false;
                             l(false, true);
                             z3 = this.K;
-                            pm pmVar2 = this.u1;
+                            qm qmVar2 = this.u1;
                             if (z3) {
                             }
-                            this.n0 = new cu9(this, p98Var, b);
+                            this.n0 = new xx9(this, fd8Var, b);
                             this.J0.setInterpolator(new DecelerateInterpolator());
                             this.J0.setDuration(250L);
-                            this.J0.addListener(new eh8((Object) this, (Object) p98Var, (byte) 12));
+                            this.J0.addListener(new wd8((Object) this, (Object) fd8Var, (byte) 13));
                             this.m0 = System.currentTimeMillis();
                             this.e.setLayerType(i, null);
                             this.J0.start();
@@ -474,9 +474,9 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                         return true;
                     }
                 }
-                p98Var = null;
-                i88Var = this.E;
-                if (i88Var != null) {
+                fd8Var = null;
+                ac8Var = this.E;
+                if (ac8Var != null) {
                 }
                 PhotoBackgroundDrawable photoBackgroundDrawable2 = this.k0;
                 if (z) {
@@ -490,9 +490,9 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         return false;
     }
 
-    @Override // gk7
+    @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.v) {
+        if (i == jn7.v) {
             if (((Boolean) objArr[2]).booleanValue() || this.g0 == null || ((Long) objArr[1]).longValue() != 0 || !((ArrayList) objArr[0]).contains(Integer.valueOf(this.g0.e1()))) {
                 return;
             }
@@ -507,8 +507,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 return;
             }
         }
-        if (i != kk7.h0) {
-            if (i == kk7.k0) {
+        if (i != jn7.i0) {
+            if (i == jn7.l0) {
                 if (this.g0.e1() == ((TLRPC.Message) objArr[0]).id) {
                     if (this.K && !this.I) {
                         this.J = true;
@@ -581,31 +581,31 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         int i2;
         if (this.i0) {
             if (this.J0 != null) {
-                kr9 kr9Var = this.f1;
-                if (!kr9Var.q) {
-                    kr9Var.a();
+                dv9 dv9Var = this.f1;
+                if (!dv9Var.q) {
+                    dv9Var.a();
                 }
                 float f17 = this.x0;
                 float f18 = this.A0;
                 float f19 = this.animationValue;
                 f4 = ((f18 - f17) * f19) + f17;
                 float f20 = this.w0;
-                f5 = tb4.A(this.z0, f20, f19, f20);
+                f5 = qd4.A(this.z0, f20, f19, f20);
                 float f21 = this.v0;
-                f6 = tb4.A(this.y0, f21, f19, f21);
+                f6 = qd4.A(this.y0, f21, f19, f21);
                 float f22 = this.q0;
-                f7 = tb4.A(this.B0, f22, f19, f22);
+                f7 = qd4.A(this.B0, f22, f19, f22);
                 float f23 = this.r0;
-                f8 = tb4.A(this.C0, f23, f19, f23);
+                f8 = qd4.A(this.C0, f23, f19, f23);
                 float f24 = this.s0;
                 f = -1.0f;
-                f9 = tb4.A(this.D0, f24, f19, f24);
+                f9 = qd4.A(this.D0, f24, f19, f24);
                 float f25 = this.t0;
                 f2 = 1.0f;
-                f10 = tb4.A(this.E0, f25, f19, f25);
+                f10 = qd4.A(this.E0, f25, f19, f25);
                 float f26 = this.u0;
                 f3 = 0.0f;
-                f11 = tb4.A(this.F0, f26, f19, f26);
+                f11 = qd4.A(this.F0, f26, f19, f26);
                 f12 = (f18 == 1.0f && f17 == 1.0f && f21 == 0.0f) ? f5 : -1.0f;
                 this.e.invalidate();
             } else {
@@ -626,16 +626,16 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                     o(f27);
                     this.d1 = false;
                 }
-                kr9 kr9Var2 = this.f1;
-                if (!kr9Var2.q && kr9Var2.b()) {
-                    kr9 kr9Var3 = this.f1;
-                    float f28 = kr9Var3.b;
+                dv9 dv9Var2 = this.f1;
+                if (!dv9Var2.q && dv9Var2.b()) {
+                    dv9 dv9Var3 = this.f1;
+                    float f28 = dv9Var3.b;
                     if (f28 < this.V0 && f28 > this.U0) {
-                        this.v0 = kr9Var3.j;
+                        this.v0 = dv9Var3.j;
                     }
-                    float f29 = kr9Var3.c;
+                    float f29 = dv9Var3.c;
                     if (f29 < this.X0 && f29 > this.W0) {
-                        this.w0 = kr9Var3.k;
+                        this.w0 = dv9Var3.k;
                     }
                     this.e.invalidate();
                 }
@@ -664,7 +664,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 while (i4 < i3) {
                     float[] fArr = this.r1;
                     float f31 = f3;
-                    float R1 = gl.R1(this.G0[i4 / 2] * 2.0f, f31, f30);
+                    float R1 = hl.R1(this.G0[i4 / 2] * 2.0f, f31, f30);
                     fArr[i4 + 1] = R1;
                     fArr[i4] = R1;
                     if (this.r1[i4] > f31) {
@@ -681,7 +681,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 float f32 = this.x0;
                 PhotoBackgroundDrawable photoBackgroundDrawable = this.k0;
                 if (f32 != f2 || f12 == f || this.d1) {
-                    photoBackgroundDrawable.setAlpha(kk7.d4);
+                    photoBackgroundDrawable.setAlpha(jn7.d4);
                 } else {
                     float height = this.e.getHeight() / 4.0f;
                     photoBackgroundDrawable.setAlpha((int) Math.max(127.0f, (f2 - (Math.min(Math.abs(f12), height) / height)) * 255.0f));
@@ -695,8 +695,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                         f14 = min * 0.3f;
                         f13 = f34 - min;
                         f6 = this.V0;
-                        ix ixVar = this.x;
-                        z2 = ixVar == null && ixVar.getVisibility() == 0;
+                        jx jxVar = this.x;
+                        z2 = jxVar == null && jxVar.getVisibility() == 0;
                         canvas.save();
                         float f35 = f4 - f14;
                         canvas.translate((this.e.getWidth() / 2) + f6, (this.e.getHeight() / 2) + f5);
@@ -728,7 +728,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                         if (!z) {
                             Path path = this.s1;
                             path.reset();
-                            RectF rectF = gl.P;
+                            RectF rectF = hl.P;
                             rectF.set(f39, (f9 / f35) + f16, f40, f41 - (f10 / f35));
                             path.addRoundRect(rectF, this.r1, Path.Direction.CW);
                             canvas.clipPath(path);
@@ -764,8 +764,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             }
             f13 = 1.0f;
             f14 = 0.0f;
-            ix ixVar2 = this.x;
-            if (ixVar2 == null) {
+            jx jxVar2 = this.x;
+            if (jxVar2 == null) {
             }
             canvas.save();
             float f352 = f4 - f14;
@@ -820,8 +820,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v3 */
-    public final void h(k27 k27Var, fs1 fs1Var, bl1 bl1Var, de2 de2Var) {
-        p98 M;
+    public final void h(r47 r47Var, ts1 ts1Var, fm1 fm1Var, ue2 ue2Var) {
+        fd8 M;
         ?? r17;
         String str;
         Bitmap bitmap;
@@ -830,19 +830,19 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         float f;
         boolean z;
         File M2;
-        if (this.b == null || !k27Var.l5() || fs1Var == null || (M = fs1Var.M(k27Var, null, 0, true, false)) == null) {
+        if (this.b == null || !r47Var.l5() || ts1Var == null || (M = ts1Var.M(r47Var, null, 0, true, false)) == null) {
             return;
         }
-        this.p1 = k27Var.k.ttl == Integer.MAX_VALUE;
-        this.o1 = de2Var;
-        this.M = fs1Var;
+        this.p1 = r47Var.k.ttl == Integer.MAX_VALUE;
+        this.o1 = ue2Var;
+        this.M = ts1Var;
         System.currentTimeMillis();
         this.j0 = true;
         this.i0 = true;
         this.o0 = false;
-        ix ixVar = this.x;
-        if (ixVar != null) {
-            ixVar.setVisibility(4);
+        jx jxVar = this.x;
+        if (jxVar != null) {
+            jxVar.setVisibility(4);
         }
         j();
         this.M0 = 0.0f;
@@ -879,8 +879,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         rectF.bottom = Math.min(rectF.bottom, M.a.x());
         float width = rectF.width();
         float height = rectF.height();
-        Point point = gl.q;
-        this.x0 = Math.max(width / point.x, height / (point.y + gl.m));
+        Point point = hl.q;
+        this.x0 = Math.max(width / point.x, height / (point.y + hl.m));
         int[] iArr = M.h;
         if (iArr != null) {
             this.G0 = new int[iArr.length];
@@ -928,21 +928,21 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         boolean z2 = r17;
         this.H0 = z2;
         this.d1 = z2;
-        a06 a06Var = this.k1;
-        if (a06Var != null) {
-            a06Var.a();
+        e26 e26Var = this.k1;
+        if (e26Var != null) {
+            e26Var.a();
             this.k1 = null;
         }
         this.k1 = LaunchActivity.c0();
-        kk7.f(this.a).a(this, kk7.v);
-        kk7.f(this.a).a(this, kk7.k0);
-        kk7.f(this.a).a(this, kk7.h0);
-        this.w = k27.B1(k27Var.k.peer_id);
-        this.g0 = k27Var;
-        TLRPC.Document F0 = k27Var.F0();
-        jl5 jl5Var = this.h0;
-        if (jl5Var != null) {
-            jl5Var.a();
+        jn7.f(this.a).a(this, jn7.v);
+        jn7.f(this.a).a(this, jn7.l0);
+        jn7.f(this.a).a(this, jn7.i0);
+        this.w = r47.B1(r47Var.k.peer_id);
+        this.g0 = r47Var;
+        TLRPC.Document F0 = r47Var.F0();
+        mn5 mn5Var = this.h0;
+        if (mn5Var != null) {
+            mn5Var.a();
             this.h0 = null;
         }
         ImageReceiver imageReceiver2 = M.a;
@@ -960,7 +960,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 bitmap = null;
             }
         }
-        this.h0 = bitmap != null ? new jl5(bitmap, str, 0) : null;
+        this.h0 = bitmap != null ? new mn5(bitmap, str, 0) : null;
         this.T.setVisibility(8);
         if (F0 != null) {
             int i3 = 0;
@@ -977,31 +977,31 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 }
                 i3++;
             }
-            if (k27.s3(F0, false)) {
-                this.G.setTitle(k96.M0(2131751397, null));
-                String str2 = k27Var.k.attachPath;
+            if (r47.s3(F0, false)) {
+                this.G.setTitle(ob6.M0(2131751374, null));
+                String str2 = r47Var.k.attachPath;
                 f = 1.0f;
                 photoBackgroundDrawable = photoBackgroundDrawable2;
                 i = 2;
-                imageReceiver.c0((str2 == null || !k27Var.y0) ? gl5.b(F0) : gl5.g(str2), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, k27Var, 1);
+                imageReceiver.c0((str2 == null || !r47Var.y0) ? jn5.b(F0) : jn5.g(str2), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, r47Var, 1);
             } else {
                 i = 2;
                 photoBackgroundDrawable = photoBackgroundDrawable2;
                 f = 1.0f;
                 this.a0 = 1;
-                this.G.setTitle(k96.M0(2131751395, null));
-                File file = new File(k27Var.k.attachPath);
+                this.G.setTitle(ob6.M0(2131751372, null));
+                File file = new File(r47Var.k.attachPath);
                 if (file.exists()) {
                     i(file);
                 } else {
-                    boolean D3 = k27Var.D3();
+                    boolean D3 = r47Var.D3();
                     int i4 = this.a;
                     if (D3) {
-                        ba4.G(i4);
-                        M2 = ba4.J(F0, null, true, true);
+                        xb4.G(i4);
+                        M2 = xb4.J(F0, null, true, true);
                     } else {
-                        ba4.G(i4);
-                        M2 = ba4.M(k27Var.k, false, true);
+                        xb4.G(i4);
+                        M2 = xb4.M(r47Var.k, false, true);
                     }
                     File file2 = new File(M2.getAbsolutePath() + ".enc");
                     if (file2.exists()) {
@@ -1011,41 +1011,41 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 }
                 this.K = true;
                 this.T.setVisibility(0);
-                imageReceiver.c0(null, null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, k27Var, 2);
+                imageReceiver.c0(null, null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, r47Var, 2);
             }
         } else {
             i = 2;
             photoBackgroundDrawable = photoBackgroundDrawable2;
             f = 1.0f;
-            this.G.setTitle(k96.M0(2131751396, null));
-            TLRPC.PhotoSize w = ba4.w(k27Var.p0, gl.Y0(false), false, null, false);
-            imageReceiver.c0(gl5.f(w, k27Var.n0), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, k27Var, 2);
+            this.G.setTitle(ob6.M0(2131751373, null));
+            TLRPC.PhotoSize w = xb4.w(r47Var.p0, hl.Y0(false), false, null, false);
+            imageReceiver.c0(jn5.f(w, r47Var.n0), null, this.h0 != null ? new BitmapDrawable(this.h0.c) : null, -1L, null, r47Var, 2);
             if (w != null) {
                 this.N = w.w;
                 this.O = w.h;
             }
         }
-        k(k27Var, "", false);
-        k(k27Var, k27Var.z, true);
+        k(r47Var, "", false);
+        k(r47Var, r47Var.z, true);
         n(true, false);
         l(false, false);
         this.V.a(true, true);
         boolean z3 = this.p1;
-        iu9 iu9Var = this.n;
+        dy9 dy9Var = this.n;
         if (z3) {
-            iu9Var.e = true;
-            TextPaint textPaint = iu9Var.r;
-            textPaint.setTextSize(gl.L(13.0f));
-            textPaint.setTypeface(gl.n1("fonts/num.otf"));
+            dy9Var.e = true;
+            TextPaint textPaint = dy9Var.r;
+            textPaint.setTextSize(hl.L(13.0f));
+            textPaint.setTypeface(hl.n1("fonts/num.otf"));
             textPaint.setColor(-1);
             StaticLayout staticLayout = new StaticLayout("1", textPaint, 999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            iu9Var.s = staticLayout;
-            iu9Var.w = staticLayout.getLineCount() > 0 ? iu9Var.s.getLineWidth(0) : 0.0f;
-            iu9Var.x = iu9Var.s.getHeight();
-            iu9Var.invalidate();
-            this.n.setOnClickListener(new ik8(this, (byte) 19));
+            dy9Var.s = staticLayout;
+            dy9Var.w = staticLayout.getLineCount() > 0 ? dy9Var.s.getLineWidth(0) : 0.0f;
+            dy9Var.x = dy9Var.s.getHeight();
+            dy9Var.invalidate();
+            this.n.setOnClickListener(new jn8(this, (byte) 21));
         } else {
-            iu9Var.setOnClickListener(null);
+            dy9Var.setOnClickListener(null);
         }
         try {
             if (this.d.getParent() != null) {
@@ -1054,16 +1054,16 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             z = true;
         } catch (Exception e) {
             z = true;
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
         ((WindowManager) this.b.getSystemService("window")).addView(this.d, this.c);
         this.n.invalidate();
         this.s = z;
         Window window = this.b.getWindow();
         int i5 = Build.VERSION.SDK_INT;
-        this.n1 = i5 >= 26 ? fod.a(window.getDecorView().getSystemUiVisibility(), 16) : false;
-        gl.h3(this.b, false);
-        gl.j3(this.d, false);
+        this.n1 = i5 >= 26 ? vsd.a(window.getDecorView().getSystemUiVisibility(), 16) : false;
+        hl.h3(this.b, false);
+        hl.j3(this.d, false);
         Activity activity = this.b;
         if (activity instanceof LaunchActivity) {
             this.m1 = i5 >= 26 ? ((LaunchActivity) activity).getWindow().getNavigationBarColor() : 0;
@@ -1072,42 +1072,42 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             this.m1 = window.getNavigationBarColor();
             Activity activity2 = this.b;
             if (activity2 != null) {
-                gl.p3(activity2.getWindow(), -16777216, true, null);
+                hl.p3(activity2.getWindow(), -16777216, true, null);
             }
         }
         AnimatorSet animatorSet = new AnimatorSet();
         this.J0 = animatorSet;
-        x10 x10Var = this.G;
+        y10 y10Var = this.G;
         Property property = View.ALPHA;
         float[] fArr = new float[i];
         // fill-array-data instruction
         fArr[0] = 0.0f;
         fArr[1] = 1.0f;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(x10Var, (Property<x10, Float>) property, fArr);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y10Var, (Property<y10, Float>) property, fArr);
         float[] fArr2 = new float[i];
         // fill-array-data instruction
         fArr2[0] = 0.0f;
         fArr2[1] = 1.0f;
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.Z, (Property<r88, Float>) property, fArr2);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.Z, (Property<ic8, Float>) property, fArr2);
         float[] fArr3 = new float[i];
         // fill-array-data instruction
         fArr3[0] = 0.0f;
         fArr3[1] = 1.0f;
-        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.r, (Property<je5, Float>) property, fArr3);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, rn.d, 0, kk7.d4);
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.r, (Property<kg5, Float>) property, fArr3);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, sn.d, 0, jn7.d4);
         float[] fArr4 = new float[i];
         // fill-array-data instruction
         fArr4[0] = 0.0f;
         fArr4[1] = 1.0f;
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this, this.u1, fArr4);
-        ju9 ju9Var = this.T;
+        ey9 ey9Var = this.T;
         int i6 = i;
-        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(ju9Var, ju9Var.n, f);
-        ju9 ju9Var2 = this.T;
+        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(ey9Var, ey9Var.n, f);
+        ey9 ey9Var2 = this.T;
         if (!this.K) {
             f = 0.0f;
         }
-        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(ju9Var2, (Property<ju9, Float>) property, f);
+        ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(ey9Var2, (Property<ey9, Float>) property, f);
         Animator[] animatorArr = new Animator[7];
         animatorArr[0] = ofFloat;
         animatorArr[1] = ofFloat2;
@@ -1118,16 +1118,16 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         animatorArr[6] = ofFloat6;
         animatorSet.playTogether(animatorArr);
         this.l0 = (byte) 3;
-        this.n0 = new gm8(this, bl1Var, k27Var, (byte) 27);
+        this.n0 = new jr9((Object) this, (Object) fm1Var, (Object) r47Var, (byte) 6);
         this.J0.setDuration(250L);
-        this.J0.addListener(new hu9(this, (byte) 0));
+        this.J0.addListener(new cy9(this, (byte) 0));
         this.m0 = System.currentTimeMillis();
-        if (gba.o() == 0) {
+        if (xea.o() == 0) {
             this.e.setLayerType(i6, null);
         }
         this.J0.setInterpolator(new DecelerateInterpolator());
         photoBackgroundDrawable.b = 0;
-        photoBackgroundDrawable.a = new tj9(this, M, (byte) 16);
+        photoBackgroundDrawable.a = new en9(this, M, (byte) 15);
         this.J0.start();
     }
 
@@ -1138,37 +1138,37 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         j();
         boolean z = false;
         if (this.y == null) {
-            ix ixVar = new ix(this.b);
-            this.x = ixVar;
-            ixVar.setVisibility(0);
-            this.e.addView(this.x, 0, nme.e(-1, -1, 17));
+            jx jxVar = new jx(this.b);
+            this.x = jxVar;
+            jxVar.setVisibility(0);
+            this.e.addView(this.x, 0, tre.e(-1, -1, 17));
             TextureView textureView = new TextureView(this.b);
             this.y = textureView;
             textureView.setOpaque(false);
-            this.x.addView(this.y, nme.e(-1, -1, 17));
+            this.x.addView(this.y, tre.e(-1, -1, 17));
         }
         this.b0 = false;
         this.c0 = false;
         this.y.setAlpha(1.0f);
-        i88 i88Var = this.E;
+        ac8 ac8Var = this.E;
         byte b = 1;
-        if (i88Var == null) {
-            i88 i88Var2 = new i88(this, b);
-            this.E = i88Var2;
-            i88Var2.z0(this.y);
-            i88Var = this.E;
-            i88Var.K = new wk4(this, file, z, (byte) 25);
+        if (ac8Var == null) {
+            ac8 ac8Var2 = new ac8(this, b);
+            this.E = ac8Var2;
+            ac8Var2.z0(this.y);
+            ac8Var = this.E;
+            ac8Var.K = new um4(this, file, z, (byte) 26);
         }
-        i88Var.i0(Uri.fromFile(file), "other");
+        ac8Var.i0(Uri.fromFile(file), "other");
         this.E.t0(true);
         this.V.a(true, true);
     }
 
     public final void j() {
-        i88 i88Var = this.E;
-        if (i88Var != null) {
+        ac8 ac8Var = this.E;
+        if (ac8Var != null) {
             this.a0 = 0;
-            i88Var.l0();
+            ac8Var.l0();
             this.E = null;
         }
         try {
@@ -1177,11 +1177,11 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
                 activity.getWindow().clearFlags(128);
             }
         } catch (Exception e) {
-            fa4.g(e, true);
+            cc4.g(e, true);
         }
-        ix ixVar = this.x;
-        if (ixVar != null) {
-            this.e.removeView(ixVar);
+        jx jxVar = this.x;
+        if (jxVar != null) {
+            this.e.removeView(jxVar);
             this.x = null;
         }
         if (this.y != null) {
@@ -1190,19 +1190,19 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         this.F = false;
     }
 
-    public final void k(k27 k27Var, CharSequence charSequence, boolean z) {
+    public final void k(r47 r47Var, CharSequence charSequence, boolean z) {
         boolean z2;
-        CharSequence cloneSpans = gm.cloneSpans(charSequence, 3);
+        CharSequence cloneSpans = hm.cloneSpans(charSequence, 3);
         if (this.Z == null) {
             FrameLayout frameLayout = new FrameLayout(this.e.getContext());
             this.W = frameLayout;
             this.Y.setContainer(frameLayout);
-            r88 r88Var = new r88(this, this.e.getContext(), this.Y, this.W, (byte) 1);
-            this.Z = r88Var;
-            this.Y.setScrollView(r88Var);
+            ic8 ic8Var = new ic8(this, this.e.getContext(), this.Y, this.W, (byte) 1);
+            this.Z = ic8Var;
+            this.Y.setScrollView(ic8Var);
             this.W.setClipChildren(false);
             this.Z.addView(this.W, new ViewGroup.LayoutParams(-1, -2));
-            this.e.addView(this.Z, nme.d(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.e.addView(this.Z, tre.d(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
             this.X.m(this.e.getContext()).bringToFront();
         }
         boolean z3 = true;
@@ -1212,8 +1212,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         }
         boolean isEmpty = TextUtils.isEmpty(cloneSpans);
         boolean isEmpty2 = TextUtils.isEmpty(this.Y.getCurrentView().getText());
-        g98 g98Var = this.Y;
-        TextView nextView = z ? g98Var.getNextView() : g98Var.getCurrentView();
+        wc8 wc8Var = this.Y;
+        TextView nextView = z ? wc8Var.getNextView() : wc8Var.getCurrentView();
         int maxLines = nextView.getMaxLines();
         if (maxLines == 1) {
             this.Y.getCurrentView().setSingleLine(false);
@@ -1226,14 +1226,14 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             this.Y.getNextView().setEllipsize(null);
         }
         nextView.setScrollX(0);
-        r88 r88Var2 = this.Z;
-        r88Var2.l0 = false;
+        ic8 ic8Var2 = this.Z;
+        ic8Var2.l0 = false;
         if (z) {
-            TransitionManager.endTransitions(r88Var2);
-            TransitionSet duration = new TransitionSet().addTransition(new fu9(this, isEmpty2, isEmpty, (byte) 1)).addTransition(new fu9(this, isEmpty2, isEmpty, (byte) 0)).setDuration(200L);
+            TransitionManager.endTransitions(ic8Var2);
+            TransitionSet duration = new TransitionSet().addTransition(new ay9(this, isEmpty2, isEmpty, (byte) 1)).addTransition(new ay9(this, isEmpty2, isEmpty, (byte) 0)).setDuration(200L);
             if (!isEmpty2) {
                 this.Z.l0 = true;
-                duration.addTransition(new u88(this, (byte) 2));
+                duration.addTransition(new lc8(this, (byte) 2));
             } else if (!isEmpty) {
                 duration.addTarget((View) this.Y);
             }
@@ -1241,52 +1241,52 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             z2 = true;
         } else {
             this.Y.getCurrentView().setText((CharSequence) null);
-            r88 r88Var3 = this.Z;
-            if (r88Var3 != null) {
-                r88Var3.scrollTo(0, 0);
+            ic8 ic8Var3 = this.Z;
+            if (ic8Var3 != null) {
+                ic8Var3.scrollTo(0, 0);
             }
             z2 = false;
         }
         if (isEmpty) {
             this.Y.a(null, z, false);
             this.Y.getCurrentView().setTextColor(-1);
-            g98 g98Var2 = this.Y;
+            wc8 wc8Var2 = this.Y;
             if (z2 && !isEmpty2) {
                 z3 = false;
             }
-            g98Var2.b(4, z3);
+            wc8Var2.b(4, z3);
             this.Y.setTag(null);
         } else {
-            bkb.O();
-            TLRPC.Message message = k27Var.k;
-            if (message == null || message.translatedText == null || !TextUtils.equals(message.translatedToLanguage, rzb.G0())) {
-                if (k27Var.k.entities.isEmpty()) {
-                    cloneSpans = vu3.m(new SpannableStringBuilder(cloneSpans), nextView.getPaint().getFontMetricsInt(), false, null, 0);
+            aob.O();
+            TLRPC.Message message = r47Var.k;
+            if (message == null || message.translatedText == null || !TextUtils.equals(message.translatedToLanguage, r3c.H0())) {
+                if (r47Var.k.entities.isEmpty()) {
+                    cloneSpans = pv3.m(new SpannableStringBuilder(cloneSpans), nextView.getPaint().getFontMetricsInt(), false, null, 0);
                 } else {
                     SpannableString spannableString = new SpannableString(cloneSpans);
-                    k27Var.c(spannableString, true, false);
-                    if (k27.K4(k27Var.k)) {
-                        k27.h(k27Var.O3(), spannableString, false, 3, (int) k27Var.L0(), false);
+                    r47Var.c(spannableString, true, false);
+                    if (r47.K4(r47Var.k)) {
+                        r47.h(r47Var.O3(), spannableString, false, 3, (int) r47Var.L0(), false);
                     }
-                    cloneSpans = vu3.m(spannableString, nextView.getPaint().getFontMetricsInt(), false, null, 0);
+                    cloneSpans = pv3.m(spannableString, nextView.getPaint().getFontMetricsInt(), false, null, 0);
                 }
             }
             this.Y.setTag(cloneSpans);
             try {
                 this.Y.a(cloneSpans, z, false);
-                r88 r88Var4 = this.Z;
-                if (r88Var4 != null) {
-                    r88Var4.H(r88Var4.getWidth(), r88Var4.getHeight());
+                ic8 ic8Var4 = this.Z;
+                if (ic8Var4 != null) {
+                    ic8Var4.H(ic8Var4.getWidth(), ic8Var4.getHeight());
                 }
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
             nextView.setScrollY(0);
             nextView.setTextColor(-1);
             this.Y.setVisibility(this.j0 ? 0 : 4);
         }
-        if (this.Y.getCurrentView() instanceof f98) {
-            ((f98) this.Y.getCurrentView()).setLoading(false);
+        if (this.Y.getCurrentView() instanceof vc8) {
+            ((vc8) this.Y.getCurrentView()).setLoading(false);
         }
     }
 
@@ -1299,7 +1299,7 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         this.U.animate().cancel();
         ImageView imageView = this.U;
         if (z2) {
-            imageView.animate().scaleX(z3 ? 1.0f : 0.6f).scaleY(z3 ? 1.0f : 0.6f).alpha(z3 ? 1.0f : 0.0f).setDuration(340L).setInterpolator(s33.h).start();
+            imageView.animate().scaleX(z3 ? 1.0f : 0.6f).scaleY(z3 ? 1.0f : 0.6f).alpha(z3 ? 1.0f : 0.0f).setDuration(340L).setInterpolator(k43.h).start();
             return;
         }
         imageView.setScaleX(z3 ? 1.0f : 0.6f);
@@ -1309,29 +1309,29 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
 
     public final void m() {
         this.r.p(true);
-        String M0 = k96.M0(this.K ? 2131743338 : 2131747069, null);
-        je5 je5Var = this.r;
-        je5Var.h = je5.a(M0, je5Var.getTextPaint());
+        String M0 = ob6.M0(this.K ? 2131743232 : 2131746989, null);
+        kg5 kg5Var = this.r;
+        kg5Var.h = kg5.a(M0, kg5Var.getTextPaint());
         this.r.t(M0);
         this.r.m(12.0f, 7.0f, 11.0f, 7.0f);
-        je5 je5Var2 = this.r;
-        je5Var2.getClass();
-        je5Var2.f0 = gl.L(2.0f);
-        je5 je5Var3 = this.r;
-        je5Var3.getClass();
-        je5Var3.e0 = 0.0f;
-        oy8 oy8Var = new oy8(R.raw.fire_on, gl.L(34.0f), gl.L(34.0f));
-        oy8Var.start();
-        je5Var3.l(oy8Var);
+        kg5 kg5Var2 = this.r;
+        kg5Var2.getClass();
+        kg5Var2.f0 = hl.L(2.0f);
+        kg5 kg5Var3 = this.r;
+        kg5Var3.getClass();
+        kg5Var3.e0 = 0.0f;
+        b29 b29Var = new b29(R.raw.fire_on, hl.L(34.0f), hl.L(34.0f));
+        b29Var.start();
+        kg5Var3.l(b29Var);
         this.r.v();
-        na7.c1().edit().putInt("viewoncehint", na7.c1().getInt("viewoncehint", 0) + 1).commit();
+        uc7.e1().edit().putInt("viewoncehint", uc7.e1().getInt("viewoncehint", 0) + 1).commit();
     }
 
     public final void n(boolean z, boolean z2) {
-        cu9 cu9Var = this.q1;
-        gl.r(cu9Var);
+        xx9 xx9Var = this.q1;
+        hl.r(xx9Var);
         if (z && this.K) {
-            gl.d3(cu9Var, 3000L);
+            hl.d3(xx9Var, 3000L);
         }
         if (z) {
             this.G.setVisibility(0);
@@ -1352,20 +1352,20 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             return;
         }
         ArrayList arrayList = new ArrayList();
-        x10 x10Var = this.G;
+        y10 y10Var = this.G;
         Property property = View.ALPHA;
         byte b = 1;
-        arrayList.add(ObjectAnimator.ofFloat(x10Var, (Property<x10, Float>) property, z ? 1.0f : 0.0f));
-        ju9 ju9Var = this.T;
-        arrayList.add(ObjectAnimator.ofFloat(ju9Var, ju9Var.n, z ? 1.0f : 0.0f));
-        arrayList.add(ObjectAnimator.ofFloat(this.Z, (Property<r88, Float>) property, z ? 1.0f : 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(y10Var, (Property<y10, Float>) property, z ? 1.0f : 0.0f));
+        ey9 ey9Var = this.T;
+        arrayList.add(ObjectAnimator.ofFloat(ey9Var, ey9Var.n, z ? 1.0f : 0.0f));
+        arrayList.add(ObjectAnimator.ofFloat(this.Z, (Property<ic8, Float>) property, z ? 1.0f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(this.S, (Property<View, Float>) property, z ? 1.0f : 0.0f));
         arrayList.add(ObjectAnimator.ofFloat(this.f, (Property<View, Float>) property, z ? 1.0f : 0.0f));
         AnimatorSet animatorSet = new AnimatorSet();
         this.H = animatorSet;
         animatorSet.playTogether(arrayList);
         if (!z) {
-            this.H.addListener(new hu9(this, b));
+            this.H.addListener(new cy9(this, b));
         }
         this.H.setDuration(200L);
         this.H.start();
@@ -1409,8 +1409,8 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
             return false;
         }
         if (f == 1.0f) {
-            float x = de9.x(3.0f, this.x0, (motionEvent.getX() - (this.e.getWidth() / 2)) - this.v0, motionEvent.getX() - (this.e.getWidth() / 2));
-            float x2 = de9.x(3.0f, this.x0, (motionEvent.getY() - (this.e.getHeight() / 2)) - this.w0, motionEvent.getY() - (this.e.getHeight() / 2));
+            float x = uh9.x(3.0f, this.x0, (motionEvent.getX() - (this.e.getWidth() / 2)) - this.v0, motionEvent.getX() - (this.e.getWidth() / 2));
+            float x2 = uh9.x(3.0f, this.x0, (motionEvent.getY() - (this.e.getHeight() / 2)) - this.w0, motionEvent.getY() - (this.e.getHeight() / 2));
             o(3.0f);
             float f2 = this.U0;
             if (x >= f2) {
@@ -1490,9 +1490,9 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public class PhotoBackgroundDrawable extends ColorDrawable {
-        public tj9 a;
+        public en9 a;
         public int b;
 
         public PhotoBackgroundDrawable() {
@@ -1501,13 +1501,13 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
 
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public final void draw(Canvas canvas) {
-            tj9 tj9Var;
+            en9 en9Var;
             super.draw(canvas);
             if (getAlpha() != 0) {
-                if (this.b != 2 || (tj9Var = this.a) == null) {
+                if (this.b != 2 || (en9Var = this.a) == null) {
                     invalidateSelf();
                 } else {
-                    tj9Var.run();
+                    en9Var.run();
                     this.a = null;
                 }
                 this.b++;
@@ -1517,22 +1517,22 @@ public class SecretMediaViewer implements gk7, GestureDetector.OnGestureListener
         @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
         public void setAlpha(int i) {
             SecretMediaViewer secretMediaViewer = SecretMediaViewer.this;
-            a06 a06Var = secretMediaViewer.k1;
-            if (a06Var != null) {
-                a06Var.b(secretMediaViewer.i0 && i == 255);
+            e26 e26Var = secretMediaViewer.k1;
+            if (e26Var != null) {
+                e26Var.b(secretMediaViewer.i0 && i == 255);
             }
             super.setAlpha(i);
         }
 
         @Override // android.graphics.drawable.Drawable
         public final void setBounds(Rect rect) {
-            rect.bottom += gl.n;
+            rect.bottom += hl.n;
             super.setBounds(rect);
         }
 
         @Override // android.graphics.drawable.Drawable
         public final void setBounds(int i, int i2, int i3, int i4) {
-            super.setBounds(i, i2, i3, i4 + gl.n);
+            super.setBounds(i, i2, i3, i4 + hl.n);
         }
     }
 

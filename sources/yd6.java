@@ -1,47 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class yd6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zd6 b;
+import android.content.LocusId;
+import android.os.Build;
+import android.text.TextUtils;
 
-    public /* synthetic */ yd6(zd6 zd6Var, byte b) {
-        this.a = b;
-        this.b = zd6Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yd6 {
+    public final String a;
+    public final LocusId b;
+
+    public yd6(String str) {
+        if (TextUtils.isEmpty(str)) {
+            lq5.j("id cannot be empty");
+            throw null;
+        }
+        this.a = str;
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.b = sr.c(str);
+        } else {
+            this.b = null;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        zd6 zd6Var = this.b;
-        switch (b) {
-            case 0:
-                ae6 ae6Var = zd6Var.d;
-                if (zd6Var.b) {
-                    boolean z = ae6Var.M;
-                    oy8 oy8Var = ae6Var.L;
-                    vh1 vh1Var = ae6Var.n;
-                    if (z && System.currentTimeMillis() - zd6Var.a >= 10000) {
-                        vh1Var.setAnimation(oy8Var);
-                        oy8Var.I(0, false, false);
-                        oy8Var.u0 = new yd6(zd6Var, (byte) 1);
-                        vh1Var.d();
-                        zd6Var.a = System.currentTimeMillis();
-                    }
-                    vh1Var.postDelayed(zd6Var.c, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                gl.c3(new yd6(zd6Var, (byte) 2));
-                break;
-            default:
-                ae6 ae6Var2 = zd6Var.d;
-                oy8 oy8Var2 = ae6Var2.K;
-                oy8Var2.I(0, false, false);
-                ae6Var2.n.setAnimation(oy8Var2);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || yd6.class != obj.getClass()) {
+            return false;
+        }
+        String str = ((yd6) obj).a;
+        String str2 = this.a;
+        return str2 == null ? str == null : str2.equals(str);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        return 31 + (str == null ? 0 : str.hashCode());
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("LocusIdCompat[");
+        sb.append(this.a.length() + "_chars");
+        sb.append("]");
+        return sb.toString();
     }
 }

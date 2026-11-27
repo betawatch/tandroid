@@ -1,29 +1,32 @@
 // default package
 
-import android.content.DialogInterface;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bn9 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ on9 b;
+public final class bn9 extends ViewOutlineProvider {
+    public final /* synthetic */ byte a = 1;
+    public float b;
 
-    public /* synthetic */ bn9(on9 on9Var, byte b) {
-        this.a = b;
-        this.b = on9Var;
+    public bn9(int i) {
+        this.b = i;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        byte b = this.a;
-        on9 on9Var = this.b;
-        switch (b) {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
             case 0:
-                on9Var.K0 = null;
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), hl.N(this.b));
                 break;
             default:
-                on9Var.dismiss();
+                outline.setRoundRect(view.getPaddingLeft(), view.getPaddingTop(), view.getMeasuredWidth() - view.getPaddingRight(), view.getMeasuredHeight() - view.getPaddingBottom(), this.b);
                 break;
         }
+    }
+
+    public bn9(float f) {
+        this.b = f;
     }
 }

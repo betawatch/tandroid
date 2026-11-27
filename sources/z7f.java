@@ -1,6 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class z7f {
+public final class z7f extends ljf {
+    private static final z7f zzb;
+    private int zzd;
+    private String zze = "";
+    private String zzf = "";
+
+    static {
+        z7f z7fVar = new z7f();
+        zzb = z7fVar;
+        ljf.e(z7f.class, z7fVar);
+    }
+
+    public static x7f l() {
+        return (x7f) zzb.j();
+    }
+
+    public static /* synthetic */ void m(z7f z7fVar, String str) {
+        str.getClass();
+        z7fVar.zzd |= 1;
+        z7fVar.zze = str;
+    }
+
+    public static /* synthetic */ void n(z7f z7fVar, String str) {
+        str.getClass();
+        z7fVar.zzd |= 2;
+        z7fVar.zzf = str;
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
+        }
+        if (i2 == 3) {
+            return new z7f();
+        }
+        if (i2 == 4) {
+            return new x7f(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
+    }
 }

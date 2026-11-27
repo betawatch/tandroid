@@ -1,36 +1,42 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class zn1 implements RequestDelegate {
+public final /* synthetic */ class zn1 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ TLRPC.User d;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ zn1(mu1 mu1Var, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, byte b) {
+    public /* synthetic */ zn1(boolean[] zArr, byte b) {
         this.a = b;
-        this.b = mu1Var;
-        this.c = tL_attachMenuBot;
-        this.d = user;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         byte b = this.a;
-        TLRPC.User user = this.d;
-        TLRPC.TL_attachMenuBot tL_attachMenuBot = this.c;
-        mu1 mu1Var = this.b;
+        boolean[] zArr = this.b;
         switch (b) {
             case 0:
-                gl.c3(new co1(mu1Var, tL_attachMenuBot, tL_error, user));
+                zArr[0] = true;
+                break;
+            case 1:
+                String str = LaunchActivity.C1;
+                zArr[0] = true;
+                break;
+            case 2:
+                String[] strArr = MediaController.W1;
+                zArr[0] = true;
+                break;
+            case 3:
+                String[] strArr2 = MediaController.W1;
+                zArr[0] = true;
                 break;
             default:
-                gl.c3(new co1(mu1Var, tL_error, tL_attachMenuBot, user));
+                zArr[0] = true;
                 break;
         }
     }

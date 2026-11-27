@@ -1,25 +1,59 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public enum xb6 implements ct8 {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(4),
-    h(5),
-    n(6);
+public final /* synthetic */ class xb6 implements Runnable {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ tc6 b;
+    public final /* synthetic */ uc6 c;
+    public final /* synthetic */ id d;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    xb6(int i) {
-        this.a = i;
+    public /* synthetic */ xb6(tc6 tc6Var, id idVar, uc6 uc6Var) {
+        this.b = tc6Var;
+        this.d = idVar;
+        this.c = uc6Var;
     }
 
-    @Override // ct8
-    public final int a() {
-        return this.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        id idVar = this.d;
+        uc6 uc6Var = this.c;
+        tc6 tc6Var = this.b;
+        switch (b) {
+            case 0:
+                idVar.dismiss();
+                tc6Var.presentFragment(uc6Var);
+                break;
+            default:
+                try {
+                    List<Address> fromLocationName = new Geocoder(tc6Var.getParentActivity(), ob6.D0().y).getFromLocationName(tc6Var.y, 1);
+                    if (!fromLocationName.isEmpty()) {
+                        Address address = fromLocationName.get(0);
+                        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+                        tL_channelLocation.address = tc6Var.y;
+                        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+                        tL_channelLocation.geo_point = tL_geoPoint;
+                        tL_geoPoint.lat = address.getLatitude();
+                        tL_channelLocation.geo_point._long = address.getLongitude();
+                        uc6Var.I0 = tL_channelLocation;
+                    }
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                }
+                hl.c3(new xb6(tc6Var, idVar, uc6Var));
+                break;
+        }
+    }
+
+    public /* synthetic */ xb6(tc6 tc6Var, uc6 uc6Var, id idVar) {
+        this.b = tc6Var;
+        this.c = uc6Var;
+        this.d = idVar;
     }
 }

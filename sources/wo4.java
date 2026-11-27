@@ -1,31 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wo4 {
-    public int a;
-    public bn4 b;
-    public boolean c = false;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public v06 h;
-    public v06 i;
+public abstract class wo4 implements zy9 {
+    public final zy9 a;
 
-    public wo4(int i, bn4 bn4Var) {
-        this.a = i;
-        this.b = bn4Var;
-        v06 v06Var = v06.e;
-        this.h = v06Var;
-        this.i = v06Var;
+    public wo4(zy9 zy9Var) {
+        this.a = zy9Var;
     }
 
-    public wo4(int i, bn4 bn4Var, int i2) {
-        this.a = i;
-        this.b = bn4Var;
-        v06 v06Var = v06.e;
-        this.h = v06Var;
-        this.i = v06Var;
+    @Override // zy9
+    public final boolean c() {
+        return this.a.c();
+    }
+
+    @Override // zy9
+    public final boolean d() {
+        return this.a.d();
+    }
+
+    @Override // zy9
+    public yy9 e(long j) {
+        return this.a.e(j);
+    }
+
+    @Override // zy9
+    public long h() {
+        return this.a.h();
     }
 }

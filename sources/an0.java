@@ -7,29 +7,34 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class an0 extends wec {
+public final class an0 extends vic {
     public final Path W;
     public final Paint a0;
     public boolean b0;
     public boolean c0;
     public final boolean d0;
-    public final /* synthetic */ zy9 e0;
-    public final /* synthetic */ wjb f0;
+    public final /* synthetic */ t2a e0;
+    public final /* synthetic */ vnb f0;
     public final /* synthetic */ ao0 g0;
     public final /* synthetic */ dn0 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public an0(dn0 dn0Var, Context context, zy9 zy9Var, wjb wjbVar, ao0 ao0Var) {
+    public an0(dn0 dn0Var, Context context, t2a t2aVar, vnb vnbVar, ao0 ao0Var) {
         super(context, null);
         this.h0 = dn0Var;
-        this.e0 = zy9Var;
-        this.f0 = wjbVar;
+        this.e0 = t2aVar;
+        this.f0 = vnbVar;
         this.g0 = ao0Var;
         this.W = new Path();
         this.a0 = new Paint(1);
-        this.d0 = gl.O1();
+        this.d0 = hl.O1();
+    }
+
+    @Override // vic
+    public final boolean c(MotionEvent motionEvent) {
+        return this.h0.l1.getCurrentPosition() == 1;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -37,7 +42,7 @@ public final class an0 extends wec {
         float f;
         dn0 dn0Var = this.h0;
         an0 an0Var = dn0Var.l1;
-        int v0 = bkb.v0(bkb.g5, this.f0);
+        int v0 = aob.v0(aob.h5, this.f0);
         Paint paint = this.a0;
         paint.setColor(v0);
         if (!this.b0) {
@@ -47,11 +52,11 @@ public final class an0 extends wec {
             super.dispatchDraw(canvas);
             return;
         }
-        int i = -gl.L(16.0f);
+        int i = -hl.L(16.0f);
         ao0 ao0Var = this.g0;
-        int L = gl.L(10.0f) + Math.max(i, ao0Var.n2 - (ao0Var.o1.getVisibility() == 0 ? gl.L(16.0f) + gl.m : 0));
-        zy9 zy9Var = this.e0;
-        int max = Math.max(0, zy9Var.o2 - (zy9Var.h2.c == 1.0f ? gl.m : 0));
+        int L = hl.L(10.0f) + Math.max(i, ao0Var.n2 - (ao0Var.o1.getVisibility() == 0 ? hl.L(16.0f) + hl.m : 0));
+        t2a t2aVar = this.e0;
+        int max = Math.max(0, t2aVar.o2 - (t2aVar.h2.c == 1.0f ? hl.m : 0));
         float abs = Math.abs(L - max);
         if (an0Var.getCurrentPosition() == 0) {
             float positionAnimated = an0Var.getPositionAnimated() * abs;
@@ -61,9 +66,9 @@ public final class an0 extends wec {
             f = max < L ? max + positionAnimated2 : max - positionAnimated2;
         }
         int i2 = (int) f;
-        float L2 = gl.L(14.0f);
-        RectF rectF = gl.P;
-        rectF.set(0.0f, i2, getWidth(), gl.L(8.0f) + getHeight());
+        float L2 = hl.L(14.0f);
+        RectF rectF = hl.P;
+        rectF.set(0.0f, i2, getWidth(), hl.L(8.0f) + getHeight());
         canvas.drawRoundRect(rectF, L2, L2, paint);
         canvas.save();
         Path path = this.W;
@@ -74,12 +79,7 @@ public final class an0 extends wec {
         canvas.restore();
     }
 
-    @Override // wec
-    public final boolean g(MotionEvent motionEvent) {
-        return this.h0.l1.getCurrentPosition() == 1;
-    }
-
-    @Override // wec
+    @Override // vic
     public final float getAvailableTranslationX() {
         return (this.d0 || this.h0.n1) ? getMeasuredWidth() : super.getAvailableTranslationX();
     }
@@ -92,19 +92,19 @@ public final class an0 extends wec {
         if (z2 != z3) {
             this.c0 = z3;
             if (z3) {
-                this.e0.e1(true);
+                this.e0.f1(true);
             }
         }
     }
 
-    @Override // wec
-    public final void u() {
+    @Override // vic
+    public final void v() {
         this.b0 = false;
         this.h0.l1.invalidate();
     }
 
-    @Override // wec
-    public final void w(boolean z) {
+    @Override // vic
+    public final void x(boolean z) {
         dn0 dn0Var = this.h0;
         an0 an0Var = dn0Var.l1;
         float positionAnimated = an0Var.getPositionAnimated();
@@ -113,7 +113,7 @@ public final class an0 extends wec {
         } else if (!this.b0) {
             this.b0 = true;
             if (dn0Var.d) {
-                gl.t1(dn0Var.m1.b);
+                hl.t1(dn0Var.m1.b);
             }
         }
         an0Var.invalidate();

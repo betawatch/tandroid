@@ -1,94 +1,173 @@
 // default package
 
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e77 implements p8c {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Runnable g;
+public final /* synthetic */ class e77 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ e77(na7 na7Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i, TLRPC.Chat chat, pc7 pc7Var) {
-        this.b = na7Var;
-        this.d = tL_messages_invitedUsers;
-        this.e = iArr;
-        this.c = i;
-        this.f = chat;
-        this.g = pc7Var;
+    public /* synthetic */ e77(uc7 uc7Var, long j, byte b) {
+        this.a = b;
+        this.b = uc7Var;
+        this.c = j;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        Runnable runnable = this.g;
-        TLObject tLObject = this.f;
-        int i = this.c;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        na7 na7Var = this.b;
+        long j = this.c;
+        uc7 uc7Var = this.b;
         switch (b) {
             case 0:
-                boolean[] zArr = (boolean[]) obj3;
-                TL_bots.BotInfo[] botInfoArr = (TL_bots.BotInfo[]) obj2;
-                TLRPC.User user = (TLRPC.User) tLObject;
-                d77 d77Var = (d77) runnable;
-                TL_bots.BotInfo botInfo = (TL_bots.BotInfo) obj;
-                if (!zArr[0]) {
-                    botInfoArr[0] = botInfo;
-                    if (botInfo != null) {
-                        d77Var.run();
+                if (tLObject instanceof TLRPC.TL_channels_channelParticipants) {
+                    uc7Var.S3(j, (TLRPC.TL_channels_channelParticipants) tLObject);
+                    break;
+                }
+                break;
+            case 1:
+                if (tL_error == null) {
+                    uc7Var.Y3((TLRPC.Updates) tLObject, false);
+                }
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 2:
+                if (tL_error == null) {
+                    uc7Var.Y3((TLRPC.Updates) tLObject, false);
+                }
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 3:
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    uc7Var.W3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
+                }
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 4:
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 5:
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages2 = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    uc7Var.W3(tL_messages_affectedMessages2.pts, -1, tL_messages_affectedMessages2.pts_count);
+                }
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 6:
+                if (tL_error == null) {
+                    hl.c3(new v87(uc7Var, tLObject, j));
+                    break;
+                }
+                break;
+            case 7:
+                if (j == 0) {
+                    uc7Var.getClass();
+                    break;
+                } else {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+            case 8:
+                if (j == 0) {
+                    uc7Var.getClass();
+                    break;
+                } else {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+            case 9:
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 10:
+                uc7Var.getMessagesStorage().n1(j);
+                break;
+            case 11:
+                if (tL_error == null) {
+                    uc7Var.Y3((TLRPC.Updates) tLObject, false);
+                }
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                    break;
+                }
+                break;
+            case 12:
+                if (tLObject != null) {
+                    TLRPC.TL_chatOnlines tL_chatOnlines = (TLRPC.TL_chatOnlines) tLObject;
+                    uc7 uc7Var2 = this.b;
+                    jf7 messagesStorage = uc7Var2.getMessagesStorage();
+                    int i = tL_chatOnlines.onlines;
+                    to3 to3Var = messagesStorage.a;
+                    long j2 = this.c;
+                    to3Var.c(new gd7(messagesStorage, i, j2, (byte) 7));
+                    hl.c3(new cq6((Object) uc7Var2, j2, (Object) tL_chatOnlines, (byte) 2));
+                    break;
+                }
+                break;
+            case 13:
+                if (tL_error == null) {
+                    uc7Var.getMessagesController().Y3((TLRPC.Updates) tLObject, false);
+                    hl.d3(new t77(uc7Var, j, (byte) 21), 1000L);
+                    break;
+                }
+                break;
+            case 14:
+                if (tL_error != null) {
+                    uc7Var.getClass();
+                    break;
+                } else {
+                    uc7Var.getMessagesController().Y3((TLRPC.Updates) tLObject, false);
+                    hl.d3(new t77(uc7Var, j, (byte) 20), 1000L);
+                    break;
+                }
+            case 15:
+                if (j != 0) {
+                    uc7Var.getMessagesStorage().n1(j);
+                }
+                if (tLObject != null) {
+                    uc7Var.Y3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
+            case 16:
+                if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
+                    if (tL_error != null && tL_error.code == 400) {
+                        uc7Var.e3(0, -j, true);
                         break;
-                    } else {
-                        TLRPC.UserFull W1 = na7Var.W1(user.id);
-                        if (W1 != null) {
-                            botInfoArr[0] = W1.bot_info;
-                            d77Var.run();
-                            break;
-                        } else if (!zArr[0]) {
-                            na7Var.Z2(user, i, true, new ht(zArr, botInfoArr, d77Var, (byte) 28));
-                            break;
-                        }
+                    }
+                } else {
+                    long j3 = -j;
+                    if (uc7Var.N0(j3) == null) {
+                        uc7Var.e3(0, j3, true);
+                        break;
                     }
                 }
                 break;
             default:
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj3;
-                int[] iArr = (int[]) obj2;
-                TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                pc7 pc7Var = (pc7) runnable;
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
-                na7Var.getClass();
-                if (tL_messages_invitedUsers2 != null) {
-                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
-                }
-                int i2 = iArr[0] + 1;
-                iArr[0] = i2;
-                if (i2 >= i) {
-                    if (!tL_messages_invitedUsers.missing_invitees.isEmpty()) {
-                        gl.c3(new nn6((Object) na7Var, (Object) chat, (Object) tL_messages_invitedUsers, (byte) 2));
-                    }
-                    if (pc7Var != null) {
-                        pc7Var.run();
-                        break;
-                    }
-                }
+                hl.c3(new v87(uc7Var, j, tLObject));
                 break;
         }
-    }
-
-    public /* synthetic */ e77(na7 na7Var, boolean[] zArr, TL_bots.BotInfo[] botInfoArr, TLRPC.User user, int i, d77 d77Var) {
-        this.b = na7Var;
-        this.d = zArr;
-        this.e = botInfoArr;
-        this.f = user;
-        this.c = i;
-        this.g = d77Var;
     }
 }

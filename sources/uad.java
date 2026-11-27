@@ -1,42 +1,77 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class uad {
-    public static final String[] a = {"audio/mpeg-L1", "audio/mpeg-L2", "audio/mpeg"};
-    public static final int[] b = {44100, 48000, 32000};
-    public static final int[] c = {32000, 64000, 96000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 352000, 384000, 416000, 448000};
-    public static final int[] d = {32000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 144000, 160000, 176000, 192000, 224000, 256000};
-    public static final int[] e = {32000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000, 384000};
-    public static final int[] f = {32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000};
-    public static final int[] g = {8000, gc1.AUDIO_CONTENT_SAMPLING_RATE, 24000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 144000, 160000};
+import java.util.ListIterator;
 
-    public static int a(int i) {
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        if ((i & (-2097152)) != -2097152 || (i2 = (i >>> 19) & 3) == 1 || (i3 = (i >>> 17) & 3) == 0 || (i4 = (i >>> 12) & 15) == 0 || i4 == 15 || (i5 = (i >>> 10) & 3) == 3) {
-            return -1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class uad extends v9c implements ListIterator {
+    public final int b;
+    public int c;
+    public final kbd d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uad(kbd kbdVar, int i) {
+        super((byte) 6);
+        int size = kbdVar.size();
+        d9f.b(i, size);
+        this.b = size;
+        this.c = i;
+        this.d = kbdVar;
+    }
+
+    public final Object a(int i) {
+        return this.d.get(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            lq5.n();
+            return null;
         }
-        int i6 = b[i5];
-        if (i2 == 2) {
-            i6 /= 2;
-        } else if (i2 == 0) {
-            i6 /= 4;
+        int i = this.c;
+        this.c = i + 1;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            lq5.n();
+            return null;
         }
-        int i7 = (i >>> 9) & 1;
-        if (i3 == 3) {
-            return ls6.y(i2 == 3 ? c[i4 - 1] : d[i4 - 1], 12, i6, i7) << 2;
-        }
-        int i8 = i2 == 3 ? i3 == 2 ? e[i4 - 1] : f[i4 - 1] : g[i4 - 1];
-        int i9 = kk7.Z1;
-        if (i2 == 3) {
-            return ls6.y(i8, kk7.Z1, i6, i7);
-        }
-        if (i3 == 1) {
-            i9 = 72;
-        }
-        return ls6.y(i9, i8, i6, i7);
+        int i = this.c - 1;
+        this.c = i;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,15 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class hv2 {
-    public final gv2 a;
+import java.text.CollationKey;
+import java.text.Collator;
 
-    public hv2(gv2 gv2Var) {
-        this.a = gv2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hv2 extends Collator {
+    @Override // java.text.Collator
+    public final int compare(String str, String str2) {
+        if (str == null || str2 == null) {
+            return 0;
+        }
+        return str.compareTo(str2);
     }
 
-    public final String toString() {
-        return this.a.toString();
+    @Override // java.text.Collator
+    public final CollationKey getCollationKey(String str) {
+        return null;
+    }
+
+    @Override // java.text.Collator
+    public final int hashCode() {
+        return 0;
     }
 }

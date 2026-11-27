@@ -1,256 +1,167 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Build;
-import android.view.View;
-import java.io.InputStream;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.CharacterStyle;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.a;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class mk2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public abstract class mk2 {
+    public static int c;
+    public static final wm8 a = new wm8(new c22(13), new c22(14));
+    public static final LinkedHashMap b = new LinkedHashMap(8, 0.75f, true);
+    public static final Object d = new Object();
+    public static final ArrayList e = new ArrayList();
 
-    public /* synthetic */ mk2(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public static void a(Spannable spannable, int i, j26 j26Var) {
+        Object[] spans;
+        Object[] spans2;
+        if (i != 0) {
+            boolean z = spannable instanceof gk2;
+            if (z) {
+                int i2 = gk2.b;
+                spans = ((gk2) spannable).c(fk2.class, i);
+            } else {
+                spans = spannable.getSpans(0, i, fk2.class);
+            }
+            for (fk2 fk2Var : (fk2[]) spans) {
+                d(spannable, i, fk2Var);
+                spannable.removeSpan(fk2Var);
+            }
+            if (z) {
+                int i3 = gk2.b;
+                spans2 = ((gk2) spannable).c(kk2.class, i);
+            } else {
+                spans2 = spannable.getSpans(0, i, kk2.class);
+            }
+            for (kk2 kk2Var : (kk2[]) spans2) {
+                d(spannable, i, kk2Var);
+                spannable.removeSpan(kk2Var);
+            }
+            if (j26Var != null) {
+                int[] b2 = j26Var.b();
+                for (int i4 = 0; i4 < b2.length; i4 += 3) {
+                    int i5 = b2[i4];
+                    int i6 = b2[i4 + 1];
+                    int i7 = b2[i4 + 2];
+                    if (i5 >= 0 && i6 <= i && i5 < i6) {
+                        int i8 = i7 & jn7.d4;
+                        if (i8 != 0) {
+                            spannable.setSpan(new fk2(i8), i5, i6, 33);
+                        }
+                        if ((i7 & 768) != 0) {
+                            spannable.setSpan(new kk2(i7), i5, i6, 33);
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x01cf  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        Bitmap bitmap;
-        ska skaVar;
-        i64 i64Var;
-        byte b = this.a;
-        Bitmap bitmap2 = null;
-        byte b2 = 1;
-        int i = 0;
-        Object[] objArr = 0;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((pk2) obj).g = -1L;
-                break;
-            case 1:
-                ((rk2) obj).a();
-                break;
-            case 2:
-                ((yo2) obj).a();
-                break;
-            case 3:
-                ((wp2) obj).invalidateOptionsMenu();
-                break;
-            case 4:
-                up2 up2Var = (up2) obj;
-                Runnable runnable = up2Var.b;
-                if (runnable != null) {
-                    runnable.run();
-                    up2Var.b = null;
-                    break;
+    public static SpannableString b(CharSequence charSequence, String str) {
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        String b2 = wm8.b(str);
+        if (b2.isEmpty() || charSequence.length() == 0) {
+            return new SpannableString(charSequence);
+        }
+        String charSequence2 = charSequence.toString();
+        ek2 ek2Var = new ek2(b2, charSequence2);
+        boolean z = !(charSequence instanceof Spanned) && charSequence2.length() <= 65536;
+        LinkedHashMap linkedHashMap = b;
+        synchronized (linkedHashMap) {
+            if (z) {
+                SpannableString spannableString = (SpannableString) linkedHashMap.get(ek2Var);
+                if (spannableString != null) {
+                    return spannableString;
                 }
-                break;
-            case 5:
-                yp2.b((yp2) obj);
-                break;
-            case 6:
-                fq2 fq2Var = (fq2) obj;
-                ArrayList arrayList = fq2Var.c;
-                int size = arrayList.size();
-                while (i < size) {
-                    Object obj2 = arrayList.get(i);
-                    i++;
-                    ((View) obj2).invalidate();
-                }
-                fq2Var.invalidateSelf();
-                break;
-            case 7:
-                ((oq2) obj).invalidateSelf();
-                break;
-            case 8:
-                pq2 pq2Var = (pq2) obj;
-                StringBuilder sb = new StringBuilder("emoji/compound/0_");
-                pq2Var.getClass();
-                sb.append(pq2Var.a);
-                sb.append("_");
-                String l = de9.l(sb, pq2Var.b ? 1 : 0, ".png");
-                HashMap hashMap = vu3.a;
-                try {
-                    int i2 = gl.p > 1.0f ? 1 : 2;
-                    try {
-                        InputStream open = a.b.getAssets().open(l);
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        options.inJustDecodeBounds = false;
-                        options.inSampleSize = i2;
-                        bitmap = BitmapFactory.decodeStream(open, null, options);
-                        try {
-                            open.close();
-                        } catch (Throwable th) {
-                            th = th;
-                            fa4.g(th, true);
-                            bitmap2 = bitmap;
-                            if (bitmap2 != null) {
-                            }
-                            pq2.f.remove(Integer.valueOf(pq2Var.c));
-                            return;
-                        }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        bitmap = null;
-                    }
-                    bitmap2 = bitmap;
-                } catch (Throwable th3) {
-                    if (w01.a) {
-                        fa4.e("Error loading emoji", th3);
-                    }
-                }
-                if (bitmap2 != null) {
-                    pq2.e.put(pq2Var.c, bitmap2);
-                    ql3 ql3Var = vu3.l;
-                    gl.r(ql3Var);
-                    gl.c3(ql3Var);
-                }
-                pq2.f.remove(Integer.valueOf(pq2Var.c));
-            case 9:
-                ((c30) obj).o(true);
-                break;
-            case 10:
-                ((tv2) obj).a.d();
-                break;
-            case 11:
-                hx2 hx2Var = (hx2) obj;
-                long j = hx2Var.b;
-                if (j > 0) {
-                    long j2 = j - 1;
-                    hx2Var.b = j2;
-                    hx2Var.a.o(j2);
-                }
-                if (hx2Var.b <= 0) {
-                    hx2Var.c = false;
-                }
-                if (hx2Var.c) {
-                    gl.d3(hx2Var.d, 1000L);
-                    break;
-                }
-                break;
-            case 12:
-                ((xx2) obj).Y1.O(true);
-                break;
-            case 13:
-                o03 o03Var = ((n03) obj).c;
-                TLRPC.Peer peer = o03Var.Y1;
-                d dVar = o03Var.a2;
-                f13 f13Var = new f13(dVar, peer, o03Var.b2, o03Var.T1.size() > 1, o03Var.S1);
-                if (dVar.getParentActivity() == null) {
-                    f13Var.show();
-                    break;
-                } else {
-                    dVar.showDialog(f13Var);
-                    break;
-                }
-            case 14:
-                ((w13) obj).e().M(new ts4("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", (byte) 2));
-                break;
-            case 15:
-                y23 y23Var = (y23) obj;
-                k34 k34Var = y23Var.b.J;
-                if (k34Var != null) {
-                    k34Var.b();
-                }
-                y23Var.b.k();
-                break;
-            case 16:
-                ((ValueAnimator) obj).start();
-                break;
-            case 17:
-                d dVar2 = ((i43) obj).h2.r;
-                if (!(dVar2 instanceof mu1)) {
-                    d Q = LaunchActivity.Q();
-                    if (Q != null) {
-                        Q.showDialog(new jh8(dVar2, 11, false));
+            }
+            gk2 gk2Var = new gk2(charSequence);
+            if (z) {
+                linkedHashMap.put(ek2Var, gk2Var);
+                c += charSequence2.length();
+                while (true) {
+                    LinkedHashMap linkedHashMap2 = b;
+                    if (linkedHashMap2.size() <= 8 && c <= 65536) {
                         break;
                     }
-                } else {
-                    dVar2.showDialog(new jh8(dVar2, 11, false));
+                    Map.Entry entry = (Map.Entry) linkedHashMap2.entrySet().iterator().next();
+                    c -= ((ek2) entry.getKey()).b.length();
+                    linkedHashMap2.remove(entry.getKey());
+                }
+            }
+            c(gk2Var, gk2Var.length(), b2);
+            return gk2Var;
+        }
+    }
+
+    public static void c(Spannable spannable, int i, String str) {
+        lk2 lk2Var;
+        vm8 vm8Var;
+        if (spannable == null) {
+            return;
+        }
+        if (i < 0 || i > spannable.length()) {
+            throw new IndexOutOfBoundsException();
+        }
+        ik2 ik2Var = new ik2(spannable.subSequence(0, i).toString());
+        long j = i & 4294967295L;
+        synchronized (d) {
+            ArrayList arrayList = e;
+            Iterator it = arrayList.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    lk2Var = new lk2(spannable);
+                    arrayList.add(lk2Var);
                     break;
                 }
-                break;
-            case 18:
-                l93 l93Var = (l93) obj;
-                tj Q2 = l93Var.Q();
-                l93Var.V(Q2, 1028, new i93(Q2, b2));
-                l93Var.f.d();
-                break;
-            case 19:
-                q93 q93Var = (q93) obj;
-                if (q93Var.d0 >= 300000) {
-                    q93Var.n.L();
-                    q93Var.d0 = 0L;
+                lk2Var = (lk2) it.next();
+                Spannable spannable2 = (Spannable) lk2Var.a.get();
+                if (spannable2 == null) {
+                    it.remove();
+                } else if (spannable2 == spannable) {
                     break;
                 }
-                break;
-            case 20:
-                ca3 ca3Var = (ca3) obj;
-                if (!ca3Var.c) {
-                    sq3 sq3Var = ca3Var.b;
-                    if (sq3Var != null) {
-                        sq3Var.c(ca3Var.a);
-                    }
-                    ca3Var.d.y.remove(ca3Var);
-                    ca3Var.c = true;
-                    break;
-                }
-                break;
-            case 21:
-                ((aa3) obj).c(null);
-                break;
-            case 22:
-                sc3 sc3Var = (sc3) obj;
-                if (sc3Var.g.A0 && Build.VERSION.SDK_INT >= 32 && (skaVar = sc3Var.i) != null && skaVar.b && (i64Var = sc3Var.a) != null) {
-                    i64Var.h.c(10, null).b();
-                    break;
-                }
-                break;
-            case 23:
-                ((xc3) obj).i.u();
-                break;
-            case 24:
-                fx0[] fx0VarArr = (fx0[]) obj;
-                fx0 fx0Var = fx0VarArr[0];
-                if (fx0Var != null) {
-                    fx0Var.dismiss();
-                    fx0VarArr[0] = null;
-                    break;
-                }
-                break;
-            case 25:
-                up3 q = up3.q(((j5) obj).a);
-                q.getMessagesStorage().a.c(new rp3(q, objArr == true ? 1 : 0));
-                break;
-            case 26:
-                ((dk3) obj).updateColors();
-                break;
-            case 27:
-                ((x4c) obj).updateColors();
-                break;
-            case 28:
-                ((l9) obj).updateColors();
-                break;
-            default:
-                ((cj3) ((vm2) obj).b).g0.setAlpha(1.0f);
-                break;
+            }
+            ik2 ik2Var2 = (ik2) lk2Var.b.put(Long.valueOf(j), ik2Var);
+            if (ik2Var2 != null && (vm8Var = ik2Var2.b) != null) {
+                vm8Var.a = null;
+            }
+        }
+        lk2 lk2Var2 = lk2Var;
+        vm8 d2 = a.d(ik2Var.a, str, new ff(lk2Var2, j, ik2Var, i, (byte) 3));
+        synchronized (d) {
+            if (lk2Var2.b.get(Long.valueOf(j)) == ik2Var) {
+                ik2Var.b = d2;
+            } else {
+                d2.a = null;
+            }
+        }
+    }
+
+    public static void d(Spannable spannable, int i, CharacterStyle characterStyle) {
+        int spanStart;
+        int spanEnd;
+        if (spannable instanceof gk2) {
+            gk2 gk2Var = (gk2) spannable;
+            int i2 = gk2.b;
+            spanStart = gk2Var.b(characterStyle);
+            spanEnd = gk2Var.a(characterStyle);
+        } else {
+            spanStart = spannable.getSpanStart(characterStyle);
+            spanEnd = spannable.getSpanEnd(characterStyle);
+        }
+        if (spanStart >= 0 && spanStart < 0) {
+            spannable.setSpan(characterStyle instanceof fk2 ? new fk2(((fk2) characterStyle).a) : new kk2(((kk2) characterStyle).b), spanStart, Math.min(0, spanEnd), 33);
+        }
+        if (spanEnd > i) {
+            spannable.setSpan(characterStyle instanceof fk2 ? new fk2(((fk2) characterStyle).a) : new kk2(((kk2) characterStyle).b), Math.max(i, spanStart), spanEnd, 33);
         }
     }
 }

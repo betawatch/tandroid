@@ -1,38 +1,32 @@
 // default package
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u90 {
-    public final String a;
-    public final ArrayList b;
+public final class u90 extends c84 {
+    public final Integer a;
 
-    public u90(String str, ArrayList arrayList) {
-        if (str == null) {
-            fvc.f("Null userAgent");
-            throw null;
-        }
-        this.a = str;
-        this.b = arrayList;
+    public u90(Integer num) {
+        this.a = num;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof u90)) {
+        if (!(obj instanceof c84)) {
             return false;
         }
-        u90 u90Var = (u90) obj;
-        return this.a.equals(u90Var.a) && this.b.equals(u90Var.b);
+        Integer num = this.a;
+        u90 u90Var = (u90) ((c84) obj);
+        return num == null ? u90Var.a == null : num.equals(u90Var.a);
     }
 
     public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
+        Integer num = this.a;
+        return 1000003 ^ (num == null ? 0 : num.hashCode());
     }
 
     public final String toString() {
-        return "HeartBeatResult{userAgent=" + this.a + ", usedDates=" + this.b + "}";
+        return "ExternalPRequestContext{originAssociatedProductId=" + this.a + "}";
     }
 }

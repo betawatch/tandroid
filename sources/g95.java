@@ -1,49 +1,86 @@
 // default package
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class g95 extends fx0 {
-    public gec l1;
-    public e95 m1;
-    public LinearLayout n1;
-    public TextView[] o1;
-    public float p1;
-    public int q1;
+public final class g95 extends Drawable {
+    public long b;
+    public boolean d;
+    public final View e;
+    public final Paint a = new Paint(1);
+    public float c = 1.0f;
 
-    public final void D0() {
-        TextView[] textViewArr = this.o1;
-        int i = this.q1;
-        TextView textView = textViewArr[i];
-        TextView textView2 = i < textViewArr.length + (-1) ? textViewArr[i + 1] : null;
-        this.b.getMeasuredWidth();
-        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
-        float measuredWidth2 = (this.b.getMeasuredWidth() / 2) - measuredWidth;
-        if (textView2 != null) {
-            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * this.p1;
+    public g95(View view) {
+        this.e = view;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int L;
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        View view = this.e;
+        if (view instanceof ema) {
+            L = hl.L(1.0f) + centerY;
+            centerX -= hl.L(3.0f);
+        } else {
+            L = hl.L(2.0f) + centerY;
         }
-        for (int i2 = 0; i2 < textViewArr.length; i2++) {
-            int i3 = this.q1;
-            float f = 0.9f;
-            float f2 = 0.7f;
-            if (i2 >= i3 && i2 <= i3 + 1) {
-                float f3 = this.p1;
-                float f4 = 0.3f * f3;
-                if (i2 == i3) {
-                    f2 = 1.0f - f4;
-                    f = 1.0f - (f3 * 0.1f);
-                } else {
-                    f2 = 0.7f + f4;
-                    f = 0.9f + (f3 * 0.1f);
-                }
+        Paint paint = this.a;
+        paint.setColor(-1147527);
+        paint.setAlpha((int) (this.c * 255.0f));
+        canvas.drawCircle(centerX, L, hl.L(4.0f), paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j = elapsedRealtime - this.b;
+        if (j > 17) {
+            j = 17;
+        }
+        this.b = elapsedRealtime;
+        boolean z = this.d;
+        if (!z) {
+            float f = (j / 2000.0f) + this.c;
+            this.c = f;
+            if (f >= 1.0f) {
+                this.c = 1.0f;
+                this.d = true;
             }
-            textViewArr[i2].setAlpha(f2);
-            textViewArr[i2].setScaleX(f);
-            textViewArr[i2].setScaleY(f);
+        } else if (z) {
+            float f2 = this.c - (j / 2000.0f);
+            this.c = f2;
+            if (f2 < 0.5f) {
+                this.c = 0.5f;
+                this.d = false;
+            }
         }
-        this.n1.setTranslationX(measuredWidth2);
-        this.m1.invalidate();
+        view.invalidate();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return hl.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return hl.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

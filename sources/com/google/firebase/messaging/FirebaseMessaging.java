@@ -18,78 +18,78 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
-    public static qj4 l;
-    public static mt8 m = new cq2((byte) 5);
+    public static i09 l;
+    public static vw8 m = new vq2((byte) 5);
     public static ScheduledThreadPoolExecutor n;
-    public final jg4 a;
+    public final ji4 a;
     public final Context b;
-    public final ep c;
-    public final gl2 d;
-    public final sk4 e;
-    public final xf4 f;
+    public final fp c;
+    public final am2 d;
+    public final ym4 e;
+    public final vh4 f;
     public final ScheduledThreadPoolExecutor g;
     public final ThreadPoolExecutor h;
-    public final kd7 i;
-    public final rg4 j;
+    public final tf7 i;
+    public final ri4 j;
     public boolean k;
 
-    public FirebaseMessaging(jg4 jg4Var, mt8 mt8Var, mt8 mt8Var2, rg4 rg4Var, mt8 mt8Var3, hab habVar) {
-        jg4Var.a();
-        Context context = jg4Var.a;
-        kd7 kd7Var = new kd7();
+    public FirebaseMessaging(ji4 ji4Var, vw8 vw8Var, vw8 vw8Var2, ri4 ri4Var, vw8 vw8Var3, feb febVar) {
+        ji4Var.a();
+        Context context = ji4Var.a;
+        tf7 tf7Var = new tf7();
         final byte b = 0;
-        kd7Var.a = (byte) 0;
-        kd7Var.d = context;
-        jg4Var.a();
-        fm9 fm9Var = new fm9(jg4Var.a);
-        ep epVar = new ep();
-        epVar.a = jg4Var;
-        epVar.b = kd7Var;
-        epVar.c = fm9Var;
-        epVar.d = mt8Var;
-        epVar.e = mt8Var2;
-        epVar.f = rg4Var;
-        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new kn7("Firebase-Messaging-Task"));
+        tf7Var.a = (byte) 0;
+        tf7Var.d = context;
+        ji4Var.a();
+        up9 up9Var = new up9(ji4Var.a);
+        fp fpVar = new fp();
+        fpVar.a = ji4Var;
+        fpVar.b = tf7Var;
+        fpVar.c = up9Var;
+        fpVar.d = vw8Var;
+        fpVar.e = vw8Var2;
+        fpVar.f = ri4Var;
+        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new kq7("Firebase-Messaging-Task"));
         final byte b2 = 1;
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new kn7("Firebase-Messaging-Init"));
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new kn7("Firebase-Messaging-File-Io"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new kq7("Firebase-Messaging-Init"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new kq7("Firebase-Messaging-File-Io"));
         this.k = false;
-        m = mt8Var3;
-        this.a = jg4Var;
-        xf4 xf4Var = new xf4();
-        xf4Var.d = this;
-        xf4Var.b = habVar;
-        this.f = xf4Var;
-        jg4Var.a();
-        Context context2 = jg4Var.a;
+        m = vw8Var3;
+        this.a = ji4Var;
+        vh4 vh4Var = new vh4();
+        vh4Var.d = this;
+        vh4Var.b = febVar;
+        this.f = vh4Var;
+        ji4Var.a();
+        Context context2 = ji4Var.a;
         this.b = context2;
-        e84 e84Var = new e84();
-        this.i = kd7Var;
-        this.c = epVar;
-        this.j = rg4Var;
-        gl2 gl2Var = new gl2(context2, jg4Var, rg4Var, epVar, kd7Var);
-        this.d = gl2Var;
-        this.e = new sk4(newSingleThreadExecutor);
+        z84 z84Var = new z84();
+        this.i = tf7Var;
+        this.c = fpVar;
+        this.j = ri4Var;
+        am2 am2Var = new am2(context2, ji4Var, ri4Var, fpVar, tf7Var);
+        this.d = am2Var;
+        this.e = new ym4(newSingleThreadExecutor);
         this.g = scheduledThreadPoolExecutor;
         this.h = threadPoolExecutor;
-        jg4Var.a();
-        Context context3 = jg4Var.a;
+        ji4Var.a();
+        Context context3 = ji4Var.a;
         if (context3 instanceof Application) {
-            ((Application) context3).registerActivityLifecycleCallbacks(e84Var);
+            ((Application) context3).registerActivityLifecycleCallbacks(z84Var);
         } else {
             Log.w("FirebaseMessaging", "Context " + context3 + " was not an application, can't register for lifecycle callbacks. Some notification events may be dropped as a result.");
         }
-        if (gl2Var.w()) {
-            ug4 ug4Var = new ug4(this);
-            qg4 qg4Var = (qg4) rg4Var;
-            synchronized (qg4Var) {
-                qg4Var.j.add(ug4Var);
+        if (am2Var.A()) {
+            ui4 ui4Var = new ui4(this);
+            qi4 qi4Var = (qi4) ri4Var;
+            synchronized (qi4Var) {
+                qi4Var.j.add(ui4Var);
             }
         }
-        scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: vg4
+        scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: vi4
             public final /* synthetic */ FirebaseMessaging b;
 
             {
@@ -104,32 +104,32 @@ public class FirebaseMessaging {
                 FirebaseMessaging firebaseMessaging = this.b;
                 switch (b3) {
                     case 0:
-                        if (firebaseMessaging.f.A() && firebaseMessaging.j(firebaseMessaging.d())) {
+                        if (firebaseMessaging.f.x() && firebaseMessaging.j(firebaseMessaging.d())) {
                             firebaseMessaging.h();
                             return;
                         }
                         return;
                     default:
                         Context context4 = firebaseMessaging.b;
-                        rr.j(context4);
-                        ep epVar2 = firebaseMessaging.c;
+                        sr.j(context4);
+                        fp fpVar2 = firebaseMessaging.c;
                         boolean g = firebaseMessaging.g();
                         if (Build.VERSION.SDK_INT >= 29) {
-                            SharedPreferences a = sre.a(context4);
+                            SharedPreferences a = kwe.a(context4);
                             if (!a.contains("proxy_retention") || a.getBoolean("proxy_retention", false) != g) {
-                                fm9 fm9Var2 = (fm9) epVar2.c;
-                                if (fm9Var2.c.b() >= 241100000) {
-                                    Bundle l2 = ir2.l("proxy_retention", g);
-                                    igf t = igf.t(fm9Var2.b);
+                                up9 up9Var2 = (up9) fpVar2.c;
+                                if (up9Var2.c.b() >= 241100000) {
+                                    Bundle l2 = bs2.l("proxy_retention", g);
+                                    ykf t = ykf.t(up9Var2.b);
                                     synchronized (t) {
                                         i = t.a;
                                         t.a = i + 1;
                                     }
-                                    forException = t.u(new ebf(i, 4, l2, (byte) 0));
+                                    forException = t.u(new uff(i, 4, l2, (byte) 0));
                                 } else {
                                     forException = Tasks.forException(new IOException("SERVICE_NOT_AVAILABLE"));
                                 }
-                                forException.addOnSuccessListener(new hc((byte) 1), new l41((byte) 12, context4, g));
+                                forException.addOnSuccessListener(new ic((byte) 1), new t41((byte) 12, context4, g));
                             }
                         }
                         if (firebaseMessaging.g()) {
@@ -140,9 +140,9 @@ public class FirebaseMessaging {
                 }
             }
         });
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new kn7("Firebase-Messaging-Topics-Io"));
-        Tasks.call(scheduledThreadPoolExecutor2, new nwb(context2, scheduledThreadPoolExecutor2, kd7Var, jg4Var, this, rg4Var, (byte) 0)).addOnSuccessListener(scheduledThreadPoolExecutor, new wg4(this, b));
-        scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: vg4
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new kq7("Firebase-Messaging-Topics-Io"));
+        Tasks.call(scheduledThreadPoolExecutor2, new p0c(context2, scheduledThreadPoolExecutor2, tf7Var, ji4Var, this, ri4Var, (byte) 0)).addOnSuccessListener(scheduledThreadPoolExecutor, new wi4(this, b));
+        scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: vi4
             public final /* synthetic */ FirebaseMessaging b;
 
             {
@@ -157,32 +157,32 @@ public class FirebaseMessaging {
                 FirebaseMessaging firebaseMessaging = this.b;
                 switch (b3) {
                     case 0:
-                        if (firebaseMessaging.f.A() && firebaseMessaging.j(firebaseMessaging.d())) {
+                        if (firebaseMessaging.f.x() && firebaseMessaging.j(firebaseMessaging.d())) {
                             firebaseMessaging.h();
                             return;
                         }
                         return;
                     default:
                         Context context4 = firebaseMessaging.b;
-                        rr.j(context4);
-                        ep epVar2 = firebaseMessaging.c;
+                        sr.j(context4);
+                        fp fpVar2 = firebaseMessaging.c;
                         boolean g = firebaseMessaging.g();
                         if (Build.VERSION.SDK_INT >= 29) {
-                            SharedPreferences a = sre.a(context4);
+                            SharedPreferences a = kwe.a(context4);
                             if (!a.contains("proxy_retention") || a.getBoolean("proxy_retention", false) != g) {
-                                fm9 fm9Var2 = (fm9) epVar2.c;
-                                if (fm9Var2.c.b() >= 241100000) {
-                                    Bundle l2 = ir2.l("proxy_retention", g);
-                                    igf t = igf.t(fm9Var2.b);
+                                up9 up9Var2 = (up9) fpVar2.c;
+                                if (up9Var2.c.b() >= 241100000) {
+                                    Bundle l2 = bs2.l("proxy_retention", g);
+                                    ykf t = ykf.t(up9Var2.b);
                                     synchronized (t) {
                                         i = t.a;
                                         t.a = i + 1;
                                     }
-                                    forException = t.u(new ebf(i, 4, l2, (byte) 0));
+                                    forException = t.u(new uff(i, 4, l2, (byte) 0));
                                 } else {
                                     forException = Tasks.forException(new IOException("SERVICE_NOT_AVAILABLE"));
                                 }
-                                forException.addOnSuccessListener(new hc((byte) 1), new l41((byte) 12, context4, g));
+                                forException.addOnSuccessListener(new ic((byte) 1), new t41((byte) 12, context4, g));
                             }
                         }
                         if (firebaseMessaging.g()) {
@@ -199,52 +199,52 @@ public class FirebaseMessaging {
         synchronized (FirebaseMessaging.class) {
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = n;
             if (scheduledThreadPoolExecutor == null) {
-                scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new kn7("TAG"));
+                scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new kq7("TAG"));
                 n = scheduledThreadPoolExecutor;
             }
             scheduledThreadPoolExecutor.schedule(runnable, j, TimeUnit.SECONDS);
         }
     }
 
-    public static synchronized qj4 c(Context context) {
-        qj4 qj4Var;
+    public static synchronized i09 c(Context context) {
+        i09 i09Var;
         synchronized (FirebaseMessaging.class) {
-            qj4Var = l;
-            if (qj4Var == null) {
-                qj4Var = new qj4(context);
-                l = qj4Var;
+            i09Var = l;
+            if (i09Var == null) {
+                i09Var = new i09(context);
+                l = i09Var;
             }
         }
-        return qj4Var;
+        return i09Var;
     }
 
     @Deprecated
-    public static synchronized FirebaseMessaging getInstance(jg4 jg4Var) {
+    public static synchronized FirebaseMessaging getInstance(ji4 ji4Var) {
         FirebaseMessaging firebaseMessaging;
         synchronized (FirebaseMessaging.class) {
-            firebaseMessaging = (FirebaseMessaging) jg4Var.b(FirebaseMessaging.class);
-            fre.i(firebaseMessaging, "Firebase Messaging component is not present");
+            firebaseMessaging = (FirebaseMessaging) ji4Var.b(FirebaseMessaging.class);
+            xve.i(firebaseMessaging, "Firebase Messaging component is not present");
         }
         return firebaseMessaging;
     }
 
     public final String a() {
         Task task;
-        m20 d = d();
+        n20 d = d();
         if (!j(d)) {
             return (String) d.b;
         }
-        String b = kd7.b(this.a);
-        sk4 sk4Var = this.e;
-        synchronized (sk4Var) {
-            task = (Task) ((ps) sk4Var.c).get(b);
+        String b = tf7.b(this.a);
+        ym4 ym4Var = this.e;
+        synchronized (ym4Var) {
+            task = (Task) ((qs) ym4Var.c).get(b);
             if (task == null) {
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Making new request for: " + b);
                 }
-                gl2 gl2Var = this.d;
-                task = gl2Var.M().continueWithTask(Executors.newSingleThreadExecutor(new kn7("Firebase-Messaging-Task")), new kx3(gl2Var, (byte) 28)).onSuccessTask(this.h, new lt2((Object) this, (Object) b, (Object) d, (byte) 12)).continueWithTask((ExecutorService) sk4Var.b, new kq8(sk4Var, b, (byte) 5));
-                ((ps) sk4Var.c).put(b, task);
+                am2 am2Var = this.d;
+                task = am2Var.L().continueWithTask(Executors.newSingleThreadExecutor(new kq7("Firebase-Messaging-Task")), new e05((Object) am2Var, (byte) 0)).onSuccessTask(this.h, new fu2((Object) this, (Object) b, (Object) d, (byte) 12)).continueWithTask((ExecutorService) ym4Var.b, new m88((Object) ym4Var, (Object) b, (byte) 20));
+                ((qs) ym4Var.c).put(b, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
                 Log.d("FirebaseMessaging", "Joining ongoing request for: " + b);
             }
@@ -256,15 +256,15 @@ public class FirebaseMessaging {
         }
     }
 
-    public final m20 d() {
-        m20 c;
-        qj4 c2 = c(this.b);
-        jg4 jg4Var = this.a;
-        jg4Var.a();
-        String d = "[DEFAULT]".equals(jg4Var.b) ? "" : jg4Var.d();
-        String b = kd7.b(this.a);
+    public final n20 d() {
+        n20 c;
+        i09 c2 = c(this.b);
+        ji4 ji4Var = this.a;
+        ji4Var.a();
+        String d = "[DEFAULT]".equals(ji4Var.b) ? "" : ji4Var.d();
+        String b = tf7.b(this.a);
         synchronized (c2) {
-            c = m20.c(c2.a.getString(d + "|T|" + b + "|*", null));
+            c = n20.c(((SharedPreferences) c2.b).getString(d + "|T|" + b + "|*", null));
         }
         return c;
     }
@@ -272,20 +272,20 @@ public class FirebaseMessaging {
     public final void e() {
         Task forException;
         int i;
-        fm9 fm9Var = (fm9) this.c.c;
+        up9 up9Var = (up9) this.c.c;
         byte b = 1;
-        if (fm9Var.c.b() >= 241100000) {
-            igf t = igf.t(fm9Var.b);
+        if (up9Var.c.b() >= 241100000) {
+            ykf t = ykf.t(up9Var.b);
             Bundle bundle = Bundle.EMPTY;
             synchronized (t) {
                 i = t.a;
                 t.a = i + 1;
             }
-            forException = t.u(new ebf(i, 5, bundle, (byte) 1)).continueWith(wn3.d, y5d.a);
+            forException = t.u(new uff(i, 5, bundle, (byte) 1)).continueWith(no3.d, rad.a);
         } else {
             forException = Tasks.forException(new IOException("SERVICE_NOT_AVAILABLE"));
         }
-        forException.addOnSuccessListener(this.g, new wg4(this, b));
+        forException.addOnSuccessListener(this.g, new wi4(this, b));
     }
 
     public final synchronized void f(boolean z) {
@@ -294,12 +294,12 @@ public class FirebaseMessaging {
 
     public final boolean g() {
         Context context = this.b;
-        rr.j(context);
-        if (!rr.k(context)) {
+        sr.j(context);
+        if (!sr.k(context)) {
             return false;
         }
-        if (this.a.b(qj.class) == null) {
-            return xoe.a() && m != null;
+        if (this.a.b(rj.class) == null) {
+            return rte.a() && m != null;
         }
         return true;
     }
@@ -311,21 +311,21 @@ public class FirebaseMessaging {
     }
 
     public final synchronized void i(long j) {
-        b(new vcb(this, Math.min(Math.max(30L, j << 1), 28800L)), j);
+        b(new pr0(this, Math.min(Math.max(30L, j << 1), 28800L)), j);
         this.k = true;
     }
 
-    public final boolean j(m20 m20Var) {
+    public final boolean j(n20 n20Var) {
         String str;
-        if (m20Var != null) {
-            String str2 = (String) m20Var.b;
+        if (n20Var != null) {
+            String str2 = (String) n20Var.b;
             String a = this.i.a();
-            if (System.currentTimeMillis() <= m20Var.a + 604800000 && a.equals((String) m20Var.c)) {
-                if (!this.d.w()) {
+            if (System.currentTimeMillis() <= n20Var.a + 604800000 && a.equals((String) n20Var.c)) {
+                if (!this.d.A()) {
                     return str2.length() <= 22;
                 }
                 try {
-                    str = (String) Tasks.await(((qg4) this.j).e());
+                    str = (String) Tasks.await(((qi4) this.j).e());
                 } catch (InterruptedException | ExecutionException unused) {
                     str = null;
                 }

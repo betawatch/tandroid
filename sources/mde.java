@@ -1,35 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class mde {
-    public static Boolean a;
-    public static Boolean b;
-    public static Boolean c;
-    public static Boolean d;
-
-    public static boolean a(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        Boolean bool = a;
-        if (bool == null) {
-            bool = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
-            a = bool;
+    public static final void a(mx2 mx2Var, Throwable th) {
+        Throwable runtimeException;
+        Iterator it = qx2.a.iterator();
+        while (it.hasNext()) {
+            try {
+                ((ek) it.next()).c(th);
+            } catch (Throwable th2) {
+                if (th == th2) {
+                    runtimeException = th;
+                } else {
+                    runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th2);
+                    kke.a(runtimeException, th);
+                }
+                Thread currentThread = Thread.currentThread();
+                currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
+            }
         }
-        if (bool.booleanValue() && Build.VERSION.SDK_INT < 24) {
-            return true;
+        try {
+            kke.a(th, new af3(mx2Var));
+        } catch (Throwable unused) {
         }
-        Boolean bool2 = b;
-        if (bool2 == null) {
-            bool2 = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
-            b = bool2;
-        }
-        if (bool2.booleanValue()) {
-            return !xqe.a() || Build.VERSION.SDK_INT >= 30;
-        }
-        return false;
+        Thread currentThread2 = Thread.currentThread();
+        currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th);
     }
 }

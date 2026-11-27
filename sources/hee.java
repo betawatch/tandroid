@@ -1,19 +1,102 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class hee implements zn7 {
-    public static final hee a = new hee();
+public final class hee implements rfe {
+    public final hwd a;
+    public final rad b;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
+    public hee(rad radVar, hwd hwdVar) {
+        zgd zgdVar = r2e.a;
+        this.b = radVar;
+        this.a = hwdVar;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // rfe
+    public final void a(Object obj, byte[] bArr, int i, int i2, pl6 pl6Var) {
+        s6e s6eVar = (s6e) obj;
+        if (s6eVar.zzc == zie.f) {
+            s6eVar.zzc = zie.b();
         }
-        throw null;
+        obj.getClass();
+        throw new ClassCastException();
+    }
+
+    @Override // rfe
+    public final boolean b(s6e s6eVar, s6e s6eVar2) {
+        return s6eVar.zzc.equals(s6eVar2.zzc);
+    }
+
+    @Override // rfe
+    public final int c(s6e s6eVar) {
+        return s6eVar.zzc.hashCode();
+    }
+
+    @Override // rfe
+    public final boolean d(Object obj) {
+        obj.getClass();
+        throw new ClassCastException();
+    }
+
+    @Override // rfe
+    public final int e(s6e s6eVar) {
+        zie zieVar = s6eVar.zzc;
+        int i = zieVar.d;
+        if (i != -1) {
+            return i;
+        }
+        int i2 = 0;
+        for (int i3 = 0; i3 < zieVar.a; i3++) {
+            int i4 = zieVar.b[i3] >>> 3;
+            pzd pzdVar = (pzd) zieVar.c[i3];
+            int b = s0e.b(8) << 1;
+            int b2 = s0e.b(i4) + s0e.b(16);
+            int b3 = s0e.b(24);
+            int j = pzdVar.j();
+            i2 += b + b2 + xnb.g(j, j, b3);
+        }
+        zieVar.d = i2;
+        return i2;
+    }
+
+    @Override // rfe
+    public final void f(Object obj, oqd oqdVar) {
+        obj.getClass();
+        throw new ClassCastException();
+    }
+
+    @Override // rfe
+    public final s6e zze() {
+        hwd hwdVar = this.a;
+        if (hwdVar instanceof s6e) {
+            return (s6e) ((s6e) hwdVar).d(4);
+        }
+        u4e u4eVar = (u4e) ((s6e) hwdVar).d(5);
+        boolean m = u4eVar.b.m();
+        s6e s6eVar = u4eVar.b;
+        if (!m) {
+            return s6eVar;
+        }
+        s6eVar.getClass();
+        zee.c.a(s6eVar.getClass()).zzf(s6eVar);
+        s6eVar.j();
+        return u4eVar.b;
+    }
+
+    @Override // rfe
+    public final void zzf(Object obj) {
+        this.b.getClass();
+        zie zieVar = ((s6e) obj).zzc;
+        if (zieVar.e) {
+            zieVar.e = false;
+        }
+        zgd zgdVar = r2e.a;
+        obj.getClass();
+        throw new ClassCastException();
+    }
+
+    @Override // rfe
+    public final void zzg(Object obj, Object obj2) {
+        fge.o(obj, obj2);
     }
 }

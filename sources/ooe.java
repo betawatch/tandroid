@@ -1,43 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ooe {
-    public static Integer a(String str) {
-        if (str == null) {
-            return null;
-        }
-        switch (str.hashCode()) {
-            case -1118317585:
-                return str.equals("REPEAT_ALL_AND_SHUFFLE") ? 3 : null;
-            case -962896020:
-                return str.equals("REPEAT_SINGLE") ? 2 : null;
-            case 1645938909:
-                return str.equals("REPEAT_ALL") ? 1 : null;
-            case 1645952171:
-                return str.equals("REPEAT_OFF") ? 0 : null;
-            default:
-                return null;
-        }
+public final class ooe implements zq7 {
+    public static final ooe a = new ooe();
+
+    static {
+        xnb.y(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, new tnd(1)), 2)), 3)));
     }
 
-    public static String b(Integer num) {
-        if (num == null) {
-            return null;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        int intValue = num.intValue();
-        if (intValue == 0) {
-            return "REPEAT_OFF";
-        }
-        if (intValue == 1) {
-            return "REPEAT_ALL";
-        }
-        if (intValue == 2) {
-            return "REPEAT_SINGLE";
-        }
-        if (intValue != 3) {
-            return null;
-        }
-        return "REPEAT_ALL_AND_SHUFFLE";
+        throw null;
     }
 }

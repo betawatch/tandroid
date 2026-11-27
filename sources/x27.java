@@ -1,86 +1,47 @@
 // default package
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_stars;
+import android.os.Build;
+import android.util.Log;
+import android.widget.PopupWindow;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class x27 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class x27 extends s76 implements i27 {
+    public static final Method U;
+    public zm9 T;
 
-    public /* synthetic */ x27(FrameLayout frameLayout, boolean z, Object obj, Object obj2, Object obj3, byte b) {
-        this.a = b;
-        this.c = frameLayout;
-        this.b = z;
-        this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
+    static {
+        try {
+            if (Build.VERSION.SDK_INT <= 28) {
+                U = PopupWindow.class.getDeclaredMethod("setTouchModal", Boolean.TYPE);
+            }
+        } catch (NoSuchMethodException unused) {
+            Log.i("MenuPopupWindow", "Could not find method setTouchModal() on PopupWindow. Oh well.");
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        boolean z = this.b;
-        FrameLayout frameLayout = this.c;
-        byte b2 = 0;
-        switch (b) {
-            case 0:
-                f37 f37Var = (f37) frameLayout;
-                Context context = (Context) obj3;
-                k37 k37Var = (k37) obj2;
-                k37 k37Var2 = (k37) obj;
-                l37 l37Var = f37Var.d0;
-                o27 o27Var = l37Var.d;
-                if (!z) {
-                    new u21(l37Var, l37Var.G).Q(R.raw.star_premium_2, 36, gl.N2(k96.M0(2131750566, null), -1, 0, new v27(f37Var, context, b2), null)).j();
-                    break;
-                } else {
-                    boolean z2 = o27Var.k;
-                    o27Var.k = !z2;
-                    l37Var.y = false;
-                    if (z2) {
-                        o27Var.l = false;
-                        if (k37Var != null) {
-                            k37Var.a(false, true);
-                        }
-                    }
-                    k37Var2.a(o27Var.k, true);
-                    f37Var.i();
-                    f37Var.l(true);
-                    break;
-                }
-            default:
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                cs5 cs5Var = (cs5) obj;
-                lca lcaVar = ((pq8) frameLayout).a;
-                if (z) {
-                    lcaVar.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    u21.b0(lcaVar.a).R(savedStarGift.gift.getDocument(), gl.S2(k96.a0(null, null, 2131750021, vqa.t1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                } else {
-                    wsa wsaVar = lcaVar.e;
-                    int i = tL_starGiftCollection.collection_id;
-                    wsaVar.getClass();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(savedStarGift);
-                    wsaVar.a(i, arrayList);
-                    u21.b0(lcaVar.a).R(savedStarGift.gift.getDocument(), gl.S2(k96.a0(null, null, 2131750377, vqa.t1(savedStarGift.gift), tL_starGiftCollection.title))).j();
-                }
-                cs5Var.u();
-                lcaVar.o();
-                break;
+    @Override // i27
+    public final void C(f27 f27Var, j27 j27Var) {
+        zm9 zm9Var = this.T;
+        if (zm9Var != null) {
+            zm9Var.C(f27Var, j27Var);
         }
+    }
+
+    @Override // i27
+    public final void k0(f27 f27Var, j27 j27Var) {
+        zm9 zm9Var = this.T;
+        if (zm9Var != null) {
+            zm9Var.k0(f27Var, j27Var);
+        }
+    }
+
+    @Override // s76
+    public final vr3 o(Context context, boolean z) {
+        w27 w27Var = new w27(context, z);
+        w27Var.setHoverListener(this);
+        return w27Var;
     }
 }

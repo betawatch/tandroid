@@ -2,68 +2,64 @@
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.Utilities;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class uk0 implements Runnable {
-    public boolean a;
-    public int b;
-    public int c;
-    public final /* synthetic */ vk0 d;
+public abstract class uk0 {
+    public static final Matrix a = new Matrix();
+    public static final RectF b = new RectF();
+    public static final RectF c = new RectF();
 
-    public uk0(vk0 vk0Var) {
-        this.d = vk0Var;
+    public static void a(yi5 yi5Var, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
+        b(yi5Var, canvas, rectF, view, viewGroup, jn7.d4);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public static void b(yi5 yi5Var, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i) {
+        if (i <= 0 || yi5Var == null) {
+            return;
+        }
+        RectF rectF2 = c;
+        if (yic.c(view, viewGroup, rectF2)) {
+            float f = rectF2.left;
+            float f2 = rectF2.top;
+            RectF rectF3 = b;
+            rectF3.set(rectF);
+            rectF3.offset(-f, -f2);
+            boolean z = (f == 0.0f && f2 == 0.0f) ? false : true;
+            boolean z2 = i != 255;
+            if (z) {
+                canvas.save();
+                canvas.translate(f, f2);
+            }
+            if (z2) {
+                canvas.saveLayerAlpha(rectF3, i);
+            }
+            yi5Var.g(canvas, rectF3);
+            if (z2) {
+                canvas.restore();
+            }
+            if (z) {
+                canvas.restore();
+            }
+        }
+    }
+
+    public static void c(nz4 nz4Var, View view) {
         Bitmap bitmap;
-        vk0 vk0Var = this.d;
-        Paint paint = vk0Var.w;
-        if (vk0Var.f == null) {
-            vk0Var.f = new Bitmap[2];
-            vk0Var.i = new Canvas[2];
+        if (nz4Var == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = nz4Var.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
+            return;
         }
-        int i = (int) (this.b / 15.0f);
-        int i2 = 0;
-        while (i2 < 2) {
-            int i3 = (int) ((i2 == 0 ? vk0Var.s : this.c) / 15.0f);
-            Bitmap bitmap2 = vk0Var.f[i2];
-            if (bitmap2 != null && ((bitmap2.getHeight() != i3 || vk0Var.f[i2].getWidth() != i) && (bitmap = vk0Var.f[i2]) != null)) {
-                bitmap.recycle();
-                vk0Var.f[i2] = null;
-            }
-            System.currentTimeMillis();
-            Bitmap[] bitmapArr = vk0Var.f;
-            if (bitmapArr[i2] == null) {
-                try {
-                    bitmapArr[i2] = Bitmap.createBitmap(i, i3, Bitmap.Config.ARGB_8888);
-                    vk0Var.i[i2] = new Canvas(vk0Var.f[i2]);
-                    vk0Var.i[i2].scale(i / vk0Var.e[i2].getWidth(), i3 / vk0Var.e[i2].getHeight());
-                } catch (Throwable th) {
-                    fa4.g(th, true);
-                }
-            }
-            Bitmap[] bitmapArr2 = vk0Var.f;
-            if (i2 == 1) {
-                bitmapArr2[i2].eraseColor(bkb.v0(bkb.c6, vk0Var.y));
-            } else {
-                bitmapArr2[i2].eraseColor(0);
-            }
-            paint.setAlpha(kk7.d4);
-            Utilities.stackBlurBitmap(vk0Var.e[i2], 15);
-            Canvas canvas = vk0Var.i[i2];
-            if (canvas != null) {
-                canvas.drawBitmap(vk0Var.e[i2], 0.0f, 0.0f, paint);
-            }
-            if (this.a) {
-                return;
-            } else {
-                i2++;
-            }
-        }
-        gl.c3(new oz(this, (byte) 10));
+        Matrix matrix = a;
+        matrix.reset();
+        matrix.setScale(view.getWidth() / bitmap.getWidth(), view.getHeight() / bitmap.getHeight());
+        nz4Var.b.set(matrix);
+    }
+
+    public static tk0 d(jl0 jl0Var, int i, int i2) {
+        return new tk0(i, i2, jl0Var);
     }
 }

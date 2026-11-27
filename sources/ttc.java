@@ -1,60 +1,89 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Wallet.c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ttc implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ttc implements kcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ wtc b;
-    public final /* synthetic */ vtc c;
+    public final /* synthetic */ euc b;
+    public final /* synthetic */ c c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ ttc(wtc wtcVar, vtc vtcVar, byte b) {
+    public /* synthetic */ ttc(euc eucVar, c cVar, long j, byte b) {
         this.a = b;
-        this.b = wtcVar;
-        this.c = vtcVar;
+        this.b = eucVar;
+        this.c = cVar;
+        this.d = j;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // kcc
+    public final void a(Object obj, Object obj2, Object obj3) {
         byte b = this.a;
-        vtc vtcVar = this.c;
-        wtc wtcVar = this.b;
+        final euc eucVar = this.b;
         switch (b) {
             case 0:
-                if (((vtc) wtcVar.b) == vtcVar) {
-                    wtcVar.c = null;
-                    wtcVar.i(vtcVar);
-                    break;
-                }
-                break;
-            case 1:
-                if (((vtc) wtcVar.b) == vtcVar) {
-                    ttc ttcVar = (ttc) wtcVar.c;
-                    if (ttcVar != null) {
-                        gl.r(ttcVar);
-                        wtcVar.c = null;
+                final pcc pccVar = (pcc) obj3;
+                final byte b2 = 0;
+                this.c.n0(eucVar.f, eucVar.h, this.d, (String) obj, ((Boolean) obj2).booleanValue() ? eucVar.m0() : null, null, eucVar.n, new pcc() { // from class: vtc
+                    @Override // pcc
+                    public final void a(Object obj4) {
+                        byte b3 = b2;
+                        byte b4 = 4;
+                        pcc pccVar2 = pccVar;
+                        euc eucVar2 = eucVar;
+                        String str = (String) obj4;
+                        eucVar2.getClass();
+                        switch (b3) {
+                            case 0:
+                                pccVar2.a(str);
+                                if (!c.K(str) && str == null) {
+                                    eucVar2.fragmentView.postDelayed(new ptc(eucVar2, b4), 220L);
+                                    break;
+                                }
+                                break;
+                            default:
+                                pccVar2.a(str);
+                                if (!c.K(str) && str == null) {
+                                    eucVar2.fragmentView.postDelayed(new ptc(eucVar2, b4), 220L);
+                                    break;
+                                }
+                                break;
+                        }
                     }
-                    int i = vtcVar.d;
-                    if (i != 0) {
-                        ttc ttcVar2 = new ttc(wtcVar, vtcVar, (byte) 2);
-                        wtcVar.d = ttcVar2;
-                        gl.d3(ttcVar2, 20000L);
-                        rh1 rh1Var = vtcVar.a;
-                        ((ConnectionsManager) rh1Var.b).checkWebProxyInternal(vtcVar.b, i, new utc(wtcVar, vtcVar));
-                        break;
-                    } else {
-                        wtcVar.i(vtcVar);
-                        break;
-                    }
-                }
+                }, new stc(eucVar, (byte) 2));
                 break;
             default:
-                if (((vtc) wtcVar.b) == vtcVar) {
-                    wtcVar.d = null;
-                    wtcVar.i(vtcVar);
-                    break;
-                }
+                String str = (String) obj;
+                final pcc pccVar2 = (pcc) obj3;
+                final byte b3 = 1;
+                this.c.n0(eucVar.f, eucVar.h, this.d, str, ((Boolean) obj2).booleanValue() ? eucVar.m0() : null, null, eucVar.n, new pcc() { // from class: vtc
+                    @Override // pcc
+                    public final void a(Object obj4) {
+                        byte b32 = b3;
+                        byte b4 = 4;
+                        pcc pccVar22 = pccVar2;
+                        euc eucVar2 = eucVar;
+                        String str2 = (String) obj4;
+                        eucVar2.getClass();
+                        switch (b32) {
+                            case 0:
+                                pccVar22.a(str2);
+                                if (!c.K(str2) && str2 == null) {
+                                    eucVar2.fragmentView.postDelayed(new ptc(eucVar2, b4), 220L);
+                                    break;
+                                }
+                                break;
+                            default:
+                                pccVar22.a(str2);
+                                if (!c.K(str2) && str2 == null) {
+                                    eucVar2.fragmentView.postDelayed(new ptc(eucVar2, b4), 220L);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, new stc(eucVar, (byte) 3));
                 break;
         }
     }

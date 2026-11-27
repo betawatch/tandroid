@@ -1,88 +1,91 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.TextureView;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.R;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class nk2 implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class nk2 implements ActionMode.Callback {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ nk2(Object obj, int i, int i2, int i3, byte b) {
+    public /* synthetic */ nk2(EditTextBoldCursor editTextBoldCursor, byte b) {
         this.a = b;
-        this.e = obj;
-        this.b = i;
-        this.c = i2;
-        this.d = i3;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.d;
-        int i2 = this.c;
-        int i3 = this.b;
-        Object obj = this.e;
-        switch (b) {
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        ClipboardManager clipboardManager;
+        ClipData primaryClip;
+        int i;
+        switch (this.a) {
             case 0:
-                pk2 pk2Var = (pk2) ((ok2) obj).b;
-                f4b f4bVar = pk2Var.n;
-                if (f4bVar != null) {
-                    if (f4bVar.k0 == i3 && f4bVar.l0 == i2 && f4bVar.Q == i) {
-                        return;
-                    }
-                    f4bVar.k0 = i3;
-                    f4bVar.l0 = i2;
-                    f4bVar.Q = i;
-                    TextureView textureView = pk2Var.e;
-                    if (textureView != null) {
-                        textureView.requestLayout();
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 1:
-                ad7 ad7Var = (ad7) obj;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        sQLitePreparedStatement = ad7Var.b.executeFast("REPLACE INTO messages_seq VALUES(?, ?, ?)");
-                        sQLitePreparedStatement.requery();
-                        sQLitePreparedStatement.bindInteger(1, i3);
-                        sQLitePreparedStatement.bindInteger(2, i2);
-                        sQLitePreparedStatement.bindInteger(3, i);
-                        sQLitePreparedStatement.step();
-                    } catch (Exception e) {
-                        ad7Var.n(e, true);
-                        if (sQLitePreparedStatement == null) {
-                            return;
+                ok2 ok2Var = (ok2) this.b;
+                if (menuItem.getItemId() == 16908322) {
+                    bk2 bk2Var = ok2Var.getParent() instanceof bk2 ? (bk2) ok2Var.getParent() : null;
+                    if (bk2Var != null && (clipboardManager = (ClipboardManager) ok2Var.getContext().getSystemService(ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
+                        String charSequence = primaryClip.getItemAt(0).getText().toString();
+                        try {
+                            i = Integer.parseInt(charSequence);
+                        } catch (Exception unused) {
+                            i = -1;
+                        }
+                        if (i > 0) {
+                            bk2Var.c(charSequence, true);
                         }
                     }
-                    sQLitePreparedStatement.dispose();
-                    return;
-                } catch (Throwable th) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th;
+                    ok2Var.m();
                 }
-            case 2:
-                ye9 ye9Var = (ye9) obj;
-                KeyEvent.Callback C4 = ye9Var.C4(i3);
-                if (C4 instanceof eib) {
-                    ye9Var.v3.a0(i2, i, (eib) C4);
-                    return;
-                }
-                return;
+                return true;
             default:
-                ((oe9) obj).b.y4(i3, i2, i);
-                return;
+                return false;
         }
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        switch (this.a) {
+            case 0:
+                menu.add(0, R.id.paste, 0, R.string.paste);
+                break;
+        }
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        byte b = this.a;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                if (((dg9) this.b).length() == 0) {
+                    for (int size = menu.size() - 1; size >= 0; size--) {
+                        int itemId = menu.getItem(size).getItemId();
+                        if (itemId != 16908322 && itemId != 16908337) {
+                            menu.removeItem(itemId);
+                        }
+                    }
+                    break;
+                }
+                break;
+        }
+        return true;
+    }
+
+    private final void a(ActionMode actionMode) {
+    }
+
+    private final void b(ActionMode actionMode) {
     }
 }

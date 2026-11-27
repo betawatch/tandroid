@@ -1,68 +1,78 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class or extends o39 implements gk7 {
-    public ArrayList f3;
-    public t26 g3;
-    public int h3;
+public final class or extends LinearLayout implements snb {
+    public static final /* synthetic */ int h = 0;
+    public Paint a;
+    public Paint b;
+    public nr c;
+    public TextView d;
+    public float e;
+    public boolean f;
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.j5) {
-            z1();
+    public final void a(float f) {
+        this.e = f;
+        this.f = true;
+        TextView textView = this.d;
+        int w0 = aob.w0(null, aob.G6, false);
+        int i = aob.I6;
+        textView.setTextColor(vm2.f(f, w0, aob.w0(null, i, false)));
+        Paint paint = this.a;
+        paint.setColor(vm2.f(f, vm2.o(aob.w0(null, aob.M6, false), 63), aob.w0(null, i, false)));
+        paint.setStrokeWidth(Math.max(2, hl.L(hl.R1(0.5f, 2.0f, f))));
+        invalidate();
+    }
+
+    public final void b(boolean z, boolean z2) {
+        float f = z ? 1.0f : 0.0f;
+        float f2 = this.e;
+        if (f == f2 && z2) {
+            return;
         }
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        kk7.e().b(this, kk7.j5);
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        kk7.e().n(this, kk7.j5);
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        b0();
-    }
-
-    public final void z1() {
-        ArrayList arrayList = this.f3;
-        arrayList.clear();
-        arrayList.addAll(Arrays.asList(c06.values()));
-        if (na7.q1(this.h3).F3()) {
-            int i = 0;
-            while (i < arrayList.size()) {
-                if (((c06) arrayList.get(i)).e) {
-                    arrayList.remove(i);
-                    i--;
-                }
-                i++;
-            }
+        if (!z2) {
+            a(f);
+            return;
         }
-        getAdapter().f();
-        b0();
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            if (jme.a((c06) arrayList.get(i2))) {
-                this.g3.g1(i2, gl.L(16.0f));
+        ValueAnimator duration = ValueAnimator.ofFloat(f2, f).setDuration(250L);
+        duration.setInterpolator(dt3.e);
+        duration.addUpdateListener(new g0(this, (byte) 6));
+        duration.start();
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        Paint paint = this.a;
+        float strokeWidth = paint.getStrokeWidth();
+        RectF rectF = hl.P;
+        nr nrVar = this.c;
+        rectF.set(nrVar.getLeft() + strokeWidth, nrVar.getTop() + strokeWidth, nrVar.getRight() - strokeWidth, nrVar.getBottom() - strokeWidth);
+        canvas.drawRoundRect(rectF, hl.L(18.0f), hl.L(18.0f), this.b);
+        super.draw(canvas);
+        canvas.drawRoundRect(rectF, hl.L(18.0f), hl.L(18.0f), paint);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            if (!this.f || this.d == null) {
                 return;
             }
+            a(this.e);
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

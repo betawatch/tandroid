@@ -1,55 +1,24 @@
 // default package
 
-import android.content.Context;
-import android.os.Build;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.util.Set;
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class oa3 implements qd5, rd5 {
-    public final e06 a;
-    public final Context b;
-    public final mt8 c;
-    public final Set d;
-    public final Executor e;
+public final class oa3 extends qg0 {
+    public final na3 d;
 
-    public oa3(Context context, String str, Set set, mt8 mt8Var, Executor executor) {
-        this.a = new e06(new dq2(context, str, (byte) 1));
-        this.d = set;
-        this.e = executor;
-        this.c = mt8Var;
-        this.b = context;
+    public oa3(na3 na3Var, long j, long j2) {
+        super(j, j2);
+        this.d = na3Var;
     }
 
-    public final synchronized int a() {
-        long currentTimeMillis = System.currentTimeMillis();
-        td5 td5Var = (td5) this.a.get();
-        if (!td5Var.g(currentTimeMillis)) {
-            return 1;
-        }
-        td5Var.e();
-        return 3;
+    @Override // gm6
+    public final long a() {
+        b();
+        return this.d.e(this.c);
     }
 
-    public final Task b() {
-        if (Build.VERSION.SDK_INT >= 24 ? kh0.j(this.b) : true) {
-            return Tasks.call(this.e, new na3(this, (byte) 0));
-        }
-        return Tasks.forResult("");
-    }
-
-    public final void c() {
-        if (this.d.size() <= 0) {
-            Tasks.forResult(null);
-            return;
-        }
-        if (Build.VERSION.SDK_INT >= 24 ? kh0.j(this.b) : true) {
-            Tasks.call(this.e, new na3(this, (byte) 1));
-        } else {
-            Tasks.forResult(null);
-        }
+    @Override // gm6
+    public final long g() {
+        b();
+        return this.d.d(this.c);
     }
 }

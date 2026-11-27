@@ -1,41 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class h61 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ st c;
-    public final /* synthetic */ long[] d;
-    public final /* synthetic */ i61 e;
+    public final /* synthetic */ z61 b;
+    public final /* synthetic */ p c;
+    public final /* synthetic */ p61 d;
 
-    public /* synthetic */ h61(boolean[] zArr, st stVar, long[] jArr, i61 i61Var, byte b) {
+    public /* synthetic */ h61(z61 z61Var, p pVar, p61 p61Var, byte b) {
         this.a = b;
-        this.b = zArr;
-        this.c = stVar;
-        this.d = jArr;
-        this.e = i61Var;
+        this.b = z61Var;
+        this.c = pVar;
+        this.d = p61Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                gl.c3(new h61(this.b, this.c, this.d, this.e, (byte) 1));
+                Utilities.e.c(new h61(this.b, this.c, this.d, (byte) 1));
                 break;
             default:
-                this.b[0] = true;
-                this.c.e(1.0f);
-                long[] jArr = this.d;
-                long j = jArr[0];
-                i61 i61Var = this.e;
-                if (j <= 0) {
-                    i61Var.dismiss();
-                    break;
-                } else {
-                    gl.d3(new nv0(i61Var, (byte) 11), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
-                    break;
-                }
+                this.b.f0(this.c, this.d);
+                break;
         }
     }
 }

@@ -3,28 +3,28 @@ package com.google.android.recaptcha.internal;
 import android.app.Application;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzr extends ccb implements eq4 {
+final class zzr extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzu zzb;
     final /* synthetic */ String zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzr(zzu zzuVar, String str, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzr(zzu zzuVar, String str, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzuVar;
         this.zzc = str;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzr(this.zzb, this.zzc, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        return new zzr(this.zzb, this.zzc, zw2Var);
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzr) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzr) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x007d, code lost:
@@ -39,31 +39,31 @@ final class zzr extends ccb implements eq4 {
     
         if (r10 != r3) goto L15;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        zc3 zc3Var;
+        rd3 rd3Var;
         String str;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
             try {
                 if (i == 0) {
-                    qse.b(obj);
-                    zc3Var = this.zzb.zzc;
-                    if (zc3Var == null) {
-                        zc3Var = null;
+                    ixe.b(obj);
+                    rd3Var = this.zzb.zzc;
+                    if (rd3Var == null) {
+                        rd3Var = null;
                     }
                     this.zza = 1;
-                    obj = zc3Var.await(this);
+                    obj = rd3Var.await(this);
                 } else {
                     if (i != 1) {
-                        qse.b(obj);
-                        String str2 = ((r44) obj).a;
+                        ixe.b(obj);
+                        String str2 = ((n54) obj).a;
                         if (str2 == null) {
-                            sc8.j("Required value was null.");
+                            grb.i("Required value was null.");
                             return null;
                         }
                         String str3 = this.zzc;
@@ -72,35 +72,35 @@ final class zzr extends ccb implements eq4 {
                         zzxi zzf2 = zzxj.zzf();
                         zzf2.zze(str2);
                         zzf.zzf((zzxj) zzf2.zzk());
-                        return new ta9((zzxx) zzf.zzk());
+                        return new he9((zzxx) zzf.zzk());
                     }
-                    qse.b(obj);
+                    ixe.b(obj);
                 }
-                q44 q44Var = new q44();
+                m54 m54Var = new m54();
                 zzu zzuVar = this.zzb;
                 str = zzuVar.zzb;
                 if (str == null) {
                     str = null;
                 }
-                q44Var.a = str;
-                q44Var.b = this.zzc;
+                m54Var.a = str;
+                m54Var.b = this.zzc;
                 Application zzl = zzu.zzl(zzuVar);
                 zzl.getClass();
-                u84 u84Var = new u84(zzl, u84.s, vn.g, ay4.c);
-                agb b = bgb.b();
-                b.c = new f84[]{ped.a};
-                b.a = new xdd(q44Var);
+                qa4 qa4Var = new qa4(zzl, qa4.s, wn.g, g05.c);
+                wjb b = xjb.b();
+                b.c = new a94[]{gjd.a};
+                b.a = new oqd(m54Var);
                 b.d = (char) 34002;
-                Task e = u84Var.e(0, b.a());
+                Task e = qa4Var.e(0, b.a());
                 e.getClass();
-                zc3 zza = zzdf.zza(e);
+                rd3 zza = zzdf.zza(e);
                 this.zza = 2;
                 obj = zza.await(this);
             } catch (Exception unused) {
-                return new ta9(new sa9(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new he9(new ge9(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new ta9(new sa9(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new he9(new ge9(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

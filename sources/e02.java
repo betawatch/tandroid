@@ -1,31 +1,49 @@
 // default package
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class e02 extends ky1 {
-    public final /* synthetic */ x02 y0;
+public final /* synthetic */ class e02 implements mcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e02(x02 x02Var, wjb wjbVar, Context context) {
-        super(R.drawable.send_plane_24, wjbVar, context, false);
-        this.y0 = x02Var;
+    public /* synthetic */ e02(KeyEvent.Callback callback, byte b) {
+        this.a = b;
+        this.b = callback;
     }
 
-    @Override // ky1
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // ky1
-    public final boolean c() {
-        return !this.y0.R2;
-    }
-
-    @Override // ky1
-    public final int getFillColor() {
-        return bkb.v0(bkb.R5, this.y0.J0);
+    @Override // mcc
+    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
+        byte b = this.a;
+        KeyEvent.Callback callback = this.b;
+        switch (b) {
+            case 0:
+                n12 n12Var = (n12) callback;
+                CharSequence charSequence = (CharSequence) obj;
+                p02 p02Var = n12Var.B2;
+                p02Var.setText(charSequence);
+                p02Var.w(charSequence.length(), charSequence.length());
+                n12Var.j1();
+                break;
+            case 1:
+                n12 n12Var2 = (n12) callback;
+                CharSequence charSequence2 = (CharSequence) obj;
+                r02 r02Var = n12Var2.M2;
+                r02Var.setText(charSequence2);
+                r02Var.w(charSequence2.length(), charSequence2.length());
+                n12Var2.j1();
+                break;
+            default:
+                ub1 ub1Var = (ub1) callback;
+                kb1 kb1Var = ub1Var.f;
+                kb1Var.setText((CharSequence) obj);
+                kb1Var.d();
+                kb1Var.k(true);
+                hb1 hb1Var = ub1Var.d0;
+                hl.r(hb1Var);
+                hb1Var.run();
+                break;
+        }
     }
 }

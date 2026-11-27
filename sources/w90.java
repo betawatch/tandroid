@@ -1,20 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class w90 {
     public final String a;
-    public final String b;
-    public final String c;
-    public final qa0 d;
-    public final int e;
+    public final ArrayList b;
 
-    public w90(String str, String str2, String str3, qa0 qa0Var, int i) {
+    public w90(String str, ArrayList arrayList) {
+        if (str == null) {
+            p3d.h("Null userAgent");
+            throw null;
+        }
         this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = qa0Var;
-        this.e = i;
+        this.b = arrayList;
     }
 
     public final boolean equals(Object obj) {
@@ -25,73 +25,14 @@ public final class w90 {
             return false;
         }
         w90 w90Var = (w90) obj;
-        String str = w90Var.a;
-        String str2 = this.a;
-        if (str2 == null) {
-            if (str != null) {
-                return false;
-            }
-        } else if (!str2.equals(str)) {
-            return false;
-        }
-        String str3 = w90Var.b;
-        String str4 = this.b;
-        if (str4 == null) {
-            if (str3 != null) {
-                return false;
-            }
-        } else if (!str4.equals(str3)) {
-            return false;
-        }
-        String str5 = w90Var.c;
-        String str6 = this.c;
-        if (str6 == null) {
-            if (str5 != null) {
-                return false;
-            }
-        } else if (!str6.equals(str5)) {
-            return false;
-        }
-        qa0 qa0Var = w90Var.d;
-        qa0 qa0Var2 = this.d;
-        if (qa0Var2 == null) {
-            if (qa0Var != null) {
-                return false;
-            }
-        } else if (!qa0Var2.equals(qa0Var)) {
-            return false;
-        }
-        int i = w90Var.e;
-        int i2 = this.e;
-        return i2 == 0 ? i == 0 : ug8.c(i2, i);
+        return this.a.equals(w90Var.a) && this.b.equals(w90Var.b);
     }
 
     public final int hashCode() {
-        String str = this.a;
-        int hashCode = ((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003;
-        String str2 = this.b;
-        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
-        String str3 = this.c;
-        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
-        qa0 qa0Var = this.d;
-        int hashCode4 = (hashCode3 ^ (qa0Var == null ? 0 : qa0Var.hashCode())) * 1000003;
-        int i = this.e;
-        return hashCode4 ^ (i != 0 ? ug8.F(i) : 0);
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("InstallationResponse{uri=");
-        sb.append(this.a);
-        sb.append(", fid=");
-        sb.append(this.b);
-        sb.append(", refreshToken=");
-        sb.append(this.c);
-        sb.append(", authToken=");
-        sb.append(this.d);
-        sb.append(", responseCode=");
-        int i = this.e;
-        sb.append(i != 1 ? i != 2 ? "null" : "BAD_CONFIG" : "OK");
-        sb.append("}");
-        return sb.toString();
+        return "HeartBeatResult{userAgent=" + this.a + ", usedDates=" + this.b + "}";
     }
 }

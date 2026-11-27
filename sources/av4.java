@@ -1,42 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class av4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tv4 b;
-    public final /* synthetic */ p8c c;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
-    public /* synthetic */ av4(tv4 tv4Var, p8c p8cVar, byte b) {
-        this.a = b;
-        this.b = tv4Var;
-        this.c = p8cVar;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class av4 {
+    public final List a;
+    public final boolean b;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        p8c p8cVar = this.c;
-        tv4 tv4Var = this.b;
-        switch (b) {
-            case 0:
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.FALSE);
+    public av4(List list, boolean z) {
+        this.a = list;
+        this.b = z;
+        if (list.isEmpty()) {
+            lq5.j("credentialOptions should not be empty");
+            throw null;
+        }
+        if (list.size() > 1) {
+            List list2 = list;
+            int i = 0;
+            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
+                Iterator it = list2.iterator();
+                while (it.hasNext()) {
+                    if ((((j23) it.next()) instanceof cv4) && (i = i + 1) < 0) {
+                        throw new ArithmeticException("Count overflow has happened.");
+                    }
                 }
-                tv4Var.dismiss();
-                break;
-            case 1:
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.FALSE);
-                }
-                tv4Var.dismiss();
-                break;
-            default:
-                if (p8cVar != null) {
-                    p8cVar.a(Boolean.FALSE);
-                }
-                tv4Var.dismiss();
-                break;
+            }
+            if (i > 0 && i != this.a.size()) {
+                lq5.j("Digital Credential Option cannot be used with other credential option.");
+                throw null;
+            }
+            for (j23 j23Var : this.a) {
+            }
         }
     }
 }

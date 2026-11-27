@@ -1,32 +1,37 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.ViewGroup;
+import android.content.Context;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jr1 extends ma8 {
-    @Override // ma8
-    public final void c(Canvas canvas, float f, float f2, float f3, float f4, float f5) {
-        if (f > 0.0f) {
-            ViewGroup viewGroup = this.e;
-            if (viewGroup instanceof gb2) {
-                gb2 gb2Var = (gb2) viewGroup;
-                int max = (int) Math.max(f4, f3);
-                int min = (int) Math.min(f5, gb2Var.getMeasuredHeight() + f3);
-                RectF rectF = gl.P;
-                rectF.set(f2, max, gb2Var.getMeasuredWidth() + f2, min);
-                canvas.saveLayerAlpha(rectF, (int) (f * 255.0f), 31);
-                canvas.translate(f2, f3 + gb2Var.getPaddingTop());
-                gb2Var.Yb = true;
-                gb2Var.j1(canvas);
-                if (gb2Var.I3() && gb2Var.getCurrentMessagesGroup() == null) {
-                    gb2Var.A1(1.0f, canvas, false);
+public final class jr1 extends hv1 {
+    public final /* synthetic */ byte f;
+    public boolean h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jr1(Context context, wk5 wk5Var, Bundle bundle, byte b) {
+        super(context, wk5Var, bundle);
+        this.f = b;
+    }
+
+    @Override // hv1
+    public final void a() {
+        switch (this.f) {
+            case 0:
+                if (!this.h) {
+                    this.h = true;
+                    super.a();
+                    break;
                 }
-                gb2Var.Yb = false;
-                canvas.restore();
-            }
+                break;
+            default:
+                if (!this.h) {
+                    this.h = true;
+                    super.a();
+                    break;
+                }
+                break;
         }
     }
 }

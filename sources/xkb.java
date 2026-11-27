@@ -1,9 +1,160 @@
 // default package
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface xkb {
-    void d(int i, View view);
+public final class xkb extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final og2 c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public float h;
+
+    static {
+        new qm("animationProgress", (byte) 17);
+    }
+
+    public xkb(Context context) {
+        super(context);
+        this.f = 50;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        yob.X(textView, aob.G6, null);
+        ik8.w(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setGravity((ob6.a0 ? 5 : 3) | 16);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        boolean z = ob6.a0;
+        addView(textView, tre.d(-1, -1.0f, (z ? 5 : 3) | 48, z ? 21.0f : 64.0f, 0.0f, z ? 64.0f : 21.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        yob.X(textView2, aob.z6, null);
+        textView2.setTextSize(1, 13.0f);
+        textView2.setGravity(ob6.a0 ? 5 : 3);
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setPadding(0, 0, 0, 0);
+        textView2.setEllipsize(truncateAt);
+        boolean z2 = ob6.a0;
+        addView(textView2, tre.d(-2, -2.0f, (z2 ? 5 : 3) | 48, z2 ? 21.0f : 64.0f, 36.0f, z2 ? 64.0f : 21.0f, 0.0f));
+        og2 og2Var = new og2(21, null, context);
+        this.c = og2Var;
+        og2Var.setDrawUnchecked(true);
+        og2Var.setDrawBackgroundAsArc(10);
+        og2Var.setDuration(100L);
+        og2Var.b(aob.h7, aob.j7, aob.k7);
+        addView(og2Var, tre.d(20, 20.0f, (ob6.a0 ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        setClipChildren(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setAnimationProgress(float f) {
+        this.h = f;
+        getMeasuredWidth();
+        hl.L(40.0f);
+        getMeasuredHeight();
+    }
+
+    public final void b(String str, String str2, boolean z, boolean z2) {
+        TextView textView = this.a;
+        textView.setText(str);
+        TextView textView2 = this.b;
+        textView2.setText(str2);
+        this.d = z2;
+        textView2.setVisibility(0);
+        this.e = z;
+        if (z) {
+            textView2.setLines(0);
+            textView2.setMaxLines(0);
+            textView2.setSingleLine(false);
+            textView2.setEllipsize(null);
+            textView2.setPadding(0, 0, 0, hl.L(11.0f));
+        } else {
+            textView2.setLines(1);
+            textView2.setMaxLines(1);
+            textView2.setSingleLine(true);
+            textView2.setEllipsize(TextUtils.TruncateAt.END);
+            textView2.setPadding(0, 0, 0, 0);
+        }
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
+        layoutParams.height = -2;
+        layoutParams.topMargin = hl.L(10.0f);
+        textView.setLayoutParams(layoutParams);
+        setWillNotDraw(!z2);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(64.0f) : 0), getMeasuredHeight() - 1, aob.j0);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.checkbox");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.c.a.q);
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.a.getText());
+        TextView textView = this.b;
+        if (textView != null) {
+            sb.append("\n");
+            sb.append(textView.getText());
+        }
+        accessibilityNodeInfo.setText(sb);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        if (this.e) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), 0);
+        } else {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(this.b.getVisibility() == 0 ? 64.0f : this.f) + (this.d ? 1 : 0), TLObject.FLAG_30));
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        motionEvent.getX();
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        clearAnimation();
+        super.setBackgroundColor(i);
+    }
+
+    public void setChecked(boolean z) {
+        this.c.a(z, true);
+    }
+
+    public void setHeight(int i) {
+        this.f = i;
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z) {
+        super.setPressed(z);
+    }
+
+    public void setTypeface(Typeface typeface) {
+        this.a.setTypeface(typeface);
+    }
 }

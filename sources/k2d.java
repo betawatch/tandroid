@@ -1,11 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class k2d {
-    public final /* synthetic */ lv6 a;
+import android.view.WindowInsets;
 
-    public k2d(lv6 lv6Var) {
-        this.a = lv6Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class k2d {
+    public static int a(int i) {
+        int statusBars;
+        int i2 = 0;
+        for (int i3 = 1; i3 <= 512; i3 <<= 1) {
+            if ((i & i3) != 0) {
+                if (i3 == 1) {
+                    statusBars = WindowInsets.Type.statusBars();
+                } else if (i3 == 2) {
+                    statusBars = WindowInsets.Type.navigationBars();
+                } else if (i3 == 4) {
+                    statusBars = WindowInsets.Type.captionBar();
+                } else if (i3 == 8) {
+                    statusBars = WindowInsets.Type.ime();
+                } else if (i3 == 16) {
+                    statusBars = WindowInsets.Type.systemGestures();
+                } else if (i3 == 32) {
+                    statusBars = WindowInsets.Type.mandatorySystemGestures();
+                } else if (i3 == 64) {
+                    statusBars = WindowInsets.Type.tappableElement();
+                } else if (i3 == 128) {
+                    statusBars = WindowInsets.Type.displayCutout();
+                } else if (i3 == 512) {
+                    statusBars = WindowInsets.Type.systemOverlays();
+                }
+                i2 |= statusBars;
+            }
+        }
+        return i2;
     }
 }

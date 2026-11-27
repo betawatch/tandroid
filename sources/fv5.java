@@ -1,24 +1,47 @@
 // default package
 
-import android.os.Bundle;
+import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fv5 extends v51 {
-    public final /* synthetic */ cj3 f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class fv5 extends CancellationException {
+    public final transient ev5 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fv5(Bundle bundle, cj3 cj3Var) {
-        super(bundle);
-        this.f = cj3Var;
+    public fv5(String str, Throwable th, ev5 ev5Var) {
+        super(str);
+        this.a = ev5Var;
+        if (th != null) {
+            initCause(th);
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onTransitionAnimationEnd(boolean z, boolean z2) {
-        super.onTransitionAnimationEnd(z, z2);
-        if (!z || z2) {
-            return;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        this.f.removeSelfFromStack();
+        if (!(obj instanceof fv5)) {
+            return false;
+        }
+        fv5 fv5Var = (fv5) obj;
+        return ur5.a(fv5Var.getMessage(), getMessage()) && ur5.a(fv5Var.a, this.a) && ur5.a(fv5Var.getCause(), getCause());
+    }
+
+    @Override // java.lang.Throwable
+    public final Throwable fillInStackTrace() {
+        setStackTrace(new StackTraceElement[0]);
+        return this;
+    }
+
+    public final int hashCode() {
+        String message = getMessage();
+        message.getClass();
+        int hashCode = (this.a.hashCode() + (message.hashCode() * 31)) * 31;
+        Throwable cause = getCause();
+        return hashCode + (cause != null ? cause.hashCode() : 0);
+    }
+
+    @Override // java.lang.Throwable
+    public final String toString() {
+        return super.toString() + "; job=" + this.a;
     }
 }

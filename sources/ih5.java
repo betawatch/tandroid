@@ -1,31 +1,27 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ih5 implements kh5, IInterface {
-    public final IBinder a;
+public final class ih5 {
+    public final Uri a;
+    public final ko4 b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String g;
+    public final String h;
 
-    public ih5(IBinder iBinder) {
-        this.a = iBinder;
-    }
-
-    public final void a(Parcel parcel, int i) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            this.a.transact(i, parcel, obtain, 0);
-            obtain.readException();
-        } finally {
-            parcel.recycle();
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public ih5(Uri uri, ko4 ko4Var, String str, String str2, String str3, String str4, String str5, String str6) {
+        this.a = uri;
+        this.b = ko4Var;
+        this.c = str;
+        this.d = str2;
+        this.e = str3;
+        this.f = str4;
+        this.g = str5;
+        this.h = str6;
     }
 }

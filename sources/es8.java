@@ -1,33 +1,57 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class es8 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ d b;
-    public final /* synthetic */ TL_wallet.card c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class es8 {
+    public final String a;
+    public final Runnable b;
+    public final String c;
+    public final String[] d;
+    public final int e;
+    public final short f;
+    public int g;
+    public String h;
 
-    public /* synthetic */ es8(d dVar, TL_wallet.card cardVar, byte b) {
-        this.a = b;
-        this.b = dVar;
-        this.c = cardVar;
+    /* JADX WARN: Multi-variable type inference failed */
+    public es8(int i, String str, String str2, String str3, String str4, int i2, Runnable runnable) {
+        this.f = i;
+        this.a = str;
+        this.c = str2;
+        this.b = runnable;
+        this.e = i2;
+        if (str3 != null) {
+            if (str4 != null) {
+                this.d = new String[]{str3, str4};
+            } else {
+                this.d = new String[]{str3};
+            }
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TL_wallet.card cardVar = this.c;
-        d dVar = this.b;
-        switch (b) {
-            case 0:
-                dVar.presentFragment(new qpc(dVar.getCurrentAccount(), cardVar.address));
-                break;
-            default:
-                dVar.presentFragment(new qpc(dVar.getCurrentAccount(), cardVar.address));
-                break;
-        }
+    public final boolean equals(Object obj) {
+        return (obj instanceof es8) && this.f == ((es8) obj).f;
+    }
+
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.g);
+        serializedData.writeInt32(1);
+        serializedData.writeInt32(this.f);
+        return Utilities.f(serializedData.toByteArray());
+    }
+
+    public es8(int i, String str, String str2, int i2, Runnable runnable) {
+        this(i, str, null, str2, null, i2, runnable);
+    }
+
+    public es8(int i, String str, String str2, String str3, int i2, Runnable runnable) {
+        this(i, str, str2, str3, null, i2, runnable);
+    }
+
+    public es8(int i, String str, int i2, Runnable runnable) {
+        this(i, str, null, null, null, i2, runnable);
     }
 }

@@ -1,42 +1,149 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class pz4 implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class pz4 implements mz4, kl0, wy4 {
+    public final mz4 a;
+    public final mz4 b;
+    public final r89 c = new r89(0, false);
+    public float d;
 
-    public /* synthetic */ pz4(TwoStepVerificationActivity twoStepVerificationActivity, byte b) {
-        this.a = b;
-        this.b = twoStepVerificationActivity;
+    public pz4(mz4 mz4Var, mz4 mz4Var2) {
+        this.a = mz4Var;
+        this.b = mz4Var2;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-        switch (b) {
-            case 0:
-                twoStepVerificationActivity.presentFragment(new p3c(6, null));
-                break;
-            case 1:
-                twoStepVerificationActivity.finishFragment();
-                break;
-            case 2:
-                twoStepVerificationActivity.getConnectionsManager().sendRequest(new TL_account.declinePasswordReset(), new t2c(twoStepVerificationActivity, (byte) 2));
-                break;
-            case 3:
-                twoStepVerificationActivity.c0();
-                break;
-            case 4:
-                twoStepVerificationActivity.y0();
-                break;
-            default:
-                twoStepVerificationActivity.y0();
-                break;
+    public static wy4 i(mz4 mz4Var) {
+        if (mz4Var instanceof wy4) {
+            wy4 wy4Var = (wy4) mz4Var;
+            if (wy4Var.h()) {
+                return wy4Var;
+            }
+        }
+        return null;
+    }
+
+    @Override // wy4
+    public final int a() {
+        return j().a();
+    }
+
+    @Override // kl0
+    public final jl0 b() {
+        jl0 jl0Var = new jl0(this, this, this);
+        c(jl0Var);
+        return jl0Var;
+    }
+
+    @Override // kl0
+    public final void c(jl0 jl0Var) {
+        this.c.add(jl0Var);
+    }
+
+    @Override // wy4
+    public final void d(float f, float f2, int i, Canvas canvas, RectF rectF) {
+        float f3;
+        float f4;
+        int i2;
+        Canvas canvas2;
+        RectF rectF2;
+        if (this.d < 1.0f) {
+            f3 = f;
+            f4 = f2;
+            i2 = i;
+            canvas2 = canvas;
+            rectF2 = rectF;
+            i(this.a).d(f3, f4, i2, canvas2, rectF2);
+        } else {
+            f3 = f;
+            f4 = f2;
+            i2 = i;
+            canvas2 = canvas;
+            rectF2 = rectF;
+        }
+        float f5 = this.d;
+        if (f5 > 0.0f) {
+            if (f5 < 1.0f) {
+                canvas2.saveLayerAlpha(null, (int) (f5 * 255.0f));
+            }
+            RectF rectF3 = rectF2;
+            Canvas canvas3 = canvas2;
+            int i3 = i2;
+            i(this.b).d(f3, f4, i3, canvas3, rectF3);
+            if (this.d < 1.0f) {
+                canvas3.restore();
+            }
+        }
+    }
+
+    @Override // mz4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+        float f5;
+        float f6;
+        float f7;
+        float f8;
+        Canvas canvas2;
+        if (this.d < 1.0f) {
+            this.a.e(f, f2, f3, f4, canvas);
+            f5 = f;
+            canvas2 = canvas;
+            f8 = f4;
+            f7 = f3;
+            f6 = f2;
+        } else {
+            f5 = f;
+            f6 = f2;
+            f7 = f3;
+            f8 = f4;
+            canvas2 = canvas;
+        }
+        float f9 = this.d;
+        if (f9 > 0.0f) {
+            if (f9 < 1.0f) {
+                canvas2.saveLayerAlpha(f5, f6, f7, f8, (int) (f9 * 255.0f));
+            }
+            Canvas canvas3 = canvas2;
+            this.b.e(f5, f6, f7, f8, canvas3);
+            if (this.d < 1.0f) {
+                canvas3.restore();
+            }
+        }
+    }
+
+    @Override // wy4
+    public final int f() {
+        return j().f();
+    }
+
+    @Override // wy4
+    public final int g() {
+        return j().g();
+    }
+
+    @Override // wy4
+    public final boolean h() {
+        return (i(this.a) == null || i(this.b) == null) ? false : true;
+    }
+
+    public final wy4 j() {
+        wy4 i = i(this.a);
+        wy4 i2 = i(this.b);
+        return i.f() <= i2.f() ? i : i2;
+    }
+
+    public final void k(float f) {
+        if (this.d != f) {
+            this.d = f;
+            Iterator it = this.c.iterator();
+            while (it.hasNext()) {
+                jl0 jl0Var = (jl0) it.next();
+                jl0Var.updateColors();
+                jl0Var.invalidateSelf();
+            }
         }
     }
 }

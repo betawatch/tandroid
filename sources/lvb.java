@@ -1,24 +1,27 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class lvb extends i49 {
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ lvb(byte b) {
-        this.a = b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum lvb extends rwb {
+    public lvb() {
+        super("SelfClosingStartTag", 41);
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        byte b = this.a;
-    }
-
-    private final void c(RecyclerView recyclerView, int i, int i2) {
-    }
-
-    private final void d(RecyclerView recyclerView, int i, int i2) {
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        mub mubVar = rwb.a;
+        if (d == '>') {
+            bubVar.i.l = true;
+            bubVar.k();
+            bubVar.c = mubVar;
+        } else if (d == 65535) {
+            bubVar.l(this);
+            bubVar.c = mubVar;
+        } else {
+            bubVar.m(this);
+            ik1Var.q();
+            bubVar.c = rwb.X;
+        }
     }
 }

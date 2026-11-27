@@ -1,176 +1,141 @@
 // default package
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Typeface;
-import android.os.ParcelFileDescriptor;
-import android.system.ErrnoException;
-import android.system.Os;
-import android.system.OsConstants;
-import android.util.Log;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public class t3c extends vwe {
-    public static Class a = null;
-    public static Constructor b = null;
-    public static Method c = null;
-    public static Method d = null;
-    public static boolean e = false;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class t3c implements View.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ b4c b;
 
-    public static boolean f(Object obj, String str, int i, boolean z) {
-        g();
-        try {
-            return ((Boolean) c.invoke(obj, str, Integer.valueOf(i), Boolean.valueOf(z))).booleanValue();
-        } catch (IllegalAccessException | InvocationTargetException e2) {
-            sdb.b(e2);
-            return false;
-        }
+    public /* synthetic */ t3c(b4c b4cVar, byte b) {
+        this.a = b;
+        this.b = b4cVar;
     }
 
-    public static void g() {
-        Method method;
-        Class<?> cls;
-        Method method2;
-        if (e) {
-            return;
-        }
-        e = true;
-        Constructor<?> constructor = null;
-        try {
-            cls = Class.forName("android.graphics.FontFamily");
-            Constructor<?> constructor2 = cls.getConstructor(null);
-            method2 = cls.getMethod("addFontWeightStyle", String.class, Integer.TYPE, Boolean.TYPE);
-            method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
-            constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e2) {
-            Log.e("TypefaceCompatApi21Impl", e2.getClass().getName(), e2);
-            method = null;
-            cls = null;
-            method2 = null;
-        }
-        b = constructor;
-        a = cls;
-        c = method2;
-        d = method;
-    }
-
-    @Override // vwe
-    public Typeface a(Context context, xl4 xl4Var, Resources resources, int i) {
-        g();
-        try {
-            Object newInstance = b.newInstance(null);
-            for (yl4 yl4Var : xl4Var.a) {
-                File c2 = ywe.c(context);
-                if (c2 == null) {
-                    return null;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        byte b = this.a;
+        b4c b4cVar = this.b;
+        switch (b) {
+            case 0:
+                b4cVar.dismiss();
+                break;
+            case 1:
+                b4cVar.dismiss();
+                break;
+            case 2:
+                b4cVar.dismiss();
+                break;
+            case 3:
+                CharSequence charSequence = b4cVar.X1;
+                if (charSequence != null) {
+                    b4cVar.Y1.a(charSequence);
                 }
-                try {
-                    if (ywe.a(c2, resources, yl4Var.f) && f(newInstance, c2.getPath(), yl4Var.b, yl4Var.c)) {
-                        c2.delete();
-                    }
-                } catch (RuntimeException unused) {
-                } catch (Throwable th) {
-                    c2.delete();
-                    throw th;
+                b4cVar.dismiss();
+                break;
+            default:
+                final b4c b4cVar2 = this.b;
+                fu5 G = fu5.G(b4cVar2.c, b4cVar2.J0, view);
+                G.d0 = hl.L(450.0f);
+                int i = 0;
+                G.t = false;
+                final byte b2 = 1;
+                G.e0 = true;
+                ScrollView scrollView = new ScrollView(b4cVar2.getContext());
+                LinearLayout linearLayout = new LinearLayout(b4cVar2.getContext());
+                linearLayout.setOrientation(1);
+                scrollView.addView(linearLayout);
+                G.p(scrollView);
+                int i2 = 0;
+                while (i2 < b4cVar2.c2.length) {
+                    b4cVar2.Z0(G, linearLayout, b4cVar2.b2 == i2, b4cVar2.d2[i2], new me7(b4cVar2, i2, (byte) 23));
+                    i2++;
                 }
-                c2.delete();
-                return null;
-            }
-            g();
-            try {
-                Object newInstance2 = Array.newInstance((Class<?>) a, 1);
-                Array.set(newInstance2, 0, newInstance);
-                return (Typeface) d.invoke(null, newInstance2);
-            } catch (IllegalAccessException | InvocationTargetException e2) {
-                sdb.b(e2);
-                return null;
-            }
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e3) {
-            sdb.b(e3);
-            return null;
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0065 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // vwe
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Typeface b(Context context, bm4[] bm4VarArr, int i) {
-        File file;
-        File c2;
-        Typeface createFromFile;
-        String readlink;
-        if (bm4VarArr.length >= 1) {
-            try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(vwe.e(bm4VarArr, i).a, "r", null);
-                if (openFileDescriptor != null) {
-                    try {
-                        try {
-                            readlink = Os.readlink("/proc/self/fd/" + openFileDescriptor.getFd());
-                        } finally {
-                        }
-                    } catch (ErrnoException unused) {
-                    }
-                    try {
-                        if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
-                            file = new File(readlink);
-                            if (file == null && file.canRead()) {
-                                Typeface createFromFile2 = Typeface.createFromFile(file);
-                                openFileDescriptor.close();
-                                return createFromFile2;
-                            }
-                            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                            c2 = ywe.c(context);
-                            if (c2 != null) {
-                                try {
-                                } catch (RuntimeException unused2) {
-                                } catch (Throwable th) {
-                                    c2.delete();
-                                    throw th;
+                View k8Var = new k8(b4cVar2.getContext(), b4cVar2.J0);
+                k8Var.setTag(R.id.fit_width_tag, 1);
+                linearLayout.addView(k8Var, tre.o(-1, 8));
+                ArrayList n = a5c.n(null);
+                ArrayList m = a5c.m();
+                if (!TextUtils.isEmpty(b4cVar2.a2)) {
+                    b4cVar2.Z0(G, linearLayout, true, r3c.F0(r3c.K0(b4cVar2.a2, null, null)), null);
+                }
+                int size = n.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    int i4 = i3 + 1;
+                    final t4c t4cVar = (t4c) n.get(i3);
+                    if (!TextUtils.equals(t4cVar.a, b4cVar2.a2)) {
+                        String str = t4cVar.b;
+                        final Object[] objArr = null == true ? 1 : 0;
+                        b4cVar2.Z0(G, linearLayout, false, str, new Runnable() { // from class: s3c
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                byte b3 = objArr;
+                                t4c t4cVar2 = t4cVar;
+                                b4c b4cVar3 = b4cVar2;
+                                switch (b3) {
+                                    case 0:
+                                        b4cVar3.a1();
+                                        String str2 = t4cVar2.a;
+                                        b4cVar3.a2 = str2;
+                                        r3c.P0(str2);
+                                        b4cVar3.b1();
+                                        break;
+                                    default:
+                                        b4cVar3.a1();
+                                        String str3 = t4cVar2.a;
+                                        b4cVar3.a2 = str3;
+                                        r3c.P0(str3);
+                                        b4cVar3.b1();
+                                        break;
                                 }
-                                if (ywe.b(c2, fileInputStream)) {
-                                    createFromFile = Typeface.createFromFile(c2.getPath());
-                                    c2.delete();
-                                    fileInputStream.close();
-                                    openFileDescriptor.close();
-                                    return createFromFile;
-                                }
-                                c2.delete();
                             }
-                            createFromFile = null;
-                            fileInputStream.close();
-                            openFileDescriptor.close();
-                            return createFromFile;
-                        }
-                        c2 = ywe.c(context);
-                        if (c2 != null) {
-                        }
-                        createFromFile = null;
-                        fileInputStream.close();
-                        openFileDescriptor.close();
-                        return createFromFile;
-                    } finally {
+                        });
                     }
-                    file = null;
-                    if (file == null) {
-                    }
-                    FileInputStream fileInputStream2 = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                } else if (openFileDescriptor != null) {
-                    openFileDescriptor.close();
-                    return null;
+                    i3 = i4;
                 }
-            } catch (IOException unused3) {
-            }
+                View k8Var2 = new k8(b4cVar2.getContext(), b4cVar2.J0);
+                k8Var2.setTag(R.id.fit_width_tag, 1);
+                linearLayout.addView(k8Var2, tre.o(-1, 8));
+                int size2 = m.size();
+                while (i < size2) {
+                    Object obj = m.get(i);
+                    i++;
+                    final t4c t4cVar2 = (t4c) obj;
+                    b4cVar2.Z0(G, linearLayout, TextUtils.equals(t4cVar2.a, b4cVar2.a2), t4cVar2.b, new Runnable() { // from class: s3c
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            byte b3 = b2;
+                            t4c t4cVar22 = t4cVar2;
+                            b4c b4cVar3 = b4cVar2;
+                            switch (b3) {
+                                case 0:
+                                    b4cVar3.a1();
+                                    String str2 = t4cVar22.a;
+                                    b4cVar3.a2 = str2;
+                                    r3c.P0(str2);
+                                    b4cVar3.b1();
+                                    break;
+                                default:
+                                    b4cVar3.a1();
+                                    String str3 = t4cVar22.a;
+                                    b4cVar3.a2 = str3;
+                                    r3c.P0(str3);
+                                    b4cVar3.b1();
+                                    break;
+                            }
+                        }
+                    });
+                }
+                G.a0();
+                break;
         }
-        return null;
     }
 }

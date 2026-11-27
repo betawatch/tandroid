@@ -1,43 +1,135 @@
 // default package
 
-import android.view.KeyEvent;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import j$.util.concurrent.ConcurrentHashMap;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class gc4 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ AlertDialog$Builder b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class gc4 implements Runnable {
+    public final /* synthetic */ ic4 a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ byte d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ gc4(AlertDialog$Builder alertDialog$Builder, byte b) {
-        this.a = b;
-        this.b = alertDialog$Builder;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ gc4(ic4 ic4Var, long j, int i, int i2, String str, int i3) {
+        this.a = ic4Var;
+        this.b = j;
+        this.c = i;
+        this.d = i2;
+        this.e = str;
+        this.f = i3;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-        byte b = this.a;
-        AlertDialog$Builder alertDialog$Builder = this.b;
-        switch (b) {
-            case 0:
-                gl.t1(textView);
-                alertDialog$Builder.a.c(-1).callOnClick();
-                return false;
-            case 1:
-                gl.t1(textView);
-                alertDialog$Builder.a.c(-1).callOnClick();
-                return false;
-            case 2:
-                gl.t1(textView);
-                alertDialog$Builder.a.c(-1).callOnClick();
-                return false;
-            default:
-                if (i != 5) {
-                    return false;
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0109  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLitePreparedStatement sQLitePreparedStatement2;
+        boolean z = this.f;
+        ic4 ic4Var = this.a;
+        ConcurrentHashMap concurrentHashMap = ic4Var.f;
+        boolean z2 = f11.a;
+        StringBuilder sb = new StringBuilder("put file path id=");
+        long j = this.b;
+        sb.append(j);
+        sb.append(" dc=");
+        int i = this.c;
+        sb.append(i);
+        sb.append(" type=");
+        byte b = this.d;
+        sb.append((int) b);
+        sb.append(" path=");
+        String str = this.e;
+        sb.append(str);
+        cc4.b(sb.toString());
+        ic4Var.c();
+        SQLiteDatabase sQLiteDatabase = ic4Var.c;
+        if (sQLiteDatabase == null) {
+            return;
+        }
+        SQLitePreparedStatement sQLitePreparedStatement3 = null;
+        r9 = null;
+        SQLitePreparedStatement sQLitePreparedStatement4 = null;
+        sQLitePreparedStatement3 = null;
+        sQLitePreparedStatement3 = null;
+        try {
+            if (str != null) {
+                SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("DELETE FROM paths WHERE path = ?");
+                try {
+                    executeFast.bindString(1, str);
+                    executeFast.step();
+                    sQLitePreparedStatement4 = ic4Var.c.executeFast("REPLACE INTO paths VALUES(?, ?, ?, ?, ?)");
+                    sQLitePreparedStatement4.requery();
+                    sQLitePreparedStatement4.bindLong(1, j);
+                    sQLitePreparedStatement4.bindInteger(2, i);
+                    sQLitePreparedStatement4.bindInteger(3, b);
+                    sQLitePreparedStatement4.bindString(4, str);
+                    sQLitePreparedStatement4.bindInteger(5, z ? 1 : 0);
+                    sQLitePreparedStatement4.step();
+                    sQLitePreparedStatement4.dispose();
+                    concurrentHashMap.put(j + "_" + i + "_" + ((int) b), str);
+                    sQLitePreparedStatement2 = sQLitePreparedStatement4;
+                    sQLitePreparedStatement3 = executeFast;
+                } catch (SQLiteException e) {
+                    e = e;
+                    sQLitePreparedStatement = sQLitePreparedStatement4;
+                    sQLitePreparedStatement3 = executeFast;
+                    try {
+                        cc4.g(e, true);
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                        }
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                            return;
+                        }
+                        return;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                        }
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    sQLitePreparedStatement = sQLitePreparedStatement4;
+                    sQLitePreparedStatement3 = executeFast;
+                    if (sQLitePreparedStatement3 != null) {
+                    }
+                    if (sQLitePreparedStatement != null) {
+                    }
+                    throw th;
                 }
-                alertDialog$Builder.a.c(-1).callOnClick();
-                return true;
+            } else {
+                sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j + " AND dc_id = " + i + " AND type = " + ((int) b)).stepThis().dispose();
+                concurrentHashMap.put(j + "_" + i + "_" + ((int) b), "~null~");
+                sQLitePreparedStatement2 = null;
+            }
+            if (sQLitePreparedStatement3 != null) {
+                sQLitePreparedStatement3.dispose();
+            }
+            if (sQLitePreparedStatement2 != null) {
+                sQLitePreparedStatement2.dispose();
+            }
+        } catch (SQLiteException e2) {
+            e = e2;
+            sQLitePreparedStatement = sQLitePreparedStatement3;
+        } catch (Throwable th3) {
+            th = th3;
+            sQLitePreparedStatement = sQLitePreparedStatement3;
         }
     }
 }

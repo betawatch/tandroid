@@ -1,290 +1,85 @@
 // default package
 
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pka extends SpannableStringBuilder {
-    public final Class a;
-    public final ArrayList b;
+public final class pka {
+    public final Random a;
+    public final int[] b;
+    public final int[] c;
 
-    public pka(Class cls, CharSequence charSequence) {
-        super(charSequence);
-        this.b = new ArrayList();
-        kre.a(cls, "watcherClass cannot be null");
-        this.a = cls;
+    public pka(int[] iArr, Random random) {
+        this.b = iArr;
+        this.a = random;
+        this.c = new int[iArr.length];
+        for (int i = 0; i < iArr.length; i++) {
+            this.c[iArr[i]] = i;
+        }
     }
 
-    public final void a() {
-        int i = 0;
+    public final pka a() {
+        return new pka(new Random(this.a.nextLong()));
+    }
+
+    public final pka b(int i, int i2) {
+        int[] iArr;
+        Random random;
+        int[] iArr2 = new int[i2];
+        int[] iArr3 = new int[i2];
+        int i3 = 0;
         while (true) {
-            ArrayList arrayList = this.b;
-            if (i >= arrayList.size()) {
-                return;
+            iArr = this.b;
+            random = this.a;
+            if (i3 >= i2) {
+                break;
             }
-            ((oka) arrayList.get(i)).b.incrementAndGet();
-            i++;
+            iArr2[i3] = random.nextInt(iArr.length + 1);
+            int i4 = i3 + 1;
+            int nextInt = random.nextInt(i4);
+            iArr3[i3] = iArr3[nextInt];
+            iArr3[nextInt] = i3 + i;
+            i3 = i4;
         }
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Editable append(CharSequence charSequence) {
-        super.append(charSequence);
-        return this;
-    }
-
-    public final void b() {
-        e();
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i >= arrayList.size()) {
-                return;
+        Arrays.sort(iArr2);
+        int[] iArr4 = new int[iArr.length + i2];
+        int i5 = 0;
+        int i6 = 0;
+        for (int i7 = 0; i7 < iArr.length + i2; i7++) {
+            if (i5 >= i2 || i6 != iArr2[i5]) {
+                int i8 = i6 + 1;
+                int i9 = iArr[i6];
+                iArr4[i7] = i9;
+                if (i9 >= i) {
+                    iArr4[i7] = i9 + i2;
+                }
+                i6 = i8;
+            } else {
+                iArr4[i7] = iArr3[i5];
+                i5++;
             }
-            ((oka) arrayList.get(i)).onTextChanged(this, 0, length(), length());
-            i++;
         }
+        return new pka(iArr4, new Random(random.nextLong()));
     }
 
-    public final oka c(Object obj) {
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i >= arrayList.size()) {
-                return null;
-            }
-            oka okaVar = (oka) arrayList.get(i);
-            if (okaVar.a == obj) {
-                return okaVar;
-            }
-            i++;
+    public final int c() {
+        return this.b.length;
+    }
+
+    public final int d(int i) {
+        int i2 = this.c[i] - 1;
+        if (i2 >= 0) {
+            return this.b[i2];
         }
+        return -1;
     }
 
-    public final boolean d(Object obj) {
-        if (obj != null) {
-            return this.a == obj.getClass();
-        }
-        return false;
+    public pka() {
+        this(new Random());
     }
 
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final Editable delete(int i, int i2) {
-        super.delete(i, i2);
-        return this;
-    }
-
-    public final void e() {
-        int i = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i >= arrayList.size()) {
-                return;
-            }
-            ((oka) arrayList.get(i)).b.decrementAndGet();
-            i++;
-        }
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spanned
-    public final int getSpanEnd(Object obj) {
-        oka c;
-        if (d(obj) && (c = c(obj)) != null) {
-            obj = c;
-        }
-        return super.getSpanEnd(obj);
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spanned
-    public final int getSpanFlags(Object obj) {
-        oka c;
-        if (d(obj) && (c = c(obj)) != null) {
-            obj = c;
-        }
-        return super.getSpanFlags(obj);
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spanned
-    public final int getSpanStart(Object obj) {
-        oka c;
-        if (d(obj) && (c = c(obj)) != null) {
-            obj = c;
-        }
-        return super.getSpanStart(obj);
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spanned
-    public final Object[] getSpans(int i, int i2, Class cls) {
-        if (this.a != cls) {
-            return super.getSpans(i, i2, cls);
-        }
-        oka[] okaVarArr = (oka[]) super.getSpans(i, i2, oka.class);
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) cls, okaVarArr.length);
-        for (int i3 = 0; i3 < okaVarArr.length; i3++) {
-            objArr[i3] = okaVarArr[i3].a;
-        }
-        return objArr;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final Editable insert(int i, CharSequence charSequence) {
-        super.insert(i, charSequence);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spanned
-    public final int nextSpanTransition(int i, int i2, Class cls) {
-        if (cls == null || this.a == cls) {
-            cls = oka.class;
-        }
-        return super.nextSpanTransition(i, i2, cls);
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spannable
-    public final void removeSpan(Object obj) {
-        oka okaVar;
-        if (d(obj)) {
-            okaVar = c(obj);
-            if (okaVar != null) {
-                obj = okaVar;
-            }
-        } else {
-            okaVar = null;
-        }
-        super.removeSpan(obj);
-        if (okaVar != null) {
-            this.b.remove(okaVar);
-        }
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final SpannableStringBuilder replace(int i, int i2, CharSequence charSequence) {
-        a();
-        super.replace(i, i2, charSequence);
-        e();
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Spannable
-    public final void setSpan(Object obj, int i, int i2, int i3) {
-        if (d(obj)) {
-            oka okaVar = new oka(obj);
-            this.b.add(okaVar);
-            obj = okaVar;
-        }
-        super.setSpan(obj, i, i2, i3);
-    }
-
-    @Override // android.text.SpannableStringBuilder, java.lang.CharSequence
-    public final CharSequence subSequence(int i, int i2) {
-        return new pka(this.a, this, i, i2);
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final SpannableStringBuilder append(CharSequence charSequence) {
-        super.append(charSequence);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final SpannableStringBuilder delete(int i, int i2) {
-        super.delete(i, i2);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final SpannableStringBuilder insert(int i, CharSequence charSequence) {
-        super.insert(i, charSequence);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Appendable append(CharSequence charSequence) {
-        super.append(charSequence);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final Editable insert(int i, CharSequence charSequence, int i2, int i3) {
-        super.insert(i, charSequence, i2, i3);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Editable append(char c) {
-        super.append(c);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final SpannableStringBuilder insert(int i, CharSequence charSequence, int i2, int i3) {
-        super.insert(i, charSequence, i2, i3);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final SpannableStringBuilder append(char c) {
-        super.append(c);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Appendable append(char c) {
-        super.append(c);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Editable append(CharSequence charSequence, int i, int i2) {
-        super.append(charSequence, i, i2);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final SpannableStringBuilder append(CharSequence charSequence, int i, int i2) {
-        super.append(charSequence, i, i2);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final /* bridge */ /* synthetic */ Editable replace(int i, int i2, CharSequence charSequence, int i3, int i4) {
-        replace(i, i2, charSequence, i3, i4);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Appendable append(CharSequence charSequence, int i, int i2) {
-        super.append(charSequence, i, i2);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final /* bridge */ /* synthetic */ Editable replace(int i, int i2, CharSequence charSequence) {
-        replace(i, i2, charSequence);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder
-    public final SpannableStringBuilder append(CharSequence charSequence, Object obj, int i) {
-        super.append(charSequence, obj, i);
-        return this;
-    }
-
-    @Override // android.text.SpannableStringBuilder, android.text.Editable
-    public final SpannableStringBuilder replace(int i, int i2, CharSequence charSequence, int i3, int i4) {
-        a();
-        super.replace(i, i2, charSequence, i3, i4);
-        e();
-        return this;
-    }
-
-    public pka(Class cls, pka pkaVar, int i, int i2) {
-        super(pkaVar, i, i2);
-        this.b = new ArrayList();
-        kre.a(cls, "watcherClass cannot be null");
-        this.a = cls;
+    public pka(Random random) {
+        this(new int[0], random);
     }
 }

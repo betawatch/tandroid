@@ -1,19 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class ei6 {
-    public static final di6 a;
-    public static final di6 b;
+import android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener;
+import android.media.MediaCodec;
+import android.os.Bundle;
 
-    static {
-        ft8 ft8Var = ft8.c;
-        di6 di6Var = null;
-        try {
-            di6Var = (di6) Class.forName("androidx.datastore.preferences.protobuf.MapFieldSchemaFull").getDeclaredConstructor(null).newInstance(null);
-        } catch (Exception unused) {
-        }
-        a = di6Var;
-        b = new di6();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ei6 implements LoudnessCodecController$OnLoudnessCodecUpdateListener {
+    public final Bundle onLoudnessCodecUpdate(MediaCodec mediaCodec, Bundle bundle) {
+        return bundle;
     }
 }

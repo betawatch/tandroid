@@ -1,44 +1,42 @@
 // default package
 
-import org.telegram.ui.PasscodeActivity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fv7 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PasscodeActivity b;
-    public final /* synthetic */ boolean c;
+public final class fv7 extends View {
+    public int a;
+    public float b;
+    public final /* synthetic */ gv7 c;
 
-    public /* synthetic */ fv7(PasscodeActivity passcodeActivity, boolean z, byte b) {
-        this.a = b;
-        this.b = passcodeActivity;
-        this.c = z;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fv7(gv7 gv7Var, Context context) {
+        super(context);
+        this.c = gv7Var;
+        setPadding(hl.L(4.0f), hl.L(4.0f), hl.L(4.0f), hl.L(4.0f));
+        setLayoutParams(new r79(-2, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.c;
-        PasscodeActivity passcodeActivity = this.b;
-        switch (b) {
-            case 0:
-                passcodeActivity.getMediaDataController().o();
-                if (z) {
-                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
-                    t36 t36Var = passcodeActivity.V;
-                    if (t36Var != null) {
-                        gl.c3(t36Var);
-                        passcodeActivity.V = null;
-                    }
-                } else {
-                    passcodeActivity.finishFragment();
-                }
-                kk7.e().k(50, new Object[0]);
-                break;
-            default:
-                passcodeActivity.x.e(true, z);
-                gl.r(passcodeActivity.U);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        gv7 gv7Var = this.c;
+        Paint paint = gv7Var.g3;
+        gv7Var.f3.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (paint.getStrokeWidth() + hl.L(3.0f)) * this.b;
+        }
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        gv7.B1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            paint.setColor(this.a);
+            paint.setAlpha(jn7.d4);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - hl.L(2.0f), paint);
         }
     }
 }

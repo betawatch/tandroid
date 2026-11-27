@@ -1,39 +1,163 @@
 // default package
 
-import org.telegram.messenger.video.VideoPlayerHolderBase;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wv extends VideoPlayerHolderBase {
-    public final /* synthetic */ xv a;
+public final class wv extends View implements zlb, ew {
+    public cw a;
+    public TL_iv.pageBlockTitle b;
+    public int c;
+    public int d;
+    public final xi5 e;
+    public final ex f;
 
-    public wv(xv xvVar) {
-        this.a = xvVar;
+    public wv(Activity activity, xi5 xi5Var, ex exVar) {
+        super(activity);
+        this.e = xi5Var;
+        this.f = exVar;
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public final boolean needRepeat() {
-        return true;
+    @Override // ew
+    public int getBoundLeft() {
+        cw cwVar = this.a;
+        if (cwVar == null) {
+            return -1;
+        }
+        return ik8.h(this.e, 18.0f, cwVar.k() + cwVar.s);
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public final void onRenderedFirstFrame() {
-        super.onRenderedFirstFrame();
-        if (this.firstFrameRendered) {
+    @Override // ew
+    public int getBoundRight() {
+        cw cwVar = this.a;
+        if (cwVar == null) {
+            return -1;
+        }
+        return ik8.C(this.e, 18.0f, cwVar.l() + cwVar.s);
+    }
+
+    @Override // ew
+    public int getLastLineBoundRight() {
+        cw cwVar = this.a;
+        if (cwVar == null) {
+            return -1;
+        }
+        return ik8.C(this.e, 18.0f, cwVar.m() + cwVar.s);
+    }
+
+    public /* bridge */ /* synthetic */ int getMinWidth() {
+        return ik8.a(this);
+    }
+
+    @Override // zlb
+    public final void k(ArrayList arrayList) {
+        cw cwVar = this.a;
+        if (cwVar != null) {
+            arrayList.add(cwVar);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        cw cwVar = this.a;
+        if (cwVar != null) {
+            cwVar.i(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        cw cwVar = this.a;
+        if (cwVar != null) {
+            cwVar.f(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b == null || this.a == null) {
             return;
         }
-        this.firstFrameRendered = true;
-        xv xvVar = this.a;
-        xvVar.n.setAlpha(1.0f);
-        TL_iv.pageBlockVideo pageblockvideo = xvVar.M;
-        if (pageblockvideo != null) {
-            vg5 vg5Var = xvVar.a;
-            vf6 vf6Var = vg5Var.E;
-            long j = pageblockvideo.video_id;
-            yv a = yv.a(vg5Var.x, xvVar);
-            xvVar.c(a);
-            vf6Var.k(a, j);
+        canvas.save();
+        canvas.translate(this.c, this.d);
+        o.s(this.e, canvas, this, 0);
+        this.a.d(canvas, this);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setClickable(false);
+        accessibilityNodeInfo.setLongClickable(false);
+        cw cwVar = this.a;
+        if (cwVar == null) {
+            return;
         }
+        accessibilityNodeInfo.setText(o.f(2131754848, o.g(this.e, this.f, cwVar)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        wv wvVar;
+        int i3;
+        int size = View.MeasureSpec.getSize(i);
+        xi5 xi5Var = this.e;
+        xi5Var.getClass();
+        this.c = hl.L(18.0f);
+        TL_iv.pageBlockTitle pageblocktitle = this.b;
+        if (pageblocktitle != null) {
+            if (pageblocktitle.first) {
+                xi5Var.getClass();
+                i3 = hl.L(8.0f);
+                xi5Var.getClass();
+                this.d = hl.L(16.0f);
+            } else {
+                xi5Var.getClass();
+                this.d = hl.L(8.0f);
+                i3 = 0;
+            }
+            TL_iv.RichText richText = this.b.text;
+            xi5 xi5Var2 = this.e;
+            int h = ik8.h(xi5Var2, 36.0f, size);
+            TL_iv.pageBlockTitle pageblocktitle2 = this.b;
+            ex exVar = this.f;
+            wvVar = this;
+            cw n = o.n(xi5Var2, wvVar, null, richText, h, 0, pageblocktitle2, (exVar == null || !exVar.H) ? Layout.Alignment.ALIGN_NORMAL : o0b.a(), 0, this.f);
+            wvVar.a = n;
+            if (n != null) {
+                xi5Var.getClass();
+                i3 += wvVar.a.d.getHeight() + hl.L(16.0f);
+                cw cwVar = wvVar.a;
+                cwVar.s = wvVar.c;
+                cwVar.w = wvVar.d;
+            }
+        } else {
+            wvVar = this;
+            i3 = 1;
+        }
+        wvVar.setMeasuredDimension(size, i3);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return o.i(this.e, this.f, motionEvent, this, this.a, this.c, this.d) || super.onTouchEvent(motionEvent);
+    }
+
+    public void setBlock(TL_iv.pageBlockTitle pageblocktitle) {
+        this.b = pageblocktitle;
+        requestLayout();
     }
 }

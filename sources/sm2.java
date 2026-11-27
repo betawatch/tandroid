@@ -1,69 +1,163 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sm2 implements i8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ xm2 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class sm2 extends nx0 {
+    public static final /* synthetic */ int t1 = 0;
+    public final rg2 l1;
+    public final ImageView m1;
+    public final km2 n1;
+    public final Path o1;
+    public int p1;
+    public pt2 q1;
+    public rx r1;
+    public boolean s1;
 
-    public /* synthetic */ sm2(xm2 xm2Var, byte b) {
-        this.a = b;
-        this.b = xm2Var;
+    public sm2(Context context, vnb vnbVar) {
+        super(1, vnbVar, context, true);
+        this.o1 = new Path();
+        K(-14342875);
+        Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
+        this.s0 = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-14342875, PorterDuff.Mode.MULTIPLY));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, hl.L(16.0f), 0, 0);
+        ImageView imageView = new ImageView(context);
+        this.m1 = imageView;
+        imageView.setImageResource(R.drawable.picker);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView.setBackground(aob.f0(1090519039, 1, -1));
+        imageView.setOnClickListener(new sb1((Object) this, (Object) context, (byte) 22));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setImageResource(R.drawable.ic_ab_done);
+        imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView2.setBackground(aob.f0(1090519039, 1, -1));
+        imageView2.setOnClickListener(new r81(this, (byte) 16));
+        km2 km2Var = new km2(this, context);
+        this.n1 = km2Var;
+        km2Var.c = 1.0f;
+        km2Var.a();
+        km2Var.invalidate();
+        rg2 rg2Var = new rg2(context, (byte) 2);
+        rg2Var.setOrientation(1);
+        pm2 pm2Var = new pm2(this, context);
+        rg2Var.b = pm2Var;
+        pm2Var.a(this.p1);
+        rg2Var.c = new om2(this, context);
+        rg2Var.d = new rm2(this, context);
+        lm2 lm2Var = new lm2(context, this.J0);
+        lm2Var.setAdapter(new mm2(rg2Var, (byte) 0));
+        rg2Var.addView(lm2Var, tre.l(1.0f, -1, 0));
+        rg2Var.addView(km2Var, tre.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        linearLayout2.setGravity(16);
+        linearLayout2.addView(imageView, tre.o(28, 28));
+        linearLayout2.addView(lm2Var.l(8, false), tre.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, tre.o(28, 28));
+        rg2Var.addView(linearLayout2, tre.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        this.l1 = rg2Var;
+        linearLayout.addView(rg2Var, tre.o(-1, 0));
+        jm2 jm2Var = new jm2(this, context, linearLayout);
+        jm2Var.addView(linearLayout);
+        this.O = jm2Var;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
-        String M0;
-        byte b = this.a;
-        xm2 xm2Var = this.b;
-        switch (b) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                arrayList.add(c4c.l(0, xm2Var.h));
-                c4c c = c4c.c(1, R.drawable.msg_groups_create, k96.M0(2131751927, null));
-                c.r = true;
-                arrayList.add(c);
-                arrayList.add(c4c.E(2, gl.L(14.0f)));
-                ArrayList arrayList2 = xm2Var.n;
-                if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(c4c.t(3, k96.M0(2131751957, null)));
-                    ArrayList arrayList3 = xm2Var.n;
-                    int size = arrayList3.size();
-                    int i = 0;
-                    while (i < size) {
-                        Object obj3 = arrayList3.get(i);
-                        i++;
-                        TLRPC.Chat chat = (TLRPC.Chat) obj3;
-                        TLRPC.ChatFull L0 = xm2Var.getMessagesController().L0(chat.id);
-                        c4c w = c4c.w(chat);
-                        long j = chat.id;
-                        w.d = (int) (j ^ (j >>> 32));
-                        if (L0 != null) {
-                            ArrayList<TL_communities.CommunityPeer> arrayList4 = L0.linked_peers;
-                            M0 = k96.G(arrayList4 != null ? arrayList4.size() : 0, "Chats", new Object[0]);
-                        } else {
-                            M0 = k96.M0(2131748587, null);
-                        }
-                        w.n = M0;
-                        arrayList.add(w);
-                    }
+    public final void E0(int i, int i2) {
+        View findFocus;
+        if (!this.s1) {
+            if (i2 != 2) {
+                return;
+            } else {
+                this.s1 = true;
+            }
+        }
+        rg2 rg2Var = this.l1;
+        if (i2 != 5 && (findFocus = rg2Var.findFocus()) != null) {
+            findFocus.clearFocus();
+            hl.t1(findFocus);
+        }
+        if (i2 != 3) {
+            ((pm2) rg2Var.b).a(i);
+        }
+        if (i2 != 0) {
+            om2 om2Var = (om2) rg2Var.c;
+            boolean z = i2 != 1;
+            om2Var.n.p1 = i;
+            float[] fArr = om2Var.h;
+            Color.colorToHSV(i, fArr);
+            if (z) {
+                float f = (fArr[1] * 0.5f) + 1.0f;
+                float f2 = fArr[2];
+                om2Var.d = f - (f2 <= 0.5f ? 1.0f - (((1.0f - f2) * 0.22000003f) + 0.78f) : qu6.B(1.0f, f2, 0.22f, 1.0f));
+                om2Var.e = fArr[0] / 360.0f;
+            }
+            om2Var.invalidate();
+        }
+        if (i2 != 1) {
+            km2 km2Var = this.n1;
+            km2Var.c = Color.alpha(i) / 255.0f;
+            km2Var.a();
+            km2Var.invalidate();
+        }
+        rm2 rm2Var = (rm2) rg2Var.d;
+        rm2Var.e = true;
+        rm2Var.a.b();
+        rm2Var.b.b();
+        rm2Var.c.b();
+        EditTextBoldCursor editTextBoldCursor = rm2Var.d;
+        if (!editTextBoldCursor.isFocused()) {
+            int selectionStart = editTextBoldCursor.getSelectionStart();
+            int selectionEnd = editTextBoldCursor.getSelectionEnd();
+            StringBuilder sb = new StringBuilder(Integer.toHexString(rm2Var.f.p1));
+            while (sb.length() < 8) {
+                sb.insert(0, "0");
+            }
+            editTextBoldCursor.setText(sb.toString().toUpperCase().substring(2));
+            editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        }
+        rm2Var.e = false;
+    }
+
+    @Override // nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        super.dismiss();
+        pt2 pt2Var = this.q1;
+        if (pt2Var != null) {
+            pt2Var.accept(Integer.valueOf(this.p1));
+        }
+    }
+
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        rx rxVar = this.r1;
+        boolean z = false;
+        switch (rxVar.a) {
+            case 6:
+                if (((Bitmap) rxVar.c) != null) {
+                    z = true;
                     break;
                 }
                 break;
-            default:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (tL_error == null) {
-                    no2.d(0, xm2Var.b, xm2Var);
-                    break;
-                } else {
-                    u21.b0(xm2Var).g0(tL_error, false);
-                    break;
-                }
         }
+        if (!z) {
+            this.m1.setVisibility(8);
+        }
+        super.show();
     }
 }

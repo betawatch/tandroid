@@ -1,178 +1,45 @@
 // default package
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class y1 implements iy0 {
-    static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static cc6 LOG = cc6.a(y1.class);
-    private ByteBuffer content;
-    long contentStartPosition;
-    n63 dataSource;
-    long offset;
-    private wu2 parent;
-    protected String type;
-    private byte[] userType;
-    long memMapSize = -1;
-    private ByteBuffer deadBytes = null;
-    boolean isRead = true;
-    boolean isParsed = true;
-
-    public y1(String str) {
-        this.type = str;
+public abstract class y1 {
+    public boolean b(hk0 hk0Var) {
+        return this instanceof lk0;
     }
 
-    public final void a(ByteBuffer byteBuffer) {
-        if (b()) {
-            byteBuffer.putInt((int) getSize());
-            byteBuffer.put(or5.d(getType()));
-        } else {
-            byteBuffer.putInt(1);
-            byteBuffer.put(or5.d(getType()));
-            byteBuffer.putLong(getSize());
+    public boolean c() {
+        return this instanceof bib;
+    }
+
+    public abstract hk0 e();
+
+    public boolean f() {
+        return this instanceof lk0;
+    }
+
+    public qk2 h(mp3 mp3Var) {
+        char charAt;
+        int i = mp3Var.e;
+        String str = mp3Var.a;
+        if (mp3Var.g >= 4 || i >= str.length() || str.charAt(i) != '>') {
+            return null;
         }
-        if ("uuid".equals(getType())) {
-            byteBuffer.put(getUserType());
+        int i2 = mp3Var.c + mp3Var.g;
+        int i3 = i2 + 1;
+        String str2 = mp3Var.a;
+        int i4 = i + 1;
+        if (i4 < str2.length() && ((charAt = str2.charAt(i4)) == '\t' || charAt == ' ')) {
+            i3 = i2 + 2;
         }
+        return new qk2(-1, i3, false);
     }
 
-    public final boolean b() {
-        int i = "uuid".equals(getType()) ? 24 : 8;
-        if (!this.isRead) {
-            return this.memMapSize + ((long) i) < 4294967296L;
-        }
-        if (!this.isParsed) {
-            return ((long) (this.content.limit() + i)) < 4294967296L;
-        }
-        long contentSize = getContentSize();
-        ByteBuffer byteBuffer = this.deadBytes;
-        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i) < 4294967296L;
+    public void d() {
     }
 
-    public final synchronized void c() {
-        if (!this.isRead) {
-            try {
-                LOG.b("mem mapping " + getType());
-                throw null;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+    public void a(CharSequence charSequence) {
     }
 
-    @Override // iy0
-    public void getBox(WritableByteChannel writableByteChannel) {
-        if (!this.isRead) {
-            ByteBuffer allocate = ByteBuffer.allocate((b() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
-            a(allocate);
-            writableByteChannel.write((ByteBuffer) allocate.rewind());
-            throw null;
-        }
-        if (!this.isParsed) {
-            ByteBuffer allocate2 = ByteBuffer.allocate((b() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
-            a(allocate2);
-            writableByteChannel.write((ByteBuffer) allocate2.rewind());
-            writableByteChannel.write((ByteBuffer) this.content.position(0));
-            return;
-        }
-        ByteBuffer allocate3 = ByteBuffer.allocate(mqd.a(getSize()));
-        a(allocate3);
-        getContent(allocate3);
-        ByteBuffer byteBuffer = this.deadBytes;
-        if (byteBuffer != null) {
-            byteBuffer.rewind();
-            while (this.deadBytes.remaining() > 0) {
-                allocate3.put(this.deadBytes);
-            }
-        }
-        writableByteChannel.write((ByteBuffer) allocate3.rewind());
-    }
-
-    public long getContentSize() {
-        return 8L;
-    }
-
-    public long getOffset() {
-        return this.offset;
-    }
-
-    @Override // iy0
-    public wu2 getParent() {
-        return this.parent;
-    }
-
-    public String getPath() {
-        return ey7.a(this, "");
-    }
-
-    @Override // iy0
-    public long getSize() {
-        long j;
-        if (!this.isRead) {
-            j = this.memMapSize;
-        } else if (this.isParsed) {
-            j = getContentSize();
-        } else {
-            ByteBuffer byteBuffer = this.content;
-            j = byteBuffer != null ? byteBuffer.limit() : 0;
-        }
-        return j + (j >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r6.limit() : 0);
-    }
-
-    @Override // iy0
-    public String getType() {
-        return this.type;
-    }
-
-    public byte[] getUserType() {
-        return this.userType;
-    }
-
-    public boolean isParsed() {
-        return this.isParsed;
-    }
-
-    public void parse(n63 n63Var, ByteBuffer byteBuffer, long j, qy0 qy0Var) {
-        long position = n63Var.position();
-        this.contentStartPosition = position;
-        this.offset = position - byteBuffer.remaining();
-        this.memMapSize = j;
-        n63Var.position();
-        n63Var.position();
-        this.isRead = false;
-        this.isParsed = false;
-    }
-
-    public final synchronized void parseDetails() {
-        c();
-        LOG.b("parsing details of " + getType());
-        ByteBuffer byteBuffer = this.content;
-        if (byteBuffer != null) {
-            this.isParsed = true;
-            byteBuffer.rewind();
-            _parseDetails(byteBuffer);
-            if (byteBuffer.remaining() > 0) {
-                this.deadBytes = byteBuffer.slice();
-            }
-            this.content = null;
-        }
-    }
-
-    public void setDeadBytes(ByteBuffer byteBuffer) {
-        this.deadBytes = byteBuffer;
-    }
-
-    @Override // iy0
-    public void setParent(wu2 wu2Var) {
-        this.parent = wu2Var;
-    }
-
-    public void _parseDetails(ByteBuffer byteBuffer) {
-    }
-
-    public void getContent(ByteBuffer byteBuffer) {
+    public void g(tp5 tp5Var) {
     }
 }

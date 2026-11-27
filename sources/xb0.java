@@ -1,64 +1,6 @@
 // default package
 
-import android.content.Intent;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xb0 implements gk7 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ xb0(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                yb0 yb0Var = (yb0) obj;
-                if (yb0Var.g && i == yb0Var.e) {
-                    yb0Var.b(objArr);
-                    break;
-                }
-                break;
-            case 1:
-                ad6 ad6Var = (ad6) obj;
-                int intValue = ((Integer) objArr[0]).intValue();
-                ((Integer) objArr[1]).getClass();
-                Intent intent = (Intent) objArr[2];
-                kk7.e().n(this, kk7.e5);
-                if (intValue == 200) {
-                    try {
-                        ad6Var.G = (GoogleSignInAccount) aje.b(intent).getResult(zn.class);
-                        ad6Var.h(null);
-                        break;
-                    } catch (zn e) {
-                        fa4.g(e, true);
-                        return;
-                    }
-                }
-                break;
-            default:
-                de6 de6Var = (de6) obj;
-                int intValue2 = ((Integer) objArr[0]).intValue();
-                ((Integer) objArr[1]).getClass();
-                Intent intent2 = (Intent) objArr[2];
-                kk7.e().n(this, kk7.e5);
-                if (intValue2 == 200) {
-                    try {
-                        de6Var.E = (GoogleSignInAccount) aje.b(intent2).getResult(zn.class);
-                        de6Var.h(null);
-                        break;
-                    } catch (zn e2) {
-                        fa4.g(e2, true);
-                    }
-                }
-                break;
-        }
-    }
+public final class xb0 extends ac0 {
 }

@@ -1,19 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class shd implements zn7 {
-    public static final shd a = new shd();
+public abstract class shd {
+    public static final Object a = new Object();
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static final Object a(koa koaVar, int i) {
+        Object obj;
+        koaVar.getClass();
+        int a2 = pq3.a(koaVar.c, i, koaVar.a);
+        if (a2 < 0 || (obj = koaVar.b[a2]) == a) {
+            return null;
         }
-        throw null;
+        return obj;
     }
 }

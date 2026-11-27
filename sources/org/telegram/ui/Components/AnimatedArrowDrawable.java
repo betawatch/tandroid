@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class AnimatedArrowDrawable extends Drawable {
     public final Paint a;
@@ -24,7 +24,7 @@ public class AnimatedArrowDrawable extends Drawable {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.N(1.66f));
+        paint.setStrokeWidth(hl.N(1.66f));
         paint.setColor(i);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -52,9 +52,9 @@ public class AnimatedArrowDrawable extends Drawable {
         if (f2 > 0.0f) {
             float f3 = this.h;
             if (f3 > 0.0f) {
-                float N = gl.N(this.i) / 2.0f;
-                float N2 = gl.N(f2) - N;
-                float N3 = gl.N(f3) - N;
+                float N = hl.N(this.i) / 2.0f;
+                float N2 = hl.N(f2) - N;
+                float N3 = hl.N(f3) - N;
                 float f4 = N3 - N;
                 path.moveTo(N, N3 - (this.c * f4));
                 path.lineTo((N + N2) / 2.0f, (this.c * f4) + N);
@@ -63,14 +63,14 @@ public class AnimatedArrowDrawable extends Drawable {
             }
         }
         if (this.f) {
-            path.moveTo(gl.L(3.0f), gl.L(6.0f) - (gl.L(2.0f) * f));
-            path.lineTo(gl.L(8.0f), (gl.L(2.0f) * f) + gl.L(6.0f));
-            path.lineTo(gl.L(13.0f), gl.L(6.0f) - (gl.L(2.0f) * f));
+            path.moveTo(hl.L(3.0f), hl.L(6.0f) - (hl.L(2.0f) * f));
+            path.lineTo(hl.L(8.0f), (hl.L(2.0f) * f) + hl.L(6.0f));
+            path.lineTo(hl.L(13.0f), hl.L(6.0f) - (hl.L(2.0f) * f));
             return;
         }
-        path.moveTo(gl.L(4.5f), (gl.L(2.0f) * this.c) + (gl.L(12.0f) - (gl.L(4.0f) * f)));
-        path.lineTo(gl.L(13.0f), (gl.L(2.0f) * this.c) + (gl.L(4.0f) * f) + gl.L(12.0f));
-        path.lineTo(gl.L(21.5f), (gl.L(2.0f) * this.c) + (gl.L(12.0f) - (gl.L(4.0f) * f)));
+        path.moveTo(hl.L(4.5f), (hl.L(2.0f) * this.c) + (hl.L(12.0f) - (hl.L(4.0f) * f)));
+        path.lineTo(hl.L(13.0f), (hl.L(2.0f) * this.c) + (hl.L(4.0f) * f) + hl.L(12.0f));
+        path.lineTo(hl.L(21.5f), (hl.L(2.0f) * this.c) + (hl.L(12.0f) - (hl.L(4.0f) * f)));
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -107,13 +107,13 @@ public class AnimatedArrowDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
         float f = this.h;
-        return f > 0.0f ? gl.L(f) : gl.L(26.0f);
+        return f > 0.0f ? hl.L(f) : hl.L(26.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
         float f = this.g;
-        return f > 0.0f ? gl.L(f) : gl.L(26.0f);
+        return f > 0.0f ? hl.L(f) : hl.L(26.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -141,7 +141,7 @@ public class AnimatedArrowDrawable extends Drawable {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.L(2.0f));
+        paint.setStrokeWidth(hl.L(2.0f));
         paint.setColor(i);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);

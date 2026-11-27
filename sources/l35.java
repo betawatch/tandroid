@@ -1,136 +1,16 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.app.Person;
+import android.media.session.MediaSessionManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class l35 extends FrameLayout implements tjb {
-    public static final /* synthetic */ int h = 0;
-    public final fm a;
-    public final ri b;
-    public final FrameLayout.LayoutParams c;
-    public final wjb d;
-    public int e;
-    public boolean f;
-
-    public l35(int i, wjb wjbVar, Context context) {
-        super(context);
-        this.e = 32;
-        this.d = wjbVar;
-        zkb.h(bkb.d7, wjbVar, this);
-        fm fmVar = new fm(getContext());
-        this.a = fmVar;
-        boolean z = true;
-        fmVar.setTextSize(1, 14.0f);
-        fmVar.setTypeface(gl.o());
-        int i2 = bkb.e7;
-        zkb.X(fmVar, i2, wjbVar);
-        fmVar.setGravity((k96.a0 ? 5 : 3) | 16);
-        float f = i;
-        addView(fmVar, nme.d(-1, -1.0f, (k96.a0 ? 5 : 3) | 48, f, 0.0f, f, 0.0f));
-        ri riVar = new ri(getContext(), z, z, z, (byte) 2);
-        this.b = riVar;
-        riVar.setPadding(gl.L(2.0f), 0, gl.L(2.0f), 0);
-        riVar.b(0.9f, 420L, s33.h);
-        riVar.setTextSize(gl.L(14.0f));
-        zkb.U(riVar, i2, wjbVar);
-        riVar.setGravity(k96.a0 ? 3 : 5);
-        FrameLayout.LayoutParams d = nme.d(-2, -1.0f, (k96.a0 ? 3 : 5) | 48, f, 0.0f, f, 0.0f);
-        this.c = d;
-        addView(riVar, d);
-        WeakHashMap weakHashMap = jdc.a;
-        new xcc(R.id.tag_accessibility_heading, Boolean.class, 0, 28, (byte) 2).a(this, Boolean.TRUE);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract /* synthetic */ class l35 {
+    public static /* synthetic */ Person.Builder a() {
+        return new Person.Builder();
     }
 
-    public final void a(CharSequence charSequence, View.OnClickListener onClickListener) {
-        ri riVar = this.b;
-        riVar.c(charSequence, true, true);
-        riVar.setOnClickListener(onClickListener);
-        riVar.setVisibility(0);
-    }
-
-    public final void b(CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
-        this.a.setText(charSequence);
-        ri riVar = this.b;
-        riVar.c(charSequence2, false, true);
-        riVar.setOnClickListener(onClickListener);
-        riVar.setVisibility(0);
-    }
-
-    public CharSequence getText() {
-        return this.a.getText();
-    }
-
-    public TextView getTextView() {
-        return this.a;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(this.e), TLObject.FLAG_30));
-    }
-
-    public void setLayerHeight(int i) {
-        this.e = i;
-        requestLayout();
-    }
-
-    public void setNoBackground(boolean z) {
-        this.f = z;
-        updateColors();
-    }
-
-    public void setRightText(CharSequence charSequence) {
-        ri riVar = this.b;
-        riVar.c(charSequence, true, true);
-        riVar.setVisibility(0);
-    }
-
-    public void setRightTextMargin(int i) {
-        float f = i;
-        int L = gl.L(f);
-        FrameLayout.LayoutParams layoutParams = this.c;
-        layoutParams.leftMargin = L;
-        layoutParams.rightMargin = gl.L(f);
-        this.b.setLayoutParams(layoutParams);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
-        ri riVar = this.b;
-        riVar.setVisibility(8);
-        riVar.setOnClickListener(null);
-    }
-
-    public void setTextColor(int i) {
-        fm fmVar = this.a;
-        wjb wjbVar = this.d;
-        zkb.X(fmVar, i, wjbVar);
-        zkb.U(this.b, i, wjbVar);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        boolean z = this.f;
-        wjb wjbVar = this.d;
-        setBackgroundColor(z ? 0 : bkb.v0(bkb.d7, wjbVar));
-        int i = bkb.e7;
-        this.a.setTextColor(bkb.v0(i, wjbVar));
-        this.b.setTextColor(bkb.v0(i, wjbVar));
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-    }
-
-    public l35(Context context, wjb wjbVar) {
-        this(16, wjbVar, context);
+    public static /* synthetic */ void b(int i, int i2, String str) {
+        new MediaSessionManager.RemoteUserInfo(str, i, i2);
     }
 }

@@ -1,315 +1,419 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stories;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class o5a extends FrameLayout {
-    public boolean a;
-    public TextView b;
-    public TextView c;
-    public TextView d;
-    public TextView e;
-    public be0 f;
-    public be0 h;
-    public pb0 n;
-    public boolean r;
-    public lm s;
-    public LinearLayout w;
-    public int x;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class o5a implements Runnable {
+    public final /* synthetic */ TL_stories.StoryItem E;
+    public final /* synthetic */ c5a F;
+    public final /* synthetic */ long G;
+    public final /* synthetic */ boolean H;
+    public final /* synthetic */ long I;
+    public final /* synthetic */ r5a J;
+    public final /* synthetic */ ki8 a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ k5 d;
+    public final /* synthetic */ CharSequence e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ArrayList h;
+    public final /* synthetic */ r47 n;
+    public final /* synthetic */ r47 r;
+    public final /* synthetic */ r47 s;
+    public final /* synthetic */ boolean w;
+    public final /* synthetic */ int x;
+    public final /* synthetic */ int y;
 
-    public static fm2 a(int i, String str) {
-        TLRPC.TL_authorization tL_authorization = new TLRPC.TL_authorization();
-        tL_authorization.device_model = str;
-        tL_authorization.platform = str;
-        tL_authorization.app_name = str;
-        return b(i, tL_authorization);
+    public /* synthetic */ o5a(ki8 ki8Var, ArrayList arrayList, long j, k5 k5Var, CharSequence charSequence, boolean z, ArrayList arrayList2, r47 r47Var, r47 r47Var2, r47 r47Var3, boolean z2, int i, int i2, TL_stories.StoryItem storyItem, c5a c5aVar, long j2, boolean z3, long j3, r5a r5aVar) {
+        this.a = ki8Var;
+        this.b = arrayList;
+        this.c = j;
+        this.d = k5Var;
+        this.e = charSequence;
+        this.f = z;
+        this.h = arrayList2;
+        this.n = r47Var;
+        this.r = r47Var2;
+        this.s = r47Var3;
+        this.w = z2;
+        this.x = i;
+        this.y = i2;
+        this.E = storyItem;
+        this.F = c5aVar;
+        this.G = j2;
+        this.H = z3;
+        this.I = j3;
+        this.J = r5aVar;
     }
 
-    public static fm2 b(int i, TLRPC.TL_authorization tL_authorization) {
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0162, code lost:
+    
+        if (r15 == (r11 - 1)) goto L78;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0155  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00c7  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        long j;
+        boolean z;
+        int i;
         int i2;
-        int i3;
-        int i4;
-        String lowerCase = tL_authorization.platform.toLowerCase();
-        if (lowerCase.isEmpty()) {
-            lowerCase = tL_authorization.system_version.toLowerCase();
-        }
-        String lowerCase2 = tL_authorization.device_model.toLowerCase();
-        if (lowerCase2.contains("safari")) {
-            i2 = bkb.T7;
-            i3 = bkb.a8;
-            i4 = R.drawable.device_web_safari;
-        } else if (lowerCase2.contains("edge")) {
-            i2 = bkb.T7;
-            i3 = bkb.a8;
-            i4 = R.drawable.device_web_edge;
-        } else if (lowerCase2.contains("chrome")) {
-            i2 = bkb.T7;
-            i3 = bkb.a8;
-            i4 = R.drawable.device_web_chrome;
-        } else if (lowerCase2.contains("opera")) {
-            i2 = bkb.T7;
-            i3 = bkb.a8;
-            i4 = R.drawable.device_web_opera;
-        } else if (lowerCase2.contains("firefox")) {
-            i2 = bkb.T7;
-            i3 = bkb.a8;
-            i4 = R.drawable.device_web_firefox;
-        } else {
-            if (lowerCase2.contains("vivaldi")) {
-                i2 = bkb.T7;
-                i3 = bkb.a8;
-            } else if (lowerCase.contains("ios")) {
-                i4 = lowerCase2.contains("ipad") ? R.drawable.device_tablet_ios : R.drawable.device_phone_ios;
-                i2 = bkb.S7;
-                i3 = bkb.Z7;
-            } else if (lowerCase.contains("windows")) {
-                i2 = bkb.R7;
-                i3 = bkb.Y7;
-                i4 = R.drawable.device_desktop_win;
-            } else if (lowerCase.contains("macos")) {
-                i2 = bkb.R7;
-                i3 = bkb.Y7;
-                i4 = R.drawable.device_desktop_osx;
-            } else if (lowerCase.contains("android")) {
-                i4 = lowerCase2.contains("tab") ? R.drawable.device_tablet_android : R.drawable.device_phone_android;
-                i2 = bkb.Q7;
-                i3 = bkb.X7;
-            } else {
-                if (lowerCase.contains("fragment")) {
-                    i4 = R.drawable.fragment;
-                } else if (lowerCase.equalsIgnoreCase("search")) {
-                    i2 = bkb.S7;
-                    i3 = bkb.Z7;
-                    i4 = R.drawable.msg_search;
-                } else if (lowerCase.contains("anonymous")) {
-                    i2 = bkb.S7;
-                    i3 = bkb.Z7;
-                    i4 = R.drawable.large_hidden;
-                } else if (lowerCase.contains("premiumbot")) {
-                    i2 = bkb.ok;
-                    i3 = bkb.nk;
-                    i4 = R.drawable.filled_star_plus;
-                } else if (lowerCase.contains("ads")) {
-                    i2 = bkb.T7;
-                    i3 = bkb.a8;
-                    i4 = R.drawable.msg_channel;
-                } else if (lowerCase.contains("api")) {
-                    i2 = bkb.Q7;
-                    i3 = bkb.X7;
-                    i4 = R.drawable.filled_paid_broadcast;
-                } else if (lowerCase.equals("?")) {
-                    i4 = R.drawable.msg_emoji_question;
-                } else if (tL_authorization.app_name.toLowerCase().contains("desktop")) {
-                    i2 = bkb.R7;
-                    i3 = bkb.Y7;
-                    i4 = R.drawable.device_desktop_other;
-                } else {
-                    i2 = bkb.T7;
-                    i3 = bkb.a8;
-                }
-                i2 = -1;
-                i3 = -1;
-            }
-            i4 = R.drawable.device_web_other;
-        }
-        Drawable mutate = a.b.getDrawable(i4).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(bkb.w0(null, bkb.I7, false), PorterDuff.Mode.SRC_IN));
-        float f = i;
-        int L = gl.L(f);
-        int w0 = i2 == -1 ? -16777216 : bkb.w0(null, i2, false);
-        int w02 = i3 != -1 ? bkb.w0(null, i3, false) : -16777216;
-        x9 x9Var = new x9((byte) 1);
-        x9Var.b = L;
-        Paint paint = new Paint(1);
-        x9Var.c = paint;
-        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, L, new int[]{w0, w02}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        fm2 fm2Var = new fm2(x9Var, mutate);
-        if (lowerCase != null && lowerCase.contains("fragment")) {
-            fm2Var.e = (int) ((mutate.getIntrinsicWidth() / 44.0f) * f);
-            fm2Var.f = (int) ((mutate.getIntrinsicHeight() / 44.0f) * f);
-        }
-        return fm2Var;
-    }
-
-    private void setContentAlpha(float f) {
-        TextView textView = this.e;
-        if (textView != null) {
-            textView.setAlpha(f);
-        }
-        TextView textView2 = this.d;
-        if (textView2 != null) {
-            textView2.setAlpha(f);
-        }
-        TextView textView3 = this.b;
-        if (textView3 != null) {
-            textView3.setAlpha(f);
-        }
-        TextView textView4 = this.c;
-        if (textView4 != null) {
-            textView4.setAlpha(f);
-        }
-        be0 be0Var = this.h;
-        if (be0Var != null) {
-            be0Var.setAlpha(f);
-        }
-        be0 be0Var2 = this.f;
-        if (be0Var2 != null) {
-            be0Var2.setAlpha(1.0f - f);
-        }
-        LinearLayout linearLayout = this.w;
-        if (linearLayout != null) {
-            linearLayout.setAlpha(f);
-        }
-    }
-
-    public final void c(TLObject tLObject, boolean z) {
         String str;
-        String e1;
-        TextView textView = this.c;
-        TextView textView2 = this.e;
-        TextView textView3 = this.d;
-        TextView textView4 = this.b;
-        int i = this.x;
-        pb0 pb0Var = this.n;
-        this.r = z;
-        be0 be0Var = this.h;
-        be0Var.setRoundRadius(gl.L(10.0f));
-        if (tLObject instanceof TL_account.TL_connectedBot) {
-            TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) tLObject;
-            TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(tL_connectedBot.bot_id));
-            pb0Var.q(V1);
-            be0Var.setRoundRadius(gl.L(21.0f));
-            be0Var.f(V1, pb0Var);
-            textView4.setText(l7c.r(V1));
-            textView3.setText(k96.M0(2131745368, null));
-            if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
-                textView2.setText(k96.a0(null, null, 2131745366, k96.x(tL_connectedBot.date, false)));
-                return;
-            }
-            return;
+        TLRPC.TL_document tL_document;
+        TLRPC.TL_document tL_document2;
+        int i3;
+        TLRPC.TL_document tL_document3;
+        TLRPC.TL_document tL_document4;
+        int i4;
+        final r47 r47Var;
+        final long j2;
+        String str2;
+        final ArrayList arrayList;
+        int i5;
+        Bitmap bitmap;
+        ki8 ki8Var = this.a;
+        int i6 = 1;
+        if (ki8Var != null) {
+            j = ki8Var.c;
+            z = true;
+        } else {
+            j = 0;
+            z = false;
         }
-        if (tLObject instanceof TLRPC.TL_authorization) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-            be0Var.setImageDrawable(b(42, tL_authorization));
-            StringBuilder sb = new StringBuilder();
-            if (tL_authorization.device_model.length() != 0) {
-                sb.append(tL_authorization.device_model);
+        ArrayList arrayList2 = this.b;
+        int size = arrayList2.size();
+        long j3 = j != 0 ? j : 0L;
+        int i7 = 0;
+        int i8 = 0;
+        while (i7 < size) {
+            r47 r47Var2 = (r47) arrayList2.get(i7);
+            String str3 = r47Var2.k.attachPath;
+            File file = new File(str3);
+            long j4 = this.c;
+            boolean B = wf3.B(j4);
+            if (!B && size > i6 && i8 % 10 == 0 && ki8Var == null) {
+                j3 = Utilities.b.nextLong();
+                i8 = 0;
             }
-            if (sb.length() == 0) {
-                if (tL_authorization.platform.length() != 0) {
-                    sb.append(tL_authorization.platform);
-                }
-                if (tL_authorization.system_version.length() != 0) {
-                    if (tL_authorization.platform.length() != 0) {
-                        sb.append(" ");
+            long j5 = j3;
+            if (str3 == null || str3.length() <= 0) {
+                i = i6;
+                i2 = i7;
+            } else {
+                StringBuilder l = c00.l(str3, MediaStreamTrack.AUDIO_TRACK_KIND);
+                i = i6;
+                i2 = i7;
+                l.append(file.length());
+                str3 = l.toString();
+            }
+            final k5 k5Var = this.d;
+            if (!B && !TextUtils.isEmpty(str3) && !z) {
+                Object[] e0 = jf7.Y(k5Var.a).e0(!B ? i : 4, str3);
+                if (e0 != null) {
+                    Object obj = e0[0];
+                    if (obj instanceof TLRPC.TL_document) {
+                        tL_document = (TLRPC.TL_document) obj;
+                        str = (String) e0[i];
+                        r7a.v(k5Var, B, tL_document, str3, null, 0L, false);
+                        if (tL_document == null) {
+                            tL_document = (TLRPC.TL_document) r47Var2.k.media.document;
+                        }
+                        tL_document2 = tL_document;
+                        if (tL_document2 != null && tL_document2.thumbs.isEmpty()) {
+                            h00 a = h00.a(file);
+                            bitmap = a == null ? a.o : null;
+                            if (bitmap != null) {
+                                i3 = i;
+                                TLRPC.PhotoSize U = in5.U(bitmap, 132.0f, 132.0f, 55, B);
+                                if (U != null) {
+                                    tL_document2.thumbs.add(U);
+                                    tL_document2.flags |= 1;
+                                }
+                                bitmap.recycle();
+                                if (B) {
+                                    tL_document3 = tL_document2;
+                                    if (uc7.s1(k5Var.a).a1(Integer.valueOf((int) (j4 & 4294967295L))) == null) {
+                                        return;
+                                    }
+                                } else {
+                                    tL_document3 = tL_document2;
+                                }
+                                int i9 = i3;
+                                CharSequence[] charSequenceArr = new CharSequence[i9];
+                                charSequenceArr[0] = this.e;
+                                if (i2 == 0) {
+                                    ArrayList Y = ls6.d0(k5Var.a).Y(charSequenceArr, i9, i9);
+                                    str2 = charSequenceArr[0].toString();
+                                    tL_document4 = tL_document3;
+                                    r47Var = r47Var2;
+                                    arrayList = Y;
+                                    i4 = size;
+                                    j2 = j4;
+                                } else {
+                                    tL_document4 = tL_document3;
+                                    i4 = size;
+                                    r47Var = r47Var2;
+                                    j2 = j4;
+                                    str2 = null;
+                                    arrayList = null;
+                                }
+                                int i10 = i8;
+                                final HashMap hashMap = new HashMap();
+                                if (str3 != null) {
+                                    hashMap.put("originalPath", str3);
+                                }
+                                if (str != null) {
+                                    hashMap.put("parentObject", str);
+                                }
+                                int i11 = i10 + 1;
+                                hashMap.put("groupId", String.valueOf(j5));
+                                if (this.f) {
+                                    i5 = i2;
+                                } else {
+                                    if (ki8Var == null && i11 == 10) {
+                                        i5 = i2;
+                                    } else {
+                                        i5 = i2;
+                                    }
+                                    hashMap.put("final", "1");
+                                }
+                                ArrayList arrayList3 = this.h;
+                                final int intValue = arrayList3 != null ? ((Integer) arrayList3.get(i5)).intValue() : 0;
+                                final ki8 ki8Var2 = ki8Var;
+                                ArrayList arrayList4 = arrayList2;
+                                final String str4 = str;
+                                final r47 r47Var3 = this.n;
+                                final r47 r47Var4 = this.r;
+                                int i12 = i4;
+                                final r47 r47Var5 = this.s;
+                                final boolean z2 = this.w;
+                                int i13 = i5;
+                                final int i14 = this.x;
+                                final int i15 = this.y;
+                                final TL_stories.StoryItem storyItem = this.E;
+                                final c5a c5aVar = this.F;
+                                final long j6 = this.G;
+                                final boolean z3 = this.H;
+                                final long j7 = this.I;
+                                final String str5 = str2;
+                                final TLRPC.TL_document tL_document5 = tL_document4;
+                                hl.c3(new Runnable() { // from class: a6a
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        r47 r47Var6 = r47.this;
+                                        k5 k5Var2 = k5Var;
+                                        TLRPC.TL_document tL_document6 = tL_document5;
+                                        r47 r47Var7 = r47Var;
+                                        HashMap hashMap2 = hashMap;
+                                        String str6 = str4;
+                                        if (r47Var6 != null) {
+                                            r7a.B(k5Var2.a).s(r47Var6, null, null, null, tL_document6, r47Var7.k.attachPath, null, hashMap2, false, false, str6);
+                                            return;
+                                        }
+                                        p7a e = p7a.e(tL_document6, null, r47Var7.k.attachPath, j2, r47Var4, r47Var5, str5, arrayList, hashMap2, z2, i14, i15, 0, str6, false);
+                                        e.H = storyItem;
+                                        e.K = c5aVar;
+                                        e.O = j6;
+                                        e.L = z3;
+                                        e.Q = j7;
+                                        e.j = ki8Var2;
+                                        e.k = intValue;
+                                        r7a.B(k5Var2.a).q0(e);
+                                    }
+                                });
+                                i7 = i13 + 1;
+                                ki8Var = ki8Var2;
+                                j3 = j5;
+                                size = i12;
+                                i8 = i11;
+                                arrayList2 = arrayList4;
+                                i6 = 1;
+                            }
+                        }
+                        i3 = i;
+                        if (B) {
+                        }
+                        int i92 = i3;
+                        CharSequence[] charSequenceArr2 = new CharSequence[i92];
+                        charSequenceArr2[0] = this.e;
+                        if (i2 == 0) {
+                        }
+                        int i102 = i8;
+                        final HashMap hashMap2 = new HashMap();
+                        if (str3 != null) {
+                        }
+                        if (str != null) {
+                        }
+                        int i112 = i102 + 1;
+                        hashMap2.put("groupId", String.valueOf(j5));
+                        if (this.f) {
+                        }
+                        ArrayList arrayList32 = this.h;
+                        if (arrayList32 != null) {
+                        }
+                        final ki8 ki8Var22 = ki8Var;
+                        ArrayList arrayList42 = arrayList2;
+                        final String str42 = str;
+                        final r47 r47Var32 = this.n;
+                        final r47 r47Var42 = this.r;
+                        int i122 = i4;
+                        final r47 r47Var52 = this.s;
+                        final boolean z22 = this.w;
+                        int i132 = i5;
+                        final int i142 = this.x;
+                        final int i152 = this.y;
+                        final TL_stories.StoryItem storyItem2 = this.E;
+                        final c5a c5aVar2 = this.F;
+                        final long j62 = this.G;
+                        final boolean z32 = this.H;
+                        final long j72 = this.I;
+                        final String str52 = str2;
+                        final TLRPC.TL_document tL_document52 = tL_document4;
+                        hl.c3(new Runnable() { // from class: a6a
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                r47 r47Var6 = r47.this;
+                                k5 k5Var2 = k5Var;
+                                TLRPC.TL_document tL_document6 = tL_document52;
+                                r47 r47Var7 = r47Var;
+                                HashMap hashMap22 = hashMap2;
+                                String str6 = str42;
+                                if (r47Var6 != null) {
+                                    r7a.B(k5Var2.a).s(r47Var6, null, null, null, tL_document6, r47Var7.k.attachPath, null, hashMap22, false, false, str6);
+                                    return;
+                                }
+                                p7a e = p7a.e(tL_document6, null, r47Var7.k.attachPath, j2, r47Var42, r47Var52, str52, arrayList, hashMap22, z22, i142, i152, 0, str6, false);
+                                e.H = storyItem2;
+                                e.K = c5aVar2;
+                                e.O = j62;
+                                e.L = z32;
+                                e.Q = j72;
+                                e.j = ki8Var22;
+                                e.k = intValue;
+                                r7a.B(k5Var2.a).q0(e);
+                            }
+                        });
+                        i7 = i132 + 1;
+                        ki8Var = ki8Var22;
+                        j3 = j5;
+                        size = i122;
+                        i8 = i112;
+                        arrayList2 = arrayList42;
+                        i6 = 1;
                     }
-                    sb.append(tL_authorization.system_version);
                 }
             }
-            textView4.setText(sb);
-            if ((tL_authorization.flags & 1) != 0) {
-                setTag(Integer.valueOf(bkb.H6));
-                e1 = k96.M0(2131747633, null);
-            } else {
-                setTag(Integer.valueOf(bkb.z6));
-                e1 = k96.e1(tL_authorization.date_active);
+            str = null;
+            tL_document = null;
+            if (tL_document == null) {
             }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            if (tL_authorization.country.length() != 0) {
-                spannableStringBuilder.append((CharSequence) tL_authorization.country);
+            tL_document2 = tL_document;
+            if (tL_document2 != null) {
+                h00 a2 = h00.a(file);
+                if (a2 == null) {
+                }
+                if (bitmap != null) {
+                }
             }
-            if (spannableStringBuilder.length() != 0) {
-                wo3 wo3Var = new wo3();
-                wo3Var.b = gl.L(1.5f);
-                wo3Var.c = 7.0f;
-                wo3Var.d = 2.0f;
-                spannableStringBuilder.append((CharSequence) " . ").setSpan(wo3Var, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
+            i3 = i;
+            if (B) {
             }
-            spannableStringBuilder.append((CharSequence) e1);
-            textView2.setText(spannableStringBuilder);
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(tL_authorization.app_name);
-            sb2.append(" ");
-            sb2.append(tL_authorization.app_version);
-            textView3.setText(sb2);
-            return;
+            int i922 = i3;
+            CharSequence[] charSequenceArr22 = new CharSequence[i922];
+            charSequenceArr22[0] = this.e;
+            if (i2 == 0) {
+            }
+            int i1022 = i8;
+            final HashMap hashMap22 = new HashMap();
+            if (str3 != null) {
+            }
+            if (str != null) {
+            }
+            int i1122 = i1022 + 1;
+            hashMap22.put("groupId", String.valueOf(j5));
+            if (this.f) {
+            }
+            ArrayList arrayList322 = this.h;
+            if (arrayList322 != null) {
+            }
+            final ki8 ki8Var222 = ki8Var;
+            ArrayList arrayList422 = arrayList2;
+            final String str422 = str;
+            final r47 r47Var322 = this.n;
+            final r47 r47Var422 = this.r;
+            int i1222 = i4;
+            final r47 r47Var522 = this.s;
+            final boolean z222 = this.w;
+            int i1322 = i5;
+            final int i1422 = this.x;
+            final int i1522 = this.y;
+            final TL_stories.StoryItem storyItem22 = this.E;
+            final c5a c5aVar22 = this.F;
+            final long j622 = this.G;
+            final boolean z322 = this.H;
+            final long j722 = this.I;
+            final String str522 = str2;
+            final TLRPC.TL_document tL_document522 = tL_document4;
+            hl.c3(new Runnable() { // from class: a6a
+                @Override // java.lang.Runnable
+                public final void run() {
+                    r47 r47Var6 = r47.this;
+                    k5 k5Var2 = k5Var;
+                    TLRPC.TL_document tL_document6 = tL_document522;
+                    r47 r47Var7 = r47Var;
+                    HashMap hashMap222 = hashMap22;
+                    String str6 = str422;
+                    if (r47Var6 != null) {
+                        r7a.B(k5Var2.a).s(r47Var6, null, null, null, tL_document6, r47Var7.k.attachPath, null, hashMap222, false, false, str6);
+                        return;
+                    }
+                    p7a e = p7a.e(tL_document6, null, r47Var7.k.attachPath, j2, r47Var422, r47Var522, str522, arrayList, hashMap222, z222, i1422, i1522, 0, str6, false);
+                    e.H = storyItem22;
+                    e.K = c5aVar22;
+                    e.O = j622;
+                    e.L = z322;
+                    e.Q = j722;
+                    e.j = ki8Var222;
+                    e.k = intValue;
+                    r7a.B(k5Var2.a).q0(e);
+                }
+            });
+            i7 = i1322 + 1;
+            ki8Var = ki8Var222;
+            j3 = j5;
+            size = i1222;
+            i8 = i1122;
+            arrayList2 = arrayList422;
+            i6 = 1;
         }
-        if (tLObject instanceof TLRPC.TL_webAuthorization) {
-            TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) tLObject;
-            TLRPC.User V12 = na7.q1(i).V1(Long.valueOf(tL_webAuthorization.bot_id));
-            textView4.setText(tL_webAuthorization.domain);
-            if (V12 != null) {
-                pb0Var.q(V12);
-                str = l7c.k(V12, true);
-                be0Var.f(V12, pb0Var);
-            } else {
-                str = "";
-            }
-            int i2 = bkb.z6;
-            setTag(Integer.valueOf(i2));
-            textView.setText(k96.e1(tL_webAuthorization.date_active));
-            zkb.X(textView, i2, null);
-            StringBuilder sb3 = new StringBuilder();
-            if (tL_webAuthorization.ip.length() != 0) {
-                sb3.append(tL_webAuthorization.ip);
-            }
-            if (tL_webAuthorization.region.length() != 0) {
-                if (sb3.length() != 0) {
-                    sb3.append(" ");
-                }
-                sb3.append("— ");
-                sb3.append(tL_webAuthorization.region);
-            }
-            textView2.setText(sb3);
-            StringBuilder sb4 = new StringBuilder();
-            if (!TextUtils.isEmpty(str)) {
-                sb4.append(str);
-            }
-            if (tL_webAuthorization.browser.length() != 0) {
-                if (sb4.length() != 0) {
-                    sb4.append(", ");
-                }
-                sb4.append(tL_webAuthorization.browser);
-            }
-            if (tL_webAuthorization.platform.length() != 0) {
-                if (sb4.length() != 0) {
-                    sb4.append(", ");
-                }
-                sb4.append(tL_webAuthorization.platform);
-            }
-            textView3.setText(sb4);
+        r5a r5aVar = this.J;
+        if (r5aVar != null) {
+            hl.c3(r5aVar);
         }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        setContentAlpha(1.0f - this.s.e(false, 0.0f));
-        if (this.r) {
-            int i = this.a ? 49 : 72;
-            canvas.drawLine(k96.a0 ? 0.0f : gl.L(i), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(i) : 0), getMeasuredHeight() - 1, bkb.j0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(!this.a ? 70.0f : 90.0f) + (this.r ? 1 : 0), TLObject.FLAG_30));
     }
 }

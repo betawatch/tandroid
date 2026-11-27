@@ -18,17 +18,17 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static boolean c = false;
     public static boolean d = false;
-    public static ya0 e = null;
+    public static ab0 e = null;
     public static boolean f = false;
     public int a;
     public int b;
 
-    public static void a(cj3 cj3Var) {
+    public static void a(uj3 uj3Var) {
         boolean z = false;
         SharedPreferences sharedPreferences = a.b.getSharedPreferences("systemConfig", 0);
         if (!Environment.isExternalStorageLegacy() || sharedPreferences.getBoolean("migration_to_scoped_storage_finished", false) || sharedPreferences.getInt("migration_to_scoped_storage_count", 0) >= 5 || f || e != null || d) {
@@ -36,8 +36,8 @@ public class FilesMigrationService extends Service {
         }
         if (Build.VERSION.SDK_INT >= 30) {
             File externalStorageDirectory = Environment.getExternalStorageDirectory();
-            if (!TextUtils.isEmpty(gba.e0)) {
-                ArrayList c1 = gl.c1();
+            if (!TextUtils.isEmpty(xea.e0)) {
+                ArrayList c1 = hl.c1();
                 int size = c1.size();
                 int i = 0;
                 while (true) {
@@ -45,7 +45,7 @@ public class FilesMigrationService extends Service {
                         break;
                     }
                     File file = (File) c1.get(i);
-                    if (file.getAbsolutePath().startsWith(gba.e0)) {
+                    if (file.getAbsolutePath().startsWith(xea.e0)) {
                         externalStorageDirectory = file;
                         break;
                     }
@@ -58,42 +58,42 @@ public class FilesMigrationService extends Service {
             sharedPreferences.edit().putBoolean("migration_to_scoped_storage_finished", true).apply();
             return;
         }
-        ya0 ya0Var = new ya0(cj3Var.getParentActivity(), z);
-        ya0Var.m1 = cj3Var;
-        ya0Var.setCanceledOnTouchOutside(false);
-        Activity parentActivity = cj3Var.getParentActivity();
-        LinearLayout m = ir2.m(parentActivity, 1);
-        aza azaVar = new aza(parentActivity, ya0Var.a);
-        azaVar.setStickerNum(7);
-        azaVar.getImageReceiver().M(1);
-        m.addView(azaVar, nme.t(kk7.Z1, kk7.Z1, 1, 0, 16, 0, 0));
+        ab0 ab0Var = new ab0(uj3Var.getParentActivity(), z);
+        ab0Var.m1 = uj3Var;
+        ab0Var.setCanceledOnTouchOutside(false);
+        Activity parentActivity = uj3Var.getParentActivity();
+        LinearLayout m = bs2.m(parentActivity, 1);
+        a3b a3bVar = new a3b(parentActivity, ab0Var.a);
+        a3bVar.setStickerNum(7);
+        a3bVar.getImageReceiver().M(1);
+        m.addView(a3bVar, tre.t(jn7.Z1, jn7.Z1, 1, 0, 16, 0, 0));
         TextView textView = new TextView(parentActivity);
         textView.setGravity(8388611);
-        int i2 = bkb.i5;
-        tb4.w(textView, i2, null, 1, 20.0f);
-        textView.setText(k96.M0(2131748239, null));
-        m.addView(textView, nme.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
+        int i2 = aob.j5;
+        qd4.w(textView, i2, null, 1, 20.0f);
+        textView.setText(ob6.M0(2131748185, null));
+        m.addView(textView, tre.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(parentActivity);
         textView2.setGravity(8388611);
         textView2.setTextSize(1, 15.0f);
-        zkb.X(textView2, i2, null);
-        textView2.setText(gl.S2(k96.M0(2131748240, null)));
-        m.addView(textView2, nme.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+        yob.X(textView2, i2, null);
+        textView2.setText(hl.S2(ob6.M0(2131748186, null)));
+        m.addView(textView2, tre.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
         TextView textView3 = new TextView(parentActivity);
-        textView3.setPadding(gl.L(34.0f), 0, gl.L(34.0f), 0);
+        textView3.setPadding(hl.L(34.0f), 0, hl.L(34.0f), 0);
         textView3.setGravity(17);
         textView3.setTextSize(1, 14.0f);
-        textView3.setTypeface(gl.o());
-        textView3.setText(k96.M0(2131748241, null));
-        zkb.X(textView3, bkb.Ii, null);
-        textView3.setBackground(sjb.f(bkb.Ei, 6.0f));
-        m.addView(textView3, nme.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
-        textView3.setOnClickListener(new yj3(ya0Var, (byte) 8));
+        textView3.setTypeface(hl.o());
+        textView3.setText(ob6.M0(2131748187, null));
+        yob.X(textView3, aob.Ji, null);
+        textView3.setBackground(rnb.f(aob.Fi, 6.0f));
+        m.addView(textView3, tre.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+        textView3.setOnClickListener(new mh3(ab0Var, (byte) 10));
         ScrollView scrollView = new ScrollView(parentActivity);
         scrollView.addView(m);
-        ya0Var.O = scrollView;
-        e = ya0Var;
-        ya0Var.show();
+        ab0Var.O = scrollView;
+        e = ab0Var;
+        ab0Var.show();
         f = true;
         sharedPreferences.edit().putInt("migration_to_scoped_storage_count", sharedPreferences.getInt("migration_to_scoped_storage_count", 0) + 1).apply();
     }
@@ -117,17 +117,17 @@ public class FilesMigrationService extends Service {
                 try {
                     convert = Stream.VivifiedWrapper.convert(Files.list(file.toPath()));
                     try {
-                        convert.forEach(new ay2(this, file2, (byte) 1));
+                        convert.forEach(new vy2(this, file2, (byte) 1));
                         convert.close();
                     } finally {
                     }
                 } catch (Exception e2) {
-                    fa4.g(e2, true);
+                    cc4.g(e2, true);
                 }
                 try {
                     file.delete();
                 } catch (Exception e3) {
-                    fa4.g(e3, true);
+                    cc4.g(e3, true);
                 }
             }
         }
@@ -140,21 +140,21 @@ public class FilesMigrationService extends Service {
 
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i, int i2) {
-        im7.c();
-        ir2.q();
-        Notification build = fk.b(this, im7.k0).setContentTitle(k96.M0(2131748238, null)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
+        ip7.c();
+        bs2.q();
+        Notification build = gk.b(this, ip7.k0).setContentTitle(ob6.M0(2131748184, null)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
         d = true;
-        new ub4(this).start();
+        new rd4(this).start();
         try {
-            startForeground(kk7.X4, build);
+            startForeground(jn7.X4, build);
         } catch (Throwable th) {
-            fa4.g(th, true);
+            cc4.g(th, true);
         }
         return super.onStartCommand(intent, i, i2);
     }
 
     public final void onTimeout(int i, int i2) {
-        fa4.b("FilesMigrationService timeout, type = " + i2);
+        cc4.b("FilesMigrationService timeout, type = " + i2);
         try {
             stopForeground(true);
         } catch (Throwable unused) {

@@ -1,25 +1,22 @@
 // default package
 
 import android.os.Handler;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class i40 {
-    public final Handler a;
-    public final h40 b;
-    public final /* synthetic */ j40 c;
+public final /* synthetic */ class i40 implements Executor {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Handler b;
 
-    public i40(j40 j40Var) {
-        this.c = j40Var;
-        Handler q = g8c.q(null);
-        this.a = q;
-        h40 h40Var = new h40(this);
-        this.b = h40Var;
-        j40Var.a.registerStreamEventCallback(new g40(q, (byte) 0), h40Var);
+    public /* synthetic */ i40(Handler handler, byte b) {
+        this.a = b;
+        this.b = handler;
     }
 
-    public final void a() {
-        this.c.a.unregisterStreamEventCallback(this.b);
-        this.a.removeCallbacksAndMessages(null);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        byte b = this.a;
+        this.b.post(runnable);
     }
 }

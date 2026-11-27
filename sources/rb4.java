@@ -1,27 +1,35 @@
 // default package
 
-import java.io.FileOutputStream;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rb4 extends gw2 {
-    public FileOutputStream a;
-    public FileOutputStream b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ sb4 d;
-    public int e;
+public final /* synthetic */ class rb4 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ xb4 b;
+    public final /* synthetic */ TLRPC.Document c;
+    public final /* synthetic */ boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rb4(sb4 sb4Var, gw2 gw2Var) {
-        super(gw2Var);
-        this.d = sb4Var;
+    public /* synthetic */ rb4(xb4 xb4Var, TLRPC.Document document, boolean z, byte b) {
+        this.a = b;
+        this.b = xb4Var;
+        this.c = document;
+        this.d = z;
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.b(null, this);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.d;
+        TLRPC.Document document = this.c;
+        xb4 xb4Var = this.b;
+        switch (b) {
+            case 0:
+                xb4Var.d0(document, z);
+                break;
+            default:
+                xb4Var.a0(document, z);
+                break;
+        }
     }
 }

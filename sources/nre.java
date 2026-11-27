@@ -1,64 +1,66 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
+import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class nre {
-    /* JADX WARN: Removed duplicated region for block: B:18:0x002e  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0020  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Object a(fl8 fl8Var, db4 db4Var, gw2 gw2Var) {
-        el8 el8Var;
-        int i;
+public abstract class nre extends u3d implements IInterface {
+    public final int b;
+
+    public nre(byte[] bArr) {
+        super("com.google.android.gms.common.internal.ICertData", (byte) 6);
+        xve.b(bArr.length == 25);
+        this.b = Arrays.hashCode(bArr);
+    }
+
+    public static byte[] U(String str) {
         try {
-            if (gw2Var instanceof el8) {
-                el8Var = (el8) gw2Var;
-                int i2 = el8Var.c;
-                if ((i2 & TLObject.FLAG_31) != 0) {
-                    el8Var.c = i2 - TLObject.FLAG_31;
-                    Object obj = el8Var.b;
-                    i = el8Var.c;
-                    if (i != 0) {
-                        qse.b(obj);
-                        if (el8Var.getContext().get(pd5.c) != fl8Var) {
-                            sc8.j("awaitClose() can only be invoked from the producer context");
-                            return null;
-                        }
-                        el8Var.a = db4Var;
-                        el8Var.c = 1;
-                        na1 na1Var = new na1(1, dle.a(el8Var));
-                        na1Var.s();
-                        fl8Var.S(new n13(na1Var, (byte) 1));
-                        Object q = na1Var.q();
-                        bx2 bx2Var = bx2.a;
-                        if (q == bx2Var) {
-                            return bx2Var;
-                        }
-                    } else {
-                        if (i != 1) {
-                            sc8.j("call to 'resume' before 'invoke' with coroutine");
-                            return null;
-                        }
-                        db4Var = el8Var.a;
-                        qse.b(obj);
-                    }
-                    db4Var.invoke();
-                    return g5c.a;
-                }
-            }
-            if (i != 0) {
-            }
-            db4Var.invoke();
-            return g5c.a;
-        } catch (Throwable th) {
-            db4Var.invoke();
-            throw th;
+            return str.getBytes("ISO-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            hz6.e(e);
+            return null;
         }
-        el8Var = new el8(gw2Var);
-        Object obj2 = el8Var.b;
-        i = el8Var.c;
+    }
+
+    public abstract byte[] T();
+
+    @Override // u3d
+    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
+        if (i == 1) {
+            br7 br7Var = new br7(T());
+            parcel2.writeNoException();
+            dld.b(parcel2, br7Var);
+            return true;
+        }
+        if (i != 2) {
+            return false;
+        }
+        parcel2.writeNoException();
+        parcel2.writeInt(this.b);
+        return true;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof nre) {
+            try {
+                nre nreVar = (nre) obj;
+                if (nreVar.b == this.b) {
+                    return Arrays.equals(T(), (byte[]) br7.U(new br7(nreVar.T())));
+                }
+            } catch (RemoteException e) {
+                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.b;
     }
 }

@@ -1,48 +1,33 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ixb extends djc {
+    public boolean a = false;
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ jxb c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ixb extends b4c {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        b4c.h(new ixb());
+    /* JADX WARN: Multi-variable type inference failed */
+    public ixb(jxb jxbVar, int i) {
+        this.c = jxbVar;
+        this.b = i;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        jxb jxbVar = (jxb) view;
-        boolean z2 = false;
-        if (c4cVar.s) {
-            jxbVar.e();
-        } else {
-            Object obj = c4cVar.H;
-            if (obj == null) {
-                if (c4cVar.C == -2) {
-                    jxbVar.b(c4cVar.r, c4cVar.e);
-                } else {
-                    jxbVar.c((c4cVar.z & 1) != 0, c4cVar.r, c4cVar.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (c4cVar.J) {
-                    jxbVar.a(c4cVar.y, (TLRPC.TL_forumTopic) obj, c4cVar.e);
-                } else {
-                    jxbVar.f((TLRPC.TL_forumTopic) obj, c4cVar.e);
-                }
-            }
-        }
-        if (q5cVar != null && q5cVar.k3 && jxbVar.F) {
-            z2 = true;
-        }
-        jxbVar.setReorder(z2);
+    @Override // djc, cjc
+    public final void a() {
+        this.a = true;
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new jxb(i, wjbVar, context);
+    @Override // djc, cjc
+    public final void b() {
+        this.c.a.setVisibility(0);
+    }
+
+    @Override // cjc
+    public final void c() {
+        if (this.a) {
+            return;
+        }
+        this.c.a.setVisibility(this.b);
     }
 }

@@ -1,75 +1,45 @@
 // default package
 
-import android.graphics.drawable.ColorDrawable;
-import android.view.ViewGroup;
-import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class j71 extends b71 {
-    public jb4 n;
-    public final ArrayList r;
-    public fm2 s;
-    public final /* synthetic */ o71 w;
+public abstract class j71 extends i71 {
+    public final ArrayList f;
+    public final /* synthetic */ w71 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j71(o71 o71Var) {
-        super(o71Var, 1);
-        this.w = o71Var;
-        this.r = new ArrayList();
+    public j71(w71 w71Var, int i) {
+        super(i);
+        this.h = w71Var;
+        this.f = new ArrayList();
     }
 
-    @Override // b71, a71
-    public final void F() {
-        super.F();
-        ArrayList arrayList = this.r;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return !(this instanceof r71);
+    }
+
+    @Override // i71
+    public void F() {
+        ArrayList arrayList = this.f;
         arrayList.clear();
-        int i = 0;
-        while (true) {
-            ArrayList arrayList2 = this.e;
-            if (i >= arrayList2.size()) {
-                return;
+        ArrayList arrayList2 = this.e;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        d71 d71Var = this.h.h;
+        if (d71Var != null) {
+            byte b = this.d;
+            ArrayList arrayList3 = b == 1 ? d71Var.d : b == 2 ? d71Var.e : b == 3 ? d71Var.f : b == 5 ? d71Var.g : b == 4 ? d71Var.h : null;
+            if (arrayList3 != null) {
+                for (int i = 0; i < arrayList3.size(); i++) {
+                    c71 c71Var = (c71) arrayList3.get(i);
+                    p71 p71Var = new p71(2, true);
+                    p71Var.d = c71Var;
+                    arrayList2.add(p71Var);
+                }
             }
-            arrayList.add(new jm6(0, ((h71) arrayList2.get(i)).d.a.getPath(), 0, ((h71) arrayList2.get(i)).d.d == 1, 0, 0));
-            i++;
         }
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        if (this.s == null) {
-            fm2 fm2Var = new fm2(new ColorDrawable(bkb.w0(null, bkb.W9, false)), bkb.Q4);
-            this.s = fm2Var;
-            fm2Var.x = true;
-        }
-        qfa qfaVar = (qfa) s49Var.a;
-        u61 u61Var = ((h71) this.e.get(i)).d;
-        Object tag = qfaVar.getTag();
-        ImageReceiver imageReceiver = qfaVar.c;
-        boolean z = u61Var == tag;
-        qfaVar.setTag(u61Var);
-        int max = (int) Math.max(100.0f, gl.b1().x / gl.p);
-        byte b = u61Var.d;
-        File file = u61Var.a;
-        if (b == 1) {
-            imageReceiver.d0(gl5.g("vthumb://0:" + file.getAbsolutePath()), tb4.m(max, max, "_"), this.s, null, null, 0);
-            qfaVar.m(gl.i0(u61Var.c, false, false), true);
-        } else {
-            imageReceiver.d0(gl5.g("thumb://0:" + file.getAbsolutePath()), tb4.m(max, max, "_"), this.s, null, null, 0);
-            qfaVar.m(gl.i0(u61Var.c, false, false), false);
-        }
-        qfaVar.i(this.w.h.j.contains(u61Var), z);
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        if (this.n == null) {
-            this.n = new jb4(viewGroup.getContext(), null);
-        }
-        i71 i71Var = new i71(this, viewGroup.getContext(), this.n, this.w.e.getCurrentAccount());
-        i71Var.setStyle(1);
-        return new y29(i71Var);
+        E(arrayList, arrayList2);
     }
 }

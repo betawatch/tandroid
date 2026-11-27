@@ -1,122 +1,63 @@
 // default package
 
-import sun.misc.Unsafe;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fhf extends c6c {
-    public final /* synthetic */ byte b;
+public final class fhf extends n6f implements ScheduledFuture, x76, Future {
+    public final lgf b;
+    public final ScheduledFuture c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fhf(Unsafe unsafe, byte b) {
-        super(unsafe);
-        this.b = b;
+    public fhf(lgf lgfVar, ScheduledFuture scheduledFuture) {
+        this.b = lgfVar;
+        this.c = scheduledFuture;
     }
 
-    @Override // c6c
-    public final double k(Object obj, long j) {
-        byte b = this.b;
-        Unsafe unsafe = this.a;
-        switch (b) {
-        }
-        return Double.longBitsToDouble(unsafe.getLong(obj, j));
+    @Override // x76
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
     }
 
-    @Override // c6c
-    public final float p(Object obj, long j) {
-        byte b = this.b;
-        Unsafe unsafe = this.a;
-        switch (b) {
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z) {
+        boolean cancel = this.b.cancel(z);
+        if (cancel) {
+            this.c.cancel(z);
         }
-        return Float.intBitsToFloat(unsafe.getInt(obj, j));
+        return cancel;
     }
 
-    @Override // c6c
-    public final void s(Object obj, long j, boolean z) {
-        switch (this.b) {
-            case 0:
-                if (!ghf.g) {
-                    ghf.d(obj, j, z ? (byte) 1 : (byte) 0);
-                    break;
-                } else {
-                    ghf.c(obj, j, z ? (byte) 1 : (byte) 0);
-                    break;
-                }
-            default:
-                if (!ghf.g) {
-                    ghf.d(obj, j, z ? (byte) 1 : (byte) 0);
-                    break;
-                } else {
-                    ghf.c(obj, j, z ? (byte) 1 : (byte) 0);
-                    break;
-                }
-        }
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
+        return this.c.compareTo(delayed);
     }
 
-    @Override // c6c
-    public final void u(Object obj, long j, byte b) {
-        switch (this.b) {
-            case 0:
-                if (!ghf.g) {
-                    ghf.d(obj, j, b);
-                    break;
-                } else {
-                    ghf.c(obj, j, b);
-                    break;
-                }
-            default:
-                if (!ghf.g) {
-                    ghf.d(obj, j, b);
-                    break;
-                } else {
-                    ghf.c(obj, j, b);
-                    break;
-                }
-        }
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
     }
 
-    @Override // c6c
-    public final void v(Object obj, long j, double d) {
-        switch (this.b) {
-            case 0:
-                this.a.putLong(obj, j, Double.doubleToLongBits(d));
-                break;
-            default:
-                this.a.putLong(obj, j, Double.doubleToLongBits(d));
-                break;
-        }
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.c.getDelay(timeUnit);
     }
 
-    @Override // c6c
-    public final void w(Object obj, long j, float f) {
-        byte b = this.b;
-        Unsafe unsafe = this.a;
-        switch (b) {
-            case 0:
-                unsafe.putInt(obj, j, Float.floatToIntBits(f));
-                break;
-            default:
-                unsafe.putInt(obj, j, Float.floatToIntBits(f));
-                break;
-        }
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.a instanceof dgf;
     }
 
-    @Override // c6c
-    public final boolean x(Object obj, long j) {
-        switch (this.b) {
-            case 0:
-                if (!ghf.g) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (!ghf.g) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return ghf.k(obj, j);
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j, TimeUnit timeUnit) {
+        return this.b.get(j, timeUnit);
     }
 }

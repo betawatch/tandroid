@@ -1,54 +1,59 @@
 // default package
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.CheckBoxSquare;
+import android.os.Handler;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class xgb extends FrameLayout {
-    public TextView a;
-    public CheckBoxSquare b;
-    public boolean c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class xgb {
+    public static final ArrayList b = new ArrayList(50);
+    public final Handler a;
 
-    public final void a(String str, boolean z, boolean z2) {
-        this.a.setText(str);
-        this.b.a(z, false);
-        this.c = z2;
-        setWillNotDraw(!z2);
+    public xgb(Handler handler) {
+        this.a = handler;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(k96.a0 ? 0.0f : gl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(20.0f) : 0), getMeasuredHeight() - 1, bkb.j0);
+    public static wgb d() {
+        wgb wgbVar;
+        ArrayList arrayList = b;
+        synchronized (arrayList) {
+            wgbVar = arrayList.isEmpty() ? new wgb() : (wgb) arrayList.remove(arrayList.size() - 1);
         }
+        return wgbVar;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.h);
+    public final wgb a(int i) {
+        wgb d = d();
+        d.a = this.a.obtainMessage(i);
+        return d;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
+    public final wgb b(int i, int i2, int i3) {
+        wgb d = d();
+        d.a = this.a.obtainMessage(i, i2, i3);
+        return d;
     }
 
-    public void setChecked(boolean z) {
-        this.b.a(z, true);
+    public final wgb c(int i, Object obj) {
+        wgb d = d();
+        d.a = this.a.obtainMessage(i, obj);
+        return d;
+    }
+
+    public final void e(Runnable runnable) {
+        this.a.post(runnable);
+    }
+
+    public final void f() {
+        this.a.removeCallbacksAndMessages(null);
+    }
+
+    public final void g(int i) {
+        yve.f(i != 0);
+        this.a.removeMessages(i);
+    }
+
+    public final void h(int i) {
+        this.a.sendEmptyMessage(i);
     }
 }

@@ -1,19 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class yge implements zn7 {
-    public static final yge a = new yge();
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yge extends c4 {
+    public static final Parcelable.Creator<yge> CREATOR = new ime((byte) 1);
+    public final int a;
+    public final boolean b;
+
+    public yge(int i, boolean z) {
+        this.a = i;
+        this.b = z;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 3, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

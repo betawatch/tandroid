@@ -1,60 +1,48 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextWatcher;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xh1 implements TextWatcher {
+public final /* synthetic */ class xh1 implements Runnable {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ gi1 b;
 
-    public xh1(p3c p3cVar) {
-        this.a = (byte) 2;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        byte b = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        byte b = this.a;
-    }
-
-    public /* synthetic */ xh1(byte b) {
+    public /* synthetic */ xh1(gi1 gi1Var, byte b) {
         this.a = b;
+        this.b = gi1Var;
     }
 
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(Editable editable) {
-    }
-
-    private final void d(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void e(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void f(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void g(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void h(int i, int i2, int i3, CharSequence charSequence) {
-    }
-
-    private final void i(int i, int i2, int i3, CharSequence charSequence) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        gi1 gi1Var = this.b;
+        switch (b) {
+            case 0:
+                gi1Var.l0(true);
+                break;
+            case 1:
+                gi1Var.l0 = true;
+                gi1Var.m0();
+                break;
+            case 2:
+                gi1Var.E = null;
+                gi1Var.F = null;
+                gi1Var.n0 = null;
+                gi1Var.o0 = null;
+                gi1Var.q0 = null;
+                gi1Var.p0 = null;
+                gi1Var.r0 = 0.0d;
+                gi1Var.i0(false, true);
+                gi1Var.f.m(null, null, gi1Var.w, null);
+                gi1Var.n.setAnimation(gi1Var.L);
+                gi1Var.L.H(0);
+                break;
+            default:
+                gi1Var.l0 = true;
+                if (gi1Var.y.length() > 0) {
+                    gi1Var.d0(gi1Var.y.getText().toString());
+                }
+                gi1Var.m0();
+                break;
+        }
     }
 }

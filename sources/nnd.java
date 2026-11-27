@@ -1,76 +1,19 @@
 // default package
 
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.util.Log;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class nnd extends dzc {
-    public gg0 b;
-    public final int c;
+public final class nnd implements zq7 {
+    public static final nnd a = new nnd();
 
-    public nnd(gg0 gg0Var, int i) {
-        super("com.google.android.gms.common.internal.IGmsCallbacks", (byte) 6);
-        this.b = gg0Var;
-        this.c = i;
+    static {
+        xnb.y(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, xnb.s(xnb.o(bdd.class, new ubd(1)), 2)), 3)));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x004d, code lost:
-    
-        if (r5.a >= r9.a) goto L24;
-     */
-    @Override // dzc
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
-        if (i == 1) {
-            int readInt = parcel.readInt();
-            IBinder readStrongBinder = parcel.readStrongBinder();
-            Bundle bundle = (Bundle) mgd.a(parcel, Bundle.CREATOR);
-            mgd.c(parcel);
-            fre.i(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
-            this.b.u(readInt, readStrongBinder, bundle, this.c);
-            this.b = null;
-        } else if (i == 2) {
-            parcel.readInt();
-            mgd.c(parcel);
-            Log.wtf("GmsClient", "received deprecated onAccountValidationComplete callback, ignoring", new Exception());
-        } else {
-            if (i != 3) {
-                return false;
-            }
-            int readInt2 = parcel.readInt();
-            IBinder readStrongBinder2 = parcel.readStrongBinder();
-            xme xmeVar = (xme) mgd.a(parcel, xme.CREATOR);
-            mgd.c(parcel);
-            gg0 gg0Var = this.b;
-            fre.i(gg0Var, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService");
-            fre.h(xmeVar);
-            gg0Var.B = xmeVar;
-            if (gg0Var.x()) {
-                fs2 fs2Var = xmeVar.d;
-                lj9 z = lj9.z();
-                mj9 mj9Var = fs2Var == null ? null : fs2Var.a;
-                synchronized (z) {
-                    if (mj9Var == null) {
-                        mj9Var = lj9.d;
-                    } else {
-                        mj9 mj9Var2 = (mj9) z.b;
-                        if (mj9Var2 != null) {
-                        }
-                    }
-                    z.b = mj9Var;
-                }
-            }
-            Bundle bundle2 = xmeVar.a;
-            fre.i(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
-            this.b.u(readInt2, readStrongBinder2, bundle2, this.c);
-            this.b = null;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        parcel2.writeNoException();
-        return true;
+        throw null;
     }
 }

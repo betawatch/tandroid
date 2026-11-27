@@ -1,35 +1,69 @@
 // default package
 
-import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class mt9 extends bl3 {
-    public final /* synthetic */ cj3 J0;
-    public final /* synthetic */ Activity K0;
-    public final /* synthetic */ hi3 L0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class mt9 {
+    public long a;
+    public boolean b;
+    public int c;
+    public r47 d;
+    public int e;
+    public long f;
+    public long g;
+    public long h;
+    public boolean i;
+    public int j;
+    public int k;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mt9(hi3 hi3Var, Activity activity, cj3 cj3Var, int i, int i2, gb3 gb3Var, boolean z, cj3 cj3Var2, Activity activity2) {
-        super(activity, cj3Var, i, i2, gb3Var, z);
-        this.L0 = hi3Var;
-        this.J0 = cj3Var2;
-        this.K0 = activity2;
+    public static mt9 a(int i, TLRPC.Message message) {
+        mt9 mt9Var = new mt9();
+        mt9Var.a = r47.Q1(yac.h(i).e(), message);
+        mt9Var.b = false;
+        mt9Var.c = message.id;
+        mt9Var.d = new r47(i, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);
+        return mt9Var;
     }
 
-    @Override // w39
-    public final void f() {
-        ns9 ns9Var;
-        int i = this.C0;
-        super.f();
-        hi3 hi3Var = this.L0;
-        if (!hi3Var.L0 && (ns9Var = hi3Var.b0) != null) {
-            ns9Var.w0(0);
-            hi3Var.L0 = true;
+    public static mt9 b(int i, TLRPC.savedDialog saveddialog, ArrayList arrayList) {
+        TLRPC.Message message;
+        mt9 mt9Var = new mt9();
+        mt9Var.a = wf3.n(saveddialog.peer);
+        mt9Var.b = saveddialog.pinned;
+        mt9Var.c = saveddialog.top_message;
+        mt9Var.f = saveddialog.unread_count;
+        mt9Var.g = saveddialog.read_inbox_max_id;
+        mt9Var.h = saveddialog.read_outbox_max_id;
+        int i2 = 0;
+        while (true) {
+            if (i2 >= arrayList.size()) {
+                message = null;
+                break;
+            }
+            message = (TLRPC.Message) arrayList.get(i2);
+            if (mt9Var.c == message.id) {
+                break;
+            }
+            i2++;
         }
-        if (b() != 0 || i == 0 || this.E0 > 0) {
-            return;
+        TLRPC.Message message2 = message;
+        if (message2 != null) {
+            mt9Var.d = new r47(i, message2, null, null, null, null, null, false, false, 0L, false, false, true, 0);
         }
-        hi3Var.c0.e(false, false);
+        return mt9Var;
+    }
+
+    public final int c() {
+        TLRPC.Message message;
+        r47 r47Var = this.d;
+        return (r47Var == null || (message = r47Var.k) == null) ? this.j : (message.flags & 32768) != 0 ? message.edit_date : message.date;
+    }
+
+    public final boolean d() {
+        TLRPC.Message message;
+        r47 r47Var = this.d;
+        return (r47Var == null || (message = r47Var.k) == null || !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) ? false : true;
     }
 }

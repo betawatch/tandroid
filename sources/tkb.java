@@ -1,64 +1,54 @@
 // default package
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.lang.ref.WeakReference;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class tkb {
-    public int a;
-    public int b = -1;
-    public byte c;
-    public float d;
-    public WeakReference e;
-    public wjb f;
-    public int g;
-    public PorterDuff.Mode h;
-    public PorterDuffColorFilter i;
-    public WeakReference j;
-    public boolean k;
-    public byte l;
-    public boolean m;
-    public wkb n;
-    public xkb o;
+public final class tkb extends FrameLayout {
+    public TextView a;
+    public CheckBoxSquare b;
+    public boolean c;
 
-    public final boolean a() {
-        WeakReference weakReference = this.e;
-        return weakReference != null && weakReference.get() == null;
+    public final void a(String str, boolean z, boolean z2) {
+        this.a.setText(str);
+        this.b.a(z, false);
+        this.c = z2;
+        setWillNotDraw(!z2);
     }
 
-    public final int b() {
-        int i = this.a;
-        int i2 = this.b;
-        byte b = this.c;
-        float f = this.d;
-        wjb wjbVar = this.f;
-        if (wjbVar == null) {
-            WeakReference weakReference = this.e;
-            wjbVar = weakReference != null ? (wjb) weakReference.get() : null;
-        }
-        return zkb.P(i, i2, b, f, wjbVar);
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void c(int i, int i2, int i3, float f, wjb wjbVar) {
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = f;
-        if (wjbVar == null) {
-            this.e = null;
-            this.f = null;
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(20.0f) : 0), getMeasuredHeight() - 1, aob.j0);
         }
-        Class<?> cls = wjbVar.getClass();
-        if (cls.isSynthetic() || cls.getName().contains("$$Lambda") || cls.getName().contains("$$ExternalSynthetic")) {
-            this.e = null;
-            this.f = wjbVar;
-        } else {
-            this.e = new WeakReference(wjbVar);
-            this.f = null;
-        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.h);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setChecked(boolean z) {
+        this.b.a(z, true);
     }
 }

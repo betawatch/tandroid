@@ -1,15 +1,60 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f2d {
-    public final x2d a;
-    public final int b;
-    public final by4 c;
+import android.view.WindowInsets;
 
-    public f2d(x2d x2dVar, int i, by4 by4Var) {
-        this.a = x2dVar;
-        this.b = i;
-        this.c = by4Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public class f2d extends e2d {
+    public mq5 o;
+    public mq5 p;
+    public mq5 q;
+
+    public f2d(l2d l2dVar, WindowInsets windowInsets) {
+        super(l2dVar, windowInsets);
+        this.o = null;
+        this.p = null;
+        this.q = null;
+    }
+
+    @Override // i2d
+    public mq5 h() {
+        mq5 mq5Var = this.p;
+        if (mq5Var != null) {
+            return mq5Var;
+        }
+        mq5 c = mq5.c(this.c.getMandatorySystemGestureInsets());
+        this.p = c;
+        return c;
+    }
+
+    @Override // i2d
+    public mq5 j() {
+        mq5 mq5Var = this.o;
+        if (mq5Var != null) {
+            return mq5Var;
+        }
+        mq5 c = mq5.c(this.c.getSystemGestureInsets());
+        this.o = c;
+        return c;
+    }
+
+    @Override // i2d
+    public mq5 l() {
+        mq5 mq5Var = this.q;
+        if (mq5Var != null) {
+            return mq5Var;
+        }
+        mq5 c = mq5.c(this.c.getTappableElementInsets());
+        this.q = c;
+        return c;
+    }
+
+    @Override // c2d, i2d
+    public l2d m(int i, int i2, int i3, int i4) {
+        return l2d.h(null, this.c.inset(i, i2, i3, i4));
+    }
+
+    @Override // d2d, i2d
+    public void s(mq5 mq5Var) {
     }
 }

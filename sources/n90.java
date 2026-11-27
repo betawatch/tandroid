@@ -1,61 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class n90 {
-    public final Integer a;
-    public final Object b;
-    public final cj8 c;
-    public final ha0 d;
+public final class n90 extends a03 {
+    public final String a;
 
-    public n90(Integer num, Object obj, cj8 cj8Var, ha0 ha0Var) {
-        this.a = num;
-        if (obj == null) {
-            fvc.f("Null payload");
-            throw null;
-        }
-        this.b = obj;
-        this.c = cj8Var;
-        this.d = ha0Var;
-    }
-
-    public static n90 a(Object obj) {
-        return new n90(null, obj, cj8.a, null);
+    public n90(String str) {
+        this.a = str;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof n90)) {
+        if (!(obj instanceof a03)) {
             return false;
         }
-        n90 n90Var = (n90) obj;
-        Integer num = n90Var.a;
-        Integer num2 = this.a;
-        if (num2 == null) {
-            if (num != null) {
-                return false;
-            }
-        } else if (!num2.equals(num)) {
-            return false;
-        }
-        if (!this.b.equals(n90Var.b) || !this.c.equals(n90Var.c)) {
-            return false;
-        }
-        ha0 ha0Var = n90Var.d;
-        ha0 ha0Var2 = this.d;
-        return ha0Var2 == null ? ha0Var == null : ha0Var2.equals(ha0Var);
+        return this.a.equals(((n90) ((a03) obj)).a);
     }
 
     public final int hashCode() {
-        Integer num = this.a;
-        int hashCode = ((((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003;
-        ha0 ha0Var = this.d;
-        return (hashCode ^ (ha0Var != null ? ha0Var.hashCode() : 0)) * 1000003;
+        return 1000003 ^ this.a.hashCode();
     }
 
     public final String toString() {
-        return "Event{code=" + this.a + ", payload=" + this.b + ", priority=" + this.c + ", productData=" + this.d + ", eventContext=null}";
+        return c00.k(new StringBuilder("User{identifier="), this.a, "}");
     }
 }

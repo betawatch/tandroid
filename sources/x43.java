@@ -1,89 +1,40 @@
 // default package
 
-import android.os.Binder;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x43 extends Binder implements IInterface {
-    public final /* synthetic */ byte a = 1;
-    public final Object b;
-
-    public x43(ize izeVar) {
-        attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
-        this.b = new Handler(Looper.getMainLooper());
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        byte b = this.a;
-        return this;
-    }
-
-    @Override // android.os.Binder
-    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-        byte b = 4;
-        switch (this.a) {
-            case 0:
-                Handler handler = (Handler) this.b;
-                if (i == 2) {
-                    parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-                    handler.post(new sv(this, parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
-                    parcel2.writeNoException();
-                    break;
-                } else {
-                    byte b2 = 3;
-                    if (i == 3) {
-                        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-                        handler.post(new sv(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, b2));
-                        parcel2.writeNoException();
-                        break;
-                    } else if (i == 4) {
-                        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-                        handler.post(new sv(this, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, b));
-                        parcel2.writeNoException();
-                        break;
-                    } else {
-                        byte b3 = 5;
-                        if (i == 5) {
-                            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-                            handler.post(new sv(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, b3));
-                            parcel2.writeNoException();
-                            break;
-                        } else if (i == 1598968902) {
-                            parcel2.writeString("android.support.customtabs.ICustomTabsCallback");
-                            break;
-                        } else {
-                            break;
-                        }
+public class x43 extends e23 {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x43(String str, Bundle bundle, byte b) {
+        super(str, bundle);
+        switch (b) {
+            case 2:
+                super("android.credentials.TYPE_PASSWORD_CREDENTIAL", bundle);
+                if (str.length() > 0) {
+                    return;
+                }
+                lq5.j("password should not be empty");
+                throw null;
+            case 3:
+                super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", bundle);
+                if (str.length() != 0) {
+                    try {
+                        new JSONObject(str);
+                        return;
+                    } catch (Exception unused) {
                     }
                 }
+                lq5.j("authenticationResponseJson must not be empty, and must be a valid JSON");
+                throw null;
             default:
-                if (i <= 16777215) {
-                    parcel.enforceInterface(getInterfaceDescriptor());
-                } else if (super.onTransact(i, parcel, parcel2, i2)) {
+                bundle.getClass();
+                if (str.length() > 0) {
+                    return;
                 }
-                if (i == 1) {
-                    ((h9f) this.b).a((Status) pgd.a(parcel, Status.CREATOR));
-                    break;
-                } else if (i == 2) {
-                    break;
-                } else if (i == 4) {
-                    break;
-                }
-                break;
+                lq5.j("type should not be empty");
+                throw null;
         }
-        return true;
-    }
-
-    public x43(h9f h9fVar) {
-        attachInterface(this, "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearchCallbacks");
-        this.b = h9fVar;
     }
 }

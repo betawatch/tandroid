@@ -1,230 +1,157 @@
 // default package
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.PopupNotificationActivity;
+import android.view.animation.AnimationUtils;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class mf8 implements hy1 {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final class mf8 extends Drawable {
+    public final Paint a;
+    public final int b;
+    public boolean c;
+    public float d;
+    public long e;
+    public View f;
+    public int g = jn7.d4;
+    public float h = 300.0f;
 
-    public mf8(PopupNotificationActivity popupNotificationActivity) {
-        this.a = popupNotificationActivity;
+    public mf8(int i) {
+        this.b = hl.L(i);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
     }
 
-    @Override // hy1
-    public final bu1 D() {
-        return null;
-    }
-
-    @Override // hy1
-    public final boolean H0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final boolean M() {
-        return true;
-    }
-
-    @Override // hy1
-    public final boolean Q0() {
-        return false;
-    }
-
-    @Override // hy1
-    public final void W0() {
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        k27 k27Var = popupNotificationActivity.R;
-        if (k27Var != null) {
-            na7.q1(k27Var.K1).H4(0, popupNotificationActivity.L, k27.B0(popupNotificationActivity.R.k), 0L, null);
+    public final void a(boolean z, boolean z2) {
+        if (this.c != z) {
+            this.c = z;
+            if (!z2) {
+                this.d = z ? 1.0f : 0.0f;
+            }
+            this.e = AnimationUtils.currentAnimationTimeMillis();
+            invalidateSelf();
         }
     }
 
-    @Override // hy1
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // hy1
-    public final int h() {
-        return 0;
-    }
-
-    @Override // hy1
-    public final TLRPC.Peer i() {
-        return null;
-    }
-
-    @Override // hy1
-    public final int o0() {
-        return 0;
-    }
-
-    @Override // hy1
-    public final TL_stories.StoryItem t0() {
-        return null;
-    }
-
-    @Override // hy1
-    public final void u(CharSequence charSequence, boolean z, int i, int i2, long j) {
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        ArrayList arrayList = popupNotificationActivity.b0;
-        if (popupNotificationActivity.R == null) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        int i;
+        Canvas canvas2;
+        p18 p18Var;
+        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        long j = currentAnimationTimeMillis - this.e;
+        this.e = currentAnimationTimeMillis;
+        if (j > 18) {
+            j = 16;
         }
-        int i3 = popupNotificationActivity.T;
-        if (i3 >= 0 && i3 < arrayList.size()) {
-            arrayList.remove(popupNotificationActivity.T);
+        boolean z = this.c;
+        if (z) {
+            float f = this.d;
+            if (f < 1.0f) {
+                float f2 = (j / this.h) + f;
+                this.d = f2;
+                if (f2 >= 1.0f) {
+                    this.d = 1.0f;
+                } else {
+                    View view = this.f;
+                    if (view != null) {
+                        view.invalidate();
+                    }
+                    invalidateSelf();
+                }
+                Rect bounds = getBounds();
+                i = this.g;
+                if (i != 255) {
+                    canvas.save();
+                    canvas2 = canvas;
+                } else {
+                    canvas2 = canvas;
+                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i, 31);
+                }
+                canvas2.translate(qd4.A(1.0f, this.d, hl.L(1.0f), bounds.centerX()), bounds.centerY());
+                float f3 = this.d * 500.0f;
+                float interpolation = f3 >= 100.0f ? k43.j.getInterpolation(f3 / 100.0f) * (-5.0f) : f3 < 484.0f ? (k43.j.getInterpolation((f3 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
+                int i2 = this.b;
+                canvas2.scale((i2 * 1.45f) / hl.L(28.0f), (i2 * 1.5f) / hl.L(28.0f));
+                canvas2.rotate(interpolation);
+                p18Var = aob.x3;
+                if (p18Var != null) {
+                    Paint paint = this.a;
+                    p18Var.b(canvas2, paint, f3);
+                    canvas2.scale(1.0f, -1.0f);
+                    aob.x3.b(canvas2, paint, f3);
+                }
+                canvas2.restore();
+            }
         }
-        na7.q1(popupNotificationActivity.R.K1).l3(k27.B0(popupNotificationActivity.R.k), popupNotificationActivity.R.e1(), Math.max(0, popupNotificationActivity.R.e1()), popupNotificationActivity.R.k.date, true, 0L, 0, true, 0);
-        popupNotificationActivity.R = null;
-        popupNotificationActivity.f();
+        if (!z) {
+            float f4 = this.d;
+            if (f4 > 0.0f) {
+                float f5 = f4 - (j / this.h);
+                this.d = f5;
+                if (f5 <= 0.0f) {
+                    this.d = 0.0f;
+                } else {
+                    View view2 = this.f;
+                    if (view2 != null) {
+                        view2.invalidate();
+                    }
+                    invalidateSelf();
+                }
+            }
+        }
+        Rect bounds2 = getBounds();
+        i = this.g;
+        if (i != 255) {
+        }
+        canvas2.translate(qd4.A(1.0f, this.d, hl.L(1.0f), bounds2.centerX()), bounds2.centerY());
+        float f32 = this.d * 500.0f;
+        if (f32 >= 100.0f) {
+        }
+        int i22 = this.b;
+        canvas2.scale((i22 * 1.45f) / hl.L(28.0f), (i22 * 1.5f) / hl.L(28.0f));
+        canvas2.rotate(interpolation);
+        p18Var = aob.x3;
+        if (p18Var != null) {
+        }
+        canvas2.restore();
     }
 
-    @Override // hy1
-    public final boolean u0(long j) {
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.b;
     }
 
-    @Override // hy1
-    public final TLRPC.TL_channels_sendAsPeers v() {
-        return null;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b;
     }
 
-    @Override // hy1
-    public final boolean y0() {
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // hy1
-    public final void B() {
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.g = i;
     }
 
-    @Override // hy1
-    public final void G0() {
-    }
-
-    @Override // hy1
-    public final void H() {
-    }
-
-    @Override // hy1
-    public final void I0() {
-    }
-
-    @Override // hy1
-    public final void K0() {
-    }
-
-    @Override // hy1
-    public final void L0() {
-    }
-
-    @Override // hy1
-    public final void R0() {
-    }
-
-    @Override // hy1
-    public final void S() {
-    }
-
-    @Override // hy1
-    public final void U() {
-    }
-
-    @Override // hy1
-    public final void a() {
-    }
-
-    @Override // hy1
-    public final void e() {
-    }
-
-    @Override // hy1
-    public final void e1() {
-    }
-
-    @Override // hy1
-    public final void g0() {
-    }
-
-    @Override // hy1
-    public final void g1() {
-    }
-
-    @Override // hy1
-    public final void j() {
-    }
-
-    @Override // hy1
-    public final void n() {
-    }
-
-    @Override // hy1
-    public final void o1() {
-    }
-
-    @Override // hy1
-    public final void p1() {
-    }
-
-    @Override // hy1
-    public final void r() {
-    }
-
-    @Override // hy1
-    public final void s1() {
-    }
-
-    @Override // hy1
-    public final void y() {
-    }
-
-    @Override // hy1
-    public final void P0(CharSequence charSequence) {
-    }
-
-    @Override // hy1
-    public final void f1(int i) {
-    }
-
-    @Override // hy1
-    public final void j1(boolean z) {
-    }
-
-    @Override // hy1
-    public final void k(float f) {
-    }
-
-    @Override // hy1
-    public final void m(boolean z) {
-    }
-
-    @Override // hy1
-    public final void n0(int i) {
-    }
-
-    @Override // hy1
-    public final void z(boolean z) {
-    }
-
-    @Override // hy1
-    public final void w(float f, int i) {
-    }
-
-    @Override // hy1
-    public final void C0(CharSequence charSequence, boolean z, boolean z2) {
-    }
-
-    @Override // hy1
-    public final void O0(View view, CharSequence charSequence, boolean z) {
-    }
-
-    @Override // hy1
-    public final void k1(int i, int i2, int i3, long j, long j2, boolean z) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

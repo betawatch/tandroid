@@ -1,94 +1,60 @@
 // default package
 
-import android.content.Context;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class n84 extends er4 {
-    public final /* synthetic */ byte j0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class n84 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ m84 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ r47 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ id[] e;
+    public final /* synthetic */ View f;
+    public final /* synthetic */ q84 g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n84(ei8 ei8Var, Context context, int i, int i2, Context context2) {
-        super(context, i, i2);
-        this.j0 = (byte) 4;
+    public n84(q84 q84Var, m84 m84Var, int i, r47 r47Var, boolean z, id[] idVarArr, View view) {
+        this.g = q84Var;
+        this.a = m84Var;
+        this.b = i;
+        this.c = r47Var;
+        this.d = z;
+        this.e = idVarArr;
+        this.f = view;
     }
 
-    @Override // er4
-    public final void g() {
-        switch (this.j0) {
-            case 4:
-                boolean z = w01.a;
-                break;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        if (i != 6) {
+            return false;
         }
-    }
-
-    @Override // er4
-    public final void n() {
-        switch (this.j0) {
-            case 5:
-                break;
-            default:
-                super.n();
-                break;
+        m84 m84Var = this.a;
+        if (m84Var.getText().toString().length() > this.b) {
+            hl.z3(m84Var);
+            return true;
         }
-    }
-
-    @Override // er4, android.view.TextureView, android.view.View
-    public final void onAttachedToWindow() {
-        switch (this.j0) {
-            case 0:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        CharSequence[] charSequenceArr = {m84Var.getText()};
+        q84 q84Var = this.g;
+        tL_textWithEntities.entities = ls6.d0(q84Var.a).Y(charSequenceArr, true, true);
+        CharSequence charSequence = charSequenceArr[0];
+        tL_textWithEntities.text = charSequence == null ? "" : charSequence.toString();
+        q84Var.a(this.c, tL_textWithEntities, this.d);
+        id[] idVarArr = this.e;
+        id idVar = idVarArr[0];
+        if (idVar != null) {
+            idVar.dismiss();
         }
-    }
-
-    @Override // er4, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.j0) {
-            case 0:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
+        if (idVarArr[0] == q84.i) {
+            q84.i = null;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n84(Context context, int i, int i2, byte b) {
-        super(context, i, i2);
-        this.j0 = b;
-    }
-
-    private final void p() {
+        View view = this.f;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

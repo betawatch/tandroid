@@ -1,35 +1,76 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class v00 implements i8c {
+public final /* synthetic */ class v00 implements n7, t69 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ i20 b;
+    public final /* synthetic */ j20 b;
 
-    public /* synthetic */ v00(i20 i20Var, byte b) {
+    public /* synthetic */ v00(j20 j20Var, byte b) {
         this.a = b;
-        this.b = i20Var;
+        this.b = j20Var;
     }
 
-    @Override // i8c
-    public final void a(Object obj, Object obj2) {
+    @Override // t69
+    public final boolean e(int i, View view) {
+        if (!(view instanceof k20)) {
+            return false;
+        }
+        j20 j20Var = this.b;
+        if (j20Var.J0()) {
+            return false;
+        }
+        k20 k20Var = (k20) view;
+        j20Var.S0(k20Var, k20Var.getMessageObject());
+        return true;
+    }
+
+    @Override // n7
+    public final void g(int i) {
         byte b = this.a;
-        i20 i20Var = this.b;
+        j20 j20Var = this.b;
         switch (b) {
             case 0:
-                i20Var.R1 = !((Boolean) obj2).booleanValue();
-                MediaController w = MediaController.w();
-                v7 v7Var = i20Var.Q1;
-                float floatValue = ((Float) obj).floatValue();
-                v7Var.getClass();
-                w.l0(true, (floatValue * 2.8f) + 0.2f);
+                if (i >= 0) {
+                    float[] fArr = j20.T2;
+                    if (i < 6) {
+                        MediaController.z().o0(true, fArr[i]);
+                        j20Var.W0(true);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                if (i == 1 || i == 2) {
+                    boolean z = xea.K0;
+                    if ((z && i == 1) || (xea.J0 && i == 2)) {
+                        MediaController.z().n0(0);
+                    } else {
+                        MediaController.z().n0(i);
+                    }
+                    j20Var.t1.f();
+                    if (z != xea.K0) {
+                        j20Var.r1.E0();
+                        j20Var.N0(false);
+                    }
+                } else if (i == 4) {
+                    if (xea.O0 == 1) {
+                        xea.D(0);
+                    } else {
+                        xea.D(1);
+                    }
+                } else if (xea.O0 == 2) {
+                    xea.D(0);
+                } else {
+                    xea.D(2);
+                }
+                j20Var.Y0();
                 break;
             default:
-                i20Var.b2.setBackground(new BitmapDrawable((Bitmap) obj));
+                j20Var.K0(i);
                 break;
         }
     }

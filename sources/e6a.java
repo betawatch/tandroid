@@ -1,190 +1,380 @@
 // default package
 
-import android.util.Log;
-import java.util.Map;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e6a extends ccb implements eq4 {
-    public ko5 a;
-    public g6a b;
-    public d6a c;
-    public jg4 d;
-    public a6a e;
-    public k7a f;
-    public byte h;
-    public final /* synthetic */ g6a n;
-    public final /* synthetic */ a6a r;
+public final /* synthetic */ class e6a implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r7a b;
+    public final /* synthetic */ TLRPC.InputMedia c;
+    public final /* synthetic */ d7a d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e6a(g6a g6aVar, a6a a6aVar, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.n = g6aVar;
-        this.r = a6aVar;
+    public /* synthetic */ e6a(r7a r7aVar, TLRPC.InputMedia inputMedia, d7a d7aVar, byte b) {
+        this.a = b;
+        this.b = r7aVar;
+        this.c = inputMedia;
+        this.d = d7aVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new e6a(this.n, this.r, fw2Var);
-    }
-
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        return ((e6a) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0059, code lost:
-    
-        if (r1 != r6) goto L18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0045, code lost:
-    
-        if (r1 != r6) goto L14;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x00b3  */
-    @Override // of0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        Object a;
-        Object A;
-        ko5 ko5Var;
-        d6a d6aVar;
-        jg4 jg4Var;
-        k7a k7aVar;
-        Object b;
-        a6a a6aVar;
-        zx2 zx2Var;
-        String str;
-        z53 z53Var;
-        zx2 zx2Var2;
-        byte b2 = this.h;
-        g6a g6aVar = this.n;
-        bx2 bx2Var = bx2.a;
-        if (b2 == 0) {
-            qse.b(obj);
-            this.h = (byte) 1;
-            int i = g6a.g;
-            a = g6aVar.a(this);
-        } else {
-            if (b2 != 1) {
-                if (b2 == 2) {
-                    qse.b(obj);
-                    A = obj;
-                    ko5Var = (ko5) A;
-                    d6aVar = d6a.a;
-                    jg4Var = g6aVar.a;
-                    k7aVar = g6aVar.c;
-                    lh4 lh4Var = lh4.a;
-                    this.a = ko5Var;
-                    this.b = g6aVar;
-                    this.c = d6aVar;
-                    this.d = jg4Var;
-                    a6a a6aVar2 = this.r;
-                    this.e = a6aVar2;
-                    this.f = k7aVar;
-                    this.h = (byte) 3;
-                    b = lh4Var.b(this);
-                    if (b != bx2Var) {
-                        a6aVar = a6aVar2;
-                        Map map = (Map) b;
-                        String str2 = ko5Var.a;
-                        String str3 = ko5Var.b;
-                        d6aVar.getClass();
-                        jg4Var.getClass();
-                        a6aVar.getClass();
-                        k7aVar.getClass();
-                        map.getClass();
-                        str3.getClass();
-                        String str4 = a6aVar.a;
-                        String str5 = a6aVar.b;
-                        int i2 = a6aVar.c;
-                        long j = a6aVar.d;
-                        zx2Var = (zx2) map.get(q6a.b);
-                        z53 z53Var2 = z53.d;
-                        z53 z53Var3 = z53.c;
-                        z53 z53Var4 = z53.b;
-                        if (zx2Var != null) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final byte b = 1;
+                final r7a r7aVar = this.b;
+                final TLRPC.InputMedia inputMedia = this.c;
+                final d7a d7aVar = this.d;
+                hl.c3(new Runnable() { // from class: s6a
+                    /* JADX WARN: Multi-variable type inference failed */
+                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
+                    /* JADX WARN: Removed duplicated region for block: B:66:0x0145  */
+                    @Override // java.lang.Runnable
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                    */
+                    public final void run() {
+                        TLRPC.PhotoSize photoSize;
+                        r47 r47Var;
+                        oec oecVar;
+                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
+                        TLRPC.InputDocument inputDocument;
+                        byte b2 = b;
+                        TLRPC.InputMedia inputMedia2 = inputMedia;
+                        TLObject tLObject2 = tLObject;
+                        switch (b2) {
+                            case 0:
+                                boolean z = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
+                                d7a d7aVar2 = d7aVar;
+                                if (!z) {
+                                    d7aVar2.c();
+                                    break;
+                                } else {
+                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
+                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                                    tL_inputPhoto.id = photo.id;
+                                    tL_inputPhoto.access_hash = photo.access_hash;
+                                    tL_inputPhoto.file_reference = photo.file_reference;
+                                    if (inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia2.flags |= 64;
+                                        inputMedia2.video_cover = tL_inputPhoto;
+                                    } else if (inputMedia2 instanceof TLRPC.TL_inputMediaDocument) {
+                                        inputMedia2.flags |= 8;
+                                        inputMedia2.video_cover = tL_inputPhoto;
+                                    }
+                                    TLRPC.InputMedia inputMedia3 = d7aVar2.t;
+                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia3.flags |= 64;
+                                        inputMedia3.video_cover = tL_inputPhoto;
+                                    }
+                                    boolean z2 = d7aVar2.p;
+                                    r7a r7aVar2 = r7aVar;
+                                    if (!z2 || inputMedia2.thumb != null || (photoSize = d7aVar2.g) == null || photoSize.location == null || ((r47Var = d7aVar2.m) != null && (oecVar = r47Var.r0) != null && oecVar.N)) {
+                                        r7aVar2.M(d7aVar2.c, d7aVar2.m, d7aVar2.f, d7aVar2, d7aVar2.K, null, d7aVar2.H);
+                                        break;
+                                    } else {
+                                        r7aVar2.L(d7aVar2, -1);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                if (tLObject2 != null) {
+                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
+                                    if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
+                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia2;
+                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
+                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
+                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
+                                        TLRPC.Photo photo2 = messageMedia.photo;
+                                        tL_inputPhoto2.id = photo2.id;
+                                        tL_inputPhoto2.access_hash = photo2.access_hash;
+                                        tL_inputPhoto2.file_reference = photo2.file_reference;
+                                        tL_inputMediaPhoto.spoiler = inputMedia2.spoiler;
+                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
+                                            tL_inputMediaPhoto.live_photo = true;
+                                            tL_inputMediaPhoto.video = inputDocument;
+                                        }
+                                        boolean z3 = f11.a;
+                                        cc4.b("set uploaded photo");
+                                        tL_inputMediaDocument = tL_inputMediaPhoto;
+                                    } else if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
+                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
+                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                                        tL_inputMediaDocument2.id = tL_inputDocument;
+                                        TLRPC.Document document = messageMedia.document;
+                                        tL_inputDocument.id = document.id;
+                                        tL_inputDocument.access_hash = document.access_hash;
+                                        tL_inputDocument.file_reference = document.file_reference;
+                                        tL_inputMediaDocument2.spoiler = inputMedia2.spoiler;
+                                        TLRPC.Photo photo3 = messageMedia.video_cover;
+                                        if (photo3 != null) {
+                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
+                                            tL_inputPhoto3.id = photo3.id;
+                                            tL_inputPhoto3.access_hash = photo3.access_hash;
+                                            tL_inputPhoto3.file_reference = photo3.file_reference;
+                                            tL_inputMediaDocument2.flags |= 8;
+                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
+                                        }
+                                        boolean z4 = f11.a;
+                                        cc4.b("set uploaded document");
+                                        tL_inputMediaDocument = tL_inputMediaDocument2;
+                                    }
+                                    d7a d7aVar3 = d7aVar;
+                                    if (tL_inputMediaDocument != null) {
+                                        d7aVar3.c();
+                                        break;
+                                    } else {
+                                        int i = inputMedia2.ttl_seconds;
+                                        if (i != 0) {
+                                            tL_inputMediaDocument.ttl_seconds = i;
+                                            tL_inputMediaDocument.flags |= 1;
+                                        }
+                                        TLObject tLObject3 = d7aVar3.c;
+                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
+                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
+                                            int i2 = 0;
+                                            while (true) {
+                                                if (i2 < tL_messages_sendMultiMedia.multi_media.size()) {
+                                                    if (tL_messages_sendMultiMedia.multi_media.get(i2).media == inputMedia2) {
+                                                        tL_messages_sendMultiMedia.multi_media.get(i2).media = tL_inputMediaDocument;
+                                                    } else {
+                                                        i2++;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            if (tLObject3 instanceof TLRPC.TL_messages_sendMedia) {
+                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
+                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
+                                                    int i3 = 0;
+                                                    while (true) {
+                                                        if (i3 < tL_inputMediaPaidMedia.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia.extended_media.get(i3) == inputMedia2) {
+                                                                tL_inputMediaPaidMedia.extended_media.set(i3, tL_inputMediaDocument);
+                                                            } else {
+                                                                i3++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia4;
+                                                    ih8.k(tL_inputMediaPoll, ih8.a(tL_inputMediaPoll, inputMedia2), tL_inputMediaDocument);
+                                                }
+                                            }
+                                            if (tLObject3 instanceof TL_ephemeral.TL_sendMessage) {
+                                                TLRPC.InputMedia inputMedia5 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
+                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia5;
+                                                    int i4 = 0;
+                                                    while (true) {
+                                                        if (i4 < tL_inputMediaPaidMedia2.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i4) == inputMedia2) {
+                                                                tL_inputMediaPaidMedia2.extended_media.set(i4, tL_inputMediaDocument);
+                                                            } else {
+                                                                i4++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia5;
+                                                    ih8.k(tL_inputMediaPoll2, ih8.a(tL_inputMediaPoll2, inputMedia2), tL_inputMediaDocument);
+                                                }
+                                            }
+                                        }
+                                        r7aVar.s0(d7aVar3, false);
+                                        break;
+                                    }
+                                }
+                                tL_inputMediaDocument = null;
+                                d7a d7aVar32 = d7aVar;
+                                if (tL_inputMediaDocument != null) {
+                                }
+                                break;
                         }
-                        zx2Var2 = (zx2) map.get(q6a.a);
-                        if (zx2Var2 != null) {
-                        }
-                        c6a c6aVar = new c6a(new i6a(str4, str5, i2, j, new a63(z53Var, z53Var2, k7aVar.a()), str2, str), d6a.a(jg4Var));
-                        int i3 = g6a.g;
-                        g6aVar.getClass();
-                        g6aVar.d.a(c6aVar);
-                        Log.d("FirebaseSessions", "Successfully logged Session Start event.");
-                        return g5c.a;
                     }
-                    return bx2Var;
-                }
-                if (b2 != 3) {
-                    sc8.j("call to 'resume' before 'invoke' with coroutine");
-                    return null;
-                }
-                k7a k7aVar2 = this.f;
-                a6aVar = this.e;
-                jg4Var = this.d;
-                d6aVar = this.c;
-                g6aVar = this.b;
-                ko5 ko5Var2 = this.a;
-                qse.b(obj);
-                k7aVar = k7aVar2;
-                ko5Var = ko5Var2;
-                b = obj;
-                Map map2 = (Map) b;
-                String str22 = ko5Var.a;
-                String str32 = ko5Var.b;
-                d6aVar.getClass();
-                jg4Var.getClass();
-                a6aVar.getClass();
-                k7aVar.getClass();
-                map2.getClass();
-                str32.getClass();
-                String str42 = a6aVar.a;
-                String str52 = a6aVar.b;
-                int i22 = a6aVar.c;
-                long j2 = a6aVar.d;
-                zx2Var = (zx2) map2.get(q6a.b);
-                z53 z53Var22 = z53.d;
-                z53 z53Var32 = z53.c;
-                z53 z53Var42 = z53.b;
-                if (zx2Var != null) {
-                    str = str32;
-                    z53Var = z53Var42;
-                } else {
-                    str = str32;
-                    z53Var = zx2Var.a.a() ? z53Var32 : z53Var22;
-                }
-                zx2Var2 = (zx2) map2.get(q6a.a);
-                if (zx2Var2 != null) {
-                    z53Var22 = z53Var42;
-                } else if (zx2Var2.a.a()) {
-                    z53Var22 = z53Var32;
-                }
-                c6a c6aVar2 = new c6a(new i6a(str42, str52, i22, j2, new a63(z53Var, z53Var22, k7aVar.a()), str22, str), d6a.a(jg4Var));
-                int i32 = g6a.g;
-                g6aVar.getClass();
-                try {
-                    g6aVar.d.a(c6aVar2);
-                    Log.d("FirebaseSessions", "Successfully logged Session Start event.");
-                } catch (RuntimeException e) {
-                    Log.e("FirebaseSessions", "Error logging Session Start event to DataTransport: ", e);
-                }
-                return g5c.a;
-            }
-            qse.b(obj);
-            a = obj;
+                });
+                break;
+            default:
+                final byte b2 = 0;
+                final r7a r7aVar2 = this.b;
+                final TLRPC.InputMedia inputMedia2 = this.c;
+                final d7a d7aVar2 = this.d;
+                hl.c3(new Runnable() { // from class: s6a
+                    /* JADX WARN: Multi-variable type inference failed */
+                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
+                    /* JADX WARN: Removed duplicated region for block: B:66:0x0145  */
+                    @Override // java.lang.Runnable
+                    /*
+                        Code decompiled incorrectly, please refer to instructions dump.
+                    */
+                    public final void run() {
+                        TLRPC.PhotoSize photoSize;
+                        r47 r47Var;
+                        oec oecVar;
+                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
+                        TLRPC.InputDocument inputDocument;
+                        byte b22 = b2;
+                        TLRPC.InputMedia inputMedia22 = inputMedia2;
+                        TLObject tLObject2 = tLObject;
+                        switch (b22) {
+                            case 0:
+                                boolean z = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
+                                d7a d7aVar22 = d7aVar2;
+                                if (!z) {
+                                    d7aVar22.c();
+                                    break;
+                                } else {
+                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
+                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+                                    tL_inputPhoto.id = photo.id;
+                                    tL_inputPhoto.access_hash = photo.access_hash;
+                                    tL_inputPhoto.file_reference = photo.file_reference;
+                                    if (inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia22.flags |= 64;
+                                        inputMedia22.video_cover = tL_inputPhoto;
+                                    } else if (inputMedia22 instanceof TLRPC.TL_inputMediaDocument) {
+                                        inputMedia22.flags |= 8;
+                                        inputMedia22.video_cover = tL_inputPhoto;
+                                    }
+                                    TLRPC.InputMedia inputMedia3 = d7aVar22.t;
+                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
+                                        inputMedia3.flags |= 64;
+                                        inputMedia3.video_cover = tL_inputPhoto;
+                                    }
+                                    boolean z2 = d7aVar22.p;
+                                    r7a r7aVar22 = r7aVar2;
+                                    if (!z2 || inputMedia22.thumb != null || (photoSize = d7aVar22.g) == null || photoSize.location == null || ((r47Var = d7aVar22.m) != null && (oecVar = r47Var.r0) != null && oecVar.N)) {
+                                        r7aVar22.M(d7aVar22.c, d7aVar22.m, d7aVar22.f, d7aVar22, d7aVar22.K, null, d7aVar22.H);
+                                        break;
+                                    } else {
+                                        r7aVar22.L(d7aVar22, -1);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                if (tLObject2 != null) {
+                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
+                                    if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
+                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia22;
+                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
+                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
+                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
+                                        TLRPC.Photo photo2 = messageMedia.photo;
+                                        tL_inputPhoto2.id = photo2.id;
+                                        tL_inputPhoto2.access_hash = photo2.access_hash;
+                                        tL_inputPhoto2.file_reference = photo2.file_reference;
+                                        tL_inputMediaPhoto.spoiler = inputMedia22.spoiler;
+                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
+                                            tL_inputMediaPhoto.live_photo = true;
+                                            tL_inputMediaPhoto.video = inputDocument;
+                                        }
+                                        boolean z3 = f11.a;
+                                        cc4.b("set uploaded photo");
+                                        tL_inputMediaDocument = tL_inputMediaPhoto;
+                                    } else if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
+                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
+                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                                        tL_inputMediaDocument2.id = tL_inputDocument;
+                                        TLRPC.Document document = messageMedia.document;
+                                        tL_inputDocument.id = document.id;
+                                        tL_inputDocument.access_hash = document.access_hash;
+                                        tL_inputDocument.file_reference = document.file_reference;
+                                        tL_inputMediaDocument2.spoiler = inputMedia22.spoiler;
+                                        TLRPC.Photo photo3 = messageMedia.video_cover;
+                                        if (photo3 != null) {
+                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
+                                            tL_inputPhoto3.id = photo3.id;
+                                            tL_inputPhoto3.access_hash = photo3.access_hash;
+                                            tL_inputPhoto3.file_reference = photo3.file_reference;
+                                            tL_inputMediaDocument2.flags |= 8;
+                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
+                                        }
+                                        boolean z4 = f11.a;
+                                        cc4.b("set uploaded document");
+                                        tL_inputMediaDocument = tL_inputMediaDocument2;
+                                    }
+                                    d7a d7aVar32 = d7aVar2;
+                                    if (tL_inputMediaDocument != null) {
+                                        d7aVar32.c();
+                                        break;
+                                    } else {
+                                        int i = inputMedia22.ttl_seconds;
+                                        if (i != 0) {
+                                            tL_inputMediaDocument.ttl_seconds = i;
+                                            tL_inputMediaDocument.flags |= 1;
+                                        }
+                                        TLObject tLObject3 = d7aVar32.c;
+                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
+                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
+                                            int i2 = 0;
+                                            while (true) {
+                                                if (i2 < tL_messages_sendMultiMedia.multi_media.size()) {
+                                                    if (tL_messages_sendMultiMedia.multi_media.get(i2).media == inputMedia22) {
+                                                        tL_messages_sendMultiMedia.multi_media.get(i2).media = tL_inputMediaDocument;
+                                                    } else {
+                                                        i2++;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            if (tLObject3 instanceof TLRPC.TL_messages_sendMedia) {
+                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
+                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
+                                                    int i3 = 0;
+                                                    while (true) {
+                                                        if (i3 < tL_inputMediaPaidMedia.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia.extended_media.get(i3) == inputMedia22) {
+                                                                tL_inputMediaPaidMedia.extended_media.set(i3, tL_inputMediaDocument);
+                                                            } else {
+                                                                i3++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia4 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia4;
+                                                    ih8.k(tL_inputMediaPoll, ih8.a(tL_inputMediaPoll, inputMedia22), tL_inputMediaDocument);
+                                                }
+                                            }
+                                            if (tLObject3 instanceof TL_ephemeral.TL_sendMessage) {
+                                                TLRPC.InputMedia inputMedia5 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
+                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPaidMedia) {
+                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia5;
+                                                    int i4 = 0;
+                                                    while (true) {
+                                                        if (i4 < tL_inputMediaPaidMedia2.extended_media.size()) {
+                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i4) == inputMedia22) {
+                                                                tL_inputMediaPaidMedia2.extended_media.set(i4, tL_inputMediaDocument);
+                                                            } else {
+                                                                i4++;
+                                                            }
+                                                        }
+                                                    }
+                                                } else if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
+                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia5;
+                                                    ih8.k(tL_inputMediaPoll2, ih8.a(tL_inputMediaPoll2, inputMedia22), tL_inputMediaDocument);
+                                                }
+                                            }
+                                        }
+                                        r7aVar2.s0(d7aVar32, false);
+                                        break;
+                                    }
+                                }
+                                tL_inputMediaDocument = null;
+                                d7a d7aVar322 = d7aVar2;
+                                if (tL_inputMediaDocument != null) {
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        if (((Boolean) a).booleanValue()) {
-            rg4 rg4Var = g6aVar.b;
-            this.h = (byte) 2;
-            A = ko5.c.A(rg4Var, this);
-        }
-        return g5c.a;
     }
 }

@@ -1,53 +1,66 @@
 // default package
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.Locale;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class dc6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc6 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dc6 {
-    public final String a;
-    public final boolean b;
-    public final String c;
-
-    public dc6(String str, String str2) {
-        fre.g(str, "The log tag cannot be null or empty.");
-        this.a = str;
-        this.b = str.length() <= 23;
-        this.c = TextUtils.isEmpty(str2) ? null : tb4.y("[", str2, "] ");
+    public /* synthetic */ dc6(uc6 uc6Var, byte b) {
+        this.a = b;
+        this.b = uc6Var;
     }
 
-    public final void a(Exception exc, String str, Object... objArr) {
-        if (Build.TYPE.equals("user") || !this.b) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 1;
+        uc6 uc6Var = this.b;
+        switch (b) {
+            case 0:
+                uc6Var.t0();
+                break;
+            case 1:
+                sj5 sj5Var = uc6Var.G;
+                if (sj5Var != null) {
+                    uc6Var.F.h(sj5Var);
+                    uc6Var.G = null;
+                    break;
+                }
+                break;
+            case 2:
+                uc6Var.x0();
+                break;
+            case 3:
+                uc6Var.getLocationController().o(0, uc6Var.m0, true);
+                uc6Var.y = false;
+                break;
+            case 4:
+                x05 x05Var = uc6Var.F;
+                if (x05Var != null) {
+                    x05Var.n(hl.L(70.0f), 0, hl.L(70.0f), uc6Var.n0());
+                }
+                if (!uc6Var.O.getRadiusSet()) {
+                    double d = uc6Var.M;
+                    ym4 ym4Var = uc6Var.L;
+                    if (d > 0.0d) {
+                        ym4Var.R0(d);
+                    } else if (ym4Var != null) {
+                        ym4Var.H0();
+                        uc6Var.L = null;
+                    }
+                }
+                uc6Var.O = null;
+                break;
+            case 5:
+                uc6Var.D0();
+                break;
+            case 6:
+                uc6Var.D0();
+                break;
+            default:
+                hl.c3(new dc6(uc6Var, b2));
+                break;
         }
-        String str2 = this.a;
-        if (Log.isLoggable(str2, 3)) {
-            Log.d(str2, d(str, objArr), exc);
-        }
-    }
-
-    public final void b(String str, Object... objArr) {
-        if (Build.TYPE.equals("user") || !this.b) {
-            return;
-        }
-        String str2 = this.a;
-        if (Log.isLoggable(str2, 3)) {
-            Log.d(str2, d(str, objArr));
-        }
-    }
-
-    public final void c(Object... objArr) {
-        Log.e(this.a, d("Bundle is null", objArr));
-    }
-
-    public final String d(String str, Object... objArr) {
-        if (objArr.length != 0) {
-            str = String.format(Locale.ROOT, str, objArr);
-        }
-        String str2 = this.c;
-        return !TextUtils.isEmpty(str2) ? String.valueOf(str2).concat(str) : str;
     }
 }

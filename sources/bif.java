@@ -1,47 +1,107 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import java.util.AbstractList;
+import java.util.Collection;
+import java.util.List;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bif extends b4 {
-    public static final Parcelable.Creator<bif> CREATOR = new t4d((byte) 6);
-    public final int a;
-    public final boolean b;
-    public final boolean c;
+public abstract class bif extends AbstractList implements tjf {
+    public boolean a;
 
-    public bif(int i, boolean z, boolean z2) {
-        this.a = i;
-        this.b = z;
-        this.c = z2;
+    public bif(boolean z) {
+        this.a = z;
     }
 
-    public final boolean equals(Object obj) {
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        h();
+        return super.add(obj);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public boolean addAll(int i, Collection collection) {
+        h();
+        return super.addAll(i, collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        h();
+        super.clear();
+    }
+
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof bif)) {
+        if (!(obj instanceof List)) {
             return false;
         }
-        bif bifVar = (bif) obj;
-        return this.a == bifVar.a && this.b == bifVar.b && this.c == bifVar.c;
+        if (!(obj instanceof RandomAccess)) {
+            return super.equals(obj);
+        }
+        List list = (List) obj;
+        int size = size();
+        if (size != list.size()) {
+            return false;
+        }
+        for (int i = 0; i < size; i++) {
+            if (!get(i).equals(list.get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Boolean.valueOf(this.b), Boolean.valueOf(this.c)});
+    public final void h() {
+        if (this.a) {
+            return;
+        }
+        p3d.a();
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        jte.s(parcel, r);
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public int hashCode() {
+        int size = size();
+        int i = 1;
+        for (int i2 = 0; i2 < size; i2++) {
+            i = (i * 31) + get(i2).hashCode();
+        }
+        return i;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public abstract Object remove(int i);
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean remove(Object obj) {
+        h();
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
+            return false;
+        }
+        remove(indexOf);
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean removeAll(Collection collection) {
+        h();
+        return super.removeAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean retainAll(Collection collection) {
+        h();
+        return super.retainAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        h();
+        return super.addAll(collection);
     }
 }

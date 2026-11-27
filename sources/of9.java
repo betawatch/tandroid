@@ -1,29 +1,142 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import android.text.Editable;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class of9 extends b4c {
-    public static final /* synthetic */ int b = 0;
+public final class of9 implements cg9 {
+    public final /* synthetic */ rf9 a;
 
-    static {
-        b4c.h(new of9());
+    public of9(rf9 rf9Var) {
+        this.a = rf9Var;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        ((pf9) view).g((lk0) c4cVar.H, (nf9) c4cVar.I);
+    @Override // cg9
+    public final boolean F(dg9 dg9Var) {
+        rf9 rf9Var = this.a;
+        if (rf9Var.h == null || rf9Var.f == null || dg9Var.length() != 0) {
+            return false;
+        }
+        rf9Var.h.a(rf9Var.f);
+        return true;
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new pf9(i, wjbVar, context);
+    @Override // cg9
+    public final void G() {
+        mk0 mk0Var;
+        rf9 rf9Var = this.a;
+        yh9 yh9Var = rf9Var.h;
+        if (yh9Var == null || (mk0Var = rf9Var.f) == null) {
+            return;
+        }
+        yh9Var.a(mk0Var);
     }
 
-    @Override // b4c
-    public final boolean f() {
+    @Override // cg9
+    public final void M(CharSequence charSequence) {
+        yh9 yh9Var = this.a.h;
+        if (yh9Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        yh9Var.a.v4(charSequence.toString());
+    }
+
+    @Override // cg9
+    public final void Q(Editable editable) {
+        rf9 rf9Var = this.a;
+        mk0 mk0Var = rf9Var.f;
+        if (mk0Var != null) {
+            mk0Var.s = true;
+            mk0Var.r = rf9Var.d.r2;
+        }
+        if (mk0Var != null) {
+            TL_iv.PageBlock pageBlock = mk0Var.b;
+            if (pageBlock instanceof TL_iv.pageBlockDetails) {
+                ((TL_iv.pageBlockDetails) pageBlock).title = mm9.f(editable);
+            }
+        }
+        yh9 yh9Var = rf9Var.h;
+        if (yh9Var == null || rf9Var.f == null) {
+            return;
+        }
+        pi9 pi9Var = yh9Var.a;
+        ch9 ch9Var = pi9Var.R3;
+        if (ch9Var != null) {
+            ch9Var.g();
+        }
+        pi9Var.p3.onContentChanged();
+    }
+
+    @Override // cg9
+    public final void U(dg9 dg9Var) {
+        mk0 mk0Var;
+        pi9 pi9Var;
+        ArrayList arrayList;
+        int indexOf;
+        rf9 rf9Var = this.a;
+        yh9 yh9Var = rf9Var.h;
+        if (yh9Var == null || (mk0Var = rf9Var.f) == null || (indexOf = (arrayList = (pi9Var = yh9Var.a).t3).indexOf(mk0Var)) < 0) {
+            return;
+        }
+        TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) mk0Var.b;
+        if (!pageblockdetails.open) {
+            pageblockdetails.open = true;
+            pi9Var.g3.O(true);
+        }
+        int i = indexOf + 1;
+        if (i >= arrayList.size() || ((mk0) arrayList.get(i)).i || pi9.u3((mk0) arrayList.get(i))) {
+            return;
+        }
+        pi9Var.post(new jh9(pi9Var, (mk0) arrayList.get(i), (byte) 25));
+    }
+
+    @Override // cg9
+    public final boolean W(boolean z) {
         return false;
+    }
+
+    @Override // cg9
+    public final void e(dg9 dg9Var) {
+        yh9 yh9Var = this.a.h;
+        if (yh9Var != null) {
+            pi9 pi9Var = yh9Var.a;
+            pi9Var.j4(dg9Var);
+            pi9Var.p3.j(dg9Var, true);
+        }
+    }
+
+    @Override // cg9
+    public final boolean i() {
+        rf9 rf9Var = this.a;
+        yh9 yh9Var = rf9Var.h;
+        if (yh9Var == null || rf9Var.f == null) {
+            return false;
+        }
+        return yh9Var.a.W4();
+    }
+
+    @Override // cg9
+    public final void s(dg9 dg9Var, int i, int i2) {
+        yh9 yh9Var;
+        amb textSelectionHelper;
+        rf9 rf9Var = this.a;
+        if (rf9Var.n || i == i2 || (yh9Var = rf9Var.h) == null || (textSelectionHelper = yh9Var.a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        if (textSelectionHelper.w() && textSelectionHelper.W == rf9Var) {
+            return;
+        }
+        rf9Var.post(new hz0((Object) this, (Object) dg9Var, i2, (Object) textSelectionHelper, i, (byte) 3));
+    }
+
+    @Override // cg9
+    public final boolean w(dg9 dg9Var) {
+        return false;
+    }
+
+    @Override // cg9
+    public final void l(int i, int i2) {
     }
 }

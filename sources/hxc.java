@@ -1,90 +1,87 @@
 // default package
 
-import android.graphics.Rect;
-import android.util.Log;
-import android.view.WindowInsets;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class hxc extends lxc {
-    public static Field e = null;
-    public static boolean f = false;
-    public static Constructor g = null;
-    public static boolean h = false;
-    public WindowInsets c;
-    public io5 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class hxc extends FrameLayout implements snb {
+    public final ImageView a;
+    public final TextView b;
+    public final fx0 c;
+    public wl d;
+    public String e;
+    public boolean f;
+    public ShapeDrawable h;
 
-    public hxc() {
-        this.c = j();
+    public hxc(Context context) {
+        super(context);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        addView(imageView, tre.d(32, 32.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        yob.X(textView, aob.G6, null);
+        textView.setTextSize(1, 16.0f);
+        textView.setMaxLines(1);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        addView(textView, tre.d(-1, -2.0f, 55, 68.0f, 7.0f, 54.0f, 0.0f));
+        fx0 fx0Var = new fx0((byte) 11, context, this);
+        this.c = fx0Var;
+        yob.X(fx0Var, aob.y6, null);
+        fx0Var.setTextSize(1, 13.0f);
+        fx0Var.setMaxLines(1);
+        fx0Var.setEllipsize(truncateAt);
+        fx0Var.setPivotX(0.0f);
+        addView(fx0Var, tre.d(-1, -2.0f, 55, 68.0f, 30.0f, 54.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        imageView2.setImageResource(R.drawable.ic_ab_other);
+        yob.s(imageView2, aob.A6, null, PorterDuff.Mode.SRC_IN);
+        addView(imageView2, tre.d(32, 32.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
     }
 
-    private static WindowInsets j() {
-        if (!f) {
-            try {
-                e = WindowInsets.class.getDeclaredField("CONSUMED");
-            } catch (ReflectiveOperationException e2) {
-                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets.CONSUMED field", e2);
-            }
-            f = true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.f) {
+            canvas.drawRect(hl.L(64.0f), getHeight() - 1, getWidth(), getHeight(), aob.j0);
         }
-        Field field = e;
-        if (field != null) {
-            try {
-                WindowInsets windowInsets = (WindowInsets) field.get(null);
-                if (windowInsets != null) {
-                    return new WindowInsets(windowInsets);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(56.0f), TLObject.FLAG_30));
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            ShapeDrawable shapeDrawable = this.h;
+            if (shapeDrawable != null) {
+                aob.A1(aob.p1(0.1f, aob.w0(null, aob.G6, false)), shapeDrawable);
+                ImageView imageView = this.a;
+                if (imageView != null) {
+                    imageView.invalidate();
                 }
-            } catch (ReflectiveOperationException e3) {
-                Log.i("WindowInsetsCompat", "Could not get value from WindowInsets.CONSUMED field", e3);
             }
-        }
-        if (!h) {
-            try {
-                g = WindowInsets.class.getConstructor(Rect.class);
-            } catch (ReflectiveOperationException e4) {
-                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets(Rect) constructor", e4);
-            }
-            h = true;
-        }
-        Constructor constructor = g;
-        if (constructor != null) {
-            try {
-                return (WindowInsets) constructor.newInstance(new Rect());
-            } catch (ReflectiveOperationException e5) {
-                Log.i("WindowInsetsCompat", "Could not invoke WindowInsets(Rect) constructor", e5);
-            }
-        }
-        return null;
-    }
-
-    @Override // lxc
-    public vxc b() {
-        a();
-        vxc h2 = vxc.h(null, this.c);
-        io5[] io5VarArr = this.b;
-        sxc sxcVar = h2.a;
-        sxcVar.q(io5VarArr);
-        sxcVar.s(this.d);
-        return h2;
-    }
-
-    @Override // lxc
-    public void e(io5 io5Var) {
-        this.d = io5Var;
-    }
-
-    @Override // lxc
-    public void g(io5 io5Var) {
-        WindowInsets windowInsets = this.c;
-        if (windowInsets != null) {
-            this.c = windowInsets.replaceSystemWindowInsets(io5Var.a, io5Var.b, io5Var.c, io5Var.d);
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 
-    public hxc(vxc vxcVar) {
-        super(vxcVar);
-        this.c = vxcVar.g();
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

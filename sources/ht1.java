@@ -1,49 +1,73 @@
 // default package
 
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ht1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wt1 b;
-    public final /* synthetic */ k27 c;
+public final class ht1 extends rn {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ gt1 c;
 
-    public /* synthetic */ ht1(wt1 wt1Var, k27 k27Var, byte b) {
-        this.a = b;
-        this.b = wt1Var;
-        this.c = k27Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ht1(gt1 gt1Var, byte b) {
+        super("p2", (byte) 0);
+        this.b = b;
+        switch (b) {
+            case 1:
+                this.c = gt1Var;
+                super("progress", (byte) 0);
+                break;
+            case 2:
+                this.c = gt1Var;
+                super("alpha", (byte) 0);
+                break;
+            default:
+                this.c = gt1Var;
+                break;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        k27 k27Var = this.c;
-        wt1 wt1Var = this.b;
+    @Override // rn
+    public final void c(Object obj, float f) {
+        byte b = this.b;
+        gt1 gt1Var = this.c;
         switch (b) {
             case 0:
-                mu1 mu1Var = wt1Var.a;
-                mu1Var.b6();
-                UndoView undoView = mu1Var.N3;
-                if (undoView != null) {
-                    undoView.k(0L, (mu1Var.a0.getVisibility() != 0 || mu1Var.T.getVisibility() == 0) ? 17 : 16, k27Var.C0(), null, null, new ht1(wt1Var, k27Var, (byte) 2));
+                ((n47) obj).e = f;
+                View view = gt1Var.c.R.fragmentView;
+                if (view != null) {
+                    view.invalidate();
                     break;
                 }
                 break;
             case 1:
-                mu1 mu1Var2 = wt1Var.a;
-                mu1Var2.ac = k27Var.e1();
-                mu1Var2.bc = 0;
-                break;
-            default:
-                mu1 mu1Var3 = wt1Var.a;
-                if (mu1Var3.l5()) {
-                    x3a b2 = x3a.b(k27Var.C0(), mu1Var3.l6, mu1Var3.F5, mu1Var3.m4, null, false, null, null, null, true, 0, 0, null, false);
-                    b2.K = mu1Var3.Q6();
-                    mu1Var3.getSendMessagesHelper().q0(b2);
+                ((n47) obj).g = f;
+                View view2 = gt1Var.c.R.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
                     break;
                 }
                 break;
+            default:
+                ((n47) obj).f = f;
+                View view3 = gt1Var.c.R.fragmentView;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(((n47) obj).e);
+            case 1:
+                return Float.valueOf(((n47) obj).g);
+            default:
+                return Float.valueOf(((n47) obj).f);
         }
     }
 }

@@ -1,35 +1,19 @@
 // default package
 
-import org.telegram.ui.Wallet.WalletEngine2;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pnc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ i8c c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pnc {
+    public final String a;
+    public final ArrayList b;
+    public final int c;
+    public final zo2 d;
 
-    public /* synthetic */ pnc(WalletEngine2 walletEngine2, i8c i8cVar, byte b) {
-        this.a = b;
-        this.b = walletEngine2;
-        this.c = i8cVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        i8c i8cVar = this.c;
-        WalletEngine2 walletEngine2 = this.b;
-        switch (b) {
-            case 0:
-                walletEngine2.lambda$emulateRotateKey$33(i8cVar);
-                break;
-            case 1:
-                walletEngine2.lambda$prepareSendNFT$27(i8cVar);
-                break;
-            default:
-                walletEngine2.lambda$balance$17(i8cVar);
-                break;
-        }
+    public pnc(String str, ArrayList arrayList, int i, zo2 zo2Var) {
+        this.a = str;
+        this.b = arrayList;
+        this.c = i;
+        this.d = zo2Var;
     }
 }

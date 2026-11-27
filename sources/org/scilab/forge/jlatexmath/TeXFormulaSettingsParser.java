@@ -6,7 +6,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class TeXFormulaSettingsParser {
     public static final String CHARTODEL_MAPPING_EL = "Map";
@@ -31,15 +31,15 @@ public class TeXFormulaSettingsParser {
             String attribute2 = element.getAttribute("formula");
             String attribute3 = element.getAttribute("text");
             if (attribute.equals("")) {
-                k93.g(RESOURCE_NAME, element.getTagName(), "char", null);
+                da3.b(RESOURCE_NAME, element.getTagName(), "char", null);
                 return;
             }
             if (attribute2.equals("")) {
-                k93.g(RESOURCE_NAME, element.getTagName(), "formula", null);
+                da3.b(RESOURCE_NAME, element.getTagName(), "formula", null);
                 return;
             }
             if (attribute.length() != 1) {
-                k93.g(RESOURCE_NAME, element.getTagName(), "char", "must have a value that contains exactly 1 character!");
+                da3.b(RESOURCE_NAME, element.getTagName(), "char", "must have a value that contains exactly 1 character!");
                 return;
             }
             strArr[attribute.charAt(0)] = attribute2;
@@ -56,15 +56,15 @@ public class TeXFormulaSettingsParser {
             String attribute2 = element.getAttribute("symbol");
             String attribute3 = element.getAttribute("text");
             if (attribute.equals("")) {
-                k93.g(RESOURCE_NAME, element.getTagName(), "char", null);
+                da3.b(RESOURCE_NAME, element.getTagName(), "char", null);
                 return;
             }
             if (attribute2.equals("")) {
-                k93.g(RESOURCE_NAME, element.getTagName(), "symbol", null);
+                da3.b(RESOURCE_NAME, element.getTagName(), "symbol", null);
                 return;
             }
             if (attribute.length() != 1) {
-                k93.g(RESOURCE_NAME, element.getTagName(), "char", "must have a value that contains exactly 1 character!");
+                da3.b(RESOURCE_NAME, element.getTagName(), "char", "must have a value that contains exactly 1 character!");
                 return;
             }
             strArr[attribute.charAt(0)] = attribute2;

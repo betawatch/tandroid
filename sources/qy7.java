@@ -1,70 +1,63 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.p;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.PasscodeActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class qy7 implements RequestDelegate {
+public final class qy7 implements TextWatcher {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ p b;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public /* synthetic */ qy7(p pVar, byte b) {
+    public /* synthetic */ qy7(PasscodeActivity passcodeActivity, byte b) {
         this.a = b;
-        this.b = pVar;
+        this.b = passcodeActivity;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         byte b = this.a;
-        final byte b2 = 0;
-        final p pVar = this.b;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
+        PasscodeActivity passcodeActivity = this.b;
         switch (b) {
             case 0:
-                gl.c3(new Runnable() { // from class: ty7
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b3 = b2;
-                        TLObject tLObject2 = tLObject;
-                        p pVar2 = pVar;
-                        switch (b3) {
-                            case 0:
-                                pVar2.r0(tLObject2);
-                                break;
-                            default:
-                                pVar2.p0(tLObject2);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                gl.c3(new bj7(pVar, tL_error, (byte) 26));
-                break;
-            case 2:
-                final byte b3 = 1;
-                gl.c3(new Runnable() { // from class: ty7
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b32 = b3;
-                        TLObject tLObject2 = tLObject;
-                        p pVar2 = pVar;
-                        switch (b32) {
-                            case 0:
-                                pVar2.r0(tLObject2);
-                                break;
-                            default:
-                                pVar2.p0(tLObject2);
-                                break;
-                        }
-                    }
-                });
+                ly7 ly7Var = passcodeActivity.T;
+                if (passcodeActivity.S) {
+                    passcodeActivity.n.removeCallbacks(ly7Var);
+                    ly7Var.run();
+                    break;
+                }
                 break;
             default:
-                gl.c3(new xy7(pVar, tL_error, tLObject, b2));
+                ly7 ly7Var2 = passcodeActivity.T;
+                if (passcodeActivity.S) {
+                    passcodeActivity.n.removeCallbacks(ly7Var2);
+                    ly7Var2.run();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void d(int i, int i2, int i3, CharSequence charSequence) {
     }
 }

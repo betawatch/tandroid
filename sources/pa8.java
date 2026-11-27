@@ -1,46 +1,20 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class pa8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qa8 b;
-
-    public /* synthetic */ pa8(qa8 qa8Var, byte b) {
-        this.a = b;
-        this.b = qa8Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        qa8 qa8Var = this.b;
-        switch (b) {
-            case 0:
-                qa8Var.h = false;
-                qa8Var.a = qa8Var.c;
-                qa8Var.invalidate();
-                int i = qa8Var.K;
-                if (i >= 0) {
-                    qa8Var.b(i);
-                    qa8Var.K = -1;
-                    break;
-                }
-                break;
-            default:
-                qa8Var.n = false;
-                qa8Var.h = false;
-                qa8Var.invalidate();
-                int i2 = qa8Var.K;
-                if (i2 >= 0) {
-                    qa8Var.b(i2);
-                    qa8Var.K = -1;
-                }
-                qa8Var.a();
-                break;
+public final /* synthetic */ class pa8 implements ValueAnimator.AnimatorUpdateListener {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        z11 z11Var;
+        Drawable[] drawableArr = PhotoViewer.d9;
+        v21 v21Var = v21.x;
+        if (v21Var == null || (z11Var = v21Var.e) == null) {
+            return;
         }
+        z11Var.updatePosition();
     }
 }

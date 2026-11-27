@@ -2,29 +2,47 @@
 
 import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class d4a extends LinearLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class d4a extends vu7 {
+    public final /* synthetic */ lcb c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ g4a e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d4a(Context context, int i, int i2) {
-        super(context);
-        this.a = i;
-        this.b = i2;
+    public d4a(g4a g4aVar, lcb lcbVar, Context context) {
+        this.e = g4aVar;
+        this.c = lcbVar;
+        this.d = context;
     }
 
-    @Override // android.view.View
-    public final int getSuggestedMinimumWidth() {
-        return gl.L(260.0f);
+    @Override // vu7
+    public final void a(fic ficVar, Object obj) {
+        ficVar.removeView((View) obj);
+        this.e.H.remove(obj);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), this.b), View.MeasureSpec.getMode(i2)));
+    @Override // vu7
+    public final int b() {
+        return this.e.G.size();
+    }
+
+    @Override // vu7
+    public final Object e(fic ficVar, int i) {
+        g4a g4aVar = this.e;
+        c4a c4aVar = new c4a(this, this.c, this.d, g4aVar.I, new sh9(this, (byte) 5));
+        c4aVar.setTag(Integer.valueOf(i));
+        c4aVar.setShadowDrawable(g4aVar.s);
+        c4aVar.setPadding(0, hl.L(16.0f), 0, 0);
+        c4aVar.f(g4aVar.E, (f4a) g4aVar.G.get(i));
+        c4aVar.setListBottomPadding(g4aVar.d);
+        ficVar.addView(c4aVar);
+        g4aVar.H.add(c4aVar);
+        return c4aVar;
+    }
+
+    @Override // vu7
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

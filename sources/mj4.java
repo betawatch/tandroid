@@ -1,38 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class mj4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sj4 b;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ mj4(sj4 sj4Var, byte b) {
-        this.a = b;
-        this.b = sj4Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class mj4 extends ax2 {
+    public LinkedHashMap a;
+    public Iterator b;
+    public iaa c;
+    public LinkedHashMap d;
+    public Object e;
+    public /* synthetic */ Object f;
+    public final /* synthetic */ nj4 h;
+    public int n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mj4(nj4 nj4Var, zw2 zw2Var) {
+        super(zw2Var);
+        this.h = nj4Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        sj4 sj4Var = this.b;
-        switch (b) {
-            case 0:
-                sj4Var.q();
-                if (sj4Var.b.j()) {
-                    gl.d3(this, 500L);
-                    break;
-                }
-                break;
-            default:
-                if (!sj4Var.b.b0()) {
-                    sj4Var.u = false;
-                    sj4Var.o(false);
-                    sj4Var.w = false;
-                    break;
-                } else {
-                    gl.d3(this, 1500L);
-                    break;
-                }
-        }
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.f = obj;
+        this.n |= TLObject.FLAG_31;
+        return this.h.b(this);
     }
 }

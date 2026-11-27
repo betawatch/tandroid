@@ -1,97 +1,60 @@
 // default package
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r96 {
-    public static SparseIntArray b;
-    public static final r96 c = new r96();
-    public final SparseArray a;
+public abstract class r96 {
+    public final cr7 a;
+    public boolean b;
+    public int c = -1;
+    public final /* synthetic */ qj7 d;
 
-    public r96(q96 q96Var) {
-        SparseArray sparseArray = q96Var.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
+    public r96(qj7 qj7Var, cr7 cr7Var) {
+        this.d = qj7Var;
+        this.a = cr7Var;
     }
 
-    public static SparseArray c(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i++;
-                }
-            } else {
-                while (i < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i++;
-                }
-            }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th2) {
-                th.addSuppressed(th2);
-            }
-            throw th;
-        }
-    }
-
-    public final String a(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public final String b(int i, Context context, String str) {
-        String a = str != null ? a(str) : null;
-        if (a != null || i == 0) {
-            return a;
-        }
-        if (context != null && i != 0) {
-            SparseIntArray sparseIntArray = b;
-            if (sparseIntArray == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+    public final void a(boolean z) {
+        if (z != this.b) {
+            this.b = z;
+            int i = z ? 1 : -1;
+            qj7 qj7Var = this.d;
+            int i2 = qj7Var.c;
+            qj7Var.c = i + i2;
+            if (!qj7Var.d) {
+                qj7Var.d = true;
+                while (true) {
                     try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray2 = new SparseIntArray(readInt32);
-                        for (int i2 = 0; i2 < readInt32; i2++) {
-                            sparseIntArray2.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                        int i3 = qj7Var.c;
+                        if (i2 == i3) {
+                            break;
                         }
-                        bufferedInputStream.close();
-                        b = sparseIntArray2;
-                        sparseIntArray = sparseIntArray2;
+                        boolean z2 = i2 == 0 && i3 > 0;
+                        boolean z3 = i2 > 0 && i3 == 0;
+                        if (z2) {
+                            qj7Var.e();
+                        } else if (z3) {
+                            qj7Var.f();
+                        }
+                        i2 = i3;
                     } finally {
+                        qj7Var.d = false;
                     }
-                } catch (IOException e) {
-                    sdb.b(e);
-                    return null;
                 }
             }
-            int i3 = sparseIntArray.get(i);
-            if (i3 != 0) {
-                return (String) this.a.get(i3);
+            if (this.b) {
+                qj7Var.c(this);
             }
         }
-        return null;
     }
 
-    public r96() {
-        this.a = new SparseArray();
+    public boolean d(i36 i36Var) {
+        return false;
+    }
+
+    public boolean e() {
+        return true;
+    }
+
+    public void c() {
     }
 }

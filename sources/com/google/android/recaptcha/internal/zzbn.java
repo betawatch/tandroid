@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzbn extends ccb implements eq4 {
+final class zzbn extends yfb implements is4 {
     Object zza;
     Object zzb;
     int zzc;
@@ -10,21 +10,21 @@ final class zzbn extends ccb implements eq4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzbn(zzbo zzboVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzbn(zzbo zzboVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzd = zzboVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzbn zzbnVar = new zzbn(this.zzd, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzbn zzbnVar = new zzbn(this.zzd, zw2Var);
         zzbnVar.zze = obj;
         return zzbnVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbn) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzbn) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0049, code lost:
@@ -32,76 +32,76 @@ final class zzbn extends ccb implements eq4 {
         if (r6 != r5) goto L27;
      */
     /* JADX WARN: Removed duplicated region for block: B:11:0x00a3 A[RETURN] */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzbo zzboVar;
-        lh7 lh7Var;
+        uj7 uj7Var;
         Object obj2;
         zzbp zzbpVar;
         zzhk zzhkVar2;
         int i = this.zzc;
-        g5c g5cVar = g5c.a;
-        bx2 bx2Var = bx2.a;
+        f9c f9cVar = f9c.a;
+        vx2 vx2Var = vx2.a;
         try {
             if (i == 0) {
-                qse.b(obj);
+                ixe.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzboVar = this.zzd;
-                lh7Var = zzboVar.zzf;
+                uj7Var = zzboVar.zzf;
                 this.zze = zzhkVar;
-                this.zza = lh7Var;
+                this.zza = uj7Var;
                 this.zzb = zzboVar;
                 this.zzc = 1;
-                nh7 nh7Var = (nh7) lh7Var;
-                Object d = nh7Var.d(this);
-                obj2 = nh7Var;
+                wj7 wj7Var = (wj7) uj7Var;
+                Object d = wj7Var.d(this);
+                obj2 = wj7Var;
             } else {
                 if (i != 1) {
                     if (i != 2) {
-                        qse.b(obj);
-                        return g5cVar;
+                        ixe.b(obj);
+                        return f9cVar;
                     }
                     zzhkVar2 = (zzhk) this.zze;
-                    qse.b(obj);
+                    ixe.b(obj);
                     this.zze = null;
                     this.zzc = 3;
-                    return ((zzhg) obj).zza(zzhkVar2, this) == bx2Var ? g5cVar : bx2Var;
+                    return ((zzhg) obj).zza(zzhkVar2, this) == vx2Var ? f9cVar : vx2Var;
                 }
                 zzboVar = (zzbo) this.zzb;
-                Object obj3 = (lh7) this.zza;
+                Object obj3 = (uj7) this.zza;
                 zzhk zzhkVar3 = (zzhk) this.zze;
-                qse.b(obj);
+                ixe.b(obj);
                 zzhkVar = zzhkVar3;
                 obj2 = obj3;
             }
             zzbpVar = zzboVar.zzc;
-            if (!rp5.a(zzbpVar, zzbp.zza)) {
-                return g5cVar;
+            if (!ur5.a(zzbpVar, zzbp.zza)) {
+                return f9cVar;
             }
             zzboVar.zzc = zzbp.zzb;
-            ((nh7) obj2).f(null);
+            ((wj7) obj2).f(null);
             zzbo zzboVar2 = this.zzd;
-            zzboVar2.zza = hsd.a();
-            ppd.b(zzbo.zzb(zzboVar2).zzc(), new zzbm(zzhkVar, zzboVar2, null));
+            zzboVar2.zza = xwd.a();
+            fud.b(zzbo.zzb(zzboVar2).zzc(), new zzbm(zzhkVar, zzboVar2, null));
             this.zze = zzhkVar;
             this.zza = null;
             this.zzb = null;
             this.zzc = 2;
             zzhg zzhgVar = new zzhg(new zzbj(zzboVar2, null));
-            if (zzhgVar != bx2Var) {
+            if (zzhgVar != vx2Var) {
                 zzhkVar2 = zzhkVar;
                 obj = zzhgVar;
                 this.zze = null;
                 this.zzc = 3;
-                if (((zzhg) obj).zza(zzhkVar2, this) == bx2Var) {
+                if (((zzhg) obj).zza(zzhkVar2, this) == vx2Var) {
                 }
             }
         } finally {
-            ((nh7) obj2).f(null);
+            ((wj7) obj2).f(null);
         }
     }
 }

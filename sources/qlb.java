@@ -1,64 +1,37 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qlb extends FrameLayout {
-    public final /* synthetic */ byte a;
-    public final RectF b;
-    public final /* synthetic */ qmb c;
+public final class qlb extends ju3 {
+    public final /* synthetic */ rlb i2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qlb(qmb qmbVar, Context context, byte b) {
+    public qlb(rlb rlbVar, Context context) {
         super(context);
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.c = qmbVar;
-                super(context);
-                this.b = new RectF();
-                break;
-            default:
-                this.c = qmbVar;
-                this.b = new RectF();
-                break;
-        }
+        this.i2 = rlbVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        byte b = this.a;
-        qmb qmbVar = this.c;
-        RectF rectF = this.b;
-        switch (b) {
-            case 0:
-                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                qlb qlbVar = qmbVar.F0;
-                gmb gmbVar = qmbVar.z0;
-                slb slbVar = qmbVar.a;
-                bkb.s(qlbVar, gmbVar, slbVar);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, slbVar.d("paintChatActionBackground"));
-                if (bkb.b1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, slbVar.d("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
-            default:
-                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                qlb qlbVar2 = qmbVar.G0;
-                gmb gmbVar2 = qmbVar.z0;
-                slb slbVar2 = qmbVar.a;
-                bkb.s(qlbVar2, gmbVar2, slbVar2);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, slbVar2.d("paintChatActionBackground"));
-                if (bkb.b1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, slbVar2.d("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
+    @Override // cu3, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        g44 g44Var = this.i2.J;
+        if (g44Var == null || g44Var.getVisibility() != 0) {
+            return false;
         }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // cu3, android.widget.TextView, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        this.i2.m();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        this.i2.m();
     }
 }

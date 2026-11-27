@@ -1,73 +1,65 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class by1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class by1 implements View.OnKeyListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ zv4 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ by1(FrameLayout frameLayout, int i, byte b) {
+    public /* synthetic */ by1(zv4 zv4Var, byte b) {
         this.a = b;
-        this.c = frameLayout;
-        this.b = i;
+        this.b = zv4Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i, KeyEvent keyEvent) {
         byte b = this.a;
-        byte b2 = this.b;
-        FrameLayout frameLayout = this.c;
+        zv4 zv4Var = this.b;
         switch (b) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) frameLayout;
-                if (b2 == 0) {
-                    chatActivityEnterView.q3 = 0;
+                if (i == 4) {
+                    if (keyEvent.getAction() == 1 && !zv4Var.d()) {
+                        zv4Var.c(null);
+                    }
+                    break;
                 }
-                chatActivityEnterView.W0 = null;
-                chatActivityEnterView.x2.setTranslationY(0.0f);
-                chatActivityEnterView.x2.setVisibility(8);
-                chatActivityEnterView.A4.e();
-                hy1 hy1Var = chatActivityEnterView.P3;
-                if (hy1Var != null) {
-                    hy1Var.k(0.0f);
-                }
-                chatActivityEnterView.requestLayout();
                 break;
             case 1:
-                l04 l04Var = (l04) frameLayout;
-                l04Var.r.setVisibility(b2 == 1 ? 0 : 8);
-                l04Var.h.setVisibility(b2 == 2 ? 0 : 8);
-                l04Var.n.setVisibility(b2 != 3 ? 8 : 0);
-                break;
-            default:
-                y95 y95Var = (y95) frameLayout;
-                if (!y95Var.c()) {
-                    y95Var.b(b2);
+                if (i == 4) {
+                    if (keyEvent.getAction() == 1 && !zv4Var.d()) {
+                        zv4Var.c(null);
+                    }
+                    break;
                 }
-                y95Var.e0 = null;
                 break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                l04 l04Var = (l04) this.c;
-                l04Var.r.setVisibility(0);
-                l04Var.h.setVisibility(0);
-                l04Var.n.setVisibility(0);
+            case 2:
+                if (i == 4) {
+                    if (keyEvent.getAction() == 1 && !zv4Var.d()) {
+                        zv4Var.c(null);
+                    }
+                    break;
+                }
+                break;
+            case 3:
+                if (i == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        zv4Var.c(null);
+                    }
+                    break;
+                }
                 break;
             default:
-                super.onAnimationStart(animator);
+                if (i == 4) {
+                    if (keyEvent.getAction() == 1) {
+                        zv4Var.c(null);
+                    }
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

@@ -1,702 +1,491 @@
 // default package
 
-import android.os.Looper;
-import android.os.SystemClock;
-import android.view.SurfaceHolder;
-import java.util.IdentityHashMap;
-import java.util.List;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ad8 implements oc8 {
-    public final oc8 a;
-    public final IdentityHashMap b = new IdentityHashMap();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ad8 extends xma {
+    public final Paint k0;
+    public boolean l0;
+    public boolean m0;
+    public ArrayList n0;
+    public final /* synthetic */ PhotoViewer o0;
 
-    public ad8(oc8 oc8Var) {
-        this.a = oc8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ad8(PhotoViewer photoViewer, Activity activity, Activity activity2) {
+        super(activity, activity2);
+        this.o0 = photoViewer;
+        Paint paint = new Paint();
+        this.k0 = paint;
+        setWillNotDraw(false);
+        paint.setColor(855638016);
+        setLayerType(2, null);
     }
 
-    @Override // oc8
-    public final int A() {
-        V0();
-        return this.a.A();
+    @Override // xma, wma
+    public final void R() {
+        super.R();
+        PhotoViewer photoViewer = this.o0;
+        if (photoViewer.s1) {
+            photoViewer.X0[0].e(2, getKeyboardHeight() <= hl.L(20.0f) ? 1.0f : 0.0f, true);
+        }
     }
 
-    @Override // oc8
-    public final void A0(int i, br6 br6Var) {
-        V0();
-        this.a.A0(i, br6Var);
+    public final void X() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            ArrayList arrayList = this.n0;
+            if (arrayList == null) {
+                arrayList = new ArrayList();
+                this.n0 = arrayList;
+            }
+            arrayList.clear();
+            PhotoViewer photoViewer = this.o0;
+            if (photoViewer.t4 == 1 || photoViewer.n6 == 1) {
+                int measuredHeight = getMeasuredHeight();
+                int measuredWidth = getMeasuredWidth();
+                this.n0.add(new Rect(0, ik8.D(200.0f, measuredHeight, 2), hl.L(100.0f), (hl.L(200.0f) + measuredHeight) / 2));
+                this.n0.add(new Rect(measuredWidth - hl.L(100.0f), ik8.D(200.0f, measuredHeight, 2), measuredWidth, (hl.L(200.0f) + measuredHeight) / 2));
+            }
+            setSystemGestureExclusionRects(this.n0);
+            invalidate();
+        }
     }
 
-    @Override // oc8
-    public final icc B() {
-        V0();
-        return this.a.B();
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        PhotoViewer photoViewer = this.o0;
+        photoViewer.R.m(photoViewer.h0.getContext()).draw(canvas);
     }
 
-    @Override // oc8
-    public final Looper B0() {
-        return this.a.B0();
-    }
-
-    @Override // oc8
-    public final void C() {
-        V0();
-        this.a.C();
-    }
-
-    @Override // oc8
-    public final void C0() {
-        V0();
-        this.a.C0();
-    }
-
-    @Override // oc8
-    public final float D() {
-        V0();
-        return this.a.D();
-    }
-
-    @Override // oc8
-    public final void D0(br6 br6Var) {
-        V0();
-        this.a.D0(br6Var);
-    }
-
-    @Override // oc8
-    public final void E() {
-        V0();
-        this.a.E();
-    }
-
-    @Override // oc8
-    public final void E0() {
-        V0();
-        this.a.E0();
-    }
-
-    @Override // oc8
-    public final nz F() {
-        V0();
-        return this.a.F();
-    }
-
-    @Override // oc8
-    public final boolean F0() {
-        V0();
-        return this.a.F0();
-    }
-
-    @Override // oc8
-    public final void G(int i, boolean z) {
-        V0();
-        this.a.G(i, z);
-    }
-
-    @Override // oc8
-    public final byb G0() {
-        V0();
-        return this.a.G0();
-    }
-
-    @Override // oc8
-    public final de3 H() {
-        V0();
-        return this.a.H();
-    }
-
-    @Override // oc8
-    public final long H0() {
-        V0();
-        return this.a.H0();
-    }
-
-    @Override // oc8
-    public final void I() {
-        V0();
-        this.a.I();
-    }
-
-    @Override // oc8
-    public final void I0(int i) {
-        V0();
-        this.a.I0(i);
-    }
-
-    @Override // oc8
-    public final void J(int i, int i2) {
-        V0();
-        this.a.J(i, i2);
-    }
-
-    @Override // oc8
-    public final void J0() {
-        V0();
-        this.a.J0();
-    }
-
-    @Override // oc8
-    public final void K(int i) {
-        V0();
-        this.a.K(i);
-    }
-
-    @Override // oc8
-    public final void K0() {
-        V0();
-        this.a.K0();
-    }
-
-    @Override // oc8
-    public final int L() {
-        V0();
-        return this.a.L();
-    }
-
-    @Override // oc8
-    public final void L0() {
-        V0();
-        this.a.L0();
-    }
-
-    @Override // oc8
-    public final void M(byb bybVar) {
-        V0();
-        this.a.M(bybVar);
-    }
-
-    @Override // oc8
-    public final jr6 M0() {
-        V0();
-        return this.a.M0();
-    }
-
-    @Override // oc8
-    public final boolean N() {
-        return this.a.N();
-    }
-
-    @Override // oc8
-    public final void N0(List list) {
-        V0();
-        this.a.N0(list);
-    }
-
-    @Override // oc8
-    public final void O(int i) {
-        V0();
-        this.a.O(i);
-    }
-
-    @Override // oc8
-    public final long O0() {
-        V0();
-        return this.a.O0();
-    }
-
-    @Override // oc8
-    public final void P(int i, int i2) {
-        V0();
-        this.a.P(i, i2);
-    }
-
-    @Override // oc8
-    public final boolean P0() {
-        V0();
-        return this.a.P0();
-    }
-
-    @Override // oc8
-    public final void Q(SurfaceHolder surfaceHolder) {
-        V0();
-        this.a.Q(surfaceHolder);
-    }
-
-    public final nc8 Q0() {
-        long j;
-        long j2;
-        int i;
-        int i2;
-        boolean m0 = m0(16);
-        boolean m02 = m0(17);
-        int l0 = m02 ? l0() : 0;
-        gre.p(l0 >= 0);
-        int A = m02 ? A() : 0;
-        gre.p(A >= 0);
-        if (m02) {
-            aob y0 = y0();
-            if (!y0.p()) {
-                gre.p(l0 < y0.o());
-                znb m = y0.m(l0, new znb(), 0L);
-                gre.p(A == g8c.i(A, m.m, m.n));
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        PhotoViewer photoViewer = this.o0;
+        lmb m = photoViewer.R.m(getContext());
+        mmb mmbVar = m.r;
+        if (motionEvent.getAction() == 0) {
+            m.h = motionEvent.getX();
+            m.n = motionEvent.getY();
+            mmbVar.e = mmbVar.w();
+        } else if (mmbVar.e && Math.abs(motionEvent.getX() - m.h) < hl.e && Math.abs(motionEvent.getY() - m.n) < hl.e && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
+            motionEvent.getX();
+            motionEvent.getY();
+            if (!mmbVar.i && mmbVar.e) {
+                mmbVar.e(false);
             }
         }
-        br6 u = m0 ? u() : null;
-        if (m0) {
-            long m2 = m();
-            long Y = Y();
-            int k0 = k0();
-            i2 = L();
-            j = m2;
-            j2 = Y;
-            i = k0;
+        if (!photoViewer.R.w()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        photoViewer.R.m(getContext()).onTouchEvent(motionEvent);
+        return true;
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        super.draw(canvas);
+        PhotoViewer photoViewer = this.o0;
+        nc8 nc8Var = photoViewer.g0;
+        if (nc8Var == null || !nc8Var.y) {
+            return;
+        }
+        int measuredHeight = ((int) ((photoViewer.Z5 - 1.0f) * nc8Var.getWebView().getMeasuredHeight())) / 2;
+        rec recVar = photoViewer.A1;
+        if (recVar != null && recVar.j) {
+            recVar.setBounds(photoViewer.g0.getLeft(), (photoViewer.g0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.X5 / photoViewer.Z5)), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.X5 / photoViewer.Z5)));
+            photoViewer.A1.draw(canvas);
+        }
+        cz9 cz9Var = photoViewer.B1;
+        if (cz9Var == null || !cz9Var.a()) {
+            return;
+        }
+        photoViewer.B1.setBounds(photoViewer.g0.getLeft(), (int) ((photoViewer.G.getAlpha() * hl.L(90.0f)) + hl.m), photoViewer.g0.getRight(), photoViewer.g0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.X5 / photoViewer.Z5)));
+        photoViewer.B1.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        PhotoViewer photoViewer = this.o0;
+        if (view == photoViewer.R.m(photoViewer.h0.getContext()) || view == photoViewer.r5 || view == photoViewer.y4 || view == photoViewer.z4 || view == photoViewer.Y0) {
+            return false;
+        }
+        FrameLayout frameLayout = photoViewer.W7;
+        if (view == frameLayout && frameLayout.getTranslationY() > 0.0f && photoViewer.Q0.getTranslationY() == 0.0f) {
+            canvas.save();
+            canvas.clipRect(photoViewer.W7.getX(), photoViewer.W7.getY(), photoViewer.W7.getX() + photoViewer.W7.getMeasuredWidth(), photoViewer.W7.getBottom());
+            boolean drawChild = super.drawChild(canvas, view, j);
+            canvas.restore();
+            return drawChild;
+        }
+        try {
+            if (view == photoViewer.z2 || view == photoViewer.x4) {
+                return false;
+            }
+            return super.drawChild(canvas, view, j);
+        } catch (Throwable unused) {
+            return true;
+        }
+    }
+
+    @Override // wma
+    public final int getBottomPadding() {
+        return this.o0.Q0.getHeight();
+    }
+
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setTag(R.id.bulletin_delegate_tag, new t10(this, (byte) 15));
+    }
+
+    @Override // wma, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setTag(R.id.bulletin_delegate_tag, null);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        y10 y10Var;
+        Canvas canvas2;
+        Drawable[] drawableArr = PhotoViewer.d9;
+        PhotoViewer photoViewer = this.o0;
+        photoViewer.Z0(canvas);
+        if (hl.m == 0 || (y10Var = photoViewer.G) == null) {
+            return;
+        }
+        int alpha = (int) (y10Var.getAlpha() * 255.0f * 0.498f);
+        Paint paint = this.k0;
+        paint.setAlpha(alpha);
+        if (getPaddingRight() > 0) {
+            canvas2 = canvas;
+            canvas2.drawRect(getMeasuredWidth() - getPaddingRight(), 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
         } else {
-            j = 0;
-            j2 = 0;
-            i = -1;
-            i2 = -1;
+            canvas2 = canvas;
         }
-        return new nc8(null, l0, u, null, A, j, j2, i, i2);
+        if (getPaddingLeft() > 0) {
+            canvas2.drawRect(0.0f, 0.0f, getPaddingLeft(), getMeasuredHeight(), paint);
+        }
+        if (getPaddingBottom() > 0) {
+            float alpha2 = (1.0f - photoViewer.G.getAlpha()) * hl.N(24.0f);
+            canvas2.drawRect(0.0f, (getMeasuredHeight() - getPaddingBottom()) + alpha2, getMeasuredWidth(), getMeasuredHeight() + alpha2, paint);
+        }
     }
 
-    @Override // oc8
-    public final void R(float f) {
-        V0();
-        this.a.R(f);
+    /* JADX WARN: Removed duplicated region for block: B:122:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00d4  */
+    @Override // xma, wma, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int paddingLeft;
+        int paddingRight;
+        int paddingBottom;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        int i10;
+        pb8 pb8Var;
+        int top;
+        int L;
+        int measuredHeight;
+        int L2;
+        PhotoViewer photoViewer = this.o0;
+        if (photoViewer.t5 != null && photoViewer.w5 != null) {
+            int L3 = (i3 - i) - hl.L(20.0f);
+            photoViewer.w5.setTranslationY(((-L3) / 2.0f) - hl.L(47.0f));
+            float f = L3 / 2.0f;
+            photoViewer.t5.setTranslationY(hl.L(47.0f) + f);
+            photoViewer.s5.setTranslationY(hl.L(47.0f) + f);
+            photoViewer.x5.setTranslationY(f + hl.L(95.0f));
+        }
+        int childCount = getChildCount();
+        Q();
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt.getVisibility() != 8) {
+                if (childAt == photoViewer.z2) {
+                    paddingLeft = i;
+                    paddingRight = i3;
+                    paddingBottom = i4;
+                } else {
+                    paddingLeft = getPaddingLeft() + i;
+                    paddingRight = i3 - getPaddingRight();
+                    paddingBottom = i4 - getPaddingBottom();
+                }
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int measuredWidth = childAt.getMeasuredWidth();
+                int measuredHeight2 = childAt.getMeasuredHeight();
+                int i12 = layoutParams.gravity;
+                if (i12 == -1) {
+                    i12 = 51;
+                }
+                int i13 = i12 & 7;
+                int i14 = i12 & jn7.w1;
+                if (i13 == 1) {
+                    i5 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + layoutParams.leftMargin;
+                    i6 = layoutParams.rightMargin;
+                } else if (i13 != 5) {
+                    i7 = layoutParams.leftMargin;
+                    if (i14 != 16) {
+                        i8 = (((paddingBottom - i2) - measuredHeight2) / 2) + layoutParams.topMargin;
+                        i9 = layoutParams.bottomMargin;
+                    } else if (i14 != 80) {
+                        i10 = layoutParams.topMargin;
+                        pb8Var = photoViewer.V1;
+                        if (childAt != pb8Var.N) {
+                            if (childAt == photoViewer.W1.N) {
+                                i10 += photoViewer.G.getMeasuredHeight();
+                            } else if (pb8Var.f.l(childAt) || photoViewer.W1.f.l(childAt)) {
+                                i10 = ((i4 - i2) - measuredHeight2) + ((photoViewer.s || hl.E) ? 0 : hl.n);
+                            } else if (childAt == photoViewer.p1) {
+                                i10 = hl.L(5.0f) + photoViewer.G.getMeasuredHeight();
+                            } else {
+                                float f2 = 40.0f;
+                                if (childAt == photoViewer.f1 || childAt == photoViewer.g1 || childAt == photoViewer.h1) {
+                                    FrameLayout frameLayout = photoViewer.W7;
+                                    if (frameLayout == null || frameLayout.getVisibility() != 0) {
+                                        top = photoViewer.Q0.getTop();
+                                        if (childAt == photoViewer.g1) {
+                                            top -= hl.L(50.0f);
+                                        }
+                                    } else {
+                                        top = photoViewer.W7.getTop();
+                                    }
+                                    int i15 = photoViewer.d2;
+                                    if (i15 != 4 && i15 != 5) {
+                                        f2 = 15.0f;
+                                    }
+                                    L = hl.L(12.0f) + (top - hl.L(f2));
+                                    measuredHeight = childAt.getMeasuredHeight();
+                                } else {
+                                    ArrayList arrayList = photoViewer.j1;
+                                    if (arrayList == null || !arrayList.contains(childAt)) {
+                                        ArrayList arrayList2 = photoViewer.i1;
+                                        if (arrayList2 != null && arrayList2.contains(childAt)) {
+                                            FrameLayout frameLayout2 = photoViewer.W7;
+                                            int top2 = (frameLayout2 == null || frameLayout2.getVisibility() != 0) ? photoViewer.Q0.getTop() : photoViewer.W7.getTop();
+                                            int i16 = photoViewer.d2;
+                                            if (i16 != 4 && i16 != 5) {
+                                                f2 = 15.0f;
+                                            }
+                                            L = (hl.L(12.0f) + (top2 - hl.L(f2))) - hl.L(36.0f);
+                                            measuredHeight = childAt.getMeasuredHeight();
+                                        } else if (childAt == photoViewer.W7) {
+                                            i10 -= photoViewer.Q0.getHeight();
+                                            if (photoViewer.d2 == 1) {
+                                                L2 = hl.L(52.0f);
+                                            } else if (photoViewer.V1.getVisibility() == 0) {
+                                                L2 = hl.L(56.0f);
+                                            }
+                                            i10 -= L2;
+                                        } else if (childAt == photoViewer.Y1) {
+                                            L = ((paddingBottom - i2) - measuredHeight2) - layoutParams.bottomMargin;
+                                            measuredHeight = photoViewer.Q0.getHeight();
+                                        } else if (childAt == photoViewer.Z1 || childAt == photoViewer.R0) {
+                                            i10 = photoViewer.G.getMeasuredHeight();
+                                        } else if (childAt == photoViewer.S0) {
+                                            L = ((paddingBottom - i2) - measuredHeight2) - layoutParams.bottomMargin;
+                                            measuredHeight = photoViewer.Q0.getHeight();
+                                        } else if (childAt == photoViewer.Y7) {
+                                            i10 = ik8.B(31.0f, photoViewer.Q0.getHeight(), i10);
+                                        }
+                                    } else {
+                                        FrameLayout frameLayout3 = photoViewer.W7;
+                                        int top3 = (frameLayout3 == null || frameLayout3.getVisibility() != 0) ? photoViewer.Q0.getTop() - hl.L(50.0f) : photoViewer.W7.getTop();
+                                        int i17 = photoViewer.d2;
+                                        if (i17 != 4 && i17 != 5) {
+                                            f2 = 15.0f;
+                                        }
+                                        L = (hl.L(12.0f) + (top3 - hl.L(f2))) - hl.L(36.0f);
+                                        measuredHeight = childAt.getMeasuredHeight();
+                                    }
+                                }
+                                i10 = L - measuredHeight;
+                            }
+                        }
+                        childAt.layout(i7 + paddingLeft, i10, i7 + measuredWidth + paddingLeft, measuredHeight2 + i10);
+                    } else {
+                        i8 = (paddingBottom - i2) - measuredHeight2;
+                        i9 = layoutParams.bottomMargin;
+                    }
+                    i10 = i8 - i9;
+                    pb8Var = photoViewer.V1;
+                    if (childAt != pb8Var.N) {
+                    }
+                    childAt.layout(i7 + paddingLeft, i10, i7 + measuredWidth + paddingLeft, measuredHeight2 + i10);
+                } else {
+                    i5 = (paddingRight - paddingLeft) - measuredWidth;
+                    i6 = layoutParams.rightMargin;
+                }
+                i7 = i5 - i6;
+                if (i14 != 16) {
+                }
+                i10 = i8 - i9;
+                pb8Var = photoViewer.V1;
+                if (childAt != pb8Var.N) {
+                }
+                childAt.layout(i7 + paddingLeft, i10, i7 + measuredWidth + paddingLeft, measuredHeight2 + i10);
+            }
+        }
+        R();
+        X();
     }
 
-    public final l6a R0() {
-        long j;
-        long j2;
-        long j3;
-        long j4;
-        int i;
-        boolean z;
-        long j5;
-        long j6;
-        long j7;
-        boolean m0 = m0(16);
-        nc8 Q0 = Q0();
-        boolean z2 = m0 && l();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (m0) {
-            long duration = getDuration();
-            long b0 = b0();
-            int w = w();
-            j3 = o();
-            j = n();
-            j2 = z();
-            j4 = H0();
-            i = w;
-            z = z2;
-            j5 = elapsedRealtime;
-            j6 = duration;
-            j7 = b0;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int i3;
+        int i4;
+        int i5;
+        int q;
+        int o;
+        ad8 ad8Var = this;
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        if (ad8Var.getLayoutParams().height > 0) {
+            size2 = ad8Var.getLayoutParams().height;
+        }
+        int i6 = size2;
+        ad8Var.setMeasuredDimension(size, i6);
+        PhotoViewer photoViewer = ad8Var.o0;
+        boolean z = true;
+        if (!photoViewer.s1) {
+            ad8Var.l0 = true;
+            if (photoViewer.j2) {
+                Point point = hl.q;
+                int i7 = point.x > point.y ? 5 : 10;
+                photoViewer.R1.getCurrentView().setMaxLines(i7);
+                photoViewer.R1.getNextView().setMaxLines(i7);
+            } else {
+                photoViewer.R1.getCurrentView().setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
+                photoViewer.R1.getNextView().setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
+            }
+            ad8Var.l0 = false;
+        }
+        int L = photoViewer.j0.getVisibility() != 8 ? hl.L(48.0f) : 0;
+        wd5 wd5Var = photoViewer.m1;
+        if (wd5Var == null || wd5Var.getVisibility() == 8) {
+            i3 = i;
+            i4 = 0;
         } else {
-            j = -9223372036854775807L;
-            j2 = -9223372036854775807L;
-            j3 = 0;
-            j4 = 0;
-            i = 0;
-            z = z2;
-            j5 = elapsedRealtime;
-            j6 = -9223372036854775807L;
-            j7 = 0;
-        }
-        return new l6a(Q0, z, j5, j6, j7, i, j3, j, j2, j4);
-    }
-
-    @Override // oc8
-    public final void S() {
-        V0();
-        this.a.S();
-    }
-
-    public final br6 S0() {
-        if (m0(16)) {
-            return u();
-        }
-        return null;
-    }
-
-    @Override // oc8
-    public final void T(List list, int i, long j) {
-        V0();
-        this.a.T(list, i, j);
-    }
-
-    public final aob T0() {
-        return m0(17) ? y0() : S0() != null ? new zc8(this) : aob.a;
-    }
-
-    @Override // oc8
-    public final j54 U() {
-        V0();
-        return this.a.U();
-    }
-
-    public final jr6 U0() {
-        return m0(18) ? M0() : jr6.M;
-    }
-
-    @Override // oc8
-    public final void V(boolean z) {
-        V0();
-        this.a.V(z);
-    }
-
-    public final void V0() {
-        gre.p(Looper.myLooper() == this.a.B0());
-    }
-
-    @Override // oc8
-    public final void W(int i) {
-        V0();
-        this.a.W(i);
-    }
-
-    @Override // oc8
-    public final long X() {
-        V0();
-        return this.a.X();
-    }
-
-    @Override // oc8
-    public final long Y() {
-        V0();
-        return this.a.Y();
-    }
-
-    @Override // oc8
-    public final void Z(int i, List list) {
-        V0();
-        this.a.Z(i, list);
-    }
-
-    @Override // oc8
-    public final void a() {
-        V0();
-        this.a.a();
-    }
-
-    @Override // oc8
-    public final void a0() {
-        V0();
-        this.a.a0();
-    }
-
-    @Override // oc8
-    public final void b(zb8 zb8Var) {
-        V0();
-        this.a.b(zb8Var);
-    }
-
-    @Override // oc8
-    public final long b0() {
-        V0();
-        return this.a.b0();
-    }
-
-    @Override // oc8
-    public final void c(float f) {
-        V0();
-        this.a.c(f);
-    }
-
-    @Override // oc8
-    public final boolean c0() {
-        V0();
-        return this.a.c0();
-    }
-
-    @Override // oc8
-    public final boolean d() {
-        V0();
-        return this.a.d();
-    }
-
-    @Override // oc8
-    public final void d0() {
-        V0();
-        this.a.d0();
-    }
-
-    @Override // oc8
-    public final void e() {
-        V0();
-        this.a.e();
-    }
-
-    @Override // oc8
-    public final void e0(int i) {
-        V0();
-        this.a.e0(i);
-    }
-
-    @Override // oc8
-    public final void f(long j) {
-        V0();
-        this.a.f(j);
-    }
-
-    @Override // oc8
-    public final eyb f0() {
-        V0();
-        return this.a.f0();
-    }
-
-    @Override // oc8
-    public final zb8 g() {
-        V0();
-        return this.a.g();
-    }
-
-    @Override // oc8
-    public final jr6 g0() {
-        V0();
-        return this.a.g0();
-    }
-
-    @Override // oc8
-    public final long getDuration() {
-        V0();
-        return this.a.getDuration();
-    }
-
-    @Override // oc8
-    public final int h() {
-        V0();
-        return this.a.h();
-    }
-
-    @Override // oc8
-    public final v33 h0() {
-        V0();
-        return this.a.h0();
-    }
-
-    @Override // oc8
-    public final int i() {
-        V0();
-        return this.a.i();
-    }
-
-    @Override // oc8
-    public final void i0(nz nzVar, boolean z) {
-        this.a.i0(nzVar, z);
-    }
-
-    @Override // oc8
-    public final boolean j() {
-        V0();
-        return this.a.j();
-    }
-
-    @Override // oc8
-    public final void j0(jr6 jr6Var) {
-        V0();
-        this.a.j0(jr6Var);
-    }
-
-    @Override // oc8
-    public final void k() {
-        V0();
-        this.a.k();
-    }
-
-    @Override // oc8
-    public final int k0() {
-        V0();
-        return this.a.k0();
-    }
-
-    @Override // oc8
-    public final boolean l() {
-        V0();
-        return this.a.l();
-    }
-
-    @Override // oc8
-    public final int l0() {
-        V0();
-        return this.a.l0();
-    }
-
-    @Override // oc8
-    public final long m() {
-        V0();
-        return this.a.m();
-    }
-
-    @Override // oc8
-    public final boolean m0(int i) {
-        V0();
-        return this.a.m0(i);
-    }
-
-    @Override // oc8
-    public final long n() {
-        V0();
-        return this.a.n();
-    }
-
-    @Override // oc8
-    public final void n0(int i) {
-        V0();
-        this.a.n0(i);
-    }
-
-    @Override // oc8
-    public final long o() {
-        V0();
-        return this.a.o();
-    }
-
-    @Override // oc8
-    public final void o0(boolean z) {
-        V0();
-        this.a.o0(z);
-    }
-
-    @Override // oc8
-    public final void p(int i, long j) {
-        V0();
-        this.a.p(i, j);
-    }
-
-    @Override // oc8
-    public final void p0(mc8 mc8Var) {
-        V0();
-        synchronized (this.b) {
-            mc8 mc8Var2 = (mc8) this.b.remove(mc8Var);
-            oc8 oc8Var = this.a;
-            if (mc8Var2 != null) {
-                mc8Var = mc8Var2;
+            ((ViewGroup.MarginLayoutParams) photoViewer.m1.getLayoutParams()).bottomMargin = L;
+            i3 = i;
+            ad8Var.measureChildWithMargins(photoViewer.m1, i3, 0, i2, 0);
+            int measuredHeight = photoViewer.m1.getMeasuredHeight();
+            ad8Var.l0 = true;
+            if (hl.O1() || i6 >= size) {
+                if (photoViewer.m1.getVisibility() != 0) {
+                    photoViewer.m1.setVisibility(0);
+                }
+            } else if (photoViewer.m1.getVisibility() != 4) {
+                photoViewer.m1.setVisibility(4);
             }
-            oc8Var.p0(mc8Var);
+            ad8Var.l0 = false;
+            i4 = measuredHeight;
         }
-    }
-
-    @Override // oc8
-    public final kc8 q() {
-        V0();
-        return this.a.q();
-    }
-
-    @Override // oc8
-    public final void q0(br6 br6Var) {
-        V0();
-        this.a.q0(br6Var);
-    }
-
-    @Override // oc8
-    public final void r(br6 br6Var, long j) {
-        V0();
-        this.a.r(br6Var, j);
-    }
-
-    @Override // oc8
-    public final void r0(List list, int i, int i2) {
-        V0();
-        this.a.r0(list, i, i2);
-    }
-
-    @Override // oc8
-    public final boolean s() {
-        V0();
-        return this.a.s();
-    }
-
-    @Override // oc8
-    public final void s0(int i, int i2) {
-        V0();
-        this.a.s0(i, i2);
-    }
-
-    @Override // oc8
-    public final void stop() {
-        V0();
-        this.a.stop();
-    }
-
-    @Override // oc8
-    public final void t() {
-        V0();
-        this.a.t();
-    }
-
-    @Override // oc8
-    public final void t0(int i, int i2, int i3) {
-        V0();
-        this.a.t0(i, i2, i3);
-    }
-
-    @Override // oc8
-    public final br6 u() {
-        V0();
-        return this.a.u();
-    }
-
-    @Override // oc8
-    public final boolean u0() {
-        V0();
-        return this.a.u0();
-    }
-
-    @Override // oc8
-    public final void v(boolean z) {
-        V0();
-        this.a.v(z);
-    }
-
-    @Override // oc8
-    public final int v0() {
-        V0();
-        return this.a.v0();
-    }
-
-    @Override // oc8
-    public final int w() {
-        V0();
-        return this.a.w();
-    }
-
-    @Override // oc8
-    public final void w0(List list) {
-        V0();
-        this.a.w0(list);
-    }
-
-    @Override // oc8
-    public final long x() {
-        V0();
-        return this.a.x();
-    }
-
-    @Override // oc8
-    public final int x0() {
-        V0();
-        return this.a.x0();
-    }
-
-    @Override // oc8
-    public final void y(mc8 mc8Var) {
-        V0();
-        synchronized (this.b) {
-            qm4 qm4Var = (qm4) this.b.get(mc8Var);
-            if (qm4Var == null) {
-                qm4Var = new qm4(this, mc8Var);
+        kd8 kd8Var = photoViewer.i3;
+        if (kd8Var != null) {
+            kd8Var.e = size;
+            kd8Var.f = i6;
+        }
+        int paddingLeft = size - (ad8Var.getPaddingLeft() + ad8Var.getPaddingRight());
+        int paddingBottom = i6 - ad8Var.getPaddingBottom();
+        int childCount = ad8Var.getChildCount();
+        int i8 = 0;
+        while (i8 < childCount) {
+            View childAt = ad8Var.getChildAt(i8);
+            if (childAt.getVisibility() != 8 && childAt != photoViewer.m1) {
+                dc8 dc8Var = photoViewer.z2;
+                if (childAt == dc8Var) {
+                    childAt.measure(i3, View.MeasureSpec.makeMeasureSpec(ad8Var.getMeasuredHeight(), TLObject.FLAG_30));
+                } else if (childAt == photoViewer.x4) {
+                    if (dc8Var == null || dc8Var.getVisibility() != 0) {
+                        q = photoViewer.B4.q();
+                        o = photoViewer.B4.o();
+                    } else {
+                        View view = photoViewer.E2 ? photoViewer.D2 : photoViewer.C2;
+                        q = view.getMeasuredWidth();
+                        o = view.getMeasuredHeight();
+                    }
+                    if (q == 0 || o == 0) {
+                        q = paddingLeft;
+                        o = paddingBottom;
+                    }
+                    photoViewer.x4.measure(View.MeasureSpec.makeMeasureSpec(q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(o, TLObject.FLAG_30));
+                } else if (photoViewer.V1.f.l(childAt) || photoViewer.W1.f.l(childAt)) {
+                    if (photoViewer.s) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30));
+                    } else if (!hl.E) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height + hl.n, TLObject.FLAG_30));
+                    } else if (hl.O1()) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(hl.L(320.0f), paddingBottom - hl.m), TLObject.FLAG_30));
+                    } else {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom - hl.m, TLObject.FLAG_30));
+                    }
+                } else if (childAt == photoViewer.U1) {
+                    if (photoViewer.n2) {
+                        if (ad8Var.m0) {
+                            i5 = L + i4;
+                            int currentActionBarHeight = (paddingBottom - (a.getCurrentActionBarHeight() + hl.m)) - i5;
+                            ((ViewGroup.MarginLayoutParams) photoViewer.U1.getLayoutParams()).bottomMargin = i5;
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight, TLObject.FLAG_30));
+                        }
+                        i5 = L;
+                        int currentActionBarHeight2 = (paddingBottom - (a.getCurrentActionBarHeight() + hl.m)) - i5;
+                        ((ViewGroup.MarginLayoutParams) photoViewer.U1.getLayoutParams()).bottomMargin = i5;
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight2, TLObject.FLAG_30));
+                    } else if (!photoViewer.m1.c() || (!hl.O1() && paddingBottom <= paddingLeft)) {
+                        ad8Var.m0 = false;
+                        i5 = L;
+                        int currentActionBarHeight22 = (paddingBottom - (a.getCurrentActionBarHeight() + hl.m)) - i5;
+                        ((ViewGroup.MarginLayoutParams) photoViewer.U1.getLayoutParams()).bottomMargin = i5;
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight22, TLObject.FLAG_30));
+                    } else {
+                        i5 = L + i4;
+                        ad8Var.m0 = z;
+                        int currentActionBarHeight222 = (paddingBottom - (a.getCurrentActionBarHeight() + hl.m)) - i5;
+                        ((ViewGroup.MarginLayoutParams) photoViewer.U1.getLayoutParams()).bottomMargin = i5;
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight222, TLObject.FLAG_30));
+                    }
+                } else if (childAt == photoViewer.Z1 || childAt == photoViewer.R0) {
+                    childAt.measure(i3, View.MeasureSpec.makeMeasureSpec(paddingBottom - (a.getCurrentActionBarHeight() + hl.m), TLObject.FLAG_30));
+                } else if (childAt == photoViewer.W1.N) {
+                    childAt.measure(i3, View.MeasureSpec.makeMeasureSpec(paddingBottom - (a.getCurrentActionBarHeight() + hl.m), TLObject.FLAG_30));
+                } else {
+                    ad8Var.measureChildWithMargins(childAt, i3, 0, i2, 0);
+                }
             }
-            this.a.y(qm4Var);
-            this.b.put(mc8Var, qm4Var);
+            i8++;
+            z = true;
+            ad8Var = this;
         }
     }
 
-    @Override // oc8
-    public final aob y0() {
-        V0();
-        return this.a.y0();
-    }
-
-    @Override // oc8
-    public final long z() {
-        V0();
-        return this.a.z();
-    }
-
-    @Override // oc8
-    public final boolean z0() {
-        V0();
-        return this.a.z0();
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.l0) {
+            return;
+        }
+        super.requestLayout();
     }
 }

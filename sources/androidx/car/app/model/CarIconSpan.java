@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class CarIconSpan extends CarSpan {
     public static final int ALIGN_BASELINE = 1;
@@ -21,12 +21,12 @@ public final class CarIconSpan extends CarSpan {
     }
 
     public static CarIconSpan create(CarIcon carIcon, int i) {
-        lc1.b.b(carIcon);
+        tc1.c.d(carIcon);
         if (i == 1 || i == 0 || i == 2) {
             Objects.requireNonNull(carIcon);
             return new CarIconSpan(carIcon, i);
         }
-        sc8.j(de9.k(i, "Invalid alignment value: "));
+        grb.i(uh9.k(i, "Invalid alignment value: "));
         return null;
     }
 
@@ -58,7 +58,7 @@ public final class CarIconSpan extends CarSpan {
         StringBuilder sb = new StringBuilder("[icon: ");
         sb.append(this.mIcon);
         sb.append(", alignment: ");
-        return b00.j(sb, alignmentToString(this.mAlignment), "]");
+        return c00.k(sb, alignmentToString(this.mAlignment), "]");
     }
 
     private CarIconSpan(CarIcon carIcon, int i) {

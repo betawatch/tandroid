@@ -1,33 +1,19 @@
 // default package
 
-import j$.util.Objects;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class cpe {
-    public static String a(ArrayList arrayList) {
-        int size = arrayList.size();
-        boolean z = false;
-        String str = null;
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            String str2 = ((xxb) obj).a.g.t;
-            if (ud7.m(str2)) {
-                return "video/mp4";
-            }
-            if (ud7.i(str2)) {
-                z = true;
-            } else if (ud7.k(str2)) {
-                if (Objects.equals(str2, "image/heic")) {
-                    str = "image/heif";
-                } else if (Objects.equals(str2, "image/avif")) {
-                    str = "image/avif";
-                }
-            }
+public final class cpe implements zq7 {
+    public static final cpe a = new cpe();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)), 5)), 6)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return z ? "audio/mp4" : str != null ? str : "application/mp4";
+        throw null;
     }
 }

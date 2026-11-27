@@ -1,51 +1,61 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zpe extends c2e {
-    private static final zpe zzb;
-    private int zzd;
-    private fje zze;
-    private long zzf;
-
-    static {
-        zpe zpeVar = new zpe();
-        zzb = zpeVar;
-        c2e.k(zpe.class, zpeVar);
+public abstract class zpe {
+    public static int a(byte b) {
+        return b < 0 ? b + ConnectionsManager.USE_IPV4_ONLY : b;
     }
 
-    public static /* synthetic */ void n(zpe zpeVar, fje fjeVar) {
-        zpeVar.zze = fjeVar;
-        zpeVar.zzd |= 1;
+    public static String b(ByteBuffer byteBuffer) {
+        byte[] bArr = new byte[4];
+        byteBuffer.get(bArr);
+        try {
+            return new String(bArr, "ISO-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            grb.m(e);
+            return null;
+        }
     }
 
-    public static /* synthetic */ void o(zpe zpeVar, long j) {
-        zpeVar.zzd |= 2;
-        zpeVar.zzf = j;
+    public static double c(ByteBuffer byteBuffer) {
+        byteBuffer.get(new byte[4]);
+        return (((((r0[0] << 24) & (-16777216)) | ((r0[1] << 16) & 16711680)) | ((r0[2] << 8) & 65280)) | (r0[3] & 255)) / 1.073741824E9d;
     }
 
-    public static ope p() {
-        return (ope) zzb.f();
+    public static double d(ByteBuffer byteBuffer) {
+        byteBuffer.get(new byte[4]);
+        return (((((r0[0] << 24) & (-16777216)) | ((r0[1] << 16) & 16711680)) | ((r0[2] << 8) & 65280)) | (r0[3] & 255)) / 65536.0d;
     }
 
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public static float e(ByteBuffer byteBuffer) {
+        byteBuffer.get(new byte[2]);
+        return ((short) (((short) ((r0[0] << 8) & 65280)) | (r0[1] & 255))) / 256.0f;
+    }
+
+    public static int f(ByteBuffer byteBuffer) {
+        return a(byteBuffer.get()) + (a(byteBuffer.get()) << 8);
+    }
+
+    public static long g(ByteBuffer byteBuffer) {
+        long j = byteBuffer.getInt();
+        return j < 0 ? j + 4294967296L : j;
+    }
+
+    public static long h(ByteBuffer byteBuffer) {
+        long g = g(byteBuffer) << 32;
+        if (g >= 0) {
+            return g(byteBuffer) + g;
         }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဂ\u0001", new Object[]{"zzd", "zze", "zzf"});
-        }
-        if (i2 == 3) {
-            return new zpe();
-        }
-        if (i2 == 4) {
-            return new ope(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
+        xi4.l("I don't know how to deal with UInt64! long is not sufficient and I don't want to use BigInt");
+        return 0L;
+    }
+
+    public static int i(ByteBuffer byteBuffer) {
+        return a(byteBuffer.get());
     }
 }

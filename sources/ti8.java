@@ -1,38 +1,33 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ti8 extends ImageView {
-    public final byte a;
-    public final /* synthetic */ vi8 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ti8 {
+    public int a;
+    public ArrayList b;
+    public String c;
+    public final byte[] d;
+    public boolean e;
+    public int f = 10;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public ti8(vi8 vi8Var, Context context, int i, int i2) {
-        super(context);
-        this.b = vi8Var;
-        this.a = i;
-        setBackground(bkb.f0(1090519039, 1, -1));
-        setScaleType(ImageView.ScaleType.CENTER);
-        setImageResource(i2);
-        setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        setOnClickListener(new hb(this, i, (byte) 5));
+    public ti8(TLRPC.TL_messages_votesList tL_messages_votesList, byte[] bArr) {
+        this.a = tL_messages_votesList.count;
+        this.b = tL_messages_votesList.votes;
+        this.c = tL_messages_votesList.next_offset;
+        this.d = bArr;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
+    public final int a() {
+        if (this.b.size() <= 15) {
+            return 0;
+        }
+        return this.e ? 1 : 2;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(gl.L(40.0f), gl.L(40.0f));
+    public final int b() {
+        return this.e ? Math.min(this.f, this.b.size()) : this.b.size();
     }
 }

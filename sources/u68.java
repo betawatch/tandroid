@@ -1,65 +1,49 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.PhotoViewer;
+import android.os.Bundle;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class u68 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ Bitmap c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class u68 extends s29 {
+    public static final String c;
+    public final float b;
 
-    public /* synthetic */ u68(PhotoViewer photoViewer, Bitmap bitmap, byte b) {
-        this.a = b;
-        this.b = photoViewer;
-        this.c = bitmap;
+    static {
+        String str = gcc.a;
+        c = "1";
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        Bitmap bitmap = this.c;
-        PhotoViewer photoViewer = this.b;
-        switch (b) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.d9;
-                photoViewer.f(bitmap);
-                gl.c3(new u68(photoViewer, bitmap, (byte) 5));
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.d9;
-                photoViewer.f(bitmap);
-                gl.c3(new u68(photoViewer, bitmap, (byte) 4));
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.d9;
-                photoViewer.f(bitmap);
-                gl.c3(new u68(photoViewer, bitmap, (byte) 6));
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.d9;
-                photoViewer.f(bitmap);
-                break;
-            case 4:
-                Drawable[] drawableArr5 = PhotoViewer.d9;
-                photoViewer.B4.f0(bitmap);
-                photoViewer.s5.setUndoCutState(true);
-                photoViewer.k2(true, true);
-                break;
-            case 5:
-                Drawable[] drawableArr6 = PhotoViewer.d9;
-                photoViewer.B4.f0(bitmap);
-                photoViewer.s5.setUndoCutState(true);
-                photoViewer.k2(true, true);
-                break;
-            default:
-                Drawable[] drawableArr7 = PhotoViewer.d9;
-                photoViewer.B4.f0(bitmap);
-                photoViewer.s5.setUndoCutState(true);
-                photoViewer.k2(true, true);
-                break;
+    public u68(float f) {
+        yve.e("percent must be in the range of [0, 100]", f >= 0.0f && f <= 100.0f);
+        this.b = f;
+    }
+
+    @Override // s29
+    public final boolean b() {
+        return this.b != -1.0f;
+    }
+
+    @Override // s29
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(s29.a, 1);
+        bundle.putFloat(c, this.b);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof u68) {
+            return this.b == ((u68) obj).b;
         }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Float.valueOf(this.b));
+    }
+
+    public u68() {
+        this.b = -1.0f;
     }
 }

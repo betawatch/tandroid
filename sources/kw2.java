@@ -1,58 +1,38 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class kw2 implements Iterable {
-    public final Object a = new Object();
-    public final HashMap b = new HashMap();
-    public Set c = Collections.EMPTY_SET;
-    public List d = Collections.EMPTY_LIST;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class kw2 extends n8 {
+    public final /* synthetic */ nw2 o;
 
-    public final int h(vq3 vq3Var) {
-        int intValue;
-        synchronized (this.a) {
-            intValue = this.b.containsKey(vq3Var) ? ((Integer) this.b.get(vq3Var)).intValue() : 0;
-        }
-        return intValue;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kw2(nw2 nw2Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = nw2Var;
     }
 
-    public final void i(vq3 vq3Var) {
-        synchronized (this.a) {
-            Integer num = (Integer) this.b.get(vq3Var);
-            if (num == null) {
-                return;
-            }
-            ArrayList arrayList = new ArrayList(this.d);
-            arrayList.remove(vq3Var);
-            this.d = DesugarCollections.unmodifiableList(arrayList);
-            int intValue = num.intValue();
-            HashMap hashMap = this.b;
-            if (intValue == 1) {
-                hashMap.remove(vq3Var);
-                HashSet hashSet = new HashSet(this.c);
-                hashSet.remove(vq3Var);
-                this.c = DesugarCollections.unmodifiableSet(hashSet);
-            } else {
-                hashMap.put(vq3Var, Integer.valueOf(num.intValue() - 1));
-            }
+    @Override // n8, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        rw2 rw2Var = this.o.a;
+        rw2Var.k = null;
+        rw2Var.K = false;
+        if (rw2Var.R) {
+            rw2Var.b();
         }
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        Iterator it;
-        synchronized (this.a) {
-            it = this.d.iterator();
+        View view = rw2Var.h;
+        if (view != null) {
+            if (view instanceof x2b) {
+                ((x2b) view).setScaled(false);
+            } else if (view instanceof u2b) {
+                ((u2b) view).setScaled(false);
+            } else if (view instanceof vw2) {
+                ((vw2) view).setScaled(false);
+            }
+            rw2Var.h = null;
         }
-        return it;
     }
 }

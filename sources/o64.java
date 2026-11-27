@@ -1,38 +1,48 @@
 // default package
 
-import android.content.Context;
+import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class o64 extends l5c {
-    public final /* synthetic */ byte Q;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class o64 implements sec, lg8 {
+    public sec a;
+    public o64 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o64(o39 o39Var, Context context, int i, int i2, boolean z, i8c i8cVar, wjb wjbVar, byte b) {
-        super(o39Var, context, i, i2, z, i8cVar, wjbVar);
-        this.Q = b;
-    }
-
-    @Override // l5c, n39
-    public final boolean D(s49 s49Var) {
-        switch (this.Q) {
-            case 0:
-                return false;
-            default:
-                return super.D(s49Var);
+    public final void a() {
+        o64 o64Var = this.b;
+        if (o64Var != null) {
+            o64Var.a();
         }
     }
 
-    @Override // l5c
-    public final int I(int i) {
-        switch (this.Q) {
-            case 1:
-                if (i == bkb.h5) {
-                    return -15921907;
-                }
-                return bkb.v0(i, this.x);
-            default:
-                return super.I(i);
+    @Override // sec
+    public final void b(long j, long j2, ko4 ko4Var, MediaFormat mediaFormat) {
+        sec secVar = this.a;
+        if (secVar != null) {
+            secVar.b(j, j2, ko4Var, mediaFormat);
+        }
+    }
+
+    public final void c() {
+        o64 o64Var = this.b;
+        if (o64Var != null) {
+            o64Var.c();
+        }
+    }
+
+    @Override // lg8
+    public final void d(int i, Object obj) {
+        if (i == 7) {
+            this.a = (sec) obj;
+            return;
+        }
+        if (i == 8) {
+            this.b = (o64) obj;
+        } else {
+            if (i != 10000 || obj == null) {
+                return;
+            }
+            grb.o();
         }
     }
 }

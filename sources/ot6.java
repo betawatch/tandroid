@@ -1,91 +1,207 @@
 // default package
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import androidx.mediarouter.app.MediaRouteVolumeSlider;
-import org.telegram.messenger.beta.R;
+import android.graphics.Bitmap;
+import android.media.Rating;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.Arrays;
+import java.util.MissingFormatArgumentException;
+import org.json.JSONArray;
+import org.json.JSONException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ot6 extends jt6 {
-    public final ImageView A;
-    public final ProgressBar B;
-    public final TextView C;
-    public final RelativeLayout D;
-    public final CheckBox E;
-    public final float F;
-    public final int G;
-    public final g6 H;
-    public final /* synthetic */ pt6 I;
-    public final View z;
+public final class ot6 {
+    public final Bundle a;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ot6(pt6 pt6Var, View view) {
-        super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
-        this.I = pt6Var;
-        rt6 rt6Var = pt6Var.x;
-        this.H = new g6(this, (byte) 12);
-        this.z = view;
-        this.A = (ImageView) view.findViewById(R.id.mr_cast_route_icon);
-        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_route_progress_bar);
-        this.B = progressBar;
-        this.C = (TextView) view.findViewById(R.id.mr_cast_route_name);
-        this.D = (RelativeLayout) view.findViewById(R.id.mr_cast_volume_layout);
-        CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
-        this.E = checkBox;
-        Context context = rt6Var.E;
-        Drawable a = hmd.a(context, R.drawable.mr_cast_checkbox);
-        if (voe.h(context)) {
-            a.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
-        }
-        checkBox.setButtonDrawable(a);
-        voe.i(context, progressBar);
-        this.F = voe.c(context);
-        Resources resources = context.getResources();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        TypedValue typedValue = new TypedValue();
-        resources.getValue(R.dimen.mr_dynamic_dialog_row_height, typedValue, true);
-        this.G = (int) typedValue.getDimension(displayMetrics);
+    public ot6(Bundle bundle) {
+        this.a = new Bundle(bundle);
     }
 
-    public final boolean v(eu6 eu6Var) {
-        if (!eu6Var.g()) {
-            pj4 b = this.I.x.r.b(eu6Var);
-            if (b == null) {
-                return false;
-            }
-            tt6 tt6Var = (tt6) b.b;
-            if ((tt6Var != null ? tt6Var.b : 1) != 3) {
-                return false;
-            }
-        }
-        return true;
+    public static boolean f(Bundle bundle) {
+        return "1".equals(bundle.getString("gcm.n.e")) || "1".equals(bundle.getString("gcm.n.e".replace("gcm.n.", "gcm.notification.")));
     }
 
-    public final void w(boolean z, boolean z2) {
-        CheckBox checkBox = this.E;
-        checkBox.setEnabled(false);
-        this.z.setEnabled(false);
-        checkBox.setChecked(z);
-        if (z) {
-            this.A.setVisibility(4);
-            this.B.setVisibility(0);
+    public static String m(String str) {
+        return str.startsWith("gcm.n.") ? str.substring(6) : str;
+    }
+
+    public final boolean a(String str) {
+        String e = e(str);
+        return "1".equals(e) || Boolean.parseBoolean(e);
+    }
+
+    public final Integer b(String str) {
+        String e = e(str);
+        if (TextUtils.isEmpty(e)) {
+            return null;
         }
-        if (z2) {
-            this.I.D(z ? this.G : 0, this.D);
+        try {
+            return Integer.valueOf(Integer.parseInt(e));
+        } catch (NumberFormatException unused) {
+            Log.w("NotificationParams", "Couldn't parse value of " + m(str) + "(" + e + ") into an int");
+            return null;
         }
+    }
+
+    public final JSONArray c(String str) {
+        String e = e(str);
+        if (TextUtils.isEmpty(e)) {
+            return null;
+        }
+        try {
+            return new JSONArray(e);
+        } catch (JSONException unused) {
+            Log.w("NotificationParams", "Malformed JSON for key " + m(str) + ": " + e + ", falling back to default");
+            return null;
+        }
+    }
+
+    public final String d(Resources resources, String str, String str2) {
+        String[] strArr;
+        String e = e(str2);
+        if (!TextUtils.isEmpty(e)) {
+            return e;
+        }
+        String e2 = e(str2.concat("_loc_key"));
+        if (TextUtils.isEmpty(e2)) {
+            return null;
+        }
+        int identifier = resources.getIdentifier(e2, "string", str);
+        if (identifier == 0) {
+            Log.w("NotificationParams", m(str2.concat("_loc_key")) + " resource not found: " + str2 + " Default value will be used.");
+            return null;
+        }
+        JSONArray c = c(str2.concat("_loc_args"));
+        if (c == null) {
+            strArr = null;
+        } else {
+            int length = c.length();
+            strArr = new String[length];
+            for (int i = 0; i < length; i++) {
+                strArr[i] = c.optString(i);
+            }
+        }
+        if (strArr == null) {
+            return resources.getString(identifier);
+        }
+        try {
+            return resources.getString(identifier, strArr);
+        } catch (MissingFormatArgumentException e3) {
+            Log.w("NotificationParams", "Missing format argument for " + m(str2) + ": " + Arrays.toString(strArr) + " Default value will be used.", e3);
+            return null;
+        }
+    }
+
+    public final String e(String str) {
+        Bundle bundle = this.a;
+        if (!bundle.containsKey(str) && str.startsWith("gcm.n.")) {
+            String replace = !str.startsWith("gcm.n.") ? str : str.replace("gcm.n.", "gcm.notification.");
+            if (bundle.containsKey(replace)) {
+                str = replace;
+            }
+        }
+        return bundle.getString(str);
+    }
+
+    public final Bundle g() {
+        Bundle bundle = this.a;
+        Bundle bundle2 = new Bundle(bundle);
+        for (String str : bundle.keySet()) {
+            if (!str.startsWith("google.c.a.") && !str.equals("from")) {
+                bundle2.remove(str);
+            }
+        }
+        return bundle2;
+    }
+
+    public final void h(String str, Bitmap bitmap) {
+        Integer num = (Integer) pt6.c.get(str);
+        if (num == null || num.intValue() == 2) {
+            this.a.putParcelable(str, bitmap);
+        } else {
+            lq5.j(qd4.y("The ", str, " key cannot be used to put a Bitmap"));
+        }
+    }
+
+    public final void i(long j, String str) {
+        Integer num = (Integer) pt6.c.get(str);
+        if (num == null || num.intValue() == 0) {
+            this.a.putLong(str, j);
+        } else {
+            lq5.j(qd4.y("The ", str, " key cannot be used to put a long"));
+        }
+    }
+
+    public final void j(String str, u29 u29Var) {
+        Rating rating;
+        float f = u29Var.b;
+        Integer num = (Integer) pt6.c.get(str);
+        if (num != null && num.intValue() != 3) {
+            lq5.j(qd4.y("The ", str, " key cannot be used to put a Rating"));
+            return;
+        }
+        Rating rating2 = u29Var.c;
+        if (rating2 == null) {
+            boolean b = u29Var.b();
+            int i = u29Var.a;
+            if (b) {
+                switch (i) {
+                    case 1:
+                        rating2 = Rating.newHeartRating(i == 1 && f == 1.0f);
+                        u29Var.c = rating2;
+                        break;
+                    case 2:
+                        rating2 = Rating.newThumbRating(i == 2 && f == 1.0f);
+                        u29Var.c = rating2;
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        rating2 = Rating.newStarRating(i, u29Var.a());
+                        u29Var.c = rating2;
+                        break;
+                    case 6:
+                        if (i != 6 || !u29Var.b()) {
+                            f = -1.0f;
+                        }
+                        rating2 = Rating.newPercentageRating(f);
+                        u29Var.c = rating2;
+                        break;
+                    default:
+                        rating = null;
+                        break;
+                }
+                this.a.putParcelable(str, rating);
+            }
+            rating2 = Rating.newUnratedRating(i);
+            u29Var.c = rating2;
+        }
+        rating = rating2;
+        this.a.putParcelable(str, rating);
+    }
+
+    public final void k(String str, String str2) {
+        Integer num = (Integer) pt6.c.get(str);
+        if (num == null || num.intValue() == 1) {
+            this.a.putCharSequence(str, str2);
+        } else {
+            lq5.j(qd4.y("The ", str, " key cannot be used to put a String"));
+        }
+    }
+
+    public final void l(CharSequence charSequence, String str) {
+        Integer num = (Integer) pt6.c.get(str);
+        if (num == null || num.intValue() == 1) {
+            this.a.putCharSequence(str, charSequence);
+        } else {
+            lq5.j(qd4.y("The ", str, " key cannot be used to put a CharSequence"));
+        }
+    }
+
+    public ot6() {
+        this.a = new Bundle();
     }
 }

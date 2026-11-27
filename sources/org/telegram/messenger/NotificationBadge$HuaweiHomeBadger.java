@@ -4,19 +4,19 @@ import android.os.Bundle;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class NotificationBadge$HuaweiHomeBadger implements yj7 {
-    @Override // yj7
+public class NotificationBadge$HuaweiHomeBadger implements xm7 {
+    @Override // xm7
     public final void a(int i) {
         Bundle bundle = new Bundle();
         bundle.putString("package", a.b.getPackageName());
-        bundle.putString("class", ak7.d.getClassName());
+        bundle.putString("class", zm7.d.getClassName());
         bundle.putInt("badgenumber", i);
-        gl.c3(new vl6(bundle, (byte) 24));
+        hl.c3(new fe7(bundle, (byte) 9));
     }
 
-    @Override // yj7
+    @Override // xm7
     public final List b() {
         return Arrays.asList("com.huawei.android.launcher");
     }

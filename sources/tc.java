@@ -1,72 +1,108 @@
 // default package
 
-import org.telegram.messenger.MediaController;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Message;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.view.ViewStub;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+import androidx.appcompat.app.AlertController$RecycleListView;
+import androidx.core.widget.NestedScrollView;
+import java.lang.ref.WeakReference;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class tc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hd b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class tc {
+    public final Context a;
+    public final jd b;
+    public final Window c;
+    public CharSequence d;
+    public AlertController$RecycleListView e;
+    public View f;
+    public Button h;
+    public Button i;
+    public CharSequence j;
+    public Message k;
+    public Button l;
+    public NestedScrollView m;
+    public Drawable n;
+    public ImageView o;
+    public TextView p;
+    public TextView q;
+    public View r;
+    public ListAdapter s;
+    public final int u;
+    public final int v;
+    public final int w;
+    public final int x;
+    public final boolean y;
+    public final rc z;
+    public boolean g = false;
+    public int t = -1;
+    public final h6 A = new h6(this, 1);
 
-    public /* synthetic */ tc(hd hdVar, byte b) {
-        this.a = b;
-        this.b = hdVar;
+    public tc(Context context, jd jdVar, Window window) {
+        this.a = context;
+        this.b = jdVar;
+        this.c = window;
+        rc rcVar = new rc();
+        rcVar.b = new WeakReference(jdVar);
+        this.z = rcVar;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, w19.e, R.attr.alertDialogStyle, 0);
+        this.u = obtainStyledAttributes.getResourceId(0, 0);
+        obtainStyledAttributes.getResourceId(2, 0);
+        this.v = obtainStyledAttributes.getResourceId(4, 0);
+        obtainStyledAttributes.getResourceId(5, 0);
+        this.w = obtainStyledAttributes.getResourceId(7, 0);
+        this.x = obtainStyledAttributes.getResourceId(3, 0);
+        this.y = obtainStyledAttributes.getBoolean(6, true);
+        obtainStyledAttributes.getDimensionPixelSize(1, 0);
+        obtainStyledAttributes.recycle();
+        jdVar.c().c(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        hd hdVar = this.b;
-        switch (b) {
-            case 0:
-                hdVar.dismiss();
-                break;
-            case 1:
-                if (!hdVar.isShowing()) {
-                    try {
-                        hdVar.show();
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-            case 2:
-                try {
-                    hdVar.dismiss();
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            case 3:
-                hdVar.dismiss();
-                break;
-            case 4:
-                hdVar.dismiss();
-                break;
-            case 5:
-                String[] strArr = MediaController.W1;
-                try {
-                    hdVar.dismiss();
-                    break;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return;
-                }
-            default:
-                hdVar.dismiss();
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    m21 Q = u21.b0(S).Q(R.raw.error, 36, k96.M0(2131748360, null));
-                    Q.t = true;
-                    Q.j();
-                    break;
-                }
-                break;
+    public static boolean a(View view) {
+        if (view.onCheckIsTextEditor()) {
+            return true;
         }
+        if (!(view instanceof ViewGroup)) {
+            return false;
+        }
+        ViewGroup viewGroup = (ViewGroup) view;
+        int childCount = viewGroup.getChildCount();
+        while (childCount > 0) {
+            childCount--;
+            if (a(viewGroup.getChildAt(childCount))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ViewGroup b(View view, View view2) {
+        if (view == null) {
+            if (view2 instanceof ViewStub) {
+                view2 = ((ViewStub) view2).inflate();
+            }
+            return (ViewGroup) view2;
+        }
+        if (view2 != null) {
+            ViewParent parent = view2.getParent();
+            if (parent instanceof ViewGroup) {
+                ((ViewGroup) parent).removeView(view2);
+            }
+        }
+        if (view instanceof ViewStub) {
+            view = ((ViewStub) view).inflate();
+        }
+        return (ViewGroup) view;
     }
 }

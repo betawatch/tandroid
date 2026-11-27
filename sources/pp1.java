@@ -1,67 +1,82 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class pp1 extends c01 {
-    public final /* synthetic */ byte d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ gb2 f;
-    public final /* synthetic */ mu1 g;
+public final class pp1 implements View.OnTouchListener {
+    public final /* synthetic */ byte a;
+    public final int[] b;
+    public final /* synthetic */ Rect c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ pp1(mu1 mu1Var, int i, gb2 gb2Var, byte b) {
-        this.d = b;
-        this.g = mu1Var;
-        this.e = i;
-        this.f = gb2Var;
+    public pp1(j95 j95Var, Rect rect) {
+        this.a = (byte) 1;
+        this.d = j95Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 
-    @Override // c01
-    public final void c(boolean z) {
-        switch (this.d) {
-            case 0:
-                if (!z) {
-                    gl.d3(new eg((Object) this, this.e, (byte) 15), 240L);
-                    break;
-                }
-                break;
-            case 1:
-                if (!z) {
-                    gl.d3(new eg((Object) this, this.e, (byte) 18), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z) {
-                    gl.d3(new eg((Object) this, this.e, (byte) 19), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // c01
-    public final void d() {
-        byte b = this.d;
-        gb2 gb2Var = this.f;
-        int i = this.e;
-        mu1 mu1Var = this.g;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        o85 o85Var;
+        byte b = this.a;
+        Object obj = this.d;
+        int[] iArr = this.b;
+        Rect rect = this.c;
         switch (b) {
             case 0:
-                mu1Var.ac = i;
-                mu1Var.bc = 6;
-                gb2Var.invalidate();
-                break;
-            case 1:
-                mu1Var.ac = i;
-                mu1Var.bc = 5;
-                mu1Var.dc = null;
-                gb2Var.invalidate();
+                zu1 zu1Var = (zu1) obj;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4) {
+                        zu1Var.M5(true);
+                        break;
+                    }
+                } else {
+                    n8 n8Var = zu1Var.g9;
+                    if (n8Var != null && n8Var.isShowing()) {
+                        View contentView = zu1Var.g9.getContentView();
+                        contentView.getLocationInWindow(iArr);
+                        int i = iArr[0];
+                        rect.set(i, iArr[1], contentView.getMeasuredWidth() + i, contentView.getMeasuredHeight() + iArr[1]);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            zu1Var.M5(true);
+                            break;
+                        }
+                    }
+                }
                 break;
             default:
-                mu1Var.ac = i;
-                mu1Var.bc = 7;
-                gb2Var.invalidate();
+                j95 j95Var = (j95) obj;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4 && (o85Var = j95Var.U4) != null && o85Var.isShowing()) {
+                        j95Var.U4.dismiss();
+                        break;
+                    }
+                } else {
+                    o85 o85Var2 = j95Var.U4;
+                    if (o85Var2 != null && o85Var2.isShowing()) {
+                        View contentView2 = j95Var.U4.getContentView();
+                        contentView2.getLocationInWindow(iArr);
+                        int i2 = iArr[0];
+                        rect.set(i2, iArr[1], contentView2.getMeasuredWidth() + i2, contentView2.getMeasuredHeight() + iArr[1]);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            j95Var.U4.dismiss();
+                            break;
+                        }
+                    }
+                }
                 break;
         }
+        return false;
+    }
+
+    public pp1(zu1 zu1Var, Rect rect) {
+        this.a = (byte) 0;
+        this.d = zu1Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 }

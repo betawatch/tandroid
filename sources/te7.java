@@ -1,27 +1,111 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class te7 extends p2 implements Runnable {
-    public final Runnable n;
+public final /* synthetic */ class te7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jf7 b;
+    public final /* synthetic */ byte c;
 
-    public te7(Runnable runnable) {
-        runnable.getClass();
-        this.n = runnable;
-    }
-
-    @Override // t2
-    public final String j() {
-        return "task=[" + this.n + "]";
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ te7(jf7 jf7Var, int i, byte b) {
+        this.a = b;
+        this.b = jf7Var;
+        this.c = i;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        try {
-            this.n.run();
-        } catch (Throwable th) {
-            m(th);
-            throw th;
+        int i;
+        byte b = this.a;
+        byte b2 = this.c;
+        jf7 jf7Var = this.b;
+        switch (b) {
+            case 0:
+                try {
+                    SQLiteDatabase sQLiteDatabase = jf7Var.b;
+                    if (b2 == 0) {
+                        sQLiteDatabase.executeFast("DELETE FROM download_queue WHERE 1").stepThis().dispose();
+                    } else {
+                        Locale locale = Locale.US;
+                        sQLiteDatabase.executeFast("DELETE FROM download_queue WHERE type = " + ((int) b2)).stepThis().dispose();
+                    }
+                    return;
+                } catch (Exception e) {
+                    jf7Var.n(e, true);
+                    return;
+                }
+            default:
+                SQLiteCursor sQLiteCursor = null;
+                try {
+                    try {
+                        ArrayList arrayList = new ArrayList();
+                        SQLiteDatabase sQLiteDatabase2 = jf7Var.b;
+                        Locale locale2 = Locale.US;
+                        try {
+                            SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT uid, type, data, parent FROM download_queue WHERE type = " + ((int) b2) + " ORDER BY date DESC LIMIT 3", new Object[0]);
+                            while (queryFinalized.next()) {
+                                try {
+                                    mq3 mq3Var = new mq3();
+                                    mq3Var.b = queryFinalized.intValue(1);
+                                    mq3Var.c = queryFinalized.longValue(0);
+                                    mq3Var.f = queryFinalized.stringValue(3);
+                                    NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(2);
+                                    if (byteBufferValue != null) {
+                                        TLRPC.MessageMedia TLdeserialize = TLRPC.MessageMedia.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                        byteBufferValue.reuse();
+                                        TLRPC.Document document = TLdeserialize.document;
+                                        if (document != null) {
+                                            mq3Var.a = document;
+                                            mq3Var.d = (r47.J4(document) || r47.P4(TLdeserialize.document) || r47.h4(TLdeserialize.document)) && (((i = TLdeserialize.ttl_seconds) > 0 && i <= 60) || i == Integer.MAX_VALUE);
+                                        } else {
+                                            TLRPC.Photo photo = TLdeserialize.photo;
+                                            if (photo != null) {
+                                                mq3Var.a = photo;
+                                                int i2 = TLdeserialize.ttl_seconds;
+                                                mq3Var.d = (i2 > 0 && i2 <= 60) || i2 == Integer.MAX_VALUE;
+                                            }
+                                        }
+                                        mq3Var.e = (TLdeserialize.flags & TLObject.FLAG_31) != 0;
+                                    }
+                                    arrayList.add(mq3Var);
+                                } catch (Exception e2) {
+                                    e = e2;
+                                    sQLiteCursor = queryFinalized;
+                                    jf7Var.n(e, true);
+                                    if (sQLiteCursor != null) {
+                                        sQLiteCursor.dispose();
+                                    }
+                                    return;
+                                } catch (Throwable th) {
+                                    th = th;
+                                    sQLiteCursor = queryFinalized;
+                                    if (sQLiteCursor != null) {
+                                        sQLiteCursor.dispose();
+                                    }
+                                    throw th;
+                                }
+                            }
+                            queryFinalized.dispose();
+                            hl.c3(new sb4((Object) jf7Var, (int) b2, (Object) arrayList, (byte) 12));
+                        } catch (Exception e3) {
+                            e = e3;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                    }
+                } catch (Exception e4) {
+                    e = e4;
+                }
+                return;
         }
     }
 }

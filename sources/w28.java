@@ -1,89 +1,67 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.ui.p;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class w28 {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class w28 extends FrameLayout {
     public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final Drawable d;
-    public final Drawable e;
-    public final ColorDrawable f;
-    public final ep g = new ep((byte) 1);
-    public final RectF h = new RectF();
-    public final RectF i = new RectF();
-    public final RectF j = new RectF();
-    public final RectF k = new RectF();
-    public final Paint l = new Paint();
-    public final Drawable m;
-    public final Drawable n;
-    public final Drawable o;
-    public final Drawable p;
-    public final Drawable q;
-    public final Drawable r;
-    public final Drawable s;
-    public final oy8 t;
-    public final oy8 u;
+    public float b;
+    public vpa c;
+    public final /* synthetic */ p d;
 
-    public w28(Context context) {
-        this.m = context.getDrawable(R.drawable.media_share);
-        this.o = context.getDrawable(R.drawable.media_like);
-        this.n = context.getDrawable(R.drawable.media_repost);
-        Drawable drawable = context.getDrawable(R.drawable.media_like_active);
-        this.p = drawable;
-        drawable.setColorFilter(new PorterDuffColorFilter(-53704, PorterDuff.Mode.MULTIPLY));
-        this.q = context.getDrawable(R.drawable.media_more);
-        this.r = context.getDrawable(R.drawable.menu_stream_pip);
-        this.s = context.getDrawable(R.drawable.msg_delete);
-        this.u = new oy8(R.raw.media_mute_unmute, gl.L(28.0f), gl.L(28.0f), true, null);
-        oy8 oy8Var = new oy8(R.raw.media_mute_unmute, gl.L(28.0f), gl.L(28.0f), true, null);
-        this.t = oy8Var;
-        oy8Var.I(20, false, true);
-        oy8Var.stop();
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(1442840575);
-        Paint paint2 = new Paint(1);
-        this.b = paint2;
-        paint2.setColor(-1);
-        int o = bm2.o(-16777216, kk7.m1);
-        this.d = context.getDrawable(R.drawable.shadow_story_top);
-        this.e = context.getDrawable(R.drawable.shadow_story_bottom);
-        Paint paint3 = new Paint();
-        this.c = paint3;
-        paint3.setColor(o);
-        this.f = new ColorDrawable(bm2.f(0.1f, -16777216, -1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w28(p pVar, Context context) {
+        super(context);
+        this.d = pVar;
+        this.a = new Paint(1);
+        setWillNotDraw(false);
     }
 
     public final void a(boolean z, boolean z2) {
-        oy8 oy8Var = this.u;
+        vpa vpaVar = this.c;
+        if (vpaVar != null) {
+            vpaVar.d();
+        }
+        float f = z ? 1.0f : 0.0f;
         if (!z2) {
-            oy8Var.I(z ? 20 : 0, false, false);
-            oy8Var.K(z ? 20 : 0);
-            return;
-        }
-        if (z) {
-            if (oy8Var.b0 > 20) {
-                oy8Var.I(0, false, false);
+            this.b = f;
+            TextView textView = this.d.V;
+            if (textView != null) {
+                textView.setAlpha((f * 0.2f) + 0.8f);
             }
-            oy8Var.K(20);
-            oy8Var.start();
+            invalidate();
             return;
         }
-        int i = oy8Var.b0;
-        if (i == 0 || i >= 43) {
+        float f2 = this.b;
+        if (f2 == f) {
             return;
         }
-        oy8Var.K(43);
-        oy8Var.start();
+        vpa vpaVar2 = new vpa(new xk4(f2 * 100.0f));
+        wpa wpaVar = new wpa(f * 100.0f);
+        wpaVar.b(z ? 500.0f : 650.0f);
+        wpaVar.a(1.0f);
+        vpaVar2.m = wpaVar;
+        this.c = vpaVar2;
+        vpaVar2.b(new i10(this, (byte) 11));
+        this.c.a(new iw0(this, (byte) 6));
+        this.c.h();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i = aob.O6;
+        p pVar = this.d;
+        canvas.drawColor(pVar.getThemedColor(i));
+        int themedColor = pVar.getThemedColor(aob.Vi);
+        Paint paint = this.a;
+        paint.setColor(themedColor);
+        canvas.drawCircle(ob6.a0 ? getWidth() - hl.L(28.0f) : hl.L(28.0f), -hl.L(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
     }
 }

@@ -1,66 +1,67 @@
 // default package
 
-import android.os.Handler;
-import android.os.Message;
-import android.os.SystemClock;
-import android.view.Surface;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class uk6 implements Handler.Callback {
-    public final Handler a;
-    public final /* synthetic */ vk6 b;
-
-    public uk6(vk6 vk6Var, ek6 ek6Var) {
-        this.b = vk6Var;
-        Handler q = g8c.q(this);
-        this.a = q;
-        ek6Var.m(this, q);
+public abstract class uk6 {
+    public static Object a(Map map, Object obj) {
+        map.getClass();
+        if (map instanceof mk6) {
+            return ((mk6) map).a();
+        }
+        Object obj2 = map.get(obj);
+        if (obj2 != null || map.containsKey(obj)) {
+            return obj2;
+        }
+        throw new NoSuchElementException("Key " + obj + " is missing in the map.");
     }
 
-    public final void a(long j) {
-        Surface surface;
-        vk6 vk6Var = this.b;
-        v8b v8bVar = vk6Var.c1;
-        if (this != vk6Var.Q1 || vk6Var.c0 == null) {
-            return;
+    public static int b(int i) {
+        return i < 0 ? i : i < 3 ? i + 1 : i < 1073741824 ? (int) ((i / 0.75f) + 1.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    public static Map c(rx7... rx7VarArr) {
+        if (rx7VarArr.length <= 0) {
+            return y24.a;
         }
-        if (j == Long.MAX_VALUE) {
-            vk6Var.M0 = true;
-            return;
-        }
-        try {
-            vk6Var.I0(j);
-            icc iccVar = vk6Var.L1;
-            if (!iccVar.equals(icc.d) && !iccVar.equals(vk6Var.M1)) {
-                vk6Var.M1 = iccVar;
-                v8bVar.q(iccVar);
-            }
-            vk6Var.O0.e++;
-            uac uacVar = vk6Var.f1;
-            boolean z = uacVar.e != 3;
-            uacVar.e = 3;
-            uacVar.k.getClass();
-            uacVar.g = g8c.T(SystemClock.elapsedRealtime());
-            if (z && (surface = vk6Var.v1) != null) {
-                v8bVar.p(surface);
-                vk6Var.y1 = true;
-            }
-            vk6Var.n0(j);
-        } catch (j54 e) {
-            vk6Var.N0 = e;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(b(rx7VarArr.length));
+        d(linkedHashMap, rx7VarArr);
+        return linkedHashMap;
+    }
+
+    public static final void d(LinkedHashMap linkedHashMap, rx7[] rx7VarArr) {
+        for (rx7 rx7Var : rx7VarArr) {
+            linkedHashMap.put(rx7Var.a, rx7Var.b);
         }
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        if (message.what != 0) {
-            return false;
+    public static Map e(ArrayList arrayList) {
+        int size = arrayList.size();
+        if (size == 0) {
+            return y24.a;
         }
-        int i = message.arg1;
-        int i2 = message.arg2;
-        String str = g8c.a;
-        a(((i & 4294967295L) << 32) | (i2 & 4294967295L));
-        return true;
+        int i = 0;
+        if (size == 1) {
+            rx7 rx7Var = (rx7) arrayList.get(0);
+            rx7Var.getClass();
+            Map singletonMap = Collections.singletonMap(rx7Var.a, rx7Var.b);
+            singletonMap.getClass();
+            return singletonMap;
+        }
+        LinkedHashMap linkedHashMap = new LinkedHashMap(b(arrayList.size()));
+        int size2 = arrayList.size();
+        while (i < size2) {
+            Object obj = arrayList.get(i);
+            i++;
+            rx7 rx7Var2 = (rx7) obj;
+            linkedHashMap.put(rx7Var2.a, rx7Var2.b);
+        }
+        return linkedHashMap;
     }
 }

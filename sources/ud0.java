@@ -1,42 +1,44 @@
 // default package
 
-import android.graphics.drawable.GradientDrawable;
+import android.graphics.Bitmap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract /* synthetic */ class ud0 {
-    public static final /* synthetic */ int[] a;
+public final /* synthetic */ class ud0 implements xd0 {
+    public final /* synthetic */ yd0 a;
+    public final /* synthetic */ ksd[] b;
+    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ lr5[] d;
 
-    static {
-        int[] iArr = new int[GradientDrawable.Orientation.values().length];
-        a = iArr;
-        try {
-            iArr[GradientDrawable.Orientation.TOP_BOTTOM.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public /* synthetic */ ud0(yd0 yd0Var, ksd[] ksdVarArr, Runnable[] runnableArr, lr5[] lr5VarArr) {
+        this.a = yd0Var;
+        this.b = ksdVarArr;
+        this.c = runnableArr;
+        this.d = lr5VarArr;
+    }
+
+    @Override // xd0
+    public final void dispose() {
+        yd0 yd0Var = this.a;
+        ksd[] ksdVarArr = this.b;
+        Runnable[] runnableArr = this.c;
+        lr5[] lr5VarArr = this.d;
+        ksdVarArr[0] = null;
+        if (yd0Var.e.contains(runnableArr)) {
+            to3 to3Var = Utilities.e;
+            to3Var.getClass();
+            for (Runnable runnable : runnableArr) {
+                to3Var.a(runnable);
+            }
+            yd0Var.e.remove(runnableArr);
         }
-        try {
-            a[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
+        for (lr5 lr5Var : lr5VarArr) {
+            Bitmap bitmap = (Bitmap) yd0Var.b.remove(lr5Var);
+            yd0Var.c.remove(lr5Var);
+            if (bitmap != null) {
+                bitmap.recycle();
+            }
         }
     }
 }

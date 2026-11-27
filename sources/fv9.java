@@ -1,13 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface fv9 {
-    boolean c();
+public final class fv9 {
+    public static final fv9 b;
+    public final bp5 a;
 
-    boolean d();
+    static {
+        k09 k09Var = new k09((byte) 7);
+        k09Var.b = bp5.p(2, 1, 5);
+        b = new fv9(k09Var);
+    }
 
-    ev9 f(long j);
+    public fv9(k09 k09Var) {
+        this.a = (bp5) k09Var.b;
+    }
 
-    long h();
+    public final boolean equals(Object obj) {
+        return (obj instanceof fv9) && this.a.equals(((fv9) obj).a);
+    }
+
+    public final int hashCode() {
+        Boolean bool = Boolean.TRUE;
+        return Objects.hash(this.a, null, null, bool, bool, bool, bool, bool);
+    }
 }

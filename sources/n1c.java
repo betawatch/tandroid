@@ -1,30 +1,27 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class n1c implements bja {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ o1c c;
+import android.os.Build;
+import android.os.Trace;
+import android.util.Log;
 
-    public n1c(o1c o1cVar) {
-        this.c = o1cVar;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class n1c {
+    public static final /* synthetic */ int a = 0;
 
-    @Override // bja
-    public final void L(int i, boolean z) {
-        if (this.a == i && this.b == z) {
-            return;
-        }
-        this.a = i;
-        this.b = z;
-        if (i > gl.L(20.0f)) {
-            o1c o1cVar = this.c;
-            if (o1cVar.n0) {
-                return;
+    static {
+        if (Build.VERSION.SDK_INT < 29) {
+            try {
+                Trace.class.getField("TRACE_TAG_APP").getLong(null);
+                Class cls = Long.TYPE;
+                Trace.class.getMethod("isTagEnabled", cls);
+                Class cls2 = Integer.TYPE;
+                Trace.class.getMethod("asyncTraceBegin", cls, String.class, cls2);
+                Trace.class.getMethod("asyncTraceEnd", cls, String.class, cls2);
+                Trace.class.getMethod("traceCounter", cls, String.class, cls2);
+            } catch (Exception e) {
+                Log.i("TraceCompat", "Unable to initialize via reflection.", e);
             }
-            o1cVar.u0.r0 = false;
-            o1cVar.n0 = true;
         }
     }
 }

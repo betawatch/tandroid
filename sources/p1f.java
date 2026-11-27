@@ -1,44 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Typeface;
+import java.io.File;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class p1f {
-    public static void a(int i, int i2) {
-        String a;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                a = s1f.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
-            } else {
-                if (i2 < 0) {
-                    w26.j(de9.k(i2, "negative size: "));
-                    return;
-                }
-                a = s1f.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+    public static go4 e(go4[] go4VarArr, int i) {
+        int i2 = (i & 1) == 0 ? 400 : 700;
+        boolean z = (i & 2) != 0;
+        go4 go4Var = null;
+        int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        for (go4 go4Var2 : go4VarArr) {
+            int abs = (Math.abs(go4Var2.c - i2) << 1) + (go4Var2.d == z ? 0 : 1);
+            if (go4Var == null || i3 > abs) {
+                go4Var = go4Var2;
+                i3 = abs;
             }
-            throw new IndexOutOfBoundsException(a);
         }
+        return go4Var;
     }
 
-    public static void b(int i, int i2) {
-        if (i < 0 || i > i2) {
-            k93.i(d(i, i2, "index"));
-        }
+    public abstract Typeface a(Context context, co4 co4Var, Resources resources, int i);
+
+    public abstract Typeface b(Context context, go4[] go4VarArr, int i);
+
+    public Typeface c(Context context, List list, int i) {
+        throw new IllegalStateException("createFromFontInfoWithFallback must only be called on API 29+");
     }
 
-    public static void c(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? d(i, i3, "start index") : (i2 < 0 || i2 > i3) ? d(i2, i3, "end index") : s1f.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+    public Typeface d(Context context, Resources resources, int i, String str, int i2) {
+        File c = r1f.c(context);
+        Typeface typeface = null;
+        if (c == null) {
+            return null;
         }
-    }
-
-    public static String d(int i, int i2, String str) {
-        if (i < 0) {
-            return s1f.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+        try {
+            if (r1f.a(c, resources, i)) {
+                typeface = Typeface.createFromFile(c.getPath());
+            }
+        } catch (RuntimeException unused) {
+        } catch (Throwable th) {
+            c.delete();
+            throw th;
         }
-        if (i2 >= 0) {
-            return s1f.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
-        }
-        w26.j(de9.k(i2, "negative size: "));
-        return null;
+        c.delete();
+        return typeface;
     }
 }

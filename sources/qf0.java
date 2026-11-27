@@ -1,79 +1,132 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
+import java.io.Serializable;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class qf0 implements o63 {
-    private u63 dataSpec;
-    private final boolean isNetwork;
-    private int listenerCount;
-    private final ArrayList<vyb> listeners = new ArrayList<>(1);
+public abstract class qf0 implements zw2, wx2, Serializable {
+    private final zw2 completion;
 
-    public qf0(boolean z) {
-        this.isNetwork = z;
+    public qf0(zw2 zw2Var) {
+        this.completion = zw2Var;
     }
 
-    @Override // o63
-    public final void addTransferListener(vyb vybVar) {
-        vybVar.getClass();
-        if (this.listeners.contains(vybVar)) {
-            return;
+    public zw2 create(zw2 zw2Var) {
+        zw2Var.getClass();
+        throw new UnsupportedOperationException("create(Continuation) has not been overridden");
+    }
+
+    public wx2 getCallerFrame() {
+        zw2 zw2Var = this.completion;
+        if (zw2Var instanceof wx2) {
+            return (wx2) zw2Var;
         }
-        this.listeners.add(vybVar);
-        this.listenerCount++;
+        return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x001f, code lost:
-    
-        if ((r0.h & 8) != 8) goto L11;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void bytesTransferred(int i) {
-        u63 u63Var = this.dataSpec;
-        String str = g8c.a;
-        for (int i2 = 0; i2 < this.listenerCount; i2++) {
-            vyb vybVar = this.listeners.get(i2);
-            boolean z = this.isNetwork;
-            s93 s93Var = (s93) vybVar;
-            synchronized (s93Var) {
-                if (z) {
-                    if (u63Var != null) {
-                    }
-                    s93Var.i += i;
-                }
+    public final zw2 getCompletion() {
+        return this.completion;
+    }
+
+    public StackTraceElement getStackTraceElement() {
+        int i;
+        String str;
+        Method method;
+        Object invoke;
+        Method method2;
+        Object invoke2;
+        g93 g93Var = (g93) getClass().getAnnotation(g93.class);
+        String str2 = null;
+        if (g93Var == null) {
+            return null;
+        }
+        int v = g93Var.v();
+        if (v > 1) {
+            throw new IllegalStateException(("Debug metadata version mismatch. Expected: 1, got " + v + ". Please update the Kotlin standard library.").toString());
+        }
+        try {
+            Field declaredField = getClass().getDeclaredField("label");
+            declaredField.setAccessible(true);
+            Object obj = declaredField.get(this);
+            Integer num = obj instanceof Integer ? (Integer) obj : null;
+            i = (num != null ? num.intValue() : 0) - 1;
+        } catch (Exception unused) {
+            i = -1;
+        }
+        int i2 = i >= 0 ? g93Var.l()[i] : -1;
+        yg7 yg7Var = mfd.b;
+        yg7 yg7Var2 = mfd.a;
+        if (yg7Var == null) {
+            try {
+                yg7 yg7Var3 = new yg7(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
+                mfd.b = yg7Var3;
+                yg7Var = yg7Var3;
+            } catch (Exception unused2) {
+                mfd.b = yg7Var2;
+                yg7Var = yg7Var2;
             }
         }
-    }
-
-    @Override // o63
-    public Map getResponseHeaders() {
-        return Collections.EMPTY_MAP;
-    }
-
-    public final void transferEnded() {
-        u63 u63Var = this.dataSpec;
-        String str = g8c.a;
-        for (int i = 0; i < this.listenerCount; i++) {
-            ((s93) this.listeners.get(i)).g(u63Var, this.isNetwork);
+        if (yg7Var != yg7Var2 && (method = yg7Var.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = yg7Var.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
+            Method method3 = yg7Var.c;
+            Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
+            if (invoke3 instanceof String) {
+                str2 = (String) invoke3;
+            }
         }
-        this.dataSpec = null;
+        if (str2 == null) {
+            str = g93Var.c();
+        } else {
+            str = str2 + '/' + g93Var.c();
+        }
+        return new StackTraceElement(str, g93Var.m(), g93Var.f(), i2);
     }
 
-    public final void transferInitializing(u63 u63Var) {
-        for (int i = 0; i < this.listenerCount; i++) {
-            this.listeners.get(i).getClass();
+    public Object invokeSuspend(Object obj) {
+        ixe.b(obj);
+        return f9c.a;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // zw2
+    public final void resumeWith(Object obj) {
+        while (true) {
+            qf0 qf0Var = this;
+            zw2 zw2Var = qf0Var.completion;
+            zw2Var.getClass();
+            try {
+                obj = qf0Var.invokeSuspend(obj);
+                if (obj == vx2.a) {
+                    return;
+                }
+            } catch (Throwable th) {
+                obj = new ge9(th);
+            }
+            qf0Var.releaseIntercepted();
+            if (!(zw2Var instanceof qf0)) {
+                zw2Var.resumeWith(obj);
+                return;
+            }
+            this = zw2Var;
         }
     }
 
-    public final void transferStarted(u63 u63Var) {
-        this.dataSpec = u63Var;
-        for (int i = 0; i < this.listenerCount; i++) {
-            ((s93) this.listeners.get(i)).h(u63Var, this.isNetwork);
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Continuation at ");
+        Object stackTraceElement = getStackTraceElement();
+        if (stackTraceElement == null) {
+            stackTraceElement = getClass().getName();
         }
+        sb.append(stackTraceElement);
+        return sb.toString();
+    }
+
+    public zw2 create(Object obj, zw2 zw2Var) {
+        zw2Var.getClass();
+        throw new UnsupportedOperationException("create(Any?;Continuation) has not been overridden");
+    }
+
+    public void releaseIntercepted() {
     }
 }

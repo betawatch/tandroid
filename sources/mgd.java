@@ -1,40 +1,31 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class mgd {
-    static {
-        mgd.class.getClassLoader();
+public final class mgd extends n3 implements Serializable {
+    public final Object b;
+    public final m3 c;
+
+    public mgd(Object obj, m3 m3Var) {
+        super((byte) 1, false);
+        this.b = obj;
+        this.c = m3Var;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
     }
 
-    public static void b(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
-        }
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.c;
     }
 
-    public static void c(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail <= 0) {
-            return;
-        }
-        StringBuilder sb = new StringBuilder(String.valueOf(dataAvail).length() + 45);
-        sb.append("Parcel data not fully consumed, unread size: ");
-        sb.append(dataAvail);
-        throw new BadParcelableException(sb.toString());
+    @Override // n3, java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

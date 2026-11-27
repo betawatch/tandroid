@@ -1,141 +1,47 @@
 // default package
 
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.net.Uri;
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.regex.Pattern;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class qhf {
-    public static HashMap f;
-    public static Object k;
-    public static boolean l;
-    public static final Uri a = Uri.parse("content://com.google.android.gsf.gservices");
-    public static final Uri b = Uri.parse("content://com.google.android.gsf.gservices/prefix");
-    public static final Pattern c = Pattern.compile("^(1|true|t|on|yes|y)$", 2);
-    public static final Pattern d = Pattern.compile("^(0|false|f|off|no|n)$", 2);
-    public static final AtomicBoolean e = new AtomicBoolean();
-    public static final HashMap g = new HashMap();
-    public static final HashMap h = new HashMap();
-    public static final HashMap i = new HashMap();
-    public static final HashMap j = new HashMap();
-    public static final String[] m = new String[0];
+public final class qhf extends dhf implements ScheduledExecutorService {
+    public final ScheduledExecutorService b;
 
-    public static Object a(HashMap hashMap, String str, Object obj) {
-        synchronized (qhf.class) {
-            if (!hashMap.containsKey(str)) {
-                return null;
-            }
-            Object obj2 = hashMap.get(str);
-            if (obj2 != null) {
-                obj = obj2;
-            }
-            return obj;
-        }
+    public qhf(ScheduledExecutorService scheduledExecutorService) {
+        super(scheduledExecutorService);
+        this.b = scheduledExecutorService;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x00b5, code lost:
-    
-        if (r14 != null) goto L54;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static String b(ContentResolver contentResolver, String str) {
-        Cursor query;
-        String str2;
-        synchronized (qhf.class) {
-            c(contentResolver);
-            Object obj = k;
-            if (f.containsKey(str)) {
-                String str3 = (String) f.get(str);
-                return str3 != null ? str3 : null;
-            }
-            for (String str4 : m) {
-                if (str.startsWith(str4)) {
-                    if (!l || f.isEmpty()) {
-                        String[] strArr = m;
-                        HashMap hashMap = f;
-                        query = contentResolver.query(b, null, null, strArr, null);
-                        TreeMap treeMap = new TreeMap();
-                        if (query != null) {
-                            while (query.moveToNext()) {
-                                try {
-                                    treeMap.put(query.getString(0), query.getString(1));
-                                } finally {
-                                    query.close();
-                                }
-                            }
-                        }
-                        hashMap.putAll(treeMap);
-                        l = true;
-                        if (f.containsKey(str) && (str2 = (String) f.get(str)) != null) {
-                            r3 = str2;
-                        }
-                    }
-                    return r3;
-                }
-            }
-            query = contentResolver.query(a, null, null, new String[]{str}, null);
-            if (query != null) {
-                try {
-                    if (query.moveToFirst()) {
-                        String string = query.getString(1);
-                        if (string != null && string.equals(null)) {
-                            string = null;
-                        }
-                        d(obj, str, string);
-                        if (string != null) {
-                            r3 = string;
-                        }
-                        return r3;
-                    }
-                } finally {
-                }
-            }
-            d(obj, str, null);
-        }
+    @Override // dhf, java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        a3.j(this);
     }
 
-    public static void c(ContentResolver contentResolver) {
-        HashMap hashMap = f;
-        AtomicBoolean atomicBoolean = e;
-        if (hashMap == null) {
-            atomicBoolean.set(false);
-            f = new HashMap();
-            k = new Object();
-            l = false;
-            contentResolver.registerContentObserver(a, true, new hd1(null, (byte) 3));
-            return;
-        }
-        if (atomicBoolean.getAndSet(false)) {
-            f.clear();
-            g.clear();
-            h.clear();
-            i.clear();
-            j.clear();
-            k = new Object();
-            l = false;
-        }
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final ScheduledFuture schedule(Runnable runnable, long j, TimeUnit timeUnit) {
+        uhf uhfVar = new uhf(Executors.callable(runnable, null));
+        return new fhf(uhfVar, this.b.schedule(uhfVar, j, timeUnit));
     }
 
-    public static void d(Object obj, String str, String str2) {
-        synchronized (qhf.class) {
-            if (obj == k) {
-                f.put(str, str2);
-            }
-        }
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
+        phf phfVar = new phf(runnable);
+        return new fhf(phfVar, this.b.scheduleAtFixedRate(phfVar, j, j2, timeUnit));
     }
 
-    public static void e(Object obj, HashMap hashMap, String str, Object obj2) {
-        synchronized (qhf.class) {
-            if (obj == k) {
-                hashMap.put(str, obj2);
-                f.remove(str);
-            }
-        }
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j, long j2, TimeUnit timeUnit) {
+        phf phfVar = new phf(runnable);
+        return new fhf(phfVar, this.b.scheduleWithFixedDelay(phfVar, j, j2, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j, TimeUnit timeUnit) {
+        uhf uhfVar = new uhf(callable);
+        return new fhf(uhfVar, this.b.schedule(uhfVar, j, timeUnit));
     }
 }

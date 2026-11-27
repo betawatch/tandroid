@@ -1,352 +1,411 @@
 // default package
 
-import android.content.Context;
 import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.ViewGroup;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Locale;
+import org.json.JSONObject;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class m08 extends n39 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ t08 e;
+public final class m08 extends d6 {
+    public final /* synthetic */ b18 a;
+
+    public m08(b18 b18Var) {
+        this.a = b18Var;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01fe  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x020e  */
+    @Override // d6
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i) {
+        int i2;
+        int i3;
+        int i4;
+        JSONObject jSONObject;
+        HashMap hashMap;
+        HashMap hashMap2;
+        String str;
+        int i5;
+        String obj;
+        b18 b18Var = this.a;
+        int i6 = b18Var.b;
+        if (i == -1) {
+            if (b18Var.O0(true)) {
+                return;
+            }
+            if (i6 == 0 || i6 == 5) {
+                b18Var.N0(false);
+            }
+            b18Var.finishFragment();
+            return;
+        }
+        if (i == 1) {
+            if (b18Var.getParentActivity() != null) {
+                p66 p66Var = new p66(b18Var.getParentActivity(), null);
+                String M0 = ob6.M0(2131747286, null);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
+                int indexOf = M0.indexOf(42);
+                int lastIndexOf = M0.lastIndexOf(42);
+                if (indexOf != -1 && lastIndexOf != -1) {
+                    spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
+                    spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
+                    spannableStringBuilder.setSpan(new vi((byte) 2, this, ob6.M0(2131747284, null)), indexOf, lastIndexOf - 1, 33);
+                }
+                p66Var.setText(spannableStringBuilder);
+                p66Var.setTextSize(1, 16.0f);
+                yob.G(p66Var, aob.k5, null);
+                yob.C(p66Var, aob.l5, null);
+                p66Var.setPadding(hl.L(23.0f), 0, hl.L(23.0f), 0);
+                p66Var.setMovementMethod(new dl((byte) 0));
+                yob.X(p66Var, aob.j5, null);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b18Var.getParentActivity());
+                alertDialog$Builder.n(p66Var);
+                String M02 = ob6.M0(2131747285, null);
+                id idVar = alertDialog$Builder.a;
+                idVar.S = M02;
+                alertDialog$Builder.g(ob6.M0(2131752006, null), null);
+                b18Var.showDialog(idVar);
+                return;
+            }
+            return;
+        }
+        if (i == 2) {
+            if (i6 == 5) {
+                b18Var.E1(false);
+                return;
+            }
+            if (i6 == 7) {
+                b18Var.K1[b18Var.J1].h(null);
+                return;
+            }
+            fe7 fe7Var = new fe7(this, (byte) 22);
+            um4 um4Var = new um4(this, fe7Var, false, (byte) 17);
+            if (i6 == 4) {
+                if (b18Var.f) {
+                    obj = b18Var.e1;
+                } else if (b18Var.Q0()) {
+                    return;
+                } else {
+                    obj = b18Var.Z[0].getText().toString();
+                }
+                b18Var.C1.c(b18Var.F, obj, null, null, null, null, null, null, null, null, fe7Var, um4Var);
+            } else if (i6 == 3) {
+                if (b18Var.f) {
+                    i5 = ((e) b18Var).currentAccount;
+                    str = yac.h(i5).f().phone;
+                } else {
+                    if (b18Var.Q0()) {
+                        return;
+                    }
+                    str = b18Var.Z[1].getText().toString() + b18Var.Z[2].getText().toString();
+                }
+                b18Var.C1.c(b18Var.F, str, null, null, null, null, null, null, null, null, fe7Var, um4Var);
+            } else if (i6 == 2) {
+                if (!b18Var.p1.isEmpty() || b18Var.Q0()) {
+                    return;
+                }
+                String str2 = b18Var.a;
+                if (str2 == null || str2.equals(b18Var.f1())) {
+                    b18Var.finishFragment();
+                    return;
+                }
+                if (!b18Var.w0) {
+                    jSONObject = new JSONObject();
+                    try {
+                        jSONObject.put("street_line1", b18Var.Z[0].getText().toString());
+                        jSONObject.put("street_line2", b18Var.Z[1].getText().toString());
+                        jSONObject.put("post_code", b18Var.Z[2].getText().toString());
+                        jSONObject.put("city", b18Var.Z[3].getText().toString());
+                        jSONObject.put("state", b18Var.Z[4].getText().toString());
+                        jSONObject.put("country_code", b18Var.s);
+                    } catch (Exception unused) {
+                    }
+                    hashMap = b18Var.x1;
+                    if (hashMap != null) {
+                        hashMap.clear();
+                    }
+                    hashMap2 = b18Var.y1;
+                    if (hashMap2 != null) {
+                        hashMap2.clear();
+                    }
+                    b18Var.C1.c(b18Var.F, null, jSONObject != null ? jSONObject.toString() : null, b18Var.G, null, b18Var.j1, b18Var.k1, b18Var.l1, null, null, fe7Var, um4Var);
+                }
+                jSONObject = null;
+                hashMap = b18Var.x1;
+                if (hashMap != null) {
+                }
+                hashMap2 = b18Var.y1;
+                if (hashMap2 != null) {
+                }
+                b18Var.C1.c(b18Var.F, null, jSONObject != null ? jSONObject.toString() : null, b18Var.G, null, b18Var.j1, b18Var.k1, b18Var.l1, null, null, fe7Var, um4Var);
+            } else if (i6 == 1) {
+                if (!c(fe7Var, um4Var)) {
+                    return;
+                }
+            } else if (i6 == 6) {
+                TL_account.verifyEmail verifyemail = new TL_account.verifyEmail();
+                verifyemail.purpose = new TLRPC.TL_emailVerifyPurposePassport();
+                TLRPC.TL_emailVerificationCode tL_emailVerificationCode = new TLRPC.TL_emailVerificationCode();
+                tL_emailVerificationCode.code = b18Var.Z[0].getText().toString();
+                verifyemail.verification = tL_emailVerificationCode;
+                i2 = ((e) b18Var).currentAccount;
+                int sendRequest = ConnectionsManager.getInstance(i2).sendRequest(verifyemail, new au0(this, fe7Var, um4Var, verifyemail, (byte) 13));
+                i3 = ((e) b18Var).currentAccount;
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i3);
+                i4 = ((e) b18Var).classGuid;
+                connectionsManager.bindRequestToGuid(sendRequest, i4);
+            }
+            b18Var.Q1(true, true);
+        }
+    }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public m08(t08 t08Var, Context context, int i) {
-        this.e = t08Var;
-        this.c = context;
-        this.d = i;
-    }
-
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        int i = s49Var.f;
-        return i == 3 || i == 6 || i == 8 || i == 12;
-    }
-
-    @Override // w39
-    public final int b() {
-        return this.e.l0;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        t08 t08Var = this.e;
-        if (i == t08Var.S || i == t08Var.h0 || i == t08Var.U || i == t08Var.a0) {
-            return 2;
-        }
-        if (i == t08Var.R) {
-            return 1;
-        }
-        if (i == t08Var.T) {
-            return 3;
-        }
-        if (i == t08Var.V) {
-            return 5;
-        }
-        if (i == t08Var.W) {
-            return 6;
-        }
-        if (i == t08Var.i0) {
-            return 10;
-        }
-        if (i == t08Var.j0) {
-            return 11;
-        }
-        if (i == t08Var.b0) {
-            return 7;
-        }
-        if (i >= t08Var.c0 && i < t08Var.d0) {
-            return t08Var.L == null ? 8 : 12;
-        }
-        if (i < t08Var.e0 || i >= t08Var.f0) {
-            return (i == t08Var.l0 - 1 || i == t08Var.k0) ? 4 : 2;
-        }
-        return 9;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        String M0;
-        TLRPC.TL_peerColorCollectible tL_peerColorCollectible;
+    /* JADX WARN: Removed duplicated region for block: B:79:0x02ed  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02f4  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x02fd  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x030a  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0311  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0304  */
+    /* JADX WARN: Type inference failed for: r15v0 */
+    /* JADX WARN: Type inference failed for: r15v1, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r15v2 */
+    /* JADX WARN: Type inference failed for: r16v1 */
+    /* JADX WARN: Type inference failed for: r16v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r16v9 */
+    /* JADX WARN: Type inference failed for: r17v0 */
+    /* JADX WARN: Type inference failed for: r17v1, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r17v2 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean c(fe7 fe7Var, um4 um4Var) {
+        ?? r16;
+        int i;
+        char c;
+        ?? r17;
+        JSONObject jSONObject;
+        JSONObject jSONObject2;
+        HashMap hashMap;
+        HashMap hashMap2;
+        LinearLayout linearLayout;
+        char c2;
         int i2;
-        TLRPC.TL_peerColorCollectible tL_peerColorCollectible2;
-        View view = s49Var.a;
-        t08 t08Var = this.e;
-        HashMap hashMap = t08Var.N;
-        ArrayList arrayList = t08Var.m0;
-        a18 a18Var = t08Var.q0;
-        ArrayList arrayList2 = t08Var.M;
-        int d = d(i);
-        boolean z = this.d;
-        int i3 = 1;
-        r11 = true;
-        boolean z2 = true;
-        byte b = 0;
-        switch (d) {
-            case 1:
-                zkb.h(bkb.c6, a18Var.getResourceProvider(), view);
-                ((w08) view).updateColors();
-                break;
-            case 2:
-                mhb mhbVar = (mhb) view;
-                mhbVar.setFixedSize(0);
-                if (i != t08Var.S) {
-                    if (i != t08Var.a0) {
-                        if (i == t08Var.h0) {
-                            mhbVar.setText(k96.M0(2131743501, null));
-                            break;
-                        }
-                    } else {
-                        mhbVar.setText("");
-                        mhbVar.setFixedSize(12);
-                        break;
-                    }
-                } else {
-                    if (z) {
-                        M0 = k96.M0(a18Var.a ? 2131752422 : 2131743513, null);
-                    } else {
-                        M0 = k96.M0(a18Var.a ? 2131752310 : 2131743495, null);
-                    }
-                    mhbVar.setText(gl.D2(gl.N2(M0, -1, 0, new k08(this, z ? 1 : 0), null), true));
-                    break;
-                }
-                break;
-            case 3:
-                ((s08) view).updateColors();
-                break;
-            case 6:
-                wgb wgbVar = (wgb) view;
-                wgbVar.updateColors();
-                zkb.h(bkb.c6, a18Var.getResourceProvider(), wgbVar);
-                wgbVar.updateColors();
-                if (i == t08Var.W) {
-                    wgbVar.k(k96.M0(a18Var.a ? 2131752312 : 2131743498, null), false);
-                    break;
-                }
-                break;
-            case 7:
-                ld5 ld5Var = (ld5) view;
-                if (i == t08Var.b0) {
-                    ld5Var.c(k96.M0(2131743502, null), false);
-                }
-                zkb.h(bkb.c6, a18Var.getResourceProvider(), ld5Var);
-                break;
-            case 8:
-                g08 g08Var = (g08) view;
-                int i4 = i - t08Var.c0;
-                if (i4 >= 0 && i4 < arrayList.size()) {
-                    TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) arrayList.get(i4);
-                    g08Var.a(i4, tL_starGiftUnique);
-                    TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = t08Var.r;
-                    g08Var.b((tL_emojiStatusCollectible != null && tL_emojiStatusCollectible.collectible_id == tL_starGiftUnique.id) || ((tL_peerColorCollectible = t08Var.s) != null && tL_peerColorCollectible.collectible_id == tL_starGiftUnique.id), false);
-                    g08Var.d.invalidate();
-                    break;
-                }
-                break;
-            case 10:
-                t08Var.G = view;
-                z08 z08Var = t08Var.F;
-                arrayList2.clear();
-                hashMap.clear();
-                i2 = ((d) a18Var).currentAccount;
-                ArrayList arrayList3 = gta.v(i2, false).I;
-                arrayList2.add(k96.M0(2131749930, null));
-                int i5 = 0;
-                int i6 = 0;
-                while (i5 < arrayList3.size()) {
-                    TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList3.get(i5);
-                    if ((!z || (z == i3 && starGift.peer_color_available)) && starGift.availability_resale > 0) {
-                        if (t08Var.L == starGift) {
-                            i6 = arrayList2.size();
-                        }
-                        hashMap.put(Integer.valueOf(arrayList2.size()), starGift);
-                        TextPaint textPaint = new TextPaint(i3);
-                        textPaint.setTextSize(gl.L(14.0f));
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
-                        gm gmVar = new gm(starGift.getDocument(), textPaint.getFontMetricsInt());
-                        gmVar.size = gl.L(14.0f);
-                        spannableStringBuilder.setSpan(gmVar, 0, 1, 33);
-                        spannableStringBuilder.append(starGift.title);
-                        arrayList2.add(spannableStringBuilder);
-                    }
-                    i5++;
-                    i3 = 1;
-                }
-                l08 l08Var = new l08(this, b);
-                ArrayList arrayList4 = z08Var.f;
-                boolean z3 = z08Var.L == 0;
-                z08Var.L = 0;
-                z08Var.h = l08Var;
-                arrayList4.clear();
-                arrayList4.addAll(arrayList2);
-                z08Var.c.f();
-                z08Var.a(i6, z3);
-                t08Var.l(z08Var);
-                view.post(new i08(t08Var, (byte) 3));
-                break;
-            case 11:
-                ((r08) view).updateColors();
-                break;
-            case 12:
-                nv4 nv4Var = (nv4) view;
-                int i7 = i - t08Var.c0;
-                if (t08Var.K != null && i7 >= 0 && i7 < arrayList.size()) {
-                    TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList.get(i7);
-                    nv4Var.h(tL_starGiftUnique2, false, false, false, true, false);
-                    TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2 = t08Var.r;
-                    if ((tL_emojiStatusCollectible2 == null || tL_emojiStatusCollectible2.collectible_id != tL_starGiftUnique2.id) && ((tL_peerColorCollectible2 = t08Var.s) == null || tL_peerColorCollectible2.collectible_id != tL_starGiftUnique2.id)) {
-                        z2 = false;
-                    }
-                    nv4Var.f(z2, false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        int i2;
-        wjb wjbVar;
-        View view;
-        wjb wjbVar2;
-        wjb wjbVar3;
-        wjb wjbVar4;
+        char c3;
+        boolean z;
         int i3;
-        wjb wjbVar5;
-        t08 t08Var = this.e;
-        a18 a18Var = t08Var.q0;
-        byte b = 1;
-        switch (i) {
-            case 1:
-                Context context = t08Var.getContext();
-                i2 = ((d) a18Var).currentAccount;
-                wjbVar = ((d) a18Var).resourceProvider;
-                w08 w08Var = new w08(this.d ? 1 : 0, i2, wjbVar, context);
-                t08Var.f = w08Var;
-                zkb.h(bkb.c6, a18Var.getResourceProvider(), w08Var);
-                w08Var.a(t08Var.h, false);
-                w08Var.setOnColorClick(new l08(this, b));
-                view = w08Var;
-                break;
-            case 2:
-            default:
-                view = new mhb(t08Var.getContext(), a18Var.getResourceProvider());
-                break;
-            case 3:
-                s08 s08Var = new s08(t08Var, t08Var.getContext());
-                t08Var.E = s08Var;
-                s08Var.b(false);
-                view = s08Var;
-                break;
-            case 4:
-                View d62Var = new d62(t08Var.getContext(), (byte) 18);
-                d62Var.setTag(-33024);
-                view = d62Var;
-                break;
-            case 5:
-                View view2 = new View(t08Var.getContext());
-                view2.setTag(-33024);
-                view = view2;
-                break;
-            case 6:
-                View wgbVar = new wgb(t08Var.getContext(), a18Var.getResourceProvider());
-                zkb.h(bkb.c6, a18Var.getResourceProvider(), wgbVar);
-                view = wgbVar;
-                break;
-            case 7:
-                Context context2 = t08Var.getContext();
-                wjbVar2 = ((d) a18Var).resourceProvider;
-                View ld5Var = new ld5(context2, wjbVar2);
-                zkb.h(bkb.c6, a18Var.getResourceProvider(), ld5Var);
-                view = ld5Var;
-                break;
-            case 8:
-                Context context3 = t08Var.getContext();
-                wjbVar3 = ((d) a18Var).resourceProvider;
-                View g08Var = new g08(wjbVar3, context3, false);
-                g08Var.setTag(-33024);
-                view = g08Var;
-                break;
-            case 9:
-                Context context4 = this.c;
-                wjbVar4 = ((d) a18Var).resourceProvider;
-                pi4 pi4Var = new pi4(context4, wjbVar4);
-                pi4Var.setIsSingleCell(true);
-                pi4Var.setViewType(35);
-                pi4Var.setTag(-33024);
-                view = pi4Var;
-                break;
-            case 10:
-                View d62Var2 = new d62(t08Var.getContext(), (byte) 19);
-                d62Var2.setTag(-33024);
-                view = d62Var2;
-                break;
-            case 11:
-                view = new r08(t08Var, t08Var.getContext());
-                break;
-            case 12:
-                Context context5 = t08Var.getContext();
-                i3 = ((d) a18Var).currentAccount;
-                wjbVar5 = ((d) a18Var).resourceProvider;
-                View nv4Var = new nv4(i3, wjbVar5, context5);
-                nv4Var.setTag(-33024);
-                view = nv4Var;
-                break;
+        b18 b18Var = this.a;
+        int[] iArr = b18Var.y;
+        boolean[] zArr = b18Var.u0;
+        char c4 = 0;
+        if (!b18Var.p1.isEmpty() || b18Var.Q0()) {
+            return false;
         }
-        return new y29(view);
-    }
-
-    @Override // w39
-    public final void y(s49 s49Var) {
-        TLRPC.TL_peerColorCollectible tL_peerColorCollectible;
-        TLRPC.TL_peerColorCollectible tL_peerColorCollectible2;
-        t08 t08Var = this.e;
-        ArrayList arrayList = t08Var.m0;
-        int i = s49Var.f;
-        View view = s49Var.a;
-        if (i == 10) {
-            t08Var.G = view;
-            view.post(new i08(t08Var, (byte) 2));
-            return;
+        int i4 = 3;
+        char c5 = 2;
+        oy9 oy9Var = null;
+        ?? r15 = 1;
+        if (b18Var.v0) {
+            b18Var.v0 = false;
+            int i5 = 0;
+            boolean z2 = false;
+            while (i5 < zArr.length) {
+                if (zArr[i5]) {
+                    b18Var.Z[i5].setErrorText(ob6.M0(2131747176, null));
+                    if (!z2) {
+                        String S0 = zArr[c4] ? ob6.D0().S0(b18Var.b0[c4].getText().toString(), r15, r15) : b18Var.Z[c4].getText().toString();
+                        String S02 = zArr[r15] ? ob6.D0().S0(b18Var.b0[r15].getText().toString(), r15, r15) : b18Var.Z[r15].getText().toString();
+                        String S03 = zArr[c5] ? ob6.D0().S0(b18Var.b0[c5].getText().toString(), r15, r15) : b18Var.Z[c5].getText().toString();
+                        if (TextUtils.isEmpty(S0) || TextUtils.isEmpty(S02) || TextUtils.isEmpty(S03)) {
+                            c2 = c4;
+                            i2 = i4;
+                            c3 = c5;
+                            z = r15;
+                            i3 = i5;
+                            b18Var.C1(b18Var.Z[i3]);
+                        } else {
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b18Var.getParentActivity());
+                            Object[] objArr = new Object[i4];
+                            objArr[c4] = S0;
+                            objArr[r15] = S02;
+                            objArr[c5] = S03;
+                            c2 = c4;
+                            String a0 = ob6.a0("PassportNameCheckAlert", null, 2131747230, objArr);
+                            id idVar = alertDialog$Builder.a;
+                            idVar.U = a0;
+                            idVar.S = ob6.M0(R.string.AppName, null);
+                            i2 = i4;
+                            c3 = c5;
+                            i3 = i5;
+                            z = r15;
+                            alertDialog$Builder.j(ob6.M0(2131751319, null), new kh(this, S0, S02, S03, fe7Var, um4Var, (byte) 4));
+                            alertDialog$Builder.g(ob6.M0(2131751300, null), new wg(this, i3, (byte) 17));
+                            b18Var.showDialog(idVar);
+                        }
+                        z2 = z;
+                        i5 = i3 + 1;
+                        c4 = c2;
+                        r15 = z;
+                        c5 = c3;
+                        i4 = i2;
+                        z2 = z2;
+                    }
+                }
+                c2 = c4;
+                i2 = i4;
+                c3 = c5;
+                z = r15;
+                i3 = i5;
+                i5 = i3 + 1;
+                c4 = c2;
+                r15 = z;
+                c5 = c3;
+                i4 = i2;
+                z2 = z2;
+            }
+            boolean z3 = c4;
+            i = i4;
+            c = c5;
+            r17 = r15;
+            r16 = z3;
+            if (z2) {
+                return z3;
+            }
+        } else {
+            r16 = 0;
+            i = 3;
+            c = 2;
+            r17 = 1;
         }
-        boolean z = true;
-        if (i == 8) {
-            g08 g08Var = (g08) view;
-            int b = s49Var.b() - t08Var.c0;
-            if (b < 0 || b >= arrayList.size()) {
-                return;
-            }
-            TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) arrayList.get(b);
-            g08Var.a(b, tL_starGiftUnique);
-            TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = t08Var.r;
-            if ((tL_emojiStatusCollectible == null || tL_emojiStatusCollectible.collectible_id != tL_starGiftUnique.id) && ((tL_peerColorCollectible2 = t08Var.s) == null || tL_peerColorCollectible2.collectible_id != tL_starGiftUnique.id)) {
-                z = false;
-            }
-            g08Var.b(z, false);
-            return;
+        String str = b18Var.a;
+        if (str == null || str.equals(b18Var.f1())) {
+            b18Var.finishFragment();
+            return r16;
         }
-        if (i == 12) {
-            nv4 nv4Var = (nv4) view;
-            int b2 = s49Var.b() - t08Var.c0;
-            if (t08Var.K == null || b2 < 0 || b2 >= arrayList.size()) {
-                return;
+        try {
+            if (b18Var.w0) {
+                jSONObject = null;
+            } else {
+                HashMap hashMap3 = new HashMap(b18Var.t1);
+                if (b18Var.F.native_names) {
+                    if (b18Var.r0.getVisibility() == 0) {
+                        hashMap3.put("first_name_native", b18Var.b0[r16].getText().toString());
+                        hashMap3.put("middle_name_native", b18Var.b0[r17].getText().toString());
+                        hashMap3.put("last_name_native", b18Var.b0[c].getText().toString());
+                    } else {
+                        hashMap3.put("first_name_native", b18Var.Z[r16].getText().toString());
+                        hashMap3.put("middle_name_native", b18Var.Z[r17].getText().toString());
+                        hashMap3.put("last_name_native", b18Var.Z[c].getText().toString());
+                    }
+                }
+                hashMap3.put("first_name", b18Var.Z[r16].getText().toString());
+                hashMap3.put("middle_name", b18Var.Z[r17].getText().toString());
+                hashMap3.put("last_name", b18Var.Z[c].getText().toString());
+                hashMap3.put("birth_date", b18Var.Z[i].getText().toString());
+                hashMap3.put("gender", b18Var.x);
+                hashMap3.put("country_code", b18Var.s);
+                hashMap3.put("residence_country_code", b18Var.w);
+                jSONObject = new JSONObject();
+                try {
+                    ArrayList arrayList = new ArrayList(hashMap3.keySet());
+                    Collections.sort(arrayList, new qq7(this, i == true ? (byte) 1 : (byte) 0));
+                    int size = arrayList.size();
+                    for (int i6 = r16; i6 < size; i6++) {
+                        String str2 = (String) arrayList.get(i6);
+                        jSONObject.put(str2, hashMap3.get(str2));
+                    }
+                } catch (Exception unused) {
+                }
             }
-            TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList.get(b2);
-            nv4Var.h(tL_starGiftUnique2, false, false, false, true, false);
-            TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2 = t08Var.r;
-            if ((tL_emojiStatusCollectible2 == null || tL_emojiStatusCollectible2.collectible_id != tL_starGiftUnique2.id) && ((tL_peerColorCollectible = t08Var.s) == null || tL_peerColorCollectible.collectible_id != tL_starGiftUnique2.id)) {
-                z = false;
-            }
-            nv4Var.f(z, false);
+        } catch (Exception unused2) {
+            jSONObject = null;
+            jSONObject2 = null;
         }
+        if (b18Var.G != null) {
+            HashMap hashMap4 = new HashMap(b18Var.u1);
+            hashMap4.put("document_no", b18Var.Z[7].getText().toString());
+            if (iArr[r16] != 0) {
+                Locale locale = Locale.US;
+                Integer valueOf = Integer.valueOf(iArr[c]);
+                Integer valueOf2 = Integer.valueOf(iArr[r17]);
+                Integer valueOf3 = Integer.valueOf(iArr[r16]);
+                Object[] objArr2 = new Object[3];
+                objArr2[r16] = valueOf;
+                objArr2[r17] = valueOf2;
+                objArr2[c] = valueOf3;
+                hashMap4.put("expiry_date", String.format(locale, "%02d.%02d.%d", objArr2));
+            } else {
+                hashMap4.put("expiry_date", "");
+            }
+            jSONObject2 = new JSONObject();
+            try {
+                ArrayList arrayList2 = new ArrayList(hashMap4.keySet());
+                Collections.sort(arrayList2, new qq7(this, (byte) 4));
+                int size2 = arrayList2.size();
+                for (int i7 = r16; i7 < size2; i7++) {
+                    String str3 = (String) arrayList2.get(i7);
+                    jSONObject2.put(str3, hashMap4.get(str3));
+                }
+            } catch (Exception unused3) {
+            }
+            hashMap = b18Var.x1;
+            if (hashMap != null) {
+                hashMap.clear();
+            }
+            hashMap2 = b18Var.y1;
+            if (hashMap2 != null) {
+                hashMap2.clear();
+            }
+            j08 j08Var = b18Var.C1;
+            TLRPC.TL_secureRequiredType tL_secureRequiredType = b18Var.F;
+            String jSONObject3 = jSONObject == null ? jSONObject.toString() : null;
+            TLRPC.TL_secureRequiredType tL_secureRequiredType2 = b18Var.G;
+            String jSONObject4 = jSONObject2 == null ? jSONObject2.toString() : null;
+            oy9 oy9Var2 = b18Var.k1;
+            ArrayList arrayList3 = b18Var.l1;
+            oy9 oy9Var3 = b18Var.m1;
+            linearLayout = b18Var.g0;
+            if (linearLayout != null && linearLayout.getVisibility() == 0) {
+                oy9Var = b18Var.n1;
+            }
+            j08Var.c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, oy9Var2, arrayList3, oy9Var3, oy9Var, fe7Var, um4Var);
+            return r17;
+        }
+        jSONObject2 = null;
+        hashMap = b18Var.x1;
+        if (hashMap != null) {
+        }
+        hashMap2 = b18Var.y1;
+        if (hashMap2 != null) {
+        }
+        j08 j08Var2 = b18Var.C1;
+        TLRPC.TL_secureRequiredType tL_secureRequiredType3 = b18Var.F;
+        if (jSONObject == null) {
+        }
+        TLRPC.TL_secureRequiredType tL_secureRequiredType22 = b18Var.G;
+        if (jSONObject2 == null) {
+        }
+        oy9 oy9Var22 = b18Var.k1;
+        ArrayList arrayList32 = b18Var.l1;
+        oy9 oy9Var32 = b18Var.m1;
+        linearLayout = b18Var.g0;
+        if (linearLayout != null) {
+            oy9Var = b18Var.n1;
+        }
+        j08Var2.c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, oy9Var22, arrayList32, oy9Var32, oy9Var, fe7Var, um4Var);
+        return r17;
     }
 }

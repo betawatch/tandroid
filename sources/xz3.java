@@ -1,45 +1,43 @@
 // default package
 
 import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xz3 extends s14 {
-    public final /* synthetic */ t14 d;
+public final class xz3 extends u55 {
+    public final /* synthetic */ o24 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xz3(t14 t14Var) {
-        super(t14Var, 1);
-        this.d = t14Var;
+    public xz3(o24 o24Var) {
+        super(5);
+        this.Q = o24Var;
     }
 
-    @Override // s14, i49
-    public final void a(RecyclerView recyclerView, int i) {
-        if (i == 0) {
-            this.d.g0 = false;
+    @Override // u55, x46, q79
+    public final int n0(int i, oh2 oh2Var, c89 c89Var) {
+        int n0 = super.n0(i, oh2Var, c89Var);
+        o24 o24Var = this.Q;
+        if (n0 != 0 && o24Var.E0.getScrollState() == 1) {
+            o24Var.Y1 = false;
+            o24Var.Y();
         }
-        super.a(recyclerView, i);
+        if (o24Var.U0 == null) {
+            h04 h04Var = new h04(o24Var, o24Var.d1, o24Var.u1.a(), o24Var.u1.f(), (byte) 0);
+            o24Var.U0 = h04Var;
+            h04Var.a();
+        }
+        o24Var.U0.b();
+        return n0;
     }
 
-    @Override // s14, i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        t14 t14Var = this.d;
-        uz3 uz3Var = t14Var.R;
-        t14Var.V(uz3Var.H0());
-        super.b(recyclerView, i, i2);
-        t04 t04Var = t14Var.T;
-        if (t04Var == null || t14Var.Q.getAdapter() != t04Var) {
-            return;
-        }
-        t04 t04Var2 = t04Var.y.a;
-        if (t04Var2.G.W.G || t04Var2.F) {
-            return;
-        }
-        if (uz3Var.M0() + 20 > t04Var.b()) {
-            s04 s04Var = t04Var.y;
-            Objects.requireNonNull(s04Var);
-            gl.c3(new li3(s04Var, (byte) 26));
+    @Override // q79
+    public final void u0(RecyclerView recyclerView, c89 c89Var, int i) {
+        try {
+            z46 z46Var = new z46(recyclerView.getContext(), 2);
+            z46Var.a = i;
+            v0(z46Var);
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 }

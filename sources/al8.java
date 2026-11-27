@@ -1,106 +1,113 @@
 // default package
 
-import android.app.ActivityManager;
-import android.app.Application;
-import android.content.Context;
-import android.os.Build;
-import android.os.Process;
-import java.util.ArrayList;
-import java.util.List;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class al8 {
-    public static final al8 a = new al8();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public class al8 {
+    public final vnb a;
+    public LinearGradient d;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final int j;
+    public boolean m;
+    public boolean n;
+    public float b = 0.5f;
+    public float c = 0.5f;
+    public final Matrix e = new Matrix();
+    public final Paint f = new Paint(1);
+    public final int[] l = new int[5];
+    public float o = 1.0f;
+    public float p = 1.5f;
+    public float q = 0.0f;
+    public final int k = -1;
 
-    public static ArrayList a(Context context) {
-        List<ActivityManager.RunningAppProcessInfo> list;
-        context.getClass();
-        int i = context.getApplicationInfo().uid;
-        String str = context.getApplicationInfo().processName;
-        Object systemService = context.getSystemService("activity");
-        ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
-        if (activityManager == null || (list = activityManager.getRunningAppProcesses()) == null) {
-            list = c24.a;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : list) {
-            if (obj != null) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i2 = 0;
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj2 = arrayList.get(i3);
-            i3++;
-            if (((ActivityManager.RunningAppProcessInfo) obj2).uid == i) {
-                arrayList2.add(obj2);
-            }
-        }
-        ArrayList arrayList3 = new ArrayList(al2.c(arrayList2, 10));
-        int size2 = arrayList2.size();
-        while (i2 < size2) {
-            Object obj3 = arrayList2.get(i2);
-            i2++;
-            ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj3;
-            zb5 zb5Var = new zb5();
-            String str2 = runningAppProcessInfo.processName;
-            if (str2 == null) {
-                fvc.f("Null processName");
-                return null;
-            }
-            zb5Var.e = str2;
-            zb5Var.a = runningAppProcessInfo.pid;
-            byte b = (byte) (zb5Var.d | 1);
-            zb5Var.b = runningAppProcessInfo.importance;
-            zb5Var.d = (byte) (b | 2);
-            zb5Var.c = rp5.a(str2, str);
-            zb5Var.d = (byte) (zb5Var.d | 4);
-            arrayList3.add(zb5Var.a());
-        }
-        return arrayList3;
+    public al8(int i, int i2, int i3, int i4, vnb vnbVar) {
+        this.a = vnbVar;
+        this.g = i;
+        this.h = i2;
+        this.i = i3;
+        this.j = i4;
     }
 
-    public final wy2 b(Context context) {
-        Object obj;
-        String str;
-        context.getClass();
-        int myPid = Process.myPid();
-        ArrayList a2 = a(context);
-        int size = a2.size();
-        int i = 0;
-        while (true) {
-            if (i >= size) {
-                obj = null;
-                break;
-            }
-            obj = a2.get(i);
-            i++;
-            if (((b90) ((wy2) obj)).b == myPid) {
-                break;
-            }
+    public final void a() {
+        LinearGradient linearGradient;
+        int b = b(this.g);
+        int b2 = b(this.h);
+        int i = this.i;
+        int b3 = i < 0 ? 0 : b(i);
+        int i2 = this.j;
+        int b4 = i2 < 0 ? 0 : b(i2);
+        int i3 = this.k;
+        int b5 = i3 < 0 ? 0 : b(i3);
+        LinearGradient linearGradient2 = this.d;
+        int[] iArr = this.l;
+        if (linearGradient2 != null && iArr[0] == b && iArr[1] == b2 && iArr[2] == b3 && iArr[3] == b4 && iArr[4] == b5) {
+            return;
         }
-        wy2 wy2Var = (wy2) obj;
-        if (wy2Var != null) {
-            return wy2Var;
+        iArr[0] = b;
+        iArr[1] = b2;
+        iArr[2] = b3;
+        iArr[3] = b4;
+        iArr[4] = b5;
+        if (b3 == 0) {
+            linearGradient = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1]}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            this.d = linearGradient;
+        } else if (b4 == 0) {
+            LinearGradient linearGradient3 = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2]}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
+            this.d = linearGradient3;
+            linearGradient = linearGradient3;
+        } else if (b5 == 0) {
+            LinearGradient linearGradient4 = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3]}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+            this.d = linearGradient4;
+            linearGradient = linearGradient4;
+        } else {
+            LinearGradient linearGradient5 = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3], iArr[4]}, new float[]{0.0f, 0.425f, 0.655f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+            this.d = linearGradient5;
+            linearGradient = linearGradient5;
         }
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 > 33) {
-            str = Process.myProcessName();
-            str.getClass();
-        } else if (i2 < 28 || (str = Application.getProcessName()) == null) {
-            str = "";
+        linearGradient.setLocalMatrix(this.e);
+        this.f.setShader(this.d);
+    }
+
+    public final int b(int i) {
+        int c = c(i);
+        if (!this.n) {
+            return c;
         }
-        zb5 zb5Var = new zb5();
-        zb5Var.e = str;
-        zb5Var.a = myPid;
-        byte b = (byte) (zb5Var.d | 1);
-        zb5Var.b = 0;
-        zb5Var.c = false;
-        zb5Var.d = (byte) (((byte) (b | 2)) | 4);
-        return zb5Var.a();
+        return Color.argb(Color.alpha(c), Color.red(c) - 15, Color.green(c) - 15, Color.blue(c) - 15);
+    }
+
+    public int c(int i) {
+        return aob.v0(i, this.a);
+    }
+
+    public final void d(int i, float f, int i2, int i3, float f2, int i4) {
+        a();
+        boolean z = this.m;
+        Matrix matrix = this.e;
+        int i5 = i4 - i2;
+        if (z) {
+            matrix.reset();
+            matrix.postScale((i3 - i) / 100.0f, i5 / 100.0f, this.b * 100.0f, this.c * 100.0f);
+            matrix.postTranslate(f, f2);
+            this.d.setLocalMatrix(matrix);
+            return;
+        }
+        a();
+        matrix.reset();
+        matrix.postScale((i3 - i) / 100.0f, (i5 << 1) / 100.0f, 75.0f, 50.0f);
+        matrix.postTranslate(f, (-r9) + f2);
+        this.d.setLocalMatrix(matrix);
+    }
+
+    public final void e(RectF rectF) {
+        d((int) rectF.left, 0.0f, (int) rectF.top, (int) rectF.right, 0.0f, (int) rectF.bottom);
     }
 }

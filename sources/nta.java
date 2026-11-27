@@ -1,103 +1,26 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nta implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ fx0[] b;
-    public final /* synthetic */ TL_stars.StarsTransaction c;
-    public final /* synthetic */ long d;
+public final class nta {
+    public final int a;
+    public final float b;
+    public final float c;
+    public final byte d;
+    public final int e;
+    public final float f;
+    public final tta g;
+    public final a39 h;
 
-    public /* synthetic */ nta(fx0[] fx0VarArr, long j, TL_stars.StarsTransaction starsTransaction) {
-        this.a = (byte) 3;
-        this.b = fx0VarArr;
-        this.d = j;
-        this.c = starsTransaction;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        long j = this.d;
-        TL_stars.StarsTransaction starsTransaction = this.c;
-        fx0[] fx0VarArr = this.b;
-        switch (b) {
-            case 0:
-                fx0VarArr[0].dismiss();
-                d S = LaunchActivity.S();
-                if (S != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S.presentFragment(mu1.W9(j));
-                        break;
-                    } else {
-                        S.presentFragment(mu1.V9(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                fx0VarArr[0].dismiss();
-                d S2 = LaunchActivity.S();
-                if (S2 != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S2.presentFragment(mu1.W9(j));
-                        break;
-                    } else {
-                        S2.presentFragment(mu1.V9(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                fx0VarArr[0].dismiss();
-                d S3 = LaunchActivity.S();
-                if (S3 != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S3.presentFragment(mu1.W9(j));
-                        break;
-                    } else {
-                        S3.presentFragment(mu1.V9(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                fx0VarArr[0].dismiss();
-                d S4 = LaunchActivity.S();
-                if (S4 != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", -j);
-                    bundle.putInt("message_id", starsTransaction.msg_id);
-                    S4.presentFragment(new mu1(bundle));
-                    break;
-                }
-                break;
-            default:
-                fx0VarArr[0].dismiss();
-                d S5 = LaunchActivity.S();
-                if (S5 != null) {
-                    if ((starsTransaction.flags & TLObject.FLAG_13) == 0) {
-                        S5.presentFragment(mu1.W9(j));
-                        break;
-                    } else {
-                        S5.presentFragment(mu1.V9(starsTransaction.giveaway_post_id, j));
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    public /* synthetic */ nta(fx0[] fx0VarArr, TL_stars.StarsTransaction starsTransaction, long j, byte b) {
-        this.a = b;
-        this.b = fx0VarArr;
-        this.c = starsTransaction;
-        this.d = j;
+    /* JADX WARN: Multi-variable type inference failed */
+    public nta(int i, float f, float f2, int i2, int i3, float f3, tta ttaVar, a39 a39Var) {
+        this.a = i;
+        this.b = f;
+        this.c = f2;
+        this.d = i2;
+        this.e = i3;
+        this.f = f3;
+        this.g = ttaVar;
+        this.h = a39Var;
     }
 }

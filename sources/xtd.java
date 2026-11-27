@@ -1,13 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class xtd {
-    public static final oh2 a(w4a w4aVar) {
-        w4aVar.getClass();
-        if (w4aVar instanceof x4a) {
-            return a(((x4a) w4aVar).a);
+public final class xtd implements zq7 {
+    public static final xtd a = new xtd();
+
+    static {
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)), 3)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return null;
+        throw null;
     }
 }

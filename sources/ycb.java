@@ -1,43 +1,45 @@
 // default package
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ycb implements d06, Serializable {
-    public op4 a;
-    public volatile Object b;
-    public final Object c;
+public final class ycb {
+    public static final ycb e;
+    public boolean a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
 
-    public ycb(op4 op4Var) {
-        op4Var.getClass();
-        this.a = op4Var;
-        this.b = pd5.d;
-        this.c = this;
+    static {
+        ycb ycbVar = new ycb();
+        ycbVar.a = true;
+        ycbVar.b = true;
+        ycbVar.c = false;
+        ycbVar.d = false;
+        e = ycbVar;
+        ycbVar.a = true;
+        ycbVar.b = true;
+        ycbVar.c = false;
+        ycbVar.d = false;
     }
 
-    @Override // d06
-    public final Object getValue() {
-        Object obj;
-        Object obj2 = this.b;
-        pd5 pd5Var = pd5.d;
-        if (obj2 != pd5Var) {
-            return obj2;
+    public static String a(String str, Class cls, boolean z) {
+        if (cls == null) {
+            return "ANONYMOUS";
         }
-        synchronized (this.c) {
-            obj = this.b;
-            if (obj == pd5Var) {
-                op4 op4Var = this.a;
-                op4Var.getClass();
-                obj = op4Var.invoke();
-                this.b = obj;
-                this.a = null;
-            }
+        if (cls.isArray()) {
+            Class<?> componentType = cls.getComponentType();
+            StringBuffer stringBuffer = new StringBuffer();
+            stringBuffer.append(a(componentType.getName(), componentType, z));
+            stringBuffer.append("[]");
+            return stringBuffer.toString();
         }
-        return obj;
-    }
-
-    public final String toString() {
-        return this.b != pd5.d ? String.valueOf(getValue()) : "Lazy value not initialized yet.";
+        if (!z) {
+            return str.replace('$', '.');
+        }
+        int lastIndexOf = str.lastIndexOf(46);
+        if (lastIndexOf != -1) {
+            str = str.substring(lastIndexOf + 1);
+        }
+        return str.replace('$', '.');
     }
 }

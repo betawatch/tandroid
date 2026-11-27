@@ -1,24 +1,82 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class dve {
-    public static void a(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
-        if (status.b()) {
-            taskCompletionSource.setResult(obj);
-        } else {
-            taskCompletionSource.setException(bmd.a(status));
+    public static boolean a(int i, CharSequence charSequence) {
+        if (i >= charSequence.length()) {
+            return false;
+        }
+        char charAt = charSequence.charAt(i);
+        switch (charAt) {
+            case '!':
+            case '\"':
+            case '#':
+            case '$':
+            case '%':
+            case '&':
+            case '\'':
+            case '(':
+            case ')':
+            case '*':
+            case '+':
+            case ',':
+            case '-':
+            case '.':
+            case '/':
+                return true;
+            default:
+                switch (charAt) {
+                    case jn7.u0 /* 58 */:
+                    case jn7.v0 /* 59 */:
+                    case jn7.w0 /* 60 */:
+                    case jn7.x0 /* 61 */:
+                    case jn7.y0 /* 62 */:
+                    case jn7.z0 /* 63 */:
+                    case '@':
+                        return true;
+                    default:
+                        switch (charAt) {
+                            case jn7.b1 /* 91 */:
+                            case jn7.c1 /* 92 */:
+                            case jn7.d1 /* 93 */:
+                            case jn7.e1 /* 94 */:
+                            case jn7.f1 /* 95 */:
+                            case '`':
+                                return true;
+                            default:
+                                switch (charAt) {
+                                    case jn7.G1 /* 123 */:
+                                    case jn7.H1 /* 124 */:
+                                    case jn7.I1 /* 125 */:
+                                    case jn7.J1 /* 126 */:
+                                        return true;
+                                    default:
+                                        return false;
+                                }
+                        }
+                }
         }
     }
 
-    public static void b(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
-        if (status.b()) {
-            taskCompletionSource.trySetResult(obj);
-        } else {
-            taskCompletionSource.trySetException(bmd.a(status));
+    public static int b(char c, String str, int i, int i2) {
+        while (i < i2) {
+            if (str.charAt(i) != c) {
+                return i;
+            }
+            i++;
         }
+        return i2;
+    }
+
+    public static int c(int i, int i2, CharSequence charSequence) {
+        while (i < i2) {
+            char charAt = charSequence.charAt(i);
+            if (charAt != '\t' && charAt != ' ') {
+                return i;
+            }
+            i++;
+        }
+        return i2;
     }
 }

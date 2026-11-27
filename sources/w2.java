@@ -1,57 +1,133 @@
 // default package
 
-import java.util.ListIterator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w2 extends v2 implements ListIterator {
-    public final /* synthetic */ y2 d;
+public class w2 implements Iterator {
+    public final /* synthetic */ byte a;
+    public int b;
+    public final Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w2(y2 y2Var, int i) {
-        super(y2Var);
-        this.d = y2Var;
-        int h = y2Var.h();
-        if (i < 0 || i > h) {
-            k93.i(b00.g(i, h, "index: ", ", size: "));
-            throw null;
+    public w2(Object[] objArr) {
+        this.a = (byte) 1;
+        objArr.getClass();
+        this.c = objArr;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        byte b = this.a;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                if (this.b < ((z2) obj).h()) {
+                    break;
+                }
+                break;
+            case 1:
+                if (this.b < ((Object[]) obj).length) {
+                    break;
+                }
+                break;
+            default:
+                if (this.b < ((gy) obj).a) {
+                    break;
+                }
+                break;
         }
-        this.b = i;
+        return true;
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.b > 0;
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            w26.g();
-            return null;
+    @Override // java.util.Iterator
+    public final Object next() {
+        byte b = this.a;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                if (!hasNext()) {
+                    lq5.n();
+                    return null;
+                }
+                int i = this.b;
+                this.b = i + 1;
+                return ((z2) obj).get(i);
+            case 1:
+                try {
+                    int i2 = this.b;
+                    this.b = i2 + 1;
+                    return ((Object[]) obj)[i2];
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    this.b--;
+                    throw new NoSuchElementException(e.getMessage());
+                }
+            default:
+                gy gyVar = (gy) obj;
+                String[] strArr = gyVar.c;
+                int i3 = this.b;
+                String str = strArr[i3];
+                String str2 = gyVar.b[i3];
+                if (str == null) {
+                    str = "";
+                }
+                fy fyVar = new fy();
+                if (str2 == null) {
+                    lq5.j("Object must not be null");
+                    return null;
+                }
+                fyVar.a = str2.trim();
+                if (str2.length() == 0) {
+                    lq5.j("String must not be empty");
+                    return null;
+                }
+                fyVar.b = str;
+                fyVar.c = gyVar;
+                this.b++;
+                return fyVar;
         }
-        int i = this.b - 1;
-        this.b = i;
-        return this.d.get(i);
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.b - 1;
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            case 1:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            default:
+                gy gyVar = (gy) this.c;
+                int i = this.b;
+                int i2 = i - 1;
+                this.b = i2;
+                int i3 = gyVar.a;
+                if (i2 >= i3) {
+                    lq5.j("Must be false");
+                    return;
+                }
+                int i4 = (i3 - i2) - 1;
+                if (i4 > 0) {
+                    String[] strArr = gyVar.b;
+                    System.arraycopy(strArr, i, strArr, i2, i4);
+                    String[] strArr2 = gyVar.c;
+                    System.arraycopy(strArr2, i, strArr2, i2, i4);
+                }
+                int i5 = gyVar.a - 1;
+                gyVar.a = i5;
+                gyVar.b[i5] = null;
+                gyVar.c[i5] = null;
+                return;
+        }
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    public w2(z2 z2Var) {
+        this.a = (byte) 0;
+        this.c = z2Var;
+    }
+
+    public w2(gy gyVar) {
+        this.a = (byte) 2;
+        this.c = gyVar;
+        this.b = 0;
     }
 }

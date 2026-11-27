@@ -1,43 +1,46 @@
 // default package
 
-import android.view.View;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wi4 implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class wi4 implements OnSuccessListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ yi4 b;
+    public final /* synthetic */ FirebaseMessaging b;
 
-    public /* synthetic */ wi4(yi4 yi4Var, byte b) {
+    public /* synthetic */ wi4(FirebaseMessaging firebaseMessaging, byte b) {
         this.a = b;
-        this.b = yi4Var;
+        this.b = firebaseMessaging;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        boolean z;
         byte b = this.a;
-        yi4 yi4Var = this.b;
+        FirebaseMessaging firebaseMessaging = this.b;
         switch (b) {
             case 0:
-                View view = yi4Var.m;
-                if (view.getWindowVisibility() == 0 && view.isShown()) {
-                    xi4 xi4Var = yi4Var.s;
-                    xi4Var.getClass();
-                    System.currentTimeMillis();
-                    xi4Var.c = false;
-                    yi4Var.s.a();
-                    break;
+                q0c q0cVar = (q0c) obj;
+                if (!firebaseMessaging.f.x() || q0cVar.g.a() == null) {
+                    return;
                 }
-                break;
+                synchronized (q0cVar) {
+                    z = q0cVar.f;
+                }
+                if (z) {
+                    return;
+                }
+                q0cVar.e(0L);
+                return;
             default:
-                View view2 = yi4Var.m;
-                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
-                    xi4 xi4Var2 = yi4Var.s;
-                    xi4Var2.b = false;
-                    xi4Var2.a();
-                    break;
+                wj2 wj2Var = (wj2) obj;
+                if (wj2Var != null) {
+                    rte.b(wj2Var.a);
+                    firebaseMessaging.e();
+                    return;
                 }
-                break;
+                return;
         }
     }
 }

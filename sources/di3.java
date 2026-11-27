@@ -1,50 +1,123 @@
 // default package
 
-import android.text.TextUtils;
-import android.view.View;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class di3 implements gj, mo4 {
-    public final /* synthetic */ cj3 a;
+public final class di3 extends bz1 {
+    public final /* synthetic */ Object A0;
+    public final /* synthetic */ byte z0 = 4;
 
-    public /* synthetic */ di3(cj3 cj3Var) {
-        this.a = cj3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di3(ui9 ui9Var, Context context, vnb vnbVar) {
+        super(R.drawable.send_plane_24, vnbVar, context, true);
+        this.A0 = ui9Var;
     }
 
-    public final void a(rf4 rf4Var) {
-        cj3 cj3Var = this.a;
-        if (cj3Var.s3) {
-            hi3 hi3Var = cj3Var.D0;
-            if (hi3Var != null) {
-                hi3Var.D0.remove(rf4Var);
-                hi3 hi3Var2 = cj3Var.D0;
-                String obj = cj3Var.k0.getSearchField().getText().toString();
-                View currentView = hi3Var2.getCurrentView();
-                boolean z = TextUtils.isEmpty(hi3Var2.N0) ? true : !hi3Var2.h0;
-                hi3Var2.N0 = obj;
-                hi3Var2.P(currentView, hi3Var2.getCurrentPosition(), obj, z);
-            }
-            cj3Var.p5(true, null, null, false, true);
-            cj3Var.Z.a.l(cj3Var.Y.r);
+    @Override // bz1
+    public final boolean b() {
+        switch (this.z0) {
+            case 0:
+            case 1:
+                return false;
+            case 2:
+                return ((yg9) this.A0).h0();
+            default:
+                return super.b();
         }
     }
 
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        cj3 cj3Var = this.a;
-        ArrayList arrayList = cj3Var.K2;
-        cj3Var.M2 = i;
-        cj3Var.N2 = i2;
-        cj3Var.O2 = false;
-        if (cj3Var.E2 == null || arrayList.isEmpty()) {
-            return;
+    @Override // bz1
+    public final boolean d() {
+        byte b = this.z0;
+        Object obj = this.A0;
+        switch (b) {
+            case 2:
+                if (((yg9) obj).M0 || this.w > 0) {
+                    break;
+                }
+                break;
+            case 3:
+                if (((ui9) obj).a0 || this.w > 0) {
+                    break;
+                }
+                break;
         }
-        ArrayList arrayList2 = new ArrayList();
-        for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            arrayList2.add(zc7.a(((Long) cj3Var.K2.get(i3)).longValue(), 0L));
+        return true;
+    }
+
+    @Override // bz1
+    public final int getFillColor() {
+        byte b = this.z0;
+        Object obj = this.A0;
+        switch (b) {
+            case 1:
+                int i = aob.qg;
+                Drawable[] drawableArr = PhotoViewer.d9;
+                return ((PhotoViewer) obj).y0(i);
+            case 4:
+                return aob.v0(aob.S5, ((kea) obj).J0);
+            default:
+                return super.getFillColor();
         }
-        cj3Var.E2.r(cj3Var, arrayList2, cj3Var.D1.getFieldText(), false, z, i, i2, null);
+    }
+
+    @Override // bz1
+    public final boolean j() {
+        switch (this.z0) {
+            case 0:
+            case 1:
+            case 4:
+                return true;
+            case 2:
+            case 3:
+            default:
+                return super.j();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.z0) {
+            case 0:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(ob6.G(((uj3) this.A0).K2.size(), "AccDescrShareInChats", new Object[0]));
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di3(yg9 yg9Var, Context context, int i, vnb vnbVar) {
+        super(i, vnbVar, context, true);
+        this.A0 = yg9Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di3(kea keaVar, Context context, vnb vnbVar) {
+        super(R.drawable.send_plane_24, vnbVar, context, false);
+        this.A0 = keaVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di3(uj3 uj3Var, Context context, vnb vnbVar) {
+        super(R.drawable.send_plane_24, vnbVar, context, false);
+        this.A0 = uj3Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di3(PhotoViewer photoViewer, Context context, vnb vnbVar) {
+        super(R.drawable.send_plane_24, vnbVar, context, false);
+        this.A0 = photoViewer;
     }
 }

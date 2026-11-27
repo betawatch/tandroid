@@ -1,49 +1,147 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum rrb extends qsb {
-    public rrb() {
-        super("CommentEnd", 48);
+public final class rrb implements xt6, wt6 {
+    public final xt6 a;
+    public final long b;
+    public wt6 c;
+
+    public rrb(xt6 xt6Var, long j) {
+        this.a = xt6Var;
+        this.b = j;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        qpb qpbVar = aqbVar.n;
-        char d = zj1Var.d();
-        prb prbVar = qsb.k0;
-        if (d == 0) {
-            aqbVar.m(this);
-            StringBuilder sb = qpbVar.e;
-            sb.append("--");
-            sb.append((char) 65533);
-            aqbVar.c = prbVar;
-            return;
+    @Override // wt6
+    public final void a(xt6 xt6Var) {
+        wt6 wt6Var = this.c;
+        wt6Var.getClass();
+        wt6Var.a(this);
+    }
+
+    @Override // xt6
+    public final long c(e74[] e74VarArr, boolean[] zArr, at9[] at9VarArr, boolean[] zArr2, long j) {
+        at9[] at9VarArr2 = new at9[at9VarArr.length];
+        int i = 0;
+        while (true) {
+            at9 at9Var = null;
+            if (i >= at9VarArr.length) {
+                break;
+            }
+            qrb qrbVar = (qrb) at9VarArr[i];
+            if (qrbVar != null) {
+                at9Var = qrbVar.a;
+            }
+            at9VarArr2[i] = at9Var;
+            i++;
         }
-        if (d == '!') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.n0;
-            return;
+        xt6 xt6Var = this.a;
+        long j2 = this.b;
+        long c = xt6Var.c(e74VarArr, zArr, at9VarArr2, zArr2, j - j2);
+        for (int i2 = 0; i2 < at9VarArr.length; i2++) {
+            at9 at9Var2 = at9VarArr2[i2];
+            if (at9Var2 == null) {
+                at9VarArr[i2] = null;
+            } else {
+                at9 at9Var3 = at9VarArr[i2];
+                if (at9Var3 == null || ((qrb) at9Var3).a != at9Var2) {
+                    at9VarArr[i2] = new qrb(at9Var2, j2);
+                }
+            }
         }
-        if (d == '-') {
-            aqbVar.m(this);
-            qpbVar.e.append('-');
-            return;
+        return c + j2;
+    }
+
+    @Override // xt6
+    public final void d() {
+        String str = gcc.a;
+        this.a.d();
+    }
+
+    @Override // i8a
+    public final boolean e() {
+        return this.a.e();
+    }
+
+    @Override // h8a
+    public final void f(i8a i8aVar) {
+        wt6 wt6Var = this.c;
+        wt6Var.getClass();
+        wt6Var.f(this);
+    }
+
+    @Override // i8a
+    public final long h() {
+        long h = this.a.h();
+        if (h == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
         }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.i();
-            aqbVar.c = lqbVar;
-        } else if (d == 65535) {
-            aqbVar.l(this);
-            aqbVar.i();
-            aqbVar.c = lqbVar;
-        } else {
-            aqbVar.m(this);
-            StringBuilder sb2 = qpbVar.e;
-            sb2.append("--");
-            sb2.append(d);
-            aqbVar.c = prbVar;
+        return h + this.b;
+    }
+
+    @Override // xt6
+    public final long j(long j, az9 az9Var) {
+        long j2 = this.b;
+        return this.a.j(j - j2, az9Var) + j2;
+    }
+
+    @Override // xt6
+    public final void l() {
+        this.a.l();
+    }
+
+    @Override // xt6
+    public final long m(long j) {
+        long j2 = this.b;
+        return this.a.m(j - j2) + j2;
+    }
+
+    @Override // xt6
+    public final void n(long j) {
+        this.a.n(j - this.b);
+    }
+
+    @Override // xt6
+    public final long p() {
+        long p = this.a.p();
+        if (p == -9223372036854775807L) {
+            return -9223372036854775807L;
         }
+        return p + this.b;
+    }
+
+    @Override // xt6
+    public final void q(wt6 wt6Var, long j) {
+        this.c = wt6Var;
+        this.a.q(this, j - this.b);
+    }
+
+    @Override // xt6
+    public final u1c r() {
+        return this.a.r();
+    }
+
+    @Override // i8a
+    public final boolean s(xa6 xa6Var) {
+        wa6 wa6Var = new wa6();
+        long j = xa6Var.a;
+        wa6Var.b = xa6Var.b;
+        wa6Var.c = xa6Var.c;
+        wa6Var.a = j - this.b;
+        return this.a.s(new xa6(wa6Var));
+    }
+
+    @Override // i8a
+    public final long t() {
+        long t = this.a.t();
+        if (t == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return t + this.b;
+    }
+
+    @Override // i8a
+    public final void u(long j) {
+        this.a.u(j - this.b);
     }
 }

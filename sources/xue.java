@@ -1,23 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xue implements zn7 {
-    public static final xue a = new xue();
-    public static final w84 b = new w84("inferenceCommonLogEvent", b00.m(yjb.p(gid.class, new bgd(1))));
-    public static final w84 c = new w84("imageInfo", b00.m(yjb.p(gid.class, new bgd(2))));
-    public static final w84 d = new w84("subjectSegmenterOptions", b00.m(yjb.p(gid.class, new bgd(3))));
-    public static final w84 e = new w84("subjectInfos", b00.m(yjb.p(gid.class, new bgd(4))));
-    public static final w84 f = new w84("qualityScores", b00.m(yjb.p(gid.class, new bgd(5))));
+import android.os.Build;
+import java.lang.reflect.Field;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        jbf jbfVar = (jbf) obj;
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, jbfVar.a);
-        ao7Var.a(c, jbfVar.b);
-        ao7Var.a(d, jbfVar.c);
-        ao7Var.a(e, jbfVar.d);
-        ao7Var.a(f, jbfVar.e);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class xue {
+    public static Boolean a;
+    public static int b;
+
+    public static boolean a() {
+        Boolean bool;
+        int intValue;
+        Boolean bool2 = a;
+        if (bool2 != null) {
+            return bool2.booleanValue();
+        }
+        try {
+            Field declaredField = Build.VERSION.class.getDeclaredField("SEM_PLATFORM_INT");
+            declaredField.setAccessible(true);
+            intValue = ((Integer) declaredField.get(null)).intValue();
+        } catch (Exception unused) {
+            bool = Boolean.FALSE;
+            a = bool;
+        }
+        if (intValue < 100000) {
+            return false;
+        }
+        b = intValue - 90000;
+        bool = Boolean.TRUE;
+        a = bool;
+        return bool.booleanValue();
     }
 }

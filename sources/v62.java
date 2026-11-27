@@ -1,73 +1,72 @@
 // default package
 
-import android.view.View;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class v62 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ e72 b;
-    public final /* synthetic */ lk0 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class v62 extends zh8 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ t20 H;
 
-    public /* synthetic */ v62(e72 e72Var, lk0 lk0Var, byte b) {
-        this.a = b;
-        this.b = e72Var;
-        this.c = lk0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v62(t20 t20Var, Context context, int i, vnb vnbVar, int i2) {
+        super(context, i, null, vnbVar);
+        this.H = t20Var;
+        this.G = i2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        lk0 lk0Var = this.c;
-        e72 e72Var = this.b;
-        switch (b) {
-            case 0:
-                ye9 ye9Var = e72Var.r;
-                View C1 = ye9Var.C1(lk0Var);
-                if (!(C1 instanceof pf9)) {
-                    ye9Var.g3.O(false);
-                    break;
-                } else {
-                    ((pf9) C1).g(lk0Var, ye9Var.getMapDelegate());
-                    break;
-                }
-            case 1:
-                e72Var.r.Z4(lk0Var, 0);
-                break;
-            case 2:
-                e72Var.r.Z4(lk0Var, 1);
-                break;
-            case 3:
-                e72Var.r.Z4(lk0Var, 2);
-                break;
-            case 4:
-                e72Var.r.Z4(lk0Var, 3);
-                break;
-            case 5:
-                e72Var.r.Y4(lk0Var, new TL_iv.pageBlockParagraph());
-                break;
-            case 6:
-                ye9 ye9Var2 = e72Var.r;
-                ArrayList arrayList = ye9.A4;
-                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
-                pageblockblockquote.caption = new TL_iv.textEmpty();
-                ye9Var2.X4(this.c, pageblockblockquote, 0, 0, false, false);
-                break;
-            case 7:
-                ye9 ye9Var3 = e72Var.r;
-                ArrayList arrayList2 = ye9.A4;
-                TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
-                pageblockpullquote.caption = new TL_iv.textEmpty();
-                ye9Var3.X4(this.c, pageblockpullquote, 0, 0, false, false);
-                break;
-            case 8:
-                e72Var.r.Y4(lk0Var, new TL_iv.pageBlockPreformatted());
-                break;
-            default:
-                e72Var.r.Y4(lk0Var, new TL_iv.pageBlockFooter());
-                break;
+    @Override // zh8
+    public final void h(qy qyVar, ActionMode actionMode) {
+        a72 a72Var = (a72) this.H.e;
+        if (!a72Var.n && this.G == 11 && qyVar.isFocused() && qyVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) != null) {
+                zu1.E6(menu, ((zu1) a72Var.b.Z1).h, false, true, true, true);
+            }
         }
+    }
+
+    @Override // zh8
+    public final void j(boolean z) {
+        ((a72) this.H.e).a0(this, z);
+    }
+
+    @Override // zh8
+    public final void k(zh8 zh8Var) {
+        ((a72) this.H.e).b0(zh8Var);
+    }
+
+    @Override // zh8
+    public final void l(qy qyVar) {
+        ((a72) this.H.e).b.d1(qyVar, true);
+    }
+
+    @Override // zh8
+    public final boolean m(ArrayList arrayList) {
+        a72 a72Var = (a72) this.H.e;
+        if (arrayList.isEmpty()) {
+            return false;
+        }
+        qy qyVar = this.d;
+        qyVar.getText().replace(qyVar.getSelectionStart(), qyVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        int i = 0;
+        while (!arrayList.isEmpty() && i < a72Var.K) {
+            for (int length = a72Var.L.length - 1; length > i; length--) {
+                CharSequence[] charSequenceArr = a72Var.L;
+                charSequenceArr[length] = charSequenceArr[length - 1];
+            }
+            a72Var.L[i] = (CharSequence) arrayList.remove(0);
+            a72Var.N++;
+            i++;
+        }
+        a72Var.m0();
+        a72Var.l0 = (a72Var.u0 + i) - 1;
+        a72Var.s.setItemAnimator(a72Var.w);
+        a72Var.r.f();
+        return true;
     }
 }

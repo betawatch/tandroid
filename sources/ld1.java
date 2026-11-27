@@ -1,15 +1,95 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ld1 {
-    public final int a;
-    public final boolean b;
-    public int c;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
 
-    public ld1(int i, int i2, boolean z) {
-        this.a = i;
-        this.b = z;
-        this.c = i2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ld1 extends c4 {
+    public static final Parcelable.Creator<ld1> CREATOR;
+    public static final sre H = new sre(false);
+    public static final f1f I = new f1f(0);
+    public static final jd1 J;
+    public final boolean E;
+    public final sre F;
+    public f1f G;
+    public final String a;
+    public final ArrayList b;
+    public final boolean c;
+    public final f26 d;
+    public final boolean e;
+    public final jd1 f;
+    public final boolean h;
+    public final double n;
+    public final boolean r;
+    public final boolean s;
+    public final boolean w;
+    public final ArrayList x;
+    public final boolean y;
+
+    static {
+        new po7(po7.Z, po7.a0, 10000L, null, nue.a("smallIconDrawableResId"), nue.a("stopLiveStreamDrawableResId"), nue.a("pauseDrawableResId"), nue.a("playDrawableResId"), nue.a("skipNextDrawableResId"), nue.a("skipPrevDrawableResId"), nue.a("forwardDrawableResId"), nue.a("forward10DrawableResId"), nue.a("forward30DrawableResId"), nue.a("rewindDrawableResId"), nue.a("rewind10DrawableResId"), nue.a("rewind30DrawableResId"), nue.a("disconnectDrawableResId"), nue.a("notificationImageSizeDimenResId"), nue.a("castingToDeviceStringResId"), nue.a("stopLiveStreamStringResId"), nue.a("pauseStringResId"), nue.a("playStringResId"), nue.a("skipNextStringResId"), nue.a("skipPrevStringResId"), nue.a("forwardStringResId"), nue.a("forward10StringResId"), nue.a("forward30StringResId"), nue.a("rewindStringResId"), nue.a("rewind10StringResId"), nue.a("rewind30StringResId"), nue.a("disconnectStringResId"), null, false, false);
+        J = new jd1("com.google.android.gms.cast.framework.media.MediaIntentReceiver", null, null, null, false, false);
+        CREATOR = new t4f((byte) 7);
+    }
+
+    public ld1(String str, ArrayList arrayList, boolean z, f26 f26Var, boolean z2, jd1 jd1Var, boolean z3, double d, boolean z4, boolean z5, boolean z6, ArrayList arrayList2, boolean z7, boolean z8, sre sreVar, f1f f1fVar) {
+        this.a = true == TextUtils.isEmpty(str) ? "" : str;
+        int size = arrayList == null ? 0 : arrayList.size();
+        ArrayList arrayList3 = new ArrayList(size);
+        this.b = arrayList3;
+        if (size > 0) {
+            arrayList3.addAll(arrayList);
+        }
+        this.c = z;
+        this.d = f26Var == null ? new f26() : f26Var;
+        this.e = z2;
+        this.f = jd1Var;
+        this.h = z3;
+        this.n = d;
+        this.r = z4;
+        this.s = z5;
+        this.w = z6;
+        this.x = arrayList2;
+        this.y = z7;
+        this.E = z8;
+        this.F = sreVar;
+        this.G = f1fVar;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
+        bye.q(parcel, 4, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        bye.k(parcel, 5, this.d, i);
+        bye.q(parcel, 6, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        bye.k(parcel, 7, this.f, i);
+        bye.q(parcel, 8, 4);
+        parcel.writeInt(this.h ? 1 : 0);
+        bye.q(parcel, 9, 8);
+        parcel.writeDouble(this.n);
+        bye.q(parcel, 10, 4);
+        parcel.writeInt(this.r ? 1 : 0);
+        bye.q(parcel, 11, 4);
+        parcel.writeInt(this.s ? 1 : 0);
+        bye.q(parcel, 12, 4);
+        parcel.writeInt(this.w ? 1 : 0);
+        bye.n(parcel, 13, DesugarCollections.unmodifiableList(this.x));
+        bye.q(parcel, 14, 4);
+        parcel.writeInt(this.y ? 1 : 0);
+        bye.q(parcel, 15, 4);
+        parcel.writeInt(0);
+        bye.q(parcel, 16, 4);
+        parcel.writeInt(this.E ? 1 : 0);
+        bye.k(parcel, 17, this.F, i);
+        bye.k(parcel, 18, this.G, i);
+        bye.s(parcel, r);
     }
 }

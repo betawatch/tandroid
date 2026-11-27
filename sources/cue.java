@@ -1,19 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.math.RoundingMode;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class cue implements zn7 {
-    public static final cue a = new cue();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)), 5)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class cue {
+    public static int a(long j, long j2) {
+        if (j > 0 && j2 > 0) {
+            long b0 = gcc.b0(j, 8000000L, j2, RoundingMode.HALF_UP);
+            if (b0 > 0 && b0 <= 2147483647L) {
+                return (int) b0;
+            }
         }
-        throw null;
+        return -2147483647;
     }
 }

@@ -1,40 +1,67 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.FragmentContextView;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class p81 extends FragmentContextView {
-    public final /* synthetic */ byte X0 = 1;
-    public final /* synthetic */ d Y0;
+public final /* synthetic */ class p81 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ AtomicBoolean b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p81(qvb qvbVar, Context context, qvb qvbVar2) {
-        super(context, qvbVar2, null, false, null);
-        this.Y0 = qvbVar;
+    public /* synthetic */ p81(View view, AtomicBoolean atomicBoolean, Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = view;
+        this.b = atomicBoolean;
+        this.d = obj;
+        this.e = obj2;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i) {
-        byte b = this.X0;
-        d dVar = this.Y0;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        AtomicBoolean atomicBoolean = this.b;
+        View view = this.c;
         switch (b) {
             case 0:
-                z81 z81Var = (z81) dVar;
-                z81Var.I.j(z81Var.J, i == 0, true);
+                FrameLayout frameLayout = (FrameLayout) view;
+                p66 p66Var = (p66) obj2;
+                String str = (String) obj;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float abs = (Math.abs(floatValue - 0.5f) / 5.0f) + 0.9f;
+                frameLayout.setScaleX(abs);
+                frameLayout.setScaleY(abs);
+                if (floatValue >= 0.5f && !atomicBoolean.get()) {
+                    atomicBoolean.set(true);
+                    p66Var.setText(str);
+                    break;
+                }
                 break;
             default:
-                qvb qvbVar = (qvb) dVar;
-                qvbVar.V0.j(qvbVar.G0, i == 0, true);
+                ImageView imageView = (ImageView) view;
+                boolean[] zArr = (boolean[]) obj2;
+                vnb vnbVar = (vnb) obj;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float abs2 = ((Math.abs(floatValue2 - 0.5f) / 0.5f) * 0.25f) + 0.75f;
+                imageView.setScaleX(abs2);
+                imageView.setScaleY(abs2);
+                if (floatValue2 >= 0.5f && !atomicBoolean.get()) {
+                    atomicBoolean.set(true);
+                    yob.s(imageView, zArr[0] ? aob.Fi : aob.z6, vnbVar, PorterDuff.Mode.SRC_IN);
+                    imageView.setImageResource(zArr[0] ? R.drawable.wallet_comment_locked : R.drawable.wallet_comment_unlocked);
+                    break;
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p81(z81 z81Var, Context context, z81 z81Var2, n81 n81Var, wjb wjbVar) {
-        super(context, z81Var2, n81Var, false, wjbVar);
-        this.Y0 = z81Var;
     }
 }

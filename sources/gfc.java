@@ -1,34 +1,49 @@
 // default package
 
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Log;
-import android.view.View;
-import java.lang.reflect.Method;
-import java.util.WeakHashMap;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class gfc {
-    public static final Method a;
-    public static final boolean b;
+public final class gfc implements h73 {
+    public final ExtendedDefaultDataSource a;
+    public final long b;
 
-    static {
-        b = Build.VERSION.SDK_INT >= 27;
-        try {
-            Method declaredMethod = View.class.getDeclaredMethod("computeFitSystemWindows", Rect.class, Rect.class);
-            a = declaredMethod;
-            if (declaredMethod.isAccessible()) {
-                return;
-            }
-            declaredMethod.setAccessible(true);
-        } catch (NoSuchMethodException unused) {
-            Log.d("ViewUtils", "Could not find method computeFitSystemWindows. Oh well.");
-        }
+    public gfc(ExtendedDefaultDataSource extendedDefaultDataSource, long j) {
+        this.a = extendedDefaultDataSource;
+        this.b = j;
     }
 
-    public static boolean a(View view) {
-        WeakHashMap weakHashMap = jdc.a;
-        return view.getLayoutDirection() == 1;
+    @Override // h73
+    public final void addTransferListener(v2c v2cVar) {
+        this.a.addTransferListener(v2cVar);
+    }
+
+    @Override // h73
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // h73
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // h73
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // h73
+    public final long open(n73 n73Var) {
+        m73 a = n73Var.a();
+        a.e = n73Var.e + this.b;
+        return this.a.open(a.a());
+    }
+
+    @Override // z63
+    public final int read(byte[] bArr, int i, int i2) {
+        return this.a.read(bArr, i, i2);
     }
 }

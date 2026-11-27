@@ -8,16 +8,16 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class ApplicationLoaderImpl extends a {
     @Override // org.telegram.messenger.a
     public final boolean u(Activity activity, TLRPC.Document document) {
         boolean z = false;
         try {
-            ba4.r(null, document);
-            ba4.G(y6c.t0);
-            File J = ba4.J(document, null, true, true);
+            xb4.r(null, document);
+            xb4.G(yac.t0);
+            File J = xb4.J(document, null, true, true);
             z = J.exists();
             if (z) {
                 Intent intent = new Intent("android.intent.action.VIEW");
@@ -31,11 +31,11 @@ public class ApplicationLoaderImpl extends a {
                 try {
                     activity.startActivityForResult(intent, 500);
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    cc4.g(e, true);
                 }
             }
         } catch (Exception e2) {
-            fa4.g(e2, true);
+            cc4.g(e2, true);
         }
         return z;
     }

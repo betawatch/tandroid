@@ -1,70 +1,113 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.AbstractList;
+import java.util.Collection;
+import java.util.List;
+import java.util.RandomAccess;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fje extends c2e {
-    private static final fje zzb;
-    private int zzd;
-    private int zze;
-    private int zzg;
-    private int zzi;
-    private String zzf = "";
-    private String zzh = "";
+public abstract class fje extends AbstractList implements bue {
+    public boolean a = true;
 
-    static {
-        fje fjeVar = new fje();
-        zzb = fjeVar;
-        c2e.k(fje.class, fjeVar);
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        h();
+        return super.add(obj);
     }
 
-    public static /* synthetic */ void n(fje fjeVar, String str) {
-        fjeVar.zzd |= 8;
-        fjeVar.zzh = str;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        h();
+        return super.addAll(collection);
     }
 
-    public static /* synthetic */ void o(fje fjeVar, String str) {
-        str.getClass();
-        fjeVar.zzd |= 2;
-        fjeVar.zzf = str;
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        h();
+        super.clear();
     }
 
-    public static /* synthetic */ void p(fje fjeVar, int i) {
-        fjeVar.zzd |= 16;
-        fjeVar.zzi = i;
-    }
-
-    public static void q(fje fjeVar, int i) {
-        fjeVar.zzg = yjb.e(i);
-        fjeVar.zzd |= 4;
-    }
-
-    public static /* synthetic */ void r(fje fjeVar, int i) {
-        fjeVar.zzd |= 1;
-        fjeVar.zze = i;
-    }
-
-    public static mie s() {
-        return (mie) zzb.f();
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0005\u0000\u0001\u0001\u0007\u0005\u0000\u0000\u0000\u0001င\u0000\u0002ဈ\u0001\u0004᠌\u0002\u0005ဈ\u0003\u0007င\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", yqd.d, "zzh", "zzi"});
+        if (!(obj instanceof List)) {
+            return false;
         }
-        if (i2 == 3) {
-            return new fje();
+        if (!(obj instanceof RandomAccess)) {
+            return super.equals(obj);
         }
-        if (i2 == 4) {
-            return new mie(zzb);
+        List list = (List) obj;
+        int size = size();
+        if (size != list.size()) {
+            return false;
         }
-        if (i2 == 5) {
-            return zzb;
+        for (int i = 0; i < size; i++) {
+            if (!get(i).equals(list.get(i))) {
+                return false;
+            }
         }
-        throw null;
+        return true;
+    }
+
+    public final void h() {
+        if (this.a) {
+            return;
+        }
+        p3d.a();
+    }
+
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public int hashCode() {
+        int size = size();
+        int i = 1;
+        for (int i2 = 0; i2 < size; i2++) {
+            i = (i * 31) + get(i2).hashCode();
+        }
+        return i;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public abstract Object remove(int i);
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean remove(Object obj) {
+        h();
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
+            return false;
+        }
+        remove(indexOf);
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean removeAll(Collection collection) {
+        h();
+        return super.removeAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean retainAll(Collection collection) {
+        h();
+        return super.retainAll(collection);
+    }
+
+    @Override // bue
+    public final boolean zza() {
+        return this.a;
+    }
+
+    @Override // bue
+    public final void zzb() {
+        this.a = false;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public boolean addAll(int i, Collection collection) {
+        h();
+        return super.addAll(i, collection);
     }
 }

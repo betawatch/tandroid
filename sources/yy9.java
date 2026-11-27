@@ -1,24 +1,42 @@
 // default package
 
-import android.content.Context;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class yy9 {
+    public final bz9 a;
+    public final bz9 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class yy9 extends hz9 {
-    public final /* synthetic */ zy9 L;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yy9(zy9 zy9Var, Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.L = zy9Var;
+    public yy9(bz9 bz9Var, bz9 bz9Var2) {
+        this.a = bz9Var;
+        this.b = bz9Var2;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        int L = gl.L(78.0f) + getMeasuredHeight();
-        zy9 zy9Var = this.L;
-        zy9Var.k2 = L;
-        zy9Var.j2.G();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || yy9.class != obj.getClass()) {
+            return false;
+        }
+        yy9 yy9Var = (yy9) obj;
+        return this.a.equals(yy9Var.a) && this.b.equals(yy9Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        String str;
+        StringBuilder sb = new StringBuilder("[");
+        bz9 bz9Var = this.a;
+        sb.append(bz9Var);
+        bz9 bz9Var2 = this.b;
+        if (bz9Var.equals(bz9Var2)) {
+            str = "";
+        } else {
+            str = ", " + bz9Var2;
+        }
+        return c00.k(sb, str, "]");
     }
 }

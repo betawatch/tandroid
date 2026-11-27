@@ -1,27 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qz4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tz4 b;
+import android.graphics.Canvas;
 
-    public /* synthetic */ qz4(tz4 tz4Var, byte b) {
-        this.a = b;
-        this.b = tz4Var;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qz4 implements mz4 {
+    public static final qz4 a = new qz4();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        tz4 tz4Var = this.b;
-        switch (b) {
-            case 0:
-                uz4.d(tz4Var);
-                break;
-            default:
-                uz4.d(tz4Var);
-                break;
-        }
+    @Override // mz4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
     }
 }

@@ -1,47 +1,131 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.ViewPropertyAnimator;
+import android.widget.ImageView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ug9 extends mg9 {
-    public final Paint X;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class ug9 extends ImageView implements snb {
+    public final int a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public byte e;
+    public int f;
+    public final vnb h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
 
-    public ug9(rh9 rh9Var, Rect rect, int i) {
-        super(rh9Var, rect, i);
-        this.X = new Paint(1);
-    }
-
-    @Override // mg9
-    public final int I() {
-        Rect rect = this.b;
-        return de9.w(6.0f, rect.top, 1) + rect.bottom;
-    }
-
-    @Override // mg9
-    public final int K() {
-        Rect rect = this.b;
-        return gl.L(32.0f) + rect.left + rect.right;
-    }
-
-    @Override // mg9
-    public final void W(Canvas canvas) {
-        rh9 rh9Var = this.a;
-        int v0 = bkb.v0(rh9Var.D() ? bkb.wl : bkb.vl, rh9Var.D);
-        Paint paint = this.X;
-        paint.setColor(v0);
-        float f = -rh9Var.S;
-        int i = rh9Var.C + rh9Var.T;
-        Rect rect = this.b;
-        float f2 = (i - rect.left) - rect.right;
-        if (rh9Var.s) {
-            r2 = gl.R1(this.S ? 1.0f : 0.0f, this.R ? 1.0f : 0.0f, rh9Var.t);
-        } else if (this.R) {
-            r2 = 1.0f;
+    public ug9(int i, vnb vnbVar, Context context) {
+        super(context);
+        this.e = (byte) 20;
+        this.f = aob.d6;
+        this.n = true;
+        this.s = true;
+        this.b = i;
+        this.a = i;
+        this.h = vnbVar;
+        if (i != 0) {
+            setImageResource(i);
         }
-        float R1 = gl.R1((-1.0f) - (this.M != null ? r8.b.bottom : 0), gl.L(6.0f), r2);
-        canvas.drawRect(f, R1, f2, R1 + 1.0f, paint);
+        setScaleType(ImageView.ScaleType.CENTER);
+        iye.a(this);
+        updateColors();
+    }
+
+    public final void a() {
+        e(this.a);
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.Fi));
+        hashSet.add(Integer.valueOf(aob.G6));
+        hashSet.add(Integer.valueOf(aob.i6));
+        hashSet.add(Integer.valueOf(this.f));
+    }
+
+    public final void b() {
+        if (this.s) {
+            this.s = false;
+            updateColors();
+        }
+    }
+
+    public final void c(int i) {
+        if (this.f == i) {
+            return;
+        }
+        this.f = i;
+        updateColors();
+    }
+
+    public final void d() {
+        this.c = true;
+        wg9 wg9Var = new wg9(getContext(), this.b);
+        wg9Var.d = this.f;
+        wg9Var.a(this.d);
+        setImageDrawable(wg9Var);
+    }
+
+    public final void e(int i) {
+        if (this.b == i) {
+            return;
+        }
+        this.b = i;
+        if (!this.c) {
+            hl.L3(this, i);
+            return;
+        }
+        wg9 wg9Var = new wg9(getContext(), i);
+        wg9Var.d = this.f;
+        wg9Var.a(this.d);
+        hl.M3(this, wg9Var);
+    }
+
+    @Override // android.view.View
+    public void setEnabled(boolean z) {
+        if (this.n == z) {
+            return;
+        }
+        setClickable(z);
+        ViewPropertyAnimator animate = animate();
+        this.n = z;
+        animate.alpha(z ? 1.0f : 0.5f).setDuration(320L).setInterpolator(k43.h).start();
+    }
+
+    public void setPremiumLocked(boolean z) {
+        this.d = z;
+        if (getDrawable() instanceof wg9) {
+            ((wg9) getDrawable()).a(z);
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void setSelected(boolean z) {
+        if (this.r == z) {
+            return;
+        }
+        this.r = z;
+        updateColors();
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        boolean z = this.r;
+        vnb vnbVar = this.h;
+        if (!z) {
+            setBackground(aob.Z(aob.v0(this.f, vnbVar), aob.v0(aob.i6, vnbVar), hl.L(this.e), hl.L(this.e)));
+            setColorFilter(new PorterDuffColorFilter(aob.v0(aob.G6, vnbVar), PorterDuff.Mode.SRC_IN));
+        } else {
+            int w0 = aob.w0(null, this.s ? aob.Fi : aob.G6, false);
+            setBackground(aob.Z(aob.v(aob.v0(this.f, vnbVar), aob.p1(0.1f, w0)), aob.p1(0.1f, w0), hl.L(this.e), hl.L(this.e)));
+            setColorFilter(new PorterDuffColorFilter(w0, PorterDuff.Mode.SRC_IN));
+        }
     }
 }

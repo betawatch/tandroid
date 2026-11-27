@@ -1,42 +1,28 @@
 // default package
 
-import java.io.File;
-import java.io.FileInputStream;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ig6 implements fd {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tg6 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ig6 extends FileInputStream {
-    public final long a;
-
-    public ig6(long j, long j2, File file) {
-        super(file);
-        this.a = j2;
-        if (j <= 0 || skip(j) == j) {
-            return;
-        }
-        wn4.j("BoundedInputStream failed to skip");
-        throw null;
+    public /* synthetic */ ig6(tg6 tg6Var, byte b) {
+        this.a = b;
+        this.b = tg6Var;
     }
 
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        long position = getChannel().position();
-        long j = this.a;
-        if (position >= j) {
-            return -1;
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        tg6 tg6Var = this.b;
+        switch (b) {
+            case 0:
+                tg6Var.c(true);
+                tg6Var.v0.J1(0, true, null, true);
+                break;
+            default:
+                tg6Var.v0.J1(0, true, null, true);
+                break;
         }
-        long position2 = j - getChannel().position();
-        if (i2 > position2) {
-            i2 = (int) position2;
-        }
-        return super.read(bArr, i, i2);
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read() {
-        if (getChannel().position() >= this.a) {
-            return -1;
-        }
-        return super.read();
     }
 }

@@ -1,28 +1,18 @@
 // default package
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class y17 extends TLRPC.TL_messageMediaStory {
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
-        this.user_id = inputSerializedData.readInt64(z);
-        this.id = inputSerializedData.readInt32(z);
-        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
-        this.via_mention = inputSerializedData.readBool(z);
-        this.peer = na7.q1(y6c.t0).w1(this.user_id);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface y17 {
+    void H0(int i, int i2, CharSequence charSequence, boolean z);
 
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-946147811);
-        outputSerializedData.writeInt64(this.user_id);
-        outputSerializedData.writeInt32(this.id);
-        this.storyItem.serializeToStream(outputSerializedData);
-        outputSerializedData.writeBool(this.via_mention);
-    }
+    void T0(String str);
+
+    void m0(TLRPC.TL_document tL_document, String str, Object obj);
+
+    void s(TLRPC.BotInlineResult botInlineResult, boolean z, int i);
+
+    Paint.FontMetricsInt w();
 }

@@ -1,51 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fw5 implements yt7 {
-    public final /* synthetic */ byte a;
-    public final Object b;
-    public final float c;
+import android.content.DialogInterface;
 
-    public /* synthetic */ fw5(Object obj, float f, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fw5 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jw5 b;
+    public final /* synthetic */ boolean c;
+
+    public /* synthetic */ fw5(jw5 jw5Var, boolean z, byte b) {
         this.a = b;
-        this.b = obj;
-        this.c = f;
+        this.b = jw5Var;
+        this.c = z;
     }
 
-    @Override // yt7
-    public final void O(float f) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         byte b = this.a;
-        float f2 = this.c;
-        Object obj = this.b;
+        boolean z = this.c;
+        jw5 jw5Var = this.b;
         switch (b) {
             case 0:
-                vhb vhbVar = (vhb) obj;
-                vhbVar.B0 = true;
-                vhbVar.setBaseFontSize((int) (f2 * f));
+                jw5.F0(jw5Var.getContext(), jw5Var.n1, jw5Var.s1, z);
                 break;
             default:
-                vhb vhbVar2 = (vhb) obj;
-                vhbVar2.B0 = true;
-                vhbVar2.setBaseFontSize((int) (f2 * f));
+                jw5.F0(jw5Var.getContext(), jw5Var.n1, jw5Var.s1, z);
                 break;
         }
-    }
-
-    @Override // yt7
-    public final float get() {
-        float baseFontSize;
-        float f;
-        switch (this.a) {
-            case 0:
-                baseFontSize = ((vhb) this.b).getBaseFontSize();
-                f = this.c;
-                break;
-            default:
-                baseFontSize = ((vhb) this.b).getBaseFontSize();
-                f = this.c;
-                break;
-        }
-        return baseFontSize / f;
     }
 }

@@ -1,89 +1,72 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.json.JSONObject;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class bu0 implements fg7, wi3 {
-    public final /* synthetic */ hv0 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer d;
-    public final /* synthetic */ ev0 e;
+public final /* synthetic */ class bu0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ rv0 b;
 
-    public /* synthetic */ bu0(hv0 hv0Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, ev0 ev0Var) {
-        this.a = hv0Var;
-        this.b = zArr;
-        this.c = str;
-        this.d = tL_buttonTypeRequestPeer;
-        this.e = ev0Var;
+    public /* synthetic */ bu0(rv0 rv0Var, byte b) {
+        this.a = b;
+        this.b = rv0Var;
     }
 
-    @Override // wi3
-    public final boolean G() {
-        return false;
-    }
-
-    @Override // fg7
-    public final void a(ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = false;
+        rv0 rv0Var = this.b;
+        switch (b) {
+            case 0:
+                uu0 uu0Var = rv0Var.c;
+                if (uu0Var != null) {
+                    uu0Var.b();
+                }
+                LaunchActivity.K();
+                break;
+            case 1:
+                if (rv0Var.T) {
+                    rv0Var.T = false;
+                    uu0 uu0Var2 = rv0Var.c;
+                    if (uu0Var2 != null) {
+                        uu0Var2.t(false);
+                    }
+                }
+                rv0Var.a();
+                rv0Var.O = false;
+                rv0Var.Q = 0L;
+                rv0Var.U = false;
+                nv0 nv0Var = rv0Var.a;
+                if (nv0Var != null) {
+                    nv0Var.onResume();
+                    rv0Var.a.reload();
+                    break;
+                }
+                break;
+            default:
+                pv0 pv0Var = rv0Var.K0;
+                tq0 tq0Var = rv0Var.l0;
+                tq0Var.getClass();
+                JSONObject jSONObject = new JSONObject();
+                try {
+                    jSONObject.put("available", tq0Var.c());
+                    if (tq0Var.c()) {
+                        jSONObject.put("access_requested", tq0Var.d);
+                        if (tq0Var.d) {
+                            if (tq0Var.e && tq0Var.a()) {
+                                z = true;
+                            }
+                            jSONObject.put("access_granted", z);
+                        }
+                    }
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                }
+                rv0Var.u(pv0Var, "location_checked", jSONObject);
+                break;
         }
-        this.b[0] = true;
-        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        hv0 hv0Var = this.a;
-        na7.q1(hv0Var.N);
-        tL_messages_sendBotRequestedPeer.peer = na7.l1(hv0Var.V);
-        String str = this.c;
-        tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-        tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(na7.q1(hv0Var.N).h1(((Long) obj).longValue()));
-        }
-        ConnectionsManager.getInstance(hv0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new hc((byte) 0), new ut0(hv0Var, this.e, str, (byte) 2));
-    }
-
-    @Override // wi3
-    public final boolean r(cj3 cj3Var, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, qvb qvbVar) {
-        byte b = 1;
-        if (!arrayList.isEmpty()) {
-            this.b[0] = true;
-            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-            hv0 hv0Var = this.a;
-            na7.q1(hv0Var.N);
-            tL_messages_sendBotRequestedPeer.peer = na7.l1(hv0Var.V);
-            String str = this.c;
-            tL_messages_sendBotRequestedPeer.webapp_req_id = str;
-            tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
-            HashSet hashSet = new HashSet();
-            int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
-                hashSet.add(Long.valueOf(((zc7) obj).a));
-            }
-            Iterator it = hashSet.iterator();
-            while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(na7.q1(hv0Var.N).h1(((Long) it.next()).longValue()));
-            }
-            ConnectionsManager.getInstance(hv0Var.N).sendRequestTyped(tL_messages_sendBotRequestedPeer, new hc((byte) 0), new ut0(hv0Var, this.e, str, b));
-        }
-        cj3Var.finishFragment();
-        return true;
-    }
-
-    @Override // wi3
-    public final boolean t(cj3 cj3Var) {
-        return false;
     }
 }

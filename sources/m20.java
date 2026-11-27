@@ -1,87 +1,39 @@
 // default package
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import android.util.Log;
-import java.io.File;
-import org.json.JSONException;
-import org.json.JSONObject;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class m20 implements qef {
-    public long a;
-    public Object b;
-    public Object c;
+public final class m20 {
+    public static final m20 e = new m20(-1, -1, -1);
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    public m20(File file, long j, byte[] bArr) {
-        this.b = file;
-        this.a = j;
-        this.c = bArr == null ? null : (byte[]) bArr.clone();
+    public m20(int i, int i2, int i3) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
+        this.d = gcc.N(i3) ? gcc.u(i3) * i2 : -1;
     }
 
-    public static String b(long j, String str, String str2) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("token", str);
-            jSONObject.put("appVersion", str2);
-            jSONObject.put("timestamp", j);
-            return jSONObject.toString();
-        } catch (JSONException e) {
-            Log.w("FirebaseMessaging", "Failed to encode token: " + e);
-            return null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    public static m20 c(String str) {
-        Object obj = null;
-        if (TextUtils.isEmpty(str)) {
-            return null;
+        if (!(obj instanceof m20)) {
+            return false;
         }
-        if (!str.startsWith("{")) {
-            return new m20(str, 0L, obj);
-        }
-        try {
-            JSONObject jSONObject = new JSONObject(str);
-            return new m20(jSONObject.getString("token"), jSONObject.getLong("timestamp"), jSONObject.getString("appVersion"));
-        } catch (JSONException e) {
-            Log.w("FirebaseMessaging", "Failed to parse token: " + e);
-            return null;
-        }
+        m20 m20Var = (m20) obj;
+        return this.a == m20Var.a && this.b == m20Var.b && this.c == m20Var.c;
     }
 
-    public final n20 a() {
-        Object obj;
-        if (!((aob) this.b).p() && (obj = this.c) != null) {
-            gre.f(((aob) this.b).b(obj) != -1);
-        }
-        return new n20(this);
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c));
     }
 
-    @Override // qef
-    public final qx zza() {
-        vme vmeVar = (vme) this.b;
-        m5f m5fVar = (m5f) this.c;
-        long j = this.a;
-        ntb ntbVar = new ntb();
-        ntbVar.c = v4f.b;
-        rod rodVar = new rod((byte) 10);
-        rodVar.d = vmeVar.e.a();
-        rodVar.b = m5fVar;
-        rodVar.c = Long.valueOf((SystemClock.elapsedRealtime() - j) & Long.MAX_VALUE);
-        ntbVar.e = new mbf(rodVar);
-        return new qx(ntbVar, 0);
-    }
-
-    public m20() {
-        this.a = 0L;
-        this.b = aob.a;
-        this.c = null;
-    }
-
-    public /* synthetic */ m20(Object obj, long j, Object obj2) {
-        this.b = obj;
-        this.c = obj2;
-        this.a = j;
+    public final String toString() {
+        return "AudioFormat[sampleRate=" + this.a + ", channelCount=" + this.b + ", encoding=" + this.c + ']';
     }
 }

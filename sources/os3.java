@@ -1,50 +1,60 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class os3 {
+public final class os3 extends vk4 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ os3(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    @Override // vk4
+    public final float a(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((View) obj).getAlpha();
+            case 1:
+                return ((View) obj).getTranslationX();
+            case 2:
+                return ((View) obj).getTranslationY();
+            case 3:
+                return ((View) obj).getScaleX();
+            case 4:
+                return ((View) obj).getScaleY();
+            case 5:
+                return ((View) obj).getRotation();
+            case 6:
+                return ((View) obj).getRotationX();
+            default:
+                return ((View) obj).getRotationY();
+        }
     }
 
-    public final void a(int i, boolean z) {
-        va vaVar;
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
+    @Override // vk4
+    public final void b(Object obj, float f) {
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = ((qs3) obj).b;
-                int size = arrayList.size();
-                int i2 = 0;
-                while (i2 < size) {
-                    Object obj2 = arrayList.get(i2);
-                    i2++;
-                    ((os3) obj2).a(i, z);
-                }
+                ((View) obj).setAlpha(f);
                 break;
             case 1:
-                qw4 qw4Var = (qw4) obj;
-                qw4Var.h++;
-                qw4Var.j += z ? 1 : -1;
+                ((View) obj).setTranslationX(f);
                 break;
             case 2:
-                ((Runnable) obj).run();
+                ((View) obj).setTranslationY(f);
+                break;
+            case 3:
+                ((View) obj).setScaleX(f);
+                break;
+            case 4:
+                ((View) obj).setScaleY(f);
+                break;
+            case 5:
+                ((View) obj).setRotation(f);
+                break;
+            case 6:
+                ((View) obj).setRotationX(f);
                 break;
             default:
-                hmc hmcVar = (hmc) obj;
-                xia xiaVar = hmcVar.w;
-                if ((i == 1 || i == 3) && (vaVar = hmcVar.a) != null) {
-                    hmcVar.s = z;
-                    vaVar.removeCallbacks(xiaVar);
-                    xiaVar.run();
-                    break;
-                }
+                ((View) obj).setRotationY(f);
                 break;
         }
     }

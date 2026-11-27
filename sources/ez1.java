@@ -2,158 +2,262 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.graphics.Typeface;
+import android.os.SystemClock;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ez1 extends om {
-    public il0 s;
-    public final Path w;
-    public final RectF x;
-    public FragmentContextView y;
+public final class ez1 extends View {
+    public StaticLayout E;
+    public float F;
+    public TextPaint G;
+    public final float H;
+    public float I;
+    public final /* synthetic */ ChatActivityEnterView J;
+    public boolean a;
+    public boolean b;
+    public String c;
+    public long d;
+    public long e;
+    public long f;
+    public long h;
+    public long n;
+    public boolean r;
+    public final SpannableStringBuilder s;
+    public final SpannableStringBuilder w;
+    public SpannableStringBuilder x;
+    public StaticLayout y;
 
-    public ez1(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ez1(ChatActivityEnterView chatActivityEnterView, Context context) {
         super(context);
-        this.w = new Path();
-        this.x = new RectF();
-        setOrientation(1);
-        il0 il0Var = this.s;
-        if (il0Var != null) {
-            il0Var.updateColors();
-        }
-        bkb.w0(null, bkb.c6, false);
+        this.J = chatActivityEnterView;
+        this.s = new SpannableStringBuilder();
+        this.w = new SpannableStringBuilder();
+        this.x = new SpannableStringBuilder();
+        this.H = hl.L(15.0f);
+    }
+
+    public final void a(long j) {
+        this.a = true;
+        long currentTimeMillis = System.currentTimeMillis() - j;
+        this.d = currentTimeMillis;
+        this.h = j;
+        this.f = currentTimeMillis;
         invalidate();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        boolean z;
-        FragmentContextView fragmentContextView;
-        int currentStyle;
-        FragmentContextView fragmentContextView2;
-        Canvas canvas2 = canvas;
-        if (getMetadata().c.a == 0.0f) {
-            return;
+    public final void b() {
+        if (this.a) {
+            this.a = false;
+            if (this.d > 0) {
+                this.e = System.currentTimeMillis();
+            }
+            invalidate();
         }
-        il0 il0Var = this.s;
-        if (il0Var != null) {
-            il0Var.draw(canvas2);
+        this.f = 0L;
+    }
+
+    public float getLeftProperty() {
+        return this.I;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        long j;
+        String str;
+        int threadMessageId;
+        TextPaint textPaint = this.G;
+        ChatActivityEnterView chatActivityEnterView = this.J;
+        if (textPaint == null) {
+            TextPaint textPaint2 = new TextPaint(1);
+            this.G = textPaint2;
+            textPaint2.setTextSize(hl.L(14.0f));
+            this.G.setTypeface(hl.o());
+            this.G.setFontFeatureSettings("tnum");
+            TextPaint textPaint3 = this.G;
+            int i = aob.G6;
+            int i2 = ChatActivityEnterView.X7;
+            textPaint3.setColor(chatActivityEnterView.J0(i));
         }
-        FragmentContextView fragmentContextView3 = this.y;
-        x46 x46Var = this.c;
-        if (fragmentContextView3 == null || !((currentStyle = fragmentContextView3.getCurrentStyle()) == 3 || currentStyle == 1)) {
-            z = false;
+        long currentTimeMillis = System.currentTimeMillis();
+        long j2 = this.a ? this.r ? this.h : currentTimeMillis - this.d : this.e - this.d;
+        long j3 = j2 / 1000;
+        int i3 = ((int) (j2 % 1000)) / 10;
+        long j4 = 0;
+        if (chatActivityEnterView.d1 && j2 >= 59500 && !this.b) {
+            chatActivityEnterView.s3 = -1.0f;
+            chatActivityEnterView.O3.H1(3, 0, chatActivityEnterView.P ? Integer.MAX_VALUE : 0, chatActivityEnterView.o7, 0L, true);
+            bx1 bx1Var = chatActivityEnterView.K0;
+            chatActivityEnterView.o7 = 0L;
+            bx1Var.setEffect(0L);
+            this.b = true;
+        }
+        if (this.a && currentTimeMillis > this.f + 5000) {
+            this.f = currentTimeMillis;
+            uc7 s1 = uc7.s1(chatActivityEnterView.R);
+            long j5 = chatActivityEnterView.F3;
+            threadMessageId = chatActivityEnterView.getThreadMessageId();
+            s1.P4(chatActivityEnterView.d1 ? 7 : 1, 0, j5, threadMessageId, null);
+        }
+        long j6 = (int) j3;
+        Typeface typeface = hl.a;
+        StringBuilder sb = new StringBuilder();
+        long j7 = j6 / 60;
+        if (j7 >= 60) {
+            sb.append(j7 / 60);
+            sb.append(":");
+            hl.o2(j7 % 60, sb);
+            sb.append(":");
+            hl.o2(j6 % 60, sb);
+            sb.append(",");
+            sb.append(i3 / 10);
         } else {
-            int entriesCount = getEntriesCount();
-            boolean z2 = false;
-            for (int i = 0; i < entriesCount; i++) {
-                u46 i2 = x46Var.i(i);
-                float paddingTop = getPaddingTop() + i2.b().top;
-                View view = ((nm) i2.a).a;
-                float c = i2.c();
-                if (c > 0.0f && ((fragmentContextView2 = this.y) == view || fragmentContextView2.getParent() == view)) {
-                    ua1 capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
-                    int L = gl.L(1.0f) + ((int) capsuleBlobDrawable.d());
-                    int i3 = -L;
-                    capsuleBlobDrawable.setBounds(getPaddingLeft() - L, i3, (getMeasuredWidth() - getPaddingRight()) + L, gl.L(36.0f) + (L << 1) + i3);
-                    capsuleBlobDrawable.setAlpha((int) (c * 255.0f));
-                    canvas2.save();
-                    canvas2.translate(0.0f, paddingTop);
-                    capsuleBlobDrawable.draw(canvas2);
-                    canvas2.restore();
-                    z2 = true;
+            sb.append(j7);
+            sb.append(":");
+            hl.o2(j6 % 60, sb);
+            sb.append(",");
+            sb.append(i3 / 10);
+        }
+        String sb2 = sb.toString();
+        if (sb2.length() < 3 || (str = this.c) == null || str.length() < 3 || sb2.length() != this.c.length() || sb2.charAt(sb2.length() - 3) == this.c.charAt(sb2.length() - 3)) {
+            j = 0;
+            SpannableStringBuilder spannableStringBuilder = this.x;
+            if (spannableStringBuilder == null) {
+                spannableStringBuilder = new SpannableStringBuilder(sb2);
+                this.x = spannableStringBuilder;
+            }
+            if (spannableStringBuilder.length() == 0 || this.x.length() != sb2.length()) {
+                this.x.clear();
+                this.x.append((CharSequence) sb2);
+            } else {
+                this.x.replace(r15.length() - 1, this.x.length(), (CharSequence) sb2, (sb2.length() - 1) - (sb2.length() - this.x.length()), sb2.length());
+            }
+        } else {
+            int length = sb2.length();
+            SpannableStringBuilder spannableStringBuilder2 = this.s;
+            spannableStringBuilder2.clear();
+            SpannableStringBuilder spannableStringBuilder3 = this.w;
+            spannableStringBuilder3.clear();
+            this.x.clear();
+            spannableStringBuilder2.append((CharSequence) sb2);
+            spannableStringBuilder3.append((CharSequence) this.c);
+            this.x.append((CharSequence) sb2);
+            int i4 = -1;
+            int i5 = -1;
+            int i6 = 0;
+            int i7 = 0;
+            int i8 = 0;
+            while (true) {
+                j = j4;
+                if (i6 >= length - 1) {
+                    break;
                 }
+                if (this.c.charAt(i6) != sb2.charAt(i6)) {
+                    if (i8 == 0) {
+                        i5 = i6;
+                    }
+                    i8++;
+                    if (i7 != 0) {
+                        fy2 fy2Var = new fy2((byte) 1);
+                        if (i6 == length - 2) {
+                            i7++;
+                        }
+                        int i9 = i7 + i4;
+                        spannableStringBuilder2.setSpan(fy2Var, i4, i9, 33);
+                        spannableStringBuilder3.setSpan(fy2Var, i4, i9, 33);
+                        i7 = 0;
+                    }
+                } else {
+                    if (i7 == 0) {
+                        i4 = i6;
+                    }
+                    i7++;
+                    if (i8 != 0) {
+                        this.x.setSpan(new fy2((byte) 1), i5, i8 + i5, 33);
+                        i8 = 0;
+                    }
+                }
+                i6++;
+                j4 = j;
             }
-            z = z2;
-        }
-        canvas2.save();
-        canvas2.clipPath(this.w);
-        int entriesCount2 = getEntriesCount();
-        int i4 = 0;
-        while (i4 < entriesCount2) {
-            u46 i5 = x46Var.i(i4);
-            float paddingTop2 = getPaddingTop() + i5.b().top;
-            View view2 = ((nm) i5.a).a;
-            float min = Math.min(1.0f, i5.c.a) * i5.c();
-            if (min > 0.0f && (!z || (fragmentContextView = this.y) == null || (fragmentContextView != view2 && fragmentContextView.getParent() != view2))) {
-                int alpha = bkb.j0.getAlpha();
-                bkb.j0.setAlpha((int) (alpha * min));
-                float f = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (gl.L(16.0f) * f), paddingTop2, getWidth() - ((gl.L(16.0f) * f) + getPaddingRight()), paddingTop2, bkb.j0);
-                bkb.j0.setAlpha(alpha);
+            if (i7 != 0) {
+                fy2 fy2Var2 = new fy2((byte) 1);
+                int i10 = i7 + i4 + 1;
+                spannableStringBuilder2.setSpan(fy2Var2, i4, i10, 33);
+                spannableStringBuilder3.setSpan(fy2Var2, i4, i10, 33);
             }
-            i4++;
-            canvas2 = canvas;
+            if (i8 != 0) {
+                this.x.setSpan(new fy2((byte) 1), i5, i8 + i5, 33);
+            }
+            TextPaint textPaint4 = this.G;
+            int measuredWidth = getMeasuredWidth();
+            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+            this.y = new StaticLayout(spannableStringBuilder2, textPaint4, measuredWidth, alignment, 1.0f, 0.0f, false);
+            this.E = new StaticLayout(spannableStringBuilder3, this.G, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
+            this.F = 1.0f;
         }
-        super.dispatchDraw(canvas);
-        canvas.restore();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j8 = this.n;
+        long min = j8 == j ? 16L : Math.min(50L, elapsedRealtime - j8);
+        this.n = elapsedRealtime;
+        float f = this.F;
+        if (f != 0.0f) {
+            float f2 = f - (min / 116.0f);
+            this.F = f2;
+            if (f2 < 0.0f) {
+                this.F = 0.0f;
+            }
+        }
+        float measuredHeight = getMeasuredHeight() / 2;
+        if (this.F == 0.0f) {
+            this.x.clearSpans();
+            StaticLayout staticLayout = new StaticLayout(this.x, this.G, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            canvas.save();
+            uh9.n(staticLayout.getHeight(), 2.0f, measuredHeight, 0.0f, canvas);
+            staticLayout.draw(canvas);
+            canvas.restore();
+            this.I = staticLayout.getLineWidth(0) + 0.0f;
+        } else {
+            StaticLayout staticLayout2 = this.y;
+            float f3 = this.H;
+            if (staticLayout2 != null) {
+                canvas.save();
+                this.G.setAlpha((int) ((1.0f - this.F) * 255.0f));
+                canvas.translate(0.0f, (measuredHeight - (this.y.getHeight() / 2.0f)) - (this.F * f3));
+                this.y.draw(canvas);
+                canvas.restore();
+            }
+            if (this.E != null) {
+                canvas.save();
+                this.G.setAlpha((int) (this.F * 255.0f));
+                canvas.translate(0.0f, qd4.A(1.0f, this.F, f3, measuredHeight - (this.E.getHeight() / 2.0f)));
+                this.E.draw(canvas);
+                canvas.restore();
+            }
+            canvas.save();
+            this.G.setAlpha(jn7.d4);
+            StaticLayout staticLayout3 = new StaticLayout(this.x, this.G, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            uh9.n(staticLayout3.getHeight(), 2.0f, measuredHeight, 0.0f, canvas);
+            staticLayout3.draw(canvas);
+            canvas.restore();
+            this.I = staticLayout3.getLineWidth(0) + 0.0f;
+        }
+        this.c = sb2;
+        if ((this.a || this.F != 0.0f) && !this.r) {
+            invalidate();
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        il0 il0Var;
-        if (super.dispatchTouchEvent(motionEvent)) {
-            return true;
-        }
-        return motionEvent.getAction() == 0 && (il0Var = this.s) != null && il0Var.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-    }
-
-    @Override // om
-    public final void f() {
-        k();
+    public void setExternalFrameClock(boolean z) {
+        this.r = z;
+        this.n = SystemClock.elapsedRealtime();
         invalidate();
-    }
-
-    public final void k() {
-        float f = getMetadata().g.a;
-        float f2 = getMetadata().c.a;
-        RectF rectF = this.x;
-        rectF.set(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getPaddingTop() + f);
-        float min = Math.min(gl.L(18.0f), Math.min(rectF.width(), rectF.height()) / 2.0f);
-        Path path = this.w;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        il0 il0Var = this.s;
-        if (il0Var != null) {
-            il0Var.setAlpha((int) (f2 * 255.0f));
-            this.s.setBounds(getPaddingLeft() - gl.L(7.0f), 0, gl.L(7.0f) + (getMeasuredWidth() - getPaddingRight()), getPaddingBottom() + getPaddingTop() + ((int) f));
-            this.s.r(Math.min(gl.L(18.0f), f / 2.0f));
-        }
-    }
-
-    @Override // om, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        k();
-    }
-
-    public void setBlurredBackground(il0 il0Var) {
-        this.s = il0Var;
-    }
-
-    public void setCallFragmentContextView(FragmentContextView fragmentContextView) {
-        this.y = fragmentContextView;
-        fragmentContextView.getCapsuleBlobDrawable().setCallback(this);
-    }
-
-    @Override // android.view.View
-    public final void setPadding(int i, int i2, int i3, int i4) {
-        super.setPadding(i, i2, i3, i4);
-        k();
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        if (super.verifyDrawable(drawable)) {
-            return true;
-        }
-        FragmentContextView fragmentContextView = this.y;
-        return fragmentContextView != null && fragmentContextView.getCapsuleBlobDrawable() == drawable;
     }
 }

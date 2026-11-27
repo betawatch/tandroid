@@ -1,21 +1,47 @@
 // default package
 
-import android.view.View;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sk implements View.OnLayoutChangeListener {
-    public final /* synthetic */ o39 a;
-    public final /* synthetic */ Runnable b;
+public final class sk extends CharacterStyle {
+    public final /* synthetic */ byte a;
+    public int b;
 
-    public sk(o39 o39Var, Runnable runnable) {
-        this.a = o39Var;
-        this.b = runnable;
+    public sk() {
+        this.a = (byte) 2;
+        this.b = 0;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-        this.a.removeOnLayoutChangeListener(this);
-        this.b.run();
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setUnderlineText(false);
+                textPaint.setTypeface(hl.o());
+                textPaint.setColor(this.b);
+                break;
+            case 1:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(this.b);
+                break;
+            case 2:
+                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
+                break;
+            default:
+                textPaint.setColor(aob.p1(textPaint.getAlpha() / 255.0f, this.b));
+                break;
+        }
+    }
+
+    public /* synthetic */ sk(int i, byte b) {
+        this.a = b;
+        this.b = i;
+    }
+
+    public /* synthetic */ sk(byte b, int i, boolean z) {
+        this.a = b;
+        this.b = i;
     }
 }

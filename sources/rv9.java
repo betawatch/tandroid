@@ -1,30 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class rv9 {
-    public final long a;
-    public final long b;
+import java.util.ArrayList;
 
-    public rv9(long j, long j2) {
-        this.a = j;
-        this.b = j2;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface rv9 {
+    boolean C1(int i);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && rv9.class == obj.getClass()) {
-            rv9 rv9Var = (rv9) obj;
-            if (this.a == rv9Var.a && this.b == rv9Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
+    zh6 D0();
 
-    public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
-    }
+    void X1(ArrayList arrayList);
+
+    zh6 Z0();
+
+    void p(int i);
 }

@@ -1,399 +1,354 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.os.AsyncTask;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.URLSpan;
+import android.util.SparseIntArray;
+import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.net.URLEncoder;
 import java.util.ArrayList;
-import org.telegram.messenger.a;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.WallpapersListActivity;
+import java.util.Collections;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fb implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class fb extends FrameLayout {
+    public final db E;
+    public int F;
+    public int G;
+    public int H;
+    public int I;
+    public int J;
+    public float K;
+    public boolean L;
+    public gt M;
+    public vs N;
+    public vs O;
+    public AsyncTask P;
+    public final uk5 a;
+    public boolean b;
+    public final hf0 c;
+    public final FrameLayout d;
+    public final FrameLayout e;
+    public final ImageView f;
+    public final hf0 h;
+    public final ImageView n;
+    public final TextView r;
+    public final TextView s;
+    public final t62 w;
+    public final wa x;
+    public final ArrayList y;
 
-    public /* synthetic */ fb(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    public fb(Activity activity) {
+        super(activity);
+        int i = yac.t0;
+        this.y = new ArrayList();
+        this.K = 0.0f;
+        setWillNotDraw(false);
+        int i2 = yac.t0;
+        c cVar = new c(this, (byte) 5);
+        ua uaVar = new ua(this);
+        uk5 uk5Var = new uk5((vnb) null);
+        this.a = uk5Var;
+        wa waVar = new wa(this, activity, i2, cVar, uaVar, uk5Var);
+        this.x = waVar;
+        waVar.g3.r = false;
+        waVar.setOverScrollMode(2);
+        waVar.setPadding(0, 0, 0, 0);
+        addView(waVar, tre.e(-1, -1, jn7.D1));
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.d = frameLayout;
+        FrameLayout frameLayout2 = new FrameLayout(activity);
+        this.e = frameLayout2;
+        hf0 Z = aob.Z(this.H, this.J, 15, 15);
+        this.c = Z;
+        frameLayout2.setBackground(Z);
+        iye.b(frameLayout2, 0.04f, 1.25f);
+        frameLayout.addView(frameLayout2, tre.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
+        ImageView imageView = new ImageView(activity);
+        this.f = imageView;
+        frameLayout2.addView(imageView, tre.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
+        ImageView imageView2 = new ImageView(activity);
+        this.n = imageView2;
+        iye.a(imageView2);
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        imageView2.setImageResource(R.drawable.msg_copy);
+        hf0 Z2 = aob.Z(0, 0, 6, 6);
+        this.h = Z2;
+        imageView2.setBackground(Z2);
+        frameLayout2.addView(imageView2, tre.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(1);
+        frameLayout2.addView(linearLayout, tre.d(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
+        TextView textView = new TextView(activity);
+        this.r = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setTypeface(hl.o());
+        textView.setMaxLines(4);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        linearLayout.addView(textView, tre.t(-1, -2, 55, 0, 0, 0, 2));
+        TextView textView2 = new TextView(activity);
+        this.s = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setMaxLines(3);
+        textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+        linearLayout.addView(textView2, tre.t(-1, -2, 55, 0, 0, 0, 0));
+        this.E = new db(null, i, new c1(this, (byte) 6));
+        this.w = new t62(activity, (byte) 1);
+        int i3 = aob.Gl;
+        c(aob.w0(null, i3, false), hl.B(aob.w0(null, i3, false)) >= 0.721f ? -16777216 : -1);
+        setOpenProgress(0.0f);
+        setImportantForAccessibility(4);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0427  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x04a3  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x04b0  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0454  */
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public static String a(r47 r47Var) {
+        TLRPC.Message message = r47Var.k;
+        if (message != null) {
+            TLRPC.MessageMedia messageMedia = message.media;
+            if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
+                return messageMedia.webpage.url;
+            }
+        }
+        CharSequence charSequence = r47Var.v;
+        if (charSequence == null || charSequence.length() <= 0) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(r47Var.v);
+        for (URLSpan uRLSpan : (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class)) {
+            String url = uRLSpan.getURL();
+            if (url != null && !url.startsWith("@") && !url.startsWith("#") && !url.startsWith("$")) {
+                return url;
+            }
+        }
+        return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0082 A[Catch: Exception -> 0x00e3, TryCatch #2 {Exception -> 0x00e3, blocks: (B:6:0x0063, B:8:0x0069, B:10:0x0079, B:13:0x007c, B:15:0x0082, B:16:0x009f, B:17:0x00a7, B:19:0x00b3, B:21:0x00d3, B:25:0x0097), top: B:5:0x0063 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00b3 A[Catch: Exception -> 0x00e3, LOOP:1: B:17:0x00a7->B:19:0x00b3, LOOP_END, TryCatch #2 {Exception -> 0x00e3, blocks: (B:6:0x0063, B:8:0x0069, B:10:0x0079, B:13:0x007c, B:15:0x0082, B:16:0x009f, B:17:0x00a7, B:19:0x00b3, B:21:0x00d3, B:25:0x0097), top: B:5:0x0063 }] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0097 A[Catch: Exception -> 0x00e3, TryCatch #2 {Exception -> 0x00e3, blocks: (B:6:0x0063, B:8:0x0069, B:10:0x0079, B:13:0x007c, B:15:0x0082, B:16:0x009f, B:17:0x00a7, B:19:0x00b3, B:21:0x00d3, B:25:0x0097), top: B:5:0x0063 }] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x007c A[EDGE_INSN: B:26:0x007c->B:13:0x007c BREAK  A[LOOP:0: B:5:0x0063->B:10:0x0079], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0069 A[Catch: Exception -> 0x00e3, TryCatch #2 {Exception -> 0x00e3, blocks: (B:6:0x0063, B:8:0x0069, B:10:0x0079, B:13:0x007c, B:15:0x0082, B:16:0x009f, B:17:0x00a7, B:19:0x00b3, B:21:0x00d3, B:25:0x0097), top: B:5:0x0063 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean onPreDraw() {
-        boolean z;
-        final byte b = 0;
-        final byte b2 = 1;
-        switch (this.a) {
-            case 0:
-                gb gbVar = (gb) this.b;
-                FrameLayout frameLayout = gbVar.a;
-                int height = frameLayout.getHeight();
-                int i = height - gbVar.i();
-                int i2 = gbVar.i;
-                if (i != i2 - gbVar.k && height != i2 && gbVar.m == null) {
-                    if (gbVar.b() && Math.abs(gbVar.i - height) >= gl.L(20.0f)) {
-                        if (gbVar.i != -1 && gbVar.j == gbVar.c.getHeight()) {
-                            boolean z2 = height < gbVar.c.getBottom();
-                            gbVar.s = z2;
-                            int i3 = gbVar.i;
-                            if (gbVar.v) {
-                                gbVar.v = false;
-                            } else if (gbVar.u) {
-                                ValueAnimator valueAnimator = gbVar.m;
-                                if (valueAnimator != null) {
-                                    valueAnimator.cancel();
+    public static void b(Context context, String str) {
+        SharedPreferences sharedPreferences;
+        int i;
+        int i2;
+        SharedPreferences sharedPreferences2 = context.getSharedPreferences("webhistory", 0);
+        eb ebVar = null;
+        String string = sharedPreferences2.getString("queries_json", null);
+        ArrayList arrayList = new ArrayList();
+        if (string != null) {
+            try {
+                JSONArray jSONArray = new JSONArray(string);
+                int i3 = 0;
+                while (i3 < jSONArray.length()) {
+                    JSONObject jSONObject = jSONArray.getJSONObject(i3);
+                    sharedPreferences = sharedPreferences2;
+                    try {
+                        eb ebVar2 = new eb(jSONObject.optString("name"), jSONObject.optLong("usage", System.currentTimeMillis()));
+                        ebVar2.c = jSONObject.optDouble("rank", 0.0d);
+                        arrayList.add(ebVar2);
+                        i3++;
+                        sharedPreferences2 = sharedPreferences;
+                    } catch (Exception e) {
+                        e = e;
+                        cc4.g(e, true);
+                        i = 0;
+                        while (true) {
+                            try {
+                                if (i < arrayList.size()) {
                                 }
-                                int i4 = gbVar.i();
-                                ArrayList arrayList = gbVar.o;
-                                arrayList.clear();
-                                View view = frameLayout;
-                                while (view != null) {
-                                    arrayList.add(view);
-                                    if (view != gbVar.d) {
-                                        view = view.getParent() instanceof View ? (View) view.getParent() : null;
-                                    } else {
-                                        LaunchActivity launchActivity = LaunchActivity.H1;
-                                        int expandedHeight = (launchActivity != null || launchActivity.O() == null) ? 0 : LaunchActivity.H1.O().getExpandedHeight();
-                                        z = gbVar instanceof y72;
-                                        if (!z) {
-                                            gbVar.h(Math.max(i3, height + expandedHeight));
-                                        }
-                                        gbVar.d.requestLayout();
-                                        gbVar.g(height, z2);
-                                        float f = height - i3;
-                                        gbVar.f = true;
-                                        if (height <= i3) {
-                                            float f2 = f - i4;
-                                            if (!z) {
-                                                frameLayout.setTranslationY(-f2);
-                                            }
-                                            gbVar.e(f2, 1.0f, z2);
-                                            gbVar.p = -f2;
-                                            gbVar.q = -expandedHeight;
-                                            gbVar.r = true;
-                                        } else {
-                                            if (!z) {
-                                                frameLayout.setTranslationY(gbVar.k);
-                                            }
-                                            gbVar.e(-gbVar.k, 0.0f, z2);
-                                            gbVar.q = -gbVar.k;
-                                            gbVar.p = f;
-                                            gbVar.r = false;
-                                        }
-                                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                                        gbVar.m = ofFloat;
-                                        gbVar.e = false;
-                                        ofFloat.addUpdateListener(new f0(gbVar, (byte) 4));
-                                        gbVar.m.addListener(new g0(gbVar, (byte) 5));
-                                        gbVar.m.setDuration(250L);
-                                        gbVar.m.setInterpolator(gb.w);
-                                        gbVar.n.d();
-                                        if (gbVar.g) {
-                                            gbVar.m.start();
-                                        } else {
-                                            gbVar.g = false;
-                                            SystemClock.elapsedRealtime();
-                                            gl.d3(gbVar.h, 100L);
-                                        }
-                                    }
-                                }
-                                LaunchActivity launchActivity2 = LaunchActivity.H1;
-                                if (launchActivity2 != null) {
-                                }
-                                z = gbVar instanceof y72;
-                                if (!z) {
-                                }
-                                gbVar.d.requestLayout();
-                                gbVar.g(height, z2);
-                                float f3 = height - i3;
-                                gbVar.f = true;
-                                if (height <= i3) {
-                                }
-                                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                                gbVar.m = ofFloat2;
-                                gbVar.e = false;
-                                ofFloat2.addUpdateListener(new f0(gbVar, (byte) 4));
-                                gbVar.m.addListener(new g0(gbVar, (byte) 5));
-                                gbVar.m.setDuration(250L);
-                                gbVar.m.setInterpolator(gb.w);
-                                gbVar.n.d();
-                                if (gbVar.g) {
-                                }
+                                i++;
+                            } catch (Exception e2) {
+                                cc4.g(e2, true);
+                                return;
                             }
-                            gbVar.i = height;
-                            gbVar.j = gbVar.c.getHeight();
-                            gbVar.k = gbVar.i();
-                            break;
-                        } else {
-                            gbVar.i = height;
-                            gbVar.j = gbVar.c.getHeight();
-                            gbVar.k = gbVar.i();
-                            break;
                         }
-                    } else {
-                        gbVar.i = height;
-                        gbVar.j = gbVar.c.getHeight();
-                        gbVar.k = gbVar.i();
-                        gbVar.e = false;
-                    }
-                } else if (gbVar.m == null) {
-                    gbVar.i = height;
-                    gbVar.j = gbVar.c.getHeight();
-                    gbVar.k = gbVar.i();
-                    gbVar.e = false;
-                }
-                break;
-            case 1:
-                o71 o71Var = (o71) this.b;
-                FrameLayout frameLayout2 = o71Var.c;
-                if (!o71Var.E) {
-                    float max = Math.max(0.0f, o71Var.y - o71Var.getY());
-                    if (frameLayout2.getTranslationY() != max) {
-                        frameLayout2.setTranslationY(max);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                ((ju3) this.b).a.m1.getViewTreeObserver().removeOnPreDrawListener(this);
-                break;
-            case 3:
-                ((s71) this.b).invalidate();
-                break;
-            case 4:
-                o85 o85Var = (o85) this.b;
-                r85 r85Var = o85Var.f;
-                r71 r71Var = o85Var.e;
-                r71Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                r71Var.getLocationOnScreen(o85Var.I);
-                float f4 = o85Var.s.x + o85Var.S;
-                t85 t85Var = o85Var.W;
-                float measuredWidth = ((t85Var.getMeasuredWidth() / 2.0f) + f4) - r0[0];
-                float measuredWidth2 = ((t85Var.getMeasuredWidth() / 2.0f) + (o85Var.s.y + o85Var.T)) - r0[1];
-                boolean z3 = measuredWidth2 - ((float) gl.L(61.0f)) > 0.0f && ((float) gl.L(61.0f)) + measuredWidth2 < ((float) r71Var.getMeasuredHeight());
-                if (gl.L(61.0f) + measuredWidth + r85Var.getMeasuredWidth() < r71Var.getMeasuredWidth() - gl.L(16.0f) && z3) {
-                    r85Var.setTranslationX(gl.L(61.0f) + measuredWidth);
-                    float measuredHeight = measuredWidth2 / r71Var.getMeasuredHeight();
-                    float L = gl.L(40.0f) / r85Var.getMeasuredHeight();
-                    r85Var.setTranslationY((int) (measuredWidth2 - (r85Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
-                    r85Var.a(measuredWidth, measuredWidth2, 0);
-                    break;
-                } else if ((measuredWidth - gl.L(61.0f)) - r85Var.getMeasuredWidth() > gl.L(16.0f) && z3) {
-                    float L2 = gl.L(40.0f) / r85Var.getMeasuredHeight();
-                    float max2 = Math.max(L2, Math.min(measuredWidth2 / r71Var.getMeasuredHeight(), 1.0f - L2));
-                    r85Var.setTranslationX((int) ((measuredWidth - gl.L(61.0f)) - r85Var.getMeasuredWidth()));
-                    r85Var.setTranslationY((int) (measuredWidth2 - (r85Var.getMeasuredHeight() * max2)));
-                    r85Var.a(measuredWidth, measuredWidth2, 1);
-                    break;
-                } else if (measuredWidth2 <= r71Var.getMeasuredHeight() * 0.3f) {
-                    float measuredWidth3 = measuredWidth / r71Var.getMeasuredWidth();
-                    float L3 = gl.L(40.0f) / r85Var.getMeasuredWidth();
-                    r85Var.setTranslationX((int) (measuredWidth - (r85Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
-                    r85Var.setTranslationY((int) (gl.L(61.0f) + measuredWidth2));
-                    r85Var.a(measuredWidth, measuredWidth2, 2);
-                    break;
-                } else {
-                    float measuredWidth4 = measuredWidth / r71Var.getMeasuredWidth();
-                    float L4 = gl.L(40.0f) / r85Var.getMeasuredWidth();
-                    r85Var.setTranslationX((int) (measuredWidth - (r85Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
-                    r85Var.setTranslationY((int) ((measuredWidth2 - r85Var.getMeasuredHeight()) - gl.L(61.0f)));
-                    r85Var.a(measuredWidth, measuredWidth2, 3);
-                    break;
-                }
-                break;
-            case 5:
-                View view2 = ((xj5) this.b).fragmentView;
-                if (view2 != null) {
-                    view2.getViewTreeObserver().removeOnPreDrawListener(this);
-                    int rotation = ((WindowManager) a.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (rotation == 3 || rotation == 1) {
-                        ((xj5) this.b).f.setOrientation(0);
-                    } else {
-                        ((xj5) this.b).f.setOrientation(1);
-                    }
-                    View view3 = ((xj5) this.b).fragmentView;
-                    view3.setPadding(view3.getPaddingLeft(), 0, ((xj5) this.b).fragmentView.getPaddingRight(), ((xj5) this.b).fragmentView.getPaddingBottom());
-                    break;
-                }
-                break;
-            case 6:
-                ((s71) this.b).invalidate();
-                break;
-            case 7:
-                g48 g48Var = (g48) this.b;
-                if (g48Var.getParentActivity() != null) {
-                    int rotation2 = ((WindowManager) a.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                    g48Var.f = (byte) 2;
-                    if (!gl.O1() && (rotation2 == 3 || rotation2 == 1)) {
-                        g48Var.f = (byte) 4;
-                    }
-                    g48Var.n.f();
-                }
-                o39 o39Var = ((g48) this.b).h;
-                if (o39Var != null) {
-                    o39Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
-                }
-                break;
-            case 8:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.w3.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = photoViewer.x3;
-                if (imageView != null) {
-                    if (photoViewer.J3) {
-                        gl.d3(new Runnable(this) { // from class: y88
-                            public final /* synthetic */ fb b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                byte b3 = b;
-                                fb fbVar = this.b;
-                                switch (b3) {
-                                    case 0:
-                                        PhotoViewer photoViewer2 = (PhotoViewer) fbVar.b;
-                                        photoViewer2.x3.setVisibility(4);
-                                        photoViewer2.x3.setImageDrawable(null);
-                                        Bitmap bitmap = photoViewer2.C3;
-                                        if (bitmap != null) {
-                                            bitmap.recycle();
-                                            photoViewer2.C3 = null;
-                                            break;
-                                        }
-                                        break;
-                                    default:
-                                        PhotoViewer photoViewer3 = (PhotoViewer) fbVar.b;
-                                        if (photoViewer3.J3) {
-                                            photoViewer3.P();
-                                            break;
-                                        }
-                                        break;
-                                }
-                            }
-                        }, 300L);
-                    } else {
-                        imageView.setVisibility(4);
-                        photoViewer.x3.setImageDrawable(null);
-                        Bitmap bitmap = photoViewer.C3;
-                        if (bitmap != null) {
-                            bitmap.recycle();
-                            photoViewer.C3 = null;
+                        long currentTimeMillis = System.currentTimeMillis();
+                        if (ebVar == null) {
                         }
-                    }
-                }
-                gl.c3(new Runnable(this) { // from class: y88
-                    public final /* synthetic */ fb b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b3 = b2;
-                        fb fbVar = this.b;
-                        switch (b3) {
-                            case 0:
-                                PhotoViewer photoViewer2 = (PhotoViewer) fbVar.b;
-                                photoViewer2.x3.setVisibility(4);
-                                photoViewer2.x3.setImageDrawable(null);
-                                Bitmap bitmap2 = photoViewer2.C3;
-                                if (bitmap2 != null) {
-                                    bitmap2.recycle();
-                                    photoViewer2.C3 = null;
-                                    break;
-                                }
-                                break;
-                            default:
-                                PhotoViewer photoViewer3 = (PhotoViewer) fbVar.b;
-                                if (photoViewer3.J3) {
-                                    photoViewer3.P();
-                                    break;
-                                }
-                                break;
+                        ebVar.b = currentTimeMillis;
+                        JSONArray jSONArray2 = new JSONArray();
+                        while (i2 < Math.min(arrayList.size(), 20)) {
                         }
-                    }
-                });
-                photoViewer.G3 = (byte) 0;
-                break;
-            case 9:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                if (profileActivity.fragmentView != null) {
-                    RectF rectF = ProfileActivity.Z6;
-                    profileActivity.F1();
-                    profileActivity.N2(true);
-                    profileActivity.fragmentView.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
-                }
-                break;
-            case 10:
-                smb smbVar = (smb) ((gl3) this.b).b;
-                smbVar.getViewTreeObserver().removeOnPreDrawListener(this);
-                smbVar.getTransitionParams().e();
-                smbVar.getTransitionParams().a();
-                smbVar.getTransitionParams().h = true;
-                smbVar.getTransitionParams().L1 = 0.0f;
-                ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat3.addUpdateListener(new gja(this, (byte) 23));
-                ofFloat3.addListener(new iab(this, (byte) 3));
-                ofFloat3.start();
-                break;
-            case 11:
-                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
-                if (wallpapersListActivity.getParentActivity() != null) {
-                    int rotation3 = ((WindowManager) a.b.getSystemService("window")).getDefaultDisplay().getRotation();
-                    if (gl.O1()) {
-                        wallpapersListActivity.O = (byte) 3;
-                    } else if (rotation3 == 3 || rotation3 == 1) {
-                        wallpapersListActivity.O = (byte) 5;
-                    } else {
-                        wallpapersListActivity.O = (byte) 3;
-                    }
-                    wallpapersListActivity.G0();
-                }
-                o39 o39Var2 = ((WallpapersListActivity) this.b).G;
-                if (o39Var2 != null) {
-                    o39Var2.getViewTreeObserver().removeOnPreDrawListener(this);
-                    break;
-                }
-                break;
-            default:
-                stc stcVar = (stc) ((up5) this.b).b;
-                stcVar.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView2 = stcVar.e;
-                if (imageView2 != null) {
-                    imageView2.setVisibility(4);
-                    stcVar.e.setImageDrawable(null);
-                    Bitmap bitmap2 = stcVar.h;
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
-                        stcVar.h = null;
+                        sharedPreferences.edit().putString("queries_json", jSONArray2.toString()).apply();
                     }
                 }
-                gl.c3(new frc(this, (byte) 3));
-                stcVar.r = (byte) 0;
-                break;
+                sharedPreferences = sharedPreferences2;
+                Collections.sort(arrayList, new ta((byte) 1));
+            } catch (Exception e3) {
+                e = e3;
+                sharedPreferences = sharedPreferences2;
+            }
+        } else {
+            sharedPreferences = sharedPreferences2;
         }
-        return true;
+        i = 0;
+        while (true) {
+            if (i < arrayList.size()) {
+                break;
+            }
+            eb ebVar3 = (eb) arrayList.get(i);
+            if (TextUtils.equals(ebVar3.a, str)) {
+                ebVar = ebVar3;
+                break;
+            }
+            i++;
+        }
+        long currentTimeMillis2 = System.currentTimeMillis();
+        if (ebVar == null) {
+            ebVar.c += Math.exp((currentTimeMillis2 - ebVar.b) / 2419200.0d);
+        } else {
+            ebVar = new eb(str, currentTimeMillis2);
+            arrayList.add(ebVar);
+        }
+        ebVar.b = currentTimeMillis2;
+        JSONArray jSONArray22 = new JSONArray();
+        for (i2 = 0; i2 < Math.min(arrayList.size(), 20); i2++) {
+            eb ebVar4 = (eb) arrayList.get(i2);
+            JSONObject jSONObject2 = new JSONObject();
+            jSONObject2.put("name", ebVar4.a);
+            jSONObject2.put("rank", ebVar4.c);
+            jSONObject2.put("usage", ebVar4.b);
+            jSONArray22.put(jSONObject2);
+        }
+        sharedPreferences.edit().putString("queries_json", jSONArray22.toString()).apply();
+    }
+
+    public final void c(int i, int i2) {
+        if (this.F != i) {
+            this.F = i;
+            invalidate();
+        }
+        this.I = i2;
+        float f = hl.B(i) >= 0.721f ? 0.0f : 1.0f;
+        this.H = vm2.f(hl.R1(0.05f, 0.12f, f), i, i2);
+        this.G = i;
+        this.J = vm2.f(hl.R1(0.12f, 0.22f, f), i, i2);
+        int i3 = this.H;
+        hf0 hf0Var = this.c;
+        aob.F1(hf0Var, i3, false);
+        aob.F1(hf0Var, this.J, true);
+        this.e.invalidate();
+        this.r.setTextColor(i2);
+        this.s.setTextColor(aob.p1(0.6f, i2));
+        ImageView imageView = this.f;
+        if (imageView.getColorFilter() != null) {
+            imageView.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.SRC_IN));
+        }
+        this.n.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.SRC_IN));
+        aob.F1(this.h, aob.p1(1.5f, this.J), true);
+        int v = aob.v(i, aob.p1(0.05f, i2));
+        int v2 = aob.v(i, aob.p1(0.55f, i2));
+        uk5 uk5Var = this.a;
+        SparseIntArray sparseIntArray = (SparseIntArray) uk5Var.b;
+        SparseIntArray sparseIntArray2 = (SparseIntArray) uk5Var.b;
+        sparseIntArray.put(aob.d6, this.G);
+        sparseIntArray2.put(aob.G6, i2);
+        sparseIntArray2.put(aob.e7, v);
+        sparseIntArray2.put(aob.f7, v2);
+        sparseIntArray2.put(aob.G8, aob.p1(0.2f, i2));
+        sparseIntArray2.put(aob.i6, aob.p1(hl.R1(0.05f, 0.12f, f), i2));
+        this.x.i1();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getWidth(), getHeight() * this.K);
+        canvas.drawColor(this.G);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.K < 0.3f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        db dbVar = this.E;
+        if (dbVar == null || !this.L) {
+            return;
+        }
+        dbVar.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        db dbVar = this.E;
+        if (dbVar != null) {
+            dbVar.c();
+        }
+    }
+
+    public void setInput(String str) {
+        AsyncTask asyncTask = this.P;
+        String str2 = null;
+        if (asyncTask != null) {
+            asyncTask.cancel(true);
+            this.P = null;
+        }
+        ArrayList arrayList = this.y;
+        boolean z = !arrayList.isEmpty();
+        byte b = 0;
+        if (TextUtils.isEmpty(str)) {
+            arrayList.clear();
+            wa waVar = this.x;
+            waVar.g3.O(true);
+            if (z != (!arrayList.isEmpty())) {
+                waVar.f3.g1(0, 0);
+                return;
+            }
+            return;
+        }
+        oi5 oi5Var = new oi5(new sa(b, this, z));
+        String str3 = bw9.a().c;
+        if (str3 != null) {
+            str2 = str3 + URLEncoder.encode(str);
+        }
+        this.P = oi5Var.execute(str2);
+    }
+
+    public void setOpenProgress(float f) {
+        if (Math.abs(this.K - f) > 1.0E-4f) {
+            this.K = f;
+            int i = f <= 1.0E-4f ? 4 : 0;
+            if (getImportantForAccessibility() != i) {
+                setImportantForAccessibility(i);
+            }
+            invalidate();
+        }
+    }
+
+    public void setOpened(boolean z) {
+        db dbVar = this.E;
+        boolean z2 = z && dbVar != null;
+        this.L = z2;
+        if (z2) {
+            dbVar.a();
+        }
     }
 }

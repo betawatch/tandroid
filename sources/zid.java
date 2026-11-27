@@ -1,26 +1,27 @@
 // default package
 
-import java.util.AbstractMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zid extends xhd {
-    public final /* synthetic */ fjd r;
+public abstract class zid {
+    public static final a94 a;
+    public static final a94 b;
+    public static final a94 c;
+    public static final a94 d;
+    public static final a94[] e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zid(fjd fjdVar) {
-        super((byte) 4);
-        this.r = fjdVar;
-    }
-
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i) {
-        njd njdVar = this.r.s;
-        return new AbstractMap.SimpleImmutableEntry(njdVar.c.x.get(i), njdVar.d.get(i));
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.r.s.d.size();
+    static {
+        a94 a94Var = new a94("client_side_logging", 1L);
+        a94 a94Var2 = new a94("cxless_client_minimal", 1L);
+        a = a94Var2;
+        a94 a94Var3 = new a94("cxless_caf_control", 1L);
+        a94 a94Var4 = new a94("module_flag_control", 1L);
+        b = a94Var4;
+        a94 a94Var5 = new a94("discovery_hint_supply", 1L);
+        a94 a94Var6 = new a94("relay_casting_set_active_account", 1L);
+        a94 a94Var7 = new a94("analytics_proto_enum_translation", 1L);
+        c = a94Var7;
+        a94 a94Var8 = new a94("integer_to_integer_map", 1L);
+        d = a94Var8;
+        e = new a94[]{a94Var, a94Var2, a94Var3, a94Var4, a94Var5, a94Var6, a94Var7, a94Var8, new a94("relay_casting_set_remote_casting_mode", 1L), new a94("get_relay_access_token", 1L), new a94("get_cast_settings", 1L), new a94("set_bundle_setting", 1L), new a94("get_client_updated_info", 1L)};
     }
 }

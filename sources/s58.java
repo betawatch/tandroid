@@ -1,17 +1,49 @@
 // default package
 
-import android.text.Editable;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface s58 {
-    boolean c();
+public final class s58 implements h49 {
+    public final /* synthetic */ o68 a;
 
-    void e();
+    public s58(o68 o68Var) {
+        this.a = o68Var;
+    }
 
-    void j(Editable editable);
+    @Override // h49
+    public final void e(View view, w49 w49Var, boolean z, boolean z2) {
+        fd7 fd7Var = new fd7(this, w49Var, view, (byte) 24);
+        if (z) {
+            fd7Var.run();
+        } else {
+            this.a.d0(fd7Var);
+        }
+    }
 
-    void k();
+    @Override // h49
+    public final boolean j() {
+        return true;
+    }
 
-    void l(int i, boolean z, boolean z2);
+    @Override // h49
+    public final boolean k() {
+        ((ccb) this.a.A1).b(false);
+        return false;
+    }
+
+    @Override // h49
+    public final boolean p() {
+        return false;
+    }
+
+    @Override // h49
+    public final void n() {
+    }
+
+    @Override // h49
+    public final void m(Canvas canvas, RectF rectF, float f, float f2, float f3, int i, boolean z) {
+    }
 }

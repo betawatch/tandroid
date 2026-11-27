@@ -1,87 +1,36 @@
 // default package
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class i0a extends gec {
-    public boolean x0;
-    public final /* synthetic */ n0a y0;
-    public final /* synthetic */ n0a z0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class i0a extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ n1a c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0a(n0a n0aVar, Context context) {
-        super(context);
-        this.z0 = n0aVar;
-        this.y0 = n0aVar;
+    public i0a(n1a n1aVar, Integer num) {
+        this.c = n1aVar;
+        this.b = num;
     }
 
-    public final boolean A(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.x0 = true;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        n1a n1aVar = this.c;
+        byte b = n1aVar.e1;
+        float width = (this.b == null ? view.getWidth() / 2.0f : r2.intValue()) + hl.L(20.0f);
+        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
+        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
+        boolean m = n1aVar.m();
+        Rect rect = this.a;
+        if (m) {
+            rect.set((int) ((width - (n1aVar.b1 * width)) + view.getPaddingLeft()), (int) qd4.A(1.0f, n1aVar.c1, hl.L(b), qd4.A(1.0f, n1aVar.c1, height, view.getPaddingTop())), (int) (((width2 - width) * n1aVar.b1) + view.getPaddingLeft() + width), (int) qd4.A(1.0f, n1aVar.c1, hl.L(b), view.getPaddingTop() + height));
+        } else {
+            rect.set((int) ((width - (n1aVar.b1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * n1aVar.b1) + view.getPaddingLeft() + width), (int) ((height * n1aVar.c1) + view.getPaddingTop()));
         }
-        if (this.x0 && this.y0.y <= 0) {
-            try {
-                return super.onInterceptTouchEvent(motionEvent);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    public final boolean B(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.x0 = true;
-        }
-        if (!this.x0 || this.y0.y > 0) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float y = motionEvent.getY();
-        currentTopOffset = this.z0.getCurrentTopOffset();
-        if (y >= currentTopOffset || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // gec, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y = motionEvent.getY();
-        n0a n0aVar = this.z0;
-        currentTopOffset = n0aVar.getCurrentTopOffset();
-        if (y < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = n0aVar.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - n0aVar.d) > gl.L(1.0f)) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // gec, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y = motionEvent.getY();
-        n0a n0aVar = this.z0;
-        currentTopOffset = n0aVar.getCurrentTopOffset();
-        if (y < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = n0aVar.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - n0aVar.d) > gl.L(1.0f)) {
-            return false;
-        }
-        return B(motionEvent);
+        outline.setRoundRect(rect, hl.L(12.0f));
     }
 }

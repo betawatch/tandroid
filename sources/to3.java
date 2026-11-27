@@ -1,46 +1,100 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Process;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class to3 extends TLRPC.TL_document {
-    public final TLRPC.ThemeSettings a;
-    public final TLRPC.Document b;
-    public final akb c;
-    public final zjb d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class to3 extends Thread {
+    public volatile Handler a;
+    public final Object b = new Object();
+    public ArrayList c = new ArrayList();
+    public final CountDownLatch d = new CountDownLatch(1);
+    public final int e = -1000;
 
-    public to3(TLRPC.ThemeSettings themeSettings) {
-        this.a = themeSettings;
-        akb O0 = bkb.O0(bkb.q0(themeSettings));
-        this.c = O0;
-        O0.getClass();
-        zjb zjbVar = new zjb();
-        akb.g(zjbVar, themeSettings);
-        zjbVar.b = O0;
-        this.d = zjbVar;
-        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-        if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
-            this.id = -2147483648L;
-            this.dc_id = TLObject.FLAG_31;
+    public to3(String str) {
+        setName(str);
+        start();
+    }
+
+    public final void a(Runnable runnable) {
+        Handler handler = this.a;
+        if (handler != null) {
+            handler.removeCallbacks(runnable);
             return;
         }
-        TLRPC.Document document = ((TLRPC.TL_wallPaper) wallPaper).document;
-        this.b = document;
-        this.id = document.id;
-        this.access_hash = document.access_hash;
-        this.file_reference = document.file_reference;
-        this.user_id = document.user_id;
-        this.date = document.date;
-        this.file_name = document.file_name;
-        this.mime_type = document.mime_type;
-        this.size = document.size;
-        this.thumbs = document.thumbs;
-        this.version = document.version;
-        this.dc_id = document.dc_id;
-        this.key = document.key;
-        this.iv = document.iv;
-        this.attributes = document.attributes;
+        synchronized (this.b) {
+            ArrayList arrayList = this.c;
+            if (arrayList == null) {
+                this.a.removeCallbacks(runnable);
+                return;
+            }
+            for (int size = arrayList.size() - 1; size >= 0; size--) {
+                if (((so3) this.c.get(size)).b == runnable) {
+                    this.c.remove(size);
+                }
+            }
+        }
+    }
+
+    public final Handler b() {
+        try {
+            this.d.await();
+        } catch (Exception e) {
+            cc4.g(e, false);
+        }
+        return this.a;
+    }
+
+    public final void c(Runnable runnable) {
+        SystemClock.elapsedRealtime();
+        d(runnable, 0L);
+    }
+
+    public final boolean d(Runnable runnable, long j) {
+        Handler handler = this.a;
+        if (handler != null) {
+            return j <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j);
+        }
+        long max = Math.max(0L, j) + SystemClock.uptimeMillis();
+        synchronized (this.b) {
+            ArrayList arrayList = this.c;
+            if (arrayList == null) {
+                return this.a.postAtTime(runnable, max);
+            }
+            arrayList.add(new so3(0, max, runnable));
+            return true;
+        }
+    }
+
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        Looper.prepare();
+        Handler handler = new Handler(Looper.myLooper(), new ro3());
+        synchronized (this.b) {
+            for (int i = 0; i < this.c.size(); i++) {
+                so3 so3Var = (so3) this.c.get(i);
+                boolean z = so3Var.a;
+                if (!z) {
+                    handler.postAtTime(so3Var.b, so3Var.c);
+                } else if (z) {
+                    handler.postAtFrontOfQueue(so3Var.b);
+                } else {
+                    handler.sendMessageAtTime(null, so3Var.c);
+                }
+            }
+            this.c = null;
+            this.a = handler;
+        }
+        this.d.countDown();
+        int i2 = this.e;
+        if (i2 != -1000) {
+            Process.setThreadPriority(i2);
+        }
+        Looper.loop();
     }
 }

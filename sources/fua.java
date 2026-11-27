@@ -1,43 +1,33 @@
 // default package
 
-import android.view.View;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fua implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yua b;
+public final class fua extends dua {
+    public final Paint c;
+    public final Matrix d;
+    public final RadialGradient e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public /* synthetic */ fua(yua yuaVar, byte b) {
-        this.a = b;
-        this.b = yuaVar;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        d Q;
-        d Q2;
-        byte b = this.a;
-        yua yuaVar = this.b;
-        switch (b) {
-            case 0:
-                if (yuaVar.e > 0 && (Q = LaunchActivity.Q()) != null) {
-                    ag0 ag0Var = new ag0();
-                    ag0Var.a = true;
-                    Q.showAsSheet(new jva(), ag0Var);
-                    break;
-                }
-                break;
-            default:
-                if (yuaVar.e > 0 && (Q2 = LaunchActivity.Q()) != null) {
-                    ag0 ag0Var2 = new ag0();
-                    ag0Var2.a = true;
-                    Q2.showAsSheet(new jva(), ag0Var2);
-                    break;
-                }
-                break;
-        }
+    public fua(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.a = stargiftattributebackdrop.name;
+        this.b = stargiftattributebackdrop.getRarityPermille();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Matrix();
+        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, hl.L(200.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.e = radialGradient;
+        paint.setShader(radialGradient);
+        this.g = stargiftattributebackdrop.text_color | (-16777216);
+        int i = stargiftattributebackdrop.pattern_color;
+        this.h = i | (-16777216);
+        this.f = vm2.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), i | (-16777216));
     }
 }

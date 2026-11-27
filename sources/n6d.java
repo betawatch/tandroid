@@ -1,46 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
+import j$.util.Objects;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class n6d extends xx4 {
-    public final Context F;
+public final class n6d implements fg0 {
+    public final d05 a;
+    public final ho b;
+    public wi5 c;
+    public Set d;
+    public boolean e;
+    public final /* synthetic */ n05 f;
 
-    public n6d(ey4 ey4Var, fy4 fy4Var, ntb ntbVar, Context context, Looper looper) {
-        super(45, ey4Var, fy4Var, ntbVar, context, looper);
-        this.F = context;
+    public n6d(n05 n05Var, d05 d05Var, ho hoVar) {
+        Objects.requireNonNull(n05Var);
+        this.f = n05Var;
+        this.c = null;
+        this.d = null;
+        this.e = false;
+        this.a = d05Var;
+        this.b = hoVar;
     }
 
-    @Override // gg0
-    public final /* bridge */ /* synthetic */ IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+    @Override // fg0
+    public final void a(ws2 ws2Var) {
+        this.f.y.post(new iqd((Object) this, (Object) ws2Var, false, (byte) 12));
+    }
+
+    public final void b(ws2 ws2Var) {
+        l6d l6dVar = (l6d) this.f.s.get(this.b);
+        if (l6dVar != null) {
+            l6dVar.k(ws2Var);
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.safetynet.internal.ISafetyNetService");
-        return queryLocalInterface instanceof hce ? (hce) queryLocalInterface : new hce(iBinder);
-    }
-
-    @Override // gg0
-    public final int i() {
-        return 12200000;
-    }
-
-    @Override // gg0
-    public final String l() {
-        return "com.google.android.gms.safetynet.internal.ISafetyNetService";
-    }
-
-    @Override // gg0
-    public final String n() {
-        return "com.google.android.gms.safetynet.service.START";
-    }
-
-    @Override // gg0
-    public final boolean x() {
-        return true;
     }
 }

@@ -1,37 +1,71 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fda extends eba {
-    public final /* synthetic */ nfa m0;
+public final /* synthetic */ class fda implements ry4, nr7, l8, sy4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kea b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fda(nfa nfaVar, Context context) {
-        super(context);
-        this.m0 = nfaVar;
+    public /* synthetic */ fda(kea keaVar, byte b) {
+        this.a = b;
+        this.b = keaVar;
     }
 
-    @Override // eba
-    public final boolean d(k27 k27Var) {
-        long playlistTopicId;
-        nfa nfaVar = this.m0;
-        cfa[] cfaVarArr = nfaVar.w1;
-        if (k27.Q4(k27Var.k) || k27Var.g4()) {
-            boolean R = MediaController.w().R(k27Var);
-            MediaController.w().q0(R ? cfaVarArr[4].a : null, false);
-            return R;
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        WindowInsets g = l2dVar.g();
+        kea keaVar = this.b;
+        keaVar.q0(g);
+        mq5 f = l2dVar.a.f(519);
+        if (!keaVar.B2.equals(f)) {
+            keaVar.B2 = f;
+            keaVar.c.requestLayout();
         }
-        if (!k27Var.I3()) {
-            return false;
+        return l2d.b;
+    }
+
+    @Override // sy4
+    public final int h() {
+        return aob.v0(aob.d6, this.b.J0);
+    }
+
+    @Override // ry4
+    public final void k(int i) {
+        kea keaVar = this.b;
+        tq3 tq3Var = keaVar.J2;
+        if (Build.VERSION.SDK_INT < 31 || tq3Var == null) {
+            return;
         }
-        MediaController w = MediaController.w();
-        ArrayList arrayList = cfaVarArr[4].a;
-        long j = nfaVar.f1;
-        playlistTopicId = nfaVar.getPlaylistTopicId();
-        return w.n0(arrayList, k27Var, j, true, null, playlistTopicId);
+        if (vsd.a(i, 4)) {
+            tq3Var.h(keaVar.X0.e());
+        }
+        tq3Var.e(keaVar.O2, keaVar.b.getWidth(), keaVar.b.getHeight());
+    }
+
+    @Override // l8
+    public final void o(KeyEvent keyEvent) {
+        n8 n8Var;
+        n8 n8Var2;
+        byte b = this.a;
+        kea keaVar = this.b;
+        switch (b) {
+            case 2:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n8Var = keaVar.E2) != null && n8Var.isShowing()) {
+                    keaVar.E2.d(true);
+                    break;
+                }
+                break;
+            default:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n8Var2 = keaVar.E2) != null && n8Var2.isShowing()) {
+                    keaVar.E2.d(true);
+                    break;
+                }
+                break;
+        }
     }
 }

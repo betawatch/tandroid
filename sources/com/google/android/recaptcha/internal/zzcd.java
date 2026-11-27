@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzcd {
     private final int zzaX;
@@ -90,21 +90,21 @@ public final class zzcd {
     public static final zzcd zzaF = new zzcd(99);
     public static final zzcd zzaG = new zzcd(100);
     public static final zzcd zzaH = new zzcd(101);
-    public static final zzcd zzaI = new zzcd(kk7.m1);
-    public static final zzcd zzaJ = new zzcd(kk7.n1);
-    public static final zzcd zzaK = new zzcd(kk7.o1);
-    public static final zzcd zzaL = new zzcd(kk7.p1);
-    public static final zzcd zzaM = new zzcd(kk7.q1);
-    public static final zzcd zzaN = new zzcd(kk7.r1);
-    public static final zzcd zzaO = new zzcd(kk7.s1);
-    public static final zzcd zzaP = new zzcd(kk7.t1);
-    public static final zzcd zzaQ = new zzcd(kk7.u1);
-    public static final zzcd zzaR = new zzcd(kk7.v1);
-    public static final zzcd zzaS = new zzcd(kk7.w1);
-    public static final zzcd zzaT = new zzcd(kk7.x1);
-    public static final zzcd zzaU = new zzcd(kk7.y1);
-    public static final zzcd zzaV = new zzcd(kk7.z1);
-    public static final zzcd zzaW = new zzcd(kk7.E1);
+    public static final zzcd zzaI = new zzcd(jn7.m1);
+    public static final zzcd zzaJ = new zzcd(jn7.n1);
+    public static final zzcd zzaK = new zzcd(jn7.o1);
+    public static final zzcd zzaL = new zzcd(jn7.p1);
+    public static final zzcd zzaM = new zzcd(jn7.q1);
+    public static final zzcd zzaN = new zzcd(jn7.r1);
+    public static final zzcd zzaO = new zzcd(jn7.s1);
+    public static final zzcd zzaP = new zzcd(jn7.t1);
+    public static final zzcd zzaQ = new zzcd(jn7.u1);
+    public static final zzcd zzaR = new zzcd(jn7.v1);
+    public static final zzcd zzaS = new zzcd(jn7.w1);
+    public static final zzcd zzaT = new zzcd(jn7.x1);
+    public static final zzcd zzaU = new zzcd(jn7.y1);
+    public static final zzcd zzaV = new zzcd(jn7.z1);
+    public static final zzcd zzaW = new zzcd(121);
 
     public zzcd(int i) {
         this.zzaX = i;

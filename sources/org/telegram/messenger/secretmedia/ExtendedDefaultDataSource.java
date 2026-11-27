@@ -11,70 +11,70 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ExtendedDefaultDataSource implements o63 {
+public final class ExtendedDefaultDataSource implements h73 {
     private static final String SCHEME_ASSET = "asset";
     private static final String SCHEME_CONTENT = "content";
     private static final String SCHEME_RAW = "rawresource";
     private static final String SCHEME_RTMP = "rtmp";
     private static final String TAG = "ExtendedDefaultDataSource";
-    private o63 assetDataSource;
-    private final o63 baseDataSource;
-    private o63 contentDataSource;
+    private h73 assetDataSource;
+    private final h73 baseDataSource;
+    private h73 contentDataSource;
     private final Context context;
-    private o63 dataSchemeDataSource;
-    private o63 dataSource;
-    private o63 encryptedFileDataSource;
-    private o63 fileDataSource;
+    private h73 dataSchemeDataSource;
+    private h73 dataSource;
+    private h73 encryptedFileDataSource;
+    private h73 fileDataSource;
     private final LongSparseArray<Uri> mtprotoUris;
-    private o63 rawResourceDataSource;
-    private o63 rtmpDataSource;
-    private kb4 streamLoadOperation;
-    private final List<vyb> transferListeners;
+    private h73 rawResourceDataSource;
+    private h73 rtmpDataSource;
+    private hd4 streamLoadOperation;
+    private final List<v2c> transferListeners;
 
-    public ExtendedDefaultDataSource(Context context, o63 o63Var, LongSparseArray<Uri> longSparseArray) {
+    public ExtendedDefaultDataSource(Context context, h73 h73Var, LongSparseArray<Uri> longSparseArray) {
         this.context = context.getApplicationContext();
-        o63Var.getClass();
-        this.baseDataSource = o63Var;
+        h73Var.getClass();
+        this.baseDataSource = h73Var;
         this.transferListeners = new ArrayList();
         this.mtprotoUris = longSparseArray;
     }
 
-    private void addListenersToDataSource(o63 o63Var) {
+    private void addListenersToDataSource(h73 h73Var) {
         for (int i = 0; i < this.transferListeners.size(); i++) {
-            o63Var.addTransferListener(this.transferListeners.get(i));
+            h73Var.addTransferListener(this.transferListeners.get(i));
         }
     }
 
-    private o63 getAssetDataSource() {
+    private h73 getAssetDataSource() {
         if (this.assetDataSource == null) {
-            kx kxVar = new kx(this.context);
-            this.assetDataSource = kxVar;
-            addListenersToDataSource(kxVar);
+            lx lxVar = new lx(this.context);
+            this.assetDataSource = lxVar;
+            addListenersToDataSource(lxVar);
         }
         return this.assetDataSource;
     }
 
-    private o63 getContentDataSource() {
+    private h73 getContentDataSource() {
         if (this.contentDataSource == null) {
-            zu2 zu2Var = new zu2(this.context);
-            this.contentDataSource = zu2Var;
-            addListenersToDataSource(zu2Var);
+            tv2 tv2Var = new tv2(this.context);
+            this.contentDataSource = tv2Var;
+            addListenersToDataSource(tv2Var);
         }
         return this.contentDataSource;
     }
 
-    private o63 getDataSchemeDataSource() {
+    private h73 getDataSchemeDataSource() {
         if (this.dataSchemeDataSource == null) {
-            h63 h63Var = new h63(false);
-            this.dataSchemeDataSource = h63Var;
-            addListenersToDataSource(h63Var);
+            a73 a73Var = new a73(false);
+            this.dataSchemeDataSource = a73Var;
+            addListenersToDataSource(a73Var);
         }
         return this.dataSchemeDataSource;
     }
 
-    private o63 getEncryptedFileDataSource() {
+    private h73 getEncryptedFileDataSource() {
         if (this.encryptedFileDataSource == null) {
             EncryptedFileDataSource encryptedFileDataSource = new EncryptedFileDataSource();
             this.encryptedFileDataSource = encryptedFileDataSource;
@@ -83,115 +83,115 @@ public final class ExtendedDefaultDataSource implements o63 {
         return this.encryptedFileDataSource;
     }
 
-    private o63 getFileDataSource() {
+    private h73 getFileDataSource() {
         if (this.fileDataSource == null) {
-            a94 a94Var = new a94(false);
-            this.fileDataSource = a94Var;
-            addListenersToDataSource(a94Var);
+            wa4 wa4Var = new wa4(false);
+            this.fileDataSource = wa4Var;
+            addListenersToDataSource(wa4Var);
         }
         return this.fileDataSource;
     }
 
-    private o63 getRawResourceDataSource() {
+    private h73 getRawResourceDataSource() {
         if (this.rawResourceDataSource == null) {
-            kz8 kz8Var = new kz8(this.context);
-            this.rawResourceDataSource = kz8Var;
-            addListenersToDataSource(kz8Var);
+            x29 x29Var = new x29(this.context);
+            this.rawResourceDataSource = x29Var;
+            addListenersToDataSource(x29Var);
         }
         return this.rawResourceDataSource;
     }
 
-    private o63 getRtmpDataSource() {
-        o63 o63Var = this.rtmpDataSource;
-        if (o63Var != null) {
-            return o63Var;
+    private h73 getRtmpDataSource() {
+        h73 h73Var = this.rtmpDataSource;
+        if (h73Var != null) {
+            return h73Var;
         }
         try {
-            o63 o63Var2 = (o63) Class.forName("com.google.android.exoplayer2.ext.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
-            this.rtmpDataSource = o63Var2;
-            addListenersToDataSource(o63Var2);
+            h73 h73Var2 = (h73) Class.forName("com.google.android.exoplayer2.ext.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
+            this.rtmpDataSource = h73Var2;
+            addListenersToDataSource(h73Var2);
         } catch (ClassNotFoundException unused) {
             Log.w(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
         } catch (Exception e) {
-            fyb.j("Error instantiating RTMP extension", e);
+            grb.j("Error instantiating RTMP extension", e);
             return null;
         }
-        o63 o63Var3 = this.rtmpDataSource;
-        if (o63Var3 != null) {
-            return o63Var3;
+        h73 h73Var3 = this.rtmpDataSource;
+        if (h73Var3 != null) {
+            return h73Var3;
         }
-        o63 o63Var4 = this.baseDataSource;
-        this.rtmpDataSource = o63Var4;
-        return o63Var4;
+        h73 h73Var4 = this.baseDataSource;
+        this.rtmpDataSource = h73Var4;
+        return h73Var4;
     }
 
-    private o63 getStreamDataSource() {
+    private h73 getStreamDataSource() {
         if (this.streamLoadOperation == null) {
-            kb4 kb4Var = new kb4();
-            this.streamLoadOperation = kb4Var;
-            addListenersToDataSource(kb4Var);
+            hd4 hd4Var = new hd4();
+            this.streamLoadOperation = hd4Var;
+            addListenersToDataSource(hd4Var);
         }
         return this.streamLoadOperation;
     }
 
-    private void maybeAddListenerToDataSource(o63 o63Var, vyb vybVar) {
-        if (o63Var != null) {
-            o63Var.addTransferListener(vybVar);
+    private void maybeAddListenerToDataSource(h73 h73Var, v2c v2cVar) {
+        if (h73Var != null) {
+            h73Var.addTransferListener(v2cVar);
         }
     }
 
-    @Override // o63
-    public void addTransferListener(vyb vybVar) {
-        this.baseDataSource.addTransferListener(vybVar);
-        this.transferListeners.add(vybVar);
-        maybeAddListenerToDataSource(this.fileDataSource, vybVar);
-        maybeAddListenerToDataSource(this.assetDataSource, vybVar);
-        maybeAddListenerToDataSource(this.contentDataSource, vybVar);
-        maybeAddListenerToDataSource(this.rtmpDataSource, vybVar);
-        maybeAddListenerToDataSource(this.dataSchemeDataSource, vybVar);
-        maybeAddListenerToDataSource(this.rawResourceDataSource, vybVar);
+    @Override // h73
+    public void addTransferListener(v2c v2cVar) {
+        this.baseDataSource.addTransferListener(v2cVar);
+        this.transferListeners.add(v2cVar);
+        maybeAddListenerToDataSource(this.fileDataSource, v2cVar);
+        maybeAddListenerToDataSource(this.assetDataSource, v2cVar);
+        maybeAddListenerToDataSource(this.contentDataSource, v2cVar);
+        maybeAddListenerToDataSource(this.rtmpDataSource, v2cVar);
+        maybeAddListenerToDataSource(this.dataSchemeDataSource, v2cVar);
+        maybeAddListenerToDataSource(this.rawResourceDataSource, v2cVar);
     }
 
-    @Override // o63
+    @Override // h73
     public void close() {
-        o63 o63Var = this.dataSource;
-        if (o63Var != null) {
+        h73 h73Var = this.dataSource;
+        if (h73Var != null) {
             try {
-                o63Var.close();
+                h73Var.close();
             } finally {
                 this.dataSource = null;
             }
         }
     }
 
-    @Override // o63
+    @Override // h73
     public Map<String, List<String>> getResponseHeaders() {
-        o63 o63Var = this.dataSource;
-        return o63Var == null ? Collections.EMPTY_MAP : o63Var.getResponseHeaders();
+        h73 h73Var = this.dataSource;
+        return h73Var == null ? Collections.EMPTY_MAP : h73Var.getResponseHeaders();
     }
 
-    @Override // o63
+    @Override // h73
     public Uri getUri() {
-        o63 o63Var = this.dataSource;
-        if (o63Var == null) {
+        h73 h73Var = this.dataSource;
+        if (h73Var == null) {
             return null;
         }
-        return o63Var.getUri();
+        return h73Var.getUri();
     }
 
-    @Override // o63
-    public long open(u63 u63Var) {
-        o63 fileDataSource;
-        gre.p(this.dataSource == null);
-        Uri uri = u63Var.a;
+    @Override // h73
+    public long open(n73 n73Var) {
+        h73 fileDataSource;
+        yve.p(this.dataSource == null);
+        Uri uri = n73Var.a;
         if ("mtproto".equals(uri.getScheme())) {
-            uri = this.mtprotoUris.get(Long.parseLong(u63Var.a.toString().substring(8)));
-            t63 a = u63Var.a();
+            uri = this.mtprotoUris.get(Long.parseLong(n73Var.a.toString().substring(8)));
+            m73 a = n73Var.a();
             a.a = uri;
-            u63Var = a.a();
+            n73Var = a.a();
         }
         String scheme = uri.getScheme();
-        String str = g8c.a;
+        String str = gcc.a;
         String scheme2 = uri.getScheme();
         if (TextUtils.isEmpty(scheme2) || Objects.equals(scheme2, "file")) {
             String path = uri.getPath();
@@ -227,18 +227,18 @@ public final class ExtendedDefaultDataSource implements o63 {
             fileDataSource = this.baseDataSource;
             this.dataSource = fileDataSource;
         }
-        return fileDataSource.open(u63Var);
+        return fileDataSource.open(n73Var);
     }
 
-    @Override // g63
+    @Override // z63
     public int read(byte[] bArr, int i, int i2) {
-        o63 o63Var = this.dataSource;
-        o63Var.getClass();
-        return o63Var.read(bArr, i, i2);
+        h73 h73Var = this.dataSource;
+        h73Var.getClass();
+        return h73Var.read(bArr, i, i2);
     }
 
     public ExtendedDefaultDataSource(Context context, String str, int i, int i2, boolean z) {
-        this(context, new wa3(str, i, i2, z, new wk4()), (LongSparseArray<Uri>) null);
+        this(context, new pb3(str, i, i2, z, new um4()), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, String str, boolean z) {
@@ -246,11 +246,11 @@ public final class ExtendedDefaultDataSource implements o63 {
     }
 
     @Deprecated
-    public ExtendedDefaultDataSource(Context context, vyb vybVar, o63 o63Var, LongSparseArray<Uri> longSparseArray) {
-        this(context, o63Var, longSparseArray);
-        if (vybVar != null) {
-            this.transferListeners.add(vybVar);
-            o63Var.addTransferListener(vybVar);
+    public ExtendedDefaultDataSource(Context context, v2c v2cVar, h73 h73Var, LongSparseArray<Uri> longSparseArray) {
+        this(context, h73Var, longSparseArray);
+        if (v2cVar != null) {
+            this.transferListeners.add(v2cVar);
+            h73Var.addTransferListener(v2cVar);
         }
     }
 }

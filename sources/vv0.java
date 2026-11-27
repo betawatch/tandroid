@@ -1,54 +1,29 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.messenger.voip.VoIPPreNotificationService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vv0 implements RequestDelegate {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class vv0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ xw0 b;
 
-    public /* synthetic */ vv0(int i, byte b) {
+    public /* synthetic */ vv0(xw0 xw0Var, byte b) {
         this.a = b;
-        this.b = i;
+        this.b = xw0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        byte b2 = 0;
-        int i = this.b;
+        xw0 xw0Var = this.b;
         switch (b) {
             case 0:
-                gl.c3(new xv0(i, b2));
-                break;
-            case 1:
-                String str = LaunchActivity.C1;
-                gl.c3(new az5(tLObject, i, (byte) 1));
-                break;
-            case 2:
-                String str2 = LaunchActivity.C1;
-                gl.c3(new az5(tLObject, i, b2));
-                break;
-            case 3:
-                gl.c3(new az5(i, tLObject));
-                break;
-            case 4:
-                VoIPGroupNotification.lambda$decline$3(i, tLObject, tL_error);
-                break;
-            case 5:
-                if (tLObject instanceof TLRPC.TL_updates) {
-                    na7.q1(i).R3((TLRPC.TL_updates) tLObject, false);
-                    break;
-                }
+                xw0Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xw0Var.h();
                 break;
             default:
-                VoIPPreNotificationService.lambda$decline$4(i, tLObject, tL_error);
+                xw0Var.F.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

@@ -1,51 +1,56 @@
 // default package
 
-import java.util.Locale;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lg0 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sa6 b;
-    public final /* synthetic */ String c;
+public abstract class lg0 extends FrameLayout implements wu7 {
+    public final vnb a;
+    public final d79 b;
+    public final x46 c;
 
-    public /* synthetic */ lg0(sa6 sa6Var, String str, byte b) {
-        this.a = b;
-        this.b = sa6Var;
-        this.c = str;
+    public lg0(Context context, vnb vnbVar) {
+        super(context);
+        this.a = vnbVar;
+        d79 d79Var = new d79(context, vnbVar);
+        this.b = d79Var;
+        d79Var.setNestedScrollingEnabled(true);
+        d79Var.setAdapter(a());
+        x46 x46Var = new x46(1, false);
+        this.c = x46Var;
+        d79Var.setLayoutManager(x46Var);
+        d79Var.setClipToPadding(false);
+        addView(d79Var, tre.c(-1.0f, -1));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Locale locale;
-        byte b = 1;
-        switch (this.a) {
-            case 0:
-                sa6 sa6Var = this.b;
-                String str = this.c;
-                sa6Var.getClass();
-                gl.c3(new lg0(sa6Var, str, b));
-                break;
-            default:
-                sa6 sa6Var2 = this.b;
-                String str2 = this.c;
-                Locale locale2 = null;
-                sa6Var2.r = null;
-                int i = sa6Var2.s + 1;
-                sa6Var2.s = i;
-                Locale locale3 = k96.D0().y;
-                if (sa6Var2.d) {
-                    if (locale3.getLanguage().contains("en")) {
-                        locale = locale3;
-                        Utilities.e.c(new i57((Object) sa6Var2, (Object) locale3, (Object) str2, (Object) locale, i, (byte) 5));
-                        break;
-                    } else {
-                        locale2 = Locale.US;
-                    }
-                }
-                locale = locale2;
-                Utilities.e.c(new i57((Object) sa6Var2, (Object) locale3, (Object) str2, (Object) locale, i, (byte) 5));
+    public j79 a() {
+        return new ox0(this, (byte) 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Paint U0 = aob.U0("paintDivider", this.a);
+        if (U0 == null) {
+            U0 = aob.j0;
         }
+        canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, U0);
+    }
+
+    @Override // wu7
+    public void setOffset(float f) {
+        if (Math.abs(f / getMeasuredWidth()) == 1.0f) {
+            d79 d79Var = this.b;
+            if (d79Var.L(0) == null || d79Var.L(0).a.getTop() != d79Var.getPaddingTop()) {
+                d79Var.x0(0);
+            }
+        }
+    }
+
+    public void setTopOffset(int i) {
+        this.b.setPadding(0, i, 0, 0);
     }
 }

@@ -1,8 +1,47 @@
 // default package
 
-import java.io.IOException;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class kk9 extends IOException {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kk9 extends dk9 {
+    public final Paint X;
+
+    public kk9(hl9 hl9Var, Rect rect, int i) {
+        super(hl9Var, rect, i);
+        this.X = new Paint(1);
+    }
+
+    @Override // dk9
+    public final int H() {
+        Rect rect = this.b;
+        return uh9.w(6.0f, rect.top, 1) + rect.bottom;
+    }
+
+    @Override // dk9
+    public final int J() {
+        Rect rect = this.b;
+        return hl.L(32.0f) + rect.left + rect.right;
+    }
+
+    @Override // dk9
+    public final void V(Canvas canvas) {
+        hl9 hl9Var = this.a;
+        int v0 = aob.v0(hl9Var.D() ? aob.xl : aob.wl, hl9Var.D);
+        Paint paint = this.X;
+        paint.setColor(v0);
+        float f = -hl9Var.S;
+        int i = hl9Var.C + hl9Var.T;
+        Rect rect = this.b;
+        float f2 = (i - rect.left) - rect.right;
+        if (hl9Var.s) {
+            r2 = hl.R1(this.S ? 1.0f : 0.0f, this.R ? 1.0f : 0.0f, hl9Var.t);
+        } else if (this.R) {
+            r2 = 1.0f;
+        }
+        float R1 = hl.R1((-1.0f) - (this.M != null ? r8.b.bottom : 0), hl.L(6.0f), r2);
+        canvas.drawRect(f, R1, f2, R1 + 1.0f, paint);
+    }
 }

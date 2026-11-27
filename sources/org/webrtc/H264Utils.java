@@ -3,7 +3,7 @@ package org.webrtc;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 class H264Utils {
     public static VideoCodecInfo DEFAULT_H264_BASELINE_PROFILE_CODEC = new VideoCodecInfo("H264", getDefaultH264Params(false));
@@ -17,6 +17,11 @@ class H264Utils {
     public static final String H264_PROFILE_CONSTRAINED_BASELINE = "42e0";
     public static final String H264_PROFILE_CONSTRAINED_HIGH = "640c";
 
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        boolean isSameH264Profile(Map<String, String> map, Map<String, String> map2);
+    }
+
     public static Map<String, String> getDefaultH264Params(boolean z) {
         HashMap hashMap = new HashMap();
         hashMap.put("level-asymmetry-allowed", "1");
@@ -26,8 +31,6 @@ class H264Utils {
     }
 
     public static boolean isSameH264Profile(Map<String, String> map, Map<String, String> map2) {
-        return nativeIsSameH264Profile(map, map2);
+        return H264UtilsJni.get().isSameH264Profile(map, map2);
     }
-
-    private static native boolean nativeIsSameH264Profile(Map<String, String> map, Map<String, String> map2);
 }

@@ -1,22 +1,44 @@
 // default package
 
-import android.app.Activity;
-import android.widget.LinearLayout;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ai2 extends LinearLayout {
-    public final /* synthetic */ di2 a;
+public final class ai2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai2(di2 di2Var, Activity activity) {
-        super(activity);
-        this.a = di2Var;
+    public /* synthetic */ ai2(Object obj, Object obj2, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.a.D0();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ei2 ei2Var = (ei2) obj2;
+                ci2 ci2Var = (ci2) obj;
+                ei2.b(floatValue, ci2Var);
+                ei2Var.a(floatValue, ci2Var, false);
+                ei2Var.invalidateSelf();
+                break;
+            case 1:
+                u3b u3bVar = (u3b) obj2;
+                u3bVar.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u3bVar.invalidate();
+                ((xu9) obj).invalidate();
+                break;
+            default:
+                ((vic) obj2).G((View) obj, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

@@ -1,97 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.messenger.beta.R;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zh4 {
-    public final ji0 a;
-    public final ni0 b;
-    public ki0 c;
-    public final int d;
-
-    public zh4(li0 li0Var, ni0 ni0Var, long j, long j2, long j3, long j4, long j5, int i) {
-        this.b = ni0Var;
-        this.d = i;
-        this.a = new ji0(li0Var, j, j2, j3, j4, j5);
-    }
-
-    public static int b(int i, byte[] bArr) {
-        return ((bArr[i] & 255) << 24) | ((bArr[i + 1] & 255) << 16) | ((bArr[i + 2] & 255) << 8) | (bArr[i + 3] & 255);
-    }
-
-    public static int c(ja3 ja3Var, long j, m11 m11Var) {
-        if (j == ja3Var.d) {
-            return 0;
-        }
-        m11Var.a = j;
-        return 1;
-    }
-
-    public final int a(ja3 ja3Var, m11 m11Var) {
-        boolean z;
-        while (true) {
-            ki0 ki0Var = this.c;
-            ki0Var.getClass();
-            long j = ki0Var.f;
-            long j2 = ki0Var.g;
-            long j3 = ki0Var.h;
-            long j4 = j2 - j;
-            long j5 = this.d;
-            ni0 ni0Var = this.b;
-            if (j4 <= j5) {
-                this.c = null;
-                ni0Var.f();
-                return c(ja3Var, j, m11Var);
-            }
-            long j6 = j3 - ja3Var.d;
-            if (j6 < 0 || j6 > 262144) {
-                z = false;
-            } else {
-                ja3Var.l((int) j6, false);
-                z = true;
-            }
-            if (!z) {
-                return c(ja3Var, j3, m11Var);
-            }
-            ja3Var.f = 0;
-            mi0 d = ni0Var.d(ja3Var, ki0Var.b);
-            int i = d.a;
-            long j7 = d.b;
-            long j8 = d.c;
-            if (i == -3) {
-                this.c = null;
-                ni0Var.f();
-                return c(ja3Var, j3, m11Var);
-            }
-            if (i == -2) {
-                ki0Var.d = j7;
-                ki0Var.f = j8;
-                ki0Var.h = ki0.a(ki0Var.b, j7, ki0Var.e, j8, ki0Var.g, ki0Var.c);
-            } else {
-                if (i != -1) {
-                    if (i != 0) {
-                        sc8.j("Invalid case");
-                        return 0;
-                    }
-                    long j9 = j8 - ja3Var.d;
-                    if (j9 >= 0 && j9 <= 262144) {
-                        ja3Var.l((int) j9, false);
-                    }
-                    this.c = null;
-                    ni0Var.f();
-                    return c(ja3Var, j8, m11Var);
-                }
-                ki0Var.e = j7;
-                ki0Var.g = j8;
-                ki0Var.h = ki0.a(ki0Var.b, ki0Var.d, j7, ki0Var.f, j8, ki0Var.c);
-            }
-        }
-    }
-
-    public final void d(long j) {
-        ki0 ki0Var = this.c;
-        if (ki0Var == null || ki0Var.a != j) {
-            ji0 ji0Var = this.a;
-            this.c = new ki0(j, ji0Var.a.c(j), ji0Var.c, ji0Var.d, ji0Var.e, ji0Var.f);
-        }
+public abstract class zh4 {
+    public static int a() {
+        return R.attr.colorError;
     }
 }

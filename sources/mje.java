@@ -1,15 +1,48 @@
 // default package
 
-import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class mje extends IOException {
-    public mje(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
-        super(str.length() != 0 ? "CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str) : new String("CodedOutputStream was writing to a flat byte array and ran out of space.: "), indexOutOfBoundsException);
+public abstract class mje {
+    public static final long a(long j) {
+        long j2 = (j << 1) + 1;
+        int i = bs3.d;
+        int i2 = ds3.a;
+        return j2;
     }
 
-    public mje(IndexOutOfBoundsException indexOutOfBoundsException) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
+    public static final long b(long j) {
+        long j2 = j << 1;
+        int i = bs3.d;
+        int i2 = ds3.a;
+        return j2;
+    }
+
+    public static final long c(int i, fs3 fs3Var) {
+        if (fs3Var.compareTo(fs3.d) > 0) {
+            return d(i, fs3Var);
+        }
+        return b(TimeUnit.NANOSECONDS.convert(i, fs3Var.a));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0035, code lost:
+    
+        if (r5 > 4611686018427387903L) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final long d(long j, fs3 fs3Var) {
+        TimeUnit timeUnit = fs3Var.a;
+        TimeUnit timeUnit2 = TimeUnit.NANOSECONDS;
+        long convert = timeUnit.convert(4611686018426999999L, timeUnit2);
+        if ((-convert) <= j && j <= convert) {
+            return b(timeUnit2.convert(j, timeUnit));
+        }
+        long convert2 = TimeUnit.MILLISECONDS.convert(j, timeUnit);
+        long j2 = convert2 >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
+        convert2 = j2;
+        return a(convert2);
     }
 }

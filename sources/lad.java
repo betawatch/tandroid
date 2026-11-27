@@ -1,73 +1,30 @@
 // default package
 
-import android.text.TextUtils;
-import android.util.Log;
-import java.net.UnknownHostException;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class lad {
-    public static final Object a = new Object();
+public final class lad extends zjf {
+    public final transient Object[] h;
+    public final transient boolean n;
+    public final transient boolean r;
 
-    public static String a(String str, Throwable th) {
-        String replace;
-        if (th != null) {
-            synchronized (a) {
-                Throwable th2 = th;
-                while (true) {
-                    if (th2 == null) {
-                        replace = Log.getStackTraceString(th).trim().replace("\t", "    ");
-                        break;
-                    }
-                    if (th2 instanceof UnknownHostException) {
-                        replace = "UnknownHostException (no network)";
-                        break;
-                    }
-                    th2 = th2.getCause();
-                }
-            }
-        } else {
-            replace = null;
-        }
-        if (TextUtils.isEmpty(replace)) {
-            return str;
-        }
-        return str + "\n  " + replace.replace("\n", "\n  ") + '\n';
+    /* JADX WARN: Multi-variable type inference failed */
+    public lad(int i, Object[] objArr) {
+        super((byte) 3);
+        this.h = objArr;
+        this.n = i;
+        this.r = true;
     }
 
-    public static void b(String str, String str2) {
-        synchronized (a) {
-            Log.d(str, a(str2, null));
-        }
+    @Override // java.util.List
+    public final Object get(int i) {
+        j7f.a(i, this.r ? 1 : 0);
+        Object obj = this.h[(i << 1) + (this.n ? 1 : 0)];
+        obj.getClass();
+        return obj;
     }
 
-    public static void c(String str, String str2) {
-        synchronized (a) {
-            Log.e(str, a(str2, null));
-        }
-    }
-
-    public static void d(String str, String str2, Throwable th) {
-        synchronized (a) {
-            Log.e(str, a(str2, th));
-        }
-    }
-
-    public static void e(String str, String str2) {
-        synchronized (a) {
-            Log.i(str, a(str2, null));
-        }
-    }
-
-    public static void f(String str, String str2) {
-        synchronized (a) {
-            Log.w(str, a(str2, null));
-        }
-    }
-
-    public static void g(String str, String str2, Throwable th) {
-        synchronized (a) {
-            Log.w(str, a(str2, th));
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.r ? 1 : 0;
     }
 }

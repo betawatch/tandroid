@@ -1,73 +1,28 @@
 // default package
 
-import android.view.View;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class us1 extends qn {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ ts1 c;
+public final class us1 extends yc8 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ zu1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public us1(ts1 ts1Var, byte b) {
-        super("p2", (byte) 0);
-        this.b = b;
-        switch (b) {
-            case 1:
-                this.c = ts1Var;
-                super("progress", (byte) 0);
-                break;
-            case 2:
-                this.c = ts1Var;
-                super("alpha", (byte) 0);
-                break;
-            default:
-                this.c = ts1Var;
-                break;
-        }
+    public us1(zu1 zu1Var, Bitmap bitmap, ArrayList arrayList) {
+        this.c = zu1Var;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // qn
-    public final void c(Object obj, float f) {
-        byte b = this.b;
-        ts1 ts1Var = this.c;
-        switch (b) {
-            case 0:
-                ((g27) obj).e = f;
-                View view = ts1Var.c.R.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                ((g27) obj).g = f;
-                View view2 = ts1Var.c.R.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            default:
-                ((g27) obj).f = f;
-                View view3 = ts1Var.c.R.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // yc8, ed8
+    public final void L(int i, oec oecVar, boolean z, int i2, int i3, boolean z2) {
+        this.c.G((no6) this.b.get(0), oecVar, z, i2, z2, 0L);
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(((g27) obj).e);
-            case 1:
-                return Float.valueOf(((g27) obj).g);
-            default:
-                return Float.valueOf(((g27) obj).f);
-        }
+    @Override // yc8, ed8
+    public final mn5 k(int i) {
+        return new mn5(this.a, null, 0);
     }
 }

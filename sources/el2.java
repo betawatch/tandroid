@@ -1,20 +1,64 @@
 // default package
 
-import java.util.AbstractCollection;
-import java.util.Collection;
-import java.util.Iterator;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class el2 extends dl2 {
-    public static void d(Iterable iterable, AbstractCollection abstractCollection) {
-        if (iterable instanceof Collection) {
-            abstractCollection.addAll((Collection) iterable);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class el2 extends FrameLayout {
+    public final iw a;
+    public al2 b;
+    public pcc c;
+    public float d;
+    public boolean e;
+    public ValueAnimator f;
+
+    public el2(Activity activity, rk4 rk4Var) {
+        super(activity);
+        iw iwVar = new iw(this, activity);
+        this.a = iwVar;
+        iwVar.setAdapter(new cl2(this, activity, rk4Var, (byte) 0));
+        iwVar.setLayoutManager(new x46(0, false));
+        iwVar.setClipToPadding(false);
+        iwVar.setVisibility(8);
+        iwVar.setWillNotDraw(false);
+        iwVar.setOnItemClickListener(new u(this, (byte) 14));
+        addView(iwVar, tre.c(56.0f, -1));
+    }
+
+    public final void a(boolean z, boolean z2) {
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (this.e == z) {
             return;
         }
-        Iterator it = iterable.iterator();
-        while (it.hasNext()) {
-            abstractCollection.add(it.next());
+        this.e = z;
+        iw iwVar = this.a;
+        if (!z2) {
+            this.d = z ? 1.0f : 0.0f;
+            iwVar.invalidate();
+            iwVar.setVisibility(z ? 0 : 8);
+            return;
         }
+        iwVar.setVisibility(0);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z ? 1.0f : 0.0f);
+        this.f = ofFloat;
+        ofFloat.addUpdateListener(new az1(this, (byte) 13));
+        this.f.addListener(new z7((byte) 21, (Object) this, z));
+        this.f.setInterpolator(k43.h);
+        this.f.setDuration(340L);
+        this.f.start();
+    }
+
+    public void setOnLayoutClick(pcc pccVar) {
+        this.c = pccVar;
+    }
+
+    public void setSelected(al2 al2Var) {
+        this.b = al2Var;
+        hl.V3(this.a);
     }
 }

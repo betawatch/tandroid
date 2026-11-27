@@ -1,149 +1,70 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.opengl.GLUtils;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL10;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class dr4 extends Thread {
-    public final SurfaceTexture a;
-    public volatile boolean b;
-    public boolean c;
-    public final /* synthetic */ er4 d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class dr4 implements es4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public dr4(er4 er4Var, SurfaceTexture surfaceTexture) {
-        this.d = er4Var;
-        this.a = surfaceTexture;
+    public /* synthetic */ dr4(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public final void a() {
-        er4 er4Var;
-        uq4 uq4Var;
-        er4 er4Var2 = this.d;
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        er4Var2.r = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
-        er4Var2.f = eglGetDisplay;
-        EGLDisplay eGLDisplay = EGL10.EGL_NO_DISPLAY;
-        EGL10 egl102 = er4Var2.r;
-        if (eglGetDisplay == eGLDisplay) {
-            k93.c(GLUtils.getEGLErrorString(egl102.eglGetError()), "eglGetDisplay failed ");
-            return;
-        }
-        if (!egl102.eglInitialize(eglGetDisplay, new int[2])) {
-            k93.c(GLUtils.getEGLErrorString(er4Var2.r.eglGetError()), "eglInitialize failed ");
-            return;
-        }
-        byte b = 1;
-        int[] iArr = new int[1];
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = h24.m(er4Var2.getContext()).h() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12337, er4Var2.getMsaaSamples(), 12344};
-        er4Var2.s = null;
-        if (!h24.m(er4Var2.getContext()).h() && er4Var2.r.eglChooseConfig(er4Var2.f, iArr2, eGLConfigArr, 1, iArr) && iArr[0] != 0) {
-            er4Var2.s = eGLConfigArr[0];
-        } else if (!er4Var2.r.eglChooseConfig(er4Var2.f, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
-            k32.e(GLUtils.getEGLErrorString(er4Var2.r.eglGetError()), "eglChooseConfig failed ");
-            return;
-        } else if (iArr[0] > 0) {
-            er4Var2.s = eGLConfigArr[0];
-        }
-        EGLConfig eGLConfig = er4Var2.s;
-        if (eGLConfig == null) {
-            wn4.j("eglConfig not initialized");
-            return;
-        }
-        int i = er4Var2.T == 4 ? 3 : 2;
-        EGL10 egl103 = er4Var2.r;
-        EGLDisplay eGLDisplay2 = er4Var2.f;
-        EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
-        EGLContext eglCreateContext = egl103.eglCreateContext(eGLDisplay2, eGLConfig, eGLContext, new int[]{12440, i, 12344});
-        er4Var2.n = eglCreateContext;
-        if (eglCreateContext == null || eglCreateContext == eGLContext) {
-            fvc.d(er4Var2.r.eglGetError(), "eglCreateContext failed: ");
-            return;
-        }
-        er4Var2.c();
-        er4Var2.h = er4Var2.r.eglCreateWindowSurface(er4Var2.f, er4Var2.s, er4Var2.c, null);
-        er4Var2.c();
-        EGLSurface eGLSurface = er4Var2.h;
-        if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
-            int eglGetError = er4Var2.r.eglGetError();
-            if (eglGetError != 12299) {
-                k93.c(GLUtils.getEGLErrorString(eglGetError), "eglCreateWindowSurface failed ");
-                return;
-            }
-            fa4.d("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
-        } else if (!er4Var2.r.eglMakeCurrent(er4Var2.f, eGLSurface, eGLSurface, er4Var2.n)) {
-            k93.c(GLUtils.getEGLErrorString(er4Var2.r.eglGetError()), "eglMakeCurrent failed ");
-            return;
-        } else {
-            er4Var2.c();
-            er4Var2.w = (GL10) er4Var2.n.getGL();
-            er4Var2.c();
-        }
-        this.d.d();
-        long nanoTime = System.nanoTime();
-        while (!this.b) {
-            synchronized (this.d) {
-                if (this.d.I && (uq4Var = (er4Var = this.d).b) != null) {
-                    er4Var.f(uq4Var);
-                    this.d.I = false;
+    @Override // es4
+    public final Object apply(Object obj) {
+        byte b = this.a;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                hr4 hr4Var = (hr4) obj2;
+                p1c p1cVar = (p1c) obj;
+                if (p1cVar == null) {
+                    return null;
                 }
-            }
-            er4 er4Var3 = this.d;
-            if (er4Var3.b != null && !er4Var3.H) {
-                long nanoTime2 = System.nanoTime();
-                this.d.e((nanoTime2 - nanoTime) / 1.0E9f);
-                if (!this.c) {
-                    this.c = true;
-                    gl.c3(new cr4(this, b));
+                if ((hr4Var.b & 2048) == 0 || !rk2.e(p1cVar.g)) {
+                    return p1cVar;
                 }
-                nanoTime = nanoTime2;
-            }
-            try {
-                er4 er4Var4 = this.d;
-                if (er4Var4.b == null || er4Var4.H) {
-                    Thread.sleep(100L);
-                } else {
-                    long nanoTime3 = this.d.x - (System.nanoTime() - nanoTime);
-                    if (nanoTime3 > 0) {
-                        Thread.sleep(nanoTime3 / 1000000, (int) (nanoTime3 % 1000000));
-                    }
+                return null;
+            case 1:
+                yh7 yh7Var = (yh7) obj2;
+                p1c p1cVar2 = (p1c) obj;
+                if (p1cVar2 == null) {
+                    return null;
                 }
-            } catch (InterruptedException unused) {
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v4, types: [er4] */
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        synchronized (this.d.d) {
-            if (this.b) {
-                return;
-            }
-            er4 er4Var = this.d;
-            er4Var.c = this.a;
-            er4Var.I = true;
-            try {
-                try {
-                    a();
-                } catch (Exception e) {
-                    if (!this.b) {
-                        fa4.g(e, true);
-                        gl.c3(new cr4(this, (byte) 0));
-                    }
+                if ((yh7Var.b & 1024) == 0 || !rk2.e(p1cVar2.g)) {
+                    return p1cVar2;
                 }
-            } finally {
-                this.d.i();
-            }
+                return null;
+            case 2:
+                Bitmap bitmap = (Bitmap) obj;
+                int height = bitmap.getHeight();
+                int width = bitmap.getWidth();
+                lo5 lo5Var = (lo5) ((ym4) obj2).c;
+                if (!lo5Var.a(Math.max(height, width))) {
+                    return bitmap;
+                }
+                if (lo5Var.a(height)) {
+                    height--;
+                }
+                if (lo5Var.a(width)) {
+                    width--;
+                }
+                return zz.p(Bitmap.createScaledBitmap(bitmap, width, height, true));
+            default:
+                Bitmap bitmap2 = (Bitmap) obj;
+                int width2 = bitmap2.getWidth();
+                int i = ((ed) obj2).b;
+                if (width2 > i || bitmap2.getHeight() > i) {
+                    float f = i;
+                    float width3 = bitmap2.getWidth();
+                    float height2 = bitmap2.getHeight();
+                    float min = Math.min(f / width3, f / height2);
+                    bitmap2 = Bitmap.createScaledBitmap(bitmap2, (int) (width3 * min), (int) (height2 * min), true);
+                }
+                return zz.p(bitmap2);
         }
     }
 }

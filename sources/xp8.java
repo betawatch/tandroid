@@ -1,38 +1,39 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xp8 implements p8c {
+public final /* synthetic */ class xp8 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ tq8 b;
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ xp8(tq8 tq8Var, byte b) {
+    public /* synthetic */ xp8(TLRPC.User user, byte b) {
         this.a = b;
-        this.b = tq8Var;
+        this.b = user;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        tq8 tq8Var = this.b;
+        TLRPC.User user = this.b;
         switch (b) {
             case 0:
-                tq8Var.f(true);
-                vec vecVar = tq8Var.n;
-                int i = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                vecVar.e(i, tq8Var.e.f(i) + 1);
-                d dVar = tq8Var.a;
-                if (dVar instanceof ProfileActivity) {
-                    ((ProfileActivity) dVar).j3(true);
-                }
-                tq8Var.o();
+                RectF rectF = ProfileActivity.Z6;
+                hl.g("@" + lbc.p(user));
+                break;
+            case 1:
+                zl8.h1(new ArrayList(Arrays.asList(user)));
+                break;
+            case 2:
+                zl8.h1(new ArrayList(Arrays.asList(user)));
                 break;
             default:
-                tq8Var.e.b(new xp8(tq8Var, (byte) 0), (String) obj);
+                zl8.h1(new ArrayList(Arrays.asList(user)));
                 break;
         }
     }

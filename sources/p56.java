@@ -1,30 +1,31 @@
 // default package
 
-import androidx.car.app.model.Action;
-import androidx.car.app.model.ActionStrip;
-import androidx.car.app.model.CarText;
-import androidx.car.app.model.ItemList;
-import androidx.car.app.model.ListTemplate;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class p56 {
-    public final boolean a;
-    public final ItemList b;
-    public final ArrayList c;
-    public final CarText d;
-    public final Action e;
-    public final ActionStrip f;
-    public final ArrayList g;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class p56 extends u1 {
+    public final /* synthetic */ byte b = 1;
 
-    public p56(ListTemplate listTemplate) {
-        this.a = listTemplate.isLoading();
-        this.e = listTemplate.getHeaderAction();
-        this.d = listTemplate.getTitle();
-        this.b = listTemplate.getSingleList();
-        this.c = new ArrayList(listTemplate.getSectionedLists());
-        this.f = listTemplate.getActionStrip();
-        this.g = new ArrayList(listTemplate.getActions());
+    public /* synthetic */ p56(Context context) {
+        super(context, (byte) 9);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.b) {
+            case 0:
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                invalidate();
+                break;
+        }
+    }
+
+    public p56(v56 v56Var, Context context) {
+        super(context, (byte) 9);
     }
 }

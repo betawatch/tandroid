@@ -6,10 +6,10 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class ConnectionConfiguration extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new igd(23);
+public class ConnectionConfiguration extends c4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new zkd(23);
     public final String a;
     public final String b;
     public final int c;
@@ -43,7 +43,7 @@ public class ConnectionConfiguration extends b4 implements ReflectedParcelable {
             return false;
         }
         ConnectionConfiguration connectionConfiguration = (ConnectionConfiguration) obj;
-        return cqe.a(this.a, connectionConfiguration.a) && cqe.a(this.b, connectionConfiguration.b) && cqe.a(Integer.valueOf(this.c), Integer.valueOf(connectionConfiguration.c)) && cqe.a(Integer.valueOf(this.d), Integer.valueOf(connectionConfiguration.d)) && cqe.a(Boolean.valueOf(this.e), Boolean.valueOf(connectionConfiguration.e)) && cqe.a(Boolean.valueOf(this.n), Boolean.valueOf(connectionConfiguration.n));
+        return vue.a(this.a, connectionConfiguration.a) && vue.a(this.b, connectionConfiguration.b) && vue.a(Integer.valueOf(this.c), Integer.valueOf(connectionConfiguration.c)) && vue.a(Integer.valueOf(this.d), Integer.valueOf(connectionConfiguration.d)) && vue.a(Boolean.valueOf(this.e), Boolean.valueOf(connectionConfiguration.e)) && vue.a(Boolean.valueOf(this.n), Boolean.valueOf(connectionConfiguration.n));
     }
 
     public final int hashCode() {
@@ -56,31 +56,31 @@ public class ConnectionConfiguration extends b4 implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.l(parcel, 3, this.b);
         int i2 = this.c;
-        jte.q(parcel, 4, 4);
+        bye.q(parcel, 4, 4);
         parcel.writeInt(i2);
         int i3 = this.d;
-        jte.q(parcel, 5, 4);
+        bye.q(parcel, 5, 4);
         parcel.writeInt(i3);
         boolean z = this.e;
-        jte.q(parcel, 6, 4);
+        bye.q(parcel, 6, 4);
         parcel.writeInt(z ? 1 : 0);
         boolean z2 = this.f;
-        jte.q(parcel, 7, 4);
+        bye.q(parcel, 7, 4);
         parcel.writeInt(z2 ? 1 : 0);
-        jte.l(parcel, 8, this.h);
+        bye.l(parcel, 8, this.h);
         boolean z3 = this.n;
-        jte.q(parcel, 9, 4);
+        bye.q(parcel, 9, 4);
         parcel.writeInt(z3 ? 1 : 0);
-        jte.l(parcel, 10, this.r);
-        jte.l(parcel, 11, this.s);
+        bye.l(parcel, 10, this.r);
+        bye.l(parcel, 11, this.s);
         int i4 = this.w;
-        jte.q(parcel, 12, 4);
+        bye.q(parcel, 12, 4);
         parcel.writeInt(i4);
-        jte.n(parcel, 13, this.x);
-        jte.s(parcel, r);
+        bye.n(parcel, 13, this.x);
+        bye.s(parcel, r);
     }
 }

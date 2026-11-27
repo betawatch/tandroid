@@ -1,106 +1,116 @@
 // default package
 
-import android.R;
-import android.os.Build;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.util.Log;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeProvider;
+import java.lang.ref.WeakReference;
+import java.util.Collections;
+import java.util.List;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r4 {
-    public static final r4 c;
-    public static final r4 d;
-    public static final r4 e;
-    public static final r4 f;
-    public static final r4 g;
-    public static final r4 h;
-    public final Object a;
-    public final int b;
+public class r4 {
+    public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
+    public final View.AccessibilityDelegate a;
+    public final q4 b;
 
-    static {
-        new r4(null, 1, null, null);
-        new r4(null, 2, null, null);
-        new r4(null, 4, null, null);
-        new r4(null, 8, null, null);
-        c = new r4(null, 16, null, null);
-        new r4(null, 32, null, null);
-        new r4(null, 64, null, null);
-        new r4(null, 128, null, null);
-        new r4(null, 256, null, x4.class);
-        new r4(null, 512, null, x4.class);
-        new r4(null, 1024, null, y4.class);
-        new r4(null, 2048, null, y4.class);
-        d = new r4(null, TLObject.FLAG_12, null, null);
-        e = new r4(null, TLObject.FLAG_13, null, null);
-        new r4(null, TLObject.FLAG_14, null, null);
-        new r4(null, 32768, null, null);
-        new r4(null, 65536, null, null);
-        new r4(null, 131072, null, c5.class);
-        new r4(null, 262144, null, null);
-        new r4(null, TLObject.FLAG_19, null, null);
-        new r4(null, TLObject.FLAG_20, null, null);
-        new r4(null, TLObject.FLAG_21, null, d5.class);
-        new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_ON_SCREEN, R.id.accessibilityActionShowOnScreen, null, null);
-        new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_TO_POSITION, R.id.accessibilityActionScrollToPosition, null, a5.class);
-        f = new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_UP, R.id.accessibilityActionScrollUp, null, null);
-        new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_LEFT, R.id.accessibilityActionScrollLeft, null, null);
-        g = new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_DOWN, R.id.accessibilityActionScrollDown, null, null);
-        new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_RIGHT, R.id.accessibilityActionScrollRight, null, null);
-        int i = Build.VERSION.SDK_INT;
-        new r4(i >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_UP : null, R.id.accessibilityActionPageUp, null, null);
-        new r4(i >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_DOWN : null, R.id.accessibilityActionPageDown, null, null);
-        new r4(i >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_LEFT : null, R.id.accessibilityActionPageLeft, null, null);
-        new r4(i >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_RIGHT : null, R.id.accessibilityActionPageRight, null, null);
-        new r4(AccessibilityNodeInfo.AccessibilityAction.ACTION_CONTEXT_CLICK, R.id.accessibilityActionContextClick, null, null);
-        h = new r4(i >= 24 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS : null, R.id.accessibilityActionSetProgress, null, b5.class);
-        new r4(i >= 26 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_MOVE_WINDOW : null, R.id.accessibilityActionMoveWindow, null, z4.class);
-        new r4(i >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TOOLTIP : null, R.id.accessibilityActionShowTooltip, null, null);
-        new r4(i >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_HIDE_TOOLTIP : null, R.id.accessibilityActionHideTooltip, null, null);
-        new r4(i >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PRESS_AND_HOLD : null, R.id.accessibilityActionPressAndHold, null, null);
-        new r4(i >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_IME_ENTER : null, R.id.accessibilityActionImeEnter, null, null);
-        new r4(i >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_START : null, R.id.accessibilityActionDragStart, null, null);
-        new r4(i >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_DROP : null, R.id.accessibilityActionDragDrop, null, null);
-        new r4(i >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_CANCEL : null, R.id.accessibilityActionDragCancel, null, null);
-        new r4(i >= 33 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TEXT_SUGGESTIONS : null, R.id.accessibilityActionShowTextSuggestions, null, null);
-        new r4(i >= 34 ? t4.e() : null, R.id.accessibilityActionScrollInDirection, null, null);
+    public r4(View.AccessibilityDelegate accessibilityDelegate) {
+        this.a = accessibilityDelegate;
+        this.b = new q4(this);
     }
 
-    public r4(Object obj, int i, String str, Class cls) {
-        this.b = i;
-        if (obj == null) {
-            this.a = new AccessibilityNodeInfo.AccessibilityAction(i, str);
-        } else {
-            this.a = obj;
+    public ri6 a(View view) {
+        AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
+        if (accessibilityNodeProvider != null) {
+            return new ri6(accessibilityNodeProvider, (byte) 2);
         }
+        return null;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof r4)) {
-            return false;
+    public void b(View view, AccessibilityEvent accessibilityEvent) {
+        this.a.onInitializeAccessibilityEvent(view, accessibilityEvent);
+    }
+
+    public void c(View view, v4 v4Var) {
+        this.a.onInitializeAccessibilityNodeInfo(view, v4Var.a);
+    }
+
+    public boolean d(View view, int i, Bundle bundle) {
+        boolean z;
+        WeakReference weakReference;
+        ClickableSpan clickableSpan;
+        List list = (List) view.getTag(R.id.tag_accessibility_actions);
+        if (list == null) {
+            list = Collections.EMPTY_LIST;
         }
-        Object obj2 = ((r4) obj).a;
-        Object obj3 = this.a;
-        return obj3 == null ? obj2 == null : obj3.equals(obj2);
-    }
-
-    public final int hashCode() {
-        Object obj = this.a;
-        if (obj != null) {
-            return obj.hashCode();
-        }
-        return 0;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("AccessibilityActionCompat: ");
-        String e2 = u4.e(this.b);
-        if (e2.equals("ACTION_UNKNOWN")) {
-            Object obj = this.a;
-            if (((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel() != null) {
-                e2 = ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel().toString();
+        boolean z2 = false;
+        int i2 = 0;
+        while (true) {
+            if (i2 >= list.size()) {
+                break;
+            }
+            s4 s4Var = (s4) list.get(i2);
+            if (s4Var.a() == i) {
+                Class cls = s4Var.c;
+                u34 u34Var = s4Var.d;
+                if (u34Var != null) {
+                    if (cls != null) {
+                        try {
+                            if (cls.getDeclaredConstructor(null).newInstance(null) == null) {
+                                throw null;
+                            }
+                            throw new ClassCastException();
+                        } catch (Exception e) {
+                            Log.e("A11yActionCompat", "Failed to execute command with argument class ViewCommandArgument: ".concat(cls.getName()), e);
+                        }
+                    }
+                    w94 w94Var = (w94) u34Var.b;
+                    me7 me7Var = (me7) u34Var.c;
+                    if (!w94Var.y) {
+                        w94Var.setRefreshing(true);
+                        me7Var.run();
+                    }
+                    z = true;
+                }
+            } else {
+                i2++;
             }
         }
-        sb.append(e2);
-        return sb.toString();
+        z = false;
+        if (!z) {
+            z = this.a.performAccessibilityAction(view, i, bundle);
+        }
+        if (z || i != R.id.accessibility_action_clickable_span || bundle == null) {
+            return z;
+        }
+        int i3 = bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1);
+        SparseArray sparseArray = (SparseArray) view.getTag(R.id.tag_accessibility_clickable_spans);
+        if (sparseArray != null && (weakReference = (WeakReference) sparseArray.get(i3)) != null && (clickableSpan = (ClickableSpan) weakReference.get()) != null) {
+            CharSequence text = view.createAccessibilityNodeInfo().getText();
+            ClickableSpan[] clickableSpanArr = text instanceof Spanned ? (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class) : null;
+            int i4 = 0;
+            while (true) {
+                if (clickableSpanArr == null || i4 >= clickableSpanArr.length) {
+                    break;
+                }
+                if (clickableSpan.equals(clickableSpanArr[i4])) {
+                    clickableSpan.onClick(view);
+                    z2 = true;
+                    break;
+                }
+                i4++;
+            }
+        }
+        return z2;
+    }
+
+    public r4() {
+        this(c);
     }
 }

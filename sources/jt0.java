@@ -1,43 +1,13 @@
 // default package
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.PasscodeActivity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jt0 implements View.OnFocusChangeListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ EditTextBoldCursor c;
-
-    public /* synthetic */ jt0(Object obj, EditTextBoldCursor editTextBoldCursor, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = editTextBoldCursor;
-    }
-
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z) {
-        byte b = this.a;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((er7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
-            case 1:
-                ((er7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
-            case 2:
-                ((er7) obj).c(z, !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                break;
-            default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
-                passcodeActivity.w.setEditText((sj2) editTextBoldCursor);
-                passcodeActivity.w.setDispatchBackWhenEmpty(true);
-                break;
-        }
-    }
+public final class jt0 {
+    public final ArrayList[] a = {new ArrayList(), new ArrayList(), new ArrayList()};
+    public final boolean[] b = new boolean[3];
+    public final String[] c = new String[3];
+    public final boolean[] d = new boolean[3];
+    public final boolean[] e = new boolean[3];
 }

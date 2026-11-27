@@ -1,80 +1,129 @@
 // default package
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLRPC;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class er2 extends fr2 {
-    public final double d;
-    public final double e;
-    public final double f;
-    public final double g;
-    public final int h;
-    public volatile double i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class er2 implements i8a {
+    public final j99 a;
+    public long b;
 
-    public er2(String str, double d, double d2, double d3, double d4, int i) {
-        super(str);
-        this.d = d;
-        this.e = d2;
-        this.f = d3;
-        this.g = d4;
-        this.h = i;
-        this.i = d;
+    public er2(List list, List list2) {
+        mo5 p = po5.p();
+        yve.f(list.size() == list2.size());
+        for (int i = 0; i < list.size(); i++) {
+            p.c(new dr2((i8a) list.get(i), (List) list2.get(i)));
+        }
+        this.a = p.f();
+        this.b = -9223372036854775807L;
     }
 
-    @Override // fr2
-    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
-            return false;
-        }
-        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
-        if (Double.isNaN(d) || Double.isInfinite(d)) {
-            return false;
-        }
-        double max = Math.max(this.e, Math.min(this.f, d));
-        if (max == this.i || Math.abs(max - this.i) < this.g) {
-            return false;
-        }
-        this.i = max;
-        editor.putLong(e(), Double.doubleToRawLongBits(max));
-        return true;
-    }
-
-    @Override // fr2
-    public final boolean c(SharedPreferences.Editor editor) {
-        if (this.h != 2) {
-            return false;
-        }
-        double d = this.i;
-        double d2 = this.d;
-        if (d == d2) {
-            return false;
-        }
-        this.i = d2;
-        editor.remove(e());
-        return true;
-    }
-
-    @Override // fr2
-    public final void d(SharedPreferences sharedPreferences) {
-        if (!sharedPreferences.contains(e())) {
-            this.i = this.d;
-            return;
-        }
-        try {
-            try {
-                this.i = Math.max(this.e, Math.min(this.f, Double.longBitsToDouble(sharedPreferences.getLong(e(), 0L))));
-            } catch (ClassCastException e) {
-                fa4.g(e, true);
-                this.i = this.d;
+    @Override // i8a
+    public final boolean e() {
+        int i = 0;
+        while (true) {
+            j99 j99Var = this.a;
+            if (i >= j99Var.d) {
+                return false;
             }
-        } catch (ClassCastException unused) {
-            this.i = Math.max(this.e, Math.min(this.f, sharedPreferences.getFloat(e(), (float) this.d)));
+            if (((dr2) j99Var.get(i)).a.e()) {
+                return true;
+            }
+            i++;
         }
     }
 
-    public final String toString() {
-        return this.a + "=" + this.i;
+    @Override // i8a
+    public final long h() {
+        int i = 0;
+        long j = Long.MAX_VALUE;
+        while (true) {
+            j99 j99Var = this.a;
+            if (i >= j99Var.d) {
+                break;
+            }
+            long h = ((dr2) j99Var.get(i)).a.h();
+            if (h != Long.MIN_VALUE) {
+                j = Math.min(j, h);
+            }
+            i++;
+        }
+        if (j == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return j;
+    }
+
+    @Override // i8a
+    public final boolean s(xa6 xa6Var) {
+        boolean z;
+        boolean z2 = false;
+        do {
+            long h = h();
+            if (h == Long.MIN_VALUE) {
+                return z2;
+            }
+            int i = 0;
+            z = false;
+            while (true) {
+                j99 j99Var = this.a;
+                if (i >= j99Var.d) {
+                    break;
+                }
+                long h2 = ((dr2) j99Var.get(i)).a.h();
+                boolean z3 = h2 != Long.MIN_VALUE && h2 <= xa6Var.a;
+                if (h2 == h || z3) {
+                    z |= ((dr2) j99Var.get(i)).a.s(xa6Var);
+                }
+                i++;
+            }
+            z2 |= z;
+        } while (z);
+        return z2;
+    }
+
+    @Override // i8a
+    public final long t() {
+        int i = 0;
+        long j = Long.MAX_VALUE;
+        long j2 = Long.MAX_VALUE;
+        while (true) {
+            j99 j99Var = this.a;
+            if (i >= j99Var.d) {
+                break;
+            }
+            dr2 dr2Var = (dr2) j99Var.get(i);
+            long t = dr2Var.a.t();
+            po5 po5Var = dr2Var.b;
+            if ((po5Var.contains(1) || po5Var.contains(2) || po5Var.contains(4)) && t != Long.MIN_VALUE) {
+                j = Math.min(j, t);
+            }
+            if (t != Long.MIN_VALUE) {
+                j2 = Math.min(j2, t);
+            }
+            i++;
+        }
+        if (j != Long.MAX_VALUE) {
+            this.b = j;
+            return j;
+        }
+        if (j2 == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        long j3 = this.b;
+        return j3 != -9223372036854775807L ? j3 : j2;
+    }
+
+    @Override // i8a
+    public final void u(long j) {
+        int i = 0;
+        while (true) {
+            j99 j99Var = this.a;
+            if (i >= j99Var.d) {
+                return;
+            }
+            ((dr2) j99Var.get(i)).u(j);
+            i++;
+        }
     }
 }

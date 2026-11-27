@@ -1,122 +1,22 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.util.Base64;
+import java.util.LinkedHashMap;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class mwe extends b4 {
-    public static final Parcelable.Creator<mwe> CREATOR = new c0f((byte) 0);
-    public final int a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final String f;
-    public final String h;
-    public final byte n;
-    public final byte r;
-    public final byte s;
-    public final byte w;
-    public final String x;
-
-    public mwe(int i, String str, String str2, String str3, String str4, String str5, String str6, byte b, byte b2, byte b3, byte b4, String str7) {
-        this.a = i;
-        this.b = str;
-        this.c = str2;
-        this.d = str3;
-        this.e = str4;
-        this.f = str5;
-        this.h = str6;
-        this.n = b;
-        this.r = b2;
-        this.s = b3;
-        this.w = b4;
-        this.x = str7;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public abstract class mwe {
+    public static byte[] a(JSONObject jSONObject) {
+        LinkedHashMap linkedHashMap = ux8.a;
+        String optString = jSONObject.optString("challenge", "");
+        optString.getClass();
+        if (optString.length() == 0) {
+            throw new JSONException("Challenge not found in request or is unexpectedly empty");
         }
-        if (obj == null || mwe.class != obj.getClass()) {
-            return false;
-        }
-        mwe mweVar = (mwe) obj;
-        if (this.a != mweVar.a || this.n != mweVar.n || this.r != mweVar.r || this.s != mweVar.s || this.w != mweVar.w || !this.b.equals(mweVar.b)) {
-            return false;
-        }
-        String str = mweVar.c;
-        String str2 = this.c;
-        if (str2 == null ? str != null : !str2.equals(str)) {
-            return false;
-        }
-        if (!this.d.equals(mweVar.d) || !this.e.equals(mweVar.e) || !this.f.equals(mweVar.f)) {
-            return false;
-        }
-        String str3 = mweVar.h;
-        String str4 = this.h;
-        if (str4 == null ? str3 != null : !str4.equals(str3)) {
-            return false;
-        }
-        String str5 = mweVar.x;
-        String str6 = this.x;
-        return str6 != null ? str6.equals(str5) : str5 == null;
-    }
-
-    public final int hashCode() {
-        int j = ir2.j((this.a + 31) * 31, 31, this.b);
-        String str = this.c;
-        int j2 = ir2.j(ir2.j(ir2.j((j + (str != null ? str.hashCode() : 0)) * 31, 31, this.d), 31, this.e), 31, this.f);
-        String str2 = this.h;
-        int hashCode = (((((((((j2 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.n) * 31) + this.r) * 31) + this.s) * 31) + this.w) * 31;
-        String str3 = this.x;
-        return hashCode + (str3 != null ? str3.hashCode() : 0);
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("AncsNotificationParcelable{, id=");
-        sb.append(this.a);
-        sb.append(", appId='");
-        sb.append(this.b);
-        sb.append("', dateTime='");
-        sb.append(this.c);
-        sb.append("', eventId=");
-        sb.append((int) this.n);
-        sb.append(", eventFlags=");
-        ir2.w(sb, this.r, ", categoryId=", this.s, ", categoryCount=");
-        sb.append((int) this.w);
-        sb.append(", packageName='");
-        sb.append(this.x);
-        sb.append("'}");
-        return sb.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        String str = this.b;
-        jte.l(parcel, 3, str);
-        jte.l(parcel, 4, this.c);
-        jte.l(parcel, 5, this.d);
-        jte.l(parcel, 6, this.e);
-        jte.l(parcel, 7, this.f);
-        String str2 = this.h;
-        if (str2 != null) {
-            str = str2;
-        }
-        jte.l(parcel, 8, str);
-        jte.q(parcel, 9, 4);
-        parcel.writeInt(this.n);
-        jte.q(parcel, 10, 4);
-        parcel.writeInt(this.r);
-        jte.q(parcel, 11, 4);
-        parcel.writeInt(this.s);
-        jte.q(parcel, 12, 4);
-        parcel.writeInt(this.w);
-        jte.l(parcel, 13, this.x);
-        jte.s(parcel, r);
+        byte[] decode = Base64.decode(optString, 11);
+        decode.getClass();
+        return decode;
     }
 }

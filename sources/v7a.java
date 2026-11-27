@@ -1,20 +1,30 @@
 // default package
 
 import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class v7a extends to8 {
-    public final /* synthetic */ d8a H;
+public final class v7a extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v7a(d8a d8aVar, d8a d8aVar2, Context context) {
-        super(d8aVar2, context);
-        this.H = d8aVar;
+    public v7a(Context context, int i, int i2) {
+        super(context);
+        this.a = i;
+        this.b = i2;
     }
 
-    @Override // w39
-    public final void f() {
-        this.H.c.g3.O(true);
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return hl.L(260.0f);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i2), this.b), View.MeasureSpec.getMode(i2)));
     }
 }

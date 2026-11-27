@@ -1,28 +1,102 @@
 // default package
 
+import android.app.Notification;
+import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageInfo;
+import android.hardware.display.DisplayManager;
+import android.view.Display;
+import android.view.ViewConfiguration;
+import android.webkit.WebView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class qq5 extends f36 {
-    public final /* synthetic */ uq5 N;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class qq5 {
+    public static Context a;
+    public static Boolean b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qq5(uq5 uq5Var, Context context, d dVar, fx0 fx0Var, boolean z) {
-        super(context, dVar, fx0Var, false, z);
-        this.N = uq5Var;
+    public static Notification.Builder a(Context context, String str) {
+        return new Notification.Builder(context, str);
     }
 
-    @Override // f36
-    public final void e(SpannableStringBuilder spannableStringBuilder) {
-        zq5 zq5Var = this.N.c;
-        ww0 ww0Var = zq5Var.c;
-        int i = zq5.h2;
-        m21 Q = new u21(ww0Var, zq5Var.J0).Q(R.raw.forward, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    public static boolean b(Context context) {
+        Display.HdrCapabilities hdrCapabilities;
+        DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+        Display display = displayManager != null ? displayManager.getDisplay(0) : null;
+        if (display == null || !display.isHdr() || (hdrCapabilities = display.getHdrCapabilities()) == null) {
+            return false;
+        }
+        for (int i : hdrCapabilities.getSupportedHdrTypes()) {
+            if (i == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static PackageInfo c() {
+        return WebView.getCurrentWebViewPackage();
+    }
+
+    public static float d(ViewConfiguration viewConfiguration) {
+        return viewConfiguration.getScaledHorizontalScrollFactor();
+    }
+
+    public static float e(ViewConfiguration viewConfiguration) {
+        return viewConfiguration.getScaledVerticalScrollFactor();
+    }
+
+    public static synchronized boolean f(Context context) {
+        Boolean bool;
+        Boolean bool2;
+        synchronized (qq5.class) {
+            Context applicationContext = context.getApplicationContext();
+            Context context2 = a;
+            if (context2 != null && (bool2 = b) != null && context2 == applicationContext) {
+                return bool2.booleanValue();
+            }
+            b = null;
+            if (rve.a()) {
+                bool = Boolean.valueOf(applicationContext.getPackageManager().isInstantApp());
+                b = bool;
+            } else {
+                try {
+                    context.getClassLoader().loadClass("com.google.android.instantapps.supervisor.InstantAppsRuntime");
+                    bool = Boolean.TRUE;
+                    b = bool;
+                } catch (ClassNotFoundException unused) {
+                    bool = Boolean.FALSE;
+                    b = bool;
+                }
+            }
+            a = applicationContext;
+            return bool.booleanValue();
+        }
+    }
+
+    public static Intent g(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, int i) {
+        return context.registerReceiver(broadcastReceiver, intentFilter, null, null, i);
+    }
+
+    public static void h(Notification.Builder builder) {
+        builder.setBadgeIconType(0);
+    }
+
+    public static void i(Notification.Builder builder, int i) {
+        builder.setGroupAlertBehavior(i);
+    }
+
+    public static void j(Notification.Builder builder) {
+        builder.setSettingsText(null);
+    }
+
+    public static void k(Notification.Builder builder, String str) {
+        builder.setShortcutId(str);
+    }
+
+    public static void l(Notification.Builder builder, long j) {
+        builder.setTimeoutAfter(j);
     }
 }

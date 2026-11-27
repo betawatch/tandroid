@@ -1,180 +1,169 @@
 // default package
 
-import java.io.Serializable;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r73 extends ccb implements qp4 {
-    public final /* synthetic */ byte a = 0;
-    public byte b;
-    public final /* synthetic */ v73 c;
-    public Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class r73 {
+    public final /* synthetic */ uj7 a;
+    public final /* synthetic */ m89 b;
+    public final /* synthetic */ p89 c;
+    public final /* synthetic */ o83 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r73(c59 c59Var, v73 v73Var, a59 a59Var, fw2 fw2Var) {
-        super(1, fw2Var);
-        this.e = c59Var;
-        this.c = v73Var;
-        this.f = a59Var;
+    public r73(uj7 uj7Var, m89 m89Var, p89 p89Var, o83 o83Var) {
+        this.a = uj7Var;
+        this.b = m89Var;
+        this.c = p89Var;
+        this.d = o83Var;
     }
 
-    @Override // of0
-    public final fw2 create(fw2 fw2Var) {
-        byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        v73 v73Var = this.c;
-        switch (b) {
-            case 0:
-                return new r73((c59) obj2, v73Var, (a59) obj, fw2Var);
-            default:
-                return new r73(v73Var, (sw2) obj2, (eq4) obj, fw2Var);
-        }
-    }
-
-    @Override // qp4
-    public final Object invoke(Object obj) {
-        byte b = this.a;
-        g5c g5cVar = g5c.a;
-        fw2 fw2Var = (fw2) obj;
-        switch (b) {
-        }
-        return ((r73) create(fw2Var)).invokeSuspend(g5cVar);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:17:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x005f  */
-    @Override // of0
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0084, code lost:
+    
+        if (r10.d(r0) != r6) goto L50;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a9 A[Catch: all -> 0x00c9, TRY_LEAVE, TryCatch #2 {all -> 0x00c9, blocks: (B:27:0x004b, B:28:0x00a1, B:30:0x00a9), top: B:26:0x004b }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x008a A[Catch: all -> 0x00d4, TRY_LEAVE, TryCatch #0 {all -> 0x00d4, blocks: (B:40:0x0086, B:42:0x008a, B:45:0x00cc, B:46:0x00d3), top: B:39:0x0086 }] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00cc A[Catch: all -> 0x00d4, TRY_ENTER, TryCatch #0 {all -> 0x00d4, blocks: (B:40:0x0086, B:42:0x008a, B:45:0x00cc, B:46:0x00d3), top: B:39:0x0086 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
+    /* JADX WARN: Type inference failed for: r4v3, types: [uj7] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object invokeSuspend(Object obj) {
-        c59 c59Var;
-        a59 a59Var;
-        s53 s53Var;
-        Object obj2;
-        byte b = this.a;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        bx2 bx2Var = bx2.a;
-        v73 v73Var = this.c;
-        fw2 fw2Var = null;
-        switch (b) {
-            case 0:
-                a59 a59Var2 = (a59) obj3;
-                c59 c59Var2 = (c59) obj4;
-                byte b2 = this.b;
-                try {
-                } catch (fx2 unused) {
-                    Object obj5 = c59Var2.a;
-                    this.d = a59Var2;
-                    this.b = (byte) 3;
-                    obj = v73Var.i(obj5, true, this);
-                    if (obj == bx2Var) {
-                        return bx2Var;
-                    }
-                }
-                if (b2 == 0) {
-                    qse.b(obj);
-                    this.d = c59Var2;
-                    this.b = (byte) 1;
-                    obj = ((hb4) v73Var.j.getValue()).a(new e73(3, (fw2) null), this);
-                    if (obj == bx2Var) {
-                        return bx2Var;
-                    }
-                    c59Var = c59Var2;
-                } else {
-                    if (b2 != 1) {
-                        if (b2 == 2) {
-                            a59Var = (a59) ((Serializable) this.d);
-                            qse.b(obj);
-                            a59Var.a = ((Number) obj).intValue();
-                            return g5c.a;
-                        }
-                        if (b2 != 3) {
-                            sc8.j("call to 'resume' before 'invoke' with coroutine");
-                            return null;
-                        }
-                        a59Var2 = (a59) ((Serializable) this.d);
-                        qse.b(obj);
-                        a59Var2.a = ((Number) obj).intValue();
-                        return g5c.a;
-                    }
-                    c59Var = (c59) ((Serializable) this.d);
-                    qse.b(obj);
-                }
-                c59Var.a = obj;
-                kp5 c = v73Var.c();
-                this.d = a59Var2;
-                this.b = (byte) 2;
-                obj = c.b(this);
-                if (obj == bx2Var) {
-                    return bx2Var;
-                }
-                a59Var = a59Var2;
-                a59Var.a = ((Number) obj).intValue();
-                return g5c.a;
-            default:
-                byte b3 = this.b;
-                if (b3 == 0) {
-                    qse.b(obj);
-                    this.b = (byte) 1;
-                    obj = v73Var.h(true, this);
-                    if (obj == bx2Var) {
-                        return bx2Var;
-                    }
-                } else {
-                    if (b3 != 1) {
-                        if (b3 != 2) {
-                            if (b3 != 3) {
-                                sc8.j("call to 'resume' before 'invoke' with coroutine");
-                                return null;
+    public final Object a(y63 y63Var, ax2 ax2Var) {
+        q73 q73Var;
+        int i;
+        m89 m89Var;
+        p89 p89Var;
+        o83 o83Var;
+        wj7 wj7Var;
+        is4 is4Var;
+        uj7 uj7Var;
+        uj7 uj7Var2;
+        p89 p89Var2;
+        Object obj;
+        try {
+            if (ax2Var instanceof q73) {
+                q73Var = (q73) ax2Var;
+                int i2 = q73Var.n;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    q73Var.n = i2 - TLObject.FLAG_31;
+                    Object obj2 = q73Var.f;
+                    i = q73Var.n;
+                    vx2 vx2Var = vx2.a;
+                    if (i != 0) {
+                        ixe.b(obj2);
+                        q73Var.a = y63Var;
+                        uj7 uj7Var3 = this.a;
+                        q73Var.b = uj7Var3;
+                        m89Var = this.b;
+                        q73Var.c = m89Var;
+                        p89Var = this.c;
+                        q73Var.d = p89Var;
+                        o83Var = this.d;
+                        q73Var.e = o83Var;
+                        q73Var.n = 1;
+                        wj7Var = (wj7) uj7Var3;
+                        is4Var = y63Var;
+                    } else {
+                        if (i != 1) {
+                            if (i != 2) {
+                                if (i != 3) {
+                                    grb.i("call to 'resume' before 'invoke' with coroutine");
+                                    return null;
+                                }
+                                obj = q73Var.c;
+                                p89Var2 = (p89) q73Var.b;
+                                uj7Var = (uj7) q73Var.a;
+                                try {
+                                    ixe.b(obj2);
+                                    p89Var2.a = obj;
+                                    Object obj3 = p89Var2.a;
+                                    ((wj7) uj7Var).f(null);
+                                    return obj3;
+                                } catch (Throwable th) {
+                                    th = th;
+                                    ((wj7) uj7Var).f(null);
+                                    throw th;
+                                }
                             }
-                            Object obj6 = this.d;
-                            qse.b(obj);
-                            return obj6;
-                        }
-                        s53Var = (s53) this.d;
-                        qse.b(obj);
-                        obj2 = s53Var.b;
-                        if ((obj2 == null ? obj2.hashCode() : 0) == s53Var.c) {
-                            sc8.j("Data in DataStore was mutated but DataStore is only compatible with Immutable types.");
-                            return null;
-                        }
-                        if (!rp5.a(s53Var.b, obj)) {
-                            this.d = obj;
-                            this.b = (byte) 3;
-                            if (v73Var.i(obj, true, this) == bx2Var) {
-                                return bx2Var;
+                            o83Var = (o83) q73Var.c;
+                            p89Var2 = (p89) q73Var.b;
+                            uj7Var2 = (uj7) q73Var.a;
+                            try {
+                                ixe.b(obj2);
+                                if (!ur5.a(obj2, p89Var2.a)) {
+                                    uj7Var = uj7Var2;
+                                    Object obj32 = p89Var2.a;
+                                    ((wj7) uj7Var).f(null);
+                                    return obj32;
+                                }
+                                q73Var.a = uj7Var2;
+                                q73Var.b = p89Var2;
+                                q73Var.c = obj2;
+                                q73Var.n = 3;
+                                if (o83Var.i(obj2, false, q73Var) != vx2Var) {
+                                    obj = obj2;
+                                    uj7Var = uj7Var2;
+                                    p89Var2.a = obj;
+                                    Object obj322 = p89Var2.a;
+                                    ((wj7) uj7Var).f(null);
+                                    return obj322;
+                                }
+                                return vx2Var;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                uj7Var = uj7Var2;
+                                ((wj7) uj7Var).f(null);
+                                throw th;
                             }
                         }
-                        return obj;
+                        o83Var = q73Var.e;
+                        p89 p89Var3 = q73Var.d;
+                        m89Var = (m89) q73Var.c;
+                        ?? r4 = (uj7) q73Var.b;
+                        is4 is4Var2 = (is4) q73Var.a;
+                        ixe.b(obj2);
+                        p89Var = p89Var3;
+                        is4Var = is4Var2;
+                        wj7Var = r4;
                     }
-                    qse.b(obj);
+                    if (!m89Var.a) {
+                        throw new IllegalStateException("InitializerApi.updateData should not be called after initialization is complete.");
+                    }
+                    Object obj4 = p89Var.a;
+                    q73Var.a = wj7Var;
+                    q73Var.b = p89Var;
+                    q73Var.c = o83Var;
+                    q73Var.d = null;
+                    q73Var.e = null;
+                    q73Var.n = 2;
+                    Object invoke = is4Var.invoke(obj4, q73Var);
+                    if (invoke != vx2Var) {
+                        uj7Var2 = wj7Var;
+                        obj2 = invoke;
+                        p89Var2 = p89Var;
+                        if (!ur5.a(obj2, p89Var2.a)) {
+                        }
+                    }
+                    return vx2Var;
                 }
-                s53Var = (s53) obj;
-                ai1 ai1Var = new ai1((eq4) obj3, s53Var, fw2Var, (byte) 4);
-                this.d = s53Var;
-                this.b = (byte) 2;
-                obj = ppd.c((sw2) obj4, ai1Var, this);
-                if (obj == bx2Var) {
-                    return bx2Var;
-                }
-                obj2 = s53Var.b;
-                if ((obj2 == null ? obj2.hashCode() : 0) == s53Var.c) {
-                }
+            }
+            if (!m89Var.a) {
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            uj7Var = wj7Var;
+            ((wj7) uj7Var).f(null);
+            throw th;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r73(v73 v73Var, sw2 sw2Var, eq4 eq4Var, fw2 fw2Var) {
-        super(1, fw2Var);
-        this.c = v73Var;
-        this.e = sw2Var;
-        this.f = eq4Var;
+        q73Var = new q73(this, ax2Var);
+        Object obj22 = q73Var.f;
+        i = q73Var.n;
+        vx2 vx2Var2 = vx2.a;
+        if (i != 0) {
+        }
     }
 }

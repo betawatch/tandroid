@@ -1,34 +1,61 @@
 // default package
 
-import android.util.Log;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class idd implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ydd b;
+public final class idd extends c4 {
+    public static final Parcelable.Creator<idd> CREATOR = new m9d(26);
+    public final String a;
+    public final ArrayList b;
 
-    public /* synthetic */ idd(ydd yddVar, byte b) {
-        this.a = b;
-        this.b = yddVar;
+    public idd(String str, ArrayList arrayList) {
+        this.a = str;
+        this.b = arrayList;
+        xve.h(str);
+        xve.h(arrayList);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ydd yddVar = this.b;
-        switch (b) {
-            case 0:
-                dc6 dc6Var = ydd.i;
-                Log.i(dc6Var.a, dc6Var.d("transfer with type = %d has timed out", Integer.valueOf(yddVar.e)));
-                yddVar.b(101);
-                break;
-            default:
-                u39 u39Var = new u39(yddVar, (byte) 29);
-                j6a j6aVar = yddVar.f;
-                fre.h(j6aVar);
-                j6aVar.a(u39Var);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || idd.class != obj.getClass()) {
+            return false;
+        }
+        idd iddVar = (idd) obj;
+        String str = iddVar.a;
+        String str2 = this.a;
+        if (str2 != null) {
+            if (!str2.equals(str)) {
+                return false;
+            }
+        } else if (str != null) {
+            return false;
+        }
+        ArrayList arrayList = iddVar.b;
+        ArrayList arrayList2 = this.b;
+        return arrayList2 != null ? arrayList2.equals(arrayList) : arrayList == null;
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = ((str != null ? str.hashCode() : 0) + 31) * 31;
+        ArrayList arrayList = this.b;
+        return hashCode + (arrayList != null ? arrayList.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return c00.j("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.p(parcel, 3, this.b);
+        bye.s(parcel, r);
     }
 }

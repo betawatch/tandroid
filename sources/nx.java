@@ -1,57 +1,7 @@
 // default package
 
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class nx implements Runnable {
-    public static Handler f;
-    public final /* synthetic */ v3d e;
-    public volatile int b = 1;
-    public final AtomicBoolean c = new AtomicBoolean();
-    public final AtomicBoolean d = new AtomicBoolean();
-    public final le7 a = new le7(this, new ke7(this, 0));
-
-    public nx(v3d v3dVar) {
-        this.e = v3dVar;
-    }
-
-    public final void a() {
-        v3d v3dVar = this.e;
-        Iterator it = v3dVar.j.iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            if (((gy4) it.next()).a(v3dVar)) {
-                i++;
-            }
-        }
-        try {
-            v3dVar.i.tryAcquire(i, 5L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    public final void b(Object obj) {
-        Handler handler;
-        synchronized (nx.class) {
-            handler = f;
-            if (handler == null) {
-                handler = new Handler(Looper.getMainLooper());
-                f = handler;
-            }
-        }
-        handler.post(new rld((Object) this, obj, false, (byte) 7));
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        this.e.a();
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public interface nx {
+    x76 apply(Object obj);
 }

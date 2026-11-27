@@ -1,42 +1,55 @@
 // default package
 
-import android.util.SparseArray;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class l61 {
-    public long a;
-    public int b;
-    public long c;
-    public final SparseArray d = new SparseArray();
+public final class l61 extends w71 {
+    public final /* synthetic */ byte I = 1;
+    public final /* synthetic */ Object J;
 
-    public l61(long j) {
-        this.a = j;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l61(df3 df3Var, Context context, e eVar) {
+        super(context, eVar, null, null);
+        this.J = df3Var;
     }
 
-    public final void a(u61 u61Var, int i) {
-        SparseArray sparseArray = this.d;
-        m61 m61Var = (m61) sparseArray.get(i, null);
-        if (m61Var == null) {
-            m61Var = new m61();
-            sparseArray.put(i, m61Var);
-        }
-        long j = u61Var.c;
-        m61Var.a += j;
-        this.c += j;
-        this.b++;
-        m61Var.b.add(u61Var);
-    }
-
-    public final void b(u61 u61Var) {
-        m61 m61Var = (m61) this.d.get(u61Var.d, null);
-        if (m61Var == null || !m61Var.b.remove(u61Var)) {
+    public final void f(boolean z) {
+        jla jlaVar;
+        jla jlaVar2;
+        z61 z61Var = (z61) this.J;
+        if (!z) {
+            jlaVar = ((e) z61Var).simpleActionBar;
+            jlaVar.y();
             return;
         }
-        long j = m61Var.a;
-        long j2 = u61Var.c;
-        m61Var.a = j - j2;
-        this.c -= j2;
-        this.b--;
+        fm0 fm0Var = z61Var.T;
+        if (fm0Var != null) {
+            fm0Var.a(true, true);
+        }
+        jlaVar2 = ((e) z61Var).simpleActionBar;
+        jlaVar2.L();
+    }
+
+    @Override // w71, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.I) {
+            case 1:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((((df3) this.J).q1 - a.getCurrentActionBarHeight()) - hl.m, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l61(z61 z61Var, Context context, z61 z61Var2, vy4 vy4Var, wka wkaVar) {
+        super(context, z61Var2, vy4Var, wkaVar);
+        this.J = z61Var;
     }
 }

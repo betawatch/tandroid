@@ -1,81 +1,26 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zt8 implements gk7 {
-    public static final zt8 c;
-    public static final List d;
-    public boolean a;
-    public sr8 b;
+public final class zt8 extends wua {
+    public final /* synthetic */ byte y3;
+    public final /* synthetic */ au8 z3;
 
-    static {
-        zt8 zt8Var = new zt8();
-        zt8Var.b = new sr8(zt8Var, (byte) 3);
-        c = zt8Var;
-        d = Arrays.asList(5, 10, 15, 30, 60);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zt8(au8 au8Var, Context context, int i, long j, vnb vnbVar, byte b) {
+        super(context, i, j, vnbVar, null);
+        this.y3 = b;
+        this.z3 = au8Var;
     }
 
-    public final void a() {
-        this.a = false;
-        if (gba.W0) {
-            ArrayList arrayList = new ArrayList(gba.v1);
-            Collections.sort(arrayList, new fx7((byte) 8));
-            int size = arrayList.size();
-            int i = 0;
-            while (i < size) {
-                Object obj = arrayList.get(i);
-                i++;
-                fba fbaVar = (fba) obj;
-                if (fbaVar != gba.x1 && !fbaVar.c && fbaVar.d) {
-                    SharedPreferences.Editor edit = na7.c1().edit();
-                    edit.putBoolean("proxy_enabled", true);
-                    fbaVar.a.i(edit);
-                    edit.apply();
-                    gba.x1 = fbaVar;
-                    kk7.e().k(kk7.C4, new Object[0]);
-                    kk7.e().k(kk7.E4, new Object[0]);
-                    ConnectionsManager.setProxySettings(true, gba.x1.a);
-                    return;
-                }
-            }
+    @Override // wua, nx0, ag0
+    public final d31 j() {
+        byte b = this.y3;
+        au8 au8Var = this.z3;
+        switch (b) {
         }
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        sr8 sr8Var = this.b;
-        if (i == kk7.D4) {
-            boolean z = gba.a;
-            if (na7.c1().getBoolean("proxy_enabled", false) && gba.x1 != null && gba.W0 && gba.v1.size() > 1 && this.a) {
-                a();
-                return;
-            }
-            return;
-        }
-        if (i == kk7.C4) {
-            gl.r(sr8Var);
-            return;
-        }
-        if (i == kk7.S1 && i2 == y6c.t0) {
-            boolean z2 = gba.a;
-            if (((!na7.c1().getBoolean("proxy_enabled", false) || gba.x1 == null) && !gba.W0) || gba.v1.size() <= 1) {
-                return;
-            }
-            if (ConnectionsManager.getInstance(i2).getConnectionState() != 4) {
-                gl.r(sr8Var);
-            } else {
-                if (this.a) {
-                    return;
-                }
-                gl.d3(sr8Var, ((Integer) d.get(gba.X0)).intValue() * 1000);
-            }
-        }
+        return d31.b0(au8Var.a.a);
     }
 }

@@ -1,25 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface uj {
-    void i(fr6 fr6Var);
+import j$.util.Objects;
 
-    void j(w83 w83Var);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class uj {
+    public final long a;
+    public final asb b;
+    public final int c;
+    public final vz6 d;
+    public final long e;
+    public final asb f;
+    public final int g;
+    public final vz6 h;
+    public final long i;
+    public final long j;
 
-    void k(y54 y54Var, lv6 lv6Var);
+    public uj(long j, asb asbVar, int i, vz6 vz6Var, long j2, asb asbVar2, int i2, vz6 vz6Var2, long j3, long j4) {
+        this.a = j;
+        this.b = asbVar;
+        this.c = i;
+        this.d = vz6Var;
+        this.e = j2;
+        this.f = asbVar2;
+        this.g = i2;
+        this.h = vz6Var2;
+        this.i = j3;
+        this.j = j4;
+    }
 
-    void n(tj tjVar, int i, long j);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || uj.class != obj.getClass()) {
+            return false;
+        }
+        uj ujVar = (uj) obj;
+        return this.a == ujVar.a && this.c == ujVar.c && this.e == ujVar.e && this.g == ujVar.g && this.i == ujVar.i && this.j == ujVar.j && this.b.equals(ujVar.b) && Objects.equals(this.d, ujVar.d) && Objects.equals(this.f, ujVar.f) && Objects.equals(this.h, ujVar.h);
+    }
 
-    void onRenderedFirstFrame(tj tjVar);
-
-    void onSeekStarted(tj tjVar);
-
-    void s(icc iccVar);
-
-    void u(j54 j54Var);
-
-    void w(tj tjVar, fr6 fr6Var);
-
-    void y(tj tjVar, int i);
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j));
+    }
 }

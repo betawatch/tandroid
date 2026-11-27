@@ -1,47 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.io.Serializable;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class d51 extends f51 {
-    public final int e;
-    public final int f;
+public final class d51 extends eu7 implements Serializable {
+    public final es4 a;
+    public final eu7 b;
 
-    public d51(byte[] bArr, int i, int i2) {
-        super(bArr);
-        f51.i(i, i + i2, bArr.length);
-        this.e = i;
-        this.f = i2;
+    public d51(es4 es4Var, eu7 eu7Var) {
+        this.a = es4Var;
+        this.b = eu7Var;
     }
 
-    @Override // f51
-    public final byte h(int i) {
-        int i2 = this.f;
-        if (((i2 - (i + 1)) | i) >= 0) {
-            return this.b[this.e + i];
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        es4 es4Var = this.a;
+        return this.b.compare(es4Var.apply(obj), es4Var.apply(obj2));
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        if (i < 0) {
-            throw new ArrayIndexOutOfBoundsException(de9.k(i, "Index < 0: "));
+        if (!(obj instanceof d51)) {
+            return false;
         }
-        throw new ArrayIndexOutOfBoundsException(b00.g(i, i2, "Index > length: ", ", "));
+        d51 d51Var = (d51) obj;
+        return this.a.equals(d51Var.a) && this.b.equals(d51Var.b);
     }
 
-    @Override // f51
-    public final void k(int i, byte[] bArr) {
-        System.arraycopy(this.b, this.e, bArr, 0, i);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
     }
 
-    @Override // f51
-    public final int l() {
-        return this.e;
-    }
-
-    @Override // f51
-    public final byte m(int i) {
-        return this.b[this.e + i];
-    }
-
-    @Override // f51
-    public final int size() {
-        return this.f;
+    public final String toString() {
+        return this.b + ".onResultOf(" + this.a + ")";
     }
 }

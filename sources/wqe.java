@@ -1,16 +1,15 @@
 // default package
 
-import android.app.AppOpsManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Process;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wqe {
+    public final g1f a;
+    public final lqe b;
+    public final ope c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class wqe {
-    public static ua8 a;
-
-    public static boolean a(Context context) {
-        return Build.VERSION.SDK_INT >= 26 && context.getPackageManager().hasSystemFeature("android.software.picture_in_picture") && ((AppOpsManager) context.getSystemService("appops")).checkOpNoThrow("android:picture_in_picture", Process.myUid(), context.getPackageName()) == 0;
+    public /* synthetic */ wqe(htd htdVar) {
+        this.a = (g1f) htdVar.b;
+        this.b = (lqe) htdVar.c;
+        this.c = (ope) htdVar.d;
     }
 }

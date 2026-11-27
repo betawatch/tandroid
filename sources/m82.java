@@ -1,126 +1,81 @@
 // default package
 
-import org.telegram.messenger.ImageReceiver;
+import android.text.SpannableStringBuilder;
+import android.view.KeyEvent;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class m82 extends i98 {
-    public final /* synthetic */ p82 a;
+public final /* synthetic */ class m82 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ t82 b;
 
-    public m82(p82 p82Var) {
-        this.a = p82Var;
+    public /* synthetic */ m82(t82 t82Var, byte b) {
+        this.a = b;
+        this.b = t82Var;
     }
 
-    @Override // i98, o98
-    public final void F() {
-        this.a.e.getImageReceiver().v0(true, true);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0027, code lost:
-    
-        if (r11 != null) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0040, code lost:
-    
-        if (r11 != null) goto L23;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x007e  */
-    @Override // i98, o98
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final p98 M(k27 k27Var, TLRPC.FileLocation fileLocation, int i, boolean z, boolean z2) {
-        TLRPC.FileLocation fileLocation2;
-        p82 p82Var = this.a;
-        long j = p82Var.C0;
-        if (fileLocation != null) {
-            if (p82Var.D0 != null) {
-                TLRPC.User V1 = j == 0 ? null : p82Var.getMessagesController().V1(Long.valueOf(j));
-                if (V1 != null) {
-                    TLRPC.UserProfilePhoto userProfilePhoto = V1.photo;
-                    if (userProfilePhoto != null) {
-                        fileLocation2 = userProfilePhoto.photo_big;
+    @Override // pcc
+    public final void a(Object obj) {
+        wkb wkbVar;
+        byte b = this.a;
+        t82 t82Var = this.b;
+        switch (b) {
+            case 0:
+                t82Var.X = (TL_stories.TL_premium_boostsStatus) obj;
+                if (!t82Var.I.keySet().equals(t82Var.K.keySet())) {
+                    t82Var.d0(false);
+                    break;
+                }
+                break;
+            case 1:
+                Boolean bool = (Boolean) obj;
+                l82 l82Var = t82Var.b0;
+                if (!t82Var.f0()) {
+                    int editTextSelectionEnd = t82Var.h.getEditTextSelectionEnd();
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(t82Var.h.getText());
+                    for (hm hmVar : (hm[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), hm.class)) {
+                        if (spannableStringBuilder.getSpanEnd(hmVar) == editTextSelectionEnd) {
+                            t82Var.I.remove(Long.valueOf(hmVar.documentId));
+                            t82Var.J.remove(Long.valueOf(hmVar.documentId));
+                            t82Var.b.A(Long.valueOf(hmVar.documentId));
+                            if (hmVar.documentId == -1 && (wkbVar = t82Var.r) != null) {
+                                wkbVar.setChecked(false);
+                                t82Var.h.setMaxLength(t82Var.O);
+                            }
+                            if (bool.booleanValue()) {
+                                t82Var.h.dispatchKeyEvent(new KeyEvent(0, 67));
+                                hl.r(l82Var);
+                                hl.d3(l82Var, 350L);
+                                break;
+                            } else {
+                                hmVar.setRemoved(new ze7((Object) t82Var, (Object) hmVar, editTextSelectionEnd, (byte) 17));
+                                t82Var.b0(hmVar);
+                                t82Var.d0(false);
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+                break;
+            case 2:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                if (!t82Var.isFinishing()) {
+                    t82Var.s.setLoading(false);
+                    if (tL_error.text.equals("CHAT_NOT_MODIFIED")) {
+                        t82Var.finishFragment();
+                        break;
+                    } else {
+                        hl.d3(new dy1(t82Var, tL_error, (byte) 23), t82Var.X == null ? 200L : 0L);
+                        break;
                     }
                 }
-                fileLocation2 = null;
-                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
-                    int[] iArr = new int[2];
-                    p82Var.e.getLocationInWindow(iArr);
-                    p98 p98Var = new p98();
-                    p98Var.b = iArr[0];
-                    p98Var.c = iArr[1];
-                    kb0 kb0Var = p82Var.e;
-                    p98Var.d = kb0Var;
-                    ImageReceiver imageReceiver = kb0Var.getImageReceiver();
-                    p98Var.a = imageReceiver;
-                    if (j == 0) {
-                        j = -p82Var.w0;
-                    }
-                    p98Var.f = j;
-                    p98Var.e = imageReceiver.p();
-                    p98Var.g = -1L;
-                    p98Var.h = p82Var.e.getImageReceiver().z();
-                    p98Var.k = p82Var.d.getScaleX();
-                    p98Var.p = true;
-                    return p98Var;
-                }
-            } else {
-                TLRPC.Chat K0 = p82Var.getMessagesController().K0(Long.valueOf(p82Var.w0));
-                if (K0 != null) {
-                    TLRPC.ChatPhoto chatPhoto = K0.photo;
-                    if (chatPhoto != null) {
-                        fileLocation2 = chatPhoto.photo_big;
-                    }
-                }
-                fileLocation2 = null;
-                if (fileLocation2 != null) {
-                    int[] iArr2 = new int[2];
-                    p82Var.e.getLocationInWindow(iArr2);
-                    p98 p98Var2 = new p98();
-                    p98Var2.b = iArr2[0];
-                    p98Var2.c = iArr2[1];
-                    kb0 kb0Var2 = p82Var.e;
-                    p98Var2.d = kb0Var2;
-                    ImageReceiver imageReceiver2 = kb0Var2.getImageReceiver();
-                    p98Var2.a = imageReceiver2;
-                    if (j == 0) {
-                    }
-                    p98Var2.f = j;
-                    p98Var2.e = imageReceiver2.p();
-                    p98Var2.g = -1L;
-                    p98Var2.h = p82Var.e.getImageReceiver().z();
-                    p98Var2.k = p82Var.d.getScaleX();
-                    p98Var2.p = true;
-                    return p98Var2;
-                }
-            }
+                break;
+            default:
+                t82Var.V = ((Integer) obj).intValue();
+                break;
         }
-        return null;
-    }
-
-    @Override // i98, o98
-    public final boolean N() {
-        p82 p82Var = this.a;
-        long j = p82Var.C0;
-        if (j == 0) {
-            return true;
-        }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        tL_photos_updateProfilePhoto.bot = p82Var.getMessagesController().m1(j);
-        tL_photos_updateProfilePhoto.flags |= 2;
-        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
-        p82Var.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new tf(this, (byte) 12));
-        return false;
-    }
-
-    @Override // i98, o98
-    public final void g(String str, String str2, boolean z) {
-        this.a.s.p(str, str2, z);
-    }
-
-    @Override // i98, o98
-    public final int x() {
-        return 1;
     }
 }

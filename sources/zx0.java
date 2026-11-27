@@ -1,58 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zx0 extends vi7 {
-    public final /* synthetic */ boolean s0;
-    public final /* synthetic */ fy0 t0;
+public final /* synthetic */ class zx0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ gy0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zx0(fy0 fy0Var, Context context, boolean z, boolean z2) {
-        super(context);
-        this.t0 = fy0Var;
-        this.s0 = z;
+    public /* synthetic */ zx0(gy0 gy0Var, byte b) {
+        this.a = b;
+        this.b = gy0Var;
     }
 
-    @Override // cja, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        fy0 fy0Var = this.t0;
-        fy0Var.R0(canvas, this);
-        super.dispatchDraw(canvas);
-        fy0Var.Q0(canvas, this);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y = motionEvent.getY();
-            fy0 fy0Var = this.t0;
-            if (y < fy0Var.s0.getBounds().top) {
-                fy0Var.dismiss();
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        gy0 gy0Var = this.b;
+        switch (b) {
+            case 0:
+                gy0Var.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gy0Var.invalidate();
+                break;
+            case 1:
+                gy0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            default:
+                gy0Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gy0Var.invalidate();
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        return super.drawChild(canvas, view, j);
-    }
-
-    @Override // vi7, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i2);
-        fy0 fy0Var = this.t0;
-        fy0Var.q1 = size;
-        fy0Var.N0(i, i2);
-        if (this.s0) {
-            i2 = View.MeasureSpec.makeMeasureSpec(fy0Var.q1, TLObject.FLAG_30);
-        }
-        super.onMeasure(i, i2);
     }
 }

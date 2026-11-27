@@ -1,165 +1,71 @@
 // default package
 
-import android.os.Bundle;
-import android.util.SparseArray;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class au2 implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Serializable h;
-    public final /* synthetic */ Serializable i;
-    public final /* synthetic */ Object j;
-    public final /* synthetic */ Object k;
-    public final /* synthetic */ Object l;
-    public final /* synthetic */ Cloneable m;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class au2 extends skb {
+    public final /* synthetic */ byte a0 = 0;
+    public final /* synthetic */ Object b0;
 
-    public /* synthetic */ au2(qu2 qu2Var, HashMap hashMap, SparseArray sparseArray, boolean[] zArr, HashMap hashMap2, TLRPC.TL_contacts_importContacts tL_contacts_importContacts, int i, HashMap hashMap3, boolean z, HashMap hashMap4, ArrayList arrayList, HashMap hashMap5) {
-        this.d = qu2Var;
-        this.e = hashMap;
-        this.j = sparseArray;
-        this.k = zArr;
-        this.f = hashMap2;
-        this.l = tL_contacts_importContacts;
-        this.c = i;
-        this.g = hashMap3;
-        this.b = z;
-        this.h = hashMap4;
-        this.m = arrayList;
-        this.i = hashMap5;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public au2(cu2 cu2Var, Context context, vnb vnbVar) {
+        super(context, vnbVar);
+        this.b0 = cu2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        boolean z;
-        boolean z2;
-        switch (this.a) {
+    @Override // skb, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        byte b = this.a0;
+        Object obj = this.b0;
+        switch (b) {
             case 0:
-                qu2 qu2Var = (qu2) this.d;
-                HashMap hashMap = (HashMap) this.e;
-                SparseArray sparseArray = (SparseArray) this.j;
-                boolean[] zArr = (boolean[]) this.k;
-                HashMap hashMap2 = (HashMap) this.f;
-                TLRPC.TL_contacts_importContacts tL_contacts_importContacts = (TLRPC.TL_contacts_importContacts) this.l;
-                int i = this.c;
-                HashMap hashMap3 = (HashMap) this.g;
-                boolean z3 = this.b;
-                HashMap hashMap4 = (HashMap) this.h;
-                ArrayList arrayList = (ArrayList) this.m;
-                HashMap hashMap5 = (HashMap) this.i;
-                boolean z4 = true;
-                qu2Var.n0++;
-                if (tL_error == null) {
-                    if (w01.a) {
-                        fa4.b("contacts imported");
-                    }
-                    TLRPC.TL_contacts_importedContacts tL_contacts_importedContacts = (TLRPC.TL_contacts_importedContacts) tLObject;
-                    if (tL_contacts_importedContacts.retry_contacts.isEmpty()) {
-                        z2 = true;
-                        z = false;
-                    } else {
-                        int i2 = 0;
-                        while (i2 < tL_contacts_importedContacts.retry_contacts.size()) {
-                            hashMap.remove(sparseArray.get((int) tL_contacts_importedContacts.retry_contacts.get(i2).longValue()));
-                            i2++;
-                            z4 = z4;
-                        }
-                        z2 = z4;
-                        z = false;
-                        z = false;
-                        zArr[0] = z2;
-                        if (w01.a) {
-                            fa4.b("result has retry contacts");
-                        }
-                    }
-                    for (int i3 = z ? 1 : 0; i3 < tL_contacts_importedContacts.popular_invites.size(); i3++) {
-                        TLRPC.TL_popularContact tL_popularContact = tL_contacts_importedContacts.popular_invites.get(i3);
-                        nu2 nu2Var = (nu2) hashMap2.get(sparseArray.get((int) tL_popularContact.client_id));
-                        if (nu2Var != null) {
-                            nu2Var.l = tL_popularContact.importers;
-                        }
-                    }
-                    boolean z5 = z2;
-                    qu2Var.getMessagesStorage().j1(tL_contacts_importedContacts.users, null, z5, z5);
-                    ArrayList arrayList2 = new ArrayList();
-                    int i4 = z ? 1 : 0;
-                    while (i4 < tL_contacts_importedContacts.imported.size()) {
-                        TLRPC.TL_contact tL_contact = new TLRPC.TL_contact();
-                        tL_contact.user_id = tL_contacts_importedContacts.imported.get(i4).user_id;
-                        arrayList2.add(tL_contact);
-                        i4++;
-                        qu2Var = qu2Var;
-                    }
-                    gl.c3(new hu2(qu2Var, tL_contacts_importedContacts.users, 2, arrayList2, (byte) 0));
-                } else {
-                    boolean z6 = false;
-                    int i5 = 0;
-                    while (i5 < tL_contacts_importContacts.contacts.size()) {
-                        hashMap.remove(sparseArray.get((int) tL_contacts_importContacts.contacts.get(i5).client_id));
-                        i5++;
-                        z6 = z6;
-                    }
-                    z = z6;
-                    zArr[z ? 1 : 0] = true;
-                    if (w01.a) {
-                        de9.s(tL_error.text, new StringBuilder("import contacts error "));
-                    }
-                }
-                if (qu2Var.n0 == i) {
-                    if (!hashMap.isEmpty()) {
-                        boolean z7 = z;
-                        qu2Var.getMessagesStorage().W0(hashMap, z7, z7);
-                    }
-                    Utilities.d.c(new oo6(qu2Var, hashMap3, hashMap2, z3, hashMap4, arrayList, hashMap5, zArr));
-                    break;
-                }
+                super.onLayout(z, i, i2, i3, i4);
+                int L = hl.L(21.0f);
+                cu2 cu2Var = (cu2) obj;
+                int measuredHeight = (getMeasuredHeight() - cu2Var.V.getMeasuredHeight()) / 2;
+                de0 de0Var = cu2Var.V;
+                de0Var.layout(L, measuredHeight, de0Var.getMeasuredWidth() + L, cu2Var.V.getMeasuredHeight() + measuredHeight);
                 break;
             default:
-                LaunchActivity launchActivity = (LaunchActivity) this.d;
-                kz5 kz5Var = (kz5) this.e;
-                boolean z8 = this.b;
-                Long l = (Long) this.f;
-                c01 c01Var = (c01) this.g;
-                Long l2 = (Long) this.h;
-                Integer num = (Integer) this.i;
-                Integer num2 = (Integer) this.j;
-                byte[] bArr = (byte[]) this.k;
-                d dVar = (d) this.l;
-                int i6 = this.c;
-                Bundle bundle = (Bundle) this.m;
-                String str = LaunchActivity.C1;
-                gl.c3(new jy5(launchActivity, kz5Var, tLObject, z8, l, c01Var, l2, num, num2, bArr, dVar, i6, bundle));
+                super.onLayout(z, i, i2, i3, i4);
+                int L2 = hl.L(21.0f);
+                int measuredHeight2 = getMeasuredHeight();
+                PrivacyControlActivity privacyControlActivity = ((mn8) obj).d;
+                int measuredHeight3 = (measuredHeight2 - privacyControlActivity.x0.getMeasuredHeight()) / 2;
+                de0 de0Var2 = privacyControlActivity.x0;
+                de0Var2.layout(L2, measuredHeight3, de0Var2.getMeasuredWidth() + L2, privacyControlActivity.x0.getMeasuredHeight() + measuredHeight3);
                 break;
         }
     }
 
-    public /* synthetic */ au2(LaunchActivity launchActivity, kz5 kz5Var, boolean z, Long l, c01 c01Var, Long l2, Integer num, Integer num2, byte[] bArr, d dVar, int i, Bundle bundle) {
-        this.d = launchActivity;
-        this.e = kz5Var;
-        this.b = z;
-        this.f = l;
-        this.g = c01Var;
-        this.h = l2;
-        this.i = num;
-        this.j = num2;
-        this.k = bArr;
-        this.l = dVar;
-        this.c = i;
-        this.m = bundle;
+    @Override // skb, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        byte b = this.a0;
+        Object obj = this.b0;
+        switch (b) {
+            case 0:
+                super.onMeasure(i, i2);
+                cu2 cu2Var = (cu2) obj;
+                cu2Var.V.measure(View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30));
+                cu2Var.V.setRoundRadius(hl.L(30.0f));
+                break;
+            default:
+                super.onMeasure(i, i2);
+                PrivacyControlActivity privacyControlActivity = ((mn8) obj).d;
+                privacyControlActivity.x0.measure(View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30));
+                privacyControlActivity.x0.setRoundRadius(hl.L(30.0f));
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public au2(mn8 mn8Var, Activity activity) {
+        super(activity);
+        this.b0 = mn8Var;
     }
 }

@@ -1,121 +1,24 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.view.MotionEvent;
-import android.view.View;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class tl2 extends View {
-    public final Paint a;
-    public final Paint b;
-    public byte c;
-    public int d;
-    public final /* synthetic */ yl2 e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tl2(yl2 yl2Var, Context context) {
-        super(context);
-        this.e = yl2Var;
-        this.a = new Paint(1);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setStrokeWidth(gl.L(3.0f));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class tl2 {
+    public static List a(Object obj) {
+        List singletonList = Collections.singletonList(obj);
+        singletonList.getClass();
+        return singletonList;
     }
 
-    public final void a() {
-        int argb;
-        int argb2;
-        byte b = this.c;
-        yl2 yl2Var = this.e;
-        if (b != 1) {
-            int i = yl2Var.p1;
-            if (b != 2) {
-                argb = Color.argb(kk7.d4, 0, Color.green(i), Color.blue(yl2Var.p1));
-                argb2 = Color.argb(kk7.d4, kk7.d4, Color.green(yl2Var.p1), Color.blue(yl2Var.p1));
-            } else {
-                argb = Color.argb(kk7.d4, Color.red(i), Color.green(yl2Var.p1), 0);
-                argb2 = Color.argb(kk7.d4, Color.red(yl2Var.p1), Color.green(yl2Var.p1), kk7.d4);
-            }
-        } else {
-            argb = Color.argb(kk7.d4, Color.red(yl2Var.p1), 0, Color.blue(yl2Var.p1));
-            argb2 = Color.argb(kk7.d4, Color.red(yl2Var.p1), kk7.d4, Color.blue(yl2Var.p1));
+    public static List b(Object... objArr) {
+        if (objArr.length <= 0) {
+            return x24.a;
         }
-        this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{argb, argb2}, (float[]) null, Shader.TileMode.CLAMP));
-    }
-
-    public final void b(float f) {
-        int argb;
-        float L = gl.L(6.0f);
-        float a = moe.a(((f - L) + (gl.L(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (L * 2.0f)), 0.0f, 1.0f);
-        byte b = this.c;
-        yl2 yl2Var = this.e;
-        if (b != 1) {
-            int i = yl2Var.p1;
-            argb = b != 2 ? Color.argb(kk7.d4, (int) (a * 255.0f), Color.green(i), Color.blue(yl2Var.p1)) : Color.argb(kk7.d4, Color.red(i), Color.green(yl2Var.p1), (int) (a * 255.0f));
-        } else {
-            argb = Color.argb(kk7.d4, Color.red(yl2Var.p1), (int) (a * 255.0f), Color.blue(yl2Var.p1));
-        }
-        yl2Var.D0(bm2.o(argb, Color.alpha(yl2Var.p1)), 4);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int green;
-        super.onDraw(canvas);
-        float height = getHeight() / 2.0f;
-        float L = gl.L(6.0f);
-        RectF rectF = gl.P;
-        rectF.set(L, height - L, getWidth() - L, height + L);
-        canvas.drawRoundRect(rectF, gl.L(16.0f), gl.L(16.0f), this.a);
-        byte b = this.c;
-        yl2 yl2Var = this.e;
-        if (b != 1) {
-            int i = yl2Var.p1;
-            green = b != 2 ? Color.red(i) : Color.blue(i);
-        } else {
-            green = Color.green(yl2Var.p1);
-        }
-        float f = green / 255.0f;
-        float L2 = gl.L(13.0f);
-        Paint paint = this.b;
-        float strokeWidth = L2 - (paint.getStrokeWidth() / 2.0f);
-        float max = Math.max(L + strokeWidth, (((getWidth() - (2.0f * L)) * f) + L) - strokeWidth);
-        canvas.drawCircle(max, height, L2, paint);
-        as7.A1(max, height, strokeWidth, this.d, canvas);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i, int i2, int i3, int i4) {
-        super.onSizeChanged(i, i2, i3, i4);
-        a();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked == 1) {
-                b(motionEvent.getX());
-                getParent().requestDisallowInterceptTouchEvent(false);
-            } else if (actionMasked != 2) {
-                if (actionMasked == 3) {
-                    getParent().requestDisallowInterceptTouchEvent(false);
-                }
-            }
-            return true;
-        }
-        getParent().requestDisallowInterceptTouchEvent(true);
-        b(motionEvent.getX());
-        return true;
+        List asList = Arrays.asList(objArr);
+        asList.getClass();
+        return asList;
     }
 }

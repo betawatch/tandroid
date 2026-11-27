@@ -1,364 +1,82 @@
 // default package
 
-import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
+import android.text.Editable;
+import android.text.style.ReplacementSpan;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class dj9 extends FrameLayout {
-    public static long R;
-    public static final /* synthetic */ int S = 0;
-    public float E;
-    public yh3 F;
-    public int G;
-    public int H;
-    public boolean I;
-    public boolean J;
-    public int K;
-    public int L;
-    public VelocityTracker M;
-    public boolean N;
-    public float O;
-    public float P;
-    public Paint Q;
-    public yh3 a;
-    public View b;
-    public zab c;
-    public a d;
-    public float e;
-    public boolean f;
-    public ValueAnimator h;
-    public on n;
-    public boolean r;
-    public int s;
-    public boolean w;
-    public ui5 x;
-    public yla y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class dj9 extends ReplacementSpan {
+    public final TL_iv.textButton a;
+    public gk9 b;
+    public View c;
+    public int d = yac.t0;
+    public vnb e;
 
-    public static void f(yh3 yh3Var, yh3 yh3Var2, float f) {
-        int measuredWidth;
-        if (yh3Var != null) {
-            measuredWidth = yh3Var.getFragmentView().getMeasuredWidth();
-        } else if (yh3Var2 == null) {
-            return;
-        } else {
-            measuredWidth = yh3Var2.getFragmentView().getMeasuredWidth();
+    public dj9(TL_iv.textButton textbutton) {
+        this.a = textbutton;
+    }
+
+    public static boolean c(TL_keyboard.InlineButtonType inlineButtonType) {
+        return (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile);
+    }
+
+    public final void a(int i, vnb vnbVar, View view) {
+        View view2;
+        gk9 gk9Var = this.b;
+        if (gk9Var != null && (view2 = this.c) != null) {
+            gk9Var.h = null;
+            gk9Var.a.a.f(view2);
         }
-        if (yh3Var != null) {
-            if (yh3Var.getFragmentView() != null) {
-                yh3Var.getFragmentView().setAlpha(1.0f - f);
-                yh3Var.getFragmentView().setTranslationX(measuredWidth * 0.6f * f);
+        this.c = view;
+        this.d = i;
+        this.e = vnbVar;
+        this.b = null;
+        b();
+    }
+
+    public final gk9 b() {
+        if (this.b == null) {
+            int i = this.d;
+            int L = hl.L(240.0f);
+            gk9 gk9Var = new gk9(new hl9(i, L, this.e), L, this.a, Boolean.FALSE);
+            this.b = gk9Var;
+            View view = this.c;
+            if (view != null) {
+                gk9Var.a(view);
             }
-            yh3Var.setPreviewOpenedProgress(1.0f - f);
         }
-        if (yh3Var2 != null) {
-            if (yh3Var2.getFragmentView() != null) {
-                yh3Var2.getFragmentView().setAlpha(1.0f);
-                yh3Var2.getFragmentView().setTranslationX((1.0f - f) * measuredWidth);
-            }
-            yh3Var2.setPreviewReplaceProgress(f);
-        }
-    }
-
-    public static int getRightPaddingSize() {
-        return gba.l1 ? 74 : 76;
-    }
-
-    public final void a() {
-        if (this.f) {
-            e(false);
-            b();
-        }
-    }
-
-    public final void b() {
-        byte b = 0;
-        this.f = false;
-        if (gba.c()) {
-            this.n.d();
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e, 0.0f);
-            this.h = ofFloat;
-            ofFloat.addUpdateListener(new aj9(this, (byte) 0));
-            this.h.addListener(new cj9(this, b));
-            this.h.setDuration(250L);
-            this.h.setInterpolator(s33.f);
-            this.h.start();
-            return;
-        }
-        this.e = 0.0f;
-        g();
-        yh3 yh3Var = this.a;
-        if (yh3Var != null) {
-            yh3Var.onPause();
-            this.a.onFragmentDestroy();
-            removeAllViews();
-            this.a = null;
-            kk7.e().k(kk7.t4, new Object[0]);
-        }
-        d(false);
-    }
-
-    public final boolean c() {
-        return this.a != null;
-    }
-
-    public abstract void d(boolean z);
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.w) {
-            f(this.F, this.a, this.E);
-            invalidate();
-        }
-        super.dispatchDraw(canvas);
-        float f = this.e;
-        a aVar = this.d;
-        float alpha = (aVar == null || aVar.getActionMode() == null) ? 0.0f : this.d.getActionMode().getAlpha();
-        a aVar2 = this.d;
-        float max = Math.max(alpha, aVar2 == null ? 0.0f : aVar2.p0) * f;
-        if (this.a == null || this.d == null || max <= 0.0f) {
-            return;
-        }
-        Paint paint = this.Q;
-        if (paint == null) {
-            paint = new Paint();
-            this.Q = paint;
-        }
-        paint.setColor(bkb.w0(null, bkb.v8, false));
-        if (max == 1.0f) {
-            canvas.save();
-        } else {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), this.P, (int) (max * 255.0f), 31);
-        }
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.P, this.Q);
-        canvas.translate(this.d.getX(), this.d.getY());
-        canvas.save();
-        canvas.translate(this.d.getBackButton().getX(), this.d.getBackButton().getY());
-        this.d.getBackButton().draw(canvas);
-        canvas.restore();
-        if (this.d.getActionMode() != null) {
-            float alpha2 = this.d.getActionMode().getAlpha() * this.e;
-            a aVar3 = this.d;
-            if (max != alpha2) {
-                aVar3.draw(canvas);
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), this.P, (int) (this.d.getActionMode().getAlpha() * 255.0f), 31);
-                this.d.getActionMode().draw(canvas);
-                canvas.restore();
-            } else {
-                aVar3.getActionMode().draw(canvas);
-            }
-        } else {
-            this.d.draw(canvas);
-        }
-        canvas.restore();
-        invalidate();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        a aVar = this.d;
-        if (view == aVar && aVar.getActionMode() != null && this.d.getActionMode().getAlpha() == 1.0f) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j);
-    }
-
-    public abstract void e(boolean z);
-
-    public final void g() {
-        if (this.w || !c()) {
-            return;
-        }
-        setOpenProgress(this.e);
-        View view = this.b;
-        if (view != null) {
-            view.setTranslationX((1.0f - this.e) * (getMeasuredWidth() - gl.L(getRightPaddingSize())));
-        }
-        a aVar = this.d;
-        if (aVar != null) {
-            aVar.setTranslationX((1.0f - this.e) * gl.L(48.0f));
-        }
-        yh3 yh3Var = this.a;
-        if (yh3Var != null) {
-            yh3Var.setPreviewOpenedProgress(this.e);
-        }
-        invalidate();
-    }
-
-    public long getCurrentFragmetDialogId() {
-        return R;
-    }
-
-    public d getFragment() {
-        return this.a;
-    }
-
-    public View getFragmentView() {
         return this.b;
     }
 
-    public abstract boolean getOccupyStatusbar();
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int i3 = getOccupyStatusbar() ? gl.m : 0;
-        View view = this.b;
-        if (view != null) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-            layoutParams.leftMargin = gl.L(getRightPaddingSize());
-            layoutParams.topMargin = a.getCurrentActionBarHeight() + i3 + this.s;
+    public final void d(Editable editable) {
+        int spanStart = editable.getSpanStart(this);
+        int spanEnd = editable.getSpanEnd(this);
+        if (spanStart < 0 || spanEnd <= spanStart) {
+            return;
         }
-        a aVar = this.d;
-        if (aVar != null) {
-            ((FrameLayout.LayoutParams) aVar.getLayoutParams()).topMargin = i3;
-        }
-        super.onMeasure(i, i2);
-        int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
-        if (this.G != measuredWidth) {
-            this.G = measuredWidth;
-            g();
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ui5 ui5Var = this.x;
-        if ((ui5Var != null && ((ActionBarLayout) ui5Var).w()) || !c() || !this.N) {
-            return false;
-        }
-        byte b = 1;
-        if (motionEvent != null) {
-            if (motionEvent.getAction() == 0) {
-                this.H = motionEvent.getPointerId(0);
-                this.I = true;
-                this.K = (int) motionEvent.getX();
-                this.L = (int) motionEvent.getY();
-                VelocityTracker velocityTracker = this.M;
-                if (velocityTracker != null) {
-                    velocityTracker.clear();
-                }
-            } else if (motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.H) {
-                if (this.M == null) {
-                    this.M = VelocityTracker.obtain();
-                }
-                int max = Math.max(0, (int) (motionEvent.getX() - this.K));
-                int abs = Math.abs(((int) motionEvent.getY()) - this.L);
-                this.M.addMovement(motionEvent);
-                if (!this.I || this.J || max < gl.Z0(true, 0.4f) || Math.abs(max) / 3 <= abs) {
-                    if (this.J) {
-                        float f = max;
-                        this.O = f;
-                        this.e = Utilities.i(1.0f - (f / getMeasuredWidth()), 1.0f, 0.0f);
-                        g();
-                    }
-                } else if (ActionBarLayout.s(this, motionEvent.getX(), motionEvent.getY()) == null) {
-                    this.I = false;
-                    this.J = true;
-                    this.K = (int) motionEvent.getX();
-                    e(false);
-                } else {
-                    this.I = false;
+        for (ReplacementSpan replacementSpan : (ReplacementSpan[]) editable.getSpans(spanStart, spanEnd, ReplacementSpan.class)) {
+            if (replacementSpan != this) {
+                int spanStart2 = editable.getSpanStart(replacementSpan);
+                int spanEnd2 = editable.getSpanEnd(replacementSpan);
+                if (spanStart2 < spanEnd && spanEnd2 > spanStart) {
+                    editable.removeSpan(replacementSpan);
                 }
             }
-            return this.J;
-        }
-        if (motionEvent != null && motionEvent.getPointerId(0) == this.H && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1 || motionEvent.getAction() == 6)) {
-            VelocityTracker velocityTracker2 = this.M;
-            if (velocityTracker2 == null) {
-                velocityTracker2 = VelocityTracker.obtain();
-                this.M = velocityTracker2;
-            }
-            velocityTracker2.computeCurrentVelocity(1000);
-            if (this.J) {
-                float f2 = this.O;
-                float xVelocity = this.M.getXVelocity();
-                float yVelocity = this.M.getYVelocity();
-                if (f2 >= getMeasuredWidth() / 3.0f || (xVelocity >= 3500.0f && xVelocity >= yVelocity)) {
-                    b();
-                } else {
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e, 1.0f);
-                    this.h = ofFloat;
-                    ofFloat.addUpdateListener(new aj9(this, (byte) 1));
-                    this.h.addListener(new cj9(this, b));
-                    this.h.setDuration(250L);
-                    this.h.setInterpolator(s33.f);
-                    this.h.start();
-                }
-            }
-            this.I = false;
-            this.J = false;
-            VelocityTracker velocityTracker3 = this.M;
-            if (velocityTracker3 != null) {
-                velocityTracker3.recycle();
-                this.M = null;
-            }
-        } else if (motionEvent == null) {
-            this.I = false;
-            this.J = false;
-            VelocityTracker velocityTracker4 = this.M;
-            if (velocityTracker4 != null) {
-                velocityTracker4.recycle();
-                this.M = null;
-            }
-        }
-        return this.J;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewManager
-    public final void removeView(View view) {
-        super.removeView(view);
-        if (view == this.b) {
-            a();
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final void removeViewInLayout(View view) {
-        super.removeViewInLayout(view);
-        if (view == this.b) {
-            a();
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
+        b().draw(canvas, charSequence, i, i2, f, i3, i4, i5, paint);
     }
 
-    public void setCurrentTop(int i) {
-        this.P = i;
-        View view = this.b;
-        if (view != null) {
-            view.setTranslationY((i - view.getTop()) + this.s);
-        }
-        zab zabVar = this.c;
-        if (zabVar != null) {
-            zabVar.setTranslationY(i - zabVar.getTop());
-        }
-    }
-
-    public void setFragmentViewPadding(int i) {
-        this.s = i;
-    }
-
-    public void setTransitionPaddingBottom(int i) {
-        yh3 yh3Var = this.a;
-        if (ug8.A(yh3Var)) {
-            float f = i;
-            yh3Var.Y0 = f;
-            yh3Var.h.setTranslationY(((-f) - yh3Var.h1) - yh3Var.g1);
-        }
-    }
-
-    public void setOpenProgress(float f) {
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
+        return b().getSize(paint, charSequence, i, i2, fontMetricsInt);
     }
 }

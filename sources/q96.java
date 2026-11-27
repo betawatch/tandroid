@@ -1,34 +1,46 @@
 // default package
 
-import android.util.SparseArray;
-import j$.util.Comparator$-CC;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class q96 {
-    public SparseArray a;
+public final class q96 extends r96 implements f36 {
+    public final i36 e;
+    public final /* synthetic */ qj7 f;
 
-    public final void a(HashMap hashMap) {
-        if (this.a != null) {
-            for (Map.Entry entry : hashMap.entrySet()) {
-                this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q96(qj7 qj7Var, i36 i36Var, cr7 cr7Var) {
+        super(qj7Var, cr7Var);
+        this.f = qj7Var;
+        this.e = i36Var;
+    }
+
+    @Override // f36
+    public final void b(i36 i36Var, y26 y26Var) {
+        i36 i36Var2 = this.e;
+        z26 z26Var = i36Var2.m().b;
+        if (z26Var == z26.a) {
+            this.f.h(this.a);
             return;
         }
-        this.a = new SparseArray(hashMap.size());
-        ArrayList arrayList = new ArrayList(hashMap.entrySet());
-        Collections.sort(arrayList, Comparator$-CC.comparingInt(new mm((byte) 6)));
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            Map.Entry entry2 = (Map.Entry) obj;
-            this.a.append(((String) entry2.getKey()).hashCode(), (String) entry2.getValue());
+        z26 z26Var2 = null;
+        while (z26Var2 != z26Var) {
+            a(e());
+            z26Var2 = z26Var;
+            z26Var = i36Var2.m().b;
         }
+    }
+
+    @Override // r96
+    public final void c() {
+        this.e.m().b(this);
+    }
+
+    @Override // r96
+    public final boolean d(i36 i36Var) {
+        return this.e == i36Var;
+    }
+
+    @Override // r96
+    public final boolean e() {
+        return this.e.m().b.compareTo(z26.d) >= 0;
     }
 }

@@ -1,40 +1,42 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class sgd {
-    public static final /* synthetic */ int a = 0;
+public final class sgd implements og1 {
+    public final kdd a;
 
-    static {
-        sgd.class.getClassLoader();
+    public sgd(kdd kddVar) {
+        this.a = kddVar;
     }
 
-    public static void a(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(de9.k(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
+    @Override // og1
+    public final void a(fjd fjdVar) {
+        xve.i(fjdVar, "channel must not be null");
     }
 
-    public static void b(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
+    @Override // og1
+    public final void b(fjd fjdVar) {
+        xve.i(fjdVar, "channel must not be null");
     }
 
-    public static void c(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
+    @Override // og1
+    public final void c(fjd fjdVar) {
+        xve.i(fjdVar, "channel must not be null");
+    }
+
+    @Override // og1
+    public final void d(fjd fjdVar) {
+        xve.i(fjdVar, "channel must not be null");
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        return obj != null && sgd.class == obj.getClass() && this.a == ((sgd) obj).a;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

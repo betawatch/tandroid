@@ -1,61 +1,107 @@
 // default package
 
-import android.os.Bundle;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p54 implements x56, js4, us2, nq4 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
+public final class p54 extends o54 implements vd3 {
+    public final Executor c;
 
-    public /* synthetic */ p54(byte b, boolean z) {
-        this.a = b;
-        this.b = z;
-    }
-
-    @Override // nq4
-    public final m21 a(u21 u21Var) {
-        return u21Var.k(this.b);
-    }
-
-    @Override // us2
-    public final void accept(Object obj) {
-        byte b = this.a;
-        boolean z = this.b;
-        ad8 ad8Var = (ad8) obj;
-        switch (b) {
-            case 3:
-                ad8Var.V(z);
-                break;
-            case 4:
-                ad8Var.o0(z);
-                break;
-            default:
-                ad8Var.v(z);
-                break;
+    public p54(Executor executor) {
+        this.c = executor;
+        if (executor instanceof ScheduledThreadPoolExecutor) {
+            ((ScheduledThreadPoolExecutor) executor).setRemoveOnCancelPolicy(true);
         }
     }
 
-    @Override // x56
-    public final void invoke(Object obj) {
-        byte b = this.a;
-        boolean z = this.b;
-        mc8 mc8Var = (mc8) obj;
-        switch (b) {
-            case 0:
-                mc8Var.v(z);
-                break;
-            default:
-                mc8Var.h(z);
-                break;
+    @Override // vd3
+    public final ep3 a(long j, nsb nsbVar, mx2 mx2Var) {
+        Executor executor = this.c;
+        ScheduledFuture<?> scheduledFuture = null;
+        ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
+        if (scheduledExecutorService != null) {
+            try {
+                scheduledFuture = scheduledExecutorService.schedule(nsbVar, j, TimeUnit.MILLISECONDS);
+            } catch (RejectedExecutionException e) {
+                CancellationException cancellationException = new CancellationException("The task was rejected");
+                cancellationException.initCause(e);
+                ev5 ev5Var = (ev5) mx2Var.get(qf5.c);
+                if (ev5Var != null) {
+                    ev5Var.cancel(cancellationException);
+                }
+            }
+        }
+        return scheduledFuture != null ? new dp3(scheduledFuture) : ab3.w.a(j, nsbVar, mx2Var);
+    }
+
+    @Override // vd3
+    public final void b(long j, va1 va1Var) {
+        Executor executor = this.c;
+        ScheduledFuture<?> scheduledFuture = null;
+        ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
+        if (scheduledExecutorService != null) {
+            iqd iqdVar = new iqd(this, va1Var, (byte) 8);
+            mx2 mx2Var = va1Var.e;
+            try {
+                scheduledFuture = scheduledExecutorService.schedule(iqdVar, j, TimeUnit.MILLISECONDS);
+            } catch (RejectedExecutionException e) {
+                CancellationException cancellationException = new CancellationException("The task was rejected");
+                cancellationException.initCause(e);
+                ev5 ev5Var = (ev5) mx2Var.get(qf5.c);
+                if (ev5Var != null) {
+                    ev5Var.cancel(cancellationException);
+                }
+            }
+        }
+        if (scheduledFuture != null) {
+            va1Var.v(new qa1(scheduledFuture, (byte) 0));
+        } else {
+            ab3.w.b(j, va1Var);
         }
     }
 
-    @Override // js4
-    public final Object m(Object obj) {
-        Bundle l = ir2.l("afterSignup", this.b);
-        ah6 ah6Var = new ah6();
-        ah6Var.q0(l);
-        return ah6Var;
+    @Override // px2
+    public final void c(mx2 mx2Var, Runnable runnable) {
+        try {
+            this.c.execute(runnable);
+        } catch (RejectedExecutionException e) {
+            CancellationException cancellationException = new CancellationException("The task was rejected");
+            cancellationException.initCause(e);
+            ev5 ev5Var = (ev5) mx2Var.get(qf5.c);
+            if (ev5Var != null) {
+                ev5Var.cancel(cancellationException);
+            }
+            qc3 qc3Var = bp3.a;
+            qb3.c.c(mx2Var, runnable);
+        }
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        Executor executor = this.c;
+        ExecutorService executorService = executor instanceof ExecutorService ? (ExecutorService) executor : null;
+        if (executorService != null) {
+            executorService.shutdown();
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof p54) && ((p54) obj).c == this.c;
+    }
+
+    public final int hashCode() {
+        return System.identityHashCode(this.c);
+    }
+
+    @Override // px2
+    public final String toString() {
+        return this.c.toString();
     }
 }

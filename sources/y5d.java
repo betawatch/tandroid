@@ -1,26 +1,25 @@
 // default package
 
-import android.content.Intent;
-import android.os.Bundle;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y5d implements Continuation, yyb, zef {
-    public static final /* synthetic */ y5d a = new y5d();
+public final class y5d extends q5d {
+    public final WeakReference c;
 
-    @Override // yyb
-    public final Object apply(Object obj) {
-        return ((toe) obj).a();
+    public y5d(a6d a6dVar) {
+        super((byte) 1);
+        this.c = new WeakReference(a6dVar);
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public final /* synthetic */ Object then(Task task) {
-        Intent intent = (Intent) ((Bundle) task.getResult()).getParcelable("notification_data");
-        if (intent != null) {
-            return new aj2(intent);
+    @Override // q5d
+    public final void U(t7d t7dVar) {
+        a6d a6dVar = (a6d) this.c.get();
+        if (a6dVar == null) {
+            return;
         }
-        return null;
+        w5d w5dVar = new w5d(this, a6dVar, a6dVar, t7dVar);
+        b6d b6dVar = a6dVar.a.e;
+        b6dVar.sendMessage(b6dVar.obtainMessage(1, w5dVar));
     }
 }

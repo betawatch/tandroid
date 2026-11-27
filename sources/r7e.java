@@ -1,120 +1,212 @@
 // default package
 
-import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class r7e extends LinkedHashMap {
-    public static final r7e b;
-    public boolean a = true;
+public final class r7e {
+    public static final r7e b = new r7e(0);
+    public static final r7e c = new r7e(1);
+    public static final r7e d = new r7e(2);
+    public static final r7e e = new r7e(3);
+    public static final r7e f = new r7e(4);
+    public static final r7e g = new r7e(5);
+    public static final r7e h = new r7e(6);
+    public static final r7e i = new r7e(7);
+    public final /* synthetic */ byte a;
 
-    static {
-        r7e r7eVar = new r7e();
-        b = r7eVar;
-        r7eVar.a = false;
+    public /* synthetic */ r7e(byte b2) {
+        this.a = b2;
     }
 
-    public static int b(Object obj) {
-        if (!(obj instanceof byte[])) {
-            if (!(obj instanceof dke)) {
-                return obj.hashCode();
-            }
-            fvc.b();
-            return 0;
-        }
-        byte[] bArr = (byte[]) obj;
-        int length = bArr.length;
-        Charset charset = h3e.a;
-        int i = length;
-        for (byte b2 : bArr) {
-            i = (i * 31) + b2;
-        }
-        if (i == 0) {
-            return 1;
-        }
-        return i;
-    }
-
-    public final void c() {
-        if (this.a) {
-            return;
-        }
-        fvc.b();
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        c();
-        super.clear();
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Map)) {
-            return false;
-        }
-        Map map = (Map) obj;
-        if (this == map) {
-            return true;
-        }
-        if (size() != map.size()) {
-            return false;
-        }
-        for (Map.Entry entry : entrySet()) {
-            if (!map.containsKey(entry.getKey())) {
-                return false;
-            }
-            Object value = entry.getValue();
-            Object obj2 = map.get(entry.getKey());
-            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
-                return false;
-            }
+    public final boolean a(int i2) {
+        sse sseVar = null;
+        switch (this.a) {
+            case 0:
+                if (i2 == 0) {
+                    sseVar = t5e.b;
+                } else if (i2 == 1) {
+                    sseVar = t5e.c;
+                } else if (i2 == 2) {
+                    sseVar = t5e.d;
+                } else if (i2 == 3) {
+                    sseVar = t5e.e;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            case 1:
+                if (i2 == 0) {
+                    sseVar = v5e.b;
+                } else if (i2 == 1) {
+                    sseVar = v5e.c;
+                } else if (i2 == 2) {
+                    sseVar = v5e.d;
+                } else if (i2 == 3) {
+                    sseVar = v5e.e;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            case 2:
+                if (i2 == 0) {
+                    sseVar = y5e.b;
+                } else if (i2 == 1) {
+                    sseVar = y5e.c;
+                } else if (i2 == 2) {
+                    sseVar = y5e.d;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            case 3:
+                if (i2 == 0) {
+                    sseVar = z5e.b;
+                } else if (i2 == 1) {
+                    sseVar = z5e.c;
+                } else if (i2 == 2) {
+                    sseVar = z5e.d;
+                } else if (i2 == 3) {
+                    sseVar = z5e.e;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            case 4:
+                if (i2 == 0) {
+                    sseVar = a6e.b;
+                } else if (i2 == 1) {
+                    sseVar = a6e.c;
+                } else if (i2 == 2) {
+                    sseVar = a6e.d;
+                } else if (i2 == 3) {
+                    sseVar = a6e.e;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            case 5:
+                if (i2 == 0) {
+                    sseVar = f6e.b;
+                } else if (i2 == 1) {
+                    sseVar = f6e.c;
+                } else if (i2 == 2) {
+                    sseVar = f6e.d;
+                } else if (i2 == 3) {
+                    sseVar = f6e.e;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            case 6:
+                switch (i2) {
+                    case 0:
+                        sseVar = qge.b;
+                        break;
+                    case 1:
+                        sseVar = qge.c;
+                        break;
+                    case 2:
+                        sseVar = qge.d;
+                        break;
+                    case 3:
+                        sseVar = qge.e;
+                        break;
+                    case 4:
+                        sseVar = qge.f;
+                        break;
+                    case 5:
+                        sseVar = qge.h;
+                        break;
+                    case 6:
+                        sseVar = qge.n;
+                        break;
+                    case 7:
+                        sseVar = qge.r;
+                        break;
+                    case 8:
+                        sseVar = qge.s;
+                        break;
+                    case 9:
+                        sseVar = qge.w;
+                        break;
+                    case 10:
+                        sseVar = qge.x;
+                        break;
+                    case 11:
+                        sseVar = qge.y;
+                        break;
+                    case 12:
+                        sseVar = qge.E;
+                        break;
+                    case 13:
+                        sseVar = qge.F;
+                        break;
+                    case 14:
+                        sseVar = qge.G;
+                        break;
+                    case 16:
+                        sseVar = qge.H;
+                        break;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
+            default:
+                switch (i2) {
+                    case 0:
+                        sseVar = ihe.b;
+                        break;
+                    case 1:
+                        sseVar = ihe.c;
+                        break;
+                    case 2:
+                        sseVar = ihe.d;
+                        break;
+                    case 3:
+                        sseVar = ihe.e;
+                        break;
+                    case 4:
+                        sseVar = ihe.f;
+                        break;
+                    case 5:
+                        sseVar = ihe.h;
+                        break;
+                    case 6:
+                        sseVar = ihe.n;
+                        break;
+                    case 7:
+                        sseVar = ihe.r;
+                        break;
+                    case 8:
+                        sseVar = ihe.s;
+                        break;
+                    case 9:
+                        sseVar = ihe.w;
+                        break;
+                    case 10:
+                        sseVar = ihe.x;
+                        break;
+                    case 11:
+                        sseVar = ihe.y;
+                        break;
+                    case 12:
+                        sseVar = ihe.E;
+                        break;
+                    case 13:
+                        sseVar = ihe.F;
+                        break;
+                }
+                if (sseVar != null) {
+                    break;
+                }
+                break;
         }
         return true;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        int i = 0;
-        for (Map.Entry entry : entrySet()) {
-            i += b(entry.getKey()) ^ b(entry.getValue());
-        }
-        return i;
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        c();
-        Charset charset = h3e.a;
-        obj.getClass();
-        obj2.getClass();
-        return super.put(obj, obj2);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void putAll(Map map) {
-        c();
-        for (Object obj : map.keySet()) {
-            Charset charset = h3e.a;
-            obj.getClass();
-            map.get(obj).getClass();
-        }
-        super.putAll(map);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        c();
-        return super.remove(obj);
     }
 }

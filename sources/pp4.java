@@ -1,6 +1,245 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface pp4 extends fq4 {
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.ui.Components.FragmentContextView;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pp4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ FragmentContextView b;
+
+    public /* synthetic */ pp4(FragmentContextView fragmentContextView, byte b) {
+        this.a = b;
+        this.b = fragmentContextView;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        FragmentContextView fragmentContextView = this.b;
+        switch (b) {
+            case 0:
+                AnimatorSet animatorSet = fragmentContextView.f;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fragmentContextView.f = null;
+                    break;
+                }
+                break;
+            case 1:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet2 = fragmentContextView.f;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fragmentContextView.setVisibility(8);
+                    wp4 wp4Var = fragmentContextView.p0;
+                    if (wp4Var != null) {
+                        ((hfa) wp4Var).b(false);
+                    }
+                    fragmentContextView.f = null;
+                    if (fragmentContextView.x0) {
+                        fragmentContextView.e(false);
+                    } else if (fragmentContextView.w0) {
+                        fragmentContextView.a(false);
+                    } else if (fragmentContextView.y0) {
+                        fragmentContextView.g(false);
+                    } else if (fragmentContextView.z0) {
+                        fragmentContextView.c(false);
+                    }
+                    fragmentContextView.x0 = false;
+                    fragmentContextView.w0 = false;
+                    fragmentContextView.y0 = false;
+                    fragmentContextView.z0 = false;
+                    break;
+                }
+                break;
+            case 2:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet3 = fragmentContextView.f;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    wp4 wp4Var2 = fragmentContextView.p0;
+                    if (wp4Var2 != null) {
+                        ((hfa) wp4Var2).b(false);
+                    }
+                    fragmentContextView.f = null;
+                    if (fragmentContextView.x0) {
+                        fragmentContextView.e(false);
+                    } else if (fragmentContextView.w0) {
+                        fragmentContextView.a(false);
+                    } else if (fragmentContextView.y0) {
+                        fragmentContextView.g(false);
+                    } else if (fragmentContextView.z0) {
+                        fragmentContextView.c(false);
+                    }
+                    fragmentContextView.x0 = false;
+                    fragmentContextView.w0 = false;
+                    fragmentContextView.y0 = false;
+                    fragmentContextView.z0 = false;
+                    break;
+                }
+                break;
+            case 3:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet4 = fragmentContextView.f;
+                if (animatorSet4 != null && animatorSet4.equals(animator)) {
+                    fragmentContextView.setVisibility(8);
+                    fragmentContextView.f = null;
+                    if (fragmentContextView.x0) {
+                        fragmentContextView.e(false);
+                    } else if (fragmentContextView.w0) {
+                        fragmentContextView.a(false);
+                    } else if (fragmentContextView.y0) {
+                        fragmentContextView.g(false);
+                    } else if (fragmentContextView.z0) {
+                        fragmentContextView.c(false);
+                    }
+                    fragmentContextView.x0 = false;
+                    fragmentContextView.w0 = false;
+                    fragmentContextView.y0 = false;
+                    fragmentContextView.z0 = false;
+                    break;
+                }
+                break;
+            case 4:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet5 = fragmentContextView.f;
+                if (animatorSet5 != null && animatorSet5.equals(animator)) {
+                    wp4 wp4Var3 = fragmentContextView.p0;
+                    if (wp4Var3 != null) {
+                        ((hfa) wp4Var3).b(false);
+                    }
+                    fragmentContextView.f = null;
+                    if (fragmentContextView.x0) {
+                        fragmentContextView.e(false);
+                    } else if (fragmentContextView.w0) {
+                        fragmentContextView.a(false);
+                    } else if (fragmentContextView.y0) {
+                        fragmentContextView.g(false);
+                    } else if (fragmentContextView.z0) {
+                        fragmentContextView.c(false);
+                    }
+                    fragmentContextView.x0 = false;
+                    fragmentContextView.w0 = false;
+                    fragmentContextView.y0 = false;
+                    fragmentContextView.z0 = false;
+                    break;
+                }
+                break;
+            case 5:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet6 = fragmentContextView.f;
+                if (animatorSet6 != null && animatorSet6.equals(animator)) {
+                    fragmentContextView.setVisibility(8);
+                    fragmentContextView.f = null;
+                    if (fragmentContextView.x0) {
+                        fragmentContextView.e(false);
+                    } else if (fragmentContextView.w0) {
+                        fragmentContextView.a(false);
+                    } else if (fragmentContextView.y0) {
+                        fragmentContextView.g(false);
+                    } else if (fragmentContextView.z0) {
+                        fragmentContextView.c(false);
+                    }
+                    fragmentContextView.x0 = false;
+                    fragmentContextView.w0 = false;
+                    fragmentContextView.y0 = false;
+                    fragmentContextView.z0 = false;
+                    break;
+                }
+                break;
+            case 6:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet7 = fragmentContextView.f;
+                if (animatorSet7 != null && animatorSet7.equals(animator)) {
+                    fragmentContextView.T = false;
+                    fragmentContextView.f = null;
+                    fragmentContextView.e(false);
+                    break;
+                }
+                break;
+            case 7:
+                fragmentContextView.v0.e();
+                AnimatorSet animatorSet8 = fragmentContextView.f;
+                if (animatorSet8 != null && animatorSet8.equals(animator)) {
+                    fragmentContextView.f = null;
+                }
+                if (fragmentContextView.x0) {
+                    fragmentContextView.e(false);
+                } else if (fragmentContextView.w0) {
+                    fragmentContextView.a(false);
+                } else if (fragmentContextView.y0) {
+                    fragmentContextView.g(false);
+                } else if (fragmentContextView.z0) {
+                    fragmentContextView.c(false);
+                }
+                fragmentContextView.x0 = false;
+                fragmentContextView.w0 = false;
+                fragmentContextView.y0 = false;
+                fragmentContextView.z0 = false;
+                fragmentContextView.n();
+                break;
+            case 8:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet9 = fragmentContextView.f;
+                if (animatorSet9 != null && animatorSet9.equals(animator)) {
+                    fragmentContextView.setVisibility(8);
+                    fragmentContextView.f = null;
+                    if (fragmentContextView.x0) {
+                        fragmentContextView.e(false);
+                    } else if (fragmentContextView.w0) {
+                        fragmentContextView.a(false);
+                    } else if (fragmentContextView.y0) {
+                        fragmentContextView.g(false);
+                    } else if (fragmentContextView.z0) {
+                        fragmentContextView.c(false);
+                    }
+                    fragmentContextView.x0 = false;
+                    fragmentContextView.w0 = false;
+                    fragmentContextView.y0 = false;
+                    fragmentContextView.z0 = false;
+                    break;
+                }
+                break;
+            case 9:
+                fragmentContextView.u0.e();
+                AnimatorSet animatorSet10 = fragmentContextView.f;
+                if (animatorSet10 != null && animatorSet10.equals(animator)) {
+                    fragmentContextView.T = false;
+                    fragmentContextView.f = null;
+                    fragmentContextView.a(false);
+                    break;
+                }
+                break;
+            case 10:
+                fragmentContextView.v0.e();
+                AnimatorSet animatorSet11 = fragmentContextView.f;
+                if (animatorSet11 != null && animatorSet11.equals(animator)) {
+                    fragmentContextView.f = null;
+                }
+                if (fragmentContextView.x0) {
+                    fragmentContextView.e(false);
+                } else if (fragmentContextView.w0) {
+                    fragmentContextView.a(false);
+                } else if (fragmentContextView.y0) {
+                    fragmentContextView.g(false);
+                } else if (fragmentContextView.z0) {
+                    fragmentContextView.c(false);
+                }
+                fragmentContextView.x0 = false;
+                fragmentContextView.w0 = false;
+                fragmentContextView.y0 = false;
+                fragmentContextView.z0 = false;
+                fragmentContextView.n();
+                break;
+            default:
+                AnimatorSet animatorSet12 = fragmentContextView.f;
+                if (animatorSet12 != null && animatorSet12.equals(animator)) {
+                    fragmentContextView.setVisibility(8);
+                    fragmentContextView.f = null;
+                    break;
+                }
+                break;
+        }
+    }
 }

@@ -1,9 +1,23 @@
 // default package
 
-import java.util.concurrent.ScheduledFuture;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface jd3 {
-    ScheduledFuture a(l69 l69Var);
+public abstract class jd3 {
+    public final int a;
+    public final t1c b;
+    public final int c;
+    public final ko4 d;
+
+    public jd3(int i, t1c t1cVar, int i2) {
+        this.a = i;
+        this.b = t1cVar;
+        this.c = i2;
+        this.d = t1cVar.d[i2];
+    }
+
+    public abstract int a();
+
+    public boolean b(jd3 jd3Var) {
+        return false;
+    }
 }

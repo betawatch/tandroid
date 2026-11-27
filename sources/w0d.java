@@ -1,33 +1,28 @@
 // default package
 
-import com.google.android.gms.tasks.TaskCompletionSource;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class w0d extends s0d {
-    public final /* synthetic */ TaskCompletionSource h;
-    public final /* synthetic */ s0d n;
-    public final /* synthetic */ hzc r;
+public abstract class w0d {
+    public static final ExecutorService a = Executors.newFixedThreadPool(4, new y20((byte) 12));
+    public static File b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0d(hzc hzcVar, TaskCompletionSource taskCompletionSource, TaskCompletionSource taskCompletionSource2, s0d s0dVar) {
-        super(taskCompletionSource);
-        this.h = taskCompletionSource2;
-        this.n = s0dVar;
-        this.r = hzcVar;
-    }
-
-    @Override // s0d
-    public final void b() {
-        synchronized (this.r.f) {
-            hzc hzcVar = this.r;
-            TaskCompletionSource taskCompletionSource = this.h;
-            hzcVar.e.add(taskCompletionSource);
-            taskCompletionSource.getTask().addOnCompleteListener(new v8b(hzcVar, taskCompletionSource, false, (byte) 8));
-            if (this.r.l.getAndIncrement() > 0) {
-                this.r.b.b("Already connected to the service.", new Object[0]);
+    public static String a(InputStream inputStream) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] bArr = new byte[TLObject.FLAG_14];
+        while (true) {
+            int read = inputStream.read(bArr);
+            if (read == -1) {
+                return new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
             }
-            hzc.b(this.r, this.n);
+            byteArrayOutputStream.write(bArr, 0, read);
         }
     }
 }

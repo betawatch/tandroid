@@ -3,32 +3,32 @@ package com.google.android.recaptcha.internal;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzab extends ccb implements eq4 {
+final class zzab extends yfb implements is4 {
     final /* synthetic */ zzxp zza;
     final /* synthetic */ zzad zzb;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzab(zzxp zzxpVar, zzad zzadVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzab(zzxp zzxpVar, zzad zzadVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zza = zzxpVar;
         this.zzb = zzadVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        return new zzab(this.zza, this.zzb, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        return new zzab(this.zza, this.zzb, zw2Var);
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzab) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzab) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
-        qse.b(obj);
+        ixe.b(obj);
         zzxp zzxpVar = this.zza;
         int length = zzxpVar.zzl().length();
         zzad zzadVar = this.zzb;
@@ -40,6 +40,6 @@ final class zzab extends ccb implements eq4 {
         Map singletonMap = Collections.singletonMap("_GRECAPTCHA_KC", zzxpVar.zzl());
         singletonMap.getClass();
         zzb.zzb(singletonMap);
-        return g5c.a;
+        return f9c.a;
     }
 }

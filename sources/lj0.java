@@ -1,67 +1,37 @@
 // default package
 
-import android.os.Looper;
-import java.util.concurrent.Executor;
+import android.content.DialogInterface;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class lj0 extends odc {
-    public Executor b;
-    public aod c;
-    public hj0 d;
-    public gj0 e;
-    public u40 f;
-    public tg2 g;
-    public kj0 h;
-    public String i;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public hh7 p;
-    public hh7 q;
-    public hh7 r;
-    public hh7 s;
-    public hh7 t;
-    public hh7 v;
-    public hh7 x;
-    public hh7 y;
-    public byte j = 0;
-    public boolean u = true;
-    public int w = 0;
+public final class lj0 implements DialogInterface.OnClickListener {
+    public final /* synthetic */ byte a = 1;
+    public final Object b;
 
-    public static void f(hh7 hh7Var, Object obj) {
-        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            hh7Var.i(obj);
-        } else {
-            hh7Var.g(obj);
+    public lj0(mj0 mj0Var) {
+        this.b = new WeakReference(mj0Var);
+    }
+
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                WeakReference weakReference = (WeakReference) obj;
+                if (weakReference.get() != null) {
+                    ((mj0) weakReference.get()).e(true);
+                    break;
+                }
+                break;
+            default:
+                ((ai4) obj).D0.e(true);
+                break;
         }
     }
 
-    public final int c() {
-        hj0 hj0Var = this.d;
-        if (hj0Var != null) {
-            return wmd.a(hj0Var, this.e);
-        }
-        return 0;
-    }
-
-    public final void d(int i) {
-        hh7 hh7Var = this.x;
-        if (hh7Var == null) {
-            hh7Var = new hh7();
-            this.x = hh7Var;
-        }
-        f(hh7Var, Integer.valueOf(i));
-    }
-
-    public final void e(boolean z) {
-        hh7 hh7Var = this.t;
-        if (hh7Var == null) {
-            hh7Var = new hh7();
-            this.t = hh7Var;
-        }
-        f(hh7Var, Boolean.valueOf(z));
+    public lj0(ai4 ai4Var) {
+        this.b = ai4Var;
     }
 }

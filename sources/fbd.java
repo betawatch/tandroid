@@ -1,92 +1,130 @@
 // default package
 
-import java.util.Arrays;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.AbstractSet;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum fbd {
-    b(-999),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF18(-3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF27(-2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF36(-1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF44(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF52(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF60(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF70(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF83(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF96(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF109(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF122(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF133(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF148(11),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF163(12);
+public final class fbd extends AbstractSet {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lp2 b;
 
-    public static final qid c;
-    public final int a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v4, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v8 */
-    /* JADX WARN: Type inference failed for: r2v9 */
-    static {
-        boolean z = false;
-        kp kpVar = new kp((byte) 19, z);
-        kpVar.c = new Object[8];
-        kpVar.b = 0;
-        fbd[] values = values();
-        int length = values.length;
-        for (?? r2 = z; r2 < length; r2++) {
-            fbd fbdVar = values[r2];
-            Integer valueOf = Integer.valueOf(fbdVar.a);
-            int i = kpVar.b + 1;
-            Object[] objArr = (Object[]) kpVar.c;
-            int length2 = objArr.length;
-            int i2 = i << 1;
-            if (i2 > length2) {
-                if (i2 > length2) {
-                    length2 = length2 + (length2 >> 1) + 1;
-                    length2 = length2 < i2 ? Integer.highestOneBit(i2 - 1) << 1 : length2;
-                    if (length2 < 0) {
-                        length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    }
-                }
-                objArr = Arrays.copyOf(objArr, length2);
-                kpVar.c = objArr;
-            }
-            int i3 = kpVar.b;
-            int i4 = i3 << 1;
-            objArr[i4] = valueOf;
-            objArr[i4 + 1] = fbdVar;
-            kpVar.b = i3 + 1;
-        }
-        ifd ifdVar = (ifd) kpVar.d;
-        if (ifdVar != null) {
-            throw ifdVar.a();
-        }
-        qid c2 = qid.c(kpVar.b, (Object[]) kpVar.c, kpVar);
-        ifd ifdVar2 = (ifd) kpVar.d;
-        if (ifdVar2 != null) {
-            throw ifdVar2.a();
-        }
-        c = c2;
+    public /* synthetic */ fbd(lp2 lp2Var, byte b) {
+        this.a = b;
+        this.b = lp2Var;
     }
 
-    fbd(int i) {
-        this.a = i;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                lp2Var.clear();
+                break;
+            default:
+                lp2Var.clear();
+                break;
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                Map m = lp2Var.m();
+                if (m != null) {
+                    return m.entrySet().contains(obj);
+                }
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry = (Map.Entry) obj;
+                    int s = lp2Var.s(entry.getKey());
+                    if (s != -1) {
+                        Object[] objArr = lp2Var.e;
+                        objArr.getClass();
+                        if (e6f.a(objArr[s], entry.getValue())) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            default:
+                return lp2Var.containsKey(obj);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                Map m = lp2Var.m();
+                return m != null ? m.entrySet().iterator() : new mad(lp2Var, (byte) 1);
+            default:
+                Map m2 = lp2Var.m();
+                return m2 != null ? m2.keySet().iterator() : new mad(lp2Var, (byte) 0);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                Map m = lp2Var.m();
+                if (m == null) {
+                    if (obj instanceof Map.Entry) {
+                        Map.Entry entry = (Map.Entry) obj;
+                        if (!lp2Var.p()) {
+                            int q = lp2Var.q();
+                            Object key = entry.getKey();
+                            Object value = entry.getValue();
+                            Object obj2 = lp2Var.b;
+                            obj2.getClass();
+                            int[] iArr = lp2Var.c;
+                            iArr.getClass();
+                            Object[] objArr = lp2Var.d;
+                            objArr.getClass();
+                            Object[] objArr2 = lp2Var.e;
+                            objArr2.getClass();
+                            int a = b4f.a(key, value, q, obj2, iArr, objArr, objArr2);
+                            if (a != -1) {
+                                lp2Var.o(a, q);
+                                lp2Var.h--;
+                                lp2Var.f += 32;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                Map m2 = lp2Var.m();
+                if (m2 == null) {
+                    if (lp2Var.v(obj) == lp2.x) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+        }
+        return lp2Var.size();
     }
 }

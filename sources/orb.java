@@ -1,39 +1,46 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum orb extends qsb {
-    public orb() {
-        super("CommentStartDash", 45);
+public final class orb {
+    public static final nrb Companion = new nrb();
+    public final long a;
+    public final long b;
+    public final long c;
+
+    public /* synthetic */ orb(int i, long j, long j2, long j3) {
+        if (1 != (i & 1)) {
+            sve.a(i, 1, mrb.a.d());
+            throw null;
+        }
+        this.a = j;
+        this.b = (i & 2) == 0 ? j * 1000 : j2;
+        if ((i & 4) == 0) {
+            this.c = j / 1000;
+        } else {
+            this.c = j3;
+        }
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        qpb qpbVar = aqbVar.n;
-        char d = zj1Var.d();
-        prb prbVar = qsb.k0;
-        if (d == 0) {
-            aqbVar.m(this);
-            qpbVar.e.append((char) 65533);
-            aqbVar.c = prbVar;
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (d == '-') {
-            aqbVar.c = qsb.j0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.i();
-            aqbVar.c = lqbVar;
-        } else if (d != 65535) {
-            qpbVar.e.append(d);
-            aqbVar.c = prbVar;
-        } else {
-            aqbVar.l(this);
-            aqbVar.i();
-            aqbVar.c = lqbVar;
-        }
+        return (obj instanceof orb) && this.a == ((orb) obj).a;
+    }
+
+    public final int hashCode() {
+        long j = this.a;
+        return (int) (j ^ (j >>> 32));
+    }
+
+    public final String toString() {
+        return "Time(ms=" + this.a + ')';
+    }
+
+    public orb(long j) {
+        this.a = j;
+        this.b = j * 1000;
+        this.c = j / 1000;
     }
 }

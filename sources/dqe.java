@@ -1,19 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dqe implements zn7 {
-    public static final dqe a = new dqe();
+import java.util.AbstractCollection;
+import java.util.Iterator;
+import java.util.List;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class dqe {
+    public static Object a(AbstractCollection abstractCollection, String str) {
+        Iterator it = abstractCollection.iterator();
+        return it.hasNext() ? it.next() : str;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static Object b(Iterable iterable) {
+        Object next;
+        if (!(iterable instanceof List)) {
+            Iterator it = iterable.iterator();
+            do {
+                next = it.next();
+            } while (it.hasNext());
+            return next;
         }
-        throw null;
+        List list = (List) iterable;
+        if (!list.isEmpty()) {
+            return bp1.m(1, list);
+        }
+        lq5.n();
+        return null;
+    }
+
+    public static void c(List list, pj8 pj8Var, int i, int i2) {
+        for (int size = list.size() - 1; size > i2; size--) {
+            if (pj8Var.apply(list.get(size))) {
+                list.remove(size);
+            }
+        }
+        for (int i3 = i2 - 1; i3 >= i; i3--) {
+            list.remove(i3);
+        }
     }
 }

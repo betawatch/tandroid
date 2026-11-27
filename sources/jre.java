@@ -1,54 +1,46 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jre extends zqe {
-    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
+public final class jre extends u3d {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // zqe
-    public final void a(nne nneVar, nne nneVar2, long j) {
-        ArrayList arrayList;
-        List list = (List) i0f.l(nneVar2, j);
-        int size = list.size();
-        List list2 = (List) i0f.l(nneVar, j);
-        if (list2.isEmpty()) {
-            list2 = list2 instanceof ere ? new pqe(size) : ((list2 instanceof yve) && (list2 instanceof kpe)) ? ((kpe) list2).zza(size) : new ArrayList(size);
-            i0f.d(nneVar, j, list2);
-        } else {
-            if (c.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList2 = new ArrayList(list2.size() + size);
-                arrayList2.addAll(list2);
-                i0f.d(nneVar, j, arrayList2);
-                arrayList = arrayList2;
-            } else if (list2 instanceof uze) {
-                uze uzeVar = (uze) list2;
-                pqe pqeVar = new pqe(uzeVar.a.size() + size);
-                pqeVar.addAll(uzeVar);
-                i0f.d(nneVar, j, pqeVar);
-                arrayList = pqeVar;
-            } else if ((list2 instanceof yve) && (list2 instanceof kpe)) {
-                kpe kpeVar = (kpe) list2;
-                if (!kpeVar.zza()) {
-                    list2 = kpeVar.zza(list2.size() + size);
-                    i0f.d(nneVar, j, list2);
-                }
-            }
-            list2 = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jre(TaskCompletionSource taskCompletionSource, byte b) {
+        super((byte) 13);
+        this.b = b;
+        this.c = taskCompletionSource;
+    }
+
+    @Override // u3d
+    public final void P(Status status, qp5 qp5Var) {
+        switch (this.b) {
+            case 0:
+                break;
+            default:
+                status.getClass();
+                vze.a(status, qp5Var, this.c);
+                break;
         }
-        int size2 = list2.size();
-        int size3 = list.size();
-        if (size2 > 0 && size3 > 0) {
-            list2.addAll(list);
+    }
+
+    @Override // u3d
+    public final void f(Status status, n54 n54Var) {
+        switch (this.b) {
+            case 0:
+                status.getClass();
+                vze.a(status, n54Var, this.c);
+                break;
         }
-        if (size2 > 0) {
-            list = list2;
-        }
-        i0f.d(nneVar, j, list);
+    }
+
+    private final void T(Status status, n54 n54Var) {
+    }
+
+    private final void U(Status status, qp5 qp5Var) {
     }
 }

@@ -1,11 +1,35 @@
 // default package
 
-import java.util.HashSet;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class a1c {
-    public HashSet a;
-    public HashSet b;
-    public HashSet c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class a1c extends v79 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ l1c b;
+
+    public /* synthetic */ a1c(l1c l1cVar, byte b) {
+        this.a = b;
+        this.b = l1cVar;
+    }
+
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        byte b = this.a;
+        l1c l1cVar = this.b;
+        switch (b) {
+            case 0:
+                if (l1cVar.i()) {
+                    l1cVar.j();
+                    break;
+                }
+                break;
+            default:
+                if (l1cVar.i()) {
+                    l1cVar.j();
+                    break;
+                }
+                break;
+        }
+    }
 }

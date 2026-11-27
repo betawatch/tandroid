@@ -1,35 +1,40 @@
 // default package
 
 import android.content.DialogInterface;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class e65 implements DialogInterface.OnShowListener {
+public final /* synthetic */ class e65 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hd b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ j95 b;
 
-    public /* synthetic */ e65(Object obj, hd hdVar, EditTextBoldCursor editTextBoldCursor, byte b) {
+    public /* synthetic */ e65(j95 j95Var, byte b) {
         this.a = b;
-        this.d = obj;
-        this.b = hdVar;
-        this.c = editTextBoldCursor;
+        this.b = j95Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         byte b = this.a;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        hd hdVar = this.b;
-        Object obj = this.d;
+        j95 j95Var = this.b;
         switch (b) {
             case 0:
-                ((k65) obj).b.k1(null, hdVar, editTextBoldCursor, true);
+                e S = LaunchActivity.S();
+                if (j95Var.r2 && (S instanceof zu1)) {
+                    ((zu1) S).ja(true, true);
+                    break;
+                }
+                break;
+            case 1:
+                j95Var.dismiss();
+                break;
+            case 2:
+                j95Var.k2 = null;
                 break;
             default:
-                ((f65) obj).r1.b.k1(null, hdVar, editTextBoldCursor, true);
+                j95Var.y3 = null;
                 break;
         }
     }

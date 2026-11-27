@@ -1,23 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class gp5 implements cv5 {
-    public static final gp5 a = new gp5();
-    public static final bj8 b = new bj8("kotlin.Int", aj8.d);
+public final class gp5 implements hp5 {
+    public final qm7 a;
 
-    @Override // cv5
-    public final void b(c30 c30Var, Object obj) {
-        c30Var.d(((Number) obj).intValue());
+    public gp5(qm7 qm7Var) {
+        this.a = qm7Var;
     }
 
-    @Override // cv5
-    public final Object c(igf igfVar) {
-        return Integer.valueOf(igfVar.d());
+    @Override // hp5
+    public final qm7 b() {
+        return this.a;
     }
 
-    @Override // cv5
-    public final w4a d() {
-        return b;
+    @Override // hp5
+    public final boolean isActive() {
+        return false;
     }
 }

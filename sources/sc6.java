@@ -1,190 +1,637 @@
 // default package
 
-import android.os.Bundle;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.view.ViewConfiguration;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class sc6 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ad6 b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.TL_auth_resetLoginEmail d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class sc6 extends wma implements bl7 {
+    public final /* synthetic */ byte g0 = 0;
+    public final l09 h0;
+    public boolean i0;
+    public final /* synthetic */ e j0;
 
-    public /* synthetic */ sc6(ad6 ad6Var, Bundle bundle, TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail, byte b) {
-        this.a = b;
-        this.b = ad6Var;
-        this.c = bundle;
-        this.d = tL_auth_resetLoginEmail;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sc6(uc6 uc6Var, Context context) {
+        super(context, null);
+        this.j0 = uc6Var;
+        this.i0 = true;
+        this.h0 = new l09((byte) 3);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final byte b = 0;
-                final ad6 ad6Var = this.b;
-                final Bundle bundle = this.c;
-                final TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail = this.d;
-                gl.c3(new Runnable() { // from class: vc6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        String str;
-                        int i;
-                        String str2;
-                        int i2;
-                        byte b2 = b;
-                        TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail2 = tL_auth_resetLoginEmail;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        Bundle bundle2 = bundle;
-                        TLObject tLObject2 = tLObject;
-                        ad6 ad6Var2 = ad6Var;
-                        switch (b2) {
-                            case 0:
-                                mf6 mf6Var = ad6Var2.a0;
-                                if (mf6Var.getParentActivity() != null) {
-                                    ad6Var2.W = false;
-                                    if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                        if (tL_error2 != null && (str = tL_error2.text) != null) {
-                                            if (!str.contains("TASK_ALREADY_EXISTS")) {
-                                                if (!tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
-                                                    i = ((d) mf6Var).currentAccount;
-                                                    ij.c0(i, tL_error2, mf6Var, tL_auth_resetLoginEmail2, new Object[0]);
-                                                    break;
-                                                } else {
-                                                    mf6Var.I1(0, true, null, true);
-                                                    mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131752009, "CodeExpired"));
-                                                    break;
-                                                }
+    public final void X() {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+        qqc qqcVar = ((uqc) this.j0).t0;
+        if (qqcVar != null) {
+            qqcVar.e(obtain);
+        }
+        super.dispatchTouchEvent(obtain);
+        obtain.recycle();
+    }
+
+    /* JADX WARN: Finally extract failed */
+    public final int a0(q9c q9cVar, int i) {
+        int[] iArr = {0};
+        qhb qhbVar = new qhb(iArr, (byte) 10);
+        this.i0 = true;
+        q9cVar.j(qhbVar);
+        try {
+            q9cVar.scrollBy(0, i);
+            ArrayList arrayList = q9cVar.x0;
+            if (arrayList != null) {
+                arrayList.remove(qhbVar);
+            }
+            this.i0 = false;
+            return iArr[0];
+        } catch (Throwable th) {
+            ArrayList arrayList2 = q9cVar.x0;
+            if (arrayList2 != null) {
+                arrayList2.remove(qhbVar);
+            }
+            this.i0 = false;
+            throw th;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r19v2 */
+    /* JADX WARN: Type inference failed for: r19v7 */
+    /* JADX WARN: Type inference failed for: r19v8 */
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        qqc qqcVar;
+        zqc zqcVar;
+        float f;
+        float f2;
+        vsc vscVar;
+        boolean z;
+        int i;
+        boolean z2;
+        boolean z3;
+        vsc vscVar2;
+        float f3;
+        Iterator it;
+        byte b;
+        switch (this.g0) {
+            case 1:
+                uqc uqcVar = (uqc) this.j0;
+                wsc wscVar = uqcVar.k0;
+                int i2 = 1;
+                if (wscVar != null) {
+                    msc mscVar = wscVar.C1;
+                    LinkedHashMap linkedHashMap = wscVar.f;
+                    msc mscVar2 = wscVar.B1;
+                    boolean z4 = false;
+                    if (!wscVar.b && ((zqcVar = wscVar.c.E) == null || !zqcVar.a || wscVar.q0 || wscVar.r0)) {
+                        if (wscVar.b1 || wscVar.t0 || !wscVar.A()) {
+                            z4 = wscVar.q0;
+                        } else {
+                            if (wscVar.i1) {
+                                wscVar.f0();
+                            }
+                            int actionMasked = motionEvent.getActionMasked();
+                            if (actionMasked == 0) {
+                                wscVar.removeCallbacks(mscVar2);
+                                wscVar.removeCallbacks(mscVar);
+                                wscVar.h0 = null;
+                                wscVar.p0 = false;
+                                wscVar.j0 = false;
+                                wscVar.o0 = false;
+                                wscVar.n0 = false;
+                                wscVar.r0 = false;
+                                wscVar.q0 = false;
+                                wscVar.w0 = motionEvent.getPointerId(0);
+                                float x = motionEvent.getX();
+                                float y = motionEvent.getY();
+                                float[] fArr = {x, y};
+                                wscVar.s.mapPoints(fArr);
+                                vsc vscVar3 = wscVar.i0;
+                                if (vscVar3 == null || vscVar3.H != 2) {
+                                    i = 1;
+                                } else {
+                                    float P = (wscVar.P(vscVar3) * 0.5f) + hl.L(9.0f);
+                                    double radians = Math.toRadians(vscVar3.i.a);
+                                    int i3 = -1;
+                                    while (true) {
+                                        i = i2;
+                                        if (i3 <= i2) {
+                                            float f4 = i3 * P;
+                                            double d = radians;
+                                            float[] L = wscVar.L((((float) Math.cos(d)) * f4) + vscVar3.e.a + vscVar3.n.a, (f4 * ((float) Math.sin(d))) + vscVar3.f.a + vscVar3.o.a);
+                                            if (Utilities.t(x, y, L[0], L[i == true ? 1 : 0]) < hl.L(22.0f)) {
+                                                z2 = i == true ? 1 : 0;
+                                                z3 = i;
                                             } else {
-                                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ad6Var2.getContext());
-                                                String M0 = k96.M0(2131748537, null);
-                                                hd hdVar = alertDialog$Builder.a;
-                                                hdVar.S = M0;
-                                                hdVar.U = gl.S2(k96.a0(null, null, 2131748538, k96.a(p38.f().e("+" + ad6Var2.M))));
-                                                b00.t(null, 2131747638, alertDialog$Builder, null);
-                                                break;
+                                                i3 += 2;
+                                                i2 = i == true ? 1 : 0;
+                                                radians = d;
                                             }
                                         }
-                                    } else {
-                                        mf6Var.p1(bundle2, (TLRPC.TL_auth_sentCode) tLObject2, true);
-                                        break;
                                     }
                                 }
-                                break;
-                            default:
-                                mf6 mf6Var2 = ad6Var2.a0;
-                                if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                    if (tL_error2 != null && (str2 = tL_error2.text) != null) {
-                                        if (!str2.contains("PHONE_CODE_EXPIRED")) {
-                                            i2 = ((d) mf6Var2).currentAccount;
-                                            ij.c0(i2, tL_error2, mf6Var2, tL_auth_resetLoginEmail2, new Object[0]);
-                                            break;
+                                z2 = false;
+                                z3 = i;
+                                wscVar.j0 = z2;
+                                if (z2) {
+                                    vscVar2 = wscVar.i0;
+                                } else {
+                                    float f5 = fArr[0];
+                                    float f6 = fArr[z3];
+                                    Iterator it2 = linkedHashMap.values().iterator();
+                                    vsc vscVar4 = null;
+                                    while (it2.hasNext()) {
+                                        vsc vscVar5 = (vsc) it2.next();
+                                        if (vscVar5.H != 2 || Utilities.t(f5, f6, vscVar5.e.a, vscVar5.f.a) >= wscVar.P(vscVar5) * 0.44f) {
+                                            f3 = f6;
+                                            it = it2;
                                         } else {
-                                            mf6Var2.I1(0, true, null, true);
-                                            mf6Var2.y1(k96.M0(2131745878, null), k96.M0(2131752009, "CodeExpired"));
-                                            break;
+                                            if (vscVar4 != null) {
+                                                f3 = f6;
+                                                it = it2;
+                                                if (vscVar5.I <= vscVar4.I) {
+                                                }
+                                            } else {
+                                                f3 = f6;
+                                                it = it2;
+                                            }
+                                            vscVar4 = vscVar5;
+                                        }
+                                        f6 = f3;
+                                        it2 = it;
+                                    }
+                                    vscVar2 = vscVar4;
+                                }
+                                wscVar.h0 = vscVar2;
+                                if (!wscVar.j0 && vscVar2 != wscVar.i0) {
+                                    wscVar.i0 = null;
+                                    wscVar.f0();
+                                }
+                                vsc vscVar6 = wscVar.h0;
+                                wscVar.v0 = vscVar6 != null ? z3 : false;
+                                if (vscVar6 == null) {
+                                    Iterator it3 = linkedHashMap.values().iterator();
+                                    while (true) {
+                                        if (it3.hasNext()) {
+                                            vsc vscVar7 = (vsc) it3.next();
+                                            RectF Z = wscVar.Z(vscVar7);
+                                            if (Z != null && Z.contains(x, y)) {
+                                                if (wsc.b(vscVar7)) {
+                                                    wscVar.s0 = (Math.abs(x - Z.centerX()) >= Z.width() * 0.35f || Math.abs(y - Z.centerY()) >= Z.height() * 0.35f) ? false : z3;
+                                                    wscVar.h0 = vscVar7;
+                                                }
+                                            }
                                         }
                                     }
-                                } else {
-                                    TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject2;
-                                    TLRPC.auth_SentCodeType auth_sentcodetype = tL_auth_sentCode.type;
-                                    if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeEmailCode) {
-                                        auth_sentcodetype.email_pattern = ad6Var2.E.getString("emailPattern");
-                                        ad6Var2.y = true;
-                                    }
-                                    mf6Var2.p1(bundle2, tL_auth_sentCode, true);
-                                    break;
                                 }
-                                break;
+                                vsc vscVar8 = wscVar.h0;
+                                if (vscVar8 == null || !((b = vscVar8.H) == 0 || b == 2)) {
+                                    wscVar.h0 = null;
+                                } else {
+                                    wscVar.y0 = x;
+                                    wscVar.z0 = y;
+                                    SystemClock.uptimeMillis();
+                                    vsc vscVar9 = wscVar.h0;
+                                    wscVar.L0 = vscVar9.H;
+                                    wscVar.H0 = vscVar9.e.b;
+                                    wscVar.I0 = vscVar9.f.b;
+                                    wscVar.K0 = vscVar9.i.b;
+                                    wscVar.J0 = vscVar9.h.b;
+                                    VelocityTracker velocityTracker = wscVar.P0;
+                                    if (velocityTracker != null) {
+                                        velocityTracker.recycle();
+                                    }
+                                    VelocityTracker obtain = VelocityTracker.obtain();
+                                    wscVar.P0 = obtain;
+                                    obtain.addMovement(motionEvent);
+                                    if (wscVar.j0) {
+                                        wscVar.C0 = Float.NaN;
+                                        wscVar.F0 = Float.NaN;
+                                        wscVar.D0 = 0.0f;
+                                        vsc vscVar10 = wscVar.h0;
+                                        wscVar.E0 = vscVar10.i.b;
+                                        wscVar.M0 = false;
+                                        long j = wscVar.O0 + 1;
+                                        wscVar.O0 = j;
+                                        vscVar10.I = j;
+                                        wscVar.M(vscVar10, x, y);
+                                    } else {
+                                        wscVar.postDelayed(mscVar2, wscVar.v0 ? 450L : 500L);
+                                    }
+                                    if (wscVar.v0) {
+                                        boolean z5 = z3;
+                                        wscVar.q0 = z5;
+                                        wscVar.getParent().requestDisallowInterceptTouchEvent(z5);
+                                        wscVar.f0();
+                                        z4 = z5;
+                                    } else {
+                                        wscVar.r0 = z3;
+                                        wscVar.postDelayed(mscVar, 170L);
+                                    }
+                                }
+                                z4 = false;
+                            } else {
+                                if (wscVar.q0 || wscVar.r0) {
+                                    VelocityTracker velocityTracker2 = wscVar.P0;
+                                    if (velocityTracker2 != null) {
+                                        velocityTracker2.addMovement(motionEvent);
+                                    }
+                                    int findPointerIndex = motionEvent.findPointerIndex(wscVar.w0);
+                                    boolean z6 = actionMasked == 6 && motionEvent.getPointerId(motionEvent.getActionIndex()) == wscVar.w0;
+                                    if (findPointerIndex >= 0) {
+                                        float x2 = motionEvent.getX(findPointerIndex);
+                                        float y2 = motionEvent.getY(findPointerIndex);
+                                        if (wscVar.r0) {
+                                            if (actionMasked != 2 || Utilities.t(x2, y2, wscVar.y0, wscVar.z0) <= ViewConfiguration.get(wscVar.getContext()).getScaledTouchSlop()) {
+                                                z = false;
+                                                if (actionMasked == 1 || actionMasked == 3 || z6) {
+                                                    wscVar.a();
+                                                }
+                                            } else if (wscVar.s0 && wscVar.h0.H == 0) {
+                                                wscVar.r0 = false;
+                                                wscVar.q0 = true;
+                                                wscVar.removeCallbacks(mscVar);
+                                                ((sc6) wscVar.d.b).X();
+                                                wscVar.getParent().requestDisallowInterceptTouchEvent(true);
+                                                wscVar.W(wscVar.h0, x2, y2);
+                                                wscVar.q(wscVar.h0, x2, y2);
+                                                wscVar.f0();
+                                            } else {
+                                                z = false;
+                                                wscVar.a();
+                                            }
+                                            z4 = z;
+                                        } else {
+                                            if (actionMasked == 2 && (vscVar = wscVar.h0) != null) {
+                                                if (wscVar.o0 || wscVar.j0) {
+                                                    wscVar.M(vscVar, x2, y2);
+                                                } else if (Utilities.t(x2, y2, wscVar.y0, wscVar.z0) > ViewConfiguration.get(wscVar.getContext()).getScaledTouchSlop()) {
+                                                    wscVar.removeCallbacks(mscVar2);
+                                                    if (!wscVar.n0 && (wscVar.v0 || wscVar.h0.H == 0)) {
+                                                        wscVar.W(wscVar.h0, x2, y2);
+                                                    }
+                                                    if (wscVar.n0) {
+                                                        wscVar.q(wscVar.h0, x2, y2);
+                                                    }
+                                                }
+                                                wscVar.f0();
+                                            }
+                                            if (actionMasked == 1 || actionMasked == 3 || z6) {
+                                                VelocityTracker velocityTracker3 = wscVar.P0;
+                                                if (velocityTracker3 != null) {
+                                                    velocityTracker3.computeCurrentVelocity(1000);
+                                                    f = wscVar.P0.getXVelocity(wscVar.w0);
+                                                    f2 = wscVar.P0.getYVelocity(wscVar.w0);
+                                                } else {
+                                                    f = 0.0f;
+                                                    f2 = 0.0f;
+                                                }
+                                                wscVar.w(f, f2, actionMasked == 3);
+                                            }
+                                        }
+                                    } else if (wscVar.r0) {
+                                        wscVar.a();
+                                    } else {
+                                        wscVar.w(0.0f, 0.0f, true);
+                                    }
+                                    z4 = true;
+                                }
+                                z4 = false;
+                            }
                         }
                     }
-                });
+                    if (z4) {
+                        return true;
+                    }
+                }
+                qqc qqcVar2 = uqcVar.t0;
+                if (qqcVar2 != null) {
+                    qqcVar2.e(motionEvent);
+                }
+                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                if (motionEvent.getActionMasked() == 1 && (qqcVar = uqcVar.t0) != null) {
+                    olc olcVar = qqcVar.i;
+                    wa waVar = qqcVar.c;
+                    if (waVar != null) {
+                        waVar.removeCallbacks(olcVar);
+                        qqcVar.c.post(olcVar);
+                    }
+                }
+                return dispatchTouchEvent;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final int getNestedScrollAxes() {
+        switch (this.g0) {
+            case 1:
+                return this.h0.b();
+            default:
+                return super.getNestedScrollAxes();
+        }
+    }
+
+    @Override // al7
+    public final void k(int i, View view) {
+        byte b = this.g0;
+        l09 l09Var = this.h0;
+        switch (b) {
+            case 0:
+                l09Var.b = 0;
                 break;
             default:
-                final byte b2 = 1;
-                final ad6 ad6Var2 = this.b;
-                final Bundle bundle2 = this.c;
-                final TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail2 = this.d;
-                gl.c3(new Runnable() { // from class: vc6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        String str;
-                        int i;
-                        String str2;
-                        int i2;
-                        byte b22 = b2;
-                        TLRPC.TL_auth_resetLoginEmail tL_auth_resetLoginEmail22 = tL_auth_resetLoginEmail2;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        Bundle bundle22 = bundle2;
-                        TLObject tLObject2 = tLObject;
-                        ad6 ad6Var22 = ad6Var2;
-                        switch (b22) {
-                            case 0:
-                                mf6 mf6Var = ad6Var22.a0;
-                                if (mf6Var.getParentActivity() != null) {
-                                    ad6Var22.W = false;
-                                    if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                        if (tL_error2 != null && (str = tL_error2.text) != null) {
-                                            if (!str.contains("TASK_ALREADY_EXISTS")) {
-                                                if (!tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
-                                                    i = ((d) mf6Var).currentAccount;
-                                                    ij.c0(i, tL_error2, mf6Var, tL_auth_resetLoginEmail22, new Object[0]);
-                                                    break;
-                                                } else {
-                                                    mf6Var.I1(0, true, null, true);
-                                                    mf6Var.y1(k96.M0(2131745878, null), k96.M0(2131752009, "CodeExpired"));
-                                                    break;
-                                                }
-                                            } else {
-                                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ad6Var22.getContext());
-                                                String M0 = k96.M0(2131748537, null);
-                                                hd hdVar = alertDialog$Builder.a;
-                                                hdVar.S = M0;
-                                                hdVar.U = gl.S2(k96.a0(null, null, 2131748538, k96.a(p38.f().e("+" + ad6Var22.M))));
-                                                b00.t(null, 2131747638, alertDialog$Builder, null);
-                                                break;
-                                            }
-                                        }
-                                    } else {
-                                        mf6Var.p1(bundle22, (TLRPC.TL_auth_sentCode) tLObject2, true);
+                if (i == 1) {
+                    l09Var.c = 0;
+                } else {
+                    l09Var.b = 0;
+                }
+                qqc qqcVar = ((uqc) this.j0).t0;
+                if (qqcVar != null) {
+                    olc olcVar = qqcVar.i;
+                    wa waVar = qqcVar.c;
+                    if (waVar != null) {
+                        waVar.removeCallbacks(olcVar);
+                        qqcVar.c.post(olcVar);
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // bl7
+    public final void l(View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
+        nc6 nc6Var;
+        q9c q0;
+        byte b = this.g0;
+        e eVar = this.j0;
+        switch (b) {
+            case 0:
+                uc6 uc6Var = (uc6) eVar;
+                try {
+                    if (view == uc6Var.R && (nc6Var = uc6Var.R0) != null && nc6Var.isAttachedToWindow()) {
+                        d79 currentListView = uc6Var.R0.getCurrentListView();
+                        int top = uc6Var.R0.getTop();
+                        if (currentListView != null && top == 0) {
+                            iArr[1] = i4;
+                            currentListView.scrollBy(0, i4);
+                            break;
+                        }
+                    }
+                } catch (Throwable th) {
+                    cc4.g(th, true);
+                    hl.c3(new z96(this, (byte) 3));
+                    return;
+                }
+                break;
+            default:
+                uqc uqcVar = (uqc) eVar;
+                if (!this.i0 && i4 != 0 && (q0 = uqcVar.q0()) != null) {
+                    if (view != uqcVar.a || !uqcVar.u0()) {
+                        if (view == q0 && i4 < 0) {
+                            iArr[1] = a0(uqcVar.a, i4) + iArr[1];
+                            break;
+                        }
+                    } else {
+                        iArr[1] = a0(q0, i4) + iArr[1];
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // al7
+    public final void m(View view, int i, int i2, int i3, int i4, int i5) {
+        switch (this.g0) {
+            case 0:
+                break;
+            default:
+                l(view, i, i2, i3, i4, i5, new int[2]);
+                break;
+        }
+    }
+
+    @Override // al7
+    public final boolean n(View view, View view2, int i, int i2) {
+        switch (this.g0) {
+            case 0:
+                if (((uc6) this.j0).R0 != null && i == 2) {
+                    break;
+                }
+                break;
+            default:
+                if ((i & 2) != 0) {
+                    break;
+                }
+                break;
+        }
+        return true;
+    }
+
+    @Override // wma, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.g0) {
+            case 0:
+                super.onLayout(z, i, i2, i3, i4);
+                uc6 uc6Var = (uc6) this.j0;
+                if (!z) {
+                    uc6Var.N0(true);
+                    break;
+                } else {
+                    uc6Var.m0(this.i0);
+                    this.i0 = false;
+                    break;
+                }
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.g0) {
+            case 1:
+                int size = (int) (View.MeasureSpec.getSize(i2) * 0.75f);
+                uqc uqcVar = (uqc) this.j0;
+                if (uqcVar.r != size) {
+                    uqcVar.r = size;
+                    iqc iqcVar = uqcVar.e;
+                    if (iqcVar != null) {
+                        iqcVar.requestLayout();
+                    }
+                    gqc gqcVar = uqcVar.f;
+                    if (gqcVar != null) {
+                        gqcVar.requestLayout();
+                    }
+                }
+                super.onMeasure(i, i2);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onNestedPreFling(View view, float f, float f2) {
+        qqc qqcVar;
+        switch (this.g0) {
+            case 1:
+                uqc uqcVar = (uqc) this.j0;
+                if (view != uqcVar.q0() || (qqcVar = uqcVar.t0) == null) {
+                    return false;
+                }
+                return qqcVar.a((int) f, (int) f2);
+            default:
+                return super.onNestedPreFling(view, f, f2);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+        switch (this.g0) {
+            case 0:
+                break;
+            default:
+                super.onStopNestedScroll(view);
+                break;
+        }
+    }
+
+    @Override // al7
+    public final void q(View view, View view2, int i, int i2) {
+        switch (this.g0) {
+            case 0:
+                this.h0.b = i;
+                break;
+            default:
+                l09 l09Var = this.h0;
+                if (i2 != 1) {
+                    l09Var.b = i;
+                    break;
+                } else {
+                    l09Var.c = i;
+                    break;
+                }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00c3  */
+    @Override // al7
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void r(View view, int i, int i2, int[] iArr, int i3) {
+        nc6 nc6Var;
+        jla jlaVar;
+        boolean z;
+        int i4;
+        d79 currentListView;
+        jla jlaVar2;
+        q9c q0;
+        qqc qqcVar;
+        byte b = this.g0;
+        e eVar = this.j0;
+        switch (b) {
+            case 0:
+                uc6 uc6Var = (uc6) eVar;
+                if (view == uc6Var.R && (nc6Var = uc6Var.R0) != null && nc6Var.isAttachedToWindow()) {
+                    jlaVar = ((e) uc6Var).simpleActionBar;
+                    boolean z2 = false;
+                    if (jlaVar != null) {
+                        jlaVar2 = ((e) uc6Var).simpleActionBar;
+                        if (jlaVar2.L) {
+                            z = true;
+                            int top = uc6Var.R0.getTop();
+                            if (i2 < 0) {
+                                if (z) {
+                                    d79 currentListView2 = uc6Var.R0.getCurrentListView();
+                                    iArr[1] = i2;
+                                    if (top > 0) {
+                                        iArr[1] = 0;
+                                    }
+                                    if (currentListView2 != null && (i4 = iArr[1]) > 0) {
+                                        currentListView2.scrollBy(0, i4);
                                         break;
                                     }
                                 }
-                                break;
-                            default:
-                                mf6 mf6Var2 = ad6Var22.a0;
-                                if (!(tLObject2 instanceof TLRPC.TL_auth_sentCode)) {
-                                    if (tL_error2 != null && (str2 = tL_error2.text) != null) {
-                                        if (!str2.contains("PHONE_CODE_EXPIRED")) {
-                                            i2 = ((d) mf6Var2).currentAccount;
-                                            ij.c0(i2, tL_error2, mf6Var2, tL_auth_resetLoginEmail22, new Object[0]);
-                                            break;
-                                        } else {
-                                            mf6Var2.I1(0, true, null, true);
-                                            mf6Var2.y1(k96.M0(2131745878, null), k96.M0(2131752009, "CodeExpired"));
-                                            break;
+                            } else {
+                                if (top <= 0 && (currentListView = uc6Var.R0.getCurrentListView()) != null) {
+                                    int K0 = ((x46) currentListView.getLayoutManager()).K0();
+                                    if (K0 != -1) {
+                                        f89 L = currentListView.L(K0);
+                                        int top2 = L != null ? L.a.getTop() : -1;
+                                        int paddingTop = currentListView.getPaddingTop();
+                                        if (top2 != paddingTop || K0 != 0) {
+                                            iArr[1] = K0 != 0 ? i2 : Math.max(i2, top2 - paddingTop);
+                                            currentListView.scrollBy(0, i2);
+                                            z2 = true;
                                         }
                                     }
-                                } else {
-                                    TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject2;
-                                    TLRPC.auth_SentCodeType auth_sentcodetype = tL_auth_sentCode.type;
-                                    if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeEmailCode) {
-                                        auth_sentcodetype.email_pattern = ad6Var22.E.getString("emailPattern");
-                                        ad6Var22.y = true;
-                                    }
-                                    mf6Var2.p1(bundle22, tL_auth_sentCode, true);
-                                    break;
                                 }
-                                break;
+                                if (z) {
+                                    if (!z2 && top < 0) {
+                                        iArr[1] = i2 - Math.max(top, i2);
+                                        break;
+                                    } else {
+                                        iArr[1] = i2;
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
-                });
+                    z = false;
+                    int top3 = uc6Var.R0.getTop();
+                    if (i2 < 0) {
+                    }
+                }
+                break;
+            default:
+                uqc uqcVar = (uqc) eVar;
+                if (!this.i0 && (q0 = uqcVar.q0()) != null) {
+                    if (i2 != 0 && i3 == 0 && ((view == uqcVar.a || view == q0) && (qqcVar = uqcVar.t0) != null && qqcVar.f)) {
+                        qqcVar.d = true;
+                    }
+                    if (view != uqcVar.a || i2 >= 0 || !uqcVar.u0()) {
+                        if (view == q0 && i2 > 0) {
+                            iArr[1] = a0(uqcVar.a, i2) + iArr[1];
+                            break;
+                        }
+                    } else {
+                        iArr[1] = a0(q0, i2) + iArr[1];
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sc6(uqc uqcVar, Context context) {
+        super(context, null);
+        this.j0 = uqcVar;
+        this.h0 = new l09((byte) 3);
+    }
+
+    private final void Z(View view) {
+    }
+
+    private final void Y(View view, int i, int i2, int i3, int i4, int i5) {
     }
 }

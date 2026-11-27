@@ -1,27 +1,28 @@
 // default package
 
-import android.content.ContentResolver;
-import android.database.ContentObserver;
-import android.net.Uri;
-import android.os.Handler;
+import android.media.AudioDeviceCallback;
+import android.media.AudioDeviceInfo;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tz extends ContentObserver {
-    public final ContentResolver a;
-    public final Uri b;
-    public final /* synthetic */ uz c;
+public final class tz extends AudioDeviceCallback {
+    public final /* synthetic */ vz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tz(uz uzVar, Handler handler, ContentResolver contentResolver, Uri uri) {
-        super(handler);
-        this.c = uzVar;
-        this.a = contentResolver;
-        this.b = uri;
+    public tz(vz vzVar) {
+        this.a = vzVar;
     }
 
-    @Override // android.database.ContentObserver
-    public final void onChange(boolean z) {
-        this.c.c();
+    @Override // android.media.AudioDeviceCallback
+    public final void onAudioDevicesAdded(AudioDeviceInfo[] audioDeviceInfoArr) {
+        this.a.l();
+    }
+
+    @Override // android.media.AudioDeviceCallback
+    public final void onAudioDevicesRemoved(AudioDeviceInfo[] audioDeviceInfoArr) {
+        vz vzVar = this.a;
+        if (gcc.l(audioDeviceInfoArr, (AudioDeviceInfo) vzVar.s)) {
+            vzVar.s = null;
+        }
+        vzVar.l();
     }
 }

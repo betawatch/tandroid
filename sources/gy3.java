@@ -1,77 +1,29 @@
 // default package
 
-import android.text.Editable;
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.TextWatcher;
-import android.widget.EditText;
+import android.view.View;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class gy3 implements TextWatcher {
-    public final EditText a;
-    public fy3 b;
-    public boolean c = true;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class gy3 extends f8c {
+    public final /* synthetic */ hy3 e;
 
-    public gy3(EditText editText) {
-        this.a = editText;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gy3(hy3 hy3Var, String str) {
+        super(str, (rmb) null);
+        this.e = hy3Var;
     }
 
-    public static void a(EditText editText, int i) {
-        int length;
-        if (i == 1 && editText != null && editText.isAttachedToWindow()) {
-            Editable editableText = editText.getEditableText();
-            int selectionStart = Selection.getSelectionStart(editableText);
-            int selectionEnd = Selection.getSelectionEnd(editableText);
-            lw3 a = lw3.a();
-            if (editableText == null) {
-                length = 0;
-            } else {
-                a.getClass();
-                length = editableText.length();
-            }
-            a.e(0, length, editableText);
-            if (selectionStart < 0) {
-                if (selectionEnd >= 0) {
-                    Selection.setSelection(editableText, selectionEnd);
-                }
-            } else if (selectionEnd >= 0) {
-                Selection.setSelection(editableText, selectionStart, selectionEnd);
-            } else {
-                Selection.setSelection(editableText, selectionStart);
-            }
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        EditText editText = this.a;
-        if (editText.isInEditMode() || !this.c || lw3.j == null || i2 > i3 || !(charSequence instanceof Spannable)) {
-            return;
-        }
-        int b = lw3.a().b();
-        if (b != 0) {
-            if (b == 1) {
-                lw3.a().e(i, i3 + i, (Spannable) charSequence);
-                return;
-            } else if (b != 3) {
-                return;
-            }
-        }
-        lw3 a = lw3.a();
-        fy3 fy3Var = this.b;
-        if (fy3Var == null) {
-            fy3Var = new fy3(editText);
-            this.b = fy3Var;
-        }
-        a.f(fy3Var);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    @Override // f8c, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        hy3 hy3Var = this.e;
+        ly3 ly3Var = hy3Var.y;
+        Pattern pattern = ly3.P1;
+        uc7 s1 = uc7.s1(ly3Var.a);
+        String url = getURL();
+        ly3 ly3Var2 = hy3Var.y;
+        s1.H3(url, ly3Var2.m1, 1, null);
+        ly3Var2.H0();
+        ly3Var2.dismiss();
     }
 }

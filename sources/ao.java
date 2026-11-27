@@ -1,10 +1,40 @@
 // default package
 
-import java.util.Arrays;
-import java.util.HashSet;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ao {
-    public static final HashSet a = new HashSet(Arrays.asList(nuc.a.z0()));
+public class ao extends Exception {
+
+    @Deprecated
+    protected final Status mStatus;
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public ao(Status status) {
+        super(r4.toString());
+        int i = status.a;
+        String str = status.b;
+        str = str == null ? "" : str;
+        StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 2 + String.valueOf(str).length());
+        sb.append(i);
+        sb.append(": ");
+        sb.append(str);
+        this.mStatus = status;
+    }
+
+    public Status getStatus() {
+        return this.mStatus;
+    }
+
+    public int getStatusCode() {
+        return this.mStatus.a;
+    }
+
+    @Deprecated
+    public String getStatusMessage() {
+        return this.mStatus.b;
+    }
 }

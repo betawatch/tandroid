@@ -1,60 +1,107 @@
 // default package
 
-import android.content.Context;
+import android.net.Uri;
+import java.util.HashMap;
+import java.util.Locale;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class gv3 extends v26 {
-    public final /* synthetic */ byte q;
-    public final /* synthetic */ Object r;
+public final class gv3 extends itd {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ iv3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gv3(byte b, Context context, Object obj) {
-        super(context, 2);
-        this.q = b;
-        this.r = obj;
+    public gv3(iv3 iv3Var, boolean z) {
+        this.b = iv3Var;
+        this.a = z;
     }
 
-    @Override // v26, o49
-    public final void e() {
-        byte b = this.q;
-        Object obj = this.r;
-        switch (b) {
-            case 0:
-                ((jv3) obj).j3 = true;
-                break;
-            case 1:
-                ((t14) obj).g0 = true;
-                break;
-            case 4:
-                ((tx9) obj).y1 = true;
-                break;
+    @Override // itd, ix0
+    public final void x() {
+        String valueOf;
+        int intValue;
+        iv3 iv3Var = this.b;
+        RadialProgressView radialProgressView = iv3Var.r1;
+        ev3 ev3Var = iv3Var.l1;
+        hyc hycVar = iv3Var.m1;
+        if (this.a && iv3Var.m1.g(iv3Var.E1, null, null, iv3Var.C1, true)) {
+            radialProgressView.setVisibility(4);
+            ev3Var.setVisibility(4);
+            hycVar.setVisibility(0);
+            return;
+        }
+        radialProgressView.setVisibility(0);
+        ev3Var.setVisibility(0);
+        iv3Var.t1.setVisibility(0);
+        iv3Var.u1.setVisibility(4);
+        ev3Var.setKeepScreenOn(true);
+        hycVar.setVisibility(4);
+        hycVar.getControlsView().setVisibility(4);
+        hycVar.getTextureView().setVisibility(4);
+        if (hycVar.getTextureImageView() != null) {
+            hycVar.getTextureImageView().setVisibility(4);
+        }
+        iv3Var.m1.g(null, null, null, null, false);
+        HashMap hashMap = new HashMap();
+        hashMap.put("Referer", "messenger.telegram.org");
+        try {
+            String youtubeId = hycVar.getYoutubeId();
+            if (youtubeId == null) {
+                ev3Var.loadUrl(iv3Var.E1, hashMap);
+                return;
+            }
+            iv3Var.q1.setVisibility(0);
+            iv3Var.x1 = true;
+            ev3Var.addJavascriptInterface(new hv3(iv3Var), "YoutubeProxy");
+            String str = iv3Var.C1;
+            if (str != null) {
+                try {
+                    Uri parse = Uri.parse(str);
+                    int i = iv3Var.K1;
+                    valueOf = i > 0 ? String.valueOf(i) : null;
+                    if (valueOf == null && (valueOf = parse.getQueryParameter("t")) == null) {
+                        valueOf = parse.getQueryParameter("time_continue");
+                    }
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                }
+                if (valueOf != null) {
+                    if (valueOf.contains("m")) {
+                        String[] split = valueOf.split("m");
+                        intValue = (Utilities.z(split[0]).intValue() * 60) + Utilities.z(split[1]).intValue();
+                    } else {
+                        intValue = Utilities.z(valueOf).intValue();
+                    }
+                    iv3Var.l1.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
+                }
+            }
+            intValue = 0;
+            iv3Var.l1.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
+        } catch (Exception e2) {
+            cc4.g(e2, true);
         }
     }
 
-    @Override // v26
-    public final void i() {
-        byte b = this.q;
-        Object obj = this.r;
-        switch (b) {
-            case 0:
-                ((jv3) obj).j3 = false;
-                break;
-            case 1:
-                ((t14) obj).g0 = false;
-                break;
-            case 2:
-                ((uz3) obj).Q.g0 = false;
-                break;
-            case 3:
-                ((iw9) obj).R.y1 = false;
-                break;
-            case 4:
-                ((tx9) obj).y1 = false;
-                break;
-            default:
-                ((iw9) obj).R.y1 = false;
-                break;
+    @Override // itd, ix0
+    public final boolean y() {
+        iv3 iv3Var = this.b;
+        hyc hycVar = iv3Var.m1;
+        boolean z = hycVar.U;
+        if (z) {
+            if (z) {
+                hycVar.U = false;
+                hycVar.m();
+                hycVar.l(false);
+            }
+            return false;
+        }
+        try {
+            iv3Var.s1.getWindow().clearFlags(128);
+            return true;
+        } catch (Exception e) {
+            cc4.g(e, true);
+            return true;
         }
     }
 }

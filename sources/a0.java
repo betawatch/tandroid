@@ -1,49 +1,85 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_aicompose;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class a0 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ e0 b;
+public final class a0 implements TextWatcher {
+    public final /* synthetic */ ImageView a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ TextView f;
+    public final /* synthetic */ ScrollView h;
 
-    public /* synthetic */ a0(e0 e0Var, byte b) {
-        this.a = b;
-        this.b = e0Var;
+    public a0(ImageView imageView, int i, int i2, LinearLayout linearLayout, ArrayList arrayList, TextView textView, ScrollView scrollView) {
+        this.a = imageView;
+        this.b = i;
+        this.c = i2;
+        this.d = linearLayout;
+        this.e = arrayList;
+        this.f = textView;
+        this.h = scrollView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        e0 e0Var = this.b;
-        switch (b) {
-            case 0:
-                e0Var.dismiss();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        LinearLayout linearLayout;
+        int i;
+        int i2;
+        String str;
+        String lowerCase = editable.toString().trim().toLowerCase();
+        boolean isEmpty = lowerCase.isEmpty();
+        int i3 = 8;
+        this.a.setVisibility(editable.length() > 0 ? 0 : 8);
+        int i4 = this.b;
+        while (true) {
+            linearLayout = this.d;
+            i = this.c;
+            if (i4 >= i) {
                 break;
-            default:
-                TL_aicompose.AiComposeTone aiComposeTone = e0Var.S1;
-                if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
-                    int i = e0Var.c2 + 1;
-                    e0Var.c2 = i;
-                    TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = e0Var.d2;
-                    byte b2 = 0;
-                    if (i >= aicomposetoneexampleArr.length) {
-                        e0Var.c2 = 0;
-                        i = 0;
-                    }
-                    if (aicomposetoneexampleArr[i] == null) {
-                        TL_aicompose.getToneExample gettoneexample = new TL_aicompose.getToneExample();
-                        gettoneexample.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
-                        gettoneexample.num = i;
-                        ConnectionsManager.getInstance(e0Var.a).sendRequestTyped(gettoneexample, new hc(b2), new c0(e0Var, i, b2));
-                    }
-                    e0Var.b2.O(true);
-                    break;
-                }
-                break;
+            }
+            linearLayout.getChildAt(i4).setVisibility(!isEmpty ? 8 : 0);
+            i4++;
         }
+        int i5 = 0;
+        int i6 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i5 >= arrayList.size() || (i2 = i + i5) >= linearLayout.getChildCount()) {
+                break;
+            }
+            t4c t4cVar = (t4c) arrayList.get(i5);
+            String str2 = t4cVar.d;
+            if (str2 == null) {
+                str2 = (t4cVar.b + " " + t4cVar.c).toLowerCase();
+            }
+            boolean z = isEmpty || str2.contains(lowerCase) || ((str = t4cVar.a) != null && str.toLowerCase().startsWith(lowerCase));
+            linearLayout.getChildAt(i2).setVisibility(z ? 0 : 8);
+            if (z) {
+                i6++;
+            }
+            i5++;
+        }
+        if (!isEmpty && i6 == 0) {
+            i3 = 0;
+        }
+        this.f.setVisibility(i3);
+        this.h.scrollTo(0, 0);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

@@ -1,56 +1,73 @@
 // default package
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface vd4 {
-    ByteBuffer b();
+public final /* synthetic */ class vd4 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ je4 b;
 
-    float getBlurAngle();
+    public /* synthetic */ vd4(je4 je4Var, byte b) {
+        this.a = b;
+        this.b = je4Var;
+    }
 
-    float getBlurExcludeBlurSize();
-
-    PointF getBlurExcludePoint();
-
-    float getBlurExcludeSize();
-
-    int getBlurType();
-
-    float getContrastValue();
-
-    float getEnhanceValue();
-
-    float getExposureValue();
-
-    float getFadeValue();
-
-    float getGrainValue();
-
-    float getHighlightsValue();
-
-    float getSaturationValue();
-
-    float getShadowsValue();
-
-    float getSharpenValue();
-
-    float getSoftenSkinValue();
-
-    int getTintHighlightsColor();
-
-    float getTintHighlightsIntensityValue();
-
-    int getTintShadowsColor();
-
-    float getTintShadowsIntensityValue();
-
-    float getVignetteValue();
-
-    float getWarmthValue();
-
-    boolean m();
-
-    boolean t();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        final je4 je4Var = this.b;
+        switch (b) {
+            case 0:
+                final byte b2 = 0;
+                hl.c3(new Runnable() { // from class: wd4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        je4 je4Var2 = je4Var;
+                        switch (b3) {
+                            case 0:
+                                je4Var2.F = 0;
+                                if (tL_error2 == null) {
+                                    bs2.v(null, 2131750707, d31.b0(je4Var2), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                je4Var2.f0(tL_error2);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                je4Var.getClass();
+                final byte b3 = 1;
+                hl.c3(new Runnable() { // from class: wd4
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        je4 je4Var2 = je4Var;
+                        switch (b32) {
+                            case 0:
+                                je4Var2.F = 0;
+                                if (tL_error2 == null) {
+                                    bs2.v(null, 2131750707, d31.b0(je4Var2), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                je4Var2.f0(tL_error2);
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
+    }
 }

@@ -6,7 +6,7 @@ import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -22,6 +22,7 @@ public class TeXParser {
     private static final int MAX_LASTPASS_EXPANSIONS = 10000;
     private static final int MAX_MACRO_ARGS = 256;
     private static final int MAX_PARSE_DEPTH = 64;
+    private static final long MAX_PARSE_WORK = 2097152;
     private static final char PERCENT = '%';
     private static final char PRIME = '\'';
     private static final char R_BRACK = ']';
@@ -59,10 +60,7 @@ public class TeXParser {
     private static final char SUPTHREE = 179;
     private static final char SUPTWO = 178;
     private static final char SUPZERO = 8304;
-    private static long firstpassExpansionWork = 0;
     protected static boolean isLoading = false;
-    private static int lastpassExpansions;
-    private static int parseDepth;
     private static final Set<String> unparsedContents;
     private boolean arrayMode;
     private int atIsLetter;
@@ -77,6 +75,14 @@ public class TeXParser {
     private StringBuffer parseString;
     private int pos;
     private int spos;
+    private static final ThreadLocal<ParseState> parseState = new ThreadLocal<ParseState>() { // from class: org.scilab.forge.jlatexmath.TeXParser.1
+        @Override // java.lang.ThreadLocal
+        public ParseState initialValue() {
+            return new ParseState(0);
+        }
+    };
+    private static long firstpassExpansionWork = 0;
+    private static int lastpassExpansions = 0;
 
     static {
         HashSet hashSet = new HashSet(6);
@@ -173,7 +179,7 @@ public class TeXParser {
             int i2 = 0;
             while (this.pos < this.len) {
                 if (this.parseString.length() > 65536) {
-                    qm0.g("Formula too large after macro expansion");
+                    rm0.k("Formula too large after macro expansion");
                     return;
                 }
                 char charAt2 = this.parseString.charAt(this.pos);
@@ -221,13 +227,13 @@ public class TeXParser {
                     } else if (NewCommandMacro.isMacro(command)) {
                         i2++;
                         if (i2 > 10000) {
-                            qm0.g("Macro expansion limit exceeded");
+                            rm0.k("Macro expansion limit exceeded");
                             return;
                         }
                         long j = firstpassExpansionWork + this.len;
                         firstpassExpansionWork = j;
                         if (j > MAX_FIRSTPASS_WORK) {
-                            qm0.g("Formula expands too much");
+                            rm0.k("Formula expands too much");
                             return;
                         }
                         MacroInfo macroInfo = MacroInfo.Commands.get(command);
@@ -249,13 +255,13 @@ public class TeXParser {
                         if (macroInfo2 != null) {
                             i2++;
                             if (i2 > 10000) {
-                                qm0.g("Macro expansion limit exceeded");
+                                rm0.k("Macro expansion limit exceeded");
                                 return;
                             }
                             long j2 = firstpassExpansionWork + this.len;
                             firstpassExpansionWork = j2;
                             if (j2 > MAX_FIRSTPASS_WORK) {
-                                qm0.g("Formula expands too much");
+                                rm0.k("Formula expands too much");
                                 return;
                             }
                             try {
@@ -659,7 +665,7 @@ public class TeXParser {
             insert(this.spos, this.pos, (String) macroInfo.invoke(this, optsArgs));
             return null;
         }
-        qm0.g("Macro expansion limit exceeded");
+        rm0.k("Macro expansion limit exceeded");
         return null;
     }
 
@@ -679,7 +685,7 @@ public class TeXParser {
                 if (this.isPartial) {
                     return new ColorAtom(new RomanAtom(new TeXFormula("\\backslash ".concat(command)).root), (Color) null, Color.RED);
                 }
-                qm0.g(tb4.y("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
+                rm0.k(qd4.y("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
                 return null;
             }
         } catch (FormulaNotFoundException unused2) {
@@ -713,7 +719,7 @@ public class TeXParser {
         if (this.arrayMode) {
             ((ArrayOfAtoms) this.formula).addRow();
         } else {
-            qm0.g("You can add a row only in array mode !");
+            rm0.k("You can add a row only in array mode !");
         }
     }
 
@@ -778,7 +784,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!unicodeBlock.equals(of) || TeXFormula.isRegisteredBlock(unicodeBlock)) ? TeXFormula.getExternalFont(of) : null;
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(tb4.n(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(qd4.n(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }
@@ -988,7 +994,7 @@ public class TeXParser {
         if (this.isPartial) {
             return stringBuffer.toString();
         }
-        qm0.g(tb4.q("The token ", str, " must be closed by ", str2));
+        rm0.k(qd4.q("The token ", str, " must be closed by ", str2));
         return null;
     }
 
@@ -1134,7 +1140,7 @@ public class TeXParser {
             }
         }
         if (i3 >= 2) {
-            qm0.g("Illegal end,  missing '}' !");
+            rm0.k("Illegal end,  missing '}' !");
             return null;
         }
         StringBuffer stringBuffer = this.parseString;
@@ -1209,16 +1215,26 @@ public class TeXParser {
         int i;
         boolean z;
         char charAt;
-        int i2 = parseDepth;
-        int i3 = i2 + 1;
-        parseDepth = i3;
-        if (i3 > 64) {
-            parseDepth = i2;
+        ParseState parseState2 = parseState.get();
+        int i2 = parseState2.depth;
+        if (i2 == 0) {
+            parseState2.work = 0L;
+        }
+        if (i2 >= 64) {
             throw new DepthLimitExceededException();
         }
-        try {
-            if (this.len != 0) {
-                while (true) {
+        long j = parseState2.work;
+        int i3 = this.len;
+        long j2 = j + i3 + 1;
+        parseState2.work = j2;
+        if (j2 > MAX_PARSE_WORK) {
+            rm0.k("Formula is too complex to parse");
+            return;
+        }
+        parseState2.depth = i2 + 1;
+        if (i3 != 0) {
+            while (true) {
+                try {
                     int i4 = this.pos;
                     if (i4 >= this.len) {
                         break;
@@ -1341,14 +1357,14 @@ public class TeXParser {
                         }
                     }
                     this.pos++;
+                } finally {
+                    parseState2.depth--;
                 }
             }
-            TeXFormula teXFormula6 = this.formula;
-            if (teXFormula6.root == null && !this.arrayMode) {
-                teXFormula6.add(new EmptyAtom());
-            }
-        } finally {
-            parseDepth--;
+        }
+        TeXFormula teXFormula6 = this.formula;
+        if (teXFormula6.root == null && !this.arrayMode) {
+            teXFormula6.add(new EmptyAtom());
         }
     }
 
@@ -1377,6 +1393,19 @@ public class TeXParser {
 
     public void setArrayMode(boolean z) {
         this.arrayMode = z;
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    private static final class ParseState {
+        int depth;
+        long work;
+
+        public /* synthetic */ ParseState(int i) {
+            this();
+        }
+
+        private ParseState() {
+        }
     }
 
     public TeXParser(boolean z, String str, TeXFormula teXFormula) {

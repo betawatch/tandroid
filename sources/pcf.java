@@ -1,63 +1,37 @@
 // default package
 
-import java.util.concurrent.Delayed;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pcf extends v1f implements ScheduledFuture, t56, Future {
-    public final vbf b;
-    public final ScheduledFuture c;
+public final class pcf extends ljf {
+    private static final pcf zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
 
-    public pcf(vbf vbfVar, ScheduledFuture scheduledFuture) {
-        this.b = vbfVar;
-        this.c = scheduledFuture;
+    static {
+        pcf pcfVar = new pcf();
+        zzb = pcfVar;
+        ljf.e(pcf.class, pcfVar);
     }
 
-    @Override // t56
-    public final void b(Runnable runnable, Executor executor) {
-        this.b.b(runnable, executor);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z) {
-        boolean cancel = this.b.cancel(z);
-        if (cancel) {
-            this.c.cancel(z);
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-        return cancel;
-    }
-
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
-        return this.c.compareTo(delayed);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Delayed
-    public final long getDelay(TimeUnit timeUnit) {
-        return this.c.getDelay(timeUnit);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof nbf;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j, TimeUnit timeUnit) {
-        return this.b.get(j, timeUnit);
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001", new Object[]{"zzd", "zze", sjf.s, "zzf"});
+        }
+        if (i2 == 3) {
+            return new pcf();
+        }
+        if (i2 == 4) {
+            return new lde(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

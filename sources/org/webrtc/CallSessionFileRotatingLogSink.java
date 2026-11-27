@@ -2,39 +2,43 @@ package org.webrtc;
 
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class CallSessionFileRotatingLogSink {
-    private long nativeSink;
+    private final NativeLifecycleLock lifecycleLock;
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        long addSink(String str, int i, int i2);
+
+        void deleteSink(long j);
+
+        byte[] getLogData(String str);
+    }
 
     public CallSessionFileRotatingLogSink(String str, int i, Logging.Severity severity) {
         if (str != null) {
-            this.nativeSink = nativeAddSink(str, i, severity.ordinal());
+            this.lifecycleLock = new NativeLifecycleLock("CallSessionFileRotatingLogSink", CallSessionFileRotatingLogSinkJni.get().addSink(str, i, severity.ordinal()));
         } else {
-            w26.j("dirPath may not be null.");
+            lq5.j("dirPath may not be null.");
             throw null;
         }
     }
 
     public static byte[] getLogData(String str) {
         if (str != null) {
-            return nativeGetLogData(str);
+            return CallSessionFileRotatingLogSinkJni.get().getLogData(str);
         }
-        w26.j("dirPath may not be null.");
+        lq5.j("dirPath may not be null.");
         return null;
     }
 
-    private static native long nativeAddSink(String str, int i, int i2);
-
-    private static native void nativeDeleteSink(long j);
-
-    private static native byte[] nativeGetLogData(String str);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$dispose$0(long j) {
+        CallSessionFileRotatingLogSinkJni.get().deleteSink(j);
+    }
 
     public void dispose() {
-        long j = this.nativeSink;
-        if (j != 0) {
-            nativeDeleteSink(j);
-            this.nativeSink = 0L;
-        }
+        this.lifecycleLock.dispose(new rm0((byte) 17));
     }
 }

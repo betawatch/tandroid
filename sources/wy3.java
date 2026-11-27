@@ -2,57 +2,69 @@
 
 import android.content.Context;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wy3 extends o39 {
-    public boolean f3;
-    public boolean g3;
-    public final /* synthetic */ t14 h3;
+public final class wy3 extends cv9 {
+    public int h;
+    public boolean n;
+    public float r;
+    public final /* synthetic */ xy3 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wy3(t14 t14Var, Context context) {
-        super(context, null);
-        this.h3 = t14Var;
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        xv2 e = xv2.e();
-        t14 t14Var = this.h3;
-        return super.onInterceptTouchEvent(motionEvent) || e.g(motionEvent, t14Var.i0, t14Var.h2, this.o2);
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        t14 t14Var = this.h3;
-        if (t14Var.r0 && t14Var.o0.H > 1) {
-            this.f3 = true;
-            t14Var.j0.g1(0, 0);
-            t14Var.p0.setVisibility(0);
-            t14Var.q0.k(0, 0);
-            t14Var.r0 = false;
-            this.f3 = false;
+    public wy3(xy3 xy3Var, Context context) {
+        super(context);
+        this.s = xy3Var;
+        boolean z = xy3Var.h;
+        this.n = z;
+        this.r = z ? 1.0f : 0.0f;
+        setSmoothScrollingEnabled(true);
+        setHorizontalScrollBarEnabled(false);
+        setVerticalScrollBarEnabled(false);
+        setNestedScrollingEnabled(true);
+        oob oobVar = new oob((byte) 5, context, this);
+        this.b = oobVar;
+        oobVar.setOrientation(0);
+        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
+        for (int i = 0; i < 8; i++) {
+            int i2 = xy3.e0[i];
+            vy3 vy3Var = new vy3(this, context, xy3.f0[i]);
+            vy3Var.setContentDescription(xy3.f(i));
+            this.b.addView(vy3Var);
         }
-        super.onLayout(z, i, i2, i3, i4);
-        t14Var.k(true);
     }
 
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void d(MotionEvent motionEvent) {
+        if (!this.n || this.d) {
+            return;
+        }
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action == 1) {
+                this.a = false;
+                return;
+            } else if (action != 2) {
+                return;
+            }
+        }
+        this.a = true;
+        if (!this.d) {
+            this.e = -1;
+        }
+        this.s.requestDisallowInterceptTouchEvent(true);
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        if (this.g3) {
-            return;
-        }
-        this.h3.o0.f();
-        this.g3 = true;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(hl.U1(this.r, hl.L(30.0f), hl.L(Math.min(5.7f, this.b.getChildCount()) * 32.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(30.0f), TLObject.FLAG_30));
     }
 
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.f3) {
-            return;
-        }
-        super.requestLayout();
+    @Override // cv9, android.widget.HorizontalScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        d(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 }

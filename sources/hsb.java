@@ -1,38 +1,15 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum hsb extends qsb {
-    public hsb() {
-        super("DoctypeSystemIdentifier_doubleQuoted", 62);
-    }
+import android.graphics.Bitmap;
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        rpb rpbVar = aqbVar.m;
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            rpbVar.g.append((char) 65533);
-            return;
-        }
-        if (d == '\"') {
-            aqbVar.c = qsb.C0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.m(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else {
-            if (d != 65535) {
-                rpbVar.g.append(d);
-                return;
-            }
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class hsb {
+    public final Bitmap a;
+    public final mm b;
+
+    public hsb(isb isbVar, Bitmap bitmap) {
+        this.b = new mm(0.0f, isbVar.n, 0L, 240L, k43.h);
+        this.a = bitmap;
     }
 }

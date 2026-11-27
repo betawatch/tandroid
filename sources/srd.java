@@ -1,50 +1,129 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.Process;
+import java.util.Arrays;
+import java.util.List;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class srd extends nrd {
-    public static final srd e = new srd(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class srd extends c4 {
+    public static final Parcelable.Creator<srd> CREATOR = new hud(14);
+    public final int a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final int e;
+    public final String f;
+    public final srd h;
+    public final dwd n;
 
-    public srd(int i, Object[] objArr) {
-        this.c = objArr;
-        this.d = i;
+    static {
+        Process.myUid();
+        Process.myPid();
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        i1f.a(i, this.d);
-        Object obj = this.c[i];
-        obj.getClass();
-        return obj;
+    /* JADX WARN: Multi-variable type inference failed */
+    public srd(int i, int i2, String str, String str2, String str3, int i3, List list, srd srdVar) {
+        iwd iwdVar;
+        iwd iwdVar2;
+        dwd dwdVar;
+        this.a = i;
+        this.b = i2;
+        this.c = str;
+        this.d = str2;
+        this.f = str3;
+        this.e = i3;
+        vvd vvdVar = dwd.b;
+        if (list instanceof qvd) {
+            dwdVar = (dwd) ((qvd) list);
+            if (dwdVar.k()) {
+                Object[] array = dwdVar.toArray(qvd.a);
+                int length = array.length;
+                if (length == 0) {
+                    iwdVar2 = iwd.e;
+                    dwdVar = iwdVar2;
+                } else {
+                    iwdVar = new iwd(length, array);
+                    dwdVar = iwdVar;
+                }
+            }
+        } else {
+            Object[] array2 = list.toArray();
+            int length2 = array2.length;
+            for (int i4 = 0; i4 < length2; i4++) {
+                if (array2[i4] == null) {
+                    p3d.h(uh9.k(i4, "at index "));
+                    throw null;
+                }
+            }
+            if (length2 == 0) {
+                iwdVar2 = iwd.e;
+                dwdVar = iwdVar2;
+            } else {
+                iwdVar = new iwd(length2, array2);
+                dwdVar = iwdVar;
+            }
+        }
+        this.n = dwdVar;
+        this.h = srdVar;
     }
 
-    @Override // nrd, ard
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i);
-        return i;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof srd)) {
+            return false;
+        }
+        srd srdVar = (srd) obj;
+        return this.a == srdVar.a && this.b == srdVar.b && this.e == srdVar.e && this.c.equals(srdVar.c) && z5f.a(this.d, srdVar.d) && z5f.a(this.f, srdVar.f) && z5f.a(this.h, srdVar.h) && this.n.equals(srdVar.n);
     }
 
-    @Override // ard
-    public final int i() {
-        return this.d;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), this.c, this.d, this.f});
     }
 
-    @Override // ard
-    public final boolean k() {
-        return false;
+    public final String toString() {
+        String str = this.c;
+        int length = str.length() + 18;
+        String str2 = this.d;
+        if (str2 != null) {
+            length += str2.length();
+        }
+        StringBuilder sb = new StringBuilder(length);
+        sb.append(this.a);
+        sb.append("/");
+        sb.append(str);
+        if (str2 != null) {
+            sb.append("[");
+            if (str2.startsWith(str)) {
+                sb.append((CharSequence) str2, str.length(), str2.length());
+            } else {
+                sb.append(str2);
+            }
+            sb.append("]");
+        }
+        String str3 = this.f;
+        if (str3 != null) {
+            sb.append("/");
+            sb.append(Integer.toHexString(str3.hashCode()));
+        }
+        return sb.toString();
     }
 
-    @Override // ard
-    public final Object[] l() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        bye.l(parcel, 3, this.c);
+        bye.l(parcel, 4, this.d);
+        bye.q(parcel, 5, 4);
+        parcel.writeInt(this.e);
+        bye.l(parcel, 6, this.f);
+        bye.k(parcel, 7, this.h, i);
+        bye.p(parcel, 8, this.n);
+        bye.s(parcel, r);
     }
 }

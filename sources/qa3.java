@@ -1,67 +1,200 @@
 // default package
 
+import android.content.Context;
 import android.net.Uri;
-import android.os.SystemClock;
-import java.util.HashMap;
+import android.text.TextUtils;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qa3 implements mf5 {
-    public final /* synthetic */ ta3 a;
+public final class qa3 implements h73 {
+    public final Context a;
+    public final ArrayList b;
+    public final h73 c;
+    public wa4 d;
+    public lx e;
+    public tv2 f;
+    public h73 h;
+    public k8c n;
+    public a73 r;
+    public x29 s;
+    public h73 w;
 
-    public qa3(ta3 ta3Var) {
-        this.a = ta3Var;
+    public qa3(Context context, h73 h73Var) {
+        this.a = context.getApplicationContext();
+        h73Var.getClass();
+        this.c = h73Var;
+        this.b = new ArrayList();
     }
 
-    @Override // mf5
-    public final void a() {
-        this.a.e.remove(this);
+    public static void f(h73 h73Var, v2c v2cVar) {
+        if (h73Var != null) {
+            h73Var.addTransferListener(v2cVar);
+        }
     }
 
-    @Override // mf5
-    public final boolean b(Uri uri, dd ddVar, boolean z) {
-        ta3 ta3Var = this.a;
-        HashMap hashMap = ta3Var.d;
-        if (ta3Var.J == null) {
-            se5 se5Var = ta3Var.y;
-            boolean z2 = se5Var != null && se5Var.k;
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            sa3 sa3Var = (sa3) hashMap.get(uri);
-            sa3Var.getClass();
-            of5 of5Var = sa3Var.a;
-            int size = of5Var.b.size();
-            v5c it = ym5.q(of5Var.b.values()).iterator();
-            int i = 0;
-            while (it.hasNext()) {
-                if (ta3Var.e(elapsedRealtime, (Uri) it.next())) {
-                    i++;
-                }
+    public final void a(h73 h73Var) {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i >= arrayList.size()) {
+                return;
             }
-            int size2 = ta3Var.E.size();
-            km5 listIterator = ta3Var.E.listIterator(0);
-            int i2 = 0;
-            while (listIterator.hasNext()) {
-                of5 of5Var2 = (of5) listIterator.next();
-                if (z2 ? ta3Var.e(elapsedRealtime, of5Var2.b()) : ta3Var.f(of5Var2, elapsedRealtime)) {
-                    i2++;
-                }
-            }
-            c86 c86Var = new c86(z2, size, i, size2, i2);
-            ta3Var.c.getClass();
-            d86 u3 = i2f.u3(c86Var, ddVar);
-            if (u3 != null) {
-                long j = u3.b;
-                if (z2 && u3.a == 1) {
-                    se5 se5Var2 = ta3Var.y;
-                    se5Var2.getClass();
-                    return se5Var2.a(j);
-                }
-                sa3 sa3Var2 = (sa3) hashMap.get(uri);
-                if (sa3Var2 != null) {
-                    return sa3Var2.a(j, uri, null);
-                }
+            h73Var.addTransferListener((v2c) arrayList.get(i));
+            i++;
+        }
+    }
+
+    @Override // h73
+    public final void addTransferListener(v2c v2cVar) {
+        v2cVar.getClass();
+        this.c.addTransferListener(v2cVar);
+        this.b.add(v2cVar);
+        f(this.d, v2cVar);
+        f(this.e, v2cVar);
+        f(this.f, v2cVar);
+        f(this.h, v2cVar);
+        f(this.n, v2cVar);
+        f(this.r, v2cVar);
+        f(this.s, v2cVar);
+    }
+
+    @Override // h73
+    public final void close() {
+        h73 h73Var = this.w;
+        if (h73Var != null) {
+            try {
+                h73Var.close();
+            } finally {
+                this.w = null;
             }
         }
-        return false;
+    }
+
+    @Override // h73
+    public final Map getResponseHeaders() {
+        h73 h73Var = this.w;
+        return h73Var == null ? Collections.EMPTY_MAP : h73Var.getResponseHeaders();
+    }
+
+    @Override // h73
+    public final Uri getUri() {
+        h73 h73Var = this.w;
+        if (h73Var == null) {
+            return null;
+        }
+        return h73Var.getUri();
+    }
+
+    @Override // h73
+    public final long open(n73 n73Var) {
+        h73 h73Var;
+        yve.p(this.w == null);
+        Uri uri = n73Var.a;
+        String scheme = uri.getScheme();
+        String str = gcc.a;
+        String scheme2 = uri.getScheme();
+        boolean isEmpty = TextUtils.isEmpty(scheme2);
+        Context context = this.a;
+        if (isEmpty || Objects.equals(scheme2, "file")) {
+            String path = uri.getPath();
+            if (path == null || !path.startsWith("/android_asset/")) {
+                if (this.d == null) {
+                    wa4 wa4Var = new wa4(false);
+                    this.d = wa4Var;
+                    a(wa4Var);
+                }
+                h73Var = this.d;
+                this.w = h73Var;
+            } else {
+                if (this.e == null) {
+                    lx lxVar = new lx(context);
+                    this.e = lxVar;
+                    a(lxVar);
+                }
+                h73Var = this.e;
+                this.w = h73Var;
+            }
+        } else if ("asset".equals(scheme)) {
+            if (this.e == null) {
+                lx lxVar2 = new lx(context);
+                this.e = lxVar2;
+                a(lxVar2);
+            }
+            h73Var = this.e;
+            this.w = h73Var;
+        } else if ("content".equals(scheme)) {
+            if (this.f == null) {
+                tv2 tv2Var = new tv2(context);
+                this.f = tv2Var;
+                a(tv2Var);
+            }
+            h73Var = this.f;
+            this.w = h73Var;
+        } else {
+            boolean equals = "rtmp".equals(scheme);
+            h73 h73Var2 = this.c;
+            if (equals) {
+                h73Var = this.h;
+                if (h73Var == null) {
+                    try {
+                        h73 h73Var3 = (h73) Class.forName("androidx.media3.datasource.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
+                        this.h = h73Var3;
+                        a(h73Var3);
+                    } catch (ClassNotFoundException unused) {
+                        efd.f("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
+                    } catch (Exception e) {
+                        grb.j("Error instantiating RTMP extension", e);
+                        return 0L;
+                    }
+                    h73 h73Var4 = this.h;
+                    if (h73Var4 == null) {
+                        this.h = h73Var2;
+                    } else {
+                        h73Var2 = h73Var4;
+                    }
+                    h73Var = h73Var2;
+                }
+                this.w = h73Var;
+            } else if ("udp".equals(scheme)) {
+                if (this.n == null) {
+                    k8c k8cVar = new k8c();
+                    this.n = k8cVar;
+                    a(k8cVar);
+                }
+                h73Var = this.n;
+                this.w = h73Var;
+            } else if ("data".equals(scheme)) {
+                if (this.r == null) {
+                    a73 a73Var = new a73(false);
+                    this.r = a73Var;
+                    a(a73Var);
+                }
+                h73Var = this.r;
+                this.w = h73Var;
+            } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
+                if (this.s == null) {
+                    x29 x29Var = new x29(context);
+                    this.s = x29Var;
+                    a(x29Var);
+                }
+                h73Var = this.s;
+                this.w = h73Var;
+            } else {
+                this.w = h73Var2;
+                h73Var = h73Var2;
+            }
+        }
+        return h73Var.open(n73Var);
+    }
+
+    @Override // z63
+    public final int read(byte[] bArr, int i, int i2) {
+        h73 h73Var = this.w;
+        h73Var.getClass();
+        return h73Var.read(bArr, i, i2);
     }
 }

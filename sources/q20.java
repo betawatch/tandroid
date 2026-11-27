@@ -1,25 +1,28 @@
 // default package
 
-import android.os.SystemClock;
-import java.util.concurrent.atomic.AtomicLong;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class q20 {
-    public static final AtomicLong d = new AtomicLong(1);
-    public final long a = d.getAndIncrement();
-    public final long b = SystemClock.elapsedRealtime();
-    public final d30 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface q20 {
+    public static final ByteBuffer a = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
 
-    public q20(d30 d30Var) {
-        this.c = d30Var;
-    }
+    boolean a();
 
-    public final void a(String str, Throwable th) {
-        this.c.o("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str, th);
-    }
+    ByteBuffer b();
 
-    public final void b(String str) {
-        this.c.d("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str);
-    }
+    void c(o20 o20Var);
+
+    void d(ByteBuffer byteBuffer);
+
+    m20 e(m20 m20Var);
+
+    void f();
+
+    long g(long j);
+
+    boolean isActive();
+
+    void reset();
 }

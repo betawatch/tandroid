@@ -3,47 +3,74 @@ package org.webrtc;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class VideoTrack extends MediaStreamTrack {
     private final IdentityHashMap<VideoSink, Long> sinks;
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        void addSink(long j, long j2);
+
+        void freeSink(long j);
+
+        void removeSink(long j, long j2);
+
+        long wrapSink(VideoSink videoSink);
+    }
 
     public VideoTrack(long j) {
         super(j);
         this.sinks = new IdentityHashMap<>();
     }
 
-    private static native void nativeAddSink(long j, long j2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$addSink$0(VideoSink videoSink, long j) {
+        synchronized (this.sinks) {
+            if (!this.sinks.containsKey(videoSink)) {
+                long wrapSink = VideoTrackJni.get().wrapSink(videoSink);
+                this.sinks.put(videoSink, Long.valueOf(wrapSink));
+                VideoTrackJni.get().addSink(j, wrapSink);
+            }
+        }
+    }
 
-    private static native void nativeFreeSink(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$2(long j) {
+        synchronized (this.sinks) {
+            Iterator<Long> it = this.sinks.values().iterator();
+            while (it.hasNext()) {
+                long longValue = it.next().longValue();
+                VideoTrackJni.get().removeSink(j, longValue);
+                VideoTrackJni.get().freeSink(longValue);
+            }
+            this.sinks.clear();
+        }
+        JniCommon.nativeReleaseRef(j);
+    }
 
-    private static native void nativeRemoveSink(long j, long j2);
-
-    private static native long nativeWrapSink(VideoSink videoSink);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$removeSink$1(VideoSink videoSink, long j) {
+        synchronized (this.sinks) {
+            Long remove = this.sinks.remove(videoSink);
+            if (remove != null) {
+                VideoTrackJni.get().removeSink(j, remove.longValue());
+                VideoTrackJni.get().freeSink(remove.longValue());
+            }
+        }
+    }
 
     public void addSink(VideoSink videoSink) {
-        if (videoSink == null) {
-            w26.j("The VideoSink is not allowed to be null");
+        if (videoSink != null) {
+            this.lifecycleLock.run(new sgc(this, videoSink, (byte) 1));
         } else {
-            if (this.sinks.containsKey(videoSink)) {
-                return;
-            }
-            long nativeWrapSink = nativeWrapSink(videoSink);
-            this.sinks.put(videoSink, Long.valueOf(nativeWrapSink));
-            nativeAddSink(getNativeMediaStreamTrack(), nativeWrapSink);
+            lq5.j("The VideoSink is not allowed to be null");
         }
     }
 
     @Override // org.webrtc.MediaStreamTrack
     public void dispose() {
-        Iterator<Long> it = this.sinks.values().iterator();
-        while (it.hasNext()) {
-            long longValue = it.next().longValue();
-            nativeRemoveSink(getNativeMediaStreamTrack(), longValue);
-            nativeFreeSink(longValue);
-        }
-        this.sinks.clear();
-        super.dispose();
+        this.lifecycleLock.dispose(new ftb(this, (byte) 12));
     }
 
     public long getNativeVideoTrack() {
@@ -51,10 +78,6 @@ public class VideoTrack extends MediaStreamTrack {
     }
 
     public void removeSink(VideoSink videoSink) {
-        Long remove = this.sinks.remove(videoSink);
-        if (remove != null) {
-            nativeRemoveSink(getNativeMediaStreamTrack(), remove.longValue());
-            nativeFreeSink(remove.longValue());
-        }
+        this.lifecycleLock.runIfAlive(new sgc(this, videoSink, (byte) 0));
     }
 }

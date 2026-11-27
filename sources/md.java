@@ -1,13 +1,70 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.animation.Animation;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class md extends AlertDialog$Builder {
-    @Override // org.telegram.ui.ActionBar.AlertDialog$Builder
-    public final hd a(int i, wjb wjbVar, Context context) {
-        return new nd(i, wjbVar, context);
+public final class md implements Animation.AnimationListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ md(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                ((od) obj).o1.setAlpha(0.0f);
+                break;
+            case 1:
+                ((jm4) obj).f.post(new rj4(this, (byte) 4));
+                break;
+            default:
+                wv6 wv6Var = ((uv6) obj).x;
+                wv6Var.P = false;
+                wv6Var.o();
+                break;
+        }
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        byte b = this.a;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                break;
+            case 1:
+                jm4 jm4Var = (jm4) obj;
+                jm4Var.i.setEnabled(false);
+                jm4Var.g.setVisibility(0);
+                jm4Var.h.setVisibility(0);
+                break;
+            default:
+                ((uv6) obj).x.P = true;
+                break;
+        }
+    }
+
+    private final void a(Animation animation) {
+    }
+
+    private final void b(Animation animation) {
+    }
+
+    private final void c(Animation animation) {
+    }
+
+    private final void d(Animation animation) {
     }
 }

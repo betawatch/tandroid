@@ -1,64 +1,48 @@
 // default package
 
-import android.util.Base64;
-import java.util.Arrays;
+import android.os.Build;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ra0 {
-    public final String a;
-    public final byte[] b;
-    public final cj8 c;
+    public final boolean a;
 
-    public ra0(String str, byte[] bArr, cj8 cj8Var) {
-        this.a = str;
-        this.b = bArr;
-        this.c = cj8Var;
-    }
-
-    public static mv6 a() {
-        mv6 mv6Var = new mv6((byte) 8);
-        mv6Var.d = cj8.a;
-        return mv6Var;
-    }
-
-    public final ra0 b(cj8 cj8Var) {
-        mv6 a = a();
-        a.j0(this.a);
-        if (cj8Var == null) {
-            fvc.f("Null priority");
-            return null;
+    public ra0(boolean z) {
+        String str = Build.VERSION.RELEASE;
+        String str2 = Build.VERSION.CODENAME;
+        if (str == null) {
+            p3d.h("Null osRelease");
+            throw null;
         }
-        a.d = cj8Var;
-        a.c = this.b;
-        return a.o();
+        if (str2 != null) {
+            this.a = z;
+        } else {
+            p3d.h("Null osCodeName");
+            throw null;
+        }
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof ra0) {
-            ra0 ra0Var = (ra0) obj;
-            if (this.a.equals(ra0Var.a) && Arrays.equals(this.b, ra0Var.b) && this.c.equals(ra0Var.c)) {
-                return true;
-            }
+        if (!(obj instanceof ra0)) {
+            return false;
         }
-        return false;
+        ra0 ra0Var = (ra0) obj;
+        String str = Build.VERSION.RELEASE;
+        if (!str.equals(str)) {
+            return false;
+        }
+        String str2 = Build.VERSION.CODENAME;
+        return str2.equals(str2) && this.a == ra0Var.a;
     }
 
     public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b)) * 1000003) ^ this.c.hashCode();
+        return ((((Build.VERSION.RELEASE.hashCode() ^ 1000003) * 1000003) ^ Build.VERSION.CODENAME.hashCode()) * 1000003) ^ (this.a ? 1231 : 1237);
     }
 
     public final String toString() {
-        byte[] bArr = this.b;
-        String encodeToString = bArr == null ? "" : Base64.encodeToString(bArr, 2);
-        StringBuilder sb = new StringBuilder("TransportContext(");
-        sb.append(this.a);
-        sb.append(", ");
-        sb.append(this.c);
-        sb.append(", ");
-        return b00.j(sb, encodeToString, ")");
+        return "OsData{osRelease=" + Build.VERSION.RELEASE + ", osCodeName=" + Build.VERSION.CODENAME + ", isRooted=" + this.a + "}";
     }
 }

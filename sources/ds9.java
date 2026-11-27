@@ -1,78 +1,141 @@
 // default package
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabaseLockedException;
+import android.os.SystemClock;
+import android.util.Base64;
+import j$.util.Objects;
+import java.io.Closeable;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ds9 extends zde {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ ArrayList i;
-    public final /* synthetic */ hs9 j;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ds9 implements Closeable {
+    public static final n34 f = new n34("proto");
+    public final hu9 a;
+    public final pj2 b;
+    public final pj2 c;
+    public final s90 d;
+    public final uw8 e;
 
-    public ds9(hs9 hs9Var, int i, int i2, int i3, int i4, int i5, ArrayList arrayList, int i6, int i7, ArrayList arrayList2) {
-        this.j = hs9Var;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
-        this.e = i5;
-        this.f = arrayList;
-        this.g = i6;
-        this.h = i7;
-        this.i = arrayList2;
+    public ds9(pj2 pj2Var, pj2 pj2Var2, s90 s90Var, hu9 hu9Var, uw8 uw8Var) {
+        this.a = hu9Var;
+        this.b = pj2Var;
+        this.c = pj2Var2;
+        this.d = s90Var;
+        this.e = uw8Var;
     }
 
-    @Override // zde
-    public final boolean a(int i, int i2) {
-        return b(i, i2);
-    }
-
-    @Override // zde
-    public final boolean b(int i, int i2) {
-        k27 k27Var;
-        hs9 hs9Var = this.j;
-        if (i >= 0 && i2 >= 0) {
-            if (i == this.b && i2 == hs9Var.s) {
-                return true;
-            }
-            if (i == this.c && i2 == hs9Var.y) {
-                return true;
-            }
-        }
-        k27 k27Var2 = null;
-        int i3 = this.d;
-        if (i < i3 || i >= this.e) {
-            int i4 = this.g;
-            k27Var = (i < i4 || i >= this.h) ? null : (k27) this.i.get(i - i4);
+    public static Long b(SQLiteDatabase sQLiteDatabase, ta0 ta0Var) {
+        StringBuilder sb = new StringBuilder("backend_name = ? and priority = ?");
+        ArrayList arrayList = new ArrayList(Arrays.asList(ta0Var.a, String.valueOf(qm8.a(ta0Var.c))));
+        byte[] bArr = ta0Var.b;
+        if (bArr != null) {
+            sb.append(" and extras = ?");
+            arrayList.add(Base64.encodeToString(bArr, 0));
         } else {
-            k27Var = (k27) this.f.get(i - i3);
+            sb.append(" and extras is null");
         }
-        int i5 = hs9Var.w;
-        if (i2 < i5 || i2 >= hs9Var.x) {
-            int i6 = hs9Var.E;
-            if (i2 >= i6 && i2 < hs9Var.F) {
-                k27Var2 = (k27) hs9Var.f.get(i2 - i6);
+        Cursor query = sQLiteDatabase.query("transport_contexts", new String[]{"_id"}, sb.toString(), (String[]) arrayList.toArray(new String[0]), null, null, null);
+        try {
+            return !query.moveToNext() ? null : Long.valueOf(query.getLong(0));
+        } finally {
+            query.close();
+        }
+    }
+
+    public static String g(Iterable iterable) {
+        StringBuilder sb = new StringBuilder("(");
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            sb.append(((ga0) it.next()).a);
+            if (it.hasNext()) {
+                sb.append(',');
             }
-        } else {
-            k27Var2 = (k27) hs9Var.e.get(i2 - i5);
         }
-        return (k27Var2 == null || k27Var == null || k27Var2.F0() == null || k27Var.F0() == null || k27Var2.F0().id != k27Var.F0().id) ? false : true;
+        sb.append(')');
+        return sb.toString();
     }
 
-    @Override // zde
-    public final int c() {
-        return this.j.r;
+    public static Object h(Cursor cursor, bs9 bs9Var) {
+        try {
+            return bs9Var.apply(cursor);
+        } finally {
+            cursor.close();
+        }
     }
 
-    @Override // zde
-    public final int d() {
-        return this.a;
+    public final SQLiteDatabase a() {
+        hu9 hu9Var = this.a;
+        Objects.requireNonNull(hu9Var);
+        pj2 pj2Var = this.c;
+        long e = pj2Var.e();
+        while (true) {
+            try {
+                return hu9Var.getWritableDatabase();
+            } catch (SQLiteDatabaseLockedException e2) {
+                if (pj2Var.e() >= this.d.c + e) {
+                    throw new rgb("Timed out while trying to open db.", e2);
+                }
+                SystemClock.sleep(50L);
+            }
+        }
+    }
+
+    public final Object c(bs9 bs9Var) {
+        SQLiteDatabase a = a();
+        a.beginTransaction();
+        try {
+            Object apply = bs9Var.apply(a);
+            a.setTransactionSuccessful();
+            return apply;
+        } finally {
+            a.endTransaction();
+        }
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.a.close();
+    }
+
+    public final ArrayList d(SQLiteDatabase sQLiteDatabase, ta0 ta0Var, int i) {
+        ArrayList arrayList = new ArrayList();
+        Long b = b(sQLiteDatabase, ta0Var);
+        if (b == null) {
+            return arrayList;
+        }
+        h(sQLiteDatabase.query("events", new String[]{"_id", "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", "product_id", "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{b.toString()}, null, null, null, String.valueOf(i)), new o48((Object) this, (Object) arrayList, (Object) ta0Var, (byte) 9));
+        return arrayList;
+    }
+
+    public final void e(long j, be6 be6Var, String str) {
+        c(new ps0((Object) str, (Object) be6Var, j, (byte) 8));
+    }
+
+    public final Object f(sgb sgbVar) {
+        SQLiteDatabase a = a();
+        pj2 pj2Var = this.c;
+        long e = pj2Var.e();
+        while (true) {
+            try {
+                a.beginTransaction();
+                try {
+                    Object g = sgbVar.g();
+                    a.setTransactionSuccessful();
+                    return g;
+                } finally {
+                    a.endTransaction();
+                }
+            } catch (SQLiteDatabaseLockedException e2) {
+                if (pj2Var.e() >= this.d.c + e) {
+                    throw new rgb("Timed out while trying to acquire the lock.", e2);
+                }
+                SystemClock.sleep(50L);
+            }
+        }
     }
 }

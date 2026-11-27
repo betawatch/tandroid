@@ -1,75 +1,41 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
+import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class r22 extends o39 {
-    public final /* synthetic */ byte f3;
-    public final Paint g3;
-    public final /* synthetic */ d32 h3;
+public final class r22 {
+    public final int a;
+    public final long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r22(d32 d32Var, Context context, wjb wjbVar, byte b) {
-        super(context, wjbVar);
-        this.f3 = b;
-        switch (b) {
-            case 1:
-                this.h3 = d32Var;
-                super(context, wjbVar);
-                this.g3 = new Paint();
-                break;
-            default:
-                this.h3 = d32Var;
-                this.g3 = new Paint();
-                break;
-        }
+    public r22(int i, long j) {
+        this.a = i;
+        this.b = j;
     }
 
-    @Override // o39, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        byte b = this.f3;
-        Paint paint = this.g3;
-        float f = 2.1474836E9f;
-        d32 d32Var = this.h3;
-        switch (b) {
-            case 0:
-                if (d32Var.n == 2 && getChildCount() > 0) {
-                    for (int i = 0; i < getChildCount(); i++) {
-                        if (getChildAt(i).getY() < f) {
-                            f = getChildAt(i).getY();
-                        }
-                    }
-                    paint.setColor(bkb.w0(null, bkb.g5, false));
-                }
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                if (d32Var.n == 1 && getChildCount() > 0) {
-                    for (int i2 = 0; i2 < getChildCount(); i2++) {
-                        if (getChildAt(i2).getY() < f) {
-                            f = getChildAt(i2).getY();
-                        }
-                    }
-                    paint.setColor(bkb.w0(null, bkb.g5, false));
-                }
-                super.dispatchDraw(canvas);
-                break;
+    public static r22 a(Object obj) {
+        if (obj instanceof iv2) {
+            return new r22(2, ((iv2) obj).a);
         }
+        if (obj instanceof TLRPC.User) {
+            return new r22(1, ((TLRPC.User) obj).id);
+        }
+        return null;
     }
 
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.f3) {
-            case 0:
-                if (this.h3.n == 0) {
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return super.onTouchEvent(motionEvent);
+        if (obj == null || r22.class != obj.getClass()) {
+            return false;
+        }
+        r22 r22Var = (r22) obj;
+        return this.b == r22Var.b && this.a == r22Var.a;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(ik8.b(this.a), Long.valueOf(this.b));
     }
 }

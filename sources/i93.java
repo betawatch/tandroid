@@ -1,108 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class i93 implements x56 {
-    public final /* synthetic */ byte a;
+import android.content.DialogInterface;
 
-    @Override // x56
-    public final void invoke(Object obj) {
-        uj ujVar = (uj) obj;
-        switch (this.a) {
-            case 0:
-                ujVar.getClass();
-                break;
-            case 1:
-                ujVar.getClass();
-                break;
-            case 2:
-                ujVar.getClass();
-                break;
-            case 3:
-                ujVar.getClass();
-                break;
-            case 4:
-                ujVar.getClass();
-                break;
-            case 5:
-                ujVar.getClass();
-                break;
-            case 6:
-                ujVar.getClass();
-                break;
-            case 7:
-                ujVar.getClass();
-                break;
-            case 8:
-                ujVar.getClass();
-                break;
-            case 9:
-                ujVar.getClass();
-                break;
-            case 10:
-                ujVar.getClass();
-                break;
-            case 11:
-                ujVar.getClass();
-                break;
-            case 12:
-                ujVar.getClass();
-                break;
-            case 13:
-                ujVar.getClass();
-                break;
-            case 14:
-                ujVar.getClass();
-                break;
-            case 15:
-                ujVar.getClass();
-                break;
-            case 16:
-                ujVar.getClass();
-                break;
-            case 17:
-                ujVar.getClass();
-                break;
-            case 18:
-                ujVar.getClass();
-                break;
-            case 19:
-                ujVar.getClass();
-                break;
-            case 20:
-                ujVar.getClass();
-                break;
-            case 21:
-                ujVar.getClass();
-                break;
-            case 22:
-                ujVar.getClass();
-                break;
-            case 23:
-                ujVar.getClass();
-                break;
-            case 24:
-                ujVar.getClass();
-                break;
-            case 25:
-                ujVar.getClass();
-                break;
-            case 26:
-                ujVar.getClass();
-                break;
-            case 27:
-                ujVar.getClass();
-                break;
-            case 28:
-                ujVar.getClass();
-                break;
-            default:
-                ujVar.getClass();
-                break;
-        }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class i93 implements DialogInterface.OnClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+
+    public /* synthetic */ i93(int i, byte b) {
+        this.a = b;
+        this.b = i;
     }
 
-    public /* synthetic */ i93(tj tjVar, byte b) {
-        this.a = b;
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i) {
+        switch (this.a) {
+            case 0:
+                int i2 = 2 - i;
+                if (i2 != this.b) {
+                    xea.v(i2);
+                    break;
+                } else {
+                    xea.v(-1);
+                    break;
+                }
+            default:
+                int i3 = 2 - i;
+                if (i3 != this.b) {
+                    xea.v(i3);
+                    break;
+                } else {
+                    xea.v(-1);
+                    break;
+                }
+        }
     }
 }

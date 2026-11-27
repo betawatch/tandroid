@@ -1,46 +1,74 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class kp1 implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ t09 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ h19 n;
-    public final /* synthetic */ k27 r;
-    public final /* synthetic */ mu1 s;
+import android.util.SparseIntArray;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    public kp1(mu1 mu1Var, boolean z, boolean z2, int i, boolean z3, t09 t09Var, float f, float f2, h19 h19Var, k27 k27Var) {
-        this.s = mu1Var;
-        this.a = z;
-        this.b = z2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class kp1 implements dic {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ HorizontalScrollView d;
+    public final /* synthetic */ SparseIntArray e;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final /* synthetic */ int[] g;
+
+    public kp1(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.a = atomicBoolean;
+        this.b = linearLayout;
         this.c = i;
-        this.d = z3;
-        this.e = t09Var;
-        this.f = f;
-        this.h = f2;
-        this.n = h19Var;
-        this.r = k27Var;
+        this.d = horizontalScrollView;
+        this.e = sparseIntArray;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.g = iArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.a) {
+    @Override // dic
+    public final void a(int i) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i), true);
+    }
+
+    @Override // dic
+    public final void b(float f, int i, int i2) {
+        HorizontalScrollView horizontalScrollView;
+        if (this.a.get()) {
             return;
         }
-        mu1 mu1Var = this.s;
-        if (mu1Var.Kc != null) {
-            mu1Var.Kc = null;
-            if (this.b) {
-                mu1Var.s6(new jp1(this, this.c, this.d, this.e, this.f, this.h, this.n, (byte) 0));
-            } else {
-                mu1Var.s6(new aj1(this, this.r, (byte) 20));
+        float f2 = -1.0f;
+        float f3 = -1.0f;
+        int i3 = 0;
+        while (true) {
+            LinearLayout linearLayout = this.b;
+            int childCount = linearLayout.getChildCount();
+            horizontalScrollView = this.d;
+            if (i3 >= childCount) {
+                break;
             }
-            mu1Var.G5(true);
+            q39 q39Var = (q39) linearLayout.getChildAt(i3);
+            q39Var.setOutlineProgress(i3 == i ? 1.0f - f : i3 == (i + 1) % this.c ? f : 0.0f);
+            if (i3 == i) {
+                f2 = q39Var.getX() - ((horizontalScrollView.getWidth() - q39Var.getWidth()) / 2.0f);
+            }
+            if (i3 == i + 1) {
+                f3 = q39Var.getX() - ((horizontalScrollView.getWidth() - q39Var.getWidth()) / 2.0f);
+            }
+            i3++;
+        }
+        if (f2 != -1.0f && f3 != -1.0f) {
+            horizontalScrollView.setScrollX((int) qd4.A(f3, f2, f, f2));
+        }
+        SparseIntArray sparseIntArray = this.e;
+        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i + 1, 0) * f) + ((1.0f - f) * sparseIntArray.get(i, 0))), false);
+    }
+
+    @Override // dic
+    public final void c(int i) {
+        if (i == 0) {
+            this.a.set(false);
         }
     }
 }

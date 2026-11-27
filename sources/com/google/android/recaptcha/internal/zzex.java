@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzex extends ccb implements eq4 {
+final class zzex extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ long zzc;
@@ -10,39 +10,39 @@ final class zzex extends ccb implements eq4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzex(zzfp zzfpVar, long j, zzye zzyeVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzex(zzfp zzfpVar, long j, zzye zzyeVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzfpVar;
         this.zzc = j;
         this.zzd = zzyeVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzex zzexVar = new zzex(this.zzb, this.zzc, this.zzd, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzex zzexVar = new zzex(this.zzb, this.zzc, this.zzd, zw2Var);
         zzexVar.zze = obj;
         return zzexVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzex) create((zzgr) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzex) create((zzgr) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        qse.b(obj);
+        ixe.b(obj);
         if (i != 0) {
             return obj;
         }
         zzgr zzgrVar = (zzgr) this.zze;
         zzfp zzfpVar = this.zzb;
-        sw2 c = zzfp.zzf(zzfpVar).zza().c();
+        mx2 c = zzfp.zzf(zzfpVar).zza().c();
         zzew zzewVar = new zzew(this.zzc, zzfpVar, zzgrVar, this.zzd, null);
         this.zza = 1;
-        Object c2 = ppd.c(c, zzewVar, this);
-        bx2 bx2Var = bx2.a;
-        return c2 == bx2Var ? bx2Var : c2;
+        Object c2 = fud.c(c, zzewVar, this);
+        vx2 vx2Var = vx2.a;
+        return c2 == vx2Var ? vx2Var : c2;
     }
 }

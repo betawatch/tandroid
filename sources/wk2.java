@@ -1,37 +1,43 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
+import java.io.IOException;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class wk2 extends b4c {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        b4c.h(new wk2());
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wk2 extends IOException {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public wk2(int i, int i2) {
+        super(r0.toString());
+        StringBuilder sb = new StringBuilder(jn7.s1);
+        sb.append("CodedOutputStream was writing to a flat byte array and ran out of space (pos ");
+        sb.append(i);
+        sb.append(" limit ");
+        sb.append(i2);
+        sb.append(").");
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        view.requestLayout();
+    public /* synthetic */ wk2(IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
     }
 
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        xk2 xk2Var = new xk2(context, wjbVar, (byte) 0);
-        xk2Var.setIsSingleCell(true);
-        xk2Var.setViewType(35);
-        return xk2Var;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public wk2(long j, long j2, int i, IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), indexOutOfBoundsException);
+        Locale locale = Locale.US;
+        StringBuilder o = ik8.o(j, "Pos: ", ", limit: ");
+        o.append(j2);
+        o.append(", len: ");
+        o.append(i);
     }
 
-    @Override // b4c
-    public final boolean e(c4c c4cVar, c4c c4cVar2) {
-        return c4cVar.d == c4cVar2.d;
-    }
-
-    @Override // b4c
-    public final boolean f() {
-        return false;
+    public wk2(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
+        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str), indexOutOfBoundsException);
     }
 }

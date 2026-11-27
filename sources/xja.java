@@ -1,60 +1,26 @@
 // default package
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public class xja extends u26 {
-    public final s33 r;
-    public int s;
-    public float t;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class xja extends ax2 {
+    public String a;
+    public vja b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ yja d;
+    public int e;
 
-    public xja(Context context) {
-        super(context);
-        this.r = s33.f;
-        this.t = 1.0f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xja(yja yjaVar, zw2 zw2Var) {
+        super(zw2Var);
+        this.d = yjaVar;
     }
 
-    @Override // u26, o49
-    public final void g(View view, n49 n49Var) {
-        int j = j(o(), view);
-        int k = k(p(), view);
-        int m = m((int) Math.sqrt((k * k) + (j * j)));
-        if (m > 0) {
-            n49Var.b(-j, -k, m, this.r);
-        }
-        gl.d3(new am6((Object) this, (byte) 25), Math.max(0, m));
-    }
-
-    @Override // u26
-    public final int k(int i, View view) {
-        return super.k(i, view) - this.s;
-    }
-
-    @Override // u26
-    public final int m(int i) {
-        return Math.round(Math.min(super.m(i), 500) * this.t);
-    }
-
-    @Override // u26
-    public final int n(int i) {
-        return Math.round(Math.min(super.n(i), kk7.f2) * this.t);
-    }
-
-    @Override // u26
-    public final void q(n49 n49Var) {
-        PointF a = a(this.a);
-        if (a == null || (a.x == 0.0f && a.y == 0.0f)) {
-            n49Var.d = this.a;
-            h();
-            return;
-        }
-        o49.b(a);
-        this.k = a;
-        this.o = (int) (a.x * 10000.0f);
-        this.p = (int) (a.y * 10000.0f);
-        n49Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.e(null, null, this);
     }
 }

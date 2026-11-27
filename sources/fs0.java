@@ -1,61 +1,81 @@
 // default package
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.io.Serializable;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class fs0 implements x74, zga, bha, ed, n8c {
-    public final /* synthetic */ ss0 a;
-
-    public /* synthetic */ fs0(ss0 ss0Var) {
-        this.a = ss0Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class fs0 implements al1 {
+    @Override // al1
+    public final long a() {
+        return 0L;
     }
 
-    @Override // zga
-    public final int b() {
-        return this.a.n;
+    @Override // al1
+    public final long c() {
+        return 0L;
     }
 
-    @Override // bha
-    public final float c(RecyclerView recyclerView) {
-        return dha.j(recyclerView);
+    @Override // al1
+    public final boolean h() {
+        return true;
     }
 
-    @Override // bha
-    public final RecyclerView h(View view) {
-        ss0 ss0Var = this.a;
-        if (ss0Var.a) {
-            return ((rs0) view).c;
-        }
-        ss0Var.L.getClass();
-        return ((gva) view).a;
+    @Override // al1
+    public final boolean i0(dl1 dl1Var, float f, float f2) {
+        return false;
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.u0((c4c) obj);
+    @Override // al1
+    public final e w() {
+        return null;
     }
 
-    @Override // x74
-    public final void p(int i, float f, float f2, y74 y74Var) {
-        this.a.x0();
+    @Override // al1
+    public final void I(long j) {
     }
 
-    @Override // bha
-    public final /* synthetic */ void t(RecyclerView recyclerView) {
-        de9.d(recyclerView);
+    @Override // al1
+    public final void J(dl1 dl1Var) {
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        ss0 ss0Var = this.a;
-        ss0Var.getClass();
-        ss0Var.presentFragment(new p3c(6, null));
+    @Override // al1
+    public final void X(dl1 dl1Var) {
     }
 
-    @Override // x74
-    public final void F(float f, int i) {
+    @Override // al1
+    public final void j(dl1 dl1Var) {
+    }
+
+    @Override // al1
+    public final void o(dl1 dl1Var) {
+    }
+
+    @Override // al1
+    public final void x(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    }
+
+    @Override // al1
+    public final void B(dl1 dl1Var, int i) {
+    }
+
+    @Override // al1
+    public final void k(dl1 dl1Var, String str) {
+    }
+
+    @Override // al1
+    public final void f0(dl1 dl1Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str) {
+    }
+
+    @Override // al1
+    public final void n(dl1 dl1Var, int i, int i2) {
+    }
+
+    @Override // al1
+    public final void q(dl1 dl1Var, TLRPC.Document document, TLRPC.VideoSize videoSize) {
+    }
+
+    @Override // al1
+    public final void y(dl1 dl1Var, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2) {
     }
 }

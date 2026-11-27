@@ -1,42 +1,121 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class w9f extends vef {
-    private static final w9f zzb;
-    private int zzd;
-    private h6f zze;
-    private int zzf;
-    private int zzg;
-    private int zzh;
-    private int zzi;
-    private long zzj;
-    private dff zzk = rgf.d;
+import android.content.ComponentName;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.util.SparseArray;
 
-    static {
-        w9f w9fVar = new w9f();
-        zzb = w9fVar;
-        vef.e(w9f.class, w9fVar);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class w9f implements Handler.Callback {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ w9f(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    private final boolean a(Message message) {
+        int i = message.arg1;
+        if (Log.isLoggable("MessengerIpcClient", 3)) {
+            StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 30);
+            sb.append("Received response to request: ");
+            sb.append(i);
+            Log.d("MessengerIpcClient", sb.toString());
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0001\u0000\u0001ဉ\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006ဂ\u0005\u0007\u001b", new Object[]{"zzd", "zze", "zzf", c6e.s, "zzg", ie7.w, "zzh", vi2.r, "zzi", eef.h, "zzj", "zzk", h6f.class});
+        ccf ccfVar = (ccf) this.b;
+        synchronized (ccfVar) {
+            SparseArray sparseArray = ccfVar.e;
+            uff uffVar = (uff) sparseArray.get(i);
+            if (uffVar == null) {
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i).length() + 39);
+                sb2.append("Received response for unknown request: ");
+                sb2.append(i);
+                Log.w("MessengerIpcClient", sb2.toString());
+                return true;
+            }
+            sparseArray.remove(i);
+            ccfVar.d();
+            Bundle data = message.getData();
+            if (data.getBoolean("unsupported", false)) {
+                uffVar.c(new w30("Not supported by GmsCore", null));
+                return true;
+            }
+            switch (uffVar.e) {
+                case 0:
+                    if (data.getBoolean("ack", false)) {
+                        uffVar.b(null);
+                        return true;
+                    }
+                    uffVar.c(new w30("Invalid response to one way request", null));
+                    return true;
+                default:
+                    Bundle bundle = data.getBundle("data");
+                    if (bundle == null) {
+                        bundle = Bundle.EMPTY;
+                    }
+                    uffVar.b(bundle);
+                    return true;
+            }
         }
-        if (i2 == 3) {
-            return new w9f();
+    }
+
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        switch (this.a) {
+            case 0:
+                return a(message);
+            default:
+                int i = message.what;
+                if (i == 0) {
+                    aef aefVar = (aef) this.b;
+                    synchronized (aefVar.a) {
+                        o7f o7fVar = (o7f) message.obj;
+                        y9f y9fVar = (y9f) aefVar.a.get(o7fVar);
+                        if (y9fVar != null && y9fVar.a.isEmpty()) {
+                            if (y9fVar.c) {
+                                o7f o7fVar2 = y9fVar.e;
+                                aef aefVar2 = y9fVar.h;
+                                aefVar2.c.removeMessages(1, o7fVar2);
+                                aefVar2.d.K(aefVar2.b, y9fVar);
+                                y9fVar.c = false;
+                                y9fVar.b = (byte) 2;
+                            }
+                            aefVar.a.remove(o7fVar);
+                        }
+                    }
+                } else {
+                    if (i != 1) {
+                        return false;
+                    }
+                    aef aefVar3 = (aef) this.b;
+                    synchronized (aefVar3.a) {
+                        o7f o7fVar3 = (o7f) message.obj;
+                        y9f y9fVar2 = (y9f) aefVar3.a.get(o7fVar3);
+                        if (y9fVar2 != null && y9fVar2.b == 3) {
+                            String valueOf = String.valueOf(o7fVar3);
+                            StringBuilder sb = new StringBuilder(valueOf.length() + 47);
+                            sb.append("Timeout waiting for ServiceConnection callback ");
+                            sb.append(valueOf);
+                            Log.e("GmsClientSupervisor", sb.toString(), new Exception());
+                            ComponentName componentName = y9fVar2.f;
+                            if (componentName == null) {
+                                o7fVar3.getClass();
+                                componentName = null;
+                            }
+                            if (componentName == null) {
+                                String str = o7fVar3.b;
+                                xve.h(str);
+                                componentName = new ComponentName(str, "unknown");
+                            }
+                            y9fVar2.onServiceDisconnected(componentName);
+                        }
+                    }
+                }
+                return true;
         }
-        if (i2 == 4) {
-            return new v8f(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
     }
 }

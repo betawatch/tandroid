@@ -1,127 +1,57 @@
 // default package
 
-import j$.util.Objects;
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.Map;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class po2 extends AbstractSet {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class po2 implements TextWatcher {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ so2 b;
+    public final /* synthetic */ xo2 b;
 
-    public /* synthetic */ po2(so2 so2Var, byte b) {
+    public /* synthetic */ po2(xo2 xo2Var, byte b) {
         this.a = b;
-        this.b = so2Var;
+        this.b = xo2Var;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         byte b = this.a;
-        so2 so2Var = this.b;
+        xo2 xo2Var = this.b;
         switch (b) {
             case 0:
-                so2Var.clear();
+                String obj = editable.toString();
+                boolean isEmpty = TextUtils.isEmpty(xo2Var.L1);
+                xo2Var.L1 = obj;
+                xo2Var.z1.h(0L, xo2Var.o1, 0L, 0L, null, false, obj, isEmpty);
                 break;
             default:
-                so2Var.clear();
+                xo2Var.M1 = editable.toString();
+                xo2Var.A1.g3.O(true);
                 break;
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                Map d = so2Var.d();
-                if (d != null) {
-                    return d.entrySet().contains(obj);
-                }
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    int f = so2Var.f(entry.getKey());
-                    if (f != -1 && bqe.a(so2Var.l(f), entry.getValue())) {
-                        return true;
-                    }
-                }
-                return false;
-            default:
-                return so2Var.containsKey(obj);
-        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                Map d = so2Var.d();
-                return d != null ? d.entrySet().iterator() : new oo2(so2Var, (byte) 1);
-            default:
-                Map d2 = so2Var.d();
-                return d2 != null ? d2.keySet().iterator() : new oo2(so2Var, (byte) 0);
-        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                Map d = so2Var.d();
-                if (d == null) {
-                    if (obj instanceof Map.Entry) {
-                        Map.Entry entry = (Map.Entry) obj;
-                        if (!so2Var.i()) {
-                            int e = so2Var.e();
-                            Object key = entry.getKey();
-                            Object value = entry.getValue();
-                            Object obj2 = so2Var.b;
-                            Objects.requireNonNull(obj2);
-                            int[] iArr = so2Var.c;
-                            Objects.requireNonNull(iArr);
-                            Object[] objArr = so2Var.d;
-                            Objects.requireNonNull(objArr);
-                            Object[] objArr2 = so2Var.e;
-                            Objects.requireNonNull(objArr2);
-                            int c = dsd.c(key, value, e, obj2, iArr, objArr, objArr2);
-                            if (c != -1) {
-                                so2Var.h(c, e);
-                                so2Var.h--;
-                                so2Var.f += 32;
-                                break;
-                            }
-                        }
-                    }
-                } else {
-                    break;
-                }
-                break;
-            default:
-                Map d2 = so2Var.d();
-                if (d2 == null) {
-                    if (so2Var.j(obj) != so2.w) {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-                break;
-        }
-        return true;
+    private final void a(int i, int i2, int i3, CharSequence charSequence) {
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-        }
-        return so2Var.size();
+    private final void b(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void c(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void d(int i, int i2, int i3, CharSequence charSequence) {
     }
 }

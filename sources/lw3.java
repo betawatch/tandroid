@@ -1,266 +1,577 @@
 // default package
 
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.Spanned;
+import android.os.Message;
+import android.util.LongSparseArray;
+import android.util.SparseIntArray;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.messenger.FilesMigrationService;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_feed;
+import org.telegram.ui.FiltersSetupActivity;
+import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class lw3 {
-    public static final Object i = new Object();
-    public static volatile lw3 j;
-    public final ReentrantReadWriteLock a;
-    public final rs b;
-    public volatile byte c;
-    public final Handler d;
-    public final sj e;
-    public final kw3 f;
-    public final boolean g;
-    public final la3 h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class lw3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public lw3(rl4 rl4Var) {
-        ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
-        this.a = reentrantReadWriteLock;
-        this.c = (byte) 3;
-        kw3 kw3Var = rl4Var.a;
-        this.f = kw3Var;
-        boolean z = rl4Var.b;
-        this.g = z;
-        this.h = rl4Var.c;
-        this.d = new Handler(Looper.getMainLooper());
-        this.b = new rs(0);
-        sj sjVar = new sj(this);
-        this.e = sjVar;
-        reentrantReadWriteLock.writeLock().lock();
-        if (!z) {
-            try {
-                this.c = (byte) 0;
-            } catch (Throwable th) {
-                this.a.writeLock().unlock();
-                throw th;
-            }
-        }
-        reentrantReadWriteLock.writeLock().unlock();
-        if (b() == 0) {
-            try {
-                kw3Var.b(new hw3(sjVar));
-            } catch (Throwable th2) {
-                d(th2);
-            }
-        }
+    public /* synthetic */ lw3(n64 n64Var, SurfaceTexture surfaceTexture) {
+        this.a = (byte) 9;
+        this.b = n64Var;
     }
 
-    public static lw3 a() {
-        lw3 lw3Var;
-        synchronized (i) {
-            lw3Var = j;
-            if (!(lw3Var != null)) {
-                throw new IllegalStateException("EmojiCompat is not initialized.\n\nYou must initialize EmojiCompat prior to referencing the EmojiCompat instance.\n\nThe most likely cause of this error is disabling the EmojiCompatInitializer\neither explicitly in AndroidManifest.xml, or by including\nandroidx.emoji2:emoji2-bundled.\n\nAutomatic initialization is typically performed by EmojiCompatInitializer. If\nyou are not expecting to initialize EmojiCompat manually in your application,\nplease check to ensure it has not been removed from your APK's manifest. You can\ndo this in Android Studio using Build > Analyze APK.\n\nIn the APK Analyzer, ensure that the startup entry for\nEmojiCompatInitializer and InitializationProvider is present in\n AndroidManifest.xml. If it is missing or contains tools:node=\"remove\", and you\nintend to use automatic configuration, verify:\n\n  1. Your application does not include emoji2-bundled\n  2. All modules do not contain an exclusion manifest rule for\n     EmojiCompatInitializer or InitializationProvider. For more information\n     about manifest exclusions see the documentation for the androidx startup\n     library.\n\nIf you intend to use emoji2-bundled, please call EmojiCompat.init. You can\nlearn more in the documentation for BundledEmojiCompatConfig.\n\nIf you intended to perform manual configuration, it is recommended that you call\nEmojiCompat.init immediately on application startup.\n\nIf you still cannot resolve this issue, please open a bug with your specific\nconfiguration to help improve error message.");
-            }
-        }
-        return lw3Var;
-    }
-
-    public final int b() {
-        this.a.readLock().lock();
-        try {
-            return this.c;
-        } finally {
-            this.a.readLock().unlock();
-        }
-    }
-
-    public final void c() {
-        if (!(this.g)) {
-            sc8.j("Set metadataLoadStrategy to LOAD_STRATEGY_MANUAL to execute manual loading");
-            return;
-        }
-        if (b() == 1) {
-            return;
-        }
-        this.a.writeLock().lock();
-        try {
-            if (this.c == 0) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object obj;
+        int i;
+        int i2;
+        TLRPC.TL_messages_reportFeedEvents tL_messages_reportFeedEvents;
+        z94 z94Var;
+        TLRPC.Document document;
+        int i3 = 0;
+        switch (this.a) {
+            case 0:
+                nw3 nw3Var = (nw3) this.b;
+                ArrayList arrayList = nw3Var.w;
+                ArrayList arrayList2 = nw3Var.s;
+                ow3 ow3Var = nw3Var.O;
+                zw3 zw3Var = ow3Var.s;
+                int i4 = zw3.C1;
+                ls6 d0 = ls6.d0(zw3Var.a);
+                String str = nw3Var.I;
+                if (!"premium".equalsIgnoreCase(str)) {
+                    if (ow3Var.a == 1 && pv3.d(nw3Var.I)) {
+                        TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                        tL_messages_getStickers.emoticon = nw3Var.I;
+                        tL_messages_getStickers.hash = 0L;
+                        ConnectionsManager.getInstance(zw3Var.a).sendRequest(tL_messages_getStickers, new mw3(nw3Var, str, (byte) 0));
+                        return;
+                    }
+                    String[] F0 = hl.F0();
+                    String[] strArr = nw3Var.K;
+                    if (strArr == null || !Arrays.equals(F0, strArr)) {
+                        ls6.d0(zw3Var.a).O(F0, false);
+                    }
+                    nw3Var.K = F0;
+                    d0.X(F0, nw3Var.I, false, new fu2((Object) nw3Var, (Object) str, (Object) d0, (byte) 8), false, false, false, true, 50);
+                    return;
+                }
+                ArrayList j0 = d0.j0(7, false);
+                nw3Var.y = 0;
+                arrayList2.clear();
+                arrayList.clear();
+                nw3Var.E.clear();
+                nw3Var.n.clear();
+                nw3Var.y++;
+                arrayList2.add(null);
+                arrayList.add(0L);
+                arrayList2.addAll(j0);
+                nw3Var.y = j0.size() + nw3Var.y;
+                nw3Var.J = nw3Var.I;
+                nw3Var.f();
+                dw3 dw3Var = ow3Var.b;
+                int i5 = dw3.q3;
+                dw3Var.A1(0, 0);
+                ow3Var.f.c(false);
+                ow3Var.e.n(false);
                 return;
-            }
-            this.c = (byte) 0;
-            this.a.writeLock().unlock();
-            sj sjVar = this.e;
-            lw3 lw3Var = (lw3) sjVar.b;
-            try {
-                lw3Var.f.b(new hw3(sjVar));
-            } catch (Throwable th) {
-                lw3Var.d(th);
-            }
-        } finally {
-            this.a.writeLock().unlock();
-        }
-    }
-
-    public final void d(Throwable th) {
-        ArrayList arrayList = new ArrayList();
-        this.a.writeLock().lock();
-        try {
-            this.c = (byte) 2;
-            arrayList.addAll(this.b);
-            this.b.clear();
-            this.a.writeLock().unlock();
-            this.d.post(new jw3(arrayList, this.c, th));
-        } catch (Throwable th2) {
-            this.a.writeLock().unlock();
-            throw th2;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x0163, code lost:
-    
-        if (r0 != false) goto L98;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0168, code lost:
-    
-        ((pka) r13).b();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x016e, code lost:
-    
-        return r13;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x0166, code lost:
-    
-        if (r0 == false) goto L104;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0086 A[Catch: all -> 0x016f, TryCatch #0 {all -> 0x016f, blocks: (B:28:0x0054, B:30:0x0075, B:32:0x007f, B:34:0x0082, B:36:0x0086, B:38:0x0096, B:40:0x0099, B:44:0x00a6, B:46:0x00ac, B:51:0x00cb, B:73:0x00d6, B:77:0x00e4, B:78:0x00ee, B:63:0x00ff, B:66:0x0106, B:54:0x010b, B:56:0x0116, B:84:0x011d, B:86:0x0121, B:88:0x0129, B:90:0x012d, B:93:0x0135, B:96:0x0143, B:97:0x0149, B:99:0x0159, B:114:0x0050, B:116:0x005d, B:118:0x0061, B:120:0x006e), top: B:113:0x0050 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final CharSequence e(int i2, int i3, CharSequence charSequence) {
-        int i4;
-        y3c[] y3cVarArr;
-        x5c x5cVar = null;
-        if (!(b() == 1)) {
-            sc8.j("Not initialized yet");
-            return null;
-        }
-        if (i2 < 0) {
-            w26.j("start cannot be negative");
-            return null;
-        }
-        if (i3 < 0) {
-            w26.j("end cannot be negative");
-            return null;
-        }
-        if (!(i2 <= i3)) {
-            w26.j("start should be <= than end");
-            return null;
-        }
-        if (charSequence == null) {
-            return null;
-        }
-        if (!(i2 <= charSequence.length())) {
-            w26.j("start should be < than charSequence length");
-            return null;
-        }
-        if (!(i3 <= charSequence.length())) {
-            w26.j("end should be < than charSequence length");
-            return null;
-        }
-        if (charSequence.length() != 0 && i2 != i3) {
-            lv6 lv6Var = (lv6) this.e.a;
-            lv6Var.getClass();
-            boolean z = charSequence instanceof pka;
-            if (z) {
-                ((pka) charSequence).a();
-            } else {
+            case 1:
+                sw3 sw3Var = (sw3) ((c7) this.b).b;
+                if (sw3Var.n) {
+                    return;
+                }
+                sw3Var.r.setVisibility(8);
+                return;
+            case 2:
+                ww3 ww3Var = (ww3) ((vw3) this.b).b;
+                ArrayList arrayList3 = ww3Var.o;
+                if (arrayList3.isEmpty()) {
+                    return;
+                }
+                ww3Var.l.e(true, 0.0f);
+                int i6 = ww3Var.k + 1;
+                ww3Var.k = i6;
+                if (i6 > arrayList3.size() - 1) {
+                    ww3Var.k = 0;
+                }
+                p39 p39Var = ww3Var.j;
+                p39Var.e((w49) arrayList3.get(ww3Var.k));
+                ww3Var.j = ww3Var.i;
+                ww3Var.i = p39Var;
+                ww3Var.p.invalidate();
+                return;
+            case 3:
+                ((hy3) this.b).a(true, true);
+                return;
+            case 4:
+                n04 n04Var = (n04) this.b;
+                if (n04Var.a0.getEmojiView() != null) {
+                    o24 emojiView = n04Var.a0.getEmojiView();
+                    if (emojiView.g0) {
+                        return;
+                    }
+                    try {
+                        SparseIntArray sparseIntArray = emojiView.S.s;
+                        char[] cArr = jx3.a;
+                        int i7 = sparseIntArray.get(8);
+                        if (i7 > 0) {
+                            emojiView.Q.E0();
+                            emojiView.U(i7);
+                            emojiView.E(i7, hl.L(-9.0f));
+                            emojiView.j(0, null);
+                            return;
+                        }
+                        return;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                return;
+            case 5:
+                n14 n14Var = (n14) this.b;
+                o14 o14Var = n14Var.a;
+                if (o14Var.G.W.G) {
+                    return;
+                }
+                ArrayList arrayList4 = new ArrayList();
+                o14Var.G.W.d(true);
+                o14Var.F(new vx3(n14Var, arrayList4, (byte) 4), arrayList4, true);
+                return;
+            case 6:
+                g14 g14Var = (g14) this.b;
+                g14Var.x.f = true;
+                g14Var.a(true);
+                return;
+            case 7:
+                hl.P3(((c24) this.b).h, true, true);
+                return;
+            case 8:
+                s64 s64Var = (s64) this.b;
+                lo loVar = s64Var.C;
+                Context context = s64Var.e;
+                String str2 = gcc.a;
+                int generateAudioSessionId = j00.e(context).generateAudioSessionId();
+                if (generateAudioSessionId == -1) {
+                    generateAudioSessionId = 0;
+                }
+                loVar.getClass();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper == ((xgb) loVar.c).a.getLooper()) {
+                    obj = loVar.e;
+                } else {
+                    yve.p(myLooper == ((xgb) loVar.b).a.getLooper());
+                    obj = loVar.f;
+                }
+                if (((Integer) obj).intValue() != generateAudioSessionId) {
+                    Integer valueOf = Integer.valueOf(generateAudioSessionId);
+                    loVar.f = valueOf;
+                    zd0 zd0Var = new zd0(loVar, valueOf, (byte) 0);
+                    xgb xgbVar = (xgb) loVar.c;
+                    if (xgbVar.a.getLooper().getThread().isAlive()) {
+                        xgbVar.e(zd0Var);
+                    }
+                    xgb xgbVar2 = s64Var.l.h;
+                    wgb b = xgbVar2.b(40, generateAudioSessionId, 0);
+                    Handler handler = xgbVar2.a;
+                    Message message = b.a;
+                    message.getClass();
+                    handler.sendMessageAtFrontOfQueue(message);
+                    b.a();
+                    return;
+                }
+                return;
+            case 9:
+                s64 s64Var2 = ((n64) this.b).a;
+                s64Var2.q1(null);
+                s64Var2.f1(0, 0);
+                return;
+            case 10:
+                mg8 mg8Var = (mg8) this.b;
                 try {
-                    if (!(charSequence instanceof Spannable)) {
-                        if ((charSequence instanceof Spanned) && ((Spanned) charSequence).nextSpanTransition(i2 - 1, i3 + 1, y3c.class) <= i3) {
-                            x5cVar = new x5c(charSequence);
-                        }
-                        if (x5cVar != null && (y3cVarArr = (y3c[]) x5cVar.b.getSpans(i2, i3, y3c.class)) != null && y3cVarArr.length > 0) {
-                            for (y3c y3cVar : y3cVarArr) {
-                                int spanStart = x5cVar.b.getSpanStart(y3cVar);
-                                int spanEnd = x5cVar.b.getSpanEnd(y3cVar);
-                                if (spanStart != i3) {
-                                    x5cVar.removeSpan(y3cVar);
+                    synchronized (mg8Var) {
+                    }
+                    try {
+                        mg8Var.a.d(mg8Var.c, mg8Var.d);
+                        mg8Var.a(true);
+                        return;
+                    } catch (Throwable th) {
+                        mg8Var.a(true);
+                        throw th;
+                    }
+                } catch (e64 e) {
+                    efd.d("ExoPlayerImplInternal", "Unexpected error delivering message on external thread.", e);
+                    grb.m(e);
+                    return;
+                }
+            case 11:
+                new wqa(((xd5) this.b).getContext()).show();
+                return;
+            case 12:
+                int i8 = 0;
+                q84 q84Var = (q84) this.b;
+                LongSparseArray longSparseArray = q84Var.c;
+                while (longSparseArray.size() > 0) {
+                    int i9 = i8;
+                    long keyAt = longSparseArray.keyAt(i9);
+                    HashMap hashMap = (HashMap) longSparseArray.valueAt(i9);
+                    longSparseArray.removeAt(i9);
+                    ArrayList arrayList5 = new ArrayList(hashMap.keySet());
+                    q84Var.d.addAll(arrayList5);
+                    r4c r4cVar = new r4c((Object) q84Var, keyAt, (Object) arrayList5, (Object) hashMap, (byte) 4);
+                    if (arrayList5.isEmpty()) {
+                        r4cVar.a(new ArrayList());
+                    } else {
+                        jf7 Y = jf7.Y(q84Var.a);
+                        Y.a.c(new cv2(Y, arrayList5, r4cVar, (byte) 24));
+                    }
+                    i8 = 0;
+                }
+                longSparseArray.clear();
+                return;
+            case 13:
+                ((v94) this.b).requestLayout();
+                return;
+            case 14:
+                ((w94) this.b).b();
+                return;
+            case 15:
+                ((da4) this.b).a();
+                return;
+            case 16:
+                String str3 = "feed.likePost";
+                ja4 ja4Var = (ja4) this.b;
+                HashMap hashMap2 = ja4Var.c;
+                ca4 ca4Var = ja4Var.a;
+                String str4 = ca4Var.a;
+                ArrayList arrayList6 = ja4Var.b;
+                ja4Var.h = false;
+                ja4Var.g = false;
+                if (ja4Var.f) {
+                    return;
+                }
+                ja4Var.b();
+                int i10 = yac.t0;
+                for (int i11 = 0; i11 < 4; i11++) {
+                    if (str4.equals(ea4.i(i11))) {
+                        i10 = i11;
+                    }
+                }
+                int g = ea4.g(i10);
+                int size = arrayList6.size();
+                Iterator it = arrayList6.iterator();
+                while (it.hasNext()) {
+                    ha4 ha4Var = (ha4) it.next();
+                    int i12 = g - ha4Var.j;
+                    Integer num = ha4Var.i;
+                    if (i12 - (num != null ? num.intValue() / 1000 : 0) >= 3600) {
+                        ha4Var.toString();
+                        it.remove();
+                        hashMap2.remove(Long.valueOf(ha4Var.c));
+                    }
+                }
+                if (arrayList6.size() < size) {
+                    ja4Var.c();
+                }
+                if (arrayList6.isEmpty()) {
+                    return;
+                }
+                ArrayList arrayList7 = new ArrayList();
+                ArrayList arrayList8 = new ArrayList();
+                int size2 = arrayList6.size();
+                int i13 = 0;
+                while (i13 < size2) {
+                    Object obj2 = arrayList6.get(i13);
+                    i13++;
+                    ha4 ha4Var2 = (ha4) obj2;
+                    int i14 = size2;
+                    (hashMap2.containsKey(Long.valueOf(ha4Var2.c)) ? arrayList8 : arrayList7).add(ha4Var2);
+                    size2 = i14;
+                }
+                arrayList6.clear();
+                arrayList6.addAll(arrayList7);
+                arrayList6.addAll(arrayList8);
+                int min = arrayList7.isEmpty() ? 1 : Math.min(ja4Var.j, arrayList7.size());
+                for (int i15 = 0; i15 < min; i15++) {
+                    ha4 ha4Var3 = (ha4) arrayList6.get(i15);
+                    if (ha4Var3.g.equals("feed.likePost") || ha4Var3.g.equals("feed.dislikePost")) {
+                        min = Math.max(1, i15);
+                    }
+                }
+                ArrayList arrayList9 = new ArrayList(arrayList6.subList(0, min));
+                ja4Var.f = true;
+                int i16 = ja4Var.k + 1;
+                ja4Var.k = i16;
+                bf bfVar = new bf((Object) ja4Var, i16, (Object) arrayList9, (byte) 5);
+                int i17 = -1;
+                for (int i18 = 0; i18 < 4; i18++) {
+                    if (str4.equals(ea4.i(i18))) {
+                        i17 = i18;
+                    }
+                }
+                if (i17 >= 0) {
+                    TLRPC.TL_messages_reportFeedEvents tL_messages_reportFeedEvents2 = new TLRPC.TL_messages_reportFeedEvents();
+                    int size3 = arrayList9.size();
+                    int i19 = 0;
+                    while (i19 < size3) {
+                        Object obj3 = arrayList9.get(i19);
+                        int i20 = i19 + 1;
+                        ha4 ha4Var4 = (ha4) obj3;
+                        long j = ha4Var4.a;
+                        fa4 fa4Var = ha4Var4.f;
+                        i2 = i3;
+                        int i21 = ha4Var4.d;
+                        String str5 = str3;
+                        int i22 = size3;
+                        i = i16;
+                        TLRPC.InputPeer j2 = ea4.j(i17, j, ha4Var4.b, ha4Var4.k, ha4Var4.l);
+                        if (j2 == null) {
+                            ea4.e.postRunnable(new ba4(bfVar, (byte) 1), 0L);
+                        } else {
+                            if (ha4Var4.g.equals(str5) || ha4Var4.g.equals("feed.dislikePost")) {
+                                TL_feed.TL_feed_likePost tL_feed_likePost = new TL_feed.TL_feed_likePost();
+                                TL_feed.TL_feed_dislikePost tL_feed_dislikePost = new TL_feed.TL_feed_dislikePost();
+                                tL_feed_dislikePost.peer = j2;
+                                tL_feed_likePost.peer = j2;
+                                tL_feed_dislikePost.msg_id = i21;
+                                tL_feed_likePost.msg_id = i21;
+                                tL_messages_reportFeedEvents = tL_feed_dislikePost;
+                                if (ha4Var4.g.equals(str5)) {
+                                    tL_messages_reportFeedEvents = tL_feed_likePost;
                                 }
-                                i2 = Math.min(spanStart, i2);
-                                i3 = Math.max(spanEnd, i3);
+                                int[] iArr = {i2};
+                                int i23 = i17;
+                                hl.c3(new l77((Object) ca4Var, (Object) iArr, i23, (Object) tL_messages_reportFeedEvents, (Object) bfVar, (byte) 14));
+                                z94Var = new z94((byte) 1, i23, iArr);
+                                ea4.e.postRunnable(new gp6((Object) ja4Var, i, (Object) z94Var, (Object) arrayList9, (byte) 23), 60000L);
+                                return;
                             }
+                            TLRPC.TL_inputFeedEvent tL_inputFeedEvent = new TLRPC.TL_inputFeedEvent();
+                            tL_inputFeedEvent.peer = j2;
+                            tL_inputFeedEvent.msg_id = i21;
+                            tL_inputFeedEvent.action = ha4Var4.g;
+                            tL_inputFeedEvent.surface = ha4Var4.e;
+                            tL_inputFeedEvent.flags = 96;
+                            if (fa4Var != null) {
+                                String str6 = fa4Var.c;
+                                int i24 = str6 != null ? 4 : i2;
+                                Long l = fa4Var.a;
+                                tL_inputFeedEvent.flags = 96 | i24 | (l != null ? 3 : i2);
+                                tL_inputFeedEvent.recommendation_id = l != null ? l.longValue() : 0L;
+                                tL_inputFeedEvent.recommendation_rank = fa4Var.b;
+                                tL_inputFeedEvent.recommendation_role = str6;
+                            }
+                            String str7 = ha4Var4.h;
+                            if (str7 != null) {
+                                tL_inputFeedEvent.flags |= 8;
+                                tL_inputFeedEvent.kind = str7;
+                            }
+                            Integer num2 = ha4Var4.i;
+                            if (num2 != null) {
+                                tL_inputFeedEvent.flags |= 16;
+                                tL_inputFeedEvent.duration_ms = num2.intValue();
+                            }
+                            tL_inputFeedEvent.event_time = ha4Var4.j;
+                            tL_inputFeedEvent.random_id = ha4Var4.c;
+                            tL_messages_reportFeedEvents2.events.add(tL_inputFeedEvent);
+                            size3 = i22;
+                            str3 = str5;
+                            i3 = i2;
+                            i19 = i20;
+                            i16 = i;
                         }
-                        if (i2 == i3 && i2 < charSequence.length()) {
-                            tx3 tx3Var = new tx3((rd7) ((wtc) lv6Var.b).c);
-                            int codePointAt = Character.codePointAt(charSequence, i2);
-                            x5c x5cVar2 = x5cVar;
-                            int i5 = 0;
-                            loop1: while (true) {
-                                i4 = i2;
-                                while (i2 < i3 && i5 < Integer.MAX_VALUE) {
-                                    int a = tx3Var.a(codePointAt);
-                                    if (a == 1) {
-                                        i4 += Character.charCount(Character.codePointAt(charSequence, i4));
-                                        if (i4 < i3) {
-                                            codePointAt = Character.codePointAt(charSequence, i4);
-                                        }
-                                        i2 = i4;
-                                    } else if (a == 2) {
-                                        i2 += Character.charCount(codePointAt);
-                                        if (i2 < i3) {
-                                            codePointAt = Character.codePointAt(charSequence, i2);
-                                        }
-                                    } else if (a == 3) {
-                                        if (!lv6Var.u(charSequence, i4, i2, ((rd7) tx3Var.f).b)) {
-                                            if (x5cVar2 == null) {
-                                                x5cVar2 = new x5c((Spannable) new SpannableString(charSequence));
-                                            }
-                                            x5cVar2.setSpan(new y3c(((rd7) tx3Var.f).b), i4, i2, 33);
-                                            i5++;
-                                        }
+                    }
+                    i = i16;
+                    i2 = i3;
+                    tL_messages_reportFeedEvents = tL_messages_reportFeedEvents2;
+                    int[] iArr2 = {i2};
+                    int i232 = i17;
+                    hl.c3(new l77((Object) ca4Var, (Object) iArr2, i232, (Object) tL_messages_reportFeedEvents, (Object) bfVar, (byte) 14));
+                    z94Var = new z94((byte) 1, i232, iArr2);
+                    ea4.e.postRunnable(new gp6((Object) ja4Var, i, (Object) z94Var, (Object) arrayList9, (byte) 23), 60000L);
+                    return;
+                }
+                ea4.e.postRunnable(new ba4(bfVar, false ? 1 : 0), 0L);
+                i = i16;
+                z94Var = null;
+                ea4.e.postRunnable(new gp6((Object) ja4Var, i, (Object) z94Var, (Object) arrayList9, (byte) 23), 60000L);
+                return;
+            case 17:
+                ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
+                return;
+            case 18:
+                ic4 ic4Var = (ic4) this.b;
+                ic4Var.c();
+                try {
+                    ic4Var.c.executeFast("DELETE FROM paths WHERE 1").stepThis().dispose();
+                    ic4Var.c.executeFast("DELETE FROM paths_by_dialog_id WHERE 1").stepThis().dispose();
+                    return;
+                } catch (Exception e2) {
+                    cc4.g(e2, true);
+                    return;
+                }
+            case 19:
+                TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.b;
+                ArrayList arrayList10 = aob.F;
+                int size4 = arrayList10.size();
+                for (int i25 = 0; i25 < size4; i25++) {
+                    TLRPC.TL_theme tL_theme2 = ((znb) arrayList10.get(i25)).G;
+                    if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
+                        TLRPC.Document document2 = tL_theme2.document;
+                        if (document2 == null || (document = tL_theme.document) == null) {
+                            return;
+                        }
+                        document2.file_reference = document.file_reference;
+                        aob.w1(true, false);
+                        return;
+                    }
+                }
+                return;
+            case 20:
+                rd4 rd4Var = (rd4) this.b;
+                FilesMigrationService.d = false;
+                FilesMigrationService filesMigrationService = (FilesMigrationService) rd4Var.b;
+                filesMigrationService.stopForeground(true);
+                filesMigrationService.stopSelf();
+                return;
+            case 21:
+                ((je4) this.b).i0(true);
+                return;
+            case 22:
+                ((he4) this.b).a.getBackground().setState(new int[0]);
+                return;
+            case 23:
+                fg4 fg4Var = (fg4) ((eg4) this.b).g;
+                ArrayList arrayList11 = fg4Var.h;
+                if (yac.h(yac.t0).p()) {
+                    return;
+                }
+                int i26 = 0;
+                while (i26 < arrayList11.size()) {
+                    if (((bg4) arrayList11.get(i26)).e && i26 != 0) {
+                        t20 t20Var = fg4Var.J;
+                        fg4 fg4Var2 = (fg4) t20Var.e;
+                        ArrayList arrayList12 = fg4Var2.h;
+                        SparseIntArray sparseIntArray2 = fg4Var2.m0;
+                        int size5 = arrayList12.size();
+                        if (i26 >= 0 && i26 < size5) {
+                            ArrayList T0 = uc7.s1(yac.t0).T0();
+                            int i27 = sparseIntArray2.get(i26);
+                            int i28 = ((bg4) arrayList12.get(i26)).a;
+                            for (int i29 = i26 - 1; i29 >= 0; i29--) {
+                                sparseIntArray2.put(i29 + 1, sparseIntArray2.get(i29));
+                            }
+                            ac7 ac7Var = (ac7) T0.remove(i26);
+                            ac7Var.f = 0;
+                            T0.add(0, ac7Var);
+                            sparseIntArray2.put(0, i27);
+                            arrayList12.add(0, (bg4) arrayList12.remove(i26));
+                            ((bg4) arrayList12.get(0)).a = i28;
+                            for (int i30 = 0; i30 <= i26; i30++) {
+                                ((bg4) arrayList12.get(i30)).a = i30;
+                                ((ac7) T0.get(i30)).f = i30;
+                            }
+                            int i31 = 0;
+                            while (i31 <= i26) {
+                                if (fg4Var2.L == i31) {
+                                    int i32 = i31 == i26 ? 0 : i31 + 1;
+                                    fg4Var2.M = i32;
+                                    fg4Var2.L = i32;
+                                }
+                                if (fg4Var2.s0 == i31) {
+                                    int i33 = i31 == i26 ? 0 : i31 + 1;
+                                    fg4Var2.t0 = i33;
+                                    fg4Var2.s0 = i33;
+                                }
+                                i31++;
+                            }
+                            t20Var.j(i26, 0);
+                            fg4Var2.K.p(((bg4) arrayList12.get(i26)).a, i28);
+                            fg4Var2.o();
+                            fg4Var2.E = true;
+                            fg4Var2.G.setItemAnimator(fg4Var2.u0);
+                        }
+                        fg4Var.G.x0(0);
+                        fg4Var.g();
+                        return;
+                    }
+                    i26++;
+                }
+                return;
+            case 24:
+                yg4 yg4Var = (yg4) this.b;
+                hl.r(yg4Var.o0);
+                yg4Var.a.a(false, true);
+                return;
+            case 25:
+                yg4 yg4Var2 = ((mg4) this.b).a;
+                yg4Var2.h(yg4Var2.F, yg4Var2.G, yg4Var2.I, yg4Var2.H, yg4Var2.E, yg4Var2.K, yg4Var2.x, false);
+                return;
+            case 26:
+                ((FiltersSetupActivity) ((gu) this.b).g3).getMessagesController().q3();
+                return;
+            case 27:
+                eh4 eh4Var = (eh4) this.b;
+                eh4Var.s.a();
+                eh4Var.n.invalidate();
+                eh4Var.I.f0(true);
+                return;
+            case 28:
+                FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) ((eg4) this.b).g;
+                if (!yac.h(yac.t0).p()) {
+                    ArrayList T02 = filtersSetupActivity.getMessagesController().T0();
+                    int i34 = 0;
+                    while (true) {
+                        if (i34 < T02.size()) {
+                            if (!((ac7) T02.get(i34)).d() || i34 == 0) {
+                                i34++;
+                            } else {
+                                FiltersSetupActivity filtersSetupActivity2 = filtersSetupActivity.b.e;
+                                ArrayList arrayList13 = filtersSetupActivity2.getMessagesController().G0;
+                                if (i34 >= 0 && i34 < arrayList13.size()) {
+                                    arrayList13.add(0, (ac7) arrayList13.remove(i34));
+                                    for (int i35 = 0; i35 <= i34; i35++) {
+                                        ((ac7) arrayList13.get(i35)).f = i35;
                                     }
+                                    filtersSetupActivity2.e = true;
+                                    filtersSetupActivity2.f0(true);
                                 }
-                            }
-                            if (tx3Var.a == 2 && ((rd7) tx3Var.e).b != null && ((tx3Var.c > 1 || tx3Var.d()) && i5 < Integer.MAX_VALUE && !lv6Var.u(charSequence, i4, i2, ((rd7) tx3Var.e).b))) {
-                                if (x5cVar2 == null) {
-                                    x5cVar2 = new x5c(charSequence);
+                                filtersSetupActivity.a.x0(0);
+                                try {
+                                    filtersSetupActivity.fragmentView.performHapticFeedback(3, 1);
+                                } catch (Exception unused2) {
                                 }
-                                x5cVar2.setSpan(new y3c(((rd7) tx3Var.e).b), i4, i2, 33);
-                            }
-                            if (x5cVar2 != null) {
-                                return x5cVar2.b;
+                                d31.b0(filtersSetupActivity).J(R.raw.filter_reorder, hl.S2(ob6.a0("LimitReachedReorderFolder", null, 2131748698, ob6.M0(2131750772, null))), ob6.M0(2131746762, null), 5000, false, new bh4(filtersSetupActivity, (byte) 2)).j();
                             }
                         }
                     }
-                } finally {
-                    if (z) {
-                        ((pka) charSequence).b();
-                    }
                 }
-            }
-            x5cVar = new x5c((Spannable) charSequence);
-            if (x5cVar != null) {
-                while (r6 < r5) {
-                }
-            }
-            if (i2 == i3) {
-            }
+                filtersSetupActivity.e0(null);
+                return;
+            default:
+                ((CancellationSignal) this.b).cancel();
+                return;
         }
-        return charSequence;
     }
 
-    public final void f(iw3 iw3Var) {
-        kre.a(iw3Var, "initCallback cannot be null");
-        this.a.writeLock().lock();
-        try {
-            if (this.c == 1 || this.c == 2) {
-                this.d.post(new jw3(Arrays.asList(iw3Var), this.c, null));
-            } else {
-                this.b.add(iw3Var);
-            }
-        } finally {
-            this.a.writeLock().unlock();
-        }
+    public /* synthetic */ lw3(c74 c74Var, mg8 mg8Var) {
+        this.a = (byte) 10;
+        this.b = mg8Var;
+    }
+
+    public /* synthetic */ lw3(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 }

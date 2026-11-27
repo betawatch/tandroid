@@ -1,25 +1,65 @@
 // default package
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
-import j$.util.Objects;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class vo {
-    public static OnBackInvokedDispatcher a(Activity activity) {
-        return activity.getOnBackInvokedDispatcher();
+public final /* synthetic */ class vo implements OnBackInvokedCallback {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ vo(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public static OnBackInvokedCallback b(Object obj, bp bpVar) {
-        Objects.requireNonNull(bpVar);
-        uo uoVar = new uo(bpVar, (byte) 0);
-        zf.a(obj).registerOnBackInvokedCallback(1000000, uoVar);
-        return uoVar;
-    }
-
-    public static void c(Object obj, Object obj2) {
-        zf.a(obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+    public final void onBackInvoked() {
+        byte b = this.a;
+        Object obj = this.b;
+        switch (b) {
+            case 0:
+                ((cp) obj).r();
+                break;
+            case 1:
+                ((sr4) obj).invoke();
+                break;
+            case 2:
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                Drawable[] drawableArr = PhotoViewer.d9;
+                Activity activity = photoViewer.E;
+                if (!(activity instanceof LaunchActivity)) {
+                    if (photoViewer.V0()) {
+                        photoViewer.A(true, false);
+                        break;
+                    }
+                } else {
+                    ((LaunchActivity) activity).onBackPressed();
+                    break;
+                }
+                break;
+            case 3:
+                ((rbb) obj).K();
+                break;
+            case 4:
+                lcb lcbVar = (lcb) obj;
+                LaunchActivity launchActivity = LaunchActivity.H1;
+                if (launchActivity == null) {
+                    lcbVar.p();
+                    break;
+                } else {
+                    launchActivity.onBackPressed();
+                    break;
+                }
+            case 5:
+                ((Runnable) obj).run();
+                break;
+            default:
+                ((xjc) obj).run();
+                break;
+        }
     }
 }

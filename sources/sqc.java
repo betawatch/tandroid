@@ -1,132 +1,209 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.regex.Pattern;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a;
+import android.animation.ValueAnimator;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class sqc {
-    public static final Pattern a = Pattern.compile("^(.+_\\d+_.+_v\\d+(_debug)?\\.jpg|-?\\d+_-?\\d+\\.jpg|wallpaper_thumb_-?\\d+\\.png)$");
-    public static final Object b = new Object();
-    public static volatile File c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class sqc extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final FrameLayout c;
+    public final FrameLayout d;
+    public final FrameLayout e;
+    public qu2 f;
+    public boolean h;
+    public boolean n;
+    public ValueAnimator r;
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x005c, code lost:
-    
-        if (r1 == false) goto L36;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean a(File file, File file2) {
-        boolean z = false;
-        if (file == null) {
-            return false;
-        }
-        if (file.equals(file2)) {
-            return true;
-        }
-        synchronized (b) {
-            File file3 = new File(file2.getParentFile(), file2.getName() + ".tmp");
-            try {
-                FileInputStream fileInputStream = new FileInputStream(file);
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(file3);
-                    try {
-                        fileOutputStream.getChannel().transferFrom(fileInputStream.getChannel(), 0L, fileInputStream.getChannel().size());
-                        fileOutputStream.getFD().sync();
-                        fileOutputStream.close();
-                        fileInputStream.close();
-                        z = file3.renameTo(file2);
-                    } finally {
-                    }
-                } finally {
-                }
-            } finally {
-                try {
-                    return z;
-                } finally {
-                }
+    public sqc(Context context, String str) {
+        super(context);
+        ActivityManager activityManager;
+        addView(new kqc(context, str), tre.e(-1, -1, 17));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        frameLayout.setBackground(aob.b0(hl.L(20.0f), -1));
+        frameLayout.setCameraDistance(hl.L(8000.0f));
+        addView(frameLayout, tre.d(jn7.o3, 244.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.d = frameLayout2;
+        frameLayout.addView(frameLayout2, tre.c(-1.0f, -1));
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        frameLayout2.addView(frameLayout3, tre.d(jn7.t2, 164.0f, 49, 0.0f, 24.0f, 0.0f, 0.0f));
+        final byte b = 0;
+        ry8 c = sy8.c("ton://transfer/".concat(str), 768, r44.d, 1.0f, new ColorDrawable(0));
+        frameLayout3.addView(new vl4(context, c), tre.c(-1.0f, -1));
+        float f = c == null ? 0.0f : c.k / c.b;
+        if (f > 0.0f) {
+            if (xea.o() == 0 || i86.f() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608) {
+                ImageView imageView = new ImageView(context);
+                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                imageView.setImageResource(R.drawable.mini_gram_72);
+                int round = Math.round(f * 164.0f);
+                frameLayout3.addView(imageView, tre.e(round, round, 17));
+            } else {
+                int round2 = Math.round(f * 164.0f * 1.35f);
+                frameLayout3.addView(new itc(context), tre.e(round2, round2, 17));
             }
         }
-        return z;
-    }
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setText(ob6.M0(2131742803, null));
+        textView.setTextColor(-15556886);
+        textView.setTextSize(1, 14.0f);
+        textView.setGravity(17);
+        textView.setCompoundDrawablePadding(hl.L(4.0f));
+        textView.setTypeface(hl.n1("fonts/rmedium.ttf"));
+        textView.setPadding(hl.L(10.0f), 0, hl.L(12.0f), 0);
+        int L = hl.L(18.0f);
+        textView.setBackground(aob.i0(L, L, L, L, -984578, -1903620, -1903620));
+        Drawable e = c00.e(context, R.drawable.wallet_copy);
+        e.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
+        e.setBounds(0, 0, hl.L(14.0f), hl.L(14.0f));
+        textView.setCompoundDrawables(e, null, null, null);
+        iye.a(textView);
+        frameLayout2.addView(textView, tre.d(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
+        FrameLayout frameLayout4 = new FrameLayout(context);
+        this.e = frameLayout4;
+        frameLayout4.setVisibility(4);
+        frameLayout4.setRotationY(180.0f);
+        frameLayout.addView(frameLayout4, tre.c(-1.0f, -1));
+        TextView textView2 = new TextView(context);
+        String replace = str.replace(" ", "");
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        int i = 0;
+        int i2 = 0;
+        while (i < replace.length()) {
+            if (i2 > 0) {
+                spannableStringBuilder.append(i2 % 3 == 0 ? '\n' : ' ');
+            }
+            int length = spannableStringBuilder.length();
+            int i3 = i + 4;
+            spannableStringBuilder.append((CharSequence) replace, i, Math.min(i3, replace.length()));
+            if ((i2 & 1) != 0) {
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(-7434605), length, spannableStringBuilder.length(), 33);
+            }
+            i2++;
+            i = i3;
+        }
+        textView2.setText(spannableStringBuilder);
+        textView2.setTextColor(-16777216);
+        textView2.setTextSize(1, 18.0f);
+        textView2.setTypeface(uqc.r0(context));
+        textView2.setGravity(17);
+        textView2.setIncludeFontPadding(false);
+        textView2.setMaxLines(4);
+        textView2.setLineSpacing(0.0f, 1.0f);
+        TextView l = ik8.l(this.e, textView2, tre.d(-1, 112.0f, 55, 8.0f, 32.0f, 8.0f, 0.0f), context);
+        l.setText(ob6.M0(2131742851, null));
+        l.setTextColor(-15556886);
+        l.setTextSize(1, 14.0f);
+        l.setTypeface(hl.n1("fonts/rmedium.ttf"));
+        l.setGravity(17);
+        l.setCompoundDrawablePadding(hl.L(3.0f));
+        Drawable mutate = context.getResources().getDrawable(R.drawable.msg_text_check).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
+        mutate.setBounds(0, 0, hl.L(16.0f), hl.L(16.0f));
+        l.setCompoundDrawables(mutate, null, null, null);
+        TextView l2 = ik8.l(this.e, l, tre.d(-2, 28.0f, 49, 0.0f, 149.0f, 0.0f, 0.0f), context);
+        this.b = l2;
+        l2.setText(ob6.M0(2131742644, null));
+        l2.setTextColor(-15556886);
+        l2.setTextSize(1, 14.0f);
+        l2.setTypeface(hl.n1("fonts/rmedium.ttf"));
+        l2.setGravity(17);
+        l2.setPadding(hl.L(12.0f), 0, hl.L(12.0f), 0);
+        int L2 = hl.L(18.0f);
+        l2.setBackground(aob.i0(L2, L2, L2, L2, -984578, -1903620, -1903620));
+        iye.a(l2);
+        this.e.addView(l2, tre.d(-2, 28.0f, 49, 0.0f, 202.0f, 0.0f, 0.0f));
+        View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: rqc
+            public final /* synthetic */ sqc b;
 
-    public static File b(String str) {
-        File file = c;
-        if (file == null) {
-            file = new File(a.h(), "wallpaper");
-            file.mkdirs();
-            c = file;
-        }
-        if (str == null) {
-            return new File(file, ".none");
-        }
-        File file2 = new File(file, str);
-        if (file2.exists()) {
-            return file2;
-        }
-        synchronized (b) {
-            File file3 = new File(a.h(), str);
-            return (!file3.isFile() || file2.exists() || file3.renameTo(file2)) ? file2 : file3;
-        }
-    }
+            {
+                this.b = this;
+            }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x004a, code lost:
-    
-        if (r0 == false) goto L28;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean c(Bitmap bitmap, Bitmap.CompressFormat compressFormat, File file) {
-        boolean z = false;
-        if (bitmap == null) {
-            return false;
-        }
-        synchronized (b) {
-            File file2 = new File(file.getParentFile(), file.getName() + ".tmp");
-            try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file2);
-                try {
-                    if (!bitmap.compress(compressFormat, 87, fileOutputStream)) {
-                        fileOutputStream.close();
-                        return false;
-                    }
-                    fileOutputStream.flush();
-                    fileOutputStream.getFD().sync();
-                    fileOutputStream.close();
-                    z = file2.renameTo(file);
-                } finally {
-                }
-            } finally {
-                try {
-                    return z;
-                } finally {
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b2 = b;
+                sqc sqcVar = this.b;
+                switch (b2) {
+                    case 0:
+                        if (!sqcVar.h && !sqcVar.n) {
+                            qu2 qu2Var = sqcVar.f;
+                            if (qu2Var != null) {
+                                qu2Var.run();
+                            }
+                            sqcVar.a(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        sqcVar.a(false);
+                        break;
                 }
             }
-        }
+        };
+        frameLayout3.setOnClickListener(onClickListener);
+        this.a.setOnClickListener(onClickListener);
+        final byte b2 = 1;
+        l2.setOnClickListener(new View.OnClickListener(this) { // from class: rqc
+            public final /* synthetic */ sqc b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                byte b22 = b2;
+                sqc sqcVar = this.b;
+                switch (b22) {
+                    case 0:
+                        if (!sqcVar.h && !sqcVar.n) {
+                            qu2 qu2Var = sqcVar.f;
+                            if (qu2Var != null) {
+                                qu2Var.run();
+                            }
+                            sqcVar.a(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        sqcVar.a(false);
+                        break;
+                }
+            }
+        });
     }
 
-    public static File d(String str) {
-        String str2;
-        if (TextUtils.isEmpty(str)) {
-            str2 = null;
-        } else {
-            str2 = Utilities.a(str) + ".wp";
+    public final void a(boolean z) {
+        if (this.h == z || this.n) {
+            return;
         }
-        return b(str2);
-    }
-
-    public static File e(String str) {
-        if (TextUtils.isEmpty(str)) {
-            str = null;
-        }
-        return b(str);
+        this.n = true;
+        this.h = z;
+        FrameLayout frameLayout = this.c;
+        frameLayout.setLayerType(2, null);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(frameLayout.getRotationY(), z ? 180.0f : 0.0f);
+        this.r = ofFloat;
+        ofFloat.setDuration(420L);
+        this.r.setInterpolator(k43.h);
+        this.r.addUpdateListener(new pzb(this, (byte) 12));
+        this.r.addListener(new omb(this, (byte) 26));
+        this.r.start();
     }
 }

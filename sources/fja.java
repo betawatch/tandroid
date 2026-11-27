@@ -1,341 +1,192 @@
 // default package
 
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.DashPathEffect;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.text.TextPaint;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.tgnet.TLObject;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fja extends View {
-    public float E;
-    public int F;
-    public String[] G;
-    public int[] H;
-    public Drawable[] I;
-    public int J;
-    public int K;
-    public float L;
-    public final lm M;
-    public final lm N;
-    public eja O;
-    public final wjb P;
-    public final i66 a;
-    public final Paint b;
-    public final Paint c;
-    public final TextPaint d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
-    public int s;
-    public boolean w;
-    public boolean x;
-    public float y;
+public final class fja extends FrameLayout {
+    public final de0 a;
+    public final TextView b;
+    public final a88 c;
+    public final View d;
+    public final og2 e;
+    public final FrameLayout f;
+    public AnimatorSet h;
+    public r47 n;
+    public final /* synthetic */ kja r;
 
-    public fja(Context context, wjb wjbVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fja(kja kjaVar, Context context) {
         super(context);
-        this.s = -1;
-        this.K = TLObject.FLAG_31;
-        s33 s33Var = s33.f;
-        this.M = new lm(120L, this, s33Var);
-        this.N = new lm(150L, this, s33Var);
-        this.P = wjbVar;
-        this.b = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStrokeWidth(gl.L(2.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        textPaint.setTextSize(gl.L(13.0f));
-        this.a = new i66(this, (byte) 2);
+        this.r = kjaVar;
+        setWillNotDraw(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.f = frameLayout;
+        addView(frameLayout, tre.c(-1.0f, -1));
+        de0 de0Var = new de0(context);
+        this.a = de0Var;
+        de0Var.getImageReceiver().G0 = true;
+        de0Var.getImageReceiver().H0 = true;
+        frameLayout.addView(de0Var, tre.c(-1.0f, -1));
+        a88 a88Var = new a88(context, (byte) 1);
+        a88Var.b = new RectF();
+        this.c = a88Var;
+        a88Var.setWillNotDraw(false);
+        a88Var.setPadding(hl.L(5.0f), 0, hl.L(5.0f), 0);
+        frameLayout.addView(a88Var, tre.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.play_mini_video);
+        a88Var.addView(imageView, tre.e(-2, -2, 19));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextColor(-1);
+        textView.setTypeface(hl.o());
+        textView.setTextSize(1, 12.0f);
+        textView.setImportantForAccessibility(2);
+        a88Var.addView(textView, tre.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
+        View view = new View(context);
+        this.d = view;
+        view.setBackgroundDrawable(aob.L0(false));
+        addView(view, tre.c(-1.0f, -1));
+        og2 og2Var = new og2(21, null, context);
+        this.e = og2Var;
+        og2Var.setVisibility(4);
+        og2Var.b(-1, aob.Ci, aob.k7);
+        og2Var.setDrawUnchecked(false);
+        og2Var.setDrawBackgroundAsArc(1);
+        addView(og2Var, tre.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setOption(int i) {
-        if (this.J != i) {
-            gl.W3(this);
+    @Override // android.view.View
+    public final void clearAnimation() {
+        super.clearAnimation();
+        AnimatorSet animatorSet = this.h;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.h = null;
         }
-        this.J = i;
-        eja ejaVar = this.O;
-        if (ejaVar != null) {
-            ejaVar.k(i);
-        }
-        invalidate();
-    }
-
-    public final void b(int i, Drawable[] drawableArr, String... strArr) {
-        this.G = strArr;
-        this.I = drawableArr;
-        this.J = i;
-        this.H = new int[strArr.length];
-        int i2 = 0;
-        while (true) {
-            if (i2 >= this.G.length) {
-                break;
-            }
-            this.H[i2] = (int) Math.ceil(this.d.measureText(r7[i2]));
-            i2++;
-        }
-        Drawable[] drawableArr2 = this.I;
-        if (drawableArr2 != null) {
-            for (Drawable drawable : drawableArr2) {
-                drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-            }
-        }
-        requestLayout();
-    }
-
-    public int getSelectedIndex() {
-        return this.J;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        int i;
-        float f;
-        float f2;
-        int i2;
-        Canvas canvas2 = canvas;
-        boolean z = false;
-        float e = this.M.e(false, this.J);
-        float f3 = 0.0f;
-        float f4 = 1.0f;
-        float e2 = this.N.e(false, this.w ? 1.0f : 0.0f);
-        int i3 = 2;
-        int L = gl.L(11.0f) + (getMeasuredHeight() / 2);
-        int i4 = 0;
-        while (true) {
-            int length = this.G.length;
-            int i5 = this.n;
-            int i6 = this.r;
-            wjb wjbVar = this.P;
-            Paint paint = this.b;
-            if (i4 >= length) {
-                int i7 = i6 + (this.h << 1);
-                int i8 = this.f;
-                float f5 = ((i7 + i8) * e) + i5 + (i8 / 2);
-                int i9 = bkb.M6;
-                paint.setColor(bm2.o(bkb.v0(i9, wjbVar), 80));
-                float f6 = L;
-                canvas2.drawCircle(f5, f6, gl.L(e2 * 12.0f), paint);
-                paint.setColor(bkb.v0(i9, wjbVar));
-                canvas2.drawCircle(f5, f6, gl.L(6.0f), paint);
+        if (!this.e.a.q) {
+            de0 de0Var = this.a;
+            if (de0Var.getImageReceiver().B() && de0Var.getImageReceiver().i1 == 1.0f && !PhotoViewer.P0(this.n)) {
                 return;
             }
-            int i10 = i6 + (this.h << 1);
-            int i11 = this.f;
-            int i12 = (i11 / i3) + ((i10 + i11) * i4) + i5;
-            float f7 = i4;
-            float f8 = f7 - e;
-            boolean z2 = z;
-            float max = Math.max(f3, f4 - Math.abs(f8));
-            float a = moe.a((e - f7) + f4, f3, f4);
-            int v0 = bkb.v0(bkb.L6, wjbVar);
-            float f9 = f4;
-            int v02 = bkb.v0(bkb.M6, wjbVar);
-            int i13 = this.K;
-            int i14 = i3;
-            int f10 = bm2.f(a, v0, bkb.p1((i13 == Integer.MIN_VALUE || i4 > i13) ? f9 : 0.5f, v02));
-            paint.setColor(f10);
-            Paint paint2 = this.c;
-            paint2.setColor(f10);
-            float f11 = L;
-            canvas2.drawCircle(i12, f11, gl.U1(max, this.f / 2, gl.L(6.0f)), paint);
-            if (i4 != 0) {
-                int i15 = (i12 - (this.f / 2)) - this.h;
-                int i16 = this.r;
-                int i17 = i15 - i16;
-                f = 3.0f;
-                int i18 = this.s;
-                if (i18 == -1 || i4 - 1 < i18) {
-                    i = i12;
-                    float f12 = f8 - f9;
-                    float a2 = moe.a(f9 - Math.abs(f12), 0.0f, f9);
-                    int L2 = (int) (i16 - (gl.L(3.0f) * moe.a(f9 - Math.min(Math.abs(f8), Math.abs(f12)), 0.0f, f9)));
-                    f9 = 1.0f;
-                    canvas2 = canvas;
-                    canvas2.drawRect((int) ((gl.L(3.0f) * a2) + i17), L - gl.L(1.0f), L2 + r2, gl.L(1.0f) + L, paint);
-                } else {
-                    int L3 = gl.L(3.0f) + i17;
-                    int L4 = (i16 - gl.L(3.0f)) / gl.L(13.0f);
-                    if (this.e != L4) {
-                        i2 = L3;
-                        i = i12;
-                        float[] fArr = new float[i14];
-                        fArr[z2 ? 1 : 0] = gl.L(6.0f);
-                        fArr[1] = (r15 - (gl.L(8.0f) * L4)) / (L4 - 1);
-                        paint2.setPathEffect(new DashPathEffect(fArr, 0.0f));
-                        this.e = L4;
-                    } else {
-                        i2 = L3;
-                        i = i12;
-                    }
-                    canvas2 = canvas;
-                    canvas2.drawLine(gl.L(f9) + i2, f11, (i2 + r15) - gl.L(f9), f11, paint2);
-                }
-            } else {
-                i = i12;
-                f = 3.0f;
-            }
-            int i19 = this.H[i4];
-            String str = this.G[i4];
-            int f13 = bm2.f(max, bkb.v0(bkb.x6, wjbVar), bkb.v0(bkb.m6, wjbVar));
-            TextPaint textPaint = this.d;
-            textPaint.setColor(f13);
-            if (this.I != null) {
-                canvas2.save();
-                if (i4 == 0) {
-                    canvas2.translate(gl.L(12.0f), gl.L(15.5f));
-                } else if (i4 == this.G.length - 1) {
-                    canvas2.translate(((getMeasuredWidth() - i19) - gl.L(22.0f)) - gl.L(10.0f), gl.L(28.0f) - gl.L(12.5f));
-                } else {
-                    canvas2.translate((i - (i19 / 2)) - gl.L(10.0f), gl.L(28.0f) - gl.L(12.5f));
-                }
-                this.I[i4].setColorFilter(textPaint.getColor(), PorterDuff.Mode.MULTIPLY);
-                this.I[i4].draw(canvas2);
-                canvas2.restore();
-                canvas2.save();
-                f2 = 0.0f;
-                canvas2.translate((this.I[i4].getIntrinsicWidth() / 2.0f) - gl.L(i4 == 0 ? f : 2.0f), 0.0f);
-            } else {
-                f2 = 0.0f;
-            }
-            if (i4 == 0) {
-                canvas2.drawText(str, gl.L(22.0f), gl.L(28.0f), textPaint);
-            } else if (i4 == this.G.length - 1) {
-                canvas2.drawText(str, (getMeasuredWidth() - i19) - gl.L(22.0f), gl.L(28.0f), textPaint);
-            } else {
-                canvas2.drawText(str, i - (i19 / 2), gl.L(28.0f), textPaint);
-            }
-            if (this.I != null) {
-                canvas2.restore();
-            }
-            i4++;
-            f3 = f2;
-            z = z2 ? 1 : 0;
-            f4 = f9;
-            i3 = 2;
         }
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.r.n);
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.a.e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(74.0f), TLObject.FLAG_30));
-        this.f = gl.L(6.0f);
-        this.h = gl.L(2.0f);
-        this.n = gl.L(22.0f);
-        int measuredWidth = getMeasuredWidth();
-        int i3 = this.f;
-        String[] strArr = this.G;
-        this.r = (((measuredWidth - (i3 * strArr.length)) - ((strArr.length - 1) * (this.h << 1))) - (this.n << 1)) / Math.max(1, strArr.length - 1);
+        if (this.n.D3()) {
+            accessibilityNodeInfo.setText(ob6.M0(2131753955, null));
+        } else if (r47.K4(this.n.k)) {
+            accessibilityNodeInfo.setText(ob6.M0(2131753926, null) + ", " + ob6.z((int) this.n.L0()));
+        } else {
+            accessibilityNodeInfo.setText(ob6.M0(2131753941, null));
+        }
+        if (this.e.a.q) {
+            accessibilityNodeInfo.setCheckable(true);
+            accessibilityNodeInfo.setChecked(true);
+        }
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x = motionEvent.getX();
-        float y = motionEvent.getY();
-        float a = moe.a(((this.f / 2.0f) + (x - this.n)) / ((this.r + (this.h << 1)) + r3), 0.0f, this.G.length - 1);
-        boolean z = Math.abs(a - ((float) Math.round(a))) < 0.35f;
-        if (z) {
-            a = Math.round(a);
-        }
-        int i = this.K;
-        if (i != Integer.MIN_VALUE) {
-            a = Math.max(a, i);
-        }
-        if (motionEvent.getAction() == 0) {
-            this.y = x;
-            this.E = y;
-            this.L = a;
-            this.F = this.J;
-            this.x = true;
-            invalidate();
-            return true;
-        }
-        if (motionEvent.getAction() == 2) {
-            if (!this.w && Math.abs(this.y - x) > Math.abs(this.E - y)) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-            }
-            if (this.x && Math.abs(this.y - x) >= gl.e) {
-                this.w = true;
-                this.x = false;
-            }
-            if (this.w) {
-                this.L = a;
-                invalidate();
-                if (Math.round(this.L) != this.J && z) {
-                    setOption(Math.round(this.L));
-                }
-            }
-            invalidate();
-            return true;
-        }
-        if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
-            return true;
-        }
-        if (this.w) {
-            int i2 = this.J;
-            if (i2 != this.F) {
-                setOption(i2);
-            }
-        } else {
-            this.L = a;
-            if (motionEvent.getAction() == 1 && Math.round(this.L) != this.J) {
-                setOption(Math.round(this.L));
-            }
-        }
-        eja ejaVar = this.O;
-        if (ejaVar != null) {
-            ejaVar.n();
-        }
-        this.x = false;
-        this.w = false;
-        invalidate();
-        getParent().requestDisallowInterceptTouchEvent(false);
-        return true;
+        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
+        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i, Bundle bundle) {
-        return super.performAccessibilityAction(i, bundle) || this.a.g(this, i, bundle);
-    }
-
-    public void setCallback(eja ejaVar) {
-        this.O = ejaVar;
-    }
-
-    public void setDashedFrom(int i) {
-        this.s = i;
-    }
-
-    public void setMinAllowedIndex(int i) {
-        String[] strArr;
-        if (i != -1 && (strArr = this.G) != null) {
-            i = Math.min(i, strArr.length - 1);
+    public void setMessageObject(r47 r47Var) {
+        TLRPC.PhotoSize photoSize;
+        this.n = r47Var;
+        this.a.getImageReceiver().v0(!PhotoViewer.P0(r47Var), false);
+        if (!TextUtils.isEmpty(uc7.s1(this.r.s).E1(r47Var.k.restriction_reason))) {
+            this.c.setVisibility(4);
+            this.a.setImageResource(R.drawable.photo_placeholder_in);
+            return;
         }
-        if (this.K != i) {
-            this.K = i;
-            if (this.J < i) {
-                this.J = i;
+        if (r47.K4(r47Var.k)) {
+            this.c.setVisibility(0);
+            this.b.setText(hl.g0((int) r47Var.L0(), false, false));
+            TLRPC.Document F0 = r47Var.F0();
+            TLRPC.PhotoSize w = xb4.w(F0.thumbs, 50, false, null, false);
+            TLRPC.PhotoSize w2 = xb4.w(F0.thumbs, jn7.q5, false, null, false);
+            photoSize = w != w2 ? w2 : null;
+            if (w == null) {
+                this.a.setImageResource(R.drawable.photo_placeholder_in);
+                return;
             }
-            invalidate();
+            BitmapDrawable bitmapDrawable = r47Var.I1;
+            de0 de0Var = this.a;
+            if (bitmapDrawable != null) {
+                de0Var.n(jn5.c(photoSize, F0), "100_100", null, r47Var.I1, r47Var);
+                return;
+            } else {
+                de0Var.k(jn5.c(photoSize, F0), "100_100", jn5.c(w, F0), "b", a.b.getResources().getDrawable(R.drawable.photo_placeholder_in), null, 0, r47Var);
+                return;
+            }
         }
+        TLRPC.MessageMedia messageMedia = r47Var.k.media;
+        if (!(messageMedia instanceof TLRPC.TL_messageMediaPhoto) || messageMedia.photo == null || r47Var.p0.isEmpty()) {
+            this.c.setVisibility(4);
+            this.a.setImageResource(R.drawable.photo_placeholder_in);
+            return;
+        }
+        this.c.setVisibility(4);
+        TLRPC.PhotoSize w3 = xb4.w(r47Var.p0, 50, false, null, false);
+        TLRPC.PhotoSize w4 = xb4.w(r47Var.p0, jn7.q5, false, w3, false);
+        if (!r47Var.z0 && !lq3.q(this.r.s).d(r47Var)) {
+            BitmapDrawable bitmapDrawable2 = r47Var.I1;
+            de0 de0Var2 = this.a;
+            if (bitmapDrawable2 != null) {
+                de0Var2.k(null, null, null, null, bitmapDrawable2, null, 0, r47Var);
+                return;
+            } else {
+                de0Var2.k(null, null, jn5.f(w3, r47Var.n0), "b", a.b.getResources().getDrawable(R.drawable.photo_placeholder_in), null, 0, r47Var);
+                return;
+            }
+        }
+        photoSize = w4 != w3 ? w3 : null;
+        BitmapDrawable bitmapDrawable3 = r47Var.I1;
+        de0 de0Var3 = this.a;
+        if (bitmapDrawable3 != null) {
+            ImageReceiver imageReceiver = de0Var3.getImageReceiver();
+            jn5 f = jn5.f(w4, r47Var.n0);
+            long j = 0;
+            BitmapDrawable bitmapDrawable4 = r47Var.I1;
+            if (w4 != null) {
+                j = w4.size;
+            }
+            imageReceiver.Z(f, "100_100", null, null, bitmapDrawable4, j, null, r47Var, r47.Q5(r47Var.k) ? 2 : 1);
+            return;
+        }
+        long j2 = 0;
+        ImageReceiver imageReceiver2 = de0Var3.getImageReceiver();
+        jn5 f2 = jn5.f(w4, r47Var.n0);
+        jn5 f3 = jn5.f(photoSize, r47Var.n0);
+        if (w4 != null) {
+            j2 = w4.size;
+        }
+        imageReceiver2.Z(f2, "100_100", f3, "b", null, j2, null, r47Var, r47.Q5(r47Var.k) ? 2 : 1);
     }
 }

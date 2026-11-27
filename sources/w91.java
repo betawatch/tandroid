@@ -1,37 +1,70 @@
 // default package
 
-import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class w91 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ da1 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class w91 {
+    public String a;
+    public ArrayList b;
+    public ArrayList c;
+    public ArrayList d;
 
-    public /* synthetic */ w91(da1 da1Var, byte b) {
-        this.a = b;
-        this.b = da1Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        da1 da1Var = this.b;
-        switch (b) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                da1Var.Z = floatValue;
-                da1Var.b.setAlpha(1.0f - floatValue);
-                if (da1Var.X == 3) {
-                    da1Var.c.setAlpha(1.0f - da1Var.Z);
+    public final String a(String str) {
+        String str2;
+        String str3;
+        String str4;
+        String str5 = null;
+        if (str.startsWith(this.a)) {
+            str4 = this.a;
+            str3 = str.substring(str4.length());
+        } else {
+            ArrayList arrayList = this.b;
+            int size = arrayList.size();
+            int i = 0;
+            while (true) {
+                if (i >= size) {
+                    str2 = null;
+                    break;
                 }
-                da1Var.s.setAlpha(1.0f - da1Var.Z);
-                da1Var.x = (da1Var.Z * 0.25f) + 0.5f;
-                da1Var.fragmentView.invalidate();
-                break;
-            default:
-                da1Var.s.invalidate();
-                break;
+                Object obj = arrayList.get(i);
+                i++;
+                str2 = (String) obj;
+                if (str.startsWith(str2)) {
+                    break;
+                }
+            }
+            if (str2 != null) {
+                str3 = str.substring(str2.length());
+                str4 = null;
+                str5 = str2;
+            } else {
+                str3 = str;
+                str4 = null;
+            }
         }
+        ArrayList arrayList2 = this.d;
+        int size2 = arrayList2.size();
+        int i2 = 0;
+        while (i2 < size2) {
+            Object obj2 = arrayList2.get(i2);
+            i2++;
+            String a = ((xr9) obj2).a(str3, str4, str5, true);
+            if (a != null) {
+                return a;
+            }
+        }
+        ArrayList arrayList3 = this.d;
+        int size3 = arrayList3.size();
+        int i3 = 0;
+        while (i3 < size3) {
+            Object obj3 = arrayList3.get(i3);
+            i3++;
+            String a2 = ((xr9) obj3).a(str3, str4, str5, false);
+            if (a2 != null) {
+                return a2;
+            }
+        }
+        return (str4 == null || str3.length() == 0) ? str : qd4.y(str4, " ", str3);
     }
 }

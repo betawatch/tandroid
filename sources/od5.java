@@ -1,119 +1,172 @@
 // default package
 
-import java.io.Serializable;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class od5 extends x1 {
-    public final /* synthetic */ byte a;
-    public final gk0 b;
-    public final Serializable c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class od5 extends c79 {
+    public final Context c;
+    public final /* synthetic */ sd5 d;
 
-    public od5() {
-        this.a = (byte) 1;
-        this.b = new hn5();
-        this.c = new ArrayList();
+    public od5(sd5 sd5Var, Context context) {
+        this.d = sd5Var;
+        this.c = context;
     }
 
-    @Override // x1
-    public final void a(CharSequence charSequence) {
-        switch (this.a) {
-            case 1:
-                ((ArrayList) this.c).add(charSequence);
-                break;
+    @Override // j79
+    public final void A(f89 f89Var) {
+        View view = f89Var.a;
+        if (view instanceof lj6) {
+            ((lj6) view).a();
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x003f A[LOOP:2: B:19:0x003b->B:21:0x003f, LOOP_END] */
-    @Override // x1
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void d() {
-        int i;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        View view = f89Var.a;
+        if ((view instanceof lj6) && this.d.Z1.contains(Long.valueOf(((lj6) view).getUserId()))) {
+            return false;
+        }
+        int i = f89Var.f;
+        return i == 0 || i == 1;
+    }
+
+    @Override // j79
+    public final int b() {
+        return this.d.l2;
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        sd5 sd5Var = this.d;
+        if (i >= sd5Var.e2 && i < sd5Var.f2) {
+            return 0;
+        }
+        if (i >= sd5Var.h2 && i < sd5Var.i2) {
+            return 0;
+        }
+        if (i == sd5Var.c2) {
+            return 1;
+        }
+        if (i == sd5Var.j2 || i == sd5Var.g2) {
+            return 2;
+        }
+        if (i == 0) {
+            return 3;
+        }
+        if (i == sd5Var.d2) {
+            return 4;
+        }
+        return i == sd5Var.k2 ? 5 : 0;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        TLObject tLObject;
         int i2;
-        switch (this.a) {
-            case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                int size = arrayList.size();
-                do {
-                    size--;
-                    if (size >= 0) {
-                        CharSequence charSequence = (CharSequence) arrayList.get(size);
-                        int length = charSequence.length();
-                        i2 = 0;
-                        while (true) {
-                            if (i2 < length) {
-                                char charAt = charSequence.charAt(i2);
-                                if (charAt != ' ') {
-                                    switch (charAt) {
-                                    }
-                                }
-                                i2++;
-                            } else {
-                                i2 = -1;
-                            }
-                        }
-                    }
-                    StringBuilder sb = new StringBuilder();
-                    for (i = 0; i < size + 1; i++) {
-                        sb.append((CharSequence) arrayList.get(i));
-                        sb.append('\n');
-                    }
-                    ((hn5) this.b).g = sb.toString();
-                    break;
-                } while (i2 == -1);
-                StringBuilder sb2 = new StringBuilder();
-                while (i < size + 1) {
+        sd5 sd5Var = this.d;
+        ArrayList arrayList = sd5Var.R1;
+        int i3 = f89Var.f;
+        View view = f89Var.a;
+        if (i3 == 0) {
+            lj6 lj6Var = (lj6) view;
+            lj6Var.setTag(Integer.valueOf(i));
+            int i4 = sd5Var.e2;
+            if (i < i4 || i >= sd5Var.f2) {
+                int i5 = sd5Var.h2;
+                tLObject = (i < i5 || i >= sd5Var.i2) ? null : (TLObject) sd5Var.S1.get(i - i5);
+            } else {
+                tLObject = (TLObject) arrayList.get(i - i4);
+            }
+            if (i < sd5Var.e2 || i >= (i2 = sd5Var.f2)) {
+                i2 = sd5Var.i2;
+            }
+            TLRPC.User X1 = uc7.s1(sd5Var.a).X1(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? r47.B1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
+            if (X1 != null) {
+                lj6Var.setCustomImageVisible(sd5Var.Z1.contains(Long.valueOf(X1.id)));
+                lj6Var.c(X1, null, null, i != i2 - 1);
+                return;
+            }
+            return;
+        }
+        if (i3 == 1) {
+            ij6 ij6Var = (ij6) view;
+            if (i == sd5Var.c2) {
+                if ((!sd5Var.W1 || sd5Var.X1) && sd5Var.j2 == -1 && !arrayList.isEmpty()) {
+                    r2 = true;
                 }
-                ((hn5) this.b).g = sb2.toString();
-                break;
+                ij6Var.b(R.drawable.msg_link, 7, ob6.M0(2131743042, null), r2);
+                return;
+            }
+            return;
         }
-    }
-
-    @Override // x1
-    public final gk0 e() {
-        byte b = this.a;
-        gk0 gk0Var = this.b;
-        switch (b) {
-            case 0:
-                return (nd5) gk0Var;
-            default:
-                return (hn5) gk0Var;
-        }
-    }
-
-    @Override // x1
-    public final void g(qn5 qn5Var) {
-        switch (this.a) {
-            case 0:
-                qn5Var.a((String) this.c, (nd5) this.b);
-                break;
-        }
-    }
-
-    @Override // x1
-    public final vj2 h(vo3 vo3Var) {
-        switch (this.a) {
-            case 0:
-                return null;
-            default:
-                if (vo3Var.g >= 4) {
-                    return new vj2(-1, vo3Var.c + 4, false);
+        if (i3 == 2) {
+            p55 p55Var = (p55) view;
+            if (i == sd5Var.j2) {
+                p55Var.setText(ob6.M0(2131752306, null));
+            } else if (i == sd5Var.g2) {
+                if (sd5Var.b2) {
+                    p55Var.setText(ob6.M0(2131742456, null));
+                } else {
+                    p55Var.setText(ob6.M0(2131749210, null));
                 }
-                if (vo3Var.h) {
-                    return vj2.a(vo3Var.e);
-                }
-                return null;
+            }
         }
     }
 
-    public od5(int i, String str) {
-        this.a = (byte) 0;
-        nd5 nd5Var = new nd5();
-        this.b = nd5Var;
-        nd5Var.g = i;
-        this.c = str;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r8v4, types: [ij6] */
+    /* JADX WARN: Type inference failed for: r8v5, types: [android.view.View, p55] */
+    /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r8v9, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r9v5, types: [tk4] */
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        lj6 lj6Var;
+        if (i != 0) {
+            Context context = this.c;
+            if (i == 1) {
+                ?? ij6Var = new ij6(context);
+                int i2 = aob.gh;
+                ij6Var.a(i2, i2);
+                ij6Var.setDividerColor(aob.Xg);
+                lj6Var = ij6Var;
+            } else if (i == 2) {
+                ?? p55Var = new p55(context, null);
+                yob.h(aob.ah, null, p55Var);
+                p55Var.setTextColor(aob.Hh);
+                lj6Var = p55Var;
+            } else if (i == 3) {
+                ?? view = new View(context);
+                view.setLayoutParams(new r79(-1, hl.L(56.0f)));
+                lj6Var = view;
+            } else if (i != 5) {
+                lj6Var = new View(context);
+            } else {
+                ?? tk4Var = new tk4(context, null);
+                tk4Var.setViewType(6);
+                tk4Var.setIsSingleCell(true);
+                tk4Var.e(aob.Wg, aob.Ih, aob.ah);
+                lj6Var = tk4Var;
+            }
+        } else {
+            lj6 lj6Var2 = new lj6(this.c, 6, 2, false, null);
+            lj6Var2.setCustomRightImage(R.drawable.msg_invited);
+            lj6Var2.setNameColor(aob.w0(null, aob.eh, false));
+            int w0 = aob.w0(null, aob.ch, false);
+            int w02 = aob.w0(null, aob.gh, false);
+            lj6Var2.P = true;
+            lj6Var2.I = w0;
+            lj6Var2.J = w02;
+            lj6Var2.setDividerColor(aob.Xg);
+            lj6Var = lj6Var2;
+        }
+        return new n69(lj6Var);
     }
 }

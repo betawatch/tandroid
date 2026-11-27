@@ -1,192 +1,178 @@
 // default package
 
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pia implements kp5 {
-    public final nh7 a = new nh7();
-    public final i4d b = new i4d((byte) 7);
-    public final v39 c = new v39(new oia(2, null), 5);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pia extends c79 {
+    public final Context c;
+    public final nt9 d;
+    public boolean h;
+    public jga s;
+    public final /* synthetic */ eja y;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ux9 n = new ux9(this, 25);
+    public final x79 r = new x79();
+    public final lu5 w = new lu5(new s10(this, 7));
+    public final HashSet x = new HashSet();
 
-    public pia(String str) {
-    }
-
-    @Override // kp5
-    public final Object a(u73 u73Var) {
-        return new Integer(((AtomicInteger) this.b.a).incrementAndGet());
-    }
-
-    @Override // kp5
-    public final Object b(fw2 fw2Var) {
-        return new Integer(((AtomicInteger) this.b.a).get());
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x005a, code lost:
-    
-        if (r8 != r5) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005c, code lost:
-    
-        return r5;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x004e, code lost:
-    
-        if (r8 != r5) goto L20;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
-    /* JADX WARN: Type inference failed for: r6v0, types: [pia] */
-    /* JADX WARN: Type inference failed for: r6v1 */
-    /* JADX WARN: Type inference failed for: r6v6, types: [nh7] */
-    @Override // kp5
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object c(qp4 qp4Var, fw2 fw2Var) {
-        mia miaVar;
-        int i;
-        Object obj;
-        Object obj2;
-        try {
-            if (fw2Var instanceof mia) {
-                miaVar = (mia) fw2Var;
-                int i2 = miaVar.e;
-                if ((i2 & TLObject.FLAG_31) != 0) {
-                    miaVar.e = i2 - TLObject.FLAG_31;
-                    Object obj3 = miaVar.c;
-                    i = miaVar.e;
-                    bx2 bx2Var = bx2.a;
-                    if (i != 0) {
-                        qse.b(obj3);
-                        miaVar.a = qp4Var;
-                        nh7 nh7Var = this.a;
-                        miaVar.b = nh7Var;
-                        miaVar.e = 1;
-                        Object d = nh7Var.d(miaVar);
-                        obj = nh7Var;
-                    } else {
-                        if (i != 1) {
-                            if (i != 2) {
-                                sc8.j("call to 'resume' before 'invoke' with coroutine");
-                                return null;
-                            }
-                            Object obj4 = (lh7) miaVar.a;
-                            qse.b(obj3);
-                            obj2 = obj4;
-                            return obj3;
-                        }
-                        Object obj5 = miaVar.b;
-                        qp4Var = (qp4) miaVar.a;
-                        qse.b(obj3);
-                        obj = obj5;
-                    }
-                    miaVar.a = obj;
-                    miaVar.b = null;
-                    miaVar.e = 2;
-                    obj3 = qp4Var.invoke(miaVar);
-                    obj2 = obj;
-                }
-            }
-            if (i != 0) {
-            }
-            miaVar.a = obj;
-            miaVar.b = null;
-            miaVar.e = 2;
-            obj3 = qp4Var.invoke(miaVar);
-            obj2 = obj;
-        } finally {
-            ((nh7) this).f(null);
+    public pia(eja ejaVar, Context context) {
+        this.y = ejaVar;
+        this.c = context;
+        nt9 F1 = ejaVar.y1.getMessagesController().F1();
+        this.d = F1;
+        if (ejaVar.h0()) {
+            F1.g(false);
         }
-        miaVar = new mia(this, fw2Var);
-        Object obj32 = miaVar.c;
-        i = miaVar.e;
-        bx2 bx2Var2 = bx2.a;
+        C(true);
+        F(false);
     }
 
-    @Override // kp5
-    public final hk4 d() {
-        return this.c;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0032  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0020  */
-    @Override // kp5
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object e(eq4 eq4Var, fw2 fw2Var) {
-        nia niaVar;
-        int i;
-        nh7 nh7Var;
-        boolean z;
-        Throwable th;
-        if (fw2Var instanceof nia) {
-            niaVar = (nia) fw2Var;
-            int i2 = niaVar.e;
-            if ((i2 & TLObject.FLAG_31) != 0) {
-                niaVar.e = i2 - TLObject.FLAG_31;
-                Object obj = niaVar.c;
-                i = niaVar.e;
-                if (i != 0) {
-                    qse.b(obj);
-                    nh7 nh7Var2 = this.a;
-                    boolean e = nh7Var2.e();
-                    try {
-                        Object valueOf = Boolean.valueOf(e);
-                        niaVar.a = nh7Var2;
-                        niaVar.b = e;
-                        niaVar.e = 1;
-                        Object invoke = eq4Var.invoke(valueOf, niaVar);
-                        Object obj2 = bx2.a;
-                        if (invoke == obj2) {
-                            return obj2;
-                        }
-                        nh7Var = nh7Var2;
-                        z = e;
-                        obj = invoke;
-                    } catch (Throwable th2) {
-                        nh7Var = nh7Var2;
-                        z = e;
-                        th = th2;
-                        if (z) {
-                            nh7Var.f(null);
-                        }
-                        throw th;
-                    }
+    public final void E(View view) {
+        ArrayList arrayList;
+        mt9 mt9Var;
+        if (view instanceof of3) {
+            of3 of3Var = (of3) view;
+            long dialogId = of3Var.getDialogId();
+            int i = 0;
+            while (true) {
+                arrayList = this.f;
+                if (i >= arrayList.size()) {
+                    mt9Var = null;
+                    break;
                 } else {
-                    if (i != 1) {
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
-                        return null;
+                    if (((mt9) arrayList.get(i)).a == dialogId) {
+                        mt9Var = (mt9) arrayList.get(i);
+                        break;
                     }
-                    z = niaVar.b;
-                    nh7Var = niaVar.a;
-                    try {
-                        qse.b(obj);
-                    } catch (Throwable th3) {
-                        th = th3;
-                        if (z) {
-                        }
-                        throw th;
+                    i++;
+                }
+            }
+            if (mt9Var == null) {
+                return;
+            }
+            Long valueOf = Long.valueOf(mt9Var.a);
+            HashSet hashSet = this.x;
+            boolean contains = hashSet.contains(valueOf);
+            long j = mt9Var.a;
+            eja ejaVar = this.y;
+            if (contains) {
+                hashSet.remove(Long.valueOf(j));
+                if (hashSet.size() <= 0 && ejaVar.F1) {
+                    ejaVar.l1(false);
+                }
+            } else {
+                hashSet.add(Long.valueOf(j));
+                if (hashSet.size() > 0 && !ejaVar.F1) {
+                    ejaVar.l1(true);
+                    s7 s7Var = ejaVar.x0;
+                    if (s7Var != null) {
+                        s7Var.setVisibility(8);
+                    }
+                    s7 s7Var2 = ejaVar.w0;
+                    if (s7Var2 != null) {
+                        s7Var2.setVisibility(8);
                     }
                 }
-                if (z) {
-                    nh7Var.f(null);
+            }
+            ejaVar.j1(hashSet.size(), true);
+            boolean z = hashSet.size() > 0;
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                long longValue = ((Long) it.next()).longValue();
+                int i2 = 0;
+                while (true) {
+                    if (i2 >= arrayList.size()) {
+                        break;
+                    }
+                    mt9 mt9Var2 = (mt9) arrayList.get(i2);
+                    if (mt9Var2.a != longValue) {
+                        i2++;
+                    } else if (!mt9Var2.b) {
+                        z = false;
+                    }
                 }
-                return obj;
+                if (!z) {
+                    break;
+                }
+            }
+            s7 s7Var3 = ejaVar.y0;
+            if (s7Var3 != null) {
+                s7Var3.setVisibility(z ? 8 : 0);
+            }
+            s7 s7Var4 = ejaVar.z0;
+            if (s7Var4 != null) {
+                s7Var4.setVisibility(z ? 0 : 8);
+            }
+            of3Var.d0(hashSet.contains(Long.valueOf(mt9Var.a)), true);
+        }
+    }
+
+    public final void F(boolean z) {
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        ArrayList arrayList2 = this.f;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        arrayList2.addAll(this.d.j);
+        if (z) {
+            f();
+        }
+    }
+
+    @Override // j79
+    public final int b() {
+        return this.f.size();
+    }
+
+    @Override // j79
+    public final long c(int i) {
+        if (i >= 0) {
+            ArrayList arrayList = this.f;
+            if (i < arrayList.size()) {
+                return ((mt9) arrayList.get(i)).a;
             }
         }
-        niaVar = new nia(this, fw2Var);
-        Object obj3 = niaVar.c;
-        i = niaVar.e;
-        if (i != 0) {
+        return i;
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        return 13;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        View view = f89Var.a;
+        if (view instanceof of3) {
+            of3 of3Var = (of3) view;
+            ArrayList arrayList = this.f;
+            mt9 mt9Var = (mt9) arrayList.get(i);
+            of3Var.e0(mt9Var.a, mt9Var.d, mt9Var.c(), false, false);
+            of3Var.t0 = true;
+            of3Var.d0(this.x.contains(Long.valueOf(mt9Var.a)), false);
+            of3Var.t2 = i + 1 < arrayList.size();
         }
-        if (z) {
-        }
-        return obj3;
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        oia oiaVar = new oia(this, this.c);
+        eja ejaVar = this.y;
+        oiaVar.setDialogCellDelegate(ejaVar);
+        oiaVar.s0 = true;
+        yob.h(aob.d6, ejaVar.I1, oiaVar);
+        return new n69(oiaVar);
     }
 }

@@ -1,34 +1,53 @@
 // default package
 
-import java.util.Arrays;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.support.v4.media.session.PlaybackStateCompat;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ik5 {
-    public static final ik5 b;
-    public final float a;
+public final class ik5 implements kk5 {
+    public IBinder a;
 
-    static {
-        ti4 ti4Var = new ti4();
-        ti4Var.a = 0.5f;
-        b = new ik5(ti4Var);
-    }
-
-    public ik5(ti4 ti4Var) {
-        this.a = ti4Var.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // kk5
+    public final void N(PlaybackStateCompat playbackStateCompat) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(1);
+            playbackStateCompat.writeToParcel(obtain, 0);
+            this.a.transact(3, obtain, null, 1);
+        } finally {
+            obtain.recycle();
         }
-        if (obj instanceof ik5) {
-            return ik5.class.equals(ik5.class) && Float.compare(this.a, ((ik5) obj).a) == 0 && cqe.a(null, null);
-        }
-        return false;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{ik5.class, Float.valueOf(this.a), null});
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
+
+    @Override // kk5
+    public final void g(int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i);
+            this.a.transact(9, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // kk5
+    public final void i(int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i);
+            this.a.transact(12, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

@@ -1,88 +1,1209 @@
 // default package
 
-import android.text.TextUtils;
+import android.content.Intent;
+import android.graphics.SurfaceTexture;
+import android.location.Location;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.ResultReceiver;
+import android.text.Editable;
+import android.util.Log;
+import android.view.View;
+import android.webkit.WebView;
+import com.android.billingclient.api.ProxyBillingActivityV2;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.lang.reflect.InvocationHandler;
+import java.nio.BufferOverflowException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.ReadOnlyBufferException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
+import org.chromium.support_lib_boundary.WebMessageBoundaryInterface;
+import org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface;
+import org.chromium.support_lib_boundary.WebMessagePayloadBoundaryInterface;
+import org.chromium.support_lib_boundary.WebMessagePortBoundaryInterface;
+import org.json.JSONObject;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ve9 {
-    public final lk0 a;
-    public final int b;
-    public final /* synthetic */ ye9 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ve9 implements qy9, hj, hf9, cg9, aea, nr7, ifc, n7a, dia, j63, tka, keb, ty9, tic, WebMessageListenerBoundaryInterface, s99, caa, s9 {
+    public final /* synthetic */ byte a;
+    public Object b;
 
-    public ve9(ye9 ye9Var, lk0 lk0Var, int i) {
-        this.c = ye9Var;
-        this.a = lk0Var;
-        this.b = i;
-    }
-
-    public final void a(String str, TL_keyboard.InlineButtonType inlineButtonType) {
-        TL_iv.pageBlockButtonRow d;
-        if (TextUtils.isEmpty(str) || !mf9.c(inlineButtonType) || (d = d()) == null) {
+    public ve9(View view) {
+        this.a = (byte) 11;
+        if (Build.VERSION.SDK_INT < 30) {
+            this.b = new pq8((Object) view, (byte) 16);
             return;
         }
-        int i = this.b;
-        boolean z = i >= 0 && i < d.buttons.size();
-        if (z || d.buttons.size() < 8) {
-            ye9 ye9Var = this.c;
-            ld9 ld9Var = ye9Var.R3;
-            if (ld9Var != null) {
-                ld9Var.d();
-            }
-            TL_keyboard.PageButton pageButton = z ? d.buttons.get(i) : new TL_keyboard.PageButton();
-            pageButton.text = yi9.f(str);
-            pageButton.type = inlineButtonType;
-            if (pageButton.style == null) {
-                pageButton.style = new TL_keyboard.RichButtonStyle();
-            }
-            if (!z) {
-                d.buttons.add(pageButton);
-            }
-            ye9Var.g3.O(false);
-            ld9 ld9Var2 = ye9Var.R3;
-            if (ld9Var2 != null) {
-                ld9Var2.h();
-            }
-            ye9Var.p3.onContentChanged();
-        }
+        boa boaVar = new boa(view, (byte) 16);
+        boaVar.c = view;
+        this.b = boaVar;
     }
 
-    public final void b() {
+    public static int d0(CharSequence charSequence) {
+        int length = charSequence.length();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < length && charSequence.charAt(i2) < 128) {
+            i2++;
+        }
+        int i3 = length;
+        while (true) {
+            if (i2 >= length) {
+                break;
+            }
+            char charAt = charSequence.charAt(i2);
+            if (charAt < 2048) {
+                i3 += (127 - charAt) >>> 31;
+                i2++;
+            } else {
+                int length2 = charSequence.length();
+                while (i2 < length2) {
+                    char charAt2 = charSequence.charAt(i2);
+                    if (charAt2 < 2048) {
+                        i += (127 - charAt2) >>> 31;
+                    } else {
+                        i += 2;
+                        if (55296 <= charAt2 && charAt2 <= 57343) {
+                            if (Character.codePointAt(charSequence, i2) < 65536) {
+                                StringBuilder sb = new StringBuilder(39);
+                                sb.append("Unpaired surrogate at index ");
+                                sb.append(i2);
+                                throw new IllegalArgumentException(sb.toString());
+                            }
+                            i2++;
+                        }
+                    }
+                    i2++;
+                }
+                i3 += i;
+            }
+        }
+        if (i3 >= length) {
+            return i3;
+        }
+        StringBuilder sb2 = new StringBuilder(54);
+        sb2.append("UTF-8 length does not fit in int: ");
+        sb2.append(i3 + 4294967296L);
+        throw new IllegalArgumentException(sb2.toString());
+    }
+
+    public static int l0(int i, String str) {
+        int q0 = q0(i);
+        int d0 = d0(str);
+        return r0(d0) + d0 + q0;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v15 */
+    public static void n0(CharSequence charSequence, ByteBuffer byteBuffer) {
         int i;
-        TL_iv.pageBlockButtonRow d = d();
-        if (d == null || (i = this.b) < 0 || i >= d.buttons.size()) {
+        char charAt;
+        if (byteBuffer.isReadOnly()) {
+            throw new ReadOnlyBufferException();
+        }
+        char c = 57343;
+        int i2 = 0;
+        if (!byteBuffer.hasArray()) {
+            int length = charSequence.length();
+            while (i2 < length) {
+                char charAt2 = charSequence.charAt(i2);
+                char c2 = charAt2;
+                if (charAt2 >= 128) {
+                    if (charAt2 < 2048) {
+                        byteBuffer.put((byte) ((charAt2 >>> 6) | 960));
+                    } else {
+                        if (charAt2 >= 55296 && 57343 >= charAt2) {
+                            int i3 = i2 + 1;
+                            if (i3 != charSequence.length()) {
+                                char charAt3 = charSequence.charAt(i3);
+                                if (Character.isSurrogatePair(charAt2, charAt3)) {
+                                    int codePoint = Character.toCodePoint(charAt2, charAt3);
+                                    byteBuffer.put((byte) ((codePoint >>> 18) | jn7.O3));
+                                    byteBuffer.put((byte) (((codePoint >>> 12) & 63) | 128));
+                                    byteBuffer.put((byte) (((codePoint >>> 6) & 63) | 128));
+                                    byteBuffer.put((byte) ((codePoint & 63) | 128));
+                                    i2 = i3;
+                                    i2++;
+                                } else {
+                                    i2 = i3;
+                                }
+                            }
+                            p3d.c(39, i2 - 1, "Unpaired surrogate at index ");
+                            return;
+                        }
+                        byteBuffer.put((byte) ((charAt2 >>> '\f') | 480));
+                        byteBuffer.put((byte) (((charAt2 >>> 6) & 63) | 128));
+                    }
+                    c2 = (charAt2 & '?') | 128;
+                }
+                byteBuffer.put((byte) c2);
+                i2++;
+            }
             return;
         }
-        ye9 ye9Var = this.c;
-        ld9 ld9Var = ye9Var.R3;
-        if (ld9Var != null) {
-            ld9Var.d();
+        try {
+            byte[] array = byteBuffer.array();
+            int arrayOffset = byteBuffer.arrayOffset() + byteBuffer.position();
+            int remaining = byteBuffer.remaining();
+            int length2 = charSequence.length();
+            int i4 = remaining + arrayOffset;
+            while (i2 < length2) {
+                int i5 = i2 + arrayOffset;
+                if (i5 >= i4 || (charAt = charSequence.charAt(i2)) >= 128) {
+                    break;
+                }
+                array[i5] = (byte) charAt;
+                i2++;
+            }
+            if (i2 == length2) {
+                i = arrayOffset + length2;
+            } else {
+                i = arrayOffset + i2;
+                while (i2 < length2) {
+                    char charAt4 = charSequence.charAt(i2);
+                    if (charAt4 < 128 && i < i4) {
+                        array[i] = (byte) charAt4;
+                        i++;
+                    } else if (charAt4 < 2048 && i <= i4 - 2) {
+                        int i6 = i + 1;
+                        array[i] = (byte) ((charAt4 >>> 6) | 960);
+                        i += 2;
+                        array[i6] = (byte) ((charAt4 & '?') | 128);
+                    } else {
+                        if ((charAt4 >= 55296 && c >= charAt4) || i > i4 - 3) {
+                            if (i > i4 - 4) {
+                                StringBuilder sb = new StringBuilder(37);
+                                sb.append("Failed writing ");
+                                sb.append(charAt4);
+                                sb.append(" at index ");
+                                sb.append(i);
+                                throw new ArrayIndexOutOfBoundsException(sb.toString());
+                            }
+                            int i7 = i2 + 1;
+                            if (i7 != charSequence.length()) {
+                                char charAt5 = charSequence.charAt(i7);
+                                if (Character.isSurrogatePair(charAt4, charAt5)) {
+                                    int codePoint2 = Character.toCodePoint(charAt4, charAt5);
+                                    array[i] = (byte) ((codePoint2 >>> 18) | jn7.O3);
+                                    array[i + 1] = (byte) (((codePoint2 >>> 12) & 63) | 128);
+                                    int i8 = i + 3;
+                                    array[i + 2] = (byte) (((codePoint2 >>> 6) & 63) | 128);
+                                    i += 4;
+                                    array[i8] = (byte) ((codePoint2 & 63) | 128);
+                                    i2 = i7;
+                                } else {
+                                    i2 = i7;
+                                }
+                            }
+                            StringBuilder sb2 = new StringBuilder(39);
+                            sb2.append("Unpaired surrogate at index ");
+                            sb2.append(i2 - 1);
+                            throw new IllegalArgumentException(sb2.toString());
+                        }
+                        array[i] = (byte) ((charAt4 >>> '\f') | 480);
+                        int i9 = i + 2;
+                        array[i + 1] = (byte) (((charAt4 >>> 6) & 63) | 128);
+                        i += 3;
+                        array[i9] = (byte) ((charAt4 & '?') | 128);
+                    }
+                    i2++;
+                    c = 57343;
+                }
+            }
+            byteBuffer.position(i - byteBuffer.arrayOffset());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            BufferOverflowException bufferOverflowException = new BufferOverflowException();
+            bufferOverflowException.initCause(e);
+            throw bufferOverflowException;
         }
-        d.buttons.remove(i);
-        ye9Var.g3.O(false);
-        ld9 ld9Var2 = ye9Var.R3;
-        if (ld9Var2 != null) {
-            ld9Var2.h();
-        }
-        ye9Var.p3.onContentChanged();
     }
 
-    public final boolean c() {
-        int i;
-        TL_iv.pageBlockButtonRow d = d();
-        return d != null && (i = this.b) >= 0 && i < d.buttons.size();
+    public static int p0(long j) {
+        if (((-128) & j) == 0) {
+            return 1;
+        }
+        if (((-16384) & j) == 0) {
+            return 2;
+        }
+        if (((-2097152) & j) == 0) {
+            return 3;
+        }
+        if (((-268435456) & j) == 0) {
+            return 4;
+        }
+        if (((-34359738368L) & j) == 0) {
+            return 5;
+        }
+        if (((-4398046511104L) & j) == 0) {
+            return 6;
+        }
+        if (((-562949953421312L) & j) == 0) {
+            return 7;
+        }
+        if (((-72057594037927936L) & j) == 0) {
+            return 8;
+        }
+        return (j & Long.MIN_VALUE) == 0 ? 9 : 10;
     }
 
-    public final TL_iv.pageBlockButtonRow d() {
-        lk0 lk0Var = this.a;
-        if (lk0Var == null) {
-            return null;
+    public static int q0(int i) {
+        return r0(i << 3);
+    }
+
+    public static int r0(int i) {
+        if ((i & (-128)) == 0) {
+            return 1;
         }
-        TL_iv.PageBlock pageBlock = lk0Var.b;
-        if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
-            return (TL_iv.pageBlockButtonRow) pageBlock;
+        if ((i & (-16384)) == 0) {
+            return 2;
+        }
+        if (((-2097152) & i) == 0) {
+            return 3;
+        }
+        return (i & (-268435456)) == 0 ? 4 : 5;
+    }
+
+    @Override // tic
+    public final boolean A(int i) {
+        nic nicVar = ((vic) this.b).M;
+        if (nicVar == null) {
+            return false;
+        }
+        return nicVar.c(i);
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void B(v8a v8aVar) {
+    }
+
+    @Override // hf9
+    public final void B1() {
+        ej9 ej9Var = ((gj9) this.b).H;
+        if (ej9Var != null) {
+            pi9 pi9Var = ((li9) ej9Var).a;
+            ch9 ch9Var = pi9Var.R3;
+            if (ch9Var != null) {
+                ch9Var.g();
+            }
+            pi9Var.p3.onContentChanged();
+        }
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void C(v8a v8aVar, boolean z) {
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void D(v8a v8aVar, int i) {
+    }
+
+    @Override // aea
+    public final boolean E() {
+        switch (this.a) {
+            case 4:
+                if (hl.C3()) {
+                    ((er9) this.b).J.k(0L, 33, null, null, null, null);
+                    break;
+                }
+                break;
+            default:
+                ((StickersActivity) this.b).d0();
+                break;
+        }
+        return true;
+    }
+
+    @Override // hf9
+    public final amb E0() {
+        ej9 ej9Var = ((gj9) this.b).H;
+        if (ej9Var != null) {
+            return ((li9) ej9Var).a.getTextSelectionHelper();
         }
         return null;
+    }
+
+    @Override // cg9
+    public final boolean F(dg9 dg9Var) {
+        return false;
+    }
+
+    @Override // dia
+    public final void H() {
+        ((fu5) this.b).j();
+    }
+
+    @Override // j63
+    public final long I(long j, long j2) {
+        return 0L;
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void J(v8a v8aVar, int i) {
+    }
+
+    @Override // dia
+    public final b8 K(String str) {
+        b8 g = ((fu5) this.b).g();
+        g.setText(str);
+        return g;
+    }
+
+    @Override // tic
+    public final void L(ArrayList arrayList) {
+        nic nicVar = ((vic) this.b).M;
+        if (nicVar == null) {
+            return;
+        }
+        nicVar.a(arrayList);
+    }
+
+    @Override // hf9
+    public final void L0(CharSequence charSequence) {
+        ej9 ej9Var = ((gj9) this.b).H;
+        if (ej9Var != null) {
+            li9 li9Var = (li9) ej9Var;
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            li9Var.a.v4(charSequence.toString());
+        }
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void N(v8a v8aVar, String str) {
+    }
+
+    @Override // n7a
+    public final void O() {
+        r7a r7aVar = (r7a) this.b;
+        HashMap hashMap = r7aVar.n;
+        r7aVar.getNotificationCenter().k(jn7.R0, new HashMap(hashMap));
+        hashMap.clear();
+    }
+
+    @Override // caa
+    public final void P(v8a v8aVar, String str) {
+        kt6 kt6Var;
+        he6 he6Var = pid.i;
+        pid pidVar = (pid) this.b;
+        byte b = 1;
+        he6Var.b("onSessionStarted with transferType = %d", Integer.valueOf(pidVar.e));
+        if (pidVar.a.E && pidVar.e == 2) {
+            if (pidVar.h == null) {
+                he6Var.b("skip restoring session state due to null SessionState", new Object[0]);
+            } else {
+                v99 a = pidVar.a();
+                if (a == null) {
+                    he6Var.b("skip restoring session state due to null RemoteMediaClient", new Object[0]);
+                } else {
+                    he6Var.b("resume SessionState to current session", new Object[0]);
+                    haa haaVar = pidVar.h;
+                    if (haaVar != null && (kt6Var = haaVar.a) != null) {
+                        v99.k.b("resume SessionState", new Object[0]);
+                        xve.e("Must be called from the main thread.");
+                        if (a.w()) {
+                            v99.x(new hed(a, kt6Var, b));
+                        } else {
+                            v99.t();
+                        }
+                    }
+                }
+            }
+        }
+        pidVar.c();
+    }
+
+    @Override // cg9
+    public final void Q(Editable editable) {
+        ((pl9) this.b).g();
+    }
+
+    @Override // j63
+    public final boolean R() {
+        return true;
+    }
+
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        switch (this.a) {
+            case 5:
+                mq5 H0 = hl.H0(l2dVar, false);
+                mu9 mu9Var = (mu9) this.b;
+                mu9Var.w.setPadding(H0.a, H0.b, H0.c, H0.d);
+                mu9Var.s.requestLayout();
+                break;
+            default:
+                ktb ktbVar = (ktb) this.b;
+                mq5 g = l2dVar.a.g(519);
+                ktbVar.n = g;
+                ktbVar.c.setPadding(g.a, g.b, g.c, g.d);
+                ktbVar.b.requestLayout();
+                break;
+        }
+        return l2d.b;
+    }
+
+    @Override // hf9
+    public final zlb S0() {
+        return (gj9) this.b;
+    }
+
+    @Override // n7a
+    public final void T(Location location) {
+        r7a r7aVar = (r7a) this.b;
+        TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
+        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+        tL_messageMediaGeo.geo = tL_geoPoint;
+        tL_geoPoint.lat = hl.b0(location.getLatitude());
+        tL_messageMediaGeo.geo._long = hl.b0(location.getLongitude());
+        HashMap hashMap = r7aVar.n;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            r47 r47Var = (r47) ((Map.Entry) it.next()).getValue();
+            r7aVar.q0(p7a.d(tL_messageMediaGeo, r47.B0(r47Var.k), r47Var, null, null, null, true, 0));
+        }
+        hashMap.clear();
+    }
+
+    @Override // cg9
+    public final void U(dg9 dg9Var) {
+        mk0 mk0Var;
+        pl9 pl9Var = (pl9) this.b;
+        nl9 nl9Var = pl9Var.s;
+        if (nl9Var == null || (mk0Var = pl9Var.a) == null) {
+            return;
+        }
+        pi9 pi9Var = ((wh9) nl9Var).a;
+        ArrayList arrayList = pi9Var.t3;
+        long j = mk0Var.t;
+        if (j != 0) {
+            int i = -1;
+            for (int i2 = 0; i2 < arrayList.size(); i2++) {
+                if (((mk0) arrayList.get(i2)).k.contains(Long.valueOf(j))) {
+                    i = i2;
+                }
+            }
+            if (i >= 0) {
+                ch9 ch9Var = pi9Var.R3;
+                if (ch9Var != null) {
+                    ch9Var.d();
+                }
+                mk0 mk0Var2 = new mk0(new TL_iv.pageBlockParagraph(), 0, 0);
+                ArrayList arrayList2 = mk0Var.k;
+                ArrayList arrayList3 = mk0Var2.k;
+                arrayList3.addAll(arrayList2);
+                if (!arrayList3.isEmpty()) {
+                    qd4.v(1, arrayList3);
+                }
+                arrayList.add(i + 1, mk0Var2);
+                pi9Var.u4();
+                pi9Var.g3.O(false);
+                ch9 ch9Var2 = pi9Var.R3;
+                if (ch9Var2 != null) {
+                    ch9Var2.h();
+                }
+                pi9Var.post(new jh9(pi9Var, mk0Var2, (byte) 26));
+            }
+        }
+    }
+
+    @Override // j63
+    public final long V() {
+        return 0L;
+    }
+
+    @Override // cg9
+    public final boolean W(boolean z) {
+        return false;
+    }
+
+    @Override // hf9
+    public final mk0 X0() {
+        return ((gj9) this.b).a;
+    }
+
+    @Override // j63
+    public final long Y(long j) {
+        return 1L;
+    }
+
+    @Override // dia
+    public final b8 Z(int i, Runnable runnable, String str, boolean z, boolean z2) {
+        fu5 fu5Var = (fu5) this.b;
+        int y = fu5Var.y();
+        fu5Var.b(i, str, new yn6((Object) runnable, z2, (Object) fu5Var, (byte) 22), z);
+        View x = fu5Var.x(y);
+        if (x instanceof b8) {
+            return (b8) x;
+        }
+        return null;
+    }
+
+    @Override // tic, bv9
+    public final void a(float f) {
+        vic vicVar = (vic) this.b;
+        View[] viewArr = vicVar.e;
+        if (f == 1.0f) {
+            if (viewArr[1] != null) {
+                vicVar.H();
+                vicVar.h.put(vicVar.f[1], viewArr[1]);
+                vicVar.removeView(viewArr[1]);
+                vicVar.G(viewArr[0], 0.0f);
+                viewArr[1] = null;
+            }
+            vicVar.B(vicVar.b);
+            return;
+        }
+        View view = viewArr[1];
+        if (view == null) {
+            return;
+        }
+        if (vicVar.E) {
+            vicVar.G(view, (1.0f - f) * viewArr[0].getMeasuredWidth());
+            vicVar.G(viewArr[0], (-r0.getMeasuredWidth()) * f);
+        } else {
+            vicVar.G(view, (1.0f - f) * (-viewArr[0].getMeasuredWidth()));
+            vicVar.G(viewArr[0], r0.getMeasuredWidth() * f);
+        }
+        vicVar.y(false);
+    }
+
+    @Override // j63
+    public final long a0(long j, long j2) {
+        return 1L;
+    }
+
+    @Override // s99
+    public final void accept(Object obj, Object obj2) {
+        byte b = 1;
+        switch (this.a) {
+            case 22:
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
+                r7d r7dVar = (r7d) ((z7d) obj).k();
+                ikb ikbVar = (ikb) this.b;
+                Parcel c = r7dVar.c();
+                v6d.b(c, ikbVar);
+                try {
+                    r7dVar.b.transact(1, c, null, 1);
+                    c.recycle();
+                    taskCompletionSource.setResult(null);
+                    return;
+                } catch (Throwable th) {
+                    c.recycle();
+                    throw th;
+                }
+            case 23:
+                h8d h8dVar = (h8d) this.b;
+                g8d g8dVar = new g8d((TaskCompletionSource) obj2);
+                c9d c9dVar = (c9d) ((i8d) obj).k();
+                String str = h8dVar.l;
+                Parcel e = c9dVar.e();
+                int i = n8d.a;
+                e.writeStrongBinder(g8dVar);
+                e.writeString(str);
+                c9dVar.f(e, 2);
+                return;
+            case 24:
+                pt5 pt5Var = (pt5) this.b;
+                nad nadVar = (nad) obj;
+                nadVar.getClass();
+                ead eadVar = new ead((TaskCompletionSource) obj2, b);
+                try {
+                    mhf mhfVar = (mhf) nadVar.k();
+                    Bundle B = nadVar.B();
+                    Parcel obtain = Parcel.obtain();
+                    obtain.writeInterfaceToken("com.google.android.gms.wallet.internal.IOwService");
+                    int i2 = rld.a;
+                    obtain.writeInt(1);
+                    pt5Var.writeToParcel(obtain, 0);
+                    obtain.writeInt(1);
+                    B.writeToParcel(obtain, 0);
+                    obtain.writeStrongBinder(eadVar);
+                    try {
+                        mhfVar.a.transact(14, obtain, null, 1);
+                        obtain.recycle();
+                        return;
+                    } catch (Throwable th2) {
+                        obtain.recycle();
+                        throw th2;
+                    }
+                } catch (RemoteException e2) {
+                    Log.e("WalletClientImpl", "RemoteException during isReadyToPay", e2);
+                    Bundle bundle = Bundle.EMPTY;
+                    vze.a(Status.h, Boolean.FALSE, eadVar.c);
+                    return;
+                }
+            case 25:
+                bmf bmfVar = (bmf) obj;
+                qbd qbdVar = (qbd) bmfVar.k();
+                kjd kjdVar = ((rjd) this.b).l;
+                Parcel R = qbdVar.R();
+                ald.d(R, kjdVar);
+                qbdVar.W(R, 18);
+                qbd qbdVar2 = (qbd) bmfVar.k();
+                qbdVar2.W(qbdVar2.R(), 17);
+                ((TaskCompletionSource) obj2).setResult(null);
+                return;
+            default:
+                twe tweVar = new twe((TaskCompletionSource) obj2, b);
+                gcd gcdVar = (gcd) ((v9f) obj).k();
+                String[] strArr = (String[]) this.b;
+                Parcel R2 = gcdVar.R();
+                ald.d(R2, tweVar);
+                R2.writeStringArray(strArr);
+                gcdVar.W(R2, 6);
+                return;
+        }
+    }
+
+    @Override // tic
+    public final boolean b() {
+        vic vicVar = (vic) this.b;
+        return (vicVar.y || vicVar.I) ? false : true;
+    }
+
+    @Override // tic, bv9
+    public final void c(int i, boolean z) {
+        vic vicVar = (vic) this.b;
+        vicVar.E = z;
+        vicVar.d = i;
+        vicVar.L(1);
+        vicVar.A(i, z);
+        View[] viewArr = vicVar.e;
+        View view = viewArr[0];
+        int measuredWidth = view != null ? view.getMeasuredWidth() : 0;
+        View view2 = viewArr[1];
+        if (view2 != null) {
+            if (z) {
+                vicVar.G(view2, measuredWidth);
+            } else {
+                vicVar.G(view2, -measuredWidth);
+            }
+        }
+    }
+
+    public final hba c0(JSONObject jSONObject) {
+        yba rj2Var;
+        int i = jSONObject.getInt("settings_version");
+        if (i != 3) {
+            Log.e("FirebaseCrashlytics", "Could not determine SettingsJsonTransform for settings version " + i + ". Using default settings values.", null);
+            rj2Var = new faf((byte) 17);
+        } else {
+            rj2Var = new rj2((byte) 26);
+        }
+        return rj2Var.v0((z3f) this.b, jSONObject);
+    }
+
+    @Override // tic
+    public final void d() {
+        ((vic) this.b).q();
+    }
+
+    @Override // hf9
+    public final boolean d1() {
+        ej9 ej9Var = ((gj9) this.b).H;
+        return ej9Var != null && ((li9) ej9Var).a.W4();
+    }
+
+    @Override // hf9, cg9
+    public final void e(dg9 dg9Var) {
+        switch (this.a) {
+            case 2:
+                ej9 ej9Var = ((gj9) this.b).H;
+                if (ej9Var != null) {
+                    pi9 pi9Var = ((li9) ej9Var).a;
+                    pi9Var.j4(dg9Var);
+                    pi9Var.p3.j(dg9Var, true);
+                    break;
+                }
+                break;
+            default:
+                nl9 nl9Var = ((pl9) this.b).s;
+                if (nl9Var != null) {
+                    pi9 pi9Var2 = ((wh9) nl9Var).a;
+                    pi9Var2.j4(dg9Var);
+                    pi9Var2.p3.j(dg9Var, true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // tka
+    public final float e0() {
+        int f;
+        switch (this.a) {
+            case 12:
+                f = eg0.f(((nza) this.b).c0);
+                break;
+            default:
+                f = eg0.f(((thb) this.b).c0);
+                break;
+        }
+        return c00.d(9.66f, f, 0);
+    }
+
+    @Override // j63
+    public final long f(long j) {
+        return 0L;
+    }
+
+    public final void f0(int i, String str) {
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        m0(i, 2);
+        try {
+            int r0 = r0(str.length());
+            if (r0 != r0(str.length() * 3)) {
+                k0(d0(str));
+                n0(str, byteBuffer);
+                return;
+            }
+            int position = byteBuffer.position();
+            if (byteBuffer.remaining() < r0) {
+                throw new wk2(position + r0, byteBuffer.limit());
+            }
+            byteBuffer.position(position + r0);
+            n0(str, byteBuffer);
+            int position2 = byteBuffer.position();
+            byteBuffer.position(position);
+            k0((position2 - position) - r0);
+            byteBuffer.position(position2);
+        } catch (BufferOverflowException e) {
+            wk2 wk2Var = new wk2(byteBuffer.position(), byteBuffer.limit());
+            wk2Var.initCause(e);
+            throw wk2Var;
+        }
+    }
+
+    @Override // hf9
+    public final void f2() {
+        ej9 ej9Var = ((gj9) this.b).H;
+        if (ej9Var != null) {
+            ((li9) ej9Var).a.X3();
+        }
+    }
+
+    @Override // qy9
+    public final void g(float f) {
+        xe9 xe9Var = (xe9) this.b;
+        r47 r47Var = xe9Var.Q;
+        if (r47Var == null) {
+            return;
+        }
+        r47Var.b0 = f;
+        MediaController.z().k0(xe9Var.Q, f);
+    }
+
+    public final void g0(int i, byte[] bArr) {
+        m0(i, 2);
+        k0(bArr.length);
+        int length = bArr.length;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (byteBuffer.remaining() < length) {
+            throw new wk2(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(bArr, 0, length);
+    }
+
+    @Override // ty9
+    public final CharSequence getContentDescription() {
+        return null;
+    }
+
+    @Override // org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface
+    public final String[] getSupportedFeatures() {
+        return new String[]{"WEB_MESSAGE_LISTENER", "WEB_MESSAGE_ARRAY_BUFFER"};
+    }
+
+    @Override // qy9
+    public final void h(float f) {
+        r47 r47Var = ((xe9) this.b).Q;
+        if (r47Var == null) {
+            return;
+        }
+        r47Var.b0 = f;
+    }
+
+    public final void h0(int i) {
+        byte b = (byte) i;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (!byteBuffer.hasRemaining()) {
+            throw new wk2(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(b);
+    }
+
+    @Override // cg9
+    public final boolean i() {
+        return false;
+    }
+
+    @Override // ty9
+    public final int i0() {
+        return 0;
+    }
+
+    @Override // tka
+    public final int j0() {
+        switch (this.a) {
+            case 12:
+                return ((nza) this.b).d0;
+            default:
+                return ((thb) this.b).d0;
+        }
+    }
+
+    @Override // s9
+    public final void k(Object obj) {
+        ProxyBillingActivityV2 proxyBillingActivityV2 = (ProxyBillingActivityV2) this.b;
+        r9 r9Var = (r9) obj;
+        Intent intent = r9Var.b;
+        int i = old.e("ProxyBillingActivityV2", intent).a;
+        ResultReceiver resultReceiver = proxyBillingActivityV2.N;
+        if (resultReceiver != null) {
+            resultReceiver.send(i, intent == null ? null : intent.getExtras());
+        }
+        int i2 = r9Var.a;
+        if (i2 != -1 || i != 0) {
+            old.h("ProxyBillingActivityV2", "Alternative billing only dialog finished with resultCode " + i2 + " and billing's responseCode: " + i);
+        }
+        proxyBillingActivityV2.finish();
+    }
+
+    public final void k0(int i) {
+        while ((i & (-128)) != 0) {
+            h0((i & jn7.K1) | 128);
+            i >>>= 7;
+        }
+        h0(i);
+    }
+
+    @Override // caa
+    public final void m(v8a v8aVar, int i) {
+        he6 he6Var = pid.i;
+        he6Var.b("onSessionEnded with error = %d", Integer.valueOf(i));
+        pid pidVar = (pid) this.b;
+        byte b = pidVar.e;
+        if (b != 0) {
+            if (pidVar.h != null) {
+                he6Var.b("notify transferred with type = %d, sessionState = %s", Integer.valueOf(b), pidVar.h);
+                Iterator it = new HashSet(pidVar.b).iterator();
+                while (it.hasNext()) {
+                    pre preVar = (pre) it.next();
+                    byte b2 = pidVar.e;
+                    switch (preVar.a) {
+                        case 0:
+                            vwe.j.b("onTransferred with type = %d", Integer.valueOf(b2));
+                            vwe vweVar = (vwe) preVar.b;
+                            vweVar.c();
+                            n8f b3 = vweVar.c.b(vweVar.g);
+                            b8f m = c8f.m(b3.d());
+                            m.c();
+                            c8f.v((c8f) m.b, b2);
+                            b3.e((c8f) m.a());
+                            vweVar.a.a((p8f) b3.a(), jn7.G3);
+                            vweVar.i = false;
+                            vweVar.g = null;
+                            break;
+                    }
+                }
+            } else {
+                he6Var.b("No need to notify with null sessionState", new Object[0]);
+            }
+        } else {
+            he6Var.b("No need to notify transferred if the transfer type is unknown", new Object[0]);
+        }
+        if (pidVar.e == 2) {
+            return;
+        }
+        pidVar.c();
+    }
+
+    public final void m0(int i, int i2) {
+        k0((i << 3) | i2);
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void n(v8a v8aVar) {
+    }
+
+    @Override // ty9
+    public final void o(boolean z, float f) {
+        pqb pqbVar = (pqb) this.b;
+        pqbVar.n1 = f;
+        pqbVar.p1();
+    }
+
+    public final void o0(long j) {
+        while (((-128) & j) != 0) {
+            h0((((int) j) & jn7.K1) | 128);
+            j >>>= 7;
+        }
+        h0((int) j);
+    }
+
+    @Override // hf9
+    public final void o1(int i, int i2) {
+        ch9 ch9Var;
+        ej9 ej9Var = ((gj9) this.b).H;
+        if (ej9Var == null || (ch9Var = ((li9) ej9Var).a.R3) == null) {
+            return;
+        }
+        ch9Var.f(i, i2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onPostMessage(WebView webView, InvocationHandler invocationHandler, Uri uri, boolean z, InvocationHandler invocationHandler2) {
+        rx rxVar;
+        rx rxVar2;
+        WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) py0.a(WebMessageBoundaryInterface.class, invocationHandler);
+        InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
+        i09[] i09VarArr = new i09[ports.length];
+        for (int i = 0; i < ports.length; i++) {
+            InvocationHandler invocationHandler3 = ports[i];
+            i09 i09Var = new i09((byte) 23);
+            i09Var.b = (WebMessagePortBoundaryInterface) py0.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
+            i09VarArr[i] = i09Var;
+        }
+        if (czc.a.b()) {
+            WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) py0.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
+            int type = webMessagePayloadBoundaryInterface.getType();
+            if (type == 0) {
+                rxVar = new rx(webMessagePayloadBoundaryInterface.getAsString());
+            } else {
+                if (type != 1) {
+                    rxVar2 = null;
+                    if (rxVar2 == null) {
+                        JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) py0.a(JsReplyProxyBoundaryInterface.class, invocationHandler2);
+                        ((yyc) this.b).i(webView, rxVar2, uri, z, (cv5) jsReplyProxyBoundaryInterface.getOrCreatePeer(new mk(jsReplyProxyBoundaryInterface, (byte) 2)));
+                        return;
+                    }
+                    return;
+                }
+                rxVar = new rx(webMessagePayloadBoundaryInterface.getAsArrayBuffer());
+            }
+        } else {
+            rxVar = new rx(webMessageBoundaryInterface.getData());
+        }
+        rxVar2 = rxVar;
+        if (rxVar2 == null) {
+        }
+    }
+
+    @Override // ifc
+    public final void onRenderedFirstFrame() {
+        hl.c3(new ux9(this, (byte) 2));
+    }
+
+    @Override // ifc
+    public final void onStateChanged(boolean z, int i) {
+        ky9 ky9Var = (ky9) this.b;
+        if (i == 4) {
+            ky9Var.dismiss();
+        } else {
+            hl.r(ky9Var.a0);
+            hl.d3(ky9Var.a0, 16L);
+        }
+    }
+
+    @Override // ifc
+    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
+    @Override // caa
+    public final /* bridge */ /* synthetic */ void p(v8a v8aVar, int i) {
+    }
+
+    @Override // hf9
+    public final void q() {
+        gj9 gj9Var = (gj9) this.b;
+        ej9 ej9Var = gj9Var.H;
+        if (ej9Var != null) {
+            ((li9) ej9Var).a.U3(gj9Var.a);
+        }
+    }
+
+    @Override // j63
+    public final long r(long j, long j2) {
+        return 0L;
+    }
+
+    @Override // cg9
+    public final void s(dg9 dg9Var, int i, int i2) {
+        nl9 nl9Var;
+        amb textSelectionHelper;
+        pl9 pl9Var = (pl9) this.b;
+        if (pl9Var.x || i == i2 || (nl9Var = pl9Var.s) == null || (textSelectionHelper = ((wh9) nl9Var).a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        dg9Var.post(new hz0((Object) this, (Object) dg9Var, i2, (Object) textSelectionHelper, i, (byte) 4));
+    }
+
+    @Override // tka
+    public final void t(boolean z) {
+        switch (this.a) {
+            case 12:
+                nza nzaVar = (nza) this.b;
+                fm0 fm0Var = nzaVar.Z;
+                if (fm0Var != null) {
+                    fm0Var.a(z, true);
+                }
+                l15 l15Var = nzaVar.s;
+                if (l15Var != null) {
+                    l15Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                thb thbVar = (thb) this.b;
+                fm0 fm0Var2 = thbVar.Z;
+                if (fm0Var2 != null) {
+                    fm0Var2.a(z, true);
+                }
+                l15 l15Var2 = thbVar.s;
+                if (l15Var2 != null) {
+                    l15Var2.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // aea
+    public final void u() {
+        switch (this.a) {
+            case 4:
+                break;
+            default:
+                ((StickersActivity) this.b).d0();
+                break;
+        }
+    }
+
+    @Override // j63
+    public final long v(long j, long j2) {
+        return -9223372036854775807L;
+    }
+
+    @Override // cg9
+    public final boolean w(dg9 dg9Var) {
+        return false;
+    }
+
+    @Override // hj
+    public final void y(int i, int i2, boolean z) {
+        yg9 yg9Var = (yg9) this.b;
+        yg9Var.w0(i, i2, z);
+        q67 q67Var = yg9Var.P0;
+        if (q67Var != null) {
+            q67Var.g();
+            yg9Var.P0 = null;
+        }
+    }
+
+    @Override // j63
+    public final n29 z(long j) {
+        return (n29) this.b;
+    }
+
+    @Override // ifc
+    public final void onRenderedFirstFrame(uj ujVar) {
+    }
+
+    private final void b0() {
+    }
+
+    @Override // cg9
+    public final void G() {
+    }
+
+    @Override // tic
+    public final void X() {
+    }
+
+    @Override // ty9
+    public final void x() {
+    }
+
+    @Override // cg9
+    public final void M(CharSequence charSequence) {
+    }
+
+    @Override // ifc
+    public final void onSeekFinished(uj ujVar) {
+    }
+
+    @Override // ifc
+    public final void onSeekStarted(uj ujVar) {
+    }
+
+    @Override // ifc
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    public /* synthetic */ ve9(qa4 qa4Var, String[] strArr) {
+        this.a = (byte) 28;
+        this.b = strArr;
+    }
+
+    public /* synthetic */ ve9(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
+    }
+
+    public ve9(int i, byte[] bArr) {
+        this.a = (byte) 29;
+        ByteBuffer wrap = ByteBuffer.wrap(bArr, 0, i);
+        this.b = wrap;
+        wrap.order(ByteOrder.LITTLE_ENDIAN);
+    }
+
+    public ve9(byte b) {
+        this.a = b;
+        switch (b) {
+            case 18:
+                break;
+            default:
+                this.b = new uif((byte) 17);
+                break;
+        }
+    }
+
+    @Override // j63
+    public final long j(long j, long j2) {
+        return j2;
+    }
+
+    @Override // cg9
+    public final void l(int i, int i2) {
+    }
+
+    @Override // ifc
+    public final void onError(kfc kfcVar, Exception exc) {
+    }
+
+    @Override // ifc
+    public final void onVideoSizeChanged(int i, int i2, int i3, float f) {
     }
 }

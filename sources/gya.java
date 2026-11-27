@@ -1,35 +1,35 @@
 // default package
 
-import j$.util.Objects;
-import java.util.HashMap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class gya implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Runnable c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class gya {
-    public final String a;
-    public final qm5 b;
-    public final qm5 c;
-    public final qm5 d;
-
-    public gya(String str, HashMap hashMap, HashMap hashMap2, HashMap hashMap3) {
-        this.a = str;
-        this.b = qm5.b(hashMap);
-        this.c = qm5.b(hashMap2);
-        this.d = qm5.b(hashMap3);
+    public /* synthetic */ gya(Runnable runnable, Runnable runnable2, byte b) {
+        this.a = b;
+        this.b = runnable;
+        this.c = runnable2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Runnable runnable = this.c;
+        Runnable runnable2 = this.b;
+        switch (b) {
+            case 0:
+                runnable2.run();
+                runnable.run();
+                break;
+            default:
+                hnb.b(runnable2);
+                if (runnable != null) {
+                    hl.c3(runnable);
+                    break;
+                }
+                break;
         }
-        if (!(obj instanceof gya)) {
-            return false;
-        }
-        gya gyaVar = (gya) obj;
-        return Objects.equals(this.a, gyaVar.a) && this.b.equals(gyaVar.b) && this.c.equals(gyaVar.c) && this.d.equals(gyaVar.d);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c, this.d);
     }
 }

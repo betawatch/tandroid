@@ -1,38 +1,41 @@
 // default package
 
-import android.os.BadParcelableException;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.RemoteException;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class w3d {
-    public static final /* synthetic */ int a = 0;
+public final class w3d extends j5d {
+    public final /* synthetic */ IBinder h;
+    public final /* synthetic */ t8a n;
 
-    static {
-        w3d.class.getClassLoader();
+    public w3d(t8a t8aVar, IBinder iBinder) {
+        this.h = iBinder;
+        this.n = t8aVar;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
+    @Override // j5d
+    public final void b() {
+        y3d y3dVar = (y3d) this.n.b;
+        y3dVar.n = (IInterface) y3dVar.i.a(this.h);
+        h5d h5dVar = y3dVar.b;
+        int i = 0;
+        h5dVar.b("linkToDeath", new Object[0]);
+        try {
+            y3dVar.n.asBinder().linkToDeath(y3dVar.k, 0);
+        } catch (RemoteException e) {
+            h5dVar.a(e, "linkToDeath failed", new Object[0]);
         }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(de9.k(dataAvail, "Parcel data not fully consumed, unread size: "));
+        y3dVar.g = false;
+        ArrayList arrayList = y3dVar.d;
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            ((Runnable) obj).run();
         }
-    }
-
-    public static void c(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
+        y3dVar.d.clear();
     }
 }

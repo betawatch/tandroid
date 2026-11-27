@@ -1,185 +1,290 @@
 // default package
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.util.Log;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Dictation.DictationAsr;
+import android.opengl.GLSurfaceView;
+import android.os.Build;
+import android.view.Choreographer;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.View;
+import android.view.ViewParent;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zl3 {
-    public boolean a;
-    public boolean b;
-    public long c;
-    public final Object d;
-    public final Object e;
-    public Object f;
-    public Object g;
-    public Object h;
+public abstract class zl3 extends GLSurfaceView implements Choreographer.FrameCallback {
+    public static final /* synthetic */ int L = 0;
+    public volatile boolean E;
+    public volatile int F;
+    public long G;
+    public volatile int H;
+    public final ArrayList I;
+    public float J;
+    public float K;
+    public final ys4 a;
+    public final GestureDetector b;
+    public eva c;
+    public ValueAnimator d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public volatile boolean r;
+    public boolean s;
+    public Runnable w;
+    public volatile float x;
+    public volatile boolean y;
 
-    public zl3(Context context, uac uacVar) {
-        this.d = context.getApplicationContext();
-        this.e = uacVar;
-        this.c = 15000L;
-        this.h = new vac();
-        this.g = adb.a;
-    }
-
-    public static zl3 c(xl3 xl3Var, p66 p66Var) {
-        long nativeSessionNew;
-        vl3 vl3Var = (vl3) xl3Var.b;
-        long h = DictationAsr.h(vl3Var);
-        if (h == 0) {
-            return null;
-        }
-        zl3 zl3Var = new zl3(xl3Var, p66Var);
-        String a = vl3Var.a((String) xl3Var.c);
-        nativeSessionNew = DictationAsr.nativeSessionNew(h, a, a.split(",")[0], gba.o() == 0 ? 2 : 4);
-        zl3Var.c = nativeSessionNew;
-        if (nativeSessionNew != 0) {
-            return zl3Var;
-        }
-        DictationAsr.S(vl3Var);
-        return null;
+    public zl3(Context context) {
+        super(context);
+        this.f = true;
+        this.x = 1.0f;
+        this.I = new ArrayList();
+        this.J = 1.0f;
+        this.K = 1.0f;
+        setEGLContextClientVersion(3);
+        setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+        getHolder().setFormat(-3);
+        setZOrderOnTop(true);
+        this.a = new ys4(context, 1, 4);
+        setRenderer(new xl3(this));
+        setRenderMode(0);
+        this.b = new GestureDetector(context, new yl3(this, (byte) 0));
     }
 
     public final void a() {
-        String nativeSessionFinish;
-        long j = this.c;
-        if (j == 0) {
+        ValueAnimator valueAnimator = this.d;
+        if (valueAnimator == null) {
             return;
         }
-        nativeSessionFinish = DictationAsr.nativeSessionFinish(j);
-        b(nativeSessionFinish);
-        DictationAsr.nativeSessionFree(this.c);
-        this.c = 0L;
-        DictationAsr.S((vl3) this.e);
+        valueAnimator.removeAllListeners();
+        this.d.cancel();
+        this.d = null;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:60:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(String str) {
-        boolean z;
-        boolean z2;
-        boolean z3;
+    public final void b(ArrayList arrayList) {
         int i;
-        p66 p66Var = (p66) this.f;
-        StringBuilder sb = (StringBuilder) this.g;
-        if (str == null || str.length() <= 2) {
+        ArrayList arrayList2 = new ArrayList();
+        synchronized (this.I) {
+            int size = arrayList.size();
+            i = 0;
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList.get(i2);
+                i2++;
+                Runnable runnable = (Runnable) obj;
+                if (this.I.remove(runnable)) {
+                    arrayList2.add(runnable);
+                }
+            }
+        }
+        int size2 = arrayList2.size();
+        while (i < size2) {
+            Object obj2 = arrayList2.get(i);
+            i++;
+            ((Runnable) obj2).run();
+        }
+    }
+
+    public final void c() {
+        a();
+        ys4 ys4Var = this.a;
+        float f = ys4Var.d;
+        float f2 = ys4Var.i;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+        this.d = ofFloat;
+        ofFloat.setDuration(600L);
+        this.d.setInterpolator(new OvershootInterpolator());
+        this.d.addUpdateListener(new gy1(this, f, f2, (byte) 1));
+        this.d.addListener(new cn2(this, (byte) 12));
+        this.d.start();
+        eva evaVar = this.c;
+        if (evaVar != null) {
+            evaVar.b(Math.abs(f + f2));
+        }
+    }
+
+    public final void d(int i) {
+        if (this.e && i == this.F) {
+            vl3 vl3Var = new vl3(this, i, (byte) 0);
+            if (Build.VERSION.SDK_INT < 29 || !isHardwareAccelerated()) {
+                postOnAnimation(vl3Var);
+            } else {
+                getViewTreeObserver().registerFrameCommitCallback(vl3Var);
+                getRootView().invalidate();
+            }
+        }
+    }
+
+    @Override // android.view.Choreographer.FrameCallback
+    public final void doFrame(long j) {
+        if (!this.e || this.f || this.r) {
             return;
         }
-        boolean z4 = this.b;
-        try {
-            JSONArray jSONArray = new JSONArray(str);
-            z2 = false;
-            for (int i2 = 0; i2 < jSONArray.length(); i2++) {
-                try {
-                    JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-                    int hashCode = optString.hashCode();
-                    z = true;
-                    if (hashCode != -1354815177) {
-                        if (hashCode != -792934015) {
-                            if (hashCode == 100619) {
-                                try {
-                                    if (optString.equals("eou") && jSONObject.optDouble("p") > 0.5d) {
-                                        z4 = true;
-                                    }
-                                } catch (Exception e) {
-                                    e = e;
-                                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
-                                    z3 = z4;
-                                    if (z2) {
-                                    }
-                                    i = 0;
-                                    this.b = (z3 || ((String) this.h).isEmpty()) ? i : z;
-                                    if (z3) {
-                                    }
-                                }
-                            } else {
-                                continue;
-                            }
-                        } else if (optString.equals("partial")) {
-                            StringBuilder sb2 = new StringBuilder();
-                            this.a = DictationAsr.v(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                            DictationAsr.l(sb2, jSONObject.optJSONArray("open"), null);
-                            DictationAsr.l(sb2, jSONObject.optJSONArray("tail"), null);
-                            this.h = sb2.toString();
-                            z2 = true;
-                        }
-                    } else if (optString.equals("commit")) {
-                        DictationAsr.l(sb, jSONObject.optJSONArray("words"), null);
-                        z2 = true;
-                    }
-                } catch (Exception e2) {
-                    e = e2;
-                    z = true;
-                }
-            }
-            z = true;
-        } catch (Exception e3) {
-            e = e3;
-            z = true;
-            z2 = false;
+        float alpha = Build.VERSION.SDK_INT < 34 ? getAlpha() : 1.0f;
+        for (ViewParent parent = getParent(); parent instanceof View; parent = parent.getParent()) {
+            alpha *= ((View) parent).getAlpha();
         }
-        z3 = z4;
-        if (z2) {
-            String sb3 = sb.toString();
-            String str2 = (String) this.h;
-            boolean z5 = this.a;
-            p66Var.w++;
-            if (p66Var.g > sb3.length()) {
-                p66Var.g = 0;
-            }
-            p66Var.h = sb3.length();
-            p66Var.i = str2.isEmpty();
-            String trim = sb3.substring(p66Var.g).trim();
-            if (trim.length() > 180 && str2.isEmpty()) {
-                gl.c3(new b61((Object) p66Var, p66Var.f, (Object) trim, z, (byte) 2));
-                q66 q66Var = p66Var.x;
-                long j = q66Var.f;
-                q66Var.f = 1 + j;
-                p66Var.f = j;
-                p66Var.g = sb3.length();
-                p66Var.q.reset();
-                trim = "";
-            }
-            String o = DictationAsr.o(trim, str2, z5);
-            if (!o.equals(p66Var.j)) {
-                p66Var.j = o;
-                boolean z6 = 0;
-                gl.c3(new b61((Object) p66Var, p66Var.f, (Object) o, z6, (byte) 2));
-                i = z6;
-                this.b = (z3 || ((String) this.h).isEmpty()) ? i : z;
-                if (z3 && ((String) this.h).isEmpty() && sb.length() > 0) {
-                    sb.setLength(i);
-                    p66Var.b();
-                    p66Var.h = i;
-                    p66Var.g = i;
-                    return;
+        this.x = alpha;
+        long j2 = this.G;
+        if (j2 != 0) {
+            if (j >= j2) {
+                if (j - j2 <= 16666666) {
+                    j = j2;
+                    this.G = j + 16666666;
+                    requestRender();
                 }
+            }
+            Choreographer.getInstance().postFrameCallback(this);
+        }
+        this.G = j;
+        this.G = j + 16666666;
+        requestRender();
+        Choreographer.getInstance().postFrameCallback(this);
+    }
+
+    public final void e() {
+        if (this.e && !this.f && this.h && !this.n && this.d == null) {
+            float f = this.a.d;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f, 360.0f + f);
+            this.d = ofFloat;
+            ofFloat.setDuration(10540L);
+            this.d.setRepeatCount(-1);
+            this.d.setInterpolator(new LinearInterpolator());
+            this.d.addUpdateListener(new az1(this, (byte) 18));
+            this.d.start();
+        }
+    }
+
+    public final void f() {
+        if (this.K == 1.0f) {
+            getHolder().setSizeFromLayout();
+        } else {
+            if (getWidth() <= 0 || getHeight() <= 0) {
                 return;
             }
-        }
-        i = 0;
-        this.b = (z3 || ((String) this.h).isEmpty()) ? i : z;
-        if (z3) {
+            getHolder().setFixedSize(Math.round(getWidth() * this.K), Math.round(getHeight() * this.K));
         }
     }
 
-    public zl3(xl3 xl3Var, p66 p66Var) {
-        this.g = new StringBuilder();
-        this.h = "";
-        this.d = xl3Var;
-        this.e = (vl3) xl3Var.b;
-        this.f = p66Var;
+    @Override // android.opengl.GLSurfaceView, android.view.SurfaceView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e = true;
+        setPaused(this.f);
+    }
+
+    @Override // android.opengl.GLSurfaceView, android.view.SurfaceView, android.view.View
+    public final void onDetachedFromWindow() {
+        ArrayList arrayList;
+        this.e = false;
+        this.s = false;
+        this.H++;
+        Choreographer.getInstance().removeFrameCallback(this);
+        this.G = 0L;
+        a();
+        super.onDetachedFromWindow();
+        synchronized (this.I) {
+            arrayList = new ArrayList(this.I);
+        }
+        b(arrayList);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        if (this.K > 1.0f) {
+            f();
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            if (getParent() != null) {
+                getParent().requestDisallowInterceptTouchEvent(true);
+            }
+        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
+            this.n = false;
+            c();
+            if (getParent() != null) {
+                getParent().requestDisallowInterceptTouchEvent(false);
+            }
+        }
+        return this.b.onTouchEvent(motionEvent);
+    }
+
+    public void setIdleAnimationEnabled(boolean z) {
+        this.h = z;
+        if (z) {
+            e();
+        } else {
+            a();
+        }
+    }
+
+    public void setPaused(boolean z) {
+        this.f = z;
+        Choreographer.getInstance().removeFrameCallback(this);
+        this.G = 0L;
+        if (z) {
+            a();
+        } else {
+            if (!this.e || this.r) {
+                return;
+            }
+            e();
+            Choreographer.getInstance().postFrameCallback(this);
+        }
+    }
+
+    public void setRenderScale(float f) {
+        float max = Math.max(1.0f, Math.min(this.K, f));
+        if (this.J == max) {
+            return;
+        }
+        this.J = max;
+        this.a.h = max / this.K;
+    }
+
+    public void setStarParticlesView(eva evaVar) {
+        this.c = evaVar;
+    }
+
+    @Override // android.opengl.GLSurfaceView, android.view.SurfaceHolder.Callback
+    public final void surfaceCreated(SurfaceHolder surfaceHolder) {
+        this.F++;
+        this.E = false;
+        this.y = false;
+        this.s = false;
+        super.surfaceCreated(surfaceHolder);
+    }
+
+    @Override // android.opengl.GLSurfaceView, android.view.SurfaceHolder.Callback
+    public final void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        ArrayList arrayList;
+        this.F++;
+        this.E = false;
+        this.y = false;
+        this.s = false;
+        super.surfaceDestroyed(surfaceHolder);
+        synchronized (this.I) {
+            arrayList = new ArrayList(this.I);
+        }
+        b(arrayList);
+    }
+
+    @Override // android.opengl.GLSurfaceView, android.view.SurfaceHolder.Callback2
+    public final void surfaceRedrawNeededAsync(SurfaceHolder surfaceHolder, Runnable runnable) {
+        ArrayList arrayList;
+        synchronized (this.I) {
+            this.I.add(new dt2(runnable, (byte) 1));
+            arrayList = new ArrayList(this.I);
+        }
+        super.surfaceRedrawNeededAsync(surfaceHolder, new wd3(this, arrayList, (byte) 12));
     }
 }

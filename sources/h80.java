@@ -1,41 +1,35 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h80 extends jy2 {
+public final class h80 extends dz2 {
     public final String a;
-    public final byte[] b;
+    public final String b;
 
-    public h80(String str, byte[] bArr) {
+    public h80(String str, String str2) {
         this.a = str;
-        this.b = bArr;
+        this.b = str2;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof jy2)) {
+        if (!(obj instanceof dz2)) {
             return false;
         }
-        jy2 jy2Var = (jy2) obj;
-        h80 h80Var = (h80) jy2Var;
-        if (!this.a.equals(h80Var.a)) {
-            return false;
-        }
-        if (jy2Var instanceof h80) {
-            h80Var = (h80) jy2Var;
-        }
-        return Arrays.equals(this.b, h80Var.b);
+        h80 h80Var = (h80) ((dz2) obj);
+        return this.a.equals(h80Var.a) && this.b.equals(h80Var.b);
     }
 
     public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
     }
 
     public final String toString() {
-        return "File{filename=" + this.a + ", contents=" + Arrays.toString(this.b) + "}";
+        StringBuilder sb = new StringBuilder("CustomAttribute{key=");
+        sb.append(this.a);
+        sb.append(", value=");
+        return c00.k(sb, this.b, "}");
     }
 }

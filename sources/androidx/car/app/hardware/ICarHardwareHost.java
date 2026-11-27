@@ -6,24 +6,24 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.hardware.ICarHardwareResult;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public interface ICarHardwareHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$hardware$ICarHardwareHost".replace('$', '.');
 
-    void getCarHardwareResult(int i, y21 y21Var, ICarHardwareResult iCarHardwareResult);
+    void getCarHardwareResult(int i, h31 h31Var, ICarHardwareResult iCarHardwareResult);
 
-    void subscribeCarHardwareResult(int i, y21 y21Var, ICarHardwareResult iCarHardwareResult);
+    void subscribeCarHardwareResult(int i, h31 h31Var, ICarHardwareResult iCarHardwareResult);
 
-    void unsubscribeCarHardwareResult(int i, y21 y21Var);
+    void unsubscribeCarHardwareResult(int i, h31 h31Var);
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static abstract class Stub extends Binder implements ICarHardwareHost {
         static final int TRANSACTION_getCarHardwareResult = 2;
         static final int TRANSACTION_subscribeCarHardwareResult = 3;
         static final int TRANSACTION_unsubscribeCarHardwareResult = 4;
 
-        /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+        /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
         private static class Proxy implements ICarHardwareHost {
             private IBinder mRemote;
 
@@ -37,15 +37,15 @@ public interface ICarHardwareHost extends IInterface {
             }
 
             @Override // androidx.car.app.hardware.ICarHardwareHost
-            public void getCarHardwareResult(int i, y21 y21Var, ICarHardwareResult iCarHardwareResult) {
+            public void getCarHardwareResult(int i, h31 h31Var, ICarHardwareResult iCarHardwareResult) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarHardwareHost.DESCRIPTOR);
                     obtain.writeInt(i);
-                    if (y21Var != null) {
+                    if (h31Var != null) {
                         obtain.writeInt(1);
-                        y21Var.writeToParcel(obtain, 0);
+                        h31Var.writeToParcel(obtain, 0);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -63,15 +63,15 @@ public interface ICarHardwareHost extends IInterface {
             }
 
             @Override // androidx.car.app.hardware.ICarHardwareHost
-            public void subscribeCarHardwareResult(int i, y21 y21Var, ICarHardwareResult iCarHardwareResult) {
+            public void subscribeCarHardwareResult(int i, h31 h31Var, ICarHardwareResult iCarHardwareResult) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarHardwareHost.DESCRIPTOR);
                     obtain.writeInt(i);
-                    if (y21Var != null) {
+                    if (h31Var != null) {
                         obtain.writeInt(1);
-                        y21Var.writeToParcel(obtain, 0);
+                        h31Var.writeToParcel(obtain, 0);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -85,15 +85,15 @@ public interface ICarHardwareHost extends IInterface {
             }
 
             @Override // androidx.car.app.hardware.ICarHardwareHost
-            public void unsubscribeCarHardwareResult(int i, y21 y21Var) {
+            public void unsubscribeCarHardwareResult(int i, h31 h31Var) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarHardwareHost.DESCRIPTOR);
                     obtain.writeInt(i);
-                    if (y21Var != null) {
+                    if (h31Var != null) {
                         obtain.writeInt(1);
-                        y21Var.writeToParcel(obtain, 0);
+                        h31Var.writeToParcel(obtain, 0);
                     } else {
                         obtain.writeInt(0);
                     }
@@ -129,19 +129,19 @@ public interface ICarHardwareHost extends IInterface {
                 return true;
             }
             if (i == 2) {
-                getCarHardwareResult(parcel.readInt(), parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null, ICarHardwareResult.Stub.asInterface(parcel.readStrongBinder()));
+                getCarHardwareResult(parcel.readInt(), parcel.readInt() != 0 ? h31.CREATOR.createFromParcel(parcel) : null, ICarHardwareResult.Stub.asInterface(parcel.readStrongBinder()));
                 parcel2.writeNoException();
                 return true;
             }
             if (i == 3) {
-                subscribeCarHardwareResult(parcel.readInt(), parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null, ICarHardwareResult.Stub.asInterface(parcel.readStrongBinder()));
+                subscribeCarHardwareResult(parcel.readInt(), parcel.readInt() != 0 ? h31.CREATOR.createFromParcel(parcel) : null, ICarHardwareResult.Stub.asInterface(parcel.readStrongBinder()));
                 parcel2.writeNoException();
                 return true;
             }
             if (i != 4) {
                 return super.onTransact(i, parcel, parcel2, i2);
             }
-            unsubscribeCarHardwareResult(parcel.readInt(), parcel.readInt() != 0 ? y21.CREATOR.createFromParcel(parcel) : null);
+            unsubscribeCarHardwareResult(parcel.readInt(), parcel.readInt() != 0 ? h31.CREATOR.createFromParcel(parcel) : null);
             parcel2.writeNoException();
             return true;
         }
@@ -152,7 +152,7 @@ public interface ICarHardwareHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static class Default implements ICarHardwareHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -160,15 +160,15 @@ public interface ICarHardwareHost extends IInterface {
         }
 
         @Override // androidx.car.app.hardware.ICarHardwareHost
-        public void unsubscribeCarHardwareResult(int i, y21 y21Var) {
+        public void unsubscribeCarHardwareResult(int i, h31 h31Var) {
         }
 
         @Override // androidx.car.app.hardware.ICarHardwareHost
-        public void getCarHardwareResult(int i, y21 y21Var, ICarHardwareResult iCarHardwareResult) {
+        public void getCarHardwareResult(int i, h31 h31Var, ICarHardwareResult iCarHardwareResult) {
         }
 
         @Override // androidx.car.app.hardware.ICarHardwareHost
-        public void subscribeCarHardwareResult(int i, y21 y21Var, ICarHardwareResult iCarHardwareResult) {
+        public void subscribeCarHardwareResult(int i, h31 h31Var, ICarHardwareResult iCarHardwareResult) {
         }
     }
 }

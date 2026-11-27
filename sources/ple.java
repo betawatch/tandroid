@@ -1,38 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ple {
-    public static final void a(cyb cybVar, String str) {
-        cybVar.l(cybVar.b - 1, "Trailing comma before the end of JSON ".concat(str), "Trailing commas are non-complaint JSON and not allowed by default. Use 'allowTrailingCommas = true' in 'Json {}' builder to support them.");
-        throw null;
+public final class ple implements zq7 {
+    public static final ple a = new ple();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)));
     }
 
-    public static final CharSequence b(int i, CharSequence charSequence) {
-        charSequence.getClass();
-        if (charSequence.length() >= 200) {
-            if (i != -1) {
-                int i2 = i - 30;
-                int i3 = i + 30;
-                String str = i2 <= 0 ? "" : ".....";
-                String str2 = i3 >= charSequence.length() ? "" : ".....";
-                StringBuilder sb = new StringBuilder(str);
-                if (i2 < 0) {
-                    i2 = 0;
-                }
-                int length = charSequence.length();
-                if (i3 > length) {
-                    i3 = length;
-                }
-                sb.append(charSequence.subSequence(i2, i3).toString());
-                sb.append(str2);
-                return sb.toString();
-            }
-            int length2 = charSequence.length() - 60;
-            if (length2 > 0) {
-                return "....." + charSequence.subSequence(length2, charSequence.length()).toString();
-            }
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return charSequence;
+        throw null;
     }
 }

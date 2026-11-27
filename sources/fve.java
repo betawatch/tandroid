@@ -1,18 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class fve implements zn7 {
-    public static final fve a = new fve();
+public final class fve extends s6e {
+    private static final fve zzb;
+    private int zzd;
+    private int zze;
 
     static {
-        yjb.y(yjb.p(gid.class, new bgd(1)));
+        fve fveVar = new fve();
+        zzb = fveVar;
+        s6e.k(fve.class, fveVar);
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static fve n() {
+        return zzb;
+    }
+
+    @Override // s6e
+    public final Object d(int i) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new lfe(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", ovd.i});
+        }
+        if (i2 == 3) {
+            return new fve();
+        }
+        if (i2 == 4) {
+            return new utd(zzb);
+        }
+        if (i2 == 5) {
+            return zzb;
         }
         throw null;
     }

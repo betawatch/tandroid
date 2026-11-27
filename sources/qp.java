@@ -1,55 +1,31 @@
 // default package
 
-import android.app.Activity;
-import android.content.ClipData;
-import android.os.Build;
-import android.text.Selection;
-import android.text.Spannable;
-import android.view.DragEvent;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.AttributeSet;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.RatingBar;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class qp {
-    public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
-        dv2 dv2Var;
-        activity.requestDragAndDropPermissions(dragEvent);
-        int offsetForPosition = textView.getOffsetForPosition(dragEvent.getX(), dragEvent.getY());
-        textView.beginBatchEdit();
-        try {
-            Selection.setSelection((Spannable) textView.getText(), offsetForPosition);
-            ClipData clipData = dragEvent.getClipData();
-            if (Build.VERSION.SDK_INT >= 31) {
-                dv2Var = new cv2(clipData, 3);
-            } else {
-                ev2 ev2Var = new ev2();
-                ev2Var.b = clipData;
-                ev2Var.c = (byte) 3;
-                dv2Var = ev2Var;
-            }
-            jdc.i(textView, dv2Var.build());
-            textView.endBatchEdit();
-            return true;
-        } catch (Throwable th) {
-            textView.endBatchEdit();
-            throw th;
-        }
+public final class qp extends RatingBar {
+    public final lh2 a;
+
+    public qp(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.ratingBarStyle);
+        brb.a(getContext(), this);
+        lh2 lh2Var = new lh2((Object) this, (byte) 1);
+        this.a = lh2Var;
+        lh2Var.z(attributeSet, R.attr.ratingBarStyle);
     }
 
-    public static boolean b(DragEvent dragEvent, View view, Activity activity) {
-        dv2 dv2Var;
-        activity.requestDragAndDropPermissions(dragEvent);
-        ClipData clipData = dragEvent.getClipData();
-        if (Build.VERSION.SDK_INT >= 31) {
-            dv2Var = new cv2(clipData, 3);
-        } else {
-            ev2 ev2Var = new ev2();
-            ev2Var.b = clipData;
-            ev2Var.c = (byte) 3;
-            dv2Var = ev2Var;
+    @Override // android.widget.RatingBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final synchronized void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        Bitmap bitmap = (Bitmap) this.a.c;
+        if (bitmap != null) {
+            setMeasuredDimension(View.resolveSizeAndState(bitmap.getWidth() * getNumStars(), i, 0), getMeasuredHeight());
         }
-        jdc.i(view, dv2Var.build());
-        return true;
     }
 }

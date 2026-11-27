@@ -1,308 +1,267 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.text.TextUtils;
+import j$.util.Objects;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class cd3 {
-    public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
-    public static final int[] b = {1, 2, 3, 6};
-    public static final int[] c = {48000, 44100, 32000};
-    public static final int[] d = {24000, 22050, gc1.AUDIO_CONTENT_SAMPLING_RATE};
-    public static final int[] e = {2, 1, 2, 3, 3, 4, 4, 5};
-    public static final int[] f = {32, 40, 48, 56, 64, 80, 96, kk7.w1, 128, kk7.p2, kk7.V2, kk7.A3, 256, kk7.q5, 384, 448, 512, 576, 640};
-    public static final int[] g = {69, 87, kk7.o1, kk7.E1, kk7.U1, kk7.D2, kk7.l3, kk7.R3, kk7.A4, kk7.S5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
+public final class cd3 extends jd3 implements Comparable {
+    public final boolean E;
+    public final boolean F;
+    public final int G;
+    public final int H;
+    public final boolean I;
+    public final int J;
+    public final int K;
+    public final int L;
+    public final int M;
+    public final boolean N;
+    public final boolean O;
+    public final boolean P;
+    public final byte e;
+    public final boolean f;
+    public final String h;
+    public final gd3 n;
+    public final boolean r;
+    public final int s;
+    public final int w;
+    public final int x;
+    public final int y;
 
-    public static int a(int i, int i2) {
-        int i3 = i2 / 2;
-        if (i < 0 || i >= 3 || i2 < 0 || i3 >= 19) {
-            return -1;
-        }
-        int i4 = c[i];
-        if (i4 == 44100) {
-            return ((i2 % 2) + g[i3]) << 1;
-        }
-        int i5 = f[i3];
-        return i4 == 32000 ? i5 * 6 : i5 << 2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0052 A[LOOP:1: B:16:0x0050->B:17:0x0052, LOOP_END] */
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0107 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x00e7 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(dd ddVar, int[] iArr, int[] iArr2, iq iqVar) {
-        int i;
-        int m0;
-        int m02;
-        int i2;
-        int i3 = 0;
-        while (i3 < iArr2.length) {
-            int m = iqVar.m(ddVar, iArr);
-            if (m < 0 || m > 15) {
-                switch (m) {
-                    case 16:
-                        i = iArr2[i3 - 1];
-                        m0 = ddVar.m0(iArr, 2) + 3;
-                        for (i2 = 0; i2 < m0; i2++) {
-                            iArr2[i3 + i2] = i;
-                        }
-                        i3 += m0 - 1;
-                        break;
-                    case 17:
-                        m02 = ddVar.m0(iArr, 3) + 3;
-                        m0 = m02;
-                        i = 0;
-                        while (i2 < m0) {
-                        }
-                        i3 += m0 - 1;
-                        break;
-                    case 18:
-                        m02 = ddVar.m0(iArr, 7) + 11;
-                        m0 = m02;
-                        i = 0;
-                        while (i2 < m0) {
-                        }
-                        i3 += m0 - 1;
-                        break;
-                    default:
-                        throw new v30(String.format("[%s] Bad code length '%d' at the bit index '%d'.", cd3.class.getSimpleName(), Integer.valueOf(m), iArr));
-                }
+    public cd3(int i, t1c t1cVar, int i2, gd3 gd3Var, int i3, boolean z, bd3 bd3Var, int i4) {
+        super(i, t1cVar, i2);
+        int i5;
+        int i6;
+        boolean z2;
+        String[] I;
+        int i7;
+        int i8;
+        int i9;
+        ko4 ko4Var;
+        boolean z3;
+        gd3 gd3Var2;
+        boolean z4;
+        a2c a2cVar;
+        boolean z5;
+        this.n = gd3Var;
+        boolean z6 = gd3Var.z0;
+        j99 j99Var = gd3Var.v;
+        j99 j99Var2 = gd3Var.q;
+        int i10 = z6 ? 24 : 16;
+        byte b = 0;
+        this.E = false;
+        this.h = ld3.h(this.d.d);
+        this.r = qu6.c(i3, false);
+        int i11 = 0;
+        while (true) {
+            int i12 = j99Var2.d;
+            i5 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            if (i11 >= i12) {
+                i6 = 0;
+                i11 = Integer.MAX_VALUE;
+                break;
             } else {
-                iArr2[i3] = m;
+                i6 = ld3.g(this.d, (String) j99Var2.get(i11), false);
+                if (i6 > 0) {
+                    break;
+                } else {
+                    i11++;
+                }
             }
-            i3++;
         }
+        this.w = i11;
+        this.s = i6;
+        int i13 = this.d.f;
+        int i14 = gd3Var.s;
+        this.x = (i13 == 0 || i13 != i14) ? Integer.bitCount(i13 & i14) : Integer.MAX_VALUE;
+        this.y = ld3.f(this.d, gd3Var.r);
+        ko4 ko4Var2 = this.d;
+        int i15 = ko4Var2.f;
+        this.F = i15 == 0 || (i15 & 1) != 0;
+        this.I = (ko4Var2.e & 1) != 0;
+        String str = ko4Var2.t;
+        if (str != null) {
+            switch (str.hashCode()) {
+                case -2123537834:
+                    if (str.equals("audio/eac3-joc")) {
+                        z5 = false;
+                        break;
+                    }
+                    z5 = -1;
+                    break;
+                case 187078297:
+                    if (str.equals("audio/ac4")) {
+                        z5 = true;
+                        break;
+                    }
+                    z5 = -1;
+                    break;
+                case 1504698186:
+                    if (str.equals("audio/iamf")) {
+                        z5 = 2;
+                        break;
+                    }
+                    z5 = -1;
+                    break;
+                default:
+                    z5 = -1;
+                    break;
+            }
+            switch (z5) {
+                case false:
+                case true:
+                case true:
+                    z2 = true;
+                    break;
+            }
+            this.P = z2;
+            int i16 = ko4Var2.N;
+            this.J = i16;
+            this.K = ko4Var2.P;
+            int i17 = ko4Var2.k;
+            this.L = i17;
+            this.f = (i17 != -1 || i17 <= gd3Var.u) && (i16 == -1 || i16 <= gd3Var.t) && bd3Var.apply(ko4Var2);
+            I = gcc.I();
+            i7 = 0;
+            while (true) {
+                if (i7 >= I.length) {
+                    i8 = ld3.g(this.d, I[i7], false);
+                    if (i8 <= 0) {
+                        i7++;
+                    }
+                } else {
+                    i8 = 0;
+                    i7 = Integer.MAX_VALUE;
+                }
+            }
+            this.G = i7;
+            this.H = i8;
+            i9 = 0;
+            while (true) {
+                if (i9 < j99Var.d) {
+                    String str2 = this.d.t;
+                    if (str2 == null || !str2.equals(j99Var.get(i9))) {
+                        i9++;
+                    } else {
+                        i5 = i9;
+                    }
+                }
+            }
+            this.M = i5;
+            this.N = (i3 & 384) != 128;
+            this.O = (i3 & 64) != 64;
+            ko4Var = this.d;
+            z3 = this.f;
+            gd3Var2 = this.n;
+            z4 = gd3Var2.B0;
+            a2cVar = gd3Var2.w;
+            if (qu6.c(i3, z4) && ((z3 || gd3Var2.y0) && (a2cVar.a != 2 || ld3.j(gd3Var2, i3, ko4Var)))) {
+                b = (qu6.c(i3, false) || !z3 || ko4Var.k == -1 || gd3Var2.G || gd3Var2.F || (!gd3Var2.C0 && z) || a2cVar.a == 2 || (i3 & i10) == 0) ? (byte) 1 : (byte) 2;
+            }
+            this.e = b;
+        }
+        z2 = false;
+        this.P = z2;
+        int i162 = ko4Var2.N;
+        this.J = i162;
+        this.K = ko4Var2.P;
+        int i172 = ko4Var2.k;
+        this.L = i172;
+        this.f = (i172 != -1 || i172 <= gd3Var.u) && (i162 == -1 || i162 <= gd3Var.t) && bd3Var.apply(ko4Var2);
+        I = gcc.I();
+        i7 = 0;
+        while (true) {
+            if (i7 >= I.length) {
+            }
+            i7++;
+        }
+        this.G = i7;
+        this.H = i8;
+        i9 = 0;
+        while (true) {
+            if (i9 < j99Var.d) {
+            }
+            i9++;
+        }
+        this.M = i5;
+        this.N = (i3 & 384) != 128;
+        this.O = (i3 & 64) != 64;
+        ko4Var = this.d;
+        z3 = this.f;
+        gd3Var2 = this.n;
+        z4 = gd3Var2.B0;
+        a2cVar = gd3Var2.w;
+        if (qu6.c(i3, z4)) {
+            if (qu6.c(i3, false)) {
+            }
+        }
+        this.e = b;
     }
 
-    public static int c(dd ddVar, int[] iArr, iq iqVar) {
+    @Override // jd3
+    public final int a() {
+        return this.e;
+    }
+
+    @Override // jd3
+    public final boolean b(jd3 jd3Var) {
         int i;
-        int m = iqVar.m(ddVar, iArr);
-        int i2 = 2;
-        int i3 = 5;
-        switch (m) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                return m + 1;
-            case 4:
-                i2 = 1;
-                return ddVar.m0(iArr, i2) + i3;
-            case 5:
-                i2 = 1;
-                i3 = 7;
-                return ddVar.m0(iArr, i2) + i3;
-            case 6:
-                i3 = 9;
-                return ddVar.m0(iArr, i2) + i3;
-            case 7:
-                i3 = 13;
-                return ddVar.m0(iArr, i2) + i3;
-            case 8:
-                i3 = 17;
-                i2 = 3;
-                return ddVar.m0(iArr, i2) + i3;
-            case 9:
-                i3 = 25;
-                i2 = 3;
-                return ddVar.m0(iArr, i2) + i3;
-            case 10:
-                i3 = 33;
-                i2 = 4;
-                return ddVar.m0(iArr, i2) + i3;
-            case 11:
-                i3 = 49;
-                i2 = 4;
-                return ddVar.m0(iArr, i2) + i3;
-            case 12:
-                i = 65;
-                i2 = 5;
-                i3 = i;
-                return ddVar.m0(iArr, i2) + i3;
-            case 13:
-                i = 97;
-                i2 = 5;
-                i3 = i;
-                return ddVar.m0(iArr, i2) + i3;
-            case 14:
-                i3 = kk7.M1;
-                i2 = 6;
-                return ddVar.m0(iArr, i2) + i3;
-            case 15:
-                i3 = kk7.W2;
-                i2 = 6;
-                return ddVar.m0(iArr, i2) + i3;
-            case 16:
-                i3 = kk7.f4;
-                i2 = 7;
-                return ddVar.m0(iArr, i2) + i3;
-            case 17:
-                i3 = 385;
-                i2 = 7;
-                return ddVar.m0(iArr, i2) + i3;
-            case 18:
-                i3 = 513;
-                i2 = 8;
-                return ddVar.m0(iArr, i2) + i3;
-            case 19:
-                i3 = 769;
-                i2 = 8;
-                return ddVar.m0(iArr, i2) + i3;
-            case 20:
-                i3 = 1025;
-                i2 = 9;
-                return ddVar.m0(iArr, i2) + i3;
-            case 21:
-                i3 = 1537;
-                i2 = 9;
-                return ddVar.m0(iArr, i2) + i3;
-            case 22:
-                i3 = 2049;
-                i2 = 10;
-                return ddVar.m0(iArr, i2) + i3;
-            case 23:
-                i3 = 3073;
-                i2 = 10;
-                return ddVar.m0(iArr, i2) + i3;
-            case 24:
-                i3 = 4097;
-                i2 = 11;
-                return ddVar.m0(iArr, i2) + i3;
-            case 25:
-                i3 = 6145;
-                i2 = 11;
-                return ddVar.m0(iArr, i2) + i3;
-            case 26:
-                i3 = 8193;
-                i2 = 12;
-                return ddVar.m0(iArr, i2) + i3;
-            case 27:
-                i3 = 12289;
-                i2 = 12;
-                return ddVar.m0(iArr, i2) + i3;
-            case 28:
-                i3 = 16385;
-                i2 = 13;
-                return ddVar.m0(iArr, i2) + i3;
-            case 29:
-                i3 = 24577;
-                i2 = 13;
-                return ddVar.m0(iArr, i2) + i3;
-            default:
-                throw new v30(String.format("[%s] Bad distance code '%d' at the bit index '%d'.", cd3.class.getSimpleName(), Integer.valueOf(m), Integer.valueOf(iArr[0])));
+        String str;
+        cd3 cd3Var = (cd3) jd3Var;
+        ko4 ko4Var = cd3Var.d;
+        this.n.getClass();
+        ko4 ko4Var2 = this.d;
+        int i2 = ko4Var2.N;
+        if (i2 == -1 || i2 != ko4Var.N) {
+            return false;
         }
+        return (this.E || ((str = ko4Var2.t) != null && TextUtils.equals(str, ko4Var.t))) && (i = ko4Var2.P) != -1 && i == ko4Var.P && this.N == cd3Var.N && this.O == cd3Var.O;
     }
 
-    public static void d(dd ddVar, int[] iArr, iq[] iqVarArr) {
-        int m0 = ddVar.m0(iArr, 5) + kk7.f4;
-        int m02 = ddVar.m0(iArr, 5) + 1;
-        int m03 = ddVar.m0(iArr, 4) + 4;
-        int[] iArr2 = new int[19];
-        for (int i = 0; i < m03; i++) {
-            iArr2[a[i]] = (byte) ddVar.m0(iArr, 3);
+    @Override // java.lang.Comparable
+    /* renamed from: c, reason: merged with bridge method [inline-methods] */
+    public final int compareTo(cd3 cd3Var) {
+        eu7 eu7Var;
+        eu7 a;
+        boolean z = this.r;
+        boolean z2 = this.f;
+        if (z2 && z) {
+            a = ld3.l;
+            eu7Var = a;
+        } else {
+            eu7 eu7Var2 = ld3.l;
+            eu7Var = eu7Var2;
+            a = eu7Var2.a();
         }
-        iq iqVar = new iq(iArr2);
-        int[] iArr3 = new int[m0];
-        b(ddVar, iArr, iArr3, iqVar);
-        iq iqVar2 = new iq(iArr3);
-        int[] iArr4 = new int[m02];
-        b(ddVar, iArr, iArr4, iqVar);
-        iq iqVar3 = new iq(iArr4);
-        iqVarArr[0] = iqVar2;
-        iqVarArr[1] = iqVar3;
-    }
-
-    public static int e(dd ddVar, int[] iArr, int i) {
-        int i2;
-        int i3 = 1;
-        switch (i) {
-            case kk7.f4 /* 257 */:
-            case kk7.g4 /* 258 */:
-            case kk7.h4 /* 259 */:
-            case kk7.i4 /* 260 */:
-            case kk7.j4 /* 261 */:
-            case kk7.k4 /* 262 */:
-            case kk7.l4 /* 263 */:
-            case kk7.m4 /* 264 */:
-                return i - 254;
-            case kk7.n4 /* 265 */:
-                i2 = 11;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.o4 /* 266 */:
-                i2 = 13;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.p4 /* 267 */:
-                i2 = 15;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.q4 /* 268 */:
-                i2 = 17;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.r4 /* 269 */:
-                i2 = 19;
-                i3 = 2;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.s4 /* 270 */:
-                i2 = 23;
-                i3 = 2;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.t4 /* 271 */:
-                i2 = 27;
-                i3 = 2;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.u4 /* 272 */:
-                i2 = 31;
-                i3 = 2;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.v4 /* 273 */:
-                i2 = 35;
-                i3 = 3;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.w4 /* 274 */:
-                i2 = 43;
-                i3 = 3;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.x4 /* 275 */:
-                i2 = 51;
-                i3 = 3;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.y4 /* 276 */:
-                i2 = 59;
-                i3 = 3;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.z4 /* 277 */:
-                i2 = 67;
-                i3 = 4;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.A4 /* 278 */:
-                i2 = 83;
-                i3 = 4;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.B4 /* 279 */:
-                i2 = 99;
-                i3 = 4;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.C4 /* 280 */:
-                i2 = kk7.z1;
-                i3 = 4;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.D4 /* 281 */:
-                i2 = kk7.O1;
-                i3 = 5;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.E4 /* 282 */:
-                i2 = kk7.s2;
-                i3 = 5;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.F4 /* 283 */:
-                i2 = kk7.Y2;
-                i3 = 5;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.G4 /* 284 */:
-                i2 = kk7.D3;
-                i3 = 5;
-                return ddVar.m0(iArr, i3) + i2;
-            case kk7.H4 /* 285 */:
-                return kk7.g4;
-            default:
-                throw new v30(String.format("[%s] Bad literal/length code '%d' at the bit index '%d'.", cd3.class.getSimpleName(), Integer.valueOf(i), Integer.valueOf(iArr[0])));
+        boolean z3 = cd3Var.r;
+        int i = cd3Var.L;
+        pp2 c = pp2.a.c(z, z3);
+        Integer valueOf = Integer.valueOf(this.w);
+        Integer valueOf2 = Integer.valueOf(cd3Var.w);
+        pk7 pk7Var = pk7.c;
+        pp2 b = c.b(valueOf, valueOf2, pk7Var).a(this.s, cd3Var.s).a(this.x, cd3Var.x).b(Integer.valueOf(this.y), Integer.valueOf(cd3Var.y), pk7Var).c(this.I, cd3Var.I).c(this.F, cd3Var.F).b(Integer.valueOf(this.G), Integer.valueOf(cd3Var.G), pk7Var).a(this.H, cd3Var.H).c(z2, cd3Var.f).b(Integer.valueOf(this.M), Integer.valueOf(cd3Var.M), pk7Var);
+        boolean z4 = this.n.F;
+        int i2 = this.L;
+        if (z4) {
+            b = b.b(Integer.valueOf(i2), Integer.valueOf(i), eu7Var.a());
         }
+        pp2 b2 = b.c(this.N, cd3Var.N).c(this.O, cd3Var.O).c(this.P, cd3Var.P).b(Integer.valueOf(this.J), Integer.valueOf(cd3Var.J), a).b(Integer.valueOf(this.K), Integer.valueOf(cd3Var.K), a);
+        if (Objects.equals(this.h, cd3Var.h)) {
+            b2 = b2.b(Integer.valueOf(i2), Integer.valueOf(i), a);
+        }
+        return b2.e();
     }
 }

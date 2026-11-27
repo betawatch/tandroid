@@ -1,51 +1,60 @@
 // default package
 
-import android.database.DataSetObservable;
-import android.database.DataSetObserver;
-import android.view.View;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class pr7 {
-    public final DataSetObservable a = new DataSetObservable();
-    public DataSetObserver b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class pr7 extends az5 implements sr4 {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ vr7 c;
 
-    public void a(gec gecVar, Object obj) {
-        gecVar.removeView(((mv) obj).b);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pr7(vr7 vr7Var, byte b) {
+        super(0);
+        this.b = b;
+        this.c = vr7Var;
     }
 
-    public abstract int b();
-
-    public int c(Object obj) {
-        return -1;
-    }
-
-    public CharSequence d(int i) {
-        return null;
-    }
-
-    public abstract Object e(gec gecVar, int i);
-
-    public boolean f(View view, Object obj) {
-        return ((mv) obj).b == view;
-    }
-
-    public void g() {
-        synchronized (this) {
-            DataSetObserver dataSetObserver = this.b;
-            if (dataSetObserver != null) {
-                dataSetObserver.onChanged();
-            }
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v2 */
+    /* JADX WARN: Type inference failed for: r3v3 */
+    /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
+    @Override // sr4
+    public final Object invoke() {
+        cq4 cq4Var;
+        byte b = this.b;
+        f9c f9cVar = f9c.a;
+        vr7 vr7Var = this.c;
+        switch (b) {
+            case 0:
+                vr7Var.a();
+                break;
+            case 1:
+                cq4 cq4Var2 = vr7Var.c;
+                if (cq4Var2 == null) {
+                    ls lsVar = vr7Var.b;
+                    ListIterator listIterator = lsVar.listIterator(lsVar.c);
+                    while (true) {
+                        if (listIterator.hasPrevious()) {
+                            cq4Var = listIterator.previous();
+                            if (((cq4) cq4Var).a) {
+                            }
+                        } else {
+                            cq4Var = 0;
+                        }
+                    }
+                    cq4Var2 = cq4Var;
+                }
+                vr7Var.c = null;
+                if (cq4Var2 != null) {
+                    cq4Var2.a();
+                    break;
+                }
+                break;
+            default:
+                vr7Var.a();
+                break;
         }
-        this.a.notifyChanged();
-    }
-
-    public final void i(DataSetObserver dataSetObserver) {
-        synchronized (this) {
-            this.b = dataSetObserver;
-        }
-    }
-
-    public void h(int i) {
+        return f9cVar;
     }
 }

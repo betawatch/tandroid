@@ -1,70 +1,59 @@
 // default package
 
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.net.Socket;
-import java.util.ArrayDeque;
-import java.util.TimerTask;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class aw3 extends TimerTask {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class aw3 extends z46 {
+    public final /* synthetic */ byte q;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ aw3(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ aw3(byte b, Context context, Object obj) {
+        super(context, 2);
+        this.q = b;
+        this.r = obj;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        BasePendingResult basePendingResult;
-        byte b = this.a;
-        Object obj = this.b;
+    @Override // z46, b89
+    public final void e() {
+        byte b = this.q;
+        Object obj = this.r;
         switch (b) {
             case 0:
-                gl.c3(new li3(this, (byte) 23));
+                ((dw3) obj).j3 = true;
                 break;
             case 1:
-                if (((qd6) obj).O != null) {
-                    gl.c3(new tp5(this, (byte) 22));
-                    break;
-                }
+                ((o24) obj).g0 = true;
+                break;
+            case 4:
+                ((n1a) obj).y1 = true;
+                break;
+        }
+    }
+
+    @Override // z46
+    public final void i() {
+        byte b = this.q;
+        Object obj = this.r;
+        switch (b) {
+            case 0:
+                ((dw3) obj).j3 = false;
+                break;
+            case 1:
+                ((o24) obj).g0 = false;
                 break;
             case 2:
-                gl.c3(new oq7(this, (byte) 9));
+                ((p04) obj).Q.g0 = false;
                 break;
             case 3:
-                try {
-                    Socket socket = ((n19) obj).a.a.g;
-                    if (socket != null) {
-                        socket.close();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
+                ((b0a) obj).R.y1 = false;
+                break;
+            case 4:
+                ((n1a) obj).y1 = false;
                 break;
             default:
-                wr6 wr6Var = (wr6) obj;
-                ArrayDeque arrayDeque = wr6Var.h;
-                if (!arrayDeque.isEmpty() && wr6Var.k == null && wr6Var.b != 0) {
-                    i69 i69Var = wr6Var.c;
-                    int[] e = id1.e(arrayDeque);
-                    i69Var.getClass();
-                    fre.e("Must be called from the main thread.");
-                    if (i69Var.w()) {
-                        o9d o9dVar = new o9d(i69Var, e);
-                        i69.x(o9dVar);
-                        basePendingResult = o9dVar;
-                    } else {
-                        basePendingResult = i69.t();
-                    }
-                    wr6Var.k = basePendingResult;
-                    basePendingResult.i(new k5f(wr6Var, (byte) 1));
-                    arrayDeque.clear();
-                    break;
-                }
+                ((b0a) obj).R.y1 = false;
                 break;
         }
     }

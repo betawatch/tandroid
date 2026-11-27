@@ -2,7 +2,7 @@
 
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class bo0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -21,28 +21,28 @@ public final /* synthetic */ class bo0 implements Runnable {
         switch (b) {
             case 0:
                 lo0Var.h0 = false;
-                lo0Var.I0(true);
+                lo0Var.J0(true);
                 break;
             case 1:
                 CountDownLatch countDownLatch = new CountDownLatch(2);
-                lo0Var.E0(countDownLatch, null);
                 lo0Var.F0(countDownLatch, null);
+                lo0Var.G0(countDownLatch, null);
                 try {
                     countDownLatch.await();
                 } catch (InterruptedException unused) {
                 }
-                kk7.f(lo0Var.T).d(new bo0(lo0Var, (byte) 4));
+                jn7.f(lo0Var.T).d(new bo0(lo0Var, (byte) 4));
                 break;
             case 2:
                 lo0Var.h0 = false;
-                lo0Var.I0(true);
+                lo0Var.J0(true);
                 break;
             case 3:
                 lo0Var.h0 = false;
-                lo0Var.I0(true);
+                lo0Var.J0(true);
                 break;
             default:
-                gl.c3(new bo0(lo0Var, b2));
+                hl.c3(new bo0(lo0Var, b2));
                 break;
         }
     }

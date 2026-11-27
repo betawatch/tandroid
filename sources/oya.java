@@ -1,37 +1,25 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class oya extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pya b;
+public final class oya extends ClickableSpan {
+    public final /* synthetic */ qxa a;
 
-    public /* synthetic */ oya(pya pyaVar, byte b) {
-        this.a = b;
-        this.b = pyaVar;
+    public oya(qxa qxaVar) {
+        this.a = qxaVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        pya pyaVar = this.b;
-        switch (b) {
-            case 0:
-                pyaVar.E = 1.0f;
-                pyaVar.invalidate();
-                pyaVar.H = null;
-                break;
-            case 1:
-                pyaVar.m(((Float) pyaVar.w.getAnimatedValue()).floatValue());
-                pyaVar.w = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                pyaVar.G = null;
-                break;
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a.run();
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

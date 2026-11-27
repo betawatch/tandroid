@@ -1,214 +1,117 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.WallpapersListActivity;
+import android.graphics.Bitmap;
+import android.graphics.BlurMaskFilter;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.a;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class orc extends n39 {
-    public mhc E;
-    public final /* synthetic */ WallpapersListActivity F;
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public final HashMap e = new HashMap();
-    public boolean f = true;
-    public String h;
-    public String n;
-    public String r;
-    public int s;
-    public int w;
-    public boolean x;
-    public String y;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class orc extends Drawable {
+    public static float[] k;
+    public static Bitmap l;
+    public static Bitmap m;
+    public final int b;
+    public final int c;
+    public final Drawable d;
+    public float f;
+    public float g;
+    public static final float[] j = {0.2126f, 0.7152f, 0.0722f};
+    public static final int[] n = new int[2];
+    public static final int[] o = new int[2];
+    public final Paint a = new Paint(3);
+    public float e = -1.0f;
+    public int h = jn7.d4;
+    public float i = 1.0f;
 
-    public orc(WallpapersListActivity wallpapersListActivity, Context context) {
-        this.F = wallpapersListActivity;
-        this.c = context;
-    }
-
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f != 2;
-    }
-
-    public final void E(String str, boolean z) {
-        int i;
-        if (str != null && this.n != null) {
-            str = ls6.o(this.n, " ", str, new StringBuilder("#color"));
-        }
-        mhc mhcVar = this.E;
-        if (mhcVar != null) {
-            gl.r(mhcVar);
-            this.E = null;
-        }
-        boolean isEmpty = TextUtils.isEmpty(str);
-        HashMap hashMap = this.e;
-        ArrayList arrayList = this.d;
-        WallpapersListActivity wallpapersListActivity = this.F;
-        if (isEmpty) {
-            arrayList.clear();
-            hashMap.clear();
-            this.f = true;
-            this.h = null;
-            if (this.s != 0) {
-                i = ((d) wallpapersListActivity).currentAccount;
-                ConnectionsManager.getInstance(i).cancelRequest(this.s, true);
-                this.s = 0;
-            }
-            wallpapersListActivity.L.c();
-        } else {
-            wallpapersListActivity.L.b();
-            if (z) {
-                arrayList.clear();
-                hashMap.clear();
-                this.f = true;
-                F(str, "", true);
-                this.h = str;
-                f();
-            } else {
-                mhc mhcVar2 = new mhc(this, str, (byte) 27);
-                this.E = mhcVar2;
-                gl.d3(mhcVar2, 500L);
-            }
-        }
-        f();
-    }
-
-    public final void F(String str, String str2, boolean z) {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
-        int i8;
-        int i9;
-        int i10 = this.s;
-        WallpapersListActivity wallpapersListActivity = this.F;
-        if (i10 != 0) {
-            i9 = ((d) wallpapersListActivity).currentAccount;
-            ConnectionsManager.getInstance(i9).cancelRequest(this.s, true);
-            this.s = 0;
-        }
-        this.y = str;
-        i = ((d) wallpapersListActivity).currentAccount;
-        na7 q1 = na7.q1(i);
-        i2 = ((d) wallpapersListActivity).currentAccount;
-        TLObject a2 = q1.a2(na7.q1(i2).p3);
-        if (!(a2 instanceof TLRPC.User)) {
-            if (!z || this.x) {
-                return;
-            }
-            this.x = true;
-            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            i7 = ((d) wallpapersListActivity).currentAccount;
-            tL_contacts_resolveUsername.username = na7.q1(i7).p3;
-            i8 = ((d) wallpapersListActivity).currentAccount;
-            ConnectionsManager.getInstance(i8).sendRequest(tL_contacts_resolveUsername, new wx9(this, (byte) 25));
+    public orc(int i, int i2) {
+        this.b = i;
+        this.c = i2;
+        Drawable e = c00.e(a.b, R.drawable.wallet_card_diamond);
+        this.d = e;
+        if (l != null) {
             return;
         }
-        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        tL_messages_getInlineBotResults.query = b00.h("#wallpaper ", str);
-        i3 = ((d) wallpapersListActivity).currentAccount;
-        tL_messages_getInlineBotResults.bot = na7.q1(i3).o1((TLRPC.User) a2);
-        tL_messages_getInlineBotResults.offset = str2;
-        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-        int i11 = this.w + 1;
-        this.w = i11;
-        i4 = ((d) wallpapersListActivity).currentAccount;
-        this.s = ConnectionsManager.getInstance(i4).sendRequest(tL_messages_getInlineBotResults, new l12(this, i11, (byte) 10));
-        i5 = ((d) wallpapersListActivity).currentAccount;
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i5);
-        int i12 = this.s;
-        i6 = ((d) wallpapersListActivity).classGuid;
-        connectionsManager.bindRequestToGuid(i12, i6);
+        Bitmap createBitmap = Bitmap.createBitmap(84, 84, Bitmap.Config.ARGB_8888);
+        e.setBounds(0, 0, 84, 84);
+        e.draw(new Canvas(createBitmap));
+        Paint paint = new Paint();
+        BlurMaskFilter.Blur blur = BlurMaskFilter.Blur.NORMAL;
+        paint.setMaskFilter(new BlurMaskFilter(15.0f, blur));
+        l = createBitmap.extractAlpha(paint, n);
+        paint.setMaskFilter(new BlurMaskFilter(4.5f, blur));
+        m = createBitmap.extractAlpha(paint, o);
+        createBitmap.recycle();
     }
 
-    @Override // w39
-    public final int b() {
-        if (TextUtils.isEmpty(this.h)) {
-            return 2;
+    public static float[] a(float f, float f2, float f3) {
+        float max = Math.max(f, Math.max(f2, f3));
+        float min = max - Math.min(f, Math.min(f2, f3));
+        float f4 = 0.55f * max;
+        if (min > f4) {
+            float f5 = f4 / min;
+            f = qd4.A(f, max, f5, max);
+            f2 = qd4.A(f2, max, f5, max);
+            f3 = qd4.A(f3, max, f5, max);
         }
-        return (int) Math.ceil(this.d.size() / this.F.O);
+        return new float[]{f, f2, f3};
     }
 
-    @Override // w39
-    public final int d(int i) {
-        if (TextUtils.isEmpty(this.h)) {
-            return i == 0 ? 2 : 1;
-        }
-        return 0;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        int i2 = s49Var.f;
-        View view = s49Var.a;
-        if (i2 != 0) {
-            if (i2 == 2) {
-                ((l35) view).setText(k96.M0(2131745623, null));
-                return;
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.h <= 0 || this.e < 0.0f) {
             return;
         }
-        qqc qqcVar = (qqc) view;
-        WallpapersListActivity wallpapersListActivity = this.F;
-        int i3 = i * wallpapersListActivity.O;
-        ArrayList arrayList = this.d;
-        int ceil = (int) Math.ceil(arrayList.size() / wallpapersListActivity.O);
-        byte b = wallpapersListActivity.O;
-        qqcVar.d(b, i3 == 0, i3 / b == ceil - 1);
-        for (int i4 = 0; i4 < wallpapersListActivity.O; i4++) {
-            int i5 = i3 + i4;
-            qqcVar.e(i5 < arrayList.size() ? arrayList.get(i5) : null, wallpapersListActivity.r ? 1 : 0, i4, "");
+        Rect bounds = getBounds();
+        if (this.i > 0.0f) {
+            float width = bounds.width() / 84.0f;
+            canvas.save();
+            canvas.translate(bounds.left, bounds.top);
+            canvas.scale(width, bounds.height() / 84.0f);
+            Paint paint = this.a;
+            paint.setColor(-16777216);
+            paint.setAlpha((int) (this.h * 0.35f * this.i));
+            Bitmap bitmap = l;
+            int[] iArr = n;
+            canvas.drawBitmap(bitmap, iArr[0], (hl.L(1.0f) / width) + iArr[1], paint);
+            paint.setAlpha((int) (this.h * 0.55f * this.i));
+            Bitmap bitmap2 = m;
+            int[] iArr2 = o;
+            canvas.drawBitmap(bitmap2, iArr2[0], iArr2[1], paint);
+            canvas.restore();
         }
+        Drawable drawable = this.d;
+        drawable.setBounds(bounds);
+        drawable.setAlpha(this.h);
+        drawable.draw(canvas);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v10 */
-    /* JADX WARN: Type inference failed for: r2v9 */
-    /* JADX WARN: Type inference failed for: r5v5, types: [l35] */
-    /* JADX WARN: Type inference failed for: r6v4, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, o39, rkb] */
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        u12 u12Var;
-        byte b = 2;
-        Context context = this.c;
-        if (i != 0) {
-            u12Var = null;
-            if (i == 1) {
-                ?? rkbVar = new rkb(context, 0 == true ? 1 : 0, (byte) 14);
-                rkbVar.setItemAnimator(null);
-                rkbVar.setLayoutAnimation(null);
-                zr zrVar = new zr((byte) 20);
-                rkbVar.setPadding(gl.L(7.0f), 0, gl.L(7.0f), 0);
-                rkbVar.setClipToPadding(false);
-                zrVar.i1(0);
-                rkbVar.setLayoutManager(zrVar);
-                rkbVar.setAdapter(new gx0(this, (byte) 12));
-                rkbVar.setOnItemClickListener(new nrc(this, (byte) 0));
-                u12Var = rkbVar;
-            } else if (i == 2) {
-                u12Var = new l35(context, null);
-            }
-        } else {
-            u12Var = new u12(this, context, b);
-            u12Var.setTag(-33024);
-        }
-        if (i == 1) {
-            u12Var.setLayoutParams(new e49(-1, gl.L(60.0f)));
-        } else {
-            u12Var.setLayoutParams(new e49(-1, -2));
-        }
-        return new y29(u12Var);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.c;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        this.h = i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

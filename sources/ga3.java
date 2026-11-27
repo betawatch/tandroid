@@ -1,13 +1,7 @@
 // default package
 
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ga3 extends c6e {
-    @Override // c6e
-    public final Signature[] i(PackageManager packageManager, String str) {
-        return packageManager.getPackageInfo(str, 64).signatures;
-    }
+public final /* synthetic */ class ga3 {
+    public final /* synthetic */ ja3 a;
 }

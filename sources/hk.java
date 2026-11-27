@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hk implements Runnable {
     public final /* synthetic */ byte a;
@@ -24,30 +24,30 @@ public final /* synthetic */ class hk implements Runnable {
         switch (b) {
             case 0:
                 try {
-                    int i = y6c.t0;
+                    int i = yac.t0;
                     a.v();
                     byte b2 = 0;
-                    if (!gl.n2(false) && !gba.B) {
+                    if (!hl.n2(false) && !xea.B) {
                         String stringExtra = intent.getStringExtra("android.intent.extra.TEXT");
                         if (!TextUtils.isEmpty(stringExtra)) {
                             String stringExtra2 = intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_URI");
                             long parseLong = Long.parseLong(intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_CHAT_ID"));
-                            TLRPC.User V1 = na7.q1(i).V1(Long.valueOf(parseLong));
-                            if (V1 == null && (V1 = ad7.Y(i).h0(parseLong)) != null) {
-                                na7.q1(i).a4(V1, true, false);
+                            TLRPC.User X1 = uc7.s1(i).X1(Long.valueOf(parseLong));
+                            if (X1 == null && (X1 = jf7.Y(i).h0(parseLong)) != null) {
+                                uc7.s1(i).i4(X1, true, false);
                             }
-                            if (V1 != null) {
-                                qu2.r(i);
+                            if (X1 != null) {
+                                lv2.r(i);
                                 if (stringExtra2 != null) {
-                                    Utilities.h.c(new xt2(stringExtra2, b2));
+                                    Utilities.h.c(new qu2(stringExtra2, b2));
                                 }
-                                z3a.B(i).q0(x3a.b(stringExtra, V1.id, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                                r7a.B(i).q0(p7a.b(stringExtra, X1.id, null, null, null, true, null, null, null, true, 0, 0, null, false));
                                 break;
                             }
                         }
                     }
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    cc4.g(e, true);
                     return;
                 }
                 break;

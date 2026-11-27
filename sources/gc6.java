@@ -1,46 +1,112 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class gc6 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ mf6 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ gc6(mf6 mf6Var, int i, boolean z, boolean z2) {
-        this.b = mf6Var;
-        this.c = i;
-        this.d = z;
-        this.e = z2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class gc6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ tc6 b;
+
+    public /* synthetic */ gc6(tc6 tc6Var, byte b) {
+        this.a = b;
+        this.b = tc6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         byte b = this.a;
-        boolean z = this.e;
-        boolean z2 = this.d;
-        boolean z3 = this.c;
-        mf6 mf6Var = this.b;
+        final tc6 tc6Var = this.b;
         switch (b) {
             case 0:
-                mf6Var.K1(z3, z2, z);
+                tc6Var.getClass();
+                final byte b2 = 1;
+                hl.c3(new Runnable() { // from class: ac6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b3 = b2;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        tc6 tc6Var2 = tc6Var;
+                        switch (b3) {
+                            case 0:
+                                tc6Var2.b.b(false);
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        tc6Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        xnb.x(null, 2131743534, d31.b0(tc6Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    d31.e0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        tc6Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        tc6Var2.b.b(false);
+                                        xnb.x(null, 2131743534, d31.b0(tc6Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    tc6Var2.b.b(false);
+                                    d31.e0(tL_error2);
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
             default:
-                boolean z4 = mf6Var.K;
-                mf6Var.K = z3;
-                mf6Var.K1(z2, z, true);
-                mf6Var.K = z4;
+                final byte b3 = 0;
+                hl.c3(new Runnable() { // from class: ac6
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        byte b32 = b3;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        tc6 tc6Var2 = tc6Var;
+                        switch (b32) {
+                            case 0:
+                                tc6Var2.b.b(false);
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        tc6Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        xnb.x(null, 2131743534, d31.b0(tc6Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    d31.e0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        tc6Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        tc6Var2.b.b(false);
+                                        xnb.x(null, 2131743534, d31.b0(tc6Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    tc6Var2.b.b(false);
+                                    d31.e0(tL_error2);
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ gc6(mf6 mf6Var, boolean z, boolean z2, boolean z3) {
-        this.b = mf6Var;
-        this.c = z;
-        this.d = z2;
-        this.e = z3;
     }
 }

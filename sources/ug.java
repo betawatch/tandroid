@@ -1,73 +1,58 @@
 // default package
 
-import j$.time.YearMonth;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class ug implements Runnable {
-    public final /* synthetic */ hn7 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ hn7 c;
-    public final /* synthetic */ hn7 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kg5 b;
 
-    public /* synthetic */ ug(hn7 hn7Var, int i, hn7 hn7Var2, hn7 hn7Var3, int i2, int i3, int i4) {
-        this.a = hn7Var;
-        this.b = i;
-        this.c = hn7Var2;
-        this.d = hn7Var3;
-        this.e = i2;
-        this.f = i3;
-        this.h = i4;
+    public /* synthetic */ ug(kg5 kg5Var, byte b) {
+        this.a = b;
+        this.b = kg5Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        hn7 hn7Var = this.a;
-        int value = hn7Var.getValue();
-        int i = this.b;
-        hn7 hn7Var2 = this.c;
-        hn7 hn7Var3 = this.d;
-        if (value == i) {
-            hn7Var2.setMinValue(1);
-            try {
-                hn7Var2.setMaxValue(YearMonth.of(2024, hn7Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e) {
-                fa4.g(e, true);
-                hn7Var2.setMaxValue(31);
-            }
-            hn7Var3.setMinValue(0);
-            hn7Var3.setMaxValue(11);
-            return;
-        }
-        if (hn7Var.getValue() != this.e) {
-            hn7Var2.setMinValue(1);
-            try {
-                hn7Var2.setMaxValue(YearMonth.of(hn7Var.getValue(), hn7Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e2) {
-                fa4.g(e2, true);
-                hn7Var2.setMaxValue(31);
-            }
-            hn7Var3.setMinValue(0);
-            hn7Var3.setMaxValue(11);
-            return;
-        }
-        hn7Var3.setMinValue(0);
-        int i2 = this.f;
-        hn7Var3.setMaxValue(i2);
-        if (hn7Var3.getValue() == i2) {
-            hn7Var2.setMinValue(1);
-            hn7Var2.setMaxValue(this.h);
-            return;
-        }
-        hn7Var2.setMinValue(1);
-        try {
-            hn7Var2.setMaxValue(YearMonth.of(hn7Var.getValue(), hn7Var3.getValue() + 1).lengthOfMonth());
-        } catch (Exception e3) {
-            fa4.g(e3, true);
-            hn7Var2.setMaxValue(31);
+        byte b = this.a;
+        kg5 kg5Var = this.b;
+        switch (b) {
+            case 0:
+                hl.B2(kg5Var);
+                break;
+            case 1:
+                hl.B2(kg5Var);
+                break;
+            case 2:
+                hl.B2(kg5Var);
+                break;
+            case 3:
+                float[] fArr = FragmentContextView.W0;
+                hl.B2(kg5Var);
+                break;
+            case 4:
+            case 7:
+                kg5Var.f(true);
+                break;
+            case 5:
+                kg5Var.y();
+                break;
+            case 6:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                hl.B2(kg5Var);
+                break;
+            case 8:
+                hl.B2(kg5Var);
+                break;
+            case 9:
+                hl.B2(kg5Var);
+                break;
+            default:
+                hl.B2(kg5Var);
+                break;
         }
     }
 }

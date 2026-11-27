@@ -1,13 +1,31 @@
 // default package
 
-import android.view.MotionEvent;
-import android.view.View;
+import java.io.Serializable;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class j83 implements View.OnTouchListener {
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        return true;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class j83 extends ax2 {
+    public Object a;
+    public Object b;
+    public Serializable c;
+    public p89 d;
+    public boolean e;
+    public int f;
+    public /* synthetic */ Object h;
+    public final /* synthetic */ o83 n;
+    public int r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j83(o83 o83Var, ax2 ax2Var) {
+        super(ax2Var);
+        this.n = o83Var;
+    }
+
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.h = obj;
+        this.r |= TLObject.FLAG_31;
+        return this.n.h(false, this);
     }
 }

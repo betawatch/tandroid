@@ -1,7 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface xz6 {
-    boolean a(c07 c07Var);
+public final /* synthetic */ class xz6 implements ot2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lp b;
+    public final /* synthetic */ ja6 c;
+    public final /* synthetic */ jt6 d;
+
+    public /* synthetic */ xz6(lp lpVar, ja6 ja6Var, jt6 jt6Var, byte b) {
+        this.a = b;
+        this.b = lpVar;
+        this.c = ja6Var;
+        this.d = jt6Var;
+    }
+
+    @Override // ot2
+    public final void accept(Object obj) {
+        byte b = this.a;
+        jt6 jt6Var = this.d;
+        ja6 ja6Var = this.c;
+        lp lpVar = this.b;
+        zz6 zz6Var = (zz6) obj;
+        switch (b) {
+            case 0:
+                zz6Var.u(lpVar.b, (vz6) lpVar.c, ja6Var, jt6Var);
+                break;
+            default:
+                zz6Var.s(lpVar.b, (vz6) lpVar.c, ja6Var, jt6Var);
+                break;
+        }
+    }
 }

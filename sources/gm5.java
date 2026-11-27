@@ -1,164 +1,96 @@
 // default package
 
-import j$.lang.Iterable$-CC;
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.Spliterators;
-import j$.util.stream.Stream;
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+import com.google.android.gms.tasks.Task;
+import java.io.Closeable;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayDeque;
+import java.util.concurrent.Future;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class gm5 extends AbstractCollection implements Serializable, Collection {
-    public static final Object[] a = new Object[0];
+public final class gm5 implements Closeable {
+    public final URL a;
+    public volatile Future b;
+    public Task c;
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    public gm5(URL url) {
+        this.a = url;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public boolean contains(Object obj) {
-        return ((c69) this).e.b(obj) > 0;
-    }
-
-    @Override // java.lang.Iterable, j$.util.Collection
-    public final /* synthetic */ void forEach(Consumer consumer) {
-        Iterable$-CC.$default$forEach(this, consumer);
-    }
-
-    public mm5 h() {
-        if (isEmpty()) {
-            km5 km5Var = mm5.b;
-            return w59.e;
+    public final Bitmap a() {
+        byte[] a;
+        boolean isLoggable = Log.isLoggable("FirebaseMessaging", 4);
+        URL url = this.a;
+        if (isLoggable) {
+            Log.i("FirebaseMessaging", "Starting download of: " + url);
         }
-        Object[] array = toArray(a);
-        km5 km5Var2 = mm5.b;
-        return mm5.o(array.length, array);
-    }
-
-    public int i(int i, Object[] objArr) {
-        v5c it = iterator();
-        while (it.hasNext()) {
-            objArr[i] = it.next();
-            i++;
+        URLConnection openConnection = url.openConnection();
+        if (openConnection.getContentLength() > 1048576) {
+            su3.e("Content-Length exceeds max size of 1048576");
+            return null;
         }
-        return i;
-    }
-
-    public Object[] j() {
-        return null;
-    }
-
-    public int k() {
-        throw new UnsupportedOperationException();
-    }
-
-    public int l() {
-        throw new UnsupportedOperationException();
-    }
-
-    public abstract boolean m();
-
-    /* renamed from: n */
-    public abstract v5c iterator();
-
-    @Override // java.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        return Stream.Wrapper.convert(parallelStream());
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ boolean removeIf(Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(stream());
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        if (objArr.length < size) {
-            Object[] j = j();
-            if (j != null) {
-                return Arrays.copyOfRange(j, l(), k(), objArr.getClass());
+        InputStream inputStream = openConnection.getInputStream();
+        try {
+            i51 i51Var = new i51(inputStream);
+            ArrayDeque arrayDeque = new ArrayDeque(20);
+            int i = 128;
+            int i2 = 0;
+            loop0: while (true) {
+                if (i2 < 2147483639) {
+                    int min = Math.min(i, 2147483639 - i2);
+                    byte[] bArr = new byte[min];
+                    arrayDeque.add(bArr);
+                    int i3 = 0;
+                    while (i3 < min) {
+                        int read = i51Var.read(bArr, i3, min - i3);
+                        if (read == -1) {
+                            a = rud.a(arrayDeque, i2);
+                            break loop0;
+                        }
+                        i3 += read;
+                        i2 += read;
+                    }
+                    long j = i * (i < 4096 ? 4 : 2);
+                    i = j > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j < -2147483648L ? TLObject.FLAG_31 : (int) j;
+                } else {
+                    if (i51Var.read() != -1) {
+                        throw new OutOfMemoryError("input is too large to fit in a byte array");
+                    }
+                    a = rud.a(arrayDeque, 2147483639);
+                }
             }
-            if (objArr.length != 0) {
-                objArr = Arrays.copyOf(objArr, 0);
+            if (inputStream != null) {
+                inputStream.close();
             }
-            objArr = Arrays.copyOf(objArr, size);
-        } else if (objArr.length > size) {
-            objArr[size] = null;
+            if (Log.isLoggable("FirebaseMessaging", 2)) {
+                Log.v("FirebaseMessaging", "Downloaded " + a.length + " bytes from " + url);
+            }
+            if (a.length > 1048576) {
+                su3.e("Image exceeds max size of 1048576");
+                return null;
+            }
+            Bitmap decodeByteArray = BitmapFactory.decodeByteArray(a, 0, a.length);
+            if (decodeByteArray == null) {
+                bg.e(url, "Failed to decode image: ");
+                return null;
+            }
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "Successfully downloaded image: " + url);
+            }
+            return decodeByteArray;
+        } finally {
         }
-        i(0, objArr);
-        return objArr;
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ j$.util.stream.Stream parallelStream() {
-        return Collection.-CC.$default$parallelStream(this);
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final j$.util.Spliterator spliterator() {
-        return Spliterators.spliterator(this, 1296);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ j$.util.stream.Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(a);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.b.cancel(true);
     }
 }

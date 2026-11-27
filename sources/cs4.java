@@ -1,41 +1,6 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class cs4 implements w17 {
-    public static final cs4 b = new cs4(0);
-    public final /* synthetic */ byte a;
-
-    public /* synthetic */ cs4(byte b2) {
-        this.a = b2;
-    }
-
-    @Override // w17
-    public final iz8 a(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!fs4.class.isAssignableFrom(cls)) {
-                    w26.j("Unsupported message type: ".concat(cls.getName()));
-                    return null;
-                }
-                try {
-                    return (iz8) fs4.d(cls.asSubclass(fs4.class)).c(3);
-                } catch (Exception e) {
-                    fyb.j("Unable to get message info for ".concat(cls.getName()), e);
-                    return null;
-                }
-            default:
-                throw new IllegalStateException("This should never be called.");
-        }
-    }
-
-    @Override // w17
-    public final boolean b(Class cls) {
-        switch (this.a) {
-            case 0:
-                return fs4.class.isAssignableFrom(cls);
-            default:
-                return false;
-        }
-    }
+public interface cs4 extends js4 {
 }

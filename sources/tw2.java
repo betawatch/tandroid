@@ -1,83 +1,134 @@
 // default package
 
-import android.util.Log;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import android.text.TextUtils;
+import java.io.File;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class tw2 implements qp4 {
-    public final /* synthetic */ byte a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class tw2 implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ vw2 b;
 
-    public /* synthetic */ tw2(td5 td5Var) {
-        this.a = (byte) 2;
+    public tw2(vw2 vw2Var, boolean z) {
+        this.b = vw2Var;
+        this.a = z;
     }
 
-    @Override // qp4
-    public final Object invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                qw2 qw2Var = (qw2) obj;
-                if (qw2Var instanceof vw2) {
-                    return (vw2) qw2Var;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00fa  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        File file;
+        File file2;
+        String str;
+        String r;
+        File I;
+        TLRPC.Document document;
+        vw2 vw2Var = this.b;
+        int i = vw2Var.d;
+        byte b = vw2Var.Q;
+        String str2 = null;
+        if (b == 5 || b == 3) {
+            TLRPC.Document document2 = vw2Var.M;
+            if (document2 != null) {
+                str2 = xb4.r(null, document2);
+                xb4.G(i);
+                file = xb4.I(vw2Var.M);
+            } else {
+                if (vw2Var.K.content instanceof TLRPC.TL_webDocument) {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(Utilities.a(vw2Var.K.content.url));
+                    sb.append(".");
+                    sb.append(in5.x(vw2Var.K.content.url, vw2Var.Q == 5 ? "mp3" : "ogg"));
+                    str2 = sb.toString();
+                    file = new File(xb4.z(4), str2);
                 }
-                return null;
-            case 1:
-                fx2 fx2Var = (fx2) obj;
-                fx2Var.getClass();
-                Log.w("FirebaseSessions", "CorruptionException in session configs DataStore", fx2Var);
-                return cff.e;
-            default:
-                ih7 ih7Var = (ih7) obj;
-                Map a = ih7Var.a();
-                LinkedHashMap linkedHashMap = ih7Var.a;
-                Iterator it = a.entrySet().iterator();
-                long j = 0;
-                while (true) {
-                    if (it.hasNext()) {
-                        Map.Entry entry = (Map.Entry) it.next();
-                        if (entry.getValue() instanceof Set) {
-                            lg8 lg8Var = (lg8) entry.getKey();
-                            Set set = (Set) entry.getValue();
-                            String c = td5.c(System.currentTimeMillis());
-                            if (set.contains(c)) {
-                                Object[] objArr = {c};
-                                HashSet hashSet = new HashSet(1);
-                                Object obj2 = objArr[0];
-                                Objects.requireNonNull(obj2);
-                                if (hashSet.add(obj2)) {
-                                    ih7Var.c(lg8Var, DesugarCollections.unmodifiableSet(hashSet));
-                                    j++;
-                                } else {
-                                    w26.i(obj2, "duplicate element: ");
-                                }
-                            } else {
-                                lg8Var.getClass();
-                                ih7Var.b();
-                                linkedHashMap.remove(lg8Var);
-                            }
-                        }
+                str = null;
+                file2 = null;
+            }
+            file2 = file;
+            str = str2;
+        } else {
+            if (vw2Var.R) {
+                TLRPC.BotInlineResult botInlineResult = vw2Var.K;
+                if (botInlineResult != null) {
+                    TLRPC.Document document3 = botInlineResult.document;
+                    if (document3 instanceof TLRPC.TL_document) {
+                        r = xb4.r(null, document3);
+                        xb4.G(i);
+                        I = xb4.I(vw2Var.K.document);
                     } else {
-                        lg8 lg8Var2 = td5.c;
-                        if (j == 0) {
-                            lg8Var2.getClass();
-                            ih7Var.b();
-                            linkedHashMap.remove(lg8Var2);
+                        TLRPC.Photo photo = botInlineResult.photo;
+                        if (photo instanceof TLRPC.TL_photo) {
+                            TLRPC.PhotoSize w = xb4.w(photo.sizes, hl.Y0(false), true, null, false);
+                            vw2Var.P = w;
+                            r = xb4.r(null, w);
+                            xb4.G(i);
+                            I = xb4.I(vw2Var.P);
+                        } else if (botInlineResult.content instanceof TLRPC.TL_webDocument) {
+                            StringBuilder sb2 = new StringBuilder();
+                            sb2.append(Utilities.a(vw2Var.K.content.url));
+                            sb2.append(".");
+                            TLRPC.WebDocument webDocument = vw2Var.K.content;
+                            sb2.append(in5.x(webDocument.url, xb4.H(webDocument.mime_type)));
+                            r = sb2.toString();
+                            I = new File(xb4.z(4), r);
+                            if (vw2Var.Q == 2) {
+                                TLRPC.WebDocument webDocument2 = vw2Var.K.thumb;
+                                if ((webDocument2 instanceof TLRPC.TL_webDocument) && "video/mp4".equals(webDocument2.mime_type)) {
+                                    r = null;
+                                }
+                            }
                         } else {
-                            ih7Var.c(lg8Var2, Long.valueOf(j));
+                            if (botInlineResult.thumb instanceof TLRPC.TL_webDocument) {
+                                StringBuilder sb3 = new StringBuilder();
+                                sb3.append(Utilities.a(vw2Var.K.thumb.url));
+                                sb3.append(".");
+                                TLRPC.WebDocument webDocument3 = vw2Var.K.thumb;
+                                sb3.append(in5.x(webDocument3.url, xb4.H(webDocument3.mime_type)));
+                                r = sb3.toString();
+                                I = new File(xb4.z(4), r);
+                            }
+                            I = null;
+                            r = null;
                         }
                     }
+                    document = vw2Var.M;
+                    if (document == null && vw2Var.Q == 2 && r47.J0(document) != null) {
+                        file2 = I;
+                        str = str2;
+                    } else {
+                        file2 = I;
+                        str = r;
+                    }
+                } else {
+                    TLRPC.Document document4 = vw2Var.M;
+                    if (document4 != null) {
+                        r = xb4.r(null, document4);
+                        xb4.G(i);
+                        I = xb4.I(vw2Var.M);
+                        document = vw2Var.M;
+                        if (document == null) {
+                        }
+                        file2 = I;
+                        str = r;
+                    }
+                    I = null;
+                    r = null;
+                    document = vw2Var.M;
+                    if (document == null) {
+                    }
+                    file2 = I;
+                    str = r;
                 }
-                return null;
+            }
+            str = null;
+            file2 = null;
         }
-    }
-
-    public /* synthetic */ tw2(byte b) {
-        this.a = b;
+        hl.c3(new ba1(this, str, file2, !TextUtils.isEmpty(str) && file2.exists(), this.a));
     }
 }

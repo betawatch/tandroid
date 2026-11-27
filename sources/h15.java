@@ -1,16 +1,32 @@
 // default package
 
-import android.app.Person;
-import android.media.session.MediaSessionManager;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class h15 {
-    public static /* synthetic */ Person.Builder a() {
-        return new Person.Builder();
+public final class h15 extends c4 {
+    public static final Parcelable.Creator<h15> CREATOR = new m9d((byte) 16);
+    public final boolean a;
+
+    public h15(boolean z) {
+        this.a = z;
     }
 
-    public static /* synthetic */ void b(int i, int i2, String str) {
-        new MediaSessionManager.RemoteUserInfo(str, i, i2);
+    public final boolean equals(Object obj) {
+        return (obj instanceof h15) && this.a == ((h15) obj).a;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

@@ -1,207 +1,524 @@
 // default package
 
-import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.text.TextPaint;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.a;
+import j$.util.Comparator$-CC;
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.AnimatedFileDrawableStream;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cgc extends FrameLayout {
-    public float a;
-    public float b;
-    public boolean c;
-    public long d;
-    public final /* synthetic */ hgc e;
+public abstract class cgc extends View implements fn7 {
+    public String E;
+    public int F;
+    public final TextPaint G;
+    public BitmapShader H;
+    public final RectF I;
+    public final Paint J;
+    public final Paint K;
+    public final RectF L;
+    public final Matrix M;
+    public final fa8 N;
+    public nc8 O;
+    public double P;
+    public boolean Q;
+    public final ImageReceiver R;
+    public int S;
+    public int T;
+    public int U;
+    public int V;
+    public final Path W;
+    public boolean a;
+    public long a0;
+    public lm b;
+    public long b0;
+    public long c;
+    public int c0;
+    public Uri d;
+    public int d0;
+    public Runnable e;
+    public ArrayList e0;
+    public agc f;
+    public TLRPC.Document f0;
+    public String g0;
+    public float h;
+    public int h0;
+    public int n;
+    public int r;
+    public boolean s;
+    public Bitmap w;
+    public Bitmap x;
+    public final Drawable y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cgc(hgc hgcVar, Activity activity) {
-        super(activity);
-        this.e = hgcVar;
+    public cgc(Context context, fa8 fa8Var) {
+        super(context);
+        this.n = -1;
+        TextPaint textPaint = new TextPaint(1);
+        this.G = textPaint;
+        this.I = new RectF();
+        this.J = new Paint(2);
+        this.K = new Paint(2);
+        this.L = new RectF();
+        this.M = new Matrix();
+        this.W = new Path();
+        this.h0 = -1;
+        setVisibility(4);
+        this.y = context.getResources().getDrawable(R.drawable.videopreview);
+        textPaint.setTextSize(hl.L(13.0f));
+        textPaint.setColor(-1);
+        this.N = fa8Var;
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.R = imageReceiver;
+        imageReceiver.p0(this);
+        imageReceiver.h1 = new ftb(this, (byte) 11);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x001a, code lost:
-    
-        if (r0.b0 == false) goto L20;
-     */
-    @Override // android.view.ViewGroup
+    public final void a() {
+        if (this.e != null) {
+            Utilities.e.a(this.e);
+            this.e = null;
+        }
+        if (this.f != null) {
+            Utilities.e.a(this.f);
+            this.f = null;
+        }
+        lm lmVar = this.b;
+        if (lmVar != null) {
+            AnimatedFileDrawableStream animatedFileDrawableStream = lmVar.v0;
+            if (animatedFileDrawableStream != null) {
+                animatedFileDrawableStream.b(true);
+            }
+            if (lmVar.e0 != null) {
+                lmVar.e0.h();
+            }
+        }
+        Utilities.e.c(new azb(this, (byte) 20));
+        setVisibility(4);
+        this.x = null;
+        this.H = null;
+        invalidate();
+        this.n = -1;
+        this.d = null;
+        this.s = false;
+        this.a = false;
+        if (this.a0 != 0) {
+            this.a0 = 0L;
+            this.g0 = null;
+            this.f0 = null;
+            this.e0 = null;
+            b(-1);
+        }
+    }
+
+    public final void b(int i) {
+        int i2 = this.h0;
+        if (i2 == i) {
+            return;
+        }
+        int i3 = jn7.Z1;
+        int i4 = jn7.Y1;
+        if (i == -1) {
+            jn7.f(i2).n(this, i4);
+            jn7.f(this.h0).n(this, i3);
+        } else {
+            jn7.f(i).b(this, i4);
+            jn7.f(i).b(this, i3);
+        }
+        this.h0 = i;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:62:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:77:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x010d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean drawChild(Canvas canvas, View view, long j) {
-        hgc hgcVar = this.e;
-        if (view == hgcVar.w) {
-            if (hgcVar.n0 || hgcVar.m0) {
-                return false;
-            }
-        } else if (view != hgcVar.d0) {
-            if (view == hgcVar.Z) {
-            }
-            return super.drawChild(canvas, view, j);
+    public final void c(r47 r47Var, kfc kfcVar) {
+        TLRPC.Document document;
+        long j;
+        if (kfcVar == null) {
+            return;
         }
-        if (hgcVar.g1 || hgcVar.i1 != null) {
-            canvas.save();
-            float f = hgcVar.f1;
-            canvas.scale(f, f, hgcVar.b1, hgcVar.c1);
-            canvas.translate(hgcVar.Y0, hgcVar.Z0);
-            boolean drawChild = super.drawChild(canvas, view, j);
-            canvas.restore();
-            return drawChild;
+        if (kfcVar.Y() > 0) {
+            jfc jfcVar = null;
+            for (int i = 0; i < kfcVar.Y(); i++) {
+                ArrayList arrayList = kfcVar.Z(i).d;
+                int size = arrayList.size();
+                int i2 = 0;
+                while (i2 < size) {
+                    Object obj = arrayList.get(i2);
+                    i2++;
+                    jfc jfcVar2 = (jfc) obj;
+                    if (jfcVar == null || ((!jfcVar.b() && jfcVar2.b()) || (jfcVar.b() == jfcVar2.b() && jfcVar2.i * jfcVar2.j < jfcVar.i * jfcVar.j))) {
+                        jfcVar = jfcVar2;
+                    }
+                }
+            }
+            if (jfcVar != null && !jfcVar.b()) {
+                int T = kfcVar.T();
+                hfc Z = (T < 0 || T >= kfcVar.Y()) ? null : kfcVar.Z(T);
+                if (Z != null) {
+                    jfcVar = Z.a();
+                }
+            }
+            if (jfcVar != null) {
+                if (!jfcVar.b()) {
+                    a();
+                    return;
+                }
+                jfcVar.b();
+                if (!jfcVar.d.equals(this.d)) {
+                    if (this.a) {
+                        a();
+                    }
+                    this.d = jfcVar.d;
+                    to3 to3Var = Utilities.e;
+                    b6c b6cVar = new b6c((zb8) this, jfcVar, r47Var, (byte) 11);
+                    this.e = b6cVar;
+                    to3Var.c(b6cVar);
+                }
+            }
+        } else {
+            Uri uri = kfcVar.G;
+            if (uri != null) {
+                "file".equalsIgnoreCase(uri.getScheme());
+                if (!uri.equals(this.d)) {
+                    if (this.a) {
+                        a();
+                    }
+                    this.d = uri;
+                    to3 to3Var2 = Utilities.e;
+                    b6c b6cVar2 = new b6c((zb8) this, uri, r47Var, (byte) 10);
+                    this.e = b6cVar2;
+                    to3Var2.c(b6cVar2);
+                }
+            }
         }
-        return super.drawChild(canvas, view, j);
+        TLRPC.MessageMedia m1 = r47.m1(r47Var);
+        if (m1 != null) {
+            TLRPC.Document document2 = m1.document;
+            if (document2 == null || !"application/x-tgstoryboardmap".equalsIgnoreCase(document2.mime_type)) {
+                ArrayList<TLRPC.Document> arrayList2 = m1.alt_documents;
+                int size2 = arrayList2.size();
+                int i3 = 0;
+                while (i3 < size2) {
+                    TLRPC.Document document3 = arrayList2.get(i3);
+                    i3++;
+                    TLRPC.Document document4 = document3;
+                    if ("application/x-tgstoryboardmap".equalsIgnoreCase(document4.mime_type)) {
+                        document = document4;
+                        break;
+                    }
+                }
+            } else {
+                document = m1.document;
+            }
+            j = document != null ? 0L : document.id;
+            if (this.a0 == j) {
+                this.a0 = j;
+                this.e0 = null;
+                if (document == null) {
+                    this.g0 = null;
+                    this.f0 = null;
+                    b(-1);
+                    this.e0 = null;
+                    return;
+                }
+                xb4.G(r47Var.K1);
+                File I = xb4.I(document);
+                if (I == null || !I.exists()) {
+                    this.g0 = xb4.r(null, document);
+                    this.f0 = document;
+                    b(r47Var.K1);
+                    xb4.G(r47Var.K1).X(document, r47Var, 2, 0);
+                    return;
+                }
+                this.g0 = null;
+                this.f0 = null;
+                b(-1);
+                d(I);
+                return;
+            }
+            return;
+        }
+        document = null;
+        if (document != null) {
+        }
+        if (this.a0 == j) {
+        }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        hgc hgcVar = this.e;
-        sfc sfcVar = hgcVar.T0;
-        if (motionEvent.getActionMasked() == 1) {
-            hgcVar.E.b(false, false);
-            hgcVar.w.a();
-            gl.r(sfcVar);
-            if (hgcVar.p0 == 3) {
-                gl.d3(sfcVar, 10000L);
+    public final void d(File file) {
+        try {
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            ArrayList arrayList = new ArrayList();
+            long j = 0;
+            int i = 0;
+            int i2 = 0;
+            while (true) {
+                String readLine = randomAccessFile.readLine();
+                if (readLine == null) {
+                    Collections.sort(arrayList, Comparator$-CC.comparingDouble(new mp7((byte) 6)));
+                    this.b0 = j;
+                    this.c0 = i;
+                    this.d0 = i2;
+                    this.e0 = arrayList;
+                    return;
+                }
+                if (readLine.startsWith("file=mtproto:")) {
+                    j = Long.parseLong(readLine.substring(13));
+                } else if (readLine.startsWith("frame_width=")) {
+                    i = Integer.parseInt(readLine.substring(12));
+                } else if (readLine.startsWith("frame_height=")) {
+                    i2 = Integer.parseInt(readLine.substring(13));
+                } else {
+                    String[] split = readLine.split(",");
+                    if (split.length == 3) {
+                        arrayList.add(new bgc(Integer.parseInt(split[1]), Integer.parseInt(split[2]), Double.parseDouble(split[0])));
+                    }
+                }
             }
+        } catch (Exception e) {
+            cc4.g(e, true);
+            this.e0 = null;
         }
-        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        if (i != jn7.Y1) {
+            if (i == jn7.Z1 && ((String) objArr[0]).equals(this.g0)) {
+                this.g0 = null;
+                this.f0 = null;
+                b(-1);
+                return;
+            }
+            return;
+        }
+        if (((String) objArr[0]).equals(this.g0)) {
+            xb4.G(i2);
+            File I = xb4.I(this.f0);
+            if (I != null && I.exists()) {
+                d(I);
+            }
+            this.g0 = null;
+            this.f0 = null;
+            b(-1);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x005c  */
+    /* JADX WARN: Type inference failed for: r3v3, types: [agc, java.lang.Runnable] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(r47 r47Var, final float f, int i) {
+        boolean z;
+        TLRPC.Document document;
+        this.O = null;
+        if (this.e0 != null) {
+            long j = this.b0;
+            TLRPC.MessageMedia m1 = r47.m1(r47Var);
+            if (m1 != null) {
+                document = m1.document;
+                if (document == null || document.id != j) {
+                    ArrayList<TLRPC.Document> arrayList = m1.alt_documents;
+                    int size = arrayList.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        TLRPC.Document document2 = arrayList.get(i2);
+                        i2++;
+                        TLRPC.Document document3 = document2;
+                        if (document3.id == j) {
+                            document = document3;
+                            break;
+                        }
+                    }
+                }
+                if (document == null) {
+                    this.P = (this.c * f) / 1000.0d;
+                    this.R.d0(jn5.b(document), null, null, null, r47Var, 0);
+                    z = true;
+                    this.Q = z;
+                    if (i != 0) {
+                        this.r = i;
+                        int i3 = ((int) (i * f)) / 5;
+                        if (this.n == i3) {
+                            return;
+                        } else {
+                            this.n = i3;
+                        }
+                    }
+                    final long j2 = (long) (this.c * f);
+                    this.E = hl.g0((int) (j2 / 1000), false, false);
+                    this.F = (int) Math.ceil(this.G.measureText(r2));
+                    invalidate();
+                    if (this.f != null) {
+                        Utilities.e.a(this.f);
+                    }
+                    if (z) {
+                        lm lmVar = this.b;
+                        if (lmVar != null) {
+                            AnimatedFileDrawableStream animatedFileDrawableStream = lmVar.v0;
+                            if (animatedFileDrawableStream != null) {
+                                animatedFileDrawableStream.b(true);
+                            }
+                            if (lmVar.e0 != null) {
+                                lmVar.e0.e();
+                            }
+                        }
+                        to3 to3Var = Utilities.e;
+                        ?? r3 = new Runnable() { // from class: agc
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                int i4;
+                                cgc cgcVar = cgc.this;
+                                RectF rectF = cgcVar.I;
+                                if (cgcVar.b == null) {
+                                    cgcVar.h = f;
+                                    return;
+                                }
+                                int max = Math.max(jn7.d3, hl.L(100.0f));
+                                Bitmap q = cgcVar.b.q(j2, false);
+                                if (q != null) {
+                                    int width = q.getWidth();
+                                    int height = q.getHeight();
+                                    if (width > height) {
+                                        i4 = (int) (height / (width / max));
+                                    } else {
+                                        int i5 = (int) (width / (height / max));
+                                        i4 = max;
+                                        max = i5;
+                                    }
+                                    try {
+                                        Bitmap.Config config = Bitmap.Config.ARGB_8888;
+                                        Bitmap a = lc1.a(max, i4);
+                                        rectF.set(0.0f, 0.0f, max, i4);
+                                        Canvas canvas = new Canvas(a);
+                                        canvas.drawBitmap(q, (Rect) null, rectF, cgcVar.J);
+                                        canvas.setBitmap(null);
+                                        q = a;
+                                    } catch (Throwable unused) {
+                                        q = null;
+                                    }
+                                }
+                                hl.c3(new g9c(cgcVar, q, (byte) 22));
+                            }
+                        };
+                        this.f = r3;
+                        to3Var.c(r3);
+                        return;
+                    }
+                    return;
+                }
+                this.R.g0(null);
+            }
+            document = null;
+            if (document == null) {
+            }
+        } else {
+            this.R.g0(null);
+        }
+        z = false;
+        this.Q = z;
+        if (i != 0) {
+        }
+        final long j22 = (long) (this.c * f);
+        this.E = hl.g0((int) (j22 / 1000), false, false);
+        this.F = (int) Math.ceil(this.G.measureText(r2));
+        invalidate();
+        if (this.f != null) {
+        }
+        if (z) {
+        }
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        cg2 cg2Var;
-        hgc hgcVar = this.e;
-        sfc sfcVar = hgcVar.T0;
-        if (motionEvent.getActionMasked() == 1) {
-            hgcVar.E.b(false, false);
-            hgcVar.w.a();
-            gl.r(sfcVar);
-            if (hgcVar.p0 == 3) {
-                gl.d3(sfcVar, 10000L);
-            }
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.R.I();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.R.K();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Bitmap bitmap = this.w;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.w = null;
         }
-        if (!hgcVar.h1 && !hgcVar.a1 && !hgcVar.g1 && motionEvent.getActionMasked() != 0) {
-            hgcVar.e();
-            return false;
+        boolean z = this.Q;
+        TextPaint textPaint = this.G;
+        Drawable drawable = this.y;
+        if (!z) {
+            if (this.x == null || this.H == null) {
+                return;
+            }
+            Matrix matrix = this.M;
+            matrix.reset();
+            float measuredWidth = getMeasuredWidth() / this.x.getWidth();
+            matrix.preScale(measuredWidth, measuredWidth);
+            float measuredWidth2 = getMeasuredWidth();
+            float measuredHeight = getMeasuredHeight();
+            RectF rectF = this.L;
+            rectF.set(0.0f, 0.0f, measuredWidth2, measuredHeight);
+            canvas.drawRoundRect(rectF, hl.L(6.0f), hl.L(6.0f), this.K);
+            drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            drawable.draw(canvas);
+            canvas.drawText(this.E, (getMeasuredWidth() - this.F) / 2.0f, getMeasuredHeight() - hl.L(9.0f), textPaint);
+            return;
         }
-        if (motionEvent.getActionMasked() == 0) {
-            hgcVar.h1 = false;
-            hgcVar.a1 = false;
-            hgcVar.g1 = false;
-        }
-        aic aicVar = hgcVar.m0 ? hgcVar.d0 : hgcVar.e0;
-        if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
-            if (motionEvent.getActionMasked() == 0) {
-                RectF rectF = gl.P;
-                rectF.set(aicVar.getX(), aicVar.getY(), aicVar.getX() + aicVar.getMeasuredWidth(), aicVar.getY() + aicVar.getMeasuredHeight());
-                rectF.inset(((aicVar.getMeasuredHeight() * aicVar.U) - aicVar.getMeasuredHeight()) / 2.0f, ((aicVar.getMeasuredWidth() * aicVar.U) - aicVar.getMeasuredWidth()) / 2.0f);
-                boolean z = h75.u5;
-                float f = rectF.top;
-                if (z) {
-                    rectF.top = Math.max(f, a.getCurrentActionBarHeight());
-                    rectF.right = Math.min(rectF.right, aicVar.getMeasuredWidth() - gl.L(90.0f));
-                } else {
-                    rectF.top = Math.max(f, a.getCurrentActionBarHeight());
-                    rectF.bottom = Math.min(rectF.bottom, aicVar.getMeasuredHeight() - gl.L(90.0f));
-                }
-                boolean contains = rectF.contains(motionEvent.getX(), motionEvent.getY());
-                hgcVar.h1 = contains;
-                if (!contains) {
-                    hgcVar.e();
-                }
-            }
-            if (hgcVar.h1 && !hgcVar.a1 && motionEvent.getPointerCount() == 2) {
-                hgcVar.X0 = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
-                float x = (motionEvent.getX(1) + motionEvent.getX(0)) / 2.0f;
-                hgcVar.b1 = x;
-                hgcVar.V0 = x;
-                float y = (motionEvent.getY(1) + motionEvent.getY(0)) / 2.0f;
-                hgcVar.c1 = y;
-                hgcVar.W0 = y;
-                hgcVar.f1 = 1.0f;
-                hgcVar.d1 = motionEvent.getPointerId(0);
-                hgcVar.e1 = motionEvent.getPointerId(1);
-                hgcVar.a1 = true;
-            }
-        } else if (motionEvent.getActionMasked() == 2 && hgcVar.a1) {
-            int i = -1;
-            int i2 = -1;
-            for (int i3 = 0; i3 < motionEvent.getPointerCount(); i3++) {
-                if (hgcVar.d1 == motionEvent.getPointerId(i3)) {
-                    i = i3;
-                }
-                if (hgcVar.e1 == motionEvent.getPointerId(i3)) {
-                    i2 = i3;
-                }
-            }
-            if (i == -1 || i2 == -1) {
-                getParent().requestDisallowInterceptTouchEvent(false);
-                hgcVar.e();
-            } else {
-                float hypot = ((float) Math.hypot(motionEvent.getX(i2) - motionEvent.getX(i), motionEvent.getY(i2) - motionEvent.getY(i))) / hgcVar.X0;
-                hgcVar.f1 = hypot;
-                if (hypot > 1.005f && !hgcVar.g1) {
-                    hgcVar.X0 = (float) Math.hypot(motionEvent.getX(i2) - motionEvent.getX(i), motionEvent.getY(i2) - motionEvent.getY(i));
-                    float x2 = (motionEvent.getX(i2) + motionEvent.getX(i)) / 2.0f;
-                    hgcVar.b1 = x2;
-                    hgcVar.V0 = x2;
-                    float y2 = (motionEvent.getY(i2) + motionEvent.getY(i)) / 2.0f;
-                    hgcVar.c1 = y2;
-                    hgcVar.W0 = y2;
-                    hgcVar.f1 = 1.0f;
-                    hgcVar.Y0 = 0.0f;
-                    hgcVar.Z0 = 0.0f;
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    hgcVar.g1 = true;
-                    hgcVar.a1 = true;
-                }
-                float x3 = (motionEvent.getX(i2) + motionEvent.getX(i)) / 2.0f;
-                float y3 = (motionEvent.getY(i2) + motionEvent.getY(i)) / 2.0f;
-                float f2 = hgcVar.V0 - x3;
-                float f3 = hgcVar.W0 - y3;
-                float f4 = hgcVar.f1;
-                hgcVar.Y0 = (-f2) / f4;
-                hgcVar.Z0 = (-f3) / f4;
-                invalidate();
-            }
-        } else if (motionEvent.getActionMasked() == 1 || ((motionEvent.getActionMasked() == 6 && motionEvent.getPointerCount() >= 2 && ((hgcVar.d1 == motionEvent.getPointerId(0) && hgcVar.e1 == motionEvent.getPointerId(1)) || (hgcVar.d1 == motionEvent.getPointerId(1) && hgcVar.e1 == motionEvent.getPointerId(0)))) || motionEvent.getActionMasked() == 3)) {
-            getParent().requestDisallowInterceptTouchEvent(false);
-            hgcVar.e();
-        }
-        hgcVar.s.invalidate();
-        int action = motionEvent.getAction();
-        if (action == 0) {
-            this.a = motionEvent.getX();
-            this.b = motionEvent.getY();
-            this.c = true;
-            this.d = System.currentTimeMillis();
-        } else if (action != 1) {
-            if (action == 3) {
-                this.c = false;
-            }
-        } else if (this.c) {
-            float x4 = motionEvent.getX() - this.a;
-            float y4 = motionEvent.getY() - this.b;
-            long currentTimeMillis = System.currentTimeMillis();
-            float f5 = (y4 * y4) + (x4 * x4);
-            float f6 = hgcVar.t0;
-            if (f5 < f6 * f6 && currentTimeMillis - this.d < 300 && currentTimeMillis - hgcVar.K0 > 300) {
-                hgcVar.K0 = System.currentTimeMillis();
-                if (hgcVar.C0) {
-                    hgcVar.c(false);
-                } else if (hgcVar.z0) {
-                    hgcVar.r(!hgcVar.x0);
-                    hgcVar.q0 = hgcVar.p0;
-                    if (!hgcVar.x0 && (cg2Var = hgcVar.N0) != null && cg2Var.W) {
-                        cg2Var.f(true);
-                    }
-                    hgcVar.y();
-                }
-            }
-            this.c = false;
-        }
-        return hgcVar.h1 || this.c;
+        canvas.save();
+        Path path = this.W;
+        path.rewind();
+        RectF rectF2 = hl.P;
+        rectF2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        path.addRoundRect(rectF2, hl.L(6.0f), hl.L(6.0f), Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.scale(getWidth() / this.U, getHeight() / this.V);
+        canvas.translate(-this.S, -this.T);
+        ImageReceiver imageReceiver = this.R;
+        imageReceiver.i0(0.0f, 0.0f, imageReceiver.q(), imageReceiver.o());
+        imageReceiver.h(canvas, null);
+        canvas.restore();
+        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+        canvas.drawText(this.E, (getMeasuredWidth() - this.F) / 2.0f, getMeasuredHeight() - hl.L(9.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        setPivotY(getMeasuredHeight());
     }
 }

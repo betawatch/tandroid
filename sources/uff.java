@@ -1,54 +1,77 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class uff extends yff {
-    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
+public final class uff {
+    public final int a;
+    public final TaskCompletionSource b = new TaskCompletionSource();
+    public final byte c;
+    public final Bundle d;
+    public final /* synthetic */ byte e;
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // yff
-    public final void b(Object obj, long j, Object obj2) {
-        ArrayList arrayList;
-        List list = (List) ghf.g(obj2, j);
-        int size = list.size();
-        List list2 = (List) ghf.g(obj, j);
-        if (list2.isEmpty()) {
-            list2 = list2 instanceof sff ? new qff(size) : ((list2 instanceof pgf) && (list2 instanceof dff)) ? ((dff) list2).zzg(size) : new ArrayList(size);
-            ghf.i(obj, j, list2);
-        } else {
-            if (c.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList2 = new ArrayList(list2.size() + size);
-                arrayList2.addAll(list2);
-                ghf.i(obj, j, arrayList2);
-                arrayList = arrayList2;
-            } else if (list2 instanceof ehf) {
-                ehf ehfVar = (ehf) list2;
-                qff qffVar = new qff(ehfVar.size() + size);
-                qffVar.addAll(qffVar.b.size(), ehfVar);
-                ghf.i(obj, j, qffVar);
-                arrayList = qffVar;
-            } else if ((list2 instanceof pgf) && (list2 instanceof dff)) {
-                dff dffVar = (dff) list2;
-                if (!((ldf) dffVar).a) {
-                    list2 = dffVar.zzg(list2.size() + size);
-                    ghf.i(obj, j, list2);
-                }
-            }
-            list2 = arrayList;
+    public uff(int i, int i2, Bundle bundle, byte b) {
+        this.e = b;
+        this.a = i;
+        this.c = i2;
+        this.d = bundle;
+    }
+
+    public final boolean a() {
+        switch (this.e) {
+            case 0:
+                return true;
+            default:
+                return false;
         }
-        int size2 = list2.size();
-        int size3 = list.size();
-        if (size2 > 0 && size3 > 0) {
-            list2.addAll(list);
+    }
+
+    public final void b(Bundle bundle) {
+        if (Log.isLoggable("MessengerIpcClient", 3)) {
+            String uffVar = toString();
+            String valueOf = String.valueOf(bundle);
+            StringBuilder sb = new StringBuilder(uffVar.length() + 16 + valueOf.length());
+            sb.append("Finishing ");
+            sb.append(uffVar);
+            sb.append(" with ");
+            sb.append(valueOf);
+            Log.d("MessengerIpcClient", sb.toString());
         }
-        if (size2 > 0) {
-            list = list2;
+        this.b.setResult(bundle);
+    }
+
+    public final void c(w30 w30Var) {
+        if (Log.isLoggable("MessengerIpcClient", 3)) {
+            String uffVar = toString();
+            String obj = w30Var.toString();
+            StringBuilder sb = new StringBuilder(uffVar.length() + 14 + obj.length());
+            sb.append("Failing ");
+            sb.append(uffVar);
+            sb.append(" with ");
+            sb.append(obj);
+            Log.d("MessengerIpcClient", sb.toString());
         }
-        ghf.i(obj, j, list);
+        this.b.setException(w30Var);
+    }
+
+    public final String toString() {
+        byte b = this.c;
+        int length = String.valueOf((int) b).length();
+        int i = this.a;
+        int length2 = String.valueOf(i).length();
+        boolean a = a();
+        StringBuilder sb = new StringBuilder(length + 19 + length2 + 8 + String.valueOf(a).length() + 1);
+        sb.append("Request { what=");
+        sb.append((int) b);
+        sb.append(" id=");
+        sb.append(i);
+        sb.append(" oneWay=");
+        sb.append(a);
+        sb.append("}");
+        return sb.toString();
     }
 }

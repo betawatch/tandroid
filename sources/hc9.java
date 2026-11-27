@@ -1,39 +1,124 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hc9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mc9 b;
+import android.view.View;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.tl.TL_stars;
 
-    public /* synthetic */ hc9(mc9 mc9Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class hc9 implements ncc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ nd9 b;
+    public final /* synthetic */ q9c[] c;
+
+    public /* synthetic */ hc9(nd9 nd9Var, q9c[] q9cVarArr, byte b) {
         this.a = b;
-        this.b = mc9Var;
+        this.b = nd9Var;
+        this.c = q9cVarArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         byte b = this.a;
-        mc9 mc9Var = this.b;
+        q9c[] q9cVarArr = this.c;
+        nd9 nd9Var = this.b;
+        b8c b8cVar = (b8c) obj;
+        View view = (View) obj2;
         switch (b) {
             case 0:
-                mf9 mf9Var = mc9Var.L2;
-                if (mf9Var != null && mc9Var.f2 != null) {
-                    mc9Var.M2 = true;
-                    mf9Var.b().a.m(false);
-                    try {
-                        mc9Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
+                nd9Var.getClass();
+                int i = ((TL_stars.starGiftAttributeBackdrop) b8cVar.H).backdrop_id;
+                ed9 ed9Var = nd9Var.e;
+                boolean contains = ed9Var.l.contains(Integer.valueOf(i));
+                HashSet hashSet = ed9Var.l;
+                if (contains) {
+                    hashSet.remove(Integer.valueOf(i));
+                } else if (hashSet.isEmpty()) {
+                    ArrayList arrayList = ed9Var.h;
+                    int size = arrayList.size();
+                    int i2 = 0;
+                    while (i2 < size) {
+                        Object obj3 = arrayList.get(i2);
+                        i2++;
+                        int i3 = ((TL_stars.starGiftAttributeBackdrop) obj3).backdrop_id;
+                        if (i3 != i) {
+                            hashSet.add(Integer.valueOf(i3));
+                        }
                     }
-                    ((wd9) mc9Var.f2).a(mc9Var, mc9Var.L2, true);
+                } else {
+                    hashSet.add(Integer.valueOf(i));
+                }
+                ed9Var.p();
+                q9c q9cVar = q9cVarArr[0];
+                if (q9cVar != null) {
+                    q9cVar.g3.O(true);
                     break;
                 }
                 break;
             case 1:
-                mc9Var.K();
+                nd9Var.getClass();
+                long j = ((TL_stars.starGiftAttributeModel) b8cVar.H).document.id;
+                ed9 ed9Var2 = nd9Var.e;
+                boolean contains2 = ed9Var2.k.contains(Long.valueOf(j));
+                HashSet hashSet2 = ed9Var2.k;
+                if (contains2) {
+                    hashSet2.remove(Long.valueOf(j));
+                } else if (hashSet2.isEmpty()) {
+                    ArrayList arrayList2 = ed9Var2.g;
+                    int size2 = arrayList2.size();
+                    int i4 = 0;
+                    while (i4 < size2) {
+                        Object obj4 = arrayList2.get(i4);
+                        i4++;
+                        long j2 = ((TL_stars.starGiftAttributeModel) obj4).document.id;
+                        if (j2 != j) {
+                            hashSet2.add(Long.valueOf(j2));
+                        }
+                    }
+                } else {
+                    hashSet2.add(Long.valueOf(j));
+                }
+                ed9Var2.p();
+                q9c q9cVar2 = q9cVarArr[0];
+                if (q9cVar2 != null) {
+                    q9cVar2.g3.O(true);
+                    break;
+                }
+                break;
+            case 2:
+                nd9Var.k0(q9cVarArr, b8cVar, view);
                 break;
             default:
-                mc9Var.P();
+                nd9Var.getClass();
+                long j3 = ((TL_stars.starGiftAttributePattern) b8cVar.H).document.id;
+                ed9 ed9Var3 = nd9Var.e;
+                boolean contains3 = ed9Var3.m.contains(Long.valueOf(j3));
+                HashSet hashSet3 = ed9Var3.m;
+                if (contains3) {
+                    hashSet3.remove(Long.valueOf(j3));
+                } else if (hashSet3.isEmpty()) {
+                    ArrayList arrayList3 = ed9Var3.i;
+                    int size3 = arrayList3.size();
+                    int i5 = 0;
+                    while (i5 < size3) {
+                        Object obj5 = arrayList3.get(i5);
+                        i5++;
+                        long j4 = ((TL_stars.starGiftAttributePattern) obj5).document.id;
+                        if (j4 != j3) {
+                            hashSet3.add(Long.valueOf(j4));
+                        }
+                    }
+                } else {
+                    hashSet3.add(Long.valueOf(j3));
+                }
+                ed9Var3.p();
+                q9c q9cVar3 = q9cVarArr[0];
+                if (q9cVar3 != null) {
+                    q9cVar3.g3.O(true);
+                    break;
+                }
                 break;
         }
     }

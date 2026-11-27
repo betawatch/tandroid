@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
@@ -24,7 +24,7 @@ public final class RenderSynchronizer {
     private boolean renderWindowOpen;
     private final long targetFrameIntervalNanos;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface Listener {
         void onRenderWindowClose();
 
@@ -37,7 +37,7 @@ public final class RenderSynchronizer {
         this.targetFrameIntervalNanos = Math.round(1.0E9f / f);
         Handler handler = new Handler(Looper.getMainLooper());
         this.mainThreadHandler = handler;
-        handler.post(new v69(this, (byte) 1));
+        handler.post(new ia9(this, (byte) 1));
         Logging.d(TAG, "Created");
     }
 
@@ -57,7 +57,7 @@ public final class RenderSynchronizer {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$registerListener$1() {
-        this.choreographer.postFrameCallback(new fp4(this, (byte) 3));
+        this.choreographer.postFrameCallback(new jr4(this, (byte) 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,7 +68,7 @@ public final class RenderSynchronizer {
                 this.isListening = false;
                 return;
             }
-            this.choreographer.postFrameCallback(new fp4(this, (byte) 3));
+            this.choreographer.postFrameCallback(new jr4(this, (byte) 3));
             long j2 = j - this.lastOpenedTimeNanos;
             long j3 = j - this.lastRefreshTimeNanos;
             this.lastRefreshTimeNanos = j;
@@ -102,7 +102,7 @@ public final class RenderSynchronizer {
             if (!this.isListening) {
                 Logging.d(TAG, "First listener, subscribing to frame callbacks");
                 this.isListening = true;
-                this.mainThreadHandler.post(new v69(this, (byte) 0));
+                this.mainThreadHandler.post(new ia9(this, (byte) 0));
             }
         }
     }

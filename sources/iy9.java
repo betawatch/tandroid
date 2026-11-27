@@ -2,218 +2,356 @@
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.ShapeDrawable;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class iy9 extends fy0 {
-    public TLRPC.Chat S1;
-    public final TLRPC.User T1;
-    public final eg U1;
-    public TLObject V1;
-    public final FrameLayout W1;
-    public final ay9 X1;
-    public final cy9 Y1;
-    public final hy9 Z1;
-    public final hy9 a2;
-    public final hy9 b2;
-    public final u41 c2;
-    public l5c d2;
-    public Context e2;
+public final class iy9 extends FrameLayout {
+    public final /* synthetic */ byte a;
+    public Object b;
+    public Object c;
 
-    public iy9(Activity activity, TLRPC.Chat chat, TLRPC.User user, eg egVar, wjb wjbVar) {
-        super(2, wjbVar, (Context) activity, true);
-        this.E1 = gl.L(12.0f);
-        this.Q0 = true;
-        this.S1 = chat;
-        this.T1 = user;
-        this.V1 = user;
-        this.U1 = egVar;
-        y6c.h(this.a).f();
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.W1 = frameLayout;
-        FrameLayout frameLayout2 = new FrameLayout(activity);
-        int L = gl.L(20.0f);
-        int i = bkb.N5;
-        ShapeDrawable b0 = bkb.b0(L, bkb.v0(i, this.J0));
-        vkb M = zkb.M(i);
-        frameLayout2.setBackground(b0);
-        zkb.j(frameLayout2, b0, M, null, wjbVar);
-        ImageView imageView = new ImageView(activity);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        int i2 = bkb.O5;
-        zkb.s(imageView, i2, wjbVar, PorterDuff.Mode.SRC_IN);
-        frameLayout2.addView(imageView, nme.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
-        ay9 ay9Var = new ay9(activity);
-        this.X1 = ay9Var;
-        zkb.X(ay9Var, bkb.Q5, wjbVar);
-        zkb.D(ay9Var, i2, wjbVar);
-        ay9Var.setTextSize(1, 15.0f);
-        ay9Var.setSingleLine(true);
-        ay9Var.setBackground(null);
-        ay9Var.setCursorWidth(1.5f);
-        ay9Var.setGravity(kk7.w1);
-        ay9Var.setClipToPadding(true);
-        ay9Var.setPadding(gl.L(46.0f), 0, gl.L(16.0f), 0);
-        ay9Var.setTranslationY(-gl.L(0.66f));
-        ay9Var.setInputType(ay9Var.getInputType() | TLObject.FLAG_19);
-        ay9Var.setImeOptions(33554435);
-        ay9Var.setTextIsSelectable(false);
-        ay9Var.setOnEditorActionListener(new j(this, (byte) 23));
-        ay9Var.addTextChangedListener(new by9(this));
-        ay9Var.setHint(k96.M0(2131745565, null));
-        frameLayout2.addView(ay9Var, nme.e(-1, -1, kk7.D1));
-        frameLayout.addView(frameLayout2, nme.d(-1, 40.0f, 23, 11.0f, 0.0f, 11.0f, 0.0f));
-        ViewGroup viewGroup = this.b;
-        int max = Math.max(0, viewGroup.indexOfChild(this.o1));
-        float f = this.u0 / gl.p;
-        viewGroup.addView(frameLayout, max, nme.d(-1, 64.0f, 55, f, 0.0f, f, 0.0f));
-        cy9 cy9Var = new cy9(activity);
-        this.Y1 = cy9Var;
-        be0 be0Var = new be0(activity);
-        be0Var.setImageDrawable(new oy8(R.raw.utyan_empty, gl.L(130.0f), gl.L(130.0f)));
-        cy9Var.addView(be0Var, nme.e(kk7.N1, kk7.N1, 17));
-        hy9 hy9Var = new hy9(this.a, chat.id, new TLRPC.TL_channelParticipantsAdmins());
-        byte b = 21;
-        hy9Var.e.add(new zk9(this, b));
-        this.Z1 = hy9Var;
-        hy9 hy9Var2 = new hy9(this.a, chat.id, new TLRPC.TL_channelParticipantsRecent());
-        hy9Var2.e.add(new zk9(this, b));
-        this.a2 = hy9Var2;
-        hy9 hy9Var3 = new hy9(this.a, chat.id, new TLRPC.TL_channelParticipantsSearch());
-        hy9Var3.e.add(new zk9(this, b));
-        this.b2 = hy9Var3;
-        o39 o39Var = this.n1;
-        int i3 = this.u0;
-        o39Var.setPadding(i3, 0, i3, gl.L(68.0f));
-        this.n1.setClipToPadding(false);
-        this.n1.setOnItemClickListener(new f09(this, (byte) 4));
-        dy9 dy9Var = new dy9(this);
-        dy9Var.m = false;
-        dy9Var.C = false;
-        dy9Var.o(s33.h);
-        dy9Var.n(350L);
-        this.n1.setItemAnimator(dy9Var);
-        this.n1.addOnLayoutChangeListener(new ey9(this));
-        this.n1.j(new fy9(this));
-        this.b.addView(new gy9(this, getContext()), nme.e(-1, 68, 87));
-        u41 u41Var = new u41(wjbVar, getContext(), true);
-        u41Var.setRoundRadius(24);
-        this.c2 = u41Var;
-        u41Var.setColor(bkb.v0(bkb.q7, this.J0));
-        Z0(false);
-        ViewGroup viewGroup2 = this.b;
-        float f2 = (this.u0 / gl.p) + 10.0f;
-        viewGroup2.addView(u41Var, nme.d(-1, 48.0f, 87, f2, 10.0f, f2, 10.0f));
-        u41Var.setOnClickListener(new ik8(this, (byte) 20));
-        l5c l5cVar = this.d2;
-        if (l5cVar != null) {
-            l5cVar.O(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy9(Context context, byte b) {
+        super(context);
+        this.a = b;
+        switch (b) {
+            case 3:
+                super(context);
+                ImageView imageView = new ImageView(context);
+                this.b = imageView;
+                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                addView(imageView, tre.d(24, 24.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+                TextView textView = new TextView(context);
+                this.c = textView;
+                textView.setTypeface(hl.o());
+                textView.setTextSize(1, 12.0f);
+                textView.setTextColor(-1);
+                textView.setGravity(17);
+                addView(textView, tre.d(-1, -2.0f, 49, 4.0f, 35.0f, 4.0f, 0.0f));
+                break;
+            default:
+                break;
         }
-        hy9Var.b();
-        hy9Var2.b();
     }
 
-    @Override // fy0
-    public final n39 G0(o39 o39Var) {
-        l5c l5cVar = new l5c(o39Var, getContext(), this.a, 0, false, new tf8(this, (byte) 16), this.J0);
-        this.d2 = l5cVar;
-        return l5cVar;
-    }
-
-    @Override // fy0
-    public final CharSequence J0() {
-        return k96.M0(2131754207, null);
-    }
-
-    public final void Y0(TLRPC.User user, TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP, TwoStepVerificationActivity twoStepVerificationActivity) {
-        if (getContext() != null) {
-            this.e2 = getContext();
+    public final void a(int i, CharSequence charSequence, boolean z) {
+        ImageView imageView = (ImageView) this.b;
+        if (z) {
+            hl.L3(imageView, i);
+        } else {
+            imageView.setImageResource(i);
         }
-        if (this.e2 != null) {
-            if (tL_inputCheckPasswordSRP != null && !hc2.T(this.S1)) {
-                d S = LaunchActivity.S();
-                if (S == null) {
-                    return;
+        ((TextView) this.c).setText(charSequence);
+        requestLayout();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 7:
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.a) {
+            case 0:
+                Path path = (Path) this.b;
+                ky9 ky9Var = (ky9) this.c;
+                RectF rectF = ky9Var.S;
+                if (view == ky9Var.O || view == ky9Var.y) {
+                    canvas.save();
+                    canvas.clipRect(0.0f, hl.R1(ky9Var.U, 0.0f, ky9Var.s), getWidth(), hl.R1(ky9Var.V, getHeight(), ky9Var.s));
+                    boolean drawChild = super.drawChild(canvas, view, j);
+                    canvas.restore();
+                    return drawChild;
                 }
-                na7.q1(this.a).P(this.e2, this.S1.id, S, new lt((Object) this, (Object) user, (Object) tL_inputCheckPasswordSRP, (Object) twoStepVerificationActivity, (byte) 19), null);
-                return;
-            }
-            TLRPC.TL_channels_editCreator tL_channels_editCreator = new TLRPC.TL_channels_editCreator();
-            if (hc2.T(this.S1)) {
-                TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
-                tL_channels_editCreator.channel = tL_inputChannel;
-                TLRPC.Chat chat = this.S1;
-                tL_inputChannel.channel_id = chat.id;
-                tL_inputChannel.access_hash = chat.access_hash;
-            } else {
-                tL_channels_editCreator.channel = new TLRPC.TL_inputChannelEmpty();
-            }
-            tL_channels_editCreator.password = tL_inputCheckPasswordSRP != null ? tL_inputCheckPasswordSRP : new TLRPC.TL_inputCheckPasswordEmpty();
-            tL_channels_editCreator.user_id = na7.q1(this.a).o1(user);
-            ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_editCreator, new fn0((Object) this, (Object) tL_inputCheckPasswordSRP, (Object) user, (Object) twoStepVerificationActivity, (Object) tL_channels_editCreator, (byte) 15));
+                if (view != ky9Var.Q) {
+                    return super.drawChild(canvas, view, j);
+                }
+                canvas.save();
+                path.rewind();
+                path.addCircle(rectF.centerX() + ky9Var.O.getX(), rectF.centerY() + ky9Var.O.getY(), rectF.width() / 2.0f, Path.Direction.CW);
+                canvas.clipPath(path);
+                canvas.clipRect(0.0f, hl.R1(ky9Var.U, 0.0f, ky9Var.s), getWidth(), hl.R1(ky9Var.V, getHeight(), ky9Var.s));
+                canvas.translate(-ky9Var.Q.getX(), -ky9Var.Q.getY());
+                canvas.translate(ky9Var.O.getX() + rectF.left, ky9Var.O.getY() + rectF.top);
+                canvas.scale(rectF.width() / ky9Var.Q.getMeasuredWidth(), rectF.height() / ky9Var.Q.getMeasuredHeight(), ky9Var.Q.getX(), ky9Var.Q.getY());
+                boolean drawChild2 = super.drawChild(canvas, view, j);
+                canvas.restore();
+                return drawChild2;
+            case 1:
+                if (view != ((n1a) this.c).i0 || !ri5.b || !ri5.f) {
+                    return super.drawChild(canvas, view, j);
+                }
+                for (int i = 0; i < ((n1a) this.c).i0.getChildCount(); i++) {
+                    View childAt = ((n1a) this.c).i0.getChildAt(i);
+                    if (childAt instanceof w0a) {
+                        w0a w0aVar = (w0a) childAt;
+                        if (w0aVar.getAnimatedScale() == 1.0f) {
+                            ((Rect) this.b).set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+                            canvas.save();
+                            canvas.clipRect((Rect) this.b);
+                            super.drawChild(canvas, view, j);
+                            canvas.restore();
+                        } else if (w0aVar.getAnimatedScale() > 0.0f) {
+                            ((Rect) this.b).set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+                            ((Rect) this.b).set((int) (r5.centerX() - (w0aVar.getAnimatedScale() * (((Rect) this.b).width() / 2.0f))), (int) (((Rect) this.b).centerY() - (w0aVar.getAnimatedScale() * (((Rect) this.b).height() / 2.0f))), (int) ((w0aVar.getAnimatedScale() * (((Rect) this.b).width() / 2.0f)) + ((Rect) this.b).centerX()), (int) ((w0aVar.getAnimatedScale() * (((Rect) this.b).height() / 2.0f)) + ((Rect) this.b).centerY()));
+                            canvas.save();
+                            canvas.clipRect((Rect) this.b);
+                            canvas.scale(w0aVar.getAnimatedScale(), w0aVar.getAnimatedScale(), ((Rect) this.b).centerX(), ((Rect) this.b).centerY());
+                            super.drawChild(canvas, view, j);
+                            canvas.restore();
+                        }
+                    } else if ((childAt instanceof TextView) || (childAt instanceof r0a) || (childAt instanceof q0a) || (childAt instanceof s0a)) {
+                        ((Rect) this.b).set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+                        canvas.save();
+                        canvas.clipRect((Rect) this.b);
+                        super.drawChild(canvas, view, j);
+                        canvas.restore();
+                    }
+                }
+                return false;
+            case 7:
+                uqc uqcVar = (uqc) this.c;
+                if (view != uqcVar.v0 || !uqcVar.G) {
+                    return super.drawChild(canvas, view, j);
+                }
+                int save = canvas.save();
+                canvas.concat(uqcVar.J);
+                boolean drawChild3 = super.drawChild(canvas, view, j);
+                canvas.restoreToCount(save);
+                return drawChild3;
+            default:
+                return super.drawChild(canvas, view, j);
         }
     }
 
-    public final void Z0(boolean z) {
-        int i = hc2.V(this.S1) ? 2131748811 : 2131748802;
-        float L = gl.L(32.0f);
-        u41 u41Var = this.c2;
-        float max = Math.max(L, ((u41Var.getWidth() > 0 ? u41Var.getWidth() : gl.q.x - gl.L(20.0f)) - gl.L(16.0f)) - u41Var.getTextPaint().measureText(k96.M0(i, null)));
-        TLObject tLObject = this.V1;
-        u41Var.i(k96.a0(null, null, i, TextUtils.ellipsize(tLObject instanceof TLRPC.User ? l7c.l((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "", u41Var.getTextPaint(), max, TextUtils.TruncateAt.MIDDLE)), z, true);
-    }
-
-    public final void a1() {
-        float f = -gl.L(64.0f);
-        int i = 0;
-        while (true) {
-            o39 o39Var = this.n1;
-            if (i >= o39Var.getChildCount()) {
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.a) {
+            case 5:
+                super.invalidate();
+                l7 l7Var = ((pqb) this.c).v0;
+                if (l7Var != null) {
+                    l7Var.invalidate();
+                    break;
+                }
                 break;
-            }
-            View childAt = o39Var.getChildAt(i);
-            if (childAt.getId() == 3) {
-                f = childAt.getY();
+            default:
+                super.invalidate();
                 break;
-            }
-            i++;
         }
-        this.W1.setTranslationY(f);
     }
 
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        this.Z1.a();
-        this.a2.a();
-        this.b2.a();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.a) {
+            case 7:
+                super.onAttachedToWindow();
+                getViewTreeObserver().addOnPreDrawListener((es1) this.b);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
     }
 
-    @Override // fx0
-    public final void p0() {
-        try {
-            super.p0();
-            u41 u41Var = this.c2;
-            if (u41Var != null) {
-                u41Var.setColor(bkb.v0(bkb.q7, this.J0));
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.a) {
+            case 7:
+                getViewTreeObserver().removeOnPreDrawListener((es1) this.b);
+                super.onDetachedFromWindow();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 4:
+                int intrinsicHeight = aob.i3.getIntrinsicHeight();
+                aob.i3.setBounds(0, 0, getMeasuredWidth(), intrinsicHeight);
+                aob.i3.draw(canvas);
+                Paint paint = (Paint) this.b;
+                paint.setColor(((pqb) this.c).getThemedColor(aob.Je));
+                canvas.drawRect(0.0f, intrinsicHeight, getMeasuredWidth(), getMeasuredHeight(), paint);
+                break;
+            case 5:
+                int[] iArr = (int[]) this.b;
+                pqb pqbVar = (pqb) this.c;
+                if (!hl.D) {
+                    getLocationInWindow(iArr);
+                    if (pqbVar.u0.getTranslationY() != iArr[1]) {
+                        pqbVar.u0.setTranslationY(-r9);
+                        pqbVar.v0.invalidate();
+                    }
+                    if (SystemClock.elapsedRealtime() < pqbVar.R) {
+                        invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                canvas.save();
+                clc clcVar = ((dlc) this.c).b;
+                canvas.scale(clcVar.getScaleX(), clcVar.getScaleY(), clcVar.getPivotX() + clcVar.getLeft(), clcVar.getPivotY() + clcVar.getTop());
+                Drawable drawable = (Drawable) this.b;
+                drawable.setBounds(clcVar.getLeft() - hl.L(2.0f), clcVar.getTop() - hl.L(2.0f), hl.L(2.0f) + clcVar.getRight(), hl.L(2.0f) + clcVar.getBottom());
+                drawable.draw(canvas);
+                canvas.restore();
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        boolean z;
+        int i3;
+        int i4;
+        float f;
+        StaticLayout staticLayout;
+        float f2;
+        switch (this.a) {
+            case 3:
+                int size = View.MeasureSpec.getSize(i) - hl.L(8.0f);
+                TextView textView = (TextView) this.c;
+                CharSequence text = textView.getText();
+                if (size > 0 && !TextUtils.isEmpty(text)) {
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
+                    TextPaint textPaint = new TextPaint(textView.getPaint());
+                    textPaint.setTextSize(hl.L(12.0f));
+                    float measureText = textPaint.measureText(text, 0, text.length());
+                    float f3 = size;
+                    if (measureText > f3) {
+                        textPaint.setTextSize(hl.L(11.0f));
+                        String[] split = text.toString().split("\\s+");
+                        int length = split.length;
+                        int i5 = 0;
+                        while (true) {
+                            if (i5 >= length) {
+                                f2 = 12.0f;
+                                z = true;
+                                i3 = 2;
+                                staticLayout = new StaticLayout(text, textPaint, size, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+                            } else if (textPaint.measureText(split[i5]) > f3) {
+                                staticLayout = null;
+                                z = true;
+                                f2 = 12.0f;
+                                i3 = 2;
+                            } else {
+                                i5++;
+                            }
+                        }
+                        if (staticLayout == null || staticLayout.getLineCount() > i3) {
+                            f = Math.max(8.0f, (f3 * f2) / measureText);
+                            i4 = z ? 1 : 0;
+                        } else {
+                            i4 = i3;
+                            f = 11.0f;
+                        }
+                    } else {
+                        z = true;
+                        i3 = 2;
+                        i4 = 1;
+                        f = 12.0f;
+                    }
+                    textView.setTextSize(z ? 1 : 0, f);
+                    textView.setMaxLines(i4);
+                    textView.setSingleLine(i4 == z ? z ? 1 : 0 : false);
+                    textView.setLineSpacing(0.0f, i4 == i3 ? 0.85f : 1.0f);
+                    if (i4 == i3) {
+                        z = false;
+                    }
+                    textView.setIncludeFontPadding(z);
+                    layoutParams.topMargin = hl.L(i4 == i3 ? 29.0f : 35.0f);
+                    ((FrameLayout.LayoutParams) ((ImageView) this.b).getLayoutParams()).topMargin = hl.L(i4 == i3 ? 4.0f : 8.0f);
+                }
+                super.onMeasure(i, i2);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy9(dlc dlcVar, Context context, Drawable drawable) {
+        super(context);
+        this.a = (byte) 6;
+        this.c = dlcVar;
+        this.b = drawable;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy9(uqc uqcVar, Context context) {
+        super(context);
+        this.a = (byte) 7;
+        this.c = uqcVar;
+        this.b = new es1(this, (byte) 7);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy9(n1a n1aVar, Context context) {
+        super(context);
+        this.a = (byte) 1;
+        this.c = n1aVar;
+        this.b = new Rect();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy9(pqb pqbVar, Context context, byte b) {
+        super(context);
+        this.a = b;
+        switch (b) {
+            case 5:
+                this.c = pqbVar;
+                super(context);
+                this.b = new int[2];
+                break;
+            default:
+                this.c = pqbVar;
+                this.b = new Paint();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy9(ky9 ky9Var, Activity activity) {
+        super(activity);
+        this.a = (byte) 0;
+        this.c = ky9Var;
+        this.b = new Path();
     }
 }

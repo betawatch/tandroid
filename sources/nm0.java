@@ -1,29 +1,38 @@
 // default package
 
-import android.view.View;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class nm0 implements ed, nw4, no7 {
-    public final /* synthetic */ fx0 a;
+public final /* synthetic */ class nm0 implements pcc {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ AtomicBoolean b;
+    public final /* synthetic */ l01 c;
 
-    public /* synthetic */ nm0(fx0 fx0Var) {
-        this.a = fx0Var;
+    public /* synthetic */ nm0(AtomicBoolean atomicBoolean, l01 l01Var, byte b) {
+        this.a = b;
+        this.b = atomicBoolean;
+        this.c = l01Var;
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        return this.a.Y(vxcVar);
-    }
-
-    @Override // nw4
-    public final int i() {
-        return bkb.v0(bkb.g5, this.a.J0);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        this.a.dismiss();
-        xu4.f1(false, null);
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b = this.a;
+        l01 l01Var = this.c;
+        AtomicBoolean atomicBoolean = this.b;
+        switch (b) {
+            case 0:
+                if (!atomicBoolean.get()) {
+                    l01Var.b();
+                    break;
+                }
+                break;
+            default:
+                if (!atomicBoolean.get() && l01Var != null) {
+                    l01Var.b();
+                    break;
+                }
+                break;
+        }
     }
 }

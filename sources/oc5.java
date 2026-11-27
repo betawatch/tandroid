@@ -1,9 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface oc5 {
-    rdc c();
+import android.content.Context;
+import android.view.View;
 
-    fh7 d();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class oc5 extends z2b {
+    public final /* synthetic */ byte L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ oc5(Context context, View view, int i, vnb vnbVar, byte b) {
+        super(context, view, i, vnbVar);
+        this.L = b;
+    }
+
+    @Override // z2b, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.L) {
+            case 0:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().w0(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().w0(false);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // z2b, android.view.View
+    public final void setVisibility(int i) {
+        switch (this.L) {
+            case 2:
+                super.setVisibility(i);
+                if (i != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
+    }
 }

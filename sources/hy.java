@@ -1,22 +1,13 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hy implements x74, gx2 {
-    public final /* synthetic */ ty a;
+import android.content.AttributionSource;
 
-    @Override // gx2
-    public final void o(long j) {
-        ty tyVar = this.a;
-        tyVar.f1(j, tyVar.r2);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class hy {
+    public final AttributionSource a;
 
-    @Override // x74
-    public final void p(int i, float f, float f2, y74 y74Var) {
-        this.a.e1();
-    }
-
-    @Override // x74
-    public final void F(float f, int i) {
+    public hy(AttributionSource attributionSource) {
+        this.a = attributionSource;
     }
 }

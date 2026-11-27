@@ -1,44 +1,161 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+import android.text.Layout;
+import android.text.TextPaint;
+import java.text.BreakIterator;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public abstract class sze {
-    public static void a(int i, int i2) {
-        String a;
-        if (i < 0 || i >= i2) {
-            if (i < 0) {
-                a = tze.a("%s (%s) must not be negative", "index", Integer.valueOf(i));
-            } else {
-                if (i2 < 0) {
-                    w26.j(de9.k(i2, "negative size: "));
-                    return;
-                }
-                a = tze.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i), Integer.valueOf(i2));
+    public static int[] a(int i, int i2, int i3, ArrayList arrayList) {
+        int[] iArr = null;
+        for (int i4 = 1; i4 <= 4; i4++) {
+            iArr = c(i, i4, i3, arrayList);
+            int i5 = 0;
+            for (int i6 : iArr) {
+                i5 += i6;
             }
-            throw new IndexOutOfBoundsException(a);
+            if (i5 <= i2) {
+                break;
+            }
+        }
+        if (iArr == null) {
+            return new int[Math.max(0, i)];
+        }
+        int i7 = 0;
+        for (int i8 : iArr) {
+            i7 += i8;
+        }
+        int i9 = i2 - i7;
+        if (i9 > 0) {
+            int[] c = c(i, 1, i3, arrayList);
+            int i10 = 0;
+            for (int i11 = 0; i11 < i; i11++) {
+                i10 += Math.max(0, c[i11] - iArr[i11]);
+            }
+            if (i10 > 0) {
+                float min = Math.min(1.0f, i9 / i10);
+                for (int i12 = 0; i12 < i; i12++) {
+                    iArr[i12] = iArr[i12] + ((int) Math.floor(Math.max(0, c[i12] - r1) * min));
+                }
+            }
+        }
+        return iArr;
+    }
+
+    public static jib b(CharSequence charSequence, TextPaint textPaint, int i, int i2, int i3, int i4, int i5) {
+        float f;
+        float measureText;
+        float measureText2;
+        jib jibVar = new jib();
+        jibVar.a = i;
+        int i6 = 1;
+        jibVar.b = Math.max(1, i2);
+        jibVar.c = i3;
+        int i7 = 0;
+        jibVar.e = Math.max(0, Math.min(i4, i5));
+        if (charSequence == null || charSequence.length() == 0 || textPaint == null) {
+            jibVar.d = jibVar.e;
+            jibVar.g = true;
+            return jibVar;
+        }
+        int length = charSequence.length();
+        for (int i8 = 0; i8 < length; i8++) {
+            if (charSequence.charAt(i8) == '\n') {
+                i6++;
+            }
+        }
+        jibVar.f = new float[i6];
+        int length2 = charSequence.length();
+        int i9 = 0;
+        int i10 = 0;
+        while (true) {
+            f = 0.0f;
+            if (i7 > length2) {
+                break;
+            }
+            if (i7 == length2 || charSequence.charAt(i7) == '\n') {
+                float[] fArr = jibVar.f;
+                int i11 = i10 + 1;
+                if (i7 > i9) {
+                    try {
+                        measureText2 = Layout.getDesiredWidth(charSequence, i9, i7, textPaint);
+                    } catch (Exception unused) {
+                        measureText2 = textPaint.measureText(charSequence, i9, i7);
+                    }
+                    f = measureText2;
+                }
+                fArr[i10] = f;
+                i9 = i7 + 1;
+                i10 = i11;
+            }
+            i7++;
+        }
+        String charSequence2 = charSequence.toString();
+        BreakIterator lineInstance = BreakIterator.getLineInstance();
+        lineInstance.setText(charSequence2);
+        int first = lineInstance.first();
+        while (true) {
+            int i12 = first;
+            first = lineInstance.next();
+            if (first == -1) {
+                jibVar.d = Math.min(jibVar.e, (int) Math.ceil(f));
+                return jibVar;
+            }
+            int i13 = first;
+            while (true) {
+                if (i13 <= i12) {
+                    break;
+                }
+                if (!Character.isWhitespace(charSequence2.charAt(i13 - 1))) {
+                    try {
+                        measureText = Layout.getDesiredWidth(charSequence, i12, i13, textPaint);
+                    } catch (Exception unused2) {
+                        measureText = textPaint.measureText(charSequence, i12, i13);
+                    }
+                    f = Math.max(f, measureText);
+                    break;
+                }
+                i13--;
+            }
         }
     }
 
-    public static void b(int i, int i2) {
-        if (i < 0 || i > i2) {
-            k93.i(d(i, i2, "index"));
+    public static int[] c(int i, int i2, int i3, ArrayList arrayList) {
+        int i4;
+        int i5;
+        int max = Math.max(0, i);
+        int[] iArr = new int[max];
+        for (int i6 = 0; i6 < max; i6++) {
+            iArr[i6] = i3;
         }
-    }
-
-    public static void c(int i, int i2, int i3) {
-        if (i < 0 || i2 < i || i2 > i3) {
-            throw new IndexOutOfBoundsException((i < 0 || i > i3) ? d(i, i3, "start index") : (i2 < 0 || i2 > i3) ? d(i2, i3, "end index") : tze.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i2), Integer.valueOf(i)));
+        int size = arrayList.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            jib jibVar = (jib) arrayList.get(i7);
+            if (jibVar.b == 1 && (i5 = jibVar.a) >= 0 && i5 < i) {
+                iArr[i5] = Math.max(iArr[i5], jibVar.b(i2));
+            }
         }
-    }
-
-    public static String d(int i, int i2, String str) {
-        if (i < 0) {
-            return tze.a("%s (%s) must not be negative", str, Integer.valueOf(i));
+        int size2 = arrayList.size();
+        for (int i8 = 0; i8 < size2; i8++) {
+            jib jibVar2 = (jib) arrayList.get(i8);
+            int i9 = jibVar2.b;
+            if (i9 > 1 && (i4 = jibVar2.a) >= 0 && i4 < i) {
+                int min = Math.min(i, i4 + i9);
+                int i10 = 0;
+                for (int i11 = jibVar2.a; i11 < min; i11++) {
+                    i10 += iArr[i11];
+                }
+                int b = jibVar2.b(i2) - i10;
+                for (int i12 = jibVar2.a; i12 < min && b > 0; i12++) {
+                    int i13 = min - i12;
+                    int i14 = ((b + i13) - 1) / i13;
+                    iArr[i12] = iArr[i12] + i14;
+                    b -= i14;
+                }
+            }
         }
-        if (i2 >= 0) {
-            return tze.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i), Integer.valueOf(i2));
-        }
-        w26.j(de9.k(i2, "negative size: "));
-        return null;
+        return iArr;
     }
 }

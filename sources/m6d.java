@@ -1,130 +1,34 @@
 // default package
 
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class m6d extends AbstractSet {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ so2 b;
+public final class m6d {
+    public final ho a;
+    public final a94 b;
 
-    public /* synthetic */ m6d(so2 so2Var, byte b) {
-        this.a = b;
-        this.b = so2Var;
+    public /* synthetic */ m6d(ho hoVar, a94 a94Var) {
+        this.a = hoVar;
+        this.b = a94Var;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                so2Var.clear();
-                break;
-            default:
-                so2Var.clear();
-                break;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof m6d)) {
+            return false;
         }
+        m6d m6dVar = (m6d) obj;
+        return vue.a(this.a, m6dVar.a) && vue.a(this.b, m6dVar.b);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                Map m = so2Var.m();
-                if (m != null) {
-                    return m.entrySet().contains(obj);
-                }
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    int s = so2Var.s(entry.getKey());
-                    if (s != -1) {
-                        Object[] objArr = so2Var.e;
-                        objArr.getClass();
-                        if (m1f.a(objArr[s], entry.getValue())) {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            default:
-                return so2Var.containsKey(obj);
-        }
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                Map m = so2Var.m();
-                return m != null ? m.entrySet().iterator() : new t5d(so2Var, (byte) 1);
-            default:
-                Map m2 = so2Var.m();
-                return m2 != null ? m2.keySet().iterator() : new t5d(so2Var, (byte) 0);
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-            case 0:
-                Map m = so2Var.m();
-                if (m == null) {
-                    if (obj instanceof Map.Entry) {
-                        Map.Entry entry = (Map.Entry) obj;
-                        if (!so2Var.p()) {
-                            int q = so2Var.q();
-                            Object key = entry.getKey();
-                            Object value = entry.getValue();
-                            Object obj2 = so2Var.b;
-                            obj2.getClass();
-                            int[] iArr = so2Var.c;
-                            iArr.getClass();
-                            Object[] objArr = so2Var.d;
-                            objArr.getClass();
-                            Object[] objArr2 = so2Var.e;
-                            objArr2.getClass();
-                            int a = gze.a(key, value, q, obj2, iArr, objArr, objArr2);
-                            if (a != -1) {
-                                so2Var.o(a, q);
-                                so2Var.h--;
-                                so2Var.f += 32;
-                                break;
-                            }
-                        }
-                    }
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                Map m2 = so2Var.m();
-                if (m2 == null) {
-                    if (so2Var.v(obj) == so2.x) {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-                break;
-        }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        byte b = this.a;
-        so2 so2Var = this.b;
-        switch (b) {
-        }
-        return so2Var.size();
+    public final String toString() {
+        um4 um4Var = new um4(this);
+        um4Var.a(this.a, "key");
+        um4Var.a(this.b, "feature");
+        return um4Var.toString();
     }
 }

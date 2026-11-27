@@ -1,86 +1,120 @@
 // default package
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class uu3 extends ru3 {
-    public static final Paint e = new Paint(2);
-    public static final Rect f = new Rect();
-    public qu3 c;
-    public boolean d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class uu3 extends tpa {
+    public final m66 V;
+    public q66 W;
+    public boolean a0;
+    public boolean b0;
+    public boolean c0;
 
-    @Override // ru3
-    public final boolean a() {
-        Bitmap[][] bitmapArr = vu3.f;
-        qu3 qu3Var = this.c;
-        return bitmapArr[qu3Var.a][qu3Var.b] != null;
+    public uu3(Context context) {
+        super(null, context, true);
+        this.V = new m66(this);
     }
 
-    @Override // ru3
-    public final void b() {
-        if (a()) {
-            return;
+    @Override // tpa
+    public final ClickableSpan a(int i, int i2) {
+        Layout layout = getLayout();
+        if (layout == null) {
+            return null;
         }
-        qu3 qu3Var = this.c;
-        vu3.i(qu3Var.a, qu3Var.b);
+        int paddingLeft = i - getPaddingLeft();
+        int paddingTop = i2 - getPaddingTop();
+        int lineForVertical = layout.getLineForVertical(paddingTop);
+        float f = paddingLeft;
+        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f);
+        float lineLeft = getLayout().getLineLeft(lineForVertical);
+        if (lineLeft <= f && layout.getLineWidth(lineForVertical) + lineLeft >= f && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+            if (clickableSpanArr.length != 0 && !hl.A1()) {
+                return clickableSpanArr[0];
+            }
+        }
+        return null;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds;
-        boolean z = this.d;
-        qu3 qu3Var = this.c;
-        if (!a()) {
-            vu3.i(qu3Var.a, qu3Var.b);
-            Paint paint = vu3.d;
-            paint.setColor(this.b);
-            Rect bounds2 = getBounds();
-            canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), bounds2.width() * 0.4f, paint);
-            return;
+    @Override // tpa, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        if (!this.a0) {
+            canvas.translate(this.b0 ? 0.0f : getPaddingLeft(), this.c0 ? 0.0f : getPaddingTop());
         }
-        if (this.a) {
-            Rect bounds3 = getBounds();
-            int centerX = bounds3.centerX();
-            int centerY = bounds3.centerY();
-            boolean z2 = this.a;
-            int i = z2 ? vu3.c : vu3.b;
-            bounds = f;
-            bounds.left = centerX - (i / 2);
-            bounds.right = ((z2 ? vu3.c : vu3.b) / 2) + centerX;
-            bounds.top = centerY - ((z2 ? vu3.c : vu3.b) / 2);
-            bounds.bottom = ((z2 ? vu3.c : vu3.b) / 2) + centerY;
-        } else {
-            bounds = getBounds();
+        if (this.V.g(canvas)) {
+            invalidate();
         }
-        if (canvas.quickReject(bounds.left, bounds.top, bounds.right, bounds.bottom, Canvas.EdgeType.AA)) {
-            return;
-        }
-        if (z) {
-            canvas.save();
-            canvas.scale(-1.0f, 1.0f, bounds.centerX(), bounds.centerY());
-        }
-        canvas.drawBitmap(vu3.f[qu3Var.a][qu3Var.b], (Rect) null, bounds, e);
-        if (z) {
-            canvas.restore();
-        }
+        canvas.restore();
+        super.onDraw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        CharacterStyle characterStyle;
+        m66 m66Var = this.V;
+        if (m66Var != null) {
+            Layout layout = getLayout();
+            ClickableSpan a = a((int) motionEvent.getX(), (int) motionEvent.getY());
+            if (a != null && motionEvent.getAction() == 0) {
+                q66 q66Var = new q66(a, null, motionEvent.getX(), motionEvent.getY(), 0);
+                this.W = q66Var;
+                m66Var.a(q66Var, null);
+                SpannableString spannableString = new SpannableString(layout.getText());
+                int spanStart = spannableString.getSpanStart(this.W.i);
+                int spanEnd = spannableString.getSpanEnd(this.W.i);
+                f66 b = this.W.b();
+                b.d(layout, spanStart, getPaddingTop());
+                layout.getSelectionPath(spanStart, spanEnd, b);
+                hl.d3(new jm3(this, q66Var, a, (byte) 3), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                m66Var.e(true);
+                q66 q66Var2 = this.W;
+                if (q66Var2 != null && (characterStyle = q66Var2.i) == a) {
+                    if (characterStyle != null) {
+                        ((ClickableSpan) characterStyle).onClick(this);
+                    }
+                    this.W = null;
+                    return true;
+                }
+                this.W = null;
+            }
+            if (motionEvent.getAction() == 3) {
+                m66Var.e(true);
+                this.W = null;
+            }
+        }
+        return this.W != null || super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        e.setAlpha(i);
+    @Override // tpa
+    public void setDisablePaddingsOffset(boolean z) {
+        this.a0 = z;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // tpa
+    public void setDisablePaddingsOffsetX(boolean z) {
+        this.b0 = z;
+    }
+
+    @Override // tpa
+    public void setDisablePaddingsOffsetY(boolean z) {
+        this.c0 = z;
+    }
+
+    @Override // tpa, android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(pv3.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
     }
 }

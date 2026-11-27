@@ -1,61 +1,57 @@
 // default package
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class h34 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ l34 b;
+public final class h34 extends e {
+    public long a;
+    public TLRPC.Chat b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public d34 f;
+    public qo0 h;
 
-    public /* synthetic */ h34(l34 l34Var, byte b) {
-        this.a = b;
-        this.b = l34Var;
+    @Override // org.telegram.ui.ActionBar.e
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setActionBarMenuOnItemClick(new kg2(this, (byte) 15));
+        this.simpleActionBar.setTitle(ob6.M0(2131743636, null));
+        FrameLayout frameLayout = new FrameLayout(context);
+        d34 d34Var = new d34(this, new n82(this, (byte) 27), new lu3(this, (byte) 6), null, (byte) 0);
+        this.f = d34Var;
+        d34Var.s1();
+        this.f.setSectionsDrawBackground(true);
+        frameLayout.addView(this.f, tre.e(-1, -1, jn7.D1));
+        this.fragmentView = frameLayout;
+        return frameLayout;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        l34 l34Var = this.b;
-        switch (b) {
-            case 0:
-                l34Var.g(gl.Z1(l34Var.N, l34Var.k0, l34Var.S.getAnimatedFraction()));
-                break;
-            case 1:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l34Var.p0 = floatValue;
-                l34Var.setAlpha(floatValue);
-                k34 k34Var = l34Var.J;
-                if (k34Var != null) {
-                    k34Var.setScaleX(Utilities.i(l34Var.p0 * 1.25f, 1.0f, 0.0f) * gl.R1(0.9f, 1.0f, l34Var.l0));
-                    l34Var.J.setScaleY(Utilities.i(l34Var.p0 * 1.25f, 1.0f, 0.0f) * gl.R1(0.9f, 1.0f, l34Var.l0));
-                    l34Var.J.setAlpha(Math.max(0.0f, l34Var.p0 - 0.8f) * l34Var.l0 * 5.0f);
-                }
-                l34Var.invalidate();
-                break;
-            case 2:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l34Var.l0 = floatValue2;
-                k34 k34Var2 = l34Var.J;
-                if (k34Var2 != null) {
-                    k34Var2.setScaleX(Utilities.i(l34Var.p0 * 1.25f, 1.0f, 0.0f) * gl.R1(0.9f, 1.0f, floatValue2));
-                    l34Var.J.setScaleY(Utilities.i(l34Var.p0 * 1.25f, 1.0f, 0.0f) * gl.R1(0.9f, 1.0f, l34Var.l0));
-                    l34Var.J.setAlpha(Math.max(0.0f, l34Var.p0 - 0.8f) * l34Var.l0 * 5.0f);
-                    break;
-                }
-                break;
-            case 3:
-                l34Var.k();
-                break;
-            case 4:
-                l34Var.k();
-                break;
-            default:
-                float Z1 = gl.Z1(l34Var.k0, l34Var.N, valueAnimator.getAnimatedFraction());
-                l34Var.Q = Z1;
-                l34Var.g(Z1);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.e
+    public final d79 getListViewForSimpleGlass() {
+        return this.f;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean onFragmentCreate() {
+        this.b = getMessagesController().M0(Long.valueOf(-this.a));
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

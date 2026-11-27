@@ -1,48 +1,63 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.graphics.SurfaceTexture;
+import android.opengl.EGL14;
+import android.opengl.GLES20;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qjc implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ sjc b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class qjc implements Runnable {
+    public SurfaceTexture a;
+    public final boolean b;
+    public final /* synthetic */ rjc c;
 
-    public /* synthetic */ qjc(sjc sjcVar, byte b) {
-        this.a = b;
-        this.b = sjcVar;
+    public qjc(rjc rjcVar, boolean z) {
+        this.c = rjcVar;
+        this.b = z;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        byte b2 = 2;
-        sjc sjcVar = this.b;
-        switch (b) {
-            case 0:
-                sjcVar.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                sjcVar.k.invalidate();
-                if (sjcVar.n > 1.0f && sjcVar.r == null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(gl.L(12.0f), 0);
-                    sjcVar.r = ofInt;
-                    ofInt.addUpdateListener(new qjc(sjcVar, b2));
-                    sjcVar.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
-                    sjcVar.r.start();
-                    break;
+    public final synchronized void a(SurfaceTexture surfaceTexture) {
+        this.a = surfaceTexture;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0023, code lost:
+    
+        if (r1.hasSurface() == false) goto L18;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final synchronized void run() {
+        njc njcVar;
+        if (this.a != null && (njcVar = this.c.r) != null) {
+            if (this.b) {
+                if (!(njcVar.e != EGL14.EGL_NO_SURFACE)) {
+                    SurfaceTexture surfaceTexture = this.a;
+                    if (!ik8.A(surfaceTexture)) {
+                        throw new IllegalStateException("Invalid surface: " + this.a);
+                    }
+                    boolean z = this.b;
+                    njc njcVar2 = this.c.r;
+                    if (z) {
+                        njcVar2.b(surfaceTexture, true);
+                    } else {
+                        njcVar2.b(surfaceTexture, false);
+                    }
+                    boolean z2 = this.b;
+                    njc njcVar3 = this.c.r;
+                    if (z2) {
+                        njcVar3.c(njcVar3.e);
+                        GLES20.glPixelStorei(3317, 1);
+                        if (this.c.r.hasSurface()) {
+                            this.c.r.makeCurrent();
+                        }
+                    } else {
+                        njcVar3.makeCurrent();
+                        GLES20.glPixelStorei(3317, 1);
+                    }
                 }
-                break;
-            case 1:
-                sjcVar.m = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                sjcVar.k.invalidate();
-                break;
-            default:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                if (sjcVar.i <= sjcVar.o / 2) {
-                    intValue = -intValue;
-                }
-                sjcVar.p = intValue;
-                sjcVar.k.invalidate();
-                break;
+            }
         }
     }
 }

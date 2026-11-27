@@ -1,23 +1,28 @@
 // default package
 
-import android.content.Context;
+import android.opengl.EGL14;
+import android.opengl.EGLDisplay;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class one {
-    public static mp2 a(String str, String str2) {
-        y90 y90Var = new y90(str, str2);
-        lp2 b = mp2.b(y90.class);
-        b.e = true;
-        b.f = new kp2(y90Var, (byte) 1);
-        return b.b();
+    public static void a(String str, boolean z) {
+        if (z) {
+            return;
+        }
+        no5 no5Var = po5.b;
+        throw new gy4(str, j99.e);
     }
 
-    public static mp2 b(String str, w44 w44Var) {
-        lp2 b = mp2.b(y90.class);
-        b.e = true;
-        b.a(wd3.b(Context.class));
-        b.f = new h45(str, w44Var, (byte) 11);
-        return b.b();
+    public static boolean b(String str) {
+        EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
+        a("No EGL display.", !eglGetDisplay.equals(EGL14.EGL_NO_DISPLAY));
+        a("Error in eglInitialize.", EGL14.eglInitialize(eglGetDisplay, new int[1], 0, new int[1], 0));
+        int eglGetError = EGL14.eglGetError();
+        if (eglGetError == 12288) {
+            String eglQueryString = EGL14.eglQueryString(eglGetDisplay, 12373);
+            return eglQueryString != null && eglQueryString.contains(str);
+        }
+        throw new gy4("Error in getDefaultEglDisplay, error code: 0x" + Integer.toHexString(eglGetError), po5.u(Integer.valueOf(eglGetError)));
     }
 }

@@ -1,223 +1,127 @@
 // default package
 
-import android.os.IBinder;
-import android.os.Parcel;
+import java.io.EOFException;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class gj5 implements hj5 {
-    public IBinder a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class gj5 {
+    public static final v84 e = new v84((byte) 1);
+    public final m29 a;
+    public final jj5 b;
+    public final hj5 c;
+    public final xh4 d;
 
-    @Override // hj5
-    public final void A(long j, boolean z) {
-        Parcel obtain = Parcel.obtain();
+    public gj5(InputStream inputStream, long j, int i, jj5 jj5Var, hj5 hj5Var) {
+        m29 m29Var = new m29(inputStream, j, i);
+        this.a = m29Var;
+        this.d = new xh4(m29Var, (byte) 7);
+        this.b = jj5Var;
+        this.c = hj5Var;
+    }
+
+    public static String a(byte[] bArr, int i, dj5 dj5Var, boolean z) {
+        if (z) {
+            int i2 = 0;
+            for (int i3 = 0; i3 < i; i3++) {
+                if (bArr[i3] == 0 && (dj5Var != dj5.d || i2 != 0 || i3 % 2 == 0)) {
+                    i2++;
+                    byte b = dj5Var.b;
+                    if (i2 == b) {
+                        i = (i3 + 1) - b;
+                        break;
+                    }
+                } else {
+                    i2 = 0;
+                }
+            }
+        }
         try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeInt(z ? 1 : 0);
-            this.a.transact(3, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+            String str = new String(bArr, 0, i, dj5Var.a.name());
+            return (str.length() <= 0 || str.charAt(0) != 65279) ? str : str.substring(1);
+        } catch (Exception unused) {
+            return "";
         }
     }
 
-    @Override // hj5
-    public final void D(long j, float f) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeFloat(f);
-            this.a.transact(5, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    public final dj5 b() {
+        byte J = this.d.J();
+        if (J == 0) {
+            return dj5.c;
         }
+        if (J == 1) {
+            return dj5.d;
+        }
+        if (J == 2) {
+            return dj5.e;
+        }
+        if (J == 3) {
+            return dj5.f;
+        }
+        throw new ej5(uh9.k(J, "Invalid encoding: "));
     }
 
-    @Override // hj5
-    public final long G(byte[] bArr, byte[] bArr2, float f, float f2, int i, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z, jj5 jj5Var) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeByteArray(bArr);
-            obtain.writeByteArray(bArr2);
-            obtain.writeFloat(f);
-            obtain.writeFloat(f2);
-            obtain.writeInt(i);
-            obtain.writeByteArray(bArr3);
-            obtain.writeByteArray(bArr4);
-            obtain.writeByteArray(bArr5);
-            obtain.writeByteArray(bArr6);
-            obtain.writeInt(z ? 1 : 0);
-            obtain.writeStrongInterface(jj5Var);
-            this.a.transact(1, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readLong();
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
+    public final String c(int i, dj5 dj5Var) {
+        if (i > this.a.e()) {
+            throw new ej5(uh9.k(i, "Could not read fixed-length string of length: "));
         }
+        fj5 fj5Var = (fj5) e.get();
+        byte[] bArr = fj5Var.a;
+        if (i > bArr.length) {
+            int length = bArr.length << 1;
+            while (i > length) {
+                length <<= 1;
+            }
+            bArr = new byte[length];
+            fj5Var.a = bArr;
+        }
+        int i2 = 0;
+        while (i2 < i) {
+            int read = ((i51) this.d.b).read(bArr, i2, i - i2);
+            if (read <= 0) {
+                throw new EOFException();
+            }
+            i2 += read;
+        }
+        return a(bArr, i, dj5Var, true);
     }
 
-    @Override // hj5
-    public final void H(long j) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            this.a.transact(9, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    public final String d(int i, dj5 dj5Var) {
+        int min = Math.min(i, (int) this.a.e());
+        fj5 fj5Var = (fj5) e.get();
+        byte[] bArr = fj5Var.a;
+        if (min > bArr.length) {
+            int length = bArr.length;
+            do {
+                length <<= 1;
+            } while (min > length);
+            bArr = new byte[length];
+            fj5Var.a = bArr;
         }
+        int i2 = 0;
+        for (int i3 = 0; i3 < min; i3++) {
+            byte J = this.d.J();
+            bArr[i3] = J;
+            if (J != 0 || (dj5Var == dj5.d && i2 == 0 && i3 % 2 != 0)) {
+                i2 = 0;
+            } else {
+                i2++;
+                byte b = dj5Var.b;
+                if (i2 == b) {
+                    return a(bArr, (i3 + 1) - b, dj5Var, false);
+                }
+            }
+        }
+        throw new ej5("Could not read zero-termiated string");
     }
 
-    @Override // hj5
-    public final void K(long j, int i, float f, float f2, int i2) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeInt(i);
-            obtain.writeFloat(f);
-            obtain.writeFloat(f2);
-            obtain.writeInt(i2);
-            this.a.transact(12, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void L() {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            this.a.transact(13, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void M(long j, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeByteArray(bArr);
-            this.a.transact(7, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
-
-    @Override // hj5
-    public final void k(long j, float f, boolean z, boolean z2, boolean z3) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeFloat(f);
-            obtain.writeInt(z ? 1 : 0);
-            obtain.writeInt(z2 ? 1 : 0);
-            obtain.writeInt(z3 ? 1 : 0);
-            this.a.transact(10, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void l(long j, long j2, int i, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeLong(j2);
-            obtain.writeInt(i);
-            obtain.writeByteArray(bArr);
-            this.a.transact(8, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void r(long j) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            this.a.transact(2, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void s(long j, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeByteArray(bArr);
-            this.a.transact(6, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void u(long j, byte[] bArr) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeByteArray(bArr);
-            this.a.transact(4, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void v(IBinder iBinder) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeStrongBinder(iBinder);
-            this.a.transact(14, obtain, obtain2, 0);
-            obtain2.readException();
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
-        }
-    }
-
-    @Override // hj5
-    public final void x(long j, int i, float f, float f2, int i2, boolean z, boolean z2, int i3, int i4) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngine");
-            obtain.writeLong(j);
-            obtain.writeInt(i);
-            obtain.writeFloat(f);
-            obtain.writeFloat(f2);
-            obtain.writeInt(i2);
-            obtain.writeInt(z ? 1 : 0);
-            obtain.writeInt(z2 ? 1 : 0);
-            obtain.writeInt(i3);
-            obtain.writeInt(i4);
-            this.a.transact(11, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("id3v2frame[pos=");
+        m29 m29Var = this.a;
+        sb.append(m29Var.b);
+        sb.append(", ");
+        sb.append(m29Var.e());
+        sb.append(" left]");
+        return sb.toString();
     }
 }

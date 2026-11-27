@@ -1,36 +1,60 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class vo8 extends TextView implements tjb {
-    public final /* synthetic */ ProfileActivity a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vo8 {
+    public final String a;
+    public final cw6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vo8(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.a = profileActivity;
-        updateColors();
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.F6));
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        setTextColor(bkb.v0(bkb.F6, this.a.A0));
+    public vo8(JSONObject jSONObject) {
+        jSONObject.optString("basePlanId");
+        jSONObject.optString("offerId").getClass();
+        this.a = jSONObject.getString("offerIdToken");
+        JSONArray jSONArray = jSONObject.getJSONArray("pricingPhases");
+        cw6 cw6Var = new cw6();
+        ArrayList arrayList = new ArrayList();
+        if (jSONArray != null) {
+            for (int i = 0; i < jSONArray.length(); i++) {
+                JSONObject optJSONObject = jSONArray.optJSONObject(i);
+                if (optJSONObject != null) {
+                    arrayList.add(new uo8(optJSONObject));
+                }
+            }
+        }
+        cw6Var.a = arrayList;
+        this.b = cw6Var;
+        JSONObject optJSONObject2 = jSONObject.optJSONObject("installmentPlanDetails");
+        if (optJSONObject2 != null) {
+            optJSONObject2.getInt("commitmentPaymentsCount");
+            optJSONObject2.optInt("subsequentCommitmentPaymentsCount");
+        }
+        JSONObject optJSONObject3 = jSONObject.optJSONObject("transitionPlanDetails");
+        if (optJSONObject3 != null) {
+            optJSONObject3.getString("productId");
+            optJSONObject3.optString("title");
+            optJSONObject3.optString("name");
+            optJSONObject3.optString("description");
+            optJSONObject3.optString("basePlanId");
+            JSONObject optJSONObject4 = optJSONObject3.optJSONObject("pricingPhase");
+            if (optJSONObject4 != null) {
+                optJSONObject4.optString("billingPeriod");
+                optJSONObject4.optString("priceCurrencyCode");
+                optJSONObject4.optString("formattedPrice");
+                optJSONObject4.optLong("priceAmountMicros");
+                optJSONObject4.optInt("recurrenceMode");
+                optJSONObject4.optInt("billingCycleCount");
+            }
+        }
+        ArrayList arrayList2 = new ArrayList();
+        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
+        if (optJSONArray != null) {
+            for (int i2 = 0; i2 < optJSONArray.length(); i2++) {
+                arrayList2.add(optJSONArray.getString(i2));
+            }
+        }
     }
 }

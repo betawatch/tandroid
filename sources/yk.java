@@ -1,52 +1,43 @@
 // default package
 
 import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class yk extends CharacterStyle {
-    public final /* synthetic */ byte a;
-    public final Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class yk extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ vnb c;
+    public final /* synthetic */ Runnable d;
 
-    public yk(ey8 ey8Var) {
-        this.a = (byte) 1;
-        this.b = ey8Var;
+    public yk(int i, int i2, vnb vnbVar, Runnable runnable) {
+        this.a = i;
+        this.b = i2;
+        this.c = vnbVar;
+        this.d = runnable;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                textPaint.setTypeface(gl.o());
-                int alpha = textPaint.getAlpha();
-                textPaint.setColor(bkb.v0(bkb.m6, (wjb) obj));
-                textPaint.setAlpha(alpha);
-                break;
-            case 1:
-                textPaint.setColor(bkb.v(bkb.p1(0.55f, textPaint.getColor()), bkb.p1(0.4f, ((ey8) obj).J)));
-                break;
-            case 2:
-                textPaint.setColor(bkb.v(bkb.p1(0.55f, textPaint.getColor()), bkb.p1(0.4f, bkb.v0(bkb.Ei, ((wi9) obj).a))));
-                break;
-            case 3:
-                textPaint.setColor(((nkc) obj).t0);
-                break;
-            default:
-                float[] fArr = ((smc) obj).b0;
-                int i = -9577217;
-                if (fArr != null) {
-                    i = bm2.f(fArr[8], znc.p(-9577217, 0, fArr), znc.p(-9577217, 3, fArr));
-                }
-                textPaint.setColor(i);
-                break;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        Runnable runnable = this.d;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 
-    public /* synthetic */ yk(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i = this.a;
+        textPaint.setUnderlineText(i == 4);
+        int i2 = this.b;
+        if (i2 >= 0) {
+            textPaint.setColor(aob.v0(i2, this.c));
+        }
+        if (i == 2) {
+            textPaint.setTypeface(hl.o());
+        }
     }
 }

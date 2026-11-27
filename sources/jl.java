@@ -1,106 +1,48 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Picture;
-import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class jl extends g46 implements x74 {
-    public final y74 Q0;
-    public Picture R0;
-    public float S0;
-    public int T0;
-    public Paint U0;
+public final class jl extends FrameLayout {
+    public boolean a;
+    public int b;
+    public in c;
+    public in d;
 
-    public jl(Context context) {
-        super(context);
-        this.Q0 = new y74(0, this, s33.h, 320L, 1.0f);
-        this.T0 = 0;
+    public in getSubtitleTextView() {
+        return this.d;
     }
 
-    @Override // x74
-    public final void F(float f, int i) {
-        if (f == 1.0f) {
-            if (this.R0 != null) {
-                this.R0 = null;
-                super.setLayerType(this.T0, this.U0);
-            }
-            invalidate();
-        }
+    public in getTitle() {
+        return this.c;
     }
 
-    @Override // android.view.View
-    public int getLayerType() {
-        return this.T0;
-    }
-
-    public final void n(Canvas canvas, float f, float f2) {
-        if (f >= 1.0f && f2 == 0.0f) {
-            super.onDraw(canvas);
-            return;
-        }
-        canvas.save();
-        canvas.translate(0.0f, f2);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f * 255.0f));
-        super.onDraw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    public final boolean o(CharSequence charSequence, boolean z) {
-        CharSequence text = getText();
-        if (TextUtils.equals(text, charSequence)) {
-            return l(charSequence, false);
-        }
-        y74 y74Var = this.Q0;
-        if (!z || !isAttachedToWindow() || !isLaidOut() || getVisibility() != 0 || getAlpha() <= 0.0f || getWidth() <= 0 || getHeight() <= 0 || TextUtils.isEmpty(text)) {
-            y74Var.c(1.0f);
-            if (this.R0 != null) {
-                this.R0 = null;
-                super.setLayerType(this.T0, this.U0);
-            }
-            invalidate();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        in inVar = this.d;
+        in inVar2 = this.c;
+        int D = ik8.D(42.0f, a.getCurrentActionBarHeight(), 2) + (this.a ? hl.m : 0);
+        int i5 = this.b;
+        if (inVar.getVisibility() != 8) {
+            inVar2.layout(i5, (hl.L(1.0f) + D) - inVar2.getPaddingTop(), inVar2.getMeasuredWidth() + i5, inVar2.getPaddingBottom() + ((hl.L(1.3f) + (inVar2.getTextHeight() + D)) - inVar2.getPaddingTop()));
         } else {
-            Picture picture = new Picture();
-            n(picture.beginRecording(getWidth(), getHeight()), 1.0f, 0.0f);
-            picture.endRecording();
-            y74Var.c(0.0f);
-            this.R0 = picture;
-            this.S0 = getTranslationX();
-            super.setLayerType(0, null);
-            y74Var.a(1.0f);
+            inVar2.layout(i5, (hl.L(11.0f) + D) - inVar2.getPaddingTop(), inVar2.getMeasuredWidth() + i5, inVar2.getPaddingBottom() + ((hl.L(11.0f) + (inVar2.getTextHeight() + D)) - inVar2.getPaddingTop()));
         }
-        invalidate();
-        return l(charSequence, false);
+        inVar.layout(i5, hl.L(20.0f) + D, inVar.getMeasuredWidth() + i5, hl.L(24.0f) + inVar.getTextHeight() + D);
     }
 
-    @Override // g46, jia, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.R0 == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        float f = this.Q0.f;
-        int L = gl.L(6.0f);
-        canvas.save();
-        canvas.translate(this.S0 - getTranslationX(), (-L) * f);
-        float f2 = 1.0f - f;
-        canvas.saveLayerAlpha(0.0f, 0.0f, this.R0.getWidth(), this.R0.getHeight(), (int) (255.0f * f2));
-        canvas.drawPicture(this.R0);
-        canvas.restore();
-        canvas.restore();
-        n(canvas, f, L * f2);
-    }
-
-    @Override // android.view.View
-    public final void setLayerType(int i, Paint paint) {
-        this.T0 = i;
-        this.U0 = paint;
-        if (this.R0 == null) {
-            super.setLayerType(i, paint);
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        in inVar = this.c;
+        int paddingRight = inVar.getPaddingRight() + size;
+        int L = paddingRight - hl.L(16.0f);
+        inVar.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(inVar.getPaddingRight() + hl.L(32.0f), TLObject.FLAG_31));
+        this.d.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(hl.L(20.0f), TLObject.FLAG_31));
+        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i2));
     }
 }

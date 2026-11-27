@@ -3,11 +3,11 @@
 import android.os.Bundle;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class am0 implements Runnable {
     public final /* synthetic */ byte a;
@@ -27,18 +27,18 @@ public final /* synthetic */ class am0 implements Runnable {
         int i = this.b;
         switch (b) {
             case 0:
-                d S = LaunchActivity.S();
+                e S = LaunchActivity.S();
                 if (S != null) {
-                    S.presentFragment(mu1.V9(i, j));
+                    S.presentFragment(zu1.ga(i, j));
                     break;
                 }
                 break;
             case 1:
-                z3a.B(i).q0(x3a.b("/privacy", this.c, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                r7a.B(i).q0(p7a.b("/privacy", this.c, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 2:
                 try {
-                    SQLitePreparedStatement executeFast = ad7.Y(i).b.executeFast("REPLACE INTO search_recent VALUES(?, ?)");
+                    SQLitePreparedStatement executeFast = jf7.Y(i).b.executeFast("REPLACE INTO search_recent VALUES(?, ?)");
                     executeFast.requery();
                     executeFast.bindLong(1, j);
                     executeFast.bindInteger(2, (int) (System.currentTimeMillis() / 1000));
@@ -46,24 +46,24 @@ public final /* synthetic */ class am0 implements Runnable {
                     executeFast.dispose();
                     break;
                 } catch (Exception e) {
-                    fa4.g(e, true);
+                    cc4.g(e, true);
                     return;
                 }
             default:
-                d S2 = LaunchActivity.S();
+                e S2 = LaunchActivity.S();
                 if (S2 != null) {
                     if (j < 0) {
                         long j2 = -j;
-                        if (!hc2.V(na7.q1(i).K0(Long.valueOf(j2)))) {
+                        if (!xc2.V(uc7.s1(i).M0(Long.valueOf(j2)))) {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j2);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            kf2 kf2Var = new kf2(bundle);
-                            kf2Var.A0(na7.q1(i).L0(j2));
-                            S2.presentFragment(kf2Var);
+                            bg2 bg2Var = new bg2(bundle);
+                            bg2Var.B0(uc7.s1(i).N0(j2));
+                            S2.presentFragment(bg2Var);
                             break;
                         } else {
-                            S2.presentFragment(new uf8(j2));
+                            S2.presentFragment(new ij8(j2));
                             break;
                         }
                     } else {

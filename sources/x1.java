@@ -1,45 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class x1 {
-    public boolean b(gk0 gk0Var) {
-        return this instanceof kk0;
-    }
+public abstract class x1 implements Parcelable {
+    public final Parcelable a;
+    public static final v1 b = new v1();
+    public static final Parcelable.Creator<x1> CREATOR = new w1(0);
 
-    public boolean c() {
-        return this instanceof geb;
-    }
-
-    public abstract gk0 e();
-
-    public boolean f() {
-        return this instanceof kk0;
-    }
-
-    public vj2 h(vo3 vo3Var) {
-        char charAt;
-        int i = vo3Var.e;
-        String str = vo3Var.a;
-        if (vo3Var.g >= 4 || i >= str.length() || str.charAt(i) != '>') {
-            return null;
+    public x1(Parcelable parcelable) {
+        if (parcelable != null) {
+            this.a = parcelable == b ? null : parcelable;
+        } else {
+            lq5.j("superState must not be null");
+            throw null;
         }
-        int i2 = vo3Var.c + vo3Var.g;
-        int i3 = i2 + 1;
-        String str2 = vo3Var.a;
-        int i4 = i + 1;
-        if (i4 < str2.length() && ((charAt = str2.charAt(i4)) == '\t' || charAt == ' ')) {
-            i3 = i2 + 2;
-        }
-        return new vj2(-1, i3, false);
     }
 
-    public void d() {
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public void a(CharSequence charSequence) {
+    @Override // android.os.Parcelable
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeParcelable(this.a, i);
     }
 
-    public void g(qn5 qn5Var) {
+    public x1() {
+        this.a = null;
+    }
+
+    public x1(Parcel parcel, ClassLoader classLoader) {
+        Parcelable readParcelable = parcel.readParcelable(classLoader);
+        this.a = readParcelable == null ? b : readParcelable;
     }
 }

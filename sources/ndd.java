@@ -1,57 +1,130 @@
 // default package
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.util.AbstractSet;
 import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ndd extends BasePendingResult {
-    public v39 o;
-    public final boolean p;
-    public final /* synthetic */ i69 q;
+public final class ndd extends AbstractSet {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ lp2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ndd(i69 i69Var, boolean z) {
-        super(null);
-        this.q = i69Var;
-        this.p = z;
+    public /* synthetic */ ndd(lp2 lp2Var, byte b) {
+        this.a = b;
+        this.b = lp2Var;
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* synthetic */ ua9 d(Status status) {
-        return new vcd(status, (byte) 1);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                lp2Var.clear();
+                break;
+            default:
+                lp2Var.clear();
+                break;
+        }
     }
 
-    public abstract void n();
-
-    public final f9d o() {
-        v39 v39Var = this.o;
-        if (v39Var != null) {
-            return v39Var;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                Map n = lp2Var.n();
+                if (n != null) {
+                    return n.entrySet().contains(obj);
+                }
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry = (Map.Entry) obj;
+                    int x = lp2Var.x(entry.getKey());
+                    if (x != -1) {
+                        Object[] objArr = lp2Var.e;
+                        objArr.getClass();
+                        if (l8f.a(objArr[x], entry.getValue())) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            default:
+                return lp2Var.containsKey(obj);
         }
-        v39 v39Var2 = new v39(this, (byte) 26);
-        this.o = v39Var2;
-        return v39Var2;
     }
 
-    public final void p() {
-        if (!this.p) {
-            Iterator it = this.q.h.iterator();
-            if (it.hasNext()) {
-                throw ls6.l(it);
-            }
-            Iterator it2 = this.q.i.iterator();
-            while (it2.hasNext()) {
-                ((h69) it2.next()).f();
-            }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                Map n = lp2Var.n();
+                return n != null ? n.entrySet().iterator() : new cdd(lp2Var, (byte) 1);
+            default:
+                Map n2 = lp2Var.n();
+                return n2 != null ? n2.keySet().iterator() : new cdd(lp2Var, (byte) 0);
         }
-        try {
-            synchronized (this.q.a) {
-                n();
-            }
-        } catch (m8d unused) {
-            a(new vcd(new Status(2100, null, null, null), (byte) 1));
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+            case 0:
+                Map n = lp2Var.n();
+                if (n == null) {
+                    if (obj instanceof Map.Entry) {
+                        Map.Entry entry = (Map.Entry) obj;
+                        if (!lp2Var.t()) {
+                            int w = lp2Var.w();
+                            Object key = entry.getKey();
+                            Object value = entry.getValue();
+                            Object obj2 = lp2Var.b;
+                            obj2.getClass();
+                            int[] iArr = lp2Var.c;
+                            iArr.getClass();
+                            Object[] objArr = lp2Var.d;
+                            objArr.getClass();
+                            Object[] objArr2 = lp2Var.e;
+                            objArr2.getClass();
+                            int a = f4f.a(key, value, w, obj2, iArr, objArr, objArr2);
+                            if (a != -1) {
+                                lp2Var.r(a, w);
+                                lp2Var.h--;
+                                lp2Var.f += 32;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                Map n2 = lp2Var.n();
+                if (n2 == null) {
+                    if (lp2Var.z(obj) == lp2.y) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                break;
         }
+        return false;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        byte b = this.a;
+        lp2 lp2Var = this.b;
+        switch (b) {
+        }
+        return lp2Var.size();
     }
 }

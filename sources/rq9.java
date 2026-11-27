@@ -1,36 +1,32 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public class rq9 extends b2 implements cx2 {
-    public final fw2 e;
+import android.view.View;
+import org.telegram.messenger.voip.VoIPService;
 
-    public rq9(fw2 fw2Var, sw2 sw2Var) {
-        super(sw2Var, true);
-        this.e = fw2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class rq9 implements fd, nr7 {
+    public final /* synthetic */ er9 a;
+
+    public /* synthetic */ rq9(er9 er9Var) {
+        this.a = er9Var;
     }
 
-    @Override // pt5
-    public final boolean A() {
-        return true;
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        mq5 g = l2dVar.a.g(647);
+        er9 er9Var = this.a;
+        er9Var.R = g;
+        er9Var.f.requestLayout();
+        return l2d.b;
     }
 
-    @Override // pt5
-    public void f(Object obj) {
-        r3c.c(dle.a(this.e), zsd.a(obj));
-    }
-
-    @Override // pt5
-    public void g(Object obj) {
-        this.e.resumeWith(zsd.a(obj));
-    }
-
-    @Override // cx2
-    public final cx2 getCallerFrame() {
-        fw2 fw2Var = this.e;
-        if (fw2Var instanceof cx2) {
-            return (cx2) fw2Var;
+    @Override // fd
+    public final void w(id idVar, int i) {
+        if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().hangUp(1);
         }
-        return null;
+        this.a.dismiss();
+        jn7.e().k(jn7.v2, new Object[0]);
     }
 }

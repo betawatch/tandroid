@@ -1,33 +1,25 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class gqe {
-    public static ArrayList a(byte[] bArr) {
-        ArrayList arrayList = new ArrayList(3);
-        arrayList.add(bArr);
-        arrayList.add(ByteBuffer.allocate(8).order(ByteOrder.nativeOrder()).putLong(((((bArr[11] & 255) << 8) | (bArr[10] & 255)) * 1000000000) / 48000).array());
-        arrayList.add(ByteBuffer.allocate(8).order(ByteOrder.nativeOrder()).putLong(80000000L).array());
-        return arrayList;
+    public static final void a(mx2 mx2Var) {
+        ev5 ev5Var = (ev5) mx2Var.get(qf5.c);
+        if (ev5Var != null && !ev5Var.isActive()) {
+            throw ev5Var.getCancellationException();
+        }
     }
 
-    public static long b(byte b, byte b2) {
-        int i;
-        int i2 = b & 255;
-        int i3 = b & 3;
-        if (i3 != 0) {
-            i = 2;
-            if (i3 != 1 && i3 != 2) {
-                i = b2 & 63;
-            }
-        } else {
-            i = 1;
+    public static final ev5 b(mx2 mx2Var) {
+        ev5 ev5Var = (ev5) mx2Var.get(qf5.c);
+        if (ev5Var != null) {
+            return ev5Var;
         }
-        int i4 = i2 >> 3;
-        return i * (i4 >= 16 ? 2500 << r5 : i4 >= 12 ? 10000 << (i4 & 1) : (i4 & 3) == 3 ? 60000 : 10000 << r5);
+        lq5.i(mx2Var, "Current context doesn't contain Job in it: ");
+        return null;
+    }
+
+    public static final ep3 c(ev5 ev5Var, boolean z, iv5 iv5Var) {
+        return ev5Var instanceof sv5 ? ((sv5) ev5Var).z(z, iv5Var) : ev5Var.invokeOnCompletion(iv5Var.k(), z, new hv5(1, iv5Var, iv5.class, "invoke", "invoke(Ljava/lang/Throwable;)V", 0));
     }
 }

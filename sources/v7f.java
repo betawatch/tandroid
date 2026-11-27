@@ -1,34 +1,45 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class v7f extends vef {
+public final class v7f extends ljf {
     private static final v7f zzb;
     private int zzd;
     private int zze;
-    private int zzf;
-    private e7f zzg;
+    private boolean zzf;
+    private int zzg;
+    private boolean zzh;
+    private tjf zzi;
+    private tjf zzj;
+    private String zzk;
 
     static {
         v7f v7fVar = new v7f();
         zzb = v7fVar;
-        vef.e(v7f.class, v7fVar);
+        ljf.e(v7f.class, v7fVar);
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
+    public v7f() {
+        hlf hlfVar = hlf.d;
+        this.zzi = hlfVar;
+        this.zzj = hlfVar;
+        this.zzk = "";
+    }
+
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
         int i2 = i - 1;
         if (i2 == 0) {
             return (byte) 1;
         }
         if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001င\u0000\u0002င\u0001\u0003ဉ\u0002", new Object[]{"zzd", "zze", "zzf", "zzg"});
+            return new ilf(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", rg7.h, "zzf", "zzg", rj2.r, "zzh", "zzi", odf.class, "zzj", odf.class, "zzk"});
         }
         if (i2 == 3) {
             return new v7f();
         }
         if (i2 == 4) {
-            return new v8e(zzb);
+            return new lde(zzb);
         }
         if (i2 != 5) {
             return null;

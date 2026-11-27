@@ -1,14 +1,31 @@
 // default package
 
-import android.os.Build;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class kj5 {
-    public static final ym5 a;
+public final class kj5 implements mj5, IInterface {
+    public final IBinder a;
 
-    static {
-        Integer valueOf = Integer.valueOf(kk7.a4);
-        a = Build.VERSION.SDK_INT < 32 ? ym5.p(4, 12, valueOf, 6396, 4) : ym5.s(12, valueOf, 6396, 4, 3145980, 82172, 737532, 9126140, 33904892, 202070268, 744444, 67108860, 743676, 3152124, 88316, 81980, 205215996, 3890172);
+    public kj5(IBinder iBinder) {
+        this.a = iBinder;
+    }
+
+    public final void a(Parcel parcel, int i) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.a.transact(i, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

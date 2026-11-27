@@ -1,19 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vie implements zn7 {
-    public static final vie a = new vie();
-
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)), 4)), 5)));
-    }
-
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class vie {
+    public static final void a(va1 va1Var, zw2 zw2Var, boolean z) {
+        Object r = va1Var.r();
+        Throwable f = va1Var.f(r);
+        Object ge9Var = f != null ? new ge9(f) : va1Var.g(r);
+        if (!z) {
+            zw2Var.resumeWith(ge9Var);
+            return;
         }
-        throw null;
+        zw2Var.getClass();
+        yo3 yo3Var = (yo3) zw2Var;
+        ax2 ax2Var = yo3Var.e;
+        Object obj = yo3Var.h;
+        mx2 context = ax2Var.getContext();
+        Object c = xhd.c(context, obj);
+        x8c c2 = c != xhd.a ? g4e.c(ax2Var, context, c) : null;
+        try {
+            ax2Var.resumeWith(ge9Var);
+            if (c2 == null || c2.S()) {
+                xhd.a(context, c);
+            }
+        } catch (Throwable th) {
+            if (c2 == null || c2.S()) {
+                xhd.a(context, c);
+            }
+            throw th;
+        }
     }
 }

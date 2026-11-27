@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzvm {
     protected static final Charset zza = StandardCharsets.UTF_16;
@@ -20,7 +20,7 @@ public final class zzvm {
         int i;
         int[] iArr;
         if (bArr.length != 32) {
-            sc8.e();
+            iy8.d();
             throw null;
         }
         this.zze = bArr;
@@ -102,7 +102,7 @@ public final class zzvm {
 
     public final byte[] zzd(byte[] bArr) {
         if (this.zzg != 1) {
-            sdb.a();
+            grb.g();
             return null;
         }
         int length = bArr.length;
@@ -128,10 +128,10 @@ public final class zzvm {
             for (int i3 = 0; i3 < 16; i3++) {
                 int i4 = this.zzb[i3];
                 int i5 = i3 << 2;
-                bArr3[i5] = (byte) (i4 & kk7.d4);
-                bArr3[i5 + 1] = (byte) ((i4 >> 8) & kk7.d4);
-                bArr3[i5 + 2] = (byte) ((i4 >> 16) & kk7.d4);
-                bArr3[i5 + 3] = (byte) ((i4 >> 24) & kk7.d4);
+                bArr3[i5] = (byte) (i4 & jn7.d4);
+                bArr3[i5 + 1] = (byte) ((i4 >> 8) & jn7.d4);
+                bArr3[i5 + 2] = (byte) ((i4 >> 16) & jn7.d4);
+                bArr3[i5 + 3] = (byte) ((i4 >> 24) & jn7.d4);
             }
             for (int i6 = 0; i6 < Math.min(64, length); i6++) {
                 int i7 = i + i6;

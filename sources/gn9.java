@@ -1,15 +1,26 @@
 // default package
 
-import android.view.View;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gn9 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pq8 b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class gn9 extends kl0 {
-    @Override // kl0
-    public final il0 c(View view, al0 al0Var, boolean z) {
-        il0 c = super.c(view, al0Var, z);
-        c.P = new bx4(gl.N(1.1f), (Math.round(68.85f) << 24) | 16777215, gl.N(1.05f), (Math.round(58.65f) << 24) | 16777215, gl.N(1.15f), -16777216, 0.02f, 0.03f, 0.33f, 3.8f);
-        c.invalidateSelf();
-        return c;
+    public /* synthetic */ gn9(pq8 pq8Var, byte b) {
+        this.a = b;
+        this.b = pq8Var;
+    }
+
+    public final void a(Exception exc) {
+        byte b = this.a;
+        pq8 pq8Var = this.b;
+        switch (b) {
+            case 0:
+                ((jp9) pq8Var.b).i.post(new zo9(pq8Var, exc, (byte) 0));
+                break;
+            default:
+                ((jp9) pq8Var.b).i.post(new zo9(pq8Var, exc, (byte) 1));
+                break;
+        }
     }
 }

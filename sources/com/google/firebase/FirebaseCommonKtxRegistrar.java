@@ -4,26 +4,26 @@ import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class FirebaseCommonKtxRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<mp2> getComponents() {
-        lp2 a = mp2.a(new xw8(md0.class, vw2.class));
-        a.a(new wd3(new xw8(md0.class, Executor.class), 1, 0));
-        a.f = ize.c;
-        mp2 b = a.b();
-        lp2 a2 = mp2.a(new xw8(i16.class, vw2.class));
-        a2.a(new wd3(new xw8(i16.class, Executor.class), 1, 0));
-        a2.f = i2f.c;
-        mp2 b2 = a2.b();
-        lp2 a3 = mp2.a(new xw8(nk0.class, vw2.class));
-        a3.a(new wd3(new xw8(nk0.class, Executor.class), 1, 0));
-        a3.f = o5f.c;
-        mp2 b3 = a3.b();
-        lp2 a4 = mp2.a(new xw8(n4c.class, vw2.class));
-        a4.a(new wd3(new xw8(n4c.class, Executor.class), 1, 0));
-        a4.f = eef.c;
-        return zk2.b(b, b2, b3, a4.b());
+    public List<fq2> getComponents() {
+        eq2 a = fq2.a(new h09(od0.class, px2.class));
+        a.a(new qe3(new h09(od0.class, Executor.class), 1, 0));
+        a.f = z3f.c;
+        fq2 b = a.b();
+        eq2 a2 = fq2.a(new h09(m36.class, px2.class));
+        a2.a(new qe3(new h09(m36.class, Executor.class), 1, 0));
+        a2.f = z6f.c;
+        fq2 b2 = a2.b();
+        eq2 a3 = fq2.a(new h09(ok0.class, px2.class));
+        a3.a(new qe3(new h09(ok0.class, Executor.class), 1, 0));
+        a3.f = faf.c;
+        fq2 b3 = a3.b();
+        eq2 a4 = fq2.a(new h09(m8c.class, px2.class));
+        a4.a(new qe3(new h09(m8c.class, Executor.class), 1, 0));
+        a4.f = uif.c;
+        return tl2.b(b, b2, b3, a4.b());
     }
 }

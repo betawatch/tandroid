@@ -1,70 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class e9c implements kv9 {
-    public final long[] a;
-    public final long[] b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final int f;
-
-    public e9c(long[] jArr, long[] jArr2, long j, long j2, long j3) {
-        this.a = jArr;
-        this.b = jArr2;
-        this.c = j;
-        this.d = j2;
-        this.e = j3;
-        this.f = gpe.a(j3 - j2, j);
-    }
-
-    @Override // kv9
-    public final long a() {
-        return this.e;
-    }
-
-    @Override // kv9
-    public final long b() {
-        return this.d;
-    }
-
-    @Override // fv9
-    public final boolean c() {
-        return true;
-    }
-
-    @Override // fv9
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // kv9
-    public final long e(long j) {
-        return this.a[g8c.f(this.b, j, true)];
-    }
-
-    @Override // fv9
-    public final ev9 f(long j) {
-        long[] jArr = this.a;
-        int f = g8c.f(jArr, j, true);
-        long j2 = jArr[f];
-        long[] jArr2 = this.b;
-        hv9 hv9Var = new hv9(j2, jArr2[f]);
-        if (j2 >= j || f == jArr.length - 1) {
-            return new ev9(hv9Var, hv9Var);
-        }
-        int i = f + 1;
-        return new ev9(hv9Var, new hv9(jArr[i], jArr2[i]));
-    }
-
-    @Override // kv9
-    public final int g() {
-        return this.f;
-    }
-
-    @Override // fv9
-    public final long h() {
-        return this.c;
+public final class e9c extends RuntimeException {
+    public e9c() {
+        super("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
     }
 }

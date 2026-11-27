@@ -3,18 +3,18 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class k extends gec {
-    public final /* synthetic */ pv x0;
+public final class k extends fic {
+    public final /* synthetic */ qv x0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(pv pvVar, Activity activity) {
+    public k(qv qvVar, Activity activity) {
         super(activity);
-        this.x0 = pvVar;
+        this.x0 = qvVar;
     }
 
-    @Override // gec, android.view.ViewGroup
+    @Override // fic, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         o oVar = this.x0.E;
         if (motionEvent.getActionMasked() == 0) {
@@ -26,7 +26,7 @@ public final class k extends gec {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // gec, android.view.View
+    @Override // fic, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         o oVar = this.x0.E;
         if (motionEvent.getActionMasked() == 0) {

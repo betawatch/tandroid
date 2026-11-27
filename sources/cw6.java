@@ -1,55 +1,48 @@
 // default package
 
-import android.text.TextUtils;
+import android.os.Bundle;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cw6 implements kw6 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lw6 b;
-    public final /* synthetic */ Object c;
+public final class cw6 {
+    public ArrayList a;
 
-    public /* synthetic */ cw6(lw6 lw6Var, Object obj, byte b) {
-        this.a = b;
-        this.b = lw6Var;
-        this.c = obj;
+    public cw6(ArrayList arrayList) {
+        this.a = arrayList;
     }
 
-    @Override // kw6
-    public final void a(su6 su6Var) {
-        byte b = this.a;
-        Object obj = this.c;
-        lw6 lw6Var = this.b;
-        switch (b) {
-            case 0:
-                tv6 tv6Var = lw6Var.j;
-                tv6Var.t();
-                ((hm2) obj).e(tv6Var.t);
-                break;
-            default:
-                String str = ((kq6) obj).a;
-                if (TextUtils.isEmpty(str)) {
-                    lad.f("MediaSessionLegacyStub", "onRemoveQueueItem(): Media ID shouldn't be null");
-                    break;
-                } else {
-                    tv6 tv6Var2 = lw6Var.j;
-                    tv6Var2.t();
-                    ad8 ad8Var = tv6Var2.t;
-                    if (ad8Var.m0(17)) {
-                        aob y0 = ad8Var.y0();
-                        znb znbVar = new znb();
-                        for (int i = 0; i < y0.o(); i++) {
-                            if (TextUtils.equals(y0.m(i, znbVar, 0L).b.a, str)) {
-                                ad8Var.O(i);
-                                break;
-                            }
-                        }
-                        break;
-                    } else {
-                        lad.f("MediaSessionLegacyStub", "Can't remove item by ID without COMMAND_GET_TIMELINE being available");
-                        break;
-                    }
-                }
+    public final void a(ArrayList arrayList) {
+        if (arrayList.isEmpty()) {
+            return;
         }
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            String str = (String) obj;
+            if (str == null) {
+                lq5.j("category must not be null");
+                return;
+            }
+            ArrayList arrayList2 = this.a;
+            if (arrayList2 == null) {
+                arrayList2 = new ArrayList();
+                this.a = arrayList2;
+            }
+            if (!arrayList2.contains(str)) {
+                this.a.add(str);
+            }
+        }
+    }
+
+    public final dw6 b() {
+        if (this.a == null) {
+            return dw6.c;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("controlCategories", this.a);
+        return new dw6(bundle, this.a);
     }
 }

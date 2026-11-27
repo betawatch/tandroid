@@ -1,44 +1,30 @@
 // default package
 
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final class h1c {
-    public final ra0 a;
-    public final String b;
-    public final s24 c;
-    public final yyb d;
-    public final i1c e;
+    public static final h1c a;
+    public static final h1c b;
+    public static final h1c c;
+    public static final /* synthetic */ h1c[] d;
 
-    public h1c(ra0 ra0Var, String str, s24 s24Var, yyb yybVar, i1c i1cVar) {
-        this.a = ra0Var;
-        this.b = str;
-        this.c = s24Var;
-        this.d = yybVar;
-        this.e = i1cVar;
+    static {
+        h1c h1cVar = new h1c("TOP", 0);
+        a = h1cVar;
+        h1c h1cVar2 = new h1c("LEFT", 1);
+        b = h1cVar2;
+        h1c h1cVar3 = new h1c("BOTTOM", 2);
+        c = h1cVar3;
+        d = new h1c[]{h1cVar, h1cVar2, h1cVar3};
     }
 
-    public final void a(n90 n90Var, j1c j1cVar) {
-        yyb yybVar = this.d;
-        if (yybVar == null) {
-            fvc.f("Null transformer");
-            return;
-        }
-        i1c i1cVar = this.e;
-        yb3 yb3Var = i1cVar.c;
-        ra0 b = this.a.b(n90Var.c);
-        o90 o90Var = new o90();
-        o90Var.h = new HashMap();
-        o90Var.f = Long.valueOf(i1cVar.a.e());
-        o90Var.g = Long.valueOf(i1cVar.b.e());
-        o90Var.a = this.b;
-        o90Var.e = new o24(this.c, (byte[]) yybVar.apply(n90Var.b));
-        o90Var.c = n90Var.a;
-        ha0 ha0Var = n90Var.d;
-        if (ha0Var != null) {
-            o90Var.d = ha0Var.a;
-        }
-        yb3Var.b.execute(new hn1(yb3Var, b, j1cVar, o90Var.b(), (byte) 12));
+    public static h1c valueOf(String str) {
+        return (h1c) Enum.valueOf(h1c.class, str);
+    }
+
+    public static h1c[] values() {
+        return (h1c[]) d.clone();
     }
 }

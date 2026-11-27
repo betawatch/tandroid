@@ -1,59 +1,90 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class co6 implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ hq6 b;
-    public final /* synthetic */ zc7 c;
-    public final /* synthetic */ TLRPC.Message d;
+public final class co6 implements ifc {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r47 b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ MediaController e;
 
-    public /* synthetic */ co6(hq6 hq6Var, zc7 zc7Var, TLRPC.Message message) {
-        this.b = hq6Var;
-        this.c = zc7Var;
-        this.d = message;
+    public co6(MediaController mediaController, int i, r47 r47Var, int[] iArr, boolean z) {
+        this.e = mediaController;
+        this.a = i;
+        this.b = r47Var;
+        this.c = iArr;
+        this.d = z;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLRPC.Message message = this.d;
-        zc7 zc7Var = this.c;
-        hq6 hq6Var = this.b;
-        switch (b) {
-            case 0:
-                hq6Var.getNotificationCenter().k(69, message, zc7Var);
-                break;
-            default:
-                vf6 vf6Var = hq6Var.B1;
-                HashMap hashMap = hq6Var.A1;
-                TLRPC.Message message2 = (TLRPC.Message) hashMap.get(zc7Var);
-                hashMap.put(zc7Var, message);
-                vf6 vf6Var2 = hq6Var.z1;
-                ArrayList arrayList = (ArrayList) vf6Var2.f(zc7Var.a);
-                if (arrayList == null) {
-                    arrayList = new ArrayList();
-                }
-                arrayList.add(message);
-                vf6Var2.k(arrayList, zc7Var.a);
-                if (k27.v0(message) == 0) {
-                    if (message2 != null) {
-                        vf6Var.e(message2.id);
-                    }
-                    vf6Var.k(zc7Var, message.id);
-                }
-                hq6Var.getNotificationCenter().k(69, message, zc7Var);
-                break;
+    @Override // ifc
+    public final void onError(kfc kfcVar, Exception exc) {
+        cc4.g(exc, true);
+    }
+
+    @Override // ifc
+    public final void onRenderedFirstFrame() {
+        String[] strArr = MediaController.W1;
+        MediaController mediaController = this.e;
+        mediaController.E();
+        jx jxVar = mediaController.M0;
+        if (jxVar != null && !jxVar.d) {
+            mediaController.N0 = true;
+            jxVar.setDrawingReady(true);
+            mediaController.O0.setTag(1);
+        }
+        if (mediaController.F0 == null || !go.w()) {
+            return;
+        }
+        mediaController.F0.s0(true);
+    }
+
+    @Override // ifc
+    public final void onStateChanged(boolean z, int i) {
+        MediaController mediaController = this.e;
+        if (this.a != mediaController.n0) {
+            return;
+        }
+        mediaController.L0(this.b, this.c, this.d, z, i);
+    }
+
+    @Override // ifc
+    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        if (this.e.F0 == null || !PhotoViewer.C0() || PhotoViewer.q0().S2 == null) {
+            return false;
+        }
+        PhotoViewer.q0().T2 = surfaceTexture;
+        return true;
+    }
+
+    @Override // ifc
+    public final void onVideoSizeChanged(int i, int i2, int i3, float f) {
+        float f2 = i2 == 0 ? 1.0f : (i * f) / i2;
+        MediaController mediaController = this.e;
+        mediaController.P0 = f2;
+        jx jxVar = mediaController.M0;
+        if (jxVar != null) {
+            jxVar.a(f2, 0);
         }
     }
 
-    public /* synthetic */ co6(hq6 hq6Var, TLRPC.Message message, zc7 zc7Var) {
-        this.b = hq6Var;
-        this.d = message;
-        this.c = zc7Var;
+    @Override // ifc
+    public final void onSeekFinished(uj ujVar) {
+    }
+
+    @Override // ifc
+    public final void onSeekStarted(uj ujVar) {
+    }
+
+    @Override // ifc
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    @Override // ifc
+    public final void onRenderedFirstFrame(uj ujVar) {
     }
 }

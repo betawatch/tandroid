@@ -1,48 +1,76 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum frb extends qsb {
-    public frb() {
-        super("AttributeValue_doubleQuoted", 37);
+public final class frb extends iv5 {
+    public static final /* synthetic */ long h = fx.a.objectFieldOffset(frb.class.getDeclaredField("_state$volatile"));
+    private volatile /* synthetic */ int _state$volatile;
+    public final Thread e = Thread.currentThread();
+    public ep3 f;
+
+    public static void n(int i) {
+        throw new IllegalStateException(("Illegal state " + i).toString());
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        String g = zj1Var.g(qsb.G0);
-        int length = g.length();
-        vpb vpbVar = aqbVar.i;
-        if (length > 0) {
-            vpbVar.w(g);
-        } else {
-            vpbVar.j = true;
-        }
-        char d = zj1Var.d();
-        if (d == 0) {
-            aqbVar.m(this);
-            aqbVar.i.v((char) 65533);
-            return;
-        }
-        if (d == '\"') {
-            aqbVar.c = qsb.e0;
-            return;
-        }
-        if (d != '&') {
-            if (d != 65535) {
-                aqbVar.i.v(d);
-                return;
-            } else {
-                aqbVar.l(this);
-                aqbVar.c = qsb.a;
+    @Override // iv5
+    public final boolean k() {
+        return true;
+    }
+
+    @Override // iv5
+    public final void l(Throwable th) {
+        while (true) {
+            Unsafe unsafe = fx.a;
+            long j = h;
+            int intVolatile = unsafe.getIntVolatile(this, j);
+            if (intVolatile != 0) {
+                if (intVolatile == 1 || intVolatile == 2 || intVolatile == 3) {
+                    return;
+                }
+                n(intVolatile);
+                throw null;
+            }
+            frb frbVar = this;
+            if (unsafe.compareAndSwapInt(frbVar, h, intVolatile, 2)) {
+                frbVar.e.interrupt();
+                unsafe.putIntVolatile(frbVar, j, 3);
                 return;
             }
+            this = frbVar;
         }
-        int[] c = aqbVar.c('\"', true);
-        vpb vpbVar2 = aqbVar.i;
-        if (c != null) {
-            vpbVar2.x(c);
-        } else {
-            vpbVar2.v('&');
+    }
+
+    public final void m() {
+        frb frbVar;
+        while (true) {
+            Unsafe unsafe = fx.a;
+            long j = h;
+            int intVolatile = unsafe.getIntVolatile(this, j);
+            if (intVolatile == 0) {
+                frbVar = this;
+                if (unsafe.compareAndSwapInt(frbVar, j, intVolatile, 1)) {
+                    ep3 ep3Var = frbVar.f;
+                    if (ep3Var != null) {
+                        ep3Var.dispose();
+                        return;
+                    }
+                    return;
+                }
+            } else {
+                if (intVolatile != 2) {
+                    if (intVolatile == 3) {
+                        Thread.interrupted();
+                        return;
+                    } else {
+                        n(intVolatile);
+                        throw null;
+                    }
+                }
+                frbVar = this;
+            }
+            this = frbVar;
         }
     }
 }

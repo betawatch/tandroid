@@ -1,53 +1,7 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class py6 implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-
-    public /* synthetic */ py6(xy6 xy6Var, boolean z, oy6 oy6Var, String str, boolean z2) {
-        this.d = xy6Var;
-        this.b = z;
-        this.e = oy6Var;
-        this.f = str;
-        this.c = z2;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        switch (b) {
-            case 0:
-                xy6 xy6Var = (xy6) obj3;
-                xy6Var.getClass();
-                gl.c3(new zo6(xy6Var, this.b, (oy6) obj2, (String) obj, tL_error, tLObject, this.c));
-                break;
-            default:
-                vqa vqaVar = (vqa) obj3;
-                vqaVar.getClass();
-                gl.c3(new zo6(vqaVar, tLObject, this.b, (TLRPC.Document) obj2, this.c, tL_error, (TL_stars.saveStarGift) obj));
-                break;
-        }
-    }
-
-    public /* synthetic */ py6(vqa vqaVar, boolean z, TLRPC.Document document, boolean z2, TL_stars.saveStarGift savestargift) {
-        this.d = vqaVar;
-        this.b = z;
-        this.e = document;
-        this.c = z2;
-        this.f = savestargift;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface py6 {
+    void a(xw6 xw6Var);
 }

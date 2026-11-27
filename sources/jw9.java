@@ -1,27 +1,51 @@
 // default package
 
-import android.content.Context;
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jw9 extends px9 {
-    public final /* synthetic */ View R;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique S;
-    public final /* synthetic */ kw9 T;
+public final class jw9 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ iw9 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TLRPC.Reaction c;
+    public final /* synthetic */ id[] d;
+    public final /* synthetic */ View e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jw9(kw9 kw9Var, Context context, jx9 jx9Var, View view, dx9 dx9Var, wjb wjbVar, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(kw9Var.e, context, jx9Var, view, dx9Var, wjbVar);
-        this.T = kw9Var;
-        this.R = view2;
-        this.S = tL_starGiftUnique;
+    public jw9(iw9 iw9Var, int i, TLRPC.Reaction reaction, id[] idVarArr, View view) {
+        this.a = iw9Var;
+        this.b = i;
+        this.c = reaction;
+        this.d = idVarArr;
+        this.e = view;
     }
 
-    @Override // px9, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.T.e.Y0 = null;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        if (i != 6) {
+            return false;
+        }
+        iw9 iw9Var = this.a;
+        String obj = iw9Var.getText().toString();
+        if (obj.length() > 12) {
+            hl.z3(iw9Var);
+            return true;
+        }
+        uc7.s1(this.b).w4(w49.d(this.c), obj);
+        id[] idVarArr = this.d;
+        id idVar = idVarArr[0];
+        if (idVar != null) {
+            idVar.dismiss();
+        }
+        if (idVarArr[0] == ow9.I) {
+            ow9.I = null;
+        }
+        View view = this.e;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

@@ -1,22 +1,40 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class j5a implements View.OnLongClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ n5a b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j5a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r7a b;
+    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ long d;
 
-    public j5a(n5a n5aVar, TLRPC.TL_authorization tL_authorization) {
-        this.b = n5aVar;
-        this.a = tL_authorization;
+    public /* synthetic */ j5a(r7a r7aVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j, byte b) {
+        this.a = b;
+        this.b = r7aVar;
+        this.c = tL_updateNewChannelMessage;
+        this.d = j;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        this.b.D0(this.a.country);
-        return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.d;
+        TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage = this.c;
+        r7a r7aVar = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(Integer.valueOf(tL_updateNewChannelMessage.message.id));
+                r7aVar.getMessagesStorage().Z1(-j, arrayList, true, -1, 0, false, null);
+                break;
+            default:
+                ArrayList arrayList2 = new ArrayList();
+                arrayList2.add(Integer.valueOf(tL_updateNewChannelMessage.message.id));
+                r7aVar.getMessagesStorage().Z1(-j, arrayList2, true, -1, 0, false, null);
+                break;
+        }
     }
 }

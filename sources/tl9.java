@@ -1,24 +1,58 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class tl9 {
-    public final int a;
-    public final long b;
-    public final long c;
-    public final char d;
-    public final boolean e;
-    public final boolean f;
-    public final boolean g;
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.tgnet.tl.TL_iv;
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [char, int] */
-    public tl9(int i, long j, long j2, long j3, boolean z, boolean z2, boolean z3) {
-        this.a = i;
-        this.b = j;
-        this.c = j2;
-        this.d = (int) j3;
-        this.e = z;
-        this.f = z2;
-        this.g = z3;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class tl9 implements kmb {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ TL_iv.pageTableCell e;
+
+    public tl9(Layout layout, int i, int i2, int i3, TL_iv.pageTableCell pagetablecell) {
+        this.a = layout;
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
+        this.e = pagetablecell;
+    }
+
+    @Override // kmb
+    public final Layout a() {
+        return this.a;
+    }
+
+    @Override // kmb
+    public final Rect c() {
+        return null;
+    }
+
+    @Override // kmb
+    public final CharSequence getPrefix() {
+        return null;
+    }
+
+    @Override // kmb
+    public final int getRow() {
+        return this.d;
+    }
+
+    @Override // kmb
+    public final CharSequence getText() {
+        return ajb.h(this.e);
+    }
+
+    @Override // kmb
+    public final int getX() {
+        return this.b;
+    }
+
+    @Override // kmb
+    public final int getY() {
+        return this.c;
     }
 }

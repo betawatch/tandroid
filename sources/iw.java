@@ -1,26 +1,255 @@
 // default package
 
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.LongSparseArray;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.m;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class iw extends r12 {
-    public boolean d0;
+public final class iw extends d79 {
+    public final /* synthetic */ byte f3 = 1;
+    public final Object g3;
+    public final /* synthetic */ KeyEvent.Callback h3;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        this.d0 = true;
-        setOffsetY(View.MeasureSpec.getSize(i2) * 0.4f);
-        this.d0 = false;
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i2) - gl.L(56.0f)) - gl.m, TLObject.FLAG_30));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iw(el2 el2Var, Activity activity) {
+        super(activity, null);
+        this.h3 = el2Var;
+        this.g3 = new pm3((byte) 7);
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.d0) {
-            return;
+    public final void A1(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        int childCount = getChildCount();
+        for (int i5 = 0; i5 < childCount; i5++) {
+            View childAt = getChildAt(i5);
+            if ((childAt.getTag() instanceof Integer) && ((Integer) childAt.getTag()).intValue() == 90 && childAt.getBottom() < getMeasuredHeight()) {
+                int measuredHeight = getMeasuredHeight();
+                childAt.layout(0, measuredHeight - childAt.getMeasuredHeight(), childAt.getMeasuredWidth(), measuredHeight);
+                return;
+            }
         }
-        super.requestLayout();
+    }
+
+    @Override // d79, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        byte b = this.f3;
+        KeyEvent.Callback callback = this.h3;
+        Object obj = this.g3;
+        switch (b) {
+            case 0:
+                HashSet hashSet = o.d1;
+                ((o) obj).k();
+                super.dispatchDraw(canvas);
+                break;
+            case 1:
+                el2 el2Var = (el2) callback;
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (el2Var.d * 255.0f), 31);
+                canvas.save();
+                float paddingLeft = getPaddingLeft();
+                float width = getWidth() - getPaddingRight();
+                canvas.clipRect(paddingLeft, 0.0f, width, getHeight());
+                canvas.translate((1.0f - el2Var.d) * width, 0.0f);
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                canvas.save();
+                RectF rectF = hl.P;
+                rectF.set(paddingLeft, 0.0f, hl.L(12.0f) + paddingLeft, getHeight());
+                pm3 pm3Var = (pm3) obj;
+                pm3Var.r(canvas, rectF, 0, el2Var.d);
+                rectF.set(width - hl.L(12.0f), 0.0f, width, getHeight());
+                pm3Var.r(canvas, rectF, 2, el2Var.d);
+                canvas.restore();
+                canvas.restore();
+                break;
+            default:
+                Paint paint = (Paint) obj;
+                ly3 ly3Var = (ly3) callback;
+                mm mmVar = ly3Var.G1;
+                if (mmVar != null && ly3Var.E1 >= 0 && ly3Var.F1 >= 0 && ly3Var.r1 != null && this.H) {
+                    float e = mmVar.e(false, 0.0f);
+                    if (e > 0.0f) {
+                        int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                        int i2 = TLObject.FLAG_31;
+                        for (int i3 = 0; i3 < getChildCount(); i3++) {
+                            View childAt = getChildAt(i3);
+                            int S = RecyclerView.S(childAt);
+                            if (S != -1 && S >= ly3Var.E1 && S <= ly3Var.F1) {
+                                i = Math.min(i, childAt.getTop() + ((int) childAt.getTranslationY()));
+                                i2 = Math.max(i2, childAt.getBottom() + ((int) childAt.getTranslationY()));
+                            }
+                        }
+                        if (i < i2) {
+                            paint.setColor(aob.p1(e, aob.v0(aob.Ce, this.o2)));
+                            canvas.drawRect(0.0f, i, getMeasuredWidth(), i2, paint);
+                        }
+                        invalidate();
+                    }
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // d79, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 1:
+                if (motionEvent.getX() > getPaddingLeft() && motionEvent.getX() < getWidth() - getPaddingRight()) {
+                    break;
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        switch (this.f3) {
+            case 2:
+                return false;
+            default:
+                return super.drawChild(canvas, view, j);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void n0(int i) {
+        sw swVar;
+        switch (this.f3) {
+            case 0:
+                tw twVar = ((o) this.g3).L;
+                if (twVar != null && (swVar = twVar.c) != null) {
+                    swVar.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                ly3 ly3Var = (ly3) this.h3;
+                ly3Var.p1.a();
+                ly3Var.b.invalidate();
+                break;
+        }
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.f3) {
+            case 2:
+                super.onDetachedFromWindow();
+                ly3 ly3Var = (ly3) this.h3;
+                hm.release(ly3Var.b, (LongSparseArray<wl>) ly3Var.l1);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        MotionEvent motionEvent2;
+        n8 n8Var;
+        switch (this.f3) {
+            case 0:
+                o oVar = (o) this.g3;
+                if (oVar.d != null && oVar.b == null && (((n8Var = oVar.I) == null || !n8Var.isShowing()) && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3))) {
+                    oVar.b = null;
+                    oVar.d = null;
+                    oVar.f = null;
+                } else if (oVar.d != null && oVar.b != null && motionEvent.getAction() == 1 && (getAdapter() instanceof ex)) {
+                    motionEvent2 = motionEvent;
+                    o.i(oVar, (ex) getAdapter(), motionEvent2, oVar.f, oVar.d, 0, 0);
+                    return super.onInterceptTouchEvent(motionEvent2);
+                }
+                motionEvent2 = motionEvent;
+                return super.onInterceptTouchEvent(motionEvent2);
+            case 1:
+                if (motionEvent.getX() <= getPaddingLeft() || motionEvent.getX() >= getWidth() - getPaddingRight()) {
+                    return false;
+                }
+                getParent().requestDisallowInterceptTouchEvent(true);
+                return super.onInterceptTouchEvent(motionEvent);
+            default:
+                rw2 e = rw2.e();
+                ly3 ly3Var = (ly3) this.h3;
+                return super.onInterceptTouchEvent(motionEvent) || e.g(motionEvent, ly3Var.q1, ly3Var.H1, this.o2);
+        }
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        byte b = this.f3;
+        KeyEvent.Callback callback = this.h3;
+        switch (b) {
+            case 0:
+                A1(z, i, i2, i3, i4);
+                ((m) callback).K = -1.0f;
+                break;
+            case 1:
+            default:
+                super.onLayout(z, i, i2, i3, i4);
+                break;
+            case 2:
+                super.onLayout(z, i, i2, i3, i4);
+                ((ly3) callback).p1.a();
+                break;
+        }
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.f3) {
+            case 2:
+                View.MeasureSpec.getSize(i);
+                ((ly3) this.h3).x1.x1(40);
+                super.onMeasure(i, i2);
+                break;
+            default:
+                super.onMeasure(i, i2);
+                break;
+        }
+    }
+
+    @Override // d79, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        n8 n8Var;
+        switch (this.f3) {
+            case 0:
+                o oVar = (o) this.g3;
+                if (oVar.d != null && oVar.b == null && (((n8Var = oVar.I) == null || !n8Var.isShowing()) && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3))) {
+                    oVar.b = null;
+                    oVar.d = null;
+                    oVar.f = null;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iw(ly3 ly3Var, Context context, vnb vnbVar) {
+        super(context, vnbVar);
+        this.h3 = ly3Var;
+        this.g3 = new Paint(1);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iw(m mVar, Activity activity) {
+        super(activity, null);
+        this.h3 = mVar;
+        this.g3 = mVar.M;
     }
 }

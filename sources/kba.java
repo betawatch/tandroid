@@ -1,13 +1,45 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.view.ViewGroup;
+import java.io.Serializable;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public interface kba {
-    void a(TLRPC.WebPage webPage, k27 k27Var);
+public final /* synthetic */ class kba implements ncc, occ, nr7 {
+    public final /* synthetic */ tba a;
 
-    boolean b();
+    public /* synthetic */ kba(tba tbaVar) {
+        this.a = tbaVar;
+    }
 
-    void c(String str, boolean z);
+    @Override // nr7
+    public final l2d S(View view, l2d l2dVar) {
+        mq5 H0 = hl.H0(l2dVar, false);
+        int i = H0.d;
+        tba tbaVar = this.a;
+        tbaVar.d0 = i;
+        int i2 = H0.b;
+        if (tbaVar.Q != null) {
+            int currentActionBarHeight = a.getCurrentActionBarHeight() + i2;
+            ViewGroup.LayoutParams layoutParams = tbaVar.Q.getLayoutParams();
+            if (layoutParams.height != currentActionBarHeight) {
+                layoutParams.height = currentActionBarHeight;
+                tbaVar.Q.setLayoutParams(layoutParams);
+            }
+        }
+        eg0.g(tbaVar.c, i2, i, hl.L(12.0f), tbaVar.e0);
+        return l2d.b;
+    }
+
+    @Override // occ
+    public final Boolean e(b8c b8cVar, View view, Integer num, Float f, Float f2) {
+        return Boolean.valueOf(this.a.i0(b8cVar, view));
+    }
+
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.h0((b8c) obj);
+    }
 }

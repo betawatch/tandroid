@@ -1,6 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface aeb {
+import android.graphics.Bitmap;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class aeb {
+    public final Bitmap a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+
+    public aeb(Bitmap bitmap, int i, int i2, int i3, int i4) {
+        this.a = bitmap;
+        this.b = i;
+        this.c = i2;
+        this.d = i3;
+        this.e = i4;
+    }
 }

@@ -1,145 +1,80 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ykb implements vs2 {
-    public final IdentityHashMap a = new IdentityHashMap();
+public final class ykb extends FrameLayout {
+    public static Paint d;
+    public static final int[] e = {-1031100, -29183, -12769, -8792480, -12521994, -12140801, -2984711, -45162, -4473925};
+    public static final int[] f = {-65536, -29183, -256, -16711936, -16711681, -16776961, -2984711, -65281, -1};
+    public final TextView a;
     public boolean b;
-    public boolean c;
-    public HashSet d;
-    public boolean e;
+    public int c;
 
-    public final void a() {
-        this.a.clear();
-        this.d = null;
-        this.e = false;
-    }
-
-    @Override // vs2
-    public final void accept(Object obj) {
-        b((View) obj);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(View view) {
-        k49 recycledViewPool;
-        if (view == 0 || this.a.put(view, Boolean.TRUE) != null) {
-            return;
+    public ykb(Context context, vnb vnbVar) {
+        super(context);
+        if (d == null) {
+            d = new Paint(1);
         }
-        int i = 0;
-        if (this.c) {
-            HashSet hashSet = this.d;
-            if (view instanceof tjb) {
-                ((tjb) view).addColorKeys(hashSet);
-            }
-            ukb o = zkb.o(view, false);
-            if (o != null) {
-                for (int i2 = 0; i2 < 6; i2++) {
-                    tkb tkbVar = o.a[i2];
-                    if (tkbVar != null) {
-                        zkb.f(tkbVar, hashSet);
-                    }
-                }
-                if (o.b != null) {
-                    for (int i3 = 0; i3 < o.b.size(); i3++) {
-                        zkb.f((tkb) o.b.get(i3), hashSet);
-                    }
-                }
-                if (o.c != null) {
-                    for (int i4 = 0; i4 < o.c.size(); i4++) {
-                        zkb.f((tkb) o.c.get(i4), hashSet);
-                    }
-                }
-                tkb tkbVar2 = o.e;
-                if (tkbVar2 != null) {
-                    zkb.f(tkbVar2, hashSet);
-                }
-                tkb tkbVar3 = o.f;
-                if (tkbVar3 != null) {
-                    zkb.f(tkbVar3, hashSet);
-                }
-            }
+        TextView textView = new TextView(context);
+        this.a = textView;
+        yob.X(textView, aob.G6, vnbVar);
+        ik8.w(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setGravity((ob6.a0 ? 5 : 3) | 16);
+        addView(textView, tre.d(-1, -1.0f, (ob6.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public final void a(ArrayList arrayList, boolean z) {
+        setEnabled(z);
+        TextView textView = this.a;
+        if (arrayList == null) {
+            textView.setAlpha(z ? 1.0f : 0.5f);
+            setAlpha(z ? 1.0f : 0.5f);
         } else {
-            if (view instanceof tjb) {
-                try {
-                    ((tjb) view).updateColors();
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                }
-            }
-            try {
-                zkb.a0(view);
-            } catch (Exception e2) {
-                fa4.g(e2, true);
-            }
-            Drawable background = view.getBackground();
-            if (background instanceof tjb) {
-                try {
-                    ((tjb) background).updateColors();
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
-                }
-                background.invalidateSelf();
-            }
-            Drawable foreground = view.getForeground();
-            if (foreground instanceof tjb) {
-                try {
-                    ((tjb) foreground).updateColors();
-                } catch (Exception e4) {
-                    fa4.g(e4, true);
-                }
-                foreground.invalidateSelf();
-            }
-            view.invalidate();
+            float[] fArr = {z ? 1.0f : 0.5f};
+            Property property = View.ALPHA;
+            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
+            arrayList.add(ObjectAnimator.ofFloat(this, (Property<ykb, Float>) property, z ? 1.0f : 0.5f));
         }
-        if (!(view instanceof RecyclerView)) {
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                while (i < viewGroup.getChildCount()) {
-                    b(viewGroup.getChildAt(i));
-                    i++;
-                }
-                return;
-            }
-            return;
+    }
+
+    public final void b(int i, String str, boolean z) {
+        this.a.setText(str);
+        this.b = z;
+        this.c = i;
+        setWillNotDraw(!z && i == 0);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.b) {
+            canvas2 = canvas;
+            canvas2.drawLine(ob6.a0 ? 0.0f : hl.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(20.0f) : 0), getMeasuredHeight() - 1, aob.j0);
+        } else {
+            canvas2 = canvas;
         }
-        RecyclerView recyclerView = (RecyclerView) view;
-        boolean z = this.b;
-        for (int i5 = 0; i5 < recyclerView.getChildCount(); i5++) {
-            b(recyclerView.getChildAt(i5));
+        int i = this.c;
+        if (i != 0) {
+            d.setColor(i);
+            canvas2.drawCircle(ob6.a0 ? hl.L(33.0f) : getMeasuredWidth() - hl.L(33.0f), getMeasuredHeight() / 2, hl.L(10.0f), d);
         }
-        for (int i6 = 0; i6 < recyclerView.getHiddenChildCount(); i6++) {
-            b(recyclerView.W(i6));
-        }
-        for (int i7 = 0; i7 < recyclerView.getAttachedScrapChildCount(); i7++) {
-            b(recyclerView.O(i7));
-        }
-        for (int i8 = 0; i8 < recyclerView.getCachedChildCount(); i8++) {
-            b(recyclerView.P(i8));
-        }
-        if (!z || (recycledViewPool = recyclerView.getRecycledViewPool()) == null) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        SparseArray sparseArray = recycledViewPool.a;
-        for (int i9 = 0; i9 < sparseArray.size(); i9++) {
-            ArrayList arrayList2 = ((j49) sparseArray.valueAt(i9)).a;
-            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                arrayList.add(((s49) arrayList2.get(i10)).a);
-            }
-        }
-        while (i < arrayList.size()) {
-            b((View) arrayList.get(i));
-            i++;
-        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(50.0f) + (this.b ? 1 : 0), TLObject.FLAG_30));
     }
 }

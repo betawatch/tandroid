@@ -1,57 +1,87 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class h87 implements RequestDelegate {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ gk7 e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h87 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ h87(na7 na7Var, int i, TLRPC.Chat chat, TLRPC.User user, boolean z) {
-        this.e = na7Var;
-        this.b = i;
-        this.f = chat;
-        this.d = user;
-        this.c = z;
+    public /* synthetic */ h87(uc7 uc7Var, long j, int i, int i2, boolean z, byte b) {
+        this.a = b;
+        this.b = uc7Var;
+        this.c = j;
+        this.d = i;
+        this.e = i2;
+        this.f = z;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.f;
-        gk7 gk7Var = this.e;
-        switch (b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j;
+        int i;
+        switch (this.a) {
             case 0:
-                na7 na7Var = (na7) gk7Var;
-                TLRPC.Chat chat = (TLRPC.Chat) obj;
-                na7Var.getClass();
-                if (tL_error == null) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(Integer.valueOf(this.b));
-                    na7Var.getMessagesStorage().Z1(chat != null ? -chat.id : this.d.id, arrayList, !this.c, -1, 0, false, null);
-                    na7Var.R3((TLRPC.Updates) tLObject, false);
+                hl.c3(new h87(this.b, this.c, this.d, this.e, this.f, (byte) 1));
+                break;
+            default:
+                uc7 uc7Var = this.b;
+                zh6 zh6Var = uc7Var.R;
+                long j2 = this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) zh6Var.f(j2);
+                int i2 = this.e;
+                if (dialog != null) {
+                    int i3 = dialog.unread_count;
+                    int i4 = this.d;
+                    if (i4 == 0 || i2 >= dialog.top_message) {
+                        dialog.unread_count = 0;
+                    } else {
+                        int max = Math.max(i3 - i4, 0);
+                        dialog.unread_count = max;
+                        if (i2 != Integer.MIN_VALUE && max > (i = dialog.top_message - i2)) {
+                            dialog.unread_count = i;
+                        }
+                    }
+                    boolean z = dialog.unread_mark;
+                    if (z) {
+                        dialog.unread_mark = false;
+                        uc7Var.getMessagesStorage().C1(dialog.id, false);
+                    }
+                    if ((i3 != 0 || z) && dialog.unread_count == 0) {
+                        j = j2;
+                        uc7Var.p2(j, 0L, null);
+                        if (uc7Var.l0()) {
+                            uc7Var.h5(null);
+                            uc7Var.getNotificationCenter().k(3, new Object[0]);
+                        }
+                    } else {
+                        j = j2;
+                    }
+                    uc7Var.getNotificationCenter().k(2, 256);
+                } else {
+                    j = j2;
+                }
+                long j3 = j;
+                if (!this.f) {
+                    uc7Var.getNotificationsController().L(null, j3, 0, i2, false);
+                    LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                    longSparseIntArray.put(j3, 0);
+                    uc7Var.getNotificationsController().J(longSparseIntArray);
+                    break;
+                } else {
+                    uc7Var.getNotificationsController().L(null, j3, 0, i2, true);
+                    LongSparseIntArray longSparseIntArray2 = new LongSparseIntArray(1);
+                    longSparseIntArray2.put(j3, -1);
+                    uc7Var.getNotificationsController().J(longSparseIntArray2);
                     break;
                 }
                 break;
-            default:
-                gl.c3(new m05((u58) gk7Var, (String) obj, this.b, tLObject, this.c, this.d));
-                break;
         }
-    }
-
-    public /* synthetic */ h87(u58 u58Var, String str, int i, boolean z, TLRPC.User user) {
-        this.e = u58Var;
-        this.f = str;
-        this.b = i;
-        this.c = z;
-        this.d = user;
     }
 }

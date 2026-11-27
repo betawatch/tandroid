@@ -8,10 +8,10 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class PlaybackStateCompat implements Parcelable {
-    public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new hv6((byte) 10);
+    public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new mx6((byte) 10);
     public final int a;
     public final long b;
     public final long c;
@@ -35,7 +35,7 @@ public final class PlaybackStateCompat implements Parcelable {
         this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.r = parcel.createTypedArrayList(CustomAction.CREATOR);
         this.s = parcel.readLong();
-        this.w = parcel.readBundle(mv6.class.getClassLoader());
+        this.w = parcel.readBundle(rx6.class.getClassLoader());
         this.f = parcel.readInt();
     }
 
@@ -45,15 +45,15 @@ public final class PlaybackStateCompat implements Parcelable {
         if (playbackState == null) {
             return null;
         }
-        List<PlaybackState.CustomAction> j = ac8.j(playbackState);
+        List<PlaybackState.CustomAction> j = pf8.j(playbackState);
         if (j != null) {
             ArrayList arrayList2 = new ArrayList(j.size());
             for (PlaybackState.CustomAction customAction2 : j) {
                 if (customAction2 != null) {
                     PlaybackState.CustomAction customAction3 = customAction2;
-                    Bundle l = ac8.l(customAction3);
-                    mv6.B(l);
-                    customAction = new CustomAction(ac8.f(customAction3), ac8.o(customAction3), ac8.m(customAction3), l);
+                    Bundle l = pf8.l(customAction3);
+                    rx6.D(l);
+                    customAction = new CustomAction(pf8.f(customAction3), pf8.o(customAction3), pf8.m(customAction3), l);
                     customAction.e = customAction3;
                 } else {
                     customAction = null;
@@ -64,9 +64,9 @@ public final class PlaybackStateCompat implements Parcelable {
         } else {
             arrayList = null;
         }
-        Bundle a = bc8.a(playbackState);
-        mv6.B(a);
-        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(ac8.r(playbackState), ac8.q(playbackState), ac8.i(playbackState), ac8.p(playbackState), ac8.g(playbackState), 0, ac8.k(playbackState), ac8.n(playbackState), arrayList, ac8.h(playbackState), a);
+        Bundle a = qf8.a(playbackState);
+        rx6.D(a);
+        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(pf8.r(playbackState), pf8.q(playbackState), pf8.i(playbackState), pf8.p(playbackState), pf8.g(playbackState), 0, pf8.k(playbackState), pf8.n(playbackState), arrayList, pf8.h(playbackState), a);
         playbackStateCompat.x = playbackState;
         return playbackStateCompat;
     }
@@ -96,7 +96,7 @@ public final class PlaybackStateCompat implements Parcelable {
         sb.append(", custom actions=");
         sb.append(this.r);
         sb.append(", active item id=");
-        return ls6.p(sb, this.s, "}");
+        return qu6.p(sb, this.s, "}");
     }
 
     @Override // android.os.Parcelable
@@ -114,7 +114,7 @@ public final class PlaybackStateCompat implements Parcelable {
         parcel.writeInt(this.f);
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class CustomAction implements Parcelable {
         public static final Parcelable.Creator<CustomAction> CREATOR = new g();
         public final String a;
@@ -127,7 +127,7 @@ public final class PlaybackStateCompat implements Parcelable {
             this.a = parcel.readString();
             this.b = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             this.c = parcel.readInt();
-            this.d = parcel.readBundle(mv6.class.getClassLoader());
+            this.d = parcel.readBundle(rx6.class.getClassLoader());
         }
 
         @Override // android.os.Parcelable

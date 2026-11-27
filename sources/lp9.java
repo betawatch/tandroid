@@ -1,55 +1,65 @@
 // default package
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class lp9 extends g2 {
-    public static final /* synthetic */ z24 f;
-    public static final /* synthetic */ z24 h;
-    public static final /* synthetic */ z24 n;
-    public List e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class lp9 extends Drawable {
+    public static Paint c;
+    public final /* synthetic */ byte a;
+    public Paint b;
 
-    static {
-        z74 z74Var = new z74(lp9.class, "SampleToChunkBox.java");
-        f = z74Var.e(z74Var.d("getEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.util.List"));
-        h = z74Var.e(z74Var.d("setEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "java.util.List", "entries", "void"));
-        n = z74Var.e(z74Var.d("toString", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.lang.String"));
-        z74Var.e(z74Var.d("blowup", "com.coremedia.iso.boxes.SampleToChunkBox", "int", "chunkCount", "[J"));
+    public /* synthetic */ lp9(byte b) {
+        this.a = b;
     }
 
-    @Override // g2, y1
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        f(byteBuffer);
-        int a = mqd.a(hle.g(byteBuffer));
-        this.e = new ArrayList(a);
-        for (int i = 0; i < a; i++) {
-            this.e.add(new kp9(hle.g(byteBuffer), hle.g(byteBuffer), hle.g(byteBuffer)));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY() - hl.L(1.0f), (getBounds().width() - hl.L(8.0f)) / 2.0f, this.b);
+                break;
+            default:
+                Rect bounds = getBounds();
+                canvas.drawCircle(bounds.centerX(), bounds.centerY(), Math.max(bounds.width(), bounds.height()) / 2, this.b);
+                break;
         }
     }
 
-    @Override // g2, y1
-    public final void getContent(ByteBuffer byteBuffer) {
-        i(byteBuffer);
-        byteBuffer.putInt(this.e.size());
-        for (kp9 kp9Var : this.e) {
-            byteBuffer.putInt((int) kp9Var.a);
-            byteBuffer.putInt((int) kp9Var.b);
-            byteBuffer.putInt((int) kp9Var.c);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return 0;
+            default:
+                return -2;
         }
     }
 
-    @Override // y1
-    public final long getContentSize() {
-        return (this.e.size() * 12) + 8;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i);
+                break;
+        }
     }
 
-    public final String toString() {
-        c5a b = z74.b(n, this, this);
-        n89.a().getClass();
-        n89.b(b);
-        return "SampleToChunkBox[entryCount=" + this.e.size() + "]";
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        byte b = this.a;
+    }
+
+    private final void a(int i) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
     }
 }

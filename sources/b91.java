@@ -1,109 +1,33 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.a;
+import android.content.Context;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class b91 {
-    public static boolean a;
+public final class b91 extends kea {
+    public final /* synthetic */ nx0 U2;
 
-    public static void a(int i, ArrayList arrayList, boolean z) {
-        fc2 fc2Var;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || i <= 0) {
-            return;
-        }
-        ArrayList arrayList2 = new ArrayList(3);
-        int i2 = 0;
-        if (z && sharedInstance.mutedByAdmin()) {
-            fc2 fc2Var2 = sharedInstance.groupCall;
-            TLRPC.GroupCallParticipant groupCallParticipant = fc2Var2 != null ? (TLRPC.GroupCallParticipant) fc2Var2.d.f(sharedInstance.getSelfId()) : null;
-            boolean z2 = (groupCallParticipant == null || groupCallParticipant.raise_hand_rating == 0) ? false : true;
-            arrayList2.add(new a91(new ra8(1, R.drawable.msg_voice_muted, k96.M0(z2 ? 2131743152 : 2131743048, null), !z2), 100, 0));
-        } else if (sharedInstance.isMicMute()) {
-            arrayList2.add(new a91(new ra8(1, R.drawable.msg_voice_muted, k96.M0(2131742988, null), true), 100, 0));
-        } else {
-            arrayList2.add(new a91(new ra8(1, R.drawable.msg_voice_unmuted, k96.M0(2131743051, null), true), 100, 0));
-        }
-        int videoState = sharedInstance.getVideoState(false);
-        if (videoState == 2) {
-            arrayList2.add(new a91(new ra8(2, R.drawable.pip_camera_on, k96.M0(2131742995, null), true), 90, 1));
-        } else if (a || videoState == 1) {
-            arrayList2.add(new a91(new ra8(2, R.drawable.pip_camera_off, k96.M0(2131742996, null), a.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z || ((fc2Var = sharedInstance.groupCall) != null && fc2Var.c()))), 60, 1));
-        }
-        arrayList2.add(new a91(new ra8(3, R.drawable.msg_endcall, k96.M0(z ? 2131743122 : 2131743170, null), true), 80, 2));
-        Collections.sort(arrayList2, new sa((byte) 15));
-        while (arrayList2.size() > i) {
-            tb4.v(1, arrayList2);
-        }
-        Collections.sort(arrayList2, new sa((byte) 16));
-        int size = arrayList2.size();
-        while (i2 < size) {
-            Object obj = arrayList2.get(i2);
-            i2++;
-            arrayList.add(((a91) obj).a);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b91(Context context, String str, String str2, vnb vnbVar, nx0 nx0Var) {
+        super(context, null, str, false, str2, false, vnbVar);
+        this.U2 = nx0Var;
     }
 
-    public static void b(int i, boolean z) {
-        fc2 fc2Var;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            if (w01.a) {
-                StringBuilder m = de9.m(i, "call pip: action ", ", camera ");
-                m.append(sharedInstance.getVideoState(false));
-                m.append(", mic muted ");
-                m.append(sharedInstance.isMicMute());
-                fa4.b(m.toString());
+    @Override // kea
+    public final void M0(zh6 zh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+        String a0;
+        if (z) {
+            if (zh6Var == null || zh6Var.m() != 1) {
+                a0 = ob6.a0(null, null, 2131748941, ob6.G(zh6Var == null ? 1 : zh6Var.m(), "Chats", new Object[0]));
+            } else {
+                long j = ((TLRPC.Dialog) zh6Var.n(0)).id;
+                a0 = (j == 0 || j == yac.h(this.a).e()) ? ob6.M0(2131748939, null) : ob6.a0(null, null, 2131748938, uc7.s1(this.a).A1(j, true));
             }
-            if (i == 1) {
-                if (z && sharedInstance.mutedByAdmin()) {
-                    sharedInstance.editCallMember(y6c.h(sharedInstance.getAccount()).f(), null, null, null, Boolean.TRUE, null);
-                    return;
-                } else {
-                    sharedInstance.setMicMute(!sharedInstance.isMicMute(), false, true);
-                    return;
-                }
-            }
-            if (i != 2) {
-                if (i == 3) {
-                    if (z) {
-                        h75.l1(a.b, null, false, true);
-                        return;
-                    } else {
-                        sharedInstance.hangUp();
-                        return;
-                    }
-                }
-                return;
-            }
-            int videoState = sharedInstance.getVideoState(false);
-            if (videoState == 2) {
-                sharedInstance.setVideoState(false, 0);
-                return;
-            }
-            if (a.b.checkSelfPermission("android.permission.CAMERA") == 0) {
-                if (!z || ((fc2Var = sharedInstance.groupCall) != null && fc2Var.c())) {
-                    if (videoState == 0) {
-                        sharedInstance.createCaptureDevice(false);
-                        sharedInstance.requestVideoCall(false);
-                    }
-                    sharedInstance.setVideoState(false, 2);
-                }
-            }
+            v21 Q = new d31(this.U2.F, this.J0).Q(R.raw.forward, 36, hl.S2(a0));
+            Q.s = false;
+            Q.j();
         }
-    }
-
-    public static long c() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return 0L;
-        }
-        return (((sharedInstance.getVideoState(false) << 1) + (sharedInstance.isMicMute() ? 1L : 0L)) << 1) + (sharedInstance.mutedByAdmin() ? 1L : 0L);
     }
 }

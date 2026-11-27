@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzkn implements zzjt {
     public static final zzkn zza = new zzkn();
@@ -11,7 +11,7 @@ public final class zzkn implements zzjt {
     @Override // com.google.android.recaptcha.internal.zzjt
     public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 2) {
-            fvc.c(4, 3, null);
+            p3d.d(4, 3, null);
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
@@ -20,7 +20,7 @@ public final class zzkn implements zzjt {
         }
         int[] iArr = (int[]) zza2;
         if (iArr == null) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return;
         }
         Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
@@ -29,7 +29,7 @@ public final class zzkn implements zzjt {
         }
         String str = (String) zza3;
         if (str == null) {
-            fvc.c(4, 5, null);
+            p3d.d(4, 5, null);
             return;
         }
         zzja zzc = zzizVar.zzc();
@@ -40,7 +40,7 @@ public final class zzkn implements zzjt {
             }
             zzc.zze(i, sb.toString());
         } catch (Exception e) {
-            fvc.c(4, 22, e);
+            p3d.d(4, 22, e);
         }
     }
 }

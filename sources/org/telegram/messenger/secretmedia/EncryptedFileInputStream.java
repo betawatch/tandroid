@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.RandomAccessFile;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public class EncryptedFileInputStream extends FileInputStream {
     private static final int MODE_CBC = 1;
@@ -66,18 +66,18 @@ public class EncryptedFileInputStream extends FileInputStream {
         return super.skip(j);
     }
 
-    public static void decryptBytesWithKeyFile(byte[] bArr, int i, int i2, vu9 vu9Var) {
-        Utilities.b(bArr, vu9Var.a, vu9Var.b, i, i2, 0, 0);
+    public static void decryptBytesWithKeyFile(byte[] bArr, int i, int i2, py9 py9Var) {
+        Utilities.b(bArr, py9Var.a, py9Var.b, i, i2, 0, 0);
     }
 
-    public EncryptedFileInputStream(File file, vu9 vu9Var) {
+    public EncryptedFileInputStream(File file, py9 py9Var) {
         super(file);
         byte[] bArr = new byte[32];
         this.key = bArr;
         this.iv = new byte[16];
         this.currentMode = 1;
-        System.arraycopy(vu9Var.a, 0, bArr, 0, 32);
-        byte[] bArr2 = vu9Var.b;
+        System.arraycopy(py9Var.a, 0, bArr, 0, 32);
+        byte[] bArr2 = py9Var.b;
         byte[] bArr3 = this.iv;
         System.arraycopy(bArr2, 0, bArr3, 0, bArr3.length);
     }

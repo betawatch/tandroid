@@ -1,11 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class c6 {
-    public boolean a() {
-        return true;
+public final class c6 extends f6 {
+    public final /* synthetic */ byte d = 1;
+    public final /* synthetic */ FrameLayout e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c6(ii3 ii3Var, Context context, vh4 vh4Var) {
+        super(context, null, vh4Var);
+        this.e = ii3Var;
     }
 
-    public abstract void b(int i);
+    @Override // f6, wa9
+    public final void f(xa9 xa9Var) {
+        byte b = this.d;
+        FrameLayout frameLayout = this.e;
+        switch (b) {
+            case 0:
+                super.f(xa9Var);
+                float totalVisibility = getTotalVisibility();
+                b6 b6Var = ((y10) frameLayout).G0;
+                if (b6Var != null) {
+                    b6Var.setTranslationY(totalVisibility * hl.L(-11.0f));
+                    break;
+                }
+                break;
+            default:
+                super.f(xa9Var);
+                ((ii3) frameLayout).invalidate();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c6(y10 y10Var, Context context, vnb vnbVar, vh4 vh4Var) {
+        super(context, vnbVar, vh4Var);
+        this.e = y10Var;
+    }
 }

@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzgn {
-    public /* synthetic */ zzgn(t93 t93Var) {
+    public /* synthetic */ zzgn(ma3 ma3Var) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final int zzc(String str) {
-        String c = n9b.c("18.7.1", ".", "");
-        int f = f9b.f(0, 6, c, "-");
+        String c = ldb.c("18.7.1", ".", "");
+        int f = ddb.f(0, 6, c, "-");
         if (f != -1) {
             c = c.substring(0, f);
         }
@@ -18,7 +18,7 @@ public final class zzgn {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final String zzd(String str) {
-        return "cesdb".concat(f9b.j("18.7.1", "-", ""));
+        return "cesdb".concat(ddb.j("18.7.1", "-", ""));
     }
 
     private zzgn() {

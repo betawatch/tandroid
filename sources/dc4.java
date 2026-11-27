@@ -1,46 +1,9 @@
 // default package
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.PopupWindow;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface dc4 {
+    void a();
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class dc4 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
-
-    public /* synthetic */ dc4(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, byte b) {
-        this.a = b;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
-    }
-
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        byte b = this.a;
-        View view = this.c;
-        ViewGroup viewGroup = this.e;
-        switch (b) {
-            case 0:
-                ((kc4) viewGroup).y = null;
-                s71 s71Var = (s71) view;
-                s71Var.animate().cancel();
-                s71Var.animate().alpha(0.0f).setDuration(150L).setListener(new im2(this, (byte) 20));
-                break;
-            default:
-                ((f36) viewGroup).s = null;
-                s71 s71Var2 = (s71) view;
-                s71Var2.animate().cancel();
-                s71Var2.animate().alpha(0.0f).setDuration(150L).setListener(new v85(this, (byte) 11));
-                break;
-        }
-    }
+    String b();
 }

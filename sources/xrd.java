@@ -1,119 +1,128 @@
 // default package
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
+import android.content.IntentSender;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.util.Log;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.Task;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xrd implements vud {
-    public final vid a;
-    public final jyd b;
-    public final jfd c;
+public final class xrd extends Fragment {
+    public static final /* synthetic */ int d = 0;
+    public int a;
+    public vld b;
+    public boolean c;
 
-    public xrd(jyd jydVar, jfd jfdVar, vid vidVar) {
-        this.b = jydVar;
-        jfdVar.getClass();
-        this.c = jfdVar;
-        this.a = vidVar;
-    }
-
-    @Override // vud
-    public final Object a() {
-        return ((tid) this.a.a(5)).c();
-    }
-
-    @Override // vud
-    public final void b(Object obj) {
-        this.b.getClass();
-        ((vid) obj).zzjp.d = false;
-        this.c.getClass();
-        ir2.u(obj);
-        throw null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0061 A[EDGE_INSN: B:24:0x0061->B:25:0x0061 BREAK  A[LOOP:1: B:10:0x0032->B:18:0x0032], SYNTHETIC] */
-    @Override // vud
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(Object obj, byte[] bArr, int i, int i2, sad sadVar) {
-        vid vidVar = (vid) obj;
-        dyd dydVar = vidVar.zzjp;
-        if (dydVar == dyd.e) {
-            dydVar = dyd.b();
-            vidVar.zzjp = dydVar;
+    public final void a(Task task) {
+        if (this.c) {
+            return;
         }
-        dyd dydVar2 = dydVar;
-        while (i < i2) {
-            int d = pze.d(bArr, i, sadVar);
-            int i3 = sadVar.a;
-            if (i3 != 11) {
-                byte[] bArr2 = bArr;
-                int i4 = i2;
-                sad sadVar2 = sadVar;
-                i = (i3 & 7) == 2 ? pze.b(i3, bArr2, d, i4, dydVar2, sadVar2) : pze.a(i3, bArr2, d, i4, sadVar2);
-            } else {
-                byte[] bArr3 = bArr;
-                int i5 = i2;
-                sad sadVar3 = sadVar;
-                int i6 = 0;
-                cdd cddVar = null;
-                while (true) {
-                    if (d >= i5) {
-                        i = d;
-                        break;
-                    }
-                    i = pze.d(bArr3, d, sadVar3);
-                    int i7 = sadVar3.a;
-                    int i8 = i7 >>> 3;
-                    int i9 = i7 & 7;
-                    if (i8 != 2) {
-                        if (i8 == 3 && i9 == 2) {
-                            d = pze.i(bArr3, i, sadVar3);
-                            cddVar = (cdd) sadVar3.c;
-                        }
-                        if (i7 != 12) {
-                            break;
-                        } else {
-                            d = pze.a(i7, bArr3, i, i5, sadVar3);
-                        }
-                    } else if (i9 == 0) {
-                        d = pze.d(bArr3, i, sadVar3);
-                        i6 = sadVar3.a;
-                    } else if (i7 != 12) {
-                    }
+        int i = 1;
+        this.c = true;
+        Activity activity = getActivity();
+        activity.getFragmentManager().beginTransaction().remove(this).commit();
+        int i2 = this.a;
+        if (task == null) {
+            n70.b(activity, i2, 0, new Intent());
+            return;
+        }
+        int i3 = n70.b;
+        if (activity.isFinishing()) {
+            if (Log.isLoggable("AutoResolveHelper", 3)) {
+                Log.d("AutoResolveHelper", "Ignoring task result for, Activity is finishing.");
+                return;
+            }
+            return;
+        }
+        Exception exception = task.getException();
+        if (exception instanceof rd9) {
+            try {
+                ((rd9) exception).getStatus().c(activity, i2);
+                return;
+            } catch (IntentSender.SendIntentException e) {
+                if (Log.isLoggable("AutoResolveHelper", 6)) {
+                    Log.e("AutoResolveHelper", "Error starting pending intent!", e);
+                    return;
                 }
-                if (cddVar != null) {
-                    dydVar2.a((i6 << 3) | 2, cddVar);
-                }
-                bArr = bArr3;
-                i2 = i5;
-                sadVar = sadVar3;
+                return;
             }
         }
-        if (i != i2) {
-            throw vkd.b();
+        Intent intent = new Intent();
+        if (task.isSuccessful()) {
+            u18 u18Var = (u18) task.getResult();
+            u18Var.getClass();
+            Parcel obtain = Parcel.obtain();
+            u18Var.writeToParcel(obtain, 0);
+            byte[] marshall = obtain.marshall();
+            obtain.recycle();
+            intent.putExtra("com.google.android.gms.wallet.PaymentData", marshall);
+            i = -1;
+        } else if (exception instanceof ao) {
+            ao aoVar = (ao) exception;
+            intent.putExtra("com.google.android.gms.common.api.AutoResolveHelper.status", new Status(aoVar.getStatusCode(), aoVar.getMessage(), null, null));
+        } else {
+            if (Log.isLoggable("AutoResolveHelper", 6)) {
+                Log.e("AutoResolveHelper", "Unexpected non API exception!", exception);
+            }
+            intent.putExtra("com.google.android.gms.common.api.AutoResolveHelper.status", new Status(8, "Unexpected non API exception when trying to deliver the task result to an activity!", null, null));
+        }
+        n70.b(activity, i2, i, intent);
+    }
+
+    @Override // android.app.Fragment
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        this.a = getArguments().getInt("requestCode");
+        if (n70.a != getArguments().getLong("initializationElapsedRealtime")) {
+            this.b = null;
+        } else {
+            this.b = (vld) vld.e.get(getArguments().getInt("resolveCallId"));
+        }
+        boolean z = false;
+        if (bundle != null && bundle.getBoolean("delivered")) {
+            z = true;
+        }
+        this.c = z;
+    }
+
+    @Override // android.app.Fragment
+    public final void onPause() {
+        super.onPause();
+        vld vldVar = this.b;
+        if (vldVar == null || vldVar.b != this) {
+            return;
+        }
+        vldVar.b = null;
+    }
+
+    @Override // android.app.Fragment
+    public final void onResume() {
+        super.onResume();
+        vld vldVar = this.b;
+        if (vldVar != null) {
+            vldVar.b = this;
+            vldVar.a();
+        } else {
+            if (Log.isLoggable("AutoResolveHelper", 5)) {
+                Log.w("AutoResolveHelper", "Sending canceled result for garbage collected task!");
+            }
+            a(null);
         }
     }
 
-    @Override // vud
-    public final void d(vid vidVar, vid vidVar2) {
-        gvd.a(this.b, vidVar, vidVar2);
-    }
-
-    @Override // vud
-    public final int e(vid vidVar) {
-        this.b.getClass();
-        return vidVar.zzjp.hashCode();
-    }
-
-    @Override // vud
-    public final boolean f(vid vidVar, vid vidVar2) {
-        this.b.getClass();
-        return vidVar.zzjp.equals(vidVar2.zzjp);
-    }
-
-    @Override // vud
-    public final boolean g(Object obj) {
-        this.c.getClass();
-        ir2.u(obj);
-        throw null;
+    @Override // android.app.Fragment
+    public final void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putBoolean("delivered", this.c);
+        vld vldVar = this.b;
+        if (vldVar == null || vldVar.b != this) {
+            return;
+        }
+        vldVar.b = null;
     }
 }

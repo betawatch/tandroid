@@ -1,83 +1,50 @@
 // default package
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class je9 {
+    public static final je9 a;
+    public static final je9 b;
+    public static final je9 c;
+    public static final je9 d;
+    public static final je9 e;
+    public static final je9 f;
+    public static final /* synthetic */ je9[] h;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class je9 implements ag9 {
-    public final /* synthetic */ iy6 a;
-    public final /* synthetic */ lk0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ye9 d;
+    /* JADX INFO: Fake field, exist only in values array */
+    je9 EF0;
 
-    public je9(ye9 ye9Var, iy6 iy6Var, lk0 lk0Var, String str) {
-        this.d = ye9Var;
-        this.a = iy6Var;
-        this.b = lk0Var;
-        this.c = str;
+    static {
+        je9 je9Var = new je9("OTHER", 0);
+        je9 je9Var2 = new je9("ORIENTATION", 1);
+        je9 je9Var3 = new je9("BYTE_SEGMENTS", 2);
+        a = je9Var3;
+        je9 je9Var4 = new je9("ERROR_CORRECTION_LEVEL", 3);
+        b = je9Var4;
+        je9 je9Var5 = new je9("ERRORS_CORRECTED", 4);
+        c = je9Var5;
+        je9 je9Var6 = new je9("ERASURES_CORRECTED", 5);
+        je9 je9Var7 = new je9("ISSUE_NUMBER", 6);
+        je9 je9Var8 = new je9("SUGGESTED_PRICE", 7);
+        je9 je9Var9 = new je9("POSSIBLE_COUNTRY", 8);
+        je9 je9Var10 = new je9("UPC_EAN_EXTENSION", 9);
+        je9 je9Var11 = new je9("PDF417_EXTRA_METADATA", 10);
+        je9 je9Var12 = new je9("STRUCTURED_APPEND_SEQUENCE", 11);
+        d = je9Var12;
+        je9 je9Var13 = new je9("STRUCTURED_APPEND_PARITY", 12);
+        e = je9Var13;
+        je9 je9Var14 = new je9("SYMBOLOGY_IDENTIFIER", 13);
+        f = je9Var14;
+        h = new je9[]{je9Var, je9Var2, je9Var3, je9Var4, je9Var5, je9Var6, je9Var7, je9Var8, je9Var9, je9Var10, je9Var11, je9Var12, je9Var13, je9Var14};
     }
 
-    @Override // ag9
-    public final void a() {
-        iy6 iy6Var = this.a;
-        iy6Var.a = (byte) 3;
-        ye9 ye9Var = this.d;
-        ye9Var.h4.remove(iy6Var);
-        ye9Var.t3.remove(this.b);
-        ye9Var.g3.O(true);
-        ye9Var.p3.onContentChanged();
+    public static je9 valueOf(String str) {
+        return (je9) Enum.valueOf(je9.class, str);
     }
 
-    @Override // ag9
-    public final void e(TLRPC.Document document) {
-        String str = this.c;
-        document.localPath = str;
-        ye9 ye9Var = this.d;
-        ba4.G(ye9Var.n3).e0(str, document);
-        iy6 iy6Var = this.a;
-        iy6Var.h = document;
-        iy6Var.a = (byte) 2;
-        TL_iv.PageBlock pageBlock = this.b.b;
-        if (pageBlock instanceof TL_iv.pageBlockDocument) {
-            ((TL_iv.pageBlockDocument) pageBlock).document_id = document.id;
-        }
-        ye9Var.h4.remove(iy6Var);
-        ye9Var.g3.O(false);
-        ye9Var.p3.onContentChanged();
-    }
-
-    @Override // ag9
-    public final void g(float f) {
-        this.a.f = f;
-        lk0 lk0Var = this.b;
-        ye9 ye9Var = this.d;
-        View C1 = ye9Var.C1(lk0Var);
-        if (C1 instanceof gc9) {
-            gc9 gc9Var = (gc9) C1;
-            gc9Var.g(gc9Var.h());
-            gc9Var.m();
-            gc9Var.n(false);
-            gc9Var.requestLayout();
-            gc9Var.invalidate();
-        }
-        ye9Var.p3.onContentChanged();
-    }
-
-    @Override // ag9
-    public final void c(TLRPC.Photo photo) {
-    }
-
-    @Override // ag9
-    public final void d(TLRPC.Document document) {
-    }
-
-    @Override // ag9
-    public final void f(TLRPC.Document document) {
-    }
-
-    @Override // ag9
-    public final void b(int i, int i2) {
+    public static je9[] values() {
+        return (je9[]) h.clone();
     }
 }

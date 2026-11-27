@@ -1,154 +1,149 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.m;
+import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class xt extends Drawable {
-    public static Path d;
-    public final /* synthetic */ byte a;
-    public Bitmap b;
-    public final Paint c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class xt extends dxc {
+    public final /* synthetic */ o C0;
 
-    public xt() {
-        this.a = (byte) 2;
-        this.c = new Paint(3);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xt(o oVar, Activity activity) {
+        super(activity);
+        this.C0 = oVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte b = this.a;
-        Paint paint = this.c;
-        switch (b) {
-            case 0:
-                Bitmap bitmap = this.b;
-                if (bitmap != null) {
-                    canvas.save();
-                    canvas.translate(getBounds().left, getBounds().top);
-                    canvas.scale(getBounds().width() / bitmap.getWidth(), getBounds().height() / bitmap.getHeight());
-                    canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
-                    canvas.restore();
-                    break;
+    @Override // dxc
+    public final pxc getInstantViewLoader() {
+        byte b = 0;
+        m mVar = this.C0.v0[0];
+        if (mVar.e()) {
+            nv0 webView = mVar.getWebView();
+            pxc pxcVar = mVar.F;
+            if (webView != null) {
+                if (pxcVar != null && (pxcVar.f != mVar.getWebView().b || mVar.F.e != mVar.getWebView().getProgress())) {
+                    mVar.F.d(mVar.getWebView());
+                    return mVar.F;
                 }
-                break;
-            case 1:
-                Bitmap bitmap2 = this.b;
-                if (bitmap2 != null) {
-                    canvas.save();
-                    canvas.translate(getBounds().left, getBounds().top);
-                    canvas.scale(getBounds().width() / bitmap2.getWidth(), getBounds().height() / bitmap2.getHeight());
-                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, paint);
-                    canvas.restore();
-                    break;
+                if (mVar.F != null && TextUtils.equals(mVar.getWebView().getUrl(), mVar.F.d)) {
+                    return mVar.F;
                 }
-                break;
-            default:
-                Rect bounds = getBounds();
-                if (!bounds.isEmpty()) {
-                    Bitmap bitmap3 = this.b;
-                    if (bitmap3 == null || bitmap3.getWidth() != bounds.width() || this.b.getHeight() != bounds.height()) {
-                        this.b = Bitmap.createBitmap(bounds.width(), bounds.height(), Bitmap.Config.ARGB_8888);
-                        Path path = new Path();
-                        Matrix matrix = new Matrix();
-                        matrix.setScale(bounds.width() / 52.0f, bounds.height() / 52.0f);
-                        Path path2 = d;
-                        if (path2 == null) {
-                            path2 = mqe.d("M25.0339 38.8535L16.4947 44.2223C15.6075 44.7802 14.4361 44.5131 13.8782 43.6258C13.6038 43.1893 13.5188 42.6601 13.6426 42.1598L15.0264 36.5704C15.4811 34.7334 16.7041 33.1809 18.3835 32.3088L26.359 28.1671C26.7894 27.9436 26.9572 27.4137 26.7337 26.9833C26.5595 26.6481 26.1903 26.4617 25.8172 26.5208L16.9312 27.9261C14.8088 28.2617 12.6463 27.6475 11.0173 26.2465L7.5978 23.3054C6.8032 22.622 6.71306 21.4239 7.39646 20.6293C7.7225 20.2503 8.18486 20.0153 8.68322 19.9753L18.8056 19.1622C19.5221 19.1046 20.1443 18.6473 20.4134 17.9809L24.2843 8.39097C24.6766 7.41912 25.7823 6.94929 26.7542 7.34157C27.232 7.53443 27.6108 7.91321 27.8037 8.39097L31.6745 17.9809C31.9435 18.6473 32.5659 19.1046 33.2822 19.1622L43.4582 19.9795C44.5029 20.0634 45.2817 20.9784 45.1978 22.023C45.1582 22.5159 44.9279 22.9737 44.5559 23.2992L36.7229 30.1527C36.1947 30.6149 35.9647 31.3308 36.125 32.0141L38.5201 42.2261C38.7594 43.2465 38.1263 44.2677 37.106 44.507C36.6119 44.6228 36.0921 44.536 35.6626 44.2659L27.054 38.8535C26.4366 38.4654 25.6513 38.4654 25.0339 38.8535Z");
-                            d = path2;
-                        }
-                        path2.transform(matrix, path);
-                        Paint paint2 = new Paint(1);
-                        paint2.setColor(-1);
-                        new Canvas(this.b).drawPath(path, paint2);
+                pxc pxcVar2 = mVar.F;
+                if (pxcVar2 != null) {
+                    pxcVar2.a();
+                    pxc pxcVar3 = mVar.F;
+                    TLRPC.TL_webPage tL_webPage = pxcVar3.j;
+                    if (tL_webPage != null) {
+                        rxc.o(tL_webPage);
+                        pxcVar3.j = null;
                     }
-                    canvas.drawBitmap(this.b, bounds.left, bounds.top, paint);
-                    break;
+                    mVar.F = null;
                 }
-                break;
+                pxc pxcVar4 = new pxc(mVar.M.Y);
+                mVar.F = pxcVar4;
+                nv0 webView2 = mVar.getWebView();
+                if (!pxcVar4.b) {
+                    pxcVar4.b = true;
+                    pxcVar4.d = webView2.getUrl();
+                    pxcVar4.e = webView2.getProgress();
+                    pxcVar4.f = webView2.b;
+                    pxcVar4.l = rxc.e(webView2, new oxc(pxcVar4, b));
+                    TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
+                    tL_messages_getWebPage.url = pxcVar4.d;
+                    tL_messages_getWebPage.hash = 0;
+                    pxcVar4.k = ConnectionsManager.getInstance(pxcVar4.a).sendRequest(tL_messages_getWebPage, new yp9(pxcVar4, (byte) 27));
+                }
+                return mVar.F;
+            }
+            if (pxcVar != null) {
+                pxcVar.a();
+                pxc pxcVar5 = mVar.F;
+                TLRPC.TL_webPage tL_webPage2 = pxcVar5.j;
+                if (tL_webPage2 != null) {
+                    rxc.o(tL_webPage2);
+                    pxcVar5.j = null;
+                }
+                mVar.F = null;
+            }
+        } else {
+            pxc pxcVar6 = mVar.F;
+            if (pxcVar6 != null) {
+                pxcVar6.a();
+                pxc pxcVar7 = mVar.F;
+                TLRPC.TL_webPage tL_webPage3 = pxcVar7.j;
+                if (tL_webPage3 != null) {
+                    rxc.o(tL_webPage3);
+                    pxcVar7.j = null;
+                }
+                mVar.F = null;
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public final void j(float f) {
+        int f2 = vm2.f(this.b0, this.x, this.E);
+        gd0 gd0Var = this.N;
+        gd0Var.a(f2);
+        gd0Var.b(vm2.f(this.b0, this.x, this.E));
+        this.M.invalidate();
+        o oVar = this.C0;
+        fb fbVar = oVar.j0;
+        if (fbVar != null) {
+            fbVar.setOpenProgress(f);
+        }
+        tw twVar = oVar.L;
+        if (twVar != null) {
+            twVar.t();
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return gl.L(24.0f);
-            case 1:
-                return gl.L(24.0f);
-            default:
-                return gl.L(18.0f);
+    public final void k(boolean z) {
+        if (this.a0 != z) {
+            ValueAnimator valueAnimator = this.x0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.a0 = z;
+            byte b = 0;
+            xs0 xs0Var = this.c0;
+            if (z) {
+                int i = this.d0;
+                int i2 = xea.m0;
+                if (i != i2) {
+                    this.d0 = i2;
+                    xs0Var.setHint(ob6.a0(null, null, 2131754344, bw9.a().a));
+                }
+            }
+            xs0Var.setVisibility(0);
+            this.N.c(true, (this.v0 || z) ? 0.0f : 1.0f);
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b0, z ? 1.0f : 0.0f);
+            this.x0 = ofFloat;
+            ofFloat.addUpdateListener(new pzb(this, (byte) 22));
+            this.x0.addListener(new i1a((byte) 18, this, z));
+            this.x0.setInterpolator(k43.h);
+            this.x0.setDuration(360L);
+            this.x0.start();
+            hl.r(new ywc(this, b));
+            hl.d3(new ywc(this, b), this.a0 ? 100L : 0L);
+        }
+        fb fbVar = this.C0.j0;
+        if (fbVar != null) {
+            fbVar.setOpened(z);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return gl.L(24.0f);
-            case 1:
-                return gl.L(24.0f);
-            default:
-                return gl.L(18.0f);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-            case 1:
-                return -2;
-            default:
-                return -3;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        switch (this.a) {
-            case 0:
-            case 1:
-                break;
-            default:
-                this.c.setAlpha(i);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-            case 1:
-                break;
-            default:
-                this.c.setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    public /* synthetic */ xt(Bitmap bitmap, Paint paint, byte b) {
-        this.a = b;
-        this.b = bitmap;
-        this.c = paint;
-    }
-
-    private final void a(int i) {
-    }
-
-    private final void b(int i) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
+    @Override // dxc, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        ((ViewGroup.MarginLayoutParams) this.C0.j0.getLayoutParams()).topMargin = getMeasuredHeight();
     }
 }

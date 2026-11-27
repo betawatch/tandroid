@@ -1,51 +1,39 @@
 // default package
 
-import java.util.Map;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ohf implements fdd {
-    public transient xze a;
-    public transient d3 b;
+public final class ohf extends c4 {
+    public static final Parcelable.Creator<ohf> CREATOR = new t4f((byte) 25);
+    public final ArrayList a;
 
-    public final Map a() {
-        d3 d3Var = this.b;
-        if (d3Var != null) {
-            return d3Var;
-        }
-        vhf vhfVar = (vhf) this;
-        d3 d3Var2 = new d3(vhfVar, vhfVar.c, (byte) 1);
-        this.b = d3Var2;
-        return d3Var2;
-    }
-
-    public final Set b() {
-        xze xzeVar = this.a;
-        if (xzeVar != null) {
-            return xzeVar;
-        }
-        vhf vhfVar = (vhf) this;
-        xze xzeVar2 = new xze(vhfVar, vhfVar.c);
-        this.a = xzeVar2;
-        return xzeVar2;
+    public ohf(ArrayList arrayList) {
+        xve.h(arrayList);
+        this.a = arrayList;
     }
 
     public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+        if (!(obj instanceof ohf)) {
+            return false;
         }
-        if (obj instanceof fdd) {
-            return a().equals(((ohf) ((fdd) obj)).a());
-        }
-        return false;
+        ArrayList arrayList = ((ohf) obj).a;
+        ArrayList arrayList2 = this.a;
+        return arrayList2.containsAll(arrayList) && arrayList.containsAll(arrayList2);
     }
 
     public final int hashCode() {
-        return ((so2) ((d3) a()).d).hashCode();
+        return Arrays.hashCode(new Object[]{new HashSet(this.a)});
     }
 
-    public final String toString() {
-        return ((so2) ((d3) a()).d).toString();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.p(parcel, 1, this.a);
+        bye.s(parcel, r);
     }
 }

@@ -1,57 +1,28 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import android.view.Surface;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class y76 {
+    public final Object a;
+    public final String b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class y76 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Surface b;
-    public final /* synthetic */ SurfaceTexture c;
-
-    public /* synthetic */ y76(Surface surface, SurfaceTexture surfaceTexture, byte b) {
-        this.a = b;
-        this.b = surface;
-        this.c = surfaceTexture;
+    public y76(Object obj, String str) {
+        this.a = obj;
+        this.b = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        SurfaceTexture surfaceTexture = this.c;
-        Surface surface = this.b;
-        switch (b) {
-            case 0:
-                if (surface != null) {
-                    surface.release();
-                }
-                surfaceTexture.release();
-                break;
-            case 1:
-                if (surface != null) {
-                    surface.release();
-                }
-                if (surfaceTexture != null) {
-                    surfaceTexture.release();
-                    break;
-                }
-                break;
-            case 2:
-                if (surface != null) {
-                    surface.release();
-                }
-                surfaceTexture.release();
-                break;
-            case 3:
-                gl.c3(new y76(surface, surfaceTexture, (byte) 4));
-                break;
-            default:
-                if (surface != null) {
-                    surface.release();
-                }
-                surfaceTexture.release();
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof y76)) {
+            return false;
+        }
+        y76 y76Var = (y76) obj;
+        return this.a == y76Var.a && this.b.equals(y76Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (System.identityHashCode(this.a) * 31);
     }
 }

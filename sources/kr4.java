@@ -1,39 +1,42 @@
 // default package
 
-import android.text.TextUtils;
+import android.os.Trace;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class kr4 extends rr4 {
-    public final /* synthetic */ sr4 y;
+public final /* synthetic */ class kr4 implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ View b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kr4(sr4 sr4Var) {
-        super(sr4Var);
-        this.y = sr4Var;
+    public /* synthetic */ kr4(View view, byte b) {
+        this.a = b;
+        this.b = view;
     }
 
-    @Override // rr4
-    public final void F(boolean z) {
-        sr4 sr4Var = this.y;
-        r7 r7Var = sr4Var.H;
-        if (r7Var != null) {
-            r7Var.setShowSearchProgress(z);
-        }
-        sr4Var.s.e(z, true);
-    }
-
-    @Override // w39
-    public final void f() {
-        super.f();
-        boolean isEmpty = TextUtils.isEmpty(this.f);
-        zya zyaVar = this.y.s;
-        if (isEmpty) {
-            zyaVar.setStickerType(11);
-            zyaVar.d.setText(k96.M0(2131745568, null));
-        } else {
-            zyaVar.setStickerType(1);
-            zyaVar.d.setText(k96.a0(null, null, 2131747974, this.f));
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        byte b = this.a;
+        View view = this.b;
+        switch (b) {
+            case 0:
+                ((mr4) view).e.incrementAndGet();
+                return;
+            default:
+                vl4 vl4Var = (vl4) view;
+                Trace.beginSection("OnDraw");
+                try {
+                    Iterator it = ((r89) vl4Var.b).iterator();
+                    while (it.hasNext()) {
+                        ((my4) it.next()).a();
+                    }
+                    return;
+                } finally {
+                    Trace.endSection();
+                    vl4Var.forceLayout();
+                }
         }
     }
 }

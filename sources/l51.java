@@ -1,67 +1,47 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class l51 implements Parcelable {
-    public static final Parcelable.Creator<l51> CREATOR = new c0f(15);
-    public final jj a;
+public final class l51 extends n51 {
+    public final int e;
+    public final int f;
 
-    public l51(jj jjVar) {
-        this.a = jjVar;
+    public l51(byte[] bArr, int i, int i2) {
+        super(bArr);
+        n51.i(i, i + i2, bArr.length);
+        this.e = i;
+        this.f = i2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static l51 a(int i) {
-        sy8 sy8Var;
-        if (i == -262) {
-            sy8Var = sy8.b;
-        } else {
-            sy8[] values = sy8.values();
-            int length = values.length;
-            int i2 = 0;
-            while (true) {
-                if (i2 >= length) {
-                    for (es3 es3Var : es3.values()) {
-                        if (es3Var.a == i) {
-                            sy8Var = es3Var;
-                        }
-                    }
-                    throw new k51(tb4.n(i, "Algorithm with COSE value ", " not supported"));
-                }
-                sy8 sy8Var2 = values[i2];
-                if (sy8Var2.a == i) {
-                    sy8Var = sy8Var2;
-                    break;
-                }
-                i2++;
-            }
+    @Override // n51
+    public final byte h(int i) {
+        int i2 = this.f;
+        if (((i2 - (i + 1)) | i) >= 0) {
+            return this.b[this.e + i];
         }
-        return new l51(sy8Var);
+        if (i < 0) {
+            throw new ArrayIndexOutOfBoundsException(uh9.k(i, "Index < 0: "));
+        }
+        throw new ArrayIndexOutOfBoundsException(c00.h(i, i2, "Index > length: ", ", "));
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    @Override // n51
+    public final void k(int i, byte[] bArr) {
+        System.arraycopy(this.b, this.e, bArr, 0, i);
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof l51) && this.a.a() == ((l51) obj).a.a();
+    @Override // n51
+    public final int l() {
+        return this.e;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
+    @Override // n51
+    public final byte m(int i) {
+        return this.b[this.e + i];
     }
 
-    public final String toString() {
-        return tb4.y("COSEAlgorithmIdentifier{algorithm=", String.valueOf(this.a), "}");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.a.a());
+    @Override // n51
+    public final int size() {
+        return this.f;
     }
 }

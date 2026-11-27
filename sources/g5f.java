@@ -1,33 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.util.Log;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class g5f {
-    public static final lnd a;
-    public static final lnd b;
-    public static Context c;
-
-    static {
-        new lnd(wme.U("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u007f¢fú§p\u0085xb±"), (byte) 0);
-        new lnd(wme.U("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014QÕÛ\u0004÷XçB\u0086<"), (byte) 1);
-        new lnd(wme.U("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u0010\u008ae\bsù/\u008eQí"), (byte) 2);
-        new lnd(wme.U("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014\u0003£²\u00ad×árÊkì"), (byte) 3);
-        a = new lnd(wme.U("0\u0082\u0004C0\u0082\u0003+ \u0003\u0002\u0001\u0002\u0002\t\u0000Âà\u0087FdJ0\u008d0"), (byte) 4);
-        b = new lnd(wme.U("0\u0082\u0004¨0\u0082\u0003\u0090 \u0003\u0002\u0001\u0002\u0002\t\u0000Õ\u0085¸l}ÓNõ0"), (byte) 5);
-    }
-
-    public static synchronized void a(Context context) {
-        synchronized (g5f.class) {
-            if (c != null) {
-                Log.w("GoogleCertificates", "GoogleCertificates has been initialized already");
-            } else {
-                if (context != null) {
-                    c = context.getApplicationContext();
-                }
+    public static boolean a(fba fbaVar, Collection collection) {
+        collection.getClass();
+        if (collection instanceof eid) {
+            collection = ((eid) collection).zza();
+        }
+        boolean z = false;
+        if (!(collection instanceof Set) || collection.size() <= fbaVar.size()) {
+            Iterator it = collection.iterator();
+            while (it.hasNext()) {
+                z |= fbaVar.remove(it.next());
+            }
+            return z;
+        }
+        Iterator<E> it2 = fbaVar.iterator();
+        while (it2.hasNext()) {
+            if (collection.contains(it2.next())) {
+                it2.remove();
+                z = true;
             }
         }
+        return z;
     }
 }

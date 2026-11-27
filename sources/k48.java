@@ -1,34 +1,32 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import org.webrtc.NativeLifecycleLock;
+import org.webrtc.PeerConnection;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class k48 extends FrameLayout {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class k48 implements NativeLifecycleLock.NativeRunnable {
     public final /* synthetic */ byte a;
-    public RectF b;
+    public final /* synthetic */ PeerConnection b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k48(Context context, byte b) {
-        super(context);
+    public /* synthetic */ k48(PeerConnection peerConnection, boolean z, byte b) {
         this.a = b;
+        this.b = peerConnection;
+        this.c = z;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
+    @Override // org.webrtc.NativeLifecycleLock.NativeRunnable
+    public final void run() {
+        byte b = this.a;
+        boolean z = this.c;
+        PeerConnection peerConnection = this.b;
+        switch (b) {
             case 0:
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), bkb.h2);
+                peerConnection.lambda$setAudioRecording$11(z);
                 break;
             default:
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(rectF2, gl.L(4.0f), gl.L(4.0f), bkb.h2);
+                peerConnection.lambda$setAudioPlayout$10(z);
                 break;
         }
     }

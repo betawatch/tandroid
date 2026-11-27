@@ -1,32 +1,65 @@
 // default package
 
-import android.content.Context;
 import android.view.View;
+import java.util.ArrayList;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class y42 extends u26 {
-    public final /* synthetic */ ar0 r;
+public final /* synthetic */ class y42 implements pt2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y42(ar0 ar0Var, Context context) {
-        super(context);
-        this.r = ar0Var;
+    public /* synthetic */ y42(byte b, Object obj, boolean z) {
+        this.a = b;
+        this.b = obj;
+        this.c = z;
     }
 
-    @Override // u26
-    public final int k(int i, View view) {
-        int topScrollOffset;
-        int k = super.k(i, view);
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
-        int paddingTop = chatAttachAlertPhotoLayout.F.getPaddingTop();
-        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
-        return k - (paddingTop - topScrollOffset);
-    }
-
-    @Override // u26
-    public final int m(int i) {
-        return super.m(i) << 1;
+    @Override // pt2
+    public final void accept(Object obj) {
+        byte b = this.a;
+        boolean z = false;
+        boolean z2 = this.c;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj2;
+                View view = (View) obj;
+                boolean z3 = ChatAttachAlertPhotoLayout.r1;
+                if (view instanceof d88) {
+                    d88 d88Var = (d88) view;
+                    no6 photoEntry = d88Var.getPhotoEntry();
+                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z2) {
+                        z = true;
+                    }
+                    d88Var.setHasSpoiler(z);
+                    break;
+                }
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) obj2;
+                View view2 = (View) obj;
+                boolean z4 = ChatAttachAlertPhotoLayout.r1;
+                if (view2 instanceof d88) {
+                    d88 d88Var2 = (d88) view2;
+                    no6 photoEntry2 = d88Var2.getPhotoEntry();
+                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z2) {
+                        z = true;
+                    }
+                    d88Var2.setHighQuality(z);
+                    break;
+                }
+                break;
+            default:
+                Float f = (Float) obj;
+                r11 r11Var = ((m11) obj2).b.q;
+                if (r11Var != null && !z2) {
+                    r11Var.b(r4.e.getHeight() - f.floatValue());
+                    break;
+                }
+                break;
+        }
     }
 }

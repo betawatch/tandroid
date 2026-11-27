@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzjb {
     private final zzja zza;
@@ -17,7 +17,7 @@ public final class zzjb {
         this.zza = zzjaVar;
         HashMap hashMap = new HashMap();
         this.zzb = hashMap;
-        zzjaVar.zzd(kk7.C2, hashMap);
+        zzjaVar.zzd(jn7.C2, hashMap);
     }
 
     public final zzja zza() {
@@ -27,7 +27,7 @@ public final class zzjb {
     public final void zzb() {
         zzja zzjaVar = this.zza;
         zzjaVar.zzc();
-        zzjaVar.zzd(kk7.C2, this.zzb);
+        zzjaVar.zzd(jn7.C2, this.zzb);
     }
 
     public final zzdo zzc() {

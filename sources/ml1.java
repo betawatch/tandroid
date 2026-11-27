@@ -1,53 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ml1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ int c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ ml1(mu1 mu1Var, int i, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ml1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zu1 b;
+    public final /* synthetic */ dl1 c;
+
+    public /* synthetic */ ml1(zu1 zu1Var, dl1 dl1Var, byte b) {
         this.a = b;
-        this.b = mu1Var;
-        this.c = i;
+        this.b = zu1Var;
+        this.c = dl1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        int i = this.c;
-        mu1 mu1Var = this.b;
+        dl1 dl1Var = this.c;
+        zu1 zu1Var = this.b;
         switch (b) {
             case 0:
-                mu1Var.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 1:
-                this.b.J(this.c, 0, 0, 0, false, true);
-                break;
-            case 2:
-                mu1Var.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 3:
-                mu1Var.w9(i);
-                break;
-            case 4:
-                mu1Var.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 5:
-                mu1Var.s8(i);
-                break;
-            case 6:
-                mu1Var.r8(i);
-                break;
-            case 7:
-                mu1Var.getConnectionsManager().cancelRequest(i, true);
-                break;
-            case 8:
-                mu1Var.Q8(i);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zu1Var.X9 = hl.L(30.0f) * floatValue;
+                zu1Var.O7();
+                dl1Var.setAlpha(floatValue);
                 break;
             default:
-                mu1Var.R8(i);
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zu1Var.X9 = hl.L(30.0f) * floatValue2;
+                zu1Var.O7();
+                zu1Var.Q7();
+                dl1Var.setAlpha(floatValue2);
                 break;
         }
     }

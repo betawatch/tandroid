@@ -1,40 +1,46 @@
 // default package
 
-import android.net.Uri;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nt implements h8c {
-    public final /* synthetic */ o a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ vt d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nt implements RequestDelegate {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ fn7 d;
 
-    public /* synthetic */ nt(o oVar, String str, boolean[] zArr, vt vtVar) {
-        this.a = oVar;
-        this.b = str;
-        this.c = zArr;
-        this.d = vtVar;
+    public /* synthetic */ nt(uc7 uc7Var, long j, int i) {
+        this.d = uc7Var;
+        this.b = j;
+        this.c = i;
     }
 
-    @Override // h8c
-    public final Object run() {
-        String str = this.b;
-        if (!d01.g(Uri.parse(str), false, this.c)) {
-            return Boolean.FALSE;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        fn7 fn7Var = this.d;
+        switch (b) {
+            case 0:
+                hl.c3(new r77((o) fn7Var, tLObject, this.c, this.b, (byte) 2));
+                break;
+            default:
+                uc7 uc7Var = (uc7) fn7Var;
+                uc7Var.h5.remove(this.b + "_" + this.c);
+                if (tL_error == null && tLObject != null) {
+                    uc7Var.Y3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
         }
-        o oVar = this.a;
-        vt vtVar = this.d;
-        if (vtVar != null) {
-            vtVar.c = new ee2(oVar, vtVar, (byte) 25);
-        } else {
-            sw swVar = oVar.L;
-            if (swVar != null) {
-                swVar.a(true);
-            }
-        }
-        d01.s(oVar.M, Uri.parse(str), true, true, false, vtVar, null, true, true, false, false);
-        return Boolean.TRUE;
+    }
+
+    public /* synthetic */ nt(o oVar, int i, long j) {
+        this.d = oVar;
+        this.c = i;
+        this.b = j;
     }
 }

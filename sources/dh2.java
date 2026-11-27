@@ -1,80 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dh2 implements ip9 {
-    public final eh2 a;
-    public final gp9 b;
-    public final int c;
-    public boolean d;
-    public final /* synthetic */ eh2 e;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    public dh2(eh2 eh2Var, eh2 eh2Var2, gp9 gp9Var, int i) {
-        this.e = eh2Var;
-        this.a = eh2Var2;
-        this.b = gp9Var;
-        this.c = i;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dh2 {
+    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public final LinearLayout b;
+    public final fa8 c;
 
-    @Override // ip9
-    public final int a() {
-        return 0;
-    }
-
-    public final void c() {
-        if (this.d) {
-            return;
+    public dh2(ContextThemeWrapper contextThemeWrapper, fj8 fj8Var, fa8 fa8Var) {
+        this.c = fa8Var;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, null, contextThemeWrapper);
+        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
+        b8 c = s7.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, ob6.M0(2131753749, null), false, null);
+        c.setOnClickListener(new y60(fj8Var, (byte) 2));
+        c.d(-328966, -328966);
+        c.setSelectorColor(268435455);
+        View b6Var = new b6(contextThemeWrapper, (byte) 7);
+        b6Var.setMinimumWidth(hl.L(196.0f));
+        b6Var.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(b6Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) b6Var.getLayoutParams();
+        if (ob6.a0) {
+            layoutParams.gravity = 5;
         }
-        eh2 eh2Var = this.e;
-        kp kpVar = eh2Var.h;
-        int[] iArr = eh2Var.b;
-        int i = this.c;
-        kpVar.i(iArr[i], eh2Var.c[i], 0, null, eh2Var.K);
-        this.d = true;
-    }
-
-    @Override // ip9
-    public final int h(sk4 sk4Var, z83 z83Var, int i) {
-        eh2 eh2Var = this.e;
-        if (eh2Var.y()) {
-            return -3;
-        }
-        og0 og0Var = eh2Var.M;
-        gp9 gp9Var = this.b;
-        if (og0Var != null && og0Var.e(this.c + 1) <= gp9Var.v()) {
-            return -3;
-        }
-        c();
-        return gp9Var.F(sk4Var, z83Var, i, eh2Var.S);
-    }
-
-    @Override // ip9
-    public final boolean j() {
-        eh2 eh2Var = this.e;
-        return !eh2Var.y() && this.b.A(eh2Var.S);
-    }
-
-    @Override // ip9
-    public final int n(long j) {
-        eh2 eh2Var = this.e;
-        if (eh2Var.y()) {
-            return 0;
-        }
-        boolean z = eh2Var.S;
-        gp9 gp9Var = this.b;
-        int x = gp9Var.x(j, z);
-        og0 og0Var = eh2Var.M;
-        if (og0Var != null) {
-            x = Math.min(x, og0Var.e(this.c + 1) - gp9Var.v());
-        }
-        gp9Var.L(x);
-        if (x > 0) {
-            c();
-        }
-        return x;
-    }
-
-    @Override // ip9
-    public final void b() {
+        layoutParams.width = -1;
+        layoutParams.height = hl.L(8.0f);
+        b6Var.setLayoutParams(layoutParams);
+        LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
+        this.b = linearLayout;
+        linearLayout.setOrientation(1);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(linearLayout);
     }
 }

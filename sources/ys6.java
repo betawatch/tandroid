@@ -1,77 +1,71 @@
 // default package
 
-import android.content.IntentFilter;
-import android.os.Bundle;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.net.Uri;
+import j$.util.Objects;
+import java.util.Arrays;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ys6 {
-    public final Bundle a;
-    public final ArrayList b;
-    public final ArrayList c;
-    public final HashSet d;
+    public static final String i;
+    public static final String j;
+    public static final String k;
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public final UUID a;
+    public final Uri b;
+    public final to5 c;
+    public final boolean d;
+    public final boolean e;
+    public final boolean f;
+    public final po5 g;
+    public final byte[] h;
 
-    public ys6(String str, String str2) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = new HashSet();
-        Bundle bundle = new Bundle();
-        this.a = bundle;
-        if (str == null) {
-            fvc.f("id must not be null");
-            throw null;
-        }
-        bundle.putString("id", str);
-        if (str2 != null) {
-            bundle.putString("name", str2);
-        } else {
-            fvc.f("name must not be null");
-            throw null;
-        }
+    static {
+        String str = gcc.a;
+        i = "0";
+        j = "1";
+        k = "2";
+        l = "3";
+        m = "4";
+        n = "5";
+        o = "6";
+        p = "7";
     }
 
-    public final void a(ArrayList arrayList) {
-        if (arrayList == null) {
-            w26.j("filters must not be null");
-            return;
-        }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        int size = arrayList.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayList.get(i);
-            i++;
-            IntentFilter intentFilter = (IntentFilter) obj;
-            if (intentFilter != null) {
-                ArrayList arrayList2 = this.c;
-                if (!arrayList2.contains(intentFilter)) {
-                    arrayList2.add(intentFilter);
-                }
-            }
-        }
+    public ys6(xs6 xs6Var) {
+        yve.p((xs6Var.f && xs6Var.b == null) ? false : true);
+        UUID uuid = xs6Var.a;
+        uuid.getClass();
+        this.a = uuid;
+        this.b = xs6Var.b;
+        this.c = xs6Var.c;
+        this.d = xs6Var.d;
+        this.f = xs6Var.f;
+        this.e = xs6Var.e;
+        this.g = xs6Var.g;
+        byte[] bArr = xs6Var.h;
+        this.h = bArr != null ? Arrays.copyOf(bArr, bArr.length) : null;
     }
 
-    public final zs6 b() {
-        ArrayList<? extends Parcelable> arrayList = new ArrayList<>(this.c);
-        Bundle bundle = this.a;
-        bundle.putParcelableArrayList("controlFilters", arrayList);
-        bundle.putStringArrayList("groupMemberIds", new ArrayList<>(this.b));
-        bundle.putStringArrayList("allowedPackages", new ArrayList<>(this.d));
-        return new zs6(bundle);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof ys6)) {
+            return false;
+        }
+        ys6 ys6Var = (ys6) obj;
+        return this.a.equals(ys6Var.a) && Objects.equals(this.b, ys6Var.b) && Objects.equals(this.c, ys6Var.c) && this.d == ys6Var.d && this.f == ys6Var.f && this.e == ys6Var.e && this.g.equals(ys6Var.g) && Arrays.equals(this.h, ys6Var.h);
     }
 
-    public ys6(zs6 zs6Var) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = new HashSet();
-        this.a = new Bundle(zs6Var.a);
-        this.b = zs6Var.c();
-        this.c = zs6Var.b();
-        this.d = zs6Var.a();
+    public final int hashCode() {
+        int hashCode = this.a.hashCode() * 31;
+        Uri uri = this.b;
+        return Arrays.hashCode(this.h) + ((this.g.hashCode() + ((((((((this.c.hashCode() + ((hashCode + (uri != null ? uri.hashCode() : 0)) * 31)) * 31) + (this.d ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31)) * 31);
     }
 }

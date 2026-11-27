@@ -1,102 +1,84 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class lh9 extends mg9 implements Drawable.Callback {
-    public final f6c X;
-    public final int Y;
-    public final int Z;
-    public final int a0;
-    public final int b0;
-    public cff c0;
-    public Bitmap d0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class lh9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pi9 b;
+    public final /* synthetic */ mk0 c;
+    public final /* synthetic */ int d;
 
-    public lh9(rh9 rh9Var, Rect rect, int i, int i2, int i3) {
-        super(rh9Var, rect, i);
-        this.a0 = i2;
-        this.b0 = i3;
-        f6c f6cVar = new f6c();
-        this.X = f6cVar;
-        f6cVar.setCallback(this);
-        f6cVar.n = k96.M0(2131743592, null);
-        f6cVar.o = k96.M0(2131743593, null);
-        f6cVar.p = k96.M0(2131743587, null);
-        f6cVar.j = new sr8(rh9Var, (byte) 26);
-        int i4 = this.c;
-        this.Y = i4;
-        this.Z = f6cVar.a(i4);
+    public /* synthetic */ lh9(pi9 pi9Var, mk0 mk0Var, int i, byte b) {
+        this.a = b;
+        this.b = pi9Var;
+        this.c = mk0Var;
+        this.d = i;
     }
 
-    @Override // mg9
-    public final int I() {
-        Rect rect = this.b;
-        return rect.top + this.Z + rect.bottom;
-    }
-
-    @Override // mg9
-    public final boolean Y(MotionEvent motionEvent) {
-        View view = this.W;
-        if (view != null) {
-            return this.X.i.a(view, motionEvent);
+    @Override // java.lang.Runnable
+    public final void run() {
+        View D1;
+        byte b = this.a;
+        int i = this.d;
+        mk0 mk0Var = this.c;
+        pi9 pi9Var = this.b;
+        switch (b) {
+            case 0:
+                D1 = mk0Var != null ? pi9Var.D1(mk0Var) : null;
+                if (D1 instanceof km9) {
+                    km9 km9Var = (km9) D1;
+                    km9Var.A();
+                    km9Var.getEditText().setSelection(Math.min(i, km9Var.getEditText().length()));
+                    break;
+                }
+                break;
+            case 1:
+                D1 = mk0Var != null ? pi9Var.D1(mk0Var) : null;
+                if (D1 instanceof km9) {
+                    km9 km9Var2 = (km9) D1;
+                    km9Var2.A();
+                    km9Var2.getEditText().setSelection(Math.min(i, km9Var2.getEditText().length()));
+                    break;
+                }
+                break;
+            case 2:
+                View D12 = pi9Var.D1(mk0Var);
+                if (D12 instanceof km9) {
+                    km9 km9Var3 = (km9) D12;
+                    km9Var3.A();
+                    km9Var3.getEditText().setSelection(Math.max(0, Math.min(i, km9Var3.getEditText().length())));
+                    break;
+                }
+                break;
+            case 3:
+                View D13 = pi9Var.D1(mk0Var);
+                if (D13 instanceof km9) {
+                    km9 km9Var4 = (km9) D13;
+                    km9Var4.A();
+                    km9Var4.getEditText().setSelection(Math.max(0, Math.min(i, km9Var4.getEditText().length())));
+                    break;
+                }
+                break;
+            case 4:
+                View D14 = pi9Var.D1(mk0Var);
+                if (D14 instanceof km9) {
+                    km9 km9Var5 = (km9) D14;
+                    km9Var5.A();
+                    km9Var5.getEditText().setSelection(Math.max(0, Math.min(i, km9Var5.getEditText().length())));
+                    break;
+                }
+                break;
+            default:
+                View D15 = pi9Var.D1(mk0Var);
+                if (D15 instanceof km9) {
+                    km9 km9Var6 = (km9) D15;
+                    km9Var6.A();
+                    km9Var6.getEditText().setSelection(Math.max(0, Math.min(i, km9Var6.getEditText().length())));
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    public final float i0(nb2 nb2Var) {
-        int i;
-        if (nb2Var != null) {
-            rh9 rh9Var = this.a;
-            if (rh9Var.s || rh9Var.u) {
-                i = gl.U1(Math.max(0.0f, Math.min(1.0f, nb2Var.L1)), this.Q, this.O);
-                return i;
-            }
-        }
-        i = this.O;
-        return i;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        View view = this.W;
-        if (view != null) {
-            view.invalidate();
-        }
-    }
-
-    public final float j0(nb2 nb2Var) {
-        if (nb2Var != null) {
-            rh9 rh9Var = this.a;
-            if (rh9Var.s || rh9Var.u) {
-                return gl.R1(this.P, this.N, Math.max(0.0f, Math.min(1.0f, nb2Var.L1)));
-            }
-        }
-        return this.N;
-    }
-
-    @Override // mg9
-    public final void q(Canvas canvas) {
-        Rect rect = this.b;
-        int i = rect.left;
-        int i2 = rect.top;
-        int i3 = this.Y + i;
-        int i4 = this.Z + i2;
-        f6c f6cVar = this.X;
-        f6cVar.setBounds(i, i2, i3, i4);
-        f6cVar.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
     }
 }

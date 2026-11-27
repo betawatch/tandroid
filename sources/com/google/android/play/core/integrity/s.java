@@ -2,35 +2,35 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class s {
-    private final uzc a;
-    private final uzc b;
-    private final uzc c;
-    private final uzc d;
-    private final uzc e;
+    private final l4d a;
+    private final l4d b;
+    private final l4d c;
+    private final l4d d;
+    private final l4d e;
 
     public s(Context context, r rVar) {
         ad adVar;
         m mVar;
         m mVar2;
         if (context == null) {
-            fvc.f("instance cannot be null");
+            p3d.h("instance cannot be null");
             throw null;
         }
-        uj0 uj0Var = new uj0(context, (char) 0);
-        this.a = uj0Var;
+        ej0 ej0Var = new ej0(context, (byte) 2);
+        this.a = ej0Var;
         adVar = ac.a;
-        qzc b = qzc.b(adVar);
+        h4d b = h4d.b(adVar);
         this.b = b;
         mVar = l.a;
-        au auVar = new au(uj0Var, mVar);
+        au auVar = new au(ej0Var, mVar);
         this.c = auVar;
         mVar2 = l.a;
-        qzc b2 = qzc.b(new al(uj0Var, b, auVar, mVar2));
+        h4d b2 = h4d.b(new al(ej0Var, b, auVar, mVar2));
         this.d = b2;
-        this.e = qzc.b(new ab(b2));
+        this.e = h4d.b(new ab(b2));
     }
 
     public final IntegrityManager a() {

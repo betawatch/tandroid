@@ -1,67 +1,59 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ya7 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ ad7 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ TLRPC.Dialog c;
 
-    public /* synthetic */ ya7(ad7 ad7Var, ArrayList arrayList, ArrayList arrayList2, byte b) {
+    public /* synthetic */ ya7(uc7 uc7Var, TLRPC.Dialog dialog, byte b) {
         this.a = b;
-        this.b = ad7Var;
-        this.c = arrayList;
-        this.d = arrayList2;
+        this.b = uc7Var;
+        this.c = dialog;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        ArrayList arrayList = this.d;
-        ArrayList arrayList2 = this.c;
-        ad7 ad7Var = this.b;
+        TLRPC.Dialog dialog = this.c;
+        uc7 uc7Var = this.b;
         switch (b) {
             case 0:
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        sQLitePreparedStatement = ad7Var.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
-                        int size = arrayList2.size();
-                        for (int i = 0; i < size; i++) {
-                            sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindInteger(1, ((Integer) arrayList.get(i)).intValue());
-                            sQLitePreparedStatement.bindLong(2, ((Long) arrayList2.get(i)).longValue());
-                            sQLitePreparedStatement.step();
-                        }
-                        sQLitePreparedStatement.dispose();
-                        return;
-                    } catch (Exception e) {
-                        ad7Var.n(e, true);
-                        if (sQLitePreparedStatement != null) {
-                            sQLitePreparedStatement.dispose();
-                            return;
-                        }
-                        return;
-                    }
-                } catch (Throwable th) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th;
+                if (f11.a) {
+                    cc4.b("checkLastDialogMessage for " + dialog.id + " has not message");
                 }
+                if (uc7Var.getMediaDataController().T(dialog.id, 0L) == null) {
+                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) uc7Var.R.f(dialog.id);
+                    if (dialog2 != null) {
+                        if (f11.a) {
+                            StringBuilder sb = new StringBuilder("checkLastDialogMessage for ");
+                            sb.append(dialog.id);
+                            sb.append(" current dialog top message ");
+                            c00.q(dialog2.top_message, sb);
+                        }
+                        if (dialog2.top_message == 0) {
+                            uc7Var.V(3, dialog.id, false);
+                            break;
+                        }
+                    } else {
+                        if (f11.a) {
+                            cc4.b("checkLastDialogMessage for " + dialog.id + " current dialog not found");
+                        }
+                        jf7 messagesStorage = uc7Var.getMessagesStorage();
+                        messagesStorage.a.c(new cq6((Object) messagesStorage, dialog.id, (Object) new ya7(uc7Var, dialog, (byte) 2), (byte) 18));
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                uc7Var.U0.e(dialog.id);
+                break;
             default:
-                if (!arrayList2.isEmpty()) {
-                    ad7Var.getMessagesController().b4(arrayList2, true);
-                }
-                if (arrayList.isEmpty()) {
-                    return;
-                }
-                ad7Var.getMessagesController().V3(arrayList, true);
-                return;
+                uc7Var.V(3, dialog.id, false);
+                break;
         }
     }
 }

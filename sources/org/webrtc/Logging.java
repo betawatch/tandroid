@@ -2,12 +2,10 @@ package org.webrtc;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
@@ -15,39 +13,24 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        void enableLogThreads();
+
+        void enableLogTimeStamps();
+
+        void enableLogToDebugOutput(int i);
+
+        void log(int i, String str, String str2);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
         LS_WARNING,
         LS_ERROR,
         LS_NONE
-    }
-
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-    @Deprecated
-    public enum TraceLevel {
-        TRACE_NONE(0),
-        TRACE_STATEINFO(1),
-        TRACE_WARNING(2),
-        TRACE_ERROR(4),
-        TRACE_CRITICAL(8),
-        TRACE_APICALL(16),
-        TRACE_DEFAULT(kk7.d4),
-        TRACE_MODULECALL(32),
-        TRACE_MEMORY(256),
-        TRACE_TIMER(512),
-        TRACE_STREAM(1024),
-        TRACE_DEBUG(2048),
-        TRACE_INFO(TLObject.FLAG_12),
-        TRACE_TERSEINFO(TLObject.FLAG_13),
-        TRACE_ALL(65535);
-
-        public final int level;
-
-        TraceLevel(int i) {
-            this.level = i;
-        }
     }
 
     private static Logger createFallbackLogger() {
@@ -72,11 +55,11 @@ public class Logging {
     }
 
     public static void enableLogThreads() {
-        nativeEnableLogThreads();
+        LoggingJni.get().enableLogThreads();
     }
 
     public static void enableLogTimeStamps() {
-        nativeEnableLogTimeStamps();
+        LoggingJni.get().enableLogTimeStamps();
     }
 
     public static synchronized void enableLogToDebugOutput(Severity severity) {
@@ -84,7 +67,7 @@ public class Logging {
             if (loggable != null) {
                 throw new IllegalStateException("Logging to native debug output not supported while Loggable is injected. Delete the Loggable before calling this method.");
             }
-            nativeEnableLogToDebugOutput(severity.ordinal());
+            LoggingJni.get().enableLogToDebugOutput(severity.ordinal());
             loggingEnabled = true;
         }
     }
@@ -107,7 +90,7 @@ public class Logging {
 
     public static void log(Severity severity, String str, String str2) {
         if (str == null || str2 == null) {
-            w26.j("Logging tag or message may not be null.");
+            lq5.j("Logging tag or message may not be null.");
             return;
         }
         if (loggable != null) {
@@ -117,7 +100,7 @@ public class Logging {
             loggable.onLogMessage(str2, severity, str);
         } else {
             if (loggingEnabled) {
-                nativeLog(severity.ordinal(), str, str2);
+                LoggingJni.get().log(severity.ordinal(), str, str2);
                 return;
             }
             int ordinal = severity.ordinal();
@@ -125,14 +108,6 @@ public class Logging {
             fallbackLogger.log(level, str + ": " + str2);
         }
     }
-
-    private static native void nativeEnableLogThreads();
-
-    private static native void nativeEnableLogTimeStamps();
-
-    private static native void nativeEnableLogToDebugOutput(int i);
-
-    private static native void nativeLog(int i, String str, String str2);
 
     public static void v(String str, String str2) {
         log(Severity.LS_VERBOSE, str, str2);
@@ -151,9 +126,5 @@ public class Logging {
 
     public static void w(String str, String str2) {
         log(Severity.LS_WARNING, str, str2);
-    }
-
-    @Deprecated
-    public static void enableTracing(String str, EnumSet<TraceLevel> enumSet) {
     }
 }

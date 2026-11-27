@@ -1,25 +1,23 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class tmd {
-    public static final vnd a = new vnd();
-    public static final wnd b = new wnd();
+public final class tmd extends c4 {
+    public static final Parcelable.Creator<tmd> CREATOR = new zkd((byte) 10);
+    public final int a;
 
-    public void a(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) uzd.l(obj, j);
-        if (list instanceof omd) {
-            unmodifiableList = ((omd) list).g();
-        } else if (vnd.c.isAssignableFrom(list.getClass())) {
-            return;
-        } else {
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
-        }
-        uzd.d(obj, j, unmodifiableList);
+    public tmd(int i) {
+        this.a = i;
     }
 
-    public abstract void b(vid vidVar, vid vidVar2, long j);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        bye.s(parcel, r);
+    }
 }

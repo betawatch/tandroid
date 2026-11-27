@@ -1,114 +1,66 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class f63 extends ccb implements eq4 {
-    public Iterator a;
-    public vfa b;
-    public Object c;
-    public byte d;
-    public /* synthetic */ Object e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ ArrayList h;
+public final class f63 implements la6 {
+    public final /* synthetic */ i63 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f63(List list, ArrayList arrayList, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.f = list;
-        this.h = arrayList;
+    public /* synthetic */ f63(i63 i63Var) {
+        this.a = i63Var;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        f63 f63Var = new f63(this.f, this.h, fw2Var);
-        f63Var.e = obj;
-        return f63Var;
-    }
-
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        return ((f63) create(obj, (fw2) obj2)).invokeSuspend(g5c.a);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0095 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0043  */
-    @Override // of0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        Iterator it;
-        List list;
-        vfa vfaVar;
-        Iterator it2;
-        Object obj2;
-        byte b = this.d;
-        bx2 bx2Var = bx2.a;
-        if (b == 0) {
-            qse.b(obj);
-            obj = this.e;
-            it = this.f.iterator();
-            list = this.h;
-        } else if (b == 1) {
-            obj2 = this.c;
-            vfa vfaVar2 = this.b;
-            it2 = this.a;
-            List list2 = (List) this.e;
-            qse.b(obj);
-            vfaVar = vfaVar2;
-            list = list2;
-            if (!((Boolean) obj).booleanValue()) {
-                list.add(new e63(vfaVar, null, (byte) 0));
-                this.e = list;
-                this.a = it2;
-                this.b = null;
-                this.c = null;
-                this.d = (byte) 2;
-                obj = vfaVar.b.a(new zfa((SharedPreferences) vfaVar.e.getValue(), vfaVar.f), obj2, this);
-                if (obj != bx2Var) {
-                    it = it2;
-                }
-                return bx2Var;
-            }
-            obj = obj2;
-            it = it2;
-        } else {
-            if (b != 2) {
-                sc8.j("call to 'resume' before 'invoke' with coroutine");
-                return null;
-            }
-            it = this.a;
-            list = (List) this.e;
-            qse.b(obj);
+    public final void a() {
+        long j;
+        i63 i63Var = this.a;
+        synchronized (rhd.b) {
+            j = rhd.c ? rhd.d : -9223372036854775807L;
         }
-        if (!it.hasNext()) {
-            vfa vfaVar3 = (vfa) it.next();
-            this.e = list;
-            this.a = it;
-            this.b = vfaVar3;
-            this.c = obj;
-            this.d = (byte) 1;
-            Object a = vfaVar3.a(obj, this);
-            if (a != bx2Var) {
-                Iterator it3 = it;
-                obj2 = obj;
-                obj = a;
-                vfaVar = vfaVar3;
-                it2 = it3;
-                if (!((Boolean) obj).booleanValue()) {
-                }
-                if (!it.hasNext()) {
-                    return obj;
-                }
-            }
-            return bx2Var;
-        }
+        i63Var.N = j;
+        i63Var.z(true);
+    }
+
+    @Override // la6
+    public final ma6 c2(oa6 oa6Var, long j, long j2, IOException iOException, int i) {
+        jy7 jy7Var = (jy7) oa6Var;
+        i63 i63Var = this.a;
+        lp lpVar = i63Var.r;
+        ia6 ia6Var = new ia6(jy7Var.a, jy7Var.b, j);
+        b2b b2bVar = jy7Var.d;
+        ia6Var.d = b2bVar.c;
+        ia6Var.e = b2bVar.d;
+        ia6Var.f = j2;
+        ia6Var.g = b2bVar.b;
+        lpVar.s(new ja6(ia6Var), jy7Var.c, iOException, true);
+        i63Var.n.getClass();
+        i63Var.y(iOException);
+        return rx6.y;
+    }
+
+    @Override // la6
+    public final void f(oa6 oa6Var, long j, long j2, boolean z) {
+        this.a.x((jy7) oa6Var, j, j2);
+    }
+
+    @Override // la6
+    public final void f0(oa6 oa6Var, long j, long j2) {
+        jy7 jy7Var = (jy7) oa6Var;
+        i63 i63Var = this.a;
+        ia6 ia6Var = new ia6(jy7Var.a, jy7Var.b, j);
+        b2b b2bVar = jy7Var.d;
+        ia6Var.d = b2bVar.c;
+        ia6Var.e = b2bVar.d;
+        ia6Var.f = j2;
+        ia6Var.g = b2bVar.b;
+        ja6 ja6Var = new ja6(ia6Var);
+        i63Var.n.getClass();
+        i63Var.r.p(ja6Var, jy7Var.c);
+        i63Var.N = ((Long) jy7Var.f).longValue() - j;
+        i63Var.z(true);
+    }
+
+    @Override // la6
+    public final void R0(oa6 oa6Var, long j, long j2, int i) {
     }
 }

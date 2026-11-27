@@ -3,7 +3,7 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -15,6 +15,11 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final int strideV;
     private final int strideY;
     private final int width;
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        void cropAndScaleI420(ByteBuffer byteBuffer, int i, ByteBuffer byteBuffer2, int i2, ByteBuffer byteBuffer3, int i3, int i4, int i5, int i6, int i7, ByteBuffer byteBuffer4, int i8, ByteBuffer byteBuffer5, int i9, ByteBuffer byteBuffer6, int i10, int i11, int i12);
+    }
 
     private JavaI420Buffer(int i, int i2, ByteBuffer byteBuffer, int i3, ByteBuffer byteBuffer2, int i4, ByteBuffer byteBuffer3, int i5, Runnable runnable) {
         this.width = i;
@@ -43,21 +48,21 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         ByteBuffer slice2 = nativeAllocateByteBuffer.slice();
         nativeAllocateByteBuffer.position(i7);
         nativeAllocateByteBuffer.limit(i7 + i6);
-        return new JavaI420Buffer(i, i2, slice, i, slice2, i4, nativeAllocateByteBuffer.slice(), i4, new ys5(nativeAllocateByteBuffer, (byte) 0));
+        return new JavaI420Buffer(i, i2, slice, i, slice2, i4, nativeAllocateByteBuffer.slice(), i4, new bv5(nativeAllocateByteBuffer, (byte) 0));
     }
 
     private static void checkCapacity(ByteBuffer byteBuffer, int i, int i2, int i3) {
-        int h = oo1.h(i2, 1, i3, i);
+        int h = bp1.h(i2, 1, i3, i);
         if (byteBuffer.capacity() >= h) {
             return;
         }
-        fvc.e(byteBuffer.capacity(), de9.m(h, "Buffer must be at least ", " bytes, but was "));
+        p3d.f(byteBuffer.capacity(), uh9.m(h, "Buffer must be at least ", " bytes, but was "));
     }
 
     public static VideoFrame.Buffer cropAndScaleI420(VideoFrame.I420Buffer i420Buffer, int i, int i2, int i3, int i4, int i5, int i6) {
         if (i3 != i5 || i4 != i6) {
             JavaI420Buffer allocate = allocate(i5, i6);
-            nativeCropAndScaleI420(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), i, i2, i3, i4, allocate.getDataY(), allocate.getStrideY(), allocate.getDataU(), allocate.getStrideU(), allocate.getDataV(), allocate.getStrideV(), i5, i6);
+            JavaI420BufferJni.get().cropAndScaleI420(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), i, i2, i3, i4, allocate.getDataY(), allocate.getStrideY(), allocate.getDataU(), allocate.getStrideU(), allocate.getDataV(), allocate.getStrideV(), i5, i6);
             return allocate;
         }
         ByteBuffer dataY = i420Buffer.getDataY();
@@ -69,18 +74,16 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         dataU.position((i420Buffer.getStrideU() * i8) + i7);
         dataV.position((i420Buffer.getStrideV() * i8) + i7);
         i420Buffer.retain();
-        return wrap(i5, i6, dataY.slice(), i420Buffer.getStrideY(), dataU.slice(), i420Buffer.getStrideU(), dataV.slice(), i420Buffer.getStrideV(), new tp5(i420Buffer, (byte) 4));
+        return wrap(i5, i6, dataY.slice(), i420Buffer.getStrideY(), dataU.slice(), i420Buffer.getStrideU(), dataV.slice(), i420Buffer.getStrideV(), new ea5(i420Buffer, (byte) 19));
     }
-
-    private static native void nativeCropAndScaleI420(ByteBuffer byteBuffer, int i, ByteBuffer byteBuffer2, int i2, ByteBuffer byteBuffer3, int i3, int i4, int i5, int i6, int i7, ByteBuffer byteBuffer4, int i8, ByteBuffer byteBuffer5, int i9, ByteBuffer byteBuffer6, int i10, int i11, int i12);
 
     public static JavaI420Buffer wrap(int i, int i2, ByteBuffer byteBuffer, int i3, ByteBuffer byteBuffer2, int i4, ByteBuffer byteBuffer3, int i5, Runnable runnable) {
         if (byteBuffer == null || byteBuffer2 == null || byteBuffer3 == null) {
-            w26.j("Data buffers cannot be null.");
+            lq5.j("Data buffers cannot be null.");
             return null;
         }
         if (!byteBuffer.isDirect() || !byteBuffer2.isDirect() || !byteBuffer3.isDirect()) {
-            w26.j("Data buffers must be direct byte buffers.");
+            lq5.j("Data buffers must be direct byte buffers.");
             return null;
         }
         ByteBuffer slice = byteBuffer.slice();

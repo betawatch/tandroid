@@ -1,101 +1,117 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
-import java.util.ArrayList;
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.util.Log;
 import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ContactsActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class mt2 implements e39, no7, ed {
-    public final /* synthetic */ ContactsActivity a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class mt2 implements ys3, zcd {
+    public final /* synthetic */ byte a;
+    public String b;
 
-    public /* synthetic */ mt2(ContactsActivity contactsActivity) {
-        this.a = contactsActivity;
+    public /* synthetic */ mt2(String str, byte b) {
+        this.a = b;
+        this.b = str;
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        io5 H0 = gl.H0(vxcVar, false);
-        int i = H0.d;
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.l0 = i;
-        dg0.e(contactsActivity.d, H0.b, i, a.getCurrentActionBarHeight(), contactsActivity.i0);
-        contactsActivity.d0();
-        contactsActivity.c0();
-        return vxc.b;
+    public static mt2 c(ey7 ey7Var) {
+        String str;
+        ey7Var.O(2);
+        int A = ey7Var.A();
+        int i = A >> 1;
+        byte b = 1;
+        int A2 = ((A & 1) << 5) | ((ey7Var.A() >> 3) & 31);
+        if (i == 4 || i == 5 || i == 7 || i == 8) {
+            str = "dvhe";
+        } else if (i == 9) {
+            str = "dvav";
+        } else {
+            if (i != 10) {
+                return null;
+            }
+            str = "dav1";
+        }
+        StringBuilder sb = new StringBuilder(str);
+        sb.append(i < 10 ? ".0" : ".");
+        sb.append(i);
+        sb.append(A2 < 10 ? ".0" : ".");
+        sb.append(A2);
+        return new mt2(sb.toString(), b);
     }
 
-    @Override // e39
-    public final boolean d(int i, View view) {
-        ContactsActivity contactsActivity = this.a;
-        w39 adapter = contactsActivity.d.getAdapter();
-        ot2 ot2Var = contactsActivity.b;
-        if (adapter == ot2Var) {
-            int S = ot2Var.S(i);
-            int Q = contactsActivity.b.Q(i);
-            m21 m21Var = m21.w;
-            if (m21Var != null) {
-                m21Var.b();
-            }
-            if (Q < 0 || S < 0) {
-                return false;
-            }
-        }
-        boolean z = contactsActivity.J;
-        if (!z && !contactsActivity.K && (view instanceof v6c)) {
-            contactsActivity.m0((v6c) view);
-            return true;
-        }
-        if (z || contactsActivity.K || !(view instanceof rr8)) {
-            return false;
-        }
-        rr8 rr8Var = (rr8) view;
-        if (rr8Var.getUser() != null && rr8Var.getUser().contact) {
-            contactsActivity.m0(rr8Var);
-        }
-        return true;
+    @Override // ys3
+    public final int a(int i) {
+        return -1;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        ContactsActivity contactsActivity = this.a;
-        vf6 vf6Var = contactsActivity.a0;
-        ArrayList arrayList = new ArrayList(vf6Var.m());
-        for (int i2 = 0; i2 < vf6Var.m(); i2++) {
-            arrayList.add((TLRPC.User) vf6Var.f(vf6Var.j(i2)));
+    @Override // ys3
+    public final boolean b(int i) {
+        return false;
+    }
+
+    @Override // ys3
+    public final char charAt(int i) {
+        return this.b.charAt(i);
+    }
+
+    @Override // ys3
+    public final int length() {
+        return this.b.length();
+    }
+
+    @Override // ys3
+    public final CharSequence subSequence(int i, int i2) {
+        return this.b.subSequence(i, i2);
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 2:
+                return this.b;
+            default:
+                return super.toString();
         }
-        qu2 contactsController = contactsActivity.getContactsController();
-        Activity parentActivity = contactsActivity.getParentActivity();
-        contactsController.getClass();
-        if (!arrayList.isEmpty()) {
-            HashMap hashMap = new HashMap();
-            int size = arrayList.size();
-            for (int i3 = 0; i3 < size; i3++) {
-                TLRPC.User user = (TLRPC.User) arrayList.get(i3);
-                TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) contactsController.g0.get(Long.valueOf(user.id));
-                user.contact = false;
-                contactsController.f0.remove(tL_contact);
-                contactsController.g0.remove(Long.valueOf(user.id));
-                hashMap.put(user, tL_contact);
+    }
+
+    @Override // zcd
+    public final Object zzp() {
+        Object obj;
+        boolean z;
+        String str = this.b;
+        ContentResolver contentResolver = zad.g.getContentResolver();
+        Uri uri = gmf.a;
+        synchronized (gmf.class) {
+            gmf.c(contentResolver);
+            obj = gmf.k;
+        }
+        HashMap hashMap = gmf.g;
+        Boolean bool = Boolean.FALSE;
+        Boolean bool2 = (Boolean) gmf.a(hashMap, str, bool);
+        if (bool2 != null) {
+            z = bool2.booleanValue();
+        } else {
+            String b = gmf.b(contentResolver, str);
+            boolean z2 = false;
+            if (b != null && !b.equals("")) {
+                if (gmf.c.matcher(b).matches()) {
+                    bool = Boolean.TRUE;
+                    z2 = true;
+                } else if (!gmf.d.matcher(b).matches()) {
+                    Log.w("Gservices", c00.j("attempt to read gservices key ", str, " (value \"", b, "\") as boolean"));
+                }
+                gmf.e(obj, hashMap, str, bool);
+                z = z2;
             }
-            contactsController.d(false);
-            kk7 notificationCenter = contactsController.getNotificationCenter();
-            int i4 = na7.q5;
-            notificationCenter.k(2, 1);
-            contactsController.getNotificationCenter().k(kk7.N, new Object[0]);
-            e21 e21Var = new e21(parentActivity, contactsActivity.getResourceProvider());
-            e21Var.setTimer();
-            e21Var.b.setText(k96.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
-            k21 k21Var = new k21(contactsActivity.getResourceProvider(), parentActivity, true, true);
-            k21Var.b = new n92(contactsController, hashMap, (byte) 29);
-            k21Var.c = new fu2(contactsController, arrayList, (byte) 1);
-            e21Var.setButton(k21Var);
-            m21.g(contactsActivity, e21Var, 5000).j();
+            bool = bool2;
+            gmf.e(obj, hashMap, str, bool);
+            z = z2;
         }
-        contactsActivity.h0();
+        return Boolean.valueOf(z);
+    }
+
+    public /* synthetic */ mt2(byte b) {
+        this.a = b;
     }
 }

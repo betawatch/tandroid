@@ -1,186 +1,101 @@
 // default package
 
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.SystemClock;
-import java.lang.ref.WeakReference;
+import android.content.Context;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.mediarouter.app.MediaRouteVolumeSlider;
+import androidx.mediarouter.app.OverlayListView;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class av6 extends Binder implements li5 {
-    public static final /* synthetic */ int b = 0;
-    public final WeakReference a;
+public final class av6 extends ArrayAdapter {
+    public final float a;
+    public final /* synthetic */ bv6 b;
 
-    public av6(bv6 bv6Var) {
-        attachInterface(this, "android.support.v4.media.session.IMediaSession");
-        this.a = new WeakReference(bv6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public av6(bv6 bv6Var, Context context, ArrayList arrayList) {
+        super(context, 0, arrayList);
+        this.b = bv6Var;
+        this.a = nte.c(context);
     }
 
-    public final void a(hi5 hi5Var) {
-        bv6 bv6Var = (bv6) this.a.get();
-        if (bv6Var == null || hi5Var == null) {
-            return;
+    @Override // android.widget.ArrayAdapter, android.widget.Adapter
+    public final View getView(int i, View view, ViewGroup viewGroup) {
+        bv6 bv6Var = this.b;
+        if (view == null) {
+            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.mr_controller_volume_item, viewGroup, false);
+        } else {
+            bv6.o(bv6Var.f0, (LinearLayout) view.findViewById(R.id.volume_item_container));
+            View findViewById = view.findViewById(R.id.mr_volume_item_icon);
+            ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
+            int i2 = bv6Var.e0;
+            layoutParams.width = i2;
+            layoutParams.height = i2;
+            findViewById.setLayoutParams(layoutParams);
         }
-        bv6Var.f.register(hi5Var, new mw6("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
-        synchronized (bv6Var.d) {
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v8, types: [hi5] */
-    @Override // android.os.Binder
-    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-        int i3;
-        Bundle bundle;
-        hi5 hi5Var = null;
-        r5 = null;
-        Bundle bundle2 = null;
-        dc8 dc8Var = null;
-        fi5 fi5Var = null;
-        if (i == 3) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-            IBinder readStrongBinder = parcel.readStrongBinder();
-            if (readStrongBinder != null) {
-                IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
-                if (queryLocalInterface == null || !(queryLocalInterface instanceof hi5)) {
-                    fi5 fi5Var2 = new fi5();
-                    fi5Var2.a = readStrongBinder;
-                    hi5Var = fi5Var2;
-                } else {
-                    hi5Var = (hi5) queryLocalInterface;
-                }
+        jw6 jw6Var = (jw6) getItem(i);
+        if (jw6Var != null) {
+            boolean z = jw6Var.g;
+            TextView textView = (TextView) view.findViewById(R.id.mr_name);
+            textView.setEnabled(z);
+            textView.setText(jw6Var.d);
+            MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
+            Context context = viewGroup.getContext();
+            OverlayListView overlayListView = bv6Var.V;
+            int b = nte.b(context);
+            int alpha = Color.alpha(b);
+            int i3 = jn7.d4;
+            if (alpha != 255) {
+                b = vm2.k(b, ((Integer) overlayListView.getTag()).intValue());
             }
-            a(hi5Var);
-            parcel2.getClass();
-            parcel2.writeNoException();
-            return true;
-        }
-        if (i == 4) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-            IBinder readStrongBinder2 = parcel.readStrongBinder();
-            if (readStrongBinder2 != null) {
-                IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
-                if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof hi5)) {
-                    fi5 fi5Var3 = new fi5();
-                    fi5Var3.a = readStrongBinder2;
-                    fi5Var = fi5Var3;
-                } else {
-                    fi5Var = (hi5) queryLocalInterface2;
-                }
-            }
-            bv6 bv6Var = (bv6) this.a.get();
-            if (bv6Var != null && fi5Var != null) {
-                bv6Var.f.unregister(fi5Var);
-                Binder.getCallingPid();
-                Binder.getCallingUid();
-                synchronized (bv6Var.d) {
-                }
-            }
-            parcel2.getClass();
-            parcel2.writeNoException();
-            return true;
-        }
-        if (i == 28) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-            bv6 bv6Var2 = (bv6) this.a.get();
-            if (bv6Var2 != null) {
-                dc8Var = bv6Var2.g;
-                kr6 kr6Var = bv6Var2.i;
-                if (dc8Var != null) {
-                    float f = dc8Var.d;
-                    long j = dc8Var.n;
-                    int i4 = dc8Var.a;
-                    long j2 = dc8Var.b;
-                    long j3 = -1;
-                    if (j2 != -1 && ((i4 == 3 || i4 == 4 || i4 == 5) && j > 0)) {
-                        long elapsedRealtime = SystemClock.elapsedRealtime();
-                        long j4 = ((long) (f * (elapsedRealtime - j))) + j2;
-                        if (kr6Var != null) {
-                            Bundle bundle3 = kr6Var.a;
-                            if (bundle3.containsKey("android.media.metadata.DURATION")) {
-                                j3 = bundle3.getLong("android.media.metadata.DURATION", 0L);
-                            }
-                        }
-                        long j5 = (j3 < 0 || j4 <= j3) ? j4 < 0 ? 0L : j4 : j3;
-                        ArrayList arrayList = new ArrayList();
-                        long j6 = dc8Var.c;
-                        long j7 = dc8Var.e;
-                        int i5 = dc8Var.f;
-                        CharSequence charSequence = dc8Var.h;
-                        List list = dc8Var.r;
-                        if (list != null) {
-                            arrayList.addAll(list);
-                        }
-                        dc8Var = new dc8(dc8Var.a, j5, j6, dc8Var.d, j7, i5, charSequence, elapsedRealtime, arrayList, dc8Var.s, dc8Var.w);
+            mediaRouteVolumeSlider.a(b, b);
+            mediaRouteVolumeSlider.setTag(jw6Var);
+            bv6Var.i0.put(jw6Var, mediaRouteVolumeSlider);
+            mediaRouteVolumeSlider.b(!z);
+            mediaRouteVolumeSlider.setEnabled(z);
+            if (z) {
+                if (bv6Var.P) {
+                    if (((!jw6Var.e() || lw6.g()) ? jw6Var.o : 0) == 1) {
+                        mediaRouteVolumeSlider.setMax(jw6Var.q);
+                        mediaRouteVolumeSlider.setProgress(jw6Var.p);
+                        mediaRouteVolumeSlider.setOnSeekBarChangeListener(bv6Var.c0);
                     }
                 }
+                mediaRouteVolumeSlider.setMax(100);
+                mediaRouteVolumeSlider.setProgress(100);
+                mediaRouteVolumeSlider.setEnabled(false);
             }
-            parcel2.getClass();
-            parcel2.writeNoException();
-            if (dc8Var == null) {
-                parcel2.writeInt(0);
-                return true;
+            ImageView imageView = (ImageView) view.findViewById(R.id.mr_volume_item_icon);
+            if (!z) {
+                i3 = (int) (this.a * 255.0f);
             }
-            parcel2.writeInt(1);
-            dc8Var.writeToParcel(parcel2, 1);
-            return true;
-        }
-        if (i == 37) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-            bv6 bv6Var3 = (bv6) this.a.get();
-            i3 = bv6Var3 != null ? bv6Var3.j : -1;
-            parcel2.getClass();
-            parcel2.writeNoException();
-            parcel2.writeInt(i3);
-            return true;
-        }
-        if (i == 45) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-            parcel2.getClass();
-            parcel2.writeNoException();
-            parcel2.writeInt(0);
-            return true;
-        }
-        if (i == 47) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-            bv6 bv6Var4 = (bv6) this.a.get();
-            i3 = bv6Var4 != null ? bv6Var4.k : -1;
-            parcel2.getClass();
-            parcel2.writeNoException();
-            parcel2.writeInt(i3);
-            return true;
-        }
-        if (i != 50) {
-            if (i != 1598968902) {
-                return super.onTransact(i, parcel, parcel2, i2);
+            imageView.setAlpha(i3);
+            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(bv6Var.a0.contains(jw6Var) ? 4 : 0);
+            HashSet hashSet = bv6Var.Y;
+            if (hashSet != null && hashSet.contains(jw6Var)) {
+                AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
+                alphaAnimation.setDuration(0L);
+                alphaAnimation.setFillEnabled(true);
+                alphaAnimation.setFillAfter(true);
+                view.clearAnimation();
+                view.startAnimation(alphaAnimation);
             }
-            parcel2.getClass();
-            parcel2.writeString("android.support.v4.media.session.IMediaSession");
-            return true;
         }
-        parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-        bv6 bv6Var5 = (bv6) this.a.get();
-        if (bv6Var5 != null && (bundle = bv6Var5.e) != null) {
-            bundle2 = new Bundle(bundle);
-        }
-        parcel2.getClass();
-        parcel2.writeNoException();
-        if (bundle2 == null) {
-            parcel2.writeInt(0);
-            return true;
-        }
-        parcel2.writeInt(1);
-        bundle2.writeToParcel(parcel2, 1);
-        return true;
+        return view;
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
+    @Override // android.widget.BaseAdapter, android.widget.ListAdapter
+    public final boolean isEnabled(int i) {
+        return false;
     }
 }

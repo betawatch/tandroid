@@ -1,94 +1,81 @@
 // default package
 
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ce implements ed, Continuation, z97 {
+public final /* synthetic */ class ce implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ pcc e;
+    public final /* synthetic */ long f;
 
-    public /* synthetic */ ce(Runnable runnable, byte b) {
+    public /* synthetic */ ce(int i, long j, long j2, pcc pccVar, long j3, byte b) {
         this.a = b;
-        this.b = runnable;
+        this.b = i;
+        this.c = j;
+        this.d = j2;
+        this.e = pccVar;
+        this.f = j3;
     }
 
-    @Override // z97
-    public final boolean b(TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Runnable runnable = this.b;
-        switch (b) {
-            case 9:
-                runnable.run();
-                break;
-            case 10:
-                runnable.run();
-                break;
-            case 11:
-                runnable.run();
-                break;
-            case 12:
-                runnable.run();
-                break;
-            case 13:
-                runnable.run();
-                break;
-            default:
-                runnable.run();
-                break;
-        }
-        return true;
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public final Object then(Task task) {
-        this.b.run();
-        return Tasks.forResult(null);
-    }
-
-    @Override // ed
-    public final void u(hd hdVar, int i) {
-        byte b = this.a;
-        Runnable runnable = this.b;
-        switch (b) {
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0070  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        vnb x53Var;
+        switch (this.a) {
             case 0:
-                runnable.run();
-                break;
-            case 1:
-                runnable.run();
-                break;
-            case 2:
-                runnable.run();
-                break;
-            case 3:
-                runnable.run();
-                break;
-            case 4:
-                hdVar.dismiss();
-                if (runnable != null) {
-                    runnable.run();
+                int i = this.b;
+                long j = jxa.v(i, false).m().amount;
+                long j2 = this.c;
+                pcc pccVar = this.e;
+                long j3 = this.f;
+                if (j >= j2) {
+                    pccVar.a(Long.valueOf(j3));
                     break;
+                } else {
+                    Activity u0 = hl.u0();
+                    e S = LaunchActivity.S();
+                    if (!PhotoViewer.q0().V0()) {
+                        if (S == null) {
+                            x53Var = null;
+                        } else if (!S.hasShownSheet()) {
+                            x53Var = S.getResourceProvider();
+                        }
+                        vnb vnbVar = x53Var;
+                        if (u0 == null) {
+                            long j4 = this.d;
+                            new dza(u0, vnbVar, j2, 13, wf3.r(i, j4), new ve(pccVar, j3, (byte) 0), j4).show();
+                            break;
+                        }
+                    }
+                    x53Var = new x53();
+                    vnb vnbVar2 = x53Var;
+                    if (u0 == null) {
+                    }
                 }
                 break;
-            case 5:
-                runnable.run();
-                break;
-            case 6:
             default:
-                runnable.run();
-                break;
-            case 7:
-                runnable.run();
-                break;
-            case 8:
-                if (runnable != null) {
-                    runnable.run();
+                int i2 = this.b;
+                ce ceVar = new ce(i2, this.c, this.d, this.e, this.f, (byte) 0);
+                if (!jxa.v(i2, false).e) {
+                    jxa v = jxa.v(i2, false);
+                    v.e = false;
+                    v.n(ceVar, false, true);
+                    v.e = true;
+                    break;
+                } else {
+                    ceVar.run();
                     break;
                 }
-                break;
         }
     }
 }

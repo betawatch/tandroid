@@ -1,27 +1,51 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
+import org.telegram.ui.ActionBar.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class kw0 extends zo0 {
-    public final /* synthetic */ ow0 s;
+public final class kw0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ xw0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw0(ow0 ow0Var, Context context, wjb wjbVar) {
-        super(context, wjbVar);
-        this.s = ow0Var;
+    public kw0(xw0 xw0Var, boolean z, float f, float f2, float f3, float f4) {
+        this.f = xw0Var;
+        this.a = z;
+        this.b = f;
+        this.c = f2;
+        this.d = f3;
+        this.e = f4;
     }
 
-    @Override // zo0, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        if (!this.s.f0 && gl.O1() && !gl.E && !gl.N1()) {
-            Point point = gl.q;
-            i = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        xw0 xw0Var = this.f;
+        pw0 pw0Var = xw0Var.E;
+        uw0 uw0Var = xw0Var.Y;
+        ow0 ow0Var = xw0Var.x;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        xw0Var.i0 = floatValue;
+        if (!this.a) {
+            floatValue = 1.0f - floatValue;
         }
-        super.onMeasure(i, i2);
+        xw0Var.h0 = floatValue;
+        uw0Var.setAlpha(1.0f - floatValue);
+        uw0Var.setTranslationY((-a.getCurrentActionBarHeight()) * xw0Var.h0);
+        float f = this.b;
+        float f2 = xw0Var.i0;
+        float f3 = this.c;
+        ow0Var.setTranslationY(hl.R1(f, f3, f2));
+        ow0Var.setTranslationX(hl.R1(this.d, 0.0f, xw0Var.i0));
+        xw0Var.n0.setTranslationX(hl.R1(this.e, 0.0f, xw0Var.i0));
+        xw0Var.o0.setAlpha(xw0Var.h0);
+        xw0Var.f.invalidate();
+        pw0Var.setViewPortHeightOffset(ow0Var.getTranslationY() - f3);
+        pw0Var.l(false, false);
+        xw0Var.H();
     }
 }

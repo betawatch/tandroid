@@ -1,37 +1,63 @@
 // default package
 
 import android.content.Context;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dz extends c6 {
-    public final /* synthetic */ TL_stars.StarGift a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ wjb c;
+public final class dz extends sua {
+    public final Path H0;
+    public final float[] I0;
+    public final /* synthetic */ fz J0;
 
-    public dz(wjb wjbVar, Context context, TL_stars.StarGift starGift) {
-        this.a = starGift;
-        this.b = context;
-        this.c = wjbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dz(fz fzVar, Context context, vnb vnbVar, vy vyVar, y00 y00Var, y00 y00Var2, y00 y00Var3, y00 y00Var4, y00 y00Var5, y00 y00Var6) {
+        super(context, vnbVar, vyVar, y00Var, null, y00Var2, y00Var3, y00Var4, y00Var5, y00Var6);
+        this.J0 = fzVar;
+        this.H0 = new Path();
+        this.I0 = new float[8];
     }
 
-    @Override // c6
-    public final void b(int i) {
-        Context context = this.b;
-        TL_stars.StarGift starGift = this.a;
-        if (i != 3 && i != 2) {
-            if (i == 4) {
-                ez.b1(this.c, context, starGift);
-                return;
-            }
+    @Override // sua, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.H0);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // sua
+    public final int getFinalHeight() {
+        return hl.L(288.0f);
+    }
+
+    @Override // sua
+    public final float getRealHeight() {
+        return hl.L(288.0f);
+    }
+
+    @Override // sua
+    public final void k(int i) {
+        TextView textView = this.J0.W1;
+        if (textView == null || !aob.F1(textView.getBackground(), i, false)) {
             return;
         }
-        String str = na7.q1(y6c.t0).N2 + "/auction/" + starGift.auction_slug;
-        if (i == 3) {
-            gl.g(str);
-        } else {
-            taa.G0(context, null, str, false, str).show();
-        }
+        textView.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        float L = hl.L(12.0f);
+        float[] fArr = this.I0;
+        fArr[3] = L;
+        fArr[2] = L;
+        fArr[1] = L;
+        fArr[0] = L;
+        Path path = this.H0;
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, i, i2, this.I0, Path.Direction.CW);
     }
 }

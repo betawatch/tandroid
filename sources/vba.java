@@ -1,61 +1,101 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class vba implements Runnable {
-    public final /* synthetic */ byte a = 0;
-    public final /* synthetic */ nfa b;
-    public final /* synthetic */ wjb c;
-    public final /* synthetic */ k27 d;
-    public final /* synthetic */ int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class vba extends yfb implements is4 {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ xba c;
 
-    public /* synthetic */ vba(nfa nfaVar, wjb wjbVar, int i, k27 k27Var) {
-        this.b = nfaVar;
-        this.c = wjbVar;
-        this.e = i;
-        this.d = k27Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vba(xba xbaVar, zw2 zw2Var, byte b) {
+        super(2, zw2Var);
+        this.a = b;
+        this.c = xbaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        byte b = this.a;
+        xba xbaVar = this.c;
+        switch (b) {
             case 0:
-                hd[] hdVarArr = {new hd(3, this.c, this.b.getContext())};
-                int i = this.e;
-                int v0 = z3a.B(i).v0(this.d, null, new wh0(hdVarArr, (byte) 9));
-                if (v0 != 0) {
-                    gl.d3(new fca(hdVarArr, i, v0, (byte) 0), 500L);
-                    break;
-                }
-                break;
+                return new vba(xbaVar, zw2Var, (byte) 0);
             default:
-                nfa nfaVar = this.b;
-                Context context = nfaVar.getContext();
-                wjb wjbVar = this.c;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, wjbVar, context);
-                hd hdVar = alertDialog$Builder.a;
-                hdVar.Q0 = false;
-                k27 k27Var = this.d;
-                if (k27Var.b4()) {
-                    hdVar.S = k96.M0(2131744587, null);
-                    hdVar.U = k96.M0(2131744588, null);
-                } else {
-                    hdVar.S = k96.M0(2131744592, null);
-                    hdVar.U = k96.M0(2131744593, null);
-                }
-                alertDialog$Builder.j(k96.M0(2131744604, null), new zm(nfaVar, wjbVar, k27Var, this.e, (byte) 10));
-                ug8.y(null, 2131752577, alertDialog$Builder, null);
-                break;
+                return new vba(xbaVar, zw2Var, (byte) 1);
         }
     }
 
-    public /* synthetic */ vba(nfa nfaVar, wjb wjbVar, k27 k27Var, int i) {
-        this.b = nfaVar;
-        this.c = wjbVar;
-        this.d = k27Var;
-        this.e = i;
+    @Override // is4
+    public final Object invoke(Object obj, Object obj2) {
+        byte b = this.a;
+        f9c f9cVar = f9c.a;
+        ux2 ux2Var = (ux2) obj;
+        zw2 zw2Var = (zw2) obj2;
+        switch (b) {
+        }
+        return ((vba) create(ux2Var, zw2Var)).invokeSuspend(f9cVar);
+    }
+
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        byte b = this.a;
+        xba xbaVar = this.c;
+        vx2 vx2Var = vx2.a;
+        switch (b) {
+            case 0:
+                boolean z = this.b;
+                if (!z) {
+                    ixe.b(obj);
+                    mm4 data = xbaVar.b.getData();
+                    final AtomicReference atomicReference = xbaVar.c;
+                    nm4 nm4Var = new nm4() { // from class: uba
+                        @Override // nm4
+                        public final Object c(Object obj2, zw2 zw2Var) {
+                            atomicReference.set((l9a) obj2);
+                            return f9c.a;
+                        }
+
+                        public final boolean equals(Object obj2) {
+                            if ((obj2 instanceof nm4) && (obj2 instanceof uba)) {
+                                return new ga(atomicReference).equals(new ga(atomicReference));
+                            }
+                            return false;
+                        }
+
+                        public final int hashCode() {
+                            return ((((((((((AtomicReference.class.hashCode() + ((atomicReference != null ? r1.hashCode() : 0) * 31)) * 31) + 113762) * 31) - 869290769) * 31) + 1237) * 31) + 2) * 31) + 2;
+                        }
+                    };
+                    this.b = true;
+                    if (data.k(nm4Var, this) == vx2Var) {
+                        return vx2Var;
+                    }
+                } else {
+                    if (!z) {
+                        grb.i("call to 'resume' before 'invoke' with coroutine");
+                        return null;
+                    }
+                    ixe.b(obj);
+                }
+                return f9c.a;
+            default:
+                boolean z2 = this.b;
+                if (z2) {
+                    if (z2) {
+                        ixe.b(obj);
+                        return obj;
+                    }
+                    grb.i("call to 'resume' before 'invoke' with coroutine");
+                    return null;
+                }
+                ixe.b(obj);
+                mm4 data2 = xbaVar.b.getData();
+                this.b = true;
+                Object a = qme.a(data2, this);
+                return a == vx2Var ? vx2Var : a;
+        }
     }
 }

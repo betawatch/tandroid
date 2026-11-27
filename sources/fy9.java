@@ -1,22 +1,66 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fy9 extends i49 {
-    public final /* synthetic */ iy9 a;
+public final /* synthetic */ class fy9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ky9 b;
 
-    public fy9(iy9 iy9Var) {
-        this.a = iy9Var;
+    public /* synthetic */ fy9(ky9 ky9Var, byte b) {
+        this.a = b;
+        this.b = ky9Var;
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        iy9 iy9Var = this.a;
-        if (iy9Var.n1.J1) {
-            gl.t1(iy9Var.X1);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ky9 ky9Var = this.b;
+        switch (b) {
+            case 0:
+                fy9 fy9Var = ky9Var.a0;
+                if (ky9Var.x != null) {
+                    ky9Var.b0 = r1.S() / ky9Var.x.U();
+                    jy9 jy9Var = ky9Var.O;
+                    if (jy9Var != null) {
+                        jy9Var.Bc = (ky9Var.x.U() - ky9Var.x.S()) / 1000;
+                        ky9Var.O.W3();
+                        xy9 seekBarWaveform = ky9Var.O.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f = ky9Var.b0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f;
+                            wb2 wb2Var = seekBarWaveform.n;
+                            if (wb2Var != null) {
+                                wb2Var.invalidate();
+                            }
+                        }
+                    }
+                    if (ky9Var.x.c0()) {
+                        hl.r(fy9Var);
+                        hl.d3(fy9Var, 16L);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                ky9Var.c();
+                break;
+            case 2:
+                ky9Var.b();
+                break;
+            default:
+                if (ky9Var.d == null) {
+                    hl.c3(new fy9(ky9Var, (byte) 2));
+                    wb2 wb2Var2 = ky9Var.P;
+                    if (wb2Var2 != null) {
+                        wb2Var2.setVisibility(0);
+                        ky9Var.P.invalidate();
+                    }
+                }
+                MediaController.z().J0();
+                break;
         }
-        iy9Var.a1();
     }
 }

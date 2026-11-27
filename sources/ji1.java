@@ -1,84 +1,143 @@
 // default package
 
-import android.view.KeyEvent;
-import java.util.HashSet;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ji1 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ji1 implements vs4 {
+    public final mx2 a;
+    public final int b;
+    public final x01 c;
+    public final /* synthetic */ byte d;
+    public final Object e;
 
-    public /* synthetic */ ji1(lv3 lv3Var, boolean z, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
-        this.a = (byte) 4;
-        this.c = lv3Var;
-        this.b = z;
-        this.d = tL_messages_getInlineBotResults;
-        this.e = str;
+    public ji1(Object obj, mx2 mx2Var, int i, x01 x01Var, byte b) {
+        this.d = b;
+        this.a = mx2Var;
+        this.b = i;
+        this.c = x01Var;
+        this.e = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.d;
-        Object obj2 = this.e;
-        Object obj3 = this.c;
+    @Override // vs4
+    public final mm4 D(int i, x01 x01Var) {
+        x01 x01Var2;
+        mx2 mx2Var = this.a;
+        mx2Var.getClass();
+        x01 x01Var3 = x01.a;
+        x01 x01Var4 = this.c;
+        int i2 = this.b;
+        if (x01Var != x01Var3) {
+            x01Var2 = x01Var;
+        } else {
+            if (i2 != -3) {
+                if (i != -3) {
+                    if (i2 != -2) {
+                        if (i != -2) {
+                            i += i2;
+                            if (i < 0) {
+                                i = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                            }
+                        }
+                    }
+                }
+                i = i2;
+            }
+            x01Var2 = x01Var4;
+        }
+        if (mx2Var.equals(mx2Var) && i == i2 && x01Var2 == x01Var4) {
+            return this;
+        }
+        byte b = this.d;
+        Object obj = this.e;
         switch (b) {
             case 0:
-                gl.c3(new z2a((KeyEvent.Callback) obj3, tL_error, obj, obj2, this.b, tLObject, (byte) 2));
-                break;
-            case 1:
-                gl.c3(new z77(obj3, obj, (Object) tLObject, obj2, this.b, (byte) 7));
-                break;
-            case 2:
-                gl.c3(new z2a((c92) obj3, (TLRPC.TL_channels_toggleUsername) obj, tLObject, (TLRPC.TL_username) obj2, this.b, tL_error));
-                break;
-            case 3:
-                gl.c3(new z2a((q03) obj3, tLObject, (u41) obj, this.b, (HashSet) obj2, tL_error));
-                break;
-            case 4:
-                gl.c3(new z77(obj3, (Object) tLObject, this.b, obj, obj2, (byte) 11));
-                break;
-            case 5:
-                gl.c3(new z77(obj3, obj, this.b, obj2, (Object) tLObject, (byte) 12));
-                break;
-            case 6:
-                gl.c3(new z77(obj3, (Object) tLObject, obj, this.b, obj2, (byte) 13));
-                break;
+                return new ji1((a83) obj, mx2Var, i, x01Var2, (byte) 0);
             default:
-                gl.c3(new z2a((KeyEvent.Callback) obj3, tL_error, obj2, obj, this.b, tLObject, (byte) 12));
-                break;
+                return new ji1((mm4) obj, mx2Var, i, x01Var2, (byte) 1);
         }
     }
 
-    public /* synthetic */ ji1(vqa vqaVar, m25 m25Var, TwoStepVerificationActivity twoStepVerificationActivity, boolean z) {
-        this.a = (byte) 7;
-        this.c = vqaVar;
-        this.e = m25Var;
-        this.d = twoStepVerificationActivity;
-        this.b = z;
+    public final Object a(nm4 nm4Var, zw2 zw2Var) {
+        Object b = xde.b(new hi1(nm4Var, this, null, (byte) 0), zw2Var);
+        return b == vx2.a ? b : f9c.a;
     }
 
-    public /* synthetic */ ji1(Object obj, Object obj2, Object obj3, boolean z, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = z;
+    public final String b() {
+        ArrayList arrayList = new ArrayList(4);
+        u24 u24Var = u24.a;
+        mx2 mx2Var = this.a;
+        if (mx2Var != u24Var) {
+            arrayList.add("context=" + mx2Var);
+        }
+        int i = this.b;
+        if (i != -3) {
+            arrayList.add("capacity=" + i);
+        }
+        x01 x01Var = x01.a;
+        x01 x01Var2 = this.c;
+        if (x01Var2 != x01Var) {
+            arrayList.add("onBufferOverflow=" + x01Var2);
+        }
+        return getClass().getSimpleName() + '[' + sl2.f(arrayList, ", ", null, null, null, 62) + ']';
     }
 
-    public /* synthetic */ ji1(Object obj, Object obj2, boolean z, Object obj3, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.b = z;
-        this.e = obj3;
+    @Override // mm4
+    public final Object k(nm4 nm4Var, zw2 zw2Var) {
+        Object a;
+        switch (this.d) {
+            case 1:
+                int i = this.b;
+                vx2 vx2Var = vx2.a;
+                f9c f9cVar = f9c.a;
+                if (i == -3) {
+                    mx2 context = zw2Var.getContext();
+                    Boolean bool = Boolean.FALSE;
+                    xm2 xm2Var = new xm2((byte) 2);
+                    mx2 mx2Var = this.a;
+                    mx2 plus = !((Boolean) mx2Var.fold(bool, xm2Var)).booleanValue() ? context.plus(mx2Var) : g4e.a(context, mx2Var, false);
+                    if (ur5.a(plus, context)) {
+                        a = ((mm4) this.e).k(nm4Var, zw2Var);
+                        if (a != vx2Var) {
+                            a = f9cVar;
+                        }
+                        if (a != vx2Var) {
+                            return f9cVar;
+                        }
+                    } else {
+                        rj2 rj2Var = rj2.b;
+                        if (ur5.a(plus.get(rj2Var), context.get(rj2Var))) {
+                            mx2 context2 = zw2Var.getContext();
+                            if (!(nm4Var instanceof d8a)) {
+                                nm4Var = new an4(nm4Var, context2);
+                            }
+                            a = jvd.a(plus, nm4Var, xhd.b(plus), new ii1(this, null, (byte) 1), zw2Var);
+                            if (a != vx2Var) {
+                                return f9cVar;
+                            }
+                        }
+                    }
+                    return a;
+                }
+                a = a(nm4Var, zw2Var);
+                if (a != vx2Var) {
+                    return f9cVar;
+                }
+                return a;
+            default:
+                return a(nm4Var, zw2Var);
+        }
+    }
+
+    public final String toString() {
+        byte b = this.d;
+        Object obj = this.e;
+        switch (b) {
+            case 0:
+                return "block[" + ((a83) obj) + "] -> " + b();
+            default:
+                return ((mm4) obj) + " -> " + b();
+        }
     }
 }

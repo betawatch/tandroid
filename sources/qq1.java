@@ -1,40 +1,58 @@
 // default package
 
 import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qq1 extends ztb {
-    public final /* synthetic */ mu1 e;
+public final class qq1 extends f82 {
+    public final /* synthetic */ zu1 B0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qq1(mu1 mu1Var, Context context, int i, wjb wjbVar) {
-        super(i, wjbVar, context);
-        this.e = mu1Var;
+    public qq1(zu1 zu1Var, Context context, zu1 zu1Var2, boolean z, vnb vnbVar) {
+        super(context, zu1Var2, z, vnbVar);
+        this.B0 = zu1Var;
     }
 
-    @Override // ztb, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        a aVar;
-        if (getAlpha() == 0.0f) {
+    @Override // f82
+    public final boolean a() {
+        boolean z;
+        zu1 zu1Var = this.B0;
+        if (zu1Var.mb || zu1Var.isInPreviewMode()) {
             return false;
         }
-        mu1 mu1Var = this.e;
-        aVar = ((d) mu1Var).actionBar;
-        if (aVar.y() || mu1Var.T7()) {
+        z = ((e) zu1Var).inBubbleMode;
+        if (z || zu1Var.k0 == null || zu1Var.H3) {
             return false;
         }
-        return super.onTouchEvent(motionEvent);
+        return !zu1Var.k8() || zu1Var.x4;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f) {
-        if (getTranslationY() != f) {
-            invalidate();
+    @Override // f82
+    public final boolean d() {
+        zu1 zu1Var = this.B0;
+        TLRPC.User user = zu1Var.f;
+        if (user != null && user.linked_community_id != 0) {
+            zu1Var.showDialog(new xo2(zu1Var, zu1Var.f.linked_community_id, null, null));
+            return true;
         }
-        super.setTranslationY(f);
+        TLRPC.Chat chat = zu1Var.e;
+        if (chat == null || chat.linked_community_id == 0) {
+            return false;
+        }
+        zu1Var.showDialog(new xo2(zu1Var, zu1Var.e.linked_community_id, null, null));
+        return true;
+    }
+
+    @Override // f82
+    public final void f() {
+        zu1 zu1Var = this.B0;
+        zu1Var.Ca(zu1Var.j8() ? "" : null);
+    }
+
+    @Override // f82
+    public final boolean o() {
+        return this.B0.g4 == 3;
     }
 }

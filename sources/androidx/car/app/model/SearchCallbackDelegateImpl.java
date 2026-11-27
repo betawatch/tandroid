@@ -5,17 +5,17 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.ISearchCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class SearchCallbackDelegateImpl implements as9 {
+public class SearchCallbackDelegateImpl implements tv9 {
     private final ISearchCallback mStubCallback;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     static class SearchCallbackStub extends ISearchCallback.Stub {
-        private final xs9 mCallback;
+        private final qw9 mCallback;
 
-        public SearchCallbackStub(xs9 xs9Var) {
+        public SearchCallbackStub(qw9 qw9Var) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -39,31 +39,31 @@ public class SearchCallbackDelegateImpl implements as9 {
         }
     }
 
-    private SearchCallbackDelegateImpl(xs9 xs9Var) {
-        this.mStubCallback = new SearchCallbackStub(xs9Var);
+    private SearchCallbackDelegateImpl(qw9 qw9Var) {
+        this.mStubCallback = new SearchCallbackStub(qw9Var);
     }
 
-    public static as9 create(xs9 xs9Var) {
-        return new SearchCallbackDelegateImpl(xs9Var);
+    public static tv9 create(qw9 qw9Var) {
+        return new SearchCallbackDelegateImpl(qw9Var);
     }
 
-    public void sendSearchSubmitted(String str, cp7 cp7Var) {
+    public void sendSearchSubmitted(String str, cs7 cs7Var) {
         try {
             ISearchCallback iSearchCallback = this.mStubCallback;
             Objects.requireNonNull(iSearchCallback);
             iSearchCallback.onSearchSubmitted(str, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            grb.m(e);
         }
     }
 
-    public void sendSearchTextChanged(String str, cp7 cp7Var) {
+    public void sendSearchTextChanged(String str, cs7 cs7Var) {
         try {
             ISearchCallback iSearchCallback = this.mStubCallback;
             Objects.requireNonNull(iSearchCallback);
             iSearchCallback.onSearchTextChanged(str, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            grb.m(e);
         }
     }
 

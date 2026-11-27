@@ -1,104 +1,67 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class b2 extends pt5 implements fw2, ax2 {
-    public final sw2 d;
+public abstract class b2 extends zg0 implements qy0 {
+    public zg0 d;
+    public final String e;
 
-    public b2(sw2 sw2Var, boolean z) {
-        super(z);
-        y((bt5) sw2Var.get(pd5.c));
-        this.d = sw2Var.plus(this);
+    public b2(String str) {
+        this.a = null;
+        this.b = new ArrayList();
+        this.e = str;
     }
 
-    @Override // pt5
-    public String D() {
-        return super.D();
-    }
-
-    @Override // pt5
-    public final void G(Object obj) {
-        if (!(obj instanceof fp2)) {
-            Q(obj);
+    public final ByteBuffer d() {
+        ByteBuffer wrap;
+        long size = getSize();
+        String str = this.e;
+        if (size >= 4294967296L) {
+            byte[] bArr = new byte[16];
+            bArr[3] = 1;
+            bArr[4] = str.getBytes()[0];
+            bArr[5] = str.getBytes()[1];
+            bArr[6] = str.getBytes()[2];
+            bArr[7] = str.getBytes()[3];
+            wrap = ByteBuffer.wrap(bArr);
+            wrap.position(8);
+            wrap.putLong(getSize());
         } else {
-            fp2 fp2Var = (fp2) obj;
-            P(fp2Var.a, ex.a.getIntVolatile(fp2Var, fp2.b) != 0);
+            wrap = ByteBuffer.wrap(new byte[]{0, 0, 0, 0, str.getBytes()[0], str.getBytes()[1], str.getBytes()[2], str.getBytes()[3]});
+            wrap.putInt((int) getSize());
         }
+        wrap.rewind();
+        return wrap;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void R(dx2 dx2Var, b2 b2Var, eq4 eq4Var) {
-        int ordinal = dx2Var.ordinal();
-        g5c g5cVar = g5c.a;
-        if (ordinal == 0) {
-            try {
-                r3c.c(dle.a(((of0) eq4Var).create(b2Var, this)), g5cVar);
-                return;
-            } finally {
-                resumeWith(new sa9(th));
-            }
-        }
-        if (ordinal != 1) {
-            if (ordinal == 2) {
-                dle.a(((of0) eq4Var).create(b2Var, this)).resumeWith(g5cVar);
-                return;
-            }
-            if (ordinal != 3) {
-                throw new gp2();
-            }
-            try {
-                sw2 sw2Var = this.d;
-                Object c = edd.c(sw2Var, null);
-                try {
-                    r3c.a(2, eq4Var);
-                    Object invoke = eq4Var.invoke(b2Var, this);
-                    if (invoke != bx2.a) {
-                        resumeWith(invoke);
-                    }
-                } finally {
-                    edd.a(sw2Var, c);
-                }
-            } catch (Throwable th) {
-            }
-        }
+    @Override // qy0
+    public void getBox(WritableByteChannel writableByteChannel) {
+        writableByteChannel.write(d());
+        c(writableByteChannel);
     }
 
-    @Override // ax2
-    public final sw2 c() {
+    @Override // qy0
+    public final qv2 getParent() {
         return this.d;
     }
 
-    @Override // fw2
-    public final sw2 getContext() {
-        return this.d;
+    @Override // qy0
+    public long getSize() {
+        long b = b();
+        return b + (8 + b >= 4294967296L ? 16 : 8);
     }
 
-    @Override // pt5
-    public final String l() {
-        return getClass().getSimpleName().concat(" was cancelled");
+    @Override // qy0
+    public final String getType() {
+        return this.e;
     }
 
-    @Override // fw2
-    public final void resumeWith(Object obj) {
-        Throwable a = ta9.a(obj);
-        if (a != null) {
-            obj = new fp2(a, false);
-        }
-        Object C = C(obj);
-        if (C == fad.b) {
-            return;
-        }
-        g(C);
-    }
-
-    @Override // pt5
-    public final void x(gp2 gp2Var) {
-        c9e.a(this.d, gp2Var);
-    }
-
-    public void Q(Object obj) {
-    }
-
-    public void P(Throwable th, boolean z) {
+    @Override // qy0
+    public final void setParent(qv2 qv2Var) {
+        this.d = (zg0) qv2Var;
     }
 }

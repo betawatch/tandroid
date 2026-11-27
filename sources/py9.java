@@ -1,26 +1,13 @@
 // default package
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class py9 {
+    public final byte[] a;
+    public final byte[] b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class py9 extends y11 {
-    public int c;
-
-    @Override // q11, tjb
-    public final void updateColors() {
-        super.updateColors();
-        try {
-            int themedColor = getThemedColor(bkb.xj);
-            be0 be0Var = this.a;
-            if (be0Var != null && themedColor != this.c) {
-                this.c = themedColor;
-                be0Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN));
-            }
-            invalidate();
-        } catch (Exception e) {
-            fa4.g(e, true);
-        }
+    public py9(byte[] bArr, byte[] bArr2) {
+        this.a = bArr;
+        this.b = bArr2;
     }
 }

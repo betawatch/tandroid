@@ -1,54 +1,87 @@
 // default package
 
-import android.text.TextUtils;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class z73 extends ja {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final String g;
-    public final int h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class z73 implements nm4 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public z73(int i, int i2, int i3, int i4, CharSequence charSequence, String str) {
-        super(2, false);
-        this.h = i;
-        this.c = i2;
-        this.d = i3;
-        this.e = i4;
-        this.f = charSequence;
-        this.g = str;
+    public /* synthetic */ z73(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    public static z73 b(CharSequence charSequence, String str) {
-        return new z73(-1, 0, 0, 0, charSequence, str);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof z73)) {
-            return false;
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x006f  */
+    @Override // nm4
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object c(Object obj, zw2 zw2Var) {
+        y73 y73Var;
+        int i;
+        Object g;
+        byte b = this.a;
+        f9c f9cVar = f9c.a;
+        vx2 vx2Var = vx2.a;
+        Object obj2 = this.b;
+        switch (b) {
+            case 0:
+                if (zw2Var instanceof y73) {
+                    y73Var = (y73) zw2Var;
+                    int i2 = y73Var.b;
+                    if ((i2 & TLObject.FLAG_31) != 0) {
+                        y73Var.b = i2 - TLObject.FLAG_31;
+                        Object obj3 = y73Var.a;
+                        i = y73Var.b;
+                        if (i != 0) {
+                            ixe.b(obj3);
+                            nm4 nm4Var = (nm4) obj2;
+                            i0b i0bVar = (i0b) obj;
+                            if (i0bVar instanceof a59) {
+                                throw ((a59) i0bVar).b;
+                            }
+                            if (i0bVar instanceof k63) {
+                                Object obj4 = ((k63) i0bVar).b;
+                                y73Var.b = 1;
+                                return nm4Var.c(obj4, y73Var) == vx2Var ? vx2Var : f9cVar;
+                            }
+                            if (!(i0bVar instanceof sh4 ? true : i0bVar instanceof n8c)) {
+                                throw new zp2();
+                            }
+                            grb.i("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
+                        } else {
+                            if (i == 1) {
+                                ixe.b(obj3);
+                                return f9cVar;
+                            }
+                            grb.i("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        return null;
+                    }
+                }
+                y73Var = new y73(this, zw2Var);
+                Object obj32 = y73Var.a;
+                i = y73Var.b;
+                if (i != 0) {
+                }
+                return null;
+            case 1:
+                o83 o83Var = (o83) obj2;
+                return ((o83Var.h.r() instanceof sh4) || (g = o83Var.g(true, zw2Var)) != vx2Var) ? f9cVar : g;
+            default:
+                o9a o9aVar = (o9a) obj;
+                yja yjaVar = (yja) obj2;
+                o9aVar.getClass();
+                yjaVar.h = o9aVar;
+                if (yjaVar.j) {
+                    yjaVar.j = false;
+                    yjaVar.b();
+                }
+                Object e = yjaVar.e(o9aVar.a.a, vja.a, zw2Var);
+                return e == vx2Var ? e : f9cVar;
         }
-        z73 z73Var = (z73) obj;
-        CharSequence charSequence = z73Var.f;
-        int i = z73Var.a;
-        int i2 = this.a;
-        if (i != i2) {
-            return false;
-        }
-        CharSequence charSequence2 = this.f;
-        if (i2 == 1 || i2 == 4 || i2 == 3 || i2 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
-        }
-        if (i2 == 2) {
-            return z73Var.h == this.h && TextUtils.equals(charSequence2, charSequence) && z73Var.d == this.d && z73Var.e == this.e && z73Var.c == this.c;
-        }
-        return true;
-    }
-
-    public z73(int i, String str) {
-        super(i, false);
-        this.f = str;
     }
 }

@@ -1,28 +1,58 @@
 // default package
 
-import android.content.Context;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class cvb extends ovb {
-    public final /* synthetic */ qvb p3;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cvb(qvb qvbVar, Context context) {
-        super(qvbVar, context);
-        this.p3 = qvbVar;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum cvb extends rwb {
+    public cvb() {
+        super("BeforeAttributeName", 33);
     }
 
-    @Override // o39
-    public final boolean S0() {
-        ArrayList arrayList = this.p3.b;
-        return (getAdapter() == null || this.W1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((ivb) arrayList.get(0)).c == null || ((ivb) arrayList.get(0)).c.id != 1 ? getAdapter().b() > 1 : getAdapter().b() > 2)) ? false : true;
-    }
-
-    @Override // o39, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        this.p3.y0();
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        dvb dvbVar = rwb.Y;
+        if (d == 0) {
+            bubVar.m(this);
+            bubVar.i.A();
+            ik1Var.q();
+            bubVar.c = dvbVar;
+            return;
+        }
+        if (d != ' ') {
+            if (d != '\"' && d != '\'') {
+                if (d == '/') {
+                    bubVar.c = rwb.f0;
+                    return;
+                }
+                mub mubVar = rwb.a;
+                if (d == 65535) {
+                    bubVar.l(this);
+                    bubVar.c = mubVar;
+                    return;
+                }
+                if (d == '\t' || d == '\n' || d == '\f' || d == '\r') {
+                    return;
+                }
+                switch (d) {
+                    case jn7.w0 /* 60 */:
+                    case jn7.x0 /* 61 */:
+                        break;
+                    case jn7.y0 /* 62 */:
+                        bubVar.k();
+                        bubVar.c = mubVar;
+                        break;
+                    default:
+                        bubVar.i.A();
+                        ik1Var.q();
+                        bubVar.c = dvbVar;
+                        break;
+                }
+                return;
+            }
+            bubVar.m(this);
+            bubVar.i.A();
+            bubVar.i.u(d);
+            bubVar.c = dvbVar;
+        }
     }
 }

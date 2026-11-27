@@ -1,501 +1,214 @@
 // default package
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
+import android.graphics.PorterDuff;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.core.widget.NestedScrollView;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class w68 implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ PhotoViewer b;
+public final class w68 extends nx0 {
+    public final TextView l1;
+    public final e29 m1;
+    public final b29 n1;
+    public final i56 o1;
+    public final long p1;
+    public boolean q1;
+    public TLRPC.TL_chatInviteExported r1;
+    public int s1;
+    public int t1;
+    public int u1;
 
-    public /* synthetic */ w68(PhotoViewer photoViewer, byte b) {
-        this.a = b;
-        this.b = photoViewer;
+    public w68(Context context, rc5 rc5Var, TLRPC.ChatFull chatFull, long j, boolean z) {
+        super(context, false);
+        boolean z2;
+        TLRPC.TL_chatInviteExported tL_chatInviteExported;
+        this.p1 = j;
+        this.r0 = true;
+        this.w0 = false;
+        this.v0 = false;
+        L(aob.d6);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.addView(linearLayout);
+        ImageView imageView = new ImageView(context);
+        int i = aob.i6;
+        hf0 f0 = aob.f0(aob.v0(i, this.J0), 1, -1);
+        uob M = yob.M(i);
+        vnb vnbVar = this.J0;
+        imageView.setBackground(f0);
+        yob.j(imageView, f0, null, M, vnbVar);
+        yob.s(imageView, aob.Aj, this.J0, PorterDuff.Mode.SRC_ATOP);
+        imageView.setImageResource(R.drawable.ic_layer_close);
+        imageView.setOnClickListener(new am7(this, (byte) 10));
+        int L = hl.L(8.0f);
+        imageView.setPadding(L, L, L, L);
+        frameLayout.addView(imageView, tre.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
+        i56 i56Var = new i56(context, rc5Var, this, true, z);
+        this.o1 = i56Var;
+        i56Var.setPermanent(true);
+        e29 e29Var = new e29(context);
+        this.m1 = e29Var;
+        b29 b29Var = new b29(R.raw.shared_link_enter, hl.L(90.0f), hl.L(90.0f), false, null);
+        this.n1 = b29Var;
+        b29Var.K(42);
+        e29Var.setAnimation(b29Var);
+        i56Var.d(0, null, false);
+        i56Var.b(true);
+        i56Var.setDelegate(new jz7(this, (byte) 2));
+        TextView textView = new TextView(context);
+        textView.setText(ob6.M0(2131748903, null));
+        textView.setTypeface(hl.o());
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(1);
+        yob.X(textView, aob.G6, null);
+        TextView textView2 = new TextView(context);
+        textView2.setText(ob6.M0(z ? 2131748664 : 2131748665, null));
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(1);
+        yob.X(textView2, aob.j5, null);
+        textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
+        TextView textView3 = new TextView(context);
+        this.l1 = textView3;
+        textView3.setText(ob6.M0(2131748449, null));
+        textView3.setGravity(17);
+        textView3.setEllipsize(TextUtils.TruncateAt.END);
+        textView3.setSingleLine(true);
+        textView3.setTypeface(hl.o());
+        textView3.setTextSize(1, 14.0f);
+        int i2 = aob.Fi;
+        yob.X(textView3, i2, null);
+        int L2 = hl.L(8.0f);
+        int o = vm2.o(aob.w0(null, i2, false), jn7.E1);
+        hf0 i0 = aob.i0(L2, L2, L2, L2, 0, o, o);
+        uob g = yob.g(i2, jn7.E1);
+        textView3.setBackground(i0);
+        yob.j(textView3, i0, null, g, null);
+        textView3.setLetterSpacing(0.025f);
+        textView3.setOnClickListener(new lw4(this, chatFull, rc5Var, (byte) 15));
+        linearLayout.addView(e29Var, tre.t(90, 90, 1, 0, 33, 0, 0));
+        linearLayout.addView(textView, tre.t(-1, -2, 1, 60, 10, 60, 0));
+        linearLayout.addView(textView2, tre.t(-1, -2, 1, 28, 7, 28, 2));
+        linearLayout.addView(i56Var, tre.o(-1, -2));
+        linearLayout.addView(textView3, tre.t(-1, 48, 1, 14, -2, 14, 6));
+        NestedScrollView nestedScrollView = new NestedScrollView(context);
+        nestedScrollView.setVerticalScrollBarEnabled(false);
+        nestedScrollView.addView(frameLayout);
+        this.O = nestedScrollView;
+        TLRPC.Chat M0 = uc7.s1(yac.t0).M0(Long.valueOf(j));
+        if (M0 != null && xc2.t0(M0)) {
+            i56Var.setLink("https://t.me/" + xc2.K(M0, false));
+            textView3.setVisibility(8);
+        } else {
+            if (chatFull == null || (tL_chatInviteExported = chatFull.exported_invite) == null) {
+                z2 = false;
+                E0(false);
+                e29Var.setBackground(aob.K(hl.L(90.0f), aob.w0(null, i2, z2)));
+                int L3 = hl.L(8.0f);
+                int o2 = vm2.o(aob.w0(null, i2, z2), jn7.E1);
+                textView3.setBackground(aob.i0(L3, L3, L3, L3, 0, o2, o2));
+                int w0 = aob.w0(null, aob.Ji, z2);
+                b29Var.L(w0, "Top");
+                b29Var.L(w0, "Bottom");
+                b29Var.L(w0, "Center");
+                i56Var.f();
+                int w02 = aob.w0(null, aob.h5, z2);
+                this.t1 = w02;
+                s0(w02);
+                this.s1 = w0;
+            }
+            i56Var.setLink(tL_chatInviteExported.link);
+        }
+        z2 = false;
+        e29Var.setBackground(aob.K(hl.L(90.0f), aob.w0(null, i2, z2)));
+        int L32 = hl.L(8.0f);
+        int o22 = vm2.o(aob.w0(null, i2, z2), jn7.E1);
+        textView3.setBackground(aob.i0(L32, L32, L32, L32, 0, o22, o22));
+        int w03 = aob.w0(null, aob.Ji, z2);
+        b29Var.L(w03, "Top");
+        b29Var.L(w03, "Bottom");
+        b29Var.L(w03, "Center");
+        i56Var.f();
+        int w022 = aob.w0(null, aob.h5, z2);
+        this.t1 = w022;
+        s0(w022);
+        this.s1 = w03;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x021f, code lost:
-    
-        if (r7.startsWith("https://" + na7.q1(r0.U).N2) == false) goto L80;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x048e  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0328  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0387  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x03de  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0423  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x044e  */
-    @Override // android.view.View.OnClickListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onClick(View view) {
-        o98 o98Var;
-        float f;
-        float f2;
-        int i;
-        TLRPC.Message message;
-        byte b = this.a;
-        String str = null;
-        float f3 = 0.0f;
-        byte b2 = 2;
-        final byte b3 = 0;
-        final byte b4 = 1;
-        final PhotoViewer photoViewer = this.b;
-        switch (b) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.d9;
-                float f4 = -photoViewer.D1.b.getStateOrientation();
-                if (Math.abs(f4) > 180.0f) {
-                    f4 = f4 < 0.0f ? f4 + 360.0f : -(360.0f - f4);
-                }
-                photoViewer.L(f4, photoViewer.D1.b.getStateMirror(), new l68(photoViewer, (byte) 26));
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.d9;
-                if (!photoViewer.f2 && !photoViewer.K0()) {
-                    photoViewer.V1();
-                    break;
-                }
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.d9;
-                if (!photoViewer.K0() && (o98Var = photoViewer.d) != null && o98Var.d() != null && !photoViewer.d.d().isEmpty()) {
-                    photoViewer.A2(!photoViewer.L, true);
-                    break;
-                }
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.d9;
-                photoViewer.Y0(true);
-                photoViewer.w(0, true);
-                break;
-            case 4:
-                Drawable[] drawableArr5 = PhotoViewer.d9;
-                k27 k27Var = photoViewer.S4;
-                if (k27Var == null || !k27Var.q4()) {
-                    if (photoViewer.G.v0.a()) {
-                        photoViewer.p0.U(null, null);
-                        break;
-                    }
-                } else {
-                    k27 k27Var2 = photoViewer.S4;
-                    if (k27Var2 != null && k27Var2.q4() && photoViewer.p0.getAlpha() > 0.5f) {
-                        final int i2 = photoViewer.S4.K1;
-                        final f53 f53Var = new f53();
-                        cs5 H = cs5.H(photoViewer.f0, f53Var, photoViewer.p0, true);
-                        H.b0(0.0f, -gl.L(46.0f));
-                        H.W(5);
-                        k27 k27Var3 = photoViewer.S4;
-                        if (k27Var3.W0 == null && k27Var3.X0 == null) {
-                            String str2 = k27Var3.T0;
-                            if (str2 != null) {
-                                break;
-                            }
-                            if (!y6c.h(i2).p() && !na7.q1(photoViewer.U).F3() && !photoViewer.S4.b1) {
-                                H.b(R.drawable.msg_block2, k96.M0(2131749131, null), new Runnable() { // from class: q68
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        byte b5 = b3;
-                                        f53 f53Var2 = f53Var;
-                                        int i3 = i2;
-                                        PhotoViewer photoViewer2 = photoViewer;
-                                        switch (b5) {
-                                            case 0:
-                                                Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                if (!y6c.h(i3).p()) {
-                                                    new jh8(photoViewer2.l4, 3, true).show();
-                                                    break;
-                                                } else {
-                                                    new u21(photoViewer2.f0, f53Var2).c(k96.M0(2131754485, null)).j();
-                                                    na7.q1(i3).l0(true);
-                                                    d dVar = photoViewer2.l4;
-                                                    if (dVar instanceof mu1) {
-                                                        mu1 mu1Var = (mu1) dVar;
-                                                        mu1Var.Pa(photoViewer2.S4);
-                                                        mu1Var.Ra(photoViewer2.S4);
-                                                        break;
-                                                    }
-                                                }
-                                                break;
-                                            default:
-                                                Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                if (!y6c.h(i3).p()) {
-                                                    new jh8(photoViewer2.l4, 3, true).show();
-                                                    break;
-                                                } else {
-                                                    new u21(photoViewer2.f0, f53Var2).c(k96.M0(2131754485, null)).j();
-                                                    na7.q1(i3).l0(true);
-                                                    d dVar2 = photoViewer2.l4;
-                                                    if (dVar2 instanceof mu1) {
-                                                        mu1 mu1Var2 = (mu1) dVar2;
-                                                        mu1Var2.Pa(photoViewer2.S4);
-                                                        mu1Var2.Ra(photoViewer2.S4);
-                                                        break;
-                                                    }
-                                                }
-                                                break;
-                                        }
-                                    }
-                                }, false);
-                            }
-                            if (photoViewer.S4.b1) {
-                                H.b(R.drawable.msg_info, k96.M0(2131754943, null), new h18(photoViewer, f53Var, (byte) 5), false);
-                                if ((photoViewer.l4 instanceof mu1) && !na7.q1(i2).F3()) {
-                                    H.j();
-                                    H.b(R.drawable.msg_cancel, k96.M0(2131746127, null), new Runnable() { // from class: q68
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            byte b5 = b4;
-                                            f53 f53Var2 = f53Var;
-                                            int i3 = i2;
-                                            PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b5) {
-                                                case 0:
-                                                    Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                    if (!y6c.h(i3).p()) {
-                                                        new jh8(photoViewer2.l4, 3, true).show();
-                                                        break;
-                                                    } else {
-                                                        new u21(photoViewer2.f0, f53Var2).c(k96.M0(2131754485, null)).j();
-                                                        na7.q1(i3).l0(true);
-                                                        d dVar = photoViewer2.l4;
-                                                        if (dVar instanceof mu1) {
-                                                            mu1 mu1Var = (mu1) dVar;
-                                                            mu1Var.Pa(photoViewer2.S4);
-                                                            mu1Var.Ra(photoViewer2.S4);
-                                                            break;
-                                                        }
-                                                    }
-                                                    break;
-                                                default:
-                                                    Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                    if (!y6c.h(i3).p()) {
-                                                        new jh8(photoViewer2.l4, 3, true).show();
-                                                        break;
-                                                    } else {
-                                                        new u21(photoViewer2.f0, f53Var2).c(k96.M0(2131754485, null)).j();
-                                                        na7.q1(i3).l0(true);
-                                                        d dVar2 = photoViewer2.l4;
-                                                        if (dVar2 instanceof mu1) {
-                                                            mu1 mu1Var2 = (mu1) dVar2;
-                                                            mu1Var2.Pa(photoViewer2.S4);
-                                                            mu1Var2.Ra(photoViewer2.S4);
-                                                            break;
-                                                        }
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    }, false);
-                                }
-                            }
-                            if (H.y() > 0) {
-                                H.a0();
-                                break;
-                            }
-                        }
-                        cs5 K = H.K();
-                        a8 a8Var = new a8(0, f53Var, photoViewer.F, true, false);
-                        a8Var.setItemHeight(44);
-                        a8Var.j(k96.M0(2131753753, null), R.drawable.msg_arrow_back, null);
-                        a8Var.getTextView().setPadding(k96.a0 ? 0 : gl.L(40.0f), 0, k96.a0 ? gl.L(40.0f) : 0, 0);
-                        a8Var.setOnClickListener(new ln1(H, b2));
-                        K.q(a8Var, nme.o(-1, -2));
-                        K.q(new j8(photoViewer.F, f53Var), nme.o(-1, 8));
-                        ArrayList arrayList = new ArrayList();
-                        String str3 = photoViewer.S4.T0;
-                        byte b5 = 6;
-                        if (str3 != null) {
-                            f = 300.0f;
-                            if (!TextUtils.equals(gl.J0(str3, false), na7.q1(photoViewer.U).N2)) {
-                                TextView textView = new TextView(photoViewer.F);
-                                zkb.X(textView, bkb.Wc, f53Var);
-                                textView.setTextSize(1, 14.0f);
-                                f2 = 10.0f;
-                                textView.setPadding(gl.L(18.0f), gl.L(10.0f), gl.L(18.0f), gl.L(10.0f));
-                                textView.setMaxWidth(gl.L(300.0f));
-                                Uri parse = Uri.parse(photoViewer.S4.T0);
-                                textView.setText(d01.w(parse, null, null, d01.a(parse.getHost()), null));
-                                int i3 = bkb.H5;
-                                ff0 Y = bkb.Y(photoViewer.y0(i3), 0, photoViewer.S4.X0 == null ? 6 : 0);
-                                vkb M = zkb.M(i3);
-                                textView.setBackground(Y);
-                                zkb.j(textView, Y, null, M, f53Var);
-                                textView.setOnClickListener(new v16(photoViewer, H, (byte) 17));
-                                textView.setOnLongClickListener(new u0(photoViewer, f53Var, (byte) 4));
-                                arrayList.add(textView);
-                                if (photoViewer.S4.W0 != null) {
-                                    TextView textView2 = new TextView(photoViewer.F);
-                                    zkb.X(textView2, bkb.D8, f53Var);
-                                    textView2.setTextSize(1, 14.0f);
-                                    textView2.setPadding(gl.L(18.0f), gl.L(f2), gl.L(18.0f), gl.L(f2));
-                                    textView2.setMaxWidth(gl.L(f));
-                                    textView2.setText(photoViewer.S4.W0);
-                                    int i4 = bkb.H5;
-                                    ff0 Y2 = bkb.Y(photoViewer.y0(i4), 0, photoViewer.S4.X0 == null ? 6 : 0);
-                                    vkb M2 = zkb.M(i4);
-                                    textView2.setBackground(Y2);
-                                    zkb.j(textView2, Y2, null, M2, f53Var);
-                                    textView2.setOnClickListener(new View.OnClickListener() { // from class: p68
-                                        @Override // android.view.View.OnClickListener
-                                        public final void onClick(View view2) {
-                                            byte b6 = b3;
-                                            f53 f53Var2 = f53Var;
-                                            PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b6) {
-                                                case 0:
-                                                    Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                    if (gl.g(photoViewer2.S4.W0)) {
-                                                        new u21(f11.a(photoViewer2.F), f53Var2).i(k96.M0(2131743953, null)).j();
-                                                        break;
-                                                    }
-                                                    break;
-                                                default:
-                                                    Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                    if (gl.g(photoViewer2.S4.X0)) {
-                                                        new u21(f11.a(photoViewer2.F), f53Var2).i(k96.M0(2131743953, null)).j();
-                                                        break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    arrayList.add(textView2);
-                                }
-                                if (photoViewer.S4.X0 != null) {
-                                    TextView textView3 = new TextView(photoViewer.F);
-                                    zkb.X(textView3, bkb.D8, f53Var);
-                                    textView3.setTextSize(1, 14.0f);
-                                    textView3.setPadding(gl.L(18.0f), gl.L(f2), gl.L(18.0f), gl.L(f2));
-                                    textView3.setMaxWidth(gl.L(f));
-                                    textView3.setText(photoViewer.S4.X0);
-                                    int i5 = bkb.H5;
-                                    ff0 Y3 = bkb.Y(photoViewer.y0(i5), 0, 6);
-                                    vkb M3 = zkb.M(i5);
-                                    textView3.setBackground(Y3);
-                                    zkb.j(textView3, Y3, null, M3, f53Var);
-                                    textView3.setOnClickListener(new View.OnClickListener() { // from class: p68
-                                        @Override // android.view.View.OnClickListener
-                                        public final void onClick(View view2) {
-                                            byte b6 = b4;
-                                            f53 f53Var2 = f53Var;
-                                            PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b6) {
-                                                case 0:
-                                                    Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                    if (gl.g(photoViewer2.S4.W0)) {
-                                                        new u21(f11.a(photoViewer2.F), f53Var2).i(k96.M0(2131743953, null)).j();
-                                                        break;
-                                                    }
-                                                    break;
-                                                default:
-                                                    Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                    if (gl.g(photoViewer2.S4.X0)) {
-                                                        new u21(f11.a(photoViewer2.F), f53Var2).i(k96.M0(2131743953, null)).j();
-                                                        break;
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    arrayList.add(textView3);
-                                }
-                                for (i = 0; i < arrayList.size(); i++) {
-                                    View view2 = (View) arrayList.get(i);
-                                    if (i > 0) {
-                                        FrameLayout frameLayout = new FrameLayout(photoViewer.F);
-                                        zkb.h(bkb.c7, f53Var, frameLayout);
-                                        LinearLayout.LayoutParams o = nme.o(-1, 1);
-                                        o.height = 1;
-                                        K.q(frameLayout, o);
-                                    }
-                                    K.q(view2, nme.o(-1, -2));
-                                }
-                                H.b(R.drawable.msg_channel, k96.M0(2131745011, null), new c10(H, K, b5), false);
-                                if (!y6c.h(i2).p()) {
-                                    H.b(R.drawable.msg_block2, k96.M0(2131749131, null), new Runnable() { // from class: q68
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            byte b52 = b3;
-                                            f53 f53Var2 = f53Var;
-                                            int i32 = i2;
-                                            PhotoViewer photoViewer2 = photoViewer;
-                                            switch (b52) {
-                                                case 0:
-                                                    Drawable[] drawableArr6 = PhotoViewer.d9;
-                                                    if (!y6c.h(i32).p()) {
-                                                        new jh8(photoViewer2.l4, 3, true).show();
-                                                        break;
-                                                    } else {
-                                                        new u21(photoViewer2.f0, f53Var2).c(k96.M0(2131754485, null)).j();
-                                                        na7.q1(i32).l0(true);
-                                                        d dVar = photoViewer2.l4;
-                                                        if (dVar instanceof mu1) {
-                                                            mu1 mu1Var = (mu1) dVar;
-                                                            mu1Var.Pa(photoViewer2.S4);
-                                                            mu1Var.Ra(photoViewer2.S4);
-                                                            break;
-                                                        }
-                                                    }
-                                                    break;
-                                                default:
-                                                    Drawable[] drawableArr7 = PhotoViewer.d9;
-                                                    if (!y6c.h(i32).p()) {
-                                                        new jh8(photoViewer2.l4, 3, true).show();
-                                                        break;
-                                                    } else {
-                                                        new u21(photoViewer2.f0, f53Var2).c(k96.M0(2131754485, null)).j();
-                                                        na7.q1(i32).l0(true);
-                                                        d dVar2 = photoViewer2.l4;
-                                                        if (dVar2 instanceof mu1) {
-                                                            mu1 mu1Var2 = (mu1) dVar2;
-                                                            mu1Var2.Pa(photoViewer2.S4);
-                                                            mu1Var2.Ra(photoViewer2.S4);
-                                                            break;
-                                                        }
-                                                    }
-                                                    break;
-                                            }
-                                        }
-                                    }, false);
-                                }
-                                if (photoViewer.S4.b1) {
-                                }
-                                if (H.y() > 0) {
-                                }
-                            }
-                        } else {
-                            f = 300.0f;
-                        }
-                        f2 = 10.0f;
-                        if (photoViewer.S4.W0 != null) {
-                        }
-                        if (photoViewer.S4.X0 != null) {
-                        }
-                        while (i < arrayList.size()) {
-                        }
-                        H.b(R.drawable.msg_channel, k96.M0(2131745011, null), new c10(H, K, b5), false);
-                        if (!y6c.h(i2).p()) {
-                        }
-                        if (photoViewer.S4.b1) {
-                        }
-                        if (H.y() > 0) {
-                        }
-                    }
-                }
-                break;
-            case 5:
-                Drawable[] drawableArr6 = PhotoViewer.d9;
-                k27 k27Var4 = photoViewer.S4;
-                if (k27Var4 != null && k27Var4.D2(true)) {
-                    lg2 lg2Var = photoViewer.K0;
-                    k27 k27Var5 = photoViewer.S4;
-                    LinearLayout linearLayout = lg2Var.b;
-                    if (k27Var5 != null && (message = k27Var5.k) != null && message.media != null && k27Var5.D2(true)) {
-                        int i6 = k27Var5.K1;
-                        TLRPC.MessageMedia messageMedia = k27Var5.k.media;
-                        ArrayList X = lbc.X(i6, messageMedia.document, messageMedia.alt_documents, 0, true);
-                        linearLayout.removeAllViews();
-                        int i7 = 0;
-                        while (i7 < X.size()) {
-                            hbc hbcVar = (hbc) X.get(i7);
-                            jbc a = hbcVar.a();
-                            String concat = k96.a0(str, str, 2131746258, Integer.valueOf(hbcVar.b())).concat(hbcVar.a ? " (" + k96.M0(2131746257, str) + ")" : "");
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                            if (a.b()) {
-                                spannableStringBuilder.append(gl.i0(a.g.size, false, false));
-                                spannableStringBuilder.append(k96.M0(2131746261, str));
-                            } else {
-                                SpannableString spannableString = new SpannableString("s ");
-                                cm2 cm2Var = new cm2(R.drawable.msg_mini_arrow_mediabold, 0);
-                                cm2Var.w = 90.0f;
-                                float L = gl.L(1.0f);
-                                cm2Var.r = f3;
-                                cm2Var.s = L;
-                                cm2Var.H = 0.85f;
-                                spannableString.setSpan(cm2Var, 0, 1, 33);
-                                spannableStringBuilder.append((CharSequence) spannableString);
-                                spannableStringBuilder.append(gl.i0(a.g.size, false, false));
-                            }
-                            a8 c = r7.c(false, false, linearLayout, 0, concat, false, null);
-                            c.setSubtext(spannableStringBuilder);
-                            c.d(-328966, -328966);
-                            c.b.setPadding(0, 0, 0, 0);
-                            c.setOnClickListener(new b0(lg2Var, k27Var5, hbcVar, (byte) 24));
-                            c.setSelectorColor(268435455);
-                            i7++;
-                            str = null;
-                            f3 = 0.0f;
-                        }
-                        photoViewer.u0.b();
-                        break;
-                    }
-                }
-                x10 x10Var = photoViewer.G;
-                if (x10Var != null && x10Var.getActionBarMenuOnItemClick() != null) {
-                    photoViewer.G.getActionBarMenuOnItemClick().b(2);
-                    photoViewer.p0.U(null, null);
-                    break;
-                }
-                break;
-            case 6:
-                Drawable[] drawableArr7 = PhotoViewer.d9;
-                Activity activity = photoViewer.E;
-                if (activity != null) {
-                    photoViewer.Z3 = false;
-                    photoViewer.Y3 = (byte) 2;
-                    if (photoViewer.X3 == -10) {
-                        photoViewer.X3 = activity.getRequestedOrientation();
-                    }
-                    photoViewer.E.setRequestedOrientation(1);
-                    break;
-                }
-                break;
-            case 7:
-                Drawable[] drawableArr8 = PhotoViewer.d9;
-                k27 k27Var6 = photoViewer.S4;
-                if (k27Var6 != null && k27Var6.q4()) {
-                    d dVar = photoViewer.l4;
-                    if (dVar instanceof mu1) {
-                        ((mu1) dVar).O9(photoViewer.S4, false, true);
-                    }
-                    photoViewer.B(true, false);
-                    String str4 = photoViewer.S4.T0;
-                    if (str4 != null) {
-                        Context context = LaunchActivity.H1;
-                        if (context == null) {
-                            context = photoViewer.F;
-                        }
-                        d01.s(context, Uri.parse(str4), true, false, false, null, null, false, na7.q1(photoViewer.U).k4.A2.f, false, false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                Drawable[] drawableArr9 = PhotoViewer.d9;
-                photoViewer.p0.p();
-                photoViewer.B(false, false);
-                Activity activity2 = photoViewer.E;
-                if (activity2 instanceof LaunchActivity) {
-                    ((LaunchActivity) activity2).u0(new zka(), false, true);
-                    break;
-                }
-                break;
+    @Override // nx0
+    public final void A(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.n6));
+        hashSet.add(Integer.valueOf(aob.Ji));
+    }
+
+    public final void E0(boolean z) {
+        if (this.q1) {
+            return;
         }
+        this.q1 = true;
+        TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
+        tL_messages_exportChatInvite.legacy_revoke_permanent = true;
+        tL_messages_exportChatInvite.peer = uc7.s1(this.a).j1(-this.p1);
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_exportChatInvite, new q81((byte) 9, this, z));
+    }
+
+    public final void F0(TLRPC.ChatFull chatFull, rc5 rc5Var) {
+        ck6 ck6Var = new ck6(chatFull.id, 0, 0L);
+        ck6Var.l0(chatFull, chatFull.exported_invite);
+        rc5Var.presentFragment(ck6Var);
+        super.dismiss();
+    }
+
+    @Override // nx0
+    public final ArrayList S() {
+        return new ArrayList();
+    }
+
+    @Override // nx0
+    public final void p0() {
+        super.p0();
+        try {
+            e29 e29Var = this.m1;
+            if (e29Var != null) {
+                aob.A1(aob.w0(null, aob.Fi, false), e29Var.getBackground());
+            }
+            int o = vm2.o(aob.w0(null, aob.Fi, false), jn7.E1);
+            TextView textView = this.l1;
+            if (textView != null && o != this.u1) {
+                this.u1 = o;
+                aob.F1(textView.getBackground(), o, true);
+            }
+            int w0 = aob.w0(null, aob.Ji, false);
+            b29 b29Var = this.n1;
+            if (b29Var != null && w0 != this.s1) {
+                this.s1 = w0;
+                b29Var.L(w0, "Top");
+                b29Var.L(w0, "Bottom");
+                b29Var.L(w0, "Center");
+            }
+            int w02 = aob.w0(null, aob.h5, false);
+            if (w02 != this.t1) {
+                this.t1 = w02;
+                s0(w02);
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // nx0, android.app.Dialog
+    public final void show() {
+        super.show();
+        hl.d3(new x38(this, (byte) 3), 50L);
     }
 }

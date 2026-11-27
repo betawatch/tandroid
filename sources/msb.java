@@ -1,14 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum msb extends qsb {
-    public msb() {
-        super("ScriptData", 5);
-    }
+import java.util.concurrent.CancellationException;
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        qsb.d(aqbVar, zj1Var, this, qsb.G);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class msb extends CancellationException {
+    public final transient nsb a;
+
+    public msb(String str, nsb nsbVar) {
+        super(str);
+        this.a = nsbVar;
     }
 }

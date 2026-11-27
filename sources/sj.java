@@ -1,35 +1,21 @@
 // default package
 
-import android.content.Context;
+import android.util.Log;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class sj {
-    public volatile Object a;
-    public final Object b;
-    public volatile Object c;
+public final /* synthetic */ class sj {
+    public final /* synthetic */ tj a;
 
-    public sj(vq7 vq7Var) {
-        ize izeVar = new ize((byte) 18);
-        pd5 pd5Var = new pd5((byte) 28);
-        this.c = izeVar;
-        this.b = new ArrayList();
-        this.a = pd5Var;
-        vq7Var.a(new zf(this));
-    }
-
-    public final boolean a() {
-        try {
-            Context context = (Context) this.b;
-            return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
-        } catch (Exception e) {
-            xgd.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e);
-            return false;
+    public final void a(uy2 uy2Var) {
+        tj tjVar = this.a;
+        synchronized (tjVar) {
+            ((ArrayList) tjVar.b).add(uy2Var);
+            Object obj = tjVar.c;
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
+            }
         }
-    }
-
-    public /* synthetic */ sj(Object obj) {
-        this.b = obj;
     }
 }

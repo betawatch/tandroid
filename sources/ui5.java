@@ -1,65 +1,25 @@
 // default package
 
-import android.app.Activity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.FrameLayout;
-import java.util.List;
-import org.telegram.ui.ActionBar.d;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public interface ui5 {
-    d getBackgroundFragment();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public abstract class ui5 extends TextureView {
+    @Override // android.view.View
+    public void invalidate() {
+        if (si5.c) {
+            si5.b.add(this);
+        } else {
+            super.invalidate();
+        }
+    }
 
-    fx0 getBottomSheet();
-
-    List getFragmentStack();
-
-    d getLastFragment();
-
-    m17 getMessageDrawableOutMediaStart();
-
-    m17 getMessageDrawableOutStart();
-
-    FrameLayout getOverlayContainerView();
-
-    Activity getParentActivity();
-
-    List getPulledDialogs();
-
-    d getSafeLastFragment();
-
-    float getThemeAnimationValue();
-
-    ViewGroup getView();
-
-    Window getWindow();
-
-    void setBackgroundView(View view);
-
-    void setDelegate(qi5 qi5Var);
-
-    void setDrawerLayoutContainer(mq3 mq3Var);
-
-    void setFragmentPanTranslationOffset(int i);
-
-    void setFragmentStack(List list);
-
-    void setHighlightActionButtons(boolean z);
-
-    void setInBubbleMode(boolean z);
-
-    void setIsSheet(boolean z);
-
-    void setNavigationBarColor(int i);
-
-    void setPulledDialogs(List list);
-
-    void setRemoveActionBarExtraHeight(boolean z);
-
-    void setUseAlphaAnimations(boolean z);
-
-    void setWindow(Window window);
+    @Override // android.view.View
+    public final void invalidate(int i, int i2, int i3, int i4) {
+        if (si5.c) {
+            si5.b.add(this);
+        } else {
+            super.invalidate(i, i2, i3, i4);
+        }
+    }
 }

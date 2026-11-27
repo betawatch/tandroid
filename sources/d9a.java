@@ -1,47 +1,26 @@
 // default package
 
-import android.graphics.RectF;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class d9a {
-    public final l01 a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public boolean l;
+public final class d9a implements View.OnClickListener {
+    public final /* synthetic */ cz1 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ f9a c;
 
-    public d9a(l01 l01Var) {
-        this.a = l01Var;
+    public d9a(f9a f9aVar, cz1 cz1Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = f9aVar;
+        this.a = cz1Var;
+        this.b = tL_authorization;
     }
 
-    public final void a(RectF rectF) {
-        l01 l01Var = this.a;
-        if (l01Var.n() == 4) {
-            float f = this.b;
-            float f2 = this.k;
-            float f3 = this.c;
-            rectF.set(f - f2, f3 - f2, f + f2, f3 + f2);
-            rectF.union(this.d, this.e);
-            rectF.union(this.i, this.j);
-        } else {
-            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
-            float f4 = this.b;
-            float f5 = max * 1.42f;
-            float f6 = this.c;
-            rectF.set(f4 - f5, f6 - f5, f4 + f5, f6 + f5);
-            if (l01Var.n() == 3) {
-                rectF.union(this.i, this.j);
-            }
-        }
-        float f7 = (-this.f) - 3.0f;
-        rectF.inset(f7, f7);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ((Switch) this.a.f).c(!r3.h, true);
+        this.b.call_requests_disabled = !r3.h;
+        this.c.F0();
     }
 }

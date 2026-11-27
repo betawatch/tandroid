@@ -5,22 +5,22 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class LocationAvailability extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<LocationAvailability> CREATOR = new xff((byte) 6);
+public final class LocationAvailability extends c4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<LocationAvailability> CREATOR = new nkf((byte) 6);
     public final int a;
     public final int b;
     public final long c;
     public final short d;
-    public final v5d[] e;
+    public final oad[] e;
 
-    public LocationAvailability(int i, int i2, int i3, long j, v5d[] v5dVarArr) {
+    public LocationAvailability(int i, int i2, int i3, long j, oad[] oadVarArr) {
         this.d = i < 1000 ? (short) 0 : (short) 1000;
         this.a = i2;
         this.b = i3;
         this.c = j;
-        this.e = v5dVarArr;
+        this.e = oadVarArr;
     }
 
     public final boolean equals(Object obj) {
@@ -41,20 +41,20 @@ public final class LocationAvailability extends b4 implements ReflectedParcelabl
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        jte.q(parcel, 2, 4);
+        bye.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        jte.q(parcel, 3, 8);
+        bye.q(parcel, 3, 8);
         parcel.writeLong(this.c);
-        jte.q(parcel, 4, 4);
+        bye.q(parcel, 4, 4);
         short s = this.d;
         parcel.writeInt(s);
-        jte.o(parcel, 5, this.e, i);
+        bye.o(parcel, 5, this.e, i);
         int i2 = s >= 1000 ? 0 : 1;
-        jte.q(parcel, 6, 4);
+        bye.q(parcel, 6, 4);
         parcel.writeInt(i2);
-        jte.s(parcel, r);
+        bye.s(parcel, r);
     }
 }

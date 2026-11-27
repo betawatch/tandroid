@@ -1,19 +1,173 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class bu6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cu6 b;
+import android.os.Looper;
+import android.util.SparseIntArray;
+import com.google.android.gms.cast.MediaInfo;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import j$.util.DesugarCollections;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-    public /* synthetic */ bu6(cu6 cu6Var, byte b) {
-        this.a = b;
-        this.b = cu6Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class bu6 {
+    public long b;
+    public final v99 c;
+    public final tff f;
+    public BasePendingResult k;
+    public BasePendingResult l;
+    public final Set m = DesugarCollections.synchronizedSet(new HashSet());
+    public final he6 a = new he6("MediaQueue", null);
+    public ArrayList d = new ArrayList();
+    public final SparseIntArray e = new SparseIntArray();
+    public final ArrayList g = new ArrayList();
+    public final ArrayDeque h = new ArrayDeque(20);
+    public final b99 i = new b99(Looper.getMainLooper(), (byte) 3);
+    public final vw3 j = new vw3(this, 4);
+
+    public bu6(v99 v99Var) {
+        this.c = v99Var;
+        v99Var.p(new sff(this, (byte) 1));
+        this.f = new tff(this);
+        this.b = d();
+        c();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        this.b.i();
+    public static /* bridge */ /* synthetic */ void a(bu6 bu6Var) {
+        SparseIntArray sparseIntArray = bu6Var.e;
+        sparseIntArray.clear();
+        for (int i = 0; i < bu6Var.d.size(); i++) {
+            sparseIntArray.put(((Integer) bu6Var.d.get(i)).intValue(), i);
+        }
+    }
+
+    public final void b() {
+        h();
+        this.d.clear();
+        this.e.clear();
+        this.f.evictAll();
+        this.g.clear();
+        this.i.removeCallbacks(this.j);
+        this.h.clear();
+        BasePendingResult basePendingResult = this.l;
+        if (basePendingResult != null) {
+            basePendingResult.c();
+            this.l = null;
+        }
+        BasePendingResult basePendingResult2 = this.k;
+        if (basePendingResult2 != null) {
+            basePendingResult2.c();
+            this.k = null;
+        }
+        f();
+        e();
+    }
+
+    public final void c() {
+        BasePendingResult basePendingResult;
+        BasePendingResult basePendingResult2;
+        xve.e("Must be called from the main thread.");
+        if (this.b == 0 || (basePendingResult = this.l) != null) {
+            return;
+        }
+        if (basePendingResult != null) {
+            basePendingResult.c();
+            this.l = null;
+        }
+        BasePendingResult basePendingResult3 = this.k;
+        if (basePendingResult3 != null) {
+            basePendingResult3.c();
+            this.k = null;
+        }
+        v99 v99Var = this.c;
+        v99Var.getClass();
+        xve.e("Must be called from the main thread.");
+        if (v99Var.w()) {
+            qad qadVar = new qad(v99Var);
+            v99.x(qadVar);
+            basePendingResult2 = qadVar;
+        } else {
+            basePendingResult2 = v99.t();
+        }
+        this.l = basePendingResult2;
+        basePendingResult2.i(new baf(this, (byte) 0));
+    }
+
+    public final long d() {
+        j07 e = this.c.e();
+        if (e == null) {
+            return 0L;
+        }
+        MediaInfo mediaInfo = e.a;
+        int i = mediaInfo == null ? -1 : mediaInfo.b;
+        int i2 = e.e;
+        int i3 = e.f;
+        int i4 = e.x;
+        if (i2 == 1) {
+            if (i3 != 1) {
+                if (i3 != 2) {
+                    if (i3 != 3) {
+                        return 0L;
+                    }
+                } else if (i != 2) {
+                    return 0L;
+                }
+            }
+            if (i4 == 0) {
+                return 0L;
+            }
+        }
+        return e.b;
+    }
+
+    public final void e() {
+        synchronized (this.m) {
+            Iterator it = this.m.iterator();
+            if (it.hasNext()) {
+                if (it.next() != null) {
+                    throw new ClassCastException();
+                }
+                throw null;
+            }
+        }
+    }
+
+    public final void f() {
+        synchronized (this.m) {
+            Iterator it = this.m.iterator();
+            if (it.hasNext()) {
+                if (it.next() != null) {
+                    throw new ClassCastException();
+                }
+                throw null;
+            }
+        }
+    }
+
+    public final void g() {
+        synchronized (this.m) {
+            Iterator it = this.m.iterator();
+            if (it.hasNext()) {
+                if (it.next() != null) {
+                    throw new ClassCastException();
+                }
+                throw null;
+            }
+        }
+    }
+
+    public final void h() {
+        synchronized (this.m) {
+            Iterator it = this.m.iterator();
+            if (it.hasNext()) {
+                if (it.next() != null) {
+                    throw new ClassCastException();
+                }
+                throw null;
+            }
+        }
     }
 }

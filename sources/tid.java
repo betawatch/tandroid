@@ -1,52 +1,57 @@
 // default package
 
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class tid implements Cloneable {
-    public final vid a;
-    public vid b;
-    public boolean c = false;
+public final class tid extends ofd {
+    public final transient ybd h;
+    public final transient Object[] n;
+    public final transient boolean r;
 
-    public tid(vid vidVar) {
-        this.a = vidVar;
-        this.b = (vid) vidVar.a(4);
+    public tid(ybd ybdVar, Object[] objArr) {
+        super((byte) 0);
+        this.h = ybdVar;
+        this.n = objArr;
+        this.r = true;
     }
 
-    public final void a(vid vidVar) {
-        b();
-        vid vidVar2 = this.b;
-        ttd ttdVar = ttd.c;
-        ttdVar.getClass();
-        ttdVar.a(vidVar2.getClass()).d(vidVar2, vidVar);
-    }
-
-    public final void b() {
-        if (this.c) {
-            vid vidVar = (vid) this.b.a(4);
-            vid vidVar2 = this.b;
-            ttd ttdVar = ttd.c;
-            ttdVar.getClass();
-            ttdVar.a(vidVar.getClass()).d(vidVar, vidVar2);
-            this.b = vidVar;
-            this.c = false;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.h.get(key))) {
+                return true;
+            }
         }
+        return false;
     }
 
-    public final vid c() {
-        boolean z = this.c;
-        vid vidVar = this.b;
-        if (z) {
-            return vidVar;
+    @Override // qdd
+    public final int h(Object[] objArr) {
+        ted tedVar = this.f;
+        if (tedVar == null) {
+            tedVar = new oid(this);
+            this.f = tedVar;
         }
-        ttd ttdVar = ttd.c;
-        ttdVar.getClass();
-        ttdVar.a(vidVar.getClass()).b(vidVar);
-        this.c = true;
-        return this.b;
+        return tedVar.h(objArr);
     }
 
-    public final /* synthetic */ Object clone() {
-        tid tidVar = (tid) this.a.a(5);
-        tidVar.a(c());
-        return tidVar;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        ted tedVar = this.f;
+        if (tedVar == null) {
+            tedVar = new oid(this);
+            this.f = tedVar;
+        }
+        return tedVar.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.r ? 1 : 0;
     }
 }

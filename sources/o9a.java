@@ -1,98 +1,76 @@
 // default package
 
-import android.view.View;
-import android.widget.Toast;
-import org.telegram.ui.PhotoViewer;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class o9a implements View.OnClickListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ taa b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class o9a {
+    public static final n9a Companion = new n9a();
+    public static final h26[] d = {null, null, ure.a(new tg8())};
+    public final s9a a;
+    public final orb b;
+    public final Map c;
 
-    public /* synthetic */ o9a(taa taaVar, byte b) {
-        this.a = b;
-        this.b = taaVar;
+    public /* synthetic */ o9a(int i, s9a s9aVar, orb orbVar, Map map) {
+        if (1 != (i & 1)) {
+            sve.a(i, 1, m9a.a.d());
+            throw null;
+        }
+        this.a = s9aVar;
+        if ((i & 2) == 0) {
+            this.b = null;
+        } else {
+            this.b = orbVar;
+        }
+        if ((i & 4) == 0) {
+            this.c = null;
+        } else {
+            this.c = map;
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        byte b = this.a;
-        taa taaVar = this.b;
-        switch (b) {
-            case 0:
-                taaVar.P0(true);
-                break;
-            case 1:
-                taaVar.Z1.a(!r6.a.q, true);
-                taaVar.V0();
-                break;
-            case 2:
-                m8 m8Var = taaVar.E2;
-                if (m8Var != null && m8Var.isShowing()) {
-                    taaVar.E2.d(true);
-                }
-                taaVar.P0(false);
-                break;
-            case 3:
-                m8 m8Var2 = taaVar.E2;
-                if (m8Var2 != null && m8Var2.isShowing()) {
-                    taaVar.E2.d(true);
-                }
-                taaVar.P0(true);
-                break;
-            case 4:
-                String[] strArr = taaVar.j2;
-                if (taaVar.P1.m() == 0) {
-                    if (taaVar.i2 || strArr[0] != null) {
-                        taaVar.dismiss();
-                        PhotoViewer.r0().B(true, false);
-                        if (strArr[0] != null || !taaVar.g2) {
-                            taaVar.getContext();
-                            taaVar.F0();
-                            break;
-                        } else {
-                            taaVar.h2 = true;
-                            Toast.makeText(taaVar.getContext(), k96.M0(2131748587, null), 0).show();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                String[] strArr2 = taaVar.j2;
-                if (taaVar.P1.m() == 0) {
-                    if (taaVar.i2 || strArr2[0] != null) {
-                        taaVar.dismiss();
-                        if (strArr2[0] != null || !taaVar.g2) {
-                            taaVar.getContext();
-                            taaVar.F0();
-                            break;
-                        } else {
-                            taaVar.h2 = true;
-                            Toast.makeText(taaVar.getContext(), k96.M0(2131748587, null), 0).show();
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                String[] strArr3 = taaVar.j2;
-                if (taaVar.P1.m() == 0) {
-                    if (taaVar.i2 || strArr3[0] != null) {
-                        taaVar.dismiss();
-                        if (strArr3[0] != null || !taaVar.g2) {
-                            taaVar.getContext();
-                            taaVar.F0();
-                            break;
-                        } else {
-                            taaVar.h2 = true;
-                            Toast.makeText(taaVar.getContext(), k96.M0(2131748587, null), 0).show();
-                            break;
-                        }
-                    }
-                }
-                break;
+    public static o9a a(o9a o9aVar, s9a s9aVar, orb orbVar, Map map, int i) {
+        if ((i & 1) != 0) {
+            s9aVar = o9aVar.a;
         }
+        if ((i & 2) != 0) {
+            orbVar = o9aVar.b;
+        }
+        if ((i & 4) != 0) {
+            map = o9aVar.c;
+        }
+        o9aVar.getClass();
+        s9aVar.getClass();
+        return new o9a(s9aVar, orbVar, map);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof o9a)) {
+            return false;
+        }
+        o9a o9aVar = (o9a) obj;
+        return ur5.a(this.a, o9aVar.a) && ur5.a(this.b, o9aVar.b) && ur5.a(this.c, o9aVar.c);
+    }
+
+    public final int hashCode() {
+        int hashCode = this.a.hashCode() * 31;
+        orb orbVar = this.b;
+        int hashCode2 = (hashCode + (orbVar == null ? 0 : orbVar.hashCode())) * 31;
+        Map map = this.c;
+        return hashCode2 + (map != null ? map.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "SessionData(sessionDetails=" + this.a + ", backgroundTime=" + this.b + ", processDataMap=" + this.c + ')';
+    }
+
+    public o9a(s9a s9aVar, orb orbVar, Map map) {
+        s9aVar.getClass();
+        this.a = s9aVar;
+        this.b = orbVar;
+        this.c = map;
     }
 }

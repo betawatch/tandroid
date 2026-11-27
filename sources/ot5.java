@@ -1,25 +1,21 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ot5 extends qq4 implements gq4 {
-    public static final ot5 a = new ot5(3, pt5.class, "registerSelectForOnJoin", "registerSelectForOnJoin(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V", 0);
+public final class ot5 extends iv5 {
+    public final ur4 e;
 
-    @Override // gq4
-    public final Object a(Object obj, Object obj2, Object obj3) {
-        Object v;
-        pt5 pt5Var = (pt5) obj;
-        if (obj2 != null) {
-            throw new ClassCastException();
-        }
-        int i = pt5.c;
-        do {
-            v = pt5Var.v();
-            if (!(v instanceof en5)) {
-                throw null;
-            }
-        } while (pt5Var.K(v) < 0);
-        nle.c(pt5Var, true, new kt5());
-        throw null;
+    public ot5(ur4 ur4Var) {
+        this.e = ur4Var;
+    }
+
+    @Override // iv5
+    public final boolean k() {
+        return false;
+    }
+
+    @Override // iv5
+    public final void l(Throwable th) {
+        this.e.invoke(th);
     }
 }

@@ -1,24 +1,16 @@
 // default package
 
-import android.view.View;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class y16 implements View.OnClickListener {
-    public final /* synthetic */ z16 a;
-
-    public y16(z16 z16Var) {
-        this.a = z16Var;
+public final class y16 extends tj4 {
+    @Override // tj4
+    public final void b() {
+        setVisibility(8);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        jb jbVar = (jb) view.getParent();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(jbVar.getCurrentChannel());
-        h26 h26Var = this.a.c;
-        int i = h26.R2;
-        h26Var.o1(arrayList);
+    @Override // tj4
+    public final void c(boolean z) {
+        setVisibility(0);
+        super.c(z);
     }
 }

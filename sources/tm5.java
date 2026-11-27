@@ -1,36 +1,29 @@
 // default package
 
-import j$.util.Objects;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class tm5 extends v5c {
-    public int b;
-    public Object c;
-    public final /* synthetic */ v5c d;
+public abstract /* synthetic */ class tm5 {
+    public static final /* synthetic */ int[] a;
 
-    public tm5(v5c v5cVar) {
-        super((byte) 0);
-        this.d = v5cVar;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b > 0 || this.d.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        int i = this.b;
-        if (i <= 0) {
-            vn7 vn7Var = (vn7) this.d.next();
-            this.c = vn7Var.a;
-            i = vn7Var.a();
-            this.b = i;
+    static {
+        Bitmap.CompressFormat compressFormat;
+        int[] iArr = new int[Bitmap.CompressFormat.values().length];
+        a = iArr;
+        try {
+            iArr[Bitmap.CompressFormat.WEBP.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        this.b = i - 1;
-        Object obj = this.c;
-        Objects.requireNonNull(obj);
-        return obj;
+        try {
+            int[] iArr2 = a;
+            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
+            iArr2[compressFormat.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[Bitmap.CompressFormat.WEBP_LOSSLESS.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
     }
 }

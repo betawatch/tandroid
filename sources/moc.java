@@ -1,31 +1,39 @@
 // default package
 
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.util.Base64;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class moc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ noc b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class moc {
+    public static final lo5 a = new lo5(new int[]{0, 2, 1}, 3);
+    public static final lo5 b = new lo5(new int[]{0, 2, 1, 3, 4}, 5);
+    public static final lo5 c = new lo5(new int[]{0, 2, 1, 5, 3, 4}, 6);
+    public static final lo5 d = lo5.c(2, 1, 6, 5, 3, 4);
+    public static final lo5 e = lo5.c(2, 1, 7, 5, 6, 3, 4);
 
-    public /* synthetic */ moc(noc nocVar, byte b) {
-        this.a = b;
-        this.b = nocVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        noc nocVar = this.b;
-        switch (b) {
-            case 0:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, nocVar.getResourceProvider(), nocVar.getParentActivity());
-                alertDialog$Builder.a.U = k96.M0(2131742881, null);
-                b00.t(null, 2131747638, alertDialog$Builder, null);
-                break;
-            default:
-                nocVar.c0();
-                break;
+    public static uf7 a(List list) {
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < list.size(); i++) {
+            String str = (String) list.get(i);
+            String str2 = gcc.a;
+            String[] split = str.split("=", 2);
+            if (split.length != 2) {
+                efd.f("VorbisUtil", "Failed to parse Vorbis comment: ".concat(str));
+            } else if (split[0].equals("METADATA_BLOCK_PICTURE")) {
+                try {
+                    arrayList.add(rd8.d(new ey7(Base64.decode(split[1], 0))));
+                } catch (RuntimeException e2) {
+                    efd.g("VorbisUtil", "Failed to parse vorbis picture", e2);
+                }
+            } else {
+                arrayList.add(new joc(split[0], split[1]));
+            }
         }
+        if (arrayList.isEmpty()) {
+            return null;
+        }
+        return new uf7(arrayList);
     }
 }

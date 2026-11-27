@@ -9,7 +9,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzch {
     public zzch() {
@@ -40,14 +40,14 @@ public final class zzch {
             }
             return linkedHashSet;
         } catch (Exception unused) {
-            return f24.a;
+            return a34.a;
         }
     }
 
     private static final Map zzb() {
-        ku7[] ku7VarArr = {new ku7(0, zzvs.zzb), new ku7(1, zzvs.zzc), new ku7(2, zzvs.zzd), new ku7(3, zzvs.zze), new ku7(4, zzvs.zzf), new ku7(5, zzvs.zzg), new ku7(6, zzvs.zzh), new ku7(7, zzvs.zzi), new ku7(8, zzvs.zzj), new ku7(9, zzvs.zzk), new ku7(10, zzvs.zzl), new ku7(11, zzvs.zzm), new ku7(12, zzvs.zzn), new ku7(13, zzvs.zzo), new ku7(14, zzvs.zzp), new ku7(15, zzvs.zzq)};
-        LinkedHashMap linkedHashMap = new LinkedHashMap(qi6.b(16));
-        qi6.d(linkedHashMap, ku7VarArr);
+        rx7[] rx7VarArr = {new rx7(0, zzvs.zzb), new rx7(1, zzvs.zzc), new rx7(2, zzvs.zzd), new rx7(3, zzvs.zze), new rx7(4, zzvs.zzf), new rx7(5, zzvs.zzg), new rx7(6, zzvs.zzh), new rx7(7, zzvs.zzi), new rx7(8, zzvs.zzj), new rx7(9, zzvs.zzk), new rx7(10, zzvs.zzl), new rx7(11, zzvs.zzm), new rx7(12, zzvs.zzn), new rx7(13, zzvs.zzo), new rx7(14, zzvs.zzp), new rx7(15, zzvs.zzq)};
+        LinkedHashMap linkedHashMap = new LinkedHashMap(uk6.b(16));
+        uk6.d(linkedHashMap, rx7VarArr);
         linkedHashMap.put(17, zzvs.zzs);
         linkedHashMap.put(16, zzvs.zzr);
         int i = Build.VERSION.SDK_INT;

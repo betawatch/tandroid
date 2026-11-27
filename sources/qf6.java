@@ -1,8 +1,57 @@
 // default package
 
-import java.util.RandomAccess;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class qf6 extends s3 implements RandomAccess {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class qf6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ sf6 b;
+
+    public /* synthetic */ qf6(sf6 sf6Var, byte b) {
+        this.a = b;
+        this.b = sf6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        sf6 sf6Var = this.b;
+        switch (b) {
+            case 0:
+                m7 m7Var = sf6Var.c;
+                m7Var.requestFocus();
+                String str = sf6Var.L;
+                if (str != null && str.length() > 1) {
+                    String obj = m7Var.getText().toString();
+                    int length = obj.length();
+                    int i = 0;
+                    while (i < length && obj.charAt(i) <= ' ') {
+                        i++;
+                    }
+                    int length2 = sf6Var.L.length() + i;
+                    m7Var.setSelection(Utilities.j(length2 + ((length2 < 0 || length2 >= obj.length() || obj.charAt(length2) != ' ') ? 0 : 1), obj.length(), 0), m7Var.getText().length());
+                    break;
+                } else {
+                    m7Var.setSelection(0, m7Var.getText().length());
+                    break;
+                }
+                break;
+            case 1:
+                sf6Var.p(true);
+                break;
+            case 2:
+                sf6Var.n(false);
+                break;
+            default:
+                m7 m7Var2 = sf6Var.c;
+                if (m7Var2 != null) {
+                    m7Var2.requestFocus();
+                    m7Var2.setSelection(m7Var2.length());
+                    hl.E3(m7Var2);
+                    break;
+                }
+                break;
+        }
+    }
 }

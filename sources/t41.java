@@ -1,32 +1,250 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.IBinder;
+import com.google.android.gms.tasks.OnSuccessListener;
+import java.util.ArrayList;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class t41 extends AnimatorListenerAdapter {
+public final /* synthetic */ class t41 implements zbc, fd, ay2, k6b, b86, gc7, pz6, ot2, OnSuccessListener, rpa {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ u41 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ t41(u41 u41Var, byte b) {
-        this.a = b;
-        this.b = u41Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ t41(nf8 nf8Var, int i) {
+        this.a = (byte) 5;
+        this.c = nf8Var;
+        this.b = i;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // zbc
+    public final void a(int i, ArrayList arrayList) {
         byte b = this.a;
-        u41 u41Var = this.b;
+        int i2 = 0;
+        boolean z = this.b;
+        Object obj = this.c;
         switch (b) {
             case 0:
-                u41Var.N = false;
-                u41Var.e.t(null, false, true);
+                u41 u41Var = (u41) obj;
+                ArrayList arrayList2 = u41Var.k;
+                ArrayList arrayList3 = u41Var.j;
+                if (z) {
+                    u41Var.f = i;
+                    arrayList3.clear();
+                    arrayList3.addAll(arrayList);
+                    while (i2 < arrayList3.size()) {
+                        arrayList2.remove(arrayList3.get(i2));
+                        i2++;
+                    }
+                } else {
+                    u41Var.g = i;
+                    arrayList2.clear();
+                    arrayList2.addAll(arrayList);
+                    while (i2 < arrayList2.size()) {
+                        arrayList3.remove(arrayList2.get(i2));
+                        i2++;
+                    }
+                }
+                u41Var.e.run();
                 break;
             default:
-                u41Var.U = 1.0f;
-                u41Var.invalidate();
+                nf4 nf4Var = (nf4) obj;
+                LongSparseIntArray longSparseIntArray = nf4Var.I;
+                nf4Var.E = i;
+                if (z) {
+                    nf4Var.t0(nf4Var.G, arrayList, true);
+                    nf4Var.G = arrayList;
+                    for (int i3 = 0; i3 < nf4Var.G.size(); i3++) {
+                        nf4Var.H.remove(nf4Var.G.get(i3));
+                    }
+                    ArrayList arrayList4 = new ArrayList();
+                    int size = longSparseIntArray.size();
+                    for (int i4 = 0; i4 < size; i4++) {
+                        long keyAt = longSparseIntArray.keyAt(i4);
+                        Long valueOf = Long.valueOf(keyAt);
+                        if (!wf3.B(keyAt) && !nf4Var.G.contains(valueOf)) {
+                            arrayList4.add(valueOf);
+                        }
+                    }
+                    int size2 = arrayList4.size();
+                    for (int i5 = 0; i5 < size2; i5++) {
+                        longSparseIntArray.delete(((Long) arrayList4.get(i5)).longValue());
+                    }
+                } else {
+                    nf4Var.t0(nf4Var.H, arrayList, false);
+                    nf4Var.H = arrayList;
+                    for (int i6 = 0; i6 < nf4Var.H.size(); i6++) {
+                        Long l = (Long) nf4Var.H.get(i6);
+                        nf4Var.G.remove(l);
+                        longSparseIntArray.delete(l.longValue());
+                    }
+                }
+                nf4Var.l0();
+                nf4Var.k0(false);
+                nf4Var.C0();
                 break;
         }
+    }
+
+    @Override // ot2
+    public final void accept(Object obj) {
+        ((og8) obj).i0((oz) this.c, this.b);
+    }
+
+    @Override // gc7
+    public final boolean b(TLRPC.TL_error tL_error) {
+        jw5 jw5Var = (jw5) this.c;
+        byte b = 0;
+        if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
+            jw5Var.setOnDismissListener(new fw5(jw5Var, this.b, b));
+        }
+        jw5Var.dismiss();
+        return false;
+    }
+
+    @Override // rpa
+    public final void d(npa npaVar, float f, float f2) {
+        tpa tpaVar = (tpa) this.c;
+        if (tpaVar.d || tpaVar.e || tpaVar.f || !this.b) {
+            return;
+        }
+        tpaVar.c(f, f2);
+    }
+
+    @Override // k6b
+    public final void f(boolean z) {
+        pg3 pg3Var = (pg3) this.c;
+        if (this.b || !z) {
+            return;
+        }
+        boolean z2 = pg3Var.b == 1;
+        c6b c6bVar = pg3Var.s;
+        if (z2) {
+            if (!c6bVar.z) {
+                return;
+            }
+        } else if (!c6bVar.p) {
+            return;
+        }
+        c6bVar.S(z2);
+    }
+
+    @Override // b86
+    public final void invoke(Object obj) {
+        ((bg8) obj).D(((nf8) this.c).a, this.b ? 1 : 0);
+    }
+
+    @Override // pz6
+    public final Object j(yx6 yx6Var, xw6 xw6Var, int i) {
+        long k;
+        int i2;
+        byte b = this.a;
+        long j = -9223372036854775807L;
+        int i3 = -1;
+        boolean z = this.b;
+        Object obj = this.c;
+        switch (b) {
+            case 9:
+                try {
+                    j99 u = po5.u(ft6.a(xw6Var.c, (Bundle) obj));
+                    if (z) {
+                        k = -9223372036854775807L;
+                        i2 = -1;
+                    } else {
+                        yx6Var.t();
+                        int l0 = yx6Var.t.l0();
+                        yx6Var.t();
+                        k = yx6Var.t.k();
+                        i2 = l0;
+                    }
+                    return yx6Var.o(xw6Var, u, i2, k);
+                } catch (RuntimeException e) {
+                    efd.g("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e);
+                    return fne.b(e);
+                }
+            default:
+                try {
+                    po5 a = f31.a((IBinder) obj);
+                    mo5 p = po5.p();
+                    for (int i4 = 0; i4 < a.size(); i4++) {
+                        Bundle bundle = (Bundle) a.get(i4);
+                        bundle.getClass();
+                        p.c(ft6.a(xw6Var.c, bundle));
+                    }
+                    j99 f = p.f();
+                    if (!z) {
+                        yx6Var.t();
+                        i3 = yx6Var.t.l0();
+                        yx6Var.t();
+                        j = yx6Var.t.k();
+                    }
+                    return yx6Var.o(xw6Var, f, i3, j);
+                } catch (RuntimeException e2) {
+                    efd.g("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e2);
+                    return fne.b(e2);
+                }
+        }
+    }
+
+    @Override // ay2
+    public final void l(long j) {
+        hn hnVar = ((cc2) this.c).a.z3;
+        if (hnVar != null) {
+            hnVar.t(ob6.M((int) j, this.b), true, true);
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
+        SharedPreferences.Editor edit = kwe.a((Context) this.c).edit();
+        edit.putBoolean("proxy_retention", this.b);
+        edit.apply();
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        boolean z = this.b;
+        Object obj = this.c;
+        switch (b) {
+            case 1:
+                ((z61) obj).q0(z);
+                break;
+            case 2:
+                zu1 zu1Var = (zu1) obj;
+                nr1 nr1Var = zu1Var.a0;
+                if (nr1Var != null) {
+                    if (!z) {
+                        nr1Var.G();
+                        break;
+                    } else {
+                        zu1Var.finishFragment();
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                j95 j95Var = ((m85) obj).b;
+                j95Var.T2.C(0, null);
+                j95Var.d1().j(z ? 101 : 40, 0L, null);
+                break;
+            default:
+                er9 er9Var = (er9) obj;
+                er9Var.c.C(0, null);
+                er9Var.J.j(z ? 101 : 40, 0L, null);
+                break;
+        }
+    }
+
+    public /* synthetic */ t41(byte b, Object obj, boolean z) {
+        this.a = b;
+        this.c = obj;
+        this.b = z;
     }
 }

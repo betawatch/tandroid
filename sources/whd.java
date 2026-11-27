@@ -1,40 +1,8 @@
 // default package
 
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class whd {
-    public static final /* synthetic */ int[] a;
-    public static final /* synthetic */ int[] b;
-
-    static {
-        int[] iArr = new int[gld.values().length];
-        b = iArr;
-        try {
-            iArr[gld.r.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            b[gld.w.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            int[] iArr2 = b;
-            gld gldVar = gld.b;
-            iArr2[6] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        int[] iArr3 = new int[ug8.G(4).length];
-        a = iArr3;
-        try {
-            iArr3[3] = 1;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[1] = 2;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[0] = 3;
-        } catch (NoSuchFieldError unused6) {
-        }
-    }
+public abstract class whd {
+    public static final ow5 a = new ow5("NONE", (byte) 1);
+    public static final ow5 b = new ow5("PENDING", (byte) 1);
 }

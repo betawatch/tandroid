@@ -1,19 +1,18 @@
 // default package
 
-import android.content.Context;
+import java.io.File;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class g30 implements bs3 {
-    public int a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class g30 {
+    public final long a;
+    public final File b;
+    public long c;
+    public boolean d = true;
+    public boolean e;
 
-    @Override // bs3
-    public final int a(Context context, String str, boolean z) {
-        return 0;
-    }
-
-    @Override // bs3
-    public final int b(Context context, String str) {
-        return this.a;
+    public g30(long j, File file) {
+        this.a = j;
+        this.b = file;
     }
 }

@@ -1,106 +1,195 @@
 // default package
 
-import android.content.Context;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class g61 extends FrameLayout implements tjb {
-    public final yc a;
-    public final gn b;
-    public final gn c;
+public final /* synthetic */ class g61 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ z61 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ d71 f;
 
-    public g61(Context context) {
-        super(context);
-        yc ycVar = new yc((byte) 6, context, this);
-        this.a = ycVar;
-        int i = bkb.Ei;
-        ycVar.setBackground(sjb.f(i, 24.0f));
-        ycVar.setImportantForAccessibility(1);
-        ote.b(ycVar, 0.02f, 1.2f);
-        if (k96.a0) {
-            TextView textView = new TextView(context);
-            textView.setText(k96.M0(2131752086, null));
-            textView.setGravity(17);
-            ir2.t(textView, 1, 14.0f);
-            zkb.X(textView, bkb.Ii, null);
-            ycVar.addView(textView, nme.e(-2, -1, 17));
-        }
-        gn gnVar = new gn(true, true, true);
-        this.b = gnVar;
-        s33 s33Var = s33.h;
-        gnVar.n(0.25f, 300L, s33Var);
-        gnVar.setCallback(ycVar);
-        gnVar.w(gl.L(14.0f));
-        gnVar.t(k96.M0(2131752086, null), true, true);
-        gnVar.b = 5;
-        gnVar.x(gl.o());
-        int i2 = bkb.Ii;
-        gnVar.u(bkb.w0(null, i2, false));
-        gn gnVar2 = new gn(true, true, true);
-        this.c = gnVar2;
-        gnVar2.n(0.25f, 300L, s33Var);
-        gnVar2.setCallback(ycVar);
-        gnVar2.w(gl.L(14.0f));
-        gnVar2.x(gl.o());
-        gnVar2.u(bkb.v(bkb.w0(null, i, false), bkb.p1(0.7f, bkb.w0(null, i2, false))));
-        gnVar2.t("", true, true);
-        ycVar.setContentDescription(TextUtils.concat(gnVar.i, "\t", gnVar2.i));
-        addView(ycVar, nme.d(-1, 48.0f, kk7.D1, 16.0f, 16.0f, 16.0f, 16.0f));
+    public /* synthetic */ g61(z61 z61Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, d71 d71Var, byte b) {
+        this.a = b;
+        this.b = z61Var;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
+        this.f = d71Var;
     }
 
-    public final void a(long j, boolean z) {
-        String M0 = z ? k96.M0(2131752086, null) : k96.M0(2131752038, null);
-        gn gnVar = this.b;
-        gnVar.t(M0, true, true);
-        String i0 = j <= 0 ? "" : gl.i0(j, false, false);
-        gn gnVar2 = this.c;
-        gnVar2.t(i0, true, true);
-        setDisabled(j <= 0);
-        yc ycVar = this.a;
-        ycVar.invalidate();
-        ycVar.setContentDescription(TextUtils.concat(gnVar.i, "\t", gnVar2.i));
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.Ei));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    public void setDisabled(boolean z) {
-        yc ycVar = this.a;
-        ycVar.animate().cancel();
-        ycVar.animate().alpha(z ? 0.65f : 1.0f).start();
-        ycVar.setClickable(!z);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            gn gnVar = this.b;
-            if (gnVar != null) {
-                gnVar.u(bkb.w0(null, bkb.Ii, false));
-            }
-            gn gnVar2 = this.c;
-            if (gnVar2 != null) {
-                gnVar2.u(bkb.v(bkb.w0(null, bkb.Ei, false), bkb.p1(0.7f, bkb.w0(null, bkb.Ii, false))));
-            }
-            yc ycVar = this.a;
-            if (ycVar != null) {
-                ycVar.invalidate();
-            }
-        } catch (Exception e) {
-            fa4.g(e, true);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0155 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r15v10 */
+    /* JADX WARN: Type inference failed for: r15v16 */
+    /* JADX WARN: Type inference failed for: r15v7 */
+    /* JADX WARN: Type inference failed for: r15v8, types: [int] */
+    /* JADX WARN: Type inference failed for: r15v9 */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i;
+        int i2;
+        ?? r15;
+        boolean z;
+        u61 u61Var;
+        boolean z2 = true;
+        switch (this.a) {
+            case 0:
+                z61 z61Var = this.b;
+                ArrayList arrayList = this.c;
+                ArrayList arrayList2 = this.d;
+                ArrayList arrayList3 = this.e;
+                d71 d71Var = this.f;
+                ArrayList arrayList4 = new ArrayList();
+                ArrayList arrayList5 = new ArrayList();
+                if (arrayList.isEmpty()) {
+                    i = 0;
+                } else {
+                    try {
+                        i = 0;
+                    } catch (Exception e) {
+                        e = e;
+                        i = 0;
+                    }
+                    try {
+                        z61Var.getMessagesStorage().k0(arrayList, arrayList4, false);
+                    } catch (Exception e2) {
+                        e = e2;
+                        cc4.g(e, true);
+                        if (!arrayList2.isEmpty()) {
+                        }
+                        i2 = i;
+                        while (i2 < arrayList3.size()) {
+                        }
+                        Collections.sort(arrayList3, new ta((byte) 12));
+                        hl.c3(new g61(z61Var, arrayList4, arrayList5, arrayList3, d71Var, (byte) 1));
+                        return;
+                    }
+                }
+                if (!arrayList2.isEmpty()) {
+                    try {
+                        z61Var.getMessagesStorage().P(TextUtils.join(",", arrayList2), arrayList5);
+                    } catch (Exception e3) {
+                        cc4.g(e3, true);
+                    }
+                }
+                i2 = i;
+                while (i2 < arrayList3.size()) {
+                    if (((t61) arrayList3.get(i2)).c <= 0) {
+                        arrayList3.remove(i2);
+                        i2--;
+                    }
+                    i2++;
+                }
+                Collections.sort(arrayList3, new ta((byte) 12));
+                hl.c3(new g61(z61Var, arrayList4, arrayList5, arrayList3, d71Var, (byte) 1));
+            default:
+                z61 z61Var2 = this.b;
+                ArrayList arrayList6 = this.c;
+                ArrayList arrayList7 = this.d;
+                ArrayList arrayList8 = this.e;
+                d71 d71Var2 = this.f;
+                z61Var2.getMessagesController().j4(arrayList6, true);
+                z61Var2.getMessagesController().c4(arrayList7, true);
+                boolean z3 = false;
+                t61 t61Var = null;
+                int i3 = 0;
+                while (i3 < arrayList8.size()) {
+                    t61 t61Var2 = (t61) arrayList8.get(i3);
+                    if (z61Var2.getMessagesController().b2(t61Var2.a) == null) {
+                        t61Var2.a = Long.MAX_VALUE;
+                        if (t61Var != null) {
+                            SparseArray sparseArray = t61Var.d;
+                            int i4 = 0;
+                            while (true) {
+                                SparseArray sparseArray2 = t61Var2.d;
+                                if (i4 < sparseArray2.size()) {
+                                    int keyAt = sparseArray2.keyAt(i4);
+                                    u61 u61Var2 = (u61) sparseArray2.valueAt(i4);
+                                    u61 u61Var3 = (u61) sparseArray.get(keyAt, z3);
+                                    if (u61Var3 == null) {
+                                        u61Var = new u61();
+                                        sparseArray.put(keyAt, u61Var);
+                                    } else {
+                                        u61Var = u61Var3;
+                                    }
+                                    u61Var2.getClass();
+                                    u61Var.a += u61Var2.a;
+                                    t61Var.c += u61Var2.a;
+                                    u61Var.b.addAll(u61Var2.b);
+                                    i4++;
+                                    z2 = z2;
+                                    z3 = false;
+                                } else {
+                                    boolean z4 = z2;
+                                    t61Var.b += t61Var2.b;
+                                    arrayList8.remove(i3);
+                                    i3--;
+                                    z = z4 ? 1 : 0;
+                                    r15 = z4;
+                                }
+                            }
+                        } else {
+                            r15 = z2;
+                            t61Var = t61Var2;
+                            z = false;
+                        }
+                        if (z) {
+                            Collections.sort(arrayList8, new ta((byte) 12));
+                        }
+                    } else {
+                        r15 = z2;
+                    }
+                    i3 += r15;
+                    z2 = r15;
+                    z3 = false;
+                }
+                boolean z5 = z2;
+                d71Var2.b = arrayList8;
+                LongSparseArray longSparseArray = d71Var2.c;
+                longSparseArray.clear();
+                int size = arrayList8.size();
+                int i5 = 0;
+                while (i5 < size) {
+                    Object obj = arrayList8.get(i5);
+                    i5++;
+                    t61 t61Var3 = (t61) obj;
+                    longSparseArray.put(t61Var3.a, t61Var3);
+                }
+                if (!z61.i0) {
+                    z61Var2.e0 = d71Var2;
+                    l61 l61Var = z61Var2.N;
+                    if (l61Var != null) {
+                        l61Var.setCacheModel(d71Var2);
+                    }
+                    z61Var2.A0(z5);
+                    z61Var2.y0();
+                    if (z61Var2.Y != null && !z61Var2.L && System.currentTimeMillis() - z61Var2.b0 > 120) {
+                        n61 n61Var = z61Var2.Y;
+                        long j = z61Var2.H;
+                        boolean z6 = j > 0;
+                        long j2 = z61Var2.I;
+                        float f = 0.0f;
+                        float f2 = j2 <= 0 ? 0.0f : j / j2;
+                        if (z61Var2.J > 0 && j2 > 0) {
+                            f = (j2 - r8) / j2;
+                        }
+                        n61Var.b(f2, f, z6);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

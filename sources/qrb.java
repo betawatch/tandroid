@@ -1,38 +1,42 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum qrb extends qsb {
-    public qrb() {
-        super("CommentEndDash", 47);
+public final class qrb implements at9 {
+    public final at9 a;
+    public final long b;
+
+    public qrb(at9 at9Var, long j) {
+        this.a = at9Var;
+        this.b = j;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        qpb qpbVar = aqbVar.n;
-        char d = zj1Var.d();
-        prb prbVar = qsb.k0;
-        if (d == 0) {
-            aqbVar.m(this);
-            StringBuilder sb = qpbVar.e;
-            sb.append('-');
-            sb.append((char) 65533);
-            aqbVar.c = prbVar;
-            return;
+    @Override // at9
+    public final int a() {
+        return this.a.a();
+    }
+
+    @Override // at9
+    public final void g() {
+        this.a.g();
+    }
+
+    @Override // at9
+    public final int i(ym4 ym4Var, s93 s93Var, int i) {
+        int i2 = this.a.i(ym4Var, s93Var, i);
+        if (i2 == -4) {
+            s93Var.e += this.b;
         }
-        if (d == '-') {
-            aqbVar.c = qsb.m0;
-            return;
-        }
-        if (d == 65535) {
-            aqbVar.l(this);
-            aqbVar.i();
-            aqbVar.c = qsb.a;
-        } else {
-            StringBuilder sb2 = qpbVar.e;
-            sb2.append('-');
-            sb2.append(d);
-            aqbVar.c = prbVar;
-        }
+        return i2;
+    }
+
+    @Override // at9
+    public final boolean k() {
+        return this.a.k();
+    }
+
+    @Override // at9
+    public final int o(long j) {
+        return this.a.o(j - this.b);
     }
 }

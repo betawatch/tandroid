@@ -1,50 +1,56 @@
 // default package
 
-import java.io.File;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ShutterButton;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class q42 implements xga {
-    public File a;
-    public boolean b;
-    public final /* synthetic */ wjb c;
-    public final /* synthetic */ ww0 d;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout e;
+public final class q42 extends wc6 {
+    public final /* synthetic */ byte E = 0;
+    public final /* synthetic */ fn7 F;
 
-    public q42(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, wjb wjbVar, ww0 ww0Var) {
-        this.e = chatAttachAlertPhotoLayout;
-        this.c = wjbVar;
-        this.d = ww0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q42(uc6 uc6Var, Context context, vnb vnbVar, boolean z) {
+        super(vnbVar, context, false, z);
+        this.F = uc6Var;
     }
 
-    public final void a() {
-        b52 b52Var;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e;
-        x02 x02Var = chatAttachAlertPhotoLayout.b;
-        ShutterButton shutterButton = chatAttachAlertPhotoLayout.l0;
-        if (chatAttachAlertPhotoLayout.t0 || (b52Var = chatAttachAlertPhotoLayout.Q) == null || b52Var.getCameraSession() == null) {
-            return;
+    @Override // j79
+    public final void f() {
+        byte b = this.E;
+        fn7 fn7Var = this.F;
+        switch (b) {
+            case 0:
+                s42 s42Var = (s42) fn7Var;
+                q42 q42Var = s42Var.O;
+                s7 s7Var = s42Var.x;
+                if (s7Var != null) {
+                    s7Var.setShowSearchProgress(q42Var.w);
+                }
+                TextView textView = s42Var.w;
+                if (textView != null) {
+                    textView.setText(ob6.a0(null, null, 2131747896, q42Var.h));
+                }
+                super.f();
+                break;
+            default:
+                uc6 uc6Var = (uc6) fn7Var;
+                sla slaVar = uc6Var.r;
+                if (slaVar != null) {
+                    slaVar.setShowSearchProgress(uc6Var.T.w);
+                }
+                TextView textView2 = uc6Var.n;
+                if (textView2 != null) {
+                    textView2.setText(ob6.a0(null, null, 2131747896, uc6Var.T.h));
+                }
+                super.f();
+                break;
         }
-        byte b = 0;
-        if (shutterButton.getState() == yga.b) {
-            chatAttachAlertPhotoLayout.o0();
-            CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.Q.getCameraSession(), false);
-            shutterButton.a(yga.a);
-        } else {
-            if (!chatAttachAlertPhotoLayout.y0) {
-                yjb.x(null, 2131749367, new u21(chatAttachAlertPhotoLayout.Q, this.c), null);
-                return;
-            }
-            d dVar = x02Var.Z1;
-            File q0 = gl.q0(null, (dVar instanceof mu1) && ((mu1) dVar).y());
-            boolean isSameTakePictureOrientation = chatAttachAlertPhotoLayout.Q.getCameraSession().isSameTakePictureOrientation();
-            chatAttachAlertPhotoLayout.Q.getCameraSession().setFlipFront((x02Var.Z1 instanceof mu1) || x02Var.N2 == 2);
-            chatAttachAlertPhotoLayout.t0 = CameraController.getInstance().takePicture(q0, false, chatAttachAlertPhotoLayout.Q.getCameraSessionObject(), new o42(this, q0, isSameTakePictureOrientation, b));
-            chatAttachAlertPhotoLayout.Q.startTakePictureAnimation(true);
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q42(s42 s42Var, Context context, vnb vnbVar, boolean z) {
+        super(vnbVar, context, z, false);
+        this.F = s42Var;
     }
 }

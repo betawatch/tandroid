@@ -1,27 +1,37 @@
 // default package
 
-import android.os.Message;
-import java.util.ArrayList;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bdb {
-    public Message a;
+public abstract class bdb {
+    public static final Charset a = Charset.defaultCharset();
+    public static final Charset b;
+    public static final Charset c;
+    public static final boolean d;
 
-    public final void a() {
-        this.a = null;
-        ArrayList arrayList = cdb.b;
-        synchronized (arrayList) {
-            if (arrayList.size() < 50) {
-                arrayList.add(this);
-            }
+    static {
+        Charset charset;
+        Charset charset2;
+        Charset charset3 = null;
+        try {
+            charset = Charset.forName("SJIS");
+        } catch (UnsupportedCharsetException unused) {
+            charset = null;
         }
-    }
-
-    public final void b() {
-        Message message = this.a;
-        message.getClass();
-        message.sendToTarget();
-        a();
+        b = charset;
+        try {
+            charset2 = Charset.forName("GB2312");
+        } catch (UnsupportedCharsetException unused2) {
+            charset2 = null;
+        }
+        c = charset2;
+        try {
+            charset3 = Charset.forName("EUC_JP");
+        } catch (UnsupportedCharsetException unused3) {
+        }
+        Charset charset4 = b;
+        d = (charset4 != null && charset4.equals(a)) || (charset3 != null && charset3.equals(a));
     }
 }

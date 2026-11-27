@@ -1,32 +1,31 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fu1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ye7 b;
+public final class fu1 extends l01 {
+    public final /* synthetic */ wb2 d;
+    public final /* synthetic */ ju1 e;
 
-    public /* synthetic */ fu1(ye7 ye7Var, byte b) {
-        this.a = b;
-        this.b = ye7Var;
+    public fu1(ju1 ju1Var, wb2 wb2Var) {
+        this.e = ju1Var;
+        this.d = wb2Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        ye7 ye7Var = this.b;
-        switch (b) {
-            case 0:
-                ye7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                ye7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                ye7Var.q(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // l01
+    public final void c(boolean z) {
+        if (z) {
+            return;
         }
+        hl.d3(new zo1(this.e.a, (byte) 7), 250L);
+    }
+
+    @Override // l01
+    public final void d() {
+        zu1 zu1Var = this.e.a;
+        wb2 wb2Var = this.d;
+        zu1Var.lc = wb2Var.getMessageObject().e1();
+        zu1Var.mc = 2;
+        zu1Var.nc = null;
+        wb2Var.invalidate();
     }
 }

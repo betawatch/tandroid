@@ -1,134 +1,128 @@
 // default package
 
-import android.net.Uri;
-import android.os.Looper;
-import j$.util.Objects;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vs8 extends qg0 {
-    public final m63 i;
-    public final k88 j;
-    public final yq3 k;
-    public final i2f l;
-    public final int m;
-    public final fm4 n;
-    public boolean o = true;
-    public long p = -9223372036854775807L;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public vyb t;
-    public br6 u;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class vs8 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ws8 b;
 
-    public vs8(br6 br6Var, m63 m63Var, k88 k88Var, yq3 yq3Var, i2f i2fVar, int i, fm4 fm4Var) {
-        this.u = br6Var;
-        this.i = m63Var;
-        this.j = k88Var;
-        this.k = yq3Var;
-        this.l = i2fVar;
-        this.m = i;
-        this.n = fm4Var;
+    public /* synthetic */ vs8(ws8 ws8Var, byte b) {
+        this.a = b;
+        this.b = ws8Var;
     }
 
-    @Override // qg0
-    public final boolean a(br6 br6Var) {
-        xq6 xq6Var = i().b;
-        xq6Var.getClass();
-        xq6 xq6Var2 = br6Var.b;
-        return xq6Var2 != null && xq6Var2.a.equals(xq6Var.a) && xq6Var2.h == xq6Var.h && Objects.equals(xq6Var2.f, xq6Var.f);
-    }
-
-    @Override // qg0
-    public final sr6 c(rx6 rx6Var, mv6 mv6Var, long j) {
-        o63 createDataSource = this.i.createDataSource();
-        vyb vybVar = this.t;
-        if (vybVar != null) {
-            createDataSource.addTransferListener(vybVar);
-        }
-        xq6 xq6Var = i().b;
-        xq6Var.getClass();
-        Uri uri = xq6Var.a;
-        this.g.getClass();
-        return new ts8(uri, createDataSource, new mv6(this.j.b, (byte) 11), this.k, new vq3(this.d.c, 0, rx6Var), this.l, b(rx6Var), this, mv6Var, xq6Var.f, this.m, this.n, g8c.T(xq6Var.h), null);
-    }
-
-    @Override // qg0
-    public final synchronized br6 i() {
-        return this.u;
-    }
-
-    @Override // qg0
-    public final void m(vyb vybVar) {
-        this.t = vybVar;
-        Looper myLooper = Looper.myLooper();
-        myLooper.getClass();
-        uc8 uc8Var = this.g;
-        uc8Var.getClass();
-        yq3 yq3Var = this.k;
-        yq3Var.u(myLooper, uc8Var);
-        yq3Var.a();
-        u();
-    }
-
-    @Override // qg0
-    public final void o(sr6 sr6Var) {
-        ts8 ts8Var = (ts8) sr6Var;
-        if (ts8Var.P) {
-            for (gp9 gp9Var : ts8Var.M) {
-                gp9Var.l();
-                sq3 sq3Var = gp9Var.h;
-                if (sq3Var != null) {
-                    sq3Var.c(gp9Var.e);
-                    gp9Var.h = null;
-                    gp9Var.g = null;
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0075, code lost:
+    
+        if (r2.getHeight() == r4.b.getHeight()) goto L41;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        byte b;
+        ru8[] ru8VarArr;
+        byte b2 = this.a;
+        ws8 ws8Var = this.b;
+        switch (b2) {
+            case 0:
+                synchronized (ws8Var.b) {
+                    ru8[] ru8VarArr2 = ws8Var.c;
+                    ru8 ru8Var = ru8VarArr2[0];
+                    ru8[] ru8VarArr3 = ws8Var.d;
+                    b = 2;
+                    ru8VarArr = new ru8[]{ru8Var, ru8VarArr3[0], ru8VarArr2[1], ru8VarArr3[1], ru8VarArr2[2], ru8VarArr3[2]};
                 }
-            }
+                boolean z = false;
+                for (int i = 0; i < 6; i += 2) {
+                    ru8 ru8Var2 = ru8VarArr[i];
+                    ru8 ru8Var3 = ru8VarArr[i + 1];
+                    if (ru8Var2 != null && !ru8Var2.c && ru8Var2.f) {
+                        ru8Var2.e = true;
+                        if (ru8Var3 != null) {
+                            Bitmap bitmap = ru8Var3.b;
+                            if (!ru8Var3.d) {
+                                if (bitmap.getWidth() == ru8Var2.b.getWidth()) {
+                                    break;
+                                }
+                            }
+                        }
+                        if (ru8Var3 != null) {
+                            ru8Var3.a();
+                        }
+                        ru8Var3 = new ru8();
+                        Bitmap createBitmap = Bitmap.createBitmap(ru8Var2.b.getWidth(), ru8Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
+                        ru8Var3.b = createBitmap;
+                        ru8Var3.a = new Canvas(createBitmap);
+                        synchronized (ws8Var.b) {
+                            ru8[] ru8VarArr4 = ws8Var.d;
+                            int i2 = 0;
+                            while (true) {
+                                ru8[] ru8VarArr5 = ws8Var.c;
+                                if (i2 >= ru8VarArr5.length) {
+                                    i2 = 0;
+                                } else if (ru8VarArr5[i2] != ru8Var2) {
+                                    i2++;
+                                }
+                            }
+                            ru8VarArr4[i2] = ru8Var3;
+                        }
+                        Bitmap bitmap2 = ru8Var2.b;
+                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / jn7.J2));
+                        synchronized (ws8Var.b) {
+                            if (!ru8Var3.d) {
+                                ru8Var3.f = false;
+                                ru8Var3.b.eraseColor(0);
+                            }
+                            ru8Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
+                            ru8Var3.f = true;
+                            Bitmap bitmap3 = ru8Var3.b;
+                            int i3 = 0;
+                            while (true) {
+                                ru8[] ru8VarArr6 = ws8Var.c;
+                                if (i3 >= ru8VarArr6.length) {
+                                    i3 = 0;
+                                } else if (ru8VarArr6[i3] != ru8Var2) {
+                                    i3++;
+                                }
+                            }
+                            ws8Var.a(i3, bitmap3);
+                        }
+                        if (!ru8Var2.d) {
+                            ru8Var2.f = false;
+                            ru8Var2.b.eraseColor(0);
+                        }
+                        ru8Var2.e = false;
+                        if (!ru8Var2.d && ru8Var2.c) {
+                            ru8Var2.d = true;
+                            ru8Var2.b.recycle();
+                        }
+                        z = true;
+                    }
+                }
+                if (z && ws8Var.e && ws8Var.h != null) {
+                    ws8Var.postInvalidateOnAnimation();
+                }
+                if (ws8Var.e && (ws8Var.G || ws8Var.I)) {
+                    hl.c3(new vs8(ws8Var, b));
+                    return;
+                } else {
+                    ws8Var.e = false;
+                    return;
+                }
+            case 1:
+                ws8Var.I = true;
+                ws8Var.postInvalidateOnAnimation();
+                return;
+            default:
+                ws8Var.b();
+                su8.a.postRunnable(ws8Var.s);
+                return;
         }
-        ts8Var.y.b0(ts8Var);
-        ts8Var.I.removeCallbacksAndMessages(null);
-        ts8Var.J = null;
-        ts8Var.k0 = true;
-    }
-
-    @Override // qg0
-    public final void q() {
-        this.k.release();
-    }
-
-    @Override // qg0
-    public final synchronized void t(br6 br6Var) {
-        this.u = br6Var;
-    }
-
-    public final void u() {
-        long j = this.p;
-        boolean z = this.q;
-        boolean z2 = this.r;
-        br6 i = i();
-        aob liaVar = new lia(-9223372036854775807L, -9223372036854775807L, j, j, 0L, 0L, z, false, false, null, i, z2 ? i.c : null);
-        if (this.o) {
-            liaVar = new yf6(liaVar, (byte) 1);
-        }
-        n(liaVar);
-    }
-
-    public final void v(long j, fv9 fv9Var, boolean z) {
-        if (this.s && fv9Var.d()) {
-            return;
-        }
-        this.s = !fv9Var.d();
-        if (j == -9223372036854775807L) {
-            j = this.p;
-        }
-        boolean c = fv9Var.c();
-        if (!this.o && this.p == j && this.q == c && this.r == z) {
-            return;
-        }
-        this.p = j;
-        this.q = c;
-        this.r = z;
-        this.o = false;
-        u();
     }
 }

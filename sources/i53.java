@@ -1,27 +1,46 @@
 // default package
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class i53 {
-    public final fm4 a;
-    public final mm5 b;
-    public final tv9 c;
-    public final String d;
-    public final ArrayList e;
-    public final ArrayList f;
-    public final ArrayList g;
-    public final ArrayList h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class i53 extends ImageView {
+    public final /* synthetic */ byte a = 1;
+    public Object b;
+    public final /* synthetic */ ViewGroup c;
 
-    public i53(fm4 fm4Var, ArrayList arrayList, tv9 tv9Var, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
-        this.a = fm4Var;
-        this.b = mm5.q(arrayList);
-        this.c = tv9Var;
-        this.d = str;
-        this.e = arrayList2;
-        this.f = arrayList3;
-        this.g = arrayList4;
-        this.h = arrayList5;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i53(k53 k53Var, Context context, kj4 kj4Var) {
+        super(context);
+        this.c = k53Var;
+        this.b = kj4Var;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                k53 k53Var = (k53) this.c;
+                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (k53Var.n || k53Var.f)) {
+                    k53Var.n = false;
+                    k53Var.f = false;
+                    removeCallbacks(k53Var.r);
+                    removeCallbacks(k53Var.h);
+                }
+                super.onTouchEvent(motionEvent);
+                return ((GestureDetector) ((kj4) this.b).b).onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i53(i49 i49Var, Context context) {
+        super(context);
+        this.c = i49Var;
     }
 }

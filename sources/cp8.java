@@ -1,53 +1,121 @@
 // default package
 
-import android.graphics.Canvas;
 import android.graphics.RectF;
-import android.os.Build;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cp8 implements gx4, rw4 {
-    public final kl0 a;
+public final /* synthetic */ class cp8 implements pcc {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ fn7 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public cp8(kl0 kl0Var) {
-        this.a = kl0Var;
+    public /* synthetic */ cp8(n1a n1aVar, boolean z, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.d = n1aVar;
+        this.b = z;
+        this.e = linkedHashSet;
+        this.c = str;
+        this.f = hashMap;
+        this.g = arrayList;
     }
 
-    @Override // rw4
-    public final int a() {
-        return ((rw4) b()).a();
+    @Override // pcc
+    public final void a(Object obj) {
+        ArrayList<TLRPC.Document> arrayList;
+        ArrayList<TLRPC.Document> arrayList2;
+        byte b = this.a;
+        Object obj2 = this.c;
+        Object obj3 = this.g;
+        Object obj4 = this.f;
+        Object obj5 = this.e;
+        fn7 fn7Var = this.d;
+        switch (b) {
+            case 0:
+                ProfileActivity profileActivity = (ProfileActivity) fn7Var;
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj5;
+                TLRPC.User user = (TLRPC.User) obj4;
+                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) obj3;
+                String str = (String) obj2;
+                Integer num = (Integer) obj;
+                RectF rectF = ProfileActivity.Z6;
+                boolean z = this.b;
+                if (channelParticipant != null) {
+                    profileActivity.e3(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z);
+                    break;
+                } else {
+                    profileActivity.e3(num.intValue(), user, chatParticipant, null, null, str, z);
+                    break;
+                }
+            case 1:
+                n1a n1aVar = (n1a) fn7Var;
+                LinkedHashSet linkedHashSet = (LinkedHashSet) obj5;
+                String str2 = (String) obj2;
+                HashMap hashMap = (HashMap) obj4;
+                ArrayList arrayList3 = (ArrayList) obj3;
+                Runnable runnable = (Runnable) obj;
+                int i = n1aVar.W;
+                if (this.b) {
+                    ArrayList t0 = ls6.d0(i).t0(5);
+                    for (int i2 = 0; i2 < t0.size(); i2++) {
+                        if (((TLRPC.TL_messages_stickerSet) t0.get(i2)).documents != null && (arrayList2 = ((TLRPC.TL_messages_stickerSet) t0.get(i2)).documents) != null) {
+                            for (int i3 = 0; i3 < arrayList2.size(); i3++) {
+                                String V = r47.V(arrayList2.get(i3), null, null);
+                                long j = arrayList2.get(i3).id;
+                                if (V != null && !linkedHashSet.contains(Long.valueOf(j)) && str2.contains(V.toLowerCase())) {
+                                    linkedHashSet.add(Long.valueOf(j));
+                                }
+                            }
+                        }
+                    }
+                    ArrayList arrayList4 = ls6.d0(i).t0[1];
+                    for (int i4 = 0; i4 < arrayList4.size(); i4++) {
+                        if ((arrayList4.get(i4) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) arrayList4.get(i4)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) arrayList4.get(i4)).documents) != null) {
+                            for (int i5 = 0; i5 < arrayList.size(); i5++) {
+                                String V2 = r47.V(arrayList.get(i5), null, null);
+                                long j2 = arrayList.get(i5).id;
+                                if (V2 != null && !linkedHashSet.contains(Long.valueOf(j2)) && str2.contains(V2)) {
+                                    linkedHashSet.add(Long.valueOf(j2));
+                                }
+                            }
+                        }
+                    }
+                    runnable.run();
+                    break;
+                } else {
+                    ls6.d0(i).X(n1a.c2, str2, false, new xg(n1aVar, linkedHashSet, hashMap, arrayList3, runnable), true, n1aVar.a0 == 3, false, false, 30);
+                    break;
+                }
+                break;
+            default:
+                ((r7a) fn7Var).O((TLObject) obj, (ArrayList) obj5, (ArrayList) obj4, (ArrayList) obj3, (d7a) obj2, this.b);
+                break;
+        }
     }
 
-    public final gx4 b() {
-        fx4 f = qw4.f();
-        boolean z = f.a;
-        kl0 kl0Var = this.a;
-        return !z ? kl0Var.c : (!f.b || Build.VERSION.SDK_INT < 33) ? kl0Var.b : kl0Var.a;
+    public /* synthetic */ cp8(r7a r7aVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, d7a d7aVar, boolean z) {
+        this.d = r7aVar;
+        this.e = arrayList;
+        this.f = arrayList2;
+        this.g = arrayList3;
+        this.c = d7aVar;
+        this.b = z;
     }
 
-    @Override // rw4
-    public final void d(float f, float f2, int i, Canvas canvas, RectF rectF) {
-        ((rw4) b()).d(f, f2, i, canvas, rectF);
-    }
-
-    @Override // gx4
-    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
-        b().e(f, f2, f3, f4, canvas);
-    }
-
-    @Override // rw4
-    public final int f() {
-        return ((rw4) b()).f();
-    }
-
-    @Override // rw4
-    public final int g() {
-        return ((rw4) b()).g();
-    }
-
-    @Override // rw4
-    public final boolean h() {
-        gx4 b = b();
-        return (b instanceof rw4) && ((rw4) b).h();
+    public /* synthetic */ cp8(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z, String str) {
+        this.d = profileActivity;
+        this.e = channelParticipant;
+        this.f = user;
+        this.g = chatParticipant;
+        this.b = z;
+        this.c = str;
     }
 }

@@ -1,147 +1,92 @@
 // default package
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.content.SharedPreferences;
+import java.util.function.IntSupplier;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ds2 extends b4 {
-    public final int a;
-    public final int b;
-    public final PendingIntent c;
-    public final String d;
-    public final Integer e;
-    public static final ds2 f = new ds2(0, null, null);
-    public static final Parcelable.Creator<ds2> CREATOR = new t4d(2);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class ds2 extends yr2 {
+    public final IntSupplier d;
+    public final int e;
+    public final int f;
+    public final Integer g;
+    public final int h;
+    public volatile boolean i;
+    public volatile int j;
 
-    public ds2(int i, int i2, PendingIntent pendingIntent, String str, Integer num) {
-        this.a = i;
-        this.b = i2;
-        this.c = pendingIntent;
-        this.d = str;
-        this.e = num;
+    public ds2(String str, IntSupplier intSupplier, int i, int i2, Integer num, int i3) {
+        super(str);
+        this.d = intSupplier;
+        this.e = i;
+        this.f = i2;
+        this.g = num;
+        this.h = i3;
     }
 
-    public static String d(int i) {
-        if (i == 99) {
-            return "UNFINISHED";
+    @Override // yr2
+    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        double d;
+        if (jSONValue instanceof TLRPC.TL_jsonNumber) {
+            d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+        } else {
+            if (this.g == null) {
+                return false;
+            }
+            if (!(jSONValue instanceof TLRPC.TL_jsonBool)) {
+                return c(editor);
+            }
+            d = ((TLRPC.TL_jsonBool) jSONValue).value ? r0.intValue() : 0.0d;
         }
-        if (i == 1500) {
-            return "DRIVE_EXTERNAL_STORAGE_REQUIRED";
-        }
-        switch (i) {
-            case -1:
-                return "UNKNOWN";
-            case 0:
-                return "SUCCESS";
-            case 1:
-                return "SERVICE_MISSING";
-            case 2:
-                return "SERVICE_VERSION_UPDATE_REQUIRED";
-            case 3:
-                return "SERVICE_DISABLED";
-            case 4:
-                return "SIGN_IN_REQUIRED";
-            case 5:
-                return "INVALID_ACCOUNT";
-            case 6:
-                return "RESOLUTION_REQUIRED";
-            case 7:
-                return "NETWORK_ERROR";
-            case 8:
-                return "INTERNAL_ERROR";
-            case 9:
-                return "SERVICE_INVALID";
-            case 10:
-                return "DEVELOPER_ERROR";
-            case 11:
-                return "LICENSE_CHECK_FAILED";
-            default:
-                switch (i) {
-                    case 13:
-                        return "CANCELED";
-                    case 14:
-                        return "TIMEOUT";
-                    case 15:
-                        return "INTERRUPTED";
-                    case 16:
-                        return "API_UNAVAILABLE";
-                    case 17:
-                        return "SIGN_IN_FAILED";
-                    case 18:
-                        return "SERVICE_UPDATING";
-                    case 19:
-                        return "SERVICE_MISSING_PERMISSION";
-                    case 20:
-                        return "RESTRICTED_PROFILE";
-                    case 21:
-                        return "API_VERSION_UPDATE_REQUIRED";
-                    case 22:
-                        return "RESOLUTION_ACTIVITY_NOT_FOUND";
-                    case 23:
-                        return "API_DISABLED";
-                    case 24:
-                        return "API_DISABLED_FOR_CONNECTION";
-                    case 25:
-                        return "API_INSTALL_REQUIRED";
-                    default:
-                        StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 20);
-                        sb.append("UNKNOWN_ERROR_CODE(");
-                        sb.append(i);
-                        sb.append(")");
-                        return sb.toString();
-                }
-        }
-    }
-
-    public final boolean b() {
-        return (this.b == 0 || this.c == null) ? false : true;
-    }
-
-    public final boolean c() {
-        return this.b == 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof ds2)) {
+        if (d != Math.rint(d) || d < -2.147483648E9d || d > 2.147483647E9d) {
             return false;
         }
-        ds2 ds2Var = (ds2) obj;
-        return this.b == ds2Var.b && cqe.a(this.c, ds2Var.c) && cqe.a(this.d, ds2Var.d) && cqe.a(this.e, ds2Var.e);
+        int max = Math.max(this.e, Math.min(this.f, (int) d));
+        if (max == f()) {
+            return false;
+        }
+        this.j = max;
+        this.i = true;
+        editor.putInt(e(), max);
+        return true;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), this.c, this.d, this.e});
+    @Override // yr2
+    public final boolean c(SharedPreferences.Editor editor) {
+        if (this.h == 2 && this.i) {
+            int i = this.j;
+            this.i = false;
+            editor.remove(e());
+            if (i != f()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // yr2
+    public final void d(SharedPreferences sharedPreferences) {
+        try {
+            if (!sharedPreferences.contains(e())) {
+                this.i = false;
+                return;
+            }
+            this.j = Math.max(this.e, Math.min(this.f, sharedPreferences.getInt(e(), 0)));
+            this.i = true;
+        } catch (ClassCastException e) {
+            cc4.g(e, true);
+            this.i = false;
+        }
+    }
+
+    public final int f() {
+        if (this.i) {
+            return this.j;
+        }
+        return Math.max(this.e, Math.min(this.f, this.d.getAsInt()));
     }
 
     public final String toString() {
-        wk4 wk4Var = new wk4(this);
-        wk4Var.a(d(this.b), "statusCode");
-        wk4Var.a(this.c, "resolution");
-        wk4Var.a(this.d, "message");
-        wk4Var.a(this.e, "clientMethodKey");
-        return wk4Var.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        jte.k(parcel, 3, this.c, i);
-        jte.l(parcel, 4, this.d);
-        jte.i(parcel, 5, this.e);
-        jte.s(parcel, r);
-    }
-
-    public ds2(int i, PendingIntent pendingIntent, String str) {
-        this(1, i, pendingIntent, str, null);
+        return this.a + "=" + f();
     }
 }

@@ -1,21 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class lue {
-    public static String a(String str, String str2) {
-        int length = str.length() - str2.length();
-        if (length < 0 || length > 1) {
-            w26.j("Invalid input received");
-            return null;
+public final class lue implements zq7 {
+    public static final lue a = new lue();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 4)), 5)), 6)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        StringBuilder sb = new StringBuilder(str2.length() + str.length());
-        for (int i = 0; i < str.length(); i++) {
-            sb.append(str.charAt(i));
-            if (str2.length() > i) {
-                sb.append(str2.charAt(i));
-            }
-        }
-        return sb.toString();
+        throw null;
     }
 }

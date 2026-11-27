@@ -1,198 +1,146 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class gf0 extends FrameLayout {
-    public final wjb a;
-    public final pb0 b;
-    public final be0 c;
-    public final df0 d;
-    public final jia e;
-    public final RadioButton f;
-    public final Paint h;
-    public boolean n;
-    public final View r;
+public final class gf0 implements Runnable {
+    public final /* synthetic */ byte a;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public gf0(Context context, wjb wjbVar) {
-        super(context);
-        pb0 pb0Var = new pb0((wjb) null);
-        this.b = pb0Var;
-        this.h = new Paint(1);
-        this.a = wjbVar;
-        View view = new View(context);
-        this.r = view;
-        addView(view, nme.o(-1, -1));
-        zkb.h(bkb.g5, wjbVar, view);
-        pb0Var.r = gl.L(40.0f);
-        be0 be0Var = new be0(context);
-        this.c = be0Var;
-        be0Var.setRoundRadius(gl.L(20.0f));
-        addView(be0Var);
-        df0 df0Var = new df0(context, (byte) 0);
-        this.d = df0Var;
-        kk7.i(df0Var);
-        kk7.i(be0Var);
-        df0Var.setTextSize(16);
-        int i = bkb.i5;
-        zkb.W(df0Var, i, wjbVar);
-        df0Var.setGravity(k96.a0 ? 5 : 3);
-        addView(df0Var);
-        jia jiaVar = new jia(context);
-        this.e = jiaVar;
-        jiaVar.setTextSize(14);
-        zkb.W(jiaVar, i, wjbVar);
-        jiaVar.setGravity(k96.a0 ? 5 : 3);
-        addView(jiaVar);
-        RadioButton radioButton = new RadioButton(context);
-        this.f = radioButton;
-        radioButton.setSize(gl.L(20.0f));
-        zkb.O(radioButton, bkb.i7, bkb.D5, wjbVar);
-        addView(radioButton);
-        d();
-        if (b()) {
-            return;
-        }
-        radioButton.setVisibility(8);
+    public gf0(ChatActivityEnterView chatActivityEnterView) {
+        this.a = (byte) 1;
+        this.c = chatActivityEnterView;
+        this.b = -1;
     }
 
-    public int a() {
-        return 0;
-    }
-
-    public boolean b() {
-        return false;
-    }
-
-    public void c(boolean z, boolean z2) {
-        RadioButton radioButton = this.f;
-        if (radioButton.getVisibility() == 0) {
-            radioButton.a(z, true);
-        }
-    }
-
-    public void d() {
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        this.c.setLayoutParams(nme.d(40, 40.0f, (k96.a0 ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
-        boolean z = k96.a0;
-        int i = (z ? 5 : 3) | 16;
-        if (z) {
-            f = 20.0f;
-        } else {
-            f = b() ? 105 : 70;
-        }
-        if (k96.a0) {
-            f2 = b() ? 105 : 70;
-        } else {
-            f2 = 20.0f;
-        }
-        this.d.setLayoutParams(nme.d(-1, -2.0f, i, f, 0.0f, f2, 0.0f));
-        boolean z2 = k96.a0;
-        int i2 = (z2 ? 5 : 3) | 16;
-        if (z2) {
-            f3 = 20.0f;
-        } else {
-            f3 = b() ? 105 : 70;
-        }
-        if (k96.a0) {
-            f4 = b() ? 105 : 70;
-        } else {
-            f4 = 20.0f;
-        }
-        this.e.setLayoutParams(nme.d(-1, -2.0f, i2, f3, 0.0f, f4, 0.0f));
-        boolean z3 = k96.a0;
-        this.f.setLayoutParams(nme.d(22, 22.0f, (z3 ? 5 : 3) | 16, z3 ? 15.0f : 20.0f, 0.0f, z3 ? 20.0f : 15.0f, 0.0f));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.n) {
-            int v0 = bkb.v0(bkb.c7, this.a);
-            Paint paint = this.h;
-            paint.setColor(v0);
-            int i = b() ? kk7.p1 : 70;
-            if (this.c.getVisibility() == 8) {
-                i -= 40;
-            }
-            int a = a() + i;
-            if (k96.a0) {
-                canvas.drawRect(0.0f, getHeight() - 1, getWidth() - gl.L(a), getHeight(), paint);
-            } else {
-                canvas.drawRect(gl.L(a), getHeight() - 1, getWidth(), getHeight(), paint);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int currentPage;
+        byte b = this.a;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                jf0 jf0Var = (jf0) obj;
+                if (jf0Var.a && jf0Var.getParent() != null && this.b == jf0Var.c) {
+                    jf0Var.a = false;
+                    if (jf0Var.q()) {
+                        try {
+                            jf0Var.performHapticFeedback(0);
+                        } catch (Exception unused) {
+                        }
+                        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                        jf0Var.onTouchEvent(obtain);
+                        obtain.recycle();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                my1 my1Var = chatActivityEnterView.V0;
+                if (my1Var != null && (currentPage = my1Var.getCurrentPage()) != this.b) {
+                    this.b = currentPage;
+                    boolean z = chatActivityEnterView.m4;
+                    boolean z2 = currentPage == 1 || currentPage == 2;
+                    chatActivityEnterView.m4 = z2;
+                    boolean z3 = chatActivityEnterView.n4;
+                    chatActivityEnterView.n4 = currentPage == 0;
+                    if (chatActivityEnterView.o4) {
+                        if (chatActivityEnterView.G2 != 0) {
+                            chatActivityEnterView.Z1(currentPage != 0 ? 1 : 2, true);
+                            chatActivityEnterView.Q();
+                        } else if (!z2) {
+                            chatActivityEnterView.a2(false, true, false, true);
+                        }
+                    }
+                    if (z != chatActivityEnterView.m4 || z3 != chatActivityEnterView.n4) {
+                        chatActivityEnterView.P(true);
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                int i = this.b;
+                oe2 oe2Var = (oe2) obj;
+                q79 layoutManager = oe2Var.v1.getLayoutManager();
+                if (layoutManager != null) {
+                    int min = i > oe2Var.J1 ? Math.min(i + 1, oe2Var.q1.d.size() - 1) : Math.max(i - 1, 0);
+                    je2 je2Var = oe2Var.A1;
+                    je2Var.a = min;
+                    layoutManager.v0(je2Var);
+                }
+                oe2Var.J1 = i;
+                break;
+            case 3:
+                int i2 = this.b;
+                az7 az7Var = (az7) obj;
+                if (((gf0) az7Var.f) == this) {
+                    ArrayList arrayList = new ArrayList();
+                    TextView textView = (TextView) ((ArrayList) az7Var.b).get(i2);
+                    Property property = View.SCALE_X;
+                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
+                    Property property2 = View.SCALE_Y;
+                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
+                    Property property3 = View.ALPHA;
+                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
+                    TextView textView2 = (TextView) ((ArrayList) az7Var.c).get(i2);
+                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 1.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 1.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 1.0f));
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    az7Var.e = animatorSet;
+                    animatorSet.setDuration(150L);
+                    ((AnimatorSet) az7Var.e).playTogether(arrayList);
+                    ((AnimatorSet) az7Var.e).addListener(new ad5(this, (byte) 25));
+                    ((AnimatorSet) az7Var.e).start();
+                    break;
+                }
+                break;
+            case 4:
+                cfa cfaVar = (cfa) obj;
+                if (cfaVar.a && cfaVar.getParent() != null && this.b == cfaVar.c) {
+                    cfaVar.a = false;
+                    try {
+                        cfaVar.performHapticFeedback(0);
+                    } catch (Exception unused2) {
+                    }
+                    int i3 = cfaVar.h;
+                    if (i3 >= 0) {
+                        cfaVar.y.c(((CharSequence) cfaVar.F.get(i3)).toString(), true);
+                    }
+                    MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                    cfaVar.onTouchEvent(obtain2);
+                    obtain2.recycle();
+                    break;
+                }
+                break;
+            case 5:
+                ((l6d) obj).b(this.b);
+                break;
+            default:
+                ((olf) obj).H.b(this.b);
+                break;
         }
     }
 
-    public final SpannableStringBuilder e(CharSequence charSequence) {
-        SpannableString spannableString = new SpannableString(">");
-        Drawable drawable = getContext().getResources().getDrawable(R.drawable.attach_arrow_right);
-        cm2 cm2Var = new cm2(2, drawable);
-        drawable.setBounds(0, gl.L(1.0f), gl.L(11.0f), gl.L(12.0f));
-        spannableString.setSpan(cm2Var, 0, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append(charSequence).append((CharSequence) " ").append((CharSequence) spannableString);
-        return spannableStringBuilder;
+    public /* synthetic */ gf0(Object obj, int i, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
     }
 
-    public int getFullHeight() {
-        return 56;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(getFullHeight()), TLObject.FLAG_30));
-    }
-
-    public void setCellBackgroundVisible(boolean z) {
-        this.r.setVisibility(z ? 0 : 8);
-    }
-
-    public void setDivider(boolean z) {
-        this.n = z;
-        invalidate();
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        jia jiaVar = this.e;
-        df0 df0Var = this.d;
-        if (isEmpty) {
-            df0Var.setTranslationY(0.0f);
-            jiaVar.setVisibility(8);
-        } else {
-            df0Var.setTranslationY(gl.L(-9.0f));
-            jiaVar.setTranslationY(gl.L(12.0f));
-            jiaVar.l(charSequence, false);
-            jiaVar.setVisibility(0);
-        }
-        if (this.c.getVisibility() == 8) {
-            if (k96.a0) {
-                df0Var.setTranslationX(gl.L(40.0f));
-                jiaVar.setTranslationX(gl.L(40.0f));
-            } else {
-                df0Var.setTranslationX(gl.L(-40.0f));
-                jiaVar.setTranslationX(gl.L(-40.0f));
-            }
-        }
-    }
-
-    public void setSubtitleColorKey(int i) {
-        zkb.W(this.e, i, this.a);
+    public /* synthetic */ gf0(ViewGroup viewGroup, byte b) {
+        this.a = b;
+        this.c = viewGroup;
     }
 }

@@ -6,6 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -16,13 +17,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.ActionBar.e;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class jq0 implements p8c {
+public final /* synthetic */ class jq0 implements pcc {
     public final /* synthetic */ byte a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -33,7 +34,7 @@ public final /* synthetic */ class jq0 implements p8c {
         this.c = obj;
     }
 
-    @Override // p8c
+    @Override // pcc
     public final void a(Object obj) {
         int i;
         byte b = this.a;
@@ -48,199 +49,200 @@ public final /* synthetic */ class jq0 implements p8c {
                 TLRPC.User user2 = (TLRPC.User) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 if (arrayList != null && !arrayList.isEmpty()) {
-                    na7 q1 = na7.q1(i3);
+                    uc7 s1 = uc7.s1(i3);
                     TLRPC.TL_messages_inviteUsersToBot tL_messages_inviteUsersToBot = new TLRPC.TL_messages_inviteUsersToBot();
-                    tL_messages_inviteUsersToBot.bot = q1.o1(user2);
+                    tL_messages_inviteUsersToBot.bot = s1.q1(user2);
                     int size = arrayList.size();
                     while (i2 < size) {
                         Object obj3 = arrayList.get(i2);
                         i2++;
-                        tL_messages_inviteUsersToBot.users.add(q1.o1((TLRPC.User) obj3));
+                        tL_messages_inviteUsersToBot.users.add(s1.q1((TLRPC.User) obj3));
                     }
-                    ConnectionsManager.getInstance(i3).sendRequest(tL_messages_inviteUsersToBot, new pl(l7c.r(user2), arrayList));
+                    ConnectionsManager.getInstance(i3).sendRequest(tL_messages_inviteUsersToBot, new ql(lbc.r(user2), arrayList));
                     break;
                 }
                 break;
             case 1:
-                c42 c42Var = (c42) obj2;
+                s42 s42Var = (s42) obj2;
+                s42Var.getClass();
                 TLRPC.TL_messageMediaGeoLive tL_messageMediaGeoLive = new TLRPC.TL_messageMediaGeoLive();
                 TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
                 tL_messageMediaGeoLive.geo = tL_geoPoint;
-                tL_geoPoint.lat = gl.b0(c42Var.i0.getLatitude());
-                tL_messageMediaGeoLive.geo._long = gl.b0(c42Var.i0.getLongitude());
+                tL_geoPoint.lat = hl.b0(s42Var.i0.getLatitude());
+                tL_messageMediaGeoLive.geo._long = hl.b0(s42Var.i0.getLongitude());
                 tL_messageMediaGeoLive.period = i3;
-                c42Var.o0.b(tL_messageMediaGeoLive, c42Var.p0, true, 0, ((Long) obj).longValue());
-                c42Var.b.a(true);
+                s42Var.o0.b(tL_messageMediaGeoLive, s42Var.p0, true, 0, ((Long) obj).longValue());
+                s42Var.b.a(true);
                 break;
             case 2:
-                dh7 dh7Var = (dh7) obj2;
+                mj7 mj7Var = (mj7) obj2;
                 View view = (View) obj;
-                va vaVar = dh7Var.b;
-                if (view instanceof ch7) {
-                    vaVar.getClass();
-                    int R = RecyclerView.R(view);
-                    c4c G = vaVar.g3.G(R);
+                wa waVar = mj7Var.b;
+                if (view instanceof lj7) {
+                    waVar.getClass();
+                    int S = RecyclerView.S(view);
+                    b8c G = waVar.g3.G(S);
                     if (G != null) {
-                        ch7 ch7Var = (ch7) view;
-                        ch7Var.setPosition(dh7Var.b(R));
-                        ch7Var.b(i3 == G.d, true);
+                        lj7 lj7Var = (lj7) view;
+                        lj7Var.setPosition(mj7Var.b(S));
+                        lj7Var.b(i3 == G.d, true);
                         view.setPressed(false);
                         break;
                     }
                 }
                 break;
             case 3:
-                zi8 zi8Var = (zi8) obj2;
+                mm8 mm8Var = (mm8) obj2;
                 int[] iArr = (int[]) obj;
-                f4b f4bVar = zi8Var.d;
+                c8b c8bVar = mm8Var.d;
                 int i4 = iArr[0];
-                zi8Var.V = i4;
-                f4bVar.A0 = i4;
+                mm8Var.V = i4;
+                c8bVar.A0 = i4;
                 int i5 = iArr[1];
-                zi8Var.W = i5;
-                f4bVar.B0 = i5;
-                zi8Var.U.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i3, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-                zi8Var.invalidate();
-                kac kacVar = zi8Var.n;
-                if (kacVar != null) {
-                    int i6 = zi8Var.V;
-                    int i7 = zi8Var.W;
-                    td4 td4Var = kacVar.b;
-                    if (td4Var == null) {
-                        kacVar.n = i6;
-                        kacVar.r = i7;
+                mm8Var.W = i5;
+                c8bVar.B0 = i5;
+                mm8Var.U.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i3, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+                mm8Var.invalidate();
+                kec kecVar = mm8Var.n;
+                if (kecVar != null) {
+                    int i6 = mm8Var.V;
+                    int i7 = mm8Var.W;
+                    rf4 rf4Var = kecVar.b;
+                    if (rf4Var == null) {
+                        kecVar.n = i6;
+                        kecVar.r = i7;
                     } else {
-                        td4Var.f(i6, i7);
+                        rf4Var.f(i6, i7);
                     }
                 }
-                l58 l58Var = zi8Var.s;
-                if (l58Var != null) {
-                    int i8 = zi8Var.V;
-                    int i9 = zi8Var.W;
-                    td4 td4Var2 = l58Var.m0;
-                    if (td4Var2 != null) {
-                        td4Var2.f(i8, i9);
+                c98 c98Var = mm8Var.s;
+                if (c98Var != null) {
+                    int i8 = mm8Var.V;
+                    int i9 = mm8Var.W;
+                    rf4 rf4Var2 = c98Var.m0;
+                    if (rf4Var2 != null) {
+                        rf4Var2.f(i8, i9);
                         break;
                     } else {
-                        l58Var.K0 = i8;
-                        l58Var.L0 = i9;
+                        c98Var.K0 = i8;
+                        c98Var.L0 = i9;
                         break;
                     }
                 }
                 break;
             case 4:
-                kx8 kx8Var = (kx8) ((kk8) obj2).b;
-                kx8Var.d0();
-                i = ((d) kx8Var).currentAccount;
-                ox8.f(i).k(i3, (String) obj);
+                w09 w09Var = (w09) ((rn8) obj2).b;
+                w09Var.d0();
+                i = ((e) w09Var).currentAccount;
+                b19.f(i).k(i3, (String) obj);
                 break;
             case 5:
-                x4c x4cVar = (x4c) obj2;
+                w8c w8cVar = (w8c) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
-                x4cVar.getClass();
+                w8cVar.getClass();
                 if (LaunchActivity.E1) {
                     if (arrayList2 == null || arrayList2.size() == 0) {
-                        yjb.x(null, 2131743640, new u21(f11.a(x4cVar.getContext()), null), null);
+                        xnb.x(null, 2131743534, new d31(o11.a(w8cVar.getContext()), null), null);
                     } else {
-                        LinearLayout linearLayout = new LinearLayout(x4cVar.getContext());
+                        LinearLayout linearLayout = new LinearLayout(w8cVar.getContext());
                         linearLayout.setOrientation(1);
-                        ry8 ry8Var = new ry8(x4cVar.getContext());
-                        ry8Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                        ry8Var.f(R.raw.ic_ban, 50, 50, null);
-                        ry8Var.d();
-                        ry8Var.setScaleType(ImageView.ScaleType.CENTER);
-                        int L = gl.L(80.0f);
-                        int i10 = bkb.H6;
-                        ShapeDrawable K = bkb.K(L, bkb.w0(null, i10, false));
-                        vkb M = zkb.M(i10);
-                        ry8Var.setBackground(K);
-                        zkb.j(ry8Var, K, M, null, null);
-                        linearLayout.addView(ry8Var, nme.t(80, 80, 17, 0, 14, 0, 0));
-                        TextView textView = new TextView(x4cVar.getContext());
-                        textView.setTypeface(gl.o());
+                        e29 e29Var = new e29(w8cVar.getContext());
+                        e29Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                        e29Var.f(R.raw.ic_ban, 50, 50, null);
+                        e29Var.d();
+                        e29Var.setScaleType(ImageView.ScaleType.CENTER);
+                        int L = hl.L(80.0f);
+                        int i10 = aob.I6;
+                        ShapeDrawable K = aob.K(L, aob.w0(null, i10, false));
+                        uob M = yob.M(i10);
+                        e29Var.setBackground(K);
+                        yob.j(e29Var, K, M, null, null);
+                        linearLayout.addView(e29Var, tre.t(80, 80, 17, 0, 14, 0, 0));
+                        TextView textView = new TextView(w8cVar.getContext());
+                        textView.setTypeface(hl.o());
                         textView.setTextSize(1, 20.0f);
                         textView.setGravity(17);
-                        textView.setText(k96.G(arrayList2.size(), "UnconfirmedAuthDeniedTitle", new Object[0]));
-                        zkb.X(textView, bkb.i5, null);
-                        linearLayout.addView(textView, nme.k(28.0f, 14.0f, 28.0f, 0.0f, -1, -2));
-                        TextView textView2 = new TextView(x4cVar.getContext());
+                        textView.setText(ob6.G(arrayList2.size(), "UnconfirmedAuthDeniedTitle", new Object[0]));
+                        yob.X(textView, aob.j5, null);
+                        linearLayout.addView(textView, tre.k(28.0f, 14.0f, 28.0f, 0.0f, -1, -2));
+                        TextView textView2 = new TextView(w8cVar.getContext());
                         textView2.setTextSize(1, 14.0f);
                         textView2.setGravity(17);
                         if (arrayList2.size() == 1) {
-                            textView2.setText(k96.a0(null, null, 2131743666, x4c.a((u4c) arrayList2.get(0))));
+                            textView2.setText(ob6.a0(null, null, 2131743560, w8c.a((t8c) arrayList2.get(0))));
                         } else {
                             String str = "\n";
                             for (int i11 = 0; i11 < Math.min(arrayList2.size(), 10); i11++) {
-                                StringBuilder k = b00.k(str, "• ");
-                                k.append(x4c.a((u4c) arrayList2.get(i11)));
-                                k.append("\n");
-                                str = k.toString();
+                                StringBuilder l = c00.l(str, "• ");
+                                l.append(w8c.a((t8c) arrayList2.get(i11)));
+                                l.append("\n");
+                                str = l.toString();
                             }
-                            textView2.setText(k96.a0(null, null, 2131743667, str));
+                            textView2.setText(ob6.a0(null, null, 2131743561, str));
                         }
-                        zkb.X(textView2, bkb.i5, null);
-                        linearLayout.addView(textView2, nme.k(40.0f, 9.0f, 40.0f, 0.0f, -1, -2));
-                        FrameLayout frameLayout = new FrameLayout(x4cVar.getContext());
-                        frameLayout.setPadding(gl.L(24.0f), gl.L(10.0f), gl.L(24.0f), gl.L(10.0f));
-                        int L2 = gl.L(12.0f);
-                        int i12 = bkb.p7;
-                        Drawable b0 = bkb.b0(L2, bkb.p1(bkb.I.o() ? 0.2f : 0.15f, bkb.w0(null, i12, false)));
-                        vkb K2 = zkb.K(bkb.I.o() ? 0.2f : 0.15f, i12);
+                        yob.X(textView2, aob.j5, null);
+                        linearLayout.addView(textView2, tre.k(40.0f, 9.0f, 40.0f, 0.0f, -1, -2));
+                        FrameLayout frameLayout = new FrameLayout(w8cVar.getContext());
+                        frameLayout.setPadding(hl.L(24.0f), hl.L(10.0f), hl.L(24.0f), hl.L(10.0f));
+                        int L2 = hl.L(12.0f);
+                        int i12 = aob.q7;
+                        Drawable b0 = aob.b0(L2, aob.p1(aob.I.o() ? 0.2f : 0.15f, aob.w0(null, i12, false)));
+                        uob K2 = yob.K(aob.I.o() ? 0.2f : 0.15f, i12);
                         frameLayout.setBackground(b0);
-                        zkb.j(frameLayout, b0, K2, null, null);
-                        TextView textView3 = new TextView(x4cVar.getContext());
-                        textView3.setTypeface(gl.o());
+                        yob.j(frameLayout, b0, K2, null, null);
+                        TextView textView3 = new TextView(w8cVar.getContext());
+                        textView3.setTypeface(hl.o());
                         textView3.setTextSize(1, 14.0f);
                         textView3.setGravity(17);
-                        ug8.x(textView3, i12, null, null, 2131743662);
-                        frameLayout.addView(textView3, nme.e(-1, -1, kk7.D1));
-                        linearLayout.addView(frameLayout, nme.k(14.0f, 19.0f, 14.0f, 0.0f, -1, -2));
-                        u41 u41Var = new u41(null, x4cVar.getContext(), true);
-                        u41Var.setRoundRadius(24);
-                        ote.b(u41Var, 0.02f, 1.5f);
-                        u41Var.i(k96.M0(2131749356, null), false, true);
-                        linearLayout.addView(u41Var, nme.k(14.0f, 20.0f, 14.0f, 4.0f, -1, 48));
-                        fx0 h = de9.h(1, null, x4cVar.getContext(), false);
+                        ik8.x(textView3, i12, null, null, 2131743556);
+                        frameLayout.addView(textView3, tre.e(-1, -1, jn7.D1));
+                        linearLayout.addView(frameLayout, tre.k(14.0f, 19.0f, 14.0f, 0.0f, -1, -2));
+                        c51 c51Var = new c51(null, w8cVar.getContext(), true);
+                        c51Var.setRoundRadius(24);
+                        iye.b(c51Var, 0.02f, 1.5f);
+                        c51Var.i(ob6.M0(2131749302, null), false, true);
+                        linearLayout.addView(c51Var, tre.k(14.0f, 20.0f, 14.0f, 4.0f, -1, 48));
+                        nx0 h = uh9.h(1, null, w8cVar.getContext(), false);
                         h.O = linearLayout;
                         h.show();
                         h.c0 = false;
                         h.d0 = false;
-                        rw0 rw0Var = new rw0(h, (byte) 5);
-                        gl.r(u41Var.K);
-                        u41Var.setCountFilled(false);
-                        u41Var.J = 5;
-                        u41Var.c(5, false);
-                        u41Var.setShowZero(false);
-                        q21 q21Var = new q21(u41Var, rw0Var, (byte) 2);
-                        u41Var.K = q21Var;
-                        gl.d3(q21Var, 1000L);
-                        u41Var.setOnClickListener(new vzb(u41Var, h, (byte) 3));
+                        ax0 ax0Var = new ax0(h, (byte) 5);
+                        hl.r(c51Var.K);
+                        c51Var.setCountFilled(false);
+                        c51Var.J = 5;
+                        c51Var.c(5, false);
+                        c51Var.setShowZero(false);
+                        z21 z21Var = new z21(c51Var, ax0Var, (byte) 2);
+                        c51Var.K = z21Var;
+                        hl.d3(z21Var, 1000L);
+                        c51Var.setOnClickListener(new jjb((byte) 6, (KeyEvent.Callback) h, (Object) c51Var));
                     }
                 }
-                x4cVar.e.a(false, true);
-                na7.q1(i3).P1().a();
+                w8cVar.e.a(false, true);
+                uc7.s1(i3).R1().a();
                 break;
             case 6:
-                p8c p8cVar = (p8c) obj2;
-                Long l = (Long) obj;
-                if (l != null && l.longValue() > 0 && l.longValue() != Long.MAX_VALUE) {
-                    user = na7.q1(i3).V1(l);
+                pcc pccVar = (pcc) obj2;
+                Long l2 = (Long) obj;
+                if (l2 != null && l2.longValue() > 0 && l2.longValue() != Long.MAX_VALUE) {
+                    user = uc7.s1(i3).X1(l2);
                 }
-                p8cVar.a(user);
+                pccVar.a(user);
                 break;
             default:
-                ypc ypcVar = (ypc) obj2;
+                muc mucVar = (muc) obj2;
                 String str2 = (String) obj;
-                if (!ypcVar.r && i3 == ypcVar.K) {
-                    ypcVar.F = 0;
-                    ypcVar.M = false;
+                if (!mucVar.r && i3 == mucVar.K) {
+                    mucVar.F = 0;
+                    mucVar.M = false;
                     String userFriendlyAddress = WalletEngine2.isValidRecipientAddress(str2) ? WalletEngine2.toUserFriendlyAddress(str2) : null;
-                    ypcVar.y = userFriendlyAddress;
-                    u41 u41Var2 = ypcVar.a0;
-                    if (u41Var2 != null) {
-                        u41Var2.setEnabled(userFriendlyAddress != null);
+                    mucVar.y = userFriendlyAddress;
+                    c51 c51Var2 = mucVar.a0;
+                    if (c51Var2 != null) {
+                        c51Var2.setEnabled(userFriendlyAddress != null);
                     }
-                    ypcVar.a.g3.O(true);
+                    mucVar.a.g3.O(true);
                     break;
                 }
                 break;

@@ -1,56 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class r4f {
-    public static String a(xdf xdfVar) {
-        StringBuilder sb = new StringBuilder(xdfVar.j());
-        for (int i = 0; i < xdfVar.j(); i++) {
-            byte h = xdfVar.h(i);
-            if (h == 34) {
-                sb.append("\\\"");
-            } else if (h == 39) {
-                sb.append("\\'");
-            } else if (h != 92) {
-                switch (h) {
-                    case 7:
-                        sb.append("\\a");
-                        break;
-                    case 8:
-                        sb.append("\\b");
-                        break;
-                    case 9:
-                        sb.append("\\t");
-                        break;
-                    case 10:
-                        sb.append("\\n");
-                        break;
-                    case 11:
-                        sb.append("\\v");
-                        break;
-                    case 12:
-                        sb.append("\\f");
-                        break;
-                    case 13:
-                        sb.append("\\r");
-                        break;
-                    default:
-                        if (h < 32 || h > 126) {
-                            sb.append('\\');
-                            sb.append((char) (((h >>> 6) & 3) + 48));
-                            sb.append((char) (((h >>> 3) & 7) + 48));
-                            sb.append((char) ((h & 7) + 48));
-                            break;
-                        } else {
-                            sb.append((char) h);
-                            break;
-                        }
-                        break;
-                }
-            } else {
-                sb.append("\\\\");
-            }
-        }
-        return sb.toString();
+public final class r4f extends c4 {
+    public static final Parcelable.Creator<r4f> CREATOR = new t4f((byte) 4);
+    public final byte[] a;
+
+    public r4f(byte[] bArr) {
+        this.a = bArr;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.c(parcel, 1, this.a);
+        bye.s(parcel, r);
     }
 }

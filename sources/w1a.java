@@ -1,39 +1,16 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class w1a extends zb3 {
+    public final /* synthetic */ b2a F;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class w1a implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z3a b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ int d;
-
-    public /* synthetic */ w1a(z3a z3aVar, TLRPC.Message message, int i, byte b) {
-        this.a = b;
-        this.b = z3aVar;
-        this.c = message;
-        this.d = i;
+    public w1a(b2a b2aVar) {
+        this.F = b2aVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.d;
-        TLRPC.Message message = this.c;
-        z3a z3aVar = this.b;
-        switch (b) {
-            case 0:
-                message.send_state = 2;
-                z3aVar.getNotificationCenter().k(23, Integer.valueOf(message.id));
-                z3aVar.c0(message.id);
-                z3aVar.h0(message.id, i != 0);
-                break;
-            default:
-                message.send_state = 0;
-                z3aVar.getNotificationCenter().k(20, Integer.valueOf(i));
-                break;
-        }
+    @Override // zb3
+    public final void P(f89 f89Var) {
+        this.F.b1();
     }
 }

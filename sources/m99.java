@@ -1,15 +1,44 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class m99 extends vl {
-    @Override // vl, android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(24.0f);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class m99 extends bp5 {
+    public final transient to5 d;
+    public final transient n99 e;
+
+    public m99(to5 to5Var, n99 n99Var) {
+        this.d = to5Var;
+        this.e = n99Var;
     }
 
-    @Override // vl, android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(24.0f);
+    @Override // jo5, java.util.AbstractCollection, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.d.get(obj) != null;
+    }
+
+    @Override // bp5, jo5
+    public final po5 h() {
+        return this.e;
+    }
+
+    @Override // jo5
+    public final int i(int i, Object[] objArr) {
+        return this.e.i(i, objArr);
+    }
+
+    @Override // jo5
+    public final boolean m() {
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    /* renamed from: n */
+    public final v9c iterator() {
+        return this.e.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.d.size();
     }
 }

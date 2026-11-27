@@ -2,7 +2,7 @@ package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -37,20 +37,20 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        rod rodVar = new rod("IdentifiedLanguage");
+        htd htdVar = new htd("IdentifiedLanguage");
         byte b = 28;
         boolean z = false;
-        vk9 vk9Var = new vk9(b, z);
-        ((vk9) rodVar.d).d = vk9Var;
-        rodVar.d = vk9Var;
-        vk9Var.c = this.a;
-        vk9Var.b = "languageTag";
+        ko9 ko9Var = new ko9(b, z);
+        ((ko9) htdVar.d).d = ko9Var;
+        htdVar.d = ko9Var;
+        ko9Var.c = this.a;
+        ko9Var.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        ugd ugdVar = new ugd(b, z);
-        ((vk9) rodVar.d).d = ugdVar;
-        rodVar.d = ugdVar;
-        ugdVar.c = valueOf;
-        ugdVar.b = "confidence";
-        return rodVar.toString();
+        lld lldVar = new lld(b, z);
+        ((ko9) htdVar.d).d = lldVar;
+        htdVar.d = lldVar;
+        lldVar.c = valueOf;
+        lldVar.b = "confidence";
+        return htdVar.toString();
     }
 }

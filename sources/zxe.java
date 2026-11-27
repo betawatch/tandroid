@@ -1,24 +1,47 @@
 // default package
 
-import android.content.Context;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zxe {
-    public final u84 a;
-    public final AtomicLong b;
+    public static rxe a(Object obj, Object obj2) {
+        rxe rxeVar = (rxe) obj;
+        rxe rxeVar2 = (rxe) obj2;
+        if (!rxeVar2.isEmpty()) {
+            if (!rxeVar.a) {
+                if (rxeVar.isEmpty()) {
+                    rxeVar = new rxe();
+                } else {
+                    rxe rxeVar3 = new rxe(rxeVar);
+                    rxeVar3.a = true;
+                    rxeVar = rxeVar3;
+                }
+            }
+            rxeVar.c();
+            if (!rxeVar2.isEmpty()) {
+                rxeVar.putAll(rxeVar2);
+            }
+        }
+        return rxeVar;
+    }
 
-    public zxe(Context context, byte b) {
-        switch (b) {
-            case 1:
-                this.b = new AtomicLong(-1L);
-                this.a = new u84(context, u84.o, new ngb("mlkit:vision"), ay4.c);
-                break;
-            default:
-                this.b = new AtomicLong(-1L);
-                this.a = new u84(context, u84.o, new ngb("mlkit:natural_language"), ay4.c);
-                break;
+    public static void b(Object obj, Object obj2) {
+        rxe rxeVar = (rxe) obj;
+        if (obj2 != null) {
+            grb.o();
+            return;
+        }
+        if (rxeVar.isEmpty()) {
+            return;
+        }
+        Iterator it = rxeVar.entrySet().iterator();
+        if (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            entry.getKey();
+            entry.getValue();
+            throw new NoSuchMethodError();
         }
     }
 }

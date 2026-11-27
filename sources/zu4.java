@@ -1,44 +1,9 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class zu4 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tv4 b;
-
-    public /* synthetic */ zu4(tv4 tv4Var, byte b) {
-        this.a = b;
-        this.b = tv4Var;
-    }
-
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        tv4 tv4Var = this.b;
-        switch (b) {
-            case 0:
-                tv4Var.u2.setTitleMinSideInset(gl.L(6.0f) + ((Integer) obj).intValue());
-                break;
-            default:
-                List list = (List) obj;
-                if (tv4Var.getContext() != null && !tv4Var.J) {
-                    ArrayList c = on0.c(1, list);
-                    tv4Var.U1 = c;
-                    List d = on0.d(c);
-                    tv4Var.U1 = d;
-                    if (!((ArrayList) d).isEmpty()) {
-                        tv4Var.b1();
-                        l5c l5cVar = tv4Var.T1;
-                        if (l5cVar != null) {
-                            l5cVar.O(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class zu4 extends yu4 {
+    public zu4(CharSequence charSequence) {
+        super(charSequence, "android.credentials.GetCredentialException.TYPE_INTERRUPTED");
     }
 }

@@ -11,11 +11,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
     private CapturerObserver capturerObserver;
+    private boolean isCapturing;
     private final VideoReader videoReader;
     private final Timer timer = new Timer();
     private final TimerTask tickTask = new TimerTask() { // from class: org.webrtc.FileVideoCapturer.1
@@ -25,14 +26,14 @@ public class FileVideoCapturer implements VideoCapturer {
         }
     };
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private interface VideoReader {
         void close();
 
         VideoFrame getNextFrame();
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     private static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";
@@ -51,7 +52,7 @@ public class FileVideoCapturer implements VideoCapturer {
             while (true) {
                 int read = this.mediaFile.read();
                 if (read == -1) {
-                    wn4.j(b00.h("Found end of file before end of header for file: ", str));
+                    xi4.l(c00.i("Found end of file before end of header for file: ", str));
                     throw null;
                 }
                 if (read == 10) {
@@ -71,11 +72,11 @@ public class FileVideoCapturer implements VideoCapturer {
                     }
                     Logging.d(TAG, "Color space: " + str2);
                     if (!str2.equals("420") && !str2.equals("420mpeg2")) {
-                        w26.j("Does not support any other color space than I420 or I420mpeg2");
+                        lq5.j("Does not support any other color space than I420 or I420mpeg2");
                         throw null;
                     }
                     if (i % 2 == 1 || i2 % 2 == 1) {
-                        w26.j("Does not support odd width or height");
+                        lq5.j("Does not support odd width or height");
                         throw null;
                     }
                     this.frameWidth = i;
@@ -103,9 +104,6 @@ public class FileVideoCapturer implements VideoCapturer {
             ByteBuffer dataY = allocate.getDataY();
             ByteBuffer dataU = allocate.getDataU();
             ByteBuffer dataV = allocate.getDataV();
-            allocate.getStrideY();
-            allocate.getStrideU();
-            allocate.getStrideV();
             try {
                 int i = FRAME_DELIMETER_LENGTH;
                 ByteBuffer allocate2 = ByteBuffer.allocate(i);
@@ -124,7 +122,7 @@ public class FileVideoCapturer implements VideoCapturer {
                 }
                 throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
             } catch (IOException e) {
-                sdb.b(e);
+                grb.m(e);
                 return null;
             }
         }
@@ -150,6 +148,11 @@ public class FileVideoCapturer implements VideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
+    public boolean isCapturing() {
+        return this.isCapturing;
+    }
+
+    @Override // org.webrtc.VideoCapturer
     public boolean isScreencast() {
         return false;
     }
@@ -157,11 +160,13 @@ public class FileVideoCapturer implements VideoCapturer {
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i, int i2, int i3) {
         this.timer.schedule(this.tickTask, 0L, 1000 / i3);
+        this.isCapturing = true;
     }
 
     @Override // org.webrtc.VideoCapturer
     public void stopCapture() {
         this.timer.cancel();
+        this.isCapturing = false;
     }
 
     public void tick() {

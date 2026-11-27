@@ -1,105 +1,119 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.util.LongSparseArray;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class k9 extends FrameLayout {
-    public final gn a;
-    public final Paint b;
-    public final hx2 c;
-    public final Drawable d;
-    public final int e;
-    public int f;
+public final class k9 extends ny0 implements mv4 {
+    public final b8c S1;
+    public final LongSparseArray T1;
+    public ArrayList U1;
+    public boolean V1;
+    public l9c W1;
+    public int X1;
 
-    public k9(Activity activity, int i) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new hx2(new l0(this, (byte) 4));
-        this.e = i;
-        this.d = activity.getResources().getDrawable(R.drawable.filled_gift_sell_24).mutate();
-        gn gnVar = new gn(false, false, false);
-        this.a = gnVar;
-        gnVar.N = gl.q.x;
-        gnVar.setCallback(this);
-        gnVar.x(gl.o());
-        gnVar.w(gl.L(14.0f));
-        gnVar.u(-1);
-        gnVar.b = 3;
-        paint.setShader(new LinearGradient(0.0f, 0.0f, gl.L(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+    public k9(Context context) {
+        super(context, null, false, false, 2, null);
+        this.T1 = new LongSparseArray();
+        this.U1 = new ArrayList();
+        int i = 0;
+        int w0 = aob.w0(null, aob.a7, false);
+        this.X1 = w0;
+        s0(w0);
+        ov4.c(this.a).f.add(this);
+        this.F1 = false;
+        this.E1 = hl.L(12.0f);
+        J();
+        LinearLayout linearLayout = new LinearLayout(context);
+        byte b = 1;
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setClickable(true);
+        this.S1 = b8c.j(-1, linearLayout);
+        this.n1.setPadding(this.u0, hl.L(9.0f), this.u0, hl.L(9.0f));
+        this.n1.setOverScrollMode(2);
+        this.W1.O(false);
+        ArrayList arrayList = ov4.c(this.a).c;
+        int size = arrayList.size();
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            kv4 kv4Var = (kv4) obj;
+            j9 j9Var = new j9(context, kv4Var);
+            j9Var.a.setOnClickListener(new c0(this, context, kv4Var, b));
+            linearLayout.addView(j9Var, tre.o(-1, -2));
+            this.T1.put(kv4Var.b, j9Var);
+        }
+        c(arrayList);
     }
 
-    public final void a(int i) {
-        this.f = i;
-        if (isAttachedToWindow()) {
-            long max = Math.max(0, i - ConnectionsManager.getInstance(this.e).getCurrentTime());
-            this.c.a(max);
-            b(max);
+    @Override // ny0
+    public final c79 H0(d79 d79Var) {
+        l9c l9cVar = new l9c(this.n1, getContext(), this.a, 0, true, new c(this, (byte) 4), this.J0);
+        this.W1 = l9cVar;
+        l9cVar.r = false;
+        return l9cVar;
+    }
+
+    @Override // ny0
+    public final CharSequence K0() {
+        ArrayList arrayList = this.U1;
+        if (arrayList == null) {
+            return null;
+        }
+        return ob6.a0(null, null, 2131750379, Integer.valueOf(arrayList.size()));
+    }
+
+    @Override // mv4
+    public final void c(ArrayList arrayList) {
+        this.U1 = new ArrayList(arrayList);
+        this.o1.setTitle(K0());
+        int size = arrayList.size();
+        int i = 0;
+        while (i < size) {
+            Object obj = arrayList.get(i);
+            i++;
+            kv4 kv4Var = (kv4) obj;
+            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = kv4Var.f;
+            int i2 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
+            j9 j9Var = (j9) this.T1.get(kv4Var.b);
+            if (j9Var != null) {
+                j9Var.b(this.V1);
+                long max = Math.max(0, i2 - ConnectionsManager.getInstance(this.a).getCurrentTime());
+                j9Var.a(max, this.V1);
+                j9Var.f.a(max);
+            }
         }
     }
 
-    public final void b(long j) {
-        gn gnVar = this.a;
-        if (j == 0) {
-            gnVar.t(k96.M0(2131750320, null), true, true);
-        } else {
-            int i = (int) j;
-            gnVar.t(j > 3600 ? gl.g0(i, false, false) : gl.h0(i, false), isAttachedToWindow(), true);
+    @Override // nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        ov4.c(this.a).f.remove(this);
+        super.dismiss();
+    }
+
+    @Override // nx0
+    public final void p0() {
+        try {
+            super.p0();
+            int w0 = aob.w0(null, aob.a7, false);
+            if (w0 != this.X1) {
+                this.X1 = w0;
+                s0(w0);
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth() - gl.L(14.0f);
-        gn gnVar = this.a;
-        int c = measuredWidth - ((int) gnVar.c());
-        int L = c - gl.L(30.0f);
-        canvas.save();
-        canvas.translate(L, 0.0f);
-        canvas.drawRoundRect(0.0f, 0.0f, getWidth() - L, getHeight(), gl.L(14.0f), gl.L(14.0f), this.b);
-        canvas.restore();
-        gnVar.setBounds(c, 0, getMeasuredWidth() - gl.L(8.0f), getMeasuredHeight() - gl.L(1.0f));
-        gnVar.draw(canvas);
-        int L2 = gl.L(-22.0f) + c;
-        int L3 = gl.L(5.0f);
-        int L4 = gl.L(-4.0f) + c;
-        int L5 = gl.L(23.0f);
-        Drawable drawable = this.d;
-        drawable.setBounds(L2, L3, L4, L5);
-        drawable.draw(canvas);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a(this.f);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.L(172.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(28.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
+    @Override // nx0
+    public final void x() {
+        this.V1 = true;
     }
 }

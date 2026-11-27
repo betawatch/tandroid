@@ -1,49 +1,22 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class g56 extends x1 {
-    public final f56 a = new f56();
-    public final int b;
-    public boolean c;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-    public g56(int i) {
-        this.b = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class g56 extends jc0 {
+    public final /* synthetic */ gb0 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g56(gb0 gb0Var, Context context) {
+        super(context, false);
+        this.e = gb0Var;
     }
 
-    @Override // x1
-    public final boolean b(gk0 gk0Var) {
-        if (!this.c) {
-            return true;
-        }
-        return true;
-    }
-
-    @Override // x1
-    public final gk0 e() {
-        return this.a;
-    }
-
-    @Override // x1
-    public final boolean f() {
-        return true;
-    }
-
-    @Override // x1
-    public final vj2 h(vo3 vo3Var) {
-        if (vo3Var.h) {
-            if (((tg6) this.a.c) == null) {
-                return null;
-            }
-            gk0 e = vo3Var.h().e();
-            this.c = (e instanceof tu7) || (e instanceof f56);
-            return vj2.a(vo3Var.e);
-        }
-        int i = vo3Var.g;
-        int i2 = this.b;
-        if (i >= i2) {
-            return new vj2(-1, vo3Var.c + i2, false);
-        }
-        return null;
+    @Override // jc0, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(hl.L(Math.min(3, ((i56) this.e.d).x) == 0 ? 0 : bp1.h(r4, 1, 20, 32)), TLObject.FLAG_30), i2);
     }
 }

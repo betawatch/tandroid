@@ -1,25 +1,19 @@
 // default package
 
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class wkd extends ane {
-    public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ dmd c;
+public final class wkd implements zq7 {
+    public static final wkd a = new wkd();
 
-    public wkd(TaskCompletionSource taskCompletionSource, dmd dmdVar) {
-        this.b = taskCompletionSource;
-        this.c = dmdVar;
+    static {
+        xnb.y(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, xnb.r(xnb.n(zbd.class, new wad(1)), 2)), 3)), 4)), 5)), 6)), 7)));
     }
 
-    @Override // gse
-    public final void t(w5e w5eVar) {
-        dve.a(w5eVar.a, null, this.b);
-    }
-
-    @Override // gse
-    public final void zze() {
-        this.c.T();
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

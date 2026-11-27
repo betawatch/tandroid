@@ -1,29 +1,35 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class wo3 extends ReplacementSpan {
-    public int b;
-    public final Paint a = new Paint(1);
-    public float c = 3.0f;
-    public float d = 3.0f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wo3 extends ThreadPoolExecutor implements AutoCloseable {
+    public final /* synthetic */ sw2 a;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        if (color != 0) {
-            paint2.setColor(paint.getColor());
-        }
-        canvas.drawCircle(f + (gl.N(this.c) / 2.0f), ((i5 - i3) / 2) + this.b, gl.N(this.d) / 2.0f, paint2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wo3(sw2 sw2Var, PriorityBlockingQueue priorityBlockingQueue) {
+        super(1, 1, 60L, TimeUnit.SECONDS, priorityBlockingQueue);
+        this.a = sw2Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        return gl.L(this.c);
+    @Override // java.util.concurrent.ThreadPoolExecutor
+    public final void beforeExecute(Thread thread, Runnable runnable) {
+        CountDownLatch countDownLatch = (CountDownLatch) this.a.c;
+        if (countDownLatch != null) {
+            try {
+                countDownLatch.await();
+            } catch (InterruptedException e) {
+                cc4.g(e, true);
+            }
+        }
+    }
+
+    @Override // java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        a3.d(this);
     }
 }

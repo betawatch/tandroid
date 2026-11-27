@@ -1,58 +1,49 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rn1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+public final /* synthetic */ class rn1 implements View.OnLongClickListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zu1 b;
 
-    public /* synthetic */ rn1(int i, int i2, String str, boolean z) {
-        this.e = str;
-        this.b = i;
-        this.c = z;
-        this.d = i2;
+    public /* synthetic */ rn1(zu1 zu1Var, byte b) {
+        this.a = b;
+        this.b = zu1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        r47 r47Var;
+        r47 r47Var2;
         byte b = this.a;
-        Object obj = this.e;
+        zu1 zu1Var = this.b;
         switch (b) {
             case 0:
-                mu1 mu1Var = (mu1) obj;
-                mu1Var.getMessagesController().Z(mu1Var.l6, hc2.T(mu1Var.e) ? mu1Var.l6 : 0L, this.b, this.d, this.c, new vm1(mu1Var, (byte) 23));
-                break;
+                return zu1Var.N9();
+            case 1:
+                zu1 zu1Var2 = this.b;
+                byte b2 = zu1Var2.dc;
+                if (b2 == 1 && (r47Var2 = zu1Var2.H5) != null) {
+                    zu1Var2.J(r47Var2.e1(), 0, 0, 0, true, true);
+                    return true;
+                }
+                if (zu1Var2.x5 == null || b2 != 2 || (r47Var = zu1Var2.F5) == null) {
+                    return false;
+                }
+                zu1Var2.J(r47Var.e1(), 0, 0, 0, true, true);
+                return true;
             default:
-                final String str = (String) obj;
-                TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
-                getuniquestargift.slug = str;
-                final int i = this.b;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i);
-                final int i2 = this.d;
-                final boolean z = this.c;
-                connectionsManager.sendRequest(getuniquestargift, new RequestDelegate() { // from class: wp7
-                    @Override // org.telegram.tgnet.RequestDelegate
-                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        gl.c3(new v11(tLObject, i, z, i2, str));
-                    }
-                });
-                break;
+                r47 r47Var3 = zu1Var.v5;
+                if (r47Var3 == null) {
+                    return false;
+                }
+                if (!hl.g(r47Var3.T0)) {
+                    return true;
+                }
+                new d31(o11.a(zu1Var.getParentActivity()), zu1Var.Ba).k(false).j();
+                return true;
         }
-    }
-
-    public /* synthetic */ rn1(mu1 mu1Var, int i, int i2, boolean z) {
-        this.e = mu1Var;
-        this.b = i;
-        this.d = i2;
-        this.c = z;
     }
 }

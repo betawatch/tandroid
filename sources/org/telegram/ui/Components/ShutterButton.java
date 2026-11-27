@@ -13,21 +13,21 @@ import android.view.animation.DecelerateInterpolator;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public xga e;
-    public yga f;
+    public qka e;
+    public rka f;
     public boolean h;
     public float n;
     public long r;
     public long s;
     public boolean w;
-    public bg7 x;
+    public ki7 x;
 
     private void setHighlighted(boolean z) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -44,23 +44,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(yga ygaVar) {
-        if (this.f != ygaVar) {
-            this.f = ygaVar;
+    public final void a(rka rkaVar) {
+        if (this.f != rkaVar) {
+            this.f = rkaVar;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != yga.b) {
+            if (this.f != rka.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public xga getDelegate() {
+    public qka getDelegate() {
         return this.e;
     }
 
-    public yga getState() {
+    public rka getState() {
         return this.f;
     }
 
@@ -71,7 +71,7 @@ public class ShutterButton extends View {
         int measuredWidth = getMeasuredWidth() / 2;
         int measuredHeight = getMeasuredHeight() / 2;
         Drawable drawable = this.a;
-        drawable.setBounds(measuredWidth - gl.L(36.0f), measuredHeight - gl.L(36.0f), gl.L(36.0f) + measuredWidth, gl.L(36.0f) + measuredHeight);
+        drawable.setBounds(measuredWidth - hl.L(36.0f), measuredHeight - hl.L(36.0f), hl.L(36.0f) + measuredWidth, hl.L(36.0f) + measuredHeight);
         drawable.draw(canvas);
         if (!this.h && getScaleX() == 1.0f) {
             if (this.n != 0.0f) {
@@ -84,12 +84,12 @@ public class ShutterButton extends View {
         paint2.setAlpha((int) (255.0f * scaleX));
         float f = measuredWidth;
         float f2 = measuredHeight;
-        canvas.drawCircle(f, f2, gl.L(26.0f), paint2);
-        yga ygaVar = this.f;
+        canvas.drawCircle(f, f2, hl.L(26.0f), paint2);
+        rka rkaVar = this.f;
         float f3 = this.n;
-        if (ygaVar != yga.b) {
+        if (rkaVar != rka.b) {
             if (f3 != 0.0f) {
-                canvas.drawCircle(f, f2, gl.L(26.5f) * scaleX, paint);
+                canvas.drawCircle(f, f2, hl.L(26.5f) * scaleX, paint);
                 return;
             }
             return;
@@ -108,7 +108,7 @@ public class ShutterButton extends View {
             this.n = this.b.getInterpolation(j / 120.0f);
             invalidate();
         }
-        canvas.drawCircle(f, f2, gl.L(26.5f) * scaleX * this.n, paint);
+        canvas.drawCircle(f, f2, hl.L(26.5f) * scaleX * this.n, paint);
     }
 
     @Override // android.view.View
@@ -117,13 +117,13 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClassName("android.widget.Button");
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), k96.M0(2131754926, null)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), k96.M0(2131754928, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), ob6.M0(2131754922, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), ob6.M0(2131754924, null)));
     }
 
     @Override // android.view.View
     public final void onMeasure(int i, int i2) {
-        setMeasuredDimension(gl.L(84.0f), gl.L(84.0f));
+        setMeasuredDimension(hl.L(84.0f), hl.L(84.0f));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x006a, code lost:
@@ -141,12 +141,12 @@ public class ShutterButton extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         float f;
         float f2;
-        bg7 bg7Var = this.x;
+        ki7 ki7Var = this.x;
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            gl.d3(bg7Var, 800L);
+            hl.d3(ki7Var, 800L);
             this.h = true;
             this.w = true;
             setHighlighted(true);
@@ -154,9 +154,9 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            gl.r(bg7Var);
+            hl.r(ki7Var);
             if (this.w) {
-                ((q42) this.e).a();
+                ((g52) this.e).a();
             }
         } else if (action == 2) {
             if (x >= 0.0f && x <= getMeasuredWidth()) {
@@ -165,49 +165,49 @@ public class ShutterButton extends View {
             if (y >= 0.0f && y <= getMeasuredHeight()) {
                 y = 0.0f;
             }
-            q42 q42Var = (q42) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = q42Var.e;
-            azc azcVar = chatAttachAlertPhotoLayout.m0;
-            ww0 ww0Var = q42Var.d;
-            if (ww0Var.getWidth() < ww0Var.getHeight()) {
+            g52 g52Var = (g52) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = g52Var.e;
+            r3d r3dVar = chatAttachAlertPhotoLayout.m0;
+            ex0 ex0Var = g52Var.d;
+            if (ex0Var.getWidth() < ex0Var.getHeight()) {
                 f2 = x;
                 f = y;
             } else {
                 f = x;
                 f2 = y;
             }
-            if (q42Var.b || Math.abs(f2) <= Math.abs(f)) {
+            if (g52Var.b || Math.abs(f2) <= Math.abs(f)) {
                 if (f < 0.0f) {
                     boolean z = ChatAttachAlertPhotoLayout.r1;
                     chatAttachAlertPhotoLayout.w0(true);
-                    azcVar.b(true, (-f) / gl.L(200.0f));
-                    q42Var.b = true;
+                    r3dVar.b(true, (-f) / hl.L(200.0f));
+                    g52Var.b = true;
                     return true;
                 }
-                if (q42Var.b) {
-                    azcVar.b(true, 0.0f);
+                if (g52Var.b) {
+                    r3dVar.b(true, 0.0f);
                 }
                 if (x == 0.0f && y == 0.0f) {
-                    q42Var.b = false;
+                    g52Var.b = false;
                 }
-                if (!q42Var.b) {
+                if (!g52Var.b) {
                     if (x == 0.0f) {
                     }
-                    gl.r(bg7Var);
-                    if (this.f == yga.b) {
+                    hl.r(ki7Var);
+                    if (this.f == rka.b) {
                         this.w = false;
                         setHighlighted(false);
-                        q42 q42Var2 = (q42) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = q42Var2.e;
-                        File file = q42Var2.a;
+                        g52 g52Var2 = (g52) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = g52Var2.e;
+                        File file = g52Var2.a;
                         if (file != null) {
                             file.delete();
-                            q42Var2.a = null;
+                            g52Var2.a = null;
                         }
                         boolean z2 = ChatAttachAlertPhotoLayout.r1;
-                        chatAttachAlertPhotoLayout2.o0();
+                        chatAttachAlertPhotoLayout2.n0();
                         CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.Q.getCameraSession(), true);
-                        a(yga.a);
+                        a(rka.a);
                         return true;
                     }
                 }
@@ -220,8 +220,8 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(xga xgaVar) {
-        this.e = xgaVar;
+    public void setDelegate(qka qkaVar) {
+        this.e = qkaVar;
     }
 
     @Override // android.view.View

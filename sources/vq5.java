@@ -1,17 +1,61 @@
 // default package
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Components.q;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class vq5 extends FrameLayout {
-    public TextView a;
+public final class vq5 extends zq5 {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ q c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(84.0f), TLObject.FLAG_30));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vq5(q qVar, Context context) {
+        super(context);
+        this.c = qVar;
+        setWillNotDraw(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        q qVar = this.c;
+        FrameLayout frameLayout = qVar.y;
+        lo9 lo9Var = qVar.x;
+        uq5 uq5Var = qVar.E;
+        super.dispatchDraw(canvas);
+        if (this.a == null) {
+            return;
+        }
+        float f = this.b;
+        if (f < 1.0f) {
+            this.b = Math.min(1.0f, f + 0.064f);
+            invalidate();
+        }
+        canvas.save();
+        canvas.translate(uq5Var.getLeft() + frameLayout.getLeft() + lo9Var.getLeft(), uq5Var.getTop() + frameLayout.getTop() + lo9Var.getTop());
+        if (this.a.N0 != uq5Var.getWidth()) {
+            float width = uq5Var.getWidth() / this.a.N0;
+            canvas.scale(width, width);
+        }
+        ImageReceiver imageReceiver = this.a;
+        canvas.translate(-imageReceiver.L0, -imageReceiver.M0);
+        float alpha = this.a.getAlpha();
+        this.a.setAlpha(this.b);
+        this.a.h(canvas, null);
+        this.a.setAlpha(alpha);
+        canvas.restore();
+    }
+
+    @Override // zq5
+    public final void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

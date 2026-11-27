@@ -1,35 +1,50 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class nx3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ox3 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class nx3 implements InputFilter {
+    public final TextView a;
+    public mx3 b;
 
-    public /* synthetic */ nx3(ox3 ox3Var, byte b) {
-        this.a = b;
-        this.b = ox3Var;
+    public nx3(TextView textView) {
+        this.a = textView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        ox3 ox3Var = this.b;
-        switch (b) {
-            case 0:
-                ox3Var.f.dismiss();
-                break;
-            default:
-                qx3 qx3Var = ox3Var.f;
-                qx3Var.dismiss();
-                d dVar = qx3Var.m1;
-                if (dVar != null && dVar.getParentActivity() != null) {
-                    yjb.x(null, 2131754432, u21.b0(dVar), null);
-                    break;
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0016, code lost:
+    
+        if (r1 != 3) goto L24;
+     */
+    @Override // android.text.InputFilter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
+        TextView textView = this.a;
+        if (!textView.isInEditMode()) {
+            int b = gx3.a().b();
+            if (b != 0) {
+                if (b == 1) {
+                    if ((i4 != 0 || i3 != 0 || spanned.length() != 0 || charSequence != textView.getText()) && charSequence != null) {
+                        if (i != 0 || i2 != charSequence.length()) {
+                            charSequence = charSequence.subSequence(i, i2);
+                        }
+                        return gx3.a().e(0, charSequence.length(), charSequence);
+                    }
                 }
-                break;
+            }
+            gx3 a = gx3.a();
+            mx3 mx3Var = this.b;
+            if (mx3Var == null) {
+                mx3Var = new mx3(textView, this);
+                this.b = mx3Var;
+            }
+            a.f(mx3Var);
+            return charSequence;
         }
+        return charSequence;
     }
 }

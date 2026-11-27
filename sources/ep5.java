@@ -1,52 +1,258 @@
 // default package
 
-import java.util.Iterator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ep5 implements Iterator {
-    public final int a;
-    public final int b;
-    public boolean c;
-    public int d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ep5 extends nx0 implements fn7 {
+    public final TextView[] l1;
+    public final TextView m1;
+    public final n46 n1;
+    public final zu1 o1;
+    public final e29 p1;
+    public final dp5 q1;
+    public boolean r1;
+    public final b29 s1;
+    public final TextView[] t1;
+    public final String u1;
 
-    public ep5(int i, int i2, int i3) {
-        this.a = i3;
-        this.b = i2;
-        boolean z = false;
-        if (i3 <= 0 ? i >= i2 : i <= i2) {
-            z = true;
+    public ep5(Context context, String str, zu1 zu1Var, vnb vnbVar) {
+        super(1, vnbVar, context, false);
+        this.l1 = new TextView[2];
+        this.t1 = new TextView[2];
+        ea5 ea5Var = new ea5(this, (byte) 13);
+        this.w0 = false;
+        this.v0 = false;
+        this.o1 = zu1Var;
+        this.u1 = str;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.O = frameLayout;
+        TextView textView = new TextView(context);
+        ik8.v(textView, 1, 20.0f);
+        int i = aob.j5;
+        yob.X(textView, i, vnbVar);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        frameLayout.addView(textView, tre.d(-2, -2.0f, 51, 17.0f, 20.0f, 17.0f, 0.0f));
+        b29 b29Var = new b29(R.raw.import_finish, hl.L(120.0f), hl.L(120.0f), false, null);
+        this.s1 = b29Var;
+        b29Var.E(true);
+        e29 e29Var = new e29(context);
+        this.p1 = e29Var;
+        e29Var.setAutoRepeat(true);
+        e29Var.f(R.raw.import_loop, jn7.E1, jn7.E1, null);
+        e29Var.d();
+        frameLayout.addView(e29Var, tre.d(jn7.p2, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
+        e29Var.getAnimatedDrawable().N(jn7.H2, ea5Var);
+        TextView textView2 = new TextView(context);
+        this.m1 = textView2;
+        ik8.v(textView2, 1, 24.0f);
+        yob.X(textView2, i, vnbVar);
+        frameLayout.addView(textView2, tre.d(-2, -2.0f, 49, 17.0f, 262.0f, 17.0f, 0.0f));
+        n46 n46Var = new n46(getContext());
+        this.n1 = n46Var;
+        int i2 = aob.Fi;
+        n46Var.setProgressColor(aob.v0(i2, this.J0));
+        n46Var.setBackColor(aob.v0(aob.G5, this.J0));
+        frameLayout.addView(n46Var, tre.d(-1, 4.0f, 51, 50.0f, 307.0f, 50.0f, 0.0f));
+        dp5 dp5Var = new dp5(context);
+        View view = new View(context);
+        dp5Var.a = view;
+        int L = hl.L(4.0f);
+        int v0 = aob.v0(i2, vnbVar);
+        int i3 = aob.Hi;
+        int v02 = aob.v0(i3, vnbVar);
+        Drawable i0 = aob.i0(L, L, L, L, v0, v02, v02);
+        uob M = yob.M(i2);
+        uob M2 = yob.M(i3);
+        view.setBackground(i0);
+        yob.j(view, i0, M, M2, vnbVar);
+        dp5Var.addView(view, tre.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        dp5Var.d = linearLayout;
+        linearLayout.setOrientation(0);
+        dp5Var.addView(linearLayout, tre.e(-2, -2, 17));
+        e29 e29Var2 = new e29(context);
+        dp5Var.c = e29Var2;
+        int L2 = hl.L(20.0f);
+        int i4 = aob.Ji;
+        ShapeDrawable K = aob.K(L2, aob.v0(i4, vnbVar));
+        uob M3 = yob.M(i4);
+        e29Var2.setBackground(K);
+        yob.j(e29Var2, K, M3, null, vnbVar);
+        e29Var2.setScaleType(ImageView.ScaleType.CENTER);
+        yob.s(e29Var2, i2, vnbVar, PorterDuff.Mode.MULTIPLY);
+        e29Var2.f(R.raw.import_check, 26, 26, null);
+        e29Var2.setScaleX(0.8f);
+        e29Var2.setScaleY(0.8f);
+        linearLayout.addView(e29Var2, tre.r(20, 20, 16));
+        TextView textView3 = new TextView(context);
+        dp5Var.b = textView3;
+        textView3.setLines(1);
+        textView3.setSingleLine(true);
+        textView3.setGravity(1);
+        textView3.setEllipsize(truncateAt);
+        textView3.setGravity(17);
+        qd4.w(textView3, i4, vnbVar, 1, 14.0f);
+        linearLayout.addView(textView3, tre.t(-2, -2, 16, 10, 0, 0, 0));
+        this.q1 = dp5Var;
+        dp5Var.setBackground(null);
+        dp5Var.setText(ob6.M0(2131749016, null));
+        dp5Var.setVisibility(4);
+        view.setOnClickListener(new sa5(this, (byte) 9));
+        view.setPivotY(hl.L(48.0f));
+        view.setScaleY(0.04f);
+        frameLayout.addView(dp5Var, tre.d(-1, 50.0f, 51, 34.0f, 247.0f, 34.0f, 0.0f));
+        for (int i5 = 0; i5 < 2; i5++) {
+            this.l1[i5] = new TextView(context);
+            this.l1[i5].setTextSize(1, 16.0f);
+            this.l1[i5].setTypeface(hl.o());
+            yob.X(this.l1[i5], aob.j5, vnbVar);
+            frameLayout.addView(this.l1[i5], tre.d(-2, -2.0f, 49, 17.0f, 340.0f, 17.0f, 0.0f));
+            this.t1[i5] = new TextView(context);
+            this.t1[i5].setTextSize(1, 14.0f);
+            yob.X(this.t1[i5], aob.r5, vnbVar);
+            this.t1[i5].setGravity(1);
+            frameLayout.addView(this.t1[i5], tre.d(-2, -2.0f, 49, 30.0f, 368.0f, 30.0f, 44.0f));
+            TextView[] textViewArr = this.t1;
+            if (i5 == 0) {
+                textViewArr[i5].setText(ob6.M0(2131749001, null));
+            } else {
+                textViewArr[i5].setAlpha(0.0f);
+                this.t1[i5].setTranslationY(hl.L(10.0f));
+                this.l1[i5].setAlpha(0.0f);
+                this.l1[i5].setTranslationY(hl.L(10.0f));
+            }
         }
-        this.c = z;
-        this.d = z ? i : i2;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.c;
-    }
-
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        return Integer.valueOf(nextInt());
-    }
-
-    public final int nextInt() {
-        int i = this.d;
-        if (i != this.b) {
-            this.d = this.a + i;
-            return i;
+        if (this.o1 != null) {
+            textView.setText(ob6.M0(2131749000, null));
+            i7a A = this.o1.getSendMessagesHelper().A(this.o1.a());
+            this.m1.setText(String.format("%d%%", Integer.valueOf(A.l)));
+            this.n1.a(false, A.l / 100.0f);
+            this.l1[0].setText(ob6.a0("ImportCount", null, 2131749017, hl.i0(A.i, false, false), hl.i0(A.h, false, false)));
+            this.t1[1].setText(ob6.M0(2131749015, null));
+            this.l1[1].setText(ob6.M0(2131749014, null));
+            this.o1.getNotificationCenter().b(this, jn7.v1);
+            return;
         }
-        if (this.c) {
-            this.c = false;
-            return i;
-        }
-        w26.g();
-        return 0;
+        textView.setText(ob6.M0(2131748990, null));
+        m7a m7aVar = (m7a) r7a.B(this.a).G.get(str);
+        this.m1.setText(String.format("%d%%", Integer.valueOf(m7aVar.j)));
+        this.n1.a(false, m7aVar.j / 100.0f);
+        this.l1[0].setText(ob6.a0("ImportCount", null, 2131749017, hl.i0(m7aVar.i, false, false), hl.i0(m7aVar.h, false, false)));
+        this.t1[1].setText(ob6.M0(2131748995, null));
+        this.l1[1].setText(ob6.M0(2131748994, null));
+        jn7.f(this.a).b(this, jn7.w1);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    public final void E0() {
+        this.r1 = true;
+        this.p1.setAutoRepeat(false);
+        dp5 dp5Var = this.q1;
+        dp5Var.setVisibility(0);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.setDuration(250L);
+        animatorSet.setInterpolator(k43.g);
+        Property property = View.ALPHA;
+        TextView textView = this.m1;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f);
+        Property property2 = View.TRANSLATION_Y;
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, -hl.L(10.0f));
+        TextView[] textViewArr = this.t1;
+        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property, 0.0f);
+        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(textViewArr[0], (Property<TextView, Float>) property2, -hl.L(10.0f));
+        TextView[] textViewArr2 = this.l1;
+        animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(textViewArr2[0], (Property<TextView, Float>) property2, -hl.L(10.0f)), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(textViewArr2[1], (Property<TextView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.n1, (Property<n46, Float>) property, 0.0f), ObjectAnimator.ofFloat(dp5Var.d, (Property<LinearLayout, Float>) property2, hl.L(8.0f), 0.0f));
+        dp5Var.a.animate().scaleY(1.0f).setInterpolator(new OvershootInterpolator(1.02f)).setDuration(250L).start();
+        dp5Var.c.animate().scaleY(1.0f).scaleX(1.0f).setInterpolator(new OvershootInterpolator(1.02f)).setDuration(250L).start();
+        dp5Var.c.d();
+        animatorSet.start();
+    }
+
+    @Override // nx0
+    public final void H() {
+        super.H();
+        zu1 zu1Var = this.o1;
+        if (zu1Var != null) {
+            zu1Var.getNotificationCenter().n(this, jn7.v1);
+        } else {
+            jn7.f(this.a).n(this, jn7.w1);
+        }
+    }
+
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        int i3 = jn7.v1;
+        n46 n46Var = this.n1;
+        TextView[] textViewArr = this.l1;
+        TextView textView = this.m1;
+        e29 e29Var = this.p1;
+        if (i == i3) {
+            if (objArr.length > 1) {
+                dismiss();
+                return;
+            }
+            zu1 zu1Var = this.o1;
+            i7a A = zu1Var.getSendMessagesHelper().A(zu1Var.a());
+            if (A == null) {
+                E0();
+                return;
+            }
+            if (!this.r1 && ((180 - e29Var.getAnimatedDrawable().b0) * 16.6d) + 3000.0d >= A.p) {
+                e29Var.setAutoRepeat(false);
+                this.r1 = true;
+            }
+            textView.setText(String.format("%d%%", Integer.valueOf(A.l)));
+            textViewArr[0].setText(ob6.a0("ImportCount", null, 2131749017, hl.i0(A.i, false, false), hl.i0(A.h, false, false)));
+            n46Var.a(true, A.l / 100.0f);
+            return;
+        }
+        if (i == jn7.w1) {
+            if (objArr.length > 1) {
+                dismiss();
+                return;
+            }
+            m7a m7aVar = (m7a) r7a.B(this.a).G.get(this.u1);
+            if (m7aVar == null) {
+                E0();
+                return;
+            }
+            if (!this.r1 && ((180 - e29Var.getAnimatedDrawable().b0) * 16.6d) + 3000.0d >= m7aVar.n) {
+                e29Var.setAutoRepeat(false);
+                this.r1 = true;
+            }
+            textView.setText(String.format("%d%%", Integer.valueOf(m7aVar.j)));
+            textViewArr[0].setText(ob6.a0("ImportCount", null, 2131749017, hl.i0(m7aVar.i, false, false), hl.i0(m7aVar.h, false, false)));
+            n46Var.a(true, m7aVar.j / 100.0f);
+        }
+    }
+
+    @Override // nx0
+    public final void p0() {
+        try {
+            super.p0();
+            n46 n46Var = this.n1;
+            if (n46Var != null) {
+                n46Var.setProgressColor(aob.v0(aob.Fi, this.J0));
+                n46Var.setBackColor(aob.v0(aob.G5, this.J0));
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
     }
 }

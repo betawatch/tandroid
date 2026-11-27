@@ -1,43 +1,79 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rda implements kba {
-    public final /* synthetic */ nfa a;
+public final class rda implements TextWatcher {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kea b;
 
-    public rda(nfa nfaVar) {
-        this.a = nfaVar;
+    public /* synthetic */ rda(kea keaVar, byte b) {
+        this.a = b;
+        this.b = keaVar;
     }
 
-    @Override // kba
-    public final void a(TLRPC.WebPage webPage, k27 k27Var) {
-        nfa nfaVar = this.a;
-        ou3.I0(nfaVar.y1, k27Var, nfaVar.u1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // kba
-    public final boolean b() {
-        return !this.a.F1;
-    }
-
-    @Override // kba
-    public final void c(String str, boolean z) {
-        nfa nfaVar = this.a;
-        d dVar = nfaVar.y1;
-        if (!z) {
-            nfaVar.Y0(str);
-            return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                hl.c3(new ux9(this, (byte) 18));
+                break;
+            default:
+                kea keaVar = this.b;
+                dea deaVar = keaVar.F1;
+                z2b z2bVar = keaVar.L1;
+                rq4 rq4Var = keaVar.t2;
+                if (!TextUtils.isEmpty(rq4Var.r.getText())) {
+                    keaVar.E0(false);
+                }
+                if (keaVar.v2) {
+                    String obj = rq4Var.r.getText().toString();
+                    if (obj.length() != 0) {
+                        if (z2bVar != null) {
+                            z2bVar.d.setText(ob6.M0(2131747898, null));
+                        }
+                    } else if (keaVar.A1.getAdapter() != deaVar) {
+                        int I0 = keaVar.I0();
+                        z2bVar.d.setText(ob6.M0(2131747898, null));
+                        z2bVar.e(false, true);
+                        keaVar.E0(false);
+                        deaVar.f();
+                        if (I0 > 0) {
+                            keaVar.C1.g1(0, -I0);
+                        }
+                    }
+                    hea heaVar = keaVar.H1;
+                    if (heaVar != null) {
+                        heaVar.E(obj);
+                        break;
+                    }
+                }
+                break;
         }
-        fx0 i = ug8.i(dVar.getParentActivity(), false, 1, null);
-        i.P = str;
-        i.Q = false;
-        CharSequence[] charSequenceArr = {k96.M0(2131747624, "Open"), k96.M0(2131751755, "Copy")};
-        fe feVar = new fe((Object) this, (Object) str, (byte) 13);
-        i.M = charSequenceArr;
-        i.L = feVar;
-        dVar.showDialog(i);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+        byte b = this.a;
+    }
+
+    private final void a(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void b(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void c(int i, int i2, int i3, CharSequence charSequence) {
+    }
+
+    private final void d(int i, int i2, int i3, CharSequence charSequence) {
     }
 }

@@ -1,26 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class n1f {
-    public static String a(String str) {
-        int length = str.length();
-        int i = 0;
-        while (i < length) {
-            char charAt = str.charAt(i);
-            if (charAt >= 'a' && charAt <= 'z') {
-                char[] charArray = str.toCharArray();
-                while (i < length) {
-                    char c = charArray[i];
-                    if (c >= 'a' && c <= 'z') {
-                        charArray[i] = (char) (c ^ ' ');
-                    }
-                    i++;
-                }
-                return String.valueOf(charArray);
-            }
-            i++;
+public final class n1f implements zq7 {
+    public static final n1f a = new n1f();
+
+    static {
+        xnb.y(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, xnb.t(xnb.p(xmd.class, new skd(1)), 2)), 3)), 4)), 5)));
+    }
+
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        return str;
+        throw null;
     }
 }

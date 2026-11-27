@@ -1,91 +1,76 @@
 // default package
 
-import java.util.concurrent.CancellationException;
-import sun.misc.Unsafe;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class fl8 extends b2 implements oe1, v0a {
-    public final q01 e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fl8 implements r69 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ e c;
+    public final /* synthetic */ Object d;
 
-    public fl8(sw2 sw2Var, q01 q01Var) {
-        super(sw2Var, true);
-        this.e = q01Var;
+    public /* synthetic */ fl8(Object obj, int i, e eVar, byte b) {
+        this.a = b;
+        this.d = obj;
+        this.b = i;
+        this.c = eVar;
     }
 
-    @Override // b2
-    public final void P(Throwable th, boolean z) {
-        if (this.e.c(th, false) || z) {
-            return;
-        }
-        c9e.a(this.d, th);
-    }
-
-    @Override // b2
-    public final void Q(Object obj) {
-        this.e.c(null, false);
-    }
-
-    public final void S(n13 n13Var) {
-        Unsafe unsafe;
-        Unsafe unsafe2;
-        q01 q01Var = this.e;
-        q01Var.getClass();
-        long j = q01.s;
-        do {
-            unsafe = ex.a;
-            if (unsafe.compareAndSwapObject(q01Var, q01.s, (Object) null, n13Var)) {
-                return;
-            }
-        } while (unsafe.getObjectVolatile(q01Var, j) == null);
-        while (true) {
-            Object objectVolatile = ex.a.getObjectVolatile(q01Var, j);
-            lo5 lo5Var = s01.q;
-            if (objectVolatile != lo5Var) {
-                if (objectVolatile == s01.r) {
-                    sc8.j("Another handler was already registered and successfully invoked");
-                    return;
-                } else {
-                    wn4.n(objectVolatile, "Another handler is already registered: ");
-                    return;
+    @Override // r69
+    public final void e(int i, View view) {
+        byte b = this.a;
+        e eVar = this.c;
+        int i2 = this.b;
+        Object obj = this.d;
+        switch (b) {
+            case 0:
+                kl8 kl8Var = (kl8) obj;
+                if (view instanceof yk8) {
+                    yk8 yk8Var = (yk8) view;
+                    PremiumPreviewFragment.u0(i2, yk8Var.f.a);
+                    kl8Var.u(new xk8(eVar, (int) yk8Var.f.a, false));
+                    break;
                 }
-            }
-            lo5 lo5Var2 = s01.r;
-            do {
-                unsafe2 = ex.a;
-                if (unsafe2.compareAndSwapObject(q01Var, q01.s, lo5Var, lo5Var2)) {
-                    n13Var.invoke(q01Var.k());
-                    return;
+                break;
+            default:
+                ow9 ow9Var = (ow9) obj;
+                ArrayList arrayList = ow9Var.r;
+                gw9 gw9Var = ow9Var.d;
+                if (i >= 0 && i < arrayList.size()) {
+                    if (!yac.h(i2).p()) {
+                        new xk8(eVar, 24, true).show();
+                        break;
+                    } else {
+                        long j = ((lw9) arrayList.get(i)).a.h;
+                        if (ow9Var.f(ow9Var.h == j ? null : ((lw9) arrayList.get(i)).a)) {
+                            int i3 = 0;
+                            while (i3 < gw9Var.getChildCount()) {
+                                if (gw9Var.getChildAt(i3) == view) {
+                                    if (i3 <= 1) {
+                                        gw9Var.y0(-hl.L(i3 == 0 ? 90.0f : 50.0f), 0, null);
+                                    } else if (i3 >= gw9Var.getChildCount() - 2) {
+                                        gw9Var.y0(hl.L(i3 == gw9Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
+                                    }
+                                }
+                                i3++;
+                            }
+                            gw9Var.N(new t42((byte) 3));
+                            if (ow9Var.h != j) {
+                                ow9Var.h = j;
+                                ((nw9) view).a(true, true);
+                                break;
+                            } else {
+                                ow9Var.h = 0L;
+                                break;
+                            }
+                        }
+                    }
                 }
-            } while (unsafe2.getObjectVolatile(q01Var, j) == lo5Var);
+                break;
         }
-    }
-
-    @Override // v0a
-    public final Object a(fw2 fw2Var, Object obj) {
-        return this.e.a(fw2Var, obj);
-    }
-
-    @Override // pt5, bt5
-    public final void cancel(CancellationException cancellationException) {
-        if (isCancelled()) {
-            return;
-        }
-        if (cancellationException == null) {
-            cancellationException = new ct5(l(), null, this);
-        }
-        j(cancellationException);
-    }
-
-    @Override // v0a
-    public final Object d(Object obj) {
-        return this.e.d(g5c.a);
-    }
-
-    @Override // pt5
-    public final void j(CancellationException cancellationException) {
-        CancellationException M = pt5.M(this, cancellationException);
-        this.e.c(M, true);
-        i(M);
     }
 }

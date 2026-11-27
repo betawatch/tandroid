@@ -1,45 +1,97 @@
 // default package
 
-import java.util.ArrayList;
+import android.util.Pair;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public abstract class b71 extends a71 {
-    public final ArrayList f;
-    public final /* synthetic */ o71 h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class b71 {
+    public final long a;
+    public HashMap b;
+    public HashMap c;
+    public HashMap d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b71(o71 o71Var, int i) {
-        super(i);
-        this.h = o71Var;
-        this.f = new ArrayList();
+    public b71() {
+        this(240000);
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return !(this instanceof j71);
+    public final void a(Pair pair, Object obj) {
+        if (j(pair.second)) {
+            HashMap hashMap = this.b;
+            if (hashMap == null) {
+                hashMap = new HashMap();
+                this.b = hashMap;
+            }
+            hashMap.put(pair, obj);
+        }
     }
 
-    @Override // a71
-    public void F() {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        ArrayList arrayList2 = this.e;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        v61 v61Var = this.h.h;
-        if (v61Var != null) {
-            byte b = this.d;
-            ArrayList arrayList3 = b == 1 ? v61Var.d : b == 2 ? v61Var.e : b == 3 ? v61Var.f : b == 5 ? v61Var.g : b == 4 ? v61Var.h : null;
-            if (arrayList3 != null) {
-                for (int i = 0; i < arrayList3.size(); i++) {
-                    u61 u61Var = (u61) arrayList3.get(i);
-                    h71 h71Var = new h71(2, true);
-                    h71Var.d = u61Var;
-                    arrayList2.add(h71Var);
-                }
+    public boolean b(Object obj) {
+        return false;
+    }
+
+    public final void c(int i, Object obj, pcc pccVar) {
+        Pair pair = new Pair(Integer.valueOf(i), obj);
+        HashMap hashMap = this.c;
+        byte b = 10;
+        if (hashMap != null && hashMap.get(pair) != null) {
+            hl.c3(new tu0(this, pair, pccVar, b));
+            return;
+        }
+        HashMap hashMap2 = this.b;
+        Object obj2 = hashMap2 == null ? null : hashMap2.get(pair);
+        if (obj2 != null && !i(pair)) {
+            pccVar.a(obj2);
+        } else {
+            hl.c3(new tu0(this, pair, pccVar, b));
+            e(i, obj, new f((Object) this, (Object) pair, obj, i, (byte) 4));
+        }
+    }
+
+    public final void d(int i, Integer num) {
+        if (this.d != null) {
+            Pair pair = new Pair(Integer.valueOf(i), num);
+            this.d.remove(pair);
+            if (this instanceof ub7) {
+                h(pair.hashCode(), 0L);
             }
         }
-        E(arrayList, arrayList2);
+    }
+
+    public void e(int i, Object obj, icc iccVar) {
+        ((f) iccVar).a(0L, null);
+    }
+
+    public void f(int i, Object obj, long j, a71 a71Var) {
+        TLRPC.TL_messages_searchCustomEmoji tL_messages_searchCustomEmoji = new TLRPC.TL_messages_searchCustomEmoji();
+        tL_messages_searchCustomEmoji.emoticon = (String) obj;
+        tL_messages_searchCustomEmoji.hash = j;
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_searchCustomEmoji, new rb7(a71Var, (byte) 3));
+    }
+
+    public final boolean i(Pair pair) {
+        HashMap hashMap = this.d;
+        Long l = hashMap != null ? (Long) hashMap.get(pair) : null;
+        if ((this instanceof ub7) && l == null) {
+            int hashCode = pair.hashCode();
+            l = Long.valueOf(((ub7) this).e.X3.getLong("effects_last_" + hashCode, 0L));
+        }
+        return l == null || System.currentTimeMillis() - l.longValue() >= this.a;
+    }
+
+    public boolean j(Object obj) {
+        return true;
+    }
+
+    public b71(int i) {
+        this.a = i;
+    }
+
+    public void h(int i, long j) {
+    }
+
+    public void g(int i, Object obj, Object obj2) {
     }
 }

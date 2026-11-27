@@ -1,51 +1,39 @@
 // default package
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class gz1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x02 b;
+public final class gz1 {
+    public static final gz1 a;
+    public static final gz1 b;
+    public static final gz1 c;
+    public static final gz1 d;
+    public static final gz1 e;
+    public static final gz1 f;
+    public static final /* synthetic */ gz1[] h;
 
-    public /* synthetic */ gz1(x02 x02Var, byte b) {
-        this.a = b;
-        this.b = x02Var;
+    static {
+        gz1 gz1Var = new gz1("VOICE", 0);
+        a = gz1Var;
+        gz1 gz1Var2 = new gz1("VIDEO", 1);
+        b = gz1Var2;
+        gz1 gz1Var3 = new gz1("STICKER", 2);
+        c = gz1Var3;
+        gz1 gz1Var4 = new gz1("KEYBOARD", 3);
+        d = gz1Var4;
+        gz1 gz1Var5 = new gz1("SMILE", 4);
+        e = gz1Var5;
+        gz1 gz1Var6 = new gz1("GIF", 5);
+        f = gz1Var6;
+        h = new gz1[]{gz1Var, gz1Var2, gz1Var3, gz1Var4, gz1Var5, gz1Var6};
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        x02 x02Var = this.b;
-        switch (b) {
-            case 0:
-                x02Var.L1();
-                break;
-            case 1:
-                x02Var.A2.invalidate();
-                break;
-            case 2:
-                x02Var.D0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ww0 ww0Var = x02Var.c;
-                if (ww0Var != null) {
-                    ww0Var.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                x02Var.u1(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 4:
-                p02 p02Var = x02Var.v2;
-                r32 r32Var = x02Var.q2;
-                if (p02Var == r32Var && r32Var != null) {
-                    r32Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                x02Var.L1();
-                break;
-        }
+    public static gz1 valueOf(String str) {
+        return (gz1) Enum.valueOf(gz1.class, str);
+    }
+
+    public static gz1[] values() {
+        return (gz1[]) h.clone();
     }
 }

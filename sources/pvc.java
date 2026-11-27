@@ -1,96 +1,117 @@
 // default package
 
-import android.os.SystemClock;
-import java.nio.charset.StandardCharsets;
-import org.json.JSONObject;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.view.WindowManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class pvc {
-    public static final String[] m = {"t.me", "telegram.me", "telegram.dog"};
-    public final boolean a;
-    public final boolean b;
-    public final boolean c;
-    public int d;
-    public int e;
-    public boolean i;
-    public boolean j;
-    public int l;
-    public long f = -4611686018427387904L;
-    public long g = -4611686018427387904L;
-    public long h = -4611686018427387904L;
-    public final long[] k = new long[10];
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class pvc implements SensorEventListener {
+    public final float[] a = new float[3];
+    public final float[] b = new float[3];
+    public int c;
+    public final WindowManager d;
+    public final SensorManager e;
+    public final Sensor f;
+    public boolean h;
+    public ovc n;
 
-    public pvc(JSONObject jSONObject) {
-        boolean z = false;
-        boolean z2 = (jSONObject == null || (jSONObject != null && jSONObject.optBoolean("preview")) || !jSONObject.optBoolean("canQuery")) ? false : true;
-        this.a = z2;
-        this.b = z2 && jSONObject.optBoolean("backgroundQuery");
-        if (z2 && jSONObject.has("wallet") && !jSONObject.isNull("wallet")) {
-            z = true;
-        }
-        this.c = z;
+    public pvc(Context context) {
+        this.d = (WindowManager) context.getSystemService("window");
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.e = sensorManager;
+        this.f = sensorManager.getDefaultSensor(1);
     }
 
-    public final synchronized boolean a(boolean z) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (z) {
-            long[] jArr = this.k;
-            int i = this.l;
-            if (elapsedRealtime - jArr[i] >= 1000) {
-                jArr[i] = elapsedRealtime;
-                this.l = (i + 1) % jArr.length;
-                return true;
+    public static float a(int i, int i2) {
+        float f = i;
+        float L = hl.L(16.0f) << 1;
+        float f2 = (f + L) / f;
+        float f3 = i2;
+        return Math.max(f2, (L + f3) / f3);
+    }
+
+    public final void b(boolean z) {
+        if (this.h != z) {
+            this.h = z;
+            Sensor sensor = this.f;
+            if (sensor != null) {
+                SensorManager sensorManager = this.e;
+                if (z) {
+                    sensorManager.registerListener(this, sensor, 1);
+                } else {
+                    sensorManager.unregisterListener(this);
+                }
             }
         }
-        return false;
     }
 
-    public final boolean b(long j) {
-        return this.e < this.d && j - this.f <= 10000;
-    }
-
-    public final synchronized boolean c(boolean z) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (!z || !b(elapsedRealtime)) {
-            return false;
-        }
-        this.e = this.d;
-        return true;
-    }
-
-    public final synchronized boolean d(String str, boolean z, boolean z2) {
-        if (!this.a || this.i || str == null || str.getBytes(StandardCharsets.UTF_8).length > 64 || (z && !this.c)) {
-            return false;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (z2 && b(elapsedRealtime)) {
-            this.e = this.d;
-            this.h = -4611686018427387904L;
-            this.j = true;
-        } else {
-            if (!this.b || z || elapsedRealtime - this.g < 1000) {
-                return false;
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        ovc ovcVar;
+        float f;
+        int rotation = this.d.getDefaultDisplay().getRotation();
+        float[] fArr = sensorEvent.values;
+        float f2 = fArr[0] / 9.80665f;
+        float f3 = fArr[1] / 9.80665f;
+        float f4 = fArr[2] / 9.80665f;
+        float f5 = f4 * f4;
+        float atan2 = (float) ((Math.atan2(f2, Math.sqrt((f3 * f3) + f5)) / 3.141592653589793d) * 2.0d);
+        float atan22 = (float) ((Math.atan2(f3, Math.sqrt((f2 * f2) + f5)) / 3.141592653589793d) * 2.0d);
+        if (rotation != 1) {
+            if (rotation == 2) {
+                float f6 = -atan22;
+                atan22 = -atan2;
+                atan2 = f6;
+            } else if (rotation != 3) {
+                atan2 = atan22;
+                atan22 = atan2;
+            } else {
+                atan2 = -atan2;
             }
-            this.g = elapsedRealtime;
         }
-        this.i = true;
-        return true;
+        int i = this.c;
+        float[] fArr2 = this.a;
+        fArr2[i] = atan2;
+        float[] fArr3 = this.b;
+        fArr3[i] = atan22;
+        this.c = (i + 1) % fArr2.length;
+        float f7 = 0.0f;
+        float f8 = 0.0f;
+        for (int i2 = 0; i2 < fArr2.length; i2++) {
+            f7 += fArr2[i2];
+            f8 += fArr3[i2];
+        }
+        float length = f7 / fArr2.length;
+        float length2 = f8 / fArr2.length;
+        if (length <= 1.0f) {
+            f = length < -1.0f ? -2.0f : 2.0f;
+            int round = Math.round(hl.N(16.0f) * length2);
+            int round2 = Math.round(hl.N(16.0f) * length);
+            ovcVar = this.n;
+            if (ovcVar == null) {
+                ovcVar.e(round, round2);
+                return;
+            }
+            return;
+        }
+        length = f - length;
+        int round3 = Math.round(hl.N(16.0f) * length2);
+        int round22 = Math.round(hl.N(16.0f) * length);
+        ovcVar = this.n;
+        if (ovcVar == null) {
+        }
     }
 
-    public final synchronized boolean e(String str, boolean z) {
-        if (!this.c || this.i || str == null || str.length() > 262144 || !z) {
-            return false;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (b(elapsedRealtime)) {
-            this.e = this.d;
-        } else if (elapsedRealtime - this.h > 10000) {
-            return false;
-        }
-        this.h = -4611686018427387904L;
-        this.j = true;
-        this.i = true;
-        return true;
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i) {
     }
 }

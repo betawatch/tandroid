@@ -8,13 +8,13 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzcz implements zzda {
-    private final dy4 zza;
+    private final j05 zza;
 
     public zzcz() {
-        this.zza = dy4.b;
+        this.zza = j05.b;
     }
 
     @Override // com.google.android.recaptcha.internal.zzda
@@ -47,7 +47,7 @@ public final class zzcz implements zzda {
             }
             Iterator<T> it = installedPackages.iterator();
             while (it.hasNext()) {
-                if (rp5.a(((PackageInfo) it.next()).packageName, "com.android.vending")) {
+                if (ur5.a(((PackageInfo) it.next()).packageName, "com.android.vending")) {
                     return true;
                 }
             }
@@ -63,7 +63,7 @@ public final class zzcz implements zzda {
         return (b == 1 || b == 3 || b == 9) ? 4 : 3;
     }
 
-    public zzcz(dy4 dy4Var) {
-        this.zza = dy4Var;
+    public zzcz(j05 j05Var) {
+        this.zza = j05Var;
     }
 }

@@ -1,53 +1,25 @@
 // default package
 
-import android.os.IBinder;
-import android.os.Parcel;
-import android.support.v4.media.session.PlaybackStateCompat;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class gi5 implements ii5 {
-    public IBinder a;
+public final class gi5 extends wp5 {
+    public static final Pattern e = Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>]|<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->|[<][?].*?[?][>]|<![A-Z]+\\s+[^>]*>|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>)", 2);
 
-    @Override // ii5
-    public final void N(PlaybackStateCompat playbackStateCompat) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(1);
-            playbackStateCompat.writeToParcel(obtain, 0);
-            this.a.transact(3, obtain, null, 1);
-        } finally {
-            obtain.recycle();
+    @Override // wp5
+    public final yi6 b() {
+        String a = a(e);
+        if (a == null) {
+            return null;
         }
+        yj2 yj2Var = new yj2((byte) 1);
+        yj2Var.h = a;
+        return yj2Var;
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
-
-    @Override // ii5
-    public final void g(int i) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(i);
-            this.a.transact(9, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // ii5
-    public final void i(int i) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(i);
-            this.a.transact(12, obtain, null, 1);
-        } finally {
-            obtain.recycle();
-        }
+    @Override // wp5
+    public final char c() {
+        return '<';
     }
 }

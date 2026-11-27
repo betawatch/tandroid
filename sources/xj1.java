@@ -1,43 +1,48 @@
 // default package
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class xj1 implements Iterator {
-    public final int a;
-    public boolean b;
-    public int c;
+public final class xj1 {
+    public static final char[] a = new char[jn7.B1];
+    public static final byte[] b = new byte[jn7.J1];
 
-    public xj1(char c, char c2) {
-        this.a = c2;
-        boolean z = rp5.b(c, c2) <= 0;
-        this.b = z;
-        this.c = z ? c : c2;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        int i = this.c;
-        if (i != this.a) {
-            this.c = i + 1;
-        } else {
-            if (!this.b) {
-                w26.g();
-                return null;
-            }
-            this.b = false;
+    static {
+        int i = 0;
+        for (int i2 = 0; i2 < 32; i2++) {
         }
-        return Character.valueOf((char) i);
+        a('b', 8);
+        a('t', 9);
+        a('n', 10);
+        a('f', 12);
+        a('r', 13);
+        a('/', 47);
+        a('\"', 34);
+        a('\\', 92);
+        while (true) {
+            byte[] bArr = b;
+            if (i >= 33) {
+                bArr[9] = 3;
+                bArr[10] = 3;
+                bArr[13] = 3;
+                bArr[32] = 3;
+                bArr[44] = 4;
+                bArr[58] = 5;
+                bArr[123] = 6;
+                bArr[125] = 7;
+                bArr[91] = 8;
+                bArr[93] = 9;
+                bArr[34] = 1;
+                bArr[92] = 2;
+                return;
+            }
+            bArr[i] = Byte.MAX_VALUE;
+            i++;
+        }
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    public static void a(char c, int i) {
+        if (c != 'u') {
+            a[c] = (char) i;
+        }
     }
 }

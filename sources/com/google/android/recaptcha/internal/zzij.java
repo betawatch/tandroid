@@ -2,10 +2,10 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzij {
     public static final Map zza() {
-        return qi6.c(new ku7(39, zzjl.zza), new ku7(34, zzkd.zza), new ku7(35, zzkp.zza), new ku7(25, zzju.zza), new ku7(37, zzkn.zza), new ku7(21, zzjc.zza), new ku7(22, zzkm.zza), new ku7(23, zzke.zza), new ku7(24, zzjr.zza), new ku7(1, zzkh.zza), new ku7(2, zzjk.zza), new ku7(38, zzkl.zza), new ku7(3, zzjv.zza), new ku7(41, zzji.zza), new ku7(4, zzjw.zza), new ku7(17, zzjq.zza), new ku7(32, zzjd.zza), new ku7(5, zzjy.zza), new ku7(31, zzje.zza), new ku7(36, zzjf.zza), new ku7(16, zzjm.zza), new ku7(26, zzki.zza), new ku7(6, zzjx.zza), new ku7(27, zzkg.zza), new ku7(8, zzkb.zza), new ku7(9, zzkc.zza), new ku7(10, zzjz.zza), new ku7(11, zzka.zza), new ku7(12, zzkj.zza), new ku7(13, zzkk.zza), new ku7(30, zzjg.zza), new ku7(15, zzjh.zza), new ku7(20, zzjj.zza), new ku7(7, zzkf.zza), new ku7(18, zzjo.zza), new ku7(19, zzjp.zza), new ku7(40, zzko.zza));
+        return uk6.c(new rx7(39, zzjl.zza), new rx7(34, zzkd.zza), new rx7(35, zzkp.zza), new rx7(25, zzju.zza), new rx7(37, zzkn.zza), new rx7(21, zzjc.zza), new rx7(22, zzkm.zza), new rx7(23, zzke.zza), new rx7(24, zzjr.zza), new rx7(1, zzkh.zza), new rx7(2, zzjk.zza), new rx7(38, zzkl.zza), new rx7(3, zzjv.zza), new rx7(41, zzji.zza), new rx7(4, zzjw.zza), new rx7(17, zzjq.zza), new rx7(32, zzjd.zza), new rx7(5, zzjy.zza), new rx7(31, zzje.zza), new rx7(36, zzjf.zza), new rx7(16, zzjm.zza), new rx7(26, zzki.zza), new rx7(6, zzjx.zza), new rx7(27, zzkg.zza), new rx7(8, zzkb.zza), new rx7(9, zzkc.zza), new rx7(10, zzjz.zza), new rx7(11, zzka.zza), new rx7(12, zzkj.zza), new rx7(13, zzkk.zza), new rx7(30, zzjg.zza), new rx7(15, zzjh.zza), new rx7(20, zzjj.zza), new rx7(7, zzkf.zza), new rx7(18, zzjo.zza), new rx7(19, zzjp.zza), new rx7(40, zzko.zza));
     }
 }

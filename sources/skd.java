@@ -1,19 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class skd implements zn7 {
-    public static final skd a = new skd();
+public final class skd implements xmd {
+    public final short a;
 
-    static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+    /* JADX WARN: Multi-variable type inference failed */
+    public skd(int i) {
+        this.a = i;
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return xmd.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        throw null;
+        if (!(obj instanceof xmd)) {
+            return false;
+        }
+        xmd xmdVar = (xmd) obj;
+        return this.a == xmdVar.zza() && rmd.a.equals(xmdVar.zzb());
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (rmd.a.hashCode() ^ 2041407134);
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + ((int) this.a) + "intEncoding=" + rmd.a + ')';
+    }
+
+    @Override // xmd
+    public final int zza() {
+        return this.a;
+    }
+
+    @Override // xmd
+    public final rmd zzb() {
+        return rmd.a;
     }
 }

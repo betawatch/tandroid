@@ -1,453 +1,155 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.drawable.Drawable;
+import android.util.Pair;
 import android.view.View;
-import android.widget.FrameLayout;
-import j$.time.DayOfWeek;
-import j$.time.format.TextStyle;
-import java.util.ArrayList;
-import java.util.Calendar;
-import org.telegram.messenger.beta.R;
+import java.util.Comparator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qq7 extends d implements gk7 {
-    public q5c a;
-    public sha b;
-    public boolean c;
-    public boolean d;
-    public ArrayList[] e;
-    public ArrayList[] f;
-    public String h;
-    public String n;
+public final /* synthetic */ class qq7 implements Comparator {
+    public final /* synthetic */ byte a;
 
-    public qq7() {
-        super(null);
-        this.e = null;
-        this.f = new ArrayList[]{new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList()};
+    public /* synthetic */ qq7(byte b) {
+        this.a = b;
     }
 
-    public static ArrayList[] b0(ArrayList arrayList) {
-        int i;
-        ArrayList[] arrayListArr = new ArrayList[7];
-        for (int i2 = 0; i2 < 7; i2++) {
-            arrayListArr[i2] = new ArrayList();
-        }
-        for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = (TL_account.TL_businessWeeklyOpen) arrayList.get(i3);
-            int i4 = tL_businessWeeklyOpen.start_minute;
-            int i5 = i4 % 1440;
-            arrayListArr[(i4 / 1440) % 7].add(new pq7(i5, (tL_businessWeeklyOpen.end_minute - i4) + i5));
-        }
-        int i6 = 0;
-        while (i6 < 7) {
-            int i7 = i6 * 1440;
-            int i8 = i6 + 1;
-            int i9 = i8 * 1440;
-            int i10 = i7;
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2 = (TL_account.TL_businessWeeklyOpen) arrayList.get(i11);
-                if (tL_businessWeeklyOpen2.start_minute <= i10 && (i = tL_businessWeeklyOpen2.end_minute) >= i10) {
-                    i10 = i + 1;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                long j = yac.h(((Integer) obj).intValue()).Z;
+                long j2 = yac.h(((Integer) obj2).intValue()).Z;
+                if (j > j2) {
+                    return 1;
                 }
-            }
-            if (i10 >= i9) {
-                int i12 = (i6 + 6) % 7;
-                if (!arrayListArr[i12].isEmpty() && ((pq7) b00.f(1, arrayListArr[i12])).b >= 1440) {
-                    ((pq7) b00.f(1, arrayListArr[i12])).b = 1439;
+                return j < j2 ? -1 : 0;
+            case 1:
+                return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
+            case 2:
+                return ((Integer) obj2).intValue() - ((Integer) obj).intValue();
+            case 3:
+                int h1 = b18.h1((String) obj);
+                int h12 = b18.h1((String) obj2);
+                if (h1 < h12) {
+                    return -1;
                 }
-                int min = Math.min((i10 - i7) - 1, 2879);
-                ArrayList arrayList2 = arrayListArr[(i6 + 8) % 7];
-                if (min >= 1440 && !arrayList2.isEmpty() && ((pq7) arrayList2.get(0)).a < min - 1440) {
-                    min = ((pq7) arrayList2.get(0)).a + 1439;
+                return h1 > h12 ? 1 : 0;
+            case 4:
+                int h13 = b18.h1((String) obj);
+                int h14 = b18.h1((String) obj2);
+                if (h13 < h14) {
+                    return -1;
                 }
-                arrayListArr[i6].clear();
-                arrayListArr[i6].add(new pq7(0, min));
-            } else {
-                int i13 = i8 % 7;
-                if (!arrayListArr[i6].isEmpty() && !arrayListArr[i13].isEmpty()) {
-                    pq7 pq7Var = (pq7) b00.f(1, arrayListArr[i6]);
-                    pq7 pq7Var2 = (pq7) arrayListArr[i13].get(0);
-                    int i14 = pq7Var.b;
-                    if (i14 > 1440 && i14 - 1439 == pq7Var2.a) {
-                        pq7Var.b = 1439;
-                        pq7Var2.a = 0;
-                    }
+                return h13 > h14 ? 1 : 0;
+            case 5:
+                Drawable[] drawableArr = PhotoViewer.d9;
+                return ((r47) obj).e1() - ((r47) obj2).e1();
+            case 6:
+                float f = ((ri8) obj).a;
+                float f2 = ((ri8) obj2).a;
+                if (f > f2) {
+                    return -1;
                 }
-            }
-            i6 = i8;
-        }
-        return arrayListArr;
-    }
-
-    public static String c0(ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            return k96.M0(2131752743, null);
-        }
-        if (e0(arrayList)) {
-            return k96.M0(2131752742, null);
-        }
-        String str = "";
-        for (int i = 0; i < arrayList.size(); i++) {
-            pq7 pq7Var = (pq7) arrayList.get(i);
-            if (i > 0) {
-                str = str.concat("\n");
-            }
-            str = str + pq7.a(pq7Var.a) + " - " + pq7.a(pq7Var.b);
-        }
-        return str;
-    }
-
-    public static boolean e0(ArrayList arrayList) {
-        if (arrayList == null || arrayList.isEmpty()) {
-            return false;
-        }
-        int i = 0;
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            pq7 pq7Var = (pq7) arrayList.get(i2);
-            if (i < pq7Var.a) {
-                return false;
-            }
-            i = pq7Var.b;
-        }
-        return i == 1439 || i == 1440;
-    }
-
-    public static String j0(int i, TLRPC.User user, TL_account.TL_businessWorkHours tL_businessWorkHours) {
-        if (tL_businessWorkHours == null) {
-            return null;
-        }
-        ArrayList[] b0 = b0(tL_businessWorkHours.weekly_open);
-        StringBuilder sb = new StringBuilder();
-        if (user != null) {
-            sb.append(k96.a0(null, null, 2131752747, l7c.r(user)));
-            sb.append("\n");
-        }
-        for (int i2 = 0; i2 < 7; i2++) {
-            ArrayList arrayList = b0[i2];
-            String displayName = DayOfWeek.values()[i2].getDisplayName(TextStyle.FULL, k96.D0().y);
-            sb.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
-            sb.append(": ");
-            if (e0(arrayList)) {
-                sb.append(k96.M0(2131752729, null));
-            } else if (arrayList.isEmpty()) {
-                sb.append(k96.M0(2131752733, null));
-            } else {
-                for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                    if (i3 > 0) {
-                        sb.append(", ");
-                    }
-                    pq7 pq7Var = (pq7) arrayList.get(i3);
-                    sb.append(pq7.a(pq7Var.a));
-                    sb.append(" - ");
-                    sb.append(pq7.a(pq7Var.b));
+                return f < f2 ? 1 : 0;
+            case 7:
+                return (int) ((((cm8) obj).a * 100.0f) - (((cm8) obj2).a * 100.0f));
+            case 8:
+                return (int) (((View) obj).getY() - ((View) obj2).getY());
+            case 9:
+                int i = obj instanceof es8 ? ((es8) obj).g : obj instanceof hc7 ? ((hc7) obj).d : 0;
+                int i2 = obj2 instanceof es8 ? ((es8) obj2).g : obj2 instanceof hc7 ? ((hc7) obj2).d : 0;
+                if (i < i2) {
+                    return -1;
                 }
-            }
-            sb.append("\n");
-        }
-        TLRPC.TL_timezone a = wob.b(i).a(tL_businessWorkHours.timezone_id);
-        if (((Calendar.getInstance().getTimeZone().getRawOffset() / 1000) - (a == null ? 0 : a.utc_offset)) / 60 != 0 && a != null) {
-            wob.b(i);
-            sb.append(k96.a0(null, null, 2131752748, wob.e(a, true)));
-        }
-        return sb.toString();
-    }
-
-    public final void Y(int i) {
-        if ((this.f[i].isEmpty() ? null : (pq7) b00.f(1, this.f[i])) != null) {
-            int i2 = (i + 6) % 7;
-            pq7 pq7Var = this.f[i2].isEmpty() ? null : (pq7) b00.f(1, this.f[i2]);
-            if (pq7Var == null || pq7Var.b <= 1439) {
-                return;
-            }
-            pq7Var.b = 1439;
-            if (pq7Var.a >= 1439) {
-                this.f[i2].remove(pq7Var);
-            }
-            View B1 = this.a.B1(i2);
-            if (B1 instanceof vl7) {
-                ((vl7) B1).setValue(c0(this.f[i2]));
-            } else {
-                this.a.g3.O(true);
-            }
-        }
-    }
-
-    public final void Z(boolean z) {
-        if (this.b == null) {
-            return;
-        }
-        this.b.a(d0(), z);
-    }
-
-    public final void a0(ArrayList arrayList) {
-        String M0 = k96.M0(2131752752, null);
-        String M02 = k96.M0(2131752737, null);
-        c4c c4cVar = new c4c(2);
-        c4cVar.m = M0;
-        c4cVar.p = M02;
-        c4cVar.k = R.raw.biz_clock;
-        arrayList.add(c4cVar);
-        c4c i = c4c.i(-1, k96.M0(2131752717, null));
-        i.L(this.d);
-        arrayList.add(i);
-        arrayList.add(c4c.B(-100, null));
-        if (!this.d) {
-            return;
-        }
-        oo1.o(2131752752, null, arrayList);
-        int i2 = 0;
-        while (true) {
-            ArrayList[] arrayListArr = this.f;
-            if (i2 >= arrayListArr.length) {
-                arrayList.add(c4c.B(-101, null));
-                arrayList.add(c4c.f(k96.M0(2131752716, null), wob.b(this.currentAccount).d(this.n, false), -2));
-                arrayList.add(c4c.B(-102, null));
-                return;
-            }
-            if (arrayListArr[i2] == null) {
-                arrayListArr[i2] = new ArrayList();
-            }
-            String displayName = DayOfWeek.values()[i2].getDisplayName(TextStyle.FULL, k96.D0().y);
-            String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
-            String c0 = c0(this.f[i2]);
-            c4c c4cVar2 = new c4c(5);
-            c4cVar2.d = i2;
-            c4cVar2.m = str;
-            c4cVar2.n = c0;
-            c4cVar2.L(!this.f[i2].isEmpty());
-            arrayList.add(c4cVar2);
-            i2++;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(k96.M0(2131752752, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bq5(this, (byte) 13));
-        this.b = this.simpleActionBar.s(k96.M0(2131745754, null));
-        Z(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        q5c q5cVar = new q5c(this, new ur4((Object) this, (byte) 23), new im6(this, (byte) 18), null);
-        this.a = q5cVar;
-        q5cVar.r1();
-        q5c q5cVar2 = this.a;
-        q5cVar2.g3.r = false;
-        q5cVar2.setSectionsDrawBackground(true);
-        frameLayout.addView(this.a, nme.c(-1.0f, -1));
-        i0();
-        this.fragmentView = frameLayout;
-        return frameLayout;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x006b, code lost:
-    
-        return true;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d0() {
-        if ((this.e != null) != this.d || !TextUtils.equals(this.h, this.n)) {
-            return true;
-        }
-        if (this.e != null && this.d) {
-            if (this.f == null) {
-                return true;
-            }
-            int i = 0;
-            loop0: while (true) {
-                ArrayList[] arrayListArr = this.e;
-                if (i >= arrayListArr.length) {
-                    break;
+                return i > i2 ? 1 : 0;
+            case 10:
+                int i3 = ProfileStoriesView.t0;
+                return (int) (((iv8) obj2).i - ((iv8) obj).i);
+            case 11:
+                return Long.compare(((wea) obj).b, ((wea) obj2).b);
+            case 12:
+                return ((a19) obj).c - ((a19) obj2).c;
+            case 13:
+                return (int) (x49.j((TLObject) obj) - x49.j((TLObject) obj2));
+            case 14:
+                return Float.compare(((z69) obj).a, ((z69) obj2).a);
+            case 15:
+                return ((ak9) obj).d - ((ak9) obj2).d;
+            case 16:
+                return ((mt9) obj2).c() - ((mt9) obj).c();
+            case 17:
+                return ((mt9) obj).k - ((mt9) obj2).k;
+            case 18:
+                return ((mt9) obj2).c() - ((mt9) obj).c();
+            case 19:
+                int i4 = ((qv9) obj).b;
+                int i5 = ((qv9) obj2).b;
+                if (i4 < i5) {
+                    return 1;
                 }
-                if (arrayListArr[i].size() != this.f[i].size()) {
-                    return true;
+                return i4 > i5 ? -1 : 0;
+            case 20:
+                return hl.A(((TLRPC.Message) obj).seq_out, ((TLRPC.Message) obj2).seq_out);
+            case 21:
+                int i6 = ((vx9) obj).b.out_seq_no;
+                int i7 = ((vx9) obj2).b.out_seq_no;
+                if (i6 > i7) {
+                    return 1;
                 }
-                for (int i2 = 0; i2 < this.f[i].size(); i2++) {
-                    pq7 pq7Var = (pq7) this.e[i].get(i2);
-                    pq7 pq7Var2 = (pq7) this.f[i].get(i2);
-                    if (pq7Var.a != pq7Var2.a || pq7Var.b != pq7Var2.b) {
-                        break loop0;
-                    }
+                return i6 < i7 ? -1 : 0;
+            case 22:
+                Pair pair = (Pair) obj;
+                Pair pair2 = (Pair) obj2;
+                if (((Float) pair.first).floatValue() > ((Float) pair2.first).floatValue()) {
+                    return 1;
                 }
-                i++;
-            }
-        }
-        return false;
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        l5c l5cVar;
-        if (i == kk7.D0) {
-            i0();
-            return;
-        }
-        if (i == kk7.s3) {
-            if (this.e == null) {
-                this.n = wob.b(this.currentAccount).c();
-            }
-            q5c q5cVar = this.a;
-            if (q5cVar == null || (l5cVar = q5cVar.g3) == null) {
-                return;
-            }
-            l5cVar.O(true);
-        }
-    }
-
-    public final /* synthetic */ void f0(View view, String str) {
-        wob b = wob.b(this.currentAccount);
-        this.n = str;
-        ((wgb) view).w(b.d(str, false), true);
-        Z(true);
-    }
-
-    public final void g0(TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (tL_error != null) {
-            this.b.b(false);
-            u21.e0(tL_error);
-        } else {
-            if (tLObject instanceof TLRPC.TL_boolFalse) {
-                if (getParentActivity() != null) {
-                    this.b.b(false);
-                    yjb.x(null, 2131743640, u21.b0(this), null);
-                    return;
+                return ((Float) pair2.first).floatValue() > ((Float) pair.first).floatValue() ? -1 : 0;
+            case 23:
+                Pair pair3 = (Pair) obj;
+                Pair pair4 = (Pair) obj2;
+                if (((Float) pair3.first).floatValue() > ((Float) pair4.first).floatValue()) {
+                    return 1;
                 }
-                return;
-            }
-            if (this.isFinished || this.finishing) {
-                return;
-            }
-            finishFragment();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
-        return this.a;
-    }
-
-    public final void h0() {
-        if (this.b.y.f) {
-            return;
-        }
-        if (!d0()) {
-            finishFragment();
-            return;
-        }
-        this.b.b(true);
-        TLRPC.UserFull W1 = getMessagesController().W1(getUserConfig().e());
-        TL_account.updateBusinessWorkHours updatebusinessworkhours = new TL_account.updateBusinessWorkHours();
-        ArrayList[] arrayListArr = this.f;
-        ArrayList arrayList = new ArrayList();
-        if (arrayListArr != null) {
-            for (int i = 0; i < arrayListArr.length; i++) {
-                if (arrayListArr[i] != null) {
-                    for (int i2 = 0; i2 < arrayListArr[i].size(); i2++) {
-                        pq7 pq7Var = (pq7) arrayListArr[i].get(i2);
-                        TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = new TL_account.TL_businessWeeklyOpen();
-                        int i3 = i * 1440;
-                        tL_businessWeeklyOpen.start_minute = pq7Var.a + i3;
-                        tL_businessWeeklyOpen.end_minute = i3 + pq7Var.b;
-                        arrayList.add(tL_businessWeeklyOpen);
-                    }
+                return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
+            case 24:
+                return ((h80) ((dz2) obj)).a.compareTo(((h80) ((dz2) obj2)).a);
+            case 25:
+                long j3 = yac.h(((Integer) obj).intValue()).Z;
+                long j4 = yac.h(((Integer) obj2).intValue()).Z;
+                if (j3 > j4) {
+                    return 1;
                 }
-            }
-        }
-        if (this.d && !arrayList.isEmpty()) {
-            TL_account.TL_businessWorkHours tL_businessWorkHours = new TL_account.TL_businessWorkHours();
-            tL_businessWorkHours.timezone_id = this.n;
-            tL_businessWorkHours.weekly_open.addAll(arrayList);
-            updatebusinessworkhours.flags |= 1;
-            updatebusinessworkhours.business_work_hours = tL_businessWorkHours;
-            if (W1 != null) {
-                W1.flags2 |= 1;
-                W1.business_work_hours = tL_businessWorkHours;
-            }
-        } else if (W1 != null) {
-            W1.flags2 &= -2;
-            W1.business_work_hours = null;
-        }
-        getConnectionsManager().sendRequest(updatebusinessworkhours, new n35(this, (byte) 15));
-        getMessagesStorage().g2(W1, false);
-    }
-
-    public final void i0() {
-        l5c l5cVar;
-        if (this.c) {
-            return;
-        }
-        TLRPC.UserFull W1 = getMessagesController().W1(getUserConfig().e());
-        if (W1 == null) {
-            getMessagesController().i3(getClassGuid(), getUserConfig().f(), true);
-            return;
-        }
-        TL_account.TL_businessWorkHours tL_businessWorkHours = W1.business_work_hours;
-        boolean z = tL_businessWorkHours != null;
-        this.d = z;
-        if (!z) {
-            String c = wob.b(this.currentAccount).c();
-            this.n = c;
-            this.h = c;
-            this.e = null;
-            this.f = new ArrayList[7];
-            int i = 0;
-            while (true) {
-                ArrayList[] arrayListArr = this.f;
-                if (i >= arrayListArr.length) {
-                    break;
+                return j3 < j4 ? -1 : 0;
+            case 26:
+                int i8 = ((zda) obj).c;
+                int i9 = ((zda) obj2).c;
+                if (i8 < i9) {
+                    return 1;
                 }
-                arrayListArr[i] = new ArrayList();
-                if (i >= 0 && i < 5) {
-                    this.f[i].add(new pq7(0, 1439));
+                return i8 > i9 ? -1 : 0;
+            case 27:
+                wea weaVar = (wea) obj;
+                wea weaVar2 = (wea) obj2;
+                wea weaVar3 = xea.x1;
+                long j5 = weaVar3 == weaVar ? -200000L : 0L;
+                if (!weaVar.d) {
+                    j5 += 100000;
                 }
-                i++;
-            }
-        } else {
-            String str = tL_businessWorkHours.timezone_id;
-            this.n = str;
-            this.h = str;
-            this.e = b0(tL_businessWorkHours.weekly_open);
-            this.f = b0(W1.business_work_hours.weekly_open);
+                long j6 = weaVar3 == weaVar2 ? -200000L : 0L;
+                if (!weaVar2.d) {
+                    j6 += 100000;
+                }
+                return Long.compare(weaVar.b + j5, weaVar2.b + j6);
+            case 28:
+                return ((eia) obj2).c - ((eia) obj).c;
+            default:
+                return ((gna) obj).a - ((gna) obj2).a;
         }
-        q5c q5cVar = this.a;
-        if (q5cVar != null && (l5cVar = q5cVar.g3) != null) {
-            l5cVar.O(true);
-        }
-        Z(false);
-        this.c = true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        wob.b(this.currentAccount).g();
-        this.n = wob.b(this.currentAccount).c();
-        getNotificationCenter().b(this, kk7.D0);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, kk7.D0);
-        super.onFragmentDestroy();
-        h0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        return true;
     }
 }

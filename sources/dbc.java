@@ -1,65 +1,50 @@
 // default package
 
-import java.nio.ByteBuffer;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class dbc extends n3 {
-    public static final /* synthetic */ z24 h;
-    public static final /* synthetic */ z24 n;
-    public static final /* synthetic */ z24 r;
-    public int e;
-    public int[] f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dbc extends a8c {
+    public static final /* synthetic */ int b = 0;
 
     static {
-        z74 z74Var = new z74(dbc.class, "VideoMediaHeaderBox.java");
-        h = z74Var.e(z74Var.d("getGraphicsmode", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "", "", "int"));
-        n = z74Var.e(z74Var.d("getOpcolor", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "", "", "[I"));
-        r = z74Var.e(z74Var.d("toString", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "", "", "java.lang.String"));
-        z74Var.e(z74Var.d("setOpcolor", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "[I", "opcolor", "void"));
-        z74Var.e(z74Var.d("setGraphicsmode", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "int", "graphicsmode", "void"));
+        a8c.h(new dbc());
     }
 
-    @Override // g2, y1
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        f(byteBuffer);
-        this.e = hle.f(byteBuffer);
-        this.f = new int[3];
-        for (int i = 0; i < 3; i++) {
-            this.f[i] = hle.f(byteBuffer);
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        ebc ebcVar = (ebc) view;
+        int i = b8cVar.k;
+        CharSequence charSequence = b8cVar.m;
+        CharSequence charSequence2 = b8cVar.n;
+        boolean z2 = b8cVar.r;
+        boolean z3 = b8cVar.s;
+        int i2 = b8cVar.A;
+        TextView textView = ebcVar.e;
+        ebcVar.h = z2;
+        ebcVar.n = z3;
+        ebcVar.b.setImageResource(i);
+        ImageView imageView = ebcVar.f;
+        if (i2 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i2);
+        } else {
+            imageView.setVisibility(8);
         }
+        ebcVar.d.setText(charSequence);
+        textView.setText(charSequence2);
+        textView.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int L = hl.L(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        ebcVar.c.setPadding(0, L, 0, L);
+        ebcVar.updateColors();
     }
 
-    @Override // g2, y1
-    public final void getContent(ByteBuffer byteBuffer) {
-        i(byteBuffer);
-        ile.d(this.e, byteBuffer);
-        for (int i : this.f) {
-            ile.d(i, byteBuffer);
-        }
-    }
-
-    @Override // y1
-    public final long getContentSize() {
-        return 12L;
-    }
-
-    public final String toString() {
-        c5a b = z74.b(r, this, this);
-        n89.a().getClass();
-        n89.b(b);
-        StringBuilder sb = new StringBuilder("VideoMediaHeaderBox[graphicsmode=");
-        oo1.r(z74.b(h, this, this));
-        sb.append(this.e);
-        sb.append(";opcolor0=");
-        z24 z24Var = n;
-        oo1.r(z74.b(z24Var, this, this));
-        sb.append(this.f[0]);
-        sb.append(";opcolor1=");
-        oo1.r(z74.b(z24Var, this, this));
-        sb.append(this.f[1]);
-        sb.append(";opcolor2=");
-        oo1.r(z74.b(z24Var, this, this));
-        return de9.l(sb, this.f[2], "]");
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new ebc(context, vnbVar);
     }
 }

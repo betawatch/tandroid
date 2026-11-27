@@ -1,49 +1,28 @@
 // default package
 
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ay5 implements Runnable {
+public final /* synthetic */ class ay5 implements pt2 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ kz5 b;
+    public final /* synthetic */ hc8 b;
 
-    public /* synthetic */ ay5(kz5 kz5Var, byte b) {
+    public /* synthetic */ ay5(hc8 hc8Var, byte b) {
         this.a = b;
-        this.b = kz5Var;
+        this.b = hc8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // pt2
+    public final void accept(Object obj) {
         byte b = this.a;
-        kz5 kz5Var = this.b;
+        hc8 hc8Var = this.b;
+        Integer num = (Integer) obj;
         switch (b) {
             case 0:
-                String str = LaunchActivity.C1;
-                try {
-                    kz5Var.run();
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            case 1:
-                String str2 = LaunchActivity.C1;
-                try {
-                    kz5Var.run();
-                    break;
-                } catch (Exception e2) {
-                    fa4.g(e2, true);
-                    return;
-                }
+                hc8Var.m0(num);
+                break;
             default:
-                String str3 = LaunchActivity.C1;
-                try {
-                    kz5Var.run();
-                    break;
-                } catch (Exception e3) {
-                    fa4.g(e3, true);
-                }
+                hc8Var.l0(num);
+                break;
         }
     }
 }

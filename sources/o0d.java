@@ -1,25 +1,13 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.List;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class o0d {
+    public final d0d a;
+    public final int b;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class o0d extends b4 {
-    public static final Parcelable.Creator<o0d> CREATOR = new hv6((byte) 26);
-    public final List a;
-
-    public o0d(List list) {
-        list.getClass();
-        this.a = list;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = jte.r(parcel, 20293);
-        jte.h(parcel, 1, this.a);
-        jte.s(parcel, r);
+    public o0d(d0d d0dVar, int i) {
+        this.a = d0dVar;
+        this.b = i;
     }
 }

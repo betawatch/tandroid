@@ -1,29 +1,16 @@
 // default package
 
-import j$.util.Objects;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class mr9 {
-    public static final mr9 b;
-    public final ym5 a;
-
-    static {
-        v39 v39Var = new v39((byte) 6);
-        v39Var.b = ym5.p(2, 1, 5);
-        b = new mr9(v39Var);
-    }
-
-    public mr9(v39 v39Var) {
-        this.a = (ym5) v39Var.b;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof mr9) && this.a.equals(((mr9) obj).a);
-    }
-
-    public final int hashCode() {
-        Boolean bool = Boolean.TRUE;
-        return Objects.hash(this.a, null, null, bool, bool, bool, bool, bool);
+public final class mr9 extends yo4 {
+    @Override // yo4, x1c
+    public final void g(ko4 ko4Var) {
+        jo4 a = ko4Var.a();
+        a.Q = 0;
+        a.R = 0;
+        a.t = TLObject.FLAG_13;
+        super.g(new ko4(a));
     }
 }

@@ -1,0 +1,35 @@
+// default package
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ck7 {
+    public final int a;
+    public final zj7 b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final float i;
+    public final int j;
+    public final int k;
+    public final int l;
+    public final int m;
+
+    public ck7(int i, zj7 zj7Var, int i2, int i3, int i4, int i5, int i6, int i7, float f, int i8, int i9, int i10, int i11) {
+        this.a = i;
+        this.b = zj7Var;
+        this.c = i2;
+        this.d = i3;
+        this.e = i4;
+        this.f = i5;
+        this.i = f;
+        this.j = i8;
+        this.k = i9;
+        this.l = i10;
+        this.m = i11;
+        this.g = i6;
+        this.h = i7;
+    }
+}

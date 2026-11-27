@@ -1,205 +1,37 @@
 // default package
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.RippleDrawable;
-import android.net.Uri;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class jp extends ImageButton {
-    public final ko a;
-    public final kp b;
-    public boolean c;
+public final class jp {
+    public final TextView a;
+    public final aj3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jp(Context context, AttributeSet attributeSet, int i) {
-        super(context, attributeSet, i);
-        xob.a(context);
-        this.c = false;
-        cnb.a(getContext(), this);
-        ko koVar = new ko(this);
-        this.a = koVar;
-        koVar.g(attributeSet, i);
-        kp kpVar = new kp(this);
-        this.b = kpVar;
-        kpVar.t(attributeSet, i);
+    public jp(TextView textView) {
+        this.a = textView;
+        this.b = new aj3(textView);
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.b();
-        }
-        kp kpVar = this.b;
-        if (kpVar != null) {
-            kpVar.b();
+    public final void a(AttributeSet attributeSet, int i) {
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, w19.i, i, 0);
+        try {
+            boolean z = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+            obtainStyledAttributes.recycle();
+            c(z);
+        } catch (Throwable th) {
+            obtainStyledAttributes.recycle();
+            throw th;
         }
     }
 
-    public ColorStateList getSupportBackgroundTintList() {
-        ko koVar = this.a;
-        if (koVar != null) {
-            return koVar.e();
-        }
-        return null;
+    public final void b(boolean z) {
+        ((vje) this.b.b).b(z);
     }
 
-    public PorterDuff.Mode getSupportBackgroundTintMode() {
-        ko koVar = this.a;
-        if (koVar != null) {
-            return koVar.f();
-        }
-        return null;
-    }
-
-    public ColorStateList getSupportImageTintList() {
-        h24 h24Var;
-        kp kpVar = this.b;
-        if (kpVar == null || (h24Var = (h24) kpVar.d) == null) {
-            return null;
-        }
-        return (ColorStateList) h24Var.c;
-    }
-
-    public PorterDuff.Mode getSupportImageTintMode() {
-        h24 h24Var;
-        kp kpVar = this.b;
-        if (kpVar == null || (h24Var = (h24) kpVar.d) == null) {
-            return null;
-        }
-        return (PorterDuff.Mode) h24Var.d;
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final boolean hasOverlappingRendering() {
-        return !(((ImageView) this.b.c).getBackground() instanceof RippleDrawable) && super.hasOverlappingRendering();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        super.setBackgroundDrawable(drawable);
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.h();
-        }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundResource(int i) {
-        super.setBackgroundResource(i);
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.i(i);
-        }
-    }
-
-    @Override // android.widget.ImageView
-    public void setImageBitmap(Bitmap bitmap) {
-        super.setImageBitmap(bitmap);
-        kp kpVar = this.b;
-        if (kpVar != null) {
-            kpVar.b();
-        }
-    }
-
-    @Override // android.widget.ImageView
-    public void setImageDrawable(Drawable drawable) {
-        kp kpVar = this.b;
-        if (kpVar != null && drawable != null && !this.c) {
-            kpVar.b = drawable.getLevel();
-        }
-        super.setImageDrawable(drawable);
-        if (kpVar != null) {
-            kpVar.b();
-            if (this.c) {
-                return;
-            }
-            ImageView imageView = (ImageView) kpVar.c;
-            if (imageView.getDrawable() != null) {
-                imageView.getDrawable().setLevel(kpVar.b);
-            }
-        }
-    }
-
-    @Override // android.widget.ImageView
-    public void setImageLevel(int i) {
-        super.setImageLevel(i);
-        this.c = true;
-    }
-
-    @Override // android.widget.ImageView
-    public void setImageResource(int i) {
-        kp kpVar = this.b;
-        ImageView imageView = (ImageView) kpVar.c;
-        if (i != 0) {
-            Drawable a = hmd.a(imageView.getContext(), i);
-            if (a != null) {
-                lq3.a(a);
-            }
-            imageView.setImageDrawable(a);
-        } else {
-            imageView.setImageDrawable(null);
-        }
-        kpVar.b();
-    }
-
-    @Override // android.widget.ImageView
-    public void setImageURI(Uri uri) {
-        super.setImageURI(uri);
-        kp kpVar = this.b;
-        if (kpVar != null) {
-            kpVar.b();
-        }
-    }
-
-    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.m(colorStateList);
-        }
-    }
-
-    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        ko koVar = this.a;
-        if (koVar != null) {
-            koVar.n(mode);
-        }
-    }
-
-    public void setSupportImageTintList(ColorStateList colorStateList) {
-        kp kpVar = this.b;
-        if (kpVar != null) {
-            h24 h24Var = (h24) kpVar.d;
-            if (h24Var == null) {
-                h24Var = new h24();
-                kpVar.d = h24Var;
-            }
-            h24Var.c = colorStateList;
-            h24Var.b = true;
-            kpVar.b();
-        }
-    }
-
-    public void setSupportImageTintMode(PorterDuff.Mode mode) {
-        kp kpVar = this.b;
-        if (kpVar != null) {
-            h24 h24Var = (h24) kpVar.d;
-            if (h24Var == null) {
-                h24Var = new h24();
-                kpVar.d = h24Var;
-            }
-            h24Var.d = mode;
-            h24Var.a = true;
-            kpVar.b();
-        }
+    public final void c(boolean z) {
+        ((vje) this.b.b).c(z);
     }
 }

@@ -1,39 +1,47 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public enum esb extends qsb {
-    public esb() {
-        super("BetweenDoctypePublicAndSystemIdentifiers", 59);
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public interface esb {
+    void B0(float f, int i);
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        char d = zj1Var.d();
-        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
-            return;
-        }
-        if (d == '\"') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.A0;
-            return;
-        }
-        if (d == '\'') {
-            aqbVar.m(this);
-            aqbVar.c = qsb.B0;
-            return;
-        }
-        lqb lqbVar = qsb.a;
-        if (d == '>') {
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        } else if (d != 65535) {
-            aqbVar.m(this);
-            aqbVar.c = qsb.D0;
-        } else {
-            aqbVar.l(this);
-            aqbVar.j();
-            aqbVar.c = lqbVar;
-        }
-    }
+    void C(long j, boolean z);
+
+    void E1(float f);
+
+    void H0(float f);
+
+    void O1(float f, int i);
+
+    void P1(float f);
+
+    void S1();
+
+    void V();
+
+    void X(boolean z, float f);
+
+    void Z1(float f);
+
+    void b1(long j);
+
+    void b2(int i, long j);
+
+    void e1(boolean z);
+
+    void g(int i);
+
+    void g2(long j);
+
+    void m0(float f);
+
+    void p1(float f, int i);
+
+    void s1(float f);
+
+    void t(float f);
+
+    void v0(boolean z);
+
+    void y(float f);
 }

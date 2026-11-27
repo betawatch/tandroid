@@ -1,51 +1,34 @@
 // default package
 
-import java.util.Iterator;
-import java.util.Map;
+import android.util.Log;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class bid extends xfd {
-    public final transient f7d c;
-    public final transient Object[] d;
-    public final transient int e;
+public final /* synthetic */ class bid implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ pid b;
 
-    public bid(f7d f7dVar, Object[] objArr, int i) {
-        this.c = f7dVar;
-        this.d = objArr;
-        this.e = i;
+    public /* synthetic */ bid(pid pidVar, byte b) {
+        this.a = b;
+        this.b = pidVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        pid pidVar = this.b;
+        switch (b) {
+            case 0:
+                he6 he6Var = pid.i;
+                Log.i(he6Var.a, he6Var.d("transfer with type = %d has timed out", Integer.valueOf(pidVar.e)));
+                pidVar.b(101);
+                break;
+            default:
+                ve9 ve9Var = new ve9((Object) pidVar, (byte) 26);
+                baa baaVar = pidVar.f;
+                xve.h(baaVar);
+                baaVar.a(ve9Var);
+                break;
         }
-        return false;
-    }
-
-    @Override // ned
-    public final int h(Object[] objArr) {
-        return k().h(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return k().listIterator(0);
-    }
-
-    @Override // xfd
-    public final efd n() {
-        return new uhd(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
     }
 }

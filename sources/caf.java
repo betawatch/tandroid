@@ -1,45 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.util.Log;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class caf extends vef {
-    private static final caf zzb;
-    private int zzd;
-    private String zze = "";
-    private dff zzf;
-    private dff zzg;
-    private boolean zzh;
+public abstract class caf {
+    public static o3f a;
 
-    static {
-        caf cafVar = new caf();
-        zzb = cafVar;
-        vef.e(caf.class, cafVar);
+    public static synchronized q8f a(y7f y7fVar) {
+        q8f q8fVar;
+        synchronized (caf.class) {
+            o3f o3fVar = a;
+            if (o3fVar == null) {
+                o3fVar = new o3f((byte) 2);
+                a = o3fVar;
+            }
+            q8fVar = (q8f) o3fVar.c(y7fVar);
+        }
+        return q8fVar;
     }
 
-    public caf() {
-        rgf rgfVar = rgf.d;
-        this.zzf = rgfVar;
-        this.zzg = rgfVar;
+    public static void b(String str) {
+        if (Log.isLoggable("FirebaseAppIndex", 3) ? true : Log.isLoggable("FirebaseAppIndex", 3)) {
+            Log.d("FirebaseAppIndex", str);
+        }
     }
 
-    @Override // vef
-    public final Object h(int i, vef vefVar) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public static synchronized q8f c() {
+        q8f a2;
+        synchronized (caf.class) {
+            a2 = a(new y7f());
         }
-        if (i2 == 2) {
-            return new sgf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဈ\u0000\u0002\u001b\u0003\u001b\u0004ဇ\u0001", new Object[]{"zzd", "zze", "zzf", e7f.class, "zzg", h6f.class, "zzh"});
-        }
-        if (i2 == 3) {
-            return new caf();
-        }
-        if (i2 == 4) {
-            return new v8f(zzb);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        return a2;
     }
 }

@@ -1,32 +1,14 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import androidx.car.app.model.DurationSpan;
+import j$.time.Duration;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum es3 implements jj {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(-260),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF17(-261),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF26(-8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF35(-7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF45(-25),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF55(-35),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF65(-36);
-
-    public final short a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    es3(int i) {
-        this.a = i;
-    }
-
-    @Override // jj
-    public final int a() {
-        return this.a;
+public abstract class es3 {
+    public static DurationSpan a(Duration duration) {
+        Objects.requireNonNull(duration);
+        return new DurationSpan(duration.getSeconds());
     }
 }

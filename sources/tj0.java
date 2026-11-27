@@ -1,25 +1,29 @@
 // default package
 
 import android.graphics.Bitmap;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class tj0 extends b93 {
-    public Bitmap a;
-    public final /* synthetic */ vj0 b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class tj0 {
+    public WeakReference a;
+    public long b;
+    public boolean c = true;
 
-    public tj0(vj0 vj0Var) {
-        this.b = vj0Var;
+    public final boolean a(Bitmap bitmap) {
+        if (this.c) {
+            return true;
+        }
+        WeakReference weakReference = this.a;
+        if ((weakReference != null ? (Bitmap) weakReference.get() : null) == bitmap) {
+            return ((bitmap == null || bitmap.isRecycled()) ? 0L : (long) bitmap.getGenerationId()) != this.b;
+        }
+        return true;
     }
 
-    @Override // b93, n01
-    public final void clear() {
-        this.a = null;
-        super.clear();
-    }
-
-    @Override // b93
-    public final void release() {
-        this.b.o(this);
+    public final void b(Bitmap bitmap) {
+        this.a = bitmap != null ? new WeakReference(bitmap) : null;
+        this.b = (bitmap == null || bitmap.isRecycled()) ? 0L : bitmap.getGenerationId();
+        this.c = false;
     }
 }

@@ -1,66 +1,67 @@
 // default package
 
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class wme extends dzc implements IInterface {
-    public final int b;
+public final class wme extends s6e {
+    private static final wme zzb;
+    private int zzd;
+    private int zze = 0;
+    private Object zzf;
+    private int zzg;
+    private int zzh;
 
-    public wme(byte[] bArr) {
-        super("com.google.android.gms.common.internal.ICertData", (byte) 6);
-        fre.b(bArr.length == 25);
-        this.b = Arrays.hashCode(bArr);
+    static {
+        wme wmeVar = new wme();
+        zzb = wmeVar;
+        s6e.k(wme.class, wmeVar);
     }
 
-    public static byte[] U(String str) {
-        try {
-            return str.getBytes("ISO-8859-1");
-        } catch (UnsupportedEncodingException e) {
-            fi7.g(e);
-            return null;
-        }
+    public static void o(wme wmeVar, uoe uoeVar) {
+        wmeVar.zzh = uoeVar.a;
+        wmeVar.zzd |= 2;
     }
 
-    public abstract byte[] T();
-
-    @Override // dzc
-    public final boolean d(int i, Parcel parcel, Parcel parcel2) {
-        if (i == 1) {
-            bo7 bo7Var = new bo7(T());
-            parcel2.writeNoException();
-            mgd.b(parcel2, bo7Var);
-            return true;
-        }
-        if (i != 2) {
-            return false;
-        }
-        parcel2.writeNoException();
-        parcel2.writeInt(this.b);
-        return true;
+    public static /* synthetic */ void p(wme wmeVar, wse wseVar) {
+        wmeVar.zzf = wseVar;
+        wmeVar.zze = 4;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof wme) {
-            try {
-                wme wmeVar = (wme) obj;
-                if (wmeVar.b == this.b) {
-                    return Arrays.equals(T(), (byte[]) bo7.U(new bo7(wmeVar.T())));
-                }
-            } catch (RemoteException e) {
-                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
-                return false;
-            }
-        }
-        return false;
+    public static /* synthetic */ void q(wme wmeVar, uve uveVar) {
+        wmeVar.zzf = uveVar;
+        wmeVar.zze = 3;
     }
 
-    public final int hashCode() {
-        return this.b;
+    public static /* synthetic */ void r(wme wmeVar, int i) {
+        wmeVar.zzg = i - 1;
+        wmeVar.zzd |= 1;
+    }
+
+    public static eme s() {
+        return (eme) zzb.f();
+    }
+
+    @Override // s6e
+    public final Object d(int i) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        if (i2 == 2) {
+            return new lfe(zzb, "\u0004\u0005\u0001\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002<\u0000\u0003<\u0000\u0004<\u0000\u0005᠌\u0001", new Object[]{"zzf", "zze", "zzd", "zzg", ovd.c, cre.class, uve.class, wse.class, "zzh", ovd.e});
+        }
+        if (i2 == 3) {
+            return new wme();
+        }
+        if (i2 == 4) {
+            return new eme(zzb);
+        }
+        if (i2 == 5) {
+            return zzb;
+        }
+        throw null;
+    }
+
+    public final wse n() {
+        return this.zze == 4 ? (wse) this.zzf : wse.o();
     }
 }

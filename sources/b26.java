@@ -1,28 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.window.OnBackInvokedCallback;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class b26 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public boolean f;
+public final class b26 implements OnBackInvokedCallback {
+    public final /* synthetic */ LaunchActivity a;
 
-    public b26(int i, int i2, int i3, String str, String str2) {
-        this.a = i;
-        this.b = i2;
-        this.c = str;
-        this.d = str2;
-        this.e = i3;
+    public b26(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    public static b26 a(int i, int i2) {
-        return new b26(i, i2, -1, null, null);
-    }
-
-    public static b26 b(int i, int i2, String str) {
-        return new b26(i, -1, i2, null, str);
+    public final void onBackInvoked() {
+        boolean O1 = hl.O1();
+        LaunchActivity launchActivity = this.a;
+        if (O1) {
+            launchActivity.onBackPressed();
+            return;
+        }
+        if (launchActivity.d0(true)) {
+            ActionBarLayout actionBarLayout = launchActivity.p0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.j1) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.j1 = false;
+                actionBarLayout.d(false);
+            }
+        }
     }
 }

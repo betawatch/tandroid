@@ -1,23 +1,355 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum bd7 implements ct8 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2);
+public final /* synthetic */ class bd7 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jf7 b;
+    public final /* synthetic */ zh6 c;
 
-    public final byte a;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    bd7(int i) {
-        this.a = i;
+    public /* synthetic */ bd7(jf7 jf7Var, zh6 zh6Var, byte b) {
+        this.a = b;
+        this.b = jf7Var;
+        this.c = zh6Var;
     }
 
-    @Override // ct8
-    public final int a() {
-        return this.a;
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02ba  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x02bf  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x02c4  */
+    /* JADX WARN: Removed duplicated region for block: B:118:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x02d2  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x02d7  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x02dc  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x02e3  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLiteCursor sQLiteCursor;
+        SQLitePreparedStatement sQLitePreparedStatement2;
+        SQLiteDatabase sQLiteDatabase;
+        SQLiteDatabase sQLiteDatabase2;
+        SQLitePreparedStatement executeFast;
+        mt9 mt9Var;
+        byte b = this.a;
+        zh6 zh6Var = this.c;
+        jf7 jf7Var = this.b;
+        int i = 0;
+        switch (b) {
+            case 0:
+                try {
+                    ArrayList arrayList = new ArrayList();
+                    int m = zh6Var.m();
+                    for (int i2 = 0; i2 < m; i2++) {
+                        SQLiteCursor queryFinalized = jf7Var.b.queryFinalized("SELECT mid, uid FROM webpage_pending_v2 WHERE id = " + zh6Var.j(i2), new Object[0]);
+                        try {
+                            zh6 zh6Var2 = new zh6();
+                            while (queryFinalized.next()) {
+                                long longValue = queryFinalized.longValue(1);
+                                ArrayList arrayList2 = (ArrayList) zh6Var2.f(longValue);
+                                if (arrayList2 == null) {
+                                    arrayList2 = new ArrayList();
+                                    zh6Var2.k(longValue, arrayList2);
+                                }
+                                arrayList2.add(Integer.valueOf(queryFinalized.intValue(0)));
+                            }
+                            queryFinalized.dispose();
+                            if (!zh6Var2.i()) {
+                                int m2 = zh6Var2.m();
+                                for (int i3 = 0; i3 < m2; i3++) {
+                                    long j = zh6Var2.j(i3);
+                                    ArrayList arrayList3 = (ArrayList) zh6Var2.n(i3);
+                                    SQLiteDatabase sQLiteDatabase3 = jf7Var.b;
+                                    Locale locale = Locale.US;
+                                    SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT mid, data FROM messages_v2 WHERE mid IN (" + TextUtils.join(",", arrayList3) + ") AND uid = " + j, new Object[0]);
+                                    while (queryFinalized2.next()) {
+                                        try {
+                                            int intValue = queryFinalized2.intValue(0);
+                                            NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(1);
+                                            if (byteBufferValue != null) {
+                                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                                TLdeserialize.readAttachPath(byteBufferValue, jf7Var.getUserConfig().n);
+                                                byteBufferValue.reuse();
+                                                TLRPC.MessageMedia messageMedia = TLdeserialize.media;
+                                                if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
+                                                    TLdeserialize.id = intValue;
+                                                    messageMedia.webpage = (TLRPC.WebPage) zh6Var.n(i2);
+                                                    arrayList.add(TLdeserialize);
+                                                }
+                                            }
+                                        } catch (Exception e) {
+                                            e = e;
+                                            sQLiteCursor = queryFinalized2;
+                                            sQLitePreparedStatement = null;
+                                            sQLitePreparedStatement2 = null;
+                                            try {
+                                                jf7Var.n(e, true);
+                                                if (sQLiteCursor != null) {
+                                                    sQLiteCursor.dispose();
+                                                }
+                                                if (sQLitePreparedStatement2 != null) {
+                                                    sQLitePreparedStatement2.dispose();
+                                                }
+                                                if (sQLitePreparedStatement != null) {
+                                                    sQLitePreparedStatement.dispose();
+                                                }
+                                                sQLiteDatabase2 = jf7Var.b;
+                                                if (sQLiteDatabase2 == null) {
+                                                    return;
+                                                }
+                                                sQLiteDatabase2.commitTransaction();
+                                                return;
+                                            } catch (Throwable th) {
+                                                th = th;
+                                                if (sQLiteCursor != null) {
+                                                    sQLiteCursor.dispose();
+                                                }
+                                                if (sQLitePreparedStatement2 != null) {
+                                                    sQLitePreparedStatement2.dispose();
+                                                }
+                                                if (sQLitePreparedStatement != null) {
+                                                    sQLitePreparedStatement.dispose();
+                                                }
+                                                sQLiteDatabase = jf7Var.b;
+                                                if (sQLiteDatabase != null) {
+                                                    sQLiteDatabase.commitTransaction();
+                                                }
+                                                throw th;
+                                            }
+                                        } catch (Throwable th2) {
+                                            th = th2;
+                                            sQLiteCursor = queryFinalized2;
+                                            sQLitePreparedStatement = null;
+                                            sQLitePreparedStatement2 = null;
+                                            if (sQLiteCursor != null) {
+                                            }
+                                            if (sQLitePreparedStatement2 != null) {
+                                            }
+                                            if (sQLitePreparedStatement != null) {
+                                            }
+                                            sQLiteDatabase = jf7Var.b;
+                                            if (sQLiteDatabase != null) {
+                                            }
+                                            throw th;
+                                        }
+                                    }
+                                    queryFinalized2.dispose();
+                                }
+                            }
+                        } catch (Exception e2) {
+                            e = e2;
+                            sQLiteCursor = queryFinalized;
+                        } catch (Throwable th3) {
+                            th = th3;
+                            sQLiteCursor = queryFinalized;
+                        }
+                    }
+                    if (arrayList.isEmpty()) {
+                        sQLiteDatabase2 = jf7Var.b;
+                        if (sQLiteDatabase2 == null) {
+                            return;
+                        }
+                    } else {
+                        jf7Var.b.beginTransaction();
+                        SQLitePreparedStatement executeFast2 = jf7Var.b.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
+                        try {
+                            executeFast = jf7Var.b.executeFast("UPDATE media_v4 SET data = ? WHERE mid = ? AND uid = ?");
+                            while (i < arrayList.size()) {
+                                try {
+                                    TLRPC.Message message = (TLRPC.Message) arrayList.get(i);
+                                    r47.p5(message);
+                                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
+                                    message.serializeToStream(nativeByteBuffer);
+                                    executeFast2.requery();
+                                    executeFast2.bindByteBuffer(1, nativeByteBuffer);
+                                    executeFast2.bindInteger(2, message.id);
+                                    executeFast2.bindLong(3, r47.B0(message));
+                                    executeFast2.step();
+                                    executeFast.requery();
+                                    executeFast.bindByteBuffer(1, nativeByteBuffer);
+                                    executeFast.bindInteger(2, message.id);
+                                    executeFast.bindLong(3, r47.B0(message));
+                                    executeFast.step();
+                                    nativeByteBuffer.reuse();
+                                    i++;
+                                } catch (Exception e3) {
+                                    e = e3;
+                                    sQLitePreparedStatement2 = executeFast2;
+                                    sQLitePreparedStatement = executeFast;
+                                    sQLiteCursor = null;
+                                    jf7Var.n(e, true);
+                                    if (sQLiteCursor != null) {
+                                    }
+                                    if (sQLitePreparedStatement2 != null) {
+                                    }
+                                    if (sQLitePreparedStatement != null) {
+                                    }
+                                    sQLiteDatabase2 = jf7Var.b;
+                                    if (sQLiteDatabase2 == null) {
+                                    }
+                                    sQLiteDatabase2.commitTransaction();
+                                    return;
+                                } catch (Throwable th4) {
+                                    th = th4;
+                                    sQLitePreparedStatement2 = executeFast2;
+                                    sQLitePreparedStatement = executeFast;
+                                    sQLiteCursor = null;
+                                    if (sQLiteCursor != null) {
+                                    }
+                                    if (sQLitePreparedStatement2 != null) {
+                                    }
+                                    if (sQLitePreparedStatement != null) {
+                                    }
+                                    sQLiteDatabase = jf7Var.b;
+                                    if (sQLiteDatabase != null) {
+                                    }
+                                    throw th;
+                                }
+                            }
+                            executeFast2.dispose();
+                        } catch (Exception e4) {
+                            e = e4;
+                            sQLitePreparedStatement2 = executeFast2;
+                            sQLitePreparedStatement = null;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            sQLitePreparedStatement2 = executeFast2;
+                            sQLitePreparedStatement = null;
+                        }
+                        try {
+                            executeFast.dispose();
+                            jf7Var.b.commitTransaction();
+                            hl.c3(new q41(jf7Var, arrayList, (byte) 10));
+                            sQLiteDatabase2 = jf7Var.b;
+                            if (sQLiteDatabase2 == null) {
+                                return;
+                            }
+                        } catch (Exception e5) {
+                            e = e5;
+                            sQLitePreparedStatement = executeFast;
+                            sQLiteCursor = null;
+                            sQLitePreparedStatement2 = null;
+                            jf7Var.n(e, true);
+                            if (sQLiteCursor != null) {
+                            }
+                            if (sQLitePreparedStatement2 != null) {
+                            }
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            sQLiteDatabase2 = jf7Var.b;
+                            if (sQLiteDatabase2 == null) {
+                            }
+                            sQLiteDatabase2.commitTransaction();
+                            return;
+                        } catch (Throwable th6) {
+                            th = th6;
+                            sQLitePreparedStatement = executeFast;
+                            sQLiteCursor = null;
+                            sQLitePreparedStatement2 = null;
+                            if (sQLiteCursor != null) {
+                            }
+                            if (sQLitePreparedStatement2 != null) {
+                            }
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            sQLiteDatabase = jf7Var.b;
+                            if (sQLiteDatabase != null) {
+                            }
+                            throw th;
+                        }
+                    }
+                } catch (Exception e6) {
+                    e = e6;
+                    sQLitePreparedStatement = null;
+                } catch (Throwable th7) {
+                    th = th7;
+                    sQLitePreparedStatement = null;
+                }
+                sQLiteDatabase2.commitTransaction();
+                return;
+            case 1:
+                int m3 = zh6Var.m();
+                for (int i4 = 0; i4 < m3; i4++) {
+                    jf7Var.getNotificationCenter().k(50, Long.valueOf(zh6Var.j(i4)), zh6Var.n(i4));
+                }
+                return;
+            case 2:
+                nt9 F1 = jf7Var.getMessagesController().F1();
+                ArrayList arrayList4 = F1.j;
+                ArrayList arrayList5 = new ArrayList();
+                boolean z = false;
+                for (int i5 = 0; i5 < zh6Var.m(); i5++) {
+                    long j2 = zh6Var.j(i5);
+                    ArrayList arrayList6 = (ArrayList) zh6Var.n(i5);
+                    int i6 = 0;
+                    for (int i7 = 0; i7 < arrayList6.size(); i7++) {
+                        i6 = Math.max(i6, ((Integer) arrayList6.get(i7)).intValue());
+                    }
+                    int i8 = 0;
+                    while (true) {
+                        if (i8 >= arrayList4.size()) {
+                            mt9Var = null;
+                        } else if (((mt9) arrayList4.get(i8)).a == j2) {
+                            mt9Var = (mt9) arrayList4.get(i8);
+                        } else {
+                            i8++;
+                        }
+                    }
+                    if (mt9Var != null) {
+                        if (mt9Var.i) {
+                            int max = Math.max(0, mt9Var.e - arrayList6.size());
+                            int i9 = mt9Var.e;
+                            if (max != i9) {
+                                mt9Var.e = Math.max(0, i9 - arrayList6.size());
+                                z = true;
+                            }
+                        }
+                        if (mt9Var.i && mt9Var.e <= 0) {
+                            F1.i(mt9Var.a);
+                        } else if (mt9Var.c <= i6) {
+                            arrayList5.add(mt9Var);
+                        }
+                        z = true;
+                    }
+                }
+                if (z) {
+                    if (arrayList5.isEmpty()) {
+                        F1.k();
+                        return;
+                    }
+                    int i10 = F1.a;
+                    long e7 = yac.h(i10).e();
+                    jf7 Y = jf7.Y(i10);
+                    Y.a.c(new y09((Object) F1, (Object) Y, (Object) arrayList5, e7, (byte) 1));
+                    return;
+                }
+                return;
+            default:
+                ls6 mediaDataController = jf7Var.getMediaDataController();
+                mediaDataController.t1.b();
+                if (zh6Var != null) {
+                    int m4 = zh6Var.m();
+                    while (i < m4) {
+                        long j3 = zh6Var.j(i);
+                        Integer num = (Integer) zh6Var.n(i);
+                        num.intValue();
+                        mediaDataController.t1.k(j3, num);
+                        i++;
+                    }
+                    return;
+                }
+                return;
+        }
     }
 }

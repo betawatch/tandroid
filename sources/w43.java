@@ -1,35 +1,65 @@
 // default package
 
-import android.os.Bundle;
-import android.text.Spanned;
+import android.database.Cursor;
+import android.util.Log;
+import android.widget.Filter;
+import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class w43 {
-    public static final String a;
-    public static final String b;
-    public static final String c;
-    public static final String d;
-    public static final String e;
+public final class w43 extends Filter {
+    public v43 a;
 
-    static {
-        String str = g8c.a;
-        a = "0";
-        b = "1";
-        c = "2";
-        d = "3";
-        e = "4";
+    @Override // android.widget.Filter
+    public final CharSequence convertResultToString(Object obj) {
+        return this.a.c((Cursor) obj);
     }
 
-    public static Bundle a(Spanned spanned, Object obj, int i, Bundle bundle) {
-        Bundle bundle2 = new Bundle();
-        bundle2.putInt(a, spanned.getSpanStart(obj));
-        bundle2.putInt(b, spanned.getSpanEnd(obj));
-        bundle2.putInt(c, spanned.getSpanFlags(obj));
-        bundle2.putInt(d, i);
-        if (bundle != null) {
-            bundle2.putBundle(e, bundle);
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0041  */
+    @Override // android.widget.Filter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Filter.FilterResults performFiltering(CharSequence charSequence) {
+        Cursor cursor;
+        gfb gfbVar = (gfb) this.a;
+        SearchView searchView = gfbVar.w;
+        String charSequence2 = charSequence == null ? "" : charSequence.toString();
+        if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
+            try {
+                cursor = gfbVar.f(gfbVar.x, charSequence2);
+            } catch (RuntimeException e) {
+                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e);
+            }
+            if (cursor != null) {
+                cursor.getCount();
+                Filter.FilterResults filterResults = new Filter.FilterResults();
+                if (cursor == null) {
+                    filterResults.count = cursor.getCount();
+                    filterResults.values = cursor;
+                } else {
+                    filterResults.count = 0;
+                    filterResults.values = null;
+                }
+                return filterResults;
+            }
         }
-        return bundle2;
+        cursor = null;
+        Filter.FilterResults filterResults2 = new Filter.FilterResults();
+        if (cursor == null) {
+        }
+        return filterResults2;
+    }
+
+    @Override // android.widget.Filter
+    public final void publishResults(CharSequence charSequence, Filter.FilterResults filterResults) {
+        v43 v43Var = this.a;
+        Cursor cursor = v43Var.c;
+        Object obj = filterResults.values;
+        if (obj == null || obj == cursor) {
+            return;
+        }
+        v43Var.b((Cursor) obj);
     }
 }

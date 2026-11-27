@@ -9,7 +9,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes4.dex */
 public final class j implements java.util.Map, Serializable, Map {
     private static final long serialVersionUID = 1978198479659022715L;
@@ -40,7 +40,7 @@ public final class j implements java.util.Map, Serializable, Map {
     
         r3 = r2;
      */
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -78,7 +78,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return $default$compute;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object computeIfAbsent(Object obj, Function function) {
         Object $default$computeIfAbsent;
         Object apply;
@@ -109,7 +109,7 @@ public final class j implements java.util.Map, Serializable, Map {
     
         r3 = r2;
      */
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -187,7 +187,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return equals;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final void forEach(BiConsumer biConsumer) {
         synchronized (this.b) {
             Map.-EL.forEach(this.a, biConsumer);
@@ -203,7 +203,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return obj2;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object getOrDefault(Object obj, Object obj2) {
         Object orDefault;
         synchronized (this.b) {
@@ -243,7 +243,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return lVar;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object merge(Object obj, Object obj2, BiFunction biFunction) {
         Object merge;
         synchronized (this.b) {
@@ -268,7 +268,7 @@ public final class j implements java.util.Map, Serializable, Map {
         }
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object putIfAbsent(Object obj, Object obj2) {
         Object putIfAbsent;
         synchronized (this.b) {
@@ -277,7 +277,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return putIfAbsent;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final boolean remove(Object obj, Object obj2) {
         boolean remove;
         synchronized (this.b) {
@@ -287,7 +287,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return remove;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final boolean replace(Object obj, Object obj2, Object obj3) {
         boolean replace;
         synchronized (this.b) {
@@ -297,7 +297,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return replace;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final void replaceAll(final BiFunction biFunction) {
         synchronized (this.b) {
             java.util.Map map = this.a;
@@ -368,7 +368,7 @@ public final class j implements java.util.Map, Serializable, Map {
         return remove;
     }
 
-    @Override // java.util.Map, j$.util.Map
+    @Override // java.util.Map, j$.util.Map, java.util.concurrent.ConcurrentMap
     public final Object replace(Object obj, Object obj2) {
         Object replace;
         synchronized (this.b) {

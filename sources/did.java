@@ -1,160 +1,45 @@
 // default package
 
-import j$.util.Map;
-import java.io.Serializable;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class did implements Map, Serializable, j$.util.Map {
-    public static final Map.Entry[] b = new Map.Entry[0];
-    public transient mid a;
+public abstract class did {
+    public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
+    public static final byte[] b = {0, 0, 33, 7, -45, 17, -122, 68, -56, -63, -54, 0, 0, 0};
 
-    @Override // java.util.Map
-    /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final mid entrySet() {
-        mid midVar = this.a;
-        if (midVar == null) {
-            njd njdVar = (njd) this;
-            midVar = njdVar.isEmpty() ? tld.G : new fjd(njdVar);
-            this.a = midVar;
+    public static boolean a(cb3 cb3Var) {
+        ey7 ey7Var = new ey7(8);
+        int i = hwc.a(cb3Var, ey7Var).a;
+        if (i != 1380533830 && i != 1380333108) {
+            return false;
         }
-        return midVar;
-    }
-
-    @Override // java.util.Map
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$compute(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
-        return Map.-CC.$default$computeIfAbsent(this, obj, function);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final boolean containsKey(Object obj) {
-        return get(obj) != null;
-    }
-
-    @Override // java.util.Map
-    public final boolean containsValue(Object obj) {
-        return ((njd) this).d.contains(obj);
-    }
-
-    @Override // java.util.Map
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+        cb3Var.d(ey7Var.a, 0, 4, false);
+        ey7Var.N(0);
+        int m = ey7Var.m();
+        if (m == 1463899717) {
             return true;
         }
-        if (obj instanceof java.util.Map) {
-            return ((njd) this).entrySet().equals(((java.util.Map) obj).entrySet());
-        }
+        efd.c("WavHeaderReader", "Unsupported form type: " + m);
         return false;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ void forEach(BiConsumer biConsumer) {
-        Map.-CC.$default$forEach(this, biConsumer);
-    }
-
-    @Override // java.util.Map
-    public abstract Object get(Object obj);
-
-    @Override // java.util.Map, j$.util.Map
-    public final Object getOrDefault(Object obj, Object obj2) {
-        Object obj3 = get(obj);
-        return obj3 != null ? obj3 : obj2;
-    }
-
-    @Override // java.util.Map
-    public final int hashCode() {
-        return a1f.a(entrySet());
-    }
-
-    @Override // java.util.Map
-    public final boolean isEmpty() {
-        return ((njd) this).size() == 0;
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map
-    public final void putAll(java.util.Map map) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
-        return Map.-CC.$default$putIfAbsent(this, obj, obj2);
-    }
-
-    @Override // java.util.Map
-    public final Object remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ Object replace(Object obj, Object obj2) {
-        return Map.-CC.$default$replace(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ void replaceAll(BiFunction biFunction) {
-        Map.-CC.$default$replaceAll(this, biFunction);
-    }
-
-    public final String toString() {
-        njd njdVar = (njd) this;
-        int size = njdVar.size();
-        if (size < 0) {
-            w26.j(de9.k(size, "size cannot be negative but was: "));
-            return null;
-        }
-        StringBuilder sb = new StringBuilder((int) Math.min(size << 3, 1073741824L));
-        sb.append('{');
-        boolean z = true;
-        for (Map.Entry entry : njdVar.entrySet()) {
-            if (!z) {
-                sb.append(", ");
+    public static hwc b(int i, cb3 cb3Var, ey7 ey7Var) {
+        hwc a2 = hwc.a(cb3Var, ey7Var);
+        while (true) {
+            int i2 = a2.a;
+            if (i2 == i) {
+                return a2;
             }
-            sb.append(entry.getKey());
-            sb.append('=');
-            sb.append(entry.getValue());
-            z = false;
+            c00.p(i2, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            long j = a2.b;
+            long j2 = 8 + j;
+            if (j % 2 != 0) {
+                j2 = 9 + j;
+            }
+            if (j2 > 2147483647L) {
+                throw hy7.d("Chunk is too large (~2GB+) to skip; id: " + i2);
+            }
+            cb3Var.l((int) j2, false);
+            a2 = hwc.a(cb3Var, ey7Var);
         }
-        sb.append('}');
-        return sb.toString();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
-        return Map.-CC.$default$replace(this, obj, obj2, obj3);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public final /* synthetic */ boolean remove(Object obj, Object obj2) {
-        return Map.-CC.$default$remove(this, obj, obj2);
     }
 }

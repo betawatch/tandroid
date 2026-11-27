@@ -1,62 +1,93 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class di9 implements pib {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ii9 d;
+public final class di9 extends amb {
+    public final /* synthetic */ ni9 F0;
+    public final /* synthetic */ pi9 G0;
 
-    public di9(ii9 ii9Var, Layout layout, int i, int i2) {
-        this.d = ii9Var;
-        this.a = layout;
-        this.b = i;
-        this.c = i2;
+    public di9(pi9 pi9Var, ni9 ni9Var) {
+        this.G0 = pi9Var;
+        this.F0 = ni9Var;
     }
 
-    @Override // pib, jg7
-    public final Layout a() {
-        return this.a;
-    }
-
-    @Override // pib
-    public final Rect c() {
-        return null;
-    }
-
-    @Override // pib
-    public final CharSequence getPrefix() {
-        return null;
-    }
-
-    @Override // pib
-    public final int getRow() {
-        return 0;
-    }
-
-    @Override // pib
-    public final CharSequence getText() {
-        TL_iv.RichText richText;
-        lk0 lk0Var = this.d.a;
-        if (lk0Var == null) {
-            return "";
+    @Override // mmb
+    public final boolean B() {
+        pi9 pi9Var = this.G0;
+        CharSequence q = pi9Var.v3.q();
+        if (q == null || q.length() == 0) {
+            return true;
         }
-        TL_iv.PageBlock pageBlock = lk0Var.b;
-        return (!(pageBlock instanceof TL_iv.pageBlockTable) || (richText = ((TL_iv.pageBlockTable) pageBlock).title) == null) ? "" : yi9.r(richText, null, true);
+        pi9Var.g5(q);
+        return true;
     }
 
-    @Override // pib
-    public final int getX() {
-        return this.b;
+    @Override // mmb
+    public final void C() {
+        pi9 pi9Var = this.G0;
+        CharSequence q = pi9Var.v3.q();
+        if (q != null && q.length() > 0) {
+            pi9Var.g5(q);
+        }
+        pi9Var.B2();
     }
 
-    @Override // pib
-    public final int getY() {
-        return this.c;
+    @Override // amb, mmb
+    public final void E() {
+        super.E();
+        this.F0.f();
+    }
+
+    @Override // mmb
+    public final void G() {
+        this.G0.d4();
+    }
+
+    @Override // mmb
+    public final boolean I() {
+        if (Z()) {
+            return true;
+        }
+        return this.G0.W4();
+    }
+
+    @Override // mmb
+    public final void J(float f, float f2) {
+        pi9 pi9Var = this.G0;
+        pi9Var.A3 = true;
+        pi9Var.B3 = f;
+        pi9Var.C3 = f2;
+    }
+
+    @Override // mmb
+    public final boolean i() {
+        int size;
+        pi9 pi9Var = this.G0;
+        di9 di9Var = pi9Var.v3;
+        ArrayList arrayList = pi9Var.t3;
+        boolean z = false;
+        if (!arrayList.isEmpty() && di9Var.w() && di9Var.p0 == 0 && di9Var.q0 == 0 && di9Var.r0 <= 0 && di9Var.s0 == (size = arrayList.size() - 1)) {
+            mk0 mk0Var = (mk0) arrayList.get(size);
+            String l = km9.n(mk0Var.b) ? mm9.l(km9.h(mk0Var.b)) : "";
+            boolean z2 = !l.isEmpty();
+            if (di9Var.t0 == z2) {
+                if (di9Var.u0 >= (z2 ? l.length() : km9.y(mk0Var.b).length())) {
+                    z = true;
+                }
+            }
+        }
+        return !z;
+    }
+
+    @Override // mmb
+    public final int n() {
+        return this.G0.getPaddingBottom();
+    }
+
+    @Override // mmb
+    public final int o() {
+        return this.G0.getPaddingTop();
     }
 }

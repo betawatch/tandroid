@@ -3,7 +3,7 @@ package org.telegram.utils.recorder.audio;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ byte a;
@@ -45,8 +45,8 @@ public final /* synthetic */ class c implements Runnable {
                             long d = dVar.t.d();
                             dVar.x = elapsedRealtime;
                             if (d >= 0) {
-                                m20 m20Var = dVar.g;
-                                ((h30) m20Var.c).a((f30) m20Var.b, d);
+                                n20 n20Var = dVar.g;
+                                ((i30) n20Var.c).a((g30) n20Var.b, d);
                             }
                         }
                     }
@@ -58,15 +58,15 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 return;
             default:
-                h30 h30Var = (h30) this.b;
-                f30 f30Var = (f30) this.c;
+                i30 i30Var = (i30) this.b;
+                g30 g30Var = (g30) this.c;
                 try {
-                    bArr = AudioRecorderNative.e(f30Var.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(g30Var.b.getAbsolutePath());
                 } catch (Throwable th) {
-                    h30Var.h.a("waveform extraction failed", th);
+                    i30Var.h.a("waveform extraction failed", th);
                     bArr = null;
                 }
-                h30Var.i.post(new nn6(h30Var, f30Var, bArr, (byte) 11));
+                i30Var.i.post(new es6(i30Var, g30Var, bArr, (byte) 11));
                 return;
         }
     }

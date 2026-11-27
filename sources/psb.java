@@ -1,29 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public enum psb extends qsb {
-    public psb() {
-        super("EndTagOpen", 8);
+public class psb {
+    public final String c;
+    public int d;
+    public final /* synthetic */ qsb e;
+    public long b = -1;
+    public final long a = System.currentTimeMillis();
+
+    public psb(qsb qsbVar, String str) {
+        this.e = qsbVar;
+        this.c = str;
+        qsbVar.a++;
     }
 
-    @Override // qsb
-    public final void c(aqb aqbVar, zj1 zj1Var) {
-        boolean j = zj1Var.j();
-        lqb lqbVar = qsb.a;
-        if (j) {
-            aqbVar.l(this);
-            aqbVar.h("</");
-            aqbVar.c = lqbVar;
-        } else if (zj1Var.o()) {
-            aqbVar.d(false);
-            aqbVar.c = qsb.r;
-        } else if (zj1Var.m('>')) {
-            aqbVar.m(this);
-            aqbVar.a(lqbVar);
-        } else {
-            aqbVar.m(this);
-            aqbVar.a(qsb.g0);
-        }
+    public String toString() {
+        StringBuilder sb = new StringBuilder(this.c);
+        sb.append(": ");
+        sb.append(this.b < 0 ? "not done" : qu6.p(new StringBuilder(), this.b - this.a, "ms"));
+        return sb.toString();
     }
 }

@@ -7,10 +7,10 @@ import android.os.Parcelable;
 import android.util.Log;
 import java.io.Closeable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class DataHolder extends b4 implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new b1d((byte) 7);
+public final class DataHolder extends c4 implements Closeable {
+    public static final Parcelable.Creator<DataHolder> CREATOR = new s5d((byte) 7);
     public final int a;
     public final String[] b;
     public Bundle c;
@@ -57,7 +57,7 @@ public final class DataHolder extends b4 implements Closeable {
                 if (!z) {
                     close();
                     String obj = toString();
-                    StringBuilder sb = new StringBuilder(String.valueOf(obj).length() + kk7.H2);
+                    StringBuilder sb = new StringBuilder(String.valueOf(obj).length() + jn7.H2);
                     sb.append("Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: ");
                     sb.append(obj);
                     sb.append(")");
@@ -71,15 +71,15 @@ public final class DataHolder extends b4 implements Closeable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.m(parcel, 1, this.b);
-        jte.o(parcel, 2, this.d, i);
-        jte.q(parcel, 3, 4);
+        int r = bye.r(parcel, 20293);
+        bye.m(parcel, 1, this.b);
+        bye.o(parcel, 2, this.d, i);
+        bye.q(parcel, 3, 4);
         parcel.writeInt(this.e);
-        jte.b(parcel, 4, this.f);
-        jte.q(parcel, 1000, 4);
+        bye.b(parcel, 4, this.f);
+        bye.q(parcel, 1000, 4);
         parcel.writeInt(this.a);
-        jte.s(parcel, r);
+        bye.s(parcel, r);
         if ((i & 1) != 0) {
             close();
         }

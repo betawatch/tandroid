@@ -1,394 +1,68 @@
 // default package
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.XmlResourceParser;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.os.Build;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
-import android.util.Xml;
-import java.lang.ref.WeakReference;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.xmlpull.v1.XmlPullParserException;
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final class ha9 {
-    public static ha9 i;
-    public WeakHashMap a;
-    public aia b;
-    public qka c;
-    public final WeakHashMap d = new WeakHashMap(0);
-    public TypedValue e;
-    public boolean f;
-    public ep g;
-    public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
-    public static final fa9 j = new fa9(6);
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
 
-    public static synchronized ha9 d() {
-        ha9 ha9Var;
-        synchronized (ha9.class) {
-            if (i == null) {
-                ha9 ha9Var2 = new ha9();
-                i = ha9Var2;
-                j(ha9Var2);
-            }
-            ha9Var = i;
+    public final boolean a(PointF pointF, float f, float f2, float f3, int i) {
+        if ((i != -1 && i >= this.i) || this.j.position() == this.j.limit()) {
+            d();
+            return false;
         }
-        return ha9Var;
+        if (i != -1) {
+            this.j.position(i * 20);
+        }
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f);
+        this.j.putFloat(f2);
+        this.j.putFloat(f3);
+        return true;
     }
 
-    public static synchronized PorterDuffColorFilter h(int i2, PorterDuff.Mode mode) {
-        PorterDuffColorFilter porterDuffColorFilter;
-        synchronized (ha9.class) {
-            fa9 fa9Var = j;
-            fa9Var.getClass();
-            int i3 = (31 + i2) * 31;
-            porterDuffColorFilter = (PorterDuffColorFilter) fa9Var.a(Integer.valueOf(mode.hashCode() + i3));
-            if (porterDuffColorFilter == null) {
-                porterDuffColorFilter = new PorterDuffColorFilter(i2, mode);
-            }
+    public final void b(int i) {
+        int i2 = this.h + i;
+        if (i2 > this.i || this.j == null) {
+            d();
         }
-        return porterDuffColorFilter;
+        this.h = i2;
     }
 
-    public static void j(ha9 ha9Var) {
-        if (Build.VERSION.SDK_INT < 24) {
-            ha9Var.a("vector", new ga9((byte) 3));
-            ha9Var.a("animated-vector", new ga9((byte) 2));
-            ha9Var.a("animated-selector", new ga9((byte) 1));
-            ha9Var.a("drawable", new ga9((byte) 0));
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void n(Drawable drawable, h24 h24Var, int[] iArr) {
-        ColorStateList colorStateList;
-        int[] state = drawable.getState();
-        int[] iArr2 = lq3.a;
-        if (drawable.mutate() != drawable) {
-            Log.d("ResourceManagerInternal", "Mutated drawable is not the same instance as the input.");
+    public final void c() {
+        this.h = 0;
+        if (this.j != null) {
             return;
         }
-        if ((drawable instanceof LayerDrawable) && drawable.isStateful()) {
-            drawable.setState(new int[0]);
-            drawable.setState(state);
-        }
-        PorterDuffColorFilter porterDuffColorFilter = null;
-        if (h24Var.b) {
-            colorStateList = (ColorStateList) h24Var.c;
-        } else {
-            if (!h24Var.a) {
-                drawable.clearColorFilter();
-                if (Build.VERSION.SDK_INT > 23) {
-                    drawable.invalidateSelf();
-                    return;
-                }
-                return;
-            }
-            colorStateList = null;
-        }
-        PorterDuff.Mode mode = h24Var.a ? (PorterDuff.Mode) h24Var.d : h;
-        if (colorStateList != null && mode != null) {
-            porterDuffColorFilter = h(colorStateList.getColorForState(iArr, 0), mode);
-        }
-        drawable.setColorFilter(porterDuffColorFilter);
-        if (Build.VERSION.SDK_INT > 23) {
-        }
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect((5 << 8) << 2);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 
-    public final void a(String str, ga9 ga9Var) {
-        aia aiaVar = this.b;
-        if (aiaVar == null) {
-            aiaVar = new aia(0);
-            this.b = aiaVar;
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
         }
-        aiaVar.put(str, ga9Var);
-    }
-
-    public final synchronized void b(Context context, long j2, Drawable drawable) {
-        Drawable.ConstantState constantState = drawable.getConstantState();
-        if (constantState != null) {
-            vf6 vf6Var = (vf6) this.d.get(context);
-            if (vf6Var == null) {
-                vf6Var = new vf6();
-                this.d.put(context, vf6Var);
-            }
-            vf6Var.k(new WeakReference(constantState), j2);
-        }
-    }
-
-    public final Drawable c(Context context, int i2) {
-        TypedValue typedValue = this.e;
-        if (typedValue == null) {
-            typedValue = new TypedValue();
-            this.e = typedValue;
-        }
-        context.getResources().getValue(i2, typedValue, true);
-        long j2 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e = e(context, j2);
-        if (e != null) {
-            return e;
-        }
-        LayerDrawable layerDrawable = null;
-        if (this.g != null) {
-            if (i2 == R.drawable.abc_cab_background_top_material) {
-                layerDrawable = new LayerDrawable(new Drawable[]{g(context, R.drawable.abc_cab_background_internal_bg), g(context, R.drawable.abc_cab_background_top_mtrl_alpha)});
-            } else if (i2 == R.drawable.abc_ratingbar_material) {
-                layerDrawable = ep.f(this, context, R.dimen.abc_star_big);
-            } else if (i2 == R.drawable.abc_ratingbar_indicator_material) {
-                layerDrawable = ep.f(this, context, R.dimen.abc_star_medium);
-            } else if (i2 == R.drawable.abc_ratingbar_small_material) {
-                layerDrawable = ep.f(this, context, R.dimen.abc_star_small);
-            }
-        }
-        if (layerDrawable != null) {
-            layerDrawable.setChangingConfigurations(typedValue.changingConfigurations);
-            b(context, j2, layerDrawable);
-        }
-        return layerDrawable;
-    }
-
-    public final synchronized Drawable e(Context context, long j2) {
-        vf6 vf6Var = (vf6) this.d.get(context);
-        if (vf6Var == null) {
-            return null;
-        }
-        WeakReference weakReference = (WeakReference) vf6Var.f(j2);
-        if (weakReference != null) {
-            Drawable.ConstantState constantState = (Drawable.ConstantState) weakReference.get();
-            if (constantState != null) {
-                return constantState.newDrawable(context.getResources());
-            }
-            vf6Var.l(j2);
-        }
-        return null;
-    }
-
-    public final synchronized Drawable f(int i2, Context context, boolean z) {
-        Drawable k;
-        if (!this.f) {
-            this.f = true;
-            Drawable g = g(context, R.drawable.abc_vector_test);
-            if (g == null || (!(g instanceof r9c) && !"android.graphics.drawable.VectorDrawable".equals(g.getClass().getName()))) {
-                this.f = false;
-                throw new IllegalStateException("This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.");
-            }
-        }
-        k = k(context, i2);
-        if (k == null) {
-            k = c(context, i2);
-        }
-        if (k == null) {
-            k = context.getDrawable(i2);
-        }
-        if (k != null) {
-            k = m(context, i2, z, k);
-        }
-        if (k != null) {
-            lq3.a(k);
-        }
-        return k;
-    }
-
-    public final synchronized Drawable g(Context context, int i2) {
-        return f(i2, context, false);
-    }
-
-    public final synchronized ColorStateList i(Context context, int i2) {
-        ColorStateList colorStateList;
-        qka qkaVar;
-        WeakHashMap weakHashMap = this.a;
-        colorStateList = (weakHashMap == null || (qkaVar = (qka) weakHashMap.get(context)) == null) ? null : (ColorStateList) zcd.a(qkaVar, i2);
-        if (colorStateList == null) {
-            ep epVar = this.g;
-            ColorStateList g = epVar != null ? epVar.g(context, i2) : null;
-            if (g != null) {
-                WeakHashMap weakHashMap2 = this.a;
-                if (weakHashMap2 == null) {
-                    weakHashMap2 = new WeakHashMap();
-                    this.a = weakHashMap2;
-                }
-                qka qkaVar2 = (qka) weakHashMap2.get(context);
-                if (qkaVar2 == null) {
-                    qkaVar2 = new qka();
-                    this.a.put(context, qkaVar2);
-                }
-                qkaVar2.a(i2, g);
-            }
-            colorStateList = g;
-        }
-        return colorStateList;
-    }
-
-    public final Drawable k(Context context, int i2) {
-        int next;
-        aia aiaVar = this.b;
-        if (aiaVar == null || aiaVar.isEmpty()) {
-            return null;
-        }
-        qka qkaVar = this.c;
-        if (qkaVar != null) {
-            String str = (String) zcd.a(qkaVar, i2);
-            if ("appcompat_skip_skip".equals(str)) {
-                return null;
-            }
-            if (str != null && this.b.get(str) == null) {
-                return null;
-            }
-        } else {
-            this.c = new qka();
-        }
-        TypedValue typedValue = this.e;
-        if (typedValue == null) {
-            typedValue = new TypedValue();
-            this.e = typedValue;
-        }
-        Resources resources = context.getResources();
-        resources.getValue(i2, typedValue, true);
-        long j2 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e = e(context, j2);
-        if (e != null) {
-            return e;
-        }
-        CharSequence charSequence = typedValue.string;
-        if (charSequence != null && charSequence.toString().endsWith(".xml")) {
-            try {
-                XmlResourceParser xml = resources.getXml(i2);
-                AttributeSet asAttributeSet = Xml.asAttributeSet(xml);
-                do {
-                    next = xml.next();
-                    if (next == 2) {
-                        String name = xml.getName();
-                        this.c.a(i2, name);
-                        ga9 ga9Var = (ga9) this.b.get(name);
-                        if (ga9Var != null) {
-                            e = ga9Var.a(context, xml, asAttributeSet, context.getTheme());
-                        }
-                        if (e != null) {
-                            e.setChangingConfigurations(typedValue.changingConfigurations);
-                            b(context, j2, e);
-                        }
-                    }
-                } while (next != 1);
-                throw new XmlPullParserException("No start tag found");
-            } catch (Exception e2) {
-                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e2);
-            }
-        }
-        if (e == null) {
-            this.c.a(i2, "appcompat_skip_skip");
-        }
-        return e;
-    }
-
-    public final synchronized void l(ep epVar) {
-        this.g = epVar;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00dd  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Drawable m(Context context, int i2, boolean z, Drawable drawable) {
-        boolean z2;
-        int i3;
-        PorterDuffColorFilter h2;
-        ColorStateList i4 = i(context, i2);
-        PorterDuff.Mode mode = null;
-        if (i4 != null) {
-            int[] iArr = lq3.a;
-            Drawable mutate = drawable.mutate();
-            mutate.setTintList(i4);
-            if (this.g != null && i2 == R.drawable.abc_switch_thumb_material) {
-                mode = PorterDuff.Mode.MULTIPLY;
-            }
-            if (mode != null) {
-                mutate.setTintMode(mode);
-            }
-            return mutate;
-        }
-        ep epVar = this.g;
-        int i5 = R.attr.colorControlNormal;
-        if (epVar != null) {
-            if (i2 == R.drawable.abc_seekbar_track_material) {
-                LayerDrawable layerDrawable = (LayerDrawable) drawable;
-                Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(android.R.id.background);
-                int c = cnb.c(context, R.attr.colorControlNormal);
-                PorterDuff.Mode mode2 = fp.b;
-                ep.l(findDrawableByLayerId, c, mode2);
-                ep.l(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), cnb.c(context, R.attr.colorControlNormal), mode2);
-                ep.l(layerDrawable.findDrawableByLayerId(android.R.id.progress), cnb.c(context, R.attr.colorControlActivated), mode2);
-                return drawable;
-            }
-            if (i2 == R.drawable.abc_ratingbar_material || i2 == R.drawable.abc_ratingbar_indicator_material || i2 == R.drawable.abc_ratingbar_small_material) {
-                LayerDrawable layerDrawable2 = (LayerDrawable) drawable;
-                Drawable findDrawableByLayerId2 = layerDrawable2.findDrawableByLayerId(android.R.id.background);
-                int b = cnb.b(context, R.attr.colorControlNormal);
-                PorterDuff.Mode mode3 = fp.b;
-                ep.l(findDrawableByLayerId2, b, mode3);
-                ep.l(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), cnb.c(context, R.attr.colorControlActivated), mode3);
-                ep.l(layerDrawable2.findDrawableByLayerId(android.R.id.progress), cnb.c(context, R.attr.colorControlActivated), mode3);
-                return drawable;
-            }
-        }
-        ep epVar2 = this.g;
-        boolean z3 = false;
-        if (epVar2 != null) {
-            PorterDuff.Mode mode4 = fp.b;
-            if (!ep.b((int[]) epVar2.a, i2)) {
-                if (ep.b((int[]) epVar2.c, i2)) {
-                    i5 = R.attr.colorControlActivated;
-                } else {
-                    boolean b2 = ep.b((int[]) epVar2.d, i2);
-                    i5 = android.R.attr.colorBackground;
-                    if (b2) {
-                        mode4 = PorterDuff.Mode.MULTIPLY;
-                    } else if (i2 == R.drawable.abc_list_divider_mtrl_alpha) {
-                        i5 = android.R.attr.colorForeground;
-                        i3 = 41;
-                        z2 = true;
-                        if (z2) {
-                            int[] iArr2 = lq3.a;
-                            Drawable mutate2 = drawable.mutate();
-                            int c2 = cnb.c(context, i5);
-                            synchronized (fp.class) {
-                                h2 = h(c2, mode4);
-                            }
-                            mutate2.setColorFilter(h2);
-                            if (i3 != -1) {
-                                mutate2.setAlpha(i3);
-                            }
-                            z3 = true;
-                        }
-                    } else if (i2 != R.drawable.abc_dialog_material_background) {
-                        z2 = false;
-                        i5 = 0;
-                        i3 = -1;
-                        if (z2) {
-                        }
-                    }
-                }
-            }
-            z2 = true;
-            i3 = -1;
-            if (z2) {
-            }
-        }
-        if (z3 || !z) {
-            return drawable;
-        }
-        return null;
+        int max = Math.max(this.i << 1, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

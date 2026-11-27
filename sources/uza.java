@@ -1,23 +1,27 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import android.os.Bundle;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class uza extends CharacterStyle implements UpdateAppearance {
-    public final int a;
-    public final wjb b;
+public final class uza extends ProfileActivity {
+    public final /* synthetic */ boolean b7;
+    public final /* synthetic */ e0b c7;
 
-    public uza(int i, wjb wjbVar) {
-        this.a = i;
-        this.b = wjbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uza(e0b e0bVar, Bundle bundle, boolean z) {
+        super(bundle, null);
+        this.c7 = e0bVar;
+        this.b7 = z;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(bkb.v0(this.a, this.b));
-        textPaint.setUnderlineText(true);
+    @Override // org.telegram.ui.ProfileActivity, org.telegram.ui.ActionBar.e
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        if (this.b7) {
+            return;
+        }
+        this.c7.show();
     }
 }

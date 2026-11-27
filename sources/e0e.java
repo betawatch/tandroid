@@ -1,56 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class e0e implements Cloneable {
-    public final c2e a;
-    public c2e b;
+public final class e0e extends c4 {
+    public static final Parcelable.Creator<e0e> CREATOR = new hud((byte) 24);
+    public final int a;
+    public final aud b;
 
-    public e0e(c2e c2eVar) {
-        this.a = c2eVar;
-        if (c2eVar.m()) {
-            w26.j("Default instance must be immutable.");
-            throw null;
-        }
-        this.b = (c2e) c2eVar.d(4);
+    public e0e(int i, aud audVar) {
+        this.a = i;
+        this.b = audVar;
     }
 
-    public final c2e a() {
-        boolean m = this.b.m();
-        c2e c2eVar = this.b;
-        if (m) {
-            c2eVar.getClass();
-            jae.c.a(c2eVar.getClass()).zzf(c2eVar);
-            c2eVar.j();
-            c2eVar = this.b;
-        }
-        c2eVar.getClass();
-        if (c2e.c(c2eVar, true)) {
-            return c2eVar;
-        }
-        throw new vde();
-    }
-
-    public final void b() {
-        if (this.b.m()) {
-            return;
-        }
-        c2e c2eVar = (c2e) this.a.d(4);
-        jae.c.a(c2eVar.getClass()).zzg(c2eVar, this.b);
-        this.b = c2eVar;
-    }
-
-    public final Object clone() {
-        e0e e0eVar = (e0e) this.a.d(5);
-        boolean m = this.b.m();
-        c2e c2eVar = this.b;
-        if (m) {
-            c2eVar.getClass();
-            jae.c.a(c2eVar.getClass()).zzf(c2eVar);
-            c2eVar.j();
-            c2eVar = this.b;
-        }
-        e0eVar.b = c2eVar;
-        return e0eVar;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.q(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        bye.k(parcel, 3, this.b, i);
+        bye.s(parcel, r);
     }
 }

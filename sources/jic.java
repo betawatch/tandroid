@@ -1,29 +1,61 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jic extends Drawable {
-    public final int a = -15130842;
+public final /* synthetic */ class jic implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ vic b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawColor(this.a);
+    public /* synthetic */ jic(vic vicVar, byte b) {
+        this.a = b;
+        this.b = vicVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        vic vicVar = this.b;
+        switch (b) {
+            case 0:
+                vicVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = vicVar.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (vicVar.E) {
+                        vicVar.G(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        vicVar.G(viewArr[0], (-r0.getMeasuredWidth()) * floatValue);
+                    } else {
+                        vicVar.G(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        vicVar.G(viewArr[0], r0.getMeasuredWidth() * floatValue);
+                    }
+                    vicVar.c = floatValue;
+                    vicVar.y(true);
+                    lic licVar = vicVar.N;
+                    if (licVar != null) {
+                        licVar.w.invalidate();
+                        vicVar.N.w.i1();
+                        vicVar.N.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                vicVar.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                vicVar.O.onAnimationUpdate(valueAnimator);
+                vicVar.N.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vicVar.N.w.i1();
+                vicVar.N.invalidate();
+                break;
+            default:
+                vicVar.getClass();
+                vicVar.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+        }
     }
 }

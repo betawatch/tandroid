@@ -1,90 +1,185 @@
 // default package
 
-import android.content.SharedPreferences;
+import android.content.Context;
 import android.util.Log;
-import java.io.File;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
-import org.telegram.tgnet.TLRPC;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.Dictation.DictationAsr;
-import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rm3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ File b;
+public final class rm3 {
+    public boolean a;
+    public boolean b;
+    public long c;
+    public final Object d;
+    public final Object e;
+    public Object f;
+    public Object g;
+    public Object h;
 
-    public /* synthetic */ rm3(File file, byte b) {
-        this.a = b;
-        this.b = file;
+    public rm3(Context context, uec uecVar) {
+        this.d = context.getApplicationContext();
+        this.e = uecVar;
+        this.c = 15000L;
+        this.h = new vec();
+        this.g = vgb.a;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int c;
-        byte b = this.a;
-        File file = this.b;
-        switch (b) {
-            case 0:
-                ExecutorService executorService = DictationLid.a;
-                SharedPreferences c1 = na7.c1();
-                boolean z = true;
-                long[] jArr = {0};
+    public static rm3 c(pm3 pm3Var, t86 t86Var) {
+        long nativeSessionNew;
+        nm3 nm3Var = (nm3) pm3Var.b;
+        long h = DictationAsr.h(nm3Var);
+        if (h == 0) {
+            return null;
+        }
+        rm3 rm3Var = new rm3(pm3Var, t86Var);
+        String a = nm3Var.a((String) pm3Var.c);
+        nativeSessionNew = DictationAsr.nativeSessionNew(h, a, a.split(",")[0], xea.o() == 0 ? 2 : 4);
+        rm3Var.c = nativeSessionNew;
+        if (nativeSessionNew != 0) {
+            return rm3Var;
+        }
+        DictationAsr.U(nm3Var);
+        return null;
+    }
+
+    public final void a() {
+        String nativeSessionFinish;
+        long j = this.c;
+        if (j == 0) {
+            return;
+        }
+        nativeSessionFinish = DictationAsr.nativeSessionFinish(j);
+        b(nativeSessionFinish);
+        DictationAsr.nativeSessionFree(this.c);
+        this.c = 0L;
+        DictationAsr.U((nm3) this.e);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:60:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(String str) {
+        boolean z;
+        boolean z2;
+        boolean z3;
+        int i;
+        t86 t86Var = (t86) this.f;
+        StringBuilder sb = (StringBuilder) this.g;
+        if (str == null || str.length() <= 2) {
+            return;
+        }
+        boolean z4 = this.b;
+        try {
+            JSONArray jSONArray = new JSONArray(str);
+            z2 = false;
+            for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                 try {
-                    CountDownLatch e = zm3.e();
-                    if (e != null) {
-                        try {
-                            e.await(20000L, TimeUnit.MILLISECONDS);
-                        } catch (InterruptedException unused) {
-                        }
-                    }
-                    TLRPC.TL_transcriptionModel f = zm3.f(zm3.a(), "tinylid");
-                    if (f == null && !file.exists()) {
-                        Log.d("Dictation", "tinylid: not on the server");
-                    }
-                    if (zm3.i(f, file)) {
-                        Log.d("Dictation", "tinylid: a newer model on the server, updating");
-                    }
-                    c = zm3.c(f, file, true, new vu2(jArr, (byte) 25));
-                    if (c >= 0) {
-                        c1.edit().putLong("tinylid_checked", System.currentTimeMillis()).apply();
-                    }
-                } catch (Throwable th) {
-                    th = th;
-                    z = false;
-                }
-                if (c > 0) {
-                    DictationLid.e = true;
-                    DictationLid.g = true;
-                    try {
-                        DictationLid.a.execute(new rm3(file, (byte) 2));
-                    } catch (Throwable th2) {
-                        th = th2;
-                        try {
-                            Log.d("Dictation", "tinylid: download failed: " + th);
-                            break;
-                        } finally {
-                            if (!z) {
-                                DictationLid.h = false;
+                    JSONObject jSONObject = jSONArray.getJSONObject(i2);
+                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
+                    int hashCode = optString.hashCode();
+                    z = true;
+                    if (hashCode != -1354815177) {
+                        if (hashCode != -792934015) {
+                            if (hashCode == 100619) {
+                                try {
+                                    if (optString.equals("eou") && jSONObject.optDouble("p") > 0.5d) {
+                                        z4 = true;
+                                    }
+                                } catch (Exception e) {
+                                    e = e;
+                                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
+                                    z3 = z4;
+                                    if (z2) {
+                                    }
+                                    i = 0;
+                                    this.b = (z3 || ((String) this.h).isEmpty()) ? i : z;
+                                    if (z3) {
+                                    }
+                                }
+                            } else {
+                                continue;
                             }
-                            DictationLid.f = false;
-                            DictationLid.f();
-                            DictationAsr.I("tinylid.bin");
+                        } else if (optString.equals("partial")) {
+                            StringBuilder sb2 = new StringBuilder();
+                            this.a = DictationAsr.w(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
+                            DictationAsr.m(sb2, jSONObject.optJSONArray("open"), null);
+                            DictationAsr.m(sb2, jSONObject.optJSONArray("tail"), null);
+                            this.h = sb2.toString();
+                            z2 = true;
                         }
+                    } else if (optString.equals("commit")) {
+                        DictationAsr.m(sb, jSONObject.optJSONArray("words"), null);
+                        z2 = true;
                     }
+                } catch (Exception e2) {
+                    e = e2;
+                    z = true;
+                }
+            }
+            z = true;
+        } catch (Exception e3) {
+            e = e3;
+            z = true;
+            z2 = false;
+        }
+        z3 = z4;
+        if (z2) {
+            String sb3 = sb.toString();
+            String str2 = (String) this.h;
+            boolean z5 = this.a;
+            t86Var.w++;
+            if (t86Var.g > sb3.length()) {
+                t86Var.g = 0;
+            }
+            t86Var.h = sb3.length();
+            t86Var.i = str2.isEmpty();
+            String trim = sb3.substring(t86Var.g).trim();
+            if (trim.length() > 180 && str2.isEmpty()) {
+                hl.c3(new j61((Object) t86Var, t86Var.f, (Object) trim, z, (byte) 2));
+                u86 u86Var = t86Var.x;
+                long j = u86Var.f;
+                u86Var.f = 1 + j;
+                t86Var.f = j;
+                t86Var.g = sb3.length();
+                t86Var.q.reset();
+                trim = "";
+            }
+            String p = DictationAsr.p(trim, str2, z5);
+            if (!p.equals(t86Var.j)) {
+                t86Var.j = p;
+                boolean z6 = 0;
+                hl.c3(new j61((Object) t86Var, t86Var.f, (Object) p, z6, (byte) 2));
+                i = z6;
+                this.b = (z3 || ((String) this.h).isEmpty()) ? i : z;
+                if (z3 && ((String) this.h).isEmpty() && sb.length() > 0) {
+                    sb.setLength(i);
+                    t86Var.b();
+                    t86Var.h = i;
+                    t86Var.g = i;
                     return;
                 }
                 return;
-            case 1:
-                DictationLid.e(file);
-                return;
-            default:
-                DictationLid.e(file);
-                DictationLid.h = false;
-                DictationLid.f();
-                return;
+            }
         }
+        i = 0;
+        this.b = (z3 || ((String) this.h).isEmpty()) ? i : z;
+        if (z3) {
+        }
+    }
+
+    public rm3(pm3 pm3Var, t86 t86Var) {
+        this.g = new StringBuilder();
+        this.h = "";
+        this.d = pm3Var;
+        this.e = (nm3) pm3Var.b;
+        this.f = t86Var;
     }
 }

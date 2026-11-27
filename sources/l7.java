@@ -2,94 +2,118 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.UsersSelectActivity;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class l7 extends EditTextBoldCursor {
-    public final /* synthetic */ byte M1;
-    public final Object N1;
+public final class l7 extends FrameLayout {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l7(Context context) {
+    public l7(Context context, CharSequence charSequence, String str, int i, boolean z) {
         super(context);
-        this.M1 = (byte) 11;
-        this.N1 = new xl3((byte) 7);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.M1) {
-            case 11:
-                xl3 xl3Var = (xl3) this.N1;
-                if (length() != 0) {
-                    canvas.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), kk7.d4, 31);
-                    super.onDraw(canvas);
-                    RectF rectF = gl.P;
-                    rectF.set(getScrollX(), 0.0f, gl.L(12.0f) + getScrollX(), getHeight());
-                    xl3Var.s(canvas, rectF, 0, 1.0f);
-                    rectF.set((getWidth() + getScrollX()) - gl.L(12.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                    xl3Var.s(canvas, rectF, 2, 1.0f);
-                    canvas.restore();
-                    break;
-                } else {
-                    super.onDraw(canvas);
-                    break;
-                }
-            default:
-                super.onDraw(canvas);
-                break;
+        this.a = (byte) 2;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.b = z;
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        textView.setText(charSequence);
+        textView.setTextSize(1, 16.0f);
+        textView.setTextColor(i);
+        textView.setSingleLine(true);
+        textView.setGravity(16);
+        if (str != null) {
+            LinearLayout linearLayout = new LinearLayout(context);
+            linearLayout.setOrientation(1);
+            linearLayout.setGravity(16);
+            linearLayout.addView(textView, tre.o(-2, -2));
+            TextView textView2 = new TextView(context);
+            SpannableStringBuilder append = new SpannableStringBuilder(str).append((CharSequence) " >");
+            append.setSpan(new zm3(), append.length() - 1, append.length(), 33);
+            textView2.setText(append);
+            textView2.setTextSize(1, 13.0f);
+            textView2.setTextColor(aob.p1(0.55f, i));
+            textView2.setSingleLine(true);
+            linearLayout.addView(textView2, tre.k(0.0f, 1.0f, 0.0f, 0.0f, -2, -2));
+            addView(linearLayout, tre.d(-2, -1.0f, 3, 18.0f, 0.0f, 44.0f, 0.0f));
+        } else {
+            addView(textView, tre.d(-2, -1.0f, 3, 18.0f, 0.0f, 44.0f, 0.0f));
         }
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(hl.N(1.75f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setColor(i);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onFocusChanged(boolean z, int i, Rect rect) {
-        byte b = this.M1;
-        Object obj = this.N1;
-        switch (b) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
             case 2:
-                super.onFocusChanged(z, i, rect);
-                if (!z) {
-                    gl.t1(((xv3) obj).e);
+                Paint paint = (Paint) this.c;
+                super.dispatchDraw(canvas);
+                float height = getHeight() / 2.0f;
+                if (this.b) {
+                    float width = getWidth() - hl.L(26.0f);
+                    canvas.drawLine(width - hl.L(5.0f), height, width - hl.L(1.5f), height + hl.L(3.5f), paint);
+                    canvas.drawLine(width - hl.L(1.5f), hl.L(3.5f) + height, width + hl.L(5.5f), height - hl.L(4.0f), paint);
                     break;
                 }
                 break;
-            case 5:
-                super.onFocusChanged(z, i, rect);
-                dr7 dr7Var = (dr7) obj;
-                float f = (z || isFocused()) ? 1.0f : 0.0f;
-                dr7Var.b(f, f, true);
-                break;
             default:
-                super.onFocusChanged(z, i, rect);
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        wk5 wk5Var;
+        wk5 wk5Var2;
+        int i;
+        switch (this.a) {
+            case 3:
+                boolean drawChild = super.drawChild(canvas, view, j);
+                pqb pqbVar = (pqb) this.c;
+                if (view == pqbVar.u0) {
+                    wk5Var = ((e) pqbVar).parentLayout;
+                    if (wk5Var != null) {
+                        wk5Var2 = ((e) pqbVar).parentLayout;
+                        if (pqbVar.u0.getVisibility() == 0) {
+                            i = (int) (pqbVar.u0.getTranslationY() + pqbVar.u0.getMeasuredHeight());
+                        } else {
+                            i = 0;
+                        }
+                        ((ActionBarLayout) wk5Var2).o(canvas, i);
+                    }
+                }
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j);
+        }
+    }
+
+    @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.M1) {
-            case 1:
+        switch (this.a) {
+            case 2:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                StringBuilder sb = new StringBuilder();
-                sb.append((CharSequence) getText());
-                f92 f92Var = (f92) this.N1;
-                z82 z82Var = f92Var.h;
-                if (z82Var != null && z82Var.getTextView() != null && !TextUtils.isEmpty(f92Var.h.getTextView().getText())) {
-                    sb.append("\n");
-                    sb.append(f92Var.h.getTextView().getText());
-                }
-                accessibilityNodeInfo.setText(sb);
+                accessibilityNodeInfo.setCheckable(true);
+                accessibilityNodeInfo.setChecked(this.b);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -97,178 +121,309 @@ public final class l7 extends EditTextBoldCursor {
         }
     }
 
-    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i, KeyEvent keyEvent) {
-        TextView textView;
-        byte b = this.M1;
-        Object obj = this.N1;
-        switch (b) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        switch (this.a) {
             case 0:
-                r7 r7Var = (r7) obj;
-                if (i != 67 || r7Var.e.length() != 0 || ((r7Var.h.getVisibility() != 0 || r7Var.h.length() <= 0) && !r7Var.s())) {
-                    return super.onKeyDown(i, keyEvent);
+                s7 s7Var = (s7) this.c;
+                super.onLayout(z, i, i2, i3, i4);
+                int i5 = 0;
+                if (!ob6.a0 && s7Var.h.getVisibility() == 0) {
+                    i5 = hl.L(4.0f) + s7Var.h.getMeasuredWidth();
                 }
-                if (!r7Var.s()) {
-                    r7Var.s.callOnClick();
-                    return true;
+                if (s7Var.f.getVisibility() == 0) {
+                    i5 += s7Var.f.getMeasuredWidth();
                 }
-                rf4 rf4Var = (rf4) b00.f(1, r7Var.h0);
-                n7 n7Var = r7Var.I;
-                if (n7Var != null) {
-                    n7Var.j(rf4Var);
-                }
-                r7Var.J(rf4Var);
-                return true;
-            case 3:
-                no4 no4Var = (no4) obj;
-                if (i != 67 || no4Var.r.length() != 0 || !no4Var.d()) {
-                    return super.onKeyDown(i, keyEvent);
-                }
-                if (!no4Var.d()) {
-                    return true;
-                }
-                rf4 rf4Var2 = (rf4) b00.f(1, no4Var.G);
-                mo4 mo4Var = no4Var.I;
-                if (mo4Var != null) {
-                    ((di3) mo4Var).a(rf4Var2);
-                }
-                no4Var.f(rf4Var2);
-                return true;
-            case 7:
-                pha phaVar = (pha) obj;
-                if (i != 67 || length() != 0 || (textView = phaVar.x) == null || textView.getVisibility() != 0) {
-                    return super.onKeyDown(i, keyEvent);
-                }
-                phaVar.m();
-                return true;
+                m7 m7Var = s7Var.e;
+                m7Var.layout(i5, m7Var.getTop(), s7Var.e.getMeasuredWidth() + i5, s7Var.e.getBottom());
+                break;
             default:
-                return super.onKeyDown(i, keyEvent);
+                super.onLayout(z, i, i2, i3, i4);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x00e3  */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void onMeasure(int i, int i2) {
-        switch (this.M1) {
+        int i3;
+        l7 l7Var;
+        int i4;
+        int i5;
+        TextView textView;
+        long j;
+        float f;
+        int i6;
+        switch (this.a) {
             case 0:
+                s7 s7Var = (s7) this.c;
+                measureChildWithMargins(s7Var.s, i, 0, i2, 0);
+                View view = s7Var.x;
+                if (view != null) {
+                    measureChildWithMargins(view, i, 0, i2, 0);
+                }
+                boolean z = ob6.a0;
+                TextView textView2 = s7Var.h;
+                if (!z) {
+                    if (textView2.getVisibility() == 0) {
+                        l7Var = this;
+                        l7Var.measureChildWithMargins(s7Var.h, i, View.MeasureSpec.getSize(i) / 2, i2, 0);
+                        i4 = hl.L(4.0f) + s7Var.h.getMeasuredWidth();
+                    } else {
+                        l7Var = this;
+                        i4 = 0;
+                    }
+                    int size = View.MeasureSpec.getSize(i);
+                    l7Var.b = true;
+                    l7Var.measureChildWithMargins(s7Var.f, i, i4, i2, 0);
+                    int measuredWidth = s7Var.f.getVisibility() == 0 ? s7Var.f.getMeasuredWidth() : 0;
+                    m7 m7Var = s7Var.e;
+                    int i7 = i4 + measuredWidth;
+                    View view2 = s7Var.x;
+                    measureChildWithMargins(m7Var, i, i7 + (view2 != null ? view2.getMeasuredWidth() : 0), i2, 0);
+                    this.b = false;
+                    setMeasuredDimension(Math.max(s7Var.e.getMeasuredWidth() + measuredWidth, size), View.MeasureSpec.getSize(i2));
+                    break;
+                } else {
+                    if (textView2.getVisibility() == 0) {
+                        measureChildWithMargins(s7Var.h, i, View.MeasureSpec.getSize(i) / 2, i2, 0);
+                        i3 = hl.L(4.0f) + s7Var.h.getMeasuredWidth();
+                    } else {
+                        i3 = 0;
+                    }
+                    int size2 = View.MeasureSpec.getSize(i);
+                    this.b = true;
+                    measureChildWithMargins(s7Var.f, i, i3, i2, 0);
+                    int measuredWidth2 = s7Var.f.getVisibility() == 0 ? s7Var.f.getMeasuredWidth() : 0;
+                    measureChildWithMargins(s7Var.e, ik8.f(12.0f, size2, 0), i3 + measuredWidth2, i2, 0);
+                    this.b = false;
+                    setMeasuredDimension(Math.max(s7Var.e.getMeasuredWidth() + measuredWidth2, size2), View.MeasureSpec.getSize(i2));
+                    break;
+                }
+            case 1:
+                int size3 = View.MeasureSpec.getSize(i);
+                zu1 zu1Var = (zu1) this.c;
+                if (zu1Var.f8()) {
+                    size3 -= hl.L(71.0f);
+                    i5 = hl.L(32.0f);
+                } else {
+                    i5 = 0;
+                }
+                TextView textView3 = zu1Var.a2;
+                if (textView3 != null && textView3.getVisibility() == 0 && (textView = zu1Var.c2) != null && textView.getVisibility() == 0) {
+                    size3 = ik8.D(31.0f, size3, 2);
+                }
+                this.b = true;
+                TextView textView4 = zu1Var.c2;
+                if (textView4 != null && textView4.getVisibility() == 0) {
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) zu1Var.c2.getLayoutParams();
+                    layoutParams.width = size3;
+                    TextView textView5 = zu1Var.a2;
+                    if (textView5 == null || textView5.getVisibility() != 0) {
+                        zu1Var.c2.setPadding(hl.L(48.0f), 0, hl.L(48.0f), 0);
+                        layoutParams.leftMargin = i5;
+                    } else {
+                        zu1Var.c2.setPadding(hl.L(4.0f), 0, hl.L(4.0f), 0);
+                        layoutParams.leftMargin = i5 + size3;
+                        layoutParams.width -= hl.L(15.0f);
+                    }
+                }
+                TextView textView6 = zu1Var.a2;
+                if (textView6 != null && textView6.getVisibility() == 0) {
+                    FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) zu1Var.a2.getLayoutParams();
+                    layoutParams2.width = size3;
+                    TextView textView7 = zu1Var.c2;
+                    if (textView7 == null || textView7.getVisibility() != 0) {
+                        zu1Var.a2.setPadding(hl.L(48.0f), 0, hl.L(48.0f), 0);
+                    } else {
+                        zu1Var.a2.setPadding(hl.L(11.0f), 0, hl.L(4.0f), 0);
+                    }
+                    layoutParams2.leftMargin = i5;
+                }
+                this.b = false;
                 super.onMeasure(i, i2);
-                setMeasuredDimension(gl.L(3.0f) + Math.max(View.MeasureSpec.getSize(i), getMeasuredWidth()), getMeasuredHeight());
                 break;
-            case 3:
-                super.onMeasure(i, i2);
-                setPivotX(getPaddingLeft());
-                setPivotY(getMeasuredHeight() / 2.0f);
-                break;
+            case 2:
             default:
                 super.onMeasure(i, i2);
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        switch (this.M1) {
-            case 10:
-                super.onTextChanged(charSequence, i, i2, i3);
-                iw1 iw1Var = ((ojc) this.N1).b;
-                if (iw1Var != null) {
-                    ChatActivityEnterView chatActivityEnterView = iw1Var.b;
-                    int i4 = ChatActivityEnterView.r7;
-                    ow1 ow1Var = chatActivityEnterView.K0;
-                    if (ow1Var != null) {
-                        ow1Var.setIconDimmed(chatActivityEnterView.K1 && chatActivityEnterView.U1);
+            case 3:
+                int size4 = View.MeasureSpec.getSize(i);
+                int size5 = View.MeasureSpec.getSize(i2);
+                setMeasuredDimension(size4, size5);
+                if (((pqb) this.c).e != null) {
+                    this.b = true;
+                    if (!hl.O1()) {
+                        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ((pqb) this.c).e.getLayoutParams();
+                        layoutParams3.topMargin = hl.m;
+                        ((pqb) this.c).e.setLayoutParams(layoutParams3);
+                    }
+                    if (hl.O1() || a.b.getResources().getConfiguration().orientation != 2) {
+                        ((pqb) this.c).h.setTextSize(1, 20.0f);
+                    } else {
+                        ((pqb) this.c).h.setTextSize(1, 18.0f);
+                    }
+                    this.b = false;
+                }
+                measureChildWithMargins(((pqb) this.c).u0, i, 0, i2, 0);
+                int measuredHeight = ((pqb) this.c).u0.getMeasuredHeight();
+                if (((pqb) this.c).u0.getVisibility() == 0) {
+                    size5 -= measuredHeight;
+                }
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((pqb) this.c).w0.getLayoutParams();
+                layoutParams4.topMargin = measuredHeight;
+                pqb pqbVar = (pqb) this.c;
+                if (pqbVar.b == 2) {
+                    mpb mpbVar = pqbVar.w0;
+                    int L = hl.L(4.0f);
+                    pqb pqbVar2 = (pqb) this.c;
+                    if (pqbVar2.M1) {
+                        j = 0;
+                    } else {
+                        j = 0;
+                        if (pqbVar2.L1 > 0) {
+                            i6 = 58;
+                            mpbVar.setPadding(0, L, 0, (hl.L(i6 + 72) - 12) + (!((pqb) this.c).W0() ? hl.n : 0));
+                        }
+                    }
+                    i6 = 0;
+                    mpbVar.setPadding(0, L, 0, (hl.L(i6 + 72) - 12) + (!((pqb) this.c).W0() ? hl.n : 0));
+                } else {
+                    j = 0;
+                }
+                ((pqb) this.c).w0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5 - layoutParams4.bottomMargin, TLObject.FLAG_30));
+                ((FrameLayout.LayoutParams) ((pqb) this.c).z0.getLayoutParams()).topMargin = measuredHeight;
+                ((pqb) this.c).z0.measure(View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size5, TLObject.FLAG_30));
+                jo0 jo0Var = ((pqb) this.c).S1;
+                if (jo0Var != null) {
+                    ((FrameLayout.LayoutParams) jo0Var.getLayoutParams()).topMargin = measuredHeight;
+                    ((pqb) this.c).S1.measure(View.MeasureSpec.makeMeasureSpec(hl.L(222.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(76.0f), TLObject.FLAG_30));
+                }
+                vb0 vb0Var = ((pqb) this.c).E0;
+                if (vb0Var != null) {
+                    vb0Var.setPadding(hl.L(12.0f), hl.L(12.0f), hl.L(12.0f), hl.L(12.0f) + (((pqb) this.c).W0() ? hl.n : 0));
+                    FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) ((pqb) this.c).E0.getLayoutParams();
+                    pqb pqbVar3 = (pqb) this.c;
+                    layoutParams5.height = hl.L(72 + ((pqbVar3.M1 || pqbVar3.L1 <= j) ? 0 : 58)) + (((pqb) this.c).W0() ? hl.n : 0);
+                    measureChildWithMargins(((pqb) this.c).E0, i, 0, i2, 0);
+                }
+                Drawable drawable = ((pqb) this.c).r;
+                if (drawable != null) {
+                    drawable.getPadding(hl.Q);
+                }
+                int i8 = 0;
+                while (true) {
+                    FrameLayout[] frameLayoutArr = ((pqb) this.c).N0;
+                    if (i8 >= frameLayoutArr.length) {
                         break;
+                    } else {
+                        FrameLayout frameLayout = frameLayoutArr[i8];
+                        if (frameLayout != null) {
+                            FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
+                            if (i8 == 0) {
+                                f = ((pqb) this.c).b == 2 ? jn7.r5 : jn7.v4;
+                            } else {
+                                f = 316.0f;
+                            }
+                            layoutParams6.height = hl.L(f);
+                            if (((pqb) this.c).W0()) {
+                                layoutParams6.height += hl.n;
+                            }
+                            if (i8 == 0) {
+                                layoutParams6.height = hl.L(12.0f) + hl.Q.top + layoutParams6.height;
+                            }
+                            ((pqb) this.c).N0[i8].setPadding(0, i8 == 0 ? hl.L(12.0f) + hl.Q.top : 0, 0, ((pqb) this.c).W0() ? hl.n : 0);
+                            measureChildWithMargins(((pqb) this.c).N0[i8], i, 0, i2, 0);
+                        }
+                        i8++;
                     }
                 }
                 break;
-            default:
-                super.onTextChanged(charSequence, i, i2, i3);
-                break;
         }
     }
 
-    @Override // android.widget.EditText, android.widget.TextView
-    public final boolean onTextContextMenuItem(int i) {
-        switch (this.M1) {
-            case 4:
-                if (i == 16908322 || i == 16908337) {
-                    ((qd6) this.N1).E = true;
-                    postDelayed(new ql3(this, (byte) 26), 1000L);
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    super.requestLayout();
+                    break;
                 }
                 break;
-        }
-        return super.onTextContextMenuItem(i);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        byte b = this.M1;
-        Object obj = this.N1;
-        switch (b) {
-            case 0:
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 1 && !gl.E3(this)) {
-                    clearFocus();
-                    requestFocus();
+            case 1:
+                if (!this.b) {
+                    super.requestLayout();
                     break;
                 }
                 break;
             case 2:
-                l7 l7Var = ((xv3) obj).e;
-                if (!l7Var.isEnabled()) {
-                    break;
-                } else {
-                    if (motionEvent.getAction() == 0) {
-                        l7Var.requestFocus();
-                        gl.E3(l7Var);
-                    }
-                    break;
-                }
-            case 6:
-                hz9 hz9Var = (hz9) obj;
-                ya5 ya5Var = hz9Var.f;
-                if (ya5Var != null) {
-                    ya5Var.a();
-                    hz9Var.f = null;
-                }
-                if (motionEvent.getAction() == 0 && !gl.E3(this)) {
-                    hz9Var.fullScroll(kk7.N1);
-                    clearFocus();
-                    requestFocus();
-                }
+            default:
+                super.requestLayout();
                 break;
-            case 8:
-                v5b v5bVar = (v5b) obj;
-                ya5 ya5Var2 = v5bVar.f;
-                if (ya5Var2 != null) {
-                    ya5Var2.a();
-                    v5bVar.f = null;
-                }
-                if (motionEvent.getAction() == 0 && !gl.E3(this)) {
-                    v5bVar.fullScroll(kk7.N1);
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 9:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) obj;
-                ya5 ya5Var3 = usersSelectActivity.R;
-                if (ya5Var3 != null) {
-                    ya5Var3.a();
-                    usersSelectActivity.R = null;
-                }
-                if (motionEvent.getAction() == 0 && !gl.E3(this)) {
-                    clearFocus();
-                    requestFocus();
+            case 3:
+                if (!this.b) {
+                    super.requestLayout();
+                    break;
                 }
                 break;
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f);
+                s7 s7Var = (s7) this.c;
+                d7 d7Var = s7Var.s;
+                if (d7Var != null && d7Var.getTag() != null) {
+                    s7Var.s.setAlpha(f);
+                    s7Var.s.setScaleX(f);
+                    s7Var.s.setScaleY(f);
+                    break;
+                }
+                break;
+            default:
+                super.setAlpha(f);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i);
+                s7 s7Var = (s7) this.c;
+                d7 d7Var = s7Var.s;
+                if (d7Var != null) {
+                    d7Var.setVisibility(i);
+                }
+                View view = s7Var.x;
+                if (view != null) {
+                    view.setVisibility(i);
+                }
+                FrameLayout frameLayout = s7Var.a;
+                if (frameLayout != null) {
+                    frameLayout.setVisibility(i);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i);
+                break;
+        }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ l7(byte b, Context context, Object obj) {
         super(context);
-        this.M1 = b;
-        this.N1 = obj;
+        this.a = b;
+        this.c = obj;
     }
 }

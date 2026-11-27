@@ -1,45 +1,39 @@
 // default package
 
-import android.os.SystemClock;
+import android.animation.ValueAnimator;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class jc9 implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class jc9 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mc9 b;
+    public final /* synthetic */ nd9 b;
 
-    public /* synthetic */ jc9(mc9 mc9Var, byte b) {
+    public /* synthetic */ jc9(nd9 nd9Var, byte b) {
         this.a = b;
-        this.b = mc9Var;
+        this.b = nd9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         byte b = this.a;
-        mc9 mc9Var = this.b;
+        nd9 nd9Var = this.b;
         switch (b) {
             case 0:
-                if (mc9Var.z2 >= 0) {
-                    long uptimeMillis = (mc9Var.y2 + 500) - SystemClock.uptimeMillis();
-                    if (uptimeMillis > 0 && mc9Var.isFocused()) {
-                        mc9Var.postDelayed(this, uptimeMillis);
-                        break;
-                    } else {
-                        int i = mc9Var.z2;
-                        mc9Var.z2 = -1;
-                        mc9Var.setInputType(i);
-                        break;
-                    }
-                }
+                nd9Var.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nd9Var.t0();
                 break;
             default:
-                if (!bkb.f1()) {
-                    mc9Var.J();
-                    break;
-                } else {
-                    mc9Var.postDelayed(this, 100L);
-                    break;
-                }
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nd9Var.U = floatValue;
+                nd9Var.S.setAlpha(floatValue);
+                nd9Var.S.setScaleX(hl.R1(0.6f, 1.0f, floatValue));
+                nd9Var.S.setScaleY(hl.R1(0.6f, 1.0f, floatValue));
+                nd9Var.S.setVisibility(floatValue > 0.0f ? 0 : 4);
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) nd9Var.S.getLayoutParams();
+                layoutParams.rightMargin = hl.U1(floatValue, -nd9Var.S.getMeasuredWidth(), hl.L(-4.0f));
+                nd9Var.S.setLayoutParams(layoutParams);
+                break;
         }
     }
 }

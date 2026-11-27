@@ -1,37 +1,46 @@
 // default package
 
-import org.telegram.ui.LaunchActivity;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class my5 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ y0a b;
+public final class my5 extends zu1 {
+    public final /* synthetic */ wy5 Jd;
 
-    public /* synthetic */ my5(y0a y0aVar, byte b) {
-        this.a = b;
-        this.b = y0aVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public my5(wy5 wy5Var) {
+        super(null);
+        this.Jd = wy5Var;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        y0a y0aVar = this.b;
-        String str = (String) obj;
-        switch (b) {
-            case 0:
-                String str2 = LaunchActivity.C1;
-                if (y0aVar != null && "paid".equals(str)) {
-                    y0aVar.run();
-                    break;
-                }
-                break;
-            default:
-                if (y0aVar != null && "paid".equals(str)) {
-                    y0aVar.run();
-                    break;
-                }
-                break;
-        }
+    @Override // zu1
+    public final boolean Y7() {
+        return false;
+    }
+
+    @Override // zu1, kz1
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e
+    public final Activity getParentActivity() {
+        return hl.W(this.Jd.getContext());
+    }
+
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final vnb getResourceProvider() {
+        return this.Jd.A1;
+    }
+
+    @Override // zu1, kz1
+    public final TLRPC.User h() {
+        return yac.h(this.currentAccount).f();
+    }
+
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final boolean isLightStatusBar() {
+        return false;
     }
 }

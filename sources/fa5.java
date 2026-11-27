@@ -1,36 +1,47 @@
 // default package
 
-import org.telegram.ui.PremiumPreviewFragment;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class fa5 implements Runnable {
+public final /* synthetic */ class fa5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ qa5 b;
+    public final /* synthetic */ ka5 b;
 
-    public /* synthetic */ fa5(qa5 qa5Var, byte b) {
+    public /* synthetic */ fa5(ka5 ka5Var, byte b) {
         this.a = b;
-        this.b = qa5Var;
+        this.b = ka5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        boolean z;
         byte b = this.a;
-        qa5 qa5Var = this.b;
+        ka5 ka5Var = this.b;
         switch (b) {
             case 0:
-                qa5Var.finishFragment();
-                break;
-            case 1:
-                qa5Var.j0();
-                qa5Var.f0();
-                break;
-            case 2:
-                qa5Var.getClass();
-                qa5Var.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ka5Var.a0 = floatValue;
+                ka5Var.b0.setAlpha(floatValue);
+                ka5Var.a.invalidate();
                 break;
             default:
-                qa5Var.n.postOnAnimation(new fa5(qa5Var, (byte) 1));
+                ga5 ga5Var = ka5Var.a;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (floatValue2 < 0.5f) {
+                    z = false;
+                } else {
+                    floatValue2 -= 1.0f;
+                    z = true;
+                }
+                if (z && !ka5Var.I0) {
+                    ka5Var.x0.setAlpha(1.0f);
+                    ka5Var.I0 = true;
+                    ga5Var.d.a();
+                }
+                float f = floatValue2 * 180.0f;
+                ka5Var.x0.setRotationY(f);
+                ga5Var.d.setRotationY(f);
                 break;
         }
     }

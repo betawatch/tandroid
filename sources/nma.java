@@ -1,15 +1,26 @@
 // default package
 
-import android.graphics.Paint;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class nma implements zy9 {
+    @Override // zy9
+    public final boolean c() {
+        return true;
+    }
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public class nma extends k26 {
-    public nma(ek1 ek1Var) {
-        super(ek1Var, false, null);
-        this.c.setStyle(Paint.Style.FILL);
-        if (nf0.B1) {
-            this.c.setAntiAlias(false);
-        }
+    @Override // zy9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // zy9
+    public final yy9 e(long j) {
+        bz9 bz9Var = new bz9(j, 0L);
+        return new yy9(bz9Var, bz9Var);
+    }
+
+    @Override // zy9
+    public final long h() {
+        return -9223372036854775807L;
     }
 }

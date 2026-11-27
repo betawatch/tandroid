@@ -1,59 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class eyb {
-    public static final eyb b;
-    public static final String c;
-    public final mm5 a;
+public final /* synthetic */ class eyb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ qyb b;
+    public final /* synthetic */ long c;
 
-    static {
-        km5 km5Var = mm5.b;
-        b = new eyb(w59.e);
-        String str = g8c.a;
-        c = "0";
+    public /* synthetic */ eyb(qyb qybVar, long j, byte b) {
+        this.a = b;
+        this.b = qybVar;
+        this.c = j;
     }
 
-    public eyb(w59 w59Var) {
-        this.a = mm5.q(w59Var);
-    }
-
-    public final boolean a(int i) {
-        int i2 = 0;
-        while (true) {
-            mm5 mm5Var = this.a;
-            if (i2 >= mm5Var.size()) {
-                return false;
-            }
-            dyb dybVar = (dyb) mm5Var.get(i2);
-            boolean[] zArr = dybVar.e;
-            int length = zArr.length;
-            int i3 = 0;
-            while (true) {
-                if (i3 >= length) {
-                    break;
-                }
-                if (!zArr[i3]) {
-                    i3++;
-                } else if (dybVar.b.c == i) {
-                    return true;
-                }
-            }
-            i2++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        long j = this.c;
+        qyb qybVar = this.b;
+        switch (b) {
+            case 0:
+                qybVar.c.put(j, 0);
+                qybVar.getNotificationCenter().k(jn7.t5, Long.valueOf(j), Boolean.FALSE);
+                break;
+            default:
+                qybVar.n(0, j, false);
+                break;
         }
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || eyb.class != obj.getClass()) {
-            return false;
-        }
-        return this.a.equals(((eyb) obj).a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
     }
 }

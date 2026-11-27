@@ -1,40 +1,33 @@
 // default package
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class k85 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ o85 b;
+public final class k85 implements fn7 {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ k5 c;
 
-    public /* synthetic */ k85(o85 o85Var, byte b) {
-        this.a = b;
-        this.b = o85Var;
+    public k85(long j, LaunchActivity launchActivity, k5 k5Var) {
+        this.a = j;
+        this.b = launchActivity;
+        this.c = k5Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        o85 o85Var = this.b;
-        switch (b) {
-            case 0:
-                o85Var.s.x = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o85Var.i();
-                m85 m85Var = o85Var.a;
-                if (m85Var.getParent() != null) {
-                    o85Var.n.updateViewLayout(m85Var, o85Var.s);
-                    break;
-                }
-                break;
-            default:
-                o85Var.s.y = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m85 m85Var2 = o85Var.a;
-                if (m85Var2.getParent() != null) {
-                    o85Var.n.updateViewLayout(m85Var2, o85Var.s);
-                    break;
-                }
-                break;
+    @Override // fn7
+    public final void didReceivedNotification(int i, int i2, Object... objArr) {
+        vc2 vc2Var;
+        TLRPC.GroupCall groupCall;
+        if (VoIPService.getSharedInstance() != null) {
+            jn7.e().n(this, jn7.v2);
+            VoIPService sharedInstance = VoIPService.getSharedInstance();
+            if (sharedInstance == null || (vc2Var = sharedInstance.groupCall) == null || (groupCall = vc2Var.b) == null || groupCall.id != this.a || this.b.isFinishing()) {
+                return;
+            }
+            j95.T0(this.b, this.c, null, null, false, null);
         }
     }
 }

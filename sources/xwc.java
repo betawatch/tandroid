@@ -1,51 +1,119 @@
 // default package
 
-import android.view.View;
-import androidx.appcompat.widget.ActionBarOverlayLayout;
-import java.util.WeakHashMap;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class xwc extends efc {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zwc b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class xwc extends h44 {
+    public final ld6 s0;
+    public boolean t0;
+    public int u0;
+    public int v0;
+    public final vwc w0;
 
-    public /* synthetic */ xwc(zwc zwcVar, byte b) {
-        this.a = b;
-        this.b = zwcVar;
+    public xwc(Context context, PointF pointF, int i, vwc vwcVar, float f, int i2) {
+        super(context, pointF);
+        ld6 ld6Var = new ld6(context, f);
+        this.s0 = ld6Var;
+        ld6Var.setMaxWidth(i2);
+        ld6Var.e(0, this.u0);
+        this.w0 = vwcVar;
+        String str = vwcVar.c;
+        String a = vwcVar.a();
+        ld6Var.d(i, str);
+        ld6Var.setText(a);
+        m();
+        addView(ld6Var, tre.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    @Override // dfc
-    public final void c() {
-        View view;
-        byte b = this.a;
-        zwc zwcVar = this.b;
-        switch (b) {
-            case 0:
-                if (zwcVar.o && (view = zwcVar.g) != null) {
-                    view.setTranslationY(0.0f);
-                    zwcVar.d.setTranslationY(0.0f);
-                }
-                zwcVar.d.setVisibility(8);
-                zwcVar.d.setTransitioning(false);
-                zwcVar.s = null;
-                tg2 tg2Var = zwcVar.k;
-                if (tg2Var != null) {
-                    tg2Var.S(zwcVar.j);
-                    zwcVar.j = null;
-                    zwcVar.k = null;
-                }
-                ActionBarOverlayLayout actionBarOverlayLayout = zwcVar.c;
-                if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = jdc.a;
-                    zcc.c(actionBarOverlayLayout);
-                    break;
-                }
-                break;
-            default:
-                zwcVar.s = null;
-                zwcVar.d.requestLayout();
-                break;
+    @Override // h44
+    public final g44 a() {
+        return new r66(this, getContext());
+    }
+
+    public int getColor() {
+        return this.u0;
+    }
+
+    @Override // h44
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    @Override // h44
+    public a69 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new a69();
         }
+        float scaleX = viewGroup.getScaleX();
+        float L = (hl.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float L2 = (hl.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float e = uh9.e(L, 2.0f, getPositionX(), scaleX);
+        return new a69(e, uh9.e(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + e) - e, L2 * scaleX);
+    }
+
+    @Override // h44
+    public float getStickyPaddingBottom() {
+        return this.s0.K;
+    }
+
+    @Override // h44
+    public float getStickyPaddingLeft() {
+        return this.s0.J;
+    }
+
+    @Override // h44
+    public float getStickyPaddingRight() {
+        return this.s0.J;
+    }
+
+    @Override // h44
+    public float getStickyPaddingTop() {
+        return this.s0.K;
+    }
+
+    public int getType() {
+        return this.v0;
+    }
+
+    public int getTypesCount() {
+        return this.s0.getTypesCount() - (!this.t0 ? 1 : 0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        k();
+    }
+
+    public void setColor(int i) {
+        this.t0 = true;
+        this.u0 = i;
+    }
+
+    @Override // h44
+    public void setIsVideo(boolean z) {
+        this.s0.setIsVideo(true);
+    }
+
+    public void setMaxWidth(int i) {
+        this.s0.setMaxWidth(i);
+    }
+
+    public void setType(int i) {
+        this.v0 = i;
+        this.s0.e(i, this.u0);
     }
 }

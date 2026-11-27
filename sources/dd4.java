@@ -1,34 +1,28 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class dd4 extends hn {
-    public final Paint s;
-    public final /* synthetic */ ed4 w;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class dd4 extends ax2 {
+    public ed4 a;
+    public Object b;
+    public Object c;
+    public pd4 d;
+    public /* synthetic */ Object e;
+    public final /* synthetic */ ed4 f;
+    public int h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dd4(ed4 ed4Var, Context context) {
-        super(context, false, true, true);
-        this.w = ed4Var;
-        this.s = new Paint(1);
+    public dd4(ed4 ed4Var, ax2 ax2Var) {
+        super(ax2Var);
+        this.f = ed4Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ed4 ed4Var = this.w;
-        int a = ed4Var.x.a(ed4Var.w, false);
-        setTextColor(a);
-        int p1 = bkb.p1(bkb.I.o() ? 0.2f : 0.1f, a);
-        Paint paint = this.s;
-        paint.setColor(p1);
-        RectF rectF = gl.P;
-        rectF.set((getWidth() - getDrawable().c()) - gl.N(9.32f), (getHeight() - gl.N(14.66f)) / 2.0f, getWidth(), (gl.N(14.66f) + getHeight()) / 2.0f);
-        canvas.drawRoundRect(rectF, gl.L(4.0f), gl.L(4.0f), paint);
-        super.dispatchDraw(canvas);
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.e = obj;
+        this.h |= TLObject.FLAG_31;
+        return this.f.b(null, this);
     }
 }

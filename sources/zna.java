@@ -1,48 +1,66 @@
 // default package
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import javax.net.SocketFactory;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class zna implements RequestDelegate {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ vqa b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class zna {
+    public final SocketFactory a;
+    public final ra b;
+    public final short c;
+    public final int d;
+    public final short e;
 
-    public /* synthetic */ zna(vqa vqaVar, long j, long j2, p8c p8cVar, long j3) {
-        this.b = vqaVar;
-        this.c = j;
-        this.d = j2;
-        this.f = p8cVar;
-        this.e = j3;
+    /* JADX WARN: Multi-variable type inference failed */
+    public zna(SocketFactory socketFactory, ra raVar, int i, int i2, int i3) {
+        this.a = socketFactory;
+        this.b = raVar;
+        this.c = i;
+        this.d = i2;
+        this.e = i3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.f;
-        switch (b) {
-            case 0:
-                vqa vqaVar = this.b;
-                vqaVar.getClass();
-                gl.c3(new goa(vqaVar, (hd) obj, tLObject, this.c, this.d, this.e, tL_error));
-                break;
-            default:
-                gl.c3(new goa(this.b, tLObject, this.c, this.d, (p8c) obj, tL_error, this.e));
-                break;
+    public final Socket a(InetAddress[] inetAddressArr) {
+        u8a u8aVar = new u8a();
+        ArrayList arrayList = new ArrayList(inetAddressArr.length);
+        int i = 0;
+        ed edVar = null;
+        int i2 = 0;
+        for (InetAddress inetAddress : inetAddressArr) {
+            int i3 = this.d;
+            if ((i3 != 2 || (inetAddress instanceof Inet4Address)) && (i3 != 3 || (inetAddress instanceof Inet6Address))) {
+                int i4 = i2 + this.e;
+                ed edVar2 = new ed(i4, (byte) 17);
+                arrayList.add(new yna(u8aVar, this.a, new InetSocketAddress(inetAddress, this.b.b), this.c, edVar, edVar2));
+                edVar = edVar2;
+                i2 = i4;
+            }
         }
-    }
-
-    public /* synthetic */ zna(vqa vqaVar, hd hdVar, long j, long j2, long j3) {
-        this.b = vqaVar;
-        this.f = hdVar;
-        this.c = j;
-        this.d = j2;
-        this.e = j3;
+        u8aVar.b = arrayList;
+        u8aVar.a = new CountDownLatch(((ArrayList) u8aVar.b).size());
+        ArrayList arrayList2 = (ArrayList) u8aVar.b;
+        int size = arrayList2.size();
+        while (i < size) {
+            Object obj = arrayList2.get(i);
+            i++;
+            ((yna) obj).start();
+        }
+        ((CountDownLatch) u8aVar.a).await();
+        Socket socket = (Socket) u8aVar.c;
+        if (socket != null) {
+            return socket;
+        }
+        Exception exc = (Exception) u8aVar.d;
+        if (exc != null) {
+            throw exc;
+        }
+        throw new syc(44, "No viable interface to connect");
     }
 }

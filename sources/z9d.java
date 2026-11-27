@@ -1,8 +1,46 @@
 // default package
 
-import android.os.IInterface;
+import android.content.Context;
+import android.os.Build;
+import android.os.UserManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
 /* loaded from: classes.dex */
-public interface z9d extends IInterface {
+public abstract class z9d {
+    public static volatile UserManager a;
+    public static volatile boolean b;
+
+    static {
+        b = !(Build.VERSION.SDK_INT >= 24);
+    }
+
+    public static boolean a(Context context) {
+        if (Build.VERSION.SDK_INT < 24) {
+            return false;
+        }
+        boolean z = b;
+        if (!z) {
+            UserManager userManager = a;
+            if (userManager == null) {
+                synchronized (z9d.class) {
+                    userManager = a;
+                    if (userManager == null) {
+                        UserManager userManager2 = (UserManager) context.getSystemService(UserManager.class);
+                        a = userManager2;
+                        if (userManager2 == null) {
+                            b = true;
+                            z = true;
+                        } else {
+                            userManager = userManager2;
+                        }
+                    }
+                }
+            }
+            z = userManager.isUserUnlocked();
+            b = z;
+            if (z) {
+                a = null;
+            }
+        }
+        return !z;
+    }
 }

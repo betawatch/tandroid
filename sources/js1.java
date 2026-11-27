@@ -1,35 +1,39 @@
 // default package
 
-import android.app.Activity;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.Components.UndoView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class js1 extends wv4 {
-    public final /* synthetic */ mu1 m1;
+public final /* synthetic */ class js1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ks1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public js1(mu1 mu1Var, Activity activity, d dVar) {
-        super(activity, dVar);
-        this.m1 = mu1Var;
+    public /* synthetic */ js1(ks1 ks1Var, byte b) {
+        this.a = b;
+        this.b = ks1Var;
     }
 
-    @Override // wv4
-    public final void D0() {
-        mu1 mu1Var = this.m1;
-        mu1Var.b6();
-        UndoView undoView = mu1Var.N3;
-        if (undoView == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        ks1 ks1Var = this.b;
+        switch (b) {
+            case 0:
+                nr1 nr1Var = ks1Var.I.a0;
+                if (nr1Var != null) {
+                    nr1Var.o1();
+                    break;
+                }
+                break;
+            default:
+                nr1 nr1Var2 = ks1Var.I.a0;
+                if (nr1Var2 != null) {
+                    nr1Var2.U0 = false;
+                    my1 my1Var = nr1Var2.V0;
+                    if (my1Var != null) {
+                        my1Var.s(false);
+                        break;
+                    }
+                }
+                break;
         }
-        undoView.j(75, 0L, null);
-        mu1Var.getMessagesController().n4(mu1Var.l6, "CONVERT_GIGAGROUP");
-    }
-
-    @Override // wv4
-    public final void E0() {
-        mu1 mu1Var = this.m1;
-        mu1Var.getMessagesController().O(mu1Var.getParentActivity(), mu1Var.e, mu1Var, new rh1(this, (byte) 8));
     }
 }

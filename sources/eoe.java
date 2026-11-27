@@ -1,47 +1,37 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class eoe extends c2e {
-    private static final eoe zzb;
-    private int zzd;
-    private a3e zze = pae.e;
-    private String zzf = "";
-    private boolean zzg;
+public enum eoe implements pbd {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    b(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF69(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF78(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF91(9);
 
-    static {
-        eoe eoeVar = new eoe();
-        zzb = eoeVar;
-        c2e.k(eoe.class, eoeVar);
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    eoe(int i) {
+        this.a = i;
     }
 
-    public static /* synthetic */ void n(eoe eoeVar, boolean z) {
-        eoeVar.zzd |= 2;
-        eoeVar.zzg = z;
-    }
-
-    public static eoe o() {
-        return zzb;
-    }
-
-    @Override // c2e
-    public final Object d(int i) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new vae(zzb, "\u0004\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001\u001b\u0002ဈ\u0000\u0003ဇ\u0001", new Object[]{"zzd", "zze", vne.class, "zzf", "zzg"});
-        }
-        if (i2 == 3) {
-            return new eoe();
-        }
-        if (i2 == 4) {
-            return new fne(zzb);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        throw null;
+    @Override // pbd
+    public final int zza() {
+        return this.a;
     }
 }

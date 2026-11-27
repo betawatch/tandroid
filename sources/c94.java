@@ -1,40 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c94 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ l94 b;
-    public final /* synthetic */ int c;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ c94(l94 l94Var, int i, byte b) {
-        this.a = b;
-        this.b = l94Var;
-        this.c = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class c94 extends a8c {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        a8c.h(new c94());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        l94 l94Var = this.b;
-        switch (b) {
-            case 0:
-                l94Var.F0.add(Integer.valueOf(i));
-                break;
-            case 1:
-                l94Var.F0.remove(Integer.valueOf(i));
-                break;
-            case 2:
-                l94Var.F0.remove(Integer.valueOf(i));
-                break;
-            default:
-                z94 z94Var = l94Var.g0;
-                if (z94Var != null) {
-                    z94Var.b(l94Var, i);
-                }
-                l94Var.g();
-                break;
-        }
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        d94 d94Var = (d94) view;
+        d94Var.a((TLRPC.StickerSetCovered) b8cVar.H, z, b8cVar.u, false);
+        d94Var.f.a(b8cVar.u, false);
+        d94Var.setAddOnClickListener(b8cVar.E);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new d94(context, vnbVar);
     }
 }

@@ -1,83 +1,73 @@
 // default package
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ActionBar.d;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class dp1 implements f39 {
-    public final /* synthetic */ mu1 a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class dp1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ de0 c;
+    public final /* synthetic */ yu1 d;
+    public final /* synthetic */ ema e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ nu1 h;
+    public final /* synthetic */ zu1 n;
 
-    public dp1(mu1 mu1Var) {
-        this.a = mu1Var;
+    public dp1(zu1 zu1Var, boolean z, boolean z2, de0 de0Var, yu1 yu1Var, ema emaVar, boolean z3, nu1 nu1Var) {
+        this.n = zu1Var;
+        this.a = z;
+        this.b = z2;
+        this.c = de0Var;
+        this.d = yu1Var;
+        this.e = emaVar;
+        this.f = z3;
+        this.h = nu1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x007b  */
-    @Override // f39
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean e(float f, float f2, int i, View view) {
-        boolean z;
-        boolean z2;
-        a aVar;
-        View view2;
-        boolean z3;
-        mu1 mu1Var = this.a;
-        bt1 bt1Var = mu1Var.u9;
-        if ((bt1Var == null || !bt1Var.z) && !mu1Var.t7()) {
-            z = ((d) mu1Var).inPreviewMode;
-            if (!z && !mu1Var.mb) {
-                mu1Var.R4 = true;
-                if (view instanceof uk1) {
-                    uk1 uk1Var = (uk1) view;
-                    k27 messageObject = uk1Var.getMessageObject();
-                    if (messageObject != null) {
-                        if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && uk1Var.getMessageObject().D != 21 && !uk1Var.getMessageObject().W4() && uk1Var.getMessageObject().D != 30) {
-                            z2 = false;
-                            aVar = ((d) mu1Var).actionBar;
-                            if (!aVar.y() || (mu1Var.T7() && !z2)) {
-                                view2 = view;
-                                mu1Var.Ha(view2, f, f2, view2 instanceof gb2 ? !((gb2) view2).E2(f) : false);
-                                z3 = true;
-                            } else {
-                                z3 = mu1Var.R5(view, false, true, f, f2, true, true, false);
-                                view2 = view;
-                            }
-                            if (view2 instanceof gb2) {
-                                gb2 gb2Var = (gb2) view2;
-                                if (gb2Var.getMessageObject() != null && gb2Var.getMessageObject().D != 27) {
-                                    mu1Var.tc(i);
-                                    return true;
-                                }
-                            }
-                            return z3;
-                        }
-                    }
-                }
-                z2 = true;
-                aVar = ((d) mu1Var).actionBar;
-                if (aVar.y()) {
-                }
-                view2 = view;
-                mu1Var.Ha(view2, f, f2, view2 instanceof gb2 ? !((gb2) view2).E2(f) : false);
-                z3 = true;
-                if (view2 instanceof gb2) {
-                }
-                return z3;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        zu1 zu1Var = this.n;
+        zu1Var.W2[1] = null;
+        zu1Var.Q2[1].setTranslationY(0.0f);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.n.W2;
+        if (animator.equals(animatorSetArr[1])) {
+            de0 de0Var = this.c;
+            boolean z = this.b;
+            boolean z2 = this.a;
+            if (!z2 && !z && de0Var == null) {
+                animatorSetArr[1] = null;
+                return;
             }
+            animatorSetArr[1] = new AnimatorSet();
+            animatorSetArr[1].setInterpolator(k43.h);
+            animatorSetArr[1].setDuration(360L);
+            ArrayList arrayList = new ArrayList();
+            if (z2) {
+                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<yu1, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (z) {
+                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<ema, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (this.f) {
+                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<nu1, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (de0Var != null) {
+                arrayList.add(ObjectAnimator.ofFloat(de0Var, (Property<de0, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            animatorSetArr[1].addListener(new jb1((Object) this, (byte) 5));
+            animatorSetArr[1].playTogether(arrayList);
+            animatorSetArr[1].start();
         }
-        return false;
-    }
-
-    @Override // f39
-    public final void f() {
-    }
-
-    @Override // f39
-    public final void g(float f) {
     }
 }

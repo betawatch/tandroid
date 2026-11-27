@@ -1,19 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rfe implements zn7 {
-    public static final rfe a = new rfe();
+public interface rfe {
+    void a(Object obj, byte[] bArr, int i, int i2, pl6 pl6Var);
 
-    static {
-        yjb.y(yjb.p(gid.class, new bgd(1)));
-    }
+    boolean b(s6e s6eVar, s6e s6eVar2);
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
-    }
+    int c(s6e s6eVar);
+
+    boolean d(Object obj);
+
+    int e(s6e s6eVar);
+
+    void f(Object obj, oqd oqdVar);
+
+    s6e zze();
+
+    void zzf(Object obj);
+
+    void zzg(Object obj, Object obj2);
 }

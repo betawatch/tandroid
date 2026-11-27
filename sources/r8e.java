@@ -1,22 +1,14 @@
 // default package
 
-import j$.util.Objects;
-import java.util.Comparator;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class r8e {
-    public static final Comparator a;
+public final class r8e extends w8e implements Serializable {
+    public final byte[] b;
 
-    static {
-        Comparator comparator;
-        try {
-            Object[] enumConstants = Class.forName(r8e.class.getName().concat("$UnsafeComparator")).getEnumConstants();
-            Objects.requireNonNull(enumConstants);
-            comparator = (Comparator) enumConstants[0];
-        } catch (Throwable unused) {
-            comparator = m8e.a;
-        }
-        a = comparator;
+    public r8e(byte[] bArr) {
+        bArr.getClass();
+        this.b = bArr;
     }
 }

@@ -1,63 +1,93 @@
 // default package
 
-import android.os.Build;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import org.telegram.messenger.a;
+import android.content.Context;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public enum pw0 {
-    e(new long[]{7}, new int[]{65}, new long[]{60}),
-    f(new long[]{7}, new int[]{kk7.a2}, new long[]{70}),
-    h(new long[]{7}, new int[]{kk7.d4}, new long[]{80}),
-    n(new long[]{3}, new int[]{kk7.B3}, new long[]{50}),
-    r(new long[]{10}, new int[]{kk7.E2}, new long[]{55}),
-    s(new long[]{14, 48, 14, 48, 14, 48, 20}, new int[]{kk7.d3, 0, kk7.d3, 0, kk7.d4, 0, kk7.a2}, new long[]{40, 60, 40, 60, 65, 60, 40}),
-    w(new long[]{14, 65, 14}, new int[]{kk7.E2, 0, kk7.d4}, new long[]{50, 60, 65}),
-    x(new long[]{14, 64, 14}, new int[]{kk7.B3, 0, kk7.E2}, new long[]{65, 60, 40}),
-    y(new long[]{1}, new int[]{65}, new long[]{30}),
-    E(new long[]{30, 10, 150, 10}, new int[]{0, 100, 0, 100}, new long[]{40, 60, 40, 60, 65, 60, 40});
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class pw0 extends rv0 {
+    public final /* synthetic */ byte U0;
+    public final /* synthetic */ Object V0;
 
-    public final long[] a;
-    public final int[] b;
-    public final long[] c;
-    public Object d;
-
-    pw0(long[] jArr, int[] iArr, long[] jArr2) {
-        this.a = jArr;
-        this.b = iArr;
-        this.c = jArr2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pw0(Object obj, Context context, vnb vnbVar, int i, byte b) {
+        super(i, vnbVar, context, true);
+        this.U0 = b;
+        this.V0 = obj;
     }
 
-    public final void a() {
-        long[] jArr = this.c;
-        if (Build.VERSION.SDK_INT < 26) {
-            Vibrator vibrator = gl.J;
-            if (vibrator == null) {
-                vibrator = (Vibrator) a.b.getSystemService("vibrator");
-                gl.J = vibrator;
-            }
-            vibrator.vibrate(jArr, -1);
-            return;
+    @Override // rv0
+    public final void B(boolean z, String str) {
+        switch (this.U0) {
+            case 0:
+                xw0 xw0Var = (xw0) this.V0;
+                Paint paint = xw0Var.R;
+                if (z) {
+                    xw0Var.j();
+                    xw0Var.Z0.a(xw0Var.o() ? xw0Var.x0.e : lbc.r(uc7.s1(xw0Var.I).X1(Long.valueOf(xw0Var.J))), str);
+                    xw0Var.Z0.b(hl.B(paint.getColor()) <= 0.721f, false);
+                    xw0Var.Z0.setBackgroundColor(paint.getColor());
+                    xw0Var.Y0 = str;
+                }
+                dw dwVar = xw0Var.Z0;
+                xw0Var.X0 = z;
+                hl.T3(dwVar, z, 1.0f, true, false);
+                invalidate();
+                break;
         }
-        Vibrator vibrator2 = gl.J;
-        if (vibrator2 == null) {
-            vibrator2 = (Vibrator) a.b.getSystemService("vibrator");
-            gl.J = vibrator2;
+    }
+
+    @Override // rv0
+    public final void H(nv0 nv0Var) {
+        byte b = this.U0;
+        Object obj = this.V0;
+        switch (b) {
+            case 0:
+                xw0 xw0Var = (xw0) obj;
+                xw0Var.x.setWebView(nv0Var);
+                wr0 wr0Var = xw0Var.D0;
+                if (wr0Var != null) {
+                    wr0Var.k = nv0Var;
+                }
+                xw0Var.o0.setWebView(nv0Var);
+                xw0Var.K();
+                break;
+            default:
+                ((j22) obj).K.setWebView(nv0Var);
+                break;
         }
-        Vibrator vibrator3 = vibrator2;
-        if (this.d == null) {
-            if (vibrator3 == null) {
-                vibrator3 = (Vibrator) a.b.getSystemService("vibrator");
-                gl.J = vibrator3;
-            }
-            if (vibrator3.hasAmplitudeControl()) {
-                this.d = VibrationEffect.createWaveform(this.a, this.b, -1);
-            } else {
-                this.d = VibrationEffect.createWaveform(jArr, -1);
-            }
+    }
+
+    @Override // rv0
+    public final void I(nv0 nv0Var) {
+        switch (this.U0) {
+            case 0:
+                xw0 xw0Var = (xw0) this.V0;
+                wr0 wr0Var = xw0Var.D0;
+                if (wr0Var != null && wr0Var.k == nv0Var) {
+                    wr0Var.k = null;
+                    wr0Var.b();
+                }
+                xw0Var.o0.setWebView(null);
+                break;
         }
-        vibrator2.vibrate((VibrationEffect) this.d);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.U0) {
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    j22 j22Var = (j22) this.V0;
+                    if (!j22Var.Q) {
+                        j22Var.Q = true;
+                        j22Var.n.O();
+                    }
+                }
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
     }
 }

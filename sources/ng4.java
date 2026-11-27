@@ -1,35 +1,36 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ng4 {
-    public final String a;
-    public final String b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public ng4(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ng4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a = 0;
+    public final /* synthetic */ r32 b;
+
+    public ng4(r32 r32Var) {
+        this.b = r32Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        r32 r32Var = this.b;
+        switch (b) {
+            case 0:
+                ((yg4) r32Var.d).m0.e();
+                break;
+            default:
+                tk4 tk4Var = r32Var.b;
+                tk4Var.setAlpha(1.0f);
+                q79.w0(tk4Var);
+                ((yg4) r32Var.d).b.removeView(tk4Var);
+                break;
         }
-        if (!(obj instanceof ng4)) {
-            return false;
-        }
-        ng4 ng4Var = (ng4) obj;
-        return rp5.a(this.a, ng4Var.a) && rp5.a(this.b, ng4Var.b);
     }
 
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
-        String str2 = this.b;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
-    }
-
-    public final String toString() {
-        return "FirebaseInstallationId(fid=" + this.a + ", authToken=" + this.b + ')';
+    public ng4(r32 r32Var, q79 q79Var) {
+        this.b = r32Var;
     }
 }

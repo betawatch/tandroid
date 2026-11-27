@@ -1,46 +1,6 @@
 // default package
 
-import androidx.car.app.model.CarIconSpan;
-import androidx.car.app.model.CarText;
-import androidx.car.app.model.ClickableSpan;
-import androidx.car.app.model.DistanceSpan;
-import androidx.car.app.model.DurationSpan;
-import androidx.car.app.model.ForegroundCarColorSpan;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pc1 {
-    public static final pc1 b;
-    public final HashSet a;
-
-    static {
-        new pc1(Collections.EMPTY_LIST);
-        new pc1(Arrays.asList(CarIconSpan.class, ClickableSpan.class, DistanceSpan.class, DurationSpan.class, ForegroundCarColorSpan.class));
-        new pc1(Arrays.asList(ClickableSpan.class, DistanceSpan.class, DurationSpan.class));
-        new pc1(Arrays.asList(ForegroundCarColorSpan.class));
-        b = new pc1(Arrays.asList(DistanceSpan.class, DurationSpan.class));
-        new pc1(Arrays.asList(DistanceSpan.class, DurationSpan.class, CarIconSpan.class));
-        new pc1(Arrays.asList(DistanceSpan.class, DurationSpan.class, ForegroundCarColorSpan.class));
-        new pc1(Arrays.asList(DistanceSpan.class, DurationSpan.class, ForegroundCarColorSpan.class, CarIconSpan.class));
-    }
-
-    public pc1(List list) {
-        this.a = new HashSet(list);
-    }
-
-    public final void a(List list) {
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            Class<?> cls = ((CarText.SpanWrapper) it.next()).getCarSpan().getClass();
-            if (!this.a.contains(cls)) {
-                w26.j("CarSpan type is not allowed: ".concat(cls.getSimpleName()));
-                return;
-            }
-        }
-    }
+public interface pc1 {
 }

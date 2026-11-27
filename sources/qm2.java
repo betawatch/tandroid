@@ -1,136 +1,94 @@
 // default package
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qm2 extends fy0 {
-    public l5c S1;
-    public boolean T1;
-    public final FrameLayout U1;
-    public final boolean V1;
-    public final boolean W1;
-    public int X1;
+public final class qm2 extends FrameLayout {
+    public final TextView a;
+    public final nm2 b;
+    public final EditTextBoldCursor c;
+    public byte d;
+    public boolean e;
+    public final /* synthetic */ sm2 f;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x00db  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public qm2(Context context, TLRPC.Chat chat, long j, p8c p8cVar) {
-        super((wjb) null, context, false);
-        rr8 rr8Var;
-        int i;
-        int i2;
-        rr8 rr8Var2;
-        TLRPC.User V1 = na7.q1(this.a).V1(Long.valueOf(j));
-        TLRPC.Chat K0 = na7.q1(this.a).K0(Long.valueOf(-j));
-        this.W1 = l7c.v(V1);
-        this.V1 = hc2.V(K0);
-        this.F1 = false;
-        this.E1 = gl.L(12.0f);
-        this.o1.setTitle(J0());
-        t0(bkb.Z6);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.U1 = frameLayout;
-        frameLayout.setPadding(0, gl.L(3.0f), 0, gl.L(3.0f));
-        frameLayout.setLayoutParams(new e49(-1, -2));
-        rr8 rr8Var3 = new rr8(context, null);
-        if (K0 != null) {
-            rr8Var = rr8Var3;
-            i = -1;
-            rr8Var.z(K0, null, K0.title, k96.H(' ', "Members", K0.participants_count), false, false);
-        } else {
-            rr8Var = rr8Var3;
-            i = -1;
-            if (V1 != null) {
-                i2 = -1;
-                rr8Var2 = rr8Var;
-                rr8Var2.z(V1, null, cf3.l(V1), k96.M0(2131753153, null), false, false);
-                frameLayout.addView(rr8Var2, nme.c(-2.0f, i2));
-                o39 o39Var = this.n1;
-                int i3 = this.u0;
-                o39Var.setPadding(i3, 0, i3, gl.L(64.0f) + gl.n);
-                this.n1.r1();
-                this.n1.setClipToPadding(false);
-                this.n1.setOnItemClickListener(new u(this, (byte) 15));
-                u41 u41Var = new u41(this.J0, context, true);
-                if (chat == null) {
-                    u41Var.setText(k96.M0(hc2.w(27, chat) ? 2131751962 : 2131751959, null));
-                } else {
-                    u41Var.setText(k96.M0(2131751927, null));
-                }
-                u41Var.f();
-                u41Var.setOnClickListener(new b0(this, p8cVar, chat, (byte) 25));
-                this.b.addView(u41Var, nme.f(48.0f, -1, 80, gl.L(12.0f) + this.u0, 0, gl.L(12.0f) + this.u0, gl.L(12.0f) + gl.n));
-                this.S1.O(false);
-            }
-        }
-        i2 = i;
-        rr8Var2 = rr8Var;
-        frameLayout.addView(rr8Var2, nme.c(-2.0f, i2));
-        o39 o39Var2 = this.n1;
-        int i32 = this.u0;
-        o39Var2.setPadding(i32, 0, i32, gl.L(64.0f) + gl.n);
-        this.n1.r1();
-        this.n1.setClipToPadding(false);
-        this.n1.setOnItemClickListener(new u(this, (byte) 15));
-        u41 u41Var2 = new u41(this.J0, context, true);
-        if (chat == null) {
-        }
-        u41Var2.f();
-        u41Var2.setOnClickListener(new b0(this, p8cVar, chat, (byte) 25));
-        this.b.addView(u41Var2, nme.f(48.0f, -1, 80, gl.L(12.0f) + this.u0, 0, gl.L(12.0f) + this.u0, gl.L(12.0f) + gl.n));
-        this.S1.O(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qm2(sm2 sm2Var, Context context) {
+        super(context);
+        this.f = sm2Var;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(-1711276033);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(hl.o());
+        addView(textView, tre.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
+        nm2 nm2Var = new nm2(sm2Var, context);
+        this.b = nm2Var;
+        addView(nm2Var, tre.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.c = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setBackground(aob.b0(hl.L(10.0f), 436207615));
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setTextColor(-1);
+        editTextBoldCursor.setGravity(17);
+        editTextBoldCursor.setSingleLine();
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setImeActionLabel(ob6.M0(2131751319, null), 6);
+        byte b = 2;
+        editTextBoldCursor.setInputType(2);
+        editTextBoldCursor.setTypeface(hl.o());
+        editTextBoldCursor.addTextChangedListener(new ry(this));
+        editTextBoldCursor.setOnFocusChangeListener(new ts0(this, b));
+        editTextBoldCursor.setOnEditorActionListener(new mh(b));
+        addView(editTextBoldCursor, tre.e(72, 36, 85));
     }
 
-    @Override // fy0
-    public final n39 G0(o39 o39Var) {
-        l5c l5cVar = new l5c(this.n1, getContext(), this.a, 0, false, new w72(this, (byte) 7), this.J0);
-        this.S1 = l5cVar;
-        l5cVar.r = false;
-        return l5cVar;
-    }
-
-    @Override // fy0
-    public final CharSequence J0() {
-        return k96.M0(this.W1 ? 2131751970 : 2131751965, null);
-    }
-
-    public final void Y0(p8c p8cVar, boolean z, boolean z2) {
-        if (z2 && !z && !this.W1) {
-            ij.M(getContext(), this.J0, k96.M0(2131751958, null), k96.M0(this.V1 ? 2131751961 : 2131751960, null), k96.M0(2131754483, null), new mn6((Object) this, (Object) p8cVar, z, (byte) 16)).show();
-        } else {
-            p8cVar.a(Boolean.valueOf(z));
-            dismiss();
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void a(int i) {
+        this.d = i;
+        this.b.c = i;
+        TextView textView = this.a;
+        if (i == 0) {
+            textView.setText(ob6.M0(2131747391, null).toUpperCase());
+        } else if (i == 1) {
+            textView.setText(ob6.M0(2131747393, null).toUpperCase());
+        } else if (i == 2) {
+            textView.setText(ob6.M0(2131747394, null).toUpperCase());
         }
+        b();
     }
 
-    public final void Z0(boolean z) {
-        boolean z2;
-        if (this.T1 != z) {
-            this.T1 = z;
-            int i = this.X1 + 1;
-            o39 o39Var = this.n1;
-            View U0 = o39Var.U0(i);
-            if (U0 instanceof uy8) {
-                ((uy8) U0).a(!z);
-                z2 = false;
-            } else {
-                z2 = true;
-            }
-            View U02 = o39Var.U0(this.X1 + 2);
-            if (U02 instanceof uy8) {
-                ((uy8) U02).a(z);
-            } else {
-                z2 = true;
-            }
-            if (z2) {
-                this.S1.O(true);
-            }
+    public final void b() {
+        this.e = true;
+        nm2 nm2Var = this.b;
+        nm2Var.d = vm2.o(nm2Var.e.p1, jn7.d4);
+        nm2Var.a();
+        nm2Var.invalidate();
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        int selectionEnd = editTextBoldCursor.getSelectionEnd();
+        byte b = this.d;
+        sm2 sm2Var = this.f;
+        if (b == 0) {
+            editTextBoldCursor.setText(String.valueOf(Color.red(sm2Var.p1)));
+        } else if (b == 1) {
+            editTextBoldCursor.setText(String.valueOf(Color.green(sm2Var.p1)));
+        } else if (b == 2) {
+            editTextBoldCursor.setText(String.valueOf(Color.blue(sm2Var.p1)));
         }
+        editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        this.e = false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(52.0f), TLObject.FLAG_30));
     }
 }

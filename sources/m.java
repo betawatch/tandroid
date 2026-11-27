@@ -2,37 +2,37 @@
 
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m implements p8c {
+public final /* synthetic */ class m implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ a1 b;
-    public final /* synthetic */ z0 c;
+    public final /* synthetic */ b1 b;
+    public final /* synthetic */ a1 c;
 
-    public /* synthetic */ m(a1 a1Var, z0 z0Var, byte b) {
+    public /* synthetic */ m(b1 b1Var, a1 a1Var, byte b) {
         this.a = b;
-        this.b = a1Var;
-        this.c = z0Var;
+        this.b = b1Var;
+        this.c = a1Var;
     }
 
-    @Override // p8c
+    @Override // pcc
     public final void a(Object obj) {
         byte b = this.a;
-        z0 z0Var = this.c;
-        a1 a1Var = this.b;
+        a1 a1Var = this.c;
+        b1 b1Var = this.b;
         switch (b) {
             case 0:
-                if (a1Var.p2 != null) {
-                    z0Var.c(0, true);
-                    a1Var.p1(null);
+                if (b1Var.p2 != null) {
+                    a1Var.c(0, true);
+                    b1Var.r1(null);
                     break;
                 }
                 break;
             default:
                 TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
-                if (a1Var.p2 != aiComposeTone) {
-                    z0Var.d(aiComposeTone, true);
-                    a1Var.p1(aiComposeTone);
+                if (b1Var.p2 != aiComposeTone) {
+                    a1Var.d(aiComposeTone, true);
+                    b1Var.r1(aiComposeTone);
                     break;
                 }
                 break;

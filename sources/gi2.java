@@ -1,31 +1,17 @@
 // default package
 
-import android.view.View;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class gi2 extends vu7 {
+    public abstract int j();
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public interface gi2 {
-    void D(float f, float f2);
-
-    boolean H0(float f, float f2);
-
-    boolean K0(View view, float f, float f2);
-
-    boolean S();
-
-    void f1(View view, float f, float f2);
-
-    void g(View view, float f, float f2);
-
-    long getLongPressDuration();
-
-    void h0();
-
-    void k(float f, float f2);
-
-    void n(View view, float f, float f2);
-
-    void n0();
-
-    boolean s1();
+    public final int k(int i) {
+        int size = ((dt8) this).c.size();
+        int j = j();
+        if (i < j) {
+            return ((size - (j << 1)) - ((j - i) - 1)) - 1;
+        }
+        int i2 = size - j;
+        return i >= i2 ? i - i2 : i - j;
+    }
 }

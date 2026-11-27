@@ -1,123 +1,46 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.AnimatedArrowDrawable;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import org.telegram.messenger.a;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ac9 extends FrameLayout implements tjb, eib {
-    public final wjb a;
-    public final sb b;
-    public final AnimatedArrowDrawable c;
-    public final mc9 d;
-    public final Paint e;
-    public lk0 f;
-    public he9 h;
-    public boolean n;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class ac9 {
+    public static final long[] a;
 
-    public ac9(Context context, wjb wjbVar) {
-        super(context);
-        this.e = new Paint();
-        this.a = wjbVar;
-        setClipToPadding(false);
-        setWillNotDraw(false);
-        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(bkb.v0(bkb.tl, wjbVar));
-        this.c = animatedArrowDrawable;
-        animatedArrowDrawable.setCallback(new in(this, (byte) 9));
-        sb sbVar = new sb((byte) 29, context, this);
-        this.b = sbVar;
-        sbVar.setOnClickListener(new ik8(this, (byte) 9));
-        addView(sbVar, nme.e(53, -1, 51));
-        mc9 mc9Var = new mc9(context, wjbVar);
-        this.d = mc9Var;
-        mc9Var.setAllowNewlines(false);
-        mc9Var.setTextSize(1, gba.S0);
-        mc9Var.setHint(k96.M0(2131754015, null));
-        mc9Var.setPadding(0, gl.L(14.0f), 0, gl.L(12.66f));
-        mc9Var.setListener(new xb9(this));
-        mc9Var.setDelegate(new k88((Object) this, (byte) 24));
-        addView(mc9Var, nme.d(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
-        updateColors();
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.tl));
-        hashSet.add(Integer.valueOf(bkb.vl));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        he9 he9Var = this.h;
-        fib textSelectionHelper = he9Var != null ? he9Var.a.getTextSelectionHelper() : null;
-        if (textSelectionHelper != null) {
-            if (this.d.getLayout() != null) {
-                canvas.save();
-                canvas.translate(r1.getPaddingLeft() + r1.getLeft(), r1.getPaddingTop() + r1.getTop());
-                textSelectionHelper.Y(canvas, this, 0);
-                canvas.restore();
+    static {
+        try {
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(a.b.getResources().getAssets().open("lottie_meta.bin"));
+            try {
+                int available = bufferedInputStream.available();
+                if (available % 8 != 0) {
+                    throw new IllegalStateException("lottie_meta.bin has invalid size: " + available);
+                }
+                int i = available / 8;
+                long[] jArr = new long[i];
+                SerializedData serializedData = new SerializedData(bufferedInputStream);
+                for (int i2 = 0; i2 < i; i2++) {
+                    jArr[i2] = serializedData.readInt64(true);
+                }
+                bufferedInputStream.close();
+                a = jArr;
+            } catch (Throwable th) {
+                try {
+                    bufferedInputStream.close();
+                } catch (Throwable th2) {
+                    th.addSuppressed(th2);
+                }
+                throw th;
             }
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    public mc9 getEditText() {
-        return this.d;
-    }
-
-    public lk0 getRow() {
-        return this.f;
-    }
-
-    @Override // eib
-    public final void k(ArrayList arrayList) {
-        mc9 mc9Var = this.d;
-        Layout layout = mc9Var.getLayout();
-        if (layout == null) {
-            return;
-        }
-        arrayList.add(new yb9(this, layout, mc9Var.getPaddingLeft() + mc9Var.getLeft(), mc9Var.getPaddingTop() + mc9Var.getTop()));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        lk0 lk0Var = this.f;
-        if (lk0Var != null) {
-            TL_iv.PageBlock pageBlock = lk0Var.b;
-            if ((pageBlock instanceof TL_iv.pageBlockDetails) && ((TL_iv.pageBlockDetails) pageBlock).open) {
-                return;
+        } catch (IOException e) {
+            grb.j("Unable to load lottie_meta.bin", e);
+        } catch (RuntimeException e2) {
+            if (f11.a) {
+                cc4.e("Unable to load lottie_meta.bin", e2);
             }
+            throw e2;
         }
-        canvas.drawRect(0.0f, r0 - 1, getMeasuredWidth(), getMeasuredHeight(), this.e);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    public void setLocked(boolean z) {
-        this.d.setLocked(z);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        this.d.updateColors();
-        int i = bkb.tl;
-        wjb wjbVar = this.a;
-        int v0 = bkb.v0(i, wjbVar);
-        AnimatedArrowDrawable animatedArrowDrawable = this.c;
-        animatedArrowDrawable.a.setColor(v0);
-        animatedArrowDrawable.invalidateSelf();
-        this.e.setColor(bkb.v0(bkb.vl, wjbVar));
     }
 }

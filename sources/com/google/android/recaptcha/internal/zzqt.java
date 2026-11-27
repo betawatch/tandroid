@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.io.IOException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class zzqt extends IOException {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -13,7 +13,7 @@ public final class zzqt extends IOException {
     public zzqt(long j, long j2, int i, Throwable th) {
         super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), th);
         Locale locale = Locale.US;
-        StringBuilder o = ug8.o(j, "Pos: ", ", limit: ");
+        StringBuilder o = ik8.o(j, "Pos: ", ", limit: ");
         o.append(j2);
         o.append(", len: ");
         o.append(i);

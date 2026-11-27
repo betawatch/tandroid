@@ -1,40 +1,41 @@
 // default package
 
-import android.content.Context;
-import java.util.HashSet;
-import org.telegram.ui.d0;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class okb extends uy0 implements tjb {
-    public int e;
-    public final /* synthetic */ d0 f;
+public final class okb extends FrameLayout {
+    public TextView a;
+    public nkb b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public okb(d0 d0Var, Context context) {
-        super(context);
-        this.f = d0Var;
-    }
-
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.Lj));
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        ty0 ty0Var = this.d;
-        if (ty0Var != null) {
-            try {
-                int w0 = bkb.w0(null, bkb.Lj, false);
-                if (w0 != this.e) {
-                    this.e = w0;
-                    ty0Var.setOuterColor(w0);
-                    ty0Var.invalidate();
-                }
-            } catch (Exception e) {
-                fa4.g(e, true);
-            }
+    public final void a() {
+        nkb nkbVar = this.b;
+        int i = this.d;
+        r16 r16Var = (r16) nkbVar;
+        r16Var.getClass();
+        yac.h(i).a0 = null;
+        byte b = 0;
+        yac.h(i).u(false);
+        LaunchActivity launchActivity = r16Var.a;
+        ArrayList arrayList = launchActivity.e0;
+        if (!arrayList.isEmpty()) {
+            ((e) c00.g(1, arrayList)).onResume();
         }
+        launchActivity.B0.animate().alpha(0.0f).setDuration(150L).setInterpolator(hl.G).withEndAction(new ea5(r16Var, (byte) 23)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new xe2(b));
+    }
+
+    public void setDelegate(nkb nkbVar) {
+        this.b = nkbVar;
     }
 }

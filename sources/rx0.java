@@ -1,34 +1,54 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class rx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ yx0 b;
+public final class rx0 extends View implements snb {
+    public final /* synthetic */ tx0 a;
 
-    public /* synthetic */ rx0(yx0 yx0Var, byte b) {
-        this.a = b;
-        this.b = yx0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rx0(tx0 tx0Var, Context context) {
+        super(context);
+        this.a = tx0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        yx0 yx0Var = this.b;
-        switch (b) {
-            case 0:
-                yx0Var.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yx0Var.invalidate();
-                break;
-            case 1:
-                yx0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            default:
-                yx0Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yx0Var.invalidate();
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), hl.n);
+        setTranslationY(hl.n);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        tx0 tx0Var = this.a;
+        Paint paint = tx0Var.d;
+        try {
+            dy0 dy0Var = tx0Var.a;
+            if (dy0Var != null) {
+                int e = dy0Var.e(aob.w0(null, aob.a7, false));
+                if (paint.getColor() != e) {
+                    paint.setColor(e);
+                    invalidate();
+                    hl.o3(tx0Var, e, true, null);
+                    hl.i3(tx0Var, hl.B(e) >= 0.721f);
+                }
+            }
+        } catch (Exception e2) {
+            cc4.g(e2, true);
         }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

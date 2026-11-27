@@ -1,44 +1,33 @@
 // default package
 
-import android.view.MenuItem;
-import java.lang.reflect.Method;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class vbb implements MenuItem.OnMenuItemClickListener {
-    public static final Class[] d = {MenuItem.class};
-    public final /* synthetic */ byte a = 0;
-    public Object b;
-    public Object c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class vbb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ybb b;
 
-    public vbb(g07 g07Var, MenuItem.OnMenuItemClickListener onMenuItemClickListener) {
-        this.c = g07Var;
-        this.b = onMenuItemClickListener;
+    public /* synthetic */ vbb(ybb ybbVar, byte b) {
+        this.a = b;
+        this.b = ybbVar;
     }
 
-    @Override // android.view.MenuItem.OnMenuItemClickListener
-    public final boolean onMenuItemClick(MenuItem menuItem) {
-        switch (this.a) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        ybb ybbVar = this.b;
+        switch (b) {
             case 0:
-                Object obj = this.b;
-                Method method = (Method) this.c;
-                boolean z = false;
-                try {
-                    if (method.getReturnType() == Boolean.TYPE) {
-                        z = ((Boolean) method.invoke(obj, menuItem)).booleanValue();
-                    } else {
-                        method.invoke(obj, menuItem);
-                        z = true;
-                    }
-                } catch (Exception e) {
-                    sdb.b(e);
-                }
-                return z;
+                lcb lcbVar = ybbVar.s0;
+                lcbVar.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lcbVar.V();
+                break;
             default:
-                return ((MenuItem.OnMenuItemClickListener) this.b).onMenuItemClick(((g07) this.c).f(menuItem));
+                lcb lcbVar2 = ybbVar.s0;
+                lcbVar2.X = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lcbVar2.V();
+                break;
         }
-    }
-
-    public /* synthetic */ vbb() {
     }
 }

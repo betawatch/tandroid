@@ -1,96 +1,230 @@
 // default package
 
-import android.content.Context;
-import android.graphics.BlendMode;
-import android.graphics.Paint;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RadialProgress2;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.view.TextureView;
+import android.view.WindowManager;
+import org.telegram.messenger.voip.OrientationHelper;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class omb extends n39 {
-    public final Context c;
-    public final /* synthetic */ qmb d;
+public final class omb extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Object b;
 
-    public omb(qmb qmbVar, Context context) {
-        this.d = qmbVar;
-        this.c = context;
+    public /* synthetic */ omb(Object obj, byte b) {
+        this.a = b;
+        this.b = obj;
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return false;
-    }
-
-    @Override // w39
-    public final int b() {
-        ArrayList arrayList = this.d.W0;
-        if (arrayList != null) {
-            return arrayList.size();
-        }
-        return 0;
-    }
-
-    @Override // w39
-    public final int d(int i) {
-        return 0;
-    }
-
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        BlendMode blendMode;
-        ly7 ly7Var = (ly7) s49Var.a;
-        qmb qmbVar = this.d;
-        ly7Var.setPattern((TLRPC.TL_wallPaper) qmbVar.W0.get(i));
-        ly7Var.getImageReceiver().p1 = new PorterDuffColorFilter(qmbVar.l1, qmbVar.u1);
-        if (Build.VERSION.SDK_INT >= 29) {
-            int i2 = 0;
-            if (qmbVar.b == 1) {
-                int C0 = bkb.C0(bkb.Fe);
-                long j = qmbVar.w.l;
-                int i3 = (int) j;
-                if (i3 != 0) {
-                    i2 = i3;
-                } else if (j == 0) {
-                    i2 = C0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((pmb) this.b).setVisibility(4);
+                break;
+            case 1:
+                pqb pqbVar = ((eqb) this.b).a;
+                if (!pqbVar.r1.a()) {
+                    pqbVar.T1.setVisibility(8);
+                    break;
                 }
-            } else if (qmbVar.D1 instanceof krc) {
-                i2 = qmbVar.e1;
-            }
-            if (i2 == 0 || qmbVar.n1 < 0.0f) {
-                ly7Var.getImageReceiver().P(null);
-                return;
-            }
-            ImageReceiver imageReceiver = qmbVar.z0.getImageReceiver();
-            blendMode = BlendMode.SOFT_LIGHT;
-            imageReceiver.P(blendMode);
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                yl3 yl3Var = (yl3) ((gb) this.b).b;
+                ((rqb) yl3Var.b).getTransitionParams().e();
+                ((rqb) yl3Var.b).getTransitionParams().h = false;
+                ((rqb) yl3Var.b).getTransitionParams().L1 = 1.0f;
+                break;
+            case 3:
+                ((kxb) this.b).setVisibility(8);
+                break;
+            case 4:
+                super.onAnimationEnd(animator);
+                ((uxb) this.b).d = null;
+                break;
+            case 5:
+                super.onAnimationEnd(animator);
+                ((rzb) this.b).setScrollEnabled(true);
+                break;
+            case 6:
+                vl4 vl4Var = ((g1c) this.b).f;
+                vl4Var.setScaleX(1.0f);
+                vl4Var.setScaleY(1.0f);
+                vl4Var.invalidate();
+                break;
+            case 7:
+                k1c k1cVar = (k1c) this.b;
+                k1cVar.M = 1.0f;
+                k1cVar.h.invalidate();
+                break;
+            case 8:
+                ((l2c) this.b).L = null;
+                break;
+            case 9:
+                ((d6c) this.b).M = null;
+                break;
+            case 10:
+                o7c o7cVar = ((n7c) this.b).d;
+                if (animator.equals(o7cVar.L)) {
+                    o7cVar.L = null;
+                    break;
+                }
+                break;
+            case 11:
+                UndoView undoView = (UndoView) this.b;
+                undoView.setVisibility(4);
+                undoView.setScaleX(1.0f);
+                undoView.setScaleY(1.0f);
+                undoView.setAlpha(1.0f);
+                break;
+            case 12:
+                kac kacVar = (kac) this.b;
+                if (kacVar.a.getTag() == null) {
+                    kacVar.a.setVisibility(4);
+                    break;
+                }
+                break;
+            case 13:
+                super.onAnimationEnd(animator);
+                vbc vbcVar = (vbc) this.b;
+                vbcVar.b = 0.0f;
+                vbcVar.setTranslationY(0.0f);
+                vbcVar.a = null;
+                break;
+            case 14:
+                ccc cccVar = (ccc) this.b;
+                cccVar.d = null;
+                cccVar.a = null;
+                cccVar.b = false;
+                cccVar.f.c.setAllowDrawCursor(true);
+                break;
+            case 15:
+                yfc yfcVar = (yfc) ((il2) this.b).b;
+                yfcVar.G = true;
+                yfcVar.invalidate();
+                break;
+            case 16:
+                uic uicVar = (uic) this.b;
+                uicVar.K = false;
+                uicVar.setEnabled(true);
+                tic ticVar = uicVar.E;
+                if (ticVar != null) {
+                    ticVar.a(1.0f);
+                }
+                uicVar.invalidate();
+                break;
+            case 17:
+                kjc kjcVar = (kjc) this.b;
+                kjcVar.i = false;
+                kjcVar.l.setAlpha(35);
+                kjcVar.k.setAlpha(jn7.m1);
+                kjcVar.j.setAlpha(35);
+                kjcVar.c();
+                break;
+            case 18:
+                ujc ujcVar = ((sjc) this.b).c;
+                ujcVar.P = false;
+                ujcVar.requestLayout();
+                break;
+            case 19:
+                hmc hmcVar = (hmc) this.b;
+                hmcVar.O = 0.0f;
+                hmcVar.P = 0.0f;
+                gmc gmcVar = hmcVar.d;
+                gmcVar.setScaleX(hmcVar.U);
+                gmcVar.setScaleY(hmcVar.U);
+                TextureView textureView = hmcVar.e;
+                if (textureView != null) {
+                    textureView.setScaleX(hmcVar.V);
+                    textureView.setScaleY(hmcVar.V);
+                }
+                hmcVar.setTranslationY(0.0f);
+                hmcVar.setTranslationX(0.0f);
+                hmcVar.a0 = hmcVar.W;
+                hmcVar.c0 = null;
+                break;
+            case 20:
+                kmc kmcVar = (kmc) this.b;
+                kmcVar.R = kmcVar.Q ? 1.0f : 0.0f;
+                kmcVar.a(kmcVar.S, kmcVar.T);
+                break;
+            case 21:
+                ((qmc) this.b).c.e();
+                hl.K3(((qmc) this.b).a);
+                if (((qmc) this.b).getParent() != null) {
+                    WindowManager windowManager = (WindowManager) ((qmc) this.b).a.getSystemService("window");
+                    ((qmc) this.b).setVisibility(8);
+                    try {
+                        windowManager.removeView((qmc) this.b);
+                    } catch (Exception unused) {
+                    }
+                    OrientationHelper.cameraRotationDisabled = false;
+                    break;
+                }
+                break;
+            case 22:
+                wmc wmcVar = (wmc) this.b;
+                AnimatorSet animatorSet = wmcVar.R;
+                wmcVar.K = false;
+                wmcVar.U.e = false;
+                if (wmcVar.V && animatorSet != null) {
+                    animatorSet.cancel();
+                    animatorSet.start();
+                }
+                wmcVar.c();
+                break;
+            case 23:
+                ((dnc) this.b).e.setVisibility(8);
+                break;
+            case 24:
+                ((zoc) this.b).f();
+                break;
+            case 25:
+                uqc uqcVar = (uqc) this.b;
+                if (uqcVar.N0 == animator) {
+                    uqcVar.N0 = null;
+                    break;
+                }
+                break;
+            case 26:
+                sqc sqcVar = (sqc) this.b;
+                sqcVar.n = false;
+                sqcVar.r = null;
+                sqcVar.c.setLayerType(0, null);
+                break;
+            case 27:
+                zqc zqcVar = (zqc) this.b;
+                zqcVar.O = 0.0f;
+                zqcVar.P = 0.0f;
+                zqcVar.c0 = null;
+                break;
+            case 28:
+                yrc yrcVar = (yrc) this.b;
+                yrcVar.J = null;
+                yrcVar.j0 = 1.0f;
+                yrcVar.i0 = 0.0f;
+                yrcVar.h0 = 0.0f;
+                yrcVar.b();
+                break;
+            default:
+                ltc ltcVar = (ltc) this.b;
+                EditTextBoldCursor editTextBoldCursor = ltcVar.b;
+                if (ltcVar.s == animator) {
+                    ltcVar.s = null;
+                    ltcVar.a.setVisibility(ltcVar.E ? 4 : 0);
+                    editTextBoldCursor.setVisibility(ltcVar.E ? 0 : 4);
+                    if (ltcVar.E && !ltcVar.F) {
+                        editTextBoldCursor.requestFocus();
+                        hl.E3(editTextBoldCursor);
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        int i2 = this.d.J1;
-        nmb nmbVar = new nmb(this);
-        ly7 ly7Var = new ly7(this.c);
-        ly7Var.H = new RectF();
-        int i3 = y6c.t0;
-        ly7Var.K = i3;
-        ly7Var.setRoundRadius(gl.L(6.0f));
-        ly7Var.V = i2;
-        ly7Var.U = nmbVar;
-        RadialProgress2 radialProgress2 = new RadialProgress2(ly7Var, null);
-        ly7Var.I = radialProgress2;
-        radialProgress2.p(gl.L(30.0f), gl.L(30.0f), gl.L(70.0f), gl.L(70.0f));
-        ly7Var.R = new Paint(3);
-        ly7Var.T = up3.q(i3).k();
-        ly7Var.setOutlineProvider(new xi((byte) 7));
-        ly7Var.setClipToOutline(true);
-        return new y29(ly7Var);
     }
 }

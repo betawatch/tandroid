@@ -1,41 +1,120 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import androidx.appcompat.widget.ContentFrameLayout;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.util.SparseIntArray;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zo extends ContentFrameLayout {
-    public final /* synthetic */ bp r;
+public abstract class zo {
+    public Object a;
+    public Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo(bp bpVar, ew2 ew2Var) {
-        super(ew2Var);
-        this.r = bpVar;
+    public zo() {
+        this.a = new SparseIntArray();
+        this.b = new SparseIntArray();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return this.r.i(keyEvent) || super.dispatchKeyEvent(keyEvent);
+    public final void c() {
+        ak akVar = (ak) this.a;
+        if (akVar != null) {
+            try {
+                ((cp) this.b).e.unregisterReceiver(akVar);
+            } catch (IllegalArgumentException unused) {
+            }
+            this.a = null;
+        }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            int x = (int) motionEvent.getX();
-            int y = (int) motionEvent.getY();
-            if (x < -5 || y < -5 || x > getWidth() + 5 || y > getHeight() + 5) {
-                bp bpVar = this.r;
-                bpVar.h(bpVar.o(0), true);
-                return true;
+    public abstract IntentFilter d();
+
+    public abstract int e();
+
+    public final MenuItem f(MenuItem menuItem) {
+        if (!(menuItem instanceof ufb)) {
+            return menuItem;
+        }
+        ufb ufbVar = (ufb) menuItem;
+        vla vlaVar = (vla) this.b;
+        if (vlaVar == null) {
+            vlaVar = new vla(0);
+            this.b = vlaVar;
+        }
+        MenuItem menuItem2 = (MenuItem) vlaVar.get(ufbVar);
+        if (menuItem2 != null) {
+            return menuItem2;
+        }
+        n27 n27Var = new n27((Context) this.a, ufbVar);
+        ((vla) this.b).put(ufbVar, n27Var);
+        return n27Var;
+    }
+
+    public final int g(int i, int i2) {
+        int i3 = i(i);
+        int i4 = 0;
+        int i5 = 0;
+        for (int i6 = 0; i6 < i; i6++) {
+            int i7 = i(i6);
+            i4 += i7;
+            if (i4 == i2) {
+                i5++;
+                i4 = 0;
+            } else if (i4 > i2) {
+                i5++;
+                i4 = i7;
             }
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        return i4 + i3 > i2 ? i5 + 1 : i5;
     }
 
-    @Override // android.view.View
-    public final void setBackgroundResource(int i) {
-        setBackgroundDrawable(hmd.a(getContext(), i));
+    public int h(int i, int i2) {
+        int i3 = i(i);
+        if (i3 != i2) {
+            int i4 = 0;
+            for (int i5 = 0; i5 < i; i5++) {
+                int i6 = i(i5);
+                i4 += i6;
+                if (i4 == i2) {
+                    i4 = 0;
+                } else if (i4 > i2) {
+                    i4 = i6;
+                }
+            }
+            if (i3 + i4 <= i2) {
+                return i4;
+            }
+        }
+        return 0;
+    }
+
+    public abstract int i(int i);
+
+    public final void j() {
+        ((SparseIntArray) this.a).clear();
+    }
+
+    public abstract void k();
+
+    public final void l() {
+        c();
+        IntentFilter d = d();
+        if (d.countActions() == 0) {
+            return;
+        }
+        ak akVar = (ak) this.a;
+        if (akVar == null) {
+            akVar = new ak(this, (byte) 1);
+            this.a = akVar;
+        }
+        ((cp) this.b).e.registerReceiver(akVar, d);
+    }
+
+    public zo(Context context) {
+        this.a = context;
+    }
+
+    public zo(cp cpVar) {
+        this.b = cpVar;
     }
 }

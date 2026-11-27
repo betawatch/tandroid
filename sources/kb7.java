@@ -1,0 +1,93 @@
+// default package
+
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class kb7 implements RequestDelegate {
+    public final /* synthetic */ byte a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+
+    public /* synthetic */ kb7(uc7 uc7Var, TLRPC.User user, long j, pcc pccVar, int i) {
+        this.d = uc7Var;
+        this.e = user;
+        this.b = j;
+        this.f = pccVar;
+        this.c = i;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        switch (b) {
+            case 0:
+                uc7 uc7Var = (uc7) obj3;
+                TLRPC.User user = (TLRPC.User) obj2;
+                pcc pccVar = (pcc) obj;
+                ConcurrentHashMap concurrentHashMap = uc7Var.j1;
+                if (tL_error != null) {
+                    hl.c3(new f77(uc7Var, user, (byte) 1));
+                    break;
+                } else {
+                    TLRPC.TL_users_userFull tL_users_userFull = (TLRPC.TL_users_userFull) tLObject;
+                    TLRPC.UserFull userFull = tL_users_userFull.full_user;
+                    int size = tL_users_userFull.users.size();
+                    int i = 0;
+                    while (true) {
+                        if (i < size) {
+                            TLRPC.User user2 = tL_users_userFull.users.get(i);
+                            if (user2 != null) {
+                                long j = user2.id;
+                                if (j == user.id && user2.bot && !user2.min) {
+                                    Integer num = (Integer) concurrentHashMap.get(Long.valueOf(j));
+                                    if (num == null || user2.bot_info_version > num.intValue()) {
+                                        concurrentHashMap.put(Long.valueOf(user2.id), Integer.valueOf(user2.bot_info_version));
+                                    }
+                                }
+                            }
+                            i++;
+                        }
+                    }
+                    uc7Var.j4(tL_users_userFull.users, false);
+                    uc7Var.c4(tL_users_userFull.chats, false);
+                    TLRPC.UserFull userFull2 = tL_users_userFull.full_user;
+                    userFull2.user = uc7Var.X1(Long.valueOf(userFull2.id));
+                    uc7Var.getMessagesStorage().g2(userFull, false);
+                    uc7Var.O1().p0(this.b, userFull.stories);
+                    af2 e = af2.e(uc7Var.currentAccount);
+                    TLRPC.UserFull userFull3 = tL_users_userFull.full_user;
+                    e.p(userFull3.id, userFull3.wallpaper);
+                    if (pccVar != null) {
+                        pccVar.a(userFull);
+                    }
+                    hl.c3(new gp6(uc7Var, userFull, user, this.c, (byte) 1));
+                    break;
+                }
+                break;
+            default:
+                ts8 ts8Var = (ts8) obj3;
+                ts8Var.getClass();
+                hl.c3(new he(ts8Var, tLObject, (jf7) obj2, this.b, this.c, (ArrayList) obj));
+                break;
+        }
+    }
+
+    public /* synthetic */ kb7(ts8 ts8Var, jf7 jf7Var, long j, int i, ArrayList arrayList) {
+        this.d = ts8Var;
+        this.e = jf7Var;
+        this.b = j;
+        this.c = i;
+        this.f = arrayList;
+    }
+}

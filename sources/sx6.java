@@ -1,7 +1,65 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.RemoteException;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface sx6 {
-    void a(qg0 qg0Var, aob aobVar);
+public final /* synthetic */ class sx6 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yx6 b;
+
+    public /* synthetic */ sx6(yx6 yx6Var, byte b) {
+        this.a = b;
+        this.b = yx6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        yx6 yx6Var = this.b;
+        switch (b) {
+            case 0:
+                yx6Var.getClass();
+                return;
+            case 1:
+                synchronized (yx6Var.a) {
+                    if (yx6Var.v) {
+                        return;
+                    }
+                    final daa R0 = yx6Var.t.R0();
+                    if (!yx6Var.c.hasMessages(1)) {
+                        daa daaVar = yx6Var.s.c;
+                        cg8 cg8Var = R0.a;
+                        int i = cg8Var.b;
+                        cg8 cg8Var2 = daaVar.a;
+                        if (i == cg8Var2.b && cg8Var.e == cg8Var2.e && cg8Var.h == cg8Var2.h && cg8Var.i == cg8Var2.i) {
+                            rx6 rx6Var = yx6Var.g.b;
+                            po5 L = rx6Var.L();
+                            for (int i2 = 0; i2 < L.size(); i2++) {
+                                final xw6 xw6Var = (xw6) L.get(i2);
+                                rx6Var.D0();
+                                final boolean a0 = rx6Var.a0(xw6Var, 16);
+                                final boolean a02 = rx6Var.a0(xw6Var, 17);
+                                yx6Var.c(xw6Var, new xx6() { // from class: tx6
+                                    @Override // xx6
+                                    public final void b(ww6 ww6Var, int i3) {
+                                        ww6Var.i(i3, daa.this, a0, a02, xw6Var.c);
+                                    }
+                                });
+                            }
+                            try {
+                                yx6Var.h.l.i(0, R0, true, true, 0);
+                            } catch (RemoteException e) {
+                                efd.d("MediaSessionImpl", "Exception in using media1 API", e);
+                            }
+                        }
+                    }
+                    yx6Var.r();
+                    return;
+                }
+            default:
+                yx6Var.r();
+                return;
+        }
+    }
 }

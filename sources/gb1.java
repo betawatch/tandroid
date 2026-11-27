@@ -1,29 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class gb1 extends gn {
-    public final /* synthetic */ byte e0;
-    public final /* synthetic */ hb1 f0;
+import org.telegram.tgnet.ConnectionsManager;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gb1(hb1 hb1Var, byte b) {
-        super(true, false, false);
-        this.e0 = b;
-        this.f0 = hb1Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class gb1 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public boolean d;
+
+    public gb1(int i, int i2, int i3) {
+        this.a = i;
+        this.b = i2;
+        this.c = i3;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        byte b = this.e0;
-        hb1 hb1Var = this.f0;
-        switch (b) {
-            case 0:
-                hb1Var.invalidateSelf();
-                break;
-            default:
-                hb1Var.invalidateSelf();
-                break;
+    public final void a(String str) {
+        if (this.d) {
+            return;
         }
+        this.d = true;
+        ConnectionsManager.native_receivedCaptchaResult(this.a, this.b, this.c, str);
     }
 }

@@ -1,96 +1,88 @@
 // default package
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Build;
-import android.os.IBinder;
-import android.os.StrictMode;
-import java.util.HashMap;
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class h5f implements ServiceConnection {
-    public final HashMap a = new HashMap();
-    public byte b = 2;
-    public boolean c;
-    public IBinder d;
-    public final x2f e;
-    public ComponentName f;
-    public final /* synthetic */ j9f h;
+public abstract class h5f {
+    public static final s5f a;
 
-    public h5f(j9f j9fVar, x2f x2fVar) {
-        this.h = j9fVar;
-        this.e = x2fVar;
+    static {
+        a = (a5f.e && a5f.d && !aje.a()) ? new s5f((byte) 1) : new s5f((byte) 0);
     }
 
-    public final ds2 a(String str) {
-        try {
-            Intent a = z6d.a(this.h.b, this.e);
-            this.b = (byte) 3;
-            StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
-            if (Build.VERSION.SDK_INT >= 31) {
-                StrictMode.setVmPolicy(hhd.a(new StrictMode.VmPolicy.Builder(vmPolicy)).build());
+    public static int a(String str) {
+        int length = str.length();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < length && str.charAt(i2) < 128) {
+            i2++;
+        }
+        int i3 = length;
+        while (true) {
+            if (i2 >= length) {
+                break;
             }
-            try {
-                j9f j9fVar = this.h;
-                qx4 qx4Var = j9fVar.d;
-                Context context = j9fVar.b;
-                x2f x2fVar = this.e;
-                boolean N = qx4Var.N(context, str, a, this, 4225);
-                this.c = N;
-                if (N) {
-                    j9fVar.c.sendMessageDelayed(j9fVar.c.obtainMessage(1, x2fVar), j9fVar.f);
-                    return ds2.f;
+            char charAt = str.charAt(i2);
+            if (charAt < 2048) {
+                i3 += (127 - charAt) >>> 31;
+                i2++;
+            } else {
+                int length2 = str.length();
+                while (i2 < length2) {
+                    char charAt2 = str.charAt(i2);
+                    if (charAt2 < 2048) {
+                        i += (127 - charAt2) >>> 31;
+                    } else {
+                        i += 2;
+                        if (55296 <= charAt2 && charAt2 <= 57343) {
+                            if (Character.codePointAt(str, i2) < 65536) {
+                                throw new q5f(i2, length2);
+                            }
+                            i2++;
+                        }
+                    }
+                    i2++;
                 }
-                this.b = (byte) 2;
-                try {
-                    j9fVar.d.M(j9fVar.b, this);
-                } catch (IllegalArgumentException unused) {
-                }
-                return new ds2(16, null, null);
-            } finally {
-                StrictMode.setVmPolicy(vmPolicy);
+                i3 += i;
             }
-        } catch (o6d e) {
-            return e.a;
         }
+        if (i3 >= length) {
+            return i3;
+        }
+        StringBuilder sb = new StringBuilder(54);
+        sb.append("UTF-8 length does not fit in int: ");
+        sb.append(i3 + 4294967296L);
+        throw new IllegalArgumentException(sb.toString());
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onBindingDied(ComponentName componentName) {
-        onServiceDisconnected(componentName);
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        j9f j9fVar = this.h;
-        synchronized (j9fVar.a) {
-            j9fVar.c.removeMessages(1, this.e);
-            this.d = iBinder;
-            this.f = componentName;
-            Iterator it = this.a.values().iterator();
-            while (it.hasNext()) {
-                ((ServiceConnection) it.next()).onServiceConnected(componentName, iBinder);
+    public static int b(int i, int i2, byte[] bArr) {
+        int i3;
+        int i4 = bArr[i - 1];
+        int i5 = i2 - i;
+        if (i5 == 0) {
+            if (i4 > -12) {
+                return -1;
             }
-            this.b = (byte) 1;
+            return i4;
         }
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        j9f j9fVar = this.h;
-        synchronized (j9fVar.a) {
-            j9fVar.c.removeMessages(1, this.e);
-            this.d = null;
-            this.f = componentName;
-            Iterator it = this.a.values().iterator();
-            while (it.hasNext()) {
-                ((ServiceConnection) it.next()).onServiceDisconnected(componentName);
+        if (i5 == 1) {
+            int i6 = bArr[i];
+            if (i4 > -12 || i6 > -65) {
+                return -1;
             }
-            this.b = (byte) 2;
+            i3 = i6 << 8;
+        } else {
+            if (i5 != 2) {
+                lq5.f();
+                return 0;
+            }
+            int i7 = bArr[i];
+            int i8 = bArr[i + 1];
+            if (i4 > -12 || i7 > -65 || i8 > -65) {
+                return -1;
+            }
+            i4 ^= i7 << 8;
+            i3 = i8 << 16;
         }
+        return i4 ^ i3;
     }
 }

@@ -1,17 +1,34 @@
 // default package
 
-import android.os.Handler;
-import android.os.Looper;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import androidx.mediarouter.app.MediaRouteVolumeSlider;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qv6 extends Handler {
-    public lo6 a;
-    public final /* synthetic */ tv6 b;
+public final class qv6 extends ov6 {
+    public final int A;
+    public final /* synthetic */ uv6 B;
+    public final TextView z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qv6(tv6 tv6Var, Looper looper) {
-        super(looper);
-        this.b = tv6Var;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public qv6(uv6 uv6Var, View view) {
+        super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
+        this.B = uv6Var;
+        wv6 wv6Var = uv6Var.x;
+        this.z = (TextView) view.findViewById(R.id.mr_group_volume_route_name);
+        Resources resources = wv6Var.E.getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        TypedValue typedValue = new TypedValue();
+        resources.getValue(R.dimen.mr_dynamic_volume_group_list_item_height, typedValue, true);
+        this.A = (int) typedValue.getDimension(displayMetrics);
     }
 }

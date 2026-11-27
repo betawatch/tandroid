@@ -1,19 +1,112 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class uje implements zn7 {
-    public static final uje a = new uje();
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-    static {
-        yjb.y(yjb.p(gid.class, yjb.t(yjb.p(gid.class, yjb.t(yjb.p(gid.class, new bgd(1)), 2)), 3)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class uje extends jke {
+    public final int a;
+    public final eod b;
+
+    public uje(eod eodVar) {
+        eodVar.getClass();
+        this.b = eodVar;
+        v9c u = eodVar.entrySet().u();
+        int i = 0;
+        while (u.hasNext()) {
+            Map.Entry entry = (Map.Entry) u.next();
+            int a = ((jke) entry.getKey()).a();
+            i = i < a ? a : i;
+            int a2 = ((jke) entry.getValue()).a();
+            if (i < a2) {
+                i = a2;
+            }
+        }
+        int i2 = i + 1;
+        this.a = i2;
+        if (i2 > 8) {
+            throw new wk2("Exceeded cutoff limit for max depth of cbor value");
+        }
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // jke
+    public final int a() {
+        return this.a;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        int compareTo;
+        jke jkeVar = (jke) obj;
+        int zza = jkeVar.zza();
+        int c = jke.c((byte) -96);
+        if (c != zza) {
+            return c - jkeVar.zza();
         }
-        throw null;
+        eod eodVar = ((uje) jkeVar).b;
+        eod eodVar2 = this.b;
+        if (eodVar2.d.size() != eodVar.d.size()) {
+            return eodVar2.d.size() - eodVar.d.size();
+        }
+        v9c u = eodVar2.entrySet().u();
+        v9c u2 = eodVar.entrySet().u();
+        do {
+            if (!u.hasNext() && !u2.hasNext()) {
+                return 0;
+            }
+            Map.Entry entry = (Map.Entry) u.next();
+            Map.Entry entry2 = (Map.Entry) u2.next();
+            int compareTo2 = ((jke) entry.getKey()).compareTo((jke) entry2.getKey());
+            if (compareTo2 != 0) {
+                return compareTo2;
+            }
+            compareTo = ((jke) entry.getValue()).compareTo((jke) entry2.getValue());
+        } while (compareTo == 0);
+        return compareTo;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && uje.class == obj.getClass()) {
+            return this.b.equals(((uje) obj).b);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(jke.c((byte) -96)), this.b});
+    }
+
+    public final String toString() {
+        eod eodVar = this.b;
+        if (eodVar.isEmpty()) {
+            return "{}";
+        }
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        v9c u = eodVar.entrySet().u();
+        while (u.hasNext()) {
+            Map.Entry entry = (Map.Entry) u.next();
+            linkedHashMap.put(((jke) entry.getKey()).toString().replace("\n", "\n  "), ((jke) entry.getValue()).toString().replace("\n", "\n  "));
+        }
+        ahd ahdVar = new ahd();
+        StringBuilder sb = new StringBuilder("{\n  ");
+        try {
+            j4f.a(sb, linkedHashMap.entrySet().iterator(), ahdVar);
+            sb.append("\n}");
+            return sb.toString();
+        } catch (IOException e) {
+            hz6.e(e);
+            return null;
+        }
+    }
+
+    @Override // jke
+    public final int zza() {
+        return jke.c((byte) -96);
     }
 }

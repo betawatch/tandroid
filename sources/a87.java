@@ -1,40 +1,31 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a87 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ a87(na7 na7Var, long j, Runnable runnable, byte b) {
+    public /* synthetic */ a87(uc7 uc7Var, TLRPC.Updates updates, boolean z, byte b) {
         this.a = b;
-        this.b = na7Var;
-        this.c = j;
-        this.d = runnable;
+        this.b = uc7Var;
+        this.c = updates;
+        this.d = z;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        byte b = this.a;
-        Runnable runnable = this.d;
-        long j = this.c;
-        na7 na7Var = this.b;
-        switch (b) {
+        switch (this.a) {
             case 0:
-                na7Var.Y2(0, j, true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.Y3(this.c, this.d);
                 break;
             default:
-                na7Var.Y2(0, j, true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                Utilities.d.c(new a87(this.b, this.c, this.d, (byte) 0));
                 break;
         }
     }

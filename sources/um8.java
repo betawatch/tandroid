@@ -1,72 +1,27 @@
 // default package
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.ProfileActivity;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class um8 {
+    public final String a;
+    public final String b;
+    public final int c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class um8 extends i49 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ ProfileActivity b;
-
-    public /* synthetic */ um8(ProfileActivity profileActivity, byte b) {
-        this.a = b;
-        this.b = profileActivity;
+    public um8(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+        this.c = str2.hashCode() + (str.hashCode() * 31);
     }
 
-    @Override // i49
-    public final void a(RecyclerView recyclerView, int i) {
-        View m;
-        byte b = this.a;
-        ProfileActivity profileActivity = this.b;
-        switch (b) {
-            case 0:
-                if (i == 1) {
-                    gl.t1(profileActivity.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                if (i == 1) {
-                    gl.t1(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.G0 && i != 2) {
-                    profileActivity.G0 = false;
-                }
-                if (i == 0 && !profileActivity.G1 && (m = profileActivity.c.m(0)) != null) {
-                    profileActivity.z3(m, 0.0f);
-                }
-                xha xhaVar = profileActivity.U0;
-                if (xhaVar != null) {
-                    boolean z = i != 0;
-                    profileActivity.z1 = z;
-                    xhaVar.setEnabled((z || profileActivity.q2) ? false : true);
-                }
-                vn8 vn8Var = profileActivity.O;
-                boolean z2 = profileActivity.a.J1;
-                vn8Var.getClass();
-                break;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof um8)) {
+            return false;
         }
+        um8 um8Var = (um8) obj;
+        return this.a.equals(um8Var.a) && this.b.equals(um8Var.b);
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                je5 je5Var = profileActivity.X;
-                if (je5Var != null) {
-                    je5Var.f(true);
-                }
-                profileActivity.F1();
-                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.M0() > profileActivity.y4 - 8) {
-                    profileActivity.Z1(false);
-                }
-                vn8 vn8Var = profileActivity.O;
-                vn8Var.setPinnedToTop(vn8Var.getY() <= 0.0f);
-                profileActivity.I3();
-                break;
-        }
+    public final int hashCode() {
+        return this.c;
     }
 }

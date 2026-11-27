@@ -1,54 +1,70 @@
 // default package
 
-import androidx.datastore.core.NativeSharedCounter;
+import android.util.Pair;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ng7 extends ccb implements eq4 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ rg7 b;
+public final class ng7 implements ez9 {
+    public final long[] a;
+    public final long[] b;
+    public final long c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ng7(rg7 rg7Var, fw2 fw2Var, byte b) {
-        super(2, fw2Var);
-        this.a = b;
-        this.b = rg7Var;
+    public ng7(long j, long[] jArr, long[] jArr2) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j == -9223372036854775807L ? gcc.T(jArr2[jArr2.length - 1]) : j;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        byte b = this.a;
-        rg7 rg7Var = this.b;
-        switch (b) {
-            case 0:
-                return new ng7(rg7Var, fw2Var, (byte) 0);
-            default:
-                return new ng7(rg7Var, fw2Var, (byte) 1);
+    public static Pair i(long j, long[] jArr, long[] jArr2) {
+        int f = gcc.f(jArr, j, true);
+        long j2 = jArr[f];
+        long j3 = jArr2[f];
+        int i = f + 1;
+        if (i == jArr.length) {
+            return Pair.create(Long.valueOf(j2), Long.valueOf(j3));
         }
+        return Pair.create(Long.valueOf(j), Long.valueOf(((long) ((jArr[i] == j2 ? 0.0d : (j - j2) / (r6 - j2)) * (jArr2[i] - j3))) + j3));
     }
 
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        byte b = this.a;
-        g5c g5cVar = g5c.a;
-        ax2 ax2Var = (ax2) obj;
-        fw2 fw2Var = (fw2) obj2;
-        switch (b) {
-        }
-        return ((ng7) create(ax2Var, fw2Var)).invokeSuspend(g5cVar);
+    @Override // ez9
+    public final long a() {
+        return -1L;
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        byte b = this.a;
-        NativeSharedCounter nativeSharedCounter = hba.b;
-        rg7 rg7Var = this.b;
-        qse.b(obj);
-        switch (b) {
-            case 0:
-                return new Integer(nativeSharedCounter.nativeGetCounterValue(((hba) rg7Var.i.getValue()).a));
-            default:
-                return new Integer(nativeSharedCounter.nativeIncrementAndGetCounterValue(((hba) rg7Var.i.getValue()).a));
-        }
+    @Override // ez9
+    public final long b() {
+        return 0L;
+    }
+
+    @Override // zy9
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // zy9
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // zy9
+    public final yy9 e(long j) {
+        Pair i = i(gcc.i0(gcc.j(j, 0L, this.c)), this.b, this.a);
+        bz9 bz9Var = new bz9(gcc.T(((Long) i.first).longValue()), ((Long) i.second).longValue());
+        return new yy9(bz9Var, bz9Var);
+    }
+
+    @Override // ez9
+    public final long f(long j) {
+        return gcc.T(((Long) i(j, this.a, this.b).second).longValue());
+    }
+
+    @Override // ez9
+    public final int g() {
+        return -2147483647;
+    }
+
+    @Override // zy9
+    public final long h() {
+        return this.c;
     }
 }

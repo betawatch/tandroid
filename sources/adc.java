@@ -1,40 +1,43 @@
 // default package
 
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
-import java.util.WeakHashMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class adc implements View.OnApplyWindowInsetsListener {
-    public vxc a = null;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ no7 c;
+public final class adc {
+    public float a;
+    public float b;
+    public float c;
 
-    public adc(View view, no7 no7Var) {
-        this.b = view;
-        this.c = no7Var;
+    public adc(float f) {
+        d(f);
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        vxc h = vxc.h(view, windowInsets);
-        int i = Build.VERSION.SDK_INT;
-        no7 no7Var = this.c;
-        if (i < 30) {
-            bdc.a(windowInsets, this.b);
-            if (h.equals(this.a)) {
-                return no7Var.W(view, h).g();
-            }
+    public final boolean a(float f) {
+        float f2 = this.b;
+        float A = qd4.A(this.c, f2, f, f2);
+        if (this.a == A) {
+            return false;
         }
-        this.a = h;
-        vxc W = no7Var.W(view, h);
-        if (i >= 30) {
-            return W.g();
+        this.a = A;
+        return true;
+    }
+
+    public final boolean b(float f) {
+        return this.c != f;
+    }
+
+    public final void c(boolean z) {
+        if (!z) {
+            this.b = this.a;
+            return;
         }
-        WeakHashMap weakHashMap = jdc.a;
-        zcc.c(view);
-        return W.g();
+        float f = this.c;
+        this.a = f;
+        this.b = f;
+    }
+
+    public final void d(float f) {
+        this.b = f;
+        this.c = f;
+        this.a = f;
     }
 }

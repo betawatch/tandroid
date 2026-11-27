@@ -1,63 +1,89 @@
 // default package
 
-import android.text.SpannableString;
-import android.text.style.CharacterStyle;
-import java.lang.reflect.Array;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class kj2 implements at9 {
+    public final at9 a;
+    public final boolean b;
+    public boolean c;
+    public final /* synthetic */ lj2 d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public class kj2 extends SpannableString {
-    public static final /* synthetic */ int b = 0;
-    public volatile boolean a;
-
-    public kj2(CharSequence charSequence) {
-        super(charSequence);
-        this.a = false;
+    public kj2(lj2 lj2Var, at9 at9Var, boolean z) {
+        this.d = lj2Var;
+        this.a = at9Var;
+        this.b = z;
     }
 
-    public final int a(CharacterStyle characterStyle) {
-        return super.getSpanEnd(characterStyle);
-    }
-
-    public final int b(CharacterStyle characterStyle) {
-        return super.getSpanStart(characterStyle);
-    }
-
-    public final Object[] c(Class cls, int i) {
-        return super.getSpans(0, i, cls);
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanEnd(Object obj) {
-        if (this.a) {
-            return super.getSpanEnd(obj);
+    @Override // at9
+    public final int a() {
+        int a = this.a.a();
+        if (this.d.r != Long.MIN_VALUE) {
+            a |= 1;
         }
-        return -1;
+        return this.b ? (a & (-3)) | 4 : a;
     }
 
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanFlags(Object obj) {
-        if (this.a) {
-            return super.getSpanFlags(obj);
+    @Override // at9
+    public final void g() {
+        this.a.g();
+    }
+
+    @Override // at9
+    public final int i(ym4 ym4Var, s93 s93Var, int i) {
+        lj2 lj2Var = this.d;
+        if (lj2Var.b()) {
+            return -3;
         }
-        return 0;
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanStart(Object obj) {
-        if (this.a) {
-            return super.getSpanStart(obj);
+        if (this.c) {
+            s93Var.setFlags(4);
+            return -4;
         }
-        return -1;
+        long t = lj2Var.t();
+        int i2 = this.a.i(ym4Var, s93Var, i);
+        if (lj2Var.h != -9223372036854775807L && i2 != -3) {
+            lj2Var.h = -9223372036854775807L;
+        }
+        if (i2 != -5) {
+            long j = lj2Var.r;
+            if (j == Long.MIN_VALUE || ((i2 != -4 || s93Var.e < j) && !(i2 == -3 && t == Long.MIN_VALUE && !s93Var.d))) {
+                return i2;
+            }
+            s93Var.clear();
+            s93Var.setFlags(4);
+            this.c = true;
+            return -4;
+        }
+        long j2 = lj2Var.n;
+        long j3 = lj2Var.r;
+        ko4 ko4Var = (ko4) ym4Var.c;
+        ko4Var.getClass();
+        int i3 = ko4Var.S;
+        int i4 = ko4Var.R;
+        if (i4 != 0 || i3 != 0) {
+            if (j2 != 0) {
+                i4 = 0;
+            }
+            if (j3 != Long.MIN_VALUE) {
+                i3 = 0;
+            }
+            jo4 a = ko4Var.a();
+            a.Q = i4;
+            a.R = i3;
+            ym4Var.c = new ko4(a);
+        }
+        return -5;
     }
 
-    @Override // android.text.SpannableString, android.text.Spanned
-    public Object[] getSpans(int i, int i2, Class cls) {
-        return !this.a ? (Object[]) Array.newInstance((Class<?>) cls, 0) : super.getSpans(i, i2, cls);
+    @Override // at9
+    public final boolean k() {
+        return !this.d.b() && this.a.k();
     }
 
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int nextSpanTransition(int i, int i2, Class cls) {
-        return !this.a ? i2 : super.nextSpanTransition(i, i2, cls);
+    @Override // at9
+    public final int o(long j) {
+        if (this.d.b()) {
+            return -3;
+        }
+        return this.a.o(j);
     }
 }

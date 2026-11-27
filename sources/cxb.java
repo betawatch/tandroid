@@ -1,52 +1,34 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class cxb extends Drawable {
-    public final Drawable a;
-    public final Paint b = new Paint(1);
-    public final RectF c = new RectF();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class cxb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ Toolbar b;
 
-    public cxb(Context context) {
-        this.a = b00.d(context, R.drawable.menu_topic_add);
+    public /* synthetic */ cxb(Toolbar toolbar, byte b) {
+        this.a = b;
+        this.b = toolbar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawRoundRect(this.c, gl.L(10.0f), gl.L(10.0f), this.b);
-        this.a.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.c.set(rect);
-        int centerX = rect.centerX() - gl.L(12.0f);
-        int centerY = rect.centerY() - gl.L(12.0f);
-        this.a.setBounds(centerX, centerY, gl.L(24.0f) + centerX, gl.L(24.0f) + centerY);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.b.setAlpha(i);
-        this.a.setAlpha(i);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Toolbar toolbar = this.b;
+        switch (b) {
+            case 0:
+                exb exbVar = toolbar.f0;
+                j27 j27Var = exbVar == null ? null : exbVar.b;
+                if (j27Var != null) {
+                    j27Var.collapseActionView();
+                    break;
+                }
+                break;
+            default:
+                toolbar.m();
+                break;
+        }
     }
 }

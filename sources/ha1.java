@@ -1,41 +1,60 @@
 // default package
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.camera.CameraView;
-import org.webrtc.SurfaceTextureHelper;
+import android.app.Activity;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ha1 implements SurfaceTexture.OnFrameAvailableListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ha1 extends nx0 {
+    public final ga1 l1;
+    public final /* synthetic */ wk5[] m1;
+    public final /* synthetic */ ka1 n1;
 
-    public /* synthetic */ ha1(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ha1(Activity activity, wk5[] wk5VarArr, int i, ka1 ka1Var) {
+        super(activity, false);
+        this.m1 = wk5VarArr;
+        this.n1 = ka1Var;
+        wk5VarArr[0].setFragmentStack(new ArrayList());
+        ga1 ga1Var = new ga1(this, i);
+        this.l1 = ga1Var;
+        ga1Var.y = true;
+        ((ActionBarLayout) wk5VarArr[0]).b(-1, ga1Var);
+        ((ActionBarLayout) wk5VarArr[0]).e0();
+        ViewGroup view = wk5VarArr[0].getView();
+        int i2 = this.u0;
+        view.setPadding(i2, 0, i2, 0);
+        ga1Var.N = ka1Var;
+        if (ka1Var.I() != null) {
+            ga1Var.c.setText(ka1Var.I());
+        }
+        this.b = wk5VarArr[0].getView();
+        this.w0 = false;
+        setOnDismissListener(new o1(this, (byte) 10));
     }
 
-    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((CameraView.CameraGLThread) obj).updTex(surfaceTexture);
-                return;
-            case 1:
-                ((td4) obj).b(false, true, true);
-                return;
-            case 2:
-                yl9 yl9Var = (yl9) obj;
-                synchronized (yl9Var.b) {
-                    yl9Var.m = true;
-                    yl9Var.b.notifyAll();
-                }
-                return;
-            default:
-                ((SurfaceTextureHelper) obj).lambda$new$0(surfaceTexture);
-                return;
+    @Override // nx0
+    public final boolean D() {
+        return false;
+    }
+
+    @Override // nx0, android.app.Dialog, android.content.DialogInterface, ag0
+    public final void dismiss() {
+        super.dismiss();
+        this.m1[0] = null;
+        this.n1.onDismiss();
+    }
+
+    @Override // nx0, android.app.Dialog
+    public final void onBackPressed() {
+        wk5[] wk5VarArr = this.m1;
+        wk5 wk5Var = wk5VarArr[0];
+        if (wk5Var == null || wk5Var.getFragmentStack().size() <= 1) {
+            super.onBackPressed();
+        } else {
+            ((ActionBarLayout) wk5VarArr[0]).G();
         }
     }
 }

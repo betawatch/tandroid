@@ -1,33 +1,24 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class wba implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ iea b;
-    public final /* synthetic */ int c;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ wba(iea ieaVar, int i, byte b) {
-        this.a = b;
-        this.b = ieaVar;
-        this.c = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class wba extends ax2 {
+    public /* synthetic */ Object a;
+    public final /* synthetic */ xba b;
+    public int c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wba(xba xbaVar, ax2 ax2Var) {
+        super(ax2Var);
+        this.b = xbaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        int i = this.c;
-        iea ieaVar = this.b;
-        switch (b) {
-            case 0:
-                ieaVar.h.scrollBy(0, i);
-                break;
-            case 1:
-                ieaVar.h.scrollBy(0, i);
-                break;
-            default:
-                ieaVar.h.scrollBy(0, i);
-                break;
-        }
+    @Override // qf0
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.c |= TLObject.FLAG_31;
+        return this.b.c(null, this);
     }
 }

@@ -1,39 +1,45 @@
 // default package
 
-import java.util.Map;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
 public final class k44 {
     public final String a;
-    public final long b;
-    public final Map c;
+    public final Enum b;
+    public volatile boolean c;
+    public volatile Enum d;
 
-    public k44(String str, long j, Map map) {
-        map.getClass();
+    public k44(String str, Enum r2) {
         this.a = str;
-        this.b = j;
-        this.c = map;
+        this.b = r2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final Enum a() {
+        if (!this.c) {
+            synchronized (this) {
+                if (!this.c) {
+                    SharedPreferences sharedPreferences = zba.a;
+                    String str = this.a;
+                    Enum r2 = this.b;
+                    String string = sharedPreferences.getString(str, r2.name());
+                    if (string != null) {
+                        try {
+                            r2 = Enum.valueOf(r2.getDeclaringClass(), string);
+                        } catch (IllegalArgumentException unused) {
+                        }
+                    }
+                    this.d = r2;
+                    this.c = true;
+                }
+            }
         }
-        if (!(obj instanceof k44)) {
-            return false;
-        }
-        k44 k44Var = (k44) obj;
-        return this.a.equals(k44Var.a) && this.b == k44Var.b && rp5.a(this.c, k44Var.c);
+        return this.d;
     }
 
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        long j = this.b;
-        return this.c.hashCode() + ((hashCode + ((int) (j ^ (j >>> 32)))) * 31);
-    }
-
-    public final String toString() {
-        return "EventMetadata(sessionId=" + this.a + ", timestamp=" + this.b + ", additionalCustomKeys=" + this.c + ')';
+    public final synchronized void b(Enum r3) {
+        this.d = r3;
+        this.c = true;
+        zba.a.edit().putString(this.a, r3.name()).apply();
     }
 }

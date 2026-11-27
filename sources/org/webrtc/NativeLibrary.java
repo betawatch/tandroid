@@ -1,13 +1,13 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 class NativeLibrary {
-    private static String TAG = "NativeLibrary";
+    private static final String TAG = "NativeLibrary";
     private static boolean libraryLoaded;
-    private static Object lock = new Object();
+    private static final Object lock = new Object();
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     static class DefaultLoader implements NativeLibraryLoader {
         @Override // org.webrtc.NativeLibraryLoader
         public boolean load(String str) {
@@ -19,13 +19,11 @@ class NativeLibrary {
 
     public static void initialize(NativeLibraryLoader nativeLibraryLoader, String str) {
         synchronized (lock) {
-            boolean z = libraryLoaded;
-            String str2 = TAG;
-            if (z) {
-                Logging.d(str2, "Native library has already been loaded.");
+            if (libraryLoaded) {
+                Logging.d(TAG, "Native library has already been loaded.");
                 return;
             }
-            Logging.d(str2, "Loading native library: " + str);
+            Logging.d(TAG, "Loading native library: " + str);
             libraryLoaded = nativeLibraryLoader.load(str);
         }
     }

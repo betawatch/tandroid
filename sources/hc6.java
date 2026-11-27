@@ -1,29 +1,48 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class hc6 implements ed {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mf6 b;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ hc6(mf6 mf6Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class hc6 extends v79 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc6 b;
+
+    public /* synthetic */ hc6(uc6 uc6Var, byte b) {
         this.a = b;
-        this.b = mf6Var;
+        this.b = uc6Var;
     }
 
-    @Override // ed
-    public final void u(hd hdVar, int i) {
+    @Override // v79
+    public final void a(RecyclerView recyclerView, int i) {
         byte b = this.a;
-        mf6 mf6Var = this.b;
+        uc6 uc6Var = this.b;
         switch (b) {
             case 0:
-                mf6Var.b[mf6Var.a].e();
-                mf6Var.x1(true, true);
+                if (i == 1 && uc6Var.u0 && uc6Var.v0) {
+                    hl.t1(uc6Var.getParentActivity().getCurrentFocus());
+                    break;
+                }
                 break;
             default:
-                mf6Var.m0 = true;
-                if (mf6Var.a != 0) {
-                    mf6Var.I1(0, true, null, true);
+                boolean z = i != 0;
+                uc6Var.N = z;
+                if (!z && uc6Var.I != null) {
+                    uc6Var.I = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // v79
+    public final void b(RecyclerView recyclerView, int i, int i2) {
+        switch (this.a) {
+            case 1:
+                uc6 uc6Var = this.b;
+                uc6Var.N0(false);
+                if (uc6Var.I != null) {
+                    uc6Var.K += i2;
                     break;
                 }
                 break;

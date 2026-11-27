@@ -1,58 +1,69 @@
 // default package
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
+import j$.util.function.Predicate$-CC;
+import java.util.Map;
+import java.util.function.Predicate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class hh implements Runnable {
+public final /* synthetic */ class hh implements Predicate {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ je5 b;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ hh(je5 je5Var, byte b) {
+    public /* synthetic */ hh(byte b, long j) {
         this.a = b;
-        this.b = je5Var;
+        this.b = j;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final /* synthetic */ Predicate and(Predicate predicate) {
         byte b = this.a;
-        je5 je5Var = this.b;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public final /* synthetic */ Predicate negate() {
+        byte b = this.a;
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public final /* synthetic */ Predicate or(Predicate predicate) {
+        byte b = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        byte b = this.a;
+        long j = this.b;
         switch (b) {
             case 0:
-                gl.B2(je5Var);
+                TLObject tLObject = (TLObject) obj;
+                if (!(tLObject instanceof TLRPC.User)) {
+                    if (tLObject instanceof TLRPC.Chat) {
+                        break;
+                    }
+                } else if (((TLRPC.User) tLObject).id != j) {
+                }
                 break;
             case 1:
-                gl.B2(je5Var);
+                if (((TLRPC.User) obj).id != j) {
+                    break;
+                }
                 break;
             case 2:
-                gl.B2(je5Var);
-                break;
-            case 3:
-                float[] fArr = FragmentContextView.W0;
-                gl.B2(je5Var);
-                break;
-            case 4:
-            case 7:
-                je5Var.f(true);
-                break;
-            case 5:
-                je5Var.y();
-                break;
-            case 6:
-                Drawable[] drawableArr = PhotoViewer.d9;
-                gl.B2(je5Var);
-                break;
-            case 8:
-                gl.B2(je5Var);
-                break;
-            case 9:
-                gl.B2(je5Var);
+                if (((TLRPC.User) obj).id != j) {
+                    break;
+                }
                 break;
             default:
-                gl.B2(je5Var);
+                Map.Entry entry = (Map.Entry) obj;
+                if (((View) entry.getKey()).isAttachedToWindow() && ((View) entry.getKey()).isShown() && ((View) entry.getKey()).getWindowVisibility() == 0 && j - ((Long) entry.getValue()).longValue() <= 300) {
+                    break;
+                }
                 break;
         }
+        return false;
     }
 }

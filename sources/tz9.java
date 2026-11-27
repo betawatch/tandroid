@@ -1,29 +1,47 @@
 // default package
 
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class tz9 {
-    public boolean a = true;
-    public boolean b;
-    public String c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class tz9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ n1a b;
+    public final /* synthetic */ boolean c;
 
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj != null && tz9.class == obj.getClass()) {
-                tz9 tz9Var = (tz9) obj;
-                boolean z = (TextUtils.isEmpty(this.c) && TextUtils.isEmpty(tz9Var.c)) || Objects.equals(this.c, tz9Var.c);
-                if (this.a != tz9Var.a || this.b != tz9Var.b || !z) {
-                }
-            }
-            return false;
-        }
-        return true;
+    public /* synthetic */ tz9(n1a n1aVar, boolean z, byte b) {
+        this.a = b;
+        this.b = n1aVar;
+        this.c = z;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b), this.c);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        boolean z = this.c;
+        n1a n1aVar = this.b;
+        switch (b) {
+            case 0:
+                k0a k0aVar = n1aVar.i0;
+                a0a a0aVar = n1aVar.j0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!z) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f = 1.0f - floatValue;
+                k0aVar.setAlpha(f);
+                k0aVar.setTranslationY(hl.L(8.0f) * floatValue);
+                a0aVar.setAlpha(floatValue);
+                a0aVar.setTranslationY(hl.L(8.0f) * f);
+                n1aVar.k0.setAlpha(a0aVar.getAlpha() * floatValue);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!z) {
+                    floatValue2 = 1.0f - floatValue2;
+                }
+                n1aVar.k0.setAlpha(n1aVar.j0.getAlpha() * floatValue2);
+                break;
+        }
     }
 }

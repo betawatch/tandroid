@@ -1,20 +1,30 @@
 // default package
 
-import android.view.View;
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class m5c implements n8c, o8c {
-    public final /* synthetic */ n5c a;
+public final class m5c implements vma {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ n5c c;
 
-    @Override // o8c
-    public final Boolean d(c4c c4cVar, View view, Integer num, Float f, Float f2) {
-        return Boolean.valueOf(this.a.b0(c4cVar, view));
+    public m5c(n5c n5cVar) {
+        this.c = n5cVar;
     }
 
-    @Override // n8c
-    public final void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.a0((c4c) obj, (View) obj2);
+    @Override // vma
+    public final void L(int i, boolean z) {
+        if (this.a == i && this.b == z) {
+            return;
+        }
+        this.a = i;
+        this.b = z;
+        if (i > hl.L(20.0f)) {
+            n5c n5cVar = this.c;
+            if (n5cVar.h0) {
+                return;
+            }
+            n5cVar.o0.r0 = false;
+            n5cVar.h0 = true;
+        }
     }
 }

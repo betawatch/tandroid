@@ -1,29 +1,62 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class fva implements Runnable {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
+import android.os.Bundle;
+import j$.util.Objects;
 
-    public /* synthetic */ fva(int i, int i2, long j, boolean z) {
-        this.a = j;
-        this.b = i;
-        this.c = i2;
-        this.d = z;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class fva extends s29 {
+    public static final String d;
+    public static final String e;
+    public final int b;
+    public final float c;
+
+    static {
+        String str = gcc.a;
+        d = "1";
+        e = "2";
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        long j = this.a;
-        int i = this.b;
-        int i2 = this.c;
-        if (j != 0) {
-            ct0.g(i).p(i2, j);
-        } else {
-            gta.v(i, this.d).V(i2);
+    public fva(int i, float f) {
+        boolean z = false;
+        yve.e("maxStars must be a positive integer", i > 0);
+        if (f >= 0.0f && f <= i) {
+            z = true;
         }
+        yve.e("starRating is out of range [0, maxStars]", z);
+        this.b = i;
+        this.c = f;
+    }
+
+    @Override // s29
+    public final boolean b() {
+        return this.c != -1.0f;
+    }
+
+    @Override // s29
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(s29.a, 2);
+        bundle.putInt(d, this.b);
+        bundle.putFloat(e, this.c);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof fva)) {
+            return false;
+        }
+        fva fvaVar = (fva) obj;
+        return this.b == fvaVar.b && this.c == fvaVar.c;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
+    }
+
+    public fva(int i) {
+        yve.e("maxStars must be a positive integer", i > 0);
+        this.b = i;
+        this.c = -1.0f;
     }
 }

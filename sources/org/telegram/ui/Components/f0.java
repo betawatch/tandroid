@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class f0 implements TextWatcher {
     public final /* synthetic */ g0 a;
@@ -24,22 +24,22 @@ public final class f0 implements TextWatcher {
         int length = obj.length();
         ThemeEditorView.EditorAlert editorAlert = this.a.c;
         if (length != 0) {
-            g24 g24Var = editorAlert.o1;
-            if (g24Var != null) {
-                g24Var.setText(k96.M0(2131747975, null));
+            b34 b34Var = editorAlert.o1;
+            if (b34Var != null) {
+                b34Var.setText(ob6.M0(2131747898, null));
             }
         } else {
-            w39 adapter = editorAlert.m1.getAdapter();
+            j79 adapter = editorAlert.m1.getAdapter();
             ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
             if (adapter != editorAlert2.r1) {
-                int D0 = editorAlert2.D0();
-                this.a.c.o1.setText(k96.M0(2131748038, null));
+                int E0 = editorAlert2.E0();
+                this.a.c.o1.setText(ob6.M0(2131747961, null));
                 this.a.c.o1.c();
                 ThemeEditorView.EditorAlert editorAlert3 = this.a.c;
                 editorAlert3.m1.setAdapter(editorAlert3.r1);
                 this.a.c.r1.f();
-                if (D0 > 0) {
-                    this.a.c.q1.g1(0, -D0);
+                if (E0 > 0) {
+                    this.a.c.q1.g1(0, -E0);
                 }
             }
         }
@@ -55,14 +55,14 @@ public final class f0 implements TextWatcher {
         if (obj.length() != 0) {
             int i = c0Var.d + 1;
             c0Var.d = i;
-            c0Var.h = new t79(c0Var, obj, i, (byte) 23);
+            c0Var.h = new a39(c0Var, obj, i, (byte) 24);
             Utilities.g.d(c0Var.h, 300L);
             return;
         }
         c0Var.e.clear();
         ThemeEditorView.EditorAlert editorAlert4 = c0Var.r;
         int i2 = ThemeEditorView.EditorAlert.G1;
-        editorAlert4.z1 = editorAlert4.D0();
+        editorAlert4.z1 = editorAlert4.E0();
         c0Var.d = -1;
         c0Var.f();
     }

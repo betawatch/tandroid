@@ -1,16 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.os.Build;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class qa0 {
-    public final String a;
-    public final long b;
-    public final int c;
+    public final int a;
+    public final int b;
+    public final long c;
+    public final long d;
+    public final boolean e;
+    public final int f;
 
-    public qa0(String str, long j, int i) {
-        this.a = str;
-        this.b = j;
-        this.c = i;
+    public qa0(int i, int i2, int i3, long j, long j2, boolean z) {
+        String str = Build.MODEL;
+        String str2 = Build.MANUFACTURER;
+        String str3 = Build.PRODUCT;
+        this.a = i;
+        if (str == null) {
+            p3d.h("Null model");
+            throw null;
+        }
+        this.b = i2;
+        this.c = j;
+        this.d = j2;
+        this.e = z;
+        this.f = i3;
+        if (str2 == null) {
+            p3d.h("Null manufacturer");
+            throw null;
+        }
+        if (str3 != null) {
+            return;
+        }
+        p3d.h("Null modelClass");
+        throw null;
     }
 
     public final boolean equals(Object obj) {
@@ -21,41 +45,47 @@ public final class qa0 {
             return false;
         }
         qa0 qa0Var = (qa0) obj;
-        String str = qa0Var.a;
-        String str2 = this.a;
-        if (str2 == null) {
-            if (str != null) {
-                return false;
-            }
-        } else if (!str2.equals(str)) {
+        if (this.a != qa0Var.a) {
             return false;
         }
-        if (this.b != qa0Var.b) {
+        String str = Build.MODEL;
+        if (!str.equals(str) || this.b != qa0Var.b || this.c != qa0Var.c || this.d != qa0Var.d || this.e != qa0Var.e || this.f != qa0Var.f) {
             return false;
         }
-        int i = qa0Var.c;
-        int i2 = this.c;
-        return i2 == 0 ? i == 0 : ug8.c(i2, i);
+        String str2 = Build.MANUFACTURER;
+        if (!str2.equals(str2)) {
+            return false;
+        }
+        String str3 = Build.PRODUCT;
+        return str3.equals(str3);
     }
 
     public final int hashCode() {
-        String str = this.a;
-        int hashCode = str == null ? 0 : str.hashCode();
-        long j = this.b;
-        int i = (((hashCode ^ 1000003) * 1000003) ^ ((int) ((j >>> 32) ^ j))) * 1000003;
-        int i2 = this.c;
-        return i ^ (i2 != 0 ? ug8.F(i2) : 0);
+        int hashCode = (((((this.a ^ 1000003) * 1000003) ^ Build.MODEL.hashCode()) * 1000003) ^ this.b) * 1000003;
+        long j = this.c;
+        int i = (hashCode ^ ((int) ((j >>> 32) ^ j))) * 1000003;
+        long j2 = this.d;
+        return ((((((((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ (this.e ? 1231 : 1237)) * 1000003) ^ this.f) * 1000003) ^ Build.MANUFACTURER.hashCode()) * 1000003) ^ Build.PRODUCT.hashCode();
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("TokenResult{token=");
+        StringBuilder sb = new StringBuilder("DeviceData{arch=");
         sb.append(this.a);
-        sb.append(", tokenExpirationTimestamp=");
+        sb.append(", model=");
+        sb.append(Build.MODEL);
+        sb.append(", availableProcessors=");
         sb.append(this.b);
-        sb.append(", responseCode=");
-        int i = this.c;
-        sb.append(i != 1 ? i != 2 ? i != 3 ? "null" : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
-        sb.append("}");
-        return sb.toString();
+        sb.append(", totalRam=");
+        sb.append(this.c);
+        sb.append(", diskSpace=");
+        sb.append(this.d);
+        sb.append(", isEmulator=");
+        sb.append(this.e);
+        sb.append(", state=");
+        sb.append(this.f);
+        sb.append(", manufacturer=");
+        sb.append(Build.MANUFACTURER);
+        sb.append(", modelClass=");
+        return c00.k(sb, Build.PRODUCT, "}");
     }
 }

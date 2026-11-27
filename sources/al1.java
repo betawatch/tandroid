@@ -1,90 +1,42 @@
 // default package
 
-import android.net.Uri;
-import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class al1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ mu1 b;
-    public final /* synthetic */ String c;
+public interface al1 {
+    void B(dl1 dl1Var, int i);
 
-    public /* synthetic */ al1(mu1 mu1Var, String str, byte b) {
-        this.a = b;
-        this.b = mu1Var;
-        this.c = str;
-    }
+    void I(long j);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.I8(this.c);
-                break;
-            case 1:
-                this.b.J8(this.c);
-                break;
-            case 2:
-                this.b.L8(this.c);
-                break;
-            case 3:
-                mu1 mu1Var = this.b;
-                String str = this.c;
-                mu1Var.getClass();
-                if (str != null && str.length() != 0) {
-                    mu1Var.getMessagesController().E4(str, mu1Var.f);
-                    break;
-                } else {
-                    mu1Var.getSendMessagesHelper().q0(x3a.b("/start", mu1Var.l6, null, null, null, false, null, null, null, true, 0, 0, null, false));
-                    break;
-                }
-                break;
-            case 4:
-                this.b.ra(this.c);
-                break;
-            case 5:
-                mu1 mu1Var2 = this.b;
-                String str2 = this.c;
-                mu1Var2.getClass();
-                mu1Var2.presentFragment(new qpc(str2));
-                break;
-            case 6:
-                mu1 mu1Var3 = this.b;
-                String str3 = this.c;
-                String str4 = mu1Var3.getMessagesController().k4.G1.f;
-                if (TextUtils.isEmpty(str4)) {
-                    str4 = "https://tonviewer.com/";
-                } else if (!str4.endsWith("/")) {
-                    str4 = str4.concat("/");
-                }
-                d01.v(mu1Var3.getParentActivity(), str4 + Uri.encode(str3), false);
-                break;
-            case 7:
-                this.b.ia(this.c, false);
-                break;
-            case 8:
-                d01.t(this.b.getParentActivity(), "tel:".concat(this.c));
-                break;
-            case 9:
-                mu1 mu1Var4 = this.b;
-                gl.g(this.c);
-                u21.b0(mu1Var4).i(k96.M0(2131747102, null)).j();
-                break;
-            case 10:
-                this.b.M8(this.c);
-                break;
-            case 11:
-                d01.t(this.b.getParentActivity(), "tel:".concat(this.c));
-                break;
-            case 12:
-                mu1 mu1Var5 = this.b;
-                gl.g(this.c);
-                u21.b0(mu1Var5).i(k96.M0(2131747102, null)).j();
-                break;
-            default:
-                d01.t(this.b.getParentActivity(), "https://fragment.com/username/".concat(this.c));
-                break;
-        }
-    }
+    void J(dl1 dl1Var);
+
+    void X(dl1 dl1Var);
+
+    long a();
+
+    long c();
+
+    void f0(dl1 dl1Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str);
+
+    boolean h();
+
+    boolean i0(dl1 dl1Var, float f, float f2);
+
+    void j(dl1 dl1Var);
+
+    void k(dl1 dl1Var, String str);
+
+    void n(dl1 dl1Var, int i, int i2);
+
+    void o(dl1 dl1Var);
+
+    void q(dl1 dl1Var, TLRPC.Document document, TLRPC.VideoSize videoSize);
+
+    e w();
+
+    void x(TLRPC.TL_chatInviteExported tL_chatInviteExported);
+
+    void y(dl1 dl1Var, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2);
 }

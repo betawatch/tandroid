@@ -1,36 +1,46 @@
 // default package
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class pi0 {
-    public final int a;
-    public final CharSequence b;
+public final class pi0 extends xtb {
+    public final int c;
+    public final int d;
 
-    public pi0(int i, CharSequence charSequence) {
-        this.a = i;
-        this.b = charSequence;
+    public pi0(xtb xtbVar, int i, int i2) {
+        super(xtbVar);
+        this.c = i;
+        this.d = i2;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof pi0)) {
-            return false;
+    @Override // xtb
+    public final void a(qj0 qj0Var, byte[] bArr) {
+        int i = 0;
+        while (true) {
+            int i2 = this.d;
+            if (i >= i2) {
+                return;
+            }
+            if (i == 0 || (i == 31 && i2 <= 62)) {
+                qj0Var.b(31, 5);
+                if (i2 > 62) {
+                    qj0Var.b(i2 - 31, 16);
+                } else if (i == 0) {
+                    qj0Var.b(Math.min(i2, 31), 5);
+                } else {
+                    qj0Var.b(i2 - 31, 5);
+                }
+            }
+            qj0Var.b(bArr[this.c + i], 8);
+            i++;
         }
-        pi0 pi0Var = (pi0) obj;
-        if (this.a != pi0Var.a) {
-            return false;
-        }
-        CharSequence charSequence = pi0Var.b;
-        CharSequence charSequence2 = this.b;
-        String charSequence3 = charSequence2 != null ? charSequence2.toString() : null;
-        String charSequence4 = charSequence != null ? charSequence.toString() : null;
-        return charSequence3 == null ? charSequence4 == null : charSequence3.equals(charSequence4);
     }
 
-    public final int hashCode() {
-        Integer valueOf = Integer.valueOf(this.a);
-        CharSequence charSequence = this.b;
-        return Arrays.hashCode(new Object[]{valueOf, charSequence != null ? charSequence.toString() : null});
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("<");
+        sb.append(this.c);
+        sb.append("::");
+        sb.append((r1 + this.d) - 1);
+        sb.append('>');
+        return sb.toString();
     }
 }

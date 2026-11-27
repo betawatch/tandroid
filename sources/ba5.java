@@ -1,26 +1,50 @@
 // default package
 
-import android.app.Activity;
+import android.view.View;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ba5 extends h26 {
-    public final /* synthetic */ ca5 S2;
+public final class ba5 extends zb3 {
+    public final /* synthetic */ da5 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ba5(ca5 ca5Var, ca5 ca5Var2, Activity activity, int i, int i2, wjb wjbVar) {
-        super(i, i2, wjbVar, activity, ca5Var2);
-        this.S2 = ca5Var;
+    public ba5(da5 da5Var) {
+        this.F = da5Var;
     }
 
-    @Override // fx0, android.app.Dialog, android.content.DialogInterface, zf0
-    public final void dismiss() {
-        super.dismiss();
-        this.S2.C0 = false;
+    @Override // zb3
+    public final float A(View view) {
+        return 0.6f;
     }
 
-    @Override // fx0
-    public final void x() {
-        this.S2.C0 = false;
+    @Override // cma
+    public final void w(f89 f89Var) {
+        w49 w49Var;
+        ca5 ca5Var;
+        da5 da5Var = this.F;
+        aa5 aa5Var = da5Var.T0;
+        int b = f89Var.b();
+        List list = aa5Var.c;
+        GroupCallMessage groupCallMessage = null;
+        if (list != null && b >= 0 && b < list.size()) {
+            groupCallMessage = (GroupCallMessage) aa5Var.c.get(b);
+        }
+        if (groupCallMessage == null || (w49Var = groupCallMessage.visibleReaction) == null) {
+            return;
+        }
+        View view = f89Var.a;
+        if (!(view instanceof v95) || (ca5Var = da5Var.Y0) == null) {
+            return;
+        }
+        j95 j95Var = ((n75) ca5Var).a;
+        s49 s49Var = new s49(j95Var.getContext(), null, j95Var.D1, (v95) view, null, 0.0f, 0.0f, w49Var, j95Var.a, 1, false);
+        s49.B = s49Var;
+        p49 p49Var = s49Var.i;
+        p49Var.setTag(R.id.parent_tag, 1);
+        j95Var.c.addView(p49Var);
+        s49Var.s = true;
+        s49Var.y = System.currentTimeMillis();
     }
 }

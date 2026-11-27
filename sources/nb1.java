@@ -1,48 +1,33 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class nb1 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ j7b b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class nb1 extends ImageView {
+    public final float a;
+    public final v41 b;
 
-    public /* synthetic */ nb1(j7b j7bVar, byte b) {
-        this.a = b;
-        this.b = j7bVar;
+    public nb1(Context context) {
+        super(context);
+        this.b = new v41(this);
+        this.a = 0.2f;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        j7b j7bVar = this.b;
-        switch (b) {
-            case 0:
-                j7bVar.n();
-                break;
-            case 1:
-                j7bVar.K0 = false;
-                j7bVar.L0 = TLObject.FLAG_31;
-                j7bVar.invalidate();
-                j7bVar.S0.setVisibility(0);
-                j7bVar.T0.setVisibility(0);
-                break;
-            default:
-                t7b t7bVar = j7bVar.S1;
-                i7b i7bVar = t7bVar.Y0;
-                if (i7bVar != null) {
-                    i7bVar.P = false;
-                    i7bVar.b();
-                    i7b i7bVar2 = t7bVar.Y0;
-                    i7bVar2.m(0L);
-                    kob kobVar = i7bVar2.G;
-                    if (kobVar != null) {
-                        kobVar.setProgress(0L);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        float a = this.b.a(this.a);
+        canvas.scale(a, a, getWidth() / 2.0f, getHeight() / 2.0f);
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z) {
+        super.setPressed(z);
+        this.b.c(z);
     }
 }

@@ -1,59 +1,58 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ox9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ lx9 b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ lx9 e;
-    public final /* synthetic */ px9 f;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ox9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ wx9 b;
+    public final /* synthetic */ long c;
 
-    public ox9(px9 px9Var, boolean z, lx9 lx9Var, boolean[] zArr, boolean z2, lx9 lx9Var2) {
-        this.f = px9Var;
-        this.a = z;
-        this.b = lx9Var;
-        this.c = zArr;
-        this.d = z2;
-        this.e = lx9Var2;
+    public /* synthetic */ ox9(wx9 wx9Var, long j, byte b) {
+        this.a = b;
+        this.b = wx9Var;
+        this.c = j;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        lx9 lx9Var;
-        px9 px9Var = this.f;
-        oc6 oc6Var = px9Var.s;
-        boolean z = this.a;
-        float f = z ? 1.0f : 0.0f;
-        px9Var.J = f;
-        gl.V1(px9Var.c, px9Var.d, f, px9Var.e);
-        oc6Var.invalidate();
-        if (!z) {
-            px9Var.w.setAlpha(px9Var.J);
-        }
-        if (px9Var.J < 0.5f && !z && (lx9Var = this.b) != null) {
-            boolean[] zArr = this.c;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                lx9Var.run();
-            }
-        }
-        if (!z) {
-            if (this.d) {
-                px9Var.a.b = false;
-                px9Var.Q.i0.invalidate();
-            }
-            kk7.e().k(kk7.j1, 4);
-        }
-        px9Var.L = null;
-        oc6Var.invalidate();
-        lx9 lx9Var2 = this.e;
-        if (lx9Var2 != null) {
-            lx9Var2.run();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 2;
+        long j = this.c;
+        byte b3 = 1;
+        wx9 wx9Var = this.b;
+        switch (b) {
+            case 0:
+                zh6 zh6Var = wx9Var.getMessagesController().R;
+                long j2 = this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) zh6Var.f(j2);
+                if (dialog != null) {
+                    dialog.unread_count = 0;
+                    wx9Var.getMessagesController().S.l(dialog.id);
+                }
+                wx9Var.getMessagesStorage().a.c(new ox9(wx9Var, j2, b3));
+                jf7 messagesStorage = wx9Var.getMessagesStorage();
+                messagesStorage.a.c(new gd7(messagesStorage, 1, j2, (byte) 0));
+                wx9Var.getNotificationCenter().k(3, new Object[0]);
+                wx9Var.getNotificationCenter().k(42, Long.valueOf(j2), Boolean.FALSE, null);
+                break;
+            case 1:
+                hl.c3(new ox9(wx9Var, j, b2));
+                break;
+            case 2:
+                ip7 notificationsController = wx9Var.getNotificationsController();
+                long j3 = this.c;
+                notificationsController.L(null, j3, 0, ConnectionsManager.DEFAULT_DATACENTER_ID, false);
+                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                longSparseIntArray.put(j3, 0);
+                wx9Var.getNotificationsController().J(longSparseIntArray);
+                break;
+            default:
+                wx9Var.getMessagesController().V(0, j, false);
+                break;
         }
     }
 }

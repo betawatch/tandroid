@@ -1,37 +1,31 @@
 // default package
 
-import j$.util.Objects;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class nj6 implements Comparable {
-    public final long a;
-    public final long b;
-    public final long c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class nj6 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ck6 b;
 
-    public nj6(long j, long j2, long j3) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
+    public /* synthetic */ nj6(ck6 ck6Var, byte b) {
+        this.a = b;
+        this.b = ck6Var;
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.a, ((nj6) obj).a);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte b = this.a;
+        ck6 ck6Var = this.b;
+        switch (b) {
+            case 0:
+                hl.c3(new z56(ck6Var, tL_error, (byte) 26));
+                break;
+            default:
+                hl.c3(new mj6(ck6Var, tL_error, tLObject, (byte) 1));
+                break;
         }
-        if (!(obj instanceof nj6)) {
-            return false;
-        }
-        nj6 nj6Var = (nj6) obj;
-        return this.a == nj6Var.a && this.b == nj6Var.b && this.c == nj6Var.c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c));
     }
 }

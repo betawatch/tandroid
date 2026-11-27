@@ -1,34 +1,35 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class gm3 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ p8c c;
+import java.util.Comparator;
+import org.telegram.ui.Dictation.DictationAsr;
 
-    public /* synthetic */ gm3(p8c p8cVar, String str) {
-        this.c = p8cVar;
-        this.b = str;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class gm3 implements Comparator {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ float[] b;
+
+    public /* synthetic */ gm3(float[] fArr, byte b) {
+        this.a = b;
+        this.b = fArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         byte b = this.a;
-        p8c p8cVar = this.c;
-        String str = this.b;
+        float[] fArr = this.b;
+        Integer num = (Integer) obj;
+        Integer num2 = (Integer) obj2;
         switch (b) {
             case 0:
-                p8cVar.a(str);
+                nm3[] nm3VarArr = DictationAsr.a;
                 break;
-            default:
-                gl.c3(new lw8(p8cVar, hv8.c(str, gl.L(240.0f), w34.c, 0.75f, null), (byte) 1));
+            case 3:
+                float f = fArr[num.intValue()];
+                float log = f > 0.0f ? (float) Math.log(f) : 0.0f;
+                float f2 = fArr[num2.intValue()];
                 break;
         }
-    }
-
-    public /* synthetic */ gm3(String str, p8c p8cVar) {
-        this.b = str;
-        this.c = p8cVar;
+        return Float.compare(fArr[(num.intValue() * 3) + 2], fArr[(num2.intValue() * 3) + 2]);
     }
 }

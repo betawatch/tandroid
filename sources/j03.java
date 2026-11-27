@@ -1,29 +1,41 @@
 // default package
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class j03 extends b4 {
-    public static final Parcelable.Creator<j03> CREATOR = new x21((byte) 12);
-    public final String a;
-    public final Bundle b;
+public final /* synthetic */ class j03 extends us4 implements sr4 {
+    public final /* synthetic */ byte a;
 
-    public j03(String str, Bundle bundle) {
-        str.getClass();
-        bundle.getClass();
-        this.a = str;
-        this.b = bundle;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j03(int i, Object obj, Class cls, String str, String str2, int i2, byte b) {
+        super(i, obj, cls, str, str2, i2);
+        this.a = b;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        parcel.getClass();
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 1, this.a);
-        jte.b(parcel, 2, this.b);
-        jte.s(parcel, r);
+    @Override // sr4
+    public final Object invoke() {
+        byte b = this.a;
+        f9c f9cVar = f9c.a;
+        switch (b) {
+            case 0:
+                ((k03) this.receiver).getClass();
+                String name = Thread.currentThread().getName();
+                name.getClass();
+                break;
+            case 1:
+                ((k03) this.receiver).getClass();
+                String name2 = Thread.currentThread().getName();
+                name2.getClass();
+                break;
+            case 2:
+                ((k03) this.receiver).getClass();
+                break;
+            case 3:
+                ((vr7) this.receiver).c();
+                break;
+            default:
+                ((vr7) this.receiver).c();
+                break;
+        }
+        return f9cVar;
     }
 }

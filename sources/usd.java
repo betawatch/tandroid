@@ -1,31 +1,45 @@
 // default package
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.RemoteException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class usd extends b4 {
-    public static final Parcelable.Creator<usd> CREATOR = new rpd((byte) 11);
-    public final int a;
-    public final boolean b;
-    public final boolean c;
+public abstract class usd {
+    public static gme a;
 
-    public usd(int i, boolean z, boolean z2) {
-        this.a = i;
-        this.b = z;
-        this.c = z2;
+    public static zm9 a(Bitmap bitmap) {
+        try {
+            gme gmeVar = a;
+            xve.i(gmeVar, "IBitmapDescriptorFactory is not initialized");
+            nae naeVar = (nae) gmeVar;
+            Parcel R = naeVar.R();
+            jld.b(R, bitmap);
+            Parcel Q = naeVar.Q(R, 6);
+            al5 T = br7.T(Q.readStrongBinder());
+            Q.recycle();
+            return new zm9(T);
+        } catch (RemoteException e) {
+            p3d.i(e);
+            return null;
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.q(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        jte.q(parcel, 3, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        jte.s(parcel, r);
+    public static zm9 b(int i) {
+        try {
+            gme gmeVar = a;
+            xve.i(gmeVar, "IBitmapDescriptorFactory is not initialized");
+            nae naeVar = (nae) gmeVar;
+            Parcel R = naeVar.R();
+            R.writeInt(i);
+            Parcel Q = naeVar.Q(R, 1);
+            al5 T = br7.T(Q.readStrongBinder());
+            Q.recycle();
+            return new zm9(T);
+        } catch (RemoteException e) {
+            p3d.i(e);
+            return null;
+        }
     }
 }

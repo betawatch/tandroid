@@ -5,15 +5,13 @@ import android.hardware.camera2.CameraManager;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class Camera2Capturer extends CameraCapturer {
     private final CameraManager cameraManager;
-    private final Context context;
 
     public Camera2Capturer(Context context, String str, CameraVideoCapturer.CameraEventsHandler cameraEventsHandler) {
         super(str, cameraEventsHandler, new Camera2Enumerator(context));
-        this.context = context;
         this.cameraManager = (CameraManager) context.getSystemService("camera");
     }
 
@@ -35,6 +33,11 @@ public class Camera2Capturer extends CameraCapturer {
     @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
     public /* bridge */ /* synthetic */ void initialize(SurfaceTextureHelper surfaceTextureHelper, Context context, CapturerObserver capturerObserver) {
         super.initialize(surfaceTextureHelper, context, capturerObserver);
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ boolean isCapturing() {
+        return super.isCapturing();
     }
 
     @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer

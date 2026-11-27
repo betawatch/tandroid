@@ -1,32 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class s90 extends h74 {
-    public final Integer a;
+public final class s90 {
+    public static final s90 f = new s90(10485760, jn7.d3, 10000, 81920, 604800000);
+    public final long a;
+    public final int b;
+    public final int c;
+    public final long d;
+    public final int e;
 
-    public s90(Integer num) {
-        this.a = num;
+    public s90(long j, int i, int i2, int i3, long j2) {
+        this.a = j;
+        this.b = i;
+        this.c = i2;
+        this.d = j2;
+        this.e = i3;
     }
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof h74)) {
-            return false;
+        if (obj instanceof s90) {
+            s90 s90Var = (s90) obj;
+            if (this.a == s90Var.a && this.b == s90Var.b && this.c == s90Var.c && this.d == s90Var.d && this.e == s90Var.e) {
+                return true;
+            }
         }
-        Integer num = this.a;
-        s90 s90Var = (s90) ((h74) obj);
-        return num == null ? s90Var.a == null : num.equals(s90Var.a);
+        return false;
     }
 
     public final int hashCode() {
-        Integer num = this.a;
-        return 1000003 ^ (num == null ? 0 : num.hashCode());
+        long j = this.a;
+        int i = (((((((int) ((j >>> 32) ^ j)) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003;
+        long j2 = this.d;
+        return ((i ^ ((int) ((j2 >>> 32) ^ j2))) * 1000003) ^ this.e;
     }
 
     public final String toString() {
-        return "ExternalPRequestContext{originAssociatedProductId=" + this.a + "}";
+        StringBuilder sb = new StringBuilder("EventStoreConfig{maxStorageSizeInBytes=");
+        sb.append(this.a);
+        sb.append(", loadBatchSize=");
+        sb.append(this.b);
+        sb.append(", criticalSectionEnterTimeoutMs=");
+        sb.append(this.c);
+        sb.append(", eventCleanUpAge=");
+        sb.append(this.d);
+        sb.append(", maxBlobByteSizePerRow=");
+        return uh9.l(sb, this.e, "}");
     }
 }

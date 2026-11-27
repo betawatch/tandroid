@@ -1,68 +1,24 @@
 // default package
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m5b implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ t5b b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class m5b implements RequestDelegate {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ pcc b;
+    public final /* synthetic */ c6b c;
 
-    public /* synthetic */ m5b(t5b t5bVar, byte b) {
-        this.a = b;
-        this.b = t5bVar;
+    public m5b(c6b c6bVar, long j, pcc pccVar) {
+        this.c = c6bVar;
+        this.a = j;
+        this.b = pccVar;
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        byte b2 = 1;
-        t5b t5bVar = this.b;
-        switch (b) {
-            case 0:
-                y5b y5bVar = t5bVar.a0;
-                y5bVar.m1 = (TLRPC.InputPeer) obj;
-                HashSet hashSet = y5bVar.u1;
-                hashSet.clear();
-                if (y5bVar.E1 && y5bVar.A1) {
-                    y5bVar.A1 = false;
-                }
-                p8c p8cVar = y5bVar.Q1;
-                if (p8cVar != null) {
-                    p8cVar.a(y5bVar.m1);
-                }
-                e6b e6bVar = y5bVar.R1;
-                if (e6bVar != null) {
-                    e6bVar.a(new HashSet(hashSet));
-                }
-                t5bVar.h(true);
-                break;
-            case 1:
-                y5b y5bVar2 = t5bVar.a0;
-                int i = y5b.X1;
-                y5bVar2.G0(new w5b(5, y5bVar2.a, (ArrayList) obj), new p28(y5bVar2, b2), false);
-                break;
-            case 2:
-                y5b y5bVar3 = t5bVar.a0;
-                HashSet hashSet2 = y5bVar3.u1;
-                hashSet2.add(Integer.valueOf(((z1b) obj).a));
-                t5bVar.h(true);
-                e6b e6bVar2 = y5bVar3.R1;
-                if (e6bVar2 != null) {
-                    e6bVar2.a(new HashSet(hashSet2));
-                    break;
-                }
-                break;
-            default:
-                String str = (String) obj;
-                if (str != null && str.isEmpty()) {
-                    str = null;
-                }
-                t5bVar.J = str;
-                t5bVar.h(false);
-                break;
-        }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        hl.c3(new y09((Object) this, (Object) tLObject, this.a, (Object) this.b, (byte) 12));
     }
 }

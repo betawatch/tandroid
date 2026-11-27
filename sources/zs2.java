@@ -1,0 +1,49 @@
+// default package
+
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class zs2 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ zs2(int i, int i2, byte b) {
+        this.a = b;
+        this.b = i;
+        this.c = i2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        int i = this.c;
+        int i2 = this.b;
+        switch (b) {
+            case 0:
+                ConnectionsManager.lambda$onConnectionStateChanged$15(i2, i);
+                break;
+            case 1:
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(i2, i);
+                break;
+            case 2:
+                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
+                break;
+            case 3:
+                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
+                break;
+            case 4:
+                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
+                break;
+            case 5:
+                String[] strArr = MediaController.W1;
+                jn7.f(i2).k(jn7.m2, Integer.valueOf(i));
+                break;
+            default:
+                ConnectionsManager.getInstance(i2).cancelRequest(i, true);
+                break;
+        }
+    }
+}

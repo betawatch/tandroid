@@ -1,41 +1,42 @@
 // default package
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.beta.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class f0c extends ScrollView {
-    public Drawable a;
-    public lm b;
-    public boolean c;
+public final class f0c extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ n0c b;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float e = this.b.e(false, canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
-        if (e > 0.0f) {
-            Drawable drawable = this.a;
-            if (drawable == null) {
-                drawable = getContext().getResources().getDrawable(R.drawable.header_shadow);
-                this.a = drawable;
-            }
-            drawable.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (e * 255.0f));
-            this.a.draw(canvas);
-        }
+    public /* synthetic */ f0c(n0c n0cVar, byte b) {
+        this.a = b;
+        this.b = n0cVar;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i, int i2, int i3, int i4) {
-        super.onNestedScroll(view, i, i2, i3, i4);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        n0c n0cVar = this.b;
+        switch (b) {
+            case 0:
+                if (n0cVar.b0 == animator) {
+                    n0cVar.b0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                if (n0cVar.k0 == animator) {
+                    n0cVar.k0 = null;
+                }
+                n0cVar.b(1.0f);
+                break;
+            default:
+                if (n0cVar.K == animator) {
+                    n0cVar.K = null;
+                    break;
+                }
+                break;
         }
     }
 }

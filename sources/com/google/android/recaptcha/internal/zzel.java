@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzel extends ccb implements eq4 {
+final class zzel extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzeq zzb;
     final /* synthetic */ long zzc;
@@ -12,23 +12,23 @@ final class zzel extends ccb implements eq4 {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzel(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzel(zzeq zzeqVar, long j, RecaptchaAction recaptchaAction, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzeqVar;
         this.zzc = j;
         this.zzd = recaptchaAction;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzel zzelVar = new zzel(this.zzb, this.zzc, this.zzd, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzel zzelVar = new zzel(this.zzb, this.zzc, this.zzd, zw2Var);
         zzelVar.zze = obj;
         return zzelVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzel) create((zzhk) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzel) create((zzhk) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0042, code lost:
@@ -43,20 +43,20 @@ final class zzel extends ccb implements eq4 {
     
         if (r11 != r3) goto L13;
      */
-    @Override // of0
+    @Override // qf0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         int i = this.zza;
-        bx2 bx2Var = bx2.a;
+        vx2 vx2Var = vx2.a;
         try {
         } catch (zzcg e) {
-            obj = qse.a(e.zzc());
+            obj = ixe.a(e.zzc());
         }
         if (i == 0) {
-            qse.b(obj);
+            ixe.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzeq zzeqVar = this.zzb;
             long j = this.zzc;
@@ -66,11 +66,11 @@ final class zzel extends ccb implements eq4 {
             obj = new zzhf(9, new zzeo(zzeqVar, j, recaptchaAction, null), null);
         } else {
             if (i != 1) {
-                qse.b(obj);
-                return new ta9(obj);
+                ixe.b(obj);
+                return new he9(obj);
             }
             zzhkVar = (zzhk) this.zze;
-            qse.b(obj);
+            ixe.b(obj);
         }
         this.zze = null;
         this.zza = 2;

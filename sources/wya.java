@@ -1,40 +1,43 @@
 // default package
 
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
 import android.widget.ImageView;
-import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class wya extends ImageReceiver {
-    public final /* synthetic */ wjb K1;
-    public final /* synthetic */ xya L1;
+public final class wya extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wya(xya xyaVar, wjb wjbVar) {
-        super(null);
-        this.L1 = xyaVar;
-        this.K1 = wjbVar;
+    static {
+        a8c.h(new wya());
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean h0(Drawable drawable, String str, int i, boolean z, int i2) {
-        xya xyaVar = this.L1;
-        ImageView imageView = xyaVar.K;
-        if ((drawable instanceof BitmapDrawable) && xyaVar.L == 0) {
-            int I0 = gl.I0(((BitmapDrawable) drawable).getBitmap());
-            xyaVar.L = I0;
-            if (I0 == -1 || I0 == 0) {
-                int i3 = bkb.p5;
-                wjb wjbVar = this.K1;
-                xyaVar.L = bkb.v0(i3, wjbVar);
-                zkb.B(imageView, bkb.b0(gl.L(12.0f), xyaVar.L), zkb.M(i3), wjbVar);
-            } else {
-                imageView.setBackground(bkb.b0(gl.L(12.0f), xyaVar.L));
-            }
-            invalidate();
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        xya xyaVar = (xya) view;
+        ImageView imageView = xyaVar.b;
+        in inVar = xyaVar.a;
+        int i = xyaVar.c;
+        int i2 = b8cVar.d;
+        boolean z2 = i == i2;
+        xyaVar.c = i2;
+        inVar.c(b8cVar.m, z2, true);
+        aob.u0(b8cVar.r ? aob.o6 : aob.G6);
+        yob.U(inVar, b8cVar.r ? aob.o6 : aob.G6, null);
+        yob.s(imageView, b8cVar.r ? aob.o6 : aob.G6, null, PorterDuff.Mode.SRC_IN);
+        if (z2) {
+            imageView.animate().rotation(b8cVar.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(k43.h);
+        } else {
+            imageView.setRotation(b8cVar.f ? 0.0f : 180.0f);
         }
-        return super.h0(drawable, str, i, z, i2);
+        xyaVar.d = z;
+        xyaVar.setWillNotDraw(!z);
+    }
+
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new xya(context);
     }
 }

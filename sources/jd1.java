@@ -1,73 +1,67 @@
 // default package
 
-import android.animation.ValueAnimator;
-import java.net.URL;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.RemoteException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class jd1 {
-    public int a;
-    public long b;
-    public Object c;
+public final class jd1 extends c4 {
+    public final String a;
+    public final String b;
+    public final vfd c;
+    public final po7 d;
+    public final boolean e;
+    public final boolean f;
+    public static final he6 h = new he6("CastMediaOptions", null);
+    public static final Parcelable.Creator<jd1> CREATOR = new s5d((byte) 28);
 
-    public jd1(int i, URL url, long j) {
-        this.a = i;
-        this.c = url;
-        this.b = j;
+    public jd1(String str, String str2, IBinder iBinder, po7 po7Var, boolean z, boolean z2) {
+        vfd vfdVar;
+        this.a = str;
+        this.b = str2;
+        if (iBinder == null) {
+            vfdVar = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.IImagePicker");
+            vfdVar = queryLocalInterface instanceof vfd ? (vfd) queryLocalInterface : new vfd(iBinder, "com.google.android.gms.cast.framework.media.IImagePicker", (byte) 3);
+        }
+        this.c = vfdVar;
+        this.d = po7Var;
+        this.e = z;
+        this.f = z2;
     }
 
-    public final void a(lk0 lk0Var, k88 k88Var) {
-        int i;
-        int b = rse.b(lk0Var);
-        long j = lk0Var != null ? lk0Var.a : Long.MIN_VALUE;
-        boolean z = j == this.b && this.a >= 0;
-        this.b = j;
-        ValueAnimator valueAnimator = (ValueAnimator) this.c;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.c = null;
+    public final void b() {
+        vfd vfdVar = this.c;
+        if (vfdVar != null) {
+            try {
+                Parcel T = vfdVar.T(vfdVar.R(), 2);
+                al5 T2 = br7.T(T.readStrongBinder());
+                T.recycle();
+                if (br7.U(T2) != null) {
+                    throw new ClassCastException();
+                }
+            } catch (RemoteException e) {
+                h.a(e, "Unable to call %s on %s.", "getWrappedClientObject", vfd.class.getSimpleName());
+            }
         }
-        if (!z || (i = this.a) == b) {
-            this.a = b;
-            k88Var.c(b);
-            return;
-        }
-        ValueAnimator ofInt = ValueAnimator.ofInt(i, b);
-        ofInt.addUpdateListener(new pk(this, k88Var, (byte) 25));
-        ofInt.setInterpolator(s33.f);
-        ofInt.setDuration(200L);
-        this.c = ofInt;
-        ofInt.start();
     }
 
-    public final synchronized long b(int i) {
-        if (i != 429 && (i < 500 || i >= 600)) {
-            return 86400000L;
-        }
-        return (long) Math.min(Math.pow(2.0d, this.a) + ((long) (Math.random() * 1000.0d)), 1800000.0d);
-    }
-
-    public final synchronized boolean c() {
-        boolean z;
-        if (this.a != 0) {
-            ((t8c) this.c).a.getClass();
-            z = System.currentTimeMillis() > this.b;
-        }
-        return z;
-    }
-
-    public final synchronized void d() {
-        this.a = 0;
-    }
-
-    public final synchronized void e(int i) {
-        if ((i >= 200 && i < 300) || i == 401 || i == 404) {
-            d();
-            return;
-        }
-        this.a++;
-        long b = b(i);
-        ((t8c) this.c).a.getClass();
-        this.b = System.currentTimeMillis() + b;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        int r = bye.r(parcel, 20293);
+        bye.l(parcel, 2, this.a);
+        bye.l(parcel, 3, this.b);
+        vfd vfdVar = this.c;
+        bye.f(parcel, 4, vfdVar == null ? null : vfdVar.b);
+        bye.k(parcel, 5, this.d, i);
+        bye.q(parcel, 6, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        bye.q(parcel, 7, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        bye.s(parcel, r);
     }
 }

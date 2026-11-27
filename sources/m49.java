@@ -1,22 +1,80 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class m49 extends w1 {
-    public static final Parcelable.Creator<m49> CREATOR = new v1((byte) 1);
-    public Parcelable c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class m49 extends FrameLayout {
+    public final ul a;
+    public final /* synthetic */ n49 b;
 
-    public m49(Parcel parcel, ClassLoader classLoader) {
-        super(parcel, classLoader);
-        this.c = parcel.readParcelable(classLoader == null ? d49.class.getClassLoader() : classLoader);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m49(n49 n49Var, Context context) {
+        super(context);
+        this.b = n49Var;
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 16.0f);
+        yob.X(textView, aob.G6, n49Var.getResourceProvider());
+        textView.setText(ob6.M0(2131751315, null));
+        addView(textView, tre.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
+        this.a = new ul(hl.L(24.0f), this);
     }
 
-    @Override // w1, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        super.writeToParcel(parcel, i);
-        parcel.writeParcelable(this.c, 0);
+    public final void a(boolean z) {
+        int i;
+        int i2;
+        n49 n49Var = this.b;
+        i = ((e) n49Var).currentAccount;
+        String S = ls6.d0(i).S();
+        ul ulVar = this.a;
+        if (S != null && S.startsWith("animated_")) {
+            try {
+                ulVar.j(Long.parseLong(S.substring(9)), z);
+                return;
+            } catch (Exception unused) {
+            }
+        }
+        i2 = ((e) n49Var).currentAccount;
+        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ls6.d0(i2).r.get(S);
+        if (tL_availableReaction != null) {
+            ulVar.i(tL_availableReaction.static_icon, z);
+        }
+    }
+
+    public final void b() {
+        int width = getWidth();
+        ul ulVar = this.a;
+        ulVar.setBounds((width - ulVar.s) - hl.L(21.0f), (getHeight() - ulVar.s) / 2, getWidth() - hl.L(21.0f), (getHeight() + ulVar.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b();
+        this.a.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(50.0f), TLObject.FLAG_30));
     }
 }

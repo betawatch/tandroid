@@ -1,85 +1,37 @@
 // default package
 
-import java.util.Arrays;
-import java.util.Random;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class wga {
-    public final Random a;
-    public final int[] b;
-    public final int[] c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class wga extends vea {
+    public final /* synthetic */ eja m0;
 
-    public wga(int[] iArr, Random random) {
-        this.b = iArr;
-        this.a = random;
-        this.c = new int[iArr.length];
-        for (int i = 0; i < iArr.length; i++) {
-            this.c[iArr[i]] = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wga(eja ejaVar, Context context) {
+        super(context);
+        this.m0 = ejaVar;
+    }
+
+    @Override // vea
+    public final boolean d(r47 r47Var) {
+        long playlistTopicId;
+        eja ejaVar = this.m0;
+        tia[] tiaVarArr = ejaVar.w1;
+        if (r47.Q4(r47Var.k) || r47Var.g4()) {
+            boolean V = MediaController.z().V(r47Var);
+            MediaController.z().u0(V ? tiaVarArr[4].a : null, false);
+            return V;
         }
-    }
-
-    public final wga a() {
-        return new wga(new Random(this.a.nextLong()));
-    }
-
-    public final wga b(int i, int i2) {
-        int[] iArr;
-        Random random;
-        int[] iArr2 = new int[i2];
-        int[] iArr3 = new int[i2];
-        int i3 = 0;
-        while (true) {
-            iArr = this.b;
-            random = this.a;
-            if (i3 >= i2) {
-                break;
-            }
-            iArr2[i3] = random.nextInt(iArr.length + 1);
-            int i4 = i3 + 1;
-            int nextInt = random.nextInt(i4);
-            iArr3[i3] = iArr3[nextInt];
-            iArr3[nextInt] = i3 + i;
-            i3 = i4;
+        if (!r47Var.I3()) {
+            return false;
         }
-        Arrays.sort(iArr2);
-        int[] iArr4 = new int[iArr.length + i2];
-        int i5 = 0;
-        int i6 = 0;
-        for (int i7 = 0; i7 < iArr.length + i2; i7++) {
-            if (i5 >= i2 || i6 != iArr2[i5]) {
-                int i8 = i6 + 1;
-                int i9 = iArr[i6];
-                iArr4[i7] = i9;
-                if (i9 >= i) {
-                    iArr4[i7] = i9 + i2;
-                }
-                i6 = i8;
-            } else {
-                iArr4[i7] = iArr3[i5];
-                i5++;
-            }
-        }
-        return new wga(iArr4, new Random(random.nextLong()));
-    }
-
-    public final int c() {
-        return this.b.length;
-    }
-
-    public final int d(int i) {
-        int i2 = this.c[i] - 1;
-        if (i2 >= 0) {
-            return this.b[i2];
-        }
-        return -1;
-    }
-
-    public wga() {
-        this(new Random());
-    }
-
-    public wga(Random random) {
-        this(new int[0], random);
+        MediaController z = MediaController.z();
+        ArrayList arrayList = tiaVarArr[4].a;
+        long j = ejaVar.f1;
+        playlistTopicId = ejaVar.getPlaylistTopicId();
+        return z.q0(arrayList, r47Var, j, true, null, playlistTopicId);
     }
 }

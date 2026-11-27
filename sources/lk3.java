@@ -1,80 +1,38 @@
 // default package
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class lk3 extends LinearLayout implements gk7 {
-    public int a;
-    public be0 b;
-    public TextView c;
-    public TextView d;
-    public TextView e;
+public final /* synthetic */ class lk3 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ mk3 b;
 
-    public final void a() {
-        be0 be0Var = this.b;
-        int i = this.a;
-        TLRPC.TL_messages_stickerSet q0 = hq6.d0(i).q0("tg_placeholders_android");
-        if (q0 == null) {
-            q0 = hq6.d0(i).o0("tg_placeholders_android");
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = q0;
-        TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
-        if (document == null) {
-            hq6.d0(i).d1("tg_placeholders_android", false, tL_messages_stickerSet == null);
-            be0Var.getImageReceiver().f();
-            return;
-        }
-        kcb d = uo3.d(document.thumbs, bkb.Z6, 0.2f, false);
-        if (d != null) {
-            d.e = 512;
-            d.f = 512;
-        }
-        this.b.n(gl5.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
-        be0Var.getImageReceiver().M(2);
+    public /* synthetic */ lk3(mk3 mk3Var, byte b) {
+        this.a = b;
+        this.b = mk3Var;
     }
 
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i == kk7.x0 && "tg_placeholders_android".equals((String) objArr[0]) && getVisibility() == 0) {
-            a();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        kk7.f(this.a).b(this, kk7.x0);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        kk7.f(this.a).n(this, kk7.x0);
-    }
-
-    public void set(TLRPC.RequestPeerType requestPeerType) {
-        TextView textView = this.c;
-        TextView textView2 = this.d;
-        TextView textView3 = this.e;
-        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            textView.setText(k96.M0(2131747952, null));
-            textView2.setText(k96.M0(2131747951, null));
-            textView3.setVisibility(0);
-            textView3.setText(k96.M0(2131751740, null));
-            return;
-        }
-        if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) {
-            textView.setText(k96.M0(2131747948, null));
-            textView2.setText(k96.M0(2131747947, null));
-            textView3.setVisibility(8);
-        } else {
-            textView.setText(k96.M0(2131747950, null));
-            textView2.setText(k96.M0(2131747949, null));
-            textView3.setVisibility(0);
-            textView3.setText(k96.M0(2131751734, null));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        mk3 mk3Var = this.b;
+        switch (b) {
+            case 0:
+                mk3Var.c = false;
+                mk3Var.b.run();
+                ArrayList arrayList = mk3Var.h;
+                if (arrayList.isEmpty() || System.currentTimeMillis() - mk3Var.f > 3600000) {
+                    arrayList.clear();
+                    mk3Var.e = false;
+                    mk3Var.g = null;
+                    mk3Var.a();
+                    break;
+                }
+                break;
+            default:
+                mk3Var.i = false;
+                break;
         }
     }
 }

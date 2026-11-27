@@ -1,13 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /* loaded from: classes.dex */
-public interface k8a {
-    Object a(fw2 fw2Var);
-
-    Boolean b();
-
-    jr3 c();
-
-    Double d();
+public abstract class k8a extends m8a {
+    public static List a(f8a f8aVar) {
+        f8aVar.getClass();
+        Iterator it = f8aVar.iterator();
+        if (!it.hasNext()) {
+            return x24.a;
+        }
+        Object next = it.next();
+        if (!it.hasNext()) {
+            return tl2.a(next);
+        }
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(next);
+        while (it.hasNext()) {
+            arrayList.add(it.next());
+        }
+        return arrayList;
+    }
 }

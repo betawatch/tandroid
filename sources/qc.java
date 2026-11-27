@@ -1,225 +1,178 @@
 // default package
 
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import android.util.SparseArray;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.TextUtils;
+import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class qc extends Handler {
-    public final /* synthetic */ byte a = 0;
-    public WeakReference b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class qc {
+    public boolean a;
+    public int b;
+    public final Object c;
+    public final Object d;
+    public Object e;
+    public Object f;
+    public Object g;
+    public Object h;
+    public View i;
+    public Object j;
+    public Object k;
+    public Object l;
+    public Object m;
 
-    public qc(m59 m59Var) {
-        this.b = new WeakReference(m59Var);
-    }
-
-    @Override // android.os.Handler
-    public final void handleMessage(Message message) {
-        tt6 tt6Var;
-        switch (this.a) {
-            case 0:
-                int i = message.what;
-                if (i != -3 && i != -2 && i != -1) {
-                    if (i == 1) {
-                        ((DialogInterface) message.obj).dismiss();
-                        break;
-                    }
-                } else {
-                    ((DialogInterface.OnClickListener) message.obj).onClick((DialogInterface) this.b.get(), message.what);
-                    break;
-                }
-                break;
-            default:
-                m59 m59Var = (m59) this.b.get();
-                if (m59Var != null) {
-                    SparseArray sparseArray = m59Var.n;
-                    s59 s59Var = m59Var.r;
-                    ArrayList arrayList = s59Var.w;
-                    int i2 = message.what;
-                    int i3 = message.arg1;
-                    int i4 = message.arg2;
-                    Object obj = message.obj;
-                    Bundle peekData = message.peekData();
-                    int i5 = 0;
-                    n59 n59Var = null;
-                    n59 n59Var2 = null;
-                    switch (i2) {
-                        case 0:
-                            if (i3 == m59Var.h) {
-                                m59Var.h = 0;
-                                if (s59Var.E == m59Var) {
-                                    s59Var.q();
-                                }
-                            }
-                            if (((p59) sparseArray.get(i3)) != null) {
-                                sparseArray.remove(i3);
-                                p59.a(null, null);
-                                break;
-                            }
-                            break;
-                        case 2:
-                            if (obj == null || (obj instanceof Bundle)) {
-                                Bundle bundle = (Bundle) obj;
-                                if (m59Var.f == 0 && i3 == m59Var.h && i4 >= 1) {
-                                    m59Var.h = 0;
-                                    m59Var.f = i4;
-                                    am4 a = am4.a(bundle);
-                                    if (s59Var.E == m59Var) {
-                                        s59Var.g(a);
-                                    }
-                                    if (s59Var.E == m59Var) {
-                                        s59Var.F = true;
-                                        int size = arrayList.size();
-                                        while (i5 < size) {
-                                            ((n59) arrayList.get(i5)).b(s59Var.E);
-                                            i5++;
-                                        }
-                                        bt6 bt6Var = (bt6) s59Var.h;
-                                        if (bt6Var != null) {
-                                            m59 m59Var2 = s59Var.E;
-                                            int i6 = m59Var2.d;
-                                            m59Var2.d = i6 + 1;
-                                            m59Var2.b(10, i6, 0, bt6Var.a, null);
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                            break;
-                        case 3:
-                            if (obj == null || (obj instanceof Bundle)) {
-                                Bundle bundle2 = (Bundle) obj;
-                                p59 p59Var = (p59) sparseArray.get(i3);
-                                if (p59Var != null) {
-                                    sparseArray.remove(i3);
-                                    p59Var.b(bundle2);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 4:
-                            if (obj == null || (obj instanceof Bundle)) {
-                                String string = peekData != null ? peekData.getString("error") : null;
-                                Bundle bundle3 = (Bundle) obj;
-                                if (((p59) sparseArray.get(i3)) != null) {
-                                    sparseArray.remove(i3);
-                                    p59.a(string, bundle3);
-                                    break;
-                                }
-                            }
-                            break;
-                        case 5:
-                            if (obj == null || (obj instanceof Bundle)) {
-                                Bundle bundle4 = (Bundle) obj;
-                                if (m59Var.f != 0) {
-                                    am4 a2 = am4.a(bundle4);
-                                    if (s59Var.E == m59Var) {
-                                        s59Var.g(a2);
-                                        break;
-                                    }
-                                }
-                            }
-                            break;
-                        case 6:
-                            if (!(obj instanceof Bundle)) {
-                                Log.w("MediaRouteProviderProxy", "No further information on the dynamic group controller");
-                                break;
-                            } else {
-                                Bundle bundle5 = (Bundle) obj;
-                                p59 p59Var2 = (p59) sparseArray.get(i3);
-                                if (!bundle5.containsKey("routeId")) {
-                                    p59Var2.getClass();
-                                    p59.a("DynamicGroupRouteController is created without valid route id.", bundle5);
-                                    break;
-                                } else {
-                                    sparseArray.remove(i3);
-                                    p59Var2.b(bundle5);
-                                    break;
-                                }
-                            }
-                        case 7:
-                            if (obj == null || (obj instanceof Bundle)) {
-                                Bundle bundle6 = (Bundle) obj;
-                                if (m59Var.f != 0) {
-                                    Bundle bundle7 = (Bundle) bundle6.getParcelable("groupRoute");
-                                    zs6 zs6Var = bundle7 != null ? new zs6(bundle7) : null;
-                                    ArrayList parcelableArrayList = bundle6.getParcelableArrayList("dynamicRoutes");
-                                    ArrayList arrayList2 = new ArrayList();
-                                    int size2 = parcelableArrayList.size();
-                                    int i7 = 0;
-                                    while (i7 < size2) {
-                                        Object obj2 = parcelableArrayList.get(i7);
-                                        i7++;
-                                        Bundle bundle8 = (Bundle) obj2;
-                                        if (bundle8 == null) {
-                                            tt6Var = null;
-                                        } else {
-                                            Bundle bundle9 = bundle8.getBundle("mrDescriptor");
-                                            tt6Var = new tt6(bundle9 != null ? new zs6(bundle9) : null, bundle8.getInt("selectionState", 1), bundle8.getBoolean("isUnselectable", false), bundle8.getBoolean("isGroupable", false), bundle8.getBoolean("isTransferable", false));
-                                        }
-                                        arrayList2.add(tt6Var);
-                                    }
-                                    if (s59Var.E == m59Var) {
-                                        int size3 = arrayList.size();
-                                        while (true) {
-                                            if (i5 < size3) {
-                                                Object obj3 = arrayList.get(i5);
-                                                i5++;
-                                                n59 n59Var3 = (n59) obj3;
-                                                if (n59Var3.a() == i4) {
-                                                    n59Var2 = n59Var3;
-                                                }
-                                            }
-                                        }
-                                        if (n59Var2 instanceof q59) {
-                                            ((q59) n59Var2).l(zs6Var, arrayList2);
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                            break;
-                        case 8:
-                            if (s59Var.E == m59Var) {
-                                int size4 = arrayList.size();
-                                while (true) {
-                                    if (i5 < size4) {
-                                        Object obj4 = arrayList.get(i5);
-                                        i5++;
-                                        n59 n59Var4 = (n59) obj4;
-                                        if (n59Var4.a() == i4) {
-                                            n59Var = n59Var4;
-                                        }
-                                    }
-                                }
-                                k88 k88Var = s59Var.G;
-                                if (k88Var != null && (n59Var instanceof vt6)) {
-                                    vt6 vt6Var = (vt6) n59Var;
-                                    ux4 ux4Var = (ux4) ((ee3) k88Var.b).c;
-                                    if (ux4Var.e == vt6Var) {
-                                        ux4Var.i(ux4Var.c(), 2);
-                                    }
-                                }
-                                arrayList.remove(n59Var);
-                                n59Var.c();
-                                s59Var.r();
-                                break;
-                            }
-                            break;
-                    }
-                    int i8 = s59.H;
-                    break;
-                }
-                break;
+    public qc() {
+        this.c = new Paint(1);
+        this.d = new Paint(1);
+        this.e = new y85[4];
+        this.a = true;
+        this.j = new mm(new rj4(this, (byte) 27), 320L, k43.h, 0);
+        this.k = new RectF();
+        this.l = new RectF();
+        this.m = new Path();
+        int i = 0;
+        while (true) {
+            y85[] y85VarArr = (y85[]) this.e;
+            if (i >= y85VarArr.length) {
+                ((Paint) this.c).setColor(aob.w0(null, aob.kh, false));
+                this.f = new pkb(ob6.M0(2131751786, null), 12.0f, hl.o());
+                pkb pkbVar = new pkb(ob6.M0(2131751784, null), 11.0f, null);
+                pkbVar.l(99);
+                pkbVar.o(hl.L(200.0f));
+                pkbVar.k(hl.L(2.66f));
+                this.g = pkbVar;
+                this.h = new pkb(ob6.M0(2131751785, null), 14.0f, hl.o());
+                b(null);
+                return;
+            }
+            y85VarArr[i] = new y85(i);
+            i++;
         }
     }
 
-    public /* synthetic */ qc() {
+    public final boolean a(Canvas canvas, float f, float f2) {
+        Paint paint = (Paint) this.d;
+        canvas.save();
+        pkb pkbVar = (pkb) this.f;
+        pkbVar.p = f - hl.L(132.0f);
+        Paint paint2 = (Paint) this.c;
+        paint2.setColor(vm2.f(f2, this.b, aob.w0(null, aob.kh, false)));
+        float d = ((mm) this.j).d(this.a);
+        float j = pkbVar.j() + hl.L(86.0f) + hl.L(14.0f);
+        float L = hl.L(28.0f);
+        float L2 = hl.L(232.0f);
+        float h = ((pkb) this.g).h() + hl.L(54.0f) + hl.L(50.0f);
+        float R1 = hl.R1(j, L2, f2);
+        float R12 = hl.R1(L, h, f2);
+        float U1 = hl.U1(f2, hl.L(14.0f), hl.L(16.0f));
+        RectF rectF = hl.P;
+        rectF.set((f - R1) / 2.0f, 0.0f, (f + R1) / 2.0f, R12);
+        canvas.drawRoundRect(rectF, U1, U1, paint2);
+        Path path = (Path) this.m;
+        path.rewind();
+        path.addRoundRect(rectF, U1, U1, Path.Direction.CW);
+        canvas.clipPath(path);
+        int L3 = hl.L(18.0f);
+        int L4 = hl.L(30.0f);
+        int i = L3 / 2;
+        int centerY = ((int) rectF.centerY()) - i;
+        int centerY2 = ((int) rectF.centerY()) + i;
+        RectF rectF2 = (RectF) this.k;
+        float f3 = L3 / 2.0f;
+        float f4 = centerY;
+        float f5 = centerY2;
+        rectF2.set((hl.L(10.0f) + (hl.L(7.0f) + ((int) rectF.left))) - f3, f4, hl.L(10.0f) + hl.L(7.0f) + ((int) rectF.left) + f3, f5);
+        float f6 = f / 2.0f;
+        float f7 = f6 - (r4 << 1);
+        float L5 = (int) ((L2 - hl.L(32.0f)) / 4.0f);
+        RectF rectF3 = (RectF) this.l;
+        float f8 = (int) ((0.5f * L5) + f7);
+        float f9 = L4 / 2.0f;
+        rectF3.set(f8 - f9, (int) ((rectF.top + hl.L(27.33f)) - f9), f8 + f9, (int) (rectF.top + hl.L(27.33f) + f9));
+        hl.a2(rectF2, rectF3, f2, rectF3);
+        y85[] y85VarArr = (y85[]) this.e;
+        boolean b = y85VarArr[0].b(canvas, rectF3, f2);
+        rectF2.set((hl.L(10.0f) + (hl.L(27.0f) + ((int) rectF.left))) - f3, f4, hl.L(10.0f) + hl.L(27.0f) + ((int) rectF.left) + f3, f5);
+        float f10 = (int) ((1.5f * L5) + f7);
+        boolean z = b;
+        rectF3.set(f10 - f9, (int) ((rectF.top + hl.L(27.33f)) - f9), f10 + f9, (int) (rectF.top + hl.L(27.33f) + f9));
+        hl.a2(rectF2, rectF3, f2, rectF3);
+        if (y85VarArr[1].b(canvas, rectF3, f2)) {
+            z = true;
+        }
+        pkbVar.c(f6 - (pkbVar.j() / 2.0f), L / 2.0f, hl.R1(1.0f, 0.75f, d) * (1.0f - f2), -1, canvas);
+        rectF2.set((hl.L(10.0f) + (((int) rectF.right) - hl.L(47.0f))) - f3, f4, hl.L(10.0f) + (((int) rectF.right) - hl.L(47.0f)) + f3, f5);
+        float f11 = (int) ((L5 * 2.5f) + f7);
+        rectF3.set(f11 - f9, (int) ((rectF.top + hl.L(27.33f)) - f9), f11 + f9, (int) (rectF.top + hl.L(27.33f) + f9));
+        hl.a2(rectF2, rectF3, f2, rectF3);
+        if (y85VarArr[2].b(canvas, rectF3, f2)) {
+            z = true;
+        }
+        rectF2.set((hl.L(10.0f) + (((int) rectF.right) - hl.L(27.0f))) - f3, f4, hl.L(10.0f) + (((int) rectF.right) - hl.L(27.0f)) + f3, f5);
+        float f12 = (int) ((L5 * 3.5f) + f7);
+        rectF3.set(f12 - f9, (int) ((rectF.top + hl.L(27.33f)) - f9), f12 + f9, (int) (rectF.top + hl.L(27.33f) + f9));
+        hl.a2(rectF2, rectF3, f2, rectF3);
+        boolean z2 = y85VarArr[3].b(canvas, rectF3, f2) ? true : z;
+        if (f2 > 0.0f) {
+            ((pkb) this.g).c((rectF.centerX() - (L2 / 2.0f)) + hl.L(16.0f), hl.L(54.0f), f2, -1, canvas);
+            paint.setColor(-16777216);
+            paint.setAlpha((int) (255.0f * f2));
+            canvas.drawRect(rectF.left, h - hl.L(40.0f), rectF.right, hl.L(0.66f) + (h - hl.L(40.0f)), paint);
+            ((pkb) this.h).c(rectF.centerX() - (((pkb) this.h).j() / 2.0f), h - hl.L(20.0f), f2, -1, canvas);
+        }
+        canvas.restore();
+        return z2;
+    }
+
+    public final void b(String[] strArr) {
+        this.a = strArr == null;
+        for (int i = 0; i < 4; i++) {
+            y85 y85Var = ((y85[]) this.e)[i];
+            String str = strArr == null ? null : strArr[i];
+            jb2 jb2Var = y85Var.k;
+            boolean z = y85Var.f;
+            y85Var.f = str != null;
+            if (str != null && (y85Var.d == null || !TextUtils.equals(y85Var.l, str))) {
+                wl wlVar = y85Var.d;
+                if (wlVar != null) {
+                    wlVar.n(jb2Var);
+                }
+                y85Var.c = pv3.g(str);
+                int k = yac.k();
+                wl wlVar2 = new wl();
+                wlVar2.l = 1.0f;
+                wlVar2.n = null;
+                wlVar2.o = null;
+                wlVar2.g = 21;
+                wlVar2.h = k;
+                wlVar2.x();
+                wl.w();
+                y85Var.d = wlVar2;
+                y85Var.l = str;
+                wlVar2.q(str);
+                y85Var.c();
+                if (y85Var.j) {
+                    y85Var.d.a(jb2Var);
+                }
+            }
+            if (y85Var.f && !z) {
+                y85Var.e = false;
+            }
+        }
+        tb tbVar = (tb) this.i;
+        if (tbVar != null) {
+            tbVar.invalidate();
+        }
+    }
+
+    public qc(ContextThemeWrapper contextThemeWrapper) {
+        this.b = -1;
+        this.c = contextThemeWrapper;
+        this.d = (LayoutInflater) contextThemeWrapper.getSystemService("layout_inflater");
     }
 }

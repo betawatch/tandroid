@@ -1,6 +1,53 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public @interface ww8 {
+import java.util.Locale;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ww8 implements dq7, fq7 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bx8 b;
+
+    public /* synthetic */ ww8(bx8 bx8Var, byte b) {
+        this.a = b;
+        this.b = bx8Var;
+    }
+
+    @Override // dq7
+    public final String c(int i) {
+        byte b = this.a;
+        bx8 bx8Var = this.b;
+        switch (b) {
+            case 0:
+                return bx8Var.P ? ob6.a0("MilesShort", null, 2131748181, Integer.valueOf(i)) : ob6.a0("KMetersShort", null, 2131748815, Integer.valueOf(i));
+            default:
+                if (!bx8Var.P) {
+                    if (i == 1) {
+                        return ob6.a0("MetersShort", null, 2131748196, 50);
+                    }
+                    if (i > 1) {
+                        i--;
+                    }
+                    return ob6.a0("MetersShort", null, 2131748196, Integer.valueOf(i * 100));
+                }
+                if (i == 1) {
+                    return ob6.a0("FootsShort", null, 2131750561, Integer.valueOf(jn7.Y3));
+                }
+                if (i > 1) {
+                    i--;
+                }
+                Locale locale = Locale.US;
+                return uh9.k(i, ".");
+        }
+    }
+
+    @Override // fq7
+    public final void i(hq7 hq7Var, int i) {
+        bx8 bx8Var = this.b;
+        try {
+            bx8Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        bx8Var.c(true);
+    }
 }

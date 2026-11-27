@@ -1,115 +1,119 @@
 // default package
 
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fe1 extends n39 {
-    public final /* synthetic */ me1 c;
+public final class fe1 {
+    public final Paint a;
+    public LinearGradient b;
+    public final Paint c;
+    public LinearGradient d;
+    public final int e;
+    public int f;
+    public float g;
+    public long h;
+    public final Matrix i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public float m;
+    public float n;
+    public yfc o;
+    public x38 p;
 
-    public fe1(me1 me1Var) {
-        this.c = me1Var;
+    public fe1(int i, int i2, int i3) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        this.i = new Matrix();
+        this.j = true;
+        this.k = true;
+        this.l = false;
+        this.m = 1.2f;
+        this.n = 1.0f;
+        int L = hl.L(i3);
+        this.e = L;
+        float f = L;
+        int[] iArr = {0, vm2.o(-1, i), 0};
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new LinearGradient(0.0f, 0.0f, f, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f, 0.0f, new int[]{0, vm2.o(-1, i2), 0}, (float[]) null, tileMode);
+        paint.setShader(this.b);
+        paint2.setShader(this.d);
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(hl.L(2.0f));
     }
 
-    @Override // n39
-    public final boolean D(s49 s49Var) {
-        return s49Var.f == 4;
+    public final void a(float f, Canvas canvas, RectF rectF, View view) {
+        c(view);
+        canvas.drawRoundRect(rectF, f, f, this.a);
+        if (this.k) {
+            boolean z = this.l;
+            Paint paint = this.c;
+            if (z) {
+                rectF.inset(paint.getStrokeWidth() / 2.0f, paint.getStrokeWidth() / 2.0f);
+            }
+            canvas.drawRoundRect(rectF, f, f, paint);
+        }
     }
 
-    @Override // w39
-    public final int b() {
-        me1 me1Var = this.c;
-        o39 o39Var = me1Var.b;
-        ArrayList arrayList = me1Var.w;
-        if (o39Var != null) {
-            ArrayList arrayList2 = o39Var.L2;
-            if (arrayList2 != null) {
-                arrayList2.clear();
+    public final void b(int i, int i2) {
+        float f = this.e;
+        int[] iArr = {0, vm2.o(i, i2), 0};
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new LinearGradient(0.0f, 0.0f, f, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f, 0.0f, new int[]{0, vm2.o(i, jn7.h3), 0}, (float[]) null, tileMode);
+        this.a.setShader(this.b);
+        this.c.setShader(this.d);
+    }
+
+    public final void c(View view) {
+        if (this.j || this.g < 1.0f) {
+            if (view != null) {
+                view.invalidate();
+            }
+            long currentTimeMillis = System.currentTimeMillis();
+            long j = this.h;
+            if (j != 0) {
+                long j2 = currentTimeMillis - j;
+                if (j2 > 10) {
+                    float f = ((j2 / 1200.0f) * this.n) + this.g;
+                    this.g = f;
+                    if (f > this.m) {
+                        this.g = 0.0f;
+                        x38 x38Var = this.p;
+                        if (x38Var != null) {
+                            x38Var.run();
+                        }
+                    }
+                    this.h = currentTimeMillis;
+                }
             } else {
-                o39Var.L2 = new ArrayList();
-            }
-            if (arrayList.size() > 0) {
-                me1Var.b.L2.add(Long.valueOf(gl.u2(3, arrayList.size() + 3)));
+                this.h = currentTimeMillis;
             }
         }
-        return (arrayList.size() > 0 ? arrayList.size() + 2 : 0) + 3;
+        int i = this.f;
+        float f2 = ((i + (r0 << 1)) * this.g) - this.e;
+        Matrix matrix = this.i;
+        matrix.reset();
+        matrix.setTranslate(f2, 0.0f);
+        this.b.setLocalMatrix(matrix);
+        this.d.setLocalMatrix(matrix);
     }
 
-    @Override // w39
-    public final int d(int i) {
-        if (i == 0) {
-            return 0;
-        }
-        if (i == 1) {
-            return 3;
-        }
-        if (i == 2) {
-            return 1;
-        }
-        if (i == 3) {
-            return 0;
-        }
-        return i != b() - 1 ? 4 : 2;
+    public fe1(int i, int i2) {
+        this(i, i2, jn7.p2);
     }
 
-    @Override // w39
-    public final void t(s49 s49Var, int i) {
-        me1 me1Var = this.c;
-        long j = me1Var.y;
-        int i2 = s49Var.f;
-        View view = s49Var.a;
-        if (i2 == 0) {
-            ((ld5) view).setText(k96.M0(i == 0 ? j != 0 ? 2131752973 : 2131745306 : 2131743403, null));
-            return;
-        }
-        if (i2 == 2) {
-            ((mhb) view).setText(k96.M0(j != 0 ? 2131752925 : 2131743402, null));
-            return;
-        }
-        if (i2 == 3) {
-            me1Var.n = true;
-            ge1 ge1Var = (ge1) view;
-            me1Var.E = ge1Var;
-            ge1Var.a.setText(me1Var.r);
-            me1Var.n = false;
-            return;
-        }
-        if (i2 != 4) {
-            return;
-        }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) me1Var.w.get(i - 4);
-        ie1 ie1Var = (ie1) view;
-        if (tL_username.editable) {
-            me1Var.F = ie1Var;
-        } else if (me1Var.F == ie1Var) {
-            me1Var.F = null;
-        }
-        ie1Var.a(tL_username, i < b() - 2, false, me1Var.y);
-    }
-
-    @Override // w39
-    public final s49 x(ViewGroup viewGroup, int i) {
-        me1 me1Var = this.c;
-        if (i == 0) {
-            return new y29(new ld5(me1Var.getParentActivity()));
-        }
-        if (i == 1) {
-            le1 le1Var = new le1(me1Var, me1Var.getParentActivity());
-            le1Var.setTag(-33024);
-            return new y29(le1Var);
-        }
-        if (i == 2) {
-            return new y29(new mhb(me1Var.getParentActivity()));
-        }
-        if (i == 3) {
-            return new y29(new ge1(me1Var, me1Var.getParentActivity()));
-        }
-        if (i != 4) {
-            return null;
-        }
-        return new y29(new ee1(this, me1Var.getParentActivity(), me1Var.getResourceProvider()));
+    public fe1() {
+        this(64, jn7.h3, jn7.p2);
     }
 }

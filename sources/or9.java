@@ -1,74 +1,25 @@
 // default package
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.util.Log;
+import android.content.Context;
+import android.os.Handler;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class or9 implements ServiceConnection {
-    public dj5 a;
-    public final /* synthetic */ pr9 b;
-
-    public or9(pr9 pr9Var) {
-        this.b = pr9Var;
+public final class or9 extends oc3 {
+    @Override // oc3
+    public final void a(Context context, int i, y30 y30Var, Handler handler, n64 n64Var, ArrayList arrayList) {
+        arrayList.add(new nr9(context, this.b, handler, n64Var, y30Var));
     }
 
-    public final boolean a() {
-        return this.a != null;
-    }
-
-    public final boolean b(Intent intent, Bundle bundle) {
-        dj5 dj5Var = this.a;
-        if (dj5Var != null) {
-            bj5 bj5Var = (bj5) dj5Var;
-            Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-            int i = xj2.a;
-            if (intent == null) {
-                obtain.writeInt(0);
-            } else {
-                obtain.writeInt(1);
-                intent.writeToParcel(obtain, 0);
-            }
-            obtain.writeInt(1);
-            bundle.writeToParcel(obtain, 0);
-            Parcel a = bj5Var.a(obtain, 1);
-            boolean z = a.readInt() != 0;
-            a.recycle();
-            if (z) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        dj5 bj5Var;
-        if (this.b.a) {
-            Log.d("SAVerificationClientS", "onServiceConnected");
-        }
-        int i = cj5.a;
-        if (iBinder == null) {
-            bj5Var = null;
-        } else {
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
-            bj5Var = queryLocalInterface instanceof dj5 ? (dj5) queryLocalInterface : new bj5(iBinder);
-        }
-        this.a = bj5Var;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        this.a = null;
-        if (this.b.a) {
-            Log.d("SAVerificationClientS", "onServiceDisconnected");
-        }
+    @Override // oc3
+    public final void c(Context context, int i, Handler handler, n64 n64Var, ArrayList arrayList) {
+        zm6 zm6Var = new zm6(context);
+        zm6Var.c = this.b;
+        zm6Var.d = (short) 5000;
+        zm6Var.e = handler;
+        zm6Var.f = n64Var;
+        zm6Var.g = (byte) 50;
+        arrayList.add(new pr9(zm6Var));
     }
 }

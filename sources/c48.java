@@ -1,40 +1,70 @@
 // default package
 
-import android.view.KeyEvent;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class c48 implements gj, k8 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ g48 b;
+public final class c48 {
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public Path i;
+    public Paint j;
+    public Drawable k;
+    public final v41 l;
+    public boolean m;
+    public final mm n;
+    public int o;
+    public final /* synthetic */ d48 r;
+    public final Paint a = new Paint(1);
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint(1);
+    public final Path d = new Path();
+    public final Path e = new Path();
+    public final RectF p = new RectF();
+    public final RectF q = new RectF();
 
-    public /* synthetic */ c48(g48 g48Var, byte b) {
-        this.a = b;
-        this.b = g48Var;
+    public c48(d48 d48Var) {
+        this.r = d48Var;
+        this.l = new v41(d48Var);
+        this.n = new mm(d48Var, 0L, 320L, k43.h);
     }
 
-    @Override // k8
-    public final void r(KeyEvent keyEvent) {
-        g48 g48Var;
-        m8 m8Var;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m8Var = (g48Var = this.b).J) != null && m8Var.isShowing()) {
-            g48Var.J.d(true);
+    public final void a(kc7 kc7Var) {
+        d48 d48Var = this.r;
+        vnb vnbVar = d48Var.a;
+        if (kc7Var == null) {
+            return;
         }
-    }
-
-    @Override // gj
-    public final void s(int i, int i2, boolean z) {
-        byte b = this.a;
-        g48 g48Var = this.b;
-        switch (b) {
-            case 0:
-                g48Var.Z(g48Var.b, g48Var.c, z, i);
-                g48Var.finishFragment();
-                break;
-            default:
-                g48Var.Z(g48Var.b, g48Var.c, z, i);
-                g48Var.finishFragment();
-                break;
+        int[] iArr = kc7Var.g;
+        int[] iArr2 = kc7Var.h;
+        boolean o = vnbVar == null ? aob.I.o() : vnbVar.a();
+        byte b = d48Var.c;
+        Paint paint = this.b;
+        Paint paint2 = this.a;
+        if (b != 1) {
+            paint2.setColor(kc7Var.e(0, vnbVar));
+            paint.setColor(kc7Var.o(o) ? kc7Var.e(1, vnbVar) : kc7Var.e(0, vnbVar));
+            this.f = kc7Var.o(o);
+            this.g = false;
+            return;
         }
+        if (o && kc7Var.g() != kc7Var.f() && kc7Var.i() == kc7Var.f()) {
+            paint2.setColor(kc7Var.e(1, vnbVar));
+            paint.setColor(kc7Var.e(0, vnbVar));
+        } else {
+            paint2.setColor(kc7Var.e(0, vnbVar));
+            paint.setColor(kc7Var.e(1, vnbVar));
+        }
+        this.c.setColor(kc7Var.e(2, vnbVar));
+        this.f = kc7Var.h(o) != (o ? iArr2 : iArr)[0];
+        int j = kc7Var.j(o);
+        if (o) {
+            iArr = iArr2;
+        }
+        this.g = j != iArr[0];
     }
 }

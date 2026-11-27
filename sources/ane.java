@@ -1,26 +1,11 @@
 // default package
 
-import android.os.Parcel;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class ane extends dzc implements gse {
-    public ane() {
-        super("com.google.android.gms.location.internal.IFusedLocationProviderCallback", (byte) 8);
-    }
+public abstract class ane {
+    public abstract View b(int i);
 
-    @Override // dzc
-    public final boolean e(Parcel parcel, int i) {
-        if (i != 1) {
-            if (i != 2) {
-                return false;
-            }
-            zze();
-            return true;
-        }
-        w5e w5eVar = (w5e) rgd.a(parcel, w5e.CREATOR);
-        rgd.b(parcel);
-        t(w5eVar);
-        return true;
-    }
+    public abstract boolean c();
 }

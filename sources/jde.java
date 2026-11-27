@@ -1,26 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class jde {
-    public static final Object a(long j, fw2 fw2Var) {
-        if (j > 0) {
-            na1 na1Var = new na1(1, dle.a(fw2Var));
-            na1Var.s();
-            if (j < Long.MAX_VALUE) {
-                b(na1Var.e).b(j, na1Var);
-            }
-            Object q = na1Var.q();
-            if (q == bx2.a) {
-                return q;
-            }
-        }
-        return g5c.a;
+public final class jde implements zq7 {
+    public static final jde a = new jde();
+
+    static {
+        xnb.y(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, new tnd(1)), 2)), 3)), 4)));
     }
 
-    public static final dd3 b(sw2 sw2Var) {
-        qw2 qw2Var = sw2Var.get(vi2.b);
-        dd3 dd3Var = qw2Var instanceof dd3 ? (dd3) qw2Var : null;
-        return dd3Var == null ? ia3.a : dd3Var;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

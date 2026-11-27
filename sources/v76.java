@@ -1,40 +1,13 @@
 // default package
 
-import android.provider.Settings;
-import org.telegram.ui.LaunchActivity;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface v76 {
+    void C(int i, int i2);
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class v76 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ x76 b;
+    void X(int i, int i2);
 
-    public /* synthetic */ v76(x76 x76Var, byte b) {
-        this.a = b;
-        this.b = x76Var;
-    }
+    void n(int i, int i2);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        xa8 xa8Var;
-        LaunchActivity launchActivity;
-        byte b = this.a;
-        x76 x76Var = this.b;
-        switch (b) {
-            case 0:
-                xa8 xa8Var2 = x76Var.a;
-                if (xa8Var2 != null) {
-                    xa8Var2.d();
-                    break;
-                }
-                break;
-            default:
-                m8b m8bVar = x76Var.c;
-                if (m8bVar != null && x76Var.G0() && (xa8Var = x76Var.a) != null && xa8Var.c == 0 && (launchActivity = LaunchActivity.H1) != null && Settings.canDrawOverlays(launchActivity)) {
-                    m8bVar.S();
-                    break;
-                }
-                break;
-        }
-    }
+    void x0(int i, int i2);
 }

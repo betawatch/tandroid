@@ -1,51 +1,52 @@
 // default package
 
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.webkit.GeolocationPermissions;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class dv0 {
-    public final String a;
-    public final String b;
-    public final int c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class dv0 implements pt2 {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ kv0 b;
+    public final /* synthetic */ GeolocationPermissions.Callback c;
+    public final /* synthetic */ String d;
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException
-     */
-    public dv0(JSONObject jSONObject) {
-        this.c = -1;
-        this.a = jSONObject.getString("id");
-        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
-        switch (string.hashCode()) {
-            case -1829997182:
-                if (string.equals("destructive")) {
-                    this.c = bkb.p7;
+    public /* synthetic */ dv0(kv0 kv0Var, GeolocationPermissions.Callback callback, String str, byte b) {
+        this.a = b;
+        this.b = kv0Var;
+        this.c = callback;
+        this.d = str;
+    }
+
+    @Override // pt2
+    public final void accept(Object obj) {
+        byte b = this.a;
+        byte b2 = 1;
+        String str = this.d;
+        GeolocationPermissions.Callback callback = this.c;
+        kv0 kv0Var = this.b;
+        Boolean bool = (Boolean) obj;
+        switch (b) {
+            case 0:
+                if (kv0Var.a != null) {
+                    kv0Var.a = null;
+                    if (!bool.booleanValue()) {
+                        callback.invoke(str, false, false);
+                        break;
+                    } else {
+                        dv0 dv0Var = new dv0(kv0Var, callback, str, b2);
+                        boolean z = rv0.R0;
+                        kv0Var.e.R.R(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, dv0Var);
+                        break;
+                    }
+                }
+                break;
+            default:
+                callback.invoke(str, bool.booleanValue(), false);
+                if (bool.booleanValue()) {
+                    kv0Var.e.R.U = true;
                     break;
                 }
                 break;
-            case -1367724422:
-                if (string.equals("cancel")) {
-                    this.b = k96.M0(2131752577, null);
-                    return;
-                }
-                break;
-            case 3548:
-                if (string.equals("ok")) {
-                    this.b = k96.M0(2131747638, null);
-                    return;
-                }
-                break;
-            case 94756344:
-                if (string.equals("close")) {
-                    this.b = k96.M0(2131752029, null);
-                    return;
-                }
-                break;
-            case 1544803905:
-                string.equals("default");
-                break;
         }
-        this.b = jSONObject.getString("text");
     }
 }

@@ -1,21 +1,40 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class rh7 {
-    public final mm5 a;
-    public final int[] b;
+    public final byte a;
+    public final byte b;
+    public final float c;
 
-    public rh7(w59 w59Var, int[] iArr, byte b) {
-        switch (b) {
-            case 1:
-                this.a = mm5.q(w59Var);
-                this.b = iArr;
-                break;
-            default:
-                this.a = mm5.q(w59Var);
-                this.b = iArr;
-                break;
+    /* JADX WARN: Multi-variable type inference failed */
+    public rh7(float f, int i, int i2) {
+        this.a = i;
+        this.b = i2;
+        this.c = f;
+    }
+
+    public static rh7 a(int i) {
+        int i2 = (i >> 13) & 7;
+        if (i2 == 0) {
+            return null;
         }
+        return new rh7(((i & 511) * ((i & 512) != 0 ? -1 : 1)) / 10.0f, i2, (i >> 10) & 7);
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof rh7)) {
+            return false;
+        }
+        rh7 rh7Var = (rh7) obj;
+        return this.a == rh7Var.a && this.b == rh7Var.b && Float.compare(this.c, rh7Var.c) == 0;
+    }
+
+    public final int hashCode() {
+        return Float.floatToIntBits(this.c) + (((this.a * 31) + this.b) * 31);
+    }
+
+    public final String toString() {
+        return "GainField{name=" + ((int) this.a) + ", originator=" + ((int) this.b) + ", gain=" + this.c + '}';
     }
 }

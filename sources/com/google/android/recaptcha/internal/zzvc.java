@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -181,7 +181,7 @@ final class zzvc {
         long j2 = (-4) & j;
         int i = unsafe.getInt(obj, j2);
         int i2 = ((~((int) j)) & 3) << 3;
-        unsafe.putInt(obj, j2, (i & (~(kk7.d4 << i2))) | ((b & 255) << i2));
+        unsafe.putInt(obj, j2, (i & (~(jn7.d4 << i2))) | ((b & 255) << i2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -189,7 +189,7 @@ final class zzvc {
         Unsafe unsafe = zzf.zza;
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        unsafe.putInt(obj, j2, (unsafe.getInt(obj, j2) & (~(kk7.d4 << i))) | ((b & 255) << i));
+        unsafe.putInt(obj, j2, (unsafe.getInt(obj, j2) & (~(jn7.d4 << i))) | ((b & 255) << i));
     }
 
     public static double zza(Object obj, long j) {
@@ -212,7 +212,7 @@ final class zzvc {
         try {
             return zzc.allocateInstance(cls);
         } catch (InstantiationException e) {
-            ho9.n(e);
+            vr9.l(e);
             return null;
         }
     }
@@ -262,11 +262,11 @@ final class zzvc {
     }
 
     public static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & kk7.d4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & jn7.d4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & kk7.d4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & jn7.d4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

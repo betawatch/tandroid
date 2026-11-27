@@ -1,27 +1,37 @@
 // default package
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ap5 extends b4 {
-    public static final Parcelable.Creator<ap5> CREATOR = new c0f(8);
-    public String a;
-    public String b;
-    public int c;
+public final class ap5 extends ho5 {
+    @Override // io5
+    public final /* bridge */ /* synthetic */ io5 a(Object obj) {
+        f(obj);
+        return this;
+    }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.l(parcel, 2, this.a);
-        jte.l(parcel, 3, this.b);
-        int i2 = this.c;
-        if (i2 != 1 && i2 != 2 && i2 != 3) {
-            i2 = 0;
+    public final void f(Object obj) {
+        obj.getClass();
+        c(obj);
+    }
+
+    public final bp5 g() {
+        int i = this.b;
+        if (i == 0) {
+            int i2 = bp5.c;
+            return q99.s;
         }
-        jte.q(parcel, 4, 4);
-        parcel.writeInt(i2);
-        jte.s(parcel, r);
+        Object[] objArr = this.a;
+        if (i != 1) {
+            bp5 p = bp5.p(i, objArr);
+            this.b = p.size();
+            this.c = true;
+            return p;
+        }
+        Object obj = objArr[0];
+        Objects.requireNonNull(obj);
+        int i3 = bp5.c;
+        return new oma(obj);
     }
 }

@@ -1,31 +1,18 @@
 // default package
 
-import android.os.IBinder;
-import android.os.IInterface;
-
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class zme extends xx4 {
-    @Override // gg0
-    public final /* synthetic */ IInterface b(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+public abstract class zme {
+    public final /* synthetic */ byte a = 1;
+
+    public abstract Object d();
+
+    public final String toString() {
+        switch (this.a) {
+            case 1:
+                return d().toString();
+            default:
+                return super.toString();
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.clearcut.internal.IClearcutLoggerService");
-        return queryLocalInterface instanceof j5f ? (j5f) queryLocalInterface : new j5f(iBinder);
-    }
-
-    @Override // gg0
-    public final int i() {
-        return 11925000;
-    }
-
-    @Override // gg0
-    public final String l() {
-        return "com.google.android.gms.clearcut.internal.IClearcutLoggerService";
-    }
-
-    @Override // gg0
-    public final String n() {
-        return "com.google.android.gms.clearcut.service.START";
     }
 }

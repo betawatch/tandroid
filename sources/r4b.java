@@ -1,49 +1,63 @@
 // default package
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class r4b extends b4c {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class r4b implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ fp b;
+    public final /* synthetic */ int c;
 
-    static {
-        b4c.h(new r4b());
+    public /* synthetic */ r4b(fp fpVar, int i, byte b) {
+        this.a = b;
+        this.b = fpVar;
+        this.c = i;
     }
 
-    @Override // b4c
-    public final void b(View view, c4c c4cVar, boolean z, l5c l5cVar, q5c q5cVar) {
-        s4b s4bVar = (s4b) view;
-        Object obj = c4cVar.H;
-        TLRPC.WebPage webPage = obj instanceof TLRPC.WebPage ? (TLRPC.WebPage) obj : null;
-        View.OnClickListener onClickListener = c4cVar.E;
-        hn hnVar = s4bVar.e;
-        ImageView imageView = s4bVar.b;
-        ImageView imageView2 = s4bVar.c;
-        boolean z2 = (webPage == null || (webPage instanceof TLRPC.TL_webPagePending)) ? false : true;
-        imageView.setAlpha(z2 ? 1.0f : 0.0f);
-        imageView.setScaleX(z2 ? 1.0f : 0.4f);
-        imageView.setScaleY(z2 ? 1.0f : 0.4f);
-        imageView2.setAlpha(z2 ? 0.0f : 1.0f);
-        imageView2.setScaleX(z2 ? 0.4f : 1.0f);
-        imageView2.setScaleY(z2 ? 0.4f : 1.0f);
-        hn hnVar2 = s4bVar.d;
-        if (z2) {
-            hnVar2.c(TextUtils.isEmpty(webPage.site_name) ? webPage.title : webPage.site_name, false, true);
-            hnVar.c(webPage.description, false, true);
-        } else {
-            hnVar2.c(s4bVar.h, false, true);
-            hnVar.c(s4bVar.n, false, true);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        int i = this.c;
+        fp fpVar = this.b;
+        switch (b) {
+            case 0:
+                ArrayList arrayList = (ArrayList) fpVar.d;
+                Float f = (Float) valueAnimator.getAnimatedValue();
+                f.getClass();
+                arrayList.set(i, f);
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) fpVar.e;
+                Float f2 = (Float) valueAnimator.getAnimatedValue();
+                f2.getClass();
+                arrayList2.set(i, f2);
+                break;
+            case 2:
+                ArrayList arrayList3 = (ArrayList) fpVar.f;
+                Float f3 = (Float) valueAnimator.getAnimatedValue();
+                f3.getClass();
+                arrayList3.set(i, f3);
+                break;
+            case 3:
+                ArrayList arrayList4 = (ArrayList) fpVar.d;
+                Float f4 = (Float) valueAnimator.getAnimatedValue();
+                f4.getClass();
+                arrayList4.set(i, f4);
+                break;
+            case 4:
+                ArrayList arrayList5 = (ArrayList) fpVar.e;
+                Float f5 = (Float) valueAnimator.getAnimatedValue();
+                f5.getClass();
+                arrayList5.set(i, f5);
+                break;
+            default:
+                ArrayList arrayList6 = (ArrayList) fpVar.f;
+                Float f6 = (Float) valueAnimator.getAnimatedValue();
+                f6.getClass();
+                arrayList6.set(i, f6);
+                break;
         }
-        s4bVar.f.setOnClickListener(onClickListener);
-    }
-
-    @Override // b4c
-    public final View d(Context context, o39 o39Var, int i, wjb wjbVar) {
-        return new s4b(context);
     }
 }

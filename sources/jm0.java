@@ -7,9 +7,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jm0 extends ja {
+public final class jm0 extends ka {
     public CharSequence c;
     public TLRPC.InputPeer d;
     public TLRPC.Chat e;
@@ -80,15 +80,15 @@ public final class jm0 extends ja {
         return false;
     }
 
-    @Override // ja
-    public final boolean a(ja jaVar) {
+    @Override // ka
+    public final boolean a(ka kaVar) {
         jm0 jm0Var;
         int i;
         int i2;
-        if (this == jaVar) {
+        if (this == kaVar) {
             return true;
         }
-        if (jm0.class == jaVar.getClass() && (i = (jm0Var = (jm0) jaVar).a) == (i2 = this.a)) {
+        if (jm0.class == kaVar.getClass() && (i = (jm0Var = (jm0) kaVar).a) == (i2 = this.a)) {
             return i2 == 0 ? this.g == jm0Var.g : i == 17 ? this.i == jm0Var.i && this.h == jm0Var.h && this.m == jm0Var.m && this.g == jm0Var.g && this.b == jm0Var.b : i2 == 5 ? this.i == jm0Var.i && g(this.k, jm0Var.k) : i2 == 13 && this.i == jm0Var.i && TextUtils.equals(this.c, jm0Var.c);
         }
         return false;

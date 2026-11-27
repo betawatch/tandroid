@@ -1,29 +1,129 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ViewSwitcher;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class zc6 extends ViewSwitcher {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class zc6 implements Runnable {
     public final /* synthetic */ byte a;
+    public final /* synthetic */ id6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zc6(Context context, byte b) {
-        super(context);
+    public /* synthetic */ zc6(id6 id6Var, byte b) {
         this.a = b;
+        this.b = id6Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        byte b2 = 0;
+        byte b3 = 1;
+        id6 id6Var = this.b;
+        switch (b) {
             case 0:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
+                id6 id6Var2 = this.b;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                try {
+                    ArrayList arrayList4 = new ArrayList();
+                    ArrayList arrayList5 = new ArrayList();
+                    SQLiteCursor queryFinalized = id6Var2.getMessagesStorage().b.queryFinalized("SELECT uid, mid, date, period, message, proximity FROM sharing_locations WHERE 1", new Object[0]);
+                    while (queryFinalized.next()) {
+                        hd6 hd6Var = new hd6();
+                        hd6Var.a = queryFinalized.longValue(0);
+                        hd6Var.b = queryFinalized.intValue(1);
+                        hd6Var.c = queryFinalized.intValue(2);
+                        hd6Var.d = queryFinalized.intValue(3);
+                        hd6Var.f = queryFinalized.intValue(5);
+                        hd6Var.e = id6Var2.currentAccount;
+                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(4);
+                        if (byteBufferValue != null) {
+                            r47 r47Var = new r47(id6Var2.currentAccount, TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false), false, false);
+                            hd6Var.h = r47Var;
+                            jf7.d(r47Var.k, arrayList4, arrayList5, null);
+                            byteBufferValue.reuse();
+                        }
+                        arrayList.add(hd6Var);
+                        boolean y = wf3.y(hd6Var.a);
+                        long j = hd6Var.a;
+                        if (y) {
+                            if (!arrayList5.contains(Long.valueOf(-j))) {
+                                arrayList5.add(Long.valueOf(-hd6Var.a));
+                            }
+                        } else if (wf3.D(j) && !arrayList4.contains(Long.valueOf(hd6Var.a))) {
+                            arrayList4.add(Long.valueOf(hd6Var.a));
+                        }
+                    }
+                    queryFinalized.dispose();
+                    if (!arrayList5.isEmpty()) {
+                        id6Var2.getMessagesStorage().P(TextUtils.join(",", arrayList5), arrayList3);
+                    }
+                    id6Var2.getMessagesStorage().k0(arrayList4, arrayList2, false);
+                } catch (Exception e) {
+                    cc4.g(e, true);
+                }
+                if (!arrayList.isEmpty()) {
+                    hl.c3(new g65(id6Var2, arrayList2, arrayList3, arrayList, (byte) 14));
+                    break;
+                }
+                break;
+            case 1:
+                id6Var.J.clear();
+                id6Var.K.b();
+                id6.s();
+                jn7.e().k(jn7.G4, new Object[0]);
+                break;
+            case 2:
+                id6Var.I = 0L;
+                id6Var.G.clear();
+                id6Var.a.b();
+                id6Var.b.clear();
+                id6Var.s = null;
+                id6Var.r(true);
+                break;
+            case 3:
+                id6Var.L = Boolean.FALSE;
+                try {
+                    ((d6d) ((aj3) id6Var.N).b).d();
+                    id6Var.p();
+                    break;
+                } catch (Throwable unused) {
+                    return;
+                }
+            case 4:
+                id6 f = id6.f(id6Var.getAccountInstance().a);
+                id6Var.getNotificationCenter().a(f, 1);
+                id6Var.getNotificationCenter().a(f, 7);
+                id6Var.getNotificationCenter().a(f, 50);
+                break;
+            case 5:
+                ArrayList arrayList6 = id6Var.b;
+                for (int i = 0; i < arrayList6.size(); i++) {
+                    hd6 hd6Var2 = (hd6) arrayList6.get(i);
+                    TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
+                    tL_messages_editMessage.peer = id6Var.getMessagesController().j1(hd6Var2.a);
+                    tL_messages_editMessage.id = hd6Var2.b;
+                    tL_messages_editMessage.flags |= TLObject.FLAG_14;
+                    TLRPC.TL_inputMediaGeoLive tL_inputMediaGeoLive = new TLRPC.TL_inputMediaGeoLive();
+                    tL_messages_editMessage.media = tL_inputMediaGeoLive;
+                    tL_inputMediaGeoLive.stopped = true;
+                    tL_inputMediaGeoLive.geo_point = new TLRPC.TL_inputGeoPointEmpty();
+                    id6Var.getConnectionsManager().sendRequest(tL_messages_editMessage, new ad6(id6Var, b2));
+                }
+                arrayList6.clear();
+                id6Var.a.b();
+                id6Var.l(null, 2);
+                id6Var.r(true);
+                hl.c3(new zc6(id6Var, b3));
                 break;
             default:
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(gl.L(100.0f), TLObject.FLAG_31));
+                id6Var.a(true);
                 break;
         }
     }

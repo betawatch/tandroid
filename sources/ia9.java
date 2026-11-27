@@ -1,19 +1,29 @@
 // default package
 
-import android.content.res.ColorStateList;
-import android.content.res.Configuration;
-import android.content.res.Resources;
+import org.webrtc.RenderSynchronizer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ia9 {
-    public final ColorStateList a;
-    public final Configuration b;
-    public final int c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ia9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ RenderSynchronizer b;
 
-    public ia9(ColorStateList colorStateList, Configuration configuration, Resources.Theme theme) {
-        this.a = colorStateList;
-        this.b = configuration;
-        this.c = theme == null ? 0 : theme.hashCode();
+    public /* synthetic */ ia9(RenderSynchronizer renderSynchronizer, byte b) {
+        this.a = b;
+        this.b = renderSynchronizer;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        RenderSynchronizer renderSynchronizer = this.b;
+        switch (b) {
+            case 0:
+                renderSynchronizer.lambda$registerListener$1();
+                break;
+            default:
+                renderSynchronizer.lambda$new$0();
+                break;
+        }
     }
 }

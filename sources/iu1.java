@@ -1,20 +1,12 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class iu1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ye7 a;
-
-    public iu1(ye7 ye7Var) {
-        this.a = ye7Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        this.a.q(1.0f);
+public final class iu1 extends r47 {
+    @Override // r47
+    public final boolean s(TLRPC.Chat chat, boolean z) {
+        return false;
     }
 }

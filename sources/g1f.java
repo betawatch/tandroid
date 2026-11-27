@@ -1,27 +1,31 @@
 // default package
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.SortedSet;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class g1f {
-    public static boolean a(Comparator comparator, Collection collection) {
-        Object obj;
-        comparator.getClass();
-        collection.getClass();
-        if (collection instanceof SortedSet) {
-            obj = ((SortedSet) collection).comparator();
-            if (obj == null) {
-                obj = cld.b;
-            }
-        } else {
-            if (!(collection instanceof vjd)) {
-                return false;
-            }
-            obj = ((vjd) collection).s;
-        }
-        return comparator.equals(obj);
+public final class g1f {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final akf e;
+    public final String f;
+    public final Boolean g;
+    public final Boolean h;
+    public final Boolean i;
+    public final Integer j;
+    public final Integer k;
+
+    public /* synthetic */ g1f(gxe gxeVar) {
+        this.a = gxeVar.a;
+        this.b = gxeVar.b;
+        this.c = gxeVar.c;
+        this.d = gxeVar.d;
+        this.e = (akf) gxeVar.k;
+        this.f = gxeVar.e;
+        this.g = gxeVar.f;
+        this.h = gxeVar.g;
+        this.i = gxeVar.h;
+        this.j = gxeVar.i;
+        this.k = gxeVar.j;
     }
 }

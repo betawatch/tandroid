@@ -1,53 +1,179 @@
 // default package
 
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.content.DialogInterface;
+import android.graphics.Paint;
 import android.view.View;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.q;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class dn {
-    public final cm a;
-    public final StaticLayout b;
-    public final float c;
-    public final int d;
-    public final float e;
-    public final float f;
-    public final float g;
-    public final float h;
-    public final /* synthetic */ gn i;
+public final class dn extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public dn(gn gnVar, StaticLayout staticLayout, float f, int i) {
-        this.i = gnVar;
-        this.b = staticLayout;
-        this.d = i;
-        this.c = f;
-        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
-        this.f = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineWidth(0);
-        this.g = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineBaseline(0);
-        this.h = staticLayout != null ? staticLayout.getHeight() - this.g : 0.0f;
-        if (gnVar.getCallback() instanceof View) {
-            this.a = gm.update(gnVar.p, (View) gnVar.getCallback(), this.a, staticLayout);
+    public /* synthetic */ dn(Object obj, int i, byte b) {
+        this.a = b;
+        this.c = obj;
+        this.b = i;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                nx0 nx0Var = (nx0) this.c;
+                AnimatorSet animatorSet = nx0Var.A0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    nx0Var.A0 = null;
+                    nx0Var.B0 = (byte) 0;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    public final void a(Canvas canvas, float f) {
-        gn gnVar = this.i;
-        int i = gnVar.C;
-        TextPaint textPaint = gnVar.a;
-        int max = Math.max(0, Math.min(kk7.d4, (int) (i * f)));
-        if (max != 0) {
-            textPaint.setAlpha(kk7.d4);
-            if (gnVar.V) {
-                textPaint.setShadowLayer(gnVar.W, 0.0f, gnVar.X, gnVar.Y);
-            }
-            int saveLayerAlpha = max < 255 ? canvas.saveLayerAlpha(null, max, 31) : -1;
-            this.b.draw(canvas);
-            gm.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, gnVar.b0);
-            if (saveLayerAlpha != -1) {
-                canvas.restoreToCount(saveLayerAlpha);
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        long cameraFlipElapsedMs;
+        byte b = this.a;
+        int i = this.b;
+        Object obj = this.c;
+        switch (b) {
+            case 0:
+                ((hn) obj).u(i);
+                break;
+            case 1:
+                xw0 xw0Var = (xw0) obj;
+                Paint paint = xw0Var.R;
+                paint.setColor(i);
+                xw0Var.F();
+                xw0Var.f.invalidate();
+                dw dwVar = xw0Var.Z0;
+                if (dwVar != null) {
+                    dwVar.b(hl.B(paint.getColor()) <= 0.721f, false);
+                    xw0Var.Z0.setBackgroundColor(paint.getColor());
+                }
+                xw0Var.K();
+                break;
+            case 2:
+                nx0 nx0Var = (nx0) obj;
+                AnimatorSet animatorSet = nx0Var.A0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    nx0Var.A0 = null;
+                    nx0Var.B0 = (byte) 0;
+                    DialogInterface.OnClickListener onClickListener = nx0Var.L;
+                    if (onClickListener != null) {
+                        onClickListener.onClick(nx0Var, i);
+                    }
+                    hl.c3(new fv0(this, (byte) 4));
+                }
+                jn7.e().k(100, 512);
+                break;
+            case 3:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                wma wmaVar = chatActivityEnterView.b2;
+                chatActivityEnterView.p4 = false;
+                chatActivityEnterView.q4 = null;
+                my1 my1Var = chatActivityEnterView.V0;
+                if (my1Var != null) {
+                    if (chatActivityEnterView.I7 == null) {
+                        my1Var.getLayoutParams().height = i;
+                    }
+                    chatActivityEnterView.V0.setLayerType(0, null);
+                }
+                if (wmaVar != null) {
+                    wmaVar.requestLayout();
+                    wmaVar.setForeground(null);
+                    wmaVar.setWillNotDraw(false);
+                }
+                if (chatActivityEnterView.o3 && chatActivityEnterView.U0()) {
+                    chatActivityEnterView.i2(0, chatActivityEnterView.U2, true, true);
+                }
+                mv1 mv1Var = chatActivityEnterView.s0;
+                if (mv1Var != null) {
+                    mv1Var.run();
+                    chatActivityEnterView.s0 = null;
+                }
+                chatActivityEnterView.z4.e();
+                break;
+            case 4:
+                j22 j22Var = (j22) obj;
+                pw0 pw0Var = j22Var.n;
+                if (pw0Var.getWebView() != null) {
+                    pw0Var.getWebView().setScrollY(i);
+                }
+                if (animator == j22Var.r) {
+                    j22Var.r = null;
+                    break;
+                }
+                break;
+            case 5:
+                q qVar = (q) obj;
+                if (i == qVar.v0) {
+                    qVar.y.setRotationY(0.0f);
+                    qVar.t0 = true;
+                    qVar.e0 = null;
+                    StringBuilder sb = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
+                    cameraFlipElapsedMs = qVar.getCameraFlipElapsedMs();
+                    sb.append(cameraFlipElapsedMs);
+                    cc4.b(sb.toString());
+                    qVar.q();
+                    break;
+                }
+                break;
+            case 6:
+                ((LaunchActivity) obj).D0(i);
+                break;
+            case 7:
+                fo8 fo8Var = (fo8) obj;
+                fo8Var.y = -1;
+                fo8Var.w = i;
+                fo8Var.s = 0.0f;
+                fo8Var.V = null;
+                fo8Var.e();
+                break;
+            case 8:
+                zs8 zs8Var = (zs8) obj;
+                zs8Var.I = null;
+                zs8Var.Q.e1.delete(i);
+                break;
+            case 9:
+                i69 i69Var = (i69) ((r32) obj).d;
+                i69Var.b.remove(i);
+                i69Var.d = true;
+                i69Var.a.invalidate();
+                break;
+            case 10:
+                mj9 mj9Var = (mj9) obj;
+                mj9Var.a0 = i;
+                mj9Var.b0 = 0.0f;
+                mj9Var.requestLayout();
+                mj9Var.invalidate();
+                break;
+            case 11:
+                uk9 uk9Var = (uk9) obj;
+                uk9Var.b0 = i;
+                uk9Var.c0 = 0.0f;
+                View view = uk9Var.W;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            default:
+                gha ghaVar = (gha) obj;
+                ghaVar.e.S1.remove(i);
+                ghaVar.a.invalidate();
+                break;
         }
     }
 }

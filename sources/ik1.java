@@ -1,243 +1,315 @@
 // default package
 
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final class ik1 {
-    public final long[] a;
-    public final CharSequence[] b;
-    public final CharSequence[] c;
-    public final StaticLayout[] d;
-    public final StaticLayout[] e;
+    public final char[] a;
+    public final StringReader b;
+    public int c;
+    public int d;
+    public int e;
     public int f;
     public int g;
-    public DecimalFormat h;
+    public final String[] h;
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0051  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0090  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x013f  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0145  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0141  */
-    /* JADX WARN: Type inference failed for: r0v0, types: [ik1, java.lang.Object] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ik1(long j, long j2, boolean z, float f, int i, TextPaint textPaint, TextPaint textPaint2) {
-        long j3;
-        float f2;
-        int i2;
-        long max;
-        int i3;
-        long j4;
-        long j5;
-        long max2;
-        int i4;
-        int i5;
-        int i6;
-        ?? obj = new Object();
-        obj.g = kk7.d4;
-        if (z) {
-            long j6 = j - j2;
-            if (j6 == 0) {
-                j3 = j2 - 1;
-                i2 = 3;
-            } else {
-                if (j6 >= 6) {
-                    long j7 = j6 / 2;
-                    if (j7 < 6) {
-                        j3 = j2;
-                        i2 = (int) ((j6 % 2) + j7 + 1);
-                        f2 = 2.0f;
-                    } else {
-                        float f3 = j6 / 5.0f;
-                        if (f3 <= 0.0f) {
-                            max = Math.max(2L, j6 + 1);
-                        } else {
-                            j3 = j2;
-                            f2 = f3;
-                            i2 = 6;
-                        }
-                    }
-                    obj.a = new long[i2];
-                    obj.b = new CharSequence[i2];
-                    obj.d = new StaticLayout[i2];
-                    if (f > 0.0f) {
-                        obj.c = new CharSequence[i2];
-                        obj.e = new StaticLayout[i2];
-                    }
-                    boolean z2 = f2 / f >= 1.0f;
-                    i3 = 0;
-                    ik1 ik1Var = obj;
-                    while (i3 < i2) {
-                        long j8 = ((long) (i3 * f2)) + j3;
-                        ik1Var.a[i3] = j8;
-                        ik1Var.b[i3] = ik1Var.b(0, textPaint, j8, i);
-                        if (f > 0.0f) {
-                            float f4 = ik1Var.a[i3] / f;
-                            if (z2) {
-                                long j9 = (long) f4;
-                                if (f4 - j9 < 0.01f || i == 1 || i == 2) {
-                                    ik1Var.c[i3] = ik1Var.b(1, textPaint2, j9, i);
-                                } else {
-                                    ik1Var.c[i3] = "";
-                                }
-                            } else {
-                                ik1Var.c[i3] = ik1Var.b(1, textPaint2, (long) f4, i);
-                            }
-                        }
-                        i3++;
-                        ik1Var = this;
-                    }
-                    return;
-                }
-                max = Math.max(2L, j6 + 1);
-                j3 = j2;
-                i2 = (int) max;
-            }
-            f2 = 1.0f;
-            obj.a = new long[i2];
-            obj.b = new CharSequence[i2];
-            obj.d = new StaticLayout[i2];
-            if (f > 0.0f) {
-            }
-            if (f2 / f >= 1.0f) {
-            }
-            i3 = 0;
-            ik1 ik1Var2 = obj;
-            while (i3 < i2) {
-            }
-            return;
+    public ik1(String str) {
+        StringReader stringReader = new StringReader(str);
+        str.getClass();
+        this.h = new String[128];
+        if (!stringReader.markSupported()) {
+            lq5.j("Must be true");
+            throw null;
         }
-        if (j > 100) {
-            j4 = 0;
-            if ((j / 5) % 10.0f != 0.0f) {
-                j5 = 10 * ((j / 10) + 1);
-                max2 = Math.max(1L, (long) Math.ceil(j5 / 5.0d));
-                if (j5 < 6) {
-                    long j10 = j5 / 2;
-                    if (j10 < 6) {
-                        i4 = (int) (j10 + 1);
-                        i6 = j5 % 2 != j4 ? i4 + 1 : i6;
-                    } else {
-                        i4 = 6;
-                    }
-                    obj.a = new long[i4];
-                    obj.b = new CharSequence[i4];
-                    obj.d = new StaticLayout[i4];
-                    if (f > 0.0f) {
-                        obj.c = new CharSequence[i4];
-                        obj.e = new StaticLayout[i4];
-                    }
-                    boolean z3 = ((float) max2) / f < 1.0f;
-                    i5 = 1;
-                    while (i5 < i4) {
-                        long j11 = i5 * max2;
-                        obj.a[i5] = j11;
-                        long j12 = max2;
-                        obj.b[i5] = obj.b(0, textPaint, j11, i);
-                        if (f > 0.0f) {
-                            float f5 = obj.a[i5] / f;
-                            if (z3) {
-                                long j13 = (long) f5;
-                                if (f5 - j13 < 0.01f || i == 1 || i == 2) {
-                                    obj.c[i5] = obj.b(1, textPaint2, j13, i);
-                                } else {
-                                    obj.c[i5] = "";
-                                }
-                            } else {
-                                obj.c[i5] = obj.b(1, textPaint2, (long) f5, i);
-                            }
-                        }
-                        i5++;
-                        max2 = j12;
-                    }
+        this.b = stringReader;
+        this.a = new char[TLObject.FLAG_12];
+        b();
+    }
+
+    public static String c(char[] cArr, String[] strArr, int i, int i2) {
+        if (i2 > 12) {
+            return new String(cArr, i, i2);
+        }
+        if (i2 < 1) {
+            return "";
+        }
+        int i3 = 0;
+        int i4 = i;
+        int i5 = 0;
+        int i6 = 0;
+        while (i5 < i2) {
+            i6 = (i6 * 31) + cArr[i4];
+            i5++;
+            i4++;
+        }
+        int length = i6 & (strArr.length - 1);
+        String str = strArr[length];
+        if (str == null) {
+            String str2 = new String(cArr, i, i2);
+            strArr[length] = str2;
+            return str2;
+        }
+        if (i2 == str.length()) {
+            int i7 = i;
+            int i8 = i2;
+            while (true) {
+                int i9 = i8 - 1;
+                if (i8 == 0) {
+                    return str;
                 }
-                i6 = (int) Math.max(2L, j5 + 1);
-                i4 = i6;
-                obj.a = new long[i4];
-                obj.b = new CharSequence[i4];
-                obj.d = new StaticLayout[i4];
-                if (f > 0.0f) {
+                int i10 = i7 + 1;
+                int i11 = i3 + 1;
+                if (cArr[i7] != str.charAt(i3)) {
+                    break;
                 }
-                if (((float) max2) / f < 1.0f) {
-                }
-                i5 = 1;
-                while (i5 < i4) {
-                }
+                i7 = i10;
+                i8 = i9;
+                i3 = i11;
             }
-        } else {
-            j4 = 0;
         }
-        j5 = j;
-        max2 = Math.max(1L, (long) Math.ceil(j5 / 5.0d));
-        if (j5 < 6) {
-        }
-        i4 = i6;
-        obj.a = new long[i4];
-        obj.b = new CharSequence[i4];
-        obj.d = new StaticLayout[i4];
-        if (f > 0.0f) {
-        }
-        if (((float) max2) / f < 1.0f) {
-        }
-        i5 = 1;
-        while (i5 < i4) {
+        String str3 = new String(cArr, i, i2);
+        strArr[length] = str3;
+        return str3;
+    }
+
+    public final void a() {
+        this.e++;
+    }
+
+    public final void b() {
+        StringReader stringReader = this.b;
+        int i = this.e;
+        if (i >= this.d) {
+            try {
+                stringReader.skip(i);
+                stringReader.mark(TLObject.FLAG_12);
+                int read = stringReader.read(this.a);
+                stringReader.reset();
+                if (read != -1) {
+                    this.c = read;
+                    this.f += this.e;
+                    this.e = 0;
+                    this.g = 0;
+                    if (read > 3072) {
+                        read = 3072;
+                    }
+                    this.d = read;
+                }
+            } catch (IOException e) {
+                throw new zp2(e);
+            }
         }
     }
 
-    public final void a(Canvas canvas, int i, int i2, float f, float f2, TextPaint textPaint) {
-        StaticLayout[] staticLayoutArr = this.e;
-        StaticLayout[] staticLayoutArr2 = this.d;
-        StaticLayout staticLayout = (i == 0 ? staticLayoutArr2 : staticLayoutArr)[i2];
-        if (staticLayout == null) {
-            CharSequence charSequence = (i == 0 ? this.b : this.c)[i2];
-            if (i == 0) {
-                staticLayoutArr = staticLayoutArr2;
-            }
-            staticLayout = new StaticLayout(charSequence, textPaint, gl.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            staticLayoutArr[i2] = staticLayout;
-        }
-        canvas.save();
-        canvas.translate(f, textPaint.ascent() + f2);
-        staticLayout.draw(canvas);
-        canvas.restore();
+    public final char d() {
+        b();
+        int i = this.e;
+        char c = i >= this.c ? (char) 65535 : this.a[i];
+        this.e = i + 1;
+        return c;
     }
 
-    public final CharSequence b(int i, TextPaint textPaint, long j, int i2) {
-        if (i2 != 1) {
-            if (i2 != 2) {
-                return gl.o0((int) j, 0);
+    public final String e() {
+        char[] cArr;
+        char c;
+        b();
+        int i = this.e;
+        while (true) {
+            int i2 = this.e;
+            int i3 = this.c;
+            cArr = this.a;
+            if (i2 >= i3 || (((c = cArr[i2]) < 'A' || c > 'Z') && ((c < 'a' || c > 'z') && !Character.isLetter(c)))) {
+                break;
             }
-            if (i != 1) {
-                return jva.a1(false, "XTR ".concat(k96.E(j, ' ')), 0.65f, null);
+            this.e++;
+        }
+        return c(cArr, this.h, i, this.e - i);
+    }
+
+    public final String f(char c) {
+        char[] cArr;
+        int i;
+        b();
+        int i2 = this.e;
+        while (true) {
+            int i3 = this.c;
+            cArr = this.a;
+            if (i2 >= i3) {
+                i = -1;
+                break;
             }
-            return "≈" + ci0.h().e(j, "USD");
+            if (c == cArr[i2]) {
+                i = i2 - this.e;
+                break;
+            }
+            i2++;
         }
-        if (i == 1) {
-            return "≈" + ci0.h().e(j, "USD");
+        String[] strArr = this.h;
+        if (i != -1) {
+            String c2 = c(cArr, strArr, this.e, i);
+            this.e += i;
+            return c2;
         }
-        if (this.h == null) {
-            DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
-            decimalFormatSymbols.setDecimalSeparator('.');
-            DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
-            this.h = decimalFormat;
-            decimalFormat.setMinimumFractionDigits(2);
-            this.h.setMaximumFractionDigits(6);
-            this.h.setGroupingUsed(false);
+        b();
+        int i4 = this.e;
+        String c3 = c(cArr, strArr, i4, this.c - i4);
+        this.e = this.c;
+        return c3;
+    }
+
+    public final String g(char... cArr) {
+        int i;
+        char[] cArr2;
+        b();
+        int i2 = this.e;
+        int i3 = this.c;
+        loop0: while (true) {
+            i = this.e;
+            cArr2 = this.a;
+            if (i >= i3) {
+                break;
+            }
+            for (char c : cArr) {
+                int i4 = this.e;
+                if (cArr2[i4] == c) {
+                    i = i4;
+                    break loop0;
+                }
+            }
+            this.e++;
         }
-        this.h.setMaximumFractionDigits(j <= 1000000000 ? 6 : 2);
-        return zi1.L("TON " + this.h.format(j / 1.0E9d), textPaint, 0.8f, -gl.L(0.66f), false);
+        return i > i2 ? c(cArr2, this.h, i2, i - i2) : "";
+    }
+
+    public final String h(char... cArr) {
+        char[] cArr2;
+        b();
+        int i = this.e;
+        int i2 = this.c;
+        while (true) {
+            int i3 = this.e;
+            cArr2 = this.a;
+            if (i3 >= i2 || Arrays.binarySearch(cArr, cArr2[i3]) >= 0) {
+                break;
+            }
+            this.e++;
+        }
+        int i4 = this.e;
+        return i4 > i ? c(cArr2, this.h, i, i4 - i) : "";
+    }
+
+    public final char i() {
+        b();
+        int i = this.e;
+        if (i >= this.c) {
+            return (char) 65535;
+        }
+        return this.a[i];
+    }
+
+    public final boolean j() {
+        b();
+        return this.e >= this.c;
+    }
+
+    public final boolean k(String str) {
+        b();
+        b();
+        int length = str.length();
+        if (length <= this.c - this.e) {
+            for (int i = 0; i < length; i++) {
+                if (str.charAt(i) == this.a[this.e + i]) {
+                }
+            }
+            this.e = str.length() + this.e;
+            return true;
+        }
+        return false;
+    }
+
+    public final boolean l(String str) {
+        b();
+        int length = str.length();
+        if (length <= this.c - this.e) {
+            for (int i = 0; i < length; i++) {
+                if (Character.toUpperCase(str.charAt(i)) == Character.toUpperCase(this.a[this.e + i])) {
+                }
+            }
+            this.e = str.length() + this.e;
+            return true;
+        }
+        return false;
+    }
+
+    public final boolean m(char c) {
+        return !j() && this.a[this.e] == c;
+    }
+
+    public final boolean n(char... cArr) {
+        if (!j()) {
+            b();
+            char c = this.a[this.e];
+            for (char c2 : cArr) {
+                if (c2 == c) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public final boolean o() {
+        if (j()) {
+            return false;
+        }
+        char c = this.a[this.e];
+        if (c < 'A' || c > 'Z') {
+            return (c >= 'a' && c <= 'z') || Character.isLetter(c);
+        }
+        return true;
+    }
+
+    public final int p(String str) {
+        b();
+        char charAt = str.charAt(0);
+        int i = this.e;
+        while (i < this.c) {
+            char[] cArr = this.a;
+            if (charAt != cArr[i]) {
+                do {
+                    i++;
+                    if (i >= this.c) {
+                        break;
+                    }
+                } while (charAt != cArr[i]);
+            }
+            int i2 = i + 1;
+            int length = (str.length() + i2) - 1;
+            int i3 = this.c;
+            if (i < i3 && length <= i3) {
+                int i4 = i2;
+                for (int i5 = 1; i4 < length && str.charAt(i5) == cArr[i4]; i5++) {
+                    i4++;
+                }
+                if (i4 == length) {
+                    return i - this.e;
+                }
+            }
+            i = i2;
+        }
+        return -1;
+    }
+
+    public final void q() {
+        this.e--;
+    }
+
+    public final String toString() {
+        int i = this.e;
+        return new String(this.a, i, this.c - i);
     }
 }

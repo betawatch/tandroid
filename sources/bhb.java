@@ -1,160 +1,110 @@
 // default package
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class bhb extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final wf2 c;
-    public boolean d;
-    public boolean e;
-    public int f;
-    public float h;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class bhb extends ViewGroup {
+    public final LaunchActivity a;
+    public final Rect b;
+    public View c;
+    public int d;
+    public int e;
+    public boolean f;
 
-    static {
-        new pm("animationProgress", (byte) 17);
+    public bhb(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.b = new Rect();
+        this.a = launchActivity;
+        setWillNotDraw(false);
     }
 
-    public bhb(Context context) {
-        super(context);
-        this.f = 50;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        zkb.X(textView, bkb.F6, null);
-        ug8.w(textView, 1, 16.0f, 1, 1);
-        textView.setSingleLine(true);
-        textView.setGravity((k96.a0 ? 5 : 3) | 16);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        boolean z = k96.a0;
-        addView(textView, nme.d(-1, -1.0f, (z ? 5 : 3) | 48, z ? 21.0f : 64.0f, 0.0f, z ? 64.0f : 21.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        zkb.X(textView2, bkb.y6, null);
-        textView2.setTextSize(1, 13.0f);
-        textView2.setGravity(k96.a0 ? 5 : 3);
-        textView2.setLines(1);
-        textView2.setMaxLines(1);
-        textView2.setSingleLine(true);
-        textView2.setPadding(0, 0, 0, 0);
-        textView2.setEllipsize(truncateAt);
-        boolean z2 = k96.a0;
-        addView(textView2, nme.d(-2, -2.0f, (z2 ? 5 : 3) | 48, z2 ? 21.0f : 64.0f, 36.0f, z2 ? 64.0f : 21.0f, 0.0f));
-        wf2 wf2Var = new wf2(21, null, context);
-        this.c = wf2Var;
-        wf2Var.setDrawUnchecked(true);
-        wf2Var.setDrawBackgroundAsArc(10);
-        wf2Var.setDuration(100L);
-        wf2Var.b(bkb.g7, bkb.i7, bkb.j7);
-        addView(wf2Var, nme.d(20, 20.0f, (k96.a0 ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
-        setClipChildren(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setAnimationProgress(float f) {
-        this.h = f;
-        getMeasuredWidth();
-        gl.L(40.0f);
-        getMeasuredHeight();
-    }
-
-    public final void b(String str, String str2, boolean z, boolean z2) {
-        TextView textView = this.a;
-        textView.setText(str);
-        TextView textView2 = this.b;
-        textView2.setText(str2);
-        this.d = z2;
-        textView2.setVisibility(0);
-        this.e = z;
-        if (z) {
-            textView2.setLines(0);
-            textView2.setMaxLines(0);
-            textView2.setSingleLine(false);
-            textView2.setEllipsize(null);
-            textView2.setPadding(0, 0, 0, gl.L(11.0f));
-        } else {
-            textView2.setLines(1);
-            textView2.setMaxLines(1);
-            textView2.setSingleLine(true);
-            textView2.setEllipsize(TextUtils.TruncateAt.END);
-            textView2.setPadding(0, 0, 0, 0);
+    public final void a(View view, Rect rect) {
+        View view2 = this.c;
+        if (view2 != null && view2 != view) {
+            removeView(view2);
         }
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
-        layoutParams.height = -2;
-        layoutParams.topMargin = gl.L(10.0f);
-        textView.setLayoutParams(layoutParams);
-        setWillNotDraw(!z2);
+        this.c = view;
+        Rect rect2 = this.b;
+        if (rect != null) {
+            rect2.set(rect);
+        } else {
+            rect2.setEmpty();
+        }
+        if (view != null && view.getParent() != this) {
+            hl.B2(view);
+            addView(view);
+        }
+        requestLayout();
+        invalidate();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(k96.a0 ? 0.0f : gl.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (k96.a0 ? gl.L(64.0f) : 0), getMeasuredHeight() - 1, bkb.j0);
+        if (this.c == null || !this.f) {
+            return;
         }
+        canvas.drawColor(-16777216);
     }
 
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        if (this.c == null) {
+            return;
+        }
+        if (!this.f) {
+            Rect rect = this.b;
+            if (!rect.isEmpty()) {
+                this.c.layout(rect.left, rect.top, rect.right, rect.bottom);
+                return;
+            }
+        }
+        this.c.layout(0, 0, i3 - i, i4 - i2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x002b  */
     @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.checkbox");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.c.a.q);
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.a.getText());
-        TextView textView = this.b;
-        if (textView != null) {
-            sb.append("\n");
-            sb.append(textView.getText());
-        }
-        accessibilityNodeInfo.setText(sb);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void onMeasure(int i, int i2) {
-        if (this.e) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), 0);
-        } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(gl.L(this.b.getVisibility() == 0 ? 64.0f : this.f) + (this.d ? 1 : 0), TLObject.FLAG_30));
+        boolean z;
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        if (!hl.F1(this.a)) {
+            this.d = size;
+            this.e = size2;
+        } else if (size < this.d || size2 < this.e) {
+            z = true;
+            this.f = z;
+            setMeasuredDimension(size, size2);
+            if (this.c == null) {
+                boolean z2 = this.f;
+                Rect rect = this.b;
+                boolean z3 = z2 || rect.isEmpty();
+                View view = this.c;
+                if (!z3) {
+                    size = rect.width();
+                }
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+                if (!z3) {
+                    size2 = rect.height();
+                }
+                view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                return;
+            }
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        motionEvent.getX();
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i) {
-        clearAnimation();
-        super.setBackgroundColor(i);
-    }
-
-    public void setChecked(boolean z) {
-        this.c.a(z, true);
-    }
-
-    public void setHeight(int i) {
-        this.f = i;
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z) {
-        super.setPressed(z);
-    }
-
-    public void setTypeface(Typeface typeface) {
-        this.a.setTypeface(typeface);
+        z = false;
+        this.f = z;
+        setMeasuredDimension(size, size2);
+        if (this.c == null) {
+        }
     }
 }

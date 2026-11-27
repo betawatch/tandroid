@@ -1,27 +1,50 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class bi2 implements eja {
-    public final /* synthetic */ zh2 a;
-    public final /* synthetic */ di2 b;
+import android.animation.Animator;
 
-    public bi2(di2 di2Var, zh2 zh2Var) {
-        this.b = di2Var;
-        this.a = zh2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class bi2 implements Animator.AnimatorListener {
+    public final /* synthetic */ ci2 a;
+    public final /* synthetic */ ei2 b;
+
+    public bi2(ei2 ei2Var, ci2 ci2Var) {
+        this.b = ei2Var;
+        this.a = ci2Var;
     }
 
-    @Override // eja
-    public final void k(int i) {
-        di2 di2Var = this.b;
-        di2Var.t1 = i;
-        di2Var.E0(true);
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationRepeat(Animator animator) {
+        ei2 ei2Var = this.b;
+        ci2 ci2Var = this.a;
+        ei2Var.a(1.0f, ci2Var, true);
+        ci2Var.k = ci2Var.e;
+        ci2Var.l = ci2Var.f;
+        ci2Var.m = ci2Var.g;
+        ci2Var.a((ci2Var.j + 1) % ci2Var.i.length);
+        if (!ei2Var.f) {
+            ei2Var.e += 1.0f;
+            return;
+        }
+        ei2Var.f = false;
+        animator.cancel();
+        animator.setDuration(1332L);
+        animator.start();
+        if (ci2Var.n) {
+            ci2Var.n = false;
+        }
     }
 
-    @Override // eja
-    public final void n() {
-        int measuredHeight = this.b.n1.getMeasuredHeight();
-        zh2 zh2Var = this.a;
-        zh2Var.z(0 - zh2Var.getScrollX(), measuredHeight - zh2Var.getScrollY(), false);
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        this.b.e = 0.0f;
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
     }
 }

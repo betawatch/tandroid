@@ -1,55 +1,32 @@
 // default package
 
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Build;
-import android.util.Log;
-import com.google.android.gms.common.api.GoogleApiActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class t2d implements DialogInterface.OnClickListener {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class t2d implements pcc {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Intent b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ t2d(Intent intent, Object obj, byte b) {
+    public /* synthetic */ t2d(Object obj, byte b) {
         this.a = b;
-        this.b = intent;
-        this.c = obj;
+        this.b = obj;
     }
 
-    public final void a() {
-        byte b = this.a;
-        Object obj = this.c;
-        Intent intent = this.b;
-        switch (b) {
+    @Override // pcc
+    public final void a(Object obj) {
+        byte b;
+        byte b2 = this.a;
+        Object obj2 = this.b;
+        switch (b2) {
             case 0:
-                if (intent != null) {
-                    ((GoogleApiActivity) obj).startActivityForResult(intent, 2);
-                    break;
+                v2d v2dVar = (v2d) obj2;
+                if (((sx5) obj) == sx5.d && ((b = v2dVar.s) == 2 || b == 3)) {
+                    v2dVar.s = (byte) 1;
                 }
+                v2dVar.h.run();
                 break;
             default:
-                if (intent != null) {
-                    ((c16) obj).startActivityForResult(intent, 2);
-                    break;
-                }
+                ((of3) obj2).l0(true);
                 break;
-        }
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i) {
-        try {
-            try {
-                a();
-            } catch (ActivityNotFoundException e) {
-                Log.e("DialogRedirect", true == Build.FINGERPRINT.contains("generic") ? "Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store." : "Failed to start resolution intent.", e);
-            }
-        } finally {
-            dialogInterface.dismiss();
         }
     }
 }

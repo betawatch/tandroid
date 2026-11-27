@@ -1,38 +1,26 @@
 // default package
 
-import j$.util.concurrent.ConcurrentHashMap;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class vk5 {
+    public final znb a;
+    public final int b;
+    public final boolean c;
+    public final boolean d;
+    public boolean e;
+    public lg h;
+    public ru1 i;
+    public ru1 j;
+    public uu1 k;
+    public xu1 m;
+    public boolean f = true;
+    public boolean g = true;
+    public short l = 200;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class vk5 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wk5 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-
-    public /* synthetic */ vk5(wk5 wk5Var, long j, long j2, byte b) {
-        this.a = b;
-        this.b = wk5Var;
-        this.c = j;
-        this.d = j2;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wk5 wk5Var = this.b;
-                ConcurrentHashMap concurrentHashMap = wk5Var.i.u;
-                String str = wk5Var.a;
-                long j = this.c;
-                long j2 = this.d;
-                concurrentHashMap.put(str, new long[]{j, j2});
-                gl.c3(new vk5(wk5Var, j, j2, (byte) 1));
-                break;
-            default:
-                wk5 wk5Var2 = this.b;
-                kk7.f(wk5Var2.h).k(kk7.W1, wk5Var2.a, Long.valueOf(this.c), Long.valueOf(this.d));
-                break;
-        }
+    public vk5(znb znbVar, int i, boolean z, boolean z2) {
+        this.a = znbVar;
+        this.b = i;
+        this.c = z;
+        this.d = z2;
     }
 }

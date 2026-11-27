@@ -1,81 +1,39 @@
 // default package
 
-import android.os.SystemClock;
+import android.os.StrictMode;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import java.util.Collections;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vq2 {
-    public final adb a;
-    public boolean b;
+public final /* synthetic */ class vq2 implements vw8 {
+    public final /* synthetic */ byte a;
 
-    public vq2() {
-        this(adb.a);
+    public /* synthetic */ vq2(byte b) {
+        this.a = b;
     }
 
-    public final synchronized void a() {
-        while (!this.b) {
-            this.a.getClass();
-            wait();
+    @Override // vw8
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return Collections.EMPTY_SET;
+            case 1:
+                return ExecutorsRegistrar.a();
+            case 2:
+                i26 i26Var = ExecutorsRegistrar.a;
+                return new be3(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new q53("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+            case 3:
+                i26 i26Var2 = ExecutorsRegistrar.a;
+                return new be3(Executors.newCachedThreadPool(new q53("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+            case 4:
+                i26 i26Var3 = ExecutorsRegistrar.a;
+                return Executors.newSingleThreadScheduledExecutor(new q53("Firebase Scheduler", 0, null));
+            case 5:
+            default:
+                return null;
         }
-    }
-
-    public final synchronized void b() {
-        boolean z = false;
-        while (!this.b) {
-            try {
-                this.a.getClass();
-                wait();
-            } catch (InterruptedException unused) {
-                z = true;
-            }
-        }
-        if (z) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    public final synchronized boolean c(long j) {
-        if (j <= 0) {
-            return this.b;
-        }
-        this.a.getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j2 = j + elapsedRealtime;
-        if (j2 < elapsedRealtime) {
-            b();
-        } else {
-            boolean z = false;
-            while (!this.b && elapsedRealtime < j2) {
-                try {
-                    this.a.getClass();
-                    wait(j2 - elapsedRealtime);
-                } catch (InterruptedException unused) {
-                    z = true;
-                }
-                this.a.getClass();
-                elapsedRealtime = SystemClock.elapsedRealtime();
-            }
-            if (z) {
-                Thread.currentThread().interrupt();
-            }
-        }
-        return this.b;
-    }
-
-    public final synchronized void d() {
-        this.b = false;
-    }
-
-    public final synchronized boolean e() {
-        if (this.b) {
-            return false;
-        }
-        this.b = true;
-        notifyAll();
-        return true;
-    }
-
-    public vq2(adb adbVar) {
-        this.a = adbVar;
     }
 }

@@ -1,76 +1,32 @@
 // default package
 
-import android.webkit.PermissionRequest;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ru0 implements vs2 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zu0 b;
-    public final /* synthetic */ PermissionRequest c;
-    public final /* synthetic */ String d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ru0 extends zu1 {
+    public boolean Jd;
+    public final /* synthetic */ TLRPC.User Kd;
+    public final /* synthetic */ long Ld;
+    public final /* synthetic */ rv0 Md;
 
-    public /* synthetic */ ru0(zu0 zu0Var, PermissionRequest permissionRequest, String str, byte b) {
-        this.a = b;
-        this.b = zu0Var;
-        this.c = permissionRequest;
-        this.d = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ru0(rv0 rv0Var, Bundle bundle, TLRPC.User user, long j) {
+        super(bundle);
+        this.Md = rv0Var;
+        this.Kd = user;
+        this.Ld = j;
     }
 
-    @Override // vs2
-    public final void accept(Object obj) {
-        byte b = this.a;
-        String str = this.d;
-        PermissionRequest permissionRequest = this.c;
-        zu0 zu0Var = this.b;
-        Boolean bool = (Boolean) obj;
-        switch (b) {
-            case 0:
-                if (zu0Var.a != null) {
-                    zu0Var.a = null;
-                    if (!bool.booleanValue()) {
-                        permissionRequest.deny();
-                        break;
-                    } else {
-                        ru0 ru0Var = new ru0(zu0Var, permissionRequest, str, (byte) 2);
-                        boolean z = hv0.R0;
-                        zu0Var.e.R.R(new String[]{"android.permission.RECORD_AUDIO"}, ru0Var);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                if (zu0Var.a != null) {
-                    zu0Var.a = null;
-                    if (!bool.booleanValue()) {
-                        permissionRequest.deny();
-                        break;
-                    } else {
-                        ru0 ru0Var2 = new ru0(zu0Var, permissionRequest, str, (byte) 3);
-                        boolean z2 = hv0.R0;
-                        zu0Var.e.R.R(new String[]{"android.permission.CAMERA"}, ru0Var2);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                if (!bool.booleanValue()) {
-                    permissionRequest.deny();
-                    break;
-                } else {
-                    permissionRequest.grant(new String[]{str});
-                    zu0Var.e.R.U = true;
-                    break;
-                }
-            default:
-                if (!bool.booleanValue()) {
-                    permissionRequest.deny();
-                    break;
-                } else {
-                    permissionRequest.grant(new String[]{str});
-                    zu0Var.e.R.U = true;
-                    break;
-                }
+    @Override // zu1, org.telegram.ui.ActionBar.e
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Jd) {
+            return;
         }
+        this.Jd = true;
+        d31.b0(this).I(R.raw.contact_check, ob6.a0(null, null, 2131751704, lbc.r(this.Kd)), hl.N2(ob6.a0(null, null, 2131751705, lbc.r(this.Md.V)), -1, 0, new kt(this, this.Ld, (byte) 3), null)).j();
     }
 }

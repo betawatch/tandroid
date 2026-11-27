@@ -1,204 +1,219 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.ClipData;
-import android.content.ClipDescription;
-import android.content.ClipboardManager;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public abstract class sj2 extends EditTextBoldCursor {
-    public static final gia d2;
-    public static final gia e2;
-    public static final gia f2;
-    public static final gia g2;
-    public float M1;
-    public float N1;
-    public float O1;
-    public float P1;
-    public yla Q1;
-    public yla R1;
-    public yla S1;
-    public yla T1;
-    public boolean U1;
-    public float V1;
-    public float W1;
-    public boolean X1;
-    public Bitmap Y1;
-    public Canvas Z1;
-    public ValueAnimator a2;
-    public ValueAnimator b2;
-    public boolean c2;
+public abstract class sj2 extends Drawable {
+    public final Paint a;
+    public long b;
+    public final RectF c;
+    public float d;
+    public boolean e;
+    public int f;
+    public int g;
 
-    static {
-        gia giaVar = new gia(new k32((byte) 10), new k32((byte) 11));
-        giaVar.c = 100.0f;
-        d2 = giaVar;
-        gia giaVar2 = new gia(new k32((byte) 12), new k32((byte) 13));
-        giaVar2.c = 100.0f;
-        e2 = giaVar2;
-        gia giaVar3 = new gia(new k32((byte) 14), new k32((byte) 15));
-        giaVar3.c = 100.0f;
-        f2 = giaVar3;
-        gia giaVar4 = new gia(new k32((byte) 16), new k32((byte) 17));
-        giaVar4.c = 100.0f;
-        g2 = giaVar4;
+    public sj2(float f) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.c = new RectF();
+        this.g = jn7.d4;
+        paint.setColor(-1);
+        paint.setStrokeWidth(hl.L(f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStyle(Paint.Style.STROKE);
+        this.f = hl.L(8.0f);
     }
 
-    public static void C(yla ylaVar, float f) {
-        zla zlaVar = ylaVar.m;
-        if (zlaVar == null || f != ((float) zlaVar.i)) {
-            ylaVar.d();
-            zla zlaVar2 = new zla(f);
-            zlaVar2.b(400.0f);
-            zlaVar2.a(1.0f);
-            zlaVar2.i = f;
-            ylaVar.m = zlaVar2;
-            ylaVar.h();
+    public int a() {
+        return aob.w0(null, aob.fg, false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x016d  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01b5  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0156  */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        float f;
+        float f2;
+        float f3;
+        float f4;
+        float x;
+        Paint paint;
+        float f5;
+        long currentTimeMillis = System.currentTimeMillis();
+        int a = a();
+        Paint paint2 = this.a;
+        if (a != 0) {
+            this.g = Color.alpha(a);
+            paint2.setColor(vm2.o(a, jn7.d4));
         }
-    }
-
-    public final void A(float f) {
-        C(this.R1, f * 100.0f);
-    }
-
-    public final void B(float f) {
-        C(this.Q1, f * 100.0f);
-    }
-
-    public final void D(float f) {
-        C(this.S1, f * 100.0f);
-        yla ylaVar = this.T1;
-        ylaVar.d();
-        if (f == 0.0f) {
-            this.P1 = 1.0f;
-            return;
-        }
-        zla j = oo1.j(1.0f, 500.0f, 0.75f);
-        j.i = 100.0d;
-        ylaVar.m = j;
-        ylaVar.b = 100.0f;
-        ylaVar.c = true;
-        ylaVar.a = 4000.0f;
-        ylaVar.h();
-    }
-
-    public final void E() {
-        if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0 || getLayout() == null) {
-            return;
-        }
-        Bitmap bitmap = this.Y1;
-        if (bitmap == null || bitmap.getHeight() != getMeasuredHeight() || this.Y1.getWidth() != getMeasuredWidth()) {
-            Bitmap bitmap2 = this.Y1;
-            if (bitmap2 != null) {
-                bitmap2.recycle();
-            }
-            this.Y1 = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-            this.Z1 = new Canvas(this.Y1);
-        }
-        this.Y1.eraseColor(0);
-        StaticLayout staticLayout = new StaticLayout(getTransformationMethod().getTransformation(getText(), this), getLayout().getPaint(), (int) Math.ceil(getLayout().getPaint().measureText(r4, 0, r4.length())), Layout.Alignment.ALIGN_NORMAL, getLineSpacingMultiplier(), getLineSpacingExtra(), getIncludeFontPadding());
-        this.Z1.save();
-        this.Z1.translate((getMeasuredWidth() - staticLayout.getWidth()) / 2.0f, (getMeasuredHeight() - staticLayout.getHeight()) / 2.0f);
-        staticLayout.draw(this.Z1);
-        this.Z1.restore();
-        this.W1 = 0.0f;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.b2 = ofFloat;
-        ofFloat.addUpdateListener(new uz1(this, (byte) 10));
-        this.b2.setDuration(220L);
-        this.b2.start();
-    }
-
-    public float getErrorProgress() {
-        return this.N1;
-    }
-
-    public float getFocusedProgress() {
-        return this.M1;
-    }
-
-    public float getSuccessProgress() {
-        return this.O1;
-    }
-
-    public float getSuccessScaleProgress() {
-        return this.P1;
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, lt3, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.Q1.d();
-        this.R1.d();
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onFocusChanged(boolean z, int i, Rect rect) {
-        super.onFocusChanged(z, i, rect);
-        if (isFocused()) {
-            return;
-        }
-        m();
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ClipDescription primaryClipDescription;
-        int i;
-        if (motionEvent.getAction() == 0) {
-            this.c2 = true;
-            motionEvent.getX();
-            motionEvent.getY();
-        }
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            fj2 fj2Var = getParent() instanceof fj2 ? (fj2) getParent() : null;
-            byte b = 0;
-            if (motionEvent.getAction() == 1 && this.c2) {
-                if (!isFocused() || fj2Var == null) {
-                    requestFocus();
+        long j = this.b;
+        if (j != 0) {
+            long j2 = currentTimeMillis - j;
+            boolean z = this.e;
+            if (z || this.d != 0.0f) {
+                float f6 = ((j2 * 360) / 500.0f) + this.d;
+                this.d = f6;
+                if (z || f6 < 720.0f) {
+                    this.d = f6 - (((int) (f6 / 720.0f)) * 720);
                 } else {
-                    ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(ClipboardManager.class);
-                    if (clipboardManager == null || clipboardManager.getPrimaryClipDescription() == null || (primaryClipDescription = clipboardManager.getPrimaryClipDescription()) == null) {
-                        return false;
-                    }
-                    primaryClipDescription.hasMimeType("text/plain");
-                    ClipData.Item itemAt = clipboardManager.getPrimaryClip().getItemAt(0);
-                    try {
-                        i = Integer.parseInt((itemAt == null || itemAt.getText() == null) ? "" : itemAt.getText().toString());
-                    } catch (Exception unused) {
-                        i = -1;
-                    }
-                    if (i > 0) {
-                        startActionMode(new rj2(this, b));
-                    }
+                    this.d = 0.0f;
                 }
-                setSelection(0);
-                if (this.U1) {
-                    gl.E3(this);
-                }
+                invalidateSelf();
             }
-            this.c2 = false;
         }
-        return this.c2;
+        if (this.g == 255 || getBounds() == null || getBounds().isEmpty()) {
+            canvas2 = canvas;
+            canvas2.save();
+        } else {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, this.g, 31);
+        }
+        canvas2.translate(hl.L(24.0f) / 2, hl.L(24.0f) / 2);
+        canvas2.rotate(-45.0f);
+        float f7 = this.d;
+        if (f7 < 0.0f || f7 >= 90.0f) {
+            if (f7 >= 90.0f && f7 < 180.0f) {
+                f4 = qd4.x(f7, 90.0f, 90.0f, 1.0f);
+                f2 = 0.0f;
+                f = 0.0f;
+                f3 = 1.0f;
+            } else if (f7 < 180.0f || f7 >= 270.0f) {
+                if (f7 >= 270.0f && f7 < 360.0f) {
+                    x = (f7 - 270.0f) / 90.0f;
+                } else if (f7 >= 360.0f && f7 < 450.0f) {
+                    x = qd4.x(f7, 360.0f, 90.0f, 1.0f);
+                } else if (f7 >= 450.0f && f7 < 540.0f) {
+                    f2 = (f7 - 450.0f) / 90.0f;
+                    f4 = 0.0f;
+                    f3 = 0.0f;
+                    f = 0.0f;
+                } else if (f7 >= 540.0f && f7 < 630.0f) {
+                    f4 = (f7 - 540.0f) / 90.0f;
+                    f3 = 0.0f;
+                    f = 0.0f;
+                    f2 = 1.0f;
+                } else if (f7 < 630.0f || f7 >= 720.0f) {
+                    f = 0.0f;
+                    f2 = 1.0f;
+                    f4 = f2;
+                } else {
+                    f3 = (f7 - 630.0f) / 90.0f;
+                    f = 0.0f;
+                    f2 = 1.0f;
+                    f4 = 1.0f;
+                }
+                f = x;
+                f2 = 0.0f;
+                f4 = f2;
+            } else {
+                f3 = qd4.x(f7, 180.0f, 90.0f, 1.0f);
+                f2 = 0.0f;
+                f4 = 0.0f;
+                f = 0.0f;
+            }
+            if (f2 == 0.0f) {
+                paint = paint2;
+                canvas2.drawLine(0.0f, 0.0f, 0.0f, this.f * f2, paint);
+            } else {
+                paint = paint2;
+            }
+            if (f4 != 0.0f) {
+                canvas.drawLine((-this.f) * f4, 0.0f, 0.0f, 0.0f, paint);
+            }
+            if (f3 != 0.0f) {
+                canvas.drawLine(0.0f, (-this.f) * f3, 0.0f, 0.0f, paint);
+            }
+            if (f != 1.0f) {
+                float f8 = this.f;
+                canvas.drawLine(f8 * f, 0.0f, f8, 0.0f, paint);
+            }
+            canvas.restore();
+            int centerX = getBounds().centerX();
+            int centerY = getBounds().centerY();
+            int i = this.f;
+            float f9 = centerX - i;
+            float f10 = centerY - i;
+            float f11 = centerX + i;
+            float f12 = centerY + i;
+            RectF rectF = this.c;
+            rectF.set(f9, f10, f11, f12);
+            f5 = this.d;
+            float f13 = (f5 >= 360.0f ? f5 - 360.0f : 0.0f) - 45.0f;
+            if (f5 >= 360.0f) {
+                f5 = 720.0f - f5;
+            }
+            canvas.drawArc(rectF, f13, f5, false, paint);
+            this.b = currentTimeMillis;
+        }
+        f2 = 1.0f - (f7 / 90.0f);
+        f = 0.0f;
+        f4 = 1.0f;
+        f3 = f4;
+        if (f2 == 0.0f) {
+        }
+        if (f4 != 0.0f) {
+        }
+        if (f3 != 0.0f) {
+        }
+        if (f != 1.0f) {
+        }
+        canvas.restore();
+        int centerX2 = getBounds().centerX();
+        int centerY2 = getBounds().centerY();
+        int i2 = this.f;
+        float f92 = centerX2 - i2;
+        float f102 = centerY2 - i2;
+        float f112 = centerX2 + i2;
+        float f122 = centerY2 + i2;
+        RectF rectF2 = this.c;
+        rectF2.set(f92, f102, f112, f122);
+        f5 = this.d;
+        float f132 = (f5 >= 360.0f ? f5 - 360.0f : 0.0f) - 45.0f;
+        if (f5 >= 360.0f) {
+        }
+        canvas.drawArc(rectF2, f132, f5, false, paint);
+        this.b = currentTimeMillis;
     }
 
-    @Override // android.view.View
-    public final boolean requestFocus(int i, Rect rect) {
-        ((ViewGroup) getParent()).invalidate();
-        return super.requestFocus(i, rect);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return hl.L(24.0f);
     }
 
-    public void setShowSoftInputOnFocusCompat(boolean z) {
-        this.U1 = z;
-        setShowSoftInputOnFocus(z);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return hl.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public sj2() {
+        this(2.0f);
     }
 }

@@ -1,65 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class t96 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ qa6 b;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ t96(qa6 qa6Var, byte b) {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class t96 implements RequestDelegate {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ w96 b;
+
+    public /* synthetic */ t96(w96 w96Var, byte b) {
         this.a = b;
-        this.b = qa6Var;
+        this.b = w96Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         byte b = this.a;
-        byte b2 = 1;
-        qa6 qa6Var = this.b;
+        w96 w96Var = this.b;
         switch (b) {
             case 0:
-                qa6Var.t0();
-                break;
-            case 1:
-                qh5 qh5Var = qa6Var.G;
-                if (qh5Var != null) {
-                    qa6Var.F.h(qh5Var);
-                    qa6Var.G = null;
+                if (tLObject instanceof TLRPC.Updates) {
+                    uc7.s1(w96Var.e).Y3((TLRPC.Updates) tLObject, false);
                     break;
                 }
                 break;
+            case 1:
+                hl.c3(new ls5(w96Var, tLObject, tL_error, (byte) 15));
+                break;
             case 2:
-                qa6Var.w0();
-                break;
-            case 3:
-                qa6Var.getLocationController().o(0, qa6Var.m0, true);
-                qa6Var.y = false;
-                break;
-            case 4:
-                ty4 ty4Var = qa6Var.F;
-                if (ty4Var != null) {
-                    ty4Var.n(gl.L(70.0f), 0, gl.L(70.0f), qa6Var.n0());
-                }
-                if (!qa6Var.O.getRadiusSet()) {
-                    double d = qa6Var.M;
-                    sk4 sk4Var = qa6Var.L;
-                    if (d > 0.0d) {
-                        sk4Var.n0(d);
-                    } else if (sk4Var != null) {
-                        sk4Var.h0();
-                        qa6Var.L = null;
+                int i = w96Var.e;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    if (tL_error != null && "GROUPCALL_ALREADY_DISCARDED".equalsIgnoreCase(tL_error.text)) {
+                        hl.c3(new u96(w96Var, (byte) 7));
+                        break;
                     }
+                } else {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    uc7.s1(i).j4(updates.users, false);
+                    uc7.s1(i).c4(updates.chats, false);
+                    uc7.s1(i).Y3(updates, false);
+                    break;
                 }
-                qa6Var.O = null;
-                break;
-            case 5:
-                qa6Var.C0();
-                break;
-            case 6:
-                qa6Var.C0();
                 break;
             default:
-                gl.c3(new t96(qa6Var, b2));
+                if (tLObject instanceof TLRPC.Updates) {
+                    uc7.s1(w96Var.e).Y3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
                 break;
         }
     }

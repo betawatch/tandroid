@@ -1,35 +1,39 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class zmc extends AnimatorListenerAdapter {
-    public final /* synthetic */ x02 a;
-    public final /* synthetic */ lnc b;
-    public final /* synthetic */ anc c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class zmc implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cnc b;
 
-    public zmc(anc ancVar, x02 x02Var, lnc lncVar) {
-        this.c = ancVar;
-        this.a = x02Var;
-        this.b = lncVar;
+    public /* synthetic */ zmc(cnc cncVar, byte b) {
+        this.a = b;
+        this.b = cncVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.a(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.a(true);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            gl.t1(this.b);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        byte b = this.a;
+        cnc cncVar = this.b;
+        switch (b) {
+            case 0:
+                cncVar.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                cncVar.invalidate();
+                break;
+            case 1:
+                cncVar.x = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                cncVar.invalidate();
+                break;
+            case 2:
+                cncVar.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                cncVar.invalidate();
+                break;
+            default:
+                cncVar.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                cncVar.invalidate();
+                break;
         }
     }
 }

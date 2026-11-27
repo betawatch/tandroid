@@ -2,12 +2,12 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class Toggle {
     private final boolean mIsChecked;
     private final boolean mIsEnabled;
-    private final xo7 mOnCheckedChangeDelegate;
+    private final xr7 mOnCheckedChangeDelegate;
 
     private Toggle() {
         this.mOnCheckedChangeDelegate = null;
@@ -26,10 +26,10 @@ public final class Toggle {
         return this.mIsChecked == toggle.mIsChecked && this.mIsEnabled == toggle.mIsEnabled;
     }
 
-    public xo7 getOnCheckedChangeDelegate() {
-        xo7 xo7Var = this.mOnCheckedChangeDelegate;
-        Objects.requireNonNull(xo7Var);
-        return xo7Var;
+    public xr7 getOnCheckedChangeDelegate() {
+        xr7 xr7Var = this.mOnCheckedChangeDelegate;
+        Objects.requireNonNull(xr7Var);
+        return xr7Var;
     }
 
     public int hashCode() {
@@ -48,7 +48,7 @@ public final class Toggle {
         return "[ isChecked: " + this.mIsChecked + ", isEnabled: " + this.mIsEnabled + "]";
     }
 
-    public Toggle(kpb kpbVar) {
+    public Toggle(ltb ltbVar) {
         throw null;
     }
 }

@@ -1,38 +1,95 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class hjc extends View {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ jjc b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public class hjc {
+    public static long g;
+    public final c6b a;
+    public final int b;
+    public final long c;
+    public int d;
+    public boolean e;
+    public final azb f = new azb(this, (byte) 21);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hjc(jjc jjcVar, Context context, byte b) {
-        super(context);
-        this.a = b;
-        this.b = jjcVar;
+    public hjc(int i, long j, c6b c6bVar) {
+        this.b = i;
+        this.a = c6bVar;
+        this.c = j;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        byte b = this.a;
-        jjc jjcVar = this.b;
-        switch (b) {
-            case 0:
-                RectF rectF = gl.P;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                jjcVar.j(canvas, rectF, jjcVar.g0 ? -1 : jjcVar.h0, 1.0f);
-                break;
-            default:
-                RectF rectF2 = gl.P;
-                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
-                jjcVar.e(canvas, rectF2, jjcVar.g0 ? -1 : jjcVar.h0, 1.0f);
-                break;
+    public void a(ArrayList arrayList) {
+        TL_stories.PeerStories x = this.a.x(this.c);
+        if (x == null || x.stories == null) {
+            return;
         }
+        int i = 0;
+        while (i < x.stories.size()) {
+            i = qd4.g(x.stories.get(i).id, i, 1, arrayList);
+        }
+    }
+
+    public final void b(boolean z) {
+        if (this.e == z) {
+            return;
+        }
+        if (z) {
+            this.e = true;
+            c();
+        } else {
+            this.e = false;
+            hl.r(this.f);
+            ConnectionsManager.getInstance(this.b).cancelRequest(this.d, false);
+            this.d = 0;
+        }
+    }
+
+    public final void c() {
+        if (this.e) {
+            long currentTimeMillis = 10000 - (System.currentTimeMillis() - g);
+            if (currentTimeMillis > 0) {
+                azb azbVar = this.f;
+                hl.r(azbVar);
+                hl.d3(azbVar, currentTimeMillis);
+                return;
+            }
+            if (this.d == 0) {
+                TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = new TL_stories.TL_stories_getStoriesViews();
+                a(tL_stories_getStoriesViews.id);
+                if (!tL_stories_getStoriesViews.id.isEmpty()) {
+                    int i = this.b;
+                    tL_stories_getStoriesViews.peer = uc7.s1(i).j1(this.c);
+                    this.d = ConnectionsManager.getInstance(i).sendRequest(tL_stories_getStoriesViews, new isa(this, tL_stories_getStoriesViews, (byte) 22));
+                    return;
+                }
+            }
+            this.d = 0;
+            this.e = false;
+        }
+    }
+
+    public boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        byte b = 0;
+        if (tL_stories_storyViews != null && tL_stories_storyViews.views != null) {
+            long j = this.c;
+            c6b c6bVar = this.a;
+            TL_stories.PeerStories x = c6bVar.x(j);
+            if (x != null && !x.stories.isEmpty()) {
+                for (int i = 0; i < tL_stories_storyViews.views.size(); i++) {
+                    for (int i2 = 0; i2 < x.stories.size(); i2++) {
+                        if (x.stories.get(i2).id == ((Integer) arrayList.get(i)).intValue()) {
+                            x.stories.get(i2).views = tL_stories_storyViews.views.get(i);
+                        }
+                    }
+                }
+                o6b o6bVar = c6bVar.k;
+                o6bVar.b.a.c(new n6b(o6bVar, x, b));
+                return true;
+            }
+        }
+        return false;
     }
 }

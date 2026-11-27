@@ -1,72 +1,28 @@
 // default package
 
-import java.util.Date;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class qu5 implements r24 {
-    public static final ou5 f;
-    public static final ou5 h;
-    public final HashMap a;
-    public final HashMap b;
-    public final nu5 c;
-    public boolean d;
-    public static final nu5 e = new nu5((byte) 0);
-    public static final pu5 n = new pu5();
+public final class qu5 extends v9c {
+    public final Object b;
+    public boolean c;
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [ou5] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [ou5] */
-    static {
-        final byte b = 0;
-        f = new y8c() { // from class: ou5
-            @Override // q24
-            public final void a(Object obj, Object obj2) {
-                switch (b) {
-                    case 0:
-                        ((z8c) obj2).b((String) obj);
-                        break;
-                    default:
-                        ((z8c) obj2).c(((Boolean) obj).booleanValue());
-                        break;
-                }
-            }
-        };
-        final byte b2 = 1;
-        h = new y8c() { // from class: ou5
-            @Override // q24
-            public final void a(Object obj, Object obj2) {
-                switch (b2) {
-                    case 0:
-                        ((z8c) obj2).b((String) obj);
-                        break;
-                    default:
-                        ((z8c) obj2).c(((Boolean) obj).booleanValue());
-                        break;
-                }
-            }
-        };
+    public qu5(Object obj) {
+        super((byte) 0);
+        this.b = obj;
     }
 
-    public qu5() {
-        HashMap hashMap = new HashMap();
-        this.a = hashMap;
-        HashMap hashMap2 = new HashMap();
-        this.b = hashMap2;
-        this.c = e;
-        this.d = false;
-        hashMap2.put(String.class, f);
-        hashMap.remove(String.class);
-        hashMap2.put(Boolean.class, h);
-        hashMap.remove(Boolean.class);
-        hashMap2.put(Date.class, n);
-        hashMap.remove(Date.class);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return !this.c;
     }
 
-    @Override // r24
-    public final r24 a(Class cls, zn7 zn7Var) {
-        this.a.put(cls, zn7Var);
-        this.b.remove(cls);
-        return this;
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.c) {
+            lq5.n();
+            return null;
+        }
+        this.c = true;
+        return this.b;
     }
 }

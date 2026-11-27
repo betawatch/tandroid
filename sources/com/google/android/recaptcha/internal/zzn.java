@@ -6,9 +6,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzn extends ccb implements eq4 {
+final class zzn extends yfb implements is4 {
     int zza;
     final /* synthetic */ zzq zzb;
     final /* synthetic */ zzgr zzc;
@@ -17,52 +17,52 @@ final class zzn extends ccb implements eq4 {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzn(zzq zzqVar, zzgr zzgrVar, long j, zzxn zzxnVar, fw2 fw2Var) {
-        super(2, fw2Var);
+    public zzn(zzq zzqVar, zzgr zzgrVar, long j, zzxn zzxnVar, zw2 zw2Var) {
+        super(2, zw2Var);
         this.zzb = zzqVar;
         this.zzc = zzgrVar;
         this.zzd = j;
         this.zze = zzxnVar;
     }
 
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        zzn zznVar = new zzn(this.zzb, this.zzc, this.zzd, this.zze, fw2Var);
+    @Override // qf0
+    public final zw2 create(Object obj, zw2 zw2Var) {
+        zzn zznVar = new zzn(this.zzb, this.zzc, this.zzd, this.zze, zw2Var);
         zznVar.zzf = obj;
         return zznVar;
     }
 
-    @Override // eq4
+    @Override // is4
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzn) create((ax2) obj, (fw2) obj2)).invokeSuspend(g5c.a);
+        return ((zzn) create((ux2) obj, (zw2) obj2)).invokeSuspend(f9c.a);
     }
 
-    @Override // of0
+    @Override // qf0
     public final Object invokeSuspend(Object obj) {
         int i = this.zza;
-        qse.b(obj);
+        ixe.b(obj);
         if (i == 0) {
-            ax2 ax2Var = (ax2) this.zzf;
+            ux2 ux2Var = (ux2) this.zzf;
             ArrayList arrayList = new ArrayList();
             Iterator it = this.zzb.zzd().iterator();
             while (it.hasNext()) {
-                arrayList.add(ppd.a(ax2Var, new zzm(this.zzc, (zzg) it.next(), this.zzd, this.zze, null)));
+                arrayList.add(fud.a(ux2Var, new zzm(this.zzc, (zzg) it.next(), this.zzd, this.zze, null)));
             }
-            zc3[] zc3VarArr = (zc3[]) arrayList.toArray(new zc3[0]);
-            zc3[] zc3VarArr2 = (zc3[]) Arrays.copyOf(zc3VarArr, zc3VarArr.length);
+            rd3[] rd3VarArr = (rd3[]) arrayList.toArray(new rd3[0]);
+            rd3[] rd3VarArr2 = (rd3[]) Arrays.copyOf(rd3VarArr, rd3VarArr.length);
             this.zza = 1;
-            obj = xmd.a(zc3VarArr2, this);
-            bx2 bx2Var = bx2.a;
-            if (obj == bx2Var) {
-                return bx2Var;
+            obj = ord.a(rd3VarArr2, this);
+            vx2 vx2Var = vx2.a;
+            if (obj == vx2Var) {
+                return vx2Var;
             }
         }
         List list = (List) obj;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             Iterator it2 = list.iterator();
             while (it2.hasNext()) {
-                if (!(((ta9) it2.next()).a instanceof sa9)) {
-                    return g5c.a;
+                if (!(((he9) it2.next()).a instanceof ge9)) {
+                    return f9c.a;
                 }
             }
         }

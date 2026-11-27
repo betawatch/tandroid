@@ -1,43 +1,35 @@
 // default package
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xk extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ wjb c;
-    public final /* synthetic */ Runnable d;
+public final class xk implements Interpolator {
+    public final /* synthetic */ double a;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
 
-    public xk(int i, int i2, wjb wjbVar, Runnable runnable) {
-        this.a = i;
-        this.b = i2;
-        this.c = wjbVar;
-        this.d = runnable;
+    public xk(double d, double d2, double d3, double d4) {
+        this.a = d;
+        this.b = d2;
+        this.c = d3;
+        this.d = d4;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        Runnable runnable = this.d;
-        if (runnable != null) {
-            runnable.run();
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f) {
+        double exp;
+        double d = this.a;
+        double d2 = this.d;
+        double d3 = this.b;
+        if (d < 1.0d) {
+            double exp2 = Math.exp((-f) * d * d3);
+            double d4 = this.c * f;
+            exp = ((Math.sin(d4) * d2) + (Math.cos(d4) * 1.0d)) * exp2;
+        } else {
+            exp = Math.exp((-f) * d3) * ((d2 * f) + 1.0d);
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i = this.a;
-        textPaint.setUnderlineText(i == 4);
-        int i2 = this.b;
-        if (i2 >= 0) {
-            textPaint.setColor(bkb.v0(i2, this.c));
-        }
-        if (i == 2) {
-            textPaint.setTypeface(gl.o());
-        }
+        return (float) (1.0d - exp);
     }
 }

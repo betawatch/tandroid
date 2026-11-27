@@ -1,42 +1,28 @@
 // default package
 
-import android.view.View;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class qfc implements View.OnClickListener {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class qfc implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hgc b;
-    public final /* synthetic */ VoIPService c;
+    public final /* synthetic */ VideoPlayerRewinder b;
 
-    public /* synthetic */ qfc(hgc hgcVar, VoIPService voIPService, byte b) {
+    public /* synthetic */ qfc(VideoPlayerRewinder videoPlayerRewinder, byte b) {
         this.a = b;
-        this.b = hgcVar;
-        this.c = voIPService;
+        this.b = videoPlayerRewinder;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        VoIPService voIPService = this.c;
-        hgc hgcVar = this.b;
+        VideoPlayerRewinder videoPlayerRewinder = this.b;
         switch (b) {
             case 0:
-                gl.c3(new sfc(hgcVar, (byte) 8));
-                int i = hgcVar.M;
-                if (i > 0) {
-                    voIPService.sendCallRating(i);
-                    break;
-                }
+                videoPlayerRewinder.lambda$updateRewindSpeed$0();
                 break;
             default:
-                gl.c3(new sfc(hgcVar, (byte) 10));
-                int i2 = hgcVar.M;
-                if (i2 > 0) {
-                    voIPService.sendCallRating(i2);
-                    break;
-                }
+                videoPlayerRewinder.lambda$cancelRewind$1();
                 break;
         }
     }

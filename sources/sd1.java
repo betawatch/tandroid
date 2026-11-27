@@ -1,23 +1,73 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class sd1 extends qab implements Comparable {
-    public long s;
+import android.animation.ValueAnimator;
+import java.net.URL;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        sd1 sd1Var = (sd1) obj;
-        if (isEndOfStream() != sd1Var.isEndOfStream()) {
-            return isEndOfStream() ? 1 : -1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sd1 {
+    public int a;
+    public long b;
+    public Object c;
+
+    public sd1(int i, URL url, long j) {
+        this.a = i;
+        this.c = url;
+        this.b = j;
+    }
+
+    public final void a(mk0 mk0Var, ye9 ye9Var) {
+        int i;
+        int b = nxe.b(mk0Var);
+        long j = mk0Var != null ? mk0Var.a : Long.MIN_VALUE;
+        boolean z = j == this.b && this.a >= 0;
+        this.b = j;
+        ValueAnimator valueAnimator = (ValueAnimator) this.c;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.c = null;
         }
-        long j = this.e - sd1Var.e;
-        if (j == 0) {
-            j = this.s - sd1Var.s;
-            if (j == 0) {
-                return 0;
-            }
+        if (!z || (i = this.a) == b) {
+            this.a = b;
+            ye9Var.j(b);
+            return;
         }
-        return j > 0 ? 1 : -1;
+        ValueAnimator ofInt = ValueAnimator.ofInt(i, b);
+        ofInt.addUpdateListener(new lk(this, ye9Var, (byte) 25));
+        ofInt.setInterpolator(k43.f);
+        ofInt.setDuration(200L);
+        this.c = ofInt;
+        ofInt.start();
+    }
+
+    public final synchronized long b(int i) {
+        if (i != 429 && (i < 500 || i >= 600)) {
+            return 86400000L;
+        }
+        return (long) Math.min(Math.pow(2.0d, this.a) + ((long) (Math.random() * 1000.0d)), 1800000.0d);
+    }
+
+    public final synchronized boolean c() {
+        boolean z;
+        if (this.a != 0) {
+            ((tcc) this.c).a.getClass();
+            z = System.currentTimeMillis() > this.b;
+        }
+        return z;
+    }
+
+    public final synchronized void d() {
+        this.a = 0;
+    }
+
+    public final synchronized void e(int i) {
+        if ((i >= 200 && i < 300) || i == 401 || i == 404) {
+            d();
+            return;
+        }
+        this.a++;
+        long b = b(i);
+        ((tcc) this.c).a.getClass();
+        this.b = System.currentTimeMillis() + b;
     }
 }

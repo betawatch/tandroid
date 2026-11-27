@@ -1,49 +1,25 @@
 // default package
 
-import android.content.SharedPreferences;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jub implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ pub b;
-
-    public /* synthetic */ jub(pub pubVar, byte b) {
-        this.a = b;
-        this.b = pubVar;
+public enum jub extends rwb {
+    public jub() {
+        super("ScriptDataLessthanSign", 16);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        pub pubVar = this.b;
-        switch (b) {
-            case 0:
-                kk7 f = kk7.f(pubVar.currentAccount);
-                int i = na7.q5;
-                f.k(2, 512);
-                break;
-            default:
-                pubVar.a.b();
-                pubVar.b.b();
-                pubVar.d.clear();
-                SharedPreferences.Editor edit = pubVar.getUserConfig().j().edit();
-                for (String str : pubVar.getUserConfig().j().getAll().keySet()) {
-                    if (str.startsWith("topics_load_offset_message_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_date_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_load_offset_topic_id_")) {
-                        edit.remove(str);
-                    }
-                    if (str.startsWith("topics_end_reached_")) {
-                        edit.remove(str);
-                    }
-                }
-                edit.apply();
-                break;
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        if (d == '!') {
+            bubVar.h("<!");
+            bubVar.c = rwb.J;
+        } else if (d == '/') {
+            bubVar.e();
+            bubVar.c = rwb.H;
+        } else {
+            bubVar.h("<");
+            ik1Var.q();
+            bubVar.c = rwb.f;
         }
     }
 }

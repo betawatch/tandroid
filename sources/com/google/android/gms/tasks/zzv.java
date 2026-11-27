@@ -6,20 +6,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-final class zzv extends y06 {
+final class zzv extends c36 {
     private final List zza;
 
-    private zzv(c16 c16Var) {
-        super(c16Var);
+    private zzv(g36 g36Var) {
+        super(g36Var);
         this.zza = new ArrayList();
         this.mLifecycleFragment.a("TaskOnStopCallback", this);
     }
 
     public static zzv zza(Activity activity) {
         zzv zzvVar;
-        c16 fragment = y06.getFragment(activity);
+        g36 fragment = c36.getFragment(activity);
         synchronized (fragment) {
             zzvVar = (zzv) fragment.b(zzv.class, "TaskOnStopCallback");
             if (zzvVar == null) {
@@ -29,7 +29,7 @@ final class zzv extends y06 {
         return zzvVar;
     }
 
-    @Override // y06
+    @Override // c36
     public final void onStop() {
         List list = this.zza;
         synchronized (list) {

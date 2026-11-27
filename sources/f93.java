@@ -1,17 +1,23 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f93 {
-    public final long a;
-    public final long b;
-    public long c;
-    public int d;
+import androidx.car.app.model.DateTimeWithZone;
+import j$.time.LocalDateTime;
+import j$.time.ZoneId;
+import j$.time.ZoneOffset;
+import j$.time.ZonedDateTime;
+import j$.time.format.TextStyle;
+import j$.util.Objects;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
-    public f93(int i, long j, long j2, long j3) {
-        this.a = j;
-        this.b = j2;
-        this.c = j3;
-        this.d = i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class f93 {
+    public static DateTimeWithZone a(ZonedDateTime zonedDateTime) {
+        Objects.requireNonNull(zonedDateTime);
+        LocalDateTime p = zonedDateTime.p();
+        ZoneId zone = zonedDateTime.getZone();
+        ZoneOffset offset = zone.getRules().getOffset(p);
+        return DateTimeWithZone.create(TimeUnit.SECONDS.toMillis(p.toEpochSecond(offset)), offset.getTotalSeconds(), zone.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
     }
 }

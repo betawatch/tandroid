@@ -1,78 +1,51 @@
 // default package
 
-import android.content.SharedPreferences;
-import java.util.function.LongSupplier;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public abstract class wf6 extends fr2 {
-    public final LongSupplier d;
-    public final long e;
-    public final long f;
-    public final int g;
-    public volatile boolean h;
-    public volatile long i;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class wf6 implements fd {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cg6 b;
 
-    public wf6(String str, LongSupplier longSupplier, long j, long j2, int i) {
-        super(str);
-        this.d = longSupplier;
-        this.e = j;
-        this.f = j2;
-        this.g = i;
+    public /* synthetic */ wf6(cg6 cg6Var, byte b) {
+        this.a = b;
+        this.b = cg6Var;
     }
 
-    @Override // fr2
-    public final boolean b(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
-            return false;
+    @Override // fd
+    public final void w(id idVar, int i) {
+        byte b = this.a;
+        cg6 cg6Var = this.b;
+        switch (b) {
+            case 0:
+                cg6Var.c(true);
+                cg6Var.Q.J1(0, true, null, true);
+                cg6Var.n();
+                break;
+            case 1:
+                cg6Var.Q.s0.popup = false;
+                cg6Var.h(null);
+                break;
+            case 2:
+                qh6 qh6Var = cg6Var.Q;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qh6Var.getParentActivity());
+                String M0 = ob6.M0(2131743851, "TermsOfService");
+                id idVar2 = alertDialog$Builder.a;
+                idVar2.S = M0;
+                idVar2.U = ob6.M0(2131743632, "TosDecline");
+                alertDialog$Builder.j(ob6.M0(2131745048, "SignUp"), new wf6(cg6Var, (byte) 3));
+                alertDialog$Builder.g(ob6.M0(2131751569, "Decline"), new wf6(cg6Var, (byte) 4));
+                qh6Var.showDialog(idVar2);
+                break;
+            case 3:
+                cg6Var.Q.s0.popup = false;
+                cg6Var.h(null);
+                break;
+            default:
+                cg6Var.c(true);
+                cg6Var.Q.J1(0, true, null, true);
+                break;
         }
-        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
-        if (d != Math.rint(d) || d < -9.223372036854776E18d || d >= 9.223372036854776E18d) {
-            return false;
-        }
-        long max = Math.max(this.e, Math.min(this.f, (long) d));
-        if (max == f()) {
-            return false;
-        }
-        this.i = max;
-        this.h = true;
-        editor.putLong(e(), max);
-        return true;
-    }
-
-    @Override // fr2
-    public final boolean c(SharedPreferences.Editor editor) {
-        if (this.g == 2 && this.h) {
-            long j = this.i;
-            this.h = false;
-            editor.remove(e());
-            if (j != f()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // fr2
-    public final void d(SharedPreferences sharedPreferences) {
-        try {
-            if (!sharedPreferences.contains(e())) {
-                this.h = false;
-                return;
-            }
-            this.i = Math.max(this.e, Math.min(this.f, sharedPreferences.getLong(e(), 0L)));
-            this.h = true;
-        } catch (ClassCastException e) {
-            fa4.g(e, true);
-            this.h = false;
-        }
-    }
-
-    public final long f() {
-        if (this.h) {
-            return this.i;
-        }
-        return Math.max(this.e, Math.min(this.f, this.d.getAsLong()));
     }
 }

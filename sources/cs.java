@@ -1,168 +1,94 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.TextUtils;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cs extends d implements gk7 {
-    public o39 a;
-    public bs b;
-    public boolean c;
-    public TLRPC.GlobalPrivacySettings d;
-    public int e;
-    public final ArrayList f;
-    public final ArrayList h;
+public final class cs extends la {
+    public final /* synthetic */ ds d;
 
-    public cs() {
-        super(null);
-        this.c = false;
-        this.e = -3;
-        this.f = new ArrayList();
-        this.h = new ArrayList();
+    public cs(ds dsVar) {
+        this.d = dsVar;
     }
 
-    public final void Y(boolean z) {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        ArrayList arrayList2 = this.h;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        arrayList2.add(new as(0, 0, k96.N0("ArchiveSettingUnmutedFolders")));
-        arrayList2.add(new as(1, 1, k96.N0("ArchiveSettingUnmutedFoldersCheck")));
-        arrayList2.add(new as(2, 2, k96.N0("ArchiveSettingUnmutedFoldersInfo")));
-        if (getMessagesController().R0().size() > 1) {
-            arrayList2.add(new as(0, 3, k96.N0("ArchiveSettingUnmutedChats")));
-            arrayList2.add(new as(1, 4, k96.N0("ArchiveSettingUnmutedChatsCheck")));
-            arrayList2.add(new as(2, 5, k96.N0("ArchiveSettingUnmutedChatsInfo")));
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        int i = f89Var.f;
+        return (i == 2 || i == 0) ? false : true;
+    }
+
+    @Override // j79
+    public final int b() {
+        return this.d.h.size();
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        ArrayList arrayList = this.d.h;
+        if (i < 0 || i >= arrayList.size()) {
+            return 0;
         }
-        arrayList2.add(new as(0, 6, k96.N0("NewChatsFromNonContacts")));
-        arrayList2.add(new as(1, 7, k96.N0("NewChatsFromNonContactsCheck")));
-        arrayList2.add(new as(2, 8, k96.N0("ArchiveAndMuteInfo")));
-        bs bsVar = this.b;
-        if (bsVar == null) {
+        return ((bs) arrayList.get(i)).a;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        boolean z;
+        if (i < 0 || i >= this.d.h.size()) {
             return;
         }
-        if (z) {
-            bsVar.E(arrayList, arrayList2);
-        } else {
-            bsVar.f();
+        bs bsVar = (bs) this.d.h.get(i);
+        int i2 = i + 1;
+        int i3 = 0;
+        boolean z2 = i2 < this.d.h.size() && ((bs) this.d.h.get(i2)).a == bsVar.a;
+        int i4 = f89Var.f;
+        if (i4 == 0) {
+            ((mf5) f89Var.a).setText(bsVar.c);
+            return;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.ActionBar.d
-    public final View createView(Context context) {
-        byte b = 1;
-        setHasOwnBackground(true);
-        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(k96.M0(2131754140, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new r8(this, b));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        o39 o39Var = new o39(context, null);
-        this.a = o39Var;
-        o39Var.r1();
-        this.a.setLayoutManager(new zr((byte) 0, b, 0 == true ? 1 : 0));
-        this.a.setVerticalScrollBarEnabled(false);
-        this.a.setSectionsDrawBackground(true);
-        this.a.setLayoutAnimation(null);
-        o39 o39Var2 = this.a;
-        bs bsVar = new bs(this);
-        this.b = bsVar;
-        o39Var2.setAdapter(bsVar);
-        gb3 gb3Var = new gb3();
-        gb3Var.n(350L);
-        gb3Var.o(s33.h);
-        gb3Var.C = false;
-        gb3Var.m = false;
-        this.a.setItemAnimator(gb3Var);
-        frameLayout.addView(this.a, nme.c(-1.0f, -1));
-        this.a.setOnItemClickListener(new u(this, (byte) 3));
-        getContactsController().B();
-        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().Y;
-        this.d = globalPrivacySettings;
-        if (globalPrivacySettings == null) {
-            this.d = new TLRPC.TL_globalPrivacySettings();
-        }
-        Y(false);
-        return this.fragmentView;
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if (i != kk7.j0) {
-            if (i == kk7.N2) {
-                Y(true);
+        if (i4 == 2) {
+            ilb ilbVar = (ilb) f89Var.a;
+            if (TextUtils.isEmpty(bsVar.c)) {
+                ilbVar.setFixedSize(12);
+                ilbVar.setText(null);
+                return;
+            } else {
+                ilbVar.setFixedSize(0);
+                ilbVar.setText(bsVar.c);
                 return;
             }
-            return;
         }
-        TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().Y;
-        this.d = globalPrivacySettings;
-        if (globalPrivacySettings == null) {
-            this.d = new TLRPC.TL_globalPrivacySettings();
-        }
-        if (this.a != null) {
-            for (int i3 = 0; i3 < this.a.getChildCount(); i3++) {
-                View childAt = this.a.getChildAt(i3);
-                this.a.getClass();
-                int R = RecyclerView.R(childAt);
-                if (R >= 0) {
-                    ArrayList arrayList = this.h;
-                    if (R < arrayList.size()) {
-                        byte b = ((as) arrayList.get(R)).d;
-                        if (b == 1) {
-                            ((ahb) childAt).setChecked(this.d.keep_archived_unmuted);
-                        } else if (b == 4) {
-                            ((ahb) childAt).setChecked(this.d.keep_archived_folders);
-                        } else if (b == 7) {
-                            ((ahb) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
-                        }
-                    }
+        if (i4 == 1) {
+            wkb wkbVar = (wkb) f89Var.a;
+            byte b = bsVar.d;
+            if (b == 1) {
+                z = this.d.d.keep_archived_unmuted;
+                wkbVar.setCheckBoxIcon(0);
+            } else if (b == 4) {
+                z = this.d.d.keep_archived_folders;
+                wkbVar.setCheckBoxIcon(0);
+            } else {
+                if (b != 7) {
+                    return;
                 }
+                ds dsVar = this.d;
+                boolean z3 = dsVar.d.archive_and_mute_new_noncontact_peers;
+                if (!dsVar.getUserConfig().p() && !this.d.getMessagesController().k4.T0.f) {
+                    i3 = R.drawable.permission_locked;
+                }
+                wkbVar.setCheckBoxIcon(i3);
+                z = z3;
             }
-        }
-        this.c = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final o39 getListViewForSimpleGlass() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean onFragmentCreate() {
-        getNotificationCenter().b(this, kk7.j0);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d
-    public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, kk7.j0);
-        super.onFragmentDestroy();
-        if (this.c) {
-            TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
-            setglobalprivacysettings.settings = this.d;
-            getConnectionsManager().sendRequest(setglobalprivacysettings, new ce2((byte) 0));
-            this.c = false;
+            wkbVar.f(bsVar.c, z, z2);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d
-    public final boolean useSimpleActionBar() {
-        return true;
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        ds dsVar = this.d;
+        return new n69(i == 0 ? new mf5(dsVar.getParentActivity()) : i == 1 ? new wkb(dsVar.getParentActivity()) : new ilb(dsVar.getParentActivity()));
     }
 }

@@ -1,38 +1,90 @@
 // default package
 
-import android.content.Context;
-import android.util.DisplayMetrics;
-import android.view.View;
+import android.location.Address;
+import android.location.Geocoder;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zja extends u26 {
-    public final /* synthetic */ dmc r;
+public final /* synthetic */ class zja implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zja(dmc dmcVar, Context context) {
-        super(context);
-        this.r = dmcVar;
+    public /* synthetic */ zja(FrameLayout frameLayout, double d, double d2, byte b) {
+        this.a = b;
+        this.b = frameLayout;
+        this.c = d;
+        this.d = d2;
     }
 
-    @Override // u26, o49
-    public final void g(View view, n49 n49Var) {
-        va vaVar = this.r.a;
-        if (vaVar != null) {
-            d49 layoutManager = vaVar.getLayoutManager();
-            layoutManager.getClass();
-            int[] iArr = {0, d49.y(view) - layoutManager.E()};
-            int i = iArr[0];
-            int i2 = iArr[1];
-            int m = m(Math.max(Math.abs(i), Math.abs(i2)));
-            if (m > 0) {
-                n49Var.b(i, i2, m, this.j);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                aka akaVar = (aka) this.b;
+                double d = this.c;
+                double d2 = this.d;
+                try {
+                    List<Address> fromLocation = new Geocoder(a.b, ob6.D0().y).getFromLocation(d, d2, 1);
+                    if (fromLocation.isEmpty()) {
+                        String c = id6.c(d2, d);
+                        akaVar.L = c;
+                        if (c == null) {
+                            akaVar.L = "";
+                        } else {
+                            akaVar.L = "🌊 " + ((Object) akaVar.L);
+                        }
+                    } else {
+                        Address address = fromLocation.get(0);
+                        StringBuilder sb = new StringBuilder();
+                        HashSet hashSet = new HashSet();
+                        hashSet.add(address.getSubAdminArea());
+                        hashSet.add(address.getAdminArea());
+                        hashSet.add(address.getLocality());
+                        hashSet.add(address.getCountryName());
+                        Iterator it = hashSet.iterator();
+                        while (it.hasNext()) {
+                            String str = (String) it.next();
+                            if (!TextUtils.isEmpty(str)) {
+                                if (sb.length() > 0) {
+                                    sb.append(", ");
+                                }
+                                sb.append(str);
+                            }
+                        }
+                        akaVar.L = sb.toString();
+                        String b = id6.b(address.getCountryCode());
+                        if (b != null && pv3.g(b) != null) {
+                            akaVar.L = b + " " + ((Object) akaVar.L);
+                        }
+                    }
+                } catch (Exception unused) {
+                }
+                hl.c3(new zja(akaVar, d, d2, (byte) 1));
+                break;
+            case 1:
+                aka akaVar2 = (aka) this.b;
+                double d3 = this.c;
+                double d4 = this.d;
+                akaVar2.I = d3;
+                akaVar2.J = d4;
+                akaVar2.H = false;
+                CharSequence charSequence = akaVar2.L;
+                ema emaVar = akaVar2.d;
+                CharSequence m = pv3.m(charSequence, emaVar.getPaint().getFontMetricsInt(), false, null, 0);
+                akaVar2.L = m;
+                emaVar.l(m, false);
+                break;
+            default:
+                ((s42) this.b).f0(this.c, this.d);
+                break;
         }
-    }
-
-    @Override // u26
-    public final float l(DisplayMetrics displayMetrics) {
-        return 100.0f / displayMetrics.densityDpi;
     }
 }

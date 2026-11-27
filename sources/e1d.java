@@ -1,42 +1,13 @@
 // default package
 
-import android.os.Looper;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class e1d implements eg0 {
-    public final WeakReference a;
-    public final yn b;
-    public final boolean c;
-
-    public e1d(j1d j1dVar, yn ynVar, boolean z) {
-        this.a = new WeakReference(j1dVar);
-        this.b = ynVar;
-        this.c = z;
-    }
-
-    @Override // eg0
-    public final void a(ds2 ds2Var) {
-        j1d j1dVar = (j1d) this.a.get();
-        if (j1dVar == null) {
-            return;
-        }
-        ReentrantLock reentrantLock = j1dVar.b;
-        fre.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == j1dVar.a.o.h);
-        reentrantLock.lock();
-        try {
-            if (j1dVar.j(0)) {
-                if (!ds2Var.c()) {
-                    j1dVar.d(ds2Var, this.b, this.c);
-                }
-                if (j1dVar.k()) {
-                    j1dVar.b();
-                }
-            }
-        } finally {
-            reentrantLock.unlock();
-        }
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class e1d {
+    public float c;
+    public float a = Float.MAX_VALUE;
+    public float b = -3.4028235E38f;
+    public final StringBuilder d = new StringBuilder();
+    public final ArrayList e = new ArrayList();
 }

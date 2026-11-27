@@ -1,153 +1,26 @@
 // default package
 
-import java.util.ArrayList;
+import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.m;
-import org.telegram.ui.o;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jw implements ku0 {
-    public final /* synthetic */ m a;
+public final class jw extends i22 {
+    public boolean d0;
 
-    public jw(m mVar) {
-        this.a = mVar;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        this.d0 = true;
+        setOffsetY(View.MeasureSpec.getSize(i2) * 0.4f);
+        this.d0 = false;
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i2) - hl.L(56.0f)) - hl.m, TLObject.FLAG_30));
     }
 
-    @Override // ku0
-    public final or0 A() {
-        return null;
-    }
-
-    @Override // ku0
-    public final void b() {
-        sw swVar = this.a.M.L;
-        if (swVar != null) {
-            swVar.a(true);
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.d0) {
+            return;
         }
-    }
-
-    @Override // ku0
-    public final String g(boolean z, boolean z2) {
-        return "UNSUPPORTED";
-    }
-
-    @Override // ku0
-    public final boolean h() {
-        return false;
-    }
-
-    @Override // ku0
-    public final void j() {
-        m mVar = this.a;
-        o oVar = mVar.M;
-        sw swVar = oVar.L;
-        if (swVar == null) {
-            if (oVar.v0[0] == mVar) {
-                oVar.D();
-            }
-        } else {
-            if (swVar.h) {
-                return;
-            }
-            swVar.h = true;
-            swVar.release();
-            swVar.L.p();
-        }
-    }
-
-    @Override // ku0
-    public final void o(int i, boolean z) {
-        this.a.g(i, z);
-    }
-
-    @Override // ku0
-    public final void z() {
-        m mVar = this.a;
-        o oVar = mVar.M;
-        if (oVar.v0[0] == mVar) {
-            oVar.D();
-        }
-    }
-
-    @Override // ku0
-    public final void a() {
-    }
-
-    @Override // ku0
-    public final void c() {
-    }
-
-    @Override // ku0
-    public final void s() {
-    }
-
-    @Override // ku0
-    public final void d(TLRPC.Document document) {
-    }
-
-    @Override // ku0
-    public final void e(String str) {
-    }
-
-    @Override // ku0
-    public final void f(ArrayList arrayList) {
-    }
-
-    @Override // ku0
-    public final void i(boolean z) {
-    }
-
-    @Override // ku0
-    public final void k(boolean z) {
-    }
-
-    @Override // ku0
-    public final void m(int i) {
-    }
-
-    @Override // ku0
-    public final void p(boolean z) {
-    }
-
-    @Override // ku0
-    public final void r(int i) {
-    }
-
-    @Override // ku0
-    public final void t(boolean z) {
-    }
-
-    @Override // ku0
-    public final void w(boolean z) {
-    }
-
-    @Override // ku0
-    public final void x(int i) {
-    }
-
-    @Override // ku0
-    public final void y(boolean z) {
-    }
-
-    @Override // ku0
-    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
-    }
-
-    @Override // ku0
-    public final void u(int i, int i2, boolean z) {
-    }
-
-    @Override // ku0
-    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
-    }
-
-    @Override // ku0
-    public final void l(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4, String str2) {
-    }
-
-    @Override // ku0
-    public final void q(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4) {
+        super.requestLayout();
     }
 }

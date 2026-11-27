@@ -1,24 +1,36 @@
 // default package
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.a;
-import org.telegram.ui.ProfileActivity;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ym8 extends sp8 {
-    public final /* synthetic */ ProfileActivity t1;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ym8 extends wl5 {
+    public final String b;
+    public final byte[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ym8(ProfileActivity profileActivity, Context context, long j, a aVar, om8 om8Var, xm8 xm8Var, op8 op8Var, kp8 kp8Var) {
-        super(context, j, aVar, om8Var, xm8Var, op8Var, kp8Var);
-        this.t1 = profileActivity;
+    public ym8(String str, byte[] bArr) {
+        super("PRIV");
+        this.b = str;
+        this.c = bArr;
     }
 
-    @Override // sp8
-    public final void setCustomAvatarProgress(float f) {
-        ProfileActivity profileActivity = this.t1;
-        profileActivity.t5 = f;
-        profileActivity.H1();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || ym8.class != obj.getClass()) {
+            return false;
+        }
+        ym8 ym8Var = (ym8) obj;
+        return this.b.equals(ym8Var.b) && Arrays.equals(this.c, ym8Var.c);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.c) + bs2.j(527, 31, this.b);
+    }
+
+    @Override // wl5
+    public final String toString() {
+        return this.a + ": owner=" + this.b;
     }
 }

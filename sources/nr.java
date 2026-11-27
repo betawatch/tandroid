@@ -1,78 +1,63 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class nr extends LinearLayout implements tjb {
-    public static final /* synthetic */ int h = 0;
-    public Paint a;
-    public Paint b;
-    public mr c;
-    public TextView d;
-    public float e;
-    public boolean f;
+public class nr extends ImageView {
+    public Drawable a;
+    public final Path b;
+    public int c;
+    public int d;
 
-    public final void a(float f) {
-        this.e = f;
-        this.f = true;
-        TextView textView = this.d;
-        int w0 = bkb.w0(null, bkb.F6, false);
-        int i = bkb.H6;
-        textView.setTextColor(bm2.f(f, w0, bkb.w0(null, i, false)));
-        Paint paint = this.a;
-        paint.setColor(bm2.f(f, bm2.o(bkb.w0(null, bkb.L6, false), 63), bkb.w0(null, i, false)));
-        paint.setStrokeWidth(Math.max(2, gl.L(gl.R1(0.5f, 2.0f, f))));
-        invalidate();
-    }
-
-    public final void b(boolean z, boolean z2) {
-        float f = z ? 1.0f : 0.0f;
-        float f2 = this.e;
-        if (f == f2 && z2) {
-            return;
-        }
-        if (!z2) {
-            a(f);
-            return;
-        }
-        ValueAnimator duration = ValueAnimator.ofFloat(f2, f).setDuration(250L);
-        duration.setInterpolator(ls3.e);
-        duration.addUpdateListener(new f0(this, (byte) 6));
-        duration.start();
+    public nr(Context context) {
+        super(context);
+        this.b = new Path();
+        this.c = hl.L(5.0f);
+        this.d = hl.L(42.0f);
     }
 
     @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        Paint paint = this.a;
-        float strokeWidth = paint.getStrokeWidth();
-        RectF rectF = gl.P;
-        mr mrVar = this.c;
-        rectF.set(mrVar.getLeft() + strokeWidth, mrVar.getTop() + strokeWidth, mrVar.getRight() - strokeWidth, mrVar.getBottom() - strokeWidth);
-        canvas.drawRoundRect(rectF, gl.L(18.0f), gl.L(18.0f), this.b);
+    public void draw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.b);
+        canvas.scale((this.d / getWidth()) + 1.0f, (this.d / getHeight()) + 1.0f, getWidth() / 2.0f, getHeight() / 2.0f);
         super.draw(canvas);
-        canvas.drawRoundRect(rectF, gl.L(18.0f), gl.L(18.0f), paint);
-    }
-
-    @Override // tjb
-    public final void updateColors() {
-        try {
-            if (!this.f || this.d == null) {
-                return;
-            }
-            a(this.e);
-        } catch (Exception e) {
-            fa4.g(e, true);
+        canvas.restore();
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            int i = this.c;
+            drawable.setBounds(-i, -i, getWidth() + this.c, getHeight() + this.c);
+            this.a.draw(canvas);
         }
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    @Override // android.view.View
+    public final void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        Path path = this.b;
+        path.rewind();
+        path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f, Path.Direction.CW);
+    }
+
+    public void setBackgroundOuterPadding(int i) {
+        this.d = i;
+    }
+
+    public void setForeground(int i) {
+        this.a = getContext().getDrawable(i);
+        invalidate();
+    }
+
+    public void setOuterPadding(int i) {
+        this.c = i;
+    }
+
+    public void setPadding(int i) {
+        setPadding(i, i, i, i);
     }
 }

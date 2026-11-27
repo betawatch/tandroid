@@ -1,73 +1,145 @@
 // default package
 
-import android.os.Bundle;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.graphics.RectF;
+import android.net.Uri;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class y00 implements Runnable {
+public final /* synthetic */ class y00 implements View.OnClickListener {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ i20 b;
-    public final /* synthetic */ k27 c;
 
-    public /* synthetic */ y00(i20 i20Var, k27 k27Var, byte b) {
+    public /* synthetic */ y00(byte b) {
         this.a = b;
-        this.b = i20Var;
-        this.c = k27Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        k27 k27Var = this.c;
-        i20 i20Var = this.b;
-        switch (b) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                ia7 ia7Var = i20Var.p2;
-                if (ia7Var != null) {
-                    TLRPC.Document a = ia7Var.a();
-                    ia7Var.c.remove(k27Var);
-                    if (ia7Var.a() != a) {
-                        ia7Var.e();
-                    }
-                    if (!i20Var.p2.c.isEmpty()) {
-                        kk7.f(i20Var.a).k(kk7.V3, i20Var.p2);
+                if (!MediaController.z().B0) {
+                    if (!MediaController.z().G()) {
+                        MediaController.z().U(MediaController.z().v0, true);
                         break;
                     } else {
-                        MediaController.w().j();
-                        i20Var.dismiss();
+                        MediaController.z().V(MediaController.z().v0);
                         break;
                     }
                 }
                 break;
-            default:
-                LaunchActivity launchActivity = i20Var.z2;
-                int i = y6c.t0;
-                int i2 = i20Var.a;
-                if (i != i2) {
-                    launchActivity.N0(i2);
-                }
-                Bundle bundle = new Bundle();
-                long B0 = k27.B0(k27Var.k);
-                if (cf3.B(B0)) {
-                    bundle.putInt("enc_id", (int) (B0 & 4294967295L));
-                } else if (cf3.D(B0)) {
-                    bundle.putLong("user_id", B0);
-                } else {
-                    TLRPC.Chat K0 = na7.q1(i20Var.a).K0(Long.valueOf(-B0));
-                    if (K0 != null && K0.migrated_to != null) {
-                        bundle.putLong("migrated_to", B0);
-                        B0 = -K0.migrated_to.channel_id;
-                    }
-                    bundle.putLong("chat_id", -B0);
-                }
-                bundle.putInt("message_id", k27Var.e1());
-                kk7.f(i20Var.a).k(4, new Object[0]);
-                launchActivity.u0(new mu1(bundle), false, false);
-                i20Var.dismiss();
+            case 1:
                 break;
+            case 2:
+                e Q = LaunchActivity.Q();
+                if (Q != null) {
+                    Q.presentFragment(new PremiumPreviewFragment(0, "contact"));
+                    break;
+                }
+                break;
+            case 3:
+                bx4.g1(false, null);
+                break;
+            case 4:
+                ArrayList arrayList = ExternalActionActivity.y;
+                break;
+            case 5:
+            case 6:
+                break;
+            case 7:
+                float[] fArr = FragmentContextView.W0;
+                MediaController z = MediaController.z();
+                kfc kfcVar = z.F0;
+                if (kfcVar != null) {
+                    kfcVar.r0(false);
+                }
+                z.p0();
+                z.i();
+                r47 r47Var = z.v0;
+                if (r47Var != null) {
+                    jn7 f = jn7.f(r47Var.K1);
+                    r47 r47Var2 = z.v0;
+                    f.k(jn7.g2, Integer.valueOf(r47Var2 != null ? r47Var2.e1() : 0));
+                    break;
+                }
+                break;
+            case 8:
+                PhotoViewer.q0().b(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 9:
+                String str = LaunchActivity.C1;
+                break;
+            case 10:
+                e S = LaunchActivity.S();
+                if (S != null) {
+                    S.presentFragment(new uqc());
+                    break;
+                }
+                break;
+            case 11:
+                e S2 = LaunchActivity.S();
+                if (S2 != null) {
+                    S2.presentFragment(new uqc());
+                    break;
+                }
+                break;
+            case 12:
+                PhotoViewer.q0().b(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 13:
+                RectF rectF = ProfileActivity.Z6;
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
+                    break;
+                } catch (ActivityNotFoundException e) {
+                    cc4.g(e, true);
+                    return;
+                }
+            case 14:
+            case 15:
+                break;
+            case 16:
+                ((sg2) view).c(!r5.b(), true);
+                break;
+            default:
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance == null) {
+                    dlc.b();
+                    break;
+                } else {
+                    sharedInstance.hangUp();
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ y00(Object obj, byte b) {
+        this.a = b;
+    }
+
+    private final void a(View view) {
+    }
+
+    private final void b(View view) {
+    }
+
+    private final void c(View view) {
+    }
+
+    private final void d(View view) {
+    }
+
+    private final void e(View view) {
     }
 }

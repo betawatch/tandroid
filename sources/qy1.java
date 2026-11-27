@@ -1,182 +1,386 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.app.Activity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public class qy1 extends ry8 {
-    public final lm E;
-    public final ny1 F;
-    public oy1 r;
-    public py1 s;
-    public final byte w;
-    public boolean x;
-    public Drawable y;
+public final class qy1 implements p14 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public qy1(Context context, int i) {
-        super(context);
-        this.E = new lm(this, 0L, 320L, s33.h);
-        this.F = new ny1(this, (byte) 0);
-        this.w = i;
+    public qy1(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    public oy1 getCurrentState() {
-        return this.r;
+    @Override // p14
+    public final boolean A() {
+        return this.a.o4;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00c8  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void j(oy1 oy1Var, boolean z) {
-        py1 py1Var;
-        int ordinal;
-        py1 py1Var2;
-        py1 py1Var3;
-        if (z && oy1Var == this.r) {
+    public final void B(View view, Object obj, String str, Object obj2, boolean z, int i, int i2, no6 no6Var, boolean z2) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        cz1 cz1Var = chatActivityEnterView.G0;
+        zu1 zu1Var = chatActivityEnterView.E3;
+        ou1 ou1Var = chatActivityEnterView.K3;
+        if (ou1Var != null && zu1Var != null && ou1Var.f) {
+            zu1Var.uc();
             return;
         }
-        oy1 oy1Var2 = this.r;
-        this.r = oy1Var;
-        ny1 ny1Var = this.F;
-        if (z && oy1Var2 != null) {
-            py1[] values = py1.values();
-            int length = values.length;
-            int i = 0;
-            while (true) {
-                if (i >= length) {
-                    py1Var2 = null;
-                    break;
-                }
-                py1Var2 = values[i];
-                if (py1Var2.a == oy1Var2 && py1Var2.b == oy1Var) {
-                    break;
-                } else {
-                    i++;
-                }
+        if (c() && i == 0) {
+            jj.J(chatActivityEnterView.D3, zu1Var.a(), new ny1(this, view, obj, str, obj2, no6Var, z2), chatActivityEnterView.K4);
+            return;
+        }
+        if (chatActivityEnterView.H0 <= 0 || c()) {
+            jj.X(chatActivityEnterView.R, chatActivityEnterView.F3, 1, new nw1(this, obj, no6Var, z, i, i2, z2, str, obj2));
+            return;
+        }
+        xy1 xy1Var = chatActivityEnterView.O3;
+        if (xy1Var != null) {
+            xy1Var.b1(view != null ? view : cz1Var, ((ema) cz1Var.c).getText(), true);
+        }
+    }
+
+    @Override // p14
+    public final long a() {
+        return this.a.F3;
+    }
+
+    @Override // p14
+    public final boolean b() {
+        zu1 zu1Var = this.a.E3;
+        return zu1Var != null && zu1Var.M4();
+    }
+
+    @Override // p14
+    public final boolean c() {
+        zu1 zu1Var = this.a.E3;
+        return zu1Var != null && zu1Var.X7();
+    }
+
+    @Override // p14
+    public final void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        py1 py1Var = chatActivityEnterView.P3;
+        if (py1Var != null && !py1Var.J) {
+            py1Var.n1.b(stickerSet, inputStickerSet);
+            return;
+        }
+        e eVar = chatActivityEnterView.E3;
+        if (eVar == null) {
+            eVar = LaunchActivity.Q();
+        }
+        e eVar2 = eVar;
+        if (eVar2 == null || chatActivityEnterView.D3 == null) {
+            return;
+        }
+        if (stickerSet != null) {
+            inputStickerSet = new TLRPC.TL_inputStickerSetID();
+            inputStickerSet.access_hash = stickerSet.access_hash;
+            inputStickerSet.id = stickerSet.id;
+        }
+        s4b s4bVar = new s4b(chatActivityEnterView.D3, eVar2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.K4);
+        eVar2.showDialog(s4bVar);
+        if (z) {
+            s4bVar.I0();
+        }
+    }
+
+    @Override // p14
+    public final void e(Object obj, Object obj2) {
+        File file;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        zu1 zu1Var = chatActivityEnterView.E3;
+        if (zu1Var != null) {
+            PhotoViewer.q0().T1(null, zu1Var, zu1Var.Ba);
+            if (obj instanceof TLRPC.Document) {
+                xb4.G(chatActivityEnterView.R);
+                file = xb4.I((TLRPC.Document) obj);
+            } else {
+                file = null;
             }
-            if (py1Var2 != null) {
-                oy1 oy1Var3 = this.r;
-                py1[] values2 = py1.values();
-                int length2 = values2.length;
-                int i2 = 0;
-                while (true) {
-                    if (i2 >= length2) {
-                        py1Var3 = null;
-                        break;
-                    }
-                    py1Var3 = values2[i2];
-                    if (py1Var3.a == oy1Var2 && py1Var3.b == oy1Var3) {
-                        break;
-                    } else {
-                        i2++;
-                    }
-                }
-                if (py1Var3 != this.s) {
-                    this.s = py1Var3;
-                    oy8 oy8Var = (oy8) ny1Var.get(py1Var3);
-                    oy8Var.stop();
-                    if (py1Var3 == py1.e) {
-                        oy8Var.K(30);
-                        oy8Var.O(false, 0.0f);
-                    } else if (py1Var3 == py1.d) {
-                        oy8Var.K(60);
-                        oy8Var.O(false, 0.5f);
-                    } else {
-                        oy8Var.O(false, 0.0f);
-                    }
-                    oy8Var.F(0);
-                    oy8Var.u0 = new hq1(this, (byte) 12);
-                    setAnimation(oy8Var);
-                    gl.c3(new pk1(oy8Var, (byte) 8));
-                    ordinal = oy1Var.ordinal();
-                    if (ordinal != 0) {
-                        setContentDescription(k96.M0(2131754733, null));
+            if (file != null) {
+                File file2 = new File(xb4.z(4), file.getName());
+                if (!file.exists()) {
+                    if (!file2.exists()) {
                         return;
                     } else {
-                        if (ordinal != 1) {
-                            return;
-                        }
-                        setContentDescription(k96.M0(2131754735, null));
-                        return;
+                        file = file2;
                     }
                 }
+                ArrayList arrayList = new ArrayList();
+                no6 no6Var = new no6(0, file.getAbsolutePath(), 0, false, 0, 0);
+                no6Var.a = null;
+                no6Var.b = true;
+                arrayList.add(no6Var);
+                PhotoViewer.q0().o1(arrayList, 0, 12, false, new oy1(this, obj, obj2, no6Var), chatActivityEnterView.E3);
+            }
+        }
+    }
+
+    @Override // p14
+    public final int f() {
+        int threadMessageId;
+        threadMessageId = this.a.getThreadMessageId();
+        return threadMessageId;
+    }
+
+    @Override // p14
+    public final void g(d6c d6cVar) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        e eVar = chatActivityEnterView.E3;
+        if (eVar == null) {
+            eVar = LaunchActivity.Q();
+        }
+        e eVar2 = eVar;
+        if (eVar2 != null) {
+            chatActivityEnterView.P3 = new py1(this, chatActivityEnterView.getContext(), eVar2, d6cVar, chatActivityEnterView.K4);
+            xy1 xy1Var = chatActivityEnterView.O3;
+            if (xy1Var != null) {
+                xy1Var.p(true);
+            }
+            eVar2.showDialog(chatActivityEnterView.P3);
+        }
+    }
+
+    @Override // p14
+    public final boolean h() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        return chatActivityEnterView.F3 == yac.h(chatActivityEnterView.R).e();
+    }
+
+    @Override // p14
+    public final void i(TLRPC.StickerSetCovered stickerSetCovered) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        ls6.d0(chatActivityEnterView.R).h2(chatActivityEnterView.D3, stickerSetCovered, 0, chatActivityEnterView.E3, false, false);
+    }
+
+    @Override // p14
+    public final void j(int i) {
+        int i2 = ChatActivityEnterView.X7;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.Z1(i, true);
+        if (i != 0) {
+            chatActivityEnterView.a2(true, true, false, i == 1);
+        }
+        if (chatActivityEnterView.n4 && chatActivityEnterView.G2 == 2) {
+            chatActivityEnterView.Q();
+        }
+    }
+
+    @Override // p14
+    public final boolean k() {
+        return true;
+    }
+
+    @Override // p14
+    public final boolean l() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        TextView textView = chatActivityEnterView.w7;
+        if (textView == null) {
+            textView = chatActivityEnterView.F0;
+        }
+        if (textView == null || textView.length() == 0) {
+            return false;
+        }
+        textView.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // p14
+    public final void m(String str) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        EditText editText = chatActivityEnterView.w7;
+        if (editText == null) {
+            editText = chatActivityEnterView.F0;
+        }
+        if (editText == null) {
+            return;
+        }
+        int selectionEnd = editText.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
+        }
+        try {
+            try {
+                chatActivityEnterView.H3 = (byte) 2;
+                CharSequence m = pv3.m(str, editText.getPaint().getFontMetricsInt(), false, null, 0);
+                editText.setText(editText.getText().insert(selectionEnd, m));
+                int length = selectionEnd + m.length();
+                editText.setSelection(length, length);
+            } catch (Exception e) {
+                cc4.g(e, true);
+            }
+        } finally {
+            chatActivityEnterView.H3 = (byte) 0;
+        }
+    }
+
+    @Override // p14
+    public final void n() {
+        Activity activity;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        zu1 zu1Var = chatActivityEnterView.E3;
+        if (zu1Var == null || (activity = chatActivityEnterView.D3) == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, chatActivityEnterView.K4, activity);
+        String M0 = ob6.M0(2131752033, null);
+        id idVar = alertDialog$Builder.a;
+        idVar.S = M0;
+        idVar.U = ob6.M0(2131752034, null);
+        alertDialog$Builder.j(ob6.M0(2131752064, null), new rd1(this, (byte) 13));
+        alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+        zu1Var.showDialog(idVar);
+    }
+
+    @Override // p14
+    public final float o() {
+        return this.a.x0;
+    }
+
+    @Override // p14
+    public final void p() {
+        e eVar = this.a.E3;
+        if (eVar == null) {
+            eVar = LaunchActivity.Q();
+        }
+        eVar.showDialog(new xk8(eVar, 11, false));
+    }
+
+    @Override // p14
+    public final void q(TLRPC.StickerSetCovered stickerSetCovered) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        ls6.d0(chatActivityEnterView.R).h2(chatActivityEnterView.D3, stickerSetCovered, 2, chatActivityEnterView.E3, false, false);
+    }
+
+    @Override // p14
+    public final void r(int i) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.O3.C();
+        chatActivityEnterView.O3.E1(i == 3);
+        chatActivityEnterView.post(chatActivityEnterView.h4);
+    }
+
+    @Override // p14
+    public final void s(ArrayList arrayList) {
+        zu1 zu1Var = this.a.E3;
+        if (zu1Var != null) {
+            zu1Var.presentFragment(new StickersActivity(5, arrayList));
+        }
+    }
+
+    @Override // p14
+    public final void t() {
+        this.a.invalidate();
+    }
+
+    @Override // p14
+    public final void u(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+        B(view, obj, str, obj2, z, i, i2, null, false);
+    }
+
+    @Override // p14
+    public final void v() {
+        zu1 zu1Var = this.a.E3;
+        if (zu1Var != null) {
+            zu1Var.presentFragment(new StickersActivity(0, null));
+        }
+    }
+
+    @Override // p14
+    public final void w(long j, TLRPC.Document document, String str, boolean z) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        xt3 xt3Var = chatActivityEnterView.w7;
+        if (xt3Var == null) {
+            xt3Var = chatActivityEnterView.F0;
+        }
+        hl.c3(new us0(this, xt3Var, str, document, j, z));
+    }
+
+    @Override // p14
+    public final void x(View view, TLRPC.Document document, String str, Object obj, n47 n47Var, boolean z, int i) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        cz1 cz1Var = chatActivityEnterView.G0;
+        if (chatActivityEnterView.T7) {
+            return;
+        }
+        py1 py1Var = chatActivityEnterView.P3;
+        if (py1Var != null) {
+            py1Var.dismiss();
+            chatActivityEnterView.P3 = null;
+        }
+        if (chatActivityEnterView.H0 > 0 && !c()) {
+            xy1 xy1Var = chatActivityEnterView.O3;
+            if (xy1Var != null) {
+                if (view == null) {
+                    view = cz1Var;
+                }
+                xy1Var.b1(view, ((ema) cz1Var.c).getText(), true);
                 return;
             }
+            return;
         }
-        oy1 oy1Var4 = this.r;
-        py1[] values3 = py1.values();
-        int length3 = values3.length;
-        int i3 = 0;
-        while (true) {
-            if (i3 >= length3) {
-                py1Var = null;
-                break;
+        if (chatActivityEnterView.o4) {
+            if (chatActivityEnterView.G2 != 0) {
+                chatActivityEnterView.Z1(0, true);
+                my1 my1Var = chatActivityEnterView.V0;
+                long j = -1;
+                if (document != null) {
+                    int i2 = 0;
+                    while (true) {
+                        if (i2 >= document.attributes.size()) {
+                            break;
+                        }
+                        TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i2);
+                        if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
+                            TLRPC.InputStickerSet inputStickerSet = documentAttribute.stickerset;
+                            if (!(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
+                                j = inputStickerSet.id;
+                            }
+                        } else {
+                            i2++;
+                        }
+                    }
+                }
+                my1Var.q(j, true);
+                chatActivityEnterView.V0.z();
             }
-            py1Var = values3[i3];
-            if (py1Var.a == oy1Var4) {
-                break;
-            } else {
-                i3++;
-            }
+            chatActivityEnterView.a2(false, true, false, true);
         }
-        oy8 oy8Var2 = (oy8) ny1Var.get(py1Var);
-        oy8Var2.stop();
-        oy8Var2.O(false, oy1Var != oy1.a ? 0.0f : 0.5f);
-        setAnimation(oy8Var2);
-        ordinal = oy1Var.ordinal();
-        if (ordinal != 0) {
+        chatActivityEnterView.e(document, str, obj, n47Var, false, z, i, 0);
+        if (wf3.B(chatActivityEnterView.F3) && r47.s3(document, false)) {
+            uc7.s1(chatActivityEnterView.S.a).E4(obj, document);
         }
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float d = this.E.d(this.x);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        if (d < 1.0f) {
-            if (d > 0.0f) {
-                canvas2 = canvas;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - d) * 255.0f), 31);
-            } else {
-                canvas2 = canvas;
-                canvas2.save();
+    @Override // p14
+    public final void y(long j) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        zu1 zu1Var = chatActivityEnterView.E3;
+        if (zu1Var != null) {
+            if (hl.O1()) {
+                chatActivityEnterView.N0(false);
             }
-            float A = tb4.A(1.0f, d, 0.6f, 0.4f);
-            canvas2.scale(A, A, width, height);
-            super.onDraw(canvas);
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-        }
-        if (d > 0.0f) {
-            Drawable drawable = this.y;
-            if (drawable == null) {
-                drawable = getContext().getResources().getDrawable(R.drawable.msg_edit).mutate();
-                this.y = drawable;
-            }
-            int intrinsicWidth = drawable.getIntrinsicWidth() / 2;
-            int intrinsicHeight = this.y.getIntrinsicHeight() / 2;
-            int i = (int) width;
-            int i2 = (int) height;
-            this.y.setBounds(i - intrinsicWidth, i2 - intrinsicHeight, i + intrinsicWidth, i2 + intrinsicHeight);
-            this.y.setColorFilter(getColorFilter());
-            this.y.setAlpha((int) (255.0f * d));
-            canvas2.save();
-            float f = (d * 0.6f) + 0.4f;
-            canvas2.scale(f, f, width, height);
-            this.y.draw(canvas2);
-            canvas2.restore();
+            nd5 nd5Var = new nd5(j);
+            nd5Var.i0(chatActivityEnterView.S2);
+            zu1Var.presentFragment(nd5Var);
         }
     }
 
-    public qy1(Context context) {
-        this(context, 32);
+    @Override // p14
+    public final boolean z() {
+        return this.a.G2 != 0;
     }
 }

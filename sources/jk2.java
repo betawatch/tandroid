@@ -1,64 +1,31 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class jk2 extends FrameLayout {
-    public final hw a;
-    public fk2 b;
-    public p8c c;
-    public float d;
-    public boolean e;
-    public ValueAnimator f;
+public final class jk2 extends CharacterStyle {
+    public final String a;
+    public final float b;
+    public final boolean c;
 
-    public jk2(Context context, mi4 mi4Var) {
-        super(context);
-        hw hwVar = new hw(this, context);
-        this.a = hwVar;
-        hwVar.setAdapter(new hk2(this, context, mi4Var, (byte) 0));
-        hwVar.setLayoutManager(new t26(0, false));
-        hwVar.setClipToPadding(false);
-        hwVar.setVisibility(8);
-        hwVar.setWillNotDraw(false);
-        hwVar.setOnItemClickListener(new u(this, (byte) 14));
-        addView(hwVar, nme.c(56.0f, -1));
+    public jk2(String str, String str2, boolean z) {
+        this.c = z;
+        this.a = str;
+        int length = str2 == null ? 0 : str2.length();
+        wm8 wm8Var = mk2.a;
+        this.b = length > 120 ? 5 : length > 50 ? 3 : 2;
     }
 
-    public final void a(boolean z, boolean z2) {
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        if (this.c) {
+            textPaint.setTextSize(hl.L(xea.S0 - this.b));
         }
-        if (this.e == z) {
-            return;
-        }
-        this.e = z;
-        hw hwVar = this.a;
-        if (!z2) {
-            this.d = z ? 1.0f : 0.0f;
-            hwVar.invalidate();
-            hwVar.setVisibility(z ? 0 : 8);
-            return;
-        }
-        hwVar.setVisibility(0);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z ? 1.0f : 0.0f);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new uz1(this, (byte) 12));
-        this.f.addListener(new y7((byte) 21, (Object) this, z));
-        this.f.setInterpolator(s33.h);
-        this.f.setDuration(340L);
-        this.f.start();
-    }
-
-    public void setOnLayoutClick(p8c p8cVar) {
-        this.c = p8cVar;
-    }
-
-    public void setSelected(fk2 fk2Var) {
-        this.b = fk2Var;
-        gl.V3(this.a);
+        textPaint.setColor(aob.w0(null, aob.Vc, false));
+        textPaint.setTypeface(Typeface.MONOSPACE);
+        textPaint.setUnderlineText(false);
     }
 }

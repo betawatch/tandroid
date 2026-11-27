@@ -1,83 +1,46 @@
 // default package
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.beta.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zy7 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ int[] d;
+public final class zy7 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ az7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zy7(Context context, int i, int[] iArr, int[] iArr2) {
-        super(context);
-        this.b = i;
-        this.c = iArr;
-        this.d = iArr2;
+    public /* synthetic */ zy7(az7 az7Var, byte b) {
+        this.a = b;
+        this.b = az7Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        this.a = true;
-        int L = gl.L(9.0f);
-        int i3 = this.b;
-        int i4 = i3 - 1;
-        int i5 = L * i4;
-        int[] iArr = this.c;
-        int i6 = (iArr[0] * i3) + i5;
-        float f = 1.0f;
-        if (i6 <= size) {
-            setWeightSum(1.0f);
-            int childCount = getChildCount();
-            for (int i7 = 0; i7 < childCount; i7++) {
-                getChildAt(i7).getLayoutParams().width = 0;
-                ((LinearLayout.LayoutParams) getChildAt(i7).getLayoutParams()).weight = 1.0f / childCount;
-            }
-        } else if (this.d[0] + i5 <= size) {
-            setWeightSum(1.0f);
-            int i8 = size - i5;
-            int childCount2 = getChildCount();
-            for (int i9 = 0; i9 < childCount2; i9++) {
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i9).getLayoutParams();
-                layoutParams.width = 0;
-                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i8;
-                layoutParams.weight = intValue;
-                f -= intValue;
-            }
-            float f2 = f / i4;
-            if (f2 > 0.0f) {
-                int childCount3 = getChildCount();
-                for (int i10 = 0; i10 < childCount3; i10++) {
-                    View childAt = getChildAt(i10);
-                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
-                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
-                        layoutParams2.weight += f2;
-                    }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        az7 az7Var = this.b;
+        switch (b) {
+            case 0:
+                AnimatorSet animatorSet = (AnimatorSet) az7Var.e;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    az7Var.e = null;
+                    break;
                 }
-            }
-        } else {
-            setWeightSum(0.0f);
-            int childCount4 = getChildCount();
-            for (int i11 = 0; i11 < childCount4; i11++) {
-                getChildAt(i11).getLayoutParams().width = -2;
-                ((LinearLayout.LayoutParams) getChildAt(i11).getLayoutParams()).weight = 0.0f;
-            }
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = (AnimatorSet) az7Var.e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    az7Var.e = null;
+                    break;
+                }
+                break;
+            default:
+                AnimatorSet animatorSet3 = (AnimatorSet) az7Var.e;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    az7Var.e = null;
+                    break;
+                }
+                break;
         }
-        this.a = false;
-        super.onMeasure(i, i2);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
     }
 }

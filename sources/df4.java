@@ -1,37 +1,20 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class df4 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ FiltersSetupActivity b;
+public final class df4 extends mf5 {
+    public final si r;
 
-    public /* synthetic */ df4(FiltersSetupActivity filtersSetupActivity, byte b) {
-        this.a = b;
-        this.b = filtersSetupActivity;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        FiltersSetupActivity filtersSetupActivity = this.b;
-        switch (b) {
-            case 0:
-                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-            case 1:
-                filtersSetupActivity.a.f1(new kx3(filtersSetupActivity, (byte) 17), 700, true);
-                break;
-            case 2:
-                filtersSetupActivity.showDialog(new jh8((d) filtersSetupActivity, 9, true));
-                break;
-            default:
-                filtersSetupActivity.getMessagesController().e3(true, null);
-                break;
-        }
+    public df4(Context context, vnb vnbVar) {
+        super(context);
+        si siVar = new si(context, true, true, true, (byte) 1);
+        this.r = siVar;
+        siVar.setGravity(ob6.a0 ? 3 : 5);
+        yob.U(siVar, aob.L6, vnbVar);
+        siVar.setTextSize(hl.N(15.0f));
+        addView(siVar, tre.d(-1, 18.0f, (ob6.a0 ? 3 : 5) | 48, 22.0f, 17.0f, 22.0f, 0.0f));
+        iye.b(siVar, 0.04f, 1.2f);
     }
 }

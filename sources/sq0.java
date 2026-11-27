@@ -12,9 +12,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sq0 extends Drawable implements yx {
+public final class sq0 extends Drawable implements zx {
     public final Paint a;
     public final Paint b;
     public final Paint c;
@@ -35,38 +35,38 @@ public final class sq0 extends Drawable implements yx {
         this.e = imageReceiver2;
         paint.setColor(-1);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(gl.L(2.0f));
+        paint.setStrokeWidth(hl.L(2.0f));
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint2.setColor(-1);
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_location).mutate();
         this.f = mutate;
-        int w0 = bkb.w0(null, bkb.K5, false);
+        int w0 = aob.w0(null, aob.L5, false);
         this.h = w0;
         mutate.setColorFilter(new PorterDuffColorFilter(w0, PorterDuff.Mode.SRC_IN));
-        pb0 pb0Var = new pb0((wjb) null);
-        pb0Var.q(user);
-        imageReceiver.U(user, pb0Var, null);
-        imageReceiver.q0(gl.L(25.0f));
-        pb0 pb0Var2 = new pb0((wjb) null);
-        pb0Var2.q(user2);
-        imageReceiver2.U(user2, pb0Var2, null);
-        imageReceiver2.q0(gl.L(25.0f));
+        rb0 rb0Var = new rb0((vnb) null);
+        rb0Var.q(user);
+        imageReceiver.U(user, rb0Var, null);
+        imageReceiver.q0(hl.L(25.0f));
+        rb0 rb0Var2 = new rb0((vnb) null);
+        rb0Var2.q(user2);
+        imageReceiver2.U(user2, rb0Var2, null);
+        imageReceiver2.q0(hl.L(25.0f));
     }
 
-    @Override // yx
-    public final void a(ry8 ry8Var) {
-        this.e.p0(ry8Var);
-        this.d.p0(ry8Var);
+    @Override // zx
+    public final void a(e29 e29Var) {
+        this.e.p0(e29Var);
+        this.d.p0(e29Var);
     }
 
-    @Override // yx
+    @Override // zx
     public final void b(ImageReceiver imageReceiver) {
         this.d.K();
         this.e.K();
     }
 
-    @Override // yx
+    @Override // zx
     public final void c(ImageReceiver imageReceiver) {
         this.d.I();
         this.e.I();
@@ -75,42 +75,42 @@ public final class sq0 extends Drawable implements yx {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        int i = bkb.K5;
-        int w0 = bkb.w0(null, i, false);
+        int i = aob.L5;
+        int w0 = aob.w0(null, i, false);
         Paint paint = this.b;
         paint.setColor(w0);
-        float L = gl.L(136.0f) / 2.0f;
-        float centerY = bounds.centerY() - gl.L(25.0f);
-        float L2 = gl.L(50.0f);
-        float L3 = gl.L(50.0f);
+        float L = hl.L(136.0f) / 2.0f;
+        float centerY = bounds.centerY() - hl.L(25.0f);
+        float L2 = hl.L(50.0f);
+        float L3 = hl.L(50.0f);
         ImageReceiver imageReceiver = this.d;
         imageReceiver.i0(bounds.centerX() - L, centerY, L2, L3);
         imageReceiver.h(canvas, null);
-        float centerX = (bounds.centerX() - L) + gl.L(41.0f);
-        float L4 = gl.L(16.0f) + bounds.centerY();
-        canvas.drawCircle(centerX, L4, gl.L(14.0f), paint);
-        canvas.drawCircle(centerX, L4, gl.L(12.0f), this.c);
-        int w02 = bkb.w0(null, i, false);
+        float centerX = (bounds.centerX() - L) + hl.L(41.0f);
+        float L4 = hl.L(16.0f) + bounds.centerY();
+        canvas.drawCircle(centerX, L4, hl.L(14.0f), paint);
+        canvas.drawCircle(centerX, L4, hl.L(12.0f), this.c);
+        int w02 = aob.w0(null, i, false);
         int i2 = this.h;
         Drawable drawable = this.f;
         if (w02 != i2) {
             this.h = w02;
             drawable.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         }
-        drawable.setBounds((int) (centerX - gl.L(9.0f)), (int) (L4 - gl.L(9.0f)), (int) (centerX + gl.L(9.0f)), (int) (L4 + gl.L(9.0f)));
+        drawable.setBounds((int) (centerX - hl.L(9.0f)), (int) (L4 - hl.L(9.0f)), (int) (centerX + hl.L(9.0f)), (int) (L4 + hl.L(9.0f)));
         drawable.draw(canvas);
-        float centerX2 = bounds.centerX() - gl.L(3.33f);
-        float centerY2 = bounds.centerY() - gl.L(7.0f);
-        float L5 = gl.L(3.33f) + bounds.centerX();
+        float centerX2 = bounds.centerX() - hl.L(3.33f);
+        float centerY2 = bounds.centerY() - hl.L(7.0f);
+        float L5 = hl.L(3.33f) + bounds.centerX();
         float centerY3 = bounds.centerY();
         Paint paint2 = this.a;
         canvas.drawLine(centerX2, centerY2, L5, centerY3, paint2);
-        canvas.drawLine(bounds.centerX() - gl.L(3.33f), gl.L(7.0f) + bounds.centerY(), gl.L(3.33f) + bounds.centerX(), bounds.centerY(), paint2);
-        float centerY4 = bounds.centerY() - gl.L(25.0f);
-        float L6 = gl.L(50.0f);
-        float L7 = gl.L(50.0f);
+        canvas.drawLine(bounds.centerX() - hl.L(3.33f), hl.L(7.0f) + bounds.centerY(), hl.L(3.33f) + bounds.centerX(), bounds.centerY(), paint2);
+        float centerY4 = bounds.centerY() - hl.L(25.0f);
+        float L6 = hl.L(50.0f);
+        float L7 = hl.L(50.0f);
         ImageReceiver imageReceiver2 = this.e;
-        imageReceiver2.i0((bounds.centerX() + L) - gl.L(50.0f), centerY4, L6, L7);
+        imageReceiver2.i0((bounds.centerX() + L) - hl.L(50.0f), centerY4, L6, L7);
         imageReceiver2.h(canvas, null);
     }
 

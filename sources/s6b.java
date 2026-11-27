@@ -1,47 +1,28 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class s6b implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ t6b b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ boolean d;
+import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-    public /* synthetic */ s6b(t6b t6bVar, Runnable runnable, boolean z) {
-        this.b = t6bVar;
-        this.c = runnable;
-        this.d = z;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class s6b {
+    public int a;
+    public View b;
+
+    public s6b() {
+        ConnectionsManager.generateClassGuid();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        boolean z = this.d;
-        Runnable runnable = this.c;
-        t6b t6bVar = this.b;
-        switch (b) {
-            case 0:
-                t6bVar.g(runnable, z);
-                break;
-            default:
-                runnable.run();
-                t7b t7bVar = t6bVar.a;
-                ge5 ge5Var = t7bVar.U0;
-                ge5Var.a.t(k96.M0(z ? 2131744420 : 2131744421, null), false, true);
-                ge5Var.invalidate();
-                t7bVar.e(true, true);
-                t7bVar.c0(true);
-                t7bVar.J0.a(false, true);
-                t7bVar.K0.b(true, true);
-                t7bVar.h0(true, true);
-                break;
-        }
-    }
-
-    public /* synthetic */ s6b(t6b t6bVar, boolean z, Runnable runnable) {
-        this.b = t6bVar;
-        this.d = z;
-        this.c = runnable;
+    public final void a(long j, View view, q6b q6bVar) {
+        int i = yac.t0;
+        this.a = i;
+        this.b = view;
+        uc7 s1 = uc7.s1(i);
+        s1.O1().g0(j, true);
+        view.invalidate();
+        TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
+        tL_stories_getPeerStories.peer = uc7.s1(this.a).j1(j);
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_stories_getPeerStories, new rr2(this, j, view, q6bVar, s1, (byte) 3));
     }
 }

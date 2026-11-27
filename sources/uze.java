@@ -1,62 +1,6 @@
 // default package
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class uze extends AbstractList implements ere, RandomAccess {
-    public final pqe a;
-
-    public uze(pqe pqeVar) {
-        this.a = pqeVar;
-    }
-
-    @Override // ere
-    public final Object d(int i) {
-        return this.a.b.get(i);
-    }
-
-    @Override // ere
-    public final void e(sie sieVar) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i) {
-        return (String) this.a.get(i);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        dcd dcdVar = new dcd((byte) 3);
-        dcdVar.b = this.a.iterator();
-        return dcdVar;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i) {
-        fzd fzdVar = new fzd((byte) 1);
-        fzdVar.b = this.a.listIterator(i);
-        return fzdVar;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.size();
-    }
-
-    @Override // ere
-    public final List zzd() {
-        return DesugarCollections.unmodifiableList(this.a.b);
-    }
-
-    @Override // ere
-    public final ere zze() {
-        return this;
-    }
+public abstract class uze {
 }

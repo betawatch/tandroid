@@ -1,56 +1,43 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class bf6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ lf6 b;
+import android.content.Context;
+import org.telegram.ui.PasscodeActivity;
 
-    public /* synthetic */ bf6(lf6 lf6Var, byte b) {
-        this.a = b;
-        this.b = lf6Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class bf6 extends bk2 {
+    public final /* synthetic */ byte h;
+    public final /* synthetic */ Object n;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ bf6(byte b, Context context, Object obj) {
+        super(context);
+        this.h = b;
+        this.n = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        lf6 lf6Var = this.b;
+    @Override // bk2
+    public final void a() {
+        byte b = this.h;
+        Object obj = this.n;
         switch (b) {
             case 0:
-                if6 if6Var = lf6Var.a;
-                mf6 mf6Var = lf6Var.h0;
-                if6 if6Var2 = lf6Var.b;
-                if (if6Var2 != null) {
-                    if (mf6Var.d0) {
-                        if6Var.clearFocus();
-                        if6Var2.clearFocus();
-                    } else if (if6Var.length() != 0) {
-                        if6Var2.requestFocus();
-                        if (!lf6Var.U) {
-                            if6Var2.setSelection(if6Var2.length());
-                        }
-                        mf6Var.L1(if6Var2);
-                    } else {
-                        if6Var.requestFocus();
-                        mf6Var.L1(if6Var);
-                    }
-                }
-                if (mf6Var.G == 0) {
-                    lf6Var.s();
-                    break;
-                }
+                ((df6) obj).h(null);
                 break;
             case 1:
-                lf6Var.postDelayed(new bf6(lf6Var, (byte) 2), 200L);
+                ((vf6) obj).h(null);
                 break;
             case 2:
-                lf6Var.h(null);
-                break;
-            case 3:
-                lf6Var.t(true);
-                break;
+                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
+                if (!passcodeActivity.F) {
+                    postDelayed(new fe7(this, (byte) 19), 260L);
+                    break;
+                } else {
+                    passcodeActivity.t0();
+                    break;
+                }
             default:
-                lf6Var.h0.L1(lf6Var.b);
+                ((o7c) obj).H0();
                 break;
         }
     }

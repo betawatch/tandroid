@@ -1,26 +1,42 @@
 // default package
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class mia extends gw2 {
-    public Object a;
-    public nh7 b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ pia d;
-    public int e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class mia extends wb2 {
+    public final /* synthetic */ byte Ld = 1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mia(pia piaVar, fw2 fw2Var) {
-        super(fw2Var);
-        this.d = piaVar;
+    public /* synthetic */ mia(Context context, int i) {
+        super(context, i);
     }
 
-    @Override // of0
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.c(null, this);
+    @Override // wb2
+    public final int getParentWidth() {
+        int i;
+        int L;
+        switch (this.Ld) {
+            case 1:
+                if (getMeasuredWidth() != 0) {
+                    i = getMeasuredWidth();
+                    L = hl.L(24.0f);
+                } else {
+                    i = hl.q.x;
+                    L = hl.L(24.0f);
+                }
+                return i - L;
+            default:
+                return super.getParentWidth();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean isPressed() {
+        byte b = this.Ld;
+        return false;
+    }
+
+    public /* synthetic */ mia(Context context, int i, boolean z, rx6 rx6Var, vnb vnbVar) {
+        super(context, i, z, rx6Var, vnbVar);
     }
 }

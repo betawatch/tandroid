@@ -1,64 +1,146 @@
 // default package
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class vv9 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class vv9 implements r69 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ tx9 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ FrameLayout c;
 
-    public /* synthetic */ vv9(tx9 tx9Var, byte b) {
+    public /* synthetic */ vv9(FrameLayout frameLayout, int i, byte b) {
         this.a = b;
-        this.b = tx9Var;
+        this.c = frameLayout;
+        this.b = i;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // r69
+    public final void e(int i, View view) {
+        w49 w49Var;
+        TLRPC.Document document;
         byte b = this.a;
-        tx9 tx9Var = this.b;
+        int i2 = this.b;
+        FrameLayout frameLayout = this.c;
         switch (b) {
             case 0:
-                tx9Var.getClass();
-                tx9Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                tx9Var.l();
-                break;
-            case 2:
-                View view = tx9Var.u0;
-                if (view != null) {
-                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                }
-                int v = bkb.v(bkb.v0(bkb.F8, tx9Var.a1), bm2.o(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
-                View view2 = tx9Var.n0;
-                if (view2 != null) {
-                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                }
-                d62 d62Var = tx9Var.o0;
-                if (d62Var != null) {
-                    d62Var.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                    break;
+                aw9 aw9Var = (aw9) frameLayout;
+                e eVar = aw9Var.H;
+                ox0 ox0Var = aw9Var.c;
+                r47 E = ox0Var.E(i);
+                if (E != null) {
+                    if (!aw9Var.J.u()) {
+                        if (view instanceof xv9) {
+                            zea zeaVar = ((xv9) view).a;
+                            r47 message = zeaVar.getMessage();
+                            TLRPC.Document F0 = message.F0();
+                            if (zeaVar.H) {
+                                if (message.g4() || r47.Q4(message.k)) {
+                                    MediaController.z().V(message);
+                                    break;
+                                } else {
+                                    boolean x = message.x();
+                                    if (!x) {
+                                        TLRPC.Message message2 = message.k;
+                                        boolean z = message2 != null && message2.noforwards;
+                                        TLRPC.Chat M0 = E.k.peer_id.channel_id != 0 ? uc7.s1(yac.t0).M0(Long.valueOf(E.k.peer_id.channel_id)) : null;
+                                        if (M0 == null) {
+                                            M0 = E.k.peer_id.chat_id != 0 ? uc7.s1(yac.t0).M0(Long.valueOf(E.k.peer_id.chat_id)) : null;
+                                        }
+                                        if (M0 != null) {
+                                            z = M0.noforwards;
+                                        }
+                                        x = x || z;
+                                    }
+                                    if (x) {
+                                        PhotoViewer.q0().T1(null, eVar, null);
+                                        ArrayList arrayList = new ArrayList();
+                                        arrayList.add(message);
+                                        PhotoViewer.q0().T1(null, eVar, null);
+                                        PhotoViewer.q0().n1(arrayList, 0, 0L, 0L, 0L, new yc8());
+                                        break;
+                                    } else {
+                                        hl.q2(message, aw9Var.G, eVar);
+                                    }
+                                }
+                            } else if (zeaVar.G) {
+                                xb4.G(k5.a(yac.t0).a).f(F0);
+                                zeaVar.f(true);
+                            } else {
+                                E.P = true;
+                                xb4.G(k5.a(yac.t0).a).X(F0, E, 0, 0);
+                                zeaVar.f(true);
+                                lq3.q(i2).y();
+                            }
+                            aw9Var.d(true);
+                        }
+                        if (view instanceof vea) {
+                            ((vea) view).a();
+                            break;
+                        }
+                    } else {
+                        aw9Var.J.h(E, view, 0);
+                        qg4 qg4Var = aw9Var.K;
+                        int e1 = E.e1();
+                        qg4Var.a = r47.B0(E.k);
+                        qg4Var.b = e1;
+                        ox0Var.g(i);
+                        if (!aw9Var.J.u()) {
+                            ox0Var.l(0, ((aw9) ox0Var.d).r);
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                ow9 ow9Var = tx9Var.b0;
-                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tx9Var.setTranslationY((1.0f - floatValue) * gl.L(8.0f));
-                View view3 = tx9Var.n0;
-                if (view3 != null) {
-                    view3.setAlpha(floatValue);
+                n1a n1aVar = (n1a) frameLayout;
+                try {
+                    if (!(view instanceof w0a)) {
+                        if (!(view instanceof ImageView)) {
+                            if (!(view instanceof r0a)) {
+                                if (view != null) {
+                                    view.callOnClick();
+                                    break;
+                                }
+                            } else {
+                                n1aVar.h(i, (r0a) view);
+                                if (i2 != 1 && i2 != 11) {
+                                    n1aVar.performHapticFeedback(3, 1);
+                                }
+                            }
+                        } else {
+                            n1aVar.n(view, null);
+                            if (i2 != 1 && i2 != 11) {
+                                n1aVar.performHapticFeedback(3, 1);
+                            }
+                        }
+                    } else {
+                        w0a w0aVar = (w0a) view;
+                        if (w0aVar.s || (((w49Var = w0aVar.y) != null && w49Var.a) || i2 == 13 || i2 == 14)) {
+                            n1aVar.k();
+                            n1aVar.q(w0aVar, w0aVar.y);
+                        } else if (!w0aVar.R || (document = w0aVar.d) == null) {
+                            n1aVar.n(w0aVar, w0aVar.e);
+                        } else if (n1aVar.a0 == 6) {
+                            n1aVar.o(w0aVar, Long.valueOf(document.id), document, w0aVar.w, null);
+                        } else {
+                            n1aVar.o(w0aVar, null, document, w0aVar.w, null);
+                        }
+                        if (i2 != 1 && i2 != 11) {
+                            n1aVar.performHapticFeedback(3, 1);
+                        }
+                    }
+                    break;
+                } catch (Exception unused) {
+                    return;
                 }
-                d62 d62Var2 = tx9Var.o0;
-                if (d62Var2 != null) {
-                    d62Var2.setAlpha(floatValue * floatValue);
-                }
-                ow9Var.setAlpha(floatValue);
-                ow9Var.invalidate();
-                tx9Var.invalidate();
                 break;
         }
     }

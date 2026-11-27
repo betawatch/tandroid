@@ -1,62 +1,110 @@
 // default package
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.d;
+import android.os.SystemClock;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class r08 extends LinearLayout implements tjb {
-    public final l46 a;
-    public final l46 b;
-    public final /* synthetic */ t08 c;
+public final class r08 implements RequestDelegate {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ TL_account.getPasswordSettings c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ b18 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r08(t08 t08Var, Context context) {
-        super(context);
-        wjb wjbVar;
-        wjb wjbVar2;
-        this.c = t08Var;
-        setOrientation(1);
-        int i = bkb.c6;
-        a18 a18Var = t08Var.q0;
-        zkb.h(i, a18Var.getResourceProvider(), this);
-        be0 be0Var = new be0(getContext());
-        be0Var.setImageDrawable(new oy8(R.raw.utyan_draw, gl.L(120.0f), gl.L(120.0f)));
-        addView(be0Var, nme.t(120, 120, 1, 0, 6, 0, 0));
-        Context context2 = getContext();
-        int i2 = bkb.x6;
-        wjbVar = ((d) a18Var).resourceProvider;
-        l46 a = hve.a(context2, 14.0f, i2, false, wjbVar);
-        this.a = a;
-        a.setGravity(17);
-        a.setText(k96.M0(!t08Var.n0 ? 2131750067 : 2131750066, null));
-        addView(a, nme.t(-1, -2, 1, 64, 8, 64, 8));
-        Context context3 = getContext();
-        int i3 = bkb.Wc;
-        wjbVar2 = ((d) a18Var).resourceProvider;
-        l46 a2 = hve.a(context3, 14.0f, i3, false, wjbVar2);
-        this.b = a2;
-        a2.setGravity(17);
-        a2.setText(gl.F2(gl.N2(k96.M0(2131750068, null), -1, 0, new oq7(this, (byte) 15), null), true, gl.L(2.6666667f), gl.L(1.33f), 1.0f, R.drawable.msg_mini_forumarrow));
-        addView(a2, nme.t(-1, -2, 1, 32, 4, 32, 24));
+    public r08(b18 b18Var, boolean z, byte[] bArr, TL_account.getPasswordSettings getpasswordsettings, String str) {
+        this.e = b18Var;
+        this.a = z;
+        this.b = bArr;
+        this.c = getpasswordsettings;
+        this.d = str;
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        a18 a18Var = this.c.q0;
-        setBackgroundColor(a18Var.getThemedColor(bkb.c6));
-        this.a.setTextColor(a18Var.getThemedColor(bkb.x6));
-        int i = bkb.Wc;
-        int themedColor = a18Var.getThemedColor(i);
-        l46 l46Var = this.b;
-        l46Var.setTextColor(themedColor);
-        l46Var.setLinkTextColor(a18Var.getThemedColor(i));
+    public final void a() {
+        int i;
+        wk5 wk5Var;
+        wk5 wk5Var2;
+        int i2;
+        b18 b18Var = this.e;
+        if (b18Var.Z == null) {
+            return;
+        }
+        if (!this.a) {
+            i2 = ((e) b18Var).currentAccount;
+            yac h = yac.h(i2);
+            byte[] bArr = this.b;
+            byte[] bArr2 = this.e.f1;
+            h.m0 = SystemClock.elapsedRealtime();
+            h.k0 = bArr;
+            h.l0 = bArr2;
+        }
+        hl.t1(this.e.Z[0]);
+        b18 b18Var2 = this.e;
+        b18Var2.g1 = true;
+        long j = b18Var2.c;
+        b18 b18Var3 = new b18(j == 0 ? 8 : 0, j, b18Var2.h, b18Var2.r, b18Var2.d, b18Var2.e, b18Var2.n, b18Var2.E, b18Var2.K);
+        b18 b18Var4 = this.e;
+        b18Var3.e1 = b18Var4.e1;
+        i = ((e) b18Var4).currentAccount;
+        ((e) b18Var3).currentAccount = i;
+        b18 b18Var5 = this.e;
+        b18Var3.f1 = b18Var5.f1;
+        b18Var3.d1 = b18Var5.d1;
+        b18Var3.c1 = b18Var5.c1;
+        b18Var3.D1 = b18Var5.D1;
+        wk5Var = ((e) b18Var5).parentLayout;
+        if (wk5Var != null) {
+            wk5Var2 = ((e) this.e).parentLayout;
+            if (((ActionBarLayout) wk5Var2).h()) {
+                this.e.i1 = b18Var3;
+                return;
+            }
+        }
+        this.e.presentFragment(b18Var3, true);
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
+    public final void b() {
+        int i;
+        TL_account.updatePasswordSettings updatepasswordsettings = new TL_account.updatePasswordSettings();
+        b18 b18Var = this.e;
+        TL_account.Password password = b18Var.K;
+        TLRPC.PasswordKdfAlgo passwordKdfAlgo = password.current_algo;
+        if (passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
+            updatepasswordsettings.password = es9.d(this.b, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo);
+        }
+        TL_account.passwordInputSettings passwordinputsettings = new TL_account.passwordInputSettings();
+        updatepasswordsettings.new_settings = passwordinputsettings;
+        passwordinputsettings.new_secure_settings = new TLRPC.TL_secureSecretSettings();
+        TLRPC.TL_secureSecretSettings tL_secureSecretSettings = updatepasswordsettings.new_settings.new_secure_settings;
+        tL_secureSecretSettings.secure_secret = new byte[0];
+        tL_secureSecretSettings.secure_algo = new TLRPC.TL_securePasswordKdfAlgoUnknown();
+        TL_account.passwordInputSettings passwordinputsettings2 = updatepasswordsettings.new_settings;
+        passwordinputsettings2.new_secure_settings.secure_secret_id = 0L;
+        passwordinputsettings2.flags |= 4;
+        i = ((e) b18Var).currentAccount;
+        ConnectionsManager.getInstance(i).sendRequest(this.c, new o08(this, (byte) 2));
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i;
+        if (tL_error == null) {
+            Utilities.e.c(new lb7((Object) this, (Object) tLObject, (Object) this.d, this.a, (byte) 7));
+            return;
+        }
+        if (!"SRP_ID_INVALID".equals(tL_error.text)) {
+            hl.c3(new yn6((Object) this, this.a, (Object) tL_error, (byte) 9));
+            return;
+        }
+        TL_account.getPassword getpassword = new TL_account.getPassword();
+        i = ((e) this.e).currentAccount;
+        ConnectionsManager.getInstance(i).sendRequest(getpassword, new q81((byte) 7, this, this.a), 8);
     }
 }

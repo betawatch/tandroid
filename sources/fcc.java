@@ -1,15 +1,54 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface fcc {
-    public static final cff C = new cff(28);
+public abstract class fcc {
+    public static final dcc a;
 
-    void a(icc iccVar);
+    static {
+        a = (dac.e && dac.d && !xj.a()) ? new dcc((byte) 1) : new dcc((byte) 0);
+    }
 
-    void onFirstFrameRendered();
-
-    void q();
-
-    void u();
+    public static int a(String str) {
+        int length = str.length();
+        int i = 0;
+        while (i < length && str.charAt(i) < 128) {
+            i++;
+        }
+        int i2 = length;
+        while (true) {
+            if (i >= length) {
+                break;
+            }
+            char charAt = str.charAt(i);
+            if (charAt < 2048) {
+                i2 += (127 - charAt) >>> 31;
+                i++;
+            } else {
+                int length2 = str.length();
+                int i3 = 0;
+                while (i < length2) {
+                    char charAt2 = str.charAt(i);
+                    if (charAt2 < 2048) {
+                        i3 += (127 - charAt2) >>> 31;
+                    } else {
+                        i3 += 2;
+                        if (55296 <= charAt2 && charAt2 <= 57343) {
+                            if (Character.codePointAt(str, i) < 65536) {
+                                throw new ecc(i, length2);
+                            }
+                            i++;
+                        }
+                    }
+                    i++;
+                }
+                i2 += i3;
+            }
+        }
+        if (i2 >= length) {
+            return i2;
+        }
+        p3d.g(i2 + 4294967296L);
+        return 0;
+    }
 }

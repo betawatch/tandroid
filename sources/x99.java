@@ -1,48 +1,11 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class x99 implements gk7 {
-    public final int a;
-    public final xsa b;
-    public final q99 c;
-    public u99 d;
-    public boolean e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class x99 {
+    public final vw8 a;
 
-    public x99(int i, long j) {
-        this.a = i;
-        xsa xsaVar = new xsa(i, 0L, false);
-        this.b = xsaVar;
-        xsaVar.p = j;
-        q99 q99Var = new q99(i, j, new zf7(this, (byte) 28));
-        q99Var.x = true;
-        this.c = q99Var;
-    }
-
-    public final void a() {
-        if (this.e) {
-            return;
-        }
-        kk7.f(this.a).b(this, kk7.H3);
-        this.b.a();
-        this.c.l(false);
-        this.e = true;
-    }
-
-    public final void b() {
-        if (this.e) {
-            kk7.f(this.a).n(this, kk7.H3);
-            this.b.f();
-            this.c.i();
-            this.e = false;
-        }
-    }
-
-    @Override // gk7
-    public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        u99 u99Var;
-        if (i == kk7.H3 && objArr[1] == this.b && (u99Var = this.d) != null) {
-            u99Var.run();
-        }
+    public x99(vw8 vw8Var) {
+        this.a = vw8Var;
     }
 }

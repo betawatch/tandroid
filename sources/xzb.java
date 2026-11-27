@@ -1,136 +1,109 @@
 // default package
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 import android.widget.TextView;
-import java.util.HashSet;
+import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xzb extends FrameLayout implements tjb {
-    public final wjb a;
-    public final LinearLayout b;
-    public final TextView c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public final LinearLayout h;
-    public final wf2 n;
-    public final LinearLayout r;
-    public final ImageView s;
-    public final TextView w;
+public final class xzb extends la {
+    public final /* synthetic */ zzb d;
 
-    public xzb(Context context, wjb wjbVar) {
-        super(context);
-        this.a = wjbVar;
-        setClipToPadding(false);
-        setPadding(gl.L(20.0f), gl.L(12.0f), gl.L(20.0f), gl.L(6.0f));
-        LinearLayout j = de9.j(context, 0);
-        addView(j, nme.e(-2, -2, 19));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(gl.n1("fonts/rextrabold.ttf"));
-        j.addView(textView, nme.t(-2, -2, 19, 0, 0, 0, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.b = linearLayout;
-        linearLayout.setOrientation(0);
-        linearLayout.setPadding(gl.L(6.0f), gl.L(1.0f), gl.L(2.0f), gl.L(1.0f));
-        ote.a(linearLayout);
-        j.addView(linearLayout, nme.d(-2, -2.0f, 19, -6.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(gl.n1("fonts/rextrabold.ttf"));
-        linearLayout.addView(textView2, nme.t(-2, -2, 19, 0, 0, 0, 0));
-        ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        imageView.setImageResource(R.drawable.arrows_select);
-        linearLayout.addView(imageView, nme.t(16, 16, 19, 1, 0, 0, 0));
-        imageView.setTranslationY(gl.L(1.0f));
-        TextView textView3 = new TextView(context);
-        this.e = textView3;
-        textView3.setTextSize(1, 14.0f);
-        textView3.setTypeface(gl.n1("fonts/rextrabold.ttf"));
-        j.addView(textView3, nme.t(-2, -2, 19, -6, 0, 0, 0));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.h = linearLayout2;
-        linearLayout2.setPadding(gl.L(4.0f), gl.L(3.0f), gl.L(4.0f), gl.L(3.0f));
-        linearLayout2.setClipToPadding(false);
-        linearLayout2.setOrientation(0);
-        wf2 wf2Var = new wf2(20, wjbVar, context);
-        this.n = wf2Var;
-        wf2Var.b(bkb.g7, bkb.i7, bkb.j7);
-        wf2Var.setDrawUnchecked(true);
-        wf2Var.a(false, false);
-        wf2Var.setDrawBackgroundAsArc(10);
-        linearLayout2.addView(wf2Var, nme.t(22, 22, 16, 0, 0, 0, 0));
-        TextView textView4 = new TextView(context);
-        tb4.w(textView4, bkb.i5, wjbVar, 1, 14.0f);
-        textView4.setText(k96.M0(2131754995, null));
-        linearLayout2.addView(textView4, nme.t(-2, -2, 16, 3, -1, 2, 0));
-        addView(linearLayout2, nme.d(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
-        ote.b(linearLayout2, 0.025f, 1.5f);
-        LinearLayout linearLayout3 = new LinearLayout(context);
-        this.r = linearLayout3;
-        linearLayout3.setPadding(gl.L(6.0f), gl.L(3.0f), gl.L(6.0f), gl.L(3.0f));
-        linearLayout3.setOrientation(0);
-        linearLayout3.setVisibility(8);
-        addView(linearLayout3, nme.d(-2, -2.0f, 53, 0.0f, 0.0f, -6.0f, 0.0f));
-        ote.b(linearLayout3, 0.025f, 1.5f);
-        ImageView imageView2 = new ImageView(context);
-        this.s = imageView2;
-        imageView2.setImageResource(R.drawable.mini_replace2);
-        linearLayout3.addView(imageView2, nme.t(-2, -2, 16, 0, 0, 4, 0));
-        TextView textView5 = new TextView(context);
-        this.w = textView5;
-        textView5.setTextSize(1, 14.0f);
-        textView5.setTypeface(gl.o());
-        textView5.setText(k96.M0(2131755003, null));
-        linearLayout3.addView(textView5, nme.r(-2, -2, 16));
-        updateColors();
+    public xzb(zzb zzbVar) {
+        this.d = zzbVar;
     }
 
-    @Override // tjb
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(bkb.F6));
-        hashSet.add(Integer.valueOf(bkb.K6));
-        hashSet.add(Integer.valueOf(bkb.h6));
-        hashSet.add(Integer.valueOf(bkb.Ei));
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        int i = f89Var.f;
+        return i == 1 || i == 2 || i == 4;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
+    @Override // j79
+    public final int b() {
+        return this.d.d.size();
     }
 
-    @Override // tjb
-    public final void updateColors() {
-        int i = bkb.F6;
-        wjb wjbVar = this.a;
-        this.c.setTextColor(bkb.v0(i, wjbVar));
-        int i2 = bkb.K6;
-        this.d.setTextColor(bkb.v0(i2, wjbVar));
-        this.e.setTextColor(bkb.v0(i, wjbVar));
-        this.f.setColorFilter(new PorterDuffColorFilter(bkb.v0(i2, wjbVar), PorterDuff.Mode.MULTIPLY));
-        LinearLayout linearLayout = this.b;
-        linearLayout.setBackground(linearLayout.isClickable() ? bkb.Y(bkb.p1(0.1f, bkb.w0(null, i2, false)), gl.L(10.0f), gl.L(10.0f)) : null);
-        if (linearLayout.isClickable()) {
-            ote.a(linearLayout);
-        } else {
-            linearLayout.setStateListAnimator(null);
+    @Override // j79
+    public final int d(int i) {
+        return ((yzb) this.d.d.get(i)).a;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        String M0;
+        zzb zzbVar = this.d;
+        ArrayList arrayList = zzbVar.d;
+        if (((yzb) arrayList.get(i)).a == 2) {
+            xxb xxbVar = (xxb) f89Var.a;
+            long j = zzbVar.c;
+            TLRPC.TL_forumTopic tL_forumTopic = ((yzb) arrayList.get(i)).c;
+            de0 de0Var = xxbVar.b;
+            ro4.q(de0Var, tL_forumTopic, false, false, null);
+            if (de0Var != null && de0Var.getImageReceiver() != null && (de0Var.getImageReceiver().t() instanceof qo4)) {
+                ((qo4) de0Var.getImageReceiver().t()).a(aob.w0(null, aob.c9, false));
+            }
+            xxbVar.c.setText(tL_forumTopic.title);
+            TextView textView = xxbVar.d;
+            uc7 s1 = uc7.s1(yac.t0);
+            long j2 = tL_forumTopic.id;
+            if (s1.getMessagesController().p2(j, j2, null)) {
+                int i2 = s1.W3.getInt("notifyuntil_" + ip7.p(j, j2, false), 0);
+                M0 = i2 >= s1.getConnectionsManager().getCurrentTime() ? ob6.a0("NotificationsMutedForHint", null, 2131747627, ob6.c0(i2)) : ob6.M0(2131747628, null);
+            } else {
+                M0 = ob6.M0(2131747583, null);
+            }
+            textView.setText(M0);
+            xxbVar.a = i == arrayList.size() - 1 || ((yzb) arrayList.get(i + 1)).a == 2;
         }
-        this.h.setBackground(bkb.Y(bkb.v0(bkb.h6, wjbVar), 24, 24));
-        int i3 = bkb.Ei;
-        this.s.setColorFilter(new PorterDuffColorFilter(bkb.v0(i3, wjbVar), PorterDuff.Mode.SRC_IN));
-        this.w.setTextColor(bkb.v0(i3, wjbVar));
-        this.r.setBackground(bkb.Y(bkb.p1(0.1f, bkb.v0(i3, wjbVar)), gl.L(8.0f), gl.L(8.0f)));
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        View view;
+        View view2 = null;
+        if (i == 1) {
+            skb skbVar = new skb(viewGroup.getContext());
+            skbVar.o(R.drawable.msg_contact_add, ob6.M0(2131747650, null), true);
+            skbVar.g(aob.v6, aob.u6);
+            yob.h(aob.d6, null, skbVar);
+            view = skbVar;
+        } else if (i == 2) {
+            Context context = viewGroup.getContext();
+            xxb xxbVar = new xxb(context);
+            de0 de0Var = new de0(context);
+            xxbVar.b = de0Var;
+            xxbVar.addView(de0Var, tre.d(30, 30.0f, 16, 20.0f, 0.0f, 0.0f, 0.0f));
+            TextView textView = new TextView(context);
+            xxbVar.c = textView;
+            qd4.w(textView, aob.G6, null, 1, 16.0f);
+            textView.setMaxLines(1);
+            xxbVar.addView(textView, tre.d(-1, -2.0f, 0, 72.0f, 8.0f, 12.0f, 0.0f));
+            TextView textView2 = new TextView(context);
+            xxbVar.d = textView2;
+            yob.X(textView2, aob.y6, null);
+            textView2.setTextSize(1, 14.0f);
+            xxbVar.addView(textView2, tre.d(-1, -2.0f, 0, 72.0f, 32.0f, 12.0f, 0.0f));
+            yob.h(aob.d6, null, xxbVar);
+            view = xxbVar;
+        } else {
+            if (i != 3) {
+                if (i == 4) {
+                    skb skbVar2 = new skb(viewGroup.getContext());
+                    skbVar2.k(ob6.M0(2131747642, null), false);
+                    skbVar2.g(-1, aob.p7);
+                    yob.h(aob.d6, null, skbVar2);
+                    view = skbVar2;
+                }
+                return qu6.h(view2, view2, -1, -2);
+            }
+            view = new rca(viewGroup.getContext(), (uh9) null);
+        }
+        view2 = view;
+        return qu6.h(view2, view2, -1, -2);
     }
 }

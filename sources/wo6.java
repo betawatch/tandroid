@@ -1,111 +1,116 @@
 // default package
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.TLRPC;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.support.v4.media.session.MediaSessionCompat$QueueItem;
+import android.support.v4.media.session.PlaybackStateCompat;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wo6 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ hq6 b;
-    public final /* synthetic */ String c;
+public final class wo6 extends Binder implements kk5 {
+    public final WeakReference a;
 
-    public /* synthetic */ wo6(hq6 hq6Var, String str, byte b) {
-        this.a = b;
-        this.b = hq6Var;
-        this.c = str;
+    public wo6(yu6 yu6Var) {
+        attachInterface(this, "android.support.v4.media.session.IMediaControllerCallback");
+        this.a = new WeakReference(yu6Var);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0053  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i;
-        int i2;
-        TLRPC.TL_messages_getEmojiKeywordsDifference tL_messages_getEmojiKeywordsDifference;
-        byte b = this.a;
-        byte b2 = 2;
-        String str = this.c;
-        hq6 hq6Var = this.b;
-        switch (b) {
-            case 0:
-                try {
-                    SQLitePreparedStatement executeFast = hq6Var.getMessagesStorage().b.executeFast("DELETE FROM emoji_keywords_info_v2 WHERE lang = ?");
-                    executeFast.bindString(1, str);
-                    executeFast.step();
-                    executeFast.dispose();
-                    gl.c3(new wo6(hq6Var, str, b2));
-                    break;
-                } catch (Exception e) {
-                    fa4.g(e, true);
-                    return;
-                }
-            case 1:
-                hq6Var.C1.remove(str);
-                hq6Var.D1.add(str);
-                hq6Var.getNotificationCenter().k(kk7.m3, new Object[0]);
-                break;
-            case 2:
-                hq6Var.C1.remove(str);
-                hq6Var.D1.add(str);
-                hq6Var.O(new String[]{str}, false);
-                hq6Var.getNotificationCenter().k(kk7.m3, new Object[0]);
-                break;
-            case 3:
-                hq6Var.C1.remove(str);
-                hq6Var.getNotificationCenter().k(kk7.K2, str);
-                break;
-            case 4:
-                hq6Var.T.remove(str);
-                break;
-            default:
-                hq6 hq6Var2 = this.b;
-                String str2 = this.c;
-                String str3 = null;
-                try {
-                    SQLiteCursor queryFinalized = hq6Var2.getMessagesStorage().b.queryFinalized("SELECT alias, version, date FROM emoji_keywords_info_v2 WHERE lang = ?", str2);
-                    if (queryFinalized.next()) {
-                        str3 = queryFinalized.stringValue(0);
-                        i = queryFinalized.intValue(1);
-                        try {
-                            queryFinalized.longValue(2);
-                        } catch (Exception e2) {
-                            e = e2;
-                            fa4.g(e, true);
-                            String str4 = str3;
-                            i2 = i;
-                            boolean z = w01.a;
-                            if (i2 != -1) {
-                            }
-                            hq6Var2.getConnectionsManager().sendRequest(tL_messages_getEmojiKeywordsDifference, new ae((Object) hq6Var2, i2, (Object) str4, (Object) str2, (byte) 5));
-                        }
-                    } else {
-                        i = -1;
-                    }
-                    queryFinalized.dispose();
-                } catch (Exception e3) {
-                    e = e3;
-                    i = -1;
-                }
-                String str42 = str3;
-                i2 = i;
-                boolean z2 = w01.a;
-                if (i2 != -1) {
-                    TLRPC.TL_messages_getEmojiKeywords tL_messages_getEmojiKeywords = new TLRPC.TL_messages_getEmojiKeywords();
-                    tL_messages_getEmojiKeywords.lang_code = str2;
-                    tL_messages_getEmojiKeywordsDifference = tL_messages_getEmojiKeywords;
-                } else {
-                    TLRPC.TL_messages_getEmojiKeywordsDifference tL_messages_getEmojiKeywordsDifference2 = new TLRPC.TL_messages_getEmojiKeywordsDifference();
-                    tL_messages_getEmojiKeywordsDifference2.lang_code = str2;
-                    tL_messages_getEmojiKeywordsDifference2.from_version = i2;
-                    tL_messages_getEmojiKeywordsDifference = tL_messages_getEmojiKeywordsDifference2;
-                }
-                hq6Var2.getConnectionsManager().sendRequest(tL_messages_getEmojiKeywordsDifference, new ae((Object) hq6Var2, i2, (Object) str42, (Object) str2, (byte) 5));
+    @Override // kk5
+    public final void N(PlaybackStateCompat playbackStateCompat) {
+        yu6 yu6Var = (yu6) this.a.get();
+        if (yu6Var != null) {
+            yu6Var.e(2, playbackStateCompat, null);
         }
+    }
+
+    @Override // kk5
+    public final void g(int i) {
+        yu6 yu6Var = (yu6) this.a.get();
+        if (yu6Var != null) {
+            yu6Var.e(9, Integer.valueOf(i), null);
+        }
+    }
+
+    @Override // kk5
+    public final void i(int i) {
+        yu6 yu6Var = (yu6) this.a.get();
+        if (yu6Var != null) {
+            yu6Var.e(12, Integer.valueOf(i), null);
+        }
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+        if (i >= 1 && i <= 16777215) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
+        }
+        if (i == 1598968902) {
+            parcel2.writeString("android.support.v4.media.session.IMediaControllerCallback");
+            return true;
+        }
+        switch (i) {
+            case 1:
+                String readString = parcel.readString();
+                Bundle bundle = (Bundle) roe.a(parcel, Bundle.CREATOR);
+                yu6 yu6Var = (yu6) this.a.get();
+                if (yu6Var != null) {
+                    yu6Var.e(1, readString, bundle);
+                }
+                return true;
+            case 2:
+                lq5.f();
+                return false;
+            case 3:
+                N((PlaybackStateCompat) roe.a(parcel, PlaybackStateCompat.CREATOR));
+                return true;
+            case 4:
+                lq5.f();
+                return false;
+            case 5:
+                parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR);
+                lq5.f();
+                return false;
+            case 6:
+                lq5.f();
+                return false;
+            case 7:
+                lq5.f();
+                return false;
+            case 8:
+                lq5.f();
+                return false;
+            case 9:
+                g(parcel.readInt());
+                return true;
+            case 10:
+                parcel.readInt();
+                return true;
+            case 11:
+                boolean z = parcel.readInt() != 0;
+                yu6 yu6Var2 = (yu6) this.a.get();
+                if (yu6Var2 != null) {
+                    yu6Var2.e(11, Boolean.valueOf(z), null);
+                }
+                return true;
+            case 12:
+                i(parcel.readInt());
+                return true;
+            case 13:
+                yu6 yu6Var3 = (yu6) this.a.get();
+                if (yu6Var3 != null) {
+                    yu6Var3.e(13, null, null);
+                }
+                return true;
+            default:
+                return super.onTransact(i, parcel, parcel2, i2);
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 }

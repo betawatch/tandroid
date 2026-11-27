@@ -1,58 +1,51 @@
 // default package
 
-import java.util.Collections;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class lg3 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ cj3 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+public final class lg3 extends la {
+    public final boolean d;
+    public final /* synthetic */ ii3 e;
 
-    public /* synthetic */ lg3(cj3 cj3Var, long j, boolean z, byte b) {
-        this.a = b;
-        this.b = cj3Var;
-        this.c = j;
+    public lg3(ii3 ii3Var, boolean z) {
+        this.e = ii3Var;
         this.d = z;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        TLRPC.Chat chat;
-        byte b = this.a;
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return false;
+    }
+
+    @Override // j79
+    public final int b() {
         boolean z = this.d;
-        long j = this.c;
-        cj3 cj3Var = this.b;
-        switch (b) {
-            case 0:
-                cj3 cj3Var2 = this.b;
-                g2b M1 = cj3Var2.getMessagesController().M1();
-                long j2 = this.c;
-                boolean z2 = this.d;
-                M1.l0(j2, z2, false);
-                lv6 lv6Var = new lv6((byte) 10, false);
-                lv6Var.b = new lg3(cj3Var2, j2, z2, (byte) 1);
-                lv6Var.c = new lg3(cj3Var2, j2, z2, (byte) 2);
-                if (j2 >= 0) {
-                    TLRPC.User V1 = cj3Var2.getMessagesController().V1(Long.valueOf(j2));
-                    str = qu2.m(15, V1.first_name, null);
-                    chat = V1;
-                } else {
-                    TLRPC.Chat K0 = cj3Var2.getMessagesController().K0(Long.valueOf(-j2));
-                    str = K0.title;
-                    chat = K0;
-                }
-                cj3Var2.T = u21.Y().V(Collections.singletonList(chat), cj3Var2.D3() ? gl.S2(k96.a0("StoriesMovedToDialogs", null, 2131744521, str)) : gl.S2(k96.a0("StoriesMovedToContacts", null, 2131744522, qu2.m(15, str, null))), null, lv6Var).j();
-                break;
-            case 1:
-                cj3Var.getMessagesController().M1().l0(j, !z, false);
-                break;
-            default:
-                cj3Var.getMessagesController().M1().l0(j, z, true);
-                break;
+        ii3 ii3Var = this.e;
+        return (z ? ii3Var.E : ii3Var.y).size();
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        og3 og3Var = (og3) f89Var.a;
+        og3Var.b = i;
+        boolean z = this.d;
+        ii3 ii3Var = this.e;
+        if (z) {
+            og3Var.setDialogId(((mg3) ii3Var.E.get(i)).c);
+        } else {
+            og3Var.setDialogId(((mg3) ii3Var.y.get(i)).c);
         }
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        og3 og3Var = new og3(this.e, viewGroup.getContext());
+        boolean z = this.d;
+        og3Var.O = z;
+        if (z) {
+            og3Var.d(1.0f, 1.0f, 0.0f, false);
+        }
+        return new n69(og3Var);
     }
 }

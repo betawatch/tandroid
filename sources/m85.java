@@ -1,414 +1,296 @@
 // default package
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Point;
-import android.util.Property;
-import android.view.MotionEvent;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewParent;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import org.telegram.messenger.a;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class m85 extends FrameLayout {
-    public float a;
-    public float b;
-    public boolean c;
-    public AnimatorSet d;
-    public final l85 e;
-    public final ql3 f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ o85 n;
+public final class m85 extends d6 {
+    public final /* synthetic */ LaunchActivity a;
+    public final /* synthetic */ j95 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m85(o85 o85Var, Context context, float f) {
-        super(context);
-        this.n = o85Var;
-        this.h = f;
-        this.e = new l85(this);
-        this.f = new ql3((byte) 13);
+    public m85(j95 j95Var, LaunchActivity launchActivity) {
+        this.b = j95Var;
+        this.a = launchActivity;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        Point point = gl.q;
-        int i3 = point.x;
-        o85 o85Var = this.n;
-        if (i3 == o85Var.K && o85Var.L == point.y) {
+    @Override // d6
+    public final void b(int i) {
+        VoIPService sharedInstance;
+        int w0;
+        j95 j95Var = this.b;
+        b8 b8Var = j95Var.i3;
+        if (i == -1) {
+            j95Var.onBackPressed();
             return;
         }
-        o85Var.K = i3;
-        o85Var.L = point.y;
-        if (o85Var.M < 0.0f) {
-            SharedPreferences sharedPreferences = a.b.getSharedPreferences("groupcallpipconfig", 0);
-            this.n.M = sharedPreferences.getFloat("relativeX", 1.0f);
-            this.n.N = sharedPreferences.getFloat("relativeY", 0.4f);
+        byte b = 1;
+        byte b2 = 0;
+        if (i == 1) {
+            j95Var.T2.b.join_muted = false;
+            j95Var.D1();
+            return;
         }
-        o85 o85Var2 = o85.f0;
-        if (o85Var2 != null) {
-            o85 o85Var3 = this.n;
-            float f = o85Var3.M;
-            float f2 = o85Var3.N;
-            float f3 = -gl.L(36.0f);
-            o85Var2.s.x = (int) tb4.A(point.x - (2.0f * f3), gl.L(105.0f), f, f3);
-            o85Var2.s.y = (int) ((point.y - gl.L(105.0f)) * f2);
-            o85Var2.i();
-            m85 m85Var = o85Var2.a;
-            if (m85Var.getParent() != null) {
-                o85Var2.n.updateViewLayout(m85Var, o85Var2.s);
-            }
+        byte b3 = 2;
+        if (i == 2) {
+            j95Var.T2.b.join_muted = true;
+            j95Var.D1();
+            return;
         }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0024, code lost:
-    
-        if (r5 != 3) goto L65;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0139  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0195  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float f;
-        boolean z;
-        boolean z2;
-        o85 o85Var;
-        o85 o85Var2;
-        t85 t85Var;
-        ValueAnimator valueAnimator;
-        boolean z3 = false;
-        if (o85.f0 == null) {
-            return false;
+        if (i == 3) {
+            j95Var.b1(false);
+            return;
         }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        ViewParent parent = getParent();
-        int action = motionEvent.getAction();
-        if (action == 0) {
-            getLocationOnScreen(this.n.I);
-            o85 o85Var3 = this.n;
-            int i = o85Var3.I[0];
-            WindowManager.LayoutParams layoutParams = o85Var3.s;
-            o85Var3.S = i - layoutParams.x;
-            o85Var3.T = r5[1] - layoutParams.y;
-            this.a = rawX;
-            this.b = rawY;
-            System.currentTimeMillis();
-            gl.d3(this.e, 300L);
-            o85 o85Var4 = this.n;
-            WindowManager.LayoutParams layoutParams2 = o85Var4.s;
-            o85Var4.Q = layoutParams2.x;
-            o85Var4.R = layoutParams2.y;
-            o85Var4.Z = true;
-            o85Var4.a();
-            return true;
+        if (i == 12) {
+            j95Var.w1(true);
+            return;
         }
-        if (action != 1) {
-            if (action == 2) {
-                float f2 = rawX - this.a;
-                float f3 = rawY - this.b;
-                if (!this.n.Y) {
-                    float f4 = (f3 * f3) + (f2 * f2);
-                    float f5 = this.h;
-                    if (f4 > f5 * f5) {
-                        if (parent != null) {
-                            parent.requestDisallowInterceptTouchEvent(true);
-                        }
-                        gl.r(this.e);
-                        o85 o85Var5 = this.n;
-                        o85Var5.Y = true;
-                        o85Var5.g(true);
-                        this.n.f(false);
-                        this.a = rawX;
-                        this.b = rawY;
-                        f2 = 0.0f;
-                        f3 = 0.0f;
-                    }
-                }
-                o85 o85Var6 = this.n;
-                if (o85Var6.Y) {
-                    o85Var6.Q += f2;
-                    o85Var6.R += f3;
-                    this.a = rawX;
-                    this.b = rawY;
-                    o85Var6.j();
-                    float measuredWidth = (getMeasuredWidth() / 2.0f) + this.n.Q;
-                    float measuredHeight = (getMeasuredHeight() / 2.0f) + this.n.R;
-                    float measuredWidth2 = (r1.b.getMeasuredWidth() / 2.0f) + (r1.P - this.n.S);
-                    float measuredHeight2 = (r5.b.getMeasuredHeight() / 2.0f) + (r5.O - this.n.T);
-                    float f6 = measuredWidth - measuredWidth2;
-                    float f7 = measuredHeight - measuredHeight2;
-                    float f8 = (f7 * f7) + (f6 * f6);
-                    if (f8 < gl.L(80.0f) * gl.L(80.0f)) {
-                        f = 0.0f;
-                        this.n.W.setRemoveAngle((((measuredWidth <= measuredWidth2 || measuredHeight >= measuredHeight2) && (measuredWidth >= measuredWidth2 || measuredHeight >= measuredHeight2)) ? 90.0d : 270.0d) - Math.toDegrees(Math.atan(f6 / f7)));
-                        if (f8 < gl.L(50.0f) * gl.L(50.0f)) {
-                            z = true;
-                        } else {
-                            z = false;
-                            z2 = true;
-                            o85Var = this.n;
-                            if (!o85Var.H && o85Var.c0 != z) {
-                                o85Var.c0 = z;
-                                valueAnimator = o85Var.e0;
-                                if (valueAnimator != null) {
-                                    valueAnimator.removeAllListeners();
-                                    o85Var.e0.cancel();
-                                }
-                                ValueAnimator ofFloat = ValueAnimator.ofFloat(o85Var.d0, !z ? 1.0f : f);
-                                o85Var.e0 = ofFloat;
-                                ofFloat.addUpdateListener(new ni4(o85Var, (byte) 6));
-                                o85Var.e0.addListener(new id4((byte) 5, o85Var, z));
-                                o85Var.e0.setDuration(250L);
-                                o85Var.e0.setInterpolator(s33.f);
-                                o85Var.e0.start();
-                            }
-                            o85Var2 = this.n;
-                            t85Var = o85Var2.W;
-                            if (o85Var2.F != z2) {
-                                o85Var2.F = z2;
-                                o85Var2.c.invalidate();
-                                if (!o85Var2.H) {
-                                    o85Var2.x.K(z2 ? 33 : 0);
-                                    o85Var2.X.d();
-                                }
-                                if (z2) {
-                                    try {
-                                        t85Var.performHapticFeedback(3, 2);
-                                    } catch (Exception unused) {
-                                    }
-                                }
-                            }
-                            if (t85Var.s != z2) {
-                                t85Var.invalidate();
-                            }
-                            t85Var.s = z2;
-                        }
-                    } else {
-                        f = 0.0f;
-                        z = false;
-                    }
-                    z2 = z;
-                    o85Var = this.n;
-                    if (!o85Var.H) {
-                        o85Var.c0 = z;
-                        valueAnimator = o85Var.e0;
-                        if (valueAnimator != null) {
-                        }
-                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(o85Var.d0, !z ? 1.0f : f);
-                        o85Var.e0 = ofFloat2;
-                        ofFloat2.addUpdateListener(new ni4(o85Var, (byte) 6));
-                        o85Var.e0.addListener(new id4((byte) 5, o85Var, z));
-                        o85Var.e0.setDuration(250L);
-                        o85Var.e0.setInterpolator(s33.f);
-                        o85Var.e0.start();
-                    }
-                    o85Var2 = this.n;
-                    t85Var = o85Var2.W;
-                    if (o85Var2.F != z2) {
-                    }
-                    if (t85Var.s != z2) {
-                    }
-                    t85Var.s = z2;
-                }
-            }
-            return true;
+        if (i == 13) {
+            j95Var.w1(false);
+            return;
         }
-        gl.r(this.f);
-        gl.r(this.e);
-        o85 o85Var7 = this.n;
-        if (!o85Var7.F) {
-            o85Var7.Z = false;
-            o85Var7.a();
-            if (this.c) {
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(true, false, false);
-                    try {
-                        performHapticFeedback(3, 2);
-                    } catch (Exception unused2) {
-                    }
-                }
-                this.c = false;
+        if (i == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(j95Var.getContext());
+            boolean W = xc2.W(j95Var.S2);
+            id idVar = alertDialog$Builder.a;
+            if (W) {
+                idVar.S = ob6.M0(2131743134, null);
+                idVar.U = ob6.M0(2131743135, null);
             } else {
-                if (motionEvent.getAction() == 1 && !this.n.Y) {
-                    if (VoIPService.getSharedInstance() == null) {
-                        return false;
-                    }
-                    this.n.f(!r0.y);
-                    return false;
-                }
-                z3 = false;
+                idVar.S = ob6.M0(2131743033, null);
+                idVar.U = ob6.M0(2131743034, null);
             }
-            if (parent != null && this.n.Y) {
-                parent.requestDisallowInterceptTouchEvent(z3);
-                Point point = gl.q;
-                int i2 = point.x;
-                int i3 = point.y;
-                float f9 = this.n.s.x;
-                float measuredWidth3 = getMeasuredWidth() + f9;
-                float f10 = this.n.s.y;
-                float measuredHeight3 = getMeasuredHeight() + f10;
-                this.d = new AnimatorSet();
-                float f11 = -gl.L(36.0f);
-                if (f9 < f11) {
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(this.n.s.x, f11);
-                    ofFloat3.addUpdateListener(this.n.U);
-                    this.d.playTogether(ofFloat3);
-                    f9 = f11;
-                } else if (measuredWidth3 > i2 - f11) {
-                    float measuredWidth4 = (i2 - getMeasuredWidth()) - f11;
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(this.n.s.x, measuredWidth4);
-                    ofFloat4.addUpdateListener(this.n.U);
-                    this.d.playTogether(ofFloat4);
-                    f9 = measuredWidth4;
-                }
-                int L = gl.L(36.0f) + i3;
-                if (f10 < gl.m - gl.L(36.0f)) {
-                    float f12 = this.n.s.y;
-                    f10 = gl.m - gl.L(36.0f);
-                    ValueAnimator ofFloat5 = ValueAnimator.ofFloat(f12, f10);
-                    ofFloat5.addUpdateListener(this.n.V);
-                    this.d.playTogether(ofFloat5);
-                } else if (measuredHeight3 > L) {
-                    float f13 = this.n.s.y;
-                    f10 = L - getMeasuredHeight();
-                    ValueAnimator ofFloat6 = ValueAnimator.ofFloat(f13, f10);
-                    ofFloat6.addUpdateListener(this.n.V);
-                    this.d.playTogether(ofFloat6);
-                }
-                this.d.setDuration(150L).setInterpolator(s33.f);
-                this.d.start();
-                o85 o85Var8 = this.n;
-                if (o85Var8.M >= 0.0f) {
-                    float[] fArr = o85Var8.J;
-                    float f14 = point.x;
-                    float f15 = point.y;
-                    float f16 = -gl.L(36.0f);
-                    fArr[0] = (f9 - f16) / ((f14 - (f16 * 2.0f)) - gl.L(105.0f));
-                    fArr[1] = f10 / (f15 - gl.L(105.0f));
-                    fArr[0] = Math.min(1.0f, Math.max(0.0f, fArr[0]));
-                    fArr[1] = Math.min(1.0f, Math.max(0.0f, fArr[1]));
-                    SharedPreferences.Editor edit = a.b.getSharedPreferences("groupcallpipconfig", 0).edit();
-                    o85 o85Var9 = this.n;
-                    float f17 = o85Var9.J[0];
-                    o85Var9.M = f17;
-                    SharedPreferences.Editor putFloat = edit.putFloat("relativeX", f17);
-                    o85 o85Var10 = this.n;
-                    float f18 = o85Var10.J[1];
-                    o85Var10.N = f18;
-                    putFloat.putFloat("relativeY", f18).apply();
+            idVar.J = aob.gh;
+            alertDialog$Builder.j(ob6.M0(2131743035, null), new f85(this));
+            alertDialog$Builder.g(ob6.M0(2131752570, null), null);
+            idVar.j(aob.w0(null, aob.lh, false));
+            idVar.show();
+            TextView textView = (TextView) idVar.c(-1);
+            if (textView != null) {
+                yob.X(textView, aob.mh, null);
+            }
+            idVar.o(aob.w0(null, aob.Yg, false));
+            return;
+        }
+        if (i == 9) {
+            j95Var.d3.callOnClick();
+            return;
+        }
+        byte b4 = 7;
+        if (i == 5) {
+            vc2 vc2Var = j95Var.T2;
+            if (!vc2Var.w) {
+                h85 h85Var = new h85(this, j95Var.getContext(), j95Var.S2, j95Var.y4);
+                if (j95Var.j1()) {
+                    h85Var.F0(2);
+                    return;
+                } else {
+                    h85Var.show();
+                    return;
                 }
             }
-            o85 o85Var11 = this.n;
-            o85Var11.Y = false;
-            o85Var11.g(false);
-            return true;
+            boolean z = vc2Var.b.record_video_active;
+            AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(j95Var.getContext());
+            int i2 = aob.gh;
+            id idVar2 = alertDialog$Builder2.a;
+            idVar2.J = i2;
+            idVar2.S = ob6.M0(2131742973, null);
+            if (xc2.W(j95Var.S2)) {
+                idVar2.U = ob6.M0(2131743106, null);
+            } else {
+                idVar2.U = ob6.M0(2131742974, null);
+            }
+            alertDialog$Builder2.j(ob6.M0(2131744498, null), new t41(b4, this, z));
+            alertDialog$Builder2.g(ob6.M0(2131752570, null), null);
+            idVar2.j(aob.w0(null, aob.lh, false));
+            idVar2.show();
+            idVar2.o(aob.w0(null, aob.eh, false));
+            return;
         }
-        if (this.c && VoIPService.getSharedInstance() != null) {
-            VoIPService.getSharedInstance().setMicMute(true, false, false);
+        if (i == 7) {
+            j95Var.e2 = true;
+            j95Var.p3.setVisibility(0);
+            j95Var.q3.setVisibility(0);
+            j95Var.e3.setVisibility(8);
+            j95Var.s3.setVisibility(8);
+            j95Var.t3.setVisibility(8);
+            j95Var.r3.setVisibility(8);
+            j95Var.m3.setVisibility(8);
+            j95Var.f3.setVisibility(8);
+            j95Var.n3.setVisibility(8);
+            j95Var.o3.setVisibility(8);
+            j95Var.d2.setVisibility(8);
+            j95Var.g3.setVisibility(8);
+            j95Var.h3.setVisibility(8);
+            b8Var.setVisibility(8);
+            s7 s7Var = j95Var.b3;
+            n8 n8Var = s7Var.d;
+            if (n8Var == null || !n8Var.isShowing()) {
+                return;
+            }
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = s7Var.b;
+            Point point = hl.q;
+            actionBarPopupWindow$ActionBarPopupWindowLayout.measure(ik8.f(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
+            s7Var.W(true, true);
+            return;
         }
-        this.c = false;
-        o85 o85Var12 = this.n;
-        ry8 ry8Var = o85Var12.X;
-        oy8 oy8Var = o85Var12.x;
-        yc ycVar = o85Var12.b;
-        m85 m85Var = o85Var12.a;
-        s71 s71Var = o85Var12.c;
-        o85 o85Var13 = o85.f0;
-        if (o85Var13 == null) {
-            return false;
+        byte b5 = 6;
+        if (i == 6) {
+            j95Var.q2 = false;
+            EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(j95Var.getContext());
+            editTextBoldCursor.setBackgroundDrawable(aob.T(j95Var.getContext()));
+            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(j95Var.getContext());
+            int i3 = aob.gh;
+            id idVar3 = alertDialog$Builder3.a;
+            idVar3.J = i3;
+            if (xc2.W(j95Var.S2)) {
+                idVar3.S = ob6.M0(2131743105, null);
+            } else {
+                idVar3.S = ob6.M0(2131742972, null);
+            }
+            idVar3.z0 = false;
+            alertDialog$Builder3.g(ob6.M0(2131752570, null), new bu3(editTextBoldCursor, b3));
+            LinearLayout linearLayout = new LinearLayout(j95Var.getContext());
+            linearLayout.setOrientation(1);
+            alertDialog$Builder3.n(linearLayout);
+            editTextBoldCursor.setTextSize(1, 16.0f);
+            int i4 = aob.eh;
+            yob.X(editTextBoldCursor, i4, null);
+            editTextBoldCursor.setMaxLines(1);
+            editTextBoldCursor.setLines(1);
+            editTextBoldCursor.setInputType(16385);
+            editTextBoldCursor.setGravity(51);
+            editTextBoldCursor.setSingleLine(true);
+            editTextBoldCursor.setImeOptions(6);
+            TLRPC.Chat chat = j95Var.S2;
+            editTextBoldCursor.setHint(chat != null ? chat.title : "");
+            yob.D(editTextBoldCursor, aob.fh, null);
+            yob.l(editTextBoldCursor, 30, i4, null);
+            editTextBoldCursor.setCursorSize(hl.L(20.0f));
+            editTextBoldCursor.setCursorWidth(1.5f);
+            editTextBoldCursor.setPadding(0, hl.L(4.0f), 0, 0);
+            linearLayout.addView(editTextBoldCursor, tre.t(-1, 36, 51, 24, 6, 24, 0));
+            editTextBoldCursor.setOnEditorActionListener(new de4(alertDialog$Builder3, b));
+            editTextBoldCursor.addTextChangedListener(new ge4(editTextBoldCursor, b));
+            if (!TextUtils.isEmpty(j95Var.T2.b.title)) {
+                editTextBoldCursor.setText(j95Var.T2.b.title);
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            }
+            alertDialog$Builder3.j(ob6.M0(2131745674, null), new fu2(this, editTextBoldCursor, alertDialog$Builder3, false, (byte) 14));
+            idVar3.j(aob.w0(null, aob.Wg, false));
+            idVar3.setOnShowListener(new g85(this, idVar3, editTextBoldCursor, b2));
+            idVar3.setOnDismissListener(new fe4(editTextBoldCursor, b));
+            idVar3.show();
+            idVar3.o(aob.w0(null, i4, false));
+            editTextBoldCursor.requestFocus();
+            return;
         }
-        o85Var12.H = true;
-        o85.g0 = true;
-        o85Var12.W.I = true;
-        o85Var13.f(false);
-        float measuredWidth5 = (m85Var.getMeasuredWidth() / 2.0f) + o85Var12.s.x;
-        float measuredWidth6 = ((ycVar.getMeasuredWidth() / 2.0f) + (o85Var12.P - o85Var12.S)) - measuredWidth5;
-        float measuredHeight4 = ((ycVar.getMeasuredHeight() / 2.0f) + (o85Var12.O - o85Var12.T)) - ((m85Var.getMeasuredHeight() / 2.0f) + o85Var12.s.y);
-        o85 o85Var14 = o85.f0;
-        WindowManager windowManager = o85Var14.n;
-        m85 m85Var2 = o85Var14.a;
-        yc ycVar2 = o85Var14.b;
-        FrameLayout frameLayout = o85Var14.d;
-        r71 r71Var = o85Var14.e;
-        o85Var12.e();
-        o85.f0 = null;
-        AnimatorSet animatorSet = new AnimatorSet();
-        int i4 = oy8Var.b0;
-        long m = i4 < 33 ? (long) (((1.0f - (i4 / 33.0f)) * oy8Var.m()) / 2.0f) : 0L;
-        float f19 = o85Var12.s.x;
-        ValueAnimator ofFloat7 = ValueAnimator.ofFloat(f19, measuredWidth6 + f19);
-        ofFloat7.addUpdateListener(o85Var12.U);
-        ValueAnimator duration = ofFloat7.setDuration(250L);
-        s33 s33Var = s33.f;
-        duration.setInterpolator(s33Var);
-        animatorSet.playTogether(ofFloat7);
-        float f20 = o85Var12.s.y;
-        ValueAnimator ofFloat8 = ValueAnimator.ofFloat(f20, (f20 + measuredHeight4) - gl.L(30.0f), o85Var12.s.y + measuredHeight4);
-        ofFloat8.addUpdateListener(o85Var12.V);
-        ofFloat8.setDuration(250L).setInterpolator(s33Var);
-        animatorSet.playTogether(ofFloat8);
-        float[] fArr2 = {m85Var2.getScaleX(), 0.1f};
-        Property property = View.SCALE_X;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(m85Var2, (Property<m85, Float>) property, fArr2).setDuration(180L));
-        float[] fArr3 = {m85Var2.getScaleY(), 0.1f};
-        Property property2 = View.SCALE_Y;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(m85Var2, (Property<m85, Float>) property2, fArr3).setDuration(180L));
-        Property property3 = View.ALPHA;
-        ObjectAnimator ofFloat9 = ObjectAnimator.ofFloat(m85Var2, (Property<m85, Float>) property3, 1.0f, 0.0f);
-        ofFloat9.setStartDelay(245L);
-        ofFloat9.setDuration(105L);
-        animatorSet.playTogether(ofFloat9);
-        gl.d3(new ql3((byte) 12), 370L);
-        long j = m + 530;
-        ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) property, 1.0f, 1.05f);
-        ofFloat10.setDuration(j);
-        s33 s33Var2 = s33.j;
-        ofFloat10.setInterpolator(s33Var2);
-        animatorSet.playTogether(ofFloat10);
-        ObjectAnimator ofFloat11 = ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) property2, 1.0f, 1.05f);
-        ofFloat11.setDuration(j);
-        ofFloat11.setInterpolator(s33Var2);
-        animatorSet.playTogether(ofFloat11);
-        ObjectAnimator ofFloat12 = ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) property, 1.0f, 0.3f);
-        ofFloat12.setStartDelay(j);
-        ofFloat12.setDuration(350L);
-        s33 s33Var3 = s33.h;
-        ofFloat12.setInterpolator(s33Var3);
-        animatorSet.playTogether(ofFloat12);
-        ObjectAnimator ofFloat13 = ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) property2, 1.0f, 0.3f);
-        ofFloat13.setStartDelay(j);
-        ofFloat13.setDuration(350L);
-        ofFloat13.setInterpolator(s33Var3);
-        animatorSet.playTogether(ofFloat13);
-        ObjectAnimator ofFloat14 = ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) View.TRANSLATION_Y, 0.0f, gl.L(60.0f));
-        ofFloat14.setStartDelay(j);
-        ofFloat14.setDuration(350L);
-        ofFloat14.setInterpolator(s33Var3);
-        animatorSet.playTogether(ofFloat14);
-        ObjectAnimator ofFloat15 = ObjectAnimator.ofFloat(s71Var, (Property<s71, Float>) property3, 1.0f, 0.0f);
-        ofFloat15.setStartDelay(j);
-        ofFloat15.setDuration(350L);
-        ofFloat15.setInterpolator(s33Var3);
-        animatorSet.playTogether(ofFloat15);
-        animatorSet.addListener(new n85(o85Var12, m85Var2, ycVar2, windowManager, frameLayout, r71Var));
-        animatorSet.start();
-        oy8Var.K(66);
-        ry8Var.i();
-        ry8Var.d();
-        return false;
+        if (i == 8) {
+            bw5.F0(j95Var.getContext(), -j95Var.a1(), j95Var.n1, null, 2, j95Var.u2, new f85(this));
+            return;
+        }
+        if (i == 14) {
+            uc7.e1().edit().putBoolean("asr_live_captions", !u86.a()).apply();
+            boolean a = u86.a();
+            j95Var.j3.a(a, true);
+            b8Var.setSubtext(ob6.M0(a ? 2131744964 : 2131744965, null));
+            j95Var.H1();
+            return;
+        }
+        if (i == 11) {
+            xea.E0 = !xea.E0;
+            SharedPreferences.Editor edit = uc7.e1().edit();
+            edit.putBoolean("noiseSupression", xea.E0);
+            edit.apply();
+            VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+            if (sharedInstance2 != null) {
+                sharedInstance2.setNoiseSupressionEnabled(xea.E0);
+                return;
+            }
+            return;
+        }
+        if (i != 10 || (sharedInstance = VoIPService.getSharedInstance()) == null) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        c00.s(null, 2131743151, arrayList, R.drawable.msg_voice_speaker, arrayList2);
+        arrayList3.add(0);
+        if (sharedInstance.hasEarpiece()) {
+            arrayList.add(ob6.M0(sharedInstance.isHeadsetPlugged() ? 2131743153 : 2131743152, null));
+            arrayList2.add(Integer.valueOf(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone));
+            arrayList3.add(1);
+        }
+        if (sharedInstance.isBluetoothHeadsetConnected()) {
+            String str = sharedInstance.currentBluetoothDeviceName;
+            if (str == null) {
+                str = ob6.M0(2131743155, null);
+            }
+            arrayList.add(str);
+            arrayList2.add(Integer.valueOf(R.drawable.msg_voice_bluetooth));
+            arrayList3.add(2);
+        }
+        int size = arrayList.size();
+        CharSequence[] charSequenceArr = new CharSequence[size];
+        int[] iArr = new int[size];
+        for (int i5 = 0; i5 < size; i5++) {
+            charSequenceArr[i5] = (CharSequence) arrayList.get(i5);
+            iArr[i5] = ((Integer) arrayList2.get(i5)).intValue();
+        }
+        nx0 nx0Var = new nx0(1, (vnb) null, (Context) this.a, false);
+        nx0Var.J();
+        nx0Var.P = ob6.M0(2131742895, null);
+        nx0Var.Q = true;
+        oh ohVar = new oh((Object) this, arrayList3, b5);
+        nx0Var.M = charSequenceArr;
+        nx0Var.N = iArr;
+        nx0Var.L = ohVar;
+        int i6 = aob.bh;
+        nx0Var.s0(aob.w0(null, i6, false));
+        nx0Var.K(aob.w0(null, i6, false));
+        int i7 = sharedInstance.getCurrentAudioRoute() == 1 ? 0 : sharedInstance.getCurrentAudioRoute() == 0 ? 1 : 2;
+        nx0Var.show();
+        int w02 = aob.w0(null, aob.eh, false);
+        fx0 fx0Var = nx0Var.m0;
+        if (fx0Var != null) {
+            fx0Var.setTextColor(w02);
+        }
+        int i8 = 0;
+        while (true) {
+            ArrayList arrayList4 = nx0Var.x0;
+            if (i8 >= arrayList4.size()) {
+                return;
+            }
+            hx0 hx0Var = (hx0) arrayList4.get(i8);
+            if (i8 == i7) {
+                w0 = aob.w0(null, aob.gh, false);
+                hx0Var.f = true;
+            } else {
+                w0 = aob.w0(null, aob.eh, false);
+            }
+            hx0Var.setTextColor(w0);
+            hx0Var.setIconColor(w0);
+            int i9 = aob.Yg;
+            hf0 f0 = aob.f0(vm2.o(aob.w0(null, i9, false), 12), 2, -1);
+            uob g = yob.g(i9, 12);
+            hx0Var.setBackground(f0);
+            yob.j(hx0Var, f0, null, g, null);
+            i8++;
+        }
     }
 }

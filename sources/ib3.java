@@ -1,67 +1,68 @@
 // default package
 
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import java.util.HashMap;
-import java.util.List;
+import androidx.appcompat.widget.ActionBarContextView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class ib3 implements b16 {
-    public final /* synthetic */ byte a;
-    public final Object b;
-    public final Object c;
+public final class ib3 implements cjc {
+    public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
+    public boolean a;
+    public byte b;
+    public Object c;
 
-    public ib3(Object obj) {
-        this.a = (byte) 2;
-        this.b = obj;
-        rh2 rh2Var = rh2.c;
-        Class<?> cls = obj.getClass();
-        ph2 ph2Var = (ph2) rh2Var.a.get(cls);
-        this.c = ph2Var == null ? rh2Var.a(cls, null) : ph2Var;
-    }
-
-    @Override // b16
-    public final void b(e16 e16Var, u06 u06Var) {
-        byte b = this.a;
-        Object obj = this.b;
-        Object obj2 = this.c;
-        switch (b) {
-            case 0:
-                mw3 mw3Var = (mw3) obj;
-                int i = hb3.a[u06Var.ordinal()];
-                if (i == 3) {
-                    (Build.VERSION.SDK_INT >= 28 ? tq2.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new sv((byte) 7), 500L);
-                    mw3Var.a.b(mw3Var);
-                } else if (i == 7) {
-                    w26.j("ON_ANY must not been send by anybody");
-                    break;
-                }
-                b16 b16Var = (b16) obj2;
-                if (b16Var != null) {
-                    b16Var.b(e16Var, u06Var);
-                    break;
-                }
+    public static void d(int i, ArrayList arrayList) {
+        int i2 = 0;
+        while (true) {
+            if (i2 >= 7) {
+                i2 = -1;
                 break;
-            case 1:
-                if (u06Var == u06.ON_START) {
-                    ((w06) obj).b(this);
-                    ((oo) obj2).g();
-                    break;
-                }
+            } else if (d[i2] == i) {
                 break;
-            default:
-                HashMap hashMap = ((ph2) obj2).a;
-                ph2.a((List) hashMap.get(u06Var), e16Var, u06Var, obj);
-                ph2.a((List) hashMap.get(u06.ON_ANY), e16Var, u06Var, obj);
-                break;
+            } else {
+                i2++;
+            }
         }
+        if (i2 == -1 || arrayList.contains(Integer.valueOf(i))) {
+            return;
+        }
+        arrayList.add(Integer.valueOf(i));
     }
 
-    public /* synthetic */ ib3(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
+    @Override // cjc
+    public final void a() {
+        this.a = true;
+    }
+
+    @Override // cjc
+    public final void b() {
+        super/*android.view.ViewGroup*/.setVisibility(0);
+        this.a = false;
+    }
+
+    @Override // cjc
+    public final void c() {
+        if (this.a) {
+            return;
+        }
+        ActionBarContextView actionBarContextView = (ActionBarContextView) this.c;
+        actionBarContextView.f = null;
+        super/*android.view.ViewGroup*/.setVisibility(this.b);
+    }
+
+    public final ko4 e(ko4 ko4Var) {
+        if (!this.a || !((uif) this.c).j(ko4Var)) {
+            return ko4Var;
+        }
+        jo4 a = ko4Var.a();
+        String str = ko4Var.l;
+        a.s = dg7.n("application/x-media3-cues");
+        a.T = ((uif) this.c).y(ko4Var);
+        StringBuilder sb = new StringBuilder();
+        sb.append(ko4Var.t);
+        sb.append(str != null ? " ".concat(str) : "");
+        a.k = sb.toString();
+        a.x = Long.MAX_VALUE;
+        return new ko4(a);
     }
 }

@@ -1,350 +1,226 @@
 // default package
 
-import android.util.Log;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLongFieldUpdater;
-import sun.misc.Unsafe;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.FiltersSetupActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class eh4 extends ccb implements eq4 {
-    public final /* synthetic */ byte a;
-    public byte b;
-    public Object c;
-    public final /* synthetic */ Object d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ eh4(Object obj, Object obj2, fw2 fw2Var, byte b) {
-        super(2, fw2Var);
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-    }
-
-    @Override // of0
-    public final fw2 create(Object obj, fw2 fw2Var) {
-        byte b = this.a;
-        Object obj2 = this.d;
-        switch (b) {
-            case 0:
-                return new eh4((fh4) this.c, (i7a) obj2, fw2Var, (byte) 0);
-            case 1:
-                return new eh4((fga) this.c, (w5a) obj2, fw2Var, (byte) 1);
-            default:
-                return new eh4((c5a) obj2, fw2Var);
-        }
-    }
-
-    @Override // eq4
-    public final Object invoke(Object obj, Object obj2) {
-        byte b = this.a;
-        g5c g5cVar = g5c.a;
-        ax2 ax2Var = (ax2) obj;
-        fw2 fw2Var = (fw2) obj2;
-        switch (b) {
-        }
-        return ((eh4) create(ax2Var, fw2Var)).invokeSuspend(g5cVar);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x01d5, code lost:
-    
-        if (r0.a(r5, r20) == r6) goto L107;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:127:?, code lost:
-    
-        return r6;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x021f, code lost:
-    
-        if (r4.e(r0, cga.b, r20) == r6) goto L107;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x028a, code lost:
-    
-        if (r3.b(r20) == r6) goto L131;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:167:?, code lost:
-    
-        return r6;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:171:0x0254, code lost:
-    
-        if (r4 != r6) goto L120;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0177, code lost:
-    
-        if (r2.invoke(r0, r20) != r6) goto L80;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0077  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x0177 -> B:8:0x017b). Please report as a decompilation issue!!! */
-    @Override // of0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        Object b;
-        g5c g5cVar;
-        ai1 ai1Var;
-        Object obj2;
-        q01 q01Var;
-        q01 q01Var2;
-        hj1 hj1Var;
-        byte b2 = this.a;
-        Object obj3 = this.d;
-        g5c g5cVar2 = g5c.a;
-        bx2 bx2Var = bx2.a;
-        byte b3 = 1;
-        switch (b2) {
-            case 0:
-                fh4 fh4Var = (fh4) this.c;
-                k7a k7aVar = fh4Var.b;
-                byte b4 = this.b;
-                if (b4 == 0) {
-                    qse.b(obj);
-                    lh4 lh4Var = lh4.a;
-                    this.b = (byte) 1;
-                    b = lh4Var.b(this);
-                    break;
-                } else {
-                    if (b4 != 1) {
-                        if (b4 != 2) {
-                            sc8.j("call to 'resume' before 'invoke' with coroutine");
-                            return null;
-                        }
-                        qse.b(obj);
-                        Boolean b5 = k7aVar.a.b();
-                        if ((b5 == null && (b5 = k7aVar.b.b()) == null) ? true : b5.booleanValue()) {
-                            jg4 jg4Var = fh4Var.a;
-                            w44 w44Var = new w44((byte) 20);
-                            jg4Var.a();
-                            jg4Var.j.add(w44Var);
-                        } else {
-                            wod.a(Log.d("FirebaseSessions", "Sessions SDK disabled. Not listening to lifecycle events."));
-                        }
-                        return g5cVar2;
-                    }
-                    qse.b(obj);
-                    b = obj;
-                }
-                Collection values = ((Map) b).values();
-                if (!(values instanceof Collection) || !values.isEmpty()) {
-                    Iterator it = values.iterator();
-                    while (it.hasNext()) {
-                        if (((zx2) it.next()).a.a()) {
-                            this.b = (byte) 2;
-                            break;
-                        }
-                    }
-                }
-                wod.a(Log.d("FirebaseSessions", "No Sessions subscribers. Not listening to lifecycle events."));
-                return g5cVar2;
-            case 1:
-                w5a w5aVar = (w5a) obj3;
-                fga fgaVar = (fga) this.c;
-                byte b6 = this.b;
-                try {
-                } catch (Exception e) {
-                    Log.d("FirebaseSessions", "App foregrounded, failed to update data. Message: " + e.getMessage());
-                    if (fgaVar.d(w5aVar)) {
-                        a6a a = fgaVar.b.a(w5aVar.a);
-                        fgaVar.h = w5a.a(w5aVar, a, null, null, 4);
-                        g6a g6aVar = fgaVar.c;
-                        ppd.b(h9e.a(g6aVar.e), new e6a(g6aVar, a, null));
-                        String str = a.a;
-                        this.b = (byte) 2;
-                        break;
-                    }
-                }
-                if (b6 == 0) {
-                    qse.b(obj);
-                    v63 v63Var = fgaVar.e;
-                    dga dgaVar = new dga(fgaVar, null, (byte) 1);
-                    this.b = (byte) 1;
-                    break;
-                } else {
-                    if (b6 != 1) {
-                        if (b6 == 2) {
-                            qse.b(obj);
-                            return g5cVar2;
-                        }
-                        sc8.j("call to 'resume' before 'invoke' with coroutine");
-                        return null;
-                    }
-                    qse.b(obj);
-                }
-                return g5cVar2;
-            default:
-                c5a c5aVar = (c5a) obj3;
-                byte b7 = this.b;
-                if (b7 == 0) {
-                    qse.b(obj);
-                    if (((AtomicInteger) ((i4d) c5aVar.e).a).get() <= 0) {
-                        sc8.j("Check failed.");
-                    }
-                    nle.a(((ax2) c5aVar.b).c());
-                    ai1 ai1Var2 = (ai1) c5aVar.c;
-                    q01Var = (q01) c5aVar.d;
-                    this.c = ai1Var2;
-                    this.b = b3;
-                    q01Var.getClass();
-                    AtomicLongFieldUpdater atomicLongFieldUpdater = q01.c;
-                    Unsafe unsafe = ex.a;
-                    long j = q01.x;
-                    hj1 hj1Var2 = (hj1) unsafe.getObjectVolatile(q01Var, j);
-                    while (!q01Var.s()) {
-                    }
-                    Throwable l = q01Var.l();
-                    int i = oma.a;
-                    throw l;
-                }
-                if (b7 == 1) {
-                    ai1 ai1Var3 = (ai1) this.c;
-                    qse.b(obj);
-                    ai1Var = ai1Var3;
-                    g5cVar = g5cVar2;
-                    obj2 = obj;
-                    this.c = null;
-                    this.b = (byte) 2;
-                } else {
-                    if (b7 == 2) {
-                        qse.b(obj);
-                        g5cVar = g5cVar2;
-                        g5cVar2 = g5cVar;
-                        if (((AtomicInteger) ((i4d) c5aVar.e).a).decrementAndGet() == 0) {
-                            return g5cVar2;
-                        }
-                        b3 = 1;
-                        nle.a(((ax2) c5aVar.b).c());
-                        ai1 ai1Var22 = (ai1) c5aVar.c;
-                        q01Var = (q01) c5aVar.d;
-                        this.c = ai1Var22;
-                        this.b = b3;
-                        q01Var.getClass();
-                        AtomicLongFieldUpdater atomicLongFieldUpdater2 = q01.c;
-                        Unsafe unsafe2 = ex.a;
-                        long j2 = q01.x;
-                        hj1 hj1Var22 = (hj1) unsafe2.getObjectVolatile(q01Var, j2);
-                        while (!q01Var.s()) {
-                            long andIncrement = atomicLongFieldUpdater2.getAndIncrement(q01Var);
-                            long j3 = s01.b;
-                            q01 q01Var3 = q01Var;
-                            long j4 = andIncrement / j3;
-                            int i2 = (int) (andIncrement % j3);
-                            if (hj1Var22.d == j4) {
-                                q01Var2 = q01Var3;
-                            } else {
-                                q01Var2 = q01Var3;
-                                hj1 h = q01Var2.h(j4, hj1Var22);
-                                if (h == null) {
-                                    q01Var = q01Var2;
-                                } else {
-                                    hj1Var22 = h;
-                                }
-                            }
-                            long j5 = j2;
-                            hj1 hj1Var3 = hj1Var22;
-                            q01Var = q01Var2;
-                            Object C = q01Var.C(hj1Var3, i2, andIncrement, null);
-                            lo5 lo5Var = s01.m;
-                            if (C != lo5Var) {
-                                ai1 ai1Var4 = ai1Var22;
-                                lo5 lo5Var2 = s01.o;
-                                if (C != lo5Var2) {
-                                    g5cVar = g5cVar2;
-                                    if (C == s01.n) {
-                                        na1 a2 = iqd.a(dle.a(this));
-                                        try {
-                                            Object C2 = q01Var.C(hj1Var3, i2, andIncrement, a2);
-                                            if (C2 == lo5Var) {
-                                                a2.a(hj1Var3, i2);
-                                            } else if (C2 != lo5Var2) {
-                                                hj1Var3.b();
-                                                a2.A(C2, null);
-                                            } else {
-                                                if (andIncrement < q01Var.o()) {
-                                                    hj1Var3.b();
-                                                }
-                                                hj1 hj1Var4 = (hj1) ex.a.getObjectVolatile(q01Var, j5);
-                                                while (true) {
-                                                    if (q01Var.s()) {
-                                                        a2.resumeWith(new sa9(q01Var.l()));
-                                                    } else {
-                                                        long andIncrement2 = atomicLongFieldUpdater2.getAndIncrement(q01Var);
-                                                        long j6 = s01.b;
-                                                        long j7 = andIncrement2 / j6;
-                                                        int i3 = (int) (andIncrement2 % j6);
-                                                        if (hj1Var4.d == j7) {
-                                                            hj1Var = hj1Var4;
-                                                        } else {
-                                                            hj1 h2 = q01Var.h(j7, hj1Var4);
-                                                            if (h2 != null) {
-                                                                hj1Var = h2;
-                                                            } else {
-                                                                continue;
-                                                            }
-                                                        }
-                                                        Object C3 = q01Var.C(hj1Var, i3, andIncrement2, a2);
-                                                        hj1 hj1Var5 = hj1Var;
-                                                        if (C3 == s01.m) {
-                                                            a2.a(hj1Var5, i3);
-                                                        } else if (C3 == s01.o) {
-                                                            if (andIncrement2 < q01Var.o()) {
-                                                                hj1Var5.b();
-                                                            }
-                                                            hj1Var4 = hj1Var5;
-                                                        } else {
-                                                            if (C3 == s01.n) {
-                                                                throw new IllegalStateException("unexpected");
-                                                            }
-                                                            hj1Var5.b();
-                                                            a2.A(C3, null);
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            obj2 = a2.q();
-                                        } catch (Throwable th) {
-                                            a2.z();
-                                            throw th;
-                                        }
-                                    } else {
-                                        hj1Var3.b();
-                                        obj2 = C;
-                                    }
-                                    if (obj2 != bx2Var) {
-                                        ai1Var = ai1Var4;
-                                        this.c = null;
-                                        this.b = (byte) 2;
-                                        break;
-                                    }
-                                    return bx2Var;
-                                }
-                                if (andIncrement < q01Var.o()) {
-                                    hj1Var3.b();
-                                }
-                                ai1Var22 = ai1Var4;
-                                hj1Var22 = hj1Var3;
-                                j2 = j5;
-                            } else {
-                                sc8.j("unexpected");
-                            }
-                        }
-                        Throwable l2 = q01Var.l();
-                        int i4 = oma.a;
-                        throw l2;
-                    }
-                    sc8.j("call to 'resume' before 'invoke' with coroutine");
-                }
-                return null;
-        }
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class eh4 extends FrameLayout implements snb {
+    public ValueAnimator E;
+    public boolean F;
+    public final mm G;
+    public final Paint H;
+    public final /* synthetic */ FiltersSetupActivity I;
+    public final ema a;
+    public final TextView b;
+    public final ImageView c;
+    public int d;
+    public int e;
+    public final View f;
+    public final ImageView h;
+    public final dh4 n;
+    public boolean r;
+    public final va6 s;
+    public boolean w;
+    public float x;
+    public ac7 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eh4(c5a c5aVar, fw2 fw2Var) {
-        super(2, fw2Var);
-        this.a = (byte) 2;
-        this.d = c5aVar;
+    public eh4(FiltersSetupActivity filtersSetupActivity, Context context) {
+        super(context);
+        vnb vnbVar;
+        this.I = filtersSetupActivity;
+        this.d = -2;
+        this.e = -1;
+        this.r = false;
+        this.G = new mm(this, 0L, 420L, k43.h);
+        this.H = new Paint(1);
+        setWillNotDraw(false);
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setFocusable(false);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.list_reorder);
+        int i = aob.Li;
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        yob.s(imageView, i, null, mode);
+        imageView.setContentDescription(ob6.M0(2131750670, null));
+        imageView.setClickable(true);
+        byte b = 16;
+        addView(imageView, tre.d(48, 48.0f, (ob6.a0 ? 5 : 3) | 16, 7.0f, 0.0f, 6.0f, 0.0f));
+        View view = new View(context);
+        this.f = view;
+        addView(view, tre.d(20, 20.0f, (ob6.a0 ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        ema emaVar = new ema(context);
+        this.a = emaVar;
+        emaVar.setPadding(0, hl.L(4.0f), 0, hl.L(4.0f));
+        yob.W(emaVar, aob.G6, null);
+        emaVar.setTextSize(16);
+        emaVar.setMaxLines(1);
+        emaVar.setGravity((ob6.a0 ? 5 : 3) | 16);
+        Drawable drawable = getContext().getDrawable(R.drawable.other_lockedfolders2);
+        yob.x(this, drawable, i, null, mode);
+        emaVar.i(drawable);
+        int i2 = aob.Fi;
+        vnbVar = ((e) filtersSetupActivity).resourceProvider;
+        emaVar.setEmojiColor(aob.v0(i2, vnbVar));
+        boolean z = ob6.a0;
+        addView(emaVar, tre.d(-1, -2.0f, (z ? 5 : 3) | 48, z ? 80.0f : 64.0f, 10.0f, z ? 64.0f : 80.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        yob.X(textView, aob.z6, null);
+        textView.setTextSize(1, 13.0f);
+        textView.setGravity(ob6.a0 ? 5 : 3);
+        textView.setLines(1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setPadding(0, 0, 0, 0);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        boolean z2 = ob6.a0;
+        addView(textView, tre.d(-2, -2.0f, (z2 ? 5 : 3) | 48, z2 ? 80.0f : 64.0f, 35.0f, z2 ? 64.0f : 80.0f, 0.0f));
+        textView.setVisibility(8);
+        va6 va6Var = new va6();
+        this.s = va6Var;
+        va6Var.D = true;
+        va6Var.t = 2.0f;
+        int i3 = aob.i6;
+        int w0 = aob.w0(null, i3, false);
+        va6Var.g(aob.p1(0.4f, w0), aob.p1(1.0f, w0), aob.p1(0.9f, w0), aob.p1(1.7f, w0));
+        int L = hl.L(1.0f);
+        va6Var.x.setStrokeWidth(L);
+        va6Var.j(40.0f);
+        dh4 dh4Var = new dh4(this, context, L, (byte) 0);
+        this.n = dh4Var;
+        va6Var.setCallback(dh4Var);
+        dh4Var.setFocusable(false);
+        dh4Var.setScaleType(scaleType);
+        hf0 f0 = aob.f0(w0, 1, -1);
+        uob M = yob.M(i3);
+        dh4Var.setBackground(f0);
+        yob.j(dh4Var, f0, null, M, null);
+        yob.s(dh4Var, i, null, mode);
+        dh4Var.setContentDescription(ob6.M0(2131750669, null));
+        dh4Var.setVisibility(8);
+        dh4Var.setImageResource(R.drawable.msg_link_folder);
+        yob.s(dh4Var, i, null, mode);
+        boolean z3 = ob6.a0;
+        addView(dh4Var, tre.d(40, 40.0f, (z3 ? 3 : 5) | 16, z3 ? 52.0f : 6.0f, 0.0f, z3 ? 6.0f : 52.0f, 0.0f));
+        dh4Var.setOnClickListener(new mh3(this, b));
+        ImageView imageView2 = new ImageView(context);
+        this.h = imageView2;
+        imageView2.setFocusable(false);
+        imageView2.setScaleType(scaleType);
+        hf0 f02 = aob.f0(aob.w0(null, i3, false), 1, -1);
+        uob M2 = yob.M(i3);
+        imageView2.setBackground(f02);
+        yob.j(imageView2, f02, null, M2, null);
+        yob.s(imageView2, i, null, mode);
+        imageView2.setImageResource(R.drawable.msg_actions);
+        imageView2.setContentDescription(ob6.M0(2131754834, null));
+        addView(imageView2, tre.d(40, 40.0f, (ob6.a0 ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
+    }
+
+    public ac7 getCurrentFilter() {
+        return this.y;
+    }
+
+    public float getDraggingProgress() {
+        return this.G.c;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float d = this.G.d(this.F);
+        if (d > 0.0f) {
+            int w0 = aob.w0(null, aob.d6, false);
+            Paint paint = this.H;
+            paint.setColor(w0);
+            paint.setAlpha((int) (255.0f * d));
+            paint.setShadowLayer(hl.L(12.0f) * d, 0.0f, hl.L(3.0f), aob.p1(d, 301989888));
+            float L = hl.L(8.0f) * d;
+            float L2 = hl.L(12.0f) * d;
+            canvas.drawRoundRect(L, 0.0f, getWidth() - L, getHeight(), L2, L2, paint);
+        }
+        if (this.w && d < 1.0f) {
+            int alpha = aob.j0.getAlpha();
+            aob.j0.setAlpha((int) ((1.0f - d) * alpha));
+            canvas.drawLine(ob6.a0 ? 0.0f : hl.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (ob6.a0 ? hl.L(62.0f) : 0), getMeasuredHeight() - 1, aob.j0);
+            aob.j0.setAlpha(alpha);
+        }
+        ac7 ac7Var = this.y;
+        if (ac7Var != null) {
+            boolean z = ac7Var.p;
+            float f = this.x;
+            if (z) {
+                if (f != 1.0f) {
+                    this.x = f + 0.10666667f;
+                    invalidate();
+                }
+            } else if (f != 0.0f) {
+                this.x = f - 0.10666667f;
+                invalidate();
+            }
+        }
+        float i = Utilities.i(this.x, 1.0f, 0.0f);
+        this.x = i;
+        ema emaVar = this.a;
+        emaVar.setRightDrawableScale(i);
+        emaVar.invalidate();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(hl.L(50.0f), TLObject.FLAG_30));
+    }
+
+    public void setDragging(boolean z) {
+        if (this.F == z) {
+            return;
+        }
+        this.F = z;
+        invalidate();
+    }
+
+    public void setOnOptionsClick(View.OnClickListener onClickListener) {
+        this.h.setOnClickListener(onClickListener);
+    }
+
+    public void setOnReorderButtonTouchListener(View.OnTouchListener onTouchListener) {
+        this.c.setOnTouchListener(onTouchListener);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        vnb vnbVar;
+        try {
+            ema emaVar = this.a;
+            if (emaVar != null) {
+                int i = aob.Fi;
+                vnbVar = ((e) this.I).resourceProvider;
+                emaVar.setEmojiColor(aob.v0(i, vnbVar));
+            }
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

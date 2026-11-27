@@ -1,20 +1,29 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final class ge9 {
-    public final /* synthetic */ ye9 a;
+import java.io.Serializable;
 
-    public ge9(ye9 ye9Var) {
-        this.a = ye9Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ge9 implements Serializable {
+    public final Throwable a;
+
+    public ge9(Throwable th) {
+        th.getClass();
+        this.a = th;
     }
 
-    public final void a() {
-        ye9 ye9Var = this.a;
-        ld9 ld9Var = ye9Var.R3;
-        if (ld9Var != null) {
-            ld9Var.g();
+    public final boolean equals(Object obj) {
+        if (obj instanceof ge9) {
+            return ur5.a(this.a, ((ge9) obj).a);
         }
-        ye9Var.p3.onContentChanged();
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        return "Failure(" + this.a + ')';
     }
 }

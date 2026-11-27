@@ -1,19 +1,24 @@
 // default package
 
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class x1f {
-    public static int a(int i, int i2) {
-        if (i2 < 0) {
-            fi7.g("cannot store more than MAX_VALUE elements");
-            return 0;
+    public static final Object a(ju9 ju9Var, ju9 ju9Var2, is4 is4Var) {
+        Object yp2Var;
+        Object C;
+        try {
+            q7c.a(2, is4Var);
+            yp2Var = is4Var.invoke(ju9Var2, ju9Var);
+        } catch (Throwable th) {
+            yp2Var = new yp2(th, false);
         }
-        int i3 = i + (i >> 1) + 1;
-        if (i3 < i2) {
-            i3 = Integer.highestOneBit(i2 - 1) << 1;
+        vx2 vx2Var = vx2.a;
+        if (yp2Var == vx2Var || (C = ju9Var.C(yp2Var)) == yed.b) {
+            return vx2Var;
         }
-        return i3 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i3;
+        if (C instanceof yp2) {
+            throw ((yp2) C).a;
+        }
+        return yed.a(C);
     }
 }

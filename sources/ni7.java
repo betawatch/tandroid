@@ -1,83 +1,47 @@
 // default package
 
-import android.graphics.Rect;
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ScrollView;
-import androidx.core.widget.NestedScrollView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ni7 extends q4 {
-    @Override // q4
-    public final void b(View view, AccessibilityEvent accessibilityEvent) {
-        super.b(view, accessibilityEvent);
-        NestedScrollView nestedScrollView = (NestedScrollView) view;
-        accessibilityEvent.setClassName(ScrollView.class.getName());
-        accessibilityEvent.setScrollable(nestedScrollView.getScrollRange() > 0);
-        accessibilityEvent.setScrollX(nestedScrollView.getScrollX());
-        accessibilityEvent.setScrollY(nestedScrollView.getScrollY());
-        accessibilityEvent.setMaxScrollX(nestedScrollView.getScrollX());
-        accessibilityEvent.setMaxScrollY(nestedScrollView.getScrollRange());
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ni7 extends c51 {
+    public final /* synthetic */ byte m0;
+    public final /* synthetic */ ny0 n0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ni7(ny0 ny0Var, Context context, vnb vnbVar, byte b) {
+        super(vnbVar, context, true);
+        this.m0 = b;
+        this.n0 = ny0Var;
     }
 
-    @Override // q4
-    public final void c(View view, u4 u4Var) {
-        int scrollRange;
-        AccessibilityNodeInfo accessibilityNodeInfo = u4Var.a;
-        this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        NestedScrollView nestedScrollView = (NestedScrollView) view;
-        u4Var.i("android.widget.ScrollView");
-        if (!nestedScrollView.isEnabled() || (scrollRange = nestedScrollView.getScrollRange()) <= 0) {
-            return;
-        }
-        accessibilityNodeInfo.setScrollable(true);
-        if (nestedScrollView.getScrollY() > 0) {
-            u4Var.b(r4.e);
-            u4Var.b(r4.f);
-        }
-        if (nestedScrollView.getScrollY() < scrollRange) {
-            u4Var.b(r4.d);
-            u4Var.b(r4.g);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x003e, code lost:
-    
-        if (r5 != 16908346) goto L29;
-     */
-    @Override // q4
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(View view, int i, Bundle bundle) {
-        if (super.d(view, i, bundle)) {
-            return true;
-        }
-        NestedScrollView nestedScrollView = (NestedScrollView) view;
-        if (nestedScrollView.isEnabled()) {
-            int height = nestedScrollView.getHeight();
-            Rect rect = new Rect();
-            if (nestedScrollView.getMatrix().isIdentity() && nestedScrollView.getGlobalVisibleRect(rect)) {
-                height = rect.height();
-            }
-            if (i != 4096) {
-                if (i == 8192 || i == 16908344) {
-                    int max = Math.max(nestedScrollView.getScrollY() - ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), 0);
-                    if (max != nestedScrollView.getScrollY()) {
-                        nestedScrollView.z(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);
-                        return true;
-                    }
+    @Override // c51
+    public final float b(float f, float f2) {
+        boolean z;
+        byte b = this.m0;
+        ny0 ny0Var = this.n0;
+        switch (b) {
+            case 0:
+                pi7 pi7Var = (pi7) ny0Var;
+                z = pi7Var.i2 == 0.0f;
+                pi7Var.i2 = f;
+                if (z) {
+                    pi7Var.j2 = new tg2(pi7Var, (byte) 2);
+                    pi7Var.a1(false);
+                    break;
                 }
-            }
-            int min = Math.min(nestedScrollView.getScrollY() + ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), nestedScrollView.getScrollRange());
-            if (min != nestedScrollView.getScrollY()) {
-                nestedScrollView.z(0 - nestedScrollView.getScrollX(), min - nestedScrollView.getScrollY(), true);
-                return true;
-            }
+                break;
+            default:
+                sbc sbcVar = (sbc) ny0Var;
+                z = sbcVar.n2 == 0.0f;
+                sbcVar.n2 = f;
+                if (z) {
+                    sbcVar.o2 = new tg2(sbcVar, (byte) 4);
+                    sbcVar.f1(false);
+                    break;
+                }
+                break;
         }
-        return false;
+        return f;
     }
 }

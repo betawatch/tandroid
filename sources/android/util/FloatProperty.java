@@ -1,6 +1,6 @@
 package android.util;
 
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public /* synthetic */ class FloatProperty extends Property {
     static {
         throw new NoClassDefFoundError();

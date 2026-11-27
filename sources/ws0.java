@@ -1,114 +1,56 @@
 // default package
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class ws0 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class ws0 extends lu7 {
+    public final /* synthetic */ byte M;
+    public final /* synthetic */ Object N;
 
-    public /* synthetic */ ws0(hd hdVar, long j, j5 j5Var, sc7 sc7Var) {
-        this.a = (byte) 2;
-        this.d = hdVar;
-        this.b = j;
-        this.c = j5Var;
-        this.e = sc7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ws0(byte b, Context context, Object obj) {
+        super(context, null);
+        this.M = b;
+        this.N = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        byte b = this.a;
-        Object obj = this.e;
-        Object obj2 = this.d;
-        Object obj3 = this.c;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        byte b = this.M;
+        Object obj = this.N;
         switch (b) {
             case 0:
-                gl.c3(new o77((ct0) obj3, (hd) obj2, tLObject, this.b, (p8c) obj));
-                break;
-            case 1:
-                gl.c3(new fl1(obj3, (Object) tLObject, obj2, (TLObject) tL_error, obj, this.b, (byte) 2));
-                break;
-            case 2:
-                gl.c3(new o77(obj2, (Object) tLObject, this.b, obj3, obj, (byte) 8));
-                break;
-            case 3:
-                gl.c3(new o77(obj3, (Object) tLObject, this.b, obj2, obj, (byte) 10));
-                break;
-            case 4:
-                na7 na7Var = (na7) obj3;
-                int[] iArr = (int[]) obj2;
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
-                    int i = tL_messages_affectedHistory.offset;
-                    long j = this.b;
-                    if (i > 0) {
-                        na7Var.e0(j, iArr[0], inputPeer);
+                at0 at0Var = (at0) obj;
+                xs0 xs0Var = at0Var.a0;
+                if (xs0Var != null && !xs0Var.isFocusable()) {
+                    at0Var.a0.setFocusable(true);
+                    at0Var.a0.setFocusableInTouchMode(true);
+                    int B1 = at0Var.e.B1(1);
+                    if (B1 >= 0 && B1 < at0Var.e.g3.E.size()) {
+                        at0Var.e.E0();
+                        at0Var.e.A0(B1);
                     }
-                    na7Var.P3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
-                    ad7 messagesStorage = na7Var.getMessagesStorage();
-                    messagesStorage.a.c(new ua7(messagesStorage, j, (byte) 5));
-                    break;
+                    at0Var.a0.requestFocus();
                 }
                 break;
-            case 5:
-                gl.c3(new fl1(obj3, (Object) tLObject, obj2, (TLObject) obj, (Object) tL_error, this.b, (byte) 3));
-                break;
-            case 6:
-                gl.c3(new o77(obj3, (Object) tLObject, obj2, this.b, obj, (byte) 16));
-                break;
             default:
-                pub pubVar = (pub) obj3;
-                d dVar = (d) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                pubVar.getClass();
-                if (tL_error != null) {
-                    boolean equals = "PINNED_TOO_MUCH".equals(tL_error.text);
-                    long j2 = this.b;
-                    if (!equals) {
-                        if ("PINNED_TOPIC_NOT_MODIFIED".equals(tL_error.text)) {
-                            gl.c3(new ko2((Object) pubVar, j2, false, (byte) 4));
-                            break;
-                        }
-                    } else if (dVar != null) {
-                        pubVar.a(j2, arrayList, true);
-                        gl.c3(new ee2(pubVar, dVar, (byte) 14));
-                        break;
+                ij1 ij1Var = (ij1) obj;
+                q9c q9cVar = ij1Var.X0;
+                xs0 xs0Var2 = ij1Var.O0;
+                if (xs0Var2 != null && !xs0Var2.isFocusable()) {
+                    xs0Var2.setFocusable(true);
+                    xs0Var2.setFocusableInTouchMode(true);
+                    int B12 = q9cVar.B1(3);
+                    if (B12 >= 0 && B12 < q9cVar.g3.E.size()) {
+                        q9cVar.E0();
+                        q9cVar.A0(B12);
                     }
+                    xs0Var2.requestFocus();
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ ws0(na7 na7Var, long j, Object obj, TLObject tLObject, byte b) {
-        this.a = b;
-        this.c = na7Var;
-        this.b = j;
-        this.d = obj;
-        this.e = tLObject;
-    }
-
-    public /* synthetic */ ws0(Object obj, Object obj2, long j, Object obj3, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j;
-        this.e = obj3;
-    }
-
-    public /* synthetic */ ws0(Object obj, Object obj2, Object obj3, long j, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j;
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

@@ -1,32 +1,147 @@
 // default package
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ydc extends ViewOutlineProvider {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class ydc {
+    public final qs a;
+    public final qs b;
+    public final qs c;
 
-    public ydc(int i, boolean z, boolean z2, boolean z3, boolean z4) {
-        this.a = z;
-        this.b = i;
-        this.c = z2;
-        this.d = z3;
-        this.e = z4;
+    public ydc(qs qsVar, qs qsVar2, qs qsVar3) {
+        this.a = qsVar;
+        this.b = qsVar2;
+        this.c = qsVar3;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        int width = view.getWidth();
-        int height = view.getHeight();
-        boolean z = this.a;
-        int i = this.b;
-        outline.setRoundRect(-(z ? 0 : i), -(this.c ? 0 : i), width + (this.d ? 0 : i), height + (this.e ? 0 : i), i);
+    public abstract zdc a();
+
+    public final Class b(Class cls) {
+        String name = cls.getName();
+        qs qsVar = this.c;
+        Class cls2 = (Class) qsVar.get(name);
+        if (cls2 != null) {
+            return cls2;
+        }
+        Class<?> cls3 = Class.forName(cls.getPackage().getName() + "." + cls.getSimpleName() + "Parcelizer", false, cls.getClassLoader());
+        qsVar.put(cls.getName(), cls3);
+        return cls3;
+    }
+
+    public final Method c(String str) {
+        qs qsVar = this.a;
+        Method method = (Method) qsVar.get(str);
+        if (method != null) {
+            return method;
+        }
+        System.currentTimeMillis();
+        Method declaredMethod = Class.forName(str, true, ydc.class.getClassLoader()).getDeclaredMethod("read", ydc.class);
+        qsVar.put(str, declaredMethod);
+        return declaredMethod;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final Method d(Class cls) {
+        String name = cls.getName();
+        qs qsVar = this.b;
+        Method method = (Method) qsVar.get(name);
+        if (method != null) {
+            return method;
+        }
+        Class b = b(cls);
+        System.currentTimeMillis();
+        Method declaredMethod = b.getDeclaredMethod("write", cls, ydc.class);
+        qsVar.put(cls.getName(), declaredMethod);
+        return declaredMethod;
+    }
+
+    public abstract boolean e(int i);
+
+    public final int f(int i, int i2) {
+        return !e(i2) ? i : ((zdc) this).e.readInt();
+    }
+
+    public final Parcelable g(Parcelable parcelable, int i) {
+        if (!e(i)) {
+            return parcelable;
+        }
+        return ((zdc) this).e.readParcelable(zdc.class.getClassLoader());
+    }
+
+    public final aec h() {
+        String readString = ((zdc) this).e.readString();
+        if (readString == null) {
+            return null;
+        }
+        try {
+            return (aec) c(readString).invoke(null, a());
+        } catch (ClassNotFoundException e) {
+            grb.j("VersionedParcel encountered ClassNotFoundException", e);
+            return null;
+        } catch (IllegalAccessException e2) {
+            grb.j("VersionedParcel encountered IllegalAccessException", e2);
+            return null;
+        } catch (NoSuchMethodException e3) {
+            grb.j("VersionedParcel encountered NoSuchMethodException", e3);
+            return null;
+        } catch (InvocationTargetException e4) {
+            if (e4.getCause() instanceof RuntimeException) {
+                throw ((RuntimeException) e4.getCause());
+            }
+            grb.j("VersionedParcel encountered InvocationTargetException", e4);
+            return null;
+        }
+    }
+
+    public abstract void i(int i);
+
+    public final void j(int i, int i2) {
+        i(i2);
+        ((zdc) this).e.writeInt(i);
+    }
+
+    public final void k(Parcelable parcelable, int i) {
+        i(i);
+        ((zdc) this).e.writeParcelable(parcelable, 0);
+    }
+
+    public final void l(aec aecVar) {
+        if (aecVar == null) {
+            ((zdc) this).e.writeString(null);
+            return;
+        }
+        try {
+            ((zdc) this).e.writeString(b(aecVar.getClass()).getName());
+            zdc a = a();
+            try {
+                d(aecVar.getClass()).invoke(null, aecVar, a);
+                Parcel parcel = a.e;
+                int i = a.i;
+                if (i >= 0) {
+                    int i2 = a.d.get(i);
+                    int dataPosition = parcel.dataPosition();
+                    parcel.setDataPosition(i2);
+                    parcel.writeInt(dataPosition - i2);
+                    parcel.setDataPosition(dataPosition);
+                }
+            } catch (ClassNotFoundException e) {
+                grb.j("VersionedParcel encountered ClassNotFoundException", e);
+            } catch (IllegalAccessException e2) {
+                grb.j("VersionedParcel encountered IllegalAccessException", e2);
+            } catch (NoSuchMethodException e3) {
+                grb.j("VersionedParcel encountered NoSuchMethodException", e3);
+            } catch (InvocationTargetException e4) {
+                if (e4.getCause() instanceof RuntimeException) {
+                    throw ((RuntimeException) e4.getCause());
+                }
+                grb.j("VersionedParcel encountered InvocationTargetException", e4);
+            }
+        } catch (ClassNotFoundException e5) {
+            grb.j(aecVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e5);
+        }
     }
 }

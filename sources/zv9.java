@@ -1,47 +1,30 @@
 // default package
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class zv9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ tx9 b;
-    public final /* synthetic */ boolean c;
+public final class zv9 implements View.OnClickListener {
+    public final /* synthetic */ ox0 a;
 
-    public /* synthetic */ zv9(tx9 tx9Var, boolean z, byte b) {
-        this.a = b;
-        this.b = tx9Var;
-        this.c = z;
+    public zv9(ox0 ox0Var) {
+        this.a = ox0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        byte b = this.a;
-        boolean z = this.c;
-        tx9 tx9Var = this.b;
-        switch (b) {
-            case 0:
-                rw9 rw9Var = tx9Var.i0;
-                hw9 hw9Var = tx9Var.j0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!z) {
-                    floatValue = 1.0f - floatValue;
-                }
-                float f = 1.0f - floatValue;
-                rw9Var.setAlpha(f);
-                rw9Var.setTranslationY(gl.L(8.0f) * floatValue);
-                hw9Var.setAlpha(floatValue);
-                hw9Var.setTranslationY(gl.L(8.0f) * f);
-                tx9Var.k0.setAlpha(hw9Var.getAlpha() * floatValue);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!z) {
-                    floatValue2 = 1.0f - floatValue2;
-                }
-                tx9Var.k0.setAlpha(tx9Var.j0.getAlpha() * floatValue2);
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        aw9 aw9Var = (aw9) this.a.d;
+        for (int i = 0; i < aw9Var.e.size(); i++) {
+            r47 r47Var = (r47) aw9Var.e.get(i);
+            boolean z = aw9Var.I;
+            int i2 = yac.t0;
+            if (z) {
+                xb4.G(k5.a(i2).a).f(r47Var.F0());
+            } else {
+                xb4.G(k5.a(i2).a).X(r47Var.F0(), r47Var, 0, 0);
+                lq3.q(aw9Var.d).y();
+            }
         }
+        aw9Var.d(true);
     }
 }

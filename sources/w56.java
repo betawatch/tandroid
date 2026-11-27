@@ -1,21 +1,60 @@
 // default package
 
-import android.os.Looper;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class w56 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ e66 b;
+    public final /* synthetic */ String c;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class w56 {
-    public final mc5 a;
-    public volatile u56 b;
-
-    public w56(Looper looper, Object obj, String str) {
-        this.a = new mc5(looper);
-        fre.i(obj, "Listener must not be null");
-        fre.f(str);
-        this.b = new u56(obj, str);
+    public /* synthetic */ w56(e66 e66Var, String str, byte b) {
+        this.a = b;
+        this.b = e66Var;
+        this.c = str;
     }
 
-    public final void a(v56 v56Var) {
-        this.a.execute(new tq4((Object) this, (Object) v56Var, (byte) 15));
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        String str = this.c;
+        e66 e66Var = this.b;
+        switch (b) {
+            case 0:
+                if ("disable".equalsIgnoreCase(str)) {
+                    e66Var.x("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    e66Var.x("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str)) {
+                    e66Var.x("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str)) {
+                    e66Var.x("fingerprintRow");
+                    break;
+                }
+                break;
+            case 1:
+                e66Var.w(str);
+                break;
+            case 2:
+                if ("disable".equalsIgnoreCase(str)) {
+                    e66Var.x("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    e66Var.x("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    e66Var.x("emailRow");
+                    break;
+                }
+                break;
+            default:
+                if (e66Var.a()) {
+                    e66Var.w(str);
+                    break;
+                }
+                break;
+        }
     }
 }

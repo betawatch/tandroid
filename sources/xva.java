@@ -1,34 +1,33 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xva extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ yva e;
+public final /* synthetic */ class xva implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ iv4 b;
 
-    public xva(yva yvaVar, int i, int i2, int i3, int i4) {
-        this.e = yvaVar;
-        this.a = i;
-        this.b = i2;
-        this.c = i3;
-        this.d = i4;
+    public /* synthetic */ xva(iv4 iv4Var, byte b) {
+        this.a = b;
+        this.b = iv4Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f = bm2.f(1.0f, this.a, this.b);
-        yva yvaVar = this.e;
-        yvaVar.r = f;
-        yvaVar.s = bm2.f(1.0f, this.c, this.d);
-        yvaVar.E = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{yvaVar.r, yvaVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        yvaVar.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        iv4 iv4Var = this.b;
+        switch (b) {
+            case 0:
+                iv4Var.a(Boolean.FALSE, "PRODUCT_NOT_FOUND");
+                break;
+            case 1:
+                iv4Var.a(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
+                break;
+            case 2:
+                hl.c3(new xva(iv4Var, (byte) 3));
+                break;
+            default:
+                iv4Var.a(Boolean.FALSE, null);
+                break;
+        }
     }
 }

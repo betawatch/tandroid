@@ -1,70 +1,16 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class so3 extends x1 {
-    public final /* synthetic */ byte a;
-    public final gk0 b;
+public final class so3 {
+    public final boolean a;
+    public final Runnable b;
+    public final long c;
 
-    public so3(byte b) {
-        this.a = b;
-        switch (b) {
-            case 1:
-                this.b = new jjb();
-                break;
-            default:
-                this.b = new ro3();
-                break;
-        }
-    }
-
-    @Override // x1
-    public final void a(CharSequence charSequence) {
-        byte b = this.a;
-    }
-
-    @Override // x1
-    public final boolean b(gk0 gk0Var) {
-        switch (this.a) {
-            case 0:
-                return true;
-            default:
-                return super.b(gk0Var);
-        }
-    }
-
-    @Override // x1
-    public final gk0 e() {
-        byte b = this.a;
-        gk0 gk0Var = this.b;
-        switch (b) {
-            case 0:
-                return (ro3) gk0Var;
-            default:
-                return (jjb) gk0Var;
-        }
-    }
-
-    @Override // x1
-    public final boolean f() {
-        switch (this.a) {
-            case 0:
-                return true;
-            default:
-                return super.f();
-        }
-    }
-
-    @Override // x1
-    public final vj2 h(vo3 vo3Var) {
-        switch (this.a) {
-            case 0:
-                return vj2.a(vo3Var.b);
-            default:
-                return null;
-        }
-    }
-
-    private final void i(CharSequence charSequence) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public so3(int i, long j, Runnable runnable) {
+        this.a = i;
+        this.b = runnable;
+        this.c = j;
     }
 }

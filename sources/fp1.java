@@ -1,52 +1,49 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class fp1 extends m8 {
-    public final /* synthetic */ t09 o;
-    public final /* synthetic */ mu1 p;
+import android.view.View;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fp1(mu1 mu1Var, ye1 ye1Var, t09 t09Var) {
-        super(ye1Var, -2, -2);
-        this.p = mu1Var;
-        this.o = t09Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class fp1 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ul b;
+
+    public /* synthetic */ fp1(ul ulVar, byte b) {
+        this.a = b;
+        this.b = ulVar;
     }
 
-    @Override // m8
-    public final void d(boolean z) {
-        super.d(z);
-        t09 t09Var = this.o;
-        if (t09Var != null) {
-            t09Var.a(z);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        byte b = this.a;
+        ul ulVar = this.b;
+        switch (b) {
+            case 0:
+                ulVar.a();
+                break;
+            case 1:
+                ulVar.a();
+                break;
+            default:
+                ulVar.a();
+                break;
         }
     }
 
-    @Override // m8, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        mu1 mu1Var = this.p;
-        if (mu1Var.g9 == this) {
-            m21 m21Var = m21.w;
-            m21 m21Var2 = mu1Var.C1;
-            if (m21Var == m21Var2 && m21Var2 != null) {
-                m21Var2.b();
-                mu1Var.C1 = null;
-            }
-            mu1Var.g9 = null;
-            mu1Var.l9 = null;
-            mu1Var.k9 = null;
-            mu1Var.C0.R = true;
-            if (mu1Var.h9) {
-                mu1Var.r6(false, true, 0.0f);
-            } else {
-                mu1Var.h9 = true;
-            }
-            ar1 ar1Var = mu1Var.a0;
-            if (ar1Var == null || ar1Var.getEditField() == null) {
-                return;
-            }
-            mu1Var.a0.getEditField().setAllowDrawCursor(true);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        byte b = this.a;
+        ul ulVar = this.b;
+        switch (b) {
+            case 0:
+                ulVar.b();
+                break;
+            case 1:
+                ulVar.b();
+                break;
+            default:
+                ulVar.b();
+                break;
         }
     }
 }

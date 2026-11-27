@@ -1,45 +1,35 @@
 // default package
 
-import org.telegram.ui.ActionBar.d;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public final /* synthetic */ class wv8 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ p8c c;
-    public final /* synthetic */ d d;
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ cw8 b;
 
-    public /* synthetic */ wv8(String str, p8c p8cVar, d dVar) {
-        this.b = str;
-        this.c = p8cVar;
-        this.d = dVar;
+    public /* synthetic */ wv8(cw8 cw8Var, byte b) {
+        this.a = b;
+        this.b = cw8Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         byte b = this.a;
-        d dVar = this.d;
-        p8c p8cVar = this.c;
-        String str = this.b;
+        cw8 cw8Var = this.b;
         switch (b) {
             case 0:
-                yv8.p(dVar, 0, new wv8(str, p8cVar, dVar));
+                cw8Var.e0 = true;
+                break;
+            case 1:
+                cw8Var.v();
                 break;
             default:
-                if (str == null) {
-                    u21.b0(dVar).N(k96.M0(2131745669, null), k96.M0(2131751093, null)).j();
-                    break;
-                } else {
-                    p8cVar.a(str);
+                if (!cw8Var.k0) {
+                    wt6 wt6Var = cw8Var.J;
+                    wt6Var.getClass();
+                    wt6Var.f(cw8Var);
                     break;
                 }
+                break;
         }
-    }
-
-    public /* synthetic */ wv8(d dVar, String str, p8c p8cVar) {
-        this.d = dVar;
-        this.b = str;
-        this.c = p8cVar;
     }
 }

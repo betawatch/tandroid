@@ -2,213 +2,117 @@
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
+import android.os.Bundle;
 import android.text.TextPaint;
-import org.telegram.messenger.a;
-import org.telegram.messenger.beta.R;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.ui.ActionBar.e;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class rob extends Drawable {
-    public final TextPaint a;
-    public final Paint b;
-    public StaticLayout c;
-    public float d;
-    public int e;
-    public int f;
-    public Drawable g;
+public final class rob extends FrameLayout implements snb {
+    public final sqb a;
+    public final uy9 b;
+    public final wkb c;
+    public final byte d;
+    public final byte e;
+    public final TextPaint f;
     public int h;
-    public final Context i;
-    public final wjb j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public ColorFilter n;
+    public int n;
+    public final /* synthetic */ ThemeActivity r;
 
-    public rob(Context context, wjb wjbVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rob(ThemeActivity themeActivity, Context context) {
+        super(context);
+        wk5 wk5Var;
+        this.r = themeActivity;
+        this.d = (byte) 12;
+        this.e = (byte) 30;
+        setWillNotDraw(false);
         TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new Paint(1);
-        Paint paint = new Paint(1);
-        this.d = 0.0f;
-        this.e = 0;
-        this.f = -1;
-        this.i = context;
-        this.j = wjbVar;
-        textPaint.setTypeface(gl.n1("fonts/rcondensedbold.ttf"));
-        paint.setStrokeWidth(gl.L(1.0f));
-        paint.setStyle(Paint.Style.STROKE);
+        this.f = textPaint;
+        textPaint.setTextSize(hl.L(16.0f));
+        uy9 uy9Var = new uy9(context);
+        this.b = uy9Var;
+        uy9Var.setReportChanges(true);
+        uy9Var.setSeparatorsCount(19);
+        uy9Var.setDelegate(new pq8(this, (byte) 21));
+        uy9Var.setImportantForAccessibility(2);
+        addView(uy9Var, tre.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        boolean z = f11.a;
+        wkb wkbVar = new wkb(context);
+        this.c = wkbVar;
+        wkbVar.setBackground(aob.L0(false));
+        wkbVar.f(ob6.M0(2131751797, null), xea.D0, false);
+        wkbVar.setOnClickListener(new kla(this, (byte) 18));
+        wk5Var = ((e) themeActivity).parentLayout;
+        sqb sqbVar = new sqb(context, wk5Var, 0);
+        this.a = sqbVar;
+        sqbVar.setImportantForAccessibility(4);
+        addView(sqbVar, tre.d(-1, -2.0f, 51, 0.0f, 53.0f, 0.0f, 0.0f));
     }
 
-    public static rob a(int i) {
-        rob robVar = new rob(a.b, null);
-        robVar.b(i);
-        robVar.l = true;
-        return robVar;
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(aob.Mj));
     }
 
-    public final void b(int i) {
-        String valueOf;
-        if (this.f != i) {
-            this.f = i;
-            boolean z = this.m;
-            Context context = this.i;
-            if (z) {
-                this.g = context.getDrawable(R.drawable.msg_autodelete_badge2).mutate();
-            } else {
-                Drawable mutate = context.getDrawable(i == 0 ? R.drawable.msg_mini_autodelete : R.drawable.msg_mini_autodelete_empty).mutate();
-                this.g = mutate;
-                mutate.setColorFilter(this.n);
-            }
-            invalidateSelf();
-            int i2 = this.f;
-            if (i2 >= 1 && i2 < 60) {
-                valueOf = String.valueOf(i);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745496, null));
-                }
-            } else if (i2 >= 60 && i2 < 3600) {
-                valueOf = String.valueOf(i / 60);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745498, null));
-                }
-            } else if (i2 >= 3600 && i2 < 86400) {
-                valueOf = String.valueOf((i / 60) / 60);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745499, null));
-                }
-            } else if (i2 >= 86400 && i2 < 604800) {
-                valueOf = String.valueOf(((i / 60) / 60) / 24);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745500, null));
-                }
-            } else if (i2 < 2678400) {
-                valueOf = String.valueOf((((i / 60) / 60) / 24) / 7);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745495, null));
-                } else if (valueOf.length() > 2) {
-                    valueOf = "c";
-                }
-            } else if (i2 < 31449600) {
-                valueOf = String.valueOf((((i / 60) / 60) / 24) / 30);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745497, null));
-                }
-            } else {
-                valueOf = String.valueOf((((i / 60) / 60) / 24) / 364);
-                if (valueOf.length() < 2) {
-                    valueOf = valueOf.concat(k96.M0(2131745494, null));
-                }
-            }
-            String str = valueOf;
-            float L = gl.L(11.0f);
-            TextPaint textPaint = this.a;
-            textPaint.setTextSize(L);
-            float measureText = textPaint.measureText(str);
-            this.d = measureText;
-            if (measureText > gl.L(13.0f)) {
-                textPaint.setTextSize(gl.L(9.0f));
-                this.d = textPaint.measureText(str);
-            }
-            if (this.d > gl.L(13.0f)) {
-                textPaint.setTextSize(gl.L(6.0f));
-                this.d = textPaint.measureText(str);
-            }
-            try {
-                StaticLayout staticLayout = new StaticLayout(str, textPaint, (int) Math.ceil(this.d), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                this.c = staticLayout;
-                this.e = staticLayout.getHeight();
-            } catch (Exception e) {
-                this.c = null;
-                fa4.g(e, true);
-            }
-            invalidateSelf();
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+        this.b.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int w0 = aob.w0(null, aob.I6, false);
+        TextPaint textPaint = this.f;
+        textPaint.setColor(w0);
+        canvas.drawText(String.valueOf(xea.S0), getMeasuredWidth() - hl.L(39.0f), hl.L(28.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.b.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        super.onMeasure(i, i2);
+        int size = View.MeasureSpec.getSize(i);
+        if (this.h != size) {
+            int i3 = xea.S0;
+            byte b = this.d;
+            this.b.setProgress((i3 - b) / (this.e - b));
+            this.h = size;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int L = gl.L(23.0f);
-        int L2 = gl.L(23.0f);
-        boolean z = this.m;
-        Paint paint = this.b;
-        TextPaint textPaint = this.a;
-        wjb wjbVar = this.j;
-        if (z) {
-            textPaint.setColor(-1);
-        } else if (this.l) {
-            textPaint.setColor(bkb.v0(bkb.E8, wjbVar));
-        } else {
-            if (!this.k) {
-                paint.setColor(bkb.v0(bkb.r8, wjbVar));
-            }
-            textPaint.setColor(bkb.v0(bkb.z8, wjbVar));
-        }
-        if (this.g != null) {
-            if (!this.l && !this.m) {
-                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
-                int v0 = bkb.v0(bkb.z8, wjbVar);
-                if (this.h != v0) {
-                    this.h = v0;
-                    this.g.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.MULTIPLY));
-                }
-            }
-            if (this.m) {
-                this.g.setBounds(getBounds().left, getBounds().top, this.g.getIntrinsicWidth() + getBounds().left, this.g.getIntrinsicHeight() + getBounds().top);
-                this.g.draw(canvas);
-            } else {
-                Rect rect = gl.Q;
-                rect.set(getBounds().centerX() - gl.L(10.5f), getBounds().centerY() - gl.L(10.5f), this.g.getIntrinsicWidth() + (getBounds().centerX() - gl.L(10.5f)), this.g.getIntrinsicHeight() + (getBounds().centerY() - gl.L(10.5f)));
-                this.g.setBounds(rect);
-                this.g.draw(canvas);
-            }
-        }
-        if (this.f == 0 || this.c == null) {
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i, Bundle bundle) {
+        return super.performAccessibilityAction(i, bundle) || this.b.getSeekBarAccessibilityDelegate().g(this, i, bundle);
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        uy9 uy9Var = this.b;
+        if (uy9Var == null) {
             return;
         }
-        int i = gl.p != 3.0f ? 0 : -1;
-        canvas.save();
-        if (this.m) {
-            canvas.translate((float) (((getBounds().width() / 2) - Math.ceil(this.d / 2.0f)) + i), (getBounds().height() - this.e) / 2.0f);
-            this.c.draw(canvas);
-        } else {
-            canvas.translate(((int) ((L / 2) - Math.ceil(this.d / 2.0f))) + i, (L2 - this.e) / 2.0f);
-            this.c.draw(canvas);
+        try {
+            int w0 = aob.w0(null, aob.Mj, false);
+            if (w0 != this.n) {
+                this.n = w0;
+                uy9Var.setOuterColor(w0);
+            }
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
         }
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return gl.L(23.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return gl.L(23.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.n = colorFilter;
-        if (this.l) {
-            this.g.setColorFilter(colorFilter);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
     }
 }

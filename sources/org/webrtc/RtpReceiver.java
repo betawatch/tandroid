@@ -2,81 +2,108 @@ package org.webrtc;
 
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class RtpReceiver {
-    private MediaStreamTrack cachedTrack;
+    private final MediaStreamTrack cachedTrack;
+    final NativeLifecycleLock lifecycleLock;
     private long nativeObserver;
-    private long nativeRtpReceiver;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        String getId(long j);
+
+        RtpParameters getParameters(long j);
+
+        long getTrack(long j);
+
+        void setFrameDecryptor(long j, long j2);
+
+        long setObserver(long j, Observer observer);
+
+        void unsetObserver(long j, long j2);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public interface Observer {
         void onFirstPacketReceived(MediaStreamTrack.MediaType mediaType);
+
+        void onFirstPacketReceivedAfterReceptiveChange(MediaStreamTrack.MediaType mediaType);
     }
 
     public RtpReceiver(long j) {
-        this.nativeRtpReceiver = j;
-        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j));
+        this.lifecycleLock = new NativeLifecycleLock("RtpReceiver", j);
+        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(RtpReceiverJni.get().getTrack(j));
     }
 
-    private void checkRtpReceiverExists() {
-        if (this.nativeRtpReceiver != 0) {
-            return;
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$SetObserver$3(long j) {
+        if (this.nativeObserver != 0) {
+            RtpReceiverJni.get().unsetObserver(j, this.nativeObserver);
+            this.nativeObserver = 0L;
         }
-        sc8.j("RtpReceiver has been disposed.");
     }
 
-    private static native String nativeGetId(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$SetObserver$4(Observer observer, long j) {
+        if (this.nativeObserver != 0) {
+            RtpReceiverJni.get().unsetObserver(j, this.nativeObserver);
+        }
+        this.nativeObserver = RtpReceiverJni.get().setObserver(j, observer);
+    }
 
-    private static native RtpParameters nativeGetParameters(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$2(long j) {
+        this.cachedTrack.dispose();
+        if (this.nativeObserver != 0) {
+            RtpReceiverJni.get().unsetObserver(j, this.nativeObserver);
+            this.nativeObserver = 0L;
+        }
+        JniCommon.nativeReleaseRef(j);
+    }
 
-    private static native long nativeGetTrack(long j);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ RtpParameters lambda$getParameters$0(long j) {
+        return RtpReceiverJni.get().getParameters(j);
+    }
 
-    private static native void nativeSetFrameDecryptor(long j, long j2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$id$1(long j) {
+        return RtpReceiverJni.get().getId(j);
+    }
 
-    private static native long nativeSetObserver(long j, Observer observer);
-
-    private static native void nativeUnsetObserver(long j, long j2);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$setFrameDecryptor$5(FrameDecryptor frameDecryptor, long j) {
+        RtpReceiverJni.get().setFrameDecryptor(j, frameDecryptor.getNativeFrameDecryptor());
+    }
 
     public void SetObserver(Observer observer) {
-        checkRtpReceiverExists();
-        long j = this.nativeObserver;
-        if (j != 0) {
-            nativeUnsetObserver(this.nativeRtpReceiver, j);
+        NativeLifecycleLock nativeLifecycleLock = this.lifecycleLock;
+        if (observer == null) {
+            nativeLifecycleLock.runIfAlive(new tr9(this));
+        } else {
+            nativeLifecycleLock.run(new m88((Object) this, (Object) observer, (byte) 28));
         }
-        this.nativeObserver = nativeSetObserver(this.nativeRtpReceiver, observer);
     }
 
     public void dispose() {
-        checkRtpReceiverExists();
-        this.cachedTrack.dispose();
-        long j = this.nativeObserver;
-        if (j != 0) {
-            nativeUnsetObserver(this.nativeRtpReceiver, j);
-            this.nativeObserver = 0L;
-        }
-        JniCommon.nativeReleaseRef(this.nativeRtpReceiver);
-        this.nativeRtpReceiver = 0L;
+        this.lifecycleLock.dispose(new tr9(this));
     }
 
     public long getNativeRtpReceiver() {
-        checkRtpReceiverExists();
-        return this.nativeRtpReceiver;
+        return this.lifecycleLock.getNativePointer();
     }
 
     public RtpParameters getParameters() {
-        checkRtpReceiverExists();
-        return nativeGetParameters(this.nativeRtpReceiver);
+        return (RtpParameters) this.lifecycleLock.call(new iy8((byte) 20));
     }
 
     public String id() {
-        checkRtpReceiverExists();
-        return nativeGetId(this.nativeRtpReceiver);
+        return (String) this.lifecycleLock.call(new iy8((byte) 21));
     }
 
     public void setFrameDecryptor(FrameDecryptor frameDecryptor) {
-        checkRtpReceiverExists();
-        nativeSetFrameDecryptor(this.nativeRtpReceiver, frameDecryptor.getNativeFrameDecryptor());
+        this.lifecycleLock.run(new ye9(frameDecryptor, (byte) 15));
     }
 
     public MediaStreamTrack track() {

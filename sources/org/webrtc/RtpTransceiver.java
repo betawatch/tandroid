@@ -7,14 +7,39 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpCapabilities;
 import org.webrtc.RtpParameters;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public class RtpTransceiver {
-    private RtpReceiver cachedReceiver;
-    private RtpSender cachedSender;
-    private long nativeRtpTransceiver;
+    private final RtpReceiver cachedReceiver;
+    private final RtpSender cachedSender;
+    private final NativeLifecycleLock lifecycleLock;
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+    interface Natives {
+        RtpTransceiverDirection currentDirection(long j);
+
+        RtpTransceiverDirection direction(long j);
+
+        MediaStreamTrack.MediaType getMediaType(long j);
+
+        String getMid(long j);
+
+        RtpReceiver getReceiver(long j);
+
+        RtpSender getSender(long j);
+
+        RtcError setCodecPreferences(long j, List<RtpCapabilities.CodecCapability> list);
+
+        boolean setDirection(long j, RtpTransceiverDirection rtpTransceiverDirection);
+
+        void stopInternal(long j);
+
+        void stopStandard(long j);
+
+        boolean stopped(long j);
+    }
+
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public enum RtpTransceiverDirection {
         SEND_RECV(0),
         SEND_ONLY(1),
@@ -34,7 +59,7 @@ public class RtpTransceiver {
                     return rtpTransceiverDirection;
                 }
             }
-            w26.j(de9.k(i, "Uknown native RtpTransceiverDirection type"));
+            lq5.j(uh9.k(i, "Uknown native RtpTransceiverDirection type"));
             return null;
         }
 
@@ -44,66 +69,86 @@ public class RtpTransceiver {
     }
 
     public RtpTransceiver(long j) {
-        this.nativeRtpTransceiver = j;
-        this.cachedSender = nativeGetSender(j);
-        this.cachedReceiver = nativeGetReceiver(j);
+        this.lifecycleLock = new NativeLifecycleLock("RtpTransceiver", j);
+        this.cachedSender = RtpTransceiverJni.get().getSender(j);
+        this.cachedReceiver = RtpTransceiverJni.get().getReceiver(j);
     }
 
-    private void checkRtpTransceiverExists() {
-        if (this.nativeRtpTransceiver != 0) {
-            return;
-        }
-        sc8.j("RtpTransceiver has been disposed.");
-    }
-
-    private static native RtpTransceiverDirection nativeCurrentDirection(long j);
-
-    private static native RtpTransceiverDirection nativeDirection(long j);
-
-    private static native MediaStreamTrack.MediaType nativeGetMediaType(long j);
-
-    private static native String nativeGetMid(long j);
-
-    private static native RtpReceiver nativeGetReceiver(long j);
-
-    private static native RtpSender nativeGetSender(long j);
-
-    private static native void nativeSetCodecPreferences(long j, List<RtpCapabilities.CodecCapability> list);
-
-    private static native boolean nativeSetDirection(long j, RtpTransceiverDirection rtpTransceiverDirection);
-
-    private static native void nativeStopInternal(long j);
-
-    private static native void nativeStopStandard(long j);
-
-    private static native boolean nativeStopped(long j);
-
-    public void dispose() {
-        checkRtpTransceiverExists();
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$dispose$10(long j) {
         this.cachedSender.dispose();
         this.cachedReceiver.dispose();
-        JniCommon.nativeReleaseRef(this.nativeRtpTransceiver);
-        this.nativeRtpTransceiver = 0L;
+        JniCommon.nativeReleaseRef(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ RtpTransceiverDirection lambda$getCurrentDirection$4(long j) {
+        return RtpTransceiverJni.get().currentDirection(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ RtpTransceiverDirection lambda$getDirection$3(long j) {
+        return RtpTransceiverJni.get().direction(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ MediaStreamTrack.MediaType lambda$getMediaType$0(long j) {
+        return RtpTransceiverJni.get().getMediaType(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$getMid$1(long j) {
+        return RtpTransceiverJni.get().getMid(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$isStopped$2(long j) {
+        return Boolean.valueOf(RtpTransceiverJni.get().stopped(j));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ RtcError lambda$setCodecPreferences$7(List list, long j) {
+        return RtpTransceiverJni.get().setCodecPreferences(j, list);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ Boolean lambda$setDirection$5(RtpTransceiverDirection rtpTransceiverDirection, long j) {
+        return Boolean.valueOf(RtpTransceiverJni.get().setDirection(j, rtpTransceiverDirection));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$stop$6(long j) {
+        RtpTransceiverJni.get().stopInternal(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$stopInternal$8(long j) {
+        RtpTransceiverJni.get().stopInternal(j);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$stopStandard$9(long j) {
+        RtpTransceiverJni.get().stopStandard(j);
+    }
+
+    public void dispose() {
+        this.lifecycleLock.dispose(new ye9(this, (byte) 20));
     }
 
     public RtpTransceiverDirection getCurrentDirection() {
-        checkRtpTransceiverExists();
-        return nativeCurrentDirection(this.nativeRtpTransceiver);
+        return (RtpTransceiverDirection) this.lifecycleLock.call(new iy8((byte) 25));
     }
 
     public RtpTransceiverDirection getDirection() {
-        checkRtpTransceiverExists();
-        return nativeDirection(this.nativeRtpTransceiver);
+        return (RtpTransceiverDirection) this.lifecycleLock.call(new vr9((byte) 0));
     }
 
     public MediaStreamTrack.MediaType getMediaType() {
-        checkRtpTransceiverExists();
-        return nativeGetMediaType(this.nativeRtpTransceiver);
+        return (MediaStreamTrack.MediaType) this.lifecycleLock.call(new vr9((byte) 2));
     }
 
     public String getMid() {
-        checkRtpTransceiverExists();
-        return nativeGetMid(this.nativeRtpTransceiver);
+        return (String) this.lifecycleLock.call(new iy8((byte) 27));
     }
 
     public RtpReceiver getReceiver() {
@@ -115,36 +160,30 @@ public class RtpTransceiver {
     }
 
     public boolean isStopped() {
-        checkRtpTransceiverExists();
-        return nativeStopped(this.nativeRtpTransceiver);
+        return ((Boolean) this.lifecycleLock.call(new iy8((byte) 28))).booleanValue();
     }
 
-    public void setCodecPreferences(List<RtpCapabilities.CodecCapability> list) {
-        checkRtpTransceiverExists();
-        nativeSetCodecPreferences(this.nativeRtpTransceiver, list);
+    public RtcError setCodecPreferences(List<RtpCapabilities.CodecCapability> list) {
+        return (RtcError) this.lifecycleLock.call(new ur9(list));
     }
 
     public boolean setDirection(RtpTransceiverDirection rtpTransceiverDirection) {
-        checkRtpTransceiverExists();
-        return nativeSetDirection(this.nativeRtpTransceiver, rtpTransceiverDirection);
+        return ((Boolean) this.lifecycleLock.call(new ye9(rtpTransceiverDirection, (byte) 19))).booleanValue();
     }
 
     public void stop() {
-        checkRtpTransceiverExists();
-        nativeStopInternal(this.nativeRtpTransceiver);
+        this.lifecycleLock.run(new iy8((byte) 26));
     }
 
     public void stopInternal() {
-        checkRtpTransceiverExists();
-        nativeStopInternal(this.nativeRtpTransceiver);
+        this.lifecycleLock.run(new iy8((byte) 29));
     }
 
     public void stopStandard() {
-        checkRtpTransceiverExists();
-        nativeStopStandard(this.nativeRtpTransceiver);
+        this.lifecycleLock.run(new vr9((byte) 1));
     }
 
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     public static final class RtpTransceiverInit {
         private final RtpTransceiverDirection direction;
         private final List<RtpParameters.Encoding> sendEncodings;

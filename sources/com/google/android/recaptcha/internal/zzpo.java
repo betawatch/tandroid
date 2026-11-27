@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import j$.util.Objects;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 class zzpo extends zzpp {
     public static final /* synthetic */ int zzc = 0;
@@ -15,7 +15,7 @@ class zzpo extends zzpp {
         if (ch == null || !zzpkVar.zzd('=')) {
             this.zzb = ch;
         } else {
-            w26.j(zzmg.zza("Padding character %s was already in alphabet", ch));
+            lq5.j(zzmg.zza("Padding character %s was already in alphabet", ch));
             throw null;
         }
     }
@@ -58,7 +58,7 @@ class zzpo extends zzpp {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(de9.k(zze.length(), "Invalid input length "));
+            throw new zzpn(uh9.k(zze.length(), "Invalid input length "));
         }
         int i2 = 0;
         int i3 = 0;

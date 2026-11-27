@@ -1,33 +1,39 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class agf implements dgf {
-    public final dgf[] a;
+public final class agf extends ljf {
+    private static final agf zzb;
+    private int zzd;
+    private String zze = "";
+    private long zzf;
+    private long zzg;
+    private bgf zzh;
 
-    public agf(dgf... dgfVarArr) {
-        this.a = dgfVarArr;
+    static {
+        agf agfVar = new agf();
+        zzb = agfVar;
+        ljf.e(agf.class, agfVar);
     }
 
-    @Override // dgf
-    public final sgf zzb(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            dgf dgfVar = this.a[i];
-            if (dgfVar.zzc(cls)) {
-                return dgfVar.zzb(cls);
-            }
+    @Override // ljf
+    public final Object h(int i, ljf ljfVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
         }
-        fyb.i("No factory is available for message type: ".concat(cls.getName()));
-        return null;
-    }
-
-    @Override // dgf
-    public final boolean zzc(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            if (this.a[i].zzc(cls)) {
-                return true;
-            }
+        if (i2 == 2) {
+            return new ilf(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဂ\u0001\u0003ဂ\u0002\u0004ဉ\u0003", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh"});
         }
-        return false;
+        if (i2 == 3) {
+            return new agf();
+        }
+        if (i2 == 4) {
+            return new mdf(zzb);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
     }
 }

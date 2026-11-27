@@ -1,73 +1,12 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import java.io.File;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class qvc implements fwc {
-    public final bw2 a;
-    public final String b;
-    public final bwc c;
-    public final wjb d;
-    public final Paint e = new Paint(1);
-    public final Path f = new Path();
-    public gwc h;
-    public int n;
-    public boolean r;
+public interface qvc {
+    void a();
 
-    public qvc(bw2 bw2Var, int i, TLRPC.BotInlineResult botInlineResult, wjb wjbVar) {
-        this.a = bw2Var;
-        this.d = wjbVar;
-        String v = vvc.v(i, botInlineResult);
-        this.b = v;
-        this.c = vvc.h(v);
-    }
-
-    public final void a(int i) {
-        bwc bwcVar = this.c;
-        if (bwcVar == null || i <= 0) {
-            return;
-        }
-        this.n = i;
-        bwcVar.l(i);
-        if (this.r) {
-            return;
-        }
-        this.r = true;
-        bwcVar.j(mwc.a(this.d, true));
-        gwc gwcVar = this.h;
-        if (gwcVar == null) {
-            gwcVar = new gwc(this, gl.p);
-            this.h = gwcVar;
-        }
-        gwcVar.b(bwcVar);
-        this.h.q(true);
-        vvc.t(bwcVar);
-    }
-
-    @Override // fwc
-    public final void g() {
-        this.a.invalidate();
-    }
-
-    @Override // fwc
-    public final void j() {
-        bw2 bw2Var = this.a;
-        bw2Var.requestLayout();
-        bw2Var.invalidate();
-    }
-
-    @Override // fwc
-    public final void d() {
-    }
-
-    @Override // fwc
-    public final void b(boolean z) {
-    }
-
-    @Override // fwc
-    public final void f(String str) {
-    }
+    void b(File file, Bitmap bitmap, boolean z);
 }

@@ -1,30 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class u6e extends u3e {
-    public final transient Object[] r;
-    public final transient boolean s;
-    public final transient int w;
+public final class u6e implements zq7 {
+    public static final u6e a = new u6e();
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public u6e(int i, int i2, Object[] objArr) {
-        super((byte) 5);
-        this.r = objArr;
-        this.s = i;
-        this.w = i2;
+    static {
+        xnb.y(xnb.n(zbd.class, new wad(1)));
     }
 
-    @Override // java.util.List
-    public final Object get(int i) {
-        p1f.a(i, this.w);
-        Object obj = this.r[(i << 1) + (this.s ? 1 : 0)];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.w;
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

@@ -1,24 +1,39 @@
 // default package
 
-import java.util.List;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class x1b implements q8c {
-    public final /* synthetic */ y1b a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ List d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class x1b extends de0 {
+    public final /* synthetic */ vnb H;
+    public final /* synthetic */ z1b I;
 
-    public /* synthetic */ x1b(y1b y1bVar, boolean z, int i, List list) {
-        this.a = y1bVar;
-        this.b = z;
-        this.c = i;
-        this.d = list;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x1b(z1b z1bVar, Context context, vnb vnbVar) {
+        super(context);
+        this.I = z1bVar;
+        this.H = vnbVar;
     }
 
-    @Override // q8c
-    public final Object a(Object obj) {
-        return Boolean.valueOf(this.a.q(this.c, this.d, this.b));
+    @Override // de0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        z1b z1bVar = this.I;
+        q6b q6bVar = z1bVar.r;
+        t1b t1bVar = z1bVar.w;
+        if (t1bVar == null || !(t1bVar.a instanceof TL_stats.TL_postInteractionCountersStory)) {
+            super.onDraw(canvas);
+            return;
+        }
+        float L = hl.L(1.0f);
+        q6bVar.F.set(L, L, getMeasuredWidth() - r0, getMeasuredHeight() - r0);
+        q6bVar.a = false;
+        q6bVar.b = false;
+        q6bVar.v = true;
+        q6bVar.o = false;
+        q6bVar.z = 1;
+        q6bVar.J = this.H;
+        t6b.h(0L, canvas, this.a, q6bVar);
     }
 }

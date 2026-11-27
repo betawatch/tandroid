@@ -5,18 +5,18 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class CameraPosition extends b4 implements ReflectedParcelable {
-    public static final Parcelable.Creator<CameraPosition> CREATOR = new b1d((byte) 29);
+public final class CameraPosition extends c4 implements ReflectedParcelable {
+    public static final Parcelable.Creator<CameraPosition> CREATOR = new s5d((byte) 29);
     public final LatLng a;
     public final float b;
     public final float c;
     public final float d;
 
     public CameraPosition(LatLng latLng, float f, float f2, float f3) {
-        fre.i(latLng, "camera target must not be null.");
-        fre.c(f2 >= 0.0f && f2 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f2));
+        xve.i(latLng, "camera target must not be null.");
+        xve.c(f2 >= 0.0f && f2 <= 90.0f, "Tilt needs to be between 0 and 90 inclusive: %s", Float.valueOf(f2));
         this.a = latLng;
         this.b = f;
         this.c = f2 + 0.0f;
@@ -39,24 +39,24 @@ public final class CameraPosition extends b4 implements ReflectedParcelable {
     }
 
     public final String toString() {
-        wk4 wk4Var = new wk4(this);
-        wk4Var.a(this.a, "target");
-        wk4Var.a(Float.valueOf(this.b), "zoom");
-        wk4Var.a(Float.valueOf(this.c), "tilt");
-        wk4Var.a(Float.valueOf(this.d), "bearing");
-        return wk4Var.toString();
+        um4 um4Var = new um4(this);
+        um4Var.a(this.a, "target");
+        um4Var.a(Float.valueOf(this.b), "zoom");
+        um4Var.a(Float.valueOf(this.c), "tilt");
+        um4Var.a(Float.valueOf(this.d), "bearing");
+        return um4Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int r = jte.r(parcel, 20293);
-        jte.k(parcel, 2, this.a, i);
-        jte.q(parcel, 3, 4);
+        int r = bye.r(parcel, 20293);
+        bye.k(parcel, 2, this.a, i);
+        bye.q(parcel, 3, 4);
         parcel.writeFloat(this.b);
-        jte.q(parcel, 4, 4);
+        bye.q(parcel, 4, 4);
         parcel.writeFloat(this.c);
-        jte.q(parcel, 5, 4);
+        bye.q(parcel, 5, 4);
         parcel.writeFloat(this.d);
-        jte.s(parcel, r);
+        bye.s(parcel, r);
     }
 }

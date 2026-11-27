@@ -1,37 +1,31 @@
 // default package
 
+import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public interface we9 {
-    void B(xe9 xe9Var, View view);
+public final class we9 extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    void G();
+    static {
+        a8c.h(new we9());
+    }
 
-    cs5 J(View view);
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        ((xe9) view).h((mk0) b8cVar.H, (ji9) b8cVar.I);
+    }
 
-    void L();
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        xe9 xe9Var = new xe9(i, vnbVar, context);
+        xe9Var.setBackground(new vg9(aob.v0(aob.d6, vnbVar)));
+        return xe9Var;
+    }
 
-    void P(ve9 ve9Var, View view);
-
-    boolean a(float f);
-
-    void b(wi9 wi9Var, String str);
-
-    void c(int i);
-
-    void e();
-
-    void f();
-
-    void g(mc9 mc9Var, boolean z);
-
-    void onContentChanged();
-
-    void s();
-
-    void w(lk0 lk0Var);
-
-    void x(int i);
+    @Override // a8c
+    public final boolean f() {
+        return false;
+    }
 }

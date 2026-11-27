@@ -1,479 +1,129 @@
 // default package
 
-import android.graphics.RectF;
-import android.text.style.CharacterStyle;
-import android.text.style.URLSpan;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class e37 implements bb2 {
-    public final /* synthetic */ jr a;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class e37 implements o43 {
+    public static final kr2 b = new kr2(new d51(new p31((byte) 14), pk7.b), new d51(new p31((byte) 15), pk7.c));
+    public final ArrayList a = new ArrayList();
 
-    public e37(jr jrVar) {
-        this.a = jrVar;
-    }
-
-    @Override // bb2
-    public final boolean A1(gb2 gb2Var, int i) {
-        f37 f37Var = (f37) this.a.d;
-        if (f37Var.a != 2 || i != 1) {
-            return false;
+    @Override // o43
+    public final long a(long j) {
+        int i = 0;
+        long j2 = -9223372036854775807L;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i >= arrayList.size()) {
+                break;
+            }
+            long j3 = ((p43) arrayList.get(i)).b;
+            long j4 = ((p43) arrayList.get(i)).d;
+            if (j < j3) {
+                j2 = j2 == -9223372036854775807L ? j3 : Math.min(j2, j3);
+            } else {
+                if (j < j4) {
+                    j2 = j2 == -9223372036854775807L ? j4 : Math.min(j2, j4);
+                }
+                i++;
+            }
         }
-        o27 o27Var = f37Var.d0.d;
-        if (o27Var.n) {
-            return false;
+        if (j2 != -9223372036854775807L) {
+            return j2;
         }
-        TLRPC.WebPage webPage = o27Var.v;
-        return webPage == null || (webPage instanceof TLRPC.TL_webPagePending);
+        return Long.MIN_VALUE;
     }
 
-    @Override // bb2
-    public final boolean B2(gb2 gb2Var, k27 k27Var) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean D0(gb2 gb2Var, TLRPC.PollAnswer pollAnswer) {
-        return false;
-    }
-
-    @Override // bb2
-    public final gib E2() {
-        return ((f37) this.a.d).e;
-    }
-
-    @Override // bb2
-    public final boolean F0(gb2 gb2Var) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean G(gb2 gb2Var, TLRPC.TodoItem todoItem) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean J0(long j) {
-        return false;
-    }
-
-    @Override // bb2
-    public final void K1(gb2 gb2Var, TLRPC.WebPage webPage, String str, boolean z) {
-        d01.t(gb2Var.getContext(), str);
-    }
-
-    @Override // bb2
-    public final boolean N1() {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean O() {
-        return true;
-    }
-
-    @Override // bb2
-    public final void P(gb2 gb2Var, CharacterStyle characterStyle, boolean z) {
-        f37 f37Var = (f37) this.a.d;
-        if (f37Var.a != 2 || f37Var.d0.d.w == characterStyle || gb2Var.getMessageObject() == null || !(characterStyle instanceof URLSpan)) {
-            return;
+    @Override // o43
+    public final boolean b(p43 p43Var, long j) {
+        long j2 = p43Var.b;
+        yve.f(j2 != -9223372036854775807L);
+        yve.f(p43Var.c != -9223372036854775807L);
+        boolean z = j2 <= j && j < p43Var.d;
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            if (j2 >= ((p43) arrayList.get(size)).b) {
+                arrayList.add(size + 1, p43Var);
+                return z;
+            }
         }
-        URLSpan uRLSpan = (URLSpan) characterStyle;
-        String url = uRLSpan.getURL();
-        l37 l37Var = f37Var.d0;
-        o27 o27Var = l37Var.d;
-        o27Var.w = uRLSpan;
-        o27Var.v = null;
-        mu1 mu1Var = l37Var.c;
-        if (mu1Var != null && url != null) {
-            mu1Var.jb(url, true);
+        arrayList.add(0, p43Var);
+        return z;
+    }
+
+    @Override // o43
+    public final po5 c(long j) {
+        ArrayList arrayList = this.a;
+        if (!arrayList.isEmpty()) {
+            if (j >= ((p43) arrayList.get(0)).b) {
+                ArrayList arrayList2 = new ArrayList();
+                for (int i = 0; i < arrayList.size(); i++) {
+                    p43 p43Var = (p43) arrayList.get(i);
+                    if (j >= p43Var.b && j < p43Var.d) {
+                        arrayList2.add(p43Var);
+                    }
+                    if (j < p43Var.b) {
+                        break;
+                    }
+                }
+                j99 w = po5.w(b, arrayList2);
+                mo5 p = po5.p();
+                for (int i2 = 0; i2 < w.d; i2++) {
+                    p.d(((p43) w.get(i2)).a);
+                }
+                return p.f();
+            }
         }
-        f37Var.h(gb2Var);
+        no5 no5Var = po5.b;
+        return j99.e;
     }
 
-    @Override // bb2
-    public final boolean Q() {
-        return false;
+    @Override // o43
+    public final void clear() {
+        this.a.clear();
     }
 
-    @Override // bb2
-    public final int R() {
-        return 0;
-    }
-
-    @Override // bb2
-    public final boolean T0(gb2 gb2Var, TLRPC.TodoItem todoItem, boolean z) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean T1(gm gmVar) {
-        return false;
-    }
-
-    @Override // bb2
-    public final int V(gb2 gb2Var) {
-        return 0;
-    }
-
-    @Override // bb2
-    public final vu1 X() {
-        return null;
-    }
-
-    @Override // bb2
-    public final ma8 Z1() {
-        return null;
-    }
-
-    @Override // bb2
-    public final boolean b() {
-        f37 f37Var = (f37) this.a.d;
-        if (f37Var.a != 2) {
-            return false;
+    @Override // o43
+    public final long d(long j) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            return -9223372036854775807L;
         }
-        o27 o27Var = f37Var.d0.d;
-        return (o27Var.n || o27Var.i) ? false : true;
-    }
-
-    @Override // bb2
-    public final String b1(gb2 gb2Var) {
-        return null;
-    }
-
-    @Override // bb2
-    public final boolean c2(long j) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean e0() {
-        return false;
-    }
-
-    @Override // bb2
-    public final CharacterStyle f0(gb2 gb2Var) {
-        f37 f37Var = (f37) this.a.d;
-        if (f37Var.a != 2) {
-            return null;
+        if (j < ((p43) arrayList.get(0)).b) {
+            return -9223372036854775807L;
         }
-        o27 o27Var = f37Var.d0.d;
-        if (o27Var.n) {
-            return null;
+        long j2 = ((p43) arrayList.get(0)).b;
+        for (int i = 0; i < arrayList.size(); i++) {
+            long j3 = ((p43) arrayList.get(i)).b;
+            long j4 = ((p43) arrayList.get(i)).d;
+            if (j4 > j) {
+                if (j3 > j) {
+                    break;
+                }
+                j2 = Math.max(j2, j3);
+            } else {
+                j2 = Math.max(j2, j4);
+            }
         }
-        return o27Var.w;
-    }
-
-    @Override // bb2
-    public final boolean g2(k27 k27Var) {
-        return true;
-    }
-
-    @Override // bb2
-    public final boolean h1(gb2 gb2Var, TL_iv.PageBlock pageBlock) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean i0() {
-        return b();
-    }
-
-    @Override // bb2
-    public final boolean k2(gb2 gb2Var, TLRPC.User user) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean l() {
-        return true;
-    }
-
-    @Override // bb2
-    public final boolean l2(gb2 gb2Var) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean s0(gb2 gb2Var, boolean z) {
-        return false;
-    }
-
-    @Override // bb2
-    public final String x(long j) {
-        return null;
-    }
-
-    @Override // bb2
-    public final boolean x0(gb2 gb2Var, TLRPC.Chat chat) {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean y1() {
-        return false;
-    }
-
-    @Override // bb2
-    public final boolean y2(int i) {
-        return false;
-    }
-
-    @Override // bb2
-    public final /* synthetic */ boolean z1(k27 k27Var) {
-        return oo1.a(k27Var);
-    }
-
-    @Override // bb2
-    public final void B0() {
-    }
-
-    @Override // bb2
-    public final void C2() {
-    }
-
-    @Override // bb2
-    public final void R1() {
-    }
-
-    @Override // bb2
-    public final void c() {
-    }
-
-    @Override // bb2
-    public final void i1() {
-    }
-
-    @Override // bb2
-    public final void p() {
-    }
-
-    @Override // bb2
-    public final void t() {
-    }
-
-    @Override // bb2
-    public final void u2() {
-    }
-
-    @Override // bb2
-    public final void D1(h27 h27Var) {
-    }
-
-    @Override // bb2
-    public final void F(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void H2(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void J(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void M1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void N0(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void T(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void W(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void X0(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void X1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void Y(k27 k27Var) {
-    }
-
-    @Override // bb2
-    public final void Y1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void c1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void d0(int i) {
-    }
-
-    @Override // bb2
-    public final void e2(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void j0(k27 k27Var) {
-    }
-
-    @Override // bb2
-    public final void l0(String str) {
-    }
-
-    @Override // bb2
-    public final void l1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void n1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void q(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void q1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void r0(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void v2(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void x1(gb2 gb2Var) {
-    }
-
-    @Override // bb2
-    public final void C1(gb2 gb2Var, boolean z) {
-    }
-
-    @Override // bb2
-    public final void E0(gb2 gb2Var, long j) {
-    }
-
-    @Override // bb2
-    public final void F1(gb2 gb2Var, int i) {
-    }
-
-    @Override // bb2
-    public final void M0(gb2 gb2Var, boolean z) {
-    }
-
-    @Override // bb2
-    public final void O1(gb2 gb2Var, iq0 iq0Var) {
-    }
-
-    @Override // bb2
-    public final void V0(gb2 gb2Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-    }
-
-    @Override // bb2
-    public final void Z(gb2 gb2Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
-    }
-
-    @Override // bb2
-    public final void b2(String str, String str2) {
-    }
-
-    @Override // bb2
-    public final void d2(gb2 gb2Var, k08 k08Var) {
-    }
-
-    @Override // bb2
-    public final void j2(gb2 gb2Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
-    }
-
-    @Override // bb2
-    public final void m0(gb2 gb2Var, int i) {
-    }
-
-    @Override // bb2
-    public final void v0(gb2 gb2Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-    }
-
-    @Override // bb2
-    public final void A(gb2 gb2Var, float f, float f2) {
-    }
-
-    @Override // bb2
-    public final void G1(gb2 gb2Var, boolean z, boolean z2) {
-    }
-
-    @Override // bb2
-    public final void I(gb2 gb2Var, TLRPC.Document document, RectF rectF) {
-    }
-
-    @Override // bb2
-    public final void W1(gb2 gb2Var, TLObject tLObject, boolean z) {
-    }
-
-    @Override // bb2
-    public final void Y0(gb2 gb2Var, float f, float f2) {
-    }
-
-    @Override // bb2
-    public final void s2(gb2 gb2Var, float f, float f2) {
-    }
-
-    @Override // bb2
-    public final void v1(gb2 gb2Var, float f, float f2) {
-    }
-
-    @Override // bb2
-    public final void w0(gb2 gb2Var, int i, int i2) {
-    }
-
-    @Override // bb2
-    public final void x2(gb2 gb2Var, boolean z, boolean z2) {
-    }
-
-    @Override // bb2
-    public final void A0(gb2 gb2Var, float f, float f2, boolean z) {
-    }
-
-    @Override // bb2
-    public final void E(gb2 gb2Var, TLRPC.User user, TLRPC.Document document, String str) {
-    }
-
-    @Override // bb2
-    public final void c0(gb2 gb2Var, TLRPC.User user, float f, float f2) {
-    }
-
-    @Override // bb2
-    public final void s(gb2 gb2Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i) {
-    }
-
-    @Override // bb2
-    public final void N(gb2 gb2Var, int i, float f, float f2, boolean z) {
-    }
-
-    @Override // bb2
-    public final void m1(gb2 gb2Var, TLRPC.ReactionCount reactionCount, boolean z, float f, float f2) {
-    }
-
-    @Override // bb2
-    public final void r1(gb2 gb2Var, ArrayList arrayList, int i, int i2, int i3) {
-    }
-
-    @Override // bb2
-    public final void i2(gb2 gb2Var, TLRPC.Chat chat, int i, float f, float f2, boolean z) {
-    }
-
-    @Override // bb2
-    public final void I1(k27 k27Var, String str, String str2, String str3, String str4, int i, int i2) {
+        return j2;
+    }
+
+    @Override // o43
+    public final void e(long j) {
+        int i = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i >= arrayList.size()) {
+                return;
+            }
+            long j2 = ((p43) arrayList.get(i)).b;
+            if (j > j2 && j > ((p43) arrayList.get(i)).d) {
+                arrayList.remove(i);
+                i--;
+            } else if (j < j2) {
+                return;
+            }
+            i++;
+        }
     }
 }

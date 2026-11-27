@@ -1,639 +1,687 @@
 // default package
 
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Handler;
-import android.os.Parcel;
-import android.os.SystemClock;
-import android.util.Log;
-import android.util.SparseArray;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import j$.util.Objects;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.ref.ReferenceQueue;
+import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.util.StateSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.LinearInterpolator;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import org.xml.sax.Attributes;
+import java.util.Random;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class v8b implements ru9, kn3, OnCompleteListener, f69, g8d, f9d {
-    public final /* synthetic */ byte a;
-    public Object b;
-    public Object c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public abstract class v8b extends FrameLayout implements View.OnClickListener {
+    public final mm E;
+    public final Path F;
+    public Bitmap G;
+    public boolean H;
+    public t8b a;
+    public t8b b;
+    public kg5 c;
+    public final FrameLayout d;
+    public final Matrix e;
+    public final float[] f;
+    public final t58 h;
+    public final x53 n;
+    public ArrayList r;
+    public final Rect s;
+    public final RectF w;
+    public final Paint x;
+    public final mm y;
 
-    public v8b(Attributes attributes, HashMap hashMap) {
-        this.a = (byte) 1;
-        this.c = attributes;
-        String k = lcb.k("style", attributes);
-        if (k != null) {
-            ArrayList arrayList = new ArrayList();
-            this.b = arrayList;
-            arrayList.add(new jcb(k));
-            return;
-        }
-        String k2 = lcb.k("class", attributes);
-        if (k2 != null) {
-            this.b = new ArrayList();
-            for (String str : k2.split(" ")) {
-                jcb jcbVar = (jcb) hashMap.get(str.trim());
-                if (jcbVar != null) {
-                    ((ArrayList) this.b).add(jcbVar);
-                }
-            }
-        }
+    public v8b(Context context, t58 t58Var, x53 x53Var) {
+        super(context);
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.e = new Matrix();
+        this.f = new float[2];
+        this.s = new Rect();
+        this.w = new RectF();
+        Paint paint = new Paint(1);
+        this.x = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint.setColor(-1);
+        this.F = new Path();
+        this.H = false;
+        this.h = t58Var;
+        this.n = x53Var;
+        this.y = new mm(t58Var, 0L, 120L, new LinearInterpolator());
+        this.E = new mm(t58Var, 0L, 360L, k43.h);
+        setClipChildren(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.d = frameLayout;
+        addView(frameLayout);
+        setLayerType(2, null);
     }
 
-    public static String r(v8b v8bVar) {
-        List<String> list = (List) v8bVar.c;
-        StringBuilder sb = new StringBuilder("com.google.android.gms.cast.CATEGORY_CAST");
-        String str = (String) v8bVar.b;
-        if (str != null) {
-            String upperCase = str.toUpperCase(Locale.ROOT);
-            if (!upperCase.matches("[A-F0-9]+")) {
-                w26.j("Invalid application ID: ".concat(str));
-                return null;
-            }
-            sb.append("/");
-            sb.append(upperCase);
-        }
-        if (list != null) {
-            if (list.isEmpty()) {
-                w26.j("Must specify at least one namespace");
-                return null;
-            }
-            if (str == null) {
-                sb.append("/");
-            }
-            sb.append("/");
-            boolean z = true;
-            for (String str2 : list) {
-                id1.b(str2);
-                if (!z) {
-                    sb.append(",");
-                }
-                if (!id1.a.matcher(str2).matches()) {
-                    StringBuilder sb2 = new StringBuilder(str2.length());
-                    for (int i = 0; i < str2.length(); i++) {
-                        char charAt = str2.charAt(i);
-                        if ((charAt < 'A' || charAt > 'Z') && ((charAt < 'a' || charAt > 'z') && !((charAt >= '0' && charAt <= '9') || charAt == '_' || charAt == '-' || charAt == '.' || charAt == ':'))) {
-                            sb2.append(String.format("%%%04x", Integer.valueOf(charAt)));
-                        } else {
-                            sb2.append(charAt);
-                        }
-                    }
-                    str2 = sb2.toString();
-                }
-                sb.append(str2);
-                z = false;
-            }
-        }
-        if (str == null && list == null) {
-            sb.append("/");
-        }
-        if (list == null) {
-            sb.append("/");
-        }
-        sb.append("//ALLOW_IPV6");
-        return sb.toString();
-    }
-
-    @Override // f9d
-    public final void L(String str, long j, int i, r8d r8dVar, long j2, long j3) {
-        int i2;
-        y8d y8dVar = (y8d) this.c;
-        if (((f9d) this.b) != null) {
-            if (i == 2001) {
-                Object[] objArr = {Integer.valueOf(y8dVar.i)};
-                dc6 dc6Var = y8dVar.a;
-                Log.w(dc6Var.a, dc6Var.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
-                Iterator it = ((i69) y8dVar.h.a).i.iterator();
-                while (it.hasNext()) {
-                    ((h69) it.next()).o();
-                }
-                i2 = 2001;
-            } else {
-                i2 = i;
-            }
-            ((f9d) this.b).L(str, j, i2, r8dVar, j2, j3);
-        }
-    }
-
-    @Override // kn3
-    public final void a(String str, String str2) {
-        gjc gjcVar = (gjc) this.c;
-        ln3 ln3Var = (ln3) this.b;
-        if (!gjcVar.J) {
-            if (ln3Var == gjcVar.f) {
-                gjcVar.a(str, str2);
-                return;
-            }
-            return;
-        }
-        if (ln3Var == gjcVar.U) {
-            gjcVar.U = null;
-            if (!str.isEmpty()) {
-                gjcVar.v(ln3Var, str);
-            }
-            gjcVar.h();
-            Log.d("VoiceLive", "field: final words in (" + gjcVar.L.size() + " words)");
-            gjcVar.p();
-            return;
-        }
-        if (ln3Var != gjcVar.f) {
-            return;
-        }
-        Log.d("VoiceLive", "field: recogniser ended by itself error=" + str2);
-        if (!str.isEmpty()) {
-            gjcVar.v(ln3Var, str);
-        }
-        gjcVar.f = null;
-        if (xxe.a == gjcVar) {
-            xxe.a = null;
-        }
-        gjcVar.d = null;
-        gjcVar.e = null;
-        gjcVar.h();
-        gjcVar.p();
-    }
-
-    @Override // f69
-    public final void accept(Object obj, Object obj2) {
-        int i;
-        byte b = 1;
-        switch (this.a) {
-            case 10:
-                z2d z2dVar = new z2d((u84) this.b, (TaskCompletionSource) obj2, b);
-                q2d q2dVar = (q2d) ((n3d) obj).k();
-                eo eoVar = (eo) this.c;
-                Parcel c = q2dVar.c();
-                e2d.c(c, z2dVar);
-                e2d.b(c, eoVar);
-                c.writeStrongBinder(null);
-                q2dVar.d(c, 2);
-                return;
-            default:
-                u84 u84Var = (u84) this.b;
-                and andVar = (and) obj;
-                vyd vydVar = new vyd(u84Var, (TaskCompletionSource) obj2);
-                Context context = u84Var.a;
-                try {
-                    i = ryc.a(context).e(0, context.getPackageName()).versionCode;
-                } catch (PackageManager.NameNotFoundException unused) {
-                    i = 0;
-                }
-                k59 k59Var = (k59) this.c;
-                k59Var.f = i;
-                ctd ctdVar = (ctd) andVar.k();
-                ho hoVar = new ho(new jp2(-1, -1, 0, true), true);
-                hoVar.c = false;
-                Parcel obtain = Parcel.obtain();
-                obtain.writeInterfaceToken("com.google.android.gms.cloudmessaging.internal.ICloudMessagingService");
-                int i2 = lgd.a;
-                obtain.writeStrongBinder(vydVar);
-                obtain.writeInt(1);
-                k59Var.writeToParcel(obtain, 0);
-                obtain.writeInt(1);
-                hoVar.writeToParcel(obtain, 0);
-                Parcel obtain2 = Parcel.obtain();
-                try {
-                    ctdVar.a.transact(1, obtain, obtain2, 0);
-                    obtain2.readException();
-                    return;
-                } finally {
-                    obtain.recycle();
-                    obtain2.recycle();
-                }
-        }
-    }
-
-    @Override // ru9
-    public final void b(xu7 xu7Var) {
-        j2c j2cVar = (j2c) this.c;
-        SparseArray sparseArray = j2cVar.h;
-        qd1 qd1Var = (qd1) this.b;
-        if (xu7Var.A() != 0 || (xu7Var.A() & 128) == 0) {
-            return;
-        }
-        xu7Var.O(6);
-        int a = xu7Var.a() / 4;
-        for (int i = 0; i < a; i++) {
-            xu7Var.k(0, 4, qd1Var.b);
-            qd1Var.l(0);
-            int f = qd1Var.f(16);
-            qd1Var.n(3);
-            if (f == 0) {
-                qd1Var.n(13);
-            } else {
-                int f2 = qd1Var.f(13);
-                if (sparseArray.get(f2) == null) {
-                    sparseArray.put(f2, new su9(new cyb(j2cVar, f2)));
-                    j2cVar.n++;
-                }
-            }
-        }
-        if (j2cVar.a != 2) {
-            sparseArray.remove(0);
-        }
-    }
-
-    @Override // kn3
-    public final void d(float f) {
-        ln3 ln3Var = (ln3) this.b;
-        gjc gjcVar = (gjc) this.c;
-        if (ln3Var == gjcVar.f) {
-            gjcVar.d(f);
-        }
-    }
-
-    @Override // kn3
-    public final void e(String str) {
-        ((gjc) this.c).o((ln3) this.b, str, -1);
-    }
-
-    @Override // kn3
-    public final void f(int i, String str) {
-        ((gjc) this.c).o((ln3) this.b, str, i);
-    }
-
-    @Override // kn3
-    public final void g(String str) {
-        ln3 ln3Var = (ln3) this.b;
-        gjc gjcVar = (gjc) this.c;
-        if (ln3Var == gjcVar.f) {
-            gjcVar.g(str);
-        }
-    }
-
-    @Override // f9d
-    public final void g0(String str, long j, long j2, long j3) {
-        f9d f9dVar = (f9d) this.b;
-        if (f9dVar != null) {
-            f9dVar.g0(str, j, j2, j3);
-        }
-    }
-
-    public final void h(s49 s49Var, zw8 zw8Var) {
-        ps psVar = (ps) this.b;
-        ndc ndcVar = (ndc) psVar.get(s49Var);
-        if (ndcVar == null) {
-            ndcVar = ndc.a();
-            psVar.put(s49Var, ndcVar);
-        }
-        ndcVar.c = zw8Var;
-        ndcVar.a |= 8;
-    }
-
-    public final void i(w83 w83Var) {
-        synchronized (w83Var) {
-        }
-        Handler handler = (Handler) this.b;
-        if (handler != null) {
-            handler.post(new vbc(this, w83Var, (byte) 1));
-        }
-    }
-
-    public final String j(String str) {
-        ArrayList arrayList = (ArrayList) this.b;
-        String str2 = null;
-        if (arrayList != null && !arrayList.isEmpty()) {
-            int size = arrayList.size();
-            for (int i = 0; i < size; i++) {
-                str2 = (String) ((jcb) arrayList.get(i)).a.get(str);
-                if (str2 != null) {
-                    break;
-                }
-            }
-        }
-        return str2 == null ? lcb.k(str, (Attributes) this.c) : str2;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0077, code lost:
-    
-        if (r3.equals("red") == false) goto L37;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Integer k(String str) {
-        String j = j(str);
-        if (j == null) {
+    public static ArrayList a(c8b c8bVar) {
+        if (c8bVar == null || c8bVar.T0 == null) {
             return null;
         }
-        char c = 1;
-        try {
-            return Integer.valueOf(Integer.parseInt(j.substring(1), 16));
-        } catch (NumberFormatException unused) {
-            double[] dArr = lcb.a;
-            String lowerCase = j.toLowerCase();
-            lowerCase.getClass();
-            switch (lowerCase.hashCode()) {
-                case -734239628:
-                    if (lowerCase.equals("yellow")) {
-                        c = 0;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 112785:
-                    break;
-                case 3027034:
-                    if (lowerCase.equals("blue")) {
-                        c = 2;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 3068707:
-                    if (lowerCase.equals("cyan")) {
-                        c = 3;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 3181155:
-                    if (lowerCase.equals("gray")) {
-                        c = 4;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 93818879:
-                    if (lowerCase.equals("black")) {
-                        c = 5;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 98619139:
-                    if (lowerCase.equals("green")) {
-                        c = 6;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 113101865:
-                    if (lowerCase.equals("white")) {
-                        c = 7;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 828922025:
-                    if (lowerCase.equals("magenta")) {
-                        c = '\b';
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                default:
-                    c = 65535;
-                    break;
-            }
-            switch (c) {
-                case 0:
-                    return -256;
-                case 1:
-                    return -65536;
-                case 2:
-                    return -16776961;
-                case 3:
-                    return -16711681;
-                case 4:
-                    return -7829368;
-                case 5:
-                    return -16777216;
-                case 6:
-                    return -16711936;
-                case 7:
-                    return -1;
-                case '\b':
-                    return -65281;
-                default:
-                    return null;
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < c8bVar.T0.size(); i++) {
+            if (((mec) c8bVar.T0.get(i)).N instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                arrayList.add(((mec) c8bVar.T0.get(i)).N);
             }
         }
+        return arrayList;
     }
 
-    public final boolean l() {
-        hmc hmcVar = (hmc) this.c;
-        return hmcVar.M0 > 0.0f || hmcVar.t0();
+    public abstract void b(boolean z);
+
+    public final void c(TL_stories.StoryItem storyItem, tv3 tv3Var) {
+        d(storyItem, storyItem != null ? storyItem.media_areas : null, tv3Var);
     }
 
-    public final zw8 m(s49 s49Var, int i) {
-        ndc ndcVar;
-        zw8 zw8Var;
-        ps psVar = (ps) this.b;
-        int d = psVar.d(s49Var);
-        if (d >= 0 && (ndcVar = (ndc) psVar.i(d)) != null) {
-            int i2 = ndcVar.a;
-            if ((i2 & i) != 0) {
-                int i3 = i2 & (~i);
-                ndcVar.a = i3;
-                if (i == 4) {
-                    zw8Var = ndcVar.b;
-                } else if (i == 8) {
-                    zw8Var = ndcVar.c;
+    public final void d(TL_stories.StoryItem storyItem, ArrayList arrayList, tv3 tv3Var) {
+        FrameLayout frameLayout;
+        View view;
+        ArrayList arrayList2 = this.r;
+        if (arrayList == arrayList2 && (arrayList == null || arrayList2 == null || arrayList.size() == this.r.size())) {
+            return;
+        }
+        kg5 kg5Var = this.c;
+        if (kg5Var != null) {
+            kg5Var.f(true);
+            this.c = null;
+        }
+        int i = 0;
+        while (true) {
+            int childCount = getChildCount();
+            frameLayout = this.d;
+            if (i >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i);
+            if (childAt != frameLayout) {
+                removeView(childAt);
+                i--;
+            }
+            i++;
+        }
+        this.b = null;
+        this.E.e(true, 0.0f);
+        invalidate();
+        b(false);
+        this.r = arrayList;
+        if (arrayList == null) {
+            return;
+        }
+        this.H = false;
+        for (int i2 = 0; i2 < arrayList.size(); i2++) {
+            TL_stories.MediaArea mediaArea = (TL_stories.MediaArea) arrayList.get(i2);
+            if (mediaArea != null && mediaArea.coordinates != null) {
+                if (mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                    aab aabVar = new aab(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, tv3Var);
+                    if (storyItem != null) {
+                        aabVar.c(storyItem.views, false);
+                    }
+                    iye.a(aabVar);
+                    view = aabVar;
+                } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
+                    TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
+                    vwc vwcVar = new vwc();
+                    vwcVar.c = tL_mediaAreaWeather.emoji;
+                    vwcVar.d = (float) tL_mediaAreaWeather.temperature_c;
+                    ld6 ld6Var = new ld6(getContext(), hl.p);
+                    ld6Var.setMaxWidth(hl.q.x);
+                    ld6Var.setIsVideo(true);
+                    ld6Var.d(yac.t0, vwcVar.c);
+                    ld6Var.setText(vwcVar.a());
+                    ld6Var.e(3, tL_mediaAreaWeather.color);
+                    view = new u8b(getContext(), ld6Var, mediaArea);
                 } else {
-                    w26.j("Must provide flag PRE or POST");
+                    view = new t8b(getContext(), this.h, mediaArea);
                 }
-                if ((i3 & 12) == 0) {
-                    psVar.g(d);
-                    ndcVar.a = 0;
-                    ndcVar.b = null;
-                    ndcVar.c = null;
-                    ndc.d.o0(ndcVar);
-                }
-                return zw8Var;
+                view.setOnClickListener(this);
+                addView(view);
+                double d = mediaArea.coordinates.w;
             }
         }
+        frameLayout.bringToFront();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j) {
+        Canvas canvas2;
+        RectF rectF;
+        float f;
+        if (view == this.d) {
+            t8b t8bVar = this.b;
+            float d = this.y.d((t8bVar == null || !t8bVar.s || t8bVar.x) ? false : true);
+            t8b t8bVar2 = this.b;
+            boolean z = t8bVar2 != null && t8bVar2.x;
+            float d2 = this.E.d(z);
+            RectF rectF2 = this.w;
+            if (d > 0.0f) {
+                rectF = rectF2;
+                canvas2 = canvas;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), jn7.d4, 31);
+                canvas2.drawColor(aob.p1(d, 402653184));
+                for (int i = 0; i < getChildCount(); i++) {
+                    View childAt = getChildAt(i);
+                    if (childAt instanceof t8b) {
+                        mm mmVar = ((t8b) childAt).a;
+                        t8b t8bVar3 = this.b;
+                        float d3 = mmVar.d(childAt == t8bVar3 && t8bVar3.s);
+                        if (d3 > 0.0f) {
+                            canvas2.save();
+                            rectF.set(childAt.getX(), childAt.getY(), childAt.getX() + childAt.getMeasuredWidth(), childAt.getY() + childAt.getMeasuredHeight());
+                            canvas2.rotate(childAt.getRotation(), rectF.centerX(), rectF.centerY());
+                            int i2 = (int) (d3 * 255.0f);
+                            Paint paint = this.x;
+                            paint.setAlpha(i2);
+                            canvas2.drawRoundRect(rectF, rectF.height() * 0.2f, rectF.height() * 0.2f, paint);
+                            canvas2.restore();
+                        }
+                    }
+                }
+                f = 0.2f;
+                canvas2.restore();
+            } else {
+                canvas2 = canvas;
+                rectF = rectF2;
+                f = 0.2f;
+            }
+            if ((z || d2 > 0.0f) && this.a != null) {
+                Bitmap bitmap = this.G;
+                if (bitmap == null) {
+                    bitmap = ((r58) this).J.getPlayingBitmap();
+                    this.G = bitmap;
+                }
+                if (bitmap != null) {
+                    canvas2.drawColor(aob.p1(d2, 805306368));
+                    canvas2.save();
+                    Path path = this.F;
+                    path.rewind();
+                    rectF.set(this.a.getX(), this.a.getY(), this.a.getX() + this.a.getMeasuredWidth(), this.a.getY() + this.a.getMeasuredHeight());
+                    t8b t8bVar4 = this.a;
+                    float R1 = hl.R1(1.0f, (t8bVar4.y ? t8bVar4.r.a(0.05f) : 1.0f) * 1.05f, d2);
+                    canvas2.scale(R1, R1, rectF.centerX(), rectF.centerY());
+                    canvas2.rotate(this.a.getRotation(), rectF.centerX(), rectF.centerY());
+                    TL_stories.MediaAreaCoordinates mediaAreaCoordinates = this.a.b.coordinates;
+                    float measuredWidth = (mediaAreaCoordinates.flags & 1) != 0 ? (float) ((mediaAreaCoordinates.radius / 100.0d) * r5.getMeasuredWidth()) : r5.getMeasuredHeight() * f;
+                    path.addRoundRect(rectF, measuredWidth, measuredWidth, Path.Direction.CW);
+                    canvas2.clipPath(path);
+                    RectF rectF3 = hl.P;
+                    rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
+                    int width = this.G.getWidth();
+                    int height = this.G.getHeight();
+                    Rect rect = this.s;
+                    rect.set(0, 0, width, height);
+                    canvas2.rotate(-this.a.getRotation(), rectF.centerX(), rectF.centerY());
+                    canvas2.drawBitmap(this.G, rect, rectF3, (Paint) null);
+                    canvas2.restore();
+                    canvas2.save();
+                    canvas2.translate(this.a.getX(), this.a.getY());
+                    canvas2.rotate(this.a.getRotation(), this.a.getPivotX(), this.a.getPivotY());
+                    canvas2.scale(this.a.getScaleX() * R1, this.a.getScaleY() * R1, this.a.getPivotX(), this.a.getPivotY());
+                    this.a.b(canvas2);
+                    canvas2.restore();
+                }
+            } else {
+                Bitmap bitmap2 = this.G;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                    this.G = null;
+                }
+            }
+            invalidate();
+        } else if (view instanceof t8b) {
+            canvas.save();
+            canvas.translate(view.getLeft(), view.getTop());
+            canvas.concat(view.getMatrix());
+            ((t8b) view).a(canvas);
+            canvas.restore();
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    public final void e() {
+        if (this.H) {
+            return;
+        }
+        this.H = true;
+        for (int i = 0; i < getChildCount(); i++) {
+            View childAt = getChildAt(i);
+            if (childAt instanceof t8b) {
+                t8b t8bVar = (t8b) childAt;
+                s8b s8bVar = t8bVar.I;
+                if (t8bVar.w) {
+                    hl.r(s8bVar);
+                    hl.d3(s8bVar, 400L);
+                }
+            }
+        }
+    }
+
+    public Bitmap getPlayingBitmap() {
         return null;
     }
 
-    public final void n(s49 s49Var) {
-        ndc ndcVar = (ndc) ((ps) this.b).get(s49Var);
-        if (ndcVar == null) {
-            return;
-        }
-        ndcVar.a &= -2;
-    }
-
-    public final void o(s49 s49Var) {
-        ps psVar = (ps) this.b;
-        vf6 vf6Var = (vf6) this.c;
-        int m = vf6Var.m() - 1;
-        while (true) {
-            if (m < 0) {
-                break;
-            }
-            if (s49Var == vf6Var.n(m)) {
-                Object[] objArr = vf6Var.c;
-                Object obj = objArr[m];
-                Object obj2 = pad.a;
-                if (obj != obj2) {
-                    objArr[m] = obj2;
-                    vf6Var.a = true;
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0404  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x040f  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0436  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0445  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0461  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0473  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x048e  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0491  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x04f3  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0505  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0476  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x043b  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x0411  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0406  */
+    @Override // android.view.View.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onClick(View view) {
+        boolean z;
+        boolean z2;
+        t8b t8bVar;
+        float f;
+        float f2;
+        ArrayList arrayList;
+        float f3;
+        float f4;
+        boolean z3;
+        if (view instanceof t8b) {
+            float f5 = 2.0f;
+            if (view instanceof aab) {
+                aab aabVar = (aab) view;
+                TL_stories.MediaArea mediaArea = aabVar.b;
+                o68 o68Var = ((r58) this).J;
+                boolean z4 = o68Var.m1;
+                n68 n68Var = o68Var.y1;
+                if (!z4 && n68Var.a != null) {
+                    w49 d = w49.d(mediaArea.reaction);
+                    if (!d.equals(w49.d(n68Var.a.sent_reaction))) {
+                        o68Var.E0(d);
+                    }
                 }
+                aabVar.performHapticFeedback(3);
+                aabVar.L.a.w0(false);
+                tv3 tv3Var = o68Var.U0;
+                Random random = tv3Var.h;
+                FrameLayout frameLayout = tv3Var.H;
+                ArrayList arrayList2 = tv3Var.G;
+                if (arrayList2.size() <= 12) {
+                    w49 d2 = w49.d(mediaArea.reaction);
+                    String str = d2.f;
+                    if (str == null) {
+                        str = r47.U(wl.e(tv3Var.b, d2.g));
+                    }
+                    float measuredHeight = aabVar.getMeasuredHeight();
+                    float measuredWidth = aabVar.getMeasuredWidth();
+                    View view2 = (View) aabVar.getParent();
+                    if (measuredWidth > view2.getWidth() * 0.5f) {
+                        f2 = 0.4f * view2.getWidth();
+                        f = f2;
+                    } else {
+                        f = measuredHeight;
+                        f2 = measuredWidth;
+                    }
+                    String p = tv3.p(str);
+                    int hashCode = aabVar.hashCode();
+                    boolean z5 = aabVar.getTranslationX() > ((float) frameLayout.getMeasuredWidth()) / 2.0f;
+                    if (d2.f != null) {
+                        arrayList = arrayList2;
+                        f3 = f2;
+                        f4 = f;
+                        z3 = z5;
+                        if (tv3Var.d(p, hashCode, null, null, -1, false, false, f2, f, z5)) {
+                            if (arrayList.isEmpty()) {
+                                return;
+                            }
+                            sv3 sv3Var = (sv3) c00.g(1, arrayList);
+                            sv3Var.getClass();
+                            sv3Var.e = f4;
+                            sv3Var.d = f3;
+                            sv3Var.a = aabVar.getTranslationX() - (sv3Var.d / 2.0f);
+                            float translationY = aabVar.getTranslationY();
+                            float f6 = sv3Var.d;
+                            sv3Var.b = translationY - (1.5f * f6);
+                            boolean z6 = sv3Var.m;
+                            float f7 = sv3Var.a;
+                            if (z6) {
+                                sv3Var.a = ((-f6) * 1.8f) + f7;
+                                return;
+                            } else {
+                                sv3Var.a = ((-f6) * 0.2f) + f7;
+                                return;
+                            }
+                        }
+                    } else {
+                        arrayList = arrayList2;
+                        f3 = f2;
+                        f4 = f;
+                        z3 = z5;
+                    }
+                    if (d2.g == 0 || aabVar.getAnimatedEmojiDrawable() == null) {
+                        return;
+                    }
+                    int i = 0;
+                    int i2 = 0;
+                    while (i < arrayList.size()) {
+                        float f8 = f5;
+                        ArrayList arrayList3 = arrayList;
+                        if (((sv3) arrayList.get(i)).k == d2.g) {
+                            i2++;
+                        }
+                        i++;
+                        arrayList = arrayList3;
+                        f5 = f8;
+                    }
+                    ArrayList arrayList4 = arrayList;
+                    float f9 = f5;
+                    if (i2 < 4) {
+                        sv3 sv3Var2 = new sv3();
+                        sv3Var2.j = yl.a(aabVar.getAnimatedEmojiDrawable(), true, true);
+                        if (!sv3Var2.i) {
+                            sv3Var2.f = ((random.nextInt() % 101) / 100.0f) * (f3 / 4.0f);
+                            sv3Var2.g = ((random.nextInt() % 101) / 100.0f) * (f4 / 4.0f);
+                        }
+                        sv3Var2.p = hashCode;
+                        sv3Var2.q = null;
+                        sv3Var2.k = d2.g;
+                        sv3Var2.m = z3;
+                        sv3Var2.e = f4;
+                        sv3Var2.d = f3;
+                        sv3Var2.a = aabVar.getTranslationX() - (sv3Var2.d / f9);
+                        float translationY2 = aabVar.getTranslationY();
+                        float f10 = sv3Var2.d;
+                        sv3Var2.b = translationY2 - (1.5f * f10);
+                        sv3Var2.a = ((-f10) * 1.8f) + sv3Var2.a;
+                        if (tv3Var.n) {
+                            sv3Var2.j.f(frameLayout);
+                        }
+                        arrayList4.add(sv3Var2);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+            if (this.b == view) {
+                hl.d3(new uoa((Object) this, (byte) 29), 200L);
+                TL_stories.MediaArea mediaArea2 = this.b.b;
+                if (mediaArea2 instanceof TL_stories.TL_mediaAreaChannelPost) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).channel_id);
+                    bundle.putInt("message_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).msg_id);
+                    ((r58) this).I.L(new zu1(bundle));
+                    this.b = null;
+                    invalidate();
+                    return;
+                }
+                if (mediaArea2 instanceof TL_stories.TL_mediaAreaUrl) {
+                    m01.u(getContext(), ((TL_stories.TL_mediaAreaUrl) this.b.b).url);
+                    this.b = null;
+                    invalidate();
+                    return;
+                }
+                if (mediaArea2 instanceof TL_stories.TL_mediaAreaStarGift) {
+                    String str2 = ((TL_stories.TL_mediaAreaStarGift) mediaArea2).slug;
+                    m01.u(getContext(), "https://" + uc7.s1(yac.t0).N2 + "/nft/" + str2);
+                    this.b = null;
+                    invalidate();
+                    return;
+                }
+                yq8 yq8Var = new yq8(r5, (byte) 1);
+                yq8Var.w = true;
+                yq8Var.T0 = this.b.b;
+                yq8Var.setResourceProvider(this.n);
+                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                TL_stories.MediaArea mediaArea3 = this.b.b;
+                if (mediaArea3 instanceof TL_stories.TL_mediaAreaVenue) {
+                    TL_stories.TL_mediaAreaVenue tL_mediaAreaVenue = (TL_stories.TL_mediaAreaVenue) mediaArea3;
+                    TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
+                    tL_messageMediaVenue.venue_id = tL_mediaAreaVenue.venue_id;
+                    tL_messageMediaVenue.venue_type = tL_mediaAreaVenue.venue_type;
+                    tL_messageMediaVenue.title = tL_mediaAreaVenue.title;
+                    tL_messageMediaVenue.address = tL_mediaAreaVenue.address;
+                    tL_messageMediaVenue.provider = tL_mediaAreaVenue.provider;
+                    tL_messageMediaVenue.geo = tL_mediaAreaVenue.geo;
+                    tL_message.media = tL_messageMediaVenue;
+                } else if (!(mediaArea3 instanceof TL_stories.TL_mediaAreaGeoPoint)) {
+                    this.b = null;
+                    invalidate();
+                    return;
+                } else {
+                    yq8Var.U0 = true;
+                    TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
+                    tL_messageMediaGeo.geo = ((TL_stories.TL_mediaAreaGeoPoint) mediaArea3).geo;
+                    tL_message.media = tL_messageMediaGeo;
+                }
+                yq8Var.V0 = false;
+                yq8Var.G0(new r47(yac.t0, tL_message, false, false));
+                ((r58) this).I.L(yq8Var);
+                this.b = null;
+                invalidate();
+                return;
+            }
+            t8b t8bVar2 = (t8b) view;
+            this.a = t8bVar2;
+            this.b = t8bVar2;
+            invalidate();
+            kg5 kg5Var = this.c;
+            if (kg5Var != null) {
+                kg5Var.f(true);
+                this.c = null;
+            }
+            kg5 kg5Var2 = new kg5(getContext(), 0);
+            Paint paint = new Paint(1);
+            kg5Var2.c0 = paint;
+            paint.setPathEffect(new CornerPathEffect(kg5Var2.w));
+            hf0 hf0Var = new hf0(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{687865855}), null, new g6(kg5Var2, (byte) 4));
+            kg5Var2.b0 = hf0Var;
+            hf0Var.setCallback(kg5Var2);
+            kg5Var2.o(0.0f, this.b.getTranslationX() - hl.L(8.0f));
+            kg5Var2.d = 5000L;
+            this.c = kg5Var2;
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            TL_stories.MediaArea mediaArea4 = this.b.b;
+            if (mediaArea4 instanceof TL_stories.TL_mediaAreaChannelPost) {
+                spannableStringBuilder.append((CharSequence) ob6.M0(2131744101, null));
+            } else if (mediaArea4 instanceof TL_stories.TL_mediaAreaStarGift) {
+                spannableStringBuilder.append((CharSequence) ob6.M0(2131744103, null));
             } else {
-                m--;
+                if (mediaArea4 instanceof TL_stories.TL_mediaAreaUrl) {
+                    kg5Var2.p(true);
+                    spannableStringBuilder.append((CharSequence) ob6.M0(2131744247, null));
+                    spannableStringBuilder.append((CharSequence) "\n");
+                    TL_stories.TL_mediaAreaUrl tL_mediaAreaUrl = (TL_stories.TL_mediaAreaUrl) this.b.b;
+                    int length = spannableStringBuilder.length();
+                    spannableStringBuilder.append(TextUtils.ellipsize(tL_mediaAreaUrl.url, this.c.getTextPaint(), hl.q.x * 0.6f, TextUtils.TruncateAt.END));
+                    spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85f), length, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new ForegroundColorSpan(aob.p1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new qc8((byte) 1), length, spannableStringBuilder.length(), 33);
+                    kg5Var2.m(11.0f, 7.0f, 11.0f, 7.0f);
+                    z = true;
+                    SpannableString spannableString = new SpannableString(">");
+                    wm2 wm2Var = new wm2(R.drawable.photos_arrow, 0);
+                    float L = hl.L(!z ? 1.0f : 2.0f);
+                    float L2 = hl.L(!z ? 0.0f : 1.0f);
+                    wm2Var.r = L;
+                    wm2Var.s = L2;
+                    spannableString.setSpan(wm2Var, 0, spannableString.length(), 33);
+                    SpannableString spannableString2 = new SpannableString("<");
+                    wm2 wm2Var2 = new wm2(R.drawable.attach_arrow_right, 0);
+                    float L3 = hl.L(!z ? -1.0f : -2.0f);
+                    float L4 = hl.L(z ? 0.0f : 1.0f);
+                    wm2Var2.r = L3;
+                    wm2Var2.s = L4;
+                    wm2Var2.I = -1.0f;
+                    wm2Var2.J = 1.0f;
+                    spannableString2.setSpan(wm2Var2, 0, spannableString2.length(), 33);
+                    if (hl.J1(spannableStringBuilder)) {
+                        spannableString = spannableString2;
+                    }
+                    hl.G2(spannableStringBuilder, spannableString, ">");
+                    kg5Var2.t(spannableStringBuilder);
+                    kg5Var2.r0 = new z3b(this, kg5Var2, (byte) 24);
+                    float f11 = !z ? 100 : 50;
+                    z2 = this.b.getTranslationY() - ((float) hl.L(f11)) < ((float) hl.L(100.0f));
+                    kg5Var2.a = z2 ? (byte) 1 : (byte) 3;
+                    t8bVar = this.b;
+                    if ((t8bVar.b instanceof TL_stories.TL_mediaAreaChannelPost) || (!z2 ? (t8bVar.getTranslationY() - (this.b.getMeasuredHeight() / 2.0f)) - hl.L(f11) < hl.L(120.0f) : (this.b.getMeasuredHeight() / 2.0f) + t8bVar.getTranslationY() > getMeasuredHeight() - hl.L(120.0f))) {
+                        t8b t8bVar3 = this.b;
+                        if (z2) {
+                            kg5Var2.setTranslationY((t8bVar3.getTranslationY() - (this.b.getMeasuredHeight() / 2.0f)) - hl.L(f11));
+                        } else {
+                            kg5Var2.setTranslationY((this.b.getMeasuredHeight() / 2.0f) + t8bVar3.getTranslationY());
+                        }
+                    } else {
+                        kg5Var2.setTranslationY(this.b.getTranslationY() - (this.b.getMeasuredHeight() / 3.0f));
+                    }
+                    kg5Var2.setOnClickListener(new kla(this, (byte) 14));
+                    kg5Var2.setPadding(hl.L(8.0f), hl.L(8.0f), hl.L(8.0f), hl.L(8.0f));
+                    this.d.addView(kg5Var2, tre.c(f11, -1));
+                    kg5Var2.v();
+                    b(true);
+                }
+                spannableStringBuilder.append((CharSequence) ob6.M0(2131744102, null));
+            }
+            z = false;
+            SpannableString spannableString3 = new SpannableString(">");
+            wm2 wm2Var3 = new wm2(R.drawable.photos_arrow, 0);
+            float L5 = hl.L(!z ? 1.0f : 2.0f);
+            float L22 = hl.L(!z ? 0.0f : 1.0f);
+            wm2Var3.r = L5;
+            wm2Var3.s = L22;
+            spannableString3.setSpan(wm2Var3, 0, spannableString3.length(), 33);
+            SpannableString spannableString22 = new SpannableString("<");
+            wm2 wm2Var22 = new wm2(R.drawable.attach_arrow_right, 0);
+            float L32 = hl.L(!z ? -1.0f : -2.0f);
+            float L42 = hl.L(z ? 0.0f : 1.0f);
+            wm2Var22.r = L32;
+            wm2Var22.s = L42;
+            wm2Var22.I = -1.0f;
+            wm2Var22.J = 1.0f;
+            spannableString22.setSpan(wm2Var22, 0, spannableString22.length(), 33);
+            if (hl.J1(spannableStringBuilder)) {
+            }
+            hl.G2(spannableStringBuilder, spannableString3, ">");
+            kg5Var2.t(spannableStringBuilder);
+            kg5Var2.r0 = new z3b(this, kg5Var2, (byte) 24);
+            float f112 = !z ? 100 : 50;
+            if (this.b.getTranslationY() - ((float) hl.L(f112)) < ((float) hl.L(100.0f))) {
+            }
+            kg5Var2.a = z2 ? (byte) 1 : (byte) 3;
+            t8bVar = this.b;
+            if (t8bVar.b instanceof TL_stories.TL_mediaAreaChannelPost) {
+            }
+            t8b t8bVar32 = this.b;
+            if (z2) {
+            }
+            kg5Var2.setOnClickListener(new kla(this, (byte) 14));
+            kg5Var2.setPadding(hl.L(8.0f), hl.L(8.0f), hl.L(8.0f), hl.L(8.0f));
+            this.d.addView(kg5Var2, tre.c(f112, -1));
+            kg5Var2.v();
+            b(true);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Bitmap bitmap = this.G;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.G = null;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        for (int i5 = 0; i5 < getChildCount(); i5++) {
+            View childAt = getChildAt(i5);
+            if (childAt == this.d) {
+                childAt.layout(0, 0, i3 - i, i4 - i2);
+            } else if (childAt instanceof t8b) {
+                t8b t8bVar = (t8b) childAt;
+                TL_stories.MediaArea mediaArea = t8bVar.b;
+                int measuredWidth = t8bVar.getMeasuredWidth();
+                int measuredHeight = t8bVar.getMeasuredHeight();
+                t8bVar.layout((-measuredWidth) / 2, (-measuredHeight) / 2, measuredWidth / 2, measuredHeight / 2);
+                t8bVar.setTranslationX((float) ((mediaArea.coordinates.x / 100.0d) * getMeasuredWidth()));
+                t8bVar.setTranslationY((float) ((mediaArea.coordinates.y / 100.0d) * getMeasuredHeight()));
+                t8bVar.setRotation((float) mediaArea.coordinates.rotation);
+            } else if (childAt instanceof u8b) {
+                u8b u8bVar = (u8b) childAt;
+                TL_stories.MediaArea mediaArea2 = u8bVar.a;
+                int measuredWidth2 = u8bVar.getMeasuredWidth();
+                int measuredHeight2 = u8bVar.getMeasuredHeight();
+                u8bVar.layout((-measuredWidth2) / 2, (-measuredHeight2) / 2, measuredWidth2 / 2, measuredHeight2 / 2);
+                u8bVar.setTranslationX((float) ((mediaArea2.coordinates.x / 100.0d) * getMeasuredWidth()));
+                u8bVar.setTranslationY((float) ((mediaArea2.coordinates.y / 100.0d) * getMeasuredHeight()));
+                u8bVar.setRotation((float) mediaArea2.coordinates.rotation);
             }
         }
-        ndc ndcVar = (ndc) psVar.get(s49Var);
-        if (ndcVar != null) {
-            psVar.remove(s49Var);
-            ndcVar.a = 0;
-            ndcVar.b = null;
-            ndcVar.c = null;
-            ndc.d.o0(ndcVar);
-        }
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public final void onComplete(Task task) {
-        switch (this.a) {
-            case 8:
-                hzc hzcVar = (hzc) this.b;
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
-                synchronized (hzcVar.f) {
-                    hzcVar.e.remove(taskCompletionSource);
-                }
-                return;
-            default:
-                ((Map) ((aec) this.c).c).remove((TaskCompletionSource) this.b);
-                return;
-        }
-    }
-
-    public final void p(Object obj) {
-        Handler handler = (Handler) this.b;
-        if (handler != null) {
-            handler.post(new d2b((Object) this, obj, SystemClock.elapsedRealtime(), (byte) 13));
-        }
-    }
-
-    public final void q(icc iccVar) {
-        Handler handler = (Handler) this.b;
-        if (handler != null) {
-            handler.post(new l3c(this, iccVar, (byte) 21));
-        }
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 7:
-                return "Bounds{lower=" + ((io5) this.b) + " upper=" + ((io5) this.c) + "}";
-            default:
-                return super.toString();
-        }
-    }
-
-    @Override // g8d
-    public final Object zzp() {
-        g6d g6dVar = (g6d) this.b;
-        p5d p5dVar = (p5d) this.c;
-        p5dVar.getClass();
-        Map a = g6d.e() ? ((Boolean) g6d.c(new ss2("gms:phenotype:phenotype_flag:debug_disable_caching"))).booleanValue() : false ? p5dVar.a() : p5dVar.e;
-        if (a == null) {
-            synchronized (p5dVar.d) {
-                HashMap hashMap = p5dVar.e;
-                a = hashMap;
-                if (hashMap == null) {
-                    HashMap a2 = p5dVar.a();
-                    p5dVar.e = a2;
-                    a = a2;
-                }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        int size = View.MeasureSpec.getSize(i);
+        int size2 = View.MeasureSpec.getSize(i2);
+        for (int i3 = 0; i3 < getChildCount(); i3++) {
+            View childAt = getChildAt(i3);
+            FrameLayout frameLayout = this.d;
+            if (childAt == frameLayout) {
+                frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+            } else if (childAt instanceof t8b) {
+                t8b t8bVar = (t8b) getChildAt(i3);
+                t8bVar.measure(View.MeasureSpec.makeMeasureSpec((int) Math.ceil((t8bVar.b.coordinates.w / 100.0d) * size), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.ceil((t8bVar.b.coordinates.h / 100.0d) * size2), TLObject.FLAG_30));
+            } else if (childAt instanceof u8b) {
+                u8b u8bVar = (u8b) getChildAt(i3);
+                u8bVar.measure(View.MeasureSpec.makeMeasureSpec((int) Math.ceil((u8bVar.a.coordinates.w / 100.0d) * size), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.ceil((u8bVar.a.coordinates.h / 100.0d) * size2), TLObject.FLAG_30));
             }
         }
-        if (a == null) {
-            a = Collections.EMPTY_MAP;
+        setMeasuredDimension(size, size2);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        kg5 kg5Var;
+        if (getChildCount() == 0 || (kg5Var = this.c) == null || !kg5Var.W) {
+            return false;
         }
-        return (String) a.get(g6dVar.b);
-    }
-
-    @Override // ru9
-    public final void c(uob uobVar, l74 l74Var, l2c l2cVar) {
-    }
-
-    public v8b(Context context) {
-        this.a = (byte) 15;
-        this.b = context;
-    }
-
-    public /* synthetic */ v8b(Object obj, Object obj2, byte b) {
-        this.a = b;
-        this.c = obj;
-        this.b = obj2;
-    }
-
-    public /* synthetic */ v8b(Object obj, Object obj2, boolean z, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = obj2;
-    }
-
-    public /* synthetic */ v8b(String str, List list) {
-        this.a = (byte) 21;
-        this.b = str;
-        this.c = list;
-    }
-
-    public v8b(aec aecVar, TaskCompletionSource taskCompletionSource) {
-        this.a = (byte) 11;
-        this.b = taskCompletionSource;
-        Objects.requireNonNull(aecVar);
-        this.c = aecVar;
-    }
-
-    public v8b(vsc vscVar) {
-        this.a = (byte) 19;
-        this.b = vscVar == null ? null : vscVar.b;
-    }
-
-    public v8b(byte b) {
-        this.a = b;
-        switch (b) {
-            case 16:
-                this.b = new ConcurrentHashMap(16, 0.75f, 10);
-                this.c = new ReferenceQueue();
-                break;
-            default:
-                this.b = new ps(0);
-                this.c = new vf6();
-                break;
+        if (motionEvent.getAction() == 1) {
+            kg5 kg5Var2 = this.c;
+            if (kg5Var2 != null) {
+                kg5Var2.f(true);
+                this.c = null;
+            }
+            this.b = null;
+            invalidate();
+            b(false);
         }
-    }
-
-    public v8b(Handler handler, xbc xbcVar) {
-        this.a = (byte) 3;
-        if (xbcVar != null) {
-            handler.getClass();
-        } else {
-            handler = null;
-        }
-        this.b = handler;
-        this.c = xbcVar;
-    }
-
-    public v8b(gjc gjcVar) {
-        this.a = (byte) 5;
-        this.c = gjcVar;
-    }
-
-    public v8b(j2c j2cVar) {
-        this.a = (byte) 2;
-        this.c = j2cVar;
-        this.b = new qd1(4, new byte[4]);
-    }
-
-    public /* synthetic */ v8b(byte b, boolean z) {
-        this.a = b;
+        super.onTouchEvent(motionEvent);
+        return true;
     }
 }

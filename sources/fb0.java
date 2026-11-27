@@ -1,53 +1,21 @@
 // default package
 
 import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class fb0 extends tx9 {
-    public boolean f2;
-    public final /* synthetic */ mb0 g2;
+public final class fb0 extends nb0 {
+    public final /* synthetic */ eb0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fb0(mb0 mb0Var, mb0 mb0Var2, Activity activity, int i) {
-        super(mb0Var2, activity, false, null, 4, true, null, 16, i);
-        this.g2 = mb0Var;
-        this.f2 = true;
+    public fb0(ob0 ob0Var, Activity activity, eb0 eb0Var) {
+        super(ob0Var, activity);
+        this.H = eb0Var;
     }
 
-    @Override // tx9
-    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i;
-        TLRPC.TL_emojiList tL_emojiList;
-        boolean z;
-        int i2;
-        boolean z2 = this.S;
-        mb0 mb0Var = this.g2;
-        if (z2) {
-            i2 = ((d) mb0Var).currentAccount;
-            tL_emojiList = hq6.d0(i2).M1;
-        } else {
-            i = ((d) mb0Var).currentAccount;
-            tL_emojiList = hq6.d0(i).N1;
-        }
-        if (tL_emojiList != null) {
-            z = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l != null ? l.longValue() : 0L));
-        } else {
-            z = false;
-        }
-        mb0Var.l0(z, l != null ? l.longValue() : 0L, document);
-    }
-
-    @Override // tx9, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (this.f2) {
-            this.f2 = false;
-            this.g2.b.r(null);
-        }
+    @Override // nb0, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.H.invalidate();
     }
 }

@@ -1,62 +1,55 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class xa extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final ImageView c;
-    public final Paint d;
-    public boolean e;
+public final class xa extends a8c {
+    public static final /* synthetic */ int b = 0;
 
-    public xa(Context context) {
-        super(context);
-        this.d = new Paint(1);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.menu_clear_recent);
-        addView(imageView, nme.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 16.0f);
-        addView(textView, nme.d(-1, -2.0f, 19, 64.0f, 8.0f, 64.0f, 8.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        imageView2.setScaleType(scaleType);
-        imageView2.setImageResource(R.drawable.menu_browser_arrowup);
-        addView(imageView2, nme.d(32, 32.0f, 21, 8.0f, 8.0f, 10.0f, 8.0f));
+    static {
+        a8c.h(new xa());
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e) {
-            canvas.drawRect(gl.L(64.0f), getHeight() - Math.max(gl.L(0.66f), 1), getWidth(), getHeight(), this.d);
+    @Override // a8c
+    public final void b(View view, b8c b8cVar, boolean z, l9c l9cVar, q9c q9cVar) {
+        ya yaVar = (ya) view;
+        if (b8cVar.H == null) {
+            yaVar.setAsShowMore((fb) b8cVar.I);
+            return;
         }
+        int i = b8cVar.A;
+        String charSequence = b8cVar.m.toString();
+        View.OnClickListener onClickListener = b8cVar.E;
+        fb fbVar = (fb) b8cVar.I;
+        ImageView imageView = yaVar.a;
+        imageView.setVisibility(0);
+        int i2 = fbVar.G;
+        int i3 = fbVar.I;
+        TextView textView = yaVar.b;
+        textView.setTextColor(i3);
+        int p1 = aob.p1(0.6f, i3);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(p1, mode));
+        ImageView imageView2 = yaVar.c;
+        imageView2.setColorFilter(new PorterDuffColorFilter(aob.p1(0.6f, i3), mode));
+        imageView2.setBackground(aob.Z(0, aob.p1(0.15f, i3), hl.L(4.0f), hl.L(4.0f)));
+        imageView.setImageResource(i == 0 ? R.drawable.msg_clear_recent : R.drawable.msg_search);
+        textView.setText(charSequence);
+        imageView2.setOnClickListener(onClickListener);
+        yaVar.d.setColor(aob.p1(0.1f, fbVar.I));
+        yaVar.e = z;
+        yaVar.setWillNotDraw(!z);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), i2);
-    }
-
-    public void setAsShowMore(eb ebVar) {
-        ImageView imageView = this.a;
-        imageView.setImageResource(R.drawable.arrow_more);
-        imageView.setColorFilter(new PorterDuffColorFilter(ebVar.I, PorterDuff.Mode.SRC_IN));
+    @Override // a8c
+    public final View d(Context context, d79 d79Var, int i, vnb vnbVar) {
+        return new ya(context);
     }
 }

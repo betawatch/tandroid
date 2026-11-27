@@ -1,91 +1,65 @@
 // default package
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.os.SystemClock;
-import android.view.TextureView;
-import android.view.View;
-import org.telegram.ui.Components.q;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class ro5 extends TextureView {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class ro5 implements Serializable {
+    public static final ro5 c = new ro5(0, new long[0]);
+    public final long[] a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ro5(byte b, Context context, Object obj) {
-        super(context);
-        this.a = b;
-        this.b = obj;
+    public ro5(int i, long[] jArr) {
+        this.a = jArr;
+        this.b = i;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        tl9 tl9Var;
-        switch (this.a) {
-            case 0:
-                q qVar = (q) this.b;
-                if (!qVar.K0 && (tl9Var = qVar.S) != null && tl9Var.a == 3) {
-                    qVar.K0 = true;
-                    try {
-                        qVar.I0 = SystemClock.elapsedRealtimeNanos();
-                        qVar.B();
-                    } finally {
-                        qVar.K0 = false;
+    public final long a(int i) {
+        yve.j(i, this.b);
+        return this.a[i];
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof ro5) {
+            ro5 ro5Var = (ro5) obj;
+            int i = ro5Var.b;
+            int i2 = this.b;
+            if (i2 == i) {
+                for (int i3 = 0; i3 < i2; i3++) {
+                    if (a(i3) == ro5Var.a(i3)) {
                     }
                 }
-                super.invalidate();
-                return;
-            default:
-                super.invalidate();
-                return;
+                return true;
+            }
         }
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i, int i2) {
-        switch (this.a) {
-            case 1:
-                View.MeasureSpec.getSize(i);
-                super.onMeasure(i, i2);
-                break;
-            case 2:
-                pla plaVar = (pla) this.b;
-                setMeasuredDimension(plaVar.g, plaVar.h);
-                break;
-            default:
-                super.onMeasure(i, i2);
-                break;
+    public final int hashCode() {
+        int i = 1;
+        for (int i2 = 0; i2 < this.b; i2++) {
+            i = (i * 31) + tse.b(this.a[i2]);
         }
+        return i;
     }
 
-    @Override // android.view.TextureView
-    public final void setTransform(Matrix matrix) {
-        switch (this.a) {
-            case 1:
-                super.setTransform(matrix);
-                td4 td4Var = ((l58) this.b).m0;
-                if (td4Var != null) {
-                    int width = getWidth();
-                    int height = getHeight();
-                    xl0 xl0Var = td4Var.J;
-                    if (xl0Var != null) {
-                        Matrix matrix2 = xl0Var.v;
-                        matrix.invert(matrix2);
-                        float f = width;
-                        float f2 = height;
-                        matrix2.preScale(f, f2);
-                        matrix2.postScale(1.0f / f, 1.0f / f2);
-                        xl0Var.c(matrix2);
-                        td4Var.b(false, false, false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.setTransform(matrix);
-                break;
+    public final String toString() {
+        int i = this.b;
+        if (i == 0) {
+            return "[]";
         }
+        StringBuilder sb = new StringBuilder(i * 5);
+        sb.append('[');
+        long[] jArr = this.a;
+        sb.append(jArr[0]);
+        for (int i2 = 1; i2 < i; i2++) {
+            sb.append(", ");
+            sb.append(jArr[i2]);
+        }
+        sb.append(']');
+        return sb.toString();
     }
 }

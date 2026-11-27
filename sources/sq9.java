@@ -1,98 +1,38 @@
 // default package
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class sq9 extends Drawable {
-    public int a = kk7.d4;
-    public final /* synthetic */ b46 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ gb2 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+public final /* synthetic */ class sq9 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ id b;
 
-    public sq9(b46 b46Var, int[] iArr, gb2 gb2Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = b46Var;
-        this.c = iArr;
-        this.d = gb2Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
+    public /* synthetic */ sq9(id idVar, byte b) {
+        this.a = b;
+        this.b = idVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
-            return;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        byte b = this.a;
+        id idVar = this.b;
+        switch (b) {
+            case 0:
+                hl.t1(textView);
+                View c = idVar.c(-1);
+                if (c != null) {
+                    c.callOnClick();
+                }
+                return false;
+            default:
+                if (i != 6) {
+                    return false;
+                }
+                idVar.c(-1).callOnClick();
+                return true;
         }
-        RectF rectF = gl.P;
-        rectF.set(getBounds());
-        float f = rectF.left;
-        CornerPathEffect cornerPathEffect = b46.w;
-        rectF.left = f - (gl.L(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        b46 b46Var = this.b;
-        gb2 gb2Var = this.d;
-        if (gb2Var == null || !gb2Var.L0()) {
-            canvas.drawPath(b46Var, this.i);
-        } else {
-            m17 m17Var = gb2Var.L6;
-            if (m17Var == null || m17Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], gb2Var.getPaddingTop() + iArr2[1]);
-                gb2Var.M0(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - gb2Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
-            } else {
-                canvas.save();
-                gb2Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -gb2Var.L6.r);
-                canvas.drawPaint(gb2Var.L6.c);
-                canvas.restore();
-            }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
-            }
-        }
-        canvas.clipPath(b46Var);
-        this.j.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i) {
-        this.a = i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

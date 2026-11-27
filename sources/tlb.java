@@ -1,36 +1,87 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public final class tlb extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Rect b;
-    public final /* synthetic */ qmb c;
+    public final TextView a;
+    public final TextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tlb(qmb qmbVar, Context context, int i, Rect rect) {
+    public tlb(Context context) {
         super(context);
-        this.c = qmbVar;
-        this.a = i;
-        this.b = rect;
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ik8.w(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        textView.setGravity((ob6.a0 ? 5 : 3) | 16);
+        addView(textView, tre.d(-2, -1.0f, (ob6.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 16.0f);
+        textView2.setTypeface(hl.o());
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(truncateAt);
+        textView2.setGravity((ob6.a0 ? 3 : 5) | 16);
+        addView(textView2, tre.d(-2, -1.0f, (ob6.a0 ? 3 : 5) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        qmb qmbVar = this.c;
-        Drawable drawable = qmbVar.r;
-        Rect rect = this.b;
-        if (this.a == 0) {
-            drawable.setBounds(qmbVar.X.getLeft() - rect.left, 0, qmbVar.X.getRight() + rect.right, getMeasuredHeight());
+    public final void a(String str, String str2, boolean z) {
+        TextView textView = this.a;
+        textView.setText(str);
+        TextView textView2 = this.b;
+        if (str2 != null) {
+            textView2.setText(str2);
+            textView2.setVisibility(0);
         } else {
-            drawable.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
+            textView2.setVisibility(4);
         }
-        qmbVar.r.draw(canvas);
+        if (z) {
+            int i = aob.G6;
+            setTag(Integer.valueOf(i));
+            yob.X(textView, i, null);
+            yob.X(textView2, i, null);
+            textView.setTypeface(hl.o());
+            textView2.setTypeface(hl.o());
+        } else {
+            int i2 = aob.z6;
+            setTag(Integer.valueOf(i2));
+            yob.X(textView, i2, null);
+            yob.X(textView2, i2, null);
+            Typeface typeface = Typeface.DEFAULT;
+            textView.setTypeface(typeface);
+            textView2.setTypeface(typeface);
+        }
+        requestLayout();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), hl.L(40.0f));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - hl.L(34.0f);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth / 2, TLObject.FLAG_31);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
+        TextView textView = this.b;
+        textView.measure(makeMeasureSpec, makeMeasureSpec2);
+        this.a.measure(View.MeasureSpec.makeMeasureSpec((measuredWidth - textView.getMeasuredWidth()) - hl.L(8.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    }
+
+    public void setTextColor(int i) {
+        this.a.setTextColor(i);
+    }
+
+    public void setTextValueColor(int i) {
+        this.b.setTextColor(i);
     }
 }

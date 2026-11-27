@@ -1,38 +1,87 @@
 // default package
 
-import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ai8 extends tx9 {
-    public final /* synthetic */ w77 f2;
-    public final /* synthetic */ kx9[] g2;
-    public final /* synthetic */ PremiumPreviewFragment h2;
+public final class ai8 extends lh8 {
+    public final hn d;
+    public final g29 e;
+    public final fm0 f;
+    public float h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai8(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i, wjb wjbVar, int i2, w77 w77Var, kx9[] kx9VarArr) {
-        super(premiumPreviewFragment2, activity, true, num, i, true, wjbVar, i2);
-        this.h2 = premiumPreviewFragment;
-        this.f2 = w77Var;
-        this.g2 = kx9VarArr;
-    }
-
-    @Override // tx9
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // tx9
-    public final void o(View view, Long l, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.f2.a(l, num);
-        kx9 kx9Var = this.g2[0];
-        if (kx9Var != null) {
-            this.h2.v0 = null;
-            kx9Var.dismiss();
+    public ai8(View view, vnb vnbVar) {
+        super(vnbVar);
+        g29 g29Var = new g29(view);
+        this.e = g29Var;
+        g29Var.d(null, true, false);
+        g29Var.t = 650.0f;
+        g29Var.e(false, 0.69f);
+        g29Var.p.setStrokeWidth(hl.L(1.5f));
+        this.f = new fm0(260L, view, k43.h);
+        hn hnVar = new hn(true, false, false);
+        this.d = hnVar;
+        hnVar.x(hl.o());
+        hnVar.w(hl.L(13.0f));
+        hnVar.b = 17;
+        int v0 = aob.v0(aob.i6, vnbVar);
+        if (this.b != v0) {
+            aob.F1(this.a, v0, false);
+            this.b = v0;
         }
+    }
+
+    @Override // lh8
+    public final void a(int i) {
+        this.a.setAlpha(i);
+        this.d.C = i;
+    }
+
+    public final float b() {
+        return this.f.e;
+    }
+
+    public final void c(int i) {
+        this.d.u(i);
+        this.e.o = i;
+    }
+
+    public final void d(float f) {
+        if (this.h != f) {
+            this.h = f;
+            Rect bounds = getBounds();
+            int i = (int) this.h;
+            this.d.setBounds(bounds.left, bounds.top + i, bounds.right, bounds.bottom + i);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f = this.f.e;
+        if (f < 1.0f) {
+            br3.b(canvas, this.d, 1.0f - f);
+        }
+        if (f > 0.0f) {
+            float exactCenterX = getBounds().exactCenterX();
+            float exactCenterY = getBounds().exactCenterY();
+            canvas.save();
+            canvas.scale(f, f, exactCenterX, exactCenterY);
+            this.e.a(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // lh8, android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        Rect bounds = getBounds();
+        int i = (int) this.h;
+        this.d.setBounds(bounds.left, bounds.top + i, bounds.right, bounds.bottom + i);
+        int L = hl.L(11.0f);
+        int centerX = rect.centerX();
+        int centerY = rect.centerY();
+        this.e.f(centerX - L, centerY - L, centerX + L, centerY + L);
     }
 }

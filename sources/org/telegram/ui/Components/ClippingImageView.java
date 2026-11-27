@@ -13,7 +13,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
 public class ClippingImageView extends View {
     public static final float[] R = new float[8];
@@ -40,7 +40,7 @@ public class ClippingImageView extends View {
     public int n;
     public final RectF r;
     public final Paint s;
-    public jl5 w;
+    public mn5 w;
     public final Matrix x;
     public boolean y;
 
@@ -64,14 +64,14 @@ public class ClippingImageView extends View {
     }
 
     public Bitmap getBitmap() {
-        jl5 jl5Var = this.w;
-        if (jl5Var != null) {
-            return jl5Var.c;
+        mn5 mn5Var = this.w;
+        if (mn5Var != null) {
+            return mn5Var.c;
         }
         return null;
     }
 
-    public jl5 getBitmapHolder() {
+    public mn5 getBitmapHolder() {
         return this.w;
     }
 
@@ -120,14 +120,14 @@ public class ClippingImageView extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        jl5 jl5Var;
+        mn5 mn5Var;
         Bitmap bitmap;
         float height;
         float width;
         float height2;
         boolean z;
         float[] fArr;
-        if (getVisibility() != 0 || (jl5Var = this.w) == null || (bitmap = jl5Var.c) == null || bitmap.isRecycled()) {
+        if (getVisibility() != 0 || (mn5Var = this.w) == null || (bitmap = mn5Var.c) == null || bitmap.isRecycled()) {
             return;
         }
         float scaleY = getScaleY();
@@ -144,7 +144,7 @@ public class ClippingImageView extends View {
             rectF.set(0.0f, 0.0f, bitmap2 != null ? bitmap2.getWidth() : 0, this.w.c != null ? r14.getHeight() : 0);
             int i2 = this.e;
             int i3 = this.f;
-            Typeface typeface = gl.a;
+            Typeface typeface = hl.a;
             if (i2 == 90 || i2 == 270) {
                 height = rectF2.height() / rectF.width();
                 width = rectF2.width();
@@ -254,7 +254,7 @@ public class ClippingImageView extends View {
             try {
                 canvas.drawBitmap(this.w.c, matrix2, this.s);
             } catch (Exception e) {
-                fa4.g(e, true);
+                cc4.g(e, true);
             }
         }
         canvas.restore();
@@ -356,20 +356,20 @@ public class ClippingImageView extends View {
         invalidate();
     }
 
-    public void setImageBitmap(jl5 jl5Var) {
+    public void setImageBitmap(mn5 mn5Var) {
         Bitmap bitmap;
         Bitmap bitmap2;
-        jl5 jl5Var2 = this.w;
-        if (jl5Var2 != null) {
-            jl5Var2.a();
+        mn5 mn5Var2 = this.w;
+        if (mn5Var2 != null) {
+            mn5Var2.a();
             this.F = null;
         }
-        if (jl5Var != null && ((bitmap2 = jl5Var.c) == null || bitmap2.isRecycled())) {
-            jl5Var = null;
+        if (mn5Var != null && ((bitmap2 = mn5Var.c) == null || bitmap2.isRecycled())) {
+            mn5Var = null;
         }
-        this.w = jl5Var;
-        if (jl5Var != null && (bitmap = jl5Var.c) != null) {
-            this.I.set(0.0f, 0.0f, bitmap != null ? bitmap.getWidth() : 0, jl5Var.c != null ? r4.getHeight() : 0);
+        this.w = mn5Var;
+        if (mn5Var != null && (bitmap = mn5Var.c) != null) {
+            this.I.set(0.0f, 0.0f, bitmap != null ? bitmap.getWidth() : 0, mn5Var.c != null ? r4.getHeight() : 0);
             Bitmap bitmap3 = this.w.c;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);

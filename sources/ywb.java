@@ -1,184 +1,101 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ywb extends q5c {
-    public final xl3 n3;
-    public final lm o3;
-    public final lm p3;
-    public final RectF q3;
-    public final Paint r3;
-    public final lm s3;
-    public Drawable t3;
-    public int u3;
-    public final Paint v3;
-    public final /* synthetic */ kxb w3;
+public final /* synthetic */ class ywb implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ zwb b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ywb(kxb kxbVar, Activity activity, int i, swb swbVar, twb twbVar, twb twbVar2, wjb wjbVar) {
-        super(activity, i, 0, false, swbVar, twbVar, twbVar2, wjbVar);
-        this.w3 = kxbVar;
-        this.n3 = new xl3((byte) 7);
-        s33 s33Var = s33.h;
-        this.o3 = new lm(320L, this, s33Var);
-        this.p3 = new lm(320L, this, s33Var);
-        this.q3 = new RectF();
-        this.r3 = new Paint(1);
-        this.s3 = new lm(420L, this, s33Var);
-        this.v3 = new Paint(1);
+    public /* synthetic */ ywb(zwb zwbVar, String str, int i, byte b) {
+        this.a = b;
+        this.b = zwbVar;
+        this.c = str;
+        this.d = i;
     }
 
-    @Override // o39
-    public final Integer W0(int i) {
-        return 0;
-    }
-
-    @Override // q5c, o39, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        float f;
-        float f2;
-        float f3;
-        int i;
-        boolean z;
-        float d = this.o3.d(canScrollHorizontally(-1));
-        float d2 = this.p3.d(canScrollHorizontally(1));
-        int i2 = (d > 0.0f ? 1 : (d == 0.0f ? 0 : -1));
-        boolean z2 = i2 > 0 || d2 > 0.0f;
-        if (z2) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), kk7.d4, 31);
-        } else {
-            canvas2 = canvas;
-        }
-        float width = getWidth();
-        float f4 = 0.0f;
-        for (int i3 = 0; i3 < getChildCount(); i3++) {
-            View childAt = getChildAt(i3);
-            if (childAt instanceof fxb) {
-                fxb fxbVar = (fxb) childAt;
-                if (fxbVar.s) {
-                    if (width > fxbVar.getX()) {
-                        width = fxbVar.getX();
-                        RecyclerView.R(fxbVar);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0097 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00a6 A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                zwb zwbVar = this.b;
+                String str = this.c;
+                int i = this.d;
+                zwbVar.getClass();
+                Utilities.g.c(new ywb(zwbVar, str, i, (byte) 1));
+                break;
+            default:
+                zwb zwbVar2 = this.b;
+                String str2 = this.c;
+                int i2 = this.d;
+                axb axbVar = zwbVar2.h;
+                ArrayList arrayList = axbVar.f;
+                String lowerCase = str2.trim().toLowerCase();
+                String str3 = null;
+                if (lowerCase.length() == 0) {
+                    hl.c3(new efa((Object) zwbVar2, i2, (Object) str3, (Object) str3, (byte) 13));
+                    break;
+                } else {
+                    boolean z = false;
+                    String S0 = ob6.D0().S0(lowerCase, true, false);
+                    if (!lowerCase.equals(S0) && S0.length() != 0) {
+                        str3 = S0;
                     }
-                    if (f4 < fxbVar.getX() + fxbVar.getWidth()) {
-                        f4 = fxbVar.getX() + fxbVar.getWidth();
-                        RecyclerView.R(fxbVar);
+                    int i3 = (str3 != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i3];
+                    strArr[0] = lowerCase;
+                    if (str3 != null) {
+                        strArr[1] = str3;
                     }
+                    ArrayList arrayList2 = new ArrayList();
+                    ArrayList arrayList3 = new ArrayList();
+                    int i4 = 0;
+                    while (i4 < arrayList.size()) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i4);
+                        int i5 = z ? 1 : 0;
+                        int i6 = i5;
+                        boolean z2 = z;
+                        while (true) {
+                            if (i5 >= 2) {
+                                break;
+                            }
+                            String K = i5 == 0 ? chat.title : xc2.K(chat, z2);
+                            if (K != null) {
+                                String lowerCase2 = K.toLowerCase();
+                                for (int i7 = z2; i7 < i3; i7++) {
+                                    String str4 = strArr[i7];
+                                    if (lowerCase2.startsWith(str4) || uh9.t(" ", str4, lowerCase2)) {
+                                        i6 = 1;
+                                        if (i6 == 0) {
+                                            arrayList2.add(chat);
+                                            arrayList3.add((String) axbVar.h.get(i4));
+                                        }
+                                    }
+                                }
+                                if (i6 == 0) {
+                                }
+                            }
+                            i5++;
+                            z2 = 0;
+                        }
+                        i4++;
+                        z = false;
+                    }
+                    hl.c3(new efa((Object) zwbVar2, i2, (Object) arrayList2, (Object) arrayList3, (byte) 13));
+                    break;
                 }
-            }
-        }
-        wjb wjbVar = this.o2;
-        if (f4 > width) {
-            int p1 = bkb.p1(0.06f, bkb.v0(bkb.F6, wjbVar));
-            Paint paint = this.v3;
-            paint.setColor(p1);
-            RectF rectF = gl.P;
-            f2 = 14.0f;
-            f = 1.0f;
-            rectF.set(width + gl.L(1.0f), (getHeight() - gl.L(28.0f)) / 2.0f, f4 - gl.L(1.0f), (gl.L(28.0f) + getHeight()) / 2.0f);
-            canvas2.drawRoundRect(rectF, gl.L(14.0f), gl.L(14.0f), paint);
-            if (this.t3 == null) {
-                this.t3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
-            }
-            int v0 = bkb.v0(bkb.a9, wjbVar);
-            if (this.u3 != v0) {
-                Drawable drawable = this.t3;
-                this.u3 = v0;
-                drawable.setColorFilter(new PorterDuffColorFilter(v0, PorterDuff.Mode.SRC_IN));
-            }
-            this.t3.setBounds((int) (gl.L(-17.0f) + f4), (int) (rectF.top + gl.L(10.0f)), (int) (f4 + gl.L(-7.0f)), (int) (rectF.top + gl.L(20.0f)));
-            this.t3.draw(canvas2);
-        } else {
-            f = 1.0f;
-            f2 = 14.0f;
-        }
-        super.dispatchDraw(canvas);
-        kxb kxbVar = this.w3;
-        long j = kxbVar.L;
-        long j2 = kxbVar.f0;
-        lm lmVar = this.s3;
-        if (j != j2) {
-            kxbVar.M = j;
-            lmVar.e(true, 0.0f);
-        }
-        kxbVar.L = kxbVar.f0;
-        fxb fxbVar2 = null;
-        fxb fxbVar3 = null;
-        int i4 = 0;
-        while (i4 < getChildCount()) {
-            View childAt2 = getChildAt(i4);
-            if (childAt2 instanceof fxb) {
-                fxb fxbVar4 = (fxb) childAt2;
-                if (!fxbVar4.y) {
-                    i = i2;
-                    if (fxbVar4.getTopicId() == kxbVar.f0) {
-                        fxbVar2 = fxbVar4;
-                    }
-                    z = z2;
-                    if (fxbVar4.getTopicId() == kxbVar.M) {
-                        fxbVar3 = fxbVar4;
-                    }
-                    i4++;
-                    i2 = i;
-                    z2 = z;
-                }
-            }
-            i = i2;
-            z = z2;
-            i4++;
-            i2 = i;
-            z2 = z;
-        }
-        int i5 = i2;
-        boolean z3 = z2;
-        if (fxbVar2 != null) {
-            float x = fxbVar2.getX() + gl.L(f);
-            float y = fxbVar2.getY() + gl.L(4.0f);
-            float x2 = (fxbVar2.getX() + fxbVar2.getWidth()) - gl.L(f);
-            float y2 = (fxbVar2.getY() + getHeight()) - gl.L(4.0f);
-            RectF rectF2 = this.q3;
-            rectF2.set(x, y, x2, y2);
-            if (fxbVar3 != null) {
-                RectF rectF3 = gl.P;
-                rectF3.set(fxbVar3.getX() + gl.L(f), fxbVar3.getY() + gl.L(4.0f), (fxbVar3.getX() + fxbVar3.getWidth()) - gl.L(f), (fxbVar3.getY() + getHeight()) - gl.L(4.0f));
-                gl.X1(rectF3, rectF2, lmVar.e(false, f), rectF2);
-            }
-            int o = bm2.o(bkb.v0(bkb.Ei, wjbVar), 31);
-            Paint paint2 = this.r3;
-            paint2.setColor(o);
-            canvas2.drawRoundRect(rectF2, gl.L(f2), gl.L(f2), paint2);
-        }
-        if (z3) {
-            canvas2.save();
-            xl3 xl3Var = this.n3;
-            if (i5 > 0) {
-                RectF rectF4 = gl.P;
-                f3 = 0.0f;
-                rectF4.set(0.0f, 0.0f, gl.L(12.0f), getHeight());
-                xl3Var.s(canvas2, rectF4, 0, d);
-            } else {
-                f3 = 0.0f;
-            }
-            if (d2 > f3) {
-                RectF rectF5 = gl.P;
-                rectF5.set(getWidth() - gl.L(12.0f), f3, getWidth(), getHeight());
-                xl3Var.s(canvas2, rectF5, 2, d2);
-            }
-            canvas2.restore();
-            canvas2.restore();
+                break;
         }
     }
 }

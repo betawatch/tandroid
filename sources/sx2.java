@@ -1,37 +1,36 @@
 // default package
 
-import android.view.View;
-import android.view.WindowInsets;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class sx2 {
+    public static final sx2 a;
+    public static final sx2 b;
+    public static final sx2 c;
+    public static final sx2 d;
+    public static final sx2 e;
+    public static final /* synthetic */ sx2[] f;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class sx2 implements oo4, no7 {
-    public final /* synthetic */ xx2 a;
-
-    public /* synthetic */ sx2(xx2 xx2Var) {
-        this.a = xx2Var;
+    static {
+        sx2 sx2Var = new sx2("CPU_ACQUIRED", 0);
+        a = sx2Var;
+        sx2 sx2Var2 = new sx2("BLOCKING", 1);
+        b = sx2Var2;
+        sx2 sx2Var3 = new sx2("PARKING", 2);
+        c = sx2Var3;
+        sx2 sx2Var4 = new sx2("DORMANT", 3);
+        d = sx2Var4;
+        sx2 sx2Var5 = new sx2("TERMINATED", 4);
+        e = sx2Var5;
+        f = new sx2[]{sx2Var, sx2Var2, sx2Var3, sx2Var4, sx2Var5};
     }
 
-    @Override // no7
-    public final vxc W(View view, vxc vxcVar) {
-        WindowInsets g = vxcVar.g();
-        xx2 xx2Var = this.a;
-        xx2Var.q0(g);
-        xx2Var.T1.a(vxcVar.a.f(8).d > 0, true);
-        return vxc.b;
+    public static sx2 valueOf(String str) {
+        return (sx2) Enum.valueOf(sx2.class, str);
     }
 
-    @Override // oo4
-    public final void a(int i) {
-        int min = Math.min(i, gl.L(144.0f));
-        if (i > 0) {
-            min -= gl.L(8.0f);
-        }
-        xx2 xx2Var = this.a;
-        if (xx2Var.g2 != min) {
-            xx2Var.g2 = min;
-            xx2Var.S1.a(min);
-            xx2Var.c2.postOnAnimation(new mk2(xx2Var, (byte) 12));
-        }
+    public static sx2[] values() {
+        return (sx2[]) f.clone();
     }
 }

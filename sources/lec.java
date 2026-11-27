@@ -1,110 +1,37 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.text.TextUtils;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class lec extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ wec b;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class lec extends TLRPC.TL_messageEntityCustomEmoji {
+    public String a;
+    public mec b;
+    public byte c;
 
-    public /* synthetic */ lec(wec wecVar, byte b) {
-        this.a = b;
-        this.b = wecVar;
+    @Override // org.telegram.tgnet.TLRPC.TL_messageEntityCustomEmoji, org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z) {
+        super.readParams(inputSerializedData, z);
+        this.c = inputSerializedData.readByte(z);
+        if (inputSerializedData.readBool(z)) {
+            this.a = inputSerializedData.readString(z);
+        }
+        if (TextUtils.isEmpty(this.a)) {
+            this.a = null;
+        }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        wec wecVar = this.b;
-        switch (b) {
-            case 0:
-                View[] viewArr = wecVar.e;
-                View[] viewArr2 = wecVar.e;
-                if (viewArr[1] != null) {
-                    wecVar.G();
-                    wecVar.h.put(wecVar.f[1], viewArr2[1]);
-                    wecVar.removeView(viewArr2[1]);
-                    wecVar.F(viewArr2[0], 0.0f);
-                    viewArr2[1] = null;
-                }
-                wecVar.T = null;
-                wecVar.x(true);
-                mec mecVar = wecVar.N;
-                if (mecVar != null) {
-                    mecVar.w.invalidate();
-                    wecVar.N.w.h1();
-                    wecVar.N.invalidate();
-                }
-                wecVar.u();
-                wecVar.K.e();
-                break;
-            case 1:
-                wecVar.x = null;
-                View[] viewArr3 = wecVar.e;
-                if (viewArr3[1] != null) {
-                    if (!wecVar.G) {
-                        wecVar.G();
-                    }
-                    wecVar.h.put(wecVar.f[1], viewArr3[1]);
-                    wecVar.removeView(viewArr3[1]);
-                    viewArr3[1].setVisibility(8);
-                    viewArr3[1] = null;
-                }
-                wecVar.y = false;
-                wecVar.J = false;
-                mec mecVar2 = wecVar.N;
-                if (mecVar2 != null) {
-                    mecVar2.setEnabled(true);
-                }
-                wecVar.x(false);
-                wecVar.u();
-                wecVar.K.e();
-                break;
-            case 2:
-                wecVar.x = null;
-                View[] viewArr4 = wecVar.e;
-                View view = viewArr4[1];
-                if (view != null) {
-                    wecVar.removeView(view);
-                    viewArr4[1] = null;
-                }
-                wecVar.y = false;
-                mec mecVar3 = wecVar.N;
-                if (mecVar3 != null) {
-                    mecVar3.setEnabled(true);
-                    mec mecVar4 = wecVar.N;
-                    mecVar4.K = false;
-                    mecVar4.a = 1.0f;
-                    mecVar4.w.h1();
-                    wecVar.N.invalidate();
-                    break;
-                }
-                break;
-            default:
-                wecVar.x = null;
-                View[] viewArr5 = wecVar.e;
-                if (viewArr5[1] != null) {
-                    if (!wecVar.G) {
-                        wecVar.G();
-                    }
-                    wecVar.h.put(wecVar.f[1], viewArr5[1]);
-                    wecVar.removeView(viewArr5[1]);
-                    viewArr5[1].setVisibility(8);
-                    viewArr5[1] = null;
-                }
-                wecVar.y = false;
-                wecVar.J = false;
-                mec mecVar5 = wecVar.N;
-                if (mecVar5 != null) {
-                    mecVar5.setEnabled(true);
-                }
-                wecVar.x(false);
-                wecVar.u();
-                wecVar.K.e();
-                break;
+    @Override // org.telegram.tgnet.TLRPC.TL_messageEntityCustomEmoji, org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        super.serializeToStream(outputSerializedData);
+        outputSerializedData.writeByte(this.c);
+        outputSerializedData.writeBool(!TextUtils.isEmpty(this.a));
+        if (TextUtils.isEmpty(this.a)) {
+            return;
         }
+        outputSerializedData.writeString(this.a);
     }
 }

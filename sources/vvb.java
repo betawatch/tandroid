@@ -1,30 +1,31 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class vvb extends ja {
-    public final TLRPC.TL_forumTopic c;
-
-    public vvb(int i, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i, false);
-        this.c = tL_forumTopic;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public enum vvb extends rwb {
+    public vvb() {
+        super("Doctype", 50);
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
+    @Override // rwb
+    public final void c(bub bubVar, ik1 ik1Var) {
+        char d = ik1Var.d();
+        wvb wvbVar = rwb.p0;
+        if (d == '\t' || d == '\n' || d == '\f' || d == '\r' || d == ' ') {
+            bubVar.c = wvbVar;
+            return;
         }
-        if (obj == null || vvb.class != obj.getClass()) {
-            return false;
+        if (d != '>') {
+            if (d != 65535) {
+                bubVar.m(this);
+                bubVar.c = wvbVar;
+                return;
+            }
+            bubVar.l(this);
         }
-        vvb vvbVar = (vvb) obj;
-        if (this.a != vvbVar.a) {
-            return false;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = vvbVar.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
+        bubVar.m(this);
+        bubVar.m.s();
+        bubVar.j();
+        bubVar.c = rwb.a;
     }
 }

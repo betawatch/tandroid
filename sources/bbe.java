@@ -1,23 +1,19 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface bbe {
-    void a(Object obj, byte[] bArr, int i, int i2, kj6 kj6Var);
+public final class bbe implements zq7 {
+    public static final bbe a = new bbe();
 
-    boolean b(c2e c2eVar, c2e c2eVar2);
+    static {
+        xnb.y(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, xnb.u(xnb.q(bpd.class, new tnd(1)), 2)), 3)));
+    }
 
-    int c(c2e c2eVar);
-
-    boolean d(Object obj);
-
-    int e(c2e c2eVar);
-
-    void f(Object obj, xdd xddVar);
-
-    c2e zze();
-
-    void zzf(Object obj);
-
-    void zzg(Object obj, Object obj2);
+    @Override // l34
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

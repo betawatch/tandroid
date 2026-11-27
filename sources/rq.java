@@ -1,23 +1,9 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class rq extends l69 {
-    public final /* synthetic */ sq f;
+public interface rq {
+    void b(int i);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rq(sq sqVar) {
-        super(sqVar, (byte) 6);
-        this.f = sqVar;
-    }
-
-    @Override // l69, qq
-    public final void f(int i) {
-        super/*android.widget.TextView*/.setLastBaselineToBottomHeight(i);
-    }
-
-    @Override // l69, qq
-    public final void i(int i) {
-        super/*android.widget.TextView*/.setFirstBaselineToTopHeight(i);
-    }
+    void c(int i);
 }

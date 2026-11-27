@@ -1,19 +1,20 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vod implements zn7 {
-    public static final vod a = new vod();
+public final class vod {
+    public static final vod a;
+    public static final /* synthetic */ vod[] b;
 
     static {
-        yjb.y(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, yjb.r(yjb.n(g7d.class, new d6d(1)), 2)), 3)));
+        vod vodVar = new vod("DEFAULT", 0);
+        a = vodVar;
+        b = new vod[]{vodVar, new vod("SIGNED", 1), new vod("FIXED", 2)};
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public static vod[] values() {
+        return (vod[]) b.clone();
     }
 }

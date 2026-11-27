@@ -1,23 +1,25 @@
 // default package
 
-import android.app.Notification;
-import android.os.Build;
-import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class yk7 extends gl7 {
-    public int[] e;
-    public MediaSessionCompat$Token f;
+public final class yk7 extends View.BaseSavedState {
+    public static final Parcelable.Creator<yk7> CREATOR = new mx6((byte) 4);
+    public int a;
 
-    @Override // gl7
-    public final void b(h31 h31Var) {
-        int i = Build.VERSION.SDK_INT;
-        Notification.Builder builder = (Notification.Builder) h31Var.c;
-        if (i >= 34) {
-            nk7.d(builder, nk7.b(ok7.a(nk7.a(), null, 0, null, Boolean.FALSE), this.e, this.f));
-        } else {
-            nk7.d(builder, nk7.b(nk7.a(), this.e, this.f));
-        }
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("HorizontalScrollView.SavedState{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(" scrollPosition=");
+        return uh9.l(sb, this.a, "}");
+    }
+
+    @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i) {
+        super.writeToParcel(parcel, i);
+        parcel.writeInt(this.a);
     }
 }

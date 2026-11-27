@@ -1,18 +1,9 @@
 // default package
 
-import org.telegram.ui.NotificationsCustomSettingsActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class om7 extends gb3 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity F;
-
-    public om7(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.F = notificationsCustomSettingsActivity;
-    }
-
-    @Override // gb3
-    public final void P(s49 s49Var) {
-        this.F.a.invalidate();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class om7 extends yu4 {
+    public om7(CharSequence charSequence) {
+        super(charSequence, "android.credentials.GetCredentialException.TYPE_NO_CREDENTIAL");
     }
 }

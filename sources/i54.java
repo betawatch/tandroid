@@ -1,37 +1,21 @@
 // default package
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface i54 {
-    Map b(byte[] bArr);
+public final class i54 {
+    public final f54[] a;
+    public final long[] b;
+    public final String c;
+    public final String d;
 
-    h54 c();
+    public i54(String str, String str2, long[] jArr, f54[] f54VarArr) {
+        this.c = str;
+        this.d = str2;
+        this.b = jArr;
+        this.a = f54VarArr;
+    }
 
-    kp4 g(byte[] bArr);
-
-    byte[] j();
-
-    void k(byte[] bArr, byte[] bArr2);
-
-    void l(byte[] bArr);
-
-    void n(lj9 lj9Var);
-
-    byte[] p(byte[] bArr, byte[] bArr2);
-
-    void release();
-
-    void s(byte[] bArr);
-
-    g54 t(byte[] bArr, List list, int i, HashMap hashMap);
-
-    int v();
-
-    void w(byte[] bArr, uc8 uc8Var);
-
-    boolean x(String str, byte[] bArr);
+    public final String a() {
+        return this.c + "/" + this.d;
+    }
 }

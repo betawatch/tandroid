@@ -1,45 +1,444 @@
 // default package
 
-import android.util.Pair;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.List;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class xy9 implements p8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ zy9 b;
-    public final /* synthetic */ boolean c;
+public final class xy9 {
+    public static Paint N;
+    public static Paint O;
+    public long A;
+    public mm B;
+    public Paint C;
+    public float D;
+    public int E;
+    public int F;
+    public float[] G;
+    public float[] H;
+    public float[] I;
+    public boolean J;
+    public float K;
+    public float L;
+    public wy9 M;
+    public int a;
+    public int b;
+    public float c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public wb2 k;
+    public byte[] l;
+    public r47 m;
+    public wb2 n;
+    public boolean o;
+    public int p;
+    public int q;
+    public int r;
+    public float s;
+    public float t;
+    public boolean u;
+    public mm v;
+    public float w;
+    public Path x;
+    public Path y;
+    public boolean z;
 
-    public /* synthetic */ xy9(zy9 zy9Var, boolean z, byte b) {
-        this.a = b;
-        this.b = zy9Var;
-        this.c = z;
+    public final void a(Path path, float f, float f2) {
+        float N2 = hl.N(2.0f);
+        int D = ik8.D(14.0f, this.h, 2);
+        float f3 = f2 * this.w;
+        RectF rectF = hl.P;
+        float f4 = N2 / 2.0f;
+        rectF.set((hl.N(1.0f) + f) - f4, ((-f3) - f4) + hl.L(7.0f) + D, hl.N(1.0f) + f + f4, f3 + f4 + hl.L(7.0f) + D);
+        path.addRoundRect(rectF, N2, N2, Path.Direction.CW);
     }
 
-    @Override // p8c
-    public final void a(Object obj) {
-        byte b = this.a;
-        boolean z = this.c;
-        zy9 zy9Var = this.b;
-        switch (b) {
-            case 0:
-                List list = (List) obj;
-                ArrayList arrayList = zy9Var.b2;
-                if (z) {
-                    zy9Var.c2.addAll(list);
+    public final float[] b(int i) {
+        byte[] bArr = this.l;
+        if (bArr == null || i <= 0) {
+            return null;
+        }
+        float[] fArr = new float[i];
+        int i2 = 5;
+        int length = (bArr.length << 3) / 5;
+        float f = length / i;
+        float f2 = 0.0f;
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = 0;
+        loop0: while (i3 < length) {
+            if (i3 == i4) {
+                int i6 = i4;
+                int i7 = 0;
+                while (i4 == i6) {
+                    f2 += f;
+                    i6 = (int) f2;
+                    i7++;
                 }
-                if (zy9Var.m2 == 1) {
-                    arrayList.clear();
-                    arrayList.addAll(list);
-                    zy9Var.i1(true, true);
-                    zy9Var.e1(true);
-                    break;
+                int i8 = i3 * 5;
+                int i9 = i8 / 8;
+                int i10 = i8 - (i9 << 3);
+                int i11 = 5 - (8 - i10);
+                byte min = (byte) ((this.l[i9] >> i10) & ((2 << (Math.min(i2, r15) - 1)) - 1));
+                if (i11 > 0) {
+                    int i12 = i9 + 1;
+                    byte[] bArr2 = this.l;
+                    if (i12 < bArr2.length) {
+                        min = (byte) (((byte) (min << i11)) | (bArr2[i12] & ((2 << (4 - r15)) - 1)));
+                    }
                 }
-                break;
-            default:
-                zy9Var.Z0(z, (Pair) obj);
-                break;
+                int i13 = 0;
+                while (i13 < i7) {
+                    if (i5 >= i) {
+                        break loop0;
+                    }
+                    fArr[i5] = Math.max(0.0f, (min * 7) / 31.0f);
+                    i13++;
+                    i5++;
+                }
+                i4 = i6;
+            }
+            i3++;
+            i2 = 5;
+        }
+        return fArr;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:108:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0373 A[LOOP:3: B:119:0x036d->B:121:0x0373, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0281  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(Canvas canvas, wb2 wb2Var) {
+        int i;
+        float f;
+        float f2;
+        float f3;
+        float f4;
+        RectF rectF;
+        wy9 wy9Var;
+        ArrayList arrayList;
+        int i2;
+        int i3;
+        float[] fArr;
+        float[] fArr2;
+        r47 r47Var;
+        if (this.l == null || (i = this.g) == 0 || this.s <= 0.0f) {
+            return;
+        }
+        float N2 = i / hl.N(3.0f);
+        if (N2 > 0.1f) {
+            float f5 = this.t;
+            if (f5 != 1.0f) {
+                float f6 = f5 + 0.10666667f;
+                this.t = f6;
+                if (f6 > 1.0f) {
+                    this.t = 1.0f;
+                } else {
+                    wb2Var.invalidate();
+                }
+            }
+            float e = this.v.e(false, 1.0f);
+            Path path = this.x;
+            if (path == null) {
+                this.x = new Path();
+            } else {
+                path.reset();
+            }
+            Path path2 = this.y;
+            if (path2 == null) {
+                this.y = new Path();
+            } else {
+                path2.reset();
+            }
+            wb2 wb2Var2 = this.k;
+            boolean z = (wb2Var2 == null || (r47Var = wb2Var2.Q5) == null || !r47Var.R4()) ? false : true;
+            float[] fArr3 = this.H;
+            if (fArr3 == null || (fArr2 = this.I) == null) {
+                f = N2;
+                f2 = 3.0f;
+                if (this.G != null) {
+                    int i4 = 0;
+                    while (true) {
+                        float f7 = i4;
+                        if (f7 >= f || i4 >= this.G.length) {
+                            break;
+                        }
+                        float N3 = hl.N(3.0f) * f7;
+                        float a = ete.a((e * f) - f7, 0.0f, 1.0f);
+                        a(this.x, N3, qu6.B(1.0f, a, hl.N(1.0f), hl.N(this.G[z ? (r3.length - 1) - i4 : i4]) * a));
+                        i4++;
+                    }
+                }
+                f3 = 0.0f;
+            } else {
+                int i5 = this.g;
+                int i6 = this.i;
+                float f8 = (i5 - i6) / (this.j - i6);
+                int max = Math.max(fArr3.length, fArr2.length);
+                int min = Math.min(this.H.length, this.I.length);
+                float[] fArr4 = this.H;
+                int length = fArr4.length;
+                float[] fArr5 = this.I;
+                f2 = 3.0f;
+                float[] fArr6 = length < fArr5.length ? fArr4 : fArr5;
+                float[] fArr7 = fArr4.length < fArr5.length ? fArr5 : fArr4;
+                if (fArr4.length >= fArr5.length) {
+                    f8 = 1.0f - f8;
+                }
+                int i7 = -1;
+                f3 = 0.0f;
+                int i8 = 0;
+                while (i8 < max) {
+                    float f9 = i8;
+                    float f10 = N2;
+                    int b = ete.b((int) Math.floor((f9 / max) * min), 0, min - 1);
+                    float f11 = b;
+                    if (i7 < b) {
+                        a(this.x, hl.N(3.0f) * hl.R1(f11, f9, f8), hl.N(hl.R1(fArr6[z ? (fArr6.length - 1) - b : b], fArr7[z ? (fArr7.length - 1) - i8 : i8], f8)));
+                        i7 = b;
+                    } else {
+                        float N4 = hl.N(3.0f) * hl.R1(f11, f9, f8);
+                        if (z) {
+                            b = (fArr6.length - 1) - b;
+                        }
+                        a(this.y, N4, hl.N(hl.R1(fArr6[b], fArr7[z ? (fArr7.length - 1) - i8 : i8], f8)));
+                        f3 = f8;
+                    }
+                    i8++;
+                    N2 = f10;
+                }
+                f = N2;
+            }
+            if (this.J || this.L > 0.0f) {
+                canvas.save();
+                f4 = 0.0f;
+                canvas.clipRect(0.0f, 0.0f, xnb.B(this.K, this.L, 1.0f, hl.N(f2) * f), this.h);
+            } else {
+                f4 = 0.0f;
+            }
+            if (f3 > f4) {
+                canvas.save();
+                canvas.clipPath(this.y);
+                d(canvas, f3 * this.s);
+                canvas.restore();
+            }
+            canvas.save();
+            canvas.clipPath(this.x);
+            d(canvas, this.s);
+            canvas.restore();
+            if (this.J || this.L > 0.0f) {
+                canvas.restore();
+                byte b2 = 4;
+                if (this.M == null) {
+                    this.M = new wy9(new ux9(this, b2));
+                }
+                float f12 = this.K;
+                if (f12 < 0.99f && (fArr = this.G) != null) {
+                    int i9 = (int) ((1.0f - f12) * f);
+                    if (z) {
+                        i9 = (int) ((f - 1.0f) - i9);
+                    }
+                    if (i9 >= 0 && i9 < fArr.length) {
+                        float N5 = hl.N(this.G[i9]) * ete.a((e * f) - i9, 0.0f, 1.0f);
+                        rectF = hl.P;
+                        float N6 = hl.N(f2) * (1.0f - this.K) * f;
+                        float N7 = hl.N(2.0f);
+                        int D = ik8.D(14.0f, this.h, 2);
+                        float f13 = N5 * this.w;
+                        float f14 = N7 / 2.0f;
+                        rectF.set((hl.N(1.0f) + N6) - f14, ((-f13) - f14) + hl.L(7.0f) + D, hl.N(1.0f) + N6 + f14, f13 + f14 + hl.L(7.0f) + D);
+                        wy9Var = this.M;
+                        wy9Var.d.setColor(this.q);
+                        wy9Var.e = rectF;
+                        float f15 = this.L;
+                        Paint paint = wy9Var.d;
+                        ArrayList arrayList2 = wy9Var.c;
+                        arrayList = wy9Var.b;
+                        long currentTimeMillis = System.currentTimeMillis();
+                        long min2 = Math.min(20L, currentTimeMillis - wy9Var.f);
+                        wy9Var.f = currentTimeMillis;
+                        i2 = 0;
+                        while (i2 < arrayList.size()) {
+                            vy9 vy9Var = (vy9) arrayList.get(i2);
+                            float f16 = min2;
+                            float f17 = vy9Var.f - (f16 / vy9Var.g);
+                            vy9Var.f = f17;
+                            if (f17 < 0.0f) {
+                                arrayList2.add(vy9Var);
+                                arrayList.remove(i2);
+                                i2--;
+                            } else {
+                                float f18 = vy9Var.a;
+                                float f19 = vy9Var.d;
+                                float f20 = vy9Var.c;
+                                vy9Var.a = (((f19 * f20) * f16) / 500.0f) + f18;
+                                float f21 = vy9Var.b;
+                                float f22 = vy9Var.e;
+                                vy9Var.b = (((f20 * f22) * f16) / 500.0f) + f21;
+                                vy9Var.e = f22 - ((hl.L(0.33f) * min2) / 500.0f);
+                            }
+                            i2++;
+                        }
+                        if (wy9Var.e != null) {
+                            int min3 = Math.min(4, 250 - arrayList.size());
+                            for (int i10 = 0; i10 < min3; i10++) {
+                                vy9 vy9Var2 = arrayList2.isEmpty() ? new vy9() : (vy9) arrayList2.remove(0);
+                                RectF rectF2 = wy9Var.e;
+                                float f23 = rectF2.left;
+                                float width = rectF2.width();
+                                SecureRandom secureRandom = Utilities.b;
+                                vy9Var2.a = (secureRandom.nextFloat() * width) + f23;
+                                RectF rectF3 = wy9Var.e;
+                                vy9Var2.b = (secureRandom.nextFloat() * rectF3.height()) + rectF3.top;
+                                double nextInt = (secureRandom.nextInt(jn7.d3) - 125) * 0.017453292519943295d;
+                                vy9Var2.d = ((float) (Math.cos(nextInt) - Math.sin(nextInt))) * 0.8f;
+                                vy9Var2.e = ((float) (Math.cos(nextInt) + Math.sin(nextInt))) - 0.2f;
+                                vy9Var2.f = 1.0f;
+                                vy9Var2.c = hl.L((secureRandom.nextFloat() * 7.0f) + 10.0f);
+                                vy9Var2.g = hl.U1(secureRandom.nextFloat(), 420, 550);
+                                arrayList.add(vy9Var2);
+                            }
+                        }
+                        for (i3 = 0; i3 < arrayList.size(); i3++) {
+                            vy9 vy9Var3 = (vy9) arrayList.get(i3);
+                            paint.setAlpha((int) (255.0f * f15 * vy9Var3.f));
+                            canvas.drawPoint(vy9Var3.a, vy9Var3.b, paint);
+                        }
+                        wy9Var.a.run();
+                    }
+                }
+                rectF = null;
+                wy9Var = this.M;
+                wy9Var.d.setColor(this.q);
+                wy9Var.e = rectF;
+                float f152 = this.L;
+                Paint paint2 = wy9Var.d;
+                ArrayList arrayList22 = wy9Var.c;
+                arrayList = wy9Var.b;
+                long currentTimeMillis2 = System.currentTimeMillis();
+                long min22 = Math.min(20L, currentTimeMillis2 - wy9Var.f);
+                wy9Var.f = currentTimeMillis2;
+                i2 = 0;
+                while (i2 < arrayList.size()) {
+                }
+                if (wy9Var.e != null) {
+                }
+                while (i3 < arrayList.size()) {
+                }
+                wy9Var.a.run();
+            }
+        }
+    }
+
+    public final void d(Canvas canvas, float f) {
+        mm mmVar = this.B;
+        float N2 = hl.N(2.0f);
+        r47 r47Var = this.m;
+        boolean z = r47Var != null && r47Var.k.media_unread && !r47Var.N3() && this.c <= 0.0f;
+        this.u = z;
+        N.setColor(z ? this.q : this.o ? this.r : this.p);
+        O.setColor(this.q);
+        mmVar.a = this.n;
+        float e = mmVar.e(false, (!this.z || MediaController.z().H(this.m)) ? 0.0f : 1.0f);
+        Paint paint = N;
+        paint.setColor(vm2.f(e, paint.getColor(), this.p));
+        float f2 = 1.0f - e;
+        O.setAlpha((int) (r3.getAlpha() * f2 * f));
+        N.setAlpha((int) (r3.getAlpha() * f));
+        canvas.drawRect(0.0f, 0.0f, this.g + N2, this.h, N);
+        if (e < 1.0f) {
+            canvas.drawRect(0.0f, 0.0f, (this.g + N2) * this.c * f2, this.h, O);
+        }
+        if (e > 0.0f) {
+            if (this.C == null || Math.abs(this.D - this.g) > hl.L(8.0f) || this.E != this.p || this.F != this.q) {
+                Paint paint2 = this.C;
+                if (paint2 == null) {
+                    paint2 = new Paint(1);
+                    this.C = paint2;
+                }
+                this.E = this.p;
+                this.F = this.q;
+                float f3 = this.g;
+                this.D = f3;
+                int i = this.E;
+                paint2.setShader(new LinearGradient(0.0f, 0.0f, f3, 0.0f, new int[]{i, this.F, i}, new float[]{0.0f, 0.2f, 0.4f}, Shader.TileMode.CLAMP));
+            }
+            this.C.setAlpha((int) (e * 255.0f * f));
+            canvas.save();
+            float pow = ((((float) Math.pow((SystemClock.elapsedRealtime() - this.A) / 270.0f, 0.75d)) % 1.6f) - 0.6f) * this.D;
+            canvas.translate(pow, 0.0f);
+            canvas.drawRect(-pow, 0.0f, (this.g + 5) - pow, this.h, this.C);
+            canvas.restore();
+            wb2 wb2Var = this.n;
+            if (wb2Var != null) {
+                wb2Var.invalidate();
+            }
+        }
+    }
+
+    public final void e() {
+        f(false, 0.0f);
+    }
+
+    public final void f(boolean z, float f) {
+        if (!this.k.N2()) {
+            this.c = 1.0f;
+            return;
+        }
+        boolean z2 = this.u;
+        this.c = z2 ? 1.0f : f;
+        int i = z2 ? this.g : this.a;
+        if (z && i != 0 && f == 0.0f) {
+            this.t = 0.0f;
+        } else if (!z) {
+            this.t = 1.0f;
+        }
+        int ceil = (int) Math.ceil(this.g * f);
+        this.a = ceil;
+        if (ceil < 0) {
+            this.a = 0;
+            return;
+        }
+        int i2 = this.g;
+        if (ceil > i2) {
+            this.a = i2;
+        }
+    }
+
+    public final void g(int i, int i2, int i3, int i4) {
+        this.g = i;
+        this.h = i2;
+        float[] fArr = this.G;
+        if (fArr == null || fArr.length != ((int) (i / hl.N(3.0f)))) {
+            this.G = b((int) (this.g / hl.N(3.0f)));
+        }
+        if (i3 == i4) {
+            this.I = null;
+            this.H = null;
+        } else {
+            if (this.i == i3 && this.j == i4) {
+                return;
+            }
+            this.i = i3;
+            this.j = i4;
+            this.H = b((int) (i3 / hl.N(3.0f)));
+            this.I = b((int) (this.j / hl.N(3.0f)));
         }
     }
 }

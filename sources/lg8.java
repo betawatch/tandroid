@@ -1,27 +1,7 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class lg8 {
-    public final String a;
-
-    public lg8(String str) {
-        str.getClass();
-        this.a = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof lg8)) {
-            return false;
-        }
-        return rp5.a(this.a, ((lg8) obj).a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a;
-    }
+public interface lg8 {
+    void d(int i, Object obj);
 }

@@ -1,40 +1,38 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class if7 {
-    public final byte a;
-    public final byte b;
-    public final float c;
+    public long a;
+    public long b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public if7(float f, int i, int i2) {
-        this.a = i;
-        this.b = i2;
-        this.c = f;
-    }
-
-    public static if7 a(int i) {
-        int i2 = (i >> 13) & 7;
-        if (i2 == 0) {
-            return null;
-        }
-        return new if7(((i & 511) * ((i & 512) != 0 ? -1 : 1)) / 10.0f, i2, (i >> 10) & 7);
+    public static if7 a(long j, long j2) {
+        if7 if7Var = new if7();
+        if7Var.a = j;
+        if7Var.b = j2;
+        return if7Var;
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof if7)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        if7 if7Var = (if7) obj;
-        return this.a == if7Var.a && this.b == if7Var.b && Float.compare(this.c, if7Var.c) == 0;
+        if (obj != null && if7.class == obj.getClass()) {
+            if7 if7Var = (if7) obj;
+            if (this.a == if7Var.a && this.b == if7Var.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Float.floatToIntBits(this.c) + (((this.a * 31) + this.b) * 31);
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b));
     }
 
     public final String toString() {
-        return "GainField{name=" + ((int) this.a) + ", originator=" + ((int) this.b) + ", gain=" + this.c + '}';
+        return "TopicKey{dialogId=" + this.a + ", topicId=" + this.b + '}';
     }
 }

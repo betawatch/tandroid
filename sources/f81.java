@@ -1,75 +1,49 @@
 // default package
 
-import java.util.HashSet;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class f81 implements RequestDelegate {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ z81 b;
-    public final /* synthetic */ hd c;
-    public final /* synthetic */ HashSet d;
-    public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
+public final class f81 extends AnimatorListenerAdapter {
+    public final /* synthetic */ i81 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ int e;
     public final /* synthetic */ boolean f;
+    public final /* synthetic */ g81 h;
 
-    public /* synthetic */ f81(z81 z81Var, hd hdVar, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z, byte b) {
-        this.a = b;
-        this.b = z81Var;
-        this.c = hdVar;
-        this.d = hashSet;
-        this.e = tL_inputGroupCallInviteMessage;
+    public f81(g81 g81Var, i81 i81Var, float f, float f2, float f3, int i, boolean z) {
+        this.h = g81Var;
+        this.a = i81Var;
+        this.b = f;
+        this.c = f2;
+        this.d = f3;
+        this.e = i;
         this.f = z;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final z81 z81Var = this.b;
-                z81Var.getClass();
-                final byte b = 0;
-                final hd hdVar = this.c;
-                final HashSet hashSet = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
-                final boolean z = this.f;
-                gl.c3(new Runnable() { // from class: h81
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (b) {
-                            case 0:
-                                z81Var.h0(hdVar, tLObject, hashSet, tL_inputGroupCallInviteMessage, z, tL_error);
-                                break;
-                            default:
-                                z81Var.g0(hdVar, tLObject, hashSet, tL_inputGroupCallInviteMessage, z, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final byte b2 = 1;
-                final z81 z81Var2 = this.b;
-                final hd hdVar2 = this.c;
-                final HashSet hashSet2 = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
-                final boolean z2 = this.f;
-                gl.c3(new Runnable() { // from class: h81
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (b2) {
-                            case 0:
-                                z81Var2.h0(hdVar2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z2, tL_error);
-                                break;
-                            default:
-                                z81Var2.g0(hdVar2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z2, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        float f = this.b;
+        i81 i81Var = this.a;
+        i81Var.a = f;
+        i81Var.b = this.c;
+        i81Var.c = this.d;
+        this.h.invalidate();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        g81 g81Var = this.h;
+        SparseArray sparseArray = g81Var.w;
+        int i = this.e;
+        sparseArray.remove(i);
+        if (this.f) {
+            return;
         }
+        g81Var.x.remove(i);
     }
 }

@@ -5,30 +5,30 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class ImportingService extends Service implements gk7 {
-    public xk7 a;
+public class ImportingService extends Service implements fn7 {
+    public wn7 a;
 
     public ImportingService() {
         for (int i = 0; i < 4; i++) {
-            kk7.f(i).a(this, kk7.u1);
-            kk7.f(i).a(this, kk7.v1);
+            jn7.f(i).a(this, jn7.v1);
+            jn7.f(i).a(this, jn7.w1);
         }
     }
 
     public static boolean a() {
         for (int i = 0; i < 4; i++) {
-            if (z3a.B(i).G.size() != 0) {
+            if (r7a.B(i).G.size() != 0) {
                 return true;
             }
         }
         return false;
     }
 
-    @Override // gk7
+    @Override // fn7
     public final void didReceivedNotification(int i, int i2, Object... objArr) {
-        if ((i != kk7.u1 && i != kk7.v1) || a() || a()) {
+        if ((i != jn7.v1 && i != jn7.w1) || a() || a()) {
             return;
         }
         stopSelf();
@@ -46,13 +46,13 @@ public class ImportingService extends Service implements gk7 {
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new pl7(a.b).b(5, null);
+        new oo7(a.b).b(5, null);
         for (int i = 0; i < 4; i++) {
-            kk7.f(i).n(this, kk7.u1);
-            kk7.f(i).n(this, kk7.v1);
+            jn7.f(i).n(this, jn7.v1);
+            jn7.f(i).n(this, jn7.w1);
         }
-        if (w01.a) {
-            fa4.b("destroy import service");
+        if (f11.a) {
+            cc4.b("destroy import service");
         }
     }
 
@@ -61,60 +61,60 @@ public class ImportingService extends Service implements gk7 {
         boolean z;
         if (!a()) {
             for (int i3 = 0; i3 < 4; i3++) {
-                if (z3a.B(i3).E.m() == 0) {
+                if (r7a.B(i3).E.m() == 0) {
                 }
             }
             stopSelf();
             return 2;
         }
-        if (w01.a) {
-            fa4.b("start import service");
+        if (f11.a) {
+            cc4.b("start import service");
         }
         if (this.a == null) {
-            im7.c();
-            xk7 xk7Var = new xk7(a.b, null);
-            this.a = xk7Var;
-            xk7Var.F.icon = R.drawable.stat_sys_upload;
-            xk7Var.F.when = System.currentTimeMillis();
-            xk7 xk7Var2 = this.a;
-            xk7Var2.y = im7.k0;
-            xk7Var2.e(k96.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            ip7.c();
+            wn7 wn7Var = new wn7(a.b, null);
+            this.a = wn7Var;
+            wn7Var.F.icon = R.drawable.stat_sys_upload;
+            wn7Var.F.when = System.currentTimeMillis();
+            wn7 wn7Var2 = this.a;
+            wn7Var2.y = ip7.k0;
+            wn7Var2.e(ob6.M0(org.telegram.messenger.beta.R.string.AppName, null));
             int i4 = 0;
             while (true) {
                 if (i4 >= 4) {
                     z = false;
                     break;
                 }
-                if (z3a.B(i4).E.m() != 0) {
+                if (r7a.B(i4).E.m() != 0) {
                     z = true;
                     break;
                 }
                 i4++;
             }
-            xk7 xk7Var3 = this.a;
+            wn7 wn7Var3 = this.a;
             if (z) {
-                xk7Var3.k(k96.M0(2131749075, null));
-                this.a.d(k96.M0(2131749075, null));
+                wn7Var3.k(ob6.M0(2131749021, null));
+                this.a.d(ob6.M0(2131749021, null));
             } else {
-                xk7Var3.k(k96.M0(2131749074, null));
-                this.a.d(k96.M0(2131749074, null));
+                wn7Var3.k(ob6.M0(2131749020, null));
+                this.a.d(ob6.M0(2131749020, null));
             }
         }
-        xk7 xk7Var4 = this.a;
-        xk7Var4.n = (byte) 100;
-        xk7Var4.o = 0;
-        xk7Var4.p = true;
+        wn7 wn7Var4 = this.a;
+        wn7Var4.n = (byte) 100;
+        wn7Var4.o = 0;
+        wn7Var4.p = true;
         try {
-            startForeground(5, xk7Var4.b());
+            startForeground(5, wn7Var4.b());
         } catch (Throwable th) {
-            fa4.g(th, true);
+            cc4.g(th, true);
         }
-        new pl7(a.b).e(null, 5, this.a.b());
+        new oo7(a.b).e(null, 5, this.a.b());
         return 2;
     }
 
     public final void onTimeout(int i, int i2) {
-        fa4.b("ImportingService timeout, type = " + i2);
+        cc4.b("ImportingService timeout, type = " + i2);
         try {
             stopForeground(true);
         } catch (Throwable unused) {

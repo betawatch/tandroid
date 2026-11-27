@@ -1,69 +1,76 @@
 // default package
 
-import java.io.InputStream;
-import java.io.RandomAccessFile;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class ax8 extends InputStream {
-    public int a;
-    public int b;
-    public final /* synthetic */ cx8 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class ax8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ bx8 b;
 
-    public ax8(cx8 cx8Var, zw8 zw8Var) {
-        this.c = cx8Var;
-        this.a = cx8Var.d(zw8Var.b + 4);
-        this.b = zw8Var.c;
+    public /* synthetic */ ax8(bx8 bx8Var, byte b) {
+        this.a = b;
+        this.b = bx8Var;
     }
 
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        if (bArr == null) {
-            fvc.f("buffer");
-            return 0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        byte b = this.a;
+        bx8 bx8Var = this.b;
+        switch (b) {
+            case 1:
+                AnimatorSet animatorSet = bx8Var.s;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    bx8Var.s = null;
+                    bx8Var.getClass();
+                    break;
+                }
+                break;
+            case 2:
+                AnimatorSet animatorSet2 = bx8Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    bx8Var.s = null;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        if ((i | i2) < 0 || i2 > bArr.length - i) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        int i3 = this.b;
-        if (i3 <= 0) {
-            return -1;
-        }
-        if (i2 > i3) {
-            i2 = i3;
-        }
-        int i4 = this.a;
-        cx8 cx8Var = this.c;
-        int d = cx8Var.d(i4);
-        int i5 = d + i2;
-        int i6 = cx8Var.b;
-        RandomAccessFile randomAccessFile = cx8Var.a;
-        if (i5 <= i6) {
-            randomAccessFile.seek(d);
-            randomAccessFile.readFully(bArr, i, i2);
-        } else {
-            int i7 = i6 - d;
-            randomAccessFile.seek(d);
-            randomAccessFile.readFully(bArr, i, i7);
-            randomAccessFile.seek(16L);
-            randomAccessFile.readFully(bArr, i + i7, i2 - i7);
-        }
-        this.a = cx8Var.d(this.a + i2);
-        this.b -= i2;
-        return i2;
     }
 
-    @Override // java.io.InputStream
-    public final int read() {
-        cx8 cx8Var = this.c;
-        RandomAccessFile randomAccessFile = cx8Var.a;
-        if (this.b == 0) {
-            return -1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        byte b = this.a;
+        bx8 bx8Var = this.b;
+        switch (b) {
+            case 0:
+                AnimatorSet animatorSet = bx8Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    bx8Var.h = null;
+                }
+                jn7.e().k(100, 512);
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = bx8Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    bx8Var.s = null;
+                    if (bx8Var.x) {
+                        bx8Var.setLayerType(0, null);
+                    }
+                }
+                jn7.e().k(100, 512);
+                break;
+            default:
+                AnimatorSet animatorSet3 = bx8Var.s;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    bx8Var.s = null;
+                    hl.c3(new uk8(this, (byte) 18));
+                }
+                jn7.e().k(100, 512);
+                break;
         }
-        randomAccessFile.seek(this.a);
-        int read = randomAccessFile.read();
-        this.a = cx8Var.d(this.a + 1);
-        this.b--;
-        return read;
     }
 }

@@ -1,80 +1,20 @@
 // default package
 
-import java.util.HashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class mg1 implements Runnable {
-    public final /* synthetic */ byte a = 1;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ p8c d;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class mg1 extends mf5 {
+    public final p66 r;
 
-    public /* synthetic */ mg1(gta gtaVar, TLObject tLObject, TLRPC.TL_error tL_error, p8c p8cVar) {
-        this.b = tLObject;
-        this.c = tL_error;
-        this.d = p8cVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        p8c p8cVar = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        TLObject tLObject = this.b;
-        switch (b) {
-            case 0:
-                if (tLObject == null) {
-                    d Q = LaunchActivity.Q();
-                    if (tL_error == null || Q == null || !"CHANNEL_PRIVATE".equals(tL_error.text)) {
-                        u21.Y().g0(tL_error, false);
-                    } else {
-                        LaunchActivity launchActivity = LaunchActivity.H1;
-                        if (launchActivity == null || !launchActivity.isFinishing()) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getResourceProvider(), Q.getContext());
-                            String M0 = k96.M0(R.string.AppName, null);
-                            hd hdVar = alertDialog$Builder.a;
-                            hdVar.S = M0;
-                            HashMap hashMap = new HashMap();
-                            int i = bkb.K5;
-                            hashMap.put("info1", Integer.valueOf(bkb.w0(null, i, false)));
-                            hashMap.put("info2", Integer.valueOf(bkb.w0(null, i, false)));
-                            alertDialog$Builder.l(R.raw.not_available, 52, bkb.w0(null, i, false), hashMap);
-                            hdVar.X = true;
-                            hdVar.S = k96.M0(2131752317, null);
-                            hdVar.U = k96.M0(2131752429, null);
-                            b00.t(null, 2131752029, alertDialog$Builder, null);
-                        }
-                    }
-                    p8cVar.a(null);
-                    break;
-                } else {
-                    p8cVar.a((TL_stories.TL_premium_boostsStatus) tLObject);
-                    break;
-                }
-                break;
-            default:
-                if (!(tLObject instanceof TLRPC.TL_payments_paymentFormStarGift)) {
-                    gta.c(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
-                    p8cVar.a(null);
-                    break;
-                } else {
-                    p8cVar.a((TLRPC.TL_payments_paymentFormStarGift) tLObject);
-                    break;
-                }
-        }
-    }
-
-    public /* synthetic */ mg1(TLObject tLObject, p8c p8cVar, TLRPC.TL_error tL_error) {
-        this.b = tLObject;
-        this.d = p8cVar;
-        this.c = tL_error;
+    public mg1(Context context, vnb vnbVar) {
+        super(context, vnbVar);
+        p66 p66Var = new p66(context, vnbVar);
+        this.r = p66Var;
+        p66Var.setTextSize(1, 14.0f);
+        yob.X(p66Var, aob.z6, vnbVar);
+        yob.G(p66Var, aob.L6, vnbVar);
+        p66Var.setPadding(hl.L(4.0f), 0, hl.L(4.0f), 0);
+        addView(p66Var, tre.d(-2, -2.0f, (ob6.a0 ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
     }
 }

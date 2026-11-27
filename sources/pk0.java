@@ -1,16 +1,26 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class pk0 extends i44 {
-    public final Thread w;
+import java.util.concurrent.locks.LockSupport;
 
-    public pk0(Thread thread) {
-        this.w = thread;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class pk0 extends c2 {
+    public final Thread e;
+    public final z44 f;
+
+    public pk0(mx2 mx2Var, Thread thread, z44 z44Var) {
+        super(mx2Var, true);
+        this.e = thread;
+        this.f = z44Var;
     }
 
-    @Override // i44
-    public final Thread m() {
-        return this.w;
+    @Override // sv5
+    public final void f(Object obj) {
+        Thread currentThread = Thread.currentThread();
+        Thread thread = this.e;
+        if (ur5.a(currentThread, thread)) {
+            return;
+        }
+        LockSupport.unpark(thread);
     }
 }

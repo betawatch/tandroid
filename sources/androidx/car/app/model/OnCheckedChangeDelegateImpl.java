@@ -6,17 +6,17 @@ import androidx.car.app.model.IOnCheckedChangeListener;
 import androidx.car.app.model.OnCheckedChangeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public class OnCheckedChangeDelegateImpl implements xo7 {
+public class OnCheckedChangeDelegateImpl implements xr7 {
     private final IOnCheckedChangeListener mStub;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+    /* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
     static class OnCheckedChangeListenerStub extends IOnCheckedChangeListener.Stub {
-        private final lpb mListener;
+        private final mtb mListener;
 
-        public OnCheckedChangeListenerStub(lpb lpbVar) {
+        public OnCheckedChangeListenerStub(mtb mtbVar) {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -26,8 +26,8 @@ public class OnCheckedChangeDelegateImpl implements xo7 {
 
         @Override // androidx.car.app.model.IOnCheckedChangeListener
         public void onCheckedChange(final boolean z, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.e.c(iOnDoneCallback, "onCheckedChange", new q69() { // from class: androidx.car.app.model.d
-                @Override // q69
+            androidx.car.app.utils.e.c(iOnDoneCallback, "onCheckedChange", new da9() { // from class: androidx.car.app.model.d
+                @Override // da9
                 public final Object a() {
                     Object lambda$onCheckedChange$0;
                     lambda$onCheckedChange$0 = OnCheckedChangeDelegateImpl.OnCheckedChangeListenerStub.this.lambda$onCheckedChange$0(z);
@@ -37,21 +37,21 @@ public class OnCheckedChangeDelegateImpl implements xo7 {
         }
     }
 
-    private OnCheckedChangeDelegateImpl(lpb lpbVar) {
-        this.mStub = new OnCheckedChangeListenerStub(lpbVar);
+    private OnCheckedChangeDelegateImpl(mtb mtbVar) {
+        this.mStub = new OnCheckedChangeListenerStub(mtbVar);
     }
 
-    public static xo7 create(lpb lpbVar) {
-        return new OnCheckedChangeDelegateImpl(lpbVar);
+    public static xr7 create(mtb mtbVar) {
+        return new OnCheckedChangeDelegateImpl(mtbVar);
     }
 
-    public void sendCheckedChange(boolean z, cp7 cp7Var) {
+    public void sendCheckedChange(boolean z, cs7 cs7Var) {
         try {
             IOnCheckedChangeListener iOnCheckedChangeListener = this.mStub;
             Objects.requireNonNull(iOnCheckedChangeListener);
             iOnCheckedChangeListener.onCheckedChange(z, androidx.car.app.utils.e.a());
         } catch (RemoteException e) {
-            sdb.b(e);
+            grb.m(e);
         }
     }
 

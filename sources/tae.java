@@ -1,19 +1,71 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class tae implements zn7 {
-    public static final tae a = new tae();
+import android.content.Context;
+import com.google.mlkit.nl.languageid.IdentifiedLanguage;
+import com.google.mlkit.nl.languageid.bundled.internal.ThickLanguageIdentifier;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 
-    static {
-        yjb.y(yjb.q(kkd.class, new cjd(1)));
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class tae extends sg7 {
+    public ThickLanguageIdentifier d;
+    public final Context e;
+    public final l8d f;
+
+    public tae(Context context, l8d l8dVar) {
+        this.e = context;
+        this.f = l8dVar;
+        l8dVar.getClass();
     }
 
-    @Override // q24
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    @Override // sg7
+    public final void b() {
+        xve.k(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
+        if (this.d == null) {
+            this.f.getClass();
+            ThickLanguageIdentifier thickLanguageIdentifier = new ThickLanguageIdentifier(this.e);
+            this.d = thickLanguageIdentifier;
+            thickLanguageIdentifier.b();
         }
-        throw null;
+    }
+
+    @Override // sg7
+    public final void c() {
+        xve.k(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
+        ThickLanguageIdentifier thickLanguageIdentifier = this.d;
+        if (thickLanguageIdentifier != null) {
+            thickLanguageIdentifier.c();
+            this.d = null;
+        }
+    }
+
+    public final String e(String str) {
+        String str2;
+        if (this.d == null) {
+            b();
+        }
+        if (str.isEmpty()) {
+            return "und";
+        }
+        ThickLanguageIdentifier thickLanguageIdentifier = this.d;
+        xve.h(thickLanguageIdentifier);
+        ArrayList a = thickLanguageIdentifier.a(str);
+        int size = a.size();
+        int i = 0;
+        while (true) {
+            if (i >= size) {
+                str2 = "";
+                break;
+            }
+            Object obj = a.get(i);
+            i++;
+            IdentifiedLanguage identifiedLanguage = (IdentifiedLanguage) obj;
+            if (!"unknown".equals(identifiedLanguage.a)) {
+                str2 = identifiedLanguage.a;
+                break;
+            }
+        }
+        return str2.isEmpty() ? "und" : "iw".equals(str2) ? "he" : str2;
     }
 }

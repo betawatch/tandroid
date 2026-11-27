@@ -1,36 +1,582 @@
 // default package
 
-import android.graphics.Rect;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.ColorFilter;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xy3 extends c49 {
-    public final /* synthetic */ t14 a;
+public abstract class xy3 extends cv9 {
+    public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
+    public static final int[] f0 = {R.raw.msg_emoji_smiles, R.raw.msg_emoji_cat, R.raw.msg_emoji_food, R.raw.msg_emoji_activities, R.raw.msg_emoji_travel, R.raw.msg_emoji_objects, R.raw.msg_emoji_other, R.raw.msg_emoji_flags};
+    public final uy3 E;
+    public final uy3 F;
+    public final wy3 G;
+    public final HashMap H;
+    public final int I;
+    public ValueAnimator J;
+    public float K;
+    public float L;
+    public int M;
+    public int N;
+    public boolean O;
+    public final boolean P;
+    public final int Q;
+    public final Runnable R;
+    public int S;
+    public final int T;
+    public boolean U;
+    public boolean V;
+    public boolean W;
+    public boolean a0;
+    public boolean b0;
+    public boolean c0;
+    public float d0;
+    public final boolean h;
+    public boolean n;
+    public mm r;
+    public final vnb s;
+    public final boolean w;
+    public final uy3 x;
+    public final uy3 y;
 
-    public xy3(t14 t14Var) {
-        this.a = t14Var;
-    }
-
-    @Override // c49
-    public final void e(Rect rect, View view, RecyclerView recyclerView, p49 p49Var) {
-        int R = RecyclerView.R(view);
-        t14 t14Var = this.a;
-        w39 adapter = t14Var.i0.getAdapter();
-        y04 y04Var = t14Var.o0;
-        if (adapter == y04Var && R == y04Var.J) {
-            rect.set(0, 0, 0, 0);
+    public xy3(Context context, vnb vnbVar, boolean z, boolean z2, boolean z3, boolean z4, int i, Runnable runnable, int i2, boolean z5) {
+        super(context);
+        this.h = !yac.h(yac.t0).p();
+        this.n = true;
+        this.H = new HashMap();
+        this.K = 0.0f;
+        this.L = 0.0f;
+        this.M = 0;
+        this.N = 0;
+        this.O = true;
+        this.S = 6;
+        this.U = true;
+        this.V = true;
+        this.W = true;
+        this.a0 = true;
+        this.b0 = false;
+        this.c0 = true;
+        this.d0 = 11.0f;
+        this.w = z4;
+        this.s = vnbVar;
+        this.R = runnable;
+        this.T = i;
+        this.Q = i2;
+        this.P = z5;
+        qy3 qy3Var = new qy3(this, context, z4, z5);
+        this.b = qy3Var;
+        qy3Var.setClipToPadding(false);
+        this.b.setOrientation(0);
+        setVerticalScrollBarEnabled(false);
+        setHorizontalScrollBarEnabled(false);
+        addView(this.b);
+        if (i == 4) {
+            LinearLayout linearLayout = this.b;
+            uy3 uy3Var = new uy3(this, context, R.drawable.msg_emoji_stickers, false);
+            this.x = uy3Var;
+            linearLayout.addView(uy3Var);
+            uy3Var.setContentDescription(ob6.M0(2131754751, null));
+        }
+        int i3 = i == 6 ? R.drawable.emoji_love : i == 3 ? R.drawable.msg_emoji_smiles : R.drawable.msg_emoji_recent;
+        if (z) {
+            LinearLayout linearLayout2 = this.b;
+            uy3 uy3Var2 = new uy3(this, context, i3, false);
+            this.y = uy3Var2;
+            linearLayout2.addView(uy3Var2);
+            uy3Var2.setContentDescription(ob6.M0(2131746088, null));
+            uy3Var2.a = -934918565L;
+        }
+        if (z2) {
+            LinearLayout linearLayout3 = this.b;
+            uy3 uy3Var3 = new uy3(this, context, R.drawable.msg_emoji_gem, false);
+            this.E = uy3Var3;
+            linearLayout3.addView(uy3Var3);
+            uy3Var3.setContentDescription(ob6.M0(2131751140, null));
+            uy3Var3.setAlpha(0.0f);
+            uy3Var3.a = 98352451L;
+        }
+        if (!z4) {
+            int i4 = 0;
+            while (i4 < 8) {
+                uy3 uy3Var4 = new uy3(this, context, e0[i4], i4 == 0);
+                uy3Var4.setContentDescription(f(i4));
+                this.b.addView(uy3Var4);
+                i4++;
+            }
+            o();
             return;
         }
-        if (R == 0) {
-            y04Var.getClass();
+        if (z3) {
+            LinearLayout linearLayout4 = this.b;
+            wy3 wy3Var = new wy3(this, context);
+            this.G = wy3Var;
+            linearLayout4.addView(wy3Var);
+            wy3Var.h = 3552126;
         }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = gl.L(2.0f);
-        z04 z04Var = t14Var.j0;
-        y04Var.getClass();
-        rect.right = z04Var.C1(R) ? 0 : gl.L(2.0f);
+        this.I = this.b.getChildCount();
+        if (runnable != null) {
+            LinearLayout linearLayout5 = this.b;
+            uy3 uy3Var5 = new uy3(this, context, R.drawable.smiles_tab_settings, true);
+            this.F = uy3Var5;
+            linearLayout5.addView(uy3Var5);
+            uy3Var5.setContentDescription(ob6.M0(2131745223, null));
+            uy3Var5.a = 1434631203L;
+            uy3Var5.setAlpha(0.0f);
+        }
+        o();
+    }
+
+    public static String f(int i) {
+        switch (i) {
+            case 0:
+                return ob6.M0(2131751160, null);
+            case 1:
+                return ob6.M0(2131751159, null);
+            case 2:
+                return ob6.M0(2131751158, null);
+            case 3:
+                return ob6.M0(2131751157, null);
+            case 4:
+                return ob6.M0(2131751156, null);
+            case 5:
+                return ob6.M0(2131751155, null);
+            case 6:
+                return ob6.M0(2131751154, null);
+            case 7:
+                return ob6.M0(2131751153, null);
+            default:
+                return null;
+        }
+    }
+
+    public boolean d() {
+        return false;
+    }
+
+    public boolean g(c14 c14Var) {
+        return c14Var.f;
+    }
+
+    public ColorFilter getEmojiColorFilter() {
+        return aob.n0(this.s);
+    }
+
+    public abstract boolean h(int i);
+
+    public final void j(int i, boolean z) {
+        int i2;
+        boolean z2 = z && !this.c0;
+        uy3 uy3Var = this.x;
+        if (uy3Var != null) {
+            i++;
+        }
+        if (!this.W || uy3Var != null) {
+            i = Math.max(1, i);
+        }
+        int i3 = this.M;
+        int i4 = 0;
+        int i5 = 0;
+        while (i4 < this.b.getChildCount()) {
+            View childAt = this.b.getChildAt(i4);
+            if (childAt instanceof wy3) {
+                wy3 wy3Var = (wy3) childAt;
+                int i6 = 0;
+                int i7 = i5;
+                while (i6 < wy3Var.b.getChildCount()) {
+                    View childAt2 = wy3Var.b.getChildAt(i6);
+                    if (childAt2 instanceof uy3) {
+                        ((uy3) childAt2).g(i == i7, z2);
+                    }
+                    i6++;
+                    i7++;
+                }
+                i2 = i7 - 1;
+            } else {
+                if (childAt instanceof uy3) {
+                    ((uy3) childAt).g(i == i5, z2);
+                }
+                i2 = i5;
+            }
+            if (i >= i5 && i <= i2) {
+                this.M = i4;
+            }
+            i4++;
+            i5 = i2 + 1;
+        }
+        int i8 = this.M;
+        wy3 wy3Var2 = this.G;
+        if (i3 != i8) {
+            ValueAnimator valueAnimator = this.J;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            float f = this.K;
+            float f2 = this.M;
+            byte b = 2;
+            if (z2) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.J = ofFloat;
+                ofFloat.addUpdateListener(new gy1(this, f, f2, b));
+                this.J.setDuration(350L);
+                this.J.setInterpolator(k43.h);
+                this.J.start();
+            } else {
+                this.L = 1.0f;
+                this.K = hl.R1(f, f2, 1.0f);
+                this.b.invalidate();
+            }
+            if (wy3Var2 != null) {
+                boolean z3 = this.M == 1 || this.h;
+                if (z3 != wy3Var2.n) {
+                    wy3Var2.n = z3;
+                    if (!z3) {
+                        wy3Var2.a(0);
+                    }
+                    ValueAnimator valueAnimator2 = wy3Var2.c;
+                    if (valueAnimator2 != null) {
+                        valueAnimator2.cancel();
+                    }
+                    if (z2) {
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(wy3Var2.r, z3 ? 1.0f : 0.0f);
+                        wy3Var2.c = ofFloat2;
+                        ofFloat2.addUpdateListener(new az1(wy3Var2, (byte) 23));
+                        wy3Var2.c.setDuration(475L);
+                        wy3Var2.c.setInterpolator(k43.h);
+                        wy3Var2.c.start();
+                    } else {
+                        wy3Var2.r = z3 ? 1.0f : 0.0f;
+                        wy3Var2.invalidate();
+                        wy3Var2.requestLayout();
+                        wy3Var2.c();
+                        wy3Var2.s.b.invalidate();
+                    }
+                }
+            }
+            View childAt3 = this.b.getChildAt(this.M);
+            if (this.M >= 2) {
+                b(childAt3.getLeft(), childAt3.getRight());
+            } else {
+                a(0);
+            }
+        }
+        if (this.N != i) {
+            if (wy3Var2 != null && this.M == 1 && i >= 1 && i <= wy3Var2.b.getChildCount() + 1) {
+                int i9 = (i - 1) * 36;
+                wy3Var2.b(hl.L(i9 - 6), hl.L(i9 + 24));
+            }
+            this.N = i;
+        }
+    }
+
+    public final int k() {
+        boolean z = this.P;
+        vnb vnbVar = this.s;
+        if (z) {
+            return vm2.o(aob.v0(aob.Nl, vnbVar), 12);
+        }
+        int i = this.T;
+        return (i == 5 || i == 7) ? aob.p1(0.09f, this.Q) : aob.p1(0.18f, aob.v0(aob.Ef, vnbVar));
+    }
+
+    public final void l(boolean z) {
+        uy3 uy3Var = this.E;
+        if (uy3Var != null) {
+            boolean z2 = this.a0;
+            if (z2 || this.b0 != z) {
+                this.b0 = z;
+                if (z2) {
+                    uy3Var.setVisibility(z ? 0 : 8);
+                    uy3Var.setAlpha(z ? 1.0f : 0.0f);
+                } else {
+                    uy3Var.setVisibility(0);
+                    uy3Var.animate().alpha(z ? 1.0f : 0.0f).setDuration(200L).setInterpolator(k43.h).withEndAction(new xac((byte) 16, this, z)).start();
+                }
+                this.b.requestLayout();
+                this.a0 = false;
+            }
+        }
+    }
+
+    public final void m(boolean z) {
+        uy3 uy3Var = this.y;
+        if (uy3Var == null) {
+            return;
+        }
+        if (z) {
+            uy3Var.setBackground(new kj3(k()));
+        } else {
+            uy3Var.setBackground(null);
+        }
+    }
+
+    public final void n(boolean z) {
+        this.n = z;
+        this.b.invalidate();
+    }
+
+    public final void o() {
+        final byte b = 0;
+        int i = 0;
+        final int i2 = 0;
+        while (i < this.b.getChildCount()) {
+            View childAt = this.b.getChildAt(i);
+            final byte b2 = 1;
+            if (childAt instanceof wy3) {
+                wy3 wy3Var = (wy3) childAt;
+                int i3 = 0;
+                while (i3 < wy3Var.b.getChildCount()) {
+                    wy3Var.b.getChildAt(i3).setOnClickListener(new View.OnClickListener(this) { // from class: py3
+                        public final /* synthetic */ xy3 b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            byte b3 = b;
+                            int i4 = i2;
+                            xy3 xy3Var = this.b;
+                            switch (b3) {
+                                case 0:
+                                    xy3Var.h(i4);
+                                    break;
+                                default:
+                                    xy3Var.h(i4);
+                                    break;
+                            }
+                        }
+                    });
+                    i3++;
+                    i2++;
+                }
+                i2--;
+            } else if (childAt != null) {
+                childAt.setOnClickListener(new View.OnClickListener(this) { // from class: py3
+                    public final /* synthetic */ xy3 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        byte b3 = b2;
+                        int i4 = i2;
+                        xy3 xy3Var = this.b;
+                        switch (b3) {
+                            case 0:
+                                xy3Var.h(i4);
+                                break;
+                            default:
+                                xy3Var.h(i4);
+                                break;
+                        }
+                    }
+                });
+            }
+            i++;
+            i2++;
+        }
+        uy3 uy3Var = this.F;
+        if (uy3Var != null) {
+            uy3Var.setOnClickListener(new mh3(this, (byte) 6));
+        }
+    }
+
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        this.b.setPadding(hl.L(this.d0), 0, hl.L(11.0f), 0);
+        super.onMeasure(i, i2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x016b  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0166  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void p(ArrayList arrayList) {
+        int i;
+        int i2;
+        uy3 uy3Var;
+        boolean z;
+        boolean z2;
+        TLRPC.Document document;
+        if (this.w) {
+            if (!this.c0 || ls6.d0(yac.t0).X[5]) {
+                this.c0 = false;
+                if (arrayList == null) {
+                    return;
+                }
+                int childCount = this.b.getChildCount();
+                int i3 = this.I;
+                int i4 = childCount - i3;
+                uy3 uy3Var2 = this.F;
+                int i5 = i4 - (uy3Var2 != null ? 1 : 0);
+                if (i5 == 0 && arrayList.size() > 0) {
+                    arrayList.size();
+                }
+                arrayList.size();
+                e();
+                boolean z3 = yac.h(yac.t0).p() || d();
+                ArrayList arrayList2 = new ArrayList();
+                int i6 = 0;
+                while (i6 < Math.max(arrayList.size(), i5)) {
+                    uy3 uy3Var3 = i6 < i5 ? (uy3) this.b.getChildAt(i6 + i3) : null;
+                    c14 c14Var = i6 < arrayList.size() ? (c14) arrayList.get(i6) : null;
+                    if (c14Var == null) {
+                        if (uy3Var3 != null) {
+                            this.b.removeView(uy3Var3);
+                        }
+                    } else if (c14Var.j == 0) {
+                        boolean z4 = c14Var.e;
+                        Long l = c14Var.a;
+                        if (l != null) {
+                            if (uy3Var3 == null) {
+                                i = i5;
+                                uy3Var3 = new uy3(this, getContext(), c14Var.a.longValue());
+                                i(uy3Var3);
+                                this.b.addView(uy3Var3, i3 + i6);
+                            } else {
+                                i = i5;
+                                uy3Var3.setAnimatedEmojiDocumentId(l.longValue());
+                            }
+                            i2 = i3;
+                            uy3Var = uy3Var2;
+                            z = z3;
+                            z2 = true;
+                        } else {
+                            i = i5;
+                            TLRPC.StickerSet stickerSet = c14Var.b;
+                            ArrayList arrayList3 = c14Var.c;
+                            if (stickerSet == null) {
+                                i2 = i3;
+                                uy3Var = uy3Var2;
+                                z = z3;
+                            } else {
+                                if (arrayList3 != null) {
+                                    int i7 = 0;
+                                    while (i7 < arrayList3.size()) {
+                                        document = (TLRPC.Document) arrayList3.get(i7);
+                                        z = z3;
+                                        i2 = i3;
+                                        uy3Var = uy3Var2;
+                                        if (document.id == stickerSet.thumb_document_id) {
+                                            z2 = true;
+                                            break;
+                                        }
+                                        i7++;
+                                        z3 = z;
+                                        i3 = i2;
+                                        uy3Var2 = uy3Var;
+                                    }
+                                }
+                                i2 = i3;
+                                uy3Var = uy3Var2;
+                                z = z3;
+                                if (arrayList3 != null) {
+                                    z2 = true;
+                                    if (arrayList3.size() >= 1) {
+                                        document = (TLRPC.Document) arrayList3.get(0);
+                                        if (uy3Var3 == null) {
+                                            uy3 uy3Var4 = new uy3(this, getContext(), document);
+                                            i(uy3Var4);
+                                            this.b.addView(uy3Var4, i2 + i6);
+                                            uy3Var3 = uy3Var4;
+                                        } else {
+                                            uy3Var3.setAnimatedEmojiDocument(document);
+                                        }
+                                        if (document == null) {
+                                            uy3Var3.setStickerThumb(c14Var);
+                                        }
+                                    }
+                                    document = null;
+                                    if (uy3Var3 == null) {
+                                    }
+                                    if (document == null) {
+                                    }
+                                }
+                            }
+                            z2 = true;
+                            document = null;
+                            if (uy3Var3 == null) {
+                            }
+                            if (document == null) {
+                            }
+                        }
+                        uy3Var3.a = c14Var.i ? 439488310L : null;
+                        uy3Var3.g(this.M == i6 ? z2 : false, false);
+                        int i8 = this.T;
+                        if (i8 == 4) {
+                            uy3Var3.a((z || z4) ? null : Boolean.TRUE);
+                        } else if (i8 == 6 || i8 == 5 || i8 == 7) {
+                            uy3Var3.a(null);
+                        } else if (!z && !z4) {
+                            uy3Var3.a(Boolean.TRUE);
+                        } else if (g(c14Var)) {
+                            uy3Var3.a(null);
+                        } else {
+                            uy3Var3.a(Boolean.FALSE);
+                        }
+                        i6++;
+                        i5 = i;
+                        z3 = z;
+                        i3 = i2;
+                        uy3Var2 = uy3Var;
+                    } else if (uy3Var3 == null) {
+                        uy3 uy3Var5 = new uy3(this, getContext(), c14Var.j, false);
+                        i(uy3Var5);
+                        this.b.addView(uy3Var5, i3 + i6);
+                    } else {
+                        uy3Var3.setDrawable(getResources().getDrawable(c14Var.j).mutate());
+                        uy3Var3.d();
+                        uy3Var3.a(null);
+                    }
+                    i = i5;
+                    i2 = i3;
+                    uy3Var = uy3Var2;
+                    z = z3;
+                    i6++;
+                    i5 = i;
+                    z3 = z;
+                    i3 = i2;
+                    uy3Var2 = uy3Var;
+                }
+                uy3 uy3Var6 = uy3Var2;
+                if (uy3Var6 != null) {
+                    uy3Var6.bringToFront();
+                    if (uy3Var6.getAlpha() < 1.0f) {
+                        uy3Var6.animate().alpha(1.0f).setDuration(ri5.d() ? 0L : 200L).setInterpolator(k43.f).start();
+                    }
+                }
+                for (int i9 = 0; i9 < arrayList2.size(); i9++) {
+                    ((uy3) arrayList2.get(i9)).getClass();
+                    ((uy3) arrayList2.get(i9)).c();
+                }
+                o();
+            }
+        }
+    }
+
+    public void setAnimatedEmojiCacheType(int i) {
+        this.S = i;
+    }
+
+    public void setPaddingLeft(float f) {
+        this.d0 = f;
+    }
+
+    public void e() {
+    }
+
+    public void i(uy3 uy3Var) {
     }
 }

@@ -1,46 +1,32 @@
 // default package
 
-import java.util.concurrent.Executor;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ge2 implements Executor {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ge2 implements oqb {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ he2 b;
 
-    public /* synthetic */ ge2(Object obj, byte b) {
+    public /* synthetic */ ge2(he2 he2Var, byte b) {
         this.a = b;
-        this.b = obj;
+        this.b = he2Var;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
+    @Override // oqb
+    public final void a(TLRPC.WallPaper wallPaper) {
         byte b = this.a;
-        Object obj = this.b;
+        he2 he2Var = this.b;
         switch (b) {
             case 0:
-                ((co3) obj).c(runnable);
-                break;
-            case 1:
-                ((cdb) obj).e(runnable);
-                break;
-            case 2:
-                ((rx4) obj).post(runnable);
-                break;
-            case 3:
-                g8c.X(((tv6) obj).l, runnable);
-                break;
-            case 4:
-                ((lw6) obj).m0(runnable);
-                break;
-            case 5:
-                ((ox6) obj).R(runnable);
-                break;
-            case 6:
-                ((ao9) obj).b.post(runnable);
+                oe2 oe2Var = he2Var.a;
+                oe2Var.R1.H();
+                oe2Var.dismiss();
                 break;
             default:
-                ((do3) obj).postRunnable(runnable);
+                oe2 oe2Var2 = he2Var.a;
+                oe2Var2.R1.H();
+                oe2Var2.dismiss();
                 break;
         }
     }

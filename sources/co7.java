@@ -1,7 +1,17 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.app.Notification;
+import android.app.Person;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public interface co7 {
-    void D2(Object obj);
+public abstract class co7 {
+    public static Parcelable a(Person person) {
+        return person;
+    }
+
+    public static Notification.MessagingStyle.Message b(CharSequence charSequence, long j, Person person) {
+        return new Notification.MessagingStyle.Message(charSequence, j, person);
+    }
 }

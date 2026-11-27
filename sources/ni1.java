@@ -1,47 +1,66 @@
 // default package
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ni1 implements TextWatcher {
-    public final /* synthetic */ zi1 a;
+public final /* synthetic */ class ni1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ ij1 b;
 
-    public ni1(zi1 zi1Var) {
-        this.a = zi1Var;
+    public /* synthetic */ ni1(ij1 ij1Var, byte b) {
+        this.a = b;
+        this.b = ij1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        zi1 zi1Var = this.a;
-        fi1 fi1Var = zi1Var.f1;
-        ps0 ps0Var = zi1Var.O0;
-        if (zi1Var.L0) {
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        Object[] objArr = 0;
+        ij1 ij1Var = this.b;
+        switch (b) {
+            case 0:
+                m01.u(ij1Var.getContext(), ob6.M0(2131748158, null));
+                break;
+            case 1:
+                m01.u(ij1Var.getContext(), ob6.M0(2131748124, null));
+                break;
+            case 2:
+                q9c q9cVar = ij1Var.X0;
+                if (q9cVar != null) {
+                    boolean z = ij1Var.f0;
+                    q9cVar.g3.O((ij1Var.R0 != -1) == ij1Var.a1.a());
+                    if (z && ij1Var.R0 != -1) {
+                        ij1Var.a();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                ij1Var.k1 = ij1Var.j1;
+                break;
+            case 4:
+                ij1Var.J0.setLoading(false);
+                break;
+            case 5:
+                ij1Var.Y0.setVisibility(8);
+                break;
+            case 6:
+                ij1Var.Y0.setVisibility(8);
+                break;
+            default:
+                int i = ij1Var.o0;
+                hl.r(ij1Var.s1);
+                if (ij1Var.j1 != ij1Var.k1) {
+                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
+                    tL_channels_restrictSponsoredMessages.channel = uc7.s1(i).h1(-ij1Var.p0);
+                    tL_channels_restrictSponsoredMessages.restricted = ij1Var.j1;
+                    ConnectionsManager.getInstance(i).sendRequest(tL_channels_restrictSponsoredMessages, new ri1(ij1Var, objArr == true ? 1 : 0));
+                    break;
+                }
+                break;
         }
-        long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        zi1Var.N0 = parseLong;
-        long j = zi1Var.D0.amount;
-        if (parseLong > j) {
-            zi1Var.N0 = j;
-            zi1Var.L0 = true;
-            ps0Var.setText(Long.toString(j));
-            ps0Var.setSelection(ps0Var.getText().length());
-            zi1Var.L0 = false;
-        }
-        zi1Var.M0 = zi1Var.N0 == zi1Var.D0.amount;
-        gl.r(fi1Var);
-        fi1Var.run();
-        zi1Var.M0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 }

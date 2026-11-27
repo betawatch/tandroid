@@ -1,115 +1,113 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.URLSpan;
-import android.util.SparseIntArray;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final /* synthetic */ class z02 implements q8c {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
+public final class z02 extends hb {
+    public final /* synthetic */ a12 x;
 
-    public /* synthetic */ z02(Object obj, byte b) {
-        this.a = b;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z02(a12 a12Var, a12 a12Var2) {
+        super(a12Var2);
+        this.x = a12Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // q8c
-    public final Object a(Object obj) {
-        yb1 yb1Var;
-        byte b = this.a;
-        byte b2 = 4;
-        byte b3 = 3;
-        Object[] objArr = 0;
-        Object[] objArr2 = 0;
-        byte b4 = 1;
-        Object obj2 = this.b;
-        switch (b) {
-            case 0:
-                k27 k27Var = (k27) obj;
-                ((h12) obj2).P = k27Var;
-                return Boolean.valueOf(MediaController.w().n0(tb4.t(k27Var), k27Var, 0L, true, null, 0L));
-            case 1:
-                sd8 sd8Var = (sd8) obj2;
-                View view = (View) obj;
-                ImageReceiver imageReceiver = new ImageReceiver(view);
-                kcb c = uo3.c((bkb.I.o() ? 3 : 6) * 0.12f, bkb.Fc);
-                c.t = true;
-                c.m = bkb.gf;
-                imageReceiver.a0(gl5.p(usc.b(sd8Var.b.geo, kk7.W4, kk7.x2, 15, Math.min(2, (int) Math.ceil(gl.p)))), null, null, null, new ni2(c), null, 0);
-                view.addOnAttachStateChangeListener(new rd8(imageReceiver, objArr == true ? 1 : 0));
-                imageReceiver.q0(gl.L(14.0f));
-                return new qa1(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate(), b2);
-            case 2:
-                return ((View) obj).getParent() != ((iz4) obj2).c ? Boolean.FALSE : Boolean.valueOf(!l5c.K(r0.T(r1).f));
-            case 3:
-                Paint[] paintArr = ((kd5) obj2).h;
-                return paintArr[((Integer) obj).intValue() % paintArr.length];
-            case 4:
-                rw5 rw5Var = (rw5) obj2;
-                Integer num = (Integer) obj;
-                if (num.intValue() == 2) {
-                    x02 x02Var = new x02(rw5Var.getContext(), new hw5(rw5Var), false, false, false, rw5Var.G1);
-                    x02Var.n = true;
-                    x02Var.v1(k96.M0(2131754425, null));
-                    x02Var.W3 = new sk4(rw5Var, x02Var, objArr2 == true ? 1 : 0, b2);
-                    x02Var.setOnDismissListener(new g5((byte) 5));
-                    x02Var.t1(1, false);
-                    x02Var.Z0();
-                    MediaController.h2 = true;
-                    x02Var.d2.h0();
-                    x02Var.show();
-                } else if (num.intValue() == 6 && (yb1Var = rw5Var.P1) != null) {
-                    yb1Var.a();
-                }
-                return Boolean.TRUE;
-            case 5:
-                ve6 ve6Var = (ve6) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error == null || !"PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    return Boolean.FALSE;
-                }
-                gl.c3(new re6(ve6Var, b3));
-                return Boolean.TRUE;
-            case 6:
-                ProfileActivity profileActivity = (ProfileActivity) obj2;
-                URLSpan uRLSpan = (URLSpan) obj;
-                RectF rectF = ProfileActivity.Z6;
-                profileActivity.getClass();
-                if (uRLSpan == null) {
-                    return Boolean.FALSE;
-                }
-                profileActivity.e3(uRLSpan.getURL(), null);
-                return Boolean.TRUE;
-            case 7:
-                int i = ((SparseIntArray) obj2).get(((Integer) obj).intValue(), -1);
-                if (i == -1) {
-                    return Boolean.TRUE;
-                }
-                return Boolean.valueOf(i == 1);
-            case 8:
-                k27 k27Var2 = (k27) obj;
-                ((yx9) obj2).k2 = k27Var2;
-                return Boolean.valueOf(MediaController.w().n0(tb4.t(k27Var2), k27Var2, 0L, true, null, 0L));
-            case 9:
-                qua quaVar = (qua) obj2;
-                return quaVar.r[((Integer) obj).intValue() % quaVar.r.length];
-            case 10:
-                wdb wdbVar = (wdb) obj2;
-                return wdbVar.r[((Integer) obj).intValue() % wdbVar.r.length];
-            case 11:
-                return ((View) obj).getParent() != ((q5c) obj2) ? Boolean.FALSE : Boolean.valueOf(!l5c.K(r0.T(r1).f));
-            default:
-                return new isc((wt) obj2, (Integer) obj, b4);
+    @Override // hb
+    public final boolean b() {
+        o24 o24Var;
+        n12 n12Var = this.x.l0;
+        if ((!n12Var.J || n12Var.r2) && n12Var.p3) {
+            f12 f12Var = n12Var.v2;
+            if (f12Var != n12Var.g2 && f12Var != n12Var.h2 && !n12Var.V0().m()) {
+                return true;
+            }
+            f12 f12Var2 = n12Var.v2;
+            a72 a72Var = n12Var.g2;
+            if (f12Var2 == a72Var && ((o24Var = a72Var.F) == null || o24Var.getVisibility() != 0)) {
+                return true;
+            }
+            f12 f12Var3 = n12Var.v2;
+            a72 a72Var2 = n12Var.h2;
+            if (f12Var3 == a72Var2) {
+                o24 o24Var2 = a72Var2.F;
+                return o24Var2 == null || o24Var2.getVisibility() != 0;
+            }
         }
+        return false;
+    }
+
+    @Override // hb
+    public final void e(float f, float f2, boolean z) {
+        a12 a12Var = this.x;
+        n12 n12Var = a12Var.l0;
+        n12Var.i4 = f;
+        float f3 = n12Var.a4;
+        if (f3 > 0.0f) {
+            f = qd4.A(f3, n12Var.b4, (n12Var.v2 != n12Var.q2 || z) ? 1.0f - f2 : f2, f);
+            n12Var.i4 = f;
+        }
+        n12Var.U2.setTranslationY(f);
+        n12Var.X2.setTranslationY(n12Var.i4);
+        s7 s7Var = n12Var.b3;
+        if (s7Var != null) {
+            s7Var.setTranslationY(n12Var.i4);
+        }
+        s7 s7Var2 = n12Var.Z2;
+        if (s7Var2 != null) {
+            s7Var2.setTranslationY(n12Var.X2.getTranslationY());
+        }
+        kg5 kg5Var = n12Var.a3;
+        if (kg5Var != null) {
+            kg5Var.setTranslationY(n12Var.X2.getTranslationY());
+        }
+        n12Var.c3.setTranslationY(n12Var.i4);
+        n12Var.L1(0);
+        n12Var.F0 = n12Var.v2 != n12Var.q2 ? n12Var.i4 : 0.0f;
+        n12Var.c.invalidate();
+        a12Var.invalidate();
+        n12Var.A2.invalidate();
+        n12Var.F1();
+        f12 f12Var = n12Var.v2;
+        if (f12Var != null) {
+            f12Var.n(n12Var.i4, f2);
+        }
+    }
+
+    @Override // hb
+    public final void f() {
+        n12 n12Var = this.x.l0;
+        n12Var.I1(n12Var.v2, 0);
+        n12Var.Z3 = n12Var.Y3[0];
+        n12Var.v2.z();
+        if (!(n12Var.v2 instanceof j22) || n12Var.A3) {
+            return;
+        }
+        int L = n12Var.d ? hl.L(84.0f) : 0;
+        for (int i = 0; i < n12Var.u2.size(); i++) {
+            ((j22) n12Var.u2.valueAt(i)).setMeasureOffsetY(L);
+        }
+    }
+
+    @Override // hb
+    public final void g(int i, boolean z) {
+        int i2;
+        a12 a12Var = this.x;
+        n12 n12Var = a12Var.l0;
+        int i3 = n12Var.Z3;
+        if (i3 <= 0 || i3 == (i2 = n12Var.Y3[0]) || !(z || n12Var.v2 == n12Var.q2)) {
+            n12Var.a4 = -1.0f;
+        } else {
+            n12Var.a4 = i3;
+            n12Var.b4 = i2;
+        }
+        a12Var.invalidate();
+        if ((n12Var.v2 instanceof j22) && !n12Var.A3) {
+            m02 m02Var = n12Var.u3;
+            if (z) {
+                m02Var.setVisibility(8);
+            } else {
+                m02Var.setVisibility(0);
+            }
+        }
+        n12Var.v2.A(i, z);
     }
 }

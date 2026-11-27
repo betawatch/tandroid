@@ -1,23 +1,48 @@
 // default package
 
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import org.xmlpull.v1.XmlPullParser;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public abstract class ap2 {
-    public static Drawable a(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
-        return Drawable.createFromXmlInner(resources, xmlPullParser, attributeSet, theme);
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ap2 implements ef7, bf7 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ fn7 d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ ap2(id idVar, e eVar, int i, long j, boolean z) {
+        this.d = idVar;
+        this.e = eVar;
+        this.a = i;
+        this.b = j;
+        this.c = z;
     }
 
-    public static int b(TypedArray typedArray) {
-        return typedArray.getChangingConfigurations();
+    @Override // bf7
+    public final void A(boolean z) {
+        uj3 uj3Var = (uj3) this.d;
+        TLRPC.Chat chat = (TLRPC.Chat) this.e;
+        uj3Var.Z3(this.a, this.b, chat, this.c, z);
     }
 
-    public static void c(Drawable drawable, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
-        drawable.inflate(resources, xmlPullParser, attributeSet, theme);
+    @Override // ef7
+    public final void run(long j) {
+        id idVar = (id) this.d;
+        e eVar = (e) this.e;
+        idVar.dismiss();
+        if (j == 0) {
+            return;
+        }
+        uc7.s1(this.a).Z2(-j, this.b, false, this.c, new ky((Object) eVar, j, (byte) 1));
+    }
+
+    public /* synthetic */ ap2(uj3 uj3Var, int i, TLRPC.Chat chat, long j, boolean z) {
+        this.d = uj3Var;
+        this.a = i;
+        this.e = chat;
+        this.b = j;
+        this.c = z;
     }
 }

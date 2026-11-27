@@ -1,18 +1,41 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class cde implements zn7 {
-    public static final cde a = new cde();
-    public static final w84 b = new w84("maxLabels", b00.m(yjb.q(kkd.class, new cjd(1))));
-    public static final w84 c = new w84("confidenceThreshold", b00.m(yjb.q(kkd.class, new cjd(2))));
-    public static final w84 d = new w84("customLocalModelOptions", b00.m(yjb.q(kkd.class, new cjd(3))));
+import java.util.Comparator;
 
-    @Override // q24
-    public final void a(Object obj, Object obj2) {
-        ao7 ao7Var = (ao7) obj2;
-        ao7Var.a(b, null);
-        ao7Var.a(c, ((kxe) obj).a);
-        ao7Var.a(d, null);
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final class cde implements Comparator {
+    public static final cde a;
+    public static final /* synthetic */ cde[] b;
+
+    static {
+        cde cdeVar = new cde("INSTANCE", 0);
+        a = cdeVar;
+        b = new cde[]{cdeVar};
+    }
+
+    public static cde[] values() {
+        return (cde[]) b.clone();
+    }
+
+    @Override // java.util.Comparator
+    public final /* bridge */ /* synthetic */ int compare(Object obj, Object obj2) {
+        byte[] bArr = (byte[]) obj;
+        byte[] bArr2 = (byte[]) obj2;
+        int min = Math.min(bArr.length, bArr2.length);
+        for (int i = 0; i < min; i++) {
+            int i2 = (bArr[i] & 255) - (bArr2[i] & 255);
+            if (i2 != 0) {
+                return i2;
+            }
+        }
+        return bArr.length - bArr2.length;
+    }
+
+    @Override // java.lang.Enum
+    public final String toString() {
+        return "UnsignedBytes.lexicographicalComparator() (pure Java version)";
     }
 }

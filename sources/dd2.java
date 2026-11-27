@@ -1,57 +1,90 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class dd2 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ fd2 b;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e;
 
-    public /* synthetic */ dd2(fd2 fd2Var, byte b) {
-        this.a = b;
-        this.b = fd2Var;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class dd2 extends j79 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ed2 d;
+
+    public dd2(ed2 ed2Var, Context context) {
+        this.d = ed2Var;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        fd2 fd2Var = this.b;
-        switch (b) {
-            case 0:
-                fd2Var.c(true);
-                break;
-            default:
-                fd2Var.e = fd2Var.b();
-                byte b2 = fd2Var.f;
-                byte b3 = fd2Var.h;
-                mu1 mu1Var = fd2Var.a;
-                if (fd2Var.b == null) {
-                    ed2 ed2Var = new ed2((mu1Var.getUserConfig().e() > mu1Var.a() ? 1 : (mu1Var.getUserConfig().e() == mu1Var.a() ? 0 : -1)) == 0 ? 3 : 0, mu1Var.getCurrentAccount(), mu1Var.getResourceProvider(), fd2Var.getContext(), fd2Var.a);
-                    ed2Var.n1 = 1.0f;
-                    ed2Var.setWillNotDraw(false);
-                    fd2Var.b = ed2Var;
-                    int L = gl.L(4.0f) + (k96.a0 ? (byte) 0 : b3);
-                    int L2 = gl.L(4.0f);
-                    int L3 = gl.L(4.0f);
-                    if (!k96.a0) {
-                        b3 = 0;
-                    }
-                    ed2Var.setPadding(L, L2, L3 + b3, gl.L(b2));
-                    fd2Var.b.setDelegate(new qx4(fd2Var));
-                    fd2Var.b.setClipChildren(false);
-                    fd2Var.b.setClipToPadding(false);
-                    fd2Var.addView(fd2Var.b, nme.e(-2, b2 + 70, 5));
-                }
-                fd2Var.c(false);
-                if (!fd2Var.b.isEnabled()) {
-                    fd2Var.y = false;
-                    fd2Var.b.setTransitionProgress(1.0f);
-                    break;
-                } else {
-                    fd2Var.y = true;
-                    fd2Var.b.m(fd2Var.e, mu1Var.r8, true);
-                    fd2Var.b.p(false);
-                    break;
-                }
+    @Override // j79
+    public final int b() {
+        ed2 ed2Var = this.d;
+        return (!ed2Var.d.isEmpty() ? ed2Var.n.size() + 1 : 0) + 2;
+    }
+
+    @Override // j79
+    public final int d(int i) {
+        if (i == 0) {
+            return 3;
         }
+        if (i == 1) {
+            return 0;
+        }
+        return i == 2 ? 1 : 2;
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        int i2;
+        View view = f89Var.a;
+        int d = d(i);
+        ed2 ed2Var = this.d;
+        if (d != 0) {
+            if (d == 1) {
+                ((mf5) view).setText(ob6.M0(2131747549, null));
+                return;
+            } else {
+                if (d == 2) {
+                    TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ed2Var.n.get(i - 3);
+                    boolean contains = ed2Var.d.contains(tL_availableReaction.reaction);
+                    i2 = ((e) ed2Var).currentAccount;
+                    ((xa0) view).a(tL_availableReaction, contains, i2);
+                    return;
+                }
+                return;
+            }
+        }
+        ilb ilbVar = (ilb) view;
+        yob.X(ilbVar.getTextView(), aob.B6, null);
+        int i3 = ed2Var.s;
+        if (i3 == 1) {
+            ilbVar.setText(ob6.M0(2131751112, null));
+        } else if (i3 == 0) {
+            ilbVar.setText(ob6.M0(2131751124, null));
+        } else if (i3 == 2) {
+            ilbVar.setText(ob6.M0(2131751394, null));
+        }
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        Context context = this.c;
+        if (i == 0) {
+            return new n69(new ilb(context));
+        }
+        if (i == 1) {
+            return new n69(new mf5(context, 23));
+        }
+        if (i != 3) {
+            return new n69(new xa0(context, false, false));
+        }
+        FrameLayout frameLayout = new FrameLayout(context);
+        ed2 ed2Var = this.d;
+        hl.B2(ed2Var.r);
+        frameLayout.addView(ed2Var.r);
+        frameLayout.setLayoutParams(new r79(-1, -2));
+        return new n69(frameLayout);
     }
 }

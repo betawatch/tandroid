@@ -1,43 +1,28 @@
 // default package
 
-import org.telegram.messenger.camera.CameraView;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class fa1 implements Runnable {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class fa1 implements qs3 {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ CameraView b;
+    public final /* synthetic */ la1 b;
 
-    public /* synthetic */ fa1(CameraView cameraView, byte b) {
+    public /* synthetic */ fa1(la1 la1Var, byte b) {
         this.a = b;
-        this.b = cameraView;
+        this.b = la1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // qs3
+    public final void a(vpa vpaVar, float f, float f2) {
         byte b = this.a;
-        CameraView cameraView = this.b;
+        la1 la1Var = this.b;
         switch (b) {
             case 0:
-                cameraView.lambda$resetCamera$4();
-                break;
-            case 1:
-                cameraView.lambda$new$7();
-                break;
-            case 2:
-                cameraView.lambda$toggleDual$2();
-                break;
-            case 3:
-                cameraView.lambda$switchCamera$3();
-                break;
-            case 4:
-                cameraView.lambda$onSurfaceTextureDestroyed$5();
-                break;
-            case 5:
-                cameraView.onSurfaceTextureUpdatedInternal();
+                la1Var.c0 = la1Var.O ? f / 500.0f : 1.0f - (f / 500.0f);
+                la1Var.fragmentView.invalidate();
                 break;
             default:
-                cameraView.lambda$enableDualInternal$0();
+                la1Var.F = f / 500.0f;
+                la1Var.fragmentView.invalidate();
                 break;
         }
     }

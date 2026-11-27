@@ -1,34 +1,45 @@
 // default package
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class xq1 extends cd2 {
-    public final /* synthetic */ mu1 f;
+public final /* synthetic */ class xq1 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ yq1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xq1(mu1 mu1Var, Context context) {
-        super(context);
-        this.f = mu1Var;
+    public /* synthetic */ xq1(yq1 yq1Var, byte b) {
+        this.a = b;
+        this.b = yq1Var;
     }
 
-    @Override // cd2
-    public final void a(boolean z) {
-        mu1 mu1Var = this.f;
-        mu1Var.z5();
-        mu1Var.x5();
-        mu1Var.A5();
-        mu1Var.B5();
-        sr1 sr1Var = mu1Var.Bb;
-        if (sr1Var != null) {
-            sr1Var.setTranslationY(mu1Var.T9 + getCurrentHeight());
-        }
-        if (!z) {
-            mu1Var.G7();
-        } else {
-            mu1Var.aa = true;
-            mu1Var.Fc();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        yq1 yq1Var = this.b;
+        switch (b) {
+            case 0:
+                yq1Var.W = null;
+                zu1 zu1Var = yq1Var.X;
+                if (zu1Var.ea != -1) {
+                    zu1Var.getNotificationCenter().j(zu1Var.ea);
+                    zu1Var.ea = -1;
+                }
+                if (f11.a) {
+                    cc4.b("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            default:
+                yq1Var.W = null;
+                zu1 zu1Var2 = yq1Var.X;
+                if (zu1Var2.ea != -1) {
+                    zu1Var2.getNotificationCenter().j(zu1Var2.ea);
+                    zu1Var2.ea = -1;
+                }
+                if (f11.a) {
+                    cc4.b("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
         }
     }
 }

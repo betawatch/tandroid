@@ -1,57 +1,27 @@
 // default package
 
-import java.io.InputStream;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class s63 extends InputStream {
-    public final o63 a;
-    public final u63 b;
-    public boolean d = false;
-    public boolean e = false;
-    public final byte[] c = new byte[1];
+public enum s63 implements jq7 {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    c(2),
+    d(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF43(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF51(5);
 
-    public s63(o63 o63Var, u63 u63Var) {
-        this.a = o63Var;
-        this.b = u63Var;
+    public final byte a;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    s63(int i) {
+        this.a = i;
     }
 
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        if (this.e) {
-            return;
-        }
-        this.a.close();
-        this.e = true;
-    }
-
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) {
-        gre.p(!this.e);
-        boolean z = this.d;
-        o63 o63Var = this.a;
-        if (!z) {
-            o63Var.open(this.b);
-            this.d = true;
-        }
-        int read = o63Var.read(bArr, i, i2);
-        if (read == -1) {
-            return -1;
-        }
-        return read;
-    }
-
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr) {
-        return read(bArr, 0, bArr.length);
-    }
-
-    @Override // java.io.InputStream
-    public final int read() {
-        byte[] bArr = this.c;
-        if (read(bArr, 0, bArr.length) == -1) {
-            return -1;
-        }
-        return bArr[0] & 255;
+    @Override // jq7
+    public final int a() {
+        return this.a;
     }
 }

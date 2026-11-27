@@ -1,93 +1,35 @@
 // default package
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class f24 implements Set, Serializable {
-    public static final f24 a = new f24();
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class f24 extends x2b {
+    public final /* synthetic */ byte P;
 
-    @Override // java.util.Set, java.util.Collection
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f24(Context context, boolean z, vnb vnbVar, byte b) {
+        super(vnbVar, context, z);
+        this.P = b;
     }
 
-    @Override // java.util.Set, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final /* bridge */ boolean contains(Object obj) {
-        return false;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean containsAll(Collection collection) {
-        collection.getClass();
-        return collection.isEmpty();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean equals(Object obj) {
-        return (obj instanceof Set) && ((Set) obj).isEmpty();
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean isEmpty() {
-        return true;
-    }
-
-    @Override // java.util.Set, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return b24.a;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final int size() {
-        return 0;
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        return s83.c(this, objArr);
-    }
-
-    public final String toString() {
-        return "[]";
-    }
-
-    @Override // java.util.Set, java.util.Collection
-    public final Object[] toArray() {
-        return s83.b(this);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        switch (this.P) {
+            case 0:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(82.0f), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(82.0f), TLObject.FLAG_30));
+                break;
+            case 2:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(82.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(hl.L(82.0f), TLObject.FLAG_30));
+                break;
+        }
     }
 }

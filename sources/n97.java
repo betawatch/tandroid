@@ -1,40 +1,79 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class n97 extends t61 {
-    public final /* synthetic */ na7 e;
+public final /* synthetic */ class n97 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ uc7 b;
+    public final /* synthetic */ SparseArray c;
 
-    public n97(na7 na7Var) {
-        this.e = na7Var;
+    public /* synthetic */ n97(uc7 uc7Var, SparseArray sparseArray, byte b) {
+        this.a = b;
+        this.b = uc7Var;
+        this.c = sparseArray;
     }
 
-    @Override // t61
-    public final boolean b(Object obj) {
-        return true;
-    }
-
-    @Override // t61
-    public final void e(int i, Object obj, i8c i8cVar) {
-        this.e.getMessagesStorage().a.c(new j97(i, (e) i8cVar, (byte) 1));
-    }
-
-    @Override // t61
-    public final void f(int i, Object obj, long j, s61 s61Var) {
-        TLRPC.TL_messages_getAvailableEffects tL_messages_getAvailableEffects = new TLRPC.TL_messages_getAvailableEffects();
-        tL_messages_getAvailableEffects.hash = (int) j;
-        this.e.getConnectionsManager().sendRequest(tL_messages_getAvailableEffects, new k97(s61Var, (byte) 1));
-    }
-
-    @Override // t61
-    public final void g(int i, Object obj, Object obj2) {
-        ad7.Y(i).a.c(new sm3(i, obj2, (byte) 24));
-    }
-
-    @Override // t61
-    public final void h(int i, long j) {
-        this.e.X3.edit().putLong("effects_last_" + i, j).apply();
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        SparseArray sparseArray = this.c;
+        uc7 uc7Var = this.b;
+        char c = 2;
+        switch (b) {
+            case 0:
+                int i = 0;
+                while (i < sparseArray.size()) {
+                    int keyAt = sparseArray.keyAt(i);
+                    long[] jArr = (long[]) sparseArray.valueAt(i);
+                    uc7Var.getSendMessagesHelper().c0((int) jArr[1]);
+                    jn7 notificationCenter = uc7Var.getNotificationCenter();
+                    Integer valueOf = Integer.valueOf((int) jArr[1]);
+                    Integer valueOf2 = Integer.valueOf(keyAt);
+                    Long valueOf3 = Long.valueOf(jArr[0]);
+                    Boolean bool = Boolean.FALSE;
+                    char c2 = c;
+                    Object[] objArr = new Object[7];
+                    objArr[0] = valueOf;
+                    objArr[1] = valueOf2;
+                    objArr[c2] = null;
+                    objArr[3] = valueOf3;
+                    objArr[4] = 0L;
+                    objArr[5] = -1;
+                    objArr[6] = bool;
+                    notificationCenter.k(21, objArr);
+                    jn7 notificationCenter2 = uc7Var.getNotificationCenter();
+                    Integer valueOf4 = Integer.valueOf((int) jArr[1]);
+                    Integer valueOf5 = Integer.valueOf(keyAt);
+                    Long valueOf6 = Long.valueOf(jArr[0]);
+                    Object[] objArr2 = new Object[7];
+                    objArr2[0] = valueOf4;
+                    objArr2[1] = valueOf5;
+                    objArr2[c2] = null;
+                    objArr2[3] = valueOf6;
+                    objArr2[4] = 0L;
+                    objArr2[5] = -1;
+                    objArr2[6] = bool;
+                    notificationCenter2.k(22, objArr2);
+                    i++;
+                    c = c2;
+                }
+                break;
+            default:
+                for (int i2 = 0; i2 < sparseArray.size(); i2++) {
+                    int keyAt2 = sparseArray.keyAt(i2);
+                    long[] jArr2 = (long[]) sparseArray.valueAt(i2);
+                    uc7Var.getSendMessagesHelper().c0((int) jArr2[1]);
+                    jn7 notificationCenter3 = uc7Var.getNotificationCenter();
+                    Integer valueOf7 = Integer.valueOf((int) jArr2[1]);
+                    Integer valueOf8 = Integer.valueOf(keyAt2);
+                    Long valueOf9 = Long.valueOf(jArr2[0]);
+                    Boolean bool2 = Boolean.FALSE;
+                    notificationCenter3.k(21, valueOf7, valueOf8, null, valueOf9, 0L, -1, bool2);
+                    uc7Var.getNotificationCenter().k(22, Integer.valueOf((int) jArr2[1]), Integer.valueOf(keyAt2), null, Long.valueOf(jArr2[0]), 0L, -1, bool2);
+                }
+                break;
+        }
     }
 }

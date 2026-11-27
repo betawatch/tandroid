@@ -1,24 +1,39 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
-public final class u6b extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ t7b c;
+public final class u6b extends o68 {
+    public final /* synthetic */ v6b P3;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public u6b(t7b t7bVar, int i, int i2) {
-        this.c = t7bVar;
-        this.a = i;
-        this.b = i2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u6b(v6b v6bVar, Context context, lcb lcbVar, m68 m68Var, x53 x53Var) {
+        super(context, lcbVar, m68Var, x53Var);
+        this.P3 = v6bVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.L(this.a, this.b);
+    @Override // o68
+    public final boolean C0() {
+        return getParent() != null && ((Integer) ((View) getParent()).getTag()).intValue() == this.P3.f.getCurrentItem();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (si5.c) {
+            si5.b.add(this);
+        } else {
+            super.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate(int i, int i2, int i3, int i4) {
+        if (si5.c) {
+            si5.b.add(this);
+        } else {
+            super.invalidate(i, i2, i3, i4);
+        }
     }
 }

@@ -1,89 +1,66 @@
 // default package
 
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.RecordingCanvas;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class br9 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ er9 b;
+public final class br9 implements mz4, kl0 {
+    public final RenderNode a;
+    public final ye9 b;
+    public boolean c;
 
-    public /* synthetic */ br9(er9 er9Var, byte b) {
-        this.a = b;
-        this.b = er9Var;
+    public br9(ye9 ye9Var) {
+        RenderNode renderNode = new RenderNode("rtmpStreamGlass");
+        this.a = renderNode;
+        this.b = ye9Var;
+        float max = Math.max(0.0f, ((((hl.N(9.0f) * 0.57735f) + 0.5f) / 5.0f) - 0.5f) / 0.57735f);
+        renderNode.setRenderEffect(RenderEffect.createBlurEffect(max, max, Shader.TileMode.CLAMP));
+        renderNode.setPivotX(0.0f);
+        renderNode.setPivotY(0.0f);
+        renderNode.setScaleX(5.0f);
+        renderNode.setScaleY(5.0f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0038, code lost:
-    
-        if (r8.r0 != false) goto L17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0047, code lost:
-    
-        if (r8.r0 == false) goto L16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0023, code lost:
-    
-        if (r8.r0 != false) goto L17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0049, code lost:
-    
-        r2 = -1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x004a, code lost:
-    
-        r8.scrollBy(r0 * r2, 0);
-        gl.c3(r8.t0);
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int tabSize;
-        int max;
-        byte b = this.a;
-        er9 er9Var = this.b;
-        int i = 1;
-        switch (b) {
-            case 0:
-                pkb pkbVar = er9Var.e;
-                er9Var.c0 = false;
-                er9Var.W = er9Var.getScrollX() + er9Var.a0;
-                tabSize = er9Var.getTabSize();
-                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
-                er9Var.V = ceil;
-                er9Var.U = ceil;
-                if (er9Var.e(ceil) && ceil >= 0 && ceil < pkbVar.getChildCount()) {
-                    try {
-                        er9Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                    er9Var.e0 = 0.0f;
-                    er9Var.w = 0.0f;
-                    View childAt = pkbVar.getChildAt(ceil);
-                    er9Var.s = childAt;
-                    er9Var.d0 = childAt.getX() - er9Var.getScrollX();
-                    er9Var.s.invalidate();
-                    pkbVar.invalidate();
-                    er9Var.j();
-                    er9Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis = System.currentTimeMillis() - er9Var.s0;
-                if (currentTimeMillis >= 3000) {
-                    if (currentTimeMillis >= 5000) {
-                        max = Math.max(1, gl.L(4.0f));
-                        break;
-                    } else {
-                        max = Math.max(1, gl.L(2.0f));
-                        break;
-                    }
-                } else {
-                    max = Math.max(1, gl.L(1.0f));
-                    break;
-                }
+    public final void a(int i, int i2) {
+        if (this.c || i <= 0 || i2 <= 0 || !vy4.f().a) {
+            return;
         }
+        int i3 = (i + 4) / 5;
+        int i4 = (i2 + 4) / 5;
+        this.a.setPosition(0, 0, i3, i4);
+        this.c = true;
+        RecordingCanvas beginRecording = this.a.beginRecording(i3, i4);
+        try {
+            beginRecording.scale(0.2f, 0.2f);
+            this.b.m(beginRecording);
+        } finally {
+            this.a.endRecording();
+            this.c = false;
+        }
+    }
+
+    @Override // kl0
+    public final jl0 b() {
+        return new ar9(this);
+    }
+
+    @Override // mz4
+    public final void e(float f, float f2, float f3, float f4, Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(f, f2, f3, f4);
+        if (vy4.f().a && canvas.isHardwareAccelerated()) {
+            canvas.drawRenderNode(this.a);
+        } else {
+            canvas.drawColor(-14933463);
+        }
+        canvas.restore();
+    }
+
+    @Override // kl0
+    public final void c(jl0 jl0Var) {
     }
 }

@@ -1,35 +1,44 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class zwb extends i49 {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ kxb b;
+public final class zwb extends c79 {
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public ywb e;
+    public int f;
+    public final /* synthetic */ axb h;
 
-    public /* synthetic */ zwb(kxb kxbVar, byte b) {
-        this.a = b;
-        this.b = kxbVar;
+    public zwb(axb axbVar) {
+        this.h = axbVar;
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
-        byte b = this.a;
-        kxb kxbVar = this.b;
-        switch (b) {
-            case 0:
-                if (kxbVar.i()) {
-                    kxbVar.j();
-                    break;
-                }
-                break;
-            default:
-                if (kxbVar.i()) {
-                    kxbVar.j();
-                    break;
-                }
-                break;
-        }
+    @Override // c79
+    public final boolean D(f89 f89Var) {
+        return true;
+    }
+
+    @Override // j79
+    public final int b() {
+        return this.c.size();
+    }
+
+    @Override // j79
+    public final void t(f89 f89Var, int i) {
+        ArrayList arrayList = this.c;
+        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i);
+        String str = (String) this.d.get(i);
+        bd5 bd5Var = (bd5) f89Var.a;
+        bd5Var.e(chat, chat.title, str, i != arrayList.size() - 1);
+        bd5Var.c(this.h.x.contains(Long.valueOf(chat.id)), false);
+    }
+
+    @Override // j79
+    public final f89 x(ViewGroup viewGroup, int i) {
+        return new n69(new bd5(viewGroup.getContext(), 1, 0, false));
     }
 }

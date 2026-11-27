@@ -1,38 +1,37 @@
 // default package
 
-import java.io.FileInputStream;
+import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class x5a implements a5a {
-    public final h6a a;
+public final /* synthetic */ class x5a implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ r7a b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ List d;
 
-    public x5a(h6a h6aVar) {
-        h6aVar.getClass();
-        this.a = h6aVar;
+    public /* synthetic */ x5a(r7a r7aVar, String str, List list, byte b) {
+        this.a = b;
+        this.b = r7aVar;
+        this.c = str;
+        this.d = list;
     }
 
-    @Override // a5a
-    public final Object e() {
-        return new w5a(this.a.a(null), null, null);
-    }
-
-    @Override // a5a
-    public final void i(Object obj, p4c p4cVar) {
-        byte[] bytes = lu5.d.b(w5a.Companion.serializer(), (w5a) obj).getBytes(bk1.a);
-        bytes.getClass();
-        p4cVar.a.write(bytes);
-    }
-
-    @Override // a5a
-    public final Object m(FileInputStream fileInputStream) {
-        try {
-            lu5 lu5Var = lu5.d;
-            String str = new String(cqd.b(fileInputStream), bk1.a);
-            cff cffVar = lu5Var.b;
-            return (w5a) lu5Var.a(w5a.Companion.serializer(), str);
-        } catch (Exception e) {
-            throw new fx2("Cannot parse session data", e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        byte b = this.a;
+        List list = this.d;
+        String str = this.c;
+        r7a r7aVar = this.b;
+        switch (b) {
+            case 0:
+                r7aVar.r.remove(str);
+                list.remove(str);
+                break;
+            default:
+                r7aVar.r.remove(str);
+                list.remove(str);
+                break;
         }
     }
 }

@@ -1,28 +1,44 @@
 // default package
 
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class lt9 extends i49 {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class lt9 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ hi3 b;
+    public final /* synthetic */ nt9 b;
 
-    public /* synthetic */ lt9(hi3 hi3Var, byte b) {
+    public /* synthetic */ lt9(nt9 nt9Var, byte b) {
         this.a = b;
-        this.b = hi3Var;
+        this.b = nt9Var;
     }
 
-    @Override // i49
-    public final void b(RecyclerView recyclerView, int i, int i2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        hi3 hi3Var = this.b;
+        nt9 nt9Var = this.b;
         switch (b) {
             case 0:
-                hi3Var.T();
+                nt9Var.o = false;
+                nt9Var.l = false;
+                break;
+            case 1:
+                nt9Var.o = false;
+                break;
+            case 2:
+                nt9Var.k();
+                break;
+            case 3:
+                nt9Var.g(false);
                 break;
             default:
-                hi3Var.T();
+                if (!nt9Var.o) {
+                    nt9Var.o = true;
+                    ArrayList arrayList = new ArrayList(nt9Var.j);
+                    jf7 Y = jf7.Y(nt9Var.a);
+                    Y.a.c(new jr9((Object) nt9Var, (Object) Y, (Object) arrayList, (byte) 1));
+                    break;
+                }
                 break;
         }
     }

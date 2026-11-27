@@ -1,111 +1,20 @@
 // default package
 
-import android.graphics.Rect;
-import android.text.Layout;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class xh9 {
+    public final /* synthetic */ pi9 a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class xh9 implements pib {
-    public final /* synthetic */ byte a;
-    public final Object b;
-    public final int c;
-    public final int d;
-
-    public /* synthetic */ xh9(Object obj, int i, int i2, byte b) {
-        this.a = b;
-        this.b = obj;
-        this.c = i;
-        this.d = i2;
+    public xh9(pi9 pi9Var) {
+        this.a = pi9Var;
     }
 
-    @Override // pib, jg7
-    public final Layout a() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return (Layout) obj;
-            case 1:
-                return (Layout) obj;
-            case 2:
-                return (Layout) obj;
-            default:
-                return ((pib) obj).a();
+    public final void a() {
+        pi9 pi9Var = this.a;
+        ch9 ch9Var = pi9Var.R3;
+        if (ch9Var != null) {
+            ch9Var.g();
         }
-    }
-
-    @Override // pib
-    public final Rect c() {
-        byte b = this.a;
-        return null;
-    }
-
-    @Override // pib
-    public final CharSequence getPrefix() {
-        switch (this.a) {
-            case 0:
-            case 1:
-            case 2:
-                return null;
-            default:
-                return ((pib) this.b).getPrefix();
-        }
-    }
-
-    @Override // pib
-    public final int getRow() {
-        switch (this.a) {
-            case 0:
-            case 1:
-                return 0;
-            case 2:
-                return 1;
-            default:
-                return ((pib) this.b).getRow();
-        }
-    }
-
-    @Override // pib
-    public final CharSequence getText() {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                return ((Layout) obj).getText();
-            case 1:
-                return ((Layout) obj).getText();
-            case 2:
-                return ((Layout) obj).getText();
-            default:
-                return ((pib) obj).getText();
-        }
-    }
-
-    @Override // pib
-    public final int getX() {
-        switch (this.a) {
-            case 0:
-                return this.c;
-            case 1:
-                return this.c;
-            case 2:
-                return this.c;
-            default:
-                return ((pib) this.b).getX() + this.c;
-        }
-    }
-
-    @Override // pib
-    public final int getY() {
-        switch (this.a) {
-            case 0:
-                return this.d;
-            case 1:
-                return this.d;
-            case 2:
-                return this.d;
-            default:
-                return ((pib) this.b).getY() + this.d;
-        }
+        pi9Var.p3.onContentChanged();
     }
 }

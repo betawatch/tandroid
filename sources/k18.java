@@ -1,36 +1,33 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class k18 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ long c;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
-    public /* synthetic */ k18(Runnable runnable, long j, byte b) {
-        this.a = b;
-        this.b = runnable;
-        this.c = j;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public abstract class k18 {
+    static {
+        Pattern.compile("(....|\\.\\.)(\\[(.*)\\])?");
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Runnable runnable = this.b;
-                gl.r(runnable);
-                gl.d3(runnable, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
-                break;
-            case 1:
-                Runnable runnable2 = this.b;
-                gl.r(runnable2);
-                gl.d3(runnable2, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
-                break;
-            default:
-                Runnable runnable3 = this.b;
-                gl.r(runnable3);
-                gl.d3(runnable3, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
-                break;
+    public static String a(qy0 qy0Var, String str) {
+        qv2 parent = qy0Var.getParent();
+        ArrayList arrayList = ((zg0) parent).b;
+        int size = arrayList.size();
+        int i = 0;
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = arrayList.get(i2);
+            i2++;
+            qy0 qy0Var2 = (qy0) obj;
+            if (qy0Var2.getType().equals(qy0Var.getType())) {
+                if (qy0Var2 == qy0Var) {
+                    break;
+                }
+                i++;
+            }
         }
+        String concat = String.format("/%s[%d]", qy0Var.getType(), Integer.valueOf(i)).concat(str);
+        return parent instanceof qy0 ? a((qy0) parent, concat) : concat;
     }
 }

@@ -1,189 +1,187 @@
 // default package
 
-import android.util.SparseIntArray;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final /* synthetic */ class a67 implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ na7 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
-    public final /* synthetic */ vf6 h;
-    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final class a67 extends FrameLayout implements snb {
+    public final ArrayList a;
+    public final ArrayList b;
+    public final ArrayList c;
+    public final jc0 d;
+    public final ema e;
+    public final int f;
+    public final boolean h;
+    public final tk4 n;
+    public boolean r;
+    public qob s;
+    public int w;
 
-    public /* synthetic */ a67(na7 na7Var, int i, ArrayList arrayList, boolean z, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, vf6 vf6Var, TLRPC.TL_messages_dialogs tL_messages_dialogs, byte b) {
-        this.a = b;
-        this.b = na7Var;
-        this.c = i;
-        this.d = arrayList;
-        this.e = z;
-        this.f = tL_messages_peerDialogs;
-        this.h = vf6Var;
-        this.n = tL_messages_dialogs;
+    public a67(Context context, int i, r47 r47Var, TLRPC.Chat chat) {
+        super(context);
+        this.a = new ArrayList();
+        this.b = new ArrayList();
+        this.c = new ArrayList();
+        this.f = i;
+        boolean z = r47Var.g4() || r47.Q4(r47Var.k);
+        this.h = z;
+        tk4 tk4Var = new tk4(context, null);
+        this.n = tk4Var;
+        tk4Var.e(aob.G8, aob.i6, -1);
+        tk4Var.setViewType(13);
+        tk4Var.setIsSingleCell(false);
+        addView(tk4Var, tre.c(-1.0f, -2));
+        ema emaVar = new ema(context);
+        this.e = emaVar;
+        emaVar.setTextSize(16);
+        emaVar.setEllipsizeByGradient(true);
+        emaVar.setRightPadding(hl.L(62.0f));
+        addView(emaVar, tre.d(0, -2.0f, 19, 40.0f, 0.0f, 0.0f, 0.0f));
+        jc0 jc0Var = new jc0(context, false);
+        this.d = jc0Var;
+        jc0Var.setStyle(11);
+        jc0Var.setAvatarsTextSize(hl.L(22.0f));
+        addView(jc0Var, tre.d(56, -1.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
+        yob.W(emaVar, aob.E8, null);
+        TLRPC.TL_messages_getMessageReadParticipants tL_messages_getMessageReadParticipants = new TLRPC.TL_messages_getMessageReadParticipants();
+        tL_messages_getMessageReadParticipants.msg_id = r47Var.e1();
+        tL_messages_getMessageReadParticipants.peer = uc7.s1(i).j1(r47.B0(r47Var.k));
+        ImageView imageView = new ImageView(context);
+        addView(imageView, tre.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
+        Drawable mutate = context.getDrawable(z ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
+        yob.x(this, mutate, aob.F8, null, PorterDuff.Mode.MULTIPLY);
+        imageView.setImageDrawable(mutate);
+        jc0Var.setAlpha(0.0f);
+        emaVar.setAlpha(0.0f);
+        TLRPC.Peer peer = r47Var.k.from_id;
+        ConnectionsManager.getInstance(i).sendRequest(tL_messages_getMessageReadParticipants, new gg(this, peer != null ? peer.user_id : 0L, i, chat));
+        int w0 = aob.w0(null, aob.I5, false);
+        this.w = w0;
+        setBackground(aob.Y(w0, 6, 0));
+        setEnabled(false);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0162  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z;
-        int i;
-        int i2;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        int i3;
-        switch (this.a) {
-            case 0:
-                gl.c3(new a67(this.b, this.c, this.d, this.e, this.f, this.h, this.n, (byte) 1));
-                break;
-            default:
-                na7 na7Var = this.b;
-                ArrayList arrayList3 = na7Var.y;
-                vf6 vf6Var = na7Var.R;
-                SparseIntArray sparseIntArray = na7Var.h2;
-                int i4 = this.c;
-                sparseIntArray.delete(i4);
-                ArrayList arrayList4 = this.d;
-                na7Var.n(arrayList4);
-                ArrayList U0 = na7Var.U0(i4);
-                int i5 = 0;
-                int i6 = 0;
-                boolean z2 = false;
-                int i7 = this.e;
-                while (i5 < U0.size()) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) U0.get(i5);
-                    if (!(dialog instanceof TLRPC.TL_dialogFolder)) {
-                        if (cf3.B(dialog.id)) {
-                            if (i7 < arrayList4.size()) {
-                                arrayList4.add(i7, dialog);
-                            } else {
-                                arrayList4.add(dialog);
-                            }
-                            i7++;
-                        } else if (dialog.pinned) {
-                            i6 = Math.max(dialog.pinnedNum, i6);
-                            dialog.pinned = false;
-                            dialog.pinnedNum = 0;
-                            i7++;
-                            z2 = true;
-                        } else if (dialog.id != na7Var.s2) {
-                            ArrayList arrayList5 = new ArrayList();
-                            if (arrayList4.isEmpty()) {
-                                TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = this.f;
-                                na7Var.b4(tL_messages_peerDialogs.users, false);
-                                na7Var.V3(tL_messages_peerDialogs.chats, false);
-                                ArrayList arrayList6 = new ArrayList();
-                                ArrayList arrayList7 = new ArrayList();
-                                int size = arrayList4.size();
-                                int i8 = 0;
-                                z = false;
-                                ArrayList arrayList8 = arrayList4;
-                                while (i8 < size) {
-                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList8.get(i8);
-                                    dialog2.pinnedNum = (size - i8) + i6;
-                                    ArrayList arrayList9 = arrayList6;
-                                    arrayList5.add(Long.valueOf(dialog2.id));
-                                    TLRPC.Dialog dialog3 = (TLRPC.Dialog) vf6Var.f(dialog2.id);
-                                    if (dialog3 != null) {
-                                        dialog3.pinned = true;
-                                        dialog3.pinnedNum = dialog2.pinnedNum;
-                                        arrayList6 = arrayList9;
-                                        arrayList6.add(Long.valueOf(dialog2.id));
-                                        arrayList7.add(Integer.valueOf(dialog2.pinnedNum));
-                                        arrayList = arrayList8;
-                                        i = size;
-                                        i2 = i8;
-                                    } else {
-                                        i = size;
-                                        arrayList6 = arrayList9;
-                                        i2 = i8;
-                                        vf6Var.k(dialog2, dialog2.id);
-                                        ArrayList arrayList10 = (ArrayList) this.h.f(dialog2.id);
-                                        na7Var.S.k(arrayList10, dialog2.id);
-                                        if (arrayList10 != null) {
-                                            int i9 = 0;
-                                            arrayList8 = arrayList8;
-                                            while (i9 < arrayList10.size()) {
-                                                k27 k27Var = (k27) arrayList10.get(i9);
-                                                if (k27Var != null) {
-                                                    i3 = i9;
-                                                    if (k27Var.k.peer_id.channel_id == 0) {
-                                                        na7Var.V.put(k27Var.e1(), k27Var);
-                                                        na7Var.O = Math.min(na7Var.O, k27Var.k.date);
-                                                        long j = k27Var.k.random_id;
-                                                        if (j != 0) {
-                                                            arrayList2 = arrayList8;
-                                                            na7Var.T.k(k27Var, j);
-                                                        }
-                                                    }
-                                                    arrayList2 = arrayList8;
-                                                } else {
-                                                    arrayList2 = arrayList8;
-                                                    i3 = i9;
-                                                }
-                                                i9 = i3 + 1;
-                                                arrayList8 = arrayList2;
-                                            }
-                                        }
-                                        arrayList = arrayList8;
-                                        na7Var.i4.c(dialog2.id);
-                                        z = true;
-                                    }
-                                    i8 = i2 + 1;
-                                    size = i;
-                                    arrayList8 = arrayList;
-                                    z2 = true;
-                                }
-                                ad7 messagesStorage = na7Var.getMessagesStorage();
-                                messagesStorage.a.c(new ya7(messagesStorage, arrayList6, arrayList7, (byte) 0));
-                            } else {
-                                z = false;
-                            }
-                            if (z2) {
-                                if (z) {
-                                    arrayList3.clear();
-                                    int m = vf6Var.m();
-                                    for (int i10 = 0; i10 < m; i10++) {
-                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) vf6Var.n(i10);
-                                        if (na7Var.u0.h(dialog4.id) < 0) {
-                                            arrayList3.add(dialog4);
-                                        }
-                                    }
-                                }
-                                na7Var.Z4(null);
-                                na7Var.getNotificationCenter().k(3, new Object[0]);
-                            }
-                            ad7 messagesStorage2 = na7Var.getMessagesStorage();
-                            messagesStorage2.a.c(new za7(messagesStorage2, arrayList5, i4));
-                            na7Var.getMessagesStorage().a1(this.n, 1);
-                            na7Var.getUserConfig().x(i4, true);
-                            na7Var.getUserConfig().u(false);
-                            break;
-                        }
-                    }
-                    i5++;
-                    i7 = i7;
-                }
-                ArrayList arrayList52 = new ArrayList();
-                if (arrayList4.isEmpty()) {
-                }
-                if (z2) {
-                }
-                ad7 messagesStorage22 = na7Var.getMessagesStorage();
-                messagesStorage22.a.c(new za7(messagesStorage22, arrayList52, i4));
-                na7Var.getMessagesStorage().a1(this.n, 1);
-                na7Var.getUserConfig().x(i4, true);
-                na7Var.getUserConfig().u(false);
+    public final d79 a() {
+        qob qobVar = this.s;
+        if (qobVar != null) {
+            return qobVar;
         }
+        qob qobVar2 = new qob(getContext(), null, (byte) 9);
+        this.s = qobVar2;
+        getContext();
+        qobVar2.setLayoutManager(new x46());
+        this.s.i(new lr(this, (byte) 6));
+        this.s.setAdapter(new ox0(this, (byte) 4));
+        return this.s;
+    }
+
+    public final void b() {
+        jc0 jc0Var;
+        ArrayList arrayList = this.c;
+        setEnabled(arrayList.size() > 0);
+        int i = 0;
+        while (true) {
+            jc0Var = this.d;
+            if (i >= 3) {
+                break;
+            }
+            int size = arrayList.size();
+            int i2 = this.f;
+            if (i < size) {
+                jc0Var.b(i, i2, (TLObject) arrayList.get(i));
+            } else {
+                jc0Var.b(i, i2, null);
+            }
+            i++;
+        }
+        if (arrayList.size() == 1) {
+            jc0Var.setTranslationX(hl.L(24.0f));
+        } else if (arrayList.size() == 2) {
+            jc0Var.setTranslationX(hl.L(12.0f));
+        } else {
+            jc0Var.setTranslationX(0.0f);
+        }
+        int L = hl.L((Math.min(2, arrayList.size() - 1) * 12) + 38);
+        ema emaVar = this.e;
+        emaVar.setRightPadding(L);
+        jc0Var.a(false);
+        ArrayList arrayList2 = this.a;
+        if (arrayList2.size() == 1 && arrayList.get(0) != null) {
+            emaVar.l(lv2.o((TLObject) arrayList.get(0)), false);
+        } else if (arrayList2.size() == 0) {
+            emaVar.l(ob6.M0(2131747855, null), false);
+        } else {
+            emaVar.l(ob6.G(arrayList2.size(), this.h ? "MessagePlayed" : "MessageSeen", new Object[0]), false);
+        }
+        emaVar.animate().alpha(1.0f).setDuration(220L).start();
+        jc0Var.animate().alpha(1.0f).setDuration(220L).start();
+        tk4 tk4Var = this.n;
+        tk4Var.animate().alpha(0.0f).setDuration(220L).setListener(new gf4(tk4Var)).start();
+        qob qobVar = this.s;
+        if (qobVar != null) {
+            qobVar.getAdapter();
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i, int i2) {
+        View view = (View) getParent();
+        if (view != null && view.getWidth() > 0) {
+            i = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
+        }
+        this.r = true;
+        tk4 tk4Var = this.n;
+        boolean z = tk4Var.getVisibility() == 0;
+        ema emaVar = this.e;
+        emaVar.setVisibility(8);
+        if (z) {
+            tk4Var.setVisibility(8);
+        }
+        super.onMeasure(i, i2);
+        if (z) {
+            tk4Var.getLayoutParams().width = getMeasuredWidth();
+            tk4Var.setVisibility(0);
+        }
+        emaVar.setVisibility(0);
+        emaVar.getLayoutParams().width = getMeasuredWidth() - hl.L(40.0f);
+        this.r = false;
+        super.onMeasure(i, i2);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.r) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // snb
+    public final void updateColors() {
+        try {
+            int w0 = aob.w0(null, aob.I5, false);
+            if (getBackground() != null && w0 != this.w) {
+                this.w = w0;
+                aob.F1(getBackground(), w0, true);
+            }
+            invalidate();
+        } catch (Exception e) {
+            cc4.g(e, true);
+        }
+    }
+
+    @Override // snb
+    public final void addColorKeys(HashSet hashSet) {
     }
 }

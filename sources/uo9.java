@@ -1,48 +1,99 @@
 // default package
 
-import java.util.Iterator;
+import android.os.SystemClock;
+import java.io.File;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes.dex */
-public final class uo9 extends vo9 implements Iterator {
-    public to9 a;
-    public boolean b = true;
-    public final /* synthetic */ wo9 c;
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class uo9 implements Runnable {
+    public final /* synthetic */ byte a;
+    public final /* synthetic */ jp9 b;
 
-    public uo9(wo9 wo9Var) {
-        this.c = wo9Var;
+    public /* synthetic */ uo9(jp9 jp9Var, byte b) {
+        this.a = b;
+        this.b = jp9Var;
     }
 
-    @Override // vo9
-    public final void a(to9 to9Var) {
-        to9 to9Var2 = this.a;
-        if (to9Var == to9Var2) {
-            to9 to9Var3 = to9Var2.d;
-            this.a = to9Var3;
-            this.b = to9Var3 == null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                jp9 jp9Var = this.b;
+                bo9 bo9Var = jp9Var.U;
+                File file = jp9Var.V;
+                if (bo9Var != null) {
+                    try {
+                        synchronized (bo9Var) {
+                            bo9Var.w = true;
+                            try {
+                                bo9Var.g();
+                            } finally {
+                                bo9Var.w = false;
+                            }
+                        }
+                    } catch (IOException unused) {
+                    }
+                    uxe.c(bo9Var.a);
+                }
+                if (file != null) {
+                    uxe.c(file);
+                    return;
+                }
+                return;
+            case 1:
+                jp9 jp9Var2 = this.b;
+                if (jp9Var2.a0 == 3) {
+                    jp9Var2.q();
+                    return;
+                }
+                return;
+            case 2:
+                jp9 jp9Var3 = this.b;
+                int i = jp9Var3.a0;
+                if (i == 2 || i == 6) {
+                    jp9Var3.J = SystemClock.elapsedRealtime();
+                    jp9Var3.m.b("recording started: retainedDurationMs=" + jp9Var3.I);
+                    jp9Var3.x(3);
+                    long j = ((long) jp9Var3.q) - jp9Var3.I;
+                    if (j > 0 && !jp9Var3.D) {
+                        jp9Var3.i.postDelayed(jp9Var3.X, j);
+                        return;
+                    } else {
+                        jp9Var3.D = false;
+                        jp9Var3.q();
+                        return;
+                    }
+                }
+                return;
+            default:
+                jp9 jp9Var4 = this.b;
+                jp9Var4.E = false;
+                jp9Var4.m.b("recording segment stopped: state=" + uh9.A(jp9Var4.a0) + ", retainedDurationMs=" + jp9Var4.I);
+                if (jp9Var4.C) {
+                    jp9Var4.C = false;
+                    jp9Var4.i();
+                    return;
+                }
+                if (jp9Var4.A) {
+                    jp9Var4.A = false;
+                    jp9Var4.j.execute(new lb7((Object) jp9Var4, (Object) jp9Var4.U, jp9Var4.B, (Object) jp9Var4.T, (byte) 11));
+                    return;
+                }
+                if (jp9Var4.a0 == 4) {
+                    try {
+                        File d = jp9Var4.d("round_video_preview_");
+                        jp9Var4.V = d;
+                        jp9Var4.N = System.nanoTime();
+                        jp9Var4.m.b("preview snapshot started: file=" + d.getName());
+                        jp9Var4.j.execute(new sa8(jp9Var4, jp9Var4.U, d, (byte) 27));
+                        return;
+                    } catch (IOException e) {
+                        jp9Var4.h(e);
+                        return;
+                    }
+                }
+                return;
         }
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (this.b) {
-            return this.c.a != null;
-        }
-        to9 to9Var = this.a;
-        return (to9Var == null || to9Var.c == null) ? false : true;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (this.b) {
-            this.b = false;
-            to9 to9Var = this.c.a;
-            this.a = to9Var;
-            return to9Var;
-        }
-        to9 to9Var2 = this.a;
-        to9 to9Var3 = to9Var2 != null ? to9Var2.c : null;
-        this.a = to9Var3;
-        return to9Var3;
     }
 }

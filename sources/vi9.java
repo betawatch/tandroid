@@ -1,25 +1,27 @@
 // default package
 
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes3.dex */
 public final class vi9 {
-    public final TL_iv.PageBlock a;
-    public final int b;
-    public final int c;
-    public final boolean d;
-    public final boolean e;
+    public String a;
+    public boolean b;
+    public String c;
+    public HashMap d;
+    public final ArrayList e = new ArrayList();
 
-    public vi9(TL_iv.PageBlock pageBlock, int i, int i2, boolean z, boolean z2) {
-        this.a = pageBlock;
-        this.b = i;
-        this.c = i2;
-        this.d = z;
-        this.e = z2;
+    public final String a(String str) {
+        HashMap hashMap = this.d;
+        if (hashMap == null) {
+            return null;
+        }
+        return (String) hashMap.get(str);
     }
 
-    public vi9(TL_iv.PageBlock pageBlock, int i, int i2) {
-        this(pageBlock, i, i2, false, false);
+    public final boolean b(String str) {
+        HashMap hashMap = this.d;
+        return hashMap != null && hashMap.containsKey(str);
     }
 }

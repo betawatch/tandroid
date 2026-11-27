@@ -1,51 +1,9 @@
 // default package
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final class qs9 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ ps9 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ hd[] d;
-    public final /* synthetic */ View e;
-
-    public qs9(ps9 ps9Var, int i, TLRPC.Reaction reaction, hd[] hdVarArr, View view) {
-        this.a = ps9Var;
-        this.b = i;
-        this.c = reaction;
-        this.d = hdVarArr;
-        this.e = view;
-    }
-
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-        if (i != 6) {
-            return false;
-        }
-        ps9 ps9Var = this.a;
-        String obj = ps9Var.getText().toString();
-        if (obj.length() > 12) {
-            gl.z3(ps9Var);
-            return true;
-        }
-        na7.q1(this.b).o4(h19.d(this.c), obj);
-        hd[] hdVarArr = this.d;
-        hd hdVar = hdVarArr[0];
-        if (hdVar != null) {
-            hdVar.dismiss();
-        }
-        if (hdVarArr[0] == vs9.I) {
-            vs9.I = null;
-        }
-        View view = this.e;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
-    }
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public interface qs9 extends Parcelable {
+    public static final String NULL = "SAFE_PARCELABLE_NULL_STRING";
 }

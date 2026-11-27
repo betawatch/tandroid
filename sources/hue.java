@@ -1,18 +1,11 @@
 // default package
 
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
 public abstract class hue {
-    public static ArrayList a(alb albVar, int... iArr) {
-        ArrayList arrayList = new ArrayList(iArr.length);
-        for (int i : iArr) {
-            arrayList.add(new blb((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, albVar, i));
-        }
-        return arrayList;
+    public static long a(long j) {
+        long j2 = (j ^ (j >>> 33)) * (-49064778989728563L);
+        long j3 = (j2 ^ (j2 >>> 33)) * (-4265267296055464877L);
+        return j3 ^ (j3 >>> 33);
     }
 }

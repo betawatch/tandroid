@@ -1,55 +1,80 @@
 // default package
 
-import android.os.IInterface;
-import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class c4d extends dzc implements IInterface {
-    public final /* synthetic */ byte b;
-    public final /* synthetic */ f4d c;
+public final class c4d extends v9c implements ListIterator {
+    public final int b;
+    public int c;
+    public final e4d d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c4d(f4d f4dVar, byte b) {
-        super("com.google.android.gms.auth.api.signin.internal.ISignInCallbacks", (byte) 2);
-        this.b = b;
-        this.c = f4dVar;
+    public c4d(e4d e4dVar, int i) {
+        super((byte) 1);
+        int size = e4dVar.size();
+        if (i < 0 || i > size) {
+            su3.g(i3f.c(i, size, "index"));
+            throw null;
+        }
+        this.b = size;
+        this.c = i;
+        this.d = e4dVar;
     }
 
-    @Override // dzc
-    public final boolean c(int i, Parcel parcel, Parcel parcel2) {
-        f4d f4dVar = this.c;
-        byte b = this.b;
-        switch (i) {
-            case 101:
-                w3d.b(parcel);
-                fvc.b();
-                return false;
-            case kk7.m1 /* 102 */:
-                Status status = (Status) w3d.a(parcel, Status.CREATOR);
-                w3d.b(parcel);
-                switch (b) {
-                    case 0:
-                        f4dVar.a(status);
-                        break;
-                    default:
-                        throw new UnsupportedOperationException();
-                }
-            case kk7.n1 /* 103 */:
-                Status status2 = (Status) w3d.a(parcel, Status.CREATOR);
-                w3d.b(parcel);
-                switch (b) {
-                    case 1:
-                        f4dVar.a(status2);
-                        break;
-                    default:
-                        throw new UnsupportedOperationException();
-                }
-            default:
-                return false;
+    public final Object a(int i) {
+        return this.d.get(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            lq5.n();
+            return null;
         }
-        parcel2.writeNoException();
-        return true;
+        int i = this.c;
+        this.c = i + 1;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            lq5.n();
+            return null;
+        }
+        int i = this.c - 1;
+        this.c = i;
+        return a(i);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

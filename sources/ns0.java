@@ -1,0 +1,61 @@
+// default package
+
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class ns0 implements s84, ska, uka, fd, ncc {
+    public final /* synthetic */ at0 a;
+
+    public /* synthetic */ ns0(at0 at0Var) {
+        this.a = at0Var;
+    }
+
+    @Override // uka
+    public final float b(RecyclerView recyclerView) {
+        return wka.j(recyclerView);
+    }
+
+    @Override // ska
+    public final int c() {
+        return this.a.n;
+    }
+
+    @Override // uka
+    public final RecyclerView h(View view) {
+        at0 at0Var = this.a;
+        if (at0Var.a) {
+            return ((zs0) view).c;
+        }
+        at0Var.L.getClass();
+        return ((kza) view).a;
+    }
+
+    @Override // ncc
+    public final void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.u0((b8c) obj);
+    }
+
+    @Override // uka
+    public final /* synthetic */ void o(RecyclerView recyclerView) {
+        uh9.d(recyclerView);
+    }
+
+    @Override // s84
+    public final void t(int i, float f, float f2, t84 t84Var) {
+        this.a.y0();
+    }
+
+    @Override // fd
+    public final void w(id idVar, int i) {
+        at0 at0Var = this.a;
+        at0Var.getClass();
+        at0Var.presentFragment(new o7c(6, null));
+    }
+
+    @Override // s84
+    public final void v0(float f, int i) {
+    }
+}

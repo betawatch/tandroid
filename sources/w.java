@@ -5,43 +5,43 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class w extends taa {
-    public final /* synthetic */ a1 U2;
+public final class w extends kea {
+    public final /* synthetic */ b1 U2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(a1 a1Var, Context context, String str, String str2, wjb wjbVar) {
-        super(context, null, str, false, str2, false, wjbVar);
-        this.U2 = a1Var;
+    public w(b1 b1Var, Context context, String str, String str2, vnb vnbVar) {
+        super(context, null, str, false, str2, false, vnbVar);
+        this.U2 = b1Var;
     }
 
-    @Override // taa
-    public final void L0(vf6 vf6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
+    @Override // kea
+    public final void M0(zh6 zh6Var, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
         FrameLayout frameLayout = this.U2.D2;
         if (z) {
-            u21 u21Var = new u21(frameLayout, this.J0);
-            if (vf6Var.m() == 1) {
-                long j = vf6Var.j(0);
-                if (j == y6c.h(this.a).n) {
-                    m21 G = u21Var.G(R.raw.saved_messages, 5000, gl.S2(k96.a0(null, null, 2131754967, new Object[0])));
-                    G.r = false;
+            d31 d31Var = new d31(frameLayout, this.J0);
+            if (zh6Var.m() == 1) {
+                long j = zh6Var.j(0);
+                if (j == yac.h(this.a).n) {
+                    v21 G = d31Var.G(R.raw.saved_messages, 5000, hl.S2(ob6.a0(null, null, 2131754964, new Object[0])));
+                    G.s = false;
                     G.j();
                 } else {
                     int i2 = this.a;
                     if (j < 0) {
-                        m21 G2 = u21Var.G(R.raw.forward, 5000, gl.S2(k96.a0(null, null, 2131754971, tL_forumTopic != null ? tL_forumTopic.title : na7.q1(i2).K0(Long.valueOf(-j)).title)));
-                        G2.r = false;
+                        v21 G2 = d31Var.G(R.raw.forward, 5000, hl.S2(ob6.a0(null, null, 2131754968, tL_forumTopic != null ? tL_forumTopic.title : uc7.s1(i2).M0(Long.valueOf(-j)).title)));
+                        G2.s = false;
                         G2.j();
                     } else {
-                        m21 G3 = u21Var.G(R.raw.forward, 5000, gl.S2(k96.a0(null, null, 2131754971, na7.q1(i2).V1(Long.valueOf(j)).first_name)));
-                        G3.r = false;
+                        v21 G3 = d31Var.G(R.raw.forward, 5000, hl.S2(ob6.a0(null, null, 2131754968, uc7.s1(i2).X1(Long.valueOf(j)).first_name)));
+                        G3.s = false;
                         G3.j();
                     }
                 }
             } else {
-                m21 Q = u21Var.Q(R.raw.forward, 36, gl.S2(k96.G(vf6Var.m(), "AIEditorStyleSharedToManyChats", Integer.valueOf(vf6Var.m()))));
-                Q.r = false;
+                v21 Q = d31Var.Q(R.raw.forward, 36, hl.S2(ob6.G(zh6Var.m(), "AIEditorStyleSharedToManyChats", Integer.valueOf(zh6Var.m()))));
+                Q.s = false;
                 Q.j();
             }
             try {

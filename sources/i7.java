@@ -1,94 +1,118 @@
 // default package
 
-import android.transition.Transition;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.transition.TransitionValues;
+import android.transition.Visibility;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class i7 implements Transition.TransitionListener {
+public final class i7 extends Visibility {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i7(Object obj, byte b) {
+    public /* synthetic */ i7(byte b) {
         this.a = b;
-        this.b = obj;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
+    @Override // android.transition.Visibility
+    public final Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
             case 0:
-                ((r7) obj).j0.e();
-                break;
+                if (!(view instanceof r7)) {
+                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                }
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
+                animatorSet.setInterpolator(k43.f);
+                return animatorSet;
             case 1:
-                ((no4) obj).F.e();
-                break;
-        }
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
-            case 0:
-                ((r7) obj).j0.e();
-                break;
-            case 1:
-                ((no4) obj).F.e();
-                break;
+                if (!(view instanceof r7)) {
+                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                }
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
+                animatorSet2.setInterpolator(k43.f);
+                return animatorSet2;
+            case 2:
+                AnimatorSet animatorSet3 = new AnimatorSet();
+                animatorSet3.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, hl.L(20.0f), 0.0f));
+                animatorSet3.setInterpolator(k43.f);
+                return animatorSet3;
+            case 3:
+                AnimatorSet animatorSet4 = new AnimatorSet();
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.5f, 1.0f));
+                animatorSet4.setInterpolator(k43.f);
+                return animatorSet4;
+            case 4:
+                ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, hl.L(100.0f), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, 0.0f, 1.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, 0.0f, 1.0f));
+                if (view instanceof kmc) {
+                    view.setTranslationY(hl.L(100.0f));
+                    view.setScaleX(0.0f);
+                    view.setScaleY(0.0f);
+                    ofPropertyValuesHolder.setStartDelay(((kmc) view).G);
+                }
+                if (view instanceof dnc) {
+                    view.setTranslationY(hl.L(100.0f));
+                    view.setScaleX(0.0f);
+                    view.setScaleY(0.0f);
+                    ofPropertyValuesHolder.setStartDelay(((dnc) view).f);
+                }
+                return ofPropertyValuesHolder;
             default:
-                ((on7) obj).run();
-                break;
+                AnimatorSet animatorSet5 = new AnimatorSet();
+                view.setAlpha(0.0f);
+                view.setScaleY(0.6f);
+                view.setScaleX(0.6f);
+                animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 0.6f, 1.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.6f, 1.0f));
+                animatorSet5.setInterpolator(k43.k);
+                return animatorSet5;
         }
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-        byte b = this.a;
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
-        byte b = this.a;
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
-        byte b = this.a;
-        Object obj = this.b;
-        switch (b) {
+    @Override // android.transition.Visibility
+    public final Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
             case 0:
-                ((r7) obj).j0.d();
-                break;
+                if (!(view instanceof r7)) {
+                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 1.0f, 0.0f);
+                }
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
+                animatorSet.setInterpolator(k43.f);
+                return animatorSet;
             case 1:
-                ((no4) obj).F.d();
-                break;
+                if (!(view instanceof r7)) {
+                    return ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 1.0f, 0.0f);
+                }
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
+                animatorSet2.setInterpolator(k43.f);
+                return animatorSet2;
+            case 2:
+                AnimatorSet animatorSet3 = new AnimatorSet();
+                animatorSet3.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, 0.0f, -hl.L(20.0f)));
+                animatorSet3.setInterpolator(k43.f);
+                return animatorSet3;
+            case 3:
+                AnimatorSet animatorSet4 = new AnimatorSet();
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, view.getScaleX(), 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, view.getScaleX(), 0.5f));
+                animatorSet4.setInterpolator(k43.f);
+                return animatorSet4;
+            case 4:
+                return ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, view.getTranslationY(), hl.L(100.0f)), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, view.getScaleY(), 0.0f), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, view.getScaleX(), 0.0f));
+            default:
+                AnimatorSet animatorSet5 = new AnimatorSet();
+                if (view instanceof ykc) {
+                    ((ykc) view).d = true;
+                }
+                animatorSet5.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.7f, 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_X, 1.0f, 0.6f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.6f));
+                animatorSet5.setInterpolator(k43.f);
+                return animatorSet5;
         }
-    }
-
-    private final void a(Transition transition) {
-    }
-
-    private final void b(Transition transition) {
-    }
-
-    private final void c(Transition transition) {
-    }
-
-    private final void d(Transition transition) {
-    }
-
-    private final void e(Transition transition) {
-    }
-
-    private final void f(Transition transition) {
-    }
-
-    private final void g(Transition transition) {
-    }
-
-    private final void h(Transition transition) {
     }
 }

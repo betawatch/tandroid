@@ -1,48 +1,39 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Paint;
+import android.widget.ImageView;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class cx1 extends ap0 {
-    public boolean s;
-    public final /* synthetic */ ChatActivityEnterView w;
+public final class cx1 extends ImageView {
+    public float a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public cx1(ChatActivityEnterView chatActivityEnterView, Context context) {
         super(context);
-        this.w = chatActivityEnterView;
-        this.a = null;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.f = true;
-        this.b = new zw8((byte) 3);
-        fu fuVar = new fu((byte) 1, context, (Object) this);
-        this.c = fuVar;
-        fuVar.setOverScrollMode(2);
-        fuVar.setClipToPadding(false);
-        fuVar.setClipToOutline(true);
-        fuVar.j(new y(this, (byte) 7));
-        addView(fuVar);
-        paint.setColor(bkb.w0(null, bkb.yj, false));
-        il0 il0Var = this.r;
-        if (il0Var != null) {
-            il0Var.updateColors();
-        }
-        invalidate();
-        setClipChildren(false);
-        this.s = false;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        if (this.s) {
-            return;
-        }
-        this.s = true;
-        this.w.i2();
+    @Override // android.view.View
+    public final float getTranslationX() {
+        return this.a;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f) {
+        this.a = f;
+        float L = hl.L(-44.0f) + this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        float f2 = L + chatActivityEnterView.E + chatActivityEnterView.y;
+        vw1 vw1Var = chatActivityEnterView.z2;
+        float L2 = hl.L((vw1Var == null || vw1Var.getVisibility() != 0) ? 0.0f : -44.0f);
+        vw1 vw1Var2 = chatActivityEnterView.z2;
+        float alpha = (L2 * (vw1Var2 == null ? 0.0f : vw1Var2.getAlpha())) + f2;
+        vw1 vw1Var3 = chatActivityEnterView.m2;
+        float L3 = hl.L((vw1Var3 == null || vw1Var3.getVisibility() != 0) ? 0.0f : -44.0f);
+        vw1 vw1Var4 = chatActivityEnterView.m2;
+        super.setTranslationX((L3 * (vw1Var4 != null ? vw1Var4.getAlpha() : 0.0f)) + alpha);
     }
 }

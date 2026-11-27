@@ -1,13 +1,80 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class vh2 extends Exception {
-    public vh2(String str, String str2) {
-        super(str2 != null ? str2.toString() : null);
+public final class vh2 implements at9 {
+    public final wh2 a;
+    public final ys9 b;
+    public final int c;
+    public boolean d;
+    public final /* synthetic */ wh2 e;
+
+    public vh2(wh2 wh2Var, wh2 wh2Var2, ys9 ys9Var, int i) {
+        this.e = wh2Var;
+        this.a = wh2Var2;
+        this.b = ys9Var;
+        this.c = i;
     }
 
-    public vh2(String str) {
-        this("android.credentials.ClearCredentialStateException.TYPE_UNKNOWN", str);
+    @Override // at9
+    public final int a() {
+        return 0;
+    }
+
+    public final void b() {
+        if (this.d) {
+            return;
+        }
+        wh2 wh2Var = this.e;
+        lp lpVar = wh2Var.h;
+        int[] iArr = wh2Var.b;
+        int i = this.c;
+        lpVar.i(iArr[i], wh2Var.c[i], 0, null, wh2Var.K);
+        this.d = true;
+    }
+
+    @Override // at9
+    public final int i(ym4 ym4Var, s93 s93Var, int i) {
+        wh2 wh2Var = this.e;
+        if (wh2Var.y()) {
+            return -3;
+        }
+        pg0 pg0Var = wh2Var.M;
+        ys9 ys9Var = this.b;
+        if (pg0Var != null && pg0Var.e(this.c + 1) <= ys9Var.v()) {
+            return -3;
+        }
+        b();
+        return ys9Var.F(ym4Var, s93Var, i, wh2Var.S);
+    }
+
+    @Override // at9
+    public final boolean k() {
+        wh2 wh2Var = this.e;
+        return !wh2Var.y() && this.b.A(wh2Var.S);
+    }
+
+    @Override // at9
+    public final int o(long j) {
+        wh2 wh2Var = this.e;
+        if (wh2Var.y()) {
+            return 0;
+        }
+        boolean z = wh2Var.S;
+        ys9 ys9Var = this.b;
+        int x = ys9Var.x(j, z);
+        pg0 pg0Var = wh2Var.M;
+        if (pg0Var != null) {
+            x = Math.min(x, pg0Var.e(this.c + 1) - ys9Var.v());
+        }
+        ys9Var.L(x);
+        if (x > 0) {
+            b();
+        }
+        return x;
+    }
+
+    @Override // at9
+    public final void g() {
     }
 }

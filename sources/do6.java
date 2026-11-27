@@ -1,0 +1,26 @@
+// default package
+
+import android.util.SparseArray;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes3.dex */
+public final class do6 {
+    public final int a;
+    public boolean b;
+    public final String c;
+    public final no6 d;
+    public final ArrayList e = new ArrayList();
+    public final SparseArray f = new SparseArray();
+
+    public do6(int i, String str, no6 no6Var) {
+        this.a = i;
+        this.c = str;
+        this.d = no6Var;
+    }
+
+    public final void a(no6 no6Var) {
+        this.e.add(no6Var);
+        this.f.put(no6Var.C, no6Var);
+    }
+}

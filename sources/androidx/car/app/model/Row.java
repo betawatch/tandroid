@@ -4,9 +4,9 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class Row implements pr5 {
+public final class Row implements rt5 {
     public static final int IMAGE_TYPE_ICON = 4;
     public static final int IMAGE_TYPE_LARGE = 2;
     public static final int IMAGE_TYPE_SMALL = 1;
@@ -18,7 +18,7 @@ public final class Row implements pr5 {
     private final boolean mIsEnabled;
     private final Metadata mMetadata;
     private final int mNumericDecoration;
-    private final yo7 mOnClickDelegate;
+    private final yr7 mOnClickDelegate;
     private final int mRowImageType;
     private final List<CarText> mTexts;
     private final CarText mTitle;
@@ -71,7 +71,7 @@ public final class Row implements pr5 {
         return this.mNumericDecoration;
     }
 
-    public yo7 getOnClickDelegate() {
+    public yr7 getOnClickDelegate() {
         return this.mOnClickDelegate;
     }
 
@@ -128,7 +128,7 @@ public final class Row implements pr5 {
         return this;
     }
 
-    public Row(em9 em9Var) {
+    public Row(tp9 tp9Var) {
         throw null;
     }
 }

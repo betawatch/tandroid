@@ -1,83 +1,63 @@
 // default package
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.view.WindowManager;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import org.telegram.messenger.a;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class yw0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ fx0 b;
+public enum yw0 {
+    e(new long[]{7}, new int[]{65}, new long[]{60}),
+    f(new long[]{7}, new int[]{jn7.a2}, new long[]{70}),
+    h(new long[]{7}, new int[]{jn7.d4}, new long[]{80}),
+    n(new long[]{3}, new int[]{jn7.B3}, new long[]{50}),
+    r(new long[]{10}, new int[]{jn7.E2}, new long[]{55}),
+    s(new long[]{14, 48, 14, 48, 14, 48, 20}, new int[]{jn7.d3, 0, jn7.d3, 0, jn7.d4, 0, jn7.a2}, new long[]{40, 60, 40, 60, 65, 60, 40}),
+    w(new long[]{14, 65, 14}, new int[]{jn7.E2, 0, jn7.d4}, new long[]{50, 60, 65}),
+    x(new long[]{14, 64, 14}, new int[]{jn7.B3, 0, jn7.E2}, new long[]{65, 60, 40}),
+    y(new long[]{1}, new int[]{65}, new long[]{30}),
+    E(new long[]{30, 10, 150, 10}, new int[]{0, 100, 0, 100}, new long[]{40, 60, 40, 60, 65, 60, 40});
 
-    public /* synthetic */ yw0(fx0 fx0Var, byte b) {
-        this.a = b;
-        this.b = fx0Var;
+    public final long[] a;
+    public final int[] b;
+    public final long[] c;
+    public Object d;
+
+    yw0(long[] jArr, int[] iArr, long[] jArr2) {
+        this.a = jArr;
+        this.b = iArr;
+        this.c = jArr2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        byte b = this.a;
-        fx0 fx0Var = this.b;
-        switch (b) {
-            case 0:
-                AnimatorSet animatorSet = fx0Var.A0;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    fx0Var.A0 = null;
-                    fx0Var.B0 = (byte) 0;
-                    break;
-                }
-                break;
-            default:
-                AnimatorSet animatorSet2 = fx0Var.A0;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    fx0Var.A0 = null;
-                    fx0Var.B0 = (byte) 0;
-                    break;
-                }
-                break;
+    public final void a() {
+        long[] jArr = this.c;
+        if (Build.VERSION.SDK_INT < 26) {
+            Vibrator vibrator = hl.J;
+            if (vibrator == null) {
+                vibrator = (Vibrator) a.b.getSystemService("vibrator");
+                hl.J = vibrator;
+            }
+            vibrator.vibrate(jArr, -1);
+            return;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        byte b = this.a;
-        fx0 fx0Var = this.b;
-        switch (b) {
-            case 0:
-                AnimatorSet animatorSet = fx0Var.A0;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    fx0Var.A0 = null;
-                    fx0Var.B0 = (byte) 0;
-                    fx0Var.x();
-                    ax0 ax0Var = fx0Var.z0;
-                    if (ax0Var != null) {
-                        ax0Var.x();
-                    }
-                    if (fx0Var.K) {
-                        fx0Var.c.setLayerType(0, null);
-                    }
-                    if (fx0Var.W) {
-                        WindowManager.LayoutParams attributes = fx0Var.getWindow().getAttributes();
-                        attributes.flags &= -1025;
-                        fx0Var.getWindow().setAttributes(attributes);
-                    }
-                }
-                if (fx0Var.L0) {
-                    kk7.e().k(99, 512);
-                }
-                fx0Var.M0.e();
-                break;
-            default:
-                AnimatorSet animatorSet2 = fx0Var.A0;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    fx0Var.A0 = null;
-                    fx0Var.B0 = (byte) 0;
-                    gl.c3(new nv0(this, (byte) 3));
-                }
-                kk7.e().k(99, 512);
-                break;
+        Vibrator vibrator2 = hl.J;
+        if (vibrator2 == null) {
+            vibrator2 = (Vibrator) a.b.getSystemService("vibrator");
+            hl.J = vibrator2;
         }
+        Vibrator vibrator3 = vibrator2;
+        if (this.d == null) {
+            if (vibrator3 == null) {
+                vibrator3 = (Vibrator) a.b.getSystemService("vibrator");
+                hl.J = vibrator3;
+            }
+            if (vibrator3.hasAmplitudeControl()) {
+                this.d = VibrationEffect.createWaveform(this.a, this.b, -1);
+            } else {
+                this.d = VibrationEffect.createWaveform(jArr, -1);
+            }
+        }
+        vibrator2.vibrate((VibrationEffect) this.d);
     }
 }

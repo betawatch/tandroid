@@ -1,10 +1,42 @@
 // default package
 
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public abstract class og5 {
-    public static final Pattern a = Pattern.compile("bytes (\\d+)-(\\d+)/(?:\\d+|\\*)");
-    public static final Pattern b = Pattern.compile("bytes (?:(?:\\d+-\\d+)|\\*)/(\\d+)");
+public final class og5 extends rh2 {
+    public byte[] s;
+    public volatile boolean w;
+    public byte[] x;
+
+    @Override // oa6
+    public final void a() {
+        try {
+            this.r.open(this.b);
+            int i = 0;
+            int i2 = 0;
+            while (i != -1 && !this.w) {
+                byte[] bArr = this.s;
+                if (bArr.length < i2 + TLObject.FLAG_14) {
+                    bArr = Arrays.copyOf(bArr, bArr.length + TLObject.FLAG_14);
+                    this.s = bArr;
+                }
+                i = this.r.read(bArr, i2, TLObject.FLAG_14);
+                if (i != -1) {
+                    i2 += i;
+                }
+            }
+            if (!this.w) {
+                this.x = Arrays.copyOf(this.s, i2);
+            }
+        } finally {
+            lge.a(this.r);
+        }
+    }
+
+    @Override // oa6
+    public final void c() {
+        this.w = true;
+    }
 }

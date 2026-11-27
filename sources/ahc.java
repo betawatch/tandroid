@@ -1,47 +1,72 @@
 // default package
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.View;
+import android.view.WindowInsets;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ahc implements Runnable {
-    public final /* synthetic */ byte a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ TLRPC.TL_error d;
-
-    public /* synthetic */ ahc(VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = (byte) 1;
-        this.b = voIPService;
-        this.c = tLObject;
-        this.d = tL_error;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        byte b = this.a;
-        TLObject tLObject = this.c;
-        TLRPC.TL_error tL_error = this.d;
-        VoIPService voIPService = this.b;
-        switch (b) {
-            case 0:
-                voIPService.lambda$acceptIncomingCall$97(tL_error, tLObject);
-                break;
-            case 1:
-                voIPService.lambda$startGroupCheckShortpoll$64(tLObject, tL_error);
-                break;
-            default:
-                voIPService.lambda$processAcceptedCall$22(tL_error, tLObject);
-                break;
+public abstract class ahc {
+    public static void a(WindowInsets windowInsets, View view) {
+        View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = (View.OnApplyWindowInsetsListener) view.getTag(R.id.tag_window_insets_animation_callback);
+        if (onApplyWindowInsetsListener != null) {
+            onApplyWindowInsetsListener.onApplyWindowInsets(view, windowInsets);
         }
     }
 
-    public /* synthetic */ ahc(VoIPService voIPService, TLRPC.TL_error tL_error, TLObject tLObject, byte b) {
-        this.a = b;
-        this.b = voIPService;
-        this.d = tL_error;
-        this.c = tLObject;
+    public static l2d b(View view, l2d l2dVar, Rect rect) {
+        WindowInsets g = l2dVar.g();
+        if (g != null) {
+            return l2d.h(view, view.computeSystemWindowInsets(g, rect));
+        }
+        rect.setEmpty();
+        return l2dVar;
+    }
+
+    public static ColorStateList c(View view) {
+        return view.getBackgroundTintList();
+    }
+
+    public static PorterDuff.Mode d(View view) {
+        return view.getBackgroundTintMode();
+    }
+
+    public static float e(View view) {
+        return view.getElevation();
+    }
+
+    public static void f(View view, ColorStateList colorStateList) {
+        view.setBackgroundTintList(colorStateList);
+    }
+
+    public static void g(View view, PorterDuff.Mode mode) {
+        view.setBackgroundTintMode(mode);
+    }
+
+    public static void h(View view, float f) {
+        view.setElevation(f);
+    }
+
+    public static void i(View view, nr7 nr7Var) {
+        zgc zgcVar = nr7Var != null ? new zgc(view, nr7Var) : null;
+        if (Build.VERSION.SDK_INT < 30) {
+            view.setTag(R.id.tag_on_apply_window_listener, zgcVar);
+        }
+        if (view.getTag(R.id.tag_compat_insets_dispatch) != null) {
+            return;
+        }
+        if (zgcVar != null) {
+            view.setOnApplyWindowInsetsListener(zgcVar);
+        } else {
+            view.setOnApplyWindowInsetsListener((View.OnApplyWindowInsetsListener) view.getTag(R.id.tag_window_insets_animation_callback));
+        }
+    }
+
+    public static void j(View view) {
+        view.stopNestedScroll();
     }
 }

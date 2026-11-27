@@ -1,35 +1,10 @@
 // default package
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.p;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class bz7 implements sz7 {
-    public final /* synthetic */ p a;
-
-    public bz7(p pVar) {
-        this.a = pVar;
-    }
-
-    @Override // sz7
-    public final boolean c(String str, String str2, boolean z, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
-    }
-
-    @Override // sz7
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        p pVar = this.a;
-        pVar.J0 = tL_payments_validateRequestedInfo;
-        pVar.G0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // sz7
-    public final void b() {
-    }
-
-    @Override // sz7
-    public final void a(TL_account.Password password) {
-    }
+public final class bz7 {
+    public AnimatorSet a;
+    public float b;
 }

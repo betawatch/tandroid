@@ -1,22 +1,34 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import android.content.Context;
+import com.google.android.datatransport.cct.CctBackendFactory;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class vf7 {
-    public byte a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public String l;
-    public String m;
-    public int n;
-    public boolean o;
-    public String p;
+    public final ym4 a;
+    public final rx6 b;
+    public final HashMap c;
+
+    public vf7(Context context, rx6 rx6Var) {
+        ym4 ym4Var = new ym4(context, (byte) 9);
+        this.c = new HashMap();
+        this.a = ym4Var;
+        this.b = rx6Var;
+    }
+
+    public final synchronized d5c a(String str) {
+        if (this.c.containsKey(str)) {
+            return (d5c) this.c.get(str);
+        }
+        CctBackendFactory y = this.a.y(str);
+        if (y == null) {
+            return null;
+        }
+        rx6 rx6Var = this.b;
+        d5c create = y.create(new o90((Context) rx6Var.b, (pj2) rx6Var.c, (pj2) rx6Var.d, str));
+        this.c.put(str, create);
+        return create;
+    }
 }

@@ -1,221 +1,157 @@
 // default package
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.widget.ImageView;
 import org.telegram.ui.ActionBar.a;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class w10 extends FrameLayout {
-    public final RectF a;
-    public boolean b;
-    public int c;
-    public int d;
-    public final /* synthetic */ i20 e;
+public final class w10 extends rn {
+    public final /* synthetic */ byte b;
+    public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w10(i20 i20Var, Activity activity) {
-        super(activity);
-        this.e = i20Var;
-        this.a = new RectF();
-        this.b = false;
+    public w10(fvc fvcVar) {
+        super("progress", (byte) 0);
+        this.b = (byte) 5;
+        this.c = fvcVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        setTag(R.id.bulletin_delegate_tag, new s10(this, (byte) 0));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        setTag(R.id.bulletin_delegate_tag, null);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f;
-        float f2;
-        float f3;
-        float f4;
-        i20 i20Var = this.e;
-        p10 p10Var = i20Var.r1;
-        x10 x10Var = i20Var.m1;
-        boolean z = i20Var.n2;
-        if (i20Var.q2.size() <= 1) {
-            i20Var.s0.setBounds(0, (getMeasuredHeight() - i20Var.x1.getMeasuredHeight()) - i20Var.t0, getMeasuredWidth(), getMeasuredHeight());
-            i20Var.s0.draw(canvas);
-            if (z) {
-                x10Var.setVisibility(8);
-                return;
-            }
-            return;
-        }
-        if (p10Var.getVisibility() == 0) {
-            int L = gl.L(13.0f);
-            int translationY = (int) (p10Var.getTranslationY() + ((i20Var.t2 - i20Var.t0) - L));
-            if (z) {
-                translationY = (translationY - a.getCurrentActionBarHeight()) + gl.L(10.0f);
-            }
-            int L2 = gl.L(20.0f) + translationY;
-            int L3 = gl.L(15.0f) + getMeasuredHeight();
-            int i = i20Var.t0;
-            int i2 = L3 + i;
-            if (z || i + translationY >= a.getCurrentActionBarHeight()) {
-                f = 0.0f;
-                f2 = 1.0f;
-            } else {
-                float L4 = gl.L(4.0f) + L;
-                f = Math.min(1.0f, ((a.getCurrentActionBarHeight() - translationY) - i20Var.t0) / L4);
-                int currentActionBarHeight = (int) ((a.getCurrentActionBarHeight() - L4) * f);
-                translationY -= currentActionBarHeight;
-                L2 -= currentActionBarHeight;
-                i2 += currentActionBarHeight;
-                f2 = 1.0f - f;
-            }
-            int i3 = (int) ((1.0f - f) * gl.m);
-            int i4 = translationY + i3;
-            int i5 = L2 + i3;
-            i20Var.s0.setBounds(0, i4, getMeasuredWidth(), i2);
-            i20Var.s0.draw(canvas);
-            RectF rectF = this.a;
-            if (z || f2 == 1.0f) {
-                f3 = 20.0f;
-                f4 = 4.0f;
-            } else {
-                f3 = 20.0f;
-                bkb.s0.setColor(bkb.v0(bkb.g5, i20Var.J0));
-                f4 = 4.0f;
-                rectF.set(i20Var.u0, i20Var.t0 + i4, getMeasuredWidth() - i20Var.u0, gl.L(24.0f) + i20Var.t0 + i4);
-                canvas.drawRoundRect(rectF, gl.L(12.0f) * f2, gl.L(12.0f) * f2, bkb.s0);
-            }
-            if (!z && f2 != 0.0f) {
-                int L5 = gl.L(36.0f);
-                rectF.set((getMeasuredWidth() - L5) / 2, i5, (getMeasuredWidth() + L5) / 2, gl.L(f4) + i5);
-                int v0 = bkb.v0(bkb.yj, i20Var.J0);
-                int alpha = Color.alpha(v0);
-                bkb.s0.setColor(v0);
-                bkb.s0.setAlpha((int) (alpha * 1.0f * f2));
-                canvas.drawRoundRect(rectF, gl.L(2.0f), gl.L(2.0f), bkb.s0);
-            }
-            if (z) {
-                x10Var.setVisibility(0);
-                float max = Math.max(0.0f, tb4.A(1.0f, i20Var.K2, gl.L(6.0f), gl.L(f3) + ((i4 - gl.m) - i20Var.t0)) - x10Var.getTop());
-                x10Var.setTranslationY(max);
-                i20Var.n1.setTranslationY(max);
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x002f, code lost:
-    
-        if (r5.getY() < (gl.L(12.0f) + r0.t2)) goto L21;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0055, code lost:
-    
-        r0.dismiss();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0059, code lost:
-    
-        return true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
-    
-        if (r5.getY() < (getMeasuredHeight() - gl.L(((r0.I0() || r0.s2) ? 0 : 52) + kk7.U2))) goto L21;
-     */
-    @Override // android.view.ViewGroup
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            i20 i20Var = this.e;
-            if (i20Var.t2 != 0 && i20Var.m1.getAlpha() == 0.0f) {
-                if (i20Var.t1.b() > 0) {
+    @Override // rn
+    public final void c(Object obj, float f) {
+        byte b = this.b;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                a aVar = (a) obj;
+                j20 j20Var = (j20) obj2;
+                j20Var.K2 = f;
+                ema titleTextView = aVar.getTitleTextView();
+                ImageView backButton = aVar.getBackButton();
+                float f2 = 1.0f - f;
+                titleTextView.setTranslationX(hl.L(-52.0f) * f2);
+                backButton.setTranslationX(hl.L(-52.0f) * f2);
+                s7 s7Var = j20Var.e2;
+                if (s7Var != null && s7Var.getSearchContainer() != null) {
+                    s7Var.getSearchContainer().setClipChildren(false);
+                    s7Var.getSearchContainer().setClipToPadding(false);
+                    s7Var.getSearchContainer().setPadding(0, 0, hl.L(hl.O1() ? 74.0f : 66.0f), 0);
+                    s7Var.getSearchContainer().setTranslationX((hl.L(-52.0f) * f2) + hl.L(hl.O1() ? 74.0f : 66.0f));
+                    if (s7Var.getSearchClearButton() != null) {
+                        s7Var.getSearchClearButton().setTranslationX(hl.L(52.0f) * f2);
+                    }
                 }
-            }
+                backButton.setScaleX(hl.R1(0.6f, 1.0f, f));
+                backButton.setScaleY(hl.R1(0.6f, 1.0f, f));
+                backButton.setAlpha(hl.R1(0.0f, 1.0f, f));
+                j20Var.b.invalidate();
+                break;
+            case 1:
+                zu1.Bd = f;
+                zu1 zu1Var = (zu1) obj2;
+                ColorMatrix colorMatrix = zu1Var.j7;
+                colorMatrix.setSaturation(f);
+                zu1Var.i7.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                break;
+            case 2:
+                vw2 vw2Var = (vw2) obj2;
+                vw2Var.i0 = f;
+                vw2Var.invalidate();
+                break;
+            case 3:
+                fg4 fg4Var = (fg4) obj2;
+                fg4Var.y0 = f;
+                int i = fg4Var.W;
+                vnb vnbVar = fg4Var.a;
+                fg4Var.V.setColor(vm2.f(f, aob.v0(i, vnbVar), aob.v0(fg4Var.e0, vnbVar)));
+                gu guVar = fg4Var.G;
+                guVar.i1();
+                guVar.invalidate();
+                ((fg4) obj).invalidate();
+                break;
+            case 4:
+                ((View) obj).setAlpha(f);
+                k88 k88Var = ((PhotoViewer) obj2).D1;
+                if (k88Var != null) {
+                    k88Var.setVideoThumbFlashAlpha(f);
+                    break;
+                }
+                break;
+            case 5:
+                fvc fvcVar = (fvc) obj2;
+                fvcVar.y = f;
+                fvcVar.invalidate();
+                break;
+            default:
+                r3d r3dVar = (r3d) obj2;
+                r3dVar.F = f;
+                q3d q3dVar = r3dVar.M;
+                if (q3dVar != null) {
+                    q3dVar.b(f);
+                }
+                r3dVar.invalidate();
+                break;
         }
-        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        i20 i20Var = this.e;
-        i20Var.U0();
-        i20Var.T0();
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        byte b = this.b;
+        Object obj2 = this.c;
+        switch (b) {
+            case 0:
+                return Float.valueOf(((j20) obj2).K2);
+            case 1:
+                return Float.valueOf(zu1.Bd);
+            case 2:
+                return Float.valueOf(((vw2) obj2).i0);
+            case 3:
+                return Float.valueOf(((fg4) obj2).y0);
+            case 4:
+                return Float.valueOf(((View) obj).getAlpha());
+            case 5:
+                return Float.valueOf(((fvc) obj2).y);
+            default:
+                return Float.valueOf(((r3d) obj2).F);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i, int i2) {
-        int L;
-        i20 i20Var = this.e;
-        k10 k10Var = i20Var.x1;
-        k10 k10Var2 = i20Var.b2;
-        p10 p10Var = i20Var.r1;
-        int size = View.MeasureSpec.getSize(i2);
-        int size2 = View.MeasureSpec.getSize(i);
-        if (size != this.c || size2 != this.d) {
-            if (k10Var2.getTag() != null) {
-                i20Var.Q0(false, false);
-            }
-            this.d = size2;
-            this.c = size;
-        }
-        this.b = true;
-        k10Var.setVisibility((i20Var.p1 || i20Var.d) ? 4 : 0);
-        i20Var.o1.setVisibility(k10Var.getVisibility());
-        int paddingTop = size - getPaddingTop();
-        ((FrameLayout.LayoutParams) p10Var.getLayoutParams()).topMargin = a.getCurrentActionBarHeight() + gl.m;
-        ((FrameLayout.LayoutParams) i20Var.n1.getLayoutParams()).topMargin = a.getCurrentActionBarHeight() + gl.m;
-        ((FrameLayout.LayoutParams) k10Var2.getLayoutParams()).topMargin = -getPaddingTop();
-        int L2 = gl.L(kk7.I2 + ((i20Var.I0() || i20Var.s2) ? 0 : 52));
-        if (i20Var.q2.size() > 1) {
-            L2 += (gl.L(56.0f) * i20Var.q2.size()) + i20Var.t0;
-        }
-        if (i20Var.q1 || i20Var.d) {
-            L = gl.L(8.0f);
-        } else {
-            if (L2 >= paddingTop) {
-                L2 = (int) ((paddingTop / 5) * 3.5f);
-            }
-            L = gl.L(8.0f) + (paddingTop - L2);
-            if (L > paddingTop - gl.L(((i20Var.I0() || i20Var.s2) ? 0 : 52) + kk7.z5)) {
-                L = paddingTop - gl.L(((i20Var.I0() || i20Var.s2) ? 0 : 52) + kk7.z5);
-            }
-            if (L < 0) {
-                L = 0;
-            }
-        }
-        if (i20Var.o2) {
-            L = 0;
-        }
-        if (p10Var.getPaddingTop() != L) {
-            p10Var.setPadding(0, L, 0, (i20Var.q1 && i20Var.d) ? 0 : p10Var.getPaddingBottom());
-        }
-        this.b = false;
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-        getMeasuredHeight();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w10(FrameLayout frameLayout, byte b) {
+        super("animationValue", (byte) 0);
+        this.b = b;
+        this.c = frameLayout;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.e.J && super.onTouchEvent(motionEvent);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w10(r3d r3dVar) {
+        super("clipProgress", (byte) 0);
+        this.b = (byte) 6;
+        this.c = r3dVar;
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.b) {
-            return;
-        }
-        super.requestLayout();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w10(PhotoViewer photoViewer) {
+        super("flashViewAlpha", (byte) 0);
+        this.b = (byte) 4;
+        this.c = photoViewer;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w10(zu1 zu1Var) {
+        super("", (byte) 0);
+        this.b = (byte) 1;
+        this.c = zu1Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w10(j20 j20Var) {
+        super("actionBarSlide", (byte) 0);
+        this.b = (byte) 0;
+        this.c = j20Var;
     }
 }

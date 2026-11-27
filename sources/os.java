@@ -1,108 +1,142 @@
 // default package
 
+import java.lang.reflect.Array;
+import java.util.Collection;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
-public final class os implements Iterator, Map.Entry {
-    public int a;
-    public int b = -1;
-    public boolean c;
-    public final /* synthetic */ ps d;
+public final class os implements Set {
+    public final /* synthetic */ qs a;
 
-    public os(ps psVar) {
-        this.d = psVar;
-        this.a = psVar.c - 1;
+    public os(qs qsVar) {
+        this.a = qsVar;
     }
 
-    @Override // java.util.Map.Entry
+    @Override // java.util.Set, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean contains(Object obj) {
+        return this.a.containsKey(obj);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        return this.a.j(collection);
+    }
+
+    @Override // java.util.Set, java.util.Collection
     public final boolean equals(Object obj) {
-        if (!this.c) {
-            sc8.j("This container does not support retaining Map.Entry objects");
+        qs qsVar = this.a;
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Set)) {
             return false;
         }
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            int i = this.b;
-            ps psVar = this.d;
-            if (rp5.a(key, psVar.f(i)) && rp5.a(entry.getValue(), psVar.i(this.b))) {
-                return true;
+        Set set = (Set) obj;
+        try {
+            if (qsVar.c == set.size()) {
+                return qsVar.j(set);
+            }
+            return false;
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
+        }
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final int hashCode() {
+        qs qsVar = this.a;
+        int i = 0;
+        for (int i2 = qsVar.c - 1; i2 >= 0; i2--) {
+            Object f = qsVar.f(i2);
+            i += f == null ? 0 : f.hashCode();
+        }
+        return i;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean isEmpty() {
+        return this.a.isEmpty();
+    }
+
+    @Override // java.util.Set, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return new ns(this.a, (byte) 0);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean remove(Object obj) {
+        qs qsVar = this.a;
+        int d = qsVar.d(obj);
+        if (d < 0) {
+            return false;
+        }
+        qsVar.g(d);
+        return true;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        return this.a.k(collection);
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        qs qsVar = this.a;
+        int i = qsVar.c;
+        for (int i2 = i - 1; i2 >= 0; i2--) {
+            if (!collection.contains(qsVar.f(i2))) {
+                qsVar.g(i2);
             }
         }
-        return false;
+        return i != qsVar.c;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        if (this.c) {
-            return this.d.f(this.b);
+    @Override // java.util.Set, java.util.Collection
+    public final int size() {
+        return this.a.c;
+    }
+
+    @Override // java.util.Set, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        qs qsVar = this.a;
+        int i = qsVar.c;
+        if (objArr.length < i) {
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i);
         }
-        sc8.j("This container does not support retaining Map.Entry objects");
-        return null;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        if (this.c) {
-            return this.d.i(this.b);
+        for (int i2 = 0; i2 < i; i2++) {
+            objArr[i2] = qsVar.f(i2);
         }
-        sc8.j("This container does not support retaining Map.Entry objects");
-        return null;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.b < this.a;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        if (!this.c) {
-            sc8.j("This container does not support retaining Map.Entry objects");
-            return 0;
+        if (objArr.length > i) {
+            objArr[i] = null;
         }
-        int i = this.b;
-        ps psVar = this.d;
-        Object f = psVar.f(i);
-        Object i2 = psVar.i(this.b);
-        return (f == null ? 0 : f.hashCode()) ^ (i2 != null ? i2.hashCode() : 0);
+        return objArr;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!hasNext()) {
-            w26.g();
-            return null;
+    @Override // java.util.Set, java.util.Collection
+    public final Object[] toArray() {
+        qs qsVar = this.a;
+        int i = qsVar.c;
+        Object[] objArr = new Object[i];
+        for (int i2 = 0; i2 < i; i2++) {
+            objArr[i2] = qsVar.f(i2);
         }
-        this.b++;
-        this.c = true;
-        return this;
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        if (!this.c) {
-            sdb.a();
-            return;
-        }
-        this.d.g(this.b);
-        this.b--;
-        this.a--;
-        this.c = false;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        if (this.c) {
-            return this.d.h(this.b, obj);
-        }
-        sc8.j("This container does not support retaining Map.Entry objects");
-        return null;
-    }
-
-    public final String toString() {
-        return getKey() + "=" + getValue();
+        return objArr;
     }
 }

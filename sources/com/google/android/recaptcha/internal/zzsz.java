@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class zzsz implements Map.Entry {
     private final Map.Entry zza;
@@ -25,7 +25,7 @@ final class zzsz implements Map.Entry {
         if (obj instanceof zzts) {
             return ((zztc) this.zza.getValue()).zzc((zzts) obj);
         }
-        w26.j("LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite");
+        lq5.j("LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite");
         return null;
     }
 

@@ -1,24 +1,18 @@
 // default package
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+import java.lang.ref.Reference;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public abstract class dxe {
-    public static final Object a(rq9 rq9Var, rq9 rq9Var2, eq4 eq4Var) {
-        Object fp2Var;
-        Object C;
-        try {
-            r3c.a(2, eq4Var);
-            fp2Var = eq4Var.invoke(rq9Var2, rq9Var);
-        } catch (Throwable th) {
-            fp2Var = new fp2(th, false);
+    public static void a(ArrayList arrayList, Object obj) {
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            Object obj2 = ((Reference) arrayList.get(size)).get();
+            if (obj2 == null || obj2 == obj) {
+                arrayList.remove(size);
+                return;
+            }
         }
-        bx2 bx2Var = bx2.a;
-        if (fp2Var == bx2Var || (C = rq9Var.C(fp2Var)) == fad.b) {
-            return bx2Var;
-        }
-        if (C instanceof fp2) {
-            throw ((fp2) C).a;
-        }
-        return fad.a(C);
     }
 }

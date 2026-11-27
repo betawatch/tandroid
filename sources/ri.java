@@ -1,109 +1,67 @@
 // default package
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.Button;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Point;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes2.dex */
-public final class ri extends hn {
-    public final /* synthetic */ byte s;
+public final class ri extends LinearLayout {
+    public final /* synthetic */ byte a;
+    public boolean b;
+    public final /* synthetic */ hq7 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ri(Context context, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
-        super(context, z, z2, z3, z4, z5);
-        this.s = (byte) 5;
+    public /* synthetic */ ri(Context context, hq7 hq7Var, byte b) {
+        super(context);
+        this.a = b;
+        this.c = hq7Var;
+        this.b = false;
     }
 
-    @Override // android.view.View
-    public final CharSequence getAccessibilityClassName() {
-        switch (this.s) {
-            case 0:
-                return Button.class.getName();
-            case 1:
-            default:
-                return super.getAccessibilityClassName();
-            case 2:
-                return Button.class.getName();
-        }
-    }
-
-    @Override // android.view.View
-    public final int getBaseline() {
-        switch (this.s) {
-            case 5:
-                return Math.round((getHeight() - getDrawable().e) / 2.0f) - getPaint().getFontMetricsInt().ascent;
-            default:
-                return super.getBaseline();
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        switch (this.s) {
-            case 3:
-                if (!pg5.b(this)) {
-                    super.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // hn, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 4:
-                canvas.save();
-                canvas.translate(gl.L(17.0f), 0.0f);
-                super.onDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // hn, android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i, int i2) {
-        switch (this.s) {
-            case 1:
+        int i3;
+        byte b = this.a;
+        hq7 hq7Var = this.c;
+        switch (b) {
+            case 0:
+                qi qiVar = (qi) hq7Var;
+                this.b = true;
+                Point point = hl.q;
+                i3 = point.x > point.y ? 3 : 5;
+                qiVar.setItemCount(i3);
+                qiVar.getLayoutParams().height = hl.L(42.0f) * i3;
+                this.b = false;
                 super.onMeasure(i, i2);
-                setPivotX(getMeasuredWidth());
-                break;
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(gl.q.x, TLObject.FLAG_31), i2);
-                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i), getMeasuredHeight());
                 break;
             default:
+                wi wiVar = (wi) hq7Var;
+                this.b = true;
+                Point point2 = hl.q;
+                i3 = point2.x > point2.y ? 3 : 5;
+                wiVar.setItemCount(i3);
+                wiVar.getLayoutParams().height = hl.L(42.0f) * i3;
+                this.b = false;
                 super.onMeasure(i, i2);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ri(Context context, boolean z, boolean z2, boolean z3, byte b) {
-        super(context, z, z2, z3);
-        this.s = b;
-    }
-
-    @Override // android.view.View
-    public final void invalidate(int i, int i2, int i3, int i4) {
-        switch (this.s) {
-            case 3:
-                if (!pg5.b(this)) {
-                    super.invalidate(i, i2, i3, i4);
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    super.requestLayout();
                     break;
                 }
                 break;
             default:
-                super.invalidate(i, i2, i3, i4);
+                if (!this.b) {
+                    super.requestLayout();
+                    break;
+                }
                 break;
         }
     }

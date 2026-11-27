@@ -4,36 +4,36 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 public final class ItemList {
-    private final List<pr5> mItems;
+    private final List<rt5> mItems;
     private final CarText mNoItemsMessage;
-    private final dp7 mOnItemVisibilityChangedDelegate;
-    private final hp7 mOnSelectedDelegate;
+    private final ds7 mOnItemVisibilityChangedDelegate;
+    private final hs7 mOnSelectedDelegate;
     private final int mSelectedIndex;
 
-    public ItemList(qr5 qr5Var) {
-        this.mSelectedIndex = qr5Var.b;
-        this.mItems = qrd.a(qr5Var.a);
-        this.mNoItemsMessage = qr5Var.e;
-        this.mOnSelectedDelegate = qr5Var.c;
-        this.mOnItemVisibilityChangedDelegate = qr5Var.d;
+    public ItemList(st5 st5Var) {
+        this.mSelectedIndex = st5Var.b;
+        this.mItems = gwd.a(st5Var.a);
+        this.mNoItemsMessage = st5Var.e;
+        this.mOnSelectedDelegate = st5Var.c;
+        this.mOnItemVisibilityChangedDelegate = st5Var.d;
     }
 
-    public static yo7 getOnClickDelegate(pr5 pr5Var) {
-        if (pr5Var instanceof Row) {
-            return ((Row) pr5Var).getOnClickDelegate();
+    public static yr7 getOnClickDelegate(rt5 rt5Var) {
+        if (rt5Var instanceof Row) {
+            return ((Row) rt5Var).getOnClickDelegate();
         }
-        if (pr5Var instanceof GridItem) {
-            return ((GridItem) pr5Var).getOnClickDelegate();
+        if (rt5Var instanceof GridItem) {
+            return ((GridItem) rt5Var).getOnClickDelegate();
         }
         return null;
     }
 
-    public static Toggle getToggle(pr5 pr5Var) {
-        if (pr5Var instanceof Row) {
-            return ((Row) pr5Var).getToggle();
+    public static Toggle getToggle(rt5 rt5Var) {
+        if (rt5Var instanceof Row) {
+            return ((Row) rt5Var).getToggle();
         }
         return null;
     }
@@ -56,8 +56,8 @@ public final class ItemList {
         return false;
     }
 
-    public List<pr5> getItems() {
-        List<pr5> list = this.mItems;
+    public List<rt5> getItems() {
+        List<rt5> list = this.mItems;
         return list != null ? list : Collections.EMPTY_LIST;
     }
 
@@ -65,11 +65,11 @@ public final class ItemList {
         return this.mNoItemsMessage;
     }
 
-    public dp7 getOnItemVisibilityChangedDelegate() {
+    public ds7 getOnItemVisibilityChangedDelegate() {
         return this.mOnItemVisibilityChangedDelegate;
     }
 
-    public hp7 getOnSelectedDelegate() {
+    public hs7 getOnSelectedDelegate() {
         return this.mOnSelectedDelegate;
     }
 
@@ -81,16 +81,16 @@ public final class ItemList {
         return Objects.hash(Integer.valueOf(this.mSelectedIndex), this.mItems, Boolean.valueOf(this.mOnSelectedDelegate == null), Boolean.valueOf(this.mOnItemVisibilityChangedDelegate == null), this.mNoItemsMessage);
     }
 
-    public qr5 toBuilder() {
-        return new qr5(this);
+    public st5 toBuilder() {
+        return new st5(this);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("[ items: ");
-        List<pr5> list = this.mItems;
+        List<rt5> list = this.mItems;
         sb.append(list != null ? list.toString() : null);
         sb.append(", selected: ");
-        return de9.l(sb, this.mSelectedIndex, "]");
+        return uh9.l(sb, this.mSelectedIndex, "]");
     }
 
     private ItemList() {

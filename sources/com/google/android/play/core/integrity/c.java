@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
 /* loaded from: classes.dex */
 final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder {
     private long a;
@@ -26,7 +26,7 @@ final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Buil
         if ((this.b & 2) == 0) {
             sb.append(" webViewRequestMode");
         }
-        sc8.j("Missing required properties:".concat(sb.toString()));
+        grb.i("Missing required properties:".concat(sb.toString()));
         return null;
     }
 

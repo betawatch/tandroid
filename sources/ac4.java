@@ -1,72 +1,64 @@
 // default package
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-17f7ce538f136bbfd364b7b4fa0ec4503cad241dabbd51fce4dcf622535aa29f */
-/* loaded from: classes2.dex */
-public final /* synthetic */ class ac4 implements RequestDelegate {
+/* compiled from: r8-map-id-5e1f6e728e9d22ac16682c089d8aff8b7fbbe935d58f90b537e0237d8c520d54 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ac4 implements Runnable {
     public final /* synthetic */ byte a;
-    public final /* synthetic */ mc4 b;
+    public final /* synthetic */ Throwable b;
 
-    public /* synthetic */ ac4(mc4 mc4Var, byte b) {
+    public /* synthetic */ ac4(Throwable th, byte b) {
         this.a = b;
-        this.b = mc4Var;
+        this.b = th;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         byte b = this.a;
-        final mc4 mc4Var = this.b;
+        int i = 0;
+        Throwable th = this.b;
         switch (b) {
             case 0:
-                mc4Var.getClass();
-                final byte b2 = 1;
-                gl.c3(new Runnable() { // from class: yb4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b3 = b2;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        mc4 mc4Var2 = mc4Var;
-                        switch (b3) {
-                            case 0:
-                                mc4Var2.F = 0;
-                                if (tL_error2 == null) {
-                                    ir2.v(null, 2131750730, u21.b0(mc4Var2), R.raw.contact_check, 36);
-                                    break;
-                                }
-                                break;
-                            default:
-                                mc4Var2.f0(tL_error2);
-                                break;
+                try {
+                    cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + th + "\n");
+                    StackTraceElement[] stackTrace = th.getStackTrace();
+                    for (int i2 = 0; i2 < stackTrace.length; i2++) {
+                        cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace[i2] + "\n");
+                    }
+                    Throwable cause = th.getCause();
+                    if (cause != null) {
+                        cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause + "\n");
+                        StackTraceElement[] stackTrace2 = cause.getStackTrace();
+                        while (i < stackTrace2.length) {
+                            cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace2[i] + "\n");
+                            i++;
                         }
                     }
-                });
-                break;
+                    cc4.j().a.flush();
+                    break;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             default:
-                final byte b3 = 0;
-                gl.c3(new Runnable() { // from class: yb4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        byte b32 = b3;
-                        TLRPC.TL_error tL_error2 = tL_error;
-                        mc4 mc4Var2 = mc4Var;
-                        switch (b32) {
-                            case 0:
-                                mc4Var2.F = 0;
-                                if (tL_error2 == null) {
-                                    ir2.v(null, 2131750730, u21.b0(mc4Var2), R.raw.contact_check, 36);
-                                    break;
-                                }
-                                break;
-                            default:
-                                mc4Var2.f0(tL_error2);
-                                break;
+                try {
+                    cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: " + th + "\n");
+                    StackTraceElement[] stackTrace3 = th.getStackTrace();
+                    for (int i3 = 0; i3 < stackTrace3.length; i3++) {
+                        cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: \tat " + stackTrace3[i3] + "\n");
+                    }
+                    Throwable cause2 = th.getCause();
+                    if (cause2 != null) {
+                        cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause2 + "\n");
+                        StackTraceElement[] stackTrace4 = cause2.getStackTrace();
+                        while (i < stackTrace4.length) {
+                            cc4.j().a.write(cc4.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace4[i] + "\n");
+                            i++;
                         }
                     }
-                });
+                    cc4.j().a.flush();
+                } catch (Exception e2) {
+                    e2.printStackTrace();
+                }
+                boolean z = f11.a;
                 break;
         }
     }
